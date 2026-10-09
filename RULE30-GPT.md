@@ -16180,3 +16180,25 @@ This is the classical beta-language estimate specialized through G51, not a Coll
 Direct critical remainders begin1/2,3/4,1/8,3/16,9/32, giving d-prefix10100. The recurrence gives N_T=1,2,3,5,8,12 for T0..5. Independently, at T3 the only restriction is no11, giving five words; at T5 its thirteen no11 words lose exactly10101, giving twelve by G51's window test and the maximal-prefix criterion. No finite census was run.
 
 **Unexpected check and failure of the pointwise inference.** The formal periodic100 itinerary has all fractional tails below1/2, but its compatible2-adic initial integer is-9/19, as G50 proves; its least nonnegative residues never stabilize. The all-zero infinite itinerary instead has bounded integer residues0 but forces fraction0, giving the excluded xi0. Thus count loss, fractional compatibility, bounded ordinary residues and strict positive xi retain distinct roles. Exponentially vanishing ensemble density cannot exclude a fixed ordinary integer, since the ordinary integers themselves have zero measure in the2-adic ensemble. Q9's pointwise realization/bias problem remains open. This closes only the proposed inference from this classical fractional count to Z-number nonexistence. Next actual integer-residue placement rather than more finite forbidden-word counts. Local reading requested; no prize candidate.
+
+
+## GC664 — Bounded positive-start compactness survives the Mahler half-open endpoint (2026-10-09)
+
+**Scope and prediction.** After GC663, inspect actual bounded integer placement rather than further language counts. G50-G51 supplies the exact fractional windows and ordinary-integer parity itinerary; GC663 identifies the classical beta map. Predict a limiting half-boundary can occur at most once and is removed by a forward shift. Counterfactual nested nonempty half-open windows automatically have a nonempty intersection. This is an endpoint/quantifier audit using established formulas, with no new beta-expansion theorem, novelty claim or experiment.
+
+Fix a positive ordinary integer n and its rounded3/2 parity itinerary b_t. Assume its G51 fractional windows I_T are nonempty for every T. Their closures are nested nonempty compact subintervals of[0,1/2], and their lengths are at most(1/2)*(2/3)^T. They have a unique common limit u*. For every fixed t the affine fractional recurrence is continuous in the initial fraction, so its limit u_t satisfies
+
+    0<=u_t<=1/2; u_(t+1)=(3*u_t-b_t)/2.
+
+Do NOT remove the upper equality by ordinary compactness. If no u_t equals1/2, the G50 recurrence gives a Z-number xi=n+u*>0 directly. If u_s=1/2, the next value must lie in[0,1/2]; this forces b_s=1 and u_(s+1)=1/4. For every ell>=1, u_(s+ell) has an odd numerator over2^(ell+1): induction multiplies the numerator by3 and subtracts b times2^(ell+1). The numerator cannot be0 or the even numerator2^ell corresponding to1/2. Hence all later fractions are strictly between0 and1/2. There can be no second half-boundary. The positive real xi*(3/2)^(s+1), with xi=n+u*, is therefore a Z-number from that shifted starting time. The integer recurrence is already realized by the fixed n; no2-adic-to-real substitution is made.
+
+**Bounded-start equivalence.** Let A_M(T) be the positive integers1<=n<=M whose own length-T rounded-map word has nonempty G51 window. These finite sets decrease with T. If they are nonempty for arbitrarily large T, one fixed positive n survives every T; the endpoint repair above then produces a Z-number, possibly after a shift. Conversely any positive Z-number can be shifted until its integer part is at least1, giving such an n in some bounded range. Consequently
+
+    no positive Z-number exists
+    iff for every finite M there is a finite T with A_M(T) empty.
+
+This is a qualitative equivalence, not a bound on T(M) or a proof of emptiness for any unbounded family. GC663's exponentially small fraction among a changing2^T ensemble does not prove this fixed-range extinction.
+
+**Independent endpoint and unexpected positivity controls.** The critical beta expansion of1 has every finite prefix admissible but its unique limiting original fraction is1/2, excluded from the initial strict interval. Its next fractions are1/4,3/8,1/16, checking the single-boundary repair directly; no positive ordinary integer is asserted to realize that critical word. The unexpected control is n0: its all-zero itinerary has nonempty windows [0,(1/2)*(2/3)^T) at every finite horizon, yet the only limiting real is xi0, which is excluded. Thus replacing1<=n<=M by0<=n<=M would make the equivalence false. The positivity guard is essential.
+
+**Disposition.** Half-open windows alone fail naive compactness, but they do not block the bounded-positive-start implication once a forward shift is allowed. Actual residue extinction remains open; the next quantitative target is T(M) or a placement mechanism, not marginal fractional-word count or carry-age algebra. Local review requested; no Z-number witness, exclusion, Collatz theorem or prize candidate.
