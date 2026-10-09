@@ -21,6 +21,23 @@ PREDICTIONS (Local's, published before the run):
   Counterfactual: a positive (-1)^k rho_k at some k would refute the all-lag alternation outright (one exact lag
   suffices), and GC777's even/odd white-driver parity reduction would have to show the sign change there.
   After the run (descriptive, not a prediction): the integers 4^k |rho_k| are looked up in OEIS.
+OUTCOME, 2026-10-09 15:05 BST (M5, 8 threads, run at commit 0e144133; the ladder stopped before k = 22, about 154 min):
+  DB-C1 PASS (k = 1 .. 12 equal Cloud's values; k = 1 .. 6 equal the literal evolution). DB-P2 HELD (|rho_k| < 0.01331
+  for k = 16 .. 21).
+  DB-P1 REFUTED. rho_13 .. rho_21 = -29327/2^23, +232275/2^26, -954569/2^28, +6558911/2^30, +416163/2^31,
+    -8682903/2^32, -71816115/2^36, -523202389/2^38, +2833481325/2^40 (-0.003496, +0.003461, -0.003556, +0.006108,
+    +0.000194, -0.002022, -0.001045, -0.001903, +0.002577). (-1)^k rho_k > 0 holds for every k <= 16 and at k = 19,
+    and fails at k = 17, 18, 20 and 21: after k = 16 the sign pattern is +, -, -, -, + rather than alternating.
+  D1: |rho_(k+1)/rho_k| for k = 12 .. 20: 0.263, 0.990, 1.027, 1.718, 0.032, 10.43, 0.517, 1.821, 1.354. The magnitude
+    stops falling at about k = 13 and sits between 0.0002 and 0.0061 to k = 21. The integers 4^k |rho_k| are 2, 4,
+    16, 40, 80, 308, 1128, 4992, 13092, 22280, 87036, 223240, 234616, 929100, 3818276, 26235644, 3329304, 138926448,
+    287264460, 2092809556, 11333925300; reduced denominators 2^1 .. 2^40, never 4^k after k = 2.
+  Instrument check, after the run: an independent kernel (rule30_diagonal_bias_direct.c: every row x_0(0 .. 2k) as one
+    word, stepped by the plain formula, counting x_k(k) != x_0(0) over all 2^(2k+1) rows, no left-permutivity
+    reduction) gives the same exact counts for k = 1 .. 18, so the refuting lags 17 and 18 rest on two methods.
+  OEIS (after the run): neither 2, 4, 16, 40, 80, 308, 1128, 4992 nor the counts N_k = 3, 6, 40, 108, 552, 1894, 8756,
+    30272 is in the database (2026-10-09).
+  Reading: the all-lag alternation CL078 asked about is false; it first fails at k = 17. Not shown: any decay law; whether |rho_k| tends to 0; any pattern in the later signs.
 """
 import os
 import subprocess
