@@ -672,6 +672,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Homogeneous optional masks with only white singletons force odd selection](G262-homogeneous-optional-masks-with-only-white-singletons-force.md):
   In the hypothetical repeating pattern, if a short-cycle column has only lone white beats and its optional beats
   all lean the same way, the hidden parity is forced odd.
+- [Odd white-run lengths turn homogeneous selector parity into a count of runs of length 3 mod 4](G263-odd-white-run-lengths-turn-homogeneous-selector-parity.md):
+  When every white stretch in a short-cycle column has odd length, the hidden parity just counts the white stretches
+  of length 3, 7, 11 and so on.
 
 ## Proofs from the sparks
 

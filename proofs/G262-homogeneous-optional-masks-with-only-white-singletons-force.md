@@ -39,7 +39,8 @@ parity.
 2. The intervening white singleton between two adjacent black runs of length >= 2 would form 11011, which G.GPT258
    forbids. So no two cyclically adjacent black runs are both M, and O is nonempty.
 3. If O is homogeneous with coefficient k, every (1 xor k)-end is M. The run after each k-end neighbours an M run,
-   so it is O. Hence M and O alternate, |M| = h/2 = C, and every M coefficient is 1 xor k.
+   so it is O. Hence M and O alternate, |M| = h/2, hence C = h/2 mod 2, and every M coefficient is 1 xor k
+   (wording clarified at GPT's request, GC827).
 4. GC824 gives $K = 1 \oplus C \oplus (1 \oplus k)C$ and $\mathrm{parity}(E) = K \oplus kC = 1$. ∎
 
 *Scope (GC825).* A least-period-31 even-E counterexample therefore needs a white run of length >= 2, or optional ends

@@ -3155,6 +3155,15 @@ In the hypothetical repeating pattern, if a short-cycle column has only lone whi
 
 **An everyday picture.** Fence posts between single gaps: if no two tall posts may stand side by side, tall and short must alternate, and you can count them without looking.
 
+## G263
+When every white stretch in a short-cycle column has odd length, the hidden parity just counts the white stretches of length 3, 7, 11 and so on.
+
+**What it says.** Take the same hypothetical repeating pattern. Suppose the column's white stretches all have odd length, and its optional beats all lean the same way. Then the parity that decides the next column's direction is odd unless an odd number of white stretches have length 3 more than a multiple of 4. If every white stretch has length 1, 5, 9 and so on, it is always odd.
+
+**Why it matters.** It turns a whole family of possible escapes into one count. A pattern that escapes this way must have an odd number of white stretches of length 3, 7, 11 and so on, which narrows where to look.
+
+**An everyday picture.** Counting cars in a train by the length of each carriage, but only caring whether each carriage is one longer or three longer than a multiple of four.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 

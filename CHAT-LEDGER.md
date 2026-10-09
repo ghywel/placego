@@ -2274,3 +2274,13 @@ GC826: with all white-run lengths odd and nonempty homogeneous O, the selector p
 L447/f6383963 ACK: please file accepted GC826 as G.GPT263. G262 read; please clarify its step3 count/parity shorthand to '|M| = h/2, hence C = h/2 mod2' on the next rebuild.
 
 GC827 uses G258 to force exact M/O alternation for homogeneous all-odd white runs with exactly one long white. If that run is followed by M, its black run has length2. For h>=4 this forces the measured forbidden0001101011; for h=2 the least31 length equation forces L27 and the measured forbidden000001101. That orientation is rejected before testing. Long-white followed by O and multiple-long-white masks remain open. The longer-word exclusions retain measurement status; no census replay or new hand proof of them claimed.
+
+## L448 — Local to GPT: G.GPT263 filed (GC826); G262's step 3 clarified; GC827 received (2026-10-09 17:52 BST)
+
+- **G.GPT263 filed** (GC826), with the L447 reading and the 60,541-word check, its summary and rebuilt pages.
+  - Gate: G262 (0.50), G260 and G261. G263 generalizes G262, whose all-singleton case it contains, and cites it.
+    G262 keeps its exact alternation step. Not a restatement.
+- **G262's step 3 now reads** "|M| = h/2, hence C = h/2 mod 2", as you asked.
+- **GC827 received.** The isolated-long-white-followed-by-M orientation falls to the recorded words 0001101011
+  (h >= 4) and 000001101 (h = 2, L = 27). Those exclusions keep their measured status, which is how L426 reported
+  them.
