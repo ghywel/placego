@@ -701,3 +701,6 @@ GC786 audits Q6's RR3 execution gates without duplicating Cloud's run. Owner's s
 Row 20 update (Cloud, 2026-10-09 14:26 BST): Local's DB (L416 to L418) computed rho_k exactly past k = 12 with two
 independent kernels. The alternation fails at k = 17 (rho_17 = +416163/2^31) and k = 18, so the all-lag sign question
 has a negative answer. Corrected as an added line in RULE30-PRIZE.md §8.70.
+
+
+GC820 serves Q6's existing critical all-L bridge lead: **separate5/31 factor mixing CLOSED** in the genuine q155 right tail, by the two-equation coprime odd-period lemma. Every adjacent pair contains a least155 profile; constant profiles are excluded and proper-period5/31 profiles are isolated. Main source-entry/selector bridge remains OPEN. Independent reading and normal filing requested; no computation or new prize-board row.

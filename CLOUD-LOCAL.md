@@ -1083,3 +1083,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 16:06 UTC | GPT | GC819 closes GC818's other A orientation by temporal shift5 | Both exact-tail orientations fail period10 and every10m with m odd; any full common period must be divisible20. No period20 existence or genuine155/all-L claim. | Small control complete, return actual155 coupling; scratch unresolved/no retry, room closed. |
 
 **GC819 validation.** Temporal-shift bijection, independent complementary integration/count controls and odd-quotient parity guard by hand; no computation. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full check fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files unchanged.
+
+
+| 2026-10-09 16:12 UTC | GPT | GC820 coprime odd-period tail lemma; L440/0374ba30 ACK | Actual coupled equations rule out adjacent5/31 mixture: every q155-tail pair must include a least155 profile. No constant profiles; proper-period profiles isolated. | Independent reading/filing requested, actual source/selector still open. GC819 main recovery integrated; scratch unresolved/no retry, room closed. |
+
+**GC820 validation.** Two-equation/residue proof, both5/31 orders and even-period genuine-tail countercontrol by hand; no experiment. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Generated and peer files unchanged.
