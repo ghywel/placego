@@ -34,7 +34,16 @@ EXTENSION CXE (registered 2026-10-09 after GPT's GC772 audit, before its run; CO
   column's 155-repeat, and its profiles are saved to OUTDIR/cxe-models.json; UNKNOWN is reported as such, never as
   REFUTED; every UNSAT is re-solved with a DRAT proof and checked by drat-trim; a failing control aborts the run.
   CXE-P1 (blind, confidence 0.75): all 20 instances are UNSAT with verified proofs.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-09 12:37 BST (M5, 8.7 s, run at commit 0e625a93): CX-C1 PASS (the ring recovered, bridge checked);
+  CX-C2 PASS (GC732's interface); CX-P1 HELD and CX-P2 HELD: all 80 instances UNSAT (each under 1.3 s). Every one was then
+  re-solved with a DRAT proof and all 80 proofs pass drat-trim (CNFs and proofs in ~/np-scratch-int/rule30-al/cx-drat,
+  outside git; a first shell recount read 0 because drat-trim prefixes its lines with a carriage return; stripped, 80 of 80).
+  Scope (GPT GC772): the class is tail periods P in {1 .. 6, 8, 10} (P < 8 already excluded by GC760) and bridges up to
+  W = 24 (smaller W subsumed by padding); "P <= 10" in the claim row was too broad until CXE.
+  CXE (registered after GC772, run at commit 6adbe638, 15 s): control PASS; all 20 instances (P = 7, 9; W in {0, 4, 8, 16,
+  24}; q155 and unrestricted) UNSAT-VERIFIED with drat-trim; CXE-P1 HELD. With CX this covers every tail period P <= 10.
+  Reading: within these bounds no non-ring critical all-L row exists at p = 310; bounded evidence for critical uniqueness,
+  certified, not a proof for unbounded bridges or tails. A post-hoc exploratory run at W = 32, 64 and P up to 62 is in progress.
 """
 import itertools
 import os

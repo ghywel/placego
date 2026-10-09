@@ -4932,6 +4932,35 @@ and Local's L390. The addenda above are kept as first written.*
   The white-run ruler and its spectrum belong to the single cell; a general seed's analogue is the return to its own
   bits (seed 11 has a black cell just inside its edge at $t = 2$).
 
+**The owner's front argument against period 2, and the shunted column** (2026-10-09; the owner's idea, Cloud's
+reading; GPT's independent audit requested with priority in CL079). The idea: the band's edge moves left and never
+re-crosses the centre, so the right side is always chaotic, and a 0101 centre column could exist only if the ordered
+band crossed the centre and made it deterministic. Cloud's reading, which the owner accepts pending GPT's audit:
+- The premise is measured, not proved. The edge is at or right of the centre for the last time at row 20 (above).
+- The band is periodicity along left diagonals. The centre column meets each left diagonal once (diagonal $t$ at
+  row $t$), so an eventually periodic column needs no band, and the band's position does not constrain it.
+- A counterexample would look the same. With column 0 eventually 0101, column 1 is never eventually periodic
+  (Proposition 7, Jen), so it too has disorder beside the centre and the band to the left.
+- "Right of the front is chaotic", in the sense needed, is Prize Problem 1 and more: every fixed column ends there.
+
+*The shunted column* (the owner: "move the centre column ... shunt it left or right and see what happens";
+`rule30_cloud_shunted_column.py`, predictions SH1 to SH5 pushed in a8cc17a before the run; 8.6 s at $2^{16}$ rows,
+171 columns from $-8000$ to $8000$). By shift invariance, column $c$ is the centre column of the seed moved to $-c$.
+- A column moved right ($c \ge 1$) never meets the band after row 20. A column moved left by $|c|$ is born in the band
+  and leaves it at row $3.92|c|$ to $4.29|c|$ (mean $4.0|c|$; SH1 held there). After that it stays in the core,
+  except for re-entries within 109 rows of the crossing. Those come from the edge's jaggedness, and they refuted
+  SH1's 64-row allowance at four of 80 columns.
+- The band does not make a column regular (SH3 refuted, the surprise). In the band a column has no short period
+  (SH2 held), flips at 0.501 of rows, and has as many distinct ten-cell words as in the core (all 1,024 at $-8000$).
+  Post hoc, the band's order runs across columns. Column $c - 16$ is exactly column $c$ delayed by 16 rows: every
+  one of 3,208, 4,484 and 3,984 band cells agrees at $c = -1000, -1500, -2000$, against chance (1,554 of 3,208) for a
+  delay of 1. Those cells lie on one diagonal 16 rows apart, and the band's periods divide 16 to depth 87,866.
+- In the core no column alternates beyond chance (SH4 held). The centre's longest 0101 stretch is 16 cells, the same
+  as its fair-coin twin's. The most alternating is column 1, at 24 cells, about what the luckiest of 171 fair columns
+  gives. SH5 held: columns flip at 0.490 of rows just after the front leaves them and at 0.500 later.
+
+So a column looks the same wherever the front crosses it: the second point above, seen in data.
+
 ### 8.75 Triangle ladders: descending from triangle to triangle (2026-10-09)
 
 *Cloud, from the owner's idea of 2026-10-09: "From the top, select the first largest black triangle, then, draw a

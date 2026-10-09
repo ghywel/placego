@@ -3,7 +3,7 @@
 
 RUN-ON:     cpu (Python 3 standard library; big-integer rows)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_shunted_column.py [LOG2T=16]
-COST:       expected about a minute at LOG2T = 16.
+COST:       about 10 s at LOG2T = 16 (the main run took 8.6 s).
 
 Why (the owner, 2026-10-09, after Cloud's reading of their front argument against period 2, which they accepted and
 asked GPT to audit with priority, CL079): "I'll add an additional wrinkle, move the centre column. It is just a
@@ -45,6 +45,32 @@ of 100, plus -50, -25, -10, -5, -1, 1, 5, 10, 25, 50).
       front's crossing is where a column's periodicity ends: the owner's picture would be literal for columns, though
       still no proof for the centre column, which leaves the band at row 20. If SH4 fails, some column carries
       alternation beyond chance, which would be a lead for period 2 itself.
+
+OUTCOME of the first run, 2026-10-09 (8.6 s at LOG2T = 16, 171 columns).
+  SH1 PART. Held: tau_c / |c| lies in [3.92, 4.29] for |c| >= 500 (mean 4.005), so a column shunted left by |c|
+    spends about 3 |c| rows in the band after its birth; no column c >= 1 has a band row after row 20. Refuted: the
+    64-row allowance. Four of the 80 columns c <= -100 re-enter the band later than that after first leaving it:
+    -100 (84 rows later), -1300 (72), -3200 (109), -5600 (68). That is the edge's jaggedness on a longer time scale
+    than I allowed; none re-enters later than 109 rows.
+  SH2 HELD. None of the 76 band halves has a period of at most a quarter of its length.
+  SH3 REFUTED, the surprise. In the band a column is as varied as in the core: the band half at -8000 (11,778 rows)
+    has all 1,024 ten-bit words, as does its core stretch; at -1000, 774 against 786; the worst ratio is 869 to 832
+    (at -1200). The band halves' flip rate is 0.5012, a coin's.
+  Post hoc, prompted by SH3 (the function posthoc_delay, run after the outcome above was seen): inside the band,
+    column c - 16 is exactly column c delayed by 16 rows. All 3,208 band cells agree at c = -1000, all 4,484 at
+    -1500 and all 3,984 at -2000, and so do all 3,208 for a delay of 32; a delay of 1 agrees at chance (1,554 of
+    3,208). The two cells lie on one left diagonal, 16 rows apart, and the band's periods divide 16 to depth 87,866
+    (§8.74). So the band's order runs across columns, not down one: every band column is the same coin-like sequence,
+    delayed.
+  SH4 HELD. Mean (longest alternating stretch - log2 n) is +0.46 in the core against +0.30 for fair coins, and no
+    column exceeds 2 log2 n. The centre column's longest 0101 stretch is 16 cells, the same as its fair-coin twin's.
+    The most alternating is column 1, at 24 cells, about what the luckiest of 171 fair columns gives (about 0.6
+    stretches that long expected).
+  SH5 HELD as worded: 0.4903 in the first 256 core rows (19,456 steps) against 0.4999 later. Post hoc, 0.4903 is
+    2.7 standard errors below 1/2: a faint possible memory of the band, not claimed.
+  What the shunt shows. Moved right, the column is in the core all its life. Moved left, it buys about 3 |c| rows in
+    the band, the front passes it once (give or take 109 rows of jaggedness), and it is in the core for ever. The
+    band does not make it regular either way, so a column looks the same wherever the front crosses it.
 """
 import math
 import random
@@ -171,5 +197,31 @@ def main():
           f" later core rows {sh5b[0] / sh5b[1]:.4f}; band halves {bandflip[0] / bandflip[1]:.4f}")
 
 
+def posthoc_delay(T2=6000):
+    """Post hoc: in the band, column c - d at row t + d against column c at row t."""
+    pairs = [(-1000, 16), (-1000, 32), (-1000, 1), (-2000, 16), (-1500, 16)]
+    need = sorted({c for c, _ in pairs} | {c - d for c, d in pairs})
+    col, inb = {c: {} for c in need}, {c: {} for c in need}
+    win, V = deque(), 1
+    for s in range(T2 + P):
+        win.append(V)
+        if len(win) > P:
+            Vt = win.popleft()
+            t = s - P
+            d = Vt ^ V
+            B = (d & -d).bit_length() - 1
+            for c in need:
+                if abs(c) <= t:
+                    col[c][t] = (Vt >> (t + c)) & 1
+                    inb[c][t] = t + c < B
+        V = (V << 2) ^ ((V << 1) | V)
+    print("post hoc: in the band, is column c - d at row t + d the same as column c at row t?")
+    for c, dl in pairs:
+        both = [t for t in col[c] if inb[c].get(t) and inb[c - dl].get(t + dl)]
+        agree = sum(col[c][t] == col[c - dl][t + dl] for t in both)
+        print(f"  c = {c}, d = {dl}: {agree} of {len(both)} band cells agree")
+
+
 if __name__ == "__main__":
     main()
+    posthoc_delay()
