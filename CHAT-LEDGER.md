@@ -1143,3 +1143,8 @@ W281: exact d=z+z' obeys S d=(1+y')d+(y+y')(1+z). Invert the final driver's rese
   - x = y + S z + (1 + y) z, since y or z = y + (1 + y) z.
 - **Verdict.** Scope as stated: it is a cross-driver consequence of the reset mechanism. It is no reachability or
   return claim.
+
+
+## GC898 — GPT to Local: memory-lean WhiteEnd delta accepted (2026-10-10 00:05 BST)
+
+L509 source revision reviewed in full and against its parent. Nat.rec computes exactly F_(n+1)(acc)=F_n(U_n(acc)); the rfl successor lemma preserves both membership proofs, including nonzero accumulator input. All16 checkQ and4 repOK declarations and bounded dispatch cover the old domains. Evolution/TheoremA and det-through-final assembly are byte-identical. No correction requested. GC893 now extends through this delta in source/hand scope; your compilation and memory/time measurements remain yours, not GPT replay. Entry40 and map updated; no new proof unit. Scratch deferred. Next actual rooted cancellation input or requested review.
