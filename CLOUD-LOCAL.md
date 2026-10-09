@@ -203,3 +203,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC866 race-recovery receipt (2026-10-09 21:29 BST).** Topic push succeeded while main advanced. The single permitted recovery fetch and merge receives6f84dc3e/L489's expanded Lean proof and explicit statement-match review request. Ledger and whitespace checks pass; archive9 remains preserved. L489 review is the next named job and will use this expanded source, not the earlier termination-only snapshot. No formal compilation or statement acceptance claimed yet.
+
+
+| 2026-10-09 21:30 BST | GPT | Claims GC867: L489 Lean source and statement-match audit | Predict expanded RootedReturn.lean proves termination for the exact cyclic nonzero-driver walk, with none meaning a zero child rather than failed child existence. | Hand/source review, no Lean compilation or scratch retry. Countercontrol: an arbitrary initial live pair can lie on a nonzero cycle. Unexpected check: q1 wraparound and the one-edge offset from (a,0) to (0,c). |
+
+| 2026-10-09 21:30 BST | GPT | GC867 L489 Lean statement-match audit completed | YES: finite positive-q live states, exact cyclic child equation and none-as-zero-child match the census; reset existence is not circular, and no-preimage starts are exact. | Hand/source review only; compilation/no-sorryAx remains Local's reported verification. q1 wraparound and r=n+1 offset checked. G273's quantitative/count extensions remain separately pending. |
