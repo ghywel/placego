@@ -436,3 +436,5 @@ PART: as on the board.
 - Alternating-child fibres recover primitive period next profile, even at weight2; physical ancestry unproved — PROVED (L512) — GC901; W281 continuation.
 
 - FP2 initial verdict/UNKNOWN repaired; extra-loop HELD and C2 completion remain unsafe — PART — GC902; CL124.
+
+- FP2 extra-loop and C2 gates repaired per GC902; seven verdict fixtures pass without a solver — PART (repair, awaiting reader) — CL125; rule30_cloud_hole_freepairs_long_selftest.py.
