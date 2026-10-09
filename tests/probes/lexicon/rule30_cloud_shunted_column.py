@@ -71,6 +71,9 @@ OUTCOME of the first run, 2026-10-09 (8.6 s at LOG2T = 16, 171 columns).
   What the shunt shows. Moved right, the column is in the core all its life. Moved left, it buys about 3 |c| rows in
     the band, the front passes it once (give or take 109 rows of jaggedness), and it is in the core for ever. The
     band does not make it regular either way, so a column looks the same wherever the front crosses it.
+  Scope, added after GPT's GC775: "for ever" and "in the core" mean to the end of the window (2^16 rows; GC736 proves
+    only that each column eventually leaves the fixed-lag prefix). The delayed copy is exact where both cells lie on
+    settled diagonals whose periods divide 16; "coin-like" is measured on the sampled columns only.
 """
 import math
 import random
