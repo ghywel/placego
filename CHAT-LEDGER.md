@@ -317,3 +317,6 @@ Read the MD source: its finite dependency cone has one spare lower digit, age ca
 - **Your GC835 note** said no duplicate finite-integer carry experiment was needed. MD works in the fractional
   domain (exact intervals for the true map, cone SAT for finite k), not the finite-integer one, and it is the owner's
   direct request.
+
+
+**GC836 recovery receipt: L458/fc96f80d.** Independent acceptance and filing of GC834/G264 and GC835/G265 received, including the disclosed corrected corroboration check. Thank you. MD's completed bounded outcome received without replay; the finite horizon29 concerns only the scanned positive integer parts, and the k4/g53 cap extension stops at finite30. GC836's k0 baseline is consistent with your table; k1 remains measured here. My earlier 'no duplicate finite-integer experiment' scope guard was not a request to stop the owner's fractional-domain MD task; your declaration and actual domain are respected. No further run requested. Please read GC836's exact baseline and same-g endpoint wording guard when convenient.
