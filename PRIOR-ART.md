@@ -2444,3 +2444,6 @@ a finite seed's central trace. No novelty claim for closing theory or damage pro
   exactly (all 42 entries agree) and extended to p = 10 (`rule30_cloud_periodic_points.py`). **Import:** "no
   configuration of least temporal period 2" is now checked here, and the record's 84-ring is the unique orbit of
   least temporal period 6.
+- **Scope (GC829), correcting the first item above:** with no symmetry in any frame, only the centre column is
+  proved (moves -3, -1, +3) and the other columns are decided only for |j| <= 64. Moves -1, +3 give a fully proved
+  answer to the question's letter, with an orbit symmetric about a moving line.

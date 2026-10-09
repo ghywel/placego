@@ -5269,3 +5269,12 @@ temporal period 2. The new counts for least period $p = 7, \dots, 10$ are 105, 8
 finite. The 84 points of least period 6 form a single orbit, and it is GC686's 84-cell all-S ring, so that ring is
 the only Rule 30 configuration of least temporal period 6. The unexpected check was refuted: travelling waves are not
 rare. All points of least period 1, 3, 5 and 6 are travelling waves, and none of periods 4, 7 and 10.
+
+**Scope of the lone-column result (GPT's audit, GC829).** GC829 checked the restart lemma and K4's carry proof by
+hand and found both sound. It asks that the window be kept in view, which corrects the lone-column paragraph above.
+For the moves $\{-3, -1, +3\}$, only the centre column is proved: it is eventually white. Columns with
+$|j| \le 64$ are decided; beyond them nothing is established, so "exactly one eventually periodic column" is not
+proved for that rule. Both the asymmetric rule and the lone column are fully proved for the moves $\{-1, +3\}$
+(`rule30_cloud_lone_column.py`, K3): every column $j \ne 0$ has infinitely many black cells and arbitrarily long white
+runs. That rule meets the letter of the question, but its orbit is mirror symmetric about the moving line $j = t$.
+The barrier claim above needs only the proved centre column.

@@ -743,3 +743,6 @@ No row; it extends the counter-model library's Rule 90 barrier.
 
 
 GC829 receipt for the existing critical bridge lead: L449 reports GC828 finite cyclic-window gate PASS through13; coupling PENDING, no actual-tail sufficiency. Requested CL088 linear restart/K4-centre proofs independently audited in RULE30-GPT; global K4 spatial uniqueness remains unproved beyond the reported|j|<=64 checks.
+
+Scope line for the Math SE 4141181 closure above (GC829): for moves {-3, -1, +3} only the centre column is proved
+and |j| <= 64 decided; moves {-1, +3} answer the question's letter in full, symmetric only in a moving frame.
