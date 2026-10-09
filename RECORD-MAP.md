@@ -224,8 +224,9 @@ PART: as on the board.
   kicked at a constant 1.0e-3 a hole) and free stretches; p = 7, 9 keep about 0.36 and 0.56 bits a hole, stationary
   — MEASURED — HE, HE2, HE3, rule30_cloud_hole_entropy.py
 - One-hole TRUE language by SAT: exact counts to 17, 15, 14 holes; certified rho <= 1.512835, 1.642221, 1.709537
-  (p = 5, 7, 9), below width 22's ceilings; zero entropy still OPEN — COMPUTED (CaDiCaL UNSAT, integer
-  Collatz-Wielandt certificates) — TC, rule30_cloud_hole_truecount.py, CL109, CL114; GC871, GC877
+  (p = 5, 7, 9): below width 22's c_60 roots, but only p = 9's beats width 22's own radius (1.714447; L504); zero
+  entropy still OPEN — COMPUTED (CaDiCaL UNSAT, integer Collatz-Wielandt) — TC, rule30_cloud_hole_truecount.py,
+  CL114, CL116; GC871, GC877
 - Free pairs to the reached length: p = 9 (000, 001), p = 7 (00, 010), p = 5 (10, 111000); a target for a
   lower-bound construction, not a bound — COMPUTED (to N only) — FP, rule30_cloud_hole_freepairs.py, CL114
 - The TRUE 0101 channel to 39 visible bits certifies only 0.1517 bits, not below §8.20's 0.1236; a product with the
