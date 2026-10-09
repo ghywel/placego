@@ -4842,3 +4842,43 @@ and can it "ever wander back to the centre line and cross it"? Probe `rule30_clo
   of 1.9 random-walk standard deviations, picked out after the fact. No change of the stripes lies there. The climb
   is real and ordinary for this walk; it looks sudden because the chart's doubling time axis gives its last octave
   half of all the rows.
+
+**Two fronts, one rule: the right-hand front is the edge ruler** (the owner's questions of 2026-10-09: the chaos
+"never consumes the full shape", and "can we construct a 'right side' waveform ... possibly rooted in the discovery
+of the linear ruler"? Probe `rule30_cloud_right_front.py`, predictions RF1 to RF3 pushed in 02f62f3 before the run.)
+- *A common definition.* Call a cell ordered at row $t$ when its diagonal, from row $t$ on, repeats with a period of
+  at most $t$. On the left this is §8.74's band $B(t)$, where the periods stay at most 32 and the transients grow. On
+  the right every diagonal repeats from row 0 (§8.27) but the periods grow, so the ordered strip is
+  $R(t) = \#\{k \ge 1 : p_k \le t\}$ and the right front is the cell $x = t - R(t)$.
+- *It is the ruler (proved by hand).* The periods $p_k$ are non-decreasing powers of 2, so $p_k$ divides $t$ exactly
+  when $p_k \le 2^{v_2(t)}$. Proposition 23 then reads $L(t) = \#\{k \ge 1 : p_k \mid t\} = R(2^{v_2(t)})$, so
+  $R(t) = L(2^{\lfloor \log_2 t \rfloor})$. The right front is a staircase that steps at each power of 2, about
+  $2.5 \log_2 t$ cells inside the edge (RF1: $R(2^n)$ is §8.73's widths for $n \le 21$). At row $2^n$ the white
+  triangle on the edge fills the ordered strip exactly; between powers of 2 the triangles are the ruler's shorter
+  marks.
+- *Its spectrum is all spikes (proved, and checked).* $L$ is a sum of combs $[p_k \mid t]$, so its Fourier transform
+  over $[N, 2N)$ is $\sum_{p_k \le N,\ N \mid p_k b} N/p_k$ at bin $b$: pure spikes at the dyadic frequencies $j/2^m$,
+  with an amplitude that depends only on $m$. The FFT matches this at every bin (RF2). 41% of the power is at $1/2$
+  and 99.5% on denominators up to 256. The left front's steps have a flat spectrum with no spikes, the opposite case.
+- *Neither order is ever consumed (proved for every finite seed).* A finite seed's left edge stays black and moves
+  left at speed 1, so the settling step above makes every left diagonal settle and $B(t)$ grows without bound. Its
+  right edge stays black and moves right at speed 1, so every right diagonal is a running XOR of a periodic
+  sequence, purely periodic with a finite power-of-2 period, and $R(t)$ grows without bound. The chaotic core is
+  always held between a left band growing linearly (measured: 0.755 $t$ cells, 38% of the row) and a right strip
+  growing like $\log t$. Whether the core itself always survives is the open side; a band reaching the centre column
+  is the case discussed above.
+- *The right front remembers the seed* (RF3, the unexpected check: half held, half refuted). All 20 random seeds of
+  width 16 have a period staircase different from the single cell's, and their $R(2^{20})$ ranges from 39 to 58
+  against the single cell's 50 (only 8 within 4). Right diagonals are running XORs from the seed's own cells and
+  never forget them, while the left stripes forget the seed (§8.31). So the left keeps a universal order, and the
+  right keeps an order particular to the seed.
+- *The inverse transform gives the ticks back, and the octave weights are the tick increments* (the owner's remark:
+  the tick sizes can be inverse transformed into a wave; arithmetic on the recorded widths, no new run). A comb's
+  Fourier transform is a comb (Poisson summation), so the ruler is a sum of combs in both domains. Let $n_m$ be the
+  number of right diagonals of period exactly $2^m$, the tick's growth at octave $m$: 2, 1, 2, 1, 2, 6, 1, 8, 1, 2,
+  2, 5 for $m = 1$ to 12. The spike at every frequency $j/2^m$ ($j$ odd) has height $A_m = \sum_{q \ge m} n_q/2^q$,
+  so $A_m - A_{m+1} = n_m/2^m$: 1.764, 0.764, 0.514, 0.264, 0.202, 0.139, 0.046, ... ($A_1$ is also the mean width
+  per row). Keeping one cosine per octave, $A_1 + \sum_m 2A_m \cos(2\pi t/2^m)$, gives a smooth chord of octaves
+  whose crests fall on the largest marks (4096, 2048, 1024, 3072 and 512 lead for $t \le 4096$). With 12 octaves it
+  follows the ruler with correlation 0.79; the odd harmonics $j/2^m$, $j > 1$, carry the same weight as each
+  fundamental and sharpen the crests back into ticks. It is a Weierstrass-type sum, cosines at geometric frequencies.
