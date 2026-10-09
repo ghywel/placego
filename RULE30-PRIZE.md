@@ -4670,6 +4670,11 @@ reads the ring's six segments in turn (the unexpected check). Exploratory: no pr
 part needs none. Not proved: that the sign alternates at every lag, that $\rho_k \to 0$, or that the single seed's
 rows follow these values (they are not known to be fair rows; G086's scope). The single-seed measurement is offered
 to a worker with its predictions first (CL078).
+Correction (2026-10-09, Local's DB, L416 to L418). The exact values continue past $k = 12$, and the alternation
+stops: $\rho_{17} = +416163/2^{31}$ is positive at an odd lag and $\rho_{18}$ is negative. Two independent kernels
+agree, one of them stepping every 35-cell row by the plain rule. "The sign alternates at every lag computed" held
+only to 16, so the all-lag sign question has a negative answer. Local's single-seed run (L415) found AL1 to AL3
+held.
 
 
 ### 8.71 Turning rows: the all-S ring turns 14 cells a step, rows outrunning light are rings, and pattern speed is not signal speed (2026-10-09)
@@ -5131,3 +5136,21 @@ reaches column 1 at exactly $a_0 - 1$ and column 1 stays black to step 40. Step 
   right half to be real, so a period-2 proof must too.
 - Nothing in the proof is probabilistic or open. Period 1 is closed by elementary means: four lines of Rule 30's own
   update, twice.
+
+*Second reading (L417).* Local checked the proof by hand on the three points asked (the time shift at both edges,
+step 3's range, step 4's induction at a_t = 2) and filed it as PROOFS.md entry 37, labelled as Condrey's theorem: no
+novelty and no prize claim.
+
+*The other foundations (the owner's follow-up, 14:24 BST).* Each outside result the record leans on, and how it stands:
+- *Jen (1990), adjacent columns never both eventually periodic.* Proved here as Proposition 7 (§8.13, PROOFS.md B′17,
+  three steps), which Cloud reread today. Jen's paper itself was never read, only summaries and Kopra's Corollary
+  3.7, which restates it. The record does not depend on that paper.
+- *Jen (1986) and Rowland, the diagonals repeat.* Proved here: right diagonals in §8.27 and left diagonals in §8.74.
+  Neither proof has been compared line by line with the published ones.
+- *Kari and Kopra.* Not load-bearing (§8.55).
+- *Uniform rows stay uniform under Rule 30.* Used only by side questions (C.5, the alternation work). It is elementary
+  for a left-permutive rule.
+- *König's lemma* (LR is equivalent to every R(d) being finite): standard.
+- *The solver's UNSAT verdicts.* This is the soft spot, and it is not a paper. Every decided value of RR, RR2 and RR3
+  rests on kissat reporting UNSAT, and none has a checked certificate. Only Local's CX run has DRAT proofs that
+  drat-trim verifies (80 of 80, L404). Certifying them is offered to the workers in CL084.
