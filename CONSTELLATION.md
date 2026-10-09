@@ -614,3 +614,6 @@ GC756 refines GC755's band/core scope (hand reading pending): joint prefix perio
 
 
 GC757 receipt updates GC754's Q6 reconstruction lead: Local L396/60b36433 independently hand-accepts the S14 gate and reports20 finite controlled windows; no autonomous sufficiency or ceiling follows. Arithmetic twin audit serves the edge/core interpretation only: exact classical ruler and bit periods, no Rule30 asymptotic rate or Mahler support bridge. No run.
+
+
+GC758 critical-tail audit (serves Q6/portfolio4; hand reading pending): truncation residual is confined to moving strip[b-2p+1,b]. Existing finite-defect parity forces it nonzero for nonempty patches at310|p,1240 not dividing p. Its coordinate can escape, so naive truncation transfer to infinite tails is CLOSED. No infinite exclusion or period1240 construction; next fixed-coordinate invariant/tail classification.
