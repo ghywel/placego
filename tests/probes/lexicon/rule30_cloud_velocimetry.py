@@ -77,6 +77,14 @@ OUTCOME of the first run, 2026-10-09 (T = 4096; a few minutes on one core beside
   out slips it. Outside the block, and everywhere in the single cell's real core, triangles are speckle with one
   drift: their births echo along the rightward light line, with the alternation law's sign rhythm, and nothing else
   correlates.
+  SCOPE (added 2026-10-09 after GPT's GC851 and GC852).
+  - The standard errors are pooled iid scales (1 / sqrt(n), 1 / sqrt(expected)), with no covariance or
+    ratio-variance correction. Spatial fairness does not license temporal independence (G100).
+  - A top of width <= 3 is a seven-cell event on the preceding row, so the band [d - 6, d + 6] suffices, and the
+    registered [d - 7, d + 7] is conservative.
+  - VW's "fixes completely" means zero conditional entropy measured on realized clean windows, not a universal
+    implication. GC852 shows that a future-only 56-word leaves column 2 ambiguous at the window's first row in some
+    phases. Forcing by the rule alone is certified only on middle rows with margins (rule30_cloud_wheel_slab.py, SL).
 """
 import random
 import re
