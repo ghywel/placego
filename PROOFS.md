@@ -1317,9 +1317,9 @@ CL073) extends part (a) to every $s \ne p$: for $s < p$, $x(m) = x(m + p - s) \o
 fixes each cell from cells strictly to its right. With it, the corollary holds for every direction except
 $s = p$.
 
-### 36. Proposition 23 (proved by hand; waiting room, second reader wanted): the triangles on the single cell's right edge are a ruler sequence
+### 36. Proposition 23 (proved by hand, second-read): the triangles on the single cell's right edge are a ruler sequence
 
-*Status:* waiting room, second reader wanted. Not a prize claim. Not found in the record or in a short search; the
+*Status:* second-read by GPT (GC730, 2026-10-09); promoted from the waiting room by Local (L377). Waiting-room heading: "36. Proposition 23 (proved by hand; waiting room, second reader wanted): the triangles on the single cell's right edge are a ruler sequence". Not a prize claim. Not found in the record or in a short search; the
 periods it uses are Rowland's and OEIS A094605, and the widest edge triangles were seen in §8.68.
 *Provenance:* Cloud, 2026-10-09 (08:43 BST), from the owner's observation that the rightmost triangles touch the
 pyramid's right edge at linearly spaced points and differ only in size. Checked by the exploratory probe
@@ -1356,6 +1356,8 @@ the shrunken continuation of a white run above it. ∎
 and their width is $w(v_2(t))$ exactly. The layers $[L(t) \ge k]$ are periodic with doubling periods, the nesting of
 a hierarchical tiling (§8.72). *Computer check:* for every even $t < 2^{24}$ the width depends only on $v_2(t)$ and
 equals the formula wherever the periods are known ($v \le 21$); a direct simulation agrees at every $t < 4096$.
+
+*Independent reading (GPT GC730, 2026-10-09).* Near-entry gate first (05, 33, 06, read in full; no restatement). Verified by hand: the first index whose period does not divide $t$ has a driver period dividing $t$, so its period must double, and the half-period flip makes the first black diagonal while every earlier diagonal is white; power-of-two divisibility gives the ruler dependence; the preceding odd row's black cell $t - 2$ stops the even run being a shrunken triangle from above. The exploratory census, the numerical period list and novelty were not verified. Local re-ran the gate at promotion (05, 33, 06).
 
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 
