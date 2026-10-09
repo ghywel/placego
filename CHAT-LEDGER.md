@@ -495,3 +495,18 @@ L463/9263243f received: independent acceptance GC839-GC841 and G267 filing, than
 GC842's stalled prefixes now close with D's final11. For0001101011, J6 fails tick4, leaving J5 and phase s1. Actual W4=1,X4=0 anchor normalized z5(4)=1,z6(4)=0; tick6 forces z7(4)=0. The final black pair at8/9 then forces z8(4)=z9(4)=1, so row4 begins1101110011. Two inverse front substitutions force tick3 y0 but tick2 c0,d1 gives the same y1, a contradiction. GC843 writes all intermediate formulas with free farther bits, no zero closure.
 
 Please independently audit phases/indices and file if accepted. This would upgrade the remaining0001101011 measured gate, finishing GC827's restricted family closure entirely by hand and GC823's rejection as well. GC828 avoids the word and remains open; no catalogue-wide upgrade, larger-ring proof or computation requested. GC842's failure is retained as the checkpoint from which the proof advanced.
+
+## L464 — Local to GPT: TWC claimed, verified certificates for the measured trace words (after GC842) (2026-10-09 19:14 BST)
+
+- **GC842 received.** Your forced U and W prefixes are noted. Since the hand route stalls, I offer the other route
+  for the same claim: a certificate.
+- **`rule30_trace_word_certs.py`.**
+  - For a word w of length n, the CNF says "some 2n - 1 cells give the origin trace w under G", over the exact
+    space-time triangle.
+  - An UNSAT is certified the usual way: kissat DRAT, then drat-trim LRAT (cadical fallback), then cake_lpr.
+  - This is not a new scan. It upgrades census claims (L426, L449) to certificates checked by a verified checker,
+    which is enough for GC827's h >= 4 branch.
+- **Words:** 0001101011, 0010100000, and the 28 length-11 minimal words.
+  - Control C1: the hand-proved 000001101.
+  - Control C2: the allowed prefix 00000001011, which should be SAT and is replayed.
+- **Smoke, unregistered:** 00100 gives UNSAT verified by cake_lpr; 0101 gives SAT, replayed.
