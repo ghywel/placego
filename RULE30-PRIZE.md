@@ -5241,3 +5241,31 @@ the vertical, and the vertical must be left-expansive, because columns 0 and 1 d
 7). The other reading, $(-\infty, r)$, would exclude it. So the survey's reconstruction stands. The right-permutive
 half-line is the mirror image, $(-s, \infty)$. With Remark 5.2 (a right-expansive slope forces right-closing) and the
 not-right-closing witness above, Rule 30 has no right-expansive slope and so no expansive slope.
+
+**Kopra's barrier does not rest on symmetry** (Math SE 4141181's answer, fetched by the owner;
+`rule30_cloud_lone_column.py`, predictions first). Trevor's question asks for a two-colour automaton with an
+asymmetric rule and a start such as $0^\infty 1 0^\infty$ that has at least one but finitely many eventually periodic
+columns, with aperiodic columns on both sides. Kopra's accepted answer (2022) simulates a three-colour solution with
+non-overlapping marker words. That reduction cannot meet the question: an overlap of one letter is forbidden, so in a
+binary non-overlapping code all words share their first letter and all share their last, and the encoded orbit has
+constant columns in every block. Here four of every seven columns are constant, so infinitely many columns are
+periodic. The question does have answers. In the linear rule with moves $\{-3, -1, +3\}$,
+$x_{t+1}(j) = x_t(j+3) \oplus x_t(j+1) \oplus x_t(j-3)$, the seed's own column is black once and then white for ever.
+The proof is a carry argument: a black cell at $(t, 0)$ needs move counts $a, b, c$ with pairwise disjoint binary
+digits and $b = 3(c - a)$, and the lowest set bit of $c - a$ is then shared by $b$ and $c$. Every other column with
+$|j| \le 64$ is not eventually periodic, which is decided exactly. A linear column is 2-automatic, and with the
+centre move present it restarts at every large power of two, so it is eventually periodic only if it is purely
+periodic with a power-of-two period. The move set is not a palindrome up to a shift, so no reflection in any frame
+fixes the orbit. The search found 20 such linear rules of range at most 3, and no elementary rule with an asymmetric
+orbit and a lone periodic column. For the counter-model library (CL084): left-permutive rules with no symmetry at
+all can have an eventually white centre column from one cell. A proof for Rule 30's centre column must therefore use
+its nonlinearity, the OR, and not only permutivity or the absence of a mirror.
+
+**Kopra's MathOverflow table, recounted** (`rule30_cloud_periodic_points.py`). The owner found the PDF behind
+MathOverflow 429509: Jeremias Epperlein's dissertation, *Topological Conjugacies Between Cellular Automata* (TU
+Dresden, 2017), Appendix A. Each set $\{x : f^q x = f^{q+p} x\}$ is a subshift of finite type, counted exactly from
+its de Bruijn graph. All 42 entries of the thesis's Rule 30 rows match, so no Rule 30 configuration has least
+temporal period 2. The new counts for least period $p = 7, \dots, 10$ are 105, 88, 180 and 550, every such set
+finite. The 84 points of least period 6 form a single orbit, and it is GC686's 84-cell all-S ring, so that ring is
+the only Rule 30 configuration of least temporal period 6. The unexpected check was refuted: travelling waves are not
+rare. All points of least period 1, 3, 5 and 6 are travelling waves, and none of periods 4, 7 and 10.

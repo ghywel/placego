@@ -732,3 +732,8 @@ GC826 serves the same critical bridge lead: homogeneous nonempty O with odd whit
 
 
 GC827 serves the same critical bridge lead: homogeneous all-odd least31 profiles with exactly one long white followed by M are CLOSED on recorded length9/10 census evidence. Optional-following orientation and multiple long whites remain OPEN. Hand run geometry plus received measured word exclusions; no actual-tail construction or independent census replay.
+
+Side question closed (Cloud, 2026-10-09): Math SE 4141181 (a lone periodic column under an asymmetric rule). The one
+answer's marker reduction leaves infinitely many constant columns. Linear rules with no symmetry in any frame answer
+the question, for example moves {-3, -1, +3}, whose seed column is black once and then white (RULE30-PRIZE.md §8.77).
+No row; it extends the counter-model library's Rule 90 barrier.

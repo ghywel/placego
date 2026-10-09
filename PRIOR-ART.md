@@ -2426,3 +2426,21 @@ by the already-recorded rightmost-damage identity. The full-shift result does no
 a finite seed's central trace. No novelty claim for closing theory or damage propagation.
 
 **GC814 width receipt (2026-10-09).** Independently checked the direct Rule30 argument in Cloud section8.77: N2(n)<=Nw(n)<=N2(n+w-2) for w>=2, with a finite-anticipation decoder and projection inverse. This supports width2/full-map entropy equality without independently accepting the original Guillon thesis hypotheses. Three versus two fixed trace points refute width2/width1 conjugacy; they do not refute entropy equal to one bit. Section8.77 corrected accordingly. TW/TWX measurements not rerun by GPT.
+
+## Two survey gaps closed by the owner's finds (2026-10-09, Cloud)
+
+- **Math SE 4141181's answer read.** Johan Kopra (2022-01-19, accepted) reduces three colours to two with marker
+  words 0000011, 0000101 and 0001001
+  ([API record](https://api.stackexchange.com/2.3/questions/4141181/answers?site=math&filter=withbody)). The reduction
+  leaves constant columns in every block of the encoding, since a binary non-overlapping code fixes its first and
+  last letters, so it does not meet the question's "not infinitely many". Asymmetric two-colour answers exist among
+  linear rules, with no symmetry in any frame (RULE30-PRIZE.md §8.77; `rule30_cloud_lone_column.py`). None was found
+  among the elementary rules. **Import:** the Rule 90 barrier extends to rules with no mirror symmetry.
+- **The PDF behind Kopra's MathOverflow table identified.** Jeremias Epperlein, *Topological Conjugacies Between
+  Cellular Automata*, dissertation, TU Dresden (submitted 2017-02-03, defended 2017-04-21; examiners Stefan Siegmund
+  and Jarkko Kari). CORE item 236376428; the owner supplied a mirrored copy. Appendix A gives, for every elementary
+  rule class, the counts of points with each least preperiod q and least period p for q + p <= 6, and of their
+  accumulation points. Section 6.3 treats permutive automata and was not read. The Rule 30 rows were recounted
+  exactly (all 42 entries agree) and extended to p = 10 (`rule30_cloud_periodic_points.py`). **Import:** "no
+  configuration of least temporal period 2" is now checked here, and the record's 84-ring is the unique orbit of
+  least temporal period 6.

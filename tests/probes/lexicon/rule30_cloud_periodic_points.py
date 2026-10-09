@@ -39,6 +39,21 @@ PREDICTIONS, written 2026-10-09 17:46 BST, before any run of this script.
   Counterfactual. If PP-C0 fails, the window encoding or the table is wrong, and the p = 2 anchor is not cited until
   that is settled. If PP-P1 fails, Rule 30 has temporally periodic points that are not spatially periodic, which
   would be new to the record.
+
+OUTCOME of the first run, 2026-10-09 (PMAX = 10; under a minute).
+  PP-C0 PASS: all 42 entries of both tables recounted exactly. Rule 30 has no configuration of minimal temporal
+    period 2, as Kopra's answer and the thesis say.
+  PP-C1 PASS: of the 45 points of minimal period 5, 20 have spatial period <= 24 (5 and 15; the other 25 are one
+    25-cell orbit); the 84 points of minimal period 6 are one orbit of spatial period 84.
+  PP-P1 HELD: Per_p is finite for every p <= 10.
+  PP-P2 PART. Minimal-period counts for p = 1 .. 10: 3, 0, 12, 28, 45, 84, 105, 88, 180, 550 (p = 7 .. 10 are new
+    here). p = 10's count is in range and p = 2 is the only empty period, but growth is not monotone (88 < 105).
+  PP-U REFUTED (the unexpected check): travelling waves are not rare. All points of minimal period 1, 3, 5 and 6
+    are travelling waves (f x a rotation of x), none of periods 4, 7 and 10, and 80 of 88 and 135 of 180 at 8, 9.
+  Links to the record (post hoc). The 84 points of minimal period 6 are one orbit up to shift, and it is GC686's
+    84-cell all-S ring (its row is a rotation of 0x688eb74a45efb082671ee; 6 of its 84 columns have period 2). So
+    that ring is the only Rule 30 configuration of least temporal period 6. Spatial periods at p = 10 are 30, 90
+    and 155; the 155 matches the size of the record's all-L ring (not checked to be that ring).
 """
 import sys
 

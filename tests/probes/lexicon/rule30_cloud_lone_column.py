@@ -2,7 +2,7 @@
 """rule30_cloud_lone_column.py: a two-colour, asymmetric automaton with exactly one eventually periodic column?
 
 RUN-ON:     cpu (Python 3 standard library; big-integer rows)
-COMMAND:    python3 tests/probes/lexicon/rule30_cloud_lone_column.py [T=4096]
+COMMAND:    python3 tests/probes/lexicon/rule30_cloud_lone_column.py [T=4096] [posthoc]
 COST:       expected a few minutes at T = 4096 (256 elementary rules and 98 linear rules).
 
 Why. Math SE 4141181, "Periodic columns in asymmetrical 1D cellular automata?" (Trevor, 2021-05-16), asks for a
@@ -73,6 +73,47 @@ PREDICTIONS, written 2026-10-09 17:46 BST, before any run of this script (T = 40
   Counterfactual. If LC-P1 fails, K3's proof has an error and the example dies. If LC-P2 or LC-P3 holds, the question
   is answered in its spirit too, and the counter-model library (CL084) gains a barrier with no symmetry at all. If
   both fail, the honest answer is K3: asymmetric rule, asymmetric rows, symmetric only in a moving frame.
+
+OUTCOME of the first run, 2026-10-09 (T = 4096; about three minutes on one core at low priority beside RR3).
+  LC-C0 PASS: no overlap at any shift; offsets common to all three words {0, 1, 2, 6}; w0 = w1 at {0, 1, 2, 3, 6}.
+    K1 stands: the reduction's two-colour automaton has four constant columns in every block of seven, so
+    infinitely many periodic columns, which the question excludes, and no binary non-overlapping code avoids it.
+  LC-C1 PASS: all seven rules reproduce Rule 90's orbit in every row below T.
+  LC-C2 PASS: no disagreement between the automaton and the simulation (98 rules, |j| <= 64, t < 256).
+  LC-P1 PART. Every proved claim checks: column 0 has no black cell for 1 <= t < T and is exactly eventually
+    white; no other column with |j| <= 64 is (exact); all 4096 rows equal Lucas's formula; the 128 constructed
+    black cells are black. The measured clause failed as a fault of the instrument: the window test read columns
+    -1, -4, -16 and -64 as periodic because their sparse black cells skip rows 2048 .. 4095 (column -4^m is black at
+    t = (4 * 2^M - 4^m) / 3 for even M). Rows to 2^15 show a black cell in each of [2^12, 2^13) and [2^14, 2^15).
+  LC-P2 HELD, exactly after the post-hoc test below: 20 fully asymmetric linear rules of range at most 3 have
+    exactly one eventually periodic column in -64 .. 64 (the first run's window test counted 18, fooled both ways).
+  LC-P3 PART. Its main clause is refuted: no elementary rule with an asymmetric single-cell orbit qualifies. The rest
+    held: Rules 30 and 86 show no periodic column; 16 rules qualify, all with symmetric orbits, among them 90 and
+    150 and the asymmetric rules 26, 82, 154, 210, 167 and 181 (K2's disguise).
+  LC-U REFUTED (the unexpected check): odd exponents are not needed. Many of the 27 primitive rules with an
+    eventually white column have an even exponent, the simplest X^-2 + X and X^-2 + 1 + X (column -1 in both).
+  POST HOC (written after the run). The window test is unreliable for these nested columns, which can repeat
+    through one dyadic block of rows and not the next, so eventual periodicity was decided exactly. With 0 in S a
+    column restarts at every large power of two (p^(2^M + u) = p(X^(2^M)) p^u, and only the copy at the origin
+    reaches column j while 3u < 2^M - |j|), so an eventually periodic column is purely periodic with a power of two
+    as its least period, which holds iff its 2-kernel sequences are constant from some depth. With 0 not in S the
+    restart is a white run of about 2^M / 3 rows, so eventually periodic means eventually white. Exact and window
+    sets agree for 89 rules and differ for 9; rows to 2^15 for three disputed columns of each of the 9 found every
+    one periodic in some dyadic windows and not in others, with growing black counts, so the exact sets stand.
+  The exhibits. K4: x_{t+1}(j) = x_t(j+3) xor x_t(j+1) xor x_t(j-3) (S = {-3, -1, 3}; two colours, range 3; S is
+    not a palindrome up to a shift, so no reflection in any frame fixes the orbit). From one cell the seed's own
+    column reads 1, then white for ever. Proof: a black cell at (t, 0) needs move counts a, b, c (of -3, -1, +3)
+    with pairwise disjoint binary digits and b = 3(c - a). If c = a then b = 0 and a = c = 0, so t = 0. Otherwise
+    let i be the lowest set bit of d = c - a. Bit i is set in 3d = b, so a lacks bit i; a shares its bits below i
+    with c = a + d, so it has none; then c has bit i, which b also has. Every other column in -64 .. 64 is exactly
+    not eventually periodic (automaton test; |j| > 64 not proved). With a hand proof too: S = {-2, 0, 1},
+    x_{t+1}(j) = x_t(j+2) xor x_t(j) xor x_t(j-1), whose column -1 is never black (a black cell needs c = 2a - 1,
+    and a shares its lowest set bit with 2a - 1), all other columns in -64 .. 64 not eventually periodic. And
+    S = {-3, -1, 0, 3} has a centre column black in every row (exact: the state {0} is constant).
+  So Kopra's reduction does not answer the question (K1), and the question has asymmetric two-colour answers, none
+    among the elementary rules. For CL084's library: Kopra's Rule 90 barrier does not rest on symmetry. Linear,
+    left-permutive rules with no symmetry in any frame have a lone eventually periodic column, the seed's own, so a
+    proof for Rule 30's centre must use what these lack: the OR.
 """
 import sys
 
@@ -373,5 +414,69 @@ def main():
     print('       rows differing from Lucas %d of %d; constructed black cells black %d of %d' % (bad, T, built, 2 * J))
 
 
+def eventually_periodic(S, j, maps):
+    """Post hoc, exact for linear rules. With 0 in S, p^(2^M + u) holds a copy of p^u at the origin and none near
+    column j while 3u < 2^M - |j|, so column j restarts at every large power of two: an eventually periodic column
+    is purely periodic, with a power of two as its least period, and is so iff all its 2-kernel sequences at some
+    depth e are constant (then c_j(2^e t + r) does not depend on t). With 0 not in S the restart is white instead,
+    runs of about 2^M / 3 white cells, so eventually periodic means eventually white."""
+    if 0 not in S:
+        return eventually_white(S, j, maps)
+    E, O = maps
+    start = frozenset([j])
+    seen, stack, succ = {start}, [start], {}
+    while stack:
+        u = stack.pop()
+        succ[u] = (E(u), O(u))
+        for w in succ[u]:
+            if w not in seen:
+                seen.add(w)
+                stack.append(w)
+    vals = {u: {0 in u} for u in seen}                  # values at t = 0 of every state reachable from u
+    changed = True
+    while changed:
+        changed = False
+        for u in seen:
+            new = vals[u] | vals[succ[u][0]] | vals[succ[u][1]]
+            if new != vals[u]:
+                vals[u], changed = new, True
+    level, past = {start}, set()
+    while True:
+        if all(len(vals[u]) == 1 for u in level):
+            return True
+        key = frozenset(level)
+        if key in past:
+            return False
+        past.add(key)
+        level = {w for u in level for w in succ[u]}
+
+
+def posthoc():
+    print('POST HOC: exact eventual periodicity of every column |j| <= %d for every linear rule (T = %d for the'
+          ' numerical cross-check)' % (J, T))
+    agree = [0, 0]
+    for mask in range(1, 128):
+        S = [k for k in range(-3, 4) if mask >> (k + 3) & 1]
+        if not (min(S) < 0 < max(S)):
+            continue
+        maps = automaton(S)
+        P = [j for j in range(-J, J + 1) if eventually_periodic(S, j, maps)]
+        rows, off = linear_rows(S)
+        cols = columns(rows, off)
+        Pn = [j for j in range(-J, J + 1) if tail_period(cols[j + J])]
+        agree[P == Pn] += 1
+        aper = [j for j in range(-J, J + 1) if j not in P]
+        lone = len(P) == 1 and any(a < P[0] for a in aper) and any(a > P[0] for a in aper)
+        if P and len(P) <= 4 and gcd_all(S) == 1:
+            first = [t for t in range(T) if cols[P[0] + J][t] == '1'][:3]
+            print('  S = %-20s palindromic %-5s exact periodic columns %s; measured %s; first black rows of'
+                  ' column %d: %s%s' % (S, palindromic(S), P, Pn, P[0], first,
+                                         '  <- one column only' if lone else ''))
+    print('  exact and measured sets agree for %d rules, differ for %d' % (agree[1], agree[0]))
+
+
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) > 2 and sys.argv[2] == 'posthoc':
+        posthoc()
+    else:
+        main()
