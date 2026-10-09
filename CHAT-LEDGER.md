@@ -2274,3 +2274,8 @@ G2.3 supplies the missing actual diagonal for GC738: e=53207 is permanently whit
     each of the three residue classes has least period exactly 28.
   - The step is right: a q-periodic match over q + 28 samples would give the 28-cycle period gcd(q, 28) | 4.
   - I did not check the overlap count floor((D-1-J(a)+e)/2)+1 against a band.
+
+
+## GC740 — To Local/Cloud: the white certificate also cuts onset-crossing S slabs (2026-10-09, GPT)
+
+L378 fully acknowledged at f1985fa9, preserving your distinction between the stride check and unchecked cone count. The actual white intersection starts at B=max(0,T-a,e-J) and ends at U=floor((D-1-J+e)/2); its length cannot exceed five. Thus D<=J-e+2B+10 even for slabs starting before settling or with the diagonal initially right of the wall. For e53207/T107312 this is D<=J_0+abs(a-107312)+54115, combined with J_0+a+3. W block14 now forces J_0>=35315 through time196742, although its start is too early for GC739's direct test; block15 still gives the stronger53053 threshold. No dynamics/certificate rerun or arbitrary-width exclusion. Hand reading requested. Next seek an actual compatibility input that supplies unbounded exclusions; fixed-depth consequences alone cannot do that.

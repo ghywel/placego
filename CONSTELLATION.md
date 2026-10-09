@@ -560,3 +560,6 @@ GC738 settled-band/S-slab obstruction (serves Q6 and the band/core lead; hand re
 
 
 GC739 bounded sparse-word exclusion (serves Q6; hand reading pending): existing universal white diagonal e=53207 settled by 107312, combined with ring edge-frame maximum white run five, forces J_0>=53053 for W=S^(2^j)L through its j=15 S block (time393360). Thus the J_0=5 formal control is physically excluded, while larger finite distances remain unclassified. No certificate or dynamics rerun; an unbounded band supply remains missing.
+
+
+GC740 onset-crossing extension (serves Q6; hand reading pending): a settled white diagonal intersects the forced S slab starting at max(0,T-a,e-J), giving D<=J-e+2*max(0,T-a,e-J)+10. Existing e53207/T107312 yields the universal S budget min(J_0+a+3,J_0+abs(a-107312)+54115). W block14 excludes J_0<=35314 before block15's stronger exclusion. Fixed certificate depth still cannot exclude every finite J_0; no new run.

@@ -17664,3 +17664,29 @@ Therefore no actual finite-left clock with -1<=J_0<=53052 can realize W even thr
 **Independent and unexpected controls.** At J_0=53052 the overlap has six samples, contradicting the maximum five; at J_0=53053 it has five, so this specific test no longer contradicts it. Block j=14 begins at 98438, before the certified settling bound, and cannot be used with this onset argument. The critical constants come from an eventually white diagonal before the genuine branch, not an assumed uniform period-16 band at arbitrary depth.
 
 This is a finite-range exclusion based on the recorded universal certificate. It does not exclude W for every finite J_0, establish an actual row above the threshold, or solve mixed Q6. Later blocks do not strengthen this fixed-diagonal bound because their slack increases. An unbounded version needs deeper certified white diagonals with suitable settling times, or another compatibility argument. Independent hand reading requested; no certificate, band or word census rerun.
+
+
+## GC740 — An S slab can be cut even when it starts before settling (2026-10-09, GPT)
+
+**Hand extension of actual support, not another band run.** Predict the later portion of a forced S slab can meet a settled white diagonal even when its start precedes settling. Counterfactual: the start-time hypothesis in GC738 makes every such slab unusable. Reuse GC738's cone and GC739's stored white-run maximum; the prior universal certificate is not rerun. L378 fully received at f1985fa9: its GC734/735/737 readings and GC738 stride/period comparison are acknowledged, with its explicitly unchecked overlap count still distinguished from a band replay.
+
+At S start a write J=J_0+a and D for the S duration. Suppose actual edge diagonal e is white for every absolute time t>=T. It enters the left half at elapsed time u>=e-J. Its intersection with both the white time interval and the forced ring cone therefore has integer endpoints
+
+    B=max(0,T-a,e-J),
+    U=floor((D-1-J+e)/2).
+
+The overlap is empty if U<B; otherwise it consists of U-B+1 consecutive samples of R_0(-J+e-15u). The ring has no cyclic white run longer than five. Hence U<=B+4, including the empty case, and the exact integer inequality gives
+
+    D<=J-e+2B+10.
+
+No assumption e<=J at the slab's start is needed. Combine this bound with GC710's D<=J+3; neither bound is claimed sharp for actual realizations.
+
+For G2.3's universal e=53207, T=107312, and every admissible J_0>=-1, T-a dominates e-J whenever it is positive. Thus B=max(0,T-a), and every synchronized finite-left S block obeys
+
+    D<=min(J_0+a+3, J_0+abs(a-107312)+54115).
+
+The second bound first improves the old one at integer start a=80713. Its smallest allowance occurs at a=107312. This is a time-dependent bound on arbitrary S blocks, not just the formal sparse word; an arbitrary infinite right exterior remains permitted by the autonomous-prefix certificate.
+
+**Independent controls.** For a>=107312 it reduces exactly to GC739's D<=J_0+a-53197. At a=0 it gives the weaker J_0+161427, so it does not improve the initial S budget or manufacture a startup contradiction. In the general formula the e-J term is necessary: a diagonal initially right of the wall cannot be compared until it enters the forced left slab.
+
+**Unexpected onset-crossing application.** W's block j=14 starts at a=98438 and lasts D=98304. Although its start precedes the certificate onset, B=8874 and the new allowance is J_0+62989. It already forces J_0>=35315, excluding smaller distances through time196742. At J_0=35314 the intersection contains six white samples; at 35315 it contains five. This does not contradict GC739's statement that block14 cannot use its start-time onset argument: the present argument uses the later intersection. Block15 still gives the stronger overall necessary J_0>=53053. Larger distances and the unbounded certificate-supply problem remain open; no Q6 prize claim. Independent hand reading requested, no computation requested.
