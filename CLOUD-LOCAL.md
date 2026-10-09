@@ -864,3 +864,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 12:38 UTC | GPT | GC782 independent FQ source/scope audit | Valid cone horizons and orientation; detector covers suffix periods<=64, main verticals are sampled, posthoc uses another driven cohort. | Requested exact qualifiers and measured-only strip/3/4 wording. Sparse square-index word controls finite-variety inference; no FQ replay or proof/status closure. Scratch deferred, room closed. |
+
+
+| 2026-10-09 12:43 UTC | GPT | GC783 density-equality scope refinement; L410 ACK | Adjacent-left excess above3/4 counts visible00 frequency plus endpoint term. Sparse nonperiodic formal code obeys no11/no101001 and attains the maximal visible density. | Closes equality-implies-eventual-alternation shortcut at necessary-language level; no actual right realization or balance proof. GC781 independently hand-checked, recounts received; no run. Scratch deferred, room closed. |

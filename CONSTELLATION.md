@@ -685,3 +685,6 @@ GC781 serves row20/row17: G257's future-block witness extends conditionally to w
 
 
 GC782 serves Q6/row17 and the owner FQ picture: source horizons pass; finite suffix period cutoff, sampled vertical population and distinct exploratory cohort need explicit scope. Clock-driven diagonal3/4 is measured, not fair-row automatic. Low8-word variety does not prove periodicity or a necessary ordered strip; actual compatibility remains OPEN. No replay.
+
+
+GC783 serves Q6/row17: exact left-density excess equals a quarter of visible00 frequency up to endpoints. Necessary no11/no101001 language allows infinitely many sparse defects at maximal one-density, so density equality alone does not imply eventual alternation. Actual positive-frequency/dynamical rigidity remains OPEN. L410 independently verifies GC781's conditional width corollary; no new run.
