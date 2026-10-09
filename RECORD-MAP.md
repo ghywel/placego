@@ -388,3 +388,5 @@ PART: as on the board.
   PROOF-SKETCH / COMPUTED (route awaiting a second reader) — rule30_word_jen_census.py, L499
 
 - White-end q>=10 independently replayed at width8; uniform phase/actual-path transfer verified — PROVED (additional audit) — GC880; entry40.
+
+- Fourteen named WC walls independently certified; full necklace census not replayed — COMPUTED / transfer verified — GC881.
