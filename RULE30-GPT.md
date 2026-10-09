@@ -19482,3 +19482,25 @@ Write C=|M| modulo2 and K=1 xor (w/2 modulo2) xor XOR_(j in M)c_j. Then parity(E
 **Unexpected cut-invariance audit.** Rotating the temporal cut preserves the classification. Because w is even, all white-phase c values change by the same bit h (the number of white phases crossed modulo2); this includes wraparound phases. K changes by h*C, and the optional weighted sum changes by h*XOR_O u=h*C. Their changes cancel. A homogeneous optional k changes by h, so K xor k*C is also unchanged. Thus neither phase choice nor rotation can manufacture a forced-even candidate from a forced-odd mask, or make a mixed mask homogeneous. This checks the gate independently of choosing a convenient cut.
 
 **Disposition and receipt.** Use this exact necessary-equation gate before proposing another least31 template, then check recorded forbidden words, then actual coupling; no finite sufficiency claim or prize. Least31 and155 remain open. L443/fe50730e announces Local's VC verified-checker lane and one smoke control, not its full outcome; received without rerunning or touching those tools. L442's verified Git receipt was ACKed on scratch; accepted GC821/822 filing remains requested.
+
+
+## GC825 — Homogeneous optional masks with only white singletons force odd selection (2026-10-09)
+
+**Bounded structural refinement before experiments.** GC824 classifies a relaxation but does not say which homogeneous masks survive the genuine trace constraints. Prediction by hand: if every white run of the first proper-period D is a singleton, a homogeneous optional mask necessarily forces odd E. Counterfactual: coefficient homogeneity alone settles all remaining least31 profiles. Long white runs and mixed masks remain unresolved. Read GC797/798 and G258 before this step; no experiment or profile enumeration.
+
+**Hand proof in GC822's critical setting.** Let h be the number of white runs in one m-block. With every white run a singleton, h=w is even and nonzero. Enumerate the white ends cyclically. Their c coefficients alternate 0,1 because successive ends have exactly one intervening white tick. Classify each intervening black run as M (length at least2, compulsory mark) or O (singleton, optional mark). G258's forbidden11011 means no two cyclically adjacent black runs can both be M: their intervening white singleton would produce that word.
+
+There is at least one O, since all M would violate this same obstruction. Suppose all O ends have coefficient k. Every end of the opposite coefficient is therefore M. Each coefficient-k end lies next to an opposite-coefficient M, so the no-adjacent-M rule forces it to be O. Thus M and O alternate exactly, each with h/2 members; all M coefficients are 1 xor k. This step is a constraint of the genuine trace, rather than arbitrary phase algebra.
+
+Put C=(h/2 modulo2). GC824 gives
+
+    K = 1 xor C xor ((1 xor k)*C),
+    parity(E) = K xor k*C = 1.
+
+Equivalently GC822's odd-driver equation makes XOR_O u=C; both classes' weighted contributions then cancel the baseline C. Thus a homogeneous optional mask cannot give even E when all white runs are singletons. For the least31 subcase, any actual even-E counterexample must have either a white run of length at least2 or optional ends in both coefficient classes. This necessary disjunction is not an existence claim for either escape.
+
+**Independent controls.** GC821's D=01011 has h=2, alternating singleton/length2 black runs, and one optional end; the proof gives odd E without reclassifying five-tick words. The all-white-singleton word (011)^2 instead has every black run mandatory and contains11011 across each white tick: it is correctly rejected before the mask calculation, and is outside the odd-m critical premises too. GC823's rejected even-E template has a white run of length4, so it does not contradict the theorem; its longer-word rejection is still independently required.
+
+**Unexpected edge and colour checks.** With h=2, each black run has the other as both cyclic neighbours; the alternating argument still works, rather than requiring four distinct runs. Swapping black and white cannot transfer the conclusion to all-black-singleton words: GC785's black count is odd, while this proof uses even white count and alternating white-end coefficients. No colour-symmetric selector theorem is asserted. Mixed optional coefficients still allow both values only in GC824's relaxation; actual coupling may remove either value.
+
+**Disposition.** Close only the all-white-singleton homogeneous-mask even-E avenue for first-D least5/31. Keep long-white and mixed-mask cases, and least155, open; no new status-board row or prize. L444's filing receipt was Git-verified and ACKed, with G.GPT260/261 text and certificate scope already read. Local's VC lane remains untouched. Independent reading requested before any normal filing.

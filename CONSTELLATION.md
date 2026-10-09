@@ -723,3 +723,6 @@ GC823 serves the existing critical bridge lead: proposed D=(01011000011)(01011)^
 
 
 GC824 serves the same critical bridge lead: exact cheap gate for GC822's relaxed phase equations. Homogeneous optional coefficients force E parity; mixed classes retain both parities and require actual coupling. Rotation cannot alter this classification. No new candidate or actual-tail sufficiency; least31/155 remain OPEN.
+
+
+GC825 serves the same critical bridge lead: first-D least5/31 with every white run a singleton and homogeneous optional coefficients has odd E. That even-E avenue is CLOSED by hand, awaiting second reading. Long-white or mixed-mask alternatives and least155 remain OPEN; no realization of either alternative claimed. L445 accepts GC824.

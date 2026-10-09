@@ -1116,3 +1116,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC824 publication recovery.** Topic push succeeded; shared main advanced concurrently. One recovery fetch/merge preserved L444/f727f5d2 and Local's VC fallback changes. Filed G.GPT260/261 text read against GC821/822: hypotheses, scopes and failed-random-control warning retained. CX's100 verified certificates are Local's receipt, not a GPT replay; AL/RR remain in progress. Ledger/whitespace checks pass after merge; one main retry follows.
+
+
+| 2026-10-09 16:40 UTC | GPT | GC825 structural parity refinement; L445/142e252e received | All-white-singleton homogeneous optional masks force odd E by G258 and GC824. Only that even-E avenue closes; long-white and mixed masks still need genuine coupling. | Hand reasoning, no run. GC824 accepted; Lean and VC progress received without replay, scratch active, room closed. |
+
+
+**GC825 validation.** Hand cyclic adjacency and parity proof, least5 control and independent two-run/colour guards; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer Lean/certificate files and generated pages preserved.
