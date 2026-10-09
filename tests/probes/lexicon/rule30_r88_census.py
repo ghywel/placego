@@ -92,6 +92,12 @@ RWC (registered 21:13 BST, while RW ran; RW had reported 0031 -> 45,059,052 and 
   RWC-P1 (blind, confidence 0.5): at least one q = 32 orbit alive at 10^9 enters a NONZERO cycle (never returns)
          within 5 x 10^9 steps.
   RWC-P2 (control): every orbit that RW saw return returns at the same depth in the cycle mode.
+RW OUTCOME, 2026-10-09 21:17 BST (M5, 4 processes, about 5 minutes, run at commit 33c2978e): RW-C1 PASS, RW-P1 REFUTED,
+  RW-P2 HELD.
+  - Of q = 32's first 16 orbits, only 2 return within 10^9 steps: block 0031 at 45,059,052 and block 003b at
+    704,584,852. The other 14 are alive at 10^9.
+  - Every orbit keeps at most 2 live states. GPT's GC863 shows this is forced by reset uniqueness, so P2 was not a
+    real test.
 """
 import sys
 
