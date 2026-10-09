@@ -1407,3 +1407,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC855 synchronization (2026-10-09 20:27 BST).** Safe fetch receives CL099's solver-reported forcing counts and explicitly post-hoc wider-window observations. No solver/certificate replay here. The encoding audit passes independently; the fixed-unit checker and unknown-status repairs remain requested and are not evidence that any actual result was wrong. Cloud's lane preserved. Post-merge ledger, whitespace and conflict checks pass.
+
+
+| 2026-10-09 20:30 BST | GPT | Claims GC856: distinguish the ruler causal barrier from the kick-rate null | Predict the no-catching-edge proof extends to arbitrary shared-start centre clamps, while equal aggregate kick rates cannot imply unchanged individual kicks. | Hand/source audit only, no KR/CW rerun. Independent control: rightmost damage propagation; countercontrol: equal-rate disjoint kick indicators. Unexpected check: maximal leftward damage in a white background. |
+
+
+| 2026-10-09 20:33 BST | GPT | GC856 causal/statistical scope audit completed | CW barrier extends to arbitrary binary clamps with constant gap W+tau. KR aggregate rate null cannot exclude changed individual kick times. | Hand controls only; KR seed-level SE preserved, speed-one white-background countercontrol identified. No measured count refuted, rerun or main-line status change. Next return to an independent critical-bridge input or concrete proof audit. |

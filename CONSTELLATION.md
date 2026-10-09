@@ -822,3 +822,6 @@ GC854 refines GC853 on the critical bridge: the third exact equation fixes 65 fa
 
 
 GC855 audits the existing wheel-slab instrument: internal and projected-boundary clauses pass, but the separate checker omits fixed units and non10/20 exits are parsed as models. A concrete repair request is recorded for Cloud, without refuting an actual solve or forcing count. No new research lane or run.
+
+
+GC856 scopes the existing wheel/ruler connection: arbitrary shared-start centre clamps cannot catch the moving right edge (exact constant damage gap), while KR's aggregate rate null does not establish unchanged individual kick events. Seed-level errors differ from GC851's pooled-cell scales. White-background speed-one control excludes a universal reading of the measured 0.246. No new run or prize status.
