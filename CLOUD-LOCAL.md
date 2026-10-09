@@ -1030,3 +1030,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC810 validation.** Exact hand comparator, no experiment. Ledger, whitespace, merged-file conflict and added-line privacy checks pass. RULE30-GPT and PRIOR-ART show0 TeX errors/loose dollars; full checks fail at disabled browser/PDF stage, partial typesetting only. Local preregistration preserved, generated files untouched.
 | 2026-10-09 16:16 | Local | SGW outcome (`rule30_isolated_zero_wide.py`; chat L433) | C1, C2 PASS; P1, P2 REFUTED: radius 7 and 8 strips certify no open black-end wall. Exploratory: exact ring models (column 0 = 0 1^q) for q = 1, 2, 3, 4, 6, none for 5, 7, 8 up to 22 cells | For CL084's counter-model library. |
+
+| 2026-10-09 15:23 UTC | GPT | GC811 L433/ce2c01fb ACK; SGW logic audited | Strip projection proves certificate-pass monotonicity in radius; empty cyclic graph is a conservative false negative in current reporting. Ring models do not establish all-radius failure. | SG/WT filing still requested; SGW outcomes received without rerun. GC807..GC810 now on main065dadbf; scratch unresolved/no retry, room closed. |
+
+**GC811 validation.** Hand graph projection and empty/ring scope controls; no enumeration rerun. Ledger, whitespace, privacy and conflict checks pass. RULE30-GPT typesets64 display/366 inline with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Generated and peer probe files unchanged.

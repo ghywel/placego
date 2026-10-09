@@ -19127,3 +19127,52 @@ restatement; retain CPY as a valid coordinate tool rather than a closure argumen
 **Coordination.** L432/15608467 wider-strip preregistration received; Local owns that run.
 GC807..GC809 remain published on the topic branch; main publication races again after the
 safe fetch, with all peer changes merged. No force, no scratch retry, no break-room visit.
+
+
+## GC811 — Strip-certificate monotonicity and two scope controls (2026-10-09)
+
+**Independent SGW source audit and bounded hand block.** L433/ce2c01fb received. Read the
+whole wider-strip implementation; its word-level interior update matches the literal rule
+algebraically, with both fresh outer bits free. Tarjan and gcd-class test follow SG's already
+accepted logic. Numerical runs and the post-hoc ring search are received, not rerun here.
+Expect a narrow-strip pass to persist at every larger radius. Counterfactual: changing the
+SCC gcd can destroy a forced-neighbour certificate. Check the exact graph projection rather
+than assume periods or component counts agree. Unexpected control: an empty cyclic graph.
+
+**Projection theorem.** Restrict each radius(R+1) row to positions-R..R and retain its
+phase. Every edge projects to a radiusR edge, because the smaller interior update uses
+only retained cells; its outer cells are permitted to take any projected values. The image
+of a strongly connected component lies in one smaller SCC: mutual directed paths project
+to mutual directed paths. A cyclic larger SCC projects to a cyclic smaller SCC. If their
+gcd periods are P_big and P_small, then P_small divides P_big, since every larger closed
+walk projects to a smaller closed walk of exactly the same length.
+
+Pick a root in the larger SCC. Any path of length l to a vertex projects to a smaller path
+of length l, so its smaller time class is l modulo P_small plus one fixed root offset.
+Consequently a larger class modulo P_big maps into a single smaller class. If one neighbour
+is fixed on each smaller class, that same neighbour is fixed on every larger class. Thus
+an SG pass at one radius must pass at all larger radii, apart from the implementation's
+empty-component convention below. Gcd growth, SCC splitting and alternating choices of
+which side is forced between components do not invalidate this implication. This is a
+formal control for SGW-C1; it does not give a bound on a useful radius for a failed wall.
+
+**Empty graph convention.** Both current probes require bool(res) as well as all components
+passing. If there are no cyclic SCCs, the finite graph has no infinite path, so the wall is
+already excluded without Jen. Returning FAIL in that case is conservative but loses a
+valid certificate. Treat it as EXCLUDED-ACYCLIC for any future method extension; do not
+reinterpret existing reported runs, which have cyclic components. No peer code changed.
+
+**Ring control.** A periodic ring witness is a genuine infinite-background wall model,
+but does not itself force the finite-strip test to fail. Its closed walk may lie in an SCC
+whose time classes force the neighbours; Jen only excludes a finite nonzero seed. Therefore
+L433's distinction is correct: its ring witnesses exclude no finite seed and do not prove
+failure at every radius. Conversely a failed strip can contain boundary-driven walks with
+no global realization. Failure, a ring model and a finite-seed counterexample are three
+separate assertions. In particular q1's observed failures throughR8 are not a theorem of
+failure at allR. This guards against declaring the period2 strip approach impossible from
+the ring alone.
+
+**Disposition.** SGW's existing q7 passes and failures are received; no new wall excluded.
+The projection control is universal, while applicability to any currently failed wall
+still needs its own certificate. Keep Local's computation lane and standard SG/WT filing
+request. Main publication ofGC807..GC810 recovered at065dadbf; scratch unresolved/no retry.
