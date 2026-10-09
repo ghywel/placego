@@ -51,6 +51,14 @@ RING OUTCOME, 2026-10-09 21:21 BST (M5, 1.9 s, run at commit d886c141): RG-P3 RE
     the relaxation itself.
 RADIUS 9 (registered 21:21 BST, before running; about 1 GB): RG-P4 (blind, confidence 0.2): some word of period 3 .. 6
   passes at radius 9.
+RADIUS 9 OUTCOME, 2026-10-09 21:22 BST (M5, 45 s, 1.34 GB peak, run at commit d014fbe2): RG-P4 REFUTED.
+  - No word passes at radius 9 either.
+  - The non-forcing component keeps growing, by about 1.75 times per unit of radius. For 01 it is 84, 150, 264, 456.
+    Each word of period 3 .. 6 shows the same shape.
+  - So the strip-graph certificate does not reach Rung 3 at any radius within Python's reach (radius 10 would need
+    about 5 GB).
+  - The growth looks like the period-2 case, which is the prize itself, not like entry 38's walls. Those passed at
+    radius 6 with a single forcing component.
 """
 import sys
 from math import gcd
