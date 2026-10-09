@@ -60,10 +60,12 @@ static void brent(uint64_t blk, int h, long long MAXS) {
     for (int i = 0; i < nc; i++) if (ch[i]) { y0 = ch[i]; break; }   /* GC863: the two first children are rotations */
     uint64_t tx = x0, ty = y0, hx = x0, hy = y0;
     long long power = 1, lam = 1, steps = 1;
+    if (2 > MAXS) { printf("q %d block %0*llx: no return and no cycle found by depth 1\n", Q, (h + 3) / 4, (unsigned long long)blk); return; }   /* GC870: guard before the first advance */
     int r = succ(&hx, &hy);
     if (r != 1) { printf("q %d block %0*llx: %s at depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, r == 0 ? "return" : (r == 2 ? "GATE FAILURE (child count)" : "GATE FAILURE (zero driver)"), steps + 1); return; }
     while (!(tx == hx && ty == hy)) {
         if (power == lam) { tx = hx; ty = hy; power *= 2; lam = 0; }
+        if (steps + 2 > MAXS) { printf("q %d block %0*llx: no return and no cycle found by depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, steps + 1); fflush(stdout); return; }   /* GC870: guard before each advance */
         r = succ(&hx, &hy); steps++; lam++;
         if (r != 1) { printf("q %d block %0*llx: %s at depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, r == 0 ? "return" : (r == 2 ? "GATE FAILURE (child count)" : "GATE FAILURE (zero driver)"), steps + 1); fflush(stdout); return; }
         if (steps + 1 >= MAXS) {                       /* GC868: MAXS counts original depth in both modes */ printf("q %d block %0*llx: no return and no cycle found by depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, steps + 1); fflush(stdout); return; }
