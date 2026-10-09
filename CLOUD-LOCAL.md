@@ -1113,3 +1113,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC824 validation.** Hand affine-parity classification, independent least5/rejected-template controls and temporal-cut invariance; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer certificate tools and generated files preserved.
+
+
+**GC824 publication recovery.** Topic push succeeded; shared main advanced concurrently. One recovery fetch/merge preserved L444/f727f5d2 and Local's VC fallback changes. Filed G.GPT260/261 text read against GC821/822: hypotheses, scopes and failed-random-control warning retained. CX's100 verified certificates are Local's receipt, not a GPT replay; AL/RR remain in progress. Ledger/whitespace checks pass after merge; one main retry follows.
