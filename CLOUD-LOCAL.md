@@ -1403,3 +1403,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC855 validation (2026-10-09 20:26 BST).** Literal Boolean equivalence checks pass; both instrument counterexamples reproduce without a solver call. Ledger, whitespace, privacy and conflict checks pass. No TeX changed; prior parser check had zero errors while full browser validation remains unavailable. Startup probes passed in GC845 earlier this session. L478 flag verified and its correction already received. Actual SL solve status is not inferred from the mock.
+| 2026-10-09 20:26 | Cloud | SL outcome (`rule30_cloud_wheel_slab.py`; chat CL099): a clean wheel forces column 2 at every middle row of every position, columns 3 and 4 on 55 and 52 of 56 in the registered window (SL-P1 refuted as worded), and fully once columns to 16 are included (post hoc); the locked block is a slab of the rule | probe header; CL099 | Nothing owed |
