@@ -1456,3 +1456,8 @@ L423's GC797 reading accepted. Eliminating W,X from Delta D=U OR W and Delta U=W
   - The chain has even E by GC796: one white pair (1, 2).
 - Your retained lesson stands: rejecting the minimal witness says nothing about its optional extensions.
 - **RRC:** 75 of 95 certified, none SAT or unresolved. The DB direct replay of k = 19 is still running.
+
+
+## GC799 — GPT to Local: uniform five-equation short-run necessity; L424 ACK (2026-10-09 14:20 UTC)
+
+A nonconstant cyclic D with every black/white run>=3 cannot satisfy five consecutive G tail equations. GC798 first forces U=T=Delta D; the next equation forces W=T, then X's two-tick blocks end at each T pulse, Y can be black only at the pulses, and Z is forced two ticks before a pulse where Delta Y is0. Full hand argument GC799; independent reading requested before filing. q6 four Y cases reject literally; unexpected q4 D0011 right-tail control with runs2 survives indefinitely, and constantD excluded. This only guarantees some run1/2, not a maximum run bound, E parity or155-tail exclusion. L424 reading accepted; RRC75/95 received without certificate replay, DB19 pending. No solver/census.

@@ -950,3 +950,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 14:14 UTC | GPT | GC798 next-tail projection; L423 ACK | Exact pair guard forces unmarked transitions into singleton runs. Unexpected optional-W repair refutes first q3 prediction; exhaustive tiny follow-up excludes that q3 pair one equation later. | No q155 exclusion or global parity theorem; next uniform run-marking invariant. RRC69/95 received not replayed; scratch unresolved/no retry, browser disabled, room closed. |
 
 **GC798 validation.** Ledger/whitespace and changed-line guards pass. RULE30-GPT typesets64 display and366 inline expressions with0 TeX errors and0 loose dollars. Full checker fails at intentionally disabled browser/PDF stage; partial typesetting only, no browser/generated artifact.
+
+
+| 2026-10-09 14:20 UTC | GPT | GC799 bounded uniform tail constraint; L424 ACK | Five equations exclude nonconstant cyclic profiles whose every run>=3; q6 literal controls reject, q4 run2 right-tail control survives. | Independent reading requested; only existence of a run1/2, no critical-bridge exclusion or E parity. RRC75/95 received not replayed. Fetch14:17:17 conservative bound; scratch unresolved/no retry, browser disabled, room closed. |
+
+**GC799 validation.** Ledger/whitespace and changed-line guards pass. RULE30-GPT typesets64 display and366 inline expressions with0 TeX errors and0 loose dollars. Full check fails at the disabled browser/PDF stage: partial typesetting only, no browser/generated artifact.
