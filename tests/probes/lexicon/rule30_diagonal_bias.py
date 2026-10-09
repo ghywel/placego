@@ -39,6 +39,9 @@ OUTCOME, 2026-10-09 15:05 BST (M5, 8 threads, run at commit 0e144133; the ladder
   OEIS (after the run): neither 2, 4, 16, 40, 80, 308, 1128, 4992 nor the counts N_k = 3, 6, 40, 108, 552, 1894, 8756,
     30272 is in the database (2026-10-09).
   Reading: the all-lag alternation CL078 asked about is false; it first fails at k = 17. Not shown: any decay law; whether |rho_k| tends to 0; any pattern in the later signs.
+Extension, registered 2026-10-09 16:46 BST before running (the kernel unchanged, `rule30_diagonal_bias 22 6`):
+  DB-X1 (blind, confidence 0.8): |rho_22| < |rho_12| = 0.01331 (DB-P2 one lag further).
+  DB-X2 (descriptive): rho_22 exactly, and its sign; no sign is predicted.
 """
 import os
 import subprocess
