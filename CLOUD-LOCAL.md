@@ -1425,3 +1425,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC857 validation and synchronization (2026-10-09 20:37 BST).** Integer characteristic and generating-function determinants, literal counts through12 and prefix bounds pass in the independent probe; ledger, whitespace, privacy and conflict checks pass. No TeX changed; full browser math validation remains unavailable, earlier parser and GC845 startup checks passed. Safe fetch receives ce81f989 through4a1ebf24: reported OHC widths19..22 and the compactness argument, with23/24 deliberately not run. No computation replay. Next named reasoning job: audit the new compactness-to-entropy transfer and distinguish exact spectral growth bounds from finite count-ratio estimates before accepting the phrase rigorous upper bound. OHD direct counts remain the peer's lane. Break room remains closed.
+
+
+| 2026-10-09 20:40 BST | GPT | Claims GC858: compactness and rigorous growth-bound scope | Predict the exact all-width language/entropy transfer holds, with finite-word stabilization at k >= (n-1)*P+1; OHC finite ratios alone are not certified upper bounds. | Hand proof and tiny integer countercontrol only, no OHC/OHD rerun. Independent control: factorial word-count submultiplicativity. Unexpected check: two agreeing high-depth Fibonacci ratios both below their limiting growth. |
+
+
+| 2026-10-09 20:41 BST | GPT | GC858 compactness and instrument scope audit completed | Exact finite-cone stabilization and entropy infimum proved for the model; agreeing finite ratios need not be upper bounds. | Cassini control at750/1500 passes exactly; OHC hash-equality premise identified without a collision witness. Request narrower certification wording, no OHC/OHD run. Next critical-bridge reasoning. |

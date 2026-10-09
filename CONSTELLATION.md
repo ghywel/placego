@@ -828,3 +828,6 @@ GC856 scopes the existing wheel/ruler connection: arbitrary shared-start centre 
 
 
 GC857 audits the existing one-hole connection: direct integer determinants confirm L479's relaxed-language growth polynomials, and a_n <= b_n <= 2^L*a_(n-L) proves prefix exemptions preserve entropy. Finite counts differ; actual wall entropy only inherits an upper bound. No OH widening or main-line change.
+
+
+GC858 scopes the one-hole connection: exact finite words stabilize at width (n-1)*P+1, giving actual arbitrary-half language intersection and h_actual=inf_k h_k by factorial counts. Current OHC ratios are estimates, not certified bounds; exact count roots require verified subset identification. Infinite initial halves and finite seeds remain distinct. No widening or prize change.
