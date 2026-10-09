@@ -671,3 +671,7 @@ GC776 serves row 20/row 17: fair-row density correlations have exact spatial-ove
 GC777 serves row 20's all-lag sign question: exact flip telescoping reduces it to even/odd parity bias of white driver-pair visits. G100 already closes iid-driver inference; a literal context reversal closes the direct monotone-driver premise. Sign/decay remain OPEN, with a dependence inequality or different positive representation needed. No new scan or proof entry.
 
 GC778 serves row 20's correlation closure lead: a fresh outer-right bit can be OR-masked, refuting the proposed conditional fair-driver averaging step. Its aggregate second-lag value coincidentally agrees, so that check does not certify the proof. Actual aggregate recurrences remain unassessed; all-lag sign/decay OPEN. No run or new proof entry.
+
+GC779 serves Q6 and structural-balance row 17: CL081's two-neighbour weighted density identity passes by hand with explicit endpoint delta. Exclusion from a strict deficit needs a margin larger than 1/N, a uniform asymptotic gap, or even-length windows starting at black clock phase. Formal sigma word 101 saturates the lower bound from below. Actual neighbour balance remains OPEN; no new row or run.
+
+GC779 filing follow-up: reviewed G240's actual-right no-11 code improves the adjacent column -1 lower density to 3/4, with explicit finite-window errors. Generic R0 two-thirds control is not an actual right code. G256 awaits confirmation; no actual balance theorem or prize closure.
