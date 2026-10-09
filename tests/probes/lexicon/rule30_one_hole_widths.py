@@ -262,7 +262,10 @@ TABLE OUTCOME, 2026-10-09 22:19 BST (M5, seconds to 40 s per case, run at commit
     The closed set {8} together with {p >= 10} is exactly entry 38's finite-seed exclusion set (q = p - 1 = 7, q >= 9).
     The open set {2 .. 7, 9} is exactly entry 38's open black-end cases. So the one-sided channel closes where, and only
     where, the two-sided exclusion holds, on the widths tested.
-  - A hand reason for p = 8's close (seven black steps and a white one, against GC850's nine black steps) is open.
+  - p = 8's close, by certificate (22:21 BST, after the run): from all 32 width-5 states, two macro steps leave exactly
+    10 states, all with x1 = 0, and a further macro maps those 10 into themselves. So x1 = 0 from the third hole on.
+    Machine-checked in Lean as tests/probes/lean/P8Lock.lean (`p8_lock`; no sorryAx). A conceptual hand reason, in the
+    style of GC850's invariant, is still open.
 """
 import sys
 from itertools import product
