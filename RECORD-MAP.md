@@ -396,3 +396,5 @@ PART: as on the board.
   tests/probes/lean/TheoremA.lean, L501
 
 - TheoremA source matches entry5; empty-window indices safe, time rebasing remains hand — PROVED (source scope) — GC882.
+
+- TC2/layer product sound; labelled export needed, sharper certificate remains open — PART (source/hand audit) — GC883.
