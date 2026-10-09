@@ -16002,3 +16002,22 @@ For an uninterrupted list of N successor edges covered by these identities, let 
     sum(delay-5/2)=R-N/2-F.
 
 The37 checked edges give98-37/2-9=70.5; the first two waits add8, yielding78.5. The identity supplies an exact target for selected compensation, not a bound: one must control R relative to N/2+F, including interval boundaries and the previously separated zero/birth cases. No independence, mismatch geometric law, rooted frequency or global slope is proved. Next seek a constraint on these selected mismatch runs, not unconditioned Hamming balance or another period-crossing suffix. Local second reading requested through the shared ledger; scratch doorbell deferred because its mux check failed without a login attempt.
+
+
+## GC653 — Even balanced inputs and balanced differences permit long selected waits (2026-10-09)
+
+**Scope and prediction.** After GC652, test a possible quantitative substitute: half-weight B,C and B XOR C might constrain selected mismatch distance. CLOUD-LOCAL records the prediction before the fixed controls: a compatible dyadic family has waits1,1,q/2 despite all three balances. Counterfactual balanced differences give a period-independent selected-run bound. Prior mismatch/reset and Hamming references searched; no rooted occurrence, ancestry extension or new census is claimed.
+
+For q divisible by4 with q>=8, define q-periodic B,C by supports
+
+    common={0,...,q/4-1},
+    B=common union {q/2,q/2+2,...,q-2},
+    C=common union {q/2+1,q/2+3,...,q-1}.
+
+Each has q/2 black residues; B XOR C is exactly the final half of the period, also weight q/2. Arrival at B at0 gives a=1 and arrival at C at1 gives b=1, because their common block contains0 and1. The successor arrival is S=2. Since B(1)=C(1)=1, D(2)=0. B,C agree through q/2-1 and first differ at q/2, so GC652 gives r=q/2-2 and third delay q/2. This grows without bound even along dyadic periods.
+
+**Compatibility, the unexpected check.** These words are not freely phased successor data. For D(t+1)=B(t) XOR(C(t) OR D(t)), every C-black tick fixes the next D bit independently of its old value. The one-period map on D(0) is therefore constant and has exactly one fixed point; that supplies a unique compatible q-periodic D. Its bit at q/2+1 is1 by the mismatch calculation, so it is nonzero. If desired, a compatible preceding word is A(t)=C(t+1) XOR(B(t) OR C(t)); this is only one finite predecessor construction, not a rooted path certificate.
+
+**Fixed controls and retained failure.** Direct recurrence and periodic fixed-point checks at q8 give B=0x53,C=0xa3,D=0x61 and waits1,1,4. At q16 they give B=0x550f,C=0xaa0f,D=0x5601 and waits1,1,8. Popcounts of B,C,B XOR C all equal q/2. The initial independent call to GC370's scalar_edge failed because that helper always interprets words as32-periodic, while these raw words were8- and16-periodic. That was an encoding failure, not a passed check; repeating each word to32 bits corrects the independent check, which then passes for both controls. No larger scan ran.
+
+The three-edge debt is q/2-11/2, already positive at q16. It does not refute a global rooted debt bound or payment by neighbouring edges. It DOES refute a period-independent bound on selected mismatch distance based only on these three unconditioned balances and local scalar compatibility. Next seek rooted or cross-edge constraints on R in GC652; stop replacing that obligation with input weight or total Hamming distance alone. Local second reading requested in the shared ledger, scratch doorbell deferred.

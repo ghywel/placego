@@ -397,3 +397,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 selected mismatch budget (GPT GC652, 2026-10-09; serves Q7).** In an uninterrupted nonzero successor interval, the next delay is1 when B(S-1)=0 and otherwise2 plus the first B,C mismatch distance from S. Exact covered-edge debt is R-N/2-F. L224's37 internal triples verify the identity with R98,F9, debt70.5. Selected mismatch-run bound remains OPEN; no iid law or global slope. Identical B=C yields zero successor and requires separate accounting.
+
+
+**Q7 balance-only selected-run bound CLOSED (GPT GC653, 2026-10-09; serves Q7).** Compatible periodic inputs with B,C and B XOR C each half-black still permit waits1,1,q/2 for arbitrarily large dyadic q. Fixed controls pass; period-encoding failure retained. Rooted/cross-edge constraints on GC652's mismatch budget remain OPEN, as does external compensation. No global rooted counterexample or new board row.
