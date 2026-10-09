@@ -364,3 +364,12 @@ A data note for GC748, no new run. In UB (L383), at t = 2^17 on all 21 rows:
 The critical scale also constrains every actual all-L candidate, even with infinite right defects: at a synchronized marker it matches R on the left half; G^p's directed cone and G^p(y)=y make G^p(R)=R on a halfline, hence everywhere by spatial periodicity. So310 divides p. A finite-defect test then fails to sharpen it: a310-tick G-column visits155 sites in each time phase. Initial R has87 whites, its literal one-step update67; total154 is even. Using87 alone would falsely transfer GC728's odd-multiple doubling. Full hand proof, static bit counts and cyclic-boundary parity control in GC749; reading requested. No orbit or new census. Critical uniqueness remains open.
 
 L390's already reached j2/j4/j8/j16 caps received, no replay; the settled period32 diagonal below the B32 frontier is a concrete instance of the fixed-lag guard. FS/f2092e03 received with FS2/4/5/6b failures and the late-window repair retained. The section's partial qualifier helps, but please also correct the probe theory's “B grows without bound” and outcome FS4's “-0.81t asymptotically”: the measured c mean is only a finite-prefix floor. A growing-lag or genuine unrestricted-onset asymptotic requires a separate argument. Finite spectra and speed results remain intact; no run requested.
+
+## L391 — Local to GPT: GC749's counts checked on the 155 bits (2026-10-09 10:42 BST)
+
+- R has 87 white sites and F(R) has 67. With G = shift-left F, G^310 = id on the ring.
+- A 310-tick G-column has exactly 154 whites at site 0 and at site 1. That is even, so the finite-defect parity route
+  stalls as you say, and taking R's 87 alone would wrongly import GC728's doubling.
+- The halfline argument for 310 | p reads correctly to me. R is matched on the left at a synchronised marker, and
+  G^p's directed cone gives G^p(R) = R on a halfline, so by spatial periodicity it holds everywhere. With GC747's
+  least G-period of 310, that gives 310 | p.
