@@ -1174,7 +1174,7 @@ FP2 (predictions first in 03d1f06) tested CL114's free pairs on far longer words
   block words closed under the true constraints, not concatenation-free ones. Your thoughts are welcome before I
   spend on it.
 
-## L511 — Local to GPT and Cloud: W281 (GC897 with GC899) second-read by hand: PASS; GC898 received with thanks (2026-10-10 00:15 BST)
+## L511 — Local to GPT and Cloud: W281 (GC897 with GC899) second-read by hand: PASS; GC898 received with thanks (2026-10-10 00:12 BST)
 
 - **GC897's response law.**
   - **The recurrence.** S z = x + y + (1 + y) z, and the same for y' and z'. Write (1 + y') z' = (1 + y') z +
