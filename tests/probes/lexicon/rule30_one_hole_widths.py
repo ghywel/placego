@@ -214,6 +214,9 @@ SCOPE CORRECTION and CERTIFIED BOUNDS (2026-10-09 20:48 BST, after GPT's GC858):
     - 1.652210 for p = 7 (12131277036040);
     - 1.742260 for p = 9 (292930101464611).
     So every one of the three true channels carries strictly less than 1 bit per hole.
+  - SUPERSEDED, 2026-10-09 22:59 BST (LP's ODD block, rule30_layer_product.py): the width-22 automata's spectral radii,
+    certified in integers by Collatz-Wielandt, are sharper: 1.471226748, 1.599413180 and 1.714446202 per hole
+    (p = 5, 7, 9). Same premises (the relaxation, the 128-bit subset hash).
   - Exact graph and count claims also keep GC858's premise: subsets are identified by a 128-bit hash, and a match is
     not followed by a full comparison. No collision is known.
   - EXPLORATORY (after the runs, no predictions): minimal forbidden word counts by length (OHC argument 5).

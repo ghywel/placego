@@ -346,6 +346,11 @@ app is unpublished by design.
   ceiling on their automaton's spectral radius, against §8.20's layer bound 0.1236. Predictions in the docstring,
   pushed before the run. No data.
 
+- `lexicon/rule30_cloud_hole_freepairs_long.py` (Cloud, 2026-10-09): FP2, FP's free pairs on two to three times
+  longer hole words by TC's exact SAT formula (1,024 ten-block words at p = 9 and 7, 64 at p = 5, random 15-block
+  words at p = 9), every model replayed, plus a locality check on the realising right halves. Predictions in the
+  docstring, pushed before the run. No data.
+
 - `lexicon/rule30_cloud_white_end_replay.py` (Cloud, 2026-10-09): WR, a third independent replay of L498's computed
   step for the white end 1 0^q (width-8 stable sets, per-tick determinism for q = 10 .. 40, W^(n+4) = W^n from
   n = 22), with set-valued relations and no shared code. Predictions and outcome in the docstring; CL110. No data.

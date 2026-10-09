@@ -223,6 +223,13 @@ PART: as on the board.
 - One-hole walls under random right halves: p = 5 alternates between locks (column 1 period 10, about 1,000 holes,
   kicked at a constant 1.0e-3 a hole) and free stretches; p = 7, 9 keep about 0.36 and 0.56 bits a hole, stationary
   — MEASURED — HE, HE2, HE3, rule30_cloud_hole_entropy.py
+- One-hole TRUE language by SAT: exact counts to 17, 15, 14 holes; certified rho <= 1.512835, 1.642221, 1.709537
+  (p = 5, 7, 9), below width 22's ceilings; zero entropy still OPEN — COMPUTED (CaDiCaL UNSAT, integer
+  Collatz-Wielandt certificates) — TC, rule30_cloud_hole_truecount.py, CL109, CL114; GC871, GC877
+- Free pairs to the reached length: p = 9 (000, 001), p = 7 (00, 010), p = 5 (10, 111000); a target for a
+  lower-bound construction, not a bound — COMPUTED (to N only) — FP, rule30_cloud_hole_freepairs.py, CL114
+- The TRUE 0101 channel to 39 visible bits certifies only 0.1517 bits, not below §8.20's 0.1236; a product with the
+  layer automaton is the suggested next step — COMPUTED — TC2, rule30_cloud_channel_truecount.py, CL113
 - Kopra's marker-word barrier does not rest on symmetry; K4 (moves -3, -1, +3): centre eventually white, other
   columns decided only for |j| <= 64 — PROVED (centre) / COMPUTED — rule30_cloud_lone_column.py, CL088, GC829
 - Columns of linear CA are 2-automatic (a known theorem, rechecked); restart lemma (0 in S: eventually periodic
@@ -324,8 +331,8 @@ PART: as on the board.
   rule30_diagonal_bias.py, L418, L473
 - One-hole walls 0 1^(p-1): width 5 closes every odd p >= 11; nine black steps lock the pair 01 (every p >= 10) —
   COMPUTED / PROVED (G.GPT271; Lean BlackLock.lean) — rule30_one_hole_widths.py, GC850, L473, L476
-- One-hole p = 5, 7, 9: certified true growth per hole <= 1.543759, 1.652210, 1.742260; whether the entropy is zero
-  is OPEN — COMPUTED — rule30_one_hole_widths.{py,c}, L481, GC858, GC859
+- One-hole p = 5, 7, 9: certified true growth per hole <= 1.471227, 1.599414, 1.714447 (width-22 radii; were c_60's
+  1.543759, 1.652210, 1.742260); entropy zero is OPEN — COMPUTED — rule30_layer_product.py (ODD), L504; L481, GC858
 - One-hole exact relaxed languages: p = 9 (widths 8 .. 12) x^4 - 2x^3 + x - 1; p = 7 (widths 7 .. 9) x^5 - x^4 -
   x^3 - x^2 - x + 1 — PROVED (GC857) — L479
 - True half-line system with the wall 0 1^4: hole word 10000 never occurs; |L_5..7| = 31, 60, 108 —

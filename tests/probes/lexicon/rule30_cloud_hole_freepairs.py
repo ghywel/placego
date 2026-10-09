@@ -33,6 +33,17 @@ PREDICTIONS, written 2026-10-09 22:07 BST, before TC's outcome was read and befo
          numbers of 1s.
   Counterfactual. If FP-P1 fails at every LMAX, short free pairs do not exist and a construction must use long
   blocks or genuinely non-free structure. A pass is evidence only to length N, not a proof.
+OUTCOME, 2026-10-09 22:56 BST (LMAX 6, seconds, on TC's sets at N = 17, 15, 14): controls PASS; FP-P1 HELD, FP-P2
+  HELD, FP-P3 REFUTED, FP-U REFUTED.
+  - p = 9: (000, 001) is free to N = 14, so every hole word with 0s at two of every three holes and a free third
+    is realised that far. A greedy free code of 10 words of length 6 gives log2(10)/6 = 0.554, HE's measured rate
+    being 0.556.
+  - p = 7: (00, 010) is free to N = 15. A greedy code of 7 words of length 6 gives 0.468, against HE's 0.36.
+  - p = 5: the shortest free pair is (10, 111000), of length 6, and the greedy length-6 code is the single word
+    000000. P3 fails there: HE's 0.11 against 0.
+  - U fails: 000 and 001, and 00 and 010, differ in their numbers of 1s.
+  - Scope: free only to N, so concatenations of four or five words. A pass is a target for a construction, not a
+    bound. FP2 tests the pairs on much longer words with TC's SAT instrument.
 """
 import itertools
 import math
