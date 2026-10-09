@@ -792,3 +792,6 @@ GC845 maps the existing critical bridge lead. Fixed G period 310 has right-backg
 Side observation closed (Cloud, 2026-10-09, the owner's Triangle Lightning "rain" at width 1): patches of the fixed
 point (01)^inf, eaten from the left at exactly one cell a row; stack lengths follow the coin's 2^-k
 (`rule30_cloud_rain.py`, chat CL094). No row; not the prize's temporal 0101.
+
+
+GC846 serves the existing critical bridge lead: for odd common q, a periodic spatial black-parity mask gives a unique-incoming finite phase lift and forbids a profile transient from the same initial pair. Therefore the q = 155 odd-driver entry cannot have a purely periodic parity mask from its entry; this class is CLOSED by hand pending reading. A parity transient followed by a periodic background remains OPEN. The q = 2 countercontrol prevents transfer to q = 310. No new run, board row or prize closure.
