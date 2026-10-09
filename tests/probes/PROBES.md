@@ -336,6 +336,11 @@ app is unpublished by design.
   integers). It checks the band (C = 1 outside it) and a direct simulation, and compares with CL095's measured
   C(d, d). Predictions in the docstring, pushed before the run. No data.
 
+- `lexicon/rule30_cloud_hole_freepairs.py` (Cloud, 2026-10-09): FP, free pairs and free codes in the TRUE one-hole
+  language, decided exactly up to TC's reached length from TC's complete set of minimal forbidden words (read
+  from NP_SCRATCH_TC). A free pair would bound the entropy below as far as it holds. Predictions in the docstring,
+  pushed before the run. No data.
+
 
 - `lexicon/rule30_one_excursion.c`: EX1, one fixed q16 zero-return charge audit from reviewed pair(320,64); CPU, standard C,800000-edge/2-second caps. Preregistered GC358, NOT RUN. Binary and transcript outside Git.
 
