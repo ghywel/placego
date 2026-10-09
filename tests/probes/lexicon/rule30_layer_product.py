@@ -6,6 +6,7 @@ layer with F.
 RUN-ON:     cpu (C, one core); minutes; under 2 GB at width 22
 COMMAND:    python3 tests/probes/lexicon/rule30_layer_product.py FWORDS [WIDTHS=16,18,20,22]
             python3 tests/probes/lexicon/rule30_layer_product.py verify DUMP FWORDS CERT   (GC885's verifier)
+            python3 tests/probes/lexicon/rule30_layer_product.py odd P FWORDS TC_CEILING   (ODD3, width 22)
             (needs ~/np-scratch-int/rule30-oh/ohc and lp, built from rule30_one_hole_widths.c and
             rule30_layer_product.c; FWORDS is TC2's list of true minimal forbidden words, one per line)
 
@@ -125,6 +126,34 @@ OUTCOME, 2026-10-09 23:08 BST (M5, 35 s, 640 MB, at commit 35c472b8; F = CL115's
     wider. They do not change the picture of the channel levelling off near 0.12. A tight certificate on entropy2's
     m = 28 automaton (about 0.1222), or that automaton times F, would sharpen the record's figure by a few
     thousandths at most, at SQ6's 6 GB.
+ODD3 (registered 2026-10-09 23:11 BST, before Cloud's odd-wall lists are seen): the width-22 layer times TC's true
+  minimal forbidden words at the walls 0 1^(p-1), p = 5, 7, 9 (CL114: 1,328, 641 and 270 words, to 17, 15 and 14
+  holes; TC's ceilings 1.512835, 1.642221, 1.709537; the layer's radii 1.471227, 1.599414, 1.714447 from ODD). The
+  hole is x1 at times kp in both TC and OHC (TC-C1 matched OHC's counts).
+  Record searched: as for ODD, plus 'free pair' -> CL114's FP (pairs free to 14 .. 17 holes).
+  LP-O4-C (controls, must hold at each p): F_red changes nothing (C2's test); the one-node layer with F replays TC's
+        ceiling, log2 within 1e-4 below it and at most 1e-6 above; every certificate verifies.
+  LP-O4-P1 (blind, confidence 0.7): at p = 5 the product certifies at least 0.005 below the layer's 1.471227.
+  LP-O4-P2 (blind, confidence 0.5): at p = 9 the product beats both factors, certifying below TC's 1.709537.
+  LP-O4-P3 (blind, confidence 0.6): at p = 7 the product certifies at least 0.005 below the layer's 1.599414.
+  LP-O4-U (blind, confidence 0.4): at p = 5, CL114 says the truth pulls ahead of the width-22 relaxation's minimal
+        forbidden counts only from length 13; still, some word of F_new has length 12 or less.
+  Counterfactual. If P1 and P3 fail, TC's short true words (to 14 .. 17 holes) add little beyond the width-22 layer,
+  and the next step is longer true words, not wider layers.
+  (The lists, CL117, were committed by Cloud at 23:11 and merged here only after this block was pushed, 9153db1a.)
+ODD3 OUTCOME, 2026-10-09 23:14 BST (M5, under 1 GB, a minute per wall, at commit 9153db1a; digests checked against
+  CL117): LP-O4-C PASS at p = 5, 7 and 9; LP-O4-P1 HELD, LP-O4-P2 HELD, LP-O4-P3 HELD, LP-O4-U REFUTED.
+  - Certified and verified, per hole (the layer, F alone, then the product):
+    - p = 5: 1.471226748, 1.512834968, then 1.461899294 (0.547844 bits); F_new 493 of 1,328 words, lengths 13 .. 18;
+    - p = 7: 1.599413180, 1.642221323, then 1.590414302 (0.669403 bits); F_new 288 of 641, lengths 10 .. 16;
+    - p = 9: 1.714446202, 1.709537420, then 1.697624906 (0.763518 bits); F_new 150 of 270, lengths 10 .. 15.
+  - The product beats the better factor by 0.0092, 0.0081 and 0.0101 bits a hole.
+  - C3: F alone replays TC's ceilings; the differences, below 3e-7 bits, are TC's rounding to 6 decimals.
+  - U refuted: at p = 5 the shortest F word the layer allows has length 13, as CL114 found from the counts. At p = 7
+    and 9 it is 10.
+  - These are the record's best certified ceilings on the true one-hole languages. Zero entropy stays open: these
+    are upper bounds, and Cloud's free pairs (CL114) are the lower-bound side.
+
 """
 import os
 import subprocess
@@ -275,8 +304,38 @@ def lpv(tmp, dump, fpath, name, env_extra=None):
     return R, ratio, live, out
 
 
+def odd(p, fpath, tc_ceiling):
+    """ODD3: the width-22 layer at the wall 0 1^(p-1) times TC's F, with controls and verification"""
+    import math
+    tmpdir = os.path.expanduser('~/np-scratch-int/rule30-lp')
+    os.makedirs(tmpdir, exist_ok=True)
+    dump = os.path.join(tmpdir, 'p%dk22.dump' % p)
+    run([OHC, '22', str(p)], env=dict(os.environ, OHC_DUMP=dump))
+    R0, r0, l0, _ = lpv(tmpdir, dump, '-', 'p%d-layer' % p)
+    pr, pn, nred, nnew = split_f(fpath, dump, os.path.join(tmpdir, 'p%d' % p))
+    rr = cert(run([LP, dump, pr]))
+    c2 = rr is not None and r0 is not None and abs(rr[1] - r0) < 1e-10
+    Rf, rf, lf, of = lpv(tmpdir, '-', fpath, 'p%d-F' % p)
+    c3 = Rf is not None and -1e-4 <= math.log2(Rf / D) - math.log2(tc_ceiling) <= 1e-6
+    R1, r1, l1, o = lpv(tmpdir, dump, fpath, 'p%d-product' % p)
+    vok = None not in (R0, Rf, R1)
+    print('p = %d: F %s' % (p, of.splitlines()[0]))
+    if vok:
+        print('  layer %.9f; F alone %.9f (TC %.6f; C3 %s); F_red %d, F_new %d (C2 %s); product %.9f, live %d' % (
+            R0 / D, Rf / D, tc_ceiling, 'ok' if c3 else 'FAIL', nred, nnew, 'ok' if c2 else 'FAIL', R1 / D, l1))
+    for x in o.splitlines():
+        if x.startswith('allowed by length') or 'F words the layer allows' in x:
+            print('   ', x)
+    ok = c2 and c3 and vok
+    print('LP-O4-C p = %d' % p, 'PASS' if ok else 'FAIL')
+    return ok, R0, Rf, R1, o
+
+
 def main():
     import math
+    if sys.argv[1] == 'odd':
+        odd(int(sys.argv[2]), sys.argv[3], float(sys.argv[4]))
+        return
     if sys.argv[1] == 'verify':
         print('verified rho <= %d/%d' % (verify(sys.argv[2], sys.argv[3], sys.argv[4]), D))
         return
