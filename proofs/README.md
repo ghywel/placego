@@ -142,6 +142,9 @@ that time does not allow.
 - [Proposition 22 (proved by hand, second-read): a row that turns faster than light is periodic, and every window turns leftwards](35-proposition-22-proved-by-hand-second-read-a.md):
   A Rule 30 row whose pattern slides faster than light is always a repeating ring. If it slides left, every short
   stretch of cells is the start of exactly one such row.
+- [Proposition 23 (proved by hand; waiting room, second reader wanted): the triangles on the single cell's right edge are a ruler sequence](36-proposition-23-proved-by-hand-waiting-room-second.md):
+  At every second step a white triangle touches Rule 30's right edge, and its size depends only on how many times 2
+  divides the step number.
 
 ## Short proofs restated from the running text
 

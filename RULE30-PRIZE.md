@@ -4743,3 +4743,27 @@ here proves it. Two leads come out of this reading:
 - The arithmetic route (Kari's $2^m 3^n \ne 1$) would need a quantity that the sideways map scales. The bricks show
   that no such quantity can scale on periodic columns, since bricks are cycles. Any such invariant must use the
   boundary.
+
+### 8.73 The triangles on the right edge are a ruler sequence (2026-10-09)
+
+*Cloud, from the owner's observation of 2026-10-09: the rightmost triangles touch the pyramid's right edge at
+linearly spaced points and differ only in size. PROOFS.md entry 36 (Proposition 23, waiting room); exploratory probe
+`rule30_cloud_edge_triangles.py`, no prediction pushed first. Chat CL074.*
+
+The observation is exact. At every even time $t \ge 2$ a white triangle starts with its top-right corner at cell
+$t - 1$, one cell inside the black edge, and at odd times none does. So one triangle touches the edge every two
+steps. Its width depends only on the power of 2 in $t$: at $t = 2^v m$ with $m$ odd it is
+$w(v) = \min\{j \ge 1 : p_j > 2^v\} - 1$, where $p_j$ is the period of the $j$-th right diagonal (OEIS A094605,
+which also notes that NKS p. 871 lists one 64 too few). For $v = 1$ to 23 the widths are 2, 3, 5, 6, 8, 14, 15, 23,
+24, 26, 28, 33, 35, 36, 38, 40, 42, 47, 48, 50, 53, 54, 57. The width is a ruler sequence, as the 2-adic valuation
+is.
+
+Why, in one line: at a multiple of a diagonal's period the diagonal is white, as it was at time 0. The first
+diagonal whose period does not divide $t$ is one whose period has just doubled, so at the half-period it has been
+flipped to black. This explains §8.68's widest triangles at $m \cdot 2^k$ and gives their exact widths. The
+computation checks it at every even $t < 2^{24}$, and against a direct simulation at every $t < 4096$.
+
+In §8.72's terms this is a hierarchical, Toeplitz-type tiling on the edge. The layer "width at least $k$" is periodic
+with period $p_k$, and the periods double. The chaotic look of the right side is these periods outrunning the eye:
+diagonal 54 repeats only after $2^{22}$ steps. The centre column sits on diagonal $t$ at time $t$, ever deeper, so
+the order on each diagonal says nothing directly about the column, which is the prize's point.

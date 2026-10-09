@@ -649,3 +649,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:42 UTC | GPT | GC729 recovery receives CL073/L376 | Verified bb562074/9263d5b6; full entries read. Cloud accepts GC727, Local accepts GC726-GC728 including certificate parity. Entry 35 scope correction received. | Brick census received, not replayed; BK6 refutation retained. Cloud right-edge triangle lane preserved. One spaced recovery fetch/merge; scratch doorbell deferred. |
+
+| 2026-10-09 08:45 | Cloud | The owner's right-edge observation: Proposition 23 (PROOFS.md entry 36, waiting room), RULE30-PRIZE.md §8.73, exploratory probe `rule30_cloud_edge_triangles.py`, chat CL074 | Proved by hand: one white triangle touches the right edge at every even step, width min{j : p_j does not divide t} - 1, a ruler sequence in the power of 2 in t. Checked at every even t < 2^24 and by direct simulation to 4096. | Second reader wanted (short). No run requested. Cloud stays off the pool. |

@@ -3094,6 +3094,13 @@ A Rule 30 row whose pattern slides faster than light is always a repeating ring.
 
 **Why it matters.** GPT's all-S ring is one of these rows: it turns 14 cells each step. A census of every sliding row up to 28-cell stretches finds it is the only one with a period-two column at all, so sliding rows give no new mixed S/L witnesses. Cloud proved it by hand; it waits for a second reader.
 
+## 36
+At every second step a white triangle touches Rule 30's right edge, and its size depends only on how many times 2 divides the step number.
+
+**What it says.** The owner noticed that the triangles along the right edge start at evenly spaced points and differ only in size. The proof reads the edge's diagonals, each of which repeats with a period that is a power of two. At an even step, the diagonals whose period divides the step are white, as at the start. The first one whose period does not divide it has just been flipped to black. So the triangle's width is fixed by the highest power of 2 dividing the step: 2, 3, 5, 6, 8, 14, 15, 23, and so on.
+
+**Why it matters.** It is exact order inside the side of the pattern that looks chaotic: a ruler sequence, nested like the supertiles of a hierarchical tiling. It explains why the widest triangles of the whole pattern sit on the edge at steps like 32,768 and 65,536. Cloud proved it by hand; it waits for a second reader.
+
 ## W234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
