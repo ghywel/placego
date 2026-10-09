@@ -46,6 +46,11 @@ DEEPER (registered before running; COMMAND: ... rule30_q16_exits.py deep [DEPTH=
   QX2-C1 (control): at step 1 the out-degrees equal QX's (1, 1, 2 at phase 1, and their mirrors).
   QX2-P1 (blind, confidence 0.5): for at least two of the three, every exit path dies within 300 steps.
   QX2-D1 (descriptive): the number of live paths at each depth, and the depth of death or survival.
+  Instrument repair (before any result): the first attempt stopped at once on PR198's strip-evaluator assertion. That
+  evaluator assumes the window differs from the baseline only in its last 3 positions, and an exit path deviates in
+  more. The search now uses PR198's packed evaluator (both paddings must agree) without its memo, which would keep every
+  10^4-bit window. The strip evaluator stays as a spot check, widened to S = deviations + 3, at depths <= 5 and every
+  50th depth. No result was seen before the repair.
 """
 import sys
 
@@ -114,8 +119,26 @@ def main():
     print('COMPLETE')
 
 
+def FVp(bits, m):
+    res = set()
+    for pad in (0, 1):
+        p = d2.eval_packed(list(bits) + [pad], [2 * m - 2, 2 * m - 1])
+        res.add((p[2 * m - 1], p[2 * m - 2]))
+    assert len(res) == 1, 'padding changed F or V'
+    return res.pop()
+
+
+def FVs(bits, m, tab, phase, S):
+    res = set()
+    for pad in (0, 1):
+        st = d2.eval_strip(tab, phase, list(bits) + [pad], [2 * m - 2, 2 * m - 1], S=S)
+        res.add((st[2 * m - 1], st[2 * m - 2]))
+    assert len(res) == 1
+    return res.pop()
+
+
 def deep(DEPTH=300):
-    out = {}
+    out, spot_ok = {}, True
     for r in (18826, 34854, 40804):
         cls = RETS[r]
         c5, exit_phases, lok, degs = analyse(r, cls)
@@ -130,19 +153,21 @@ def deep(DEPTH=300):
             X, Y = win(t), win(t + H)
             bx, by = w[(t + m) % Q], w[(t + H + m) % Q]
             frontier.append((X[1:] + [1 - bx], Y[1:] + [1 - by], t + 1))
-        step1 = []
-        sizes, depth = [len(frontier)], 0
+        step1, sizes, depth = None, [len(frontier)], 0
         while frontier and depth < DEPTH:
             nxt = []
+            S = depth + 4
             for X, Y, ph in frontier:
                 TX, TY = X[1:], Y[1:]
-                _, vX0, _ = d2.FV(TX + [0], m, TAB, ph + 1)
-                _, vY0, _ = d2.FV(TY + [0], m, TAB, ph + H + 1)
+                _, vX0 = FVp(TX + [0], m)
+                _, vY0 = FVp(TY + [0], m)
                 K = 1 ^ vX0 ^ vY0
                 for b in (0, 1):
                     Xn, Yn = TX + [b], TY + [K ^ b]
-                    fx, vx, _ = d2.FV(Xn, m, TAB, ph + 1)
-                    fy, vy, _ = d2.FV(Yn, m, TAB, ph + H + 1)
+                    fx, vx = FVp(Xn, m)
+                    fy, vy = FVp(Yn, m)
+                    if depth <= 5 or depth % 50 == 0:
+                        spot_ok &= FVs(Xn, m, TAB, ph + 1, S) == (fx, vx) and FVs(Yn, m, TAB, ph + H + 1, S) == (fy, vy)
                     if fx == 1 and fy == 1 and vx ^ vy == 1:
                         nxt.append((Xn, Yn, ph + 1))
             if depth == 0:
@@ -154,6 +179,7 @@ def deep(DEPTH=300):
         print('r = %5d: exit targets %d; live paths by depth %s%s; %s at depth %d'
               % (r, sizes[0], sizes[:12], ' ...' if len(sizes) > 12 else '', 'SURVIVES' if frontier else 'all dead', depth),
               flush=True)
+    print('strip spot checks agree with the packed evaluator:', 'PASS' if spot_ok else 'FAIL')
     c1 = out[18826][0] == 1 and out[34854][0] == 1 and out[40804][0] == 2
     print('QX2-C1', 'PASS' if c1 else 'FAIL (step-1 counts %s)' % {r: v[0] for r, v in out.items()})
     dead = [r for r, v in out.items() if not v[2]]
