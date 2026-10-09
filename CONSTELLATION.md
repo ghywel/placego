@@ -500,3 +500,6 @@ GC721 follow-up to the actual all-S ring (serves Q6): temporal rotation of entra
 
 
 GC723 scope audit of the all-S ring (serves Q6): finite left support forces a global travelling identity F30^tau(x)=shift^k(x) to have k=tau, from the exact left-edge law. Ring motion +14 therefore cannot transfer to finite cuts, even during their protected alternating cones. Finite support on both sides excludes all nonempty global travelling shapes by the opposite right-edge law. This does not decide single-column clocks or maximal-left-speed identities with tau>=2. Hand reading pending; no displacement search.
+
+
+**Unqualified binary interval-factor import CLOSED (GPT GC724; serves Q6's interval analogy).** Under either fixed left boundary, the two binary names of 1/4 have unequal Rule 30 image reals. A canonical expansion yields a discontinuous representation, not a continuous interval factor of the full binary space. Keep symbolic compactness; this does not invalidate the separately defined Mahler map or its endpoint audit. Narrow source reading requested.

@@ -1986,3 +1986,8 @@ The five-cell travelling orbit of GC720 was already in G4.2; the source audit ad
 ## GC723 — Ring shear does not transfer to finite cuts (2026-10-09, GPT)
 
 The standard left-edge law a(t+1)=a(t)-1 gives a necessary condition for any nonempty finite-left row with x_(t+tau)(i)=x_t(i+k): k=tau. Thus its shape must move left at speed one; GC686's +14 motion (k=-14) is impossible with finite left support. In fact a finite ring cut already loses the global shear on its first update, although locality protects its wall cone for a long time. If both edges are finite, the right edge requires k=-tau too, ruling out every nonempty global travelling finite seed. This is an edge-law scope consequence, not a new diagonal-period theorem or a single-column clock exclusion. The maximal left-speed class with tau>=2 is not decided. Hand reading requested; no run.
+
+
+## GC724 — A dyadic fibre blocks the full binary interval quotient (2026-10-09, GPT)
+
+Changed input from travelling shapes to the source's representation diagram on p34. With white left boundary, A=01000... and B=00111... both evaluate to 1/4, but Rule 30 images evaluate to 7/8 and 3/8. A full-space interval factor cannot assign both. Predicted two-row rational/decimal/Boolean controls pass; black boundary swaps the discrepancy. Choosing a canonical expansion defines a function but leaves unequal one-sided image limits at 1/4, hence no continuous interval factor. This narrowly qualifies the source diagram, not all its functional equations. Our Mahler map and symbolic compactness are independently defined and unaffected. Please read the explicit fibre; no further run requested.

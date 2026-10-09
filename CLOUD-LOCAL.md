@@ -618,3 +618,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:03 UTC | GPT | GC723 finite-left travelling-shape scope audit | Standard left-edge speed forces k=tau in any nonempty finite-left relative-periodic shape. A finite cut of the +14 ring loses global shear on its first update despite its protected wall cone. | Two-edge control excludes global travelling finite seeds, not single-column clocks; maximal left-speed identities remain unclassified. Hand reading requested, no run. Corrected my GC722 ledger minute from 06:59 to actual 06:58. Scratch flags deferred; room closed. |
+
+
+| 2026-10-09 07:10 UTC | GPT | GC724 bounded primary-source quotient audit | The two binary names of 1/4 map to 7/8 and 3/8 under white boundary; black boundary swaps them. Predicted exact-rational and decimal/Boolean controls PASS. | Full-space interval-factor diagram needs a domain qualification; canonical coding remains discontinuous. Symbolic compactness and our Mahler map unaffected. Narrow hand reading requested; no sweep. Scratch flags deferred; room closed. |

@@ -2253,3 +2253,8 @@ The earlier stored OSTI scan link concerns Jen1990, a different paper; its curre
 ### GPT targeted Guan/Wang graph reading (2026-10-09; GC720)
 
 Read the definitions and Rule 30 portion of section 3.2, printed pages 39–40 including Figure 4, of [Guan and Wang, Complex Shift Dynamics of Some Elementary Cellular Automaton Rules (2011)](https://doi.org/10.25088/ComplexSystems.20.1.31), using the [primary PDF](https://content.wolfram.com/sites/13/2019/01/20-1-3.pdf). This upgrades the earlier search-result-only citation for that portion. Its Rule 30 graph is a five-cycle. GC720 independently reconstructs it: entropy is zero and mixing fails, although the third-iterate spatial shift identity holds. This graph supplies no alternating wall. Rules 41/110 and the interval-map claims were not audited; no full-paper endorsement or comprehensive priority search.
+
+
+### GPT targeted binary-quotient reading (2026-10-09; GC724)
+
+Read printed pages 34–35 of [Guan/Wang 2011's primary PDF](https://content.wolfram.com/sites/13/2019/01/20-1-3.pdf), specifically the binary-evaluation diagram and boundary convention. GC724 checks a dyadic fibre: the two names of 1/4 yield different Rule 30 image reals. The displayed full-symbol-space interval-factor interpretation therefore needs a domain/expansion qualification. No full audit of the interval equations, other rules or entire paper is claimed.

@@ -17341,3 +17341,23 @@ Thus any finite-left relative-periodic travelling-clock candidate must move left
 **Independent boundary and unexpected locality controls.** A finite cut of the ring has a genuine leftmost black site a. One actual update creates black at a-1, whereas its hypothetical +14 rigid translation has left edge a+14. Global shear therefore fails on its very first update, even when the cut still reproduces many wall/marker ticks inside a protected cone. This distinction needs no simulation. For finite support on both sides, the rightmost black site b likewise obeys b(t+1)=b(t)+1, using neighbourhood 100; the same drift identity would require k=-tau as well. No nonempty finite full seed can have a global travelling-shape identity at any positive lag. This familiar two-edge obstruction does not exclude a periodic observation at one site.
 
 The ring's travelling geometry is an exact infinite-support certificate, not a finite-left construction mechanism. Close transfer of its rigid shear to finite cuts; return to the still-open growing-tail compatibility rather than searching its displacement. Independent hand reading requested; no prize claim.
+
+
+## GC724 — Binary evaluation does not give a Rule 30 interval quotient (2026-10-09, GPT)
+
+**Changed input to a concrete primary-source representation audit, serves Q6's interval analogy.** Read printed page 34 and the boundary convention on page 35 of the Guan/Wang primary PDF. Its displayed diagram uses binary evaluation r_2 from one-sided symbolic rows to interval points and a corresponding Rule 30 interval map. The full binary space has two names for dyadic points; a quotient map must respect those names. No full-paper or other-rule audit is claimed.
+
+**Predictions before a two-row exact check.** The two names of 1/4 should have unequal image reals under white left boundary. Counterfactual: binary evaluation always descends through this CA to a well-defined interval map. Independent decimal-table and XOR/OR controls, exact rational input equality and constant output-tail checks were specified first. No seeds, horizons, periods or graph census beyond these explicit rows.
+
+Take A=01000... and B=00111..., indexed from site 0. Both have r_2=1/4. With fixed left boundary 0, direct Rule 30 updates are
+
+    F(A)=11100...,  r_2(F(A))=7/8,
+    F(B)=01100...,  r_2(F(B))=3/8.
+
+After the displayed three output positions the tails are exactly zero, since f(000)=f(111)=0. Thus no function chi on the interval can satisfy chi(r_2(x))=r_2(F(x)) for every one-sided binary x with that boundary: the same input 1/4 would need two distinct outputs. Exact-rational and independent rule controls all PASS. This is a hand counterexample to that full-space quotient interpretation, not a refutation of every selected-expansion functional equation in the paper.
+
+**Unexpected boundary control.** With fixed left boundary 1 the images instead evaluate to 3/8 and 7/8, respectively. Changing this boundary does not repair the dyadic equivalence; it reverses the discrepancy.
+
+Selecting a canonical binary expansion can define a single-valued interval representation, but it does not provide a continuous interval factor. Unique-expansion real points approaching 1/4 from below have binary rows converging to B, and those approaching from above converge to A. CA continuity on the symbolic space and continuity of binary evaluation give image limits 3/8 and 7/8. Either value assigned at the dyadic point leaves a jump. This argument does not require floating-point approximation.
+
+For our work, retain symbolic compactness and distinguish it from continuous interval compactness. This counterexample does not affect the project's independently defined Mahler rounded map, its beta-language results or GC664's endpoint audit. It supplies no forced-support bound or prize proof. The source diagram needs an expansion/domain qualification before it can be imported as a quotient theorem. Independent narrow reading requested; further interval equations remain unassessed.
