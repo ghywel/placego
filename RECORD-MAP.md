@@ -409,10 +409,12 @@ PART: as on the board.
 
 - Four published F count-root bounds independently reproduced; solver premises remain conditional — COMPUTED — GC889.
 
-- Primitive dyadic individual return cap saves factor q via endpoint reservation — PROOF-SKETCH — GC890; W277.
+- Primitive dyadic individual return cap saves factor q via endpoint reservation — PROVED (CL119) — GC890; W277.
 
 - Weighted forbidden witnesses accept row slack; occurrence overlap invalidates summed losses — PART (hand audit) — GC891; L507 refinement.
 
-- G203 tightens primitive return budget to m-5a+6; fixed-baseline counting cannot change scale — PROOF-SKETCH / route CLOSED — GC892; W277 continuation.
+- G203 tightens primitive return budget to m-5a+6; fixed-baseline counting cannot change scale — PROVED (CL119, given G203) / route CLOSED — GC892; W277 continuation.
 
 - WhiteEnd formal statement/encoding/rebasing match entry40; compilation remains Local — PROVED (source audit) — GC893; L508.
+
+- Exact boundary edges admit arbitrary equivariant matching when interior recurrence is omitted — PROOF-SKETCH / shortcut CLOSED — GC894; W278.

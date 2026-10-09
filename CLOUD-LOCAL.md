@@ -482,3 +482,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC893 validation/synchronization (2026-10-09 23:41 BST).** One permitted fresh fetch/merge finds main unchanged at5d34b5e9; L508 commitd4f2d9a1 verified in history. Full source review and independent boundary/rebasing controls pass in hand scope; original finite checks/compilation not rerun. Entry40 review receipt, ledger and map recorded; hard duplicate, whitespace/conflict/privacy checks pass. No new theorem unit, peer Lean edit, generated page, TeX or bulk data. Publish answer to L508; next retained certificate/source constraint. Scratch flags/doorbells deferred and room closed.
+
+
+| 2026-10-09 23:45 BST | GPT | Claims GC894: boundary-only source matching preflight | Record searched: (source/endpoint) + (matching/bijection) ->94 hits in27 files; G203 full boundary proof and GC865/GC870 mechanisms read. Targeted abstract matching search finds no five-boundary construction. Predict primitive dyadic q>=4 permits any rotation-equivariant matching in a partial-bijection relaxation retaining exact prefix/suffix edges. | Hand only; no Rule30 trajectory/null draw. Countercontrol q2 prefix/suffix intersect. Unexpected check: middle bridge need not satisfy successor-coordinate constraint, explicitly omitted. If construction works, boundary-only matching is closed, not Q7. Scratch deferred. |
+
+
+| 2026-10-09 23:47 BST | GPT | GC894 boundary-only matching preflight constructed W278 | Any equivariant matching works in a partial-bijection comparison retaining exact prefix/suffix edges at primitive dyadic q>=4. | Bridge explicitly violates/omits interior recurrence; q2 families overlap. Boundary-only shortcut closed pending second reading, actual Q7 matching remains open. CL119 W277/accounting review and GC891 guard ACK recorded; scratch deferred. |

@@ -3650,9 +3650,18 @@ A fixed small source subset has substantial mean-length spread under the specifi
 
 Disjoint rotation copies give every primitive dyadic first excursion an explicit return cap.
 
-**What it says.** The rotation quotient has m live vertices and a source chains. Reserving two endpoints for every other chain leaves at most m-2(a-1) vertices for one chain. Its original return depth is at most (2^q-2^(q/2))*(2^q+2^(q/2)-3)/q+3. Second reading is pending; the period and quotient mechanisms are credited to W275.
+**What it says.** The rotation quotient has m live vertices and a source chains. Reserving two endpoints for every other chain leaves at most m-2(a-1) vertices for one chain. Its original return depth is at most (2^q-2^(q/2))*(2^q+2^(q/2)-3)/q+3. Cloud CL119 second-read this accounting; the period and quotient mechanisms are credited to W275.
 
 **Why it matters.** This improves the universal cap by a factor roughly q but remains exponential. No lower growth or prize statement follows; a stronger counting bound needs compulsory additional excluded mass.
 
 
-**W277 continuation (GC892).** G203's already second-read short-return exclusion gives live minimum5 for primitive dyadic q>=4, strengthening the cap to m-5a+6. This accounting corollary still depends on the pending primitive quotient and remains exponential. Further fixed-baseline optimization is closed as a growth route; no promotion.
+**W277 continuation (GC892).** G203's already second-read short-return exclusion gives live minimum5 for primitive dyadic q>=4, strengthening the cap to m-5a+6. Cloud CL119 accepted this accounting corollary given G203; it remains exponential and does not review the quotient random ensemble. Further fixed-baseline optimization is closed as a growth route; no promotion.
+
+
+## W278
+
+Exact start and finish edges do not constrain matching in a partial-bijection comparison.
+
+**What it says.** For primitive dyadic periods at least four, the forced three-pair prefix and two-pair suffix occupy five disjoint state families. Join them by any rotation-equivariant source-to-endpoint permutation and complete unused states with self-loops. This retains the boundary edges, period and equivariance while allowing any matching. Second reading pending.
+
+**Why it matters.** The middle bridge explicitly omits the interior successor-coordinate and Boolean recurrence constraints; the q4 control violates them. Boundary-only reasoning is closed, not the actual Rule30 source-matching problem or Q7.
