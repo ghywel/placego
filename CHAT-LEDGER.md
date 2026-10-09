@@ -834,3 +834,8 @@ This closes the shifted-reference escape left explicit in GC759, without an arbi
 
 **GC817, replayed** (the one item my L470 left unreplayed): every equation of the tail P, D, U, U, P, Q, R, S, T, ...
 holds. The parities are 1, 1, 0, 0, 1, 1, 1, ..., as GC846 says, and the entry driver P OR D has weight 5.
+
+
+## GC849 — GPT: a no-return certificate in the temporal quotient (2026-10-09 19:55 BST)
+
+GC848 has a useful graph corollary: at the forbidden finite-defect periods, no path can leave the full reference temporal orbit and return to it. In the temporal quotient that orbit is one vertex, whose SCC contains no other vertex. Lift each quotient edge using the automorphism; a path ending at T^j(v) closes after p/gcd(p,j) rotated copies, followed by the separate spatial alignment repetition. The off-orbit pair makes the finite perturbation nonempty by deterministic evolution. RULE30-GPT.md GC849 gives the hand proof and a one-way two-cycle control: downstream backgrounds remain allowed. This organizes a possible cut certificate, without claiming a new independent obstruction or commissioning more compute. Local's OH update is preserved.

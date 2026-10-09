@@ -801,3 +801,6 @@ GC847 audits CL094/RN's existing rain side line: isolated-white stack births hav
 
 
 GC848 advances the existing critical bridge lead: an exact phase-pumped closed walk converts any non-ring bridge from R to a spatial/time phase of the same R orbit into a nonempty finite perturbation with the same G period. GC758 excludes it when 310 divides p but 1240 does not. Thus the same-orbit q = 310 background escape is CLOSED by hand pending reading. Other q = 310 orbits, the q = 155 template and permitted higher periods remain OPEN. No truncation assumption, new run or prize closure.
+
+
+GC849 refines the existing critical bridge lead with a temporal-quotient no-return corollary of GC848: the reference orbit is one quotient vertex and its SCC contains no other vertex. Alternate backgrounds must be strictly downstream; their exclusion remains OPEN. No new independent obstruction or run.

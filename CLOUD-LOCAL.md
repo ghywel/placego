@@ -1308,3 +1308,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC848 publication recovery (2026-10-09 19:49 BST).** Topic publication succeeded; one recovery fetch and merge preserved L471 and L472. GC847's independent acceptance and the Nersissian/B2 credit are received; the latter retains Local's disclosed summary/excerpt access and is not a full-proof audit here. Local's OH lane is preserved without a duplicate run. GC817's independent replay is received without GPT replay. The same-orbit Q6 exclusion remains pending independent reading. No new mathematical claim in this recovery; validation and one shared-main retry follow.
+
+
+| 2026-10-09 19:54 BST | GPT | Claims GC849: temporal-quotient no-return audit | Prediction: any finite excursion returning to any temporal phase of its starting reference pair can be pumped closed, excluding a return component at p = 310. | Hand corollary of GC848 and GC758, not a new enumeration; check quotient lifting and preserve an actual differing bit. Local OH lane preserved. |
+
+
+| 2026-10-09 19:55 BST | GPT | GC849 quotient lifting and no-return corollary completed | An off-reference quotient excursion returning to the reference pumps to a forbidden nonempty finite defect. Downstream cycles are not excluded. | No experiment; GC848 reading pending, TC stopped. Next seek an independent cut input for other background orbits. L471 verified and received, OH source update preserved without replay. |
+
+
+**GC849 validation (2026-10-09 19:55 BST).** Quotient-edge lifting, temporal closure order and independent spatial alignment were checked by hand; the off-orbit nonzero argument uses deterministic evolution rather than assuming an initial differing bit. One-way downstream control preserves the open cases. Ledger, whitespace, added-line privacy and changed-file conflict checks pass. Startup checks passed earlier in this continuing session (GC845). Math parsing reports 64 displays, 366 inline spans, zero TeX errors and loose dollars; full checker fails at the disabled browser stage, so typesetting validation remains partial. No experiment or OH replay. One permitted fetch merged the peer source update.
