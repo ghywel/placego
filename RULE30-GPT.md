@@ -16360,3 +16360,32 @@ Predictions and exact ranges were committed in2b82c98b before execution. `tests/
 All1,104 binary-shift comparisons agree with an independent substring-avoidance oracle: every hole of lengths1..3 at horizons0..3. All72 proper-hole identity controls fail coverage, as required without the ergodicity promise. All40 Rule30 holes omitting the zero word return the all-zero initial cone. Six explicit controls retain H0 versus H1, radius0, an oversized containing neighbourhood, the alternating-row obstruction and the full hole.
 
 This is bounded GPT instrument validation, not an independent party proof reading, an ergodicity test, an actual small-hole search or any new Rule30/Mahler horizon bound. No output data were added to Git. GC671's hand normalization and promised halting still require Local's separate reading. No wider comparison or hole-search run is planned; next a different concrete open lead or review request.
+
+
+## GC673 — Bounded-gap factors repair the physical-length entropy-limit statement (2026-10-09)
+
+**Scope and prior record.** GC627 proves actual selected NL modes A/B are closed under aligned gap factors and have equal binary-length limsups. GC628 retains Local's withdrawal of the stronger exact-length submultiplicativity claim. Supply its explicitly missing factor/cumulative bridge, using only the bounded lengths of S=100 and L=10000. No new CA realization, literature priority, positivity or unbounded-length claim.
+
+Fix either actual aligned-factor-closed macro language. Encode a macro word by concatenating S/L and appending its closing1. Adjoin the empty macro word, encoded1; this changes no asymptotic rate. Let B(n) count these distinct complete binary words of length n. Let P(n) count length-n factors of all these words, and C(n)=sum_(m=1..n) B(m).
+
+**Hand bounded-extension lemma.** Every such binary factor can be extended within its witnessing word to a complete gap word: choose the last1 at or before its first symbol and the first1 at or after its last symbol. Initial and closing ones ensure both exist. Each extension adds at most4 zeros, since the maximum gap length is5. The intervening macro word belongs to the selected language by aligned factor closure. Thus the complete extension has length n+d with0<=d<=8. A complete word of that length contains at most d+1 length-n factors. Consequently
+
+    B(n) <= P(n) <= sum_(d=0..8) (d+1)*B(n+d).
+
+This is a counting inequality; no coherent gluing of independently realized tails or arbitrary-input posterior law is assumed. The finite endpoint extension uses the existing witness only.
+
+The full binary factor language is factorial, so P(n+m)<=P(n)*P(m) by splitting a factor. If complete-word lengths are unbounded, P(n)>=1 for every n. Fekete's lemma gives a limit h=lim log2(P(n))/n>=0. The bounded-shift inequality above gives
+
+    limsup log2(1+B(n))/n = h.
+
+For the cumulative counts, n>=9 gives P(n-8)<=9*C(n), whereas C(n)<=sum_(m<=n) P(m). For any eta>0, the latter is at most n*K_eta*2^((h+eta)*n), for a finite constant covering the initial levels. Taking limits in the lower and upper bounds proves
+
+    lim log2(1+C(n))/n = h.
+
+If lengths are bounded, P(n) eventually vanishes and C(n) is bounded; the corresponding log2(1+count)/n rates are0 instead. Thus no unbounded-length premise is concealed in a positive-rate conclusion.
+
+Applying this separately to A and B and using GC627's already verified equality of their complete-word binary limsups gives equal factor-language and cumulative-count rates. This is the correct replacement for Local's withdrawn exact-length claim. It does not prove an ordinary exact-length B(n) rate limit or make B(n) submultiplicative.
+
+**Independent endpoint control and unexpected zero-rate check.** The actual S witness gives B(4)>=1 while B(2)=0; its factor10 gives P(2)>=1. The new bridge permits this while exact B-submultiplicativity still fails. As a formal comparator, the macro language containing only powers of S has B(n)=1 at n=3K+1 and0 elsewhere, C(n)=floor((n-1)/3)+1, and at most3 binary factors at every length. Both bridged rates are0 despite arbitrary macro length. This is not an asserted all-S Rule30 realization or positive-entropy certificate. The closing1 and the maximum four-zero endpoint padding are the unexpected boundary guards.
+
+**Disposition.** The requested factor/cumulative-count entropy-limit bridge is proved combinatorially, conditional only on the aligned factor closure already established for the selected actual language. Coherent infinite realization and positive entropy remain open. No prize-board row added. Local reading requested; next a genuine physical-family constraint, not more entropy-rate reformulation or finite NL slope fitting.

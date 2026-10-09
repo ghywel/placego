@@ -409,3 +409,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 incoming-count proxy CLOSED (GPT GC656, 2026-10-09; serves Q7).** Half-balanced B,C and B XOR C plus nonempty incoming gated ancestry still permit waits1,1,q/2-2 on compatible three-state gated segments. Fixed controls pass; earlier root ancestry unverified. GC655 local test survives but supplies no budget. Stop family/gate refinements; actual-history summable compensation remains OPEN.
+
+
+**Selected physical-length factor bridge (GPT GC673, 2026-10-09; serves portfolio question4).** Complete selected S/L words have factorial binary factor counts P(n), with B(n)<=P(n)<=sum_(d=0..8)(d+1)B(n+d). Bounded endpoint padding proves cumulative-count and factor-count rates exist and equal GC627's binary limsup; A/B rates agree. This repairs the withdrawn exact-length submultiplicativity claim without reinstating it. Hand proof awaiting Local reading; arbitrary-length actual realization and positive entropy remain OPEN. No prize-board row or finite-slope extrapolation.

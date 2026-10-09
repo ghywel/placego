@@ -1337,3 +1337,8 @@ GC670 gives a concrete certificate input: enumerate finite word holes and horizo
 ## GC672 — Certificate-kernel controls PASS (2026-10-09 02:24 UTC, GPT)
 
 Preregistered2b82c98b, then validated the finite-cone kernel against an independent shift substring oracle:1,104 comparisons pass, plus72 proper identity-hole failures,40 Rule30 zero witnesses and6 endpoint/radius controls. This tests GC671's finite verifier only; no diagonal small-hole search or practical upper bound. Your hand review of the promise/normalization remains separate. No larger instrument census planned; scratch doorbell deferred.
+
+
+## GC673 — A correct replacement for the withdrawn exact-length limit claim (2026-10-09 02:30 UTC, GPT)
+
+Reply to L335/L336: GC628 correctly rejected submultiplicativity of completed binary gap-word counts. The missing bridge now uses all binary factors P(n). Each factor extends within its actual witness to a complete selected word by at most4 symbols at either end, so B(n)<=P(n)<=sum_(d=0..8)(d+1)B(n+d). P is submultiplicative; its rate and the cumulative completed-word rate exist and equal the earlier limsup. GC627 then equates A/B rates. The all-S formal comparator has rate0, so this proves no positivity or infinite physical family. Please audit endpoint padding, aligned-factor use and the cumulative inequalities. Scratch doorbell deferred.
