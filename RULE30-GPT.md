@@ -16233,3 +16233,34 @@ These nonempty root domains remain; shrinking does not apply to every candidate.
 
 
 **Second-reading checkpoint, L363 (verified commit1410d634).** Local independently read GC660-GC664. The j1 clamped rows and unclamped witnesses agree, and its probe replays PASS. Local reports spatial-prefix counts through n12, finite-front controls on2,000 random rows, and beta recurrence versus direct fractional intervals through T12; these are Local measurements, not GPT replays. The GC664 single-half-boundary argument and positivity guard were checked by hand. All five audits are verified within their stated scopes; no uniform deadline, fixed-integer extinction or prize proof follows. GC665 awaits independent reading.
+
+
+## GC666 — Exact actual-integer repeat budget for the rounded3/2 itinerary (2026-10-09)
+
+**Scope and prediction.** GC665 leaves nonempty predecessor-root domains. Change to an actual selected-orbit constraint: specialize reviewed G33's known periodic affine/window principle to the G50 rounded map, rather than refine generic roots. No new periodic-window theorem, parity-density hypothesis or experiment is claimed.
+
+Let F(n)=ceil(3n/2)=(3n+b)/2 with b=n modulo2. For a q-bit word w define C_0=0 and C_(j+1)=3*C_j+w_j*2^j, and put C=C_q, Delta=3^q-2^q>0. Its branch composition is (3^q*n+C)/2^q. Delta is odd and0<=C<=Delta, the maximum attained by the all-one word. For k full copies, geometric composition gives
+
+    2^(kq)*(Delta*n_(kq)+C)=3^(kq)*(Delta*n+C).
+
+G51's parity/integrality bijection consequently says that the actual itinerary from an ordinary integer n begins with k copies of w exactly when
+
+    2^(kq) divides M=Delta*n+C.
+
+For n>=1, M>0. Thus the exact maximum number of full copies is floor(v2(M)/q), with no positive cycle exception. The entire agreement with the formal periodic word lasts v2(M) bits; its fixed2-adic point is-C/Delta, which is nonpositive and cannot equal n. This is the G33 mechanism with every branch multiplier3, not the shortcut Collatz multiplier3 only at odd steps.
+
+**A selected-height bound.** For any realized k copies,
+
+    kq<=v2(M)<=log2(M)<q*log2(3)+log2(n+1).
+
+At starting age a of an orbit from n_0>=1, the elementary growth estimate n_a+1<=(3/2)^a*(n_0+1) gives
+
+    kq < q*log2(3) + a*log2(3/2) + log2(n_0+1).
+
+This bounds actual repeated blocks using age, period and initial height, rather than an ensemble mean. It excludes eventual periodicity of every positive rounded-map itinerary by fixing its tail start and q and sending k to infinity. That exclusion is a known-case consequence of the periodic-window principle, not a Z-number exclusion: aperiodic fractional-compatible itineraries remain. Neither this coefficient growth nor its age slope transfers to shortcut Collatz's even branch n/2.
+
+**Independent hand controls and unexpected exceptions.** For w10, q2, C3, Delta5. At n1, M8 has valuation3, giving exactly one full copy; the actual trace starts1011. At n9, M48 has valuation4, giving exactly two; its states9,14,21,32,48 give10100. The nonprimitive w1010 has q4,C39,Delta65; at n9, M624 has valuation4, giving one copy of the four-bit word, the same four physical steps. For w1 at n7, M8 gives three odd steps7,11,17 before even26. These are direct arithmetic controls, not a census.
+
+The unexpected zero control has n0,w0,M0 and repeats forever, so dropping n>=1 makes the finite budget false. Likewise the signed formal point n=-1,w1 is fixed and has M0. G50's fractional100 control has c=-9/19; it is consistent with this nonpositive periodic realization. No positive periodic point or ordinary-integer Z witness is supplied.
+
+**Disposition and next.** The actual repeat budget is exact but handles a known periodic case only. It gives no lower bound on the first fractional-window failure for a generic aperiodic rounded itinerary, nor a uniform extinction time for GC664. Stop repeat-window refinements without an aperiodic compatibility input; next the remaining joint realization constraint or a concrete independent audit request. Q9 remains open. Local reading requested; no prize candidate.
