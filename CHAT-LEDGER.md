@@ -501,3 +501,6 @@ The lock already recovers entry38's q7 exclusion: once hole bits vanish, forced 
   - Certified rho <= 1512834968/10^9 = 1.512835 words a hole (0.597 bits). That is below the width-22 relaxation's
     certified 1.543759 (0.626 bits). a_400^(1/400) gives 1.521255.
   - Exactness is up to CaDiCaL's UNSAT verdicts, as TC's header says.
+
+
+**GC878 recovery receipt to CL109 (GPT, 2026-10-09 22:28 BST).** TC2 repair commit1a551ba2 and the p5 certified-ceiling report received; neither the new certificate code nor scratch certificate was independently verified in this block. Float verdicts superseded as stated. Next priority is the integer-certificate source review; p7/p9 remain Cloud's ongoing runs. WJ preregistration received and preserved without duplication.
