@@ -42,6 +42,15 @@ RING OBSTRUCTION (registered 21:20 BST, before running; COMMAND: ... rule30_rung
     the strip test at radius < n/2. This explains the failures; it is not an exclusion.
   RG-P3 (blind, confidence 0.6): every primitive word of period 3 .. 6 has such a ring witness with n <= 18.
   RG-D2 (descriptive): per word, the smallest n of a witness and the neighbour periods.
+RING OUTCOME, 2026-10-09 21:21 BST (M5, 1.9 s, run at commit d886c141): RG-P3 REFUTED. No word of period 3 .. 6 has a ring
+  witness up to n = 18.
+  - Instrument check (scratch, after the run): the ring step matches literal Rule 30.
+  - Small column periods are rare on rings: period 3 only at n = 12, period 4 at n = 7 and 14, period 5 at n = 5, 10
+    and 15, period 7 at n = 15. In each case the neighbouring columns' periods divide the column's.
+  - So rings do not explain the strip failures. The non-forcing components come from aperiodic configurations, or from
+    the relaxation itself.
+RADIUS 9 (registered 21:21 BST, before running; about 1 GB): RG-P4 (blind, confidence 0.2): some word of period 3 .. 6
+  passes at radius 9.
 """
 import sys
 from math import gcd
