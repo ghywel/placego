@@ -2297,6 +2297,45 @@ Obtained [Edward Jack Powley, Global Properties of Cellular Automata, York PhD, 
 Searched the existing research/proof record for000111,111000 and adjacent-long-run claims; appearances in unrelated spatial predecessor and ambient-root controls do not assert this G trace theorem. Web queries: `"rule 30" "000111" diagonal` and `"rule 30" "111000" forbidden`. No relevant primary theorem was found in this bounded lookup; irrelevant matches were not used as evidence. This is not a claim of novelty or a complete literature search. GC800's local Boolean proof and exact finite-cone controls distinguish G/right-moving traces from physical vertical traces; independent reading remains requested.
 
 
+
 ### GPT targeted Jen1987 predecessor-count reading (2026-10-09; GC804)
 
 Read the introduction, section2's endpoint-count recurrences and matrix construction, and section3's definitions and Rule30 table rows in [Erica Jen, Scaling of Preimages in Cellular Automata, Complex Systems1 (1987),1045-1062](https://wpmedia.wolfram.com/uploads/sites/13/2018/02/01-6-2.pdf). The counts concern finite spatial output words after one update, with unconstrained predecessor endpoints. This is useful precedent for retaining boundary states, not a temporal-column realizability theorem or fixed-dimension compression in time. Tables were read through extracted text; attempted table screenshots failed, so no visually verified table value claimed. The general scaling proof and all rule cases were not fully audited. GC804 independently reconstructs Rule30's four-preimage count and a spatial/temporal countercontrol. Already-read Guan/Wang sources were not treated as new findings. Jen1986 original full text remains unobtained after the bounded search.
+
+## Overlooked work: theses, small groups and independents (surveyed 2026-10-09 15:46 BST, by Cloud's research subagents)
+
+The owner asked whose verifiable work is passed over because its authors are students, independents or small groups.
+Four survey passes (theses; traces and columns; independent Rule 30 work since 2019; older tools) each grepped this
+file before listing anything. The full ranked report is `reports/Overlooked cellular automata research.md`, and the
+four sets of notes are in `research_notes/Overlooked cellular automata research/`. Each records how much of every
+source was read. Nothing found proves period 2 or contradicts the record. The finds, ranked:
+1. **Kopra, TCS 851 (2021), arXiv:2005.05112, Propositions 2.7 and 2.8, Lemma 3.17; his Turku thesis (2019),
+   Propositions 3.3.4 and 3.3.5.** Read in full in both versions. For the p/q multiplication automata, one column from
+   a nonzero finite configuration is never eventually periodic, in about 15 lines. The proof uses both ingredients:
+   left-finiteness as a positive real value that shrinks, and the real dynamics as a width-1 sideways map. Rule 30's
+   sideways map (Proposition 7) has width 2 and is not invertible, and that is the step it lacks. This upgrades the
+   abstract-only entry above. Open: whether Kopra 2023 Theorem 3.5 at width 1 already contains it.
+2. **cochon123/rule30-prize (an agent-run public repository, 2026).** Unverified. It claims certificates excluding
+   eventual centre periods $0\,1^q$ for $q = 7$ and every $q \ge 9$ by forcing column -1 periodic, then Jen and
+   Kopra. Its family is this record's parked black-end walls, and its scope (relaxation or single seed) is unstated.
+   Its constant-tail argument for period 1 checks by hand.
+3. **Guillon, doctoral thesis, Paris-Est (2008), in French.** The "retourné" (Proposition 4.6.8) is the published
+   general form of the forced left half; Proposition 4.8.5 relates entropy to trace entropy (a width convention is
+   unresolved).
+4. **Tahay, doctoral thesis, Lorraine (2020); Dolce and Tahay, DLT 2022 (read in full, upgrading "snippet only");
+   Marcovici, Stoll and Tahay, AUTOMATA 2018.** Fibonacci, quadratic-slope Sturmian and binary 3-automatic columns
+   occur in quiescent CA from finite seeds: finiteness alone forces nothing. This is the citation the Theorem E row
+   lacked.
+5. **Sablik, TCS 400 (2008).** Left-permutive rules have a half-line of left-expansive slopes, and a right-expansive
+   slope needs right-closing. Rule 30 is not right-closing (the survey's check), so it has no expansive slope at all.
+6. **Coven, Pivato and Yassawi, Proc. AMS 135 (2007).** Odometers for left-permutive, memoryless rules with a fixed
+   right tail. The survey's application (Rule 30 in the right-edge frame, the 2-adic map R to R xor (2R or 4R), OEIS
+   A269160) is its own derivation and awaits a second reading.
+7. Smaller: Kopra's MathOverflow answer 429509 (no configuration of minimal temporal period 2); Jalonen and Kari,
+   Fundamenta Informaticae (2020), on sofic traces; Goles, Guillon and Rapaport on traced communication complexity
+   (arXiv:1102.3522); Math SE 4497595 and 4832480 (a single cell on a 0101 background, ratio near 1.6241);
+   DeepMind's formal-conjectures `Rule30.lean` statements; Litow and Dumas (1993); Coven (1980). Brunnbauer's 2019
+   lemma has now been read: right-diagonal periods never decrease, which Jen and Rowland subsume.
+Full-solution claims found (several repositories, preprints and forum posts) contain nothing checkable; the report
+lists them with reasons. "Overlooked" rests on absence from this file and citation counts of 0 to 11: the pattern is
+language, venue and discipline silos more than a measured bias against students or independents.
