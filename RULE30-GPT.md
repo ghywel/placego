@@ -19431,3 +19431,24 @@ Thus E has odd black count. GC793's next-orientation selector is unique in this 
 **Independent and unexpected controls.** GC817's genuine five-phase source has this same D=01011 (called P there) and next profile11100, so a_b=1. Its literal E=10011 agrees with odd parity; it still fails the all-L joint155 condition and is only a local control. Remove the U equation and take U=0 instead: Delta A=D has odd count and the two white ticks yield one ordered pair per five-tick block, giving even E at q5. But W must equal11101 to satisfy Delta D=U OR W, while Delta U=0 cannot contain W. This finite-chain control confirms that the extra right equation supplies the essential marked phase; it is not a genuine-tail counterexample. All checks are hand substitutions, no run.
 
 **Disposition.** The first-D least5 odd-E subcase is proved conditionally on the stated critical premises; independent reading requested before filing. No prize, source exclusion or31/155 selector claim. GC820's separate5/31 mixture lemma still awaits its second reading. Scratch unresolved/no retry, browser disabled, room closed.
+
+
+## GC822 — Proper-period tail profiles need both singleton colours; selection parity reduces to phase sums (2026-10-09)
+
+**Bounded remaining-subcase audit.** Keep GC821's actual critical premises, and let the first odd-tail profile D have proper least period m=5 or31, with155=m*s (s odd). Prediction by hand: both colours must have singleton runs, and the remaining E parity can be written in m phase sums of U. Counterfactual: compressing this one parity proves that the whole tail has a finite sufficient encoding. It does not. No experiment, census or solver.
+
+**Both singleton colours are necessary.** GC821 shows that a proper-period profile has a singleton of some colour: otherwise U=Delta D and the pair cannot retain joint155. G258 forbids00100 and11011, so a singleton black cannot have two adjacent white runs of length at least2, and a singleton white cannot have two adjacent black runs of length at least2. If all white runs had length at least2, black singleton runs would therefore be forbidden too, leaving no singleton at all. Interchanging the colours gives the other implication. Thus every proper-period profile in this actual q155 tail has at least one black singleton and at least one white singleton. This applies to all proper-period profiles, not just the first D, but does not bound any individual long run.
+
+**Exact compressed parity, not a tail encoding.** Let J be the D-white phase indices j in0,...,m-1, w=|J|, c_j=number of D-white phases strictly after j modulo2, and u_j=XOR_(b=0..s-1) U(bm+j). GC785's odd D count and odd s make D's m-block black count odd, hence w even. Since U<=Delta D, u_j=0 at any white phase that is not a white-run end. At a white-run end followed by a black run of length at least2, GC798 forces every copy marked, so u_j=1. Other white-run ends are the optional marking phases. Odd parity of D OR U gives
+
+    XOR_(j in J) u_j = 0.
+
+In GC796's ordered-pair formula, each complete later m-block contributes w white ticks, even; the number of whites after bm+j therefore has parity c_j, independent of b. Aggregating the s odd copies gives
+
+    parity(E) = 1 xor (w/2 modulo2) xor XOR_(j in J) u_j*c_j.
+
+Indeed XOR_(j in J)c_j=choose(w,2) modulo2=w/2 modulo2. This derives the formula directly from the full155-block equation, including its cut convention, and leaves the actual right equations imposed rather than replacing them with arbitrary u_j choices.
+
+**Independent and unexpected controls.** For GC821's m5 D=01011, J={0,2}, (c_0,c_2)=(1,0), w/2=1 and mandatory u_2=1. The driver condition forces u_0=1; the formula gives parity(E)=1, independently recovering that subcase. For m31 the formula is a concrete obligation on31 phases aggregated over five copies; it proves no universal value. Conversely GC817's genuine q5 profile11100 has no singleton and is allowed because its adjacent joint period is only5. Applying the singleton result without the joint155 premise would repeat the shortcut already refuted there. Even w and odd s are essential in the aggregation; no even-quotient version is asserted.
+
+**Disposition and access receipt.** The remaining least31 target is the displayed marking-parity obligation with the real higher equations still enforced; least155 remains uncompressed. Proper-period profiles with either colour lacking singleton runs are excluded without a scan. The owner authorized reconnecting; one scratch attempt succeeded and queued flags are being verified against Git before ACK. No prize/review flag was present in that inventory. Jen1986 remains unavailable behind the reported paywall, not a new research blocker. CL087's Kopra/Rule90 scope agrees with GC808/GC810; its broader full-paper reading and GC813's remaining cone-sign audit are received, not independently repeated here. Independent reading requested.
