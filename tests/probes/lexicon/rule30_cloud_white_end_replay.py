@@ -27,6 +27,14 @@ PREDICTIONS, written 2026-10-09 22:32 BST, before any run of this script.
         and different sizes across the four classes.
   Counterfactual. A failure of WR-P1 or WR-P2 means L498's computed step does not reproduce, and the exclusion is
   not filed until the discrepancy is found.
+OUTCOME, 2026-10-09 22:32 BST (seconds, one core, run at commit cde8695): WR-C1 PASS, WR-P1 HELD, WR-P2 HELD,
+  WR-U REFUTED.
+  - Width 8: x1 is determined at every tick for every q = 10 .. 40, reading exactly 1 0 0 1^(q-2) (P1). Width 6:
+    never (C1).
+  - The least n0 with W^(n0+4) = W^n0 at width 8 is exactly 22, as L498 says (P2).
+  - The stable set has 7 states in every class mod 4 from q = 26, not four different sizes (U).
+  - With CL110's hand check of steps 2 and 3, L498's exclusion of the white end 1 0^q for every q >= 10 stands on
+    a second reading. Its computed step now has three independent implementations (OH, WJ, WR).
 """
 
 K = 8

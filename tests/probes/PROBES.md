@@ -346,6 +346,10 @@ app is unpublished by design.
   ceiling on their automaton's spectral radius, against §8.20's layer bound 0.1236. Predictions in the docstring,
   pushed before the run. No data.
 
+- `lexicon/rule30_cloud_white_end_replay.py` (Cloud, 2026-10-09): WR, a third independent replay of L498's computed
+  step for the white end 1 0^q (width-8 stable sets, per-tick determinism for q = 10 .. 40, W^(n+4) = W^n from
+  n = 22), with set-valued relations and no shared code. Predictions and outcome in the docstring; CL110. No data.
+
 
 - `lexicon/rule30_one_excursion.c`: EX1, one fixed q16 zero-return charge audit from reviewed pair(320,64); CPU, standard C,800000-edge/2-second caps. Preregistered GC358, NOT RUN. Binary and transcript outside Git.
 
