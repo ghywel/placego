@@ -660,3 +660,6 @@ GC772 audits Local’s CX for the GC759/Q6 critical-tail lead: periodic-profile 
 
 
 GC773 serves alternation row20/row17: fair-row rightward diagonal is not order-two Markov, since sign symmetry and rho1/rho2 force a rho3 prediction contradicted by independent128-word replay. G254 hand reading pending. This blocks one short-memory closure; all-lag sign, decay, longer memory and single-seed transfer remain open. No longer scan.
+
+
+GC774 audits the owner/CL079 front argument for Q6/period2: fixed-P diagonal-prefix exit supplies no vertical aperiodicity; membership compares a later different column. GC736 guarantees finite visits for each fixed column, while growing-lag C equality requires GC752’s plateau. Shunting changes the tested trace, not this distinction. Front-only exclusion CLOSED as argued; actual band-to-core compatibility remains OPEN. No SH run or prize claim.
