@@ -59,6 +59,14 @@ OUTCOME of the first run, 2026-10-09 (by 10:50 BST, 29 s at LOG2T = 23, SEEDS = 
     9, 12 or 14), but only 8 of 20 have R(2^20) within 4 of 50; the range is 39 to 58. The right front is not
     universal: right diagonals are running XORs from the seed's own cells and never forget them, while the left
     stripes forget the seed (§8.31).
+
+CORRECTED 2026-10-09 after GPT's GC755 to GC757 (read by hand: correct); the text above is kept as first written.
+  For a general seed the periods p_k need not be monotone, so the ordered strip is the prefix
+    R_prefix(t) = min{k >= 1 : p_k > t} - 1 = #{j >= 1 : Q_j <= t}, with Q_j = lcm(p_0 .. p_j) (GC756). RF3's R(2^20)
+    values are counts #{k <= 60 : p_k <= 2^20}, not prefixes; whether the two agree for those seeds was not checked.
+    Every nonempty finite seed has unbounded periods (GC755), and R_prefix(t) >= floor(log2 t) (GC756).
+  The white-run ruler and its spectrum are the single cell's: for a general seed the edge run is replaced by the
+    return to the seed's own bits (GC756; seed 11 has a black cell just inside its edge at t = 2).
 """
 import cmath
 import math

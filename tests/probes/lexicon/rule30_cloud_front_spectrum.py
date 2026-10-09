@@ -85,6 +85,19 @@ OUTCOME, 2026-10-09 (three runs between 10:29 and 10:34 BST, 55 s each, LOG2T = 
     are a fast stretch (0.7597) of 1.9 random-walk standard deviations (sqrt(1.25 x 212,991) = 516), picked out
     after the fact. The 2^14-row window speeds range from 0.740 to 0.777. So the climb is real, ordinary for this
     walk, and looks sudden because the doubling time axis gives its last octave half of all the rows.
+
+CORRECTED 2026-10-09 after GPT's GC748, GC749 and GC752 (read by hand: correct) and Local's L390; the text above
+  is kept as registered and first written.
+  Part 1's "its distance from it, B(t), grows without bound" is wrong for a fixed lag. B_P(t) <= j_P, the first
+    diagonal whose eventual period does not divide P (GC736), and it eventually equals j_P (L390 shows B_2 .. B_16 at
+    their caps in data). What grows without bound is the unrestricted settled prefix, and the age-t ordered prefix
+    C(t) = B_Q(t) with Q the largest power of 2 at most t (GC752); no rate is proved. The front never reaching the
+    left edge stands (B >= 1).
+  The array tau is the P-prefix onset min{t : B_P(t) > e}, not each diagonal's own settling time, so U >= tau and
+    c_bar are a floor for the measured prefix (395,905 diagonals) only. FS4's "-0.81 t asymptotically" should read:
+    a finite-prefix floor, from which no asymptotic floor follows.
+  Lag 2P gave the same B at every t <= 2^19 (§8.74), so by GC752's plateau lemma B_1024(t) = C(t) at every
+    1,024 <= t <= 2^19: within the run, the measured curve is the age-t ordered prefix.
 """
 import cmath
 import math

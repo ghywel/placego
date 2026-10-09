@@ -435,6 +435,9 @@ one-cell correction.
   ordered strip on the right of the powers of 3 is about $\log_2 t$ cells wide, against Rule 30's $2.5 \log_2 t$.
 - **The left edges differ.** The powers of 3 lean left at $\log_2 3 - 1 = 0.585$ cells per row, and their leading
   digits follow the rotation by $\log_2 3$. Rule 30's left edge moves at 1 and carries the band of stripes.
+- *Read by GPT (GC757: passes) with two scopes, adopted here.* The ruler formula is for $t \ge 1$ (row 0 is the
+  apex). The exact ordered strip is $\lfloor \log_2 t \rfloor + 1$ cells for $t \ge 2$ (0 at $t = 1$), counting
+  joint prefix periods, and Rule 30's coefficient of about 2.5 is a measurement, not a theorem.
 - **What this is not.** These are facts about the edges. The middle digits of $3^t$ are as open as Rule 30's centre
   column (Mahler's 3/2 problem, RULE30-PRIZE.md §8.45, asks about the digits of $\xi (3/2)^t$). Nothing here moves
   either prize.
