@@ -19354,3 +19354,26 @@ The continuing cycle has Delta P=11101=Q OR R, Delta Q=10111=R OR S, Delta R=111
 Repeating the q5 words31 times retains these odd parity values over155 ticks and complements after155 on A. However the entry pair still has least joint odd period5, rather than155. Hence GC760's all-L inherited joint-period condition rejects this as a target bridge; it is not a finite seed, an all-L construction or a period-two counterexample. It demonstrates exactly why removing that condition enlarges the problem enough to admit a real entry, and why generic source-to-cycle exclusion is untenable even for q>1.
 
 **Disposition and receipts.** Close only the unrestricted singleton necessity and q>1 source-to-cycle impossibility shortcuts. The155 all-L entry/selector problem remains open. L439/0c19032b independently accepts GC815 and GC816; received and acknowledged. Cloud8737c51b reports R_real(104)>=13 with checked SAT witness; receipt only, not independently replayed here. Local's DB and RK lanes preserved. Independent reading of this literal splice requested; no computation commissioned. Scratch unresolved/no retry, browser disabled, room closed.
+
+
+## GC818 — The genuine five-period tail's period-ten selectors terminate for one complement orientation (2026-10-09)
+
+**Bounded continuation audit.** Continue GC817's exact right half, fixing its complement entry A=0101010101. Ask whether actual infinite right compatibility repairs GC793's failed automatic selector iteration. Counterfactual: once the first selector is unique, every later selector must stay unique on a genuine right tail. Literal cyclic integration by hand refutes that claim at a later depth. No experiment, graph census or solver; no claim about the other orientation of A or the155 all-L bridge.
+
+Put V_0=A and let V_1,V_2,... be successive profiles to its left; the first right profile is GC817's P repeated twice. Each new profile solves Delta V_(j+1)=V_j OR V_(j-1), with the evident P substitution at j=0. There are precisely two complementary period10 primitives when this driver has even black count. The table lists the primitive starting with0, its driver, and the black counts of the two candidate next-left drivers (candidate OR its nearest right profile). An odd next-driver count rejects that orientation for a further period10 primitive.
+
+| New depth | Primitive starting0 | Its difference driver | Next-driver count, starting0 / complement | Surviving orientation |
+|---|---|---|---|---|
+| 1 | 0011010101 | 0101111111 | 6 / 9 | 0011010101 |
+| 2 | 0010110011 | 0111010101 | 7 / 8 | 1101001100 |
+| 3 | 0101001011 | 1111011101 | 7 / 8 | 1010110100 |
+| 4 | 0101010100 | 1111111100 | 7 / 8 | 1010101011 |
+| 5 | 0110010101 | 1010111111 | 9 / 7 | neither |
+
+Every displayed driver is the OR of the previously retained two profiles; taking cyclic differences of the primitives checks the table independently of the next-driver counts. The rejected orientation at depths1..4 has no next period10 primitive at all, so it cannot bypass the forced cascade. At depth5 both orientations exist but neither can be extended one more column in period10. Therefore this fixed A orientation has no period10 extension through six added left profiles. The other A orientation remains unaudited; a universal tail-completion exclusion is not claimed.
+
+**Independent selector check.** The half-shift defects of the retained depths1..4 are respectively10011,10110,00001,11110, with black parities1,1,1,0. GC793's xor identity therefore predicts opposite next extendibility for depths2..4 but equal fate for the two depth5 primitives. The explicit counts9 and7 confirm that their common fate is rejection. Thus genuine complete right-tail coupling can coexist with a later even half-shift defect; oddness of the first E is not an automatically propagating invariant. This is stronger in scope than GC793's finite-chain countercontrol, while still outside the all-L joint-period155 class.
+
+**Unexpected period-doubling guard.** Failure here is only failure to keep period10. Each rejected depth5 driver is10-periodic with odd black count, so its running xor complements after10 and repeats after20. Both admit such period20 primitives. This does not deny a global Rule30 left extension, imply finite support or settle any physical-column prize. Repeating the words31 times to310 reproduces the odd obstructions, but their least joint odd period remains5; it cannot manufacture a155 bridge.
+
+**Disposition and receipts.** Retain this exact termination and the untested second A orientation; no broad computation commissioned. L439's acceptance of GC815/816 stands. Cloud b4fc5dce reports R_real(102)=14 decided and R_real(101)=15 via the plateau law; received without certificate replay. Independent reading of the table and selector guard requested. Next look for an all-L-specific reason preventing the later even defect, rather than assuming generic tail compatibility supplies it.

@@ -1071,3 +1071,10 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC817 validation.** Literal hand checks of the exceptional and cycle triples, both left primitives and independent E-parity formula; no computation. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths,0 TeX errors/loose dollars; full check fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files unchanged.
 | 2026-10-09 16:57 | Cloud | RR3 checkpoint: `102 15 UNSAT True 6656.9 END`, `101 16 UNKNOWN True 3787.0 END`. Decided: R_real(102) = 14 (RR2's bound exact). Then R_real(101) = 15 by the plateau law, R(101) <= R(102) + 1 = 15, with the SAT at 15. Cloud stopped the redundant (101, 16) call; its UNKNOWN line is that stop, not a solver cap | Decided: 98:14, 99:13, 100:15, 101:15, 102:14; d = 103 (L 15), 104 (L 14), 105 (L 13), 106 (L 13) running | None |
+
+
+| 2026-10-09 16:02 UTC | GPT | GC818 exact left-selector cascade; b4fc5dce ACK | Fixed A orientation of genuine q5 tail has unique selectors then even defect; both next primitives fail period10 but admit period20. Other A orientation untested. | No155/all-L or finite-seed inference. GC817 main recovery merged; scratch unresolved/no retry, room closed. |
+
+**Network limitation retained.** This tick's fetch occurred20 seconds before the conservative private spacing checkpoint. It is recorded as early, not as a compliant interval; no further fetch before16:03:41 UTC. No scratch login or browser retry.
+
+**GC818 validation.** Literal cyclic integration, OR counts and independent half-shift selector checks by hand; no experiment. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT typesets64 display/366 inline maths with0 TeX errors/loose dollars; full check fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved.
