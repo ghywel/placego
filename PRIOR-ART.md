@@ -2455,3 +2455,23 @@ a finite seed's central trace. No novelty claim for closing theory or damage pro
 
 
 **2026-10-09 — GPT GC847, rain stack statistics.** Reused the existing C5 uniform-Bernoulli measure proof and its independent four-preimage audit, alongside the prior triangle-statistics receipt above. Isolated-white stack tops are a different event from width-1 triangle births: the direct five-bit count gives 1/16 rather than C5's 3/32. The geometric stack-top law is derived explicitly in GC847; no external priority or new literature search is claimed. RN's single-seed agreement remains a measurement.
+
+### Lemma B2 found in print (Local, 2026-10-09 19:44 BST)
+
+The owed check "is the unboundedness of the left diagonals' periods (RULE30-PRIZE.md §8.59, Lemma B2) in Jen (1986)
+or Rowland (2006, §5)?" now has a partial answer from a third source.
+- **Nersissian, T., "Diagonal Periods and Newton Supports of Rules 30, 86 and 135"**, arXiv:2609.25077v1 (2026-09-18),
+  §4 (read through a fetched summary of the HTML, with the theorem excerpts checked).
+  - Rule 86 is Rule 30 reflected (Proposition 3). Its natural diagonals satisfy D_m(t + 1) = D_(m-2)(t) XOR
+    (D_(m-1)(t) OR D_m(t)) (Proposition 4), which is our left-half recurrence.
+  - Theorem 13 proves that their least eventual periods are unbounded from the single seed, with m + 2 <= 4^(Q_m).
+    The method is ours: map adjacent periodic profile pairs backward; the boundary pairs (0, 0), which is fixed, and
+    (0, 1) anchor a chain of distinct pairs.
+  - Corollary 3, the record-doubling criterion, is Rowland's Proposition 2. Theorems 10 to 12 are the reset and
+    integration lemmas.
+  - Its §3 (Theorem 8) is about the other diagonals, parallel to the right edge (our G frame), with periods at least
+    floor(m/2) + 1. That is a different object from B2.
+- **Credit:** B2's method and its single-seed statement are Nersissian's, and earlier. Our every-left-finite-row
+  statement is the same argument (§8.59 note).
+- **Still owed:** Jen 1986, which is paywalled (the owner, 2026-10-09).
+

@@ -3745,6 +3745,17 @@ Jen 1986, Rowland 2006). Measured: below diagonal 53,200 the eventually white di
 for the strip of 53,200 diagonals; one cycle, reached by the single cell and by random seeds). Over all 512 contents
 of the first 10 diagonals, diagonal 4 is black from time 4 and diagonal 9 from time 11 (BD3).
 
+*Literature, 2026-10-09 (Local, L471).* Lemma B2 is in print for the single seed. Nersissian, "Diagonal Periods and
+Newton Supports of Rules 30, 86 and 135", arXiv:2609.25077 (submitted 2026-09-18, before §8.59), Theorem 13,
+proves that the least eventual periods of Rule 86's natural diagonals are unbounded. Rule 86 is Rule 30 reflected
+(its Proposition 3), and those diagonals are our left-half diagonals. The proof is the same as B2's: a pigeonhole on
+adjacent periodic profile pairs, read backward into the zero boundary. It adds a bound, m + 2 <= 4^(Q_m), where Q_m
+is the running largest period through depth m. Its Corollary 3 is Rowland's doubling criterion (his Proposition 2).
+B2 as stated here applies to every left-finite row; the proof uses only V_(-1) = V_(-2) = 0 and V_0 = 1. That is an
+immediate extension of the same argument, not a new method; the credit for the method is Nersissian's. Rowland §5
+has the doubling criterion but not unboundedness (GPT's reading, 2026-10-06). Jen 1986 is still owed (paywalled).
+Read through a fetched summary of the arXiv HTML, with the statement excerpts checked; not a full proof audit.
+
 **Theorem A‴ (the window principle, with the band).** Let the leftmost black cell at time 0 be $L$ cells left of
 column $i$, and let the pair of columns $(i, i+1)$ show the same block of $n$ values from the times $a$ and $a' > a$.
 Then row $a'$ is white on its diagonals $L + a' - n + 1$ to $a' - a - 1$. Hence, if diagonal $b$ is black at time $a'$
