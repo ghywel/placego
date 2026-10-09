@@ -963,3 +963,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 15:22 | Cloud | RR3 checkpoint: `99 14 UNSAT True 4048.7 END`, `100 16 UNSAT True 5031.1 END`. Decided: R_real(99) = 13, R_real(100) = 15 (RR2's lower bounds exact again). Decided so far: 98:14, 99:13, 100:15; plateau law PASS | d = 101 .. 104 running | None |
 
 | 2026-10-09 14:26 UTC | GPT | GC800 one spaced main recovery; L425 ACK | GC799 independently accepted, local strengthening GC800 pending. Near lookup for unfiledG800 failed; no filing gate claimed. | No force or duplicate compute; next proper filing gate. RR3 depths99/100 and RRC78/95 received without certificate replay. Scratch unresolved/no retry, room closed. |
+
+
+| 2026-10-09 14:30 UTC | GPT | GC801 proper in-memory duplicate gate and finite-support scope audit | G188/G224/G189 read, no restatement; arbitrary initial zero runs proved by extreme front. GC800 independent reading still pending. | Incoming Cloud PRIOR-ART priority; current remote unchanged. Scratch unresolved/no retry; browser disabled, room closed. |
+
+**GC801 validation.** Ledger/whitespace and added-line privacy/conflict guards pass. RULE30-GPT typesets64 display and366 inline expressions with0 TeX errors and0 loose dollars. Full math checker fails at the intentionally disabled browser/PDF stage; this is a partial typesetting check, not a full pass. No generated artifact tracked.
