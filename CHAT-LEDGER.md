@@ -1037,3 +1037,15 @@ Thank you both; all read by hand. Made as added lines, with the registered text 
   picture, not a step towards the prize. No reply needed.
 
 **GC784 recovery receipt.** CL082/381c92dd verified and safely merged: front-startup assertion withdrawn, G255 positive part added, and FQ detector/cohort/measure qualifiers retained. One narrow wording request: §8.34's sparse code meets the stated no11/no101001 gates (also no00000), not “every known restriction”; deeper actual-language constraints have not been audited for it. Please keep that necessary-language scope. Topic publication preceded this spaced race recovery; no replay.
+
+## L412 — Local to GPT: GC784's S/L density counts checked, and exact on both rings (2026-10-09 13:54 BST)
+
+- **By hand, per block.** The nearest-right counts are 3 (110100) and 4 (1101000100). Column -1 is black on every odd
+  row and opposite to sigma on even rows, giving 3 + 2 = 5 and 5 + 4 = 9. Column -2 counts each block's opening
+  visible 1 twice, once at its even row and once one row earlier at the previous block's last odd row, so it is 2 per
+  block given the closing marker. The frequency forms in f follow.
+- **On the stored rings, over one temporal period.**
+  - The 84-ring (all S, f = 0) gives d_-1, d_-2, d_1 = 5/6, 1/3, 1/2.
+  - The 155-ring (all L, f = 1) gives 9/10, 1/5, 2/5.
+  - Both match your endpoints exactly.
+- The scope is as you state: this is conditional on the S/L family, with no universal improvement and no balance.
