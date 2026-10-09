@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rule 30: One Black Cell</title>
+<meta name="description" content="Rule 30, Stephen Wolfram's favourite simple program, explained from scratch with live visuals, and where five days of work on his first prize question stands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column for the story, with each visual breaking out to the full width at the point where the
+   text needs it. The palette and faces are those of the Vitruvian plate, the page's centrepiece. */
+:root {
+  --paper: #ECEFEA;
+  --panel: #F5F6F2;
+  --ink: #1E1F1C;
+  --ink-soft: #5B6157;
+  --rule: #C8CDC2;
+  --tri: #9B2C52;
+  --sq: #1E5A86;
+  --circ: #A87306;
+  --prize: #2D7A57;
+  --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+    --tri: #E0688F; --sq: #62A6DA; --circ: #E2B444; --prize: #5CC496; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 1.06rem;
+  line-height: 1.62; }
+a { color: var(--sq); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--sq); outline-offset: 2px; }
+.page { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 0 64px; }
+.col { max-width: 68ch; margin-inline: auto; }
+header.hero { padding-block: 44px 10px; display: grid; gap: 14px; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-soft); margin: 0; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.02;
+  margin: 0; text-wrap: balance; letter-spacing: -0.005em; }
+h1 em { color: var(--prize); }
+.lede { font-size: 1.22rem; margin: 0; max-width: 60ch; text-wrap: pretty; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3.6vw, 2.35rem); line-height: 1.12;
+  margin: 0 0 14px; text-wrap: balance; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; margin: 26px 0 8px; }
+section { padding-block: 44px 8px; }
+section p { margin: 0 0 16px; text-wrap: pretty; }
+.chapter { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-soft); margin: 0 0 8px; }
+figure { margin: 24px 0 26px; }
+figcaption { font-size: 0.92rem; color: var(--ink-soft); margin-top: 10px; max-width: 78ch; margin-inline: auto; }
+.wide canvas { display: block; margin-inline: auto; max-width: none; }
+.frame { border: 1px solid var(--rule); background: var(--paper); }
+.frame iframe { display: block; width: 100%; height: min(90vh, 920px); border: 0; background: var(--paper); }
+.open { font-family: var(--font-mono); font-size: 0.82rem; display: block; text-align: right; margin-top: 6px; }
+.quote { font-family: var(--font-display); font-size: 1.45rem; line-height: 1.35; margin: 22px 0; padding-left: 18px;
+  border-left: 3px solid var(--prize); }
+.quote cite { display: block; font-family: var(--font-body); font-style: normal; font-size: 0.88rem; color: var(--ink-soft);
+  margin-top: 6px; }
+.qs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 20px 0 8px; }
+.q { background: var(--panel); border: 1px solid var(--rule); padding: 14px 16px; display: grid; gap: 6px; align-content: start;
+  min-width: 0; }
+.q .n { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--prize); }
+.q .ask { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.25; }
+.q .coin { font-size: 0.9rem; color: var(--ink-soft); }
+.q .state { font-family: var(--font-mono); font-size: 0.78rem; }
+ul.facts { padding-left: 1.1em; margin: 0 0 16px; display: grid; gap: 9px; }
+ul.facts li { padding-left: 2px; }
+.must { background: var(--panel); border: 1px solid var(--rule); padding: 16px 20px; margin: 18px 0; }
+.must ul { margin: 6px 0 0; padding-left: 1.1em; display: grid; gap: 6px; }
+.tally { font-family: var(--font-mono); font-size: 0.86rem; font-variant-numeric: tabular-nums; color: var(--ink-soft);
+  text-align: center; margin-top: 8px; }
+.tally b { color: var(--ink); font-weight: 500; }
+.ctrl { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+.ctrl button { font: 500 0.84rem var(--font-body); color: var(--ink); background: var(--panel); border: 1px solid var(--ink-soft);
+  border-radius: 2px; padding: 5px 12px; cursor: pointer; }
+.more { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 18px; }
+.more a { display: grid; gap: 4px; padding: 14px 16px; border: 1px solid var(--rule); background: var(--panel); text-decoration: none;
+  color: var(--ink); }
+.more a b { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; color: var(--sq); }
+.more a span { font-size: 0.9rem; color: var(--ink-soft); }
+footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 18px; font-size: 0.9rem; color: var(--ink-soft); }
+footer p { margin: 0 0 10px; }
+footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
+@media (max-width: 760px) {
+  .page { padding-inline: 16px; }
+  .qs { grid-template-columns: minmax(0, 1fr); }
+  body { font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero col">
+    <p class="eyebrow">A simple program, a forty-year question</p>
+    <h1>Rule 30: <em>one black cell</em></h1>
+    <p class="lede">Start with a single black square. Apply one tiny rule, row after row. What grows is part orderly,
+      part wild, and nobody can yet prove anything about the column running straight down its middle.</p>
+  </header>
+
+  <figure class="wide">
+    <canvas id="hero" role="img" aria-label="Rule 30 growing from a single black cell, row by row, with its centre column picked out in green and copied into a strip on the right as it is read."></canvas>
+    <p class="tally" id="tally"></p>
+    <figcaption>Rule 30 growing from one black cell. The green column down the middle is the one Stephen Wolfram's
+      prizes ask about. As each row appears, its middle cell is read off into the strip on the right: so far it looks
+      exactly like the tosses of a fair coin.</figcaption>
+  </figure>
+
+  <section class="col" id="rule">
+    <p class="chapter">1 · The rule</p>
+    <h2>A rule you could run with a pencil</h2>
+    <p>Picture a row of squares, each black or white. To make the next row, every square looks at three squares
+      above it: the one directly above, and that one's left and right neighbours. Those three colours can come in eight
+      combinations, and the rule simply says, for each combination, what colour the new square is.</p>
+    <p>Write the eight answers as a binary number and you get 00011110, which is 30. That is the whole of Rule 30.
+      Below, the rule is applied one square at a time: the three boxed squares decide the new one, and the matching
+      entry of the rule lights up.</p>
+  </section>
+  <figure class="wide">
+    <canvas id="explain" role="img" aria-label="The eight cases of Rule 30 above a small grid. A cursor moves along each new row; the three cells above it are boxed and a dotted line joins the matching case of the rule to the new cell."></canvas>
+    <div class="ctrl"><button id="explain-play" type="button">Pause</button><button id="explain-step" type="button">Step</button></div>
+    <figcaption>In words: the new square is black when the square above-left differs from "the square above or the
+      one above-right is black". One line of logic, the same everywhere, applied for ever.</figcaption>
+  </figure>
+
+  <section class="col" id="why">
+    <p class="chapter">2 · Why it matters</p>
+    <h2>Randomness from nothing</h2>
+    <p>In the early 1980s Stephen Wolfram set out to look systematically at the simplest possible programs of this
+      kind. There are only 256 of them. Most do something dull: they die out, repeat, or make neat nested patterns.
+      Rule 30 does not. Its left side settles into regular stripes, but its right side never settles at all, and its
+      centre column passes the standard tests of randomness.</p>
+    <p>That observation, that a very simple rule can produce behaviour which looks random, became a cornerstone of
+      Wolfram's <em>A New Kind of Science</em> (2002). For many years Rule 30 was the random number source of the
+      Wolfram Language. Its pattern clads the walls of Cambridge North railway station. And it was the subject of a
+      challenge.</p>
+    <blockquote class="quote">It's been nearly 40 years since I first saw rule 30—but it still amazes me.
+      <cite>Stephen Wolfram, announcing the Rule 30 Prizes, 1 October 2019</cite></blockquote>
+    <p>On that day Wolfram offered $30,000 in prizes, $10,000 for each of three questions about the centre column.
+      Seven years on, all three are open. Read the column as a coin, black for heads and white for tails:</p>
+    <div class="qs">
+      <div class="q"><span class="n">Problem 1</span><span class="ask">Does the centre column always remain non-periodic?</span>
+        <span class="coin">Does the coin ever fall into a pattern that repeats for ever?</span><span class="state">Open</span></div>
+      <div class="q"><span class="n">Problem 2</span><span class="ask">Does each colour occur on average equally often in it?</span>
+        <span class="coin">Is the coin fair in the long run?</span><span class="state">Open</span></div>
+      <div class="q"><span class="n">Problem 3</span><span class="ask">Does computing its nth cell take at least n steps of effort?</span>
+        <span class="coin">Is there a shortcut to the nth toss?</span><span class="state">Open</span></div>
+    </div>
+    <p>The coin is not random: every toss is fixed by the rule. So each answer is simply yes or no, and only a proof
+      can settle it. Wolfram's team has computed a billion cells of the column. They look perfectly random, and that
+      proves nothing.</p>
+  </section>
+
+  <section class="col" id="plate">
+    <p class="chapter">3 · The whole picture</p>
+    <h2>A triangle, a square and a circle</h2>
+    <p>This is where our work begins. Problem 1 asks whether the column can ever repeat. So assume it does, in the
+      simplest way it could: white, black, white, black, for ever. Hold the centre to that beat, like a wall, and run
+      Rule 30 on the squares to its right from a random start. The column right next to the wall does something
+      remarkable. It falls into a fixed loop of 56 steps, a wheel, and stays on it until something from further right
+      knocks it off, after which it settles back at a new position on the wheel.</p>
+    <p>The plate below puts the pieces together, after Leonardo's <em>Vitruvian Man</em>. At the top is the triangle
+      Rule 30 draws from one cell, with the prize column down its middle and the off-centre region where the chaos
+      lives. It is the top half of a square standing on its corner. Below is the wheel, which is really two clocks at
+      once, of 8 and of 7 positions. Beside it runs the wall experiment that drives it. The dotted lines follow the
+      wheel's current position to both clocks and to the cell it stands for.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="vitruvian.html?embed" title="Vitruvian Rule 30, live" loading="lazy"></iframe></div>
+    <a class="open" href="vitruvian.html">Open the plate on its own page →</a>
+    <figcaption>Live: the triangle, its square, the prize column, the off-centre core, and the 56-point wheel with its
+      8-point and 7-point clocks. Each kick, when column 1 is knocked to a new place on the wheel, is counted in the
+      readout.</figcaption>
+  </figure>
+
+  <section class="col" id="beat">
+    <p class="chapter">4 · Assume the opposite</p>
+    <h2>What a repeating centre would demand</h2>
+    <p>Rule 30 has a useful property: if you know the centre column and the column beside it, every square to the left
+      is forced, one after another. So a repeating centre forces the whole left side. The prize is about a finite
+      start, a pattern with only finitely many black squares, and for one of those the forced left side would have to
+      turn white for good beyond some depth. A counterexample to Problem 1 is exactly that: a white edge that never
+      breaks.</p>
+    <p>We looked at what such an edge would cost. It drags a disturbance along with it, and that disturbance pulls on
+      the squares that must stay white with a beat: odd, odd, even, odd, odd, even, the pattern of the Fibonacci numbers
+      1, 1, 2, 3, 5, 8, 13. Something inside has to answer that beat for ever. The four short animations below show the
+      beat, the one pattern that could pay it and why Rule 30 forbids it, why the payment always needs older and older
+      events, and how real Rule 30 keeps trying regardless.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="heartbeat.html?embed" title="Frontier Heartbeat, live" loading="lazy"></iframe></div>
+    <a class="open" href="heartbeat.html">Open the four acts on their own page →</a>
+    <figcaption>Live: time runs across, depth into the left side runs down. Each red dot is the edge's disturbance; the
+      dotted lines count how often it lands among the squares that decide a target, and the bars beside the rows show
+      the beat that must be paid. Choose an act at the top.</figcaption>
+  </figure>
+
+  <section class="col" id="found">
+    <p class="chapter">5 · What we found</p>
+    <h2>Where Problem 1 stands</h2>
+    <p>We have not solved any of the three problems. Here is what has been settled along the way, in plain terms.
+      Every proof below was checked by a second reader inside the project; none has yet been reviewed outside it.
+      Computations were announced with their expected outcomes before they were run, and the few exploratory ones are
+      marked as such in the record.</p>
+    <h3>The case we attacked</h3>
+    <ul class="facts">
+      <li>A centre that eventually stays one colour for ever is impossible for any finite start. Condrey proved this
+        in September 2026. The next case, white, black, white, black, he named as the first unresolved one, and it is
+        the case this work is about.</li>
+      <li>No such counterexample exists close to the centre. Its white edge would have to begin more than 248 squares
+        to the left. No right side of up to 32 squares works with a left side of up to 108; that is 4.3 billion cases,
+        all checked.</li>
+      <li>The same question for a close sibling of Rule 30, Rule 210, is now settled: no finite start keeps its
+        centre ticking white, black, white, black.</li>
+    </ul>
+    <div class="must">
+      <b>If a counterexample exists, it must look like this</b>
+      <ul>
+        <li>its column beside the centre never settles into a repeating pattern, so the wheel above slips for ever;</li>
+        <li>the slips cannot become rarer and rarer faster than a fixed ratio;</li>
+        <li>that column carries less than an eighth of a bit of information per step;</li>
+        <li>it cannot be the famous Fibonacci word or any sequence of that kind, nor a reading of a turning circle
+          through a single window; the Thue–Morse sequence is ruled out at least for left edges up to 15,868
+          squares.</li>
+      </ul>
+    </div>
+    <p>None of this was known on 4 October. Together it makes a counterexample implausible, but it is not a proof.
+      Everything comes down to one statement nobody has a method for. Holding the centre to its beat has to cost real
+      information: the number of starting patterns that keep the beat should fall off exponentially with time. We can
+      measure that fall-off, and it is close to one bit per step. The part of the cost paid by the start's left side
+      is proved. The part paid by its right side is the open problem.</p>
+    <h3>The centre column itself</h3>
+    <ul class="facts">
+      <li>It is as unpredictable as a coin to every linear test: over its first 4,194,304 cells, no linear recurrence
+        shorter than half that length generates it, exactly what a fair coin gives.</li>
+      <li>Its colours stay balanced like a fair coin's, and no word of up to 16 cells recurs more than chance allows,
+        even when we looked for words that stayed favoured from one half of the sample to the other.</li>
+      <li>Read as a code, the column cannot say where it came from. Infinitely many other finite starts, 11, 101, 1011,
+        10101 and so on, produce exactly the same centre column. In a search of every start with up to 28 squares on
+        the right and 500 on the left, they are the only ones.</li>
+    </ul>
+    <h3>A ring that keeps the clock for ever</h3>
+    <p>One construction shows how close the edge of possibility is. A row of 84 squares, repeated end to end for ever,
+      comes back to itself every six steps. Its centre ticks white, black, white, black for good, and the column beside
+      it plays the short loop over and over. It is no counterexample, because it has infinitely many black squares, but
+      it is a real Rule 30 pattern doing exactly what a counterexample would have to do.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="necklace.html?embed" title="The All-S Necklace, live" loading="lazy"></iframe></div>
+    <a class="open" href="necklace.html">Open the necklace on its own page →</a>
+    <figcaption>Live: the 84-square ring, its history unrolled inside it, and four squares traced to the cells that hold
+      their present colour. The page recomputes the ring from its 84-bit certificate when it loads.</figcaption>
+  </figure>
+
+  <section class="col" id="how">
+    <p class="chapter">6 · How this was done</p>
+    <h2>Five days, three collaborators, everything in the open</h2>
+    <p>This work was done between 4 and 9 October 2026 by Gareth Herbert, working with AI collaborators: Claude,
+      by Anthropic, in two roles, and GPT, by OpenAI. Each proof was proposed by one party and checked by another
+      before it entered the record. Predictions were written down before experiments, and every prediction that failed
+      was kept. The full record, with its proofs, refutations and computations, is public.</p>
+    <div class="more">
+      <a href="https://github.com/ghywel/placego/blob/main/STATE-OF-THE-PROOF.md"><b>The state of the proof</b><span>Where the
+        three problems stand, with sources for every claim.</span></a>
+      <a href="https://github.com/ghywel/placego/blob/main/PROOFS.md"><b>The proofs</b><span>Every proved statement, each with
+        its second reader.</span></a>
+      <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md"><b>The research record</b><span>The full working
+        notes, measurements and refutations.</span></a>
+      <a href="sieve.html"><b>The edge-event sieve</b><span>An interactive look inside the forced left side: every black
+        square as an odd overlap of triangles.</span></a>
+    </div>
+  </section>
+
+  <footer class="col">
+    <p>Sources: Stephen Wolfram, <a href="https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/">"Announcing
+      the Rule 30 Prizes"</a> (2019) and <a href="https://writings.stephenwolfram.com/2017/06/oh-my-gosh-its-covered-in-rule-30s/">"Oh
+      My Gosh, It's Covered in Rule 30s!"</a> (2017); <a href="https://www.wolframscience.com/nks/"><em>A New Kind of
+      Science</em></a> (2002); Condrey, <a href="https://arxiv.org/abs/2609.09431">"Finite Configurations Cannot Generate
+      a Constant Trace in Rule 30"</a> (2026); Jen, on the periodicity of adjacent columns (1990); Meier and Staffelbach,
+      on recovering Rule 30's left side from its centre (1991).</p>
+    <p>The visuals on this page compute everything they show, live, in your browser. Page dated 9 October 2026.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+  function rule30(a) {
+    var b = new Uint8Array(a.length);
+    for (var i = 1; i < a.length - 1; i++) b[i] = a[i - 1] ^ (a[i] | a[i + 1]);
+    return b;
+  }
+  function fit(c, w, h) {
+    var d = Math.min(window.devicePixelRatio || 1, 2);
+    c.width = Math.round(w * d); c.height = Math.round(h * d);
+    c.style.width = w + "px"; c.style.height = h + "px";
+    var g = c.getContext("2d"); g.setTransform(d, 0, 0, d, 0, 0); return g;
+  }
+  function availWidth(el) {
+    var pg = document.querySelector(".page"), ps = getComputedStyle(pg);
+    return pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);
+  }
+
+  /* ---- the hero: the pyramid grows; its centre column is read into a strip ---- */
+  var hero = document.getElementById("hero"), tallyEl = document.getElementById("tally");
+  var H = { g: null, W: 0, Hh: 0, s: 3, R: 160, rows: [], shown: 0, hold: 0 };
+  function heroLayout() {
+    var w = Math.min(availWidth(), 1180), h = Math.round(Math.min(window.innerHeight * 0.6, 560, w * 0.62));
+    H.s = Math.max(1.4, Math.min(4, w / 420));
+    H.R = Math.max(40, Math.floor(Math.min(h / H.s - 2, ((w * 0.94 - 40) / H.s - 9) / 2)));
+    H.W = w; H.Hh = Math.round((H.R + 2) * H.s);
+    H.g = fit(hero, w, H.Hh);
+    var n = 2 * H.R + 5, row = new Uint8Array(n); row[H.R + 2] = 1; H.rows = [row];
+    for (var t = 1; t <= H.R; t++) H.rows.push(rule30(H.rows[t - 1]));
+    if (reduce) H.shown = H.R;
+    heroDraw();
+  }
+  function heroDraw() {
+    var g = H.g, s = H.s, R = H.R, W = H.W, n = 2 * R + 5;
+    var sw = Math.max(6, s * 3), gap = Math.max(18, s * 8), px = (W - (n * s + gap + sw)) / 2, sx = px + n * s + gap;
+    var ink = css("--ink"), prize = css("--prize"), rule = css("--rule"), muted = css("--ink-soft");
+    g.clearRect(0, 0, W, H.Hh);
+    var black = 0, white = 0;
+    for (var t = 0; t <= H.shown; t++) {
+      var row = H.rows[t];
+      for (var i = 0; i < n; i++) if (row[i]) {
+        g.fillStyle = i === R + 2 ? prize : ink;
+        g.fillRect(px + i * s, t * s, s + 0.3, s + 0.3);
+      }
+      var v = row[R + 2]; if (v) black++; else white++;
+      g.fillStyle = v ? prize : rule; g.globalAlpha = v ? 1 : 0.5;
+      g.fillRect(sx, t * s, sw, s + 0.3); g.globalAlpha = 1;
+    }
+    if (!reduce && H.shown < R) {                    // the tracer: this row's middle cell into the strip
+      var y = H.shown * s + s / 2, x0 = px + (R + 2.5) * s;
+      g.setLineDash([4, 3]); g.strokeStyle = css("--paper"); g.lineWidth = 3.6;
+      g.beginPath(); g.moveTo(x0 + s, y); g.lineTo(sx - 2, y); g.stroke();
+      g.strokeStyle = prize; g.lineWidth = 1.4;
+      g.beginPath(); g.moveTo(x0 + s, y); g.lineTo(sx - 2, y); g.stroke(); g.setLineDash([]);
+      g.strokeStyle = prize; g.lineWidth = 1.5; g.strokeRect(sx - 1.5, H.shown * s - 1.5, sw + 3, s + 3);
+    }
+    g.fillStyle = muted; g.font = "500 11px " + css("--font-mono"); g.textAlign = "left"; g.textBaseline = "bottom";
+    tallyEl.innerHTML = "centre column, first " + (H.shown + 1) + " cells: <b>" + black + "</b> black, <b>" + white +
+      "</b> white";
+  }
+  var heroLast = 0, heroAcc = 0;
+  function heroFrame(ts) {
+    if (!heroLast) heroLast = ts;
+    var dt = ts - heroLast; heroLast = ts;
+    if (H.shown < H.R) {
+      heroAcc += dt;
+      while (heroAcc > 28 && H.shown < H.R) { heroAcc -= 28; H.shown++; }
+      heroDraw();
+    } else {
+      H.hold += dt;
+      if (H.hold > 6000) { H.hold = 0; H.shown = 0; heroAcc = 0; heroDraw(); }
+    }
+    requestAnimationFrame(heroFrame);
+  }
+
+  /* ---- the explainer: the eight cases above a small grid, one new cell at a time ---- */
+  var ex = document.getElementById("explain");
+  var E = { g: null, W: 0, Hh: 0, cols: 31, rows: 13, grid: [], r: 1, c: 14, playing: !reduce, cs: 18, hold: 0 };
+  var CASES = [[1, 1, 1], [1, 1, 0], [1, 0, 1], [1, 0, 0], [0, 1, 1], [0, 1, 0], [0, 0, 1], [0, 0, 0]];
+  function out(l, c, r) { return l ^ (c | r); }
+  function exLayout() {
+    var w = Math.min(availWidth(), 900);
+    E.cs = Math.max(8, Math.min(22, Math.floor((w - 20) / E.cols)));
+    var caseH = Math.max(44, E.cs * 3.2);
+    E.W = w; E.Hh = Math.round(caseH + 26 + E.rows * E.cs + 6);
+    E.caseH = caseH;
+    E.g = fit(ex, w, E.Hh);
+    var row = new Uint8Array(E.cols + 2); row[(E.cols + 1) >> 1] = 1; E.grid = [row];
+    for (var t = 1; t < E.rows; t++) E.grid.push(rule30(E.grid[t - 1]));
+    if (reduce) { E.r = E.rows; }
+    exDraw();
+  }
+  function exDraw() {
+    var g = E.g, W = E.W, cs = E.cs, ink = css("--ink"), rule = css("--rule"), tri = css("--tri"), muted = css("--ink-soft");
+    var paper = css("--paper"), panel = css("--panel");
+    g.clearRect(0, 0, W, E.Hh);
+    // the eight cases
+    var k = Math.min(16, Math.floor((W - 20) / 8 / 3.6)), gap = (W - 8 * 3 * k) / 9, active = -1;
+    var gx = (W - E.cols * cs) / 2, gy = E.caseH + 26;
+    if (E.r < E.rows) {
+      var a = E.grid[E.r - 1], i = E.c + 1;
+      var L = a[i - 1], C = a[i], Rr = a[i + 1];
+      active = CASES.findIndex(function (q) { return q[0] === L && q[1] === C && q[2] === Rr; });
+    }
+    var caseCentres = [];
+    CASES.forEach(function (q, n) {
+      var x = gap + n * (3 * k + gap), y = 6;
+      g.fillStyle = n === active ? panel : "transparent";
+      if (n === active) { g.fillStyle = tri; g.globalAlpha = 0.12; g.fillRect(x - 5, y - 4, 3 * k + 10, 2 * k + 22); g.globalAlpha = 1; }
+      for (var j = 0; j < 3; j++) {
+        g.fillStyle = q[j] ? ink : paper; g.fillRect(x + j * k, y, k, k);
+        g.strokeStyle = rule; g.lineWidth = 1; g.strokeRect(x + j * k + 0.5, y + 0.5, k - 1, k - 1);
+      }
+      var o = out(q[0], q[1], q[2]);
+      g.fillStyle = o ? ink : paper; g.fillRect(x + k, y + k + 2, k, k);
+      g.strokeStyle = n === active ? tri : rule; g.lineWidth = n === active ? 2 : 1;
+      g.strokeRect(x + k + 0.5, y + k + 2.5, k - 1, k - 1);
+      g.fillStyle = muted; g.font = "500 " + Math.max(9, k * 0.75) + "px " + css("--font-mono");
+      g.textAlign = "center"; g.textBaseline = "top"; g.fillText(String(o), x + 1.5 * k, y + 2 * k + 6);
+      caseCentres.push([x + 1.5 * k, y + 1.5 * k + 2]);
+    });
+    // the grid, computed up to the cursor
+    for (var t = 0; t < E.rows; t++) {
+      for (var c = 0; c < E.cols; c++) {
+        var done = t < E.r || (t === E.r && (c < E.c || c > rowEnd(t)));
+        var x0 = gx + c * cs, y0 = gy + t * cs;
+        g.strokeStyle = rule; g.lineWidth = 1; g.strokeRect(x0 + 0.5, y0 + 0.5, cs - 1, cs - 1);
+        if (done && E.grid[t][c + 1]) { g.fillStyle = ink; g.fillRect(x0 + 1, y0 + 1, cs - 2, cs - 2); }
+      }
+    }
+    if (E.r < E.rows) {
+      var py = gy + (E.r - 1) * cs, px0 = gx + (E.c - 1) * cs;
+      g.strokeStyle = tri; g.lineWidth = 2;
+      g.strokeRect(px0 + 1, py + 1, 3 * cs - 2, cs - 2);              // the three parents
+      var cx = gx + E.c * cs, cy = gy + E.r * cs;
+      g.strokeRect(cx + 1, cy + 1, cs - 2, cs - 2);                   // the new cell
+      var tc = caseCentres[active];                                   // tracer: the matching case -> the new cell
+      g.setLineDash([4, 3]); g.strokeStyle = paper; g.lineWidth = 3.6;
+      g.beginPath(); g.moveTo(tc[0], tc[1] + k); g.lineTo(cx + cs / 2, cy + cs / 2); g.stroke();
+      g.strokeStyle = tri; g.lineWidth = 1.5;
+      g.beginPath(); g.moveTo(tc[0], tc[1] + k); g.lineTo(cx + cs / 2, cy + cs / 2); g.stroke(); g.setLineDash([]);
+    }
+    g.fillStyle = muted; g.font = "500 11px " + css("--font-mono"); g.textAlign = "center"; g.textBaseline = "bottom";
+    g.fillText("left · centre · right  →  new cell     00011110 = 30", W / 2, gy - 6);
+  }
+  var MID = 15;                                       // the seed's column in the 31-column grid
+  function rowStart(r) { return Math.max(0, MID - r); }
+  function rowEnd(r) { return Math.min(E.cols - 1, MID + r); }
+  function exStep() {
+    if (E.r >= E.rows) { E.r = 1; E.c = rowStart(1); exDraw(); return; }
+    E.c++;
+    if (E.c > rowEnd(E.r)) { E.r++; E.c = rowStart(E.r); }
+    exDraw();
+  }
+  var exTimer = null;
+  function exSchedule() {
+    clearInterval(exTimer);
+    if (E.playing) exTimer = setInterval(function () {
+      if (E.r >= E.rows) { if (++E.hold < 30) return; E.hold = 0; E.r = 1; E.c = rowStart(1); exDraw(); } else exStep();
+    }, 150);
+    document.getElementById("explain-play").textContent = E.playing ? "Pause" : "Play";
+  }
+  document.getElementById("explain-play").addEventListener("click", function () { E.playing = !E.playing; exSchedule(); });
+  document.getElementById("explain-step").addEventListener("click", function () { E.playing = false; exSchedule(); exStep(); });
+
+  function layoutAll() { heroLayout(); exLayout(); }
+  var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(layoutAll, 150); });
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", function () { heroDraw(); exDraw(); });
+  }
+  layoutAll(); exSchedule();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { heroDraw(); exDraw(); });
+  if (!reduce) requestAnimationFrame(heroFrame);
+})();
+</script>
+</body>
+</html>

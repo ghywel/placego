@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The All-S Necklace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a toolbar of readouts and controls on top; below it one square stage, sized to the screen, where the ring
+   of 84 beads encloses its own unrolled history; the notes follow underneath. */
+:root {
+  --paper: #eaeef2;      /* cool slate paper */
+  --sheet: #f6f8fa;      /* drawing surface and toolbar */
+  --ink: #18212c;        /* text and black cells */
+  --muted: #5a6574;
+  --rule: #c7cfd8;
+  --off: #b3bdc8;        /* white cells, drawn as hollow beads */
+  --clock: #0b7a77;      /* site 0, the wall's clock */
+  --mate: #b25f17;       /* site 1, the companion column */
+  --mate-soft: rgba(178, 95, 23, 0.14);
+  --clock-soft: rgba(11, 122, 119, 0.16);
+  --t-right: #4a55c9;    /* site 21, the rightmost bead */
+  --t-bottom: #b42f63;   /* site 42, the bottom bead, beside the cut */
+  --t-left: #3d8a3a;     /* site -21, the leftmost bead */
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f151c; --sheet: #151d26; --ink: #e4e9ee; --muted: #97a3b1; --rule: #2b3643; --off: #3b4757;
+    --clock: #3cc2bd; --mate: #e89a52; --mate-soft: rgba(232, 154, 82, 0.16); --clock-soft: rgba(60, 194, 189, 0.18);
+    --t-right: #9ba3ff; --t-bottom: #f27aa8; --t-left: #82cc7f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f151c; --sheet: #151d26; --ink: #e4e9ee; --muted: #97a3b1; --rule: #2b3643; --off: #3b4757;
+  --clock: #3cc2bd; --mate: #e89a52; --mate-soft: rgba(232, 154, 82, 0.16); --clock-soft: rgba(60, 194, 189, 0.18);
+    --t-right: #9ba3ff; --t-bottom: #f27aa8; --t-left: #82cc7f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+.page { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 0 56px; display: grid; gap: 28px; }
+
+.toolbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; background: var(--sheet);
+  border: 1px solid var(--rule); border-top: 0; border-radius: 0 0 8px 8px; padding: 10px 16px 12px;
+  display: grid; gap: 10px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.titleblock { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-right: auto; min-width: 0; }
+h1 { font-family: var(--display); font-weight: 600; font-size: 24px; line-height: 1.1; margin: 0; }
+h1 em { font-style: italic; font-weight: 500; color: var(--mate); }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+button, select { font: inherit; font-size: 14px; color: var(--ink); background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 5px 12px; cursor: pointer; }
+button:hover, select:hover { border-color: var(--ink); }
+button:focus-visible, select:focus-visible { outline: 2px solid var(--clock); outline-offset: 2px; }
+.phase { font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; min-width: 15ch; }
+.readout { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-width: 0; }
+.readout .label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; white-space: nowrap; }
+.readout.clock .label { color: var(--clock); }
+.readout.mate .label { color: var(--mate); }
+.bits { font-family: var(--mono); font-size: 13px; display: flex; flex-wrap: wrap; gap: 3px; align-items: center; }
+.bit { width: 17px; height: 21px; display: grid; place-items: center; border-radius: 3px; color: var(--muted); }
+.bit.on { color: var(--ink); font-weight: 600; }
+.clock .bit.now { outline: 2px solid var(--clock); outline-offset: -1px; color: var(--clock); }
+.sgroup { display: flex; gap: 0; padding: 0 3px; border: 1px solid var(--mate); border-radius: 4px; background: var(--mate-soft); }
+.sgroup::before { content: "S"; font-family: var(--display); font-style: italic; font-size: 13px; color: var(--mate);
+  align-self: center; margin-right: 3px; }
+.sgroup.now { box-shadow: 0 0 0 2px var(--mate); }
+.traced { display: flex; align-items: center; gap: 6px 12px; flex-wrap: wrap; }
+.traced .label { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.chip { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 13px;
+  font-variant-numeric: tabular-nums; }
+.chip i { width: 10px; height: 10px; border-radius: 50%; border: 2px solid currentColor; display: inline-block; }
+.chip i.on { background: currentColor; }
+.check { font-size: 13px; color: var(--muted); }
+.check b { color: var(--clock); }
+
+.stage { display: grid; justify-items: center; min-width: 0; }
+canvas { display: block; max-width: none; }
+
+.lede { font-size: 18px; margin: 0; max-width: 70ch; }
+.notes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.notes section { display: grid; gap: 10px; align-content: start; min-width: 0; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 26px; margin: 0; text-wrap: balance; }
+.notes p { margin: 0; max-width: 62ch; }
+.cert { font-family: var(--mono); font-size: 13px; background: var(--sheet); border: 1px solid var(--rule); border-radius: 4px;
+  padding: 10px 12px; overflow-x: auto; white-space: nowrap; }
+.small { font-size: 14px; color: var(--muted); margin: 0; }
+footer { border-top: 1px solid var(--rule); padding-top: 16px; font-size: 14px; color: var(--muted); max-width: 80ch; }
+@media (max-width: 760px) {
+  .page { padding-inline: 16px; gap: 22px; }
+  .toolbar { position: static; padding: 10px 12px; }
+  .notes { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+<style>
+body { margin: 0; }
+[hidden] { display: none !important; }
+.back { font-size: 0.9rem; margin: 18px 0 0; }
+html.embed .page > :not(.toolbar):not(.stage) { display: none !important; }
+html.embed .page { padding-bottom: 0 !important; }
+</style>
+<script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add("embed");</script>
+</head>
+<body>
+<div class="page">
+  <div class="toolbar" id="toolbar">
+    <div class="bar">
+      <div class="titleblock">
+        <h1>The All-S <em>Necklace</em></h1>
+        <span class="eyebrow">Rule 30 · period two · portfolio question 4</span>
+      </div>
+      <div class="controls">
+        <button id="play" type="button">Pause</button>
+        <button id="step" type="button">Step</button>
+        <select id="speed" aria-label="Speed">
+          <option value="1400">Slow</option>
+          <option value="800" selected>Normal</option>
+          <option value="350">Fast</option>
+        </select>
+        <span class="phase" id="phase">t = 0 · phase 0 of 6</span>
+      </div>
+    </div>
+    <div class="bar">
+      <div class="readout clock"><span class="label">Site 0, the clock</span><span class="bits" id="clockbits"></span></div>
+      <div class="readout mate"><span class="label">Site 1 at even times</span><span class="bits" id="matebits"></span></div>
+      <div class="traced" id="traced"><span class="label">Traced beads</span></div>
+      <span class="check" id="check">Checking…</span>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <canvas id="c" width="300" height="300" aria-label="The 84-bead ring, site 0 at the top and sites increasing clockwise, enclosing the same ring cut open at the bottom and unrolled over 36 steps"></canvas>
+  </div>
+
+  <p class="lede">An 84-cell ring of Rule 30 that comes back to itself every six steps. The beads are the ring now. The
+    strip inside is the same ring cut open at the bottom and laid flat, sites −41 to 42 across, with time running down
+    for six periods. Four beads, spread round the ring, are traced: each dotted line runs from the bead to the cell that holds its present value, and slides down its column as time runs. The centre cell ticks white, black, white, black, and the cell
+    beside it, read at even times, says 1 0 0, 1 0 0 for ever: the short loop S, and nothing else.</p>
+
+  <div class="notes">
+    <section>
+      <h2>Why it matters</h2>
+      <p>The period-two problem asks whether a finite start can keep the centre ticking 0 1 0 1 for ever. Read at even
+        times, the column beside it is a string of gap words; the record's two are S = 100 and L = 10000. Question 4 of
+        the portfolio asks how freely real Rule 30 rows can string S and L together. This ring is the first actual Rule
+        30 row that plays S for ever, so arbitrarily long all-S stretches are physically possible.</p>
+      <p>Every all-S trace has to look like this one near the centre. Its first five rows repeat with period six,
+        whatever lies further out.</p>
+    </section>
+    <section>
+      <h2>The catch</h2>
+      <p>The ring repeats along the whole line, so it has infinitely many black cells. The prize asks about finite
+        starts, so this is not a counterexample.</p>
+      <p>It is also rigid. In its search domain, the live states form a single 84-cycle and only one of 20 entrance
+        paths survives, so there are no free choices and the family it gives has zero entropy. The route through this
+        fixed six-step domain is closed; general all-S behaviour stays open.</p>
+    </section>
+  </div>
+
+  <section style="display: grid; gap: 8px">
+    <h2>The whole certificate</h2>
+    <div class="cert">0x688eb74a45efb082671ee</div>
+    <p class="small">84 bits, site 0 at bit 0. Repeat this word along the whole line and run Rule 30; this page does
+      exactly that when it loads.</p>
+  </section>
+
+  <footer>GPT built the ring with a period-six profile search (GC686, 2026-10-09). A second reader, a Claude instance, replayed it independently from
+    the hex word (L368). GPT proved the rigidity (GC687) and the universal six-step slab near the centre (GC688).
+    Rendered by Claude.</footer>
+  <p class="back"><a href="./">&larr; Rule 30: the whole story</a></p>
+</div>
+
+<script>
+(() => {
+  const N = 84, HEX = "688eb74a45efb082671ee", ROWS = 36;
+  const word = BigInt("0x" + HEX);
+  const row0 = Array.from({ length: N }, (_, i) => Number((word >> BigInt(i)) & 1n));
+  const step = r => r.map((x, i) => r[(i - 1 + N) % N] ^ (x | r[(i + 1) % N]));   // site i+1 is the right neighbour
+  const rows = [row0];
+  for (let t = 1; t <= ROWS; t++) rows.push(step(rows[t - 1]));
+  const same = (a, b) => a.every((x, i) => x === b[i]);
+  const period = [1, 2, 3, 4, 5, 6].find(p => same(rows[p], rows[0]));
+  const site0 = rows.slice(0, 6).map(r => r[0]).join(""), site1 = rows.slice(0, 6).map(r => r[1]).join("");
+  const ok = period === 6 && site0 === "010101" && site1 === "110100";
+  document.getElementById("check").innerHTML = ok
+    ? `<b>Verified here:</b> period ${period}; site 0 ${site0}, site 1 ${site1}`
+    : `Check failed: period ${period}, site 0 ${site0}, site 1 ${site1}`;
+
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  let t = 0, fade = 1, timer = null, interval = 800;
+  let playing = !matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // toolbar readouts: site 0 over 12 steps; site 1 at even times over 36 steps, in groups of three
+  const clockEl = document.getElementById("clockbits"), mateEl = document.getElementById("matebits");
+  const clockBits = [], mateGroups = [];
+  for (let k = 0; k < 12; k++) {
+    const b = document.createElement("span");
+    b.className = "bit" + (rows[k][0] ? " on" : ""); b.textContent = rows[k][0];
+    clockEl.appendChild(b); clockBits.push(b);
+  }
+  for (let k = 0; k < 6; k++) {
+    const box = document.createElement("span"); box.className = "sgroup";
+    for (let j = 0; j < 3; j++) {
+      const tt = 6 * k + 2 * j, b = document.createElement("span");
+      b.className = "bit" + (rows[tt][1] ? " on" : ""); b.textContent = rows[tt][1];
+      box.appendChild(b);
+    }
+    mateEl.appendChild(box); mateGroups.push(box);
+  }
+
+  const cv = document.getElementById("c"), stage = document.getElementById("stage"), bar = document.getElementById("toolbar");
+  let g, S = 800;
+  function layout() {
+    const sticky = getComputedStyle(bar).position === "sticky";
+    const free = window.innerHeight - (sticky ? bar.getBoundingClientRect().height : 0) - 44;
+    const pg = stage.parentElement, ps = getComputedStyle(pg);
+    const avail = pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);   // not the canvas's own width
+    S = Math.max(280, Math.min(avail, Math.max(free, 300), 1100));
+    const d = window.devicePixelRatio || 1;
+    cv.width = Math.round(S * d); cv.height = Math.round(S * d);
+    cv.style.width = `${S}px`; cv.style.height = `${S}px`;
+    g = cv.getContext("2d"); g.setTransform(d, 0, 0, d, 0, 0);
+  }
+
+  const TRACE = [[0, "--clock", "0"], [21, "--t-right", "21"], [42, "--t-bottom", "42"], [-21, "--t-left", "−21"]];
+  let lastT = 0;
+  function draw() {
+    const W = S, cx = W / 2, cy = W / 2;
+    const br = Math.min(W * 0.455 * Math.PI / N * 0.74, 15);   // bead radius
+    const R = Math.min(W * 0.455, W / 2 - br * 3 - 14);        // room for the labels outside the ring
+    const rin = R - br * 2.6;                                   // inner free circle
+    const cw = 1.7 * rin / N, sw = cw * N, sh = cw * ROWS;      // the strip: square cells, 84 x 36
+    const sx = cx - sw / 2, sy = cy - sh / 2 - rin * 0.04;
+    const ink = css("--ink"), off = css("--off"), clock = css("--clock"), mate = css("--mate"), muted = css("--muted");
+    const paper = css("--paper");
+    const colOf = site => site + 41;                            // strip column of a site (-41 .. 42)
+    const bead = i => { const a = -Math.PI / 2 + 2 * Math.PI * i / N; return [cx + R * Math.cos(a), cy + R * Math.sin(a)]; };
+    g.clearRect(0, 0, W, W);
+
+    // the strip, drawn first so the tracers and the ring sit above it
+    g.fillStyle = css("--sheet"); g.fillRect(sx, sy, sw, sh);
+    g.fillStyle = ink;
+    for (let r = 0; r < ROWS; r++) {
+      const rowv = rows[r % 6];
+      for (let j = 0; j < N; j++) if (rowv[(j - 41 + N) % N]) g.fillRect(sx + j * cw, sy + r * cw, cw + 0.35, cw + 0.35);
+    }
+    const cr = t % ROWS;                                        // the current row follows the beads
+    g.fillStyle = clock; g.globalAlpha = 0.16; g.fillRect(sx, sy + cr * cw, sw, cw); g.globalAlpha = 1;
+    // site 1's column (amber, the S column) and the traced columns, outlined
+    g.lineWidth = Math.max(1.5, cw * 0.28);
+    g.strokeStyle = mate; g.strokeRect(sx + colOf(1) * cw, sy, cw, sh);
+    TRACE.forEach(([site, tok]) => {
+      g.strokeStyle = css(tok); g.globalAlpha = site === 0 ? 1 : 0.55;
+      g.strokeRect(sx + colOf(site) * cw, sy, cw, sh); g.globalAlpha = 1;
+    });
+    // S brackets on the right, one per six steps; time ticks on the left
+    const fs = Math.max(10, Math.min(16, cw * 2.2));
+    g.strokeStyle = mate; g.fillStyle = mate; g.lineWidth = 1.4; g.textBaseline = "middle";
+    for (let k = 0; k < 6; k++) {
+      const y0 = sy + 6 * k * cw + 1.5, y1 = sy + 6 * (k + 1) * cw - 1.5, bx = sx + sw + cw * 1.4;
+      g.beginPath(); g.moveTo(bx, y0); g.lineTo(bx + cw * 1.2, y0); g.lineTo(bx + cw * 1.2, y1); g.lineTo(bx, y1); g.stroke();
+      if (fs >= 11) {
+        g.font = `italic 500 ${fs}px ${css("--display")}`; g.textAlign = "left";
+        g.fillText("S", bx + cw * 2, (y0 + y1) / 2);
+      }
+    }
+    g.fillStyle = muted; g.font = `${Math.max(9, fs * 0.72)}px ${css("--mono")}`; g.textAlign = "right";
+    for (let k = 0; k <= 30; k += 6) g.fillText(String(k), sx - cw * 0.8, sy + (k + 0.5) * cw);
+
+    // the tracers: bead -> the cell holding its present value; the end glides down one row per step
+    const rowPos = cr === 0 && lastT > 0 ? 0 : cr - 1 + fade;   // no glide across the wrap from row 35 to row 0
+    TRACE.forEach(([site, tok]) => {
+      const col = css(tok), [bx, by] = bead((site + N) % N);
+      const ex = sx + (colOf(site) + 0.5) * cw, ey = sy + (Math.max(0, rowPos) + 0.5) * cw;
+      const d = Math.hypot(ex - bx, ey - by), ux = (ex - bx) / d, uy = (ey - by) / d;
+      const x0 = bx + ux * br * 2.0, y0 = by + uy * br * 2.0;
+      g.setLineDash([5, 4]);
+      g.strokeStyle = paper; g.lineWidth = 4; g.beginPath(); g.moveTo(x0, y0); g.lineTo(ex, ey); g.stroke();
+      g.strokeStyle = col; g.lineWidth = 1.7; g.beginPath(); g.moveTo(x0, y0); g.lineTo(ex, ey); g.stroke();
+      g.setLineDash([]);
+      const m = Math.max(3, cw * 0.9);                          // the marked cell
+      g.lineWidth = 2.2; g.strokeStyle = paper; g.strokeRect(ex - m, ey - m, 2 * m, 2 * m);
+      g.lineWidth = 1.6; g.strokeStyle = col; g.strokeRect(ex - m, ey - m, 2 * m, 2 * m);
+    });
+
+    // the cut, at the bottom between sites 42 and 43 (= -41)
+    const ca = bead(42), cb = bead(43), mx = (ca[0] + cb[0]) / 2, my = (ca[1] + cb[1]) / 2;
+    g.strokeStyle = muted; g.lineWidth = 1.2;
+    g.beginPath(); g.moveTo(mx, my - br * 1.6); g.lineTo(mx, my + br * 1.6); g.stroke();
+    g.fillStyle = muted; g.textAlign = "right"; g.textBaseline = "middle";
+    g.font = `${Math.max(10, W * 0.013)}px ${css("--mono")}`;
+    g.fillText("cut", mx - br * 1.2, my - br * 2.6);
+
+    // the ring
+    g.strokeStyle = css("--rule"); g.lineWidth = 1;
+    g.beginPath(); g.arc(cx, cy, R, 0, 2 * Math.PI); g.stroke();
+    const cur = rows[t % 6], prev = rows[(t + 5) % 6];
+    const halo = new Map([[1, ["--mate", "--mate-soft"]], ...TRACE.map(([site, tok]) => [(site + N) % N, [tok, null]])]);
+    for (let i = 0; i < N; i++) {
+      const [x, y] = bead(i), v = prev[i] + (cur[i] - prev[i]) * fade;   // cross-fade between states
+      if (halo.has(i)) {
+        const [tok, soft] = halo.get(i);
+        if (soft) { g.fillStyle = css(soft); g.beginPath(); g.arc(x, y, br * 1.85, 0, 2 * Math.PI); g.fill(); }
+        g.strokeStyle = css(tok); g.lineWidth = 2;
+        g.beginPath(); g.arc(x, y, br * 1.85, 0, 2 * Math.PI); g.stroke();
+      }
+      g.fillStyle = paper; g.beginPath(); g.arc(x, y, br, 0, 2 * Math.PI); g.fill();
+      g.lineWidth = Math.max(1.2, br * 0.16); g.strokeStyle = off;
+      g.beginPath(); g.arc(x, y, br, 0, 2 * Math.PI); g.stroke();
+      if (v > 0.01) {
+        g.globalAlpha = v; g.fillStyle = ink;
+        g.beginPath(); g.arc(x, y, br, 0, 2 * Math.PI); g.fill(); g.globalAlpha = 1;
+      }
+    }
+    // labels outside the ring
+    g.font = `600 ${Math.max(11, br * 1.1)}px ${css("--mono")}`; g.textBaseline = "middle"; g.textAlign = "center";
+    [[1, "--mate", "1"], ...TRACE.map(([site, tok, lab]) => [(site + N) % N, tok, lab])].forEach(([i, tok, lab]) => {
+      const a = -Math.PI / 2 + 2 * Math.PI * i / N, rr = R + br * 3.1;
+      g.fillStyle = css(tok); g.fillText(lab, cx + rr * Math.cos(a), cy + rr * Math.sin(a));
+    });
+
+    // time and phase, below the strip
+    const ty = sy + sh + (cy + rin - (sy + sh)) * 0.4;
+    g.fillStyle = ink; g.font = `600 ${Math.max(18, W * 0.045)}px ${css("--display")}`; g.textAlign = "center";
+    g.fillText(`t = ${t}`, cx - W * 0.09, ty);
+    for (let k = 0; k < 6; k++) {
+      const x = cx - W * 0.09 + (k - 2.5) * W * 0.028, y = ty + Math.max(20, W * 0.045);
+      g.beginPath(); g.arc(x, y, Math.max(3, W * 0.0065), 0, 2 * Math.PI);
+      if (k === t % 6) { g.fillStyle = clock; g.fill(); } else { g.strokeStyle = muted; g.lineWidth = 1; g.stroke(); }
+    }
+  }
+
+  const tracedEl = document.getElementById("traced"), chips = [];
+  [[0, "--clock", "site 0"], [21, "--t-right", "site 21"], [42, "--t-bottom", "site 42"], [-21, "--t-left", "site \u221221"]]
+    .forEach(([site, tok, lab]) => {
+      const c = document.createElement("span"); c.className = "chip"; c.style.color = `var(${tok})`;
+      const dot = document.createElement("i"), txt = document.createElement("span");
+      c.append(dot, txt); tracedEl.appendChild(c); chips.push([site, dot, txt, lab]);
+    });
+  function readouts() {
+    chips.forEach(([site, dot, txt, lab]) => {
+      const v = rows[t % 6][(site + N) % N];
+      dot.classList.toggle("on", v === 1); txt.textContent = `${lab}: ${v}`;
+    });
+    clockBits.forEach((b, k) => b.classList.toggle("now", k === t % 12));
+    mateGroups.forEach((box, k) => box.classList.toggle("now", k === Math.floor((t % 36) / 6)));
+    document.getElementById("phase").textContent = `t = ${t} · phase ${t % 6} of 6`;
+  }
+
+  function tick() {
+    lastT = t; t += 1; fade = 0; readouts();
+    const t0 = performance.now(), dur = Math.min(320, interval * 0.45);
+    const anim = now => { fade = Math.min(1, (now - t0) / dur); draw(); if (fade < 1) requestAnimationFrame(anim); };
+    requestAnimationFrame(anim);
+  }
+  function schedule() {
+    clearInterval(timer);
+    if (playing) timer = setInterval(tick, interval);
+    document.getElementById("play").textContent = playing ? "Pause" : "Play";
+  }
+  document.getElementById("play").addEventListener("click", () => { playing = !playing; schedule(); });
+  document.getElementById("step").addEventListener("click", () => { playing = false; schedule(); tick(); });
+  document.getElementById("speed").addEventListener("change", e => { interval = Number(e.target.value); schedule(); });
+
+  layout(); draw(); readouts(); schedule();
+  let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => { layout(); draw(); }, 120); });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { layout(); draw(); });
+})();
+</script>
+</body>
+</html>

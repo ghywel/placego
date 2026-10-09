@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Edge-Event Sieve</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a toolbar (sources, build controls, live summary, key) on top; one stage under it, sized to the screen: the
+   sheet (time across, depth into the left half downward) with each row's event rate drawn as a bar in the margin
+   of that same row, and the pointed cell's card beside the cell; the notes follow underneath. */
+:root {
+  --paper: #ECEFEA;
+  --panel: #F5F6F2;
+  --ink: #1E1F1C;
+  --ink-soft: #5B6157;
+  --rule: #C8CDC2;
+  --event: #A87306;
+  --cover: #9B2C52;
+  --tri: #1E5A86;
+  --step: #2D7A57;
+  --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+    --event: #E2B444; --cover: #E0688F; --tri: #62A6DA; --step: #5CC496; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+  --event: #E2B444; --cover: #E0688F; --tri: #62A6DA; --step: #5CC496; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 0.95rem; line-height: 1.5; }
+.page { max-width: 1280px; margin: 0 auto; padding-inline: 20px; padding-block: 0 44px; display: grid; gap: 20px; }
+.toolbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 3; background: var(--panel); border: 1px solid var(--rule);
+  border-top: 0; padding: 10px 14px 11px; display: grid; gap: 8px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; line-height: 1.1; margin: 0 auto 0 0; }
+.seg { display: flex; flex-wrap: wrap; }
+.seg button { border-radius: 0; margin-right: -1px; }
+.seg button:first-child { border-radius: 2px 0 0 2px; }
+.seg button:last-child { border-radius: 0 2px 2px 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 6px; }
+button { font: 500 0.82rem var(--font-body); color: var(--ink); background: var(--paper); border: 1px solid var(--ink-soft);
+  padding: 5px 11px; cursor: pointer; border-radius: 2px; }
+button:hover { background: var(--panel); }
+button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--tri); outline-offset: 2px; }
+.depth { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--ink-soft); }
+.depth input { width: 130px; accent-color: var(--tri); }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.summary { display: flex; flex-wrap: wrap; gap: 3px 18px; margin: 0; font-family: var(--font-mono); font-size: 0.76rem;
+  font-variant-numeric: tabular-nums; }
+.summary div { display: flex; gap: 6px; min-width: 0; }
+.summary dt { color: var(--ink-soft); }
+.summary dd { margin: 0; }
+.key { display: flex; flex-wrap: wrap; gap: 3px 16px; font-size: 0.78rem; color: var(--ink-soft); align-items: center; }
+.key span { display: inline-flex; align-items: center; gap: 6px; }
+.chip { width: 13px; height: 13px; flex: none; }
+.ok { color: var(--step); }
+.bad { color: var(--cover); }
+.stage { position: relative; display: grid; justify-items: center; min-width: 0; }
+canvas { display: block; max-width: none; cursor: crosshair; touch-action: manipulation; }
+.card { position: absolute; z-index: 2; pointer-events: none; background: var(--panel); border: 1px solid var(--rule);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12); padding: 7px 10px; max-width: 300px; }
+.card dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 1px 10px; font-family: var(--font-mono);
+  font-size: 0.74rem; font-variant-numeric: tabular-nums; }
+.card dt { color: var(--ink-soft); }
+.card dd { margin: 0; }
+.lede { margin: 0; max-width: 78ch; font-size: 1.02rem; }
+.hint { margin: 0; max-width: 78ch; color: var(--ink-soft); }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px 26px; }
+.notes section { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.notes h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; margin: 0; }
+.notes p { margin: 0; max-width: 62ch; }
+.foot { font-size: 0.8rem; color: var(--ink-soft); margin: 0; max-width: 84ch; }
+@media (max-width: 760px) {
+  .page { padding-inline: 16px; }
+  .toolbar { position: static; }
+  .card { position: static; max-width: none; box-shadow: none; margin-top: 8px; width: 100%; }
+}
+</style>
+<style>
+body { margin: 0; }
+[hidden] { display: none !important; }
+.back { font-size: 0.9rem; margin: 18px 0 0; }
+html.embed .page > :not(.toolbar):not(.stage) { display: none !important; }
+html.embed .page { padding-bottom: 0 !important; }
+</style>
+<script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add("embed");</script>
+</head>
+<body>
+<div class="page">
+  <div class="toolbar" id="toolbar">
+    <div class="bar">
+      <h1>Edge-Event Sieve</h1>
+      <div class="seg" role="group" aria-label="Where the edge events come from">
+        <button id="m-r30" type="button" aria-pressed="true">Rule 30</button>
+        <button id="m-rand" type="button" aria-pressed="false">Random photons</button>
+        <button id="m-gray" type="button" aria-pressed="false">Pure Gray</button>
+      </div>
+      <div class="controls">
+        <button id="build" type="button" aria-pressed="false">Build sideways</button>
+        <button id="wedge" type="button" aria-pressed="false">Counterexample wedge</button>
+        <button id="reseed" type="button">New right half</button>
+        <button id="clear" type="button">Clear triangles</button>
+        <button id="dots" type="button" aria-pressed="true">Edge events shown</button>
+      </div>
+      <div class="depth">
+        <label for="depth">Depth</label>
+        <input id="depth" type="range" min="1" max="120" value="120">
+        <span id="depthval" class="mono">120</span>
+      </div>
+    </div>
+    <dl class="summary" id="summary"></dl>
+    <div class="key">
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="3.2" fill="var(--event)"/></svg>edge event</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="var(--cover)" stroke-width="1.8"/></svg>red-object slot with an event</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="4" y="4" width="6" height="6" fill="none" stroke="var(--cover)" stroke-width="1" opacity="0.6"/></svg>empty slot</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 3 L11 11 M11 3 L3 11" stroke="var(--ink-soft)" stroke-width="1.6"/></svg>fixed hole</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--tri)" opacity="0.5"/></svg>a triangle you clicked</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--cover)" opacity="0.55"/></svg>black inside the wedge</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="5" width="12" height="4" fill="var(--event)"/></svg>margin: each row's event rate</span>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <canvas id="sheet" role="img" aria-label="Time runs left to right. The top two rows are the wall clock and column 1. Below them, row k is the column k cells to the left of the wall, with that row's edge-event rate as a bar in the right margin. Pointing at a cell shows its red object, the triangle of slots whose events decide it, and a card beside the cell."></canvas>
+    <div class="card" id="card" hidden><dl id="cellinfo"></dl></div>
+  </div>
+
+  <p class="lede">The forced left half of Rule 30 beside a wall held at white, black, white&hellip;, built sideways.
+    Every black cell in it is an odd overlap of Sierpinski triangles, one seeded at each edge event. Period 2 asks
+    whether the left edge of this picture can ever turn white for good. The top two rows are the wall's clock (blue)
+    and column 1 (ochre); below them, row k is the column k cells left of the wall. The green line is time 0; silent
+    rows carry an ochre stripe. Point at a cell to see its red object, the triangle of slots whose events decide it;
+    click an event to draw the triangle it seeds.</p>
+  <p class="hint" id="modehint"></p>
+
+  <div class="notes">
+    <section>
+      <h2>How a row is made</h2>
+      <p>Run sideways, Rule 30 writes each row of this picture from the row above it. A cell is the row above at the
+        next moment, XOR the row above now, XOR an edge event. The first two parts are one step of the Gray code in
+        time: the row records where the row above flips.</p>
+    </section>
+    <section>
+      <h2>The red object</h2>
+      <p>Repeating the Gray step spreads each edge event into a Sierpinski triangle. Turned round, every cell has a
+        triangle of slots whose events decide it, and the cell is black when an odd number of them are filled. Its
+        edges are never full: they cross depths 2 and 6, which never hold an event, and its top row needs black wall
+        times, which never hold one either. More than that, its two slanted and upright edges never hold two events
+        side by side (the rules below), so at most every other slot on them is filled.</p>
+    </section>
+    <section>
+      <h2>Random photons</h2>
+      <p>Rule 30 makes its own events: only the first row's come from outside, from column 1, and every deeper one is
+        born where the pattern leaves a white cell beside a black one. Random photons keep the first row and scatter
+        every deeper event at random at the same overall rate. What changes is what self-feedback does.</p>
+      <p>Because the picture makes its own dots, three exact rules hold in Rule 30 and nowhere else. A dot never has
+        another dot straight below it, nor one below and to the left. Along a row, a dot is followed by another
+        exactly when the cell under it is black, so each line of dots runs over black cells and ends on one white.
+        Below and to the right, one more dot costs two more white cells. The &ldquo;dots continue&rdquo; readout
+        counts how often the next cell in each direction also holds a dot: about 54%, 24%, 0% and 0% for Rule 30,
+        and the overall rate, about 26%, in every direction for random photons.</p>
+    </section>
+    <section>
+      <h2>The counterexample wedge</h2>
+      <p>A finite counterexample has a white left edge from some depth d down. Since a change spreads at most one cell
+        per step, every cell deeper than d + t at time t must then be white: a wedge with a 45&deg; side. Click a cell
+        on the left edge to set d. Every shaded cell is one the counterexample cannot have.</p>
+    </section>
+  </div>
+  <p class="foot">The right half starts as 24 random cells beside the wall and is run for 240 steps; its column 1
+    drives everything. The page checks its own arithmetic: it rebuilds every cell from depth 2 on as a sum of Pascal
+    triangles (Lucas's theorem) and compares it with the rule run sideways. Silent rows: depth 2 is proved in G240,
+    depth 6 in CL048, depth 14 at white times in GC589 (with an exhaustive check in L309), and depth 1 at black times
+    and depth 4 at white times too. The three dot rules are filed under G240.</p>
+  <p class="back"><a href="./">&larr; Rule 30: the whole story</a></p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var K = 120, T = 240, W0 = 24;
+  var sheet = document.getElementById("sheet"), ctx = sheet.getContext("2d"), bar = document.getElementById("toolbar");
+  var card = document.getElementById("card"), stage = document.getElementById("stage");
+  var colors = {};
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    ["paper", "panel", "ink", "ink-soft", "rule", "event", "cover", "tri", "step"].forEach(function (k) {
+      colors[k] = cs.getPropertyValue("--" + k).trim();
+    });
+    colors.mono = cs.getPropertyValue("--font-mono").trim();
+  }
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  /* ---- data: clock, column 1, and the forced left half under one of three sources of events ---- */
+  var c0, c1, L, E, seed = 7, mode = "r30", shown = K, pinned = {}, check = "", rate = 0, wedgeOn = false, wedgeD = null;
+  function column1(sd) {
+    var rnd = mulberry32(sd), n = W0 + T + 6, cur = new Uint8Array(n), nxt = new Uint8Array(n), out = [];
+    for (var i = 1; i <= W0; i++) cur[i] = rnd() < 0.5 ? 1 : 0;
+    cur[W0] = 1;
+    for (var t = 0; t <= T + 1; t++) {
+      out.push(cur[1]); cur[0] = t % 2;
+      var lim = Math.min(W0 + t + 2, n - 2);
+      for (var j = 1; j <= lim; j++) nxt[j] = cur[j - 1] ^ (cur[j] | cur[j + 1]);
+      nxt[0] = (t + 1) % 2;
+      var sw = cur; cur = nxt; nxt = sw;
+    }
+    return out;
+  }
+  function run(source) {
+    var Ls = [null], Es = [null], rnd = mulberry32(seed * 7 + 13);
+    for (var k = 1; k <= K; k++) {
+      var A = k === 1 ? c0 : Ls[k - 1], B = k === 1 ? c1 : (k === 2 ? c0 : Ls[k - 2]);
+      var n = T - k + 1, col = new Uint8Array(n), ev = new Uint8Array(n);
+      for (var s = 0; s < n; s++) {
+        var e;
+        if (source === "gray") e = 0;
+        else if (source === "rand" && k > 1) e = rnd() < rate ? 1 : 0;
+        else e = B[s] & (1 - A[s]);                          // edge event: white cell, black to its right
+        ev[s] = e;
+        col[s] = A[s + 1] ^ A[s] ^ e;                        // Gray step in time, corrected by the event
+      }
+      Ls.push(col); Es.push(ev);
+    }
+    return [Ls, Es];
+  }
+  function build() {
+    c0 = []; for (var t = 0; t <= T + 1; t++) c0.push(t % 2);
+    c1 = column1(seed);
+    var r = run("r30"), ev = 0, cells = 0;
+    for (var k = 2; k <= K; k++) for (var s = 0; s < r[1][k].length; s++) { ev += r[1][k][s]; cells++; }
+    rate = ev / cells;                                         // Rule 30's own rate below depth 1
+    if (mode === "r30") { L = r[0]; E = r[1]; } else { var q = run(mode); L = q[0]; E = q[1]; }
+    selfCheck();
+    if (wedgeD === null) wedgeD = 19;                          // a visible default; click the left edge to move it
+  }
+  function selfCheck() {
+    if (mode === "gray") { check = ""; return; }
+    var big = [null], ok = true, cells = 0;
+    for (var k = 1; k <= K; k++) {
+      var v = 0n, ev = E[k];
+      for (var s = ev.length - 1; s >= 0; s--) v = (v << 1n) | BigInt(ev[s]);
+      big.push(v);
+    }
+    for (var k2 = 2; k2 <= K; k2++) {
+      var acc = 0n;
+      for (var j = 1; j <= k2; j++) {
+        var m = k2 - j, i = m;
+        while (true) { acc ^= big[j] >> BigInt(i); if (i === 0) break; i = (i - 1) & m; }
+      }
+      var n2 = T - k2 + 1, mask = (1n << BigInt(n2)) - 1n, col = 0n;
+      for (var s2 = n2 - 1; s2 >= 0; s2--) col = (col << 1n) | BigInt(L[k2][s2]);
+      ok = ok && (acc & mask) === col; cells += n2;
+    }
+    check = ok ? "all " + cells.toLocaleString("en-GB") + " cells agree" : "MISMATCH";
+  }
+  function fixedHole(j, t) {                                   // slots no actual right half can ever fill
+    return mode === "r30" && (j === 2 || j === 6 || (j === 1 && t % 2 === 1) ||
+      ((j === 4 || j === 14) && t % 2 === 0));
+  }
+  function bestRun() {
+    var best = 0, at = null, run2 = 0;
+    for (var k = 1; k <= shown; k++) {
+      if (L[k][0] === 0) { run2++; if (run2 > best) { best = run2; at = k - run2 + 1; } } else run2 = 0;
+    }
+    return { best: best, at: at };
+  }
+  function rowRate(k) { var ev = E[k], n = 0; for (var s = 0; s < ev.length; s++) n += ev[s]; return ev.length ? n / ev.length : 0; }
+
+  /* ---- geometry: one stage under the toolbar; time across, depth down; the rate margin on the right ---- */
+  var Wc = 900, Hc = 500, cell = 3, dpr = 1, TOP = 3, GUT = 66, MARG = 120, RMAX = 0.6, showDots = true;
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var pg = stage.parentElement, ps = getComputedStyle(pg);
+    var availW = pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);
+    var sticky = getComputedStyle(bar).position === "sticky";
+    var availH = Math.max(260, window.innerHeight - (sticky ? bar.getBoundingClientRect().height : 0) - 34);
+    GUT = availW < 520 ? 44 : 66; MARG = availW < 520 ? 70 : 130;
+    cell = Math.min((availW - GUT - MARG - 6) / (T + 1), (availH - 24) / (K + TOP));
+    Wc = Math.round(GUT + (T + 1) * cell + MARG + 6); Hc = Math.round((K + TOP) * cell + 24);
+    sheet.width = Math.round(Wc * dpr); sheet.height = Math.round(Hc * dpr);
+    sheet.style.width = Wc + "px"; sheet.style.height = Hc + "px";
+  }
+  function rowY(k) { return (k + TOP - 1) * cell; }
+  function colX(t) { return GUT + t * cell; }
+  function margX0() { return GUT + (T + 1) * cell + 14; }
+  function margW() { return MARG - 22; }
+
+  var hover = null, buildRow = null;
+  function draw() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = colors.paper; ctx.fillRect(0, 0, Wc, Hc);
+    var c = cell + 0.3;
+    for (var t = 0; t <= T; t++) {
+      if (c0[t]) { ctx.fillStyle = colors.tri; ctx.fillRect(colX(t), 0, c, c); }
+      if (c1[t]) { ctx.fillStyle = colors.event; ctx.fillRect(colX(t), cell, c, c); }
+    }
+    ctx.fillStyle = colors.ink; ctx.globalAlpha = 0.86;
+    for (var k = 1; k <= shown; k++) {
+      var col = L[k];
+      for (var s = 0; s < col.length; s++) if (col[s]) ctx.fillRect(colX(s), rowY(k), c, c);
+    }
+    ctx.globalAlpha = 1;
+    if (wedgeOn && wedgeD !== null) drawWedge();
+    ctx.fillStyle = colors.tri;                                 // clicked triangles, over the cells
+    Object.keys(pinned).forEach(function (key) {
+      var p = key.split(",").map(Number), j = p[0], tp = p[1];
+      ctx.globalAlpha = 0.5;
+      for (var k2 = j; k2 <= shown; k2++) {
+        var m = k2 - j, i = m;
+        while (true) {
+          var tt = tp - i;
+          if (tt >= 0 && tt <= T - k2) ctx.fillRect(colX(tt), rowY(k2), c, c);
+          if (i === 0) break; i = (i - 1) & m;
+        }
+      }
+      ctx.globalAlpha = 1;
+    });
+    var r = Math.max(0.9, cell * 0.32);
+    ctx.fillStyle = colors.event;
+    for (var k3 = 1; k3 <= (showDots ? shown : 0); k3++) {
+      var ev = E[k3];
+      for (var s3 = 0; s3 < ev.length; s3++) {
+        if (ev[s3]) { ctx.beginPath(); ctx.arc(colX(s3) + cell / 2, rowY(k3) + cell / 2, r, 0, 2 * Math.PI); ctx.fill(); }
+      }
+    }
+    var fs = Wc < 600 ? 8 : 10;
+    ctx.font = "500 " + fs + "px " + colors.mono; ctx.textBaseline = "middle"; ctx.textAlign = "right";
+    for (var k4 = 1; k4 <= shown && mode !== "gray"; k4++) {   // silent rows
+      if (E[k4].every(function (x) { return x === 0; })) {
+        ctx.fillStyle = colors.event; ctx.globalAlpha = 0.35;
+        ctx.fillRect(GUT, rowY(k4), colX(T - k4 + 1) - GUT, cell);
+        ctx.globalAlpha = 1; ctx.fillRect(GUT - 10, rowY(k4), 8, Math.max(1.5, cell));
+      }
+    }
+    ctx.fillStyle = colors["ink-soft"];
+    [16, 32, 64, 96, 120].forEach(function (kk) {
+      if (kk > shown) return;
+      ctx.fillText(Wc < 600 ? String(kk) : "depth " + kk, GUT - 12, rowY(kk) + cell / 2);
+      ctx.fillRect(GUT - 4, rowY(kk) + cell / 2 - 0.5, 3, 1);
+    });
+    ctx.strokeStyle = colors.step; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(GUT - 0.75, rowY(1)); ctx.lineTo(GUT - 0.75, rowY(shown) + cell); ctx.stroke();
+    drawMargin();
+    if (buildRow !== null) {                                     // the row being built, across the sheet and its bar
+      ctx.fillStyle = colors.tri; ctx.globalAlpha = 0.14;
+      ctx.fillRect(GUT, rowY(buildRow), margX0() + margW() - GUT, cell); ctx.globalAlpha = 1;
+    }
+    if (hover) drawHover();
+  }
+  function drawMargin() {                                      // each row's edge-event rate, in that row's margin
+    var x0 = margX0(), w = margW(), fs = Wc < 600 ? 8 : 10;
+    ctx.fillStyle = colors["ink-soft"]; ctx.font = "500 " + fs + "px " + colors.mono;
+    ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+    ctx.fillText("events per row", x0, rowY(1) - 2 * cell - 2);
+    ctx.strokeStyle = colors.rule; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x0, rowY(1)); ctx.lineTo(x0, rowY(K) + cell); ctx.stroke();
+    for (var k = 1; k <= K; k++) {
+      var v = rowRate(k);
+      ctx.fillStyle = k <= shown ? colors.event : colors.rule;
+      ctx.fillRect(x0, rowY(k) + cell * 0.12, Math.max(0.6, w * Math.min(v, RMAX) / RMAX), Math.max(0.8, cell * 0.76));
+    }
+    ctx.setLineDash([3, 3]); ctx.strokeStyle = colors["ink-soft"];
+    var xq = x0 + w * 0.25 / RMAX;
+    ctx.beginPath(); ctx.moveTo(xq, rowY(1)); ctx.lineTo(xq, rowY(K) + cell); ctx.stroke(); ctx.setLineDash([]);
+    ctx.textBaseline = "top"; ctx.textAlign = "center"; ctx.fillStyle = colors["ink-soft"];
+    ctx.fillText("0", x0, rowY(K) + cell + 3);
+    ctx.fillText("1/4", xq, rowY(K) + cell + 3);
+    ctx.fillText("0.6", x0 + w, rowY(K) + cell + 3);
+  }
+  function wedgeStats() {
+    var d = wedgeD, tot = 0, black = 0, first = null;
+    for (var k = d + 1; k <= shown; k++) {
+      for (var t = 0; t <= Math.min(k - d - 1, T - k); t++) {
+        tot++;
+        if (L[k][t]) { black++; if (!first || t < first[1] || (t === first[1] && k < first[0])) first = [k, t]; }
+      }
+    }
+    return { tot: tot, black: black, first: first };
+  }
+  function drawWedge() {
+    var d = wedgeD, c = cell + 0.3;
+    ctx.fillStyle = colors.cover; ctx.globalAlpha = 0.55;
+    for (var k = d + 1; k <= shown; k++) {
+      for (var t = 0; t <= Math.min(k - d - 1, T - k); t++) if (L[k][t]) ctx.fillRect(colX(t), rowY(k), c, c);
+    }
+    ctx.globalAlpha = 1; ctx.strokeStyle = colors.cover; ctx.lineWidth = 1.6;
+    var kEnd = Math.min(shown, Math.floor((T + d) / 2) + 1);
+    ctx.beginPath(); ctx.moveTo(colX(0), rowY(d + 1)); ctx.lineTo(colX(kEnd - d - 1), rowY(kEnd)); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(colX(0) - 4, rowY(d + 1)); ctx.lineTo(colX(0) + 4, rowY(d + 1)); ctx.stroke();
+  }
+  function slots(k, t) {
+    var out = [];
+    for (var j = 1; j <= k; j++) {
+      var m = k - j, i = m;
+      while (true) {
+        var tp = t + i;
+        if (tp <= T - j) out.push([j, tp]);
+        if (i === 0) break; i = (i - 1) & m;
+      }
+    }
+    return out;
+  }
+  function drawHover() {
+    var k = hover[0], t = hover[1], sl = slots(k, t), n = 0, holes = 0;
+    var r = Math.max(2.2, cell * 0.75), sq = Math.max(1.2, cell * 0.55);
+    sl.forEach(function (p) {
+      var x = colX(p[1]) + cell / 2, y = rowY(p[0]) + cell / 2;
+      if (E[p[0]][p[1]]) {
+        n++; ctx.strokeStyle = colors.cover; ctx.lineWidth = 1.6; ctx.globalAlpha = 1;
+        ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.stroke();
+      } else if (fixedHole(p[0], p[1])) {
+        holes++; ctx.strokeStyle = colors["ink-soft"]; ctx.lineWidth = 1.1; ctx.globalAlpha = 0.9;
+        ctx.beginPath(); ctx.moveTo(x - sq, y - sq); ctx.lineTo(x + sq, y + sq); ctx.moveTo(x + sq, y - sq);
+        ctx.lineTo(x - sq, y + sq); ctx.stroke();
+      } else {
+        ctx.strokeStyle = colors.cover; ctx.lineWidth = 0.8; ctx.globalAlpha = 0.45;
+        ctx.strokeRect(x - sq / 2, y - sq / 2, sq, sq);
+      }
+    });
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = colors.step; ctx.lineWidth = 1.4;
+    function yOf(dd) { return dd >= 1 ? rowY(dd) : (dd === 0 ? 0 : cell); }
+    var yA = k === 1 ? 0 : yOf(k - 1), yB = k === 1 ? cell : (k === 2 ? 0 : yOf(k - 2));
+    ctx.strokeRect(colX(t) + 0.5, yA + 0.5, cell - 1, cell - 1);
+    ctx.strokeRect(colX(t + 1) + 0.5, yA + 0.5, cell - 1, cell - 1);
+    ctx.strokeRect(colX(t) + 0.5, yB + 0.5, cell - 1, cell - 1);
+    // a tracer from the cell to its row's bar in the margin
+    var cx = colX(t) + cell, cy = rowY(k) + cell / 2, bx = margX0() + margW() * Math.min(rowRate(k), RMAX) / RMAX;
+    ctx.setLineDash([4, 3]); ctx.lineWidth = 3.4; ctx.strokeStyle = colors.paper;
+    ctx.beginPath(); ctx.moveTo(cx + 2, cy); ctx.lineTo(bx + 3, cy); ctx.stroke();
+    ctx.lineWidth = 1.4; ctx.strokeStyle = colors.cover;
+    ctx.beginPath(); ctx.moveTo(cx + 2, cy); ctx.lineTo(bx + 3, cy); ctx.stroke(); ctx.setLineDash([]);
+    ctx.strokeStyle = colors.cover; ctx.lineWidth = 2;
+    ctx.strokeRect(colX(t) - 1, rowY(k) - 1, cell + 2, cell + 2);
+    ctx.strokeRect(margX0() - 1, rowY(k) - 1, margW() + 2, cell + 2);
+    var v = L[k][t], rows = [["cell", "depth " + k + ", time " + t], ["colour", v ? "black" : "white"]];
+    if (mode === "gray") {
+      rows.push(["why", k === 1 ? "the clock flips every step" : "no events, nothing arrives"]);
+    } else {
+      var A = k === 1 ? c0 : L[k - 1];
+      rows.push(["rule", A[t + 1] + " XOR " + A[t] + " XOR event " + E[k][t] + " = " + v]);
+      rows.push(["red object", sl.length + " slots, " + n + " filled" + (mode === "r30" ? ", " + holes + " fixed holes" : "")]);
+      var par = (n + (k === 1 ? 1 : 0)) % 2;
+      rows.push(["parity", (par ? "odd" : "even") + (k === 1 ? " with the clock's 1" : "") + " → " +
+        (par ? "black" : "white") + (par === v ? ' <span class="ok">✓</span>' : ' <span class="bad">mismatch</span>')]);
+    }
+    rows.push(["this row", (100 * rowRate(k)).toFixed(1) + "% events (bar, right)"]);
+    document.getElementById("cellinfo").innerHTML = rows.map(function (r2) { return "<dt>" + r2[0] + "</dt><dd>" + r2[1] + "</dd>"; }).join("");
+    placeCard(colX(t), rowY(k));
+  }
+  function placeCard(x, y) {                                   // the card sits beside the pointed cell
+    card.hidden = false;
+    if (getComputedStyle(card).position === "static") return;   // phones: the card sits under the stage
+    var off = sheet.offsetLeft, cw = card.offsetWidth, ch = card.offsetHeight;
+    var left = off + x - cw - 16, top = y - ch - 12;
+    if (left < 4) left = off + x + cell * 2 + 16;
+    if (top < 4) top = y + cell * 2 + 12;
+    if (top + ch > Hc) top = Math.max(4, Hc - ch - 4);
+    card.style.left = Math.round(left) + "px"; card.style.top = Math.round(top) + "px";
+  }
+  function summary() {
+    var ev = 0, cells = 0, silent = [];
+    for (var k = 1; k <= shown; k++) {
+      var n = 0; for (var s = 0; s < E[k].length; s++) n += E[k][s];
+      ev += n; cells += E[k].length;
+      if (mode !== "gray" && n === 0) silent.push(k);
+    }
+    var b = bestRun();
+    function cont(dk, dt) {                                    // share of dots whose neighbour (k + dk, t + dt) is a dot
+      var have = 0, both = 0;
+      for (var k = 2; k + dk <= shown; k++) {
+        var a = E[k], nb = E[k + dk];
+        for (var s = 0; s < a.length; s++) {
+          if (!a[s] || s + dt < 0 || s + dt >= nb.length) continue;
+          have++; both += nb[s + dt];
+        }
+      }
+      return have ? Math.round(100 * both / have) + "%" : "-";
+    }
+    var rows = [["edge events", ev.toLocaleString("en-GB") + " (" + (cells ? (100 * ev / cells).toFixed(1) : 0) + "%)"],
+      ["dots continue", mode === "gray" ? "no dots" : "&rarr; " + cont(0, 1) + " &searr; " + cont(1, 1) +
+        " &darr; " + cont(1, 0) + " &swarr; " + cont(1, -1)],
+      ["silent rows", mode === "gray" ? "all" : (silent.length ? silent.join(", ") : "none")],
+      ["time-0 edge", "white run " + b.best + (b.at ? " from depth " + b.at : "")]];
+    if (wedgeOn && wedgeD !== null) {
+      var w = wedgeStats();
+      rows.push(["wedge", "from depth " + (wedgeD + 1) + ": " + w.black + " of " + w.tot + " black " +
+        (w.first ? '<span class="bad">(first at depth ' + w.first[0] + ", time " + w.first[1] + ")</span>"
+          : '<span class="ok">(all white so far)</span>')]);
+    }
+    if (check) rows.push(["self-check", '<span class="' + (check === "MISMATCH" ? "bad" : "ok") + '">' + check + "</span>"]);
+    document.getElementById("summary").innerHTML =
+      rows.map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("");
+  }
+  var hints = {
+    r30: "Events from Rule 30: it makes its own events; only the first row's come from outside, from column 1.",
+    rand: "Events from random photons: the first row's events are kept; every deeper event is scattered at random at " +
+      "Rule 30's own rate, so the only difference is self-feedback.",
+    gray: "Pure Gray: no events at all, Rule 60, the plain Gray-code rule. The left half empties after the first row."
+  };
+  function setMode(m) {
+    mode = m;
+    ["r30", "rand", "gray"].forEach(function (x) {
+      document.getElementById("m-" + x).setAttribute("aria-pressed", String(x === m));
+    });
+    pinned = {}; build();
+    document.getElementById("modehint").textContent = hints[m] + (m === "rand" ? " Rate: " + (100 * rate).toFixed(1) + "%." : "");
+    draw(); summary();
+  }
+
+  /* ---- interaction ---- */
+  function cellAt(ev) {
+    var rect = sheet.getBoundingClientRect(), x = ev.clientX - rect.left, y = ev.clientY - rect.top;
+    var t = Math.floor((x - GUT) / cell), k = Math.floor(y / cell) - TOP + 1;
+    if (k < 1 || k > shown || t < 0 || t > T - k) return null;
+    return [k, t];
+  }
+  sheet.addEventListener("pointermove", function (ev) {
+    var h = cellAt(ev);
+    if ((h && hover && h[0] === hover[0] && h[1] === hover[1]) || (!h && !hover)) return;
+    hover = h; if (!h) card.hidden = true; draw();
+  });
+  sheet.addEventListener("pointerleave", function () { hover = null; card.hidden = true; draw(); });
+  sheet.addEventListener("click", function (ev) {
+    var h = cellAt(ev); if (!h) return;
+    hover = h;
+    if (wedgeOn && h[1] === 0) { wedgeD = h[0] - 1; }
+    else if (E[h[0]][h[1]]) { var key = h[0] + "," + h[1]; if (pinned[key]) delete pinned[key]; else pinned[key] = 1; }
+    draw(); summary();
+  });
+  var depthIn = document.getElementById("depth"), depthVal = document.getElementById("depthval");
+  depthIn.addEventListener("input", function () {
+    shown = Number(depthIn.value); depthVal.textContent = shown; hover = null; card.hidden = true; draw(); summary();
+  });
+  var building = false, buildBtn = document.getElementById("build"), timer = null;
+  function setBuilding(b) {
+    building = b; buildBtn.setAttribute("aria-pressed", String(b));
+    buildBtn.textContent = b ? "Pause" : "Build sideways";
+    if (timer) { clearInterval(timer); timer = null; }
+    if (b) {
+      if (shown >= K) shown = 1;
+      hover = null; card.hidden = true;
+      timer = setInterval(function () {
+        shown++; depthIn.value = shown; depthVal.textContent = shown; buildRow = shown; draw(); summary();
+        if (shown >= K) { buildRow = null; setBuilding(false); draw(); }
+      }, 90);
+    } else { buildRow = null; }
+  }
+  buildBtn.addEventListener("click", function () { setBuilding(!building); });
+  ["r30", "rand", "gray"].forEach(function (x) {
+    document.getElementById("m-" + x).addEventListener("click", function () { setMode(x); });
+  });
+  var wedgeBtn = document.getElementById("wedge");
+  wedgeBtn.addEventListener("click", function () {
+    wedgeOn = !wedgeOn; wedgeBtn.setAttribute("aria-pressed", String(wedgeOn)); draw(); summary();
+  });
+  document.getElementById("reseed").addEventListener("click", function () {
+    seed = Math.floor(Math.random() * 1e9); setMode(mode);
+  });
+  document.getElementById("clear").addEventListener("click", function () { pinned = {}; draw(); });
+  var dotsBtn = document.getElementById("dots");
+  dotsBtn.addEventListener("click", function () {
+    showDots = !showDots; dotsBtn.setAttribute("aria-pressed", String(showDots));
+    dotsBtn.textContent = showDots ? "Edge events shown" : "Edge events hidden"; draw();
+  });
+  function retheme() { readColors(); draw(); }
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", retheme);
+  }
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(function () { size(); draw(); }, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { readColors(); size(); draw(); });
+
+  readColors(); build(); size();
+  document.getElementById("modehint").textContent = hints.r30;
+  hover = [70, 112]; draw(); summary();
+})();
+</script>
+</body>
+</html>

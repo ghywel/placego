@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vitruvian Rule 30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a toolbar (time controls, live readout, what to show) on top; one stage under it, sized to the screen: the
+   square plate (triangle above, wheel below, like Leonardo's sheet) with the wall run that drives the wheel standing
+   beside it, joined to the wheel and its two clocks by moving tracers; the notes follow underneath. */
+:root {
+  --paper: #ECEFEA;
+  --panel: #F5F6F2;
+  --ink: #1E1F1C;
+  --ink-soft: #5B6157;
+  --rule: #C8CDC2;
+  --tri: #9B2C52;
+  --sq: #1E5A86;
+  --circ: #A87306;
+  --prize: #2D7A57;
+  --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+    --tri: #E0688F; --sq: #62A6DA; --circ: #E2B444; --prize: #5CC496; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+  --tri: #E0688F; --sq: #62A6DA; --circ: #E2B444; --prize: #5CC496; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 0.95rem; line-height: 1.5; }
+.page { max-width: 1280px; margin: 0 auto; padding-inline: 20px; padding-block: 0 44px; display: grid; gap: 20px; }
+.toolbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; background: var(--panel); border: 1px solid var(--rule);
+  border-top: 0; padding: 10px 14px 11px; display: grid; gap: 8px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; line-height: 1.1; margin: 0 auto 0 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 6px; }
+button { font: 500 0.82rem var(--font-body); color: var(--ink); background: var(--paper); border: 1px solid var(--ink-soft);
+  padding: 5px 11px; cursor: pointer; border-radius: 2px; }
+button:hover { background: var(--panel); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--sq); outline-offset: 2px; }
+.speed { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--ink-soft); }
+.speed input { width: 120px; accent-color: var(--sq); }
+.readout { display: flex; flex-wrap: wrap; gap: 3px 18px; margin: 0; font-family: var(--font-mono); font-size: 0.78rem;
+  font-variant-numeric: tabular-nums; }
+.readout div { display: flex; gap: 6px; }
+.readout dt { color: var(--ink-soft); }
+.readout dd { margin: 0; }
+.state { display: inline-block; padding: 0 5px; border: 1px solid currentColor; font-size: 0.7rem; }
+.state.locked { color: var(--circ); }
+.state.loose { color: var(--ink-soft); }
+.key { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.key label { display: flex; align-items: center; gap: 7px; font-size: 0.84rem; cursor: pointer; }
+.swatch { width: 16px; height: 3px; flex: none; }
+.key input { accent-color: var(--ink-soft); margin: 0; }
+.stage { display: grid; justify-items: center; min-width: 0; }
+canvas { display: block; max-width: none; }
+.lede { margin: 0; max-width: 78ch; font-size: 1.02rem; }
+.lede em { font-family: var(--font-display); font-style: italic; font-size: 1.08em; }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px 26px; }
+.notes section { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.notes h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.12rem; margin: 0; display: flex; align-items: center; gap: 8px; }
+.notes p { margin: 0; max-width: 62ch; }
+.mark { width: 14px; height: 14px; flex: none; }
+.foot { font-size: 0.8rem; color: var(--ink-soft); margin: 0; max-width: 84ch; }
+@media (max-width: 760px) {
+  .page { padding-inline: 16px; }
+  .toolbar { position: static; }
+}
+</style>
+<style>
+body { margin: 0; }
+[hidden] { display: none !important; }
+.back { font-size: 0.9rem; margin: 18px 0 0; }
+html.embed .page > :not(.toolbar):not(.stage) { display: none !important; }
+html.embed .page { padding-bottom: 0 !important; }
+</style>
+<script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add("embed");</script>
+</head>
+<body>
+<div class="page">
+  <div class="toolbar" id="toolbar">
+    <div class="bar">
+      <h1>Vitruvian Rule 30</h1>
+      <div class="controls">
+        <button id="play" type="button" aria-pressed="true">Pause</button>
+        <button id="step" type="button">Step</button>
+        <button id="restart" type="button">Restart</button>
+        <button id="reseed" type="button">New right half</button>
+      </div>
+      <div class="speed">
+        <label for="speed">Speed</label>
+        <input id="speed" type="range" min="1" max="60" value="10">
+        <span id="speedval" style="font-family: var(--font-mono)">10/s</span>
+      </div>
+    </div>
+    <dl class="readout" id="readout"></dl>
+    <div class="key">
+      <label><input id="k-tri" type="checkbox" checked><span class="swatch" style="background:var(--tri)"></span>Triangle and its diagonals</label>
+      <label><input id="k-sq" type="checkbox" checked><span class="swatch" style="background:var(--sq)"></span>Its own square</label>
+      <label><input id="k-prize" type="checkbox" checked><span class="swatch" style="background:var(--prize)"></span>Prize column</label>
+      <label><input id="k-core" type="checkbox" checked><span class="swatch" style="background:var(--ink-soft)"></span>Core and its centre</label>
+      <label><input id="k-circ" type="checkbox" checked><span class="swatch" style="background:var(--circ)"></span>The wheel, its clocks and the wall run</label>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <canvas id="plate" role="img" aria-label="Rule 30 growing from one black cell as a pyramid in the top half of a square, with its diagonal coordinates, the rotated square they form, the prize column and the off-centre core; below it the 56-point wheel with its 8 and 7 point clocks; beside it the wall run whose column 1 drives the wheel, with tracers from the wheel's point to both clocks and to column 1's newest cell."></canvas>
+  </div>
+
+  <p class="lede">A triangle, a square and a circle drawn over the same cells as Rule 30 runs. After Leonardo's
+    <em>Vitruvian Man</em>, where the circle is centred on the navel and the square lower down: here too, no two shapes
+    share a centre. Beside the plate is the run that makes the circle: column 0 is a wall held at white, black, white,
+    and so on, the right half starts random, and column 1 (outlined) settles onto the wheel, a fixed pattern of 56
+    steps, and is knocked off it now and then. The dotted lines carry the wheel's point to its two clocks and to the
+    cell of column 1 it stands for.</p>
+
+  <div class="notes">
+    <section>
+      <h2><svg class="mark" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1 L13 13 L1 13 Z" fill="none" stroke="var(--tri)" stroke-width="1.6"/></svg>The triangle</h2>
+      <p>Each cell is decided by the three above it, so the pattern spreads at most one cell per row each way. Its
+        own coordinates are its two diagonals. Every right diagonal repeats exactly, with a period that is a power
+        of two.</p>
+    </section>
+    <section>
+      <h2><svg class="mark" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1 L13 7 L7 13 L1 7 Z" fill="none" stroke="var(--sq)" stroke-width="1.6"/></svg>Its own square</h2>
+      <p>In diagonal coordinates the triangle is the top half of a square standing on its corner. The prize column,
+        the one Wolfram's prizes ask about, is that square's vertical diagonal.</p>
+    </section>
+    <section>
+      <h2><svg class="mark" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="3" fill="none" stroke="var(--ink-soft)" stroke-width="1.6"/></svg>The off-centre core</h2>
+      <p>Changes travel right at one cell per row but left at only about a quarter of a cell. So the chaotic core runs
+        from a quarter of the way left to nearly the right edge. Like Leonardo's navel, its centre is not the
+        square's centre.</p>
+    </section>
+    <section>
+      <h2><svg class="mark" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="var(--circ)" stroke-width="1.6"/></svg>The circle</h2>
+      <p>Beside the wall, column 1 rides a wheel of 56 points, turning 17 notches per step. That is two clocks at
+        once: 1 notch of an 8-point clock and 3 notches of a 7-point one, since 17 leaves 1 over 8 and 3 over 7.
+        The chords trace the star of 56 points taken 17 at a time.</p>
+    </section>
+    <section>
+      <h2><svg class="mark" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="var(--ink-soft)" stroke-width="1.6" stroke-dasharray="2 2"/></svg>What the eye sees</h2>
+      <p>The 7-clock seems to run backwards because two steps of 3 make 6, one short of 7: seen as a pair of hands,
+        it slips back one notch every two steps. The star seems to turn backwards because 23 steps of 17 make 391,
+        one point short of 7 full turns. That is 7/23, the best small fraction near 17/56. A kick of k notches moves
+        the wheel 2k points, so the 8-clock jumps by 2k mod 8 and the 7-clock by 2k mod 7. The commonest kick, +4,
+        leaves the 8-clock alone and moves the 7-clock exactly one notch.</p>
+    </section>
+  </div>
+  <p class="foot">The pyramid is drawn to row 160 and then holds; the wall run keeps going. The core's edges are the
+    record's measured rates (left edge about 0.25 cells per row; right strip about 2.8 log<sub>2</sub> t cells),
+    drawn as guides, not computed from these cells. Column 1 counts as on the wheel inside any stretch of at least 56
+    steps that follows it exactly; the run is computed 56 steps ahead so this is known as it happens. A kick is
+    counted when column 1 takes up the wheel at a new phase. Most kicks are instant: column 1 jumps straight from
+    one phase of the wheel to another without leaving it. Over millions of steps forward and backward kicks
+    cancel.</p>
+  <p class="back"><a href="./">&larr; Rule 30: the whole story</a></p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var U = "00010011010001001101000100110100010011010001001101001101".split("").map(Number);
+  var TMAX = 160, T0 = 120, W0 = 24, STEPMAX = 20000, STRIP_ROWS = 110, STRIP_COLS = 60;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var plate = document.getElementById("plate"), pctx = plate.getContext("2d"), bar = document.getElementById("toolbar");
+  var stage = document.getElementById("stage");
+  var off = document.createElement("canvas"), octx = off.getContext("2d");
+  var colors = {};
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    ["paper", "panel", "ink", "ink-soft", "rule", "tri", "sq", "circ", "prize"].forEach(function (k) {
+      colors[k] = cs.getPropertyValue("--" + k).trim();
+    });
+    colors.mono = cs.getPropertyValue("--font-mono").trim();
+  }
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function kickOf(dn) { var k = ((-17 * (dn / 2)) % 28 + 28) % 28; return k < 14 ? k : k - 28; }
+
+  /* ---- the pyramid: Rule 30 from one black cell ---- */
+  var pyr = [];
+  function pyramidReset() {
+    pyr = [];
+    var r0 = new Uint8Array(2 * TMAX + 3); r0[TMAX + 1] = 1; pyr.push(r0);
+  }
+  function pyramidRow(t) {
+    var a = pyr[t - 1], b = new Uint8Array(2 * TMAX + 3);
+    for (var i = 1; i < b.length - 1; i++) b[i] = a[i - 1] ^ (a[i] | a[i + 1]);
+    pyr.push(b);
+  }
+
+  /* ---- the wall setting: column 0 = t mod 2, a random right half ----
+     The run is simulated LAG steps ahead of what is shown, so a lock (a stretch of at least 56 steps on the wheel)
+     is known the moment it starts, and a kick shows the moment column 1 leaves the wheel. */
+  var LAG = 56, BUF = 128, HIST = STRIP_ROWS + LAG + 2;
+  var wall = {};
+  function wallReset(seed) {
+    var rnd = mulberry32(seed), size = W0 + STEPMAX + LAG + 6;
+    wall.seed = seed; wall.t = 0; wall.tau = 0;
+    wall.cur = new Uint8Array(size); wall.nxt = new Uint8Array(size);
+    for (var i = 1; i <= W0; i++) wall.cur[i] = rnd() < 0.5 ? 1 : 0;
+    wall.cur[W0] = 1; wall.cur[0] = 0;
+    wall.c1 = new Uint8Array(STEPMAX + LAG + 6);
+    wall.rows = new Uint8Array(HIST * STRIP_COLS);
+    wall.runs = new Uint16Array(BUF * 28);
+    wall.show = { locked: false, phase: null, lastPhase: null, ghost: null, lastKick: null,
+                  fwd: 0, fwdN: 0, back: 0, backN: 0, chords: [] };
+    record();
+    for (var k = 0; k < LAG; k++) simStep();
+    showUpdate();
+  }
+  function record() {
+    var t = wall.t, c = wall.cur, slot = t % HIST;
+    wall.c1[t] = c[1];
+    for (var j = 0; j < STRIP_COLS; j++) wall.rows[slot * STRIP_COLS + j] = c[j];
+    var base = (t % BUF) * 28, prev = ((t + BUF - 1) % BUF) * 28;
+    for (var p = 0; p < 28; p++) {               // consecutive steps on the wheel at phase 2p, ending at t
+      var hit = c[1] === U[((t - 2 * p) % 56 + 56) % 56];
+      wall.runs[base + p] = hit ? Math.min(65000, wall.runs[prev + p] + 1) : 0;
+    }
+  }
+  function simStep() {
+    var c = wall.cur, n = wall.nxt, t = wall.t, lim = Math.min(W0 + t + 2, c.length - 2);
+    c[0] = t % 2;
+    for (var i = 1; i <= lim; i++) n[i] = c[i - 1] ^ (c[i] | c[i + 1]);
+    n[0] = (t + 1) % 2;
+    wall.cur = n; wall.nxt = c; wall.t = t + 1;
+    record();
+  }
+  function showUpdate() {
+    var s = wall.show, tau = wall.tau, was = s.locked, before = s.phase, ph = null;
+    if (was && wall.runs[(tau % BUF) * 28 + before / 2] > 0) ph = before;
+    else {
+      var row = ((tau + 55) % BUF) * 28;
+      for (var p = 0; p < 28; p++) if (wall.runs[row + p] >= 56) { ph = 2 * p; break; }
+    }
+    s.locked = ph !== null;
+    if (s.locked) {
+      if (!was || ph !== before) {
+        if (s.lastPhase !== null && ph !== s.lastPhase) {
+          var k = kickOf(((ph - s.lastPhase) % 56 + 56) % 56);
+          if (k > 0) { s.fwd++; s.fwdN += k; } else if (k < 0) { s.back++; s.backN -= k; }
+          s.lastKick = k; s.ghost = s.lastPhase;
+        }
+        s.chords = [];
+      }
+      s.phase = ph; s.lastPhase = ph;
+      s.chords.push((17 * (((tau - ph) % 56) + 56)) % 56);
+      if (s.chords.length > 57) s.chords.shift();
+    } else if (was) {
+      s.ghost = s.phase;
+    }
+  }
+  function wallAdvance() {
+    if (wall.t >= STEPMAX + LAG) wallReset(wall.seed + 1);
+    simStep(); wall.tau = wall.t - LAG; showUpdate();
+  }
+
+  /* ---- time ---- */
+  var T = 0, playing = !reduce, speed = 10, acc = 0, last = null;
+  function stepAll() {
+    T++;
+    if (T <= TMAX) { pyramidRow(T); drawPyramidRow(T); }
+    wallAdvance();
+  }
+  function pickSeed(start) {
+    for (var s = start; s < start + 400; s++) {
+      wallReset(s);
+      for (var i = 0; i < T0; i++) wallAdvance();
+      if (wall.show.locked && wall.show.fwd + wall.show.back === 0) return s;
+    }
+    return start;
+  }
+  function restart(seed) {
+    pyramidReset(); T = 0; wallReset(seed); sizeAll();
+    for (var i = 0; i < T0; i++) stepAll();
+    draw();
+  }
+
+  /* ---- one stage: the square plate (size S) and the wall run standing beside it ---- */
+  var S = 600, W = 820, dpr = 1, cell = 1, PX = 0, PY = 0, PW = 100, PH = 200;
+  function sizeAll() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var pg = stage.parentElement, ps = getComputedStyle(pg);
+    var availW = pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);
+    var sticky = getComputedStyle(bar).position === "sticky";
+    var availH = Math.max(280, window.innerHeight - (sticky ? bar.getBoundingClientRect().height : 0) - 34);
+    S = Math.floor(Math.min(availH, availW / 1.36));
+    PH = S * 0.54; PW = PH * STRIP_COLS / STRIP_ROWS; PX = S + S * 0.035; PY = S * 0.1;
+    W = Math.ceil(PX + PW + 4);
+    plate.width = Math.round(W * dpr); plate.height = Math.round(S * dpr);
+    plate.style.width = W + "px"; plate.style.height = S + "px";
+    off.width = Math.round(S * dpr); off.height = Math.round(S * dpr);
+    cell = S / (2 * TMAX + 1);
+    redrawPyramid();
+  }
+  function X(col) { return (col + TMAX + 0.5) * cell; }
+  function Y(row) { return (row + 0.5) * cell; }
+  function redrawPyramid() {
+    octx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    octx.clearRect(0, 0, S, S);
+    for (var t = 0; t < pyr.length; t++) drawPyramidRow(t);
+  }
+  function drawPyramidRow(t) {
+    var row = pyr[t]; if (!row) return;
+    octx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    octx.fillStyle = colors.ink; octx.globalAlpha = 0.82;
+    for (var i = 1; i < row.length - 1; i++) {
+      if (row[i]) octx.fillRect((i - 1) * cell, t * cell, cell + 0.35, cell + 0.35);
+    }
+    octx.globalAlpha = 1;
+  }
+  function line(ctx, x1, y1, x2, y2) { ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke(); }
+  function label(ctx, text, x, y, color, align) {
+    align = align || "left";
+    var w = ctx.measureText(text).width, h = parseFloat(ctx.font.match(/(\d+)px/)[1]);
+    var x0 = align === "center" ? x - w / 2 : align === "right" ? x - w : x;
+    ctx.globalAlpha = 0.86; ctx.fillStyle = colors.paper;
+    ctx.fillRect(x0 - 3, y - h * 0.62, w + 6, h * 1.24);
+    ctx.globalAlpha = 1; ctx.fillStyle = color; ctx.textAlign = align;
+    ctx.fillText(text, x, y);
+  }
+  function tracer(ctx, pts, col) {                 // a dashed path with a paper edge; pts = [x0,y0, (cx,cy,) x1,y1]
+    function path() {
+      ctx.beginPath(); ctx.moveTo(pts[0], pts[1]);
+      if (pts.length === 6) ctx.quadraticCurveTo(pts[2], pts[3], pts[4], pts[5]); else ctx.lineTo(pts[2], pts[3]);
+      ctx.stroke();
+    }
+    ctx.setLineDash([5, 4]);
+    ctx.strokeStyle = colors.paper; ctx.lineWidth = 3.8; path();
+    ctx.strokeStyle = col; ctx.lineWidth = 1.6; path();
+    ctx.setLineDash([]);
+  }
+  function on(id) { return document.getElementById(id).checked; }
+
+  function draw() {
+    var ctx = pctx, t = Math.min(T, TMAX);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.fillStyle = colors.paper; ctx.fillRect(0, 0, plate.width, plate.height);
+    ctx.drawImage(off, 0, 0);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.strokeStyle = colors.rule; ctx.lineWidth = 1; ctx.strokeRect(0.5, 0.5, S - 1, S - 1);
+    var fs = Math.max(9, Math.round(S * 0.021));
+    ctx.font = "500 " + fs + "px " + colors.mono; ctx.textBaseline = "middle";
+
+    if (on("k-core") && t > 8) {
+      ctx.globalAlpha = 0.55; ctx.fillStyle = colors.paper;
+      ctx.beginPath(); ctx.moveTo(X(0), Y(0));
+      for (var r = 8; r <= t; r++) ctx.lineTo(X(-r / 4), Y(r));
+      ctx.lineTo(X(-t) - cell, Y(t) + cell / 2); ctx.closePath(); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(X(0), Y(0));
+      for (var r2 = 8; r2 <= t; r2++) ctx.lineTo(X(Math.max(-r2 / 4, r2 - 2.8 * Math.log2(r2))), Y(r2));
+      ctx.lineTo(X(t) + cell, Y(t) + cell / 2); ctx.closePath(); ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = colors["ink-soft"]; ctx.setLineDash([4, 3]); ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.moveTo(X(-2), Y(8)); ctx.lineTo(X(-t / 4), Y(t)); ctx.stroke();
+      ctx.beginPath();
+      for (var r3 = 8; r3 <= t; r3++) ctx.lineTo(X(Math.max(-r3 / 4, r3 - 2.8 * Math.log2(r3))), Y(r3));
+      ctx.stroke(); ctx.setLineDash([]);
+      var navel = (-t / 4 + (t - 2.8 * Math.log2(t))) / 2;
+      ctx.beginPath(); ctx.arc(X(navel), Y(t) - fs * 0.9, fs * 0.42, 0, 2 * Math.PI);
+      ctx.lineWidth = 1.6; ctx.stroke();
+      label(ctx, "core's centre", X(navel) + fs * 0.7, Y(t) - fs * 0.9, colors["ink-soft"]);
+      label(ctx, "left band", X(-t * 0.7), Y(t) - fs * 0.9, colors["ink-soft"], "center");
+    }
+    if (on("k-sq")) {
+      var o = 3.5;
+      ctx.strokeStyle = colors.sq; ctx.lineWidth = 1.6;
+      line(ctx, X(0), Y(0) - o * 1.41, X(-t) - o * 1.41, Y(t)); line(ctx, X(0), Y(0) - o * 1.41, X(t) + o * 1.41, Y(t));
+      ctx.setLineDash([6, 5]);
+      line(ctx, X(-t) - o * 1.41, Y(t), X(0), Y(2 * t) + o * 1.41); line(ctx, X(t) + o * 1.41, Y(t), X(0), Y(2 * t) + o * 1.41);
+      ctx.setLineDash([]);
+      label(ctx, "its own square", X(-t) + fs * 0.5, Y(t) + fs * 1.4, colors.sq);
+    }
+    if (on("k-tri")) {
+      ctx.strokeStyle = colors.tri; ctx.globalAlpha = 0.6; ctx.lineWidth = 0.9;
+      for (var k = 32; k <= 2 * t; k += 32) {
+        line(ctx, X(k / 2), Y(k / 2), X(-t + k), Y(t));
+        line(ctx, X(-k / 2), Y(k / 2), X(t - k), Y(t));
+      }
+      ctx.globalAlpha = 1; ctx.lineWidth = 2;
+      line(ctx, X(0), Y(0), X(-t), Y(t)); line(ctx, X(0), Y(0), X(t), Y(t));
+      label(ctx, "triangle", X(-t * 0.62) - fs * 0.4, Y(t * 0.62) - fs * 0.2, colors.tri, "right");
+    }
+    if (on("k-prize")) {
+      ctx.strokeStyle = colors.prize; ctx.lineWidth = 2;
+      line(ctx, X(0), Y(0), X(0), Y(t));
+      ctx.setLineDash([2, 4]); line(ctx, X(0), Y(t), X(0), Y(2 * t)); ctx.setLineDash([]);
+      label(ctx, "prize column", X(0) + fs * 0.5, Y(t * 0.22), colors.prize);
+    }
+    var pts = null;
+    if (on("k-circ")) { pts = drawWheel(ctx, fs); drawStrip(ctx, fs); }
+    if (pts && pts.dot) {                                   // the wheel's point -> its two clocks and column 1's cell
+      tracer(ctx, [pts.dot[0], pts.dot[1], pts.h8[0], pts.h8[1]], colors.circ);
+      tracer(ctx, [pts.dot[0], pts.dot[1], pts.h7[0], pts.h7[1]], colors.circ);
+      var ex = PX + PW / STRIP_COLS * 1.5, ey = PY + PH - PH / STRIP_ROWS * 0.5;
+      tracer(ctx, [pts.dot[0], pts.dot[1], pts.c7[0], pts.c7[1] - pts.c7[2] * 2.6, ex, ey + 1], colors.circ);
+    }
+    updateReadout();
+  }
+
+  function drawWheel(ctx, fs) {
+    var cx = S / 2, cy = S * 0.75, R = S * 0.16, c = colors.circ, sh = wall.show, tau = wall.tau, out = {};
+    var locked = sh.locked, j = locked ? ((tau - sh.phase) % 56 + 56) % 56 : null;
+    var theta = locked ? (17 * j) % 56 : null;
+    var ghost = sh.ghost !== null && (!locked || sh.ghost !== sh.phase)
+      ? (17 * (((tau - sh.ghost) % 56) + 56)) % 56 : null;
+    function ang(p, n) { return -Math.PI / 2 + 2 * Math.PI * p / n; }
+    var arcs = tau % 2 === 0 ? [[43, 56]] : [[39, 56], [0, 16]];
+    ctx.strokeStyle = c; ctx.lineWidth = Math.max(3, S * 0.008); ctx.globalAlpha = locked ? 0.45 : 0.18;
+    arcs.forEach(function (a) { ctx.beginPath(); ctx.arc(cx, cy, R, ang(a[0], 56), ang(a[1], 56)); ctx.stroke(); });
+    ctx.globalAlpha = 1; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2 * Math.PI); ctx.stroke();
+    for (var p = 0; p < 56; p++) {
+      var a = ang(p, 56), r1 = R * (p % 7 === 0 ? 0.9 : 0.95);
+      line(ctx, cx + r1 * Math.cos(a), cy + r1 * Math.sin(a), cx + R * Math.cos(a), cy + R * Math.sin(a));
+    }
+    if (sh.chords.length > 1) {
+      ctx.globalAlpha = 0.35; ctx.beginPath();
+      for (var q = 0; q < sh.chords.length; q++) {
+        var aq = ang(sh.chords[q], 56), xq = cx + R * 0.99 * Math.cos(aq), yq = cy + R * 0.99 * Math.sin(aq);
+        if (q === 0) ctx.moveTo(xq, yq); else ctx.lineTo(xq, yq);
+      }
+      ctx.stroke(); ctx.globalAlpha = 1;
+    }
+    var dot = Math.max(4, S * 0.011);
+    if (ghost !== null) {
+      var ag = ang(ghost, 56);
+      ctx.strokeStyle = colors["ink-soft"]; ctx.setLineDash([2, 2]); ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(cx + R * Math.cos(ag), cy + R * Math.sin(ag), dot, 0, 2 * Math.PI); ctx.stroke();
+      ctx.setLineDash([]); ctx.lineWidth = 1; ctx.strokeStyle = c;
+    }
+    if (locked) {
+      var at = ang(theta, 56), lit = U[j] === 1, dx0 = cx + R * Math.cos(at), dy0 = cy + R * Math.sin(at);
+      ctx.beginPath(); ctx.arc(dx0, dy0, dot, 0, 2 * Math.PI);
+      ctx.fillStyle = lit ? c : colors.paper; ctx.fill(); ctx.lineWidth = 2; ctx.stroke(); ctx.lineWidth = 1;
+      out.dot = [dx0, dy0];
+    }
+    label(ctx, "the wheel: 56 points, 17 per step", cx, cy + R + fs * 1.3, c, "center");
+    if (!locked) label(ctx, "off the wheel: a kick", cx, cy, colors["ink-soft"], "center");
+    [[8, 1, cx - S * 0.31, "h8"], [7, 3, cx + S * 0.31, "h7"]].forEach(function (d) {
+      var n = d[0], dx = d[2], r = S * 0.065;
+      ctx.strokeStyle = c; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.arc(dx, cy, r, 0, 2 * Math.PI); ctx.stroke();
+      for (var p2 = 0; p2 < n; p2++) {
+        var a2 = ang(p2, n);
+        ctx.beginPath(); ctx.arc(dx + r * Math.cos(a2), cy + r * Math.sin(a2), 1.6, 0, 2 * Math.PI);
+        ctx.fillStyle = c; ctx.fill();
+      }
+      if (ghost !== null) {
+        var ag2 = ang(ghost % n, n);
+        ctx.strokeStyle = colors["ink-soft"]; ctx.setLineDash([3, 3]); ctx.lineWidth = 1.5;
+        line(ctx, dx, cy, dx + r * 0.92 * Math.cos(ag2), cy + r * 0.92 * Math.sin(ag2));
+        ctx.setLineDash([]); ctx.strokeStyle = c;
+      }
+      if (locked) {
+        var pos = theta % n, a3 = ang(pos, n), hx = dx + r * 0.92 * Math.cos(a3), hy = cy + r * 0.92 * Math.sin(a3);
+        ctx.lineWidth = 2; line(ctx, dx, cy, hx, hy);
+        ctx.beginPath(); ctx.arc(dx, cy, 2.5, 0, 2 * Math.PI); ctx.fillStyle = c; ctx.fill(); ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.arc(hx, hy, 3.2, 0, 2 * Math.PI); ctx.fill();
+        out[d[3]] = [hx, hy];
+      }
+      if (d[3] === "h7") out.c7 = [dx, cy, r];
+      label(ctx, n + " points", dx, cy + r + fs * 1.2, c, "center");
+      label(ctx, "+" + d[1] + " per step", dx, cy + r + fs * 2.4, colors["ink-soft"], "center");
+    });
+    if (ghost !== null && cy + R + fs * 3.2 < S) label(ctx, "dashed: where it would be without the last kick", cx,
+      cy + R + fs * 2.6, colors["ink-soft"], "center");
+    return out;
+  }
+
+  function drawStrip(ctx, fs) {                     // the wall run, beside the plate; the newest row at the bottom
+    var tau = wall.tau, n = Math.min(tau + 1, STRIP_ROWS), cw = PW / STRIP_COLS, ch = PH / STRIP_ROWS;
+    ctx.fillStyle = colors.paper; ctx.fillRect(PX, PY, PW, PH);
+    for (var r = 0; r < n; r++) {
+      var slot = (tau - n + 1 + r) % HIST;
+      for (var j = 0; j < STRIP_COLS; j++) {
+        if (wall.rows[slot * STRIP_COLS + j]) {
+          ctx.fillStyle = j === 0 ? colors.sq : colors.ink; ctx.globalAlpha = j === 0 ? 0.9 : 0.82;
+          ctx.fillRect(PX + j * cw, PY + (STRIP_ROWS - n + r) * ch, cw + 0.3, ch + 0.3);
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = colors.rule; ctx.lineWidth = 1; ctx.strokeRect(PX - 0.5, PY - 0.5, PW + 1, PH + 1);
+    ctx.strokeStyle = colors.circ; ctx.lineWidth = 1.5; ctx.strokeRect(PX + cw + 0.75, PY + 0.75, cw - 1.5, PH - 1.5);
+    ctx.lineWidth = 2; ctx.strokeRect(PX + cw - 1.5, PY + PH - ch - 1.5, cw + 3, ch + 3);    // column 1, now
+    var f2 = Math.max(8, Math.min(Math.round(fs * 0.9), Math.floor(PW / 13)));
+    ctx.font = "500 " + f2 + "px " + colors.mono; ctx.textBaseline = "bottom";
+    ctx.textAlign = "left"; ctx.fillStyle = colors["ink-soft"];
+    ctx.fillText("the wall run", PX, PY - f2 * 1.3 - 4);
+    ctx.fillText("newest row last", PX, PY - 4);
+    ctx.textBaseline = "top";
+    var narrow = PW < 120;
+    ctx.fillStyle = colors.sq; ctx.fillText(narrow ? "wall: col 0" : "wall: column 0", PX, PY + PH + 4);
+    ctx.fillStyle = colors.circ; ctx.fillText(narrow ? "col 1: outlined" : "column 1, outlined", PX, PY + PH + 6 + f2 * 1.2);
+  }
+
+  function updateReadout() {
+    var el = document.getElementById("readout"), sh = wall.show, t = wall.tau, rows = [];
+    function signed(v) { return (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v); }
+    rows.push(["step", t.toLocaleString("en-GB")]);
+    rows.push(["pyramid", "row " + Math.min(T, TMAX) + " of " + TMAX]);
+    if (sh.locked) {
+      var th = (17 * (((t - sh.phase) % 56) + 56)) % 56;
+      rows.push(["wheel", '<span class="state locked">on the wheel</span> point ' + th + " of 56"]);
+      rows.push(["clocks", (th % 8) + " of 8 · " + (th % 7) + " of 7"]);
+    } else {
+      rows.push(["wheel", '<span class="state loose">off the wheel</span>']);
+    }
+    if (sh.lastKick !== null) {
+      var k = sh.lastKick, j2 = ((2 * k) % 56 + 56) % 56;
+      rows.push(["last kick", signed(k) + " notches = " + signed(2 * k) + " points (8-clock +" + (j2 % 8) + ", 7-clock +" + (j2 % 7) + ")"]);
+    }
+    rows.push(["kicks", sh.fwd + " forward (" + signed(sh.fwdN) + "), " + sh.back + " back (" + signed(-sh.backN) + "), net " + signed(sh.fwdN - sh.backN)]);
+    el.innerHTML = rows.map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("");
+  }
+
+  /* ---- loop and controls ---- */
+  function frame(ts) {
+    if (last === null) last = ts;
+    var dt = Math.min(0.25, (ts - last) / 1000); last = ts;
+    if (playing) {
+      acc += dt * speed;
+      var n = 0;
+      while (acc >= 1 && n < 60) { stepAll(); acc -= 1; n++; }
+      if (n) draw();
+    }
+    requestAnimationFrame(frame);
+  }
+  var playBtn = document.getElementById("play");
+  function setPlaying(p) {
+    playing = p; playBtn.textContent = p ? "Pause" : "Play"; playBtn.setAttribute("aria-pressed", String(p));
+  }
+  playBtn.addEventListener("click", function () { setPlaying(!playing); });
+  document.getElementById("step").addEventListener("click", function () { setPlaying(false); stepAll(); draw(); });
+  document.getElementById("restart").addEventListener("click", function () { restart(wall.seed); });
+  document.getElementById("reseed").addEventListener("click", function () { restart(Math.floor(Math.random() * 1e9)); });
+  var sp = document.getElementById("speed"), spv = document.getElementById("speedval");
+  sp.addEventListener("input", function () { speed = Number(sp.value); spv.textContent = speed + "/s"; });
+  ["k-tri", "k-sq", "k-prize", "k-core", "k-circ"].forEach(function (id) {
+    document.getElementById(id).addEventListener("change", draw);
+  });
+  function retheme() { readColors(); redrawPyramid(); draw(); }
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", retheme);
+  }
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(function () { sizeAll(); draw(); }, 120); });
+
+  readColors();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { readColors(); sizeAll(); draw(); });
+  var seed = pickSeed(1);
+  restart(seed);
+  setPlaying(!reduce);
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
