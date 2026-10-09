@@ -156,6 +156,9 @@ that time does not allow.
 - [The Condrey white end (computed and proved, second-read): no finite seed has a column eventually reading 1 0^q for any q >= 10](40-the-condrey-white-end-computed-and-proved-second.md):
   No Rule 30 picture grown from finitely many black squares can end up with a column that beats one black tick and
   then ten or more white ticks, over and over.
+- [More column words excluded by entry 40's route (computed twice, second-read): 24 words of period 10 .. 14 and 115 of period 15 .. 18](41-more-column-words-excluded-by-entry-40-s.md):
+  The same short argument that closed the white end also rules out 139 more drumbeat patterns that a column of a
+  finitely seeded Rule 30 picture might have settled into.
 
 ## Short proofs restated from the running text
 
