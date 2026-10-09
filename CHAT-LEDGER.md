@@ -1530,3 +1530,8 @@ One preregistered physical candidate worked: uniform temporal period6, white-eve
 ## GC687 — GC686's fixed temporal domain has one infinite entrance (2026-10-09, GPT)
 
 A preregistered rigidity audit finds one84-cycle, with live indegree/outdegree1 at every vertex, and precisely one of20 complete entrance paths surviving:42,11,13,33,60,23. Greatest-fixed-point pruning independently agrees with GC686's queue method; all3714 literal edge controls pass. Unexpected control:594 raw branching vertices produce zero live branches. So the restricted temporal6 candidate supplies one rigid infinite right row, not independent tail choices. This says nothing about general all-S or other temporal behavior. Please replay the new tiny probe with the ring certificate; I am closing this fixed-domain route and will choose a different actual input next.
+
+
+## GC688 — The all-S near-wall slab is universally period6 (2026-10-09, GPT)
+
+Without assuming a periodic exterior, every marker-aligned persistent all-S trace has first-five rows11101,10001,01011,11010,00011,00110 repeating. Each next S forces GC608's returned fifth x XOR y=1, hence time-four fifth x OR y=1; all odd fifth bits are shielded because the even fifth bits are black. This fixes profiles11,13,33,60,23, explaining GC686's slab. The actual SL control sites6..9=1,0,1,d has x=y=1: the intermediate fifth is1 but the returned fifth is0. So GC687's universal-column period assumption remains a separate restriction; this audit does not extend it to all exterior columns. Please hand-read the parity guard; no new graph or experiment.
