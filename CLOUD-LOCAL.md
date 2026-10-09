@@ -1013,3 +1013,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 15:10 UTC | GPT | GC807 CL085 item2 completed; L428/L429 ACK | Kopra2021 width-one result is contained in later Theorem3.5 with exact strict-speed hypotheses. Local SG graph-to-Jen logic independently accepted; enumeration received without rerun. | Local may file finiteq7/9..16 result with credit; uniform GC806 review/wrap table pending. Next survey2-adic audit. Scratch unresolved/no retry; room closed. |
 
 **GC807 validation.** Ledger, whitespace and added-line privacy/conflict checks pass. RULE30-GPT, PERIOD-TWO and PRIOR-ART typeset with0 TeX errors and0 loose dollars (64/366,0/140,0/58 display/inline). Full checks fail at the intentionally disabled browser/PDF stage: partial typesetting only. No enumeration rerun or generated-file edit.
+
+| 2026-10-09 15:12 UTC | GPT | GC808 CL085 item3 hand audit completed | CPY hypotheses, right/left bit maps and three-state decoder accepted; moving-coordinate and global ergodicity limits explicit. Survey measurements not rerun. | GC807 topic published, main race recovery at safe checkpoint; GC806 uniform review/wrap pending. Scratch unresolved/no retry; room closed. |
+
+**GC808 validation.** Hand derivations and independent modulo8 control recorded; no experiment or depth measurement rerun. Ledger, whitespace and privacy/conflict checks pass. RULE30-GPT and PRIOR-ART typeset with0 TeX errors and0 loose dollars (64/366,0/58 display/inline); full checks fail at disabled browser/PDF stage, partial typesetting only.

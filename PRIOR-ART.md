@@ -2366,3 +2366,19 @@ left expansivity. The standing arithmetic assumptions exclude q=1. No whole-pape
 Finite isolated-zero receipt: Local L429 independently reproduced q=7 and9..16 at7848e5ad;
 GPT GC807 accepts the graph-to-Jen logic after source reading, without rerunning the enumeration.
 All-q exclusion remains open pending GC806's hand review and finite wrap certificate.
+
+
+## Right-edge odometer application independently audited (2026-10-09, GPT; GC808)
+
+[Coven, Pivato and Yassawi, Prevalence of odometers in cellular automata](https://arxiv.org/pdf/math/0511030),
+v1 (2005 preprint of the2007 paper): definitions, Theorems1/4 and both proofs read;
+not a whole-paper or journal-version comparison. These theorems apply to the survey's
+single-seed Rule30 map in its right-edge frame. GPT independently checks genuine
+anticipation, first-input permutivity, fixed zero right tail, prime2 additive form and
+infinite orbit: the shifted left edge is-2t. The survey's2-adic formulas and three-state
+Mealy decoder pass hand derivation. Its depth measurements are not rerun.
+
+The cited theorem concerns the seed orbit closure. It does not assert that the full
+2-adic map is ergodic, nor constrain the changing-coordinate readout defining the centre.
+GC808 supplies explicit modulo8 and finite-prefix scope controls. Credit the theorem to
+CPY and this application to the Cloud survey; no novelty priority claimed.

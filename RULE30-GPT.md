@@ -19014,3 +19014,49 @@ all-q proof. Keep source credit. GC806's cruise repair and finite wrap table rem
 
 **Next.** Local may file the finite SG result after this second logic reading; continue the
 uniform hand/gadget review separately. Scratch connection unresolved, no retry; room closed.
+
+
+## GC808 — Independent audit of the survey's right-edge odometer application (2026-10-09)
+
+**CL085 item3, bounded hand audit.** Read older_tools'2-adic inference block against the
+primary CPY preprint's Theorems1/4 and proofs. The application is valid for the single seed;
+the crucial infinite-orbit hypothesis can be proved without the survey's measurements.
+Let F be physical Rule30, sigma(x)[i]=x[i+1], and Phi=sigma composed with F. Then
+Phi(x)[i]=x[i] xor(x[i+1] OR x[i+2]) and Phi^t(x)[i]=F^t(x)[i+t]. Its positive-index
+tail remains zero for the seed at0. The physical nonzero edges are exactly -t and+t:
+both edge updates see the unique old edge1 with outer zeros and return1. Consequently
+Phi^t(seed)'s leftmost1 is at-2t. The orbit is infinite. Phi has no memory, genuine
+anticipation2 (inputs000/001 give0/1), and is permutive in its first input. The CPY
+hypotheses therefore hold, including the prime2 additive form. The closure carries the
+2-adic adding machine. Credit CPY and the survey's application, not a new discovery.
+
+**Bit coordinates independently derived.** Put R_t[k]=F^t(seed)[t-k], k>=0. At the next
+tick the three parents have indices k,k-1,k-2, so T(R)=R xor(2R OR4R), with negative
+bits zero. Likewise S_t[k]=F^t(seed)[-t+k] gives S'=4S xor(2S OR S).
+The centre is bit t at time t in either encoding. T is triangular: output k is input k
+xor a function of lower input bits. Solving successively gives a unique inverse modulo
+2^k for every k, preserves the first differing bit, and hence proves the 2-adic isometry.
+This is a claim about the full right-finite encoding after fixing an origin; the finite
+seed subspace corresponds to nonnegative integers. It is not a statement that arbitrary
+bi-infinite rows have this encoding.
+
+**Three-state decoder accepted by hand.** Track the previous two input bits a,b. A=00,
+B=01, and C=10 or11; the last two states have identical future behaviour. At each digit
+output v xor(a OR b), then update history to(v,a). Thus A emits v and has sections(A,C);
+B flips v and has sections(A,C); C flips v and has sections(B,C). These are exactly the
+survey's recursions. No random-word replay was needed. Measured odometer depths remain
+attributed to the survey, not accepted as independently reproduced.
+
+**Unexpected control and limitation.** On odd residues modulo8, T has two separate
+2-cycles:1->7->1 and3->5->3. So the full T on all2-adic integers is not a single ergodic
+adding machine, despite its isometry and the seed orbit closure's conjugacy. A coordinate
+factor need not distinguish the time parameter; the centre additionally changes its
+coordinate with time. Neither finite-window periodicity nor the closure conjugacy makes
+that moving readout periodic or nonperiodic. This is the precise scope guard on the route.
+
+**Additional direct bound, not an asymptotic law.** If P is a positive return time of the
+first k bits of T^t(1), then2P>=k. Otherwise bit2P is inside the window, equals1 by the
+left-edge calculation, and was0 in the initial seed. In particular all fixed-prefix periods
+diverge with k, but this only supplies a logarithmic lower bound on their2-adic depths.
+No linear-depth law or prize conclusion follows. Next: receive GC806's independent uniform
+review/wrap certificate; retain this odometer lane as a tool with its moving-readout gap.

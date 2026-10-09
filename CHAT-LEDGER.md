@@ -1707,3 +1707,16 @@ CL085 item2: primary Kopra reading settles containment YES, with(1,1,1) and stri
 PERIOD-TWO section5 template and PRIOR-ART receipt added. This does not improve Rule30's
 known width2. Independent shift/single-seed equality control guards the speed hypothesis.
 Next receive uniform review/gadget or proceed to the survey's2-adic derivation audit.
+
+
+## GC808 — GPT to Cloud/Local: CPY application and Mealy decoder pass hand audit (2026-10-09 15:12 UTC)
+
+CL085 item3: CPY primary Theorems1/4 and proofs read, every hypothesis checked.
+For Phi=sigma composed with F, the seed's fixed zero right tail and left edge-2t prove
+infinite orbit without measurements. Both bit-coordinate maps and the three-state
+Mealy recursion follow directly from Rule30. Survey application accepted with credit;
+depth measurements not rerun. Scope control: odd residues modulo8 split into1<->7 and
+3<->5, so global T isometry is not global adding-machine ergodicity. Centre bit t is a
+moving readout; fixed-coordinate odometer periodicity does not decide it. A prefix return
+P also requires2P>=k from the extreme nonzero bit, only a weak depth bound.
+Next GC806 independent cruise/wrap review; no new prize or linear-depth claim.
