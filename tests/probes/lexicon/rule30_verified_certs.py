@@ -6,6 +6,7 @@ run (chat L443), with these predictions pushed before it.
 RUN-ON:     cpu (Python 3, kissat, drat-trim, ~/np-build/cake_lpr/cake_lpr); hours for the deep records calls
 COMMAND:    python3 tests/probes/lexicon/rule30_verified_certs.py run [JOBS=4] [TIER ...]    (resumable)
             python3 tests/probes/lexicon/rule30_verified_certs.py status
+            python3 tests/probes/lexicon/rule30_verified_certs.py retry [JOBS] [TIER ...]  (re-runs unverified ones)
 
 The pipeline per instance: rebuild the CNF with the instance's own builder, kissat writes a text DRAT proof, drat-trim
 converts it to LRAT (-L, an untrusted elaboration), and cake_lpr checks the LRAT against the CNF. Only cake_lpr's
@@ -151,6 +152,17 @@ def run_one(item):
                                    capture_output=True, text=True)
                 verdict = 'VERIFIED-UNSAT' if 's VERIFIED UNSAT' in c.stdout else 'CAKE-FAILED'
                 diag = c.stdout + c.stderr
+                if verdict == 'CAKE-FAILED':
+                    # fallback elaborator (added after the run began, L444): CaDiCaL's native LRAT, checked the same way
+                    lrat2 = lrat[:-5] + '.cad.lrat'
+                    subprocess.run(['cadical', '-q', '--lrat=true', cnf, lrat2], capture_output=True, text=True)
+                    c2 = subprocess.run([CAKE, '--CML_HEAP_SIZE=6000', '--CML_STACK_SIZE=2000', cnf, lrat2],
+                                        capture_output=True, text=True)
+                    if 's VERIFIED UNSAT' in c2.stdout:
+                        verdict, stage = 'VERIFIED-UNSAT', 'cake-cadical'
+                    diag += '\n--- cadical fallback ---\n' + c2.stdout + c2.stderr
+                    if os.path.exists(lrat2) and verdict == 'VERIFIED-UNSAT':
+                        os.unlink(lrat2)
             else:
                 stage, verdict, diag = 'drat-trim', 'ELAB-FAILED', v.stdout + v.stderr
         else:
@@ -189,9 +201,12 @@ def main():
     jobs = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else 4
     tiers = [a for a in sys.argv[2:] if a in ('cx', 'al', 'rr')] or ['cx', 'al', 'rr']
     os.makedirs(DIR, exist_ok=True)
-    if cmd == 'run':
+    if cmd in ('run', 'retry'):
         got = done()
-        todo = [it for it in instances(tiers) if it[0] not in got]
+        if cmd == 'retry':                      # re-run instances whose latest receipt is not verified; history kept
+            todo = [it for it in instances(tiers) if it[0] in got and got[it[0]][1] != 'VERIFIED-UNSAT']
+        else:
+            todo = [it for it in instances(tiers) if it[0] not in got]
         with ThreadPoolExecutor(jobs) as ex:
             list(ex.map(run_one, todo))
     status(tiers)

@@ -663,6 +663,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Coprime adjacent periods force a zero profile in a right tail](G259-coprime-adjacent-periods-force-a-zero-profile-in.md):
   Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right
   half: one goes blank and the other freezes.
+- [The critical selector is odd when the first odd-tail profile has least period 5](G260-the-critical-selector-is-odd-when-the-first.md):
+  In one family of hypothetical repeating patterns, a hidden parity is always odd, which pins down one choice that
+  had looked free.
+- [Proper-period tail profiles need both singleton colours; the selection parity reduces to phase sums](G261-proper-period-tail-profiles-need-both-singleton-colours.md):
+  In the same hypothetical repeating pattern, every column that repeats on a short cycle must contain both a lone
+  black beat and a lone white beat.
 
 ## Proofs from the sparks
 
