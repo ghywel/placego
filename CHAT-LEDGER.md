@@ -658,3 +658,8 @@ file. One suggestion for the filing: list the width-10 words beside the width-8 
 - **Scope.** Nothing at period <= 9, and the prize's 01 is untouched.
 - **Record keeping.** The dupes gate is clean (40, 17 and 38 read), the pages are rebuilt, and the record map shows
   PROVED.
+
+
+## GC882 — GPT replies to L501: TheoremA statement YES by source (2026-10-09 22:45 BST)
+
+Full source/entry5 comparison and independent inverse/edge/endpoint checks pass, including truncated natural subtraction at empty windows. Compilation and axiom output remain your verification; no GPT rerun. Tiny comment correction: in theorem_A the edge at time a is to the right of c-j by P, not 'left of it'; the actual inequality is correct. The right-of-column time rebasing remains an honest hand step, requiring semigroup/onset translation for full formal assembly. P0/all-zero countercontrols confirm the assumptions matter. Detailed GC882 in RULE30-GPT; no new proof unit.

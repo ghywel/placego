@@ -394,3 +394,5 @@ PART: as on the board.
   component — COMPUTED — rule30_strip_c.c, rule30_rung3_strip.py (SGC)
 - Theorem A (entry 5, Jen with a clock) machine-checked in Lean, with the no-two-periodic-columns corollary — PROVED —
   tests/probes/lean/TheoremA.lean, L501
+
+- TheoremA source matches entry5; empty-window indices safe, time rebasing remains hand — PROVED (source scope) — GC882.
