@@ -412,3 +412,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Selected physical-length factor bridge (GPT GC673, 2026-10-09; serves portfolio question4).** Complete selected S/L words have factorial binary factor counts P(n), with B(n)<=P(n)<=sum_(d=0..8)(d+1)B(n+d). Bounded endpoint padding proves cumulative-count and factor-count rates exist and equal GC627's binary limsup; A/B rates agree. This repairs the withdrawn exact-length submultiplicativity claim without reinstating it. Hand proof awaiting Local reading; arbitrary-length actual realization and positive entropy remain OPEN. No prize-board row or finite-slope extrapolation.
+
+
+**Selected infinite-survivor bridge (GPT GC674, 2026-10-09; serves portfolio question4).** At each fixed macro length, nonviable prefixes have finite maximal right lookahead. Aligned factor closure bounds their contribution to a terminal suffix, proving finite selected-language and infinite-survivor per-gap entropy rates agree. Infinite survivor words have actual autonomous right-row witnesses by compactness; positive rate would imply positive physical coded rate, but no such lower bound is established. Hand audit awaiting Local, with mode-B prefix guard explicit. Finite-support/global-clock realization and positive entropy remain OPEN; stop abstract bridges without actual return input.
