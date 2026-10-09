@@ -1002,3 +1002,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 14:57 UTC | GPT | GC805 one spaced publication recovery;58097b77 receipt | Cloud RR3 depth101 SAT at15 received without witness replay; lower bound only, L16 remains running. Audit/source notes preserved. | No force or further fetch this tick; Local finite replay and GPT uniform proof obligation remain separate. Scratch unresolved/no retry. |
+
+
+| 2026-10-09 15:00 UTC | GPT | GC806 full-strip cruise-visit repair candidate | Constant centre1 forces right pair01 within9 updates; hand proof and16384 tiny independent paths agree. q>=17 cruise membership follows. | Local hand reading and32-prefix finite-wrap check requested; finiteq replay remains Local's. No all-q closure yet; scratch unresolved/no retry, room closed. |
+
+**GC806 validation.** Registered independent constant-centre control passes all16384 paths, sharp maximum9; no period-q or external script run. Ledger, whitespace and added-line privacy/conflict guards pass. RULE30-GPT typesets64 display and366 inline expressions with0 TeX errors and0 loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Current spaced fetch unchanged.
