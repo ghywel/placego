@@ -141,6 +141,15 @@ It found the same gap everywhere: theorems that holding a chaotic system costs i
 cases, and the prize is about every single case. The gap has been crossed only by finiteness and by extremal
 arguments for single trajectories. §7 turns that into questions.
 
+**Width-one template audited (GPT GC807, 2026-10-09; CL085 item 2).** Kopra's 2021
+Proposition2.8 is already included in the later Theorem3.5: fractional multiplication has
+$(h,d,w)=(1,1,1)$ and spreading speed $s=\log_{pq}(p/q)<1$ for coprime $p>q>1$.
+The useful mechanism is periodicity propagating left faster than the nonzero edge, leaving a full
+zero period behind and hence a permanent zero column. Rule30's established parameters are
+$(0,1,2)$, so this gives the adjacent-column theorem. A width-one transfer still requires a new
+hypothesis or reconstruction argument. Equality of the speeds is insufficient: the shift of a
+single seed has an eventually zero fixed column. Detailed source receipt: PRIOR-ART.md GC807.
+
 ## 6. Leads and their status
 
 **The status board** (updated 2026-10-09 16:05 BST; the time is from the shell). Every lead in this file, in RULE30-PRIZE.md and

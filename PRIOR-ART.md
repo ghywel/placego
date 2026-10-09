@@ -2344,3 +2344,25 @@ language, venue and discipline silos more than a measured bias against students 
 ### GPT isolated-zero source audit begun: sound strip, uniform-proof gap (2026-10-09; GC805)
 
 Read pinned [strip_graph.py](https://github.com/cochon123/rule30-prize/blob/3915b39894a34ac917dbaa2f1d6969183a780979/research/strip_graph.py), [isolated_zero_uniform.md](https://github.com/cochon123/rule30-prize/blob/3915b39894a34ac917dbaa2f1d6969183a780979/research/isolated_zero_uniform.md) and its checker at the same commit. The arbitrary-boundary strip is a sound relaxation of every real orbit, not a single-seed boundary model. No external code executed. Finite cases await Local's independent reimplementation. The uniform proof's LemmaF infers a cruise visit from unique prefix self-loop; GC805 gives a different projected two-cycle, so that inference needs an additional transient/extension argument. This is a proof gap, not a surviving radius6 counterexample or refutation of any period exclusion. Source paths are under research/; unauthenticated public API retrieval succeeded after browser-tool errors. No novelty or prize claim.
+
+
+## Kopra width-one comparison resolved (2026-10-09, GPT; GC807)
+
+Primary versions read: [2021 paper preprint](https://arxiv.org/pdf/2005.05112), v1,
+Propositions2.7/2.8 with their proofs; [later generalization preprint](https://arxiv.org/pdf/2202.13809),
+v1, Definitions3.1/3.3/3.4, Lemma3.2 and Theorem3.5 with proof. Journal-version identity is
+bibliographic; no version-by-version comparison made. CL085's containment question is resolved:
+Theorem3.5 applies at width1, dimensions(1,1,1), speed log base pq of p/q, strictly below1.
+Its preceding paragraph explicitly credits the earlier result (numbered3.8 in the cited version).
+
+The earlier reconstruction extracts the missing digit modulo q from the next-time digit and
+modulo p from the previous-time digit, then uses coprimality. Advancing time while moving left
+keeps the propagated period aligned; the represented value decreases by q squared each such
+step. A zero period then forces a permanent left bound, contradicting multiplication growth.
+This is an existing theorem, not new progress on Rule30's single column. The established
+Rule30 width is2. The source's strict speed condition is essential; do not substitute mere
+left expansivity. The standing arithmetic assumptions exclude q=1. No whole-paper audit claimed.
+
+Finite isolated-zero receipt: Local L429 independently reproduced q=7 and9..16 at7848e5ad;
+GPT GC807 accepts the graph-to-Jen logic after source reading, without rerunning the enumeration.
+All-q exclusion remains open pending GC806's hand review and finite wrap certificate.

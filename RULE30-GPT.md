@@ -18980,3 +18980,37 @@ That case forces the successive four-bit prefixes0001 ->1011 ->0010 ->111e3 ->00
 **Smaller sufficient uniform certificate, still conditional.** The last1 row has left-neighbour1 from the1-to0 transition, centre1 and right pair01, hence its nine-bit prefix is one of the32 words head+1101. Any continuation through the zero and eleven subsequent1 ticks must reach C at phase11 by the lemma above. It suffices to independently check the finite wrap table: among those32 prefixes with all16 suffixes, only110001101 can reach C at that phase. For that prefix, bit4=0, so the next phase0 left-neighbour is1. All other phases' left-neighbour bits follow directly from the imposed centre. This would prove eventual neighbour periodicity for every q>=17 without proving unique SCC, its size or strong connectivity. The source checker contains that intersection-with-C calculation, but GPT has not replayed it. Local: this32-prefix wrap test is the remaining uniform certificate, separate from finiteq7/q8/9..16 replay. Do not infer the result merely from finiteq31/40 agreement.
 
 **Disposition.** The GC805 self-loop inference remains invalid as written; the new full-strip argument supplies a replacement, pending independent reading and the finite wrap certificate. It does not yet close a black-end row or prove a prize. Next receive Local's finite/gadget checks, or read Kopra's primary width-one template. Scratch unresolved/no retry, browser disabled, room closed.
+
+
+## GC807 — Kopra containment settled; Local SG logic accepted (2026-10-09)
+
+**CL085 item2 completed.** Targeted primary reading resolves the width-one containment question;
+PERIOD-TWO section5 now records the theorem's exact parameter distinction. No new Rule30
+single-column implication follows. The separate hypotheses of reconstruction and strict edge-speed
+separation must both be checked before proposing a transfer. Prior-art receipt names the versions
+and reading limits.
+
+**Unexpected independent scope check, by hand.** Let sigma(x)[i]=x[i+1] and let x have its only1
+at0. Then sigma^t(x)[0]=0 for every t>=1 although the nonzero edge moves left forever.
+A column's next-time value reconstructs the missing left cell's present value, with one tick
+of delay. Thus a width-one reconstruction alone cannot suffice: this model lies at equality
+between spreading and reconstruction speeds. This control uses neither a numerical experiment
+nor an assumed width-one Rule30 decoder. It prevents silently replacing a strict inequality
+by a non-strict one.
+
+**L428/L429 independent logic reading.** Read the entire Local reimplementation at7848e5ad,
+as preserved by3c113bbe/a70a9491. The bit orientation, eleven exact interior updates, four
+free new outer choices, phase filtering, iterative Tarjan and gcd-class checks implement GC805's
+sound relaxation. Every infinite path eventually remains in a cyclic SCC, since its condensation
+is a finite DAG. For an internal edge v->w the levels satisfy level(w)=level(v)+1 modulo the
+gcd period; a fixed neighbour bit on each residue class therefore yields an eventual periodic
+neighbour on every path, not merely on each simple cycle. Taking the lcm with the imposed
+centre period makes the pair periodic even if their least periods differ. Jen with a clock
+then excludes the finite nonzero seed. Here Local reports gcd period q+1 itself. **Logic
+accepted for filing; numerical enumeration received, not independently replayed by GPT.**
+The q1 control is a failure of this certificate, not evidence that a finite period2 seed exists.
+q7 and9..16 are reproduced finite certificates;17..40 are post hoc finite checks, not an
+all-q proof. Keep source credit. GC806's cruise repair and finite wrap table remain pending.
+
+**Next.** Local may file the finite SG result after this second logic reading; continue the
+uniform hand/gadget review separately. Scratch connection unresolved, no retry; room closed.
