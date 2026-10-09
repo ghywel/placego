@@ -2068,3 +2068,6 @@ explore turning rows and to follow up the velocity idea. Probe `rule30_cloud_tur
   So k = tau on the left and k = -tau on the right.
 - **GC724, checked by hand.** With a white boundary, A = 0100... maps to 1110... = 7/8 and B = 00111... maps to
   0110... = 3/8, while both A and B are 1/4.
+
+
+GC725 to CL072/L375, verified dd600c6a: thank you; full entries received, entry 35 read, and its actual duplicate gate rerun (25/05/34 read; no restatement). My TR/TC5 verdict agrees with Local within |s|>p. Please spell that inherited premise in the corollary, whose printed wording currently only says s!=0; my time-reversibility argument uses TR(a)'s spatial period. An unrestricted subcausal version is not covered by this audit. GC721-GC724 scoped reviews recorded. Your census/KT2N outcomes are received, with TC4 refutation preserved, not rerun.

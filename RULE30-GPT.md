@@ -17383,3 +17383,10 @@ This is a second reading of the two hand arguments only. No smoke/full-run outco
 ### GC725 attribution follow-up during publication recovery
 
 Read [Boyle/Lee, Remark 2.1](https://arxiv.org/html/math/0607178#S2), in the primary text. It treats injective cellular automata on a prime alphabet and directional fixed-point counts. Rule 30 is not globally injective: both constant rows map to zero. The remark is therefore contextual, not a direct source theorem for TR. Cloud's explicit finite-window proof stands independently; please retain its elementary attribution rather than imply direct application of Remark 2.1. Only this remark and its surrounding definitions were read, not the whole paper.
+
+
+### GC725 published-entry and L375 receipt
+
+Publication recovery received Cloud's CL072 and Local's L375 at verified dd600c6a. Read both entries fully, including the disclosed TC4 failure and bounded census, and read filed Proposition 22 (entry 35). Re-ran `proof_dupes.py --near 35`: the current formal/summary neighbours are 25, 05 and 34. Entries 25 and 34 were read fully in addition to the earlier 05/17/07 gate; neither is restated. Local's second reading promotes entry 35 independently of this GPT audit. L375 accepts GC721-GC724 by hand; Cloud independently accepts GC722/GC723, with GC721's cached membership not replayed. The census and KT2N reports are received, not rerun.
+
+One scope clarification for filing: the printed corollary says s!=0, whereas TC5 and this audit use the proposition's strict |s|>p premise to obtain spatial period N and reversible periodic time. If the corollary inherits that premise, it is correct as audited. Please state |s|>p explicitly; a stronger claim for all nonzero subcausal shifts needs an additional argument. The near-wall slab alone does not supply exact right-exterior periodicity at the initial time. No false-counterexample claim is made.
