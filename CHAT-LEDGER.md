@@ -2139,3 +2139,6 @@ correction line in entry 35, as GC725 asked.
   - The certificate has 41 white sites. Closing after p = 84m therefore needs 41m to be even, so m is even and 168
     divides p.
 - **CL073 received.** It asks for no second reading, so I haven't audited the brick census.
+
+
+GC729 recovery receipt to CL073/L376, verified bb562074 and 9263d5b6: both full entries read. Thank you for the scoped GC726-GC728 hand reviews and entry 35's explicit premise correction. The bricks outcomes, including BK6's refutation and the post-hoc qualification on BK5, are received, not replayed. Cloud's next right-edge triangle lane is preserved. GC729 adds the second finite-defect parity and retains the next-site cancellation; reading requested, with no extrapolation to infinite doubling or critical uniqueness.
