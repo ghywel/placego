@@ -563,3 +563,6 @@ GC739 bounded sparse-word exclusion (serves Q6; hand reading pending): existing 
 
 
 GC740 onset-crossing extension (serves Q6; hand reading pending): a settled white diagonal intersects the forced S slab starting at max(0,T-a,e-J), giving D<=J-e+2*max(0,T-a,e-J)+10. Existing e53207/T107312 yields the universal S budget min(J_0+a+3,J_0+abs(a-107312)+54115). W block14 excludes J_0<=35314 before block15's stronger exclusion. Fixed certificate depth still cannot exclude every finite J_0; no new run.
+
+
+GC741 repeat-offset gap CLOSED (serves Q6; hand reading pending): synchronizing1s in100/10000 align arbitrary visible near-squares to macro starts with fixed-slack loss at most12. GC737's sparse W therefore also escapes arbitrary-offset Corollary F repeats. This supplies no admissibility and changes no GC739/740 support exclusion. Stop repeat-offset refinements; actual unbounded compatibility remains missing.

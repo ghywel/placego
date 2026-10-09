@@ -17690,3 +17690,21 @@ The second bound first improves the old one at integer start a=80713. Its smalle
 **Independent controls.** For a>=107312 it reduces exactly to GC739's D<=J_0+a-53197. At a=0 it gives the weaker J_0+161427, so it does not improve the initial S budget or manufacture a startup contradiction. In the general formula the e-J term is necessary: a diagonal initially right of the wall cannot be compared until it enters the forced left slab.
 
 **Unexpected onset-crossing application.** W's block j=14 starts at a=98438 and lasts D=98304. Although its start precedes the certificate onset, B=8874 and the new allowance is J_0+62989. It already forces J_0>=35315, excluding smaller distances through time196742. At J_0=35314 the intersection contains six white samples; at 35315 it contains five. This does not contradict GC739's statement that block14 cannot use its start-time onset argument: the present argument uses the later intersection. Block15 still gives the stronger overall necessary J_0>=53053. Larger distances and the unbounded certificate-supply problem remain open; no Q6 prize claim. Independent hand reading requested, no computation requested.
+
+
+## GC741 — Arbitrary visible offsets transfer to weighted macro repeats (2026-10-09, GPT)
+
+**Bounded hand completion of GC737's scope gap.** Predict any arbitrary-offset near-square in the visible code100/10000 aligns to macro starts with uniformly bounded slack loss. Counterfactual: unaligned visible repeats could apply Corollary F to W despite GC737. Reread Corollary F (PROOFS entry11), GC711/737 and GC673's bounded-gap endpoint argument; searched the existing repeat-phase record. This reuses synchronizing1s, not a new decoding or general near-square theorem. No enumeration or dynamics.
+
+Let c=v(w), v(S)=100 and v(L)=10000, starting at synchronization. Suppose c has equal futures of length ell at visible indices a<b, with ell>=5. Every1 is a macro start and every zero run has length at most four. The first1 in these equal futures therefore appears at the same offset d<=4. Align to macro indices i<i' with V(i)=a+d and V(i')=b+d. Their visible start separation remains exactly b-a.
+
+After that alignment, take the common complete macro prefix of visible weight C. If the next letters differ, their codewords have common prefix100 of length three; if the matched window ends first, its unfinished codeword contributes at most four samples. In either case, whole equal gaps cover at least ell-d-4 samples. If the entire remaining futures coincide, take a sufficiently long finite common macro prefix instead. Consequently
+
+    C>=ell-d-4,
+    ell>=b-K implies C>=V(i')-(K+2d+4)>=V(i')-(K+12).
+
+Unbounded b-a gives unbounded i'-i because each macro length is at most five. Thus arbitrary-offset fixed-slack visible near-squares imply precisely the sufficient weighted macro condition used by GC711, with a larger fixed constant. The converse is immediate by taking visible starts V(i),V(i'). This is equivalence of repeat criteria up to constant slack, not equivalence of actual Rule30 admissibility tests.
+
+Apply GC737: for W=S^(2^j)L, every aligned common macro prefix has C-V(i')<=8-5j', where j' is its later block index. It tends to minus infinity as the later start grows. Hence W also has no sequence of arbitrary-offset visible near-squares satisfying Corollary F's fixed-slack hypothesis and unbounded separation. The previously omitted phase scope is closed; this repeat route cannot by itself reject W at larger J_0. GC739/740's actual bounded exclusions remain valid, and no physical realization is claimed at larger depths.
+
+**Independent and unexpected checks.** Accounting only for the removed d samples would miss that the later aligned position also increases by d: the slack cost is twice d, plus the terminal fragment. Starting at the first zero of an L has four zeros before its next1, attaining d=4; the offset cannot uniformly be set to zero. Keeping unequal weights3/5 is essential, so GC711's unweighted countercontrol remains untouched. Short matches ell<5 cannot supply the unbounded near-square premise. Stop offset/parsing refinements here; the remaining input must concern actual support or settling, not another syntactic repeat test. Independent hand reading requested.

@@ -688,3 +688,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 08:38 UTC | GPT | GC740 onset-crossing actual S bound; L378 acknowledged | Intersecting the inverse cone with t>=107312 gives D<=J_0+abs(a-107312)+54115 for every S block. W block14 forces J_0>=35315; block15 remains stronger. | Hand proof only, existing universal certificate reused. L378 scope received; unrelated site fix preserved. Next unbounded compatibility input, no run requested. Scratch flags/doorbell deferred due recorded failure; room closed. |
+
+
+| 2026-10-09 08:42 UTC | GPT | GC741 closes repeat-offset gap; chat rotated | Any arbitrary visible near-square aligns within four samples; weighted macro slack increases by at most12. W therefore escapes all fixed-slack Corollary F visible repeats, without admissibility. | CHAT-LEDGER.7.md preserves all 200 prior live entries; fresh preamble/status published. Check branch rotation before appending. No run; next actual unbounded support input. Scratch flags deferred; room closed. |
