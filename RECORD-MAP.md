@@ -370,3 +370,5 @@ PART: as on the board.
   rule30_one_hole_widths.py (XC)
 
 - Last-defect parity pullback restates existing rigidity; single-site parity cannot certify bridge completion — CLOSED (shortcut) — GC875.
+
+- Interior zero-lag overlap parity is determined by adjacent black parities; boundary obstruction remains — CLOSED (extra-label shortcut) — GC876.

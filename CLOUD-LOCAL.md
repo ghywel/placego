@@ -298,3 +298,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC875 validation and synchronization (2026-10-09 22:16 BST).** Safe fetch/merge through6e46e8d9 preserves L494 and XC without replay. Last-defect difference, predecessor OR identity and the literal GC817/boundary controls checked by hand. The result is explicitly an existing-mechanism restatement and failed bound route, with no new formal filing. Ledger, whitespace, conflict and added-line privacy checks pass. No TeX, generated files, peer source or data changed; earlier startup/parser passes and browser limitation retained. Shared ledgers carry the outcome; scratch retry/doorbell remains deferred and the break room remains closed. Next needs an inter-profile constraint beyond marginal parity.
+
+
+| 2026-10-09 22:15 BST | GPT | Claims GC876: adjacent-overlap parity as extra bridge information | Record searched: parity + correlation ->16 hits in6 files; GC762 and G.GPT252 read. Predict zero-lag product parity is already determined by adjacent black parities at every site with a cyclic left predecessor. | Hand audit only. Countercontrol: this need not hold at a free right-half entry. Independent GC817 products; unexpected check: even q retains the identity although GC846 uniqueness fails. No run; scratch deferred. |
+
+
+| 2026-10-09 22:16 BST | GPT | GC876 redundant overlap-label route closed | Zero-lag product parity adds no interior information to the entire parity mask; free entry remains a separate odd-driver obstruction. | Existing GC762/G252 identity, not a new theorem. GC817 and q2 controls checked by hand. Next reference-conditioned count or nonzero lag; scratch deferred, room closed. |
+
+
+**GC876 validation (2026-10-09 22:15 BST).** Cyclic OR sum and the GC817 product counts checked independently by hand; q2 checks period scope. GC770/GC771 reread: first-deviation reference guards already exist, and their isolated-pulse relaxation does not settle parity. This block closes only the redundant interior label, not the all-L-specific correlation prohibition. Ledger, whitespace, conflict and added-line privacy checks pass. No new formal theorem, TeX, generated files, peer-source edit or execution claim. Commit prepared locally; fresh-fetch synchronization will respect the four-minute network limit. Scratch deferred and break room closed.
