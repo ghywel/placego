@@ -53,6 +53,12 @@ OUTCOME of the first run, 2026-10-09 (T = 2048; under a minute).
   Reading: the rain is Rule 30's second fixed point (01)^inf, appearing in the core by chance with the coin's
   frequency and eaten from the left at exactly one cell a row. It is the rule's, not the seed's. It is a spatial
   alternation frozen in time, not the prize's period-2 column, which alternates in time.
+  SCOPE (added 2026-10-09 after GPT's GC847).
+  - GPT proved the Bernoulli null exactly. A stack top has exactly two five-bit predecessors, so its birth density is
+    1/16 under iid fair initialization, and P(L = k | top) = 2^-k. The core's halving counts are empirical agreement
+    with that null, not a proved distribution for the single seed or for a finite ring.
+  - The end-of-record filter censors long late stacks.
+  - The stack-top event differs from C5's triangle-birth event, whose width-1 density is 3/32.
 """
 import random
 import sys

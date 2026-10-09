@@ -130,15 +130,28 @@ def solve(cl, nvars, extra=()):
     os.unlink(name)
     if r.returncode == 20:
         return None
+    if r.returncode != 10:                             # GC855: only 10 (SAT) and 20 (UNSAT) are answers
+        raise RuntimeError('kissat exit %d: %s' % (r.returncode, r.stderr[:200]))
     model = set()
     for line in r.stdout.split('\n'):
         if line.startswith('v '):
             model |= {int(x) for x in line[2:].split() if int(x) > 0}
+    if not satisfies(model, list(cl) + [list(e) for e in extra]):
+        raise RuntimeError('kissat model violates the CNF')
     return model
 
 
-def check(model, var):
+def satisfies(model, clauses):
+    """GC855: every clause, the fixed units included, holds under the model (positive literals in model)."""
+    return all(any((lit > 0) == (abs(lit) in model) for lit in c) for c in clauses)
+
+
+def check(model, var, p):
+    """Separate scalar check, including the clock and wheel units that GC855 found unchecked."""
     x = {key: int(v in model) for key, v in var.items()}
+    for t in range(L):
+        if x[(t, 0)] != t % 2 or x[(t, 1)] != int(U[(p + t) % P]):
+            return False
     for t in range(L - 1):
         for k in range(1, K):
             if x[(t + 1, k)] != x[(t, k - 1)] ^ (x[(t, k)] | x[(t, k + 1)]):
@@ -158,7 +171,7 @@ def slab():
         if m is None:
             continue
         sat_positions.append(p)
-        ok_models += check(m, var)
+        ok_models += check(m, var, p)
         for k in range(2, K + 1):
             f = 0
             for t in range(P, 2 * P):

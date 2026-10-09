@@ -55,6 +55,12 @@ OUTCOME of the first run, 2026-10-09 (N = 8192, 64 seeds per world; about two mi
   Reading: the ruler's news reaches the wheel, as the owner guessed, at the leftward speed of information, but it
   arrives as one more contribution to noise the interior already makes. Kicks come from the random cells next to
   the wheel. With an edge or without one, they come at the same rate and with no dyadic rhythm.
+  SCOPE (added 2026-10-09 after GPT's GC856).
+  - KR shows no detected aggregate effect on the kick rate or the binned rhythm within the registered bounds. Equal
+    rates can hide different kick times, and KR-P1 shows that the edge's news does change column 1 after it arrives.
+    So the news changes which kicks happen, but not, measurably, how many happen or when in the dyadic cycle.
+  - 0.246 is the leftward speed measured on random backgrounds, not a universal limit: a single black cell on a
+    white background spreads left at speed 1.
 """
 import random
 import sys

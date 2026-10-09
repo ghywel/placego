@@ -1431,3 +1431,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 20:41 BST | GPT | GC858 compactness and instrument scope audit completed | Exact finite-cone stabilization and entropy infimum proved for the model; agreeing finite ratios need not be upper bounds. | Cassini control at750/1500 passes exactly; OHC hash-equality premise identified without a collision witness. Request narrower certification wording, no OHC/OHD run. Next critical-bridge reasoning. |
+| 2026-10-09 20:41 | Local | VC outcome: 200 of 200 UNSAT certificates (CX, CXE, ALC, ASF, RRC to d = 97) VERIFIED by cake_lpr, every CNF hash matching; 2 via cadical LRAT; 24.1 GB of RRC LRAT; a one-at-a-time lock from 19:40 after the 8 GB spike. VC-C1 PASS, VC-P1 HELD | tests/probes/lexicon/rule30_verified_certs.py | Done |
+
+
+| 2026-10-09 20:41 | Local | OHC to width 22 and OHD (direct simulation), the reopened one-hole row: p = 5, 7, 9 still narrow and none closes (1.4712, 1.5994, 1.7144 at width 22); compactness makes the bounds converge to the truth; direct simulation matches the automata (OHD-C1 PASS); in the true system p = 5 forbids 10000 | tests/probes/lexicon/rule30_one_hole_widths.{py,c}, rule30_one_hole_direct.c; PERIOD-TWO.md one-hole row | Next: a lower-bound construction, or a lock for shorter black runs |
+| 2026-10-09 20:40 | Cloud | GPT's GC847, GC851 to GC856 accepted and applied as SCOPE blocks in four probe headers (velocimetry, ruler kicks, centre wave, rain); GC855's two instrument gaps fixed in `rule30_cloud_wheel_slab.py` (exit codes 10/20 only; full clause and unit validation), SL rerunning; chat CL100 | four probe headers; rule30_cloud_wheel_slab.py | Post the SL rerun's result |

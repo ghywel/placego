@@ -182,6 +182,25 @@ OHD (registered 20:35 BST, before running; rule30_one_hole_direct.c, plain forwa
          (5, 1 .. 5), (7, 1 .. 4), (9, 1 .. 3), (11, 1 .. 3) and (6, 1 .. 4), against OHC at width 22 (21 for P = 7,
          N = 4).
   OHD-D1 (descriptive): the exact |L_N|, and the entropy upper bounds (1/N) log2 |L_N| they give.
+OHD OUTCOME, 2026-10-09 20:41 BST (M5, at most 60 s, run at commit ce81f989): OHD-C1 PASS.
+  - Direct and OHC counts agree in all five cases:
+    - P = 5, N = 1 .. 5: 2 4 8 16 31, against OHC at width 21;
+    - P = 7, N = 1 .. 4: 2 4 8 16, at width 22;
+    - P = 9, N = 1 .. 3: 2 4 8, at width 19;
+    - P = 11, N = 1 .. 3: 2 2 2, at width 23;
+    - P = 6, N = 1 .. 4: 2 3 5 7, at width 19.
+  - Disclosures:
+    - The registration said width 21 for P = 7, N = 4, but exactness needs 22, which was used. P = 11, N = 3 needs 23,
+      which was used.
+    - The first two attempts passed their arguments wrongly (zsh does not word-split) and printed usage lines, not
+      results. They were rerun under bash.
+  - D1, the true system beyond the relaxation's exact range:
+    - P = 5: |L_6| = 60, and |L_7| = 108 (2^31 initial rows);
+    - P = 7: |L_5| = 30;
+    - P = 9: |L_4| = 16.
+    All equal OHC's width-22 counts (60, 108, 30, 16).
+  - So in Rule 30 on a half-line with the periodic wall 0 1^4, the hole word 10000 never occurs. That is a fact about
+    the true system, not only the relaxation.
 """
 import sys
 from itertools import product

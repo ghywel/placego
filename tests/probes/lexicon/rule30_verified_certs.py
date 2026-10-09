@@ -25,6 +25,20 @@ PREDICTIONS (Local's, published before the run):
   VC-C1 (control): every rebuilt CNF has the recorded hash (or equals the saved CNF file).
   VC-P1 (blind, confidence 0.95): every instance in every tier ends "s VERIFIED UNSAT" under cake_lpr.
   VC-D1 (descriptive): LRAT sizes and cake_lpr's time against drat-trim's.
+OUTCOME, 2026-10-09 20:39 BST (M5; started about 17:30, the last receipt at 20:37): VC-C1 PASS, VC-P1 HELD.
+  - All 200 instances end "s VERIFIED UNSAT" under cake_lpr: CX and CXE's 100, ALC's 4 and ASF's 1, and RRC's 95.
+  - Every rebuilt CNF has its recorded hash.
+  - 198 passed through drat-trim's LRAT. Two (cx-q155-4-1 and cx-q310-4-1, refutations by unit propagation alone)
+    were rejected at line 1 of drat-trim's LRAT, a converter limit, and passed through cadical's native LRAT. Both
+    receipts are kept in the checkpoint.
+  - D1:
+    - RRC's 95 LRAT proofs total 24.1 GB. The largest is rr-96-16 at 2.06 GB.
+    - cake_lpr took 6,391 s in all (at most 542 s for one) against drat-trim's 14,886 s, a ratio of 0.43.
+  - Memory: cake_lpr's 6 GB heap and 2 GB stack made each deep check peak near 8 GB. Two at once would have needed
+    about 16 GB on the 16 GB M5, and the owner saw an 8 GB spike at 19:33. From 19:40 a lockf wrapper ran one check
+    at a time; the remaining receipts (19:48 .. 20:37) never overlapped.
+  - So every UNSAT certificate behind today's realizable records to d = 97, the critical all-L uniqueness gates and the
+    all-L slab cases now rests on a formally verified checker. That holds for these instances, not their encodings.
 """
 import hashlib
 import os
