@@ -20,6 +20,12 @@ PREDICTIONS (Local's, published before the run):
   TWC-P1 (blind, confidence 0.95): 0001101011 and the other length-10 minimal word 0010100000 are UNSAT, each
          verified by cake_lpr.
   TWC-P2 (blind, confidence 0.9): all 28 length-11 minimal forbidden words of L449 are UNSAT and verified.
+OUTCOME, 2026-10-09 19:16 BST (M5, seconds, run at commit 3626441e): TWC-C1 PASS, TWC-C2 PASS, TWC-P1 HELD, TWC-P2 HELD.
+  000001101, 0001101011, 0010100000 and all 28 length-11 minimal words: UNSAT, each certificate checked by cake_lpr
+  (all through drat-trim's LRAT). 00000001011: SAT, the model replays to that trace.
+  So the measured forbidden words through length 11 now rest on certificates checked by a formally verified checker,
+  not on the census code alone; GC827's h >= 4 branch (0001101011) inherits that status. The CNFs and proofs are
+  rebuilt by rerunning this script (scratch ~/np-scratch-int/rule30-twc).
 """
 import os
 import subprocess
