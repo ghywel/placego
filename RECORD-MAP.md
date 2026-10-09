@@ -372,3 +372,5 @@ PART: as on the board.
 - Last-defect parity pullback restates existing rigidity; single-site parity cannot certify bridge completion — CLOSED (shortcut) — GC875.
 
 - Interior zero-lag overlap parity is determined by adjacent black parities; boundary obstruction remains — CLOSED (extra-label shortcut) — GC876.
+- One-hole table: closed at p = 8 (width 5) and p >= 10; open at p = 2 .. 7, 9 = entry 38's open cases — COMPUTED —
+  rule30_one_hole_widths.{py,c} (TB), L495

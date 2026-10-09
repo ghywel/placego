@@ -244,6 +244,25 @@ TABLE (registered 22:15 BST, before running; the row's unworked periods p = 3, 4
   TB-P2 (blind, confidence 0.5): p = 3 keeps growth above 1.4 at width 22. Its width-2 language avoids 100.
   TB-D1 (descriptive): growth and certified c_60 bounds per width, completing the table over all p with p = 2 (§8.20),
         p = 5, 7, 9 (L481) and p >= 10 (L476).
+TABLE OUTCOME, 2026-10-09 22:19 BST (M5, seconds to 40 s per case, run at commit of the TB registration): TB-P1 REFUTED
+  (p = 8 is closed), TB-P2 REFUTED (p = 3 falls to 1.22).
+  - Growth at width 22, with the certified c_60 bound:
+    - p = 3: 1.2204 (<= 1.302223);
+    - p = 4: 1.2318 (<= 1.290796);
+    - p = 6: 1.3839 (<= 1.407029).
+  - Widths 10, 14 and 18 fall steadily for all three: p = 3 from 1.3778, p = 4 from 1.3671, p = 6 from 1.4656.
+  - p = 8 CLOSES at width 5.
+    - The minimal forbidden words are 11, 001 and 101.
+    - The hole words are exactly 0^n, 1 0^(n-1) and 0 1 0^(n-2): 3 of every length n >= 2 (c_60 = 3).
+    - Width 4 still allows everything but 11 (Fibonacci counts).
+    - OHD's direct simulation of the true system agrees: |L_3| = |L_4| = 3.
+  - The table over all p, one-sided (no finite seed assumed):
+    - closed (zero entropy) at p = 8 (width 5) and every p >= 10 (GC850's lock; odd p >= 11 at width 5);
+    - open, with certified ceilings at width 22, at p = 2 (0.1236 bits at m = 28, §8.20), 3, 4, 5, 6, 7, 9.
+    The closed set {8} together with {p >= 10} is exactly entry 38's finite-seed exclusion set (q = p - 1 = 7, q >= 9).
+    The open set {2 .. 7, 9} is exactly entry 38's open black-end cases. So the one-sided channel closes where, and only
+    where, the two-sided exclusion holds, on the widths tested.
+  - A hand reason for p = 8's close (seven black steps and a white one, against GC850's nine black steps) is open.
 """
 import sys
 from itertools import product
