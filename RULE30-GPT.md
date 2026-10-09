@@ -18507,3 +18507,21 @@ In particular every lag k >= w has zero covariance, for any value of rho_k. With
 **Unexpected transport check.** If the later window is J=I+k, all earlier sites retain their matching light-speed partner and Corr=rho_k exactly, for every finite I and every k. Translation left instead yields overlap |I intersect (I-2k)|. Thus the edge loss is geometric transport of this linear observable, not a demonstrated decay of the diagonal process. At fixed k, letting w grow recovers rho_k; at fixed w, increasing k reaches a strict zero cutoff. The large-window approximation must not be used uniformly in lag without the overlap factor.
 
 **Disposition.** Keep the positive-part overlap factor in any fixed-window baseline or interpretation of CL078. This retains the unproved all-lag sign/decay questions for the moving diagonal and imports nothing to the deterministic single seed, a periodic ring, nonlinear black-pair counts or thresholded density flips. No new literature leap: the existing permutivity argument and elementary covariance summation suffice; no novelty claim. File this explicit finite-window corollary for independent hand reading. Scratch deferred without retry; room closed.
+
+## GC777 — All-lag sign becomes driver-pair parity; two shortcuts fail (2026-10-09, GPT)
+
+**Bounded reasoning audit of CL078's open sign lead.** Expected the light-speed OR identity to expose the missing dependence rather than prove alternating signs from fair marginals. Counterfactual: fair spatial rows make successive OR drivers independent. Independent controls use the already verified G100 law and literal one-step driver substitutions; unexpected check retains adjacent independence despite the three-time failure. No experiment, enumeration or higher-lag scan. Prior-record check found G100 already proves the temporal-dependence failure, so that part is explicitly reused rather than filed as a new theorem.
+
+Write z_t(j)=x_t(j+t), so z_(t+1)(j)=z_t(j) xor (z_t(j+1) OR z_t(j+2)). Let Z_t be the indicator that both driver cells z_t(1),z_t(2) are white. The diagonal spin changes by -1 except when Z_t=1. Consequently the existing telescoping flip identity can be written
+
+    rho_k = (-1)^k * E[(-1)^(Z_0+...+Z_(k-1))].
+
+Thus strict alternating sign is precisely a positive even-versus-odd parity bias for the number of white driver pairs. A fair spatial row gives P(Z_t=1)=1/4 at every t, but no all-time parity inequality. G100 already supplies the short dependence guard: adjacent driver events are independent, while the triple law is not the iid law. Its verified triple counts give E[(-1)^(Z_0+Z_1+Z_2)]=1/4, whereas three independent Bernoulli(1/4) events would give 1/8. This restates the rho3 discrepancy used by G254; neither that discrepancy nor adjacent independence decides all-lag sign.
+
+**A simple association route also lacks its premise.** Consider the next OR driver B_1=z_1(1) OR z_1(2), as a Boolean function of initial sites a=z_0(1), b=z_0(2), c=z_0(3), d=z_0(4). Literal substitution gives
+
+    B_1 = [a xor (b OR c)] OR [b xor (c OR d)].
+
+With (b,c,d)=(0,0,0), B_1=a. With (b,c,d)=(1,0,1), B_1=1-a. The same initial coordinate therefore has both increasing and decreasing sections. Reversing that coordinate's order cannot make this function globally monotone either. A proof based simply on these driver events all being increasing functions of the original independent bits has a false premise. Moreover, a correlation or association inequality for pairs would still need a separate argument to establish the signed product/parity inequality at every order. No general association theorem is imported or claimed refuted for some other representation.
+
+**Disposition.** Retain the exact parity formulation as a target, but close the iid-driver shortcut (already G100) and this direct monotone-driver shortcut. The all-lag sign and decay remain open. Any useful next step must control the evolving driver dependence or provide a different positive representation, not repeat the adjacent pair test or extend the exact lag scan. This is a failed closure audit, not a new sign theorem or proof entry. No transfer to the single seed. Scratch deferred without retry; room closed.
