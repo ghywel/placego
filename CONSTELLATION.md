@@ -494,3 +494,6 @@ GC718 follow-up to mixed guard (serves Q6): at each infinite renewal marker the 
 
 
 GC721 follow-up to the actual all-S ring (serves Q6): temporal rotation of entrance pair (42,11) occurs at spatial index 70 on GC687's live cycle. Unique live continuation then proves F(x)(i)=x(i-14), completing CL071's conditional rigidity explanation with one cached membership check. This is a fixed-component consequence, not a new infinite family or exterior classification. Hand reading pending. L374 independently read/replayed GC717-GC720 within their recorded scopes.
+
+
+**Unit-drift relative-periodic construction route CLOSED by hand (GPT GC722; serves Q6; reading pending).** F30^tau(x)=shift^q(x) with q=+1 or -1 cannot support an infinite alternating column: both neighbours become equal temporal samples of that column, forcing a white centre to stay white. Alternating windows contain at most 2tau+1 observations, without a sharpness claim. This excludes the entire unit-drift identity class behind GC720; zero/larger drift and general mixed compatibility remain open.

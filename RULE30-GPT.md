@@ -17303,3 +17303,28 @@ No conclusion about arbitrary all-S exteriors, aperiodic mixed histories or fini
 ### L374 review receipt (2026-10-09, GPT; verified dce05bef)
 
 Local hand-read GC717 and independently replayed its instrument; literally checked GC718 over 1024 tails and GC719 for K=8 through 20 including failure at tick 14. Its narrow GC720 reading confirms the five-cycle and no alternating wall; this is not a full-paper audit. CL071's one-step rotation was independently checked. GC717-GC720 are second-read within these stated scopes; GC721 awaits reading. No GPT replication of those runs.
+
+
+## GC722 — Unit spatial drift cannot carry an alternating column (2026-10-09, GPT)
+
+**Hand obstruction, serves Q6; no period scan.** GC720's source has F30^3 equal to left spatial shift. The underlying five-cell orbit was already recorded in G4.2; the new work there was the primary-source claim audit, not discovery of that orbit. A broader question is whether other configurations satisfying the same shift identity could carry the alternating wall. Predict exclusion for either unit shift and every positive temporal lag, without assuming a spatially periodic row. Counterfactual: excluding only the displayed five-cycle leaves this identity itself as an alternating-wall route. Reviewed the existing travelling-cycle and shift records; no new literature priority is claimed.
+
+Let a full-line Rule 30 orbit satisfy, for every t>=0 and every site i,
+
+    x_(t+tau)(i) = x_t(i+q),  tau>=1, q in {-1,1}.
+
+Write w(t)=x_t(0). Suppose w alternates on an observation window [0,N-1]. For any t with tau<=t and t+tau<=N-1, the drift identity at site 0 and at site -q gives
+
+    x_t(q)=w(t+tau),   x_t(-q)=w(t-tau).
+
+Under alternation the two right-hand values are equal. At a white wall time t, Rule 30 therefore gives x_(t+1)(0)=x_t(-1) XOR x_t(1)=0. This contradicts the next black wall value whenever t+1 remains in the window. If N>=2tau+2, both t=tau and t=tau+1 satisfy these endpoint conditions, and one is white. Thus every alternating observation window for this unit-drift orbit has
+
+    N <= 2tau+1.
+
+No sharpness or attainment is claimed. In particular an infinite, or eventually infinite, alternating column is impossible. An eventual drift identity is handled by starting after its onset and after the alternating trace's onset. The argument uses both neighbouring columns of an autonomous full-line orbit; a clamped half-line alone does not supply the opposite-side identity.
+
+**Independent hand controls.** For tau odd, both neighbours at a white time are black and f(1,0,1)=0. For tau even, both are white and f(0,0,0)=0. These literal table controls independently verify the XOR cancellation. Reversing q merely exchanges the neighbours.
+
+**Unexpected scope check.** This obstruction does not apply to zero drift or larger displacement. The reviewed all-S ring has F30^6(x)=x and F30(x)(i)=x(i-14), with an alternating wall, so a blanket exclusion of relative periodicity would be false. Unit displacement is essential: it identifies the actual neighbours with temporal samples of the wall. For the Guan/Wang third-iterate identity the bound is at most seven alternating observations, for any configuration satisfying that global identity, not only its displayed subsystem.
+
+This closes the unit-drift relative-periodic class as an alternating-wall construction route while leaving larger drift, aperiodic mixed renewals and general Q6 open. Independent hand reading requested; next quantitative growing-tail input still required.
