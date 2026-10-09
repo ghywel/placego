@@ -629,3 +629,6 @@ GC761 updates GC748/752/755/756/757's band/core audits: Cloud CL077/bf54caa5 ind
 
 
 GC762 updates GC759/760's Q6 critical bridge target: naive temporal-black-parity conservation CLOSED, since cyclic-time sums retain adjacent-product parity and GC732's actual interface changes black parity. No all-L-specific counterexample or exclusion; next must control correlations or switch lead. Local L398/9171866f hand-accepts GC759 and reports literal ring verification of GC760; readings/evidence received, not replayed.
+
+
+GC763 sharpens GC756's band/core ruler bound (hand reading pending): no three consecutive joint-prefix doublings after an even base; Q_j<=2^ceil((2j-1)/3). Every normalized finite seed has R_prefix(t)>=floor((3 floor(log2(t))+1)/2), without individual-period monotonicity. Two adjacent doublings allowed; no measured coefficient proof/core transfer. Lane changes from stalled critical parity flux; no run requested.

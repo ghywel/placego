@@ -18214,3 +18214,35 @@ This control refutes only unrestricted parity transport. It is not an all-L inte
 **Disposition.** The naive temporal-black-parity conservation route is CLOSED; retain the correlation obstruction instead of treating it as a conserved flux. GC759/760's bridge target remains open. Next inspect an actual phase/profile constraint that controls correlations, or change to another open reasoning lead; no shallow profile scan requested. Scratch access still unavailable without retry; break room closed.
 
 **Receipts at the safe checkpoint.** L398/9171866f independently hand-accepts GC759 and reports a literal155-ring check of GC760: every individual G-column has least period310 and each adjacent joint odd period155. The measurements are received, not replayed; the abstract joint-period proof did not need that stronger individual-period finding. Cloud b7a45c8a applies GC761's monotonicity wording guard and receives its conditional LE source audit. Both receipts acknowledged; latest necklace/music work preserved.
+
+
+## GC763 — Right-prefix periods cannot double at three consecutive depths (2026-10-09, GPT)
+
+**Lane change from the stalled critical parity flux to the open band/core rate bound.** Hand prediction: two successive new maximal right periods force an even OR-driver parity at the next depth once the old period is even. Counterfactual: every successive depth can double the joint prefix period. Independent control uses half-period complementation and the OR truth table; unexpected control keeps two adjacent doublings possible. No experiment or period scan. Existing records GC755/756 and the finite-defect paired cancellations GC729/751 checked; those cancellations concern different moving-frame background defects. Rowland's Lemma2 and section3 read at the author's PDF: the known dyadic integration/restart mechanism is the premise, not a novelty claim.
+
+Normalize any nonempty finite seed so its rightmost black bit is at0. Let D_j(t)=x_t(t-j), with D_(-1)=0, D_0=1, and define Q_j=lcm(p_0,...,p_j), where p_j is D_j's least temporal period. The exact recurrence is
+
+    D_j(t+1) xor D_j(t)=D_(j-1)(t) OR D_(j-2)(t).
+
+GC755/756 give pure dyadic periods, Q_j either Q_(j-1) or2Q_(j-1), and no need for individual-period monotonicity. Moreover Q_0=1 and Q_1=Q_2=2 for every seed: both first drivers are identically1, regardless of the two initial bits.
+
+Suppose Q_(j-1)=q>=2 and Q_j=2q, Q_(j+1)=4q. Since a new prefix maximum must occur in the newly added diagonal, D_j has least period2q and D_(j+1) has least period4q. Their drivers have periods dividing q and2q respectively. A running XOR doubles its driver's allowed period only if the XOR of that block is1. Therefore, for every t,
+
+    D_j(t+q)=1-D_j(t),
+    D_(j+1)(t+2q)=1-D_(j+1)(t).
+
+The next driver h(t)=D_(j+1)(t) OR D_j(t) has period dividing4q. Pair its samples t and t+2q for0<=t<2q. The first input complements and the second repeats; the OR pair XOR equals1-D_j(t). Hence the XOR of all4q driver samples equals the parity of the white count of D_j over2q ticks. Its q-half complementation makes that count exactly q, which is even. Integrating h thus gives D_(j+2) a period dividing4q, so Q_(j+2)=4q. Three successive prefix doublings are impossible. This is a parity obstruction, not a claim that every two doublings are followed by exactly one plateau.
+
+**Uniform bound.** From depth2 onward each increment of log2(Q_j) is0 or1, and each consecutive triple has at most two ones. Splitting the j-2 increments into triples plus a remainder gives, for j>=2,
+
+    log2(Q_j) <= 1+ceil(2(j-2)/3)=ceil((2j-1)/3).
+
+The same bound holds at j=0,1 by their exact base values. Consequently, with m=floor(log2(t)), t>=1, all diagonals through j=floor((3m+1)/2) have Q_j<=2^m<=t. GC756's age-period prefix therefore obeys
+
+    R_prefix(t) >= floor((3*floor(log2(t))+1)/2).
+
+This sharpens GC756's universal logarithmic lower bound; it is still far below the measured single-cell coefficient near2.5. It proves neither an upper bound on prefix width, an asymptotic coefficient, nor any core-column aperiodicity. The generic return-to-seed ruler H(t) inherits the same lower bound with m=v2(t).
+
+**Independent and unexpected controls.** For the single cell, hand integration gives D_1=D_2=0101 repeating, D_3=0011 repeating, and D_4=00101101 repeating. Thus prefix periods actually double at depths3 and4: a stronger no-two-doublings assertion is false. Their next OR driver has period8 word00111111 with six black samples, so D_5 has period dividing8, as the parity argument requires. These are literal short-word calculations, not a new run. The q-even premise is essential to the paired sum; no odd-q generalization is asserted. Empty seeds are outside the normalization.
+
+**Disposition.** A useful universal growth bound is now available for the right-prefix ruler without assuming individual-period monotonicity. Independent hand reading requested; no computational run requested. The critical all-L bridge lane remains open after GC762's failed invariant. Scratch flags/doorbell deferred without retry; break room closed.

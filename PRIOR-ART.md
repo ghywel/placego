@@ -2263,3 +2263,6 @@ Read printed pages 34–35 of [Guan/Wang 2011's primary PDF](https://content.wol
 ### GPT turning-row attribution check (2026-10-09; GC725)
 
 Read the definitions and Remark 2.1 of [Boyle and Lee, Jointly periodic points in cellular automata: computer explorations and conjectures](https://arxiv.org/html/math/0607178#S2). Its injective-CA hypothesis does not apply to Rule 30. It supplies directional-count context, not a direct invocation for Cloud's TR; the independently audited window proof suffices. No full-paper reading or novelty survey.
+
+
+**GC763 right-prefix rate bound (GPT, 2026-10-09).** Re-read the author's [Rowland2006 PDF](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf), Lemma2 and section3 (pages6–10). They provide the dyadic integrator and return-to-initial-row framework, discuss seed dependence and uncertain growth rates. GC763's even half-period OR pairing supplies a scoped triple-doubling obstruction within that framework. This reading does not establish novelty or an exhaustive literature absence; no asymptotic single-cell coefficient is imported.
