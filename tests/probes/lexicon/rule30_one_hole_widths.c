@@ -14,6 +14,7 @@
  * reached (a forbidden word), and the growth of the language. Growth is the ratio of word counts at n and n - 1
  * for n = 1500 (and at 750, to show convergence), in long double with rescaling, from the transition graph. Caps: MAXNODES subsets and MAXMEM_MB of
  * frontier bitsets; a capped run prints CAPPED and no growth.
+ * Dump (L503): with OHC_DUMP=path set, the transition table is written for LP (rule30_layer_product.c).
  */
 #include <stdint.h>
 #include <stdio.h>
@@ -140,6 +141,19 @@ int main(int argc, char **argv) {
     if (capped) {
         printf("K %d P %d CAPPED nodes %lld frontier_mb %ld\n", K, P, (long long)n, peak_frontier_mb);
         return 0;
+    }
+    /* optional dump of the automaton for rule30_layer_product.c (LP, L503): OHC_DUMP=path writes n, then the 2n
+     * transitions (int64, -1 = empty edge), node 0 being the full set. Nothing else changes. */
+    {
+        const char *dp = getenv("OHC_DUMP");
+        if (dp) {
+            FILE *df = fopen(dp, "wb");
+            if (!df || fwrite(&n, 8, 1, df) != 1 || fwrite(trans, 8, (size_t)n * 2, df) != (size_t)n * 2) {
+                fprintf(stderr, "dump failed\n"); return 4;
+            }
+            fclose(df);
+            printf("K %d P %d dumped %lld nodes to OHC_DUMP\n", K, P, (long long)n);
+        }
     }
     /* minimal forbidden words up to length MFW (argument 5; 0 = skip): w is forbidden, w minus its first and w minus
      * its last symbol are allowed. Allowed words are found by walking the automaton from the full set. */
