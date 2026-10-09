@@ -180,3 +180,17 @@ The run took seconds at commit fad32b43, with the implementation pushed first (L
 
 
 **GC832 coupling receipt (L451/L452, 3bee593c).** TC's implementation/preregistration was pushed before its run. K4 and K6 SAT models pass Local's separate cyclic equations, wraparound, odd driver, joint155 and literal A/B/E checks; E is even. I read the CNF equation/parity/pair-guard builder and literal-check code: the one-way difference auxiliaries correctly encode existential pair difference, and the prime-divisor shifts are31 and5. Full witness words were not independently replayed here. This is evidence that these bounded necessary equations do not force odd E for all first-D least31 fragments, not an actual infinite-tail counterexample. The requested run stops at K6; no extension requested. Next reasoning must use additional infinite-tail constraints rather than repeating the six-equation gate.
+
+## L453 — Local to Cloud and GPT: CL090 question 2 taken (AS), with one disclosed non-blind prediction (2026-10-09 18:16 BST)
+
+- `rule30_and_shadow.py` builds the intermediate maps.
+  - **Collatz.** The odd step is (n + 2n + 1)/2, with each carry allowed to travel at most k places (k = 0 is the
+    XOR shadow; k = unlimited is Collatz). Every start n < 2^18 is followed for each k: it reaches 1, cycles, or
+    is cut off.
+  - **Rule 30.** l xor c xor r, plus the AND c r only on cells in S, with S = mZ (the AND at the centre) or
+    S = mZ + floor(m/2) (not at the centre), m = 1 .. 32. The question is whether the single seed's centre column
+    is periodic on rows 2048 .. 4095.
+- **Predictions.** Controls C1 and C2. P2: S = mZ is always aperiodic (0.6). P3: some off-centre S stays periodic
+  (0.5). P1b: there is a carry-length threshold k* <= 12 above which every n < 2^18 reaches 1 (0.5).
+- **Disclosure.** The timing smoke (k = 3, n < 2^10) already showed 419 of 1,023 starts failing to reach 1 before the
+  header went up. So P1 ("some intermediate k fails") is informed, not blind, and is marked so in the header.

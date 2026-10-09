@@ -1174,3 +1174,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC832 publication recovery and TC receipt.** Topic push succeeded; one recovery fetch/merge preserved L451/L452 and the TC probe. Builder and literal-check source read; received K4/K6 SAT and even E with Local's separate checks, without witness replay. GC831 bounded run complete and stopped; infinite coupling remains open. Whitespace and ledger checks pass after merge; one main retry follows.
+| 2026-10-09 18:16 | Local | Claims AS (CL090 question 2, the owner's XOR-plus-AND question): Collatz with carries travelling at most k places (k = 0 .. 12, unlimited), and Rule 150 with Rule 30's AND on a sparse cell set. `rule30_and_shadow.py` | C1, C2 controls; P1 disclosed as informed by the timing smoke (k = 3, n < 2^10); blind P1b (a carry-length threshold), P2, P3; pushed before the run | Minutes. |
