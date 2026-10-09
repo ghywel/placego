@@ -2406,6 +2406,18 @@ such balance is proved for any column (§8.34's shared obstacle), but it states 
 0101 centre needs a column at least two-thirds black right beside it. Elementary, from R0; second reading requested
 from GPT (CL081). Prior art not searched.
 
+*Read, corrected and sharpened (GPT GC779 and GC783, filed as G256; Local L408, L409 and L411; G.GPT256).* The
+identity is right for both phases. Exactly, $n_{-2} = 2S + \delta$ with $|\delta| \le 1$, so the larger fraction is at
+least $2/3 - 1/(3N)$, and "column $-1$ at least half black" needs an even $N$ or the limit. The exclusion needs a
+margin, because $2 - 1/N$ is compatible: either a uniform deficit on windows whose length tends to infinity, or any
+strict deficit on even windows that start at a black clock row, where $\delta = 0$. The sharpening: G240 proves that
+the actual visible code has no 11, so with any actual right half, on a black-start window of $2M$ rows,
+$d_{-1} \ge 3/4 - 1/(4M)$. Column $-1$ is at least three-quarters black in the long run, more than the two-thirds
+above. Exactly, $d_{-1} = 3/4 + (Z + 1 - c_{\mathrm{first}} - c_{\mathrm{last}})/(4M)$, with $Z$ the visible 00 pairs
+(GC783, checked on 5,000 words in L411), so the limit is $3/4$ exactly when 00 has zero frequency. Neither
+periodicity nor balance follows: GC783's formal word $(10)^{2^n}000$ meets every known restriction and is not
+periodic.
+
 ### 8.35 Does Rule 30's coin tip? The owner's matter–antimatter question (2026-10-05)
 
 The owner: "I am thinking of the universal problem of why there is more matter than antimatter. The coin flip tips
@@ -4637,7 +4649,8 @@ N times over, could reveal structure. The alternation is this section's light-sp
 Rule 30 is left-permutive, so $k$ steps give $x_{t+k}(i) = x_t(i-k) \oplus g_k$ with $g_k$ independent of
 $x_t(i-k)$. In a fair row (independent fair cells, which Rule 30 preserves on the line), every other cell of row
 $t$ then has zero covariance with $x_{t+k}(i)$. So the correlation between a window's density in row $t$ and in row
-$t+k$ is, up to an edge factor $(w-k)/w$ for a window of $w$ cells,
+$t+k$ is, up to an edge factor $\max(w-k, 0)/w$ for a window of $w$ cells (zero for $k \ge w$: the window loses the
+diagonal's partner; G.GPT255, GC776),
 
 ```math
 \rho_k = \mathbb{E}\,(-1)^{x_{t+k}(i) \oplus x_t(i-k)} ,
@@ -5003,6 +5016,9 @@ front on the correct side. A hypothetical counterexample already does. Shifted t
 column starts in the core with the front to its left, as the single seed's centre is from row 21 on. The apex is
 particular to a seed at the centre, and it showed no regular column even there: while the band held the centre (rows
 0 to 17) the centre column read 110111001100010110, with no period.
+Correction (GPT GC776): shifting time to the periodic row keeps the seed finite and the clock, but it does not by
+itself place the front left of the column. What holds is that the column eventually leaves the fixed-lag prefix, and
+that the front's position by itself gives no contradiction.
 
 *Four quadrants: is the band's inverse there, around a 0101 centre?* (the owner: "does there exist on the centre
 column the inverse - an orderly vertical (which it already is) and coin-flip diagonals (unknown)";
@@ -5026,6 +5042,13 @@ column from $-40$ to $40$ shows all 256 words. This is not a proof. It covers fo
 counterexample's right half is whatever its row holds when the period begins, kicking the wheel from the right
 (§8.11). But it gives the owner's "wrong band" a picture: a 0101 centre does not sit alone in the chaos, it needs
 a strip of vertical order around it, and the real pyramid shows none near its centre in the rows measured.
+Scope corrections (GPT GC782). The periodicity test looked at suffixes only, for periods up to 64 on diagonals: no
+tested suffix period $\le 64$. FQ3 sampled every 31st column (3, 34, ..., 995). The post-hoc strip used four right
+halves different from FQ's four, because the random stream consumed different draws. The 0.750 is measured on these
+draws: the OR law's three in four needs fair drivers, and a zero right half with $\tau(0) = 0$ keeps $x_k(k) = 0$ for
+ever. Few distinct words is finite variety, not order: a nonperiodic word with ones at the squares has only nine
+eventual 8-bit factors. So "it needs a strip" is an observed picture from four small draws, not a theorem. The
+theorem nearest to it is G.GPT256 above: with any actual right half, column $-1$ is at least three-quarters black.
 
 ### 8.75 Triangle ladders: descending from triangle to triangle (2026-10-09)
 

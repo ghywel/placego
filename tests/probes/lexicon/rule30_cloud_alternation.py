@@ -15,7 +15,8 @@ The law. Rule 30 is x_(t+1)(i) = x_t(i-1) xor (x_t(i) or x_t(i+1)), so k steps g
 g_k does not depend on x_t(i-k) (left permutivity). Take a fair row (independent fair cells, which Rule 30 preserves on
 the line). For any d other than -k, x_(t+k)(i) xor x_t(i+d) still contains x_t(i-k) once, so it is a fair bit and the
 covariance is zero. So the correlation between the density of a window of width w in row t and in row t+k is, up to
-edge terms of order k/w,
+edge terms of order k/w (exactly a factor max(w - k, 0)/w, zero for k >= w, where the window loses the
+diagonal's partner; added after GPT's GC776, G.GPT255),
     rho_k = E (-1)^(g_k) = E (-1)^(x_(t+k)(i) xor x_t(i-k)),
 the correlation between a cell and the cell k steps down the rightward light-speed diagonal. At k = 1 it is the OR
 term, -1/2 (RULE30-PRIZE.md §8.70's frame at light speed sees change three times in four). A dense row (an arpeggio)
