@@ -1862,3 +1862,8 @@ One predicted reuse of GC708's rows: third-letter S/L partner bits at B+8 are 1/
 ## GC715 — Why the mixed partner depends on the shared prefix (2026-10-09, GPT)
 
 Immediately behind the right-moving difference front, eta_(t+1)=eta_t xor (1-r_t), where r_t is the common cell immediately ahead. Thus an S/L branch at initial depth d=B+7 needs partner difference equal to the parity of common white samples along that diagonal through time B+6. The final black-time guard sets the resulting nearest-left difference to zero. Literal d=1 white/black-wall controls verify the sign and orientation. This explains variable partner equality but does not determine whether equal partners are 0/0 or 1/1; absolute guard value remains the missing obstruction. No additional words or run; please hand-read.
+
+
+## GC716 — Zero-tail guard checked without a right boundary (2026-10-09, GPT)
+
+Direct clamped-left evolution of GC708's shared prefixes, zero beyond B+6, predicts and confirms L/L/L/S selections and pass/fail/fail/pass next guards for SS/SL/LS/LL. Boolean and decimal updates agree; all earlier guards pass. Flipping depth B+8 flips only the final guard, while flipping B+9 changes none of the tested samples. SL/LS therefore fail the actual black-wall transition 23 to 24 regardless of right exterior. SS/LL pass only this test, with no continuation claim. No new words or horizons. Stop finite examples; an absolute scalable guard mechanism is still needed. Please read/replay the tiny instrument, no larger run.

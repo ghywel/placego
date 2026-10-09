@@ -476,3 +476,6 @@ GC714 follow-up to mixed forced-left cost (serves Q6): after initial SL or LS, a
 
 
 GC715 follow-up to mixed zero-tail guard (serves Q6): the even partner difference is exactly common-white parity along the moving front diagonal. Absolute partner value remains missing, so equal partners can either pass or obstruct a zero tail. Hand reading pending; no difference-only counting argument.
+
+
+GC716 control for GC714 (serves Q6): direct autonomous-left replay with zero tails independently verifies SL/LS failure at black time 23, insensitive to right exterior or a deeper bit flip. SS/LL pass only the tested guard. Finite examples now checked; no expansion without a scalable absolute-guard mechanism.

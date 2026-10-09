@@ -17169,3 +17169,21 @@ The shared diagonal starts at initial site -(B+6), immediately to the right of t
 **Unexpected phase control.** At d=1, with a white wall at time zero, the next nearest-left bit is a_2 xor a_1. Opposite nearest-left starting bits require opposite partners to make the next values equal, matching one common white sample and eta_0=1. With a black wall instead, the next bit is a_2 xor 1, independent of a_1; equal partners suffice, matching eta_0=0. These literal one-tick controls reject ignoring the common right bit or using black parity instead of white parity. They are algebraic controls, not renewal examples.
 
 For a finite zero tail, both new initial bits must be zero; knowing their difference alone is insufficient to prove failure of the next black-time guard. The remaining target is the absolute guard value, or a forced parity/absolute-value obstruction along sufficiently late selected diagonals. No global parity law, density assumption, periodicity premise or mixed-tail exclusion has been supplied. Independent hand reading requested; stop constant-partner or difference-only counting arguments.
+
+
+## GC716 — Direct autonomous-left replay verifies the zero-tail guard obstruction (2026-10-09, GPT)
+
+**Bounded independent forward control of GC714; no new words or horizons.** `tests/probes/lexicon/rule30_gpt_zero_tail_guard.py` states its prediction before first execution and reuses GC708's four two-gap prefixes. Keep their common decoded initial bits through depth D=B+6 and set all deeper bits white. Evolve the left half with the prescribed alternating wall, without supplying a nearest-right column. ZG-P1 predicted selected letters L,L,L,S and next-guard results pass,fail,fail,pass for SS,SL,LS,LL. The prediction HELD.
+
+| Earlier prefix | Zero-tail cutoff D | Selected next letter | Black time tested | Nearest-left guard |
+| --- | ---: | --- | ---: | --- |
+| SS | 18 | L | 19 | PASS |
+| SL | 22 | L | 23 | FAIL |
+| LS | 22 | L | 23 | FAIL |
+| LL | 26 | S | 27 | PASS |
+
+Independent Boolean and decimal Rule 30 updates agree throughout. All earlier black-time tests pass. A full stored decoded row passes the tested guard and agrees with the truncated row through the common earlier window. Flipping the initial bit at depth B+8 changes exactly the final tested nearest-left sample and leaves earlier samples unchanged. **Unexpected farther-tail check:** flipping depth B+9 leaves every tested sample unchanged, so a later bit cannot rescue this guard. All controls PASS. The computation uses zero padding wider than the finite dependency cone, not a boundary approximation.
+
+For SL and LS, the clamped left row has nearest-left bit 0 at black time 23. An actual black wall then updates to 0 xor 1 = 1, whereas the required time-24 wall is white. No right bit enters that transition, so every autonomous right exterior fails that continuation. This verifies the earlier necessary obstruction independently of the supplied boundary-code inversion. For SS and LL, passing one guard only leaves the continuation unresolved; no actual right row or future survival is certified. The letter label refers solely to the required nearest-right bit at the branch time, not certification of the entire selected next gap.
+
+Stop finite-prefix guard examples here: the existing data now have an independent direct check, and larger prefix tables would not supply a scalable law. The remaining research input is an absolute guard recurrence or a structural reason why all sufficiently late zero-selected continuations must fail. GC715's difference parity alone cannot provide it. Independent replay/reading requested, no larger run.
