@@ -10690,6 +10690,64 @@ of length 3 mod 4. In particular E is odd when every white run has length 1 mod 
 G262 is its all-singleton case, and G262's own proof also gives the exact M/O alternation, which G263 does not need.
 This is a cited refinement, not a restatement. Hard checks pass.
 
+### G.GPT264. A constant temporal run forces a spatial zero wedge; a ring containing GC828's profile needs at least 14 cells (second-read, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC834. *Credit:* GPT's proof. Independently read by Local (chat L456). As a literal
+corroboration, every imposed profile of TC's saved K = 4 and K = 6 witnesses has the predicted initial zeros in all
+five blocks. *Status:* hand proof verified by a second reader. Not a prize claim. *Filed by:* Local, at GPT's request
+(GC835).
+
+**Lemma.** Let V0, V1, ... be consecutive G profiles, with $\Delta V_i = V_{i+1} \lor V_{i+2}$. If V0 is constant on
+L consecutive ticks starting at t0, then for every 1 <= k <= L - 1 the profiles V1, ..., V_(2k) are 0 at ticks
+t0 .. t0 + L - k - 1. In particular V_j has at least L - ceil(j/2) initial zeros, and the row at t0 has 2L - 2 zeros
+right of V0.
+
+**Proof.**
+1. $\Delta V_0 = 0$ on the first L - 1 ticks, so V1 = V2 = 0 there.
+2. If V1 .. V_(2k) vanish on the first L - k ticks, their differences vanish on the first L - k - 1. The equations
+   for V_(2k-1) and V_(2k) then force V_(2k+1) = V_(2k+2) = 0 there. ∎
+
+**Ring corollary.** Let the diagram be spatially periodic with period d, and V0 temporally periodic, nonconstant,
+with a white run of length L. If d <= 2L - 1, the t0 row is all white, and G keeps it white, contradicting V0. So
+d >= 2L. For GC828's D, L = 7, so d >= 14.
+- For a black run, only d >= 2L - 1 follows: the zero wedge cannot wrap onto the black V0.
+- Control: the five-phase ring (L = 1) gives d >= 2, consistent with its five cells.
+- The bound concerns ring realizations containing D, not an eventual cycle reached through a bridge.
+
+*Near-entry gate (Local, at filing).* `--near G264` gives G256, E3 and 06 (all <= 0.12 on the formal text), read; none
+is restated.
+
+### G.GPT265. Rule 150 with the AND on even cells: the single seed's two-step orbit is exactly Rule 90, and its centre is white from time 2 (second-read, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC835. *Credit:* GPT's proof of a pattern Local measured (AS, L455: white to row 16,383).
+Independently read by Local (chat L458). A literal check of the exact description against direct simulation
+agrees at every t < 3000. *Status:* hand proof verified by a second reader. Not a prize claim; an inhomogeneous
+rule, not Rule 30. *Filed by:* Local, at GPT's request (GC835).
+
+**Statement.** Let $x'(i) = x(i-1) \oplus x(i) \oplus x(i+1) \oplus [i \text{ even}]\, x(i) x(i+1)$, started from a
+single black cell at 0. Then:
+- at time 2n the odd sites are white and the even sites carry the nth row of Rule 90's single-seed orbit;
+- at time 2n + 1 the even sites are unchanged and each odd site is the XOR of its two even neighbours;
+- the centre is black exactly at times 0 and 1.
+
+**Proof.**
+1. With $a_i = x(2i)$ and $b_i = x(2i+1)$, the update reads $a_i' = b_{i-1} \oplus a_i \oplus b_i \oplus a_i b_i$ and
+   $b_i' = a_i \oplus b_i \oplus a_{i+1}$.
+2. If b = 0, one step gives a' = a and $b_i' = a_i \oplus a_{i+1}$. A second step gives b'' = 0 and
+   $a_i'' = a_{i-1} \oplus a_{i+1} \oplus a_i a_{i+1}$.
+3. Rule 90's single-seed rows are supported on one spatial parity, so the product vanishes and the coarse orbit is
+   exactly Rule 90, by induction.
+4. Its centre at coarse time n > 0 is 0. For odd n the central index is not an integer; for n = 2r,
+   $\binom{2r}{r} = 2\binom{2r-1}{r-1}$ is even. ∎
+
+*Scope (GC835).*
+- On arbitrary rows the induced coarse map is not Rule 90: with a_0 = a_1 = 1 the product is 1.
+- The m = 6 whitening AS observed is not covered.
+- AS's other sparse-mask verdicts remain finite-window evidence.
+
+*Near-entry gate (Local, at filing).* `--near G265` gives 31, 29 and G229 (all <= 0.10 on the formal text), read; none
+is restated. Hard checks pass.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

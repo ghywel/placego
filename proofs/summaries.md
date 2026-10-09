@@ -3164,6 +3164,24 @@ When every white stretch in a short-cycle column has odd length, the hidden pari
 
 **An everyday picture.** Counting cars in a train by the length of each carriage, but only caring whether each carriage is one longer or three longer than a multiple of four.
 
+## G264
+In Rule 30's moving frame, a column that stays white for a while forces a growing wedge of white to its right.
+
+**What it says.** If one column holds the same colour for L steps in a row, the columns to its right are pushed to white in a widening wedge: two columns lose one step each, then the next two another, and so on. At the start of the run, 2L - 2 cells to the right are white. On a ring this makes the ring at least 2L cells around, or the whole row would be white and stay white for ever.
+
+**Why it matters.** It turns a property of one column into a hard constraint on its neighbours and on the size of any repeating pattern that contains it. For the template under study it means any ring containing it has at least 14 cells.
+
+**An everyday picture.** A long pause in one drummer's part silences the drummers beside them for a shrinking stretch, like a shadow narrowing with distance.
+
+## G265
+A Rule 150 variant with the extra AND applied only on even cells grows from a single black cell exactly like the simpler Rule 90, and its centre goes white for good.
+
+**What it says.** Split the cells into even and odd. Every two steps, the even cells follow Rule 90's famous triangle pattern and the odd cells blank out. The extra AND never fires, because Rule 90's pattern never puts black cells side by side on the even cells. The centre of Rule 90's triangle is white after the start, so this variant's centre is black only at the first two steps.
+
+**Why it matters.** It turns a measured curiosity from an experiment into a proof: here the centre's silence is permanent, not just observed for a while. It also shows how a carefully placed AND can sit idle instead of breaking the pattern.
+
+**An everyday picture.** A rule that would fire whenever two neighbours are lit never fires, because the lights always come on in alternating seats.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
