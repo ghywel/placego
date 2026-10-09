@@ -837,3 +837,6 @@ GC859 scopes the existing one-hole lead: independent integer powers certify L481
 
 
 GC860 closes GC855's two repaired SL instrument gaps by independent mock-verdict/clause and scalar-unit tests, including a valid literal fixture and mutated fixed units. No executable or real slab count replay; solver-reported UNSAT and full-half realization retain their separate scopes. No main-line status change.
+
+
+GC861 answers the existing Q7 applicability request: G196/D1 and D2 apply at every listed even rooted depth given the all-phase admitted period16 paired cycle. No/dead-end exits close that SCC; survivors remain prefixes. Least-period and baseline-admission guards retained. No QX rerun or new board row.
