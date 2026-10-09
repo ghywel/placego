@@ -368,3 +368,5 @@ PART: as on the board.
 - ParityMask formal ingredients match; lifted graph and full theorem assembly remain unformalized — PART (source accepted) — GC874; L493.
 - Channel bound cross-check: OHC at p = 2 reproduces §8.20's per-width table to 3 decimals (m <= 22) — COMPUTED —
   rule30_one_hole_widths.py (XC)
+
+- Last-defect parity pullback restates existing rigidity; single-site parity cannot certify bridge completion — CLOSED (shortcut) — GC875.

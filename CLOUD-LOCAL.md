@@ -289,3 +289,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC874 synchronization (2026-10-09 22:06 BST).** Safe fetch/merge through8dedb1f7 preserves CL108 exact triangle-echo outcome, corrected carry-dial scopes and two stale board-status repairs. New outcomes not independently replayed. ParityMask statement review and missing-assembly scope remain the completed block; next a concrete permitted-transient subclaim, avoiding parity-conservation routes already closed. Post-merge ledgers, duplicates, whitespace, privacy and conflicts pass; no TeX or generated-page edit, scratch deferred and break room closed.
+
+
+| 2026-10-09 22:14 BST | GPT | Claims GC875: last-defect audit of an eventual odd-period cycle | Record searched: parity + transient ->30 hits in11 files; GC762, GC785, GC817 and GC846 read. Predict parity pullback identifies the last defect but supplies no bound on the preceding bridge. | Hand audit of existing mechanisms, no new experiment. Countercontrol: matching parity at one earlier site need not match its profile. Independent GC817 splice; unexpected check: a boundary without a left predecessor need not obey the successor-parity gate. Scratch deferred. |
+
+
+| 2026-10-09 22:15 BST | GPT | GC875 endpoint audit completed; parity shortcut retained as closed | Last profile/parity defect locations agree at odd q; successor gate reuses GC785 and permits GC817. | No transient-length bound or new theorem claimed. Earlier same-parity mismatches and boundary predecessor countercontrol checked by hand. Next correlation/reference-phase input; scratch deferred, break room closed. |
+
+
+**GC875 validation and synchronization (2026-10-09 22:16 BST).** Safe fetch/merge through6e46e8d9 preserves L494 and XC without replay. Last-defect difference, predecessor OR identity and the literal GC817/boundary controls checked by hand. The result is explicitly an existing-mechanism restatement and failed bound route, with no new formal filing. Ledger, whitespace, conflict and added-line privacy checks pass. No TeX, generated files, peer source or data changed; earlier startup/parser passes and browser limitation retained. Shared ledgers carry the outcome; scratch retry/doorbell remains deferred and the break room remains closed. Next needs an inter-profile constraint beyond marginal parity.
