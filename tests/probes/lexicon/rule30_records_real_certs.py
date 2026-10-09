@@ -29,12 +29,14 @@ PREDICTIONS (Local's, published before the run):
   RRC-D1 (descriptive): proof sizes and checking times against solving times, by depth.
   Counterfactual: a deciding call that came back SAT, or a proof that failed to verify, would reopen R_real(d) at that
   depth, and RR2's climb at every later depth (it starts from R_real(d - 1) - 1, the plateau law) would be suspect.
-Hardening (GPT's GC791 audit, applied 2026-10-09 while the first process ran; the instrument is unchanged): a receipt
+Hardening (GPT's GC791 and GC795 audits, applied 2026-10-09; the instrument is unchanged): a receipt
 is read only if it has the full schema and L = R_real(d) + 1; a torn last line is closed before the next append; `run`
 skips only certified depths and leaves failures to an explicit `retry`, which keeps the history; a failed call keeps
 its CNF, proof and the solver's and checker's output tails (diag_d_L.txt); new receipts carry drat-trim's return code
 as a ninth field (the first process's receipts have eight). A SAT verdict would reopen the record; an UNKNOWN verdict
-or a failed check leaves that depth unresolved, not refuted.
+or a failed check leaves that depth unresolved, not refuted. Only nine-field receipts certify (GC795: the first
+process's eight-field receipts lack the checker's exit status, so it was stopped at 15:0x and its depths redone), and any
+SAT receipt in the history blocks completion until diagnosed.
 """
 import hashlib
 import os
@@ -87,9 +89,9 @@ def receipts():
 
 
 def done():
-    """The certified depths: some receipt is UNSAT and VERIFIED (with checker return code 0 when recorded)."""
-    return {int(p[0]): p for p in receipts()
-            if p[2] == 'UNSAT' and p[3] == 'VERIFIED' and (len(p) == 8 or p[8] == '0')}
+    """The certified depths: a nine-field receipt that is UNSAT, VERIFIED and has checker return code 0. Eight-field
+    receipts (the first process, before GC791) lack the checker's exit status and do not count (GC795)."""
+    return {int(p[0]): p for p in receipts() if len(p) == 9 and p[2] == 'UNSAT' and p[3] == 'VERIFIED' and p[8] == '0'}
 
 
 def append(line):
@@ -146,7 +148,7 @@ def certify(d):
 
 def run(jobs, retry=False):
     os.makedirs(DIR, exist_ok=True)
-    have, tried = done(), {int(p[0]) for p in receipts()}
+    have, tried = done(), {int(p[0]) for p in receipts() if len(p) == 9}
     todo = [d for d in ORDER if d not in have and (retry or d not in tried)]
     with ThreadPoolExecutor(jobs) as ex:
         list(ex.map(certify, todo))
@@ -155,15 +157,22 @@ def run(jobs, retry=False):
 
 def status():
     ok = done()
-    tried = {}
+    tried, legacy = {}, set()
     for p in receipts():
+        if len(p) == 8:
+            legacy.add(int(p[0]))
+            if p[2] != 'SAT':
+                continue                               # a legacy SAT receipt still counts as a conflict below
         tried.setdefault(int(p[0]), []).append(p)
     sat = sorted(d for d in tried if any(p[2] == 'SAT' for p in tried[d]))
     unresolved = sorted(d for d in tried if d not in ok and d not in sat)
     missing = sorted(set(ORDER) - set(tried))
     print('certified %d of %d deciding calls; SAT (would reopen the record) %s; unresolved (UNKNOWN or failed check) '
           '%s; not yet tried %s' % (len(ok), len(ORDER), sat or 'none', unresolved or 'none', missing or 'none'))
-    if len(ok) == len(ORDER):
+    print('legacy eight-field receipts (no checker exit status; not counted): %d depths' % len(legacy))
+    if sat:
+        print('CONFLICT: SAT receipts at d = %s; no completion while any SAT history stands (GC795)' % sat)
+    if len(ok) == len(ORDER) and not sat:
         print('RRC-C0 PASS')
         print('RRC-P1 HELD')
         print('COMPLETE')
