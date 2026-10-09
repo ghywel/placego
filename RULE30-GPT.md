@@ -18300,3 +18300,38 @@ For n=1 these recover exactly J_0+3 and J_0+6, checking both phase and endpoint.
 **Unexpected sparse countercontrol.** GC735's formal word concat S^(2^j)L still passes every improved individual block bound with J_0=5. Its S block starts at a_j=6*(2^j-1)+10j, so D-a_j=6-10j<=J_0+3. Each one-gap L block starts after that S block and has duration10<=J(a)+6. Therefore the derived weighted budget also holds on this formal word. It retains vanishing L density and exponential run growth; no physical realization is asserted. The improved constant cannot close aperiodic Q6 or provide a uniform support deadline.
 
 **Disposition.** Use the exact L cost in future duration accounting; keep the inter-run compatibility gap explicit. Independent hand reading requested. No new scan, additional cap or prize claim. Scratch flags/doorbell deferred under the unresolved login failure; break room closed.
+
+
+## GC767 — The settled-white band also constrains long L blocks (2026-10-09, GPT)
+
+**Main-line L twin of GC738/740.** Prediction written before stored-bit arithmetic: the all-L ring's left-edge even-time track has stride-33 and least period155; its maximum cyclic white run is at most12. Independent control reverses the stride; counterfactual omits the diagonal motion and uses-31. Unexpected geometry check samples physical time2u, making overlap cost4u rather than2u. One static155-bit certificate calculation, no CA evolution, new band certificate, seed scan or SAT run. Existing GC738/740 and the reviewed GC745 L ring/cost premise checked; this is their all-L application, not a new mechanism.
+
+At synchronized marker time a an n-gap L block supplies D=10n pre-closing observations of the wall and nearest-right column. Left inversion agrees with the reference ring on x_(a+s)(-j)=R_s(-j) whenever j>=0 and s+j<=D-1. Let J=J_0+a be the actual left-edge distance. Diagonal e lies at site-J-s+e. At even elapsed time s=2u, the ring identity F^2(R)=sigma^31(R) gives its sample
+
+    R_0(-J+e-33u).
+
+The-33 includes both the moving diagonal's-2u and the ring's-31u. Since gcd(33,155)=1 and the stored ring has least spatial period155, this sampled track has least period155. The literal known integer0x35409b1caa645d715104db5291a2fe8415260ce gives68 black and87 white samples, with maximum cyclic white run7. Stride+33 independently gives the same period/counts/maximum. The blind bound12 HELD. All starting phases are rotations because the stride is coprime to155; no extra orbit phases were evolved.
+
+Suppose e is permanently white by global time T. It may lie initially right of the wall or settle after the L block starts. Put
+
+    B=max(0,T-a,e-J),   u_0=ceil(B/2).
+
+Only even samples u>=u_0 can be compared. Their forced-slab condition is s+j=2u+(J+2u-e)<=D-1, hence
+
+    u <= floor((D-1-J+e)/4).
+
+This is the unexpected factor-four guard; using the S block's factor two here would overstate the obstruction. Agreement with constant white has at most7 such consecutive samples. Bounding the integer interval, including an empty overlap, yields
+
+    D <= J-e+4*ceil(B/2)+28.
+
+No period is assigned to unknown exterior columns. Whiteness is the explicit settling premise; a merely constant black or not-yet-settled diagonal is outside this claim.
+
+**Existing universal certificate applied, not rerun.** GC739/740 use G2.3's all-history e=53207 white diagonal and conservative T=107312. For J_0>=-1 and marker a>=0, T-a dominates e-J whenever positive, so B=max(0,T-a). Both a and T are even; consequently
+
+    D <= min(J_0+a+6, J_0+abs(a-107312)+54133).
+
+The first bound is GC766's ordinary L cost. At a>=107312 the new one is D<=J_0+a-53179; at a=0 it is the weaker J_0+161445. These endpoint controls prevent a startup contradiction. Alongside GC740's S allowance J_0+abs(a-107312)+54115, both actual letter types now have an onset-sensitive constraint from the same permanently white diagonal. No new universal certificate, mixed exclusion or upper bound independent of a follows.
+
+**Disposition.** A long L block cannot evade the known coherent diagonal merely by replacing S. The finite certificate still supplies only one fixed depth: arbitrarily late starts increase the allowance through J_0+a. Actual inter-run compatibility or an unbounded supply of suitable low-period diagonals remains missing. Independent hand reading requested; no new computation requested. Scratch flags/doorbell deferred under the unresolved login failure; break room closed.
+
+**Coordination and filing.** L400/e140efd8 verified: G249/G250 accepted by an explicit all-depth hand reading and promoted; RR2 capped-maximum qualifier added. G251 filed verbatim after final nearest08/G250/10 full reading and passing duplicate controls. G250’s plain-words “only logarithmically often” reverses its necessary lower bound on changes; correction requested in chat. No proof claim changes.

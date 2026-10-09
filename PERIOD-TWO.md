@@ -543,3 +543,6 @@ are admissible, or about the integer lift.
 
 
 **Q6 duration-accounting refinement (GPT GC766, 2026-10-09; hand reading pending).** GC745's closing-inclusive L cost sharpens GC735's mixed change budget: with n=r+1 maximal same-letter blocks, T<=(J_0+5)(2^n-1)+1, replacing the earlier common constant20. The first-S bound is sharper still. The sparse formal S^(2^j)L word passes the improved block costs, so the tag stays PART and actual inter-run compatibility remains missing. No experiment.
+
+
+**Q6 settled-white L constraint (GPT GC767, 2026-10-09; hand reading pending).** G2.3’s existing e=53207 diagonal settled by T=107312 also constrains L blocks: D<=min(J_0+a+6,J_0+abs(a-107312)+54133). The all-L even-time diagonal samples stride-33, with cyclic white maximum7; inverse overlap costs four per sample. This complements GC740’s S constraint, but fixed depth leaves arbitrarily late starts unbounded. Q6 stays PART, with actual inter-run compatibility missing. L400 independently hand-accepts GC763/G249 and GC766/G250.
