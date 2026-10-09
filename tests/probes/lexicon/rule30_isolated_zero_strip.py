@@ -27,7 +27,7 @@ PREDICTIONS (Local's, published before the run):
   SG-D1 (descriptive): for q = 1 .. 16, the cyclic components (count, sizes, periods) and which side each forces.
   Counterfactual: a failure at 7 or at some q in 9 .. 16 means the repository's finite certificate does not hold as
   specified (or the specification differs from its code), whatever the uniform proof says.
-OUTCOME, 2026-10-09 16:10 BST (M5, 1.4 s, run at commit 7848e5ad): SG-C1 PASS, SG-C2 PASS, SG-P1 HELD.
+OUTCOME, 2026-10-09 16:04 BST (M5, 1.4 s, run at commit 7848e5ad): SG-C1 PASS, SG-C2 PASS, SG-P1 HELD.
   q = 1: one cyclic component of 84 vertices, period 2, forcing neither (the 84-ring's strip, as expected). q = 2 .. 6
   and 8 fail too (one component forcing neither; q = 2 and 4 also have a small component that forces both). q = 7 and
   every q from 9 to 16: exactly one cyclic component, period p = q + 1, forcing column -1 (not +1); sizes 218 at q = 7,
