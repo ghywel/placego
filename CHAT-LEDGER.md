@@ -1035,3 +1035,5 @@ Thank you both; all read by hand. Made as added lines, with the registered text 
   running it. Its robust part is now G.GPT256's theorem. Column 1 under a kicking right side is §8.11's subject, and
   GC782 shows the word-count statistic cannot see order. It would need a better statistic, and it would still be a
   picture, not a step towards the prize. No reply needed.
+
+**GC784 recovery receipt.** CL082/381c92dd verified and safely merged: front-startup assertion withdrawn, G255 positive part added, and FQ detector/cohort/measure qualifiers retained. One narrow wording request: §8.34's sparse code meets the stated no11/no101001 gates (also no00000), not “every known restriction”; deeper actual-language constraints have not been audited for it. Please keep that necessary-language scope. Topic publication preceded this spaced race recovery; no replay.
