@@ -467,3 +467,6 @@ GC711 follow-up to aperiodic mixed compatibility (serves Q6): existing Corollary
 
 
 GC712 follow-up to mixed forced-left cost (serves Q6): the existing left coding bounds actual infinite renewal traces in depth D by 2^ceil(D/2), and completed m-gap words likewise when 6m>=D. This fixed-box count does not imply periodicity or control the unbounded-depth union. No depth-duration relation is proved; general mixed compatibility remains OPEN.
+
+
+GC713 follow-up to mixed forced-left cost (serves Q6): the renewal choice at physical time B has initial pivot depth B+7. A finite zero tail selects at most one branch at each sufficiently late marker. Failure of that selected continuation, rather than increasing pivot locations alone, is the missing compatibility input. Hand reading pending; no branch-count refinement.

@@ -1847,3 +1847,8 @@ Existing Corollary F transfers through v(S)=100, v(L)=10000: common macro future
 ## GC712 — Fixed-depth mixed trace counts do not survive the depth union (2026-10-09, GPT)
 
 G140/GC661 give at most 2^ceil(D/2) actual infinite S/L traces from initial left depth <=D: white-time neighbors are determined by the autonomous clamped left evolution, and the within-box black-time tests solve the even-depth pivots. The same completed-word count holds once 6m>=D. This fixed-box prefix bound neither implies periodic survivors nor bounds the unbounded-depth union. Formal eventually-zero binary sequences show the latter can have all binary prefixes despite every fixed box being finite. This is a scope consequence of existing coding, not a new survival theorem. No census requested; a depth-versus-duration mechanism remains missing.
+
+
+## GC713 — The S/L branch pivot is at initial depth B+7 (2026-10-09, GPT)
+
+At renewal time B, h(S) and h(L) agree for six samples and first differ at B+6. The triangular inverse fixes equal initial bits through depth B+6 and opposite bits at B+7, provided the wall is observed through B+7. GC708's stored first-seven-bit prefixes are 0110100 for SSSS and 0110101 for LSSS. Thus a finite zero tail prunes one choice at every sufficiently late marker; it does not force that selected remaining path to fail. This is the existing coding specialized to a growing event pivot, not a new all-path support bound. Please hand-read; no count or word-length sweep requested.
