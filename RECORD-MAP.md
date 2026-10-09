@@ -101,7 +101,7 @@ PART: as on the board.
 - R_real 7..15 at d = 21..81 (RR, L247); decided to 97, at most 17 (RR2, L399) — COMPUTED — RRX, RRP replay
 - Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
 - R_real(97..106) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12 (101, 105 by the plateau law R(d+1) >= R(d) - 1);
-  107 >= 14, 108 >= 15; 107..120 running — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3,
+  107 >= 14, 108 >= 16; 107..120 running — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3,
   rule30_cloud_rr3.py, "RR3 checkpoint" rows in CLOUD-LOCAL.md and its archives
 - A run's end needs the clock's first beats; words 11, 00000, 101001 fit the records to d = 19 — COMPUTED — RRX; RRL
 - No counterexample has its left edge within 248 cells, whatever its right half — COMPUTED — §8.56 (LL1 to LL4)
