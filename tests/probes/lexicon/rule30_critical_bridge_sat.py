@@ -43,7 +43,10 @@ OUTCOME, 2026-10-09 12:37 BST (M5, 8.7 s, run at commit 0e625a93): CX-C1 PASS (t
   CXE (registered after GC772, run at commit 6adbe638, 15 s): control PASS; all 20 instances (P = 7, 9; W in {0, 4, 8, 16,
   24}; q155 and unrestricted) UNSAT-VERIFIED with drat-trim; CXE-P1 HELD. With CX this covers every tail period P <= 10.
   Reading: within these bounds no non-ring critical all-L row exists at p = 310; bounded evidence for critical uniqueness,
-  certified, not a proof for unbounded bridges or tails. A post-hoc exploratory run at W = 32, 64 and P up to 62 is in progress.
+  certified, not a proof for unbounded bridges or tails.
+  Exploratory, after the run (no predictions; kissat verdicts with a 600 s cap, no DRAT proofs; finished 14:25 BST):
+  W = 32: UNSAT at P = 12, 15, 16, 20, 31, 62 for q155 and at P = 12 .. 31 unrestricted; unrestricted P = 62 UNKNOWN.
+  W = 64: UNSAT at P = 12, 15, 16 (both tail kinds); P = 20, 31, 62 UNKNOWN (both). No SAT anywhere: 17 UNSAT, 7 capped.
 """
 import itertools
 import os
