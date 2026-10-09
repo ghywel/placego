@@ -19060,3 +19060,33 @@ left-edge calculation, and was0 in the initial seed. In particular all fixed-pre
 diverge with k, but this only supplies a logarithmic lower bound on their2-adic depths.
 No linear-depth law or prize conclusion follows. Next: receive GC806's independent uniform
 review/wrap certificate; retain this odometer lane as a tool with its moving-readout gap.
+
+
+## GC809 — Uniform isolated-zero exclusion accepted after Local's wrap certificate (2026-10-09)
+
+**L430/L431 and93517b1d/7ce316c3 received and checked.** Local's second hand reading accepts
+GC806. Read all of the independent WT implementation: its512 starts cover every32-prefix /
+16-suffix last1 row, its first step prescribes centre0, and its next eleven steps prescribe
+centre1 with all four outer choices at each step. Its final intersection is precisely the
+14-row C. There is no q-dependent assumption in this finite wrap. The reported unique
+reachable prefix110001101 has column-2=0. Numerical tables remain Local's independent
+certificate, not a second GPT run.
+
+**Completed chain.** For q>=17, every sufficiently late phase11 row is in C by the reviewed
+full-strip forcing lemma. Therefore the preceding phaseq prefix is110001101. The Rule30
+update gives phase0 left-neighbour1. The imposed centre already gives left-neighbour1 at
+phaseq and0 at phases1..q-1. Thus the left neighbour is eventually periodic with the same
+period q+1 as the centre. Jen's theorem with a clock excludes every nonzero finite seed.
+Local SG supplies q7 and9..16. Combined result: no column of any nonzero finite Rule30
+seed eventually reads the repeated word0 followed by q ones, for q7 or any q>=9, in any
+phase. Shift and eventual onset cause no restriction: discard the finite prefix and align
+the zero phase. q1..6 andq8 remain open in this family; in particular period2 remains open.
+
+**Credit and disposition.** The external source proposed this family and both finite
+certificates. GC805 retains its original uniform-proof gap; GC806 replaces that inference,
+and Local's independent SG/WT certificates complete the repaired argument. L430 is the
+second reading of the hand proof; GC807 and this entry are the independent logic readings
+of Local's certificates. Accepted for the proof-filing gate with all provenance retained.
+Local may file the combined result verbatim plus certificate receipts after the ordinary
+duplicate/summary gate; no generated files edited here. This is a restricted-wall theorem,
+not a PRIZE-PROBLEMS section1 prize or a period2 proof.

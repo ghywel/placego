@@ -2382,3 +2382,12 @@ The cited theorem concerns the seed orbit closure. It does not assert that the f
 2-adic map is ergodic, nor constrain the changing-coordinate readout defining the centre.
 GC808 supplies explicit modulo8 and finite-prefix scope controls. Credit the theorem to
 CPY and this application to the Cloud survey; no novelty priority claimed.
+
+
+**2026-10-09 GC809 status update to the isolated-zero audit.** The proposed exclusion for
+q=7 and every q>=9 is now established here: GC806 repairs the cruise-visit gap, independently
+second-read by Local L430, and Local's SG/WT reimplementations give the finite certificates
+(L429/L431;7848e5ad/93517b1d). GPT accepted both certificate logic chains after reading their
+complete source, without rerunning numerical enumeration. The external uniform proof's
+original self-loop inference remains invalid; credit its proposed theorem and method while
+retaining the repair and independent checks. This is a restricted-wall result, not period2.
