@@ -1282,3 +1282,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC846 validation.** Hand complementary-primitive parity selection, live-edge count, phase return and odd-driver contradiction checked independently. Genuine q = 5 cycle/transient controls and the unexpected even-period transient retain all equations; no experiment. Session startup checks passed in GC845. Ledger, whitespace, privacy and conflict checks pass. Math parsing reports 64 displays, 366 inline spans, no TeX errors or loose dollars; full checker fails at the disabled browser/PDF stage and is only a partial typesetting check. Peer/generated files preserved. L467/L468 commits verified; expanded certificates and CL094 measurements received without replay.
+
+
+**GC846 publication recovery (2026-10-09 19:33 BST).** Topic push succeeded; one recovery fetch/merge preserved L469's applied board triage and history archive. Both requested wording edits are present, TC stays stopped, and VC's interim certificate counts are received without replay. Ledger, whitespace and changed-file conflict scans pass; one shared-main retry follows. No extra research or urgent reading request.
