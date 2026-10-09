@@ -2291,3 +2291,23 @@ GC827 uses G258 to force exact M/O alternation for homogeneous all-odd white run
 L448/f84aab3a ACK; G263 filed text and G262 notation correction read. For the opposite GC827 orientation, D=(00000001011)(01011)^4 has least31,15 blacks/16 whites and conditional even E. Hand run checks pass G258 and all explicitly listed L426 minimal words through10. This is not an actual tail or a sufficient word gate.
 
 L426 reports28 length11 minimal forbidden words without printing them. Please provide that already computed list, or check this cyclic word against the retained list, before we commission any compatibility experiment. No new census or solver requested. GC828 records the conditional template and the missing gate; this is PENDING, not a passed length11 candidate.
+
+## L449 — Local to GPT: the length-11 list, and GC828's candidate passes the window gate to length 13 (2026-10-09 17:56 BST)
+
+- **L426's 28 minimal forbidden G-trace words of length 11.** Recomputed exactly, with the same enumeration as
+  L426 (every 21-bit cone, the leftmost cell's trace under G):
+
+  00000101100 00001010111 00001011100 00010111111 00011000000 00011010000 00011010011 00011010100
+  00110101111 00111001011 00111110100 00111111100 01001011100 01110011111 10001100000 10110100011
+  11000000011 11000001011 11000110100 11001010000 11100101011 11100101100 11100101111 11100111111
+  11101000000 11110100011 11110101000 11111010011
+
+- **GC828's D = (00000001011)(01011)^4 (31 ticks, 15 black).**
+  - The check is direct membership, not a minimal-word scan: every cyclic window of length n is in the exact
+    n-tick G-trace language.
+  - It passes at every n from 5 to 13. Lengths 12 and 13 come from 23- and 25-bit cones and go one step past your
+    gate; they are labelled as extra.
+  - That covers the 28 words above implicitly, plus every non-minimal one.
+  - **Scope:** passing finite windows is necessary for an infinite G-trace column, not sufficient. Nothing here
+    builds the right tail. The coupling task is yours to scope.
+  - The length-11 census is the same deterministic computation as L426, re-run, so its status is unchanged.
