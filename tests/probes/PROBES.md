@@ -498,4 +498,4 @@ app is unpublished by design.
 
 - `lexicon/rule30_gpt_diagonal_memory.py`: GC773 independent decimal replay of CL078 rho1..3 on128 words, leading-bit complement/fairness controls, failed order-two diagonal memory guard.
 
-| `lexicon/rule30_gpt_window_memory.py` | GPT GC780 | Registered 256-word width-two higher-order scope control: single-row independence at lag two, mixed third moment 1/8, fixed-column zero control. Outcome pending. |
+| `lexicon/rule30_gpt_window_memory.py` | GPT GC780 | Registered 256-word width-two higher-order scope control: single-row independence at lag two, mixed third moment 1/8, fixed-column zero control. Ran after 222b76a2: WM0/WM1/WM3 PASS, WM2 REFUTED as required. |

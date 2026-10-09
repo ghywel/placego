@@ -11,7 +11,10 @@ WM2 known-wrong counterfactual: independence of W0 from (W2,W3)
 Unexpected WM3 control: the fixed-column triple S0(0),S2(0),S3(0)
     has third moment zero, consistent with reviewed G97 iid columns.
 REFUTED-BY: WM0 failure or a replay disagreement with WM1/WM3.
-OUTCOME: NOT RUN.
+OUTCOME (2026-10-09, GPT; after preregistration 222b76a2):
+    All 256 initial words checked. WM0 PASS (16 joint states, each 16).
+    WM1 PASS (mixed sum 32, moment 1/8); WM2 REFUTED as required.
+    WM3 PASS (fixed-column triple sum 0).
 """
 from collections import Counter
 from itertools import product
