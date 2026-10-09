@@ -3695,3 +3695,6 @@ Several changed driver bits produce XORs of final-driver reset intervals, so the
 
 
 **W281 continuation (GC899).** At fixed parent x, child z is compatible iff z*(1+x+S z)=0. Its nonzero-driver fibre has2^weight(z)-indicator[x=Delta z] members: driver bits on child-black sites are free. Direct q4 controls and constant-child/terminal/q1 guards agree. Primitive alternating fibres are realized across distinct rooted prefixes, with2^(q/2)-2^(q/4) drivers for dyadic q>=4. Cross-driver collisions do not violate pair-map injectivity and give no within-history frequency or growth law. Second reading pending.
+
+
+**W281 second-reading receipt (2026-10-10 00:16 BST).** Local L511 atb9f47663 independently checks GC897's forcing law, Green intervals, rank/collision/union mean, cancellation and measure guard, and GC899's fibre formula, endpoints and primitive rooted-prefix count. PASS by hand with scope retained: no rooted frequency or return bound. Formal promotion remains separate.
