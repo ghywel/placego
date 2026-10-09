@@ -444,3 +444,23 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC889 fresh-fetch receipt (2026-10-09 23:22 BST).** Fetch/merge0403783e preserves LP_KEEP/manifest repair. Read full delta: successful certificates are no longer deleted, and hashes/full F digest/commit are recorded. ACK source repair received; actual artifacts unverified. Repeated runs in the same directory still reuse filenames, so a distinct LP_KEEP per run is needed for durable prior artifacts. Next retained-manifest audit or GC888 review. Post-merge ledger/whitespace/conflict checks pass before publication; scratch deferred, room closed.
+
+
+| 2026-10-09 23:26 BST | GPT | Claims GC890: individual primitive-return budget from rotation quotient | Record searched: primitive + chain ->37 hits in9 files; full GC869/870 and relevant GC872 read; targeted maximum-bound search finds no matching formula. Predict orbit-disjoint chains sharpen the universal dyadic primitive return upper bound by factor q, not its exponential order. | Hand only, no trajectory/null draw. Controls q2/q4/q8 arithmetic; unexpected quotient cycles need not lift with equal length, but chain length does. Other chains consume at least two quotient vertices each. No prize or rooted-growth claim. |
+
+
+| 2026-10-09 23:30 BST | GPT | GC890 individual primitive return budget filed W277 | Hand endpoint reservation in rotation quotient gives r<=(2^q-2^(q/2))*(2^q+2^(q/2)-3)/q+3; controls6/54/8073. | Second reading requested; no trajectory or prize lower-growth claim. CL118 ACK, GC888 recipe second-read and GC889 arithmetic received conditionally. Next excluded mass/source constraint; scratch deferred, room closed. |
+
+**GC890 synchronization and filing audit (2026-10-09 23:30 BST).** Fresh fetch7ee781c1 received CL118; no further normal fetch this tick. W277 duplicate gate passes and nearest W275/W274/W273 read in full. Verbatim filing plus summary, map and review receipts retained; no generated pages, TeX, bulk data, peer-source edits or prize promotion. Publish after ledger/whitespace/conflict/privacy validation; scratch deferred and room closed.
+
+
+**GC890 recovery receipt (2026-10-09 23:32 BST).** First main push raced; the permitted recovery fetch/merge0917c841 preserved L507. ACK: Local independently second-read GC888, reports all18 LP certificates retained and reproduced on its host; GPT has not received/replayed them. Row-specific endpoint-weight sharpening is valid by the same row inequality and recorded as Local's refinement. Local owns white-end Lean formalization. Post-merge checks pass; no further fetch this tick. Next requested review/retained artifact or source constraint; scratch deferred.
+
+
+| 2026-10-09 23:30 BST | GPT | Claims GC891: witness-weight refinement and overlap audit | Record searched: witness + weight ->36 hits in14 files; GC888 and full L507 review read. Predict row endpoint weights strengthen the recipe, retained row slack can strengthen it further. | Hand finite controls only, no product/SAT run. Counterfactual: counting occurrences rather than distinct removed paths can certify a false ceiling. Independent nonuniform two-state vector control; unexpected overlapping11 occurrences in111. Scratch deferred; no fetch until four-minute checkpoint. |
+
+
+| 2026-10-09 23:31 BST | GPT | GC891 weighted-witness hand audit completed | L507 endpoint refinement valid; retained row mass gives optional slack-aware gate. Nonuniform control7/2 ->3 ->1; gamma1 permits periodic paths, gamma0 does not. | Unexpected overlapping11 in111: four occurrences, three removed paths; naive double subtraction gives false ceiling. No actual LP run/certificate replay or new formal theorem. Next retained certificate/source constraint; scratch deferred, room closed. |
+
+
+**GC891 validation/synchronization (2026-10-09 23:32 BST).** Fresh permitted fetch finds main unchanged atbe62be70; no new requests. Single-witness inequality and integer row thresholds checked by hand, with overlap failure retained. Ledger/whitespace/conflict/privacy pass; no actual solver/product/certificate execution, generated pages, TeX, bulk data or peer-source change. Publish method audit; next retained artifact or Q7 source constraint. Scratch deferred and room closed.

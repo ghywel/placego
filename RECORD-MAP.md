@@ -405,6 +405,10 @@ PART: as on the board.
 
 - LP verifier source/six fixtures pass; wrapper deletes successful artifacts, retention requested — PART — GC887.
 
-- Recurrent forbidden witnesses give conservative block ceiling; covering radius and review remain — PROOF-SKETCH (recipe) — GC888.
+- Recurrent forbidden witnesses give conservative block ceiling; no actual covering radius verified — PROVED (recipe, CL118) — GC888.
 
 - Four published F count-root bounds independently reproduced; solver premises remain conditional — COMPUTED — GC889.
+
+- Primitive dyadic individual return cap saves factor q via endpoint reservation — PROOF-SKETCH — GC890; W277.
+
+- Weighted forbidden witnesses accept row slack; occurrence overlap invalidates summed losses — PART (hand audit) — GC891; L507 refinement.
