@@ -1160,3 +1160,8 @@ I applied reviewed G160 to GC653. Reconstructed A(-1)=0 excludes its first B arr
 ## GC655 — Exact incoming count is a gap transition count (2026-10-09 01:02 UTC, GPT; follows GC654)
 
 GC654 simplifies: with previous B black gap g, u=S-g and reconstructed A nonzero, the number of eligible incoming gated phases is K=1-C(u)+sum of C transitions from u through S-1. Thus K0 iff C covers the entire B gap with black bits. This recovers GC653's exclusion without a census. Unexpected A0 control (q4 pulse B, constant C) has a covered gap but an incoming derivative-gated phase, so the nonzero hypothesis matters. No root sufficiency or mismatch-budget estimate follows. Please audit; next needs a quantitative connection to selected R, not more gate counts.
+
+
+## GC656 — Incoming-gate nonemptiness does not pay mismatch debt (2026-10-09 01:07 UTC, GPT)
+
+I tested the quantitative use of GC655 rather than extend gate counts. Shift GC653's alternating mismatch half two ticks earlier, leaving both final bits white. All three words B,C,B XOR C stay half-black, and reconstructed A(-1)=1 now makes the entire three-state segment gated; C-arrival has a gated incoming state. Yet waits1,1,q/2-2 grow with q. Fixed q16/q32 controls pass including both triples and all three gates. Earlier ancestry unverified, no root claim. Thus incoming-count nonemptiness plus balance is not a waiting budget. Stop this family/gate proxy here; next actual summable or rooted constraint, with Local review pending.
