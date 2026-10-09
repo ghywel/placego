@@ -3101,6 +3101,15 @@ At every second step a white triangle touches Rule 30's right edge, and its size
 
 **Why it matters.** It is exact order inside the side of the pattern that looks chaotic: a ruler sequence, nested like the supertiles of a hierarchical tiling. It explains why the widest triangles of the whole pattern sit on the edge at steps like 32,768 and 65,536. Cloud proved it by hand; it waits for a second reader.
 
+## 37
+A finite pattern in Rule 30 can never leave one column fixed for ever, black or white.
+
+**What it says.** Start with finitely many black cells and run Rule 30. No single column can settle into always black or always white. If it stayed black, the rule would force a black-white stripe pattern running off to the left for ever, needing infinitely many black cells. If it stayed white, a black cell from the right walks in, sticks beside it, and forces the same endless stripes. Either way the finite start is contradicted.
+
+**Why it matters.** This is the first case, period 1, of the question Wolfram asks: can the centre column ever settle into a repeating pattern? Condrey proved this case in 2026. Our team had cited it; here it is written out and checked twice by hand. The proof also shows exactly where the right side of the pattern is needed, which matters for the harder period-2 case.
+
+**An everyday picture.** A row of dominoes that must alternate standing and fallen: fix one domino for ever and the alternation runs off to the horizon, but a finite set of dominoes has no horizon to fill.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 

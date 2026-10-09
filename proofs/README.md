@@ -145,6 +145,8 @@ that time does not allow.
 - [Proposition 23 (proved by hand, second-read): the triangles on the single cell's right edge are a ruler sequence](36-proposition-23-proved-by-hand-second-read-the.md):
   At every second step a white triangle touches Rule 30's right edge, and its size depends only on how many times 2
   divides the step number.
+- [Period 1 (Condrey's theorem, proved again by hand, second-read): no finite seed has an eventually constant column](37-period-1-condrey-s-theorem-proved-again-by.md):
+  A finite pattern in Rule 30 can never leave one column fixed for ever, black or white.
 
 ## Short proofs restated from the running text
 

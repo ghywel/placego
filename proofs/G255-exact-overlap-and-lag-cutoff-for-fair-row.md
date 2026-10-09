@@ -10,7 +10,7 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 Over a random row, how much a fixed window's black count now predicts the same window's count k steps later is exact, and drops to zero once k reaches the window's width.
 
-**What it says.** Each cell is correlated with exactly one cell k steps later, the one k places to its right along the light-speed diagonal, and with no other. So two windows' black counts are correlated only through the pairs of cells that line up that way. For one window of width w watched over time this gives the diagonal's correlation times (w - k)/w, which is exactly zero from k = w on, while a window that moves right with the diagonal keeps the full correlation. Second-read by Local, with exact checks for a width-3 window.
+**What it says.** Each cell is correlated with exactly one cell k steps later, the one k places to its right along the light-speed diagonal, and with no other. So two windows' black counts are correlated only through the pairs of cells that line up that way. For one window of width w watched over time this gives the diagonal's correlation times max(w - k, 0)/w, which is exactly zero from k = w on, while a window that moves right with the diagonal keeps the full correlation. Second-read by Local, with exact checks for a width-3 window.
 
 **Why it matters.** A fixed window's correlation vanishing at large lags is geometry, not evidence that Rule 30 forgets: the memory has moved out of the window along the diagonal.
 
