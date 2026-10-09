@@ -19912,3 +19912,27 @@ Now write a,b,c,d,e for digits4..8 at tick2. Since z3(2)=1 and v=z5(3)=1, its re
 **Independent and unexpected scope controls.** Both w branches independently yield y0; both choices p0/p1 were retained until the final-black constraint eliminated p0. The final contradiction is the literal OR value1, not a parity or probabilistic estimate. Unexpectedly the proof uses an actual-neighbour short-word lemma to anchor z5/z6 at4, then reverses two front steps: assuming those two digits were universal for arbitrary fronts would be unjustified. The complementary forbidden word and minimality of this word are not proved here; they remain distinct catalogue claims. GC842's previous stalled derivation is preserved rather than rewritten as if already complete.
 
 **Disposition.** The0001101011 exclusion is PROVED by hand pending independent reading. With GC841/G267 it removes both census-only gates from GC827's restricted family closure, and upgrades GC823's specific rejection to a hand proof. The different candidate GC828 still avoids these words and remains OPEN; rings through20 are excluded only by the separately received bounded enumeration, with no infinite exclusion. Please audit the phase/index steps and file if accepted. No new run or prize claim; K6 stays stopped.
+
+
+## GC844 — The retained tail's next profile has only the late first-black branch; TWC source audit and coverage guard (2026-10-09)
+
+**Bounded main-line consequence, no experiment.** GC830 allowed two U boundary fragments, including the early branch a=U6=1. GC840's now second-read exact first-black location is stronger than that finite projection. Prediction by hand: every actual retained tail has a=0 at all five long-run starts. Counterfactual: this decides all optional phase parities or rejects every finite K6 solution. It does neither. Checked the existing phase convention, driver condition and stopped finite-query scope; no new query or witness replay.
+
+**The next profile is forced through tick10.** At each t_b=31b, GC840 gives initial spatial bits0..13 zero,14 and15 one, and16 OR17 one. Its first black is therefore at14. Applying GC838 one site right, U=V1 has its first black at tick ceil(13/2)=7, so U0..6=0 and U7=1. In the common normalized front, U8=z3(8)=1 because GC840's phase s is1; U9=z5(9)=0 and U10=z7(10)=0. Hence for every b,
+
+    U(t_b..t_b+10)=00000001100,
+    a_b=0, z_b=1, c_b=0.
+
+This closes the early00000010101 branch for a genuine full tail, although GC830's limited equations allowed it. There is no contradiction with a finite projection permitting that branch: its unconstrained end need not extend far enough to impose the first-black argument. The known K4/K6 outcomes remain SAT; no claim about which branch their saved witnesses chose is made.
+
+**Driver parity moves to the four other optional phase families.** D has15 black ticks per31-block, and its mandatory white-end phases8,13,18,23,28 each force U1. Over155 ticks these contribute75+25=100 black ticks to D OR U. The optional long-white phase6 now contributes0 in every block. Its remaining optional white phases are11,16,21,26. The actual odd-driver requirement therefore becomes exactly
+
+    XOR_(b=0..4) XOR_(j in {11,16,21,26}) U(31b+j)=1.
+
+All other D-white internal ticks have U0, and D-black ticks are already counted by D. Thus the twenty remaining optional bits have odd aggregate parity. Unexpected guard: this imposes no per-family or per-block oddness; assigning that would repeat GC830's explicitly rejected shortcut. The restriction reduces a branch, without forcing a complete tail or deciding the selector.
+
+**Independent TWC encoding audit and a coverage correction.** Read rule30_trace_word_certs.py after verified L465/13f4a9da. Its shrinking cone has initial cells0..2n-2, exact OR auxiliary clauses and XOR output clauses, with units for all n origin ticks. Restricting any G diagram gives a model; conversely every initial cone extends to a row and determines the required ticks. Its CNF scope is therefore sound for each listed word. SAT replay and verified-UNSAT strings are kept separate; certificates themselves were not replayed here.
+
+The executed list contains the three short words000001101,0001101011,0010100000 and the28 length11 words, plus the positive control. It does not include the recorded short complements111110010,1110010100,1101011111. G is not complement-invariant (GC841), so these cannot inherit certificates by symmetry. Please qualify the blanket 'catalogue through11' wording to the exact listed words unless those missing receipts are separately supplied. This does not weaken the two words used by GC827, now also hand-proved as G267/G268. Neither catalogue minimality nor completeness is established by these UNSAT checks alone.
+
+**Disposition and receipts.** Actual-tail branch a_b1 is CLOSED by hand pending reading; the four-family aggregate and infinite compatibility remain OPEN. L466/1c1acce4 independently accepts GC843 and files G268, with reported literal corroboration received without replay. Both previous census dependencies in GC827's restricted closure are removed. TWC source encoding passes this audit; broad coverage wording needs the stated qualification. No new run, proof-certificate replay or prize claim, and K6 stays stopped.

@@ -782,3 +782,6 @@ GC841 serves the existing GC828/GC830 critical-tail lead: hand coupled-front res
 
 
 GC843 serves the existing critical-tail lead: hand contradiction proves forbidden0001101011, pending reading, completing the remaining census dependency in GC827's restricted family closure and GC823's rejection. GC828 avoids this word and remains OPEN; no catalogue-wide claim or expanded computation.
+
+
+GC844 advances the existing GC828/GC830 lead: actual J14 forces U0..10=00000001100 in all five copies, closing the early a_b1 branch for full tails. Odd driver requires odd aggregate of the20 other optional bits at phases11/16/21/26, no per-family condition. Infinite compatibility OPEN, finite K6 SAT retained. L466 accepts GC843 and files G268; GC827's two gates now have hand proofs. TWC listed-word source scope audited; short complements missing from executed certificate list, blanket coverage qualification requested.
