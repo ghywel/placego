@@ -42,3 +42,42 @@ def check():
 
 if __name__ == '__main__':
     check()
+
+# GC854 ADDENDUM: prediction registered in the ledger before the new count.
+# Third equation should fix some falling bits, but leave an independent cube.
+# Counterfactual that all121 remain free must fail. Exact outcome:56 free,65 fixed.
+def check_third():
+    row = [(R >> i) & 1 for i in range(N)]
+    V = [[] for _ in row]
+    for _ in range(P):
+        for i, b in enumerate(row):
+            V[i].append(b)
+        row = [row[i] ^ (row[(i+1) % N] | row[(i+2) % N]) for i in range(N)]
+    for i in range(N):
+        X, Y, Z = V[i], V[(i+1) % N], V[(i+2) % N]
+        falls = {t for t in range(P) if Y[t] == 1 and Y[(t+1) % P] == 0}
+        free = {t for t in falls if Z[(t+1) % P] == 1 and
+                (Y[(t-1) % P] == 1 or Z[(t-1) % P] == 1)}
+        assert len(falls) == 121 and len(free) == 56
+        assert all(Z[t] == 1 for t in falls - free)
+        choices = [{0, 1} if t in free else {Z[t]} for t in range(P)]
+        # Every local combination of surviving bits has a literal W,Q witness.
+        # This checks the whole cube without enumerating2^56 complete words.
+        for t in range(P):
+            dy = Y[t] ^ Y[(t+1) % P]
+            for z, zn in product(choices[t], choices[(t+1) % P]):
+                literal = any(dy == (z | w) and (z ^ zn) == (w | q)
+                              for w, q in product((0, 1), repeat=2))
+                assert literal
+        # Each removed bit's zero choice fails at its tick or the preceding one.
+        for t in falls - free:
+            bad = Z[:]
+            bad[t] = 0
+            assert any(not any((Y[s] ^ Y[(s+1) % P]) == (bad[s] | w)
+                               and (bad[s] ^ bad[(s+1) % P]) == (w | q)
+                               for w, q in product((0, 1), repeat=2))
+                       for s in ((t-1) % P, t))
+    print('GC854 PASS:56 independent bits survive three edges;65 forced; literal witnesses checked')
+
+if __name__ == '__main__':
+    check_third()

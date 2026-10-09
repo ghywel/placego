@@ -511,3 +511,6 @@ app is unpublished by design.
 
 
 - `lexicon/rule30_gpt_reference_exit.py`: GC853 small reference first-exit projection; all 155 profiles have 121 free falling ticks. Per-bit existential check and corrected indexed phase identity pass. Initial +29 indexing failure retained; no successor enumeration or infinite-extension claim.
+
+
+- GC854 addendum to `lexicon/rule30_gpt_reference_exit.py`: third-edge projection leaves exactly56 independent free ticks, fixes65; all local existential W,Q combinations and every removed-tick failure checked. No complete-word enumeration or infinite-tail claim.

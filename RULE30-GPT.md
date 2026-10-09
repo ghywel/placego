@@ -20167,3 +20167,29 @@ The corrected control passes for every site and tick. This agrees with L474's st
 **Controls and limits.** The reference successor belongs to every projected bit set. All sustained-black Y ticks force Z=0, refuting the 156-free-bit counterfactual. The black count 156 and white count 154 bound the number of falls by 154, independently of the exact 121 count. GC798's q = 3 D=U=100 passes two equations yet its longer chain eventually fails; it is an independent warning that a projected witness need not continue indefinitely. No specific first-exit choice here is claimed to survive the third equation or reach a downstream cyclic component.
 
 **Disposition.** The first-exit mask is an exact cheap filter for any future certificate of downstream reachability; it neither supplies that certificate nor justifies scanning its 2^121 branches. Other background orbits and the q = 155 bridge remain OPEN, TC stopped. Next needs a constraint coupling several falling ticks or a genuine cut separating all masked exits from allowed backgrounds, rather than more unstructured depth.
+
+
+## GC854 — The third first-exit equation leaves 56 independent bits (2026-10-09 20:21 BST)
+
+**Bears on Q6's critical bridge.** Prediction registered before the new count: the third equation will fix some of GC853's falling bits but cannot couple the survivors, because no two falling ticks are adjacent. Counterfactual: all 121 first-exit bits remain free. Use GC798's exact projection and its optional-witness warning; no novelty claim for elimination, SAT query or branch enumeration. This block tests whether the first extra equation supplies the missing coupling, rather than merely increasing a depth cap.
+
+For fixed reference X,Y and successor Z, require some W,Q with
+
+    Delta X = Y OR Z,    Delta Y = Z OR W,    Delta Z = W OR Q.
+
+GC798 eliminates W,Q exactly: Z <= Delta Y and Delta Y*(1-Z) <= Delta Z. GC853 already supplies the first inequality and fixes Z outside the falling set F of Y. Write refZ for the reference successor. If t is a falling tick, its neighbors are not falling ticks and therefore Z(t-1), Z(t+1) are already fixed to refZ. The new inequality can restrict Z(t) only in two ways:
+
+- At t, choosing Z(t)=0 requires refZ(t+1)=1.
+- At t-1, if Y(t-1)=0 and refZ(t-1)=0, the rise into Y(t)=1 requires Z(t)=1.
+
+Thus a falling tick remains freely 0 or 1 exactly when
+
+    refZ(t+1)=1 and [Y(t-1)=1 or refZ(t-1)=1].
+
+Every other falling tick is forced to 1, as the reference itself confirms. No constraint contains two free falling bits. Conversely any assignment to the surviving bits satisfies the projected inequalities, and cyclic witnesses W=Delta Y*(1-Z), Q=Delta Z establish all three equations. This proves a Cartesian product, not just individually viable flips.
+
+**Exact reference count.** The registered addendum in `rule30_gpt_reference_exit.py` finds 56 surviving free ticks and 65 newly fixed ticks in every reference profile, so one fixed reference pair has exactly 2^56 three-edge successor choices. The script checks every local combination against direct existential W,Q bits and checks that zeroing each removed tick fails at that tick or its predecessor. It does not enumerate complete words. Both the count and literal witness controls pass; the 121-free-bit counterfactual is refuted. One choice is refZ. Others are local successors, not constructed infinite tails.
+
+**Unexpected optional-witness guard.** A fourth equation would involve Delta W. The displayed minimal W is an existence witness for three equations; its failure under a fourth equation cannot reject Z, because other W choices may repair it. GC798's q = 3 example explicitly repaired such a minimal-witness failure before a later equation finally failed. That control prevents treating the chosen W as the only possible continuation. Also, the numerical count 56 does not identify these temporal positions with the separate period-56 wheel: the reference period here is 310 and no such map has been proved.
+
+**Disposition and stop rule.** The third equation cuts the first-exit domain but supplies no coupling among its remaining bits. That hoped-for mechanism is CLOSED at this projection depth. The exact 56-bit support is useful for an independently motivated cut or invariant, yet 2^56 raw branches remain too many and no scan is proposed. Do not continue this block by blindly adding equations or fixing the minimal witness. Critical downstream reachability and the odd-period background remain OPEN; TC stays stopped. Retain the reduction and choose another concrete invariant or peer audit next.

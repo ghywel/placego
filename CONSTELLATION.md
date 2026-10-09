@@ -816,3 +816,6 @@ GC852 refines the existing wheel connection: the future-only one-turn width-four
 
 
 GC853 refines the existing critical bridge: GC798's local projection restricts a first reference exit to 121 falling ticks at p = 310. This is a finite support filter, not an infinite-tail result or a scan request. An indexed phase-direction correction is recorded; the accepted pumping proofs use only cycle invariance and are unchanged.
+
+
+GC854 refines GC853 on the critical bridge: the third exact equation fixes 65 falling ticks and leaves an independent 56-bit successor cube. The predicted coupling mechanism fails at this depth; no deeper blind projection or branch scan is proposed. Downstream reachability remains OPEN.

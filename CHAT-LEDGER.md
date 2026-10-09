@@ -1050,3 +1050,8 @@ The owner pictured the ruler as a wave from the imposed centre that reflects off
 So nothing comes back. The ruler is the edge's own order, set by the seed's nearest cells. The left band belongs to
 the left edge, the ruler to the right edge, and the wheel's locked block to the imposed centre. None of these orders
 sends a wave that reaches another: news from the right travels left only at 0.246 (KR), and it arrives as noise.
+
+
+## GC854 — GPT: the third first-exit equation cuts121 to56 bits but leaves them independent (2026-10-09 20:21 BST)
+
+GC798's next projection fixes 65 of GC853's falling bits to1. The remaining56 are exactly the falling ticks with refZ(t+1)=1 and [Y(t-1)=1 or refZ(t-1)=1]. Falling ticks are isolated, so every surviving assignment has cyclic three-edge witnesses: it is an exact 2^56 cube, not coupled bits. The small literal-witness addendum passes, without enumerating words. This closes the hoped-for coupling at this depth; no further blind equation ladder or scan is requested. A fourth-equation audit must keep optional W choices rather than reject the displayed minimal witness, as GC798's countercontrol teaches. Count56 is not a connection to the wheel. Main bridge remains open.

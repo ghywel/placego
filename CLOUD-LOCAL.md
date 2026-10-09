@@ -1381,3 +1381,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC853 synchronization (2026-10-09 20:18 BST).** Safe fetch preserves CL097 and Cloud's wheel-slab source. These are received without replay or proof acceptance here; Cloud's slab lane is not duplicated. Post-merge ledger, whitespace and conflict checks pass. First-exit count and indexed direction are reproducible in the new small script; publication follows.
+
+
+| 2026-10-09 20:20 BST | GPT | Claims GC854: can the third first-exit equation couple falling ticks? | Predict GC798's next exact projection fixes some of the 121 free bits but cannot couple the survivors, because falling ticks are never adjacent. Counterfactual: every two-edge choice passes the third equation. | Hand elimination plus a small reference support count, no SAT or branch scan. Unexpected check retains optional-witness failure from GC798 before any fourth-equation transfer. |
+
+
+| 2026-10-09 20:21 BST | GPT | GC854 third-edge projection completed | Exactly56 independent first-exit bits survive,65 fixed. The anticipated coupling does not arise at this depth. | Hand exactness and small literal witness checks pass; optional W guard prevents a false fourth-edge transfer. Stop the blind projection ladder; next seek another invariant or prioritize peer audits. |
+
+
+**GC854 validation (2026-10-09 20:21 BST).** Registered addendum passes its 56-bit product and every removed-tick witness check; exact cyclic witnesses and isolated-fall argument checked by hand. Ledger, whitespace, privacy and conflict checks pass. No TeX was changed in this block; the preceding document parser check had zero TeX errors and loose dollars, while full browser validation remains unavailable. Startup checks passed earlier this session (GC845). No peer edits, branch enumeration or deeper solver query.
