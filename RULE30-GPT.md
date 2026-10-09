@@ -16670,3 +16670,25 @@ They repeat for every k. Reading vertically gives temporal profiles11,13,33,60,2
 ### L368 receipt for GC684-GC687
 
 At verified24f13edc, Local independently rebuilt GC684's successor continuation from the published endpoint, reproducing first repayment148, elapsed291 and the256-edge elapsed511. Its independent fast count136 supports GC685, whose complete probe account also replays. Local directly evolved GC686's hex block on an84-cell ring without using GPT's probe, confirming closure, least temporal return6, both observed columns and300 even samples. GC687's exhaustive rigidity probe replays with the same graph and entrance figures. This supplies a second-party verification of the actual infinite all-S witness and the fixed-domain certificate; positive entropy and finite-support prizes remain open. GC688's unrestricted five-column slab deduction awaits reading.
+
+
+## GC689 — An unrestricted all-S exterior gate couples successive returns (2026-10-09)
+
+**Hand prediction and scope.** After GC688's necessary five-column slab, predicted a cross-return constraint at the first unknown exterior column, without making it temporal6. At a marker-aligned return time6k, let u_k be site6 then, x_k be site6 at time6k+2, and z_k be site6 at time6k+4. The white-even wall and infinite all-S assumptions remain those of GC688. Its site5 temporal word is111010, with time0 first; site4 is001111. The following proof uses the actual Rule30 equation directly and the corrected next-short parity, not a finite graph or measured distribution.
+
+First, site6 is0 at times6k+3 and6k+5. Indeed site5 is0 at either time, its next bit is1, and site4 is1, so1=1 XOR site6 forces0. Applying the site6 update at those zero times gives
+
+    site7(6k+3)=z_k,    site7(6k+5)=u_(k+1).
+
+The next S also forces GC608's actual time-two parity x_k XOR site7(6k+2)=1, so site7(6k+2)=NOT x_k. If x_k=0, that site7 cell is black with white left neighbour. Its next bit is1 independently of site8. Hence z_k=1. If z_k=1, site7 at time6k+3 is black with left site6 zero, so its time6k+4 bit is1; at that time its left site6 is z_k=1, so its next bit is0 independently of site8. Therefore u_(k+1)=0.
+
+Thus the prediction holds, with the sharper Boolean necessary gates
+
+    NOT x_k <= z_k <= NOT u_(k+1),
+    u_(k+1) <= x_k.
+
+In particular a black site6 at the next short return requires x_k=1 and z_k=0 in the preceding loop. Exterior time-two and time-four choices cannot be treated as independent of the following boundary. This is an actual-trace necessity, valid even when these exterior quantities vary between loops.
+
+**Independent and unexpected controls.** The existing GC686 certificate has site6 mask5, giving u=1,x=1,z=0 and next u=1, consistent with the gate; this reads the saved certificate rather than running another experiment. The local gate also permits x=0,z=1,next u=0. It does NOT force x=1 whenever next u=0: the implication is one-way. That permitted Boolean assignment is only a consistency control for the displayed implication, not a constructed infinite all-S row; GC687's restricted periodic-domain rigidity prevents using it as such without a full exterior proof. Each black-centre update above independently uses the literal Rule30 property f(0,1,r)=1 and f(1,1,r)=0 for both r values, so the shielding steps do not assume a missing farther bit.
+
+**Disposition.** This reaches beyond the universal slab to an explicit cross-return exterior restriction. It proves neither all-column temporal periodicity, a realizable branching family, a quantitative entropy bound nor finite-support compatibility. The gate need not be sufficient, and imposing it on a free abstract sequence does not create a CA witness. Please hand-read; next needs additional actual compatibility rather than an exterior-choice count or temporal-period sweep.
