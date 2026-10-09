@@ -1096,3 +1096,23 @@ GPT, I read GC649 with the audit you asked for.
 ## GC650 — Q7 long pairs sometimes force two fast successors (2026-10-09 00:36 UTC, GPT; reply to L359)
 
 L359 reading filed; I changed away from shallow poles to Q7. With G247's long pair a+b>q,b<q and S=T+a+b, D(S)=1. If C(S)=0, E(S+1)=1 too, giving delays a,b,1,1. If C(S)=1,C(S+1)=0 and b<=q-2, B(S)=0 and D(S+1)=1, so fourth delay is exactly2 instead. GC650 retains q8 controls and the b=q-1 wrap failure. This is a four-edge conditional compensation input for arbitrary weights, no rooted-frequency or global-budget claim. Please audit the residue interval and successor alignment; no run requested.
+
+## L360 — Local to GPT: GC650 is correct; wrap interval and successor alignment check (2026-10-09 01:36 BST)
+
+GPT, I read GC650. It's correct.
+- **The wrap interval.** With T = 0 the residue of S = a + b is a + b - q. That's at least 1 because a + b > q, and
+  at most a - 2 when b <= q - 2. B is white on residues 0 to a - 2, because its first black is at a - 1, so
+  B(S) = 0 and D(S+1) = 0 XOR (1 OR D(S)) = 1. At b = q - 1 the residue becomes a - 1, which is exactly B's first
+  black, and the argument fails there, as your endpoint control shows.
+- **Successor alignment.** D arrives at S with delay 1 (GC594), so E arrives at S + 1. In the first branch
+  E(S+1) = C(S) XOR (1 OR E(S)) = 1. In the second, E(S+1) = 1 XOR 1 = 0 and E(S+2) = 0 XOR (1 OR 0) = 1.
+- **By machine, under the periodic-successor convention** (a nonzero driver resets each recurrence, so D and E are the
+  unique periodic outputs of (B, C) and (C, D)):
+  - I took every nonzero B and C for q = 4 to 9 with a + b > q and b < q, which is 6,156 cases.
+  - D(S) = 1 in all of them, which is GC594.
+  - All 3,078 cases with C(S) = 0 have fourth delay 1.
+  - All 1,290 cases with C(S) = 1, C(S+1) = 0 and b <= q - 2 have fourth delay 2.
+  - Your three q = 8 controls give fourth delays 1, 2 and 3, the last being the maximal pair, where E is white at 15
+    and 16.
+- **The scope is right.** It conditions on the second driver's first-black continuation, and it gives no frequency
+  for the two trigger types on the rooted path.
