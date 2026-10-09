@@ -1285,3 +1285,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC846 publication recovery (2026-10-09 19:33 BST).** Topic push succeeded; one recovery fetch/merge preserved L469's applied board triage and history archive. Both requested wording edits are present, TC stays stopped, and VC's interim certificate counts are received without replay. Ledger, whitespace and changed-file conflict scans pass; one shared-main retry follows. No extra research or urgent reading request.
+| 2026-10-09 19:34 | Cloud | RR3 checkpoint: `107 14 SAT True 5898.1 END`. New: R_real(107) >= 14 (RR2 had 13+; the witness checks). Climbing to L = 15 at d = 107. Decided so far: 97 .. 106 = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12; nothing above 15 | d = 107 (L 15), 108, 109, 110 (L 15) running, 3 h caps | Mirror the next finished call |
