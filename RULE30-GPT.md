@@ -16038,3 +16038,18 @@ When C(T)=1 this requires BOTH preceding bits white; when C(T)=0 it requires at 
 More generally, if a state (B,C,S) has B(S-1)=1 and the preceding black of nonzero B is at S-1-g, its possible incoming arrival times are exactly T=S-g,...,S-1. When reconstructed A is nonzero, it has an incoming gated edge iff at least one A bit in S-g-1,...,S-2 is black. This is an exact finite backward test, not rooted sufficiency: the previous gated state may itself lack earlier gated ancestry. A=0 needs G160's derivative exception and is not covered by this simplified test.
 
 **Disposition.** The entire GC653 displayed1,1,q/2 segment is excluded from an inherited rooted path; even its long-wait suffix phase lacks the required earlier gated ancestry. GC653 remains a valid counterexample to unconditioned balance plus scalar compatibility, and its short gated suffix still refutes interpreting gate membership alone as root reachability. It supplies no rooted long-wait family or global debt counterexample. This gives a concrete source of selection that marginal weights miss. Next require a quantitative cross-edge consequence of actual ancestry, rather than extend weight families or merely count one-step gates. No prize candidate; Local reading requested in the shared ledger, doorbell deferred.
+
+
+## GC655 — Incoming gated phases count transitions across one black gap (2026-10-09)
+
+**Scope and prediction.** Simplify GC654's exact backward test rather than run a gate census. G160 and the prior gap/arrival record checked. Predict that a nonzero reconstructed predecessor A has no gated incoming phase precisely when C is black throughout the preceding B gap. Counterfactual a marginal black weight decides this local eligibility. CLOUD-LOCAL records the hand audit before work; no experiment or root-count claim.
+
+Let B be nonzero, B(S-1)=1, and its preceding black be at S-1-g. Put u=S-g. The possible arrivals at B that reset into the state (B,C,S) are T=u,...,S-1. Reconstruct A(t)=C(t+1) XOR(B(t) OR C(t)) and assume A is NONZERO. G160 tests A(T-1)=1. At the first candidate t=u-1, B(t)=1, so A(u-1)=1-C(u). At the remaining candidates t=u,...,S-2, B(t)=0, so A(t)=C(t+1) XOR C(t). Consequently the exact number K of incoming gated edges is
+
+    K=1-C(u)+sum[t=u,...,S-2] (C(t+1) XOR C(t)).
+
+Every term is a nonnegative integer. Thus K=0 iff C(u)=1 and C has no transition up to S-1, equivalently C is black on the whole interval[u,S-1]. This is a joint ordered-gap restriction, not a condition on either word's overall weight. Positive K certifies one gated predecessor only; it does not certify earlier ancestry or supply a weighted mismatch budget. At g=1 the sum is empty and K=1-C(S-1), checking the adjacent-black endpoint. GC653 at C arrival1 has g2, C(-1)=C(0)=1, hence K0, agreeing with GC654.
+
+**Unexpected zero-source exception.** A=0 cannot be handled by counting A-black bits. At q4, take B support{0}, C constant1, and A=0. These are compatible. Target C arrival S1 has preceding B gap g4 and C covers all of it, yet the parent (0,B,T=-3) is gated by Delta B(T-1)=B(-3) XOR B(-4)=1. Its pulse wait4 reaches S1. This explicitly invalidates dropping the A-nonzero hypothesis; the derivative part of G160 is essential. No rooted occurrence is asserted for this control.
+
+**Disposition.** The predecessor-phase criterion is now an exact transition count with a covered-gap failure condition. It identifies a real cross-edge selection mechanism, but no summation against GC652's R-N/2-F is proved. Stop one-step gate bookkeeping here unless a quantitative connection to selected mismatch debt emerges. Local reading requested via the shared ledger; scratch doorbell remains deferred.

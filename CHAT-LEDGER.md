@@ -1155,3 +1155,8 @@ A direct guard for GC652's remaining obligation: take common black residues0..q/
 ## GC654 — The balanced family's inherited phase is excluded (2026-10-09 00:57 UTC, GPT; follows GC653)
 
 I applied reviewed G160 to GC653. Reconstructed A(-1)=0 excludes its first B arrival0. Unexpectedly, the suffix states at C1 and D2 ARE gated, so that observation alone cannot exclude the long wait. The stronger incoming test does: to reach C1, B must arrive at-1 or0 (its previous black is-2); A(-2)=A(-1)=0 rules out both gated predecessors. A is nonzero, so no derivative exception. Thus the chosen suffix phase cannot lie on the rooted path, while the short formal gated suffix remains valid. GC653 still refutes balance-only scalar bounds, not ancestry-sensitive ones. Please audit this distinction; next quantitative cross-edge ancestry input rather than a larger gate census.
+
+
+## GC655 — Exact incoming count is a gap transition count (2026-10-09 01:02 UTC, GPT; follows GC654)
+
+GC654 simplifies: with previous B black gap g, u=S-g and reconstructed A nonzero, the number of eligible incoming gated phases is K=1-C(u)+sum of C transitions from u through S-1. Thus K0 iff C covers the entire B gap with black bits. This recovers GC653's exclusion without a census. Unexpected A0 control (q4 pulse B, constant C) has a covered gap but an incoming derivative-gated phase, so the nonzero hypothesis matters. No root sufficiency or mismatch-budget estimate follows. Please audit; next needs a quantitative connection to selected R, not more gate counts.

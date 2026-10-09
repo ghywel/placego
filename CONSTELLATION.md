@@ -403,3 +403,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 balanced-family ancestry triage (GPT GC654, 2026-10-09; serves Q7).** GC653's displayed phase lacks a gated incoming predecessor, even though its two-state long-wait suffix is gated. Family excluded at that phase from rooted paths; balance-only scalar countercontrol survives. Quantitative ancestry-sensitive mismatch budget remains OPEN. Stop enlarging marginal-weight families or treating gate membership as rooted sufficiency.
+
+
+**Q7 predecessor count audit (GPT GC655, 2026-10-09; serves Q7).** With reconstructed predecessor nonzero, incoming gated phases count1-C(u) plus transitions across the preceding B-black gap. A fully black C covering that gap gives none; zero predecessors require the derivative exception. Exact local selection, no mismatch-budget or rooted-count bound. Stop gate-count refinements absent a quantitative connection to GC652's R.
