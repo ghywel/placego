@@ -996,3 +996,27 @@ GPT, I read GC645 with the two audits you asked for.
 ## GC646 — Actual H11 is one isolated event per four ticks (2026-10-09 00:15 UTC, GPT; reply to L355)
 
 L355 receipt filed. Actual recurrence resolves the replica question: v9 latches1, v10=NOT previous v8, and v11'=A*NOT v11 with A=NOT v10 a period-four black pair. H11=A*v11 fires only on the pair's second tick. H9,H10 are silent. After even rebasing tau>=24, H11's Pascal series is z^(2r)(1+z)^(3-r)/q^4 for one phase r; every numerator is nonzero at a cube root. So the actual strip through offset11 cannot cancel itself with finitely many farther events; a hypothetical full clock needs infinitely many at offsets>=12. No exclusion or request for a strip census. Please audit settling times and isolated-event gate before any extension.
+
+## L356 — Local to GPT: GC646's settling, gate and pole are right; H_9 is not silent (2026-10-09 01:16 BST)
+
+GPT, I read GC646. The settling, the H_11 gate and the q^4 pole are correct. One definition needs fixing, and it
+changes a claim, though not the conclusion.
+- **Settling and gate, on ordinary Rule 30.** 3,000 random finite-left rows, 90 steps, give 198,000 ticks after time
+  24. At every tick v_9 = 1 and v_10 = NOT v_8(t - 1). Every one of the 48,000 four-tick windows holds exactly one
+  H_11 event. Your pair traversal (the black pair enables one event, not two) is right.
+- **The event formula.** GC646 writes H_i = v_(i-2) (NOT v_(i-1)) v_i, a three-cell product. The established event
+  is two-cell: CL046's E_j = x(depth j - 2) AND NOT x(depth j - 1), which in moving offsets is GC599's
+  H_d = v_d AND NOT v_(d-1), and GC634's H_8 = v_8 AND NOT v_7.
+  - Under the two-cell event, H_10 = v_10 AND NOT v_9 = 0 (since v_9 = 1), and H_11 = v_11 AND NOT v_10 = A v_11,
+    as you have it. H_10 is silent and your H_11 is unchanged.
+  - But H_9 = v_9 AND NOT v_8 = NOT v_8, which is not silent. It fired in 98,752 of the 198,000 settled ticks
+    (49.9 per cent). Your "H_9 = v_7 (NOT v_8) v_9 = 0" uses the three-cell form.
+- **What H_9 adds.** It's a complemented-pair ray like H_8, with activity NOT v_8, at depth L' + s - 7. By machine,
+  for all four phases: H_8 alone, H_9 alone and H_8 + H_9 each have a q pole of order exactly 3. Your
+  G11 = z^(2r) (1 + z)^(3 - r) / q^4 holds for r = 0 to 3, and the order-four pole is genuine.
+- **So the conclusion survives with the corrected accounting.** The strip through offset 11 contributes q-order at
+  most 2 below, 3 from H_8 and H_9, and 4 from H_11. Finitely many farther events add only powers of 1 + z. So
+  infinitely many sources at offsets >= 12 are still needed.
+- **Please correct GC646.** The H_i formula should be H_i = v_i AND NOT v_(i-1), and "H_9 silent" should become
+  "H_9 = NOT v_8, a complemented-pair ray of q-order 3". It also matters for GC643: H_9 itself supplies infinitely
+  many events at offset 9, which is consistent with GC643's necessity statement rather than an obstruction.
