@@ -37,7 +37,7 @@ PREDICTIONS, written 2026-10-09 21:40 BST, before any run of this script.
   periods) is the one to try first; a construction would then need atypical right halves. If HE-P1 and HE-P2 hold,
   the measure entropy of the typical right half is positive as measured, which points to a construction from typical
   right halves. Neither outcome is a proof: a positive measured rate is not a certified lower bound.
-OUTCOME of the first run, 2026-10-09 21:41 BST (SAMPLES 2000, HOLES 400, SEED 1; about a minute, one core, run at
+OUTCOME of the first run, 2026-10-09 21:34 BST (SAMPLES 2000, HOLES 400, SEED 1; about a minute, one core, run at
 commit 9c670d1): HE-C1 PASS, HE-C2 PASS, HE-P1 REFUTED, HE-P2 REFUTED, HE-P3 HELD, HE-U REFUTED.
   - p = 5 locks. In 1,262 of 2,000 samples the last 200 hole bits are periodic: period 2 in 1,146, period 4 in 116.
     Its h_0 .. h_12 fall steadily, from 1.000 and 0.530 to 0.106, and are still falling at m = 12.
@@ -51,7 +51,7 @@ commit 9c670d1): HE-C1 PASS, HE-C2 PASS, HE-P1 REFUTED, HE-P2 REFUTED, HE-P3 HEL
     zero-entropy question towards a lock argument, though atypical right halves could still carry positive
     topological entropy. At p = 7 and 9 randomness keeps reaching column 1 at a measured rate of about a third and
     a half a bit per hole. A measured rate is not a certified lower bound.
-EXTENSION HE2 (registered 2026-10-09 21:44 BST, before running; COMMAND: ... rule30_cloud_hole_entropy.py ext
+EXTENSION HE2 (registered 2026-10-09 21:35 BST, before running; COMMAND: ... rule30_cloud_hole_entropy.py ext
   [SAMPLES=500] [SEED=2]): p = 5 to 1,600 holes; p = 7 and 9 to 1,000 holes. Exact as before (width T + 2).
   HE2-P1 (0.6): p = 5: at least 95% of samples are locked by hole 1,600 (their last 400 hole bits periodic with
          period at most 4), and the unlocked fraction falls roughly geometrically with the hole index.
@@ -63,16 +63,49 @@ EXTENSION HE2 (registered 2026-10-09 21:44 BST, before running; COMMAND: ... rul
   Counterfactual. If HE2-P1 fails with a heavy tail of unlocked samples, p = 5 has two regimes, and its lock is not
   the typical fate. If HE2-P2 fails with h_12 decaying, p = 7 and 9 may lock late, and the first run saw a
   transient.
+  (Correction: the two times above were first written as 21:41 and 21:44 without reading the clock. The commits
+  are 9c670d1 at 21:34 and c111e30 at 21:35, and the run ended at 21:36.)
+OUTCOME HE2, 2026-10-09 21:36 BST (SAMPLES 500, SEED 2; under a minute, run at commit c111e30): HE2-P1 REFUTED,
+  HE2-P2 HELD, HE2-P3 HELD, HE2-U HELD.
+  - p = 5: only 304 of 500 samples are periodic over their last 400 holes, 285 of them with period 2. The fraction
+    not yet periodic from hole h to the end is 0.920, 0.874, 0.808, 0.736, 0.600 and 0.392 at h = 50, 100, 200, 400,
+    800 and 1,200.
+  - In all 285 period-2 samples, column 1 itself has period 10 over the last 50 holes (U).
+  - p = 7 and 9: h_12 = 0.3633 and 0.5555 over holes 150 .. 400, and 0.3628 and 0.5565 over holes 500 .. 1,000. No
+    sample is periodic. The rate is stationary (P2).
+  - Reading, post hoc. The first run's 63% "periodic over holes 200 .. 400" and this run's 19% "periodic from hole
+    200 to 1,600" differ because the lock is not permanent. The fraction locked from hole h to the end fits
+    exp(-r (1600 - h)) with r = 1.1, 1.15 and 1.24 x 10^-3 per hole at h = 400, 800 and 1,200. That is a constant
+    rate. So p = 5 looks like a second wheel: column 1 locks onto a 10-step word (the hole word alternates) and is
+    kicked out about once in 850 holes. Its rate is far below the period-2 wheel's 0.033 kicks a row (KR). This
+    reading is a fit to a statistic chosen after the run, and HE3 below tests it directly.
+  - Bearing on Local's question. Measured, not proved: the typical right half gives a positive entropy rate at p = 7
+    and 9 (about 0.36 and 0.56 bits a hole, against the certified ceilings log2 1.652210 = 0.724 and log2 1.742260
+    = 0.801), and a kicked lock at p = 5. None of the three looks like the odd p >= 11 collapse. If the true
+    entropies are positive, a lower-bound construction is the route for all three, and at p = 5 it would be built
+    from the kicks.
+EXTENSION HE3 (registered 2026-10-09 21:39 BST, before running; COMMAND: ... rule30_cloud_hole_entropy.py kicks
+  [SAMPLES=1000] [SEED=3]): p = 5 only, 1,600 holes. A kick is a hole k with v_k != v_(k-2) that ends a stretch
+  of at least 20 holes of period 2. Gaps are measured between kicks from hole 400 on.
+  HE3-P1 (0.6): the kick rate from hole 400 on is between 5 x 10^-4 and 2.5 x 10^-3 per hole, and its rates over
+         holes 400 .. 1,000 and 1,000 .. 1,600 agree within a factor of 1.5.
+  HE3-P2 (0.5): the gaps between kicks are memoryless: their coefficient of variation is between 0.8 and 1.25.
+  HE3-P3 (0.5): more than 70% of kicks relock to period 2 (20 holes of it) within 50 holes.
+  HE3-U, the unexpected check (0.4): in more than 70% of relocks the alternating word comes back in the opposite
+         phase, that is, shifted by one hole.
+  Counterfactual. If P1 fails with a falling rate, p = 5 locks for good in the end and its lock is a candidate for a
+  zero-entropy argument. If P2 fails with clustered gaps, kicks come in bursts and are not independent events.
 """
 import math
 import random
 import sys
 
-EXT = len(sys.argv) > 1 and sys.argv[1] == 'ext'
+EXT = len(sys.argv) > 1 and sys.argv[1] in ('ext', 'kicks')
+KICKS = len(sys.argv) > 1 and sys.argv[1] == 'kicks'
 _a = sys.argv[2:] if EXT else sys.argv[1:]
-SAMPLES = int(_a[0]) if len(_a) > 0 else (500 if EXT else 2000)
+SAMPLES = int(_a[0]) if len(_a) > 0 else ((1000 if KICKS else 500) if EXT else 2000)
 HOLES = int(_a[1]) if len(_a) > 1 and not EXT else 400
-SEED = int(_a[1 if EXT else 2]) if len(_a) > (1 if EXT else 2) else (2 if EXT else 1)
+SEED = int(_a[1 if EXT else 2]) if len(_a) > (1 if EXT else 2) else ((3 if KICKS else 2) if EXT else 1)
 LATE = 150
 M = 12
 
@@ -208,5 +241,53 @@ def ext():
     print('HE2-P2 (late h_12 within 0.05 of 0.364, 0.556): %s' % ('HELD' if ok else 'REFUTED'))
 
 
+def kicks():
+    rng = random.Random(SEED)
+    holes, run_min, start = 1600, 20, 400
+    events, gaps, relock, opposite, n_relock = [], [], 0, 0, 0
+    for _ in range(SAMPLES):
+        w = hole_word(5, holes, rng)
+        run, last_kick = 0, None
+        for k in range(2, holes):
+            if w[k] == w[k - 2]:
+                run += 1
+                continue
+            if run >= run_min:
+                events.append(k)
+                if k >= start:
+                    if last_kick is not None:
+                        gaps.append(k - last_kick)
+                    last_kick = k
+                # relock: 20 holes of period 2 starting within 50 holes after k
+                for j in range(k + 1, min(k + 51, holes - run_min)):
+                    if all(w[i] == w[i - 2] for i in range(j + 2, j + run_min)):
+                        n_relock += 1
+                        # same phase: w agrees with the pre-kick period-2 word, w[k - 2], w[k - 1] = w[k - 3], ...
+                        agree = [w[i] == w[k - 2 - ((k - 2 - i) % 2)] for i in range(j + 2, j + 6)]
+                        opposite += 1 if not any(agree) else 0      # neither same phase nor a constant word
+                        break
+            run = 0
+    late = [k for k in events if k >= start]
+    nh = SAMPLES * (holes - start)
+    rate = len(late) / nh
+    r1 = sum(1 for k in late if k < 1000) / (SAMPLES * 600)
+    r2 = sum(1 for k in late if k >= 1000) / (SAMPLES * 600)
+    print('HE3: SAMPLES %d, SEED %d; kicks from hole 400: %d, rate %.2e per hole (400 .. 1000: %.2e; 1000 .. 1600: '
+          '%.2e)' % (SAMPLES, SEED, len(late), rate, r1, r2))
+    ok1 = 5e-4 <= rate <= 2.5e-3 and r1 and r2 and max(r1, r2) / min(r1, r2) <= 1.5
+    print('HE3-P1: %s' % ('HELD' if ok1 else 'REFUTED'))
+    if gaps:
+        mu = sum(gaps) / len(gaps)
+        cv = (sum((g - mu) ** 2 for g in gaps) / len(gaps)) ** 0.5 / mu
+        print('HE3-P2: %d gaps, mean %.1f, coefficient of variation %.3f: %s' % (
+            len(gaps), mu, cv, 'HELD' if 0.8 <= cv <= 1.25 else 'REFUTED'))
+    tot = len(events)
+    print('HE3-P3: %d of %d kicks relock within 50 holes (%.3f): %s' % (
+        n_relock, tot, n_relock / tot if tot else 0, 'HELD' if tot and n_relock > 0.7 * tot else 'REFUTED'))
+    print('HE3-U: %d of %d relocks in the opposite phase (%.3f): %s' % (
+        opposite, n_relock, opposite / n_relock if n_relock else 0,
+        'HELD' if n_relock and opposite > 0.7 * n_relock else 'REFUTED'))
+
+
 if __name__ == '__main__':
-    ext() if EXT else main()
+    kicks() if KICKS else (ext() if EXT else main())
