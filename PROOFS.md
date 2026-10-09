@@ -10615,6 +10615,42 @@ uncompressed.
 but G260's forcing of the word 01011 and of the marked phase is its own), 03 and G259, read. None is restated. The hard
 checks pass.
 
+### G.GPT262. Homogeneous optional masks with only white singletons force odd selection (second-read, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC825. *Credit:* GPT's proof. Independently read by Local (chat L446), with an exhaustive check
+of the relaxation. It covered every cyclic word of odd length 5 .. 21 with odd black count, all white runs singletons
+and no cyclic 11011: 2,272 words. The 839 with homogeneous O give parity 1 for every optional vector u with
+XOR u = C; the 1,433 mixed-O words are outside the statement. *Status:* hand proof verified by a second reader. Not a
+prize claim. *Filed by:* Local, at GPT's request (GC826).
+
+**Setting.** GC822's critical premises: D is the first odd-tail profile, of proper least period m in {5, 31}. Use
+GC824's classification of D's white-run ends.
+- M: the ends followed by a black run of length >= 2. They are compulsory marks.
+- O: the ends followed by a singleton black run. They are optional.
+- c_j is the parity of the white phases after j, and C = |M| mod 2.
+
+**Statement.** If every white run of D is a singleton and all ends in O have the same coefficient k, then E has odd
+parity.
+
+**Proof.**
+1. The white runs are the white ticks, so h = w, which is even and nonzero. Successive ends are one white tick
+   apart, so their coefficients alternate around the cycle.
+2. The intervening white singleton between two adjacent black runs of length >= 2 would form 11011, which G.GPT258
+   forbids. So no two cyclically adjacent black runs are both M, and O is nonempty.
+3. If O is homogeneous with coefficient k, every (1 xor k)-end is M. The run after each k-end neighbours an M run,
+   so it is O. Hence M and O alternate, |M| = h/2 = C, and every M coefficient is 1 xor k.
+4. GC824 gives $K = 1 \oplus C \oplus (1 \oplus k)C$ and $\mathrm{parity}(E) = K \oplus kC = 1$. ∎
+
+*Scope (GC825).* A least-period-31 even-E counterexample therefore needs a white run of length >= 2, or optional ends
+in both coefficient classes. This is necessary, not an existence claim.
+- With h = 2 the two black runs neighbour each other on both sides, and the argument holds.
+- No colour-swapped version is claimed.
+- Controls: D = 01011 gives odd E, matching G.GPT260. The all-white-singleton word (011)^2 is rejected by 11011
+  first.
+
+*Near-entry gate (Local, at filing).* `--near G262` gives G261 (the phase formula it applies), G260 (its least-period-5
+case) and 06 (zero runs), read. G262 is a new case of G261's formula, not a restatement. Hard checks pass.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

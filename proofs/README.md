@@ -669,6 +669,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Proper-period tail profiles need both singleton colours; the selection parity reduces to phase sums](G261-proper-period-tail-profiles-need-both-singleton-colours.md):
   In the same hypothetical repeating pattern, every column that repeats on a short cycle must contain both a lone
   black beat and a lone white beat.
+- [Homogeneous optional masks with only white singletons force odd selection](G262-homogeneous-optional-masks-with-only-white-singletons-force.md):
+  In the hypothetical repeating pattern, if a short-cycle column has only lone white beats and its optional beats
+  all lean the same way, the hidden parity is forced odd.
 
 ## Proofs from the sparks
 

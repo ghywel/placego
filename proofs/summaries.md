@@ -3146,6 +3146,15 @@ In the same hypothetical repeating pattern, every column that repeats on a short
 
 **An everyday picture.** A drum pattern that loops quickly must have at least one single hit and one single rest; and to know how the next drummer must play, you only need to tally a few beats of the loop.
 
+## G262
+In the hypothetical repeating pattern, if a short-cycle column has only lone white beats and its optional beats all lean the same way, the hidden parity is forced odd.
+
+**What it says.** The column's white beats each stand alone. Rule 30 forbids two long black stretches separated by one white beat, so the long and short black stretches must take turns. Taking turns fixes the count of compulsory beats, and the parity that decides the next column's direction comes out odd.
+
+**Why it matters.** It closes one more branch in the search for a period-2 pattern, again by reasoning alone. Anything that escapes must have a longer white stretch somewhere, or optional beats that lean both ways.
+
+**An everyday picture.** Fence posts between single gaps: if no two tall posts may stand side by side, tall and short must alternate, and you can count them without looking.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
