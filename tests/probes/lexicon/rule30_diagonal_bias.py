@@ -42,6 +42,10 @@ OUTCOME, 2026-10-09 15:05 BST (M5, 8 threads, run at commit 0e144133; the ladder
 Extension, registered 2026-10-09 16:46 BST before running (the kernel unchanged, `rule30_diagonal_bias 22 6`):
   DB-X1 (blind, confidence 0.8): |rho_22| < |rho_12| = 0.01331 (DB-P2 one lag further).
   DB-X2 (descriptive): rho_22 exactly, and its sign; no sign is predicted.
+EXTENSION OUTCOME, 2026-10-09 19:54 BST (M5, 6 threads at nice 10, 3 h 8 min wall, run at commit 0e144133's kernel):
+  N_22 = 8812909457586, so rho_22 = -8408217689/2^42 = -0.001912 (4^22 |rho_22| = 33632870756; numerator odd).
+  DB-X1 HELD (|rho_22| < 0.01331). X2: the sign is negative, so (-1)^k rho_k > 0 fails again at k = 22; from k = 17
+  the signs are +, -, -, -, +, -. Single kernel; the direct kernel has not replayed k = 20 .. 22.
 """
 import os
 import subprocess

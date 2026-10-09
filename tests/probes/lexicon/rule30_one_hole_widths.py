@@ -65,6 +65,28 @@ EXTENSION (registered 2026-10-09 19:52 BST, before running; COMMAND: ... rule30_
   OH-X3 (blind, confidence 0.6): at width 10, p = 5, 7 and 9 keep positive entropy: more than 2^(n/2) words at n = 14.
   OH-D2 (descriptive): per width and odd-period class, the word counts for n = 1 .. 14, the minimal forbidden words
         through length 10, and the growth rate (the largest eigenvalue of the subset graph).
+EXTENSION OUTCOME, 2026-10-09 19:54 BST (M5, seconds, run at commit bbcb1873): OH-X0 PASS, OH-X1 REFUTED, OH-X2
+  REFUTED, OH-X3 HELD.
+  - Odd p >= 11, every width from 5 to 10: exactly 2 words of every length. The minimal forbidden words are 01 and
+    11, so the hole bit is 0 at every hole after the first; the allowed words are 0^n and 1 0^(n - 1).
+    - My X1 language 1^a 0^b was too generous, so X1 is refuted. X2 is refuted with it, though the language is the
+      same at every width from 5 to 10.
+    - One macro step from any state ends with x1 = 0, for any outside input.
+  - p = 5, 7 and 9 keep positive entropy at width 10, with growth 1.7335, 1.8814 and 1.8668. Their minimal forbidden
+    words begin:
+    - p = 5: 10000, then several of length 7;
+    - p = 7: 01111, 11111, 011100, 111100;
+    - p = 9: 01101, 11101.
+    All three are still fully free at widths 5 and 6, and p = 9 also at width 7.
+  - Relation to PROOFS.md entry 38 (the black-end walls; method from cochon123/rule30-prize, repaired by GPT,
+    replicated by Local).
+    - For finite seeds, entry 38 already excludes these walls for q = p - 1 = 7 and q >= 9, that is, p = 8 and
+      p >= 10. Its two-sided strip on -6 .. 6 contains this width-5 right relaxation.
+    - OH's forcing for odd p >= 11 is the one-sided, seed-free version: it needs no left half and no finiteness.
+    - The periods that keep positive entropy here (p = 5, 7, 9, so q = 4, 6, 8) are exactly entry 38's open
+      black-end cases among odd p >= 5. Entry 38 marks q = 2 .. 6 and 8 open; p = 3 is the separate 100 case.
+    - So, among odd p, the one-sided channel collapses exactly where the two-sided finite-seed exclusion holds, and
+      survives exactly where it does not. This is a finite-width observation, not a theorem about all widths.
 """
 import sys
 from itertools import product
