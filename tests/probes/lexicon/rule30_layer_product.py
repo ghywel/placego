@@ -45,8 +45,12 @@ PREDICTIONS (Local's, 2026-10-09 22:53 BST, before any run of a layer with F):
   LP-U, the unexpected check (blind, confidence 0.5): the shortest word of F that the width-22 layer allows has
         length at least 24 (the width-12 layer's counts already equal TC2's true counts to n = 16).
   LP-D (descriptive): by width, the certificate, live states, and how many F words the layer allows, by length.
-  Counterfactual. If P1 fails, the product still sharpens the width-22 layer (P2), and the record keeps 0.1236; a
-  longer F or a wider layer (24 fits in about 2 GB) is the next step, not a different route.
+  Counterfactual. If P1 fails, the record keeps 0.1236, and P2 is decided on its own test (GC884: P1's failure
+  implies nothing about P2); a longer F or a wider layer (24 fits in about 2 GB) is the next step, not a different
+  route.
+  AMENDED per GPT's GC884 (22:57 BST, before any run with F): verdicts are gated on C1, C2 and C3 (NOT DECIDED if any
+  fails); P2 is tested exactly as R0^500 >= 2 R1^500; the counterfactual above no longer assumes P2. split_f's premise
+  (the layer language is factorial from the full-set root, so F_red changes nothing) is GC884's hand proof.
 C1 FIRST RUN, 2026-10-09 22:54 BST (M5, F empty, widths 16 .. 22): C1 FAILED AS REGISTERED at widths 20 and 22; the
   fault is in the registered comparison, not in either instrument.
   - Widths 16 and 18 agree (ratio and certificate). At 20 and 22, OHC's "growth" 1.111005219364 and 1.099794457745 lie
@@ -163,13 +167,19 @@ def main():
     print('LP-C1', 'PASS' if c1 else 'FAIL')
     print('LP-C2', 'PASS' if c2 else 'FAIL')
     if 22 in res:
+        # GC884: a failed control makes every verdict NOT DECIDED (the arithmetic is still printed above); P2's gap of
+        # 0.002 = 1/500 bits is tested exactly, R0^500 >= 2 R1^500 (common D)
+        ctl = c1 and c2 and c3
         R0, R1, l1, allowed = res[22]
-        print('LP-P1', 'HELD' if below(R1, 1, 2500, 309) else 'REFUTED')
-        print('LP-P2', 'HELD' if math.log2(R0 / D) - math.log2(R1 / D) >= 0.002 else 'REFUTED')
-        print('LP-P3', 'HELD' if below(R1, 1, 1000, 120) else 'REFUTED')
+
+        def verdict(ok):
+            return ('HELD' if ok else 'REFUTED') if ctl else 'NOT DECIDED (a control failed; %s)' % ('held' if ok else 'refuted')
+        print('LP-P1', verdict(below(R1, 1, 2500, 309)))
+        print('LP-P2', verdict(R0 ** 500 >= 2 * R1 ** 500))
+        print('LP-P3', verdict(below(R1, 1, 1000, 120)))
         sh = [x for x in allowed if 'shortest' in x]
         m = int(sh[0].split('shortest')[1].strip(' )')) if sh else None
-        print('LP-U', ('HELD' if m >= 24 else 'REFUTED') + ' (shortest %d)' % m if m else 'HELD (no F word allowed)')
+        print('LP-U', verdict(m >= 24) + ' (shortest %d)' % m if m else verdict(True) + ' (no F word allowed)')
     print('COMPLETE')
 
 
