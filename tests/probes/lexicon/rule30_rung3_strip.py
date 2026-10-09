@@ -64,6 +64,16 @@ WHITE END (registered 21:29 BST, before running; COMMAND: ... rule30_rung3_strip
   6, the black end's mirror image of entry 38. RG above covered only q <= 5.
   WE-C1 (control): the RG verdicts for q = 2 .. 5 (words 001, 0001, 00001, 000001) are reproduced.
   WE-P1 (blind, confidence 0.4): as at the black end, every q from some q0 <= 12 up to 16 passes.
+WHITE END OUTCOME, 2026-10-09 21:30 BST (M5, seconds, run at commit bee5d887): WE-C1 PASS, WE-P1 REFUTED.
+  - Every white-end wall 1 0^q, q = 1 .. 16, FAILS at radius 6. This is unlike the black end, which passes for every
+    q >= 9 with one forcing component.
+  - The non-forcing components grow linearly in q with a period-4 pattern:
+    - q = 0 mod 4: one component, of 204, 364, 524 and 684 vertices at q = 4, 8, 12, 16 (+40 per q);
+    - q = 1 mod 4: one component, of 244, 404 and 564 at q = 5, 9, 13;
+    - q = 2 mod 4: two non-forcing components;
+    - q = 3 mod 4: two non-forcing components and a small forcing one.
+  - Reading: the black end's lock (GC850's nine black steps) has no white-end analogue under this certificate. Long
+    white runs keep the strip unlocked.
 """
 import sys
 from math import gcd
