@@ -266,6 +266,23 @@ TABLE OUTCOME, 2026-10-09 22:19 BST (M5, seconds to 40 s per case, run at commit
     10 states, all with x1 = 0, and a further macro maps those 10 into themselves. So x1 = 0 from the third hole on.
     Machine-checked in Lean as tests/probes/lean/P8Lock.lean (`p8_lock`; no sorryAx). A conceptual hand reason, in the
     style of GC850's invariant, is still open.
+JEN ROUTE (exploratory, found after the TB runs, 22:22 BST; no predictions; COMMAND: ... rule30_one_hole_widths.py jen):
+  - Does the one-sided relaxation force column +1's whole time series, not only its hole bits? At width k, take the
+    stable set S (the images of all states under repeated macros, until they stop changing), then read x1 at every tick
+    of one more macro from S.
+  - Width 6: never determined for p = 8 .. 40.
+  - Width 8: determined for every p = 15 .. 40, always 0101010100...0 (period p). Undetermined at p = 8 .. 14 (ticks 5,
+    7, 9 free for p = 10 .. 14).
+  - Coverage of every p >= 15. At width 8 the black relation's powers are periodic from n0 = 20 with period 4 (OH's
+    table), so the macro classes repeat in p from p = 21 on, and p = 15 .. 40 covers all p >= 15.
+  - Transfer (by hand, for a second reader).
+    - Every actual right half restricts to a width-8 relaxed path. After enough macros its state lies in S, so x1 is
+      eventually periodic with period p.
+    - Column 0 is periodic. Two adjacent eventually periodic columns are impossible from a finite nonzero seed (Jen's
+      theorem with a clock, PROOFS.md entry 5).
+    - So no finite seed has a column eventually reading 0 1^q with q >= 14.
+  - This is a one-sided reproof of part of entry 38 (q = 7 and q >= 9). It is uniform in q without GC806's lemma, at
+    the price of q >= 14 rather than 9.
 """
 import sys
 from itertools import product
@@ -677,9 +694,45 @@ def closed():
           % (equal(10, 7, ['1111', '11100']), equal(13, 9, ['1101'])))
 
 
+def jen():
+    """per-tick determination of column +1 on the width-k stable set, p = 8 .. 40, widths 6 and 8"""
+    def run(k, p):
+        n = 1 << k
+        mask = n - 1
+
+        def stp(x, w, u):
+            return ((((x << 1) | w) & mask) ^ (x | ((x >> 1) | (u << (k - 1))))) & mask
+
+        def img(S, w):
+            return {stp(x, w, u) for x in S for u in (0, 1)}
+        wall = [0] + [1] * (p - 1)
+        S = set(range(n))
+        for _ in range(80):
+            S2 = S
+            for w in wall:
+                S2 = img(S2, w)
+            if S2 == S:
+                break
+            S = S2
+        T, ticks = S, []
+        for w in wall:
+            ticks.append(sorted({x & 1 for x in T}))
+            T = img(T, w)
+        return ''.join(str(v[0]) if len(v) == 1 else '*' for v in ticks)
+    for k in (6, 8):
+        res = {p: run(k, p) for p in range(8, 41)}
+        det = [p for p in res if '*' not in res[p]]
+        print('width %d: column +1 determined at p = %s' % (k, det if det else 'none'))
+        if det:
+            print('  e.g. p = %d: %s' % (det[0], res[det[0]]))
+    print('COMPLETE')
+
+
 if __name__ == '__main__':
     if sys.argv[1:2] == ['ext']:
         ext()
+    elif sys.argv[1:2] == ['jen']:
+        jen()
     elif sys.argv[1:2] == ['closed']:
         closed()
     elif sys.argv[1:2] == ['widen']:
