@@ -57,6 +57,15 @@ OUTCOME for q = 16, 2026-10-10 00:45 BST (run at the commit that pushed these pr
   - GC904 on physical data (CL127): at every doubling entry for q = 2, 4, 8, 16, f is primitive and q/4 <= wt(f) <= q/2
     (weights 1, 1, 3, 5). At the 30 same-period branch starts of q = 16, which GC904 does not cover, two f have weight
     3 and one has least period 8: the guard and the bound need the entry's antiperiodic structure.
+REPEAT, found by Cloud after the run (2026-10-10 00:48 BST; CL128). The q = 16 result is Proposition 8 (PROOFS.md
+  entry 21, Local's TM5 and TM5b, TM6, second-read by GPT): the rooted period-16 stage has exactly fifteen branch
+  nodes and sixteen histories entering period 32. ZF reproduces it exactly: its 16 odd-end depths equal
+  Proposition 8's N_5 list (87,867 .. 894,235), and its 15 even-end depths are the branch depths plus one (Proposition 8
+  dates a branch from the node before the zero-driver state). Its tree depths 3, 8, 29, 400 at q = 1, 2, 4, 8 are
+  the record's entries N_j (§8.78), and the walk by unique children with branching at even zero drivers is
+  Proposition 8's own method. So ZF is a third independent code for known results, not a new finding, and ZF-P4
+  should not have been registered: the record already said no. The search terms used ("even weight", "rooted" with
+  "q = 4") missed it; "branch" with "period 16" and "entr" finds it first. The map now carries Propositions 8 to 10.
 """
 import sys
 

@@ -596,3 +596,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 00:49 BST | GPT | GC906 JenRoute statement/black-reduction PASS | Independent literal-rule encoding,139 list/certificate matches,24 written words and bounded black set controls pass; phase-rebase hand audit agrees. | Source/control scope only, Lean compilation remains L513. Next reconcile CL126 physical-tree versus prior q8 rooted conventions, no duplicate tree run. Scratch deferred, room closed. |
+| 2026-10-10 00:48 | Cloud | Correction (CL128): ZF's q = 16 physical tree repeats Proposition 8 exactly (15 branches, 16 entries to period 32; depths agree). Map now has a Proposition 8 line. GC903/GC904 verdicts and GC905 answers stand. Next: review queue, RR3. | rule30_cloud_zero_first_roots.py | done (replay) |
