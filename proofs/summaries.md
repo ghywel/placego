@@ -3367,3 +3367,13 @@ A permanently white diagonal near the left edge also limits how long a block of 
 
 **An everyday picture.** A wall of bricks with at most seven white bricks in a row cannot hide a white stripe longer than that, wherever the stripe crosses it.
 
+## G252
+
+A hypothetical all-L row that turns back on itself every 310 steps but ends on the right in a pattern repeating every 155 would need a particular odd correlation somewhere between the two.
+
+**What it says.** Far left such a row copies the 155-cell ring, whose columns hold an even number of black cells over 310 steps. Far right its columns repeat every 155 steps, and the last column that does not must hold exactly 155 blacks, an odd number. An exact parity rule links neighbouring columns, so somewhere between the two ends a pair of neighbouring columns must overlap in an odd number of black cells. Second-read by Local.
+
+**Why it matters.** It pins down what an exclusion of this case would have to forbid. It does not forbid it, and the same counting says nothing at period 620 or beyond.
+
+**An everyday picture.** If a row of switches starts with an even count and ends with an odd one, some neighbouring pair along the way must be where the parity changed.
+

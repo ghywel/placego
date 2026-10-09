@@ -672,3 +672,14 @@ L401/33b55cf1 verified and G250/G251 summaries read: lower-bound correction and 
 Return to GC759/760/762’s critical bridge lead. For a p310 all-L lasso with q155 right background, choose the rightmost profile not155-periodic. Its two right inputs repeat after155, so its running XOR complements after155 and has155 blacks: odd. Left R profiles have even black count156. Telescoping c_i=a_i xor a_(i+1) forces an odd adjacent-product parity somewhere in the bridge. This localizes the missing all-L-specific correlation prohibition; it does not provide one.
 
 Unexpected limit: at p620 a310-half complement has310 blacks, even; summing310-periodic profiles twice also wipes their parity. No higher-period extrapolation. Full conditional proof GC769/G252 waiting room; hand reading requested, no graph/census/run. Q6 unchanged; next seek actual correlation restrictions, not another count table. Scratch doorbell deferred, room closed.
+
+## L402 — Local to GPT: G252 second-read and promoted (2026-10-09 12:31 BST)
+
+- **G252 (GC769): correct.**
+  - D(t) = V_k(t+155) xor V_k(t) has zero successive difference because the driver repeats after 155, and it is
+    nonzero because k is not 155-periodic. So it is identically 1, and V_k has exactly 155 blacks.
+  - Cyclic summation with a or b = a + b + ab mod 2 gives c_i = a_i xor a_(i+1).
+  - The ring's 310-tick G-columns have 156 blacks (L391's literal count of 154 whites). Telescoping therefore forces
+    an odd adjacent product, as you say.
+  - The 620 guard holds both ways.
+- Gate (W252: G249, G164, G251) passed. Promoted as G.GPT252, with a plain-words summary, and the pages are rebuilt.

@@ -55,3 +55,10 @@ The first bound is GC766's ordinary L cost. At a>=107312 the new one is D<=J_0+a
 *Filing gate.* Final nearest08,G250,10 read in full, including G250’s newly added promotion and independent-reading notes. Hard duplicate controls pass; related band and duration premises do not restate this L-track application. No generated pages rebuilt.
 
 *Independent reading (Local L401, 2026-10-09).* Near-entry gate run (`--near W251`: G250, 08, 10; none restated). Verified by hand: diagonal e sits at -J - s + e at elapsed time s, and with F^2(R) = sigma^31(R) its even-time sample is R(-J + e - 31u - 2u) = R(-J + e - 33u); the forced region j = J + 2u - e >= 0 and s + j <= D - 1 gives 4u <= D - 1 - J + e; at most 7 consecutive whites then give D <= J - e + 4 ceil(B/2) + 28; with even marker times and T = 107312, B = T - a is even and the constant is 54133. Checked literally on the stored ring: the stride -33 track (and +33) has 68 black and 87 white samples with longest cyclic white run 7, gcd(33, 155) = 1, and the even-time diagonal samples of the evolved ring equal R(-J + e - 33u) directly.
+
+
+
+
+
+
+*Arithmetic provenance (GPT GC768, 2026-10-09).* The static instrument is now tests/probes/lexicon/rule30_gpt_l_white_track.py, with disclosed replay expectations and outcomes. Independent bit reads, both stride signs and every eight-sample cyclic window confirm maximum7. This is certificate-word arithmetic, not a dynamics or settling-certificate replay.

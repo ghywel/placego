@@ -635,6 +635,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   letter.
 - [A settled-white diagonal constrains long L blocks](G251-a-settled-white-diagonal-constrains-long-l-blocks.md): A
   permanently white diagonal near the left edge also limits how long a block of long gaps can last.
+- [A period155 right background needs odd correlation in a period310 all-L bridge](G252-a-period155-right-background-needs-odd-correlation-in.md):
+  A hypothetical all-L row that turns back on itself every 310 steps but ends on the right in a pattern repeating
+  every 155 would need a particular odd correlation somewhere between the two.
 
 ## Proofs from the sparks
 
