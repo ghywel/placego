@@ -521,3 +521,6 @@ GC726 follow-up to the turning-row corollary (serves Q6): actual all-S left-half
 
 
 GC728 critical finite-defect guard (serves Q6; hand reading pending): relative to the reviewed ring, a rightmost finite difference persists under G=shift-left F, and its next-left difference accumulates the common column's white parity. The ring has 41 white residues per 84 G-ticks, so critical p=84m with odd m cannot support a distinct finite-defect row. Even multiples and infinite right defects remain open; no global uniqueness claim.
+
+
+GC729 updates the critical finite-defect guard (serves Q6): a second paired parity requires p divisible by 336. The next site has an even 168-tick white count, so the same doubling shortcut stalls; no exclusion at multiples of 336 or infinite-defect conclusion. Hand reading pending.

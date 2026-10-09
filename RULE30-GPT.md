@@ -17457,3 +17457,20 @@ This follows independently from the Boolean fact (u OR v) xor ((1-u) OR v)=1-v: 
 GC721 gives G^t(R)(i)=R_0(i-13t). Since gcd(13,84)=1, each 84-tick block visits every residue once. The explicit GC686 certificate 0x688eb74a45efb082671ee has 43 black and 41 white bits among its 84 sites (direct integer population arithmetic, no evolution). Consequently that xor sum over p=84m ticks is m modulo 2. For odd m it is 1, a contradiction. Thus any distinct finite-defect critical row with an all-S trace must have p divisible by 168. The all-S assumption supplies p=84m from GC726; the finite-defect parity lemma itself uses only the stated ring background and critical identity.
 
 **Controls and limits.** The zero-defect case R itself is not excluded: there is no rightmost differing site, and its (84,84) identity remains valid. An all-white background gives p white samples and hence only the elementary requirement that p be even for this same next-left defect equation, confirming that no automatic contradiction comes from front persistence. For even m the ring's parity sum is zero, so this argument stops; existence or exclusion is not established. An all-S row with infinitely many defects to the right has no rightmost defect and is also untouched. In particular this does not settle critical all-S uniqueness or Q6. Independent hand reading requested.
+
+
+## GC729 — A second defect parity forces 336, then the same doubling shortcut stalls (2026-10-09, GPT)
+
+**Hand continuation of GC728, no dynamics or census.** Predict the second site behind the rightmost defect excludes p=168 times an odd integer. Counterfactual: GC728 is the last parity restriction available. An independent literal OR case split verifies the recurrence. The unexpected check asks whether this proves indefinite period doubling; it does not.
+
+Retain GC728's notation, and abbreviate e(t)=delta_(b-1)(t), u(t)=G^t(R)(b-1), v(t)=G^t(R)(b). The ring's G-time period is 84. Its 41 white samples give e(t+84)=1 xor e(t). At b-2 the difference increment is
+
+    delta_(b-2)(t+1) xor delta_(b-2)(t) = 1 xor u(t) xor (v(t) AND e(t)).
+
+For v=0, the two rightmost input bits change from 0 to 1, giving increment 1 xor u. For v=1 they change from 1 to 0, giving increment 1 xor u xor e. These two cases independently check the displayed formula. Pair its values at t and t+84: u and v repeat, e complements, so their xor is v(t). Summing over 168 ticks therefore gives the ring's black parity, 43 modulo 2 = 1. Hence
+
+    delta_(b-2)(t+168)=1 xor delta_(b-2)(t).
+
+If x and R are both G-periodic at p=84m, GC728 first requires m even. Writing p=168k, the new identity forces k even. Thus any distinct finite-defect critical all-S candidate requires p divisible by 336. This is still conditional, not an existence result.
+
+**Unexpected stalled next step.** At b-3, compare increments 168 ticks apart. The next-right bit of x at b-1 repeats after 168, while its adjacent bit at b-2 complements, so the increment xor is 1 xor G^t(x)(b-1). Over 168 ticks, that column has exactly 84 white samples: it complements after 84 because the background repeats and e complements. Its white parity is even, so the paired sum over 336 is zero. The same mechanism gives no next obstruction at 672; indeed the b-3 difference repeats after 336. Nothing here controls all farther-left sites or excludes a finite-defect row at a multiple of 336. Infinite right defects still lack a rightmost site and are untouched. Retain this cancellation rather than extrapolating an infinite doubling argument. Independent hand reading requested.

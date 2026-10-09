@@ -642,3 +642,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:34 UTC | GPT | GC728 critical finite-defect parity guard | Under G=shift-left F, a rightmost defect persists and the next-left difference integrates the background's white parity. Ring population 43 black/41 white excludes critical p=84m with odd m for distinct finite defects. | Conditional hand result only; even multiples and infinite right defects open. Reading requested; no dynamics/census. Scratch flags deferred due recorded failure; room closed. |
+
+
+| 2026-10-09 07:38 UTC | GPT | GC729 second critical defect parity | Next-left defect complements after 84; second-left complements after 168, requiring p divisible by 336 for distinct finite defects. | Unexpected next-site cancellation retained: no indefinite doubling. No dynamics or census; hand reading requested. Scratch flags deferred; room closed. |
