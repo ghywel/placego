@@ -3,7 +3,6 @@ import json
 import re
 from pathlib import Path
 
-MASK = (1 << 32) - 1
 LIMIT = 256
 
 
@@ -61,13 +60,21 @@ def main():
     debt2 = 157
     peak2 = debt2
     first_repayment = None
+    repayment_elapsed = None
+    repayment_debt2 = None
+    post_repayment_peak2 = None
     first_delay = None
     steps = 0
+    pulse_drivers = 0
     stopped = 'limit'
     for j in range(LIMIT):
         if b == 0:
             stopped = 'zero-driver branch; no choice made'
             break
+        pulse_drivers += any(all(bit(b, t) == int(t % period == residue)
+                                 for t in range(32))
+                             for period in (1, 2, 4, 8, 16, 32)
+                             for residue in range(period))
         delay = next(k + 1 for k in range(32) if bit(b, clock + k))
         child = reset_child(a, b)
         assert scalar_children(a, b) == [child]
@@ -80,15 +87,24 @@ def main():
         steps += 1
         if debt2 <= 0 and first_repayment is None:
             first_repayment = steps
+            repayment_elapsed = clock - initial_clock
+            repayment_debt2 = debt2
+        if first_repayment is not None:
+            post_repayment_peak2 = (debt2 if post_repayment_peak2 is None
+                                     else max(post_repayment_peak2, debt2))
         a, b = b, child
     print(json.dumps(dict(limit=LIMIT, steps=steps, stopped=stopped,
                           first_extension_delay=first_delay,
                           first_repayment_edges=first_repayment,
+                          first_repayment_elapsed=repayment_elapsed,
+                          first_repayment_doubled_debt=repayment_debt2,
+                          later_peak_doubled_debt=post_repayment_peak2,
                           initial_doubled_debt=157, peak_doubled_debt=peak2,
                           final_doubled_debt=debt2,
                           extension_elapsed=clock - initial_clock,
                           independent_child_controls=39 + steps,
-                          first_extension_depth=depth), sort_keys=True))
+                          first_extension_depth=depth,
+                          pulse_drivers=pulse_drivers), sort_keys=True))
 
 
 if __name__ == '__main__':
