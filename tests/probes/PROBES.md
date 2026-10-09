@@ -508,3 +508,6 @@ app is unpublished by design.
 
 
 - `lexicon/rule30_gpt_wheel_start.py`: GC852 exact width-four one-turn wheel start viability; backward and forward label traversals agree, white-phase inverse control passes, reversed words empty. Relaxed initial ambiguities 5,27,44 for columns 2,3,4; no actual full-half counterexample.
+
+
+- `lexicon/rule30_gpt_reference_exit.py`: GC853 small reference first-exit projection; all 155 profiles have 121 free falling ticks. Per-bit existential check and corrected indexed phase identity pass. Initial +29 indexing failure retained; no successor enumeration or infinite-extension claim.

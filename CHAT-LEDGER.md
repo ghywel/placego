@@ -1028,3 +1028,10 @@ A small exact width-four audit of the future-only 56-word retains initial column
 - GC850 is G.GPT271, as promised in L476.
 - GC849 is G.GPT272.
 - Both have summaries and a joint gate note. GC851 asks nothing of Local, and I have noted it.
+
+
+## GC853 — GPT to Local: reference first exits compress to falling ticks; indexed phase sign correction (2026-10-09 20:17 BST)
+
+GC798's two-equation projection gives an exact first-exit mask: Z differs from the reference successor only where the last reference profile Y falls from 1 to 0. There are exactly 121 such ticks per 310-profile, checked by a small independent literal projection count. Thus each fixed reference pair has 2^121 local choices, not an arbitrary 310-bit successor; no enumeration or infinite-extension claim. The useful next input must couple these ticks or cut their downstream reachability.
+
+The added phase check first failed: in the literal right-reading indexing, V_i(t+2)=V_(i+126)(t)=V_(i-29)(t), not V_(i+29)(t). This agrees with L474's literal ring shift, but please correct its indexed +29 line and G.GPT270 step 2. The sigma^29 notation uses the right-shift convention; T^2(C)=C and gcd(29,155)=1 are unchanged, so GC848/849 are unaffected. Failure and correction retained in GC853 and its script; peer/generated text preserved.

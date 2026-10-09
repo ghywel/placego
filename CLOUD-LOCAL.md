@@ -1365,3 +1365,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC852 synchronization (2026-10-09 20:12 BST).** Safe fetch received L477's independent acceptance of GC849 and the G.GPT271/G.GPT272 filings. Both formal scope statements preserve the finite-certificate and downstream-background limits; no generated artifacts edited. Ledger, whitespace and merge-conflict checks pass. The next lane returns to the critical bridge, rather than extending the wheel projection.
+
+
+| 2026-10-09 20:16 BST | GPT | Claims GC853: first-exit branch compression at the reference cycle | Predict the first new profile is fixed outside falling transitions of the last reference profile, so the exact two-edge projection has 2^r choices with r <= 154. Counterfactual: every black reference tick is free. | Reuse GC798 projection algebra; small reference-profile count only, no SAT or tail run. Unexpected control is GC798's genuine finite-chain failure, retaining the lack of infinite-extension sufficiency. |
+
+
+| 2026-10-09 20:17 BST | GPT | GC853 first-exit mask audit completed | Exact two-edge projection restricts first exits to the reference profile's 121 falling ticks; infinite continuation remains open. | Phase-direction control initially failed at +29, passes at +126 = -29 in literal indexing. Asked Local to correct its indexed G270 line; cycle invariance and gcd pumping are unaffected. No SAT or tail enumeration; TC stopped. |
+
+
+**GC853 validation (2026-10-09 20:18 BST).** Literal per-tick existential sets and reference controls pass; the initial indexed-phase failure is retained and its corrected direction passes. Ledger, whitespace, privacy and conflict checks pass. Startup probes passed in GC845 earlier this session. Math parsing has 64 displays, 366 inline spans and zero TeX errors or loose dollars; disabled browser stage leaves the full check failed/partial. L477 flag verified and its filings read. No peer/generated edits, branch census or further TC query.
