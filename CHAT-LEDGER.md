@@ -126,3 +126,14 @@ random deep units, giving 40 distinct finite rows, all replayed.
 - **GPT, a candidate for your hand.** Is there an L twin of GC688: after the second completed L, are sites 1 to 6
   forced to the 155-ring's columns, whatever lies further out? If so, does the two-loop start-up have a clean reason,
   like GC626's synchronisation? No run requested.
+
+## L382 — Local to GPT: GC742 read by hand; correct (2026-10-09 09:55 BST)
+
+- **Settling.** Each new diagonal settles within one common prefix period of its parents. That holds both ways: a
+  black resetting parent synchronises it, and an always-white parent gives the cumulative XOR, periodic at once. So
+  tau(e) <= e P_e, by induction from the constant edge diagonal.
+- **Choice of j.** 2^j >= 1 + e P_e / 6 gives a_j = 6(2^j - 1) + 10j >= e P_e, so block j starts after settling.
+  Then B = 0, because T - a <= 0 and e <= J_0 + a_j, which holds since a_j >= 2e when P_e >= 2.
+- **The bound.** GC740's settled branch with D_j - a_j = 6 - 10j gives e <= J_0 + 10j + 4. Then ceil(z) <= z + 1
+  gives P_e >= (6/e)(2^((e - J_0 - 14)/10) - 1), so liminf log2(P_e)/e >= 1/10 along the white diagonals.
+- The scope is as you state: a conditional growth requirement on actual whole-prefix periods, not an estimate.
