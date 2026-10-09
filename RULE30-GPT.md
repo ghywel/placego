@@ -16450,3 +16450,25 @@ Thus the black-time tests at times0,2,4,6 pass for both, but the test at time8 p
 Consequently a formal survivor with this free even code must have odd depth9 white. The particular finite perturbation of the checkerboard that corrects only depths2,3,5 fails at time8. This is a new farther required correction for that concrete candidate, not a proof that every finite even code has infinitely many odd corrections, that its eventual tail is nonperiodic, or that finite left support is impossible. Allowing further odd corrections remains open. The earlier speculative counterfactual about all finite corrections has not been tested by these two cones and is not declared refuted.
 
 The depth9 alternatives are the unexpected boundary control: their histories agree through time7 and separate only at the final tested time. This supplies an actual tail constraint with a bounded instrument check, not an infinite survivor or a second-party review. Stop higher-pivot reconstruction examples without an invariant controlling the entire tail. Local reading requested; Q6 remains open, with no prize candidate.
+
+
+## GC677 — Finite checkerboard defects have a bounded two-step state space (2026-10-09)
+
+**Scope and new input.** Address GC676's whole-tail candidate rather than more pivot reconstruction. In left-depth coordinates under the imposed alternating wall, the reference row s_i=i mod2 for i>=1 is stationary at both wall phases; its wall value s_0 follows the imposed clock. Consider a row differing from it at only finitely many depths. This is a cofinite checkerboard domain, distinct from Q6's finite left support with a zero tail. No transfer between these domains is assumed.
+
+Write delta_i=a_i XOR s_i, with delta_0=0. For i>=2, direct expansion of the actual left-depth update gives
+
+    i odd:  delta_i' = delta_(i+1) XOR (delta_i AND NOT delta_(i-1));
+    i even: delta_i' = delta_(i+1) XOR (delta_(i-1) AND NOT delta_i).
+
+These hold at either wall phase; only depth1 has a phase-dependent boundary formula. Let J be the largest positive defect depth, or0 if there are none. All depths above J+1 remain defect-free. If J is odd, depth J+1 is even and its next defect equals delta_J=1, so J'=J+1 exactly. If J is even, depth J+1 stays clean and depth J's next defect is0, so J'<=J-1. The empty defect remains empty. Consequently
+
+    J(t+2)<=J(t),
+
+and during the intervening tick the radius is at most J(t)+1. This is a whole-tail invariant, not a finite-prefix measurement. It contrasts with GC662's radius growth for a genuinely finite black-support row; that outward-front argument cannot be reused on this background.
+
+**Finite-state consequence.** Starting at a black wall time with defect radius at most J, the two-step map preserves the finite set of2^J possible depth1..J defect patterns, with the checkerboard tail fixed. Testing depth1=1 at every black time is therefore decidable on this domain: either a test fails or a state repeats among the first2^J+1 black-time states. A repeated state whose earlier tests all passed gives a continuing left-only clock-compatible orbit. The intermediate update is determined by the fixed tail and the radius bound, with no guessed exterior. No classification or search of that state space was run, and no nontrivial survivor is asserted.
+
+**Unexpected noncontraction control.** Start with the single defect delta_3=1. The first update has defects at depths2,3,4; the second has outermost depth3 again. Thus J is3,4,3, showing that the two-step bound need not be strict. Meanwhile GC640's first black-time condition requires delta_3=delta_2; it fails, so depth1 is0 at time2. A radius invariant alone does not certify wall compatibility or a survivor. This hand control retains the boundary and the same-radius case.
+
+**Disposition.** The finite-defect checkerboard ansatz has a genuine bounded state space, unlike finite-support left rows. This supplies a whole-tail tool for GC676's restricted finite-correction question, not an exclusion of finite left support, a uniform deadline, right-half realization or prize result. Stop tail guesses and pivot examples; use this invariant only for a concretely specified finite-defect certificate or a review. Local reading requested, especially the distinction from GC662.

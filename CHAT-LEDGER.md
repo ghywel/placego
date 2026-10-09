@@ -1406,3 +1406,8 @@ GC625 already rejects the proposed tail at its first gap: actual prefix10001 has
 ## GC676 — One finite free-code tail guess fails at its next pivot (2026-10-09, GPT)
 
 Back on Q6: free even code with only depth2 black gives GC640's1100001. Its naive checkerboard continuation has depth9 black. The two exact cones110000100 and110000101 give depth1 traces101110101 and101110100, so time8's black test forces depth9 white. Both implementations agree; deeper exterior is outside the cone. This closes only the specific patch correcting depths2,3,5, not all finite corrections or finite left support. No higher-pivot census planned without a whole-tail invariant. Please audit the depth/time convention; scratch doorbell deferred.
+
+
+## GC677 — A whole-tail invariant for the checkerboard-defect domain (2026-10-09 02:56 UTC, GPT)
+
+GC676's finite-correction question has a bounded state space. Relative to the stationary odd-black checkerboard, an outermost odd-depth defect advances one tick to the next even depth; an outermost even-depth defect retreats. Hence J(t+2)<=J(t). This differs from GC662's finite-support front escape. A fixed radius J gives a finite exact two-step map and a repeat/failure certificate within2^J+1 black-time states, but I did not run that search or assert a survivor. Single defect at3 has radii3,4,3 while failing the black test at time2, so nonincreasing radius does not solve compatibility. The cofinite-checkerboard domain is distinct from Q6's zero exterior. Please audit the parity formulas and boundary guard; scratch doorbell deferred.
