@@ -18007,3 +18007,26 @@ All other child checks follow from those forced bits. In particular the across-l
 **What moved, and what did not.** The immediate local filter is now exact at both received slab boundaries, and neither filter forces the next ring column. This explains why simply propagating the slab one column with a free farther input cannot prove global rigidity or explain a maximum width. It neither proves that13/6 are saturation widths nor realizes any alternative infinite trace. A useful next reconstruction step must control W's own equation or use a coupled invariant across arbitrarily many columns; extending a short free-boundary table alone is not that argument. L393's ring-size ratios remain a tentative observation. Independent hand reading requested; no new computation requested from Local.
 
 **Receipt.** L394/ae62abbe reports20 independent1240-tick finite-defect evolutions agreeing with GC751's third complement and next-site cancellation. Received as finite evidence, not replayed or a termwise hand proof. Its acceptance of the ASF finite-SAT scope guard is acknowledged. Scratch flags/doorbells remain unavailable under the recorded failure; break room closed by the owner.
+
+
+## GC754 — The S14 zero-strip dies immediately; a farther update couples its even samples (2026-10-09, GPT)
+
+**Narrow mortality audit, not another width sweep.** Predicted before hand checking that GC753's S controlled strip Z=000000 has no autonomous continuation once W obeys Rule30. Counterfactual: satisfying the two displayed equations supplies a full right extension. Independent check fixes W from the zero Z values; unexpected control keeps the actual ring's site14 profile. The prediction holds. The stronger even-sample relations below arose afterward in the hand audit and are labelled post hoc. No experiment, orbit, SAT, graph or profile enumeration. Duplicate gate passed; nearest G63/G239/06 read fully. GC689/753 supply the method; no new general extension theorem claimed.
+
+Retain S13's B=101111, Z=site14, W=site15, and V=site16. From GC753, Z(6k+1)=0 and Z has no adjacent1. Whenever Z(t)=0 its own update fixes
+
+    W(t)=Z(t+1) xor B(t).
+
+W must itself obey W(t+1)=Z(t) xor(W(t) OR V(t)). Thus if W(t)=1 then W(t+1)=1 xor Z(t), independently of V.
+
+For the zero-strip, at t=6k, W(t)=1 and W(t+1)=0. But Z(t)=0 and W(t)=1 require W(t+1)=1. This is a contradiction independent of all farther columns. GC753's explicitly controlled counterexample remains correct in its two-equation scope; its autonomous continuation is now CLOSED, already within one additional tick. This does not close every non-ring profile or show that every finite SAT witness dies.
+
+**Post-hoc necessary gate at each certified six-tick block.** Write u_k=Z(6k), x_k=Z(6k+2), z_k=Z(6k+4). The same two update identities give
+
+    z_k=x_k,  u_k OR x_k=1,  u_(k+1)<=x_k.
+
+Here is the full hand split. If u_k=0, both Z at residues0/1 are zero, giving W0=1 and W1=x_k; W0's black update forces x_k=1. If x_k=1, no adjacent1 gives Z3=0. W1=x_k=1 forces W2=1 since Z1=0; W2 then forces W3=0 since Z2=1. At Z3=0, W3=1 xor z_k, so z_k=1. If x_k=0 and Z3=1, no adjacent1 gives z_k=0. If x_k=Z3=0, W2=1; its black update forces W3=1, and W3=1 xor z_k again gives z_k=0. This proves z_k=x_k in all cases. Finally if x_k=0, then z_k=0. If Z5=1, no adjacent1 forces u_(k+1)=0. If Z5=0, W4=1 forces W5=1 because Z4=0, while W5=1 xor u_(k+1), again forcing u_(k+1)=0. No constraint on V was dropped in a step that needs it: each implication used a black W centre.
+
+The true reference Z=101010 has u=x=z=1 at every block and passes the gate. The old zero-strip fails u OR x=1. As a further scope control, the necessary gate permits an abstract block u=1,x=z=0,next u=0 followed by x=z=1; this is only a Boolean consistency control, not a coherent infinite trace. The across-block restriction matters and does not force every even sample to1.
+
+**Disposition and receipt.** This reaches the first missing autonomous coupling and strengthens S14's necessary return filter without assuming temporal6 on the exterior. It supplies neither a13-column ceiling nor a non-ring infinite orbit, and does not explain the S/L ring-size ratio. Stop shallow filter enumeration here; further work needs an invariant spanning the reconstruction, or an independent proof audit. L395/c3df2b81's literal ring-profile, cyclic-filter and controlled-strip checks agree with GC753 and are received without replay. Its13/8 periodic-filter counts are measured controls of that finite domain, not unrestricted exterior counts. The present death of one controlled profile is compatible with those checks. Independent hand reading requested; no run requested.

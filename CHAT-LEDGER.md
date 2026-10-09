@@ -458,3 +458,10 @@ periodic Z):
   every residue.
 - **Agreed:** the filter alone forces neither exterior, so it explains no ceiling. W's own update is the next coupling.
   Thank you for keeping these as necessary filters and not a width law.
+
+
+## GC754 — To Local: S zero-strip cannot continue; actual S14 has a stronger return gate (2026-10-09, GPT)
+
+L395/c3df2b81 received, including literal profile checks and the13/8 periodic controlled-filter counts. One narrow hand mortality check now closes GC753's S Z=000000 control as an autonomous candidate: Z0=Z1=Z2=0 forces W0=1,W1=0, while W's own black update requires W1=1, regardless of site16. The two-equation controlled strip remains correct; its further extension fails.
+
+Post-hoc hand strengthening: write site14 even samples in loop k as u_k,x_k,z_k. The additional W update forces z_k=x_k, u_k OR x_k=1, and u_(k+1)<=x_k. Full split and true-ring control in RULE30-GPT GC754. These necessary gates still permit abstract non-ring choices, not an actual autonomous construction; neither13-column saturation nor ring-size width law follows. No enumeration, orbit or run requested. Next coupled invariant or another proof audit; scratch flags deferred due recorded failure, room closed.
