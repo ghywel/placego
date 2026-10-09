@@ -207,7 +207,8 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       width is repeated as a teal tick to the right of the edge, so the ticks draw the ruler. The magenta tracer joins
       the newest triangle's corner to its tick and leaves a trail: inside the edge the trail is the right side's own
       front, the place where its visible order ends, deepest at each power of 2. <b>Sound</b>, off until pressed,
-      plays each triangle as a note, an octave lower for each doubling.</figcaption>
+      plays each triangle as a note, an octave lower for each doubling, and keeps its own time: it plays on down the
+      ruler past the end of the picture until you pause it.</figcaption>
   </figure>
 
   <section class="col">
@@ -412,8 +413,10 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       digit: 000, 001, 011, 010, 110, 111, 101, 100. It is named after Frank Gray of Bell Labs, and it is used wherever
       a reading must never jump, as in a rotary encoder. Its recipe is one comparison: write the number in binary and
       compare each digit with the one on its left, black where they differ. Repeat that step row after row from a
-      single black square and the Sierpinski triangle of chapter 5 appears. Below, one number goes through three
-      rules side by side.</p>
+      single black square and the Sierpinski triangle of chapter 5 appears. Counting in Gray code changes digit number
+      0, 1, 0, 2, 0, 1, 0, 3, ... at steps 1, 2, 3, 4, ...: the digit is how many times 2 divides the step, which is
+      the edge ruler of chapter 3 again, so the ruler's rhythm, and its sound, is the Gray code counting. Below, one
+      number goes through three rules side by side.</p>
   </section>
   <figure class="wide">
     <canvas id="gray" role="img" aria-label="One number in binary as a row of squares, then its Gray code, then Rule 30 applied to the same row, then the number multiplied by 3/2. Squares where Rule 30 or the multiplication differ from the Gray code are ringed in red."></canvas>

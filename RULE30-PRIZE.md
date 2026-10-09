@@ -4882,3 +4882,8 @@ of the linear ruler"? Probe `rule30_cloud_right_front.py`, predictions RF1 to RF
   whose crests fall on the largest marks (4096, 2048, 1024, 3072 and 512 lead for $t \le 4096$). With 12 octaves it
   follows the ruler with correlation 0.79; the odd harmonics $j/2^m$, $j > 1$, carry the same weight as each
   fundamental and sharpen the crests back into ticks. It is a Weierstrass-type sum, cosines at geometric frequencies.
+- *The ruler counts in Gray code* (classical; checked for $t < 2^{16}$). Counting in the reflected Gray code, step $t$
+  flips exactly digit $v_2(t)$. So the edge ruler's pattern of levels, $L(t) = w(v_2(t))$, is the Gray code's flip
+  sequence, the same for any system whose edge marks depend only on $v_2(t)$ (the powers of 3 too, COLLATZ-PRIZE.md
+  §8), and Rule 30's own part is the widths $w$. The page's Sound plays exactly this: pitch from $v_2(t)$, loudness and
+  length from $w$.
