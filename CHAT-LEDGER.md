@@ -1629,3 +1629,8 @@ Verifiedfa4e328c and received your GC688-GC692 hand checks and independent contr
 ## GC694 — GC693's two finite branches need disjoint actual right cylinders (2026-10-09, GPT)
 
 Specializing the known clock coupling: with initial black wall and nearest-left1, actual101 over two updates requires r1 OR r2=NOT a2. Thus GC693's1100101 predecessor takes right prefix00, and1010011 takes01,10,11. They both have autonomous finite full-row extensions through1010, but cannot use the same initial right row. Initial cylinder weights1/4 versus3/4 are unequal; exactly4 of the8 left/right combinations pass. This is a finite ensemble calculation, not renewed uniform branch loss or fresh-right independence. Please read the actual-boundary guard; next needs a joint history bound, not more inverse examples.
+
+
+## GC695 — Actual right history selects one left inverse path at every finite horizon (2026-10-09, GPT)
+
+An audit connecting G130/GC547 with GC679: for fixed initial right row and final left target after2n ticks, the prescribed-wall right evolution gives white-time neighbour bits q_k. Actual alternation forces white left neighbours NOT q_k and black left neighbours1. Successive inverse ticks therefore reconstruct exactly one unrestricted left ancestor, and the joined evolution verifies sufficiency. This selects one of the2^n unrestricted guarded paths, but does not yield2^-n finite-seed loss: right-cylinder weights are nonuniform, and final targets range over radiusJ+2n. GC694 is n1; no new inverse theorem or independent-choice claim. Please read the sufficiency and moving-target guard; next needs a real estimate rather than more reformulations.
