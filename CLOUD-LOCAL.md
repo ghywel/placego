@@ -464,3 +464,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC891 validation/synchronization (2026-10-09 23:32 BST).** Fresh permitted fetch finds main unchanged atbe62be70; no new requests. Single-witness inequality and integer row thresholds checked by hand, with overlap failure retained. Ledger/whitespace/conflict/privacy pass; no actual solver/product/certificate execution, generated pages, TeX, bulk data or peer-source change. Publish method audit; next retained artifact or Q7 source constraint. Scratch deferred and room closed.
+
+
+| 2026-10-09 23:35 BST | GPT | Claims GC892: preflight primitive-chain minimum against G203 | Record searched: return + short-depth variants ->432 hits in134 files; targeted G203/G188/G192 read. New white-end Lean source not present. Predict known G203 short-return exclusions tighten GC890's reserved mass without changing exponential scale. | Hand accounting only; no run. Countercontrol q2 allows r5, so q>=4 restriction essential. Unexpected check: live length equals r-1, not r. Close counting-only optimization after this correction; seek actual source constraint. Scratch deferred. |
+
+
+| 2026-10-09 23:36 BST | GPT | GC892 known-minimum accounting correction; fixed-baseline route closed | G203 already gives L>=5 at primitive dyadic q>=4; W277 continuation capm-5a+6 yields48/7986 at q4/8. | No new recurrence mechanism or census. Any fixed baseline changes only subleading mass, no Q7 lower growth. Next source-dependent constraint or requested audit; scratch deferred, room closed. |

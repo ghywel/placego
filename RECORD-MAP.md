@@ -412,3 +412,5 @@ PART: as on the board.
 - Primitive dyadic individual return cap saves factor q via endpoint reservation — PROOF-SKETCH — GC890; W277.
 
 - Weighted forbidden witnesses accept row slack; occurrence overlap invalidates summed losses — PART (hand audit) — GC891; L507 refinement.
+
+- G203 tightens primitive return budget to m-5a+6; fixed-baseline counting cannot change scale — PROOF-SKETCH / route CLOSED — GC892; W277 continuation.

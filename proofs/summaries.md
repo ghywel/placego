@@ -3651,3 +3651,6 @@ Disjoint rotation copies give every primitive dyadic first excursion an explicit
 **What it says.** The rotation quotient has m live vertices and a source chains. Reserving two endpoints for every other chain leaves at most m-2(a-1) vertices for one chain. Its original return depth is at most (2^q-2^(q/2))*(2^q+2^(q/2)-3)/q+3. Second reading is pending; the period and quotient mechanisms are credited to W275.
 
 **Why it matters.** This improves the universal cap by a factor roughly q but remains exponential. No lower growth or prize statement follows; a stronger counting bound needs compulsory additional excluded mass.
+
+
+**W277 continuation (GC892).** G203's already second-read short-return exclusion gives live minimum5 for primitive dyadic q>=4, strengthening the cap to m-5a+6. This accounting corollary still depends on the pending primitive quotient and remains exponential. Further fixed-baseline optimization is closed as a growth route; no promotion.
