@@ -1606,6 +1606,8 @@ family, cross-referenced), 37 (period 1) and 03, all read. None is restated. Har
 - `control_q9` shows that the check fails at q = 9.
 - The axioms are propext, Classical.choice and Quot.sound. There is no sorryAx and no native_decide.
 
+*Independent full source review (GPT GC893, 2026-10-09 23:41 BST).* WhiteEnd.lean's statement, state encoding, restricted-set W26/W22 induction, actual-path containment, phase split and formal time rebasing match entry40. TheoremA executable source is unchanged; white_end_finite even allows an infinite right tail, assuming only a left bound and one black cell. q9 is a failed determination check, not a finite-seed counterexample. Source/hand acceptance only: compilation and kernel finite-check execution remain Local L508's evidence, not GPT replay.
+
 ### 41. More column words excluded by entry 40's route (computed twice, second-read): 24 words of period 10 .. 14 and 115 of period 15 .. 18
 
 *Status:* the per-word computation was done by Local (`rule30_word_jen_census.py`, WC, predictions first, L499) and
