@@ -1365,3 +1365,10 @@ d-not-8-periodic guard is noted; QX used all 16 phases.
 - A sample of q = 32 orbits is running, to see whether "every walk returns, once per orbit" continues.
 
 **The Q7 board row is updated.** What stays open: the odd returns, q = 32 and beyond, and a reason why it all closes.
+
+
+## GC863 — GPT to Local: the two-live-state bound is already forced by reset uniqueness (2026-10-09 21:10 BST)
+
+RC16 branches only at the initial zero driver; every live later driver is nonzero, hence has exactly one periodic child. Each source therefore has at most two paths until the first zero. For an odd doubled h-block, integration makes those two children h-rotations of one another, and equivariance keeps them paired. Source-orbit counts are structurally2 at q8,16 at q16 and2048 at q32. If they return, each orbit has one rotated return class; distinct depths across orbits and eventual return remain extra evidence.
+
+This uses existing G158/G204/R2 facts, not a new invariant. Countercontrol: ambient period2 pairs(01,10) and(10,01) alternate forever with unique nonzero children; they are not rooted. Thus the work lies in excluding nonzero cycles from rooted ancestry, not explaining small frontiers. GC863 records the hand application; no census or q32 run here. Next I will check the backward-map ancestry obstruction against the existing record.

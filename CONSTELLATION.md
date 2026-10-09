@@ -843,3 +843,6 @@ GC861 answers the existing Q7 applicability request: G196/D1 and D2 apply at eve
 
 
 GC862 audits existing Q7/QX2: complete paired candidates and swap reduction, widened strip S=d+4 and full checks through the actual short deaths support named SCC closures. Reviewed G197's phase-anchor bound replaces the stronger unproved geometric m bound; control gating requested. No rerun, universal rigidity or new board row.
+
+
+GC863 explains existing Q7 census multiplicities by reset uniqueness and odd-half integration: two initial paths per source are rotated copies, then each is deterministic until zero. Source orbit counts2/16/2048 at q8/q16/q32 are structural; eventual return and distinct return depths are not. Ambient period2 nonzero cycle is a scope control, no rooted counterexample or new run.
