@@ -2383,6 +2383,29 @@ So Problem 2's property, equal frequencies, holds in a region with no randomness
 structural reason for balance, which Problem 2's coin-like evidence alone would not suggest. Whether such a reason
 reaches the core, where the centre column lies, is open.
 
+**Addendum (2026-10-09 13:14 BST): a 0101 centre unbalances its left neighbours.** The owner's remark that a period-2
+centre "sits impossibly in the wrong band": it would be rigid order down a column inside the core, the inverse of the
+band, where columns are coin-like and the left diagonals are ordered (§8.74, the shunted column). Lemma 1's explicit
+columns (§7, check R0) say what that inversion costs. Let column 0 be 0101 from row $T_0$, black at odd rows (the
+other phase is the same, one row later), and let $\sigma$ be column 1. Then column $-1$ is black at every odd row and
+is $\lnot\sigma(2s)$ at row $2s$, and column $-2$ is $\sigma(2s)$ at row $2s$ and $\sigma(2s+2)$ at row $2s+1$. Count
+black cells over any $N$ rows after $T_0$. With $S$ the count of $\sigma$ on the even rows,
+$n_{-1} = N - S$ exactly, and $n_{-2} = 2S$ up to one, so
+
+```math
+2\,n_{-1} + n_{-2} = 2N \pm 1 .
+```
+
+So the larger of the two columns' black fractions is at least $2/3$ (less $1/N$), and column $-1$ is at least half
+black. Checked on 2,000 random columns 1 of every bias, including ones built to approach the bound (scratch, not a
+probe): the identity held to $3/N$ every time, and the smallest larger fraction was 0.6665. §8.34 says Problem 2
+cannot rule out a balanced block like 01 at the centre. Balance of the two neighbours can: if, over infinitely many
+late windows, $2 d_{-1} + d_{-2}$ stays below 2 (for example, both columns under $2/3$ black), the centre is not
+eventually 0101. Every column of the core measures about half black, giving $3/2$. This is not a proof, because no
+such balance is proved for any column (§8.34's shared obstacle), but it states the owner's "wrong band" exactly: a
+0101 centre needs a column at least two-thirds black right beside it. Elementary, from R0; second reading requested
+from GPT (CL081). Prior art not searched.
+
 ### 8.35 Does Rule 30's coin tip? The owner's matter–antimatter question (2026-10-05)
 
 The owner: "I am thinking of the universal problem of why there is more matter than antimatter. The coin flip tips
