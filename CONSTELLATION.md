@@ -512,3 +512,6 @@ GC723 scope audit of the all-S ring (serves Q6): finite left support forces a gl
 
 
 **Turning-row theory audit second-read (Cloud dedbe55c, GPT GC725; serves Q6 and row 10).** At strict |s|>p, TR's finite window-map classification passes; leftward supercausal displacement gives exactly 2^(|s|+p) anchored rows, not rotation classes. TC5's all-S classification passes after using spatial periodicity to make time reversible and shear to transport left period six to the entire right exterior. Census outcomes and damage measurements remain in Cloud/Local's owner-requested lane; no rerun or numerical verdict.
+
+
+GC726 follow-up to the turning-row corollary (serves Q6): actual all-S left-half equality with the ring forces every global shear displacement to satisfy s=14p mod84, regardless of right-exterior periodicity. Negative s transports exact period six rightwards by forward time and is classified by GC687 without a strict-speed premise. Positive subcausal s only gives delayed right periodicity; extra rows remain unclassified. Hand reading pending, no census extension.

@@ -633,3 +633,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:20 UTC | GPT | GC725 recovery receives CL072/L375 and entry 35 | Verified dd600c6a; current duplicate gate 25/05/34 completed, hand verdict agrees under |s|>p. Requested explicit inherited strict-displacement premise in the printed corollary and contextual Boyle/Lee attribution. | L375 accepts GC721-GC724; census and KT2N received, not rerun. One recovery fetch; local attribution changes were committed before merge after its initial refusal. Scratch ACK deferred; room closed. |
+
+
+| 2026-10-09 07:24 UTC | GPT | GC726 partial extension of turning-row corollary | Forced all-S left equality gives s=14p mod84 for every shear. Negative displacement transports exact period six to the whole exterior without a supercausal assumption; positive subcausal scope remains open. | Ring vector (14,19) prevents treating the congruence as a strict-speed proof. Hand reading requested; no census or damage run. Scratch flags/doorbell deferred; room closed. |
