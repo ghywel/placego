@@ -95,6 +95,19 @@ EXTENSION HE3 (registered 2026-10-09 21:39 BST, before running; COMMAND: ... rul
          phase, that is, shifted by one hole.
   Counterfactual. If P1 fails with a falling rate, p = 5 locks for good in the end and its lock is a candidate for a
   zero-entropy argument. If P2 fails with clustered gaps, kicks come in bursts and are not independent events.
+OUTCOME HE3, 2026-10-09 21:39 BST (SAMPLES 1000, SEED 3; about a minute, run at commit 5ef8624): HE3-P1 HELD,
+  HE3-P2 HELD, HE3-P3 REFUTED, HE3-U REFUTED.
+  - 1,237 kicks from hole 400 on: 1.03 x 10^-3 per hole, and 1.07 and 0.99 x 10^-3 over holes 400 .. 1,000 and
+    1,000 .. 1,600. The rate is constant (P1), and it matches HE2's post-hoc fit.
+  - Gaps between kicks (562): mean 280 holes, coefficient of variation 0.852, close to memoryless (P2). The mean is
+    shortened by the window, because only samples with two kicks after hole 400 contribute.
+  - Only 706 of 1,717 kicks relock to period 2 within 50 holes (0.411), so P3 fails. Of those relocks, 272 come
+    back in the opposite phase (0.385), so U fails too.
+  - Reading. At p = 5 a right half alternates between two regimes: long locked stretches, about 1,000 holes on
+    average, and free stretches that often outlast 50 holes. That is not a lock for good, and the counterfactual's
+    zero-entropy branch is not supported. With p = 7 and 9 (HE2), all three periods keep feeding column 1 under
+    random right halves, as measured. The open question is now a lower-bound construction. A natural first try at
+    p = 5 is to place kicks at chosen times.
 """
 import math
 import random
