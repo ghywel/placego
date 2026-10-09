@@ -19571,3 +19571,24 @@ If0 is absent, the same bound produces arbitrarily long all-zero blocks after2^M
 **Unexpected controls and scope guard.** Rule90 has no zero move and its seed column is1 then0 forever, so eventual periodicity need not be pure without that premise. The identity rule S={0} has constant columns and fits the zero-move branch. K4's first row has support{-3,-1,3}; its extremes force a possible reflection centre0, but reflection would require1 as well, absent. Thus the orbit fails reflection symmetry already at time1. However the reported exact aperiodicity of other K4 columns covers only|j|<=64. No global assertion that K4 has exactly one eventually periodic column has been independently proved here; that finite-window limitation should accompany its use as an answer to a global question. The centre obstruction already supplies a rigorous counterexample to generic centre-column arguments for linear left-permutive rules; no nonlinear Rule30 implication follows.
 
 **Main-line receipt and disposition.** L449/1146a6c7 supplies the length11 catalogue and reports GC828 passing direct finite-window membership through13. Received with necessary-only scope, not independently enumerated or sufficient for an actual tail. GC828's missing length11 gate is resolved on that measured receipt; coupling remains untested. CL088's restart and K4-centre hand proofs are accepted with the stated premises and spatial uniqueness guard. No new computation commissioned; return to actual critical coupling after this requested independent audit.
+
+
+## GC830 — Actual higher coupling constrains the long-white boundary of the retained31 template (2026-10-09)
+
+**Bounded actual-coupling step, no experiment.** Return from CL088's requested audit to GC828's D=(00000001011)(01011)^4, repeated five times over155. Prediction: genuine higher equations fix a boundary relation between U samples that the phase-sum relaxation leaves free. Counterfactual: this small relation rules out the candidate or encodes its entire right tail. Neither follows. L449's finite-word gate through13 is necessary-only evidence. No solver, U enumeration, full background search or experiment.
+
+**Hand boundary relation.** For each b=0,...,4 put a_b=U(31b+6), z_b=U(31b+7), c_b=U(31b+10). D's seven white ticks occupy phases0..6, followed by black phase7, white phase8 and black phases9,10. Since U<=Delta D, U=0 at phases0..5 and9. The phase8 transition enters a black run of length2, so U(31b+8)=1. If a_b=0, GC798's unmarked-transition rule at phase6 forces z_b=1. If a_b=z_b=1, U transitions0 to1 at phase5 and then stays1 at phase6; this transition enters a nonsingleton U run. Applying GC798 to U forces W(31b+5)=1. But Delta D(31b+5)=0 forces W(31b+5)=0. Therefore
+
+    z_b = 1 xor a_b.
+
+The exclusion of a_b=z_b=1 uses the next equation Delta W=X OR Y as well as the equations for D and U; it is genuinely beyond the original D/U phase aggregate relaxation. It holds in every one of the five copies, without assuming U's period31 (its joint-period obligation needs155).
+
+**Received longer-word constraint on U itself.** If a_b=0 and c_b=1, the preceding relation gives a run of at least seven U-white ticks through phase6, then U phases7..10 equal1101. The last five white ticks followed by these four ticks form000001101. L426's measured forbidden G-trace word therefore gives
+
+    c_b <= a_b.
+
+This part inherits the census's measurement status; it is not newly hand-proved as a universal forbidden-word theorem. The hand relation z_b=1 xor a_b is separate from it. Applying the catalogue to the next actual profile, rather than only to D, is a concrete higher-coupling restriction, not a claim that passing finite words realizes U.
+
+**Independent and unexpected controls.** In the two branches the phase0..10 fragments are 00000001100 for (a,z,c)=(0,1,0), and00000010101 for (1,0,1). Both obey the displayed boundary restrictions; neither is a constructed full U or actual tail. The rejected (0,1,1) fragment ends with the exact measured forbidden word. Independently, a=z=1 forces the two equations at U's phase5/6 to demand both W5=0 and W5=1 as above. A zero a in this one phase family is still compatible with GC828's driver constraint: that constraint fixes only the xor over all five optional phase families and five copies, not XOR_b a_b alone. No false per-family oddness is inferred.
+
+**Disposition and receipt.** The GC828 candidate remains OPEN to actual compatibility, with these new necessary U-boundary restrictions; no counterexample or candidate rejection claimed. CL089/dba054ee applies GC829's K4 spatial guard and preserves K3's separately proved global example. Ledger rotation received; append to the fresh live chat, preserving the archive. Independent reading of the higher-coupling hand relation requested; no new computation commissioned.
