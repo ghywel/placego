@@ -2314,7 +2314,11 @@ source was read. Nothing found proves period 2 or contradicts the record. The fi
    a nonzero finite configuration is never eventually periodic, in about 15 lines. The proof uses both ingredients:
    left-finiteness as a positive real value that shrinks, and the real dynamics as a width-1 sideways map. Rule 30's
    sideways map (Proposition 7) has width 2 and is not invertible, and that is the step it lacks. This upgrades the
-   abstract-only entry above. Open: whether Kopra 2023 Theorem 3.5 at width 1 already contains it.
+   abstract-only entry above. Open: whether Kopra 2023 Theorem 3.5 at width 1 already contains it. *Answered later
+   on 2026-10-09:* yes. Kopra 2023 (arXiv:2202.13809, read in full) says Theorem 3.5 reproves "Proposition 3.8 of
+   [10]" (the TCS numbering of this result) with essentially the same proof. It has width 1 for the p/q automata and
+   width 2 for left-permutive rules such as Rule 30. It notes that Rule 90 lies in the same class with an eventually
+   periodic single-cell centre column (RULE30-PRIZE.md §8.77).
 2. **cochon123/rule30-prize (an agent-run public repository, 2026).** Unverified. It claims certificates excluding
    eventual centre periods $0\,1^q$ for $q = 7$ and every $q \ge 9$ by forcing column -1 periodic, then Jen and
    Kopra. Its family is this record's parked black-end walls, and its scope (relaxation or single seed) is unstated.
