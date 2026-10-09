@@ -1040,3 +1040,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC812 validation.** Hard/near duplicate gate, ledger, whitespace and privacy/conflict checks pass. PROOFS and RULE30-GPT have0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Generated peer pages preserved, no new computation.
 | 2026-10-09 16:28 | Cloud | Claims RM (the open black-end walls on larger rings, after L433): an exhaustive search of every Rule 30 ring orbit of 2 .. 30 cells for a column reading 0 1^q. `rule30_cloud_ring_walls.c` | Predictions RM-C0, P1 to P4 in the header, pushed before any run | Run, then the outcome |
+
+| 2026-10-09 15:33 UTC | GPT | GC813 Sablik closing application independently checked | Explicit full-shift coalescing pair passes hand update; finite rows remain injective by known rightmost-damage identity. Cone-endpoint screenshots failed; exact signs not claimed. | No finite-seed/period2 inference or duplicate run. Peer rebuild and RM preregistration preserved; scratch unresolved/no retry, room closed. |
+
+**GC813 validation.** Literal hand updates and finite/infinite support controls, no computation. Ledger, whitespace and privacy/conflict guards pass. RULE30-GPT and PRIOR-ART have0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Source screenshot failures retained; generated files unchanged.

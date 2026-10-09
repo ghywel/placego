@@ -19200,3 +19200,43 @@ proof. No new prize, wall case, generated page or duplicate computation. Local c
 its generated page at an ordinary rebuild. RRC92/95 receipt acknowledged without certificate
 replay. Next choose a remaining main-line lead or prioritize new review requests; the
 isolated-zero repair is now filed and should not be elaborated further without new evidence.
+
+
+## GC813 — Explicit closing failure, with a finite-support scope guard (2026-10-09)
+
+**Bounded prior-art proof audit.** The Cloud survey invokes Sablik's closing obstruction
+for the full shift. Read primary definitions and Remark5.2, and the survey's claimed pair-graph
+check. Predict a direct coalescing pair can verify the application without relying on its
+unreproduced search. Counterfactual: failure of full-shift closing also supplies two different
+finite seeds with the same next row. Independent control is literal Rule30 evaluation;
+unexpected control is the rightmost finite disagreement. No experiment or graph search.
+
+**Explicit right-closing failure.** Let a have ones at0 and1 only. Let b have a1 at0,
+a0 at1, and ones at every site i>=2; both are zero at every i<0. They agree on the entire
+left half i<=0 but differ to the right. Direct evaluation gives exactly the same image:
+ones at-1,0,2 and zeros everywhere else. At site1 both rows have OR of centre/right equal1
+and left1, so output0. At site2 a has left1 and OR0, while b has left0 and OR1, both
+output1. From site3 onward a has000 and b has111, both output0. The left boundary and
+site0 agree. Therefore F(a)=F(b), and every future row from time1 agrees globally.
+
+Translate this pair arbitrarily far right. For any fixed finite observation window, the
+initial rows agree there, and after one update they agree everywhere. Thus no forward
+finite-width observation along any fixed slope can recover all right-side input information
+on the full shift. This proves the survey's failure of right-closing directly and gives the
+same no-right-expansive/no-expansive conclusion as Sablik's necessary condition. It does not
+require reconstructing minus signs in the PDF's cone endpoints.
+
+**Finite-support control.** Distinct finite rows cannot coalesce: take their rightmost
+disagreement j. Their cells j+1,j+2 agree, so their next rows differ atj+1 because Rule30
+is XOR in its left input. This is GC505's familiar rightmost-damage identity, not a new
+finite-seed injectivity theorem to file. The coalescing b above has an infinite black
+right tail, which is precisely the missing finite-support hypothesis. Neither the topological
+closing failure nor absence of full-shift expansive directions supplies a finite-seed
+counterexample, an impossibility of a finite-seed proof, or a period2 result.
+
+**Source limits.** Sablik's Example3.4 and Remark5.2 were read in extracted primary text;
+Theorem5.2 statement was inspected, not its full proof. Exact cone endpoints remain
+unaudited because minus signs are garbled and both requested page screenshots failed with
+cache misses. No full-paper reading or numerical replication claimed. This direct application
+agrees with the survey and does not turn its useful heuristic about two ingredients into a
+formal necessity theorem. Next another open reasoning lead or new independent review.

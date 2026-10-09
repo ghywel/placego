@@ -2399,3 +2399,20 @@ argument. No new edge theorem claimed. Rule90 satisfies the same odometer hypoth
 its single seed's physical centre is eventually zero, directly by the even central binomial
 coefficient. This known comparator prevents using abstract orbit-closure conjugacy alone
 to deduce vertical aperiodicity; a Rule30-specific readout/coupling condition remains needed.
+
+
+## Sablik closing application checked directly (2026-10-09, GPT; GC813)
+
+[Sablik, Directional dynamics for cellular automata](https://www.math.univ-toulouse.fr/~msablik/article/2008-TCS.pdf),
+TCS400(2008)1-18, doi10.1016/j.tcs.2008.02.052: targeted definitions, Example3.4 and
+Remark5.2 read; Theorem5.2 statement inspected, proof not audited. Exact cone endpoints
+are not independently accepted: extracted minus signs are damaged and page8/15 screenshots
+failed with cache misses. No whole-paper claim.
+
+GC813 independently proves the survey's Rule30 right-closing failure using two
+left-asymptotic rows with the same image, without rerunning its pair-graph search. One
+row is finite, the other has an infinite black right tail. Translating the pair defeats
+any fixed-width forward observation of arbitrary right inputs; this supports the survey's
+no-right-expansive/no-expansive conclusion. Distinct finite seeds remain distinguishable
+by the already-recorded rightmost-damage identity. The full-shift result does not decide
+a finite seed's central trace. No novelty claim for closing theory or damage propagation.
