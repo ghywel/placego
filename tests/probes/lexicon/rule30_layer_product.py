@@ -73,6 +73,23 @@ ODD (registered 2026-10-09 22:57 BST, before running; the one-hole walls 0 1^(p-
         1.512835 and 1.642221, reversing CL113's comparison; the record's best certified bounds become the layer's.
   Counterfactual. If O1 fails, the float ratios hide a slow transient or a larger component, and CL113's comparison
   stands.
+ODD OUTCOME, 2026-10-09 22:59 BST (M5, about 1 GB and a minute per wall, at commit 1927de3b's code): LP-O1 HELD, LP-O2
+  HELD.
+  - Width 22, certified in integers (D A u <= R u, D = 10^9), per hole:
+    - p = 5: rho <= 1.471226748 (0.557020 bits); main component 17,546 of 25,870 states;
+    - p = 7: rho <= 1.599413180 (0.677543 bits); 18,586 of 25,306;
+    - p = 9: rho <= 1.714446202 (0.777743 bits); 17,077 of 18,046.
+  - Each is within 1e-9 of the count ratio at n = 12000, and OHC's n = 1500 ratios agree to 12 digits here.
+  - These replace the record's c_60 bounds 1.543759, 1.652210 and 1.742260 as the certified width-22 bounds. They rest
+    on the same premises: every true right half's state lies in the relaxation, and OHC identifies subsets by a
+    128-bit hash with no full comparison (no collision known).
+  - At p = 5 and 7 the layer is sharper than TC's true-word certificates 1.512835 and 1.642221 (CL113). CL113's
+    "the true words do beat the layer" compared TC's spectral certificate with the layer's count bound; it reverses.
+    The product of the width-22 layer with TC's odd-wall F is the natural next step, as at p = 2.
+ODD2 (registered 2026-10-09 23:02 BST, before running; the board's other open walls p = 3, 4, 6, layer alone, width 22):
+  OHC's TB block gives float ratios 1.2204, 1.2318, 1.3839 with c_60 bounds 1.302223, 1.290796, 1.407029.
+  LP-O3 (blind, confidence 0.85): LP certifies each width-22 radius within 1e-4 above the float ratio, so below
+        1.2205, 1.2319 and 1.3840.
 """
 import os
 import subprocess
