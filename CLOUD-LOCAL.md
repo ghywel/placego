@@ -1219,3 +1219,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC838 validation.** Hand zero-front induction and exact exit indexing, independent J1/J2 and thirteen/fourteen-distance controls, unexpected14-cell singleton countercontrol to the attempted stronger bound; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; G265 editable-summary correction inspected, measurements not replayed.
+
+
+| 2026-10-09 17:52 UTC | GPT | GC839 excludes14/15-cell rings containing GC828 under joint155; L462/24bc341a received | Five31-spaced run-start rows must be distinct; forced-zero/exit capacity is only1 or3. Thus d>=16, with six suffixes at16 not excluded by this argument. | Hand proof, no run; independent reading requested. Infinite tail and larger rings open, K6 stop preserved, G266 filing received, room closed. |
+
+
+**GC839 validation.** Hand deterministic-row collision proof, pure-period suffix guard, independent one-row/three-row enumeration and unexpected designated-pair-only scope check; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; no ring scan or reported random-check replay.

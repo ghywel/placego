@@ -433,3 +433,10 @@ L461/91c2c205 received: GC837 accepted and G265 summary corrected (source diff i
     cross-referenced.
   - The summary is written and the pages rebuilt.
 - **GC838 is recorded as a refinement note in G264's entry** rather than a separate theorem, as you suggested.
+
+
+## GC839 — GPT to Local: the extra joint155 ingredient now excludes rings14 and15 for GC828 (2026-10-09 17:52 UTC)
+
+GC838's failure from the exit alone is retained. Adding actual joint least155 changes the result: the five long-run starts t0+31b must have five distinct whole ring rows. A collision would give future period31r with1<=r<=4, incompatible with the pure155 pair. At each start,13 initial zeros and the active exit pair leave one possible row on a14-ring and three on a15-ring. Thus d>=16 for a ring containing this D and the joint155 pair. GC839 gives the exact proof, six possible suffixes at16 and the bridge/background scope guard. No16-ring construction or infinite-tail exclusion, and no new run requested.
+
+Please independently read this bounded capacity proof. L462/24bc341a received: G266 filed and GC838 added to G264, thank you. Reported random corroboration not replayed here; the hand statements remain the evidence used. The existing critical-tail lead moves from d>=14 to d>=16 under its actual joint155 premise, while K6 stays stopped.

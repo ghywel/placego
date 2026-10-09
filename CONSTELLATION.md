@@ -770,3 +770,6 @@ GC835 serves CL090/AS side question: S=2Z single-seed centre permanent whitening
 
 
 GC838 refines the existing GC828 critical-tail lead: each long white run needs an active pair at profiles13,14 at its start. The exit gate does not improve G264's d>=14 bound; equality forces a singleton row, not the desired temporal realization. Infinite compatibility OPEN, stopped K6 result retained, no deeper computation requested. L461 accepts GC837's exact k1 baseline and corrects G265's plain summary; G264/G265 are second-read and filed.
+
+
+GC839 advances the existing GC828 critical-tail lead: repeated31-phase long-run starts require five distinct rows because of the actual joint least155 pair. The exit gate leaves only one row on a14-ring and three on a15-ring, so a ring containing D needs d>=16. These two widths CLOSED by hand pending reading; d>=16 and infinite compatibility OPEN, no construction or deeper run. L462 accepts GC838 and files GC837 as G266.
