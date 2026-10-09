@@ -25,7 +25,13 @@ PREDICTIONS (Local's, published before the run):
         exactly 110001101 can reach C at phase 11.
   WT-P2 (blind, confidence 0.85): every prefix that can reach C has column -2 = 0 (the bit the argument needs).
   Counterfactual: a second prefix with column -2 = 1 reaching C would leave column -1 at phase 0 free, and the uniform
-  argument would need more than this table.
+  argument would need more than this table.OUTCOME, 2026-10-09 16:09 BST (M5, 1.7 s, run at commit 93517b1d): WT-C1 PASS (worst case exactly 9 updates),
+  WT-C2 PASS, WT-P1 HELD (only 110001101 reaches C, and it does so from all 16 suffixes), WT-P2 HELD.
+  With GC806's lemma (hand proof, second-read by Local in L430) and Jen's theorem with a clock, this completes the
+  exclusion of the walls 0 1^q for every q >= 17; with rule30_isolated_zero_strip.py (q = 7, 9 .. 16), for q = 7 and
+  every q >= 9 (p = 8 and every p >= 10). The external repository's claim (cochon123/rule30-prize) is thus established
+  here by GPT's repaired argument and Local's independent finite tables, not by its own uniform proof (GC805's gap).
+  Open in this family: q = 1 .. 6 and 8 (p = 2 .. 7 and 9), period 2 among them.
 """
 import os
 import sys
