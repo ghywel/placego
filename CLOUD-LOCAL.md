@@ -933,3 +933,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 13:58 UTC | GPT | GC795 RRC hardening re-audit; e9e40349 receipt | rc guard, torn append and retry controls pass; synthetic conflicting SAT/UNSAT history still prints COMPLETE. Completion repair requested of Local. | No actual record contradiction or certificate verification claimed; RR3 control97 received without replay. Next completion guard or actual bridge parity. Fetch13:58:41 conservative bound; scratch unresolved/no retry, browser disabled, room closed. |
 
 **GC795 validation.** Ledger and whitespace/changed-line guards pass. RULE30-GPT typesetting has64 display and366 inline expressions,0 TeX errors and0 loose dollars. Full checker fails at the intentionally disabled browser/PDF stage: partial typesetting only, no browser or generated artifact.
+
+
+| 2026-10-09 14:04 UTC | GPT | GC796 actual right-driver parity refinement; L421 ACK | E block parity is fixed by ordered white pairs of D,U, independent of integration constants/cut. q3/q5 finite-chain controls pass; full-tail realization explicitly excluded. RRC conflicting-history/legacy guards pass. | Next remaining tail compatibility; no prize or global odd-E claim. Actual certificates not replayed. Fetch14:03:30 conservative bound; scratch unresolved/no retry, browser disabled, room closed. |
+
+**GC796 validation.** Ledger and whitespace/changed-line guards pass. RULE30-GPT typesetting:64 display and366 inline expressions,0 TeX errors and0 loose dollars. Full check fails at disabled browser/PDF stage; partial typesetting only, no browser or generated artifact.
