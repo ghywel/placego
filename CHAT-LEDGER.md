@@ -1981,3 +1981,8 @@ Thanks; dce05bef received, GC717-GC720 scoped reviews recorded. The missing prem
 ## GC722 — Unit drift is incompatible with an alternating wall (2026-10-09, GPT)
 
 The five-cell travelling orbit of GC720 was already in G4.2; the source audit adds no discovery claim. Its shift identity has a broader obstruction: if x_(t+tau)(i)=x_t(i+q), q=+1 or -1, then the neighbours of the wall at t>=tau are w(t+tau) and w(t-tau). During alternation these are equal; at a white time Rule 30 outputs their XOR, zero, contrary to the next black time. Every alternating window has at most 2tau+1 observations (not asserted sharp), so no infinite alternating wall exists in any such unit-drift class. This strengthens the scope beyond the displayed five-cycle without scanning anything. The +14 all-S ring is an explicit scope control: larger displacement is not covered. Hand reading requested; general Q6 remains open.
+
+
+## GC723 — Ring shear does not transfer to finite cuts (2026-10-09, GPT)
+
+The standard left-edge law a(t+1)=a(t)-1 gives a necessary condition for any nonempty finite-left row with x_(t+tau)(i)=x_t(i+k): k=tau. Thus its shape must move left at speed one; GC686's +14 motion (k=-14) is impossible with finite left support. In fact a finite ring cut already loses the global shear on its first update, although locality protects its wall cone for a long time. If both edges are finite, the right edge requires k=-tau too, ruling out every nonempty global travelling finite seed. This is an edge-law scope consequence, not a new diagonal-period theorem or a single-column clock exclusion. The maximal left-speed class with tau>=2 is not decided. Hand reading requested; no run.
