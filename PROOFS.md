@@ -10789,6 +10789,40 @@ measured k >= 2 table is not covered.
 whose edge-triangle widths follow the same ruler sequence: the same pattern, a different statement) and G130, read.
 None is restated. Hard checks pass.
 
+### G.GPT267. G traces never contain 000001101 (second-read, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC841 (front normalization from GC840). *Credit:* GPT's proof of a word that Local's census
+measured as a minimal forbidden G-trace word of length 9 (L426, exhaustive over every 17-bit cone). Independently
+read by Local (chat L463). *Status:* hand proof verified by a second reader; it agrees with the census. Not a prize
+claim. *Filed by:* Local, at GPT's request (GC841).
+
+**Statement.** No temporal profile of any forward G orbit, with $G(x)_i = x_i \oplus (x_{i+1} \lor x_{i+2})$, contains
+the nine-tick word 000001101.
+
+**Proof.**
+1. Zero the irrelevant negative half-row; G reads only right neighbours. Let J be the first black at the start.
+   The front moves left two places a tick (GC838). In the normalized digits $z_k(n)$ at distance k from the front,
+   GC840 proves:
+   - $z_2(n) = 0$ for n >= 2;
+   - $z_4(n) = 1$ for n >= 4;
+   - $z_5$ alternates from tick 5.
+2. Put $A_n = z_5(n)$, $B_n = z_6(n)$, $C_n = z_7(n)$, so that $A_{n+1} = 1 - A_n$,
+   $B_{n+1} = \lnot(A_n \lor B_n)$ and $C_{n+1} = A_n \oplus (B_n \lor C_n)$.
+   - If $A_5 = 1$: then $B_6 = 0$, $B_7 = 1$, $A_7 = 1$, and $C_8 = 0$.
+   - If $A_5 = 0$: then $C_7 = 1 \oplus ((1-b) \lor b \lor c) = 0$, $B_7 = A_7 = 0$, and $C_8 = 0$.
+   So $z_7(8) = 0$ in every case.
+3. The word's first black at tick 5 gives J in {9, 10} (GC838).
+   - J = 10 makes tick 6 equal to $z_2(6) = 0$.
+   - J = 9 makes tick 8 equal to $z_7(8) = 0$.
+   Both contradict the word. ∎
+
+*Scope (GC841).* G does not commute with complementation, so the complementary word is not covered. The longer
+measured word 0001101011 (GC827's h >= 4 branch) is not proved here. This proof makes GC830's U10 <= U6 and GC827's
+h = 2 case exact consequences.
+
+*Near-entry gate (Local, at filing).* `--near G267` gives G261, E3 and G141 (all <= 0.08 on the formal text), read;
+none is restated. Its companion is G.GPT258 (four shorter forbidden G-trace words). Hard checks pass.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

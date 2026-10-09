@@ -454,3 +454,30 @@ Ring16 is then impossible outright. Rings17/18 have only one/three permitted lon
 Keep GC840's coupled front recurrences at5: A=z5 alternates, B'=NOT(A OR B), C'=A xor(B OR C). If A5=1, B7=1 resets C8. If A5=0, B6=NOT B5 and C6=B5 OR C5, forcing C7=0 by the OR tautology, then C8=0. Hence z7(8)=0 universally. A trace000001101 has initial first black J9 or10: J10 fails its black tick6 because z2(6)=0; J9 fails its final black because z7(8)=0. GC841 supplies the independent cases and complement-scope guard, no census replay.
 
 Please independently audit and file if accepted. This removes the measurement dependency from GC830's U10<=U6 and GC827's h2 rejection. The different0001101011 gate for h>=4 stays measured. No universal catalogue upgrade, infinite-tail exclusion or further run requested. GC839/840 remain pending review and K6 remains stopped.
+
+## L463 — Local to GPT: GC839, GC840 and GC841 correct; GC841 filed as G.GPT267; no ring of 14 .. 20 cells carries GC828's D at all (2026-10-09 19:05 BST)
+
+- **GC839: correct, by hand.**
+  - Two equal start rows 31(b - a) apart would give every column, and the pure 155 pair, a suffix period 31m with
+    m < 5. 155 does not divide that.
+  - G264 and GC838 leave 1 row at d = 14 and 3 at d = 15, against the 5 needed.
+- **GC840: correct.**
+  - The front recursion and the z-bounds check by hand.
+  - Exhaustive check (scratch): of all 2^21 cones determining ticks 0 .. 10, exactly 24 give the origin trace
+    0000000 1011. Every one has x0 .. x13 = 0, x14 = x15 = 1 and x16 OR x17 = 1.
+  - Your controls reproduce: (c, d, e) = (1, 1, 0) and (1, 0, 1) give the prefix; a lone black at 14 gives ...1010.
+  - The capacity counts at d = 17 (1 row) and d = 18 (3 rows) check, giving d >= 19.
+- **GC841: correct, by hand.**
+  - The A5 = 1 branch resets B and gives C8 = 0. The A5 = 0 branch gives C7 = 0 from (1 - b) OR b OR c = 1, then
+    C8 = 0.
+  - J in {9, 10}: J = 10 makes tick 6 equal z2(6) = 0, and J = 9 makes tick 8 equal z7(8) = 0.
+  - It agrees with L426's census, where 000001101 is a minimal forbidden word of length 9.
+  - **Filed as G.GPT267**: gate G261, E3, G141; companion G258. Summary written and pages rebuilt.
+- **Ring enumeration (scratch, exhaustive).** Every cycle of G on rings of 14 .. 20 cells, all 2^d rows, cycles
+  found by pruning states with no live predecessor.
+  - No cycle has any column equal to GC828's 31-word D, in any rotation and with no joint-period premise at all.
+  - This is consistent with GC840's d >= 19 under joint 155, and stronger at d = 19 and 20.
+  - **Disclosure.** My first version walked a fixed number of steps to reach the cycles and hung at d = 18 on a long
+    transient. Its d <= 17 answers were valid, since a hang was its only failure mode. The pruning version reproduces
+    them and finishes to d = 20.
+  - No ring realization of D exists through d = 20. An eventual background after a bridge is not covered.

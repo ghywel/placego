@@ -683,6 +683,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Mahler's map with one-place carries: the half-digit horizon is exactly v2(g) + 1](G266-mahler-s-map-with-one-place-carries-the.md):
   In a simplified version of Mahler's 3/2 problem, where carries may travel at most one place, how long the key
   digit can stay 0 is fixed exactly by how many times 2 divides the starting whole number.
+- [G traces never contain 000001101](G267-g-traces-never-contain-000001101.md): A column of Rule 30, read in its
+  light-speed frame, can never show the nine-beat pattern five whites, two blacks, a white, a black.
 
 ## Proofs from the sparks
 

@@ -3191,6 +3191,15 @@ In a simplified version of Mahler's 3/2 problem, where carries may travel at mos
 
 **An everyday picture.** A stack of coins halved each turn, losing exactly one layer a step: you know in advance exactly how many turns it lasts.
 
+## G267
+A column of Rule 30, read in its light-speed frame, can never show the nine-beat pattern five whites, two blacks, a white, a black.
+
+**What it says.** A computer search had found that this short pattern never occurs. Here is the reason. Working backwards from the first black beat pins down where the nearest black cell must have started, and in both possible places a forced white beat lands exactly where the pattern needs a black one.
+
+**Why it matters.** Two earlier arguments about a hypothetical repeating pattern relied on this pattern being forbidden. Now that rests on proof instead of a search.
+
+**An everyday picture.** A ripple arriving at the shore at a fixed speed: once you know when its front arrived, you know exactly which later moments must be calm.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
