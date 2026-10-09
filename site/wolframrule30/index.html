@@ -80,6 +80,7 @@ ul.facts li { padding-left: 2px; }
   text-align: center; margin-top: 8px; }
 .tally b { color: var(--ink); font-weight: 500; }
 .ctrl { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+.ctrl button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 .ctrl button { font: 500 0.84rem var(--font-body); color: var(--ink); background: var(--panel); border: 1px solid var(--ink-soft);
   border-radius: 2px; padding: 5px 12px; cursor: pointer; }
 .more { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 18px; }
@@ -272,7 +273,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       the edge events, which the pattern makes for itself.</p>
     <p>That makes the left side a pile of <em>Sierpinski triangles</em>. Start with one black square, and fill each
       row below it by a far simpler rule than Rule 30: a square is black when exactly one of the two squares above it,
-      straight up and up-right, is black. The single dot grows into a triangle made of three half-size copies of
+      straight up and up-right, is black (this comparison is the Gray code, which chapter 7 comes back to). The single dot grows into a triangle made of three half-size copies of
       itself, each made of three smaller copies, and so on for ever: the Sierpinski triangle, which is also the
       pattern of the odd numbers in Pascal's triangle. Give the same rule several dots and each grows its own
       triangle, but where two triangles overlap they cancel, so a square ends up black exactly when an odd number of
@@ -396,8 +397,76 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       straight down when the frame turns with it. The page checks the turn against the rule as it loads.</figcaption>
   </figure>
 
+  <section class="col" id="collatz">
+    <p class="chapter">7 · A twin in arithmetic</p>
+    <h2>The same question, asked of numbers: Collatz</h2>
+    <p>Take any whole number. If it is even, halve it; if it is odd, triple it, add one and halve it. Repeat. Lothar
+      Collatz asked in 1937 whether every start eventually falls to 1. Computers have checked every start below
+      2<sup>71</sup>, about 2.4 &times; 10<sup>21</sup>; nobody can prove it; and a prize of &yen;120 million
+      (Bakuage, 2021) waits for a proof or a counterexample.</p>
+    <p>It looks like another world, but in binary it is the same machine as Rule 30. A number written in binary is a
+      row of black and white squares, and multiplying it by 3/2, the heart of Collatz's odd step (which is 3n/2 plus a
+      half), works on that row much as Rule 30 does. Both start from one simple step, the <em>Gray code</em>, and add a
+      correction.</p>
+    <p>The Gray code is a way of counting in binary in which each number differs from the one before in a single
+      digit: 000, 001, 011, 010, 110, 111, 101, 100. It is named after Frank Gray of Bell Labs, and it is used wherever
+      a reading must never jump, as in a rotary encoder. Its recipe is one comparison: write the number in binary and
+      compare each digit with the one on its left, black where they differ. Repeat that step row after row from a
+      single black square and the Sierpinski triangle of chapter 5 appears. Below, one number goes through three
+      rules side by side.</p>
+  </section>
+  <figure class="wide">
+    <canvas id="gray" role="img" aria-label="One number in binary as a row of squares, then its Gray code, then Rule 30 applied to the same row, then the number multiplied by 3/2. Squares where Rule 30 or the multiplication differ from the Gray code are ringed in red."></canvas>
+    <div class="ctrl"><button id="gray-22" type="button">22</button><button id="gray-new" type="button">Another number</button></div>
+    <p class="tally" id="gray-tally"></p>
+    <figcaption>Rule 30 is the Gray code plus a correction wherever a square is white and its right-hand neighbour
+      black, so its corrections are single squares and never two side by side. Multiplying by 3/2 is the number plus
+      half of itself, which is the Gray code plus the carries of that addition, and a carry runs on until it meets a
+      0. Same step, two ways of correcting it.</figcaption>
+  </figure>
+
+  <section class="col">
+    <p>So the two problems are two ways of getting the same simple rule slightly wrong, and both unroll into
+      overlapping Sierpinski triangles, one hanging from each correction. Here both run from a single black square:
+      Rule 30, and the powers of 3, which are what repeated multiplication by 3/2 does to a single 1 (the halving
+      only shifts the row).</p>
+  </section>
+  <figure class="wide">
+    <canvas id="twin" role="img" aria-label="Side by side, row by row: Rule 30 from one black square, and the powers of 3 written in binary with the last digit on the right edge. Marked in red are the squares where each departs from the shared Sierpinski step; or, in the second view, the white runs just inside each black right edge."></canvas>
+    <div class="ctrl"><button id="twin-corr" type="button" aria-pressed="true">The corrections</button><button id="twin-ruler" type="button" aria-pressed="false">The edge rulers</button></div>
+    <p class="tally" id="twin-tally"></p>
+    <figcaption>Row t of the right-hand picture is 3<sup>t</sup> in binary, its last digit (always 1) on the right edge,
+      so the edge moves one square per row as Rule 30's does. <b>The corrections</b> marks every square where the
+      next row departs from the Sierpinski step: in Rule 30 they are single squares, in multiplication they are
+      carries, which run in strings. <b>The edge rulers</b> marks the white run just inside each edge on every second
+      row.</figcaption>
+  </figure>
+
+  <section class="col">
+    <p>The likeness reaches the edges too. Every second row of the powers of 3 has a run of white squares just inside
+      its black edge, and its length depends only on how many times 2 divides the row number: the same kind of ruler
+      that Gareth spotted on Rule 30's edge. For the powers of 3 it is a classical theorem, the "lifting the exponent"
+      lemma, and the ruler is perfectly regular, one square longer for each doubling. Rule 30's grows by about two
+      and a half squares for each doubling, irregularly. In both pictures every diagonal parallel to the right edge
+      repeats with a period that is a power of 2, and in both the middle is where nobody can prove anything.</p>
+    <p>The questions are the same shape as well. In both, a finite start, a number's finitely many digits or a row's
+      finitely many black squares, is fed to a rule that can be run backwards, and the question is whether what
+      comes out beyond the part the start controls behaves like coin tosses. One exact statement holds word for word
+      in both: a stretch of the output can repeat only if it is no longer than the current state is large, counted in
+      digits or in squares (on the Collatz side this was already known). And the method that settles the easy cases
+      stops at the same place in both, and in a third famous problem, Mahler's 3/2 problem of 1968. It shows that no
+      counterexample exists when the constrained part can behave in only finitely many ways, and says nothing once
+      it can behave in infinitely many, which is exactly where Rule 30's white-black case and Mahler's question
+      sit.</p>
+    <p>So each side holds a tool the other lacks. Collatz has arithmetic: remainders modulo powers of 3, and linear
+      forms in logarithms, which bound how close a power of 3 can come to a power of 2. Rule 30 has locality: its
+      corrections are single squares, which is what made the exact rules about edge events possible. A proof on
+      either side would show what a proof on the other has to replace. Neither side has one yet. The details, with
+      every claim's source, are in the Collatz part of the record.</p>
+  </section>
+
   <section class="col" id="how">
-    <p class="chapter">7 · How this was done</p>
+    <p class="chapter">8 · How this was done</p>
     <h2>Five days, three collaborators, everything in the open</h2>
     <p>This work was done between 4 and 9 October 2026 by Gareth, working with AI collaborators: Claude,
       by Anthropic, in two roles, and GPT, by OpenAI. Each proof was proposed by one party and checked by another
@@ -410,6 +479,8 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
         its second reader.</span></a>
       <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md"><b>The research record</b><span>The full working
         notes, measurements and refutations.</span></a>
+      <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md"><b>The Collatz twin</b><span>What the
+        Rule 30 method gives Collatz, what it shares with Mahler's problem, and what each side lacks.</span></a>
       <a href="bricks.html"><b>Bricks, rulers and fronts</b><span>Four of the page's visuals together, each with its notes
         and its standing in the record.</span></a>
     </div>
@@ -670,14 +741,179 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
     else if (++SP.hold > 40) { SP.hold = 0; SP.shown = 0; sierDraw(); }
   }, 90);
 
-  function layoutAll() { heroLayout(); exLayout(); sierLayout(); }
+  /* ---- the twin: Rule 30 and the powers of 3, one Gray step with two kinds of correction ---- */
+  var twin = document.getElementById("twin"), twinTally = document.getElementById("twin-tally");
+  var TW = { g: null, W: 0, Hh: 0, s: 4, R: 48, shown: 0, hold: 0, mode: "corr", side: true,
+    a: [], ac: [], b: [], bc: [], runA: [], runB: [], lo: 0, maxCarry: 0 };
+  function twinBuild() {
+    var R = TW.R, n = 2 * R + 1, off = R;                // index x + R, x from -R to R
+    var row = new Uint8Array(n); row[off] = 1; TW.a = [row]; TW.ac = [new Uint8Array(n)];
+    for (var t = 1; t < R; t++) {
+      var old = TW.a[t - 1], nw = new Uint8Array(n), c = new Uint8Array(n);
+      for (var i = 1; i < n - 1; i++) { nw[i] = old[i - 1] ^ (old[i] | old[i + 1]); c[i] = old[i + 1] & (1 - old[i]); }
+      TW.a.push(nw); TW.ac.push(c);
+    }
+    TW.b = []; TW.bc = []; TW.maxCarry = 0; TW.lo = 0;
+    var p = 1n;
+    for (var t2 = 0; t2 < R; t2++) {
+      var r2 = new Uint8Array(n), c2 = new Uint8Array(n), prev = t2 ? p / 3n : 0n;
+      var cor = t2 ? (p ^ prev ^ (prev << 1n)) : 0n, run = 0;
+      for (var k = 0; k <= t2 + R && k < 2 * R + 40; k++) {
+        var x = t2 - k;
+        if (x < -R) break;
+        var bit = Number((p >> BigInt(k)) & 1n), cb = Number((cor >> BigInt(k)) & 1n);
+        r2[x + off] = bit; c2[x + off] = cb;
+        if (bit) TW.lo = Math.min(TW.lo, x);
+        run = cb ? run + 1 : 0; TW.maxCarry = Math.max(TW.maxCarry, run);
+      }
+      TW.b.push(r2); TW.bc.push(c2); p *= 3n;
+    }
+    function edgeRuns(rows) {                          // the white run just inside the edge x = t, on even rows
+      return rows.map(function (r, t) {
+        if (t % 2 || !t) return 0;
+        var L = 0; while (t - 1 - L >= -t && !r[t - 1 - L + off]) L++; return L;
+      });
+    }
+    TW.runA = edgeRuns(TW.a); TW.runB = edgeRuns(TW.b);
+  }
+  function twinLayout() {
+    var w = Math.min(availWidth(), 1100), R = TW.R;
+    var wa = 2 * R - 1, wb = R - TW.lo;                 // cells: Rule 30 spans -(R-1) .. R-1, the powers of 3 lo .. R-1
+    TW.side = w >= 700;
+    TW.s = Math.max(2, Math.min(7, Math.floor(TW.side ? (w - 60) / (wa + wb + 6) : (w - 8) / (wa + 4))));
+    var ph = R * TW.s + 24;
+    TW.W = w; TW.Hh = TW.side ? ph + 4 : 2 * ph + 16;
+    TW.g = fit(twin, w, TW.Hh);
+    if (reduce) TW.shown = R;
+    twinDraw();
+  }
+  function twinPanel(x0, y0, rows, corr, runs, xmin, label) {
+    var g = TW.g, s = TW.s, R = TW.R, off = R, n = Math.min(TW.shown, R);
+    var ink = css("--ink"), tri = css("--tri"), circ = css("--circ"), muted = css("--ink-soft");
+    g.fillStyle = muted; g.font = "500 11px " + css("--font-mono"); g.textAlign = "left"; g.textBaseline = "top";
+    g.fillText(label, x0, y0);
+    var top = y0 + 20, X = function (x) { return x0 + (x - xmin) * s; };
+    g.fillStyle = css("--panel");
+    g.beginPath(); g.moveTo(X(0), top); g.lineTo(X(R), top + R * s); g.lineTo(X(xmin), top + R * s); g.closePath();
+    g.fill();
+    for (var t = 0; t < n; t++) {
+      var r = rows[t], c = corr[t];
+      for (var x = xmin; x <= t; x++) {
+        var i = x + off;
+        if (r[i]) { g.fillStyle = ink; g.fillRect(X(x), top + t * s, s + 0.2, s + 0.2); }
+        if (TW.mode === "corr" && c[i]) {
+          g.globalAlpha = 0.7; g.fillStyle = tri; g.fillRect(X(x) + 0.5, top + t * s + 0.5, s - 1, s - 1); g.globalAlpha = 1;
+        }
+      }
+      if (TW.mode === "ruler" && runs[t]) {
+        g.globalAlpha = 0.6; g.fillStyle = circ;
+        g.fillRect(X(t - runs[t]), top + t * s, runs[t] * s, s);                       // the run inside the edge
+        g.fillRect(X(t + 2), top + t * s + s * 0.2, runs[t] * s, s * 0.6);             // and its tick outside
+        g.globalAlpha = 1;
+      }
+    }
+  }
+  function twinDraw() {
+    var g = TW.g, R = TW.R, s = TW.s, wa = 2 * R - 1, wb = R - TW.lo;
+    g.clearRect(0, 0, TW.W, TW.Hh);
+    var la = "Rule 30, from one black square", lb = "the powers of 3 in binary, last digit on the right";
+    if (TW.side) {
+      var gap = (TW.W - (wa + wb + 6) * s) / 3;
+      twinPanel(gap, 0, TW.a, TW.ac, TW.runA, -(R - 1), la);
+      twinPanel(2 * gap + (wa + 3) * s, 0, TW.b, TW.bc, TW.runB, TW.lo, lb);
+    } else {
+      var ph = R * s + 24;
+      twinPanel((TW.W - (wa + 3) * s) / 2, 0, TW.a, TW.ac, TW.runA, -(R - 1), la);
+      twinPanel((TW.W - (wb + 3) * s) / 2, ph + 12, TW.b, TW.bc, TW.runB, TW.lo, "the powers of 3 in binary");
+    }
+    var ev = function (runs) { return [2, 4, 8, 16, 32].map(function (t) { return runs[t]; }).join(", "); };
+    twinTally.innerHTML = TW.mode === "corr" ?
+      "longest string of corrections in one row: Rule 30 <b>1</b> (never two side by side) &middot; powers of 3 <b>" +
+      TW.maxCarry + "</b> (carries ripple)" :
+      "white run inside the edge at rows 2, 4, 8, 16, 32: Rule 30 <b>" + ev(TW.runA) + "</b> &middot; powers of 3 <b>" +
+      ev(TW.runB) + "</b>";
+  }
+  function twinMode(m) {
+    TW.mode = m;
+    document.getElementById("twin-corr").setAttribute("aria-pressed", String(m === "corr"));
+    document.getElementById("twin-ruler").setAttribute("aria-pressed", String(m === "ruler"));
+    twinDraw();
+  }
+  document.getElementById("twin-corr").addEventListener("click", function () { twinMode("corr"); });
+  document.getElementById("twin-ruler").addEventListener("click", function () { twinMode("ruler"); });
+  twinBuild();
+  setInterval(function () {                  // one row every 80 ms while on screen, a pause, then again
+    if (reduce || !seen(twin)) return;
+    if (TW.shown < TW.R) { TW.shown++; twinDraw(); }
+    else if (++TW.hold > 50) { TW.hold = 0; TW.shown = 0; twinDraw(); }
+  }, 80);
+
+  /* ---- the Gray code, by example: a row, its Gray code, Rule 30 and 3/2 of it, with the corrections ringed ---- */
+  var grayCv = document.getElementById("gray"), grayTally = document.getElementById("gray-tally");
+  var GR = { g: null, W: 0, Hh: 0, s: 24, n: 22 };
+  function grayRows(n) {
+    var N = BigInt(n), w = N.toString(2).length + 1, rows = { row: [], gc: [], r30: [], h: [] };
+    var dig = function (v, k) { return k < 0 ? 0 : Number((v >> BigInt(k)) & 1n); };
+    var G = N ^ (N >> 1n), H = N + (N >> 1n);
+    for (var k = w - 1; k >= 0; k--) {
+      rows.row.push(dig(N, k)); rows.gc.push(dig(G, k)); rows.h.push(dig(H, k));
+      rows.r30.push(dig(N, k + 1) ^ (dig(N, k) | dig(N, k - 1)));
+    }
+    rows.w = w; rows.G = G; rows.H = H;
+    return rows;
+  }
+  function grayLayout() {
+    var w = Math.min(availWidth(), 760);
+    GR.s = Math.max(16, Math.min(28, Math.floor((w - 20) / 14)));
+    GR.W = w; GR.Hh = 4 * (GR.s + 36) + 6;
+    GR.g = fit(grayCv, w, GR.Hh);
+    grayDraw();
+  }
+  function grayDraw() {
+    var g = GR.g, s = GR.s, n = GR.n, R = grayRows(n), x0 = (GR.W - R.w * s) / 2;
+    var ink = css("--ink"), paper = css("--paper"), rule = css("--rule"), tri = css("--tri"), muted = css("--ink-soft");
+    g.clearRect(0, 0, GR.W, GR.Hh);
+    var wide = GR.W >= 600, lines = [
+      [R.row, null, n + " in binary"],
+      [R.gc, null, wide ? "its Gray code, each square against its left neighbour: " + Number(R.G) : "its Gray code: " + Number(R.G)],
+      [R.r30, R.gc, wide ? "Rule 30 on the same row: where it differs from the Gray code, ringed" : "Rule 30: corrections ringed"],
+      [R.h, R.gc, n + " \u00d7 3/2 = " + Number(R.H) + (wide ? ": where it differs from the Gray code, ringed" : ": the carry ringed")]];
+    var c30 = 0, ch = 0, run = 0, best = 0;
+    lines.forEach(function (L, j) {
+      var y = j * (s + 36) + 22;
+      g.fillStyle = muted; g.font = "500 12px " + css("--font-mono"); g.textAlign = "center"; g.textBaseline = "bottom";
+      g.fillText(L[2], GR.W / 2, y - 3);
+      for (var i = 0; i < R.w; i++) {
+        var x = x0 + i * s;
+        g.fillStyle = L[0][i] ? ink : paper; g.fillRect(x + 1, y + 1, s - 2, s - 2);
+        g.strokeStyle = rule; g.lineWidth = 1; g.strokeRect(x + 1.5, y + 1.5, s - 3, s - 3);
+        if (L[1] && L[0][i] !== L[1][i]) {
+          g.strokeStyle = tri; g.lineWidth = 2.5; g.beginPath(); g.arc(x + s / 2, y + s / 2, s * 0.56, 0, 7); g.stroke();
+        }
+      }
+    });
+    for (var i = 0; i < R.w; i++) {
+      if (R.r30[i] !== R.gc[i]) c30++;
+      if (R.h[i] !== R.gc[i]) { ch++; run++; best = Math.max(best, run); } else run = 0;
+    }
+    grayTally.innerHTML = "Rule 30 differs from the Gray code at <b>" + c30 + "</b> single squares &middot; " +
+      (ch ? "3/2 at <b>" + ch + "</b>, in runs of up to <b>" + best + "</b> (carries)" :
+        "3/2 nowhere: no two 1s sit side by side, so nothing carries");
+  }
+  document.getElementById("gray-22").addEventListener("click", function () { GR.n = 22; grayDraw(); });
+  document.getElementById("gray-new").addEventListener("click", function () {
+    GR.n = 2 * (64 + Math.floor(Math.random() * 1984)); grayDraw();       // an even number of 8 to 12 digits
+  });
+
+  function layoutAll() { heroLayout(); exLayout(); sierLayout(); grayLayout(); twinLayout(); }
   var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(layoutAll, 150); });
   if (window.matchMedia) {
     var mq = window.matchMedia("(prefers-color-scheme: dark)");
-    if (mq.addEventListener) mq.addEventListener("change", function () { heroDraw(); exDraw(); sierDraw(); });
+    if (mq.addEventListener) mq.addEventListener("change", function () { heroDraw(); exDraw(); sierDraw(); grayDraw(); twinDraw(); });
   }
   /* ---- run each visual only while it is on screen ----
-     The hero, the explainer and the Sierpinski figure check seen() before they move. Each embedded frame is told as it scrolls in and out
+     The hero, the explainer, the Sierpinski figure and the twin check seen() before they move (the Gray-code
+     example is still until clicked). Each embedded frame is told as it scrolls in and out
      of view, and when it asks as it starts (the snippet in each embedded page holds its animation while it is out).
      A hidden tab counts as off screen. Without IntersectionObserver everything runs, as before. */
   var onScreen = new WeakMap(), frames = Array.prototype.slice.call(document.querySelectorAll(".frame iframe"));
@@ -692,7 +928,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
         if (en.target === hero) heroWake(); else if (en.target.tagName === "IFRAME") tell(en.target);
       });
     }, { threshold: 0 });
-    io.observe(hero); io.observe(ex); io.observe(sier);
+    io.observe(hero); io.observe(ex); io.observe(sier); io.observe(twin);
     frames.forEach(function (f) { io.observe(f); f.addEventListener("load", function () { tell(f); }); });
   }
   window.addEventListener("message", function (e) {
@@ -702,7 +938,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
   document.addEventListener("visibilitychange", function () { frames.forEach(tell); heroWake(); });
 
   layoutAll(); exSchedule();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { heroDraw(); exDraw(); sierDraw(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { heroDraw(); exDraw(); sierDraw(); grayDraw(); twinDraw(); });
   heroWake();
 })();
 </script>

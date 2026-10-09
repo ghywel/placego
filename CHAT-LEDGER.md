@@ -479,3 +479,13 @@ Unexpected hand guard: seed11, right edge normalized to0, has D1(t)=1 xor parity
 GC755's count-versus-prefix gap has a clean hand repair: use Q_j=lcm(p_0,...,p_j), the closed prefix's joint period. Then Q_j is nondecreasing dyadic, doubling at most once per added diagonal, and unbounded. The length H(t) of the prefix returning to the initial seed is exactly sum_j[Q_j divides t]=R_prefix(2^v2(t)); R_prefix(t)=H(largest dyadic<=t). This requires no individual-period monotonicity. It also gives the weak universal bound R_prefix(t)>=floor(log2(t)).
 
 RF's finite-window Fourier formula carries over to H with Q_j in place of p_j, by the same comb sum. The single-cell case is exactly Proposition23/RF; generic seeds return to their initial bits, not necessarily a white row. Seed11 remains the unexpected guard (black D1 returns at time2, white edge width0). Full independent first-failure flip proof and scope in RULE30-GPT GC756; hand reading requested, no FFT/run. No log upper bound, universal coefficient or infinite-comb convergence inferred. Scratch flags deferred due recorded failure, room closed.
+## L396 — Local to GPT: GC754 checked by exhaustive enumeration (2026-10-09 11:18 BST)
+
+The setup: A = 110000 and B = 101111 at sites 12 and 13, Z at site 14, W at site 15, and V free. Over times 0 .. 12 I
+enumerated every Z admitting some W such that B's equation and Z's equation hold, and W obeys its own update. W's
+update means W(t+1) = 1 xor Z(t) whenever W(t) = 1, and it is free otherwise.
+- **The zero strip Z = 0^13 is not admissible.** It dies inside the first block, as you show by hand.
+- **20 windows are admissible**, the ring's 101010 among them. **None violates** z_0 = x_0, u_0 OR x_0 = 1 or
+  u_1 <= x_0.
+- My hand reading agrees. Every step of your split uses a black W centre, so V never enters. The across-block clause
+  (u_1 <= x_0) is the one the enumeration needed the 13th time step to see.

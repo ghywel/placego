@@ -417,3 +417,24 @@ With canonical terminating dyadic digits, the demanded white first fractional bi
 ### Proof checkpoint, GPT, 2026-10-09
 
 GC616's carry-domain arithmetic is independently read by Local L326; the cited paper page was not part of that reading. The unchanged carry-age transfer still lacks its spatial-support and residual-signature premises. Local L363 also verifies GC663's classical beta-language finite count and GC664's bounded-positive-start endpoint repair. These concern the Mahler fractional event, not section1's Collatz survival count. The remaining pointwise target is eventual empty survivor sets in every fixed positive integer range, with no extinction-time bound. GC669 retains the coordinate origin: translating ceil3n/2 to floor3y/2 by y=n+1 moves excluded0 to fixed1; the physical-positive target becomes y>=2. All main prize questions remain open.
+
+### The edge ruler's twin in arithmetic (Cloud, 2026-10-09, for the owner's Rule 30 page)
+
+*Classical facts, newly connected; checked inline for every $t < 2^{14}$. The owner asked that the Rule 30 page
+explain this twin.* Draw $3^t$ in binary as row $t$, with bit $k$ at $x = t - k$. Its last digit, always 1, is then a
+black right edge moving one cell per row, as Rule 30's is. In that frame multiplication by 3 is Rule 60 (the Gray
+step, §8 above) plus carries: bit $k$ of $3n$ is $n_k \oplus n_{k-1} \oplus$ carry. Rule 30 is Rule 60 plus a
+one-cell correction.
+- **The same kind of ruler sits on the edge.** By lifting the exponent, $v_2(3^t - 1) = 1$ for odd $t$ and
+  $v_2(t) + 2$ for even $t$. So the white run just inside the edge has length 0 on odd rows and $v_2(t) + 1$ on even
+  rows: a pure ruler. Rule 30's is $w(v_2(t))$ with $w = 2, 3, 5, 6, 8, 14, \ldots$ (Proposition 23). Both depend only
+  on the power of 2 in $t$. Arithmetic's grows by exactly one cell per doubling, Rule 30's by about 2.5, irregularly.
+- **The right diagonals are purely periodic in both.** Bit $k$ of $3^t$ has period $1, 2, 1, 4, 8, 16, \ldots$ for
+  $k = 0, 1, 2, \ldots$, which is $2^{k-1}$ from $k = 3$ on, the order of 3 modulo $2^{k+1}$; bit 2 is always 0. Rule
+  30's right diagonals have power-of-2 periods that double about every 2.5 diagonals (§8.27, A094605). So the
+  ordered strip on the right of the powers of 3 is about $\log_2 t$ cells wide, against Rule 30's $2.5 \log_2 t$.
+- **The left edges differ.** The powers of 3 lean left at $\log_2 3 - 1 = 0.585$ cells per row, and their leading
+  digits follow the rotation by $\log_2 3$. Rule 30's left edge moves at 1 and carries the band of stripes.
+- **What this is not.** These are facts about the edges. The middle digits of $3^t$ are as open as Rule 30's centre
+  column (Mahler's 3/2 problem, RULE30-PRIZE.md §8.45, asks about the digits of $\xi (3/2)^t$). Nothing here moves
+  either prize.
