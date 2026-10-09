@@ -11805,3 +11805,23 @@ Disposition: the response's loss of visible driver information is temporary in t
 
 
 **GC901 second-reading receipt (2026-10-10 00:26 BST).** Local L512 at77967ffa verifies the reset/copy formula, primitive-period transfer, q4/q8 sparse controls and full-alternating terminal guard by hand. PASS with zero-started-root scope and no physical ancestry, rooted frequency or return bound. This continuation is reviewed; formal promotion remains separate.
+
+
+#### GC903 — The q4 fibre examples lie on a nonrooted predecessor cycle (2026-10-10 00:31 BST; W281 scope correction)
+
+**Bounded exact check and short hand certificate; second reading pending.** Record searched: (root/ancestr) + (first.hit/backward/predecessor) ->266 hits in49 files; (1110/1011) + (ancestr/cycle/root) ->84 hits in28 files. Read G7/G156/G157 and reviewed G199's absorption criterion; reset/ancestry mechanisms are existing results, not new claims. Predicted GC899's q4 zero-starts share a nonabsorbing orbit. Two named starts only, <=256 states each, independently scalar-bit and packed implementations, cap1 control and unexpected all-rotation checks. No census, new large run, physical-seed evolution or all-q ancestry classification.
+
+**Exact result.** For B(a,b)=(S b XOR(a OR b),a), the start (0,1110) returns to itself after28 steps, with no transient or zero visit. (0,1011) lies on that same orbit,14 steps away. Scalar and packed predecessor updates agree throughout each named chain; cap1 (0,1) hits zero in1 step and (1,0) in3. All four simultaneous rotations have the same28-cycle result. These computations are exact small-state controls, not evidence of absorption for any untested family.
+
+**Seven-step certificate, words in increasing temporal order.** The successive B states are
+
+(0000,1110), (0011,0000), (0011,0011), (0101,0011),
+(0001,0101), (1111,0001), (1101,1111), (0000,1101).
+
+Each arrow is direct substitution. The last state is (0,S(1110)); B commutes with simultaneous S, so four copies give B^28(0,1110)=(0,1110). None of the seven states is zero, and the rotations of their seven pair types are distinct: the two zero-coordinate types have distinct coordinate locations, the equal pair has neither zero nor alternating/constant companion, the alternating-driver and alternating-first types differ, and the two constant-one types have different coordinate locations. Within each type a primitive four-bit coordinate distinguishes its four rotations. Thus the cycle has exactly28 distinct states. This short certificate proves nonabsorption without trusting a long trace. Since1011=S^2(1110), its start is reached at14 steps and has the same property.
+
+By G199, a nonzero pair is in the physical-root tree exactly when some B iterate reaches(0,0); its last nonzero predecessor would necessarily be(0,1). These q4 starts fail that test, as do all their actual prefix/continuation states from GC899/GC901. More strongly, their zero-first-coordinate starts are themselves cyclic, so compatibility and a finite zero-started excursion are not physical ancestry. Root phase shifts cannot repair this, because B commutes with temporal rotation.
+
+**Correction retained.** GC899's earlier “rooted control” and “all realized at depth2 from different roots” refer only to arbitrary zero-started fixed-q excursion starts. They must not be cited as occurrence in the physical tree rooted at(0,1). GC901 already narrowed that claim; GC903 now proves physical nonrootedness for the q4 controls. L511/L512 validate the fibre and sparse-recovery algebra, not physical ancestry. Their reviews remain valid in that narrowed scope. The formulas, primitive-driver count and q8 algebraic control are unaffected, but no larger-q physical rejection or rooted occurrence claim is inferred.
+
+Disposition: close physical-root transfer of these q4 fibre examples; retain the within-history Q7 obligation. This is an application of the known ancestry barrier, not a new prize avenue or periodic-point classification. Next an actual physical-tree constraint or peer review, rather than another ambient-family extrapolation; scratch deferred, room closed.

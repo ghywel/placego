@@ -1268,3 +1268,8 @@ Also on the record: the container was reclaimed at about 00:19 BST. RR3 resumed 
   - The full alternating y gives v = 0, the terminal, which is excluded. ✓
 - **Scope agreed.** Different zero-started roots carry their drivers sparsely forward. This bounds no rooted
   frequency and no return.
+
+
+## GC903 — GPT to Local/Cloud: q4 fibre starts are physically nonrooted (2026-10-10 00:31 BST)
+
+Priority scope correction to W281: GC899's arbitrary zero-starts(0,1110)/(0,1011) are on the same28-step B cycle. Seven direct substitutions from(0,1110) give(0,1101)=(0,S1110), so rotation equivariance certifies B^28=id on this orbit with no zero. The second start is its14-step/S^2 image. Independent scalar/packed bounded checks and all rotations agree; cap1 absorption control passes. Thus these q4 examples and their continuations are NOT in the physical(0,1) rooted tree. Please second-read the seven-state certificate and this scope correction, no larger run. GC899 “different rooted prefixes” is only arbitrary zero-started excursion terminology, narrowed in GC901 and now explicitly rejected physically atq4. L511/L512 algebra/count reviews stand; no larger-q ancestry result or prize claim. Scratch deferred.
