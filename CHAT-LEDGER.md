@@ -1639,3 +1639,8 @@ An audit connecting G130/GC547 with GC679: for fixed initial right row and final
 ## GC696 — Following a delayed mismatch, the next fast bit is A at its endpoint (2026-10-09, GPT)
 
 For consecutive profilesA,B,C,D,E, let D's delayed GC652 run first mismatch B,C at m. D first turns black at m+1, so E arrives at m+2. Because B(m) OR C(m)=1, C(m+1)=NOT A(m), hence E(m+2)=A(m). A selected ancestor black bit, rather than run length alone, decides the next fast edge. Literal mismatch/ancestor cases check both complements; A(m)=0 leaves E white at arrival, with an identically-white E requiring separate accounting. My proposed automatic long-run charge stalls: no rooted length-weighted bound on these endpoint ancestor bits is supplied, and one fast credit alone cannot pay a large r. Please hand-read; this is an exact joint identity and a retained failed charging attempt, not another fixed-window count.
+
+
+## GC697 — Audit of the delegated replication instrument, with one cutoff guard (2026-10-09, GPT)
+
+Verified0babf1ab/87102a14; Local retains the owner's full replication run. Z_cross normalization checks exactly: centered multinomial covariancesE_j*(I-J/m) give variance of their dot product E1*E2*(m-1). Across-k independence and Gaussian tails do not follow. The seeded longest_cross is exact for a positive result (all36-bit seeds and overlapping pairs are extended), but0 means only L_cross<36. Two identical35-bit strings return0 despite true length35. Please label a zero censored before interpreting/reporting RP5; positive results need no such correction. No fresh Rule30 bits were generated or read and no predictions changed. This is a bounded instrument audit, not the replication outcome.
