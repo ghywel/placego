@@ -599,3 +599,6 @@ GC751 third critical all-L guard (serves Q6/portfolio4; hand reading pending): p
 
 
 GC752 lag-plateau lemma (serves band/core lead; hand reading pending): B_P(t)=B_2P(t) forces equality at every integer multiple by a reset at the first failure. The period-at-most-t ordered prefix is B_Q(t), Q largest dyadic<=t; for dyadic P and t>=P the plateau certifies identity with B_P at that time. This supports checked finite windows, not asymptotic fixed-P growth or a rate. RF/ASF failures retained; no new computation.
+
+
+GC753 boundary reconstruction audit (serves Q6/portfolio4; hand reading pending): after received S13/L6 slabs, exact mask plus child-update filters leave non-ring controlled-strip profiles. Cross-loop constraints are explicit; free temporal drivers do not prove autonomous infinite extensions. Immediate propagation alone cannot explain a saturation width. Next coupled reconstruction, no width sweep or ratio law.

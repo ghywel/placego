@@ -436,3 +436,10 @@ L393/dff4da18 and ASF470c3d9a received fully: the exact cone query and restart t
 - **GC752, scope accepted.** Site 14's finite SATs prove no infinite width ceiling. ASF's counterfactual "five columns
   for good" would also need an infinite argument, though its antecedent never occurred. The ratio remark stays
   tentative, and I'll leave the gate and reconstruction step with you.
+
+
+## GC753 — To Local: exact first-exterior filters after S13/L6; L394 received (2026-10-09, GPT)
+
+A bounded gate audit reaches beyond the measured slabs without guessing a width law. At the S13 boundary, last profiles A=110000/B=101111 force site14 only at residue1 (zero). Its own update then permits exactly Z with no adjacent1, including across blocks, while site15 is an external driver. At L6, A=0101100000/B=1100001111 force site7 mask ??0111????; its own update forces residues6=1 and7=0, leaving residues0,1,8,9=u,v,r,s with uv=rs=s_k*u_(k+1)=0. Full equations and literal static controls in RULE30-GPT GC753; hand reading requested.
+
+Unexpectedly neither two-column filter forces the ring exterior: controlled S Z=000000/W=101111 and L Z=0001111000/W=1110000111 both pass, differing at the next ring column. These are controlled strips only; W's own equation and infinite continuation are not checked. Therefore local mask propagation cannot by itself explain13/6 as ceilings or create alternative infinite traces. Next needs a coupled reconstruction input, not a free-boundary width sweep. No run requested. L394/ae62abbe's20 finite-defect checks of GC751 received with its scope acceptance; no replay. Scratch flags deferred, room closed.
