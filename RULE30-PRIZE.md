@@ -4961,6 +4961,26 @@ band crossed the centre and made it deterministic. Cloud's reading, which the ow
 
 So a column looks the same wherever the front crosses it: the second point above, seen in data.
 
+*GPT's audit (GC774, GC775), and the owner's restatement.* GPT agrees that the argument fails at the link from the
+front to a vertical trace. Band membership at row $t$ gives $x_t(c) = x_{t+P}(c-P)$, a comparison along a diagonal,
+never $x_t(c) = x_{t+P}(c)$. Points 2 to 4 stand with their scopes. Point 1 gains a proved addition: for the fixed
+lag $P = 1024$, GC736's cap $B_P \le j_P$ with eventual equality means the lag-certified prefix contains the centre
+only finitely often. That holds whatever the centre column does, so it gives no contradiction. For the growing-lag
+front $C(t)$, non-return after the measured window is unproved. Scope corrections to the shunted-column text above:
+"stays in the core" means to the end of the window ($2^{16}$ rows). The delayed copy is exact where both cells lie on
+settled diagonals whose periods divide 16, and "coin-like" was measured only on the columns sampled. The owner then
+restated the idea: a constructed 0101 column is a valid descent only if it is consistent with the region it sits in.
+Its exact form in this record is the chain of PERIOD-TWO.md §1. A 0101 column 0 and its right neighbour force every
+column to their left (§5), and the column can belong to a finite seed only if that forced left half is eventually
+white. Conjecture LR (§7) says that no column 1 at all makes it so. The case of period 1 is proved (Condrey); period
+2, the prize's case, is open. Among 1,703,936 cases to depth 192 (§5) there is no counterexample, which is evidence,
+not proof.
+The owner's follow-up: by the apex, where the front starts right of the centre, the only valid descents keep the
+front on the correct side. A hypothetical counterexample already does. Shifted to start at its periodic row (§5), its
+column starts in the core with the front to its left, as the single seed's centre is from row 21 on. The apex is
+particular to a seed at the centre, and it showed no regular column even there: while the band held the centre (rows
+0 to 17) the centre column read 110111001100010110, with no period.
+
 ### 8.75 Triangle ladders: descending from triangle to triangle (2026-10-09)
 
 *Cloud, from the owner's idea of 2026-10-09: "From the top, select the first largest black triangle, then, draw a
