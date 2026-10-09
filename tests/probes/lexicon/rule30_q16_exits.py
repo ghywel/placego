@@ -36,9 +36,20 @@ OUTCOME, 2026-10-09 20:56 BST (M5, 13 s, 44 MB, run at commit 6b1b9e23): QX-C1 P
     and 52,808.
   - Open: 18,826, 34,854 and 40,804. Each has an exit target with a successor, which is a two-edge prefix only (no
     return or persistence shown).
+DEEPER (registered before running; COMMAND: ... rule30_q16_exits.py deep [DEPTH=300]): from every exit target with a
+  successor (18826, 34854 and 40804), follow every successor path in H_m with PR198-D2's step. From (X, Y) at phase p
+  the tails are TX, TY; K = 1 + V(TX 0) + V(TY 0); the candidates are (b, K + b), legal when F = 1 on both new windows.
+  Exhaustive breadth-first to DEPTH steps. An exit flips a bit that stays in the window for m steps, so no exit path
+  can rejoin the cycle before step m (m >= 9,412). A path that dies within DEPTH therefore closes nothing beyond itself.
+  If every path from every exit dies, the component is exactly its sixteen-cycle. A survivor at DEPTH is a longer
+  prefix only.
+  QX2-C1 (control): at step 1 the out-degrees equal QX's (1, 1, 2 at phase 1, and their mirrors).
+  QX2-P1 (blind, confidence 0.5): for at least two of the three, every exit path dies within 300 steps.
+  QX2-D1 (descriptive): the number of live paths at each depth, and the depth of death or survival.
 """
 import sys
 
+_ARGS = sys.argv[1:]
 sys.argv = sys.argv[:1]
 import rule30_pr196_d1 as d1          # noqa: E402
 import rule30_pr198_d2 as d2          # noqa: E402
@@ -103,5 +114,52 @@ def main():
     print('COMPLETE')
 
 
+def deep(DEPTH=300):
+    out = {}
+    for r in (18826, 34854, 40804):
+        cls = RETS[r]
+        c5, exit_phases, lok, degs = analyse(r, cls)
+        m = (r - 2) // 2
+        w = [int(b) for b in cls]
+        win = lambda t: [w[(t + i) % Q] for i in range(m)]
+        TAB = d2.base_table(w, 2 * m - 1)
+        frontier = []
+        for t in exit_phases:
+            if t >= H:
+                continue                                   # phase t + 8 mirrors t
+            X, Y = win(t), win(t + H)
+            bx, by = w[(t + m) % Q], w[(t + H + m) % Q]
+            frontier.append((X[1:] + [1 - bx], Y[1:] + [1 - by], t + 1))
+        step1 = []
+        sizes, depth = [len(frontier)], 0
+        while frontier and depth < DEPTH:
+            nxt = []
+            for X, Y, ph in frontier:
+                TX, TY = X[1:], Y[1:]
+                _, vX0, _ = d2.FV(TX + [0], m, TAB, ph + 1)
+                _, vY0, _ = d2.FV(TY + [0], m, TAB, ph + H + 1)
+                K = 1 ^ vX0 ^ vY0
+                for b in (0, 1):
+                    Xn, Yn = TX + [b], TY + [K ^ b]
+                    fx, vx, _ = d2.FV(Xn, m, TAB, ph + 1)
+                    fy, vy, _ = d2.FV(Yn, m, TAB, ph + H + 1)
+                    if fx == 1 and fy == 1 and vx ^ vy == 1:
+                        nxt.append((Xn, Yn, ph + 1))
+            if depth == 0:
+                step1 = len(nxt)
+            frontier = nxt
+            depth += 1
+            sizes.append(len(frontier))
+        out[r] = (step1, sizes, bool(frontier), depth)
+        print('r = %5d: exit targets %d; live paths by depth %s%s; %s at depth %d'
+              % (r, sizes[0], sizes[:12], ' ...' if len(sizes) > 12 else '', 'SURVIVES' if frontier else 'all dead', depth),
+              flush=True)
+    c1 = out[18826][0] == 1 and out[34854][0] == 1 and out[40804][0] == 2
+    print('QX2-C1', 'PASS' if c1 else 'FAIL (step-1 counts %s)' % {r: v[0] for r, v in out.items()})
+    dead = [r for r, v in out.items() if not v[2]]
+    print('QX2-P1', 'HELD' if len(dead) >= 2 else 'REFUTED', '(all paths dead: %s)' % dead)
+    print('COMPLETE')
+
+
 if __name__ == '__main__':
-    main()
+    deep(int(_ARGS[1]) if len(_ARGS) > 1 else 300) if _ARGS[:1] == ['deep'] else main()
