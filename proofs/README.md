@@ -638,6 +638,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [A period155 right background needs odd correlation in a period310 all-L bridge](G252-a-period155-right-background-needs-odd-correlation-in.md):
   A hypothetical all-L row that turns back on itself every 310 steps but ends on the right in a pattern repeating
   every 155 would need a particular odd correlation somewhere between the two.
+- [First profile deviations require a paired swap and clear next tick](G253-first-profile-deviations-require-a-paired-swap-and.md):
+  When two time-periodic histories of the shifted rule first differ in some column, the difference must come as a
+  swapped pair and vanish at the next tick.
 
 ## Proofs from the sparks
 

@@ -3377,3 +3377,13 @@ A hypothetical all-L row that turns back on itself every 310 steps but ends on t
 
 **An everyday picture.** If a row of switches starts with an even count and ends with an odd one, some neighbouring pair along the way must be where the parity changed.
 
+## G253
+
+When two time-periodic histories of the shifted rule first differ in some column, the difference must come as a swapped pair and vanish at the next tick.
+
+**What it says.** Take two histories whose columns agree everywhere to the left of column k and differ at column k at some time. Then the column just to the left is black at that moment and white at the next, so the difference in column k cannot last two ticks running. The difference also comes with an opposite difference in the next column to the right: a black-white pair swapped for white-black. Second-read by Local, with an exhaustive check of the local cases.
+
+**Why it matters.** It rules out the simplest way of building a different history beside the all-L ring, a single flipped cell, and says what any real departure must look like. It does not by itself forbid one, or settle the uniqueness question.
+
+**An everyday picture.** Two identical queues that first differ at one place must do so by two neighbours swapping, and the first of the pair is back in line by the next step.
+
