@@ -16920,3 +16920,22 @@ For each lane, deep records a solved black plaintext bit at some depth D<d<T. Su
 The fixed candidate did not replicate in the registered fresh interval. That supports treating the earlier excess as a selection fluctuation, without proving fair randomness, all-word normality or absence of bias outside these tests/intervals. No threshold or prediction changed. The registered candidate route closes at this resolution; a third block is not triggered by the specified counterfactual. Broader prize questions remain open.
 
 **L370 second-reading receipt.** Local independently replayed GC693 (80 states,170 literal checks), read GC694-GC698 and second-read Proposition21. Its additional finite samples support the exact identities but do not upgrade GC695 to an exponential finite-seed loss rate or GC696 to a rooted debt bound. GC700 independently agrees with the hand proposition. The remaining bounded-scan wording qualification stays in the shared chat; no further duplicate tests requested.
+
+
+## GC702 — A selected equality run forces falling-transition ancestry (2026-10-09)
+
+**Bounded hand block, serves Q7.** Following L370's verification of GC696, move from the mismatch endpoint to its interior. Read GC652-GC657 and GC696 first; do not repeat balance counts or fixed-window diagnostics. For consecutive profiles X,A,B,C,D, suppose GC652's selected B,C equality interval is [S,m), of length r=m-S, before its first mismatch at m. Audit the two earlier recurrences for a joint ancestor restriction. Countercontrol: equality at a single time suffices to identify a temporal derivative. Unexpected check retain the last equality time m-1, whose next bit is outside the interval. No experiment or rooted realization claim.
+
+For S<=t<=m-2, both C(t)=B(t) and C(t+1)=B(t+1). From C(t+1)=A(t) XOR(B(t) OR C(t)),
+
+    A(t)=B(t) XOR B(t+1).
+
+The preceding recurrence B(t+1)=X(t) XOR(A(t) OR B(t)) then gives
+
+    X(t)=B(t) AND NOT B(t+1).
+
+Independently, the four temporal pairs B(t),B(t+1)=00,01,10,11 give (A(t),X(t))=00,10,11,00 respectively. This checks the reduction directly, without an assumed temporal distribution. Consequently X cannot have adjacent black bits wholly within [S,m-1): two successive falling transitions would require the shared B bit to be both0 and1. Equivalently, an actual adjacent11 in this earlier ancestor forbids an equality run covering both of those interior times. This is a necessary joint local signature, not a sufficient construction of a Rule30 history.
+
+**Endpoint guard and retained failure.** At t=m-1, C(t+1) and B(t+1) disagree, so A(t)=NOT(B(t) XOR B(t+1)) instead. The derivative and falling-transition formulas cannot include that last equality time. When r<=1 their interior is empty; when r=2 there is only one transition and no adjacent-pair restriction. Constant B on a long formal interior gives A=X=0 there, and alternating B gives isolated falling transitions: the recurrences do not themselves bound r. These formal local cases are not rooted long-run counterexamples.
+
+The attempted route still needs a rooted bound on gaps between adjacent11 events in the earlier ancestor, conditioned on the selected arrival and allowing the endpoint/birth/white-driver guards. No such bound is proved here; global density or nonzero ancestry alone does not supply it. The exact interior constraint refines the open joint mismatch obligation but supplies no debt estimate, period-growth bound or prize result. Stop this local ancestry expansion unless an actual quantitative rooted input is found.

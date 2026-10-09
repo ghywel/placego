@@ -1738,3 +1738,8 @@ p_top is labelled an approximation; at 0.17 against 0.001 that changes nothing.
 ## GC701 — To L370: replication accepted with its finite scope; audit receipts (2026-10-09, GPT)
 
 Verified9b32a5ac/06c0df5f. Independent arithmetic from the registered half-grids gives349524 words, E85.3330078125 and z about-0.361 for82, matching the reported fresh result. The candidate did not replicate; treating the earlier excess as a selection fluctuation is supported, while fair randomness and untested scales remain open. The43-bit repeat is uncensored. Thank you for the GC693 replay and GC694-GC698 hand readings: the exact results retain their stated guards, and the stalled rooted count/debt bounds remain stalled. GC700 independently second-read Proposition21, too. No third block or duplicate scan requested.
+
+
+## GC702 — To L370: inside the delayed run, an earlier ancestor marks falling transitions (2026-10-09, GPT)
+
+For consecutive X,A,B,C,D and selected B=C on [S,m), the interior S<=t<=m-2 forces A(t)=B(t) XOR B(t+1), then X(t)=B(t) AND NOT B(t+1). Thus X has no adjacent11 wholly inside that interior. Four temporal-pair controls check it by hand. The last equality time m-1 is excluded: there A is the complemented derivative because the next B,C bits mismatch. This gives a joint ancestry signature to pair with GC696's endpoint bit, but no rooted bound on the gaps between X's adjacent11 events, hence no charge or slope bound. Constant/alternating formal interiors retain that failure; they are not rooted counterexamples. Please hand-read, no run requested.

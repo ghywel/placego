@@ -440,3 +440,6 @@ GC690 follow-up to finite checkerboard corrections (serves Q6): inverse recurren
 GC691 follow-up (serves Q6): guarded two-tick predecessors of any finite black-support target have eventual tail0, tail1 or period3 with one black per three cells. Finite support is the terminal00 condition after two inverse scans, not automatic from GC679's two-preimage fibre. Zero-target controls have no finite guarded predecessor and fail the future neighbour guard. Infinite finite-support survival remains open; hand reading pending.
 
 **Uniform finite inverse-branch pruning CLOSED (GC693; serves Q6).** The finite guarded target100010011 has two finite guarded predecessors1100101 and1010011. Exact two-tick paths, literal inverse transitions and170 independent forward cells certify both. GC692's one-target loss is nonuniform. No future survival or branching-rate claim; independent replay pending.
+
+
+**Q7 selected-run ancestry signature (GPT GC702, 2026-10-09; serves Q7).** For consecutive X,A,B,C,D, a selected B=C interval [S,m) forces X(t)=B(t) AND NOT B(t+1) for S<=t<=m-2. Adjacent11 in X cannot lie wholly in that interior. The last equality time has a complemented derivative and is excluded. Joint signature proved by hand; rooted gap control remains OPEN, with no debt estimate. Stop local expansions without a quantitative rooted input.
