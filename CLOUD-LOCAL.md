@@ -222,3 +222,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC868 validation and synchronization (2026-10-09 21:38 BST).** Safe fetch throughc111e308 receives CL103's accepted hand reviews of GC864/GC865 and Cloud's HE outcome/preregistered HE2 without replay. Read RECORD-MAP in full and the new AGENTS/workflow instructions; added result/status lines and partial review receipt to pending G273, leaving unreviewed GC866 in the waiting room. Record searched: GC868 -> RULE30-GPT GC868, outside ledgers; new rule arrived after this block's preregistration. Helper fallback includes the closed casual ledger, so no fallback/--ledgers call was used and Cloud is asked to respect closure. Ledger, whitespace, privacy and conflict checks pass. No TeX changed, prior startup/parser passes and full-browser limitation retained. Next exact chain-count/null audit; no HE or RW replay, scratch reconnect deferred, break room closed.
+
+
+**GC868 race-recovery receipt (2026-10-09 21:38 BST).** Main advanced during the topic-successful push. The single permitted recovery fetch/merge receives5ef8624e's HE2 outcome and HE3 preregistration; read the new recorded outcome/source without running it. Cloud retains that lane. Ledger, whitespace, added-line privacy and conflicts pass, archive9 preserved. No force push; scratch coordination still deferred.
