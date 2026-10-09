@@ -18,7 +18,13 @@ PREDICTIONS (Local's, published before the run):
   KT2N-P2 (blind, confidence 0.5): at least one case is SAT at N = 448 within the 12-hour cap (Cloud's CL042 says
           alive; KT2M's 4-hour caps did not decide it).
   KT2N-P3 (blind, confidence 0.7): no case is UNSAT at 392.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-09 08:11 BST (M5; restarted from its checkpoint after the NVMe drop of 2026-10-08, the wave resumed
+  on the internal disk; N = 392 decided 21:32 and 21:57, N = 448 at 06:12 and 08:11, each inside the 12-hour cap):
+  KT2N-C1 PASS: all four models replay by direct simulation.
+  KT2N-P1 HELD and KT2N-P3 HELD: both cases are SAT at N = 392.
+  KT2N-P2 HELD: both cases, (0, 2) and (0, 4), are SAT at N = 448, so class 32 is alive at 448 (by GC377 at every
+  N <= 448). Cloud's CL042 alternation reading survives: class 42 dead by 560 (KT2C), classes 32 and 52 alive at 448.
+  Nothing is decided above 448 for class 32; KT2L's 4-hour caps left it UNKNOWN at 560.
 """
 import os
 import subprocess

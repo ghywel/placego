@@ -139,6 +139,9 @@ that time does not allow.
 - [Proposition 21 (proved by hand, second-read): a seed sharing the single cell's centre column begins its left half exactly where its right half alone fails](34-proposition-21-proved-by-hand-second-read-a.md):
   A finite seed that shares the single cell's centre column must start its left half exactly where its right half,
   on its own, would first break that column.
+- [Proposition 22 (proved by hand, second-read): a row that turns faster than light is periodic, and every window turns leftwards](35-proposition-22-proved-by-hand-second-read-a.md):
+  A Rule 30 row whose pattern slides faster than light is always a repeating ring. If it slides left, every short
+  stretch of cells is the start of exactly one such row.
 
 ## Short proofs restated from the running text
 

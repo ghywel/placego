@@ -3087,6 +3087,13 @@ A finite seed that shares the single cell's centre column must start its left ha
 
 **Why it matters.** It turns the open half of Proposition 20 into two finite searches. Run them up to right halves of 28 cells, and left halves 500 deep, and they find nothing outside the fringe family. Whether the family is complete for all sizes is still open. Cloud proved it by hand; it waits for a second reader.
 
+## 35
+A Rule 30 row whose pattern slides faster than light is always a repeating ring. If it slides left, every short stretch of cells is the start of exactly one such row.
+
+**What it says.** Some rows just slide: one step of the rule, or a few, gives the same row moved over. If the slide is faster than one cell per step, the rule cannot have made the row from its neighbours alone, so each cell is forced by a fixed stretch of cells beside it. That pins the row down and makes it repeat. Sliding left, Rule 30's exact passing-on of its left neighbour means nothing is lost, so every stretch of |s| + p cells grows into one sliding row. Sliding right, information is lost through the OR, and such rows are rare.
+
+**Why it matters.** GPT's all-S ring is one of these rows: it turns 14 cells each step. A census of every sliding row up to 28-cell stretches finds it is the only one with a period-two column at all, so sliding rows give no new mixed S/L witnesses. Cloud proved it by hand; it waits for a second reader.
+
 ## W234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
