@@ -16097,3 +16097,26 @@ If no fixed even graph persists, for each finite R all even admissions <=R and a
 ## GC659 — B2 prior-art check remains partial (2026-10-09)
 
 After period-growth accounting stalled, checked the recorded owed Jen1986 comparison. The [publisher page](https://link.springer.com/article/10.1007/BF01010579) supplies an abstract and metadata, but full text was not obtained. Rechecking the [Rowland author PDF](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf) confirms its Jen Theorem4 attribution concerns eventual periodicity, and its section5 doubling criterion is not itself a stage-spacing bound. No Jen full-text reading, absence or novelty claim follows. The stored OSTI link is Jen1990 rather than1986 and failed retrieval; that failure is retained in PRIOR-ART. The arbitrary-right/all-branch rate remains separate from a single-cell record. No experiment, paid access or scratch login. Next local proof work on an actual constraint; this limited search does not block all research or close the prior-art item.
+
+
+## GC660 — Exact all-right deadline at left distance one, by a finite hand certificate (2026-10-09)
+
+**Scope and prediction.** Q7 accounting produced no actual stage-growth bound; change to the Q1 deadline's smallest nontrivial slice. Existing section8.69 and Local DL/DL2 already measure its combined horizon8. Convert that finite observation to an explicit arbitrary-right proof, not a larger census or new uniform-j theorem. CLOUD-LOCAL predicts phase-specific maxima3 and8 observations; counterfactual both phases have the same horizon.
+
+Observe column0, with x_0(-1)=1 and x_0(i)=0 for every i<-1; the right initial half is arbitrary. Suppose the observed column alternates with initial bit p. Its left half evolves autonomously with that prescribed boundary for as long as the trace holds. At a black wall time t, Rule30 gives x_(t+1)(0)=x_t(-1) XOR1, independently of the right bit. Alternation therefore requires x_t(-1)=1 at every black wall time whose outgoing transition is included.
+
+Write each clamped left row as the SET of black depths d>=1, where depth d is site-d. Starting with{1}, direct recurrence yields the following complete rows (all unlisted left sites white):
+
+    black start p1:
+    t0 {1}; t1 {1,2}; t2 {2,3}.
+
+    white start p0:
+    t0 {1}; t1 {1,2}; t2 {2,3}; t3 {1,3,4};
+    t4 {1,4,5}; t5 {1,2,3,5,6}; t6 {3,6,7};
+    t7 {2,3,4,5,7,8}.
+
+For p1, the black wall at t2 has a WHITE nearest-left bit, contradicting alternation on transition2 to3. Thus at most3 observations (times0..2) can agree. For p0, black times1,3,5 pass, but the black wall at t7 has the nearest-left bit white, contradicting transition7 to8. Thus at most8 observations (times0..7) agree. No assumption about the right half enters these upper bounds. Finite propagation proves the displayed left supports are complete: after t steps their greatest possible depth is t+1.
+
+**Independent controls and sharpness.** A fixed7-bit right-prefix search supplies attaining finite seeds: {-1,0,2} has column0 trace101110011 through time8, attaining3; {-1,7} has010101011, attaining8. `tests/probes/lexicon/rule30_j1_deadline_audit.py` independently checks the hand row sets against decimal Rule30's truth table, and the seeds with an unclamped physical-coordinate recurrence and an expanding exact finite support. Both controls PASS. This is a bounded proof audit, not a replay of DL's hull enumeration.
+
+**Unexpected convention check and limitation.** The first incompatible transition STARTS at times2 and7; the last matching observations are those same times. Counting the starting index as the number of observations would give incorrect2 and7. This explains the observation maximum8 versus section8.69's failure-time convention7 at width1. The proof establishes only this slice, not a linear deadline for arbitrary j, conditional compactness, or a prize. Local review requested; next a genuinely scalable left-distance mechanism rather than extending the finite table. Scratch doorbell remains deferred without retrying login.

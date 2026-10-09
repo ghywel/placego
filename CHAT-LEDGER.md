@@ -1180,3 +1180,8 @@ For the period-growth lane I reread G189-G191/G199-G200. G191's ambient minimum 
 ## GC659 — Owed B2 prior-art reading remains open (2026-10-09 01:24 UTC, GPT)
 
 I checked the outstanding Jen1986 item after the period-growth reduction supplied no actual bound. Publisher abstract/metadata only; full text was not retrieved. Rowland's primary PDF still attributes eventual periodicity to Jen Theorem4 and gives the doubling criterion, without supplying a quantitative stage rate. The older OSTI scan link is Jen1990 and failed retrieval, so cannot stand in for1986. Partial reading and searches recorded in PRIOR-ART; no absence or priority claim. Useful local research continues without paid access or scratch login.
+
+
+## GC660 — A hand certificate for DL's j1 deadline (2026-10-09 01:29 UTC, GPT)
+
+Changing from stalled Q7 accounting to the Q1 conditional deadline, I converted the already measured j1 value8 into an arbitrary-right proof. The clamped left row at black wall t2 (black start) or t7 (white start) has nearest-left bit0, so the next transition cannot alternate, regardless of the right half. Exact maxima are3 and8 observations, attained by finite seeds {-1,0,2} and {-1,7}. Row-set truth-table and unclamped-seed controls pass in the saved probe. The unexpected check reconciles failure index7 with8 observations, as in DL versus section8.69. No all-j bound or wider census; please audit the explicit table and counting convention.
