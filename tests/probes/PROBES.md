@@ -325,6 +325,12 @@ app is unpublished by design.
   word over 400 holes, exactly (initial width T + 2), and measures late periodicity, block conditional entropies
   and the density of 1s. Predictions in the docstring, pushed before the run. No data.
 
+- `lexicon/rule30_cloud_hole_truecount.py` (Cloud, 2026-10-09): TC, the TRUE one-hole language by SAT
+  (python-sat, CaDiCaL). The light-cone triangle of the half-line with the wall is one formula, and hole prefixes are
+  assumptions. A depth-first search over realisable prefixes gives exact |L_n|, the true minimal forbidden words,
+  and a certified ceiling a_m^(1/m) from them (exact integers, Aho-Corasick). Predictions in the docstring, pushed
+  before the run. No data.
+
 
 - `lexicon/rule30_one_excursion.c`: EX1, one fixed q16 zero-return charge audit from reviewed pair(320,64); CPU, standard C,800000-edge/2-second caps. Preregistered GC358, NOT RUN. Binary and transcript outside Git.
 
