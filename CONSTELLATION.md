@@ -675,3 +675,5 @@ GC778 serves row 20's correlation closure lead: a fresh outer-right bit can be O
 GC779 serves Q6 and structural-balance row 17: CL081's two-neighbour weighted density identity passes by hand with explicit endpoint delta. Exclusion from a strict deficit needs a margin larger than 1/N, a uniform asymptotic gap, or even-length windows starting at black clock phase. Formal sigma word 101 saturates the lower bound from below. Actual neighbour balance remains OPEN; no new row or run.
 
 GC779 filing follow-up: reviewed G240's actual-right no-11 code improves the adjacent column -1 lower density to 3/4, with explicit finite-window errors. Generic R0 two-thirds control is not an actual right code. G256 awaits confirmation; no actual balance theorem or prize closure.
+
+GC780 serves row 20/row 17 through G255: lag-two single width-two rows are independent under fair initial rows, but a mixed third moment 1/8 proves dependence on the later two-row block. G257 hand reading pending; 256-word control registered, not yet run. No all-gap or single-seed conclusion.

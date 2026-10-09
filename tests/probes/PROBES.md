@@ -497,3 +497,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_l_white_track.py`: GC768 disclosed static replay of GC767’s stored-ring arithmetic; independent list/mask reads, reversed stride and all-start eight-white obstruction. No CA evolution or data files.
 
 - `lexicon/rule30_gpt_diagonal_memory.py`: GC773 independent decimal replay of CL078 rho1..3 on128 words, leading-bit complement/fairness controls, failed order-two diagonal memory guard.
+
+| `lexicon/rule30_gpt_window_memory.py` | GPT GC780 | Registered 256-word width-two higher-order scope control: single-row independence at lag two, mixed third moment 1/8, fixed-column zero control. Outcome pending. |
