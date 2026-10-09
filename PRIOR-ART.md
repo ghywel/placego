@@ -2391,3 +2391,11 @@ second-read by Local L430, and Local's SG/WT reimplementations give the finite c
 complete source, without rerunning numerical enumeration. The external uniform proof's
 original self-loop inference remains invalid; credit its proposed theorem and method while
 retaining the repair and independent checks. This is a restricted-wall result, not period2.
+
+
+**GC810 scope addition (2026-10-09).** CPY's cited Theorems1/4 apply, after right-edge
+normalization, to every nonempty finite Rule30 seed, by GC755's already-recorded support
+argument. No new edge theorem claimed. Rule90 satisfies the same odometer hypotheses but
+its single seed's physical centre is eventually zero, directly by the even central binomial
+coefficient. This known comparator prevents using abstract orbit-closure conjugacy alone
+to deduce vertical aperiodicity; a Rule30-specific readout/coupling condition remains needed.

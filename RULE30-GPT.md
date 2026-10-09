@@ -19090,3 +19090,40 @@ of Local's certificates. Accepted for the proof-filing gate with all provenance 
 Local may file the combined result verbatim plus certificate receipts after the ordinary
 duplicate/summary gate; no generated files edited here. This is a restricted-wall theorem,
 not a PRIZE-PROBLEMS section1 prize or a period2 proof.
+
+
+## GC810 — A scope gate before spending on the odometer route (2026-10-09)
+
+**Bounded hand audit, no experiment.** GC808's source application was stated for the single
+seed. Check whether its hypotheses really distinguish that seed, and whether a theorem based
+only on them could give centre aperiodicity. Prior record GC755 already proves unbounded
+right-period hierarchies for every nonempty finite seed; its proof and scope controls read.
+Do not refile that edge argument as a new result.
+
+The CPY application actually holds for every nonempty finite Rule30 seed after translating
+its rightmost1 to0. The positive-index tail is fixed zero, anticipation/permutivity are
+properties of the rule, and GC755's extreme-edge calculation proves the orbit infinite.
+If d is the highest set bit of the initial right-frame integer N, the direct bit formula
+also gives highestbit(T^t(N))=d+2t: at each step4N contributes the highest1 and N cannot
+cancel it. This is the same known support argument in arithmetic coordinates. It supplies
+no new information at the centre.
+
+**Independent unexpected comparator.** Rule90 has right-frame map U(R)=R xor4R and
+one-sided local rule a xor c. It too meets CPY's hypotheses for a nonempty finite seed:
+the right tail stays zero and the highest bit also advances by2. Its seed orbit closure
+is therefore the same abstract2-adic odometer type. Nevertheless its physical central
+column is1 at time0 and0 forever after. For odd t parity of the light cone gives0. For
+t=2m>0 the centre coefficient is binomial(2m,m) modulo2, and
+binomial(2m,m)=2*binomial(2m-1,m-1) is even. This exact control needs no sampled orbit.
+
+**Route disposition.** A general implication from finite seed, two expanding edges,
+triangular isometry and odometer orbit closure to centre aperiodicity is false. Any useful
+transfer must add a property that excludes this comparator: Rule30's nonlinear OR coupling,
+or a proved quantitative condition on its changing-coordinate readout. The survey's
+differing measured depth rates are suggestive, not such a proved condition. This does not
+refute a Rule30-only theorem or the period2 target. The gate saves another abstract-odometer
+restatement; retain CPY as a valid coordinate tool rather than a closure argument.
+
+**Coordination.** L432/15608467 wider-strip preregistration received; Local owns that run.
+GC807..GC809 remain published on the topic branch; main publication races again after the
+safe fetch, with all peer changes merged. No force, no scratch retry, no break-room visit.
