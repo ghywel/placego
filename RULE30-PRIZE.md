@@ -4660,3 +4660,86 @@ Across all 127 turning rows of up to 1024 cells, the Spearman correlation of lef
 $-0.001$ (DV4 held). A unit vector in space-time carries the row's information in two different ways. The vector
 $(s, p)$ along which the row is constant is chosen by the pattern. The damage cone's edges, $+1$ and the
 background's own leftward speed, are chosen by the rule acting on it. The two are unrelated.
+
+### 8.72 Interlocking shapes: Rule 30 is eight jigsaw tiles, its periodic histories are single-brick walls, and next to the wall a periodic column 1 crystallises the left half (2026-10-09)
+
+*Cloud, from the owner's question of 2026-10-09: "Interlocking shapes are some of the most interesting objects ...
+especially ... the unusual single form shapes that interlock to infinity. I would like an exploration on the
+applicability on rule 30." Probe `rule30_cloud_bricks.py` with `rule30_bricks.c`; predictions pushed in 7250395
+before the run. Chat CL073.*
+
+**1. Rule 30 is a set of tiles.** Give each neighbourhood $(l, c, r)$ one square tile with west edge $(l, c)$, east
+edge $(c, r)$, south edge $c$ and north edge $f(l, c, r)$. Neighbours in a row must agree on the two cells they share,
+and a tile's north edge must equal the centre of the tile above. So the tilings of the plane by these eight tiles
+are exactly the bi-infinite Rule 30 histories, and the single cell's history is a tiling of the half-plane seeded by
+one black tile. Edge colours can be cut as jigsaw tabs, so this is literally eight interlocking pieces. It is the
+standard reading of a cellular automaton as a deterministic Wang tile set (Kari).
+
+**2. The set is not aperiodic, and every periodic tiling is a wall of one brick.** A tiling periodic in two
+directions is a Rule 30 history with a lattice of periods. One fundamental domain of the lattice, painted, is a single
+brick, and its translates fill the plane. The white row, the checkerboard and every turning row of §8.71 are such
+walls. GC686's ring has lattice $\langle (14, 1), (0, 6) \rangle$ in (space, time), so its whole infinite history is
+one $14 \times 6$ brick of 43 black cells, laid in columns, each column of bricks one step lower than the last.
+
+**3. How the single-shape tilings that interlock to infinity are proved non-periodic, and why that does not
+transfer directly.** Two methods are known.
+- *Hierarchy*: Robinson's tiles, Penrose's, and the hat and spectre monotiles (Smith, Myers, Kaplan and
+  Goodman-Strauss, 2023). Every tiling is forced into nested supertiles of unbounded size, so a period would have to
+  fit inside one supertile. The record's nearest relative is the left band: Rowland's local nested structure, and
+  Lemma B1 to B3 and Theorem A‴ (§8.59), where unbounded diagonal periods keep a repeat out of the settled band.
+- *Arithmetic*: Kari's 14 tiles and Culik's 13 (1996), and Jeandel and Rao's 11 (2015) as the minimum. Each row of
+  tiles encodes a real number by its average, and each row multiplies it by 2 or by 2/3 (Kari), or by 3 or 1/2
+  (Culik). A period would need $2^m 3^n = 1$. That is the Mahler and Collatz arithmetic which §8.45 and
+  COLLATZ-PRIZE.md find in the prize.
+Both methods prove that no tiling at all is periodic. Rule 30's tiles have periodic tilings (item 2), so neither can
+apply to the tile set. They can enter only through the boundary condition, white far to the left, which is what a
+finite seed supplies and what Jen's and Condrey's proofs use. In tiling language, Problem 1 is an aperiodicity
+question for one seeded tiling, not for a tile set.
+
+**4. Jen's case crystallises (the computation).** Let column 0 be the wall $0101\ldots$ and column 1 any word of
+even length $P$, both $P$-periodic. Read sideways, Rule 30 sends the pair of columns $(c_i, c_{i+1})$ to
+$(c_{i-1}, c_i)$, a map on $2^{2P}$ states. So from some depth $\mu$ on, the forced left half is periodic in space as
+well as in time: a wall of one $P \times Q$ brick. Jen's theorem (Proposition 7) says the brick is never blank, and
+Theorem B says no row of it has a white run longer than $2P - 2$. The census runs every word of every even length
+up to 20, 1,398,100 words in all; its predictions were pushed first.
+- **There are very few crystals.** At each $P$ at most seven bricks hold all $2^P$ words (BK4 held), and 20 bricks
+  serve every length up to 20. A brick whose columns have period $p$ recurs at every multiple of $p$.
+
+| Columns' period | Bricks: width $Q$; "every $q$" means bricks $q$ wide, each column of them lower than the last |
+|---|---|
+| 2 | the checkerboard: black and white columns alternating, constant in time |
+| 4 | the 7-ring's 4-cycle (§5, G4.2): 7 wide, 13 black of 28 |
+| 6 | GC686's all-S ring: 84 wide, every 14 by one step; it takes 48 of the 64 words at $P = 6$ |
+| 10 | 155 wide, every 31 (the largest crystal again at $P = 20$, with 53% of all words); 90, every 18 |
+| 12 | 138, every 46; 60, every 15; 100, every 25 |
+| 14 | 728, every 104; 1316, every 94; 644, every 92 |
+| 16 | 325, no stagger; 2032, every 127 |
+| 18 | 1962, every 218; 8370, every 930; 4050, every 225; 342, every 19; 477, every 53 |
+| 20 | 25000, every 1250; 400, every 40 |
+
+- **The checkerboard takes exactly the words whose visible bits are constant.** Its basin has $2^{P/2 + 1}$ words at
+  every $P$ (BK5 held). Post hoc, those are exactly the words white at every visible time or black at every visible
+  time. One direction is a hand check. All white makes column $-1$ all black; all black makes column $-1$ a copy of
+  the wall and column $-2$ all black; and an all-black column is followed by a white one, which with it is the
+  checkerboard. The converse is measured, not proved.
+- One crystal usually dominates, but not always. BK6 predicted that one brick other than the checkerboard holds more
+  than half the words at every $P$ from 10 to 20; it was refuted at $P = 18$, where the largest holds 40%.
+- Transients stay short: at most 1554 columns at $P = 20$, median 496 (BK7, the unexpected check, held). Every brick
+  has density between 0.464 and 0.514. All but three (the checkerboard, the 7-ring's and the 325) are staggered, laid
+  like bricks in a wall, as GC686's ring is.
+
+**5. What this says about the prize.** Seen as tiles, the forced left half next to the 0101 wall is a crystal grown
+from the wall leftwards, one column at a time. A periodic column 1 is a periodic seed, and the crystal it grows is
+one of a few staggered walls. None is blank (Jen), so none can meet the white far left that a finite seed needs. The
+prize's period-2 case asks the same of every non-periodic column 1 that a right half can produce: can such a seed
+grow a crystal that turns blank? The question is what the monotile proofs answer for their own tiles, a forced
+structure that rules out the forbidden pattern, but with the boundary in place of the tile set's own rules. Nothing
+here proves it. Two leads come out of this reading:
+- The hierarchy route would need supertiles of unbounded size forced by the boundary. The record has them only in
+  the band, as Lemma B1's unbounded diagonal periods (§8.59). Carrying such a hierarchy from the band into the core
+  is the record's open step, stated in tiling terms.
+- The census lets column 1 be any word. Which of these bricks an actual right half can grow is a finite question at
+  each period, and GC686's ring shows that the answer is not empty at period 6.
+- The arithmetic route (Kari's $2^m 3^n \ne 1$) would need a quantity that the sideways map scales. The bricks show
+  that no such quantity can scale on periodic columns, since bricks are cycles. Any such invariant must use the
+  boundary.

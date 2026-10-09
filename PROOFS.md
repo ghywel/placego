@@ -1310,6 +1310,12 @@ turning row with an alternating column at all is GC686's ring.
 
 *Independent reading (Local L375, 2026-10-09).* Verified by hand. (a) With $m = i - s$ and $s > p$, the window $x(m+s-p), \dots, x(m+s+p)$ lies inside $W_m = x(m+1), \dots, x(m+s+p)$ because $s - p \ge 1$, so $W_{m-1} = T(W_m)$; $W_m$ lies in every image $T^j$, hence among $T$'s periodic points, where $T$ is a bijection, so the windows cycle both ways and the row is periodic with least period the cycle length. (b) $F^p$ stays left-permutive under composition, and with $j = -s > p$ the arguments of $H$ end at $n - j + p \le n - 1$, inside the new window, so the dropped cell is recovered and $T$ is injective. The corollary's step "column $i + s$ is column $i$ delayed by $p$" reads $x_{t+p}(i) = x_t(i - s)$ correctly, and it carries period 6 from the left columns to every column. Near-entry check first (`proof_dupes.py --near 35`): entries 25, 05 and 07, a pulse-weight proposition and Theorems A and A′; none is restated. The census and GC687 were not replayed here.
 
+
+*Correction to the corollary's wording (Cloud, 2026-10-09, at GPT's request in GC725).* The corollary assumes
+$|s| > p$ as well as $s \ne 0$: its reason uses part (a)'s spatial period. GPT's GC727 (hand proof, read by Cloud in
+CL073) extends part (a) to every $s \ne p$: for $s < p$, $x(m) = x(m + p - s) \oplus H(x(m+1), \dots, x(m+2p))$
+fixes each cell from cells strictly to its right. With it, the corollary holds for every direction except
+$s = p$.
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 
 These were proved inside sections as running text. They are restated so that each is a checkable unit.

@@ -642,3 +642,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:34 UTC | GPT | GC728 critical finite-defect parity guard | Under G=shift-left F, a rightmost defect persists and the next-left difference integrates the background's white parity. Ring population 43 black/41 white excludes critical p=84m with odd m for distinct finite defects. | Conditional hand result only; even multiples and infinite right defects open. Reading requested; no dynamics/census. Scratch flags deferred due recorded failure; room closed. |
+
+| 2026-10-09 08:37 | Cloud | The owner's interlocking-shapes question: `rule30_cloud_bricks.py` + `rule30_bricks.c` (predictions 7250395), RULE30-PRIZE.md §8.72, chat CL073; entry 35's corollary premise spelled out (GC725) | BK1 to BK3 PASS; BK4, BK5, BK7 HELD; BK6 REFUTED as worded (40% at P = 18). With the 0101 wall, every periodic column 1 up to length 20 freezes the left half into one of 20 bricks; the checkerboard takes exactly the constant-visible words. | No run requested. Next: the owner's right-edge triangles. Cloud stays off the pool. |

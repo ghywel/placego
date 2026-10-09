@@ -47,6 +47,38 @@ Counterfactual: many bricks, or no dominant one, would say the sideways map beha
   2^(2P) states. A few universal bricks would say the left half next to the wall has a small set of crystals,
   periodic cousins of the band, and the prize asks whether a non-periodic column 1 can make it crystallise blank.
 REFUTED-BY: BK1 to BK3 failing (the instrument or a theorem); BK4 to BK7 failing as worded.
+
+OUTCOME, 2026-10-09 (full run 08:31 to 08:33 BST, 86 s; every word of every even length 2 .. 20; data outside git).
+  The instrument changed once, before the P = 20 run and after the predictions. The first run, started at 08:27,
+  walked every word around its whole brick and was projected at about an hour for P = 20. A fast path now stops
+  each walk at the first state of a brick already found, or a rotation of one. Its output was byte-identical to the
+  original program's at every P from 2 to 18. The original's P = 20 run was stopped, and the recorded run is the
+  fast one throughout.
+  BK1, BK2 and BK3 PASS. Word 110100 enters GC686's brick at once (Q 84, Q' 14 by one step, density 43/84). No word
+  at any P freezes blank, and no row has a white run longer than 2P - 2.
+  BK4 HELD: at most 7 bricks at any P (1, 2, 2, 2, 3, 6, 4, 4, 7, 6 at P = 2 .. 20).
+  BK5 HELD: the checkerboard holds exactly 2^(P/2 + 1) words at every P.
+    POST HOC: they are exactly the words whose visible bits (column 1 at the wall's white times) are constant, at
+    every P from 2 to 20. One direction is a hand check. All white visible bits make column -1 all black; all black
+    ones make column -1 a copy of the wall and column -2 all black. An all-black column is followed by an all-white
+    one, and that pair is the checkerboard. The converse is measured, not proved.
+  BK6 REFUTED as worded: at P = 18 the largest brick other than the checkerboard holds 105,984 of 262,144 words
+    (40.4%). It held at every other P: 78% at P = 10, 56% at 12, 66% at 14, 81% at 16, 53% at 20.
+  BK7 HELD (the unexpected check): the longest transient is 33, 92, 127, 426, 1006 and 1554 columns at P = 10 .. 20.
+    It is under 2^(P/2 + 2) everywhere, and the median at P = 20 is 496.
+  The bricks, by the columns' own period (each recurs at every multiple of it):
+    2: the checkerboard, black and white columns alternating, constant in time.
+    4: the 7-ring's 4-cycle, 7 columns wide, 13 black of 28.
+    6: GC686's all-S ring, 84 wide, staggered every 14 by one step; it takes 48 of the 64 words at P = 6.
+    10: 155 wide staggered every 31 by 2 steps, and 90 wide staggered every 18 by 6. At P = 20 the 155 brick is
+        again the largest, with 53% of all words.
+    12: 138 (staggered every 46), 60 (every 15) and 100 (every 25).
+    14: 728 (every 104), 1316 (every 94) and 644 (every 92).
+    16: 325 (no stagger) and 2032 (every 127).
+    18: 1962 (every 218), 8370 (every 930), 4050 (every 225), 342 (every 19) and 477 (every 53).
+    20: 25000 (every 1250) and 400 (every 40).
+  So all 1,398,100 words of every even length up to 20 freeze into one of 20 bricks. Every brick has density
+  between 0.464 and 0.514, and every brick but three (the checkerboard, the 7-ring's and the 325) is staggered.
 """
 import math, pathlib, subprocess, sys, tempfile, time
 from collections import Counter

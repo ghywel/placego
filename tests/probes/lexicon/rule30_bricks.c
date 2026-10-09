@@ -48,55 +48,71 @@ static inline uint64_t rotstate(uint64_t s, int r) {
   return (uint64_t)rotr(s & M, r) | ((uint64_t)rotr((s >> P) & M, r) << P);
 }
 
+static int bmaxz[1 << 16];
+
+/* longest white run along any row over columns from state y onwards, n columns, continuing the counters in run */
+static int scan(uint64_t y, uint64_t n, int *run) {
+  int mz = 0;
+  for (uint64_t k = 0; k < n; k++) {
+    uint32_t a = y & M;
+    for (int t = 0; t < P; t++) {
+      if ((a >> t) & 1) run[t] = 0; else { run[t]++; if (run[t] > mz) mz = run[t]; }
+    }
+    y = phi(y);
+  }
+  return mz;
+}
+
 static void one(uint32_t w, long *stats) {
   uint32_t wall = 0;
   for (int t = 0; t < P; t++) if (t & 1) wall |= 1u << t;
   uint64_t x0 = (uint64_t)wall | ((uint64_t)w << P);
-  /* Brent */
-  uint64_t pw = 1, lam = 1, tort = x0, hare = phi(x0);
-  while (tort != hare) { if (pw == lam) { tort = hare; pw <<= 1; lam = 0; } hare = phi(hare); lam++; }
-  tort = hare = x0;
-  for (uint64_t k = 0; k < lam; k++) hare = phi(hare);
-  uint64_t mu = 0;
-  while (tort != hare) { tort = phi(tort); hare = phi(hare); mu++; }
-  /* tort is the first state on the cycle, at depth mu (its a is column -mu) */
-  uint64_t s = tort, best_q = lam; int best_r = 0;
-  for (int m = 2; m <= P; m++) {                            /* candidate staggers q = lam / m */
-    if (lam % m) continue;
-    uint64_t q = lam / m, y = s;
-    if (q >= best_q) continue;
-    for (uint64_t k = 0; k < q; k++) y = phi(y);
-    for (int r = 1; r < P; r++) {
-      uint32_t a = s & M, b = (s >> P) & M;
-      if (((uint64_t)rotr(a, r) | ((uint64_t)rotr(b, r) << P)) == y) { best_q = q; best_r = r; break; }
+  /* fast path (added before the P = 20 run): walk until a state of a known brick, or a rotation of one, appears */
+  uint64_t mu = 0, y = x0; int id = -1;
+  while (mu <= 4096) { id = hget(y); if (id >= 0) break; y = phi(y); mu++; }
+  if (id < 0) {
+    /* Brent */
+    uint64_t pw = 1, lam = 1, tort = x0, hare = phi(x0);
+    while (tort != hare) { if (pw == lam) { tort = hare; pw <<= 1; lam = 0; } hare = phi(hare); lam++; }
+    tort = hare = x0;
+    for (uint64_t k = 0; k < lam; k++) hare = phi(hare);
+    mu = 0;
+    while (tort != hare) { tort = phi(tort); hare = phi(hare); mu++; }
+    uint64_t s = tort;                                       /* the first state on the cycle, at depth mu */
+    id = hget(s);
+    if (id < 0) {                                            /* a new brick: its stagger, density and white runs */
+      uint64_t best_q = lam; int best_r = 0;
+      for (int m = 2; m <= P; m++) {                          /* candidate staggers q = lam / m */
+        if (lam % m) continue;
+        uint64_t q = lam / m, z = s;
+        if (q >= best_q) continue;
+        for (uint64_t k = 0; k < q; k++) z = phi(z);
+        for (int r = 1; r < P; r++)
+          if (rotstate(s, r) == z) { best_q = q; best_r = r; break; }
+      }
+      id = nbricks++;
+      uint64_t y2 = s, mn = UINT64_MAX; long ones = 0;
+      for (uint64_t k = 0; k < lam; k++) {
+        ones += __builtin_popcount((uint32_t)(y2 & M));
+        for (int r = 0; r < P; r++) { uint64_t z = rotstate(y2, r); hput(z, id); if (z < mn) mn = z; }
+        y2 = phi(y2);
+      }
+      int run[64]; memset(run, 0, sizeof run);
+      int mz = scan(s, 2 * lam, run);
+      for (int t = 0; t < P; t++) if ((uint64_t)run[t] >= 2 * lam) mz = 1 << 30;   /* a row white for ever */
+      bq[id] = best_q; blam[id] = lam; bmin[id] = mn; br_[id] = best_r; bdens[id] = (double)ones / (double)(lam * P);
+      bmaxz[id] = mz;
     }
   }
-  /* density of the brick, blankness, and the longest zero run along any row, over depths 1 .. mu + 2 lam */
-  long ones = 0; int blank = 1, run[64], maxz = 0;
-  memset(run, 0, sizeof run);
-  uint64_t y = phi(x0);                                     /* a = column -1 */
-  for (uint64_t k = 1; k <= mu + 2 * lam; k++) {
-    uint32_t a = y & M;
-    for (int t = 0; t < P; t++) {
-      if ((a >> t) & 1) run[t] = 0; else { run[t]++; if (run[t] > maxz) maxz = run[t]; }
-    }
-    if (k > mu && k <= mu + lam) { ones += __builtin_popcount(a); if (a) blank = 0; }
-    y = phi(y);
-  }
-  for (int t = 0; t < P; t++) if ((uint64_t)run[t] >= 2 * lam) maxz = 1 << 30;   /* a row white for ever */
-  int id = hget(s);
-  if (id < 0) {                                              /* a new brick: record its states and rotations */
-    id = nbricks++;
-    uint64_t y2 = s, mn = UINT64_MAX;
-    for (uint64_t k = 0; k < lam; k++) {
-      for (int r = 0; r < P; r++) { uint64_t z = rotstate(y2, r); hput(z, id); if (z < mn) mn = z; }
-      y2 = phi(y2);
-    }
-    bq[id] = best_q; blam[id] = lam; bmin[id] = mn; br_[id] = best_r; bdens[id] = (double)ones / (double)(lam * P);
-  }
+  /* white runs: the transient and 2P columns into the brick, then the brick's own */
+  int run[64]; memset(run, 0, sizeof run);
+  uint64_t lam = blam[id];
+  int maxz = scan(phi(x0), mu + (lam < (uint64_t)(2 * P) ? lam : (uint64_t)(2 * P)), run);
+  if (bmaxz[id] > maxz) maxz = bmaxz[id];
+  int blank = bdens[id] == 0.0;
   bwords[id]++;
   printf("%u %llu %llu %llu %d %.4f %d %d %d\n", w, (unsigned long long)mu, (unsigned long long)lam,
-         (unsigned long long)best_q, best_r, (double)ones / (double)(lam * P), maxz, blank, id);
+         (unsigned long long)bq[id], br_[id], bdens[id], maxz, blank, id);
   stats[0]++; if (blank) stats[1]++; if (maxz > 2 * P - 2) stats[2]++;
 }
 
