@@ -10532,6 +10532,79 @@ every profile's period divides 155 and GC760 makes every adjacent joint period 1
 neighbouring bit), 34 (Proposition 21) and C.1 (the checkerboard lemma), with scores of 0.03 or less on the formal
 text. Read: none states or uses a coprime-period argument, so none is restated. The hard checks pass (273 entries).
 
+### G.GPT260. The critical selector is odd when the first odd-tail profile has least period 5 (second-read, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC821. *Credit:* GPT's proof. Independently read by Local (chat L442), with a literal check:
+U built from the stated constraints and filtered by GC798's exact projection, the odd driver and B's period 310. All
+10,018 admissible U give odd E and XOR a_b = 1. (A purely random U sampler found none admissible; it is not counted as
+validation.) *Status:* hand proof verified by a second reader; conditional on the critical premises below. Not a prize
+claim. *Filed by:* Local, at GPT's request (GC823); the G number is assigned at filing.
+
+**Setting.** This is the actual period-310 all-L interface of GC785 and GC796.
+- A complements after 155, and D is its first 155-periodic right profile, with an odd black count over 155 (GC785).
+- U is the next profile, with $\Delta D = U \lor W$ and $\Delta U = W \lor X$.
+- B is a period-310 primitive just left of A, and $E(t) = B(t+155) \oplus B(t)$.
+
+**Statement.** If D has least period 5, then D is a temporal translate of 01011 repeated 31 times, and E has an odd
+black count. So GC793's next-orientation selector is unique in this subcase.
+
+**Proof.**
+1. A proper-period D with no singleton run has every transition marked (GC798), so U = Delta D, and the pair's joint
+   period divides D's, against GC760.
+2. Counts 1 and 4 contain 00100 or 11011, which G.GPT258 forbids. Counts 2 with adjacent blacks and 3 with adjacent
+   whites have no singleton. 00101 has an even count over 155, against GC785.
+3. Take D = 01011, so T = Delta D = 11101. Phase 2 enters a black run of length 2, so it is marked: U(5b + 2) = 1.
+   Phase 3 has T = 0, so U(5b + 3) = 0.
+4. Put $a_b = U(5b)$. D OR U has an odd count (A complements), and D has 93, also odd. So the U-black ticks at D-white
+   positions are even in number: $31 + \sum a_b$ is even, and $\bigoplus a_b = 1$.
+5. In GC796's formula only the ticks j = 5b can have $r_j = 1$ (value $1 - a_b$), and each has $1 + 2(30 - b)$ later
+   white ticks, an odd number. So $\mathrm{parity}(E) = 1 \oplus (1 \oplus \bigoplus a_b) = \bigoplus a_b = 1$. ∎
+
+*Scope (GC821).* Nothing is claimed about iterated uniqueness, the least-period 31 and 155 cases, or excluding this
+interface. GC817's genuine q5 source (D = 01011, next profile 11100) is a local control with odd E. With U = 0 instead,
+E is even, but the U equation then fails, which shows that the extra right equation supplies the marked phase.
+
+*Near-entry gate (Local, at filing).* `--near G260` gives G259 (the coprime-period lemma), G252 (an odd adjacent
+correlation at p = 310) and G158, read. They are different statements; G259 and G252 are the same interface's other
+constraints. None is restated.
+
+### G.GPT261. Proper-period tail profiles need both singleton colours; the selection parity reduces to phase sums (second-read, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC822. *Credit:* GPT's proof. Independently read by Local (chat L442), with a literal check:
+random D of period m and odd count, and U built under GC798's projection. The compressed formula equals E from full
+310-tick integration in every admissible case (1,985 at m = 5, 2,976 at m = 31), and XOR u_j = 0 throughout. The
+generator did not impose G258 or the singleton conditions, so this checks the identity, which needs neither.
+*Status:* hand proofs verified by a second reader. Not a prize claim. *Filed by:* Local, at GPT's request (GC823).
+
+**Statement.** In GC821's actual critical setting, let D have proper least period m in {5, 31}, with 155 = m s and s
+odd.
+- (a) D has at least one black singleton run and at least one white singleton run. This holds for every
+  proper-period profile in this tail.
+- (b) Let J be D's white phases in an m-block, w = |J| (even), c_j the number of white phases after j (mod 2), and
+  $u_j = \bigoplus_b U(bm + j)$. Then $\bigoplus_{j \in J} u_j = 0$ and
+  $\mathrm{parity}(E) = 1 \oplus (w/2 \bmod 2) \oplus \bigoplus_{j \in J} u_j c_j$.
+
+**Proof.**
+- (a) GC821 gives some singleton. If every white run had length >= 2, a black singleton would sit in 00100,
+  forbidden by G.GPT258, so there would be no singleton at all. The symmetric argument with 11011 gives the other
+  colour.
+- (b) w is even because D's m-block black count is odd (s odd, total odd). U <= Delta D makes u_j = 0 at white
+  phases that are not run ends.
+  - A white end before a black run of length >= 2 is marked in every copy (GC798), so u_j = 1.
+  - D OR U odd gives $\bigoplus u_j = 0$.
+  - In GC796's ordered-pair count, a white tick at phase j has c_j later whites mod 2 in every copy, since each later
+    full block adds an even w.
+  - Summing over the s (odd) copies gives $\bigoplus_j c_j (1 \oplus u_j)$, and
+    $\bigoplus_{j \in J} c_j = \binom{w}{2} \equiv w/2$. ∎
+
+*Control (GC822).* At m = 5, D = 01011 gives J = {0, 2}, (c_0, c_2) = (1, 0), u_2 = 1, then u_0 = 1, so the parity
+is 1, which recovers G.GPT260. At m = 31 the formula is the remaining obligation, not a value. The 155 case is
+uncompressed.
+
+*Near-entry gate (Local, at filing).* `--near G261` gives G260 (its companion: (b) at m = 5 recovers G260's value,
+but G260's forcing of the word 01011 and of the marked phase is its own), 03 and G259, read. None is restated. The hard
+checks pass.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

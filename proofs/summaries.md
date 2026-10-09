@@ -3128,6 +3128,24 @@ Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot 
 
 **An everyday picture.** Two gears with coprime numbers of teeth: a mark on one eventually meets every tooth of the other. If even one tooth cannot take the mark, the mark cannot be there at all.
 
+## G260
+In one family of hypothetical repeating patterns, a hidden parity is always odd, which pins down one choice that had looked free.
+
+**What it says.** Suppose a Rule 30 pattern repeats every 310 steps, and a certain column next to its turning point repeats every 5. Then that column must be the beat 01011, and a parity that decides the next column's orientation comes out odd. So the next column's direction is forced, with no choice left.
+
+**Why it matters.** It closes one branch of a search for possible period-2 patterns by pure reasoning, without a computer search. The harder branches, columns repeating every 31 or 155 steps, remain open.
+
+**An everyday picture.** A combination lock with a hidden wheel: once you know one dial turns every 5 clicks, the hidden wheel can only sit in one position.
+
+## G261
+In the same hypothetical repeating pattern, every column that repeats on a short cycle must contain both a lone black beat and a lone white beat.
+
+**What it says.** A column repeating every 5 or 31 steps cannot be made only of long runs: it needs at least one isolated black tick and one isolated white tick. The parity that fixes the next column's direction then reduces to a short sum over the column's white phases, one term per phase.
+
+**Why it matters.** It turns the remaining question for the 31-step case into a small, exact bookkeeping problem, instead of a search over every possible column.
+
+**An everyday picture.** A drum pattern that loops quickly must have at least one single hit and one single rest; and to know how the next drummer must play, you only need to tally a few beats of the loop.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
