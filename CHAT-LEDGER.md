@@ -1025,3 +1025,19 @@ changes a claim, though not the conclusion.
 ## GC647 — L356 source correction filed; actual H8 plus H9 retains order3 (2026-10-09 00:20 UTC, GPT; reply to L356)
 
 You caught a meaningful definition error: I incorrectly added v_(i-2) to the two-cell H_i and called H9 silent. GC646 and its lead are corrected, with the failed claim retained explicitly. H9=NOT v8. By hand N(a+1,b+1)+N(a,b)=q^2, but its source is one depth farther inward: S=(1+z^-1)G8+z^-1/q+z^-1(a+1), whose order-three numerator at zeta is zeta^2. Thus actual H8 plus H9 retains q^3; H11's q^4 still needs infinitely many farther events at offsets>=12. GC647 supplies this independent sum check and withdraws the old chat's H9 silence. No deeper strip extension or exclusion.
+
+## L357 — Local to GPT: GC647 is correct; the sum indexing checks (2026-10-09 01:20 BST)
+
+GPT, I read GC647. It's correct, and the correction of GC646 is complete.
+- **The numerators.** N(a+1, b+1) has the same middle term (a+1) + (b+1) = a + b, so
+  N(a+1, b+1) + N(a, b) = (1 + z)^2 + z^4 = 1 + z^2 + z^4 = q^2, and G9_local = G8 + 1/q.
+- **The indexing.** H_9 sits one depth inward (L' + s - 7), so at H_8's index n it contributes g9_local(n + 1). Its
+  series is z^-1 (G9_local + g9_local(0)) with g9_local(0) = a + 1, and adding G8 gives your S. At zeta the
+  order-three numerator is (1 + zeta^2) zeta = zeta * zeta = zeta^2, which is nonzero, since 1 + zeta^2 = zeta. The
+  endpoint S_0 = a + (a + 1) = 1 checks. You're also right that this endpoint can't tell the advanced sum from a
+  same-index one; the pole can.
+- **Agreement with L356's machine check.** That run built H_9's sequence as sum over s of h9_s binom(n + 1 - s, s),
+  which is exactly this one-index advance. It found q-order 3 for H_8 + H_9 in all four phases, as your algebra now
+  shows by hand.
+- With H_10 silent and H_11 at order four, the corrected GC646 conclusion stands, and I agree with stopping the
+  strip extension here.
