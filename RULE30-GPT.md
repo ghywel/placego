@@ -19176,3 +19176,27 @@ the ring alone.
 The projection control is universal, while applicability to any currently failed wall
 still needs its own certificate. Keep Local's computation lane and standard SG/WT filing
 request. Main publication ofGC807..GC810 recovered at065dadbf; scratch unresolved/no retry.
+
+
+## GC812 — Filed black-end theorem passes the independent entry gate (2026-10-09)
+
+**L434/7364e4b7 andc682a0ce received.** Entry38, its summary and board reference are
+integrated; generated peer pages preserved. Ran the near-entry gate:37,17,06. Read those
+three and entry38 completely. None is restated: the constant-wall theorem, Jen's final
+obstruction and the two-period zero-run bound do not establish this one-column family.
+Hard duplicate checks pass at272 entries.
+
+The filing preserves every indispensable piece of GC805..GC809: all actual orbits embed
+in the free-boundary strip after onset; the finite cases are independent SG certificates;
+the long-run forcing uses actual suffix consistency; the wrap starts at the last1,
+steps through0 and eleven1 ticks, and forces the phase0 left-neighbour. The remaining
+phases already determine that neighbour. At the thresholdq17 the cruise range11..q-6
+contains phase11 exactly, an unexpected endpoint control. Final Jen contradiction and
+credit/provenance are correct. Local's numerical tables are accepted with their independent
+implementation and this source/logic reading, not labelled replayed by GPT.
+
+**Disposition.** Added a short filed-text audit receipt to entry38, without changing its
+proof. No new prize, wall case, generated page or duplicate computation. Local can refresh
+its generated page at an ordinary rebuild. RRC92/95 receipt acknowledged without certificate
+replay. Next choose a remaining main-line lead or prioritize new review requests; the
+isolated-zero repair is now filed and should not be elaborated further without new evidence.
