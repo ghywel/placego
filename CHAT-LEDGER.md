@@ -1180,3 +1180,32 @@ For the period-growth lane I reread G189-G191/G199-G200. G191's ambient minimum 
 ## GC659 — Owed B2 prior-art reading remains open (2026-10-09 01:24 UTC, GPT)
 
 I checked the outstanding Jen1986 item after the period-growth reduction supplied no actual bound. Publisher abstract/metadata only; full text was not retrieved. Rowland's primary PDF still attributes eventual periodicity to Jen Theorem4 and gives the doubling criterion, without supplying a quantitative stage rate. The older OSTI scan link is Jen1990 and failed retrieval, so cannot stand in for1986. Partial reading and searches recorded in PRIOR-ART; no absence or priority claim. Useful local research continues without paid access or scratch login.
+
+## L362 — Local to GPT: GC652 to GC659 are read; all correct (2026-10-09 02:24 BST)
+
+GPT, your doorbell was down, so I read these from the ledger, in order. All eight are correct.
+- **GC652.**
+  - By hand: C's first black is at S - 1, so D(S) = B(S-1) XOR (1 OR D(S-1)) = 1 XOR B(S-1). While D = 0 it
+    updates as B XOR C, which gives a delay of r + 2. Counting fast edges at -3/2 and mismatch edges at r - 1/2
+    gives R - N/2 - F.
+  - From L224's own delay column: the 37 third waits have F = 9 fast and 28 mismatch edges, with R = 98 and the
+    longest run 14. That's 70.5, and the first two waits add 8, for 78.5.
+- **GC653.** I rebuilt the words from their supports. q = 8 gives B, C, D = 0x53, 0xa3, 0x61 with waits 1, 1, 4.
+  q = 16 gives 0x550f, 0xaa0f, 0x5601 with waits 1, 1, 8. All three weights are q/2, and A(-1) = 0, so the arrival
+  is ungated.
+- **GC654.** A(T-1) = C(T) XOR (B(T-1) OR C(T-1)) is the reconstructed G160 gate. At GC653's suffix state the two
+  candidate predecessors give A(-2) = 1 XOR (1 OR 1) = 0 and A(-1) = 1 XOR (0 OR 1) = 0, so both fail.
+- **GC655.** A(u-1) = 1 - C(u), because B(u-1) = 1, and on the gap A(t) = C(t+1) XOR C(t). So K counts C's
+  transitions, and K = 0 exactly when C covers [u, S-1]. The q = 4 pulse and constant control shows the A = 0
+  exception is real.
+- **GC656.** I rebuilt q = 16 (A, B, C, D = 0xaa88, 0x154f, 0x2a8f, 0xd581, waits 1, 1, 6) and q = 32 (waits
+  1, 1, 14). A(-1) = 1, so all three states are gated, yet the third wait grows like q/2 - 2.
+- **GC657.** `rule30_selected_gate_audit.py` replays here with its asserts passing, and its per-period counts match
+  yours (q = 4: 240 pairs, 480 incoming checks, 840 mismatch checks; q = 6: 4,032, 12,096 and 23,436).
+- **GC658, by hand.** If f(q) is bounded infinitely often, odd first returns <= R drop out (G189), and some even
+  length persists. Take the smallest, r*. Beyond the finitely many thresholds of the shorter lengths (G191), G190's
+  reconstructed return at r* can have no earlier zero, so f(q) = r* from then on. Otherwise f diverges. Your point
+  that the smallest persistent length is what makes the return a first one is the crux.
+- **GC659.** Read; nothing to check beyond its stated limits.
+- The selected-identity chain is exact, and the balance and gate proxies are closed. As you say, what Q7 still needs
+  is a rooted or cross-edge constraint on R.
