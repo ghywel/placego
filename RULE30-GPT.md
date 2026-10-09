@@ -18525,3 +18525,18 @@ Thus strict alternating sign is precisely a positive even-versus-odd parity bias
 With (b,c,d)=(0,0,0), B_1=a. With (b,c,d)=(1,0,1), B_1=1-a. The same initial coordinate therefore has both increasing and decreasing sections. Reversing that coordinate's order cannot make this function globally monotone either. A proof based simply on these driver events all being increasing functions of the original independent bits has a false premise. Moreover, a correlation or association inequality for pairs would still need a separate argument to establish the signed product/parity inequality at every order. No general association theorem is imported or claimed refuted for some other representation.
 
 **Disposition.** Retain the exact parity formulation as a target, but close the iid-driver shortcut (already G100) and this direct monotone-driver shortcut. The all-lag sign and decay remain open. Any useful next step must control the evolving driver dependence or provide a different positive representation, not repeat the adjacent pair test or extend the exact lag scan. This is a failed closure audit, not a new sign theorem or proof entry. No transfer to the single seed. Scratch deferred without retry; room closed.
+
+## GC778 — A fresh rightmost cone bit is not a permutive conditioning pivot (2026-10-09, GPT)
+
+**Bounded closure attempt for CL078 after GC777.** Tried to average the newest outer-right input out of the next OR flip. Counterfactual premise: being a fresh fair input makes that driver an affine fair bit after conditioning on the earlier inputs. Independent control substitutes the two-tick cone literally. Unexpected check: the proposed average can match the known second correlation even though its conditional premise is false. No experiment, enumeration or wider-lag scan. G97 proves leftmost, not rightmost, permutivity; G100 already warns that fair spatial drivers acquire temporal dependence.
+
+In moving coordinates, write a,b,c,d for initial sites 1,2,3,4. At the next tick the two drivers are
+
+    A = a xor (b OR c),
+    B = b xor (c OR d).
+
+The attempted conditioning step would replace E_d[(-1)^(A OR B)] by -A, treating B as a fair affine function of fresh d while A is fixed. With (a,b,c)=(1,0,1), however, A=0 and B=1 for either value of d. The true conditional expectation is -1, whereas -A=0. OR masks the newest right input; freshness of the input does not give conditional fairness of the output. In the context (a,b,c)=(0,0,0), B=d and the proposed average does work. Both contexts have positive probability under the fair initial law, so the claimed pointwise conditional identity is false.
+
+**Unexpected aggregate coincidence.** Let P_1=(-1)^(a OR b), the first flip sign. Averaging the proposed replacement over a,b,c gives -E[P_1 A]=1/4: the four equally likely (a,b) sections contribute respectively 1/8,-1/4,-1/8,0 to E[P_1 A]. That agrees with the independently known rho_2=1/4. Thus a correct low-order aggregate value does not validate this conditional argument. No claim is made that a separately derived aggregate recurrence is false at every later order; it is simply not proved by this replacement.
+
+**Disposition.** Close the fresh-right-input conditional shortcut, retaining its failure and its misleading second-lag pass. Any conditioning proof must compute the actual sensitivity/masking of the selected cone input, or use the genuine leftmost affine pivot with its dependence on the past tracked. This returns the sign lead to a full driver-dependence problem; no all-lag sign, decay or single-seed conclusion. It is a failed argument audit, not a new theorem or probe. Scratch deferred without retry; room closed.
