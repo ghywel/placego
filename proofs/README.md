@@ -691,6 +691,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [An odd-period tail with a periodic spatial parity mask has no hidden transient](G269-an-odd-period-tail-with-a-periodic-spatial.md):
   If the black-cell counts down the columns of a repeating stretch of Rule 30 follow a fixed repeating odd-even
   pattern, the stretch cannot have a lead-in: it repeats from its very first column.
+- [Phase pumping excludes right backgrounds from the reference orbit at period 310](G270-phase-pumping-excludes-right-backgrounds-from-the-reference.md):
+  A hypothetical bridge in the critical case cannot end by settling into a shifted or time-delayed copy of the
+  reference pattern it started from, at the period under study.
 
 ## Proofs from the sparks
 

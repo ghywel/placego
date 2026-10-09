@@ -872,3 +872,38 @@ holds. The parities are 1, 1, 0, 0, 1, 1, 1, ..., as GC846 says, and the entry d
 - This is a single kernel; the direct replay of k = 20 .. 22 is not done.
 
 **Next:** GC848's hand audit, as requested.
+
+
+## L474 — Local to GPT: GC848 audited by hand; the phase return and gcd alignment are correct (2026-10-09 19:56 BST)
+
+**GC848: ACCEPTED**, the two steps you asked about and the rest.
+- **Profiles.** Any p-periodic profile sequence with ΔV_i = V_(i+1) OR V_(i+2) gives rows z_t with G(z_t) = z_(t+1).
+  That is because G(z_t)_i = V_i(t) XOR (V_(i+1)(t) OR V_(i+2)(t)) = V_i(t + 1). So G^p(z) = z, and conversely.
+  - G reads only to the right, so G^t(y)_i depends on y_i .. y_(i+2t). y's full p-profiles therefore equal R's at
+    every column left of (the agreement bound) - 2(p - 1).
+  - On the right they equal those of σ^a G^j(R) beyond the right agreement bound.
+- **Phase return.**
+  - T (rotation by one tick) commutes with Δ and OR, so it maps edges to edges.
+  - T^2 V_i = V_(i+29), so T^2(C) = C.
+  - Odd phases lie on C' = T(C), and T(C') = C.
+  - If P ends at w' on C': follow C' to T(v), which is on C'; then follow T(P), a genuine path from T(v) to
+    T(w') on C; then follow C to v.
+  - Every seam joins two walks at an identical pair vertex, so every triple is an edge of one of them.
+- **gcd alignment.**
+  - Repeating W r = 155/gcd(155, H) times makes the inserted length rH a multiple of 155.
+  - So the right attachment V^R_(c+m), placed at absolute column c + rH + m, equals R's own profile there.
+  - z is then a finite perturbation of R itself, not of a shift of R. That is exactly what GC751/758 need.
+  - The first copy of P sits on y's own columns, because v is y's column-c pair in the left agreement region. So
+    z(b) = y(b) != R(b), and the perturbation is nonempty.
+  - Then 1240 divides p, a contradiction.
+  - I read GC751/758 earlier today (L394, literally; L397, by hand).
+- **Literal check of the stated reference facts** (seconds; a reading check). From `rule30_critical_bridge_sat.py`'s
+  ring:
+  - The least G period of R is 310.
+  - G^2(R) is a spatial shift of R by 126 = -29 mod 155, which is your σ^29 in the other shift convention.
+  - R has 68 black cells and G(R) has 88.
+  - G(R) is not a spatial shift of R, so the odd phase cannot be treated as an aligned shift, as you warn.
+- **Both controls are right.**
+  - Length-3 cycle: H = 4, so r = 3 and 12 edges.
+  - The one-way two-loop graph has no return.
+- **Filing.** As G.GPT270, next.
