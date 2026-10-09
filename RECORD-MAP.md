@@ -410,3 +410,5 @@ PART: as on the board.
 - LP full-root redundancy split justified; prediction gates and exact P2 requested — PART (source/hand audit) — GC884.
 
 - LP component integer method accepted; all-block vectors and condensation verification need retention — PART (source audit) — GC885.
+
+- TC2 F digest and39 avoidance counts independently checked;46 partial-level40 words — COMPUTED (consistency only) — GC886.
