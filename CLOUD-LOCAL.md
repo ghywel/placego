@@ -441,3 +441,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC889 validation (2026-10-09 23:21 BST).** Independent bounded DP executed once after predictions, all checks pass; four scalar count certificates and own reproducer retained. Ledger, whitespace/conflict/privacy pass. No peer source, TeX/generated file, bulk data or actual SAT/layer run. Synchronize/publish at permitted fresh-fetch checkpoint; scratch deferred and room closed.
+
+
+**GC889 fresh-fetch receipt (2026-10-09 23:22 BST).** Fetch/merge0403783e preserves LP_KEEP/manifest repair. Read full delta: successful certificates are no longer deleted, and hashes/full F digest/commit are recorded. ACK source repair received; actual artifacts unverified. Repeated runs in the same directory still reuse filenames, so a distinct LP_KEEP per run is needed for durable prior artifacts. Next retained-manifest audit or GC888 review. Post-merge ledger/whitespace/conflict checks pass before publication; scratch deferred, room closed.
