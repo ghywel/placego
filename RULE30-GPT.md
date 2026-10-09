@@ -19666,3 +19666,26 @@ In particular, the temporal-zero row at t0 has2L-2 consecutive spatial zeros imm
 **Independent and unexpected guards.** In the seven-tick case, profiles1,2 have six initial zeros;3,4 have five;5,6 have four;7,8 have three;9,10 have two;11,12 have one. Including D's initial white makes13 spatial zeros at that tick. The known five-phase control D=01011 has L=1, giving only d>=2, consistent with its five-cell ring. A constant all-white profile on a one-cell ring can have arbitrarily long runs: it shows why nonconstant temporal periodicity is essential. For a black V0 run, the wedge itself still holds, but the all-white-row argument does not: one only gets d>=2L-1 from avoiding a zero wedge wrapping onto the black V0. Do not apply the white-run bound indiscriminately.
 
 **Relation to the bounded TC result.** K6 supplies equations only at profiles0..5 and returns profiles0..7; it does not impose all equations needed to force the entire12-column wedge. Its SAT result is retained, not contradicted. Neither the mandatory wedge nor the ring lower bound proves infinite incompatibility or warrants an automatic deeper run. Next reasoning must still distinguish a bridge from its eventual background. L455/2f23fe00 applies GC833's finite-window scope correction; its longer exploratory centre-white window remains measured, not permanent whitening. Receipt verified and ACKed. Independent hand reading requested; no prize or new status-board row.
+
+
+## GC835 — Sparse AND on even cells has an exact Rule90 two-step orbit; its centre stays white after time1 (2026-10-09)
+
+**Bounded proof of a measured exception.** L455 reports centre whitening to16383 for S=2Z but explicitly leaves permanence unproved. Prediction by hand: the single-seed two-step orbit is exactly a coarse Rule90 orbit, proving the whitening without extrapolating the window. Counterfactual: the same mechanism treats S=6Z or every sparse mask. It does not. Existing Rule90 parity controls and AS's mask definition checked; no experiment, row run or novelty claim beyond this explicit inhomogeneous-rule calculation.
+
+**Two-sublattice equations.** Apply Rule150 everywhere and add c*r at even sites only. Write a_i=x_(2i), b_i=x_(2i+1). The exact update over F2 is
+
+    a_i' = b_(i-1) xor a_i xor b_i xor a_i*b_i,
+    b_i' = a_i xor b_i xor a_(i+1).
+
+If b is identically0, the first step gives a'=a and b_i'=a_i xor a_(i+1). Substitution into the next step gives
+
+    b_i''=0,
+    a_i'' = a_(i-1) xor a_(i+1) xor a_i*a_(i+1).
+
+This formula holds for arbitrary a at such an even-time row; it is not globally linear. From the single seed a=delta0, however, each successive coarse Rule90 row has black cells on only one spatial parity. Thus adjacent products a_i*a_(i+1) vanish. By induction, at physical time2n the odd sublattice is0 and the even sublattice equals the nth Rule90 row. At time2n+1 the even sublattice is unchanged and the odd sublattice is its adjacent xor. This proves the entire orbit, not only a centre window.
+
+**Centre and independent controls.** Rule90's centre at coarse time n is0 for n>0: if n is odd there is no integral central binomial index; if n=2r>0 the central coefficient C(2r,r) is even, since it equals2*C(2r-1,r-1). The centre is1 at n=0. Consequently the sparse-AND single-seed centre is black exactly at physical times0 and1, and white for every t>=2. The first two physical rows are delta0 and111; at time2 the only black cells are at-2 and2, independently checking the decimation and phase convention.
+
+**Unexpected nonlinearity and scope guards.** With a_0=a_1=1 and b=0, the two-step product a_0*a_1 is1, so the induced coarse map is not Rule90 on arbitrary initial rows. It agrees on this seed orbit because of the invariant parity support, not because deleting some ANDs linearizes the whole system. S=2Z breaks shift homogeneity: this is neither Rule30's own orbit nor a counterexample to Jen's homogeneous-rule statement. The m6 observed exception is not covered. AS's other sparse-mask verdicts remain finite-window evidence.
+
+**Disposition and receipt.** The permanence question for AS's S=2Z single-seed centre is CLOSED by this hand proof, pending independent reading and normal filing. No new computation requested. L456/75c110eb accepts GC834 by hand and reports witness corroboration without replay here; please file the accepted wedge lemma through the normal route when useful. The owner's Mahler third-problem suggestion is received; G50/GC616 and G51 already record its fractional-domain and rounded-recurrence guards, so no duplicate finite-integer carry experiment is proposed.

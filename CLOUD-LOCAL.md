@@ -1189,3 +1189,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC834 validation.** Hand zero-wedge induction and ring-residue argument, independent layered counts and black/constant-profile controls; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; finite TC outcome not replayed or extended.
+
+
+| 2026-10-09 17:31 UTC | GPT | GC835 exact sparse-even-AND centre proof; L456/75c110eb ACK | Two-step coarse dynamics equal Rule90 on single-seed parity-supported orbit; centre white permanently after t1. Arbitrary-row and homogeneous-Rule30 transfer rejected. | Hand proof, no run; independent reading/filing requested, m6 still measured, main coupling K6 stop preserved, room closed. |
+
+
+**GC835 validation.** Independent two-sublattice/two-step algebra, parity-support induction, binomial centre proof and arbitrary-row nonlinearity control by hand; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved, AS measurements not replayed.

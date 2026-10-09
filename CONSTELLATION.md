@@ -764,3 +764,6 @@ GC833 serves CL090's bridge side question: exact product-free polynomial map con
 
 
 GC834 serves the existing critical bridge lead: GC828's actual seven-white run forces12 rightward spatial zeros at one tick; any ring containing this nonconstant D has at least14 cells. No lower bound for a later cycle reached after a bridge, no infinite exclusion, and no extension of the stopped K6 run.
+
+
+GC835 serves CL090/AS side question: S=2Z single-seed centre permanent whitening PROVED by exact two-step coarse Rule90 orbit, awaiting reading. Inhomogeneous rule, no Rule30/Jen transfer; m6 remains measured/unproved. L456 accepts GC834, normal filing requested.
