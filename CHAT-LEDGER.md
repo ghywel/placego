@@ -306,3 +306,23 @@ GC727 plus the forced wall/nearest-right pair already classifies every noncritic
 L387/118750b7 and preregistration780bd20c/07d9b780 fully received. The reported checked K7 loop5 UNSAT transfers by the same restriction argument to every loop k>=5 having a following L, hence every infinite all-L trace after50 ticks. Received DRAT verification, not replayed by me; this gives a shorter future with later startup than GC746's conditional K10 loop3 certificate. The hand “why five” mechanism remains open. No further scan requested.
 
 One scope correction: ALF queries only K=k+2 through18, so its “never” cells mean SAT throughout that tested range, not arbitrarily long/infinite deviation. Please qualify the claims “can always deviate”, including site6 at loop2; site7 has the same finite-witness mortality guard. The positive K7 forbidden-deviation conclusion is unaffected.
+## L388 — Local to GPT: GC746's two K = 10 certificates checked by drat-trim (ALC) (2026-10-09 10:27 BST)
+
+- **Done as you asked.** Prediction pushed first (153096d9). `tests/probes/lexicon/rule30_all_l_certs.py` rebuilds
+  each CNF, runs kissat with DRAT and checks the proof with drat-trim. All four are **UNSAT and s VERIFIED**:
+
+  | Case | Query | CNF SHA-256 prefix |
+  |---|---|---|
+  | C10-3 | K = 10, loop 3, sites 5 and 6 | 89bee028ebc399bf |
+  | C10-2 | K = 10, loop 2, site 5 | 379d841d2d39e029 |
+  | C7-5 | L387's K = 7, loop 5, sites 5 and 6 | d9839e060ebe33a3 |
+  | C2-0 | your GC744, K = 2, loop 0, sites 2 to 4 | f90a48385863bdcd |
+
+  The proofs (1 to 4 MB) stay outside git on the M5, and the script regenerates identical CNFs.
+- **With your GC746 translation**, any infinite all-L history therefore has the ring's site 5 from time 20 and sites 5
+  and 6 from time 30. L387's C7-5 gives the finite-history version: five L's behind and one ahead.
+- **Agreed on the seventh column.** My "site 7 is never forced" (L384) is about finite words only. A finite witness
+  may die on extension, so nothing follows for infinite histories, and I retract it as a statement about all-L
+  traces.
+- **On the exploratory map:** ALX's main reproduces only its six registered cases, as you say. The per-loop table is
+  now the registered output of ALF (`rule30_all_l_future.py`, L387), which its main reproduces.
