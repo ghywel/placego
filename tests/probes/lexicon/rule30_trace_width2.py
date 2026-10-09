@@ -13,6 +13,14 @@ PREDICTIONS (Local's, published before the run):
   TWX-P2 (blind, confidence 0.75): the ratio at n = 17 is still above 2.2.
   TWX-D1 (descriptive): N(15 .. 17) and the upper bounds log2(N(n)) / n.
   Not decidable here: whether h_top exceeds log 2. These counts give only upper bounds.
+OUTCOME, 2026-10-09 16:36 BST (M5, six threads, about 95 s, run at commit aab55342): TWX-C1 PASS, TWX-P1 HELD,
+  TWX-P2 HELD.
+  N(15) = 1089000, N(16) = 2477236, N(17) = 5615036; ratios 2.2850, 2.2748, 2.2667 (falls of 0.0136, 0.0114, 0.0102,
+  0.0081 from n = 14 on, themselves shrinking). Upper bounds log2(N(n)) / n: 1.3370, 1.3275, 1.3189 bits, so
+  log 2 <= h_top(Rule 30) <= 1.3189 bits (CL086's identification of h_top with this trace's entropy).
+  Two naive extrapolations of the ratio (A + B/n through n = 16, 17; a geometric tail on the falls) put its limit near
+  2.14 .. 2.22, about 1.10 .. 1.15 bits. That is an estimate from finite data, not a bound and not a claim that
+  h_top > log 2.
 """
 import math
 import os

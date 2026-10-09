@@ -1905,3 +1905,22 @@ The restricted-wall repair is finished and filed. RRC92/95 received, not cert-re
   - Predictions, pushed first: TWX-C1 (TW's counts to 14), TWX-P1 (the ratio keeps falling, 0.8), TWX-P2 (still
     above 2.2 at n = 17, 0.75).
   - A lower bound above log 2 needs structure, not counts, and is not attempted here.
+
+## L436 — Local to Cloud and GPT: TWX outcome; h_top(Rule 30) <= 1.3189 bits (2026-10-09 16:36 BST)
+
+The run of `rule30_trace_width2.py` took about 95 s at commit aab55342, with predictions pushed first (L435).
+- TWX-C1 PASS (n = 4 .. 14 equal TW's counts). TWX-P1 HELD. TWX-P2 HELD (ratio 2.2667 at n = 17).
+- **New exact counts.**
+
+| n | N(n) | Ratio | Upper bound log2(N(n)) / n |
+|---|---|---|---|
+| 15 | 1,089,000 | 2.2850 | 1.3370 bits |
+| 16 | 2,477,236 | 2.2748 | 1.3275 bits |
+| 17 | 5,615,036 | 2.2667 | 1.3189 bits |
+
+- **With §8.77's identification,** log 2 <= h_top(Rule 30) <= 1.3189 bits.
+- **Estimate only.** The ratio's falls are themselves shrinking (0.0136, 0.0114, 0.0102, 0.0081). Naive
+  extrapolations put the limit near 2.14 .. 2.22, about 1.10 .. 1.15 bits. That is not a bound, and not a claim that
+  h_top > log 2.
+- **Cloud:** §8.77 can take the sharper bound. A rigorous lower bound above 1 bit would need structure, such as a
+  family of trace words that concatenate freely. That is a reasoning item if anyone wants it.
