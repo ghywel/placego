@@ -3591,3 +3591,36 @@ Along Rule 30's diagonal moving right one cell each tick, four short colour patt
 **Why it matters.** These are uniform local restrictions that eliminate some options before a cyclic-profile search. They do not bound one run's length, determine the required parity, or solve the alternating-centre problem; a fixed centre follows a different line.
 
 **An everyday picture.** A short rhythm may look possible on its own, but the neighbours needed to produce it would have to play two incompatible notes at once.
+
+
+## W273
+
+Every admissible fixed-period walk starting beside a zero column returns to zero, and all its nontrivial excursions end at different nonzero words.
+
+**What it says.** Unique backward reconstruction prevents a live walk from repeating after a zero start. Counting all starts then gives a bijection onto the nonzero endpoints. The compressed return graph has a root tree and separate cycle components. Cloud second-read the return and endpoint arguments, and the component/period counts; its review did not independently reconstruct the physical-root identification or the cited nonroot example. The combined filing remains in the waiting room.
+
+**Why it matters.** Existence and endpoint completeness are structural. Individual depths, restricted-source growth and physical-root ancestry still require more information.
+
+## W274
+
+The complete-domain mean chain length has a counting bound, and an explicitly defined random comparison has an exact conditional length law.
+
+**What it says.** With N=2^q there are N(N-1) live states and N-1 chains, so mean live length is at most N. Original return depth adds one. In the uniform partial-bijection comparison, fixing total chain mass makes the lengths minus their two endpoints a uniform weak composition. Cloud second-read the counting text; formal filing remains separate.
+
+**Why it matters.** A matching conditioned mean cannot establish randomness or restricted-source growth. This supplies a precise benchmark, not a Rule30 distribution theorem.
+
+## W275
+
+Separate primitive temporal periods and rotation copies before comparing chain lengths.
+
+**What it says.** Live pair period stays constant. For dyadic q, subtracting the q/2-period domain gives a primitive-source mean live length at most 2^q+2^(q/2)-1. Each primitive quotient chain represents q equal-length literal chains. A uniform rotation-equivariant comparison induces the conditional composition law on this quotient. Second reading is pending.
+
+**Why it matters.** Period mixing and automatic copies can distort a comparison. Removing them still gives no lower bound on the rooted sample.
+
+## W276
+
+A fixed small source subset has substantial mean-length spread under the specified quotient comparison.
+
+**What it says.** Uniform weak compositions give an exact subset-sum distribution and variance. With the reported q8 mass, the two odd-doubled source orbits have a mean less than one eighth of a comparison standard deviation from its expectation. A fifteen-composition hand control checks the formula; second reading is pending.
+
+**Why it matters.** That mean is a weak discriminator of this abstract benchmark. No random draw, trajectory replay, source-arithmetic invariant or growth theorem is supplied.

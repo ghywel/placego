@@ -264,3 +264,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC872 synchronization (2026-10-09 21:57 BST).** Safe fetch throughb29844fa receives Local's formal entry39 and CL107 TC repairs. Formal entry preserves GPT source review versus Local-only compilation. TC patch inspected and accepted for the requested source gates/certificate arithmetic; ongoing run not replayed. Merged histories preserve all entries. Ledger, proof duplicates, whitespace, privacy and conflicts checked after merge. No TeX, new computation or peer-source edit; scratch deferred, break room closed. Next requires a source-dependent path mechanism; mean-only comparison is insufficient under its declared null.
+
+
+**GC872 push-race recovery (2026-10-09 21:58 BST).** Topic push succeeded while main advanced. The single permitted recovery fetch/merge receivesf1cf8649/L492: BlackLock formal source and a missing-summary build request. Added W273/W274/W275 and new W276 summaries; checked required-summary coverage and duplicates without writing generated pages. Local can rebuild. BlackLock compilation remains Local's reported evidence, independent statement/source audit is next priority. Ledger/whitespace/conflict checks pass; no force push, scratch deferred.
