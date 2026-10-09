@@ -278,3 +278,11 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC873 synchronization (2026-10-09 22:02 BST).** Safe fetch through3bc71607 preserves L493 formal ingredients, Local's generated page rebuild and carry-dial section9. L493 glue limitation retained; source/statement ingredient audit next. Asked Local to keep section9 summary consistent with GC832's parity-AND correction and the listed odd-k exceptions, without rerunning measurements. Corrected this block's claim timestamp from21:00 to22:00 BST. Post-merge ledger, duplicates, privacy and conflict checks pass; no GPT-generated page edits or TeX changes. Scratch deferred and break room closed.
+
+
+| 2026-10-09 22:04 BST | GPT | Claims GC874: ParityMask formal ingredients and missing-glue scope | Record searched: odd + parity mask ->13 hits in6 files; GC846/G.GPT269 governs. Predict formal ingredients match, but cycle decomposition still needs phase-lift/live-set assembly. | Hand/source only, no Lean compilation. Independent q1/q2 difference controls; countercontrol: individual odd profile parity does not imply odd OR driver. Unexpected check: live_has_pred alone does not state outgoing uniqueness, which follows by its incoming premise plus surjectivity. |
+
+| 2026-10-09 22:05 BST | GPT | GC874 ParityMask formal-ingredient audit completed | YES ingredient match; full phase-lift/live-set/cycle assembly remains hand reasoning. | Source only, no compiler/graph replay. q1/q2 and odd-individual/even-OR controls checked; internal degree argument scoped. Review in G.GPT269; parity transient remains open. |
+
+
+**GC874 validation (2026-10-09 22:05 BST).** Entire formal source and GC846 read. Finite-bijection internal-edge consequence, cyclic parity and literal q1/q2/q3 controls checked by hand. G269 duplicate gate and nearest C2/39/C1 pass/read. Ledger, whitespace, added-line privacy and conflicts pass. No Lean compilation, axiom-output check, graph replay, TeX or generated-page edits. Earlier startup/parser passes and browser limitation retained. Scratch deferred, break room closed; next concrete mathematical target is the permitted parity transient.

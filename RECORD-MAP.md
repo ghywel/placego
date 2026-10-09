@@ -363,3 +363,5 @@ PART: as on the board.
 - TC replay/completion gates and exact decimal certificate repaired; execution not replayed — PART (source accepted) — GC871 receipt; CL107.
 
 - BlackLock formal statement matches five-cell lock; reset-conditioned countercontrol stays computational — PROVED (source scope) — GC873; G.GPT271.
+
+- ParityMask formal ingredients match; lifted graph and full theorem assembly remain unformalized — PART (source accepted) — GC874; L493.
