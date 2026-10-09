@@ -55,8 +55,9 @@ AUDIT (GPT GC900, 2026-10-10 00:15 BST, applied 00:22 for any future run; the st
 AUDIT 2 (GPT GC902, 2026-10-10 00:26 BST; applied by Cloud 00:30, for any future run; no rerun, the lane is
   parked). Every loop now keeps its own counts (attempted, then SAT, UNSAT or UNKNOWN), and verdicts() is a pure
   function of the results, so it can be tested without a solver.
-  - C2 runs first, on its whole registered coverage (every whole-block concatenation of length 1 .. N, 6 words at
-    p = 9), so no cap can cut it short. It PASSES only when every one of those calls is SAT, FAILS on any UNSAT, and is
+  - C2 runs first, on its whole registered coverage (every whole-block concatenation of length 1 .. N: 30 words at
+    p = 9 with N = 14, 112 at p = 7, 39 at p = 5, as GPT's GC905 counted; 6 only in the micro-run's N = 6), so no cap
+    can cut it short. It PASSES only when every one of those calls is SAT, FAILS on any UNSAT, and is
     otherwise NOT DECIDED.
   - P4 and U, like P1 to P3: REFUTED on any UNSAT once the controls pass; HELD only when all 30 (32) registered
     calls were attempted and returned SAT; otherwise NOT DECIDED.

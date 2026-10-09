@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """rule30_cloud_zero_first_roots.py: ZF, which zero-first pairs (0, b) of period q are in the physical-root tree.
 
-RUN-ON:     cpu, one core (Python 3 standard library); seconds to minutes (q = 16 the longest)
+RUN-ON:     cpu, one core (Python 3 standard library); about 15 s (q = 16 by the chain walk)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_zero_first_roots.py [QMAX=16]
 
 Why. GC903 showed that GPT's q = 4 fibre starts (0, 1110) and (0, 1011) lie on a 28-cycle of the backward pair map
@@ -42,6 +42,21 @@ PREDICTIONS for q = 16, written 2026-10-10 00:37 BST, after the q <= 12 outcome 
   ZF-P4 (0.5): at q = 16 exactly 32 zero-first b are rooted: 0, 1^16 and one primitive orbit of each period 2, 4, 8, 16.
   ZF-P5 (0.6): the q = 16 tree has more than 100,000 states.
   ZF-P2 is expected to be REFUTED (0.95), since the parity law already fails at q = 8.
+OUTCOME for q = 16, 2026-10-10 00:45 BST (run at the commit that pushed these predictions, 54b6be6, plus the walker):
+  ZF-P2 REFUTED, ZF-P4 REFUTED, ZF-P5 HELD; ZF-C3 (added with the walker, below) PASS.
+  - Instrument change, disclosed. The first q = 16 attempt, the full BFS, was stopped by Cloud after 76 s at
+    1.3 GB of memory (it shared the container with RR3's kissat calls); nothing was read from it. The chain walk,
+    chains(), keeps one rotation class per chain in O(q) memory. Control C3: it equals the BFS tree (size, zero-first
+    set, depth) at every q <= 12. Its q = 8 chain, 371 states, is the record's rooted return at 371 (L486).
+  - q = 16: 34,541,082 states, depth 894,235, in 9 s. 512 zero-first words are rooted (2q^2, against 2q to q = 8):
+    the constants, one class each of period 2, 4, 8, and 31 classes of period 16.
+  - The period-16 part is a binary tree. The doubling entry (0, 0000011011111001) at depth 401 walks 52,808 states
+    (the record's r = 52,808; RC16's other returns, 18,826 .. 49,732, are not on this tree) to an even return. In all,
+    15 period-16 chains end at even returns and branch, and 16 end at odd returns and stop. Those 16 dead ends are the
+    seeds of q = 32 (cf. the record's 16 sampled rooted orbits at q = 32, L488).
+  - GC904 on physical data (CL127): at every doubling entry for q = 2, 4, 8, 16, f is primitive and q/4 <= wt(f) <= q/2
+    (weights 1, 1, 3, 5). At the 30 same-period branch starts of q = 16, which GC904 does not cover, two f have weight
+    3 and one has least period 8: the guard and the bound need the entry's antiperiodic structure.
 """
 import sys
 
@@ -90,6 +105,70 @@ def tree(q):
     return depth
 
 
+def chains(q, cap=10 ** 9):
+    """The same tree, walked as chains, one per rotation class, in O(q) memory (CL127).
+
+    In the predecessor direction a state (a', b') with b' != 0 has the single predecessor (b', c), c its unique child
+    (entry 39). A chain from a zero-first state (0, c) runs until the child is 0, at a zero-driver state (x, 0). There
+    the tree branches into (0, d) and (0, NOT d), d(t+1) XOR d(t) = x(t), if x has even weight, and stops otherwise.
+    Returns, per rotation class of zero-first starts: (start c, least period, depth of (0, c), number of states from
+    (0, c) to (x, 0) inclusive, x, weight of x)."""
+    M, S, B, preds = tools(q)
+
+    def per(w):
+        for k in range(1, q + 1):
+            if q % k == 0:
+                r = ((w << k) | (w >> (q - k))) & M if k < q else w
+                if r == w:
+                    return k
+        return q
+
+    def canon(w):
+        best, r = w, w
+        for _ in range(q - 1):
+            r = S(r)
+            best = min(best, r)
+        return best
+
+    def child(a2, b2):
+        t0 = next(t for t in range(q) if (b2 >> (q - 1 - t)) & 1)
+        bits = [0] * q
+        cur = 1 - ((a2 >> (q - 1 - t0)) & 1)                  # the reset: c(t0 + 1) = NOT a'(t0)
+        for k in range(1, q + 1):
+            t = (t0 + k) % q
+            bits[t] = cur
+            cur = ((a2 >> (q - 1 - t)) & 1) ^ (((b2 >> (q - 1 - t)) & 1) | cur)
+        assert cur == bits[(t0 + 1) % q]
+        w = 0
+        for t in range(q):
+            w = (w << 1) | bits[t]
+        return w
+
+    out, todo, seen = [], [(M, 1)], {M}                      # (0, 1^q) at depth 1
+    while todo:
+        c, dep = todo.pop()
+        st, L = (0, c), 1
+        while True:
+            a2, b2 = st
+            z = child(a2, b2)
+            st, L = (b2, z), L + 1
+            if z == 0 or L > cap:
+                break
+        x = st[0]
+        out.append((c, per(c), dep, L, x, weight(x)))
+        if z == 0 and weight(x) % 2 == 0:
+            for b0 in (0, 1):
+                d, cur = 0, b0
+                for t in range(q):
+                    d = (d << 1) | cur
+                    cur ^= (x >> (q - 1 - t)) & 1
+                k = canon(d)
+                if k not in seen:
+                    seen.add(k)
+                    todo.append((k, dep + L))
+    return out
+
+
 def weight(b):
     return bin(b).count('1')
 
@@ -109,22 +188,42 @@ def orbit_classes(words, q):
     return sorted(out.items())
 
 
+def from_chains(q, ch):
+    """Tree size, rooted zero-first words, deepest zero-first start and tree depth, from the chain walk."""
+    M = (1 << q) - 1
+    words = set()
+    for (c, p, dep, L, x, w) in ch:
+        r = c
+        for _ in range(q):
+            words.add(r)
+            r = ((r << 1) | (r >> (q - 1))) & M
+    words.add(0)
+    size = 1 + sum(p * L for (c, p, dep, L, x, w) in ch)
+    return size, sorted(words), max(dep for (c, p, dep, L, x, w) in ch), max(dep + L - 1 for (c, p, dep, L, x, w) in ch)
+
+
 def main():
-    res = {}
+    res, c3 = {}, True
     for q in range(1, QMAX + 1):
         if q > 12 and q not in (16,):
             continue
-        d = tree(q)
         M = (1 << q) - 1
-        zf = sorted(b for (a, b) in d if a == 0)
+        ch = chains(q)
+        size, zf, maxzf, depth = from_chains(q, ch)
+        if q <= 12:                                            # C3: the chain walk against the full BFS
+            d = tree(q)
+            c3 = c3 and len(d) == size and set(zf) == {b for (a, b) in d if a == 0} and max(d.values()) == depth
         even = [b for b in range(1 << q) if weight(b) % 2 == 0]
         per2 = sorted({b for b in range(1 << q) if (((b << 2) | (b >> (q - 2))) & M) == b}) if q >= 2 else [0, 1]
-        maxzf = max(d[(0, b)] for b in zf)
-        res[q] = (len(d), zf, set(zf) == set(even), per2, maxzf, max(d.values()), orbit_classes(zf, q))
+        res[q] = (size, zf, set(zf) == set(even), per2, maxzf, depth, orbit_classes(zf, q), ch)
         print('q = %2d: tree %d states, depth %d; rooted zero-first b: %d (even-weight law %s; first %s); '
-              'deepest zero-first %d' % (q, len(d), max(d.values()), len(zf), 'yes' if set(zf) == set(even) else 'no',
+              'deepest zero-first %d' % (q, size, depth, len(zf), 'yes' if set(zf) == set(even) else 'no',
                                          [format(b, '0%db' % q) for b in zf[:6]], maxzf), flush=True)
         print('        rotation classes (least period, number): %s' % res[q][6], flush=True)
+    if 16 in res:
+        ends = [w % 2 for (c, p, dep, L, x, w) in res[16][7] if p == 16]
+        print('q = 16 primitive chains: %d; ending at an even return (branch) %d, at an odd return (dead) %d' % (
+            len(ends), ends.count(0), ends.count(1)))
     # C2's forward check at q = 4
     M, S, B, _ = tools(4)
     fw = set()
@@ -140,7 +239,8 @@ def main():
     c2 = res[4][2] and res[4][0] == 98 and fw == set(tree(4))
     print('ZF-C1 (odd q: only b = 0, 1^q): %s' % ('PASS' if c1 else 'FAIL'))
     print('ZF-C2 (q = 4 even-weight law, 98 states, forward check agrees): %s' % ('PASS' if c2 else 'FAIL'))
-    ok = c1 and c2
+    print('ZF-C3 (chain walk equals the BFS tree for q <= 12): %s' % ('PASS' if c3 else 'FAIL'))
+    ok = c1 and c2 and c3
     nd = 'NOT DECIDED'
     print('ZF-P1 (q = 8 even-weight law): %s' % (nd if not ok else ('HELD' if res[8][2] else 'REFUTED')))
     print('ZF-P2 (q = 16 even-weight law): %s' % (nd if not ok or 16 not in res else ('HELD' if res[16][2]
