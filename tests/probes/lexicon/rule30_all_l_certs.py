@@ -17,7 +17,10 @@ checks it. The CNF's SHA-256 is printed, so anyone can rebuild it from this scri
 
 PREDICTIONS (Local's, published before the run): ALC-P1, all four instances are UNSAT and drat-trim prints
 s VERIFIED for each (confidence 0.9; each was already UNSAT without a proof in ALX/ALF).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-09 10:30 BST (M5, run at commit 153096d9): ALC-P1 HELD. Every case is UNSAT and drat-trim prints
+s VERIFIED (CNF SHA-256 prefixes, proof sizes): C10-3 89bee028ebc399bf, 3,407,910 bytes; C10-2 379d841d2d39e029,
+3,731,210; C7-5 d9839e060ebe33a3, 1,292,419; C2-0 f90a48385863bdcd, 62,101. CNFs and proofs are kept in
+~/np-scratch-int/rule30-al on the M5, outside git; rerunning this script rebuilds identical CNFs.
 """
 import hashlib
 import os
