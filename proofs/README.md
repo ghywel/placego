@@ -641,6 +641,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [First profile deviations require a paired swap and clear next tick](G253-first-profile-deviations-require-a-paired-swap-and.md):
   When two time-periodic histories of the shifted rule first differ in some column, the difference must come as a
   swapped pair and vanish at the next tick.
+- [The fair-row rightward light-speed diagonal is not order-two Markov](G254-the-fair-row-rightward-light-speed-diagonal-is.md):
+  Starting from a random row, the colours along Rule 30's rightward diagonal cannot be produced by any rule that
+  only remembers the last two of them.
 
 ## Proofs from the sparks
 

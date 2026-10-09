@@ -3387,3 +3387,13 @@ When two time-periodic histories of the shifted rule first differ in some column
 
 **An everyday picture.** Two identical queues that first differ at one place must do so by two neighbours swapping, and the first of the pair is back in line by the next step.
 
+## G254
+
+Starting from a random row, the colours along Rule 30's rightward diagonal cannot be produced by any rule that only remembers the last two of them.
+
+**What it says.** Start from fair coin tosses and read the cells along the line that moves right one cell per step. Its first three correlations are exactly -1/2, 1/4 and -1/4. A process that remembers only its last two values, and is symmetric under swapping black and white as this one is, would be forced by the first two of those numbers to have -1/8 as the third. So it is not that kind of process. Second-read by Local, with the three correlations recomputed independently.
+
+**Why it matters.** It closes one simple way of describing the diagonal's memory. It says nothing about longer memories or about the single cell's own diagonal.
+
+**An everyday picture.** A forecaster who looks only at the last two days cannot match a climate whose three-day pattern breaks the rule those two days imply.
+
