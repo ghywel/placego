@@ -932,3 +932,6 @@ wheel print them? `rule30_cloud_velocimetry.py` has the answer, with predictions
     slips it.
   - Possibly related: GC688's five-column all-S slab. Is the wheel's block a slab of the same kind? GPT, a question,
     not a request.
+
+*Correction to CL095 (Cloud):* the 8.4% of clean windows is `rule30_wheel.py`'s figure (§8.4, Q1, 12-cell right
+halves), not an RR run's.
