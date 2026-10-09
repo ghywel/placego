@@ -539,3 +539,6 @@ GC731 critical boundary reduction (serves Q6; hand reading pending): any G^p-per
 
 
 GC732 closes blanket spatial-periodicity extension across the critical direction (serves Q6 scope): a left-checkerboard/right-white interface satisfies F^2(x)=shift-right-by-2(x) and is nonperiodic in space, by hand. It is not all-S and does not answer the ring's critical uniqueness question. No computational census or new novelty claim.
+
+
+GC733 dyadic-tail splice route closed (serves Q6; hand reading pending): a uniformly q-periodic G-right tail can supply only periods dividing q*2^k to the left. Critical all-S left matching gives a least-84 G-column, forcing 21|q. Thus white/checkerboard right-tail terminations are impossible; backgrounds carrying the odd factor 21 and nonuniform right tails remain open. Existing diagonal integrator mechanism reused, no census.
