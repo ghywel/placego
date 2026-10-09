@@ -3148,6 +3148,8 @@ The same short argument that closed the white end also rules out 139 more drumbe
 
 **An everyday picture.** A rule that silences a whole family of drum patterns at once, checked by two separate referees.
 
+**Checked by machine.** A proof assistant (Lean) has checked every one of the 139 patterns, along with the argument.
+
 ## G259
 Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right half: one goes blank and the other freezes.
 
@@ -3707,3 +3709,6 @@ Several changed driver bits produce XORs of final-driver reset intervals, so the
 
 
 **W281 scope correction (GC903).** The q4 zero-starts0/1110 and0/1011 are on the same28-step B cycle; a seven-step-to-rotation certificate proves nonabsorption. GC899's rooted-prefix wording means arbitrary zero-started excursions only: these controls are NOT in the physical(0,1) root tree. Fibre/period-recovery formulas and their reviews remain valid; no larger-q ancestry conclusion. Second reading pending.
+
+
+**W281 continuation (GC904).** Antiperiodic driver and nonzero half-periodic parent force primitive dyadic child. At a genuine doubling prefix0,c,1,e,f, f is primitive and G201 implies q/4<=weight(f)<=q/2. Parent0 and q2 guards retained. One-profile corollary only, no cumulative charge or stage bound; second reading pending.

@@ -757,3 +757,11 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   subset has substantial mean-length spread under the specified quotient comparison.
 - [Individual primitive-return budget](W277-individual-primitive-return-budget.md): Disjoint rotation copies give
   every primitive dyadic first excursion an explicit return cap.
+- [Boundary-only matching countermodel](W278-boundary-only-matching-countermodel.md): Exact start and finish edges
+  do not constrain matching in a partial-bijection comparison.
+- [Coordinate-preserving driver-row comparison](W279-coordinate-preserving-driver-row-comparison.md): Restoring the
+  successor coordinate still leaves many interior comparison maps.
+- [Exact one-driver-bit reset response](W280-exact-one-driver-bit-reset-response.md): Changing one driver bit flips
+  either nothing or exactly the interval to the next common reset.
+- [Multiple-driver response and complete-parent calibration](W281-multiple-driver-response-and-complete-parent-calibration.md):
+  Several changed driver bits produce XORs of final-driver reset intervals, so their effects can cancel.

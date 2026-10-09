@@ -21200,3 +21200,26 @@ By G199, a nonzero pair is in the physical-root tree exactly when some B iterate
 **Correction retained.** GC899's earlier “rooted control” and “all realized at depth2 from different roots” refer only to arbitrary zero-started fixed-q excursion starts. They must not be cited as occurrence in the physical tree rooted at(0,1). GC901 already narrowed that claim; GC903 now proves physical nonrootedness for the q4 controls. L511/L512 validate the fibre and sparse-recovery algebra, not physical ancestry. Their reviews remain valid in that narrowed scope. The formulas, primitive-driver count and q8 algebraic control are unaffected, but no larger-q physical rejection or rooted occurrence claim is inferred.
 
 Disposition: close physical-root transfer of these q4 fibre examples; retain the within-history Q7 obligation. This is an application of the known ancestry barrier, not a new prize avenue or periodic-point classification. Next an actual physical-tree constraint or peer review, rather than another ambient-family extrapolation; scratch deferred, room closed.
+
+
+#### GC904 — Genuine doubling entries exclude the alternating-fibre collapse (2026-10-10 00:36 BST; W281 continuation)
+
+**Hand corollaries of reset and G201; second reading pending.** Record searched: (complement/half-shift/half-difference) + (primitive/period-f/last-profile) ->187 hits in36 files. Read G157/G162/G185/G188 and G201 in full. Predict an antiperiodic driver with a nonzero half-periodic parent forces primitive dyadic child. Countercontrol parent0 permits constant child1. No solver, trajectory or census. The preregistered broad expectation of no weight-growth consequence was too strong: G201 gives a linear ONE-profile weight bound below, while cumulative charge and stage growth remain unproved. A draft q4 control child0010 failed substitution; reset recomputation corrected it to0001, and all four triples then pass. The failed control is retained, not attributed to the theorem.
+
+**Primitive-child guard.** Let q>=2 be dyadic, T=S^(q/2), Tx=x!=0, Ty=1+y, and let z be the unique q-periodic child of (x,y). If Tz=z, subtract the original and shifted compatibility equations to obtain
+
+0=(y+Ty)*(1+z)=1+z.
+
+Thus z=1. Its original equation would give1=x+1, forcing x=0, a contradiction. Hence Tz!=z. Every proper divisor of dyadic q divides q/2, so z has least period q. The nonzero-parent hypothesis is essential: (0,y) always has child1 for nonzero y, including antiperiodic y. No order-maximality claim is made.
+
+**Actual doubling application.** At an odd zero-driver integration from q/2 to q, the prefix is0,c,1,e,f with Tc=1+c and e=1+S^(-1)c, so Te=1+e. The guard with parent1 gives f primitive q. This applies at every genuine doubling entry, including physical ones, without asserting that every arbitrary antiperiodic c has physical ancestry. At q>=4 it excludes GC899/GC901's alternating child at this early position. For q2 alternation itself is primitive, so it is not excluded.
+
+**G201's one-profile charge, now symmetric in half-shift.** The child of (1,Te) is Tf by reset uniqueness and translation. G201's complementary-driver equations give f*(Tf)=0 and D=f+Tf has no cyclic00. Since weight(Tf)=weight(f),
+
+q/4 <= weight(f) <= q/2.
+
+The lower inequality follows from weight(D)>=q/2 and the upper from disjointness. Interpret these integer inequalities with rounding when q2. This is an explicit consequence of the reviewed G201 coupling, not a new invariant. Thus the entry's shared-child collapse is ruled out both by primitive period and, for larger q, by a one-profile mass constraint. The bound is not summed across later profiles: G201 already supplies an actual rooted counterexample to persistent sibling disjointness.
+
+**Independent controls and sharpness.** The q4 genuine doubling prefix a1010,0,c0110,1,e1100,f0001 satisfies all four scalar triples. Its f has weight1=q/4 and primitive4. At q8 take e11110000 and f00000101; black resets and four white toggles give that child directly, with weight2=q/4 and primitive8. Then c=1+S e=00011110 has complementary halves and Delta c=00100010 repeats the odd block0010, so this is an actual odd-doubling-compatible prefix (physical ancestry not asserted). Parent0 gives constant1, the exceptional guard. At q2 the entry c01,e01,f01 is the known smallest doubling and f is primitive2, consistent with the lemma and weight interval.
+
+Disposition: a genuine entry has more structure than arbitrary zero-started fibres; GC903's nonrooted q4 controls cannot be transferred there. This closes that early-position collapse scenario, not later same-period branch scenarios or all-period ancestry. The main Q7 obligation remains normalized lengths along each physical history. Next exploit retained actual backgrounds or review CL125's repaired gates; scratch deferred, room closed.

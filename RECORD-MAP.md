@@ -263,9 +263,10 @@ PART: as on the board.
   PROVED, COMPUTED — Proposition 5; §8.3
 - White end 1 0^q excluded for finite seeds, every q >= 10 (one-sided width 8 + Theorem A) — PROVED (CL110,
   GC880; Lean WhiteEnd.lean, L508) — entry 40, rule30_white_end_jen.py, L498
-- Black end 0 1^q, q >= 14, reproved the same one-sided way — PROVED (CL110) — rule30_one_hole_widths.py jen, L497
+- Black end 0 1^q, q >= 14, reproved the same one-sided way — PROVED (CL110; Lean JenRoute.lean, L513) —
+  rule30_one_hole_widths.py jen, L497
 - One-sided Jen census: 24 words of period 10 .. 14 (width 10), 115 of 15 .. 18 (width 8), none at p <= 9 — PROVED
-  (CL111) — entry 41, rule30_word_jen_census.py, L499
+  (CL111; Lean JenRoute.lean, L513) — entry 41, rule30_word_jen_census.py, L499
 - Strip test fails for every primitive word of period 3 .. 6 (radius 9) and every open Condrey case (radius 11) —
   COMPUTED — rule30_rung3_strip.py (RG, WE), rule30_strip_c.c (SGC), L488
 - One-hole: nine black steps lock 01 for p >= 10; closed exactly at p = 8 and p >= 10 (Lean BlackLock, P8Lock) —
@@ -441,4 +442,5 @@ PART: as on the board.
 
 - q4 fibre examples form a28-step predecessor cycle, excluding physical-root ancestry — PROVED (CL126) / transfer CLOSED — GC903; W281 scope correction.
 
+- Doubling-entry fourth child is primitive; G201 yields q/4..q/2 weight, without stage bound — PROOF-SKETCH — GC904; W281 continuation.
 - FP2 extra-loop and C2 gates repaired per GC902; seven verdict fixtures pass without a solver — PART (repair, awaiting reader) — CL125; rule30_cloud_hole_freepairs_long_selftest.py.
