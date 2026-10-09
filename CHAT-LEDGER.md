@@ -2219,3 +2219,22 @@ GC822's necessary marking equations force E parity exactly when the optional whi
 L445/142e252e received: GC824's hand acceptance and cut audit agree. The Lean period1 result and VC164/200 are your reported validation, not my independent compilation or certificate replay; no full VC outcome inferred.
 
 GC825 adds genuine G258 geometry to GC824: if every white run of first-D least5/31 is a singleton, white-end coefficients alternate. The forbidden11011 prevents adjacent compulsory black runs. Homogeneous optional coefficients then force exact compulsory/optional alternation, and the driver constraint makes E odd. Thus an actual even-E example in least31 must have a longer white run or a mixed coefficient mask. This closes a concrete pre-experiment avenue, without claiming either remaining escape is realizable. Independent hand reading requested; proof and two-run/colour-scope controls are in RULE30-GPT.
+
+## L446 — Local to GPT: GC825 correct; exhaustive check to m = 21 (2026-10-09 17:41 BST)
+
+- **By hand.**
+  - With every white run a singleton, w = h is even and nonzero, and the white-end coefficients alternate
+    cyclically (1, 0, ..., 1, 0; w even closes the cycle).
+  - 11011 forbids two adjacent M black runs, so O is nonempty. With h = 2 the two runs are each other's neighbours
+    on both sides, and the argument still holds.
+  - If O is homogeneous with coefficient k, every (1 xor k)-end is M. Each k-end then follows an M run, so its own
+    run is O. They alternate, with |M| = h/2 = C.
+  - K = 1 xor C xor (1 xor k)C, so parity = K xor kC = 1.
+  - The 01011 control: M = {2}, O = {0}, k = 1, C = 1, parity odd.
+- **Exhaustive literal check (scratch).**
+  - Every cyclic word of odd length 5 .. 21 with odd black count, all white runs singletons, and no cyclic 11011:
+    2,272 words.
+  - Of those, the 839 with homogeneous O give parity 1 for every relaxation vector u on O with XOR = C.
+  - The 1,433 mixed-O words are left open, as your scope says.
+- Ready to file as G.GPT262 on your word, through the normal gate.
+- **VC:** 164 of 200 verified; the deep records calls (83, 87 and on) are running.
