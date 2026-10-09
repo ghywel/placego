@@ -18636,3 +18636,26 @@ This agrees with G256's endpoint lower bound since Z>=0 and the bracket is at le
 **Failure of the stronger rigidity shortcut.** Consider the formal infinite word obtained by concatenating B_n=(10)^(2^n)000, n=1,2,... . Every zero run has length1 or4. Thus there is no11 and no101001 (the latter needs a zero run of exactly2). At the end of n blocks there are3n adjacent00 pairs and total length sum_(j=1)^n [2^(j+1)+3]. Throughout each intervening block the defect count is at most3(n+1), so its prefix defect density tends to0 and its one-density tends to1/2. It is nevertheless not eventually periodic: four-zero runs occur infinitely often with unbounded distances between them. Any eventual periodic word containing that factor infinitely often would have bounded gaps between its occurrences. This control satisfies the two known restrictions but is not asserted to be a compatible Rule30 right history. Accordingly equality at3/4 does not yield eventual alternation from these restrictions alone. A further dynamical defect-recurrence or positive-frequency argument is required; Q6/balance remains open. No new proof filing, scan or board row.
 
 **L410 receipt.** Verified 65e95490 and received Local's hand proof of GC781's general-width rho_w/2 identity, together with independent w2/w3 full-cone recounts. GC781 is independently hand-checked; those computations were not rerun by GPT. Its conditional nonzero-correlation scope remains unchanged. GC782 FQ qualifiers await reply; scratch access deferred without retry, room closed.
+
+
+## GC784 — Density costs inside the synchronized S/L family (2026-10-09, GPT)
+
+**Hand count on actual renewal blocks, not an unrestricted clock classification.** Read reviewed GC706/707's exact lifts h(S)=110100 and h(L)=1101000100, and GC783's defect identity. Predict the synchronized S/L family sharpens the adjacent-left lower density from3/4 to5/6. Counterfactual: this sharper bound holds for every actual alternating-wall right trace without a renewal-family premise. Independent controls count each block directly by R0, and retain the generic formal visible code10 outside this family. Unexpected check keeps the final renewal marker needed for the second-left endpoint. No orbit, profile or solver run, no novelty claim.
+
+Take m consecutive completed synchronized renewal blocks with s S letters and l L letters, m=s+l, beginning at a white-clock marker. The physical length is T=6s+10l. Both visible even-time words have exactly one black symbol per block: S gives100 and L gives10000. R0's nearest-left column is1 on black-clock rows and1-c on white-clock rows, so its count is T-m. For an internal closing marker the endpoint visible bits are both1, so G256's weighted identity has delta0. Thus
+
+    n_(-1)=5s+9l,  n_(-2)=2(s+l),
+    n_(1)=3s+4l,
+    2 n_(-1)+n_(-2)=2T.
+
+The nearest-right count is independently read from h(S), h(L), rather than guessed from its visible-only density. Consequently every such complete-block window has
+
+    5/6 <= d_(-1) <= 9/10,
+    1/5 <= d_(-2) <= 1/3,
+    2/5 <= d_(1) <= 1/2.
+
+These are convex combinations weighted by physical block lengths, not by letter counts. For an arbitrary long window inside an infinite synchronized family, at most two incomplete end blocks contribute at most20 samples, so the same liminf/limsup bounds follow without assuming letter frequencies. If f=l/m has a limit along complete prefixes, the corresponding limits are d_(-1)=(5+4f)/(6+4f), d_(-2)=2/(6+4f), and d_(1)=(3+f)/(6+4f). No frequency existence is proved.
+
+**Terminal and scope guards.** A finite terminal L may exit rather than renew. Its temporal block still has the published h(L), but c at the next boundary need not be1, so n_(-2) then acquires G256's endpoint correction; do not count its next marker without a continuation premise. Formal visible10 gives nearest-left3/4 by generic R0, showing that no11 alone does not imply the family bound. This formal code is not asserted realizable. Most importantly, GC706 assumes an S/L trace; it does not prove all actual alternating-wall companions eventually enter that family. The current result supplies density tests of that main-line family only, not an improved universal threshold or a prize proof. Further inter-run compatibility remains needed; no new board row or proof filing.
+
+**L411 receipt.** Verified f65d1c20. Local independently checks GC783's count identity and sparse-word control by hand and reports5000 exact random-word checks, received without GPT replay. That accepted refinement remains at necessary-language level. GC782 scope replies remain pending. Scratch deferred without retry; room closed.

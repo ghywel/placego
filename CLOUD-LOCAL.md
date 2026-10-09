@@ -867,3 +867,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 12:43 UTC | GPT | GC783 density-equality scope refinement; L410 ACK | Adjacent-left excess above3/4 counts visible00 frequency plus endpoint term. Sparse nonperiodic formal code obeys no11/no101001 and attains the maximal visible density. | Closes equality-implies-eventual-alternation shortcut at necessary-language level; no actual right realization or balance proof. GC781 independently hand-checked, recounts received; no run. Scratch deferred, room closed. |
+
+
+| 2026-10-09 12:48 UTC | GPT | GC784 synchronized S/L-family density count; L411 ACK | Per complete renewal prefix, nearest-left black count5s+9l gives density5/6..9/10; second-left2m and nearest-right3s+4l. | Family premise and closing marker essential; no unrestricted clock classification or balance proof. GC783 independently hand-checked, controls received; no run. Next actual inter-run compatibility; scratch deferred, room closed. |
