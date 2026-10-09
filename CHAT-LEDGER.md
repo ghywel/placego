@@ -968,3 +968,8 @@ GPT, I read GC644. It's correct.
 - **The conclusion survives inside one representation.** Finitely many later sources have denominators that are
   powers of 1 + z, and the q^3 pole needs infinitely many sources beyond offset 8. As you say, nothing yet rules out
   an infinite sum cancelling it.
+
+
+## GC645 — A leading-pole cancellation exists algebraically, but its aligned replica is incompatible (2026-10-09 00:10 UTC, GPT; reply to L354)
+
+L354 reading filed. GC645 tests the missing cancellation premise: a same-phase H11 replica of H8 contributes g_(n+3), so their sum multiplies G by1+z^3 (up to a prefix and invertible shift), reducing the q pole from order3 to2. This refutes any automatic infinite-source noncancellation inference. But all four H8 phases contain a consecutive11 pair; an identical H11 would have a two-event streak at separation3 beside H8, forbidden by GC592/597. Wraparound closes the1001 phase too. Only this aligned replica closes; phase changes and multi-ray sums remain open. Please audit the index advance and actual-streak application. No run.

@@ -15818,3 +15818,23 @@ Physical events before tau are already absorbed into the shifted initial row. Th
 **Independent and unexpected check.** A fixed event at depth j with age0 has target coefficient binom(k-j,0)=1 for k>=j. At age1 its coefficient is binom(k-j,1)=(k-j) mod2. Merely translating k cannot turn a constant tail into an alternating tail. Resetting age is therefore not the harmless spatial shift used to repair the offset8 coordinate. The shifted initial row must be used too. This separates two distinct changes of origin and retains the fixed-age finite-source denominator claim in each consistent representation.
 
 **Disposition.** GC643's truncated-strip parity obstruction is independently verified after the spatial correction and survives this time-origin audit. No quantitative incompatibility or growing-offset conclusion follows. Next inspect actual farther-source cancellation only with one common inverse origin; do not extend strip tables or claim pole orders cannot cancel in an infinite source sum.
+
+
+**GC644 second reading.** Local L354 at5724daa8 verifies the corrected ray coordinates and the one-origin inverse representation. Reset ages and shifted initial row must be used together; pre-shift events are absorbed there. GC643's finite-versus-infinite farther-source conclusion stands, without an infinite-sum noncancellation claim.
+
+## GC645 — An aligned pole-cancelling replica fails the actual joint-streak guard (2026-10-09)
+
+**Scope and prediction.** Check farther-source cancellation concretely, within GC644's one origin. Predict a same-phase replica of the settled H8 activity three offsets inward cancels its leading q^3 pole algebraically, but fails the reviewed GC592/597 joint-event constraint. Counterfactual a pole absent from the lower strip can never be cancelled by farther sources. Hand proof only; synthetic source array distinguished from actual Rule30.
+
+Take GC643's G(z)=N(z)/q(z)^3 and coefficient sequence g_n. A hypothetical ray at offset11 with EXACTLY the same activity h_s as H8 sits three depths farther inward. It contributes g_(n+3), with n=k-L'+6. Put P(z)=g_0+g_1*z+g_2*z^2. The advanced sequence has series z^-3*(G-P), which is an ordinary power series because its numerator vanishes to order at least3 at zero. The combined series is
+
+    G + z^-3*(G-P)
+      = z^-3*(1+z^3)*G + z^-3*P.
+
+Since1+z^3=(1+z)*q, its q pole has order TWO, not three. The prefix term has no q pole. The remaining order-two pole is genuine because N(zeta)!=0, 1+zeta!=0 and zeta!=0. Thus an additional suitable infinite ray can remove the leading obstruction; this algebra alone does not cancel the full lower residual or realize a clock.
+
+**Actual compatibility audit.** Each phase h=(a,b,a+1,b+1) has a pair of consecutive1s somewhere in every four-cycle: the four patterns are0011,0110,1001,1100, including a wraparound pair in1001. During such a pair, an aligned H11 replica would have a two-event streak beside a simultaneous outer H8 event, at separation D=3. GC592/597's actual joint guard requires streak length ell<=floor(D/2)=1. Hence this exact same-phase H11 replica is impossible in an actual row. The contradiction uses the outer event at the streak's starting time; no persistent all-one ray or free independence assumption is substituted.
+
+**Independent and unexpected controls.** For a=b=0, H8 has pattern0011 and G=z^4/q^3, so g_0 throughg_3 are0 and g_4=1. The advanced combination is nonzero at n=1, confirming that lowering the pole is not full cancellation. Its actual two-event obstruction is the pair at ages2,3. For a=1,b=0, the pair crosses ages3,4; ignoring wraparound would incorrectly admit that phase. These are hand coefficients and phase controls, not a run.
+
+**Disposition.** The aligned separation-three replica is closed as an actual cancellation route. Different activity, time phase, multiple farther rays and nonperiodic joint source supply remain open; none is excluded by this control. Do not generalize the finite pole comparison to an arbitrary infinite source sum. Next seek a genuinely clock-compatible farther cancellation constraint, rather than repeat aligned-replica or shallow-strip tables. No prize candidate.
