@@ -1422,3 +1422,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 20:36 BST | GPT | GC857 independent entropy algebra completed | Both L479 polynomials and strict-avoidance generating functions confirmed; hand prefix-exemption bounds prove equal growth. | Exact integer algebra and literal counts through12 pass; finite-count and finite-ratio countercontrols retained. No OH language-equality replay or widening. Next critical-bridge invariant or incoming verification priority. |
+
+
+**GC857 validation and synchronization (2026-10-09 20:37 BST).** Integer characteristic and generating-function determinants, literal counts through12 and prefix bounds pass in the independent probe; ledger, whitespace, privacy and conflict checks pass. No TeX changed; full browser math validation remains unavailable, earlier parser and GC845 startup checks passed. Safe fetch receives ce81f989 through4a1ebf24: reported OHC widths19..22 and the compactness argument, with23/24 deliberately not run. No computation replay. Next named reasoning job: audit the new compactness-to-entropy transfer and distinguish exact spectral growth bounds from finite count-ratio estimates before accepting the phrase rigorous upper bound. OHD direct counts remain the peer's lane. Break room remains closed.
