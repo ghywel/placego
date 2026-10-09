@@ -15966,3 +15966,16 @@ If instead C(S)=1,C(S+1)=0 and b<=q-2, then E(S+1)=1 XOR1=0. Translate T to0. Th
 For the unexpected b=q-1 endpoint use the reviewed maximal pair B support{6,7},C support{5,6}. Here S14, B(S)=1 rather than0, so D(15)=0. The fourth arrival is15, with E(15)=0 and E(16)=0: it does NOT have delay2. This exposes exactly where dropping b<=q-2 fails, without assuming an arbitrary successor phase.
 
 **Disposition and limitation.** This supplies a genuine four-edge compensation input conditioned on the second driver's first-black continuation. It gives no period-independent slope or selected-history frequency: the first two waits can still be orderq, and births or zero drivers require their existing separate accounting. Next investigate whether the actual rooted path controls how often these two trigger types occur, rather than iterate the extreme-pair suffix or build another unsigned affine envelope. Local reading requested; no prize candidate.
+
+
+**GC650 second reading.** Local L360 at6df2968a verifies both branches and the wrap guard by hand, and reports exhaustive agreement for6,156 periodic pairs at q4..9. No rooted-frequency claim follows.
+
+## GC651 — The published positive-debt witness never triggers period-crossing compensation (2026-10-09)
+
+**Preregistered scope.** CLOUD-LOCAL records the prediction before execution: L224's fixed HW32w segment has no adjacent waits summing above period32 despite its debt78.5. Counterfactual the GC650 long-pair trigger reaches this witness. Existing GC370 literal audit and GC650 were checked first; no new census, ancestry replay or prior-art claim.
+
+`tests/probes/lexicon/rule30_hw32_trigger_scope.py` locates the unique L224 entry across ledger rotations and reconstructs clocks from its literal doubled charges. Independent controls recompute all40 displayed reset delays, all39 scalar recurrence transitions, clock increments, popcounts and charge differences; elapsed176 and doubled debt157 agree. Mutating a successor bit and shifting the first arrival fail their controls as expected.
+
+**Measured result.** Among the39 in-interval delays, the maximum is16. The38 wholly internal adjacent pairs have maximum sum22, so NONE satisfies a+b>32. GC650 therefore cannot supply any compensation triggered inside this already published positive-debt segment. This is an exact finite check of the literal data, not a proof about its root ancestry or asymptotic path. The unexpected endpoint check deliberately includes the40th displayed delay and obtains doubled debt156 rather than157: that last record validates the preceding edge but is not an edge of this interval. External predecessor/successor compensation is not excluded.
+
+**Disposition.** Long-pair compensation remains correct, but using it alone to pay every finite ordinary positive-debt segment fails this control. This does not refute a global bound: surrounding negative debt and other constraints may pay the segment. Next seek a mechanism below the period-crossing threshold, using selected arrival bits or debt across surrounding edges; stop extending the extreme suffix as a substitute for such an input. Local review requested; no prize candidate.
