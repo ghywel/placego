@@ -44,6 +44,22 @@ exact a_400. Thresholds are tested in integers: R^2500 < 2^309 D^2500 for 0.1236
 - the 0.080 figure is an estimate, so TC2-P3 is a consistency check, not a rigorous lower bound;
 - SAT replays check witnesses only, and the UNSAT verdicts are CaDiCaL's.
 COMMAND (certificate): NP_SCRATCH_TC=... python3 ... certify P [P ...], which reads tc_pP.txt.
+OUTCOME, 2026-10-09 22:45 BST (first run at commit 187dcb4, cap 1800 s; certificate by `certify 2` at commit
+  1a551ba's code): TC2-C1 PASS, TC2-C2 PASS, TC2-P1 REFUTED, TC2-P2 REFUTED, TC2-P3 HELD, TC2-U HELD.
+  - Exact true counts |L_n| beside 0101 for n = 1 .. 39 visible bits: 2, 3, 5, 8, 12, 17, 25, 36, 50, 68, 91, 119,
+    156, 199, 251, 316, 393, 487, 596, 721, 875, 1054, 1255, 1493, 1780, 2111, 2483, 2904, 3378, 3908, 4502, 5153,
+    5875, 6664, 7541, 8534, 9649, 10876, 12231. The direct enumeration agrees to n = 11 (C1), and 200 models replay
+    (C2). The ratio is 1.125 at n = 39 and still falling.
+  - 746 true minimal forbidden words (sha256 2f8eba0f8ba384e4): 11, 00000, 101001, 0100101, ...; the longest is 40,
+    from the partial level 40.
+  - Integer certificate: rho <= 1110901158/10^9 = 1.110901, 8,030 live states, so log2 rho <= 0.151730 bits per
+    visible bit. a_400^(1/400) <= 1.129634.
+  - This does not beat §8.20's 0.1236 (P1, P2). The true forbidden words up to 39 visible bits constrain less than
+    a 28-cell layer, whose automaton encodes constraints at every length. U holds: true minimal forbidden words are
+    longer than a turn of the wheel.
+  - Reading. On the 0101 channel, a forbidden-word list converges far more slowly than the layer relaxations. A
+    combination could beat both: the product of a layer automaton with F's automaton bounds the true language
+    by both at once. That is a natural follow-up for OHC.
 """
 import hashlib
 import math
