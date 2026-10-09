@@ -49,7 +49,8 @@ h1 em { color: var(--prize); }
 .lede { font-size: 1.22rem; margin: 0; max-width: 60ch; text-wrap: pretty; }
 h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3.6vw, 2.35rem); line-height: 1.12;
   margin: 0 0 14px; text-wrap: balance; }
-h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; margin: 26px 0 8px; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; line-height: 1.2; margin: 26px 0 8px;
+  text-wrap: balance; }
 section { padding-block: 44px 8px; }
 section p { margin: 0 0 16px; text-wrap: pretty; }
 .chapter { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase;
@@ -160,10 +161,61 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       proves nothing.</p>
   </section>
 
+  <section class="col" id="edges">
+    <p class="chapter">3 · Order at the edges</p>
+    <h2>Where the order is, and where it ends</h2>
+    <p>Look again at the pyramid. Its left side is striped and its right side is wild, but neither is quite what it
+      seems. Both edges carry order with an exact shape, and both shapes were found on 9 October 2026 by looking hard
+      at the picture.</p>
+    <h3>The stripes on the left end along a ragged line</h3>
+    <p>Read the pyramid in lines parallel to its left edge, its diagonals. The first few diagonals settle into short
+      repeating patterns, and once a run of them repeats, it repeats for ever, because those diagonals depend only on
+      one another. So at every row there is an exact count of diagonals that have reached their eternal stripes. Below,
+      they are shaded, and the magenta line is the edge of the shaded band: the exact place where order ends.</p>
+    <p>It does not run down the side of the pyramid. It starts near the centre at the very top and leans out at about
+      a quarter of the speed of the pyramid's own edge, 0.244 squares per row on average. That is close to the speed, about
+      0.246, at which a change made on the right spreads leftwards through a random row; whether the two are exactly
+      equal is not known. The chart follows the edge to row 524,288: about that straight line it wanders like a random
+      walk.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="bricks.html?embed#front" title="The left front, live" loading="lazy"></iframe></div>
+    <a class="open" href="bricks.html#front">Open the left front on its own page →</a>
+    <figcaption>Live: Rule 30 from one black cell to row 512, with the ordered band shaded and its exact edge in
+      magenta; the dashed line is a quarter of light speed. The edge's definition is exact, and the ordered band never
+      shrinks. Its average speed and its random-walk wander are measurements, not proofs.</figcaption>
+  </figure>
+
+  <section class="col" id="ruler">
+    <h3>Even the wild side has a ruler at its edge</h3>
+    <p>Gareth Herbert noticed this by eye: along the wild right edge, the white triangles that touch it arrive at
+      perfectly even spacing, and only their sizes differ. It is exactly true. At every second row a white triangle
+      starts one square inside the edge, and its width depends only on how many times 2 divides the row number, like
+      the marks on a ruler. Rows 2, 6, 10, 14 and so on (twice an odd number) get the smallest triangle, rows 4, 12,
+      20 the next size up, rows 8, 24, 40 the next, and so on.</p>
+    <p>The reason is that every diagonal parallel to the right edge repeats with a period that is a power of 2. At a
+      row that is a multiple of a diagonal's period, the diagonal is white, as it was at the start; the triangle ends at
+      the first diagonal whose period does not divide the row. This is proved for all time.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="bricks.html?embed#ruler" title="The edge ruler, live" loading="lazy"></iframe></div>
+    <a class="open" href="bricks.html#ruler">Open the edge ruler on its own page →</a>
+    <figcaption>Live: the pyramid grows row by row. Each even row's edge triangle is shaded as it is born, and its
+      width is repeated as a teal tick to the right of the edge, so the ticks draw the ruler. The magenta tracer joins
+      the newest triangle's corner to its tick.</figcaption>
+  </figure>
+
+  <section class="col">
+    <p>Neither kind of order reaches the prize column. At row t the centre column sits on the t-th diagonal from
+      either edge, ever deeper, where the periods have grown too long to see: the 54th diagonal from the right edge
+      repeats only after 4,194,304 rows. Order at the edges says nothing yet about the middle, and that is why the
+      problems are hard.</p>
+  </section>
+
   <section class="col" id="plate">
-    <p class="chapter">3 · The whole picture</p>
+    <p class="chapter">4 · The whole picture</p>
     <h2>A triangle, a square and a circle</h2>
-    <p>This is where our work begins. Problem 1 asks whether the column can ever repeat. So assume it does, in the
+    <p>Now to the prize column itself. Problem 1 asks whether it can ever repeat. So assume it does, in the
       simplest way it could: white, black, white, black, for ever. Hold the centre to that beat, like a wall, and run
       Rule 30 on the squares to its right from a random start. The column right next to the wall does something
       remarkable. It falls into a fixed loop of 56 steps, a wheel, and stays on it until something from further right
@@ -183,13 +235,51 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
   </figure>
 
   <section class="col" id="beat">
-    <p class="chapter">4 · Assume the opposite</p>
+    <p class="chapter">5 · Assume the opposite</p>
     <h2>What a repeating centre would demand</h2>
     <p>Rule 30 has a useful property: if you know the centre column and the column beside it, every square to the left
       is forced, one after another. So a repeating centre forces the whole left side. The prize asks about one black
       square; we ask the same of every finite start, a pattern with only finitely many black squares, which includes it.
-      For any of those the forced left side would have to turn white for good beyond some depth. A counterexample to Problem 1 is exactly that: a white edge that never
-      breaks.</p>
+      For any of those the forced left side would have to turn white for good beyond some depth. A counterexample to
+      Problem 1 is exactly that: a white edge that never breaks.</p>
+    <h3>If the column beside the centre repeats too, the left side crystallises</h3>
+    <p>Try it. Below, the centre is held to its beat (teal) and the column beside it (amber) is given a repeating
+      pattern; pick one from the menu or ask for a random one. Rule 30 then fixes the columns to the left one at a
+      time, so the picture grows leftwards from the centre. Whatever the pattern, after a short stretch (the dashed
+      line) the left side freezes into a crystal: a wall built from one brick, repeating across as well as down. The
+      brick is never blank, so the left side can never turn white. That is Jen's theorem of 1990. Across every pattern
+      of even length up to 20, 1,398,100 of them, only 20 different bricks ever appear.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="bricks.html?embed#crystals" title="Crystals beside the wall, live" loading="lazy"></iframe></div>
+    <a class="open" href="bricks.html#crystals">Open the crystals on its own page →</a>
+    <figcaption>Live: time runs down, depth to the left of the centre runs left. The amber outline is one brick of the
+      crystal and the grey ones are its copies; the dotted tracer follows one black square from brick to brick. That
+      the left side becomes one brick, never blank, is proved; the census of 20 bricks is a computation whose
+      predictions were written down first.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h3>When it never repeats</h3>
+    <p>So a counterexample's second column can never repeat, and its left side has no crystal to settle into. The
+      picture below shows how that left side is built. It is turned on its side: time runs left to right, the top row
+      is the centre's beat, the next is the column beside it, driven by a random right side, and each row below is the
+      next column to the left. Built this way, each row records where the row above it changes, plus scattered dots,
+      the edge events, which the pattern makes for itself. Every black square is then an odd overlap of triangles, one
+      spreading from each dot. Press <b>Counterexample wedge</b> and click a square on the green line, time 0, to
+      choose a depth: the shaded wedge is everything a counterexample with its white edge from that depth would need
+      to be white, and the darker squares in it are where this random start breaks that.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="sieve.html?embed" title="The Edge-Event Sieve, live" loading="lazy"></iframe></div>
+    <a class="open" href="sieve.html">Open the sieve on its own page →</a>
+    <figcaption>Interactive: point at a square to see the triangle of slots whose dots decide it; click a dot to draw
+      the triangle it seeds; <b>Build sideways</b> grows the picture row by row. The page checks its own arithmetic
+      against the rule as it draws.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h3>What the white edge would cost</h3>
     <p>We looked at what such an edge would cost. It drags a disturbance along with it, and that disturbance pulls on
       the squares that must stay white with a beat: odd, odd, even, odd, odd, even, the pattern of the Fibonacci numbers
       1, 1, 2, 3, 5, 8, 13. Something inside has to answer that beat for ever. The four short animations below show the
@@ -206,7 +296,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
   </figure>
 
   <section class="col" id="found">
-    <p class="chapter">5 · What we found</p>
+    <p class="chapter">6 · What we found</p>
     <h2>Where Problem 1 stands</h2>
     <p>We have not solved any of the three problems. Here is what has been settled along the way, in plain terms.
       Every proof below was checked by a second reader inside the project; none has yet been reviewed outside it.
@@ -264,8 +354,29 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       their present colour. The page recomputes the ring from its 84-bit certificate when it loads.</figcaption>
   </figure>
 
+  <section class="col" id="ring">
+    <h3>The ring turns, and its history is a wall of bricks</h3>
+    <p>Watched as it runs, the ring is simpler than it looks. Each step of Rule 30 turns the whole ring by 14 of its 84
+      squares, one sixth of a turn, which is why it comes back every six steps. Press <b>Turning with the ring</b> to
+      redraw it as if the paper turned too: every column becomes a single colour for ever. Its whole infinite history
+      is one brick, 14 squares wide and 6 rows tall with 43 black squares, laid like bricks in a wall, each column of
+      bricks one row lower than the one before. It is one of the 20 crystals above.</p>
+    <p>Behind it is a general fact we proved. Rule 30 can be cut into eight jigsaw pieces, one for each case of the
+      rule, and its histories are exactly the ways of fitting them together. A row that comes back moved further than
+      a change could have travelled in the time, as this ring does, must repeat across as well, so its history is a
+      wall of one brick. The same pieces make walls like this one, so Problem 1 is not a question about the pieces:
+      it asks whether the one picture grown from a single black piece can ever repeat down its middle.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="bricks.html?embed#ring" title="The turning ring, live" loading="lazy"></iframe></div>
+    <a class="open" href="bricks.html#ring">Open the turning ring on its own page →</a>
+    <figcaption>Live: 48 steps of the ring, one row per step. The amber outline is one brick and the faint ones are its
+      copies; the three dotted tracers follow three values as they ride round the ring, slanted as it runs and
+      straight down when the frame turns with it. The page checks the turn against the rule as it loads.</figcaption>
+  </figure>
+
   <section class="col" id="how">
-    <p class="chapter">6 · How this was done</p>
+    <p class="chapter">7 · How this was done</p>
     <h2>Five days, three collaborators, everything in the open</h2>
     <p>This work was done between 4 and 9 October 2026 by Gareth Herbert, working with AI collaborators: Claude,
       by Anthropic, in two roles, and GPT, by OpenAI. Each proof was proposed by one party and checked by another
@@ -278,8 +389,8 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
         its second reader.</span></a>
       <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md"><b>The research record</b><span>The full working
         notes, measurements and refutations.</span></a>
-      <a href="sieve.html"><b>The edge-event sieve</b><span>An interactive look inside the forced left side: every black
-        square as an odd overlap of triangles.</span></a>
+      <a href="bricks.html"><b>Bricks, rulers and fronts</b><span>Four of the page's visuals together, each with its notes
+        and its standing in the record.</span></a>
     </div>
   </section>
 
@@ -357,10 +468,11 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
     tallyEl.innerHTML = "centre column, first " + (H.shown + 1) + " cells: <b>" + black + "</b> black, <b>" + white +
       "</b> white";
   }
-  var heroLast = 0, heroAcc = 0;
+  var heroLast = 0, heroAcc = 0, heroRunning = false;
   function heroFrame(ts) {
+    if (!seen(hero)) { heroRunning = false; return; }          // off screen: stop; heroWake restarts it
     if (!heroLast) heroLast = ts;
-    var dt = ts - heroLast; heroLast = ts;
+    var dt = Math.min(100, ts - heroLast); heroLast = ts;
     if (H.shown < H.R) {
       heroAcc += dt;
       while (heroAcc > 28 && H.shown < H.R) { heroAcc -= 28; H.shown++; }
@@ -370,6 +482,10 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       if (H.hold > 6000) { H.hold = 0; H.shown = 0; heroAcc = 0; heroDraw(); }
     }
     requestAnimationFrame(heroFrame);
+  }
+  function heroWake() {
+    if (reduce || heroRunning || !seen(hero)) return;
+    heroRunning = true; heroLast = 0; requestAnimationFrame(heroFrame);
   }
 
   /* ---- the explainer: the eight cases above a small grid, one new cell at a time ---- */
@@ -455,6 +571,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
   function exSchedule() {
     clearInterval(exTimer);
     if (E.playing) exTimer = setInterval(function () {
+      if (!seen(ex)) return;                                  // off screen: hold the cursor where it is
       if (E.r >= E.rows) { if (++E.hold < 30) return; E.hold = 0; E.r = 1; E.c = rowStart(1); exDraw(); } else exStep();
     }, 150);
     document.getElementById("explain-play").textContent = E.playing ? "Pause" : "Play";
@@ -468,9 +585,34 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
     var mq = window.matchMedia("(prefers-color-scheme: dark)");
     if (mq.addEventListener) mq.addEventListener("change", function () { heroDraw(); exDraw(); });
   }
+  /* ---- run each visual only while it is on screen ----
+     The hero and the explainer check seen() before they move. Each embedded frame is told as it scrolls in and out
+     of view, and when it asks as it starts (the snippet in each embedded page holds its animation while it is out).
+     A hidden tab counts as off screen. Without IntersectionObserver everything runs, as before. */
+  var onScreen = new WeakMap(), frames = Array.prototype.slice.call(document.querySelectorAll(".frame iframe"));
+  function seen(el) { return !document.hidden && onScreen.get(el) !== false; }
+  function tell(f) {
+    try { if (f.contentWindow) f.contentWindow.postMessage({ r30: "visibility", visible: seen(f) }, "*"); } catch (e) {}
+  }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        onScreen.set(en.target, en.isIntersecting);
+        if (en.target === hero) heroWake(); else if (en.target.tagName === "IFRAME") tell(en.target);
+      });
+    }, { threshold: 0 });
+    io.observe(hero); io.observe(ex);
+    frames.forEach(function (f) { io.observe(f); f.addEventListener("load", function () { tell(f); }); });
+  }
+  window.addEventListener("message", function (e) {
+    if (!e.data || e.data.r30 !== "ask") return;
+    frames.forEach(function (f) { if (f.contentWindow === e.source) tell(f); });
+  });
+  document.addEventListener("visibilitychange", function () { frames.forEach(tell); heroWake(); });
+
   layoutAll(); exSchedule();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { heroDraw(); exDraw(); });
-  if (!reduce) requestAnimationFrame(heroFrame);
+  heroWake();
 })();
 </script>
 </body>

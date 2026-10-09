@@ -8,35 +8,50 @@ Stephen Wolfram, so it is written for a reader with no background, and every cla
 
 | File | What it is |
 |---|---|
-| `index.html` | The landing page: from "what is Rule 30" to where Problem 1 stands. |
+| `index.html` | The whole story on one page, from "what is Rule 30" to where Problem 1 stands, every visual embedded. |
 | `vitruvian.html` | Vitruvian Rule 30: pyramid, square, prize column, wheel, clocks, wall run. |
 | `heartbeat.html` | Frontier Heartbeat: a starting frame and four labelled acts on a repeating centre's cost. |
 | `necklace.html` | The All-S Necklace: GPT's 84-cell ring that keeps the clock for ever. |
-| `sieve.html` | The Edge-Event Sieve: the forced left side, interactive (linked, not embedded). |
+| `sieve.html` | The Edge-Event Sieve: the forced left side, interactive. |
+| `bricks.html` | Bricks, Rulers and Fronts: the left front, the edge ruler, the crystals and the turning ring. |
 
-The landing page has two visuals of its own, the growing pyramid with its centre column read off and the rule applied
-one cell at a time, and embeds three of the renders.
+The landing page walks a reader with no background to the current state of Problem 1, in seven chapters: the rule;
+why it matters; order at the edges (the left front, the edge ruler); the whole picture (the plate); assume the
+opposite (the crystals, the sieve, the heartbeat); what we found (the necklace, the turning ring); how it was done.
+It has two visuals of its own, the growing pyramid with its centre column read off and the rule applied one cell at a
+time, and embeds every render: ten visuals, eight of them in frames. `bricks.html` is embedded four times, one view
+per frame, chosen by the hash (`#front`, `#ruler`, `#crystals`, `#ring`).
 
 The four render pages are full pages in their own right, with a link back to the story. Opened with `?embed`, a page
-hides its prose and shows only its toolbar and stage; that is how `index.html` embeds three of them in iframes. Each
+hides its prose and shows only its toolbar and stage; that is how `index.html` embeds them in iframes. Each
 render is the same page as its Claude artifact of 2026-10-09, wrapped in a full HTML document.
+
+Every visual animates only while it is on screen. The landing page watches its own two canvases and each frame with an
+IntersectionObserver and tells each frame by `postMessage({r30: "visibility", visible})` as it scrolls in and out of
+view (a hidden tab counts as off screen). A short snippet in the head of each render, the same in all five, holds the
+page's animation frames and skips its interval ticks while it is told it is out of view, and asks once as it starts.
+Opened on its own, a render always runs.
 
 ## Deploying (Local)
 
-- Static files only: no build step, no server code, no analytics, no cookies. Copy the five `.html` files into the
+- Static files only: no build step, no server code, no analytics, no cookies. Copy the six `.html` files into the
   site's `/wolframrule30/` directory so that `/wolframrule30/` serves `index.html`. `README.md` need not be copied.
-- Keep the five files together: the landing page loads the others by relative path.
+- Keep the six files together: the landing page loads the others by relative path.
 - External loads: Google Fonts (stylesheets and font files) only. Links go out to GitHub (the public record),
   writings.stephenwolfram.com, wolframscience.com and arxiv.org.
 
 ## Checks after deploying
 
 - `/wolframrule30/` opens on the title and the growing pyramid, and its tally counts up.
-- The three embedded renders (plate, heartbeat, necklace) show their toolbar and animation with no prose inside the
-  frame, and each "Open ... on its own page" link opens the full page with its notes and a working back link.
+- The eight frames (left front, edge ruler, plate, crystals, sieve, heartbeat, necklace, turning ring) show their
+  toolbar and picture with no prose inside the frame, and each "Open ... on its own page" link opens the full page
+  with its notes and a working back link.
+- A frame scrolled out of view stops, and carries on from the same place when it comes back.
 - On a phone-width window nothing scrolls sideways.
 - The browser console shows no errors. (Cloud's checks before handover: none at 1440 and 400 pixels wide, in light
-  and dark mode, on all five pages.)
+  and dark mode, on all five pages. On 2026-10-09, for the one-page version: no page errors at 1440 and 390 pixels
+  wide, light and dark, with all eight frames loaded, and every frame checked to stop off screen and carry on when
+  back; the sandbox blocked the font loads and served no favicon, which is all the console showed.)
 
 ## Editing
 

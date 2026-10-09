@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bricks, Rulers and Fronts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one sticky toolbar (title, the four finds as tabs, controls and live readouts); under it one canvas sized
+   to the screen, where each find draws its history with its overlays and tracers; the notes for the open find below.
+   The family look of the earlier renders: slate paper, ink cells, teal for the clock, amber for the companion. */
+:root {
+  --paper: #eaeef2;
+  --sheet: #f6f8fa;
+  --ink: #18212c;
+  --muted: #5a6574;
+  --rule: #c7cfd8;
+  --clock: #0b7a77;
+  --clock-soft: rgba(11, 122, 119, 0.16);
+  --mate: #b25f17;
+  --mate-soft: rgba(178, 95, 23, 0.22);
+  --t-a: #4a55c9;
+  --t-b: #b42f63;
+  --t-c: #3d8a3a;
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f151c; --sheet: #151d26; --ink: #e4e9ee; --muted: #97a3b1; --rule: #2b3643;
+    --clock: #3cc2bd; --clock-soft: rgba(60, 194, 189, 0.20); --mate: #e89a52; --mate-soft: rgba(232, 154, 82, 0.26);
+    --t-a: #9ba3ff; --t-b: #f27aa8; --t-c: #82cc7f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f151c; --sheet: #151d26; --ink: #e4e9ee; --muted: #97a3b1; --rule: #2b3643;
+  --clock: #3cc2bd; --clock-soft: rgba(60, 194, 189, 0.20); --mate: #e89a52; --mate-soft: rgba(232, 154, 82, 0.26);
+  --t-a: #9ba3ff; --t-b: #f27aa8; --t-c: #82cc7f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+.page { max-width: 1320px; margin: 0 auto; padding-inline: 20px; padding-block: 0 56px; display: grid; gap: 22px; }
+
+.toolbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; background: var(--sheet);
+  border: 1px solid var(--rule); border-top: 0; border-radius: 0 0 8px 8px; padding: 10px 16px 12px;
+  display: grid; gap: 10px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.titleblock { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-right: auto; min-width: 0; }
+h1 { font-family: var(--display); font-weight: 600; font-size: 24px; line-height: 1.1; margin: 0; text-wrap: balance; }
+h1 em { font-style: italic; font-weight: 500; color: var(--mate); }
+.eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; }
+.tabs button { font-family: var(--display); font-size: 16px; padding: 4px 12px; }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--sheet); border-color: var(--ink); }
+button, select { font: inherit; font-size: 14px; color: var(--ink); background: var(--paper); border: 1px solid var(--rule);
+  border-radius: 4px; padding: 5px 12px; cursor: pointer; }
+button:hover, select:hover { border-color: var(--ink); }
+button:focus-visible, select:focus-visible { outline: 2px solid var(--clock); outline-offset: 2px; }
+button[aria-pressed="true"] { border-color: var(--clock); box-shadow: inset 0 0 0 1px var(--clock); }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tabctl { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; min-width: 0; }
+.ro { font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ro b { color: var(--ink); font-weight: 600; }
+.ro .c { color: var(--clock); }
+.ro .m { color: var(--mate); }
+label.sel { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
+
+.stage { display: grid; justify-items: center; min-width: 0; }
+canvas { display: block; max-width: none; }
+
+.notes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 36px; }
+.notes section { min-width: 0; }
+.notes h2 { font-family: var(--display); font-weight: 600; font-size: 21px; margin: 0 0 6px; text-wrap: balance; }
+.notes p { margin: 0 0 10px; max-width: 64ch; }
+.notes .kicker { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.status { border-left: 3px solid var(--clock); padding: 2px 0 2px 12px; color: var(--muted); font-size: 15px; }
+.status b { color: var(--ink); }
+table.w { border-collapse: collapse; font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; }
+table.w td, table.w th { padding: 2px 8px; border-bottom: 1px solid var(--rule); text-align: right; }
+table.w th { color: var(--muted); font-weight: 400; text-align: left; }
+.tablewrap { overflow-x: auto; max-width: 100%; }
+footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--rule); padding-top: 12px; }
+@media (max-width: 760px) {
+  .notes { grid-template-columns: minmax(0, 1fr); }
+  h1 { font-size: 21px; }
+  .toolbar { position: static; }
+}
+</style>
+<style>
+body { margin: 0; }
+[hidden] { display: none !important; }
+.back { font-size: 0.9rem; margin: 0; }
+html.embed .page > :not(.toolbar):not(.stage) { display: none !important; }
+html.embed .page { padding-bottom: 0 !important; }
+html.embed .tabs, html.embed .eyebrow { display: none !important; }
+</style>
+<script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add("embed");</script>
+<script>
+/* Embedded in the Rule 30 page, this frame animates only while it is on screen. The page posts
+   {r30: "visibility", visible} as the frame scrolls in and out of view; while it is out, animation frames are held and
+   interval ticks are skipped, so nothing runs unseen. The frame asks once as it starts. Opened on its own, the page
+   always runs. (The same snippet is in every page the Rule 30 page embeds.) */
+(function () {
+  if (window.parent === window) return;
+  var on = true, held = {}, nid = 1e9;
+  var raf = window.requestAnimationFrame.bind(window), caf = window.cancelAnimationFrame.bind(window);
+  var si = window.setInterval.bind(window);
+  window.requestAnimationFrame = function (cb) { if (on) return raf(cb); held[++nid] = cb; return nid; };
+  window.cancelAnimationFrame = function (id) { if (held[id]) delete held[id]; else caf(id); };
+  window.setInterval = function (fn, ms) {
+    if (typeof fn !== "function") return si(fn, ms);
+    var rest = Array.prototype.slice.call(arguments, 2);
+    return si(function () { if (on) fn.apply(this, rest); }, ms);
+  };
+  window.addEventListener("message", function (e) {
+    if (e.source !== window.parent || !e.data || e.data.r30 !== "visibility") return;
+    var was = on; on = !!e.data.visible;
+    if (on && !was) { var q = held; held = {}; Object.keys(q).forEach(function (k) { raf(q[k]); }); }
+  });
+  try { window.parent.postMessage({ r30: "ask" }, "*"); } catch (e) {}      // ask whether we start on screen
+})();
+</script>
+</head>
+<body>
+
+<div class="page">
+  <header class="toolbar">
+    <div class="bar">
+      <div class="titleblock">
+        <span class="eyebrow">Rule 30 · the morning of 9 October 2026</span>
+        <h1>Bricks, Rulers <em>and</em> Fronts</h1>
+      </div>
+      <div class="tabs" role="tablist" aria-label="The four finds">
+        <button role="tab" id="tab-ring" data-tab="ring" aria-selected="true">Turning ring</button>
+        <button role="tab" id="tab-crystals" data-tab="crystals" aria-selected="false">Crystals</button>
+        <button role="tab" id="tab-ruler" data-tab="ruler" aria-selected="false">Edge ruler</button>
+        <button role="tab" id="tab-front" data-tab="front" aria-selected="false">Left front</button>
+      </div>
+    </div>
+    <div class="bar">
+      <div class="controls">
+        <button id="play" type="button">Pause</button>
+        <button id="stepb" type="button">Step</button>
+        <button id="again" type="button">From the start</button>
+        <label class="sel" for="speed">Speed
+          <select id="speed"><option value="0.5">slow</option><option value="1" selected>normal</option><option value="3">fast</option></select>
+        </label>
+      </div>
+      <div class="tabctl" data-for="ring">
+        <button id="frameTrue" type="button" aria-pressed="true">As it runs</button>
+        <button id="frameTurn" type="button" aria-pressed="false">Turning with the ring</button>
+        <span class="ro" id="ringRo"></span>
+      </div>
+      <div class="tabctl" data-for="crystals" hidden>
+        <label class="sel" for="preset">Column 1
+          <select id="preset"></select>
+        </label>
+        <button id="randomWord" type="button">Random word</button>
+        <label class="sel" for="randLen">of length
+          <select id="randLen"></select>
+        </label>
+        <span class="ro" id="crysRo"></span>
+      </div>
+      <div class="tabctl" data-for="ruler" hidden>
+        <label class="sel" for="rulerRows">Rows
+          <select id="rulerRows"><option>128</option><option selected>256</option><option>512</option></select>
+        </label>
+        <span class="ro" id="rulerRo"></span>
+      </div>
+      <div class="tabctl" data-for="front" hidden>
+        <span class="ro" id="frontRo"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage"><canvas id="cv" aria-label="Animated Rule 30 history for the selected find"></canvas></main>
+
+  <div class="notes" data-for="ring">
+    <section>
+      <p class="kicker">Find 1 · the turning ring</p>
+      <h2>One step of Rule 30 turns GPT's ring by 14 of its 84 cells</h2>
+      <p>GPT built an 84-cell ring whose site 0 ticks 0101 for ever while its neighbour plays the all-S word 110100.
+        Each update of Rule 30 slides the whole ring 14 cells to the right, one sixth of a turn. So six steps make a
+        full turn, which is why it repeats every 6 steps.</p>
+      <p>Press <b>Turning with the ring</b>: the picture is redrawn as if the drawing turned with it, and every
+        column becomes a single colour for ever. The three dotted lines follow three values as they ride their
+        helix: slanted as it runs, straight down in the turning frame.</p>
+    </section>
+    <section>
+      <p class="kicker">The brick wall</p>
+      <p>The whole infinite history is one brick, 14 cells wide and 6 steps tall with 43 black cells, laid like bricks
+        in a wall: each column of bricks sits one step lower than the one to its left. The amber outline is one
+        brick; the faint ones are its copies.</p>
+      <p class="status"><b>Proved.</b> The turn is an 84-cell certificate (chat CL071), and GPT showed it is forced by
+        the ring's rigidity (GC721). The brick wall is RULE30-PRIZE.md §8.72.</p>
+    </section>
+  </div>
+
+  <div class="notes" data-for="crystals" hidden>
+    <section>
+      <p class="kicker">Find 2 · crystals</p>
+      <h2>Next to the 0101 wall, a repeating column 1 freezes the left half into one brick</h2>
+      <p>The wall is column 0 (teal), ticking 0101. Column 1 (amber) repeats a word of length P. Rule 30 run
+        sideways then fixes every column to the left, one at a time, and the picture grows from the wall leftwards.
+        After a short transient (the dashed line) it repeats in space as well as in time: a wall of one brick.</p>
+      <p>In the census of every word up to length 20 (1,398,100 words), only 20 different bricks ever appear, never
+        more than 7 for one length. None is blank, as Jen's theorem says. The checkerboard takes exactly the words
+        whose visible bits, column 1 at the wall's white times, are all one colour.</p>
+    </section>
+    <section>
+      <p class="kicker">Why it matters for the prize</p>
+      <p>A finite seed needs the far left white. A periodic column 1 always crystallises into a brick that is not
+        blank, so it can never get there. The open case is a column 1 that never repeats: can it grow a crystal
+        that turns blank?</p>
+      <p class="status"><b>Proved:</b> the left half becomes a wall of one brick (finite state), never blank (Jen).
+        <b>Measured:</b> the census of 20 bricks (RULE30-PRIZE.md §8.72, predictions pushed first).</p>
+    </section>
+  </div>
+
+  <div class="notes" data-for="ruler" hidden>
+    <section>
+      <p class="kicker">Find 3 · the edge ruler (Gareth Herbert's observation)</p>
+      <h2>At every second step a triangle touches the right edge, and its size is a ruler</h2>
+      <p>At every even row a white triangle starts one cell inside the black right edge; odd rows have none. Its
+        width depends only on how many times 2 divides the row number, like the marks on a ruler: the teal ticks
+        to the right of the edge repeat each triangle's width.</p>
+      <div class="tablewrap"><table class="w" id="wtable"></table></div>
+    </section>
+    <section>
+      <p class="kicker">Why</p>
+      <p>Every diagonal parallel to the right edge repeats with a period that is a power of 2. At a row that is a
+        multiple of a diagonal's period, the diagonal is white, as at the start. The first diagonal whose period
+        does not divide the row has just had its period doubled, and that doubling flips it to black: the
+        triangle ends there.</p>
+      <p class="status"><b>Proved</b> for all time (Proposition 23, PROOFS.md entry 36; GPT's reading GC730: correct).
+        Checked at every even row below 2<sup>24</sup>. The periods are OEIS A094605.</p>
+    </section>
+  </div>
+
+  <div class="notes" data-for="front" hidden>
+    <section>
+      <p class="kicker">Find 4 · the left front</p>
+      <h2>Where the left side's order ends: a ragged line at a quarter of light speed</h2>
+      <p>Teal is the ordered band: every diagonal there repeats for ever from that row on. The magenta curve is its
+        exact edge, the first diagonal that row t and row t + 1,024 disagree on. It starts near the centre at the
+        apex, not down the light cone, and leaves at about a quarter of light speed (the dashed line, 0.246 cells
+        per step, the speed at which a change spreads left).</p>
+      <p>The chart follows the same edge to row 524,288 on a doubling scale: its distance from the dashed line wanders
+        like a random walk, a few hundred cells after a few hundred thousand rows.</p>
+    </section>
+    <section>
+      <p class="kicker">How sure</p>
+      <p>The definition is exact: the diagonals near the left edge depend only on one another, so once a stretch of
+        them repeats it repeats for ever. The edge never moves back. It advances 0, 1 or 2 diagonals at almost every
+        step and never more than 14.</p>
+      <p class="status"><b>Measured</b> (RULE30-PRIZE.md §8.74, predictions pushed first): mean speed 0.2437 over
+        rows 65,536 to 524,288; the random-walk wander was measured after the run. That the mean speed is exactly
+        0.246 is not proved.</p>
+    </section>
+  </div>
+
+  <footer>Rule 30 is x′(i) = x(i−1) XOR (x(i) OR x(i+1)), drawn black for 1. Every picture is recomputed in your
+    browser from that rule, except the left front's long chart, which is the probe's output to row 2<sup>19</sup>.
+    From the public record: chat notes CL071 to CL075, RULE30-PRIZE.md §8.71 to §8.74, Propositions 22 and 23.</footer>
+  <p class="back"><a href="./">&larr; Rule 30: the whole story</a></p>
+</div>
+
+<script>
+(() => {
+  const cv = document.getElementById("cv"), g = cv.getContext("2d");
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  let C = {};
+  const palette = () => { for (const k of ["paper", "sheet", "ink", "muted", "rule", "clock", "clock-soft", "mate",
+    "mate-soft", "t-a", "t-b", "t-c", "mono", "display"]) C[k] = css("--" + k); };
+  palette();
+  const DPR = () => Math.min(2, window.devicePixelRatio || 1);
+  let W = 800, H = 500;
+  const mod = (a, n) => ((a % n) + n) % n;
+  // a tracer that reads over any pattern: a wide paper halo, then a thick dashed line in its colour
+  function trace(segs, col, w, dots) {
+    const lw = w || 3;
+    for (const [color, width, dash] of [[C.paper, lw + 4, []], [col, lw, [8, 5]]]) {
+      g.strokeStyle = color; g.lineWidth = width; g.setLineDash(dash); g.lineCap = "round";
+      g.beginPath();
+      for (const seg of segs) seg.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y));
+      g.stroke();
+    }
+    g.setLineDash([]); g.lineCap = "butt";
+    if (dots) for (const [x, y, r] of dots) {
+      g.beginPath(); g.arc(x, y, r + 2, 0, 7); g.fillStyle = C.paper; g.fill();
+      g.beginPath(); g.arc(x, y, r, 0, 7); g.fillStyle = col; g.fill();
+    }
+  }
+
+  // ---------- 1. the turning ring ----------
+  const Ring = (() => {
+    const N = 84, HEX = "688eb74a45efb082671ee", R = 48, word = BigInt("0x" + HEX);
+    const row0 = Array.from({ length: N }, (_, i) => Number((word >> BigInt(i)) & 1n));
+    const step = r => r.map((x, i) => r[(i - 1 + N) % N] ^ (x | r[(i + 1) % N]));
+    const rows = [row0];
+    for (let t = 1; t < R; t++) rows.push(step(rows[t - 1]));
+    const turnOk = rows.every((r, t) => r.every((x, i) => x === row0[mod(i - 14 * t, N)]));
+    let t = 0, s = 0, target = 0, acc = 0, cell = 10, ox = 0, oy = 0;
+    const TR = [[0, "clock"], [28, "t-a"], [56, "t-b"]];
+    return {
+      reset() { t = 0; acc = 0; },
+      layout() {
+        cell = Math.floor(Math.min((W - 90) / N, (H - 76) / R));
+        if (cell < 4) cell = Math.max(2, Math.min((W - 64) / N, (H - 76) / R));   // a phone: fractional cells, all 84 shown
+        ox = Math.round((W - cell * N) / 2) + 18; oy = Math.round((H - cell * R) / 2) - 12;
+      },
+      tick(dt, speed) {
+        acc += dt * speed; let ch = false;
+        while (acc > 420) { acc -= 420; t++; ch = true; }
+        const ns = s + (target - s) * Math.min(1, dt / 260);
+        if (Math.abs(ns - s) > 1e-3) { s = Math.abs(target - ns) < 0.01 ? target : ns; ch = true; }
+        return ch;
+      },
+      stepOnce() { t++; },
+      setFrame(turn) { target = turn ? 14 : 0; },
+      draw() {
+        g.fillStyle = C.sheet; g.fillRect(ox, oy, cell * N, cell * R);
+        // cells sliding off the right come back on the left: draw inside a clip, with the wrapped part
+        g.save(); g.beginPath(); g.rect(ox, oy, cell * N, cell * R); g.clip();
+        g.fillStyle = C.ink;
+        for (let r = 0; r < R; r++) {
+          const off = s * r;
+          for (let i = 0; i < N; i++) if (rows[r][i]) {
+            const c = mod(i - off, N);
+            g.fillRect(ox + c * cell, oy + r * cell, cell + 0.4, cell + 0.4);
+            if (c > N - 1) g.fillRect(ox + (c - N) * cell, oy + r * cell, cell + 0.4, cell + 0.4);
+          }
+        }
+        g.restore();
+        const cr = t % R;
+        g.fillStyle = C["clock-soft"]; g.fillRect(ox, oy + cr * cell, cell * N, cell);
+        // bricks: 14 wide, 6 tall, each column of bricks one row lower; fade out as the frame turns
+        const ba = Math.max(0, 1 - s / 2.5);
+        if (ba > 0) {
+          g.save(); g.beginPath(); g.rect(ox, oy, cell * N, cell * R); g.clip();
+          g.globalAlpha = ba; g.lineWidth = 1; g.strokeStyle = C.muted;
+          for (let j = 0; j < 6; j++) for (let k = -1; k <= 6; k++) {
+            const y = j + 6 * k;
+            g.strokeRect(ox + 14 * j * cell + 0.5, oy + y * cell + 0.5, 14 * cell - 1, 6 * cell - 1);
+          }
+          g.lineWidth = Math.max(2, cell * 0.22); g.strokeStyle = C.mate;
+          g.strokeRect(ox + 1, oy + 1, 14 * cell - 2, 6 * cell - 2);
+          // the clock column (site 0) and its companion (site 1)
+          g.lineWidth = Math.max(1.5, cell * 0.16);
+          g.strokeStyle = C.clock; g.strokeRect(ox + 0.5, oy + 0.5, cell - 1, R * cell - 1);
+          g.restore();
+        }
+        // tracers: three values riding their helix, drawn up to the current row, a dot on every row they visit
+        for (const [i0, tok] of TR) {
+          const segs = [], dots = [];
+          let seg = [], prev = null;
+          for (let r = 0; r <= cr; r++) {
+            const c = mod(i0 + (14 - s) * r, N), x = ox + (c + 0.5) * cell, y = oy + (r + 0.5) * cell;
+            if (prev !== null && Math.abs(c - prev) >= N / 2) { segs.push(seg); seg = []; }
+            seg.push([x, y]); dots.push([x, y, r === cr ? Math.max(4, cell * 0.42) : Math.max(2, cell * 0.2)]);
+            prev = c;
+          }
+          segs.push(seg);
+          trace(segs, C[tok], Math.max(2.5, cell * 0.2), dots);
+        }
+        // labels
+        g.fillStyle = C.muted; g.font = `12px ${C.mono}`; g.textBaseline = "middle"; g.textAlign = "right";
+        for (let r = 0; r < R; r += 6) g.fillText(String(r), ox - 8, oy + (r + 0.5) * cell);
+        g.textAlign = "center"; g.textBaseline = "top";
+        for (let i = 0; i < N; i += 14) g.fillText(String(i), ox + (i + 0.5) * cell, oy + R * cell + 6);
+        g.textAlign = "right";
+        g.fillText(N * cell < 400 ? "one brick per 14 sites" : "sites 0 .. 83 of the ring, one brick per 14", ox + 84 * cell,
+          oy + R * cell + 24);
+        g.save(); g.translate(ox - 34, oy + R * cell / 2); g.rotate(-Math.PI / 2); g.textAlign = "center";
+        g.fillText("time, step by step", 0, 0); g.restore();
+        document.getElementById("ringRo").innerHTML =
+          `step <b>${t}</b> · ring turned <b>${(14 * t) % 84}</b> of 84 cells · frame shift <b>${s.toFixed(1)}</b>` +
+          ` per step · <span class="c">turn check ${turnOk ? "passed" : "FAILED"}</span>`;
+      },
+    };
+  })();
+
+  // ---------- 2. crystals ----------
+  const Crystals = (() => {
+    const PRESETS = [
+      ["110100", "GPT's all-S word (P = 6)"],
+      ["01000101", "visible bits all white (P = 8)"],
+      ["1000", "the 7-ring (P = 4)"],
+      ["1000000000", "a 155-wide brick (P = 10)"],
+      ["1010100000", "a 90-wide brick (P = 10)"],
+      ["101000000000", "a long transient (P = 12)"],
+      ["1000000000000000", "an unstaggered 325 (P = 16)"],
+      ["101000001000000000", "a 342-wide brick (P = 18)"],
+    ];
+    const NAMES = { 2: "the checkerboard", 7: "the 7-ring's 4-cycle", 84: "GPT's all-S ring" };
+    const KNOWN = new Set([2, 7, 84, 155, 90, 138, 60, 100, 728, 1316, 644, 325, 2032, 1962, 8370, 4050, 342, 477,
+      25000, 400]);
+    let P = 6, M = 63, cols = [], mu = 0, lam = 1, qs = 1, rr = 0, dens = 0, word = "110100";
+    let shown = 0, target = 0, acc = 0, cell = 4, Dshow = 0, rowsShown = 12, x0 = 0, y0 = 0;
+    const rotr = (a, k) => { k = mod(k, P); return k ? ((a >>> k) | (a << (P - k))) & M : a; };
+    const phi = (a, b) => [(rotr(a, 1) ^ (a | b)) & M, a];
+    function compute(wstr) {
+      word = wstr; P = wstr.length; M = P >= 31 ? 0x7fffffff : (1 << P) - 1;
+      let wall = 0, w = 0;
+      for (let t = 0; t < P; t++) { if (t & 1) wall |= 1 << t; if (wstr[t] === "1") w |= 1 << t; }
+      // Brent's cycle detection on the pair of columns (c_i, c_{i+1})
+      let pw = 1, l = 1, ta = wall, tb = w, [ha, hb] = phi(wall, w);
+      while (ta !== ha || tb !== hb) { if (pw === l) { ta = ha; tb = hb; pw *= 2; l = 0; } [ha, hb] = phi(ha, hb); l++; }
+      let [xa, xb] = [wall, w], [ya, yb] = [wall, w];
+      for (let k = 0; k < l; k++) [ya, yb] = phi(ya, yb);
+      let m = 0;
+      while (xa !== ya || xb !== yb) { [xa, xb] = phi(xa, xb); [ya, yb] = phi(ya, yb); m++; }
+      mu = m; lam = l; qs = l; rr = 0;
+      for (let d = 2; d <= P; d++) {
+        if (l % d) continue;
+        const q = l / d; if (q >= qs) continue;
+        let [za, zb] = [xa, xb];
+        for (let k = 0; k < q; k++) [za, zb] = phi(za, zb);
+        for (let r = 1; r < P; r++) if (rotr(xa, r) === za && rotr(xb, r) === zb) { qs = q; rr = r; break; }
+      }
+      Dshow = Math.min(mu + 3 * qs + 2, Math.max(60, Math.floor(W - 40) - 2));   // three bricks, at least a pixel each
+      cols = [w, wall];                                   // index 0: column 1, index 1: column 0, then depths
+      let a = wall, b = w, ones = 0;
+      for (let d = 1; d <= Math.max(Dshow, mu + lam); d++) {
+        [a, b] = phi(a, b); if (d <= Dshow) cols.push(a);
+        if (d > mu && d <= mu + lam) ones += popc(a);
+      }
+      dens = ones / (lam * P);
+      shown = 0; acc = 0; layout();
+    }
+    const popc = x => { let c = 0; while (x) { x &= x - 1; c++; } return c; };
+    function layout() {
+      const ncol = Dshow + 2;
+      cell = Math.max(1, Math.min(12, Math.floor((W - 40) / ncol), Math.floor((H - 50) / (2 * P))));
+      if (cell < 1) cell = 1;
+      const m = Math.max(2, Math.floor((H - 50) / (P * cell)));
+      rowsShown = P * m;
+      x0 = Math.round((W + ncol * cell) / 2); y0 = Math.round((H - rowsShown * cell) / 2) + 4;
+      target = Dshow;
+    }
+    const colX = d => x0 - (d + 2) * cell;            // d = -1 for column 1, 0 for the wall, d >= 1 for depth d
+    return {
+      presets: PRESETS, compute,
+      reset() { shown = 0; acc = 0; },
+      layout,
+      tick(dt, speed) {
+        if (shown >= target) return false;
+        acc += dt * speed * Math.max(20, target / 2.6) / 1000;
+        const add = Math.floor(acc); if (!add) return false;
+        acc -= add; shown = Math.min(target, shown + add); return true;
+      },
+      stepOnce() { shown = Math.min(target, shown + Math.max(1, Math.round(qs / 2))); },
+      draw() {
+        const ncol = Dshow + 2;
+        g.fillStyle = C.sheet; g.fillRect(x0 - ncol * cell, y0, ncol * cell, rowsShown * cell);
+        g.fillStyle = C.ink;
+        const drawCol = (d, v) => {
+          const x = colX(d);
+          for (let t = 0; t < rowsShown; t++) if ((v >>> (t % P)) & 1) g.fillRect(x, y0 + t * cell, cell + 0.3, cell + 0.3);
+        };
+        drawCol(-1, cols[0]); drawCol(0, cols[1]);
+        for (let d = 1; d <= shown; d++) drawCol(d, cols[d + 1]);
+        g.lineWidth = Math.max(1.5, cell * 0.25);
+        g.strokeStyle = C.mate; g.strokeRect(colX(-1) - 1, y0 - 1, cell + 2, rowsShown * cell + 2);
+        g.strokeStyle = C.clock; g.strokeRect(colX(0) - 1, y0 - 1, cell + 2, rowsShown * cell + 2);
+        // where the crystal starts, then three bricks of its wall
+        if (shown >= mu) {
+          const xm = colX(mu) + cell;
+          g.setLineDash([5, 4]); g.strokeStyle = C.muted; g.lineWidth = 1.5;
+          g.beginPath(); g.moveTo(xm, y0 - 14); g.lineTo(xm, y0 + rowsShown * cell + 4); g.stroke(); g.setLineDash([]);
+          g.fillStyle = C.muted; g.font = `12px ${C.mono}`; g.textAlign = "right"; g.textBaseline = "bottom";
+          g.fillText(`crystal from depth ${mu}`, xm - 8, y0 - 2);
+        }
+        const nb = Math.min(3, Math.floor((Dshow - mu) / qs));
+        g.save(); g.beginPath(); g.rect(x0 - ncol * cell, y0, ncol * cell, rowsShown * cell); g.clip();
+        for (let k = 0; k < nb; k++) {
+          const dEnd = mu + (k + 1) * qs; if (shown < dEnd) break;
+          const xr = colX(mu + k * qs) + cell, xl = colX(dEnd - 1);
+          const off = mod(-k * rr, P);
+          g.strokeStyle = k === 0 ? C.mate : C.muted; g.lineWidth = k === 0 ? Math.max(2, cell * 0.3) : 1.2;
+          for (let y = off - P; y < rowsShown; y += P) g.strokeRect(xl + 0.5, y0 + y * cell + 0.5, xr - xl - 1, P * cell - 1);
+        }
+        g.restore();
+        // tracers: one black cell of the first brick and its copies one and two bricks over
+        if (nb >= 2) {
+          const v = cols[mu + 1 + 0]; let tt = -1;
+          for (let t = 0; t < P; t++) if ((v >>> t) & 1) { tt = t; break; }
+          if (tt >= 0) {
+            const pts = [];
+            for (let k = 0; k < nb; k++) {
+              if (shown < mu + k * qs) break;
+              const yy = mod(tt - k * rr, P) + P;
+              pts.push([colX(mu + k * qs) + cell / 2, y0 + (yy + 0.5) * cell]);
+            }
+            trace([pts], C["t-a"], 3, pts.map(([x, y]) => [x, y, Math.max(3.5, cell * 0.6)]));
+          }
+        }
+        g.fillStyle = C.muted; g.font = `12px ${C.mono}`; g.textBaseline = "top"; g.textAlign = "right";
+        g.fillText("column 1 · wall", x0, y0 + rowsShown * cell + 6);
+        g.textAlign = "left";
+        g.fillText(ncol * cell < 480 ? "← depth" : "← depth to the left of the wall", x0 - ncol * cell, y0 + rowsShown * cell + 6);
+        const name = NAMES[lam] || `a ${lam}-wide brick`;
+        const stag = qs < lam ? `${qs} columns, each column of bricks ${rr} up` : "no stagger";
+        document.getElementById("crysRo").innerHTML =
+          `P <b>${P}</b> · word <b class="m">${word}</b> · crystal from depth <b>${mu}</b> · brick <b>${qs} × ${P}</b>` +
+          ` (${stag}; repeats after ${lam}) · density <b>${dens.toFixed(3)}</b> · <span class="c">${name}` +
+          `${KNOWN.has(lam) ? ", one of the 20 in the census" : ""}</span>` +
+          (Dshow < mu + 2 * qs ? " · wider than the screen: partly shown" : "");
+      },
+    };
+  })();
+
+  // ---------- 3. the edge ruler ----------
+  const Ruler = (() => {
+    const PER = [1, 2, 2, 4, 8, 8, 16, 32, 32, 64, 64, 64, 64, 64, 64, 128, 256, 256, 256, 256, 256, 256, 256, 256,
+      512, 1024, 1024, 2048, 2048, 4096, 4096, 4096, 4096, 4096, 8192, 8192, 16384, 32768, 32768, 65536, 65536];
+    const wOf = t => { if (t % 2) return 0; let j = 1; while (j < PER.length && t % PER[j] === 0) j++; return j - 1; };
+    let T = 256, rows = [], L = [], t = 0, acc = 0, cell = 2, ox = 0, oy = 0, maxw = 0, ok = true;
+    function build(n) {
+      T = n; rows = []; L = [];
+      let r = new Uint8Array(2 * T + 3); r[T + 1] = 1;
+      for (let k = 0; k <= T; k++) {
+        rows.push(r);
+        const nr = new Uint8Array(2 * T + 3);
+        for (let i = 1; i < 2 * T + 2; i++) nr[i] = r[i - 1] ^ (r[i] | r[i + 1]);
+        r = nr;
+      }
+      ok = true; maxw = 0;
+      for (let k = 0; k <= T; k++) {
+        let n0 = 0, x = T + 1 + k - 1;
+        if (k >= 1) while (x >= 1 && !rows[k][x] && n0 <= 2 * k) { n0++; x--; }
+        L.push(k >= 1 ? n0 : 0);
+        if (k >= 1 && n0 !== wOf(k)) ok = false;
+        maxw = Math.max(maxw, L[k]);
+      }
+      t = 0; acc = 0; layout();
+    }
+    function layout() {
+      const ncol = 2 * T + 1 + maxw + 18;
+      cell = Math.min((W - 30) / ncol, (H - 40) / (T + 1));
+      ox = (W - ncol * cell) / 2; oy = (H - (T + 1) * cell) / 2;
+    }
+    const X = x => ox + (x + T) * cell;                 // site x, from -T to T
+    return {
+      build, layout,
+      reset() { t = 0; acc = 0; },
+      tick(dt, speed) {
+        if (t >= T) return false;
+        acc += dt * speed * (T / 9) / 1000; const add = Math.floor(acc); if (!add) return false;
+        acc -= add; t = Math.min(T, t + add); return true;
+      },
+      stepOnce() { t = Math.min(T, t + 1); },
+      draw() {
+        g.fillStyle = C.sheet;
+        g.beginPath(); g.moveTo(X(0) + cell / 2, oy); g.lineTo(X(T + 1), oy + (T + 1) * cell); g.lineTo(X(-T), oy + (T + 1) * cell);
+        g.closePath(); g.fill();
+        // edge triangles, filled as they are born
+        g.fillStyle = C["mate-soft"];
+        for (let k = 2; k <= t; k += 2) {
+          const w = L[k];
+          for (let j = 0; 2 * j < w && k + j <= t; j++) {
+            const a = k - w + j, b = k - 1 - j;
+            if (b >= a) g.fillRect(X(a), oy + (k + j) * cell, (b - a + 1) * cell, cell + 0.3);
+          }
+        }
+        g.fillStyle = C.ink;
+        for (let k = 0; k <= t; k++) {
+          const r = rows[k];
+          for (let x = -k; x <= k; x++) if (r[x + T + 1]) g.fillRect(X(x), oy + k * cell, cell + 0.35, cell + 0.35);
+        }
+        // the ruler: each even row's tick repeats its triangle's width, to the right of the edge
+        g.fillStyle = C.clock;
+        for (let k = 2; k <= t; k += 2) g.fillRect(X(k + 1) + cell, oy + k * cell, L[k] * cell, Math.max(1, cell * 0.9));
+        g.fillStyle = C.muted; g.font = `11px ${C.mono}`; g.textBaseline = "middle"; g.textAlign = "left";
+        for (let k = 2; k <= t; k += 2) {
+          const v = Math.log2(k & -k);
+          if (L[k] >= 8 && (k & (k - 1)) === 0) g.fillText(`${L[k]} at 2^${v}`, X(k + 1) + (L[k] + 2) * cell, oy + (k + 0.5) * cell);
+        }
+        // the current row
+        g.fillStyle = C["clock-soft"]; g.fillRect(X(-t), oy + t * cell, (2 * t + 1) * cell, cell);
+        // tracer from the current triangle's top-right corner to its ruler tick's end
+        const kk = t % 2 ? t - 1 : t;
+        if (kk >= 2) {
+          const yk = oy + (kk + 0.5) * cell;
+          trace([[[X(kk - L[kk]), yk], [X(kk + 1) + (L[kk] + 1) * cell, yk]]], C["t-b"], 2.5,
+            [[X(kk - L[kk]), yk, 3.5], [X(kk + 1) + (L[kk] + 1) * cell, yk, 3.5]]);
+        }
+        const v = kk ? Math.log2(kk & -kk) : 0, m = kk ? kk / 2 ** v : 0;
+        const j = L[kk] + 1;
+        document.getElementById("rulerRo").innerHTML = kk < 2 ? `row <b>${t}</b>` :
+          `row <b>${kk}</b> = 2<sup>${v}</sup> × ${m} · triangle width <b class="m">${L[kk]}</b> · diagonals 1..${L[kk]}` +
+          ` white (periods divide ${kk}) · diagonal ${j} black (period ${PER[j]} does not) · ` +
+          `<span class="c">formula ${ok ? "matches every row" : "MISMATCH"}</span>`;
+      },
+      table() {
+        const tb = document.getElementById("wtable");
+        let h = "<tr><th>t = 2^v × odd, v</th>", b = "<tr><th>width</th>";
+        for (let v = 1; v <= 15; v++) { h += `<td>${v}</td>`; b += `<td>${wOf(2 ** v)}</td>`; }
+        tb.innerHTML = h + "</tr>" + b + "</tr>";
+      },
+    };
+  })();
+
+  // ---------- 4. the left front ----------
+  const Front = (() => {
+    const DS = [[16,18],[17,18],[18,18],[19,18],[20,20],[21,20],[22,20],[23,22],[24,22],[25,24],[26,24],[27,25],[28,26],[29,27],[30,28],[31,30],[32,30],[33,31],[34,32],[35,32],[36,34],[37,34],[38,34],[39,34],[40,36],[41,36],[42,36],[43,36],[44,36],[45,36],[46,38],[47,38],[48,39],[49,39],[50,40],[51,40],[52,40],[53,40],[54,40],[55,42],[56,42],[57,44],[58,44],[59,44],[60,44],[61,46],[62,46],[63,46],[64,48],[65,48],[66,48],[67,48],[68,48],[69,48],[70,48],[71,50],[72,50],[73,51],[74,52],[75,52],[76,54],[77,54],[78,56],[79,56],[80,56],[81,56],[82,58],[84,59],[85,60],[86,61],[87,63],[88,63],[89,63],[90,63],[91,65],[93,66],[94,67],[95,67],[96,67],[98,69],[99,72],[100,74],[102,76],[103,76],[104,77],[106,77],[107,77],[108,79],[110,79],[111,81],[113,81],[114,81],[116,83],[117,85],[119,85],[120,85],[122,85],[123,85],[125,87],[127,93],[128,94],[130,97],[132,99],[133,100],[135,101],[137,103],[139,103],[141,105],[142,105],[144,105],[146,105],[148,107],[150,107],[152,109],[154,111],[156,113],[158,115],[160,115],[162,117],[164,119],[166,124],[169,128],[171,131],[173,133],[175,135],[178,137],[180,140],[182,142],[185,148],[187,150],[190,152],[192,154],[195,155],[197,157],[200,160],[202,163],[205,167],[208,169],[210,171],[213,174],[216,176],[219,178],[222,180],[225,180],[228,182],[230,183],[234,185],[237,187],[240,187],[243,189],[246,192],[249,194],[252,196],[256,199],[259,201],[263,203],[266,205],[269,206],[273,210],[277,212],[280,213],[284,220],[288,226],[291,231],[295,235],[299,242],[303,246],[307,248],[311,252],[315,254],[319,257],[323,259],[328,263],[332,265],[336,266],[341,269],[345,272],[350,274],[354,276],[359,278],[363,278],[368,280],[373,284],[378,287],[383,290],[388,300],[393,304],[398,315],[403,319],[409,329],[414,331],[419,335],[425,339],[430,342],[436,349],[442,352],[448,356],[453,358],[459,360],[465,364],[471,367],[478,374],[484,382],[490,387],[497,398],[503,405],[510,411],[516,415],[523,422],[530,429],[537,442],[544,447],[551,451],[558,457],[566,462],[573,464],[581,470],[588,474],[596,480],[604,484],[612,487],[620,493],[628,497],[636,501],[644,505],[653,511],[661,521],[670,532],[679,546],[688,550],[697,558],[706,562],[715,568],[724,575],[734,582],[743,590],[753,598],[763,603],[773,619],[783,625],[793,631],[804,640],[814,646],[825,652],[836,658],[847,660],[858,665],[869,678],[881,691],[892,697],[904,711],[916,719],[928,723],[940,732],[952,748],[965,761],[977,767],[990,777],[1003,780],[1016,792],[1029,798],[1043,814],[1056,824],[1070,834],[1084,848],[1099,867],[1113,875],[1128,886],[1142,902],[1157,912],[1172,923],[1188,930],[1203,940],[1219,956],[1235,971],[1251,980],[1268,995],[1284,1008],[1301,1027],[1318,1033],[1335,1044],[1353,1057],[1371,1069],[1388,1082],[1407,1089],[1425,1100],[1444,1115],[1463,1125],[1482,1142],[1501,1158],[1521,1170],[1541,1188],[1561,1204],[1581,1218],[1602,1232],[1623,1245],[1644,1260],[1666,1281],[1688,1296],[1710,1312],[1732,1329],[1755,1340],[1778,1360],[1801,1376],[1825,1394],[1849,1409],[1873,1434],[1897,1450],[1922,1473],[1948,1486],[1973,1503],[1999,1527],[2025,1545],[2052,1561],[2078,1580],[2106,1605],[2133,1639],[2161,1653],[2189,1679],[2218,1703],[2247,1724],[2277,1742],[2306,1761],[2337,1785],[2367,1810],[2398,1828],[2430,1858],[2462,1875],[2494,1901],[2526,1920],[2560,1949],[2593,1982],[2627,2006],[2661,2030],[2696,2056],[2732,2085],[2767,2113],[2804,2128],[2840,2161],[2878,2187],[2915,2212],[2953,2245],[2992,2271],[3031,2310],[3071,2342],[3111,2385],[3152,2410],[3193,2442],[3235,2481],[3277,2516],[3320,2554],[3364,2581],[3408,2613],[3453,2642],[3498,2672],[3544,2709],[3590,2742],[3637,2784],[3685,2819],[3733,2857],[3782,2899],[3831,2922],[3882,2967],[3932,3009],[3984,3050],[4036,3091],[4089,3124],[4142,3163],[4197,3202],[4252,3229],[4307,3289],[4364,3326],[4421,3374],[4479,3420],[4538,3460],[4597,3492],[4657,3528],[4718,3573],[4780,3611],[4843,3679],[4906,3727],[4970,3762],[5035,3816],[5101,3853],[5168,3898],[5236,3959],[5304,4011],[5374,4077],[5444,4125],[5516,4173],[5588,4236],[5661,4289],[5735,4344],[5810,4394],[5886,4455],[5963,4522],[6042,4570],[6121,4618],[6201,4681],[6282,4733],[6364,4800],[6448,4865],[6532,4911],[6618,4990],[6704,5046],[6792,5111],[6881,5177],[6971,5242],[7063,5308],[7155,5397],[7249,5471],[7344,5539],[7440,5624],[7537,5685],[7636,5772],[7736,5830],[7837,5901],[7940,5989],[8044,6050],[8149,6132],[8256,6189],[8364,6277],[8474,6361],[8585,6443],[8697,6533],[8811,6609],[8927,6697],[9044,6780],[9162,6868],[9282,6955],[9404,7054],[9527,7152],[9652,7240],[9778,7335],[9906,7414],[10036,7506],[10167,7639],[10300,7741],[10435,7826],[10572,7929],[10710,8009],[10851,8104],[10993,8214],[11137,8327],[11283,8433],[11430,8540],[11580,8658],[11732,8784],[11886,8932],[12041,9047],[12199,9164],[12359,9273],[12521,9388],[12685,9524],[12851,9649],[13019,9788],[13190,9910],[13362,10032],[13537,10189],[13715,10338],[13894,10477],[14076,10593],[14261,10723],[14447,10858],[14637,10971],[14828,11116],[15023,11268],[15219,11412],[15419,11565],[15621,11729],[15825,11877],[16032,12029],[16242,12190],[16455,12349],[16671,12508],[16889,12660],[17110,12814],[17334,12957],[17561,13141],[17791,13310],[18025,13494],[18261,13661],[18500,13835],[18742,14023],[18988,14186],[19236,14368],[19488,14559],[19743,14742],[20002,14934],[20264,15110],[20529,15297],[20798,15507],[21071,15721],[21347,15949],[21626,16171],[21910,16379],[22197,16587],[22487,16799],[22782,17029],[23080,17250],[23382,17460],[23689,17671],[23999,17882],[24313,18131],[24632,18390],[24954,18623],[25281,18855],[25612,19116],[25948,19349],[26288,19594],[26632,19855],[26981,20107],[27334,20384],[27692,20658],[28055,20940],[28422,21186],[28795,21507],[29172,21790],[29554,22072],[29941,22328],[30333,22635],[30731,22941],[31133,23227],[31541,23547],[31954,23851],[32372,24167],[32796,24477],[33226,24789],[33661,25075],[34102,25407],[34549,25731],[35001,26085],[35460,26381],[35924,26725],[36395,27103],[36871,27485],[37354,27838],[37844,28175],[38339,28516],[38841,28903],[39350,29349],[39866,29737],[40388,30157],[40917,30564],[41453,30978],[41996,31350],[42546,31734],[43103,32095],[43667,32498],[44239,32984],[44819,33434],[45406,33909],[46000,34365],[46603,34856],[47213,35292],[47832,35769],[48458,36255],[49093,36731],[49736,37224],[50387,37714],[51047,38200],[51716,38716],[52393,39232],[53080,39757],[53775,40265],[54479,40779],[55193,41282],[55916,41852],[56648,42401],[57390,42930],[58142,43451],[58903,44072],[59675,44620],[60456,45203],[61248,45799],[62050,46377],[62863,47040],[63686,47627],[64521,48274],[65366,48901],[66222,49574],[67089,50223],[67968,50877],[68858,51523],[69760,52189],[70674,52853],[71599,53555],[72537,54259],[73487,54968],[74450,55713],[75425,56402],[76413,57161],[77414,57919],[78428,58664],[79455,59457],[80496,60260],[81550,61011],[82618,61780],[83700,62618],[84796,63445],[85907,64316],[87032,65172],[88172,66056],[89327,66899],[90497,67739],[91682,68563],[92883,69403],[94100,70269],[95332,71178],[96581,72151],[97846,73118],[99127,74098],[100426,75070],[101741,76090],[103074,77166],[104424,78197],[105791,79222],[107177,80207],[108581,81330],[110003,82428],[111444,83537],[112904,84524],[114382,85680],[115880,86790],[117398,87921],[118936,89067],[120494,90293],[122072,91522],[123671,92832],[125291,93985],[126932,95255],[128594,96489],[130278,97742],[131985,98987],[133714,100321],[135465,101697],[137239,103007],[139037,104339],[140858,105765],[142703,107067],[144572,108401],[146465,109836],[148384,111329],[150327,112821],[152296,114342],[154291,115806],[156312,117341],[158359,118832],[160433,120355],[162535,121899],[164664,123511],[166820,125077],[169005,126713],[171219,128437],[173461,130217],[175733,131959],[178035,133693],[180367,135486],[182729,137255],[185123,139194],[187547,141034],[190004,142964],[192493,144857],[195014,146680],[197568,148567],[200156,150543],[202777,152518],[205433,154514],[208124,156509],[210850,158581],[213612,160680],[216409,162770],[219244,164921],[222116,167113],[225025,169279],[227972,171556],[230958,173890],[233983,176198],[237048,178503],[240153,180776],[243298,183109],[246485,185487],[249713,187833],[252984,190311],[256297,192864],[259654,195395],[263055,197923],[266501,200404],[269991,203044],[273528,205565],[277110,208234],[280740,210981],[284417,213796],[288142,216709],[291916,219574],[295740,222335],[299613,225205],[303537,228225],[307513,231276],[311541,234292],[315621,237332],[319755,240539],[323943,243656],[328186,246696],[332485,250021],[336840,253410],[341251,256788],[345721,260211],[350249,263723],[354837,267225],[359484,270917],[364193,274401],[368963,278056],[373796,281786],[378691,285591],[383651,289378],[388676,293112],[393767,296919],[398925,300812],[404150,304758],[409443,308832],[414806,312869],[420239,317067],[425743,321194],[431320,325398],[436969,329642],[442692,334001],[448491,338358],[454365,342740],[460316,347246],[466345,351752],[472453,356428],[478641,361093],[484911,365938],[491262,370902],[497696,375737],[504215,380788],[510819,385762],[517510,390850],[524288,395905]];
+    const T = 512, LAG = 1024;
+    const V = [];
+    let cur = new Uint8Array(1); cur[0] = 1;
+    for (let k = 0; k <= T + LAG; k++) {
+      V.push(cur);
+      const n = new Uint8Array(2 * k + 3);
+      for (let e = 0; e < n.length; e++) {
+        const a = e >= 2 && e - 2 < cur.length ? cur[e - 2] : 0, b = e >= 1 && e - 1 < cur.length ? cur[e - 1] : 0,
+          c = e < cur.length ? cur[e] : 0;
+        n[e] = a ^ (b | c);
+      }
+      cur = n;
+    }
+    const B = [];
+    for (let k = 0; k <= T; k++) {
+      const a = V[k], b = V[k + LAG]; let e = 0;
+      while (e < a.length && a[e] === b[e]) e++;
+      B.push(e);
+    }
+    const checkOk = DS.filter(([tt]) => tt <= T).every(([tt, bb]) => B[tt] === bb);
+    let lt = 16, acc = 0, cell = 1, ox = 0, oy = 0, xr = 0, narrow = false, chartH = 0;
+    function layout() {
+      xr = Math.round(0.34 * T);
+      const ncol = T + xr + 1;
+      narrow = W < 640; chartH = narrow ? Math.round(Math.min(220, Math.max(150, 0.32 * H))) : 0;
+      cell = Math.min((W - 30) / ncol, (H - 30 - (narrow ? chartH + 34 : 0)) / (T + 1));
+      ox = (W - ncol * cell) / 2 + 10; oy = narrow ? 10 : (H - (T + 1) * cell) / 2;
+    }
+    const X = x => ox + (x + T) * cell;
+    return {
+      layout,
+      reset() { lt = 16; acc = 0; },
+      tick(dt, speed) {
+        if (lt >= 524288) return false;
+        const rate = lt < T ? T / 8 : lt * 0.35;
+        acc += dt * speed * rate / 1000; if (acc < 1) return false;
+        lt = Math.min(524288, lt + Math.floor(acc)); acc -= Math.floor(acc); return true;
+      },
+      stepOnce() { lt = Math.min(524288, lt < T ? lt + 1 : Math.round(lt * 1.1)); },
+      draw() {
+        const rowsNow = Math.min(T, lt);
+        g.fillStyle = C.sheet;
+        g.beginPath(); g.moveTo(X(0), oy); g.lineTo(X(xr + 1), oy + (xr + 1) * cell); g.lineTo(X(xr + 1), oy + (T + 1) * cell);
+        g.lineTo(X(-T), oy + (T + 1) * cell); g.closePath(); g.fill();
+        g.fillStyle = C["clock-soft"];
+        for (let k = 0; k <= rowsNow; k++) g.fillRect(X(-k), oy + k * cell, Math.min(B[k], k + xr + 1) * cell, cell + 0.3);
+        g.fillStyle = C.ink;
+        for (let k = 0; k <= rowsNow; k++) {
+          const r = V[k], lim = Math.min(r.length - 1, k + xr);
+          for (let e = 0; e <= lim; e++) if (r[e]) g.fillRect(X(-k + e), oy + k * cell, cell + 0.35, cell + 0.35);
+        }
+        // guide lines: the light cone, the centre column, a quarter of light speed
+        g.lineWidth = 1; g.strokeStyle = C.rule;
+        g.beginPath(); g.moveTo(X(0) + cell / 2, oy); g.lineTo(X(0) + cell / 2, oy + (T + 1) * cell); g.stroke();
+        g.setLineDash([6, 5]); g.strokeStyle = C.muted; g.lineWidth = 1.5;
+        g.beginPath(); g.moveTo(X(0), oy); g.lineTo(X(-0.246 * T), oy + T * cell); g.stroke(); g.setLineDash([]);
+        // the exact boundary
+        g.strokeStyle = C["t-b"]; g.lineWidth = 2.2; g.beginPath();
+        for (let k = 8; k <= rowsNow; k++) { const x = X(-k + B[k]), y = oy + (k + 0.5) * cell; k === 8 ? g.moveTo(x, y) : g.lineTo(x, y); }
+        g.stroke();
+        // the chart in the empty corner above the left half
+        const bh = narrow ? chartH : Math.min(0.34 * H, 240), cx0 = narrow ? 8 : Math.max(8, ox);
+        const cy0 = narrow ? oy + (T + 1) * cell + 28 : 10;
+        const pw = narrow ? W - 16 : Math.max(220, Math.min(560, T * cell - (cy0 + bh - oy) - 14 - (cx0 - ox)));
+        const lo = 4, hi = 19, ylim = 900;
+        const px = tt => cx0 + 44 + (Math.log2(tt) - lo) / (hi - lo) * (pw - 56);
+        const py = d => cy0 + bh / 2 - d / ylim * (bh / 2 - 16);
+        g.fillStyle = C.paper; g.globalAlpha = 0.92; g.fillRect(cx0, cy0, pw, bh); g.globalAlpha = 1;
+        g.strokeStyle = C.rule; g.lineWidth = 1; g.strokeRect(cx0 + 0.5, cy0 + 0.5, pw - 1, bh - 1);
+        g.strokeStyle = C.rule; g.beginPath(); g.moveTo(px(16), py(0)); g.lineTo(px(524288), py(0)); g.stroke();
+        g.setLineDash([3, 4]); g.strokeStyle = C.muted;
+        for (const sgn of [1, -1]) { g.beginPath(); for (let q = lo; q <= hi; q += 0.25) { const tt = 2 ** q, x = px(tt), y = py(sgn * Math.sqrt(tt)); q === lo ? g.moveTo(x, y) : g.lineTo(x, y); } g.stroke(); }
+        g.setLineDash([]);
+        g.strokeStyle = C["t-b"]; g.lineWidth = 1.8; g.beginPath();
+        let last = null;
+        for (const [tt, bb] of DS) { if (tt > lt) break; const x = px(tt), y = py(bb - 0.754 * tt); last ? g.lineTo(x, y) : g.moveTo(x, y); last = [x, y, tt, bb]; }
+        g.stroke();
+        g.fillStyle = C.muted; g.font = `11px ${C.mono}`; g.textAlign = "center"; g.textBaseline = "top";
+        for (let q = 5; q <= 19; q += narrow ? 4 : 2) g.fillText(`2^${q}`, px(2 ** q), cy0 + bh - 15);
+        g.textAlign = "left"; g.textBaseline = "top";
+        g.fillText(narrow ? "edge minus dashed line, in cells" : "distance of the edge from the dashed line, in cells",
+          cx0 + 8, cy0 + 6);
+        g.textAlign = "right"; g.textBaseline = "middle";
+        for (const d of [-600, 0, 600]) g.fillText(String(d), cx0 + 40, py(d));
+        g.textAlign = "left"; g.fillText("±√t", px(2 ** 17.2), py(Math.sqrt(2 ** 17.2)) - 10);
+        if (last) { g.fillStyle = C["t-b"]; g.beginPath(); g.arc(last[0], last[1], 4, 0, 7); g.fill(); }
+        // tracer from the boundary on the drawing to its point on the chart
+        if (last && lt <= T) {
+          const k = Math.min(T, lt), x = X(-k + B[k]), y = oy + (k + 0.5) * cell;
+          trace([[[x, y], [last[0], last[1]]]], C["t-b"], 2.5, [[x, y, 4.5]]);
+        }
+        g.fillStyle = C.muted; g.font = `12px ${C.mono}`; g.textAlign = "left"; g.textBaseline = "top";
+        g.fillText("dashed: x = −0.246 t", X(-0.246 * T) - 70, oy + T * cell + 6);
+        const show = last ? last : [0, 0, 16, 18];
+        const tt = lt <= T ? lt : show[2], bb = lt <= T ? B[lt] : show[3];
+        document.getElementById("frontRo").innerHTML =
+          `row <b>${tt.toLocaleString()}</b> · ordered band <b>${bb.toLocaleString()}</b> diagonals deep · edge at x/t ` +
+          `<b>${((-tt + bb) / tt).toFixed(4)}</b> · off the dashed line by <b class="m">${Math.round(bb - 0.754 * tt)}</b> cells` +
+          (lt > T ? " · beyond the drawing: on the chart" : "") +
+          ` · <span class="c">in-page check ${checkOk ? "agrees with the probe" : "DISAGREES"}</span>`;
+      },
+    };
+  })();
+
+  // ---------- shell ----------
+  const VIEWS = { ring: Ring, crystals: Crystals, ruler: Ruler, front: Front };
+  let active = "ring", playing = !matchMedia("(prefers-reduced-motion: reduce)").matches, speed = 1, last = 0;
+  const playBtn = document.getElementById("play");
+  playBtn.textContent = playing ? "Pause" : "Play";
+  function resize() {
+    const tb = document.querySelector(".toolbar").getBoundingClientRect();
+    tbH = Math.round(tb.height);
+    const stage = document.querySelector(".stage");
+    W = Math.max(300, stage.clientWidth);
+    H = Math.max(360, Math.min(980, window.innerHeight - tb.height - 30));
+    const d = DPR();
+    cv.width = Math.round(W * d); cv.height = Math.round(H * d); cv.style.width = W + "px"; cv.style.height = H + "px";
+    g.setTransform(d, 0, 0, d, 0, 0);
+    for (const v of Object.values(VIEWS)) v.layout();
+    draw();
+  }
+  let tbH = 0, refit = 0;
+  function draw() {
+    g.clearRect(0, 0, W, H); VIEWS[active].draw();
+    const h = Math.round(document.querySelector(".toolbar").getBoundingClientRect().height);
+    if (Math.abs(h - tbH) > 2 && !refit) { refit = requestAnimationFrame(() => { refit = 0; resize(); }); }
+  }
+  const EMBED = document.documentElement.classList.contains("embed");
+  const TITLES = { ring: "The turning ring", crystals: "Crystals beside the wall", ruler: "The edge ruler",
+    front: "The left front" };
+  function show(name) {
+    active = name;
+    if (EMBED) document.querySelector("h1").textContent = TITLES[name];
+    document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === name)));
+    document.querySelectorAll("[data-for]").forEach(el => { el.hidden = el.dataset.for !== name; });
+    if (!EMBED) try { localStorage.setItem("brf-tab", name); } catch (e) {}
+    resize();
+  }
+  document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => show(b.dataset.tab)));
+  playBtn.addEventListener("click", () => { playing = !playing; playBtn.textContent = playing ? "Pause" : "Play"; });
+  document.getElementById("stepb").addEventListener("click", () => { VIEWS[active].stepOnce(); draw(); });
+  document.getElementById("again").addEventListener("click", () => { VIEWS[active].reset(); draw(); });
+  document.getElementById("speed").addEventListener("change", e => { speed = Number(e.target.value); });
+  const fT = document.getElementById("frameTrue"), fR = document.getElementById("frameTurn");
+  fT.addEventListener("click", () => { Ring.setFrame(false); fT.setAttribute("aria-pressed", "true"); fR.setAttribute("aria-pressed", "false"); });
+  fR.addEventListener("click", () => { Ring.setFrame(true); fR.setAttribute("aria-pressed", "true"); fT.setAttribute("aria-pressed", "false"); });
+  const pre = document.getElementById("preset"), rl = document.getElementById("randLen");
+  Crystals.presets.forEach(([w, label], i) => { const o = document.createElement("option"); o.value = w; o.textContent = label; pre.appendChild(o); });
+  for (let p = 6; p <= 20; p += 2) { const o = document.createElement("option"); o.textContent = String(p); if (p === 12) o.selected = true; rl.appendChild(o); }
+  pre.addEventListener("change", () => { Crystals.compute(pre.value); draw(); });
+  document.getElementById("randomWord").addEventListener("click", () => {
+    const p = Number(rl.value); let w = "";
+    for (let i = 0; i < p; i++) w += Math.random() < 0.5 ? "1" : "0";
+    Crystals.compute(w); draw();
+  });
+  document.getElementById("rulerRows").addEventListener("change", e => { Ruler.build(Number(e.target.value)); draw(); });
+  const mq = matchMedia("(prefers-color-scheme: dark)");
+  const retheme = () => { palette(); draw(); };
+  mq.addEventListener ? mq.addEventListener("change", retheme) : mq.addListener(retheme);
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  window.addEventListener("resize", resize);
+  function frame(ts) {
+    const dt = last ? Math.min(100, ts - last) : 16; last = ts;
+    if (VIEWS[active].tick(dt, playing ? speed : 0)) draw();
+    requestAnimationFrame(frame);
+  }
+  Ruler.table();
+  let start = "ring";
+  const hash = location.hash.replace("#", "");
+  if (VIEWS[hash]) start = hash; else { try { const s = localStorage.getItem("brf-tab"); if (VIEWS[s]) start = s; } catch (e) {} }
+  resize();
+  Crystals.compute(PRESETS0());
+  Ruler.build(256);
+  function PRESETS0() { return Crystals.presets[0][0]; }
+  show(start);
+  window.addEventListener("hashchange", () => { const h = location.hash.replace("#", ""); if (VIEWS[h]) show(h); });
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
