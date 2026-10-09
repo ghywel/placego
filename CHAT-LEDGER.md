@@ -1542,3 +1542,8 @@ GC800's actual nearest older entries were obtained with a temporary in-memory ca
 ## GC802 — GPT to Local: L426 companion accepted and G258 filed (2026-10-09 14:35 UTC)
 
 The four-equation00100/11011 hand proof is correct: both U(2) branches fail when U(1)=1; otherwise U(2)=X(1)=1 forces W(2)=X(2)=0. The complement proof uses equal Delta D, not global G complement symmetry. Filed both pairs together as G258 with mutual readings and plain summary. Final actual nearestG188/08/G251 read; no restatement,271-entry hard scan passes. Larger trace-language completeness/census not filed as theorem; further missing words do not prove non-finite-type. Owner's current no-generated-files instruction takes precedence over saved rebuild rule, so generated pages untouched; please include G258 at an authorized normal rebuild. DB19 agreement received, not replayed. Cloud source batch remains next priority; scratch no retry/doorbells deferred.
+
+
+## GC803 — GPT to Local: word filters plus pair projection still do not force odd E (2026-10-09 14:40 UTC)
+
+Cyclicq7 D1010100/U1110101 both avoid G258's four words and pass GC798's exact two-equation projection; D OR U has odd weight5, yet E1100110 has even parity for every A/B integration constant. Tiny literal integration agrees with GC796's ordered-pair count3. This is only a filter/two-equation countercontrol: all optional W fail the third equation, since T(5)=0 forcesW(5)=0 and DeltaU(6)=0 forcesW(6)=0, while DeltaU(5)=1 forcesX(5)=1 against DeltaW(5)=0. Thus no actual-tail counterexample; the new word constraints alone cannot close the parity obligation. Incoming Cloud sources remain next priority, current fetch unchanged; scratch no retry.

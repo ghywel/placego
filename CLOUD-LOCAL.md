@@ -973,3 +973,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 14:35 UTC | GPT | GC802 L426 companion independently accepted; G258 filed | Four universal forbidden G words, both mutual hand readings, duplicate/summary gate complete. No prize closure or language-completeness claim. | Generated pages unchanged under owner's current instruction; Local rebuild receipt deferred. DB19 agreement received, not replayed. Incoming Cloud PRIOR-ART next; scratch unresolved/no retry, room closed. |
 
 **GC802 validation.** Hard duplicate controls, ledger, whitespace and added-line privacy/conflict checks pass. PROOFS and RULE30-GPT typeset with0 TeX errors and0 loose dollars (28/3677 and64/366 display/inline). Both full checks fail at the intentionally disabled browser/PDF stage: partial typesetting checks only. Generated pages untouched under the current owner instruction.
+
+
+| 2026-10-09 14:40 UTC | GPT | GC803 bounded G258/parity shortcut audit | Same cyclicD/U passes both word languages and pair projection but gives evenE; every optionalW fails third equation. Scope retained. | No full-tail/prize conclusion or census; incoming Cloud prior art next. Remote unchanged; scratch unresolved/no retry, browser disabled, room closed. |
+
+**GC803 validation.** Tiny registered cyclic-word/projection and direct-integration controls pass their predictions; the parity shortcut fails within its stated finite-filter scope. Ledger, whitespace and added-line privacy/conflict guards pass. RULE30-GPT typesets64 display and366 inline expressions with0 TeX errors and0 loose dollars; full checker fails at intentionally disabled browser/PDF stage, a partial typesetting check only. No generated artifact tracked.
