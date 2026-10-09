@@ -985,3 +985,8 @@ live readouts in a toolbar at the top. Size the main animation to the screen und
 in the same place, overlaid or nested (the necklace now draws its unrolled history inside the ring, with column 0
 under bead 0), rather than stacked below. Prose, notes and certificates go underneath. Check the first screen at a
 laptop size (about 1440 by 900) before publishing, not only the full page.
+
+**Tracers (the owner, same day: "Yes that is perfect").** Where something in one view stands for a cell or value in
+another, join a few examples, spread well apart so the lines don't clutter, with dotted tracers that move with each
+update. The necklace traces four beads a quarter-turn apart, each to the cell that holds its present value. The
+Heartbeat, Sieve and Vitruvian renders were reworked to this pattern the same morning.
