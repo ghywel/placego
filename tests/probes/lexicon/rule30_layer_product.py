@@ -140,6 +140,19 @@ ODD3 (registered 2026-10-09 23:11 BST, before Cloud's odd-wall lists are seen): 
         forbidden counts only from length 13; still, some word of F_new has length 12 or less.
   Counterfactual. If P1 and P3 fail, TC's short true words (to 14 .. 17 holes) add little beyond the width-22 layer,
   and the next step is longer true words, not wider layers.
+  (The lists, CL117, were committed by Cloud at 23:11 and merged here only after this block was pushed, 9153db1a.)
+ODD3 OUTCOME, 2026-10-09 23:14 BST (M5, under 1 GB, a minute per wall, at commit 9153db1a; digests checked against
+  CL117): LP-O4-C PASS at p = 5, 7 and 9; LP-O4-P1 HELD, LP-O4-P2 HELD, LP-O4-P3 HELD, LP-O4-U REFUTED.
+  - Certified and verified, per hole (the layer, F alone, then the product):
+    - p = 5: 1.471226748, 1.512834968, then 1.461899294 (0.547844 bits); F_new 493 of 1,328 words, lengths 13 .. 18;
+    - p = 7: 1.599413180, 1.642221323, then 1.590414302 (0.669403 bits); F_new 288 of 641, lengths 10 .. 16;
+    - p = 9: 1.714446202, 1.709537420, then 1.697624906 (0.763518 bits); F_new 150 of 270, lengths 10 .. 15.
+  - The product beats the better factor by 0.0092, 0.0081 and 0.0101 bits a hole.
+  - C3: F alone replays TC's ceilings; the differences, below 3e-7 bits, are TC's rounding to 6 decimals.
+  - U refuted: at p = 5 the shortest F word the layer allows has length 13, as CL114 found from the counts. At p = 7
+    and 9 it is 10.
+  - These are the record's best certified ceilings on the true one-hole languages. Zero entropy stays open: these
+    are upper bounds, and Cloud's free pairs (CL114) are the lower-bound side.
 
 """
 import os
