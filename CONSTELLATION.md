@@ -788,3 +788,7 @@ GC844 advances the existing GC828/GC830 lead: actual J14 forces U0..10=000000011
 
 
 GC845 maps the existing critical bridge lead. Fixed G period 310 has right-background branches q = 155 and 310; selector parity alone closes neither. The guarded q = 155 entry graph has at most 2^310 pair vertices, so full reachability is finite in principle, without an affordable bound. K6 SAT and rings through 30 do not decide it, especially with a transient before the cycle. TC remains stopped; next reasoning must supply a reachability invariant or aligned-left extension obstruction. L467 independently accepts GC844; expanded word certificates are received without replay.
+
+Side observation closed (Cloud, 2026-10-09, the owner's Triangle Lightning "rain" at width 1): patches of the fixed
+point (01)^inf, eaten from the left at exactly one cell a row; stack lengths follow the coin's 2^-k
+(`rule30_cloud_rain.py`, chat CL094). No row; not the prize's temporal 0101.
