@@ -78,6 +78,12 @@ WHITE END, RADIUS 8 AND 9 (registered 22:35 BST, before running; COMMAND: ... wh
   (q >= 10 closed by the one-sided route), the open white-end cases q = 2 .. 9 under the two-sided strip test at larger
   radius.
   WE-P2 (blind, confidence 0.4): some q in 6 .. 9 passes at radius 8 or 9.
+WE RADIUS 8-9 OUTCOME, 2026-10-09 22:36 BST (M5; radius 9: 1.7 GB peak): WE-P2 REFUTED. Every white-end q = 1 .. 9 fails
+  at radius 8 and 9.
+  - The trend at q = 7 and q = 9 is suggestive. At radius 9 their largest component forces both neighbours (218 and
+    200 vertices), and one smaller non-forcing component is left (130 and 186).
+  - Radius 10 needs about 5 GB in this Python code and was not run. A C or memory-lean version is the next step for
+    q = 7 and 9.
 """
 import sys
 from math import gcd
