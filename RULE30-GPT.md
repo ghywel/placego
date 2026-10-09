@@ -16368,7 +16368,7 @@ This is bounded GPT instrument validation, not an independent party proof readin
 
 Fix either actual aligned-factor-closed macro language. Encode a macro word by concatenating S/L and appending its closing1. Adjoin the empty macro word, encoded1; this changes no asymptotic rate. Let B(n) count these distinct complete binary words of length n. Let P(n) count length-n factors of all these words, and C(n)=sum_(m=1..n) B(m).
 
-**Hand bounded-extension lemma.** Every such binary factor can be extended within its witnessing word to a complete gap word: choose the last1 at or before its first symbol and the first1 at or after its last symbol. Initial and closing ones ensure both exist. Each extension adds at most4 zeros, since the maximum gap length is5. The intervening macro word belongs to the selected language by aligned factor closure. Thus the complete extension has length n+d with0<=d<=8. A complete word of that length contains at most d+1 length-n factors. Consequently
+**Hand bounded-extension lemma.** Every such binary factor can be extended within its witnessing word to a complete gap word: choose the last1 at or before its first symbol and the first1 at or after its last symbol. Initial and closing ones ensure both exist. Each extension adds at most4 symbols, since the maximum gap length is5. The intervening macro word belongs to the selected language by aligned factor closure. Thus the complete extension has length n+d with0<=d<=8. A complete word of that length contains at most d+1 length-n factors. Consequently
 
     B(n) <= P(n) <= sum_(d=0..8) (d+1)*B(n+d).
 
@@ -16410,3 +16410,16 @@ Assume L has unbounded lengths. Then Y is nonempty by the same finite-branching/
 **Independent dead-end control.** The formal factorial macro language {S^k, S^k L : k>=0} has exactly two words at each positive length, but its only infinite survivor is all-S. Every block containing L is dead after one additional gap; R_m=1 suffices. Both finite and survivor rates are0, although their word sets differ at every finite level. This is a formal comparator, not a claimed Rule30 family. It checks the bad-prefix suffix allowance and refutes equality of finite and viable word sets; the theorem concerns rates only.
 
 **Disposition.** Coherence is now a conditional consequence of a true asymptotic positive selected-language bound. Finding that bound or a concrete infinite physical family remains OPEN; finite counts and single returns do not supply it. No new prize-board row, finite-seed conclusion or entropy estimate. Local reading requested, specifically the actual-row compactness and mode-B prefix guard. Stop abstract entropy bridges here; next actual return compatibility or a different main-line input.
+
+
+## GC675 — The specific period-four tail ansatz fails its wall phase (2026-10-09)
+
+After GC674's conditional bridge, test one coherent physical-family candidate rather than another abstract rate argument: the infinite right row (1000) repeated, with a proposed matching periodic-ring continuation. Existing ring work was checked; no period or width sweep was authorized or performed. The preregistered prediction that this gives a four-tick orbit under the alternating wall is REFUTED.
+
+The initial hand draft proposed1000,1101,0010,0111,1000. The direct bounded control failed its wall assertion at time2. Rechecking both XOR/OR updates and an independent literal Rule30 truth table gives the correct ring rows
+
+    time0:1000; time1:1101; time2:0001; time3:1011; time4:0010.
+
+The missing bit was time2 site3: old left1 XOR(old centre0 OR old right1)=0, not1. Ring site0 is represented by site4, so its values are0,1,1,1,0. At time2 it is black while the imposed wall must be white. Thus the periodic extension is incompatible with the wall from that time; it supplies no coherent S/L family. The initial predicted visible gap2 is not credited as an infinite clamped-wall trace, since the proposed extension already failed. Four updates agree between the two implementations after retaining the original failed assertion.
+
+This closes only this specific periodic-tail continuation. Actual clamped evolution of the initial right row continues, but thereafter the periodic-ring calculation cannot replace it. Other tails and coherent families remain open. Infinite support was an explicit assumption; no finite global seed or positive entropy was claimed. GC673's endpoint-padding sentence also now says "symbols" rather than "zeros": padding can include a boundary1, while its at-most4 bound and proof are unchanged. Next a distinct actual compatibility input or independent review; no periodic-tail sweep.
