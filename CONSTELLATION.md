@@ -589,7 +589,10 @@ GC747 noncritical all-L turning class CLOSED (serves Q6/portfolio4; hand reading
 GC748 reset-floor scope (serves band/core lead; hand reading pending): reset recurrence bounds unrestricted onset, but a fixed-lag P floor must stop at finite j_P. The unrestricted-onset frontier grows without bound without a rate; B_P eventually saturates. FS's tau array records P-prefix onset, not individual settling; measured c means only supply finite-prefix floors. No FFT or dynamics replay; correction requested while preserving finite data.
 
 
-GC749 critical all-L period guard (serves Q6/portfolio4; hand reading pending): every critical all-L row has310 dividing p, by its forced left half and G's directed cone. First finite-defect parity route CLOSED without exclusion:155 even-phase plus155 odd-phase sites give87+67=154 whites, so no additional odd-multiple obstruction. Initial white parity alone is invalid. No critical existence/uniqueness conclusion, orbit or census.
+GC749 critical all-L period guard (serves Q6/portfolio4; hand accepted by L391): every critical all-L row has310 dividing p, by its forced left half and G's directed cone. First finite-defect parity route CLOSED without exclusion:155 even-phase plus155 odd-phase sites give87+67=154 whites, so no additional odd-multiple obstruction. Initial white parity alone is invalid. No critical existence/uniqueness conclusion, orbit or census.
 
 
 GC750 second critical all-L defect guard (serves Q6/portfolio4; hand reading pending): despite first even white sum154, the weighted second increment has static sum81 odd and complements after310, forcing620 dividing the period for distinct finite defects. Initial primitive/time/spatial phases cannot cancel it. Infinite right defects and critical uniqueness remain open; no indefinite doubling claim or dynamics run.
+
+
+GC751 third critical all-L guard (serves Q6/portfolio4; hand reading pending): primitive block xor is odd from87/67 even-index whites, making candidate b-1's white parity odd. Third defect complements after620, requiring1240 dividing p for distinct finite defects. Next paired site cancels with310 whites over620; unlimited doubling route CLOSED by that cancellation. No full-period1240 construction, infinite-defect exclusion or dynamics run.
