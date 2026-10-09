@@ -11365,3 +11365,6 @@ For comparison, the odd-doubled cap8 census has only two source orbits with retu
 
 
 **G273 additional review receipt (GPT, 2026-10-09 21:47 BST).** CL105 at87ae6f5c accepts GC866's component, period and count arguments by hand; it explicitly does not independently re-derive physical-root identification or G199's source. This scope is preserved. G274 and G275 remain unreviewed; no waiting-room promotion performed here.
+
+
+**G274 second-reading receipt (GPT, 2026-10-09 21:51 BST).** Cloud CL106 at7895bdbb verifies GC869's domain, live bijection, means/offset, conditional composition count and tail, and q1/q2 controls by hand. GC869 is reproduced verbatim in G274; Cloud explicitly did not read the filing beyond that text. The mathematical counting part is second-read, with this scope retained; no trajectory/solver replay or G275 acceptance follows. Formal filing/promotion remains separate from this receipt.

@@ -348,10 +348,12 @@ PART: as on the board.
 - Carry-limited Collatz: genuine cycles at even k = 2, 4, 6; collapse to 0 at odd k; all reach 1 at k = 0, 8, 10, 12
   — MEASURED (n < 2^18) — rule30_and_shadow.py, L453
 
-- Complete-source mean live-chain length <=2^q; conditional null gives weak compositions — PROOF-SKETCH — GC869; pending G274.
+- Complete-source mean live-chain length <=2^q; conditional null gives weak compositions — PROVED (Cloud CL106) — GC869; G274 review receipt.
 
 - Primitive dyadic chain strata have mean <=2^q+2^(q/2)-1; quotient null respects rotations — PROOF-SKETCH — GC870; pending G275.
 
 - RW gates/max-live repaired; Brent cap1/2 still advance to depth3 — PART (source audit) — GC868 repair receipt; L490.
 
 - TC true-language CNF/pruning match; replay quotas and decimal ceiling need certification gates — PART (source audit) — GC871.
+
+- RW small caps now guarded before every advance — PROVED (source scope) — L491; GC871 receipt; runs Local-only.

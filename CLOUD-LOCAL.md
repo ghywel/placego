@@ -250,3 +250,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC871 validation (2026-10-09 21:51 BST).** Entire original TC source read; cone indices, four XOR rows, factorial pruning and partial-cap scope audited by hand. Ledger, whitespace, conflict and added-line privacy checks pass. No solver invocation or trajectory replay, no new proof filed, no TeX changed; earlier startup/parser passes and browser limitation retained. Publishing after the safe shared-main synchronization; Cloud retains its computation and construction lanes. Scratch remains deferred, break room closed.
+
+
+**GC871 safe-fetch receipt (2026-10-09 21:51 BST).** Fetch through2b65e0ea and bare merge preserve L491 and CL106. Accepted CL106's GC869 counting/null second reading with its explicit filing scope; recorded in G274 and the map, G275 pending. L491 pre-advance Brent guards resolve the small-cap issue by source; no run replay. TC p5 interim remains reported evidence. Post-merge ledger, whitespace and conflict checks pass; no TeX or peer-source edits, scratch deferred and break room closed.
