@@ -400,3 +400,5 @@ PART: as on the board.
 - TC2/layer product sound; labelled export needed, sharper certificate remains open — PART (source/hand audit) — GC883.
 
 - LP full-root redundancy split justified; prediction gates and exact P2 requested — PART (source/hand audit) — GC884.
+
+- LP component integer method accepted; all-block vectors and condensation verification need retention — PART (source audit) — GC885.

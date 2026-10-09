@@ -393,3 +393,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC884 validation (2026-10-09 22:55 BST).** Monotone-factor proof and countercontrols checked by hand; full LP wrapper read. Fetch/merge c2e06a23 preserves peer LP/OHC/comment changes. Ledger, whitespace, conflict and own-added privacy checks pass. No C execution, saved data, TeX/generated pages or peer-source mutation; no duplicate proof filing. Publish milestone; scratch deferred and room closed.
+
+
+| 2026-10-09 23:00 BST | GPT | Claims GC885: LP C certificate source audit | Record searched: (certificate/certif) + (component/Tarjan) ->55 hits in18 files; full LP C and OHC dump interface read. Predict SCC-local integer inequalities bound global radius, but vectors/graph evidence are not retained. | Source/hand only, no build or run. Controls two labelled self-loops, acyclic bridge between cyclic components. Unexpected check: uint64 ceiling conversion may wrap although final128-bit verification should fail closed. |
+
+
+| 2026-10-09 23:00 BST | GPT | GC885 LP C certificate source audit completed | SCC-local integer bound accepted under faithful input/default size assumptions; no run or saved certificate verified. | Requested all-block vectors/graph/rank export, q range guard and explicit cap scope. Two-loop/acyclic-bridge controls and false-split two-cycle countercontrol retained. Next repairs/artifacts; scratch deferred, room closed. |
+
+
+**GC885 validation and fetch receipt (2026-10-09 23:01 BST).** Safe fetch d5f55f8a receives CL115 F posting, Local's odd-wall LP outcome and Python GC884 gates/exact P2 repair. ACK: repaired verdict gate and integer test accepted by source; retained numerical data unverified. C delta only adds LP_N to the diagnostic ratio loop. Ledger/whitespace/conflict/privacy checks pass before publication. No peer source, TeX or generated-page edits; scratch deferred, room closed.
