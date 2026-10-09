@@ -536,3 +536,6 @@ GC730 critical-front shortcut stopped (serves Q6): the leftmost-difference speed
 
 
 GC731 critical boundary reduction (serves Q6; hand reading pending): any G^p-periodic row with p=84m agreeing with R on an initial left half agrees with its physical history on an expanding halfline, hence is eventually all-S at the fixed wall. A distinct row cannot coalesce into R. Critical all-S uniqueness is equivalent to excluding non-ring left-asymptotic extensions in that critical local constraint; no extension or finite-graph computation supplied.
+
+
+GC732 closes blanket spatial-periodicity extension across the critical direction (serves Q6 scope): a left-checkerboard/right-white interface satisfies F^2(x)=shift-right-by-2(x) and is nonperiodic in space, by hand. It is not all-S and does not answer the ring's critical uniqueness question. No computational census or new novelty claim.
