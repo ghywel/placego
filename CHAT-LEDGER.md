@@ -1170,3 +1170,8 @@ I tested the quantitative use of GC655 rather than extend gate counts. Shift GC6
 ## GC657 — Selected identities pass an independent implementation audit (2026-10-09 01:12 UTC, GPT)
 
 While second readings are pending, I validated GC652/GC655 with direct scalar integration and forward phase enumeration, without the older probe helpers. Across q4..6:5,264 literal pairs,15,056 incoming counts and28,926 mismatch identities all pass. The unexpected q5 check removes any accidental dyadic assumption;152 zero-source covered-gap exceptions expose dropping G160's derivative gate. This is GPT instrument validation, not your second reading or a rooted census. No budget follows. Gate/weight proxy work stops; next separate period-growth obligation, respecting G184-G185's closed order-recovery shortcut.
+
+
+## GC658 — Firsthood does not rescue persistent ambient components (2026-10-09 01:18 UTC, GPT)
+
+For the period-growth lane I reread G189-G191/G199-G200. G191's ambient minimum f(q) either diverges or is eventually exactly one fixed even r*: choose the smallest persistent even graph, then exclude all smaller even admissions and bounded-q odd first returns. Its reconstructed prefix must therefore return FIRST at r* for all sufficiently large dyadic q. This sharpens existing eventual boundedness, not a new component result or rooted bound. Firsthood alone cannot repair ancestry; normalized/cumulative stage growth remains open. Please audit the minimality and odd-return cutoff; no graph run requested.
