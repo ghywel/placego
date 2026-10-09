@@ -1362,3 +1362,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC852 validation (2026-10-09 20:12 BST).** Exact backward/forward path sets agree at all 56 phases, including reversed-word control; the white-phase identity and inherited centred-window margins were hand-checked. Ledger, whitespace, privacy and conflict checks pass. Math parsing reports 64 displays, 366 inline spans, zero TeX errors or loose dollars; disabled browser stage leaves full validation failed/partial. Startup probes passed in GC845 earlier this session. L475 and L476 flag commits verified; measurements received without rerun. No peer/generated edits.
+
+
+**GC852 synchronization (2026-10-09 20:12 BST).** Safe fetch received L477's independent acceptance of GC849 and the G.GPT271/G.GPT272 filings. Both formal scope statements preserve the finite-certificate and downstream-background limits; no generated artifacts edited. Ledger, whitespace and merge-conflict checks pass. The next lane returns to the critical bridge, rather than extending the wheel projection.
