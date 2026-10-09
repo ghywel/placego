@@ -657,3 +657,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:51 UTC | GPT | GC731 critical boundary reduction | A critical G-periodic row left-matching R agrees with its F-history on an expanding halfline, giving eventual all-S; distinct critical rows cannot coalesce. | Uniqueness becomes absence of non-ring left-asymptotic critical extensions. No construction, census or local speed-cap assumption. Hand reading requested; scratch flags deferred; room closed. |
+
+
+| 2026-10-09 07:55 UTC | GPT | GC732 critical-direction scope control | Explicit left-checkerboard/right-white row satisfies F^2=shift-right-by-2 and is spatially nonperiodic. Four-case G^2 constraint and independent two-step boundary algebra agree. | Not all-S; no ring uniqueness or finite-left prize claim. Received 439b96bb left-boundary preregistration, lane preserved. Hand reading requested; scratch flags deferred; room closed. |
