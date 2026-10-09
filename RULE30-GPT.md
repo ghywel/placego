@@ -16786,3 +16786,24 @@ Both initial neighbours and the common target neighbour are1. The intermediate n
 ### L369 receipt for GC688-GC692
 
 At verifiedfa4e328c, Local hand-checks both all-S arguments, checkerboard inverse closure and both constant-tail maps, and the actual finite/infinite predecessor pair. Reported independent SAT controls supply40 distinct finite seven-S rows with nonperiodic exteriors and240 internal next-S loops; all slab/gate controls pass. These finite tests support the hand necessities without constructing an infinite nonperiodic all-S trace. Local also reconstructs and forward-checks the guarded checkerboard tree through level7, obtaining2^n distinct rows and maximum radius8n-2 in those tested levels. The latter is reported bounded evidence, not a replacement for GC690's proved sufficient16n bound or a general exact-radius theorem. GC693's subsequent finite two-branch counterexample awaits replay.
+
+
+## GC694 — The finite inverse collision has disjoint actual right cylinders (2026-10-09)
+
+**Hand scope and prediction.** GC693 refutes uniform left-only inverse branch loss. Audit that exact collision in the full autonomous Rule30 update, rather than infer that its two finite left branches share a right witness. Predicted disjoint initial two-bit right cylinders, of sizes1 and3. This specializes the existing clock/right-ladder coupling; it is not a new general halving lemma. No experiment or further inverse example.
+
+Let the initial wall be1, initial nearest-left bit a_1=1, second-left bit a_2, and first two right bits r_1,r_2. The next wall is automatically0, independent of the right row. The intermediate left neighbour p and right neighbour q are
+
+    p=NOT a_2,    q=NOT(r_1 OR r_2).
+
+The next autonomous wall is p XOR q because its intermediate centre is0. Hence it is1 precisely when
+
+    r_1 OR r_2=p=NOT a_2.
+
+These are exact two-tick necessary AND sufficient wall conditions, with arbitrary farther right cells. All other cells then agree with their imposed-wall evolutions over those two updates, since the actual boundary has the prescribed values.
+
+For GC693's initial left row1100101 followed by zeros, a_2=1, so only initial right prefix00 is compatible. For the other left row1010011 followed by zeros, a_2=0, so prefixes01,10,11 are compatible. The same autonomous initial right row cannot serve both left predecessors under this clock. Each has actual two-tick full-row extensions, yet their right cylinders are disjoint. The common finite left target100010011 has neighbour1, so the outgoing black-to-white update at time2 is also automatic: both complete the four observations1010. No later observation is asserted.
+
+**Independent and unexpected controls.** With r_1=r_2=0, q=1: the first predecessor has p=0 and wall at time2 equal1, while the second has p=1 and wall at time2 equal0. Any nonzero pair gives q=0 and reverses which predecessor passes. Direct truth-table cases f(1,1,r)=0, f(a_2,1,1)=NOT a_2, f(1,r_1,r_2)=NOT(r_1 OR r_2), and f(p,0,q)=p XOR q independently check the orientation and boundary calculation. Under a uniform initial two-bit right prefix, the compatible weights are1/4 and3/4. They are unequal, rather than two equiprobable branch choices. Across the two fixed left rows and four right prefixes, four of the eight combinations pass, a finite one-bit loss. These uniform weights refer only to this explicitly defined initial ensemble; no later conditional distribution or fresh-right independence follows.
+
+**Disposition.** Two finite left inverse branches do not imply a shared actual right continuation or a freely doubling full-clock family. GC693's counterexample remains valid, and this coupling does not restore universal finite-left branch loss. It identifies the actual joint condition that must be tracked: an exterior history may select a branch, with unequal initial cylinder weights. No positive entropy, Q1 all-time count loss, finite-left survival exclusion or prize conclusion. Independent hand reading requested; stop local cylinder-weight refinements without a temporal joint bound.
