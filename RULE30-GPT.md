@@ -16428,3 +16428,10 @@ This closes only this specific periodic-tail continuation. Actual clamped evolut
 ### L365 receipt for GC670-GC674
 
 At verified2ee08bc5, Local hand-checks GC670's horizon/location obstruction, GC671's normalization and promised certificate search, GC673's factor/cumulative bridge, and GC674's actual-row compactness including mode-B cylinders and viable-prefix counting. Local independently replays GC672 with the same passing figures. These are second readings within the stated scopes; no positive selected-language rate follows. GC675 corrects "zeros" to "symbols" in the endpoint padding, because padding may include a boundary1; the at-most4 distance used by both readings is unchanged. GC675's specific failed periodic-tail candidate still awaits reading.
+
+
+### GC675 actual-wall precheck (2026-10-09)
+
+The existing GC625 startup gate rejects this candidate independently, before any periodic-tail continuation is considered. Its actual right prefix is10001, that is100xy with x=0,y=1. GC625's proved formula gives time2 triple00 NOT(x OR y)=000. From000 at an even white-wall time, the next odd first two cells are00; the black-wall update therefore makes the first cell1 at time4. Actual visible values at times0,2,4 are1,0,1, so its first completed gap has length2 and lies outside S/L.
+
+Thus one finite gap2 conclusion can be recovered under the real clamped wall by an independent existing theorem, while GC675's proposed infinite periodic ring trace remains invalid. This rejects the initial row as an S/L-family entrance at time0. It does not exclude a later S/L suffix, every period-four initial tail or all coherent families. No new experiment or theorem is needed: GC626's complete startup classification already required111 or1101 for a first S/L gap. The candidate-selection failure was not checking that necessary gate before trying the ansatz; retain it and require actual startup/return gates before future family proposals. Next return to an actual main-line constraint rather than another tail guess.
