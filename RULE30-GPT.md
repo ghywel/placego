@@ -15838,3 +15838,29 @@ Since1+z^3=(1+z)*q, its q pole has order TWO, not three. The prefix term has no 
 **Independent and unexpected controls.** For a=b=0, H8 has pattern0011 and G=z^4/q^3, so g_0 throughg_3 are0 and g_4=1. The advanced combination is nonzero at n=1, confirming that lowering the pole is not full cancellation. Its actual two-event obstruction is the pair at ages2,3. For a=1,b=0, the pair crosses ages3,4; ignoring wraparound would incorrectly admit that phase. These are hand coefficients and phase controls, not a run.
 
 **Disposition.** The aligned separation-three replica is closed as an actual cancellation route. Different activity, time phase, multiple farther rays and nonperiodic joint source supply remain open; none is excluded by this control. Do not generalize the finite pole comparison to an arbitrary infinite source sum. Next seek a genuinely clock-compatible farther cancellation constraint, rather than repeat aligned-replica or shallow-strip tables. No prize candidate.
+
+
+**GC645 second reading.** Local L355 at9ec3beac verifies the index advance, pole reduction and all four wraparound phases by hand, and reports1,671 actual H11 two-event streaks with none beside a simultaneous H8 event. This is a receipt for the aligned-replica rejection, not an assertion that H11 never has a transient streak.
+
+## GC646 — The actual settled H11 ray raises the parity pole to order four (2026-10-09)
+
+**Scope and prediction.** Inspect actual H11, not a freely assigned replica phase, to advance GC645's farther-cancellation question. Predict it becomes one isolated source event per four ticks, rather than GC643's complemented-pair activity. Counterfactual actual H11 can cancel H8's q^3 as another same-period replica. Hand recurrence and generating function only, no strip census or experiment; the universal settling mechanism is already credited in GC634 and Lemma B2.
+
+Use moving cells v_i measured inward from the leftmost black, with v_i(t+1)=v_(i-2)(t) XOR (v_(i-1)(t) OR v_i(t)) and H_i=v_(i-2)*(NOT v_(i-1))*v_i. GC634 gives v7=0 and v8(t+2)=NOT v8(t) from time10. Thus v9'=v8 OR v9, and a black v8 occurs within four ticks; v9=1 by time14. Then v10'=NOT v8, so from time15 put A(t)=NOT v10(t)=v8(t-1). It has a single consecutive black pair and a single white pair in each four-cycle.
+
+For v11 the update is
+
+    v11(t+1)=A(t)*(NOT v11(t)),
+    H11(t)=A(t)*v11(t).
+
+At an A=0 tick the next v11 is0. At the first tick of the ensuing A=11 pair, v11=0 and H11=0; at its second tick, v11=1 and H11=1; the next v11 returns0. Hence after an A=0 reset, H11 has EXACTLY one isolated event in each four-cycle. Such a reset occurs by time19; choosing even rebasing time tau>=24 safely discards all transients. Also H9=v7*(NOT v8)*v9=0 and H10=v8*(NOT v9)*v10=0 in this settled regime. The pair traversal is the unexpected check: the enabling two-black pair produces ONE event, not two.
+
+At this new origin the actual H11 ray has source depth j=L'+s-9, since the frontier is L'+s+2. Its activity series is y^r/(1+y^4) for some r in{0,1,2,3}. With n=k-L'+9 its Pascal target series is
+
+    G11(z)=z^(2r)*(1+z)^(3-r) / (1+z+z^2)^4.
+
+This is the same binomial substitution as GC643. At either primitive cube root, every numerator factor is nonzero, for all four r, so the order-four pole is genuine. As independent endpoint controls, r=0 gives coefficient g0=1; r=3 has its first possible contribution at n=6, where binom(6-3,3)=1, agreeing with the numerator's leading z^6 term. No phase has been silently excluded.
+
+The lower frontier/strip residual has q order at most2, H8 has order3, H7,H9,H10 are silent, and finite events have only powers of1+z. Therefore compensation by the actual settled strip through offset11 plus finitely many farther events is impossible. Any hypothetical full finite-left clock needs infinitely many additional source events at offsets>=12. This is a consistent inverse expansion from the row at tau, not a superposition of old physical ages.
+
+**Disposition and limit.** Actual H11 does not repair GC643's residual; it raises the finite-strip pole order. This is still a necessary compensation condition, not a clock exclusion, offset-divergence theorem or discriminator from ordinary finite-left dynamics. Arbitrary infinite farther-source sums can cancel poles, as GC645 cautions. Stop a depth-by-depth strip census here unless a new joint cancellation constraint appears; the main open obligation remains compatible farther parity, not identifying another universal periodic ray. Local reading requested; no prize candidate.
