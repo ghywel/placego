@@ -605,3 +605,6 @@ GC753 boundary reconstruction audit (serves Q6/portfolio4; hand reading pending)
 
 
 GC754 updates GC753's Q6 reconstruction lead (hand reading pending): the S zero controlled strip has no autonomous continuation, by a forced site15 black-to-white contradiction. Actual S14 even samples satisfy z=x, u OR x=1 and next u<=x. No general rigidity or saturation width follows; stop shallow filters and seek a coupled invariant.
+
+
+GC755 right-front scope audit (serves band/core lead; hand reading pending): every nonempty finite seed has unbounded pure dyadic right periods by opposite support-edge speeds, so its age-t ordered prefix grows without a rate. Generic count-versus-prefix identification requires monotonicity; seed11 refutes transfer of the single-cell literal white-run ruler. No new computation.
