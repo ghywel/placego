@@ -6,6 +6,7 @@ layer with F.
 RUN-ON:     cpu (C, one core); minutes; under 2 GB at width 22
 COMMAND:    python3 tests/probes/lexicon/rule30_layer_product.py FWORDS [WIDTHS=16,18,20,22]
             python3 tests/probes/lexicon/rule30_layer_product.py verify DUMP FWORDS CERT   (GC885's verifier)
+            python3 tests/probes/lexicon/rule30_layer_product.py odd P FWORDS TC_CEILING   (ODD3, width 22)
             (needs ~/np-scratch-int/rule30-oh/ohc and lp, built from rule30_one_hole_widths.c and
             rule30_layer_product.c; FWORDS is TC2's list of true minimal forbidden words, one per line)
 
@@ -125,6 +126,21 @@ OUTCOME, 2026-10-09 23:08 BST (M5, 35 s, 640 MB, at commit 35c472b8; F = CL115's
     wider. They do not change the picture of the channel levelling off near 0.12. A tight certificate on entropy2's
     m = 28 automaton (about 0.1222), or that automaton times F, would sharpen the record's figure by a few
     thousandths at most, at SQ6's 6 GB.
+ODD3 (registered 2026-10-09 23:11 BST, before Cloud's odd-wall lists are seen): the width-22 layer times TC's true
+  minimal forbidden words at the walls 0 1^(p-1), p = 5, 7, 9 (CL114: 1,328, 641 and 270 words, to 17, 15 and 14
+  holes; TC's ceilings 1.512835, 1.642221, 1.709537; the layer's radii 1.471227, 1.599414, 1.714447 from ODD). The
+  hole is x1 at times kp in both TC and OHC (TC-C1 matched OHC's counts).
+  Record searched: as for ODD, plus 'free pair' -> CL114's FP (pairs free to 14 .. 17 holes).
+  LP-O4-C (controls, must hold at each p): F_red changes nothing (C2's test); the one-node layer with F replays TC's
+        ceiling, log2 within 1e-4 below it and at most 1e-6 above; every certificate verifies.
+  LP-O4-P1 (blind, confidence 0.7): at p = 5 the product certifies at least 0.005 below the layer's 1.471227.
+  LP-O4-P2 (blind, confidence 0.5): at p = 9 the product beats both factors, certifying below TC's 1.709537.
+  LP-O4-P3 (blind, confidence 0.6): at p = 7 the product certifies at least 0.005 below the layer's 1.599414.
+  LP-O4-U (blind, confidence 0.4): at p = 5, CL114 says the truth pulls ahead of the width-22 relaxation's minimal
+        forbidden counts only from length 13; still, some word of F_new has length 12 or less.
+  Counterfactual. If P1 and P3 fail, TC's short true words (to 14 .. 17 holes) add little beyond the width-22 layer,
+  and the next step is longer true words, not wider layers.
+
 """
 import os
 import subprocess
@@ -275,8 +291,38 @@ def lpv(tmp, dump, fpath, name, env_extra=None):
     return R, ratio, live, out
 
 
+def odd(p, fpath, tc_ceiling):
+    """ODD3: the width-22 layer at the wall 0 1^(p-1) times TC's F, with controls and verification"""
+    import math
+    tmpdir = os.path.expanduser('~/np-scratch-int/rule30-lp')
+    os.makedirs(tmpdir, exist_ok=True)
+    dump = os.path.join(tmpdir, 'p%dk22.dump' % p)
+    run([OHC, '22', str(p)], env=dict(os.environ, OHC_DUMP=dump))
+    R0, r0, l0, _ = lpv(tmpdir, dump, '-', 'p%d-layer' % p)
+    pr, pn, nred, nnew = split_f(fpath, dump, os.path.join(tmpdir, 'p%d' % p))
+    rr = cert(run([LP, dump, pr]))
+    c2 = rr is not None and r0 is not None and abs(rr[1] - r0) < 1e-10
+    Rf, rf, lf, of = lpv(tmpdir, '-', fpath, 'p%d-F' % p)
+    c3 = Rf is not None and -1e-4 <= math.log2(Rf / D) - math.log2(tc_ceiling) <= 1e-6
+    R1, r1, l1, o = lpv(tmpdir, dump, fpath, 'p%d-product' % p)
+    vok = None not in (R0, Rf, R1)
+    print('p = %d: F %s' % (p, of.splitlines()[0]))
+    if vok:
+        print('  layer %.9f; F alone %.9f (TC %.6f; C3 %s); F_red %d, F_new %d (C2 %s); product %.9f, live %d' % (
+            R0 / D, Rf / D, tc_ceiling, 'ok' if c3 else 'FAIL', nred, nnew, 'ok' if c2 else 'FAIL', R1 / D, l1))
+    for x in o.splitlines():
+        if x.startswith('allowed by length') or 'F words the layer allows' in x:
+            print('   ', x)
+    ok = c2 and c3 and vok
+    print('LP-O4-C p = %d' % p, 'PASS' if ok else 'FAIL')
+    return ok, R0, Rf, R1, o
+
+
 def main():
     import math
+    if sys.argv[1] == 'odd':
+        odd(int(sys.argv[2]), sys.argv[3], float(sys.argv[4]))
+        return
     if sys.argv[1] == 'verify':
         print('verified rho <= %d/%d' % (verify(sys.argv[2], sys.argv[3], sys.argv[4]), D))
         return

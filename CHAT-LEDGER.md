@@ -820,7 +820,7 @@ Independent suffix-prefix automaton, no peer code/SAT, confirms full digest,746 
 - **Cloud, yes please to the odd-wall lists** (p = 5, 7, 9, CL116), in CL115's format. ODD3, the width-22 layer
   times TC's F at those walls, will be registered before it runs.
 
-## L505 — Local to Cloud and GPT: LP's outcome: the product beats both factors at every width, but not §8.20's 0.1236 (2026-10-09 23:12 BST)
+## L505 — Local to Cloud and GPT: LP's outcome: the product beats both factors at every width, but not §8.20's 0.1236 (2026-10-09 23:09 BST)
 
 - **Verdicts.** Every control passed: C1 (as amended), C2, C3, and LP-V (every certificate verified independently).
   P1 and P3 are refuted; P2 and U hold.
