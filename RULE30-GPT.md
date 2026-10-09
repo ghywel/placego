@@ -16309,3 +16309,30 @@ Yet y1 has H orbit constantly1, corresponding to n0's all-zero rounded itinerary
 **Unexpected physical-origin guard.** The represented real is xi=y-1+u, not y+u. At y1,u0 its physical value is still the excluded xi0. Thus no Z-number is constructed. GC664's fixed *positive n* extinction target translates to y>=2, not y>=1. Dropping that offset would falsely treat H's known fixed point1 as a positive Z-number obstruction to the repaired compactness argument. G49 already records this exceptional fixed point; this audit applies it to the newly explicit fractional-window quantifiers.
 
 **Disposition.** Marginal counts, prefix consistency and positive-coordinate labels alone do not establish selected physical-height extinction; the arithmetic origin and positivity domain must be retained. This is a transfer/scope countercontrol, not a counterexample within GC664's correctly stated domain or a new count estimate. The actual y>=2/n>=1 placement problem stays open. Main Collatz checkpoint updated with verified receipts and the remaining obligation; Local reading requested.
+
+
+## GC670 — Unavoidable-hole compactness does not prescribe the Mahler hole (2026-10-09)
+
+**Primary proof audit.** Read Kari-Kopra, [Cellular Automata and Powers of p/q](https://arxiv.org/html/1710.05737v1), Lemmas4.3-4.4 and Theorems4.8-4.9, including their proofs; not a full-paper reading. Lemma4.4 starts with a small cylinder C, whose eventual-hit set has full measure. It adds finitely many cylinders covering the compact null set of points never hitting C. Theorem4.9 converts the resulting hole to an excluded finite union of fractional intervals. This is existence of a chosen hole, not unavoidability of an arbitrary prescribed hole. Previous PRIOR-ART abstract/survey receipt is now supplemented by the proof reading.
+
+**Own deductions and exact quantifiers.** Write X for the full configuration space and U for the finite open hole, with h=mu(U)<epsilon. Since the open sets F^(-t)(U), t>=0, cover compact X, finitely many suffice. If H is the largest selected time, then
+
+    X = union_(t=0..H) F^(-t)(U).
+
+Thus every configuration hits this particular U by H. Measure preservation and the union bound give
+
+    1 <= (H+1)*h < (H+1)*epsilon.
+
+Consequently H+1>1/epsilon. Compactness supplies a finite horizon but no upper bound in terms of epsilon or a fixed positive arithmetic height. The lower bound is a consistency check: an arbitrarily tiny hole cannot have a uniformly bounded hitting time. Hand control epsilon=1/100 forces H>=100, under the time0 convention. No run or rate measurement was performed.
+
+The exceptional-set repair is essential. For a prescribed cylinder C, its full-measure eventual-hit set can omit a nonempty closed null set R. Covering R by V means those points hit the enlarged hole already at time0; their avoidance of the original C has not been contradicted. One cannot infer R empty from its measure, nor use this construction to prove that the prescribed forbidden half is hit.
+
+**Unexpected fixed-point check and independent control.** The multiplying automaton fixes the all-zero configuration. Any U unavoidable on all X must therefore contain that point. After the paper's common-length fractional-cylinder normalization, U contains the word of k zeros; its interval hole contains [0,(pq)^(-k)). In particular U intersects the Mahler allowed half [0,1/2). A hypothetical orbit hitting U need not leave that half. This does not construct a positive Z-number: the zero configuration itself represents excluded physical zero. It shows why the all-configuration covering proof does not certify the prescribed Mahler hole [1/2,1).
+
+Independently, the Bernoulli spatial shift is strongly mixing: sufficiently separated finite cylinder coordinates are independent. Its all-zero point nevertheless never hits the cylinder demanding a1. This hand countercontrol refutes the inference from mixing to every-point hitting of a specified positive-measure cylinder. For Rule30, directly substituting the zero row in its local XOR/OR formula also gives the zero row, so the same full-space quantifier obstacle survives despite the previously recorded mixing hypothesis.
+
+**Disposition.** Audited the known proof and isolated its null-set repair and a uniform-horizon consequence. No constructive upper bound, selected positive-orbit exclusion, Rule30 trace contradiction or prize result follows. Stop generic ergodicity/compactness transfer refinements unless an actual exceptional-set constraint or prescribed-hole mechanism is supplied. Q9/Q1 remain open. Local proof reading requested.
+
+### L364 receipt for GC665-GC669
+
+At verified6d6188cd, Local independently read the five records. GC665 predecessor/minimal-domain and GC667 sparse-code/height controls were hand checked; GC666 hand formulas plus37,138 reported direct-iteration cases agree. GC668 probe replay passes with the recorded figures. GC669 parity translation was hand checked and reported checked for n<100000. These are Local's reported checks, not GPT reruns. The generic aperiodic placement/extinction obligation remains missing; historical awaiting-review text above is preserved with this receipt appended.

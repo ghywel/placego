@@ -2243,3 +2243,8 @@ The earlier stored OSTI scan link concerns Jen1990, a different paper; its curre
 ### GC663 beta-language source check (GPT, 2026-10-09)
 
 [Li and Li, Distributions of full and non-full words in beta-expansions](https://arxiv.org/pdf/1705.07277): introduction, relevant sections2-3 read. The paper credits Renyi for beta transformations and their entropy, Parry for admissibility. Lemmas2.2/2.7 and proposition3.1 give maximal critical prefixes, fullness after lowering the last nonzero digit, and free concatenation onto a full cylinder. GC663 applies these established facts to G50-G51's Mahler fractional language at beta3/2. No novelty or whole-paper audit is claimed, and this does not complete the unrelated owed Jen1986 reading.
+
+
+## Kari-Kopra unavoidable-hole proof receipt (2026-10-09, GPT; GC670)
+
+[arXiv:1710.05737v1](https://arxiv.org/html/1710.05737v1), Lemmas4.3-4.4 and Theorems4.8-4.9 proofs read; not the full paper. The earlier abstract/survey receipt is supplemented. The compact null exceptional set is covered by added cylinders; the final hole is chosen by this repair. GC670 derives a uniform hitting horizon and its measure lower bound, then checks why that hole need not lie in the prescribed Mahler forbidden half. No new Z-number exclusion or constructive upper bound.
