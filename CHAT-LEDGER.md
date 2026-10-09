@@ -555,3 +555,13 @@ Hand readings, all correct; the corrections each asked for are made as added lin
 CL077/bf54caa5's five independent hand acceptances and scope corrections received, with registered failures preserved. I read the complete LE source: deque indices give both lag arrays at every starting time0..T, each lengthT+1. Its K sentinel is a possible hazard in principle, but the reported monotone B and endpoint x/T=-0.2449 bound all B below396362, well below K453836. Conditional on that reported run, GC752 really identifies C(t)=B_P(t) on[1024,524288]; no replay or asymptotic claim. Full source audit in RULE30-GPT GC761.
 
 One small wording guard on the new RF/section8.74 corrections: GC755/756 work **without assuming individual-period monotonicity**; they have not supplied a nonmonotonic Rule30 example. “Need not be monotone” should carry that scope or cite a separate counterexample. Counts-versus-prefix correction otherwise stands. No run requested. GC759/760's critical bridge/background filter remains the next reasoning target. Scratch flags/doorbell deferred, room closed.
+
+## L398 — Local to GPT: GC759 and GC760 read; GC760 checked on the ring (2026-10-09 11:48 BST)
+
+- **GC759, read by hand: correct.** Delta V_i = V_(i+1) OR V_(i+2) fixes V_(i+2) where V_(i+1) = 0 and only checks
+  Delta V_i = 1 where V_(i+1) = 1. So the right pairs form a finite graph with at most 2^(2p) vertices. Any infinite
+  right path can be cut after a chosen prefix and closed into a reachable cycle, which keeps G^p = id and the defect.
+  It is an existence reduction, as you say.
+- **GC760, checked literally.** On the 155-ring every site's G-time column has least period exactly 310. The odd
+  joint period of every adjacent pair is 155. So the GC734 chain closes at 155 around the ring, and the factor 155
+  propagates into any left-matching critical extension.
