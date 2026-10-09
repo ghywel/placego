@@ -15942,3 +15942,27 @@ The polynomial term comes from the complemented part of E3. The factor1+z is non
 **Independent and unexpected checks.** The code's first white bit c0=1 makes E1 at age1 contribute first at target2, consistent with F1's leading z^2. The paired E3 has zero events at ages0 and1 because1+c0=0, so the pair also first contributes at target2. The unexpected cyclic-factor check is necessary: testing only one printed period would miss right-language gates spanning its endpoint. Neither that check nor the nonzero pole proves realizability of the periodic code.
 
 **Disposition.** GC648's unrestricted synthetic activity is ruled out by actual wall support, but phase support plus these shallow gates and the E1/E3 coupling still permit a formal q^4 contribution. No inference about a full right code, finite left tail or cancellation by all other sources follows. A pole exclusion needs stronger joint realization constraints; stop shallow-gate refinements without such an ingredient. Local reading requested; no prize candidate.
+
+
+**GC649 second reading.** Local L359 at37a943a2 verifies the black-start source pairing, cyclic gate checks, numerator and pole by hand, and reports direct source-sum agreement through150 terms. The relaxed code's full realization remains unclaimed. Stop the shallow pole refinement and change to Q7's multi-edge compensation.
+
+## GC650 — A long pair's first-black continuation fixes the fourth wait (2026-10-09)
+
+**Scope and prediction.** Extend the reviewed G247/GC594 long-pair trigger by one driver, for arbitrary driver weights. Predict an isolated first black in the second driver forces two consecutive fast waits, while a two-black run gives fourth delay2 away from the maximal-wrap endpoint. Counterfactual the fourth wait is always unrestricted after the forced third. Prior record G247 and GC572-GC596 checked; this is a local recurrence consequence, not reopening the closed affine envelope or maximal-pair family. Hand proof only; no experiment or rooted frequency claim.
+
+Let B,C,D,E be q-periodic words with
+
+    D(t+1)=B(t) XOR (C(t) OR D(t)),
+    E(t+1)=C(t) XOR (D(t) OR E(t)).
+
+Follow an uninterrupted full-line reset path arriving at B at T, with nonzero B,C delays a,b satisfying a+b>q and b<q. Put S=T+a+b. GC594 gives D(S)=1 and third delay1, so the fourth arrival is S+1. C's first black after its arrival occurs at S-1.
+
+If C(S)=0, the E recurrence at S gives E(S+1)=0 XOR1=1. Thus the fourth delay is ALSO1. The four delays are a,b,1,1. This holds independently of the other bits and weights of D,E; no zero or birth clamp intervenes.
+
+If instead C(S)=1,C(S+1)=0 and b<=q-2, then E(S+1)=1 XOR1=0. Translate T to0. The residue of S is a+b-q, between1 and a-2, since a<=q and b<=q-2. B vanishes there by its first-black delay condition. Hence D(S+1)=B(S) XOR1=1. The next update gives E(S+2)=C(S+1) XOR (D(S+1) OR E(S+1))=1. The fourth delay is exactly2, making four delays a,b,1,2. This second conclusion needs the extra wrap guard.
+
+**Independent controls and unexpected endpoint.** At q8 take B support{6,7}, arrival0 and a7. C support{4,6} has first black from arrival7 at12, b6; C(13)=0, so D at13 and E at14 are black, giving delays7,6,1,1. Change C to support{4,5}: b remains6, C(13)=1,C(14)=0, D(14)=1 and E(14)=0,E(15)=1, giving7,6,1,2. These periodic input pairs have compatible successors because a nonzero middle driver resets the scalar recurrence and determines a periodic output; no root membership is asserted.
+
+For the unexpected b=q-1 endpoint use the reviewed maximal pair B support{6,7},C support{5,6}. Here S14, B(S)=1 rather than0, so D(15)=0. The fourth arrival is15, with E(15)=0 and E(16)=0: it does NOT have delay2. This exposes exactly where dropping b<=q-2 fails, without assuming an arbitrary successor phase.
+
+**Disposition and limitation.** This supplies a genuine four-edge compensation input conditioned on the second driver's first-black continuation. It gives no period-independent slope or selected-history frequency: the first two waits can still be orderq, and births or zero drivers require their existing separate accounting. Next investigate whether the actual rooted path controls how often these two trigger types occur, rather than iterate the extreme-pair suffix or build another unsigned affine envelope. Local reading requested; no prize candidate.
