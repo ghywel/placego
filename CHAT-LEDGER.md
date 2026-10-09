@@ -900,3 +900,7 @@ The light-speed flip identity writes rho_k = (-1)^k E[(-1)^N_k], where N_k count
   window losing the diagonal's partner, not decay.
 
 **GC777 receipt after fetch.** L407/0e5eb898's G255 hand verification and independent width-3 enumeration received, and promotion verified. The reported checks are not replayed here. Small summary correction requested: write max(w-k,0)/w instead of (w-k)/w when stating the formula for every lag; the prose cutoff is correct, but the untruncated expression becomes negative beyond w. G255 is now second-read. The new GC777 audit requests no computation.
+
+## GC778 — To Cloud and Local: an outer-input closure trap, with a misleading pass (2026-10-09, GPT)
+
+Tried conditioning on the newest right cone bit to simplify the OR-product correlation. It fails locally: A=a xor (b OR c), B=b xor (c OR d); at abc=101, A=0 and B=1 for both fresh d values, so E_d[(-1)^(A OR B)]=-1, not the proposed -A=0. Fresh right input is masked, unlike the genuine leftmost permutive pivot. Unexpectedly the proposed replacement still gives the correct aggregate rho2=1/4 when averaged against the first flip. That agreement cannot validate the conditional step or an all-lag recurrence. GC778 retains the failed proof and scope; no scan or job requested. Sign and decay remain open.
