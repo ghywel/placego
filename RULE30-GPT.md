@@ -21143,3 +21143,22 @@ Disposition: accept the source basis for the reported p9 failure, conditional on
 
 
 **W281 second-reading receipt (2026-10-10 00:16 BST).** Local L511 atb9f47663 independently checks GC897's forcing law, Green intervals, rank/collision/union mean, cancellation and measure guard, and GC899's fibre formula, endpoints and primitive rooted-prefix count. PASS by hand with scope retained: no rooted frequency or return bound. Formal promotion remains separate.
+
+
+#### GC901 — Alternating-child collisions recover the driver one profile later (2026-10-10 00:20 BST; W281 continuation)
+
+**Hand continuation, second reading pending.** Record searched: (alternat/period2) + (recover/driver/doubl) ->110 hits in34 files. Read G128.1's period-two closure guard, G201's nonpersistent sibling separation and G185's period/order recovery failure. Prediction: GC899's shared alternating child is followed by a profile that duplicates complemented driver bits. Countercontrol period recovery need not have large Hamming weight; unexpected q2/full alternating driver and rooted-ancestry guards. No trajectory, census, new order-growth claim or novelty claim for reset recovery.
+
+Fix dyadic q>=4, m=q/2, parent x=1 and shared child z with z(2r)=1,z(2r+1)=0. GC899's driver fibre consists of nonzero y with y(2r)=b_r and y(2r+1)=0. Let v be the unique child of (y,z). A black z tick resets the following v bit, and a white z tick has y=0 and copies v. Therefore, cyclically,
+
+v(2r+1)=v(2r+2)=1+b_r.
+
+This explicit inverse recovers b_r=1+v(2r+1); distinct drivers in the same fibre cannot produce the same v. Its weight is q-2*weight(y). If y is primitive q, b is primitive m and nonconstant. For any proper dyadic divisor p>=2 of q, shifting v by p preserves the pair phases and is equivalent to shifting y by p; constant v would force constant b. Hence v is primitive q too. The other alternating phase follows by translation. This is profile-period recovery, not a new stage entry or exit.
+
+**Independent substitutions.** q4, y1000 and z1010 give v1001; y0010 with the same z gives v0110. Each triple satisfies S v=y+(z OR v) directly. Their zero-started prefixes are (0,1110),(1110,1),(1,1000),(1000,1010),(1010,1001), and the corresponding root1011 with driver0010. Distinct successor pairs were never merged; the projected child alone collided.
+
+**Sparse recovery family.** Take b all1 except one0. For m>=2 it is primitive m, so y is primitive q, yet v consists of exactly two adjacent black bits at the complementary pair. At q8 choose y10101000,z10101010,v10000001; the shared z has period2 while v recovers period8 with weight2. Thus profile-period recovery alone supplies no weight growing with q. This is a literal family of actual Boolean transitions in zero-started fixed-q excursions: c=1+S y is primitive, and (0,c)->(c,1)->(1,y) is the known prefix. It does not prove those starts occur after a smaller-period stage of the physical rooted history, or recur on one selected path. GC899's “different rooted prefixes” must be read with this same fixed-q zero-started scope; no physical-root ancestry was added by the count or by L511's hand review.
+
+**Unexpected terminal guard.** If y equals the full alternating z then b=1 and v=0, as y=z is the terminal condition; y has period2 and is excluded from primitive q>=4. At q2 it is the sole nonzero fibre driver, so the claimed recovery fails there. If y=0 then b=0 and v=1, but the original fibre excludes that driver. These extremes explain both exclusions without a run.
+
+Disposition: the response's loss of visible driver information is temporary in this family, and the next profile retains it sparsely. Cross-driver collision size is neither coalescence of full states nor a large-charge certificate. This is a W281 scope corollary, not a replacement for G184's within-history normalized stage-length obligation. Next a concrete physical-ancestry or within-history constraint, no new full-domain census; scratch deferred, room closed.

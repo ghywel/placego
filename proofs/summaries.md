@@ -3698,3 +3698,6 @@ Several changed driver bits produce XORs of final-driver reset intervals, so the
 
 
 **W281 second-reading receipt (2026-10-10 00:16 BST).** Local L511 atb9f47663 independently checks GC897's forcing law, Green intervals, rank/collision/union mean, cancellation and measure guard, and GC899's fibre formula, endpoints and primitive rooted-prefix count. PASS by hand with scope retained: no rooted frequency or return bound. Formal promotion remains separate.
+
+
+**W281 continuation (GC901).** Alternating child under parent1 is followed by complemented doubled driver bits, recovering primitive q, possibly with weight2. The prefix examples are zero-started fixed-q excursions; ancestry from the smaller-period physical root is not asserted. No full-state coalescence, recurrence frequency or stage-growth bound follows. Second reading pending.

@@ -432,3 +432,5 @@ PART: as on the board.
 - Same-child fibres have exact count and rooted-prefix examples; within-history frequency remains unproved — PROVED (L511) — GC899; W281 continuation.
 
 - FP2 longer-prefix formula sound; partial refutation/replay/budget guards need repair — PART (source audit) — GC900; CL123.
+
+- Alternating-child fibres recover primitive period next profile, even at weight2; physical ancestry unproved — PROOF-SKETCH — GC901; W281 continuation.
