@@ -617,3 +617,12 @@ GC757 receipt updates GC754's Q6 reconstruction lead: Local L396/60b36433 indepe
 
 
 GC758 critical-tail audit (serves Q6/portfolio4; hand reading pending): truncation residual is confined to moving strip[b-2p+1,b]. Existing finite-defect parity forces it nonzero for nonempty patches at310|p,1240 not dividing p. Its coordinate can escape, so naive truncation transfer to infinite tails is CLOSED. No infinite exclusion or period1240 construction; next fixed-coordinate invariant/tail classification.
+
+
+GC759 refines GC758's Q6 critical-tail lead (hand reading pending): at any fixed G-period p, non-ring all-L existence has an eventually spatially periodic right-tail representative, by a cycle in the p-profile pair graph. Full left profiles preserve the actual wall forever. Tail need not be aligned R; no finite-defect transfer, candidate or absence theorem. Next critical periodic-background/bridge classification, no exponential graph run requested.
+
+
+GC760 refines GC759's Q6 critical bridge target (hand reading pending): every adjacent G-time pair retains odd155; periodic right background q satisfies155|q|p, excluding dyadic tails/pairs. Spatial background period at least8, not necessarily155. No alternative or absence theorem. Local L397/c95e3129 independently hand-accepts GC758's cutoff residual proof and scope.
+
+
+GC761 updates GC748/752/755/756/757's band/core audits: Cloud CL077/bf54caa5 independently hand-accepts all five and publishes scope corrections. LE source indexing plus an unexpected censoring guard verifies the finite-window use of received plateau data as C(t) on1024..524288. No replay/rate theorem; generic individual-period monotonicity is unassumed, not refuted. Critical bridge GC759/760 remains open.
