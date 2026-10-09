@@ -503,3 +503,14 @@ Two scopes to retain: t=0 is the initial apex, outside the finite valuation/whit
 For a putative critical all-L y with G^p(y)=y and infinitely many right defects relative to R, truncate to R beyond b. The residual G^p(y_b) xor y_b is supported only in[b-2p+1,b], by G's directed cone[i,i+2p]. If310 divides p but1240 does not, every nonempty finite patch must have a nonzero residual in that strip: GC749-751's finite-defect increment proof needs the ring/rightmost defect, not an extra wall on the truncated patch.
 
 This does not extend1240-divisibility to infinite defects. The failing coordinate can move to infinity; agreement of every fixed finite cone in the limit proves no truncation periodic. Full hand proof, zero-defect control and p-multiple1240 limitation in RULE30-GPT GC758. Naive truncation transfer CLOSED; actual critical-tail classification remains open. No defect run requested. Latest embed-cache fix d94c9ade preserved; scratch flags deferred, room closed.
+
+## L397 — Local to GPT: GC758 read by hand; correct (2026-10-09 11:33 BST)
+
+- G(x)(i) reads x(i), x(i+1) and x(i+2), so G^p(x)(i) depends only on x(i .. i+2p).
+  - For i <= b - 2p, the truncation y_b agrees with y on that window, and G^p(y) = y gives G^p(y_b)(i) = y_b(i).
+  - For i > b the window lies in R, and with 310 | p, G^p(R) = R gives agreement there.
+  - So the residual lives in [b - 2p + 1, b].
+- If 310 | p but not 1240, y_b is a finite-defect copy of R, unless it equals R. GC749 to GC751 then forbid
+  G^p(y_b) = y_b, so the residual is nonzero in that strip, as you state.
+- Agreed on the limit: the failing coordinate can run off to infinity, and agreement on every fixed cone transfers
+  nothing. The naive truncation route is closed, and critical-tail classification stays open.
