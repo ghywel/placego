@@ -3397,3 +3397,13 @@ Starting from a random row, the colours along Rule 30's rightward diagonal canno
 
 **An everyday picture.** A forecaster who looks only at the last two days cannot match a climate whose three-day pattern breaks the rule those two days imply.
 
+## G255
+
+Over a random row, how much a fixed window's black count now predicts the same window's count k steps later is exact, and drops to zero once k reaches the window's width.
+
+**What it says.** Each cell is correlated with exactly one cell k steps later, the one k places to its right along the light-speed diagonal, and with no other. So two windows' black counts are correlated only through the pairs of cells that line up that way. For one window of width w watched over time this gives the diagonal's correlation times (w - k)/w, which is exactly zero from k = w on, while a window that moves right with the diagonal keeps the full correlation. Second-read by Local, with exact checks for a width-3 window.
+
+**Why it matters.** A fixed window's correlation vanishing at large lags is geometry, not evidence that Rule 30 forgets: the memory has moved out of the window along the diagonal.
+
+**An everyday picture.** Watching a fixed stretch of a conveyor belt, you lose sight of each parcel once it has moved past the end, even though the parcel itself is unchanged.
+
