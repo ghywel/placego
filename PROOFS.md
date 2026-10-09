@@ -1221,6 +1221,44 @@ folklore of the right-edge diagonals (Jen).
 
 *Independent reading (GPT GC641, 2026-10-09).* Verified by hand: the diagonal update reads left, centre and right inputs D_k, D_(k-1), D_(k-2) in the correct orientation; the fringe's diagonals through D_0 toggle with adjacent ones in opposite phase, the first two after the outermost covered by its fixed black input (r = 1 and 2 included); D_1 and D_2 agree, and the induction gives agreement for every k >= 1 and t; the centre at t = 0 is black in both. *Scoped extension (GC641; read by Local L351).* The same proof covers any common initial left half, finite or infinite, with x_0(0) = 1 and x_0(-1) = 0: the diagonals k <= 0 read only cells x >= 0, D_1 starts at the common 0 and toggles in both histories, and D_2 and deeper start equal and stay equal. The nearest-left guard is essential: with a common black cell at -1, the base {-1, 0} and the fringed {-1, 0, 1} have first rows {-2, -1, 1} and {-2, -1, 2} and centres 0 and 1 at time 2. Local replayed the extension on 600 random common left halves with x_0(-1) = 0 and r up to 9, for 80 steps (7.29 million cells at x <= t - 1, no disagreement), and found the centre columns differing in all 600 cases once x_0(-1) = 1.
 
+### 34. Proposition 21 (proved by hand, second-read): a seed sharing the single cell's centre column begins its left half exactly where its right half alone fails
+
+*Status:* second-read by Local (L370, 2026-10-09); promoted from the waiting room by Local (L370). Waiting-room heading: "34. Proposition 21 (proved by hand; waiting room, second reader wanted): a seed sharing the single cell's centre column begins its left half exactly where its right half alone fails". Not a prize claim.
+*Provenance:* Cloud, 2026-10-09 (05:48 BST), pushing on Proposition 20's open converse at the owner's request.
+Stated as Lemma U1 in `tests/probes/lexicon/rule30_cloud_fringe_uniqueness.py`, whose predictions were pushed in
+8327e7c before its full run, and checked there on every right half of up to 16 cells.
+
+**Proposition 21.** For a right half $R = x_0(1..w)$ let $\tau(R)$ be the first time the centre column of
+$(\text{white}, 1, R)$ differs from the single cell's, with $\tau(R) = \infty$ if it never does. Let $X = (L, 1, R)$
+be a finite seed whose centre column is the single cell's. Then either $L$ is white and $\tau(R) = \infty$, or the
+shallowest black of $L$ is at depth exactly $\tau(R) < \infty$. In particular, (a) the single cell is the only
+finite seed with a white right half and this column, and (b) a seed with this column whose right half is a fringe
+$S_r$ (Proposition 20) has a white left half.
+
+**Proof.** Put $Y = (\text{white}, 1, R)$. If $L$ is white then $X = Y$, and $\tau(R) = \infty$. Otherwise let $b$
+be the depth of the shallowest black of $L$. The rows $X$ and $Y$ differ only at cells $\le -b$, and the rightmost
+difference is at $-b$. Rule 30 is left-permutive: if two rows agree at every cell $> i$ and differ at $i$, the next
+rows agree at every cell $> i + 1$ and differ at $i + 1$, because $x'(i+1) = x(i) \oplus (x(i+1) \lor x(i+2))$ and
+the inputs of the OR agree. So at time $t$ the rightmost difference is exactly at $-b + t$, and the centre columns
+of $X$ and $Y$ agree for $t < b$ and differ at $t = b$. As $X$ has the single cell's column, $Y$'s column agrees with
+it before $b$ and differs at $b$, so $\tau(R) = b$. For (a), $(\text{white}, 1, \text{white})$ is the single cell, so
+$\tau = \infty$ and $L$ is white. For (b), $\tau(S_r) = \infty$ by Proposition 20. ∎
+
+**What the scans add (computer-assisted).** Proposition 21 splits the converse into two finite questions. Both
+were answered with predictions pushed first (`rule30_cloud_fringe_uniqueness.py`, `fringe_uniqueness.c`):
+- *Empty left half.* For every exact width $w \le 28$, the only right half with $\tau(R) \ge 3000$ is $S_w$ (EQ1
+  held). The longest any other right half keeps the column is 476 steps.
+- *Any left half.* For right halves of up to 20 cells, no left half of depth $\le 1000$ gives a finite seed with this
+  column outside the family (EQ3 held). For up to 28 cells and depth $\le 200$ the same follows from EQ1 and
+  Proposition 21. The registered decryption test of this case (EQ2) was refuted as worded: its window of 240 steps
+  was shorter than the longest $\tau(R)$. A post-hoc rerun, with no prediction, used a window of 540 steps, longer
+  than every $\tau(R)$ found. It left exactly the 29 keys of the family to depth 500 at widths up to 28.
+- *Conjecture (open).* The single cell and the $S_r$ are the only finite seeds with the single cell's centre column.
+  Wider right halves and deeper left halves are not covered.
+
+*Independent reading (Local L370, 2026-10-09).* Verified by hand: if two rows agree at every cell $> i$ and differ at $i$, the next rows agree at every cell $> i + 1$ (each such update reads only cells $> i$) and differ at $i + 1$ (its OR inputs agree and $x(i)$ differs). So the rightmost difference of $X$ and $Y$ sits at $-b + t$, reaches the centre exactly at $t = b$, and $\tau(R) = b$ because $X$ carries the single cell's column; (a) and (b) follow as stated. The argument uses neither the finiteness of $L$ nor that of $R$, only that $L$ has a shallowest black. Literal check of the lemma: for every third right half of up to 9 cells and every nonwhite left half of depth up to 11, the first centre-column difference between $(L, 1, R)$ and $(\text{white}, 1, R)$ within 48 steps is at exactly the shallowest black's depth (350,037 pairs, no exception). Scope: the proposition fixes where a nonwhite left half must begin, not whether one exists, so the completeness conjecture stays open.
+
+
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 
 These were proved inside sections as running text. They are restated so that each is a checkable unit.
@@ -10113,38 +10151,3 @@ At s=m-1, the midpoint's two neighbours are black and its centre white by the re
 Put c=-d-m+1 as above. The interval's farther black endpoint c-m=-T-1 is outside the retained cone. Set it black. The arrival-row pivots for mismatch depths k>=1 are c-m-k=-T-1-k, also outside the cone. Choose them successively to give the first mismatch at K, and zero-pad all remaining unspecified cells. Radius-one locality preserves every clock sample through T and every prescribed initial zero in the witness. The same arrival and right-latch proof used in G234 gives exact duration m+K, regardless of the retained right exterior. This proves the conditional extension without any additional SAT run.
 
 **Horizon control.** The added black endpoint first can affect column zero at T+1; the k-th arrival pivot first can affect it at T+1+k. Their coefficient at first arrival is one by left permutivity. For m=1 the white interval is a singleton at depth d, T=d, and its farther endpoint is exactly one site outside the clock cone. This checks the endpoint convention. The full finite RR clock therefore cannot itself constrain these outer resonance pivots. It can constrain the initial prefix inside its cone, and adding later clock samples can constrain newly exposed pivots; these are different obligations. A white interval with an unproved black nearer endpoint is not covered by this extension.
-
-
-### 34. Proposition 21 (proved by hand; waiting room, second reader wanted): a seed sharing the single cell's centre column begins its left half exactly where its right half alone fails
-
-*Provenance:* Cloud, 2026-10-09 (05:48 BST), pushing on Proposition 20's open converse at the owner's request.
-Stated as Lemma U1 in `tests/probes/lexicon/rule30_cloud_fringe_uniqueness.py`, whose predictions were pushed in
-8327e7c before its full run, and checked there on every right half of up to 16 cells.
-
-**Proposition 21.** For a right half $R = x_0(1..w)$ let $\tau(R)$ be the first time the centre column of
-$(\text{white}, 1, R)$ differs from the single cell's, with $\tau(R) = \infty$ if it never does. Let $X = (L, 1, R)$
-be a finite seed whose centre column is the single cell's. Then either $L$ is white and $\tau(R) = \infty$, or the
-shallowest black of $L$ is at depth exactly $\tau(R) < \infty$. In particular, (a) the single cell is the only
-finite seed with a white right half and this column, and (b) a seed with this column whose right half is a fringe
-$S_r$ (Proposition 20) has a white left half.
-
-**Proof.** Put $Y = (\text{white}, 1, R)$. If $L$ is white then $X = Y$, and $\tau(R) = \infty$. Otherwise let $b$
-be the depth of the shallowest black of $L$. The rows $X$ and $Y$ differ only at cells $\le -b$, and the rightmost
-difference is at $-b$. Rule 30 is left-permutive: if two rows agree at every cell $> i$ and differ at $i$, the next
-rows agree at every cell $> i + 1$ and differ at $i + 1$, because $x'(i+1) = x(i) \oplus (x(i+1) \lor x(i+2))$ and
-the inputs of the OR agree. So at time $t$ the rightmost difference is exactly at $-b + t$, and the centre columns
-of $X$ and $Y$ agree for $t < b$ and differ at $t = b$. As $X$ has the single cell's column, $Y$'s column agrees with
-it before $b$ and differs at $b$, so $\tau(R) = b$. For (a), $(\text{white}, 1, \text{white})$ is the single cell, so
-$\tau = \infty$ and $L$ is white. For (b), $\tau(S_r) = \infty$ by Proposition 20. ∎
-
-**What the scans add (computer-assisted).** Proposition 21 splits the converse into two finite questions. Both
-were answered with predictions pushed first (`rule30_cloud_fringe_uniqueness.py`, `fringe_uniqueness.c`):
-- *Empty left half.* For every exact width $w \le 28$, the only right half with $\tau(R) \ge 3000$ is $S_w$ (EQ1
-  held). The longest any other right half keeps the column is 476 steps.
-- *Any left half.* For right halves of up to 20 cells, no left half of depth $\le 1000$ gives a finite seed with this
-  column outside the family (EQ3 held). For up to 28 cells and depth $\le 200$ the same follows from EQ1 and
-  Proposition 21. The registered decryption test of this case (EQ2) was refuted as worded: its window of 240 steps
-  was shorter than the longest $\tau(R)$. A post-hoc rerun, with no prediction, used a window of 540 steps, longer
-  than every $\tau(R)$ found. It left exactly the 29 keys of the family to depth 500 at widths up to 28.
-- *Conjecture (open).* The single cell and the $S_r$ are the only finite seeds with the single cell's centre column.
-  Wider right halves and deeper left halves are not covered.

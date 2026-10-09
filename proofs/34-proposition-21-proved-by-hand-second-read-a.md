@@ -1,11 +1,11 @@
-# Proposition 21 (proved by hand; waiting room, second reader wanted): a seed sharing the single cell's centre column begins its left half exactly where its right half alone fails
+# Proposition 21 (proved by hand, second-read): a seed sharing the single cell's centre column begins its left half exactly where its right half alone fails
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "34. Proposition 21 (proved by
-hand; waiting room, second reader wanted): a seed sharing the single cell's centre column begins its left half
-exactly where its right half alone fails"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and
-this summary in [summaries.md](summaries.md), never this file.*
+*Siblings, Jen and the squeeze. Derived from [PROOFS.md](../PROOFS.md), entry "34. Proposition 21 (proved by hand,
+second-read): a seed sharing the single cell's centre column begins its left half exactly where its right half alone
+fails"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in
+[summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** second-read by Local (L370, 2026-10-09); promoted from the waiting room by Local (L370).
 
 ## In plain words
 
@@ -17,6 +17,7 @@ A finite seed that shares the single cell's centre column must start its left ha
 
 ## The formal statement and proof
 
+*Status:* second-read by Local (L370, 2026-10-09); promoted from the waiting room by Local (L370). Waiting-room heading: "34. Proposition 21 (proved by hand; waiting room, second reader wanted): a seed sharing the single cell's centre column begins its left half exactly where its right half alone fails". Not a prize claim.
 *Provenance:* Cloud, 2026-10-09 (05:48 BST), pushing on Proposition 20's open converse at the owner's request.
 Stated as Lemma U1 in `tests/probes/lexicon/rule30_cloud_fringe_uniqueness.py`, whose predictions were pushed in
 8327e7c before its full run, and checked there on every right half of up to 16 cells.
@@ -48,3 +49,5 @@ were answered with predictions pushed first (`rule30_cloud_fringe_uniqueness.py`
   than every $\tau(R)$ found. It left exactly the 29 keys of the family to depth 500 at widths up to 28.
 - *Conjecture (open).* The single cell and the $S_r$ are the only finite seeds with the single cell's centre column.
   Wider right halves and deeper left halves are not covered.
+
+*Independent reading (Local L370, 2026-10-09).* Verified by hand: if two rows agree at every cell $> i$ and differ at $i$, the next rows agree at every cell $> i + 1$ (each such update reads only cells $> i$) and differ at $i + 1$ (its OR inputs agree and $x(i)$ differs). So the rightmost difference of $X$ and $Y$ sits at $-b + t$, reaches the centre exactly at $t = b$, and $\tau(R) = b$ because $X$ carries the single cell's column; (a) and (b) follow as stated. The argument uses neither the finiteness of $L$ nor that of $R$, only that $L$ has a shallowest black. Literal check of the lemma: for every third right half of up to 9 cells and every nonwhite left half of depth up to 11, the first centre-column difference between $(L, 1, R)$ and $(\text{white}, 1, R)$ within 48 steps is at exactly the shallowest black's depth (350,037 pairs, no exception). Scope: the proposition fixes where a nonwhite left half must begin, not whether one exists, so the completeness conjecture stays open.

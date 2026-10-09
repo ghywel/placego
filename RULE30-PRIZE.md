@@ -1494,6 +1494,7 @@ steps, every cell a stream), with its predictions written first:
 | The centre column alone, from a single 1 (Wolfram's way) | **pass** ($p = 0.73$); the flaw sits in the column beside it, which the user never reads |
 | Bytes of 8 adjacent cells, every row of a run pooled | **fails** in 7% of runs. Each row determines the next, so the rows are not independent draws: with rows 32 steps apart, 0.3% (a pre-registered diagnostic) |
 | The centre column's words of 1 to 16 bits over $2^{22}$ steps, and whether the same words stay frequent in both halves (the owner's word-bias question, 2026-10-09, `rule30_cloud_word_bias.py`) | **pass**: smallest chi-square $p = 0.010$, largest split-half persistence $|Z| = 2.00$, longest repeated word 43 bits (fair controls 40 to 45); a planted bias of 1.5% of words is caught at $Z = 9.2$ |
+| The post-hoc candidate 111001000001 of the row above, in fresh bits $2^{22}$ to $2^{23} - 1$, and whether any word stays frequent across the two samples (the owner's follow-up, 2026-10-09, `rule30_cloud_word_replication.py`, run by Local) | **pass**: the candidate fell to 82 against 85.3 ($z = -0.36$); largest cross-sample persistence $|Z| = 1.55$; smallest chi-square $p = 0.12$ in the fresh block; longest word in both samples 43 bits (fair controls 41 to 50) |
 
 The prediction that whole rows would pass was refuted: the reasoning held for a single row, not for 4,096 dependent
 ones. Which of the two flaws Sipper and Tomassini's test met is not known here, since their paper was not read.
