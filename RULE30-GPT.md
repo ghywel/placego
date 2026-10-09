@@ -16721,3 +16721,28 @@ Since F(q)=q, B_(n-1) is contained in B_n. Exactly2^(n-1) members first reach q 
 **Independent and unexpected controls.** The four displayed spatial transitions also follow by substituting each pair into the literal Boolean identities r=1 XOR(u OR v), s=0 XOR(v OR r); this checks the parity and the reversed-neighbour convention. Tail closure is special to this target background. An all-black old tail with black wall produces an all-zero next tail, since1 XOR(1 OR1)=0. Thus inverting a zero tail can give infinitely many black cells, even with the old neighbour fixed1. The cofinite-checkerboard proof cannot be transferred to finite black support. The counterfactual finite-support inference is rejected, not a Q6 counterexample.
 
 **Disposition.** The earlier restricted finite-correction question now has an infinite explicit inverse-tree family and no uniform transient settling horizon across all radii. Arbitrary-radius survivor classification, other recurrent cycles, compatibility with an autonomous right half, finite left support and prize questions remain open. This proof needs independent hand reading; no radius sweep, quantitative deadline inference or generated ancestry list is proposed. Next choose a main-line input rather than counting more inverse-tree levels.
+
+
+## GC691 — Finite targets have three possible backward tail classes (2026-10-09)
+
+**Hand prediction and main-line domain.** After GC690's checkerboard inverse closure, switch to Q6's actual finite black-support tail. For any target b with b_i=0 beyond some finite depth, classify the two GC679 guarded two-tick predecessors, fixing the old black wall and initial neighbour1. Predict that each predecessor is eventually zero, eventually all-one, or eventually a spatial period3 word with one black per three cells. This is an inverse-tail obstruction, not a finite-support survivor or a full-clock construction. No experiment or support sweep.
+
+For one inverse tick, a_(i+1)=b_i XOR(a_i OR a_(i-1)). On a constant target tail beta, the spatial pair map is
+
+    T_beta(u,v)=(v, beta XOR(u OR v)).
+
+For beta=0 its complete transitions are
+
+    00->00,    01->11,    10->01,    11->11.
+
+Thus any predecessor of a zero-tail target has either a zero tail or an all-one tail, with synchronization after at most two spatial pair updates beyond the target's support. For beta=1 the transitions are
+
+    00->01->10->00,    11->10.
+
+Every predecessor of an eventually all-one target is eventually period3, with the repeated bits001 up to spatial phase. The three-cycle is exact, not merely a period dividing3 statement, because all its words contain a black bit and two whites.
+
+Now invert a finite target twice. The intermediate row has tail0 or1. In the first case the initial row has tail0 or1; in the second it has a period3 tail. These alternatives exhaust the two guarded predecessors from GC679. A predecessor has finite black support precisely when its first inverse target has zero tail and its second inverse spatial pair reaches00. Hence finite-support membership of each exact guarded predecessor can be decided by two serial inverse scans and these terminal maps, without guessing an infinite exterior. This does not assert how often either predecessor is finite, or that at least one is finite.
+
+**Independent and unexpected controls.** Each displayed transition can also be checked from the literal Rule30 identities on the reconstructed triple: v_next=beta XOR(u OR v) gives v_next XOR(u OR v)=beta, the required inward output. For the all-zero target with final black wall1, its intermediate white-wall0 predecessors are the all-zero row (choose neighbour0) and all-one row (choose neighbour1). Inverting these with initial black wall1 and neighbour1 gives, respectively, the all-one initial row and initial depths100100100... . The latter maps first to all-one, then to zero; the former maps first to zero, then remains zero at positive depths. Neither initial row has finite black support. Both have the initial guarded neighbour1, but the final zero target has neighbour0 and fails the future black-time test. They are inverse controls, not clock survivors. This rejects the counterfactual that a finite target automatically has finite guarded predecessors.
+
+**Disposition.** The exact two-preimage fibre of the unrestricted inverse map does not become a two-branch finite-support ancestor tree. GC690's checkerboard tree cannot be imported into Q6: backward finite-support membership is a real terminal condition, with all-one and period3 alternatives explicitly identified. This is a finite-tail classification for two inverse ticks only; no all-time finite-left exclusion, deadline, right-half compatibility or prize result. Independent hand reading requested. Stop constant-tail refinements; use this criterion only on an actual main-line target or concrete review request.
