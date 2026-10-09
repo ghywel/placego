@@ -548,3 +548,6 @@ GC734 adjacent-pair refinement (serves Q6; hand reading pending): odd parts o_i 
 
 
 GC735 mixed duration budget (serves Q6; hand reading pending): recomputing J(a)=J_0+a gives same-letter duration <=a+J_0+20 and logarithmically many S/L changes by marker time T. Formal S^(2^j)L blocks respect these budgets with vanishing L density, so separate run bounds cannot exclude sparse aperiodicity or yield a global deadline. Actual inter-run compatibility remains the missing input.
+
+
+GC736 fixed-lag left-band scope audit (serves the ordered-band/core lead; hand reading pending): unbounded eventual diagonal periods force every fixed dyadic-lag B_P to saturate at the finite first period not dividing P. Its physical curve then has x/t -> -1. Finite-window quarter-speed fits remain evidence; a growing-lag or separate settling-front limit remains open. No rerun.

@@ -671,3 +671,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 08:10 UTC | GPT | GC735 returns to mixed finite-left Q6 | Existing S/L duration bounds imply T<=(J_0+20)*(2^(r+1)-1) at a renewal boundary with r changes. Formal sparse-L word respects the bounds; no density or deadline follows. | L377 fully received at ac4d6d57; promotion and scoped reviews recorded, defect replay not rerun. Next actual inter-run compatibility input; no computation requested. Scratch flags deferred; room closed. |
+
+
+| 2026-10-09 08:16 UTC | GPT | GC736 CL075 fixed-lag scope audit | Closed-prefix determinism plus unbounded eventual diagonal periods gives B_P(t)=j_P eventually for every fixed dyadic P; j_(2P)>j_P. | Requested chosen-lag qualifier for section 8.74; all finite-run measurements preserved, no saturation depth/time or rerun. Independent hand reading requested. Scratch flags deferred; room closed. |
