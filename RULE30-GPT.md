@@ -15979,3 +15979,26 @@ For the unexpected b=q-1 endpoint use the reviewed maximal pair B support{6,7},C
 **Measured result.** Among the39 in-interval delays, the maximum is16. The38 wholly internal adjacent pairs have maximum sum22, so NONE satisfies a+b>32. GC650 therefore cannot supply any compensation triggered inside this already published positive-debt segment. This is an exact finite check of the literal data, not a proof about its root ancestry or asymptotic path. The unexpected endpoint check deliberately includes the40th displayed delay and obtains doubled debt156 rather than157: that last record validates the preceding edge but is not an edge of this interval. External predecessor/successor compensation is not excluded.
 
 **Disposition.** Long-pair compensation remains correct, but using it alone to pay every finite ordinary positive-debt segment fails this control. This does not refute a global bound: surrounding negative debt and other constraints may pay the segment. Next seek a mechanism below the period-crossing threshold, using selected arrival bits or debt across surrounding edges; stop extending the extreme suffix as a substitute for such an input. Local review requested; no prize candidate.
+
+
+**GC651 second reading.** Local L361 at142b2194 independently sums L224 and reproduces the probe under Python3.12. Its default Python3.9 lacks int.bit_count(); GC652 changes this probe to bin(word).count('1') for portability, without claiming a Python3.9 runtime test here.
+
+## GC652 — Below-threshold next waits are selected mismatch runs (2026-10-09)
+
+**Prediction and prior record.** CLOUD-LOCAL preregisters a hand arrival identity plus a bounded check on L224, not a new census. G247, GC594, GC650 and the existing mismatch/reset record were searched first. Predict period crossing is unnecessary for a fast successor: the preceding driver's bit at the second driver's first black decides it. Counterfactual only near-extreme pairs force such a reset.
+
+Let B,C,D satisfy D(t+1)=B(t) XOR(C(t) OR D(t)), and let the uninterrupted path arrive at B at T, at C at T+a, and at D at S=T+a+b. The nonzero C driver's first black is at S-1. Therefore
+
+    D(S)=1 XOR B(S-1).
+
+If B(S-1)=0, D's delay is1. If B(S-1)=1, D(S)=0. For as long as D(t)=0, its update is D(t+1)=B(t) XOR C(t). If r is the least k>=0 with B(S+k)!=C(S+k), induction gives D(S)..D(S+r)=0 and D(S+r+1)=1. The delay is exactly r+2. This is a direct recurrence identity, with no period-crossing or nonsingleton restriction. For distinct q-periodic B,C, r exists and r<=q-1. It is a selected mismatch run, not a uniformly sampled word comparison.
+
+**Unexpected zero-successor check.** If B=C is nonzero, r does not exist. Each black input resets D to0, and the unique periodic successor is identically0; hence this branch is outside an ordinary nonzero successor interval. The probe verifies scalar compatibility for B=C=0x11,D=0. Zero drivers and birth clamps keep their separate standing accounting.
+
+**Finite check, evidence not an asymptotic estimate.** The same literal witness controls from GC651 pass after the portable popcount change. For the37 triples whose three delays all lie inside L224,9 third waits are fast and28 use the mismatch branch. The longest mismatch distance is14, and their distances sum98. Each next delay agrees exactly with the bit/mismatch identity. None of these pairs crosses period32, so the arrival identity genuinely reaches below-threshold cases. Root ancestry and the full census were not replayed.
+
+For an uninterrupted list of N successor edges covered by these identities, let F count the fast branch and R sum mismatch distances over the remaining edges. Its exact debt relative to slope5/2 is
+
+    sum(delay-5/2)=R-N/2-F.
+
+The37 checked edges give98-37/2-9=70.5; the first two waits add8, yielding78.5. The identity supplies an exact target for selected compensation, not a bound: one must control R relative to N/2+F, including interval boundaries and the previously separated zero/birth cases. No independence, mismatch geometric law, rooted frequency or global slope is proved. Next seek a constraint on these selected mismatch runs, not unconditioned Hamming balance or another period-crossing suffix. Local second reading requested through the shared ledger; scratch doorbell deferred because its mux check failed without a login attempt.

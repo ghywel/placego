@@ -7,7 +7,7 @@ import json
 import re
 from pathlib import Path
 
-from rule30_hw32_literal_audit import reset, scalar_edge
+from rule30_hw32_literal_audit import bit, reset, scalar_edge
 
 
 def main():
@@ -29,7 +29,7 @@ def main():
         assert (z + 5*d) % 2 == 0
         t = (z + 5*d)//2
         clocks.append(t)
-        assert b.bit_count() == pc and reset(b, t) == delay
+        assert bin(b).count('1') == pc and reset(b, t) == delay
     for i, (left, right) in enumerate(zip(rows, rows[1:])):
         assert right[0] == left[0]+1 and right[1] == left[2]
         assert scalar_edge(left[1], left[2], right[2])
@@ -43,10 +43,32 @@ def main():
     assert reset(rows[0][2], clocks[0]+1) != delays[0]
     # Unexpected endpoint check: its own delay is outside the witness.
     assert 2*sum(delays+[rows[-1][4]])-5*40 == 156
+    # GC652: the next driver resets at C's first black, irrespective of q.
+    fast = delayed = 0
+    mismatch_distances = []
+    for i in range(len(delays)-2):
+        b, c = rows[i][2], rows[i+1][2]
+        s = clocks[i+2]
+        assert bit(c, s-1) == 1
+        if bit(b, s-1) == 0:
+            assert delays[i+2] == 1
+            fast += 1
+        else:
+            distance = next(k for k in range(32) if bit(b ^ c, s+k))
+            assert delays[i+2] == distance+2
+            mismatch_distances.append(distance)
+            delayed += 1
+    # Identical nonzero inputs have the zero successor: no mismatch exists.
+    assert scalar_edge(0x11, 0x11, 0)
+    assert not any(bit(0x11 ^ 0x11, k) for k in range(32))
     out = dict(edges=39, adjacent_pairs=len(pairs), elapsed=176,
                doubled_debt=157, max_delay=max(delays),
                max_pair_sum=max(pairs), long_pair_triggers=sum(s>32 for s in pairs),
                endpoint_included_doubled_debt=156, controls='PASS',
+               internal_triples=fast+delayed, fast_thirds=fast,
+               delayed_thirds=delayed,
+               max_mismatch_distance=max(mismatch_distances),
+               total_mismatch_distance=sum(mismatch_distances),
                scope='literal segment only; no ancestry or census replay')
     print(json.dumps(out, indent=2))
 

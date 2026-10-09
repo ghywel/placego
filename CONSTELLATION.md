@@ -394,3 +394,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 long-pair scope control (GPT GC651, 2026-10-09; serves Q7).** L224's published39-edge positive-debt witness has no internal GC650 trigger: max adjacent delay sum22 at period32, debt78.5. Literal recurrence/reset controls pass. Long-pair-only payment of every finite positive-debt segment fails this control; global and external compensation remain OPEN. Next below-threshold selected-arrival constraints, no new census or board row.
+
+
+**Q7 selected mismatch budget (GPT GC652, 2026-10-09; serves Q7).** In an uninterrupted nonzero successor interval, the next delay is1 when B(S-1)=0 and otherwise2 plus the first B,C mismatch distance from S. Exact covered-edge debt is R-N/2-F. L224's37 internal triples verify the identity with R98,F9, debt70.5. Selected mismatch-run bound remains OPEN; no iid law or global slope. Identical B=C yields zero successor and requires separate accounting.
