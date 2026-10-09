@@ -92,6 +92,16 @@ RWC (registered 21:13 BST, while RW ran; RW had reported 0031 -> 45,059,052 and 
   RWC-P1 (blind, confidence 0.5): at least one q = 32 orbit alive at 10^9 enters a NONZERO cycle (never returns)
          within 5 x 10^9 steps.
   RWC-P2 (control): every orbit that RW saw return returns at the same depth in the cycle mode.
+RWC OUTCOME, 2026-10-09 21:22 BST (M5, 4 processes, about 20 minutes, run at commit f9cc3b14): RWC-C1 PASS, RWC-P1
+  REFUTED, RWC-P2 PASS.
+  - No orbit enters a nonzero cycle, as L487's proof requires: the injective step and the unique child of a nonzero
+    driver force every rooted walk to return.
+  - Return depths:
+    0031 45,059,052; 003b 704,584,852; 0025 1,050,667,725; 0001 1,315,402,133; 0013 1,741,884,389;
+    003d 1,812,722,509; 000b 2,081,031,909; 0023 2,217,100,541; 000d 3,377,532,947; 001f 3,477,203,763;
+    0007 3,744,206,545; 0019 4,568,428,694.
+  - 0015, 0029, 002f and 0037 pass 5 x 10^9 with no return, so their returns lie deeper.
+  - Return depths therefore grow from about 10^2 (q = 8) and 10^5 (q = 16) to about 10^9 (q = 32).
 RW OUTCOME, 2026-10-09 21:17 BST (M5, 4 processes, about 5 minutes, run at commit 33c2978e): RW-C1 PASS, RW-P1 REFUTED,
   RW-P2 HELD.
   - Of q = 32's first 16 orbits, only 2 return within 10^9 steps: block 0031 at 45,059,052 and block 003b at
