@@ -109,6 +109,14 @@ WIDTH 13 (registered 20:02 BST, before running; COMMAND: ... widen 13, the same 
   OH-Z1 (blind, confidence 0.6): p = 9 stays at 1.8668 at width 13.
   OH-Z2 (blind, confidence 0.6): p = 7 falls again, below 1.8158, but stays above 1.6.
   OH-Z3 (blind, confidence 0.7): p = 5 stays above 1.6.
+WIDTH 13 OUTCOME, 2026-10-09 20:03 BST (M5, 22 s, 709 MB peak, run at commit 81ea84ce): OH-Z1 REFUTED, OH-Z2 HELD,
+  OH-Z3 HELD.
+  - Width 13: p = 5 1.6725 (288 subsets), p = 7 1.7882 (231), p = 9 1.8537 (60). p = 9 left its plateau, so all three
+    are now narrowing, and none closes.
+  - The rerun printed OH-Y2 at the new largest width (1.6725). That is still above 1.6, but Y2 was registered for width
+    12 (1.6950, held).
+  - Width 14 would need about 3 GB in this implementation, so it was not run on the M5 tonight. A C or numpy version
+    would be needed to go further.
 """
 import sys
 from itertools import product
