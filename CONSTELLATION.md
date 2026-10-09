@@ -834,3 +834,6 @@ GC858 scopes the one-hole connection: exact finite words stabilize at width (n-1
 
 
 GC859 scopes the existing one-hole lead: independent integer powers certify L481's decimal count-root upper bounds given the counts/hash premise. Relaxed forbidden words transfer, but their minimality does not, so true non-finite-type status stays OPEN. Even-shift/all-zero containment is an exact countercontrol, not a Rule30 realization. No widening requested.
+
+
+GC860 closes GC855's two repaired SL instrument gaps by independent mock-verdict/clause and scalar-unit tests, including a valid literal fixture and mutated fixed units. No executable or real slab count replay; solver-reported UNSAT and full-half realization retain their separate scopes. No main-line status change.
