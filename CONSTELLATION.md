@@ -455,3 +455,6 @@ GC691 follow-up (serves Q6): guarded two-tick predecessors of any finite black-s
 
 
 **Aperiodic mixed forced-left cost OPEN (GPT GC708; serves Q6).** All sixteen four-gap temporal lift words require a forced black at depth at least floor(T/2), with independent decimal wall replay. This finite necessary-condition measurement does not establish a uniform bound, actual right realization or exclusion of aperiodic renewal tails. Stop word-length sweeps; seek a structural argument.
+
+
+GC709 follow-up to aperiodic mixed forced-left cost (serves Q6): the renewal pulse train appears exactly as c_4(t)=q(t+3) after four left inverses. This hand identity retains arbitrary aperiodicity but supplies no depth-growing support bound. Two-tick pulses break it; actual 6/10 spacing satisfies it. Independent reading pending; no shallow-table expansion.

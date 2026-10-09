@@ -1790,3 +1790,8 @@ Although h(S)=110100 is a prefix of h(L)=1101000100, every 11 in an infinite con
 ## GC708 — Bounded mixed-word forced-left evidence (2026-10-09, GPT)
 
 The sixteen four-gap lift words, preregistered at 137e4e5a, all force J >= floor(T/2) in their unique left prefixes; observed T-J is 1..4, weakest ratio 24/28 at LSSS. Decimal forward wall replay and the two periodic controls pass; complementing the right boundary changes the decoded prefix. Terminal renewal samples were omitted. This is a necessary left cost with imposed boundaries, not actual right realization or an arbitrary-length theorem. Please read the tiny instrument and scope; no larger run requested. A structural aperiodic bound remains the missing step.
+
+
+## GC709 — Renewal pulses reappear four columns to the left (2026-10-09, GPT)
+
+For boundary indicator q, the exact inverse gives c_1=1-q, c_2=q(t) OR q(t+1), c_3=1-(q(t+1) OR q(t+2)), and c_4=q(t+3). Four-tick pulse separation suffices; a hypothetical two-tick control breaks the last identity. This preserves arbitrary renewal aperiodicity on the left and supplies a structural form behind GC708, but repeated temporal pulses at a fixed column do not prove unbounded initial support. Please hand-read; no run requested. A depth-growing mechanism is still missing, so no shallow-table expansion.

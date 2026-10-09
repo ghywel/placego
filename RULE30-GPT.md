@@ -17043,3 +17043,24 @@ If that temporal column is eventually periodic with some period p, the set of it
 ML-P1 held in every case: J >= floor(T/2). In fact T-J lies between 1 and 4; the smallest measured ratio is 24/28 for LSSS. This stronger finite observation is post hoc and is not a preregistered or proved longer-word bound. Independent decimal Rule 30 forward evolution checked every wall transition from each decoded prefix (ML-C1 PASS). Pure S and pure L satisfy GC706's necessary periodic-window cost J >= T-2P (ML-C2 PASS). Complementing the supplied SSSS right boundary changes the decoded left prefix, rejecting the stated counterfactual (ML-C3 PASS).
 
 **Unexpected terminal check and scope.** Each word contributes only its pre-return samples; the terminal renewal sample is omitted, so a final visible L need not renew its marker. The left replay imposes the supplied wall and neighbor boundaries. It verifies the inverse arithmetic independently but does not construct a right exterior realizing those samples. Actual right gates can only remove candidates. Four gaps cannot establish a uniform linear cost, rule out an aperiodic mixed tail, or yield an entropy estimate. Raw decoded prefixes remain outside git. Next useful input is a structural explanation of deep forced black bits for arbitrary aperiodic lifts; do not extend this into a word-length sweep without a new argument. Independent instrument/result reading requested; no prize result.
+
+
+## GC709 — Four left columns expose the renewal pulse train (2026-10-09, GPT)
+
+**Hand consequence toward GC708's missing structural input; independent reading pending.** Existing inverse recurrence and GC706's lifts were checked against the record before this block. Predicted that the first left column is black except at renewal times and that a shallow inverse converts those punctures into isolated pulses. Counterfactual: this shallow identity alone establishes deep forced support. It does not. No computation or word-length extension is performed.
+
+Let q(t) be 1 exactly at the synchronized renewal boundaries, including t=0, and 0 elsewhere. They are even and separated by 6 or 10 ticks. Let c_j(t) be column -j, with c_0(t)=t modulo 2 and c_-1 the nearest-right lift. Write XOR as xor. The left inverse is
+
+    c_(j+1)(t) = c_j(t+1) xor (c_j(t) OR c_(j-1)(t)).
+
+At even t the nearest-right bit is 1 only at a renewal start, by either lift; at odd t the wall is 1. Consequently c_1(t)=1-q(t). Applying the inverse three more times gives
+
+    c_2(t) = q(t) OR q(t+1),
+    c_3(t) = 1 - (q(t+1) OR q(t+2)),
+    c_4(t) = q(t+3).
+
+For c_2, an even t contributes q(t), and an odd t contributes q(t+1). For c_3, c_2(t) OR c_1(t) is always 1, so complement c_2(t+1). For c_4, c_3(t) OR c_2(t) is 1-q(t+2), since at most one pulse lies in any four consecutive ticks. Its xor with c_3(t+1)=1-(q(t+2) OR q(t+3)) leaves q(t+3). Thus arbitrary aperiodicity of the renewal word is carried unchanged into a genuine left-column pulse train, advanced by three ticks; this does not require periodicity or right-exterior realization beyond the assumed trace.
+
+**Unexpected separation check.** Four-tick spacing already suffices for this algebra, although the actual renewal family has spacing 6 or 10. With hypothetical even pulses every two ticks, c_1 equals the wall, c_2 is identically 1, c_3 identically 0 and c_4 identically 1; q(t+3) alternates. Dropping the separation hypothesis would therefore make the claimed identity false. This is a hand recurrence control, not an actual S/L trace.
+
+For T pre-return observations, four inverse steps determine c_4 only through t=T-5. The formula claims no terminal sample outside that range. At a marker, c_4(0)=q(3)=0, while c_2(0)=1; these agree with GC708's initial decoded prefixes. Every pulse in c_4 at a later time can be supplied by evolution of finite initial support, so infinitely many such temporal pulses do not by themselves force infinitely many initial black cells. This retains the counterfactual failure: a support-cost proof must control deeper inverse columns, not just pulse density at depth 4. No general linear bound or Q6 exclusion follows. Stop shallow pulse-table expansion here; seek a depth-growing mechanism.
