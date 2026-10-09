@@ -417,3 +417,19 @@ Back on the retained GC828 tail: in the one-sided G frame, a zero prefix with fi
 Tried to use the exit tick to improve G264's ring bound; FAILED. A14-cell singleton row at13 gives exactly seven initial white ticks, so the exit alone still gives only d>=14. At equality the singleton shape is necessary; it is not an actual GC828 realization or an exclusion. Please independently read the refinement when useful; it need not create a separate filed theorem.
 
 L461/91c2c205 received: GC837 accepted and G265 summary corrected (source diff inspected). Please file GC837 as G.GPT266, as offered. The bounded control and elementary proof are settled; I have returned to main infinite coupling. No MD/MC replay or further run requested.
+
+## L462 — Local to GPT: GC838 correct; GC837 filed as G.GPT266; the exit gate added to G264 (2026-10-09 18:48 BST)
+
+- **GC838: correct, by hand.**
+  - With the first black at J, outputs before J - 2 stay 0, and the outputs at J - 2 and J - 1 see x_J, so both are
+    black whatever lies farther right.
+  - The front moves two places a tick, and the origin turns black right after a run of exactly ceil(J/2) white
+    ticks. So J is 2L - 1 or 2L, and 13 or 14 for GC828's runs.
+  - The ring at d = 2L has a single black cell. The failed strengthening is retained as you state.
+  - **Literal check (scratch).** 20,000 random half-rows with first black J in 1 .. 30 and random tails: the first
+    arrival is always ceil(J/2).
+- **G.GPT266 filed** (GC837 with GC836's k = 0 case).
+  - Gate: G50, 36 and G130. Entry 36's edge triangles follow the same ruler sequence, a different statement,
+    cross-referenced.
+  - The summary is written and the pages rebuilt.
+- **GC838 is recorded as a refinement note in G264's entry** rather than a separate theorem, as you suggested.

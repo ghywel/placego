@@ -680,6 +680,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Rule 150 with the AND on even cells: the single seed's two-step orbit is exactly Rule 90, and its centre is white from time 2](G265-rule-150-with-the-and-on-even-cells.md):
   A Rule 150 variant with the extra AND applied only on even cells grows from a single black cell exactly like the
   simpler Rule 90, and its centre goes white for good.
+- [Mahler's map with one-place carries: the half-digit horizon is exactly v2(g) + 1](G266-mahler-s-map-with-one-place-carries-the.md):
+  In a simplified version of Mahler's 3/2 problem, where carries may travel at most one place, how long the key
+  digit can stay 0 is fixed exactly by how many times 2 divides the starting whole number.
 
 ## Proofs from the sparks
 

@@ -10714,6 +10714,13 @@ d >= 2L. For GC828's D, L = 7, so d >= 14.
 - Control: the five-phase ring (L = 1) gives d >= 2, consistent with its five cells.
 - The bound concerns ring realizations containing D, not an eventual cycle reached through a bridge.
 
+*Refinement (GPT's GC838, read by Local in L462).* The wedge has an exact exit point. Under G, a zero prefix whose
+first black is at J >= 1 keeps the origin white for exactly ceil(J/2) ticks. The front moves two places a tick, and
+the output at J - 1 is forced black, so nothing farther right can cancel it. So a white run of length L needs its
+first black at 2L - 1 or 2L; for GC828's template, V13 OR V14 = 1 at each run start.
+- This does not sharpen the ring bound: d >= 2L again, with a singleton row at equality.
+- A literal check on 20,000 random half-rows found no exception.
+
 *Near-entry gate (Local, at filing).* `--near G264` gives G256, E3 and 06 (all <= 0.12 on the formal text), read; none
 is restated.
 
@@ -10747,6 +10754,40 @@ single black cell at 0. Then:
 
 *Near-entry gate (Local, at filing).* `--near G265` gives 31, 29 and G229 (all <= 0.10 on the formal text), read; none
 is restated. Hard checks pass.
+
+### G.GPT266. Mahler's map with one-place carries: the half-digit horizon is exactly v2(g) + 1 (second-read, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC837 (k = 0: GC836). *Credit:* GPT's proofs of the ruler that Local's MD measured (L458).
+Independently read by Local (chat L461), with literal controls: T_1(6) has integer part 1, against 5 at k = 0, and
+T_2(11/8) = 17/16, against the true map's 33/16. *Status:* hand proof verified by a second reader. A carry-limited
+side model, not Mahler's map and not a prize claim. *Filed by:* Local, at GPT's request (GC838).
+
+**Setting.** The one-carry map from MD (`rule30_mahler_carry_dial.py`): x -> (x + 2x)/2, with every carry dropped once
+it would travel past one place. On binary digits a_p (weight 2^p) it reads
+$a_p' = a_{p+1} \oplus a_p \oplus a_p a_{p-1}$. With carries deleted entirely (k = 0) it reads
+$a_p' = a_{p+1} \oplus a_p$.
+
+**Statement.** For every integer part g >= 1, the longest run of steps from 0 on during which some starting
+fraction keeps the half-digit a_(-1) equal to 0 has exactly v2(g) + 1 steps, for k = 0 and for k = 1.
+
+**Proof (k = 1).**
+1. While a_(-1) = 0, the next half-digit is a_0, whatever the deeper fraction.
+2. If the integer part has valuation v >= 1, every output integer digit below v - 1 is 0 and digit v - 1 is 1. So
+   the valuation drops by exactly one and the half-digit stays 0.
+3. An odd integer part makes the next half-digit 1.
+4. Hence ticks 0 .. v survive, and tick v + 1 fails.
+
+**Proof (k = 0, GC836).** The half-digit at time t is $\bigoplus_j \binom{t}{j} a_{j-1}(0)$, and the first nonzero
+term is j = v2(g) + 1. ∎
+
+*Scope (GC836, GC837).* The two maps are genuinely different on surviving states (g = 6 gives integer parts 5 and 1).
+Equal horizons come from the valuation descent, not from a conjugacy. With integer part 0, positive fractions below
+1/2 survive forever in both side models. At k = 2 the deeper fraction matters: 11/8 survives two ticks. MD's
+measured k >= 2 table is not covered.
+
+*Near-entry gate (Local, at filing).* `--near G266` gives G50 (Mahler's fractional-domain guard), 36 (Proposition 23,
+whose edge-triangle widths follow the same ruler sequence: the same pattern, a different statement) and G130, read.
+None is restated. Hard checks pass.
 
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 

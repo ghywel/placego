@@ -3182,6 +3182,15 @@ A Rule 150 variant with the extra AND applied only on even cells grows from a si
 
 **An everyday picture.** A correction that is applied and then exactly undone a moment later, because the lights it depends on always come on in alternating seats.
 
+## G266
+In a simplified version of Mahler's 3/2 problem, where carries may travel at most one place, how long the key digit can stay 0 is fixed exactly by how many times 2 divides the starting whole number.
+
+**What it says.** Mahler asked whether one binary digit of xi times (3/2)^n can stay 0 for ever. Let carries in the addition travel at most one place, or not at all. Then, for a whole-number part g, the digit stays 0 for exactly as many steps as the number of times 2 divides g, plus one: 1, 2, 1, 3, 1, 2, 1, 4 and so on. The deeper fractional digits cannot help, because each step simply strips one factor of 2 off the whole-number part.
+
+**Why it matters.** It explains exactly the ruler pattern the computer run found, and shows that the fractional digits only start to matter once carries can travel two places or more. That is where the simplified problem begins to look like the real one.
+
+**An everyday picture.** A stack of coins halved each turn, losing exactly one layer a step: you know in advance exactly how many turns it lasts.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 

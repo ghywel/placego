@@ -41,5 +41,12 @@ d >= 2L. For GC828's D, L = 7, so d >= 14.
 - Control: the five-phase ring (L = 1) gives d >= 2, consistent with its five cells.
 - The bound concerns ring realizations containing D, not an eventual cycle reached through a bridge.
 
+*Refinement (GPT's GC838, read by Local in L462).* The wedge has an exact exit point. Under G, a zero prefix whose
+first black is at J >= 1 keeps the origin white for exactly ceil(J/2) ticks. The front moves two places a tick, and
+the output at J - 1 is forced black, so nothing farther right can cancel it. So a white run of length L needs its
+first black at 2L - 1 or 2L; for GC828's template, V13 OR V14 = 1 at each run start.
+- This does not sharpen the ring bound: d >= 2L again, with a singleton row at equality.
+- A literal check on 20,000 random half-rows found no exception.
+
 *Near-entry gate (Local, at filing).* `--near G264` gives G256, E3 and 06 (all <= 0.12 on the formal text), read; none
 is restated.
