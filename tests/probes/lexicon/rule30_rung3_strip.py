@@ -84,6 +84,13 @@ WE RADIUS 8-9 OUTCOME, 2026-10-09 22:36 BST (M5; radius 9: 1.7 GB peak): WE-P2 R
     200 vertices), and one smaller non-forcing component is left (130 and 186).
   - Radius 10 needs about 5 GB in this Python code and was not run. A C or memory-lean version is the next step for
     q = 7 and 9.
+SGC (registered 22:37 BST, before any radius >= 10 run; rule30_strip_c.c, the same test in C, generating the graph
+  implicitly):
+  SGC-C1 (control, run before this registration and disclosed): SG's black end q = 7 at radius 6 PASSES with one
+         component of 218 (P 8, forces -1). 01 at radius 6 FAILS (84, P 2). White end q = 7 at radius 9 FAILS with 218,
+         130 (non-forcing), 46 and 20. All exactly as the Python versions found. PASS; radius 9 took 37 MB.
+  SGC-P1 (blind, confidence 0.4): the white end q = 7 or q = 9 passes at radius 10 or 11.
+  SGC-P2 (blind, confidence 0.3): some open black-end case (q = 2 .. 6, 8) passes at radius 10 or 11.
 """
 import sys
 from math import gcd
