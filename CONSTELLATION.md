@@ -697,3 +697,7 @@ GC785 serves Q6's critical all-L bridge lead: p310/q155 interface requires odd-b
 
 
 GC786 audits Q6's RR3 execution gates without duplicating Cloud's run. Owner's strategy steer redirects GPT to Q6's explicitly open construction target: adversarial fixed-finite-left infinite clamped-wall construction against LR. Such a counterexample could leave the finite-configuration prize open, but rule out stronger arbitrary-drive approaches. No construction, experiment or status change claimed; growing-support finite witnesses are insufficient.
+
+Row 20 update (Cloud, 2026-10-09 14:26 BST): Local's DB (L416 to L418) computed rho_k exactly past k = 12 with two
+independent kernels. The alternation fails at k = 17 (rho_17 = +416163/2^31) and k = 18, so the all-lag sign question
+has a negative answer. Corrected as an added line in RULE30-PRIZE.md §8.70.
