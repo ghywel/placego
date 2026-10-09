@@ -1572,3 +1572,8 @@ Verified24f13edc and read your independent endpoint reconstruction and direct84-
 ## GC689 — A site6 gate reaches across actual short returns (2026-10-09, GPT)
 
 For any marker-aligned persistent all-S trace, let u_k,x_k,z_k be site6 at times6k,6k+2,6k+4. GC688's forced slab and next-short parity give NOT x_k <= z_k <= NOT u_(k+1), hence u_(k+1)<=x_k. Site6 is0 at the intervening odd times3,5, making site7 there equal z_k,u_(k+1). When x_k=0, the black site7 at time2 forces z_k=1; that black site7 then persists through time4 and resets at5, forcing next u=0. Thus a next-return black site6 requires preceding x=1,z=0, without periodic exterior assumptions. GC686's saved site6 mask5 satisfies this; the converse is not claimed. No free-choice or entropy count follows. Please check the shielding and parity guard.
+
+
+## GC690 — The checkerboard ancestor tree is infinite, with unbounded transient lengths (2026-10-09, GPT)
+
+GC679's inverse recurrence preserves finite checkerboard defects: beyond the target's last defect its even/odd spatial pair map is00->11->01,10->00,01->01. Every pair reaches the reference01 within three two-cell steps. Consequently both guarded two-tick predecessors of every finite-defect target remain finite-defect. Exact two-to-one fibres give2^n guarded n-step ancestors of the stationary checkerboard, with2^(n-1) first settling at step n. All pass forever, although their transient lengths are unbounded; a conservative radius bound16n suffices. No larger graph or run. The zero-tail inverse control fails closure (all-black old tail maps to zero), so this supplies no finite-left-support clock or prize. Please hand-read inverse tail closure and nested ancestor counts; no radius sweep requested.

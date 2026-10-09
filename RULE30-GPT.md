@@ -16692,3 +16692,32 @@ In particular a black site6 at the next short return requires x_k=1 and z_k=0 in
 **Independent and unexpected controls.** The existing GC686 certificate has site6 mask5, giving u=1,x=1,z=0 and next u=1, consistent with the gate; this reads the saved certificate rather than running another experiment. The local gate also permits x=0,z=1,next u=0. It does NOT force x=1 whenever next u=0: the implication is one-way. That permitted Boolean assignment is only a consistency control for the displayed implication, not a constructed infinite all-S row; GC687's restricted periodic-domain rigidity prevents using it as such without a full exterior proof. Each black-centre update above independently uses the literal Rule30 property f(0,1,r)=1 and f(1,1,r)=0 for both r values, so the shielding steps do not assume a missing farther bit.
 
 **Disposition.** This reaches beyond the universal slab to an explicit cross-return exterior restriction. It proves neither all-column temporal periodicity, a realizable branching family, a quantitative entropy bound nor finite-support compatibility. The gate need not be sufficient, and imposing it on a free abstract sequence does not create a CA witness. Please hand-read; next needs additional actual compatibility rather than an exterior-choice count or temporal-period sweep.
+
+
+## GC690 — Checkerboard inverse closure gives arbitrarily long transient left survivors (2026-10-09)
+
+**Hand prediction and domain.** Return to GC679's open analytical ancestor question, without expanding GC678's radius graph. Predict that all black-compatible two-tick preimages of any row with finitely many defects from q_i=i mod2 also have finitely many such defects. The wall alternates, and the tested neighbour is1 at black times. This is the cofinite-checkerboard domain, not finite left black support. GC679 already proves exactly two guarded predecessors for every target; the new obligation is tail closure under its inverse recurrence.
+
+For a target b and chosen old wall/neighbour, reconstruct
+
+    a_(i+1)=b_i XOR(a_i OR a_(i-1)).
+
+Suppose b_i=i mod2 for i>J. Choose any even m>J and inspect the pair(u,v)=(a_m,a_(m+1)). The next two reconstructed cells are
+
+    r=NOT(u OR v),    s=r OR v,
+
+because target indices m+1,m+2 have bits1,0. Thus the spatial two-cell map is
+
+    00 ->11 ->01 ->01,    10 ->00,    01 ->01.
+
+Every possible pair reaches01 after at most three iterations. Once that even/odd pair is01, every later reconstructed cell is the checkerboard. This proves one-tick inverse closure for BOTH choices of initial neighbour and either wall phase. Taking the smallest even m>J gives m<=J+2, so all defects of the predecessor lie before m+6; the conservative radius bound J+8 suffices. Two inversions give radius at most J+16 for every guarded two-tick predecessor. These bounds are sufficient, not claimed sharp.
+
+Let F be the imposed-wall two-tick map restricted to initial rows with neighbour1. Let B_n be the rows in this guarded domain with F^n(a)=q, retaining the guard at every intermediate black time. B_0={q}. By GC679 each member of B_n has exactly two distinct guarded predecessors, distinguished at initial depth2. Distinct targets have disjoint predecessor fibres because F is a function. The inverse-closure proof keeps both predecessors in the finite-defect domain. Induction therefore proves
+
+    |B_n|=2^n,    every member has defect radius <=16n.
+
+Since F(q)=q, B_(n-1) is contained in B_n. Exactly2^(n-1) members first reach q after n two-tick steps, for n>=1. All these rows pass the neighbour test forever: they follow guarded ancestors until q and then stay there. Thus finite checkerboard corrections include arbitrarily long transient left survivors, analytically and at unbounded radii. This does not require any nonstationary recurrent cycle. GC678's finite chain40->54->0 is consistent with the first two levels; the cardinality induction is not an extrapolation from that graph.
+
+**Independent and unexpected controls.** The four displayed spatial transitions also follow by substituting each pair into the literal Boolean identities r=1 XOR(u OR v), s=0 XOR(v OR r); this checks the parity and the reversed-neighbour convention. Tail closure is special to this target background. An all-black old tail with black wall produces an all-zero next tail, since1 XOR(1 OR1)=0. Thus inverting a zero tail can give infinitely many black cells, even with the old neighbour fixed1. The cofinite-checkerboard proof cannot be transferred to finite black support. The counterfactual finite-support inference is rejected, not a Q6 counterexample.
+
+**Disposition.** The earlier restricted finite-correction question now has an infinite explicit inverse-tree family and no uniform transient settling horizon across all radii. Arbitrary-radius survivor classification, other recurrent cycles, compatibility with an autonomous right half, finite left support and prize questions remain open. This proof needs independent hand reading; no radius sweep, quantitative deadline inference or generated ancestry list is proposed. Next choose a main-line input rather than counting more inverse-tree levels.
