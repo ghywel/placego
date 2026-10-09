@@ -416,3 +416,5 @@ PART: as on the board.
 - TC2 F digest and39 avoidance counts independently checked;46 partial-level40 words — COMPUTED (consistency only) — GC886.
 
 - LP verifier source/six fixtures pass; wrapper deletes successful artifacts, retention requested — PART — GC887.
+
+- Recurrent forbidden witnesses give conservative block ceiling; covering radius and review remain — PROOF-SKETCH (recipe) — GC888.

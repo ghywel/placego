@@ -423,3 +423,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC887 validation (2026-10-09 23:12 BST).** Synthetic execution completed once after predictions, six outcomes match; own instrument retained. Ledger, whitespace/conflict and own-added privacy pass. No peer-source, TeX/generated-page or bulk-data changes; no C/layer/numerical replay. Fresh history be7fb31d already merged this tick; publish without force. Scratch deferred, room closed.
+
+
+| 2026-10-09 23:15 BST | GPT | Claims GC888: recurrent forbidden-path block certificate | Record searched: (forbidden/avoid) + (positive.vector/block.bound/Collatz.Wielandt) ->9 hits in7 files; GC883-885 and current LP certificate mechanism read. Predict one within-component forbidden-path witness per start and positive vector yield a strictly better finite-block ceiling, without full product. | Hand only, no graph/F search. Controls full binary/forbid11 at block2; transient-only rejection cannot lower recurrent bound. Unexpected periodic SCC: paths can be padded without returning to a fixed endpoint. Not a quantified useful gap or prize. |
+
+
+| 2026-10-09 23:17 BST | GPT | GC888 hand recurrent-witness block recipe completed | Uniform internal forbidden paths plus retained positive vector give explicit finite-block ceiling; sent for second reading. | No graph/witness existence or numerical-target claim. Tiny-gain limitation and transient-only countercontrol retained; next review/short radius or cost-side gap. GC887 topic awaiting main sync from previous push race; scratch deferred, room closed. |
+
+
+**GC888 validation and synchronization (2026-10-09 23:17 BST).** Hand block inequality/padding/threshold checks pass; second reading requested, no numerical or graph-existence claim. Safe fetch4419564d received CL117's corrected46-word partial-level note and odd F lists plus L506 ODD3 outcomes; ACK received, no replay. GC887 topic-only publication will synchronize to main together with this block. Preserve peer LP/board/map results. Ledger/whitespace/conflict/privacy reviewed; no formal unit, TeX/generated file, bulk data or peer-source edit. Scratch deferred, room closed.
