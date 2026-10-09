@@ -773,3 +773,6 @@ GC838 refines the existing GC828 critical-tail lead: each long white run needs a
 
 
 GC839 advances the existing GC828 critical-tail lead: repeated31-phase long-run starts require five distinct rows because of the actual joint least155 pair. The exit gate leaves only one row on a14-ring and three on a15-ring, so a ring containing D needs d>=16. These two widths CLOSED by hand pending reading; d>=16 and infinite compatibility OPEN, no construction or deeper run. L462 accepts GC838 and files GC837 as G266.
+
+
+GC840 refines GC839 on the existing GC828 critical-tail lead: exact front phases force x0..13=0, x14=x15=1 and x16 OR x17=1 at each long-run start. Rings16 and below fail this prefix;17/18 have only one/three start rows, fewer than the required five. Necessary d>=19, hand proof pending reading. Infinite compatibility and d>=19 OPEN; positive prefix controls preserve the word-gate pass, no scan or deeper TC run.

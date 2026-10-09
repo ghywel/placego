@@ -1225,3 +1225,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC839 validation.** Hand deterministic-row collision proof, pure-period suffix guard, independent one-row/three-row enumeration and unexpected designated-pair-only scope check; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; no ring scan or reported random-check replay.
+
+
+| 2026-10-09 17:57 UTC | GPT | GC840 exact front phases strengthen retained-template ring bound to19 | Trace prefix forces first black14, next15 and at least16/17. Rings<=16 fail the prefix;17/18 have insufficient start-row capacity under joint155. | Hand proof, no run; independent phase/index audit requested. Prefix remains allowed on a longer half-row, infinite compatibility open and K6 stopped, room closed. |
+
+
+**GC840 validation.** Hand normalized-front recursion and stabilization bounds, independent even-phase product identity, J13/J14 origin indexing and one/three/six start-row counts; unexpected positive prefix controls preserve the earlier word gate. No experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; independent phase audit pending.

@@ -19792,3 +19792,41 @@ because the two exit bits have three choices and the remaining d-15 bits are fre
 **Independent and unexpected guards.** The d14 singleton argument independently recovers the sharper reason it fails here: D's31-tick repeated start would reset the entire row, forcing joint temporal period to divide31. The d15 enumeration gives a genuinely different three-state obstruction, rather than just reusing that singleton reset. Unexpectedly the proof still works if other ring columns are not known to be155-periodic: the designated pure155 pair alone rules out a collision among these five rows. Conversely remove that joint-period requirement and the five starts need not be distinct; run length and exit alone still allow the fourteen-cell first-arrival control. No bound for an eventual background omitting D can be substituted.
 
 **Disposition and receipts.** Rings of period14 or15 containing this actual proper31 template and the critical joint155 pair are CLOSED by this hand capacity proof, pending independent reading. The general d>=16 case and infinite half-row coupling remain OPEN; stopped K6 is retained, no deeper query requested. L462/24bc341a independently accepts GC838, files GC837 as G266 and adds the exit refinement to G264; receipt read without replaying the reported random checks. This proof advances the existing critical-tail lead, not a prize claim or a new side row.
+
+
+## GC840 — The next three trace bits resolve the exit pair and raise the retained-template ring bound to19 (2026-10-09)
+
+**Bounded main-line refinement, no experiment.** GC839 leaves six possible starting rows at d16. Before asking for a scan, inspect GC828's next three required trace bits, at ticks8,9,10. Prediction by hand: the normalized left front's first eight bits already constrain these rows, shrinking the start-row capacity further. Counterfactual: seven whites followed by1011 is forbidden in every G trace. It is not; retain a positive prefix control below. Existing edge-prefix mechanisms, GC838's first arrival and GC839's distinct-row argument are the inputs; no general edge-to-core transfer or new automaton theorem is claimed.
+
+**An exact short front calculation.** At a long-run start, zero the initial negative half-row. G reads only right neighbours, so this cannot change the origin trace. Let J be its first nonnegative black. In this modified row the leftmost black moves left by2 each tick. Write z_k(n) for the normalized digit at distance k from this moving front, with z0(0)=1. Its exact recursion is
+
+    z0(n+1)=z1(n+1)=1,
+    z_(k+2)(n+1)=z_k(n) xor (z_(k+1)(n) OR z_(k+2)(n)), for k>=0.
+
+Put c=z1(0), d=z2(0), e=z3(0). Direct substitution twice gives
+
+    s=z3(2)=c*(d OR e).
+
+For n>=2, z2(n)=0 and z3 alternates, equal to s at even n and1-s at odd n. The remaining bounds follow successively from the same recursion:
+- z4(n)=1 for n>=4, since it OR-accumulates the alternating z3;
+- z5(n)=z3(n) for n>=5;
+- z6(n)=z3(n) for n>=7, since its recursion is NOT(z5 OR z6) and the alternating1 resets it;
+- z7(n)=0 for n>=9: once z5=z6, their1 phase resets z7 to0 and their0 phase preserves it.
+
+These are hand recurrences, not finite observations extrapolated to all rows. They use only the initial front and its first three following bits, with arbitrary farther decoration allowed.
+
+**Apply the actual temporal prefix.** GC828 demands whites at ticks0..6 and the four-bit suffix1011 at7..10. GC838 leaves J13 or14. If J13, the origin at tick10 is normalized digit2*10-13=7, hence0 by the displayed bound. This contradicts the demanded final1. Thus J14. At J14, the origin at ticks7,8,9,10 is respectively z0(7), z2(8), z4(9), z6(10), namely1,0,1,s. The demanded suffix therefore forces s1. Translating c,d,e back to the original row gives
+
+    x0,...,x13=0; x14=x15=1; x16 OR x17=1.
+
+The exit is no longer an arbitrary active pair: it is at14, followed by a black at15 and another black at16 or17. This is necessary for the eleven-bit trace prefix, not sufficient for the full31-periodic template or its infinite tail.
+
+**Ring-capacity consequence under the same joint155 premise.** At d14, J14 is impossible. At d15, x15 wraps to the forced-zero origin. At d16, x16 and x17 both wrap into the zero prefix. Hence none can contain even this eleven-tick prefix. At d17, its only permitted start row has black cells14,15,16. At d18 there are exactly three permitted rows: black cells14,15 plus a nonempty choice at16,17. GC839 still requires five distinct31-spaced start rows, ruling out both17 and18. Thus a ring containing the actual GC828 D and the critical joint155 pair needs
+
+    d>=19.
+
+At d19 the two exit-choice bits have three choices and bit18 is free, giving six rows for this necessary count. No nineteen-cell realization, return map or larger-ring exclusion is inferred. The argument again concerns a ring containing D, not an eventual background after a bridge.
+
+**Independent and unexpected prefix controls.** A first black at14 with following bits c,d,e=1,1,0 has s1; the hand recurrences give exactly seven whites followed by1011 through tick10. The alternative1,0,1 does too. Thus the trace prefix is allowed, consistent with the earlier finite word gate: it is the narrow ring shapes that fail. By contrast a lone black at14 has s0 and gives suffix1010, locating the first changed bit. For J13 the tick10 zero is independent of s or the farther tail. The attempted universal forbidden-word shortcut is therefore CLOSED; no recorded word-gate pass is withdrawn.
+
+**Disposition.** Under the actual joint155 premise, rings through18 containing the retained template are CLOSED by this hand refinement, pending independent reading. Infinite coupling and d>=19 remain OPEN; K6 stays stopped, no run requested. The proof is a finite-front capacity gate, not a prize result or a revived edge-to-core argument. GC839 remains pending review and is subsumed here for this template; its general row-collision mechanism remains useful.

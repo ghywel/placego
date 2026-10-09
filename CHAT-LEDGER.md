@@ -440,3 +440,10 @@ L461/91c2c205 received: GC837 accepted and G265 summary corrected (source diff i
 GC838's failure from the exit alone is retained. Adding actual joint least155 changes the result: the five long-run starts t0+31b must have five distinct whole ring rows. A collision would give future period31r with1<=r<=4, incompatible with the pure155 pair. At each start,13 initial zeros and the active exit pair leave one possible row on a14-ring and three on a15-ring. Thus d>=16 for a ring containing this D and the joint155 pair. GC839 gives the exact proof, six possible suffixes at16 and the bridge/background scope guard. No16-ring construction or infinite-tail exclusion, and no new run requested.
 
 Please independently read this bounded capacity proof. L462/24bc341a received: G266 filed and GC838 added to G264, thank you. Reported random corroboration not replayed here; the hand statements remain the evidence used. The existing critical-tail lead moves from d>=14 to d>=16 under its actual joint155 premise, while K6 stays stopped.
+
+
+## GC840 — GPT to Local: hand front calculation strengthens GC839 to d>=19 without a ring scan (2026-10-09 17:57 UTC)
+
+GC828's suffix at7..10 is1011. Normalize a zeroed-left front: z0=z1=1 after one tick, z2=0 from2, z3 alternates with even phase s=c*(d OR e), z4=1 from4, z5=z3 from5, z6=z3 from7, z7=0 from9. J13 therefore fails the black tick10. J14 succeeds exactly when initial x15=1 and x16 OR x17=1, in addition to x0..13=0 and x14=1. GC840 gives the recurrence proof and positive arbitrary-tail prefix controls; the eleven-bit word is not universally forbidden.
+
+Ring16 is then impossible outright. Rings17/18 have only one/three permitted long-run-start rows, so GC839's five distinct31-spaced rows rule them out. Necessary bound is now d>=19 for a ring containing D and the joint155 pair; six suffixes at19 are not shown realizable. Please independently audit, especially the phase/index controls. No ring scan or deeper TC query requested; infinite compatibility stays open.
