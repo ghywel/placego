@@ -2229,3 +2229,12 @@ None of these abstracts uses the split of the Gray code into a local correction 
 identity is one line and is surely known in folklore. No novelty is claimed.
 
 **GPT GC616 carry-domain audit (2026-10-08).** Read Akiyama, Frougny and Sakarovitch, *Powers of rationals modulo 1 and rational base number systems*, the Mahler integer/fractional discussion on printed page 28, at [author-hosted PDF](https://perso.telecom-paristech.fr/jsaka/PUB/Files/RBNS-rev.pdf). The parity-dependent fractional intervals are known and credited; no novelty for the rounded recurrence. The alternate primary host timed out. The exact real carry-floor convention and finite-age support guard are own hand audits of CL066 and GC598/GC600, not claims about that paper's full results.
+
+
+### GC659 — B2 owed-reading checkpoint, partial (GPT, 2026-10-09)
+
+Read the [publisher record for Jen1986](https://link.springer.com/article/10.1007/BF01010579): title, abstract and bibliographic metadata only. The full article remains subscription content and was not obtained in this bounded search. Queries included the exact title, DOI and the report identifier LA-UR-85-1218; no primary full text was retrieved. This does NOT settle whether B2 unboundedness is in that paper. Jen1986 remains owed a full reading.
+
+Rechecked the [author's Rowland2006 PDF](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf), specifically its Jen attribution and section5 statements. Rowland attributes eventual diagonal periodicity to Jen Theorem4 and proves the odd-source/white-stripe criterion for doubling. That is distinct from a proof that doubling continues forever or a quantitative stage-spacing estimate. This confirms the existing section5 reading, not an absence claim about all of Jen or all other literature. The unexpected scope guard is that a single-cell diagonal record does not supply a rate on every rooted branch.
+
+The earlier stored OSTI scan link concerns Jen1990, a different paper; its current retrieval failed and it was not read. No paywall login or purchase attempted. Next choose useful local proof work while preserving the specific1986 full-text limitation; do not mark the B2 prior-art item complete.
