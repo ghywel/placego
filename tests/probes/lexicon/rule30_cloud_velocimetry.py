@@ -2,7 +2,7 @@
 """rule30_cloud_velocimetry.py: do triangles move? Particle-image velocimetry on Rule 30, and does the wheel print them?
 
 RUN-ON:     cpu (Python 3 standard library; big-integer rows)
-COMMAND:    python3 tests/probes/lexicon/rule30_cloud_velocimetry.py [T=4096] [part=all|piv|wheel]
+COMMAND:    python3 tests/probes/lexicon/rule30_cloud_velocimetry.py [T=4096] [part=all|piv|wheel|posthoc]
 COST:       expected a few minutes.
 
 Why (the owner, 2026-10-09, after Cloud's answer on the wheel and the random side). "Does the wheel 'print' triangles
@@ -49,6 +49,34 @@ PREDICTIONS, written 2026-10-09 19:58 BST, before any run of this script (T = 40
   Counterfactual. A correlation off the rightward band (VE-C or VE-P2 failing) would refute V1's reading and point to
   genuine moving structure. Information about the wheel persisting far right would mean the wheel prints into the
   random side.
+
+OUTCOME of the first run, 2026-10-09 (T = 4096; a few minutes on one core beside RR3).
+  VE-C PASS: on the random line the largest off-diagonal cell correlation is 3.43 standard errors, and the diagonal
+    reproduces the alternation law within 1.3 se at every d (-0.5001, 0.2501, -0.2501, 0.1564, -0.0783, 0.0753,
+    -0.0691, 0.0764).
+  VE-P1 HELD: the single cell's core gives the same, with the largest off-diagonal at 3.59 se and the diagonal within
+    1.5 se.
+  VE-P2 HELD: for triangle tops, the largest |C - 1| outside the band [d - 7, d + 7] is 3.42 se. Inside the band the
+    deviations are huge at every d (61 to 1,050 se).
+  VE-P3 HELD: the single cell's core gives the same, with 2.60 se outside the band.
+  VE-U HELD (the unexpected check): along the rightward line, C(d, d) runs 0, 2.10, 0.25, 1.92, 0.73, 1.25, 0.87,
+    1.37 for d = 1 .. 8, alternating about 1. A top never has another top one row down and one cell right, and is
+    twice as likely to have one two rows down and two cells right. That is the alternation law's rhythm, in triangles.
+  VW-C PASS: on clean rows (58.0% of rows start a clean 56-step stretch of U) the wheel's position and the clock's
+    parity fix column 1 and every column -1 .. -12 completely, cells and triangle tops alike.
+  VW-P1 REFUTED, VW-P2 REFUTED: the wheel's position also fixes columns 2, 3 and 4 completely (0.970, 0.997 and 0.857
+    bits, all of their entropy). It fixes 93% of column 5's entropy, then 94, 76, 70, 55, 46, 38 and 29% out to
+    column 12. Triangle tops in columns 2 .. 10 follow it in the same way.
+  POST HOC (written after the run; part=posthoc). The run conditions on column 1 following U for the next 56 rows,
+    which constrains the right side's present. So the same measure was taken with the wheel's past 56 rows instead.
+    It still fixes 94% of column 2's entropy, then 89, 81, 71, 64, 51, 48, 38, 30, 24 and 17% for columns 3 .. 12.
+    Column 2 repeats 56 rows later at 95% of consecutive clean starts.
+  Reading. In the period-2 world the wheel is not one column. It is the edge of a block of columns that turns
+  together: columns 1 to 4 locked rigidly, the lock fading over about ten columns into the random side. Triangles in
+  the block are printed at the same places every 56 rows, like teeth on a turning gear, until a kick from further
+  out slips it. Outside the block, and everywhere in the single cell's real core, triangles are speckle with one
+  drift: their births echo along the rightward light line, with the alternation law's sign rhythm, and nothing else
+  correlates.
 """
 import random
 import re
@@ -230,8 +258,48 @@ def wheel():
               % (k, hx, m, 100 * m / hx if hx else 0))
 
 
+def posthoc():
+    """The wheel's past 56 rows instead of its next 56: how much of column k at time t do they fix?"""
+    rot = {sum(int(U[(p + j) % 56]) << j for j in range(56)): p for p in range(56)}
+    n = 4 * T
+    res = {k: Counter() for k in range(2, 13)}
+    rep = Counter()
+    for seed in range(16):
+        rnd = random.Random(1000 + seed)
+        row = rnd.getrandbits(2 * n + 64) << 1
+        rows = []
+        for t in range(n + 64):
+            row = (row & ~1) | (t % 2)
+            rows.append(row)
+            row = (row << 1) ^ (row | (row >> 1))
+        col = {k: [(rows[t] >> k) & 1 for t in range(n + 64)] for k in range(0, 13)}
+        P = [rot.get(sum(col[1][t + j] << j for j in range(56))) for t in range(n)]
+        for t in range(1024, n):
+            pp = P[t - 55]
+            if pp is not None:
+                for k in range(2, 13):
+                    res[k][(2 * ((pp + 55) % 56) + t % 2, col[k][t])] += 1
+            if P[t] is not None and t + 1 < n and P[t + 1] is not None:
+                rep[col[2][t] == col[2][t + 56]] += 1
+
+    def mi(c):
+        nn = sum(c.values())
+        px, pq = Counter(), Counter()
+        for (p, x), v in c.items():
+            px[x] += v
+            pq[p] += v
+        hx = -sum(v / nn * log2(v / nn) for v in px.values())
+        return hx, hx + sum(v / nn * log2(v / pq[p]) for (p, x), v in c.items())
+    for k in range(2, 13):
+        hx, m = mi(res[k])
+        print('past window: column %2d: H = %.3f, fixed by the wheel %.3f (%.0f%%)' % (k, hx, m, 100 * m / hx))
+    print('column 2 equal 56 rows later at consecutive clean starts:', dict(rep))
+
+
 if __name__ == '__main__':
     if PART in ('all', 'piv'):
         piv()
     if PART in ('all', 'wheel'):
         wheel()
+    if PART == 'posthoc':
+        posthoc()
