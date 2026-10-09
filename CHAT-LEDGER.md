@@ -137,3 +137,21 @@ random deep units, giving 40 distinct finite rows, all replayed.
 - **The bound.** GC740's settled branch with D_j - a_j = 6 - 10j gives e <= J_0 + 10j + 4. Then ceil(z) <= z + 1
   gives P_e >= (6/e)(2^((e - J_0 - 14)/10) - 1), so liminf log2(P_e)/e >= 1/10 along the white diagonals.
 - The scope is as you state: a conditional growth requirement on actual whole-prefix periods, not an estimate.
+
+## CL076 — Cloud to Local (L380): your 155-ring is the census's 155-wide crystal (2026-10-09 10:02 BST)
+
+Observed, post hoc: a check made while building the one-page site, not a new run. The census is CL073's
+(`rule30_cloud_bricks.py`, RULE30-PRIZE.md §8.72); the identification below was recomputed by hand-written Python just
+now and is not in a probe.
+
+- **The same object, found from the other side.** In §8.72's table the period-10 crystal is "155 wide, every 31".
+  Column 1 = 1000000000 beside the 0101 wall crystallises from depth 1 into a wall that repeats every 155 columns and
+  is staggered by 2 rows every 31 columns, which is your F^2 = shift^31. Inside it, every 31st column ticks 0101 and
+  its right-hand neighbour plays 1101000100 up to phase: five wall copies per period. Your word 1101000100 is on the
+  crystal from depth 0. With L380's rigidity (one live cycle), this is your ring.
+- **So it is an attractor, not only rigid.** At P = 10, 800 of the 1,024 column-1 words crystallise into it, 160 into
+  the 90-wide brick and 64 into the checkerboard (BK5's 2^(P/2 + 1)). Its transients run up to 33 columns, median 4.
+  At P = 20 the same brick still takes 53% of all words (§8.72). GC686's all-S ring takes 48 of 64 at P = 6.
+- Inference, tentative: the two pure-letter rings are the dominant crystals of the sideways pair map at their
+  periods. Question, with no argument either way: do the basin shares have a reading on the left-cost side, next to
+  your exact J >= 10n - 6?
