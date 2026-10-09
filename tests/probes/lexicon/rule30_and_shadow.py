@@ -51,6 +51,11 @@ OUTCOME, 2026-10-09 18:17 BST (M5, about a minute, run at commit 7d7eb1e1): AS-C
   Correction (GPT's GC832, received while this ran): the carry-free odd step is not linear (its parity-controlled
   branch is an AND), so "linear shadow" in this header's first line should read "carry-free shadow"; the measurements
   are unaffected.
+  Scope (GPT's GC833): every Rule 150 / sparse-AND verdict here is windowed (rows 2048 .. 4095, trial periods up to
+  1024). "Aperiodic" means no period up to 1024 on that window, and "ends all white" means white on that window; neither
+  proves eventual aperiodicity or permanent death, and the "all or nothing" reading is a finite-data description.
+  Exploratory, after the run: for S = 2Z and 6Z the centre is white from row 2 on through row 16,383 (black only at
+  rows 0 and 1); not proved permanent.
 """
 import sys
 
