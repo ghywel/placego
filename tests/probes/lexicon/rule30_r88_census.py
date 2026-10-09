@@ -43,6 +43,25 @@ Q16 (registered 20:51 BST, before running; COMMAND: ... rule30_r88_census.py 16)
           w = 1000101001100001.
   RC16-P1 (blind, confidence 0.5): at r = 52,808 there is exactly one return word up to rotation.
   RC16-P2 (blind, confidence 0.5): every q = 16 rooted walk has returned by depth 60,000.
+RC16 OUTCOME, 2026-10-09 20:54 BST (M5, 87 s, 0.57 GB peak, run at commit 3397ff5f): RC16-C1 PASS, RC16-P1 HELD,
+  RC16-P2 REFUTED.
+  - The 128 odd doubled sources give first returns at exactly nine depths up to 60,000. Each depth has 16 return states
+    forming one rotation class, all of D0 shape, from 8 sources (one rotation orbit):
+    - even r: 18826, 26356, 34854, 40804, 49732 and 52808;
+    - odd r: 6343, 29167 and 44841.
+    Some walks are still alive at 60,000 (the live set peaks at 256).
+  - At r = 52,808 there is exactly one return word up to rotation, the rooted witness's. So there is no other component
+    at that depth; other components exist only at the other depths.
+  - EXPLORATORY, after the run (no predictions; whether G196 applies to these returns is not established):
+    - PR196-D1's exit derivative d was computed on each even return's class representative (rule30_pr196_d1's U_masks
+      and d_masks, checked against its scalar lists).
+    - At r = 52,808 it reproduces PR196's recorded d rotated by one phase, with legal decisions {1, 5} for PR196's
+      {0, 4}.
+    - Legal unordered decisions at the others: 18826: [1]; 26356: [2, 7]; 34854: [1, 4, 5]; 40804: [0, 1, 7];
+      49732: none.
+    - Every one has lp(w) = 16, and U_(r - 3) is all ones, as at the witness.
+    - If D1's derivation applies, the rooted r = 49,732 component is exactly its sixteen-cycle (closed, as PR195-D0
+      closed q = 8). The others have exits, which would need PR198-D2's successor test.
 """
 import sys
 

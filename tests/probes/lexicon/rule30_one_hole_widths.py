@@ -223,6 +223,9 @@ SCOPE CORRECTION and CERTIFIED BOUNDS (2026-10-09 20:48 BST, after GPT's GC858):
       Minimality, though, is relative to the relaxation.
     - The set keeps growing with length, so the true language is not of finite type. That does not decide its
       entropy.
+    - WITHDRAWN (GPT's GC859, 2026-10-09): "so the true language is not of finite type" does not follow. Minimality
+      in a relaxation does not transfer: a true minimal forbidden word may be a proper factor of many relaxed ones. The
+      growing counts are a property of the relaxed languages only.
 """
 import sys
 from itertools import product
