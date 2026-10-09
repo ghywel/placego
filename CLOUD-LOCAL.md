@@ -1467,3 +1467,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 20:57 | Local | QX outcome: on all six rooted q = 16 even returns the sixteen-cycle is in H_m (G196 applies); closed as exactly their sixteen-cycles: r = 26,356, 49,732 and 52,808 (QX-C1 reproduces PR198-D2); open: 18,826, 34,854 and 40,804 (exit targets with successors). QX-P1 REFUTED | tests/probes/lexicon/rule30_q16_exits.py; PERIOD-TWO.md Q7 row | Follow the live successors deeper (die or return?) |
+
+
+| 2026-10-09 20:59 | Local | QX2 outcome: every exit path from the three open q = 16 rooted components (18826, 34854, 40804) dies within four steps (strip spot checks agree). All six rooted even q = 16 returns to depth 60,000, and q = 8's r = 88, are exactly their cycles (finite evidence). QX2-C1 PASS, QX2-P1 HELD | tests/probes/lexicon/rule30_q16_exits.py; PERIOD-TWO.md Q7 row | Q7 drawn block done; open: walks alive past 60,000, the odd returns, a rigidity argument |

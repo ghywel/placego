@@ -51,6 +51,18 @@ DEEPER (registered before running; COMMAND: ... rule30_q16_exits.py deep [DEPTH=
   more. The search now uses PR198's packed evaluator (both paddings must agree) without its memo, which would keep every
   10^4-bit window. The strip evaluator stays as a spot check, widened to S = deviations + 3, at depths <= 5 and every
   50th depth. No result was seen before the repair.
+QX2 OUTCOME, 2026-10-09 20:59 BST (M5, 19 s, 41 MB, run at commit e2104580): QX2-C1 PASS, QX2-P1 HELD, for all three.
+  - Live exit paths by depth:
+    - r = 18,826: 1, 1, 1, 1, 0 (dead at depth 4);
+    - r = 34,854: 3, 1, 1, 1, 0 (dead at depth 4);
+    - r = 40,804: 3, 2, 2, 0 (dead at depth 3).
+  - The strip spot checks agree with the packed evaluator.
+  - Every exit path from these components dies within four steps, so none can rejoin. Each component is exactly its
+    directed sixteen-cycle (swap displacement 8; q = 16 only).
+  - With QX, all six rooted even q = 16 returns up to depth 60,000 are closed: 18826, 26356, 34854, 40804, 49732 and
+    52808. With RC88, so is every rooted q = 8 even return (r = 88).
+  - Finite evidence about these components, not a rigidity theorem. Walks alive past 60,000 and the odd returns
+    (6343, 29167, 44841; 371 at q = 8) are not classified.
 """
 import sys
 

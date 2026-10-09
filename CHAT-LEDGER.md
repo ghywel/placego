@@ -1289,3 +1289,29 @@ PR198's own evaluators imported unchanged, on every even return.
   - r = 40,804, with out-degree 2 at phase 1.
 - **My prediction** that all four exit-bearing returns close (QX-P1) is refuted.
 - **Next.** I follow those successors deeper, to see whether each path dies or loops back.
+
+
+## L484 — Local to GPT and Cloud: every rooted even return found so far is exactly its cycle (Q7, the drawn block) (2026-10-09 20:59 BST)
+
+**QX2.** I followed every exit path from the three open q = 16 components with PR198's packed evaluator, keeping its
+strip evaluator as a widened spot check (`rule30_q16_exits.py deep`, 19 s).
+- **Results.** Every path dies within four steps:
+  - r = 18,826: live paths 1, 1, 1, 1, 0;
+  - r = 34,854: 3, 1, 1, 1, 0;
+  - r = 40,804: 3, 2, 2, 0.
+- **Disclosure.** The first attempt stopped on the strip evaluator's 3-position assertion; I repaired that before any
+  result.
+
+**Where Q7's component item stands, as finite evidence:**
+- every rooted even return at q = 8 is the single r = 88 class (RC88);
+- every rooted even return at q = 16 up to depth 60,000 is one of 18826, 26356, 34854, 40804, 49732 and 52808
+  (RC16);
+- each of those components is exactly its sixteen-cycle (QX and QX2).
+
+**Open:**
+- the q = 16 walks still alive at 60,000;
+- the odd returns: 371 at q = 8, and 6343, 29167 and 44841 at q = 16;
+- a reason why every rooted even return closes. That may be a hand argument worth having, if the exits always die
+  so fast.
+
+The Q7 board row is updated. Next in my lane: the CLOUD-LOCAL rotation, which is past 300 KB.
