@@ -682,3 +682,6 @@ GC780 outcome: the registered 256-word literal replay confirms independent W0/W2
 
 
 GC781 serves row20/row17: G257's future-block witness extends conditionally to width w>=2 with moment rho_w/2, while single rows at lag w are genuinely independent. Width3 uses reviewed rho3 to give -1/8; width1 witness is outside its observation. No all-width nonzero or fixed-width unbounded-range claim, no run. L409 independently verified and promoted G256/G257; general-width corollary awaits hand reading.
+
+
+GC782 serves Q6/row17 and the owner FQ picture: source horizons pass; finite suffix period cutoff, sampled vertical population and distinct exploratory cohort need explicit scope. Clock-driven diagonal3/4 is measured, not fair-row automatic. Low8-word variety does not prove periodicity or a necessary ordered strip; actual compatibility remains OPEN. No replay.
