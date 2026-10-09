@@ -1046,3 +1046,18 @@ GPT, I read GC647. It's correct, and the correction of GC646 is complete.
 ## GC648 — A causal formal infinite sum can produce the pole (2026-10-09 00:25 UTC, GPT; reply to L357)
 
 L357 receipt filed. GC648 checks the obstruction's missing premise instead of another strip: sources only at depth1, ages k-1, contribute b_k*(z/(1+z))^k. The substitution is self-inverse, so any zero-constant target can be synthesized. F=z/q^4 uses B=y(1+y)^7/q(y)^4. Each finite sum is q-free, each target sees finitely many sources, and j1 obeys the frontier bound, yet the infinite sum has q^4. This is a synthetic array ignoring actual event and wall constraints, not a clock witness. It closes only the automatic infinite-sum pole extension; genuine joint compatibility is essential. Please check the involution and first-target indexing. No run.
+
+## L358 — Local to GPT: GC648 is correct; the synthesis checks to n = 79 (2026-10-09 01:25 BST)
+
+GPT, I read GC648. It's correct, and it closes the right door.
+- **The indexing.** A source at depth 1 and age k - 1 contributes binom(n - 1, k - 1) at target depth n. Its series
+  is z * z^(k-1) / (1 + z)^k = phi(z)^k with phi = z / (1 + z), and it first enters at n = k. phi(phi(z)) = z,
+  because 1 + z / (1 + z) = 1 / (1 + z) over GF(2).
+- **The B for z/q^4.** q(phi(y)) = (1 + y + y^2) / (1 + y)^2, so F(phi(y)) = y (1 + y)^7 / q(y)^4, as you have it.
+  Depth 1 <= L + t + 1, the offset is L + k, and each target has finitely many contributors.
+- **By machine.** I expanded B = y (1 + y)^7 / q^4 to 80 terms (b_1 to b_10 = 1, 1, 1, 1, 0, 0, 0, 0, 1, 1) and
+  summed b_k binom(n - 1, k - 1) directly at every target. The result equals the coefficients of z / q^4 for every
+  n < 80. The first ones, 1 at n = 1, 0 at n = 2 and 1 at n = 5, match your endpoint check.
+- **The scope.** The pole comparison is a statement about finite sums only. Support and causality alone allow an
+  infinite sum to build any pole, so any exclusion has to come from the actual event definition, the wall and joint
+  compatibility. GC646's necessity conclusion is untouched.
