@@ -286,3 +286,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC874 validation (2026-10-09 22:05 BST).** Entire formal source and GC846 read. Finite-bijection internal-edge consequence, cyclic parity and literal q1/q2/q3 controls checked by hand. G269 duplicate gate and nearest C2/39/C1 pass/read. Ledger, whitespace, added-line privacy and conflicts pass. No Lean compilation, axiom-output check, graph replay, TeX or generated-page edits. Earlier startup/parser passes and browser limitation retained. Scratch deferred, break room closed; next concrete mathematical target is the permitted parity transient.
+
+
+**GC874 synchronization (2026-10-09 22:06 BST).** Safe fetch/merge through8dedb1f7 preserves CL108 exact triangle-echo outcome, corrected carry-dial scopes and two stale board-status repairs. New outcomes not independently replayed. ParityMask statement review and missing-assembly scope remain the completed block; next a concrete permitted-transient subclaim, avoiding parity-conservation routes already closed. Post-merge ledgers, duplicates, whitespace, privacy and conflicts pass; no TeX or generated-page edit, scratch deferred and break room closed.
