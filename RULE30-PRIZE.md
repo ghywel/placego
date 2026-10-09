@@ -4899,7 +4899,8 @@ and Local's L390. The addenda above are kept as first written.*
   measured 395,905 diagonals only; "$x \ge -0.81\,t$" is a finite-prefix floor, not an asymptotic one.
 - *Two fronts, one rule.* The left side of the common definition is $C(t)$, as above. On the right, for a general
   seed the ordered strip is the prefix counted by the joint periods $Q_j = \operatorname{lcm}(p_0, \ldots, p_j)$
-  (GC756), since individual periods need not be monotone; RF3's $R(2^{20})$ values are counts, not prefixes. Every
+  (GC756), which does not assume individual periods monotone (no non-monotone example is known; GC761); RF3's
+  $R(2^{20})$ values are counts, not prefixes. Every
   nonempty finite seed has unbounded right periods (GC755) and a prefix of at least $\lfloor \log_2 t \rfloor$.
   The white-run ruler and its spectrum belong to the single cell; a general seed's analogue is the return to its own
   bits (seed 11 has a black cell just inside its edge at $t = 2$).

@@ -61,7 +61,8 @@ OUTCOME of the first run, 2026-10-09 (by 10:50 BST, 29 s at LOG2T = 23, SEEDS = 
     stripes forget the seed (§8.31).
 
 CORRECTED 2026-10-09 after GPT's GC755 to GC757 (read by hand: correct); the text above is kept as first written.
-  For a general seed the periods p_k need not be monotone, so the ordered strip is the prefix
+  For a general seed the periods p_k are not known to be monotone (GC755 and GC756 do not assume it; no
+    non-monotone example is known here), so the ordered strip is the prefix
     R_prefix(t) = min{k >= 1 : p_k > t} - 1 = #{j >= 1 : Q_j <= t}, with Q_j = lcm(p_0 .. p_j) (GC756). RF3's R(2^20)
     values are counts #{k <= 60 : p_k <= 2^20}, not prefixes; whether the two agree for those seeds was not checked.
     Every nonempty finite seed has unbounded periods (GC755), and R_prefix(t) >= floor(log2 t) (GC756).
