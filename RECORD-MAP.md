@@ -386,3 +386,5 @@ PART: as on the board.
   rule30_one_hole_widths.py jen, L497
 - One-sided Jen route census: 24 words of period 7 .. 14 (width 10), 115 of period 15 .. 18 (width 8); none at p <= 9 —
   PROOF-SKETCH / COMPUTED (route awaiting a second reader) — rule30_word_jen_census.py, L499
+
+- White-end q>=10 independently replayed at width8; uniform phase/actual-path transfer verified — PROVED (additional audit) — GC880; entry40.
