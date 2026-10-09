@@ -84,6 +84,14 @@ RW (registered 21:10 BST, before any q = 32 result; the C walker rule30_rooted_w
         steps.
   RW-P2 (blind, confidence 0.6): every one of them keeps at most 2 live states.
   RW-D1 (descriptive): the return depths, or "alive at 10^9".
+RWC (registered 21:13 BST, while RW ran; RW had reported 0031 -> 45,059,052 and 003b -> 704,584,852, and 0001, 0007,
+  0013, 0015, 0023, 0025 and 0037 alive at 10^9; the walker's cycle mode, Brent's detection on the one deterministic
+  path, where GC863's reset uniqueness gives exactly one child to every nonzero driver):
+  RWC-C1 (control, run before this registration and disclosed): the cycle mode reproduces all q = 8 and q = 16 return
+         depths. PASS.
+  RWC-P1 (blind, confidence 0.5): at least one q = 32 orbit alive at 10^9 enters a NONZERO cycle (never returns)
+         within 5 x 10^9 steps.
+  RWC-P2 (control): every orbit that RW saw return returns at the same depth in the cycle mode.
 """
 import sys
 
