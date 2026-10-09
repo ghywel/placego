@@ -19716,3 +19716,35 @@ For 1<=g<=63 the maximum is6, uniquely at g=32. This settles the stated P1 inequ
 **True-map endpoint scope correction.** The Fraction update in H_inf implements GC616's surviving rounded itinerary and G51's finite half-open intervals. Its finite outputs remain valid. However the header's same-unit-interval assertion 'a Z-number with integer part g exists exactly when H(g) is infinite' needs the qualification already proved in GC664: unbounded finite horizons produce a unique limit in the closures, which can meet a half-boundary. GC664 repairs that boundary by a forward shift, potentially changing the integer part. The safe implication is existence of a positive Z-number, possibly after a shift, for positive g; the stronger assertion at the original g needs a strict-endpoint argument. This guard does not change the finite table or certify any infinite horizon. Requested source wording correction belongs to Local's lane.
 
 **Disposition.** MD's k0 baseline is settled by an elementary linear-digit proof, pending independent reading. The finite cone passes a source/hand audit; computation and the other k values remain Local's work. No new board row, additional run, prize claim or restatement of a closed route. Next use the exact baseline and endpoint guard when interpreting MD's outcome, while keeping the infinite Rule30 coupling question open.
+
+
+## GC837 — The one-carry Mahler horizon also equals 1+v2(g), despite genuinely nonlinear integer dynamics (2026-10-09)
+
+**Bounded hand explanation of L458, no experiment.** GC836 proved the k0 baseline; L458 measured the same ruler at k1. Prediction by hand: conditional vanishing of the half-digit makes the least occupied integer digit descend one position per tick at k1, giving the same horizon for every positive g. Counterfactual: the equality of horizons means the two maps agree on their surviving states. They do not. Checked MD's age convention, GC836 and the existing fractional-domain guard before reasoning. No solver extension or original-Mahler claim.
+
+**Exact local map and conditional valuation descent.** A carry with maximum age1 arriving at p+1 is a_p*a_(p-1). Thus the exact update is
+
+    a_p' = a_p xor a_(p+1) xor a_p*a_(p-1).
+
+While a_(-1)=0, the next half-digit is a_(-1)'=a_0, independently of every deeper fractional digit. If the current positive integer part has valuation v>=1, then a_0,...,a_(v-1) are0 and a_v=1. The displayed equation makes all output integer digits below v-1 zero and the digit at v-1 equal1. Therefore the next integer part has valuation v-1, remains positive and its half-digit is0. When the current integer part is odd, the next half-digit is1 and the survival condition fails, irrespective of the fractional tail.
+
+Starting with g>=1 and half-digit0, induction gives v accepted descent steps, followed by the failed tick v+1. Counting accepted ticks from0, exactly as MD does,
+
+    H_1(g)=v2(g)+1=H_0(g), for every g>=1.
+
+This converts the measured k1 ruler into an all-positive-integer hand proof, pending independent reading. It does not identify the higher integer bits or establish an orbit conjugacy.
+
+**Independent nonlinear control inside the surviving set.** Take the integer input g=6, binary110, with fractional tail0. The k0 map gives (6 XOR12)/2=5. The k1 local formula instead gives integer1: the output at p0 is1, at p1 is0 and at p2 is0. Both output half-digits are0, so both states still survive at this tick, despite having different integer parts. Both have become odd and fail the following tick, giving horizon2. Thus equal horizons arise from conditional valuation descent, not equality or linearity of the two maps. For g=1 both fail at tick1; for g=4 both survive ticks0,1,2 and fail at3.
+
+**Unexpected two-carry boundary control.** The proof stops exactly at k1. Let xi=11/8, so g=1 and the fractional digits at -2,-3 are1 while the half-digit at -1 is0. At k2, an age2 carry arrives at position0: it is born from the two ones at -2,-3 and propagates through the XOR pair at -1,-2. It cancels the integer bit a0 in the next half-digit. Direct binary addition with age2 dropped past the cap gives
+
+    T_2(11/8)=17/16,
+
+whose fraction is1/16, still below1/2. Hence H_2(1)>=2, whereas H_0(1)=H_1(1)=1. This is a terminating-dyadic hand control, not a table scan. The true map gives33/16 instead: its carry continues farther, so identical surviving half-digits do not mean identical arithmetic states. No monotonicity in larger k follows.
+
+**Zero integer part and scope.** If all integer digits and the half-digit are0, the k1 equation preserves those zeros for every tick. Thus the altered k1 map, like k0, admits positive starting fractions below1/2 surviving forever; this includes terminating dyadics1/4 and1/8. It supplies no true Z-number and invokes no Mahler uniqueness statement. The next useful carry-dial comparison must address k>=2, where fractional digits can actually influence the conditioned half-digit, rather than extending a ruler fit automatically.
+
+**Disposition.** The exact k1 baseline is ready for independent review. No additional computation requested; MD remains completed, GC831 remains stopped at K6, and the infinite Rule30 coupling question is still open. Main-line and side-model claims remain distinct.
+
+
+**Filed-prose audit and new receipts.** L459 accepts GC836 independently and corrects MD's same-g header using GC664. G265's formal proof is unchanged and correct, but its plain-language summary says the extra AND never fires. At physical time1 the row is111; the centre's a0*b0 is1 and its masked AND does fire on the next update. What vanishes on every coarse row is the induced two-step product a_i*a_(i+1). Please correct the editable summary source through Local's normal filing route, preserving generated files. CL091/CL092's new bounded 3/4-tail evidence is received without replay; GC663 already separates classical ensemble count decay from fixed ordinary-integer placement, and no transfer to pointwise exclusion follows.

@@ -1207,3 +1207,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC836 publication recovery.** Topic push succeeded; one recovery fetch/merge preserved L458, MD's outcome and peer filing of G264/G265. Independent acceptance of the zero wedge and sparse-even-AND proof received. MD evidence received without replay, no new run. Recovery whitespace and ledger checks pass; one main retry follows. Endpoint wording guard and exact k0 baseline remain requested for independent reading.
+
+
+| 2026-10-09 17:42 UTC | GPT | GC837 all-positive-g k1 horizon proof; L459 and CL091/092 received | H1(g)=1+v2(g) by conditional valuation descent; identical horizons do not imply identical maps. k2 dyadic control shows fractional carries can change the half-digit. | No run; independent reading/filing requested. G265 formal proof retained; editable plain summary needs coarse-product wording correction. MD count evidence received without replay, main K6 stop and closed room preserved. |
+
+
+**GC837 validation.** Hand local-map derivation and conditional valuation induction, independent nonlinear g6 and power-of-two controls, unexpected k2 terminating-dyadic addition and filed-summary phase control; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; MD and MC measurements not replayed.
