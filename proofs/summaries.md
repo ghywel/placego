@@ -3119,6 +3119,15 @@ In Rule 30, no pattern that starts from finitely many black cells can settle int
 
 **An everyday picture.** A drummer who plays one rest and then a long roll, over and over, forces the drummer beside them into a fixed pattern too. Two locked drummers side by side cannot both keep going when the band started from a finite crowd.
 
+## 39
+In the walk that builds Rule 30's repeating columns one after another, every walk that starts from a blank column comes back to a blank column, whatever the period.
+
+**What it says.** Each new column is forced by the two before it, and you can also run the rule backwards to recover the earlier column from the later two. A walk that never came back to a blank column would have to loop, and running it backwards from the loop would lead to a column before the start, which cannot exist.
+
+**Why it matters.** It explains a computer census in which every such walk did return, and it is checked line by line by a proof assistant.
+
+**An everyday picture.** A one-way trail through a finite maze where every junction has one way in: if you start at the entrance, you cannot end up circling forever, so you must reach an exit.
+
 ## G259
 Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right half: one goes blank and the other freezes.
 

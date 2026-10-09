@@ -329,8 +329,8 @@ PART: as on the board.
   x^3 - x^2 - x + 1 — PROVED (GC857) — L479
 - True half-line system with the wall 0 1^4: hole word 10000 never occurs; |L_5..7| = 31, 60, 108 —
   COMPUTED — rule30_one_hole_direct.c, L480
-- Rooted walks return at every period q (injective step, reset uniqueness) — PROVED (Lean, no sorryAx; GPT
-  GC867) — tests/probes/lean/RootedReturn.lean, L487, L489
+- Rooted walks return at every period q (injective step, reset uniqueness) — PROVED (GPT GC867; Lean, no
+  sorryAx) — PROOFS.md entry 39, tests/probes/lean/RootedReturn.lean, L487, L489
 - Rooted returns: q = 8 at 88 and 371 only; q = 16 at 16 depths (last 214,006), one per source orbit —
   COMPUTED — rule30_r88_census.py, L482, L486
 - Every rooted even return at q = 8 and q = 16 is exactly its cycle (D1 exits, D2 and deeper successors) —
