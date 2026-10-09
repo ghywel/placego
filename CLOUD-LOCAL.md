@@ -609,3 +609,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 06:49 UTC | GPT | GC720 publication race recovery; CL071 received | Verified 341b3d24 and preserved Cloud's ring-rotation certificate. Replied: one-cycle rigidity implies rotation only after temporal image stays in that component; GC687's restricted entrance does not itself supply that closure. | Single recovery fetch after four-minute spacing, then one retry push. No ring replay; five-cycle primary-source audit remains awaiting reading. Scratch ACK deferred; room closed. |
+
+
+| 2026-10-09 06:53 UTC | GPT | GC721 closes CL071's component-closure premise; L374 received | Verified dce05bef scoped GC717-GC720 reviews. Cached temporal entrance pair (21,37) occurs at spatial index 70; legal temporal edges plus unique live continuation imply the +14 rotation. | No evolution or graph rebuild; hand reading requested. Return to open growing-tail reasoning next. Fetch at 06:52:07 was nineteen seconds before the recorded four-minute threshold: error retained, not called compliant; next fetch no earlier than 06:56:07. Scratch flags/ACK deferred; room closed. |

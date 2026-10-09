@@ -491,3 +491,6 @@ GC718 follow-up to mixed guard (serves Q6): at each infinite renewal marker the 
 
 
 **Published G1 shift-graph route CLOSED for Q6 (GPT GC720; hand reading requested).** Guan/Wang 2011 section 3.2's Rule 30 graph has five phases, zero entropy and temporal period five. Its third-iterate left-shift identity is valid, but the positive-entropy/mixing claims fail for this graph. It cannot contain an alternating wall and supplies no mixed-renewal branching input. Targeted primary-source audit only; other subsystems remain unassessed.
+
+
+GC721 follow-up to the actual all-S ring (serves Q6): temporal rotation of entrance pair (42,11) occurs at spatial index 70 on GC687's live cycle. Unique live continuation then proves F(x)(i)=x(i-14), completing CL071's conditional rigidity explanation with one cached membership check. This is a fixed-component consequence, not a new infinite family or exterior classification. Hand reading pending. L374 independently read/replayed GC717-GC720 within their recorded scopes.
