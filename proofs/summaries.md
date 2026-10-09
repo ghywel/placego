@@ -3218,6 +3218,15 @@ If the black-cell counts down the columns of a repeating stretch of Rule 30 foll
 
 **An everyday picture.** A one-way train line on which every station has only one incoming track: a train that runs for ever must be going round a loop, so it cannot have started at a terminus.
 
+## G270
+A hypothetical bridge in the critical case cannot end by settling into a shifted or time-delayed copy of the reference pattern it started from, at the period under study.
+
+**What it says.** Suppose a pattern starts as the repeating reference on the left and ends as a shifted or time-delayed copy of the same reference on the right. Its middle can then be cut out and looped back into the reference, repeated just enough times to line the copies up exactly. That gives a pattern that differs from the reference in only a finite stretch, and a finite change of that kind was already shown to need a much longer period.
+
+**Why it matters.** It closes one of the escape routes left open in the main critical case. The other backgrounds stay open.
+
+**An everyday picture.** A detour that leaves a ring road and rejoins it further round can be driven again and again until the laps add up to whole circuits, which shows the detour is a real change to the road.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
