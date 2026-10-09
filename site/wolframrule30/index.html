@@ -204,7 +204,9 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
     <a class="open" href="bricks.html#ruler">Open the edge ruler on its own page →</a>
     <figcaption>Live: the pyramid grows row by row. Each even row's edge triangle is shaded as it is born, and its
       width is repeated as a teal tick to the right of the edge, so the ticks draw the ruler. The magenta tracer joins
-      the newest triangle's corner to its tick.</figcaption>
+      the newest triangle's corner to its tick and leaves a trail: inside the edge the trail is the right side's own
+      front, the place where its visible order ends, deepest at each power of 2. <b>Sound</b>, off until pressed,
+      plays each triangle as a note, an octave lower for each doubling.</figcaption>
   </figure>
 
   <section class="col">
@@ -267,10 +269,27 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       picture below shows how that left side is built. It is turned on its side: time runs left to right, the top row
       is the centre's beat, the next is the column beside it, driven by a random right side, and each row below is the
       next column to the left. Built this way, each row records where the row above it changes, plus scattered dots,
-      the edge events, which the pattern makes for itself. Every black square is then an odd overlap of triangles, one
-      spreading from each dot. Press <b>Counterexample wedge</b> and click a square on the green line, time 0, to
-      choose a depth: the shaded wedge is everything a counterexample with its white edge from that depth would need
-      to be white, and the darker squares in it are where this random start breaks that.</p>
+      the edge events, which the pattern makes for itself.</p>
+    <p>That makes the left side a pile of <em>Sierpinski triangles</em>. Start with one black square, and fill each
+      row below it by a far simpler rule than Rule 30: a square is black when exactly one of the two squares above it,
+      straight up and up-right, is black. The single dot grows into a triangle made of three half-size copies of
+      itself, each made of three smaller copies, and so on for ever: the Sierpinski triangle, which is also the
+      pattern of the odd numbers in Pascal's triangle. Give the same rule several dots and each grows its own
+      triangle, but where two triangles overlap they cancel, so a square ends up black exactly when an odd number of
+      triangles cover it.</p>
+  </section>
+  <figure class="wide">
+    <canvas id="sier" role="img" aria-label="Left: one black square grows, row by row, into a Sierpinski triangle under the rule 'black when exactly one of the two squares above is black'. Right: three dots grow three tinted triangles at once; a square is black where an odd number of triangles cover it."></canvas>
+    <figcaption>Left, one dot grows a Sierpinski triangle: every row is the row above compared with itself shifted by
+      one square. Right, three dots grow three triangles, tinted, and where triangles overlap they cancel in pairs. Run
+      sideways, Rule 30 is exactly this rule plus the dots it makes for itself, so every black square of its forced
+      left side is an odd overlap of Sierpinski triangles, one hanging from each dot.</figcaption>
+  </figure>
+
+  <section class="col">
+    <p>The sieve below is that picture for real. Press <b>Counterexample wedge</b> and click a square on the green
+      line, time 0, to choose a depth: the shaded wedge is everything a counterexample with its white edge from that
+      depth would need to be white, and the darker squares in it are where this random start breaks that.</p>
   </section>
   <figure>
     <div class="frame"><iframe src="sieve.html?embed" title="The Edge-Event Sieve, live" loading="lazy"></iframe></div>
@@ -581,14 +600,84 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
   document.getElementById("explain-play").addEventListener("click", function () { E.playing = !E.playing; exSchedule(); });
   document.getElementById("explain-step").addEventListener("click", function () { E.playing = false; exSchedule(); exStep(); });
 
-  function layoutAll() { heroLayout(); exLayout(); }
+  /* ---- the Sierpinski figure: one dot, then three dots whose triangles overlap and cancel in pairs ---- */
+  var sier = document.getElementById("sier");
+  var SP = { g: null, W: 0, Hh: 0, s: 6, R: 32, C: 40, shown: 0, hold: 0, side: true, one: [], three: [] };
+  var DOT1 = [[0, 38]], DOT3 = [[0, 33], [5, 24], [11, 38]], TINT = ["--tri", "--sq", "--circ"];
+  function grow(dots) {        // the sieve's step without its own dots: cell(k, t) = cell(k-1, t) XOR cell(k-1, t+1)
+    var out = [], prev = new Uint8Array(SP.C + 1);
+    for (var k = 0; k < SP.R; k++) {
+      var row = new Uint8Array(SP.C + 1);
+      if (k) for (var t = 0; t < SP.C; t++) row[t] = prev[t] ^ prev[t + 1];
+      dots.forEach(function (d) { if (d[0] === k) row[d[1]] ^= 1; });
+      out.push(row); prev = row;
+    }
+    return out;
+  }
+  function sierLayout() {
+    var w = Math.min(availWidth(), 980);
+    SP.side = w >= 620;
+    var pw = SP.side ? (w - 40) / 2 : w - 8;
+    SP.s = Math.max(4, Math.min(11, Math.floor(pw / SP.C)));
+    var ph = SP.R * SP.s + 22;
+    SP.W = w; SP.Hh = SP.side ? ph + 4 : 2 * ph + 18;
+    SP.g = fit(sier, w, SP.Hh);
+    SP.one = grow(DOT1); SP.three = grow(DOT3);
+    if (reduce) SP.shown = SP.R;
+    sierDraw();
+  }
+  function sierPanel(x0, y0, rows, dots, label, tinted) {
+    var g = SP.g, s = SP.s, ink = css("--ink"), panel = css("--panel"), rule = css("--rule");
+    g.fillStyle = css("--ink-soft"); g.font = "500 11px " + css("--font-mono"); g.textAlign = "left"; g.textBaseline = "top";
+    g.fillText(label, x0, y0);
+    var top = y0 + 18, n = Math.min(SP.shown, SP.R);
+    g.fillStyle = panel; g.fillRect(x0, top, SP.C * s, SP.R * s);
+    g.strokeStyle = rule; g.lineWidth = 1; g.strokeRect(x0 + 0.5, top + 0.5, SP.C * s - 1, SP.R * s - 1);
+    g.save(); g.beginPath(); g.rect(x0, top, SP.C * s, SP.R * s); g.clip();
+    dots.forEach(function (d, i) {           // each dot's triangle, tinted, down to the rows shown so far
+      if (!tinted || n <= d[0]) return;
+      var depth = n - d[0];
+      g.fillStyle = css(TINT[i % 3]); g.globalAlpha = 0.16;
+      g.beginPath(); g.moveTo(x0 + (d[1] + 1) * s, top + d[0] * s); g.lineTo(x0 + (d[1] + 1) * s, top + n * s);
+      g.lineTo(x0 + (d[1] + 1 - depth) * s, top + n * s); g.lineTo(x0 + d[1] * s, top + d[0] * s); g.closePath(); g.fill();
+      g.globalAlpha = 1;
+    });
+    g.fillStyle = ink;
+    for (var k = 0; k < n; k++) for (var t = 0; t < SP.C; t++) if (rows[k][t]) g.fillRect(x0 + t * s + 0.5, top + k * s + 0.5, s - 1, s - 1);
+    g.restore();
+    dots.forEach(function (d, i) {           // the seeds, ringed
+      if (n <= d[0]) return;
+      g.strokeStyle = tinted ? css(TINT[i % 3]) : css("--tri"); g.lineWidth = 2;
+      g.beginPath(); g.arc(x0 + (d[1] + 0.5) * s, top + (d[0] + 0.5) * s, s * 0.95, 0, 7); g.stroke();
+    });
+  }
+  function sierDraw() {
+    var g = SP.g, pw = SP.C * SP.s;
+    g.clearRect(0, 0, SP.W, SP.Hh);
+    if (SP.side) {
+      var gap = SP.W - 2 * pw, x1 = gap / 3, x2 = x1 * 2 + pw;
+      sierPanel(x1, 0, SP.one, DOT1, "one dot: a Sierpinski triangle", false);
+      sierPanel(x2, 0, SP.three, DOT3, "three dots: black where an odd number overlap", true);
+    } else {
+      var x = (SP.W - pw) / 2, ph = SP.R * SP.s + 22;
+      sierPanel(x, 0, SP.one, DOT1, "one dot: a Sierpinski triangle", false);
+      sierPanel(x, ph + 14, SP.three, DOT3, "three dots: black where odd overlap", true);
+    }
+  }
+  setInterval(function () {                  // one row every 90 ms while on screen, then a pause, then again
+    if (reduce || !seen(sier)) return;
+    if (SP.shown < SP.R) { SP.shown++; sierDraw(); }
+    else if (++SP.hold > 40) { SP.hold = 0; SP.shown = 0; sierDraw(); }
+  }, 90);
+
+  function layoutAll() { heroLayout(); exLayout(); sierLayout(); }
   var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(layoutAll, 150); });
   if (window.matchMedia) {
     var mq = window.matchMedia("(prefers-color-scheme: dark)");
-    if (mq.addEventListener) mq.addEventListener("change", function () { heroDraw(); exDraw(); });
+    if (mq.addEventListener) mq.addEventListener("change", function () { heroDraw(); exDraw(); sierDraw(); });
   }
   /* ---- run each visual only while it is on screen ----
-     The hero and the explainer check seen() before they move. Each embedded frame is told as it scrolls in and out
+     The hero, the explainer and the Sierpinski figure check seen() before they move. Each embedded frame is told as it scrolls in and out
      of view, and when it asks as it starts (the snippet in each embedded page holds its animation while it is out).
      A hidden tab counts as off screen. Without IntersectionObserver everything runs, as before. */
   var onScreen = new WeakMap(), frames = Array.prototype.slice.call(document.querySelectorAll(".frame iframe"));
@@ -603,7 +692,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
         if (en.target === hero) heroWake(); else if (en.target.tagName === "IFRAME") tell(en.target);
       });
     }, { threshold: 0 });
-    io.observe(hero); io.observe(ex);
+    io.observe(hero); io.observe(ex); io.observe(sier);
     frames.forEach(function (f) { io.observe(f); f.addEventListener("load", function () { tell(f); }); });
   }
   window.addEventListener("message", function (e) {
@@ -613,7 +702,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
   document.addEventListener("visibilitychange", function () { frames.forEach(tell); heroWake(); });
 
   layoutAll(); exSchedule();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { heroDraw(); exDraw(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { heroDraw(); exDraw(); sierDraw(); });
   heroWake();
 })();
 </script>

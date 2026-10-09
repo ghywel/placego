@@ -68,6 +68,8 @@ button[aria-pressed="true"] { border-color: var(--clock); box-shadow: inset 0 0 
 .ro b { color: var(--ink); font-weight: 600; }
 .ro .c { color: var(--clock); }
 .ro .m { color: var(--mate); }
+.tabctl .ro { flex: 1 1 100%; min-height: 3.1em; }   /* two lines held for the live readout, so it cannot jolt the page */
+.ro sup { line-height: 0; }                            /* a superscript must not make its line taller */
 label.sel { display: inline-flex; gap: 6px; align-items: center; font-size: 13px; color: var(--muted); }
 
 .stage { display: grid; justify-items: center; min-width: 0; }
@@ -170,6 +172,7 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
         <label class="sel" for="rulerRows">Rows
           <select id="rulerRows"><option>128</option><option selected>256</option><option>512</option></select>
         </label>
+        <button id="rulerSound" type="button" aria-pressed="false">Sound: off</button>
         <span class="ro" id="rulerRo"></span>
       </div>
       <div class="tabctl" data-for="front" hidden>
@@ -229,6 +232,10 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
       <p>At every even row a white triangle starts one cell inside the black right edge; odd rows have none. Its
         width depends only on how many times 2 divides the row number, like the marks on a ruler: the teal ticks
         to the right of the edge repeat each triangle's width.</p>
+      <p>The pink tracer leaves a trail. Inside the edge the trail joins the triangles' inner corners: it is the
+        right-hand front, where the right side's visible order ends, and it reaches deepest at every power of 2.
+        <b>Sound</b>, off until you press it, plays each triangle as it appears, one octave lower for each doubling:
+        a high note on rows that are twice an odd number, an octave down on four times an odd number, and so on.</p>
       <div class="tablewrap"><table class="w" id="wtable"></table></div>
     </section>
     <section>
@@ -298,6 +305,37 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
       g.beginPath(); g.arc(x, y, r, 0, 7); g.fillStyle = col; g.fill();
     }
   }
+
+  // the ruler as sound, off until pressed: each new triangle is a note, one octave lower for each doubling of the
+  // power of 2 in its row (A6 for twice an odd number, A5 for four times, ...), louder and longer when it is wider
+  const Sound = (() => {
+    let ctx = null, master = null, on = false, last = -1;
+    return {
+      toggle() {
+        on = !on;
+        if (on && !ctx) {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          if (!AC) { on = false; return on; }
+          ctx = new AC(); master = ctx.createGain(); master.gain.value = 0.16; master.connect(ctx.destination);
+        }
+        if (ctx) (on ? ctx.resume() : ctx.suspend()).catch(() => {});
+        return on;
+      },
+      mark(v, width) {
+        if (!on || !ctx) return;
+        const now = ctx.currentTime;
+        if (now - last < 0.03) return;
+        last = now;
+        const o = ctx.createOscillator(), e = ctx.createGain(), dur = 0.07 + 0.03 * width;
+        o.type = v >= 5 ? "triangle" : "sine";                  // overtones keep the low octaves audible
+        o.frequency.value = Math.max(20, 1760 / 2 ** (v - 1));
+        e.gain.setValueAtTime(0.0001, now);
+        e.gain.exponentialRampToValueAtTime(Math.min(1, 0.2 + width / 16), now + 0.006);
+        e.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+        o.connect(e); e.connect(master); o.start(now); o.stop(now + dur + 0.02);
+      },
+    };
+  })();
 
   // ---------- 1. the turning ring ----------
   const Ring = (() => {
@@ -543,20 +581,25 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
       t = 0; acc = 0; layout();
     }
     function layout() {
-      const ncol = 2 * T + 1 + maxw + 18;
-      cell = Math.min((W - 30) / ncol, (H - 40) / (T + 1));
-      ox = (W - ncol * cell) / 2; oy = (H - (T + 1) * cell) / 2;
+      const ncol = 2 * T + 1 + maxw + 4, label = 72;     // room on the right for the last tick's "23 at 2^8"
+      cell = Math.min((W - 30 - label) / ncol, (H - 40) / (T + 1));
+      ox = (W - ncol * cell - label) / 2; oy = (H - (T + 1) * cell) / 2;
     }
     const X = x => ox + (x + T) * cell;                 // site x, from -T to T
+    function sound(t0, t1) {                            // the deepest mark among the rows just drawn
+      let best = 0;
+      for (let k = t0 + 1; k <= t1; k++) if (k % 2 === 0 && (k & -k) > (best & -best)) best = k;
+      if (best) Sound.mark(Math.log2(best & -best), L[best]);
+    }
     return {
       build, layout,
       reset() { t = 0; acc = 0; },
       tick(dt, speed) {
         if (t >= T) return false;
         acc += dt * speed * (T / 9) / 1000; const add = Math.floor(acc); if (!add) return false;
-        acc -= add; t = Math.min(T, t + add); return true;
+        acc -= add; const t0 = t; t = Math.min(T, t + add); sound(t0, t); return true;
       },
-      stepOnce() { t = Math.min(T, t + 1); },
+      stepOnce() { const t0 = t; t = Math.min(T, t + 1); sound(t0, t); },
       draw() {
         g.fillStyle = C.sheet;
         g.beginPath(); g.moveTo(X(0) + cell / 2, oy); g.lineTo(X(T + 1), oy + (T + 1) * cell); g.lineTo(X(-T), oy + (T + 1) * cell);
@@ -581,12 +624,28 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
         g.fillStyle = C.muted; g.font = `11px ${C.mono}`; g.textBaseline = "middle"; g.textAlign = "left";
         for (let k = 2; k <= t; k += 2) {
           const v = Math.log2(k & -k);
-          if (L[k] >= 8 && (k & (k - 1)) === 0) g.fillText(`${L[k]} at 2^${v}`, X(k + 1) + (L[k] + 2) * cell, oy + (k + 0.5) * cell);
+          if (L[k] >= 8 && (k & (k - 1)) === 0) g.fillText(`${L[k]} at 2^${v}`, X(k + 1) + (L[k] + 3) * cell, oy + (k + 0.5) * cell);
         }
         // the current row
         g.fillStyle = C["clock-soft"]; g.fillRect(X(-t), oy + t * cell, (2 * t + 1) * cell, cell);
-        // tracer from the current triangle's top-right corner to its ruler tick's end
         const kk = t % 2 ? t - 1 : t;
+        // the tracer's ghost: its two dots leave a line. Inside the edge it joins the triangles' inner corners, which
+        // is the right-hand front (deepest at each power of 2); outside it joins the ticks' ends, the ruler's profile
+        if (kk >= 4) {
+          const inner = [], outer = [];
+          for (let k = 2; k <= kk; k += 2) {
+            const y = oy + (k + 0.5) * cell;
+            inner.push([X(k - L[k]), y]); outer.push([X(k + 1) + (L[k] + 1) * cell, y]);
+          }
+          g.save(); g.lineJoin = "round";
+          for (const pts of [inner, outer]) {
+            g.beginPath(); pts.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y));
+            g.globalAlpha = 0.6; g.strokeStyle = C.paper; g.lineWidth = 3.4; g.stroke();
+            g.globalAlpha = 0.9; g.strokeStyle = C["t-b"]; g.lineWidth = 1.5; g.stroke();
+          }
+          g.restore();
+        }
+        // tracer from the current triangle's top-right corner to its ruler tick's end
         if (kk >= 2) {
           const yk = oy + (kk + 0.5) * cell;
           trace([[[X(kk - L[kk]), yk], [X(kk + 1) + (L[kk] + 1) * cell, yk]]], C["t-b"], 2.5,
@@ -720,12 +779,18 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
   let active = "ring", playing = !matchMedia("(prefers-reduced-motion: reduce)").matches, speed = 1, last = 0;
   const playBtn = document.getElementById("play");
   playBtn.textContent = playing ? "Pause" : "Play";
-  function resize() {
-    const tb = document.querySelector(".toolbar").getBoundingClientRect();
-    tbH = Math.round(tb.height);
+  // The toolbar's height sets the canvas's. Its readouts change length every step, so within one view the toolbar
+  // may only grow (held by min-height), and it starts afresh on a new view or window size: the picture never jumps
+  // back and forth as a readout wraps and unwraps.
+  function resize(keep) {
+    const bar = document.querySelector(".toolbar");
+    if (keep !== true) bar.style.minHeight = "";
+    const h = Math.ceil(bar.getBoundingClientRect().height);
+    tbH = keep === true ? Math.max(tbH, h) : h;
+    bar.style.minHeight = tbH + "px";
     const stage = document.querySelector(".stage");
     W = Math.max(300, stage.clientWidth);
-    H = Math.max(360, Math.min(980, window.innerHeight - tb.height - 30));
+    H = Math.max(360, Math.min(980, window.innerHeight - tbH - 30));
     const d = DPR();
     cv.width = Math.round(W * d); cv.height = Math.round(H * d); cv.style.width = W + "px"; cv.style.height = H + "px";
     g.setTransform(d, 0, 0, d, 0, 0);
@@ -735,8 +800,8 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
   let tbH = 0, refit = 0;
   function draw() {
     g.clearRect(0, 0, W, H); VIEWS[active].draw();
-    const h = Math.round(document.querySelector(".toolbar").getBoundingClientRect().height);
-    if (Math.abs(h - tbH) > 2 && !refit) { refit = requestAnimationFrame(() => { refit = 0; resize(); }); }
+    const h = Math.ceil(document.querySelector(".toolbar").getBoundingClientRect().height);
+    if (h > tbH && !refit) { refit = requestAnimationFrame(() => { refit = 0; resize(true); }); }
   }
   const EMBED = document.documentElement.classList.contains("embed");
   const TITLES = { ring: "The turning ring", crystals: "Crystals beside the wall", ruler: "The edge ruler",
@@ -767,6 +832,11 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
     Crystals.compute(w); draw();
   });
   document.getElementById("rulerRows").addEventListener("change", e => { Ruler.build(Number(e.target.value)); draw(); });
+  const sb = document.getElementById("rulerSound");
+  sb.addEventListener("click", () => {
+    const on = Sound.toggle();
+    sb.setAttribute("aria-pressed", String(on)); sb.textContent = on ? "Sound: on" : "Sound: off";
+  });
   const mq = matchMedia("(prefers-color-scheme: dark)");
   const retheme = () => { palette(); draw(); };
   mq.addEventListener ? mq.addEventListener("change", retheme) : mq.addListener(retheme);
