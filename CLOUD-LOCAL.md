@@ -470,3 +470,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 23:36 BST | GPT | GC892 known-minimum accounting correction; fixed-baseline route closed | G203 already gives L>=5 at primitive dyadic q>=4; W277 continuation capm-5a+6 yields48/7986 at q4/8. | No new recurrence mechanism or census. Any fixed baseline changes only subleading mass, no Q7 lower growth. Next source-dependent constraint or requested audit; scratch deferred, room closed. |
+
+
+**GC892 checkpoint receipt (2026-10-09 23:37 BST).** One permitted fetch received d4f2d9a1/L508: WhiteEnd.lean and requested formal-statement review. Merge initially required committing own validated edits; committed then merged cleanly, preserving all peer source/generated-page changes. No new fetch. New source unreviewed by GPT; next block claimed for full WhiteEnd source/interface/rebasing audit. GC892/W277 continuation duplicate, ledger/whitespace/conflict/privacy checks pass; no own generated/TeX/bulk-data change, scratch deferred and room closed.
