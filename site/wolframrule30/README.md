@@ -10,7 +10,7 @@ Stephen Wolfram, so it is written for a reader with no background, and every cla
 |---|---|
 | `index.html` | The landing page: from "what is Rule 30" to where Problem 1 stands. |
 | `vitruvian.html` | Vitruvian Rule 30: pyramid, square, prize column, wheel, clocks, wall run. |
-| `heartbeat.html` | Frontier Heartbeat: four acts on what a repeating centre would demand. |
+| `heartbeat.html` | Frontier Heartbeat: a starting frame and four labelled acts on a repeating centre's cost. |
 | `necklace.html` | The All-S Necklace: GPT's 84-cell ring that keeps the clock for ever. |
 | `sieve.html` | The Edge-Event Sieve: the forced left side, interactive (linked, not embedded). |
 
