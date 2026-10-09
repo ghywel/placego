@@ -20868,3 +20868,25 @@ All multiplications here count labels even when edges share a destination. A pat
 **Controls and unexpected check.** Full binary one-state graph has A=[2],u=1,lambda2. For F={11} and m2 one of four labelled paths is removed: beta3, giving sqrt3<2, though the exact avoidance growth is phi. With a single recurrent0-loop and a transient branch containing1, forbidding1 need not reduce the recurrent ceiling1: no within-component witness exists. For the period-two component with edges0->1 labelled0 and1->0 labelled1, F={01} occurs after at most one routing step. Choose m3, not a multiple of the cycle period. Its two possible length3 paths010 and101 both contain01, beta0, and no infinite avoidance path remains. This directly checks the free-endpoint padding step and the necessity of uniform witnesses.
 
 **Practical failure retained.** The route can produce an exponentially tiny gain: beta differs from lambda^m by only u_min/u_max, and m=n-1+len(f) may be large. Mere strong connectivity is not a practical gain bound. A short verified covering radius is the useful next gate; without it, this recipe only establishes that a selected ceiling can improve at all. L505's completed product already supplies sharper numerical evidence at widths16..22; this is a possible cheap preflight for future wider graphs, not a replacement claim or rerun. Next review any colleague correction or return to the prize's cost-side gap. Scratch deferred, break room closed.
+
+
+## GC889 — four independent finite-count root certificates from published F (2026-10-09 23:21 BST)
+
+**Preregistered computation.** Record searched: (count.root/count bound/400) + (certificate/certif) ->54 hits in27 files. GC859/GC871 integer-power gate and current TC outcomes read. Predicted odd full digests/antichains/completed-level counts agree and p2's six-decimal a400 root ceiling is1.129634. Own small instrument rule30_gpt_tc_countroot_audit.py uses GC886's direct suffix-prefix integer DP, no peer code. Controls full binary gives2^n, F={00,01} retains two finite-prefix words at every positive length, and exact root search returns2 for2^8. Unexpected check: each preceding six-decimal value must fail the power inequality. No SAT, layer, product or spectral iteration, and no scratch access.
+
+**Input checks PASS.** Odd full SHA256 values match CL117 exactly; all lists are distinct ordered binary factor antichains. Published sizes1328/641/270, partial-level lengths18/16/15 and partial-word counts271/41/1 match. Independent F-avoidance counts agree with the reported true-count lists at every completed length: p5 through17 ends10953, p7 through15 ends6468, p9 through14 ends4530. P2 input/count checks from GC886 also pass. This is consistency, not independently checked UNSAT, minimality or completeness evidence.
+
+**Independent exact certificates PASS.** For each input, compute all avoidance counts through400 including paths that terminate later. Values below are period, prefix-state count, exact a400, least integer C such that C^400>=a400*10^2400:
+
+```text
+2   8030   1496473340188276230951   1129634
+5   5151   7599009330656971541016056839822805602318201957917224118798506678009609396   1521255
+7   2058   562341239214046362006187649133629953599178747735423906400977051339571922816162256245571   1647689
+9   1049   3488756933704697177005748997764176290794680074793724539518547951520039060716699724100301602884   1713392
+```
+
+Every predecessor also satisfies (C-1)^400<a400*10^2400. Thus C/10^6 is certified with exact integers, rather than relying on a floating root or ceiling. P2 reproduces the published1.129634 and p5 reproduces the earlier1.521255. All four state counts coincide with the reported spectral live-state counts, but this instrument retains every proper-prefix state and does not independently prove that live-state characterization.
+
+**Upper-bound transfer by hand.** F-avoiding words are closed under taking factors. Splitting a length n+m word into its prefix/suffix injects it into allowed pairs, so a_(n+m)<=a_n*a_m. Writing n=400q+r gives a_n<=a400^q*a_r with a_r<=2^399. Hence asymptotic word growth<=a400^(1/400)<=C/10^6. This is an exact certificate of the explicitly supplied avoidance language. It transfers to the actual channel only conditional on each F word's true-forbidden premise; the solver evidence and completed-level census are not independently certified here. Valid words from a partial level are safe constraints but do not complete that level.
+
+**Disposition.** No improvement over L505/L506's stronger spectral product ceilings; these are independent, reproducible count-root certificates requiring no retained spectral vector. They neither prove positive entropy nor a fixed-seed Q1 cost inequality. No new formal unit or prize. Next receive GC888 second reading/retention repair or return to a prize reasoning lead. Scratch deferred, room closed.

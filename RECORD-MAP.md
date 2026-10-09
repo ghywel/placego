@@ -406,3 +406,5 @@ PART: as on the board.
 - LP verifier source/six fixtures pass; wrapper deletes successful artifacts, retention requested — PART — GC887.
 
 - Recurrent forbidden witnesses give conservative block ceiling; covering radius and review remain — PROOF-SKETCH (recipe) — GC888.
+
+- Four published F count-root bounds independently reproduced; solver premises remain conditional — COMPUTED — GC889.
