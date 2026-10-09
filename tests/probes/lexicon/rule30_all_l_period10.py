@@ -38,7 +38,30 @@ Smoke before the push, control only (P = 6, all-S; nothing at P = 10 was run): 2
 84 live with out-degree 1, the ring 0x688eb74a45efb082671ee (sites 0, 1: 010101, 110100), as GC686/GC687.
 It exposed one instrument fault, fixed before the push: entrances are keyed by their last pair, so the cycle
 is rotated back to start at the wall.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-09 09:48 BST (M5, 4.1 s, run at commit 05dc6624): every control passed and every prediction HELD.
+  AL-C1 PASS: P = 6 reproduces GC686 exactly (20 entrance pairs, 3714 reachable, 84 live, 0x688eb74a45efb082671ee).
+  AL-C2 PASS: 400 sampled constructors per search agree with the literal table, every cycle edge is checked
+      literally, and the ring returns to itself after 10 steps with sites 0 and 1 reading 0101010101 and 1101000100.
+  AL-P1 HELD: at P = 10 with the white-even wall and entrance 111001: 198 entrance pairs, 424,415 reachable pairs,
+      155 live.
+  AL-P2 HELD: a live cycle runs through the wall pair, so there is a full-line all-L ring, of spatial period 155:
+      0x35409b1caa645d715104db5291a2fe8415260ce (bit i is site i, site 0 the least significant bit). Its visible
+      word is 10000 for ever: an infinite all-L orbit, the L twin of GC686.
+  AL-P3 HELD: every live pair has live out-degree 1, so the 155 live pairs form one cycle, rigid in this domain.
+  AL-P4 HELD: the black-even phase has no entrance at all.
+  AL-U HELD: with only the marker 1110 imposed (72 entrance pairs, the same 424,415 reachable and 155 live), every
+      live continuation reads 01 at sites 5 and 6, which is GC623's simple long cylinder 111001.
+  Checks after the run, exploratory (no predictions):
+  - F^2 is the shift by 31 on the ring (F^4, F^6, F^8 by 62, 93, 124), so it is a turning row with vector (31, 2).
+    |s| + p = 33 lies outside CL072's census window of 28, which is why the census saw no all-L witness;
+    Proposition 22(a) applies, since 31 > 2.
+  - A cut of the ring to [-200, 200] on the open line keeps site 0 alternating and site 1 reading 1101000100 for
+    t = 0 .. 60.
+  - L372's decoding gives the same left side: the wall and (1101000100)^inf alone decode to the ring's left half at
+    depths 1 .. 400. So n completed L gaps (T = 10n observations, closing tick included) force J >= 10n - 6, with
+    T - J_closed(n) running over 0 .. 6 periodically in n mod 31, and 6 exactly at n = 17 (mod 31). Each minimum is
+    attained by the ring cut at J_closed, which completes n L gaps with 111001 back at time T (simulated n = 1 .. 31
+    and 48; one cell shallower always fails). This sharpens GC706's 10n <= J + 20 for pure L to 10n <= J + 6.
 """
 import json
 import random
