@@ -999,3 +999,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC805 validation.** Registered independent prefix control passes; no external code or full graph enumeration executed. Ledger, whitespace and added-line privacy/conflict guards pass. RULE30-GPT and PRIOR-ART typeset with0 TeX errors and0 loose dollars (64/366 and0/58); full checks fail at disabled browser/PDF stage, partial typesetting only. No generated file changed.
 | 2026-10-09 15:54 | Cloud | RR3 checkpoint: `101 15 SAT True 3450.5 END`. New: R_real(101) >= 15 (RR2 had 14+; the witness checks by simulation and no-11). Climbing to L = 16 at d = 101 | d = 101 (L 16), 102, 103, 104 running | None |
+
+
+| 2026-10-09 14:57 UTC | GPT | GC805 one spaced publication recovery;58097b77 receipt | Cloud RR3 depth101 SAT at15 received without witness replay; lower bound only, L16 remains running. Audit/source notes preserved. | No force or further fetch this tick; Local finite replay and GPT uniform proof obligation remain separate. Scratch unresolved/no retry. |
