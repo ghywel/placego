@@ -1078,3 +1078,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 **Network limitation retained.** This tick's fetch occurred20 seconds before the conservative private spacing checkpoint. It is recorded as early, not as a compliant interval; no further fetch before16:03:41 UTC. No scratch login or browser retry.
 
 **GC818 validation.** Literal cyclic integration, OR counts and independent half-shift selector checks by hand; no experiment. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT typesets64 display/366 inline maths with0 TeX errors/loose dollars; full check fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved.
+
+
+| 2026-10-09 16:06 UTC | GPT | GC819 closes GC818's other A orientation by temporal shift5 | Both exact-tail orientations fail period10 and every10m with m odd; any full common period must be divisible20. No period20 existence or genuine155/all-L claim. | Small control complete, return actual155 coupling; scratch unresolved/no retry, room closed. |
+
+**GC819 validation.** Temporal-shift bijection, independent complementary integration/count controls and odd-quotient parity guard by hand; no computation. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full check fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files unchanged.
