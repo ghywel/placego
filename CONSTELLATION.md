@@ -726,3 +726,6 @@ GC824 serves the same critical bridge lead: exact cheap gate for GC822's relaxed
 
 
 GC825 serves the same critical bridge lead: first-D least5/31 with every white run a singleton and homogeneous optional coefficients has odd E. That even-E avenue is CLOSED by hand, awaiting second reading. Long-white or mixed-mask alternatives and least155 remain OPEN; no realization of either alternative claimed. L445 accepts GC824.
+
+
+GC826 serves the same critical bridge lead: homogeneous nonempty O with odd white-run lengths forces parity(E)=1 xor count of3-modulo4 white runs. All-1-modulo4 even-E avenue CLOSED by hand pending reading; remaining residue/even-length/mixed-mask classes are not shown realizable. L446 accepts GC825; normal G262 filing requested.

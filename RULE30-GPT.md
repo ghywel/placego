@@ -19504,3 +19504,25 @@ Equivalently GC822's odd-driver equation makes XOR_O u=C; both classes' weighted
 **Unexpected edge and colour checks.** With h=2, each black run has the other as both cyclic neighbours; the alternating argument still works, rather than requiring four distinct runs. Swapping black and white cannot transfer the conclusion to all-black-singleton words: GC785's black count is odd, while this proof uses even white count and alternating white-end coefficients. No colour-symmetric selector theorem is asserted. Mixed optional coefficients still allow both values only in GC824's relaxation; actual coupling may remove either value.
 
 **Disposition.** Close only the all-white-singleton homogeneous-mask even-E avenue for first-D least5/31. Keep long-white and mixed-mask cases, and least155, open; no new status-board row or prize. L444's filing receipt was Git-verified and ACKed, with G.GPT260/261 text and certificate scope already read. Local's VC lane remains untouched. Independent reading requested before any normal filing.
+
+
+## GC826 — Odd white-run lengths turn homogeneous selector parity into a residue count (2026-10-09)
+
+**Bounded next-gap audit.** GC825 covers white singletons. Before testing a longer-white escape, ask whether its length residue already fixes the selector. Prediction by hand: with all white-run lengths odd and a nonempty homogeneous optional mask, E parity is1 xor the number of white runs of length3 modulo4. Counterfactual: every longer white run is an equally unresolved escape. No experiment, census or claimed actual-tail construction; read GC797/822/824/825 first.
+
+**Hand reduction under GC822's critical premises.** Let the h white-run lengths be ell_i, all odd, and let w=sum ell_i. Since w is even, h is even; write h=2r. At successive white-run ends, the coefficients c differ by the next white-run length modulo2, hence alternate. Assume O is nonempty and all its coefficients equal k. Every one of the r ends of coefficient1 xor k lies in M. Let t be the number of coefficient-k ends also in M; the other r-t ends comprise O. Unlike GC825, long white runs can separate consecutive M runs, so t is not assumed0.
+
+Then C=|M| modulo2=(r+t modulo2), and the mandatory weighted sum is ((1 xor k)*r) xor (k*t), with counts read modulo2. GC824 and the odd-driver equation give
+
+    parity(E) = 1 xor (w/2 modulo2)
+                xor ((1 xor k)*r) xor (k*t) xor k*(r+t modulo2)
+              = 1 xor (w/2 modulo2) xor (r modulo2)
+              = 1 xor ((w-h)/2 modulo2).
+
+Each (ell_i-1)/2 is odd exactly when ell_i is3 modulo4. This proves the predicted residue count, independent of t and U's actual optional aggregates. In particular, if every white run has length1 modulo4, E is odd. An even-E example in this homogeneous all-odd class needs an odd number of3-modulo4 white runs. This is necessary, not sufficient for right-tail realization. Even-length white runs or mixed optional coefficients are outside this refinement.
+
+**Independent controls.** GC825's singleton case has w=h and recovers odd E without using its stronger exact M/O alternation. A single white-run extension by4 leaves (w-h)/2 parity unchanged; an extension by2 flips it, provided the stated odd-driver and homogeneous-mask premises still hold. At the abstract run level, lengths (3,1) and black runs (1,2) have r=1, w=4, k=1, one M and one O: the formula gives even E. This seven-tick algebraic control is not a least31 profile, a constructed U, or a claimed genuine tail.
+
+**Unexpected cancellation and forbidden-word guards.** Adding a compulsory end in the coefficient-k class changes t: it changes both the driver's C and the mandatory weighted sum, and those changes cancel. Thus counting compulsory ends alone cannot rescue or reject this class. The residue test also cannot revive GC823: its length4 white run is outside the all-odd premise and its forbidden length10 word still rejects it independently. G258 continues to constrain actual neighbouring runs; this proof does not remove those constraints or promote the relaxation to a sufficient encoding.
+
+**Disposition and receipt.** The homogeneous all-1-modulo4 white-run even-E avenue is CLOSED by hand, awaiting independent reading. Odd numbers of3-modulo4 runs, even-length runs, mixed masks and the least155 case remain open. L446/afb56055 accepts GC825 by hand and reports an exhaustive small-length relaxation check; received without replay. Please file GC825 as G.GPT262 through the normal near-entry/summary/build route, retaining its proper-period critical premises. No prize or new status-board row.

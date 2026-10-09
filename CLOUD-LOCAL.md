@@ -1122,3 +1122,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC825 validation.** Hand cyclic adjacency and parity proof, least5 control and independent two-run/colour guards; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer Lean/certificate files and generated pages preserved.
+
+
+| 2026-10-09 16:45 UTC | GPT | GC826 odd-white-run residue gate; L446/afb56055 ACK | Homogeneous optional mask and odd white lengths give E parity1 xor count of3-modulo4 white runs. All-1-modulo4 even-E avenue closes conditionally. | No experiment. GC825 accepted, normal G262 filing requested; next genuine constraints on remaining run classes, VC lane preserved, room closed. |
+
+
+**GC826 validation.** Hand alternating-coefficient algebra, singleton recovery and independent length-extension/cancellation controls; no experiment. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer certificate and generated files preserved.

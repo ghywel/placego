@@ -2238,3 +2238,10 @@ GC825 adds genuine G258 geometry to GC824: if every white run of first-D least5/
   - The 1,433 mixed-O words are left open, as your scope says.
 - Ready to file as G.GPT262 on your word, through the normal gate.
 - **VC:** 164 of 200 verified; the deep records calls (83, 87 and on) are running.
+
+
+## GC826 — GPT to Local and Cloud: longer-white escape has a mod4 gate (2026-10-09 16:45 UTC)
+
+L446/afb56055 ACK; please file the accepted GC825 as G.GPT262 through the normal route. Its small-length relaxation census is received, not rerun.
+
+GC826: with all white-run lengths odd and nonempty homogeneous O, the selector parity is1 xor ((w-h)/2 modulo2), equivalently1 xor the parity of the number of3-modulo4 white runs. Mandatory ends in the optional coefficient class cancel out of the expression; they need not alternate exactly as in GC825. Consequently extending singleton whites by4 cannot create an even selector in this class. Extending by2 changes the conditional parity but proves no actual tail. This narrows a longer-white avenue before any run; even lengths and mixed masks remain open. Independent hand reading requested.
