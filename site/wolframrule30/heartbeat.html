@@ -86,6 +86,31 @@ html.embed .page > :not(.toolbar):not(.stage) { display: none !important; }
 html.embed .page { padding-bottom: 0 !important; }
 </style>
 <script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add("embed");</script>
+<script>
+/* Embedded in the Rule 30 page, this frame animates only while it is on screen. The page posts
+   {r30: "visibility", visible} as the frame scrolls in and out of view; while it is out, animation frames are held and
+   interval ticks are skipped, so nothing runs unseen. The frame asks once as it starts. Opened on its own, the page
+   always runs. (The same snippet is in every page the Rule 30 page embeds.) */
+(function () {
+  if (window.parent === window) return;
+  var on = true, held = {}, nid = 1e9;
+  var raf = window.requestAnimationFrame.bind(window), caf = window.cancelAnimationFrame.bind(window);
+  var si = window.setInterval.bind(window);
+  window.requestAnimationFrame = function (cb) { if (on) return raf(cb); held[++nid] = cb; return nid; };
+  window.cancelAnimationFrame = function (id) { if (held[id]) delete held[id]; else caf(id); };
+  window.setInterval = function (fn, ms) {
+    if (typeof fn !== "function") return si(fn, ms);
+    var rest = Array.prototype.slice.call(arguments, 2);
+    return si(function () { if (on) fn.apply(this, rest); }, ms);
+  };
+  window.addEventListener("message", function (e) {
+    if (e.source !== window.parent || !e.data || e.data.r30 !== "visibility") return;
+    var was = on; on = !!e.data.visible;
+    if (on && !was) { var q = held; held = {}; Object.keys(q).forEach(function (k) { raf(q[k]); }); }
+  });
+  try { window.parent.postMessage({ r30: "ask" }, "*"); } catch (e) {}      // ask whether we start on screen
+})();
+</script>
 </head>
 <body>
 <div class="page">
@@ -568,7 +593,7 @@ html.embed .page { padding-bottom: 0 !important; }
   }
   function frame(ts) {
     var speed = +document.getElementById("speed").value;
-    if (playing) { acc += ts - (last || ts); var step = 1100 / speed; while (acc >= step) { acc -= step; advance(); } }
+    if (playing) { acc += Math.min(250, ts - (last || ts)); var step = 1100 / speed; while (acc >= step) { acc -= step; advance(); } }
     last = ts; requestAnimationFrame(frame);
   }
   document.getElementById("a0").addEventListener("click", function () { setAct(0); });

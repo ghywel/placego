@@ -28,7 +28,22 @@ PREDICTIONS (Local's, published before the run):
 Counterfactual: a random row whose band at period 1024 stays far behind the single cell's (or a fast-growing staircase)
 would show that the single cell's slow period growth is not typical, and GC742's route would need the row's own data.
 These are measurements on sampled rows, not an all-history theorem.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-09 09:58 BST (M5, 17 s, run at commit 8ecacb41):
+  UB-C1 PASS: the frame equals direct Rule 30 for t < 300; single cell B_1024(16) = 18 and B_1024(2^17) = 98,295,
+      section 8.74's values exactly.
+  UB-P1 HELD: the random rows' B_1024(2^17) lie in 98,270 .. 98,393, against 98,295.
+  UB-P2 HELD: B_2048 = B_1024 on all 21 rows.
+  UB-U REFUTED as worded: I included k = 5, but B_32 is the moving band frontier itself (B_32 = B_64 = ... = B_2048)
+      and varies by row. The steps below it are identical on all 21 rows: B_2 = 8, B_4 = 29, B_8 = 400,
+      B_16 = 87,867.
+  UB-D1: each row's staircase is 8, 29, 400, 87,867, then its frontier (about 98,300) for k = 1 .. 4, 5 .. 11.
+      Everything below B_32 is settled, so these steps are exact eventual values: P_e is 2 from e = 3, 4 from 8,
+      8 from 29, 16 from 400 and 32 from 87,867, and P_e <= 32 for every e below the frontier, on every sampled row.
+      This agrees with G2.3's all-seed certificate (period histogram 1:3, 2:5, 4:21, 8:371, 16 to the first branch at
+      53,208) and extends past it on these rows.
+  Post hoc, exploratory: rows 0 .. 5 each equal the single cell's band at one time shift d <= 32 (d = 25, 7, 23, 8,
+  30, 20), agreeing out to their frontiers (98,283 .. 99,328). So all six took the single cell's branch at 53,208 and
+  differ from it only by a phase. These are sampled rows of width 64, not an all-seed statement beyond G2.3.
 """
 import random
 
