@@ -300,14 +300,42 @@ def lpv(tmp, dump, fpath, name, env_extra=None):
     if Rv != R:
         print('   ', name, 'VERIFIED R %d differs from the printed %d' % (Rv, R))
         return None, ratio, live, out
-    os.remove(cpath)
+    manifest(tmp, name, dump, fpath, cpath, R)      # GC887: certificates are kept, with a manifest, outside git
     return R, ratio, live, out
+
+
+def sha(path):
+    import hashlib
+    if path == '-':
+        return '-'
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        for blk in iter(lambda: f.read(1 << 20), b''):
+            h.update(blk)
+    return h.hexdigest()
+
+
+def fdigest(fpath):
+    """CL115's digest: non-empty lines in file order, joined by single newlines, SHA-256 of the UTF-8 bytes"""
+    import hashlib
+    if fpath == '-':
+        return '-'
+    return hashlib.sha256('\n'.join(x for x in open(fpath).read().split('\n') if x.strip()).encode()).hexdigest()
+
+
+def manifest(tmp, name, dump, fpath, cpath, R):
+    commit = subprocess.run(['git', 'rev-parse', 'HEAD'], capture_output=True, text=True,
+                            cwd=os.path.dirname(os.path.abspath(__file__))).stdout.strip()
+    with open(os.path.join(tmp, 'MANIFEST.txt'), 'a') as f:
+        f.write('%s  R=%d D=%d  cert=%s sha256=%s  dump=%s sha256=%s  F=%s digest=%s  commit=%s\n' % (
+            name, R, D, os.path.basename(cpath), sha(cpath), dump if dump == '-' else os.path.basename(dump),
+            sha(dump), fpath if fpath == '-' else os.path.basename(fpath), fdigest(fpath), commit))
 
 
 def odd(p, fpath, tc_ceiling):
     """ODD3: the width-22 layer at the wall 0 1^(p-1) times TC's F, with controls and verification"""
     import math
-    tmpdir = os.path.expanduser('~/np-scratch-int/rule30-lp')
+    tmpdir = os.path.expanduser(os.environ.get('LP_KEEP', '~/np-scratch-int/rule30-lp'))
     os.makedirs(tmpdir, exist_ok=True)
     dump = os.path.join(tmpdir, 'p%dk22.dump' % p)
     run([OHC, '22', str(p)], env=dict(os.environ, OHC_DUMP=dump))
@@ -341,7 +369,7 @@ def main():
         return
     fpath = sys.argv[1]
     widths = [int(x) for x in (sys.argv[2] if len(sys.argv) > 2 else '16,18,20,22').split(',')]
-    tmpdir = os.path.expanduser('~/np-scratch-int/rule30-lp')
+    tmpdir = os.path.expanduser(os.environ.get('LP_KEEP', '~/np-scratch-int/rule30-lp'))
     os.makedirs(tmpdir, exist_ok=True)
     R, ratio, live, out = lpv(tmpdir, '-', fpath, 'c3')
     print('one-node layer with F:', out.splitlines()[0])
