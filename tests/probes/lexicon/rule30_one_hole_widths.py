@@ -117,6 +117,49 @@ WIDTH 13 OUTCOME, 2026-10-09 20:03 BST (M5, 22 s, 709 MB peak, run at commit 81e
     12 (1.6950, held).
   - Width 14 would need about 3 GB in this implementation, so it was not run on the M5 tonight. A C or numpy version
     would be needed to go further.
+EXACT FORMS (exploratory, after the runs, no predictions; 2026-10-09 20:33 BST, Local; COMMAND: ... closed):
+  - Derivation, by hand. A language whose minimal forbidden words are x w, for both x, is "w occurs only as a prefix".
+    Its growth equals that of w-avoidance, which is the Guibas-Odlyzko correlation formula, or Goulden-Jackson
+    clusters for a set of words.
+  - Check. The `closed` mode compares OH's subset automaton with the pattern automaton by a product search: at every
+    reachable pair both must be dead or both alive. That proves exact language equality.
+  - p = 9, widths 8 .. 12: exactly "1101 only as a prefix".
+    - Correlation 1 + z^3. Denominator (1 - 2z)(1 + z^3) + z^4 = 1 - 2z + z^3 - z^4.
+    - Growth = the largest root of x^4 - 2x^3 + x - 1 = 1.866760399173861, so 0.90054 bits per hole.
+  - p = 7, widths 7 .. 9: exactly "1111 and 11100 only as prefixes".
+    - Clusters: C_1111 = -z^4/(1 + z + z^2 + z^3), and 11100 follows 1111 with overlaps 3, 2, 1.
+    - The denominator reduces to 1 - z - z^2 - z^3 - z^4 + z^5.
+    - Growth = the largest root of x^5 - x^4 - x^3 - x^2 - x + 1 = 1.883203505913524, so 0.91319 bits per hole.
+  - Both agree with OH's count ratios to about 1e-15. Equality fails exactly where the measured growth changed (p = 7
+    at widths 10 and 11, p = 9 at width 13), which is the negative control.
+  - These are exact forms of the relaxed languages, which contain the true wall's language. They are upper bounds on
+    the true hole entropy, not its value.
+OHC (registered 2026-10-09 20:31 BST, before any width above 13 ran; the C instrument rule30_one_hole_widths.c,
+  the same model with sets stepped one update at a time, 128-bit subset keys, and only the frontier kept; caps of 2M
+  subsets and 1.5 GB of frontier):
+  OHC-C1 (control, already run as the instrument smoke): widths 5, 7, 9, 11 and 13 for p = 5, 7, 9 reproduce OH's
+         subset counts exactly and its growth to 1e-6; width 5 p = 11 gives growth 1, and width 4 gives 2. All of
+         these held (for example K 13: 288, 231, 60 subsets; growth 1.6725, 1.7882, 1.8537).
+  OHC-P1 (blind, confidence 0.6): no width from 14 to 18 closes p = 5, 7 or 9 (growth stays above 1.01).
+  OHC-P2 (blind, confidence 0.5): growth keeps falling, and p = 5 is below 1.6 by width 16.
+  OHC-P3 (blind, confidence 0.4): p = 9 reaches a new plateau (equal growth at two consecutive widths) somewhere in
+         14 .. 18, as it did at 8 .. 12.
+  OHC-D1 (descriptive): growth and subset counts per width; how far the caps allow.
+OHC OUTCOME, widths 14 .. 18 (2026-10-09 20:31 BST, M5, under 0.5 s and 102 MB per case, run at commit 643c01f8):
+  OHC-P1 HELD, OHC-P2 REFUTED (narrowly), OHC-P3 REFUTED.
+  Growth, with the subset counts in brackets:
+    width 14: p = 9 1.82136 (105),  p = 7 1.74908 (333),  p = 5 1.64747 (494)
+    width 15: p = 9 1.80470 (197),  p = 7 1.72240 (552),  p = 5 1.62741 (804)
+    width 16: p = 9 1.80191 (323),  p = 7 1.69501 (962),  p = 5 1.60095 (1380)
+    width 17: p = 9 1.79708 (585),  p = 7 1.68234 (1576), p = 5 1.57946 (2248)
+    width 18: p = 9 1.76523 (1175), p = 7 1.66492 (2887), p = 5 1.55013 (3652)
+  - Every case has converged: the ratios at n = 750 and n = 1500 agree to 12 digits.
+  - None closes. All three keep narrowing, by about 0.01 to 0.03 per width, with no new plateau for p = 9.
+  - p = 5 drops below 1.6 at width 17, not 16, so P2 is refuted, if narrowly.
+OHC, widths 19 .. 24 (registered 20:31 BST, before running; the same binary; caps 2M subsets, 1.5 GB of frontier):
+  OHC-Q1 (blind, confidence 0.6): none of p = 5, 7, 9 closes by width 24, or by the largest width the caps allow.
+  OHC-Q2 (blind, confidence 0.5): growth at width 22 is below 1.45 for p = 5, below 1.6 for p = 7 and below 1.72 for
+         p = 9 (the narrowing continues at a similar rate).
 """
 import sys
 from itertools import product
@@ -494,9 +537,45 @@ def widen(maxw=12, cap=300000):
     print('COMPLETE')
 
 
+def closed():
+    """exact language equality between OH's subset automaton and a 'patterns only as a prefix' automaton"""
+    def equal(k, p, patterns):
+        M = macros_for_periods(k, [p])[p]
+        n = 1 << k
+        full = (1 << n) - 1
+        odd = sum(1 << s for s in range(n) if s & 1)
+        sel = (full ^ odd, odd)
+        L = max(map(len, patterns))
+
+        def step(d, b):
+            cnt, tail = d
+            cnt2, tail2 = min(cnt + 1, L + 2), (tail + str(b))[-L:]
+            if any(tail2.endswith(w) and cnt2 - len(w) >= 1 for w in patterns):
+                return None
+            return (cnt2, tail2)
+        seen, queue = {(full, (0, ''))}, [(full, (0, ''))]
+        for S, d in queue:
+            for b in (0, 1):
+                S2, d2 = M.apply(S & sel[b]), step(d, b)
+                if (S2 == 0) != (d2 is None):
+                    return False
+                if S2 and (S2, d2) not in seen:
+                    seen.add((S2, d2))
+                    queue.append((S2, d2))
+        return True
+    for k in range(8, 13):
+        print('p = 9, width %d: language == 1101 only as a prefix: %s' % (k, equal(k, 9, ['1101'])))
+    for k in (7, 8, 9):
+        print('p = 7, width %d: language == 1111, 11100 only as prefixes: %s' % (k, equal(k, 7, ['1111', '11100'])))
+    print('controls (must be False): p = 7 width 10 %s; p = 9 width 13 %s'
+          % (equal(10, 7, ['1111', '11100']), equal(13, 9, ['1101'])))
+
+
 if __name__ == '__main__':
     if sys.argv[1:2] == ['ext']:
         ext()
+    elif sys.argv[1:2] == ['closed']:
+        closed()
     elif sys.argv[1:2] == ['widen']:
         widen(int(sys.argv[2]) if len(sys.argv) > 2 else 12)
     else:
