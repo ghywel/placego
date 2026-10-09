@@ -62,6 +62,12 @@ RC16 OUTCOME, 2026-10-09 20:54 BST (M5, 87 s, 0.57 GB peak, run at commit 3397ff
     - Every one has lp(w) = 16, and U_(r - 3) is all ones, as at the witness.
     - If D1's derivation applies, the rooted r = 49,732 component is exactly its sixteen-cycle (closed, as PR195-D0
       closed q = 8). The others have exits, which would need PR198-D2's successor test.
+RC16X (registered 2026-10-09 21:01 BST, before running; COMMAND: ... rule30_r88_census.py 16 400000): the same q = 16
+  census, continued to depth 400,000 for the walks still alive at 60,000.
+  RC16X-C1 (control): the nine depths up to 60,000 are reproduced exactly.
+  RC16X-P1 (blind, confidence 0.6): at least one new return depth appears in (60,000, 400,000].
+  RC16X-P2 (blind, confidence 0.5): some q = 16 rooted walk is still alive at depth 400,000.
+  (Any new even return then gets QX's and QX2's tests, with predictions registered then.)
 """
 import sys
 
@@ -178,4 +184,7 @@ def main(RMAX=400):
 
 
 if __name__ == '__main__':
-    main_q16() if sys.argv[1:2] == ['16'] else main()
+    if sys.argv[1:2] == ['16']:
+        main_q16(int(sys.argv[2]) if len(sys.argv) > 2 else 60000)
+    else:
+        main()
