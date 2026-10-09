@@ -551,3 +551,6 @@ GC735 mixed duration budget (serves Q6; hand reading pending): recomputing J(a)=
 
 
 GC736 fixed-lag left-band scope audit (serves the ordered-band/core lead; hand reading pending): unbounded eventual diagonal periods force every fixed dyadic-lag B_P to saturate at the finite first period not dividing P. Its physical curve then has x/t -> -1. Finite-window quarter-speed fits remain evidence; a growing-lag or separate settling-front limit remains open. No rerun.
+
+
+GC737 sparse formal control (serves Q6; hand reading pending): W=S^(2^j)L respects GC735's monochromatic budgets and has C-V(i')<=8-5j' for every common macro-start prefix with later start in block j'. It therefore escapes GC711's fixed-slack marker-aligned sufficient near-square test. Physical admissibility and arbitrary-phase tests remain unclassified; a concrete gap for actual inter-run/support reasoning is retained.

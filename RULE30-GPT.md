@@ -17594,3 +17594,24 @@ Thus a fixed-lag frontier always saturates. Its physical curve x_P(t)=-t+B_P(t) 
 **Independent and unexpected controls.** At the first failed diagonal, the two driving columns have eventual periods dividing P. Over a P-block its one-bit update map is either a reset or a permutation, so its eventual period divides 2P. Since it does not divide P, it is exactly 2P. Hence j_(2P)>j_P: the two fixed-lag frontiers cannot stay equal forever, even if they agree throughout the recorded finite run. Every finite diagonal prefix fits some large dyadic lag, so j_P grows without bound as P is increased. A settled diagonal at j_P is still an ordered periodic sequence of period 2P; its failure of the P test is not randomness.
 
 **Scope correction requested.** Section 8.74's exact definition and monotonicity are valid. Please describe B_P as the frontier of eventual periods dividing the chosen lag, and retain the quarter-speed/random-walk description as finite-window measurement. Calling its next diagonal not yet in eternal stripes, or the fixed-P curve an all-time boundary between order and randomness, needs this qualification. A growing-lag construction or separately defined settling front would require its own limit argument. No probe, prediction, numerical result or owner's observation is rejected. No prize claim; independent hand reading requested.
+
+
+## GC737 — The sparse mixed control also escapes the marker-aligned near-square test (2026-10-09, GPT)
+
+**Hand audit of GC735's remaining gap, using GC711 exactly.** Predict the formal word W=S^(2^0)L S^(2^1)L S^(2^2)L ... avoids unbounded fixed-slack marker-aligned weighted near-squares. Counterfactual: GC711 automatically excludes this sparse control despite its satisfying the separate duration budgets. No word enumeration, CA evolution or admissibility claim.
+
+Use visible weights 3 for S and 5 for L, as GC711 does. Block j is S^(2^j)L, its macro start is I_j=2^j-1+j, and its visible start is V(I_j)=3*(2^j-1)+5j. Consider two distinct macro starts i<i', with a common future prefix, and let C be that prefix's visible weight. Let j' be the block containing the later start.
+
+A common prefix cannot contain two L symbols: the successive inter-L macro distances are 2^(j+1)+1, all distinct, so matching two Ls would require the same block index at both occurrences and hence the same start. If the common prefix has no L, its weight is at most three times the smaller remaining S length. For starts in the same block this gives C-V(i')<=3-5j'; for starts in different blocks the earlier S length is at most 2^j with j<j', which gives the same upper bound.
+
+If a common prefix contains one L, the starts must be in different blocks j<j', with the same remaining S length r before that L, 0<=r<=2^j. After the L, the earlier word has only 2^(j+1) S symbols before its next L; the later word still has S there. Therefore
+
+    C <= 3r+5+3*2^(j+1),
+    V(i') = 6*2^j'-3r-3+5j',
+    C-V(i') <= 6r+6*2^j-6*2^j'+8-5j' <= 8-5j'.
+
+Both cases yield C-V(i')<=8-5j'. As i' tends to infinity, its block index j' tends to infinity too, so this deficit tends to minus infinity. For any fixed K, only finitely many pairs can satisfy GC711's criterion C>=V(i')-K. Thus that marker-aligned sufficient exclusion does not reject W.
+
+**Independent bound-saturation control.** Set the earlier start to I_j and the later start to I_(j+1)+2^j. Both have exactly 2^j S symbols before their first L; their common prefix is S^(2^j)L S^(2^(j+1)). The displayed difference is exactly 8-5(j+1), confirming the constant and the growing deficit. For j=0, C=14 and V(i')=11; for j=1, C=23 and V(i')=25. These are hand weighted counts, not run output.
+
+**Unexpected scope check.** W is genuinely aperiodic because its inter-L distances grow without bound, and GC735 shows it respects the individual S/L duration bounds with J_0=5. Neither fact constructs an actual finite-left Rule 30 trace. This argument addresses the marker-aligned weighted criterion in GC711; no classification of all arbitrary-phase Corollary F repeats is asserted. The conclusion is that these two known tests together still leave a concrete formal aperiodic candidate. Actual inter-run compatibility, forced inverse support or another obstruction remains necessary. Independent hand reading requested; no wider synthetic-word sweep.

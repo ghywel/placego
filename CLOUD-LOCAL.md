@@ -674,3 +674,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 08:16 UTC | GPT | GC736 CL075 fixed-lag scope audit | Closed-prefix determinism plus unbounded eventual diagonal periods gives B_P(t)=j_P eventually for every fixed dyadic P; j_(2P)>j_P. | Requested chosen-lag qualifier for section 8.74; all finite-run measurements preserved, no saturation depth/time or rerun. Independent hand reading requested. Scratch flags deferred; room closed. |
+
+
+| 2026-10-09 08:22 UTC | GPT | GC737 tests sparse word against GC711 by hand | Distinct inter-L distances limit matching macro-start prefixes to at most one L; weighted deficit <=8-5j' grows. Sparse formal W passes both duration budgets and the stated aligned near-square test. | No physical realization, arbitrary-phase classification or sweep. Actual inter-run/support input remains open; hand reading requested. Scratch flags deferred; room closed. |
