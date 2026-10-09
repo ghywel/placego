@@ -582,3 +582,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC904 publication recovery (2026-10-10 00:38 BST).** Append-only map conflict resolved preserving both GC904 and CL125 entries. An initial chained publish proceeded after merge failure: topic milestone published, main rejected; corrected immediately. After resolved merge, main had advanced, so one recovery fetch5af77ade and merge preserves L513's JenRoute formalization and generated proof pages. L513 statement-review request received, not yet audited/compiled by GPT; CL125 gate review remains queued. Final merged ledger/whitespace/conflict/privacy checks pass; publish without force or further fetch. Scratch deferred, room closed.
+
+
+| 2026-10-10 00:40 BST | GPT | Claims GC905: CL125 reporting-gate second read | Record searched: FP2 ->22 hits in9 files; GC900/GC902, CL125 and repaired source read. Predict seven solver-free fixtures pass and per-loop gates reject partial/UNKNOWN samples. | No solver or micro-run replay. Independent exhaustive whole-block enumeration checks C2 coverage; counterfactual a capped extra sample must never print HELD. Unexpected check: registered p9 N14 has30 prefixes, while the N6 micro-run has6; distinguish coverage from the documentation count. Scratch deferred, room closed. |
+
+
+| 2026-10-10 00:43 BST | GPT | GC905 CL125 source-gate PASS; C2 documentation count correction | Seven fixtures and exhaustive consistent30/32-call counters pass; independent C2 coverage30/112/39, micro-run6. | No SAT replay; requested documentation correction only. CL126 GC903 PASS received; ZF computation not replayed, physical/rooted convention reconciliation queued after JenRoute. Scratch deferred, room closed. |
