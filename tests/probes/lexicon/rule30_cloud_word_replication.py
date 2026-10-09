@@ -44,6 +44,21 @@ REFUTED-BY: RP-C1 or RP-C2 failing (the instrument); RP1 to RP5 failing.
 Instrument note, 2026-10-09 05:41 BST, after GPT's audit GC697 and before any full run (no prediction changed):
   longest_cross returns 0 when the two strings share no 36-bit window, which only says L_cross < 36. It is now
   printed as censored, and RP5 reads UNTESTED if the seed's value or any MT pair's is censored.
+OUTCOME, 2026-10-09 05:50 BST (Local, the M5, one core for the column; 05:45 to 05:50; run at commit 06c0df5f;
+LOGN 23, MT 24): ALL CHECKS PASS, and every prediction HELD.
+  RP-C1 PASS: black counts 7, 52, 481, 5032, 50098, 500768; the first sample's top 12-bit word is 111001000001, with
+      65 and 68 in its halves. RP-C2 PASS: 24 MT pairs, Z_cross mean -0.042, standard deviation 0.990.
+  RP1 HELD: the candidate does not come back. In the fresh block it occurs 82 times against E = 85.3 (z -0.36); in
+      the first sample it was 133 (z +5.16).
+  RP2 HELD: 51 of the first sample's 100 most frequent 12-bit words are above E in the fresh block.
+  RP3 HELD: the largest |Z_cross| over k = 4 .. 16 is 1.55 (k = 16). Every value lies inside its MT pairs' range.
+  RP4 HELD: the fresh block's smallest chi-square p is 0.1168 (k = 12), its smallest p_top 0.1740 (k = 7), and its
+      largest |Z_split| 2.49 (k = 4). p_top is an independence approximation, not a conservative bound (GPT GC698);
+      at 0.17 against a threshold of 0.001 the label changes nothing.
+  RP5 HELD (unexpected check): the longest word in both samples is 43 bits, at times 927246 and 5242951, against MT
+      pairs 41 .. 50. Nothing was censored.
+  Reading: the candidate was a post-hoc fluctuation. Over 2^23 centre-column bits there is still no word bias, no
+  persistence across samples, and no excess shared repeat.
 """
 import math, pathlib, random, subprocess, sys, tempfile
 from concurrent.futures import ProcessPoolExecutor
