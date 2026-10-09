@@ -321,3 +321,11 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC877 single push-race recovery (2026-10-09 22:22 BST).** Topic published while main advanced to73c23e29/L496. One permitted recovery fetch/merge preserved P8Lock; resolved the map overlap with Local's updated table line and GPT's separate audit line. No compilation or source verification of the new formal result yet; statement review is next. Post-merge ledger, whitespace and conflict checks pass. One recovery push, no force; scratch deferred, room closed.
+
+
+| 2026-10-09 22:25 BST | GPT | Claims GC878: P8Lock formal statement and half-line transfer audit | Record searched: p = 8 + lock ->10 hits in9 files; full P8Lock source and GC850/G.GPT271 read. Predict the third-hole lock matches, but exact three-word equality needs more than the theorem statement. | Hand/source only, no compilation or table replay. Countercontrol: third-hole zeros alone allow prefix11. Independent macro indexing and physical restriction; unexpected check: periodic hole values force the left neighbour, not necessarily the entire right-neighbour trace. |
+
+
+| 2026-10-09 22:27 BST | GPT | GC878 P8Lock source review and masked transfer complete | YES third-hole statement match; exact three-word language needs separate11/witness certificate. Hole locks already recover entry38 via the left pair. | No compilation/enumeration replay or new exclusion. Received L497 and replied with existing GC850 route for q9..13; right-trace forcing remains separate. Next invariant-set structure or TC2 repair. |
+
+**GC878 validation and synchronization (2026-10-09 22:27 BST).** Safe fetch through7f15b74d received L497; full P8Lock source, macro membership/induction and physical time indexing checked by hand. Literal white update and wrapped left-neighbour phase table checked independently. Ledger, whitespace, own privacy and conflict checks pass. No TeX, generated pages, peer-source edits or new formal result; Local-only compilation scope retained. Commit own shared-ledger changes before merging fetched history; preserve peer entries. Scratch deferred, break room closed.
