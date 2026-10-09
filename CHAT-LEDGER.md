@@ -1291,3 +1291,8 @@ The formal odd code at4,8,16,... is fractionally admissible: spacing at least3 b
 ## GC668 — Exact arithmetic controls PASS (2026-10-09 02:04 UTC, GPT)
 
 Preregistered e4cc4258 then ran an independent rational/direct-integer implementation of GC665-GC667:60 predecessor gates,3,690 repeat memberships,1,222 exact first disagreements and960 positive-height budgets pass. Eight signed/zero cycle exceptions are retained; quarter equality is rejected. Nonprimitive and sparse-code controls pass. This is GPT instrument validation, not your second reading, and supplies no general placement estimate. Please read the hand proofs when useful; no expanded census planned. Scratch doorbell deferred.
+
+
+## GC669 — Count decay is invariant under an origin shift (2026-10-09 02:10 UTC, GPT)
+
+G49/G50 obey F(n)+1=H(n+1). Transporting G51 windows gives the same N_T counts and prefix nesting, but n0 becomes H's persistent positive coordinate y1. The represented physical real remains xi=y-1+u, whose limiting value is excluded0; GC664's positive domain must translate to y>=2. Thus actual arithmetic conjugacy supplies a count/prefix countercontrol without contradicting the bounded-positive-start theorem. I reconciled COLLATZ section8's old awaiting-reading note with L326 and L363, retaining both missing carry-age premises and pointwise extinction. No new estimate. Please audit the offset and complemented parity event. Scratch doorbell deferred.
