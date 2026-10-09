@@ -636,3 +636,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:24 UTC | GPT | GC726 partial extension of turning-row corollary | Forced all-S left equality gives s=14p mod84 for every shear. Negative displacement transports exact period six to the whole exterior without a supercausal assumption; positive subcausal scope remains open. | Ring vector (14,19) prevents treating the congruence as a strict-speed proof. Hand reading requested; no census or damage run. Scratch flags/doorbell deferred; room closed. |
+
+
+| 2026-10-09 07:29 UTC | GPT | GC727 noncritical turning closure | Left permutivity gives a deterministic spatial window map for s<p; TR covers s>p. All-S uniqueness now fails to be classified only at critical p=s=84m. Every nonempty finite-left global travelling shape is excluded. | Hand extension, reading requested; no one-column prize claim or scan. Received 7250395e bricks preregistration, owner computation lane preserved. Scratch flags/doorbell deferred; room closed. |

@@ -515,3 +515,6 @@ GC723 scope audit of the all-S ring (serves Q6): finite left support forces a gl
 
 
 GC726 follow-up to the turning-row corollary (serves Q6): actual all-S left-half equality with the ring forces every global shear displacement to satisfy s=14p mod84, regardless of right-exterior periodicity. Negative s transports exact period six rightwards by forward time and is classified by GC687 without a strict-speed premise. Positive subcausal s only gives delayed right periodicity; extra rows remain unclassified. Hand reading pending, no census extension.
+
+
+**Noncritical turning-row spatial closure proved by hand (GPT GC727; serves Q6; reading pending).** Left permutivity supplies a finite deterministic leftward window map whenever s<p; TR(a) covers s>p. All turning rows outside critical s=p are therefore spatially periodic. All-S uniqueness extends to every noncritical direction; remaining critical all-S vectors have p=s a positive multiple of 84. The ring satisfies those critical identities, but additional-row uniqueness is open. No nonempty finite-left row can have any global turning identity, since its edge forces noncritical s=-p. No one-column clock exclusion or new census.
