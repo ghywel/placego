@@ -20,6 +20,17 @@ PREDICTIONS (Local's, published before the run):
   WC-P1 (blind, confidence 0.6): at width 8 at least 5 percent of the primitive words of period 7 .. 14 are determined.
   WC-P2 (blind, confidence 0.5): every determined word contains a run (of 0s or of 1s) of length at least 6.
   WC-D1 (descriptive): counts by period, the determined words of period <= 10, and the shortest determined period.
+OUTCOME, 2026-10-09 22:28 BST (M5, 6.5 s, 9 MB, run at commit 7c18d6e2): WC-C1 PASS, WC-P1 REFUTED, WC-P2 HELD.
+  - Determined at width 8, so excluded for finite seeds through Theorem A, pending the second reading of the route
+    (L498): 14 of the 2,515 primitive words of period 7 .. 14 (0.6 percent).
+    - p = 10: 0011111111
+    - p = 11: 00000000001, 00000000011
+    - p = 12: 000000000001, 000000000011
+    - p = 13: 0000000000001, 0000000000011, 0000000001011
+    - p = 14: 00000000000001, 00000000000011, 00000000001011, 00000000010011, 00000000010111, 00000000011011
+  - None at periods 7 .. 9. Every determined word has a run of length at least 6.
+  - The families are a long white run with a short black tail (the white end 0^q 1, also 0^q 11, 0^9 1011, ...) and the
+    slow wall 0^2 1^8 (G18's 0^a 1^b family).
 """
 import sys
 

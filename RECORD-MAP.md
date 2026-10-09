@@ -379,3 +379,5 @@ PART: as on the board.
   PROOF-SKETCH / COMPUTED (awaiting a second reader) — rule30_white_end_jen.py, L498
 - Black end 0 1^q, q >= 14, reproved one-sidedly the same way (entry 38 already has q = 7, q >= 9) — PROOF-SKETCH —
   rule30_one_hole_widths.py jen, L497
+- One-sided Jen route census, periods 7 .. 14 at width 8: 14 words excluded (long white runs, and 0^2 1^8) —
+  PROOF-SKETCH / COMPUTED (route awaiting a second reader) — rule30_word_jen_census.py, L499
