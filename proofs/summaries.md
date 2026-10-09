@@ -3137,6 +3137,8 @@ No Rule 30 picture grown from finitely many black squares can end up with a colu
 
 **An everyday picture.** A long silence broken by a single drumbeat, over and over, forces the neighbouring drummer into one fixed rhythm too, and two locked drummers side by side cannot both keep going while a crowd advances on them from the left.
 
+**Checked by machine.** A proof assistant (Lean) has checked the whole argument, the finite computation included.
+
 ## 41
 The same short argument that closed the white end also rules out 139 more drumbeat patterns that a column of a finitely seeded Rule 30 picture might have settled into.
 
