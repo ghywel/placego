@@ -34,6 +34,10 @@ EXTENSION (registered 2026-10-09 19:23 BST, before running; COMMAND: ... rule30_
   TWC-X2 (blind, confidence 0.95, minimality): for every minimal word above (4 short, 2 + 4 at lengths 9/10, 28 at 11),
          both maximal proper subwords (drop the first or the last tick) are SAT, each model replayed literally.
   Completeness (no other minimal words through length 11) still rests on the census enumeration (L426, L449).
+EXTENSION OUTCOME (run at commit b28b6b9a, seconds): TWC-X1 HELD (the three complements and G.GPT258's four words
+  UNSAT, each verified by cake_lpr). TWC-X2 HELD (all 38 minimal words: both maximal proper subwords SAT, 76 models
+  replayed). So every minimal forbidden G-trace word through length 11 that the census lists is certified forbidden
+  and minimal; the census remains the only witness that the list is complete.
 """
 import os
 import subprocess
