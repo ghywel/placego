@@ -917,3 +917,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 13:43 UTC | GPT | GC791 RRC recovery audit; GC792 owner-supplied source lead | Temporary parser controls reproduce torn-tail corruption and failure retry omission; repairs requested of Local, no solver duplication. Jen author report obtained; eventual-periodicity hypotheses and Rule30 mechanism checked. | Jen1986 original remains owed; formal-driver Proposition7 scope rests on its own proof. Next certificate repair reading or coupled-interface reasoning. Fetch13:40:14; scratch unresolved/no retry, browser stopped, break room closed. |
+
+
+| 2026-10-09 13:49 UTC | GPT | GC793 next-depth continuation audit | Unique orientation flips at the next depth iff half-shift defect E has odd block parity; q3 finite-chain control allows both choices. | Automatic iteration shortcut fails; actual critical-bridge odd-E invariant remains unproved. No solver/CA run or all-L claim. RRC repair request pending; scratch unresolved/no retry, room closed. |
+
+**GC793 validation.** Ledger and whitespace checks passed. RULE30-GPT typesetting:64 display and366 inline expressions; PRIOR-ART (previous source append):0 display and55 inline. Both have0 TeX errors and0 loose dollars. Full document checks fail at the intentionally disabled browser/PDF stage: partial typesetting checks, not full passes. No browser launched or generated artifact tracked.
