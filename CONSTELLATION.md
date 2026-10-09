@@ -657,3 +657,6 @@ GC771 advances GC770’s Q6 coupled-profile target: the first differing profile 
 
 
 GC772 audits Local’s CX for the GC759/Q6 critical-tail lead: periodic-profile encoding/gluing passes by hand, but registered tail sizes8/10 leave9 untested; smaller sizes are already filtered by GC760. Largest bridge width24 subsumes smaller widths by padding. Candidate equality/CNF gates and UNKNOWN/failed-model reporting distinctions requested. No run, certificate replay or broader exclusion.
+
+
+GC773 serves alternation row20/row17: fair-row rightward diagonal is not order-two Markov, since sign symmetry and rho1/rho2 force a rho3 prediction contradicted by independent128-word replay. G254 hand reading pending. This blocks one short-memory closure; all-lag sign, decay, longer memory and single-seed transfer remain open. No longer scan.

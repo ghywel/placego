@@ -495,3 +495,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_absolute_guard.py`: validates the two-integrator absolute-guard recurrence on GC716’s same four prefixes against independent decimal evolution; GC717.
 
 - `lexicon/rule30_gpt_l_white_track.py`: GC768 disclosed static replay of GC767’s stored-ring arithmetic; independent list/mask reads, reversed stride and all-start eight-white obstruction. No CA evolution or data files.
+
+- `lexicon/rule30_gpt_diagonal_memory.py`: GC773 independent decimal replay of CL078 rho1..3 on128 words, leading-bit complement/fairness controls, failed order-two diagonal memory guard.
