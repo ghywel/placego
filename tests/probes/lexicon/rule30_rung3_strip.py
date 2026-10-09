@@ -27,6 +27,21 @@ PREDICTIONS (Local's, published before the run):
         EXCLUDED-ACYCLIC).
   RG-P2 (blind, confidence 0.3): at radius 7, at least one word that fails at radius 6 passes.
   RG-D1 (descriptive): per word, the cyclic components (count, sizes, periods) and the side each forces.
+OUTCOME, 2026-10-09 21:20 BST (M5; radius 6: 0.7 s; 7: 2.4 s; 8: 10.6 s and 241 MB; run at commit 9a1d37aa): RG-C1 PASS,
+  RG-P1 REFUTED, RG-P2 REFUTED.
+  - RG-C1: at radius 6, 01 and the words 0 1^q (p = 3 .. 6) fail with exactly SG's components.
+  - No primitive word of period 3 .. 6 passes at radius 6, 7 or 8. Every one has a large cyclic component forcing
+    neither column -1 nor +1, which grows with the radius (for 01: 84, 150, 264 vertices).
+  - Small components that force both sides exist beside it.
+  - So the strip-graph certificate does not reach Rung 3 at these radii.
+RING OBSTRUCTION (registered 21:20 BST, before running; COMMAND: ... rule30_rung3_strip.py rings [NMAX=18]):
+  - A Rule 30 ring (a spatially periodic row of length n) whose column 0 has least temporal period p reading w, and
+    whose column -1 and column +1 both have least periods not dividing p, gives an infinite path in every strip
+    relaxation, at every radius below n/2.
+  - The component holding that path cannot force either neighbour on P | p classes. So such a word can never pass
+    the strip test at radius < n/2. This explains the failures; it is not an exclusion.
+  RG-P3 (blind, confidence 0.6): every primitive word of period 3 .. 6 has such a ring witness with n <= 18.
+  RG-D2 (descriptive): per word, the smallest n of a witness and the neighbour periods.
 """
 import sys
 from math import gcd
@@ -176,5 +191,66 @@ def main():
     print('COMPLETE')
 
 
+def rings(NMAX=18):
+    """ring witnesses: a cycle state of Rule 30 on a ring of length n, with column 0 of least period p reading w and both
+    neighbour columns of least periods not dividing p"""
+    def step(x, n):
+        m = (1 << n) - 1
+        l = ((x << 1) | (x >> (n - 1))) & m        # left neighbour of bit i is bit i - 1 (cyclic)
+        r = ((x >> 1) | (x << (n - 1))) & m        # right neighbour is bit i + 1
+        return l ^ (x | r)
+    def lp(seq):
+        T = len(seq)
+        return next(d for d in range(1, T + 1) if T % d == 0 and all(seq[t] == seq[(t + d) % T] for t in range(T)))
+    targets = set()
+    for p in range(3, 7):
+        targets |= set(necklaces(p))
+    found = {}
+    for n in range(3, NMAX + 1):
+        m = (1 << n) - 1
+        seen_cycle = set()
+        nxt = [0] * (1 << n)
+        for x in range(1 << n):
+            nxt[x] = step(x, n)
+        # cycle states: iterate the map until the image stabilises
+        cur = set(range(1 << n))
+        while True:
+            img = {nxt[x] for x in cur}
+            if img == cur:
+                break
+            cur = img
+        done = set()
+        for x0 in cur:
+            if x0 in done:
+                continue
+            cyc = [x0]
+            y = nxt[x0]
+            while y != x0:
+                cyc.append(y)
+                y = nxt[y]
+            done |= set(cyc)
+            T = len(cyc)
+            for c in range(n):
+                col = [(s >> c) & 1 for s in cyc]
+                p = lp(col)
+                if p < 3 or p > 6:
+                    continue
+                s = ''.join(map(str, col[:p]))
+                w = min(s[i:] + s[:i] for i in range(p))
+                if w not in targets or w in found:
+                    continue
+                pl = lp([(s2 >> ((c - 1) % n)) & 1 for s2 in cyc])
+                pr = lp([(s2 >> ((c + 1) % n)) & 1 for s2 in cyc])
+                if p % pl and p % pr:
+                    found[w] = (n, T, pl, pr)
+        print('n = %2d: witnesses so far %d of %d' % (n, len(found), len(targets)), flush=True)
+        if len(found) == len(targets):
+            break
+    for w in sorted(targets, key=lambda z: (len(z), z)):
+        print('  %-7s %s' % (w, ('ring n = %d, cycle length %d, neighbour periods %d, %d' % found[w]) if w in found else 'no witness'))
+    print('RG-P3', 'HELD' if len(found) == len(targets) else 'REFUTED (%d without a witness)' % (len(targets) - len(found)))
+    print('COMPLETE')
+
+
 if __name__ == '__main__':
-    main()
+    rings(int(sys.argv[2]) if len(sys.argv) > 2 else 18) if sys.argv[1:2] == ['rings'] else main()
