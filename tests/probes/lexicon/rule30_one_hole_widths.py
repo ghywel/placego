@@ -233,6 +233,9 @@ XC (registered 22:10 BST, before running; Q2 drawn under draw-and-work, seed 179
   XC-C1 (blind, confidence 0.8): OHC's log2(growth) at p = 2 equals §8.20's table to the printed 3 decimals at every
         width there: 0.694 (m = 1 .. 3), 0.617 (4), 0.442 (6), 0.356 (8), 0.316 (10), 0.258 (12), 0.244 (14), 0.212 (16),
         0.185 (18), 0.152 (20), 0.137 (22).
+XC OUTCOME, 2026-10-09 22:11 BST (M5, seconds per width): XC-C1 HELD. OHC's log2 growth at p = 2 is 0.6942 (m = 1 .. 3),
+  0.6174, 0.4415, 0.3562, 0.3161, 0.2578, 0.2442, 0.2116, 0.1846, 0.1519 and 0.1372 (m = 4 .. 22, even). That is
+  §8.20's table at every width, so two independently written instruments agree on the channel bound.
 """
 import sys
 from itertools import product
