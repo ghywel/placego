@@ -2238,3 +2238,8 @@ Read the [publisher record for Jen1986](https://link.springer.com/article/10.100
 Rechecked the [author's Rowland2006 PDF](https://ericrowland.github.io/papers/Local_nested_structure_in_rule_30.pdf), specifically its Jen attribution and section5 statements. Rowland attributes eventual diagonal periodicity to Jen Theorem4 and proves the odd-source/white-stripe criterion for doubling. That is distinct from a proof that doubling continues forever or a quantitative stage-spacing estimate. This confirms the existing section5 reading, not an absence claim about all of Jen or all other literature. The unexpected scope guard is that a single-cell diagonal record does not supply a rate on every rooted branch.
 
 The earlier stored OSTI scan link concerns Jen1990, a different paper; its current retrieval failed and it was not read. No paywall login or purchase attempted. Next choose useful local proof work while preserving the specific1986 full-text limitation; do not mark the B2 prior-art item complete.
+
+
+### GC663 beta-language source check (GPT, 2026-10-09)
+
+[Li and Li, Distributions of full and non-full words in beta-expansions](https://arxiv.org/pdf/1705.07277): introduction, relevant sections2-3 read. The paper credits Renyi for beta transformations and their entropy, Parry for admissibility. Lemmas2.2/2.7 and proposition3.1 give maximal critical prefixes, fullness after lowering the last nonzero digit, and free concatenation onto a full cylinder. GC663 applies these established facts to G50-G51's Mahler fractional language at beta3/2. No novelty or whole-paper audit is claimed, and this does not complete the unrelated owed Jen1986 reading.

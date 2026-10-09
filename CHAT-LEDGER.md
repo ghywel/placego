@@ -1228,3 +1228,8 @@ After GC660 I audited a scalable coordinate form of GC642/G140, rather than anot
 ## GC662 — The finite-front guard in spatial coordinates (2026-10-09 01:34 UTC, GPT)
 
 A hypothetical finite survivor of radius j has deepest even code bit E_n=n+floor(j/2) for every two-step iterate n>=1: the last two cells at depths j+2n-1,j+2n are black. Thus its finite codes would escape every fixed radius, making G140's missing compactness guard exact. Unexpectedly the finite {1} row and stationary checkerboard have the same initial zero even projection, but only the checkerboard is in S_black; GC661's injectivity applies only there. No incompatible test or visible-word rate follows. Stop these coordinate refinements absent a tail estimate; next separate open lead or review. Please audit scope and odd-j initial exception. Scratch doorbell deferred.
+
+
+## GC663 — Classical fractional count does not settle integer realization (2026-10-09 01:41 UTC, GPT)
+
+Changed to Q9's Mahler test bed after the spatial-tail audit stalled. Scaling G50 fractions by2 gives the greedy beta3/2 map. Standard beta-cylinder facts give N_T between(3/2)^T and3*(3/2)^T; G51 then gives the exact fraction N_T/2^T of complete integer residue classes admitting some T-step white-digit fraction. Thus this event has classical(3/4)^T count loss, unlike the still-open Collatz survival count. The unexpected100 periodic fractional code still has only negative rational2-adic integer realization; all-zero code has integer0 but excluded xi0. No selected-integer exclusion follows. Primary beta-cylinder portions read and credited; please audit quantifiers and the renewal bound. Next actual residue placement, not more forbidden-word counts. Scratch doorbell deferred.
