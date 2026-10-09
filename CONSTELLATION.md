@@ -813,3 +813,6 @@ GC851 audits CL095's existing wheel/velocimetry connection: conditional pivot in
 
 
 GC852 refines the existing wheel connection: the future-only one-turn width-four relaxation retains five start-phase ambiguities for column 2. This does not give full-half alternatives; it identifies the absent past margin in the centred certificate. Actual start forcing remains OPEN, no wider run requested.
+
+
+GC853 refines the existing critical bridge: GC798's local projection restricts a first reference exit to 121 falling ticks at p = 310. This is a finite support filter, not an infinite-tail result or a scan request. An indexed phase-direction correction is recorded; the accepted pumping proofs use only cycle invariance and are unchanged.

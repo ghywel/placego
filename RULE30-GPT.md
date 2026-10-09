@@ -20144,3 +20144,26 @@ This follows from x1 = 0 in x1' = wall XOR (x1 OR x2), independently of the path
 **What this does not settle.** A width-four surviving path has arbitrary exterior input and may fail to extend through a larger strip or an actual right half. Thus the five column-2 ambiguities refute start forcing in this small relaxation, not the actual right-wheel lock conjecture. They do not contradict CL095's measured zero conditional entropy, and no alternative full right-half orbit is constructed. Conversely finite sampled zero conditional entropy cannot remove those alternatives without an exact extra constraint. Do not commission wider graphs solely to chase this ambiguity: first identify a hand constraint or a specific existing certificate that resolves the start boundary.
 
 **Disposition.** The centred-certificate shortcut is CLOSED. The actual future-window implication remains OPEN, with the exact missing boundary identified and no new universality claim. Local's OH widening is parked at width 13 and stays untouched. Next return to the main critical bridge unless a concrete boundary input or peer review warrants another wheel block.
+
+
+## GC853 — A first reference exit has 121 free temporal bits, not 310 (2026-10-09 20:17 BST)
+
+**Bears on Q6's critical bridge.** Return to the main line after the wheel audits. This is GC798's existing two-equation projection applied to the first exit from the reference, not a new reachability invariant. Before the small count, predicted that the first new profile differs from the reference only at falling transitions of the last reference profile Y, with their count at most 154. Counterfactual: all 156 black ticks of Y are free. Unexpected control: retain GC798's actual q = 3 finite-chain failure, so local freedom is not promoted to infinite extension. No SAT query, branch enumeration or larger run.
+
+Let (X,Y) be the last wholly reference pair on an actual departing path. A candidate successor Z and some further W must satisfy
+
+    Delta X = Y OR Z,    Delta Y = Z OR W.
+
+For fixed X,Y this is equivalent to Z <= Delta Y and to Z = Delta X wherever Y = 0, together with Y <= Delta X. The last inequality and consistency of the forced values hold because the pair comes from the reference cycle. Therefore Z is fixed wherever Y = 0; it is zero wherever Y = 1 and Delta Y = 0; and it is freely 0 or 1 exactly where Y = 1 and Delta Y = 1. The free ticks are precisely the falling transitions Y(t)=1, Y(t+1)=0. Every such choice has a cyclic two-edge witness, for example W = Delta Y. This proves exactness for these two equations only.
+
+The reference successor refZ obeys those same constraints. Hence any first departure Z differs from refZ only on the falling ticks. At p = 310, `rule30_gpt_reference_exit.py` counts exactly 121 falls in every one of the 155 reference profiles. It checks the per-tick projection independently by literal enumeration of both Z and W bits, and retains the full reference period and phase identity. Thus one fixed reference pair has exactly 2^121 two-edge successor choices, of which one is refZ. This compresses the raw 310-bit successor domain; it is still far too large to enumerate. The original 121-bit support mask, not arbitrary 121 tick positions, is essential.
+
+**Retained phase-sign failure.** The first added phase control incorrectly used V_i(t+2)=V_(i+29)(t) and failed. With the script's literal right-reading G update and bit indexing, the correct indexed identity is
+
+    V_i(t+2) = V_(i+126)(t) = V_(i-29)(t), indices modulo 155.
+
+The corrected control passes for every site and tick. This agrees with L474's stated literal shift 126. Its separate +29 indexed line, repeated in G.GPT270's step 2, needs the corresponding sign correction. GC848 and GC849 use only T^2(C)=C and gcd(29,155)=1; both remain valid with either direction, so this is an indexing correction, not a failed pumping proof. The notation G^2(R)=sigma^29(R) is consistent when sigma shifts a row right, reading index i-29. Peer/generated text is preserved for its author to correct.
+
+**Controls and limits.** The reference successor belongs to every projected bit set. All sustained-black Y ticks force Z=0, refuting the 156-free-bit counterfactual. The black count 156 and white count 154 bound the number of falls by 154, independently of the exact 121 count. GC798's q = 3 D=U=100 passes two equations yet its longer chain eventually fails; it is an independent warning that a projected witness need not continue indefinitely. No specific first-exit choice here is claimed to survive the third equation or reach a downstream cyclic component.
+
+**Disposition.** The first-exit mask is an exact cheap filter for any future certificate of downstream reachability; it neither supplies that certificate nor justifies scanning its 2^121 branches. Other background orbits and the q = 155 bridge remain OPEN, TC stopped. Next needs a constraint coupling several falling ticks or a genuine cut separating all masked exits from allowed backgrounds, rather than more unstructured depth.
