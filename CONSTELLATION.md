@@ -663,3 +663,5 @@ GC773 serves alternation row20/row17: fair-row rightward diagonal is not order-t
 
 
 GC774 audits the owner/CL079 front argument for Q6/period2: fixed-P diagonal-prefix exit supplies no vertical aperiodicity; membership compares a later different column. GC736 guarantees finite visits for each fixed column, while growing-lag C equality requires GC752’s plateau. Shunting changes the tested trace, not this distinction. Front-only exclusion CLOSED as argued; actual band-to-core compatibility remains OPEN. No SH run or prize claim.
+
+GC775 serves GC759/Q6's critical-tail lead: updated CXE source gates and full P <= 10, W <= 24 coverage pass by hand. L404 reports 100 verified DRAT proofs; certificates not independently replayed. Unrestricted W = 24 instances subsume q155 and smaller widths. Exact bounded exclusion conditional on receipts; arbitrary widths, larger tails and critical periods remain open. SH finite scope qualifiers requested; no duplicate run.
