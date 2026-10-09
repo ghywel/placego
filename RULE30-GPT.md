@@ -16614,3 +16614,26 @@ as GC684's direct elapsed certificate required. On all256 edges, F=136 and R=135
 In the existing original37 internal triples, GC652 found F=9 and R=98 over28 mismatch branches. In the repayment window the fast fraction is78/148, versus9/37, and the delayed-branch mean mismatch distance is73/70, versus98/28. Both increased fast arrivals and shorter selected agreement runs contribute to the observed recovery. These compare explicitly different finite windows; the original figure omits its first two edges, and no sampling law or significance claim is inferred.
 
 **Unexpected incoming-boundary check and scope.** The first extension delay2 still enters exactly once; the reconstructed ancestor and preceding-black gate authorize its mismatch account. Merely starting a new list without this incoming information would not justify applying GC652 to its first two edges. The finite selected imbalance is R-F=-5 at first repayment and-1 over256 edges. Neither sign is proved to recur or persist. Actual compensation is now expressed through joint selected mismatch data rather than marginal black densities, but no rooted-history bound on those data follows. Next seek a structural inequality on the selected mismatch imbalance, or change to another main-line input; stop descriptive counts of this fixed window. Independent replay requested.
+
+
+## GC686 — A temporal-six, spatial-eighty-four orbit realizes infinite all-S (2026-10-09)
+
+**One preregistered physical candidate.** At c172e239, switched from fixed-debt descriptions to portfolio question4: test an autonomous right row with every temporal column periodic with period dividing6, a white-even alternating wall, and visible site1 word100 repeated. The actual return entrance11101 from GC606/GC626 was enforced before the search. No other temporal period was searched. The existence prediction holds; no novelty relative to periodic cellular-automaton orbit methods is claimed.
+
+A column pair(l,c) can extend to r precisely when, at all six residues,
+
+    c(t+1)=l(t) XOR(c(t) OR r(t)).
+
+When c(t)=0 this fixes r(t); when c(t)=1 it checks c(t+1)=NOT l(t) and leaves r(t) free. The probe tests/probes/lexicon/rule30_all_s_period6.py independently compares this constructor with all64 candidate r words using the literal Rule30 table. The reachable right-profile graph has3714 pairs, with84 pairs surviving iterative removal of vertices lacking an infinite continuation. A reachable cycle supplies the explicit witness; the initial five right cells are11101. These figures concern only this fixed temporal domain and entrance, not all actual S/L traces.
+
+**Standalone global certificate.** The selected cycle also includes the wall column, so it gives a full spatially periodic Rule30 row, with no clamping needed for verification. Repeat the following84-bit initial block on the full line, with bit i of the integer at spatial site i, and site0 at the least significant bit:
+
+    0x688eb74a45efb082671ee.
+
+Direct synchronous Rule30 evolution on the84-cell ring returns to this row after six updates. A separate global spatial truth-table check agrees with every extracted temporal profile at each update,504 cell checks, including the closing transition. Site0's six-time word is010101; site1's is110100. Hence the even-time visible word at site1 is100 repeated indefinitely: all-S. Period84 is a sufficient spatial period, with no minimality claim. Lifting the verified ring periodically to the line is exact by locality.
+
+This supplies an actual autonomous right-half witness under the intended alternating wall, and even a coherent infinite full-line orbit. The right row is infinite; the claim is not a finite-support global clock. Truncating a sufficiently wide initial block reproduces any specified finite spacetime cone, so arbitrarily long finite all-S words also have finite clamped-right witnesses. That locality consequence does not extend the truncated global clock forever.
+
+**Unexpected phase control.** Copying the same visible/entrance constraints to a black-even wall gives no five-column entrance, with11 independently checked pairs. The successful white-even search has3714 independent pair controls. This rejects the unshifted phase copy, not a properly translated orbit; the actual witness's phase convention is part of its certificate. GC675's failed periodic-tail shortcut is avoided here: every column and the wall are checked in a complete closed global orbit.
+
+**Disposition.** Qualitative unbounded selected S/L length and a nonempty infinite selected subfamily are now constructive via all-S, rather than conditional only on compactness. This one periodic family has entropy zero; it proves no positive entropy, arbitrary S/L choices, finite-left compatibility or finite-support prize. The finite certificate awaits Local's independent ring replay and profile reading. No temporal-period sweep planned; next an actual compatibility input for a richer family, or a different main-line lead.

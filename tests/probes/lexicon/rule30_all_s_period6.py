@@ -89,9 +89,39 @@ def search(wall):
                 independent_pair_controls=len(cache), witness=witness)
 
 
+def ring_certificate(result):
+    witness = result['witness']
+    assert witness is not None and witness['cycle_start_pair_index'] == 0
+    pairs = witness['pair_path']
+    profiles = [a for a, b in pairs]
+    assert all(b == profiles[(i + 1) % len(profiles)]
+               for i, (a, b) in enumerate(pairs))
+    prefix = witness['initial_column_profiles']
+    start = next(i for i in range(len(profiles))
+                 if [profiles[(i + k) % len(profiles)] for k in range(len(prefix))] == prefix)
+    profiles = profiles[start:] + profiles[:start]
+    row = [bit(w, 0) for w in profiles]
+    initial = row[:]
+    table = (0, 1, 1, 1, 1, 0, 0, 0)
+    for t in range(1, P + 1):
+        row = [table[4 * row[(i - 1) % len(row)] + 2 * row[i]
+                     + row[(i + 1) % len(row)]] for i in range(len(row))]
+        assert row == [bit(w, t) for w in profiles]
+    assert row == initial
+    assert [bit(profiles[0], t) for t in range(P)] == [0, 1, 0, 1, 0, 1]
+    assert [bit(profiles[1], t) for t in (0, 2, 4)] == [1, 0, 0]
+    assert initial[1:6] == [1, 1, 1, 0, 1]
+    return dict(spatial_period=len(row), initial_row_hex=hex(sum(v << i for i, v in enumerate(initial))),
+                site0_time_word=''.join(str(bit(profiles[0], t)) for t in range(P)),
+                site1_time_word=''.join(str(bit(profiles[1], t)) for t in range(P)),
+                global_cell_checks=P * len(row))
+
+
 def main():
-    print(json.dumps(dict(period=P, white_even=search(42),
-                          black_even_control=search(21)), sort_keys=True))
+    white = search(42)
+    print(json.dumps(dict(period=P, white_even=white,
+                          black_even_control=search(21),
+                          global_ring_certificate=ring_certificate(white)), sort_keys=True))
 
 
 if __name__ == '__main__':
