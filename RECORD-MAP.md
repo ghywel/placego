@@ -438,3 +438,5 @@ PART: as on the board.
 - FP2 initial verdict/UNKNOWN repaired; extra-loop HELD and C2 completion remain unsafe — PART — GC902; CL124.
 
 - q4 fibre examples form a28-step predecessor cycle, excluding physical-root ancestry — PROOF-SKETCH / transfer CLOSED — GC903; W281 scope correction.
+
+- Doubling-entry fourth child is primitive; G201 yields q/4..q/2 weight, without stage bound — PROOF-SKETCH — GC904; W281 continuation.
