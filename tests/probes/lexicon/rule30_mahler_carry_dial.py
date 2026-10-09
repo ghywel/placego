@@ -34,6 +34,21 @@ PREDICTIONS (Local's, published before the run):
   MD-D1 (descriptive): the H_inf distribution for g <= 4096, and the table of H_k(g) for k = 0 .. 8, g <= 63.
   Disclosure: the instrument smoke (SAT against brute force at g = 9, 10, k = 1, 2, N <= 3) also printed
   H_inf(1 .. 5) = 4, 3, 2, 12, 6 before this header was pushed; no prediction above concerns those values.
+OUTCOME, 2026-10-09 18:33 BST (M5, about 2 minutes, run at commit f2d78a75): MD-C1 PASS, MD-C2 PASS, MD-P1 HELD,
+  MD-P2 HELD, MD-P3 HELD.
+  k = inf (exact, g <= 4096): horizons from 2 to 29 (1024 at 2, falling roughly by half per step; one g at 26, two at
+  27, two at 28, one at 29); no Z-number, as conjectured.
+  k = 0 and k = 1: H(g) = v2(g) + 1 exactly for g <= 63 (1 2 1 3 1 2 1 4 ...), the ruler sequence.
+  Max H over g <= 63 by k = 0 .. 8: 6, 6, 15, 24, 24, 24, 15, 24, 19 (24 is the cap); survivors to the cap: k = 3 (g =
+  1, 22), k = 4 (g = 53), k = 5 (g = 1, 5, 38, 57), k = 7 (g = 1).
+  Exploratory, after the run (no predictions): replaying each survivor's SAT model shows two kinds. At odd k (3, 5, 7)
+  every survivor's integer part collapses to 0 within three steps (the dropped carries cancel it) and a small fraction
+  then stays below 1/2: a degenerate survival, as carry-limited Collatz collapses to 0 at odd k (AS). At k = 4, g = 53
+  survives with its integer part growing (53, 76, 114, 171, 224, 336, ... 397189 at step 23); followed further,
+  H_4(53) = 30 (finite), against the true map's H_inf(53) = 25, the true map's longest survivor up to g = 63. Also
+  H_2(53) = 2, H_6(53) = 10, H_8(53) = 19.
+  Reading: the carry dial has the same odd/even split on Mahler's map as on Collatz (collapse at odd k), and the
+  true map's record holder g = 53 is also the dial's genuine survivor at k = 4. These are finite-horizon measurements.
 """
 import os
 import subprocess

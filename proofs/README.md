@@ -675,6 +675,11 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Odd white-run lengths turn homogeneous selector parity into a count of runs of length 3 mod 4](G263-odd-white-run-lengths-turn-homogeneous-selector-parity.md):
   When every white stretch in a short-cycle column has odd length, the hidden parity just counts the white stretches
   of length 3, 7, 11 and so on.
+- [A constant temporal run forces a spatial zero wedge; a ring containing GC828's profile needs at least 14 cells](G264-a-constant-temporal-run-forces-a-spatial-zero.md):
+  In Rule 30's moving frame, a column that stays white for a while forces a growing wedge of white to its right.
+- [Rule 150 with the AND on even cells: the single seed's two-step orbit is exactly Rule 90, and its centre is white from time 2](G265-rule-150-with-the-and-on-even-cells.md):
+  A Rule 150 variant with the extra AND applied only on even cells grows from a single black cell exactly like the
+  simpler Rule 90, and its centre goes white for good.
 
 ## Proofs from the sparks
 
