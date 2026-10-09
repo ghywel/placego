@@ -29,10 +29,23 @@ PREDICTIONS, written 2026-10-09 22:16 BST, before any run of this script.
   TC2-P3 (consistency, 0.8): it is above the measured typical rate of 0.080 bits per visible bit (§8.20,
          rule30_metric.py). A failure would mean that the measurement or this instrument is wrong.
   TC2-U, the unexpected check (0.4): some true minimal forbidden word is longer than 28 holes, one turn of the wheel.
-  Counterfactual. If TC2-P1 fails, the true language's constraints up to N holes are no stronger than a 28-cell
-  layer's, and the layer bound stays the record's best. If it holds, the record gains a sharper certified ceiling
-  on the channel, and with it on the cost side of Q1.
+  Counterfactual. If TC2-P1 fails, the true forbidden words found up to N holes do not beat the 28-cell layer, and the
+  layer bound stays the record's best. If it holds, the record gains a sharper certified ceiling on the channel.
+AUDIT (GPT GC877, 2026-10-09 22:21 BST, applied 22:27 while the first run was in progress; that process keeps its
+code, and its float verdict lines are superseded by `certify`). The ceiling is now certified in integers. Take a
+positive integer vector u on the live states (from power iteration), D = 10^9, and R = max_i ceil(D (A u)_i / u_i).
+Check D (A u)_i <= R u_i for every i, so rho <= R/D. Keep R, D, the live-state count and a SHA-256 of F with the
+exact a_400. Thresholds are tested in integers: R^2500 < 2^309 D^2500 for 0.1236 bits, and R^100 < 2^11 D^100 for
+0.110. Two hand controls on the automaton: F empty gives exactly 2 (two root self-loops); F = {00, 01} gives exactly
+1 (one live loop, though F leaves finitely many words starting 0). Scope repairs:
+- this bounds the delivery side of Q1 (what any right half can deliver to column 1), not its fixed-seed cost side;
+- failing to beat the layer bound would not show the true constraints are no stronger;
+- TC2-U can be refuted only by a complete level beyond 28, and a capped or shallow run is NOT DECIDED;
+- the 0.080 figure is an estimate, so TC2-P3 is a consistency check, not a rigorous lower bound;
+- SAT replays check witnesses only, and the UNSAT verdicts are CaDiCaL's.
+COMMAND (certificate): NP_SCRATCH_TC=... python3 ... certify P [P ...], which reads tc_pP.txt.
 """
+import hashlib
 import math
 import os
 import random
@@ -40,10 +53,13 @@ import sys
 from collections import deque
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+_argv, sys.argv = sys.argv, sys.argv[:1]                       # TC parses its own argv at import
 import rule30_cloud_hole_truecount as tc                       # noqa: E402
+sys.argv = _argv
 
-NMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 120
-tc.CAP = float(sys.argv[2]) if len(sys.argv) > 2 else 1800.0
+CERTIFY = len(sys.argv) > 1 and sys.argv[1] == 'certify'
+NMAX = int(sys.argv[1]) if len(sys.argv) > 1 and not CERTIFY else 120
+tc.CAP = float(sys.argv[2]) if len(sys.argv) > 2 and not CERTIFY else 1800.0
 P = 2
 BOUND_820 = 0.1236
 MEASURED = 0.080
@@ -144,7 +160,113 @@ def spectral_ceiling(F):
     return ratio + 1e-12, len(live)
 
 
+def live_graph(F):
+    """Aho-Corasick automaton avoiding F, pruned to states with an infinite future: adjacency lists."""
+    goto, fail, out = [{}], [0], [False]
+    for w in F:
+        st = 0
+        for ch in w:
+            if ch not in goto[st]:
+                goto.append({})
+                fail.append(0)
+                out.append(False)
+                goto[st][ch] = len(goto) - 1
+            st = goto[st][ch]
+        out[st] = True
+    q = deque()
+    for ch in '01':
+        if ch in goto[0]:
+            q.append(goto[0][ch])
+        else:
+            goto[0][ch] = 0
+    while q:
+        st = q.popleft()
+        out[st] = out[st] or out[fail[st]]
+        for ch in '01':
+            if ch in goto[st]:
+                u = goto[st][ch]
+                fail[u] = goto[fail[st]][ch]
+                q.append(u)
+            else:
+                goto[st][ch] = goto[fail[st]][ch]
+    states = [x for x in range(len(goto)) if not out[x]]
+    succ = {x: [goto[x][ch] for ch in '01' if not out[goto[x][ch]]] for x in states}
+    alive = set(states)
+    changed = True
+    while changed:
+        changed = False
+        for x in list(alive):
+            if not any(u in alive for u in succ[x]):
+                alive.discard(x)
+                changed = True
+    live = sorted(alive)
+    idx = {x: i for i, x in enumerate(live)}
+    return [[idx[u] for u in succ[x] if u in alive] for x in live]
+
+
+def int_certificate(F, D=10 ** 9, iters=900):
+    """Integer Collatz-Wielandt certificate: returns (R, D, live states), with D (A u)_i <= R u_i checked."""
+    adj = live_graph(F)
+    n = len(adj)
+    if n == 0:
+        return 0, D, 0
+    v = [1.0] * n
+    acc = [0.0] * n
+    for it in range(iters):
+        nv = [sum(v[j] for j in adj[i]) for i in range(n)]
+        mx = max(nv) or 1.0
+        v = [x / mx for x in nv]
+        if it >= iters * 2 // 3:
+            acc = [a + x for a, x in zip(acc, v)]
+    mx = max(acc) or 1.0
+    u = [max(1, int(a / mx * 10 ** 12)) for a in acc]
+    Au = [sum(u[j] for j in adj[i]) for i in range(n)]
+    R = max(-(-D * Au[i] // u[i]) for i in range(n))
+    assert all(D * Au[i] <= R * u[i] for i in range(n))       # the certificate, checked in integers
+    return R, D, n
+
+
+def certify(periods):
+    ok_ctl = int_certificate([])[0] == 2 * 10 ** 9 and int_certificate(['00', '01'])[0] == 10 ** 9
+    print('automaton controls (F empty -> 2; F = {00, 01} -> 1): %s' % ('PASS' if ok_ctl else 'FAIL'))
+    width22 = {5: 1.543759, 7: 1.652210, 9: 1.742260}
+    for p in periods:
+        with open(os.path.join(tc.SCRATCH, 'tc_p%d.txt' % p)) as fh:
+            lines = fh.read().split('\n')
+        reached = int(lines[1].split()[1])
+        F = [w for w in lines[2 if p == 2 else 4:] if w]
+        sha = hashlib.sha256('\n'.join(F).encode()).hexdigest()[:16]
+        R, D, n = int_certificate(F)
+        a, c6 = tc.avoid_count_bound(F, 400)
+        print('p = %d: reached N = %d, |F| = %d (sha256 %s), %d live states; rho <= R/D = %d/%d = %.9f; '
+              'a_400^(1/400) <= %.6f' % (p, reached, len(F), sha, n, R, D, R / D, c6), flush=True)
+        if p == 2:
+            nd = 'NOT DECIDED'
+            ok = ok_ctl
+            p1 = R ** 2500 < 2 ** 309 * D ** 2500
+            p2 = R ** 100 < 2 ** 11 * D ** 100
+            print('  certified: log2 rho %s 0.1236 (R^2500 vs 2^309 D^2500); %s 0.110 (R^100 vs 2^11 D^100)' % (
+                '<' if p1 else '>=', '<' if p2 else '>='))
+            print('  TC2-P1 (below 0.1236): %s' % (nd if not ok else ('HELD' if p1 else 'REFUTED')))
+            print('  TC2-P2 (below 0.110): %s' % (nd if not ok else ('HELD' if p2 else 'REFUTED')))
+            lo = R ** 1000 > 2 ** 80 * D ** 1000                # log2(R/D) > 0.080, a consistency check only
+            print('  TC2-P3 (consistency: the ceiling R/D exceeds 2^0.080): %s' % ('HELD' if lo else 'REFUTED'))
+            longest = max(len(w) for w in F) if F else 0
+            if any(len(w) > 28 for w in F):
+                u = 'HELD'
+            else:
+                u = 'REFUTED' if reached > 28 else nd
+            print('  TC2-U (a minimal forbidden word longer than 28; longest %d, reached %d): %s' % (
+                longest, reached, u))
+        else:
+            print('  against the width-22 relaxation %.6f: %s' % (width22[p], 'below' if R < width22[p] * D else
+                                                               'not below'))
+
+
 def main():
+    if CERTIFY:
+        certify([int(x) for x in sys.argv[2:]] or [2])
+        return
     random.seed(7)
     os.makedirs(tc.SCRATCH, exist_ok=True)
     bc = brute_counts(11)
