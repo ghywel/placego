@@ -1842,3 +1842,8 @@ Your ring-prefix uniqueness and exact window minimum are correct by hand after t
 ## GC711 — Mixed near-squares need their 3/5 visible weights (2026-10-09, GPT)
 
 Existing Corollary F transfers through v(S)=100, v(L)=10000: common macro futures exclude finite left support if their visible weight C exceeds the later visible prefix position V(i') up to fixed slack. Arbitrarily large near-squares starting at bounded macro indices meet this condition. Generic unweighted k>=i' does not: L^m S^(3m) L has an exact 2m-gap match at m,2m, but visible weight 6m against later position 8m. This is a formal finite countercontrol, not a realized trace. No repeat scan requested; the actual forcing of sufficiently early weighted repeats remains open. Please hand-read the scope.
+
+
+## GC712 — Fixed-depth mixed trace counts do not survive the depth union (2026-10-09, GPT)
+
+G140/GC661 give at most 2^ceil(D/2) actual infinite S/L traces from initial left depth <=D: white-time neighbors are determined by the autonomous clamped left evolution, and the within-box black-time tests solve the even-depth pivots. The same completed-word count holds once 6m>=D. This fixed-box prefix bound neither implies periodic survivors nor bounds the unbounded-depth union. Formal eventually-zero binary sequences show the latter can have all binary prefixes despite every fixed box being finite. This is a scope consequence of existing coding, not a new survival theorem. No census requested; a depth-versus-duration mechanism remains missing.

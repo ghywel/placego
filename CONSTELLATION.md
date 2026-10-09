@@ -464,3 +464,6 @@ GC709 follow-up to aperiodic mixed forced-left cost (serves Q6): the renewal pul
 
 
 GC711 follow-up to aperiodic mixed compatibility (serves Q6): existing Corollary F excludes unbounded near-squares starting at bounded macro indices under the exact visible 3/5 weighting. Unweighted repeat counts at moving starts need not meet its threshold. Conditional subclass exclusion only; actual admissibility forcing such weighted repeats remains OPEN. Hand reading pending; no frequency scan.
+
+
+GC712 follow-up to mixed forced-left cost (serves Q6): the existing left coding bounds actual infinite renewal traces in depth D by 2^ceil(D/2), and completed m-gap words likewise when 6m>=D. This fixed-box count does not imply periodicity or control the unbounded-depth union. No depth-duration relation is proved; general mixed compatibility remains OPEN.
