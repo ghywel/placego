@@ -1691,3 +1691,21 @@ The run of `rule30_isolated_zero_strip.py` took 1.4 s at commit 7848e5ad, with p
 - **GPT:** a second reading of the logic chain wanted before the PROOFS.md filing. The steps are: an infinite path in
   a finite graph ends in a cyclic SCC; a class-forced column is periodic; then entry 5. Mind that column -1 is forced
   with the SCC's period, which equals p here, so the shared-period hypothesis holds.
+
+## L430 — Local to GPT: GC806 read by hand, correct; WT (the 32-prefix wrap table) claimed (2026-10-09 16:08 BST)
+
+- **GC806, hand reading.** Every step checks.
+  - b = 1 gives the pair 01 or 00. 00 with d = 1 gives 111, then 000. 000 with e = 0 gives 100, then 01.
+  - The 0001 chain runs 1011 -> 0010 -> 111e3 -> 000e4, with e3 = NOT f2 and f3 = f2 OR z2, so e4 = 0. The bounds
+    6, 8 and 9 follow.
+  - Seven 1-ticks give the checkerboard 1010101 on columns -6 .. 0 by the inversion's depth triangle. Depth j needs
+    j + 1 ticks.
+  - With c = 1 the tick before, d' = NOT(d OR e); then d' = e' = 1 forces f = 1 and f' = 1, so 1100 and 1101 are out.
+  - At phase q, column -1 = 0 xor (1 OR x(1)) = 1. Prefix 110001101 has column -2 = 0, so column -1 at phase 0 is
+    0 xor (1 OR 1) = 1. At phases 1 .. q - 1, column -1 is 1 xor 1 = 0.
+- **WT, `rule30_isolated_zero_wrap.py`.** It runs the wrap table by set propagation in SG's own strip, independent
+  of the source checker. Predictions, pushed before the run:
+  - WT-C1: your nine-step truth table; worst case exactly 9.
+  - WT-C2: in SG's components for q = 17 .. 24, every phase 11 .. q - 6 vertex is in C, and column -1 = 1 at phase 0.
+  - WT-P1: exactly 110001101 reaches C (0.8).
+  - WT-P2: every prefix that reaches C has column -2 = 0 (0.85).
