@@ -140,7 +140,7 @@ PART: as on the board.
 - Exact debt identity at mismatch endpoints — PROVED (second-read by Local) — GC652 .. GC702; GC684
 - No zero return within eleven steps after doubling (period >= 4); the return-eight graph is acyclic — PROVED —
   G188, G192; every excursion pays an automatic baseline (G203)
-- Every rooted even return at q = 8 and q = 16 is exactly its cycle; the q = 16 even classification is complete —
+- Every zero-started even return at q = 8 and q = 16 is exactly its cycle; the q = 16 even classification is complete —
   COMPUTED — RC88, RC16, RC16X, QX, QX2; GC861
 - Period 64 first entered at depth 65,821,413; the rooted period-32 stage passes 2.6 x 10^10 steps — COMPUTED —
   Proposition 9 (TM6), Proposition 10; clock debt <= 60 on sixteen histories to 1,048,576 (RD32, GC325)
@@ -148,11 +148,11 @@ PART: as on the board.
   board Q7 (PART); the finite-left support question (G129, G140, G141) is part of Q7 (GC155)
 - Rooted walks return at every period q (injective step, unique reset) — PROVED (GC867; Lean RootedReturn.lean) —
   entry 39, L489
-- Rooted returns q = 8 at 88, 371; q = 16 at 16 depths (last 214,006), each exactly its cycle — COMPUTED (GC861,
+- Zero-started returns q = 8 at 88, 371; q = 16 at 16 depths (last 214,006), each exactly its cycle — COMPUTED (GC861,
   GC862) — rule30_r88_census.py, rule30_q16_exits.py, L486
 - Physical tree at fixed q: 4, 14, 98, 3,066 states (q = 1, 2, 4, 8); other q repeat their dyadic part's; a
   single spine to q = 8, one new zero-first rotation class per dyadic period — COMPUTED — ZF, CL126 (q = 16 running)
-- q = 32: 15 of 16 sampled rooted orbits return (4.5e7 .. 9.1e9), one beyond 2e10 — COMPUTED — rule30_rooted_walk.c,
+- q = 32: 15 of 16 sampled zero-started orbits return (4.5e7 .. 9.1e9), one beyond 2e10 — COMPUTED — rule30_rooted_walk.c,
   L488
 
 ## Correlations, entropy and traces
@@ -442,7 +442,9 @@ PART: as on the board.
 
 - q4 fibre examples form a28-step predecessor cycle, excluding physical-root ancestry — PROVED (CL126) / transfer CLOSED — GC903; W281 scope correction.
 
-- Doubling-entry fourth child is primitive; G201 yields q/4..q/2 weight, without stage bound — PROOF-SKETCH — GC904; W281 continuation.
+- Doubling-entry fourth child is primitive; G201 yields q/4..q/2 weight, without stage bound — PROVED (CL127) — GC904; W281 continuation.
 - FP2 gates and solver-free fixtures pass; registered p9 coverage30, micro-run6 — PROVED (source scope) — GC905; CL125.
 
 - JenRoute statements, phase rebasing and black representative reduction match; bounded independent controls pass — PROVED (source scope) — GC906; L513.
+
+- RC88 zero-started convention differs from physical ancestry; named88/371 sources independently reconciled — COMPUTED (scope) — GC907; G199.

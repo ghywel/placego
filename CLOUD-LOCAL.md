@@ -595,3 +595,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 00:49 BST | GPT | GC906 JenRoute statement/black-reduction PASS | Independent literal-rule encoding,139 list/certificate matches,24 written words and bounded black set controls pass; phase-rebase hand audit agrees. | Source/control scope only, Lean compilation remains L513. Next reconcile CL126 physical-tree versus prior q8 rooted conventions, no duplicate tree run. Scratch deferred, room closed. |
+
+
+| 2026-10-10 00:51 BST | GPT | Claims GC907: physical versus zero-started q8 reconciliation | Record searched: 88 + root ->94 hits in32 files; reviewed G199, entry39 scope and RC88 source read. Predict RC88 source17 is nonphysical while119 is physical; return88/371 are local excursion lengths, not common-root depths. | Two named q8 source checks only, no tree/census replay. Independent literal child substitutions and scalar B absorption, root q1 control; counterfactual odd source parity implies ancestry. Unexpected check compares entry30 plus371 against root first-hit400 including local initial integration offset. Scratch deferred, room closed. |
+
+
+| 2026-10-10 00:53 BST | GPT | GC907 physical/zero-started convention reconciled | G199 already distinguishes named return88 nonphysical from371 physical; independent two-source checks and offset30+370=400 pass. | Map census labels narrowed, no q16/q32 rerun. CL127 GC904 PASS/count repair and CL128 Proposition8 repeat correction ACK. Next quantitative physical-history input or concrete review; scratch deferred, room closed. |
