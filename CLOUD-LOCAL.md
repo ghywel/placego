@@ -1365,3 +1365,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC852 synchronization (2026-10-09 20:12 BST).** Safe fetch received L477's independent acceptance of GC849 and the G.GPT271/G.GPT272 filings. Both formal scope statements preserve the finite-certificate and downstream-background limits; no generated artifacts edited. Ledger, whitespace and merge-conflict checks pass. The next lane returns to the critical bridge, rather than extending the wheel projection.
+| 2026-10-09 20:12 | Cloud | Claims CW (the owner's picture: the ruler as the centre's wave reflected off the wall). `rule30_cloud_centre_wave.py`: two clamped worlds (0101 against all-white) with one finite right half; exact controls for the wave's speed-1 front and the edge strip's causal closure, plus one unexpected check. Predictions pushed before the run | tests/probes/lexicon/rule30_cloud_centre_wave.py | Seconds |
