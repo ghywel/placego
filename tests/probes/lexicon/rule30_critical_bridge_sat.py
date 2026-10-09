@@ -28,6 +28,12 @@ Counterfactual: any SAT at p = 310 is an explicit non-ring critical all-L row, w
 negatively in this bounded class. UNSAT answers are bounded evidence only (finite W and P).
 Smoke before the push, controls only: C1 SAT with a checked bridge, C2 SAT with a checked model. The first C2 draft used a
 cyclic checkerboard's profiles, which are not GC732's interface; it now evolves the actual interface row on a window.
+EXTENSION CXE (registered 2026-10-09 after GPT's GC772 audit, before its run; COMMAND: ... rule30_critical_bridge_sat.py ext):
+  the tail periods the registered list skipped, P = 7 and P = 9, for W in {0, 4, 8, 16, 24}, q155 and unrestricted, with
+  hardened gates: a SAT counts only after the decoded diagram passes every column equation and (for q155) every tail
+  column's 155-repeat, and its profiles are saved to OUTDIR/cxe-models.json; UNKNOWN is reported as such, never as
+  REFUTED; every UNSAT is re-solved with a DRAT proof and checked by drat-trim; a failing control aborts the run.
+  CXE-P1 (blind, confidence 0.75): all 20 instances are UNSAT with verified proofs.
 OUTCOME: not yet run.
 """
 import itertools
@@ -174,5 +180,56 @@ def main():
     print('COMPLETE')
 
 
+def ext():
+    """CXE: P = 7 and 9 with hardened verdict gates (GC772)"""
+    import json
+    out = os.path.expanduser(os.environ.get('OUTDIR', '~/np-scratch-int/rule30-al/cxe'))
+    os.makedirs(out, exist_ok=True)
+    p = 310
+    R = [(RING >> i) & 1 for i in range(N)]
+    prof = g_profiles(R, range(-1, 12), p)
+    left = {-1: prof[-1], 0: prof[0]}
+    cnf, col = build(p, left, 6, 0, tail_given=(prof[7], prof[8]))
+    v, dt, m = solve(cnf)
+    if not (v == 'SAT' and check(col, 6, p, m)):
+        print('CXE control FAIL (%s): aborting' % v); sys.exit(1)
+    print('CXE control PASS (the ring recovered)', flush=True)
+    verdicts, models = {}, {}
+    for q_tail, tag in ((155, 'q155'), (None, 'q310')):
+        for W in (0, 4, 8, 16, 24):
+            for P in (7, 9):
+                cnf, col = build(p, left, W, P, q_tail=q_tail)
+                v, dt, m = solve(cnf)
+                key = '%s W=%d P=%d' % (tag, W, P)
+                if v == 'SAT':
+                    last = W + P
+                    good = check(col, last, p, m)
+                    if q_tail:
+                        good &= all(value(col[W + 1 + j][t], m) == value(col[W + 1 + j][t + q_tail], m)
+                                    for j in range(P) for t in range(p - q_tail))
+                    if good:
+                        models[key] = {str(i): ''.join('1' if value(col[i][t], m) else '0' for t in range(p))
+                                       for i in range(1, last + 1)}
+                    v = 'SAT-CHECKED' if good else 'SAT-FAILED-CHECK'
+                elif v == 'UNSAT':
+                    f = os.path.join(out, key.replace(' ', '_').replace('=', ''))
+                    with open(f + '.cnf', 'w') as fh:
+                        fh.write(cnf.text())
+                    subprocess.run(['kissat', '-q', '-f', '--no-binary', f + '.cnf', f + '.drat'], capture_output=True)
+                    chk = subprocess.run(['drat-trim', f + '.cnf', f + '.drat'], capture_output=True, text=True)
+                    v = 'UNSAT-VERIFIED' if any(l.strip() == 's VERIFIED' for l in chk.stdout.splitlines()) else 'UNSAT-UNVERIFIED'
+                verdicts[key] = v
+                print('%-16s %s (%.1f s)' % (key, v, dt), flush=True)
+    with open(os.path.join(out, 'cxe-models.json'), 'w') as fh:
+        json.dump(models, fh)
+    if any(x.startswith('SAT-CHECKED') for x in verdicts.values()):
+        print('CXE-P1 REFUTED: a checked non-ring critical diagram exists (profiles saved)')
+    elif all(x == 'UNSAT-VERIFIED' for x in verdicts.values()):
+        print('CXE-P1 HELD')
+    else:
+        print('CXE-P1 UNDECIDED (some verdicts neither verified UNSAT nor checked SAT)')
+    print('COMPLETE')
+
+
 if __name__ == '__main__':
-    main()
+    ext() if sys.argv[1:2] == ['ext'] else main()
