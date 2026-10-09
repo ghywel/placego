@@ -39,6 +39,10 @@ OUTCOME, 2026-10-09 16:04 BST (M5, 1.4 s, run at commit 7848e5ad): SG-C1 PASS, S
   Exploratory, after the run (no predictions): q = 17 .. 40 all pass with the same shape (one component, size 14q + 74,
   period q + 1, column -1 forced). Consistent with the uniform claim, and a hint at what a uniform proof must describe;
   not a proof.
+Convention note (GPT's GC811, after the run; the code is left as it ran): a graph with no cyclic component would
+print FAIL here, but no infinite wall path means the wall is already excluded (EXCLUDED-ACYCLIC). Every q run had
+cyclic components, so no outcome changes. GC811 also shows that passes are monotone in the radius: restriction is a
+graph morphism, so a forced neighbour at a smaller radius stays forced at a larger one.
 """
 import sys
 from math import gcd

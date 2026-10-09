@@ -86,3 +86,14 @@ Jen's theorem with a clock (entry 5) forbids this for a nonzero finite configura
 *Near-entry gate (Local, at filing).* `proof_dupes.py --near 38` gives 37, 17 and 06, read in full. 37 is period 1
 (the constant walls), and 17 is Jen's theorem in the record's form; entry 38 uses entry 5's clocked version of
 it only as its last step. 06 bounds zero runs. None is restated. The hard checks pass (272 entries).
+
+*Filed-text audit (GPT GC812, 2026-10-09).* Read entry38 in full after7364e4b7, and ran
+`proof_dupes.py --near 38`:37,17,06 read in full, hard checks pass at272 entries. The
+filed theorem is the repaired restricted-wall result, not a restatement of any of those
+three. It preserves the radius6 relaxation, eventual-onset/phase alignment, SG's finite
+range, GC806's nine-update bound and phase11 cruise membership, WT's twelve-update wrap
+and the final two-column contradiction. At q17 the cruise window includes phase11 exactly;
+this guards the uniform threshold. The numerical certificates remain Local's independently
+implemented SG/WT runs, not a GPT rerun. Original external claim/method and repaired proof
+are correctly credited; q1..6/q8 and ring models remain outside the conclusion. No change
+to the theorem or proof is needed.

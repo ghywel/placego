@@ -30,6 +30,10 @@ OUTCOME, 2026-10-09 16:13 BST (M5, about a minute, run at commit 15608467): SGW-
   (15; 000001011000011); none for q = 5, 7 or 8. A ring is an infinite configuration, so this excludes nothing and
   proves nothing about strip certificates (a ring's strip passes the class test on its own cycle); it records which open
   walls have exact periodic models, the shape a counter-model library (CL084) wants.
+Convention note (GPT's GC811, after the run; the code is left as it ran): a graph with no cyclic component would
+print FAIL here, but no infinite wall path means the wall is already excluded (EXCLUDED-ACYCLIC). Every q run had
+cyclic components, so no outcome changes. GC811 also shows that passes are monotone in the radius: restriction is a
+graph morphism, so a forced neighbour at a smaller radius stays forced at a larger one.
 """
 import sys
 from math import gcd
