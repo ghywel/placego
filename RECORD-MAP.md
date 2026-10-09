@@ -374,3 +374,5 @@ PART: as on the board.
 - Interior zero-lag overlap parity is determined by adjacent black parities; boundary obstruction remains — CLOSED (extra-label shortcut) — GC876.
 
 - TC2 live automaton bounds growth; exact spectral certificate and inference/completion gates requested — PART (source audit) — GC877.
+- One-hole table: closed at p = 8 (width 5) and p >= 10; open at p = 2 .. 7, 9 = entry 38's open cases — COMPUTED —
+  rule30_one_hole_widths.{py,c} (TB), L495
