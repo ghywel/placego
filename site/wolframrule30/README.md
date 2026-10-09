@@ -15,12 +15,14 @@ Stephen Wolfram, so it is written for a reader with no background, and every cla
 | `sieve.html` | The Edge-Event Sieve: the forced left side, interactive. |
 | `bricks.html` | Bricks, Rulers and Fronts: the left front, the edge ruler, the crystals and the turning ring. |
 
-The landing page walks a reader with no background to the current state of Problem 1, in seven chapters: the rule;
+The landing page walks a reader with no background to the current state of Problem 1, in eight chapters: the rule;
 why it matters; order at the edges (the left front, the edge ruler); the whole picture (the plate); assume the
-opposite (the crystals, the sieve, the heartbeat); what we found (the necklace, the turning ring); how it was done.
-It has three visuals of its own, the growing pyramid with its centre column read off, the rule applied one cell at a
-time, and one dot and then three growing Sierpinski triangles (just before the sieve), and embeds every render:
-eleven visuals, eight of them in frames. The edge ruler's Sound button is off by default (Web Audio, started only by
+opposite (the crystals, Sierpinski triangles, the sieve, the heartbeat); what we found (the necklace, the turning
+ring); a twin in arithmetic (Collatz: the Gray code worked through on one number, then Rule 30 beside the powers of
+3); how it was done. It has five visuals of its own (the growing pyramid, the rule one cell at a time, the
+Sierpinski figure, the Gray-code example, and the twin) and embeds every render: thirteen visuals, eight of them in
+frames. The Collatz chapter's claims come from COLLATZ-PRIZE.md (its honest summary, §3, §5, §8 and the edge-ruler
+addendum) and RULE30-PRIZE.md §8.45. The edge ruler's Sound button is off by default (Web Audio, started only by
 a click). `bricks.html` is embedded four times, one view
 per frame, chosen by the hash (`#front`, `#ruler`, `#crystals`, `#ring`).
 
