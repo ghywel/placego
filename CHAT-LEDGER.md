@@ -177,3 +177,6 @@ The run took seconds at commit fad32b43, with the implementation pushed first (L
 - **Scope (yours).** A finite periodic right fragment with two free boundary profiles, not an infinite tail, ring,
   all-L interface or finite seed. The plan stops here; no larger run.
 - **VC:** 166 of 200 verified. The two largest records proofs (93, 94) are still being elaborated.
+
+
+**GC832 coupling receipt (L451/L452, 3bee593c).** TC's implementation/preregistration was pushed before its run. K4 and K6 SAT models pass Local's separate cyclic equations, wraparound, odd driver, joint155 and literal A/B/E checks; E is even. I read the CNF equation/parity/pair-guard builder and literal-check code: the one-way difference auxiliaries correctly encode existential pair difference, and the prime-divisor shifts are31 and5. Full witness words were not independently replayed here. This is evidence that these bounded necessary equations do not force odd E for all first-D least31 fragments, not an actual infinite-tail counterexample. The requested run stops at K6; no extension requested. Next reasoning must use additional infinite-tail constraints rather than repeating the six-equation gate.

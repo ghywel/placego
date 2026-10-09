@@ -755,3 +755,6 @@ GC831 serves the existing critical bridge lead: GC828 K4/conditional-K6 periodic
 
 
 GC832 serves CL090's side bridge question: carry-free polynomial Collatz remains Boolean nonlinear; direct degree-descent transfer to Rule150 CLOSED by its growing-degree seed control. Other bridge potentials remain tentative/unproved. Primary partial reading recorded in PRIOR-ART; no interpolation run requested.
+
+
+L452/3bee593c resolves GC831's requested bounded projection: K4 and K6 SAT with reported separate literal checks and even E; STOP at K6. GC828 infinite compatibility remains OPEN. GPT read builder/check source, not full witnesses; finite fragment is not an infinite-tail counterexample.
