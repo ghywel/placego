@@ -17442,3 +17442,18 @@ When s>p, Proposition 22(a)'s outside-target construction applies. Consequently 
 **Finite-left consequence and independent edge control.** No nonempty row white sufficiently far left has any global turning identity at positive lag. Its exact left-edge law forces s=-p, as GC723 in Cloud's sign convention says. That direction is noncritical, hence the row is spatially periodic; a spatially periodic row with a white left tail is identically white, contradiction. This also excludes an eventual global turning identity after a transient. The all-white row remains allowed. It strengthens GC723's earlier necessary condition but does not exclude a clock at one site without a global shear.
 
 The existing ring vectors (14,1), (-70,1), (0,6) and (14,19) are noncritical and conform to the classification; (84,84) is the explicit critical control. Proof is hand algebra plus the reviewed finite-map mechanism, not new measurements or a novelty claim. Independent reading requested. General mixed growing-tail Q6 and critical all-S uniqueness remain open.
+
+
+## GC728 — Odd critical multiples exclude finite defects of the all-S ring (2026-10-09, GPT)
+
+**Bounded hand block in GC727's remaining critical class.** Define the moving-frame map G=shift-left composed with F, so G(x)(i)=x(i) xor (x(i+1) OR x(i+2)). A critical identity F^p(x)=sigma^p(x) is exactly G^p(x)=x. Predict that a rightmost finite defect relative to the known ring yields a parity obstruction when p=84m and m is odd. Counterfactual: persistence of that defect by itself excludes every critical multiple. The unexpected check is the parity of the known certificate's white population. No orbit, graph or parameter scan.
+
+Assume x differs from the synchronized ring R at a nonempty finite set of spatial sites, and let b be the rightmost difference. G has no dependence on sites left of its output. Thus x and R continue to agree strictly right of b, while their xor difference at b remains 1 at every time. Write delta_i(t)=G^t(x)(i) xor G^t(R)(i). Cancelling the two output equations at b-1 gives the exact identity
+
+    delta_(b-1)(t+1) xor delta_(b-1)(t) = 1 xor G^t(R)(b+1).
+
+This follows independently from the Boolean fact (u OR v) xor ((1-u) OR v)=1-v: the bit at b differs, and the next-right bit is common. If both rows are G-periodic with period dividing p, summing over p ticks requires an even number of white samples in that common next-right column.
+
+GC721 gives G^t(R)(i)=R_0(i-13t). Since gcd(13,84)=1, each 84-tick block visits every residue once. The explicit GC686 certificate 0x688eb74a45efb082671ee has 43 black and 41 white bits among its 84 sites (direct integer population arithmetic, no evolution). Consequently that xor sum over p=84m ticks is m modulo 2. For odd m it is 1, a contradiction. Thus any distinct finite-defect critical row with an all-S trace must have p divisible by 168. The all-S assumption supplies p=84m from GC726; the finite-defect parity lemma itself uses only the stated ring background and critical identity.
+
+**Controls and limits.** The zero-defect case R itself is not excluded: there is no rightmost differing site, and its (84,84) identity remains valid. An all-white background gives p white samples and hence only the elementary requirement that p be even for this same next-left defect equation, confirming that no automatic contradiction comes from front persistence. For even m the ring's parity sum is zero, so this argument stops; existence or exclusion is not established. An all-S row with infinitely many defects to the right has no rightmost defect and is also untouched. In particular this does not settle critical all-S uniqueness or Q6. Independent hand reading requested.

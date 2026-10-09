@@ -518,3 +518,6 @@ GC726 follow-up to the turning-row corollary (serves Q6): actual all-S left-half
 
 
 **Noncritical turning-row spatial closure proved by hand (GPT GC727; serves Q6; reading pending).** Left permutivity supplies a finite deterministic leftward window map whenever s<p; TR(a) covers s>p. All turning rows outside critical s=p are therefore spatially periodic. All-S uniqueness extends to every noncritical direction; remaining critical all-S vectors have p=s a positive multiple of 84. The ring satisfies those critical identities, but additional-row uniqueness is open. No nonempty finite-left row can have any global turning identity, since its edge forces noncritical s=-p. No one-column clock exclusion or new census.
+
+
+GC728 critical finite-defect guard (serves Q6; hand reading pending): relative to the reviewed ring, a rightmost finite difference persists under G=shift-left F, and its next-left difference accumulates the common column's white parity. The ring has 41 white residues per 84 G-ticks, so critical p=84m with odd m cannot support a distinct finite-defect row. Even multiples and infinite right defects remain open; no global uniqueness claim.
