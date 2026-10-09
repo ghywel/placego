@@ -5,6 +5,7 @@ layer with F.
 
 RUN-ON:     cpu (C, one core); minutes; under 2 GB at width 22
 COMMAND:    python3 tests/probes/lexicon/rule30_layer_product.py FWORDS [WIDTHS=16,18,20,22]
+            python3 tests/probes/lexicon/rule30_layer_product.py verify DUMP FWORDS CERT   (GC885's verifier)
             (needs ~/np-scratch-int/rule30-oh/ohc and lp, built from rule30_one_hole_widths.c and
             rule30_layer_product.c; FWORDS is TC2's list of true minimal forbidden words, one per line)
 
@@ -86,10 +87,23 @@ ODD OUTCOME, 2026-10-09 22:59 BST (M5, about 1 GB and a minute per wall, at comm
   - At p = 5 and 7 the layer is sharper than TC's true-word certificates 1.512835 and 1.642221 (CL113). CL113's
     "the true words do beat the layer" compared TC's spectral certificate with the layer's count bound; it reverses.
     The product of the width-22 layer with TC's odd-wall F is the natural next step, as at p = 2.
-ODD2 (registered 2026-10-09 23:02 BST, before running; the board's other open walls p = 3, 4, 6, layer alone, width 22):
+ODD2 (registered 2026-10-09 23:00 BST, before running; the board's other open walls p = 3, 4, 6, layer alone, width 22):
   OHC's TB block gives float ratios 1.2204, 1.2318, 1.3839 with c_60 bounds 1.302223, 1.290796, 1.407029.
   LP-O3 (blind, confidence 0.85): LP certifies each width-22 radius within 1e-4 above the float ratio, so below
         1.2205, 1.2319 and 1.3840.
+ODD2 OUTCOME, 2026-10-09 23:04 BST (M5, at most 1.3 GB, at commit 994486ef's code): LP-O3 HELD. Width 22, per hole:
+  - p = 3: rho <= 1.220381225 (0.287332 bits; was c_60's 1.302223);
+  - p = 4: rho <= 1.231762860 (0.300725 bits; was 1.290796);
+  - p = 6: rho <= 1.383946733 (0.468788 bits; was 1.407029).
+  Each is within 1e-9 of the n = 12000 count ratio. Cloud's CL116 notes that at p = 9 TC's 1.709537 stays below the
+  layer's 1.714447, so there the true-word certificate is the record's best; at p = 5 and 7 the layer's is.
+VERIFIER (GC885, built 23:06 BST, before the run with F): LP_CERT retains the product graph, the block of every
+  state (Tarjan's order), each block's R and every u_i; `verify` rebuilds the product from the dump and F with a
+  string Aho-Corasick written separately, and checks the graph, the block-triangular order and every inequality in
+  Python integers. Smoke: it reproduces LP's R on the four toy controls and on p = 5's width-22 layer (0.1 s).
+  Tamper controls fail closed: R - 1 in the top block ("inequality at state 279"), one successor changed ("graph
+  differs"), state 0 moved to block 0 ("a cross-block edge does not descend"). In the main run every certificate is
+  verified, and a failed or missing one makes the verdicts NOT DECIDED (LP-V).
 """
 import os
 import subprocess
@@ -107,7 +121,86 @@ def run(cmd, env=None):
     return r.stdout
 
 
+def verify(dump, fpath, certpath):
+    """GC885's retained-certificate check, written separately from the C. Rebuilds the labelled product from the
+    dump and F with a string Aho-Corasick (state = the longest suffix of the input that is a prefix of a word of F;
+    an edge dies if a suffix of the extended input is in F), compares it with the certificate's graph, then checks
+    in Python integers: every cross-block edge goes to a strictly smaller block id (block-triangular), every block
+    marked acyclic is one state without a self-loop, and every cyclic block has u_i >= 1 and D (A u)_i <= R_c u_i.
+    Then rho <= max R_c / D. Returns that R, or raises on any failure."""
+    import array
+    import struct
+    if dump == '-':
+        tr = [0, 0]
+    else:
+        with open(dump, 'rb') as f:
+            n = struct.unpack('<q', f.read(8))[0]
+            tr = array.array('q')
+            tr.fromfile(f, 2 * n)
+    words = set() if fpath == '-' else {w for w in open(fpath).read().split() if not w.startswith('#')}
+    pref = {w[:i] for w in words for i in range(len(w) + 1)} | {''}
+
+    def ac(sv, b):
+        t = sv + b
+        if any(t[i:] in words for i in range(len(t))):
+            return None
+        for i in range(len(t) + 1):
+            if t[i:] in pref:
+                return t[i:]
+    keys, index, suc = [(0, '')], {(0, ''): 0}, []
+    i = 0
+    while i < len(keys):
+        l, sv = keys[i]
+        for b in (0, 1):
+            l2 = tr[2 * l + b]
+            s2 = ac(sv, str(b)) if l2 >= 0 else None
+            if s2 is None:
+                suc.append(-1)
+                continue
+            j = index.get((l2, s2))
+            if j is None:
+                j = index[(l2, s2)] = len(keys)
+                keys.append((l2, s2))
+            suc.append(j)
+        i += 1
+    with open(certpath, 'rb') as f:
+        magic, ns, na, nl, ncomp = struct.unpack('<5q', f.read(40))
+        Dc = struct.unpack('<Q', f.read(8))[0]
+        ck = array.array('q'); ck.fromfile(f, ns)
+        cs = array.array('i'); cs.fromfile(f, 2 * ns)
+        cc = array.array('i'); cc.fromfile(f, ns)
+        cy = f.read(ncomp)
+        cR = array.array('Q'); cR.fromfile(f, ncomp)
+        cu = array.array('Q'); cu.fromfile(f, ns)
+        if f.read(1):
+            raise SystemExit('VERIFY FAILED: trailing bytes')
+    if magic != 0x3143504C or Dc != D or ns != len(keys) or list(cs) != suc:
+        raise SystemExit('VERIFY FAILED: graph differs (states %d against %d)' % (ns, len(keys)))
+    amap, smap = {}, {}
+    for (l, sv), k in zip(keys, ck):
+        if k // na != l or amap.setdefault(k % na, sv) != sv or smap.setdefault(sv, k % na) != k % na:
+            raise SystemExit('VERIFY FAILED: state keys differ')
+    size = [0] * ncomp
+    for c in cc:
+        size[c] += 1
+    for v in range(ns):
+        for b in (0, 1):
+            t = suc[2 * v + b]
+            if t >= 0 and cc[t] != cc[v] and not cc[t] < cc[v]:
+                raise SystemExit('VERIFY FAILED: a cross-block edge does not descend')
+        c = cc[v]
+        inner = sum(cu[t] for t in suc[2 * v:2 * v + 2] if t >= 0 and cc[t] == c)
+        if cy[c]:
+            if cu[v] < 1 or D * inner > cR[c] * cu[v]:
+                raise SystemExit('VERIFY FAILED: inequality at state %d' % v)
+        elif size[c] != 1 or v in suc[2 * v:2 * v + 2]:
+            raise SystemExit('VERIFY FAILED: a block marked acyclic has a cycle')
+    return max((cR[c] for c in range(ncomp) if cy[c]), default=0)
+
+
 def cert(out):
+    if not any(x.startswith('CERTIFIED') for x in out.splitlines()):
+        return None
     line = [x for x in out.splitlines() if x.startswith('CERTIFIED')][0]
     R = int(line.split('<=')[1].split('/')[0])
     ratio = float([x for x in out.splitlines() if x.startswith('word-count ratio')][0].split(':')[1])
@@ -142,51 +235,78 @@ def split_f(fpath, dump, tmp):
     return pr, pn, len(red), len(new)
 
 
+def lpv(tmp, dump, fpath, name, env_extra=None):
+    """run LP with a retained certificate, then verify it independently; returns (R, ratio, live, out), with R None
+    when the run was not decided or the verified R differs from the printed one"""
+    cpath = os.path.join(tmp, name + '.cert')
+    env = dict(os.environ, LP_CERT=cpath, **(env_extra or {}))
+    out = run([LP, dump, fpath], env=env)
+    c = cert(out)
+    if c is None:
+        print('   ', name, 'NOT DECIDED:', [x for x in out.splitlines() if 'NOT DECIDED' in x])
+        return None, None, None, out
+    R, ratio, live = c
+    Rv = verify(dump, fpath, cpath)
+    if Rv != R:
+        print('   ', name, 'VERIFIED R %d differs from the printed %d' % (Rv, R))
+        return None, ratio, live, out
+    os.remove(cpath)
+    return R, ratio, live, out
+
+
 def main():
     import math
+    if sys.argv[1] == 'verify':
+        print('verified rho <= %d/%d' % (verify(sys.argv[2], sys.argv[3], sys.argv[4]), D))
+        return
     fpath = sys.argv[1]
     widths = [int(x) for x in (sys.argv[2] if len(sys.argv) > 2 else '16,18,20,22').split(',')]
     tmpdir = os.path.expanduser('~/np-scratch-int/rule30-lp')
     os.makedirs(tmpdir, exist_ok=True)
-    out = run([LP, '-', fpath])
-    R, ratio, live = cert(out)
+    R, ratio, live, out = lpv(tmpdir, '-', fpath, 'c3')
     print('one-node layer with F:', out.splitlines()[0])
-    print('  live %d, certified R = %d, log2 <= %.6f' % (live, R, math.log2(R / D)))
-    c3 = live == 8030 and abs(math.log2(R / D) - 0.151730) < 1e-5
+    c3 = R is not None and live == 8030 and abs(math.log2(R / D) - 0.151730) < 1e-5
+    if R is not None:
+        print('  live %d, certified and verified R = %d, log2 <= %.6f' % (live, R, math.log2(R / D)))
     print('LP-C3', 'PASS' if c3 else 'FAIL')
-    c1 = c2 = True
+    c1 = c2 = vok = True
     res = {}
     for k in widths:
         dump = os.path.join(tmpdir, 'k%d.dump' % k)
         o = run([OHC, str(k), '2'], env=dict(os.environ, OHC_DUMP=dump))
         g = float([x for x in o.splitlines() if ' growth ' in x and 'nodes' in x][0].split('growth')[1].split()[0])
-        R0, r0, l0 = cert(run([LP, dump, '-']))
+        R0, r0, l0, _ = lpv(tmpdir, dump, '-', 'k%d-layer' % k)
         # C1 as amended after its first run (OUTCOME): OHC's growth is its ratio at n = 1500, so compare at equal n;
         # the certificate must lie within 1e-6 above the converged ratio (n = 12000)
         _, r1500, _ = cert(run([LP, dump, '-'], env=dict(os.environ, LP_N='1500')))
         _, rinf, _ = cert(run([LP, dump, '-'], env=dict(os.environ, LP_N='12000')))
-        ok1 = abs(r1500 - g) < 1e-11 and 0 <= R0 / D - rinf < 1e-6
+        ok1 = R0 is not None and abs(r1500 - g) < 1e-11 and 0 <= R0 / D - rinf < 1e-6
         c1 &= ok1
         pr, pn, nred, nnew = split_f(fpath, dump, os.path.join(tmpdir, 'k%d' % k))
-        Rr, rr, lr = cert(run([LP, dump, pr]))
-        ok2 = abs(rr - r0) < 1e-10
+        rr = cert(run([LP, dump, pr]))
+        ok2 = rr is not None and r0 is not None and abs(rr[1] - r0) < 1e-10
         c2 &= ok2
-        o = run([LP, dump, fpath])
-        R1, r1, l1 = cert(o)
+        R1, r1, l1, o = lpv(tmpdir, dump, fpath, 'k%d-product' % k)
+        vok &= R0 is not None and R1 is not None
         allowed = [x for x in o.splitlines() if x.startswith('allowed by length') or 'F words the layer allows' in x]
         res[k] = (R0, R1, l1, allowed)
+        if R0 is None or R1 is None:
+            print('width %d: NOT DECIDED (a certificate is missing or failed verification)' % k, flush=True)
+            continue
         print('width %d: layer %.6f bits (ratio %.12f, C1 %s); F_red %d, F_new %d (C2 %s); product live %d, '
-              'certified R = %d, %.6f bits, ratio %.12f' % (k, math.log2(R0 / D), r0, 'ok' if ok1 else 'FAIL', nred,
-                                                             nnew, 'ok' if ok2 else 'FAIL', l1, R1,
-                                                             math.log2(R1 / D), r1), flush=True)
+              'certified and verified R = %d, %.6f bits, ratio %.12f' % (k, math.log2(R0 / D), r0,
+                                                                         'ok' if ok1 else 'FAIL', nred, nnew,
+                                                                         'ok' if ok2 else 'FAIL', l1, R1,
+                                                                         math.log2(R1 / D), r1), flush=True)
         for a in allowed:
             print('   ', a)
     print('LP-C1', 'PASS' if c1 else 'FAIL')
     print('LP-C2', 'PASS' if c2 else 'FAIL')
-    if 22 in res:
+    print('LP-V (every certificate verified independently, GC885)', 'PASS' if vok else 'FAIL')
+    if 22 in res and res[22][0] is not None and res[22][1] is not None:
         # GC884: a failed control makes every verdict NOT DECIDED (the arithmetic is still printed above); P2's gap of
         # 0.002 = 1/500 bits is tested exactly, R0^500 >= 2 R1^500 (common D)
-        ctl = c1 and c2 and c3
+        ctl = c1 and c2 and c3 and vok
         R0, R1, l1, allowed = res[22]
 
         def verdict(ok):
@@ -197,6 +317,8 @@ def main():
         sh = [x for x in allowed if 'shortest' in x]
         m = int(sh[0].split('shortest')[1].strip(' )')) if sh else None
         print('LP-U', verdict(m >= 24) + ' (shortest %d)' % m if m else verdict(True) + ' (no F word allowed)')
+    elif 22 in res:
+        print('LP-P1, P2, P3, U: NOT DECIDED (width 22 has no verified certificate)')
     print('COMPLETE')
 
 

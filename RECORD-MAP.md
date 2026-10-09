@@ -332,8 +332,8 @@ PART: as on the board.
   rule30_diagonal_bias.py, L418, L473
 - One-hole walls 0 1^(p-1): width 5 closes every odd p >= 11; nine black steps lock the pair 01 (every p >= 10) —
   COMPUTED / PROVED (G.GPT271; Lean BlackLock.lean) — rule30_one_hole_widths.py, GC850, L473, L476
-- One-hole p = 5, 7, 9: certified true growth per hole <= 1.471227, 1.599414, 1.714447 (width-22 radii; were c_60's
-  1.543759, 1.652210, 1.742260); entropy zero is OPEN — COMPUTED — rule30_layer_product.py (ODD), L504; L481, GC858
+- One-hole width-22 radii, certified: p = 3, 4, 5, 6, 7, 9 <= 1.220382, 1.231763, 1.471227, 1.383947, 1.599414,
+  1.714447 (were c_60 bounds); best at p = 9 is TC's 1.709537 — COMPUTED — rule30_layer_product.py (ODD, ODD2), L504
 - One-hole exact relaxed languages: p = 9 (widths 8 .. 12) x^4 - 2x^3 + x - 1; p = 7 (widths 7 .. 9) x^5 - x^4 -
   x^3 - x^2 - x + 1 — PROVED (GC857) — L479
 - True half-line system with the wall 0 1^4: hole word 10000 never occurs; |L_5..7| = 31, 60, 108 —

@@ -11,10 +11,14 @@
  * in the true language, every true word is accepted, so the true growth is at most the product's spectral radius.
  * The spectral radius is the largest over the strongly connected components (iterative Tarjan). Per component, a
  * power iteration of A + I (aperiodic, same Perron vector) gives a positive vector; it is scaled to integers u_i
- * (at most 2^50, at least 1), and R = max_i ceil(D (A u)_i / u_i) with D = 10^9, checked in 128-bit integers as
+ * (at most 2^50 + 1, at least 1), and R = max_i ceil(D (A u)_i / u_i) with D = 10^9, checked in 128-bit integers as
  * D (A u)_i <= R u_i for every i of the component, so its radius is at most R / D (Collatz-Wielandt).
  * Components without a cycle have radius 0 and are skipped. A word-count ratio from the start state is printed
  * beside it as a cross-check (not a certificate).
+ * Retained certificate (GC885): with LP_CERT=path, the labelled product graph (keys, successors), the component of
+ * every state (Tarjan's completion order, so a cross-component edge goes to a smaller id), each component's
+ * cyclicity and R, and every u_i are written for rule30_layer_product.py's independent `verify` mode. A cap prints
+ * NOT DECIDED and no certificate; so does an R that does not fit in 64 bits.
  */
 #include <stdint.h>
 #include <stdio.h>
@@ -107,7 +111,7 @@ int main(int argc, char **argv) {
     int64_t ns = 0;
 #define LOOKUP(K_, OUT_) do { uint64_t k_ = (K_); size_t i_ = (size_t)((k_ * 0x9E3779B97F4A7C15ULL) >> 20) & (hcap - 1); \
         while (hv[i_] >= 0 && hk[i_] != k_) i_ = (i_ + 1) & (hcap - 1); \
-        if (hv[i_] < 0) { if (ns >= maxstates) { printf("CAPPED at %lld states\n", (long long)ns); return 0; } \
+        if (hv[i_] < 0) { if (ns >= maxstates) { printf("NOT DECIDED: CAPPED at %lld states\n", (long long)ns); return 0; } \
             hk[i_] = k_; hv[i_] = (int32_t)ns; key[ns] = k_; ns++; } (OUT_) = hv[i_]; } while (0)
     int32_t s0; LOOKUP(0, s0); (void)s0;
     for (int64_t s = 0; s < ns; s++) {
@@ -119,7 +123,7 @@ int main(int argc, char **argv) {
             suc[s * 2 + b] = t;
         }
     }
-    free(hk); free(hv); free(key);
+    free(hk); free(hv);
     /* live states: those with an infinite future (iterative removal of states with no live successor) */
     int64_t nlive = ns;
     {
@@ -171,13 +175,14 @@ int main(int argc, char **argv) {
     const uint64_t D = 1000000000ULL;
     uint64_t bestR = 0; int bestc = -1; int64_t bestsize = 0; int ncyc = 0;
     double *u = NULL, *w = NULL; size_t ucap = 0;
+    uint64_t *ukeep = calloc(ns, 8), *Rc = calloc(ncomp, 8); uint8_t *cycf = calloc(ncomp, 1);
     for (int c = 0; c < ncomp; c++) {
         int64_t sz = cstart[c + 1] - cstart[c];
         int32_t *M = mem + cstart[c];
         int cyc = sz > 1;
         if (!cyc) { int32_t v = M[0]; cyc = suc[v * 2] == v || suc[v * 2 + 1] == v; }
         if (!cyc) continue;
-        ncyc++;
+        ncyc++; cycf[c] = 1;
         if ((size_t)sz > ucap) { ucap = sz; u = realloc(u, ucap * 8); w = realloc(w, ucap * 8); }
         for (int64_t i = 0; i < sz; i++) u[i] = 1.0;
         double lo = 0, hi = 0;
@@ -202,6 +207,7 @@ int main(int argc, char **argv) {
             int32_t v = M[i]; u128 au = 0;
             for (int b = 0; b < 2; b++) { int32_t t = suc[v * 2 + b]; if (t >= 0 && comp[t] == c) au += ui[loc[t]]; }
             u128 num = au * D, q = num / ui[i]; if (q * ui[i] < num) q++;
+            if (q > (u128)UINT64_MAX) { printf("NOT DECIDED: R overflows 64 bits in component %d\n", c); return 0; }
             if ((uint64_t)q > R) R = (uint64_t)q;
         }
         for (int64_t i = 0; i < sz; i++) {
@@ -209,12 +215,28 @@ int main(int argc, char **argv) {
             for (int b = 0; b < 2; b++) { int32_t t = suc[v * 2 + b]; if (t >= 0 && comp[t] == c) au += ui[loc[t]]; }
             if (au * D > (u128)R * ui[i]) { printf("CERTIFICATE CHECK FAILED in component %d\n", c); return 5; }
         }
+        for (int64_t i = 0; i < sz; i++) ukeep[M[i]] = ui[i];
+        Rc[c] = R;
         free(ui);
         if (R > bestR) { bestR = R; bestc = c; bestsize = sz; }
         if (sz >= 1000) printf("  component %d: %lld states, power iteration %.12f .. %.12f, certified R/D = %llu/%llu\n",
                                c, (long long)sz, lo, hi, (unsigned long long)R, (unsigned long long)D);
     }
     printf("cyclic components %d; largest radius in component %d (%lld states)\n", ncyc, bestc, (long long)bestsize);
+    {
+        const char *cp = getenv("LP_CERT");
+        if (cp) {
+            FILE *cf = fopen(cp, "wb");
+            int64_t hdr[5] = {0x3143504CLL, ns, (int64_t)na, nl, (int64_t)ncomp};
+            int ok = cf && fwrite(hdr, 8, 5, cf) == 5 && fwrite(&D, 8, 1, cf) == 1
+                && fwrite(key, 8, ns, cf) == (size_t)ns && fwrite(suc, 4, (size_t)ns * 2, cf) == (size_t)ns * 2
+                && fwrite(comp, 4, ns, cf) == (size_t)ns && fwrite(cycf, 1, ncomp, cf) == (size_t)ncomp
+                && fwrite(Rc, 8, ncomp, cf) == (size_t)ncomp && fwrite(ukeep, 8, ns, cf) == (size_t)ns;
+            if (!ok) { printf("NOT DECIDED: certificate write failed\n"); return 0; }
+            fclose(cf);
+            printf("certificate retained (LP_CERT)\n");
+        }
+    }
     /* cross-check: word-count ratio from the start state at n = 3000 (LP_N overrides n) */
     {
         int NN = getenv("LP_N") ? atoi(getenv("LP_N")) : 3000;
