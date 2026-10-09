@@ -20225,3 +20225,32 @@ For paired kick indicators K_A(t),K_B(t), the mean rate difference equals the fr
 **Unexpected speed control.** Compare an all-white half with a single initial black at n >= 1, both clamped white at 0. Before its left front reaches the clamp, the leftmost black moves from n to n-t, because a white cell immediately left of the front updates to black and all farther-left inputs remain white. Column 1 first differs at t=n-1. Hence leftward influence can attain one cell per row. The approximately 0.246 speed in KR's random backgrounds is a measured regime, not a universal causal bound. This control has a different initial state and clamp from KR; it does not contradict its measurements. Zero fair-ensemble correlation away from the rightward pivot ridge likewise does not exclude leftward causal influence.
 
 **Disposition.** Keep CW's exact centre-to-edge obstruction. Narrow KR's reading to no detected aggregate rate/rhythm effect within its registered tests; individual event changes remain unmeasured. These are scope corrections to an existing side connection, not a new prize obstruction or main-line status change. Return next to an independent critical-bridge invariant or a concrete incoming proof audit; the blind first-exit projection ladder remains stopped.
+
+
+## GC857 — Independent entropy algebra confirms L479, with a prefix-exemption bound (2026-10-09 20:36 BST)
+
+**Registered audit, not another OH run.** Predicted L479's two polynomials from a direct forbidden-word automaton, and equality of growth after allowing forbidden occurrences only at the initial prefix. Countercontrol: a finite count ratio is not the exact limiting growth. Unexpected check: the two languages must differ on short counts despite sharing entropy. Existing L479 and the OH `closed` source were read first. This tests the algebra independently; it does not replay Local's product-automaton proof relating these languages to the Rule 30 strip.
+
+**Direct construction.** For strict avoidance of 1101, the longest proper-prefix suffix states are empty,1,11,110. Their 0/1 transitions are respectively (empty,1), (empty,11), (110,11), (empty,dead). For strict avoidance of 1111 and 11100, states are empty,1,11,111,1110, with transitions (empty,1), (empty,11), (empty,111), (1110,dead), (dead,1). Each live graph is strongly connected and has the empty-state 0 self-loop, so its nonnegative adjacency matrix is primitive. The exponential word growth is its Perron root.
+
+Direct integer-polynomial determinants give characteristic polynomials
+
+    p=9: x^4 - 2*x^3 + x - 1,
+    p=7: x^5 - x^4 - x^3 - x^2 - x + 1.
+
+Cramer's rule for (I-z*A)f=1 gives strict-avoidance count generating functions
+
+    p=9: (1+z^3)/(1-2*z+z^3-z^4),
+    p=7: (1+z+z^2+z^3)/(1-z-z^2-z^3-z^4+z^5).
+
+Thus L479's denominators and approximate growth values 1.86676039917386 and 1.88320350591353 are independently confirmed. The displayed generating functions count strict avoidance, not automatically the prefix-exempt language.
+
+**Why the prefix exemption preserves entropy.** Let a_n count strict avoidance, b_n count words allowing those forbidden patterns only at position 0, and L be the maximum forbidden-pattern length (4 or5). Every strict word is prefix-exempt. Deleting the first L bits of any prefix-exempt word leaves a strictly avoiding suffix; the deleted prefix has at most 2^L possibilities. Therefore for n >= L,
+
+    a_n <= b_n <= 2^L * a_(n-L).
+
+The primitive-graph growth of a_n exists; these bounds give the same growth for b_n. No equality of finite counts is required. This proves the entropy transfer without importing a cluster formula or relying on the OH count ratios.
+
+**Independent controls.** The small standard-library `rule30_gpt_entropy_algebra.py` derives the states from literal patterns, computes both determinants and generating-function numerators with integer arithmetic, and checks strict counts against exhaustive binary words through length12. It checks the displayed prefix bounds over that range. At length4, both cases have strict count15 and prefix-exempt count16: the unexpected check passes and prevents calling the languages identical. Ratios a_12/a_11 differ from the limiting roots, confirming the countercontrol. The roots' printed decimals are numerical approximations, while the polynomial and generating-function identities are exact. No OH graph, CA trajectory, wider strip or solver invoked.
+
+**Scope and disposition.** Accept L479's entropy algebra and its prefix-growth transfer independently. The recorded product search supplies a separate finite-relaxation language-equality certificate; that search has not been replayed in this block. Since actual wall words are a subset of the relaxation, these values are upper bounds on actual hole entropy, not positive lower bounds, nor proof of a realizable aperiodic half. Finite-width positive growth cannot settle the all-width limit. No prize or main-line status changes; Cloud owns OHC widening. Next seek a critical-bridge invariant with premises weaker than the target, unless a concrete verification request takes priority.

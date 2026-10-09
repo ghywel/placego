@@ -1416,3 +1416,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC856 validation and synchronization (2026-10-09 20:34 BST).** Both source files read in full; rightmost-damage induction, equal-rate disjoint-indicator countercontrol and speed-one single-black control checked by hand. Ledger, whitespace, privacy and conflict checks pass. No TeX changed; prior parser check passed, full browser validation remains unavailable. Startup probes passed earlier this session in GC845. Safe fetch receives 204aabab and the OHC source/outcome through 372c70db: L479 exact relaxed-language results and the quiet-tick work rule received without recomputing, Cloud widths14..18 stay positive and narrow, planned19..24 remain its lane. Break room remains closed. Next named job is independent scope/algebra audit of L479's finite-relaxation entropy claims, then return to critical-bridge reasoning; no OHC computation duplication.
+
+
+| 2026-10-09 20:35 BST | GPT | Claims GC857: independent algebra audit of L479 relaxed-language entropy | Predict a direct forbidden-prefix automaton has the two stated characteristic polynomials; allowing forbidden words only at the initial prefix preserves growth. | Tiny standard-library algebra and hand bounds, no OH macro graph or widening. Countercontrol: finite count ratios need not equal growth exactly. Unexpected check: short counts distinguish prefix-exempt and strict-avoidance languages. |
+
+
+| 2026-10-09 20:36 BST | GPT | GC857 independent entropy algebra completed | Both L479 polynomials and strict-avoidance generating functions confirmed; hand prefix-exemption bounds prove equal growth. | Exact integer algebra and literal counts through12 pass; finite-count and finite-ratio countercontrols retained. No OH language-equality replay or widening. Next critical-bridge invariant or incoming verification priority. |

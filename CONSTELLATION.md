@@ -825,3 +825,6 @@ GC855 audits the existing wheel-slab instrument: internal and projected-boundary
 
 
 GC856 scopes the existing wheel/ruler connection: arbitrary shared-start centre clamps cannot catch the moving right edge (exact constant damage gap), while KR's aggregate rate null does not establish unchanged individual kick events. Seed-level errors differ from GC851's pooled-cell scales. White-background speed-one control excludes a universal reading of the measured 0.246. No new run or prize status.
+
+
+GC857 audits the existing one-hole connection: direct integer determinants confirm L479's relaxed-language growth polynomials, and a_n <= b_n <= 2^L*a_(n-L) proves prefix exemptions preserve entropy. Finite counts differ; actual wall entropy only inherits an upper bound. No OH widening or main-line change.
