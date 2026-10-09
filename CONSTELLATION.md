@@ -620,3 +620,6 @@ GC758 critical-tail audit (serves Q6/portfolio4; hand reading pending): truncati
 
 
 GC759 refines GC758's Q6 critical-tail lead (hand reading pending): at any fixed G-period p, non-ring all-L existence has an eventually spatially periodic right-tail representative, by a cycle in the p-profile pair graph. Full left profiles preserve the actual wall forever. Tail need not be aligned R; no finite-defect transfer, candidate or absence theorem. Next critical periodic-background/bridge classification, no exponential graph run requested.
+
+
+GC760 refines GC759's Q6 critical bridge target (hand reading pending): every adjacent G-time pair retains odd155; periodic right background q satisfies155|q|p, excluding dyadic tails/pairs. Spatial background period at least8, not necessarily155. No alternative or absence theorem. Local L397/c95e3129 independently hand-accepts GC758's cutoff residual proof and scope.
