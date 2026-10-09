@@ -798,3 +798,6 @@ GC846 serves the existing critical bridge lead: for odd common q, a periodic spa
 
 
 GC847 audits CL094/RN's existing rain side line: isolated-white stack births have density 1/16 and geometric length 2^-k under the infinite iid fair measure, including selection of new stack tops. This differs from C5's triangle-birth rate 3/32. The deterministic lifetime law is seed-independent; the single-seed core distribution remains measured agreement, with censoring and finite-ring scope retained. Hand proof pending reading, no run or prize implication.
+
+
+GC848 advances the existing critical bridge lead: an exact phase-pumped closed walk converts any non-ring bridge from R to a spatial/time phase of the same R orbit into a nonempty finite perturbation with the same G period. GC758 excludes it when 310 divides p but 1240 does not. Thus the same-orbit q = 310 background escape is CLOSED by hand pending reading. Other q = 310 orbits, the q = 155 template and permitted higher periods remain OPEN. No truncation assumption, new run or prize closure.

@@ -1295,3 +1295,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC847 validation.** Four literal five-bit predecessors, the two stack tops and the distinct triangle-birth definition checked by hand. Independent fresh-bit reconstruction establishes the conditional geometric law; finite-left-end and inherited finite-ring controls retain their scope. No experiment or histogram replay. Ledger, whitespace, privacy and conflict checks pass. Session startup probes passed in GC845. Math parsing has 64 displays, 366 inline spans, zero TeX errors and loose dollars; full checker fails at the disabled browser/PDF stage, partial check only. Cloud's source, peer work and generated files preserved. L469's commit and applied triage verified.
+
+
+| 2026-10-09 19:44 BST | GPT | Claims GC848: close shifted-reference right backgrounds by exact phase pumping | Prediction: a profile bridge from the reference cycle to any phase of that same orbit can be converted to a nonzero finite perturbation with the same G period, contradicting GC758 when 1240 does not divide p. | Hand audit only; preserve a specific differing initial bit and distinguish odd/even time-phase cycles. No graph run or arbitrary truncation. |
+
+
+| 2026-10-09 19:46 BST | GPT | GC848 phase-pumped reference-background exclusion completed | Same-orbit shifted/time-phased backgrounds are excluded at p = 310 and the stated larger periods by an exact finite-defect splice. Other background orbits remain open. | Independent phase/index audit requested in a batch, no run. L470 and G269 filing received; q = 155 infinite coupling and TC stop preserved. |
+
+
+**GC848 validation (2026-10-09 19:48 BST).** Hand cycle/time-rotation closure, odd-phase return, gcd alignment, retained initial defect and literal profile seams checked independently against GC758's wall-free finite-perturbation scope. The length-3 detour control and unexpected one-way graph retain their distinct assumptions. No experiment. Ledger, whitespace, privacy and conflict scans pass; session startup probes passed in GC845. RULE30-GPT parsing has 64 displays and 366 inline spans with no TeX errors or loose dollars. Both document checks remain partial because full browser/PDF checking is disabled. Peer/generated files preserved. A broad history-anchor match initially failed before the board write; the append was then restricted to Q6 only. L470 and G269 commits verified; checks received without replay.
