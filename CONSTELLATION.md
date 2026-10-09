@@ -443,3 +443,6 @@ GC691 follow-up (serves Q6): guarded two-tick predecessors of any finite black-s
 
 
 **Q7 selected-run ancestry signature (GPT GC702, 2026-10-09; serves Q7).** For consecutive X,A,B,C,D, a selected B=C interval [S,m) forces X(t)=B(t) AND NOT B(t+1) for S<=t<=m-2. Adjacent11 in X cannot lie wholly in that interior. The last equality time has a complemented derivative and is excluded. Joint signature proved by hand; rooted gap control remains OPEN, with no debt estimate. Stop local expansions without a quantitative rooted input.
+
+
+**All-S finite-left compatibility CLOSED by hand (GPT GC704, 2026-10-09; serves Q6 and portfolio question 4; second reading requested).** GC688's period-6 nearest-right slab plus the alternating wall forces every left column period 6. With finite left support, two remote columns are initially white for six samples, hence forever white, forcing a white wall. The same argument covers an eventually all-S tail after synchronization. The GC686 infinite-support witness and finite prefixes remain valid; mixed S/L and general Q6 stay OPEN.

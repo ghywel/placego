@@ -16951,3 +16951,18 @@ The elementary rightmost-difference motion in Proposition 21 reuses Rule 30 left
 
 
 **GC702 arrival-zero scope audit (GPT, 2026-10-09).** Unexpected check: a selected mismatch can have r = 0, so m-1 is not an equality time of [S,m). The endpoint explanation based on that equality is applicable only when r >= 1. The complemented-derivative identity itself nevertheless holds at a genuine selected endpoint, including r = 0, by the actual premise D(m) = 0: the preceding recurrence gives B(m-1) = C(m-1) OR D(m-1), hence B(m-1) OR C(m-1) = B(m-1). Thus C(m) = A(m-1) XOR B(m-1). Since C(m) differs from B(m), A(m-1) = NOT(B(m-1) XOR B(m)). This is a corrected justification of the endpoint formula, not an extension of the interior falling-transition interval or a rooted budget estimate. Countercontrol: without D(m) = 0, a mismatch at m alone does not determine that complemented derivative. No experiment was run.
+
+
+## GC704 — An infinite all-S tail is incompatible with a finite initial left half (2026-10-09)
+
+**Main-line compatibility block, serves Q6 and portfolio question 4.** Change from local Q7 ancestry expansions to the finite-left scope of the actual all-S construction. Compose reviewed GC688's near-wall periodic slab with the established left-permutive periodic propagation behind Theorems A/B. Prediction: infinite or eventually all-S selected traces under a continuing alternating wall cannot have finite initial left support, even with an arbitrary infinite right exterior. Countercontrol: periodicity must first be proved at every farther right column before it can exclude a finite left half. Unexpected check: an all-S tail may begin after a transient, so shift to its synchronized internal boundary; finite left support must be retained at that new time. No experiment or temporal-period sweep.
+
+At the synchronized boundary supplied by GC626/GC688, the wall has period 2 and the nearest-right column has period 6 (profile 11, read in time order as 110100). Hence both have period 6 from that boundary onward. For any adjacent columns with period 6, left permutivity reconstructs the column immediately to their left by
+
+    x_t(i-1)=x_(t+1)(i) XOR (x_t(i) OR x_t(i+1)).
+
+Its right-hand side has period 6, so the reconstructed column does too. Induction propagates period 6 to every left column, without any periodicity hypothesis farther right.
+
+Suppose the initial left support was finite. Radius-one locality keeps left support finite at the synchronized time: a finite time shift only moves its leftmost possible black cell finitely far left. Choose two adjacent columns sufficiently farther left that both are white for the first six samples after synchronization. Their period 6 makes both identically white forever. If columns i-1 and i are identically white, Rule 30 at i gives 0 = 0 XOR (0 OR x_t(i+1)), so column i+1 is identically white as well. Induction reaches the wall, contradicting its continuing alternating, nonzero trace. This proves the claimed incompatibility.
+
+**Controls and scope.** A single completed S does not give the infinite slab (GC688's next-S parity guard is essential), so finite all-S prefixes and their finite clamped witnesses remain allowed. The actual 84-cell periodic witness has infinite left support and therefore does not contradict this exclusion. The proof includes an eventually all-S tail with any finite synchronization time, but does not exclude arbitrary mixed S/L traces, establish positive entropy, or solve general finite-left Q6. It is a consequence of existing periodic propagation plus the reviewed all-S slab, not a new periodicity theorem. Independent hand reading requested; no prize candidate.
