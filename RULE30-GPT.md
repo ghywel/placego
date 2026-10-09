@@ -18859,3 +18859,22 @@ Here choose(n,2) has parity n/2 because n is even. In run lengths ell_1,...,ell_
 **Unexpected scope guard.** Both controls fail W<=Delta U at some tick, so no next X can satisfy Delta U=W OR X. They are not full right tails, and do not refute an all-L odd-E invariant. The remaining U equation is now the concrete compatibility condition to examine, rather than trying to choose integration constants or extrapolate population counts. No prize/status closure; independent reading requested.
 
 **Receipts.** L422 independently hand-accepts GC796; its5913 random admissible checks are received, not replayed. DB exact ladder through21 is received: alternating-sign conjecture fails at17,18,20,21; direct-kernel agreement covers1..18, with19 replay pending and20/21 single-kernel. No decay law inferred. Hardened RRC63/95 and Cloud RR3 depth98 outcome are received without certificate replay. Scratch failure persists/no retry, browser disabled, room closed.
+
+
+## GC798 — Projecting the next tail equation forces marking around singleton runs (2026-10-09)
+
+**Bounded continuation audit.** Add Delta U=W OR X to GC797's Delta D=U OR W. Before literal checks predicted an exact pair-only projection and a run-end restriction. Counterfactual: marked white ends remain arbitrary. Checked existing GC785/796/797; no full tail census or solver. The projected two-equation language is a local necessary condition, not an all-time reformulation promoted as a solution.
+
+**Exact projection.** Put T=Delta D. Some W,X exist at a tick precisely when
+
+    U <= T,    T*(1-U) <= Delta U.
+
+Necessity follows because W must contain T where U=0 and must be contained in Delta U. Conversely choose W=T*(1-U) and X=Delta U; the two OR equations then hold. The construction is cyclic whenever D,U are cyclic, so the condition is exact for these two equations on whole q-periodic profiles. It does not ensure the temporal equation for W or X.
+
+**Run consequence.** U can be black only at a transition of D. If that transition is unmarked (U=0), the second inequality forces U at the following tick to be1. The first inequality then forces D to transition again at that tick. Thus an unmarked transition must enter a singleton run of D, and the following transition is marked. In particular, every white-run end followed by a black run of length at least2 is marked. An unmarked white-run end is possible only before a singleton black run, whose end must then have U=1. Apply these restrictions to GC797's run-end sum; they do not alone force its parity. This reduces optional marking positions without asserting a uniform finite-state reduction of the whole tail.
+
+**Independent literal control.** All16 input/output pair-state combinations were checked against all4 choices of W,X; direct existential equations agree with the projected inequalities in every case. The surviving pair graph has10 directed edges. No profile or ring census follows from that small truth table.
+
+**Unexpected retained failure and repair.** Predicted that q3 D=U=100 passes this projection but fails the next W equation. That prediction was refuted: optional W=101 repairs the minimal W=001 failure. Enumeration of all cyclic W/X choices gives6 pairs; adding the W equation leaves3 W/X/Y triples, namely (101,000,110), (101,100,010), (101,100,110). Only after a new preregistered follow-up did we check the next X equation: all3 fail Y<=Delta X, so no Z can complete it. This is a q3 finite-chain exclusion, not a155-tail exclusion. It retains the warning that rejecting the minimal witness does not reject its optional extensions. This q3 pair has even E by GC796, so imposing the U equation, and even one more W equation, does not by itself imply odd E.
+
+**Disposition and receipt.** L423 independently accepts GC797 and its scope guard; RRC69/95 and pending DB direct19 are received without proof replay. The next useful question is whether the singleton-run marking restriction combines with further tail equations to give a uniform invariant; no such claim or large search is justified by this local projection alone. Main bridge remains open; independent reading requested. Scratch unresolved/no retry, browser disabled, room closed.

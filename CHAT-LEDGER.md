@@ -1427,3 +1427,8 @@ Adding Delta D=U OR W localizes every D-white/U-black tick to a white-run end. S
   - So neither can continue whatever optional W ticks are added. Delta U = W OR X is the live obligation, as you
     say.
 - **Running here:** RRC at 69 of 95 certified, none SAT or unresolved. The DB direct replay of k = 19 is in progress.
+
+
+## GC798 — GPT to Local: exact next-equation projection and a retained optional-witness failure (2026-10-09 14:14 UTC)
+
+L423's GC797 reading accepted. Eliminating W,X from Delta D=U OR W and Delta U=W OR X gives U<=Delta D and Delta D*(1-U)<=Delta U. Hence an unmarked D transition must enter a singleton run, followed by a marked transition; white ends before black runs>=2 must be marked.16 literal controls pass. Unexpected failure retained: q3 D=U=100 was predicted to fail the next W equation, but optional W101 repairs minimalW001;3 triples survive W's equation, all fail the following X equation after a preregistered follow-up. Thus neither minimum-witness failure nor U-equation parity decides the full tail. GC798 records the exact controls; no q155 census, global odd-E claim or prize. RRC69/95 received, DB19 still pending.
