@@ -5078,3 +5078,56 @@ the same width. Ties in that row fork the path, and branches that meet merge.
 - What it says: the two rules see the two orders of §8.74's "Two fronts". The bigger rule finds the right edge's
   dyadic order when it starts there, and the uniform core's widest triangles otherwise. The same rule's branching is
   set by how common each width is, $3 \cdot 2^{-(L+4)}$ per cell. Nothing here bears on the centre column.
+
+### 8.76 Period 1, proved again here: an audit of Condrey's theorem (2026-10-09 14:17 BST)
+
+*The owner asked whether the period-1 result had been verified by us or only trusted. It had been cited, not audited
+in full: Cloud read the abstract, conclusion and Lemma 1 (PRIOR-ART.md, 2026-10-04); GPT read all seven pages and
+restated the two mechanisms, checking the black wall's algebra (G11); §5's check A reproduced the published horizon
+maxima for widths 1 to 7. Nobody had written the whole proof out and second-read it. Cloud wrote it out by hand from
+the rule alone, having read only Condrey's statement and G11's summary, and checked each step by machine. It is
+short, and it holds. Second reading requested from GPT and Local (CL083).*
+
+**Theorem (Condrey, arXiv:2609.09431).** No nonzero finite configuration of Rule 30 has an eventually constant column.
+
+*Proof.* A finite configuration has finitely many black cells on a white background, and Rule 30 keeps it finite and
+nonzero (step 2 below, and the same calculation at the left edge). By shift invariance take column 0, and by shifting time take column 0 equal to a constant
+$c$ for every $t \ge 0$. Rule 30 read for its left input is
+
+```math
+x_t(i-1) = x_{t+1}(i) \oplus \big(x_t(i) \lor x_t(i+1)\big),
+```
+
+so columns 0 and 1 over $t \ge s$ determine every column to their left over $t \ge s$ (Condrey's triangular
+uniqueness, the forced left half of §5).
+
+1. *$c = 1$.* Claim: $x_t(-j) = 1$ for even $j$ and $0$ for odd $j$, for every $t \ge 0$. For $j = 1$,
+   $x_t(-1) = 1 \oplus (1 \lor x_t(1)) = 0$, whatever column 1 is. For $j \ge 2$,
+   $x_t(-j) = x_{t+1}(-j+1) \oplus (x_t(-j+1) \lor x_t(-j+2))$, which is $0 \oplus (0 \lor 1) = 1$ for even $j$
+   and $1 \oplus (1 \lor 0) = 0$ for odd $j$. So row 0 is black at every even depth: infinitely many black cells.
+2. *The right edge.* If $E$ is the rightmost black cell of row $t$, then $x_{t+1}(E+1) = 1 \oplus 0 = 1$ and every
+   cell beyond is $0 \oplus 0 = 0$, so the rightmost black cell advances exactly one cell a step.
+3. *$c = 0$: something black lies to the right.* If every black cell of row 0 were at a site $\le 0$, then
+   $E_0 \le 0$, and by step 2 column 0 would be black at $t = -E_0$. So row 0 has a black cell at a site
+   $\ge 1$.
+4. *$c = 0$: it reaches column 1 and stays (the OR latch).* Let $a_t$ be the leftmost black site $\ge 1$. With
+   column 0 white, the sites $1 .. a_t - 2$ stay white ($0 \oplus 0$) and site $a_t - 1$ turns black
+   ($0 \oplus (0 \lor 1)$), so $a_{t+1} = a_t - 1$ while $a_t \ge 2$. Column 1 is black at $t_1 = a_0 - 1$, and
+   $x_{t+1}(1) = 0 \oplus (x_t(1) \lor x_t(2)) \ge x_t(1)$ keeps it black for ever.
+5. *$c = 0$: the contradiction.* From $t_1$ on, columns 0 and 1 are white and black. Then
+   $x_t(-1) = 0 \oplus (0 \lor 1) = 1$, $x_t(-2) = 1 \oplus (1 \lor 0) = 0$, and the induction of step 1 gives
+   black exactly at odd depths. Row $t_1$ has infinitely many black cells, but it is finite. $\square$
+
+*Machine checks* (scratch, not a probe; each passed). Step 1 for 500 random columns 1, depths 1 to 60. Step 2 for 500
+random rows over 30 steps. Step 4 for 2,000 random right halves with column 0 held white: the leftmost black cell
+reaches column 1 at exactly $a_0 - 1$ and column 1 stays black to step 40. Step 5's checkerboard to depth 60.
+
+*What the audit shows.*
+- Condrey's statement checks, with both of G11's mechanisms. A black wall forces the checkerboard whatever the right
+  side does. A white wall forces it only after the latch, which uses the real right evolution (step 4).
+- Step 4 is where period 1 uses the real right side. For an arbitrary column 1, LR's setting, a white column 1 next
+  to a white wall forces a white left half, so period 1 is false in that setting. That is why LR is stated for
+  $p \ge 2$. It is also the point of GPT's adversarial block (GC786): already at period 1 the proof needs the
+  right half to be real, so a period-2 proof must too.
+- Nothing in the proof is probabilistic or open. Period 1 is closed by elementary means: four lines of Rule 30's own
+  update, twice.
