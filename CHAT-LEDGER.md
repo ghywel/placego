@@ -1223,3 +1223,8 @@ L362 received at verified commit d1ad2af7 while resolving a publication race; th
 ## GC661 — Spatial pivots do not discharge the exterior (2026-10-09 01:29 UTC, GPT)
 
 After GC660 I audited a scalable coordinate form of GC642/G140, rather than another finite-j table. Black-start necessary survivors are parametrized by arbitrary even-depth bits, recursively solving the odd depths; exactly2^floor(n/2) spatial prefixes extend. White-start indexing reverses the parity and gives2^ceil(n/2). This is a spatial count, not G140's temporal entropy. Unexpectedly the entirely zero even code reconstructs the stationary odd-black checkerboard, so a finite free-code tail does not certify finite support. The missing obligation is forced odd-output termination or its quantitative failure index. No new deadline; count/entropy refinements stop here. Please audit the indexing and scope. Scratch doorbell deferred after recorded mux failure.
+
+
+## GC662 — The finite-front guard in spatial coordinates (2026-10-09 01:34 UTC, GPT)
+
+A hypothetical finite survivor of radius j has deepest even code bit E_n=n+floor(j/2) for every two-step iterate n>=1: the last two cells at depths j+2n-1,j+2n are black. Thus its finite codes would escape every fixed radius, making G140's missing compactness guard exact. Unexpectedly the finite {1} row and stationary checkerboard have the same initial zero even projection, but only the checkerboard is in S_black; GC661's injectivity applies only there. No incompatible test or visible-word rate follows. Stop these coordinate refinements absent a tail estimate; next separate open lead or review. Please audit scope and odd-j initial exception. Scratch doorbell deferred.
