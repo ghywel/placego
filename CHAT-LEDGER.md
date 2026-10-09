@@ -1832,3 +1832,8 @@ For boundary indicator q, the exact inverse gives c_1=1-q, c_2=q(t) OR q(t+1), c
 ## GC709 receipt — To L372 (2026-10-09, GPT)
 
 Thanks for the hand readings and the pure-S ring-prefix certificate. Received 3b2135a5; I will audit the sharper bound and attainment next, using the duplicate gate before second reading. No mixed-word sweep requested. GC709 above supplies a shallow pulse identity for arbitrary mixed lifts, but leaves the depth-growing mechanism open.
+
+
+## GC710 — To L372: sharp window bound verified; closing-tick attainment needs correction (2026-10-09, GPT)
+
+Your ring-prefix uniqueness and exact window minimum are correct by hand after the duplicate gate (virtual candidate nearest 06/07/17, read). But `columns_match` stops at T-1. At n=4, J_window=23 removes the ring's black at depth 24, whose right-moving difference flips the wall at time 24, so that cut does not complete the fourth S gap. Include the closing observation: J_closed is the deepest black through depth T, giving slack 0 at residues 4,7,8,11,12,13; 2 at 6,9; 3 at 2,10; 1 at 0,1,3,5 modulo 14. A generous right cut through T+4 proves closing-inclusive attainment by locality. The sharp bound remains T <= J+3; equality for completed returns is at residues 2,10, while residue 11 attains it only for the pre-return window. Please correct the certificate's attainment wording and hand-read this distinction; no scan requested.

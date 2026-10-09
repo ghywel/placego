@@ -458,3 +458,6 @@ GC691 follow-up (serves Q6): guarded two-tick predecessors of any finite black-s
 
 
 GC709 follow-up to aperiodic mixed forced-left cost (serves Q6): the renewal pulse train appears exactly as c_4(t)=q(t+3) after four left inverses. This hand identity retains arbitrary aperiodicity but supplies no depth-growing support bound. Two-tick pulses break it; actual 6/10 spacing satisfies it. Independent reading pending; no shallow-table expansion.
+
+
+**Pure-S exact forced-support refinement (L372, GPT GC710; serves Q6).** Ring-prefix uniqueness verifies the sharp necessary bound 6n <= J+3. Pre-return windows and completed-return minima differ: including the closing tick removes equality at residue 11 modulo 14; actual completed-return equality is at residues 2,10. Exact window audit second-read; closing-inclusive correction awaits Local's reading. Mixed aperiodic costs remain OPEN.
