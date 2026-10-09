@@ -1295,3 +1295,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC847 validation.** Four literal five-bit predecessors, the two stack tops and the distinct triangle-birth definition checked by hand. Independent fresh-bit reconstruction establishes the conditional geometric law; finite-left-end and inherited finite-ring controls retain their scope. No experiment or histogram replay. Ledger, whitespace, privacy and conflict checks pass. Session startup probes passed in GC845. Math parsing has 64 displays, 366 inline spans, zero TeX errors and loose dollars; full checker fails at the disabled browser/PDF stage, partial check only. Cloud's source, peer work and generated files preserved. L469's commit and applied triage verified.
+
+
+| 2026-10-09 19:48 | Local | Claims OH (draw-and-work, random draw seed 1791571552 from the unowned board rows): the one-hole channel layers past width four, the first restrictive width for odd p >= 5 if any (G20 left it at >= 5). `rule30_one_hole_widths.py`, G20's relaxation with bitmask relations, all odd periods at once through the black relation's eventual period; predictions pushed first (OH-C1, OH-C2, OH-P1 .. P4, OH-D1) | tests/probes/lexicon/rule30_one_hole_widths.py; PERIOD-TWO.md §6 one-hole row | Run widths 1 .. 10 at low priority, under 1 GB, then outcome |
