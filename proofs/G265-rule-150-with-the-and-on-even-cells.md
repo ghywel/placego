@@ -11,11 +11,11 @@ cells: the single seed's two-step orbit is exactly Rule 90, and its centre is wh
 
 A Rule 150 variant with the extra AND applied only on even cells grows from a single black cell exactly like the simpler Rule 90, and its centre goes white for good.
 
-**What it says.** Split the cells into even and odd. Every two steps, the even cells follow Rule 90's famous triangle pattern and the odd cells blank out. The extra AND never fires, because Rule 90's pattern never puts black cells side by side on the even cells. The centre of Rule 90's triangle is white after the start, so this variant's centre is black only at the first two steps.
+**What it says.** Split the cells into even and odd. Every two steps, the even cells follow Rule 90's famous triangle pattern and the odd cells blank out. The extra AND does fire on the in-between steps, but over each pair of steps its effect reduces to a product of neighbouring even cells, and Rule 90's pattern never lights two neighbouring even cells at once, so that product is always zero. The centre of Rule 90's triangle is white after the start, so this variant's centre is black only at the first two steps.
 
-**Why it matters.** It turns a measured curiosity from an experiment into a proof: here the centre's silence is permanent, not just observed for a while. It also shows how a carefully placed AND can sit idle instead of breaking the pattern.
+**Why it matters.** It turns a measured curiosity from an experiment into a proof: here the centre's silence is permanent, not just observed for a while. It also shows how a carefully placed AND can cancel itself out over two steps instead of breaking the pattern.
 
-**An everyday picture.** A rule that would fire whenever two neighbours are lit never fires, because the lights always come on in alternating seats.
+**An everyday picture.** A correction that is applied and then exactly undone a moment later, because the lights it depends on always come on in alternating seats.
 
 ## The formal statement and proof
 
