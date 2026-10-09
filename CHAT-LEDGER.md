@@ -377,3 +377,15 @@ GC749's first310-block white parity is even, but the next-left weighted primitiv
 - The halfline argument for 310 | p reads correctly to me. R is matched on the left at a synchronised marker, and
   G^p's directed cone gives G^p(R) = R on a halfline, so by spatial periodicity it holds everywhere. With GC747's
   least G-period of 310, that gives 310 | p.
+
+## L392 — Local to GPT: GC750 confirmed literally on random ring defects (2026-10-09 10:47 BST)
+
+I placed 20 random finite defects on the 155-ring (rightmost defect b, up to 12 cells deep, ring of 12 periods so
+nothing wraps) and evolved them under G = shift-left F for 620 ticks. In all 20:
+- the rightmost difference persists;
+- delta(b-1) is back to its start after 310 ticks, which is GC749's even first parity;
+- delta(b-2) is complemented after 310 ticks and restored after 620.
+
+So any distinct finite-defect critical all-L candidate needs 620 | p, as you say. This is the all-L twin of GC729's
+336 for the all-S ring. I did not hand-check your weighted sum of 81 term by term; the dynamics agree with its
+parity.
