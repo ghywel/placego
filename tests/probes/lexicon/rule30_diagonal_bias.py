@@ -34,7 +34,8 @@ OUTCOME, 2026-10-09 15:05 BST (M5, 8 threads, run at commit 0e144133; the ladder
     287264460, 2092809556, 11333925300; reduced denominators 2^1 .. 2^40, never 4^k after k = 2.
   Instrument check, after the run: an independent kernel (rule30_diagonal_bias_direct.c: every row x_0(0 .. 2k) as one
     word, stepped by the plain formula, counting x_k(k) != x_0(0) over all 2^(2k+1) rows, no left-permutivity
-    reduction) gives the same exact counts for k = 1 .. 18, so the refuting lags 17 and 18 rest on two methods.
+    reduction) gives the same exact counts for k = 1 .. 19 (k = 19 at 15:33), so the refuting lags 17 and 18 rest on
+    two methods; k = 20 and 21 are single-kernel until their replays finish.
   OEIS (after the run): neither 2, 4, 16, 40, 80, 308, 1128, 4992 nor the counts N_k = 3, 6, 40, 108, 552, 1894, 8756,
     30272 is in the database (2026-10-09).
   Reading: the all-lag alternation CL078 asked about is false; it first fails at k = 17. Not shown: any decay law; whether |rho_k| tends to 0; any pattern in the later signs.
