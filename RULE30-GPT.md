@@ -15886,3 +15886,30 @@ The prefix correction uses g9_local(0)=a+1. Negative powers cancel at zero, so S
 **Independent and unexpected controls.** At n=0 the true combined coefficient is g8_0+g9_local_1=a+(a+1)=1, since each age1 source first enters at n2. The same-index sum also gives1 at this one coefficient, so that endpoint alone cannot detect the index error. The unexpected check is the nonzero order-three factor1+zeta^-1: the spatial offset changes the pole cancellation even though H9's time activity complements H8 exactly. This is a hand algebraic check, not evidence of statistical independence.
 
 **Disposition.** Corrected GC646 has order at most2 from the lower residual, order3 from actual H8 and H9, and order4 from actual H11; H10 is silent. Its necessary infinitely-many farther-events conclusion at offsets>=12 stands. The mistaken H9 silence is withdrawn, including the prior chat summary; no clock exclusion follows. Stop extending the strip and seek a different joint compatibility mechanism. Local reading requested.
+
+
+**GC647 second reading.** Local L357 at0338f337 verifies the numerator difference, one-index advance, prefix correction and nonzero order-three coefficient by hand; it agrees with Local's L356 series run. Corrected H9 accounting and the q^4 finite-strip conclusion stand. No additional replay by GPT.
+
+## GC648 — Frontier support alone permits an infinite source sum with a q pole (2026-10-09)
+
+**Scope and prediction.** Stop extending the periodic strip; audit the missing premise for an exclusion. Predict finite-left frontier support and coefficientwise finiteness alone do not prevent an infinite sum of fixed-age, q-free sources from producing a q^4 target. Counterfactual the finite-event denominator comparison extends automatically to all causal sources. This is a formal source countermodel, not a Rule30 trajectory; it advances only the scope of the proposed pole method. Uses the already recorded Pascal coefficients, with no experiment or novelty claim.
+
+Use one inverse origin and a fixed finite edge depth L>=1. Allow only source depth j=1, and let the source at age t=k-1 have activity b_k, for k>=1. Its target sequence has generating function
+
+    sum_(n>=1) binom(n-1,k-1) z^n = z^k/(1+z)^k.
+
+It first contributes at target n=k, with coefficient1. Therefore arbitrary activities b_k define a coefficientwise finite series
+
+    F(z)=sum_(k>=1) b_k * [z/(1+z)]^k.
+
+The substitution phi(z)=z/(1+z) is an involution over GF(2): phi(phi(z))=z. Consequently ANY target series F with constant term0 can be synthesized by choosing b_k as the coefficients of B(y)=F(phi(y)). Earlier activities fix earlier target coefficients, and b_k then fixes the kth; this is a deterministic triangular construction.
+
+In particular choose q(z)=1+z+z^2 and F(z)=z/q(z)^4. Then
+
+    B(y)=y*(1+y)^7/q(y)^4.
+
+This defines a binary activity sequence whose source sum has a genuine order-four q pole even though each individual term, and every finite partial sum, has only powers of1+z in its denominator. Every source respects the known frontier bound j<=L+t+1. Its moving inward offset is d=L+t+2-j=L+k, so offsets and ages grow, and only finitely many sources affect any fixed target. Those support and causality guards do not restore the finite-sum pole argument.
+
+**Independent and unexpected checks.** At target n=1 only age0 contributes, so b1 equals the target coefficient. At n=2 the source contributions are b1+b2, consistent with the first two terms of phi and phi^2. For the chosen F, q^4=1+z^4+z^8, so its first two coefficients are1,0; B starts with coefficients b1=1,b2=1, giving those target values. The unexpected age check is that an age k-1 event first enters at target k, not immediately: coefficientwise convergence remains valid while evaluation at a cube root cannot be interchanged with this infinite sum. No convergence near that root is claimed.
+
+**Disposition and actual limitation.** This synthetic array ignores the actual nonlinear event definition, wall constraints and joint source compatibility; it is NOT a clock witness. It refutes only a pole exclusion based on frontier support plus finitely many contributors to each target. GC646's conclusion that infinitely many farther events are required remains valid. Excluding their cancellation must use genuine joint constraints; bounded-offset strip poles alone cannot do it. Close that automatic infinite-sum extension and change reasoning mechanism rather than enumerate more periodic rays. Local reading requested; no prize candidate.
