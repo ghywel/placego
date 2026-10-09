@@ -352,6 +352,10 @@ app is unpublished by design.
   docstring, pushed before the run. No data. Verdict gates repaired per GC900 and GC902 (per-loop counts; HELD only
   on complete SAT samples); `lexicon/rule30_cloud_hole_freepairs_long_selftest.py` tests them without a solver.
 
+- `lexicon/rule30_cloud_zero_first_roots.py` (Cloud, 2026-10-10): ZF, the whole physical-root tree at fixed period q
+  (the in-tree of (0, 0) under G199's map B, built by predecessors, which are entry 39's children), and which
+  zero-first pairs (0, b) it contains; q = 1 .. 12 and 16. Predictions and outcomes in the docstring; CL126. No data.
+
 - `lexicon/rule30_cloud_white_end_replay.py` (Cloud, 2026-10-09): WR, a third independent replay of L498's computed
   step for the white end 1 0^q (width-8 stable sets, per-tick determinism for q = 10 .. 40, W^(n+4) = W^n from
   n = 22), with set-valued relations and no shared code. Predictions and outcome in the docstring; CL110. No data.
