@@ -379,3 +379,9 @@ PART: as on the board.
 - P8Lock statement matches third-hole zeros; exact three-word equality needs separate prefix certificate — PART (source review) — GC878; L496.
 
 - TC2 integer-vector inequality accepted; witness retention and one-sided verdict/completion scopes remain — PART (source audit) — GC879; CL109.
+- Condrey white end 1 0^q excluded for finite seeds, every q >= 10 (one-sided width-8 relaxation + Theorem A) —
+  PROOF-SKETCH / COMPUTED (awaiting a second reader) — rule30_white_end_jen.py, L498
+- Black end 0 1^q, q >= 14, reproved one-sidedly the same way (entry 38 already has q = 7, q >= 9) — PROOF-SKETCH —
+  rule30_one_hole_widths.py jen, L497
+- One-sided Jen route census, periods 7 .. 14 at width 8: 14 words excluded (long white runs, and 0^2 1^8) —
+  PROOF-SKETCH / COMPUTED (route awaiting a second reader) — rule30_word_jen_census.py, L499
