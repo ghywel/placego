@@ -341,6 +341,11 @@ app is unpublished by design.
   from NP_SCRATCH_TC). A free pair would bound the entropy below as far as it holds. Predictions in the docstring,
   pushed before the run. No data.
 
+- `lexicon/rule30_cloud_channel_truecount.py` (Cloud, 2026-10-09): TC2, TC at p = 2, the TRUE language of column 1
+  next to 0101 (§8.20's channel). Exact counts, true minimal forbidden words, and a certified Collatz-Wielandt
+  ceiling on their automaton's spectral radius, against §8.20's layer bound 0.1236. Predictions in the docstring,
+  pushed before the run. No data.
+
 
 - `lexicon/rule30_one_excursion.c`: EX1, one fixed q16 zero-return charge audit from reviewed pair(320,64); CPU, standard C,800000-edge/2-second caps. Preregistered GC358, NOT RUN. Binary and transcript outside Git.
 
