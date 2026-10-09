@@ -810,3 +810,6 @@ GC850 advances row16 (one-hole channel): an independent finite width-five certif
 
 
 GC851 audits CL095's existing wheel/velocimetry connection: conditional pivot inversion proves the fair-ensemble event band (seven-cell stationary tops give d +/- 6). Pooled iid error scales are not calibrated variances; measured right-wheel information is not yet an exact forcing certificate. No new main-line status or run.
+
+
+GC852 refines the existing wheel connection: the future-only one-turn width-four relaxation retains five start-phase ambiguities for column 2. This does not give full-half alternatives; it identifies the absent past margin in the centred certificate. Actual start forcing remains OPEN, no wider run requested.

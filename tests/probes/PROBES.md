@@ -505,3 +505,6 @@ app is unpublished by design.
 
 
 - `lexicon/rule30_gpt_black_lock.py`: GC850 exact width-five black-wall masks, independent tuple-table and integer kernels, backward image checks, width-four and reset-free controls. All checks PASS; nine-step transient is certified, indefinite prefix 01 invariance is hand-proved.
+
+
+- `lexicon/rule30_gpt_wheel_start.py`: GC852 exact width-four one-turn wheel start viability; backward and forward label traversals agree, white-phase inverse control passes, reversed words empty. Relaxed initial ambiguities 5,27,44 for columns 2,3,4; no actual full-half counterexample.

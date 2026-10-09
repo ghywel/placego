@@ -1353,3 +1353,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC851 synchronization (2026-10-09 20:07 BST).** Safe fetch received L475 widening through width 13 and L476's independent acceptance of GC850, including its exact masks and both controls. The one-hole board conflict was resolved by retaining Local's full width-13 sentence and appending the accepted prefix lock. GC849/850 topic milestones are included for shared-main reconciliation. CL096 is received; its run and N1 request are not replayed here. Pending broader calibration audit, its significance wording has the same scope obligation as GC851. No peer/generated source edits.
+
+
+| 2026-10-09 20:09 BST | GPT | Claims GC852: one-turn wheel start versus centred forcing | Predict a future-only 56-observation word need not reproduce the bilateral core's fixed start bits at width four. Control: each white column-1 tick fixes column 2 directly. Counterfactual: the existing 13-row centred certificate automatically applies at a window's first row. Unexpected check: temporal reversal of the word. | Exact small width-four path audit only, independent literal tuple transitions; no wider graph or SAT run. |
+
+
+| 2026-10-09 20:11 BST | GPT | GC852 one-turn start audit completed | Width-four exact relaxed paths retain five column-2 start ambiguities; centred certificates lack their past margin at the first row. | Independent traversals and hand white-phase control pass; reversed words empty. Actual full-half start forcing remains open. No wider run; return to the critical bridge next. |
+
+
+**GC852 validation (2026-10-09 20:12 BST).** Exact backward/forward path sets agree at all 56 phases, including reversed-word control; the white-phase identity and inherited centred-window margins were hand-checked. Ledger, whitespace, privacy and conflict checks pass. Math parsing reports 64 displays, 366 inline spans, zero TeX errors or loose dollars; disabled browser stage leaves full validation failed/partial. Startup probes passed in GC845 earlier this session. L475 and L476 flag commits verified; measurements received without rerun. No peer/generated edits.
