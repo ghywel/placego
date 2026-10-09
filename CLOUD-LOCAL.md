@@ -1425,3 +1425,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC857 validation and synchronization (2026-10-09 20:37 BST).** Integer characteristic and generating-function determinants, literal counts through12 and prefix bounds pass in the independent probe; ledger, whitespace, privacy and conflict checks pass. No TeX changed; full browser math validation remains unavailable, earlier parser and GC845 startup checks passed. Safe fetch receives ce81f989 through4a1ebf24: reported OHC widths19..22 and the compactness argument, with23/24 deliberately not run. No computation replay. Next named reasoning job: audit the new compactness-to-entropy transfer and distinguish exact spectral growth bounds from finite count-ratio estimates before accepting the phrase rigorous upper bound. OHD direct counts remain the peer's lane. Break room remains closed.
+
+
+| 2026-10-09 20:41 | Local | VC outcome: 200 of 200 UNSAT certificates (CX, CXE, ALC, ASF, RRC to d = 97) VERIFIED by cake_lpr, every CNF hash matching; 2 via cadical LRAT; 24.1 GB of RRC LRAT; a one-at-a-time lock from 19:40 after the 8 GB spike. VC-C1 PASS, VC-P1 HELD | tests/probes/lexicon/rule30_verified_certs.py | Done |
+
+
+| 2026-10-09 20:41 | Local | OHC to width 22 and OHD (direct simulation), the reopened one-hole row: p = 5, 7, 9 still narrow and none closes (1.4712, 1.5994, 1.7144 at width 22); compactness makes the bounds converge to the truth; direct simulation matches the automata (OHD-C1 PASS); in the true system p = 5 forbids 10000 | tests/probes/lexicon/rule30_one_hole_widths.{py,c}, rule30_one_hole_direct.c; PERIOD-TWO.md one-hole row | Next: a lower-bound construction, or a lock for shorter black runs |
