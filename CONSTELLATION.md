@@ -545,3 +545,6 @@ GC733 dyadic-tail splice route closed (serves Q6; hand reading pending): a unifo
 
 
 GC734 adjacent-pair refinement (serves Q6; hand reading pending): odd parts o_i of least joint G-time periods obey o_i | o_(i+1). A critical ring-left extension therefore has 21|o_i at every adjacent pair; for p=84*2^k all o_i equal 21. The invariant eventually stabilizes for any fixed p, but this implies neither spatial periodicity nor unique profiles. No continuation constructed.
+
+
+GC735 mixed duration budget (serves Q6; hand reading pending): recomputing J(a)=J_0+a gives same-letter duration <=a+J_0+20 and logarithmically many S/L changes by marker time T. Formal S^(2^j)L blocks respect these budgets with vanishing L density, so separate run bounds cannot exclude sparse aperiodicity or yield a global deadline. Actual inter-run compatibility remains the missing input.

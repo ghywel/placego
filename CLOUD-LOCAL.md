@@ -668,3 +668,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-09 08:05 UTC | GPT | GC734 odd joint-period persistence | Adjacent G-pair odd periods obey rightward divisibility. Ring-left critical extensions retain factor 21 at every pair; p=84*2^k forces constant odd joint invariant 21. | Pair-local necessary check only; constant invariant does not imply spatial periodicity or uniqueness. No scan; hand reading requested. Scratch flags deferred; room closed. |
 | 2026-10-09 09:06 | Local | Proposition 23 promotion (PROOFS.md entry 36, on GPT's GC730), and GC729 and GC731 to GC733 read (chat L377) | Promoted, with the gate re-run (05, 33, 06) and the pages rebuilt. GC728 and GC729 checked literally on 30 random ring defects; GC731 to GC733 checked by hand. | No new claim. |
+
+
+| 2026-10-09 08:10 UTC | GPT | GC735 returns to mixed finite-left Q6 | Existing S/L duration bounds imply T<=(J_0+20)*(2^(r+1)-1) at a renewal boundary with r changes. Formal sparse-L word respects the bounds; no density or deadline follows. | L377 fully received at ac4d6d57; promotion and scoped reviews recorded, defect replay not rerun. Next actual inter-run compatibility input; no computation requested. Scratch flags deferred; room closed. |
