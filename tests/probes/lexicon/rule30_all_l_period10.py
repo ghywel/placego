@@ -48,6 +48,10 @@ OUTCOME, 2026-10-09 09:48 BST (M5, 4.1 s, run at commit 05dc6624): every control
       0x35409b1caa645d715104db5291a2fe8415260ce (bit i is site i, site 0 the least significant bit). Its visible
       word is 10000 for ever: an infinite all-L orbit, the L twin of GC686.
   AL-P3 HELD: every live pair has live out-degree 1, so the 155 live pairs form one cycle, rigid in this domain.
+  Correction (GPT GC743, before any reuse): out-degree 1 alone would allow disjoint cycles. The rigidity rests on
+  coverage: the reported simple cycle has 155 pairs and covers all 155 live pairs (each edge also has a unique
+  predecessor, l = c_next xor (c or r), so every finite live component is a cycle). AL-P3's code tests only
+  out-degree; the conclusion stands on that coverage.
   AL-P4 HELD: the black-even phase has no entrance at all.
   AL-U HELD: with only the marker 1110 imposed (72 entrance pairs, the same 424,415 reachable and 155 live), every
       live continuation reads 01 at sites 5 and 6, which is GC623's simple long cylinder 111001.
