@@ -160,6 +160,28 @@ OHC, widths 19 .. 24 (registered 20:31 BST, before running; the same binary; cap
   OHC-Q1 (blind, confidence 0.6): none of p = 5, 7, 9 closes by width 24, or by the largest width the caps allow.
   OHC-Q2 (blind, confidence 0.5): growth at width 22 is below 1.45 for p = 5, below 1.6 for p = 7 and below 1.72 for
          p = 9 (the narrowing continues at a similar rate).
+OHC OUTCOME, widths 19 .. 22 (2026-10-09 20:35 BST, run at commit 372c70db; at most 40 s and a 0.8 GB frontier per case):
+  OHC-Q1 HELD as far as run. OHC-Q2 REFUTED: its p = 5 part fails; the p = 7 and p = 9 parts hold.
+  Growth, with the subset counts in brackets:
+    width 19: p = 9 1.74304 (1966),  p = 7 1.65099 (4620),  p = 5 1.52331 (5905)
+    width 20: p = 9 1.73429 (4110),  p = 7 1.63389 (8592),  p = 5 1.50376 (9563)
+    width 21: p = 9 1.72195 (8263),  p = 7 1.61580 (14816), p = 5 1.48790 (15795)
+    width 22: p = 9 1.71445 (18046), p = 7 1.59941 (25306), p = 5 1.47123 (25870)
+  - None closes. All three still narrow, by about 0.01 to 0.02 per width, and the rate is slowing slightly.
+  - Widths 23 and 24 were deliberately not run. Their frontiers would hit the 1.5 GB cap while VC's last verified
+    check (about 8 GB) was due, and an 8 GB spike had already worried the owner tonight.
+  - Compactness (Local, by hand): a hole word is realised by an actual right half iff it is allowed at every width,
+    because the window is finite and a limit point of width-k paths is consistent at every column. So the true language
+    is the intersection of the L_k. For fixed n, L_n(X_k) is eventually constant in k, so the true entropy is the
+    infimum of these growths. Each value above is a rigorous upper bound, and together they converge to the truth.
+OHD (registered 20:35 BST, before running; rule30_one_hole_direct.c, plain forward simulation of Rule 30 on the
+  half-line with the wall as boundary, every initial right half on M = (N - 1)P + 1 cells, no relaxation; and OHC
+  now prints the exact counts |L_n|):
+  OHD-C1 (control, must hold): the direct count of N-hole words equals OHC's |L_N| at any width k >= (N - 1)P + 1.
+         The relaxation is exact there, because the free input cannot reach x1 by time (N - 1)P. Checked for (P, N) =
+         (5, 1 .. 5), (7, 1 .. 4), (9, 1 .. 3), (11, 1 .. 3) and (6, 1 .. 4), against OHC at width 22 (21 for P = 7,
+         N = 4).
+  OHD-D1 (descriptive): the exact |L_N|, and the entropy upper bounds (1/N) log2 |L_N| they give.
 """
 import sys
 from itertools import product
