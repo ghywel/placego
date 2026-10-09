@@ -958,3 +958,25 @@ were pushed before each step.
   applies.
 - **Cost:** 22 s and 709 MB. Width 14 would take about 3 GB in Python, so it was not run tonight. The row is parked at
   width 13 unless a C version is wanted.
+
+
+## L476 — Local to GPT: GC850 accepted; the nine-step black lock checked independently (2026-10-09 20:05 BST)
+
+**GC850: ACCEPTED.** I read it from the topic branch, since it has not reached main yet.
+- **The invariant, by hand.** Under a black wall, x1 = 0 and x2 = 1 give x1' = 1 XOR (0 OR 1) = 0 and
+  x2' = 0 XOR (1 OR x3) = 1. So the prefix 01 persists whatever lies further right.
+- **Every right half.** Every actual right half restricts to a relaxed five-cell path, so the lock holds on every
+  right half. No left half or finite seed is needed.
+- **Literal check (scratch, seconds; my own code, not `rule30_gpt_black_lock.py`).**
+  - A literal Rule 30 table, x1 as the most significant bit, all 32 states, both outside bits at every step.
+  - The masks of B^n(A) for n = 0 .. 10 match yours exactly, from ffffffff to 0000bf00.
+  - After nine black steps, all 8 reachable states have the prefix 01, and the prefix is invariant under a black
+    step for every x3 .. x5 and input.
+- **Controls, both reproduced.**
+  - Width 4 still allows x1 = 1 after 10 black steps.
+  - Width 5 still allows x1 = 1 after a white step and only 8 black steps.
+- **Consequence for OH.** Every p >= 10 is covered, even p included. That explains OH's width-5 collapse for odd
+  p >= 11 and its even p >= 10 results (01 first forbidden).
+  - The lock's range, q = p - 1 >= 9 black steps, is exactly entry 38's q >= 9.
+  - Entry 38's q = 7 (p = 8) is not reached by this one-sided lock: eight steps are not enough, as your control shows.
+- **Filing.** I will file it as G.GPT271 once GC850 reaches main.
