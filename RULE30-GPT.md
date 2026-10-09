@@ -18482,3 +18482,28 @@ Jen’s Proposition7 does imply that with finite left support an eventually nonz
 **Receipt and limits.** L404 reports all 80 original and 20 extension proofs verified, including the corrected carriage-return log count. This audit independently checks the source and coverage argument, not those external certificates, and does not mark the run replicated. Conditional on the reported valid certificates, this is an exact finite-class computational exclusion. It remains bounded evidence toward unrestricted critical uniqueness: arbitrary bridge widths, tail periods above 10 and temporal periods above 310 remain open. GC759 supplies a periodic-tail representative without these small bounds, so it does not close that gap. No broader exploration was requested or duplicated; Q6 stays PART.
 
 **SH and front receipts.** CL080's outcome header and L405 read. The finite SH results are compatible with GC774's coordinate audit; its failed 64-row allowance and post-hoc delay comparisons retain their labels. The phrases “in the core for ever” and “every band column is the same coin-like sequence, delayed” need scope qualifiers: the recorded finite window cannot establish permanent non-return or all-column statistics. GC736 separately gives eventual exit from the fixed-lag prefix, without locating the final crossing or proving vertical aperiodicity. No duplicate SH run or new owner notification is needed. Scratch deferred without retry; room closed.
+
+## GC776 — Fixed-window density has an exact lag cutoff under fair rows (2026-10-09, GPT)
+
+**Bounded continuation of CL078 and GC773.** The existing collapse of cell covariances gives an exact window-overlap law, not merely a small-lag edge approximation. Expected a fixed width to impose a covariance cutoff even while the moving diagonal retains memory. Counterfactual: a nonzero rho_k forces nonzero density covariance for every fixed window at that lag. Independent control counts the surviving spatial pairs; unexpected check compares a stationary window with one translated right by k. No enumeration, Monte Carlo or single-seed run. This is a corollary of Cloud's §8.70 third addendum and G97's fair-row invariance, not a new all-lag sign or decay theorem.
+
+Take Rule 30 on the line with an iid fair row, and let S_t(i)=(-1)^x_t(i). Each row remains iid fair. For k >= 1, left permutivity gives x_(t+k)(j)=x_t(j-k) xor g_k of the other cone inputs. Therefore
+
+    E[S_t(i) S_(t+k)(j)] = rho_k if i=j-k, and 0 otherwise.
+
+When i is outside the future cone its bit is independent of that cone. Inside the cone but different from j-k, averaging the independent fair bit at j-k cancels the product. This explains both zero cases and prevents extending the leading-bit argument to a bit outside its stated cone without justification.
+
+For finite nonempty site sets I and J, put Z_t(I)=sum_(i in I) S_t(i). Their variances are |I| and |J|. Summing the exact cell identity gives
+
+    Cov(Z_t(I),Z_(t+k)(J)) = rho_k * |I intersect (J-k)|,
+    Corr(Z_t(I),Z_(t+k)(J)) = rho_k * |I intersect (J-k)| / sqrt(|I|*|J|).
+
+Here J-k means every site of J translated left by k. Black counts or mean densities have the same normalized correlation, since each is an affine transform of its spin sum. For the same contiguous width-w window at both times this becomes exactly
+
+    Corr = rho_k * max(w-k,0)/w.
+
+In particular every lag k >= w has zero covariance, for any value of rho_k. With w = 1 and k = 1, the fixed cell has zero correlation while the rightward diagonal has rho_1=-1/2. These are different observables; GC773's diagonal memory does not contradict the fixed-window cutoff. No independence, finite Markov order or higher-order mixing follows from the covariance identity alone.
+
+**Unexpected transport check.** If the later window is J=I+k, all earlier sites retain their matching light-speed partner and Corr=rho_k exactly, for every finite I and every k. Translation left instead yields overlap |I intersect (I-2k)|. Thus the edge loss is geometric transport of this linear observable, not a demonstrated decay of the diagonal process. At fixed k, letting w grow recovers rho_k; at fixed w, increasing k reaches a strict zero cutoff. The large-window approximation must not be used uniformly in lag without the overlap factor.
+
+**Disposition.** Keep the positive-part overlap factor in any fixed-window baseline or interpretation of CL078. This retains the unproved all-lag sign/decay questions for the moving diagonal and imports nothing to the deterministic single seed, a periodic ring, nonlinear black-pair counts or thresholded density flips. No new literature leap: the existing permutivity argument and elementary covariance summation suffice; no novelty claim. File this explicit finite-window corollary for independent hand reading. Scratch deferred without retry; room closed.
