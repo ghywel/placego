@@ -20363,3 +20363,32 @@ QX2 spot-checks when d<=5 or at every50th depth. All reported deaths at d=3 or4 
 **Countercontrol: determinism does not imply zero absorption.** In time order take A=01 and B=10 at common period2. Literal substitution gives unique child C=01. From (10,01), the unique child is10. These pairs alternate forever with no zero profile. At any even common period their repetitions give the same ambient nonzero cycle. It is not a rooted first-return path from (a,0), and does not refute the measured rooted returns. It proves only that reset uniqueness or finite-state determinism alone cannot force a zero hit; a rooted-ancestry obstruction to nonzero cycles is the missing extra premise.
 
 **Disposition.** The reported at-most-two-live-path observation and the phase multiplicities are explained by existing lemmas, not new rigidity evidence. The substantive open question is whether every rooted orbit must hit zero, and how its stopping depth scales; SCC closure of the associated even-return graph is a further, separate issue. No new computation, larger-q census or lower-bound construction requested. Peer q32 sampling remains its lane. Next audit whether the unique backward map supplies a rooted-ancestry exclusion of nonzero cycles without assuming the target return property.
+
+
+## GC864 — Every fixed-period zero-started excursion returns; the remaining question is quantitative (2026-10-09 21:17 BST)
+
+**Registered hand ancestry audit, review pending.** Prediction: unique backward ancestry forces a first zero return even for arbitrary zero-driver sources not reachable from G7's physical root. Countercontrol: GC863's ambient nonzero cycle has no zero anchor. Unexpected check: the all-zero integrated child stops immediately rather than supplying a live cycle. No computation or RW replay. Existing G7/G156's predecessor mechanism and G158's reset lemma suffice; this is an application of recorded prior art, not a new invariant or prize claim.
+
+**Statement.** Fix any common temporal period q>=1. Start at v_0=(a,0), choose a q-periodic child c when one exists, and stop at the first later pair whose second profile is zero. Every such excursion returns in finitely many edges. If c is nonzero, its return index r obeys the coarse bound
+
+    r <= (2^q-1)^2+2.
+
+No physical-root reachability assumption and no odd-half assumption are required. A source with no q-periodic integrated child has no excursion; it is not a nonreturning live path.
+
+**Proof.** For an edge (a,b)->(b,c), the temporal equation is S c=a XOR(b OR c). Thus every target has exactly one predecessor
+
+    H(b,c)=(S c XOR(b OR c),b).
+
+This is the same backward map as G7/G156, with letters renamed. Every live node has nonzero second profile and therefore exactly one q-periodic child, by reset uniqueness. Hence a path cannot terminate while its driver is nonzero.
+
+Suppose v_i=v_j before the first zero return, with 1<=i<j. Applying H exactly i times gives v_0=v_(j-i). The latter node has nonzero second profile because 1<=j-i<j precedes the first return, whereas v_0 has zero second profile. Contradiction. All live nodes are therefore distinct. There are only finitely many q-profile pairs, so an infinite live path is impossible and a zero return must occur.
+
+For the stated bound put N=2^q. The first live pair v_1=(0,c) has zero first profile. Every later live pair has both profiles nonzero: its first is the previous live driver. There are at most (N-1)^2 such pairs. Thus r-1<=1+(N-1)^2, proving the bound. This elementary bound is deliberately not advertised as sharp for larger q.
+
+**Independent controls and unexpected endpoint.** At q1, the excursion (0,0)->(0,1)->(1,1)->(1,0) returns at r3 and attains the displayed bound. Literal substitution verifies all three edges. If the selected child c=0, integration requires a=0, and v_1=(0,0) is already a return at r1. Continuing its fixed zero loop would violate the specified stopping rule. This is the unexpected endpoint guard.
+
+For the ambient q2 cycle (01,10)->(10,01)->(01,10), H sends each cycle vertex to the other. It cannot be reached by a finite zero-started live path: backward iteration from either vertex stays on that nonzero cycle forever. This supplies the countercontrol missing from an argument based on forward determinism alone. General finite deterministic systems without unique backward ancestry can feed a zero-started path into a nonzero cycle, so that hypothesis is essential.
+
+**Correction to GC863 and interpretation of RW.** GC863 correctly separates reset uniqueness alone from absorption, but its final identification of fixed-q return existence as substantive open work was premature. Adding the already recorded unique predecessor closes that qualitative question for every admissible zero-started excursion, including q32 and beyond. The two initial complementary paths for odd doubled sources return at the same depth by GC863's rotation argument. Consequently one rotated first-return class per source orbit is structural, not a conjecture to be established by a larger census. Different source orbits having distinct return depths is not implied.
+
+The bound at q32 is astronomical; this proof supplies no practical horizon, growth law, parity classification, graph-exit death, or SCC closure. Local's RW sample remains useful to measure depths and returned words and test stronger quantitative/closure predictions. It need not be interpreted as testing whether some admissible fixed-q excursion never returns. The physical first-zero tree and arbitrary zero-started excursions are different domains; only their shared backward-ancestry mechanism was used. No settling theorem or prize result follows.

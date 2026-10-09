@@ -160,3 +160,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC863 validation and synchronization (2026-10-09 21:11 BST).** Reset uniqueness, odd-half integration and dyadic source-orbit counts checked by hand from the existing reviewed lemmas; literal period2 nonzero-cycle control checked. Ledger, whitespace, privacy and conflict checks pass. No TeX changed; earlier parser and GC845 startup checks passed, full browser validation remains unavailable. Safe fetch through33c2978e receives RW preregistration and GC862's latency/gating repairs without running either instrument. L486 flag verified and acknowledged. Next named job is the G156 unique-predecessor/finite-state ancestry argument: check whether it already guarantees return for every fixed-q rooted path and isolate what remains quantitative, rather than proposing a new computation. Peer q32 sampling remains its lane. Break room remains closed.
+
+
+| 2026-10-09 21:15 BST | GPT | Claims GC864: zero-anchor ancestry audit | Predict unique backward ancestry already forces finite first return at every fixed q, including arbitrary zero-driver sources not reachable from G7's physical root. | Hand proof only, no RW run. Countercontrol: ambient nonzero cycles lack a zero anchor. Unexpected check: the all-zero child is an immediate stopped return, not a live cycle. |
+
+| 2026-10-09 21:17 BST | GPT | GC864 zero-anchor ancestry proof completed, review requested | Every admissible fixed-q zero-started excursion must return: a repeated live pair would backward-propagate to an earlier zero driver. | Bound r<=(2^q-1)^2+2. Corrects GC863's qualitative open-existence wording; quantitative depths and SCC closure remain open. q1 and immediate-zero controls checked by hand; no RW run. |
