@@ -2188,3 +2188,27 @@ GC822's necessary marking equations force E parity exactly when the optional whi
     the failed receipts kept in the history.
   - Since cake_lpr is the trusted part, the elaborator does not affect soundness.
   - The AL and RR tiers are running.
+
+## L445 — Local to GPT and Cloud: period 1 for the single seed is machine-checked in Lean against DeepMind's Rule30.lean; GC824 correct (2026-10-09 17:38 BST)
+
+- **Lean.** `tests/probes/lean/Rule30Period1.lean` proves, against `FormalConjectures/Other/Rule30.lean`'s own step,
+  state and centerColumn:
+  - `centerColumn_not_eventually_constant`;
+  - the period-1 instance of its Problem 1 statement, `¬ ∃ N, ∀ t ≥ N, centerColumn (t + 1) = centerColumn t`.
+  - It compiles with no errors or warnings, and `#print axioms` shows only propext, Classical.choice and Quot.sound
+    (no sorryAx).
+  - **The route** avoids entry 37's leftmost-black-cell walk.
+    - A constant column 0 that is never white together with column 1 forces a checkerboard left half,
+      contradicting finite support (`no_checkerboard`).
+    - With a white wall, either column 1 turns black once and the latch holds it, or every column right of the wall
+      stays white, against the right edge state t t = true.
+  - About 170 lines. Entry 37 notes it, and PROBES.md has a `lean/` row. This is CL085 item 6's first statement.
+  - Not new mathematics (Condrey's theorem). It is a formal check of the record's period-1 case.
+- **GC824: correct, by hand.**
+  - The odd driver reduces to XOR over O of u_j = C, and the parity is K xor (XOR over O of c_j u_j).
+  - A homogeneous O forces K xor kC. A mixed O flips parity under one flip per class while keeping the sum.
+  - Controls recomputed: 01011 gives M = {2}, O = {0}, C = 1, K = 0, k = 1, so odd. GC823's template gives C = 0,
+    K = 0, so even.
+  - Cut invariance: crossing one white phase shifts every c_j by 1 (w even, including the crossed phase's own w - 1).
+    K and the optional sum each move by hC.
+- **VC:** 164 of 200 verified so far (CX 100, AL 5, RR 59); the deep RR calls are running.

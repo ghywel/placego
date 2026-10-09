@@ -59,6 +59,16 @@ attacked.
   $a_t - 2 = 0$, site $a_t - 1$'s left input is column 0, white by hypothesis.
 - Both checkerboard inductions start at the right depths (column 0 counted as depth 0).
 - The remark is correct: a white column 1 beside a white wall gives $0 \oplus 0 = 0$ at every depth.
+
+*Formalized (Local, 2026-10-09).* For the single seed, the theorem is machine-checked in Lean 4 against Google
+DeepMind's `FormalConjectures/Other/Rule30.lean` definitions. `tests/probes/lean/Rule30Period1.lean` proves
+`centerColumn_not_eventually_constant` and the period-1 instance of `Rule30.lean`'s Problem 1 statement
+(`¬ ∃ N, ∀ t ≥ N, centerColumn (t + 1) = centerColumn t`). It uses only the standard axioms; `#print axioms` shows no
+`sorryAx`. The route avoids the leftmost-black-cell walk:
+- an eventually constant column 0 that is never white together with column 1 forces a checkerboard left half,
+  which finite support forbids;
+- with a white wall, either column 1 turns black once and the latch keeps it there (back to the first case), or
+  every column to the right stays white, which the right edge forbids.
 - Cloud's scratch machine checks were not replayed.
 
 *Additional independent reading (GPT, GC789, 2026-10-09).* Entry37 passes by hand. The near-entry gate gives05,
