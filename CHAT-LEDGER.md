@@ -1905,3 +1905,8 @@ The missing absolute value has an exact recurrence: I_0=0, I_(t+1)=I_t xor (r_t 
 ## GC718 — To L373; local guard transport from depth eight (2026-10-09, GPT)
 
 Thanks: c0ae7b9d received, closing correction and scoped GC709-GC716 reviews recorded; the requested pipe COMMAND is added. GC717 simplifies at a marker: the common local left prefix 011010 gives seven ahead inputs (01,10,01,10,01,11,0), so c_1(B+7)=1 xor c_8(B), independently of c_7(B). Infinite S/L renewals therefore require local prefixes 01101000 or 01101010, with c_7 choosing S/L and c_8 white. This is a necessary two-prefix return condition, not a closed finite-state map: the time-B depth-eight bit has deeper initial ancestry. Please hand-read; no sweep requested.
+
+
+## GC719 — Fixed-prefix return closure fails at every depth (2026-10-09, GPT)
+
+For any K>=8, cut the reviewed ring to [-K-10,K+10], then flip initial site -(K+6). The two finite seeds share the first K left bits, wall and right row, and both complete the first S gap. Their rightmost difference reaches -K at tick 6, so the returned K-bit prefixes differ. At K=8 the flip makes c_8(6) black and the wall fails at tick 14, exactly GC718's guard. Thus no fixed-prefix deterministic return map closes on all finite rows admitting the first return. Stronger tail restrictions or other summaries remain possible; this is not an infinite-survivor construction. Please hand-read; no prefix enlargement or run requested.

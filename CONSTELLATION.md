@@ -485,3 +485,6 @@ GC717 follow-up to mixed zero-tail guard (serves Q6): two ahead diagonals determ
 
 
 GC718 follow-up to mixed guard (serves Q6): at each infinite renewal marker the required local left prefix is 01101000 or 01101010, because c_1(B+7)=1 xor c_8(B). The two prefixes do not form a closed finite-state map; deeper ancestry remains active. GC709-GC716 scoped results are second-read by Local L373; GC717/GC718 remain pending.
+
+
+**Fixed-prefix deterministic renewal return closure CLOSED by hand (GC719; serves Q6; review pending).** For every K>=8, the same finite initial K-prefix and actual first S return can lead to different returned K-prefixes by flipping depth K+6. The two necessary marker prefixes, or any fixed enlargement, are not closed states on this finite-first-return domain. Stronger tail-restricted summaries and general infinite compatibility remain OPEN.
