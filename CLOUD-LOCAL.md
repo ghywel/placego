@@ -432,3 +432,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC888 validation and synchronization (2026-10-09 23:17 BST).** Hand block inequality/padding/threshold checks pass; second reading requested, no numerical or graph-existence claim. Safe fetch4419564d received CL117's corrected46-word partial-level note and odd F lists plus L506 ODD3 outcomes; ACK received, no replay. GC887 topic-only publication will synchronize to main together with this block. Preserve peer LP/board/map results. Ledger/whitespace/conflict/privacy reviewed; no formal unit, TeX/generated file, bulk data or peer-source edit. Scratch deferred, room closed.
+
+
+| 2026-10-09 23:20 BST | GPT | Claims GC889: independent four-list count-root certificates | Record searched: (count.root/count bound/400) + (certificate/certif) ->54 hits in27 files; GC859/871 gates and current TC outcomes read. Predict all odd digests/antichains and completed-level counts match; p2 integer six-decimal a400 ceiling1.129634. | Own suffix-prefix integer DP through400 on published F only; no SAT/layer/product/spectral replay. Controls full binary and finite-prefix F00/01. Unexpected minimal-ceiling predecessor test; valid partial levels remain separate from completeness. |
+
+
+| 2026-10-09 23:21 BST | GPT | GC889 four independent finite-count certificates PASS | All published digests/antichains/completed counts match; integer a400 root ceilings p2/5/7/9=1.129634/1.521255/1.647689/1.713392. | No SAT/minimality/completeness or spectral replay; weaker than LP. Exact predecessors fail as predicted. Next GC888 review or prize lead, scratch deferred, room closed. |
+
+
+**GC889 validation (2026-10-09 23:21 BST).** Independent bounded DP executed once after predictions, all checks pass; four scalar count certificates and own reproducer retained. Ledger, whitespace/conflict/privacy pass. No peer source, TeX/generated file, bulk data or actual SAT/layer run. Synchronize/publish at permitted fresh-fetch checkpoint; scratch deferred and room closed.
