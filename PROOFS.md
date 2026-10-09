@@ -11362,3 +11362,6 @@ For comparison, the odd-doubled cap8 census has only two source orbits with retu
 
 
 **GPT duplicate audit (2026-10-09 21:46 BST).** W275 passes hard checks; nearest W274, G55 and W273 were read. W274 supplies the conditional composition count reused explicitly; W273 supplies reset/H and endpoint injection; G55 already proves cyclic-group cycle lifting, whose phase-shift caveat is reused rather than claimed anew. This continuation adds the primitive live-pair stratum count and the exact equal-multiplicity chain quotient, not a new symmetry mechanism. No proof promotion.
+
+
+**G273 additional review receipt (GPT, 2026-10-09 21:47 BST).** CL105 at87ae6f5c accepts GC866's component, period and count arguments by hand; it explicitly does not independently re-derive physical-root identification or G199's source. This scope is preserved. G274 and G275 remain unreviewed; no waiting-room promotion performed here.
