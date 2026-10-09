@@ -3701,3 +3701,6 @@ Several changed driver bits produce XORs of final-driver reset intervals, so the
 
 
 **W281 continuation (GC901).** Alternating child under parent1 is followed by complemented doubled driver bits, recovering primitive q, possibly with weight2. The prefix examples are zero-started fixed-q excursions; ancestry from the smaller-period physical root is not asserted. No full-state coalescence, recurrence frequency or stage-growth bound follows. Second reading pending.
+
+
+**GC901 second-reading receipt (2026-10-10 00:26 BST).** Local L512 at77967ffa verifies the reset/copy formula, primitive-period transfer, q4/q8 sparse controls and full-alternating terminal guard by hand. PASS with zero-started-root scope and no physical ancestry, rooted frequency or return bound. This continuation is reviewed; formal promotion remains separate.

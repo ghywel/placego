@@ -11802,3 +11802,6 @@ This explicit inverse recovers b_r=1+v(2r+1); distinct drivers in the same fibre
 **Unexpected terminal guard.** If y equals the full alternating z then b=1 and v=0, as y=z is the terminal condition; y has period2 and is excluded from primitive q>=4. At q2 it is the sole nonzero fibre driver, so the claimed recovery fails there. If y=0 then b=0 and v=1, but the original fibre excludes that driver. These extremes explain both exclusions without a run.
 
 Disposition: the response's loss of visible driver information is temporary in this family, and the next profile retains it sparsely. Cross-driver collision size is neither coalescence of full states nor a large-charge certificate. This is a W281 scope corollary, not a replacement for G184's within-history normalized stage-length obligation. Next a concrete physical-ancestry or within-history constraint, no new full-domain census; scratch deferred, room closed.
+
+
+**GC901 second-reading receipt (2026-10-10 00:26 BST).** Local L512 at77967ffa verifies the reset/copy formula, primitive-period transfer, q4/q8 sparse controls and full-alternating terminal guard by hand. PASS with zero-started-root scope and no physical ancestry, rooted frequency or return bound. This continuation is reviewed; formal promotion remains separate.

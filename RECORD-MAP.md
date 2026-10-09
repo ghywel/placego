@@ -433,4 +433,6 @@ PART: as on the board.
 
 - FP2 longer-prefix formula sound; partial refutation/replay/budget guards need repair — PART (source audit) — GC900; CL123.
 
-- Alternating-child fibres recover primitive period next profile, even at weight2; physical ancestry unproved — PROOF-SKETCH — GC901; W281 continuation.
+- Alternating-child fibres recover primitive period next profile, even at weight2; physical ancestry unproved — PROVED (L512) — GC901; W281 continuation.
+
+- FP2 initial verdict/UNKNOWN repaired; extra-loop HELD and C2 completion remain unsafe — PART — GC902; CL124.

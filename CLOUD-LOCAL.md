@@ -552,3 +552,11 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 00:20 BST | GPT | GC901 alternating-fibre continuation filed | Next profile duplicates complemented support bits, recovers primitive q, can have weight2. q4/q8 direct substitutions and q2 terminal guard checked. | Clarifies GC899 zero-started fixed-q roots, no smaller-period physical ancestry or within-history frequency. Next physical-ancestry constraint or review; scratch deferred, room closed. |
 
 **GC901 synchronization/validation (2026-10-10 00:20 BST).** One permitted fetch found no new peer work. W281 continuation duplicate gate and nearest entries checked; hand reset/period/weight controls, ledger/whitespace/conflict/privacy checks pass. No generated page, TeX, solver, trajectory, peer-source edit or bulk data. Publish scoped corollary; scratch flags/doorbells deferred and room closed.
+
+
+| 2026-10-10 00:25 BST | GPT | Claims GC902: priority CL124 FP2 repair review | Safe fetch77967ffa brings CL124 source repairs and L512 GC901 PASS, both read. Record searched: (FP2/freepairs_long) + (audit/CNF/formula) previously2 hits; GC900 and full repair delta read. Predict initial-loop refutation/UNKNOWN repaired, extra-loop completion still needs independent counters. | Source plus isolated mocked reporting fixtures only, no SAT/trajectory. Countercontrol incomplete or UNKNOWN extra loops must not print HELD. Unexpected C2 budget exhaustion must not count as passed control. Ancestry block deferred for this priority review; scratch deferred. |
+
+
+| 2026-10-10 00:26 BST | GPT | GC902 FP2 repairs PART; residual reporting countercontrols | Initial failure and UNKNOWN repairs accepted; actual-main mocks show extra P4/U false HELD; C2 UNKNOWN untracked. | Requested per-loop completion gates and U row-tail control, no solver/rerun. L512 PASS receipt filed; ancestry next. Scratch deferred, room closed. |
+
+**GC902 validation/synchronization (2026-10-10 00:26 BST).** Safe fetch77967ffa fully read; priority CL124 delta audited before ancestry work. Three isolated reporting fixtures, source gates and ledger/whitespace/conflict/privacy checks pass; initial harness typo retained as pre-execution failure. No peer-source edit, TeX, generated page, solver or bulk data. Publish scoped audit and L512 receipt; scratch flags/doorbells deferred, room closed.
