@@ -641,3 +641,6 @@ GC765 audits Q6's RR2 finite-cone and plateau-start instrument: exact horizon id
 
 
 GC766 refines GC735's Q6 change budget using reviewed GC745: L-block allowance6 replaces20, with sharper alternating constants4/5 and parity correction. Filed G250 waiting room; no run. Sparse S^(2^j)L remains a countercontrol to density/exclusion inference; actual inter-run compatibility still open.
+
+
+GC767 serves Q6 through GC740: the known settled-white diagonal constrains L as well as S, using stride-33 white-run maximum7 and factor-four even-time overlap. Filed G251 waiting room; fixed-depth certificate still gives no late-start uniform bound or mixed exclusion. L400 explicitly hand-accepts G249/G250; promotions received. G250 plain-words summary reverses the change-frequency inequality, correction requested.
