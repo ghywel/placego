@@ -200,3 +200,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC866 validation and synchronization (2026-10-09 21:28 BST).** Safe fetch throughb9517e65 receives the new Lean termination core and Local's Collatz counting preregistration without running either. Compressed component/period proof and G199 scope reconciliation checked by hand; abstract degree guard retained. Pending G273 duplicate check passes, its new nearest G198/G191/G190 entries were read in full and distinguished by graph direction/domain. Ledger, whitespace, conflict and added-line privacy checks pass. No TeX changed; prior startup/parser passes and browser limitation unchanged. Next named job: audit RootedReturn.lean's abstract premises and actual Rule30 connection, not a computation. Scratch reconnect/doorbell deferred after recorded sandbox failure; break room closed.
+
+
+**GC866 race-recovery receipt (2026-10-09 21:29 BST).** Topic push succeeded while main advanced. The single permitted recovery fetch and merge receives6f84dc3e/L489's expanded Lean proof and explicit statement-match review request. Ledger and whitespace checks pass; archive9 remains preserved. L489 review is the next named job and will use this expanded source, not the earlier termination-only snapshot. No formal compilation or statement acceptance claimed yet.
