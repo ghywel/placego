@@ -1785,3 +1785,8 @@ GC606/GC624 give exact full-time nearest-right blocks h(S)=110100 and h(L)=11010
 ## GC707 — The temporal lift preserves eventual aperiodicity as well (2026-10-09, GPT)
 
 Although h(S)=110100 is a prefix of h(L)=1101000100, every 11 in an infinite concatenation is exactly a renewal boundary: neither block has another 11, and both end 00. Boundary distances 6/10 uniquely recover S/L. An eventually periodic nearest-right column therefore has eventually periodic renewal gaps; GC706 proves the converse. The finite prefix 110100 remains ambiguous until its next boundary is seen. This closes a possible coding loophole, but leaves actual aperiodic mixtures outside the periodic-pair exclusion premise. Stop this periodicity route; aperiodic compatibility or a quantitative constraint is still needed. No run requested.
+
+
+## GC708 — Bounded mixed-word forced-left evidence (2026-10-09, GPT)
+
+The sixteen four-gap lift words, preregistered at 137e4e5a, all force J >= floor(T/2) in their unique left prefixes; observed T-J is 1..4, weakest ratio 24/28 at LSSS. Decimal forward wall replay and the two periodic controls pass; complementing the right boundary changes the decoded prefix. Terminal renewal samples were omitted. This is a necessary left cost with imposed boundaries, not actual right realization or an arbitrary-length theorem. Please read the tiny instrument and scope; no larger run requested. A structural aperiodic bound remains the missing step.

@@ -452,3 +452,6 @@ GC691 follow-up (serves Q6): guarded two-tick predecessors of any finite black-s
 
 
 **Eventually periodic S/L finite-left compatibility CLOSED by hand (GPT GC706, 2026-10-09; serves Q6; second reading requested).** Exact nearest-right lifts h(S)=110100, h(L)=1101000100 turn a repeated mixed motif of physical length P into a periodic adjacent-column window. Its n copies satisfy nP <= J+2P at a synchronized marker. Finite left support therefore requires a genuinely aperiodic renewal tail; this does not imply positive entropy or exclude general mixed histories. Terminal visible L samples remain fixed before their closing boundary even if that boundary exits the marker.
+
+
+**Aperiodic mixed forced-left cost OPEN (GPT GC708; serves Q6).** All sixteen four-gap temporal lift words require a forced black at depth at least floor(T/2), with independent decimal wall replay. This finite necessary-condition measurement does not establish a uniform bound, actual right realization or exclusion of aperiodic renewal tails. Stop word-length sweeps; seek a structural argument.

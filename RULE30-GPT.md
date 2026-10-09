@@ -17015,3 +17015,31 @@ The lifts are h(S)=110100 and h(L)=1101000100. Each contains exactly one occurre
 If that temporal column is eventually periodic with some period p, the set of its 11 positions is eventually p-periodic. There is at least one such position in every ten-sample span. Enumerate the finitely many marked positions in one late period; translation by p preserves their order and the successive gaps, including the last gap crossing the period boundary. Thus the renewal gaps are eventually periodic. Conversely GC706 already gives a sufficient temporal period 6s+10l for a periodic renewal motif. Hence eventual periodicity of these two sequences is equivalent within the synchronized infinite family. No minimal-period equality is claimed.
 
 **Terminal control and retained stall.** A finite observation equal to 110100 may be either a completed S without its next marker yet observed or the first six samples of an L. Observing the next 11 boundary resolves it; a truncated prefix alone does not. Consequently the argument is an infinite-tail equivalence, not a prefix-free coding claim. GC704-GC706 therefore exhaust what the ordinary adjacent-periodicity exclusion can deduce from this lift: an actually aperiodic renewal tail also has an aperiodic nearest-right column and escapes that specific premise. This does not make it realizable or finite-left compatible. Zero entropy remains compatible with formal aperiodicity (the previously audited Thue-Morse control, GC481/GC498); no such code is asserted to satisfy the actual return gates. Stop parsing/periodicity refinements here. The missing input is a genuinely aperiodic compatibility or quantitative count constraint. Independent hand reading requested; no prize result.
+
+
+## GC708 — Sixteen mixed renewal words force deep finite left bits (2026-10-09, GPT)
+
+**Measurement, not a general bound.** Predictions and instrument were published at 137e4e5a before the single run of `tests/probes/lexicon/rule30_gpt_mixed_left_cost.py`. All sixteen four-gap S/L words were decoded using GC706's nearest-right lifts, with an alternating wall at time zero. The inverse recurrence uniquely fixes the first T-1 initial left bits from T observed wall/neighbor samples. Thus a black decoded at depth J is a necessary support-depth cost for any actual realization of those observations; bits deeper than T-1 are not determined. J below is the deepest forced black, not a claimed actual leftmost black.
+
+| Word | Observations T | Forced depth J |
+| --- | ---: | ---: |
+| SSSS | 24 | 23 |
+| SSSL | 28 | 25 |
+| SSLS | 28 | 27 |
+| SSLL | 32 | 31 |
+| SLSS | 28 | 27 |
+| SLSL | 32 | 30 |
+| SLLS | 32 | 29 |
+| SLLL | 36 | 34 |
+| LSSS | 28 | 24 |
+| LSSL | 32 | 31 |
+| LSLS | 32 | 29 |
+| LSLL | 36 | 35 |
+| LLSS | 32 | 30 |
+| LLSL | 36 | 34 |
+| LLLS | 36 | 34 |
+| LLLL | 40 | 38 |
+
+ML-P1 held in every case: J >= floor(T/2). In fact T-J lies between 1 and 4; the smallest measured ratio is 24/28 for LSSS. This stronger finite observation is post hoc and is not a preregistered or proved longer-word bound. Independent decimal Rule 30 forward evolution checked every wall transition from each decoded prefix (ML-C1 PASS). Pure S and pure L satisfy GC706's necessary periodic-window cost J >= T-2P (ML-C2 PASS). Complementing the supplied SSSS right boundary changes the decoded left prefix, rejecting the stated counterfactual (ML-C3 PASS).
+
+**Unexpected terminal check and scope.** Each word contributes only its pre-return samples; the terminal renewal sample is omitted, so a final visible L need not renew its marker. The left replay imposes the supplied wall and neighbor boundaries. It verifies the inverse arithmetic independently but does not construct a right exterior realizing those samples. Actual right gates can only remove candidates. Four gaps cannot establish a uniform linear cost, rule out an aperiodic mixed tail, or yield an entropy estimate. Raw decoded prefixes remain outside git. Next useful input is a structural explanation of deep forced black bits for arbitrary aperiodic lifts; do not extend this into a word-length sweep without a new argument. Independent instrument/result reading requested; no prize result.

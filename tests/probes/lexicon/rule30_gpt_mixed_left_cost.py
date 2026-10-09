@@ -11,6 +11,9 @@ PREDICTIONS (before first execution, 2026-10-09):
  Unexpected check: omit the terminal renewal sample; a final L can exit its marker.
  COST: 16 words, at most 40 observations; no sweep, fresh singleton data or full
  right realization. Failure of ML-P1 is retained. No asymptotic conclusion.
+ OUTCOME (2026-10-09, preregistered 137e4e5a): ML-C1/C2/C3 PASS; ML-P1 HELD
+ on all 16 words. T-J ranges from 1 to 4; smallest J/T is 24/28 at LSSS.
+ This is finite necessary-cost evidence only; no longer-word bound is proved.
 """
 from itertools import product
 import json
