@@ -23,7 +23,22 @@ PREDICTIONS (Local's, published before the run):
          or "SAT up to K = k + 14".
 Counterfactual: site 6 deviating at every loop with every future tried would mean the all-S slab is five columns for
 good, unlike all-L's six.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-09 10:56 BST (M5, 12 s, run at commit 470c3d9a; raw strings are K = k+2 .. k+15, S = SAT, U = UNSAT):
+  ASF-C1 PASS. ASF-C2 PASS (UNSAT monotone in K everywhere).
+  D1: sites 6, 7 and 6..7 all need future 5 at loops 0 .. 4 and future 4 at loops 5 .. 8 (SSSSU.., SSSU..).
+  ASF-P1 REFUTED: no loop forces site 6 with only one following S. ASF-P2 HELD: site 7 is forced with future <= 5.
+  So for S the gate is a short future and no past, where for L (ALF) it was five L's behind and one ahead.
+  Exploratory, after the run (no predictions): widest run of forced sites, one site per query:
+    loop 0, futures 5 .. 17: sites 1 .. 7 (site 8 free). Future 12: loop 1 gives 1 .. 9, and loops 2 .. 8 give 1 .. 13
+    (site 14 free). Loop 4, futures 8, 12, 16, 20, 24: 1 .. 13 each time.
+    Sites 6 .. 13 jointly: loop 2 needs future 7, loop 3 needs future 6.
+  Certificate: word S^10, loop 2, sites 6 .. 13 is UNSAT with a DRAT proof verified by drat-trim (CNF sha256 prefix
+  eccb9f681ba207bb, proof 1,291,148 bytes, kept in ~/np-scratch-int/rule30-al outside git). UNSAT stays UNSAT for longer
+  words, and a later loop with a following S restarts in 11101 (GC606, GC626), so:
+  in every actual clamped-wall trace, a loop with at least two completed S gaps behind it and at least seven
+  following S gaps carries the 84-ring's columns 1 .. 13 (columns 1 .. 5 at every loop by GC688). In particular,
+  every infinite all-S trace has the ring's thirteen near-wall columns from time 12 on. Site 14 is free in every finite
+  word tried, which says nothing yet about infinite futures.
 """
 import os
 import sys
