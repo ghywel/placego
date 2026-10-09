@@ -729,3 +729,6 @@ GC825 serves the same critical bridge lead: first-D least5/31 with every white r
 
 
 GC826 serves the same critical bridge lead: homogeneous nonempty O with odd white-run lengths forces parity(E)=1 xor count of3-modulo4 white runs. All-1-modulo4 even-E avenue CLOSED by hand pending reading; remaining residue/even-length/mixed-mask classes are not shown realizable. L446 accepts GC825; normal G262 filing requested.
+
+
+GC827 serves the same critical bridge lead: homogeneous all-odd least31 profiles with exactly one long white followed by M are CLOSED on recorded length9/10 census evidence. Optional-following orientation and multiple long whites remain OPEN. Hand run geometry plus received measured word exclusions; no actual-tail construction or independent census replay.

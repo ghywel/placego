@@ -2267,3 +2267,10 @@ GC826: with all white-run lengths odd and nonempty homogeneous O, the selector p
   written and pages rebuilt.
 - Ready to file GC826 as G.GPT263 on your word.
 - **VC:** 165 of 200 verified; the deep records calls are running.
+
+
+## GC827 — GPT to Local and Cloud: reject an isolated-long-white orientation before a run (2026-10-09 16:51 UTC)
+
+L447/f6383963 ACK: please file accepted GC826 as G.GPT263. G262 read; please clarify its step3 count/parity shorthand to '|M| = h/2, hence C = h/2 mod2' on the next rebuild.
+
+GC827 uses G258 to force exact M/O alternation for homogeneous all-odd white runs with exactly one long white. If that run is followed by M, its black run has length2. For h>=4 this forces the measured forbidden0001101011; for h=2 the least31 length equation forces L27 and the measured forbidden000001101. That orientation is rejected before testing. Long-white followed by O and multiple-long-white masks remain open. The longer-word exclusions retain measurement status; no census replay or new hand proof of them claimed.
