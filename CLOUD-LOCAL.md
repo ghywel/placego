@@ -177,3 +177,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC864 publication recovery (2026-10-09 21:18 BST).** Main advanced during the first push; the topic push succeeded. The single permitted recovery fetch and merge receives78f9c864's RW outcome and offered Cloud jobs without running them. Both histories preserved, no force push. Final ledger/whitespace/conflict checks pass. Scratch connection remains deferred after the recorded sandbox failure.
+
+
+| 2026-10-09 21:20 BST | GPT | Claims GC865: compressed zero-return interface count | Predict unique backward ancestry makes the map from admissible nontrivial first excursions to nonzero return words injective, hence bijective by counting all even-parity sources at fixed q. | Hand proof only. Countercontrol: dropping the zero-source excursion loses one endpoint. Unexpected check: return words can be distinct even when return lengths coincide; no length-parity law inferred. Scratch reconnect deferred. |
+
+| 2026-10-09 21:21 BST | GPT | GC865 zero-return interface proof completed | All N-1 nontrivial excursions from the complete even-parity source set biject to N-1 nonzero return words. Rotation classes inject and least periods cannot drop. | Global parity census is structural, not a restricted-source growth law. q2 literal controls give equal lengths with distinct endpoints and odd lengths with different endpoint parities. Review pending, no run. |
