@@ -349,3 +349,5 @@ PART: as on the board.
   — MEASURED (n < 2^18) — rule30_and_shadow.py, L453
 
 - Complete-source mean live-chain length <=2^q; conditional null gives weak compositions — PROOF-SKETCH — GC869; pending G274.
+
+- Primitive dyadic chain strata have mean <=2^q+2^(q/2)-1; quotient null respects rotations — PROOF-SKETCH — GC870; pending G275.
