@@ -61,13 +61,38 @@ Counterfactual: no spikes would mean the front's jaggedness carries no trace of 
 REFUTED-BY: FS1 failing (the definition, the FFT or the bound); FS2 to FS5 failing as worded.
 Disclosed: after writing these predictions and before pushing them, a smoke test at LOG2T = 14 (to exercise the code)
   showed c_bar = 4.61 there and no spikes in the early window. The predictions above are unchanged.
+
+OUTCOME, 2026-10-09 (three runs between 10:29 and 10:34 BST, 55 s each, LOG2T = 19). The first run skipped the late
+  window: dB stopped one row short of t = 2^19 (fixed, range(T); every other number was unchanged on rerun). The
+  third run added the `posthoc` lines (tallest peaks, folds), chosen after seeing no spikes.
+  FS1 PASS. B never decreases; B(T)/T = 0.7551 (§8.74's slope 0.7563); each window's zero bin matches its B
+    difference; U(e) >= tau(e) at all 395,905 settled diagonals.
+  FS2 REFUTED. No spike in the late window, nor in the early or middle ones. Post hoc, the tallest peaks are 13.5,
+    19.6 and 17.1 times the local median in windows of 2^11, 2^14 and 2^17 bins, where pure noise (each bin's ratio
+    exceeds r with chance 2^-r) gives about 11, 14 and 17. Folding the steps by t mod 16, 32 and 64 gives
+    chi-squared 11.5 to 69.4 on 15 to 63 degrees of freedom: no rhythm at the stripes' periods.
+  FS3 HELD: slope -0.027 (random walk -0.06). The step variance is 1.15 to 1.25 per row, so the front strays
+    about sqrt(1.25 t) cells, 810 at 2^19: the chart's +-sqrt(t) guides are the right yardstick.
+  FS4 REFUTED as worded: c_bar = 5.33 (4.61 to 4.65 where the stripes have period 16, 5.52 where they have period
+    32). The floor holds the front at x >= -0.78 t at 2^18 and -0.81 t asymptotically, far weaker than the true
+    -0.245 t: real diagonals settle 1.32 rows apart on average, not the bound's 5.3.
+  FS5 REFUTED: no spikes anywhere, so no change of rhythm with depth.
+  FS6a HELD: mean band speed 0.75187 over [2^16, 2^17), 0.75789 over [2^18, 2^19), +0.0060. FS6b REFUTED: the
+    eventually-white diagonals are 2, 7, 28, 399, 53207, 58286 and 87866, and the band reaches the last at t =
+    117,324 (2^16.84), where the stripes' period goes from 16 to 32; none lies in [2^17.5, 2^18.5].
+  The late rise, post hoc. From t = 311,296 (deviation -605) to 2^19 (+593) the edge climbs 1,198 cells in 212,991
+    rows. 234 of them are the dashed line's slope, 0.754, sitting below the band's long-run 0.7551; the other 964
+    are a fast stretch (0.7597) of 1.9 random-walk standard deviations (sqrt(1.25 x 212,991) = 516), picked out
+    after the fact. The 2^14-row window speeds range from 0.740 to 0.777. So the climb is real, ordinary for this
+    walk, and looks sudden because the doubling time axis gives its last octave half of all the rows.
 """
 import cmath
 import math
 import sys
 from collections import deque
 
-LOG2T = int(sys.argv[1]) if len(sys.argv) > 1 else 19
+LOG2T = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 19
+POSTHOC = "posthoc" in sys.argv[1:]                     # added after the first runs: tallest peaks and fold tests
 P = 1 << 10
 T = 1 << LOG2T
 
@@ -134,7 +159,7 @@ def main():
     rows = list(win)                                       # rows T+1 .. T+P: one full period of every settled diagonal
     assert all(B[i + 1] >= B[i] for i in range(T - 1)), "FS1: B decreased"
     print(f"T = 2^{LOG2T}, P = 2^10; B(T-1) = {B[T - 1]}, B/T = {B[T - 1] / T:.4f}")
-    dB = [B[t + 1] - B[t] for t in range(T - 1)]
+    dB = [B[t + 1] - B[t] for t in range(T)]            # B has T + 1 entries (the first run had T - 1)
 
     # ---- part 2: the spectrum of the front's steps ----
     for name, lo, n in [("early", 1 << 12, 1 << 12), ("middle", 1 << 15, 1 << 15), ("late", 1 << 18, 1 << 18)]:
@@ -143,13 +168,26 @@ def main():
         m, pw = spectrum(dB, lo, n)
         mean_chk = (B[lo + n] - B[lo]) / n
         sp = sorted(spikes(pw, n), reverse=True)
+        if POSTHOC:
+            top = sorted(spikes(pw, n, ratio=0.0), reverse=True)[:5]
+            var = sum(pw[1:n // 2]) / (n // 2 - 1)
+            print(f"  posthoc: step variance {var:.4f}; tallest peaks (x local median): " +
+                  ", ".join(f"{r:.1f} at f = {dyadic(k, n)}" for r, k in top))
+            for q in (16, 32, 64):
+                fold = [0.0] * q
+                for t in range(lo, lo + n):
+                    fold[t % q] += dB[t] - m
+                chi = sum(v * v for v in fold) / (var * n / q)            # about chi-squared, q - 1 dof, if no rhythm
+                print(f"  posthoc: fold by t mod {q}: chi-squared {chi:.1f} on {q - 1} degrees of freedom")
         print(f"\n{name} window t in [{lo}, {lo + n}): mean step {m:.5f} (B check {mean_chk:.5f}); {len(sp)} spikes")
         for r, k in sp[:24]:
             print(f"  f = {dyadic(k, n):>9s} = {k / n:.6f} cycles/step (period {n / k:8.2f}): {r:7.1f} x local median")
         off = [k for r, k in sp if k % (n // 128)]
-        print(f"  spikes off the 1/128 grid: {len(off)}" + (f" ({', '.join(dyadic(k, n) for k in off[:8])})" if off else ""))
+        print(f"  spikes off the 1/128 grid: {len(off)}"
+              + (f" ({', '.join(dyadic(k, n) for k in off[:8])})" if off else ""))
         fine = [k for r, k in sp if k % (n // 16)]
-        print(f"  spikes off the 1/16 grid: {len(fine)}" + (f" ({', '.join(dyadic(k, n) for k in fine[:8])})" if fine else ""))
+        print(f"  spikes off the 1/16 grid: {len(fine)}"
+              + (f" ({', '.join(dyadic(k, n) for k in fine[:8])})" if fine else ""))
         if name == "late":
             # low-frequency slope away from the spikes, log-binned
             spk = {k for r, k in sp}
@@ -172,8 +210,8 @@ def main():
     # ---- part 3: the late rise in the chart ----
     print("\nthe deviation B(t) - 0.754 t along the last three octaves (the chart's curve):")
     for k in range(LOG2T - 3, LOG2T):
-        print("  " + "  ".join(f"2^{k + j / 8:.3f}: {B[min(T - 1, int(2 ** (k + j / 8)))] - 0.754 * int(2 ** (k + j / 8)):+6.0f}"
-                               for j in range(0, 8, 2)))
+        pts = [int(2 ** (k + j / 8)) for j in range(0, 8, 2)]
+        print("  " + "  ".join(f"2^{math.log2(u):.3f}: {B[min(T - 1, u)] - 0.754 * u:+6.0f}" for u in pts))
     print("the band's local speed (diagonals per step) over windows of 2^14 rows, with the depth reached:")
     sp_rows = []
     for lo in range(1 << 14, T - (1 << 14) + 1, 1 << 14):
@@ -240,20 +278,23 @@ def main():
         if b <= a:
             continue
         rm = ((1 << b) - 1) ^ ((1 << a) - 1)
-        per = next(q for q in [1 << j for j in range(11)] if all(((rows[s] ^ rows[(s + q) % P]) & rm) == 0 for s in range(P)))
+        per = next(q for q in [1 << j for j in range(11)]
+                   if all(((rows[s] ^ rows[(s + q) % P]) & rm) == 0 for s in range(P)))
         tr = tau[a] if a < Bm else None
         print(f"    diagonals {a:6d} .. {b - 1:6d}: period {per:4d}, mean c {sum(c[a:b]) / (b - a):.3f}, "
               f"band reaches diagonal {a} at t = {tr} (2^{math.log2(max(1, tr)):.2f})")
     for lo_d in range(0, Bm - 25000, 25000):
         print(f"    mean c over diagonals {lo_d} .. {lo_d + 24999}: {sum(c[lo_d:lo_d + 25000]) / 25000:.4f}")
     cbar = sum(c) / Bm
-    print(f"  c_bar = {cbar:.4f}; floor slope 1/c_bar = {1 / cbar:.4f}; front held at x >= -{1 - 1 / cbar:.4f} t + O(1)")
+    print(f"  c_bar = {cbar:.4f}; floor slope 1/c_bar = {1 / cbar:.4f}; "
+          f"front held at x >= -{1 - 1 / cbar:.4f} t + O(1)")
     for k in range(10, LOG2T):
         tt = 1 << k
         lo_e = 0
         while lo_e < Bm and U[lo_e] <= tt:
             lo_e += 1
-        print(f"  t = 2^{k}: B = {B[tt]:7d} (x/t {(B[tt] - tt) / tt:+.4f}); floor B >= {lo_e:7d} (x/t >= {(lo_e - tt) / tt:+.4f})")
+        print(f"  t = 2^{k}: B = {B[tt]:7d} (x/t {(B[tt] - tt) / tt:+.4f}); "
+              f"floor B >= {lo_e:7d} (x/t >= {(lo_e - tt) / tt:+.4f})")
 
 
 if __name__ == "__main__":

@@ -4816,3 +4816,29 @@ and can it "ever wander back to the centre line and cross it"? Probe `rule30_clo
   one step let the edge step back towards the centre locally, which is its jaggedness, but never far.
 - Not proved. A return at row $t$ would mean that the whole left half of row $t$, centre cell included, already lies
   on the left edge's eternal stripes; nothing known rules that out.
+
+**The front's spectrum, its floor, and the late rise** (the owner's follow-ups of 2026-10-09; probe
+`rule30_cloud_front_spectrum.py`, predictions FS1 to FS6b pushed in 5da9c1c before the full run.)
+- *Every left diagonal settles, so the front never reaches the left edge (proved, by hand).* Rule 30 gives
+  $D_e(t+1) = D_{e-2}(t) \oplus (D_{e-1}(t) \lor D_e(t))$. Once $D_{e-1}$ and $D_{e-2}$ are periodic from time $s$,
+  the first black cell of $D_{e-1}$ at a time $r \ge s$ resets $D_e$, which is periodic from $r + 1$. If $D_{e-1}$ is
+  white for ever, $D_e$ is a running XOR, periodic at once with the same or doubled period. So every diagonal settles
+  in finite time. The number of settled diagonals, which is $B(t)$ while their periods divide $2^{10}$ (they are 32
+  at most to depth 395,905), grows without bound. So the front never reaches the left edge, and its distance from
+  it grows; it moves away from the edge at about 0.755 cells per row. The same step is L382's.
+- *The proved floor is weak.* Charging each diagonal its worst wait, one plus the longest white run of its neighbour
+  nearer the edge, bounds the settling times from above. The measured settling times obey the bound at all 395,905
+  diagonals. The mean charge is 5.33, so the floor holds the front only at $x \ge -0.81\,t$. The true $-0.245\,t$
+  reflects diagonals settling 1.32 rows apart. The eventually-white diagonals are 2, 7, 28, 399, 53207, 58286 and
+  87866, and the stripes' period goes from 16 to 32 after the last, the staircase Local's UB found on 21 rows (L383).
+- *No frequency spikes.* The FFT of the front's steps $B(t+1) - B(t)$ in three windows (from $2^{12}$, $2^{15}$ and
+  $2^{18}$ rows) has no bin at 20 times its neighbours' median (FS2 and FS5 refuted). Post hoc, the tallest peaks are
+  the heights pure noise gives for that many bins. Folds by $t$ mod 16, 32 and 64 show no rhythm. The spectrum is
+  flat, with low-frequency slope $-0.027$ (FS3 held), and the step variance is 1.25 per row. The jagged front is, to
+  this test, a random walk with drift that keeps no trace of the stripes' periods.
+- *The late rise in the front's chart* (FS6a held, FS6b refuted). The deviation from the dashed line, $B - 0.754\,t$,
+  climbs from $-605$ at $t = 311{,}296$ to $+593$ at $2^{19}$. Of that, 234 cells come from the dashed line's slope,
+  which sits below the band's long-run 0.7551. The other 964 come from a fast stretch, at 0.7597 diagonals per step,
+  of 1.9 random-walk standard deviations, picked out after the fact. No change of the stripes lies there. The climb
+  is real and ordinary for this walk; it looks sudden because the chart's doubling time axis gives its last octave
+  half of all the rows.
