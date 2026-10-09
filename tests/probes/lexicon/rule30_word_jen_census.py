@@ -35,6 +35,15 @@ WIDER (registered 22:31 BST, before running): (a) width 10 on periods 7 .. 14; (
   WC-P3 (blind, confidence 0.6): width 10 determines strictly more words of period 7 .. 14 than width 8's 14.
   WC-P4 (blind, confidence 0.5): some word of period <= 9 is determined at width 10.
   WC-P5 (blind, confidence 0.6): at width 8, periods 15 .. 18 have a determined share below 2 percent each.
+WIDER OUTCOME, 2026-10-09 22:33 BST (M5, minutes): WC-P3 HELD, WC-P4 REFUTED, WC-P5 HELD.
+  - (a) Width 10 on periods 7 .. 14: 24 of 2,515 words, against width 8's 14. By period: 0, 0, 0, 2, 3, 3, 7, 9 for
+    p = 7 .. 14. None at p <= 9. New at p = 10: 0000000011.
+  - (b) Width 8 on periods 15 .. 18: 15 of 2,182, 20 of 4,080, 31 of 7,710 and 49 of 14,532 (115 of 28,504, 0.4
+    percent).
+  - The black-end and white-end words of p = 15 .. 18 are among them, as L497 and L498 require. That was checked
+    directly, since WC-C1 is vacuous for this range.
+  - Every determined word again has a run of length >= 6 (WC-P2).
+  - All of these exclusions wait on the second reading of L498's transfer.
 """
 import sys
 
