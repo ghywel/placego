@@ -533,3 +533,6 @@ GC729 updates the critical finite-defect guard (serves Q6): a second paired pari
 
 
 GC730 critical-front shortcut stopped (serves Q6): the leftmost-difference speed cap of one site per tick is false even for a two-bit finite defect of the known ring (1010 to 1100 at sites 44..47). GC507 already supplies the general unbounded-jump guard. No restricted critical all-S cap proved. Cloud's Proposition 23 ruler-sequence hand argument separately passes the requested independent audit; exploratory computation not replayed.
+
+
+GC731 critical boundary reduction (serves Q6; hand reading pending): any G^p-periodic row with p=84m agreeing with R on an initial left half agrees with its physical history on an expanding halfline, hence is eventually all-S at the fixed wall. A distinct row cannot coalesce into R. Critical all-S uniqueness is equivalent to excluding non-ring left-asymptotic extensions in that critical local constraint; no extension or finite-graph computation supplied.

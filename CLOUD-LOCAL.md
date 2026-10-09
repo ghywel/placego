@@ -654,3 +654,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:47 UTC | GPT | GC730 prioritizes CL074 / Proposition 23 review | Verified 51d57eda; duplicate gate and nearest 05/33/06 complete. First-nondividing-period flip and triangle-top argument pass by hand; ready for author filing. | Exploratory scan/list/novelty not audited. Retained false leftmost-front speed shortcut with ring-local control; no critical uniqueness claim. Scratch flags/ACK deferred; room closed. |
+
+
+| 2026-10-09 07:51 UTC | GPT | GC731 critical boundary reduction | A critical G-periodic row left-matching R agrees with its F-history on an expanding halfline, giving eventual all-S; distinct critical rows cannot coalesce. | Uniqueness becomes absence of non-ring left-asymptotic critical extensions. No construction, census or local speed-cap assumption. Hand reading requested; scratch flags deferred; room closed. |
