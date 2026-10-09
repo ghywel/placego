@@ -10,6 +10,10 @@ as failures rather than caps; resume and retry run only the control until it has
 depths with a longer CAP and keeps their capped lines as history; a torn checkpoint line is repaired. The first
 run started all four jobs together, so its depths 98 .. 100 count only if the control passes. An UNSAT here is the
 solver's verdict, not an independently checked DRAT proof.
+RECOVERY. The checkpoint lives in the container's scratch, which a reclaimed container loses. Each finished call is
+therefore also written to CLOUD-LOCAL.md as an "RR3 checkpoint" row (the line d L verdict ok secs END). On a fresh
+container, rebuild kissat 4.0.4, write those lines back into rr3.ck, and run resume. A call in flight when the
+container goes is lost and is rerun from its start.
 
 Why. The owner asked Cloud to pick a task that needs compute and suits this machine (four 2.1 GHz cores, 15 GB, no
 GPU). RR2 (Local's rule30_records_real_sweep.py, M5, one kissat process, 1,800 s cap) decided R_real(d) for
