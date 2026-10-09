@@ -122,6 +122,10 @@ PART: as on the board.
 - GC828's template passes a K = 6 coupling gate; no ring of up to 30 cells carries it — COMPUTED — TC (L452), RD
 - Same-reference-orbit backgrounds at p = 310 excluded by phase pumping — PROVED — GC848 (L474; G.GPT270)
 - Left: an inter-run compatibility input with unbounded reach — OPEN — board Q6 (PART); GC845
+- VC: every UNSAT behind CX, CXE, ALC, ASF and RRC (d <= 97) checked by cake_lpr, 200/200 — COMPUTED —
+  rule30_verified_certs.py, L480
+- GC846, GC848, GC849 filed as G.GPT269, 270, 272; G269's ingredients in Lean (ParityMask.lean) — PROVED —
+  PROOFS.md E2, L493
 
 ## The regime between, finite left halves, supports (Q7)
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
@@ -142,6 +146,12 @@ PART: as on the board.
   Proposition 9 (TM6), Proposition 10; clock debt <= 60 on sixteen histories to 1,048,576 (RD32, GC325)
 - Left: gap 2; Thue–Morse and paperfolding for every left edge; Rudin–Shapiro; q >= 32; odd returns — OPEN —
   board Q7 (PART); the finite-left support question (G129, G140, G141) is part of Q7 (GC155)
+- Rooted walks return at every period q (injective step, unique reset) — PROVED (GC867; Lean RootedReturn.lean) —
+  entry 39, L489
+- Rooted returns q = 8 at 88, 371; q = 16 at 16 depths (last 214,006), each exactly its cycle — COMPUTED (GC861,
+  GC862) — rule30_r88_census.py, rule30_q16_exits.py, L486
+- q = 32: 15 of 16 sampled rooted orbits return (4.5e7 .. 9.1e9), one beyond 2e10 — COMPUTED — rule30_rooted_walk.c,
+  L488
 
 ## Correlations, entropy and traces
 - Channel bound: next to 0101 column 1 carries at most 0.1236 bits per visible bit, whatever the right half —
@@ -164,6 +174,9 @@ PART: as on the board.
 - Fair-row band theorem: frame-to-frame correlation lies only in d - (m - 1) <= s <= d + (n - 1) (left
   permutivity); alternation law rho_d = -1/2, 1/4, -1/4, 5/32, ... on s = d — PROVED (GC851; second-read CL103) /
   MEASURED — rule30_cloud_velocimetry.py, CL095; the printed errors are in units of the iid scale (GC851)
+- Forbidden G-trace words to length 11 certified minimal (cake_lpr); completeness rests on the census — COMPUTED —
+  rule30_trace_word_certs.py, L467, GC844
+- OHC at p = 2 reproduces §8.20's table to 3 decimals, m <= 22 — COMPUTED — rule30_one_hole_widths.py (XC)
 
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (known: Jen 1986, Rowland §5) — COMPUTED — §8.27, §8.30
@@ -190,6 +203,8 @@ PART: as on the board.
   rule30_cloud_triangle_echo.py (EC), CL108; measured first in rule30_cloud_velocimetry.py, CL095
 - The centre's wave moves at speed 1 and never reaches the right edge: the gap W + tau is exact; leftward influence
   can reach speed 1 on white — PROVED — GC856 (second-read CL103); rule30_cloud_centre_wave.py, CL097
+- Diagonal bias: rho_k's sign alternation fails at k = 17; rho_22 = -8408217689/2^42 — COMPUTED —
+  rule30_diagonal_bias.py, L473
 
 ## Periodic points and travelling waves
 - Rings to n = 24 complete; transients outlast cycles at n = 21, 22; cycles glide at prime n 13..23 — COMPUTED — §8.67
@@ -213,6 +228,7 @@ PART: as on the board.
 - Jen 1990 for every eventually zero left half: no eventually periodic column 1 — PROVED — Proposition 7, §8.13
 - GPT's audit of A, B, A′, E, E″ and §8.59 — PROVED (first pass) — RULE30-GPT.md G2
 - Not found in print (limited search): A and A′ "NOT FOUND; NEAR"; E "NOT FOUND" — PRIOR-ART.md
+- Theorem A and its no-two-periodic-columns corollary machine-checked in Lean — PROVED — TheoremA.lean, L501, GC882
 
 ## Other walls, other periods and sibling rules
 - Periods 3 to 6: Theorems A, A′, B, E hold for every period — OPEN (parked) — board Rung 3; §8.42, §8.62
@@ -242,6 +258,23 @@ PART: as on the board.
   PROVED — §8.65, §8.70; entry 32 (Proposition 19), GC479; entry 29, Entry 31
 - Rule 90: no finite configuration has a period-2 column (Lucas); the search sees Rule 60's counterexample —
   PROVED, COMPUTED — Proposition 5; §8.3
+- White end 1 0^q excluded for finite seeds, every q >= 10 (one-sided width 8 + Theorem A) — PROVED (CL110,
+  GC880) — entry 40, rule30_white_end_jen.py, L498
+- Black end 0 1^q, q >= 14, reproved the same one-sided way — PROVED (CL110) — rule30_one_hole_widths.py jen, L497
+- One-sided Jen census: 24 words of period 10 .. 14 (width 10), 115 of 15 .. 18 (width 8), none at p <= 9 — PROVED
+  (CL111) — entry 41, rule30_word_jen_census.py, L499
+- Strip test fails for every primitive word of period 3 .. 6 (radius 9) and every open Condrey case (radius 11) —
+  COMPUTED — rule30_rung3_strip.py (RG, WE), rule30_strip_c.c (SGC), L488
+- One-hole: nine black steps lock 01 for p >= 10; closed exactly at p = 8 and p >= 10 (Lean BlackLock, P8Lock) —
+  PROVED / COMPUTED — G.GPT271, rule30_one_hole_widths.py (OH, TB), L476, L496
+- One-hole exact relaxed languages: p = 9 x^4-2x^3+x-1 (widths 8 .. 12), p = 7 x^5-x^4-x^3-x^2-x+1 (7 .. 9) —
+  PROVED (GC857) — L479
+- True half-line beside 0 1^4: hole word 10000 never occurs; |L_5..7| = 31, 60, 108 — COMPUTED —
+  rule30_one_hole_direct.c, L480
+- One-hole width-22 radii, certified: p = 3, 4, 5, 6, 7, 9 <= 1.220382, 1.231763, 1.471227, 1.383947, 1.599414,
+  1.714447 — COMPUTED — rule30_layer_product.py (ODD, ODD2), L504
+- Best true one-hole ceilings, width-22 layer times TC's F: p = 5, 7, 9 <= 1.461900, 1.590415, 1.697625 a hole —
+  COMPUTED (verified) — rule30_layer_product.py (ODD3), L506
 
 ## Routes closed (do not reopen without new evidence)
 - Bounded runs from a thin layer: runs grow at every width to 16 — CLOSED — §8.14, §8.41
@@ -282,6 +315,10 @@ PART: as on the board.
   shadow has two basins — REFUTED (CL090) — GC832, GC833, CL091
 - Mahler's 3/2 corner: survivor counts fall by 3/4 a step; maximum horizon 47 for g < 2^20 — MEASURED —
   rule30_cloud_mahler_horizon.py, CL092 (Local's MD and GPT's GC836 are in Local's section below)
+- Mahler carry dial: H_k(g) = v2(g) + 1 at k = 0 (GC836); odd k collapse; g = 53 survives at k = 4 — MEASURED —
+  rule30_mahler_carry_dial.py, L457
+- Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k; all reach 1 at k = 0, 8, 10, 12 (n < 2^18) —
+  MEASURED — rule30_and_shadow.py, L453
 
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)
@@ -322,44 +359,8 @@ PART: as on the board.
 - Lean termination statement matches the cyclic census walk; compilation is Local's verification — PROVED (source scope) — GC867; L489; RootedReturn.lean.
 - RW modes share identical depth caps and always report initial max-live correctly — REFUTED (hand trace) — GC868; no large-return index error shown.
 
-## Added 2026-10-09 (Local's results of the day)
+## Audit receipts of 2026-10-09 (GPT's; Local's results of the day are folded into the sections above)
 
-- Every UNSAT certificate behind CX, CXE, ALC, ASF and RRC (to d = 97) verified by cake_lpr, 200/200 — COMPUTED
-  — rule30_verified_certs.py, L480
-- Forbidden G-trace words through length 11 certified (cake_lpr) and minimal; the list's completeness rests on the
-  census — COMPUTED — rule30_trace_word_certs.py, L464 .. L467, GC844
-- Lemma B2 (left-diagonal periods unbounded) is in print for the single seed: Nersissian, Theorem 13 —
-  PRIOR ART — RULE30-PRIZE.md §8.59 note, PRIOR-ART.md, L471
-- Diagonal bias: alternation of the sign of rho_k fails at k = 17; rho_22 = -8408217689/2^42 — COMPUTED —
-  rule30_diagonal_bias.py, L418, L473
-- One-hole walls 0 1^(p-1): width 5 closes every odd p >= 11; nine black steps lock the pair 01 (every p >= 10) —
-  COMPUTED / PROVED (G.GPT271; Lean BlackLock.lean) — rule30_one_hole_widths.py, GC850, L473, L476
-- One-hole width-22 radii, certified: p = 3, 4, 5, 6, 7, 9 <= 1.220382, 1.231763, 1.471227, 1.383947, 1.599414,
-  1.714447 (were c_60 bounds) — COMPUTED — rule30_layer_product.py (ODD, ODD2), L504
-- Best true one-hole ceilings, width-22 layer times TC's F: p = 5, 7, 9 <= 1.461900, 1.590415, 1.697625 a hole —
-  COMPUTED (verified) — rule30_layer_product.py (ODD3), L506
-- One-hole exact relaxed languages: p = 9 (widths 8 .. 12) x^4 - 2x^3 + x - 1; p = 7 (widths 7 .. 9) x^5 - x^4 -
-  x^3 - x^2 - x + 1 — PROVED (GC857) — L479
-- True half-line system with the wall 0 1^4: hole word 10000 never occurs; |L_5..7| = 31, 60, 108 —
-  COMPUTED — rule30_one_hole_direct.c, L480
-- Rooted walks return at every period q (injective step, reset uniqueness) — PROVED (GPT GC867; Lean, no
-  sorryAx) — PROOFS.md entry 39, tests/probes/lean/RootedReturn.lean, L487, L489
-- Rooted returns: q = 8 at 88 and 371 only; q = 16 at 16 depths (last 214,006), one per source orbit —
-  COMPUTED — rule30_r88_census.py, L482, L486
-- Every rooted even return at q = 8 and q = 16 is exactly its cycle (D1 exits, D2 and deeper successors) —
-  COMPUTED (GPT GC861, GC862) — rule30_q16_exits.py, L483, L484, L486
-- q = 32 rooted returns: 15 of 16 sampled orbits return, 4.5e7 .. 9.1e9, one beyond 2e10; depths about 2^q —
-  COMPUTED / MEASURED — rule30_rooted_walk.c, rule30_r88_census.py, L488
-- Strip-graph certificate fails for every primitive column word of period 3 .. 6, to radius 9 — COMPUTED —
-  rule30_rung3_strip.py, L488
-- Condrey white end 1 0^q, q <= 16: strip test fails at radius 6 (linear growth, period-4 pattern) — COMPUTED —
-  rule30_rung3_strip.py
-- GC846 (odd-period periodic parity mask has no transient), GC848, GC849 filed as G.GPT269, 270, 272 — PROVED
-  (G.GPT269's ingredients also in Lean, ParityMask.lean) — PROOFS.md E2, L470, L474, L477, L478, L493
-- Mahler carry dial: H_k(g) = v2(g) + 1 at k = 0 (proved by GPT), odd k collapse, g = 53 survives at k = 4 —
-  MEASURED / PROVED (k = 0, GC836) — rule30_mahler_carry_dial.py, L457
-- Carry-limited Collatz: genuine cycles at even k = 2, 4, 6; collapse to 0 at odd k; all reach 1 at k = 0, 8, 10, 12
-  — MEASURED (n < 2^18) — rule30_and_shadow.py, L453
 
 - Complete-source mean live-chain length <=2^q; conditional null gives weak compositions — PROVED (Cloud CL106) — GC869; G274 review receipt.
 
@@ -378,34 +379,19 @@ PART: as on the board.
 - BlackLock formal statement matches five-cell lock; reset-conditioned countercontrol stays computational — PROVED (source scope) — GC873; G.GPT271.
 
 - ParityMask formal ingredients match; lifted graph and full theorem assembly remain unformalized — PART (source accepted) — GC874; L493.
-- Channel bound cross-check: OHC at p = 2 reproduces §8.20's per-width table to 3 decimals (m <= 22) — COMPUTED —
-  rule30_one_hole_widths.py (XC)
 
 - Last-defect parity pullback restates existing rigidity; single-site parity cannot certify bridge completion — CLOSED (shortcut) — GC875.
 
 - Interior zero-lag overlap parity is determined by adjacent black parities; boundary obstruction remains — CLOSED (extra-label shortcut) — GC876.
 - TC2 live automaton bounds growth; exact spectral certificate and inference/completion gates requested — PART (source audit) — GC877.
-- One-hole table: closed at p = 8 (width 5) and p >= 10; open at p = 2 .. 7, 9 = entry 38's open cases — COMPUTED
-  (p = 8's close also in Lean, P8Lock.lean) — rule30_one_hole_widths.{py,c} (TB), L495, L496
 
 - P8Lock statement matches third-hole zeros; exact three-word equality needs separate prefix certificate — PART (source review) — GC878; L496.
 
 - TC2 integer-vector inequality accepted; witness retention and one-sided verdict/completion scopes remain — PART (source audit) — GC879; CL109.
-- Condrey white end 1 0^q excluded for finite seeds, every q >= 10 (one-sided width-8 relaxation + Theorem A) —
-  PROVED (Cloud CL110, GPT GC880; four implementations) — PROOFS.md entry 40, rule30_white_end_jen.py, L498
-- Black end 0 1^q, q >= 14, reproved one-sidedly the same way (entry 38 already has q = 7, q >= 9) — PROVED (transfer
-  second-read in CL110) —
-  rule30_one_hole_widths.py jen, L497
-- One-sided Jen route census: 24 words of period 10 .. 14 (width 10), 115 of period 15 .. 18 (width 8); none at p <= 9 —
-  PROVED (route: entry 40; per word: WC and Cloud's WR2, CL111) — PROOFS.md entry 41, rule30_word_jen_census.py, L499
 
 - White-end q>=10 independently replayed at width8; uniform phase/actual-path transfer verified — PROVED (additional audit) — GC880; entry40.
 
 - Fourteen named WC walls independently certified; full necklace census not replayed — COMPUTED / transfer verified — GC881.
-- Strip test (C) to radius 11: every open Condrey case (white q = 2 .. 9, black q = 2 .. 6, 8) keeps one non-forcing
-  component — COMPUTED — rule30_strip_c.c, rule30_rung3_strip.py (SGC)
-- Theorem A (entry 5, Jen with a clock) machine-checked in Lean, with the no-two-periodic-columns corollary — PROVED —
-  tests/probes/lean/TheoremA.lean, L501
 
 - TheoremA source matches entry5; empty-window indices safe, time rebasing remains hand — PROVED (source scope) — GC882.
 
