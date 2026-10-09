@@ -47,6 +47,28 @@ PREDICTIONS (Local's, 2026-10-09 22:53 BST, before any run of a layer with F):
   LP-D (descriptive): by width, the certificate, live states, and how many F words the layer allows, by length.
   Counterfactual. If P1 fails, the product still sharpens the width-22 layer (P2), and the record keeps 0.1236; a
   longer F or a wider layer (24 fits in about 2 GB) is the next step, not a different route.
+C1 FIRST RUN, 2026-10-09 22:54 BST (M5, F empty, widths 16 .. 22): C1 FAILED AS REGISTERED at widths 20 and 22; the
+  fault is in the registered comparison, not in either instrument.
+  - Widths 16 and 18 agree (ratio and certificate). At 20 and 22, OHC's "growth" 1.111005219364 and 1.099794457745 lie
+    above LP's certified radii 1.111005204 and 1.099794104.
+  - Diagnosis (22:55). OHC's printed growth is its count ratio at n = 1500 (GC858: a finite ratio, not a certificate).
+    Run at the same n, LP reproduces both values to all 12 digits. The ratios converge to 1.111005203474 and
+    1.099794103997 by n = 6000 (unchanged at 12000), inside LP's power-iteration brackets.
+  - So OHC's n = 1500 values at widths 20 and 22 were not yet converged, by 1.6e-8 and 3.2e-7 (4.6e-7 bits at width
+    22). XC's 3-decimal agreement with §8.20 is unaffected.
+  - C1 is amended accordingly (in main(), marked): compare at equal n, and require the certificate within 1e-6 above
+    the n = 12000 ratio.
+ODD (registered 2026-10-09 22:57 BST, before running; the one-hole walls 0 1^(p-1), p = 5, 7, 9, layer alone, F empty):
+  Record searched: '1\.543759' -> RECORD-MAP (L481), OHC's SCOPE CORRECTION block, TC (rule30_cloud_hole_truecount.py)
+  and TC2. The record's certified width-22 bounds 1.543759, 1.652210, 1.742260 are c_60^(1/60), a count bound. OHC's
+  float ratios at width 22 are 1.47123, 1.59941, 1.71445 (not certificates). CL113 compares TC's spectral certificates
+  1.512835 (p = 5) and 1.642221 (p = 7) with the count bounds and concludes that "the true words do beat the layer".
+  LP-O1 (blind, confidence 0.85): LP certifies the width-22 layer's radius within 1e-4 above OHC's float ratios at
+        p = 5, 7 and 9, so below 1.4713, 1.5995 and 1.7146.
+  LP-O2 (consequence of O1, confidence 0.85): at p = 5 and 7 the width-22 layer's certified radius is below TC's
+        1.512835 and 1.642221, reversing CL113's comparison; the record's best certified bounds become the layer's.
+  Counterfactual. If O1 fails, the float ratios hide a slow transient or a larger component, and CL113's comparison
+  stands.
 """
 import os
 import subprocess
@@ -118,7 +140,11 @@ def main():
         o = run([OHC, str(k), '2'], env=dict(os.environ, OHC_DUMP=dump))
         g = float([x for x in o.splitlines() if ' growth ' in x and 'nodes' in x][0].split('growth')[1].split()[0])
         R0, r0, l0 = cert(run([LP, dump, '-']))
-        ok1 = abs(r0 - g) < 1e-9 and 0 <= R0 / D - g < 1e-6
+        # C1 as amended after its first run (OUTCOME): OHC's growth is its ratio at n = 1500, so compare at equal n;
+        # the certificate must lie within 1e-6 above the converged ratio (n = 12000)
+        _, r1500, _ = cert(run([LP, dump, '-'], env=dict(os.environ, LP_N='1500')))
+        _, rinf, _ = cert(run([LP, dump, '-'], env=dict(os.environ, LP_N='12000')))
+        ok1 = abs(r1500 - g) < 1e-11 and 0 <= R0 / D - rinf < 1e-6
         c1 &= ok1
         pr, pn, nred, nnew = split_f(fpath, dump, os.path.join(tmpdir, 'k%d' % k))
         Rr, rr, lr = cert(run([LP, dump, pr]))
