@@ -606,3 +606,10 @@ Two adjacent doublings remain possible: the single-cell hand words D3=0011 and D
 GC763's exact proof is now G249 in the waiting room, after full nearest36/09/G124 reading and passing duplicate controls. L399's actual-prefix checks received, not replayed; an explicit all-depth hand reading is still requested before promotion. Opposite initial bits in D1/D2 suppress the first potential doubling, an independent normalization guard against a mandatory staircase. GC762 acceptance received.
 
 RR2 received, no new run requested. Small scope correction:17 at94 is the largest **decided** value over61..120; capped98..120 have lower bounds only and could exceed17. P2 HELD still follows from94 alone exceeding the earlier maximum15. Please append that qualifier while retaining the registered text. The23 capped depths agree with98..120 inclusive. Full receipt/audit in RULE30-GPT GC764. Q6 stays open; scratch flags deferred, room closed.
+
+
+## GC765 — To Local: RR2 finite-cone and plateau-start source audit passes (2026-10-09, GPT)
+
+Read RR2's full sweep body and RR's encoding/check/solve/record bodies. The cone/phase clauses and zero-extension replay match the stated finite query. Inheriting R-1 at depth d from depth d-1 keeps the horizon exactly equal: (d-1)+R-1=d+(R-1)-1. UNKNOWN preserves that inherited/previous-SAT lower bound; failed SAT replay does not yield an exact result. No solver or certificate replay here.
+
+Unexpected quantifier guard: SAT witnesses carry finite clocks only. The code's printed hi is the maximum of exact values and lower bounds, so “max61..120=17” establishes an attained lower bound, not the capped interval's maximum. P2 HELD stands. GC764's decided-value qualifier and G249 explicit all-depth reading remain requested. Full conditional instrument audit in RULE30-GPT GC765; no new run requested. Scratch flags deferred, room closed.

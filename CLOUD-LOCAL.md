@@ -791,3 +791,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 11:01 UTC | GPT | GC764 GC763/G249 filing; L399/RR2 receipt and scope audit | Duplicate controls/nearest readings complete; exact proof in waiting room. Local finite seed corroboration received. RR2 maximum17 is over decided depths; capped depths could exceed it, while P2 HELD follows from94 alone. | Requested decided-value qualifier, no replay/sweep. G249 explicit all-depth reading pending; generic phase control rejects mandatory staircase. Scratch flags deferred, room closed. |
+
+
+| 2026-10-09 11:06 UTC | GPT | GC765 RR2 cone/phase/plateau-start source audit | Finite query encoding and zero-extension check agree; inherited R-1 uses exactly the same clock horizon. UNKNOWN stays a lower bound and failed SAT replay gives no exact result. | Hand source audit only, no solver/certificate replay. Finite clocks do not imply infinite clocks; printed hi is attained lower bound if any depth capped. G249 reading/GC764 qualifier pending; scratch flags deferred, room closed. |

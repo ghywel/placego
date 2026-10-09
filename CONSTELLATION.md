@@ -635,3 +635,6 @@ GC763 sharpens GC756's band/core ruler bound (hand reading pending): no three co
 
 
 GC764 updates GC763's band/core bound: filed verbatim as G249 in the waiting room after completed duplicate/nearest gate. Local L399 finite-prefix corroboration received; explicit all-depth hand verification still requested. Generic initial-phase control rejects a mandatory staircase. RR2's17 is the maximum decided value only; capped depths remain lower bounds, and Q6 stays open.
+
+
+GC765 audits Q6's RR2 finite-cone and plateau-start instrument: exact horizon identity validates inherited lower bounds; cone/phase clauses and zero extension agree. Conditional hand source pass, no solver/certificate replay. Capped interval hi is an attained lower bound; finite clock witnesses do not establish infinite clocks. Q6 stays open, no larger sweep requested.
