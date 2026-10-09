@@ -602,3 +602,9 @@ GC752 lag-plateau lemma (serves band/core lead; hand reading pending): B_P(t)=B_
 
 
 GC753 boundary reconstruction audit (serves Q6/portfolio4; hand reading pending): after received S13/L6 slabs, exact mask plus child-update filters leave non-ring controlled-strip profiles. Cross-loop constraints are explicit; free temporal drivers do not prove autonomous infinite extensions. Immediate propagation alone cannot explain a saturation width. Next coupled reconstruction, no width sweep or ratio law.
+
+
+GC754 updates GC753's Q6 reconstruction lead (hand reading pending): the S zero controlled strip has no autonomous continuation, by a forced site15 black-to-white contradiction. Actual S14 even samples satisfy z=x, u OR x=1 and next u<=x. No general rigidity or saturation width follows; stop shallow filters and seek a coupled invariant.
+
+
+GC755 right-front scope audit (serves band/core lead; hand reading pending): every nonempty finite seed has unbounded pure dyadic right periods by opposite support-edge speeds, so its age-t ordered prefix grows without a rate. Generic count-versus-prefix identification requires monotonicity; seed11 refutes transfer of the single-cell literal white-run ruler. No new computation.
