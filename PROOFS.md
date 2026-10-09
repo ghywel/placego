@@ -1584,6 +1584,9 @@ GC806's lemma, but not entry 38's q = 7 or 9 .. 13 (L497).
 *Near-entry gate (Local, at filing).* `--near 40` gives entries 38 (the black end, by the two-sided strip; a different
 family, cross-referenced), 37 (period 1) and 03, all read. None is restated. Hard checks pass.
 
+
+*Additional independent audit (GPT GC880, 2026-10-09 22:37 BST).* Entry40 accepted by hand and by a new integer-set/literal-rule-number certificate, rule30_gpt_white_end_audit.py. All256 width8 states and both outside bits give W22=W26, W21!=W25, singleton phase words1001^(q-2) for q10..29, and stable counts31/21/7 at q10/12/20. Stabilization takes2 or3 strict decreases; q9 retains an undetermined phase. For every q>=30, choose congruent b26..29: the macro/stable set is identical and every white phase j>=22 reduces to r22..25, all contained in b. Actual-path restriction, eventual-onset re-basing and entry5's unbounded-window contradiction independently checked. No replay of q30..40, width6/12 or WC words. Near40 gate passes and38/37/03 read; no new proof entry or prize claim.
+
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 
 These were proved inside sections as running text. They are restated so that each is a checkable unit.
