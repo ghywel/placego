@@ -16981,3 +16981,26 @@ At this starting time the left support is finite, and site 1 is black, so the gl
 For J >= 0 this is Theorem A with a = 0 and P = 6; the direct edge argument also checks J = -1, outside that theorem's stated nonnegative-distance convention. In that empty-left case n <= 1. This is an upper bound, not a witness attaining it.
 
 **Scope and controls.** GC626's arbitrary-startup synchronization permits application only at an internal marker, with the edge distance recomputed there; an initial unmarked gap cannot be charged as though it had marker 1110. Shifting time moves the leftmost black front by the elapsed time, so this local bound is not a uniform deadline for arbitrary mixed S/L histories. The bound concerns actual full-wall compatibility, while finite clamped-right prefixes need not have a compatible finite left side. General Q6 and the mixed-family budget remain open. Independent reading requested; no new periodic-window theorem or prize result.
+
+
+## GC706 — Mixed S/L renewal words lift to exact temporal blocks (2026-10-09)
+
+**Mixed-family hand block, serves Q6.** Read GC606, GC624-GC626 and the existing periodic-window theorem before extending GC705. Predict every synchronized S/L word determines the full nearest-right temporal column, so any eventually periodic renewal word is incompatible with finite left support. Countercontrol: the final visible L must renew marker 1110 to fix its temporal samples. Unexpected check: the L may exit at its final boundary; its samples before that boundary are nevertheless fixed. No experiment, new family construction or entropy estimate.
+
+At a white wall tick the next nearest-right bit is the OR of the first two right bits. For S, the even triples 111, 010, 000 give the six-time block
+
+    h(S)=110100.
+
+GC624 proves the L even triples are 111, 011, 001, 010, 000 regardless of whether its closing triple renews the marker. Their first bits give even samples 10000; their first-two ORs give odd samples 11010. Interleaving gives
+
+    h(L)=1101000100.
+
+Every infinite S/L trace synchronizes after its first gap by GC626, and every internal boundary then has marker 1110. Thus its nearest-right column after that boundary is the concatenation of these two exact blocks. The farther right exterior can remain unspecified. A final L in a finite word may exit at its closing boundary, but no output at that boundary is included in h(L), so the displayed finite block remains valid. Four literal first-two inputs 00, 01, 10, 11 give odd outputs 0, 1, 1, 1, independently checking the interleaving rule.
+
+Let M be a nonempty finite renewal word, with s short and l long symbols, and let P = 6s+10l. If n copies of M occur consecutively from a synchronized marker, both the wall and nearest-right column are P-periodic on samples 0 through nP-1. With leftmost black at -J at that start, J >= -1, take j = J+P. The edge first reaches column -j at time P; inverse periodic propagation would equate its initial white sample with this black sample if nP-1 >= J+2P. Therefore
+
+    nP <= J+2P.
+
+This is the same existing window bound as GC705, applied to a mixed motif. P is a sufficient period, not necessarily the least period; no motif is asserted realizable or sharp.
+
+Consequently an infinite renewal word that is eventually periodic cannot coexist with finite initial left support and an actual continuing alternating wall: synchronize inside its periodic tail, recompute the finite J there, and apply the bound to arbitrarily many copies. This includes all-L and all-S, and all periodic mixed motifs. It does not exclude a genuinely aperiodic mixed word; an aperiodic word can still have zero entropy. Nor does the local block bound yield a global linear deadline, because J increases with the time at which each new block starts. The original infinite-support ring remains valid. Independent hand reading requested; no general Q6 or prize conclusion.

@@ -1775,3 +1775,8 @@ GC688 gives an eventual period-6 nearest-right column for an infinite all-S tail
 ## GC705 — Finite all-S deadline from the existing periodic-window theorem (2026-10-09, GPT)
 
 At a genuine 1110 marker, n completed S gaps give nearest-right word (110100)^n, hence a period-6 wall/neighbor window through b = 6n-1. With the leftmost black at -J at that start, take j = J+6: column -j first turns black at time 6 but starts white. Inverse periodic propagation would equate those times if b >= J+12. Thus 6n <= J+12. The signed edge control J = -1 (initially empty left, first black at site 1) is covered directly, although Theorem A states J >= 0. Arbitrary startup must first synchronize and recompute J; this does not bound mixed S/L histories. Please hand-read with GC704; no run requested.
+
+
+## GC706 — Mixed periodic renewal tails also require infinite left support (2026-10-09, GPT)
+
+GC606/GC624 give exact full-time nearest-right blocks h(S)=110100 and h(L)=1101000100. Odd bits are the OR of each even triple's first two bits. A final visible L need not renew the marker to fix these pre-return samples; internal boundaries in an infinite S/L trace do renew it by GC626. A repeated mixed motif M of physical length P = 6s+10l therefore satisfies nP <= J+2P at a synchronized marker with leftmost black -J. Infinite eventually periodic S/L renewal tails are excluded for finite left support, including all-L and periodic mixtures. Aperiodic mixtures and zero-entropy possibilities remain open; this supplies no global deadline. Please hand-read, no run requested.

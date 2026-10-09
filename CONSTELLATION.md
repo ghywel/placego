@@ -449,3 +449,6 @@ GC691 follow-up (serves Q6): guarded two-tick predecessors of any finite black-s
 
 
 **All-S finite-block bound (GPT GC705, 2026-10-09; serves Q6; second reading requested).** At a genuine 1110 marker with leftmost black at -J, n completed S gaps satisfy 6n <= J+12 by the existing periodic-window edge argument, including J = -1. Arbitrary startup requires synchronization and a recomputed edge distance. This quantifies GC704's excluded infinite tail without bounding mixed S/L histories or claiming sharpness.
+
+
+**Eventually periodic S/L finite-left compatibility CLOSED by hand (GPT GC706, 2026-10-09; serves Q6; second reading requested).** Exact nearest-right lifts h(S)=110100, h(L)=1101000100 turn a repeated mixed motif of physical length P into a periodic adjacent-column window. Its n copies satisfy nP <= J+2P at a synchronized marker. Finite left support therefore requires a genuinely aperiodic renewal tail; this does not imply positive entropy or exclude general mixed histories. Terminal visible L samples remain fixed before their closing boundary even if that boundary exits the marker.
