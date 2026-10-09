@@ -16597,3 +16597,20 @@ The probe tests/probes/lexicon/rule30_hw32_forward_compensation.py reads the aut
 At verifiedc560f254, Local reports all six records correct within scope. GC678's probe replays with the same figures, and a separately implemented radius9 map gives the same exhaustive survivor graph. GC679's four stationary-target predecessors are independently enumerated through radius10; this finite check supports, but does not replace, its unrestricted inverse-recurrence proof. GC680's rooted profiles and both whole-prefix phase fronts are independently stepped. GC682's monotonic phase bound and GC683's spacing/capacity arithmetic are hand checked.
 
 For GC681, Local confirms the reported source/run provenance: claim30c6419d, execution source5361345, outcome headerd5ecb259, witness walk51 with N5=551910. All referenced commits exist and were inspected. The external transcript and saved parent-chain receipt remain unavailable under the owner's drive restriction; no rerun or drive access is requested. The source invariant plus reported execution remains the stated evidence level. The radius24 sweep remains held. GC684's new forward control awaits reading/replay.
+
+
+## GC685 — Selected mismatch accounting identifies the finite repayment's two contributors (2026-10-09)
+
+**Preregistered bounded control.** At8d9fd2d7, predicted that GC684's first148 repayment edges have a greater fast-branch fraction than GC652's9/37 in the original interval. Instrumented only the existing256-edge continuation, with no increased extent or ancestry run. GC652's fast/mismatch identity is already proved; this is an actual coherent-path measurement of its terms, not a new identity or compensation law.
+
+For each current pair(a,b), reconstruct its grandparent profile by B(t)=b(t+1) XOR(a(t) OR b(t)). The incoming nonzero driver a is black one tick before the carried arrival S, checked directly. Thus b's delay is1 when B(S-1)=0; otherwise it is r+2, where r is the first disagreement distance between B and a starting at S. For the first extension edge, reconstructed B equals L224's independently checked incoming grandparent. This lets both first extension edges remain in the account rather than discarding them for lacking locally printed triples.
+
+The prediction holds. On the first148 edges, F=78 are fast,70 use the mismatch branch, and their mismatch distances sum R=73. The exact external slope2.5 debt is
+
+    R-N/2-F =73-74-78=-79,
+
+as GC684's direct elapsed certificate required. On all256 edges, F=136 and R=135, giving135-128-136=-129. The debt identity is independently checked after every extension edge, while the two successor constructors retain their295 agreements. No zero or pulse driver occurs.
+
+In the existing original37 internal triples, GC652 found F=9 and R=98 over28 mismatch branches. In the repayment window the fast fraction is78/148, versus9/37, and the delayed-branch mean mismatch distance is73/70, versus98/28. Both increased fast arrivals and shorter selected agreement runs contribute to the observed recovery. These compare explicitly different finite windows; the original figure omits its first two edges, and no sampling law or significance claim is inferred.
+
+**Unexpected incoming-boundary check and scope.** The first extension delay2 still enters exactly once; the reconstructed ancestor and preceding-black gate authorize its mismatch account. Merely starting a new list without this incoming information would not justify applying GC652 to its first two edges. The finite selected imbalance is R-F=-5 at first repayment and-1 over256 edges. Neither sign is proved to recur or persist. Actual compensation is now expressed through joint selected mismatch data rather than marginal black densities, but no rooted-history bound on those data follows. Next seek a structural inequality on the selected mismatch imbalance, or change to another main-line input; stop descriptive counts of this fixed window. Independent replay requested.
