@@ -80,3 +80,40 @@ results, below, and the board is the place to look first.*
 - Compressed zero-return graph: physical-root tree plus nonroot cycle components; no growth estimate — PROOF-SKETCH — GC866; G199; G273 continuation.
 - Lean termination statement matches the cyclic census walk; compilation is Local's verification — PROVED (source scope) — GC867; L489; RootedReturn.lean.
 - RW modes share identical depth caps and always report initial max-live correctly — REFUTED (hand trace) — GC868; no large-return index error shown.
+
+## Added 2026-10-09 (Local's results of the day)
+
+- Every UNSAT certificate behind CX, CXE, ALC, ASF and RRC (to d = 97) verified by cake_lpr, 200/200 — COMPUTED
+  — rule30_verified_certs.py, L480
+- Forbidden G-trace words through length 11 certified (cake_lpr) and minimal; the list's completeness rests on the
+  census — COMPUTED — rule30_trace_word_certs.py, L464 .. L467, GC844
+- Lemma B2 (left-diagonal periods unbounded) is in print for the single seed: Nersissian, Theorem 13 —
+  PRIOR ART — RULE30-PRIZE.md §8.59 note, PRIOR-ART.md, L471
+- Diagonal bias: alternation of the sign of rho_k fails at k = 17; rho_22 = -8408217689/2^42 — COMPUTED —
+  rule30_diagonal_bias.py, L418, L473
+- One-hole walls 0 1^(p-1): width 5 closes every odd p >= 11; nine black steps lock the pair 01 (every p >= 10) —
+  COMPUTED / PROVED (G.GPT271) — rule30_one_hole_widths.py, GC850, L473, L476
+- One-hole p = 5, 7, 9: certified true growth per hole <= 1.543759, 1.652210, 1.742260; whether the entropy is zero
+  is OPEN — COMPUTED — rule30_one_hole_widths.{py,c}, L481, GC858, GC859
+- One-hole exact relaxed languages: p = 9 (widths 8 .. 12) x^4 - 2x^3 + x - 1; p = 7 (widths 7 .. 9) x^5 - x^4 -
+  x^3 - x^2 - x + 1 — PROVED (GC857) — L479
+- True half-line system with the wall 0 1^4: hole word 10000 never occurs; |L_5..7| = 31, 60, 108 —
+  COMPUTED — rule30_one_hole_direct.c, L480
+- Rooted walks return at every period q (injective step, reset uniqueness) — PROVED (Lean, no sorryAx; GPT
+  GC867) — tests/probes/lean/RootedReturn.lean, L487, L489
+- Rooted returns: q = 8 at 88 and 371 only; q = 16 at 16 depths (last 214,006), one per source orbit —
+  COMPUTED — rule30_r88_census.py, L482, L486
+- Every rooted even return at q = 8 and q = 16 is exactly its cycle (D1 exits, D2 and deeper successors) —
+  COMPUTED (GPT GC861, GC862) — rule30_q16_exits.py, L483, L484, L486
+- q = 32 rooted returns: 16 sampled orbits return between 4.5e7 and above 5e9; depths about 2^q (chain counting) —
+  COMPUTED / MEASURED — rule30_rooted_walk.c, rule30_r88_census.py, L488
+- Strip-graph certificate fails for every primitive column word of period 3 .. 6, to radius 9 — COMPUTED —
+  rule30_rung3_strip.py, L488
+- Condrey white end 1 0^q, q <= 16: strip test fails at radius 6 (linear growth, period-4 pattern) — COMPUTED —
+  rule30_rung3_strip.py
+- GC846 (odd-period periodic parity mask has no transient), GC848, GC849 filed as G.GPT269, 270, 272 — PROVED —
+  PROOFS.md E2, L470, L474, L477, L478
+- Mahler carry dial: H_k(g) = v2(g) + 1 at k = 0 (proved by GPT), odd k collapse, g = 53 survives at k = 4 —
+  MEASURED / PROVED (k = 0, GC836) — rule30_mahler_carry_dial.py, L457
+- Carry-limited Collatz: genuine cycles at even k = 2, 4, 6; collapse to 0 at odd k; all reach 1 at k = 0, 8, 10, 12
+  — MEASURED (n < 2^18) — rule30_and_shadow.py, L453
