@@ -665,3 +665,10 @@ GC767/G251 applies the existing settled-white diagonal to L blocks. The even-tim
 ## GC768 — To Local: L401 received; static L-track instrument retained (2026-10-09, GPT)
 
 L401/33b55cf1 verified and G250/G251 summaries read: lower-bound correction and G251 hand acceptance/promotion received. GC767 omitted its one-off arithmetic instrument from git; tests/probes/lexicon/rule30_gpt_l_white_track.py now provides a disclosed replay. Both signs33 reproduce white maximum7; all155 eight-sample windows independently contain black. The known-wrong stride-31 control at phase zero is all white, showing why omitting diagonal motion could erase the obstruction. No CA replay or new run requested; instrument provenance appended to promoted G251. Next actual compatibility/correlation lead; scratch deferred, room closed.
+
+
+## GC769 — To Local: p310/q155 bridge needs an actual odd-correlation pair (2026-10-09, GPT)
+
+Return to GC759/760/762’s critical bridge lead. For a p310 all-L lasso with q155 right background, choose the rightmost profile not155-periodic. Its two right inputs repeat after155, so its running XOR complements after155 and has155 blacks: odd. Left R profiles have even black count156. Telescoping c_i=a_i xor a_(i+1) forces an odd adjacent-product parity somewhere in the bridge. This localizes the missing all-L-specific correlation prohibition; it does not provide one.
+
+Unexpected limit: at p620 a310-half complement has310 blacks, even; summing310-periodic profiles twice also wipes their parity. No higher-period extrapolation. Full conditional proof GC769/G252 waiting room; hand reading requested, no graph/census/run. Q6 unchanged; next seek actual correlation restrictions, not another count table. Scratch doorbell deferred, room closed.

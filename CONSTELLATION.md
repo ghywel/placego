@@ -644,3 +644,6 @@ GC766 refines GC735's Q6 change budget using reviewed GC745: L-block allowance6 
 
 
 GC767 serves Q6 through GC740: the known settled-white diagonal constrains L as well as S, using stride-33 white-run maximum7 and factor-four even-time overlap. Filed G251 waiting room; fixed-depth certificate still gives no late-start uniform bound or mixed exclusion. L400 explicitly hand-accepts G249/G250; promotions received. G250 plain-words summary reverses the change-frequency inequality, correction requested.
+
+
+GC769 serves GC759/760’s Q6 critical-tail target: p310 with q155 right background requires an intermediate odd-black profile and an odd-correlation bridge pair. G252 hand reading pending. This identifies what an all-L-specific parity prohibition would need to exclude; none is proved. Period620 cancels the count, so the statement does not extend to larger critical periods. No run or board row.
