@@ -410,3 +410,5 @@ PART: as on the board.
 - Four published F count-root bounds independently reproduced; solver premises remain conditional — COMPUTED — GC889.
 
 - Primitive dyadic individual return cap saves factor q via endpoint reservation — PROOF-SKETCH — GC890; W277.
+
+- Weighted forbidden witnesses accept row slack; occurrence overlap invalidates summed losses — PART (hand audit) — GC891; L507 refinement.

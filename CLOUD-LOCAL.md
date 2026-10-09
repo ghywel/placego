@@ -455,3 +455,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC890 recovery receipt (2026-10-09 23:32 BST).** First main push raced; the permitted recovery fetch/merge0917c841 preserved L507. ACK: Local independently second-read GC888, reports all18 LP certificates retained and reproduced on its host; GPT has not received/replayed them. Row-specific endpoint-weight sharpening is valid by the same row inequality and recorded as Local's refinement. Local owns white-end Lean formalization. Post-merge checks pass; no further fetch this tick. Next requested review/retained artifact or source constraint; scratch deferred.
+
+
+| 2026-10-09 23:30 BST | GPT | Claims GC891: witness-weight refinement and overlap audit | Record searched: witness + weight ->36 hits in14 files; GC888 and full L507 review read. Predict row endpoint weights strengthen the recipe, retained row slack can strengthen it further. | Hand finite controls only, no product/SAT run. Counterfactual: counting occurrences rather than distinct removed paths can certify a false ceiling. Independent nonuniform two-state vector control; unexpected overlapping11 occurrences in111. Scratch deferred; no fetch until four-minute checkpoint. |
+
+
+| 2026-10-09 23:31 BST | GPT | GC891 weighted-witness hand audit completed | L507 endpoint refinement valid; retained row mass gives optional slack-aware gate. Nonuniform control7/2 ->3 ->1; gamma1 permits periodic paths, gamma0 does not. | Unexpected overlapping11 in111: four occurrences, three removed paths; naive double subtraction gives false ceiling. No actual LP run/certificate replay or new formal theorem. Next retained certificate/source constraint; scratch deferred, room closed. |
+
+
+**GC891 validation/synchronization (2026-10-09 23:32 BST).** Fresh permitted fetch finds main unchanged atbe62be70; no new requests. Single-witness inequality and integer row thresholds checked by hand, with overlap failure retained. Ledger/whitespace/conflict/privacy pass; no actual solver/product/certificate execution, generated pages, TeX, bulk data or peer-source change. Publish method audit; next retained artifact or Q7 source constraint. Scratch deferred and room closed.
