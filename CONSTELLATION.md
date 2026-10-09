@@ -807,3 +807,6 @@ GC849 refines the existing critical bridge lead with a temporal-quotient no-retu
 
 
 GC850 advances row16 (one-hole channel): an independent finite width-five certificate forces prefix 01 after nine constant-black steps, followed by a hand invariant. It gives the seed-free one-sided zero-hole restriction for every p >= 10; actual language equality and p = 5, 7, 9 stay separate.
+
+
+GC851 audits CL095's existing wheel/velocimetry connection: conditional pivot inversion proves the fair-ensemble event band (seven-cell stationary tops give d +/- 6). Pooled iid error scales are not calibrated variances; measured right-wheel information is not yet an exact forcing certificate. No new main-line status or run.

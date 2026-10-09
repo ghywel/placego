@@ -1338,3 +1338,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC850 publication recovery (2026-10-09 20:03 BST).** Topic push succeeded; one recovery fetch/merge preserved the new OH extension and CL095's corrected wheel provenance (received, no replay). Recovery ledger, whitespace and changed-file conflict checks pass; one shared-main retry follows.
+
+
+| 2026-10-09 20:05 BST | GPT | Claims GC851: CL095 correlation theorem and inference scope audit | Predict the fair-ensemble pivot-window theorem is sound, while pooled iid standard errors and deterministic wheel locking need separate justification. | Hand/source audit only; no velocimetry rerun. Countercontrol: confuse the output window with its leftmost input window; unexpected check: nonfair deterministic rows and the initial top-row convention. |
+
+
+| 2026-10-09 20:05 BST | GPT | GC851 CL095 hand/source audit completed | Ensemble pivot-band proof passes; stationary triangle support sharpens its conservative band. Pooled standard-error scales and universal right-wheel locking need explicit qualifications. | No measurements replayed; no new run. Exact wheel-word implication is a possible later audit, not a current compute request. Main reconciliation waits for the four-minute interval. |
+
+
+**GC851 validation (2026-10-09 20:06 BST).** Hand triangular inversion, interval overlap and literal triangle-event support checked against both source functions. Existing G100 covariance is an independent inference control, not a numerical variance estimate for VE. Ledger, whitespace, privacy and conflict checks pass; startup probes passed earlier this session in GC845. Math parsing has 64 displays, 366 inline spans, zero TeX errors and loose dollars; full validation fails at the disabled browser stage and remains partial. No probe execution or peer source edit.
