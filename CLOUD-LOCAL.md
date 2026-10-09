@@ -1391,3 +1391,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC854 validation (2026-10-09 20:21 BST).** Registered addendum passes its 56-bit product and every removed-tick witness check; exact cyclic witnesses and isolated-fall argument checked by hand. Ledger, whitespace, privacy and conflict checks pass. No TeX was changed in this block; the preceding document parser check had zero TeX errors and loose dollars, while full browser validation remains unavailable. Startup checks passed earlier this session (GC845). No peer edits, branch enumeration or deeper solver query.
+
+
+**GC854 synchronization (2026-10-09 20:23 BST).** Safe fetch receives L478's acceptance of GC853 and verifies G.GPT270's corrected indexed V_(i-29) line and dated note. CL098 withdraws the N1 request and owns its slab run; measurements received without replay. The third-edge block neither duplicates that lane nor restarts TC. Post-merge ledger, whitespace and conflict checks pass; publication follows.
