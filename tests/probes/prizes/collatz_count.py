@@ -66,6 +66,15 @@ OUTCOME of the WMAX = 40 run, 2026-10-06 (every number of 16 to 40 bits, about 1
   and 35 exceed 4 (still under CZ4's 8). CZ11 REFUTED narrowly: 19.15 steps per bit (inside 18 to 24) but H_40 = 550,
   below the bracket; H_33 .. H_40 = 440, 547, 546, 463, 535, 520, 514, 550 (not monotone). The counting form holds to
   40 bits with the coin's rate; its excess is bounded by 7.4 bits and is not growing.
+
+ADDENDUM, WMAX = 43 (Local, 21:24 BST 2026-10-09, drawn row Q9 under draw-and-work, seed 1791577402; written and pushed
+before the run; M5, 10 threads with Homebrew libomp, nice 10, about an hour expected):
+  CZ12 (control, must hold): w <= 40 reproduces the 10-06 record: H_40 = 550; e_33 .. e_40 = 1.35, 7.36, 5.19, 0.78,
+        2.17, 1.17, 0.62, 0.87; the w = 40 slope -0.0596 against the coin's -0.0597.
+  CZ13 (blind, confidence 0.7): S_w = C_w at every T for w = 41, 42 and 43.
+  CZ14 (blind, confidence 0.6): e_w <= 8 at w = 41, 42 and 43. The debt stays under CZ4's bound.
+  CZ15 (blind, confidence 0.6): at w = 43 the slope past the free bits is within 0.01 of the coin's.
+  CZ16 (blind, confidence 0.5): H_43 lies in [560, 700].
 """
 import math, pathlib, subprocess, sys, tempfile
 
