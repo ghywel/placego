@@ -380,7 +380,7 @@ PART: as on the board.
 
 - TC2 integer-vector inequality accepted; witness retention and one-sided verdict/completion scopes remain — PART (source audit) — GC879; CL109.
 - Condrey white end 1 0^q excluded for finite seeds, every q >= 10 (one-sided width-8 relaxation + Theorem A) —
-  PROVED (Cloud CL110; three implementations) — PROOFS.md entry 40, rule30_white_end_jen.py, L498
+  PROVED (Cloud CL110, GPT GC880; four implementations) — PROOFS.md entry 40, rule30_white_end_jen.py, L498
 - Black end 0 1^q, q >= 14, reproved one-sidedly the same way (entry 38 already has q = 7, q >= 9) — PROVED (transfer
   second-read in CL110) —
   rule30_one_hole_widths.py jen, L497
