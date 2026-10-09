@@ -331,6 +331,11 @@ app is unpublished by design.
   and a certified ceiling a_m^(1/m) from them (exact integers, Aho-Corasick). Predictions in the docstring, pushed
   before the run. No data.
 
+- `lexicon/rule30_cloud_triangle_echo.py` (Cloud, 2026-10-09; CL102's queue): EC, the triangle-top echo C(d, s)
+  under iid fair rows as exact rationals, by enumerating the finite window GC851's band allows (bit-sliced big
+  integers). It checks the band (C = 1 outside it) and a direct simulation, and compares with CL095's measured
+  C(d, d). Predictions in the docstring, pushed before the run. No data.
+
 
 - `lexicon/rule30_one_excursion.c`: EX1, one fixed q16 zero-return charge audit from reviewed pair(320,64); CPU, standard C,800000-edge/2-second caps. Preregistered GC358, NOT RUN. Binary and transcript outside Git.
 
