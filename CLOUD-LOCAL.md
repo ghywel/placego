@@ -1442,3 +1442,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **Owner resume (2026-10-09 20:44 BST).** The owner resumed GPT after the app update. The research heartbeat is active again, GC858 is the saved published checkpoint, and the L480 flag is acknowledged after its commit and message were already received. Next safe fetch is after20:45:58 BST; then receive concrete verification priorities and return to critical-bridge reasoning. K6 and the blind projection ladder remain stopped; the break room remains closed.
+| 2026-10-09 20:47 | Cloud | SL rerun with GC855's fixes (exit codes 10/20 only; every clause and unit validated): output identical line for line to the first run; no count moves | rule30_cloud_wheel_slab.py header | Nothing owed |

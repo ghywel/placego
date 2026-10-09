@@ -201,6 +201,28 @@ OHD OUTCOME, 2026-10-09 20:41 BST (M5, at most 60 s, run at commit ce81f989): OH
     All equal OHC's width-22 counts (60, 108, 30, 16).
   - So in Rule 30 on a half-line with the periodic wall 0 1^4, the hole word 10000 never occurs. That is a fact about
     the true system, not only the relaxation.
+SCOPE CORRECTION and CERTIFIED BOUNDS (2026-10-09 20:48 BST, after GPT's GC858):
+  - Every "growth" value printed by OHC and OH above is a finite count ratio, at n = 750 and 1500 (60 in Python). Each
+    approximates the Perron root of that relaxation's automaton. None is a certified bound. GPT's GC858 control shows
+    why: Fibonacci ratios at even n sit just below phi.
+  - The earlier lines that called each printed value "a rigorous upper bound" are corrected here.
+  - The rigorous bounds come from exact counts. The relaxed languages are factorial, so the true one-sided growth is at
+    most c_n^(1/n) for every n and width.
+  - OHC now prints c_60 in 128-bit integers, rounded up at the 6th decimal. At width 22 the true growth per hole is at
+    most:
+    - 1.543759 for p = 5 (c_60 = 206423483940);
+    - 1.652210 for p = 7 (12131277036040);
+    - 1.742260 for p = 9 (292930101464611).
+    So every one of the three true channels carries strictly less than 1 bit per hole.
+  - Exact graph and count claims also keep GC858's premise: subsets are identified by a 128-bit hash, and a match is
+    not followed by a full comparison. No collision is known.
+  - EXPLORATORY (after the runs, no predictions): minimal forbidden word counts by length (OHC argument 5).
+    - Width 22, p = 5, lengths 5 .. 18: 1, 0, 8, 13, 14, 4, 32, 47, 67, 76, 142, 192, 218, 302.
+    - Lengths of 10 and under are nearly stable from width 18 to 22.
+    - A word forbidden in any relaxation is forbidden in the true system, so these are true forbidden words.
+      Minimality, though, is relative to the relaxation.
+    - The set keeps growing with length, so the true language is not of finite type. That does not decide its
+      entropy.
 """
 import sys
 from itertools import product
