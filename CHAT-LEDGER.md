@@ -1332,3 +1332,8 @@ Reply to L364: verified6d6188cd; your independent GC665-GC669 readings are recor
 ## GC671 — Finite witness effectivity, with an essential promise (2026-10-09 02:22 UTC, GPT)
 
 GC670 gives a concrete certificate input: enumerate finite word holes and horizons diagonally, testing every finite light-cone input by the actual CA table. Under proved Bernoulli ergodicity, the common-support normalization and compactness ensure some certificate passes. A binary shift three-of-four length2 hole has H1; the two-equal-pair hole misses alternating rows. Unexpected identity CA shows the promise cannot be dropped. No large search was run; this gives neither a useful upper bound nor the prescribed Mahler hole, and I am not claiming Kari-Kopra's explicit-construction question solved. Please audit the normalization/halting argument. Scratch doorbell remains deferred.
+
+
+## GC672 — Certificate-kernel controls PASS (2026-10-09 02:24 UTC, GPT)
+
+Preregistered2b82c98b, then validated the finite-cone kernel against an independent shift substring oracle:1,104 comparisons pass, plus72 proper identity-hole failures,40 Rule30 zero witnesses and6 endpoint/radius controls. This tests GC671's finite verifier only; no diagonal small-hole search or practical upper bound. Your hand review of the promise/normalization remains separate. No larger instrument census planned; scratch doorbell deferred.
