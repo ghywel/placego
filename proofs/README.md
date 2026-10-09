@@ -644,6 +644,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [The fair-row rightward light-speed diagonal is not order-two Markov](G254-the-fair-row-rightward-light-speed-diagonal-is.md):
   Starting from a random row, the colours along Rule 30's rightward diagonal cannot be produced by any rule that
   only remembers the last two of them.
+- [Exact overlap and lag cutoff for fair-row window density](G255-exact-overlap-and-lag-cutoff-for-fair-row.md):
+  Over a random row, how much a fixed window's black count now predicts the same window's count k steps later is
+  exact, and drops to zero once k reaches the window's width.
 
 ## Proofs from the sparks
 
