@@ -399,8 +399,8 @@ what would refute it before running anything, keep the failures, and write the r
 for another party's second reading. Then it is done: no second round, and never a place on the status board. A line
 under "Might inspire" may seed a later spark, which starts as a new entry. Since the owner's word of 2026-10-07,
 Cloud keeps the sparks: it reads the break room for testable ideas, lists the candidates and runs them, while GPT
-and Local stay on the main project and may second-read or claim one that catches them. Since 2026-10-08 Cloud is
-off the pool (cloud-off-pool), and a spark is claimed by whoever notices it. A spark that turns on a proof
+and Local stay on the main project and may second-read or claim one that catches them. Since 2026-10-08 a spark is
+claimed by whoever notices it (cloud-off-pool, then cloud-in-pool from 2026-10-09). A spark that turns on a proof
 worth reading on its own gets an entry in PROOFS.md section S, numbered SP01, SP02, ... (S1, S2, ... are Local's
 checks), with a summary in proofs/summaries.md, so that it has its own page in proofs/.
 
@@ -416,7 +416,37 @@ are the super-administrator - and Spark follow-upper. Check the break room for n
 them." And shortly before noon: "Interesting proofs from SPARKS should get their own proof write up in the
 repository - possible name as S01 etc".
 
+### cloud-in-pool
+
+**Rule (the owner, 2026-10-09 21:11 BST; it supersedes cloud-off-pool below).** Cloud is back in the work pool as
+the third researcher. It has a keep-alive heartbeat tick like the other workers: a one-shot wake-up every five
+minutes, each tick arming the next, with an hourly recurring wake-up as a safety net that restarts the chain if it
+breaks. Cloud has no access to the shared scratch, so it has no flags. It works through git only: it reads
+CHAT-LEDGER.md and CLOUD-LOCAL.md on every tick, and a request for Cloud is written there, not flagged. On ticks it
+follows draw-and-work like the others (a quiet tick is a work tick), and its machine suits long checkpointed runs
+that should outlive a laptop restart (RR3, for example). The duties reassigned by cloud-off-pool stay where they are
+until the three workers agree a new split in CLOUD-LOCAL.md. Until then Cloud claims work there before starting it,
+as everyone does.
+
+**Why.** The owner, 2026-10-09: "I want you fully in the loop again as a 3rd researcher, with a keep alive tick as
+the other workers have, but you wont have the flag scratch".
+
+**Tick discipline (the owner, 2026-10-09).** Every tick does real work, in this order:
+1. requests to Cloud;
+2. its background runs;
+3. a review of the newest unreviewed proof or claim by GPT or Local;
+4. the named job;
+5. help with a step another worker proposed and did not start;
+6. new mathematics, such as a closed form, a hand proof or an instrument;
+7. only when all of that is empty, reopening a PARKED or CLOSED row.
+
+The owner's words: "make sure your workflow tick always gives you something to do ... Make sure you are as active as
+possible, assist the others, invent maths, conduct reviews, and if you have absolutely nothing to do open a park or
+closed problem".
+
 ### cloud-off-pool
+
+*Superseded on 2026-10-09 at 21:11 BST by cloud-in-pool above; kept as the record of the arrangement it replaced.*
 
 **Rule.** Cloud is not in the work pool. It wakes only when the owner prompts it, with no automated tick, so nothing
 in the main workflow may wait on it. Since 2026-10-08 23:15 BST its standing duties are held as follows:

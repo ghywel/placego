@@ -3,7 +3,7 @@
  * L487); predictions in rule30_r88_census.py's RW block, pushed first.
  *
  * Build:  clang -O2 -o ~/np-scratch-int/rule30-oh/rw tests/probes/lexicon/rule30_rooted_walk.c
- * Run:    rw Q MAXSTEPS [FIRST_ORBIT] [N_ORBITS]
+ * Run:    rw Q MAXSTEPS [FIRST_ORBIT] [N_ORBITS] [cycle]   (cycle: Brent's detection on the one deterministic path)
  *
  * A profile is a q-bit word, bit t = time t. The children of (a, b) are the words c with c(t + 1) = a(t) XOR (b(t) OR
  * c(t)) for t = 0 .. q - 2 and the closing condition a(q - 1) XOR (b(q - 1) OR c(q - 1)) = c(0); c(0) is tried as 0
@@ -38,6 +38,42 @@ static uint64_t rotl(uint64_t x, int d, int w) {
     return d ? (((x << d) | (x >> (w - d))) & m) : x;
 }
 
+/* the deterministic successor of a nonzero pair (GC863: every live later driver has exactly one child); returns 0 at a
+ * return (a zero child) and 2 if the uniqueness premise fails */
+static int succ(uint64_t *x, uint64_t *y) {
+    uint64_t ch[2];
+    int nc = children(*x, *y, ch);
+    for (int j = 0; j < nc; j++) if (ch[j] == 0) return 0;
+    if (nc != 1) return 2;
+    *x = *y; *y = ch[0];
+    return 1;
+}
+
+/* Brent's cycle detection on one rooted path: prints the return depth, or a nonzero cycle's length and entry */
+static void brent(uint64_t blk, int h, long long MAXS) {
+    uint64_t a = blk | (blk << h), ch[2];
+    int nc = children(a, 0, ch);
+    uint64_t x0 = 0, y0 = 0;
+    for (int i = 0; i < nc; i++) if (ch[i]) { y0 = ch[i]; break; }   /* GC863: the two first children are rotations */
+    uint64_t tx = x0, ty = y0, hx = x0, hy = y0;
+    long long power = 1, lam = 1, steps = 1;
+    int r = succ(&hx, &hy);
+    if (r != 1) { printf("q %d block %0*llx: %s at depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, r ? "uniqueness fails" : "return", steps + 1); return; }
+    while (!(tx == hx && ty == hy)) {
+        if (power == lam) { tx = hx; ty = hy; power *= 2; lam = 0; }
+        r = succ(&hx, &hy); steps++; lam++;
+        if (r != 1) { printf("q %d block %0*llx: %s at depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, r ? "uniqueness fails" : "return", steps + 1); fflush(stdout); return; }
+        if (steps >= MAXS) { printf("q %d block %0*llx: no return and no cycle found within %lld steps\n", Q, (h + 3) / 4, (unsigned long long)blk, steps); fflush(stdout); return; }
+    }
+    /* cycle of length lam; find the first repeated state mu */
+    tx = x0; ty = y0; hx = x0; hy = y0;
+    for (long long i = 0; i < lam; i++) succ(&hx, &hy);
+    long long mu = 0;
+    while (!(tx == hx && ty == hy)) { succ(&tx, &ty); succ(&hx, &hy); mu++; }
+    printf("q %d block %0*llx: NONZERO CYCLE of length %lld entered at depth %lld (never returns)\n", Q, (h + 3) / 4, (unsigned long long)blk, lam, mu + 1);
+    fflush(stdout);
+}
+
 int main(int argc, char **argv) {
     if (argc < 3) { fprintf(stderr, "usage: %s Q MAXSTEPS [FIRST_ORBIT] [N_ORBITS]\n", argv[0]); return 2; }
     Q = atoi(argv[1]);
@@ -46,6 +82,7 @@ int main(int argc, char **argv) {
     if (Q < 4 || Q > 32 || (Q & (Q - 1))) { fprintf(stderr, "Q must be 4, 8, 16 or 32\n"); return 2; }
     MASK = (1ULL << Q) - 1;
     int h = Q / 2;
+    int cyc = argc > 5 && argv[5][0] == 'c';
     int k = 0, done = 0;
     for (uint64_t blk = 1; blk < (1ULL << h) && done < norb; blk++) {
         if (!(__builtin_popcountll(blk) & 1)) continue;
@@ -54,6 +91,7 @@ int main(int argc, char **argv) {
         if (!least) continue;
         if (k++ < first) continue;
         done++;
+        if (cyc) { brent(blk, h, MAXS); continue; }
         uint64_t a = blk | (blk << h);
         uint64_t L[8][2]; int nl = 0, maxl = 0;          /* live pairs (x, y) */
         uint64_t ch[2];

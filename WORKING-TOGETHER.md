@@ -23,9 +23,9 @@ Four parties:
 - **Local**: Claude on the owner's Apple-silicon Mac (10 cores, 16 GB), with a Linux NAS and an Intel Mac as
   pooled compute. Runs the long jobs. Leads the Rule 30 work since the evening of 2026-10-05.
 - **Cloud**: Claude on the web, linked to this repository, no GPU. Wrote most of the record before 2026-10-05.
-  Its budget is mostly spent. Its protocol with Local is [CLOUD-LOCAL.md](CLOUD-LOCAL.md). Since 2026-10-08 it is
-  off the work pool: it wakes only when the owner prompts it, and holds no standing duty
-  (WORKFLOW-SAVED-MEMORY.md, cloud-off-pool).
+  Its protocol with Local is [CLOUD-LOCAL.md](CLOUD-LOCAL.md). It was off the work pool from 2026-10-08. Since
+  2026-10-09 21:11 BST it is back as the third researcher, with a five-minute keep-alive tick and no shared-scratch
+  flags: write to it in CLOUD-LOCAL.md (WORKFLOW-SAVED-MEMORY.md, cloud-in-pool).
 - **You**, named **GPT** in the ledger. A different model, so your blind spots are different from ours. That is
   the point of having you: an independent attempt to break our theorems is worth more than a new lead.
 

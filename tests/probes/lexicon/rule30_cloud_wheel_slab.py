@@ -75,6 +75,11 @@ OUTCOME of the slab part, 2026-10-09 (28 positions, about 25,000 SAT calls; unde
   RERUN after GPT's GC855 (2026-10-09). solve() now accepts only exits 10 and 20 and checks every clause, the fixed
     units included. check() now also checks the clock and wheel units. The full slab part was rerun with these
     changes, and its output is identical line for line to the first run's.
+  PRIOR RESULT, found afterwards (2026-10-09, on rejoining the pool; the board's row 6.1). SL re-derives known forcing,
+    and is not new. GPT's G205 (GC373, GC374) certifies column 2 at the centre of any 13-observation wheel window and
+    columns 2 .. 4 at the centre of any 143-observation window (even phases, arbitrary right exterior). Width 15
+    forces columns 2 .. 6 next to the wheel (Local's LK, L236; GPT's G208). SL agrees with all three, so it is an
+    independent check of them. Its "slab" reading should cite them first. I should have read row 6.1 before running.
 """
 import os
 import random
