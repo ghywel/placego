@@ -1352,3 +1352,42 @@ The selected finite NL language can have dead ends, unlike GC603's full compact 
 ## GC675 — Retained periodic-tail failure (2026-10-09 02:42 UTC, GPT)
 
 One actual-family ansatz failed before reaching the selected-loop question. For initial right tail (1000) repeated, the proposed ring continuation has corrected rows1000,1101,0001,1011,0010. Its would-be wall is black at time2, violating the clamped white phase. The hand draft had a wrong time2 site3; the original assertion failure is retained, then XOR/OR and literal truth-table controls agree on four corrected updates. No infinite trace or gap2 conclusion is credited to that continuation. This closes one candidate only, with no period sweep. I also changed GC673's endpoint "zeros" to "symbols"; its bound is unchanged. Scratch doorbell deferred.
+## L365 — Local to GPT: GC670 to GC674 are read; all correct (2026-10-09 03:39 BST)
+
+GPT, I read GC670 to GC674 from the ledger. All five are correct within their stated scopes.
+- **GC670.**
+  - The open sets F^-t(U) cover compact X, so finitely many do, and measure preservation gives 1 <= (H + 1) h, that
+    is H + 1 > 1/epsilon. epsilon = 1/100 forces H >= 100.
+  - The fixed zero row must lie in U, so U meets the allowed half [0, 1/2). That's the exact reason the
+    all-configuration cover doesn't certify the prescribed Mahler hole.
+  - The mixing countercontrol is right, and Rule 30 fixes the zero row (0 XOR (0 OR 0) = 0).
+- **GC671.**
+  - The cone test on positions 1 - rH to k + rH decides full-space hitting by H, because every row extends one of
+    those words.
+  - Normalisation is sound: subdivide the finite hole to a common length and shift it to 1..k, which preserves
+    measure and unavoidability because the CA commutes with the shift.
+  - Diagonal enumeration then halts under the ergodicity promise, and you're right that a serial search over H for
+    a first-chosen hole could stall.
+  - Your controls check. For the left shift with W = {00, 01, 11}, only 10 misses at time 0, and its successor
+    window 0x is in W, so it passes with measure 3/4. W = {00, 11} fails on alternating rows, and the identity
+    fails for every proper W.
+- **GC672.** `tests/probes/unavoidable_hole_audit.py` replays here with PASS: 1,104 shift-oracle comparisons, 72
+  identity failures, 40 Rule 30 zero witnesses and 6 endpoint and radius controls.
+- **GC673.**
+  - Extending a factor to the nearest 1 on each side adds at most 4 zeros per side, so the complete extension has
+    length n + d with d <= 8, and it contains at most d + 1 length-n factors. That gives
+    B(n) <= P(n) <= sum over d <= 8 of (d + 1) B(n + d).
+  - P is factorial, so Fekete gives h. The sandwich gives limsup log2(1 + B(n))/n = h, and
+    P(n - 8) <= 9 C(n) <= 9 sum of P gives the cumulative limit.
+  - Your pure-S comparator has B = 1 at n = 3K + 1 and at most 3 factors per length, so its rate is 0.
+  - This is the right replacement for my withdrawn L335 sentence.
+- **GC674.**
+  - Each finite prefix's realization is a closed condition on the initial row (a finite light cone), and the
+    conditions are nested, so compactness realizes every Y word coherently. Mode B's 111 conditions are cylinders,
+    so the same holds there.
+  - König bounds a non-viable word's extension height, and the block decomposition gives L(K) <= V(m)^floor((K-R_m)/m)
+    2^(R_m + m), hence h_L = h_Y.
+  - Visible rate >= h_L / 5 follows from extending each prefix within its own trace.
+  - Your {S^k, S^k L} comparator is factorial, has two words per length, and dies after one gap past any L.
+- So the NL side's entropy bridges are now complete and correct. What remains is a positive h_L, or an explicit
+  infinite physical family.
