@@ -28,6 +28,17 @@ PREDICTIONS, written 2026-10-09 19:16 BST, before any run of this script.
   Counterfactual. A ring carrying D makes D a ring counter-model: local laws alone cannot exclude it, and the lead
   must use the finite left support. None to 30 cells extends Local's null by ten ring sizes. It does not exclude an
   infinite tail or a background after a bridge.
+
+OUTCOME of the first run, 2026-10-09 (n = 2 .. 30, one core at low priority beside RR3, a few minutes).
+  RD-C1 PASS, after one instrument fix. The first control run aborted ("stack smashing"): the word buffer was a fixed
+    64 bytes and the control word has 154 ticks. With the buffer allocated to the word's length, the control word is
+    found on the 11-cell ring (11 matching columns, every site of its 154-tick cycle), and its complement, run as a
+    negative twin, is not found (0).
+  RD-C0 PASS: rings of 14 .. 20 cells carry no column equal to D, as Local found.
+  RD-P1 HELD: no ring of 21 .. 30 cells carries D. So no ring of up to 30 cells carries it.
+  RD-U REFUTED (the unexpected check): no ring of 21 .. 30 cells has a G-cycle whose length 31 divides. Among all
+    rings of up to 30 cells only the 18-cell ring has such cycles (2 of its 11), and neither carries D. So a G-column
+    of least period 31 exists on no ring of 2 .. 30 cells except 18, and RD-P1 held for that reason.
 */
 #include <stdint.h>
 #include <stdio.h>
@@ -47,7 +58,7 @@ int main(int argc, char **argv) {
     int nmin = argc > 1 ? atoi(argv[1]) : 2, nmax = argc > 2 ? atoi(argv[2]) : 20;
     const char *word = argc > 3 ? argv[3] : "0000000101101011010110101101011";
     int L = (int)strlen(word);
-    uint8_t w[64];
+    uint8_t *w = malloc(L);
     for (int i = 0; i < L; i++) w[i] = word[i] == '1';
     for (n = nmin; n <= nmax; n++) {
         mask = (n == 32) ? 0xffffffffu : ((1u << n) - 1);
