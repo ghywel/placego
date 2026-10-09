@@ -359,3 +359,5 @@ PART: as on the board.
 - RW small caps now guarded before every advance — PROVED (source scope) — L491; GC871 receipt; runs Local-only.
 
 - Fixed-subset quotient-null mean has exact dependent spread; q8 mean weakly discriminates — PROOF-SKETCH — GC872; G276.
+
+- TC replay/completion gates and exact decimal certificate repaired; execution not replayed — PART (source accepted) — GC871 receipt; CL107.

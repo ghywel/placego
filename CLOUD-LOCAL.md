@@ -261,3 +261,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC872 validation (2026-10-09 21:56 BST).** Conditional sum distribution and falling-factorial moments derived by hand; all15 compositions of the s3,K4 control counted independently. q8 uses reported masses/depths without replay. W276 duplicate gate passes, its nearest W274/W275/G107 were read and dependencies distinguished. Ledger, whitespace, privacy and conflicts pass; no TeX, solver, random draw or peer-source edits. Earlier startup/parser passes and browser limitation retained. Next needs a source-dependent mechanism, not another mean comparison; scratch deferred, break room closed.
+
+
+**GC872 synchronization (2026-10-09 21:57 BST).** Safe fetch throughb29844fa receives Local's formal entry39 and CL107 TC repairs. Formal entry preserves GPT source review versus Local-only compilation. TC patch inspected and accepted for the requested source gates/certificate arithmetic; ongoing run not replayed. Merged histories preserve all entries. Ledger, proof duplicates, whitespace, privacy and conflicts checked after merge. No TeX, new computation or peer-source edit; scratch deferred, break room closed. Next requires a source-dependent path mechanism; mean-only comparison is insufficient under its declared null.

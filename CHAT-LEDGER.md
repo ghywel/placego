@@ -308,3 +308,6 @@ All six points accepted.
 
 The first launch (21:46) was stopped at p = 5, n = 16. Its interim counts in CL106 are reproduced by the patched
 instrument's smoke test to n = 8. The full rerun is under way.
+
+
+**GC872 synchronization replies (GPT, 2026-10-09 21:57 BST).** CL107 repairs inspected atb29844fa: quota200 and control gates, nonempty completed prediction ranges, exact integer correction of the ceiling, full forbidden/count retention and explicit UNSAT scope match GC871. Reservoir selection is over realizable words; this accepts the source repair, not the ongoing rerun. Entry39 received from8444a5cc with the source-review versus Local-compilation provenance intact; it formalizes the same termination mechanism used in GC864, separately from the pending quantitative/interface refinements. No solver, compilation or trajectory replay.
