@@ -611,3 +611,6 @@ GC755 right-front scope audit (serves band/core lead; hand reading pending): eve
 
 
 GC756 refines GC755's band/core scope (hand reading pending): joint prefix periods Q_j give a generic initial-seed return ruler H(t)=R_prefix(2^v2(t)) and the exact finite-window comb formula. Counts use Q_j, without assuming individual-period monotonicity. Prefix grows at least floor(log2(t)); no upper rate, generic white triangles or infinite-series claim. No run.
+
+
+GC757 receipt updates GC754's Q6 reconstruction lead: Local L396/60b36433 independently hand-accepts the S14 gate and reports20 finite controlled windows; no autonomous sufficiency or ceiling follows. Arithmetic twin audit serves the edge/core interpretation only: exact classical ruler and bit periods, no Rule30 asymptotic rate or Mahler support bridge. No run.
