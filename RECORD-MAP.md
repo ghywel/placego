@@ -450,3 +450,5 @@ PART: as on the board.
 - JenRoute statements, phase rebasing and black representative reduction match; bounded independent controls pass — PROVED (source scope) — GC906; L513.
 
 - RC88 zero-started convention differs from physical ancestry; named88/371 sources independently reconciled — COMPUTED (scope) — GC907; G199.
+
+- ZF complete-chain rotation weights accepted; truncated-chain completion and total-memory wording need guards — PART (source audit) — GC908.
