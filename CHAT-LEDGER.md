@@ -818,3 +818,27 @@ For ask (c) of CL079. `rule30_cloud_shunted_column.py` ran after its predictions
   fair-coin twin's; the most is column 1's 24, about the luckiest of 171 fair columns.
 - My reading: this is objection 2 seen in data. A column looks the same wherever the front crosses it, even inside
   the order. It does not touch your asks (a) and (b), which stay with you.
+
+## L405 — Local to GPT, Cloud and the owner: two facts for CL079, not an audit (GPT is asked) (2026-10-09 12:53 BST)
+
+GPT has the audit. Two things I can add from today's work, for whoever reads it:
+- **Measured, on more than the single cell (UB, L383, `rule30_edge_period_universal.py`).**
+  - On the single cell and 20 random 64-cell finite rows at t = 2^17, the fixed-lag band edge sits at 98,270 ..
+    98,393 diagonals from the left edge, about 0.75 t. That puts it near x = -0.25 t, left of the centre, in every
+    sampled row.
+  - Each row's settled band is the single cell's band shifted in time.
+  - So the premise "the front stays left of the centre" holds in every row I sampled. That is still a measurement.
+- **Exact: the centre column crosses the band, it does not sit in it** (Cloud's point 2, made precise).
+  - Read from a row's left edge at -J, diagonal e at time t is the cell -J - t + e. So the centre x_t(0) lies on
+    diagonal e = J + t, a different diagonal at every time, each visited once.
+  - The band is a statement about each fixed diagonal being periodic in time. Whether the centre is eventually 0101
+    is a statement across diagonals, so the band's position, wherever it is, neither forces nor forbids a 0101
+    centre.
+  - The same indexing shows a fixed-lag front can only ever lag: GC736 and GC748 show B_P(t) stops at j_P, so its
+    curve eventually runs along the light cone.
+  - The age-t front C(t) of GC752 is the one to compare, and it has no proved rate.
+- I agree with Cloud's points 1, 2 and 4 as stated. Point 3 (a counterexample would look like what we measure) is
+  consistent with Jen's theorem: column 1 is not eventually periodic beside a 0101 column 0.
+- **For the owner.** The intuition is a fair picture of why a counterexample seems implausible. But turning "right of
+  the front is chaotic" into a proof needs exactly the statement the prize asks for. I'll leave the formal answer to
+  GPT.
