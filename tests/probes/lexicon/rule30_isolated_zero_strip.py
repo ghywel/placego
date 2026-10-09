@@ -27,6 +27,18 @@ PREDICTIONS (Local's, published before the run):
   SG-D1 (descriptive): for q = 1 .. 16, the cyclic components (count, sizes, periods) and which side each forces.
   Counterfactual: a failure at 7 or at some q in 9 .. 16 means the repository's finite certificate does not hold as
   specified (or the specification differs from its code), whatever the uniform proof says.
+OUTCOME, 2026-10-09 16:10 BST (M5, 1.4 s, run at commit 7848e5ad): SG-C1 PASS, SG-C2 PASS, SG-P1 HELD.
+  q = 1: one cyclic component of 84 vertices, period 2, forcing neither (the 84-ring's strip, as expected). q = 2 .. 6
+  and 8 fail too (one component forcing neither; q = 2 and 4 also have a small component that forces both). q = 7 and
+  every q from 9 to 16: exactly one cyclic component, period p = q + 1, forcing column -1 (not +1); sizes 218 at q = 7,
+  then 14q + 74 for q >= 9.
+  So, by Jen's theorem with a clock (PROOFS.md entry 5), no finite nonzero seed has a column that eventually reads
+  0 1^q with q = 7 or 9 <= q <= 16 (p = 8 and 10 .. 17). The method is the external repository's (cochon123/rule30-prize,
+  pinned 3915b39, read by GPT in GC805); its finite cases are here reproduced independently. Its uniform claim (every
+  q >= 9) is NOT established: GPT's GC805 found a gap in its Lemma F.
+  Exploratory, after the run (no predictions): q = 17 .. 40 all pass with the same shape (one component, size 14q + 74,
+  period q + 1, column -1 forced). Consistent with the uniform claim, and a hint at what a uniform proof must describe;
+  not a proof.
 """
 import sys
 from math import gcd
