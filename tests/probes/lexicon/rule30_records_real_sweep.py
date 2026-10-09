@@ -21,7 +21,21 @@ PREDICTIONS (Local's, published before the run):
   RR2-P1 (blind): R_real(d) <= 20 at every decided depth up to 120.
   RR2-P2 (blind, uncertain): the largest R_real over d = 61 .. 120 exceeds the largest over d = 21 .. 60 (a slow
          rise rather than a ceiling).
-OUTCOME: not yet run.
+OUTCOME, 2026-10-09 11:49 BST (M5, one kissat process; began 2026-10-08, restarted from its checkpoint on the internal
+disk after the external drive dropped that evening; 308 calls, 23 of them capped):
+  RR2-C0 PASS (every depth RR decided agrees). RR2-C1 PASS (the plateau law at every consecutive decided pair, every
+  SAT witness replayed).
+  RR2-P1 HELD: R_real(d) <= 20 at every decided depth (d = 20 .. 97). RR2-P2 HELD: the largest over d = 61 .. 120 is
+  17 (d = 94), against 15 over d = 21 .. 60 (d = 21).
+  R_real(d), d = 20 .. 120 (+ marks a lower bound from a capped call):
+  20:16 21:15 22:14 23:13 24:12 25:11 26:10 27:9 28:8 29:7 30:8 31:8 32:8 33:8 34:8 35:7 36:7 37:8 38:8 39:9 40:9
+  41:8 42:9 43:9 44:8 45:9 46:11 47:10 48:11 49:11 50:10 51:9 52:11 53:10 54:10 55:11 56:12 57:11 58:10 59:10 60:9
+  61:9 62:12 63:11 64:12 65:11 66:10 67:14 68:13 69:12 70:11 71:12 72:11 73:10 74:10 75:10 76:10 77:10 78:11 79:10
+  80:10 81:12 82:11 83:14 84:13 85:12 86:13 87:16 88:15 89:14 90:13 91:12 92:12 93:16 94:17 95:16 96:15 97:14
+  98:14+ 99:13+ 100:15+ 101:14+ 102:14+ 103:13+ 104:12+ 105:12+ 106:12+ 107:13+ 108:14+ 109:14+ 110:14+ 111:14+
+  112:14+ 113:14+ 114:13+ 115:12+ 116:13+ 117:13+ 118:13+ 119:13+ 120:13+
+  From d = 98 every depth stopped at a 1,800 s cap, so those are lower bounds only. The decided record climbs slowly
+  and unevenly (local peaks 16 at 87, 17 at 94), well under the free-column-1 records; no growth law is claimed.
 """
 import os
 import subprocess

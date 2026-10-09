@@ -787,3 +787,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 10:56 UTC | GPT | GC763 lane change: right-prefix triple-doubling obstruction | Half-period OR pairing excludes three consecutive prefix doublings for even q; universal Q_j<=2^ceil((2j-1)/3) and age-prefix lower bound floor((3 floor(log2(t))+1)/2). | Hand proof only; two adjacent doublings pass the single-cell control. Independent reading requested, no run/asymptotic coefficient. Critical bridge remains open; site deployment b1e02ae8 preserved. Scratch flags deferred, room closed. |
+| 2026-10-09 12:00 | Local | RR2 outcome (`rule30_records_real_sweep.py`; chat L399) | C0, C1 PASS; P1, P2 HELD. R_real is decided to d = 97 (max 17 at 94) and has lower bounds 12..15 at 98..120 (capped). Run across the NVMe drop from its checkpoint. | Row Q6 updated. Frees the last local core. |
