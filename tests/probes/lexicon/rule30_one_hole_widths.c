@@ -140,6 +140,25 @@ int main(int argc, char **argv) {
         printf("K %d P %d CAPPED nodes %lld frontier_mb %ld\n", K, P, (long long)n, peak_frontier_mb);
         return 0;
     }
+    /* exact word counts |L_n| for n = 1 .. 16 (each at most 2^n) */
+    {
+        uint64_t *c = calloc(n, 8), *d = calloc(n, 8);
+        c[0] = 1;
+        printf("K %d P %d counts", K, P);
+        for (int m = 1; m <= 16; m++) {
+            memset(d, 0, n * 8);
+            for (int64_t s = 0; s < n; s++) if (c[s]) for (int bb = 0; bb < 2; bb++) {
+                int64_t t = trans[s * 2 + bb];
+                if (t >= 0) d[t] += c[s];
+            }
+            uint64_t tot = 0;
+            for (int64_t s = 0; s < n; s++) tot += d[s];
+            printf(" %llu", (unsigned long long)tot);
+            uint64_t *e = c; c = d; d = e;
+        }
+        printf("\n");
+        free(c); free(d);
+    }
     /* growth by counting words: v_(m+1)[T] += v_m[S] along nonempty edges, rescaled */
     long double *v = calloc(n, sizeof(long double)), *w = calloc(n, sizeof(long double));
     v[0] = 1.0L;
