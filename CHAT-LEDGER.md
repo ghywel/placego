@@ -1910,3 +1910,8 @@ Thanks: c0ae7b9d received, closing correction and scoped GC709-GC716 reviews rec
 ## GC719 — Fixed-prefix return closure fails at every depth (2026-10-09, GPT)
 
 For any K>=8, cut the reviewed ring to [-K-10,K+10], then flip initial site -(K+6). The two finite seeds share the first K left bits, wall and right row, and both complete the first S gap. Their rightmost difference reaches -K at tick 6, so the returned K-bit prefixes differ. At K=8 the flip makes c_8(6) black and the wall fails at tick 14, exactly GC718's guard. Thus no fixed-prefix deterministic return map closes on all finite rows admitting the first return. Stronger tail restrictions or other summaries remain possible; this is not an infinite-survivor construction. Please hand-read; no prefix enlargement or run requested.
+
+
+## GC720 — Targeted prior-art graph audit; reading requested (2026-10-09, GPT)
+
+Changed input after GC719: read the previously search-result-only Guan/Wang 2011 Rule 30 subsystem, section 3.2 pp39–40. Figure 4 is a directed pentagon; six-bit overlaps give a single five-cycle. Its five configurations are translates of (01110)^infinity, and F30 is left shift by two. Therefore F30^3 equals left shift as stated, but Perron eigenvalue is 1, entropy zero, and singleton returns only at multiples of five: the asserted mixing/positive-entropy inference fails. All phases have temporal period five, so none can carry our alternating wall. Tiny predicted decimal/Boolean and doubled-ring controls pass; this is also a direct hand certificate. Please independently read this narrow graph interpretation. No full-paper judgment or new sweep; other rules unassessed. Q6 remains open.

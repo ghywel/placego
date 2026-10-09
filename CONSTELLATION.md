@@ -488,3 +488,6 @@ GC718 follow-up to mixed guard (serves Q6): at each infinite renewal marker the 
 
 
 **Fixed-prefix deterministic renewal return closure CLOSED by hand (GC719; serves Q6; review pending).** For every K>=8, the same finite initial K-prefix and actual first S return can lead to different returned K-prefixes by flipping depth K+6. The two necessary marker prefixes, or any fixed enlargement, are not closed states on this finite-first-return domain. Stronger tail-restricted summaries and general infinite compatibility remain OPEN.
+
+
+**Published G1 shift-graph route CLOSED for Q6 (GPT GC720; hand reading requested).** Guan/Wang 2011 section 3.2's Rule 30 graph has five phases, zero entropy and temporal period five. Its third-iterate left-shift identity is valid, but the positive-entropy/mixing claims fail for this graph. It cannot contain an alternating wall and supplies no mixed-renewal branching input. Targeted primary-source audit only; other subsystems remain unassessed.

@@ -17259,3 +17259,26 @@ Their rightmost initial difference is at -(K+6). Left permutivity carries it rig
 **Unexpected actual guard control at K=8.** Here the flip is at depth 14. The original finite cut follows the ring through time 14, and its depth-eight bit at the time-6 marker is white. The perturbed seed has that bit black while its returned depths 1 through 7 are unchanged. GC718 then gives nearest-left bit 0 at black time 13, forcing a black wall at time 14. Equivalently the original depth-14 difference first reaches the wall at time 14. Both seeds completed the first S gap and agree on the wall through time 13, but one fails the later guard. The cutoff M=18 is wider than these cones, so this is a genuine autonomous finite-seed distinction, not a clamping artifact.
 
 This closes only the deterministic fixed-prefix return-map shortcut. It explains why two necessary marker symbols cannot be treated as a closed machine, and why merely adding a fixed number of deeper bits cannot repair that closure on the stated finite-return domain. The construction does not supply an infinite finite-left survivor or decide actual infinite S/L admissibility; the perturbed seed deliberately fails later. A useful next input must constrain the growing tail, prove a genuine sufficient summary, or use a Lyapunov/guard argument that retains its dependence. Independent hand reading requested; no further fixed-prefix enlargement.
+
+
+## GC720 — The published Rule 30 shift graph is a five-cycle (2026-10-09, GPT)
+
+**Targeted prior-art audit; serves Q6, not a new survivor construction.** Changed lane from growing-tail guards to the previously unread Guan/Wang 2011 source cited as search-result-only in PRIOR-ART.md. Read its definitions and Rule 30 portion of section 3.2, visually checking printed pages 39–40 and Figure 4 in the primary PDF. The displayed G1 graph is a directed pentagon. The paper asserts positive entropy and mixing for its Rule 30 subsystem, alongside a third-iterate shift identity. These assertions need separate verdicts. Rules 41/110 and the interval-map results were not audited.
+
+**Prediction before the tiny check.** Five listed seven-bit blocks should form one overlap cycle, and Rule 30 on its spatial phases should equal left shift by two. Counterfactual: strong connectivity alone gives positive entropy or mixing. Independent controls compare the decimal rule table against XOR/OR and double the spatial word under periodic boundaries. The unexpected check asks whether the subsystem can contain an alternating wall. Predictions were written to a private temporary record before execution; this is only the specified five-phase graph, with no period or radius enumeration.
+
+Under six-bit overlaps the complete cycle is
+
+    001110 -> 011100 -> 111001 -> 110011 -> 100111 -> 001110.
+
+Every vertex has exactly one successor and predecessor. Hence the bi-infinite edge shift has exactly five points, the spatial translates of the periodic word 01110. Its adjacency matrix A obeys A^5=I, has Perron eigenvalue 1, and therefore entropy log(1)=0. The cycle is irreducible but not primitive. More directly, a singleton cylinder returns to itself only at multiples of five, so the shift is not topologically mixing.
+
+Direct Rule 30 evolution of the five-cell row gives
+
+    01110 -> 11001 -> 00111 -> 11100 -> 10011 -> 01110.
+
+The first step is left shift by two. Translation equivariance proves this on all five phases; cubing gives left shift by six, equal to left shift by one on this subsystem. Thus the paper's third-iterate identity holds here, while positive entropy and topological mixing do not. For Rule 30 itself the same singleton-return obstruction holds, since addition by two permutes the five phases in a single cycle. This is an elementary counterexample to the stated implication, not a claim about all Rule 30 subsystems or the other rules. Boolean/decimal and doubled-ring controls all PASS. The hand cycle and displayed rows certify the conclusions independently of the instrument.
+
+**Unexpected temporal check.** Every phase has temporal least period five. An alternating column of least period two cannot occur in such a spacetime: its temporal period would have to divide five. Moreover every nonzero configuration in this subsystem has infinite left support. Consequently this particular published construction supplies neither an alternating-wall model nor the missing aperiodic mixed-renewal compatibility input. It does not supersede GC686's different all-S ring.
+
+The web screenshot facility was unavailable; the public PDF was downloaded after a sandbox DNS failure, then its two relevant pages were rendered locally. Initial Python PDF rendering lacked its module; Poppler produced readable pages despite font-cache diagnostics. No full-paper verification is claimed. Retain the valid shift identity but close this graph as a source of positive-entropy branching or a Q6 witness. Independent hand reading requested, especially the overlap interpretation; next return to a quantitative growing-tail input or another concrete primary-source lead.

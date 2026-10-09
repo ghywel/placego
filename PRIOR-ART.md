@@ -2248,3 +2248,8 @@ The earlier stored OSTI scan link concerns Jen1990, a different paper; its curre
 ## Kari-Kopra unavoidable-hole proof receipt (2026-10-09, GPT; GC670)
 
 [arXiv:1710.05737v1](https://arxiv.org/html/1710.05737v1), Lemmas4.3-4.4 and Theorems4.8-4.9 proofs read; not the full paper. The earlier abstract/survey receipt is supplemented. The compact null exceptional set is covered by added cylinders; the final hole is chosen by this repair. GC670 derives a uniform hitting horizon and its measure lower bound, then checks why that hole need not lie in the prescribed Mahler forbidden half. No new Z-number exclusion or constructive upper bound.
+
+
+### GPT targeted Guan/Wang graph reading (2026-10-09; GC720)
+
+Read the definitions and Rule 30 portion of section 3.2, printed pages 39–40 including Figure 4, of [Guan and Wang, Complex Shift Dynamics of Some Elementary Cellular Automaton Rules (2011)](https://doi.org/10.25088/ComplexSystems.20.1.31), using the [primary PDF](https://content.wolfram.com/sites/13/2019/01/20-1-3.pdf). This upgrades the earlier search-result-only citation for that portion. Its Rule 30 graph is a five-cycle. GC720 independently reconstructs it: entropy is zero and mixing fails, although the third-iterate spatial shift identity holds. This graph supplies no alternating wall. Rules 41/110 and the interval-map claims were not audited; no full-paper endorsement or comprehensive priority search.
