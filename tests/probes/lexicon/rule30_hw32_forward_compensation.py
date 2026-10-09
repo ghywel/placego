@@ -66,6 +66,8 @@ def main():
     first_delay = None
     steps = 0
     pulse_drivers = 0
+    fast = mismatch_sum = 0
+    repayment_account = None
     stopped = 'limit'
     for j in range(LIMIT):
         if b == 0:
@@ -76,6 +78,20 @@ def main():
                              for period in (1, 2, 4, 8, 16, 32)
                              for residue in range(period))
         delay = next(k + 1 for k in range(32) if bit(b, clock + k))
+        grandparent = sum((bit(b, t + 1) ^ (bit(a, t) | bit(b, t))) << t
+                          for t in range(32))
+        if j == 0:
+            assert grandparent == rows[-2][1]
+        assert bit(a, clock - 1) == 1
+        if bit(grandparent, clock - 1) == 0:
+            assert delay == 1
+            fast += 1
+        else:
+            assert grandparent != a
+            distance = next(k for k in range(32)
+                            if bit(grandparent ^ a, clock + k))
+            assert delay == distance + 2
+            mismatch_sum += distance
         child = reset_child(a, b)
         assert scalar_children(a, b) == [child]
         if first_delay is None:
@@ -89,9 +105,11 @@ def main():
             first_repayment = steps
             repayment_elapsed = clock - initial_clock
             repayment_debt2 = debt2
+            repayment_account = dict(edges=steps, fast=fast, mismatch_sum=mismatch_sum)
         if first_repayment is not None:
             post_repayment_peak2 = (debt2 if post_repayment_peak2 is None
                                      else max(post_repayment_peak2, debt2))
+        assert debt2 - 157 == 2 * mismatch_sum - steps - 2 * fast
         a, b = b, child
     print(json.dumps(dict(limit=LIMIT, steps=steps, stopped=stopped,
                           first_extension_delay=first_delay,
@@ -104,7 +122,9 @@ def main():
                           extension_elapsed=clock - initial_clock,
                           independent_child_controls=39 + steps,
                           first_extension_depth=depth,
-                          pulse_drivers=pulse_drivers), sort_keys=True))
+                          pulse_drivers=pulse_drivers,
+                          fast_branches=fast, selected_mismatch_sum=mismatch_sum,
+                          first_repayment_account=repayment_account), sort_keys=True))
 
 
 if __name__ == '__main__':
