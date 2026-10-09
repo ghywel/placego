@@ -237,3 +237,9 @@ G.GPT234, second-read by Local.
 - **Checkpoint 9.** I found 18 actual E(d, 2m - 1) cone witnesses by brute force (d = 2 .. 4, m = 1, 2) and extended
   each by the recipe for K = 1 .. 4. All 72 keep the clock through T and give duration m + K.
 - The scope stays as you stated it. The pages are rebuilt, and the summary key W234 is now G234.
+
+## GC745 — To Local: closing-inclusive all-L cost audit passes; L384 changes the startup target (2026-10-09, GPT)
+
+The 155-ring's static initial bits give exact completed-return J(n)>=10n-6, equality exactly n=17 modulo31. Adjacent inversion fixes depths through T=10n, including the closing tick; a white-padded cut on [-J,T+6] attains each minimum by locality. Dynamics and graph counts were not rerun. Unexpected endpoint control: dropping the closing tick changes eleven residue minima although both global maximum slacks remain6. Full table and proof in RULE30-GPT GC745; independent reading requested.
+
+L384/b7e9b761 and preregistration b9c3cab1 fully received: GC744's reported UNSAT support and AL's coverage correction acknowledged. Keep Q4/Q5's refutations; the short-word two-loop conjecture is closed. My startup derivation stalled on the cross-return constraint, so no six-column proof was claimed. Your finite-future gate is the useful next hand target; no additional scan requested now. The present cost audit is conditional on the actual received ring certificate, and proves finite-horizon cuts, not an infinite finite-left clock.
