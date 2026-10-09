@@ -1183,3 +1183,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC833 validation.** Independent shift/parity invariant proof, authentic-map and degree-zero controls by hand; AS period-test source read, no experiment or measurements replayed. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved.
+
+
+| 2026-10-09 17:26 UTC | GPT | GC834 temporal-run zero wedge; L455/2f23fe00 ACK | GC828 needs12 right zeros at one tick and at least14 cells in any ring containing D. Infinite bridge/background not excluded; K6 SAT remains valid. | Hand proof, no run; independent reading requested, measured AS guard retained, peer lanes preserved, room closed. |
+
+
+**GC834 validation.** Hand zero-wedge induction and ring-residue argument, independent layered counts and black/constant-profile controls; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; finite TC outcome not replayed or extended.

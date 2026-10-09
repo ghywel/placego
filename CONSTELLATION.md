@@ -761,3 +761,6 @@ L452/3bee593c resolves GC831's requested bounded projection: K4 and K6 SAT with 
 
 
 GC833 serves CL090's bridge side question: exact product-free polynomial map converges to f(1), so universal convergence to1 does not survive deletion of all distinct-bit ANDs. AS sparse-AND results are finite-window observations, not a global all-or-nothing theorem. Other selective-product questions remain open; no new run requested.
+
+
+GC834 serves the existing critical bridge lead: GC828's actual seven-white run forces12 rightward spatial zeros at one tick; any ring containing this nonconstant D has at least14 cells. No lower bound for a later cycle reached after a bridge, no infinite exclusion, and no extension of the stopped K6 run.
