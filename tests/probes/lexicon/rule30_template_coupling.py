@@ -27,6 +27,16 @@ Controls (GPT's): C0, the same builder at q = 5 with V0 = P = 01011 accepts GC81
 eight). Local adds C0b: with only V0 fixed, the q = 5 builder is SAT. Unexpected check (GPT's): the wraparound equations
 at t = q - 1 are verified explicitly in every SAT model. Plan: K = 4; then K = 6 only if K = 4 is SAT and its checks
 pass; then stop. A checked UNSAT rejects this D; a SAT is a finite periodic fragment only.
+OUTCOME, 2026-10-09 18:13 BST (M5, seconds, run at commit fad32b43): C0 PASS at K = 4 and 6 (GC817's tail accepted,
+  literal checks pass); C0b SAT at both. P1 HELD: K = 4 SAT (4,262 variables, 9,776 clauses). P2 HELD: K = 6 SAT
+  (6,122 variables, 14,430 clauses). Both models pass every literal check: all cyclic equations including the
+  wraparound at tick 154, the odd driver, and least joint period 155 for every adjacent pair (5 pairs at K = 4, 7 at
+  K = 6). In both, A complements after 155, B closes at period 310, and E has even parity, as G.GPT263 predicts.
+  The full words V0 .. V_(K+1) are saved outside git (~/np-scratch-int/rule30-tc/witnesses.json, SHA-256 prefix
+  00b9bdba0c266fc4; rerunning rebuilds the same CNFs, and kissat is deterministic on them).
+  Reading (GC831's scope): GC828's D survives this finite periodic projection to K = 6 with an even selector; that is
+  a finite right fragment with two free boundary profiles, not an infinite tail, ring, all-L interface or finite seed.
+  The plan stops here; no larger run.
 """
 import os
 import subprocess
