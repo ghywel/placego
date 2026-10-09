@@ -16826,3 +16826,24 @@ If white left neighbours were left free, the guarded n-pair inverse tree would h
 **Unexpected counting guard.** Selecting one unrestricted ancestor from2^n does NOT give a2^-n finite-seed survival probability. The branch labels need not have equal right-cylinder weights: GC694 already gives1/4 versus3/4 at n1. Further, the final left target varies with each seed; a finite initial left radiusJ has final radiusJ+2n by GC662. Counting at most one ancestor for each target and each right row leaves a growing target domain, so it does not bound the original ensemble by a fixed target count. GC693's two finite predecessors have disjoint selected right cylinders and remain a valid counterexample to left-only universal branch loss. This control retains both sources of the missing global estimate.
 
 **Disposition.** The actual clock removes left inverse ambiguity conditional on BOTH the right initial row and final left target at any finite horizon. This sharpens the joint-history formulation, not Q1 or Q6: an estimate on selected finite-tail membership across the moving target domain remains missing. Independent reading requested. Stop ancestor-selection/counting reformulations without such a new estimate; next a different main-line input or concrete review request.
+
+
+## GC696 — The next fast arrival reads an ancestor at the selected mismatch endpoint (2026-10-09)
+
+**Q7 hand attempt.** Change from inverse-selection reformulations to GC652's missing joint selected-mismatch budget. Try to charge a delayed mismatch run to its following fast edge using one earlier ancestor. Let A,B,C,D,E be consecutive actual temporal profiles, with
+
+    C(t+1)=A(t) XOR(B(t) OR C(t)),
+    D(t+1)=B(t) XOR(C(t) OR D(t)),
+    E(t+1)=C(t) XOR(D(t) OR E(t)).
+
+Retain a common reset-path clock, no birth clamp, and nonzero driver D. Suppose its arrival S takes GC652's delayed branch. Let r be the first B,C mismatch distance from S, and m=S+r its actual endpoint. Then D is0 through m and first becomes1 at m+1; the next driver E is reached at N=m+2. Predicted the exact endpoint identity E(N)=A(m), rather than automatic fast recovery after a long run. No experiment, rooted-window extension or density assumption.
+
+Since B(m)!=C(m), their OR is1. Therefore C(m+1)=NOT A(m). Since D(m+1)=1, the next recurrence gives
+
+    E(N)=C(m+1) XOR1=A(m).
+
+Thus the following edge is fast precisely when A(m)=1. If A(m)=0, E is white at arrival. If E is a nonzero profile, GC652 then puts its wait on the delayed branch, of length at least2. If E is identically zero, it instead enters the separately accounted white-driver case; that cannot be silently counted as an ordinary delayed edge. The mismatch length r can be0, and common temporal wrap does not change the equality.
+
+**Independent and unexpected controls.** For the two possible mismatch pairs(B(m),C(m))=(0,1),(1,0), and either value of A(m), literal Rule30 gives C(m+1)=NOT A(m). With D(m+1)=1, its next successor output is A(m) for either earlier E bit. These four local substitutions check both complement cancellations independently of the endpoint derivation. The A(m)=0 case is retained: it is locally consistent with two delayed edges, but these local substitutions do not construct a rooted long-mismatch counterexample. Therefore the counterfactual automatic fast recovery for every LONG rooted mismatch is neither proved nor refuted by this identity alone.
+
+**Failure of the proposed charge.** The length r disappears from the following-fast predicate; what matters is the earlier ancestor at the selected endpoint. A compensation proof still needs a rooted inequality linking mismatch lengths to the occurrences of A(m)=1, including interval boundaries and white-driver cases. The recurrences above alone provide no such frequency or length-weighted bound, and a one-unit fast credit would not by itself pay an arbitrarily long r. The attempted automatic long-run charge stalls at this named input, rather than yielding a summable debt estimate. This refines the actual joint quantity to investigate without repeating marginal balance/gate proxies or fixed L224 descriptions. Independent hand reading requested; no new prize claim.

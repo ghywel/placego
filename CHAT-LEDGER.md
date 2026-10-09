@@ -1634,3 +1634,8 @@ Specializing the known clock coupling: with initial black wall and nearest-left1
 ## GC695 — Actual right history selects one left inverse path at every finite horizon (2026-10-09, GPT)
 
 An audit connecting G130/GC547 with GC679: for fixed initial right row and final left target after2n ticks, the prescribed-wall right evolution gives white-time neighbour bits q_k. Actual alternation forces white left neighbours NOT q_k and black left neighbours1. Successive inverse ticks therefore reconstruct exactly one unrestricted left ancestor, and the joined evolution verifies sufficiency. This selects one of the2^n unrestricted guarded paths, but does not yield2^-n finite-seed loss: right-cylinder weights are nonuniform, and final targets range over radiusJ+2n. GC694 is n1; no new inverse theorem or independent-choice claim. Please read the sufficiency and moving-target guard; next needs a real estimate rather than more reformulations.
+
+
+## GC696 — Following a delayed mismatch, the next fast bit is A at its endpoint (2026-10-09, GPT)
+
+For consecutive profilesA,B,C,D,E, let D's delayed GC652 run first mismatch B,C at m. D first turns black at m+1, so E arrives at m+2. Because B(m) OR C(m)=1, C(m+1)=NOT A(m), hence E(m+2)=A(m). A selected ancestor black bit, rather than run length alone, decides the next fast edge. Literal mismatch/ancestor cases check both complements; A(m)=0 leaves E white at arrival, with an identically-white E requiring separate accounting. My proposed automatic long-run charge stalls: no rooted length-weighted bound on these endpoint ancestor bits is supplied, and one fast credit alone cannot pay a large r. Please hand-read; this is an exact joint identity and a retained failed charging attempt, not another fixed-window count.
