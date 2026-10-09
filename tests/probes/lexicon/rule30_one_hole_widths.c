@@ -19,6 +19,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 static int K, P;
 static size_t NW;                 /* 64-bit words per bitset */
@@ -140,6 +141,48 @@ int main(int argc, char **argv) {
         printf("K %d P %d CAPPED nodes %lld frontier_mb %ld\n", K, P, (long long)n, peak_frontier_mb);
         return 0;
     }
+    /* minimal forbidden words up to length MFW (argument 5; 0 = skip): w is forbidden, w minus its first and w minus
+     * its last symbol are allowed. Allowed words are found by walking the automaton from the full set. */
+    int MFW = argc > 5 ? atoi(argv[5]) : 0;
+    if (MFW > 0 && MFW <= 24) {
+        uint8_t **al = malloc((MFW + 1) * sizeof(uint8_t *));
+        for (int L = 0; L <= MFW; L++) al[L] = calloc(1u << L, 1);
+        /* breadth-first over (word, node) */
+        typedef struct { uint32_t w; int64_t node; } item;
+        size_t cap = 1 << 20; item *cur = malloc(cap * sizeof(item)), *nxt = malloc(cap * sizeof(item));
+        size_t nc = 1, nn;
+        cur[0].w = 0; cur[0].node = 0; al[0][0] = 1;
+        for (int L = 1; L <= MFW; L++) {
+            nn = 0;
+            for (size_t i = 0; i < nc; i++) for (int bb = 0; bb < 2; bb++) {
+                int64_t t = trans[cur[i].node * 2 + bb];
+                if (t < 0) continue;
+                if (nn == cap) { cap *= 2; nxt = realloc(nxt, cap * sizeof(item)); cur = realloc(cur, cap * sizeof(item)); }
+                nxt[nn].w = (cur[i].w << 1) | bb; nxt[nn].node = t; nn++;
+                al[L][(cur[i].w << 1) | bb] = 1;
+            }
+            item *e = cur; cur = nxt; nxt = e; nc = nn;
+        }
+        int mcount[25] = {0};
+        printf("K %d P %d minimal forbidden words (length <= %d):", K, P, MFW);
+        for (int L = 1; L <= MFW; L++) {
+            int shown = 0;
+            for (uint32_t w = 0; w < (1u << L); w++) {
+                if (al[L][w]) continue;
+                uint32_t head = w & ((1u << (L - 1)) - 1), tail = w >> 1;   /* drop the first / the last symbol */
+                if (L == 1 || (al[L - 1][head] && al[L - 1][tail])) {
+                    if (shown < 60) { printf(" "); for (int i = L - 1; i >= 0; i--) putchar('0' + ((w >> i) & 1)); }
+                    shown++;
+                }
+            }
+            if (shown > 60) printf(" (+%d more of length %d)", shown - 60, L);
+            mcount[L] = shown;
+        }
+        printf("\n");
+        printf("K %d P %d minimal forbidden counts by length:", K, P);
+        for (int L = 1; L <= MFW; L++) printf(" %d:%d", L, mcount[L]);
+        printf("\n");
+    }
     /* exact word counts |L_n| for n = 1 .. 16 (each at most 2^n) */
     {
         uint64_t *c = calloc(n, 8), *d = calloc(n, 8);
@@ -157,6 +200,25 @@ int main(int argc, char **argv) {
             uint64_t *e = c; c = d; d = e;
         }
         printf("\n");
+        free(c); free(d);
+    }
+    /* certified upper bound (GC858): exact counts c_n to n = 60 in 128-bit integers; for a factorial language
+     * h <= log2(c_n)/n, so c_60^(1/60) bounds the true growth. Printed rounded up at the 6th decimal. */
+    {
+        unsigned __int128 *c = calloc(n, 16), *d = calloc(n, 16), tot = 0;
+        c[0] = 1;
+        for (int m = 1; m <= 60; m++) {
+            memset(d, 0, n * 16);
+            for (int64_t s2 = 0; s2 < n; s2++) if (c[s2]) for (int bb = 0; bb < 2; bb++) {
+                int64_t t = trans[s2 * 2 + bb];
+                if (t >= 0) d[t] += c[s2];
+            }
+            tot = 0;
+            for (int64_t s2 = 0; s2 < n; s2++) tot += d[s2];
+            unsigned __int128 *e = c; c = d; d = e;
+        }
+        long double lt = (long double)tot, bound = powl(lt, 1.0L / 60.0L);
+        printf("K %d P %d certified c_60 = %.0Lf, growth <= %.6Lf\n", K, P, lt, ceill(bound * 1e6L) / 1e6L);
         free(c); free(d);
     }
     /* growth by counting words: v_(m+1)[T] += v_m[S] along nonempty edges, rescaled */
