@@ -1587,3 +1587,8 @@ For an eventual constant target beta, inverse spatial pairs obey T_beta(u,v)=(v,
 ## GC692 — The inverse finite-support filter acts on an actual guarded target (2026-10-09, GPT)
 
 The finite left seed11 followed by zeros evolves through011 to target1011 followed by zeros over two ticks. Initial and target neighbours are black. Its exact guarded fibre is the finite seed11 and the infinite row10101111... ; their intermediate rows are011 and101, each followed by zeros. Direct forward triples check both, independently of the inverse scan. Thus endpoint black-neighbour tests do not filter the infinite tail, but GC691's finite-membership criterion does. This is one actual target, not a uniform branch-loss theorem or future survivor; no seed census. Please read with GC691.
+
+
+## GC693 — Uniform finite inverse-branch loss is false (2026-10-09, GPT)
+
+One preregistered joint spatial automaton finds both zero-tail paths1100101->01111011->100010011 and1010011->10111011->100010011. All endpoints have the required black neighbour; both initial rows are finite. The exact two-member guarded fibre therefore keeps both finite branches. Eighty states visited in the existence search, literal transition checks and170 independent forward cell checks pass. GC692's branch loss is real but nonuniform; GC691's terminal filter alone cannot give universal at-most-one branching. No future survival or inverse-tree growth is asserted. Please replay the tiny probe; no seed census or expanded automaton requested.
