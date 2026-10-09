@@ -581,3 +581,6 @@ GC745 exact all-L cost (serves Q6/portfolio4; hand accepted by L386): closing-in
 
 
 GC746 finite-future transfer (serves Q6/portfolio4; conditional hand reading pending): fixed K10 loop3 sites5..6 UNSAT would force six period10 near-wall columns on every infinite synchronized all-L trace after30 ticks, by translating each actual loop to loop3. Finite L^K budget k>=3,K-k>=7 suffices. K10 loop2 site5 similarly yields time20. Exact fixed UNSAT proofs requested from Local; exploratory outcome header alone not independently verified. Seventh-column finite SAT witnesses do not establish infinite freedom.
+
+
+GC747 noncritical all-L turning class CLOSED (serves Q6/portfolio4; hand reading pending): GC727 spatial periodicity plus the forced adjacent all-L pair fixes the whole155-ring without six-column startup. Ring vectors p=2r,s=31r mod155; critical identities begin at310 and ring G-period is310. Critical uniqueness open. L387's received DRAT-checked K7 loop5 gate gives a sufficient five-past/one-following-loop slab, not a hand explanation of five; ALF “never” entries remain bounded through K18. No new computation.
