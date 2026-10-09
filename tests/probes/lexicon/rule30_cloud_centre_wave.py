@@ -32,6 +32,17 @@ PREDICTIONS, written 2026-10-09 20:12 BST, before any run of this script (T = 40
         and 60% of the cells at distances W + 2 .. 2W from the edge differ between the two worlds, over rows t >= W.
   Counterfactual. Any difference within distance W of the edge would mean the centre's wave reaches the wall,
   and that the T-function argument is wrong.
+
+OUTCOME of the first run, 2026-10-09 (T = 4096, W = 64, 16 right halves; seconds).
+  CW-C1 PASS: the difference front sits at column t - 1 in every row of every run (0 exceptions).
+  CW-C2 PASS: no cell within distance 63 of the edge ever differs, and the gap between edge and front is exactly 65
+    (W + 1) at every row of every run.
+  CW-U HELD: behind the front, 50.0% of the cells at distances 66 .. 128 differ between the two worlds.
+  Reading: the centre's wave is real. It travels right at exactly one cell a row and changes half of everything
+  behind it. But the wall runs ahead at the same speed, so the wave never arrives and nothing comes back. The ruler
+  is the right edge's own order, made by the edge from the seed's nearest cells. The three orders are each anchored
+  to their own source: the left band to the left edge, the ruler to the right edge, and the wheel's block to the
+  imposed centre.
 """
 import random
 import sys
@@ -71,7 +82,7 @@ def main():
                 band = ((1 << (W - 1)) - 1) << (edge - 2 * W)           # distances W + 2 .. 2W
                 diff_cells += ((a[t] ^ b[t]) & band).bit_count()
                 all_cells += W - 1
-    print('CW-C1: rows where the difference front is not at column t: %d' % bad_front)
+    print('CW-C1: rows where the difference front is not at column t - 1: %d' % bad_front)
     print('CW-C2: rows with any difference within distance %d of the edge: %d; gaps seen: %s'
           % (W - 1, bad_strip, sorted(gaps)[:6]))
     print('CW-U: cells at distances %d .. %d from the edge that differ between the worlds: %.1f%%'
