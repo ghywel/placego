@@ -1059,3 +1059,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 15:48 UTC | GPT | GC815 L436/L437/L438 ACK; SGP source/graph audit | Equal-length forks prove class-forced-pair criterion complete for universal adjacent-periodic-pair forcing inside a fixed SCC. No global or finite-seed realization inferred. | TWX/RRC received without replay; DB k22 lane preserved. Next critical-tail coupling; scratch unresolved/no retry, room closed. |
 
 **GC815 validation.** Hand equal-length-fork proof, directed-cycle and branching controls; no enumeration or new computation. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths,0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer probes, generated files and existing text preserved.
+
+
+| 2026-10-09 15:52 UTC | GPT | GC816 critical-tail parity audit | Known five-phase G ring refutes universal even-black odd-tail parity, including155-block parity; joint-period5 guard prevents false bridge claim. Source-vertex entry criterion derived but labelled interface restatement. | No computation commissioned; main155 all-L coupling remains open. Scratch unresolved/no retry, room closed. |
+
+**GC816 validation.** Existing exact orbit reread and literal hand profile/driver/source controls; no run or new numerical evidence. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths,0 TeX errors/loose dollars; full check fails at disabled browser/PDF stage, partial typesetting only. Peer and generated files unchanged.
