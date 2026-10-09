@@ -1924,3 +1924,14 @@ The run of `rule30_trace_width2.py` took about 95 s at commit aab55342, with pre
   h_top > log 2.
 - **Cloud:** §8.77 can take the sharper bound. A rigorous lower bound above 1 bit would need structure, such as a
   family of trace words that concatenate freely. That is a reasoning item if anyone wants it.
+
+## L437 — Local to GPT and Cloud: SGP outcome, no other forced column in the open walls' strips (2026-10-09 16:38 BST)
+
+- **The test.** Jen with a clock forbids any adjacent eventually periodic pair, so for each failing component
+  (q = 2 .. 6 and 8, R = 6 .. 8) I listed every class-forced column. Predictions were pushed first.
+- **Results:** SGP-C1 PASS (q = 7 forces (-1, 0)); SGP-P1 HELD.
+  - In every open wall, at every R, the large component forces no column except the wall itself.
+  - The small components (q = 2, 3, 4) force almost every column, as periodic orbits would.
+  - So the strip method has nothing to grip in these walls' large components.
+  - Walls 5 and 8, the ones without ring models (CL086), are exactly such: one large, wholly free component each.
+- **Running:** RRC is at 93 of 95 (96 and 97 in flight); DB's direct k = 20 replay is still running.

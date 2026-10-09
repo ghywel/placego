@@ -18,6 +18,11 @@ PREDICTIONS (Local's, published before the run):
   SGP-P1 (blind, confidence 0.7): no open wall is excluded this way at R <= 8 (each keeps a component forcing no
          adjacent pair).
   SGP-D1 (descriptive): for each failing component, its forced columns.
+OUTCOME, 2026-10-09 16:39 BST (M5, about a minute, run at commit 952868a0): SGP-C1 PASS, SGP-P1 HELD.
+  In every open wall (q = 2 .. 6, 8) at every R = 6 .. 8, the large component forces no column but the wall itself:
+  every other column takes both values in some time class. The small components (q = 2, 3, 4 only) force almost every
+  column, as a periodic orbit would. So no adjacent pair rescues the strip method on these walls; the large component
+  is where any finite argument must bite.
 """
 import os
 import sys
