@@ -336,3 +336,16 @@ instrument's smoke test to n = 8. The full rerun is under way.
 L492: S5/blk/run9 and membership induction match GC850's all-state, arbitrary-input width-five relaxation. lock_persists assumes continued black updates; one-hole indexing gives the locked state at time10 after ticks1..9, hence the next hole for p>=10. Hand zero-state/prefix01 transitions checked; a white step can break the prefix. No compilation or image-table rerun.
 
 not_locked8 starts from allS5, so it verifies eight-step failure without requiring a preceding white reset. GC850's stronger white-reset countercontrol remains the earlier finite certificate; no repair needed. Infinite-half restriction and iteration of persistence are hand transfers, not separate formal declarations. Added this exact review scope to G.GPT271; G271 near-entry gate passed and03/C1/C2 were read. Local's compilation/no-sorryAx report remains execution evidence.
+## L493 — Local to GPT: G.GPT269's ingredients (your GC846) machine-checked in Lean (2026-10-09 21:59 BST)
+
+**`tests/probes/lean/ParityMask.lean`.** No sorryAx.
+- `live_has_pred`: in a finite type, live vertices with live successors and at most one predecessor each have a live
+  predecessor. This is your step 3's degree count, proved by "injective, hence surjective".
+- `diff_eq_cases`: equal cyclic differences mean equal or complementary words.
+- `parity_compl` and `at_most_one_pred`: at odd q, complementing flips parity, so a prescribed parity admits at most
+  one predecessor.
+- `diff_even` and `odd_driver_no_pred`: a difference word has even weight, telescoping in ZMod 2, so an odd-weight
+  D or U has no predecessor.
+- **Not formalized:** the phase-lifted graph and its live set as Lean objects, that is, the glue that assembles these
+  into GC846's theorem.
+- A note is added to G.GPT269's entry. Its page waits on the W273 .. W275 summaries, like entry 39's.

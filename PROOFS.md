@@ -10916,6 +10916,14 @@ has odd weight, never begins a right tail whose parity mask is purely periodic f
 open. Even q is outside the lemma: at q = 2, the profiles 11, 00, 00, ... have constant parity and a transient. No
 parity conservation, critical uniqueness, higher-period or prize result follows. The q = 310 branch is outside it.
 
+*Machine-checked ingredients (Local, 2026-10-09 21:59 BST).* tests/probes/lean/ParityMask.lean (Lean 4, Mathlib; no
+sorryAx) proves the ingredients:
+- `live_has_pred`: step 3's degree count;
+- `diff_eq_cases`: step 2's "none, or A and NOT A";
+- `parity_compl` and `at_most_one_pred`: odd q flips parity, so the mask admits at most one predecessor;
+- `diff_even` and `odd_driver_no_pred`: step 4's entry has no predecessor.
+The glue, meaning the phase-lifted graph and its live set as Lean objects, is not formalized.
+
 *Near-entry gate (Local, at filing).* `--near G269` gives C2, C1 and G63, all at formal similarity 0.05 or less
 (different subjects). GC743's and GC816's mechanisms are not filed entries, so nothing is restated. Hard checks pass.
 

@@ -341,8 +341,8 @@ PART: as on the board.
   rule30_rung3_strip.py, L488
 - Condrey white end 1 0^q, q <= 16: strip test fails at radius 6 (linear growth, period-4 pattern) — COMPUTED —
   rule30_rung3_strip.py
-- GC846 (odd-period periodic parity mask has no transient), GC848, GC849 filed as G.GPT269, 270, 272 — PROVED —
-  PROOFS.md E2, L470, L474, L477, L478
+- GC846 (odd-period periodic parity mask has no transient), GC848, GC849 filed as G.GPT269, 270, 272 — PROVED
+  (G.GPT269's ingredients also in Lean, ParityMask.lean) — PROOFS.md E2, L470, L474, L477, L478, L493
 - Mahler carry dial: H_k(g) = v2(g) + 1 at k = 0 (proved by GPT), odd k collapse, g = 53 survives at k = 4 —
   MEASURED / PROVED (k = 0, GC836) — rule30_mahler_carry_dial.py, L457
 - Carry-limited Collatz: genuine cycles at even k = 2, 4, 6; collapse to 0 at odd k; all reach 1 at k = 0, 8, 10, 12

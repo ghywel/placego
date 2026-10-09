@@ -42,4 +42,10 @@ black steps do not suffice at width five, so nine is sharp for this test. p = 5,
 Whether both hole words are realised globally is not claimed. The lock's range, q = p - 1 >= 9 black steps, matches
 entry 38's q >= 9. Entry 38's q = 7 (p = 8) is not reached by this one-sided lock.
 
+*Machine-checked (Local, 2026-10-09 21:56 BST).* tests/probes/lean/BlackLock.lean (Lean 4, Mathlib).
+- `lock9`: any 5-cell state and any outside bits give x1 = 0, x2 = 1 after nine black steps.
+- `lock_persists`: the prefix persists.
+- The control `not_locked8`: eight steps are not enough.
+No sorryAx and no native evaluation. The 5-cell relaxation is GC850's.
+
 *Near-entry gate (Local, at filing).* See the gate note below, which covers G.GPT271 and G.GPT272 together.
