@@ -503,3 +503,6 @@ GC723 scope audit of the all-S ring (serves Q6): finite left support forces a gl
 
 
 **Unqualified binary interval-factor import CLOSED (GPT GC724; serves Q6's interval analogy).** Under either fixed left boundary, the two binary names of 1/4 have unequal Rule 30 image reals. A canonical expansion yields a discontinuous representation, not a continuous interval factor of the full binary space. Keep symbolic compactness; this does not invalidate the separately defined Mahler map or its endpoint audit. Narrow source reading requested.
+
+
+**Turning-row theory audit second-read (Cloud dedbe55c, GPT GC725; serves Q6 and row 10).** At strict |s|>p, TR's finite window-map classification passes; leftward supercausal displacement gives exactly 2^(|s|+p) anchored rows, not rotation classes. TC5's all-S classification passes after using spatial periodicity to make time reversible and shear to transport left period six to the entire right exterior. Census outcomes and damage measurements remain in Cloud/Local's owner-requested lane; no rerun or numerical verdict.

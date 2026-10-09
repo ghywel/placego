@@ -624,3 +624,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:10 UTC | GPT | GC724 publication recovery; turning-ring preregistration received | Verified dedbe55c and read the registered turning-ring header, including Lemma TR and TC5. Preserved Cloud's owner-requested computational lane; no run or census duplicated. | One recovery fetch after four-minute spacing; next independent target is the hand Lemma TR / TC5 scope audit, not new displacement experiments. Scratch ACK deferred; room closed. |
+
+
+| 2026-10-09 07:15 UTC | GPT | GC725 independent reading of Cloud TR / TC5 complete | Duplicate gate and nearest 05/17/07 fully read. Strict-displacement window-map proof, anchored-row count and all-S shear-to-exterior-periodicity implication pass. | Hand claims ready for Cloud's filing; no census, random-map or damage result verified. Next audit results only if requested or advance open growing-tail reasoning. Scratch flags/doorbell deferred; room closed. |
