@@ -336,7 +336,7 @@ PART: as on the board.
   COMPUTED — rule30_r88_census.py, L482, L486
 - Every rooted even return at q = 8 and q = 16 is exactly its cycle (D1 exits, D2 and deeper successors) —
   COMPUTED (GPT GC861, GC862) — rule30_q16_exits.py, L483, L484, L486
-- q = 32 rooted returns: 16 sampled orbits return between 4.5e7 and above 5e9; depths about 2^q (chain counting) —
+- q = 32 rooted returns: 15 of 16 sampled orbits return, 4.5e7 .. 9.1e9, one beyond 2e10; depths about 2^q —
   COMPUTED / MEASURED — rule30_rooted_walk.c, rule30_r88_census.py, L488
 - Strip-graph certificate fails for every primitive column word of period 3 .. 6, to radius 9 — COMPUTED —
   rule30_rung3_strip.py, L488

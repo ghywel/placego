@@ -103,6 +103,10 @@ RWC OUTCOME, 2026-10-09 21:22 BST (M5, 4 processes, about 20 minutes, run at com
   - 0015, 0029, 002f and 0037 pass 5 x 10^9 with no return, so their returns lie deeper.
   - RWC extension (registered before running, descriptive, no prediction): those four rerun one at a time to 2 x 10^10
     (orbit ordinals 5, 10, 11 and 13), one low-priority process beside the Collatz run.
+  - Its outcome, 22:08 BST (run with the earlier binary, whose cap counts steps after the first integration, GC868):
+    0015 returns at 6,282,639,203; 002f at 7,378,406,992; 0029 at 9,096,462,703. 0037 has no return by 2 x 10^10.
+    By PROOFS.md entry 39 it must return, so its depth is above 2 x 10^10.
+  - So 15 of the first 16 q = 32 orbits return, between 4.5 x 10^7 and 9.1 x 10^9, and one lies beyond 2 x 10^10.
   - Return depths therefore grow from about 10^2 (q = 8) and 10^5 (q = 16) to about 10^9 (q = 32).
   - Why about 2^q (exploratory, scratch, after the runs; a counting reading, not a theorem about any one orbit).
     - The rooted step is a partial permutation on the about 4^q nonzero-driver pairs, so these split into cycles and
