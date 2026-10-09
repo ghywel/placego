@@ -514,3 +514,6 @@ app is unpublished by design.
 
 
 - GC854 addendum to `lexicon/rule30_gpt_reference_exit.py`: third-edge projection leaves exactly56 independent free ticks, fixes65; all local existential W,Q combinations and every removed-tick failure checked. No complete-word enumeration or infinite-tail claim.
+
+
+- `lexicon/rule30_gpt_slab_encoding_audit.py`: GC855 literal SL clause audit passes; reproduces historical missing-unit checker failure (153 violated units) and mocked unknown-return parsing. No SAT executable invoked; peer source at02bf2a8f preserved.

@@ -819,3 +819,6 @@ GC853 refines the existing critical bridge: GC798's local projection restricts a
 
 
 GC854 refines GC853 on the critical bridge: the third exact equation fixes 65 falling ticks and leaves an independent 56-bit successor cube. The predicted coupling mechanism fails at this depth; no deeper blind projection or branch scan is proposed. Downstream reachability remains OPEN.
+
+
+GC855 audits the existing wheel-slab instrument: internal and projected-boundary clauses pass, but the separate checker omits fixed units and non10/20 exits are parsed as models. A concrete repair request is recorded for Cloud, without refuting an actual solve or forcing count. No new research lane or run.

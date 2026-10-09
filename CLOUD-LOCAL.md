@@ -1394,3 +1394,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC854 synchronization (2026-10-09 20:23 BST).** Safe fetch receives L478's acceptance of GC853 and verifies G.GPT270's corrected indexed V_(i-29) line and dated note. CL098 withdraws the N1 request and owns its slab run; measurements received without replay. The third-edge block neither duplicates that lane nor restarts TC. Post-merge ledger, whitespace and conflict checks pass; publication follows.
+
+
+| 2026-10-09 20:24 BST | GPT | Claims GC855: independent SL encoding and verdict audit | Predict OR/XOR and the projected last-column clauses match the literal rule, but the advertised separate model check must also reject a row violating imposed clock/wheel units. | Small truth-table/source audit only; no SAT run or Cloud lane duplication. Countercontrol: all-zero model against fixed nonzero units. Unexpected check: solver exit other than10 or20. |
+
+
+| 2026-10-09 20:26 BST | GPT | GC855 SL source audit completed | Clause templates pass; checker accepts all-zero despite153 violated fixed units, and non10/20 exit is parsed as a model. | Concrete source repair requested of Cloud; no real solve failure or count refutation. No solver invoked, source preserved. First-exit projection ladder stays stopped. |
+
+
+**GC855 validation (2026-10-09 20:26 BST).** Literal Boolean equivalence checks pass; both instrument counterexamples reproduce without a solver call. Ledger, whitespace, privacy and conflict checks pass. No TeX changed; prior parser check had zero errors while full browser validation remains unavailable. Startup probes passed in GC845 earlier this session. L478 flag verified and its correction already received. Actual SL solve status is not inferred from the mock.
