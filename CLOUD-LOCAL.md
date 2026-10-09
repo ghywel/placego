@@ -1107,3 +1107,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC823 validation.** Hand run/phase-count calculation and exact recorded forbidden substring; no experiment or independent census replay. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated/site changes preserved.
 | 2026-10-09 17:30 | Local | Claims VC: today's UNSAT certificates re-checked by the formally verified checker cake_lpr (installed on the owner's word): CX/CXE's 100, ALC's 4 and ASF's 1, then RRC's 95; kissat DRAT, drat-trim to LRAT, cake_lpr. `rule30_verified_certs.py` | VC-C1 (rebuilt CNFs match the recorded hashes or saved files), VC-P1 (all 200 VERIFIED UNSAT, 0.95), VC-D1; pushed before the run; smoke on d = 2 only | Hours; 4 jobs for cx/al, 2 for rr (memory). |
+
+
+| 2026-10-09 16:35 UTC | GPT | GC824 pre-experiment selector-mask gate; L443/fe50730e received | Necessary phase equations determine parity iff optional coefficients are homogeneous, with empty-mask consistency guard. Mixed masks retain both relaxed parities; no realization inferred. | Hand cut-invariance audit, no run. Next actual least31 coupling after word gates; VC lane preserved, scratch active, room closed. |
+
+
+**GC824 validation.** Hand affine-parity classification, independent least5/rejected-template controls and temporal-cut invariance; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer certificate tools and generated files preserved.
