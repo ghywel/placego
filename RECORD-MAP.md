@@ -421,4 +421,6 @@ PART: as on the board.
 
 - Restoring successor coordinates leaves driver-row freedom; Boolean recurrence remains missing — PROVED (CL121) — GC895; W279.
 
-- One driver-bit change flips no child bits or the exact next-reset interval; sharp q-1 — PROOF-SKETCH — GC896; W280.
+- One driver-bit change flips no child bits or the exact next-reset interval; sharp q-1 — PROVED (CL122, L510) — GC896; W280.
+
+- Multiple-driver response intervals XOR; full-parent collision and union-size mean have explicit measure guards — PROOF-SKETCH — GC897; W281.

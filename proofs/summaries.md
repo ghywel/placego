@@ -3680,6 +3680,15 @@ Restoring the successor coordinate still leaves many interior comparison maps.
 
 Changing one driver bit flips either nothing or exactly the interval to the next common reset.
 
-**What it says.** With a remaining common black driver bit, cyclic children are unique. Their difference vanishes at the changed tick, becomes the complement of the original child bit just after it, and propagates to the next black reset. Direct q4 controls check both outcomes; a family attains Hamming response q-1. Second reading pending.
+**What it says.** With a remaining common black driver bit, cyclic children are unique. Their difference vanishes at the changed tick, becomes the complement of the original child bit just after it, and propagates to the next black reset. Direct q4 controls check both outcomes; a family attains Hamming response q-1. Cloud CL122 and Local L510 independently second-read it by hand; formal promotion remains separate.
 
 **Why it matters.** This is a consequence of the actual Boolean recurrence, not the relaxed permutation model. It rejects uniform local sensitivity of the cyclic inverse but supplies no rooted occurrence frequency or return-growth bound. Removing the last reset is explicitly excluded.
+
+
+## W281
+
+Several changed driver bits produce XORs of final-driver reset intervals, so their effects can cancel.
+
+**What it says.** The exact difference equation is a linear reset equation forced by delta times the complement of the original child. For fixed nonzero drivers and uniformly all parent words, response rank is the number of changed ticks, collision probability is2^-k, and expected response weight is half the union of intervals. A q4 example reduces two lengths totaling five to one changed bit. Second reading pending.
+
+**Why it matters.** Response lengths are not additive charges. Excluding the two terminal parents changes the collision rate, and neither averaging measure represents a rooted history without a new premise. No return-growth bound is supplied.

@@ -21053,3 +21053,41 @@ Thus the exact Hamming distance is0 if z(j)=1, and d if z(j)=0. It need not be b
 
 
 **W279 second-reading receipt (GPT, 2026-10-09 23:57 BST).** Cloud CL121 atefb7b0c3 verifies GC895's driver-row decomposition, two boundary slots, rotation transport/count and literal q4/q2 controls by hand. Comparison scope accepted; no actual endpoint permutation, return trajectory or GC896 review follows. Formal promotion remains separate.
+
+
+#### GC897 — Multiple driver changes combine by XOR; full-parent collision law (2026-10-10 00:01 BST)
+
+**Registered actual-recurrence hand continuation; second reading pending.** Record searched: (perturb/difference) + (driver/reset) ->87 hits in21 files. GC896 and G4's averaging-scope warning read. Predict modified-driver reset intervals superpose by XOR, not by adding their lengths. Independent q4 two-removal control, unexpected terminal-parent conditioning and zero-driver guard. No trajectory, random draw, census or rooted distribution claim. The Boolean/reset mechanism is credited; this is its finite-row response/calibration, not a growth invariant.
+
+**Exact response.** For fixed parent x and nonzero drivers y,y', let z,z' be their unique cyclic children. Work over F2, put delta=y+y' and d=z+z'. Expanding OR gives
+
+S d=(1+y')*d+delta*(1+z).
+
+The scalar products are pointwise. The linear operator L_(y')(v)=S v+(1+y')*v is invertible: a homogeneous solution resets to zero after any black tick of y' and remains zero everywhere by cyclic propagation. Therefore
+
+d=L_(y')^(-1)(delta*(1+z)).
+
+For each changed tick j, let I_j be the cyclic interval from j+1 through the first black tick of y' strictly after j, inclusive. Its length is1..q, allowing a full turn when j is the only black tick of y'. Direct propagation gives L_(y')(1_(I_j))=e_j. Hence
+
+d = XOR_(j:delta(j)=1) [(1+z(j))*1_(I_j)].
+
+All intervals use the FINAL driver y', not independently toggled intermediate drivers. Supports may overlap and cancel. Both drivers must be nonzero; no common black tick between them is required for this multiple-change identity. It recovers GC896 when there is just one toggle and a common remaining reset.
+
+**Exact complete-parent average, not a rooted law.** Fix distinct nonzero y,y', with k=weight(delta)>=1, and choose x uniformly from all2^q parent words. The map z->x=y+L_y(z) is affine bijective by reset, so z is uniform on all words. The forcing delta*(1+z) is uniform on the k-dimensional coordinate subspace supported at changed positions. Invertibility of L_(y') makes d uniform on the k-dimensional span of the interval vectors. Consequently
+
+P(z'=z)=2^(-k),   E weight(d)=|union_(delta(j)=1) I_j|/2.
+
+Each coordinate in that union is a nonzero linear functional of the k fair forcing bits, so is1 half the time; outside the union it is always0. The mean is half the union size, not half the sum of lengths. This is exact finite averaging over all parents; it does not assume Rule30 spatial trajectories select those parents uniformly.
+
+**Independent literal cancellation control.** At q4 use x=1111,y=1110,y'=1000. Their children z=1000 and z'=1010 satisfy all four equations directly, giving d=0010. Changed ticks1 and2 have final-driver intervals I_1={2,3,0}, I_2={3,0}. Both forcing bits1+z(j) equal1. Their indicators1011 and1001 XOR to0010: the sum of lengths is5 but the response weight is1. Over the complete parent domain the four equally likely response words are0000,1011,1001,0010. Their mean weight is3/2, half the three-position union, rather than5/2; the collision probability is1/4. This four-word algebraic control is not a random experiment or a trajectory enumeration.
+
+**Unexpected live-domain conditioning guard.** Complete-parent averaging includes x=y (original child0) and x=y' (new child0). Neither can be a collision when y!=y': a common zero child would force both parents to equal their drivers. Removing these two distinct terminal parents leaves the same2^(q-k) collision parents among2^q-2 choices, so the simultaneous-nonterminal collision rate is
+
+2^(q-k)/(2^q-2),
+
+not2^(-k). In the q4 control it is4/14=2/7, not1/4. This does not compute a conditional mean weight or justify any rooted sampling law. If either driver is zero, L may be singular and child uniqueness fails; the formulas require the stated nonzero-driver hypotheses.
+
+**Disposition.** Actual response intervals can cancel heavily, and full-parent probabilities are structural calibration rather than evidence of randomness or lower growth. This prevents using independent one-bit response lengths as additive charges. A Q7 argument needs retained backgrounds/occurrences or a cancellation-resistant quantity along the actual rooted history. No sensitivity census or new averaging-based growth shortcut is proposed. Next requested review or a rooted coupling obstruction; scratch deferred and room closed.
+
+
+**W280 second-reading receipt (GPT, 2026-10-10 00:03 BST).** Cloud CL122 at8a63a8ae and Local L510 at89e95f43 independently verify GC896's common-reset interval, changed-tick gate, q4 controls, sharp family, singular last-reset guard and affine form by hand. The actual cross-driver lemma is second-read; no rooted reachability/return bound or GC897 review follows. Formal promotion remains separate.
