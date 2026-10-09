@@ -17215,3 +17215,34 @@ Consequently the required partner is E=1 xor H0 xor (A AND P). GC715's partner-d
 **Unexpected endpoint check.** r_t is needed through t=d-1, when it is the wall, whereas s_t is needed only through t=d-2. At t=d-1 the latter would be site 1 outside the autonomous left half; the formula does not use that value or update F onto the clamped wall. The guard equation still updates the actual site -1 and is valid. Farther left bits cannot affect these diagonal values before the tested endpoint.
 
 Next input: control H0 along actual late zero-selected renewal prefixes, possibly using the existing diagonal structure, without substituting a marginal density or an iid law. Difference-only counting and larger prefix tables remain stopped. Independent hand reading requested; no general mixed-tail exclusion or prize result.
+
+
+### L373 review receipt (2026-10-09, GPT; verified c0ae7b9d)
+
+Local accepted and corrected GC710's closing-inclusive minimum; independent n=4 replay fails at tick 24 and the residue table agrees. GC709 was checked by hand and on 325,232 samples from 3000 random S/L words. GC711-GC713 and GC715 were hand-read; GC714/GC716 were independently replayed with all controls passing. These are Local's checks, not a GPT rerun or global extension. GC709-GC716 are second-read within their scopes; GC717 still awaits reading. Added the requested pipe COMMAND to GPT's guard instrument.
+
+## GC718 — The common marker prefix transports the next guard from depth eight (2026-10-09, GPT)
+
+**Hand simplification of GC717, not a global guard obstruction.** At any synchronized marker time B, both lifts begin 110100. With the alternating wall through B+6, the six-fold inverse fixes local left depths 1 through 6 at B to 011010. Write A=c_7(B), E=c_8(B), retaining arbitrary farther left cells. Predict the seven-step nearest-left guard is independent of A and is the complement of E. Counterfactual: this shallow transfer alone forces failure of a finite initial zero tail. The depth-eight bit at time B need not be its time-zero bit, so that inference fails. No computation.
+
+Apply GC717's moving-diagonal variables with local d=7, starting at time B. The two ahead profiles, computed from the fixed six-bit prefix and wall, are:
+
+| Local time t | r_t | s_t |
+| --- | ---: | ---: |
+| 0 | 0 | 1 |
+| 1 | 1 | 0 |
+| 2 | 0 | 1 |
+| 3 | 1 | 0 |
+| 4 | 0 | 1 |
+| 5 | 1 | 1 |
+| 6 | 0 | unused |
+
+Integrating F_(t+1)=F_t xor (r_t OR s_t) for t<=5 and G_(t+1)=G_t xor (F_t OR r_t) for t<=6 gives G_7=E xor 1 for either F_0=A. Therefore
+
+    c_1(B+7) = 1 xor c_8(B).
+
+The actual next black-time guard requires c_1(B+7)=1, so it is exactly the local marker condition c_8(B)=0. The branch at time B+6 separately uses c_7(B): 0 selects S, 1 selects L. Thus every infinite synchronized renewal trace has local marker left prefix 01101000 or 01101010. These are necessary prefixes, not sufficient right-realizable return states.
+
+**Unexpected pivot cancellation.** The seven r samples contain four whites, so their common-white parity is zero; the required local partner is indeed independent of the local branch bit. This does not contradict GC714's choice-dependent *time-zero* partners at depth B+8: transporting an initially distant bit to the current marker passes through a nonconstant earlier diagonal. The current marker partner is always white, while its time-zero ancestor may be black. Farther local depth-nine cells cannot enter c_1(B+7). A trace stopped at the short closing tick B+6 lacks this later guard and is not assigned the depth-eight condition.
+
+This replaces a long absolute parity calculation by a local depth-eight test at each marker, but controls neither that bit's ancestry nor its evolution between markers. A scalable obstruction must show a finite initial zero tail cannot revisit the two necessary marker prefixes forever. Do not mistake the two visible prefixes for a finite-state closed return map: deeper bits remain active and grow into the tested window. Independent hand reading requested; no census or prize claim.

@@ -482,3 +482,6 @@ GC716 control for GC714 (serves Q6): direct autonomous-left replay with zero tai
 
 
 GC717 follow-up to mixed zero-tail guard (serves Q6): two ahead diagonals determine the absolute next guard E xor H0 xor (A AND P), so a zero tail passes iff H0=1. Exact hand recurrence validated on the same four stored prefixes. Actual late-prefix control of H0 remains OPEN; no enlarged guard tables.
+
+
+GC718 follow-up to mixed guard (serves Q6): at each infinite renewal marker the required local left prefix is 01101000 or 01101010, because c_1(B+7)=1 xor c_8(B). The two prefixes do not form a closed finite-state map; deeper ancestry remains active. GC709-GC716 scoped results are second-read by Local L373; GC717/GC718 remain pending.

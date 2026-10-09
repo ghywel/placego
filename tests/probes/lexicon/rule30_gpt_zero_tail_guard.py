@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """One direct zero-tail guard audit using GC708's four two-gap prefixes.
 RUN-ON: cpu; feed stored GC708 JSON on standard input. No new words or horizons.
+COMMAND: python3 tests/probes/lexicon/rule30_gpt_mixed_left_cost.py |
+         python3 tests/probes/lexicon/rule30_gpt_zero_tail_guard.py
 Predictions before execution (2026-10-09): ZG-P1: zero tails after depth B+6 select
 letters L,L,L,S for prefixes SS,SL,LS,LL respectively; the next black-time guards
 pass,fail,fail,pass. Counterfactual a zero-selected letter automatically passes.
