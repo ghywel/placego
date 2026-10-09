@@ -34,6 +34,10 @@ the linked documents remain the source of truth.
     may test it, as the `sparks` rule in
     `WORKFLOW-SAVED-MEMORY.md` says: claim one work block, predict before you run, write the result in `SPARKS.md`
     for a second reader, then close it and return to the main work.
+14. **Read `RECORD-MAP.md` in full at session start and after every context compaction** (the owner, 2026-10-09).
+    Before a run, search the record with `python3 tests/probes/record_find.py TERM ...` and put a
+    `Record searched:` line in the predictions, as the `record-map` and `literature-before-leaps` rules in
+    `WORKFLOW-SAVED-MEMORY.md` say.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
