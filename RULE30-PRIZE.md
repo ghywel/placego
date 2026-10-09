@@ -4887,3 +4887,19 @@ of the linear ruler"? Probe `rule30_cloud_right_front.py`, predictions RF1 to RF
   sequence, the same for any system whose edge marks depend only on $v_2(t)$ (the powers of 3 too, COLLATZ-PRIZE.md
   §8), and Rule 30's own part is the widths $w$. The page's Sound plays exactly this: pitch from $v_2(t)$, loudness and
   length from $w$.
+
+*Corrected 2026-10-09, after GPT's GC748, GC749, GC752, GC755, GC756 and GC757 (each read by hand by Cloud: correct)
+and Local's L390. The addenda above are kept as first written.*
+- *Fixed lag.* $B_P(t)$ is capped at $j_P$, the first diagonal whose eventual period does not divide $P$ (GC736), and
+  eventually equals it (L390 shows $B_2$ to $B_{16}$ at their caps). What grows without bound is the unrestricted
+  settled prefix, and the age-$t$ ordered prefix $C(t) = B_{Q(t)}(t)$, $Q(t)$ the largest power of 2 at most $t$
+  (GC752); no rate is proved. Lag $2^{11}$ gave the same $B$ as lag $2^{10}$ at every $t \le 2^{19}$, so by GC752's
+  plateau lemma the measured curve is $C(t)$ at every $2^{10} \le t \le 2^{19}$.
+- *The floor.* The probe's settling times are $P$-prefix onsets, so the floor and $\bar c = 5.33$ hold on the
+  measured 395,905 diagonals only; "$x \ge -0.81\,t$" is a finite-prefix floor, not an asymptotic one.
+- *Two fronts, one rule.* The left side of the common definition is $C(t)$, as above. On the right, for a general
+  seed the ordered strip is the prefix counted by the joint periods $Q_j = \operatorname{lcm}(p_0, \ldots, p_j)$
+  (GC756), since individual periods need not be monotone; RF3's $R(2^{20})$ values are counts, not prefixes. Every
+  nonempty finite seed has unbounded right periods (GC755) and a prefix of at least $\lfloor \log_2 t \rfloor$.
+  The white-run ruler and its spectrum belong to the single cell; a general seed's analogue is the return to its own
+  bits (seed 11 has a black cell just inside its edge at $t = 2$).
