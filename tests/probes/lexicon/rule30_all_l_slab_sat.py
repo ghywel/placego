@@ -20,7 +20,21 @@ PREDICTIONS (Local's, published before the run):
   ALX-Q6 (blind, confidence 0.8): word LLLLL, loop 3, site 7: SAT (ALS's width saturates at exactly 6).
   ALX-C1 (control): every SAT witness replays its targets and really differs from the ring at the named sites.
 Counterfactual: Q1 SAT would refute GC744; Q4 or Q5 SAT would show the six-column slab is not forced by two loops.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-09 10:12 BST (M5, 0.2 s, run at commit b9c3cab1): ALX-C1 PASS (every witness replays and differs).
+  ALX-Q1 HELD: UNSAT, so GPT's GC744 four columns are forced over the whole cone (word LL, loop 0, sites 2 .. 4).
+  ALX-Q2 HELD and ALX-Q3 HELD: site 5 can differ at loops 0 and 1 (witness 0101100101 against the ring's 0101100000).
+  ALX-Q4 REFUTED: word LLLL, loop 2, sites 5 .. 6 is SAT (site 5 0101100101, site 6 1100100100).
+  ALX-Q5 REFUTED: word LLLLL, loop 3, sites 5 .. 6 is SAT (site 6 1100101111 against the ring's 1100001111).
+  ALX-Q6 HELD: site 7 can differ at loop 3.
+  So ALS's six columns after two loops (L381) do not hold for short words: the samples never hit these rows.
+  Exploratory follow-up, the same query at every loop of longer words (no predictions; site 5 / sites 5..6 / site 7):
+    K = 6:  every loop allows a deviation at 5 and at 5..6.
+    K = 8:  site 5 forced from loop 4, sites 5..6 from loop 5.
+    K = 10 and K = 12: site 5 forced from loop 2, sites 5..6 from loop 3, through the last loop.
+    K = 14: the same (site 5 from loop 2, sites 5..6 from loop 3), and site 7 can differ at every loop.
+  Reading: an early deviation at sites 5 and 6 is possible only in a row whose L run ends soon. With at least about
+  eight more L's to come, a loop from the third on has the ring's six columns, and the seventh is never forced.
+  Exact for each finite word; not yet a statement for infinite all-L.
 """
 import os
 import sys
