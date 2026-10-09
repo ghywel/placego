@@ -530,3 +530,6 @@ GC728 critical finite-defect guard (serves Q6; hand reading pending): relative t
 
 
 GC729 updates the critical finite-defect guard (serves Q6): a second paired parity requires p divisible by 336. The next site has an even 168-tick white count, so the same doubling shortcut stalls; no exclusion at multiples of 336 or infinite-defect conclusion. Hand reading pending.
+
+
+GC730 critical-front shortcut stopped (serves Q6): the leftmost-difference speed cap of one site per tick is false even for a two-bit finite defect of the known ring (1010 to 1100 at sites 44..47). GC507 already supplies the general unbounded-jump guard. No restricted critical all-S cap proved. Cloud's Proposition 23 ruler-sequence hand argument separately passes the requested independent audit; exploratory computation not replayed.
