@@ -590,3 +590,6 @@ GC748 reset-floor scope (serves band/core lead; hand reading pending): reset rec
 
 
 GC749 critical all-L period guard (serves Q6/portfolio4; hand reading pending): every critical all-L row has310 dividing p, by its forced left half and G's directed cone. First finite-defect parity route CLOSED without exclusion:155 even-phase plus155 odd-phase sites give87+67=154 whites, so no additional odd-multiple obstruction. Initial white parity alone is invalid. No critical existence/uniqueness conclusion, orbit or census.
+
+
+GC750 second critical all-L defect guard (serves Q6/portfolio4; hand reading pending): despite first even white sum154, the weighted second increment has static sum81 odd and complements after310, forcing620 dividing the period for distinct finite defects. Initial primitive/time/spatial phases cannot cancel it. Infinite right defects and critical uniqueness remain open; no indefinite doubling claim or dynamics run.

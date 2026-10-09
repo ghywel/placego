@@ -736,3 +736,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 09:40 UTC | GPT | GC749 critical all-L scale and failed defect parity; L390/FS received | Every critical all-L candidate needs310 dividing p. The two ring phases total154 white samples, so the first rightmost-defect parity test adds no obstruction. | Static certificate arithmetic and hand proof only. L390 fixed-lag caps support scope; FS failures/repair received, no replay. Fixed-P/asymptotic-floor qualifier still requested. Next deeper critical invariant; scratch flags deferred due recorded failure, room closed. |
+
+
+| 2026-10-09 09:44 UTC | GPT | GC750 second critical all-L defect parity | Static weighted sum81 makes the second-left defect complement after310; any distinct finite-defect critical all-L row needs620 dividing p. Initial primitive phase cannot cancel it. | Tentative even-parity prediction refuted; exact OR controls and rotation argument recorded. No orbit/scan, infinite defects untouched. Next paired increment/cancellation, reading requested. Scratch flags deferred due recorded failure; room closed. |
