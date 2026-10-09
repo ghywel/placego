@@ -23,9 +23,50 @@ PREDICTIONS (Local's, published before the run):
   QX-P1 (blind, confidence 0.5): at 18826, 26356, 34854 and 40804, every exit target has out-degree 0, so all four
         components are exactly their sixteen-cycles.
   QX-D1 (descriptive): the out-degree of every exit target.
+OUTCOME, 2026-10-09 20:56 BST (M5, 13 s, 44 MB, run at commit 6b1b9e23): QX-C1 PASS, QX-C2 PASS, QX-P1 REFUTED.
+  - Every sixteen-cycle is in its H_m, and every D1 exit is a legal edge under PR198-D2's evaluators.
+  - Exit phases and exit-target out-degrees:
+    - 18826: phases 1, 9; out-degrees 1, 1;
+    - 26356: phases 2, 7, 10, 15; all 0;
+    - 34854: phases 1, 4, 5, 9, 12, 13; out-degrees 1, 0, 0, 1, 0, 0;
+    - 40804: phases 0, 1, 7, 8, 9, 15; out-degrees 0, 2, 0, 0, 2, 0;
+    - 49732: no exits;
+    - 52808: phases 1, 5, 9, 13; all 0. That is PR198-D2's result in the class representative's phases.
+  - Closed, each component exactly its directed sixteen-cycle (swap displacement 8; q = 16 only): r = 26,356, 49,732
+    and 52,808.
+  - Open: 18,826, 34,854 and 40,804. Each has an exit target with a successor, which is a two-edge prefix only (no
+    return or persistence shown).
+DEEPER (registered before running; COMMAND: ... rule30_q16_exits.py deep [DEPTH=300]): from every exit target with a
+  successor (18826, 34854 and 40804), follow every successor path in H_m with PR198-D2's step. From (X, Y) at phase p
+  the tails are TX, TY; K = 1 + V(TX 0) + V(TY 0); the candidates are (b, K + b), legal when F = 1 on both new windows.
+  Exhaustive breadth-first to DEPTH steps. An exit flips a bit that stays in the window for m steps, so no exit path
+  can rejoin the cycle before step m (m >= 9,412). A path that dies within DEPTH therefore closes nothing beyond itself.
+  If every path from every exit dies, the component is exactly its sixteen-cycle. A survivor at DEPTH is a longer
+  prefix only.
+  QX2-C1 (control): at step 1 the out-degrees equal QX's (1, 1, 2 at phase 1, and their mirrors).
+  QX2-P1 (blind, confidence 0.5): for at least two of the three, every exit path dies within 300 steps.
+  QX2-D1 (descriptive): the number of live paths at each depth, and the depth of death or survival.
+  Instrument repair (before any result): the first attempt stopped at once on PR198's strip-evaluator assertion. That
+  evaluator assumes the window differs from the baseline only in its last 3 positions, and an exit path deviates in
+  more. The search now uses PR198's packed evaluator (both paddings must agree) without its memo, which would keep every
+  10^4-bit window. The strip evaluator stays as a spot check, widened to S = deviations + 3, at depths <= 5 and every
+  50th depth. No result was seen before the repair.
+QX2 OUTCOME, 2026-10-09 20:59 BST (M5, 19 s, 41 MB, run at commit e2104580): QX2-C1 PASS, QX2-P1 HELD, for all three.
+  - Live exit paths by depth:
+    - r = 18,826: 1, 1, 1, 1, 0 (dead at depth 4);
+    - r = 34,854: 3, 1, 1, 1, 0 (dead at depth 4);
+    - r = 40,804: 3, 2, 2, 0 (dead at depth 3).
+  - The strip spot checks agree with the packed evaluator.
+  - Every exit path from these components dies within four steps, so none can rejoin. Each component is exactly its
+    directed sixteen-cycle (swap displacement 8; q = 16 only).
+  - With QX, all six rooted even q = 16 returns up to depth 60,000 are closed: 18826, 26356, 34854, 40804, 49732 and
+    52808. With RC88, so is every rooted q = 8 even return (r = 88).
+  - Finite evidence about these components, not a rigidity theorem. Walks alive past 60,000 and the odd returns
+    (6343, 29167, 44841; 371 at q = 8) are not classified.
 """
 import sys
 
+_ARGS = sys.argv[1:]
 sys.argv = sys.argv[:1]
 import rule30_pr196_d1 as d1          # noqa: E402
 import rule30_pr198_d2 as d2          # noqa: E402
@@ -90,5 +131,73 @@ def main():
     print('COMPLETE')
 
 
+def FVp(bits, m):
+    res = set()
+    for pad in (0, 1):
+        p = d2.eval_packed(list(bits) + [pad], [2 * m - 2, 2 * m - 1])
+        res.add((p[2 * m - 1], p[2 * m - 2]))
+    assert len(res) == 1, 'padding changed F or V'
+    return res.pop()
+
+
+def FVs(bits, m, tab, phase, S):
+    res = set()
+    for pad in (0, 1):
+        st = d2.eval_strip(tab, phase, list(bits) + [pad], [2 * m - 2, 2 * m - 1], S=S)
+        res.add((st[2 * m - 1], st[2 * m - 2]))
+    assert len(res) == 1
+    return res.pop()
+
+
+def deep(DEPTH=300):
+    out, spot_ok = {}, True
+    for r in (18826, 34854, 40804):
+        cls = RETS[r]
+        c5, exit_phases, lok, degs = analyse(r, cls)
+        m = (r - 2) // 2
+        w = [int(b) for b in cls]
+        win = lambda t: [w[(t + i) % Q] for i in range(m)]
+        TAB = d2.base_table(w, 2 * m - 1)
+        frontier = []
+        for t in exit_phases:
+            if t >= H:
+                continue                                   # phase t + 8 mirrors t
+            X, Y = win(t), win(t + H)
+            bx, by = w[(t + m) % Q], w[(t + H + m) % Q]
+            frontier.append((X[1:] + [1 - bx], Y[1:] + [1 - by], t + 1))
+        step1, sizes, depth = None, [len(frontier)], 0
+        while frontier and depth < DEPTH:
+            nxt = []
+            S = depth + 4
+            for X, Y, ph in frontier:
+                TX, TY = X[1:], Y[1:]
+                _, vX0 = FVp(TX + [0], m)
+                _, vY0 = FVp(TY + [0], m)
+                K = 1 ^ vX0 ^ vY0
+                for b in (0, 1):
+                    Xn, Yn = TX + [b], TY + [K ^ b]
+                    fx, vx = FVp(Xn, m)
+                    fy, vy = FVp(Yn, m)
+                    if depth <= 5 or depth % 50 == 0:
+                        spot_ok &= FVs(Xn, m, TAB, ph + 1, S) == (fx, vx) and FVs(Yn, m, TAB, ph + H + 1, S) == (fy, vy)
+                    if fx == 1 and fy == 1 and vx ^ vy == 1:
+                        nxt.append((Xn, Yn, ph + 1))
+            if depth == 0:
+                step1 = len(nxt)
+            frontier = nxt
+            depth += 1
+            sizes.append(len(frontier))
+        out[r] = (step1, sizes, bool(frontier), depth)
+        print('r = %5d: exit targets %d; live paths by depth %s%s; %s at depth %d'
+              % (r, sizes[0], sizes[:12], ' ...' if len(sizes) > 12 else '', 'SURVIVES' if frontier else 'all dead', depth),
+              flush=True)
+    print('strip spot checks agree with the packed evaluator:', 'PASS' if spot_ok else 'FAIL')
+    c1 = out[18826][0] == 1 and out[34854][0] == 1 and out[40804][0] == 2
+    print('QX2-C1', 'PASS' if c1 else 'FAIL (step-1 counts %s)' % {r: v[0] for r, v in out.items()})
+    dead = [r for r, v in out.items() if not v[2]]
+    print('QX2-P1', 'HELD' if len(dead) >= 2 else 'REFUTED', '(all paths dead: %s)' % dead)
+    print('COMPLETE')
+
+
 if __name__ == '__main__':
-    main()
+    deep(int(_ARGS[1]) if len(_ARGS) > 1 else 300) if _ARGS[:1] == ['deep'] else main()
