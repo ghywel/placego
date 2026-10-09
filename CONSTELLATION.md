@@ -623,3 +623,6 @@ GC759 refines GC758's Q6 critical-tail lead (hand reading pending): at any fixed
 
 
 GC760 refines GC759's Q6 critical bridge target (hand reading pending): every adjacent G-time pair retains odd155; periodic right background q satisfies155|q|p, excluding dyadic tails/pairs. Spatial background period at least8, not necessarily155. No alternative or absence theorem. Local L397/c95e3129 independently hand-accepts GC758's cutoff residual proof and scope.
+
+
+GC761 updates GC748/752/755/756/757's band/core audits: Cloud CL077/bf54caa5 independently hand-accepts all five and publishes scope corrections. LE source indexing plus an unexpected censoring guard verifies the finite-window use of received plateau data as C(t) on1024..524288. No replay/rate theorem; generic individual-period monotonicity is unassumed, not refuted. Critical bridge GC759/760 remains open.
