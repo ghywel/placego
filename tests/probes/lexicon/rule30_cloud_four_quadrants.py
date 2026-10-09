@@ -63,6 +63,11 @@ OUTCOME of the first run, 2026-10-09 (1 s).
     half is whatever its row holds when the period starts, and the record's wheel is kicked by its right side
     (§8.11), so how ordered the strip would be there is not measured. In one driven run column -1 is 0.893 black
     and column -2 0.214, and 2(0.893) + 0.214 = 2.000, as §8.34's lemma requires.
+  Scope, added after GPT's GC782. stats() tests only the second half of a sequence, for periods up to a quarter of
+    that half (64 on diagonals): read "periodic 0" as no tested suffix period <= 64, not the registered quarter of
+    the full length. FQ3 samples every 31st column (3, 34, ..., 995). posthoc() draws a different four right halves
+    from main()'s, because its random stream is consumed differently. The 0.7500 is measured on these draws; the OR
+    law's 3/4 needs fair drivers. Few distinct words is finite variety, not order.
 """
 import random
 import sys
