@@ -388,3 +388,5 @@ PART: as on the board.
   PROOF-SKETCH / COMPUTED (route awaiting a second reader) — rule30_word_jen_census.py, L499
 
 - White-end q>=10 independently replayed at width8; uniform phase/actual-path transfer verified — PROVED (additional audit) — GC880; entry40.
+- Strip test (C) to radius 11: every open Condrey case (white q = 2 .. 9, black q = 2 .. 6, 8) keeps one non-forcing
+  component — COMPUTED — rule30_strip_c.c, rule30_rung3_strip.py (SGC)
