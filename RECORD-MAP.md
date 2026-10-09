@@ -322,7 +322,7 @@ PART: as on the board.
 - Diagonal bias: alternation of the sign of rho_k fails at k = 17; rho_22 = -8408217689/2^42 — COMPUTED —
   rule30_diagonal_bias.py, L418, L473
 - One-hole walls 0 1^(p-1): width 5 closes every odd p >= 11; nine black steps lock the pair 01 (every p >= 10) —
-  COMPUTED / PROVED (G.GPT271) — rule30_one_hole_widths.py, GC850, L473, L476
+  COMPUTED / PROVED (G.GPT271; Lean BlackLock.lean) — rule30_one_hole_widths.py, GC850, L473, L476
 - One-hole p = 5, 7, 9: certified true growth per hole <= 1.543759, 1.652210, 1.742260; whether the entropy is zero
   is OPEN — COMPUTED — rule30_one_hole_widths.{py,c}, L481, GC858, GC859
 - One-hole exact relaxed languages: p = 9 (widths 8 .. 12) x^4 - 2x^3 + x - 1; p = 7 (widths 7 .. 9) x^5 - x^4 -
