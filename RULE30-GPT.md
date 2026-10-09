@@ -19871,3 +19871,44 @@ The next profile has X0=0,X1=1,X3=1,X4=0,X6=0; X2=0 as well. Indeed if X2=1, X0=
 **Unexpected endpoint/control.** U9,W9 and later digits were not fixed by the displayed Delta D window; inventing a zero closing boundary there would turn this audit into a different problem. That shortcut is rejected explicitly. The argument uses actual coupled equations rather than assuming each succeeding profile inherits D's word or period. Its forced prefixes are necessary, not a realization and not a proof that the sibling word is allowed.
 
 **Disposition and receipts.** The hand upgrade for0001101011 is NOT PROVED here; retain L426's measured status and GC827's split evidence. Forced-neighbour prefixes are available for a future algebraic audit; no broader scan is requested. L463/9263243f independently accepts GC839-GC841 and files GC841 as G267. Its additional exhaustive ring14..20 result is received without replay; no cycle carrying D was reported, with the disclosed failed bounded-walk implementation retained. This is a bounded computational exclusion, not a proof for all rings or an eventual background after a bridge. The main infinite-tail question remains open.
+
+
+## GC843 — Completing the sibling-word audit:0001101011 is forbidden by a hand front contradiction (2026-10-09)
+
+**Bounded continuation of GC842, no experiment.** Its neighbour prefixes alone did not finish the contradiction. Retain that failure and add the final two black ticks to GC840's normalized front calculation. Prediction by hand: they force an impossible normalized prefix at tick4. Counterfactual: an arbitrary choice of farther right bits repairs that prefix. The contradiction below leaves those bits free throughout. No closing boundary, solver, catalogue expansion or original-prize claim.
+
+**Normalize and anchor the short prefix.** Suppose D has0001101011 at0..9. GC838 gives initial first black J5 or6, after zeroing the negative half-row without changing the origin trace. J6 fails D4=1 because the origin there is z2(4)=0. Hence J5. Use GC840's exact normalized recursion
+
+    z_(k+2)(n+1)=z_k(n) xor(z_(k+1)(n) OR z_(k+2)(n)).
+
+D4 is z3(4), so the alternating phase s is1. In particular z3(2)=1,z3(3)=0,z3(4)=1, and z4(4)=1. GC842's actual-neighbour deductions W4=1 and X4=0 translate, at this same front, to z5(4)=1 and z6(4)=0. Put d=z7(4). Then z5(5)=z6(5)=0 and z7(5)=1-d, hence z7(6)=1-d. D6=z7(6)=1 therefore forces d0. The normalized row at4 begins11011100.
+
+**The final two black ticks force the next two bits to1.** Put p=z8(4), q=z9(4), r=z10(4), h=z11(4), all still free. Two substitutions give at tick6
+
+    z7=1, z8=1,
+    z9=NOT(p OR q),
+    z10=(1-p)*(q OR r),
+    z11=(p OR q) xor((p xor(q OR r)) OR(q xor(r OR h))).
+
+Consequently z9(7)=0. Denote z10(7),z11(7),z12(7),z13(7) by b,c,f,g. D8=z11(8)=b OR c=1. D9=z13(9)=D8 xor(z12(8) OR z13(8))=1 forces both intervening digits0, hence
+
+    b=c OR f, c=f OR g.
+
+Together with b OR c=1 these imply b=c=1. Since z10(7)=1 xor(z9(6) OR z10(6)), both z9(6) and z10(6) must0. The displayed formulas force p1: p0 would force q1 from z9=0 and then z10=1. With p1, z11(7)=z11(6)=1. Its formula becomes
+
+    1 xor(NOT(q OR r) OR(q xor(r OR h)))=1.
+
+Thus q OR r=1 and q=r OR h, which force q1 (q0 would force r1 and contradict the second equality). Therefore the row at4 begins1101110011. No value of r,h or a still farther bit was set as a boundary.
+
+**That tick4 prefix has no compatible tick2 ancestor.** Write u,v,w,x,y,z for normalized digits4..9 at tick3. Because z2(3)=z3(3)=0, the tick4 digits4..9=110011 imply
+
+    u=1; v OR w=1; v=w OR x;
+    w xor(x OR y)=1; x xor(y OR z)=1.
+
+The first two relations with v=w OR x force v1 and w OR x1. If w1, the fourth relation forces x=y0. If w0, then x1 and the fifth relation forces y0. Thus in either case y0 and x=1-w.
+
+Now write a,b,c,d,e for digits4..8 at tick2. Since z3(2)=1 and v=z5(3)=1, its recursion gives a=b=0. Then w=c and x=c OR d. The identity x=1-w forces c0,d1. But y=z8(3)=c xor(d OR e)=1, contradicting y0. This is the promised hand contradiction, independent of all unassigned farther digits.
+
+**Independent and unexpected scope controls.** Both w branches independently yield y0; both choices p0/p1 were retained until the final-black constraint eliminated p0. The final contradiction is the literal OR value1, not a parity or probabilistic estimate. Unexpectedly the proof uses an actual-neighbour short-word lemma to anchor z5/z6 at4, then reverses two front steps: assuming those two digits were universal for arbitrary fronts would be unjustified. The complementary forbidden word and minimality of this word are not proved here; they remain distinct catalogue claims. GC842's previous stalled derivation is preserved rather than rewritten as if already complete.
+
+**Disposition.** The0001101011 exclusion is PROVED by hand pending independent reading. With GC841/G267 it removes both census-only gates from GC827's restricted family closure, and upgrades GC823's specific rejection to a hand proof. The different candidate GC828 still avoids these words and remains OPEN; rings through20 are excluded only by the separately received bounded enumeration, with no infinite exclusion. Please audit the phase/index steps and file if accepted. No new run or prize claim; K6 stays stopped.

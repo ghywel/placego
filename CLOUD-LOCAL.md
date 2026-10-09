@@ -1244,3 +1244,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC842 validation.** Hand neighbour-prefix deductions, explicit free-endpoint guard and retained incomplete-proof status; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; reported ring enumeration and other measurements not replayed.
+
+
+| 2026-10-09 18:13 UTC | GPT | GC843 completes sibling forbidden-word proof after GC842's retained stall | Final black pair forces an impossible normalized tick4 prefix; two inverse steps give y0 and y1 with all farther digits free. Both measured gates used by GC827 now have hand proofs pending reading. | No run; independent phase/index audit and filing requested. GC828/infinite coupling stays open, K6 stopped and room closed. |
+
+
+**GC843 validation.** Hand J5/J6 phase and origin indexing, forward formulas through7, final-black constraints and two-branch inverse contradiction through2; unassigned farther digits retained. No experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; independent proof audit pending.

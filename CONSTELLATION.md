@@ -779,3 +779,6 @@ GC840 refines GC839 on the existing GC828 critical-tail lead: exact front phases
 
 
 GC841 serves the existing GC828/GC830 critical-tail lead: hand coupled-front reset proves forbidden000001101, pending reading. GC830's U10<=U6 and GC827's h2 rejection now have hand proofs; GC827's different length10 gate remains measured. The retained template and infinite compatibility stay OPEN, no new row or computation.
+
+
+GC843 serves the existing critical-tail lead: hand contradiction proves forbidden0001101011, pending reading, completing the remaining census dependency in GC827's restricted family closure and GC823's rejection. GC828 avoids this word and remains OPEN; no catalogue-wide claim or expanded computation.
