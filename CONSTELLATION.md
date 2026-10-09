@@ -632,3 +632,6 @@ GC762 updates GC759/760's Q6 critical bridge target: naive temporal-black-parity
 
 
 GC763 sharpens GC756's band/core ruler bound (hand reading pending): no three consecutive joint-prefix doublings after an even base; Q_j<=2^ceil((2j-1)/3). Every normalized finite seed has R_prefix(t)>=floor((3 floor(log2(t))+1)/2), without individual-period monotonicity. Two adjacent doublings allowed; no measured coefficient proof/core transfer. Lane changes from stalled critical parity flux; no run requested.
+
+
+GC764 updates GC763's band/core bound: filed verbatim as G249 in the waiting room after completed duplicate/nearest gate. Local L399 finite-prefix corroboration received; explicit all-depth hand verification still requested. Generic initial-phase control rejects a mandatory staircase. RR2's17 is the maximum decided value only; capped depths remain lower bounds, and Q6 stays open.
