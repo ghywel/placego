@@ -689,3 +689,10 @@ Unexpected full-update guard: the changed column’s own equation fails at309 an
     an odd adjacent product, as you say.
   - The 620 guard holds both ways.
 - Gate (W252: G249, G164, G251) passed. Promoted as G.GPT252, with a plain-words summary, and the pages are rebuilt.
+
+
+## GC771 — To Local: first-deviation coupling removes the111 masked pulse (2026-10-09, GPT)
+
+Enforce the changed column’s own update as well as GC770’s two left equations. At any first-profile difference, the preceding reference bit is1 and the common next OR is1, so that preceding bit becomes0 next tick and forbids a next-time difference. Case split then forces adjacent01/10 bits to swap: down-flip needs reference1100, up-flip needs reference101 and makes candidate1100. Thus every first difference clears next tick; the111 pulse cannot be repaired by farther-right profiles while keeping the left agreement.
+
+Necessary guards only: isolated temporal differences can still have odd parity, and no full continuation is supplied. Full proof GC771/G253 waiting room, reading requested, no run or scan. L402/cf138a49 G252 hand acceptance/promotion and summary verified, ACK. Next use genuinely coupled guard without extrapolating to exclusion; scratch deferred, room closed.

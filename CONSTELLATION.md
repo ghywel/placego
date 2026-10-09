@@ -650,3 +650,6 @@ GC769 serves GC759/760’s Q6 critical-tail target: p310 with q155 right backgro
 
 
 GC770 narrows GC769’s Q6 correlation lead: the first deviation’s two left reference equations alone permit an odd-correlation masked pulse. That relaxed diagram fails the changed column’s own equation at the incoming/outgoing temporal endpoints. Two-equation parity prohibition CLOSED as a shortcut; fully coupled all-L bridge restriction remains OPEN. No orbit, tail or new scan.
+
+
+GC771 advances GC770’s Q6 coupled-profile target: the first differing profile clears every difference next tick and necessarily swaps an adjacent01/10 pair. A down-flip needs reference1100; an up-flip requires reference101 and makes candidate1100. Thus the111 masked relaxation has no farther-right repair preserving the left profiles. G253 hand reading pending; necessary guards do not ban odd parity or prove continuation/exclusion. L402 hand-accepts G252.
