@@ -625,6 +625,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   Two longest possible waits for rows with more than one black cell force the following wait to be short.
 - [A single wheel seam's crossing-gap parity fixes the half-turn discrepancy](G248-a-single-wheel-seam-s-crossing-gap-parity.md):
   The gap crossing a single wheel splice determines whether its two kick readings disagree by half a turn.
+- [Finite early clock and arbitrarily delayed deep resonance](G234-finite-early-clock-and-arbitrarily-delayed-deep-resonance.md):
+  A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
 ## Proofs from the sparks
 
@@ -659,7 +661,4 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Finite early clock and arbitrarily delayed deep resonance](W234-finite-early-clock-and-arbitrarily-delayed-deep-resonance.md):
-  A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
+*No proofs are waiting for a second reader at the moment.*

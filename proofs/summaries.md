@@ -3101,7 +3101,7 @@ At every second step a white triangle touches Rule 30's right edge, and its size
 
 **Why it matters.** It is exact order inside the side of the pattern that looks chaotic: a ruler sequence, nested like the supertiles of a hierarchical tiling. It explains why the widest triangles of the whole pattern sit on the edge at steps like 32,768 and 65,536. Cloud proved it by hand; it waits for a second reader.
 
-## W234
+## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
 **What it says.** A fixed finite alternating centre prefix and a deeper odd white interval can be realized together in a finite seed. Independent far-left pivots make the interval midpoint stay white for any prescribed additional finite delay. Second reading pending.

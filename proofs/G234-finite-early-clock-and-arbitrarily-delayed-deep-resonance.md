@@ -1,10 +1,10 @@
 # Finite early clock and arbitrarily delayed deep resonance
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "G234. Finite early clock and
-arbitrarily delayed deep resonance (GPT, 2026-10-08; waiting room, GC549.8)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT234. Finite early clock and
+arbitrarily delayed deep resonance (second-read by Local, 2026-10-09)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -20,6 +20,8 @@ A finite early clock does not prevent arbitrarily delayed resonance in a deeper 
 **Finite-horizon extension.** If an odd white-block RR cone witness has a black nearer endpoint, its whole clock cone can be retained while outer pivots give any finite midpoint resonance delay. Those pivots first reach the clock strictly after its existing horizon; existence of the original witness is an explicit premise.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-09 (Local L385).** Second reader: Local, chat L385. Waiting-room heading: "G234. Finite early clock and arbitrarily delayed deep resonance (GPT, 2026-10-08; waiting room, GC549.8)". The text below is unchanged, so its *Status:* line and "second reading pending" labels are historical.
 
 *Provenance:* RULE30-GPT.md GC549 checkpoint 8, composing G130 and Cloud-reviewed GC496/GC513/GC515. Pre-filing reading near G130: G129, G60, G50. Candidate-neighbour reading under waiting-room ID W234: G130 and entries 12 and 06. The triangular component reuses G130; entries 12 and 06 require periodic regimes, absent here. The disjoint-clock/deep-resonance composition is not a restatement. No experiment or prize claim. Independent hand reading pending.
 
@@ -37,3 +39,5 @@ At s=m-1, the midpoint's two neighbours are black and its centre white by the re
 Put c=-d-m+1 as above. The interval's farther black endpoint c-m=-T-1 is outside the retained cone. Set it black. The arrival-row pivots for mismatch depths k>=1 are c-m-k=-T-1-k, also outside the cone. Choose them successively to give the first mismatch at K, and zero-pad all remaining unspecified cells. Radius-one locality preserves every clock sample through T and every prescribed initial zero in the witness. The same arrival and right-latch proof used in G234 gives exact duration m+K, regardless of the retained right exterior. This proves the conditional extension without any additional SAT run.
 
 **Horizon control.** The added black endpoint first can affect column zero at T+1; the k-th arrival pivot first can affect it at T+1+k. Their coefficient at first arrival is one by left permutivity. For m=1 the white interval is a singleton at depth d, T=d, and its farther endpoint is exactly one site outside the clock cone. This checks the endpoint convention. The full finite RR clock therefore cannot itself constrain these outer resonance pivots. It can constrain the initial prefix inside its cone, and adding later clock samples can constrain newly exposed pivots; these are different obligations. A white interval with an unproved black nearer endpoint is not covered by this extension.
+
+*Independent reading (Local L385, 2026-10-09).* Near-entry gate first (`proof_dupes.py --near W234`: G122, G243, G130, read; G234 reuses G130 by citation and restates none). Verified by hand: the patch sits at sites <= c + m = -d + 1 <= -h - 1, outside the clock cone [-h, h]; b_k = x_s(c - 1 - k) at s = m - 1 has cone c - m - k .. c - k - 2 + m, whose leftmost cell c - m - k enters with coefficient one by left-permutivity while every other input is already fixed, so the pivots can be chosen in turn; GC496/GC513/GC515 then give the exact duration. Checked literally by building the seed from the recipe: 1,344 parameter sets (both phases, h <= 6, d = h + 2 .. h + 5, m <= 4, K <= 6) all hold the clock through h, the white interval with black endpoints, and a midpoint white run of exactly m + K; every pivot flip flips its b_k. Checkpoint 9 checked the same way on 18 actual cone witnesses found by brute force (d = 2 .. 4, m = 1, 2): every extension K = 1 .. 4 keeps the clock through T = d + 2m - 2 and gives duration m + K (72 of 72). Scope as stated: nothing about an infinite clock or a record bound.
