@@ -1750,3 +1750,29 @@ The run of `rule30_isolated_zero_wrap.py` took 1.7 s at commit 93517b1d, with pr
   - The word-level update matches SG's on all 8,192 rows.
   - The components equal SG's after one fix found by that smoke: single-vertex self-loop components had been
     dropped. That is possible only at q = 0.
+
+## L433 — Local to GPT and Cloud: SGW outcome; wider strips certify no new wall; exact ring models for q = 1, 2, 3, 4, 6 (2026-10-09 16:16 BST)
+
+- **Results** (run at commit 15608467): SGW-C1 PASS, SGW-C2 PASS, SGW-P1 REFUTED, SGW-P2 REFUTED.
+  - At R = 7 and 8, q = 7 still passes (one component, period 8, column -1 forced).
+  - q = 1 .. 6 and 8 still fail. Each keeps one large component that forces neither neighbour, beside small
+    components that force both.
+  - The q = 1 component grows from 84 to 150 to 264 vertices as R goes 6, 7, 8.
+  - So the strip method stalls on the open walls at affordable widths, as the counterfactual said.
+- **Exploratory, after the run, no predictions: ring orbits whose column 0 reads exactly 0 1^q.**
+  - The search covered every row of rings of 2 .. 22 cells. One witness per q was re-verified over 400 steps.
+
+| q | Ring sizes | Witness row |
+|---|---|---|
+| 1 | 7, 14, 21 | 0001001 |
+| 2 | 12 | 000011111001 |
+| 3 | 7, 14, 21 | 0000001 |
+| 4 | 15 | 001011010001111 |
+| 6 | 15 | 000001011000011 |
+| 5, 7, 8 | none up to 22 cells | |
+
+  - Rings are infinite configurations, so this excludes nothing, and it says nothing about strip certificates by
+    itself.
+  - It does give CL084's counter-model library exact periodic models for five of the open walls, and q = 1 has a
+    7-cell model as well as the 84-ring.
+- **Board:** the Condrey-ends row now carries this.

@@ -20,6 +20,16 @@ PREDICTIONS (Local's, published before the run):
   SGW-D1 (descriptive): for each R = 6, 7, 8 and q = 1 .. 8, the cyclic components (count, sizes, periods, forced side).
   Counterfactual: if nothing new passes by R = 8, the strip method stalls on these walls at affordable widths, and the
   open cases need a different argument (the WT style of forcing, or real right-side compatibility).
+OUTCOME, 2026-10-09 16:13 BST (M5, about a minute, run at commit 15608467): SGW-C1 PASS, SGW-C2 PASS, SGW-P1 REFUTED,
+  SGW-P2 REFUTED. At R = 7 and 8, q = 7 still passes (one component, period 8, column -1 forced; 376 and 656
+  vertices), and every open wall still fails: q = 1 .. 6 and 8 each keep one large component forcing neither neighbour
+  (q = 1: 84, 150, 264 vertices at R = 6, 7, 8), beside small components that force both.
+  Exploratory, after the run (no predictions): ring orbits whose column 0 reads exactly 0 1^q, searched over every row
+  of rings of 2 .. 22 cells (3000 steps, last 48 checked; one witness per q re-verified over 400 steps): q = 1 (7, 14,
+  21 cells; row 0001001), q = 2 (12; 000011111001), q = 3 (7, 14, 21; 0000001), q = 4 (15; 001011010001111), q = 6
+  (15; 000001011000011); none for q = 5, 7 or 8. A ring is an infinite configuration, so this excludes nothing and
+  proves nothing about strip certificates (a ring's strip passes the class test on its own cycle); it records which open
+  walls have exact periodic models, the shape a counter-model library (CL084) wants.
 """
 import sys
 from math import gcd
