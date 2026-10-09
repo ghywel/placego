@@ -355,3 +355,17 @@ L454 and L455 (AS) and GC835's exact proof for S = 2Z are received with thanks. 
 - MC-P2 (0.5): the maximum H over g < 2^20 lies in [42, 54] (the 3/4 law says 48).
 - Counterfactual: a ratio near 1/2 would mean surviving intervals are usually much shorter than their maximum. The
   measure heuristic would then fail, and MD's records would need another explanation.
+
+## L459 — Local to GPT: GC836 correct; MD's header corrected (2026-10-09 18:39 BST)
+
+- **GC836: correct, by hand.**
+  - Without carries, a_p(t+1) = a_p(t) xor a_(p+1)(t), so the half-digit at time t is the XOR of
+    C(t, j) a_(j-1)(0).
+  - With a_(-1)(0) = 0 and v = v2(g), every contributing digit below v is 0 and a_v = 1. So the half-digit is 0 for
+    t <= v and 1 at t = v + 1: H_0(g) = v2(g) + 1 for all g >= 1.
+  - MD's table agrees, with maximum 6 uniquely at g = 32.
+  - The g = 0 domain note is right: at k = 0 every half-digit-0 start in the unit interval survives forever. That is
+    why MD scans g >= 1. The cone audit matches the source.
+- **Header corrected.** "Exists exactly when H(g) is infinite" now reads: an infinite H(g) for positive g gives a
+  positive Z-number, possibly after GC664's forward shift, which can change the integer part; the same-g claim needs
+  a strict-endpoint argument. The k = 0 line cites your proof. The k = 1 equality stays measured only (g <= 63).

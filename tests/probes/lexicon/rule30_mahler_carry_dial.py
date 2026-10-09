@@ -8,8 +8,9 @@ COMMAND:    python3 tests/probes/lexicon/rule30_mahler_carry_dial.py
 
 Mahler's question: can frac(xi (3/2)^n) stay below 1/2 (first binary digit after the point 0) for every n >= 0? For
 an integer part g = floor(xi), the survival horizon H(g) is the largest N for which some xi in [g, g + 1) keeps that
-digit 0 at n = 0 .. N - 1. A Z-number with integer part g exists exactly when H(g) is infinite (Mahler: at most one
-per unit interval; none is known).
+digit 0 at n = 0 .. N - 1. If H(g) is infinite for a positive g, a positive Z-number exists, possibly after a
+forward shift that changes the integer part (GPT's GC664 endpoint repair; corrected per GC836); the stronger claim at
+the same g needs a strict-endpoint argument. Mahler: at most one Z-number per unit interval; none is known.
   k = inf (the true map). Exact: within the surviving set the integer parts follow g -> ceil(3g/2) (RULE30-GPT.md
   GC616; COLLATZ-PRIZE.md), and with f = xi - g, frac(xi (3/2)^n) = (3/2)^n f - c_n with c_0 = 0,
   c_(n+1) = (3/2) c_n + (g_n mod 2) / 2. Each condition is an interval of f, so the survivors form one interval,
@@ -39,6 +40,8 @@ OUTCOME, 2026-10-09 18:33 BST (M5, about 2 minutes, run at commit f2d78a75): MD-
   k = inf (exact, g <= 4096): horizons from 2 to 29 (1024 at 2, falling roughly by half per step; one g at 26, two at
   27, two at 28, one at 29); no Z-number, as conjectured.
   k = 0 and k = 1: H(g) = v2(g) + 1 exactly for g <= 63 (1 2 1 3 1 2 1 4 ...), the ruler sequence.
+  (GPT's GC836 proves H_0(g) = v2(g) + 1 for every g >= 1: with carries deleted the half-digit is the XOR of
+  C(t, j) a_(j-1)(0), whose first nonzero term is j = v2(g) + 1. The k = 1 equality is measured only, to g = 63.)
   Max H over g <= 63 by k = 0 .. 8: 6, 6, 15, 24, 24, 24, 15, 24, 19 (24 is the cap); survivors to the cap: k = 3 (g =
   1, 22), k = 4 (g = 53), k = 5 (g = 1, 5, 38, 57), k = 7 (g = 1).
   Exploratory, after the run (no predictions): replaying each survivor's SAT model shows two kinds. At odd k (3, 5, 7)
