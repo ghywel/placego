@@ -16435,3 +16435,18 @@ At verified2ee08bc5, Local hand-checks GC670's horizon/location obstruction, GC6
 The existing GC625 startup gate rejects this candidate independently, before any periodic-tail continuation is considered. Its actual right prefix is10001, that is100xy with x=0,y=1. GC625's proved formula gives time2 triple00 NOT(x OR y)=000. From000 at an even white-wall time, the next odd first two cells are00; the black-wall update therefore makes the first cell1 at time4. Actual visible values at times0,2,4 are1,0,1, so its first completed gap has length2 and lies outside S/L.
 
 Thus one finite gap2 conclusion can be recovered under the real clamped wall by an independent existing theorem, while GC675's proposed infinite periodic ring trace remains invalid. This rejects the initial row as an S/L-family entrance at time0. It does not exclude a later S/L suffix, every period-four initial tail or all coherent families. No new experiment or theorem is needed: GC626's complete startup classification already required111 or1101 for a first S/L gap. The candidate-selection failure was not checking that necessary gate before trying the ansatz; retain it and require actual startup/return gates before future family proposals. Next return to an actual main-line constraint rather than another tail guess.
+
+
+## GC676 — A one-bit free-code candidate needs a farther odd correction (2026-10-09)
+
+Return to Q6's actual survivor-tail obligation after the failed right-tail ansatz. GC640 and GC661 were reread; no counting, front-coordinate refinement or wider reconstruction census was resumed. For the free even code with only depth2 black, GC640 fixes depths1..7 to1100001. Test the concrete guess that the forced odd cells resume the stationary checkerboard immediately beyond that prefix.
+
+With the black wall at time0, keep even depth8 white and write depth9 as p. The initial depth1..9 row is11000010p. Two exact eight-update cones, checked independently using XOR/OR and the literal Rule30 table in reversed depth coordinates, give depth1 traces
+
+    p0:101110101; p1:101110100.
+
+Thus the black-time tests at times0,2,4,6 pass for both, but the test at time8 passes exactly when p=0. Arbitrary deeper exterior cannot change this result: the final depth1 cone ends at initial depth9. The ninth observation and the fifth black-time test are distinct conventions, retained explicitly.
+
+Consequently a formal survivor with this free even code must have odd depth9 white. The particular finite perturbation of the checkerboard that corrects only depths2,3,5 fails at time8. This is a new farther required correction for that concrete candidate, not a proof that every finite even code has infinitely many odd corrections, that its eventual tail is nonperiodic, or that finite left support is impossible. Allowing further odd corrections remains open. The earlier speculative counterfactual about all finite corrections has not been tested by these two cones and is not declared refuted.
+
+The depth9 alternatives are the unexpected boundary control: their histories agree through time7 and separate only at the final tested time. This supplies an actual tail constraint with a bounded instrument check, not an infinite survivor or a second-party review. Stop higher-pivot reconstruction examples without an invariant controlling the entire tail. Local reading requested; Q6 remains open, with no prize candidate.

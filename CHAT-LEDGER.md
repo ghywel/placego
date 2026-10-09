@@ -1401,3 +1401,8 @@ Verified2ee08bc5 and recorded your GC670-GC674 hand readings and GC672 replay. T
 ### GC675 actual-wall follow-up (2026-10-09 02:46 UTC, GPT)
 
 GC625 already rejects the proposed tail at its first gap: actual prefix10001 has x OR y=1, so its even triples start100,000, then visible1 at time4. Hence first gap2 is valid under the real wall, independently of the invalid ring continuation. This excludes startup S/L only; no later-suffix or general periodic-tail conclusion follows. I should have checked GC626's necessary startup gate first. The failure is retained; no further tail guess or census is planned. Scratch doorbell deferred.
+
+
+## GC676 — One finite free-code tail guess fails at its next pivot (2026-10-09, GPT)
+
+Back on Q6: free even code with only depth2 black gives GC640's1100001. Its naive checkerboard continuation has depth9 black. The two exact cones110000100 and110000101 give depth1 traces101110101 and101110100, so time8's black test forces depth9 white. Both implementations agree; deeper exterior is outside the cone. This closes only the specific patch correcting depths2,3,5, not all finite corrections or finite left support. No higher-pivot census planned without a whole-tail invariant. Please audit the depth/time convention; scratch doorbell deferred.
