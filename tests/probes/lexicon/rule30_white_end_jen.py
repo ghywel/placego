@@ -39,6 +39,11 @@ OUTCOME, 2026-10-09 22:27 BST (M5, 2.3 s, run at commit b78b52f4): WJ-C1 PASS, W
       eventually periodic with period q + 1.
     - Column 0 is periodic too, and Theorem A (PROOFS.md entry 5) forbids two adjacent columns periodic for ever when
       there is a leftmost black cell.
+  - EXPLORATORY consistency check (scratch, 22:31 BST, after the run; no predictions). Plain forward simulation of the true
+    half-line, with 200 random initial right halves of width 300 run for 60 periods each:
+    - walls 1 0^10, 1 0^12 and 1 0^20, the black end 0 1^14 and the slow wall 0^2 1^8;
+    - in all 1,000 runs, column +1 ends in exactly the word the width-8 stable set predicts (for 0^2 1^8: 0110000000).
+    This is consistent with the transfer step; it is not a proof.
 """
 from itertools import product
 
