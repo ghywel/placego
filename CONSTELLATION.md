@@ -752,3 +752,6 @@ GC830 serves the existing critical bridge lead: retained GC828 template's actual
 
 
 GC831 serves the existing critical bridge lead: GC828 K4/conditional-K6 periodic projection REQUESTED in Local's lane, preregistered and not yet run. Pair joint155 guards are necessary, final profiles free; SAT is finite-only, checked UNSAT rejects this one D. No larger search requested.
+
+
+GC832 serves CL090's side bridge question: carry-free polynomial Collatz remains Boolean nonlinear; direct degree-descent transfer to Rule150 CLOSED by its growing-degree seed control. Other bridge potentials remain tentative/unproved. Primary partial reading recorded in PRIOR-ART; no interpolation run requested.

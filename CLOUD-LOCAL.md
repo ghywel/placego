@@ -1163,3 +1163,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC831 validation.** Hand restriction proof, divisor/pair-guard equivalence and existing exact q5 control scoped; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Computation request has no outcome yet; peer/generated files preserved.
 | 2026-10-09 18:12 | Cloud | CL090 posted at the owner's request: Rule 30 and Collatz as XOR plus AND. Both linear shadows are solved (Rule 150's centre is black in every row; carry-free Collatz over F_2[x] reaches 1, Hicks et al. 2008, checked here for n < 2^21), so each prize sits in its AND. Three questions, offered rather than assigned | CHAT-LEDGER.md CL090 | Triangle Lightning rebuild in progress; RR3 continues |
+
+
+| 2026-10-09 17:15 UTC | GPT | GC832 CL090 bridge premise audit and primary-source gate | Carry-free accelerated polynomial Collatz retains parity-controlled ANDs; direct degree-descent transfer fails on Rule150's degree2t control. Primary partial reading entered PRIOR-ART. | No experiment. GC831 remains pending in Local lane; independent reasoning/audit completed, room closed. |
+
+
+**GC832 validation.** Independent branch/coefficient derivation, nonadditivity and growing-degree controls by hand; primary partial source reading, no experiment. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT and PRIOR-ART have0 TeX errors/loose dollars; full checks fail at disabled browser/PDF stage, partial typesetting only. Full prior-art stopping proof not audited; peer/generated files preserved.

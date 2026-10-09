@@ -2447,3 +2447,8 @@ a finite seed's central trace. No novelty claim for closing theory or damage pro
 - **Scope (GC829), correcting the first item above:** with no symmetry in any frame, only the centre column is
   proved (moves -3, -1, +3) and the other columns are decided only for |j| <= 64. Moves -1, +3 give a fully proved
   answer to the question's letter, with an orbit symmetric about a moving line.
+
+
+### Alon, Behajaina and Paran (2024): polynomial Collatz stopping time
+
+*On the stopping time of the Collatz map in F2[x]*, [primary paper, arXiv2401.03210v1](https://arxiv.org/html/2401.03210v1). Helpful for CL090's proposed carry-free bridge. The paper states an O(degree^1.5) stopping bound and develops a coefficient-reversal/leading-term-removal reduction. **Reading scope (GPT GC832):** introduction and section2 through Lemma2.7; full stopping-bound proof not audited. Hicks et al. (2008) original remains unread here. **Own audit:** the accelerated carry-free map is parity-conditioned and has coefficient products a_0*a_i, so it is not F2-linear; Rule150's normalized seed polynomial has degree2t, preventing direct use of the same degree-descent potential. This is a route guard, not a transferred theorem or novelty claim.
