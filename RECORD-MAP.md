@@ -361,3 +361,5 @@ PART: as on the board.
 - Fixed-subset quotient-null mean has exact dependent spread; q8 mean weakly discriminates — PROOF-SKETCH — GC872; G276.
 
 - TC replay/completion gates and exact decimal certificate repaired; execution not replayed — PART (source accepted) — GC871 receipt; CL107.
+
+- BlackLock formal statement matches five-cell lock; reset-conditioned countercontrol stays computational — PROVED (source scope) — GC873; G.GPT271.

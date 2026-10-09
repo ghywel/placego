@@ -337,6 +337,7 @@ same commit as the result.
 | A statement beyond complexity $1.71\,n$ for one orbit | **OPEN** | Dubickas conjectures the maximum, $P(X, n) = 2^n$, for the 3/2 orbit of 1 (§5). | The Collatz twin of Rule 30's "cost side as a count" (RULE30-PRIZE.md §8.58): the same unproved shape on both sides. |
 | Dubickas's conjecture $P(X, n) = 2^n$ for the 3/2 map, measured (§5) | **DONE** as a measurement | Every residue class modulo $2^n$ visited for $n \le 18$ over four million terms; 0.97809 of the classes at $n = 20$ against a coin's 0.97796 (`collatz_threehalves.py`). | Nothing a computer can add; a proof would be the 3/2 problem's. |
 | The 2021 preprint's claim (density exactly $\ln 2 / \ln 3$) | **NOTED** | Its equations 15 and 16 take a real limit for a 2-adic one; the objection stands unanswered in public. | Not ours to repair. |
+| The carry dial (§9): carries cut to $k$ places, on Collatz and Mahler's 3/2 map | **DONE** as a measurement (2026-10-09, AS and MD) | Cycles at even $k = 2, 4, 6$; collapse at odd $k$; all of $n < 2^{18}$ reach 1 from $k = 12$; $H_0(g) = v_2(g) + 1$ (GC836) | Why even $k$ grows cycles; whether any finite $k$ already behaves like the true map for all $n$ |
 
 ## 7. How to reproduce
 
@@ -441,3 +442,31 @@ one-cell correction.
 - **What this is not.** These are facts about the edges. The middle digits of $3^t$ are as open as Rule 30's centre
   column (Mahler's 3/2 problem, RULE30-PRIZE.md §8.45, asks about the digits of $\xi (3/2)^t$). Nothing here moves
   either prize.
+
+## 9. The carry dial: Collatz and Mahler's map with carries cut short (Local, 2026-10-09)
+
+Each odd Collatz step is an addition, $(n + (2n + 1))/2$, and each step of Mahler's map is $x \mapsto x + 2x$, halved.
+Both are linear but for their carries. Allow a carry to travel at most $k$ places: born where both addends have a 1,
+moving one place a bit while exactly one addend has a 1, and dropped past age $k$. $k = 0$ is the carry-free map and
+$k = \infty$ is the true one. Measured with predictions pushed first; `tests/probes/lexicon/rule30_and_shadow.py` (AS,
+chat L453) and `tests/probes/lexicon/rule30_mahler_carry_dial.py` (MD, L457).
+- **Collatz, every start $n < 2^{18}$.**
+  - $k = 0, 1, 8, 10, 12$ and $\infty$: every start reaches 1.
+  - Even $k = 2, 4, 6$: genuine nontrivial cycles, with least members 7, 43, 135, 4711, 79371 and 153535 at $k = 2$;
+    47 and 79519 at $k = 4$; 35483 and 44911 at $k = 6$.
+  - Odd $k = 3, 5, 7, 9, 11$: the dropped carries cancel the whole sum, and some starts fall to 0.
+  - So there is no clean threshold below $k = 12$.
+  - GPT's GC832 adds that the carry-free odd step is still nonlinear, because its branch on parity is an AND.
+- **Mahler's 3/2 map, the survival horizon $H_k(g)$ of the integer part $g$.** This is the most steps for which some
+  $\xi \in [g, g + 1)$ keeps the first fractional binary digit of $\xi (3/2)^n$ at 0.
+  - $H_0(g) = v_2(g) + 1$ for every $g \ge 1$. GPT proved it in GC836: with carries deleted, the half-digit is an
+    XOR of binomial terms whose first nonzero one is $j = v_2(g) + 1$. $H_1$ agrees for $g \le 63$, measured.
+  - Odd $k$ collapse to 0, as on the Collatz side.
+  - $g = 53$, the true map's longest survivor up to 63, also survives at $k = 4$, for 30 steps against the true 25.
+  - The true map ($k = \infty$, exact fractions) has no survivor past 29 steps for $g \le 4096$. Cloud's
+    `rule30_cloud_mahler_horizon.py` finds the maximum 47 for $g < 2^{20}$, and survivor counts falling by $3/4$ a
+    step (CL092).
+- **Reading.** On both maps the carry is the whole difficulty, as §8 says. Cut it short at an odd length and the
+  dynamics collapses; at a small even length it grows cycles the true map is believed not to have; past about 12 it
+  behaves like the true map on the tested range. Measurements only; nothing here moves either prize.
+

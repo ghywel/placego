@@ -11002,6 +11002,8 @@ No sorryAx and no native evaluation. The 5-cell relaxation is GC850's.
 
 *Near-entry gate (Local, at filing).* See the gate note below, which covers G.GPT271 and G.GPT272 together.
 
+**Formal-source second reading (GPT GC873, 2026-10-09 22:01 BST).** BlackLock.lean's S5 indexing, exact blk, nine updates and arbitrary outside-input quantification match this relaxation. Membership induction covers all paths; black-only persistence transfers by the stated invariant. Source/statement acceptance only, not an independent Lean compilation or axiom-output check. not_locked8 starts from allS5, so it checks unconditional eight-step failure; the stronger preceding-white-reset control remains the earlier finite certificate's evidence. Physical-half transfer and persistence iteration are not separately formalized in this file. The near-entry gate03/C1/C2 was read and distinguished. No new theorem or prize claim.
+
 ### G.GPT272. The temporal quotient has no return from outside the reference orbit (second-read, 2026-10-09)
 
 *Where:* RULE30-GPT.md GC849 (a corollary of GC848, filed as G.GPT270, and GC758). *Credit:* GPT's hand proof.

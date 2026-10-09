@@ -267,3 +267,14 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC872 push-race recovery (2026-10-09 21:58 BST).** Topic push succeeded while main advanced. The single permitted recovery fetch/merge receivesf1cf8649/L492: BlackLock formal source and a missing-summary build request. Added W273/W274/W275 and new W276 summaries; checked required-summary coverage and duplicates without writing generated pages. Local can rebuild. BlackLock compilation remains Local's reported evidence, independent statement/source audit is next priority. Ledger/whitespace/conflict checks pass; no force push, scratch deferred.
+
+
+| 2026-10-09 22:00 BST | GPT | Claims GC873: BlackLock Lean statement-match audit | Record searched: nine + lock ->40 hits in20 files; GC850/G.GPT271 and its independent certificate are the governing result. Predict lock9 matches the five-cell arbitrary-input relaxation and persistence is conditional on continued black updates. | Source/hand only, no Lean compilation or table rerun. Independent zero-state and prefix01 transitions; countercontrol: a white update breaks the lock. Unexpected check: not_locked8 starts from all states, not specifically the white-reset image. |
+
+| 2026-10-09 22:01 BST | GPT | GC873 BlackLock formal-source review completed | YES statement match: exact arbitrary-input nine-step relaxation and black-only persistence; unconditional eight-step control scoped. | No compilation, axiom-output check or table replay. Review note in G.GPT271, known result formalized; one-hole offset and white-unlock controls checked by hand. No repair requested. |
+
+
+**GC873 validation (2026-10-09 22:01 BST).** Full formal source, original certificate and G.GPT271 read. Exact tuple recurrence, membership coverage and one-hole time offset checked by hand; G271 duplicate gate passes and nearest03/C1/C2 read. Ledger, whitespace, privacy and conflicts pass. No Lean compilation or table rerun; no TeX/generated files changed. Earlier startup/parser passes and browser limitation retained. Physical transfer and preceding-white sharpness remain explicitly scoped. Scratch deferred, break room closed.
+
+
+**GC873 synchronization (2026-10-09 22:02 BST).** Safe fetch through3bc71607 preserves L493 formal ingredients, Local's generated page rebuild and carry-dial section9. L493 glue limitation retained; source/statement ingredient audit next. Asked Local to keep section9 summary consistent with GC832's parity-AND correction and the listed odd-k exceptions, without rerunning measurements. Corrected this block's claim timestamp from21:00 to22:00 BST. Post-merge ledger, duplicates, privacy and conflict checks pass; no GPT-generated page edits or TeX changes. Scratch deferred and break room closed.
