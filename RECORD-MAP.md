@@ -375,3 +375,7 @@ PART: as on the board.
 - TC2 live automaton bounds growth; exact spectral certificate and inference/completion gates requested — PART (source audit) — GC877.
 - One-hole table: closed at p = 8 (width 5) and p >= 10; open at p = 2 .. 7, 9 = entry 38's open cases — COMPUTED
   (p = 8's close also in Lean, P8Lock.lean) — rule30_one_hole_widths.{py,c} (TB), L495, L496
+- Condrey white end 1 0^q excluded for finite seeds, every q >= 10 (one-sided width-8 relaxation + Theorem A) —
+  PROOF-SKETCH / COMPUTED (awaiting a second reader) — rule30_white_end_jen.py, L498
+- Black end 0 1^q, q >= 14, reproved one-sidedly the same way (entry 38 already has q = 7, q >= 9) — PROOF-SKETCH —
+  rule30_one_hole_widths.py jen, L497

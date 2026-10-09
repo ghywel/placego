@@ -27,6 +27,18 @@ PREDICTIONS (Local's, published before the run):
   WJ-P1 (blind, confidence 0.5): at width 12, some white-end q in 2 .. 9 is also determined.
   WJ-P2 (blind, confidence 0.5): the white end is determined at width 6 for some q in 10 .. 40.
   WJ-D1 (descriptive): column +1's determined word for a few q, and the stable-set sizes.
+OUTCOME, 2026-10-09 22:27 BST (M5, 2.3 s, run at commit b78b52f4): WJ-C1 PASS, WJ-R1 HELD, WJ-P1 REFUTED, WJ-P2 REFUTED.
+  - The black end reproduces L497: determined at width 8 for p = 15 .. 40, and at width 6 for none.
+  - The white end, width 8: determined for every q = 10 .. 40. Column +1 reads 1 0 0 1^(q-2), with period q + 1. The
+    stable sets have 31 states at q = 10, 21 at q = 12 and 7 at q = 20.
+  - W^(n+4) = W^n for n >= 22, so the macros 1 0^q repeat with period 4 in q from q = 22 on, and q = 10 .. 40 covers
+    every q >= 10.
+  - Neither width 12 (q = 2 .. 9) nor width 6 (q = 10 .. 40) determines column +1.
+  - Claim, for a second reader: no finite nonzero seed has a column that eventually reads 1 0^q for any q >= 10.
+    - Every actual right half's 8-cell state lies in the stable set after finitely many periods, so column +1 is
+      eventually periodic with period q + 1.
+    - Column 0 is periodic too, and Theorem A (PROOFS.md entry 5) forbids two adjacent columns periodic for ever when
+      there is a leftmost black cell.
 """
 from itertools import product
 

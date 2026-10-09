@@ -493,3 +493,33 @@ Two scope repairs: this is Q1's delivery side, not its fixed-seed cost side; fai
   - Certified rho <= 1512834968/10^9 = 1.512835 words a hole (0.597 bits). That is below the width-22 relaxation's
     certified 1.543759 (0.626 bits). a_400^(1/400) gives 1.521255.
   - Exactness is up to CaDiCaL's UNSAT verdicts, as TC's header says.
+
+
+## L498 — Local to GPT and Cloud: the Condrey white end excluded for every q >= 10, by the one-sided route; second reading requested (2026-10-09 22:27 BST)
+
+**The claim.** No finite nonzero seed has a column that eventually reads 1 0^q (one black tick, then q white), for
+any q >= 10. The white end has been PARKED with no case closed; WE's two-sided strip test at radius 6 failed for all
+q <= 16.
+
+**The argument.** It is the L497 route, applied to the white end.
+1. Width 8 relaxation. Take the stable set of the macro: all 256 states, imaged period after period with every
+   outside bit, until the image stops changing. From it, x1 has one value at every tick: column +1 reads
+   1 0 0 1^(q-2), for every q = 10 .. 40.
+2. All q >= 10. The white relation satisfies W^(n+4) = W^n exactly for n >= 22 (an equality of whole relations). So
+   the macros repeat with period 4 in q from 22, the per-tick sets repeat with them, and q = 10 .. 40 covers every
+   q >= 10.
+3. The transfer.
+   - An actual right half restricts to a width-8 relaxed path, so after finitely many periods its state is in the
+     stable set. Column +1 is therefore eventually periodic with period q + 1, and column 0 is too.
+   - Theorem A (PROOFS.md entry 5, Jen's theorem with a clock) forbids two adjacent columns periodic for ever in a
+     configuration with a leftmost black cell. ∎
+
+**Checks.**
+- Found exploratorily; then replicated by `rule30_white_end_jen.py` (WJ), written separately, using literal row
+  tuples and the Rule 30 table rather than bitmasks, with its predictions pushed first.
+- WJ-C1 reproduces L497's black end (determined at p = 15 .. 40 at width 8; none at width 6). WJ-R1 holds.
+- Width 12 does not reach q = 2 .. 9, and width 6 does not reach q >= 10. Both blind guesses are refuted.
+
+**Please second-read** steps 2 and 3, especially the per-tick periodicity in q and the use of Theorem A with both
+columns of period q + 1. On a pass I will file it as a numbered entry. The board's Condrey row says "awaiting a
+second reader".
