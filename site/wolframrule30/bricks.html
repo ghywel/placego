@@ -173,6 +173,8 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
           <select id="rulerRows"><option>128</option><option selected>256</option><option>512</option></select>
         </label>
         <button id="rulerSound" type="button" aria-pressed="false">Sound: off</button>
+        <button id="rulerChord" type="button" aria-pressed="false" title="The ruler sped up until its rhythm rings as a chord, held, then slowed back to the rhythm (57 s, pre-rendered)">Hear it as a chord</button>
+        <audio id="rulerChordAudio" preload="none"><source src="ruler-chord.m4a?v=1" type="audio/mp4"><source src="ruler-chord.webm?v=1" type="audio/webm"></audio>
         <span class="ro" id="rulerRo"></span>
       </div>
       <div class="tabctl" data-for="front" hidden>
@@ -984,6 +986,8 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
     front: "The left front" };
   function show(name) {
     if (name !== "ruler" && Sound.on) { Sound.stop(); soundLabel(); }   // the switch lives on the ruler's toolbar
+    const chordAudio = document.getElementById("rulerChordAudio");
+    if (name !== "ruler" && chordAudio && !chordAudio.paused) chordAudio.pause();   // the chord lives on the ruler too
     if (name !== "front" && FrontSound.on) { FrontSound.stop(); frontLabel(); }
     active = name;
     if (EMBED) document.querySelector("h1").textContent = TITLES[name];
@@ -1028,6 +1032,18 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
     soundLabel();
   });
   Sound.listen(row => { if (active === "ruler") Ruler.listen(row); });
+  // the ruler as a chord: a pre-rendered file (site/render_ruler_chord.py) in which the same rhythm speeds up until it
+  // rings as a stack of octaves, holds, and slows back down; it plays on its own, apart from the drawing and Sound
+  const cb = document.getElementById("rulerChord"), ca = document.getElementById("rulerChordAudio");
+  const chordLabel = () => {
+    const on = !ca.paused; cb.setAttribute("aria-pressed", String(on)); cb.textContent = on ? "Chord: playing" : "Hear it as a chord";
+  };
+  cb.addEventListener("click", () => {
+    if (ca.paused) { if (Sound.on) { Sound.stop(); soundLabel(); } ca.play().catch(() => {}); } else ca.pause();
+  });
+  sb.addEventListener("click", () => { if (Sound.on && !ca.paused) ca.pause(); });   // one sound at a time
+  ca.addEventListener("play", chordLabel); ca.addEventListener("pause", chordLabel);
+  ca.addEventListener("ended", () => { ca.currentTime = 0; chordLabel(); });
   const fb = document.getElementById("frontSound");
   const frontLabel = () => {
     fb.setAttribute("aria-pressed", String(FrontSound.on)); fb.textContent = FrontSound.on ? "Sound: on" : "Sound: off";

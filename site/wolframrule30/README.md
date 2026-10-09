@@ -64,3 +64,8 @@ Opened on its own, a render always runs.
 The text of `index.html` is meant to stay faithful to the record. If a result changes, change the page from
 STATE-OF-THE-PROOF.md, not from memory, and keep its plain-language register: the owner asked for visuals first and
 no dense mathematics.
+
+`ruler-chord.m4a` and `ruler-chord.webm`, played by the ruler's "Hear it as a chord" button in `bricks.html`, are rendered by
+`site/render_ruler_chord.py` (not published) and live beside the pages on the site: in the Cadence tree's `Site/wolframrule30/`,
+which `publish-site.sh` merges with this folder. Audio is kept out of this repository (no data files in git). Re-render with
+`python3 site/render_ruler_chord.py <Cadence>/Site/wolframrule30` and bump the `?v=` on the two sources.
