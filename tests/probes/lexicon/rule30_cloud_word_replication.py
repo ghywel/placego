@@ -41,6 +41,9 @@ pipeline ran end to end, and RP-C1 failed there, as it must below LOGN = 23.
 UNEXPECTED CHECK (not computed by anyone yet), RP5: the owner's "repetitions in batches" read across batches.
   L_cross lies within one bit of the MT pairs' range. Confidence 0.75.
 REFUTED-BY: RP-C1 or RP-C2 failing (the instrument); RP1 to RP5 failing.
+Instrument note, 2026-10-09 05:41 BST, after GPT's audit GC697 and before any full run (no prediction changed):
+  longest_cross returns 0 when the two strings share no 36-bit window, which only says L_cross < 36. It is now
+  printed as censored, and RP5 reads UNTESTED if the seed's value or any MT pair's is censored.
 """
 import math, pathlib, random, subprocess, sys, tempfile
 from concurrent.futures import ProcessPoolExecutor
@@ -178,8 +181,9 @@ def main():
               f"  {q['top']}")
     L, pa, pb = longest_cross(first, fresh)
     Lc = sorted(l for _, l in ctrl)
-    print(f"   the longest word in both samples: {L} bits, at times {pa} and {H + pb};"
-          f" MT pairs {Lc[0]} .. {Lc[-1]}: {Lc}")
+    lab = lambda v: f"<{K0} (censored)" if v == 0 else str(v)     # 0 means no shared K0-bit window (GPT GC697)
+    print(f"   the longest word in both samples: {lab(L)} bits" + (f", at times {pa} and {H + pb}" if L else "")
+          + f"; MT pairs {lab(Lc[0])} .. {lab(Lc[-1])}: {[lab(v) for v in Lc]}")
     print()
     verdict("RP1 the candidate does not come back: z < +2.0 in the fresh block", zcand < 2.0, f"z {zcand:+.2f}")
     verdict("RP2 leaderboard across samples in [35, 62]", 35 <= nlead <= 62, f"{nlead}")
@@ -190,8 +194,11 @@ def main():
     verdict("RP4 the fresh block passes WB1 to WB3", ok4,
             f"smallest p_chi {min(fstats[k]['p_chi'] for k in KS):.4f}, smallest p_top"
             f" {min(fstats[k]['p_top'] for k in KS):.4f}")
-    verdict("RP5 (unexpected check) L_cross within one bit of the MT pairs' range", Lc[0] - 1 <= L <= Lc[-1] + 1,
-            f"{L} against {Lc[0]} .. {Lc[-1]}")
+    if L == 0 or Lc[0] == 0:
+        print(f"UNTESTED  prediction RP5 (unexpected check): censored, L_cross {lab(L)} and MT pairs from {lab(Lc[0])}")
+    else:
+        verdict("RP5 (unexpected check) L_cross within one bit of the MT pairs' range", Lc[0] - 1 <= L <= Lc[-1] + 1,
+                f"{L} against {Lc[0]} .. {Lc[-1]}")
     print(f"\n{'ALL CHECKS PASS' if FAILS == 0 else f'{FAILS} FAILURE(S)'}")
     sys.exit(1 if FAILS else 0)
 
