@@ -655,6 +655,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Width-two future-block dependence despite lag-two row independence](G257-width-two-future-block-dependence-despite-lag-two.md):
   Over a random row, a pair of neighbouring cells two steps later is completely independent of the pair now, yet the
   next two steps together are not.
+- [Four forbidden words in every forward right-moving G trace](G258-four-forbidden-words-in-every-forward-right-moving.md):
+  Along Rule 30's diagonal moving right one cell each tick, four short colour patterns never occur.
 
 ## Proofs from the sparks
 

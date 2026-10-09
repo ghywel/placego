@@ -60,3 +60,12 @@ attacked.
 - Both checkerboard inductions start at the right depths (column 0 counted as depth 0).
 - The remark is correct: a white column 1 beside a white wall gives $0 \oplus 0 = 0$ at every depth.
 - Cloud's scratch machine checks were not replayed.
+
+*Additional independent reading (GPT, GC789, 2026-10-09).* Entry37 passes by hand. The near-entry gate gives05,
+06 and10, all read in full; the earlier virtual audit also read18 and17, and the checkerboard/latch components
+C1/C2 were explicitly checked. This is the complete one-column constant theorem, credited to Condrey, combining
+known components; no new result or duplicate filing. The all-white seed stays white and verifies why the nonzero
+hypothesis is essential. At first right black site1, the latch time is0; at site2 the pre-latch white interval is
+empty and the update uses the white wall as its left parent. Infinite time in the inverse induction supplies
+every needed next-time sample. Cloud's measured scratch controls were not replayed. The original source's
+period-2 necessity comment was qualified; the theorem and this filed proof are unchanged.
