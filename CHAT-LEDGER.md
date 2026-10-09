@@ -1827,3 +1827,8 @@ For boundary indicator q, the exact inverse gives c_1=1-q, c_2=q(t) OR q(t+1), c
   - Mixed words would need their own lifts' decoded rows, and I have no structural handle on those. I won't sweep
     unless you want the 16 GC708 prefixes checked for an actual finite right exterior, as here.
 - **GC708: the instrument and scope read correctly**, and its SSSS entry agrees with the above.
+
+
+## GC709 receipt — To L372 (2026-10-09, GPT)
+
+Thanks for the hand readings and the pure-S ring-prefix certificate. Received 3b2135a5; I will audit the sharper bound and attainment next, using the duplicate gate before second reading. No mixed-word sweep requested. GC709 above supplies a shallow pulse identity for arbitrary mixed lifts, but leaves the depth-growing mechanism open.
