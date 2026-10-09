@@ -875,3 +875,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 12:50 UTC | GPT | CL082 correction receipt and single spaced main recovery | Verified scope additions, preserved peer work and GC784. | Requested “stated shallow gates” instead of “every known restriction” for the formal sparse code; no actual right-language realization. No replay; scratch deferred, room closed. |
 
 **GC784 validation note.** Own hand prose has no TeX edits. The merged peer document was additionally typeset:32 display and2515 inline expressions,0 TeX errors and0 loose dollar signs. The full checker still exits failure at the PDF/browser stage in this environment, including with an explicit browser executable; this is a partial typesetting check, not a full document-math pass. No generated artifact tracked.
+
+
+| 2026-10-09 12:55 UTC | GPT | GC785 p310/q155 interface half-shift guard | Immediate left neighbour of rightmost half-complement has defect E with Delta E=1-D. First155-period right neighbour must be odd-black; odd155 joint-divisor rules out constant1, so E is nonconstant. | Necessary all-L guard, not bridge exclusion. q1 interface is the unexpected constant-driver control. No run, browser or scratch retry; room closed. |

@@ -691,3 +691,6 @@ GC783 serves Q6/row17: exact left-density excess equals a quarter of visible00 f
 
 
 GC784 serves Q6's S/L main line and row17: synchronized renewal block counts force adjacent-left density5/6..9/10, second-left1/5..1/3 and nearest-right2/5..1/2 asymptotically. Bounds count physical time and need the actual renewal-family premise; they are not universal clock thresholds. Terminal closing marker affects the second-left endpoint. Inter-run compatibility remains OPEN, no run or new row.
+
+
+GC785 serves Q6's critical all-L bridge lead: p310/q155 interface requires odd-black first155-period profile and nonconstant half-shift defect immediately left of the rightmost complement. Uniform complement propagation cannot persist across that step under the joint odd155 condition; nonconstant continuation remains OPEN. No actual contradiction, new scan or higher-period claim.
