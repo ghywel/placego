@@ -14,12 +14,17 @@ The finite part is checked by `decide`. States are numbers below 256 (bit j is c
 W^26 = W^22 on the sets that occur, so q behaves as 22 + (q - 22) % 4.
 
 How to check: as for TheoremA.lean; the `#print axioms` lines must list no `sorryAx` (here: propext,
-Classical.choice, Quot.sound). About 80 s on the M5, most of it the kernel `decide`s (`decide +kernel` adds no axiom).
+Classical.choice, Quot.sound). About 32 s on the M5, most of it the kernel `decide`s (`decide +kernel` adds no axiom).
+Memory: `Elab.async false` and one kernel check per declaration keep the peak near one check's (about 0.8 GB above
+Mathlib's mapped files, about 6.5 GB resident in all); the first version, one big check run in parallel, peaked at 10.6 GB.
 Control: `control_q9` shows the finite check fails at q = 9, so it is not vacuous.
 Statement scope: `white_end` needs only a leftmost black cell; `white_end_finite` assumes a left bound and one black
 cell. `Reads x0 c q a` says column c reads 1 0^q periodically from time a, the 1 first (any phase of an eventually
 periodic column with that word has such an a). The time re-basing of entry 40's step 4 is `white_end`'s second case.
 -/
+
+-- Sequential elaboration: the kernel checks below would otherwise run in parallel and stack their memory.
+set_option Elab.async false
 
 namespace WhiteEnd
 
@@ -119,9 +124,12 @@ lemma ev_add (x0 : ℤ → Bool) (k t : ℕ) : ev (ev x0 k) t = ev x0 (k + t) :=
 /-- One step of the eight cells: state bit j is cell c + 1 + j, `w` the column's bit, `u` the cell beyond. -/
 def stp (w s u : ℕ) : ℕ := ((((s <<< 1) ||| w) &&& 255) ^^^ (s ||| ((s >>> 1) ||| (u <<< 7)))) &&& 255
 
-def imgAux (w S : ℕ) : ℕ → ℕ → ℕ
-  | 0, acc => acc
-  | n + 1, acc => imgAux w S n (if S.testBit n then acc ||| (1 <<< stp w n 0) ||| (1 <<< stp w n 1) else acc)
+def imgAux (w S n : ℕ) : ℕ → ℕ :=
+  Nat.rec (motive := fun _ => ℕ → ℕ) (fun acc => acc)
+    (fun k ih acc => ih (if S.testBit k then acc ||| (1 <<< stp w k 0) ||| (1 <<< stp w k 1) else acc)) n
+
+lemma imgAux_succ (w S n acc : ℕ) : imgAux w S (n + 1) acc =
+    imgAux w S n (if S.testBit n then acc ||| (1 <<< stp w n 0) ||| (1 <<< stp w n 1) else acc) := rfl
 
 /-- The image of the set `S` (a 256-bit number) under one step with column bit `w` and every outside bit. -/
 def img (w S : ℕ) : ℕ := imgAux w S 256 0
@@ -154,13 +162,95 @@ def checkQ (q : ℕ) : Bool :=
 def repOK (q : ℕ) : Bool :=
   (List.range 4).all (fun n => Wp 26 (img 1 (reach q n)) == Wp 22 (img 1 (reach q n))) && ticksOK 26 (reach q 3)
 
+-- The finite facts, one kernel check per word length (with Elab.async off, memory stays near one check's).
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma checks : (List.range 16).all (fun i => checkQ (10 + i)) = true := by decide +kernel
+lemma check10 : checkQ 10 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-lemma reps : (List.range 4).all (fun i => repOK (22 + i)) = true := by decide +kernel
+lemma check11 : checkQ 11 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check12 : checkQ 12 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check13 : checkQ 13 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check14 : checkQ 14 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check15 : checkQ 15 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check16 : checkQ 16 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check17 : checkQ 17 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check18 : checkQ 18 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check19 : checkQ 19 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check20 : checkQ 20 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check21 : checkQ 21 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check22 : checkQ 22 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check23 : checkQ 23 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check24 : checkQ 24 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma check25 : checkQ 25 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma rep22 : repOK 22 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma rep23 : repOK 23 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma rep24 : repOK 24 = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+lemma rep25 : repOK 25 = true := by decide +kernel
+
+lemma checks (q : ℕ) (h1 : 10 ≤ q) (h2 : q ≤ 25) : checkQ q = true := by
+  interval_cases q
+  exacts [check10, check11, check12, check13, check14, check15, check16, check17, check18, check19, check20,
+    check21, check22, check23, check24, check25]
+
+lemma reps (q : ℕ) (h1 : 22 ≤ q) (h2 : q ≤ 25) : repOK q = true := by
+  interval_cases q
+  exacts [rep22, rep23, rep24, rep25]
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
@@ -187,7 +277,7 @@ lemma imgAux_acc (w S : ℕ) : ∀ n acc y, acc.testBit y = true → (imgAux w S
   | zero => intro acc y h; exact h
   | succ n ih =>
     intro acc y h
-    unfold imgAux
+    rw [imgAux_succ]
     apply ih
     split_ifs
     · simp [Nat.testBit_or, h]
@@ -200,7 +290,7 @@ lemma imgAux_mem (w S u : ℕ) (hu : u ≤ 1) :
   | zero => intro acc s hs; omega
   | succ n ih =>
     intro acc s hs hS
-    unfold imgAux
+    rw [imgAux_succ]
     rcases Nat.lt_succ_iff_lt_or_eq.mp hs with h | h
     · exact ih _ s h hS
     · subst h
@@ -332,10 +422,7 @@ def Det (q : ℕ) : Prop :=
     ∀ i < q, bit0Const (Wp i (img 1 S)) (decide (2 ≤ i)) = true
 
 lemma det_small (q : ℕ) (h1 : 10 ≤ q) (h2 : q ≤ 25) : Det q := by
-  have hc : checkQ q = true := by
-    have := checks
-    simp only [List.all_eq_true, List.mem_range] at this
-    simpa [show 10 + (q - 10) = q by omega] using this (q - 10) (by omega)
+  have hc : checkQ q = true := checks q h1 h2
   simp only [checkQ, Bool.and_eq_true, beq_iff_eq] at hc
   obtain ⟨⟨hfix, hb⟩, ht⟩ := hc
   refine ⟨reach q 3, ?_, hb, ?_⟩
@@ -347,14 +434,8 @@ lemma det_small (q : ℕ) (h1 : 10 ≤ q) (h2 : q ≤ 25) : Det q := by
 
 lemma det_large (q : ℕ) (hq : 26 ≤ q) : Det q := by
   set q' := 22 + (q - 22) % 4 with hq'
-  have hr : repOK q' = true := by
-    have := reps
-    simp only [List.all_eq_true, List.mem_range] at this
-    exact this ((q - 22) % 4) (Nat.mod_lt _ (by norm_num))
-  have hc' : checkQ q' = true := by
-    have := checks
-    simp only [List.all_eq_true, List.mem_range] at this
-    simpa [show 10 + (q' - 10) = q' by omega] using this (q' - 10) (by omega)
+  have hr : repOK q' = true := reps q' (by omega) (by omega)
+  have hc' : checkQ q' = true := checks q' (by omega) (by omega)
   simp only [repOK, Bool.and_eq_true, List.all_eq_true, List.mem_range, beq_iff_eq] at hr
   obtain ⟨hW, ht⟩ := hr
   simp only [checkQ, Bool.and_eq_true, beq_iff_eq] at hc'
