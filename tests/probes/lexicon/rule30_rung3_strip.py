@@ -74,6 +74,10 @@ WHITE END OUTCOME, 2026-10-09 21:30 BST (M5, seconds, run at commit bee5d887): W
     - q = 3 mod 4: two non-forcing components and a small forcing one.
   - Reading: the black end's lock (GC850's nine black steps) has no white-end analogue under this certificate. Long
     white runs keep the strip unlocked.
+WHITE END, RADIUS 8 AND 9 (registered 22:35 BST, before running; COMMAND: ... white 9 R for R = 8, 9): after entry 40
+  (q >= 10 closed by the one-sided route), the open white-end cases q = 2 .. 9 under the two-sided strip test at larger
+  radius.
+  WE-P2 (blind, confidence 0.4): some q in 6 .. 9 passes at radius 8 or 9.
 """
 import sys
 from math import gcd
