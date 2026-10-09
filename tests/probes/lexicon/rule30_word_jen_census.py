@@ -31,6 +31,10 @@ OUTCOME, 2026-10-09 22:28 BST (M5, 6.5 s, 9 MB, run at commit 7c18d6e2): WC-C1 P
   - None at periods 7 .. 9. Every determined word has a run of length at least 6.
   - The families are a long white run with a short black tail (the white end 0^q 1, also 0^q 11, 0^9 1011, ...) and the
     slow wall 0^2 1^8 (G18's 0^a 1^b family).
+WIDER (registered 22:31 BST, before running): (a) width 10 on periods 7 .. 14; (b) width 8 on periods 15 .. 18.
+  WC-P3 (blind, confidence 0.6): width 10 determines strictly more words of period 7 .. 14 than width 8's 14.
+  WC-P4 (blind, confidence 0.5): some word of period <= 9 is determined at width 10.
+  WC-P5 (blind, confidence 0.6): at width 8, periods 15 .. 18 have a determined share below 2 percent each.
 """
 import sys
 
