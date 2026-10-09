@@ -386,6 +386,8 @@ prize needs a statement about every single finite configuration. The questions a
 
 ## 8. Reading order
 
+0. `RECORD-MAP.md` (2026-10-09, the owner's request): one line per known result and where it lives. Read it in
+   full first, and again after any context compaction; search the rest with `tests/probes/record_find.py`.
 1. This file.
 2. `WORKFLOW-SAVED-MEMORY.md`: the working rules. Predictions are written before runs, failures are recorded,
    prior art is surveyed before leaps, and every script that produced a recorded number is kept.

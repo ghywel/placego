@@ -255,6 +255,30 @@ not only the outside literature. On 2026-10-05 Cloud proposed, as the next step 
 answered it the same day: they do not, at any width up to 16. The proposal was caught before any code was written,
 by reading those sections first.
 
+**Show the search (2026-10-09, after a repeat).** Cloud's SL probe re-derived what G205, G208 and LK had shown (the
+wheel's locked block is forced), though the result was on the status board in row 6.1. Context compaction had
+dropped it, and the predictions block had nothing that made a search happen. So every PREDICTIONS block now carries
+a line `Record searched: <terms> -> <the hits that matter, or "no hit">`, from
+`python3 tests/probes/record_find.py TERM ...`, which searches the whole record, ledgers included, in seconds. Read
+the hits before writing the predictions; a hit that already decides the question ends the run before it starts.
+
+### record-map
+
+**Rule (the owner, 2026-10-09).** [RECORD-MAP.md](RECORD-MAP.md) is the record's top tier: one line per known
+result, grouped by the object it is about, each naming its status and where it lives. Every worker reads it in full
+at the start of a session and again after every context compaction, before other work. The commit that lands a
+result (a second-read proof, an exact computation, a measurement, a refutation, a closed route) adds or edits its
+line. The map stays under 30 KB; past that, the next board triage compresses it. Where the map and the record
+differ, the record wins and the map is corrected.
+
+**Why.** The owner, 2026-10-09, after the SL repeat of G205: "The more data we make, the more we lose in a context
+compaction event ... Maybe top level documents with very brief summaries that reference lower tier documents, the
+top level document could always be ingested after compaction to keep it in context."
+
+**How to apply.** Three tiers. RECORD-MAP.md is always read. The status board (PERIOD-TWO.md §6) and
+proofs/README.md are read where the task touches them. The full record is searched with
+`tests/probes/record_find.py` and read where the hits point.
+
 ### explore-on-paper-first
 
 **Rule.** Exploring a hypothesis does not always mean building it. Work it through analytically first when the record

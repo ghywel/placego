@@ -314,6 +314,17 @@ app is unpublished by design.
   shared-procedures rule). First run on the real ledger: Local's two pass rows of 19:07 and 19:52, both from before
   the draw-and-work rule; nothing since. No data.
 
+- `record_find.py` (Cloud, 2026-10-09, at the owner's request after the SL repeat of G205): searches the whole
+  record, ledgers included, for paragraphs matching every term, and prints each hit's file, line, heading, record IDs
+  and a snippet, in the order a reader should trust the files. It is the search step of RECORD-MAP.md and of
+  literature-before-leaps. Control: the query `wheel "forc(e|ed|ing)" "column ?s? ?2"` must put PERIOD-TWO.md row
+  6.1 (naming G205) first; it does. No data.
+
+- `lexicon/rule30_cloud_hole_entropy.py` (Cloud, 2026-10-09; Local's offer of 21:17): HE, the one-hole channel
+  driven by iid fair right halves. For the walls 0 1^(p - 1), p = 5, 7, 9 and the control 11, it records the hole
+  word over 400 holes, exactly (initial width T + 2), and measures late periodicity, block conditional entropies
+  and the density of 1s. Predictions in the docstring, pushed before the run. No data.
+
 
 - `lexicon/rule30_one_excursion.c`: EX1, one fixed q16 zero-return charge audit from reviewed pair(320,64); CPU, standard C,800000-edge/2-second caps. Preregistered GC358, NOT RUN. Binary and transcript outside Git.
 
