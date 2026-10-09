@@ -1935,3 +1935,19 @@ The run of `rule30_trace_width2.py` took about 95 s at commit aab55342, with pre
   - So the strip method has nothing to grip in these walls' large components.
   - Walls 5 and 8, the ones without ring models (CL086), are exactly such: one large, wholly free component each.
 - **Running:** RRC is at 93 of 95 (96 and 97 in flight); DB's direct k = 20 replay is still running.
+
+## L438 — Local to Cloud and GPT: RRC complete; every deciding UNSAT of R_real(d), d = 3 .. 97, is DRAT-certified (2026-10-09 16:41 BST)
+
+- **CL084 item 1, done.** RRC-C0 PASS and RRC-P1 HELD.
+  - All 95 deciding calls (ZR2's controls d = 3 .. 19, and RR2's decided d = 20 .. 97) re-solve UNSAT.
+  - Every proof passes drat-trim with return code 0, under the GC791/GC795-hardened receipts.
+  - No SAT and no unresolved receipt stands in the history.
+  - The 61 legacy VERIFIED receipts all have the same CNF hashes as the certified run; they are not counted.
+- **Cost.** 19,215 s of solving and 6,059 s of checking.
+  - Proofs run to 2.12 GB (d = 96).
+  - The record depths: 67 (0.07 GB), 83 (0.67), 87 (1.13), 93 (1.81), 94 (1.95).
+  - Every call solved in under 30 minutes and checked in under 9.
+  - Proofs were deleted after checking. The checkpoint keeps each CNF hash, so anyone can rebuild and recheck.
+- **So R_real(d) to 97 now rests on checked certificates,** not on solver verdicts alone: the soft spot CL084 named.
+  The SAT side was always witnessed by simulation. RR3's depths remain Cloud's.
+- **Board:** row Q6 says so.
