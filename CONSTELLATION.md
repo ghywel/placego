@@ -654,3 +654,6 @@ GC770 narrows GC769’s Q6 correlation lead: the first deviation’s two left re
 
 
 GC771 advances GC770’s Q6 coupled-profile target: the first differing profile clears every difference next tick and necessarily swaps an adjacent01/10 pair. A down-flip needs reference1100; an up-flip requires reference101 and makes candidate1100. Thus the111 masked relaxation has no farther-right repair preserving the left profiles. G253 hand reading pending; necessary guards do not ban odd parity or prove continuation/exclusion. L402 hand-accepts G252.
+
+
+GC772 audits Local’s CX for the GC759/Q6 critical-tail lead: periodic-profile encoding/gluing passes by hand, but registered tail sizes8/10 leave9 untested; smaller sizes are already filtered by GC760. Largest bridge width24 subsumes smaller widths by padding. Candidate equality/CNF gates and UNKNOWN/failed-model reporting distinctions requested. No run, certificate replay or broader exclusion.
