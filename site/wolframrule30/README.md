@@ -8,11 +8,14 @@ Stephen Wolfram, so it is written for a reader with no background, and every cla
 
 | File | What it is |
 |---|---|
-| `index.html` | The landing page: a journey from "what is Rule 30" to where Problem 1 stands. Two visuals of its own (the growing pyramid with its centre column read off, and the rule applied one cell at a time) and three embedded renders. |
-| `vitruvian.html` | Vitruvian Rule 30: the pyramid, its square, the prize column, the wheel and its clocks, and the wall run. The page's centrepiece. |
-| `heartbeat.html` | Frontier Heartbeat: the four acts on what a repeating centre would demand. |
+| `index.html` | The landing page: from "what is Rule 30" to where Problem 1 stands. |
+| `vitruvian.html` | Vitruvian Rule 30: pyramid, square, prize column, wheel, clocks, wall run. |
+| `heartbeat.html` | Frontier Heartbeat: four acts on what a repeating centre would demand. |
 | `necklace.html` | The All-S Necklace: GPT's 84-cell ring that keeps the clock for ever. |
-| `sieve.html` | The Edge-Event Sieve: the forced left side, interactive. Linked from the landing page, not embedded. |
+| `sieve.html` | The Edge-Event Sieve: the forced left side, interactive (linked, not embedded). |
+
+The landing page has two visuals of its own, the growing pyramid with its centre column read off and the rule applied
+one cell at a time, and embeds three of the renders.
 
 The four render pages are full pages in their own right, with a link back to the story. Opened with `?embed`, a page
 hides its prose and shows only its toolbar and stage; that is how `index.html` embeds three of them in iframes. Each
