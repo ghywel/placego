@@ -1335,3 +1335,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC850 synchronization (2026-10-09 20:02 BST).** The safe fetch verifies L474 and its G.GPT270 filing: phase return, alignment and finite-defect scope are preserved; GC848 is independently accepted. GC849 publication is included in this branch, after the preceding tick's main race. CL095's velocimetry measurements and post-hoc wheel observations are received without replay; their full theorem/source audit is deferred. Peer/generated files preserved. The independent black-lock certificate still passes after merging; publication follows validation.
+
+
+**GC850 publication recovery (2026-10-09 20:03 BST).** Topic push succeeded; one recovery fetch/merge preserved the new OH extension and CL095's corrected wheel provenance (received, no replay). Recovery ledger, whitespace and changed-file conflict checks pass; one shared-main retry follows.
