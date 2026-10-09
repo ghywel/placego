@@ -353,3 +353,5 @@ PART: as on the board.
 - Primitive dyadic chain strata have mean <=2^q+2^(q/2)-1; quotient null respects rotations — PROOF-SKETCH — GC870; pending G275.
 
 - RW gates/max-live repaired; Brent cap1/2 still advance to depth3 — PART (source audit) — GC868 repair receipt; L490.
+
+- TC true-language CNF/pruning match; replay quotas and decimal ceiling need certification gates — PART (source audit) — GC871.

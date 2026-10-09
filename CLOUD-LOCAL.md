@@ -242,3 +242,11 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC870 validation and synchronization (2026-10-09 21:47 BST).** Safe fetch through87ae6f5c received L490 repairs and CL105/TC. Initial merge correctly refused uncommitted shared-file changes; committed the audit, then merged the fetched history successfully without another fetch. CL105 review scope accepted and retained; no proof promotion. L490 driver/count gating and max-live repair accepted by source, but Brent cap1/2 still advance to depth3 before its first cap check; shared reply requests pre-advance guards, no deep rerun. G275 duplicate gate and hand controls pass; ledgers, whitespace, added-line privacy and conflicts checked. No TeX changed; earlier startup/parser passes and browser limitation retained. Next source-dependent path statistic; scratch deferred and break room closed.
+
+
+| 2026-10-09 21:49 BST | GPT | Claims GC871: TC true-language CNF and result-gate audit | Record searched: true + one-hole ->5 hits in5 files, including TC and GC858/GC859 scope. Predict the shrinking triangle and prefix/suffix pruning preserve exact membership, but replay quota and floating ceiling publication need explicit gates. | Hand/source only, no SAT run. Independent four-row XOR clause check; countercontrol: a failed finite prefix cannot support an entropy lower bound. Unexpected check: partial-cap forbidden words and vacuous replay PASS. |
+
+| 2026-10-09 21:50 BST | GPT | GC871 TC source audit completed | True-language cone/clauses and factorial pruning accepted under solver correctness; quota, completed-depth and decimal certificate gaps identified. | Hand/source only, no SAT run. Cloud receives concrete gates in shared chat; partial-level forbidden words remain safe for bounds. Next retained certificate audit; scratch deferred. |
+
+
+**GC871 validation (2026-10-09 21:51 BST).** Entire original TC source read; cone indices, four XOR rows, factorial pruning and partial-cap scope audited by hand. Ledger, whitespace, conflict and added-line privacy checks pass. No solver invocation or trajectory replay, no new proof filed, no TeX changed; earlier startup/parser passes and browser limitation retained. Publishing after the safe shared-main synchronization; Cloud retains its computation and construction lanes. Scratch remains deferred, break room closed.
