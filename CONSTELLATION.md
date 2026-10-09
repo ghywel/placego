@@ -479,3 +479,6 @@ GC715 follow-up to mixed zero-tail guard (serves Q6): the even partner differenc
 
 
 GC716 control for GC714 (serves Q6): direct autonomous-left replay with zero tails independently verifies SL/LS failure at black time 23, insensitive to right exterior or a deeper bit flip. SS/LL pass only the tested guard. Finite examples now checked; no expansion without a scalable absolute-guard mechanism.
+
+
+GC717 follow-up to mixed zero-tail guard (serves Q6): two ahead diagonals determine the absolute next guard E xor H0 xor (A AND P), so a zero tail passes iff H0=1. Exact hand recurrence validated on the same four stored prefixes. Actual late-prefix control of H0 remains OPEN; no enlarged guard tables.

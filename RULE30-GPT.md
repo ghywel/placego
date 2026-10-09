@@ -17187,3 +17187,31 @@ Independent Boolean and decimal Rule 30 updates agree throughout. All earlier bl
 For SL and LS, the clamped left row has nearest-left bit 0 at black time 23. An actual black wall then updates to 0 xor 1 = 1, whereas the required time-24 wall is white. No right bit enters that transition, so every autonomous right exterior fails that continuation. This verifies the earlier necessary obstruction independently of the supplied boundary-code inversion. For SS and LL, passing one guard only leaves the continuation unresolved; no actual right row or future survival is certified. The letter label refers solely to the required nearest-right bit at the branch time, not certification of the entire selected next gap.
 
 Stop finite-prefix guard examples here: the existing data now have an independent direct check, and larger prefix tables would not supply a scalable law. The remaining research input is an absolute guard recurrence or a structural reason why all sufficiently late zero-selected continuations must fail. GC715's difference parity alone cannot provide it. Independent replay/reading requested, no larger run.
+
+
+## GC717 — Two common diagonals determine the absolute next guard (2026-10-09, GPT)
+
+**Hand mechanism extending GC715 beyond differences.** No larger guard table is needed. At a mixed branch let d=B+7, A be the initial bit at depth d and E the partner at d+1. Put p_t=-d+t, and let r_t=x_t(p_t+1), s_t=x_t(p_t+2) be the common profiles immediately ahead of the possible difference front. They are determined by the earlier initial bits through depth d-1 and the prescribed wall. Define F_t=x_t(p_t), G_t=x_t(p_t-1). Direct Rule 30 gives
+
+    F_0=A, G_0=E,
+    F_(t+1)=F_t xor (r_t OR s_t),       0<=t<=d-2,
+    G_(t+1)=G_t xor (F_t OR r_t),       0<=t<=d-1.
+
+The moving coordinate matters: each new F is at p_t+1 and each new G at p_t. Thus both equations integrate along right-moving diagonals; no farther initial left bits enter these two paths. The first equation deliberately stops before updating the clamped wall. The second finishes at G_d=x_d(-1), exactly the black-time guard. This removes GC715's missing absolute value without assuming that a parity alone provides it.
+
+Set A=0 in the first equation to define I_0=0 and I_(t+1)=I_t xor (r_t OR s_t). Let
+
+    H0 = XOR_(t=0..d-1)(I_t OR r_t),
+    P  = XOR_(t=0..d-1)(1-r_t).
+
+For arbitrary A, F_t=A xor I_t. Toggling A changes F_t OR r_t exactly when r_t=0, so
+
+    x_d(-1) = E xor H0 xor (A AND P).
+
+Consequently the required partner is E=1 xor H0 xor (A AND P). GC715's partner-difference formula is recovered by toggling A. A finite zero tail at both new depths has A=E=0, and passes this guard exactly when H0=1. The absolute obstruction is therefore H0=0, a nonlinear parity of the two common ahead diagonals, not common-white parity P alone. This is an exact recurrence for any d in the stated clamped-left cone; it is not a theorem that H0 vanishes infinitely often on selected renewal histories.
+
+**Predicted instrument check.** Before calculation, `rule30_gpt_absolute_guard.py` stated that H0 must match GC716's direct zero-tail guard and that toggling A changes it by P. It reuses only the same four stored prefixes. Independent decimal forward controls PASS and both formula predictions hold: H0/P is 1/1 for SS, 0/0 for SL, 0/0 for LS, 1/1 for LL. This validates the new recurrence rather than expanding the finite examples. No prediction of universal obstruction was made.
+
+**Unexpected endpoint check.** r_t is needed through t=d-1, when it is the wall, whereas s_t is needed only through t=d-2. At t=d-1 the latter would be site 1 outside the autonomous left half; the formula does not use that value or update F onto the clamped wall. The guard equation still updates the actual site -1 and is valid. Farther left bits cannot affect these diagonal values before the tested endpoint.
+
+Next input: control H0 along actual late zero-selected renewal prefixes, possibly using the existing diagonal structure, without substituting a marginal density or an iid law. Difference-only counting and larger prefix tables remain stopped. Independent hand reading requested; no general mixed-tail exclusion or prize result.
