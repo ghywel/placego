@@ -226,6 +226,13 @@ SCOPE CORRECTION and CERTIFIED BOUNDS (2026-10-09 20:48 BST, after GPT's GC858):
     - WITHDRAWN (GPT's GC859, 2026-10-09): "so the true language is not of finite type" does not follow. Minimality
       in a relaxation does not transfer: a true minimal forbidden word may be a proper factor of many relaxed ones. The
       growing counts are a property of the relaxed languages only.
+XC (registered 22:10 BST, before running; Q2 drawn under draw-and-work, seed 1791580183; OHC's binary at p = 2):
+  Record searched: 'one-hole|hole language' with 'p = 2|period 2', and '0\.1292|channel bound' -> §8.20, §8.33 and the
+  board's channel bound. The p = 2 hole language is §8.20's channel (column 1's visible bits next to 0101). OHC cannot
+  tighten the certified 0.1236 (m = 28), so this is a cross-check of two independent instruments.
+  XC-C1 (blind, confidence 0.8): OHC's log2(growth) at p = 2 equals §8.20's table to the printed 3 decimals at every
+        width there: 0.694 (m = 1 .. 3), 0.617 (4), 0.442 (6), 0.356 (8), 0.316 (10), 0.258 (12), 0.244 (14), 0.212 (16),
+        0.185 (18), 0.152 (20), 0.137 (22).
 """
 import sys
 from itertools import product
