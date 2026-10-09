@@ -1259,9 +1259,9 @@ were answered with predictions pushed first (`rule30_cloud_fringe_uniqueness.py`
 *Independent reading (Local L370, 2026-10-09).* Verified by hand: if two rows agree at every cell $> i$ and differ at $i$, the next rows agree at every cell $> i + 1$ (each such update reads only cells $> i$) and differ at $i + 1$ (its OR inputs agree and $x(i)$ differs). So the rightmost difference of $X$ and $Y$ sits at $-b + t$, reaches the centre exactly at $t = b$, and $\tau(R) = b$ because $X$ carries the single cell's column; (a) and (b) follow as stated. The argument uses neither the finiteness of $L$ nor that of $R$, only that $L$ has a shallowest black. Literal check of the lemma: for every third right half of up to 9 cells and every nonwhite left half of depth up to 11, the first centre-column difference between $(L, 1, R)$ and $(\text{white}, 1, R)$ within 48 steps is at exactly the shallowest black's depth (350,037 pairs, no exception). Scope: the proposition fixes where a nonwhite left half must begin, not whether one exists, so the completeness conjecture stays open. Near-entry check, made late (L371; `proof_dupes.py --near 34`): the three nearest older entries are 33, 29 and 06. Entry 34 uses 33 for its corollary (b) and restates none of them (29 is Rule 210's empty-left uniqueness, 06 is Theorem B on zero runs).
 
 
-### 35. Proposition 22 (proved by hand; waiting room, second reader wanted): a row that turns faster than light is periodic, and every window turns leftwards
+### 35. Proposition 22 (proved by hand, second-read): a row that turns faster than light is periodic, and every window turns leftwards
 
-*Status:* waiting room, second reader wanted. Elementary; Boyle and Lee (arXiv:math/0607178, Remark 2.1) describe
+*Status:* second-read by Local (L375, 2026-10-09); promoted from the waiting room by Local (L375). Waiting-room heading: "35. Proposition 22 (proved by hand; waiting room, second reader wanted): a row that turns faster than light is periodic, and every window turns leftwards". Elementary; Boyle and Lee (arXiv:math/0607178, Remark 2.1) describe
 the same kind of count for permutive directions, so it is not claimed new. Not a prize claim.
 *Provenance:* Cloud, 2026-10-09 (08:12 BST), from the owner's questions after CL071 (which surfaces carry a ring's
 history; "a unit vector in a space-time picture is a velocity"). Part (b) was noticed in a disclosed smoke test of
@@ -1307,6 +1307,8 @@ a rotation of GC686's ring. Reason: columns 0 and 1 have period 6, so every colu
 propagation); column $i + s$ is column $i$ delayed by $p$ steps, so every column has period 6. GC688 then fixes the
 entrance, GC687 the right half and L372's decoding the left half. The census agrees: in its whole range the only
 turning row with an alternating column at all is GC686's ring.
+
+*Independent reading (Local L375, 2026-10-09).* Verified by hand. (a) With $m = i - s$ and $s > p$, the window $x(m+s-p), \dots, x(m+s+p)$ lies inside $W_m = x(m+1), \dots, x(m+s+p)$ because $s - p \ge 1$, so $W_{m-1} = T(W_m)$; $W_m$ lies in every image $T^j$, hence among $T$'s periodic points, where $T$ is a bijection, so the windows cycle both ways and the row is periodic with least period the cycle length. (b) $F^p$ stays left-permutive under composition, and with $j = -s > p$ the arguments of $H$ end at $n - j + p \le n - 1$, inside the new window, so the dropped cell is recovered and $T$ is injective. The corollary's step "column $i + s$ is column $i$ delayed by $p$" reads $x_{t+p}(i) = x_t(i - s)$ correctly, and it carries period 6 from the left columns to every column. Near-entry check first (`proof_dupes.py --near 35`): entries 25, 05 and 07, a pulse-weight proposition and Theorems A and A′; none is restated. The census and GC687 were not replayed here.
 
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 

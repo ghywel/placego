@@ -1,11 +1,11 @@
-# Proposition 22 (proved by hand; waiting room, second reader wanted): a row that turns faster than light is periodic, and every window turns leftwards
+# Proposition 22 (proved by hand, second-read): a row that turns faster than light is periodic, and every window turns leftwards
 
-*Siblings, Jen and the squeeze. Derived from [PROOFS.md](../PROOFS.md), entry "35. Proposition 22 (proved by hand;
-waiting room, second reader wanted): a row that turns faster than light is periodic, and every window turns
-leftwards"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in
-[summaries.md](summaries.md), never this file.*
+*Siblings, Jen and the squeeze. Derived from [PROOFS.md](../PROOFS.md), entry "35. Proposition 22 (proved by hand,
+second-read): a row that turns faster than light is periodic, and every window turns leftwards"; rebuild with
+`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this
+file.*
 
-**Status:** waiting room, second reader wanted.
+**Status:** second-read by Local (L375, 2026-10-09); promoted from the waiting room by Local (L375).
 
 ## In plain words
 
@@ -17,7 +17,7 @@ A Rule 30 row whose pattern slides faster than light is always a repeating ring.
 
 ## The formal statement and proof
 
-*Status:* waiting room, second reader wanted. Elementary; Boyle and Lee (arXiv:math/0607178, Remark 2.1) describe
+*Status:* second-read by Local (L375, 2026-10-09); promoted from the waiting room by Local (L375). Waiting-room heading: "35. Proposition 22 (proved by hand; waiting room, second reader wanted): a row that turns faster than light is periodic, and every window turns leftwards". Elementary; Boyle and Lee (arXiv:math/0607178, Remark 2.1) describe
 the same kind of count for permutive directions, so it is not claimed new. Not a prize claim.
 *Provenance:* Cloud, 2026-10-09 (08:12 BST), from the owner's questions after CL071 (which surfaces carry a ring's
 history; "a unit vector in a space-time picture is a velocity"). Part (b) was noticed in a disclosed smoke test of
@@ -63,3 +63,5 @@ a rotation of GC686's ring. Reason: columns 0 and 1 have period 6, so every colu
 propagation); column $i + s$ is column $i$ delayed by $p$ steps, so every column has period 6. GC688 then fixes the
 entrance, GC687 the right half and L372's decoding the left half. The census agrees: in its whole range the only
 turning row with an alternating column at all is GC686's ring.
+
+*Independent reading (Local L375, 2026-10-09).* Verified by hand. (a) With $m = i - s$ and $s > p$, the window $x(m+s-p), \dots, x(m+s+p)$ lies inside $W_m = x(m+1), \dots, x(m+s+p)$ because $s - p \ge 1$, so $W_{m-1} = T(W_m)$; $W_m$ lies in every image $T^j$, hence among $T$'s periodic points, where $T$ is a bijection, so the windows cycle both ways and the row is periodic with least period the cycle length. (b) $F^p$ stays left-permutive under composition, and with $j = -s > p$ the arguments of $H$ end at $n - j + p \le n - 1$, inside the new window, so the dropped cell is recovered and $T$ is injective. The corollary's step "column $i + s$ is column $i$ delayed by $p$" reads $x_{t+p}(i) = x_t(i - s)$ correctly, and it carries period 6 from the left columns to every column. Near-entry check first (`proof_dupes.py --near 35`): entries 25, 05 and 07, a pulse-weight proposition and Theorems A and A′; none is restated. The census and GC687 were not replayed here.

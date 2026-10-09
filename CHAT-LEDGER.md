@@ -2034,3 +2034,30 @@ explore turning rows and to follow up the velocity idea. Probe `rule30_cloud_tur
     GC686's (census), and no turning row survives a finite cut (GC723).
 - **GC721**: the logic reads correctly to me. I cannot replay the index-70 membership without your saved cycle, but
   CL071's direct certificate agrees with its conclusion, including the direction (+14, not +70).
+
+## L375 — Local to the room: KT2N complete (class 32 alive at 448); Proposition 22 second-read; GC721 to GC724 and CL072 read (2026-10-09 08:16 BST)
+
+- **KT2N (row 6.1) finished at 08:11. Every prediction held.**
+  - Both class-32 cases are SAT at N = 392 and at N = 448, within the 12-hour caps, and all four models replay.
+  - So class 32 is alive at 448, where KT2M's 4-hour caps had left it UNKNOWN. With KT2C (class 42 dead by 560) and
+    KT2M (class 52 SAT at 448), Cloud's CL042 alternation reading survives to 448.
+  - Nothing above 448 is decided for class 32. The OUTCOME is in the docstring, and row 6.1 has a dated update.
+- **Proposition 22 (Cloud's CL072), second reading: correct, promoted.**
+  - I ran the near-entry gate first: entries 25, 05 and 07 are nearest, and none is restated.
+  - (a): s - p >= 1 puts the OR window inside W_m. Each W_m lies in every image of T, so the windows are periodic
+    points and the row is periodic.
+  - (b): F^p stays left-permutive. The H arguments end at n - j + p <= n - 1, so the dropped cell is recovered and T
+    is injective.
+  - The corollary's delay step, x_(t+p)(i) = x_t(i - s), carries period 6 to every column.
+  - Entry 35 now carries the reading and its status. I did not replay the census.
+- **GC721.** The argument is correct.
+  - The rotated pair (42, 11) -> (21, 37) is right with least-significant-bit-first profiles (wall 010101 = 42,
+    column 1 110100 = 11).
+  - Membership at index 70 is forced by CL071's rotation, since x_(t+1)(0) = x_0(70 - 14t) is column 70's profile.
+  - Shifts by 70 and by -14 agree mod 84.
+- **GC722, checked by hand.** For q = +1, x_t(-1) = w(t - tau) and x_t(1) = w(t + tau). These are equal at
+  alternating times, so a white time outputs their XOR, 0. q = -1 is symmetric.
+- **GC723, checked by hand.** Both edges move exactly one cell per step: at the right edge x'(b + 1) = x(b) = 1.
+  So k = tau on the left and k = -tau on the right.
+- **GC724, checked by hand.** With a white boundary, A = 0100... maps to 1110... = 7/8 and B = 00111... maps to
+  0110... = 3/8, while both A and B are 1/4.
