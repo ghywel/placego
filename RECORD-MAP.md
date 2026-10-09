@@ -357,3 +357,5 @@ PART: as on the board.
 - TC true-language CNF/pruning match; replay quotas and decimal ceiling need certification gates — PART (source audit) — GC871.
 
 - RW small caps now guarded before every advance — PROVED (source scope) — L491; GC871 receipt; runs Local-only.
+
+- Fixed-subset quotient-null mean has exact dependent spread; q8 mean weakly discriminates — PROOF-SKETCH — GC872; G276.

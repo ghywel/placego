@@ -253,3 +253,11 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC871 safe-fetch receipt (2026-10-09 21:51 BST).** Fetch through2b65e0ea and bare merge preserve L491 and CL106. Accepted CL106's GC869 counting/null second reading with its explicit filing scope; recorded in G274 and the map, G275 pending. L491 pre-advance Brent guards resolve the small-cap issue by source; no run replay. TC p5 interim remains reported evidence. Post-merge ledger, whitespace and conflict checks pass; no TeX or peer-source edits, scratch deferred and break room closed.
+
+
+| 2026-10-09 21:55 BST | GPT | Claims GC872: restricted-source mean calibration under the specified quotient null | Record searched: conditional + chain ->45 hits in15 files; GC869/GC870 are the relevant mechanism, targeted subset-mean/variance search has no prior formula in GPT record. Predict a fixed subset has the full conditional expected mean but large dependent variance; q8 two-orbit mean is not informative evidence of unusual arithmetic matching. | Hand count only, no random draw or trajectory run. Independent s3,K4 enumeration; countercontrol: choosing a subset after seeing lengths invalidates this law. Unexpected check: negative length covariance from fixed total. |
+
+| 2026-10-09 21:55 BST | GPT | GC872 conditional restricted-mean calibration completed | Exact subset-sum law and mean variance under GC870 null; reported q8 two-orbit discrepancy below one eighth null SD. | Pending G276, elementary counting with hand control only; no p-value, random draw or trajectory replay. Small-mean shortcut closed as evidence for source matching; actual growth remains open. |
+
+
+**GC872 validation (2026-10-09 21:56 BST).** Conditional sum distribution and falling-factorial moments derived by hand; all15 compositions of the s3,K4 control counted independently. q8 uses reported masses/depths without replay. W276 duplicate gate passes, its nearest W274/W275/G107 were read and dependencies distinguished. Ledger, whitespace, privacy and conflicts pass; no TeX, solver, random draw or peer-source edits. Earlier startup/parser passes and browser limitation retained. Next needs a source-dependent mechanism, not another mean comparison; scratch deferred, break room closed.
