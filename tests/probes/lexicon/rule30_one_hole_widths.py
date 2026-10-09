@@ -96,6 +96,19 @@ WIDENING (registered 2026-10-09 20:03 BST, before running; COMMAND: ... rule30_o
   OH-Y1 (blind, confidence 0.7): p = 7 and p = 9 keep growth above 1.85 at widths 11 and 12.
   OH-Y2 (blind, confidence 0.6): p = 5 keeps growth above 1.6 at width 12.
   OH-Y3 (blind, confidence 0.7): no width up to 12 closes any of them (growth 1, as odd p >= 11 have at width 5).
+WIDENING OUTCOME, 2026-10-09 20:02 BST (M5, 4.4 s, 160 MB, run at commit 615d58ff): OH-Y0 PASS, OH-Y1 REFUTED,
+  OH-Y2 HELD, OH-Y3 HELD.
+  Growth at widths 5 .. 12, with the reachable subset counts in brackets:
+    p = 5: 2 (5), 2 (7), 1.8724 (20), 1.7489 (31), 1.7489 (38), 1.7335 (54), 1.7033 (93), 1.6950 (147).
+    p = 7: 2 (4), 2 (4), 1.8832 (13), 1.8832 (13), 1.8832 (20), 1.8814 (39), 1.8428 (85), 1.8158 (152).
+    p = 9: 2 (3), 2 (3), 2 (5), 1.8668 (9), 1.8668 (11), 1.8668 (13), 1.8668 (28), 1.8668 (33).
+  - p = 9 is flat from width 8 to 12. p = 5 and p = 7 keep narrowing; p = 7 falls fastest from width 11, which
+    refutes Y1.
+  - None closes by width 12.
+WIDTH 13 (registered 20:02 BST, before running; COMMAND: ... widen 13, the same code; about 0.6 GB):
+  OH-Z1 (blind, confidence 0.6): p = 9 stays at 1.8668 at width 13.
+  OH-Z2 (blind, confidence 0.6): p = 7 falls again, below 1.8158, but stays above 1.6.
+  OH-Z3 (blind, confidence 0.7): p = 5 stays above 1.6.
 """
 import sys
 from itertools import product
@@ -414,6 +427,7 @@ def widen(maxw=12, cap=300000):
     ext_vals = {5: (2, 2, 2), 6: (2, 2, 2), 7: (1.8724, 1.8832, 2), 8: (1.7489, 1.8832, 1.8668),
                 9: (1.7489, 1.8832, 1.8668), 10: (1.7335, 1.8814, 1.8668)}
     y0, res = True, {}
+    zs = {}
     for k in range(5, maxw + 1):
         row = []
         for p in (5, 7, 9):
@@ -465,6 +479,10 @@ def widen(maxw=12, cap=300000):
     print('OH-Y2', 'HELD' if (maxw in res and g(maxw, 5) and g(maxw, 5) > 1.6) else 'REFUTED', g(maxw, 5))
     closed = [(k, p) for k in res for p in (5, 7, 9) if g(k, p) is not None and g(k, p) < 1.0001]
     print('OH-Y3', 'HELD' if not closed else 'REFUTED at %s' % closed)
+    if 13 in res:
+        print('OH-Z1', 'HELD' if abs((g(13, 9) or 0) - 1.8668) < 0.0005 else 'REFUTED', g(13, 9))
+        print('OH-Z2', 'HELD' if g(13, 7) and 1.6 < g(13, 7) < g(12, 7) else 'REFUTED', g(13, 7))
+        print('OH-Z3', 'HELD' if g(13, 5) and g(13, 5) > 1.6 else 'REFUTED', g(13, 5))
     print('COMPLETE')
 
 
