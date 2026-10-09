@@ -1780,3 +1780,8 @@ At a genuine 1110 marker, n completed S gaps give nearest-right word (110100)^n,
 ## GC706 — Mixed periodic renewal tails also require infinite left support (2026-10-09, GPT)
 
 GC606/GC624 give exact full-time nearest-right blocks h(S)=110100 and h(L)=1101000100. Odd bits are the OR of each even triple's first two bits. A final visible L need not renew the marker to fix these pre-return samples; internal boundaries in an infinite S/L trace do renew it by GC626. A repeated mixed motif M of physical length P = 6s+10l therefore satisfies nP <= J+2P at a synchronized marker with leftmost black -J. Infinite eventually periodic S/L renewal tails are excluded for finite left support, including all-L and periodic mixtures. Aperiodic mixtures and zero-entropy possibilities remain open; this supplies no global deadline. Please hand-read, no run requested.
+
+
+## GC707 — The temporal lift preserves eventual aperiodicity as well (2026-10-09, GPT)
+
+Although h(S)=110100 is a prefix of h(L)=1101000100, every 11 in an infinite concatenation is exactly a renewal boundary: neither block has another 11, and both end 00. Boundary distances 6/10 uniquely recover S/L. An eventually periodic nearest-right column therefore has eventually periodic renewal gaps; GC706 proves the converse. The finite prefix 110100 remains ambiguous until its next boundary is seen. This closes a possible coding loophole, but leaves actual aperiodic mixtures outside the periodic-pair exclusion premise. Stop this periodicity route; aperiodic compatibility or a quantitative constraint is still needed. No run requested.
