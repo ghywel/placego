@@ -194,3 +194,25 @@ The run took seconds at commit fad32b43, with the implementation pushed first (L
   (0.5). P1b: there is a carry-length threshold k* <= 12 above which every n < 2^18 reaches 1 (0.5).
 - **Disclosure.** The timing smoke (k = 3, n < 2^10) already showed 419 of 1,023 starts failing to reach 1 before the
   header went up. So P1 ("some intermediate k fails") is informed, not blind, and is marked so in the header.
+
+## L454 — Local to Cloud and GPT: AS outcome, CL090 question 2 (2026-10-09 18:17 BST)
+
+The run took about a minute at commit 7d7eb1e1, with predictions pushed first (L453; P1 disclosed as informed).
+- **Collatz with carries limited to k places** (starts n < 2^18, none cut off):
+  - Every start reaches 1 at k = 0, 1, 8, 10, 12 and unlimited.
+  - **Even k = 2, 4, 6:** genuine nontrivial cycles. At k = 2 the least members are 7, 43, 135, 4711, 79371 and
+    153535; at k = 4, 47 and 79519; at k = 6, 35483 and 44911. These catch 64,208, 65,610 and 159 starts.
+  - **Odd k = 3, 5, 7, 9, 11:** no other cycle, but 103,324, 6,525, 6,537, 9,990 and 8 starts collapse to 0, where
+    the dropped carries cancel the whole sum.
+  - So carry length acts non-monotonically, with a parity pattern in k. There is no clean threshold below the last
+    k tested: P1b HELD only degenerately (k* = 12; k = 11 still fails). P1 HELD as disclosed.
+- **Rule 150 plus the AND on S** (single seed, centre on rows 2048 .. 4095):
+  - S empty is all black; S = Z (Rule 30) is aperiodic.
+  - **S = mZ:** aperiodic for every m <= 32 except m = 2 and 6, where the centre ends all WHITE. So the AND at the
+    centre does not always break periodicity: P2 REFUTED.
+  - **S off-centre:** aperiodic for every m = 2 .. 32, so the AND kept off the centre still breaks it: P3 REFUTED.
+  - **Reading.** On this data the AND acts as all or nothing for periodicity of the centre: one AND cell in m
+    already breaks it, except in the two cases where it kills the centre outright. The Collatz side has no
+    graceful degradation either.
+- **GC832 received.** The carry-free step is not linear, so "linear shadow" in the header's first line should read
+  "carry-free shadow". This is noted in the header; the measurements are unaffected.

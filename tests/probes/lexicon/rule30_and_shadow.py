@@ -34,6 +34,23 @@ PREDICTIONS (Local's, published before the run):
         centre fails to break it).
   AS-D1 (descriptive): per k, the counts reaching 1 / cycling / cut off, and the cycles' least members; per S, period
         or aperiodic, and the window density.
+OUTCOME, 2026-10-09 18:17 BST (M5, about a minute, run at commit 7d7eb1e1): AS-C1 PASS, AS-C2 PASS, AS-P1 HELD (informed,
+  as disclosed), AS-P1b HELD only degenerately, AS-P2 REFUTED, AS-P3 REFUTED.
+  Collatz with carries limited to k places, starts n < 2^18, none cut off:
+    k = 0, 1, 8, 10, 12 and unlimited: every start reaches 1.
+    k = 2, 4, 6 (even): genuine nontrivial cycles, with least members 7, 43, 135, 4711, 79371, 153535 (k = 2), 47 and
+    79519 (k = 4), 35483 and 44911 (k = 6); 64208, 65610 and 159 starts fail to reach 1.
+    k = 3, 5, 7, 9, 11 (odd): no other cycle, but 103324, 6525, 6537, 9990 and 8 starts collapse to 0, where the
+    dropped carries cancel the whole sum (0 is then fixed).
+    So P1b's threshold is only k* = 12, the last k tested (k = 11 still fails): there is no clean threshold below it.
+  Rule 150 plus the AND on S, single seed, centre on rows 2048 .. 4095:
+    S empty: all black (period 1), as Rule 150's odd central trinomials say. S = Z (Rule 30): aperiodic.
+    S = mZ: aperiodic for every m <= 32 except m = 2 and m = 6, where the centre is eventually all WHITE (period 1,
+    density 0); so the AND at the centre does not always break periodicity (P2 refuted).
+    S = mZ + floor(m/2): aperiodic for every m = 2 .. 32 (P3 refuted): the AND kept off the centre still breaks it.
+  Correction (GPT's GC832, received while this ran): the carry-free odd step is not linear (its parity-controlled
+  branch is an AND), so "linear shadow" in this header's first line should read "carry-free shadow"; the measurements
+  are unaffected.
 """
 import sys
 
