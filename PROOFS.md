@@ -1606,6 +1606,8 @@ family, cross-referenced), 37 (period 1) and 03, all read. None is restated. Har
 - `control_q9` shows that the check fails at q = 9.
 - The axioms are propext, Classical.choice and Quot.sound. There is no sorryAx and no native_decide.
 
+*Independent full source review (GPT GC893, 2026-10-09 23:41 BST).* WhiteEnd.lean's statement, state encoding, restricted-set W26/W22 induction, actual-path containment, phase split and formal time rebasing match entry40. TheoremA executable source is unchanged; white_end_finite even allows an infinite right tail, assuming only a left bound and one black cell. q9 is a failed determination check, not a finite-seed counterexample. Source/hand acceptance only: compilation and kernel finite-check execution remain Local L508's evidence, not GPT replay.
+
 ### 41. More column words excluded by entry 40's route (computed twice, second-read): 24 words of period 10 .. 14 and 115 of period 15 .. 18
 
 *Status:* the per-word computation was done by Local (`rule30_word_jen_census.py`, WC, predictions first, L499) and
@@ -11593,3 +11595,122 @@ Return depth r=L+1, giving r<=m-2*a+3=(N-h)*(N+h-3)/q+3, as claimed. This is ele
 
 
 **GPT duplicate audit (2026-10-09 23:30 BST).** W277 hard checks pass. Nearest W275/W274/W273 read in full: they supply primitive mass, the rotation quotient, two-endpoint chain minimum and existence/offset. This entry is their elementary individual endpoint-reservation corollary, explicitly credited; no new recurrence mechanism or proof promotion. Verbatim GC890 filed here; generated proof pages left to Local.
+
+
+#### GC892 — G203 already strengthens the reservation budget; counting-only route closed (2026-10-09 23:36 BST)
+
+**Registered preflight; no new mechanism.** Record searched: return + short-depth variants ->432 hits in134 files. Targeted G203 read in full, with relevant G188/G192 scope checks. Predict known short-return exclusions tighten GC890 without changing its exponential scale. Countercontrol: the actual primitive q2 return at r5 prevents using the q>=4 minimum there. Unexpected index check: reserve live length r-1, not return depth r. No trajectory, census or compiler run. This is a credited accounting corollary of second-read G203 and GC870's still-pending quotient, filed as a continuation of W277 rather than a new theorem number.
+
+**Correction of sharpness, not validity.** GC890's two-vertex minimum is valid but unnecessarily weak for primitive sources. G203 already proves nonconstant first children and endpoints have return depth r>=5. At r5, the forced prefix 0,c,1,e and final repeated pair imply 1=w XOR S w. Thus w is alternating of least period2; period conservation excludes r5 at primitive q>=4. Every primitive dyadic q>=4 chain therefore has r>=6, or live length L>=5. No claim that r6 is attained.
+
+Use GC890's m=(2^q-2^(q/2))*(2^q+2^(q/2)-1)/q and a=(2^q-2^(q/2))/q. Reserving five vertices for each of the other a-1 chains gives
+
+L<=m-5*(a-1),   r<=m-5*a+6.
+
+This tightens the q4 cap54 to48, and q8 cap8073 to7986. At q16 it gives268406886. These are integer substitutions, not replayed maxima. At q2 the minimum is instead L>=4 and the same accounting leaves r<=6 because a=1; the actual r5 remains compatible. Reserving six live vertices for q>=4 would misread r>=6 by one; the live/return offset is essential.
+
+**Closed counting-only direction.** Even the strengthened cap remains asymptotic to2^(2q)/q. Any fixed baseline b merely subtracts b*(a-1), of order2^q/q, from mass of order2^(2q)/q. Finite short-return exclusions alone cannot change that leading scale. In the abstract quotient a single chain can use all vertices left after reserving the others' minima; this does not claim a realizable Rule30 extremum. More baseline bookkeeping is not a new source-dependent or physical-root constraint and supplies no Q7 lower growth. Retain this bound as corrected accounting; close further optimization of this counting-only route unless compulsory mass on the leading scale or a dynamical constraint is supplied. Next useful work must bound actual source-dependent paths, not repackage total mass. Prize board remains Q7 PART.
+
+
+**GC892 filing check (2026-10-09 23:36 BST).** W277 hard checks pass; nearest W275/W274/W273 are unchanged and were read in full for GC890. G203, read in full this block, supplies the credited primitive short-return minimum. This is a continuation/correction of accounting sharpness, not a new proof unit or promotion; quotient second reading remains pending.
+
+
+**W277 second-reading receipt (GPT, 2026-10-09 23:47 BST).** Cloud CL119 atef34f951 verifies GC890's primitive mass, free rotation chain copies, individual budget and return offset by hand, and GC892's tightening conditional on already second-read G203 (not reread by Cloud). The accounting part is now second-read; no trajectory replay or lower-growth claim. It does not review GC870's conditional random ensemble or GC894. Formal promotion/pages remain separate.
+
+### GPT G278 — Boundary-only matching countermodel (GPT, 2026-10-09; waiting room, GC894)
+
+
+#### GC894 — Exact boundary edges still allow arbitrary matching in the relaxed interface (2026-10-09 23:46 BST)
+
+**Registered hand preflight; second reading pending.** Record searched: (source/endpoint) + (matching/bijection) ->94 hits in27 files. Read G203's boundary proof and GC865/GC870 mechanisms; targeted search finds no five-boundary construction. Predict those exact boundary edges alone leave arbitrary rotation-equivariant endpoint matching in a partial-bijection relaxation. Countercontrol q2 has overlapping boundary sets. Unexpected omitted assumption is the middle bridge's successor-coordinate constraint. No actual trajectory, enumeration or random draw. This refines the known limitation of GC869's abstract null; it supplies no Rule30 example or prize claim.
+
+**Construction.** Fix dyadic q>=4. Let C be the set of words of least temporal period q, S the temporal shift and Delta=I XOR S. For each c in C and w in C, define five families of live pairs:
+
+A_c=(0,c), B_c=(c,1), C_c=(1,1 XOR S^(-1)c), D_w=(Delta w,w), E_w=(w,w).
+
+The symbols0 and1 here denote the constant q-words. Every displayed pair has nonzero driver and least pair period q. Each family has |C| distinct members. All five families are disjoint: A has first coordinate0 and the others do not (Delta w cannot vanish for primitive w); B has second coordinate1 while the other families do not; C has first coordinate1, which cannot equal w or Delta w for primitive w of period at least4; D=E would require S w=0. In particular Delta w=1 would force an alternating w of least period2, excluded here.
+
+Let pi:C->C be ANY bijection commuting with S. In the primitive live domain define the chains
+
+A_c -> B_c -> C_c -> D_(pi(c)) -> E_(pi(c)),
+
+with E terminal, and give every remaining primitive live pair an identity self-loop. This is a rotation-equivariant bijection from nonterminal pairs to nonstart pairs. Chains are disjoint by the five-family disjointness and pi's injectivity; complement states are identical domain/range leftovers, so their self-loops complete the bijection. Their period strata remain primitive. The first two arrows and D_w->E_w are genuine Rule30-compatible edges: S1=1, S(1 XOR S^(-1)c)=1 XOR c, and S w=Delta w XOR w. Also E_w has the genuine exit to(w,0). Thus the model retains the exact forced three-pair prefix and two-pair suffix, but its source-to-endpoint matching is the arbitrary pi. Each primitive word orbit is free of size q, so arbitrary permutations of the source orbits and arbitrary relative rotations define such pi.
+
+**Independent literal control and missing interior.** At q4 take pi the identity and c=w=1000 in increasing temporal order. The five pairs are(0000,1000),(1000,1111),(1111,1011),(1001,1000),(1000,1000), all distinct. The bridge from the third to fourth pair fails the actual successor-coordinate condition: the next pair's first word1001 is not the previous driver1011. Hence this is explicitly NOT a compatible Rule30 excursion or a claimed return at r6. It is a countermodel only to deductions using the preserved boundary facts, partial bijectivity, period and rotation constraints. The complement self-loops may likewise violate Rule30; they are included solely to complete that comparison model.
+
+At q2, c=w=01 gives C_c=(11,01)=D_w, because Delta w=11. The five-family construction fails exactly at the boundary overlap already identified in G203's r5 control. This is why q>=4 was imposed. It is not a defect repaired by counting the same vertex twice.
+
+**Disposition.** Boundary-only source-to-endpoint matching is CLOSED as a route to an additional invariant: every equivariant matching is represented in a comparison model satisfying these particular boundary constraints. The actual interior recurrence, including the successor-coordinate relation and the Boolean child equation, is indispensable to distinguish Rule30. This does not show arbitrary matching in Rule30, does not model physical-root ancestry, does not satisfy G202's whole-path overlap identity, and does not rule out a mechanism using those omitted facts. Next select an interior relation that is not implied by the boundary package; do not spend a census rediscovering boundary period/rotation correlations. Q7 remains PART.
+
+
+**GC894 duplicate audit (2026-10-09 23:47 BST).** W278 hard checks pass. Nearest W275 and W273 were read in full earlier this session and credited; W277 was reread in full for this block. They supply quotient symmetry, endpoint injection and reservations, while this comparison construction deliberately retains G203's exact boundary edges and shows their insufficiency without the interior equation. It is not an arbitrary-matching claim for Rule30. No promotion.
+
+
+**W278 second-reading receipt (GPT, 2026-10-09 23:52 BST).** Cloud CL120 atc9361fcf verifies GC894's genuine boundary arrows, five-family disjointness, primitive pair periods, equivariant partial bijection and q4/q2 controls by hand. Boundary-only closure accepted with the omitted-interior scope preserved. No actual Rule30 matching or trajectory claim, and no review of GC895 follows; formal promotion is separate.
+
+### GPT G279 — Coordinate-preserving driver-row comparison (GPT, 2026-10-09; waiting room, GC895)
+
+
+#### GC895 — Restoring successor coordinates leaves driver-row permutation freedom (2026-10-09 23:51 BST)
+
+**Registered hand preflight; second reading pending.** Record searched: (permutation/bijection) + (driver/coordinate) ->8 hits in5 files. GC869/GC870/GC894 and G203 boundary facts read. Predict the successor-coordinate constraint converts the comparison into driver-row permutations; retained boundaries still leave many maps, whereas the Boolean equation selects the actual map. Independent q4 swap, q2 reserved-slot countercontrol and unexpected pair-versus-profile period check. No trajectory, random draw or new actual endpoint census. No claim that endpoint matching remains arbitrary after adding coordinates.
+
+**Row description.** At cap q let Q be all N=2^q temporal words. Live pairs have y!=0. Nonterminal pairs exclude x=y, and nonstart targets have first coordinate nonzero. Any bijection between those domains satisfying the successor-coordinate rule has the form
+
+f(x,y)=(y,g_y(x)),  g_y:Q\{y}->Q\{0} a bijection for every y!=0.
+
+Indeed each domain row has N-1 inputs and its targets are exactly the N-1 pairs with first coordinate y and nonzero second coordinate. Global injectivity makes each row injective, hence bijective; conversely row bijections give a global one. This retains a unique inverse, but not the specific Boolean reconstruction H.
+
+**Retained boundaries, dyadic q>=4.** Keep the actual Rule30 rows for nonprimitive drivers, including driver1. For each primitive driver y, the forced prefix and suffix require just
+
+g_y(0)=1,   g_y(Delta y)=y,
+
+where Delta=I XOR S. These are two distinct inputs and outputs: Delta y!=0, Delta y!=y, and y!=1. The fixed driver1 row already supplies g_1(c)=1 XOR S^(-1)c for primitive c. Thus GC894's exact prefix/suffix edges are preserved. Every remaining primitive row admits (N-3)! completions.
+
+To impose rotation equivariance choose a completion for one driver in each primitive rotation orbit and transport it by
+
+g_(S y)(S x)=S(g_y(x)).
+
+Primitive drivers have free orbits of size q, so this is consistent without extra stabilizer restrictions. With P primitive words and a=P/q driver orbits, this constructs ((N-3)!)^a distinct maps. For primitive y both input and target pairs have least pair period q because they contain y. Nonprimitive rows are unchanged actual rows, so all pair-period strata are preserved. Global partial bijectivity, starts, terminals, exact boundary edges, successor coordinates and rotations therefore do not uniquely determine the interior map. This is a comparison-family count, not a statistical law or a Rule30 orbit count.
+
+**Independent literal swap at q4.** Let y=1000, S y=0001 and Delta y=1001 in increasing temporal order. The actual row has g_y(1111)=1010 and g_y(0001)=0111. Directly checking S z=x XOR(y OR z) verifies both. Inputs1111 and0001 are distinct and outside the reserved slots0,1000,1001. Swap these two outputs and transport the swap over y's rotation orbit, leaving all other rows unchanged. The altered edge(1111,1000)->(1000,0111) preserves the successor coordinate and injective row structure but fails the actual equation at time0: its child bit at time1 is1, while1111(0) XOR(1000(0) OR0111(0))=0. The genuine forced prefix with c=1110 reaches(1,y), so the altered edge changes the first interior continuation of an admissible start. No return endpoint or depth in this altered map was computed.
+
+**Unexpected period scope and small-period guard.** The actual child1010 in this control has least profile period2, though its pair with1000 has least period4. The model correctly preserves pair period, not the period of every individual child. At q2 choose y=01: Delta y=11, so the proposed input1 is a reserved suffix slot and the swap is invalid. This independently prevents extending the q4 witness to the exceptional boundary-overlap case. No q2 model count or rigidity claim follows.
+
+**Disposition.** Coordinate restoration removes GC894's artificial bridge defect but does not recover the Rule30 equation. The decisive remaining condition is x=S z XOR(y OR z); for each actual row it fixes the permutation through reset uniqueness. Adding that full equation exactly recovers the original dynamics, so it is not by itself a reduction of Q7. This preflight closes attempts to infer unique interior continuation from boundary/coordinate/permutation structure alone. It does not close endpoint invariants common to this stronger family, physical-root ancestry or any actual recurrence-based growth route. Next seek an inequality or obstruction using the Boolean equation without merely enumerating its whole dynamics; no further bare permutation-family census is warranted. Q7 stays PART.
+
+
+**GC895 duplicate audit (2026-10-09 23:52 BST).** W279 hard checks pass. W278 reread in full; W275 and W277 were read in full earlier this session. W278 omits the middle coordinate; this continuation restores it globally using driver rows, without claiming arbitrary endpoint matching. W275 supplies credited free rotations/pair-period scope; W277 supplies credited live interface/reserved endpoints. No new Rule30 growth theorem or promotion.
+
+
+**W279 second-reading receipt (GPT, 2026-10-09 23:57 BST).** Cloud CL121 atefb7b0c3 verifies GC895's driver-row decomposition, two boundary slots, rotation transport/count and literal q4/q2 controls by hand. Comparison scope accepted; no actual endpoint permutation, return trajectory or GC896 review follows. Formal promotion remains separate.
+
+### GPT G280 — Exact one-driver-bit reset response (GPT, 2026-10-09; waiting room, GC896)
+
+
+#### GC896 — One driver-bit perturbation has an exact reset-interval response (2026-10-09 23:56 BST)
+
+**Registered actual-recurrence hand block; second reading pending.** Record searched: (affine/linear) + (driver/reset) ->40 hits in15 files. Targeted perturbation/rank-one search finds no identical one-bit response formula. Read G2 reset mechanism and GC895's actual row equation; these are the credited basis, not a new reset theorem. Predict one-bit driver change, with a common remaining reset, affects either no child bits or the precise interval before that reset. Independent q4 direct substitutions; last-reset countercontrol; unexpected sharp q-1 response. No trajectory, census, random model or literature novelty claim.
+
+**Statement.** Let x,y be q-periodic binary words, q>=2. Toggle y at one temporal position j to get y'. Assume there is a black position in y other than j, hence a common black reset in y,y'. Both drivers are nonzero and their children z,z' solving
+
+S z=x XOR(y OR z),   S z'=x XOR(y' OR z')
+
+are unique. Let k be the first common black position strictly after j in cyclic temporal order. Let I consist of positions j+1 through k inclusive, with cyclic length d between1 andq-1. Then
+
+z' XOR z = (1 XOR z(j))*1_I.
+
+Thus the exact Hamming distance is0 if z(j)=1, and d if z(j)=0. It need not be bounded independently of q.
+
+**Proof.** At any common black position t, both equations reset the following bit to1 XOR x(t), so their difference is zero immediately after that position. Starting at the preceding common black and propagating forward to j encounters no driver difference; at a white tick the difference propagates unchanged and at a black tick it resets to zero. Hence z'(j)=z(j). At the changed tick j the two OR expressions, with identical child bit z(j), differ by1 XOR z(j), so the child difference at j+1 is that value. Until k the common driver is white, hence the difference propagates unchanged. At k it resets to zero at k+1 and stays zero up to j again. This gives exactly the stated cyclic interval. The argument uses actual Boolean equations, not merely global injectivity, row permutations or boundary matching.
+
+**Independent direct q4 controls.** Take x=1111,y=1000,j=1, so y'=1100. The cyclic children are z=1010,z'=0001. Directly substituting their four equations verifies both; their XOR1011 is supported at positions2,3,0, precisely I before the common reset at0. Here z(1)=0 and distance3=q-1. Conversely toggle j=2 instead: y'=1010 while z(2)=1, and z'=1010 remains unchanged. At the changed tick the child1 masks the OR driver change; direct substitution verifies the unchanged child. This latter comparison need not preserve the driver's least period, and no such premise was used.
+
+**Sharp family and unexpected locality failure.** For every q>=2 choose x=1, y black only at0, and toggle the white position j=1 to black. The original reset forces z(1)=0. The first common reset after1 is0 after a full cyclic gap, so d=q-1 and the children differ at every position except1. This realizes the maximal response in actual cyclic equations, for arbitrary q; it is not a physical-root reachability claim. Locality of the Boolean rule in time does not give uniform sensitivity of its cyclic inverse.
+
+**Last-reset countercontrol.** If the only black bit is toggled off, there is no common reset and the stated law does not apply. At q4,x=1111,y=1000, turning y into0000 leaves the two alternating children1010 and0101. Thus the new child is not unique, and the perturbation cannot be assigned one deterministic interval response. This is the same zero-driver integration exception already handled in G2/G158, retained here as a domain guard.
+
+**Relation to row affinity and scope.** For fixed y, write the inverse equation over F2 as x=y+S z+(1+y)*z. It is affine in z; nonzero y makes its linear part invertible by reset uniqueness. This is another expression of the existing reset mechanism, not a growth reduction. The interval formula supplies a specific cross-driver consequence of that equation and a sharp failure of uniform local sensitivity. Comparing different drivers does not show either pair is reached in the physical-root tree, control the frequency of perturbations along a spatial path, or bound a first-return depth. Next require a rooted occurrence/cancellation mechanism before using the interval law for Q7; no sensitivity census is requested. Q7 remains PART.
+
+
+**GC896 duplicate audit (2026-10-09 23:57 BST).** W280 hard checks pass; nearest G162/G157/G201 read in full. They supply credited reset/run accounting, period preservation and a two-sibling one-profile identity. This entry compares the actual children for one changed driver bit with the same parent, retaining the exact common-reset interval and last-reset guard. No rooted-growth or new reset theorem is claimed; no promotion.

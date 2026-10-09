@@ -3650,6 +3650,36 @@ A fixed small source subset has substantial mean-length spread under the specifi
 
 Disjoint rotation copies give every primitive dyadic first excursion an explicit return cap.
 
-**What it says.** The rotation quotient has m live vertices and a source chains. Reserving two endpoints for every other chain leaves at most m-2(a-1) vertices for one chain. Its original return depth is at most (2^q-2^(q/2))*(2^q+2^(q/2)-3)/q+3. Second reading is pending; the period and quotient mechanisms are credited to W275.
+**What it says.** The rotation quotient has m live vertices and a source chains. Reserving two endpoints for every other chain leaves at most m-2(a-1) vertices for one chain. Its original return depth is at most (2^q-2^(q/2))*(2^q+2^(q/2)-3)/q+3. Cloud CL119 second-read this accounting; the period and quotient mechanisms are credited to W275.
 
 **Why it matters.** This improves the universal cap by a factor roughly q but remains exponential. No lower growth or prize statement follows; a stronger counting bound needs compulsory additional excluded mass.
+
+
+**W277 continuation (GC892).** G203's already second-read short-return exclusion gives live minimum5 for primitive dyadic q>=4, strengthening the cap to m-5a+6. Cloud CL119 accepted this accounting corollary given G203; it remains exponential and does not review the quotient random ensemble. Further fixed-baseline optimization is closed as a growth route; no promotion.
+
+
+## W278
+
+Exact start and finish edges do not constrain matching in a partial-bijection comparison.
+
+**What it says.** For primitive dyadic periods at least four, the forced three-pair prefix and two-pair suffix occupy five disjoint state families. Join them by any rotation-equivariant source-to-endpoint permutation and complete unused states with self-loops. This retains the boundary edges, period and equivariance while allowing any matching. Cloud CL120 second-read the construction and controls; formal promotion remains separate.
+
+**Why it matters.** The middle bridge explicitly omits the interior successor-coordinate and Boolean recurrence constraints; the q4 control violates them. Boundary-only reasoning is closed, not the actual Rule30 source-matching problem or Q7.
+
+
+## W279
+
+Restoring the successor coordinate still leaves many interior comparison maps.
+
+**What it says.** Coordinate-preserving live partial bijections are permutations in each fixed-driver row. For primitive dyadic periods at least four, the exact start/end edges reserve two row slots. Arbitrary remaining completions transported over driver rotations preserve pair periods and all those boundary facts. A q4 swap changes the first interior continuation and explicitly violates the omitted Boolean equation. Cloud CL121 second-read the family and controls; formal promotion remains separate.
+
+**Why it matters.** The actual Boolean recurrence is essential to recover the unique Rule30 continuation. This does not claim arbitrary endpoint matching in the stronger model or a new growth bound; the next target needs a consequence of that equation, not another restatement.
+
+
+## W280
+
+Changing one driver bit flips either nothing or exactly the interval to the next common reset.
+
+**What it says.** With a remaining common black driver bit, cyclic children are unique. Their difference vanishes at the changed tick, becomes the complement of the original child bit just after it, and propagates to the next black reset. Direct q4 controls check both outcomes; a family attains Hamming response q-1. Second reading pending.
+
+**Why it matters.** This is a consequence of the actual Boolean recurrence, not the relaxed permutation model. It rejects uniform local sensitivity of the cyclic inverse but supplies no rooted occurrence frequency or return-growth bound. Removing the last reset is explicitly excluded.
