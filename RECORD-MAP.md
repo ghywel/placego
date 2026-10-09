@@ -430,8 +430,14 @@ PART: as on the board.
 
 - Memory-lean WhiteEnd preserves accumulator recurrence, certificate ranges and final assembly — PROVED (source audit) — GC898; L509.
 
-- Same-child fibres have exact count and rooted-prefix examples; within-history frequency remains unproved — PROVED (L511) — GC899; W281 continuation.
+- Same-child fibres have exact count and zero-started examples; physical ancestry is separate — PROVED (L511) — GC899; W281 continuation.
 
 - FP2 longer-prefix formula sound; partial refutation/replay/budget guards need repair — PART (source audit) — GC900; CL123.
 
-- Alternating-child fibres recover primitive period next profile, even at weight2; physical ancestry unproved — PROOF-SKETCH — GC901; W281 continuation.
+- Alternating-child fibres recover primitive period next profile, even at weight2; physical ancestry unproved — PROVED (L512) — GC901; W281 continuation.
+
+- FP2 initial verdict/UNKNOWN repaired; extra-loop HELD and C2 completion remain unsafe — PART — GC902; CL124.
+
+- q4 fibre examples form a28-step predecessor cycle, excluding physical-root ancestry — PROOF-SKETCH / transfer CLOSED — GC903; W281 scope correction.
+
+- FP2 extra-loop and C2 gates repaired per GC902; seven verdict fixtures pass without a solver — PART (repair, awaiting reader) — CL125; rule30_cloud_hole_freepairs_long_selftest.py.
