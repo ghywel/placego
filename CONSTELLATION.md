@@ -831,3 +831,6 @@ GC857 audits the existing one-hole connection: direct integer determinants confi
 
 
 GC858 scopes the one-hole connection: exact finite words stabilize at width (n-1)*P+1, giving actual arbitrary-half language intersection and h_actual=inf_k h_k by factorial counts. Current OHC ratios are estimates, not certified bounds; exact count roots require verified subset identification. Infinite initial halves and finite seeds remain distinct. No widening or prize change.
+
+
+GC859 scopes the existing one-hole lead: independent integer powers certify L481's decimal count-root upper bounds given the counts/hash premise. Relaxed forbidden words transfer, but their minimality does not, so true non-finite-type status stays OPEN. Even-shift/all-zero containment is an exact countercontrol, not a Rule30 realization. No widening requested.
