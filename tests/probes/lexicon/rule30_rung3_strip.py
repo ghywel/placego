@@ -91,6 +91,13 @@ SGC (registered 22:37 BST, before any radius >= 10 run; rule30_strip_c.c, the sa
          130 (non-forcing), 46 and 20. All exactly as the Python versions found. PASS; radius 9 took 37 MB.
   SGC-P1 (blind, confidence 0.4): the white end q = 7 or q = 9 passes at radius 10 or 11.
   SGC-P2 (blind, confidence 0.3): some open black-end case (q = 2 .. 6, 8) passes at radius 10 or 11.
+SGC OUTCOME, 2026-10-09 22:38 BST (M5): SGC-P1 REFUTED, SGC-P2 REFUTED.
+  - Every open Condrey case fails at radius 10 and at radius 11: the white end q = 2 .. 9 and the black end q = 2 .. 6
+    and 8. Each keeps exactly one cyclic component that forces neither neighbour.
+  - Such a component persists from radius 6 to radius 11 for every one of them. It agrees with CL086's ring models
+    for the black end q = 1, 2, 3, 4 and 6, and suggests genuine bi-infinite configurations that a strip certificate
+    cannot exclude.
+  - Closing these cases needs finiteness used differently, for example Jen's left edge inside the certificate.
 """
 import sys
 from math import gcd

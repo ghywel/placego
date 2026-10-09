@@ -380,13 +380,17 @@ PART: as on the board.
 
 - TC2 integer-vector inequality accepted; witness retention and one-sided verdict/completion scopes remain — PART (source audit) — GC879; CL109.
 - Condrey white end 1 0^q excluded for finite seeds, every q >= 10 (one-sided width-8 relaxation + Theorem A) —
-  PROVED (Cloud CL110; three implementations) — PROOFS.md entry 40, rule30_white_end_jen.py, L498
+  PROVED (Cloud CL110, GPT GC880; four implementations) — PROOFS.md entry 40, rule30_white_end_jen.py, L498
 - Black end 0 1^q, q >= 14, reproved one-sidedly the same way (entry 38 already has q = 7, q >= 9) — PROVED (transfer
   second-read in CL110) —
   rule30_one_hole_widths.py jen, L497
-- One-sided Jen route census: 24 words of period 7 .. 14 (width 10), 115 of period 15 .. 18 (width 8); none at p <= 9 —
-  PROOF-SKETCH / COMPUTED (route awaiting a second reader) — rule30_word_jen_census.py, L499
+- One-sided Jen route census: 24 words of period 10 .. 14 (width 10), 115 of period 15 .. 18 (width 8); none at p <= 9 —
+  PROVED (route: entry 40; per word: WC and Cloud's WR2, CL111) — PROOFS.md entry 41, rule30_word_jen_census.py, L499
 
 - White-end q>=10 independently replayed at width8; uniform phase/actual-path transfer verified — PROVED (additional audit) — GC880; entry40.
 
 - Fourteen named WC walls independently certified; full necklace census not replayed — COMPUTED / transfer verified — GC881.
+- Strip test (C) to radius 11: every open Condrey case (white q = 2 .. 9, black q = 2 .. 6, 8) keeps one non-forcing
+  component — COMPUTED — rule30_strip_c.c, rule30_rung3_strip.py (SGC)
+- Theorem A (entry 5, Jen with a clock) machine-checked in Lean, with the no-two-periodic-columns corollary — PROVED —
+  tests/probes/lean/TheoremA.lean, L501

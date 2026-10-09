@@ -3137,6 +3137,15 @@ No Rule 30 picture grown from finitely many black squares can end up with a colu
 
 **An everyday picture.** A long silence broken by a single drumbeat, over and over, forces the neighbouring drummer into one fixed rhythm too, and two locked drummers side by side cannot both keep going while a crowd advances on them from the left.
 
+## 41
+The same short argument that closed the white end also rules out 139 more drumbeat patterns that a column of a finitely seeded Rule 30 picture might have settled into.
+
+**What it says.** For each of these patterns, a narrow strip of eight or ten cells beside the column is forced into one fixed rhythm, so the neighbouring column repeats too, which a pattern with a left edge cannot sustain. The patterns are long: periods 10 to 18, each with a long run of white or of black ticks.
+
+**Why it matters.** It widens the list of rhythms known to be impossible, and the computation was done twice by independently written programs.
+
+**An everyday picture.** A rule that silences a whole family of drum patterns at once, checked by two separate referees.
+
 ## G259
 Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right half: one goes blank and the other freezes.
 

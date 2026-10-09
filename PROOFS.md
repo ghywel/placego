@@ -152,6 +152,14 @@ At time $a$ the left edge is $L + a$ cells away. So the window's length $b - a$ 
    $b \ge 2a + L + 2P$, then $e \le b - j$. So both $e - P = a$ and $e$ lie in the window where column $i - j$ is
    $P$-periodic. It is white at one and black at the other, a contradiction. $\square$
 
+*Machine-checked (Local, 2026-10-09 22:40 BST).* tests/probes/lean/TheoremA.lean (Lean 4, Mathlib).
+- `theorem_A` is the statement above for Rule 30 on configurations ℤ → Bool: a leftmost black cell L >= 0 cells left of
+  column c, columns c and c + 1 P-periodic on [a, b], P >= 1, give b <= 2a + L + 2P - 1.
+- `no_two_periodic` is the corollary: no two adjacent columns are P-periodic for ever.
+- Facts 1 .. 3 are separate lemmas (`left`, `left_iter`, `edge`).
+- The axioms are propext and Quot.sound only.
+- The case of a leftmost black cell to the right of the column (time re-basing, as in entry 40) stays a hand step.
+
 ### 6. Theorem B (a zero run cannot outlast two periods)
 
 *Where:* RULE30-PRIZE.md, "8.54 Jen's theorem with a clock: a window of periodicity cannot outlast the left edge (2026-10-05)". *Bears on:* question 2: a zero run in row 0 of the forced left half is at most two periods long. *Status:* proved; sharp at q = 2.
@@ -1586,6 +1594,42 @@ family, cross-referenced), 37 (period 1) and 03, all read. None is restated. Har
 
 
 *Additional independent audit (GPT GC880, 2026-10-09 22:37 BST).* Entry40 accepted by hand and by a new integer-set/literal-rule-number certificate, rule30_gpt_white_end_audit.py. All256 width8 states and both outside bits give W22=W26, W21!=W25, singleton phase words1001^(q-2) for q10..29, and stable counts31/21/7 at q10/12/20. Stabilization takes2 or3 strict decreases; q9 retains an undetermined phase. For every q>=30, choose congruent b26..29: the macro/stable set is identical and every white phase j>=22 reduces to r22..25, all contained in b. Actual-path restriction, eventual-onset re-basing and entry5's unbounded-window contradiction independently checked. No replay of q30..40, width6/12 or WC words. Near40 gate passes and38/37/03 read; no new proof entry or prize claim.
+
+### 41. More column words excluded by entry 40's route (computed twice, second-read): 24 words of period 10 .. 14 and 115 of period 15 .. 18
+
+*Status:* the per-word computation was done by Local (`rule30_word_jen_census.py`, WC, predictions first, L499) and
+replayed independently by Cloud (`rule30_cloud_word_census_replay.py`, WR2, CL111; Lyndon words by Duval, successor
+tables and set-valued stable sets, no shared code). Every count and word agrees. The transfer is entry 40's
+(second-read by Cloud CL110 and GPT GC880), and its finish, Theorem A, is machine-checked (entry 5's note). Filed by
+Local, 2026-10-09.
+
+**Theorem.** No nonzero finite configuration of Rule 30 has a column that is eventually periodic with any of the
+following period words.
+- These words, of period 10 .. 14, via the width-10 relaxation (the 14 without a star are already excluded at width 8;
+  the 10 starred need width 10):
+  - p = 10: 0000000011*, 0011111111
+  - p = 11: 00000000001, 00000000011, 00000001111*
+  - p = 12: 000000000001, 000000000011, 000000000101*
+  - p = 13: 0000000000001, 0000000000011, 0000000000101*, 0000000001011, 0000000001101*, 0000000001111*, 0000000010011*
+  - p = 14: 00000000000001, 00000000000011, 00000000000101*, 00000000001011, 00000000001111*, 00000000010011,
+    00000000010111, 00000000011011, 00000000110011*
+- Every primitive word of period 15 .. 18 that is determined at width 8: 15, 20, 31 and 49 words, 115 in all. They
+  are reproduced by `rule30_word_jen_census.py 8 15 18` and by WR2.
+- Words are least rotations; any rotation is the same column word.
+
+**Proof.** Entry 40's argument, word by word.
+1. In the k-cell one-sided relaxation (k = 8 or 10), the stable set of the period's step relation determines x1 at
+   every tick. So column +1 is eventually periodic with the word's period on every actual right half.
+2. Column 0 is periodic.
+3. Theorem A (entry 5; `no_two_periodic` in TheoremA.lean) forbids two adjacent columns periodic for ever when there
+   is a leftmost black cell, re-basing time if the edge starts right of column 0. ∎
+
+*Scope.* No word of period 7 .. 9 is determined at width 8 or 10. Every determined word has a run of length >= 6. The
+determined share is 0.6 percent (width 8) and 1.0 percent (width 10) of periods 7 .. 14, and 0.4 percent of 15 .. 18.
+The prize's 01 and every word of period <= 9 are untouched. Not a prize claim.
+
+*Near-entry gate (Local, at filing).* `--near 41` gives entry 40, its parent: the route and the white-end family,
+which this extends to other words and does not restate; 17 and 38, read. Hard checks pass.
 
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 
