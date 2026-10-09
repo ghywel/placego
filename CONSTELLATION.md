@@ -596,3 +596,6 @@ GC750 second critical all-L defect guard (serves Q6/portfolio4; hand reading pen
 
 
 GC751 third critical all-L guard (serves Q6/portfolio4; hand reading pending): primitive block xor is odd from87/67 even-index whites, making candidate b-1's white parity odd. Third defect complements after620, requiring1240 dividing p for distinct finite defects. Next paired site cancels with310 whites over620; unlimited doubling route CLOSED by that cancellation. No full-period1240 construction, infinite-defect exclusion or dynamics run.
+
+
+GC752 lag-plateau lemma (serves band/core lead; hand reading pending): B_P(t)=B_2P(t) forces equality at every integer multiple by a reset at the first failure. The period-at-most-t ordered prefix is B_Q(t), Q largest dyadic<=t; for dyadic P and t>=P the plateau certifies identity with B_P at that time. This supports checked finite windows, not asymptotic fixed-P growth or a rate. RF/ASF failures retained; no new computation.
