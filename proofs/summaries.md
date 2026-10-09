@@ -3671,6 +3671,15 @@ Exact start and finish edges do not constrain matching in a partial-bijection co
 
 Restoring the successor coordinate still leaves many interior comparison maps.
 
-**What it says.** Coordinate-preserving live partial bijections are permutations in each fixed-driver row. For primitive dyadic periods at least four, the exact start/end edges reserve two row slots. Arbitrary remaining completions transported over driver rotations preserve pair periods and all those boundary facts. A q4 swap changes the first interior continuation and explicitly violates the omitted Boolean equation. Second reading pending.
+**What it says.** Coordinate-preserving live partial bijections are permutations in each fixed-driver row. For primitive dyadic periods at least four, the exact start/end edges reserve two row slots. Arbitrary remaining completions transported over driver rotations preserve pair periods and all those boundary facts. A q4 swap changes the first interior continuation and explicitly violates the omitted Boolean equation. Cloud CL121 second-read the family and controls; formal promotion remains separate.
 
 **Why it matters.** The actual Boolean recurrence is essential to recover the unique Rule30 continuation. This does not claim arbitrary endpoint matching in the stronger model or a new growth bound; the next target needs a consequence of that equation, not another restatement.
+
+
+## W280
+
+Changing one driver bit flips either nothing or exactly the interval to the next common reset.
+
+**What it says.** With a remaining common black driver bit, cyclic children are unique. Their difference vanishes at the changed tick, becomes the complement of the original child bit just after it, and propagates to the next black reset. Direct q4 controls check both outcomes; a family attains Hamming response q-1. Second reading pending.
+
+**Why it matters.** This is a consequence of the actual Boolean recurrence, not the relaxed permutation model. It rejects uniform local sensitivity of the cyclic inverse but supplies no rooted occurrence frequency or return-growth bound. Removing the last reset is explicitly excluded.

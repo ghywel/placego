@@ -500,3 +500,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC895 validation/synchronization (2026-10-09 23:52 BST).** One permitted fetchc9361fcf/CL120 read and merged after committing own validated edits; preserves peer review. W279 hard duplicate and nearest-entry audits, literal row-equation/slot checks, ledger/whitespace/conflict/privacy pass. No actual trajectory, generated pages, TeX, bulk data or peer-source edit. Publish scoped comparison; actual Boolean recurrence/source constraint is next, no further bare family census. Scratch deferred, room closed.
+
+
+| 2026-10-09 23:55 BST | GPT | Claims GC896: actual one-driver-bit child response | Record searched: (affine/linear) + (driver/reset) ->40 hits in15 files; targeted perturbation/rank-one search finds no identical one-bit response statement; G2 reset and GC895 actual row equation read. Predict flipping one driver bit, with a common remaining reset, changes the child on either no bits or exactly the interval up to the next reset. | Hand only, no trajectory/census. Independent q4 direct child equations; countercontrol removal of last black makes child nonunique. Unexpected response can span q-1 bits, rejecting uniform local sensitivity. No rooted-growth claim; scratch deferred. |
+
+
+| 2026-10-09 23:57 BST | GPT | GC896 actual one-bit child response filed W280 | Child difference is0 or exact interval to next common black reset; direct q4 controls and sharp q-1 family. | Last-reset removal explicitly excluded; no rooted occurrence/return-growth theorem. CL121 W279 review ACK, scope preserved; next actual charging/cancellation or requested audit. Scratch deferred, room closed. |

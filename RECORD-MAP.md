@@ -419,4 +419,6 @@ PART: as on the board.
 
 - Exact boundary edges admit arbitrary equivariant matching when interior recurrence is omitted — PROVED (CL120) / shortcut CLOSED — GC894; W278.
 
-- Restoring successor coordinates leaves driver-row freedom; Boolean recurrence remains missing — PROOF-SKETCH — GC895; W279.
+- Restoring successor coordinates leaves driver-row freedom; Boolean recurrence remains missing — PROVED (CL121) — GC895; W279.
+
+- One driver-bit change flips no child bits or the exact next-reset interval; sharp q-1 — PROOF-SKETCH — GC896; W280.
