@@ -15776,3 +15776,30 @@ At test time2k, iterated left permutivity gives the nearest-left bit as a_(2k+1)
 **Independent controls and unexpected endpoint check.** At j=2,B=1 the free nearest-left bit must be1, leaving exactly one seed, as the formula states. At j=8,B=4, GC640 explicitly solves pivots a1,a3,a5,a7 in terms of three free bits u=a2,d=a4,e=a6; all eight triples give one solution, agreeing with2^(7-4)=8. The unexpected case j=1,B=1 is outside the claimed range: its only nearest-left bit is already the fixed black endpoint, so the first test passes freely, rather than halving a count of one. Once a pivot reaches that endpoint or the fixed white exterior, this proof cannot pair it. Also the initial black test costs a1 here; unlike section8.51's either-phase whole-column count, it is not a free choice of clock phase.
 
 **Disposition.** Nonlinearity rules out GC640's proposed affine description, but not the established triangular cost before the edge. In this left-only ensemble the paid bits are one per two ticks, until the endpoint; nothing here bounds subsequent survival or gives a uniform linear lifetime. Do not transfer this count to right-realizable survivors by multiplying a marginal ratio. The quantitative obligation remains the actual post-edge black tests or another selected-state estimate. Local reading requested; no experiment, board expansion or prize result.
+
+
+**GC642 second reading.** Local L352 at9a5b63e4 verifies the sample space and pivot argument, reports exact counts for all j<=14 in the stated range, and records failures of the one-bit formula immediately beyond it. These are Local's computations, not GPT replays; the post-edge obligation remains open.
+
+## GC643 — The settled H8 ray cannot cancel the lower-strip residual alone (2026-10-08)
+
+**Scope and prediction.** Advance Q6's actual parity obligation rather than its age-only guard. GC633 leaves a nonzero period-six residual from the frontier and lower strip in either settled wall phase; GC634 proves that after physical time10, H7 is silent and H8 equals a bit with h(t+2)=NOT h(t). Predict the H8 Pascal target contribution has a third-order cyclotomic pole that neither that residual nor finitely many startup events can cancel. Counterfactual H8's universal old events alone repair the lower strip. Hand generating-function proof over GF(2); no experiment or new prior-art claim.
+
+Choose an even settling time tau>=10, keeping the clock phase. Write L'=L+tau. H8 events at subsequent ages s occur at depth j=L'+s-8, with activity h_s. Put n=k-L'+8. Their contribution to target depth k is
+
+    g_n = sum_(s>=0) h_s * binom(n-s,s) mod2,
+
+where a binomial with negative or too small upper index is zero. The settled bit has h_0=a,h_1=b,h_2=a+1,h_3=b+1, repeated with period4. Its age series is
+
+    H(y) = [a+(a+b)y+(b+1)y^2] / (1+y)^3.
+
+This follows by dividing the period-four numerator a+b*y+(a+1)y^2+(b+1)y^3 by1+y; no phase choice is discarded. The standard binomial identity sum_(n>=0) binom(n-s,s) z^n = z^(2s)/(1+z)^(s+1) then gives
+
+    G(z) = sum g_n z^n = N(z) / q(z)^3,
+    q(z)=1+z+z^2,
+    N(z)=a(1+z)^2+(a+b)z^2(1+z)+(b+1)z^4.
+
+**Independent pole control and unexpected check.** At a primitive cube root zeta in GF(4), q(zeta)=0 and zeta^2=1+zeta. Each of (1+zeta)^2, zeta^2(1+zeta) and zeta^4 equals zeta. Therefore N(zeta)=zeta*(a+a+b+b+1)=zeta, nonzero for ALL four initial phases a,b. So G has a genuine order-three q denominator. As a direct coefficient endpoint control, g_0=h_0=a and g_1=a, agreeing with N(0)=a and the coefficient of z in q^-3*N. The unexpected check is phase independence of the uncancelled pole, not inferred randomness of h.
+
+Any eventually period-six sequence has a generating-function denominator dividing1+z^6=(1+z)^2*q(z)^2, apart from a polynomial startup. A single fixed-age Pascal source has target generating denominator a power of1+z, after a depth shift and finite prefix correction. Thus finitely many earlier source events, including any from farther inward offsets before settling, contribute no q pole. Shifting target coordinates multiplies by a power of z and may change a finite prefix; neither operation changes a pole at zeta. The order-three H8 pole cannot cancel against the period-six lower residual or those finite events.
+
+**Conditional consequence and limitation.** In a hypothetical full finite-left alternating clock, the settled lower strip and H8 therefore require infinitely many additional source events at inward offsets>=9; finitely many such events cannot discharge the remaining parity equations. This uses GC633's clock-dependent compensation demand and GC634's actual settled strip, not an independent existence assumption for a clock. It proves neither that the required farther events are incompatible nor that their offsets are unbounded. Ordinary finite-left dynamics may also supply them, so this is not an age-only discriminator or a prize exclusion. Stop the truncated-strip compensation route through offset8; the open task is joint compatibility of the farther source parity with the clock.
