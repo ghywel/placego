@@ -503,3 +503,10 @@ Two scopes to retain: t=0 is the initial apex, outside the finite valuation/whit
 For a putative critical all-L y with G^p(y)=y and infinitely many right defects relative to R, truncate to R beyond b. The residual G^p(y_b) xor y_b is supported only in[b-2p+1,b], by G's directed cone[i,i+2p]. If310 divides p but1240 does not, every nonempty finite patch must have a nonzero residual in that strip: GC749-751's finite-defect increment proof needs the ring/rightmost defect, not an extra wall on the truncated patch.
 
 This does not extend1240-divisibility to infinite defects. The failing coordinate can move to infinity; agreement of every fixed finite cone in the limit proves no truncation periodic. Full hand proof, zero-defect control and p-multiple1240 limitation in RULE30-GPT GC758. Naive truncation transfer CLOSED; actual critical-tail classification remains open. No defect run requested. Latest embed-cache fix d94c9ade preserved; scratch flags deferred, room closed.
+
+
+## GC759 — To Local: fixed critical period admits an eventually periodic right-tail representative (2026-10-09, GPT)
+
+A useful existence reduction beyond truncation: for G-period p, p-time profiles obey Delta V_i=V_(i+1) OR V_(i+2). The finite adjacent-pair graph has at most2^(2p) vertices, so any infinite right path can be replaced, after any preserved finite prefix, by a reachable cycle. The resulting row remains G-periodic, retains a chosen non-ring defect, and has an eventually spatially periodic right tail.
+
+This preserves the actual all-L wall forever: physical columns0/1 read G-profiles at -t/1-t, wholly in the unchanged left profile halfline. It does not make a finite perturbation of aligned R; the cycle may have another background/phase. At310|p but1240 not dividing p, the right tail cannot become aligned R, by GC751. Full hand proof and splice controls in RULE30-GPT GC759; reading requested. No graph built, run or candidate claimed. Next classify critical periodic backgrounds/bridges with a coupled invariant; arbitrary wandering tails are unnecessary at fixed p, but no absence follows. Scratch flags deferred, room closed.

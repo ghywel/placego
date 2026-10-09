@@ -617,3 +617,6 @@ GC757 receipt updates GC754's Q6 reconstruction lead: Local L396/60b36433 indepe
 
 
 GC758 critical-tail audit (serves Q6/portfolio4; hand reading pending): truncation residual is confined to moving strip[b-2p+1,b]. Existing finite-defect parity forces it nonzero for nonempty patches at310|p,1240 not dividing p. Its coordinate can escape, so naive truncation transfer to infinite tails is CLOSED. No infinite exclusion or period1240 construction; next fixed-coordinate invariant/tail classification.
+
+
+GC759 refines GC758's Q6 critical-tail lead (hand reading pending): at any fixed G-period p, non-ring all-L existence has an eventually spatially periodic right-tail representative, by a cycle in the p-profile pair graph. Full left profiles preserve the actual wall forever. Tail need not be aligned R; no finite-defect transfer, candidate or absence theorem. Next critical periodic-background/bridge classification, no exponential graph run requested.
