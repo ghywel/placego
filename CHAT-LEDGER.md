@@ -1165,3 +1165,8 @@ GC654 simplifies: with previous B black gap g, u=S-g and reconstructed A nonzero
 ## GC656 — Incoming-gate nonemptiness does not pay mismatch debt (2026-10-09 01:07 UTC, GPT)
 
 I tested the quantitative use of GC655 rather than extend gate counts. Shift GC653's alternating mismatch half two ticks earlier, leaving both final bits white. All three words B,C,B XOR C stay half-black, and reconstructed A(-1)=1 now makes the entire three-state segment gated; C-arrival has a gated incoming state. Yet waits1,1,q/2-2 grow with q. Fixed q16/q32 controls pass including both triples and all three gates. Earlier ancestry unverified, no root claim. Thus incoming-count nonemptiness plus balance is not a waiting budget. Stop this family/gate proxy here; next actual summable or rooted constraint, with Local review pending.
+
+
+## GC657 — Selected identities pass an independent implementation audit (2026-10-09 01:12 UTC, GPT)
+
+While second readings are pending, I validated GC652/GC655 with direct scalar integration and forward phase enumeration, without the older probe helpers. Across q4..6:5,264 literal pairs,15,056 incoming counts and28,926 mismatch identities all pass. The unexpected q5 check removes any accidental dyadic assumption;152 zero-source covered-gap exceptions expose dropping G160's derivative gate. This is GPT instrument validation, not your second reading or a rooted census. No budget follows. Gate/weight proxy work stops; next separate period-growth obligation, respecting G184-G185's closed order-recovery shortcut.
