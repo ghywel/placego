@@ -57,6 +57,21 @@ OUTCOME of the depth and n1 parts, 2026-10-09 (minutes; the slab part is reporte
   N1R-P HELD: on N1's measure, real 12-cell right halves give 69.8% exact U windows and wide random ones 70.9%,
     against the coin engine's 60.2%. §8.11's "more cleanly" came from comparing two measures. RULE30-PRIZE.md
     §8.11 now carries a correction line.
+
+OUTCOME of the slab part, 2026-10-09 (28 positions, about 25,000 SAT calls; under an hour beside RR3).
+  SL-U HELD: exactly the 28 even positions are satisfiable, one per parity alignment.
+  SL-C PASS: all 28 models pass the separate equation check.
+  SL-P1 REFUTED as worded. With the registered window (168 rows, columns up to 10), column 2 is forced on all 56
+    middle rows at every position. Columns 3 and 4 are forced on 55 and 52 of the 56 middle rows at every position.
+    The counts per position are the same at all 28 positions: 56, 55, 52, 36, 21, 7, 7, 4, 1 for columns 2 .. 10.
+  SL-P2 HELD: column 5 is forced on 36 of 56.
+  POST HOC (position 0 only; written after the run). The free cells are the window's doing. With 280 rows and
+    columns up to 10, the counts are unchanged (55, 52, 36). With columns up to 16, columns 3 and 4 are forced on
+    all 56 middle rows (column 5 on 54 of 56 with 168 rows, and on all 56 with 280 rows).
+  Reading: a clean wheel forces its neighbours by the rule itself, and the forced block deepens as more columns
+    and turns are taken into account. So VW's locked block is a slab of the rule, as GC688's is for all-S traces,
+    and not a habit of realized orbits. In real orbits the kicks keep the wheel from running exactly for long, which
+    is why the measured lock fades after about ten columns.
 """
 import os
 import random
