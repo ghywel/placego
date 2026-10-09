@@ -87,6 +87,15 @@ EXTENSION OUTCOME, 2026-10-09 19:54 BST (M5, seconds, run at commit bbcb1873): O
       black-end cases among odd p >= 5. Entry 38 marks q = 2 .. 6 and 8 open; p = 3 is the separate 100 case.
     - So, among odd p, the one-sided channel collapses exactly where the two-sided finite-seed exclusion holds, and
       survives exactly where it does not. This is a finite-width observation, not a theorem about all widths.
+WIDENING (registered 2026-10-09 20:03 BST, before running; COMMAND: ... rule30_one_hole_widths.py widen [12]):
+  Only the three periods left alive, p = 5, 7, 9 (entry 38's open q = 4, 6, 8), at widths 5 .. 12. Growth is the
+  exact ratio of word counts at n = 60 and 59, by dynamic programming on the subset automaton. The automaton is capped
+  at 300,000 subsets, and a capped case is reported as such, never as a value.
+  OH-Y0 (control): at widths 5 .. 10 the growth agrees with the extension's eigenvalues to 3 decimals (2, 2, 2 at 5
+        and 6; 1.8724, 1.8832, 2 at 7; and so on to 1.7335, 1.8814, 1.8668 at 10).
+  OH-Y1 (blind, confidence 0.7): p = 7 and p = 9 keep growth above 1.85 at widths 11 and 12.
+  OH-Y2 (blind, confidence 0.6): p = 5 keeps growth above 1.6 at width 12.
+  OH-Y3 (blind, confidence 0.7): no width up to 12 closes any of them (growth 1, as odd p >= 11 have at width 5).
 """
 import sys
 from itertools import product
@@ -401,5 +410,68 @@ def ext(maxw=10):
     print('COMPLETE')
 
 
+def widen(maxw=12, cap=300000):
+    ext_vals = {5: (2, 2, 2), 6: (2, 2, 2), 7: (1.8724, 1.8832, 2), 8: (1.7489, 1.8832, 1.8668),
+                9: (1.7489, 1.8832, 1.8668), 10: (1.7335, 1.8814, 1.8668)}
+    y0, res = True, {}
+    for k in range(5, maxw + 1):
+        row = []
+        for p in (5, 7, 9):
+            M = macros_for_periods(k, [p])[p]
+            n = 1 << k
+            full = (1 << n) - 1
+            odd = sum(1 << s for s in range(n) if s & 1)
+            sel = (full ^ odd, odd)
+            nodes, queue, trans, capped = {full: 0}, [full], {}, False
+            for S in queue:
+                ts = []
+                for bit in (0, 1):
+                    T = M.apply(S & sel[bit])
+                    if T and T not in nodes:
+                        if len(nodes) >= cap:
+                            capped = True
+                            break
+                        nodes[T] = len(nodes)
+                        queue.append(T)
+                    ts.append(T)
+                if capped:
+                    break
+                trans[S] = ts
+            del M
+            if capped:
+                row.append((p, None, len(nodes)))
+                continue
+            layer = {full: 1}
+            counts = []
+            for _ in range(60):
+                nxt = {}
+                for S, c in layer.items():
+                    for T in trans[S]:
+                        if T:
+                            nxt[T] = nxt.get(T, 0) + c
+                layer = nxt
+                counts.append(sum(layer.values()))
+            g = counts[59] / counts[58] if counts[58] else 0.0
+            row.append((p, g, len(nodes)))
+        res[k] = row
+        print('width %2d: %s' % (k, '; '.join('p = %d: growth %s (%d subsets)' % (p, ('%.4f' % g) if g is not None else 'CAPPED', m)
+                                            for p, g, m in row)), flush=True)
+        if k in ext_vals:
+            y0 &= all(g is not None and abs(g - e) < 0.002 for (p, g, m), e in zip(row, ext_vals[k]))
+    print('OH-Y0', 'PASS' if y0 else 'FAIL')
+    g = lambda k, p: dict((pp, gg) for pp, gg, mm in res[k])[p] if k in res else None
+    y1 = all(g(k, p) is not None and g(k, p) > 1.85 for k in (11, 12) for p in (7, 9) if k in res)
+    print('OH-Y1', 'HELD' if y1 else 'REFUTED', [(k, p, g(k, p)) for k in (11, 12) for p in (7, 9) if k in res])
+    print('OH-Y2', 'HELD' if (maxw in res and g(maxw, 5) and g(maxw, 5) > 1.6) else 'REFUTED', g(maxw, 5))
+    closed = [(k, p) for k in res for p in (5, 7, 9) if g(k, p) is not None and g(k, p) < 1.0001]
+    print('OH-Y3', 'HELD' if not closed else 'REFUTED at %s' % closed)
+    print('COMPLETE')
+
+
 if __name__ == '__main__':
-    ext() if sys.argv[1:2] == ['ext'] else main()
+    if sys.argv[1:2] == ['ext']:
+        ext()
+    elif sys.argv[1:2] == ['widen']:
+        widen(int(sys.argv[2]) if len(sys.argv) > 2 else 12)
+    else:
+        main()
