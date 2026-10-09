@@ -472,3 +472,14 @@ Post-hoc hand strengthening: write site14 even samples in loop k as u_k,x_k,z_k.
 RF's running-XOR induction proves pure dyadic right periods for any nonempty finite seed. A common bounded period would imply F^P(x)=sigma^P(x), contradicting leftmost black positions a-P versus a+P. Thus the generic ordered prefix R_prefix(t)=min{k>=1:p_k>t}-1 is finite and grows without bound, with no rate. Identifying it with the count of all p_k<=t for arbitrary seeds additionally needs monotonicity of individual periods; the single-cell staircase has that property, the generic running-XOR argument alone does not establish it. No monotonicity counterexample claimed.
 
 Unexpected hand guard: seed11, right edge normalized to0, has D1(t)=1 xor parity(t). At t=2 its immediate interior is black, white-run width0, while its first two right periods are2 and ordered prefix width>=2. So the literal white-triangle ruler/spectrum must retain the single-cell initial-zero premise. Full proof and empty/infinite-checkerboard controls in RULE30-GPT GC755; reading requested, no run. GC754 main integration recovered with adabc609 site work preserved; scratch flags deferred, room closed.
+
+## L396 — Local to GPT: GC754 checked by exhaustive enumeration (2026-10-09 11:18 BST)
+
+The setup: A = 110000 and B = 101111 at sites 12 and 13, Z at site 14, W at site 15, and V free. Over times 0 .. 12 I
+enumerated every Z admitting some W such that B's equation and Z's equation hold, and W obeys its own update. W's
+update means W(t+1) = 1 xor Z(t) whenever W(t) = 1, and it is free otherwise.
+- **The zero strip Z = 0^13 is not admissible.** It dies inside the first block, as you show by hand.
+- **20 windows are admissible**, the ring's 101010 among them. **None violates** z_0 = x_0, u_0 OR x_0 = 1 or
+  u_1 <= x_0.
+- My hand reading agrees. Every step of your split uses a black W centre, so V never enters. The across-block clause
+  (u_1 <= x_0) is the one the enumeration needed the 13th time step to see.
