@@ -41,6 +41,10 @@ DEEPER (registered before running; COMMAND: ... rule30_q16_exits.py deep [DEPTH=
   the tails are TX, TY; K = 1 + V(TX 0) + V(TY 0); the candidates are (b, K + b), legal when F = 1 on both new windows.
   Exhaustive breadth-first to DEPTH steps. An exit flips a bit that stays in the window for m steps, so no exit path
   can rejoin the cycle before step m (m >= 9,412). A path that dies within DEPTH therefore closes nothing beyond itself.
+  CORRECTION (GPT's GC862): the injected bit staying in the window does not by itself prevent an earlier rejoin at a
+  different phase (GC862's w = 0011 control). The correct bound is reviewed G197's: a first rejoin needs l >= m - L + 1
+  with L <= 15 for a primitive period-16 word, so l >= m - 14 (>= 9,398 here). That is still far beyond the 301 edges
+  searched, so the empty-frontier closures stand.
   If every path from every exit dies, the component is exactly its sixteen-cycle. A survivor at DEPTH is a longer
   prefix only.
   QX2-C1 (control): at step 1 the out-degrees equal QX's (1, 1, 2 at phase 1, and their mirrors).
@@ -82,6 +86,13 @@ QX3 OUTCOME, 2026-10-09 21:04 BST (M5, 16 s, 84 MB, run at commit aeb13dab): QX3
     sixteen-cycles. Every rooted q = 16 walk returns (RC16X), so this covers every rooted even q = 16 component.
   - Exploratory (scratch, after the run): followed orbit by orbit, each rooted walk keeps at most 2 live states. The
     return depths are 21 at q = 4, 88 and 371 at q = 8, and the 16 depths above at q = 16.
+  - Exploratory (scratch): the 8 even / 8 odd split of q = 16's return depths is not explained by block complement or
+    reversal.
+    - Complement mostly keeps parity: 49732 <-> 93358, 18826 <-> 26356, 52808 <-> 214006, 44841 <-> 6343,
+      72473 <-> 114129 and 62791 <-> 125209. The exceptions are 40804 <-> 171541 and 29167 <-> 34854.
+    - At q = 8, complement swaps 88 and 371.
+    - Reversal fixes the palindromic classes and mixes parity otherwise.
+    - Sampled q = 32 orbits are still alive at depth 2,000,000, with no return yet.
 """
 import sys
 
@@ -173,6 +184,10 @@ def deep(DEPTH=300, which=(18826, 34854, 40804)):
     for r in which:
         cls = RETS[r]
         c5, exit_phases, lok, degs = analyse(r, cls)
+        if not (c5 and lok):
+            print('r = %5d: CONTROL FAILURE (in H_m %s, exits legal %s): no closure verdict' % (r, c5, lok))
+            out[r] = (None, [], True, 0)
+            continue
         m = (r - 2) // 2
         w = [int(b) for b in cls]
         win = lambda t: [w[(t + i) % Q] for i in range(m)]
@@ -213,10 +228,16 @@ def deep(DEPTH=300, which=(18826, 34854, 40804)):
     print('strip spot checks agree with the packed evaluator:', 'PASS' if spot_ok else 'FAIL')
     if tuple(which) != (18826, 34854, 40804):
         print('strip spot checks:', 'PASS' if spot_ok else 'FAIL')
+        if not spot_ok:
+            for r in out:
+                out[r] = (out[r][0], out[r][1], True, out[r][3])     # no closure verdict without the controls
         return out
     c1 = out[18826][0] == 1 and out[34854][0] == 1 and out[40804][0] == 2
     print('QX2-C1', 'PASS' if c1 else 'FAIL (step-1 counts %s)' % {r: v[0] for r, v in out.items()})
     dead = [r for r, v in out.items() if not v[2]]
+    if not (spot_ok and c1):
+        print('CONTROL FAILURE (spot checks %s, step-1 control %s): no closure verdict' % (spot_ok, c1))
+        return out
     print('QX2-P1', 'HELD' if len(dead) >= 2 else 'REFUTED', '(all paths dead: %s)' % dead)
     print('COMPLETE')
 
