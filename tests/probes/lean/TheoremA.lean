@@ -86,7 +86,7 @@ theorem theorem_A (x0 : ℤ → Bool) (c : ℤ) (L : ℕ) (hc : x0 (c - L) = tru
   -- go j = a + P + L columns left
   set j : ℕ := a + P + L with hj
   have hper := (left_iter x0 c P a b hP h0 h1 j).1
-  -- the edge reaches column c - j at time e = a + P (black there) and is left of it at time a (white there)
+  -- the edge reaches column c - j at time a + P (black there); at time a it is P cells right of c - j (white there)
   have E := edge x0 (c - L) hc hl
   have black : ev x0 (a + P) (c - j) = true := by
     have := (E (a + P)).1
