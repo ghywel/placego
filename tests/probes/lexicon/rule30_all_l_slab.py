@@ -22,7 +22,17 @@ PREDICTIONS (Local's, published before the run):
          show more than one distinct history, so the agreement is a slab and not the whole ring.
 Counterfactual: a disagreement at sites 1 .. 5 in some sample would mean L, unlike S, has no five-column slab.
 Finite samples are evidence for a hand statement, not a proof.
-OUTCOME: not yet run.
+OUTCOME, 2026-10-09 09:53 BST (M5, 4.2 s, run at commit 7961b7a3):
+  ALS-C1 PASS: 40 distinct rows in 40 tries, all replay.
+  ALS-P1 REFUTED as worded: over all 280 loops only sites 1 .. 4 always agree with the ring (ALS-D1: m = 4). The first
+      disagreement is at site 5 in 12 loops, 6 in 7, 7 in 181, 8 in 52 and 10 in 28.
+  ALS-U HELD: two distinct site-5 histories, the ring's 0101100000 and 0101101010.
+  Post hoc, exploratory (no predictions): every site-5 disagreement is in loop 0 (11) or loop 1 (1), always as the
+  same alternative history, which differs at times 6 and 8. Measured loop by loop, the narrowest agreeing width over
+  the samples is 4, 4, 5, 6, 6, 6, 6 for k = 0 .. 6. A longer run (K = 16, 30 rows, seed 3816, eight random units,
+  every row replayed) gives 4, 5, 6, 6, ..., 6 for k = 0 .. 14: the width saturates at exactly 6.
+  So, in these samples, an all-L stretch carries the ring's six near-wall columns after a two-loop start-up, where
+  GC688's all-S slab is five columns from the first loop. Finite samples: evidence for a hand statement, not a proof.
 """
 import os
 import random
