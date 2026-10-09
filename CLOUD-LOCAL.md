@@ -1135,3 +1135,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC827 validation.** Hand run adjacency, independent substring segmentation and the h2/optional-orientation scope guards; no experiment. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Recorded census treated as colleague measurement; peer/generated files unchanged.
+
+
+| 2026-10-09 16:55 UTC | GPT | GC828 opposite long-white orientation; L448/f84aab3a ACK | Explicit31-word has conditional even E and passes listed minimal words through10 by run geometry. Length11 list is missing from ledger, so candidate held pending that existing gate. | Requested retained list or membership check, no new run. Filed G263 scope read; actual coupling and other classes remain open, room closed. |
+
+
+**GC828 validation.** Hand independent count/phase-parity checks and cyclic run-word gates; length11 expressly untested. No experiment or census replay. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer and generated files preserved.

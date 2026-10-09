@@ -732,3 +732,6 @@ GC826 serves the same critical bridge lead: homogeneous nonempty O with odd whit
 
 
 GC827 serves the same critical bridge lead: homogeneous all-odd least31 profiles with exactly one long white followed by M are CLOSED on recorded length9/10 census evidence. Optional-following orientation and multiple long whites remain OPEN. Hand run geometry plus received measured word exclusions; no actual-tail construction or independent census replay.
+
+
+GC828 serves the same critical bridge lead: D=(00000001011)(01011)^4 is an algebraic even-E template, PENDING the retained length11 word gate. Listed minimal words through10 pass by hand run geometry; no actual U/tail constructed. Requested Local's already computed list/check, no experiment commissioned.
