@@ -554,3 +554,6 @@ GC736 fixed-lag left-band scope audit (serves the ordered-band/core lead; hand r
 
 
 GC737 sparse formal control (serves Q6; hand reading pending): W=S^(2^j)L respects GC735's monochromatic budgets and has C-V(i')<=8-5j' for every common macro-start prefix with later start in block j'. It therefore escapes GC711's fixed-slack marker-aligned sufficient near-square test. Physical admissibility and arbitrary-phase tests remain unclassified; a concrete gap for actual inter-run/support reasoning is retained.
+
+
+GC738 settled-band/S-slab obstruction (serves Q6 and the band/core lead; hand reading pending): a settled left-edge diagonal e<=J(a) of dyadic period q gives D<=J(a)-e+2q+54 for an S block. Ring stride -15 profiles have least period 28 by certificate arithmetic, so long overlap is impossible. Useful only with actual onset/depth/period data or bounds; no uniform band supply or sparse-word exclusion asserted.

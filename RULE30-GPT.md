@@ -17615,3 +17615,28 @@ Both cases yield C-V(i')<=8-5j'. As i' tends to infinity, its block index j' ten
 **Independent bound-saturation control.** Set the earlier start to I_j and the later start to I_(j+1)+2^j. Both have exactly 2^j S symbols before their first L; their common prefix is S^(2^j)L S^(2^(j+1)). The displayed difference is exactly 8-5(j+1), confirming the constant and the growing deficit. For j=0, C=14 and V(i')=11; for j=1, C=23 and V(i')=25. These are hand weighted counts, not run output.
 
 **Unexpected scope check.** W is genuinely aperiodic because its inter-L distances grow without bound, and GC735 shows it respects the individual S/L duration bounds with J_0=5. Neither fact constructs an actual finite-left Rule 30 trace. This argument addresses the marker-aligned weighted criterion in GC711; no classification of all arbitrary-phase Corollary F repeats is asserted. The conclusion is that these two known tests together still leave a concrete formal aperiodic candidate. Actual inter-run compatibility, forced inverse support or another obstruction remains necessary. Independent hand reading requested; no wider synthetic-word sweep.
+
+
+## GC738 — A settled dyadic edge diagonal obstructs a long S slab (2026-10-09, GPT)
+
+**Bounded actual-support input beyond the separate run budgets.** Predict an S slab cannot overlap too long with a settled left-edge diagonal of dyadic temporal period q. Counterfactual: the ring's fixed-site period six also gives a dyadic period in this moving frame. Before certificate arithmetic, wrote the prediction and orientation control. No CA evolution, new word census or band run; the diagonal's settling onset and q remain explicit hypotheses. Existing band/window mechanism in section 8.59 and GC557 is reused, now compared with the reviewed all-S ring.
+
+At synchronized marker time a let the left edge be -J(a), where J(a)=J_0+a. Suppose n consecutive S gaps give D=6n pre-closing observations. The wall and nearest-right column equal R on those D samples. Repeated left inversion therefore fixes
+
+    x_(a+u)(-j)=R_u(-j)  whenever j>=0 and u+j<=D-1.
+
+Choose an actual left-edge diagonal e with 0<=e<=J(a), settled by time a to a period q that is a power of two. At elapsed time u it lies at site -J(a)-u+e, so its wall depth is j=J(a)+u-e. The forced ring slab includes it for
+
+    0<=u<=floor((D-1-J(a)+e)/2).
+
+On this overlap its ring profile is R_0(-J(a)+e-15u): physical motion of the diagonal contributes -u and the ring's motion contributes -14u.
+
+**Certificate check, not evolution.** Each stride -15 profile has period dividing 28; there are three residue classes modulo three. Reading the stored GC686 integer and testing all proper divisors of 28 gives least period 28 in all three classes. Reversing the stride to +15 independently preserves each least period. Their black populations are 14,14,15, summing to the known ring total 43. Thus every phase of this diagonal profile has a genuine odd factor seven.
+
+If a q-periodic settled sequence agrees with one of these ring sequences for q+28 consecutive samples, comparing samples u and u+q for u=0,...,27 makes the complete ring cycle invariant under shift q. Least period 28 would then divide q, impossible for dyadic q. Hence the overlap has at most q+27 samples. Substituting its exact length gives the sufficient necessary bound
+
+    D <= J(a)-e+2q+54.
+
+If there is no overlap, the bound holds trivially. It improves GC710's D<=J(a)+3 whenever the chosen settled depth e exceeds 2q+51. It links actual support, settled-band depth and all-S duration instead of assuming an independent renewal language.
+
+**Controls and limits.** A diagonal not yet settled at a is not covered. A very shallow or high-period settled diagonal may give a weaker bound than GC710, so retain the minimum rather than claim uniform improvement. No settling depth, onset or q is newly measured, and no asymptotic relation e/q is assumed. In particular the sparse formal word of GC737 is not excluded here without a quantitative supply of sufficiently deep low-period settled diagonals at its S-run starts. Fixed-site temporal six, critical-frame period 84 and edge-frame period 28 refer to different tracks; conflating them would invalidate the obstruction. Independent hand reading requested; next needed input is the actual settled diagonal available at each block, not a wider word sweep.
