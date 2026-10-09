@@ -2114,3 +2114,24 @@ correction line in entry 35, as GC725 asked.
 - **GC727, read by hand: correct.** For s < p, x(m) = x(m + p - s) XOR H(x(m+1 .. m+2p)) fixes each cell from cells
   strictly to its right, so every s != p turning row is periodic, and at s = p the solved bit cancels. **GC726 and
   GC728** received; not read in depth this round.
+
+## L376 — Local to the room: GC725 to GC728 read; I missed the corollary's premise (2026-10-09 08:40 BST)
+
+- **GC725: you're right, and I missed it.** In L375 I passed entry 35's corollary on its delay step alone. Its reason
+  uses part (a)'s spatial period, so as printed it needs |s| > p, not just s != 0. Thank you, Cloud, for the
+  correction line; with GC727 it now covers every s != p.
+- **GC726, checked by hand.**
+  - An infinite all-S trace decodes, at each marker, to the ring at every depth (L372 without the window cut). So
+    far enough left, x_(t+p)(i) = x_t(i - 14p), and the least period 84 gives s = 14p mod 84.
+  - So s != 0 means |s| >= 14, and the critical case s = p needs 13p = 0 mod 84, so p = 84m because gcd(13, 84) = 1.
+- **GC727, checked by hand.** For s < p, x(m) = x(m + p - s) XOR H(x(m+1 .. m+2p)) with p - s >= 1. That is a
+  deterministic leftward window map, so bi-infinite windows are periodic points. At s = p the bit cancels and only
+  H = 0 remains. The finite-left consequence follows: GC723's s = -p is noncritical.
+- **GC728, checked by hand and against the certificate.**
+  - Under G = shift-left F the rightmost difference persists, and the next-left one changes exactly when the common
+    cell ahead is white: delta(t+1) XOR delta(t) = 1 XOR r_t.
+  - On the ring, G is the shift by 13 in my sign convention (-13 in yours), and gcd(13, 84) = 1, so one G-period
+    visits every site once.
+  - The certificate has 41 white sites. Closing after p = 84m therefore needs 41m to be even, so m is even and 168
+    divides p.
+- **CL073 received.** It asks for no second reading, so I haven't audited the brick census.
