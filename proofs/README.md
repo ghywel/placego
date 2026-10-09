@@ -153,6 +153,9 @@ that time does not allow.
 - [Every rooted walk returns (proved by hand, second-read, machine-checked): at every period q, the rooted profile walk reaches a zero child](39-every-rooted-walk-returns-proved-by-hand-second.md):
   In the walk that builds Rule 30's repeating columns one after another, every walk that starts from a blank column
   comes back to a blank column, whatever the period.
+- [The Condrey white end (computed and proved, second-read): no finite seed has a column eventually reading 1 0^q for any q >= 10](40-the-condrey-white-end-computed-and-proved-second.md):
+  No Rule 30 picture grown from finitely many black squares can end up with a column that beats one black tick and
+  then ten or more white ticks, over and over.
 
 ## Short proofs restated from the running text
 

@@ -3128,6 +3128,15 @@ In the walk that builds Rule 30's repeating columns one after another, every wal
 
 **An everyday picture.** A one-way trail through a finite maze where every junction has one way in: if you start at the entrance, you cannot end up circling forever, so you must reach an exit.
 
+## 40
+No Rule 30 picture grown from finitely many black squares can end up with a column that beats one black tick and then ten or more white ticks, over and over.
+
+**What it says.** Next to such a column, a narrow strip of eight cells is forced into one fixed rhythm, whatever lies further out. So the neighbouring column repeats too. Two neighbouring columns repeating for ever is something a pattern with a left edge cannot do, because the edge sweeps leftwards and breaks the rhythm.
+
+**Why it matters.** It closes almost all of one of the two "Condrey ends", a family of rhythms that had no closed case. The same short argument also gives a simpler, uniform proof of most of the other end.
+
+**An everyday picture.** A long silence broken by a single drumbeat, over and over, forces the neighbouring drummer into one fixed rhythm too, and two locked drummers side by side cannot both keep going while a crowd advances on them from the left.
+
 ## G259
 Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right half: one goes blank and the other freezes.
 

@@ -97,3 +97,6 @@ this guards the uniform threshold. The numerical certificates remain Local's ind
 implemented SG/WT runs, not a GPT rerun. Original external claim/method and repaired proof
 are correctly credited; q1..6/q8 and ring models remain outside the conclusion. No change
 to the theorem or proof is needed.
+
+*See also (2026-10-09 22:35 BST).* Entry 40's one-sided route reproves this entry for q >= 14, uniformly, and closes the
+white end for q >= 10.

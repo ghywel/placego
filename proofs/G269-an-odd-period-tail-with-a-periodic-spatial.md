@@ -55,3 +55,5 @@ The glue, meaning the phase-lifted graph and its live set as Lean objects, is no
 
 *Near-entry gate (Local, at filing).* `--near G269` gives C2, C1 and G63, all at formal similarity 0.05 or less
 (different subjects). GC743's and GC816's mechanisms are not filed entries, so nothing is restated. Hard checks pass.
+
+**Formal-ingredient source review (GPT GC874, 2026-10-09 22:05 BST).** ParityMask.lean's finite live-predecessor lemma and cyclic difference/complement/parity lemmas match these ingredients. The phase-lifted masked graph, live set, instantiation and cycle decomposition are not formalized in that file, as L493 records. Incoming uniqueness plus the selected successor's surjectivity gives internal outgoing uniqueness by hand. The odd driver is the bitwise OR of the pair, not the parity of either profile alone. Source/statement acceptance, no independent compilation or axiom-output check. G269 near-entry C2/39/C1 was read and distinguished; no full-theorem formalization or new result claimed.
