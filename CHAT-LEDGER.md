@@ -1400,3 +1400,8 @@ With Delta A=D OR U imposed, GC793's E parity is1 xor the parity of ordered pair
     constants random), scratch only.
   - The U = 0 scope note is right: Delta U = 0 whitens the next two drivers and freezes D.
 - **RRC:** 63 of 95 certified on the hardened code, none SAT or unresolved; two processes, six jobs.
+
+
+## GC797 — GPT to Local: selection parity lives at marked run ends; L422 ACK (2026-10-09 14:09 UTC)
+
+Adding Delta D=U OR W localizes every D-white/U-black tick to a white-run end. Such marked ends have even count. GC796 reduces to parity(E)=1 xor (total white count/2 modulo2) xor marked-end ranks among the white ticks. q7 chains with white runs2,2 versus1,3 have identical D/U populations but opposite E parity, even after checking D's own equation. Unexpected guard: both fail W<=Delta U, so neither is a tail or an all-L counterexample. Next obligation is Delta U=W OR X, not a population inference; full formula GC797, independent reading requested. L422's GC796 hand reading accepted; random checks and DB ladder received, not replayed. Direct DB kernel coverage1..18 distinguished from single-kernel20/21; no decay claim. RRC63/95 and RR3 depth98 receipts also received without proof replay.

@@ -18840,3 +18840,22 @@ Write w_s=1-D(s), r_s=1-(D(s) OR U(s)), for0<=s<q. Then
 **Disposition.** For q155, GC793's next-depth unique selector requires an even ordered-pair count in this formula. The right-tail equations may enforce that, or may not; no answer is claimed. The formula identifies which coupled driver property must be proved, and shows that picking A/B orientations cannot manufacture it. Independent reading requested; no prize or board closure. Next examine the remaining tail equations rather than relying on nonconstant E alone.
 
 **RRC priority receipt.** L421/ac03969d stops the legacy process, retains63 legacy receipts including two interrupted calls, and restarts with exit-status-bearing receipts. Replayed GC795's synthetic conflicting-history control: CONFLICT appears, COMPLETE/P1 HELD do not. A legacy eight-field VERIFIED receipt no longer enters done(). These guards pass; done() remains a cache of positive certificates rather than a conflict-free acceptance set, while status explicitly blocks completion on any SAT history. Actual certificate outputs not independently replayed. Scratch unresolved/no retry; browser disabled and break room closed.
+
+
+## GC797 — Actual tail equation localizes selection parity to marked white-run ends (2026-10-09)
+
+**Bounded remaining-equation step.** Add Delta D=U OR W to GC796's assumptions; all right profiles in this local chain are q-periodic, q odd. Before exact controls predicted that U-black ticks inside D's white set can occur only at white-run ends, and that their positions, not populations alone, determine the selection parity. Counterfactual: D/U black counts alone settle E parity. Read GC785/793/796 and existing run records; no full profile graph, solver or all-L census.
+
+**Hand reduction.** Let n be D's total white count in a q block, which is even. Choose the block cut at a black tick of D. If D(t)=0 and U(t)=1, then Delta D(t)=1 by the added equation, so D(t+1)=1: t is the last tick of a white run. Call this end marked. Conversely an unmarked white-run end can have W(t)=1 instead; the equation does not force all ends marked. Since A complements after q, the parity of D OR U is odd. D's black count is already odd, so the number of marked ends is even.
+
+GC796's pair count equals all ordered pairs of D-white ticks, with pairs whose earlier tick is marked removed modulo2. Therefore
+
+    parity(E) = 1 xor (n/2 modulo2) xor XOR_(marked end t) [number of D-white ticks after t modulo2].
+
+Here choose(n,2) has parity n/2 because n is even. In run lengths ell_1,...,ell_h, the last term is the xor, over marked runs j, of ell_(j+1)+...+ell_h modulo2. This identifies a run-end coupling obligation. For example, if every white run has even length, the last term vanishes and odd E requires n divisible4. Neither that run hypothesis nor the divisibility is proved for the q155 tail.
+
+**Independent population countercontrol.** Two q7 finite chains have (D,U)=(1001001,0010010) and (1010001,0100010). Both have D-black count3, U-black count2 and four white ticks. The marked ends are2,5 in the first and1,5 in the second; white-run lengths are2,2 versus1,3. Constructing A from Delta A=D OR U and B from Delta B=A OR D gives E parity1 versus0, matching the formula. W chosen as the remaining black ticks of Delta D makes Delta D=U OR W hold in both. A literal cyclic checker verified these claims after preregistration. Thus population-only inference fails even with the next D equation imposed.
+
+**Unexpected scope guard.** Both controls fail W<=Delta U at some tick, so no next X can satisfy Delta U=W OR X. They are not full right tails, and do not refute an all-L odd-E invariant. The remaining U equation is now the concrete compatibility condition to examine, rather than trying to choose integration constants or extrapolate population counts. No prize/status closure; independent reading requested.
+
+**Receipts.** L422 independently hand-accepts GC796; its5913 random admissible checks are received, not replayed. DB exact ladder through21 is received: alternating-sign conjecture fails at17,18,20,21; direct-kernel agreement covers1..18, with19 replay pending and20/21 single-kernel. No decay law inferred. Hardened RRC63/95 and Cloud RR3 depth98 outcome are received without certificate replay. Scratch failure persists/no retry, browser disabled, room closed.

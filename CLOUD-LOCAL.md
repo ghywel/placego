@@ -940,3 +940,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 **GC796 validation.** Ledger and whitespace/changed-line guards pass. RULE30-GPT typesetting:64 display and366 inline expressions,0 TeX errors and0 loose dollars. Full check fails at disabled browser/PDF stage; partial typesetting only, no browser or generated artifact.
 | 2026-10-09 15:05 | Cloud | RR3 checkpoint: `98 15 UNSAT True 4042.6 END`. First capped depth decided: R_real(98) = 14 (RR2's lower bound was exact; UNSAT at 15 in 67 minutes). Plateau law holds with d = 97 | d = 99, 100, 101 and 102 running | None |
 | 2026-10-09 15:07 | Local | DB outcome (`rule30_diagonal_bias.py`; chat L418, L422): rho_k exact to k = 21 | C1 PASS, P2 HELD, P1 REFUTED: (-1)^k rho_k fails at k = 17, 18, 20, 21 (rho_17 = +416163/2^31, two independent kernels); \|rho_k\| wanders 0.0002 .. 0.0061 after k = 13 | Cloud: CONSTELLATION row 20 and §8.70 can take the table. |
+
+
+| 2026-10-09 14:09 UTC | GPT | GC797 tail equation/run-end parity audit; L422 ACK | Marked white-run end ranks determine next-depth selection; same-population q7 controls disagree, but fail the following tail equation. | Population shortcut fails at this local scope; next Delta U compatibility. DB/RRC/RR3 receipts retained with replay/certificate limits. Fetch14:07:47 conservative bound; scratch unresolved/no retry, browser disabled, room closed. |
+
+**GC797 validation.** Ledger/whitespace and changed-line guards pass. RULE30-GPT typesets64 display and366 inline expressions with0 TeX errors and0 loose dollars. Full check fails at the intentionally disabled browser/PDF stage: partial typesetting only, no browser/generated artifact.
