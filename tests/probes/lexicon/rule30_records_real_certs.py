@@ -7,6 +7,8 @@ RUN-ON:     cpu (Python 3, kissat, drat-trim; RR's encoder rule30_records_real_s
 COMMAND:    python3 tests/probes/lexicon/rule30_records_real_certs.py run [JOBS=2]     (resumable; more processes may
             join with the same command: each depth is claimed by a lock file)
             python3 tests/probes/lexicon/rule30_records_real_certs.py status
+            python3 tests/probes/lexicon/rule30_records_real_certs.py retry [JOBS]    (re-runs depths with no certified
+            receipt; every earlier receipt stays in the checkpoint)
             python3 tests/probes/lexicon/rule30_records_real_certs.py unlock          (clears stale locks after a crash)
 
 For each decided depth d the deciding call is RR's query at L = R_real(d) + 1 (column 0 follows 0101 for times
@@ -27,6 +29,12 @@ PREDICTIONS (Local's, published before the run):
   RRC-D1 (descriptive): proof sizes and checking times against solving times, by depth.
   Counterfactual: a deciding call that came back SAT, or a proof that failed to verify, would reopen R_real(d) at that
   depth, and RR2's climb at every later depth (it starts from R_real(d - 1) - 1, the plateau law) would be suspect.
+Hardening (GPT's GC791 audit, applied 2026-10-09 while the first process ran; the instrument is unchanged): a receipt
+is read only if it has the full schema and L = R_real(d) + 1; a torn last line is closed before the next append; `run`
+skips only certified depths and leaves failures to an explicit `retry`, which keeps the history; a failed call keeps
+its CNF, proof and the solver's and checker's output tails (diag_d_L.txt); new receipts carry drat-trim's return code
+as a ninth field (the first process's receipts have eight). A SAT verdict would reopen the record; an UNKNOWN verdict
+or a failed check leaves that depth unresolved, not refuted.
 """
 import hashlib
 import os
@@ -52,14 +60,46 @@ REAL.update({d: v for d, v in zip(range(20, 98), RR2)})
 ORDER = list(range(3, 61)) + [67, 83, 87, 93, 94] + [d for d in range(61, 98) if d not in (67, 83, 87, 93, 94)]
 
 
-def done():
-    out = {}
-    if os.path.exists(CK):
-        for line in open(CK):
-            p = line.split()
-            if len(p) >= 8 and line.endswith('\n'):
-                out[int(p[0])] = p
+def receipts():
+    """Every well-formed receipt, in order: d L verdict check sha size solve_s check_s [checker_rc]."""
+    out = []
+    if not os.path.exists(CK):
+        return out
+    for line in open(CK):
+        if not line.endswith('\n'):
+            continue
+        p = line.split()
+        if len(p) not in (8, 9):
+            continue
+        try:
+            d, L, size, a, b = int(p[0]), int(p[1]), int(p[5]), float(p[6]), float(p[7])
+            rc = int(p[8]) if len(p) == 9 else None
+        except ValueError:
+            continue
+        if d not in REAL or L != REAL[d] + 1 or len(p[4]) != 16:
+            continue
+        if p[2] not in ('UNSAT', 'SAT') and not p[2].startswith('UNKNOWN'):
+            continue
+        if p[3] not in ('VERIFIED', 'NOT-VERIFIED', 'SKIPPED'):
+            continue
+        out.append(p)
     return out
+
+
+def done():
+    """The certified depths: some receipt is UNSAT and VERIFIED (with checker return code 0 when recorded)."""
+    return {int(p[0]): p for p in receipts()
+            if p[2] == 'UNSAT' and p[3] == 'VERIFIED' and (len(p) == 8 or p[8] == '0')}
+
+
+def append(line):
+    with open(CK, 'a+') as f:
+        f.seek(0, 2)
+        if f.tell() > 0:
+            f.seek(f.tell() - 1)
+            if f.read(1) != '\n':
+                f.write('\n')
+        f.write(line)
 
 
 def certify(d):
@@ -81,52 +121,62 @@ def certify(d):
         t1 = time.time()
         verdict = {20: 'UNSAT', 10: 'SAT'}.get(r.returncode, 'UNKNOWN%d' % r.returncode)
         size = os.path.getsize(proof) if os.path.exists(proof) else 0
-        check = 'SKIPPED'
+        check, rc, vout = 'SKIPPED', -1, ''
         if verdict == 'UNSAT':
             v = subprocess.run(['drat-trim', cnf, proof, '-t', '400000'], capture_output=True, text=True)
             lines = [l.replace('\r', '').strip() for l in v.stdout.splitlines()]
             check = 'VERIFIED' if 's VERIFIED' in lines else 'NOT-VERIFIED'
+            rc, vout = v.returncode, v.stdout + v.stderr
         t2 = time.time()
-        line = '%d %d %s %s %s %d %.1f %.1f\n' % (d, L, verdict, check, sha, size, t1 - t0, t2 - t1)
-        with open(CK, 'a') as f:
-            f.write(line)
-        for p in (cnf, proof):
-            if os.path.exists(p):
-                os.unlink(p)
+        line = '%d %d %s %s %s %d %.1f %.1f %d\n' % (d, L, verdict, check, sha, size, t1 - t0, t2 - t1, rc)
+        append(line)
+        if verdict == 'UNSAT' and check == 'VERIFIED' and rc == 0:
+            for p in (cnf, proof):
+                if os.path.exists(p):
+                    os.unlink(p)
+        else:
+            with open(os.path.join(DIR, 'diag_%d_%d.txt' % (d, L)), 'w') as f:
+                f.write('kissat rc %d\n%s\n%s\n--- drat-trim rc %d\n%s\n' % (
+                    r.returncode, r.stdout[-4000:], r.stderr[-4000:], rc, vout.replace('\r', '')[-8000:]))
         print(line, end='', flush=True)
         return line
     finally:
         os.unlink(lock)
 
 
-def run(jobs):
+def run(jobs, retry=False):
     os.makedirs(DIR, exist_ok=True)
-    have = done()
-    todo = [d for d in ORDER if d not in have]
+    have, tried = done(), {int(p[0]) for p in receipts()}
+    todo = [d for d in ORDER if d not in have and (retry or d not in tried)]
     with ThreadPoolExecutor(jobs) as ex:
         list(ex.map(certify, todo))
     status()
 
 
 def status():
-    have = done()
-    ok = [d for d in have if have[d][2] == 'UNSAT' and have[d][3] == 'VERIFIED']
-    bad = [d for d in have if d not in ok]
-    print('certified %d of %d deciding calls; failures %s; missing %s' % (
-        len(ok), len(ORDER), sorted(bad) or 'none', sorted(set(ORDER) - set(have)) or 'none'))
-    if not bad and len(ok) == len(ORDER):
-        print('RRC-C0', 'PASS' if all(d in ok for d in range(3, 20)) else 'FAIL')
+    ok = done()
+    tried = {}
+    for p in receipts():
+        tried.setdefault(int(p[0]), []).append(p)
+    sat = sorted(d for d in tried if any(p[2] == 'SAT' for p in tried[d]))
+    unresolved = sorted(d for d in tried if d not in ok and d not in sat)
+    missing = sorted(set(ORDER) - set(tried))
+    print('certified %d of %d deciding calls; SAT (would reopen the record) %s; unresolved (UNKNOWN or failed check) '
+          '%s; not yet tried %s' % (len(ok), len(ORDER), sat or 'none', unresolved or 'none', missing or 'none'))
+    if len(ok) == len(ORDER):
+        print('RRC-C0 PASS')
         print('RRC-P1 HELD')
         print('COMPLETE')
-    elif bad:
-        print('RRC-C0', 'FAIL' if any(d in bad for d in range(3, 20)) else 'PASS so far')
-        print('RRC-P1 REFUTED at d = %s' % sorted(bad))
+    elif sat or unresolved:
+        print('RRC-C0', 'NOT PASSED' if any(d in sat or d in unresolved for d in range(3, 20)) else 'PASS so far')
+        print('RRC-P1 not held at d = %s (SAT: a refutation of the record there; otherwise unresolved)' % (
+            sorted(sat + unresolved)))
 
 
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'status'
-    if cmd == 'run':
-        run(int(sys.argv[2]) if len(sys.argv) > 2 else 2)
+    if cmd in ('run', 'retry'):
+        run(int(sys.argv[2]) if len(sys.argv) > 2 else 2, retry=cmd == 'retry')
     elif cmd == 'unlock':
         for f in os.listdir(DIR):
             if f.endswith('.lock'):
