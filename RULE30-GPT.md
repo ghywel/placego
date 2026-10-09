@@ -16264,3 +16264,28 @@ This bounds actual repeated blocks using age, period and initial height, rather 
 The unexpected zero control has n0,w0,M0 and repeats forever, so dropping n>=1 makes the finite budget false. Likewise the signed formal point n=-1,w1 is fixed and has M0. G50's fractional100 control has c=-9/19; it is consistent with this nonpositive periodic realization. No positive periodic point or ordinary-integer Z witness is supplied.
 
 **Disposition and next.** The actual repeat budget is exact but handles a known periodic case only. It gives no lower bound on the first fractional-window failure for a generic aperiodic rounded itinerary, nor a uniform extinction time for GC664. Stop repeat-window refinements without an aperiodic compatibility input; next the remaining joint realization constraint or a concrete independent audit request. Q9 remains open. Local reading requested; no prize candidate.
+
+
+## GC667 — A fractional-admissible sparse aperiodic code fails actual integer placement (2026-10-09)
+
+**Scope.** Supply one concrete aperiodic compatibility input after GC666's periodic case. Reuse the standard sojourn/divisibility mechanism already in G31/G34 and the rounded-map formulas of G50/G51; no novelty claim or experiment. This is an ordinary-positive-integer result, not a general rational-realization or Z-number exclusion.
+
+Let z_k be successive odd-step indices of the actual rounded orbit from n_0>=1. There must be infinitely many, since an eventual all-even suffix would require a positive integer divisible by arbitrarily large powers of2. Between z_k and z_(k+1), set a=z_k+1 and L=z_(k+1)-z_k-1. Those L even steps imply2^L divides n_a. The height estimate from GC666 gives
+
+    2^L<=n_a<(3/2)^a*(n_0+1),
+    L<a*log2(3/2)+log2(n_0+1).
+
+Consequently limsup z_(k+1)/z_k<=1+log2(3/2)=log2(3). This is an actual selected-orbit gap bound, not an independence or odd-density assertion.
+
+Now define a formal code b_t=1 exactly at t=2^k for k>=2 (positions4,8,16,...), zero otherwise. It is aperiodic: infinitely many ones have unbounded gaps. Its ones are separated by at least3 positions. Every G50 fractional tail therefore obeys the geometric bound
+
+    u_j=sum_(h>=0) b_(j+h)*2^h/3^(h+1)
+        <=(1/3)/(1-(2/3)^3)=9/19<1/2.
+
+Thus it really is fractionally admissible at every time, not merely a no11 code. But its odd-index ratio is2>log2(3), so no positive ordinary integer can realize it under the rounded map. By G51 its compatible least nonnegative residues cannot remain bounded. This is a concrete aperiodic failure of the implication from fractional compatibility to ordinary integer placement.
+
+**Independent controls and unexpected limit.** The actual seed16 has states16,24,36,54,81,122,183, giving initial parity0000101: the formal code's first one at4 can agree while its next demanded zero at6 fails. For a generic start n_0+1<=2^16, a demanded zero run at65..127 would have L63 and a65. The exact inequality3^5=243<2^8 bounds n_65<(3/2)^65*2^16<2^55, contradicting2^63 divisibility. This is one hand height control, not a survivor census or assertion that all earlier code bits are realizable.
+
+Unexpectedly the formal periodic100 code attains the fractional bound9/19 and has odd-index ratio tending to1, so it passes this gap filter but remains integer-excluded by G50's periodic congruence. The new filter is not sufficient. Neither squares-spaced nor general aperiodic admissible codes are settled.
+
+**Disposition.** A specific sparse aperiodic family is excluded by existing arithmetic machinery; the generic selected residue problem remains open. Do not extend sparse-gap examples as a substitute for a constraint covering every admissible code. Next a different joint-placement mechanism or an independent audit request; Q9 has no extinction-time bound or prize result. Local reading requested.
