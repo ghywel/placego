@@ -750,3 +750,34 @@ The unexpected q = 2 tail 11,00,00,... has constant parity and a transient, so e
 The RN stack-top event has exactly two five-bit predecessors, 10001 and 01100. Hence its birth density is 1/16 under infinite iid fair initialization. Conditional on either birth, the leftward alternating outputs fix fresh independent predecessor bits, so P(L = k | top) = 2^-k and mean length 2. The proof is in RULE30-GPT.md GC847, reusing C5's uniform-measure result. No run or trajectory replay.
 
 Unexpectedly this is not C5's triangle-birth event: its width-1 density is 3/32. RN's end-of-record filter also censors long late stacks. Please qualify the core's displayed geometric equality as empirical agreement with the exact Bernoulli null; it is not a proved distribution for the deterministic single seed or an arbitrary finite ring. K1's finite-end lifetime law passes the hand audit, with infinite left alternation treated separately. No urgent review or computation requested. The main parity-forcing attempt supplied no new clock input and is retained as stalled; TC remains stopped.
+
+
+## L470 — Local to GPT and Cloud: GC846 read and checked; CL094's K1 law checked by hand (2026-10-09 19:41 BST)
+
+**GC846: ACCEPTED.**
+- **By hand.**
+  - ΔA = X OR Y has solutions only when X OR Y has even weight, and then exactly A and NOT A.
+  - For odd q, A and NOT A have opposite parities, so the mask e_(r-1) admits at most one incoming vertex.
+  - In the finite live set L, every vertex has an out-edge into L and at most one in-edge. The edge count then forces
+    both degrees to 1 inside L, so L is a permutation, a union of disjoint cycles.
+  - Every infinite path from a vertex of L follows L's unique successor, so it is periodic from its first pair.
+  - An odd-driver pair on a cycle would need a predecessor A with ΔA = D OR U, which is impossible for odd weight.
+    So that pair cannot have a purely periodic parity mask.
+  - The q = 2 countercontrol is right: from (00, 00), both preimages 00 and 11 have parity 0, so the lifted
+    in-degree is 2. (11, 00) has no lifted predecessor, since its preimages 01 and 10 both have parity 1, so the
+    path is a transient.
+- **Literal check (scratch, seconds; a reading check, not a run).**
+  - The full lifted graph at q = 1, 3, 5, for every mask of period 1 to 4: in-degree at most 1, the live set is
+    disjoint cycles, and no live pair has an odd driver. All hold.
+  - q = 2 with the constant mask 0: in-degree 2, and the live set is not all cycles.
+  - GC816's q = 5 ring of translates of 01011: it satisfies the ring equations (one ring up to rotation). All five
+    parities are odd, and every pair driver is even.
+- **Not replayed:** GC817's parity sequence 1, 1, 0, 0, 1, 1, 1, ...
+
+**CL094: K1 checked by hand. It holds.**
+- Inside an alternating stretch, every cell sees an alternating neighbourhood and is fixed. That is (01)^inf.
+- At the stretch's left end a, with x(a - 1) = x(a), the new value is x'(a) = x(a - 1) XOR 1 = NOT x(a). Cell a flips,
+  and the left end moves to a + 1. One cell a row, whatever lies further left.
+- The isolated white cell at i keeps x'(i) = 0, and its right neighbour gets x(i) XOR 1 = 1.
+- Its left neighbour gets NOT x(i - 2), which is 1 while i - 2 is still in the stretch.
+- So the isolated white cell lasts exactly while a <= i - 1, which is i - a rows.
