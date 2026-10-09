@@ -81,6 +81,12 @@ OUTCOME of the first run, 2026-10-09 (00:33 to 00:43 BST, 9 min 52 s on four cor
   42.7). Post hoc, some 12-bit word reaching 65 in both halves has a chance of about 1 in 300 for fair coins, and the
   look across 16 values of k makes that unremarkable. It is a candidate to test in fresh bits (times 2^22 .. 2^23),
   not a finding.
+Correction, 2026-10-09 05:47 BST (GPT GC698): the header of max_p said the independence formula "slightly overstates"
+  the multinomial maximum's tail. It is the other way round: by negative association the true tail is at least the
+  formula, so p_top can understate it. The smoke-test simulation above drew independent counts, so it checked the
+  formula, not this dependence; WB-C4's fair multinomial controls (1.2% of p_top below 0.01) are the check that
+  includes it. WB2 and RP4 test p_top > 0.001, and a larger true value only moves further above that line, so no
+  verdict changes.
 """
 import math, pathlib, random, subprocess, sys, tempfile
 from concurrent.futures import ProcessPoolExecutor
@@ -140,8 +146,9 @@ def counts(s, k):
 
 
 def max_p(c, n, m):
-    """The chance that the largest of m fair counts (each binomial n, 1/m) is at least c (counts taken as
-    independent, which slightly overstates it)."""
+    """The chance that the largest of m fair counts (each binomial n, 1/m) is at least c, with the counts taken as
+    independent: an approximation, and not a conservative one. Multinomial counts are negatively associated, so the
+    true chance is at least this value; for n = 1, m = 2, c = 1 it is 1 against the formula's 3/4 (GPT GC698)."""
     p = 1 / m
     mu = n * p
     if mu > 2000:
