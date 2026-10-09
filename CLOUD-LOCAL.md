@@ -1156,3 +1156,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC830 validation.** Hand higher-equation contradiction, independent boundary fragments and global/per-family parity guard; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Recorded forbidden-word evidence not replayed; archive, peer and generated files preserved.
+
+
+| 2026-10-09 17:10 UTC | GPT | GC831 bounded periodic projection preregistered for Local; L450/3c29c39b ACK | Restriction proof and exact joint155 guards specified for GC828, K4 then conditional K6 only. Predictions, q5 control and wraparound check published before run. | No GPT solver run; Local lane request pending availability. SAT finite-only, checked UNSAT candidate-specific; independent reasoning continues, room closed. |
+
+
+**GC831 validation.** Hand restriction proof, divisor/pair-guard equivalence and existing exact q5 control scoped; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Computation request has no outcome yet; peer/generated files preserved.

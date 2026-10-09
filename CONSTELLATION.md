@@ -749,3 +749,6 @@ and |j| <= 64 decided; moves {-1, +3} answer the question's letter in full, symm
 
 
 GC830 serves the existing critical bridge lead: retained GC828 template's actual U satisfies U(31b+7)=1 xor U(31b+6) by higher equations; recorded forbidden000001101 adds U(31b+10)<=U(31b+6). Candidate compatibility remains OPEN/untested; neither relation is a sufficient tail encoding.
+
+
+GC831 serves the existing critical bridge lead: GC828 K4/conditional-K6 periodic projection REQUESTED in Local's lane, preregistered and not yet run. Pair joint155 guards are necessary, final profiles free; SAT is finite-only, checked UNSAT rejects this one D. No larger search requested.
