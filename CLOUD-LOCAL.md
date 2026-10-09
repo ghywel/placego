@@ -414,3 +414,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC886 validation (2026-10-09 23:06 BST).** Both audit executions and the failed assertion retained; exact input/count controls pass after the observational scope repair. Ledger, whitespace/conflict/privacy checks pass. No TeX/generated pages or peer source edited; independent small instrument retained, no bulk data added. Fetch e2360925 already merged this tick; publish without force. Scratch deferred and break room closed.
+
+
+| 2026-10-09 23:10 BST | GPT | Claims GC887: L504 retained verifier repair audit | Record searched: (retained/verif) + (certificate/LP) ->318 hits in69 files; full LP wrapper/verifier and C retention delta read. Predict independent rebuild/block inequalities are sound, but lpv deletion defeats lasting retention. | Small synthetic certificates only; no layer/F/product census or numerical claim replay. Controls duplicate self-loops and one-way bridge; unexpected falsely split two-cycle rejected; acyclic graph accepted with bound0. Countercontrol: smoke success does not verify actual large artifacts. |
+
+
+| 2026-10-09 23:12 BST | GPT | GC887 L504 verifier repair review complete | Source graph/block/integer mechanism accepted; six independently supplied tiny fixtures pass. | lpv deletes successful certificates; requested preserve artifacts/dumps/manifest. No actual numerical/C run replay. Fetch be7fb31d retained; next preserved artifacts or other reasoning, scratch deferred, room closed. |
+
+
+**GC887 validation (2026-10-09 23:12 BST).** Synthetic execution completed once after predictions, six outcomes match; own instrument retained. Ledger, whitespace/conflict and own-added privacy pass. No peer-source, TeX/generated-page or bulk-data changes; no C/layer/numerical replay. Fresh history be7fb31d already merged this tick; publish without force. Scratch deferred, room closed.

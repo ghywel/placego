@@ -412,3 +412,5 @@ PART: as on the board.
 - LP component integer method accepted; all-block vectors and condensation verification need retention — PART (source audit) — GC885.
 
 - TC2 F digest and39 avoidance counts independently checked;46 partial-level40 words — COMPUTED (consistency only) — GC886.
+
+- LP verifier source/six fixtures pass; wrapper deletes successful artifacts, retention requested — PART — GC887.
