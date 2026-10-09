@@ -4,6 +4,12 @@
 RUN-ON:     cpu, four kissat processes at a time (KISSAT names the binary; kissat 4.0.4 built from source here)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_rr3.py start | status | resume     [JOBS=4] [CAP=10800]
 COST:       unknown in advance; each call is capped at CAP seconds (three hours by default). Resumable.
+AUDIT (GPT GC786, applied 2026-10-09 after the run had started; the running process keeps the code it started
+with): status reports the control gate, the plateau law over RR2's and RR3's decided depths, and failed witnesses
+as failures rather than caps; resume and retry run only the control until it has passed; 'retry' reopens capped
+depths with a longer CAP and keeps their capped lines as history; a torn checkpoint line is repaired. The first
+run started all four jobs together, so its depths 98 .. 100 count only if the control passes. An UNSAT here is the
+solver's verdict, not an independently checked DRAT proof.
 
 Why. The owner asked Cloud to pick a task that needs compute and suits this machine (four 2.1 GHz cores, 15 GB, no
 GPU). RR2 (Local's rule30_records_real_sweep.py, M5, one kissat process, 1,800 s cap) decided R_real(d) for
@@ -108,6 +114,13 @@ def calls():
 
 def record(d, L, verdict, ok, secs):
     os.makedirs(SCRATCH, exist_ok=True)
+    if os.path.exists(CK) and os.path.getsize(CK) > 0:            # repair a torn last line, as RR2 does
+        with open(CK, 'rb') as f:
+            f.seek(-1, 2)
+            torn = f.read(1) != b'\n'
+        if torn:
+            with open(CK, 'a') as f:
+                f.write('\n')
     with open(CK, 'a') as f:
         f.write('%d %d %s %s %.1f END\n' % (d, L, verdict, ok, secs))
         f.flush()
@@ -115,14 +128,22 @@ def record(d, L, verdict, ok, secs):
 
 
 def state():
-    """per depth: ('decided', R) or ('open', next L) or ('capped', lower bound), from the checkpoint"""
+    """per depth: ('decided', R), ('open', next L), ('capped', lower bound) or ('failed', L), from the checkpoint.
+    A capped depth reopens only if a later call (a retry with a longer cap) is made at its next L; its capped
+    line stays in the checkpoint as history."""
     st = {97: ('open', 14)}
     st.update({d: ('open', lo + 1) for d, lo in LOWER.items()})
     for d, L, v, ok, secs in calls():
-        if d not in st or st[d][0] != 'open' or st[d][1] != L:
+        if d not in st:
+            continue
+        kind, val = st[d]
+        nxt = val if kind == 'open' else (val + 1 if kind == 'capped' else None)
+        if nxt != L:
             continue
         if v == 'SAT' and ok:
             st[d] = ('open', L + 1)
+        elif v == 'SAT':
+            st[d] = ('failed', L)
         elif v == 'UNSAT':
             st[d] = ('decided', L - 1)
         else:
@@ -130,9 +151,27 @@ def state():
     return st
 
 
+def control_ok(st):
+    return st.get(97) == ('decided', 14)
+
+
+def plateau(st):
+    """RR3-C1's plateau law over RR2's and RR3's decided values: R(d + 1) >= R(d) - 1"""
+    known = dict(RR2)
+    known.update({d: v for d, (k, v) in st.items() if k == 'decided' and d != 97})
+    bad = [(d, known[d], known[d + 1]) for d in sorted(known) if d + 1 in known and known[d + 1] < known[d] - 1]
+    return not bad, bad
+
+
 def status():
     st = state()
     print('RR3 checkpoint:', CK)
+    print('  control d = 97:', 'PASS' if control_ok(st) else 'not passed (%s %s)' % st[97])
+    ok, bad = plateau(st)
+    print('  plateau law over decided depths:', 'PASS' if ok else 'FAIL %s' % bad)
+    failed = [d for d in st if st[d][0] == 'failed']
+    if failed:
+        print('  FAILED WITNESSES at depths', failed, '- the run is invalid until explained')
     for d in sorted(st):
         print('  d %d: %s %s' % (d, st[d][0], st[d][1]))
     for c in calls():
@@ -141,13 +180,25 @@ def status():
 
 def run():
     st = state()
-    queue = [d for d in sorted(st) if st[d][0] == 'open']          # 97 first (the control), then 98 .. 120
+    if MODE == 'retry':
+        queue = [d for d in sorted(st) if st[d][0] in ('open', 'capped') and d != 97]
+    else:
+        queue = [d for d in sorted(st) if st[d][0] == 'open']      # 97 first (the control), then 98 .. 120
+    if any(k == 'failed' for k, _ in st.values()):
+        print('a witness failed its check; stopping (see status)')
+        return
+    if not control_ok(st) and 97 not in queue:
+        print('the control d = 97 has not passed; stopping (see status)')
+        return
+    if not control_ok(st) and MODE != 'start':
+        queue = [97]                                               # resume and retry gate on the control
     running = {}
     with ThreadPoolExecutor(JOBS) as ex:
         while queue or running:
             while queue and len(running) < JOBS:
                 d = queue.pop(0)
-                L = state()[d][1]
+                kind, val = state()[d]
+                L = val if kind == 'open' else val + 1
                 running[ex.submit(solve, d, L)] = (d, L)
             done, _ = wait(running, return_when=FIRST_COMPLETED)
             for fut in done:
@@ -162,7 +213,7 @@ def run():
 
 
 if __name__ == '__main__':
-    if MODE in ('start', 'resume'):
+    if MODE in ('start', 'resume', 'retry'):
         run()
     else:
         status()
