@@ -16537,3 +16537,24 @@ Record capture uses the current local pair x,y and depth d before taking its nex
 **Unexpected scope check.** Rotation-equivalent children may be merged by omitting one branch, and a full queue could omit additional branches. Such omission can compromise an exhaustive census but cannot create a nonrooted node among the retained children. Similarly literal_fail is a counter rather than an abort; the source-level successor proof establishes legality of these routines, while any execution's counter and provenance must still be read as execution evidence. GC370's local recurrence agreement alone would not prove the missing ancestry: it is the root initialization and preserved successor relation that add this information.
 
 **Disposition.** Under Local's reported execution of this source, L224 is a rooted witness, not merely an arbitrary compatible segment. The source's header records the run's control pass and reported counters; those remain Local's reported measurements. GPT has not independently replayed the long prefix or obtained a standalone ancestry certificate. This raises the provenance support for the ordinary-driver positive debt without turning it into a global-bound counterexample: surrounding negative debt can still compensate it. A compact branch-parent/root provenance receipt is preferable to another long replay. Next seek actual coherent compensation rather than use root uncertainty to dismiss this witness. No new run, census or prize claim.
+
+
+## GC682 — The rooted debt witness cannot be repaired by a common phase choice (2026-10-09)
+
+**Actual input and scope.** GC370/GC651 and Local L361 independently verify L224's39-driver interval: common period32, elapsed176, doubled slope2.5 debt157, and all drivers nonzero. GC681 supplies source-level rooted ancestry under Local's reported execution; no independent long-prefix replay is claimed. Use that fixed actual profile list and G6, not another phase census or an unrelated compatible background. The counterfactual that its positive local debt disappears under a different common temporal phase is refuted by the following bound.
+
+Let F be the composition of those39 full-line reset maps, in their displayed order, and define E(phi)=F(phi)-phi. The maps are monotone and commute with translation by32. G6's proof therefore gives
+
+    abs(E(phi)-E(psi)) <=31
+
+for any two starting phases modulo32. The literal witness supplies one phase with E=176. Consequently every common starting phase has
+
+    E>=145;
+    E-(5/2)*39>=47.5;
+    E-3*39>=28.
+
+Thus every phase of this particular settled reset block has mean delay at least145/39, which is greater than3. No exact phase minimum was measured. The statement concerns a finite block, not the whole rooted prefix, a limiting speed, or which other starting phases are reachable along the same rooted history.
+
+**Unexpected birth control.** Fix any starting time and insert arbitrary birth clamps into this same ordered block. Each clamped update F_k(max(T,b_k)) is at least F_k(T). Induction using monotonicity shows its final front is at least the unclamped final front from that starting time. Birth clamps may change individual waits and arrival phases, but cannot lower the total elapsed bound145. Rephasing each driver separately would change the composed path and is outside G6, as GC680's actual period2 control already shows.
+
+**What this closes.** A common phase optimization cannot remove this actual ordinary-driver block's above3 excess. Any all-interval reset bound E<=gamma*39+C for this domain at gamma<=3 requires C>=145-39*gamma, in particular C>=28 at slope3 and C>=47.5 at slope2.5. This is a lower requirement on an additive budget, not a refutation of an absolute whole-prefix bound: earlier or later negative debt can still pay this block. Period32 is fixed, so these constants prove no period-uniform impossibility. The genuinely missing mechanism is surrounding coherent compensation or a rooted history budget, rather than marginal balance or a favorable common phase. Stop phase-only refinements after this quantitative scope audit; no experiment, sweep or prize claim.
