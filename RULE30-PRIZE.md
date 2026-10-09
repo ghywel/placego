@@ -4798,3 +4798,21 @@ So the formal boundary is a staircase whose average is a straight line at a quar
 fluctuations are diffusive: a few hundred cells after a few hundred thousand steps, a tenth of a percent of the
 row. That is why it looks straight at large scale and ragged up close. Proved here: only the definition and its
 monotonicity. That the average speed is exactly the random rows' 0.246 remains a measurement (§8.30, §8.66).
+
+**The apex, and whether the edge comes back** (post hoc; exploratory, no prediction pushed; the owner's questions of
+2026-10-09: the edge "starts to the chaotic right of the centre column ... crosses it then carries on its descent",
+and can it "ever wander back to the centre line and cross it"? Probe `rule30_cloud_left_apex.py`, same definition.)
+- The start right of the centre is real, not an illusion. Left diagonal $e$ is born on the pyramid's right edge at
+  $t = \lceil e/2 \rceil$ and crosses the centre column at $t = e$, so every left diagonal spends its youth on the
+  right. Diagonals 0 to 17 settle before or as they cross: diagonals 3 to 8 are periodic from $t = 2$, as soon as they
+  are born, and diagonal 17 from row 16. Rows 0 to 4 are ordered across their whole width, the band reaches right of
+  the centre at rows 2 to 14 and 16, and the edge is at or right of the centre for the last time at row 20.
+- From diagonal 18 on, every diagonal settles after it has crossed. Settling times grow by 1.32 rows per diagonal on
+  average, crossing times by exactly one, so each diagonal settles further from the centre than the last. That
+  difference is the edge's leftward speed, $1 - 1/1.32 \approx 0.244$.
+- The edge does not come back in the window computed. The largest $x/t$ in each dyadic window from $2^7$ to $2^{19}$
+  lies between $-0.176$ (at $t = 540$) and $-0.251$. Its closest approach, in units of $\sqrt t$, grows from 2 at
+  $t = 64$ to 174 near $t = 506{,}000$, so the gap outgrows the random-walk wander. B's jumps of up to 14 diagonals in
+  one step let the edge step back towards the centre locally, which is its jaggedness, but never far.
+- Not proved. A return at row $t$ would mean that the whole left half of row $t$, centre cell included, already lies
+  on the left edge's eternal stripes; nothing known rules that out.
