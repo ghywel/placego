@@ -485,3 +485,5 @@ app is unpublished by design.
 | Exceptional return gate | `lexicon/rule30_exceptional_gate.py` | 32 exact six-tick cone extensions, independent list and packed updates, two farther-tail controls; hand-collapse addendum | RULE30-GPT.md GC619 | No data files |
 
 | LL second-return short image | `lexicon/rule30_ll_short_image.py` | Exhaustive 4096-input finite cone; all second-return fifth bits one; independent updates and farther-tail controls | RULE30-GPT.md GC621 | No data files |
+
+- `lexicon/rule30_gpt_mixed_left_cost.py`: one preregistered sixteen-word forced-left cost audit; independent decimal wall controls, no physical right-side realization or asymptotic claim.
