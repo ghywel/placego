@@ -68,6 +68,13 @@ RC16X (registered 2026-10-09 21:01 BST, before running; COMMAND: ... rule30_r88_
   RC16X-P1 (blind, confidence 0.6): at least one new return depth appears in (60,000, 400,000].
   RC16X-P2 (blind, confidence 0.5): some q = 16 rooted walk is still alive at depth 400,000.
   (Any new even return then gets QX's and QX2's tests, with predictions registered then.)
+RC16X OUTCOME, 2026-10-09 21:03 BST (M5, about 6 minutes, 0.57 GB, run at commit 6d5c489d): RC16X-C1 PASS, RC16X-P1 HELD,
+  RC16X-P2 REFUTED. (The script's "RC16-P2 HELD" line uses the original label, "every walk has returned".)
+  - Every q = 16 rooted walk returns. The last returns at r = 214,006 and nothing is alive after it.
+  - There are 16 return depths, each one rotation class from one orbit of 8 sources. 16 orbits x 8 = 128, every odd
+    doubled source, so each source orbit has exactly one first return. q = 8 has 2 orbits and 2 depths (88 and 371).
+  - The new depths are 62791, 72473, 93358, 114129, 125209, 171541 and 214006. The new even ones are 93358 and
+    214006.
 """
 import sys
 
