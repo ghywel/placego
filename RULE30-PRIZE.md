@@ -4904,3 +4904,32 @@ and Local's L390. The addenda above are kept as first written.*
   nonempty finite seed has unbounded right periods (GC755) and a prefix of at least $\lfloor \log_2 t \rfloor$.
   The white-run ruler and its spectrum belong to the single cell; a general seed's analogue is the return to its own
   bits (seed 11 has a black cell just inside its edge at $t = 2$).
+
+### 8.75 Triangle ladders: descending from triangle to triangle (2026-10-09)
+
+*Cloud, from the owner's idea of 2026-10-09: "From the top, select the first largest black triangle, then, draw a
+line to the next largest triangle anywhere underneath it ... If 2 triangles compete for the next largest, the path
+splits and forks like lightening. Also possible, select the next ... triangle of the exact same size and descend
+that way." Probe `rule30_cloud_triangle_ladders.py`, predictions TL0 to TL4 pushed in dd31ae5 before the run, to
+depth 8,192 (12,623,057 triangle tops). Not §8.25's lightning, which walks cell by cell.*
+
+**The reading.** A triangle is its top, a maximal white run that does not continue one above (§8.18, §8.68).
+"Underneath" is the light cone below the triangle's tip. The **bigger** rule goes to the first row in that cone
+holding a wider triangle, and takes the widest there. The **same** rule goes to the first row holding a triangle of
+the same width. Ties in that row fork the path, and branches that meet merge.
+- *The bigger rule is a single bolt.* From 100 random core triangles it forks at 1.1% of its steps (TL2). It climbs
+  about 1.9 widths per step, not the predicted one, and ends at widths 20 to 22 by row 8,192, near $2 \log_2 D$, the
+  core's own widest (§8.68). It never reaches the edge: an interior cone meets an edge triangle only once the ruler
+  is wider than the start's distance from the edge, about $2.5 \log_2 t$ (Proposition 23).
+- *On the edge it is the ruler* (post hoc for this start). From the widest triangle of the first 32 rows, the edge
+  triangle at row 32, the bolt runs the ruler's tallest marks exactly: rows 32, 64, 128, ..., 4096, widths 8, 14,
+  15, 23, 24, 26, 28, 33. From the topmost triangle it is knocked off at row 6 by a core triangle of width 4, which
+  comes before row 8's edge width 5, and never returns (TL1 refuted).
+- *The same rule is lightning* (TL3 held). Narrow triangles fork often: 11.9% of steps at width 1, 19.7% at width
+  2 and 10.9% at width 3, with a median 225 triangles alive 500 rows below a width-1 start. From width 5 up the
+  forks fall below 5%. On the edge, from row $2^k$ the same rule walks the ruler's equal marks, rows $3 \cdot 2^k$,
+  $5 \cdot 2^k$ and $7 \cdot 2^k$, only for $k \ge 8$ (width 23). Below that a core triangle of the same width
+  comes first (TL4 refuted as worded, which put the threshold at $k = 6$).
+- What it says: the two rules see the two orders of §8.74's "Two fronts". The bigger rule finds the right edge's
+  dyadic order when it starts there, and the uniform core's widest triangles otherwise. The same rule's branching is
+  set by how common each width is, $3 \cdot 2^{-(L+4)}$ per cell. Nothing here bears on the centre column.

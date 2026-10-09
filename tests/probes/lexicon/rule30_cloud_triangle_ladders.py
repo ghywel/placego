@@ -47,6 +47,23 @@ UNEXPECTED CHECK, TL4: SAME from the edge triangles at rows 2^k stays on the edg
 REFUTED-BY: TL0 failing (the instrument); TL1 to TL4 failing as worded.
 Disclosed: a smoke test at D = 600, STARTS = 5, run before pushing with its output discarded, found one crash
   (fixed); no result was seen before the predictions were pushed.
+
+OUTCOME of the first run, 2026-10-09 (by 12:13 BST, 70 s at D = 8192, STARTS = 100): 16,800,252 white runs,
+  12,623,057 triangle tops.
+  TL0 PASS: core ratios 0.500, 0.501, 0.502, 0.497, 0.498, 0.491 for L = 1 .. 6.
+  TL1 REFUTED. BIGGER from the topmost triangle goes 2:2, 4:3 on the edge, then 6:4 in the core (a width-4 core top
+    at row 6 comes before row 8's edge width 5), and never returns: 20:5, 43:9, 86:11, 104:12, 156:15, 774:16,
+    1798:17, 2832:19, 4000:21, 6168:22, no forks. Started instead from the widest triangle of rows 0 .. 32 (the
+    row-32 edge triangle, width 8; also run, not predicted), it runs the ruler's tallest marks exactly: rows 32, 64,
+    128, ..., 4096, widths 8, 14, 15, 23, 24, 26, 28, 33, all on the edge, no forks.
+  TL2 HELD except its gain clause: no core start reached the edge; final widths 20 to 22 (median 22); forks at 12
+    of 1,064 steps (1.1%); but the gain is about 1.9 widths per step (about 10.6 steps from widths near 2), not one.
+  TL3 HELD. SAME forks at 11.9%, 19.7%, 10.9%, 5.9%, 4.5%, 3.2%, 2.6%, 0.6% of steps for widths 1 .. 8; width 1
+    has a median 225 triangles in rows start + 450 .. 500 (the breadth-first search stops at 60,000 triangles,
+    which is why width 1's deepest row has median 3,908).
+  TL4 REFUTED as worded. SAME from the edge triangle at 2^k leaves the edge at once for k = 2 .. 7 (a core top of
+    the same width comes first) and walks the ruler's equal marks for k = 8 .. 10 (768, 1,280, 1,792; 1,536, 2,560,
+    3,584; 3,072, 5,120, 7,168); the threshold is k = 8, width 23, not k = 6.
 """
 import bisect
 import random
