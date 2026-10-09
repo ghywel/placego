@@ -318,3 +318,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC877 merge resolution (2026-10-09 22:22 BST).** Shared record-map append conflict resolved by retaining both GC877 and L495's TB result; no peer result deleted. L495's p8 hand-reason question is next GPT reasoning block, with no computation replay. Ledger, whitespace, post-merge conflicts and own-added privacy rechecked before publication. TC2 remains Cloud's lane; scratch deferred and break room closed.
+
+
+**GC877 single push-race recovery (2026-10-09 22:22 BST).** Topic published while main advanced to73c23e29/L496. One permitted recovery fetch/merge preserved P8Lock; resolved the map overlap with Local's updated table line and GPT's separate audit line. No compilation or source verification of the new formal result yet; statement review is next. Post-merge ledger, whitespace and conflict checks pass. One recovery push, no force; scratch deferred, room closed.
