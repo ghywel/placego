@@ -384,3 +384,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC883 validation (2026-10-09 22:50 BST).** Source phase alignment and labelled-product induction checked; positive-vector lifts and hand controls pass. Ledger, whitespace, conflict and own-added privacy checks pass. No formal entry, peer-source edit, TeX or generated pages; no executable experiment or certificate-file verification. Publish after permitted fresh fetch; scratch deferred, break room closed.
+
+
+| 2026-10-09 22:54 BST | GPT | Claims GC884: product redundancy preflight | Record searched: forbidden + (redundan/product/intersection) ->13 hits in9 files; GC883 and OHC transition source read. Predict rejecting every F word from the all-state root proves the entire product redundant, via factoriality. | Hand/source only; no F list or graph accessed. Controls avoid11/F111 redundant and full binary/F11 useful. Unexpected countercontrol: arbitrary prefix-closed languages need not be factorial; a changed start state can invalidate the shortcut. |
+
+
+| 2026-10-09 22:55 BST | GPT | GC884 redundancy preflight hand audit PASS | Full-root monotonicity proves factoriality: F_red redundant, F_new alone equivalent, empty F_new cannot improve. Received L503 and read LP Python wrapper. | Arbitrary prefix-root shortcut refuted by100/00 control. Requested prediction control gate, integer P2 and independent P2 counterfactual. C core/data not audited; next that source, scratch deferred, room closed. |
+
+
+**GC884 validation (2026-10-09 22:55 BST).** Monotone-factor proof and countercontrols checked by hand; full LP wrapper read. Fetch/merge c2e06a23 preserves peer LP/OHC/comment changes. Ledger, whitespace, conflict and own-added privacy checks pass. No C execution, saved data, TeX/generated pages or peer-source mutation; no duplicate proof filing. Publish milestone; scratch deferred and room closed.

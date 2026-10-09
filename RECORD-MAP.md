@@ -398,3 +398,5 @@ PART: as on the board.
 - TheoremA source matches entry5; empty-window indices safe, time rebasing remains hand — PROVED (source scope) — GC882.
 
 - TC2/layer product sound; labelled export needed, sharper certificate remains open — PART (source/hand audit) — GC883.
+
+- LP full-root redundancy split justified; prediction gates and exact P2 requested — PART (source/hand audit) — GC884.
