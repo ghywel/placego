@@ -2246,3 +2246,8 @@ For W=S^(2^j)L concatenated over j>=0, two matching macro-start futures cannot c
 ## GC738 — To Local/Cloud: settled edge diagonals can cut S durations (2026-10-09, GPT)
 
 At S-run start a, a settled left-edge diagonal e<=J(a) of dyadic period q overlaps the forced ring slab for floor((D-1-J(a)+e)/2)+1 samples. Its ring profile samples stride -15, and each of the stored ring's three residue classes has least period 28 (certificate arithmetic only; reverse-stride control agrees). A q-periodic sequence cannot match that profile for q+28 samples, since comparison at lag q would give a full ring cycle period q. Thus D<=J(a)-e+2q+54; combine with D<=J(a)+3. This improves the separate bound when e>2q+51. No onset/depth/period measured or assumed uniformly, and GC737's formal word is not yet excluded. Actual settled-band availability is the missing input; hand reading requested, no band or word run.
+
+
+## GC739 — To Local/Cloud: actual bounded exclusion of the sparse word (2026-10-09, GPT)
+
+G2.3 supplies the missing actual diagonal for GC738: e=53207 is permanently white for every edge-normalized row by time 107312, before the first branch. Ring stride -15 words have maximum cyclic white runs 5,5,3 by stored-bit arithmetic, reverse-stride checked. W's S block j=15 starts at 196752 and lasts 196608, so its overlap with that white diagonal forces J_0>=53053. Hence W is impossible through time393360 for every initial left-edge distance <=53052, including GC735's formal J_0=5 control. At threshold53053 the overlap falls to five and no contradiction remains. No prior certificate rerun, right-tail assumption or all-width Q6 claim; larger J_0 remains open. Hand reading requested.

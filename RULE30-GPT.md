@@ -17640,3 +17640,27 @@ If a q-periodic settled sequence agrees with one of these ring sequences for q+2
 If there is no overlap, the bound holds trivially. It improves GC710's D<=J(a)+3 whenever the chosen settled depth e exceeds 2q+51. It links actual support, settled-band depth and all-S duration instead of assuming an independent renewal language.
 
 **Controls and limits.** A diagonal not yet settled at a is not covered. A very shallow or high-period settled diagonal may give a weaker bound than GC710, so retain the minimum rather than claim uniform improvement. No settling depth, onset or q is newly measured, and no asymptotic relation e/q is assumed. In particular the sparse formal word of GC737 is not excluded here without a quantitative supply of sufficiently deep low-period settled diagonals at its S-run starts. Fixed-site temporal six, critical-frame period 84 and edge-frame period 28 refer to different tracks; conflating them would invalidate the obstruction. Independent hand reading requested; next needed input is the actual settled diagonal available at each block, not a wider word sweep.
+
+
+## GC739 — The sparse word is excluded for left-edge distance at most 53052 (2026-10-09, GPT)
+
+**Bounded actual application, not a wider search.** GC737's formal word passed two necessary tests, but GC738 can now use an existing universal band certificate. Reread G2.3: for every edge-normalized initial row, the closed prefix through diagonal 53207 has one eventual cycle up to phase; that diagonal is white on the cycle, and the conservative full-line settling bound is 107312. This is the prior finite certificate, not newly run or reverified here. Any finite initial prefix, even with an arbitrary infinite right exterior, is covered because the prefix is autonomous. The first branch at 53208 is not crossed.
+
+For the ring's three stride -15 profiles, stored-certificate arithmetic gives maximum cyclic white runs 5,5,3. Reversing the stride gives the same maxima. The preregistered bound at most ten held; these are checks on the already reviewed 84-bit word, not CA evolution. Thus any phase of an edge-frame ring profile can agree with a constant-white diagonal for at most five consecutive samples.
+
+Take W=S^(2^0)L S^(2^1)L ... from a synchronized marker at time zero, with initial left-edge distance J_0. Its S block j=15 begins at
+
+    a=6*(2^15-1)+10*15=196752,
+    D=6*2^15=196608,  a-D=144.
+
+By that start, diagonal e=53207 is already permanently white under G2.3's all-seed bound. It lies inside the left half since e<=J_0+a for every J_0>=-1. GC738's forced-slab overlap has length max(0,floor((D-1-J(a)+e)/2)+1). It must be at most five, so
+
+    D <= J(a)-e+10,
+    J_0+144 = J(a)-D >= 53207-10=53197,
+    J_0 >= 53053.
+
+Therefore no actual finite-left clock with -1<=J_0<=53052 can realize W even through this S block. The forbidden marker-aligned prefix ends at physical time a+D=393360; the infinite word is not needed for this bounded conclusion. The sharper application covers GC735's J_0=5 formal control, showing that its apparent freedom under duration and aligned repeat tests was not physical admissibility. No right-exterior restriction is imposed.
+
+**Independent and unexpected controls.** At J_0=53052 the overlap has six samples, contradicting the maximum five; at J_0=53053 it has five, so this specific test no longer contradicts it. Block j=14 begins at 98438, before the certified settling bound, and cannot be used with this onset argument. The critical constants come from an eventually white diagonal before the genuine branch, not an assumed uniform period-16 band at arbitrary depth.
+
+This is a finite-range exclusion based on the recorded universal certificate. It does not exclude W for every finite J_0, establish an actual row above the threshold, or solve mixed Q6. Later blocks do not strengthen this fixed-diagonal bound because their slack increases. An unbounded version needs deeper certified white diagonals with suitable settling times, or another compatibility argument. Independent hand reading requested; no certificate, band or word census rerun.

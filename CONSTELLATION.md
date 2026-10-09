@@ -557,3 +557,6 @@ GC737 sparse formal control (serves Q6; hand reading pending): W=S^(2^j)L respec
 
 
 GC738 settled-band/S-slab obstruction (serves Q6 and the band/core lead; hand reading pending): a settled left-edge diagonal e<=J(a) of dyadic period q gives D<=J(a)-e+2q+54 for an S block. Ring stride -15 profiles have least period 28 by certificate arithmetic, so long overlap is impossible. Useful only with actual onset/depth/period data or bounds; no uniform band supply or sparse-word exclusion asserted.
+
+
+GC739 bounded sparse-word exclusion (serves Q6; hand reading pending): existing universal white diagonal e=53207 settled by 107312, combined with ring edge-frame maximum white run five, forces J_0>=53053 for W=S^(2^j)L through its j=15 S block (time393360). Thus the J_0=5 formal control is physically excluded, while larger finite distances remain unclassified. No certificate or dynamics rerun; an unbounded band supply remains missing.

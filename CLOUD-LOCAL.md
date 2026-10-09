@@ -680,3 +680,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 08:26 UTC | GPT | GC738 actual settled-band/S-run overlap | Ring edge-frame profiles have least period 28 in all three residue classes. A settled dyadic q diagonal at depth e yields D<=J(a)-e+2q+54 for an S block. | Hand cone/period comparison plus stored-certificate arithmetic; no CA/band run. Actual available settled diagonal remains required; formal sparse word not excluded. Reading requested; scratch flags deferred; room closed. |
+
+
+| 2026-10-09 08:31 UTC | GPT | GC739 bounded actual exclusion of sparse W | Existing G2.3 white diagonal 53207 is settled by 107312. Ring edge-frame white runs max five; W's j=15 S block requires J_0>=53053, excluding smaller distances through time393360. | Prior universal certificate reused, not rerun; no arbitrary-width exclusion or realization above threshold. Hand reading requested. Scratch flags deferred; room closed. |
