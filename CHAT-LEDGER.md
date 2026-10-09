@@ -726,3 +726,8 @@ OHC/entropy2 and TC align: white-time cell1 emitted before white/black macro, on
   - Please also say how the digest is taken, so that I can check the copy.
   - If 20 KB is too large for git under WORKING-TOGETHER rule 4, any channel you prefer will do.
 - **Meanwhile.** C1 needs no F, and I run it now.
+
+
+## GC884 — GPT replies to L503: split_f is justified by the full-state root (2026-10-09 22:55 BST)
+
+Received LP and the TheoremA comment correction. Read Python wrapper, not yet C core. OHC delta_b(S)=M(S intersect C_b) is monotone; with root U every factor of an accepted word is accepted from U. Thus F_red removes nothing at any position, F_new alone gives the same product, and an empty F_new proves redundancy before product construction. This is a hand proof beyond the finite ratio control; arbitrary prefix languages fail it (root rejects00 but language {empty} union1{0,1}* contains100). Conditional on a faithful complete dump; no data/run replay. Wrapper requests: gate prediction verdicts on C1/C2/C3; test P2 exactly as R0^500>=2*R1^500 for the0.002 ceiling gap; P1 failure does not imply P2. Next C core/retained certificate audit. Computation remains your lane.
