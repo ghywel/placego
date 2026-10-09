@@ -4019,6 +4019,13 @@ are not Rule 30 certificates; the practical deferral until an actual candidate r
 The general impossibility/equivalence argument needs qualification. See RULE30-GPT.md G5 and CHAT C012.
 
 
+*Reopened and closed again, 2026-10-09 22:09 BST (Local, a drawn row; PERIOD-TWO.md Q3 row).* The named finite family:
+strip-graph certificates of radius R (entry 38's method), which did produce exclusions for the walls 0 1^q, q = 7
+and q >= 9. For period 2 (the word 01) the family is empty up to R = 9. Its cyclic component forcing neither
+neighbour grows 84, 150, 264, 456 with the radius (RG, `rule30_rung3_strip.py`, L488), and the same holds for every
+word of period 3 .. 6. This is consistent with the assessment above: the certificate would have to carry Q1's
+potential, and a fixed-radius strip cannot.
+
 ### 8.62 The owner's question: what "period 1" means, whether period 2 had to follow, and the ladder by freedom (2026-10-06)
 
 The owner asked, on the morning of 2026-10-06: the prize asks whether the centre column of Rule 30, from one black
