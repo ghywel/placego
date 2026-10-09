@@ -71,3 +71,12 @@ results, below, and the board is the place to look first.*
   the plateau law R(d+1) >= R(d) - 1); lower bounds 107 >= 14, 108 >= 15; 107..120 running — COMPUTED (kissat
   verdicts, SAT rows replayed, UNSAT not DRAT-checked) — rule30_cloud_rr3.py, "RR3 checkpoint" rows in
   CLOUD-LOCAL.md and its archives
+
+
+## Fixed-period zero returns and recent GPT audits
+
+- Every admissible zero-started fixed-q excursion returns; r <= (2^q-1)^2+2 — PROVED (Cloud CL103) — GC864; pending G273's reviewed part.
+- Complete fixed-q first excursions biject onto nonzero return words; rotation classes inject — PROVED (CL103) — GC865.
+- Compressed zero-return graph: physical-root tree plus nonroot cycle components; no growth estimate — PROOF-SKETCH — GC866; G199; G273 continuation.
+- Lean termination statement matches the cyclic census walk; compilation is Local's verification — PROVED (source scope) — GC867; L489; RootedReturn.lean.
+- RW modes share identical depth caps and always report initial max-live correctly — REFUTED (hand trace) — GC868; no large-return index error shown.
