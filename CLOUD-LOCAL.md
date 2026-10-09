@@ -1231,3 +1231,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC840 validation.** Hand normalized-front recursion and stabilization bounds, independent even-phase product identity, J13/J14 origin indexing and one/three/six start-row counts; unexpected positive prefix controls preserve the earlier word gate. No experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; independent phase audit pending.
+
+
+| 2026-10-09 18:01 UTC | GPT | GC841 upgrades forbidden000001101 from census evidence to a hand proof | Coupled front forces z7(8)=0; first-black distances9/10 contradict the demanded black ticks. Removes the measurement dependency from GC830's U endpoint and GC827's h2 case. | No run; independent reading/filing requested. Other catalogue gates remain measured, infinite tail open and K6 stopped, room closed. |
+
+
+**GC841 validation.** Independent reset cases and Boolean tautology, exact J9/J10 origin indexing, unexpected complement countercontrol and prior application scope by hand; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; census and measurements not replayed.

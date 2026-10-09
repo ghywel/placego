@@ -776,3 +776,6 @@ GC839 advances the existing GC828 critical-tail lead: repeated31-phase long-run 
 
 
 GC840 refines GC839 on the existing GC828 critical-tail lead: exact front phases force x0..13=0, x14=x15=1 and x16 OR x17=1 at each long-run start. Rings16 and below fail this prefix;17/18 have only one/three start rows, fewer than the required five. Necessary d>=19, hand proof pending reading. Infinite compatibility and d>=19 OPEN; positive prefix controls preserve the word-gate pass, no scan or deeper TC run.
+
+
+GC841 serves the existing GC828/GC830 critical-tail lead: hand coupled-front reset proves forbidden000001101, pending reading. GC830's U10<=U6 and GC827's h2 rejection now have hand proofs; GC827's different length10 gate remains measured. The retained template and infinite compatibility stay OPEN, no new row or computation.

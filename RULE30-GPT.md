@@ -19830,3 +19830,26 @@ At d19 the two exit-choice bits have three choices and bit18 is free, giving six
 **Independent and unexpected prefix controls.** A first black at14 with following bits c,d,e=1,1,0 has s1; the hand recurrences give exactly seven whites followed by1011 through tick10. The alternative1,0,1 does too. Thus the trace prefix is allowed, consistent with the earlier finite word gate: it is the narrow ring shapes that fail. By contrast a lone black at14 has s0 and gives suffix1010, locating the first changed bit. For J13 the tick10 zero is independent of s or the farther tail. The attempted universal forbidden-word shortcut is therefore CLOSED; no recorded word-gate pass is withdrawn.
 
 **Disposition.** Under the actual joint155 premise, rings through18 containing the retained template are CLOSED by this hand refinement, pending independent reading. Infinite coupling and d>=19 remain OPEN; K6 stays stopped, no run requested. The proof is a finite-front capacity gate, not a prize result or a revived edge-to-core argument. GC839 remains pending review and is subsumed here for this template; its general row-collision mechanism remains useful.
+
+
+## GC841 — The measured forbidden trace word000001101 has a hand proof from the coupled front (2026-10-09)
+
+**Bounded proof audit, no experiment.** GC827's two-run edge case and GC830's U-end restriction used L426's measured exclusion of000001101. GC840's front calculation offers an exact replacement for this one census dependency. Prediction by hand: the seventh normalized front digit is already0 at tick8, one tick earlier than the sufficient bound recorded there. Counterfactual: a formal delayed-reset triple can survive with z7(8)=1. Actual coupling rules it out. Checked GC840's normalization and the existing measured-word applications; no broader census or complement exclusion claimed.
+
+**Improve the reset bound by retaining the coupling.** GC840 proves z4=1 from tick4 and z5=z3 from tick5, with z5 alternating thereafter. For n>=5 write A_n=z5(n), B_n=z6(n), C_n=z7(n). The exact recurrences are
+
+    A_(n+1)=1-A_n,
+    B_(n+1)=NOT(A_n OR B_n),
+    C_(n+1)=A_n xor (B_n OR C_n).
+
+If A5=1, then B6=0, A6=0, B7=1, A7=1, and C8=1 xor(1 OR C7)=0. If A5=0, put B5=b,C5=c. Then B6=1-b, C6=b OR c, A6=1, and
+
+    C7=1 xor ((1-b) OR b OR c)=0.
+
+Also B7=0 and A7=0, giving C8=0. Thus z7(8)=0 in both cases, independently of b,c. GC840's bound z7=0 from9 was valid but not sharp. No assumed independence or reachability of free triples enters this universal implication.
+
+**Reject the nine-bit word.** Suppose the origin trace is000001101 at ticks0..8. Its first black is at5, so GC838 puts the initial first black at J9 or10 after zeroing the irrelevant negative half-row. If J10, the origin at tick6 is normalized z2(6)=0, contradicting the second black. If J9, the origin at tick8 is normalized z7(8)=0 by the new reset bound, contradicting the final black. Therefore000001101 is impossible in every genuine G temporal profile, with arbitrary right decoration. The argument is a finite local proof, independent of the census and of any spatial/temporal periodicity assumption.
+
+**Independent and unexpected controls.** The A5=1 branch resets B before C; the A5=0 branch instead uses the exact Boolean tautology (1-b) OR b OR c=1. Dropping the OR-coupling relation between B6 and C6 would permit both0 and spuriously allow C7=1, so the coupled calculation matters. As an unexpected scope check, G is not invariant under bitwise complementation: all-white is fixed, whereas all-black maps to all-white. The complementary measured forbidden word is therefore not proved merely by complementing this argument. GC840's positive prefix with seven whites followed by1011 remains allowed and does not contain this forbidden suffix; no earlier word-gate pass is withdrawn.
+
+**Disposition.** The000001101 exclusion is PROVED by hand pending independent reading. In GC830 it makes the implication U10<=U6 an exact hand consequence of the already proved boundary relation, removing that measurement dependency. It also upgrades GC827's h2/L27 rejection to a proof; its h>=4 branch still depends on the different measured word0001101011, which is not audited here. No blanket upgrade of the full catalogue or of that branch. GC839/GC840 reviews remain pending; the infinite retained tail is OPEN and K6 stays stopped. Please file this trace lemma through the normal route if independently accepted; no experiment or prize claim.
