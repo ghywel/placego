@@ -3,7 +3,7 @@
 
 RUN-ON:     cpu (Python 3 standard library; columns as big integers over time)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_four_quadrants.py [N=4096] [D=1024]
-COST:       expected well under a minute.
+COST:       about 5 s (the main run took 1 s).
 
 Why (the owner, 2026-10-09): "If the deterministic side has coin flip verticals and orderly diagonals, rather than
 the wave front crossing the centre column to put it in the correct band for it's state as a test, does there exist on
@@ -42,6 +42,27 @@ four sigmas of each kind, left and right diagonals from 64 starting rows t0 each
   Counterfactual. If FQ1 fails with ordered left diagonals, the hypothetical would carry the band's kind of order
       next to an ordered column, the ring orbits' quadrant, which is known only on infinite periodic rows. If FQ1
       holds, the inverse the owner describes is locally self-consistent, which is why no local check excludes it.
+
+OUTCOME of the first run, 2026-10-09 (1 s).
+  FQ1 PART. Held: left diagonals through the centre flip at 0.5041 (random sigma) and 0.5018 (driven), with density
+    0.4998 and 0.4993, and none is periodic. Refuted as worded: the fewest distinct 8-bit words in a diagonal are
+    199 and 201, not at least 250. The threshold was miscalibrated: post hoc, 256 fair-coin sequences of 512 cells
+    have 220 words on average and 200 at fewest, so the diagonals are at a coin's level.
+  FQ2 HELD. Right diagonals in the driven right half flip at 0.7500, density 0.4991, none periodic.
+  FQ3 HELD. Columns -3 to -1024 (every 31st): flip 0.4921 and density 0.4994 (random sigma), 0.4847 and 0.5175
+    (driven). Column -1 is black at every odd row in all eight runs, density 0.7493 for random sigma.
+  FQ4 HELD. The longest white run along a measured left diagonal is 14 (random) and 17 (driven).
+  Post hoc, not predicted (posthoc() below, run after the outcome was seen), and the finding of the run. With a
+    finite right half, the 0101 centre comes with a strip of vertical order. Column 1 is the record's wheel (§8.5):
+    13 to 18 distinct 8-bit words over 4,096 rows, density 0.41. The forced columns -1 to -10 average 14 to 21 words of
+    256. They fade to coin-like by about column -150 and show all 256 beyond -250 (four right halves of width 16).
+    Through that strip the left diagonals stay coin-like (FQ1). That is the owner's inverse, an ordered vertical
+    with coin-like diagonals, and it is a strip, not a single column. With random sigma (LR's setting) the strip is
+    only about ten columns wide, where R0's forcing acts. In the single seed, every column from -40 to 40 shows all
+    256 words over rows 2048 to 6143. Scope: four right halves of width 16 and 4,096 rows. A counterexample's right
+    half is whatever its row holds when the period starts, and the record's wheel is kicked by its right side
+    (§8.11), so how ordered the strip would be there is not measured. In one driven run column -1 is 0.893 black
+    and column -2 0.214, and 2(0.893) + 0.214 = 2.000, as §8.34's lemma requires.
 """
 import random
 import sys
@@ -135,5 +156,33 @@ def main():
                   f" periodic {len(per)}, longest white run {wr}")
 
 
+def posthoc():
+    """Post hoc: a coin's word count for 512 cells, the driven strip's width, and the single seed's columns."""
+    rnd = random.Random(7)
+    w = [stats([rnd.getrandbits(1) for _ in range(K)])[4] for _ in range(256)]
+    print(f"post hoc: fair coins, {K} cells: 8-bit words mean {sum(w) / len(w):.1f}, fewest {min(w)}")
+    rnd = random.Random(30)
+    tau = tau_int(L)
+    rnd.getrandbits(L)
+    for trial in range(4):
+        sigma, _ = driven_sigma(rnd, L)
+        cols = forced_columns(tau, sigma, L, D)
+        w = [stats(bits(cols[-k], N))[4] for k in range(1, D + 1)]
+        last = max(k for k in range(1, D + 1) if w[k - 1] < 200)
+        bands = [(lo, round(sum(w[lo - 1:hi]) / (hi - lo + 1)))
+                 for lo, hi in ((1, 10), (11, 30), (31, 60), (61, 100), (101, 150), (151, 250), (251, D))]
+        print(f"  driven {trial}: column 1 has {stats(bits(sigma, N))[4]} words; last column under 200: -{last};"
+              f" mean words by depth: {bands}")
+    V, cols = 1, {c: [] for c in range(-40, 41)}
+    for t in range(6144):
+        if t >= 2048:
+            for c in cols:
+                cols[c].append((V >> (t + c)) & 1)
+        V = (V << 2) ^ ((V << 1) | V)
+    print("  single seed, rows 2048..6143, columns -40..40: fewest 8-bit words",
+          min(stats(v)[4] for v in cols.values()))
+
+
 if __name__ == "__main__":
     main()
+    posthoc()

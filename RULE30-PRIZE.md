@@ -5004,6 +5004,29 @@ column starts in the core with the front to its left, as the single seed's centr
 particular to a seed at the centre, and it showed no regular column even there: while the band held the centre (rows
 0 to 17) the centre column read 110111001100010110, with no period.
 
+*Four quadrants: is the band's inverse there, around a 0101 centre?* (the owner: "does there exist on the centre
+column the inverse - an orderly vertical (which it already is) and coin-flip diagonals (unknown)";
+`rule30_cloud_four_quadrants.py`, predictions FQ1 to FQ4 pushed in 4e0e391 before the run.) In a finite
+configuration every diagonal, in both directions, is eventually periodic: each family is a closed system anchored at
+its own edge (§8.27, §8.74). So only columns can carry the open question. The four combinations:
+- coin-like columns, ordered left diagonals: the band (above, the shunted column);
+- coin-like columns, coin-like diagonals: the core;
+- an ordered column with ordered diagonals: ring orbits, such as the necklace, whose clock reads 010101 (§8.71);
+- an ordered column with coin-like diagonals: the period-2 hypothetical, built here with 0101 down column 0, the
+  left half forced from it (§5) and column 1 either random (LR's setting) or driven by a finite right half (B's).
+
+Measured over 4,096 rows: the left diagonals through the hypothetical centre flip at 0.50 and have a coin's variety
+of 8-bit words (FQ1 held, apart from a word threshold set above what fair coins reach). The right diagonals flip at
+0.750, the light-speed OR law (FQ2). Columns from $-3$ outwards are balanced (FQ3), and column $-1$ is black at every
+odd row. Post hoc, the finding of the run: with a finite right half, the inverse is a strip, not a column. Column 1
+is the record's wheel (§8.5), with 13 to 18 distinct 8-bit words of 256. The forced columns $-1$ to $-10$ average 14
+to 21 words, fading to coin-like by about column $-150$, while the diagonals through the strip stay coin-like. So the
+hypothetical is the band turned on its side: ordered verticals and coin-like diagonals. In the single seed, every
+column from $-40$ to $40$ shows all 256 words. This is not a proof. It covers four right halves of width 16, and a
+counterexample's right half is whatever its row holds when the period begins, kicking the wheel from the right
+(§8.11). But it gives the owner's "wrong band" a picture: a 0101 centre does not sit alone in the chaos, it needs
+a strip of vertical order around it, and the real pyramid shows none near its centre in the rows measured.
+
 ### 8.75 Triangle ladders: descending from triangle to triangle (2026-10-09)
 
 *Cloud, from the owner's idea of 2026-10-09: "From the top, select the first largest black triangle, then, draw a
