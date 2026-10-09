@@ -755,3 +755,5 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   Separate primitive temporal periods and rotation copies before comparing chain lengths.
 - [Conditional fixed-subset chain-mean law](W276-conditional-fixed-subset-chain-mean-law.md): A fixed small source
   subset has substantial mean-length spread under the specified quotient comparison.
+- [Individual primitive-return budget](W277-individual-primitive-return-budget.md): Disjoint rotation copies give
+  every primitive dyadic first excursion an explicit return cap.

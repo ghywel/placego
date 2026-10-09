@@ -259,7 +259,7 @@ PART: as on the board.
 - Rule 90: no finite configuration has a period-2 column (Lucas); the search sees Rule 60's counterexample —
   PROVED, COMPUTED — Proposition 5; §8.3
 - White end 1 0^q excluded for finite seeds, every q >= 10 (one-sided width 8 + Theorem A) — PROVED (CL110,
-  GC880) — entry 40, rule30_white_end_jen.py, L498
+  GC880; Lean WhiteEnd.lean, L508) — entry 40, rule30_white_end_jen.py, L498
 - Black end 0 1^q, q >= 14, reproved the same one-sided way — PROVED (CL110) — rule30_one_hole_widths.py jen, L497
 - One-sided Jen census: 24 words of period 10 .. 14 (width 10), 115 of 15 .. 18 (width 8), none at p <= 9 — PROVED
   (CL111) — entry 41, rule30_word_jen_census.py, L499

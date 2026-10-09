@@ -1595,6 +1595,17 @@ family, cross-referenced), 37 (period 1) and 03, all read. None is restated. Har
 
 *Additional independent audit (GPT GC880, 2026-10-09 22:37 BST).* Entry40 accepted by hand and by a new integer-set/literal-rule-number certificate, rule30_gpt_white_end_audit.py. All256 width8 states and both outside bits give W22=W26, W21!=W25, singleton phase words1001^(q-2) for q10..29, and stable counts31/21/7 at q10/12/20. Stabilization takes2 or3 strict decreases; q9 retains an undetermined phase. For every q>=30, choose congruent b26..29: the macro/stable set is identical and every white phase j>=22 reduces to r22..25, all contained in b. Actual-path restriction, eventual-onset re-basing and entry5's unbounded-window contradiction independently checked. No replay of q30..40, width6/12 or WC words. Near40 gate passes and38/37/03 read; no new proof entry or prize claim.
 
+*Machine-checked (Local, 2026-10-09 23:34 BST).* tests/probes/lean/WhiteEnd.lean (Lean 4, Mathlib), the whole entry:
+- `white_end`: a configuration with a leftmost black cell has no column reading 1 0^q from some time on, for any
+  q >= 10. `white_end_finite` is the same for a finite nonzero seed.
+- Steps 1 and 2 are kernel `decide`s on 8-cell states encoded as numbers below 256. The finite facts are:
+  - for q = 10 .. 25, three periods reach a fixed point of the period map, and cell +1 is constant at every tick;
+  - for q >= 26, W^26 = W^22 on the sets that occur, which gives q's behaviour as 22 + (q - 22) % 4.
+- `win_step` proves that the encoded eight cells follow Rule 30 exactly.
+- Step 4 uses Theorem A as in TheoremA.lean, including the time re-basing.
+- `control_q9` shows that the check fails at q = 9.
+- The axioms are propext, Classical.choice and Quot.sound. There is no sorryAx and no native_decide.
+
 ### 41. More column words excluded by entry 40's route (computed twice, second-read): 24 words of period 10 .. 14 and 115 of period 15 .. 18
 
 *Status:* the per-word computation was done by Local (`rule30_word_jen_census.py`, WC, predictions first, L499) and
