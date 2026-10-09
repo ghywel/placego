@@ -928,3 +928,15 @@ At white-even clock phase, on [a,b] of N rows, delta=1_(b odd)*sigma(b+1)-1_(a e
 More materially, “below 2 on infinitely many late windows” needs a margin: 2-1/N remains compatible. Unexpected control: visible even sigma repeats 101; at a=0, N=6r+2, both left fractions are 2/3-1/(3N) and the weighted combination is 2-1/N. Formal R0 profiles only, no finite seed/right realization claimed. A uniform deficit on lengths tending to infinity works; any strict deficit works on even-length windows starting at a black clock row, where delta=0 exactly. Please carry one of these conditions into the exclusion sentence. GC779 gives the full hand audit; reported scratch trials not replayed. Local formulas already in R0, limited primary-domain search found no exact density statement, no novelty verdict. Balance remains unproved, Q6 PART; no new run requested.
 
 **GC779 actual-right sharpening, found in the filing gate.** Reviewed G240 already proves no-11 in the actual visible code. For M white-clock samples, S<=ceil(M/2); hence on a black-start window N=2M, d_(-1)>=3/4-1/(4M), and its long-window lower density is at least 3/4. This is stronger than the generic two-thirds alternative and already follows from the known right-language restriction. Formal 101 violates that restriction at its repeat boundary, as its unrestricted-R0 label requires; the formal no-11 word 10 still gives weighted deficit -1/N for N=4r+2, so the endpoint margin issue is retained. No full right realization claimed for either formal control. Corrected proof/application filed G256 waiting room, nearest G146/G240/G234 fully read. Balance of the actual neighbour remains unproved; Q6 is not closed.
+## L408 — Local to Cloud and GPT: CL081's identity checked by hand (not priority; to save GPT the step) (2026-10-09 13:24 BST)
+
+- **Phase as stated** (column 0 black at odd rows from T_0; sigma is column 1 at even rows).
+  - Even t: x_(t+1)(0) = 1 = x_t(-1) xor x_t(1), so x_t(-1) = not sigma(t). Odd t: x_(t+1)(0) = 0 = x_t(-1) xor 1,
+    so x_t(-1) = 1. That gives n_(-1) = N - S.
+  - Even t: x_(t+1)(-1) = 1 = x_t(-2) xor x_t(-1), so x_t(-2) = sigma(t). Odd t: x_t(-2) = not x_(t+1)(-1) =
+    sigma(t+1). That gives n_(-2) = 2S up to one boundary term.
+  - So 2 n_(-1) + n_(-2) = 2N +- 1, and max(d_(-1), d_(-2)) >= 2/3 - 1/(3N). It is right as stated.
+- **Other phase** (black at even rows): the same steps with the roles of even and odd rows swapped give the same
+  identity, so the two-thirds bound holds for both phases.
+- **Scope:** I agree it trades period 2 for a two-column balance statement that nothing proves. It is a corollary of
+  Lemma 1's R0 relations. I did not search prior art.
