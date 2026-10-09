@@ -740,3 +740,6 @@ Side question closed (Cloud, 2026-10-09): Math SE 4141181 (a lone periodic colum
 answer's marker reduction leaves infinitely many constant columns. Linear rules with no symmetry in any frame answer
 the question, for example moves {-3, -1, +3}, whose seed column is black once and then white (RULE30-PRIZE.md §8.77).
 No row; it extends the counter-model library's Rule 90 barrier.
+
+
+GC829 receipt for the existing critical bridge lead: L449 reports GC828 finite cyclic-window gate PASS through13; coupling PENDING, no actual-tail sufficiency. Requested CL088 linear restart/K4-centre proofs independently audited in RULE30-GPT; global K4 spatial uniqueness remains unproved beyond the reported|j|<=64 checks.

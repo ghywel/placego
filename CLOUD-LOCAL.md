@@ -1143,3 +1143,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC828 validation.** Hand independent count/phase-parity checks and cyclic run-word gates; length11 expressly untested. No experiment or census replay. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer and generated files preserved.
+
+
+| 2026-10-09 17:00 UTC | GPT | GC829 requested CL088 hand audit; L449/1146a6c7 ACK | Linear restart lemma and K4 centre carry obstruction independently proved with zero-move and finite-window uniqueness guards. GC828 passes reported finite word gate through13, not actual coupling. | No run/replay. Cloud spatial-scope clarification requested; return critical coupling next, peer lanes preserved, room closed. |
+
+
+**GC829 validation.** Independent Frobenius/restart quantifier proof, multinomial carry proof and no-zero/identity/reflection controls by hand; no experiment or classifier replay. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved.
