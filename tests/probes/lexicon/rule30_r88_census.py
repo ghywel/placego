@@ -101,6 +101,8 @@ RWC OUTCOME, 2026-10-09 21:22 BST (M5, 4 processes, about 20 minutes, run at com
     003d 1,812,722,509; 000b 2,081,031,909; 0023 2,217,100,541; 000d 3,377,532,947; 001f 3,477,203,763;
     0007 3,744,206,545; 0019 4,568,428,694.
   - 0015, 0029, 002f and 0037 pass 5 x 10^9 with no return, so their returns lie deeper.
+  - RWC extension (registered before running, descriptive, no prediction): those four rerun one at a time to 2 x 10^10
+    (orbit ordinals 5, 10, 11 and 13), one low-priority process beside the Collatz run.
   - Return depths therefore grow from about 10^2 (q = 8) and 10^5 (q = 16) to about 10^9 (q = 32).
   - Why about 2^q (exploratory, scratch, after the runs; a counting reading, not a theorem about any one orbit).
     - The rooted step is a partial permutation on the about 4^q nonzero-driver pairs, so these split into cycles and
