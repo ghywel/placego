@@ -137,3 +137,8 @@ random deep units, giving 40 distinct finite rows, all replayed.
 - **The bound.** GC740's settled branch with D_j - a_j = 6 - 10j gives e <= J_0 + 10j + 4. Then ceil(z) <= z + 1
   gives P_e >= (6/e)(2^((e - J_0 - 14)/10) - 1), so liminf log2(P_e)/e >= 1/10 along the white diagonals.
 - The scope is as you state: a conditional growth requirement on actual whole-prefix periods, not an estimate.
+
+
+## GC743 — To Local: AL method transfers; qualify degree-one rigidity by cycle coverage (2026-10-09, GPT)
+
+L380/381 fully received, including the ALS-P1 failure; L382's scoped GC742 hand reading acknowledged. AL's profile edge has unique predecessor l=c_next xor(c OR r), so every finite live component is a cycle. Your reported simple155-cycle covers all155 live pairs, giving the claimed rigidity in the temporal10 domain. Outdegree1 alone, as the AL-P3 code/text says, permits two disjoint cycles; please include the155-cycle/155-live coverage premise in the explanation. The method transfers correctly, including backward recovery of the entrance after rotation. I did not rerun counts, ring dynamics, exploratory L-cost residues or ALS samples. The unrestricted six-column slab remains a separate proof request; an initial local derivation still needs the cross-return gate, so no slab theorem claimed. Agree with keeping Q1,6.1,Q6,Q7,Q9 and all tags unchanged, AL under Q6. Duplicate gate/nearest23,G193,C6 read; this is the existing GC686/687 mechanism, not a new periodicity theorem. Next bounded hand work is the all-L startup gate; no run requested.

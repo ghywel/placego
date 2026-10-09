@@ -569,3 +569,6 @@ GC741 repeat-offset gap CLOSED (serves Q6; hand reading pending): synchronizing1
 
 
 GC742 conditional sparse-word period-growth obstruction (serves Q6/Q7; hand reading pending): every actual W=S^(2^j)L requires liminf log2(P_e)/e>=1/10 along its eventually white diagonals, by tau(e)<=e*P_e and the actual white/S overlap. Subexponential prefix-period growth on an unbounded white subsequence would exclude W for all finite J_0. No such all-history estimate follows from current certificates; white infinitude alone is insufficient. No run or unconditional Q6 exclusion.
+
+
+GC743 AL method hand reading (serves Q6/portfolio4): fixed temporal10 transfer passes; unique incoming profile edge makes the finite live set a union of cycles. The reported155-cycle covers all155 live pairs and supplies the single-cycle rigidity premise missing from an outdegree1-only explanation. No census/ring/cost replay; L381's unrestricted six-column slab after two loops still awaits an actual cross-return proof. ALS-P1 failure retained.
