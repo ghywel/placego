@@ -4,6 +4,8 @@
  *
  * Build:  clang -O2 -o ~/np-scratch-int/rule30-oh/rw tests/probes/lexicon/rule30_rooted_walk.c
  * Run:    rw Q MAXSTEPS [FIRST_ORBIT] [N_ORBITS] [cycle]   (cycle: Brent's detection on the one deterministic path)
+ *         MAXSTEPS counts original depth (the profile index; the root step is depth 1) in both modes (GC868).
+ *         Every live state is gated: nonzero driver and exactly one child, before a zero child is accepted (GC868).
  *
  * A profile is a q-bit word, bit t = time t. The children of (a, b) are the words c with c(t + 1) = a(t) XOR (b(t) OR
  * c(t)) for t = 0 .. q - 2 and the closing condition a(q - 1) XOR (b(q - 1) OR c(q - 1)) = c(0); c(0) is tried as 0
@@ -42,9 +44,10 @@ static uint64_t rotl(uint64_t x, int d, int w) {
  * return (a zero child) and 2 if the uniqueness premise fails */
 static int succ(uint64_t *x, uint64_t *y) {
     uint64_t ch[2];
+    if (*y == 0) return 3;                                   /* GC868: a live state must have a nonzero driver */
     int nc = children(*x, *y, ch);
-    for (int j = 0; j < nc; j++) if (ch[j] == 0) return 0;
-    if (nc != 1) return 2;
+    if (nc != 1) return 2;                                   /* GC868: uniqueness gated before any zero is accepted */
+    if (ch[0] == 0) return 0;
     *x = *y; *y = ch[0];
     return 1;
 }
@@ -58,12 +61,12 @@ static void brent(uint64_t blk, int h, long long MAXS) {
     uint64_t tx = x0, ty = y0, hx = x0, hy = y0;
     long long power = 1, lam = 1, steps = 1;
     int r = succ(&hx, &hy);
-    if (r != 1) { printf("q %d block %0*llx: %s at depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, r ? "uniqueness fails" : "return", steps + 1); return; }
+    if (r != 1) { printf("q %d block %0*llx: %s at depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, r == 0 ? "return" : (r == 2 ? "GATE FAILURE (child count)" : "GATE FAILURE (zero driver)"), steps + 1); return; }
     while (!(tx == hx && ty == hy)) {
         if (power == lam) { tx = hx; ty = hy; power *= 2; lam = 0; }
         r = succ(&hx, &hy); steps++; lam++;
-        if (r != 1) { printf("q %d block %0*llx: %s at depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, r ? "uniqueness fails" : "return", steps + 1); fflush(stdout); return; }
-        if (steps >= MAXS) { printf("q %d block %0*llx: no return and no cycle found within %lld steps\n", Q, (h + 3) / 4, (unsigned long long)blk, steps); fflush(stdout); return; }
+        if (r != 1) { printf("q %d block %0*llx: %s at depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, r == 0 ? "return" : (r == 2 ? "GATE FAILURE (child count)" : "GATE FAILURE (zero driver)"), steps + 1); fflush(stdout); return; }
+        if (steps + 1 >= MAXS) {                       /* GC868: MAXS counts original depth in both modes */ printf("q %d block %0*llx: no return and no cycle found by depth %lld\n", Q, (h + 3) / 4, (unsigned long long)blk, steps + 1); fflush(stdout); return; }
     }
     /* cycle of length lam; find the first repeated state mu */
     tx = x0; ty = y0; hx = x0; hy = y0;
@@ -97,11 +100,13 @@ int main(int argc, char **argv) {
         uint64_t ch[2];
         int nc = children(a, 0, ch);
         for (int i = 0; i < nc; i++) if (ch[i]) { L[nl][0] = 0; L[nl][1] = ch[i]; nl++; }
+        maxl = nl;                                         /* GC868: count the initial live set */
         long long depth = 1, ret = -1;
         while (nl && depth < MAXS) {
             uint64_t N[8][2]; int nn = 0;
             for (int i = 0; i < nl && ret < 0; i++) {
                 nc = children(L[i][0], L[i][1], ch);
+                if (L[i][1] == 0 || nc != 1) { printf("q %d block %llx: GATE FAILURE (driver %s, %d children) at depth %lld\n", Q, (unsigned long long)blk, L[i][1] ? "nonzero" : "zero", nc, depth); return 4; }
                 for (int j = 0; j < nc; j++) {
                     if (ch[j] == 0) { ret = depth + 1; break; }
                     int dup = 0;
