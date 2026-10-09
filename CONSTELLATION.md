@@ -679,3 +679,6 @@ GC779 filing follow-up: reviewed G240's actual-right no-11 code improves the adj
 GC780 serves row 20/row 17 through G255: lag-two single width-two rows are independent under fair initial rows, but a mixed third moment 1/8 proves dependence on the later two-row block. G257 hand reading pending; 256-word control registered, not yet run. No all-gap or single-seed conclusion.
 
 GC780 outcome: the registered 256-word literal replay confirms independent W0/W2 rows but mixed future-block moment 1/8; fixed-column guard is zero. Predictions published before execution at 222b76a2. G257 independent hand reading pending; higher-order dependence at this one gap does not establish an unbounded dependence range.
+
+
+GC781 serves row20/row17: G257's future-block witness extends conditionally to width w>=2 with moment rho_w/2, while single rows at lag w are genuinely independent. Width3 uses reviewed rho3 to give -1/8; width1 witness is outside its observation. No all-width nonzero or fixed-width unbounded-range claim, no run. L409 independently verified and promoted G256/G257; general-width corollary awaits hand reading.

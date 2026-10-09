@@ -18586,3 +18586,23 @@ If W_0 were independent of the future block (W_2,W_3), this moment would factor 
 
 
 **GC780 registered replay outcome (2026-10-09, GPT).** Executed only after predictions were published at 222b76a2. All 256 words on [-3,4] checked with literal complete-cone updates. WM0 PASS: all sixteen joint W_0,W_2 states occur sixteen times each. WM1 PASS: mixed sum 32/256 gives 1/8. WM2's future-block independence prediction is REFUTED as required. WM3 PASS: fixed-column triple sum is 0/256. This is a bounded exact control of the hand identity, not an empirical mixing estimate or single-seed measurement. Independent hand reading of G257 remains pending.
+
+
+## GC781 — The row cutoff and future-block test at a general window boundary (2026-10-09, GPT)
+
+**Hand corollary of reviewed G255/G257, not a new experiment.** Predict the same nonlinear witness at width w >= 2 has moment rho_w/2, even though the starting window and the lag-w single row are independent. Counterfactual: the triangular fresh-pivot argument gives independence of that whole future block. Independent checks use the literal OR expansion and the leftmost cone input; the unexpected width-one check must fail to construct this witness, consistent with G97's iid fixed-column history. No enumeration, single-seed run or claim about all-lag nonzero correlations.
+
+Let W_t be sites 0 through w-1 under an iid fair initial row, and rho_w = E[S_0(0) S_w(w)]. The update at site w-1 gives
+
+    S_w(w-2) S_(w+1)(w-1)
+      = [-1 + S_w(w-1) + S_w(w) + S_w(w-1) S_w(w)]/2.
+
+After multiplication by S_0(0), the constant term vanishes by fairness, the single S_w(w-1) term by G255's off-diagonal cancellation, and the mixed term by averaging initial bit -1. That bit enters S_w(w-1) affinely and is absent from both S_0(0) and S_w(w). Therefore
+
+    E[S_0(0) S_w(w-2) S_(w+1)(w-1)] = rho_w/2.
+
+The two later factors are observable within (W_w,W_(w+1)). Whenever rho_w is nonzero, this proves W_0 is dependent on that block. Yet W_w alone is independent of W_0: conditional on all other initial bits, the w fresh pivots at sites -w through -1 map bijectively onto W_w, solved from right to left. None belongs to W_0. These are independent hand arguments, not inference of independence from covariance.
+
+**Controls and limits.** At w=2 the formula recovers reviewed G257's 1/8. At w=3 reviewed G254/CL078's rho3=-1/4 gives -1/8, so the phenomenon is not particular to a pair of cells. At w=1 the proposed earlier future factor has site -1, outside the observed window: this witness is unavailable, and G97's fixed-column iid theorem remains intact. These substitutions require no new measurement. The statement is conditional at general w; proving rho_w nonzero for all w is still open. It gives neither an unbounded dependence range for any fixed width nor a Markov or mixing conclusion. Independent hand reading requested; retain G257's verified scope separately.
+
+**L409 receipt.** Verified 6923d2da's G256/G257 promotions and read both summaries. Local independently checked the endpoint margin, actual-right 3/4 consequence, triangular pivots and OR expansion, and repeated the registered replay. Received those verifications without another GPT replay. The 3/4 extremality is at the level of the stated necessary visible-word restrictions, not a construction of an actual clock. Future waiting-room filings will include their W-key summaries. G255's summary factor is corrected to its positive part; no proof body or generated artifact changed. FQ is Cloud's lane, received without duplication. Scratch access remains deferred, break room closed.

@@ -857,3 +857,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-09 12:29 UTC | GPT | GC780/G257 registered width-two replay outcome | After publication 222b76a2, all 256 words checked: sixteen row-pair states each sixteen times, mixed third moment 1/8, fixed-column moment zero. | WM0/WM1/WM3 PASS; known-wrong WM2 REFUTED. G257 hand reading requested; no all-gap dependence, single-seed or prize claim. G256 confirmation pending; scratch deferred, room closed. |
 | 2026-10-09 13:32 | Cloud | Claims FQ (the owner's question: around a 0101 centre, is the inverse of the band there, an ordered column with coin-like diagonals?). `rule30_cloud_four_quadrants.py` | Predictions FQ1 to FQ4 in the header (FQ2 amended before the run: right diagonals of a finite right half are eventually periodic), pushed before any run | Run, then the outcome |
+
+
+| 2026-10-09 12:35 UTC | GPT | GC781 width-boundary hand corollary; L409 ACK | For w>=2, mixed future-block moment is rho_w/2, whereas the lag-w row alone is independent. Width3 gives -1/8 from the reviewed rho3. | Conditional general-width statement, no all-lag nonzero or fixed-width range theorem. G256/G257 promotions verified, G255 summary factor corrected; W summaries will accompany future filings. No run/FQ duplication; scratch deferred, room closed. |
