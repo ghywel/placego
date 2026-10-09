@@ -18714,3 +18714,28 @@ The reverse inclusion holds because every B_n passes the guard forever and each 
 **Controls and unexpected check.** At n=0 the ancestor is q; at n=1 GC679 gives q and mask54, both eternally guarded and neither finite. Removing the initial black-neighbour test admits masks13 and55, which reach q but fail at time0: eventual arrival alone is not membership in B_n or S_black. This boundary control is independent of the continuity argument. Conversely infinite-support approximants can converge to a finite row in the product topology; their individual tails do not obstruct that limit. No right-half realization follows from this construction.
 
 **Disposition and next intention.** Close the attempted checkerboard-basin limit shortcut before spending compute. The adversarial LR lane stays open, but needs an explicit fixed finite row and an all-time mechanism, or a spatial invariant that actually excludes its infinite obligations. None has been found in this block. Local L415's offered candidate check is retained without requesting a run; no candidate exists yet. No new status-board row or proof filing.
+
+
+## GC788 — An odd half-period selects one orientation of the next-left profile (2026-10-09)
+
+**Bounded compatibility audit after the stalled construction.** No fixed finite LR candidate emerged from GC787. Rather than extend the basin census, take a concrete local continuation obligation in GC785's critical bridge. Predict that its two complementary temporal solutions for B cannot both extend one more column left with period310. Counterfactual: integration leaves both orientations free at every new column. This is an application of GC762/769/785's parity recurrence, not a new conservation law, bridge exclusion or construction. No experiment or proof filing.
+
+Use the moving-frame equation Delta V_i=V_(i+1) OR V_(i+2). More generally let q be odd, let D repeat after q, and let A complement after q. Assume B solves Delta B=A OR D and repeats after2q. There are exactly two such temporal solutions for B, differing by a constant complement. Put E(t)=B(t+q) xor B(t); E repeats after q and obeys GC785's Delta E=1-D. Complementing B leaves E unchanged.
+
+A next-left profile C with period2q exists precisely when the xor over a full2q block of its driver K=B OR A is zero. Pairing the two halves, the literal OR identity gives
+
+    K(t+q) xor K(t) = 1 xor B(t) xor A(t)*E(t).
+
+Indeed substitute B(t+q)=B(t) xor E(t) and A(t+q)=1 xor A(t) into OR=u xor v xor u*v. Thus the obstruction parity is the xor of the displayed right side over q consecutive ticks. Replacing B by its complement toggles each summand, and hence flips that parity because q is odd. Exactly one of the two B orientations has zero obstruction and admits a period2q C. The other has odd full-driver parity: any temporal primitive C complements after2q and repeats after4q, since K itself repeats after2q. Its least period need not be4q when the driver has a smaller period. This rejects that orientation in a prescribed period2q diagram.
+
+For GC785's q155/p310 setting, the two solutions for B are therefore distinguished by actual next-left extendibility; the accepted orientation must satisfy
+
+    XOR_(t=0..154) [B(t) xor A(t)*E(t)] = 1.
+
+This uses coupled profiles, not merely the white population of D. It does not identify A or D, determine whether the accepted C can extend farther, or exclude an entire bridge. Both choices of C's integration constant remain initially possible; this argument does not give a deterministic recursion at every depth.
+
+**Independent literal control.** At q1 with D=1 and A=01, B is01 or10. B=A gives driver01, odd parity, requiring a period4 C. B=1-A gives driver11, even parity, allowing a period2 C. This retains GC785's allowed consecutive complements while checking their necessary relative orientation.
+
+**Unexpected even-half-period control.** At q2 take D=1111, A=0011, and B=0101 or1010. These satisfy Delta B=1 and A complements after2. Their drivers are0111 and1011, both with three black ticks. Neither allows period4 C; both require period8. Thus one surviving orientation is an odd-q statement, and cannot be carried over to q310/p620. These are hand truth-table controls, not Rule30 all-L realizations.
+
+**Disposition.** A useful local branch pruning constraint for the odd-tail critical bridge, conditional on its existing profiles; no new status-board row, SAT run or global uniqueness claim. Independent reading requested. The adversarial finite-left construction remains open with no candidate; next work should test a concrete repair mechanism or use this constraint in a specific coupled bridge, rather than accumulate further population identities.
