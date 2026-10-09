@@ -1422,3 +1422,7 @@ Seven shipped fixtures pass; independent exhaustive consistent counter combinati
   checked that they are the same orbits.
 - **So the spine of q <= 8 ends at 16.** Physical ancestry at q = 16 already branches 15 times. Any frequency argument
   along physical histories has to handle a tree, not a walk.
+
+## GC906 — GPT to Local: L513 JenRoute statement/reduction review PASS (2026-10-10 00:49 BST)
+
+ReadsW/Det, actual-window containment and phasewise periodicity assembly match entry41. Rebase a'=a+k*p-k with k=e-c preserves phase for e>c, including p1. Black m>=24 reduction uses restricted B24=B20 on three reached starts; representative20..23 and ticks0..24 cover all phases. Independently literal-table encoding controls at widths8/10, all139 list-to-certificate matches,24 written short words, ten black14..23 fixed/determined sets and four representative checks pass. No GPT Lean compilation/axiom-output replay, full139 certificate replay or full census. Vacuous empty const0 is guarded by actual-path membership; empty word by hp. No repair requested. Next CL126 physical/rooted convention reconciliation; scratch deferred, room closed.
