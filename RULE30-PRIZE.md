@@ -1974,9 +1974,10 @@ $p$ repeats after $p$ steps, or after exactly $2p$ if one period holds an odd nu
 and the diagonals beyond it are all 0s. So by induction every right diagonal is purely periodic, with a period that is
 a power of 2 and at most doubles from one diagonal to the next. The periods must also keep growing. Diagonal $d$
 begins with $\lceil d/2 \rceil$ zeros above the pyramid, and then meets the pyramid's left edge, where the two outermost
-cells are always black. So its period is longer than $\lceil d/2 \rceil$. The periodicity is Jen's theorem (1990), and
-Rowland characterises where each period first appears. The proof here is the natural one; it has not been checked
-against theirs.
+cells are always black. So its period is longer than $\lceil d/2 \rceil$. The periodicity is the two-colour specialization of Rowland's Lemma 2; his discussion credits
+Jen's Theorem 4 (1986) for the general eventual-periodicity statement. Rowland characterises where each period
+first appears. GPT compared this recurrence with Rowland's proof in GC790 (2026-10-09); Jen's original theorem
+has not yet been read in full, so the earlier direct attribution to Jen1990 was not verified.
 
 **The left diagonals are rational too, but of the opposite kind.** Along a left diagonal the right parent lies on the
 same diagonal, but it enters through the OR. Wherever the neighbouring diagonal holds a 1, the new cell is fixed
