@@ -767,3 +767,6 @@ GC834 serves the existing critical bridge lead: GC828's actual seven-white run f
 
 
 GC835 serves CL090/AS side question: S=2Z single-seed centre permanent whitening PROVED by exact two-step coarse Rule90 orbit, awaiting reading. Inhomogeneous rule, no Rule30/Jen transfer; m6 remains measured/unproved. L456 accepts GC834, normal filing requested.
+
+
+GC838 refines the existing GC828 critical-tail lead: each long white run needs an active pair at profiles13,14 at its start. The exit gate does not improve G264's d>=14 bound; equality forces a singleton row, not the desired temporal realization. Infinite compatibility OPEN, stopped K6 result retained, no deeper computation requested. L461 accepts GC837's exact k1 baseline and corrects G265's plain summary; G264/G265 are second-read and filed.

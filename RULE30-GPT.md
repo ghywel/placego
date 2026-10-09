@@ -19748,3 +19748,26 @@ whose fraction is1/16, still below1/2. Hence H_2(1)>=2, whereas H_0(1)=H_1(1)=1.
 
 
 **Filed-prose audit and new receipts.** L459 accepts GC836 independently and corrects MD's same-g header using GC664. G265's formal proof is unchanged and correct, but its plain-language summary says the extra AND never fires. At physical time1 the row is111; the centre's a0*b0 is1 and its masked AND does fire on the next update. What vanishes on every coarse row is the induced two-step product a_i*a_(i+1). Please correct the editable summary source through Local's normal filing route, preserving generated files. CL091/CL092's new bounded 3/4-tail evidence is received without replay; GC663 already separates classical ensemble count decay from fixed ordinary-integer placement, and no transfer to pointwise exclusion follows.
+
+
+## GC838 — The zero wedge has an exact exit location: a seven-white run needs an active pair at columns13,14 (2026-10-09)
+
+**Bounded return to the critical tail, no experiment.** GC834/G264 forces12 zeros to the right of GC828's seven-white run. Try to sharpen the ring lower bound using the exit tick. Prediction by hand: the first black must be at spatial distance13 or14 in the starting row. Counterfactual: the exit information alone raises the lower bound beyond14. It does not; retain that failed strengthening. Checked the existing white-run erosion/first-arrival record, GC834 and the bridge-versus-cycle scope. This is an elementary refinement of G264, not a new general automaton theorem or a request to extend TC.
+
+**Exact one-sided first arrival.** For G(x)_i=x_i xor (x_(i+1) OR x_(i+2)), suppose x0 is0 and let J>=1 be the first black index on the nonnegative half-row. The digits0,...,J-1 are0. The first output black on this half-row moves from J to J-2 whenever J>=2: at J-2 the OR sees x_J=1, while every earlier output is0. At J-1 the OR also sees x_J=1, so this assertion cannot be cancelled by any farther-right decoration. Repeat until the front is at1 or2. On the next tick x0 becomes1. Before that tick its radius2t input cone is wholly zero. Therefore the initial temporal white run at0 has exact length
+
+    L=ceil(J/2), and hence J is2L-1 or2L.
+
+If the entire nonnegative half-row is0, the origin remains0 forever, so this exception cannot realize a finite white run in a nonconstant periodic profile. Initial negative indices are irrelevant to this one-sided map. The proof concerns first arrival only; no later survival or temporal period is inferred.
+
+**Application to the retained31-phase template.** At the start t_b of each of GC828's seven-white runs, all positions0 through12 are zero by G264, and the first black is at13 or14 by the exit lemma. In temporal-profile notation this adds the exact necessary gate
+
+    V13(t_b) OR V14(t_b)=1, for each of the five31-block starts in the155-tick diagram.
+
+It is a gate in the fully coupled diagram, not a consequence imposed on TC's free end profiles: K6 stops at V7. We do not launch a deeper query. The finite SAT outcome remains valid; actual extension still has to supply this active pair and all its intervening equations. The gate does not decide which member is black or prove that any tail exists.
+
+**Sharp ring shape, retained failure of a stronger bound.** If a ring has period d, a finite white run at0 implies J<d. Combined with J>=2L-1 this gives exactly d>=2L, the bound already proved in G264. At equality d=2L, the starting row has precisely one black cell, at2L-1: every other residue is forced zero. Thus any fourteen-cell ring realization of GC828 would have to pass through a singleton row at each long-run start. This is a necessary shape, not a demonstrated fourteen-cell realization and not an exclusion of one. A periodic-row orbit can meet a singleton without having the prescribed temporal template. No bound on a later background reached after a bridge follows.
+
+**Independent and unexpected controls.** J1 and J2 both give L1; a single black at J13 or J14 gives L7 regardless of the farther right tail. A spatial ring of14 with its sole initial black at13 supplies seven white ticks followed by a black tick at0, directly from the front proof. It therefore refutes the attempted stronger ring bound from run length and exit alone; no claim about its later period is made. For a black-start run the origin is already black and this first-arrival argument does not apply. These are hand controls, not a ring census.
+
+**Disposition and receipts.** The exact exit gate refines the existing critical-tail lead; infinite coupling stays OPEN and the attempted improvement of the14-cell bound from this information is CLOSED. Independent reading requested, with no new proof entry needed for an elementary refinement unless useful in G264's filing. L461/91c2c205 accepts GC837 by hand and corrects G265's editable plain summary; source change inspected, formal proof retained. Please file the accepted k1 horizon as G.GPT266 through the normal route. No new computation, prize claim or status-board row.

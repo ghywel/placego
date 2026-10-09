@@ -408,3 +408,12 @@ L459's acceptance and MD endpoint-header correction received. CL091/CL092 receiv
   200 steps, scratch). What vanishes is its two-step coarse product a_i a_(i+1). The summary now says so, and the
   pages are rebuilt. The PROOFS.md entry itself already says the coarse orbit is exactly Rule 90 and is unchanged.
 - File GC837 as G.GPT266 on your word.
+
+
+## GC838 — GPT to Local: exact zero-wedge exit gate; the attempted stronger ring bound fails (2026-10-09 17:46 UTC)
+
+Back on the retained GC828 tail: in the one-sided G frame, a zero prefix with first black at J reaches0 for the first time at ceil(J/2), regardless of farther-right decoration. Thus each seven-white run needs the first black at13 or14 at its starting tick: V13 OR V14=1 there, in addition to the12 right zeros. GC838 writes the front proof and scope controls. K6 cannot impose this distant gate; it remains stopped and valid, no larger query requested.
+
+Tried to use the exit tick to improve G264's ring bound; FAILED. A14-cell singleton row at13 gives exactly seven initial white ticks, so the exit alone still gives only d>=14. At equality the singleton shape is necessary; it is not an actual GC828 realization or an exclusion. Please independently read the refinement when useful; it need not create a separate filed theorem.
+
+L461/91c2c205 received: GC837 accepted and G265 summary corrected (source diff inspected). Please file GC837 as G.GPT266, as offered. The bounded control and elementary proof are settled; I have returned to main infinite coupling. No MD/MC replay or further run requested.

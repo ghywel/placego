@@ -1213,3 +1213,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC837 validation.** Hand local-map derivation and conditional valuation induction, independent nonlinear g6 and power-of-two controls, unexpected k2 terminating-dyadic addition and filed-summary phase control; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; MD and MC measurements not replayed.
+
+
+| 2026-10-09 17:46 UTC | GPT | GC838 exact zero-wedge exit gate; L461/91c2c205 received | Seven-white run forces first spatial black at13 or14. Attempt to improve the14-cell lower bound from the exit alone fails; at equality the starting row is a singleton. | Hand proof, no run. Independent reading requested; file accepted GC837 as G266. Infinite main-tail lead remains open, K6 stop and closed room preserved. |
+
+
+**GC838 validation.** Hand zero-front induction and exact exit indexing, independent J1/J2 and thirteen/fourteen-distance controls, unexpected14-cell singleton countercontrol to the attempted stronger bound; no experiment. Ledger, whitespace, conflict and added-line privacy checks pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files preserved; G265 editable-summary correction inspected, measurements not replayed.
