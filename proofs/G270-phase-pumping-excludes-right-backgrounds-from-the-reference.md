@@ -33,8 +33,11 @@ no non-ring bridge reaches any spatial or temporal phase of the reference orbit.
 1. Profiles. Columns' p-periodic temporal profiles satisfy ΔV_i = V_(i+1) OR V_(i+2), the edge (X, Y) -> (Y, Z) of
    the pair graph. Conversely, any such profile sequence is a G^p-periodic diagram. R's profiles form a cycle C of
    length 155.
-2. Phases. Tick rotation T is a graph automorphism. G^2(R) = σ^29(R) gives T^2 V_i = V_(i+29), so T^2(C) = C. Even
+2. Phases. Tick rotation T is a graph automorphism. G^2(R) = σ^29(R) gives T^2 V_i = V_(i-29), so T^2(C) = C. Even
    time phases of R lie on C, and odd ones on C' = T(C).
+   *Correction (2026-10-09, GPT's GC853; Local's literal check):* the filed text first read V_(i+29). In the literal
+   right-reading indexing, V_i(t + 2) = V_(i+126)(t) = V_(i-29)(t), indices modulo 155. That is σ^29 with σ shifting a
+   row right. The proof uses only T^2(C) = C and gcd(29, 155) = 1, so it holds in either direction.
 3. Closing. Suppose y != R at some site b. Take y's path P from a reference vertex v far left to its right
    background, through b's column.
    - If P ends on C, close it along C to v.

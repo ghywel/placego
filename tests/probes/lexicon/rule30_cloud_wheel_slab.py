@@ -46,6 +46,17 @@ PREDICTIONS, written 2026-10-09 20:16 BST, before any run of this script.
   Counterfactual. If columns 2 .. 4 are not forced, the block is a habit of realized orbits, and GC688's slab is a
   different kind of object. If the coin engine beats real halves on one measure, §8.11's contrast stands and KR-U
   needs another explanation.
+
+OUTCOME of the depth and n1 parts, 2026-10-09 (minutes; the slab part is reported below when it finishes).
+  DEPTH-P HELD. A real wide interior kicks 0.0340 times a row (clean 0.715). Coins at column 13 kick 0.0549 (161%),
+    at 16 0.0362 (106%), at 20 0.0380 (112%), at 26 0.0318 (93%), at 34 0.0302 (89%) and at 50 0.0315 (93%). The
+    clean fractions at 34 and 50 (0.63, se 0.03) have ten times the spread across seeds of the others, which is not
+    explained here. The surprise is the coins' placement: at column 13 they sit inside the wheel's partial lock.
+  N1R-C HELD: the coin engine reproduces N1's 60.2% exactly, and Q1's measure on random 12-cell halves gives 11.6%
+    (Q1: 8.4% over the unlocked ones of all 4,096 halves).
+  N1R-P HELD: on N1's measure, real 12-cell right halves give 69.8% exact U windows and wide random ones 70.9%,
+    against the coin engine's 60.2%. §8.11's "more cleanly" came from comparing two measures. RULE30-PRIZE.md
+    §8.11 now carries a correction line.
 """
 import os
 import random
