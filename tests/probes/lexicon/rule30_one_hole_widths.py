@@ -34,6 +34,37 @@ PREDICTIONS (Local's, published before the run):
   OH-P4 (blind, confidence 0.5): the odd-period certificates stay small, at most 8 reachable subsets, through width 8.
   OH-D1 (descriptive): per width, (n0, P), the number of distinct odd-period macro classes, the reachable subset
         counts, and the first forbidden word if any. The same for p = 3 and the even periods 4 .. 16.
+OUTCOME, 2026-10-09 19:48 BST (M5, 2.4 s, 29 MB, run at commit 735de69c): OH-C1 PASS, OH-C2 PASS, OH-P1 REFUTED,
+  OH-P2 REFUTED, OH-P3 REFUTED, OH-P4 HELD.
+  - **Width five is the first restrictive width for every odd p >= 11.** The visible word 01 is forbidden. The black
+    relation is eventually periodic from n0 = 11 with period 4, so the classes p = 13 and p = 15 cover every larger
+    odd p. p = 11 is forbidden separately.
+  - Width six restricts the same periods. Width seven also restricts p = 5 (first forbidden word 10000) and p = 7
+    (01111). Width eight also restricts p = 9 (01101). Widths eight to ten restrict every odd p >= 5.
+  - So the first restrictive width is exactly 5 for odd p >= 11, 7 for p = 5 and 7, and 8 for p = 9. G20's bound
+    (at least 5) is attained.
+  - Width 4 reproduces G20 exactly (OH-C1). The black relation's least eventual period there is 4, which is
+    consistent with G20's B^8 = B^16.
+  - Even p from 4 to 16 and p = 3 stay restricted as before. At widths 5 and up, p = 10 .. 16 first lose 01.
+  - P by width, 1 .. 10: 1, 2, 4, 4, 4, 4, 4, 4, 4, 4, so the period-doubling guess P3 was wrong from width 4.
+    n0 by width: 2, 3, 5, 8, 11, 14, 19, 20, 28, 29.
+  - Every closed certificate had at most 3 reachable subsets (P4).
+  - Independent check (scratch, no shared code: the Rule 30 table, every start state and every outside-input
+    sequence):
+    - the word 01 is ALLOWED at width 4 for p = 11 and 13 (witness start 0100, inputs 00001000000), and at width 5
+      for p = 9;
+    - it is FORBIDDEN at width 5 for p = 11, 13, 15 and 17, and at width 6 for p = 11.
+  - Reading: the relaxation only adds freedom, so any wall 0 1^(p - 1) with odd p >= 11 can never show the hole word 01
+    on its right. Once the hole bit is 0, it stays 0.
+EXTENSION (registered 2026-10-09 19:52 BST, before running; COMMAND: ... rule30_one_hole_widths.py ext):
+  OH-X0 (control): the subset automaton's word counts equal direct enumeration at width 5, p = 11 through 3 bits, and
+        at width 7, p = 5 through 6 bits.
+  OH-X1 (blind, confidence 0.5): at width 5, every odd p >= 11 has exactly the language 1^a 0^b. That is n + 1 words
+        of length n, with the single minimal forbidden word 01.
+  OH-X2 (blind, confidence 0.5): that language is unchanged at every width from 6 to 10, for every odd p >= 11.
+  OH-X3 (blind, confidence 0.6): at width 10, p = 5, 7 and 9 keep positive entropy: more than 2^(n/2) words at n = 14.
+  OH-D2 (descriptive): per width and odd-period class, the word counts for n = 1 .. 14, the minimal forbidden words
+        through length 10, and the growth rate (the largest eigenvalue of the subset graph).
 """
 import sys
 from itertools import product
@@ -164,7 +195,7 @@ def subset_words(k, M, nbits):
 
 
 def main():
-    maxw = int(sys.argv[1]) if len(sys.argv) > 1 else 10
+    maxw = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 10
     ok = True
     # OH-C1
     n0, P = eventual_period(4)
@@ -243,5 +274,110 @@ def main():
     print('COMPLETE')
 
 
+def subset_graph_full(k, M):
+    """the whole reachable subset automaton, empty set excluded: nodes and transitions (None marks an empty edge)"""
+    n = 1 << k
+    full = (1 << n) - 1
+    odd = sum(1 << s for s in range(n) if s & 1)
+    sel = (full ^ odd, odd)
+    nodes, queue, trans = {full: 0}, [full], {}
+    for S in queue:
+        trans[S] = []
+        for bit in (0, 1):
+            T = M.apply(S & sel[bit])
+            if T and T not in nodes:
+                nodes[T] = len(nodes)
+                queue.append(T)
+            trans[S].append(T if T else None)
+    return full, trans
+
+
+def language(start, trans, nmax):
+    counts, layer = [], {start: 1}
+    allowed = {0: {''}}
+    paths = {('', start)}
+    for n in range(1, nmax + 1):
+        nxt = {}
+        for S, c in layer.items():
+            for T in trans[S]:
+                if T is not None:
+                    nxt[T] = nxt.get(T, 0) + c
+        layer = nxt
+        counts.append(sum(layer.values()))
+        if n <= 10:
+            paths = {(w + str(b), T) for w, S in paths for b, T in enumerate(trans[S]) if T is not None}
+            allowed[n] = {w for w, _ in paths}
+    mfw = []
+    for n in range(1, 11):
+        for w in (format(i, '0%db' % n) for i in range(1 << n)):
+            if w not in allowed[n] and w[1:] in allowed[n - 1] and w[:-1] in allowed[n - 1]:
+                mfw.append(w)
+    return counts, mfw
+
+
+def growth(start, trans):
+    import numpy as np
+    idx = {S: i for i, S in enumerate(trans)}
+    A = np.zeros((len(idx), len(idx)))
+    for S, ts in trans.items():
+        for T in ts:
+            if T is not None:
+                A[idx[S], idx[T]] += 1
+    return max(abs(np.linalg.eigvals(A))) if len(idx) else 0.0
+
+
+def ext(maxw=10):
+    m5 = macros_for_periods(5, [11])
+    m7 = macros_for_periods(7, [5])
+    x0 = all(len(subset_words(5, m5[11], n)) == len(direct_words(5, 11, n)) for n in range(1, 4)) and \
+        all(len(subset_words(7, m7[5], n)) == len(direct_words(7, 5, n)) for n in range(1, 7))
+    print('OH-X0', 'PASS' if x0 else 'FAIL', flush=True)
+    stair = [n + 1 for n in range(1, 15)]
+    x1 = x2 = True
+    x3 = None
+    for k in range(5, maxw + 1):
+        n0, P = eventual_period(k)
+        top = 1 + n0 + 2 * P
+        ps = list(range(5, top + 1 + (top % 2 == 0), 2))
+        want = {p - 1: p for p in ps}
+        seen = {}
+        for n, imgs in black_powers(k, max(want)):
+            if n not in want:
+                continue
+            p = want[n]
+            W = single(k, 0)
+            mimg = []
+            for st in range(1 << k):
+                m, img = W[st], 0
+                while m:
+                    low = m & -m
+                    img |= imgs[low.bit_length() - 1]
+                    m ^= low
+                mimg.append(img)
+            key = tuple(mimg)
+            if key in seen:
+                seen[key][1].append(p)
+                continue
+            start, trans = subset_graph_full(k, Rel(k, mimg))
+            counts, mfw = language(start, trans, 14)
+            seen[key] = ((counts, mfw, growth(start, trans)), [p])
+        for (counts, mfw, g), plist in seen.values():
+            print('width %2d, odd p %s: counts n = 1 .. 14 %s; growth %.4f; minimal forbidden words (<= 10) %s'
+                  % (k, plist if len(plist) < 6 else plist[:5] + ['...'], counts, g, mfw[:12] + (['...'] if len(mfw) > 12 else [])),
+                  flush=True)
+            if min(plist) >= 11:
+                ok = counts == stair and mfw == ['01']
+                if k == 5:
+                    x1 &= ok
+                else:
+                    x2 &= ok
+            if k == 10 and min(plist) <= 9:
+                x3 = (x3 is not False) and counts[13] > 2 ** 7
+    print('OH-X1', 'HELD' if x1 else 'REFUTED')
+    print('OH-X2', 'HELD' if x2 else 'REFUTED')
+    print('OH-X3', 'HELD' if x3 else 'REFUTED')
+    print('COMPLETE')
+
+
 if __name__ == '__main__':
-    main()
+    ext() if sys.argv[1:2] == ['ext'] else main()
