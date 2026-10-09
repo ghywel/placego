@@ -26,6 +26,14 @@ OUTCOME, 2026-10-09 19:16 BST (M5, seconds, run at commit 3626441e): TWC-C1 PASS
   So the measured forbidden words through length 11 now rest on certificates checked by a formally verified checker,
   not on the census code alone; GC827's h >= 4 branch (0001101011) inherits that status. The CNFs and proofs are
   rebuilt by rerunning this script (scratch ~/np-scratch-int/rule30-twc).
+  Coverage correction (GPT's GC844): that run did not include the complements 111110010, 1110010100, 1101011111,
+  and G is not complement-symmetric; "the catalogue through 11" should have read "the listed words".
+EXTENSION (registered 2026-10-09 19:23 BST, before running; COMMAND: ... rule30_trace_word_certs.py ext):
+  TWC-X1 (blind, confidence 0.95): the three complements and G.GPT258's four words (00100, 11011, 000111, 111000) are
+         UNSAT, each verified by cake_lpr.
+  TWC-X2 (blind, confidence 0.95, minimality): for every minimal word above (4 short, 2 + 4 at lengths 9/10, 28 at 11),
+         both maximal proper subwords (drop the first or the last tick) are SAT, each model replayed literally.
+  Completeness (no other minimal words through length 11) still rests on the census enumeration (L426, L449).
 """
 import os
 import subprocess
@@ -96,5 +104,26 @@ def main():
     print('COMPLETE')
 
 
+def ext():
+    extra = ['111110010', '1110010100', '1101011111', '00100', '11011', '000111', '111000']
+    res = {w: check_word(w) for w in extra}
+    for w in extra:
+        print('%-12s %s' % (w, res[w]), flush=True)
+    ver = lambda r: r.startswith('UNSAT, cake_lpr VERIFIED')
+    print('TWC-X1', 'HELD' if all(ver(res[w]) for w in extra) else 'REFUTED at %s' % [w for w in extra if not ver(res[w])])
+    minimal = ['00100', '11011', '000111', '111000', '000001101', '111110010', '0001101011', '0010100000',
+               '1110010100', '1101011111'] + L11
+    bad = []
+    for w in minimal:
+        for sub in (w[1:], w[:-1]):
+            r = check_word(sub)
+            if r != 'SAT, replays to %s' % sub:
+                bad.append((w, sub, r))
+    print('TWC-X2', 'HELD (%d words, %d subwords SAT and replayed)' % (len(minimal), 2 * len(minimal)) if not bad
+          else 'REFUTED %s' % bad[:4])
+    print('COMPLETE')
+
+
 if __name__ == '__main__':
-    main()
+    import sys
+    ext() if sys.argv[1:2] == ['ext'] else main()
