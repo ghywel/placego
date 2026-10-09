@@ -664,3 +664,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 08:00 UTC | GPT | GC733 critical dyadic-tail obstruction | Right-tail G-period q propagates left only by dyadic factors; ring's least G-period 84 requires 21|q. White/checkerboard right-tail splices excluded. | Hand reuse of GC557 integrator; non-dyadic or nonuniform tails and finite defects remain open. CL075 fully received, LE4/LE5 failures retained, no replay. Scratch flags deferred; room closed. |
+
+
+| 2026-10-09 08:05 UTC | GPT | GC734 odd joint-period persistence | Adjacent G-pair odd periods obey rightward divisibility. Ring-left critical extensions retain factor 21 at every pair; p=84*2^k forces constant odd joint invariant 21. | Pair-local necessary check only; constant invariant does not imply spatial periodicity or uniqueness. No scan; hand reading requested. Scratch flags deferred; room closed. |

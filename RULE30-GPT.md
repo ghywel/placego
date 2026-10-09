@@ -17540,3 +17540,22 @@ If the critical extension also has the q-periodic right-tail base above, a commo
 Therefore no such extension has a right tail with dyadic G-time period, in particular no all-white or checkerboard right half. For these two tails the hypothesis is automatic from their initial spatial form: G reads only to the right; the white half stays white (q=1), while the checkerboard half toggles (q=2). Any critical all-S row white sufficiently far right is excluded, even though its left support is infinite.
 
 **Independent and unexpected controls.** GC732's checkerboard/white interface has left moving-frame period 2, so q=1 can supply it by one doubling; it is consistent with the lemma. The ring itself as right-tail base has q=84 and passes 21|q. The obstruction is the odd factor 21, not a claim that bounded periods cannot grow. It does not exclude a transition to another right background whose G-period includes 21, finite defects of R at critical multiples of 336, or right tails with no uniform temporal period. No all-S uniqueness or single-column prize follows. Independent hand reading requested; stop the dyadic-tail splice route.
+
+
+## GC734 — Odd joint periods cannot lose factors across a critical extension (2026-10-09, GPT)
+
+**Hand refinement of GC733; no experiment or graph.** Predict the factor 21 cannot disappear at even an isolated adjacent pair of G-time columns, not just at a uniform right tail. Counterfactual: a dyadic pair could intervene between the ring's left half and a later non-dyadic tail. This reuses the same integrator mechanism; it does not reopen period scans or claim a new general periodicity theorem.
+
+For any G-periodic row, let P_i be the least temporal period of column i, and a_i its odd part. All P_i divide the row's period p. The recurrence at i integrates the OR of columns i+1 and i+2, so
+
+    P_i divides 2*lcm(P_(i+1), P_(i+2)).
+
+Taking odd parts gives a_i | lcm(a_(i+1),a_(i+2)). Put o_i=lcm(a_i,a_(i+1)), the odd part of the adjacent pair's least joint period. Both a_i and a_(i+1) divide o_(i+1), hence
+
+    o_i divides o_(i+1).
+
+Thus the odd joint periods form a rightward divisibility chain. They all divide the odd part of p, so only finitely many strict increases are possible; the odd joint value eventually stabilizes on a right half. This stabilization concerns only this integer invariant, not the profiles or spatial row.
+
+For a critical extension left-matching R, GC731 supplies an entire common G-history halfline, on which P_i=84 and o_i=21. Therefore every adjacent temporal pair everywhere to its right has joint period divisible by 21. An isolated pair with both column periods dyadic, or with their joint odd part missing either 3 or 7, is impossible. If p=84 times a power of two, the odd part of p is exactly 21, so o_i=21 at every spatial position. This sharpens GC733's tail test to a local necessary check on any proposed critical continuation. No admissible continuation is found.
+
+**Independent and unexpected controls.** The ring has P_i=84 everywhere and saturates the chain. GC732's critical checkerboard/white interface has odd joint value 1 everywhere, consistent with divisibility despite being spatially nonperiodic; constant odd joint values do not imply periodic rows. The statement also does not force each individual column to carry both factors 3 and 7: the proof constrains the lcm of a pair. Abstract periods 3 and 7 illustrate this arithmetic distinction without being asserted compatible G-profiles. No full-period monotonicity, uniform onset of temporal six, uniqueness or finite-left clock conclusion is inferred. Independent hand reading requested.

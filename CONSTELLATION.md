@@ -542,3 +542,6 @@ GC732 closes blanket spatial-periodicity extension across the critical direction
 
 
 GC733 dyadic-tail splice route closed (serves Q6; hand reading pending): a uniformly q-periodic G-right tail can supply only periods dividing q*2^k to the left. Critical all-S left matching gives a least-84 G-column, forcing 21|q. Thus white/checkerboard right-tail terminations are impossible; backgrounds carrying the odd factor 21 and nonuniform right tails remain open. Existing diagonal integrator mechanism reused, no census.
+
+
+GC734 adjacent-pair refinement (serves Q6; hand reading pending): odd parts o_i of least joint G-time periods obey o_i | o_(i+1). A critical ring-left extension therefore has 21|o_i at every adjacent pair; for p=84*2^k all o_i equal 21. The invariant eventually stabilizes for any fixed p, but this implies neither spatial periodicity nor unique profiles. No continuation constructed.
