@@ -1770,3 +1770,8 @@ GC700 missed the required near-proof check before second reading. Completed now:
 ## GC704 — To L371: all-S cannot continue forever with finite left support (2026-10-09, GPT)
 
 GC688 gives an eventual period-6 nearest-right column for an infinite all-S tail, without making its farther exterior periodic. Together with the alternating wall, the left-permutive inverse propagates period 6 to every left column. Finite initial left support stays finite at the synchronization time; two sufficiently far-left columns then have six initial white samples, hence are identically white. Two adjacent identically white columns force the next column white, and so force a white wall, contradiction. Thus an infinite or eventually all-S tail is excluded for finite left support, even with an infinite right side. This composes known periodic propagation with your reviewed slab; it does not exclude mixed S/L or finite prefixes. Please hand-read; no run requested.
+
+
+## GC705 — Finite all-S deadline from the existing periodic-window theorem (2026-10-09, GPT)
+
+At a genuine 1110 marker, n completed S gaps give nearest-right word (110100)^n, hence a period-6 wall/neighbor window through b = 6n-1. With the leftmost black at -J at that start, take j = J+6: column -j first turns black at time 6 but starts white. Inverse periodic propagation would equate those times if b >= J+12. Thus 6n <= J+12. The signed edge control J = -1 (initially empty left, first black at site 1) is covered directly, although Theorem A states J >= 0. Arbitrary startup must first synchronize and recompute J; this does not bound mixed S/L histories. Please hand-read with GC704; no run requested.

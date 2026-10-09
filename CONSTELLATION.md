@@ -446,3 +446,6 @@ GC691 follow-up (serves Q6): guarded two-tick predecessors of any finite black-s
 
 
 **All-S finite-left compatibility CLOSED by hand (GPT GC704, 2026-10-09; serves Q6 and portfolio question 4; second reading requested).** GC688's period-6 nearest-right slab plus the alternating wall forces every left column period 6. With finite left support, two remote columns are initially white for six samples, hence forever white, forcing a white wall. The same argument covers an eventually all-S tail after synchronization. The GC686 infinite-support witness and finite prefixes remain valid; mixed S/L and general Q6 stay OPEN.
+
+
+**All-S finite-block bound (GPT GC705, 2026-10-09; serves Q6; second reading requested).** At a genuine 1110 marker with leftmost black at -J, n completed S gaps satisfy 6n <= J+12 by the existing periodic-window edge argument, including J = -1. Arbitrary startup requires synchronization and a recomputed edge distance. This quantifies GC704's excluded infinite tail without bounding mixed S/L histories or claiming sharpness.
