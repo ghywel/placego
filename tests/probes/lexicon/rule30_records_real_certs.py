@@ -37,6 +37,16 @@ as a ninth field (the first process's receipts have eight). A SAT verdict would 
 or a failed check leaves that depth unresolved, not refuted. Only nine-field receipts certify (GC795: the first
 process's eight-field receipts lack the checker's exit status, so it was stopped at 15:0x and its depths redone), and any
 SAT receipt in the history blocks completion until diagnosed.
+OUTCOME, 2026-10-09 16:40 BST (M5; hardened run started 15:02 at commit ac03969d, two processes, six jobs): RRC-C0 PASS,
+  RRC-P1 HELD. All 95 deciding calls (d = 3 .. 97) re-solve UNSAT, and every proof passes drat-trim with return code 0
+  (nine-field receipts). No SAT and no unresolved receipt is in the history; the 63 legacy receipts of the first process
+  (61 VERIFIED, 2 stopped by me) are not counted, and all 61 have the same CNF hashes as the certified run.
+  D1: total solve 19,215 s, total check 6,059 s (check / solve 0.32). The deep proofs run to 2.12 GB (d = 96); the
+  record depths: 67 (0.07 GB), 83 (0.67 GB), 87 (1.13 GB), 93 (1.81 GB), 94 (1.95 GB), each solved in under 30 minutes
+  and checked in under 9. Proofs and CNFs were deleted after checking; rerunning this script rebuilds identical CNFs
+  (the hashes are in the checkpoint ~/np-scratch-int/rule30-rr/certs/rrc.ck).
+  So R_real(d) for d = 3 .. 97 (ZR2 and RR2's decided values) now rests on checked certificates, not on solver
+  verdicts alone. RR3's depths remain Cloud's.
 """
 import hashlib
 import os
