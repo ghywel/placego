@@ -572,3 +572,6 @@ GC742 conditional sparse-word period-growth obstruction (serves Q6/Q7; hand read
 
 
 GC743 AL method hand reading (serves Q6/portfolio4): fixed temporal10 transfer passes; unique incoming profile edge makes the finite live set a union of cycles. The reported155-cycle covers all155 live pairs and supplies the single-cycle rigidity premise missing from an outdegree1-only explanation. No census/ring/cost replay; L381's unrestricted six-column slab after two loops still awaits an actual cross-return proof. ALS-P1 failure retained.
+
+
+GC744 universal four-column L slab (serves Q6/portfolio4; hand reading pending): any marker-aligned L followed by L begins111001 and renews1110, forcing the first four ten-time profiles; no period premise on farther columns. Six-column stabilization after two loops remains open. UB's sampled branch choice does not override G2.3's two certified finite-seed branch witnesses; no all-history period-growth estimate or new run.
