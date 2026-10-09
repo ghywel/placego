@@ -134,6 +134,17 @@ EXACT FORMS (exploratory, after the runs, no predictions; 2026-10-09 20:33 BST, 
     at widths 10 and 11, p = 9 at width 13), which is the negative control.
   - These are exact forms of the relaxed languages, which contain the true wall's language. They are upper bounds on
     the true hole entropy, not its value.
+OHC (registered 2026-10-09 20:31 BST, before any width above 13 ran; the C instrument rule30_one_hole_widths.c,
+  the same model with sets stepped one update at a time, 128-bit subset keys, and only the frontier kept; caps of 2M
+  subsets and 1.5 GB of frontier):
+  OHC-C1 (control, already run as the instrument smoke): widths 5, 7, 9, 11 and 13 for p = 5, 7, 9 reproduce OH's
+         subset counts exactly and its growth to 1e-6; width 5 p = 11 gives growth 1, and width 4 gives 2. All of
+         these held (for example K 13: 288, 231, 60 subsets; growth 1.6725, 1.7882, 1.8537).
+  OHC-P1 (blind, confidence 0.6): no width from 14 to 18 closes p = 5, 7 or 9 (growth stays above 1.01).
+  OHC-P2 (blind, confidence 0.5): growth keeps falling, and p = 5 is below 1.6 by width 16.
+  OHC-P3 (blind, confidence 0.4): p = 9 reaches a new plateau (equal growth at two consecutive widths) somewhere in
+         14 .. 18, as it did at 8 .. 12.
+  OHC-D1 (descriptive): growth and subset counts per width; how far the caps allow.
 """
 import sys
 from itertools import product
