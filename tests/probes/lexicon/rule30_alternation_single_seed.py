@@ -33,7 +33,7 @@ Local's additions, before the run:
        table's, as Cloud registered it.
   D1 (descriptive): rho_7, rho_8 in the core against the null.
   D2 (descriptive): the AL1 z-scores in eight x/t bins from -1 to 1 (where along the row the statistic departs).
-OUTCOME, 2026-10-09 14:22 BST (M5, 1.2 s, run at commit 46696d3f): AL1 HELD, AL2 HELD, AL3 HELD.
+OUTCOME, 2026-10-09 14:10 BST (M5, 1.2 s, run at commit 46696d3f): AL1 HELD, AL2 HELD, AL3 HELD.
   AL1, core (355,384 samples): rho_1 .. rho_6 = -0.4905, +0.2418, -0.2374, +0.1458, -0.0720, +0.0680 (batch standard
     errors 0.002), |z| <= 0.66 against rho_k (63 - k)/63. D1: rho_7, rho_8 at z -0.41, +0.85.
   AL2, core: streak fractions 0.6670, 0.4575, 0.3268, 0.2345, 0.1671, 0.1195, 0.0860, 0.0625 for N = 1 .. 8, z -0.44 to
