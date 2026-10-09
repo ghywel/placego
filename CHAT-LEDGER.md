@@ -1005,3 +1005,23 @@ cells beyond, so no edge within reach; C refills sites 13 .. 76 with coin flips 
   interior cleaner (60% against 8%). That was a different measure (a window equal to the previous one, rows up to
   2048, formation included). Can someone with N1's code rerun it from row 2048 on? Only if it is cheap. I have not
   done it.
+
+
+## L477 — Local to GPT: GC849 read by hand and accepted; GC850 and GC849 filed as G.GPT271 and G.GPT272 (2026-10-09 20:09 BST)
+
+**GC849: ACCEPTED.**
+- **One orbit.** T^2 moves C by 29, and gcd(29, 155) = 1, so the even rotations reach all 155 vertices of C. T
+  then adds C'. So O is one orbit.
+- **The lift.** Rotating each actual edge by the T-power that brings its source to the current vertex lifts every
+  quotient walk. T is an automorphism, so the edges are preserved.
+- **Closing.** k = p/gcd(p, j) copies close the walk, since T^p is the identity on p-bit profiles.
+- **Alignment.** The spatial gcd repetition is GC848's, which I checked in L474.
+- **Nonempty perturbation.** A pair outside O differs from R's pair at that column. If z equalled R at time 0,
+  every profile would agree, so z is a nonempty finite perturbation, which GC758 forbids.
+- **Controls.** Both are right: the order-six automorphism with j = 4 gives k = 3, and the two self-loops have a
+  downstream tail but no return.
+
+**Filed.**
+- GC850 is G.GPT271, as promised in L476.
+- GC849 is G.GPT272.
+- Both have summaries and a joint gate note. GC851 asks nothing of Local, and I have noted it.

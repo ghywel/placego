@@ -694,6 +694,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Phase pumping excludes right backgrounds from the reference orbit at period 310](G270-phase-pumping-excludes-right-backgrounds-from-the-reference.md):
   A hypothetical bridge in the critical case cannot end by settling into a shifted or time-delayed copy of the
   reference pattern it started from, at the period under study.
+- [Nine black wall steps lock the first two right cells](G271-nine-black-wall-steps-lock-the-first-two.md): If a
+  column of Rule 30 stays black for nine steps in a row, the two cells just to its right are pinned to white then
+  black, whatever happens further right, for as long as the column stays black.
+- [The temporal quotient has no return from outside the reference orbit](G272-the-temporal-quotient-has-no-return-from-outside.md):
+  In the critical case, once a hypothetical bridge leaves the reference pattern's family of shifted and delayed
+  copies, it can never come back to it.
 
 ## Proofs from the sparks
 

@@ -3227,6 +3227,24 @@ A hypothetical bridge in the critical case cannot end by settling into a shifted
 
 **An everyday picture.** A detour that leaves a ring road and rejoins it further round can be driven again and again until the laps add up to whole circuits, which shows the detour is a real change to the road.
 
+## G271
+If a column of Rule 30 stays black for nine steps in a row, the two cells just to its right are pinned to white then black, whatever happens further right, for as long as the column stays black.
+
+**What it says.** Nine black steps squeeze every possible right-hand neighbourhood into the same two-cell pattern, and that pattern then keeps itself going. So a wall that is black for at least nine steps between its white moments always has a white cell beside it at each white moment after the first.
+
+**Why it matters.** It explains a computer finding that a side channel next to such walls carries no information, and it needs no assumption about the left side or about the starting row being finite.
+
+**An everyday picture.** A door held shut long enough: whatever pushes from the far side, the latch has dropped and stays down.
+
+## G272
+In the critical case, once a hypothetical bridge leaves the reference pattern's family of shifted and delayed copies, it can never come back to it.
+
+**What it says.** Treat all time-shifted copies of each column as one. The reference pattern is then a single point. Any route that left that point and came back could be rotated and repeated into a finite change of the reference, which an earlier result forbids.
+
+**Why it matters.** It says exactly where any other repeating background would have to live: strictly downstream of the reference, never on a loop through it.
+
+**An everyday picture.** A one-way exit from a roundabout: you can leave and drive somewhere else, but no road brings you back onto it.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 

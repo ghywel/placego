@@ -10923,6 +10923,66 @@ repetition is what removes the phase slip, and an unrelated right background has
 the other branch), G198 (a phase-mismatch return in Q7's components; a different graph) and G164, all read. None
 is restated. Hard checks pass.
 
+### G.GPT271. Nine black wall steps lock the first two right cells (second-read, with an independent check, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC850, with its certificate `tests/probes/lexicon/rule30_gpt_black_lock.py` (Local's OH,
+`rule30_one_hole_widths.py`, L473, gave the result it explains; G15-G20 are the setting). *Credit:* GPT's hand
+invariant and finite certificate. Independently read by Local (chat L476). Local's own code reproduced all eleven
+masks and both controls, using a literal Rule 30 table, all 32 states and both outside bits at every step.
+*Status:* proved; the transient is a finite computation, checked twice, and its indefinite transfer is the invariant.
+Not a prize claim. *Filed by:* Local, as promised in L476.
+
+**Statement.** Let a column be black for nine consecutive steps. Then, on every right half, whatever lies further
+right, the two cells immediately right of it read x1 = 0 and x2 = 1 from the ninth step on, for as long as the column
+stays black. Hence for a wall with one white and p - 1 black steps per period, p >= 10, the cell right of the wall
+is white at every hole after the first. The hole words lie in 0^n and 1 0^(n - 1).
+
+**Proof (GC850).**
+1. Relax to five cells x1 .. x5 with a free bit beyond x5 at every step; every actual right half restricts to one
+   of these paths. From all 32 states, the image after nine black steps is exactly the eight states with prefix 01.
+   The masks for n = 0 .. 10 are ffffffff, f0cbffff, f0cbff3f, e0cbff3f, e0cbff33, e00bff33, e00bff03, 000bff03,
+   000bff00, 0000ff00, 0000bf00 (x1 the most significant bit).
+2. Invariant: with the wall black, x1 = 0 and x2 = 1 give x1' = 1 XOR (0 OR 1) = 0 and x2' = 0 XOR (1 OR x3) = 1. ∎
+
+*Scope (GC850).* Width four does not lock: it still allows x1 = 1 after ten black steps. After a white step, eight
+black steps do not suffice at width five, so nine is sharp for this test. p = 5, 7, 9 and period two are not decided.
+Whether both hole words are realised globally is not claimed. The lock's range, q = p - 1 >= 9 black steps, matches
+entry 38's q >= 9. Entry 38's q = 7 (p = 8) is not reached by this one-sided lock.
+
+*Near-entry gate (Local, at filing).* See the gate note below, which covers G.GPT271 and G.GPT272 together.
+
+### G.GPT272. The temporal quotient has no return from outside the reference orbit (second-read, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC849 (a corollary of GC848, filed as G.GPT270, and GC758). *Credit:* GPT's hand proof.
+Independently read by Local (chat L477). *Status:* proved by hand. Not a prize claim. *Filed by:* Local.
+
+**Statement.** Fix p > 0 with 310 dividing p and 1240 not dividing p. In the p-profile pair graph, quotient the
+vertices by the temporal rotation T. All temporal phases of the reference cycle C form a single quotient vertex c. No
+quotient walk from c back to c visits any other vertex. So alternative reachable backgrounds lie strictly downstream
+of the reference component.
+
+**Proof (GC849).**
+1. T^2 moves C's spatial phase by 29, and gcd(29, 155) = 1, so the reference pairs form one T-orbit.
+2. A quotient walk lifts edge by edge: rotate each actual edge by the power of T that brings its source to the current
+   vertex. A quotient walk from c to c therefore lifts to a path P from v (on C) to T^j(v).
+3. With k = p/gcd(p, j), the copies P, T^j(P), ..., T^((k-1)j)(P) join at identical vertices and close at
+   T^(kj)(v) = v.
+4. Repeat that closed walk 155/gcd(155, H) times and attach the aligned reference, as in G.GPT270. The result z
+   satisfies G^p(z) = z and is R outside a finite interval.
+5. A visited pair outside the orbit differs from R's pair there, so z is not R: had z been R at time 0, every later
+   profile would agree. That gives a nonempty finite perturbation, which GC758 forbids. ∎
+
+*Scope (GC849).* A singleton reference component does not prove critical uniqueness: a cycle strictly downstream
+of c may survive (the two-loop control). This is a possible certificate organisation, not a practical algorithm at
+p = 310. Other q = 310 orbits and the q = 155 template remain open.
+
+*Near-entry gate (Local, at filing, for G.GPT271 and G.GPT272).*
+- `--near G271` gives 03, C1 and C2, all at formal similarity 0.12 or less: different subjects.
+- `--near G272` gives G270 (its parent, which it extends), G193 and G195 (Q7's paired-window quotients, a different
+  graph), all read.
+- Entry 38 is the finite-seed exclusion that G271 explains one-sidedly; it is cited, not restated.
+- Hard checks pass.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
