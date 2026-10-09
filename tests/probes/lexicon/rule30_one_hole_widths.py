@@ -117,6 +117,23 @@ WIDTH 13 OUTCOME, 2026-10-09 20:03 BST (M5, 22 s, 709 MB peak, run at commit 81e
     12 (1.6950, held).
   - Width 14 would need about 3 GB in this implementation, so it was not run on the M5 tonight. A C or numpy version
     would be needed to go further.
+EXACT FORMS (exploratory, after the runs, no predictions; 2026-10-09 20:33 BST, Local; COMMAND: ... closed):
+  - Derivation, by hand. A language whose minimal forbidden words are x w, for both x, is "w occurs only as a prefix".
+    Its growth equals that of w-avoidance, which is the Guibas-Odlyzko correlation formula, or Goulden-Jackson
+    clusters for a set of words.
+  - Check. The `closed` mode compares OH's subset automaton with the pattern automaton by a product search: at every
+    reachable pair both must be dead or both alive. That proves exact language equality.
+  - p = 9, widths 8 .. 12: exactly "1101 only as a prefix".
+    - Correlation 1 + z^3. Denominator (1 - 2z)(1 + z^3) + z^4 = 1 - 2z + z^3 - z^4.
+    - Growth = the largest root of x^4 - 2x^3 + x - 1 = 1.866760399173861, so 0.90054 bits per hole.
+  - p = 7, widths 7 .. 9: exactly "1111 and 11100 only as prefixes".
+    - Clusters: C_1111 = -z^4/(1 + z + z^2 + z^3), and 11100 follows 1111 with overlaps 3, 2, 1.
+    - The denominator reduces to 1 - z - z^2 - z^3 - z^4 + z^5.
+    - Growth = the largest root of x^5 - x^4 - x^3 - x^2 - x + 1 = 1.883203505913524, so 0.91319 bits per hole.
+  - Both agree with OH's count ratios to about 1e-15. Equality fails exactly where the measured growth changed (p = 7
+    at widths 10 and 11, p = 9 at width 13), which is the negative control.
+  - These are exact forms of the relaxed languages, which contain the true wall's language. They are upper bounds on
+    the true hole entropy, not its value.
 """
 import sys
 from itertools import product
@@ -494,9 +511,45 @@ def widen(maxw=12, cap=300000):
     print('COMPLETE')
 
 
+def closed():
+    """exact language equality between OH's subset automaton and a 'patterns only as a prefix' automaton"""
+    def equal(k, p, patterns):
+        M = macros_for_periods(k, [p])[p]
+        n = 1 << k
+        full = (1 << n) - 1
+        odd = sum(1 << s for s in range(n) if s & 1)
+        sel = (full ^ odd, odd)
+        L = max(map(len, patterns))
+
+        def step(d, b):
+            cnt, tail = d
+            cnt2, tail2 = min(cnt + 1, L + 2), (tail + str(b))[-L:]
+            if any(tail2.endswith(w) and cnt2 - len(w) >= 1 for w in patterns):
+                return None
+            return (cnt2, tail2)
+        seen, queue = {(full, (0, ''))}, [(full, (0, ''))]
+        for S, d in queue:
+            for b in (0, 1):
+                S2, d2 = M.apply(S & sel[b]), step(d, b)
+                if (S2 == 0) != (d2 is None):
+                    return False
+                if S2 and (S2, d2) not in seen:
+                    seen.add((S2, d2))
+                    queue.append((S2, d2))
+        return True
+    for k in range(8, 13):
+        print('p = 9, width %d: language == 1101 only as a prefix: %s' % (k, equal(k, 9, ['1101'])))
+    for k in (7, 8, 9):
+        print('p = 7, width %d: language == 1111, 11100 only as prefixes: %s' % (k, equal(k, 7, ['1111', '11100'])))
+    print('controls (must be False): p = 7 width 10 %s; p = 9 width 13 %s'
+          % (equal(10, 7, ['1111', '11100']), equal(13, 9, ['1101'])))
+
+
 if __name__ == '__main__':
     if sys.argv[1:2] == ['ext']:
         ext()
+    elif sys.argv[1:2] == ['closed']:
+        closed()
     elif sys.argv[1:2] == ['widen']:
         widen(int(sys.argv[2]) if len(sys.argv) > 2 else 12)
     else:

@@ -68,6 +68,22 @@ feedback_diverge_from_gpt.md, which recorded the 2026-10-06 steer without the no
 rule. Record each draw and its outcome in CLOUD-LOCAL.md. A row "passed"
 under the old rule is not closed; it goes back in the draw.
 
+**A quiet tick is a work tick (the owner, 2026-10-09).** "Nothing is asked of me" is a receipt, never a status. A
+worker that has read everything and been asked for nothing has its own work to do. Every heartbeat tick without
+offered work must carry a named job in progress, and the tick's report says what it is ("working on X since HH:MM;
+next step Y"), not only that the others asked for nothing. Background runs (a certificate check, a deep record) are
+not that job: they run beside it. When no board row suggests itself, the work is any of:
+- **logical reasoning:** a proof attempt on a named sub-claim, an exact closed form for a measured constant, or a hand
+  reason for a computed result;
+- **creative exploration:** a new question, a new instrument, or a connection to another field or another of the
+  owner's problems;
+- **reopening a CLOSED or PARKED question:** say what has changed since it closed (a new lemma, a new tool, a new
+  measurement), then work it as a drawn row.
+The owner's words: "you are tending to leave long idle periods with the summary 'it asks nothing of local' which i
+think you take to me 'therefore i have nothing to do' - in the absence of something you to do, you should be finding
+something to do, logical reasoning, creative exploration, pick a closed or parked question and reopen etc. This
+should be a workflow rule."
+
 ### shared-procedures
 
 **Rule.** Procedures live in the shared files, not in a worker's private memory. When a worker turns an owner
