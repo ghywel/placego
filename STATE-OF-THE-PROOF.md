@@ -60,8 +60,8 @@ counterexample, or bounds what a counterexample can do.
   So in a counterexample the kicks to column 1 cannot thin out faster than geometrically (§8.54).
 - Theorem A′, the window principle (§8.58). It holds in the same words for Collatz.
 - Theorem B: zero runs are bounded beside periodic columns (§8.54).
-- Theorem E: column 1 cannot be Sturmian. With Jen's theorem, no coding of a rotation by a single arc works,
-  rational or irrational (§8.57). These are the first columns 1 beyond the eventually periodic ones for which
+- Theorem E: column 1 cannot be Sturmian. With Jen's theorem, no Sturmian coding of a rotation works, rational or
+  irrational (§8.57); a single arc with unrelated endpoints is covered only for almost every angle (Theorem E″ below). These are the first columns 1 beyond the eventually periodic ones for which
   Conjecture LR, that no column 1 makes the left half eventually zero, is proved.
 - Excluded with them (PERIOD-TWO.md §6, row Q7):
   - Corollary F: near-squares at unbounded periods, which covers period-doubling, Chacon and every substitution
@@ -92,7 +92,7 @@ is the open problem.
   - its kicks come no more rarely than geometrically (Theorem A);
   - its column 1 carries at most 0.1236 bits per visible bit (the channel bound);
   - its column 1 is not Sturmian, not any of the codes above, and has no near-squares at unbounded periods.
-  None of this was known on 2026-10-04. It is the kind of progress that makes a counterexample implausible without
+  Apart from the first point (Jen, 1990), none of this was in the record on 2026-10-04. It is the kind of progress that makes a counterexample implausible without
   proving there is none.
 
 The record is plain about the gap (PERIOD-TWO.md §5): the excluded classes all have zero entropy, while the column 1
