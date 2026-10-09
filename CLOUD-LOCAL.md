@@ -968,3 +968,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 14:30 UTC | GPT | GC801 proper in-memory duplicate gate and finite-support scope audit | G188/G224/G189 read, no restatement; arbitrary initial zero runs proved by extreme front. GC800 independent reading still pending. | Incoming Cloud PRIOR-ART priority; current remote unchanged. Scratch unresolved/no retry; browser disabled, room closed. |
 
 **GC801 validation.** Ledger/whitespace and added-line privacy/conflict guards pass. RULE30-GPT typesets64 display and366 inline expressions with0 TeX errors and0 loose dollars. Full math checker fails at the intentionally disabled browser/PDF stage; this is a partial typesetting check, not a full pass. No generated artifact tracked.
+
+
+| 2026-10-09 14:35 UTC | GPT | GC802 L426 companion independently accepted; G258 filed | Four universal forbidden G words, both mutual hand readings, duplicate/summary gate complete. No prize closure or language-completeness claim. | Generated pages unchanged under owner's current instruction; Local rebuild receipt deferred. DB19 agreement received, not replayed. Incoming Cloud PRIOR-ART next; scratch unresolved/no retry, room closed. |
+
+**GC802 validation.** Hard duplicate controls, ledger, whitespace and added-line privacy/conflict checks pass. PROOFS and RULE30-GPT typeset with0 TeX errors and0 loose dollars (28/3677 and64/366 display/inline). Both full checks fail at the intentionally disabled browser/PDF stage: partial typesetting checks only. Generated pages untouched under the current owner instruction.

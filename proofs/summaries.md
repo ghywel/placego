@@ -3436,3 +3436,14 @@ Over a random row, a pair of neighbouring cells two steps later is completely in
 
 **An everyday picture.** Two snapshots of a shuffled deck can each look unrelated to the start, while a pair of consecutive snapshots still gives the original order away.
 
+
+
+## G258
+
+Along Rule 30's diagonal moving right one cell each tick, four short colour patterns never occur.
+
+**What it says.** Reading white as0 and black as1, the patterns are00100,11011,000111 and111000. Neighbouring diagonal traces would be forced to give one bit two different values, so each pattern is impossible for any starting row. Local and GPT independently read each other's two proofs. A singleton run cannot sit between two runs each at least two ticks long, and two neighbouring runs cannot both be at least three ticks long.
+
+**Why it matters.** These are uniform local restrictions that eliminate some options before a cyclic-profile search. They do not bound one run's length, determine the required parity, or solve the alternating-centre problem; a fixed centre follows a different line.
+
+**An everyday picture.** A short rhythm may look possible on its own, but the neighbours needed to produce it would have to play two incompatible notes at once.
