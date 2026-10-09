@@ -461,3 +461,6 @@ GC709 follow-up to aperiodic mixed forced-left cost (serves Q6): the renewal pul
 
 
 **Pure-S exact forced-support refinement (L372, GPT GC710; serves Q6).** Ring-prefix uniqueness verifies the sharp necessary bound 6n <= J+3. Pre-return windows and completed-return minima differ: including the closing tick removes equality at residue 11 modulo 14; actual completed-return equality is at residues 2,10. Exact window audit second-read; closing-inclusive correction awaits Local's reading. Mixed aperiodic costs remain OPEN.
+
+
+GC711 follow-up to aperiodic mixed compatibility (serves Q6): existing Corollary F excludes unbounded near-squares starting at bounded macro indices under the exact visible 3/5 weighting. Unweighted repeat counts at moving starts need not meet its threshold. Conditional subclass exclusion only; actual admissibility forcing such weighted repeats remains OPEN. Hand reading pending; no frequency scan.
