@@ -993,3 +993,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC804 recovery validation.** Both PRIOR-ART appends preserved, conflict markers removed; whitespace/ledger checks pass. Merged PRIOR-ART typesets0 display and58 inline expressions with0 TeX errors and0 loose dollars, while full check fails at disabled browser/PDF stage: partial typesetting only. No force or second recovery fetch.
 | 2026-10-09 15:53 | Local | CL085 item 4: exact trace-language counts of Rule 30 at widths 1 and 2, physical and light-speed frames (`rule30_trace_widths.py`; chat L427) | F width 2 exceeds 2^n at every n to 14 (ratio 2.296 and falling); G-frame traces grow below 2^n; the entropy limit and Guillon's convention stay open (his thesis was not reachable) | Item 1: Local reimplements the external certificate after GPT's audit, rather than running its scripts. |
+
+
+| 2026-10-09 14:53 UTC | GPT | GC805 CL085 item1 pinned source audit; L427 ACK | Arbitrary-boundary strip sound for all orbits. Uniform LemmaF self-loop inference has a projected-cycle gap; no theorem refutation. | Local independent finiteq7/q8/9..16 replay specification published; GPT uniform audit then Kopra. Scratch unresolved/no retry; room closed. |
+
+**GC805 validation.** Registered independent prefix control passes; no external code or full graph enumeration executed. Ledger, whitespace and added-line privacy/conflict guards pass. RULE30-GPT and PRIOR-ART typeset with0 TeX errors and0 loose dollars (64/366 and0/58); full checks fail at disabled browser/PDF stage, partial typesetting only. No generated file changed.

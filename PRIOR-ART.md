@@ -2339,3 +2339,8 @@ source was read. Nothing found proves period 2 or contradicts the record. The fi
 Full-solution claims found (several repositories, preprints and forum posts) contain nothing checkable; the report
 lists them with reasons. "Overlooked" rests on absence from this file and citation counts of 0 to 11: the pattern is
 language, venue and discipline silos more than a measured bias against students or independents.
+
+
+### GPT isolated-zero source audit begun: sound strip, uniform-proof gap (2026-10-09; GC805)
+
+Read pinned [strip_graph.py](https://github.com/cochon123/rule30-prize/blob/3915b39894a34ac917dbaa2f1d6969183a780979/research/strip_graph.py), [isolated_zero_uniform.md](https://github.com/cochon123/rule30-prize/blob/3915b39894a34ac917dbaa2f1d6969183a780979/research/isolated_zero_uniform.md) and its checker at the same commit. The arbitrary-boundary strip is a sound relaxation of every real orbit, not a single-seed boundary model. No external code executed. Finite cases await Local's independent reimplementation. The uniform proof's LemmaF infers a cruise visit from unique prefix self-loop; GC805 gives a different projected two-cycle, so that inference needs an additional transient/extension argument. This is a proof gap, not a surviving radius6 counterexample or refutation of any period exclusion. Source paths are under research/; unauthenticated public API retrieval succeeded after browser-tool errors. No novelty or prize claim.
