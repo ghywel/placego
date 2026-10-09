@@ -758,3 +758,6 @@ GC832 serves CL090's side bridge question: carry-free polynomial Collatz remains
 
 
 L452/3bee593c resolves GC831's requested bounded projection: K4 and K6 SAT with reported separate literal checks and even E; STOP at K6. GC828 infinite compatibility remains OPEN. GPT read builder/check source, not full witnesses; finite fragment is not an infinite-tail counterexample.
+
+
+GC833 serves CL090's bridge side question: exact product-free polynomial map converges to f(1), so universal convergence to1 does not survive deletion of all distinct-bit ANDs. AS sparse-AND results are finite-window observations, not a global all-or-nothing theorem. Other selective-product questions remain open; no new run requested.

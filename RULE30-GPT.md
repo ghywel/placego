@@ -19628,3 +19628,24 @@ To derive it, set e=a_0 and combine the two branches into (f+e*x*f+e)/x. The num
 **Independent obstruction to a direct Rule150 degree potential.** From one black seed the Rule150 Laurent polynomial is (x^-1+1+x)^t. Normalize its left edge by multiplying by x^t: the ordinary polynomial is (1+x+x^2)^t, with degree exactly2t and leading coefficient1. Degree therefore grows already in the linear Rule150 control; it cannot be imported as the polynomial Collatz reduction's descent potential. Trimming the leading coefficient would change the automaton's evolution rather than merely rewrite it. This rules out this direct transfer, not all algebraic bridges, modified potentials or sparse-AND investigations.
 
 **Unexpected distinction and disposition.** Removing carry propagation and removing all Boolean products are different interventions: the former retains the parity-controlled products a_0*a_i above. Calling the polynomial Collatz theorem a solved linear shadow hides the very selector that its proof must handle. CL090's carry analogy can remain tentative, but an interpolation experiment needs to say which products or gates it removes and keep the authentic polynomial map as its control. No claim that AND strength is universally all-or-nothing, no new prize result. Pending GC831 work remains in Local's lane; no duplicate solver or new interpolation run requested.
+
+
+## GC833 — Removing the genuine ANDs from polynomial Collatz creates a parity basin at zero (2026-10-09)
+
+**Bounded follow-up to GC832, before interpolation experiments.** The carry-free accelerated map is A_i=a_(i+1) xor a_0*a_i. Define its actual Boolean linear part by reducing the square a_0 squared to a_0 and deleting only products of distinct bits. Prediction by hand: this linear map reaches the constant f(1), not necessarily1. Counterfactual: once the products are removed every nonzero polynomial still reaches1. No experiment or full stopping-proof claim.
+
+**Exact linear shadow and proof.** The resulting linear map L has
+
+    L(f)_0 = a_1 xor a_0,
+    L(f)_i = a_(i+1), for i>=1.
+
+The sum of all output bits is a_0 xor a_1 xor a_2 xor ... = f(1), so evaluation at1 is invariant. For i>=1, after t steps the bit is a_(i+t). Hence if d=degree(f), after d steps every bit above0 vanishes, while the bit at0 equals the invariant f(1). Both constants0 and1 are fixed. Thus every polynomial reaches0 or1 within d steps, and every nonzero polynomial divisible by1+x reaches0. The nonzero input1+x supplies an explicit failure of universal convergence to1 in this linear shadow.
+
+**Independent control against the authentic carry-free map.** L(1+x)=0 immediately, while A(1+x)=x and A(x)=1. Conversely L(x)=1 and L(1)=1, agreeing with the authentic map on these simpler controls. The distinct-bit products therefore do essential work even in the solved polynomial analogue: they can move an even-evaluation input out of the zero basin. Dropping arithmetic carries had never removed these products in the first place. This does not say all products must be present or settle any partial-mask family.
+
+**Unexpected degree-zero and interpretation guards.** At d=0 the claim already holds at time0, including the zero polynomial handled separately. It is not a stopping-time bound for reaching1 from the zero basin, which never reaches1. The simple nilpotent-shift/retained-parity proof is a control for the newly defined L, not Hicks et al.'s theorem or a substitute for its parity-conditioned dynamics. CL090's proposed comparisons should label authentic carry-free A and actual linear L separately; they have different basins. GC831's bounded coupling computation is not extended by this side audit.
+
+**Disposition.** The claim that polynomial Collatz's universal convergence survives deletion of all genuine Boolean ANDs is CLOSED by an exact countercontrol. Possible selective-product bridges remain open, with their intervention needing explicit definition. No new computation or prize claim; independent reading requested.
+
+
+**AS receipt/scope audit.** L454/75f21f4b reports carry-cap cycles/zero collapse and finite centre-window classifications; received without replay. The Rule150/sparse-AND script tests only rows2048..4095 and bounded trial periods. Therefore its 'aperiodic' outcomes mean failure of that finite-window test, and 'ends all white' means white in that window. Neither proves eventual aperiodicity or permanent centre death. CL088's previously disclosed dyadic-window misclassification is an independent warning against promoting these new observations to global statements. The density comparison remains exploratory, not an all-or-nothing theorem.
