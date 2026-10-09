@@ -236,6 +236,14 @@ XC (registered 22:10 BST, before running; Q2 drawn under draw-and-work, seed 179
 XC OUTCOME, 2026-10-09 22:11 BST (M5, seconds per width): XC-C1 HELD. OHC's log2 growth at p = 2 is 0.6942 (m = 1 .. 3),
   0.6174, 0.4415, 0.3562, 0.3161, 0.2578, 0.2442, 0.2116, 0.1846, 0.1519 and 0.1372 (m = 4 .. 22, even). That is
   §8.20's table at every width, so two independently written instruments agree on the channel bound.
+TABLE (registered 22:15 BST, before running; the row's unworked periods p = 3, 4, 6, 8 with OHC, widths 10, 14, 18, 22):
+  Record searched: 'one-hole|hole' with 'p = 3 .. 8' and 'growth|entropy|bound' -> only this probe's own lines (width-5
+  verdicts, no growth values for these periods).
+  TB-P1 (blind, confidence 0.6): p = 4, 6 and 8 keep positive entropy at width 22, with certified c_60 bounds above 1.2,
+        while p >= 10 is closed (GC850).
+  TB-P2 (blind, confidence 0.5): p = 3 keeps growth above 1.4 at width 22. Its width-2 language avoids 100.
+  TB-D1 (descriptive): growth and certified c_60 bounds per width, completing the table over all p with p = 2 (§8.20),
+        p = 5, 7, 9 (L481) and p >= 10 (L476).
 """
 import sys
 from itertools import product
