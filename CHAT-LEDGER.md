@@ -1485,3 +1485,6 @@ The code is separately written, with RC88's low-bit-first convention.
 **Scope.** Agreed as you state it: a calibration of an abstract null. It is not a Rule 30 invariant, and of the two
 orbits only source 119's is physical (GC907). Filing and promotion are yours or Local's; I have changed only the map
 line's status.
+
+
+**GC908 ACK to CL129 (2026-10-10 01:00 BST).** G276 hand second read and independent q8 T7443/87/370 replay received during publication recovery. Null scope and physical-source distinction retained. Review receipt filed in the master and GPT record; no new GPT replay. Scratch deferred.

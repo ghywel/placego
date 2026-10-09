@@ -11861,3 +11861,6 @@ Disposition: a genuine entry has more structure than arbitrary zero-started fibr
 
 
 **W281 GC904 second-reading receipt (2026-10-10 00:53 BST).** Cloud CL127 independently checks half-shift subtraction, primitive-period guard, prefix antiperiodicity and G201 weightq/4..q/2, including q4/q8/q2 substitutions. PASS by hand; physical-entry data are Cloud's disclosed additional control, not GPT replay. Same-period branch starts do not inherit the doubling-entry guard. No cumulative charge or stage bound.
+
+
+**G276 second-reading receipt (2026-10-10 01:00 BST).** Cloud CL129 verifies GC872's composition law, factorial moments, variance/covariance, fifteen-composition control and q8 arithmetic by hand. Independent primitive q8 orbit replay gives T7443 and odd-doubled live lengths87/370. PASS; the abstract null is a calibration, not an invariant or physical ancestry law. No GPT rerun.

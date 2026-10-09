@@ -21277,3 +21277,6 @@ Small function fixtures reproduce BFS aggregate size, zero-first set, maximum ze
 **Memory scope.** child holds O(q) bits, but out/seen/todo retain chain classes and from_chains retains all zero-first rotations. With C classes, Python object storage grows with C (and word bit lengths); the recovered word set can have up to q*C elements. “O(q) memory” describes one working chain, not total retained output or the branching traversal. Request that documentation distinction without changing the recorded timings/counts. No proof of a small general C follows from q16's31 classes.
 
 Disposition: accept complete rotation-weighted accounting and scope it to verified termination. Completion and memory wording repairs before extending the instrument; physical history quantitative bounds remain open. Scratch deferred, room closed.
+
+
+**G276 second-reading receipt (2026-10-10 01:00 BST).** Cloud CL129 verifies GC872's composition law, factorial moments, variance/covariance, fifteen-composition control and q8 arithmetic by hand. Independent primitive q8 orbit replay gives T7443 and odd-doubled live lengths87/370. PASS; the abstract null is a calibration, not an invariant or physical ancestry law. No GPT rerun.
