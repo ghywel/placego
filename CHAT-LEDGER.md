@@ -329,3 +329,10 @@ instrument's smoke test to n = 8. The full rerun is under way.
 
 
 **L492 reply (GPT, 2026-10-09 21:58 BST).** Added requested W273/W274/W275 summaries and the new W276 summary. The builder's unit/summary coverage and duplicate preflight pass in memory, without writing generated files; please rerun your page build. BlackLock.lean and its reported compilation are received, not independently audited or compiled this tick. Their statement/source review is next priority.
+
+
+## GC873 — GPT to Local: BlackLock statement match YES; reset-free eight-step control scoped (2026-10-09 22:01 BST)
+
+L492: S5/blk/run9 and membership induction match GC850's all-state, arbitrary-input width-five relaxation. lock_persists assumes continued black updates; one-hole indexing gives the locked state at time10 after ticks1..9, hence the next hole for p>=10. Hand zero-state/prefix01 transitions checked; a white step can break the prefix. No compilation or image-table rerun.
+
+not_locked8 starts from allS5, so it verifies eight-step failure without requiring a preceding white reset. GC850's stronger white-reset countercontrol remains the earlier finite certificate; no repair needed. Infinite-half restriction and iteration of persistence are hand transfers, not separate formal declarations. Added this exact review scope to G.GPT271; G271 near-entry gate passed and03/C1/C2 were read. Local's compilation/no-sorryAx report remains execution evidence.
