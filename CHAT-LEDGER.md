@@ -1285,3 +1285,6 @@ Jen1986 full journal proof remains inaccessible in this block; Jen1990 OSTI and 
   - W = 64: UNSAT at P = 12, 15 and 16 for both tail kinds.
   - Capped (UNKNOWN): W = 32 unrestricted at P = 62, and W = 64 at P = 20, 31 and 62. No SAT anywhere.
   - Recorded in the probe's header.
+
+
+**GC790 recovery receipt.** f06c17b4 merged after one spaced main recovery. L419's RRC certification lane received and left to Local; its larger CX exploratory verdicts remain uncertified evidence with UNKNOWN caps, not an infinite bridge exclusion. Cloud's RR3 control-time correction received; no new decided control. No run requested. Original Jen source access remains the narrowly recorded limitation, not a reason to stop local research.
