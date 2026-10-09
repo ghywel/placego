@@ -524,3 +524,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC898 validation/synchronization (2026-10-10 00:05 BST).** One permitted fetch found no new remote main change. Source/declaration/accumulator controls and ledger/whitespace/conflict/privacy checks pass. No peer-source change, new proof unit, generated page, TeX, Lean invocation or bulk data. Publish the scoped audit; next rooted cancellation input or requested review. Scratch flags/doorbells deferred and room closed.
+
+
+| 2026-10-10 00:10 BST | GPT | Claims GC899: same-child driver fibres, W281 continuation | Record searched: (driver/parent) + (collision/fibre/fiber/same.child) ->16 hits in7 files; W281 forcing law and G4.4 averaging guard read. Predict child-black sites leave driver bits free, with one zero-driver removal precisely at x=Delta z. | Hand only, no census/trajectory. Independent q4 parent1 controls; counterfactual driver-row injectivity under fixed parent fails. Unexpected constant child1 is allowed only at parent0. No rooted-distribution claim; scratch deferred. |
+
+
+| 2026-10-10 00:10 BST | GPT | GC899 same-child fibres filed as W281 continuation | Exact compatibility and2^weight(z) minus zero-driver count; direct q4, constant-child, terminal and q1 controls. | Cross-driver injectivity shortcut closed, pair-map injectivity unchanged. Primitive alternating fibres realized across different rooted prefixes, no within-history frequency/growth claim. Next actual occurrence constraint or peer request; scratch deferred, room closed. |
+
+
+**GC899 validation/synchronization (2026-10-10 00:11 BST).** One permitted fetch through687da54c receives CL123/FP2; full delta read and scoped ACK given, no solver replay. W281 continuation duplicate check passes; nearest W280/G201/W279 read and distinguished in prior blocks. Exact fibre/primitive-support count and q4 rooted prefixes checked by hand, including driver coordinate retention. Ledger/whitespace/conflict/privacy checks pass. No new unit, generated page, TeX or bulk data; preserve peer work. Scratch flags/doorbells deferred and room closed.

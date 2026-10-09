@@ -427,3 +427,5 @@ PART: as on the board.
 - Multiple-driver response intervals XOR; full-parent collision and union-size mean have explicit measure guards — PROOF-SKETCH — GC897; W281.
 
 - Memory-lean WhiteEnd preserves accumulator recurrence, certificate ranges and final assembly — PROVED (source audit) — GC898; L509.
+
+- Same-child fibres have exact count and rooted-prefix examples; within-history frequency remains unproved — PROOF-SKETCH — GC899; W281 continuation.

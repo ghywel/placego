@@ -21104,3 +21104,24 @@ not2^(-k). In the q4 control it is4/14=2/7, not1/4. This does not compute a cond
 **Independent and unexpected controls.** A declaration-range script checks all16 small and4 representative certificates and unchanged assembly. Independently modelled old recursion and higher-order recursor agree at n=0,2,3, including a nonzero initial accumulator and skipped state indices; the n=2 expansion is U_0(U_1(acc)), catching reversed nesting. These are structural audit controls, not Lean execution. control_q9 remains unchanged: failed determination at q9 is no seed counterexample. Local's 32-second/6.5GB result, compared with80 seconds/10.6GB on the M5, remains Local-only measured evidence.
 
 No correction requested. GC893's statement/encoding/rebasing audit now extends through this implementation delta. This is an entry40 source receipt, not a new proof unit or stronger wall result. Next return to a rooted cancellation constraint or a concrete peer review request; scratch deferred and room closed.
+
+
+#### GC899 — Exact fixed-parent same-child driver fibres (2026-10-10 00:10 BST; W281 continuation)
+
+**Hand corollary of GC897; second reading pending.** Record searched: (driver/parent) + (collision/fibre/fiber/same.child) ->16 hits in7 files; W281 and G4.4 read. Prediction: driver changes supported on child-black positions are invisible, except for exclusion of the zero driver. Independent q4 controls; unexpected constant child1 needs parent0. No census, trajectory or rooted measure claim. This makes the existing reset/OR mechanism explicit rather than claiming a new dynamical principle.
+
+Fix q>=1 and parent x. For a proposed child z let a=x+S z over F2. The actual equation is a=y OR z. At every z-black tick it requires a=1, while y is free; at every z-white tick it requires y=a. Hence the nonzero-driver fibre is empty unless
+
+z*(1+x+S z)=0.
+
+If this compatibility holds, its exact cardinality is
+
+2^weight(z) - indicator[x=Delta z],   Delta=I+S.
+
+Indeed the bits on z's black support are free, so there are2^weight(z) drivers before exclusion. The zero driver is in the fibre precisely when a=z, equivalently x=Delta z. Every remaining nonzero driver gives a unique cyclic child by reset; conversely all such drivers have been listed. Equivalently, two nonzero drivers give the same child under fixed x exactly when their difference is supported on that child's black positions, as follows directly from GC897's invertible response operator. This counts the complete driver domain, not the drivers encountered on a rooted path. Zero-child fibres are terminal states, not live continuations.
+
+**Independent controls.** At q4, x=1111 and z=1010: S z=0101, a=1010=z and Delta z=1111. The allowed drivers are exactly1000,0010,1010; all give child1010, while0000 is excluded. The other alternating child0101 similarly has drivers0100,0001,0101. Thus fixed-parent cross-driver injectivity is false, despite injectivity of the pair map (its outputs retain the driver coordinate). For z=1000, S z=0001 and a=1110; the driver bits at positions1,2,3 are1,1,0, while position0 is free. The two drivers are0110 and1110. Here x!=Delta z=1001, so no driver is removed. These are direct four-bit substitutions, no enumeration.
+
+**Unexpected endpoint controls.** For z=1, compatibility forces x=0; its fibre is all2^q-1 nonzero drivers, recovering the already credited prefix edge (0,y)->(y,1). For z=0, compatibility is vacuous and the sole possible driver is y=x; its count is1 for x!=0 and0 for x=0, exactly the terminal guard. At q1 the same formula yields just (x,y,z)=(0,1,1) or(1,1,0), so no hidden q>=2 assumption is used.
+
+For every even q>=2, x=1 and either alternating z has2^(q/2)-1 nonzero drivers producing that same child. **Rooted control, not just ambient:** for dyadic q>=4, exactly2^(q/2)-2^(q/4) of those drivers are primitive. The nonprimitive words are precisely those of period dividing q/2; their allowed alternating support has q/4 free bits, so subtraction gives the count. Each primitive y occurs at depth2 of the genuine prefix (0,c)->(c,1)->(1,y), with c=1+S y (thus y=1+S^(-1)c); c is also primitive. The next state is (y,z). At q4 the primitive drivers1000 and0010 both give z1010, from roots c1110 and1011 respectively. These are different roots, not repeated events on one history, and their successor pairs remain different. No return length, charge, probability or growth conclusion follows. The fibre equation closes only a cross-driver injectivity shortcut, including across rooted prefixes. Next require within-history occurrence information rather than more complete-domain averages; scratch deferred.

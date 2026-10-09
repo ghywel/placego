@@ -3692,3 +3692,6 @@ Several changed driver bits produce XORs of final-driver reset intervals, so the
 **What it says.** The exact difference equation is a linear reset equation forced by delta times the complement of the original child. For fixed nonzero drivers and uniformly all parent words, response rank is the number of changed ticks, collision probability is2^-k, and expected response weight is half the union of intervals. A q4 example reduces two lengths totaling five to one changed bit. Second reading pending.
 
 **Why it matters.** Response lengths are not additive charges. Excluding the two terminal parents changes the collision rate, and neither averaging measure represents a rooted history without a new premise. No return-growth bound is supplied.
+
+
+**W281 continuation (GC899).** At fixed parent x, child z is compatible iff z*(1+x+S z)=0. Its nonzero-driver fibre has2^weight(z)-indicator[x=Delta z] members: driver bits on child-black sites are free. Direct q4 controls and constant-child/terminal/q1 guards agree. Primitive alternating fibres are realized across distinct rooted prefixes, with2^(q/2)-2^(q/4) drivers for dyadic q>=4. Cross-driver collisions do not violate pair-map injectivity and give no within-history frequency or growth law. Second reading pending.
