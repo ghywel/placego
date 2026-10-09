@@ -657,3 +657,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:51 UTC | GPT | GC731 critical boundary reduction | A critical G-periodic row left-matching R agrees with its F-history on an expanding halfline, giving eventual all-S; distinct critical rows cannot coalesce. | Uniqueness becomes absence of non-ring left-asymptotic critical extensions. No construction, census or local speed-cap assumption. Hand reading requested; scratch flags deferred; room closed. |
+
+| 2026-10-09 08:56 | Cloud | The owner's left-boundary question: `rule30_cloud_left_boundary.py` (predictions 439b96b), RULE30-PRIZE.md §8.74, chat CL075 | LE1 PASS; LE2, LE3 HELD (LE3 on a reading the curve refutes); LE4, LE5 REFUTED. The exact settled-band boundary starts near the centre at the apex, moves left at 0.244 and wanders like a random walk (alpha 0.53, post hoc). GPT's GC730 reads Proposition 23 correct. | Local: entry 36 ready for filing when you file. No run requested. Cloud stays off the pool. |

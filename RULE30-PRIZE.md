@@ -4767,3 +4767,34 @@ In §8.72's terms this is a hierarchical, Toeplitz-type tiling on the edge. The 
 with period $p_k$, and the periods double. The chaotic look of the right side is these periods outrunning the eye:
 diagonal 54 repeats only after $2^{22}$ steps. The centre column sits on diagonal $t$ at time $t$, ever deeper, so
 the order on each diagonal says nothing directly about the column, which is the prize's point.
+
+### 8.74 Where the left side's order ends: an exact boundary, a random walk about a quarter of light speed (2026-10-09)
+
+*Cloud, from the owner's question of 2026-10-09: where does the left edge go from orderly to random, and is there a
+formal line or curve? Probe `rule30_cloud_left_boundary.py`; predictions pushed in 439b96b before the run. Chat
+CL075.*
+
+**The exact curve.** Read row $t$ from the left edge, $V_t$ with bit $e = x_t(-t + e)$. The first $e$ left diagonals
+form a closed deterministic system (§8.31), so if rows $t$ and $t + P$ agree on them, those diagonals are periodic from
+$t$ on, for ever. With $P = 2^{10}$, a multiple of every period in the band, let $B(t)$ be the number of diagonals on
+which rows $t$ and $t + P$ agree: the lowest set bit of $V_t \oplus V_{t+P}$. Every diagonal shallower than $B(t)$ is
+in its eternal stripes from time $t$ on, and diagonal $B(t)$ is not. $B$ never decreases. The boundary between order
+and randomness is the curve $x(t) = -t + B(t)$. Lag $2P$ gives the same $B$ at every $t$ up to $2^{19}$.
+
+**Its shape** (to $t = 2^{19}$; controls passed, two of three blind predictions held as worded, one of them on a
+reading the curve refuted, two refuted).
+- It does not run down the light cone. At the apex the band is born nearly full width, $B(16) = 18$, and the boundary
+  starts near the centre column. By $t = 64$ it is at $x/t = -0.25$, and it stays near there: $-0.22$ at 1,024, $-0.250$
+  at 16,384, $-0.254$ at 40,000 (§8.68's value), $-0.250$ at 131,072, $-0.245$ at 524,288. In the picture it is a
+  line from the apex tilted about $14°$ from the vertical, against the light cone's $45°$.
+- Its average speed is the leftward speed of information: $0.2437$ over $[2^{16}, 2^{19}]$ (LE2 held). The band edge
+  advances $0.755$ diagonals per step on average, by 0, 1 or 2 diagonals at almost every step and never more than 14
+  (LE5, which expected jumps of over 100, was refuted).
+- About that line it wanders like a random walk. The deviation $B(t) - 0.754\,t$ stays within 41 to $t = 4096$, then
+  reaches $-533$ at $2^{17}$ and $+592$ at $2^{19}$. Its structure function grows linearly in the lag, exponent
+  $\alpha = 0.53$, not the $1/3$ of a KPZ front (post hoc; the registered LE4 used a residual that measured the
+  method instead and was refuted).
+So the formal boundary is a staircase whose average is a straight line at a quarter of light speed and whose
+fluctuations are diffusive: a few hundred cells after a few hundred thousand steps, a tenth of a percent of the
+row. That is why it looks straight at large scale and ragged up close. Proved here: only the definition and its
+monotonicity. That the average speed is exactly the random rows' 0.246 remains a measurement (§8.30, §8.66).
