@@ -145,6 +145,21 @@ OHC (registered 2026-10-09 20:31 BST, before any width above 13 ran; the C instr
   OHC-P3 (blind, confidence 0.4): p = 9 reaches a new plateau (equal growth at two consecutive widths) somewhere in
          14 .. 18, as it did at 8 .. 12.
   OHC-D1 (descriptive): growth and subset counts per width; how far the caps allow.
+OHC OUTCOME, widths 14 .. 18 (2026-10-09 20:31 BST, M5, under 0.5 s and 102 MB per case, run at commit 643c01f8):
+  OHC-P1 HELD, OHC-P2 REFUTED (narrowly), OHC-P3 REFUTED.
+  Growth, with the subset counts in brackets:
+    width 14: p = 9 1.82136 (105),  p = 7 1.74908 (333),  p = 5 1.64747 (494)
+    width 15: p = 9 1.80470 (197),  p = 7 1.72240 (552),  p = 5 1.62741 (804)
+    width 16: p = 9 1.80191 (323),  p = 7 1.69501 (962),  p = 5 1.60095 (1380)
+    width 17: p = 9 1.79708 (585),  p = 7 1.68234 (1576), p = 5 1.57946 (2248)
+    width 18: p = 9 1.76523 (1175), p = 7 1.66492 (2887), p = 5 1.55013 (3652)
+  - Every case has converged: the ratios at n = 750 and n = 1500 agree to 12 digits.
+  - None closes. All three keep narrowing, by about 0.01 to 0.03 per width, with no new plateau for p = 9.
+  - p = 5 drops below 1.6 at width 17, not 16, so P2 is refuted, if narrowly.
+OHC, widths 19 .. 24 (registered 20:31 BST, before running; the same binary; caps 2M subsets, 1.5 GB of frontier):
+  OHC-Q1 (blind, confidence 0.6): none of p = 5, 7, 9 closes by width 24, or by the largest width the caps allow.
+  OHC-Q2 (blind, confidence 0.5): growth at width 22 is below 1.45 for p = 5, below 1.6 for p = 7 and below 1.72 for
+         p = 9 (the narrowing continues at a similar rate).
 """
 import sys
 from itertools import product
