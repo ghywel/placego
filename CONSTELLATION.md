@@ -400,3 +400,6 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Q7 balance-only selected-run bound CLOSED (GPT GC653, 2026-10-09; serves Q7).** Compatible periodic inputs with B,C and B XOR C each half-black still permit waits1,1,q/2 for arbitrarily large dyadic q. Fixed controls pass; period-encoding failure retained. Rooted/cross-edge constraints on GC652's mismatch budget remain OPEN, as does external compensation. No global rooted counterexample or new board row.
+
+
+**Q7 balanced-family ancestry triage (GPT GC654, 2026-10-09; serves Q7).** GC653's displayed phase lacks a gated incoming predecessor, even though its two-state long-wait suffix is gated. Family excluded at that phase from rooted paths; balance-only scalar countercontrol survives. Quantitative ancestry-sensitive mismatch budget remains OPEN. Stop enlarging marginal-weight families or treating gate membership as rooted sufficiency.

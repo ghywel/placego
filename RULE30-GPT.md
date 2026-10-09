@@ -16021,3 +16021,20 @@ Each has q/2 black residues; B XOR C is exactly the final half of the period, al
 **Fixed controls and retained failure.** Direct recurrence and periodic fixed-point checks at q8 give B=0x53,C=0xa3,D=0x61 and waits1,1,4. At q16 they give B=0x550f,C=0xaa0f,D=0x5601 and waits1,1,8. Popcounts of B,C,B XOR C all equal q/2. The initial independent call to GC370's scalar_edge failed because that helper always interprets words as32-periodic, while these raw words were8- and16-periodic. That was an encoding failure, not a passed check; repeating each word to32 bits corrects the independent check, which then passes for both controls. No larger scan ran.
 
 The three-edge debt is q/2-11/2, already positive at q16. It does not refute a global rooted debt bound or payment by neighbouring edges. It DOES refute a period-independent bound on selected mismatch distance based only on these three unconditioned balances and local scalar compatibility. Next seek rooted or cross-edge constraints on R in GC652; stop replacing that obligation with input weight or total Hamming distance alone. Local second reading requested in the shared ledger, scratch doorbell deferred.
+
+
+## GC654 — GC653's selected phase fails the incoming gated-edge test (2026-10-09)
+
+**Audit and prior record.** Apply the already reviewed G160 arrival gate, not a new gate theorem, to GC653's formal balance countercontrol. CLOUD-LOCAL records the prediction: its arrival at B at0 fails the incoming reset condition despite scalar compatibility. Counterfactual reconstructing one predecessor word certifies the displayed arrival phase. Hand audit only; no experiment or root census. G160 and GC362 were reread before drawing the scope conclusion.
+
+For an inherited B arrival T after nonzero A, the previous reset ended at a black A bit, so A(T-1)=1. Compatibility with C gives A(t)=C(t+1) XOR(B(t) OR C(t)). Hence the necessary condition is
+
+    C(T) XOR(B(T-1) OR C(T-1))=1.
+
+When C(T)=1 this requires BOTH preceding bits white; when C(T)=0 it requires at least one black. It is G160 expressed in terms of the reconstructed predecessor, not a balance estimate or independent coin cost. GC653 has C(0)=1,B(-1)=0,C(-1)=1, so A(-1)=0: its displayed B arrival0 is ungated.
+
+**Unexpected suffix check and stronger incoming test.** Merely excluding that first arrival is insufficient: the suffix states (B,C,arrival1) and (C,D,arrival2) both satisfy the gate, because B(0)=C(1)=1. GC653's long mismatch therefore still occurs on a short compatible GATED path. Do not claim G160 alone bounds it. But the first suffix state has no incoming edge FROM a gated state. B's last black before0 is at-2; arrival at C at1 requires B's preceding arrival T to be either-1 or0. Reconstructing A gives A(-2)=C(-1) XOR B(-2)=0 and A(-1)=C(0) XOR C(-1)=0. Both candidate predecessor states fail G160. A is nonzero (A(q/4-1)=1), so its zero-word exception cannot rescue the phase.
+
+More generally, if a state (B,C,S) has B(S-1)=1 and the preceding black of nonzero B is at S-1-g, its possible incoming arrival times are exactly T=S-g,...,S-1. When reconstructed A is nonzero, it has an incoming gated edge iff at least one A bit in S-g-1,...,S-2 is black. This is an exact finite backward test, not rooted sufficiency: the previous gated state may itself lack earlier gated ancestry. A=0 needs G160's derivative exception and is not covered by this simplified test.
+
+**Disposition.** The entire GC653 displayed1,1,q/2 segment is excluded from an inherited rooted path; even its long-wait suffix phase lacks the required earlier gated ancestry. GC653 remains a valid counterexample to unconditioned balance plus scalar compatibility, and its short gated suffix still refutes interpreting gate membership alone as root reachability. It supplies no rooted long-wait family or global debt counterexample. This gives a concrete source of selection that marginal weights miss. Next require a quantitative cross-edge consequence of actual ancestry, rather than extend weight families or merely count one-step gates. No prize candidate; Local reading requested in the shared ledger, doorbell deferred.

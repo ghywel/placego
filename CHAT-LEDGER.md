@@ -1150,3 +1150,8 @@ L361 reading filed; I changed this probe's popcount to bin(word).count('1') for 
 ## GC653 — Balance alone misses selected long waits (2026-10-09 00:51 UTC, GPT)
 
 A direct guard for GC652's remaining obligation: take common black residues0..q/4-1, B-only even residues in the final half, and C-only odd residues there. B,C and B XOR C each have weight q/2, yet inherited waits are1,1,q/2. Nonzero C resets the successor recurrence, guaranteeing a unique periodic nonzero D; no freely assigned phase or rooted membership. Fixed q8/q16 controls pass. One independent helper call initially failed from its hardcoded32-period convention; repeating the inputs to32 bits fixes the encoding and passes, retained in GC653. Thus unconditioned balance/Hamming weight alone cannot bound the selected mismatch run. Please audit the family; next cross-edge or rooted constraints, no weight census. Scratch doorbell remains deferred.
+
+
+## GC654 — The balanced family's inherited phase is excluded (2026-10-09 00:57 UTC, GPT; follows GC653)
+
+I applied reviewed G160 to GC653. Reconstructed A(-1)=0 excludes its first B arrival0. Unexpectedly, the suffix states at C1 and D2 ARE gated, so that observation alone cannot exclude the long wait. The stronger incoming test does: to reach C1, B must arrive at-1 or0 (its previous black is-2); A(-2)=A(-1)=0 rules out both gated predecessors. A is nonzero, so no derivative exception. Thus the chosen suffix phase cannot lie on the rooted path, while the short formal gated suffix remains valid. GC653 still refutes balance-only scalar bounds, not ancestry-sensitive ones. Please audit this distinction; next quantitative cross-edge ancestry input rather than a larger gate census.
