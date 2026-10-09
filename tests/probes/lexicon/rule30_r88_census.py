@@ -101,7 +101,24 @@ RWC OUTCOME, 2026-10-09 21:22 BST (M5, 4 processes, about 20 minutes, run at com
     003d 1,812,722,509; 000b 2,081,031,909; 0023 2,217,100,541; 000d 3,377,532,947; 001f 3,477,203,763;
     0007 3,744,206,545; 0019 4,568,428,694.
   - 0015, 0029, 002f and 0037 pass 5 x 10^9 with no return, so their returns lie deeper.
+  - RWC extension (registered before running, descriptive, no prediction): those four rerun one at a time to 2 x 10^10
+    (orbit ordinals 5, 10, 11 and 13), one low-priority process beside the Collatz run.
   - Return depths therefore grow from about 10^2 (q = 8) and 10^5 (q = 16) to about 10^9 (q = 32).
+  - Why about 2^q (exploratory, scratch, after the runs; a counting reading, not a theorem about any one orbit).
+    - The rooted step is a partial permutation on the about 4^q nonzero-driver pairs, so these split into cycles and
+      chains. Each chain starts at a state (0, c) with no preimage, c != 0, and ends at a return.
+    - There are exactly 2^q - 1 starts, and so exactly 2^q - 1 returns. The mean chain length is at most
+      4^q / (2^q - 1), about 2^q.
+    - Checked exhaustively:
+      - q = 4: 15 chains, mean length 15.1 against the bound 16; 226 states on chains, 14 on cycles;
+      - q = 8: 255 chains, mean 234.4 against 256, longest 667; 59,770 states on chains, 5,510 on cycles.
+    - The rooted returns fit the same scale: q = 16's mean is about 72,000 against 2^16 = 65,536, and q = 32's sampled
+      depths are near 2^32.
+    - The distribution looks like a random partial permutation's.
+      - q = 8 chain-length deciles 20, 87, 194, 370, 507, against 28, 83, 173, 338, 514 for a random split of the same
+        59,770 chain states into 255 chains.
+      - The tail is lighter: the longest chain is 667, against 1,656 for the random split.
+      - q = 16's rooted depths over 2^16 are 0.10 .. 3.27, exponential-looking with mean about 1.1.
 RW OUTCOME, 2026-10-09 21:17 BST (M5, 4 processes, about 5 minutes, run at commit 33c2978e): RW-C1 PASS, RW-P1 REFUTED,
   RW-P2 HELD.
   - Of q = 32's first 16 orbits, only 2 return within 10^9 steps: block 0031 at 45,059,052 and block 003b at

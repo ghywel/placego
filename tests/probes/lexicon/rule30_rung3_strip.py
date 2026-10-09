@@ -59,6 +59,21 @@ RADIUS 9 OUTCOME, 2026-10-09 21:22 BST (M5, 45 s, 1.34 GB peak, run at commit d0
     about 5 GB).
   - The growth looks like the period-2 case, which is the prize itself, not like entry 38's walls. Those passed at
     radius 6 with a single forcing component.
+WHITE END (registered 21:29 BST, before running; COMMAND: ... rule30_rung3_strip.py white [QMAX=16] [RADIUS=6]): the Condrey
+  white end, the walls 1 0^q (one black tick, then q white; PERIOD-TWO.md section 6, PARKED), at q = 1 .. 16 and radius
+  6, the black end's mirror image of entry 38. RG above covered only q <= 5.
+  WE-C1 (control): the RG verdicts for q = 2 .. 5 (words 001, 0001, 00001, 000001) are reproduced.
+  WE-P1 (blind, confidence 0.4): as at the black end, every q from some q0 <= 12 up to 16 passes.
+WHITE END OUTCOME, 2026-10-09 21:30 BST (M5, seconds, run at commit bee5d887): WE-C1 PASS, WE-P1 REFUTED.
+  - Every white-end wall 1 0^q, q = 1 .. 16, FAILS at radius 6. This is unlike the black end, which passes for every
+    q >= 9 with one forcing component.
+  - The non-forcing components grow linearly in q with a period-4 pattern:
+    - q = 0 mod 4: one component, of 204, 364, 524 and 684 vertices at q = 4, 8, 12, 16 (+40 per q);
+    - q = 1 mod 4: one component, of 244, 404 and 564 at q = 5, 9, 13;
+    - q = 2 mod 4: two non-forcing components;
+    - q = 3 mod 4: two non-forcing components and a small forcing one.
+  - Reading: the black end's lock (GC850's nine black steps) has no white-end analogue under this certificate. Long
+    white runs keep the strip unlocked.
 """
 import sys
 from math import gcd
@@ -269,5 +284,30 @@ def rings(NMAX=18):
     print('COMPLETE')
 
 
+def white(QMAX=16, R=6):
+    W, inner = build(R)
+    res = {}
+    for q in range(1, QMAX + 1):
+        word = '0' * q + '1'                         # 1 0^q as its least rotation
+        r = analyse(word, R, W, inner)
+        res[q] = verdict(r)
+        desc = '; '.join('size %d P %d forces %s' % (n, P, '/'.join(s for s in ('-1', '+1') if f[s]) or 'NONE')
+                         for n, P, f in sorted(r, key=lambda c: -c[0])[:3])
+        print('white end 1 0^%d (p = %d), radius %d: %s; %s' % (q, q + 1, R, res[q], desc), flush=True)
+    good = lambda v: v == 'PASS' or v == 'EXCLUDED-ACYCLIC'
+    rg = {2: '001', 3: '0001', 4: '00001', 5: '000001'}
+    print('WE-C1', 'PASS (all four fail, as in RG)' if all(not good(res[q]) for q in rg) else 'CHECK')
+    tail = [q for q in range(1, QMAX + 1) if all(good(res[k]) for k in range(q, QMAX + 1))]
+    q0 = min(tail) if tail else None
+    print('WE-P1', ('HELD (every q from %d to %d passes)' % (q0, QMAX)) if q0 is not None and q0 <= 12 else
+          'REFUTED (passing tail starts at %s)' % q0)
+    print('COMPLETE')
+
+
 if __name__ == '__main__':
-    rings(int(sys.argv[2]) if len(sys.argv) > 2 else 18) if sys.argv[1:2] == ['rings'] else main()
+    if sys.argv[1:2] == ['rings']:
+        rings(int(sys.argv[2]) if len(sys.argv) > 2 else 18)
+    elif sys.argv[1:2] == ['white']:
+        white(int(sys.argv[2]) if len(sys.argv) > 2 else 16, int(sys.argv[3]) if len(sys.argv) > 3 else 6)
+    else:
+        main()
