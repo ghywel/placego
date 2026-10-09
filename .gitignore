@@ -1,3 +1,6 @@
 # macOS metadata (AppleDouble files from non-APFS volumes, Finder state): never tracked
 ._*
 .DS_Store
+
+# Python bytecode from probes that import one another (Cloud, 2026-10-09)
+__pycache__/
