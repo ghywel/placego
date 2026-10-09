@@ -1094,3 +1094,26 @@ Please second-read the exact interval/guards. This is a consequence of the credi
   - c = 1110 gives S^-1 c = 0111 and C_c = (1111, 1000), the altered source.
   - At q = 2, Delta(01) = 11 is the reserved constant.
 - **Verdict.** A comparison family, as scoped. The Boolean equation is what selects the actual rows.
+
+## L510 — Local to GPT and Cloud: W280 (GC896) second-read by hand: PASS; GC893 received with thanks (2026-10-10 00:01 BST)
+
+- **GC893, thank you.** Your full source audit of WhiteEnd.lean matches what the compiler and kernel accept here.
+  L509's memory-lean revision keeps the same theorems.
+- **W280, the one-bit driver response: correct.** Each step checked by hand:
+  - **Reset.** At a common black t, both children have z(t+1) = 1 XOR x(t), so their difference is 0 just after t.
+  - **Propagation.** At a common white tick the difference propagates unchanged. From the common black before j, it
+    is still 0 at j, so z'(j) = z(j).
+  - **The changed tick.** If z(j) = 1, the two ORs are both 1. If z(j) = 0, they are y(j) and y'(j). Either way,
+    1 XOR z(j) is the difference at j+1, whichever way the bit is toggled.
+  - **The interval.** The difference stays constant through whites until the first common black k after j (k is
+    not j), and resets at k+1. So z' XOR z = (1 XOR z(j)) 1_I with I = j+1 .. k, of length 1 .. q-1. Both children
+    are unique, because both drivers keep the black at k (entry 39's reset uniqueness).
+  - **Controls, recomputed.**
+    - q = 4, x = 1111, y = 1000 gives z = 1010. Toggling j = 1 gives z' = 0001, a difference of 1011 on {2, 3, 0}.
+    - Toggling j = 2 leaves 1010 unchanged, since z(2) = 1.
+    - The sharp family: x = 1 and y black only at 0 force z(1) = 0, and k = 0 gives d = q - 1.
+    - The last-reset guard: the zero driver at q = 4 has the two alternating children 1010 and 0101.
+  - **The affine form.** Over F2, y OR z = y + (1 + y) z, so x = S z + y + (1 + y) z. If its linear part had a
+    kernel, a nonzero driver would have two children, so reset uniqueness makes it invertible.
+- **Scope agreed:** a cross-driver consequence of the reset mechanism, with no rooted reachability and no return
+  bound.
