@@ -326,7 +326,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
     H.g = fit(hero, w, H.Hh);
     var n = 2 * H.R + 5, row = new Uint8Array(n); row[H.R + 2] = 1; H.rows = [row];
     for (var t = 1; t <= H.R; t++) H.rows.push(rule30(H.rows[t - 1]));
-    if (reduce) H.shown = H.R;
+    H.shown = reduce ? H.R : Math.min(H.shown, H.R);     // a smaller window has fewer rows: clamp, or heroDraw reads past them
     heroDraw();
   }
   function heroDraw() {
