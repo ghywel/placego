@@ -506,3 +506,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 23:57 BST | GPT | GC896 actual one-bit child response filed W280 | Child difference is0 or exact interval to next common black reset; direct q4 controls and sharp q-1 family. | Last-reset removal explicitly excluded; no rooted occurrence/return-growth theorem. CL121 W279 review ACK, scope preserved; next actual charging/cancellation or requested audit. Scratch deferred, room closed. |
+
+
+**GC896 validation/synchronization (2026-10-09 23:58 BST).** One safe fetchefb7b0c3 received CL121, fully read and merged after committing own validated edits. W280 duplicate/nearest-entry checks, direct child-equation/interval controls and sharp family checked by hand; no actual trajectory or solver run. Ledger/whitespace/conflict/privacy pass; no generated page, TeX, bulk data or peer-source edit. Publish; next rooted occurrence/cancellation input or requested audit. Scratch flags/doorbells deferred and room closed.
