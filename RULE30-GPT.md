@@ -15846,14 +15846,14 @@ Since1+z^3=(1+z)*q, its q pole has order TWO, not three. The prefix term has no 
 
 **Scope and prediction.** Inspect actual H11, not a freely assigned replica phase, to advance GC645's farther-cancellation question. Predict it becomes one isolated source event per four ticks, rather than GC643's complemented-pair activity. Counterfactual actual H11 can cancel H8's q^3 as another same-period replica. Hand recurrence and generating function only, no strip census or experiment; the universal settling mechanism is already credited in GC634 and Lemma B2.
 
-Use moving cells v_i measured inward from the leftmost black, with v_i(t+1)=v_(i-2)(t) XOR (v_(i-1)(t) OR v_i(t)) and H_i=v_(i-2)*(NOT v_(i-1))*v_i. GC634 gives v7=0 and v8(t+2)=NOT v8(t) from time10. Thus v9'=v8 OR v9, and a black v8 occurs within four ticks; v9=1 by time14. Then v10'=NOT v8, so from time15 put A(t)=NOT v10(t)=v8(t-1). It has a single consecutive black pair and a single white pair in each four-cycle.
+Use moving cells v_i measured inward from the leftmost black, with v_i(t+1)=v_(i-2)(t) XOR (v_(i-1)(t) OR v_i(t)) and H_i=v_i*(NOT v_(i-1)). (Corrected after L356: the original draft erroneously included the extra factor v_(i-2).) GC634 gives v7=0 and v8(t+2)=NOT v8(t) from time10. Thus v9'=v8 OR v9, and a black v8 occurs within four ticks; v9=1 by time14. Then v10'=NOT v8, so from time15 put A(t)=NOT v10(t)=v8(t-1). It has a single consecutive black pair and a single white pair in each four-cycle.
 
 For v11 the update is
 
     v11(t+1)=A(t)*(NOT v11(t)),
     H11(t)=A(t)*v11(t).
 
-At an A=0 tick the next v11 is0. At the first tick of the ensuing A=11 pair, v11=0 and H11=0; at its second tick, v11=1 and H11=1; the next v11 returns0. Hence after an A=0 reset, H11 has EXACTLY one isolated event in each four-cycle. Such a reset occurs by time19; choosing even rebasing time tau>=24 safely discards all transients. Also H9=v7*(NOT v8)*v9=0 and H10=v8*(NOT v9)*v10=0 in this settled regime. The pair traversal is the unexpected check: the enabling two-black pair produces ONE event, not two.
+At an A=0 tick the next v11 is0. At the first tick of the ensuing A=11 pair, v11=0 and H11=0; at its second tick, v11=1 and H11=1; the next v11 returns0. Hence after an A=0 reset, H11 has EXACTLY one isolated event in each four-cycle. Such a reset occurs by time19; choosing even rebasing time tau>=24 safely discards all transients. The established two-cell event gives H9=v9*(NOT v8)=NOT v8, a complemented-pair source, while H10=v10*(NOT v9)=0. The original draft incorrectly called H9 silent by using a three-cell product; that failure is retained here explicitly. The pair traversal is the unexpected check: the enabling two-black pair produces ONE event, not two.
 
 At this new origin the actual H11 ray has source depth j=L'+s-9, since the frontier is L'+s+2. Its activity series is y^r/(1+y^4) for some r in{0,1,2,3}. With n=k-L'+9 its Pascal target series is
 
@@ -15861,6 +15861,28 @@ At this new origin the actual H11 ray has source depth j=L'+s-9, since the front
 
 This is the same binomial substitution as GC643. At either primitive cube root, every numerator factor is nonzero, for all four r, so the order-four pole is genuine. As independent endpoint controls, r=0 gives coefficient g0=1; r=3 has its first possible contribution at n=6, where binom(6-3,3)=1, agreeing with the numerator's leading z^6 term. No phase has been silently excluded.
 
-The lower frontier/strip residual has q order at most2, H8 has order3, H7,H9,H10 are silent, and finite events have only powers of1+z. Therefore compensation by the actual settled strip through offset11 plus finitely many farther events is impossible. Any hypothetical full finite-left clock needs infinitely many additional source events at offsets>=12. This is a consistent inverse expansion from the row at tau, not a superposition of old physical ages.
+The lower frontier/strip residual has q order at most2, H8 and H9 have order at most3, H7 and H10 are silent, and finite events have only powers of1+z. Therefore compensation by the actual settled strip through offset11 plus finitely many farther events is impossible. Any hypothetical full finite-left clock needs infinitely many additional source events at offsets>=12. This is a consistent inverse expansion from the row at tau, not a superposition of old physical ages.
 
 **Disposition and limit.** Actual H11 does not repair GC643's residual; it raises the finite-strip pole order. This is still a necessary compensation condition, not a clock exclusion, offset-divergence theorem or discriminator from ordinary finite-left dynamics. Arbitrary infinite farther-source sums can cancel poles, as GC645 cautions. Stop a depth-by-depth strip census here unless a new joint cancellation constraint appears; the main open obligation remains compatible farther parity, not identifying another universal periodic ray. Local reading requested; no prize candidate.
+
+
+## GC647 — Correcting the source definition and accounting for actual H9 (2026-10-09)
+
+**Meaningful correction and second reading.** Local L356 at354fa9e6 found that GC646 used a wrong three-cell event definition. The established event is H_i=v_i*(NOT v_(i-1)), not the extra-factor product in that draft. Consequently H9=NOT v8 is active, not silent. GC646's definition and accounting are corrected with the original error identified; its settling, H11 gate, q^4 pole and finite-strip conclusion survive. Local verifies those by hand and reports ordinary-row and series controls. GPT did not replay them. GC643's necessity of infinitely many sources beyond offset8 is met by actual H9; it must not be read as an incompatibility.
+
+**Bounded hand audit and prediction.** Predict H8 and H9 together still have q order3 in every phase, so the corrected order-four conclusion is not relying on an omitted cancellation. Counterfactual the complemented neighboring ray cancels H8's leading pole. Keep one rebased inverse origin; no experiment or new strip extension.
+
+Write G8=N(a,b)/q^3 as in GC643. The same-target-index ray series for complemented activity has numerator N(a+1,b+1). Direct subtraction over GF(2) gives
+
+    N(a+1,b+1)+N(a,b)=(1+z)^2+z^4=q^2,
+    G9_local=G8+1/q.
+
+But H9 is one depth farther inward, so its actual contribution is the ONE-index advance of that local sequence, not G9_local at the same index. In H8's coordinate n, the combined series is
+
+    S(z)=(1+z^-1)*G8 + z^-1/q + z^-1*(a+1).
+
+The prefix correction uses g9_local(0)=a+1. Negative powers cancel at zero, so S is an ordinary target series. At a primitive cube root zeta, the order-three part has numerator (1+zeta^-1)*N(zeta)=zeta*zeta=zeta^2, nonzero. The other terms have q order at most1 or0. Thus H8 plus actual H9 has genuine q order3 for every a,b, agreeing with L356's reported machine result. Only a same-index sum would reduce it to1/q, and that would use the wrong source depth.
+
+**Independent and unexpected controls.** At n=0 the true combined coefficient is g8_0+g9_local_1=a+(a+1)=1, since each age1 source first enters at n2. The same-index sum also gives1 at this one coefficient, so that endpoint alone cannot detect the index error. The unexpected check is the nonzero order-three factor1+zeta^-1: the spatial offset changes the pole cancellation even though H9's time activity complements H8 exactly. This is a hand algebraic check, not evidence of statistical independence.
+
+**Disposition.** Corrected GC646 has order at most2 from the lower residual, order3 from actual H8 and H9, and order4 from actual H11; H10 is silent. Its necessary infinitely-many farther-events conclusion at offsets>=12 stands. The mistaken H9 silence is withdrawn, including the prior chat summary; no clock exclusion follows. Stop extending the strip and seek a different joint compatibility mechanism. Local reading requested.
