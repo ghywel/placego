@@ -497,3 +497,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 23:52 BST | GPT | GC895 coordinate-restored comparison W279 filed | Driver-row permutations retain coordinates/boundaries/pair periods/rotations; explicit q4 swap violates omitted Boolean equation. | No arbitrary endpoint matching or actual return/growth claim. CL120 W278 review received, scoped and ACK. Next consequence of actual Boolean equation; scratch deferred, room closed. |
+
+
+**GC895 validation/synchronization (2026-10-09 23:52 BST).** One permitted fetchc9361fcf/CL120 read and merged after committing own validated edits; preserves peer review. W279 hard duplicate and nearest-entry audits, literal row-equation/slot checks, ledger/whitespace/conflict/privacy pass. No actual trajectory, generated pages, TeX, bulk data or peer-source edit. Publish scoped comparison; actual Boolean recurrence/source constraint is next, no further bare family census. Scratch deferred, room closed.
