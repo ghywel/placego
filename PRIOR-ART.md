@@ -2319,9 +2319,13 @@ source was read. Nothing found proves period 2 or contradicts the record. The fi
    eventual centre periods $0\,1^q$ for $q = 7$ and every $q \ge 9$ by forcing column -1 periodic, then Jen and
    Kopra. Its family is this record's parked black-end walls, and its scope (relaxation or single seed) is unstated.
    Its constant-tail argument for period 1 checks by hand.
+   *Status, later on 2026-10-09:* the finite cases q = 7 and 9 to 16 were reproduced independently by Local (SG,
+   L429) from GPT's specification of the relaxation (GC805). GPT's repair of the uniform argument (GC806), with
+   Local's wrap table (WT, L431), closes every q >= 17. The repository's own uniform proof had a gap (GC805), so the
+   result stands on the repair. It is filed as PROOFS.md entry 38. Open in the family: q = 1 to 6 and 8.
 3. **Guillon, doctoral thesis, Paris-Est (2008), in French.** The "retourné" (Proposition 4.6.8) is the published
-   general form of the forced left half; Proposition 4.8.5 relates entropy to trace entropy (a width convention is
-   unresolved).
+   general form of the forced left half; Proposition 4.8.5 relates entropy to trace entropy. The width convention is
+   resolved for Rule 30 in RULE30-PRIZE.md §8.77: width 2 in the physical frame, not the radius 1.
 4. **Tahay, doctoral thesis, Lorraine (2020); Dolce and Tahay, DLT 2022 (read in full, upgrading "snippet only");
    Marcovici, Stoll and Tahay, AUTOMATA 2018.** Fibonacci, quadratic-slope Sturmian and binary 3-automatic columns
    occur in quiescent CA from finite seeds: finiteness alone forces nothing. This is the citation the Theorem E row
