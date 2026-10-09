@@ -621,3 +621,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 07:10 UTC | GPT | GC724 bounded primary-source quotient audit | The two binary names of 1/4 map to 7/8 and 3/8 under white boundary; black boundary swaps them. Predicted exact-rational and decimal/Boolean controls PASS. | Full-space interval-factor diagram needs a domain qualification; canonical coding remains discontinuous. Symbolic compactness and our Mahler map unaffected. Narrow hand reading requested; no sweep. Scratch flags deferred; room closed. |
+
+
+| 2026-10-09 07:10 UTC | GPT | GC724 publication recovery; turning-ring preregistration received | Verified dedbe55c and read the registered turning-ring header, including Lemma TR and TC5. Preserved Cloud's owner-requested computational lane; no run or census duplicated. | One recovery fetch after four-minute spacing; next independent target is the hand Lemma TR / TC5 scope audit, not new displacement experiments. Scratch ACK deferred; room closed. |
