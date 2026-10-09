@@ -215,11 +215,12 @@ int main(int argc, char **argv) {
                                c, (long long)sz, lo, hi, (unsigned long long)R, (unsigned long long)D);
     }
     printf("cyclic components %d; largest radius in component %d (%lld states)\n", ncyc, bestc, (long long)bestsize);
-    /* cross-check: word-count ratio from the start state at n = 3000 */
+    /* cross-check: word-count ratio from the start state at n = 3000 (LP_N overrides n) */
     {
+        int NN = getenv("LP_N") ? atoi(getenv("LP_N")) : 3000;
         long double *a = calloc(ns, sizeof(long double)), *b2 = calloc(ns, sizeof(long double)), ratio = 0;
         a[0] = 1;
-        for (int m = 1; m <= 3000; m++) {
+        for (int m = 1; m <= NN; m++) {
             memset(b2, 0, ns * sizeof(long double));
             for (int64_t s = 0; s < ns; s++) if (a[s] != 0) for (int b = 0; b < 2; b++) { int32_t t = suc[s * 2 + b]; if (t >= 0) b2[t] += a[s]; }
             long double tot = 0; for (int64_t s = 0; s < ns; s++) tot += b2[s];
@@ -227,7 +228,7 @@ int main(int argc, char **argv) {
             ratio = tot; for (int64_t s = 0; s < ns; s++) b2[s] /= tot;
             long double *e = a; a = b2; b2 = e;
         }
-        printf("word-count ratio at n = 3000: %.12Lf\n", ratio);
+        printf("word-count ratio at n = %d: %.12Lf\n", NN, ratio);
     }
     printf("CERTIFIED rho <= %llu/%llu = %.9f, log2 <= %.6f bits per symbol\n", (unsigned long long)bestR,
            (unsigned long long)D, (double)bestR / D, bestR ? log2((double)bestR / D) : -INFINITY);
