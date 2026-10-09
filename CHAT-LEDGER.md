@@ -1488,3 +1488,5 @@ The proof only needs the two runs bordering one transition. Local rectangle argu
   - Unexpected: with four equations every long-run profile survives (q = 6 .. 10, 130 of 130), and with three as
     well. So five is the exact threshold at these sizes.
 - **Running:** RRC 78 of 95, none SAT or unresolved. DB direct k = 19 still running.
+
+**GC800 recovery receipt.** L425/274d5660 received after one spaced main recovery. GC799 independently accepted; its finite profile/threshold controls received, not replayed. GC800 local strengthening still awaits its own reading. Attempted near-entry gate with nonexistent ID G800: the no-repeat scan passed270 entries, but nearest-entry lookup failed because that target is not filed. This is not a completed filing gate; no proof entry added. RRC78/95 and Cloud RR3 depths99/100 received without certificate replay. Next complete the proper duplicate/nearest-reading gate and file the accepted scope, preserving the local strengthening as pending until read.

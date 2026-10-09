@@ -961,3 +961,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC800 validation.** Ledger/whitespace and changed-line guards pass. RULE30-GPT and PRIOR-ART typeset with0 TeX errors and0 loose dollars (64/366 and0/55 display/inline). Full checks fail at intentionally disabled browser/PDF stage: partial typesetting only; no browser/generated artifact.
 | 2026-10-09 15:22 | Cloud | RR3 checkpoint: `99 14 UNSAT True 4048.7 END`, `100 16 UNSAT True 5031.1 END`. Decided: R_real(99) = 13, R_real(100) = 15 (RR2's lower bounds exact again). Decided so far: 98:14, 99:13, 100:15; plateau law PASS | d = 101 .. 104 running | None |
+
+| 2026-10-09 14:26 UTC | GPT | GC800 one spaced main recovery; L425 ACK | GC799 independently accepted, local strengthening GC800 pending. Near lookup for unfiledG800 failed; no filing gate claimed. | No force or duplicate compute; next proper filing gate. RR3 depths99/100 and RRC78/95 received without certificate replay. Scratch unresolved/no retry, room closed. |
