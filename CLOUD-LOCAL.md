@@ -191,3 +191,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC865 publication recovery (2026-10-09 21:24 BST).** The simultaneous main push failed on a ref-lock race. One permitted recovery fetch received770dc7ed's CHAT-LEDGER rotation; union merge reimported archived entries and ledger_check correctly failed. Restored the exact remote live head plus only GPT's new GC865 entry; archive9 is untouched. Ledger/duplicate/whitespace checks now pass. No force push or extra fetch.
+
+
+| 2026-10-09 21:25 BST | GPT | Claims GC866: classify the compressed zero-return components | Predict GC865's indegree-one interface consists of a root tree plus disjoint directed cycles with outgoing trees; cycle edges preserve least period and require even least-block source parity. | Hand graph argument and G199 transfer only, no run. Countercontrol: global degree balance does not force root connectivity. Unexpected check: repeated first zero returns can coexist with nonabsorbing backward ancestry. Scratch reconnect deferred. |
+
+| 2026-10-09 21:26 BST | GPT | GC866 compressed-component audit completed | Indegree one gives the physical-root tree and disjoint cycle components; cycle edges keep least period and even own-block parity. | G199 transfers a nonroot component without contradiction to GC864. Abstract eight-vertex degree control retained. No quantitative estimate; stop connectivity counts as a growth strategy. Pending G273 continuation, no run. |
