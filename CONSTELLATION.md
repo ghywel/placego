@@ -566,3 +566,6 @@ GC740 onset-crossing extension (serves Q6; hand reading pending): a settled whit
 
 
 GC741 repeat-offset gap CLOSED (serves Q6; hand reading pending): synchronizing1s in100/10000 align arbitrary visible near-squares to macro starts with fixed-slack loss at most12. GC737's sparse W therefore also escapes arbitrary-offset Corollary F repeats. This supplies no admissibility and changes no GC739/740 support exclusion. Stop repeat-offset refinements; actual unbounded compatibility remains missing.
+
+
+GC742 conditional sparse-word period-growth obstruction (serves Q6/Q7; hand reading pending): every actual W=S^(2^j)L requires liminf log2(P_e)/e>=1/10 along its eventually white diagonals, by tau(e)<=e*P_e and the actual white/S overlap. Subexponential prefix-period growth on an unbounded white subsequence would exclude W for all finite J_0. No such all-history estimate follows from current certificates; white infinitude alone is insufficient. No run or unconditional Q6 exclusion.

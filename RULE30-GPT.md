@@ -17708,3 +17708,33 @@ Unbounded b-a gives unbounded i'-i because each macro length is at most five. Th
 Apply GC737: for W=S^(2^j)L, every aligned common macro prefix has C-V(i')<=8-5j', where j' is its later block index. It tends to minus infinity as the later start grows. Hence W also has no sequence of arbitrary-offset visible near-squares satisfying Corollary F's fixed-slack hypothesis and unbounded separation. The previously omitted phase scope is closed; this repeat route cannot by itself reject W at larger J_0. GC739/740's actual bounded exclusions remain valid, and no physical realization is claimed at larger depths.
 
 **Independent and unexpected checks.** Accounting only for the removed d samples would miss that the later aligned position also increases by d: the slack cost is twice d, plus the terminal fragment. Starting at the first zero of an L has four zeros before its next1, attaining d=4; the offset cannot uniformly be set to zero. Keeping unequal weights3/5 is essential, so GC711's unweighted countercontrol remains untouched. Short matches ell<5 cannot supply the unbounded near-square premise. Stop offset/parsing refinements here; the remaining input must concern actual support or settling, not another syntactic repeat test. Independent hand reading requested.
+
+## GC742 — The sparse word would require exponential prefix periods on white diagonals (2026-10-09, GPT)
+
+**Conditional unbounded support input, by hand.** Predict W=S^(2^j)L would force exponential common-prefix period growth along its actual eventually white edge diagonals. Counterfactual: infinitude of white diagonals alone suffices to exclude every finite J_0. Reread Lemmas B1/B2 and the reset/parity proof, plus GC738/740 and the older conditional settling/period criteria. This supplies a different, weaker sufficient growth hypothesis for this particular sparse word; it proves no growth estimate. No evolution or certificate extension.
+
+Fix one actual edge-normalized row. Let P_e be the least eventual common period of its entire prefix of diagonals0 through e. It is dyadic and nondecreasing. The reset/integration mechanism gives the conservative full-line settling bound
+
+    tau(e)<=e*P_e.
+
+Indeed, once the two parents of a new diagonal are periodic, a black resetting parent synchronizes the child within their common period, which divides P_e. If that parent is always white, the cumulative-XOR child is periodic immediately from the parents' onset, with at most twice their period. Starting with the constant edge diagonal, induction adds at most P_e at each of the e extensions. Different attracting branches are permitted: P_e belongs to this actual history, not a universal unbranched cycle. The prefix is autonomous even with an arbitrary infinite right exterior.
+
+Let e be an eventually white diagonal of this row. It is permanently white by time e*P_e. Put
+
+    j=ceil(log2(1+e*P_e/6)).
+
+W's S block j starts at a_j=6*(2^j-1)+10j, so a_j>=e*P_e; it lasts D_j=6*2^j and has a_j-D_j=10j-6. The white diagonal is inside the left half by then (e>=2, P_e>=2, J_0>=-1). GC740's settled-start branch, with maximum white overlap five, gives D_j<=J_0+a_j-e+10. Therefore every such e must satisfy
+
+    e<=J_0+10*ceil(log2(1+e*P_e/6))+4.
+
+Using ceil(z)<=z+1 yields the explicit necessary lower bound
+
+    P_e >= (6/e)*(2^((e-J_0-14)/10)-1).
+
+Lemma B2 supplies infinitely many eventually white e. Hence any actual finite-left realization of W would have
+
+    liminf_(e->infinity, e eventually white) log2(P_e)/e >= 1/10.
+
+Consequently, a proof that this liminf is strictly less than1/10 on every admissible history would exclude W for every finite J_0. Subexponential prefix-period growth along infinitely many white diagonals suffices. This asks much less than the earlier sublinear-period conditions used for the different Thue-Morse/paperfolding repeats, but still requires a genuine all-history theorem. Existing evidence before the first branch supplies no such asymptotic theorem.
+
+**Independent and unexpected controls.** The white column itself has period1; replacing the entire-prefix P_e by1 would incorrectly remove the parents' periods and their settling delay. At the known e=53207 and P_e=16, the crude bound is851312; it selects j=18 and only gives J_0>=53023. This is weaker than GC739's53053 from the much sharper recorded onset107312, as it should be. Infinitely many white diagonals with no quantitative onset/period relation do not meet the new hypothesis. No finite-depth data or generic bound P_e<=2^e proves the required liminf. The conclusion is a necessary exponential-growth obligation for W, not its unconditional exclusion or a Q6 prize. Independent hand reading requested; next missing ingredient is an actual all-history period-growth bound, not additional fixed-depth arithmetic.
