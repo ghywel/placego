@@ -15913,3 +15913,32 @@ This defines a binary activity sequence whose source sum has a genuine order-fou
 **Independent and unexpected checks.** At target n=1 only age0 contributes, so b1 equals the target coefficient. At n=2 the source contributions are b1+b2, consistent with the first two terms of phi and phi^2. For the chosen F, q^4=1+z^4+z^8, so its first two coefficients are1,0; B starts with coefficients b1=1,b2=1, giving those target values. The unexpected age check is that an age k-1 event first enters at target k, not immediately: coefficientwise convergence remains valid while evaluation at a cube root cannot be interchanged with this infinite sum. No convergence near that root is claimed.
 
 **Disposition and actual limitation.** This synthetic array ignores the actual nonlinear event definition, wall constraints and joint source compatibility; it is NOT a clock witness. It refutes only a pole exclusion based on frontier support plus finitely many contributors to each target. GC646's conclusion that infinitely many farther events are required remains valid. Excluding their cancellation must use genuine joint constraints; bounded-offset strip poles alone cannot do it. Close that automatic infinite-sum extension and change reasoning mechanism rather than enumerate more periodic rays. Local reading requested; no prize candidate.
+
+
+**GC648 second reading.** Local L358 atb322d33e verifies the fixed-depth source indexing, substitution involution and q^4 synthesis by hand, and reports exact agreement through target79. The countermodel is still formal; actual event and wall constraints were deliberately not supplied.
+
+## GC649 — Phase support and paired near-wall sources do not by themselves remove a q pole (2026-10-09)
+
+**Scope and prediction.** Apply genuine near-wall constraints to GC648's formal countercontrol, rather than extend the settled strip. Predict its original activity violates wall phase support, but that phase support, the coupled E3 identity and the three reviewed right-code forbidden words still do not suffice to prevent a q^4 contribution. Counterfactual these shallow conditions alone complete the pole exclusion. Hand series audit only; no experiment, full realization or new prior-art claim.
+
+Start the alternating wall black at time0. Let c_n=x_1(2n+1) be its right bit at white wall times. The actual two-cell source has E1(2n)=0 and E1(2n+1)=c_n. Thus GC648's b1=1 at age0 is not compatible with this wall. Also E2 is silent. The known coupled identity, equivalently derived from the first inverse column, gives E3(2n)=E3(2n+1)=1+c_n: the nearest-left bit is1 at black times and1+c_n at white times, while the depth2 bit equals c_n at both times. These are necessary local identities, not permission to assign other sources freely.
+
+For a relaxed code choose c=(100010) repeated. It has no11, its longest zero block has length3, and its six cyclic length-six factors are100010,000101,001010,010100,101000,010001. None is101001. Hence it meets the three reviewed necessary right-code gates11,00000,101001, including factors crossing a period boundary. It is not asserted to be an actual full right-half trace.
+
+Its E1 age series is H1(u)=(u+u^9)/(1+u^12). With phi=z/(1+z), the fixed-depth source formula gives
+
+    F1(z)=phi*H1(phi)
+          =[z^2(1+z)^10+z^10(1+z)^2]/q(z)^4,
+    q=1+z+z^2.
+
+Indeed (1+z)^12+z^12=1+z^4+z^8=q^4. At a primitive cube root zeta, the two numerator terms equal zeta and zeta^2, whose sum is1. Thus the q^4 pole is genuine despite the clock phase restriction and the three gates.
+
+Include the NECESSARILY coupled E3, not just E1 alone. Write C(v)=sum c_n v^n. Its age series is H3(u)=(1+u)*[1/(1+u^2)+C(u^2)]. Since a source at depth3 contributes z^3*H3(phi)/(1+z), while F1=phi^2*C(phi^2), substitution gives the exact pair identity
+
+    F1+F3=(1+z)*F1+z^3.
+
+The polynomial term comes from the complemented part of E3. The factor1+z is nonzero at zeta, so even this actual near-wall pairing leaves order4. This is a constraint-respecting partial source model, not a finite-left or full-clock witness: the deeper inverse columns and actual right realization remain unspecified.
+
+**Independent and unexpected checks.** The code's first white bit c0=1 makes E1 at age1 contribute first at target2, consistent with F1's leading z^2. The paired E3 has zero events at ages0 and1 because1+c0=0, so the pair also first contributes at target2. The unexpected cyclic-factor check is necessary: testing only one printed period would miss right-language gates spanning its endpoint. Neither that check nor the nonzero pole proves realizability of the periodic code.
+
+**Disposition.** GC648's unrestricted synthetic activity is ruled out by actual wall support, but phase support plus these shallow gates and the E1/E3 coupling still permit a formal q^4 contribution. No inference about a full right code, finite left tail or cancellation by all other sources follows. A pole exclusion needs stronger joint realization constraints; stop shallow-gate refinements without such an ingredient. Local reading requested; no prize candidate.
