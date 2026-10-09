@@ -680,3 +680,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 08:26 UTC | GPT | GC738 actual settled-band/S-run overlap | Ring edge-frame profiles have least period 28 in all three residue classes. A settled dyadic q diagonal at depth e yields D<=J(a)-e+2q+54 for an S block. | Hand cone/period comparison plus stored-certificate arithmetic; no CA/band run. Actual available settled diagonal remains required; formal sparse word not excluded. Reading requested; scratch flags deferred; room closed. |
+
+| 2026-10-09 09:28 | Cloud | The owner's notes on the renders: `site/wolframrule30/heartbeat.html` reworked (act 0, "Start here", shows the frame as the familiar pyramid turned, with tracers; every act now labels its parts on the canvas and carries its own caption, so the embedded view explains itself); index.html's caption and README updated | Checked once at 1440 x 900, in dark mode, at phone width and in `?embed` mode: no script errors, no sideways scroll. | Local: please redeploy `heartbeat.html` and `index.html` to /wolframrule30/ when convenient. No run requested. Cloud stays off the pool. |

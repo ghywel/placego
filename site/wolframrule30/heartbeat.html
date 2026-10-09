@@ -93,7 +93,8 @@ html.embed .page { padding-bottom: 0 !important; }
     <div class="bar">
       <h1>Frontier Heartbeat</h1>
       <div class="acts" role="group" aria-label="Choose a step">
-        <button id="a1" type="button" aria-pressed="true"><span class="num">1</span>The beat</button>
+        <button id="a0" type="button" aria-pressed="true"><span class="num">0</span>Start here</button>
+        <button id="a1" type="button" aria-pressed="false"><span class="num">1</span>The beat</button>
         <button id="a2" type="button" aria-pressed="false"><span class="num">2</span>The twin</button>
         <button id="a3" type="button" aria-pressed="false"><span class="num">3</span>Two clocks</button>
         <button id="a4" type="button" aria-pressed="false"><span class="num">4</span>Restarts</button>
@@ -116,7 +117,7 @@ html.embed .page { padding-bottom: 0 !important; }
   </div>
 
   <div class="stage">
-    <canvas id="cv" role="img" aria-label="Time runs left to right and depth runs downward. Edge events, the target's triangle of slots, the beat beside each target, and tracers from each landing to its target."></canvas>
+    <canvas id="cv" role="img" aria-label="Each act is drawn with time running left to right and depth into the left half of Rule 30 running downward, with labels on the picture. Act 0 shows how that frame is the familiar pyramid turned."></canvas>
   </div>
 
   <div class="text">
@@ -126,10 +127,10 @@ html.embed .page { padding-bottom: 0 !important; }
       <p class="cite" id="cite"></p>
     </div>
     <div>
-      <h2>What the four acts add up to</h2>
+      <h2>What the acts add up to</h2>
       <p>If Rule 30's centre ever settled into 0101 for good, the picture's left edge would turn white beyond some
-        depth. These four animations show what that would demand. Each is a statement the team proved and checked on
-        8 October 2026.</p>
+        depth. Act 0 shows the frame every act is drawn in; acts 1 to 4 show what that would demand. Each is a
+        statement the team proved and checked on 8 October 2026.</p>
       <p>Together they narrow the case but do not close it. The open step is the joint one: whether the actual clock
         can let the late, restarting events pay the beat at every depth.</p>
     </div>
@@ -143,7 +144,7 @@ html.embed .page { padding-bottom: 0 !important; }
 <script>
 (function () {
   "use strict";
-  var L = 5, T = 44, K = 44, N = 30;
+  var L = 5, T = 44, K = 44, N = 15;
   var cv = document.getElementById("cv"), ctx = cv.getContext("2d"), bar = document.getElementById("toolbar");
   var colors = {};
   function readColors() {
@@ -152,6 +153,7 @@ html.embed .page { padding-bottom: 0 !important; }
       colors[k] = cs.getPropertyValue("--" + k).trim();
     });
     colors.mono = cs.getPropertyValue("--font-mono").trim();
+    colors.body = cs.getPropertyValue("--font-body").trim();
   }
   function sub(t, m) { return t >= 0 && t <= m && (t & m) === t; }          // C(m, t) odd (Lucas)
   var fib = [0, 1]; for (var i = 2; i < 80; i++) fib.push(fib[i - 1] + fib[i - 2]);
@@ -159,13 +161,15 @@ html.embed .page { padding-bottom: 0 !important; }
   /* ---- act 2: twin parities; act 4: the singleton ---- */
   function frontHits(n) { var c = 0; for (var t = 0; t <= n; t++) if (sub(t, n - t)) c++; return c; }
   function twinHits(n, real) { var c = 0; for (var t = 0; t <= n + 3; t++) if (sub(t, n + 3 - t) && (!real || t % 2 === 0)) c++; return c; }
+  var full = [];                                                          // whole rows of the single cell, sites -T .. T
   var single = (function () {                                              // u[t][m] = cell at depth m (position -m)
     var W = 2 * T + 8, c = W >> 1, row = new Uint8Array(W), out = [];
+    full = [];
     row[c] = 1;
     for (var t = 0; t <= T; t++) {
       var u = new Uint8Array(K + 3);
       for (var m = 0; m <= K + 2 && c - m >= 0; m++) u[m] = row[c - m];
-      out.push(u);
+      out.push(u); full.push(row.slice(c - T, c + T + 1));
       var nx = new Uint8Array(W);
       for (var i = 1; i < W - 1; i++) nx[i] = row[i - 1] ^ (row[i] | row[i + 1]);
       row = nx;
@@ -188,32 +192,40 @@ html.embed .page { padding-bottom: 0 !important; }
   function need(k) { return fib[k - L - 1] % 2; }
 
   /* ---- state ---- */
-  var act = 1, n = 0, playing = true, last = 0, acc = 0, real = false;
+  var act = 0, n = 0, playing = true, last = 0, acc = 0, real = false;
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce) playing = false;
 
   /* ---- one stage, sized to the screen under the toolbar ---- */
-  var dpr = 1, W = 800, H = 800, cell = 10, GUT = 100, LAB = 30;
+  var dpr = 1, W = 800, H = 800, cell = 10, GUT = 100, LAB = 30, OX = 100, TOP = 20, PX0 = 6, CAPH = 0;
   function size() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     var pg = cv.parentElement.parentElement, ps = getComputedStyle(pg);
     var availW = pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);
     var sticky = getComputedStyle(bar).position === "sticky";
     var availH = Math.max(320, window.innerHeight - (sticky ? bar.getBoundingClientRect().height : 0) - 40);
+    TOP = availW < 480 ? 16 : 20;
     if (act === 3) {
-      W = Math.round(Math.min(availW, 1100));
-      var R0 = Math.min((availH - 210) / 2.4, W / 7.5), rh0 = Math.min(28, availH * 0.06);
-      H = Math.round(Math.min(availH, 2 * R0 + 18 + 70 + 3 * (rh0 + 8) + 40));
+      W = Math.round(Math.min(availW, 1100)); CAPH = availW < 480 ? 176 : 108;
+      var R0 = Math.min((availH - 210 - CAPH) / 2.4, W / 7.5), rh0 = Math.min(28, availH * 0.06);
+      H = Math.round(Math.min(availH, 2 * R0 + 18 + 70 + 3 * (rh0 + 8) + 40 + CAPH));
+    } else if (act === 0) {
+      LAB = availW < 480 ? 16 : 30; CAPH = availW < 480 ? 200 : 108;
+      var gap = availW < 480 ? 10 : 40;
+      cell = Math.min((availW - gap - LAB - 14) / (3 * T + 2), (availH - TOP - 10 - CAPH) / (K + 1));
+      PX0 = 6; OX = PX0 + (2 * T + 1) * cell + gap + LAB;
+      W = Math.round(OX + (T + 1) * cell + 8); H = Math.round(TOP + (K + 1) * cell + 10 + CAPH);
     } else {
-      LAB = availW < 480 ? 22 : 30; GUT = LAB + (availW < 480 ? 36 : 72);
-      cell = Math.min((availW - GUT - 8) / (T + 1), (availH - 10) / (K + 1));
-      W = Math.round(GUT + (T + 1) * cell + 8); H = Math.round((K + 1) * cell + 10);
+      LAB = availW < 480 ? 22 : 30; GUT = LAB + (availW < 480 ? 36 : 72); OX = GUT;
+      CAPH = availW < 520 ? (act === 4 ? 200 : 236) : 0;                    // on a phone the caption goes underneath
+      cell = Math.min((availW - GUT - 8) / (T + 1), (availH - 10 - TOP - CAPH) / (K + 1));
+      W = Math.round(GUT + (T + 1) * cell + 8); H = Math.round(TOP + (K + 1) * cell + 10 + CAPH);
     }
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
     cv.style.width = W + "px"; cv.style.height = H + "px";
   }
-  function X(t) { return GUT + t * cell; }
-  function Y(k, top) { return 5 + (k - top) * cell; }
+  function X(t) { return OX + t * cell; }
+  function Y(k, top) { return TOP + (k - top) * cell; }
   function dot(x, y, r, fill) { ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.fillStyle = fill; ctx.fill(); }
   function ring(x, y, r, stroke, w) { ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.strokeStyle = stroke; ctx.lineWidth = w; ctx.stroke(); }
   function cross(x, y, r, stroke) {
@@ -231,6 +243,49 @@ html.embed .page { padding-bottom: 0 !important; }
   function text(s, x, y, col, align, size, base) {
     ctx.fillStyle = col; ctx.textAlign = align || "left"; ctx.textBaseline = base || "middle";
     ctx.font = "500 " + (size || 10) + "px " + colors.mono; ctx.fillText(s, x, y);
+  }
+  function wrap(str, maxw) {
+    var words = str.split(" "), lines = [], line = "";
+    words.forEach(function (w) {
+      var tryL = line ? line + " " + w : w;
+      if (ctx.measureText(tryL).width > maxw && line) { lines.push(line); line = w; } else line = tryL;
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+  function caption(paras, x, y, w, bg) {                                 // a box of plain sentences on the picture
+    var fs = W < 520 ? 10.5 : 12.5, lh = Math.round(fs * 1.38), pad = 8;
+    ctx.font = fs + "px " + colors.body;
+    var lines = [];
+    paras.forEach(function (p, i) { if (i) lines.push(""); lines = lines.concat(wrap(p, w - 2 * pad)); });
+    var h = lines.length * lh + 2 * pad - (lh - fs);
+    ctx.globalAlpha = 0.94; ctx.fillStyle = bg || colors.paper; ctx.fillRect(x, y, w, h); ctx.globalAlpha = 1;
+    ctx.strokeStyle = colors.rule; ctx.lineWidth = 1; ctx.strokeRect(x + 0.5, y + 0.5, w - 1, h - 1);
+    ctx.fillStyle = colors.ink; ctx.textAlign = "left"; ctx.textBaseline = "top";
+    lines.forEach(function (l, i) { ctx.fillText(l, x + pad, y + pad + i * lh); });
+    return h;
+  }
+  function callout(label, lx, ly, ax, ay, col) {                         // a label with a leader to what it names
+    var fs = W < 520 ? 10 : 12;
+    ctx.font = fs + "px " + colors.body;
+    var w = ctx.measureText(label).width + 12, h = fs + 9;
+    if (lx + w > W - 4) lx = W - 4 - w;
+    var bx = Math.max(lx, Math.min(ax, lx + w)), by = Math.max(ly, Math.min(ay, ly + h));
+    ctx.strokeStyle = colors.paper; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(bx, by); ctx.lineTo(ax, ay); ctx.stroke();
+    ctx.strokeStyle = col; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(bx, by); ctx.lineTo(ax, ay); ctx.stroke();
+    dot(ax, ay, 3, col);
+    ctx.globalAlpha = 0.95; ctx.fillStyle = colors.paper; ctx.fillRect(lx, ly, w, h); ctx.globalAlpha = 1;
+    ctx.strokeStyle = col; ctx.lineWidth = 1.2; ctx.strokeRect(lx + 0.5, ly + 0.5, w - 1, h - 1);
+    ctx.fillStyle = colors.ink; ctx.textAlign = "left"; ctx.textBaseline = "middle";
+    ctx.fillText(label, lx + 6, ly + h / 2 + 0.5);
+  }
+  function axes(top) {                                                    // the frame's two directions, named
+    var fsz = W < 520 ? 9 : 11;
+    text("time, step by step →", X(0), TOP - 4, colors["ink-soft"], "left", fsz, "bottom");
+    ctx.save(); ctx.translate(7, Y(Math.max(top, 1), top)); ctx.rotate(Math.PI / 2);   // reads downwards, as depth grows
+    text("depth into the left half →", 0, 0, colors["ink-soft"], "left", fsz, "middle"); ctx.restore();
   }
   function labels(top, list) {
     list.forEach(function (k) { text(String(k), LAB - 4, Y(k, top) + cell / 2, colors["ink-soft"], "right", W < 520 ? 8 : 10); });
@@ -270,7 +325,27 @@ html.embed .page { padding-bottom: 0 !important; }
     ctx.strokeStyle = colors.stencil; ctx.lineWidth = Math.max(1.5, cell * 0.22);
     ctx.strokeRect(X(0) + 1, Y(k, top) + 1, cell - 2, cell - 2);
     drawBeatColumn(top);
-    labels(top, [1, L, 10, 20, 30, 40]);
+    labels(top, [1, 10, 20, 30, 40]);
+    axes(top);
+    var small = W < 520;
+    callout("target", X(1.6), Y(k, top) - cell * 0.2, X(0) + cell, Y(k, top) + cell / 2, colors.stencil);
+    callout(small ? "its triangle" : "its triangle: the cells whose events decide it", X(Math.min(k + 1, T - 12)), Y(2, top),
+      X(Math.max(0, k - 2)) + cell, Y(1.5, top), colors.stencil);
+    callout(small ? "black edge" : "black edge: one depth deeper each step", X(2), Y(36.5, top), X(24) + cell / 2, Y(L + 24, top) + cell / 2, colors.ink);
+    callout(small ? "edge events" : "edge events (white under black)", X(2), Y(31, top), X(13) + cell / 2, Y(L + 15, top) + cell / 2, colors.front);
+    if (act === 2) callout(small ? "the twin" : "the twin: events three depths inside", X(31), Y(22, top), X(29) + cell / 2, Y(L + 28, top) + cell / 2, colors.twin);
+    text(small ? "stays white" : "would stay white for ever", X(1), Y(K, top) + cell / 2, colors["ink-soft"], "left", small ? 9 : 11);
+    var cx0 = X(Math.min(k + 3, 23)), cw = Math.min(X(T) + cell - cx0, small ? 220 : 340);
+    cx0 = Math.min(cx0, X(T) + cell - cw);
+    var paras = act === 1 ? [
+      "Suppose some finite start made the centre tick 0101 for ever. Then everything below the black edge would stay white.",
+      "Each target cell (amber box) is decided by its triangle: it turns black when an odd number of events land there. The edge's own events land odd, odd, even, and so on for ever: the beat in the bars on the left.",
+      "To keep every target white, events inside the edge must answer that beat, target after target."
+    ] : [
+      "A twin ray of events three depths inside the edge (teal) would answer the beat exactly: edge plus twin is even at every target, so every bar is short.",
+      "Real Rule 30 cannot keep such a ray going. Tick \u201cas Rule 30 allows\u201d: the twin fires only every other step, and the targets it misses get long red bars."
+    ];
+    if (CAPH) caption(paras, 4, H - CAPH + 2, W - 8); else caption(paras, cx0, Y(7, top), cw);
   }
   function drawBeatColumn(top) {                                       // the beat, one bar beside each target's row
     var x1 = X(0) - 6, full = GUT - LAB - 14;
@@ -285,7 +360,7 @@ html.embed .page { padding-bottom: 0 !important; }
       if (i === n) { ctx.strokeStyle = colors.stencil; ctx.lineWidth = 2; ctx.strokeRect(x1 - full - 2, y - 1, full + 4, cell + 2); }
     }
     var hy = Y(L + 2, top) - cell * 0.7;
-    text(act === 1 ? "beat" : (real ? "unpaid" : "paid?"), x1, hy, colors["ink-soft"], "right", W < 520 ? 8 : 10, "bottom");
+    text(act === 1 ? "beat: long = odd" : (real ? "long = unpaid" : "paid? long = no"), x1, hy, colors["ink-soft"], "right", W < 520 ? 8 : 10, "bottom");
   }
 
   /* ---- act 4: the singleton's left half, the moving strip and its magnifier in the empty wedge ---- */
@@ -331,6 +406,50 @@ html.embed .page { padding-bottom: 0 !important; }
     text("flips every step", mx + mc + 6, fy + mc * 0.45, colors.stencil, "left", fsz);
     text("edge", mx + mc + 6, my + 4.5 * mc, colors["ink-soft"], "left", fsz);
     text("the five outer cells, magnified", mx, my - 6, colors["ink-soft"], "left", fsz, "bottom");
+    axes(top);
+    var cw = Math.min(330, X(T) + cell - X(18)), cx0 = X(T) + cell - cw;
+    var p4 = ["This is real Rule 30, one black cell, not the assumption.",
+      "Just behind its edge the five outer cells settle into 1, 1, 0, a cell that flips every step, 1. So two events (teal) take turns for ever: the inside never stops trying to pay the beat.",
+      "Whether such tries can pay it at every depth is the open question."];
+    if (CAPH) caption(p4, 4, H - CAPH + 2, W - 8); else caption(p4, cx0, Y(1, top), cw);
+  }
+
+  /* ---- act 0: the familiar pyramid beside the same left half turned into the acts' frame, joined by tracers ---- */
+  function drawFrame() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = colors.paper; ctx.fillRect(0, 0, W, H);
+    var now = Math.min(n, T), c = cell + 0.4, top = 0, small = W < 520;
+    function px(x) { return PX0 + (x + T) * cell; }
+    function py(t) { return TOP + t * cell; }
+    ctx.fillStyle = colors.wedge;                                         // the pyramid's left half, shaded
+    ctx.beginPath(); ctx.moveTo(px(0), py(0)); ctx.lineTo(px(1), py(0)); ctx.lineTo(px(1), py(T + 1)); ctx.lineTo(px(-T), py(T + 1));
+    ctx.closePath(); ctx.fill();
+    ctx.fillStyle = colors.ink;
+    for (var t = 0; t <= now; t++) for (var x = -t; x <= t; x++) if (full[t][x + T]) ctx.fillRect(px(x), py(t), c, c);
+    ctx.fillStyle = colors.wedge; ctx.globalAlpha = 0.6;                  // the turned sheet's own triangle
+    ctx.beginPath(); ctx.moveTo(X(0), Y(0, top)); ctx.lineTo(X(T + 1), Y(0, top)); ctx.lineTo(X(T + 1), Y(K + 1, top)); ctx.closePath(); ctx.fill();
+    ctx.globalAlpha = 1; ctx.fillStyle = colors.ink;
+    for (var t2 = 0; t2 <= now; t2++) for (var m = 0; m <= Math.min(t2, K); m++) if (single[t2][m]) ctx.fillRect(X(t2), Y(m, top), c, c);
+    ctx.strokeStyle = colors.twin; ctx.lineWidth = Math.max(1.5, cell * 0.25);  // the centre column in both pictures
+    ctx.strokeRect(px(0) - 0.5, py(0) - 0.5, cell + 1, (T + 1) * cell + 1);
+    ctx.strokeRect(X(0) - 0.5, Y(0, top) - 0.5, (T + 1) * cell + 1, cell + 1);
+    var fsz = small ? 9 : 11;
+    text("the familiar pyramid (left half shaded)", PX0, TOP - 4, colors["ink-soft"], "left", fsz, "bottom");
+    text("the same left half, turned: time →", X(0), TOP - 4, colors["ink-soft"], "left", fsz, "bottom");
+    ctx.save(); ctx.translate(X(0) - 8, Y(1, top)); ctx.rotate(Math.PI / 2);
+    text("depth below the centre →", 0, 0, colors["ink-soft"], "left", fsz, "bottom"); ctx.restore();
+    text("centre column", px(0) + cell + 4, py(T) + cell / 2, colors.twin, "left", fsz);
+    text(small ? "centre" : "row 0: the centre column", X(T) + cell, Y(0, top) + cell * 1.9, colors.twin, "right", fsz, "top");
+    var picks = [[0, colors.twin], [Math.floor(now / 2), colors.stencil], [now, colors.front]];
+    picks.forEach(function (p) {
+      var d = p[0];
+      var ax = px(-d) + cell / 2, ay = py(now) + cell / 2, bx = X(now) + cell / 2, by = Y(d, top) + cell / 2;
+      tracer(ax, ay, bx, by, p[1], 2);
+      dot(ax, ay, Math.max(3, cell * 0.45), p[1]); dot(bx, by, Math.max(3, cell * 0.45), p[1]);
+    });
+    caption(["This is the left half of the familiar pyramid, turned so that time runs to the right and depth below the centre runs down. The top row is the centre column, the one the prize asks about. The three dotted lines join the same cells in both pictures: the centre (teal), halfway out (amber) and the left edge (red).",
+      "The acts ask what would happen if some finite start made that top row tick 0101 for ever: everything deeper than a black edge would then have to stay white. Act 1 starts there."],
+      4, H - CAPH + 2, W - 8);
   }
 
   /* ---- act 3: two clocks above the strips they drive, with a tracer from each pointer ---- */
@@ -338,7 +457,7 @@ html.embed .page { padding-bottom: 0 !important; }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = colors.paper; ctx.fillRect(0, 0, W, H);
     var k = K0 + (n % (3 * Q + 3)), fsz = W < 520 ? 9 : 11;
-    var rh = Math.min(28, H * 0.075), R = Math.max(30, Math.min((H - 70 - 3 * (rh + 8) - 58) / 2, W / 7.5)), cy = R + 18;
+    var rh = Math.min(28, H * 0.075), R = Math.max(30, Math.min((H - CAPH - 70 - 3 * (rh + 8) - 58) / 2, W / 7.5)), cy = R + 18;
     var cols = 3 * Q + 3, x0 = 70, bw = (W - x0 - 8) / cols, y0 = cy + R + 56;
     var cur = k - K0, pts = {};
     function wheel(cx, sz, pos, label, valueOf, key) {
@@ -376,10 +495,16 @@ html.embed .page { padding-bottom: 0 !important; }
     tracer(pts.old[0], pts.old[1] + 10, xc + bw * 0.5, y0 + rh + 4, colors.twin, 1.6);
     text("boxed: targets " + K0 + ", " + (K0 + Q) + ", " + (K0 + 2 * Q) + " (same old value, three different beats)",
       x0, y0 + 3 * (rh + 8) + 14, colors["ink-soft"], "left", fsz);
+    caption(["Left wheel: the beat, which repeats every 3 targets. Right wheel: what all the events younger than A steps can pay, which repeats every Q targets, a power of 2. The strips show, target by target, what is needed (red), what the old events pay (teal) and where they fall short (amber).",
+      "A power of 2 is never a multiple of 3, so of three targets Q apart (boxed) at least one is short. Paying every target needs events older than any fixed age."],
+      4, H - CAPH - 4, W - 8);
   }
 
   /* ---- copy for each act ---- */
   var copy = {
+    0: { title: "Start here: the frame", cite: "the frame of acts 1 to 4",
+      body: "<p>Every act draws the left half of Rule 30 the same way: time runs left to right, and depth below the centre runs downward. The picture on the left is the familiar pyramid from one black cell; the one on the right is its left half, turned into that frame. The top row of the turned picture is the centre column.</p><p>The prize asks whether that column ever settles into a repeat. The acts take the opposite view for a moment: suppose some finite start made the centre tick 0101 for ever. Then the left half would have to turn white beyond a black edge that moves one depth deeper each step, and acts 1 to 4 show what that would cost.</p>",
+      key: [["twin", "the centre column, in both pictures"], ["stencil", "a cell halfway out"], ["front", "the left edge"], ["wedge", "the left half", true]] },
     1: { title: "The beat", cite: "GC585, GC586",
       body: "<p>A white edge would have to move outward one depth per step, and it carries its own edge event along with it: the red dots. Every cell under the wedge must stay white.</p><p>Each target cell (boxed, at time 0) is decided by its triangle of slots. A dotted line runs from each place where the red ray lands in the triangle to the target, so the lines count the landings: odd, odd, even, over and over, the parity of the Fibonacci numbers 1, 1, 2, 3, 5, 8, 13. The bar beside each target's row shows that beat. To keep the target white, the events inside the edge have to answer with the same beat.</p>",
       key: [["front", "the edge's event; a dotted line for each landing"], ["stencil", "the target's triangle of slots", true], ["wedge", "cells that would have to stay white", true]] },
@@ -395,14 +520,14 @@ html.embed .page { padding-bottom: 0 !important; }
   };
   function setAct(a) {
     act = a; n = a === 4 ? 4 : 0; acc = 0;
-    ["a1", "a2", "a3", "a4"].forEach(function (id, i) { document.getElementById(id).setAttribute("aria-pressed", String(i + 1 === a)); });
+    ["a0", "a1", "a2", "a3", "a4"].forEach(function (id, i) { document.getElementById(id).setAttribute("aria-pressed", String(i === a)); });
     document.getElementById("modewrap").hidden = a !== 2;
     document.getElementById("agewrap").hidden = a !== 3;
     document.getElementById("reroll").hidden = a !== 3;
     var c = copy[a];
     document.getElementById("title").textContent = c.title;
     document.getElementById("body").innerHTML = c.body;
-    document.getElementById("cite").textContent = "Proved in " + c.cite + ", second-read on 8 October.";
+    document.getElementById("cite").textContent = a === 0 ? "No claim here: this is " + c.cite + "." : "Proved in " + c.cite + ", second-read on 8 October.";
     document.getElementById("key").innerHTML = c.key.map(function (k) {
       return '<span><i class="sw' + (k[2] ? " sq" : "") + '" style="background: var(--' + k[0] + ')"></i>' + k[1] + "</span>";
     }).join("");
@@ -410,10 +535,12 @@ html.embed .page { padding-bottom: 0 !important; }
   }
   function readout() {
     var el = document.getElementById("readout");
-    if (act === 1) {
+    if (act === 0) {
+      el.innerHTML = "step <b>" + Math.min(n, T) + "</b> · the same three cells in both pictures: the centre, halfway out and the left edge";
+    } else if (act === 1) {
       var f = frontHits(n);
-      el.innerHTML = "target depth <b>" + (L + 2 + n) + "</b> · the edge's ray lands <b>" + f + "</b> times (" + (f % 2 ? "odd" : "even") + ", like F" + (n + 1) + " = " + fib[n + 1] +
-        ") · the inside must pay an <b>" + (f % 2 ? "odd" : "even") + "</b> number";
+      el.innerHTML = "target at depth <b>" + (L + 2 + n) + "</b> · the edge's events land <b>" + f + "</b> times in its triangle (" + (f % 2 ? "odd" : "even") + ", like F" + (n + 1) + " = " + fib[n + 1] +
+        ") · so the events inside must land an <b>" + (f % 2 ? "odd" : "even") + "</b> number of times too";
     } else if (act === 2) {
       var a = frontHits(n), b = twinHits(n, real);
       el.innerHTML = "target depth <b>" + (L + 2 + n) + "</b> · edge " + a + " + twin " + b + " = <b>" + (a + b) + "</b> · " +
@@ -429,11 +556,12 @@ html.embed .page { padding-bottom: 0 !important; }
     }
   }
   function draw() {
-    if (act === 3) drawClocks(); else if (act === 4) drawSingle(); else drawWedgeSheet();
+    if (act === 0) drawFrame(); else if (act === 3) drawClocks(); else if (act === 4) drawSingle(); else drawWedgeSheet();
     readout();
   }
   function advance() {
-    if (act === 4) n = n >= T ? 4 : n + 1;
+    if (act === 0) n = n >= T + 6 ? 0 : n + 1;
+    else if (act === 4) n = n >= T ? 4 : n + 1;
     else if (act === 3) n = (n + 1) % (3 * Q + 3);
     else n = (n + 1) % N;
     draw();
@@ -443,6 +571,7 @@ html.embed .page { padding-bottom: 0 !important; }
     if (playing) { acc += ts - (last || ts); var step = 1100 / speed; while (acc >= step) { acc -= step; advance(); } }
     last = ts; requestAnimationFrame(frame);
   }
+  document.getElementById("a0").addEventListener("click", function () { setAct(0); });
   document.getElementById("a1").addEventListener("click", function () { setAct(1); });
   document.getElementById("a2").addEventListener("click", function () { setAct(2); });
   document.getElementById("a3").addEventListener("click", function () { setAct(3); });
@@ -461,7 +590,7 @@ html.embed .page { padding-bottom: 0 !important; }
     if (mq.addEventListener) mq.addEventListener("change", onScheme); else if (mq.addListener) mq.addListener(onScheme);
   }
   new MutationObserver(function () { readColors(); draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  readColors(); setAge(5); syncPlay(); setAct(1);
+  readColors(); setAge(5); syncPlay(); setAct(0);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { readColors(); size(); draw(); });
   requestAnimationFrame(frame);
 })();
