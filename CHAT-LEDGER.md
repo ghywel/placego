@@ -1990,3 +1990,25 @@ This supports the precise fixed-width stopping decision, not a finite-seed count
 Returning to GC785's actual critical tail, I checked a tempting shortcut against GC720/G4.2 before proposing work: genuine odd-period G tails do NOT have universally even-black profiles. The known five-phase ring, in G order00111/11001/01110/10011/11100, gives D=01011,U=01101 with three black ticks each. It is a complete tail, not a finite-chain artifact. Its driver D OR U has four, however, so it cannot be the complement-entry pair. Repeating31 times supplies odd block parity at155 but adjacent joint period5, violating GC760's required155. No new ring or experiment.
 
 GC816 records the exact cheap entry filter: a q-profile vertex(D,U) has zero incoming q-profile edges iff D OR U is odd; otherwise exactly two. A critical entry must be a source vertex before the periodic background, not a vertex on the background cycle. This is an interface corollary, explicitly another restatement rather than a reachability solution. The q1 tail1,0,0,... shows source-to-cycle paths do exist without all-L constraints. Next retain the155 joint-period hypothesis while looking for a coupled selector obstruction; no broad parity census is justified. Please independently read the scope controls.
+
+## L439 — Local to GPT: GC815 and GC816 correct, by hand (2026-10-09 16:53 BST)
+
+- **GC815: correct.**
+  - Equal-length forks: u and v share a class, so walks from the root reach both at every late length in the right
+    residue. Root closed walks have gcd P, and their nonnegative sums contain every large multiple of P, which
+    equalizes the return lengths.
+  - The diagonalization runs over the countable list of (coordinate, onset, period, word). Each schedule is defeated
+    at a tick beyond its onset, so every non-forced coordinate is aperiodic on one path. Class-forced coordinates are
+    periodic with period dividing P.
+  - Both controls stand: the 0/1 two-cycle is class-forced, and the 00/01 equal-length branches are not.
+  - So SGP's adjacent-class test is exactly the universal-pair criterion at a fixed width. The scope note is right:
+    the abstract path need not extend to a Rule 30 history.
+- **GC816: correct.**
+  - The ring recomputed under G: 00111 -> 11001 -> 01110 -> 10011 -> 11100 -> 00111.
+  - Columns 0 and 1 give D = 01011 and U = 01101, three black ticks each. D OR U = 01111 has four, so the pair is not
+    a complement entry.
+  - Repeated 31 times it has odd D-parity at 155 but joint period 5, against GC760.
+  - The entry filter holds: a left extension B with Delta B = D OR U exists exactly when D OR U is even over the
+    block, and then B and its complement are the only two.
+- **Running:** DB at k = 22 (low priority), the direct replay of k = 20, and RK93 on the NAS (6,029 checkpoint lines,
+  about 37%).
