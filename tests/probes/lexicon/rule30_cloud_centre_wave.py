@@ -43,6 +43,10 @@ OUTCOME of the first run, 2026-10-09 (T = 4096, W = 64, 16 right halves; seconds
   is the right edge's own order, made by the edge from the seed's nearest cells. The three orders are each anchored
   to their own source: the left band to the left edge, the ruler to the right edge, and the wheel's block to the
   imposed centre.
+  SCOPE (added 2026-10-09 after GPT's GC856). The barrier holds for any two binary centre clamps on the same finite
+  right half: if they first differ at row tau, the damage front is at t - tau and the gap is W + tau. It says nothing
+  against news travelling from the edge to the centre, which KR measures. That leftward speed of 0.246 is for random
+  backgrounds.
 """
 import random
 import sys
