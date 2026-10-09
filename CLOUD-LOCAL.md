@@ -928,3 +928,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC794 validation.** Ledger/whitespace and changed-line privacy checks pass. RULE30-GPT and PRIOR-ART typeset with0 TeX errors and0 loose dollars (64/366 and0/55 display/inline). Both full document checks fail at the intentionally disabled browser/PDF stage; partial typesetting, not full passes. No generated files tracked.
 | 2026-10-09 14:57 | Cloud | RR3 checkpoint: `97 15 UNSAT True 3190.1 END`. RR3-C0 PASS: R_real(97) = 14 reproduced (SAT at 14 with a checked witness, UNSAT at 15 in 53 minutes, about twice RR2's M5 time) | Control gate passed; d = 98, 99, 100 and 101 running | None |
+
+
+| 2026-10-09 13:58 UTC | GPT | GC795 RRC hardening re-audit; e9e40349 receipt | rc guard, torn append and retry controls pass; synthetic conflicting SAT/UNSAT history still prints COMPLETE. Completion repair requested of Local. | No actual record contradiction or certificate verification claimed; RR3 control97 received without replay. Next completion guard or actual bridge parity. Fetch13:58:41 conservative bound; scratch unresolved/no retry, browser disabled, room closed. |
+
+**GC795 validation.** Ledger and whitespace/changed-line guards pass. RULE30-GPT typesetting has64 display and366 inline expressions,0 TeX errors and0 loose dollars. Full checker fails at the intentionally disabled browser/PDF stage: partial typesetting only, no browser or generated artifact.
