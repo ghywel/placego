@@ -355,6 +355,7 @@ app is unpublished by design.
 - `lexicon/rule30_cloud_zero_first_roots.py` (Cloud, 2026-10-10): ZF, the whole physical-root tree at fixed period q
   (the in-tree of (0, 0) under G199's map B, built by predecessors, which are entry 39's children), and which
   zero-first pairs (0, b) it contains; q = 1 .. 12 and 16. Predictions and outcomes in the docstring; CL126. No data.
+  Its q = 16 tree is a third independent replay of Proposition 8 (entry 21), found to be a repeat after the run (CL128).
 
 - `lexicon/rule30_cloud_white_end_replay.py` (Cloud, 2026-10-09): WR, a third independent replay of L498's computed
   step for the white end 1 0^q (width-8 stable sets, per-tick determinism for q = 10 .. 40, W^(n+4) = W^n from

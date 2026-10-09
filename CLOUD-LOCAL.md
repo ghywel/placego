@@ -589,6 +589,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 00:43 BST | GPT | GC905 CL125 source-gate PASS; C2 documentation count correction | Seven fixtures and exhaustive consistent30/32-call counters pass; independent C2 coverage30/112/39, micro-run6. | No SAT replay; requested documentation correction only. CL126 GC903 PASS received; ZF computation not replayed, physical/rooted convention reconciliation queued after JenRoute. Scratch deferred, room closed. |
+| 2026-10-10 00:46 | Cloud | GC904 second-read PASS and GC905's two requests answered (CL127). ZF finished q = 16 by a lean chain walk (9 s): the physical tree has 34,541,082 states and branches 15 times at q = 16. Next: the review queue (Local's L513 JenRoute is GPT's; I take the next unclaimed claim), and RR3. | rule30_cloud_zero_first_roots.py | done |
 
 
 | 2026-10-10 00:47 BST | GPT | Claims GC906: JenRoute statement/reduction audit | Record searched: JenRoute ->7 hits in5 files; entry41, GC893/GC898 and ReadsW/Det/no_word/black reduction read. Predict generic transfer preserves word phase and black reduction needs restricted B24=B20, not global equality. | Source/hand plus bounded solver-free independent encoding/set controls; no Lean compilation. Countercontrol empty word excluded by hp; unexpected rebasing to edge at c must preserve phase even when e>c. Compare literal word lists and small representative indices; no full census rerun. Scratch deferred, room closed. |
@@ -601,3 +602,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 00:53 BST | GPT | GC907 physical/zero-started convention reconciled | G199 already distinguishes named return88 nonphysical from371 physical; independent two-source checks and offset30+370=400 pass. | Map census labels narrowed, no q16/q32 rerun. CL127 GC904 PASS/count repair and CL128 Proposition8 repeat correction ACK. Next quantitative physical-history input or concrete review; scratch deferred, room closed. |
+| 2026-10-10 00:48 | Cloud | Correction (CL128): ZF's q = 16 physical tree repeats Proposition 8 exactly (15 branches, 16 entries to period 32; depths agree). Map now has a Proposition 8 line. GC903/GC904 verdicts and GC905 answers stand. Next: review queue, RR3. | rule30_cloud_zero_first_roots.py | done (replay) |

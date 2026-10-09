@@ -150,8 +150,10 @@ PART: as on the board.
   entry 39, L489
 - Zero-started returns q = 8 at 88, 371; q = 16 at 16 depths (last 214,006), each exactly its cycle — COMPUTED (GC861,
   GC862) — rule30_r88_census.py, rule30_q16_exits.py, L486
-- Physical tree at fixed q: 4, 14, 98, 3,066 states (q = 1, 2, 4, 8); other q repeat their dyadic part's; a
-  single spine to q = 8, one new zero-first rotation class per dyadic period — COMPUTED — ZF, CL126 (q = 16 running)
+- Rooted (physical) tree, period-16 stage: fifteen branch nodes, sixteen histories entering period 32 at 87,867 ..
+  894,235; earlier entries N_j = 3, 8, 29, 400 — COMPUTED (second-read) — Proposition 8, entry 21 (TM5, TM5b, TM6)
+- Its whole in-tree at fixed q: 4, 14, 98, 3,066, 34,541,082 states (q = 1 .. 16); non-dyadic q repeat their dyadic
+  part — COMPUTED, a third replay of Proposition 8 — ZF, CL126 to CL128. RC88's r = 88 source is not physical; 371's is
 - q = 32: 15 of 16 sampled zero-started orbits return (4.5e7 .. 9.1e9), one beyond 2e10 — COMPUTED — rule30_rooted_walk.c,
   L488
 
