@@ -75,6 +75,15 @@ before the run; M5, 10 threads with Homebrew libomp, nice 10, about an hour expe
   CZ14 (blind, confidence 0.6): e_w <= 8 at w = 41, 42 and 43. The debt stays under CZ4's bound.
   CZ15 (blind, confidence 0.6): at w = 43 the slope past the free bits is within 0.01 of the coin's.
   CZ16 (blind, confidence 0.5): H_43 lies in [560, 700].
+ADDENDUM OUTCOME, 2026-10-09 23:47 BST (M5, about 2 h 40 min with 10 threads at nice 10): CZ12 PASS (as far as this run
+  prints it), CZ13 HELD, CZ14 HELD, CZ15 HELD, CZ16 HELD.
+  - CZ12: H_40 = 550 and e_33 .. e_40 = 1.35, 7.36, 5.19, 0.78, 2.17, 1.17, 0.62, 0.87 reproduce. A WMAX = 43 run
+    computes the slope only at WMAX, so the w = 40 slope (-0.0596) was not re-checked here.
+  - CZ13: S_w = C_w at every T for every w >= 20, including 41, 42 and 43 (the code's CZ1 line, "all equal").
+  - CZ14: e_41, e_42, e_43 = 3.18, 1.38, 0.42; the largest excess over 16 .. 43 is still 7.36 (w = 34).
+  - CZ15: at w = 43 the slope past the free bits is -0.0591, against the coin's -0.0591 (T = 43 .. 473).
+  - CZ16: H_41, H_42, H_43 = 606, 604, 592. These are not monotone, as at 33 .. 40.
+  - So to 43 bits the counting form keeps the coin's rate, with an excess that stays bounded and is not growing.
 """
 import math, pathlib, subprocess, sys, tempfile
 

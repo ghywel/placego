@@ -300,7 +300,8 @@ PART: as on the board.
 - Q2, the finite-window move: reopen only on a condition not local in column 1 — OPEN (parked) — CL065, GC614.1
 
 ## Collatz twin (Q9)
-- Counting form: Terras's coin to 0.5% (w = 30); slope -0.0596 vs -0.0597 at w = 40 — MEASURED — COLLATZ-PRIZE.md §6
+- Counting form: Terras's coin to 0.5% (w = 30); slope -0.0591 vs the coin's -0.0591 at w = 43, excess <= 7.4 bits,
+  not growing — MEASURED — COLLATZ-PRIZE.md §6, collatz_count.py (CZ12 .. CZ16, L509)
 - Fewer than 2^(w - αT + c) survivors, the same gap as Q1 — OPEN — COLLATZ-PRIZE.md §1, §6
 - Least residue: T^k(2^k m + r) = 3^a m + T^k(r), 0 <= T^k(r) < 3^a — PROVED (known: Terras) — COLLATZ-PRIZE.md §4
 - Window principle W1 to W3; W2 is Dubickas 2009 Theorem 5 — PROVED (known) — COLLATZ-PRIZE.md §5
