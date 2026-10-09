@@ -350,6 +350,10 @@ app is unpublished by design.
   step for the white end 1 0^q (width-8 stable sets, per-tick determinism for q = 10 .. 40, W^(n+4) = W^n from
   n = 22), with set-valued relations and no shared code. Predictions and outcome in the docstring; CL110. No data.
 
+- `lexicon/rule30_cloud_word_census_replay.py` (Cloud, 2026-10-09): WR2, an independent replay of Local's WC census
+  of the one-sided route on every Lyndon column word (width 8 on periods 7 .. 18, width 10 on 7 .. 14), against
+  L499's list and counts. Predictions in the docstring, pushed before the run. No data.
+
 
 - `lexicon/rule30_one_excursion.c`: EX1, one fixed q16 zero-return charge audit from reviewed pair(320,64); CPU, standard C,800000-edge/2-second caps. Preregistered GC358, NOT RUN. Binary and transcript outside Git.
 
