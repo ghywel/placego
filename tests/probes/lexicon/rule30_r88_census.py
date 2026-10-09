@@ -75,6 +75,15 @@ RC16X OUTCOME, 2026-10-09 21:03 BST (M5, about 6 minutes, 0.57 GB, run at commit
     doubled source, so each source orbit has exactly one first return. q = 8 has 2 orbits and 2 depths (88 and 371).
   - The new depths are 62791, 72473, 93358, 114129, 125209, 171541 and 214006. The new even ones are 93358 and
     214006.
+RW (registered 21:10 BST, before any q = 32 result; the C walker rule30_rooted_walk.c, one orbit at a time, 64 ns a
+  step at q = 32):
+  RW-C1 (control, run as the instrument smoke before this registration and disclosed): q = 4, 8 and 16 reproduce
+        21; 88 and 371; and all 16 q = 16 depths, orbit by orbit. PASS. A 10^7-step timing run of q = 32's first orbit
+        (block 0001) reported "alive at 10^7"; that concerns no prediction below.
+  RW-P1 (blind, confidence 0.5): at least 8 of q = 32's first 16 orbits (least-rotation order) return within 10^9
+        steps.
+  RW-P2 (blind, confidence 0.6): every one of them keeps at most 2 live states.
+  RW-D1 (descriptive): the return depths, or "alive at 10^9".
 """
 import sys
 
