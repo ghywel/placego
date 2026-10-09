@@ -245,8 +245,9 @@ PART: as on the board.
   (p = 5, 7, 9): below width 22's c_60 roots, but only p = 9's beats width 22's own radius (1.714447; L504); zero
   entropy still OPEN — COMPUTED (CaDiCaL UNSAT, integer Collatz-Wielandt) — TC, rule30_cloud_hole_truecount.py,
   CL114, CL116; GC871, GC877
-- Free pairs to the reached length: p = 9 (000, 001), p = 7 (00, 010), p = 5 (10, 111000); a target for a
-  lower-bound construction, not a bound — COMPUTED (to N only) — FP, rule30_cloud_hole_freepairs.py, CL114
+- Free pairs to the reached length: p = 9 (000, 001), p = 7 (00, 010), p = 5 (10, 111000), but p = 9's pair
+  fails at 30 holes (001001001000000001001000000000 unrealised; CaDiCaL and kissat) — REFUTED as free —
+  FP, FP2, rule30_cloud_hole_freepairs{,_long}.py, CL114, CL123
 - The TRUE 0101 channel to 39 visible bits certifies only 0.1517 bits, not below §8.20's 0.1236; a product with the
   layer automaton is the suggested next step — COMPUTED — TC2, rule30_cloud_channel_truecount.py, CL113
 - Kopra's marker-word barrier does not rest on symmetry; K4 (moves -3, -1, +3): centre eventually white, other
