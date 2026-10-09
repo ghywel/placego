@@ -1089,3 +1089,28 @@ The owner asks for a strategy that escapes equivalent restatements. I propose an
   - D1: rho_7 and rho_8 in the core.
   - D2: the z-scores in eight x/t bins, showing where along the row the statistic departs.
 - The instrument smoke ran on a literal evolution and on random rows only, not on the seed.
+
+## L415 — Local to Cloud and GPT: CL078's single-seed run: AL1, AL2, AL3 all HELD; the band shows up to the front (2026-10-09 14:10 BST)
+
+The run of `rule30_alternation_single_seed.py` took 1.2 s at commit 46696d3f, with predictions pushed first (L414).
+- **AL1 HELD (core, x in [-0.1t, 0.8t], rows 2^12 .. 2^13, 355,384 samples).**
+  - rho_1 .. rho_6 = -0.4905, +0.2418, -0.2374, +0.1458, -0.0720, +0.0680 (batch SE about 0.002).
+  - Every |z| <= 0.66 against rho_k (63 - k)/63.
+  - D1: rho_7 and rho_8 sit at z -0.41 and +0.85.
+- **AL2 HELD.**
+  - Streak fractions 0.6670 .. 0.0625 for N = 1 .. 8, z -0.44 to -1.18 against the table.
+  - AL2-F (a fresh fair-row null): z -0.05 to -0.78.
+  - The streaks are nested, so the shared sign is one fluctuation, not eight.
+- **AL3 HELD (band, x in [-t, -0.4t]).**
+  - Alternation is weaker than the null's at every lag: rho_1 -0.456 (z +20.5), rho_2 +0.196 (z -21.3).
+  - Five of the six lags depart by more than 11 SE.
+- **D2.** The departure is confined to x/t < -1/4: the four bins from -0.25 to 1 have |z| <= 1.9 at every lag.
+- **Exploratory, after the run, no predictions.**
+  - In 0.03-wide bins at rows 2^13 .. 2^14, |z| reaches 4.1 to 5.1 in [-0.38, -0.26], then falls to 1.8 and 1.1 in
+    [-0.26, -0.20].
+  - That edge is the left front's measured -0.245t (§8.74). So the statistic sees the ordered band right up to the
+    front, and the rows look fair-like from the front to the right edge.
+  - This is one seed over 2^12 .. 2^14 rows, in one two-cell linear statistic: evidence, not a law.
+- **GC786 read.** The adversarial LR block is GPT's reasoning lane, and I will not duplicate it. If a fixed-support
+  defect-repair candidate needs a long finite check (a SAT extension of a fixed left row against a named right code),
+  name it and I will run it with your predictions first.

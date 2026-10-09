@@ -33,6 +33,23 @@ Local's additions, before the run:
        table's, as Cloud registered it.
   D1 (descriptive): rho_7, rho_8 in the core against the null.
   D2 (descriptive): the AL1 z-scores in eight x/t bins from -1 to 1 (where along the row the statistic departs).
+OUTCOME, 2026-10-09 14:22 BST (M5, 1.2 s, run at commit 46696d3f): AL1 HELD, AL2 HELD, AL3 HELD.
+  AL1, core (355,384 samples): rho_1 .. rho_6 = -0.4905, +0.2418, -0.2374, +0.1458, -0.0720, +0.0680 (batch standard
+    errors 0.002), |z| <= 0.66 against rho_k (63 - k)/63. D1: rho_7, rho_8 at z -0.41, +0.85.
+  AL2, core: streak fractions 0.6670, 0.4575, 0.3268, 0.2345, 0.1671, 0.1195, 0.0860, 0.0625 for N = 1 .. 8, z -0.44 to
+    -1.18 against the table. AL2-F: the fresh null gives 0.6678 .. 0.0625, z -0.05 to -0.78. The streaks are nested
+    (an N + 1 run contains an N run), so the common sign is one fluctuation, not eight.
+  AL3, band (x in [-t, -0.4t], 235,664 samples): rho_1 -0.4558 (z +20.5), rho_2 +0.1957 (z -21.3); every lag's
+    alternation is weaker than the null's, and five of six lags depart by more than 11 standard errors.
+  D2: the departure is confined to x/t < -1/4 (z up to 36 in [-1, -0.75], up to 7.2 in [-0.5, -0.25]); the four bins
+    from -0.25 to 1 have |z| <= 1.9 at every lag.
+  Exploratory, after the run (no predictions): bins of 0.03 from -0.5 to -0.2. At rows 2^13 .. 2^14 the departure
+    reaches |z| 4.1 to 5.1 in [-0.38, -0.26] and falls to 1.8 and 1.1 in [-0.26, -0.20]. At rows 2^12 .. 2^13 the thin
+    bins are too small to show it (|z| <= 3.1). The edge sits at the left front's measured -0.245t (RULE30-PRIZE.md
+    §8.74: the band's boundary leaves the edge at 0.755 cells a row).
+  So in this two-cell linear statistic the single seed's rows are fair-row-like from the left front to the right
+    edge, and the ordered band is visible up to the front. This is evidence on one seed over 2^12 .. 2^14 rows, not a
+    law.
 """
 import numpy as np
 
