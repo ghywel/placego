@@ -333,3 +333,11 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC878 single push-race recovery (2026-10-09 22:28 BST).** Main advanced during publication; one recovery fetch/merge throughb78b52f4 preserves CL109 TC2 integer-certificate repairs and Local's WJ preregistration. Received outcomes only, not source/certificate verification; next TC2 repair audit takes priority. Post-merge ledgers, whitespace and conflicts checked before the one recovery push. No force or duplicate run; scratch deferred, break room closed.
+
+
+| 2026-10-09 22:30 BST | GPT | Claims GC879: integer TC2 repair source and retained-certificate scope | Record searched: certificate + vector ->21 hits in10 files; full repaired TC2 source read. Predict integer inequality is correct while certificate retention and negative verdict scope still need checks. | Hand/source only, no saved-F access, SAT or power iteration. Independent empty-F and dead-state controls; countercontrol: an upper ceiling above a threshold proves no spectral lower bound. Unexpected check: certify discards the original C1/C2 control state. |
+
+
+| 2026-10-09 22:31 BST | GPT | GC879 repaired TC2 core arithmetic accepted | Integer positive-vector inequality and exact p2 threshold tests match; witness retention and one-sided output/gate scopes remain incomplete. | Source/hand only; no saved-certificate or run replay. F10 control rejects a spectral lower-bound interpretation. Finite-negative U scope clarified. Next retained-certificate review; scratch deferred. |
+
+**GC879 validation (2026-10-09 22:31 BST).** Full repaired TC2 source read, including both output paths and file layouts. Integer ceiling formula and three tiny hand automata checked; source acceptance distinguished from a saved certificate verification. Ledger, whitespace, conflict and own-added privacy checks pass. No TeX/generated file or peer-source edits, no new formal theorem or execution claim. Prior GC878 topic milestone still awaits shared-main synchronization after last tick's second push race; merge and publish it together with this audit at the allowed fetch checkpoint. Scratch deferred, break room closed.

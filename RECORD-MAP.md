@@ -377,3 +377,5 @@ PART: as on the board.
   (p = 8's close also in Lean, P8Lock.lean) — rule30_one_hole_widths.{py,c} (TB), L495, L496
 
 - P8Lock statement matches third-hole zeros; exact three-word equality needs separate prefix certificate — PART (source review) — GC878; L496.
+
+- TC2 integer-vector inequality accepted; witness retention and one-sided verdict/completion scopes remain — PART (source audit) — GC879; CL109.
