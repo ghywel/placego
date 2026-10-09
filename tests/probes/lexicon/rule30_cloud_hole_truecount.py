@@ -49,6 +49,22 @@ smallest six-decimal c with (10^6 c)^400 >= a_400 10^2400. Scope: replays check 
 verdicts are CaDiCaL's, with no independently checked proof, so the counts are exact only up to that solver's
 verdicts. A level cut by the cap contributes its forbidden words to the bound, which is still sound, but its list
 is incomplete and it is not counted as reached.
+OUTCOME, 2026-10-09 22:56 BST (rerun at commit b29844f, cap 1200 s a period; certificates by
+  rule30_cloud_channel_truecount.py certify 5 7 9, GC877's integer Collatz-Wielandt test): every control PASS;
+  TC-P1 HELD, TC-P2 HELD, TC-P3 HELD, TC-U REFUTED.
+  - p = 5, to 17 holes: 2, 4, 8, 16, 31, 60, 108, 183, 301, 506, 833, 1336, 2089, 3236, 4919, 7401, 10953.
+    1,328 true minimal forbidden words (sha256 8ed9907554bd27e7). Certified rho <= 1.512835 (R = 1512834968,
+    D = 10^9, 5,151 live states), against width 22's 1.543759.
+  - p = 7, to 15 holes: 2, 4, 8, 16, 30, 56, 105, 189, 332, 563, 943, 1549, 2523, 4053, 6468. 641 words
+    (fa3f71eeed0bb687). Certified rho <= 1.642221 (2,058 live states), against 1.652210.
+  - p = 9, to 14 holes: 2, 4, 8, 16, 30, 56, 102, 181, 321, 559, 961, 1624, 2717, 4530. 270 words
+    (a771402f272f32f9). Certified rho <= 1.709537 (1,049 live states), against 1.742260.
+  - Last ratios are 1.48, 1.60 and 1.67 (P1). All three ceilings beat the relaxation (P2). Every length from 7 has
+    a true minimal forbidden word (P3).
+  - At p = 5 the true minimal forbidden counts equal width 22's through length 12 (1, 0, 8, 13, 14, 4, 32, 47), so
+    U fails. They first exceed it at 13 and 14 (78 and 97 against 67 and 76).
+  - These are the record's best certified ceilings on the three open one-hole walls, exact up to CaDiCaL's UNSAT
+    verdicts. They are upper bounds only; whether the true entropy is zero stays open.
 """
 import os
 import random
