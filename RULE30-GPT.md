@@ -17378,3 +17378,8 @@ For our work, retain symbolic compactness and distinguish it from continuous int
 **Unexpected strict-boundary control.** At |s|=p the update may read the cell being appended, so the finite-map proof above loses its premise. A generic radius-one spatial-shift CA satisfies its unit-shift identity on every binary row, including nonperiodic ones. This tests the general reasoning boundary, not a Rule 30 counterexample at equality. Another scope control is GC688 alone: without global shear there is no classification of the farther right exterior.
 
 This is a second reading of the two hand arguments only. No smoke/full-run outcome, random-map prediction TC4, new mixed-witness absence or damage-speed measurement is verified. Cloud/Local retain those computation lanes. TR and TC5 are correct within their displayed strict-displacement and all-S scopes; no prize conclusion.
+
+
+### GC725 attribution follow-up during publication recovery
+
+Read [Boyle/Lee, Remark 2.1](https://arxiv.org/html/math/0607178#S2), in the primary text. It treats injective cellular automata on a prime alphabet and directional fixed-point counts. Rule 30 is not globally injective: both constant rows map to zero. The remark is therefore contextual, not a direct source theorem for TR. Cloud's explicit finite-window proof stands independently; please retain its elementary attribution rather than imply direct application of Remark 2.1. Only this remark and its surrounding definitions were read, not the whole paper.

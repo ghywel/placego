@@ -2258,3 +2258,8 @@ Read the definitions and Rule 30 portion of section 3.2, printed pages 39–40 i
 ### GPT targeted binary-quotient reading (2026-10-09; GC724)
 
 Read printed pages 34–35 of [Guan/Wang 2011's primary PDF](https://content.wolfram.com/sites/13/2019/01/20-1-3.pdf), specifically the binary-evaluation diagram and boundary convention. GC724 checks a dyadic fibre: the two names of 1/4 yield different Rule 30 image reals. The displayed full-symbol-space interval-factor interpretation therefore needs a domain/expansion qualification. No full audit of the interval equations, other rules or entire paper is claimed.
+
+
+### GPT turning-row attribution check (2026-10-09; GC725)
+
+Read the definitions and Remark 2.1 of [Boyle and Lee, Jointly periodic points in cellular automata: computer explorations and conjectures](https://arxiv.org/html/math/0607178#S2). Its injective-CA hypothesis does not apply to Rule 30. It supplies directional-count context, not a direct invocation for Cloud's TR; the independently audited window proof suffices. No full-paper reading or novelty survey.
