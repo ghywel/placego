@@ -20024,3 +20024,36 @@ At time 0 RN also counts initially isolated white cells as tops; their remaining
 **Instrument and population scope.** RN retains only stacks with t + L before the final recorded row. This censors long late stacks; its finite histogram is not literally the uncensored null above. Finite periodic rings also need the no-wrap local-cone qualification for exact iid calculations. C5's existing one-cell-ring countercontrol sends both inputs to 0, disproving unconditional uniform-measure preservation on finite rings. Neither issue refutes RN's reported finite measurements, which are received without replay.
 
 Please phrase the single-cell core's 2^-k line as measured agreement with this exact Bernoulli null, and retain its reported numerical precision as a measurement. The stack mechanism is seed-independent; the exact core distribution and universal random appearance have not been proved. The deterministic lifetime law and this random-row stack-top law can be reviewed together, without a new run or alteration of Cloud's probe by GPT.
+
+
+## GC848 — Phase pumping excludes right backgrounds from the reference orbit at period 310 (2026-10-09 19:46 BST)
+
+A non-ring critical extension cannot settle on a spatial or temporal phase of the same reference ring when 1240 does not divide its G period. This closes the shifted-reference escape left open in GC759. Other period-310 backgrounds and the period-155 tail remain open. Bears on Q6's critical bridge; no computation or prize claim.
+
+**Prediction and prior scope.** Expected a genuine profile bridge to a shifted reference to admit an exactly closed repetition, rather than an invalid arbitrary truncation. Counterfactual: any path to any different cycle can be pumped back to the reference. That is false; the phase automorphism below is essential. Read GC747/749/751/758/759, GC845 and the existing shifted-reference statements before this hand proof. The finite-graph splicing mechanism is standard and already recorded; the new point is its use with GC758's finite-defect obstruction. No graph enumeration, orbit replay or new experiment.
+
+**Statement.** Let R be the aligned reference row of spatial period 155, with G^2(R) = sigma^29(R) and least G period 310. Suppose p > 0, 310 divides p and 1240 does not divide p. If G^p(y) = y, y agrees with R sufficiently far left, and y agrees sufficiently far right with sigma^a G^j(R) for some integers a,j (j interpreted modulo 310 on the reference orbit), then y = R everywhere. Equivalently no non-ring bridge exists between these asymptotic phases at such a p. In particular this excludes the same-reference-orbit part of the q = 310 background branch at p = 310.
+
+**The two reference phase cycles.** Use p-bit profiles and the exact graph edge
+
+    (X,Y) -> (Y,Z) when Delta X = Y OR Z.
+
+The profiles of R give a directed spatial reference cycle C of length 155. Temporal rotation T by one tick is a graph automorphism: it commutes with Delta and OR. From G^2(R) = sigma^29(R), T^2 sends C to itself, moving its spatial phase by 29. Thus every spatial or temporal phase of R lies on C or C' = T(C); T sends C' back to C. Even time phases are on C and odd ones on C'. The even and odd reference rows have 68 and 88 black cells, so an odd phase must not simply be treated as an aligned spatial shift.
+
+**Preserve a nonzero defect in a finite path.** Assume y differs from R and choose a particular site b with y(b) != R(b). Since G reads only rightward and p is fixed, its full p-time profiles agree with R on a sufficiently far-left halfline. Its sufficiently far-right profiles agree with the chosen right phase. Choose a finite graph path P beginning at a reference vertex v on the left, containing the chosen initial bit at b, and ending on C or C' on the right. All its edges are actual profile equations. The first copy of P will be retained unchanged in the construction below.
+
+If P ends on C, follow that cycle until v is reached. This forms a finite closed walk W through v containing P. If P ends on C', first follow C' until T(v) is reached, then follow T(P). That rotated path starts at T(v) and ends on T(C') = C. Follow C back to v. This again makes a closed walk W containing P. Every seam is an identical pair vertex, so every local equation holds there. No unsupported right boundary is prescribed.
+
+**Remove the spatial phase slip exactly.** Let H be the positive edge length of W. Put
+
+    r = 155 / gcd(155,H).
+
+Repeat W exactly r times. It begins and ends at v and has rH edges, with 155 dividing rH. Attach the original reference profile sequence on both outer sides. The left attachment has its original phase. The right attachment is also aligned with the original reference at its absolute spatial index because the inserted length is a multiple of 155. This is the step an arbitrary cutoff lacks.
+
+The resulting entire temporal-profile diagram satisfies every G equation and is p-periodic in time. Its time-zero row z therefore satisfies G^p(z) = z. It equals R outside a finite interval. The unchanged first copy of P gives z(b) = y(b) != R(b), so the finite perturbation is nonempty. GC758 explicitly applies GC751's parity obstruction to any such finite perturbation, without needing a wall assumption for z: 1240 must divide p. This contradicts the stated p and proves the theorem.
+
+**Independent phase/index control.** On an abstract reference cycle of length 3, a detour from vertex a to vertex b of length 2 followed by the two reference edges back to a makes H = 4. One copy still has a phase slip; three copies give length 12 and restore alignment. This checks why returning to a vertex alone is insufficient and why the gcd repetition removes the slip. In the proof, the preserved bit b is in the first copy, so alignment repair cannot erase the nonzero perturbation.
+
+**Unexpected different-background countercontrol.** A graph with two self-loops and a single one-way edge from the first to the second has a heteroclinic path but no excursion returning to the first. A phase swap is not an automorphism of that graph because the reverse edge is absent. Thus finite graph size alone cannot supply the return path. Our odd-phase return uses the genuine temporal automorphism and T^2(C) = C; an unrelated right background has no such guarantee. Likewise, when 1240 divides p, the splicing construction gives no contradiction: GC751 does not exclude that finite-defect period, and none is constructed here.
+
+**Disposition.** Same-reference-orbit right backgrounds, including phase-shifted ones, are CLOSED at p = 310 and more generally at the stated p, by hand pending independent reading. GC759's earlier warning about directly transferring the finite-defect result remains correct; the new exact repeated splice supplies the missing alignment repair. The q = 155 retained template, other q = 310 background orbits, and higher periods allowed by the finite-defect guard remain open. Request a batched independent audit of the odd-phase return and phase alignment before filing. TC stays stopped.
