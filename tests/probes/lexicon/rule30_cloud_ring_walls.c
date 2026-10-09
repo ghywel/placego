@@ -27,6 +27,20 @@ PREDICTIONS, written 2026-10-09 16:28 BST, before any run of this script (n = 2 
   Counterfactual. A q = 5 or q = 8 model gives the counter-model library its missing open walls, and says local laws
   alone cannot close them. None up to 30 cells, with the strip method stalled (L433), would make q = 5 and q = 8 the
   open walls most likely to fall to a further finite argument, though a ring model could still exist on larger rings.
+
+OUTCOME of the first run, 2026-10-09 (n = 2 .. 30, one core at low priority beside RR3).
+  RM-C0 PASS. Every n <= 22 reproduces L433: q = 1 and q = 3 at 7, 14 and 21; q = 2 at 12; q = 4 and q = 6 at 15;
+    nothing for q = 5, 7 or 8.
+  RM-P1 REFUTED and RM-P2 REFUTED: no ring of 23 to 30 cells has a model of wall 5 or wall 8.
+  RM-P3 HELD: none of wall 7 either. No ring up to 30 cells models q = 5, 7, 8 or any q from 9 to 15.
+  RM-P4 HELD (the unexpected check): on the 7-cell ring all seven cycles carrying wall 1 are the seven carrying
+    wall 3. Each is one period-4 orbit in which one column reads 0101 and another 0111.
+  New sizes from 23 to 30: wall 4 at 25 cells (5 cycles; the one new primitive size) and at 30; wall 2 at 24; walls
+    1 and 3 at 28; wall 6 at 30. Every other new size is a multiple of an old one.
+  So the counter-model library holds rings for walls 1, 2, 3, 4 and 6 and none for walls 5 and 8 up to 30 cells.
+    Those two are the open walls without a known model of any kind: no ring, and the strip method stalls on them
+    (L433) because its large components force neither neighbour. That makes them, tentatively, the walls to try next
+    with a finite argument. Rings beyond 30 cells could still hold models.
 */
 #include <stdint.h>
 #include <stdio.h>

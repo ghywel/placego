@@ -5163,3 +5163,52 @@ novelty and no prize claim.
 - *The solver's UNSAT verdicts.* This is the soft spot, and it is not a paper. Every decided value of RR, RR2 and RR3
   rests on kissat reporting UNSAT, and none has a checked certificate. Only Local's CX run has DRAT proofs that
   drat-trim verifies (80 of 80, L404). Certifying them is offered to the workers in CL084.
+
+### 8.77 Rule 30's entropy is its width-2 trace's, and the 2-adic frame second-read (2026-10-09 16:29 BST)
+
+*Cloud, from the overlooked-work survey's open items (CL085 steps 3 and 4) and Local's question in L427.*
+
+**Guillon's conventions** (doctoral thesis, Paris-Est 2008, read in the copy the survey saved). A cellular automaton
+has a diameter $d$, an anchor $m$ and a local rule on the window $[i-m, i-m+d)$ (Définition 3.1.1). On
+$\mathbb Z$ its radius is $r = m = d - 1 - m$, so Rule 30 has radius 1. The column factor of width $k$ at cell
+$i$ is the sequence of windows $[i, i+k)$ of $F^j(x)$, in the physical frame (Définition 3.4.10). Positive
+expansivity to one side of width $k$ asks that two configurations differing on that half-line differ in some
+window $[0, k)$ (section 4.6).
+
+**Lemma (proved here).** Rule 30 is not positively left-expansive of width 1, and it is of width 2.
+*Proof.* $0^\infty$ and $(01)^\infty$ are fixed points (in $(01)^\infty$ a white cell sees black on both sides and
+stays white, and a black cell sees white on both sides and stays black). Placed with column 0 white, they differ on
+every left half-line and agree on column 0 for ever; shifted by one, $(10)^\infty$ and $0^\infty$ agree on column
+$-1$. Width 2 suffices by Proposition 7's formula, $x_t(k-1) = x_{t+1}(k) \oplus (x_t(k) \lor x_t(k+1))$: columns 0 and
+1 determine every column to their left. $\square$
+
+**Consequence.** Guillon's Remark 4.6.9 (traces of every width $k \ge r$ are conjugate) and Proposition 4.8.5
+(entropy equals the width-$r$ trace's) hold for Rule 30 at width 2, not at its radius 1. Read with $r = 1$ they would
+make the width-2 trace conjugate to the width-1 trace, and the entropy $\log 2$. The same fixed points refute both:
+the width-2 words $(00)^\infty$ and $(01)^\infty$ lie over the one width-1 word $0^\infty$. Where the thesis's
+widths slip (perhaps Proposition 4.6.2's width $m$) is not identified here; only the statement for Rule 30 is
+settled. For every $k \ge 2$ the width-$k$ trace is determined by its last two columns, so it is conjugate to the
+width-2 trace, and the topological entropy of Rule 30 is that trace's entropy:
+
+```math
+\log 2 \;\le\; h_{\mathrm{top}}(\text{Rule 30})
+\;=\; \lim_{n\to\infty} \tfrac1n \log N_2(n)
+\;\le\; \tfrac{1}{14}\log 476596 ,
+```
+
+where $N_2(n)$ counts the physical frame's width-2 words of length $n$ (Local's TW, L427). The lower bound is the
+width-1 trace, a full-shift factor. The upper bound is TW's count at $n = 14$, about 1.347 bits a step, by
+subadditivity. That answers L427: the counts must be read in frame F and at width 2. They measure Rule 30's
+topological entropy itself, which no published value was found for (the survey).
+
+**The survey's 2-adic derivations, second-read by computation** (scratch, each passed):
+- In the frame moving with the right edge, with bit $k$ of $R_t$ at cell $t - k$,
+  $R_{t+1} = R_t \oplus (2R_t \lor 4R_t)$ and the centre column is bit $t$ of $R_t$. Checked on full rows for
+  $t < 300$ and on the centre for $t < 2000$.
+- $x \mapsto x \oplus (2x \lor 4x)$ permutes $\mathbb Z/2^k$ for every $k \le 20$: an invertible T-function. The period
+  of 1 modulo $2^k$ for $k = 1$ to 16 is 1, 2, 2, 4, 8, 8, 16, 32, 32, 64, 64, 64, 64, 64, 64, 128, as the survey
+  printed.
+- Rule 30 is not right-closing. A witness is $0^\infty 1 (010)^\infty$ and $0^\infty 1 (100)^\infty$: they are
+  distinct, equal far to the left, and have the same image.
+- Not checked here: the application of Coven, Pivato and Yassawi's odometer theorem, and the vertical entropy bounds.
+  Those are reading items (CL085 step 3).
