@@ -10493,6 +10493,45 @@ Neighbouring columns D,U,W,X,Y,Z,H always obey
 **Duplicate and reading gate.** GC801 read G188/G224/G189 for the six-tick candidate: those concern spatial zero returns or coefficient stencils. The combined statement and summary gate additionally reads entry29 (Rule210 empty-left uniqueness) and G256 (alternating-centre neighbour density); these concern different rules or frames and do not restate these forbidden G words. Final actual nearest G188,08,G251 were also read in full:08 propagates eventual constant diagonals under the rooted band premise, and G251 bounds L-block overlap with a settled-white diagonal. Neither states these universal local words. Formal/summary scores are retained in GC802. Local L426 verifies the six-tick proof; GPT GC802 verifies every branch of the five-tick proof, especially U(2) and the final W(2)=X(2)=0 contradiction.
 
 
+### G.GPT259. Coprime adjacent periods force a zero profile in a right tail (second-read, 2026-10-09)
+
+*Where:* RULE30-GPT.md GC820. *Credit:* GPT's lemma and consequence. Independently read by Local (chat L441), with an
+exhaustive literal check: odd m in {1, 3, 5, 7, 9, 15}, coprime n <= 8, every D and U, using GC798's exact two-equation
+projection. 78 admissible pairs, all with U = 0 and D constant. The even-m control D = 01, U = 1 is admissible, as the
+lemma's scope says. *Status:* hand proof verified by a second reader. Not a prize claim.
+*Filed by:* Local, at GPT's request (GC820). The G number is assigned here at filing; GC820 has no other.
+
+**Lemma.** Let D, U, W, X be consecutive temporal profiles of a G orbit (G(y)(i) = y(i) xor (y(i+1) OR y(i+2))), so
+$\Delta D = U \lor W$ and $\Delta U = W \lor X$. If D has an odd period m and U has a period n with gcd(m, n) = 1, then U
+is identically 0 and D is constant.
+
+**Proof.**
+1. Summed over one period, $\Delta D$ is even. An all-one $\Delta D$ would have m ones, which is odd, so $\Delta D$
+   has a zero at some residue r mod m.
+2. If U(s) = 1, then U(s + kn) = 1 for every k. These ticks meet every residue mod m, since gcd(n, m) = 1, so one of
+   them falls at r. But $U \le \Delta D$ from the first equation, a contradiction. Hence U = 0.
+3. Then $\Delta U = 0$ forces W = X = 0, and $\Delta D = U \lor W = 0$ makes D constant. ∎
+
+**Consequence (GC820).** Take the period-310 critical candidate after its rightmost complement (GC769, GC785), where
+every profile's period divides 155 and GC760 makes every adjacent joint period 155.
+- No profile is constant:
+  - a constant profile forces the next two to 0;
+  - a 0 to the right of a profile makes it constant;
+  - a 1 to the right forces an all-one difference of odd period.
+- Two adjacent proper-period profiles could reach joint period 155 only as 5 beside 31. The lemma excludes this in
+  either order.
+- So every adjacent pair contains a profile of least period 155. Any N consecutive profiles include at least
+  floor(N/2) of them, and an eventual spatial cycle of length d includes at least ceil(d/2).
+- This says nothing about E parity, black density in time, or whether such a background exists.
+
+*Controls (GC820).*
+- Stepping by 31 visits every residue mod 5, and stepping by 5 visits every residue mod 31.
+- GC817's genuine q5 tail is not a counterexample: its adjacent periods share the factor 5.
+
+*Near-entry gate (Local, at filing).* `proof_dupes.py --near G259` gives G207 (three boundary beats repeat the
+neighbouring bit), 34 (Proposition 21) and C.1 (the checkerboard lemma), with scores of 0.03 or less on the formal
+text. Read: none states or uses a coprime-period argument, so none is restated. The hard checks pass (273 entries).
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).

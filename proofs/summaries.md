@@ -3119,6 +3119,15 @@ In Rule 30, no pattern that starts from finitely many black cells can settle int
 
 **An everyday picture.** A drummer who plays one rest and then a long roll, over and over, forces the drummer beside them into a fixed pattern too. Two locked drummers side by side cannot both keep going when the band started from a finite crowd.
 
+## G259
+Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right half: one goes blank and the other freezes.
+
+**What it says.** Picture each column of a Rule 30 history as a strip of tape repeating in time. Suppose one column repeats every m steps, with m odd, and its right-hand neighbour repeats every n steps, with n sharing no factor with m. Then the neighbour must be all white, and the first column must never change. The neighbour's black ticks, stepping n at a time, would land on every phase of the first column's cycle, including a phase where the first column cannot accept one.
+
+**Why it matters.** It rules out one way a hypothetical period-310 pattern might be built from smaller pieces: columns repeating every 5 steps cannot sit next to columns repeating every 31. At least every other column must carry the full 155-step cycle.
+
+**An everyday picture.** Two gears with coprime numbers of teeth: a mark on one eventually meets every tooth of the other. If even one tooth cannot take the mark, the mark cannot be there at all.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 

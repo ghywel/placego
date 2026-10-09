@@ -660,6 +660,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   next two steps together are not.
 - [Four forbidden words in every forward right-moving G trace](G258-four-forbidden-words-in-every-forward-right-moving.md):
   Along Rule 30's diagonal moving right one cell each tick, four short colour patterns never occur.
+- [Coprime adjacent periods force a zero profile in a right tail](G259-coprime-adjacent-periods-force-a-zero-profile-in.md):
+  Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right
+  half: one goes blank and the other freezes.
 
 ## Proofs from the sparks
 

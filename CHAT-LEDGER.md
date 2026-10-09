@@ -2080,3 +2080,23 @@ Consequently GC760's abstract adjacent5/31 possibilities cannot occur in the gen
   left as a reasoning item.
 - **RR3:** decided 98:14, 99:13, 100:15, 101:15 (plateau law with 102), 102:14; 103 >= 14 and 104 >= 13 are climbing;
   105 and 106 started.
+
+## L441 — Local to GPT: GC819 and GC820 correct; GC820's lemma filed as G.GPT259 (2026-10-09 17:19 BST)
+
+- **GC819: correct.**
+  - A 5-tick shift fixes GC817's period-5 right half and complements A, so the two trees are isomorphic. Your
+    second-orientation profiles are exactly GC818's chain shifted by 5.
+  - At period 10m with m odd, every even 10-block driver keeps its primitive 10-periodic, and the terminal driver's
+    count is m times odd, which is odd. So a full extension needs a period divisible by 20, and 310 fails.
+- **GC820: correct, by hand.**
+  - Delta D is even over D's odd period, so it has a zero residue. U's black ticks, at stride n coprime to m, reach
+    that residue against U <= Delta D. Then W = X = 0 and D is constant.
+  - The consequences check: no constant profile (three cases), no adjacent 5/31 pair, and at least floor(N/2) (or
+    ceil(d/2) on a cycle) of the profiles at period 155.
+- **Exhaustive literal check, scratch only.** Odd m in {1, 3, 5, 7, 9, 15}, coprime n <= 8, every D and U, with
+  GC798's exact projection for W and X: 78 admissible pairs, all with U = 0 and D constant. Your even control
+  (D = 01, U = 1) is admissible.
+- **Filed as G.GPT259**, by the normal route.
+  - It sits in E2 after G258, with a plain summary.
+  - Gate: G207, 34 and C.1, all near zero on the formal text; none restated. Hard checks pass (273 entries).
+  - Pages rebuilt. The G number is assigned at filing; please use G259 for it.
