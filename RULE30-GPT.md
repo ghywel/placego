@@ -16746,3 +16746,22 @@ Now invert a finite target twice. The intermediate row has tail0 or1. In the fir
 **Independent and unexpected controls.** Each displayed transition can also be checked from the literal Rule30 identities on the reconstructed triple: v_next=beta XOR(u OR v) gives v_next XOR(u OR v)=beta, the required inward output. For the all-zero target with final black wall1, its intermediate white-wall0 predecessors are the all-zero row (choose neighbour0) and all-one row (choose neighbour1). Inverting these with initial black wall1 and neighbour1 gives, respectively, the all-one initial row and initial depths100100100... . The latter maps first to all-one, then to zero; the former maps first to zero, then remains zero at positive depths. Neither initial row has finite black support. Both have the initial guarded neighbour1, but the final zero target has neighbour0 and fails the future black-time test. They are inverse controls, not clock survivors. This rejects the counterfactual that a finite target automatically has finite guarded predecessors.
 
 **Disposition.** The exact two-preimage fibre of the unrestricted inverse map does not become a two-branch finite-support ancestor tree. GC690's checkerboard tree cannot be imported into Q6: backward finite-support membership is a real terminal condition, with all-one and period3 alternatives explicitly identified. This is a finite-tail classification for two inverse ticks only; no all-time finite-left exclusion, deadline, right-half compatibility or prize result. Independent hand reading requested. Stop constant-tail refinements; use this criterion only on an actual main-line target or concrete review request.
+
+
+## GC692 — One actual finite target retains only one finite guarded predecessor (2026-10-09)
+
+**One-target hand audit.** Apply GC691's finite-membership criterion to an actual finite left seed, rather than extend the constant-tail classification. Words list positive depths in increasing order; a trailing0^infinity or1^infinity specifies the whole exterior. The imposed wall starts black, then white, then black. Predicted that initial row110^infinity has target10110^infinity after two ticks, with exactly one finite member in its guarded predecessor fibre. No seed census or experiment.
+
+The forward path is
+
+    110^infinity ->0110^infinity ->10110^infinity.
+
+Both initial and final neighbours are black. Invert the target first with old white wall0 and choose its old neighbour0 or1. GC679's recurrence gives exactly the two intermediate rows0110^infinity and1010^infinity. Invert either with the initial black wall1 and neighbour fixed1. They give respectively
+
+    110^infinity,    10101 followed by1^infinity.
+
+The second row has depths1..5 equal10101 and every deeper bit1; equivalently it starts10101111... . Its first inverse target is1010^infinity. Thus this actual guarded two-tick fibre contains one finite predecessor and one eventually all-one predecessor. No missing finite alternative exists, because GC679's guarded fibre has exactly two members without tail assumptions.
+
+**Independent forward and unexpected controls.** Check the second initial row directly: with black wall1, its first five inward outputs are10100 and every farther output is0 because all far triples are111. With white wall0, the resulting1010^infinity has outputs10110^infinity. The finite branch gives the displayed0110^infinity intermediate directly. These forward substitutions use the literal Rule30 cases, independently of the serial inverse reconstruction. Unlike GC691's all-zero target, the present target has neighbour1: both endpoint black-neighbour guards hold on both predecessors, yet they do not eliminate the infinite tail. This isolates finite-membership filtering from endpoint clock tests on a real finite-seed trajectory.
+
+**Disposition.** The exact unrestricted two-branch inverse tree already loses one branch when restricted to finite black support on this concrete target. This verifies the tail criterion on a meaningful actual input and closes the counterfactual that endpoint guards suffice for finite membership. It proves no uniform branch loss, asymptotic ancestor count, future survival or Q6 exclusion. Stop one-target examples here; independent reading requested, next needs a structural finite-history constraint or another main-line obligation.

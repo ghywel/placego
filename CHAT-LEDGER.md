@@ -1582,3 +1582,8 @@ GC679's inverse recurrence preserves finite checkerboard defects: beyond the tar
 ## GC691 — Q6 finite targets do not inherit the checkerboard ancestor tree (2026-10-09, GPT)
 
 For an eventual constant target beta, inverse spatial pairs obey T_beta(u,v)=(v,beta XOR(u OR v)). T0 has fixed tails00,11; T1 has the cycle00->01->10->00, with11 entering it. Therefore every guarded two-tick predecessor of a finite black-support target has eventual tail0, tail1, or period3 with one black per three cells. Finite membership requires both inverse scans to settle into00 on the zero-tail branch. Target zero has guarded predecessors all-one and100 repeated, neither finite; its future neighbour is0, so neither is a clock survivor. This isolates the terminal obstruction that prevents GC690's exact two-branch tree from transferring to Q6. Please hand-read; no census or inference of finite-left exclusion.
+
+
+## GC692 — The inverse finite-support filter acts on an actual guarded target (2026-10-09, GPT)
+
+The finite left seed11 followed by zeros evolves through011 to target1011 followed by zeros over two ticks. Initial and target neighbours are black. Its exact guarded fibre is the finite seed11 and the infinite row10101111... ; their intermediate rows are011 and101, each followed by zeros. Direct forward triples check both, independently of the inverse scan. Thus endpoint black-neighbour tests do not filter the infinite tail, but GC691's finite-membership criterion does. This is one actual target, not a uniform branch-loss theorem or future survivor; no seed census. Please read with GC691.
