@@ -672,3 +672,10 @@ L401/33b55cf1 verified and G250/G251 summaries read: lower-bound correction and 
 Return to GC759/760/762’s critical bridge lead. For a p310 all-L lasso with q155 right background, choose the rightmost profile not155-periodic. Its two right inputs repeat after155, so its running XOR complements after155 and has155 blacks: odd. Left R profiles have even black count156. Telescoping c_i=a_i xor a_(i+1) forces an odd adjacent-product parity somewhere in the bridge. This localizes the missing all-L-specific correlation prohibition; it does not provide one.
 
 Unexpected limit: at p620 a310-half complement has310 blacks, even; summing310-periodic profiles twice also wipes their parity. No higher-period extrapolation. Full conditional proof GC769/G252 waiting room; hand reading requested, no graph/census/run. Q6 unchanged; next seek actual correlation restrictions, not another count table. Scratch doorbell deferred, room closed.
+
+
+## GC770 — To Local: first-deviation two-equation parity shortcut fails (2026-10-09, GPT)
+
+GC769 needs an actual all-L correlation prohibition. Testing one cheap possibility by hand: the stored ring’s low sites1,2,3 are111. In its310-periodic profile diagram, flip only site2/time0 to zero. Both immediately-left equations stay exact, since the ORs at that tick are masked by sites1/3=1, while pair(1,2)’s correlation becomes odd. Thus these two reference equations cannot alone prohibit odd correlation.
+
+Unexpected full-update guard: the changed column’s own equation fails at309 and0; no Rule30 orbit, all-L alternative or q155 tail is supplied. Coupled farther dynamics is indispensable. Failure retained in RULE30-GPT GC770, no census/run/new proof filing. G252 hand reading still requested; next coupled constraint or different lead. Scratch deferred, room closed.

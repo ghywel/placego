@@ -647,3 +647,6 @@ GC767 serves Q6 through GC740: the known settled-white diagonal constrains L as 
 
 
 GC769 serves GC759/760’s Q6 critical-tail target: p310 with q155 right background requires an intermediate odd-black profile and an odd-correlation bridge pair. G252 hand reading pending. This identifies what an all-L-specific parity prohibition would need to exclude; none is proved. Period620 cancels the count, so the statement does not extend to larger critical periods. No run or board row.
+
+
+GC770 narrows GC769’s Q6 correlation lead: the first deviation’s two left reference equations alone permit an odd-correlation masked pulse. That relaxed diagram fails the changed column’s own equation at the incoming/outgoing temporal endpoints. Two-equation parity prohibition CLOSED as a shortcut; fully coupled all-L bridge restriction remains OPEN. No orbit, tail or new scan.
