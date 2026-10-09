@@ -176,6 +176,7 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
         <span class="ro" id="rulerRo"></span>
       </div>
       <div class="tabctl" data-for="front" hidden>
+        <button id="frontSound" type="button" aria-pressed="false">Sound: off</button>
         <span class="ro" id="frontRo"></span>
       </div>
     </div>
@@ -263,6 +264,11 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
         like a random walk, a few hundred cells after a few hundred thousand rows. Each tick doubles the time, so the
         last stretch holds half of all the rows, and its late climb, which looks sudden, is an ordinary swing of the
         walk. Its steps have no rhythm: their Fourier spectrum is flat, with no spikes.</p>
+      <p><b>Sound</b>, off until you press it, turns the chart's curve into one gliding tone: its pitch is where the
+        curve sits between the two dashed guides, A4 on the centre line (the same A as the ruler's notes) and about
+        three quarters of an octave up or down on a guide. Dividing by the guides' growth keeps the tone in the middle of hearing all the way down.
+        It keeps its own time, so it goes on while the page is scrolled away, and it fades out where the record ends,
+        at row 524,288.</p>
     </section>
     <section>
       <p class="kicker">How sure</p>
@@ -366,11 +372,15 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
       get running() { return running; },
       row: () => ctx ? rowNow() : row0,
       listen(fn) { onRow = fn; },
-      start(row, r, play) {                              // switch on at a row, at r rows a second
+      audio() {                                          // the page's one audio context, shared with the front's tone
         const AC = window.AudioContext || window.webkitAudioContext;
-        if (!AC) return false;
+        if (!AC) return null;
         if (!ctx) { ctx = new AC(); master = ctx.createGain(); master.gain.value = 0.16; master.connect(ctx.destination); }
         ctx.resume().catch(() => {});
+        return { ctx, master };
+      },
+      start(row, r, play) {                              // switch on at a row, at r rows a second
+        if (!this.audio()) return false;
         on = true; rate = r; setMinV(); rebase(row);
         running = !!play; if (running && !timer) pump();
         return true;
@@ -767,10 +777,26 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
       ox = (W - ncol * cell) / 2 + 10; oy = narrow ? 10 : (H - (T + 1) * cell) / 2;
     }
     const X = x => ox + (x + T) * cell;
+    // the edge's distance from the dashed line, in units of sqrt(t): where the chart's curve sits between its +-sqrt(t)
+    // guides. Exact rows to 512, then the probe's samples, interpolated
+    function bAt(l) {
+      if (l <= T) return B[Math.max(0, Math.floor(l))];
+      let lo = 0, hi = DS.length - 1;
+      while (hi - lo > 1) { const m = (lo + hi) >> 1; if (DS[m][0] <= l) lo = m; else hi = m; }
+      const [t0, b0] = DS[lo], [t1, b1] = DS[hi];
+      return t1 > t0 ? b0 + (b1 - b0) * (l - t0) / (t1 - t0) : b0;
+    }
     return {
       layout,
+      get lt() { return lt; },
+      zAt(l) { l = Math.max(16, Math.min(524288, l)); return (bAt(l) - 0.754 * l) / Math.sqrt(l); },
       reset() { lt = 16; acc = 0; },
       tick(dt, speed) {
+        if (FrontSound.on && FrontSound.running) {      // the tone is the clock: the drawing follows it
+          const ft = Math.max(16, Math.min(524288, Math.floor(FrontSound.row())));
+          if (ft === lt) return false;
+          lt = ft; return true;
+        }
         if (lt >= 524288) return false;
         const rate = lt < T ? T / 8 : lt * 0.35;
         acc += dt * speed * rate / 1000; if (acc < 1) return false;
@@ -837,8 +863,90 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
           `row <b>${tt.toLocaleString()}</b> · ordered band <b>${bb.toLocaleString()}</b> diagonals deep · edge at x/t ` +
           `<b>${((-tt + bb) / tt).toFixed(4)}</b> · off the dashed line by <b class="m">${Math.round(bb - 0.754 * tt)}</b> cells` +
           (lt > T ? " · beyond the drawing: on the chart" : "") +
+          (FrontSound.on ? ` · tone <b>${Math.round(FrontSound.pitch(lt))} Hz</b>` : "") +
           ` · <span class="c">in-page check ${checkOk ? "agrees with the probe" : "DISAGREES"}</span>`;
       },
+    };
+  })();
+
+  // The left front as sound, off until pressed: one gliding tone whose pitch is the edge's distance from the dashed
+  // line in units of sqrt(t), A4 (440 Hz, the ruler's A) on the line and about three quarters of an octave either
+  // way on the chart's +-sqrt(t) guides. Dividing by sqrt(t) undoes the random walk's growth, so the tone stays in the middle of
+  // hearing for the whole descent. It keeps its own time on the audio clock, as the ruler's music does, and fades
+  // out where the record ends, at row 524,288.
+  const FrontSound = (() => {
+    let A = null, osc = null, sub = null, bus = null, on = false, running = false, timer = 0;
+    let l0 = 16, time0 = 0, spd = 1, endFn = null;
+    const AHEAD = 2.5, STEP = 0.05, END = 524288;
+    const pitch = l => 440 * 2 ** (0.75 * Math.max(-2.4, Math.min(2.4, Front.zAt(l))));
+    function rowAfter(l, tau) {                         // the drawing's own pace: 64 rows a second to 512, then 35% a second
+      if (tau <= 0) return l;
+      if (l < 512) {
+        const tA = (512 - l) / (64 * spd);
+        if (tau < tA) return l + 64 * spd * tau;
+        tau -= tA; l = 512;
+      }
+      return Math.min(END, l * Math.exp(0.35 * spd * tau));
+    }
+    const rowNow = () => running ? rowAfter(l0, A.ctx.currentTime - time0) : l0;
+    function voices() {
+      const ctx = A.ctx;
+      if (bus) bus.disconnect();
+      bus = ctx.createGain(); bus.gain.value = 0.0001; bus.connect(A.master);
+      osc = ctx.createOscillator(); osc.type = "sine";
+      sub = ctx.createOscillator(); sub.type = "triangle";
+      const sg = ctx.createGain(); sg.gain.value = 0.25;
+      osc.connect(bus); sub.connect(sg); sg.connect(bus);
+      const f = pitch(l0); osc.frequency.value = f; sub.frequency.value = f / 2;
+      osc.start(); sub.start();
+    }
+    function pump() {
+      timer = 0;
+      if (!running) return;
+      const ctx = A.ctx, now = ctx.currentTime;
+      osc.frequency.cancelScheduledValues(now); sub.frequency.cancelScheduledValues(now);
+      osc.frequency.setValueAtTime(pitch(rowNow()), now); sub.frequency.setValueAtTime(pitch(rowNow()) / 2, now);
+      for (let k = 1; k * STEP <= AHEAD; k++) {
+        const when = now + k * STEP, l = rowAfter(l0, when - time0), f = pitch(l);
+        osc.frequency.linearRampToValueAtTime(f, when); sub.frequency.linearRampToValueAtTime(f / 2, when);
+        if (l >= END) break;
+      }
+      if (rowNow() >= END) {                             // the record ends: fade out and switch off
+        bus.gain.setTargetAtTime(0.0001, now, 0.6);
+        running = false; on = false; const b = bus; setTimeout(() => b.disconnect(), 4000); bus = null;
+        if (endFn) endFn();
+        return;
+      }
+      timer = setTimeout(pump, 200);
+    }
+    function rebase(l) { l0 = l; if (A) time0 = A.ctx.currentTime; }
+    return {
+      get on() { return on; },
+      get running() { return running; },
+      pitch,
+      row: () => A ? rowNow() : l0,
+      onEnd(fn) { endFn = fn; },
+      start(l, speed, play) {
+        A = Sound.audio(); if (!A) return false;
+        on = true; spd = speed || 1; rebase(Math.min(l, END - 1)); voices();
+        bus.gain.setTargetAtTime(1, A.ctx.currentTime, 0.08);
+        running = !!play; if (running && !timer) pump();
+        return true;
+      },
+      stop() {
+        if (!on) return;
+        on = false; running = false;
+        if (timer) { clearTimeout(timer); timer = 0; }
+        if (bus) { const b = bus; b.gain.setTargetAtTime(0.0001, A.ctx.currentTime, 0.05); setTimeout(() => b.disconnect(), 400); bus = null; }
+      },
+      play(yes) {
+        if (!on || yes === running) return;
+        const l = rowNow(); running = yes; rebase(l);
+        bus.gain.setTargetAtTime(yes ? 1 : 0.0001, A.ctx.currentTime, 0.08);
+        if (running && !timer) pump();
+      },
+      setSpeed(sp) { const l = rowNow(); spd = sp; rebase(l); },
+      seek(l) { rebase(l); },
     };
   })();
 
@@ -876,6 +984,7 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
     front: "The left front" };
   function show(name) {
     if (name !== "ruler" && Sound.on) { Sound.stop(); soundLabel(); }   // the switch lives on the ruler's toolbar
+    if (name !== "front" && FrontSound.on) { FrontSound.stop(); frontLabel(); }
     active = name;
     if (EMBED) document.querySelector("h1").textContent = TITLES[name];
     document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === name)));
@@ -885,14 +994,16 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
   }
   document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => show(b.dataset.tab)));
   playBtn.addEventListener("click", () => {
-    playing = !playing; playBtn.textContent = playing ? "Pause" : "Play"; Sound.play(playing);
+    playing = !playing; playBtn.textContent = playing ? "Pause" : "Play"; Sound.play(playing); FrontSound.play(playing);
   });
   document.getElementById("stepb").addEventListener("click", () => { VIEWS[active].stepOnce(); draw(); });
   document.getElementById("again").addEventListener("click", () => {
-    VIEWS[active].reset(); if (active === "ruler") Sound.seek(0); draw();
+    VIEWS[active].reset(); if (active === "ruler") Sound.seek(0); if (active === "front") FrontSound.seek(16); draw();
   });
   const rulerRate = () => speed * Ruler.T / 9;           // rows a second, the drawing's own pace
-  document.getElementById("speed").addEventListener("change", e => { speed = Number(e.target.value); Sound.setRate(rulerRate()); });
+  document.getElementById("speed").addEventListener("change", e => {
+    speed = Number(e.target.value); Sound.setRate(rulerRate()); FrontSound.setSpeed(speed);
+  });
   const fT = document.getElementById("frameTrue"), fR = document.getElementById("frameTurn");
   fT.addEventListener("click", () => { Ring.setFrame(false); fT.setAttribute("aria-pressed", "true"); fR.setAttribute("aria-pressed", "false"); });
   fR.addEventListener("click", () => { Ring.setFrame(true); fR.setAttribute("aria-pressed", "true"); fT.setAttribute("aria-pressed", "false"); });
@@ -909,12 +1020,24 @@ html.embed .tabs, html.embed .eyebrow { display: none !important; }
     Ruler.build(Number(e.target.value)); Sound.setRate(rulerRate()); Sound.seek(0); draw();
   });
   const sb = document.getElementById("rulerSound");
-  const soundLabel = () => { sb.setAttribute("aria-pressed", String(Sound.on)); sb.textContent = Sound.on ? "Sound: on" : "Sound: off"; };
+  const soundLabel = () => {
+    sb.setAttribute("aria-pressed", String(Sound.on)); sb.textContent = Sound.on ? "Sound: on" : "Sound: off";
+  };
   sb.addEventListener("click", () => {
     if (Sound.on) Sound.stop(); else Sound.start(Ruler.t, rulerRate(), playing);
     soundLabel();
   });
   Sound.listen(row => { if (active === "ruler") Ruler.listen(row); });
+  const fb = document.getElementById("frontSound");
+  const frontLabel = () => {
+    fb.setAttribute("aria-pressed", String(FrontSound.on)); fb.textContent = FrontSound.on ? "Sound: on" : "Sound: off";
+  };
+  fb.addEventListener("click", () => {
+    if (FrontSound.on) FrontSound.stop();
+    else FrontSound.start(Front.lt >= 524288 ? 16 : Front.lt, speed, playing);
+    frontLabel(); draw();
+  });
+  FrontSound.onEnd(() => { frontLabel(); draw(); });
   const mq = matchMedia("(prefers-color-scheme: dark)");
   const retheme = () => { palette(); draw(); };
   mq.addEventListener ? mq.addEventListener("change", retheme) : mq.addListener(retheme);
