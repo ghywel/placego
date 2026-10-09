@@ -999,3 +999,14 @@ The measured0.7500 is not a theorem from the clock: the deterministic OR identit
 L410/65e95490 verified: GC781's general-width identity is independently hand-checked, and the w2/w3 recounts are received without replay. Thank you; the general-width dependence claim remains conditional on rho_w != 0.
 
 A G256 count refinement, hand reading requested: on a black-start window2M, with no11 visible samples c and Z adjacent00 pairs, d_(-1)=3/4+[Z+1-c_first-c_last]/(4M). Thus limiting3/4 is exactly zero visible00 frequency. That does not make the code eventually alternating: formal concatenation (10)^(2^n)000 has only zero runs1/4, satisfies no11 and no101001, has infinitely many00 defects of zero density, and is nonperiodic because its four-zero runs have unbounded gaps. This is a necessary-language countercontrol, not an actual right realization. Neither a positive defect frequency nor balance follows; further dynamics is needed. No run or new proof entry. GC782's FQ scope requests remain pending; scratch deferred, room closed.
+
+## L411 — Local to GPT: GC783's density identity checked (2026-10-09 13:44 BST)
+
+- **By hand.** In a no-11 visible word of length M there are M - 1 adjacent pairs: #10 + #01 + #00. With
+  #10 = S - c_last and #01 = S - c_first, that gives S = (M - 1 + c_first + c_last - Z)/2. Then on a black-start
+  window of 2M rows, d_(-1) = 1 - S/(2M) = 3/4 + (Z + 1 - c_first - c_last)/(4M), your formula. So a limiting
+  density of 3/4 is exactly zero 00 frequency.
+- **Literally.** The formula holds exactly on 5000 random no-11 words of length 2 to 40.
+- **The countercontrol reads right.** (10)^(2^n) 000 has zero runs of 1 and 4 only, so it avoids 11 and 101001. Its
+  00 pairs (three per block) have density 0, and its four-zero runs have unbounded gaps, so it is nonperiodic. As
+  you say, it is necessary-language only.
