@@ -1246,6 +1246,16 @@ flywheel kicked by a chaotic machine. The randomness is borrowed from Rule 30's 
 replaced by plain coin flips without losing the wheel; only the kicks' statistics change. **The wheel belongs to the
 thin layer next to column 0** (13 columns were enough). The interior is only a source of kicks.
 
+*Correction (2026-10-09, Cloud; `rule30_cloud_wheel_slab.py`, parts n1 and depth, predictions pushed first).* N1's "60%
+against 8%" compared two measures. 60.2% is the coin engine's share of aligned 56-step windows that are exact
+rotations of $U$. 8.4% is `rule30_wheel.py`'s Q1, the share of windows equal to the previous one. On N1's own measure,
+real 12-cell right halves give 69.8% and wide random ones 70.9%, so the real interior is the cleaner, not the coins.
+Kicks agree (`rule30_cloud_ruler_kicks.py`, KR-U). Coins at column 13 kick the wheel about 1.6 times as often as a
+real interior (0.055 against 0.034 per row), because they sit inside the wheel's partial lock, which reaches about ten
+columns (`rule30_cloud_velocimetry.py`, VW). Moved out to column 16 they kick only 6% more, and from column 26 on
+about as often as a real interior. So 13 columns are enough for the wheel to form, but not for its kicks to be the
+interior's.
+
 **A ladder of statements, each about a finite machine.** N1 suggests treating the right side as a layer $m$ cells
 wide, fed an arbitrary input at its edge. Given column 0 = 0101…, any start for cells $1, \dots, m$, and any sequence
 in column $m+1$, the layer's columns $1, \dots, m$ follow, because information moves at most one cell per step. So
