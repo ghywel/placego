@@ -16202,3 +16202,31 @@ This is a qualitative equivalence, not a bound on T(M) or a proof of emptiness f
 **Independent endpoint and unexpected positivity controls.** The critical beta expansion of1 has every finite prefix admissible but its unique limiting original fraction is1/2, excluded from the initial strict interval. Its next fractions are1/4,3/8,1/16, checking the single-boundary repair directly; no positive ordinary integer is asserted to realize that critical word. The unexpected control is n0: its all-zero itinerary has nonempty windows [0,(1/2)*(2/3)^T) at every finite horizon, yet the only limiting real is xi0, which is excluded. Thus replacing1<=n<=M by0<=n<=M would make the equivalence false. The positivity guard is essential.
 
 **Disposition.** Half-open windows alone fail naive compactness, but they do not block the bounded-positive-start implication once a forward shift is allowed. Actual residue extinction remains open; the next quantitative target is T(M) or a placement mechanism, not marginal fractional-word count or carry-age algebra. Local review requested; no Z-number witness, exclusion, Collatz theorem or prize candidate.
+
+
+## GC665 — The Mahler shrinking predecessor has explicit residue and quarter guards (2026-10-09)
+
+**Scope and prediction.** After GC664, audit one actual arithmetic placement constraint. Existing G50-G51 supplies the integer/fractional split, with the underlying rational-base reduction credited there and in PRIOR-ART. This is an elementary consequence, not a new Mahler theorem or a revival of Rule30's closed root-descent route. Predict integer residue modulo3 and a strict quarter threshold decide exactly whether one backward3/2 step retains the white fractional digit. No experiment or census.
+
+Let x=n+u, n>=0 integer and0<=u<1/2. Its only real predecessor is y=2x/3. Writing n=3m+r gives
+
+    r0: y=2m + 2u/3, always white;
+    r1: y=2m + (2+2u)/3, never white;
+    r2: y=(2m+1) + (1+2u)/3, white iff u<1/4.
+
+Thus any positive Z-number with n divisible by3 has a smaller positive Z-number predecessor. If n is2 modulo3 and u<1/4 it also has one. Its future orbit after the predecessor is the original Z orbit, so no new future compatibility assumption is needed. Any positive Z-number has n>=1: if0<x<1/2, its first forward iterate reaching1/2 is less than3/4 and violates the demanded half-interval. A minimal positive integer part among hypothetical Z-numbers therefore exists and cannot fall in either predecessor-admitting case. This is a conditional restriction, not a witness or nonexistence proof.
+
+Intersecting with G50's necessary forward branch intervals leaves these possibilities for a minimal integer part:
+
+    n1 modulo6: 1/3<=u<1/2;
+    n2 modulo6: 1/4<=u<1/3;
+    n4 modulo6: 0<=u<1/3;
+    n5 modulo6: 1/3<=u<1/2.
+
+These nonempty root domains remain; shrinking does not apply to every candidate. There is no upper bound on the minimal integer part or extinction time T(M).
+
+**Even-prefix scope.** For n=2^k*m with m odd, the first k rounded-map branches are even. Their admissible initial fractional interval is[0,(1/2)*(2/3)^k), and multiplication maps it bijectively to the full half-interval at integer part3^k*m. Consequently existence of a Z-number with integer part2^k*m is equivalent to existence with integer part3^k*m. This exact reduction increases the integer part; it cannot be used as shrinking induction on n.
+
+**Independent finite controls and unexpected strict boundary.** At x=25/4, n6,u1/4, the predecessor25/6 has fractional part1/6 and is white. At x=29/4, n7,u1/4, its predecessor29/6 has fractional part5/6 and fails. At x=41/5, n8,u1/5, the predecessor82/15 has fractional part7/15 and passes; the next point123/10 has fraction3/10. These are finite arithmetic checks, not Z-number claims. Unexpectedly x=33/4, n8,u1/4, has predecessor11/2 with fractional part exactly1/2, which is excluded even though x itself is white. Thus replacing the strict u<1/4 guard by u<=1/4 is false. The two-even-step check n4->6->9 takes u in[0,2/9) onto the full final half-interval, validating the nonshrinking reduction.
+
+**Failure retained and next.** Predecessor arithmetic excludes some minimal candidates but leaves all four displayed root domains. It supplies no mechanism to extinguish them or a uniform finite-horizon bound. Stop generic shrinking/root reductions absent a constraint inside those domains; do not multiply their marginal interval sizes into a selected-orbit probability. Next actual residue placement or an independent review request. Local reading requested; Q9 remains open and no prize candidate is asserted.
