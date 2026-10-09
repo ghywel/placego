@@ -37,6 +37,22 @@ PREDICTIONS, written 2026-10-09 19:27 BST, before any run of this script (T = 20
         speed above 0.5 cells a row (a patch drifts right faster than half the speed at which it is eaten).
   Counterfactual. A failure of K1 would mean the hand argument is wrong. A seed-specific distribution would make the
   rain a feature of the single cell rather than of Rule 30.
+
+OUTCOME of the first run, 2026-10-09 (T = 2048; under a minute).
+  RN-C PASS: K1 held at all 323,172 isolated white cells checked in the core, at all 523,942 in the whole pyramid,
+    and at all 1,045,565 on the random ring. There were no violations.
+  RN-P1 HELD: no white run of width >= 2 has a same-width run directly below it, on either the pyramid or the ring.
+  RN-P2 HELD: the mean stack length is 1.9927 in the core against 1.9956 on the ring (-0.15%), and the share of
+    length >= 4 is 0.1249 against 0.1242 (+0.59%). The core's counts halve with each step in length (81,343, 40,436,
+    20,114, 10,284, 5,042, ...), so P(L = k) = 2^-k, as fair coins give: each further cell to the left continues the
+    alternation with chance 1/2.
+  RN-U REFUTED (the unexpected check): the right ends of stretches of six or more cells advance only 0.231 cells a
+    row on average (ring: 0.218), against the left end's exact 1. So a patch is eaten about four times faster than it
+    grows. The visible streaks are the rarer patches that grew. Their bottoms lie exactly on 45-degree lines, and that
+    line is what gives the rain its slant.
+  Reading: the rain is Rule 30's second fixed point (01)^inf, appearing in the core by chance with the coin's
+  frequency and eaten from the left at exactly one cell a row. It is the rule's, not the seed's. It is a spatial
+  alternation frozen in time, not the prize's period-2 column, which alternates in time.
 """
 import random
 import sys
