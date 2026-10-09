@@ -3080,6 +3080,13 @@ Infinitely many finite starting rows (11, 101, 1011, 10101, ...) grow into exact
 
 **Why it matters.** It answers the owner's cipher question in miniature: the centre column is an autokey encryption of the starting row, and it cannot tell which of infinitely many finite keys made it. A scan of every right half up to 16 cells found no other such seed. It does not touch the prize problems' difficulty, since every one of these seeds has the same column as the single cell. Cloud proved it by hand after an exploratory scan; it waits for a second reader.
 
+## 34
+A finite seed that shares the single cell's centre column must start its left half exactly where its right half, on its own, would first break that column.
+
+**What it says.** Rule 30 pushes any difference on the left rightward at exactly one cell per step. So a black cell added deep on the left reaches the centre at a time equal to its depth, and changes the column there. A left half can only help if it arrives at the very moment the right half would go wrong. With a white or a fringe right half nothing ever goes wrong, so the left half must be white.
+
+**Why it matters.** It turns the open half of Proposition 20 into two finite searches. Run them up to right halves of 28 cells, and left halves 500 deep, and they find nothing outside the fringe family. Whether the family is complete for all sizes is still open. Cloud proved it by hand; it waits for a second reader.
+
 ## W234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 

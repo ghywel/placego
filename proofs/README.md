@@ -654,3 +654,6 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
 
 - [Finite early clock and arbitrarily delayed deep resonance](W234-finite-early-clock-and-arbitrarily-delayed-deep-resonance.md):
   A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
+- [Proposition 21 (proved by hand; waiting room, second reader wanted): a seed sharing the single cell's centre column begins its left half exactly where its right half alone fails](34-proposition-21-proved-by-hand-waiting-room-second.md):
+  A finite seed that shares the single cell's centre column must start its left half exactly where its right half,
+  on its own, would first break that column.

@@ -50,6 +50,28 @@ Counterfactual: a survivor outside the family in EQ1 to EQ3 would be a new equiv
   and then proved like Proposition 20 or broken. EQ1 to EQ3 holding is evidence, not a proof: wider right halves and
   deeper left halves stay open.
 REFUTED-BY: EQ-C1 or EQ-C2 failing (the instrument); EQ1 to EQ4 failing.
+
+OUTCOME of the first full run, 2026-10-09 (05:41 to 05:43 BST, 1 min 48 s on four cores): ALL CHECKS PASS.
+  EQ-C2 PASS: Lemma U1 holds on all 65,535 keys of width 1 .. 16 (no disagreement), and the white plaintexts are
+  exactly the 16 fringes. EQ-C1 PASS.
+  EQ1 HELD: at every exact width 1 .. 28, exactly one right half keeps the single cell's column for 3000 steps with an
+  empty left half, and it is S_w.
+  EQ2 REFUTED as worded: 36,203 keys of width <= 28 survive the window D = 200, T = 240, 36,174 of them outside the
+  family, every one with a white plaintext up to depth 239. The instrument was too short: by Lemma U1 those
+  plaintexts' first black is at depth tau(R), and these keys have tau(R) >= 240 (the longest is 476, EQ4). The run
+  printed the first twenty; the smallest is 34,954, of width 16 (the earlier T = 400 scan rejected it). The conclusion
+  EQ2 was meant to support still follows, post hoc, from EQ1 and Lemma U1. A non-fringe key of width <= 28 has
+  tau(R) < 3000 by EQ1. If tau(R) <= 239, the decryption found a black at a depth from 201 to 239. If
+  tau(R) >= 240, the corollary puts the shallowest black of any matching left half at depth tau(R) > 200. Either way,
+  no finite seed with |R| <= 28 and a left half of depth <= 200 shares the column, apart from the family.
+  EQ3 HELD: width <= 20 to depth 1000 (T = 1040), only the 21 keys of the family survive.
+  EQ4 HELD (the unexpected check): the longest-lasting non-fringe key holds 476 steps (width 28, cells
+  0110001101101001010010100111). By width: 315 at 19, 413 at 20 to 27 (all from the prefix 00000100011001001110,
+  continued by fringe-like tails), 476 at 28.
+  POST HOC (05:43 to 05:48 BST, labelled as such; no prediction was written for it): fringe_uniqueness.c mode B at
+  width <= 28 with D = 500 and T = 540, a window longer than every tau(R) found (476). Exactly the 29 keys of the
+  family survive. So, directly: no finite seed with a right half of up to 28 cells and a left half of depth
+  <= 500 shares the single cell's column, apart from the single cell and the S_r.
 """
 import pathlib, subprocess, sys, tempfile
 from concurrent.futures import ThreadPoolExecutor
