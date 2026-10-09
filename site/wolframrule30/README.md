@@ -18,8 +18,10 @@ Stephen Wolfram, so it is written for a reader with no background, and every cla
 The landing page walks a reader with no background to the current state of Problem 1, in seven chapters: the rule;
 why it matters; order at the edges (the left front, the edge ruler); the whole picture (the plate); assume the
 opposite (the crystals, the sieve, the heartbeat); what we found (the necklace, the turning ring); how it was done.
-It has two visuals of its own, the growing pyramid with its centre column read off and the rule applied one cell at a
-time, and embeds every render: ten visuals, eight of them in frames. `bricks.html` is embedded four times, one view
+It has three visuals of its own, the growing pyramid with its centre column read off, the rule applied one cell at a
+time, and one dot and then three growing Sierpinski triangles (just before the sieve), and embeds every render:
+eleven visuals, eight of them in frames. The edge ruler's Sound button is off by default (Web Audio, started only by
+a click). `bricks.html` is embedded four times, one view
 per frame, chosen by the hash (`#front`, `#ruler`, `#crystals`, `#ring`).
 
 The four render pages are full pages in their own right, with a link back to the story. Opened with `?embed`, a page
