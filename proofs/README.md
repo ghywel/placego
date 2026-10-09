@@ -685,6 +685,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   digit can stay 0 is fixed exactly by how many times 2 divides the starting whole number.
 - [G traces never contain 000001101](G267-g-traces-never-contain-000001101.md): A column of Rule 30, read in its
   light-speed frame, can never show the nine-beat pattern five whites, two blacks, a white, a black.
+- [G traces never contain 0001101011](G268-g-traces-never-contain-0001101011.md): Another short pattern can never
+  appear in a column of Rule 30 read in its light-speed frame: three whites, two blacks, a white, a black, a white,
+  two blacks.
 
 ## Proofs from the sparks
 

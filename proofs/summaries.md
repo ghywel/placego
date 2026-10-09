@@ -3200,6 +3200,15 @@ A column of Rule 30, read in its light-speed frame, can never show the nine-beat
 
 **An everyday picture.** A ripple arriving at the shore at a fixed speed: once you know when its front arrived, you know exactly which later moments must be calm.
 
+## G268
+Another short pattern can never appear in a column of Rule 30 read in its light-speed frame: three whites, two blacks, a white, a black, a white, two blacks.
+
+**What it says.** Assume the pattern appears and follow the black front that must have produced it. The pattern's first black pins down where the front started. Its middle beats pin down the next few cells. Its last two blacks pin down two more. Then, running the front two steps back in time, no earlier row could have produced those cells.
+
+**Why it matters.** It was the last search-only fact used to rule out a family of hypothetical repeating patterns, and it is now proved twice: once by hand, and once by a computer certificate that a formally verified checker has confirmed.
+
+**An everyday picture.** A footprint trail that, traced backwards, would need the walker to have stood in two places at once.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
