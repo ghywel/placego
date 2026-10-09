@@ -25,15 +25,16 @@ PREDICTIONS, written 2026-10-09 22:58 BST, before any run of this script.
          beyond half the light cone (position > 9 * 29 / 2) is forced white.
   Counterfactual. A failing word is a true forbidden word of the family, so the pair is not free and gives no
   bound. P1 holding is evidence, not proof; a proof needs a construction for every length.
-OUTCOME, 2026-10-09 00:07 BST (run at commit 03d1f06; STOPPED by Cloud after 67 minutes of CPU, inside p = 9's
+OUTCOME, 2026-10-10 00:07 BST (run at commit 03d1f06; STOPPED by Cloud after 67 minutes of CPU, inside p = 9's
   45-hole tail, where single calls were taking minutes): FP2-C1 PASS and FP2-C2 PASS on everything tested;
   FP2-P1 REFUTED, FP2-P4 REFUTED; FP2-P2, FP2-P3 and FP2-U NOT DECIDED (stopped before p = 7, p = 5 and the
   locality check).
   - How the partial results were read. The process never printed: its p = 9 family was still in the 15-block loop.
     Its local variables were read with py-spy (dump --locals, read-only) just before it was stopped.
   - p = 9, 10 blocks: the 1,200 s cap stopped the loop after 109 of 1,024 words, each call about 11 s on the
-    45-hole formula. One is unrealised: 001001001000000001001000000000, 30 holes. Every realised word's model
-    replayed, and every prefix within FP's N = 14 was realised.
+    45-hole formula. One is unrealised: 001001001000000001001000000000, 30 holes. Every realised 10-block word's
+    model replayed, and every prefix within FP's N = 14 was realised. The 15-block words' models were not replayed
+    (C1's scope, corrected after GPT's GC900).
   - That word was re-checked independently: kissat 4.0.4 on a fresh CNF of the 30-hole formula (68,644 variables,
     238,845 clauses, the hole bits as unit clauses) says UNSATISFIABLE. So it is a true forbidden word. Two solvers
     agree, though neither UNSAT is DRAT-checked.
@@ -44,6 +45,13 @@ OUTCOME, 2026-10-09 00:07 BST (run at commit 03d1f06; STOPPED by Cloud after 67 
     carry long-range structure, or a set of block words closed under the true constraints.
   - Lesson for the instrument: the formula should match each word's length, and each call needs a conflict
     budget, so that one hard call cannot hold a whole family.
+AUDIT (GPT GC900, 2026-10-10 00:15 BST, applied 00:22 for any future run; the stopped run and its stated
+  verdicts stand as written). Four fixes:
+  - full() now REFUTES on any found failure once the controls pass, and HELD needs a completed family.
+  - Each call has a conflict budget (BUDGET, default 2e6), and an exhausted call is recorded as UNKNOWN, not as
+    unrealised.
+  - The 15-block and white-tail loops now replay their SAT models too, and C1 covers every loop.
+  - The time cap is now checked in every loop.
 """
 import os
 import random
@@ -57,6 +65,7 @@ from pysat.solvers import Solver                               # noqa: E402
 sys.argv = _argv
 
 CAP = float(sys.argv[1]) if len(sys.argv) > 1 else 1200.0
+BUDGET = int(sys.argv[2]) if len(sys.argv) > 2 else 2000000          # conflicts per SAT call (GC900)
 FAMILIES = [(9, ('000', '001'), 10, 14), (7, ('00', '010'), 10, 15), (5, ('10', '111000'), 6, 17)]
 
 
@@ -75,46 +84,64 @@ def run_family(p, pair, K, N_fp, rng, extra=None):
     holes = [tri.hole(k) for k in range(nmax)]
 
     def realise(w, white_beyond=None):
+        """True (realised, model replayed), False (unrealised) or None (budget exhausted: UNKNOWN)."""
         assum = [holes[k] if w[k] == '1' else -holes[k] for k in range(len(w))]
         if white_beyond is not None:
             assum += [-tri.var[(j, 0)] for j in range(white_beyond + 1, tri.T + 2)]
-        return s.solve(assumptions=assum)
-    fails, replay_bad, short_bad, n = [], 0, 0, 0
+        s.conf_budget(BUDGET)
+        r = s.solve_limited(assumptions=assum)
+        if r:
+            row = model_row(s, tri)
+            if tc.simulate(row, p, len(w)) != [int(c) for c in w]:
+                stats['replay_bad'] += 1
+        return r
+    stats = {'replay_bad': 0, 'unknown': 0}
+    fails, short_bad, n = [], 0, 0
     for bits in range(1 << K):
         if time.time() - t0 > CAP:
             break
         w = ''.join(pair[(bits >> b) & 1] for b in range(K))
         n += 1
-        if realise(w):
-            row = model_row(s, tri)
-            if tc.simulate(row, p, len(w)) != [int(c) for c in w]:
-                replay_bad += 1
-        else:
+        r = realise(w)
+        if r is None:
+            stats['unknown'] += 1
+        elif not r:
             fails.append(w)
         # C2: the prefix of whole blocks of total length <= N_fp
         k, L = 0, 0
         while k < K and L + len(pair[(bits >> k) & 1]) <= N_fp:
             L += len(pair[(bits >> k) & 1])
             k += 1
-        if not realise(w[:L]):
+        if realise(w[:L]) is False:
             short_bad += 1
-    out = {'n': n, 'total': 1 << K, 'fails': fails, 'replay_bad': replay_bad, 'short_bad': short_bad,
-           'secs': time.time() - t0}
+    out = {'n': n, 'total': 1 << K, 'fails': fails, 'short_bad': short_bad, 'secs': time.time() - t0}
     if extra:
         K2, cnt = extra[0], extra[1]
         f2 = []
         for _ in range(cnt):
+            if time.time() - t0 > 2 * CAP:
+                break
             w = ''.join(pair[rng.randrange(2)] for _ in range(K2))
-            if not realise(w):
+            r = realise(w)
+            if r is None:
+                stats['unknown'] += 1
+            elif not r:
                 f2.append(w)
         out['long_fails'] = f2
         half = (9 * 29) // 2
         u_fail = 0
         for _ in range(32):
+            if time.time() - t0 > 3 * CAP:
+                break
             w = ''.join(pair[rng.randrange(2)] for _ in range(K))
-            if not realise(w, white_beyond=half):
+            r = realise(w, white_beyond=half)
+            if r is None:
+                stats['unknown'] += 1
+            elif not r:
                 u_fail += 1
         out['u_fail'] = u_fail
+    out['replay_bad'] = stats['replay_bad']
+    out['unknown'] = stats['unknown']
     s.delete()
     return out
 
@@ -140,7 +167,11 @@ def main():
 
     def full(p):
         r = res[p]
-        return nd if not ok or r['n'] < r['total'] else ('HELD' if not r['fails'] else 'REFUTED')
+        if not ok:
+            return nd
+        if r['fails']:
+            return 'REFUTED'                                   # any found failure refutes (GC900)
+        return 'HELD' if r['n'] == r['total'] and not r['unknown'] else nd
     print('FP2-P1 (p = 9, all 1,024 realised): %s' % full(9))
     print('FP2-P2 (p = 7, all 1,024 realised): %s' % full(7))
     print('FP2-P3 (p = 5, all 64 realised): %s' % full(5))
