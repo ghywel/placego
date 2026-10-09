@@ -18055,3 +18055,37 @@ It is finite by the unbounded hierarchy, and tends to infinity because every fix
 The empty seed has all periods1 but no black edge and is excluded from the support proof. An infinite checkerboard is fixed under F and has right-frame period2 everywhere; it has no finite support edges, so the contradiction cannot be transferred to infinite rows. These controls identify the hypotheses rather than suggesting new finite-seed counterexamples. Independent hand reading requested; no additional computational run requested.
 
 **Coordination.** GC754's main push raced with Cloud's site update; latest main adabc609 is merged with the render changes preserved. Those edits are owner-authorized Cloud/Local work, no deployment action taken here. The scratch connection failure remains unresolved, so flags and doorbells are deferred; break room closed by the owner.
+
+
+## GC756 — Joint prefix periods give an exact initial-seed return ruler for every finite seed (2026-10-09, GPT)
+
+**Bounded repair of GC755's generic frontier interpretation.** Expected before the formal hand proof that joint prefix periods replace the unproved individual monotonicity premise, and that the resulting ruler measures return to the initial seed rather than white triangles. Counterfactual: coincidence of one diagonal's initial bit certifies its least period without the lower prefix. Independent proof uses the deterministic closed-prefix return; unexpected check uses seed11's returning black initial bit. No experiment, FFT, census or monotonicity search. Duplicate gate passed; nearest36/09/12 read fully. This explicitly extends Proposition23's mechanism and RF's finite Fourier calculation, with the single-cell result retained as its special case, not a new claim for that case.
+
+Use GC755's normalized nonempty finite seed and pure right diagonals. Let p_j be their least dyadic periods and
+
+    Q_j=lcm(p_0,...,p_j),  Q_0=1.
+
+These are the least periods of the entire closed prefix through j. They are nondecreasing powers of two even without monotonicity of individual p_j. The j-th driver's period divides Q_(j-1), so its xor integral has period dividing2Q_(j-1). Hence
+
+    Q_j is Q_(j-1) or2Q_(j-1),  Q_j<=2^j.
+
+They are unbounded by GC755's support-edge proof. Define H(t) as the length of the consecutive prefix k>=1 for which D_k(t)=D_k(0), for t>=1. The finite prefix is an autonomous deterministic orbit, purely periodic from0. Returning to its starting state at time t is therefore equivalent to its least cycle period Q_j dividing t. Thus
+
+    H(t)=sum_(j>=1) [Q_j divides t]
+        =R_prefix(2^v2(t)),
+    R_prefix(t)=sum_(j>=1) [Q_j<=t]
+               =H(2^floor(log2(t))).
+
+The sums are finite because Q_j is nondecreasing and unbounded. The prefix width R_prefix from GC755 is exactly this joint-period count: Q_j<=t if and only if every earlier individual p_i<=t. This repairs the generic count interpretation by counting Q_j, without asserting or needing that p_j itself is nondecreasing.
+
+**Independent first-failure proof.** Let j be the first index whose individual period does not divide t. All earlier periods divide t, so the driver's least period q divides t. The xor integral's period is q or2q; the failure requires p_j=2q and t/q odd. Its half-period complement gives D_j(t)=1 xor D_j(0), while all earlier bits return. Consequently H(t)=j-1 directly. This proves the first actual mismatch, rather than treating isolated equality of a single bit as a period test. It also identifies the exact replacement for Proposition23's first black bit: the first bit DIFFERING from the initial seed, which may be white or black.
+
+**Universal but weak lower bound.** For n=floor(log2(t)), Q_j<=2^j<=t for every j<=n. Hence R_prefix(t)>=floor(log2(t)) for every normalized nonempty finite seed. This is a lower bound, not a logarithmic upper bound or the measured2.5 coefficient. No growth rate for individual p_j follows.
+
+**Finite-window spectrum, derived rather than measured.** On t in[N,2N), N=2^n, the return ruler is the sum of combs with Q_j<=N; larger dyadic periods have no tooth in that half-open window. For the unnormalized DFT with bin b, a Q_j-comb contributes N/Q_j if N divides b*Q_j, otherwise0, by the finite geometric sum. Therefore
+
+    X(b)=sum_(j:Q_j<=N, N divides b*Q_j) N/Q_j.
+
+It is real and nonnegative, with dyadic frequency support. This transfers RF's exact finite-window formula to the generic initial-seed return ruler, replacing p_j by Q_j. It says nothing about its literal white-run spectrum, infinite-series convergence or empirical power shares. In the single-cell nondecreasing case Q_j=p_j, and D_j(0)=0 for j>=1, so this specializes exactly to the recorded white-run ruler and RF formula.
+
+**Unexpected check and scope.** Seed11 has D_1(0)=1 and D_1(t)=1 xor parity(t): at time2 its initial black bit returns. Its literal white edge run has width0, while H(2)=R_prefix(2)>=2. Thus return order and white triangles differ even for the smallest non-single seed. The empty seed lacks a black edge and an unbounded Q hierarchy; infinite rows lack the finite-support contradiction. No generic white triangles, universal period staircase, nonperiodic exterior construction or prize conclusion is asserted. Independent hand reading requested; no new computational run requested. Next use this repaired generic object only if an actual main-line question needs it, rather than another spectrum description.

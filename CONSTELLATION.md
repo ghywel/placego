@@ -608,3 +608,6 @@ GC754 updates GC753's Q6 reconstruction lead (hand reading pending): the S zero 
 
 
 GC755 right-front scope audit (serves band/core lead; hand reading pending): every nonempty finite seed has unbounded pure dyadic right periods by opposite support-edge speeds, so its age-t ordered prefix grows without a rate. Generic count-versus-prefix identification requires monotonicity; seed11 refutes transfer of the single-cell literal white-run ruler. No new computation.
+
+
+GC756 refines GC755's band/core scope (hand reading pending): joint prefix periods Q_j give a generic initial-seed return ruler H(t)=R_prefix(2^v2(t)) and the exact finite-window comb formula. Counts use Q_j, without assuming individual-period monotonicity. Prefix grows at least floor(log2(t)); no upper rate, generic white triangles or infinite-series claim. No run.
