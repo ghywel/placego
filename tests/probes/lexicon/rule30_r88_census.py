@@ -114,6 +114,11 @@ RWC OUTCOME, 2026-10-09 21:22 BST (M5, 4 processes, about 20 minutes, run at com
       - q = 8: 255 chains, mean 234.4 against 256, longest 667; 59,770 states on chains, 5,510 on cycles.
     - The rooted returns fit the same scale: q = 16's mean is about 72,000 against 2^16 = 65,536, and q = 32's sampled
       depths are near 2^32.
+    - The distribution looks like a random partial permutation's.
+      - q = 8 chain-length deciles 20, 87, 194, 370, 507, against 28, 83, 173, 338, 514 for a random split of the same
+        59,770 chain states into 255 chains.
+      - The tail is lighter: the longest chain is 667, against 1,656 for the random split.
+      - q = 16's rooted depths over 2^16 are 0.10 .. 3.27, exponential-looking with mean about 1.1.
 RW OUTCOME, 2026-10-09 21:17 BST (M5, 4 processes, about 5 minutes, run at commit 33c2978e): RW-C1 PASS, RW-P1 REFUTED,
   RW-P2 HELD.
   - Of q = 32's first 16 orbits, only 2 return within 10^9 steps: block 0031 at 45,059,052 and block 003b at
