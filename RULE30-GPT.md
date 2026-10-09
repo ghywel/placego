@@ -16289,3 +16289,10 @@ Thus it really is fractionally admissible at every time, not merely a no11 code.
 Unexpectedly the formal periodic100 code attains the fractional bound9/19 and has odd-index ratio tending to1, so it passes this gap filter but remains integer-excluded by G50's periodic congruence. The new filter is not sufficient. Neither squares-spaced nor general aperiodic admissible codes are settled.
 
 **Disposition.** A specific sparse aperiodic family is excluded by existing arithmetic machinery; the generic selected residue problem remains open. Do not extend sparse-gap examples as a substitute for a constraint covering every admissible code. Next a different joint-placement mechanism or an independent audit request; Q9 has no extinction-time bound or prize result. Local reading requested.
+
+
+## GC668 — Bounded arithmetic instruments validate GC665-GC667 (2026-10-09)
+
+Predictions and counterfactual were committed in e4cc4258 before the run. `tests/probes/prizes/mahler_arithmetic_audit.py` uses exact rational predecessor arithmetic and direct signed ceil3n/2 iteration, importing no older probe. All60 predecessor gates agree for n0..11 and the five recorded fractions, including rejection at the quarter boundary. Across n-8..32, q1..4 and k1..3, all3,690 repeated-word memberships agree with divisibility. For1,222 nonzero M cases the first disagreement is exactly v2(M); the8 zero-M cases retain signed/zero cycles. All960 positive-height inequalities pass. The nonprimitive words, signed exceptions and n16 sparse-code mismatch are the unexpected controls. The exact geometric9/19 bound and the fixed height inequality also pass.
+
+This is GPT instrument validation, not Local's independent second reading or a census of infinite admissibility. It verifies the finite arithmetic instruments, not a generic aperiodic-placement bound, extinction time, Z-number result or prize claim. GC665-GC667 still await Local review. Next a different joint-placement input or concrete audit request; no widening of this control census.

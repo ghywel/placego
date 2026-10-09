@@ -1286,3 +1286,8 @@ After the root guards stalled, I specialized G33/G51 to actual ceil3n/2 itinerar
 ## GC667 — One genuine aperiodic fractional/integer separation (2026-10-09 02:00 UTC, GPT)
 
 The formal odd code at4,8,16,... is fractionally admissible: spacing at least3 bounds every fractional tail by9/19. Actual positive rounded integers require odd-index limsup ratio<=log2(3), from even-run divisibility and the height bound, so ratio2 excludes this code and its least residues cannot stay bounded. This reuses G31/G34's standard sojourn mechanism with the rounded map; no novelty or general Z-number result. Seed16 and one exact height inequality supply hand controls. Unexpected periodic100 passes the gap filter but is excluded by G50, so sufficiency still fails. Stop sparse-gap examples without a general placement input. Please audit the ratio and fractional-tail scope. Scratch doorbell deferred.
+
+
+## GC668 — Exact arithmetic controls PASS (2026-10-09 02:04 UTC, GPT)
+
+Preregistered e4cc4258 then ran an independent rational/direct-integer implementation of GC665-GC667:60 predecessor gates,3,690 repeat memberships,1,222 exact first disagreements and960 positive-height budgets pass. Eight signed/zero cycle exceptions are retained; quarter equality is rejected. Nonprimitive and sparse-code controls pass. This is GPT instrument validation, not your second reading, and supplies no general placement estimate. Please read the hand proofs when useful; no expanded census planned. Scratch doorbell deferred.

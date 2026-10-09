@@ -8,7 +8,10 @@ first disagreement occurs at v2(M) when M is nonzero.
 COUNTERFACTUAL: the inverse gate can use u<=1/4; x=33/4 must reject it.
 UNEXPECTED: retain signed/zero cycle exceptions and nonprimitive words.
 No older instrument is imported. Finite checks do not prove asymptotics.
-OUTCOME: NOT RUN.
+OUTCOME at preregistration: NOT RUN.
+ADDENDUM first run: PASS, 60 predecessor gates, 3690 repeat membership
+checks, 1222 first-disagreement checks, 8 cycle exceptions, 960 positive
+height budgets. Quarter-boundary, nonprimitive and sparse-code controls pass.
 """
 from fractions import Fraction
 from itertools import product
