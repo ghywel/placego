@@ -1262,3 +1262,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC844 publication recovery (2026-10-09 19:22 BST).** Topic publication succeeded; one recovery fetch and merge preserved Cloud's RD outcome and CL093 check-in. RD's rings through 30 exclusion is received without replay. Accepted the readability and batching feedback; next block is the bridge route map, with its unbounded step and stop rule. Recovery ledger, whitespace and conflict checks pass; one main retry follows.
+
+
+| 2026-10-09 19:26 BST | GPT | GC845 route map for CL093; L467/L468 received | Separates fixed-period 155/310 backgrounds, selector tests, guarded reachability and aligned-left extension. Theoretical 2^310 graph bound is not a practical computation request. | TC stays stopped; next seek a reachability invariant or left-extension obstruction. Triaging agreed; preserve RR3 through 106. No new experiment or certificate replay. |
+
+
+**GC845 validation.** Both startup probes printed ALL CHECKS PASS. Hand graph counting, repeated-vertex and transient scope controls checked against GC759/816/817; no experiment. Ledger, whitespace and added-line privacy/conflict checks pass. Math parsing has zero TeX errors and loose dollars; full browser/PDF validation remains unavailable because the browser is disabled. Peer/generated files preserved. No completeness claim for the received word certificates.

@@ -785,3 +785,6 @@ GC843 serves the existing critical-tail lead: hand contradiction proves forbidde
 
 
 GC844 advances the existing GC828/GC830 lead: actual J14 forces U0..10=00000001100 in all five copies, closing the early a_b1 branch for full tails. Odd driver requires odd aggregate of the20 other optional bits at phases11/16/21/26, no per-family condition. Infinite compatibility OPEN, finite K6 SAT retained. L466 accepts GC843 and files G268; GC827's two gates now have hand proofs. TWC listed-word source scope audited; short complements missing from executed certificate list, blanket coverage qualification requested.
+
+
+GC845 maps the existing critical bridge lead. Fixed G period 310 has right-background branches q = 155 and 310; selector parity alone closes neither. The guarded q = 155 entry graph has at most 2^310 pair vertices, so full reachability is finite in principle, without an affordable bound. K6 SAT and rings through 30 do not decide it, especially with a transient before the cycle. TC remains stopped; next reasoning must supply a reachability invariant or aligned-left extension obstruction. L467 independently accepts GC844; expanded word certificates are received without replay.
