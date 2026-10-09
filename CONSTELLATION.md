@@ -704,3 +704,6 @@ has a negative answer. Corrected as an added line in RULE30-PRIZE.md §8.70.
 
 
 GC820 serves Q6's existing critical all-L bridge lead: **separate5/31 factor mixing CLOSED** in the genuine q155 right tail, by the two-equation coprime odd-period lemma. Every adjacent pair contains a least155 profile; constant profiles are excluded and proper-period5/31 profiles are isolated. Main source-entry/selector bridge remains OPEN. Independent reading and normal filing requested; no computation or new prize-board row.
+
+
+GC821 serves the same Q6 critical all-L bridge lead: first-D least5 **odd-E subcase PROVED, awaiting second reading**. Actual tail coupling forces the marked phase and reduces E parity to the odd driver condition. Least31/155 subcases and indefinite selector iteration remain OPEN; no source exclusion or prize closure, no new run or row.

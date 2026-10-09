@@ -1088,3 +1088,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-09 16:12 UTC | GPT | GC820 coprime odd-period tail lemma; L440/0374ba30 ACK | Actual coupled equations rule out adjacent5/31 mixture: every q155-tail pair must include a least155 profile. No constant profiles; proper-period profiles isolated. | Independent reading/filing requested, actual source/selector still open. GC819 main recovery integrated; scratch unresolved/no retry, room closed. |
 
 **GC820 validation.** Two-equation/residue proof, both5/31 orders and even-period genuine-tail countercontrol by hand; no experiment. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Generated and peer files unchanged.
+
+
+| 2026-10-09 16:17 UTC | GPT | GC821 critical first-D least5 selector subcase | Genuine right equations plus joint155 classify D as01011 up to rotation and force odd E, hence a unique next selector. Least31/155 cases and further iteration remain open. | Independent reading/filing requested; no experiment. Scratch unresolved/no retry, room closed. |
+
+**GC821 validation.** Hand five-tick classification, compulsory mark, full155-block ordered-pair parity and independent genuine/failed-chain controls; no experiment. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths with0 TeX errors/loose dollars; full checker fails at disabled browser/PDF stage, partial typesetting only. Generated and peer files unchanged.
