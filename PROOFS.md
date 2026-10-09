@@ -152,6 +152,14 @@ At time $a$ the left edge is $L + a$ cells away. So the window's length $b - a$ 
    $b \ge 2a + L + 2P$, then $e \le b - j$. So both $e - P = a$ and $e$ lie in the window where column $i - j$ is
    $P$-periodic. It is white at one and black at the other, a contradiction. $\square$
 
+*Machine-checked (Local, 2026-10-09 22:40 BST).* tests/probes/lean/TheoremA.lean (Lean 4, Mathlib).
+- `theorem_A` is the statement above for Rule 30 on configurations ℤ → Bool: a leftmost black cell L >= 0 cells left of
+  column c, columns c and c + 1 P-periodic on [a, b], P >= 1, give b <= 2a + L + 2P - 1.
+- `no_two_periodic` is the corollary: no two adjacent columns are P-periodic for ever.
+- Facts 1 .. 3 are separate lemmas (`left`, `left_iter`, `edge`).
+- The axioms are propext and Quot.sound only.
+- The case of a leftmost black cell to the right of the column (time re-basing, as in entry 40) stays a hand step.
+
 ### 6. Theorem B (a zero run cannot outlast two periods)
 
 *Where:* RULE30-PRIZE.md, "8.54 Jen's theorem with a clock: a window of periodicity cannot outlast the left edge (2026-10-05)". *Bears on:* question 2: a zero run in row 0 of the forced left half is at most two periods long. *Status:* proved; sharp at q = 2.

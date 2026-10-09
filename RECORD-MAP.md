@@ -390,3 +390,5 @@ PART: as on the board.
 - White-end q>=10 independently replayed at width8; uniform phase/actual-path transfer verified — PROVED (additional audit) — GC880; entry40.
 - Strip test (C) to radius 11: every open Condrey case (white q = 2 .. 9, black q = 2 .. 6, 8) keeps one non-forcing
   component — COMPUTED — rule30_strip_c.c, rule30_rung3_strip.py (SGC)
+- Theorem A (entry 5, Jen with a clock) machine-checked in Lean, with the no-two-periodic-columns corollary — PROVED —
+  tests/probes/lean/TheoremA.lean, L501
