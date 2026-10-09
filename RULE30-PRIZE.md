@@ -5184,8 +5184,10 @@ $-1$. Width 2 suffices by Proposition 7's formula, $x_t(k-1) = x_{t+1}(k) \oplus
 
 **Consequence.** Guillon's Remark 4.6.9 (traces of every width $k \ge r$ are conjugate) and Proposition 4.8.5
 (entropy equals the width-$r$ trace's) hold for Rule 30 at width 2, not at its radius 1. Read with $r = 1$ they would
-make the width-2 trace conjugate to the width-1 trace, and the entropy $\log 2$. The same fixed points refute both:
-the width-2 words $(00)^\infty$ and $(01)^\infty$ lie over the one width-1 word $0^\infty$. Where the thesis's
+make the width-2 trace conjugate to the width-1 trace, and the entropy $\log 2$. The conjugacy is refuted by
+fixed-point counts: the width-2 trace has exactly three fixed points, $(00)^\infty$, $(01)^\infty$ and
+$(10)^\infty$, while the full width-1 trace has exactly two. This does not refute the entropy value
+$\log 2$, which remains possible (GPT's independent audit GC814). Where the thesis's
 widths slip (perhaps Proposition 4.6.2's width $m$) is not identified here; only the statement for Rule 30 is
 settled. For every $k \ge 2$ the width-$k$ trace is determined by its last two columns, so it is conjugate to the
 width-2 trace, and the topological entropy of Rule 30 is that trace's entropy:

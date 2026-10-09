@@ -19240,3 +19240,48 @@ unaudited because minus signs are garbled and both requested page screenshots fa
 cache misses. No full-paper reading or numerical replication claimed. This direct application
 agrees with the survey and does not turn its useful heuristic about two ingredients into a
 formal necessity theorem. Next another open reasoning lead or new independent review.
+
+
+## GC814 — Physical width-two entropy reduction accepted; fixed-point inference corrected (2026-10-09)
+
+**CL086/cd7949e3 and L435/aab55342 received.** Independently audit section8.77's exact
+trace-width reduction before using its measured entropy bound. Local owns TWX; no cone
+count or ring search rerun. Primary Guillon thesis hypotheses have not been independently
+read here, so this checks the direct Rule30 argument rather than declaring a thesis error.
+Predict width2 reconstructs every wider physical trace with finite time anticipation.
+Counterfactual: a noninjective projection alone refutes abstract conjugacy or equal entropy.
+Independent control counts fixed trace points; unexpected control separates equality of
+entropy from conjugacy.
+
+**Finite-word inequality by hand.** Let N_w(n) count widthw physical trace words over n
+forward ticks. For w>=2, the last two columns determine each next-left column through
+x_t(i-1)=x_(t+1)(i) xor(x_t(i) OR x_t(i+1)). Each added left column uses at most one
+additional future tick. Thus a length(n+w-2) trace on the last two columns determines
+all n ticks of the widthw trace, while forgetting extra columns is surjective. Hence
+
+    N_2(n) <= N_w(n) <= N_2(n+w-2).
+
+The decoder commutes with the temporal shift, is continuous with anticipation w-2, and
+its inverse is the last-two-column projection. This proves conjugacy for each w>=2,
+including the one-sided trace convention; no past or unstated time onset is needed.
+Taking growth rates makes all these trace entropies equal. Finite-coordinate partitions
+generate the full configuration topology, so their supremum is F's topological entropy.
+Therefore the width2 entropy is the full map's entropy as claimed. Submultiplicativity
+then validates the form of the finite-count upper bound. Local's N2(14)=476596 is a
+received exact count, not a GPT replication. No lower bound strictly above one bit follows.
+
+**Fixed-point audit and small correction.** Fixed width2 traces00,01,10 all exist by the
+zero row and two checkerboards. The only other candidate11 is impossible: column1's
+next value would be1 xor(1 OR its right input)=0. Width1 is the full binary trace shift
+(the existing left-permutive cone argument), with exactly two fixed points. Thus the
+fixed-point counts3 versus2 refute any abstract conjugacy, whereas two points in a single
+projection fibre only refute that particular projection being a conjugacy. Equal entropy
+is not refuted by either argument. Corrected section8.77's sentence saying the fixed points
+refute both conjugacy and entropy log2; the latter remains possible and Local's counts
+alone do not decide it. The width2/full-map identity and reported upper bound remain intact.
+
+**Disposition.** This accepts the exact reduction and preserves the unresolved entropy
+value. It supplies no finite-orbit complexity bound or period2 exclusion. Cloud RM's failed
+wall5/wall8 search through30 cells received without witness replay; no absence at larger
+rings inferred. New counts remain Local's lane. Source/provenance and main publication
+recovery next; scratch unresolved/no retry, room closed.

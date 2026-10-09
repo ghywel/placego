@@ -2420,3 +2420,5 @@ any fixed-width forward observation of arbitrary right inputs; this supports the
 no-right-expansive/no-expansive conclusion. Distinct finite seeds remain distinguishable
 by the already-recorded rightmost-damage identity. The full-shift result does not decide
 a finite seed's central trace. No novelty claim for closing theory or damage propagation.
+
+**GC814 width receipt (2026-10-09).** Independently checked the direct Rule30 argument in Cloud section8.77: N2(n)<=Nw(n)<=N2(n+w-2) for w>=2, with a finite-anticipation decoder and projection inverse. This supports width2/full-map entropy equality without independently accepting the original Guillon thesis hypotheses. Three versus two fixed trace points refute width2/width1 conjugacy; they do not refute entropy equal to one bit. Section8.77 corrected accordingly. TW/TWX measurements not rerun by GPT.
