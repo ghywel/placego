@@ -9,6 +9,7 @@
                    and WIT (walls whose right neighbour shows an S/L word) lines.
    brute NB        every ring of least period N <= NB with F^q x = shift^r x on the ring, q = 1..3: BRU lines.
    damage T NF     reads "DMG id p s N bits" lines on stdin and prints the left damage front's speed: DV lines.
+   damrand T NF SEED   post hoc control: the same measurement on NF random rows (DR lines).
 
    The window map. If s > p, F^p(x)(i) depends on x(i-p .. i+p) and equals x(i-s), which lies outside that window,
    so x(m) = G(x(m+s-p) .. x(m+s+p)): the s+p cells to the right of m fix x(m). If s < -p the same holds leftwards. */
@@ -227,7 +228,27 @@ static int damage(long T, long NF) {
   return 0;
 }
 
+/* POST HOC control (2026-10-09, after the first full run): the same left-front measurement on random rows, on a ring
+   of 4T + 64 cells so that the damage cannot meet itself. Prints one DR line per flip. */
+static int damrand(long T, long NF, unsigned seed) {
+  long M = 4 * T + 64; uint8_t *a = malloc(M), *b = malloc(M), *na = malloc(M), *nb = malloc(M);
+  uint64_t st = 0x9E3779B97F4A7C15ull ^ seed;
+  for (long f = 0; f < NF; f++) {
+    for (long i = 0; i < M; i++) { st ^= st << 13; st ^= st >> 7; st ^= st << 17; a[i] = b[i] = st & 1; }
+    long c = M / 2; b[c] ^= 1;
+    for (long t = 0; t < T; t++) {
+      step_ring(a, na, M); step_ring(b, nb, M);
+      uint8_t *x = a; a = na; na = x; x = b; b = nb; nb = x;
+    }
+    long kl = -1, kr = -1;
+    for (long i = 0; i < M; i++) if (a[i] != b[i]) { if (kl < 0) kl = i; kr = i; }
+    printf("DR f=%ld left=%.5f rightok=%d\n", f, (double)(c - kl) / T, kr == c + T);
+  }
+  return 0;
+}
+
 int main(int argc, char **argv) {
+  if (argc >= 5 && !strcmp(argv[1], "damrand")) return damrand(atol(argv[2]), atol(argv[3]), (unsigned)atoi(argv[4]));
   if (argc >= 5 && !strcmp(argv[1], "census")) return census(atoi(argv[2]), atoi(argv[3]), atoi(argv[4]));
   if (argc >= 3 && !strcmp(argv[1], "brute")) return brute(atoi(argv[2]));
   if (argc >= 4 && !strcmp(argv[1], "damage")) return damage(atol(argv[2]), atol(argv[3]));

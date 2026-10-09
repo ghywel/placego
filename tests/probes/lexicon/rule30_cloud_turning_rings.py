@@ -78,6 +78,36 @@ UNEXPECTED CHECK, TC8: for s > p, the largest cycle holds between 45% and 80% of
   about 62% on average.) Confidence 0.6.
 REFUTED-BY: TC1, TC2, TC3, TC5 or DV1 failing (instrument or theory); TC4, TC6, TC7, TC8 or DV2 to DV5 failing as
   worded.
+
+OUTCOME of the full run, 2026-10-09 (08:06 to 08:08 BST, 76 s, three workers; LMAX = 28; data outside git).
+  Every control passes: TC1, TC2, TC3, TC5 and DV1. Of the blind predictions TC6, TC7, TC8 and DV2 to DV5 held and
+  TC4 was refuted.
+  TC1 PASS: every census row satisfies its relation directly, and census and brute force agree on every ring of
+    period <= 20 for all 147 (p, s) runs.
+  TC3 PASS: every s < -p run has all 2^(|s|+p) windows periodic (Lemma TR(b)).
+  TC4 REFUTED as worded. The cycle bound held (at most 16 cycles in any run), but the count did not. At p = 1 the
+    right-moving rows outnumber the random-map heuristic by a factor of about 4 (log2 excess 0.09 to 3.63, mean
+    1.98, above 2.5 at s = 20, 22, 24, 26). At p = 2 the mean excess is 0.84 and at p = 3 it is 0.00. Post hoc and
+    tentative: at p = 1, even s runs higher than odd (mean excess 2.59 against 1.46).
+  TC8 HELD (the unexpected check): the largest cycle holds 0.545 of the periodic points on average (0.18 to 1.00).
+  TC2 and TC5 PASS, TC6 and TC7 HELD, with a finding beyond them. In the whole census, only one turning row has an
+    alternating column at all: GC686's ring, with six all-S walls 14 sites apart, alternating in phase. The census
+    holds 1,399 rings, 1.611 x 10^9 rows counting each ring's rotations (all but 691,647 of them left-moving). No
+    other ring has a wall of any kind, so turning rows supply no mixed S/L witness in this range.
+  DV1 PASS: the rightmost difference is exactly at the flip + T on all 128 backgrounds and every flip.
+  DV2 and DV3 HELD: on GC686's ring the left front moves left at 0.2969 (0.2922 .. 0.2986 over the 84 flip sites).
+  DV4 HELD: across 127 distinct rows (all the p = 1 rows with N <= 1024, fewer than the 200 allowed) the Spearman
+    correlation of left speed with |s*| is -0.001. Pattern speed and signal speed are unrelated.
+  DV5 HELD: median 0.2847. The extremes are the white row at 1 (damage there is the single cell's pattern, whose left
+    edge moves at light speed) and the checkerboard at -0.3887, Local's -0.388 of §8.66 reproduced independently.
+  POST HOC, labelled as such; no prediction was written for any of it.
+  - Random rows on the same instrument (turning_rings.c damrand, T = 2048, 64 rows): 0.2450, standard error 0.0023.
+    That matches the record's 0.246, so the higher speeds on turning rows are real, not a finite-T bias.
+  - GC686's ring at T = 16384 (14 flips): 0.2976 (0.2966 .. 0.2980). The speed belongs to the background. It is
+    close to 25/84 = 0.29762; that is not tested.
+  - Rows with N >= 65 (103 of them): median 0.2765, 62% above 0.245, similar for s* > 0 (0.282) and s* < 0
+    (0.276); Spearman with density -0.16. Small rings give speeds near simple fractions (1/3 at N = 5, 2/5 at 12,
+    3/5 at 14 and 17, 1/2 at 15, 1/5 at 29, 5/9 at 34); not tested further.
 """
 import math, os, pathlib, subprocess, sys, tempfile
 from concurrent.futures import ThreadPoolExecutor

@@ -4608,3 +4608,55 @@ independent (they are not, so this is a yardstick, not a test; the single seed's
 the permutive channel, sees only the OR, and sees change three times in four. Two of the three blind predictions
 failed (I did not compute this transport bias before predicting, and the left band is not linearly simpler).
 
+
+### 8.71 Turning rows: the all-S ring turns 14 cells a step, rows outrunning light are rings, and pattern speed is not signal speed (2026-10-09)
+
+*Cloud, from the owner's questions of 2026-10-09: which surfaces can carry a ring's history, and "a unit vector in a
+space-time picture is a velocity; the arrows carry information only if the data, not the layout, chooses where they
+point". Probe `rule30_cloud_turning_rings.py` with `turning_rings.c`; predictions pushed in dedbe55 before the full
+run. Chat CL071 and CL072; PROOFS.md entry 35.*
+
+**The rotation (CL071; a finite certificate, found while exploring).** On GC686's ring `0x688eb74a45efb082671ee`
+(site 0 at bit 0), one update is a rotation: $x_{t+1}(i) = x_t(i - 14)$. One update is 84 cell checks, and Rule 30
+commutes with rotation, so this holds for every $t$; two programs agree over 1000 updates. Hence the period is
+$84 / 14 = 6$, the least spatial period is 84, and on the line $x_t(i) = x_0(i - 14t)$: the clock is the initial row
+read at every 14th cell, $x_t(0) = x_0(-14t)$. The 14 is a pattern speed, not a signal speed.
+
+**Turning rows in general (Proposition 22, PROOFS.md entry 35, waiting room).** Call $x$ a turning row with vector
+$(s, p)$ if $F^p x = \sigma^s x$. If $|s| > p$ the pattern outruns light; then $x$ is spatially periodic, and the rows
+are exactly the periodic points of a map on words of $|s| + p$ cells. If $s < -p$ that map is a bijection, by
+left-permutivity, so every word of $|s| + p$ cells extends to exactly one row moving left. Moving right, the map
+loses information through the OR, and the rows are as rare as a random map's cycles. §8.67's gliding cycles on rings
+up to 29 cells are the same objects seen ring by ring; this census takes every ring size at once, for bounded speeds.
+
+**The census** ($p \le 3$, $|s| + p \le 28$; 1,399 rings, $1.611 \times 10^9$ rows counting rotations).
+- Controls: every row satisfies its relation directly; census and brute force agree on every ring up to 20 cells;
+  every left-moving run has all $2^{|s|+p}$ words periodic.
+- Right-moving rows: at most 16 cycles in any run, the largest holding 55% of the periodic points on average (TC8,
+  the unexpected check, held). The count exceeds the random-map heuristic $\sqrt{\pi 2^L / 2}$ about fourfold at
+  $p = 1$ and matches it at $p = 3$. TC4 predicted agreement within a factor of $2^{2.5}$ at every size and was
+  refuted at four sizes.
+- **Walls.** Only one turning row in the whole census has an alternating column at all: GC686's ring, with six all-S
+  walls 14 cells apart. No mixed S/L word and no all-L word appears (TC6 held). Every visible S/L wall is in marker
+  form, which agrees with GC625 and GC626 (TC7 held). That the all-S turning row is unique also follows by
+  composition with GC704, GC687, GC688 and L372 (PROOFS.md entry 35, corollary); the census confirms it on
+  independent data.
+- So the turning shortcut supplies no new S/L witness for portfolio question 4 in this range. GC686's ring is
+  isolated even among turning rows, and why it turns is open (asked of GPT in CL071).
+
+**Velocities chosen by the data.** Every background tested keeps the proved right edge: the rightmost difference is
+at the flip $+\,t$ (DV1, 128 backgrounds). The left edge depends on the background.
+
+| Background | Left speed of a single flip's damage |
+|---|---|
+| The white row | 1 (the single cell's pattern) |
+| GC686's ring | 0.2969 at $T = 4096$ (84 flips, 0.2922 to 0.2986); 0.2976 at $T = 16384$ |
+| 103 turning rows of 65 to 1024 cells | median 0.2765, 62% above 0.245 |
+| Random rows, same instrument (post hoc) | 0.2450, standard error 0.0023 (§8.66: 0.246) |
+| The checkerboard | $-0.3887$ (§8.66's $-0.388$, reproduced) |
+
+Small rings give speeds near simple fractions: 1/3 at 5 cells, 2/5 at 12, 1/2 at 15, 3/5 at 14 and 17, 1/5 at 29.
+Across all 127 turning rows of up to 1024 cells, the Spearman correlation of left speed with pattern speed is
+$-0.001$ (DV4 held). A unit vector in space-time carries the row's information in two different ways. The vector
+$(s, p)$ along which the row is constant is chosen by the pattern. The damage cone's edges, $+1$ and the
+background's own leftward speed, are chosen by the rule acting on it. The two are unrelated.
