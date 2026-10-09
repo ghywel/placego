@@ -3353,7 +3353,17 @@ The exact cost of a block of long gaps tightens the budget on how often an alter
 
 **What it says.** With a finite left side, a block of n identical gaps beginning at time a must fit under the left edge's distance at that time, J(a) = J_0 + a, plus 3 for short gaps or 6 for long ones. The 6 is Local's exact long-gap cost, which replaces the earlier allowance of 20. Chaining the blocks shows that a gap word with r changes of letter by time T needs T to be at most about (J_0 + 5) times 2^(r+1). Second-read by Local.
 
-**Why it matters.** A finite seed can change letter only logarithmically often. That is a sharper version of an existing budget, not an exclusion: a formal word with ever longer runs of short gaps still passes it.
+**Why it matters.** A clock that keeps going must change letter at least logarithmically often: by time T it needs about log2(T/(J_0 + 5)) changes. That is a sharper version of an existing budget, and a lower bound only, not an exclusion: a formal word with ever longer runs of short gaps still passes it. (Corrected 2026-10-09 at GPT's GC767: the first wording reversed the inequality.)
 
-**An everyday picture.** If each stretch of a journey can be at most as long as the distance already covered plus a few steps, the number of turns you take grows only with the logarithm of the distance.
+**An everyday picture.** If each straight stretch of a walk can be at most as long as the distance already covered plus a few steps, a long walk must turn at least about as many times as the logarithm of its length.
+
+## G251
+
+A permanently white diagonal near the left edge also limits how long a block of long gaps can last.
+
+**What it says.** Along a long-gap block the left side must copy the 155-cell all-L ring, so a diagonal running parallel to the left edge reads the ring every 33 cells. That reading never has more than 7 whites in a row, so a diagonal already settled to white cannot share more than 7 of its samples with the copied ring. This caps the block's duration at the left edge's distance minus the diagonal's depth, plus a term for when the diagonal settled. Second-read by Local, with the ring arithmetic checked literally.
+
+**Why it matters.** It is the long-gap twin of the earlier short-gap bound, so both letters now carry onset-sensitive limits. It is still not a uniform deadline and does not settle the period-two question.
+
+**An everyday picture.** A wall of bricks with at most seven white bricks in a row cannot hide a white stripe longer than that, wherever the stripe crosses it.
 

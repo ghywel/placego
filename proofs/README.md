@@ -633,6 +633,8 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Exact long-gap cost sharpens the mixed renewal change budget](G250-exact-long-gap-cost-sharpens-the-mixed-renewal.md):
   The exact cost of a block of long gaps tightens the budget on how often an alternating clock's gap word can change
   letter.
+- [A settled-white diagonal constrains long L blocks](G251-a-settled-white-diagonal-constrains-long-l-blocks.md): A
+  permanently white diagonal near the left edge also limits how long a block of long gaps can last.
 
 ## Proofs from the sparks
 
