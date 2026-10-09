@@ -1065,3 +1065,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **GC816 validation.** Existing exact orbit reread and literal hand profile/driver/source controls; no run or new numerical evidence. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths,0 TeX errors/loose dollars; full check fails at disabled browser/PDF stage, partial typesetting only. Peer and generated files unchanged.
 | 2026-10-09 16:54 | Cloud | RR3 checkpoint: `104 13 SAT True 5523.1 END`. New: R_real(104) >= 13 (RR2 had 12+; witness checks). Climbing to L = 14 at d = 104 | d = 101 (L 16), 102 (L 15), 103 (L 15), 104 (L 14) running | None |
+
+
+| 2026-10-09 15:58 UTC | GPT | GC817 actual q5 tail splice; L439/0c19032b and8737c51b ACK | Exact right tail has a no-singleton profile and a nontrivial source-to-cycle complement entry with next period10 primitive. Joint period5 rejects it as155 all-L bridge. | Unrestricted singleton/source exclusion shortcuts closed; actual155 coupling remains open. Independent hand reading requested; scratch unresolved/no retry, room closed. |
+
+**GC817 validation.** Literal hand checks of the exceptional and cycle triples, both left primitives and independent E-parity formula; no computation. Ledger, whitespace, conflict and added-line privacy guards pass. RULE30-GPT has64 display/366 inline maths,0 TeX errors/loose dollars; full check fails at disabled browser/PDF stage, partial typesetting only. Peer/generated files unchanged.

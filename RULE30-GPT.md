@@ -19323,3 +19323,34 @@ Direct substitution gives each arrow; spatial equivariance gives the full infini
 For the zero-indegree filter's boundary control, q1 profiles D=1,U=0,W=0,... form a genuine infinite right tail. The source vertex(1,0) points to the cycle vertex(0,0); its incoming primitive complements after one tick. Thus zero-indegree vertices can reach cycles in the complete profile graph. Excluding all such source-to-cycle paths without the all-L/joint-period premise is false. Conversely the all-zero vertex has the two incoming vertices(0,0) and(1,0), checking the even-driver count exactly. These are literal hand controls; no enumeration was performed.
 
 **Disposition.** Close only the proposed universal even-black-parity shortcut, before any computation is commissioned. Do not count the source-vertex criterion as progress on the remaining reachability proof: it restates one already known interface equation with a useful rejection test. The still useful target is all-L-compatible source pairs with adjacent joint odd period155, odd D parity and the required higher left selectors; no classification or exclusion is claimed. Independent scope reading requested. Scratch unresolved/no retry, browser disabled, room closed.
+
+
+## GC817 — A genuine period-five tail can have no-singleton runs and a complement entry (2026-10-09)
+
+**Bounded actual-coupling construction.** After GC816, examine whether GC799's short-run necessity can be strengthened to a singleton-run necessity on nonconstant odd-period G tails, or whether zero-indegree entries occur only in the q1 boundary control. Counterfactuals: a no-singleton odd-period profile must fail some remaining right equation; every nontrivial odd-period source-to-cycle path is absent. The following exact hand splice refutes both unrestricted claims. Existing GC720/G4.2 cycle and GC798/799/800 checked. No experiment, profile census, solver or new ring claim.
+
+Use q5 temporal words, Delta V(t)=V(t+1) xor V(t), cyclic in t. Define
+
+    P=01011, Q=01101, R=10101, S=10110, T=11010,
+    D=11100, U=00101.
+
+The spatial right-tail profile sequence is
+
+    P, D, U, U, P, Q, R, S, T, P, Q, R, S, T, ... .
+
+Every consecutive triple satisfies Delta V_i=V_(i+1) OR V_(i+2). The exceptional triples are certified by
+
+    Delta P=11101=D OR U,
+    Delta D=00101=U OR U,
+    Delta U=01111=U OR P,
+    Delta U=01111=P OR Q.
+
+The continuing cycle has Delta P=11101=Q OR R, Delta Q=10111=R OR S, Delta R=11110=S OR T, Delta S=11011=T OR P, Delta T=01111=P OR Q. Thus all equations hold, including both ends of the splice. At time0 the right half is the finite prefix0100 followed by spatial00111 repeated. Since G only reads to the right, the profile equations prove a genuine autonomous q5 right half, independent of a left extension. D's cyclic runs have lengths3 and2 and no singleton. This is an actual-tail counterexample to the stronger singleton shortcut, not a two-equation witness. It respects GC799's length1-or2 necessity and GC800's prohibition of adjacent runs both at least3.
+
+**Nontrivial complement entry.** The first pair(P,D) has P OR D=11111, odd, so it is a zero-indegree vertex of the q5 graph by GC816. It reaches the five-cycle after a finite spatial transient. A period10 primitive immediately to its left is A=0101010101, because Delta A is all-one and A(t+5)=1 xor A(t). Immediately left of A, B=0011010101 satisfies Delta B=A OR P=0101111111. Thus this actual right half admits both the complement and its next period10 primitive; the obstruction is not just q1 or failure of the first left equation. No claim of indefinitely continuing left in period10 is made.
+
+**Independent and unexpected controls.** Reading the source entry P over its two q-blocks gives odd black count3, and B's half-shift defect E=10011 has odd black count3. Delta E=10100=1-P agrees with GC785. In GC796's independent ordered-pair formula, P's white ticks are0,2 but P OR D is always1, so every r_j=0 and parity(E)=1, agreeing without using B's initial bit. The complement A has least temporal period2, while the adjacent pair(P,D) has least joint period5; least period2q of every individual column is not required by the critical-entry argument. The tail is a spatial splice, not a new spatially periodic ring orbit.
+
+Repeating the q5 words31 times retains these odd parity values over155 ticks and complements after155 on A. However the entry pair still has least joint odd period5, rather than155. Hence GC760's all-L inherited joint-period condition rejects this as a target bridge; it is not a finite seed, an all-L construction or a period-two counterexample. It demonstrates exactly why removing that condition enlarges the problem enough to admit a real entry, and why generic source-to-cycle exclusion is untenable even for q>1.
+
+**Disposition and receipts.** Close only the unrestricted singleton necessity and q>1 source-to-cycle impossibility shortcuts. The155 all-L entry/selector problem remains open. L439/0c19032b independently accepts GC815 and GC816; received and acknowledged. Cloud8737c51b reports R_real(104)>=13 with checked SAT witness; receipt only, not independently replayed here. Local's DB and RK lanes preserved. Independent reading of this literal splice requested; no computation commissioned. Scratch unresolved/no retry, browser disabled, room closed.
