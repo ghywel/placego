@@ -38,6 +38,23 @@ W = 12 for A).
         of C's.
   Counterfactual. A kicking more than B, or a dyadic rhythm in A's kicks, would make the ruler's back-travelling news
   a real cause of kicks, and the owner's shockwave would be measurable.
+
+OUTCOME of the first run, 2026-10-09 (N = 8192, 64 seeds per world; about two minutes beside RR3).
+  KR-C PASS: A and B agree on column 1 below row W in 32 of 32 seeds for W = 12, 64 and 128.
+  KR-P1 HELD: the edge's news does travel back. Its first effect on column 1 comes at W / t1 = 0.240 (W = 12), 0.245
+    (W = 64) and 0.250 (W = 128) cells a row, Rule 30's leftward speed (0.246), the same speed as the left front.
+  KR-P2 HELD: but it adds no kicks. Clean fraction A - B = 0.0004 (0.0 se). Kicks per row: A 0.0318, B 0.0327,
+    a difference of -0.8 se.
+  KR-P3 HELD: no ruler rhythm. In 8 bins of frac(log2 t), A - B stays within 1.7 se in every bin.
+  KR-U REFUTED (the unexpected check): a real random interior kicks the wheel less than coin flips do. The clean
+    fraction is 0.667 for B against 0.564 for C, and kicks per row 0.033 against 0.055. This runs against §8.11's N1,
+    which found a coin interior cleaner (60% of exact windows against 8% with real 12-cell right halves). That run
+    measured windows equal to the previous one, up to row 2048, so formation is inside it; this one counts rows that
+    start a clean 56-step stretch, from row 2048 on. The two are not the same measure, and the difference is not
+    resolved here.
+  Reading: the ruler's news reaches the wheel, as the owner guessed, at the leftward speed of information, but it
+  arrives as one more contribution to noise the interior already makes. Kicks come from the random cells next to
+  the wheel. With an edge or without one, they come at the same rate and with no dyadic rhythm.
 """
 import random
 import sys
