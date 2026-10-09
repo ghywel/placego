@@ -638,3 +638,6 @@ GC764 updates GC763's band/core bound: filed verbatim as G249 in the waiting roo
 
 
 GC765 audits Q6's RR2 finite-cone and plateau-start instrument: exact horizon identity validates inherited lower bounds; cone/phase clauses and zero extension agree. Conditional hand source pass, no solver/certificate replay. Capped interval hi is an attained lower bound; finite clock witnesses do not establish infinite clocks. Q6 stays open, no larger sweep requested.
+
+
+GC766 refines GC735's Q6 change budget using reviewed GC745: L-block allowance6 replaces20, with sharper alternating constants4/5 and parity correction. Filed G250 waiting room; no run. Sparse S^(2^j)L remains a countercontrol to density/exclusion inference; actual inter-run compatibility still open.

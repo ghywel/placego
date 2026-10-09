@@ -18274,3 +18274,29 @@ The horizons are exactly equal, including the closing tick. Hence the plateau lo
 **Unexpected quantifier and reporting guards.** These queries cover all configurations that realize a finite clock of the required horizon, not all configurations with an infinite clock. Extending a zero-padded witness past its tested horizon is not justified by its SAT status. The sweep's hi variable is explicitly the maximum of decided values and retained lower bounds, so its printed “max61..120” is a certified attained lower bound on the true interval maximum, rather than an upper bound. The reported17 establishes RR2-P2 against15, but the capped depths could still exceed17, as GC764 requested. No finite seed with an infinite period-two clock is constructed or ruled out here.
 
 **Disposition.** The finite-cone, phase and plateau-start logic passes this hand source audit. RR2's SAT checks/UNSAT answers remain received numerical evidence; no independent solver or certificate replay claimed. The capped-maximum qualifier and explicit G249 all-depth reading remain requested. No further sweep requested; next main-line proof obligation rather than longer caps. Scratch flags/doorbell deferred without login retry; break room closed.
+
+
+## GC766 — Exact L cost sharpens the mixed letter-change budget (2026-10-09, GPT)
+
+**Main-line use of the reviewed exact L cost.** Predict GC745 improves GC735's mixed change budget, without an exterior-period assumption. Counterfactual: the improvement forces positive minority-letter density or excludes the sparse formal word. Independent control checks the closing sample needed by inversion; unexpected check retains the sparse-word failure. No experiment, inverse-word census or orbit run. GC735 and GC745 read again; this is their quantitative corollary, not a new renewal mechanism.
+
+Let time0 be a synchronized marker in an actual S/L history with finite left support, and J_0>=-1 its initial left-edge distance. At marker time a the exact left edge has distance J(a)=J_0+a. A completed n-gap same-letter block has duration D=6n for S or10n for L. GC710 gives D<=J(a)+3 for S. GC745's exact closing-inclusive inverse cost gives D<=J(a)+6 for L. This applies even when the next letter is S: the left inverse uses the wall, the n copies of h(L), and the closing nearest-right1, which every synchronized marker supplies. It does not use the closing marker's farther-right bits, an infinite all-L trace, or the later six-column slab. Hence the previous safe L allowance20 is superseded by6.
+
+At a positive completed renewal boundary T, split its prefix into n=r+1 maximal same-letter blocks, where r is the number of changes. The last block may be only a prefix of the next full run. Write a_0=0,a_n=T and c_i=3 for an S block,6 for an L block. Each block gives
+
+    a_(i+1)<=2a_i+J_0+c_i.
+
+Induction yields the sharper word-specific budget
+
+    T <= J_0*(2^n-1)+sum_(i=0..n-1) 2^(n-1-i)*c_i.
+
+The c_i alternate because these are maximal blocks. Summing the alternating geometric series, with epsilon_n=1 for odd n and0 for even n, gives
+
+    first block S: T <= (J_0+4)*(2^n-1)-epsilon_n,
+    first block L: T <= (J_0+5)*(2^n-1)+epsilon_n.
+
+For n=1 these recover exactly J_0+3 and J_0+6, checking both phase and endpoint. Uniformly, T<=(J_0+5)*(2^(r+1)-1)+1; the simpler bound with J_0+6 and no terminal correction also follows. This improves GC735's constant20 while retaining only a logarithmic necessary change count. The parameter is elapsed physical marker time, not number of renewal gaps.
+
+**Unexpected sparse countercontrol.** GC735's formal word concat S^(2^j)L still passes every improved individual block bound with J_0=5. Its S block starts at a_j=6*(2^j-1)+10j, so D-a_j=6-10j<=J_0+3. Each one-gap L block starts after that S block and has duration10<=J(a)+6. Therefore the derived weighted budget also holds on this formal word. It retains vanishing L density and exponential run growth; no physical realization is asserted. The improved constant cannot close aperiodic Q6 or provide a uniform support deadline.
+
+**Disposition.** Use the exact L cost in future duration accounting; keep the inter-run compatibility gap explicit. Independent hand reading requested. No new scan, additional cap or prize claim. Scratch flags/doorbell deferred under the unresolved login failure; break room closed.

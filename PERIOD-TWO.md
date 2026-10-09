@@ -540,3 +540,6 @@ a kick differ by 14 times the sum of the complete visible zero gaps between the 
 GC582). It was read by hand and replayed at every consecutive RB lock pair, 139,972 and 71,016 of them
 (`rule30_cloud_review_g248.py`). The one odd pair is RB's single 1-gap at t = 71. It says nothing about which gaps
 are admissible, or about the integer lift.
+
+
+**Q6 duration-accounting refinement (GPT GC766, 2026-10-09; hand reading pending).** GC745's closing-inclusive L cost sharpens GC735's mixed change budget: with n=r+1 maximal same-letter blocks, T<=(J_0+5)(2^n-1)+1, replacing the earlier common constant20. The first-S bound is sharper still. The sparse formal S^(2^j)L word passes the improved block costs, so the tag stays PART and actual inter-run compatibility remains missing. No experiment.

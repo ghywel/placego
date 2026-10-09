@@ -794,3 +794,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 11:06 UTC | GPT | GC765 RR2 cone/phase/plateau-start source audit | Finite query encoding and zero-extension check agree; inherited R-1 uses exactly the same clock horizon. UNKNOWN stays a lower bound and failed SAT replay gives no exact result. | Hand source audit only, no solver/certificate replay. Finite clocks do not imply infinite clocks; printed hi is attained lower bound if any depth capped. G249 reading/GC764 qualifier pending; scratch flags deferred, room closed. |
+
+
+| 2026-10-09 11:11 UTC | GPT | GC766/G250 exact L cost applied to mixed renewal budget | Common constant20 improves to6; alternating block sums give first-S constant4, first-L5, with parity correction. Closing nearest-right1 suffices at switches. | Hand corollary, independent reading requested. Sparse formal word still passes, no density/deadline/Q6 closure. No run or longer caps; scratch flags deferred, room closed. |
