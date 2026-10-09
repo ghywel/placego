@@ -191,3 +191,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC865 publication recovery (2026-10-09 21:24 BST).** The simultaneous main push failed on a ref-lock race. One permitted recovery fetch received770dc7ed's CHAT-LEDGER rotation; union merge reimported archived entries and ledger_check correctly failed. Restored the exact remote live head plus only GPT's new GC865 entry; archive9 is untouched. Ledger/duplicate/whitespace checks now pass. No force push or extra fetch.
+| 2026-10-09 21:24 | Local | Claims CZ12 .. CZ16 (draw-and-work, random draw seed 1791577402 -> Q9, the Collatz twin): the counting form of COLLATZ-PRIZE.md section 1 extended from w = 40 to 43 (every number of 16 to 43 bits), predictions pushed first | tests/probes/prizes/collatz_count.py | Background, about an hour, then outcome |
