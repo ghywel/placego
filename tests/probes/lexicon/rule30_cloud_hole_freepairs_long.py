@@ -25,6 +25,25 @@ PREDICTIONS, written 2026-10-09 22:58 BST, before any run of this script.
          beyond half the light cone (position > 9 * 29 / 2) is forced white.
   Counterfactual. A failing word is a true forbidden word of the family, so the pair is not free and gives no
   bound. P1 holding is evidence, not proof; a proof needs a construction for every length.
+OUTCOME, 2026-10-09 00:07 BST (run at commit 03d1f06; STOPPED by Cloud after 67 minutes of CPU, inside p = 9's
+  45-hole tail, where single calls were taking minutes): FP2-C1 PASS and FP2-C2 PASS on everything tested;
+  FP2-P1 REFUTED, FP2-P4 REFUTED; FP2-P2, FP2-P3 and FP2-U NOT DECIDED (stopped before p = 7, p = 5 and the
+  locality check).
+  - How the partial results were read. The process never printed: its p = 9 family was still in the 15-block loop.
+    Its local variables were read with py-spy (dump --locals, read-only) just before it was stopped.
+  - p = 9, 10 blocks: the 1,200 s cap stopped the loop after 109 of 1,024 words, each call about 11 s on the
+    45-hole formula. One is unrealised: 001001001000000001001000000000, 30 holes. Every realised word's model
+    replayed, and every prefix within FP's N = 14 was realised.
+  - That word was re-checked independently: kissat 4.0.4 on a fresh CNF of the 30-hole formula (68,644 variables,
+    238,845 clauses, the hole bits as unit clauses) says UNSATISFIABLE. So it is a true forbidden word. Two solvers
+    agree, though neither UNSAT is DRAT-checked.
+  - p = 9, 15 blocks: 2 of the first 5 random words were unrealised (001001001000000000001001000001000001000001001
+    and 000001001001000000000001000001001000000000001).
+  - Reading. (000, 001) is NOT free at p = 9. Its freedom to 14 holes was local, since a constraint first bites
+    within 30 holes. So FP's pairs are not lower-bound witnesses as they stand. A construction needs blocks that
+    carry long-range structure, or a set of block words closed under the true constraints.
+  - Lesson for the instrument: the formula should match each word's length, and each call needs a conflict
+    budget, so that one hard call cannot hold a whole family.
 """
 import os
 import random
