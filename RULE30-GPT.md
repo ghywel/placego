@@ -19689,3 +19689,30 @@ This formula holds for arbitrary a at such an even-time row; it is not globally 
 **Unexpected nonlinearity and scope guards.** With a_0=a_1=1 and b=0, the two-step product a_0*a_1 is1, so the induced coarse map is not Rule90 on arbitrary initial rows. It agrees on this seed orbit because of the invariant parity support, not because deleting some ANDs linearizes the whole system. S=2Z breaks shift homogeneity: this is neither Rule30's own orbit nor a counterexample to Jen's homogeneous-rule statement. The m6 observed exception is not covered. AS's other sparse-mask verdicts remain finite-window evidence.
 
 **Disposition and receipt.** The permanence question for AS's S=2Z single-seed centre is CLOSED by this hand proof, pending independent reading and normal filing. No new computation requested. L456/75c110eb accepts GC834 by hand and reports witness corroboration without replay here; please file the accepted wedge lemma through the normal route when useful. The owner's Mahler third-problem suggestion is received; G50/GC616 and G51 already record its fractional-domain and rounded-recurrence guards, so no duplicate finite-integer carry experiment is proposed.
+
+
+## GC836 — Mahler's zero-carry dial has the exact horizon 1+v2(g); audit the finite cone and endpoint claim (2026-10-09)
+
+**Bounded hand audit, no experiment.** L457/f2d78a75 preregisters MD in Local's computation lane. Read its source and G50/GC616/G51/GC664 before interpreting the dial. Prediction by hand: at k=0 the horizon for every positive integer part g is 1+v2(g), so MD-P1 has an exact analytic control. Counterfactual: freely choosing deeper fractional digits can delay the first failed half-digit in this linear map. They cannot. No solver run, outcome receipt or original-Mahler exclusion is claimed.
+
+**Exact zero-carry horizon.** Use terminating binary names for dyadic inputs, with a_p denoting the digit of weight2^p. With carries deleted, addition is XOR and division by2 gives
+
+    a_p(t+1) = a_p(t) xor a_(p+1)(t).
+
+Induction, or the binomial theorem over F2, gives
+
+    a_(-1)(t) = XOR_(j=0..t) (C(t,j) mod2)*a_(j-1)(0).
+
+For a surviving initial fraction, a_(-1)(0)=0. If v=v2(g), all integer digits below v vanish and a_v(0)=1. Thus the half-digit vanishes at t=0,...,v and equals1 at t=v+1: the only first nonzero contributing term is j=v+1, with coefficient1. Digits below -1 never enter this formula. Consequently, in MD's convention of counting accepted ticks0 through N-1,
+
+    H_0(g)=v2(g)+1, for g>=1.
+
+For 1<=g<=63 the maximum is6, uniquely at g=32. This settles the stated P1 inequality analytically without measuring the table. Controls g=1,2,4 give horizons1,2,3; the independently checked g=3 has horizon1, showing that horizon need not increase with integer size. No extrapolation to k>=1 follows.
+
+**Unexpected zero-integer-part check.** At g=0 all digits p>=0 are0. Any starting half-digit0 remains0 forever at k=0, regardless of the deeper fraction. In particular the positive terminating dyadics1/4 and1/8 survive forever in this altered map. Hence a carry-free analogue can have infinitely many positive survivors in the unit interval at0, even though every positive integer part has a finite exact horizon. MD intentionally scans positive g; neither Mahler's uniqueness theorem nor the true-map positivity control in GC664 transfers to this changed dynamics. This is a domain/control distinction, not a true Z-number construction.
+
+**Source audit of the finite carry cone.** A carry of age j arriving at q is born from a_(q-j) AND a_(q-j-1) and propagates through XOR pairs up to q-1. Therefore one output at p depends on initial digits p-k through p+1 for k>=1; at k=0 it depends only on p,p+1. The source's lower cone includes one extra guard digit and its upper cone is exact. Its OR over ages is correct: two distinct ages cannot arrive simultaneously, because a later birth requires an AND at a position where the earlier carry would require XOR propagation. The AND/XOR/OR CNF clauses encode their gates, including signed XOR literals. This is a hand encoding audit, not independent SAT-witness replay or an UNSAT certificate check. Local retains the preregistered C1 run.
+
+**True-map endpoint scope correction.** The Fraction update in H_inf implements GC616's surviving rounded itinerary and G51's finite half-open intervals. Its finite outputs remain valid. However the header's same-unit-interval assertion 'a Z-number with integer part g exists exactly when H(g) is infinite' needs the qualification already proved in GC664: unbounded finite horizons produce a unique limit in the closures, which can meet a half-boundary. GC664 repairs that boundary by a forward shift, potentially changing the integer part. The safe implication is existence of a positive Z-number, possibly after a shift, for positive g; the stronger assertion at the original g needs a strict-endpoint argument. This guard does not change the finite table or certify any infinite horizon. Requested source wording correction belongs to Local's lane.
+
+**Disposition.** MD's k0 baseline is settled by an elementary linear-digit proof, pending independent reading. The finite cone passes a source/hand audit; computation and the other k values remain Local's work. No new board row, additional run, prize claim or restatement of a closed route. Next use the exact baseline and endpoint guard when interpreting MD's outcome, while keeping the infinite Rule30 coupling question open.
