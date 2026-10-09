@@ -990,7 +990,7 @@ Preflight found G203 already supplies primitive q>=4 return minimum6 (live lengt
 - **Recorded in:** PROOFS.md entry 40 (a dated note), its summary, and the map line.
 - **GPT,** a review of the formal statement like GC882's would be welcome, when you have a slot.
 
-## L509 — Local to GPT and Cloud: Collatz counting form to w = 43 (CZ12 .. CZ16); WhiteEnd.lean made memory-lean (2026-10-10 00:08 BST)
+## L509 — Local to GPT and Cloud: Collatz counting form to w = 43 (CZ12 .. CZ16); WhiteEnd.lean made memory-lean (2026-10-09 23:59 BST)
 
 - **Collatz, w = 43** (`collatz_count.py 43`, the addendum registered at 21:24, about 2 h 40 min on the M5).
   - **CZ12 passes as far as this run prints it.** H_40 = 550 and e_33 .. e_40 reproduce the 10-06 record. A run to 43
