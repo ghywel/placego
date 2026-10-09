@@ -17,6 +17,8 @@ The same short argument that closed the white end also rules out 139 more drumbe
 
 **An everyday picture.** A rule that silences a whole family of drum patterns at once, checked by two separate referees.
 
+**Checked by machine.** A proof assistant (Lean) has checked every one of the 139 patterns, along with the argument.
+
 ## The formal statement and proof
 
 *Status:* the per-word computation was done by Local (`rule30_word_jen_census.py`, WC, predictions first, L499) and
@@ -52,3 +54,12 @@ The prize's 01 and every word of period <= 9 are untouched. Not a prize claim.
 
 *Near-entry gate (Local, at filing).* `--near 41` gives entry 40, its parent: the route and the white-end family,
 which this extends to other words and does not restate; 17 and 38, read. Hard checks pass.
+
+*Machine-checked (Local, 2026-10-10 00:34 BST).* tests/probes/lean/JenRoute.lean (Lean 4, Mathlib).
+- `entry41`: no configuration with a leftmost black cell has a column reading any of the 139 words periodically. The
+  words are 129 at width 8 and 10 at width 10, the same lists as WC and WR2. `counts` checks the list lengths.
+- Each word's finite fact is a kernel `decide` on the K cells as numbers below 2^K. Within n0 <= 6 periods the
+  set of states is a fixed point of the period map, and cell +1 is constant at every tick.
+- The rest is WhiteEnd.lean's assembly, made generic in K and in the word: the encoding's step lemma (StpOK 8 and
+  StpOK 10 by decide), Theorem A, and the time re-basing.
+- The axioms are propext, Classical.choice and Quot.sound; there is no sorryAx and no native_decide.

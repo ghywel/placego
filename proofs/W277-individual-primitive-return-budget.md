@@ -10,9 +10,12 @@ proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this 
 
 Disjoint rotation copies give every primitive dyadic first excursion an explicit return cap.
 
-**What it says.** The rotation quotient has m live vertices and a source chains. Reserving two endpoints for every other chain leaves at most m-2(a-1) vertices for one chain. Its original return depth is at most (2^q-2^(q/2))*(2^q+2^(q/2)-3)/q+3. Second reading is pending; the period and quotient mechanisms are credited to W275.
+**What it says.** The rotation quotient has m live vertices and a source chains. Reserving two endpoints for every other chain leaves at most m-2(a-1) vertices for one chain. Its original return depth is at most (2^q-2^(q/2))*(2^q+2^(q/2)-3)/q+3. Cloud CL119 second-read this accounting; the period and quotient mechanisms are credited to W275.
 
 **Why it matters.** This improves the universal cap by a factor roughly q but remains exponential. No lower growth or prize statement follows; a stronger counting bound needs compulsory additional excluded mass.
+
+
+**W277 continuation (GC892).** G203's already second-read short-return exclusion gives live minimum5 for primitive dyadic q>=4, strengthening the cap to m-5a+6. Cloud CL119 accepted this accounting corollary given G203; it remains exponential and does not review the quotient random ensemble. Further fixed-baseline optimization is closed as a growth route; no promotion.
 
 ## The formal statement and proof
 
@@ -46,3 +49,24 @@ Return depth r=L+1, giving r<=m-2*a+3=(N-h)*(N+h-3)/q+3, as claimed. This is ele
 
 
 **GPT duplicate audit (2026-10-09 23:30 BST).** W277 hard checks pass. Nearest W275/W274/W273 read in full: they supply primitive mass, the rotation quotient, two-endpoint chain minimum and existence/offset. This entry is their elementary individual endpoint-reservation corollary, explicitly credited; no new recurrence mechanism or proof promotion. Verbatim GC890 filed here; generated proof pages left to Local.
+
+
+#### GC892 — G203 already strengthens the reservation budget; counting-only route closed (2026-10-09 23:36 BST)
+
+**Registered preflight; no new mechanism.** Record searched: return + short-depth variants ->432 hits in134 files. Targeted G203 read in full, with relevant G188/G192 scope checks. Predict known short-return exclusions tighten GC890 without changing its exponential scale. Countercontrol: the actual primitive q2 return at r5 prevents using the q>=4 minimum there. Unexpected index check: reserve live length r-1, not return depth r. No trajectory, census or compiler run. This is a credited accounting corollary of second-read G203 and GC870's still-pending quotient, filed as a continuation of W277 rather than a new theorem number.
+
+**Correction of sharpness, not validity.** GC890's two-vertex minimum is valid but unnecessarily weak for primitive sources. G203 already proves nonconstant first children and endpoints have return depth r>=5. At r5, the forced prefix 0,c,1,e and final repeated pair imply 1=w XOR S w. Thus w is alternating of least period2; period conservation excludes r5 at primitive q>=4. Every primitive dyadic q>=4 chain therefore has r>=6, or live length L>=5. No claim that r6 is attained.
+
+Use GC890's m=(2^q-2^(q/2))*(2^q+2^(q/2)-1)/q and a=(2^q-2^(q/2))/q. Reserving five vertices for each of the other a-1 chains gives
+
+L<=m-5*(a-1),   r<=m-5*a+6.
+
+This tightens the q4 cap54 to48, and q8 cap8073 to7986. At q16 it gives268406886. These are integer substitutions, not replayed maxima. At q2 the minimum is instead L>=4 and the same accounting leaves r<=6 because a=1; the actual r5 remains compatible. Reserving six live vertices for q>=4 would misread r>=6 by one; the live/return offset is essential.
+
+**Closed counting-only direction.** Even the strengthened cap remains asymptotic to2^(2q)/q. Any fixed baseline b merely subtracts b*(a-1), of order2^q/q, from mass of order2^(2q)/q. Finite short-return exclusions alone cannot change that leading scale. In the abstract quotient a single chain can use all vertices left after reserving the others' minima; this does not claim a realizable Rule30 extremum. More baseline bookkeeping is not a new source-dependent or physical-root constraint and supplies no Q7 lower growth. Retain this bound as corrected accounting; close further optimization of this counting-only route unless compulsory mass on the leading scale or a dynamical constraint is supplied. Next useful work must bound actual source-dependent paths, not repackage total mass. Prize board remains Q7 PART.
+
+
+**GC892 filing check (2026-10-09 23:36 BST).** W277 hard checks pass; nearest W275/W274/W273 are unchanged and were read in full for GC890. G203, read in full this block, supplies the credited primitive short-return minimum. This is a continuation/correction of accounting sharpness, not a new proof unit or promotion; quotient second reading remains pending.
+
+
+**W277 second-reading receipt (GPT, 2026-10-09 23:47 BST).** Cloud CL119 atef34f951 verifies GC890's primitive mass, free rotation chain copies, individual budget and return offset by hand, and GC892's tightening conditional on already second-read G203 (not reread by Cloud). The accounting part is now second-read; no trajectory replay or lower-growth claim. It does not review GC870's conditional random ensemble or GC894. Formal promotion/pages remain separate.
