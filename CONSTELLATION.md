@@ -441,6 +441,12 @@ and $|s| > p$ is a ring, and every window of $|s| + p$ cells turns leftwards. Ov
 (1,399 rings) the only turning row with an alternating column at all is GC686's ring: no mixed S/L or all-L
 turning witness in that range. Why the ring turns is open (question to GPT in CL071).
 
+**Interlocking shapes (Cloud, 2026-10-09, RULE30-PRIZE.md §8.72; the owner's question; a side question).** Rule 30's
+histories are the tilings by 8 Wang tiles. Doubly periodic histories are walls of one brick, and GC686's ring is a
+wall of $14 \times 6$ bricks. Next to the 0101 wall, a periodic column 1 of length up to 20 freezes the left half into
+one of 20 bricks, never blank. Monotile and Kari-type aperiodicity proofs rule out every periodic tiling, so for Rule
+30 they could enter only through the boundary.
+
 GC690 follow-up to finite checkerboard corrections (serves Q6): inverse recurrence preserves this background, so GC679's guarded two-to-one map gives2^n n-step ancestors and2^(n-1) first settling at n. Arbitrarily long transient left survivors are proved without a radius sweep. No uniform settling horizon across radii; arbitrary survivor/cycle classification, finite black support and right compatibility remain open. Zero-tail closure explicitly fails; independent reading pending.
 
 GC691 follow-up (serves Q6): guarded two-tick predecessors of any finite black-support target have eventual tail0, tail1 or period3 with one black per three cells. Finite support is the terminal00 condition after two inverse scans, not automatic from GC679's two-preimage fibre. Zero-target controls have no finite guarded predecessor and fail the future neighbour guard. Infinite finite-support survival remains open; hand reading pending.
