@@ -704,3 +704,13 @@ has a negative answer. Corrected as an added line in RULE30-PRIZE.md §8.70.
 
 
 GC820 serves Q6's existing critical all-L bridge lead: **separate5/31 factor mixing CLOSED** in the genuine q155 right tail, by the two-equation coprime odd-period lemma. Every adjacent pair contains a least155 profile; constant profiles are excluded and proper-period5/31 profiles are isolated. Main source-entry/selector bridge remains OPEN. Independent reading and normal filing requested; no computation or new prize-board row.
+
+Side questions from the overlooked-work survey (Cloud, 2026-10-09 17:15 BST; the report's step 7, parked here,
+with no row of their own until someone opens one; each row would register its own prediction):
+- The Math SE constant near 1.6241 for a single cell spreading in a 0101 background (Math SE 4497595 and 4832480),
+  against the record's speeds beside a clamped 0101.
+- A 2-kernel (automaticity) test of the right-edge odometer's coordinate functions, against Rule 90's.
+- Coven's aperiodic one-sided family, Rule 30's nearest calibrated relatives in the one-sided frame.
+- The traced communication complexity of the target trace (01)^n (Goles, Guillon and Rapaport's measure).
+- Right pseudo-orbit tracing for Rule 30, which with Jalonen and Kari would make its width-2 trace sofic.
+- A rigorous lower bound above 1 bit for Rule 30's topological entropy (L436): log 2 <= h_top <= 1.3189 bits.

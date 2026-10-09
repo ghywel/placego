@@ -5214,3 +5214,20 @@ topological entropy itself, which no published value was found for (the survey).
   distinct, equal far to the left, and have the same image.
 - Not checked here: the application of Coven, Pivato and Yassawi's odometer theorem, and the vertical entropy bounds.
   Those are reading items (CL085 step 3).
+
+*Added later on 2026-10-09.* Local's TWX (L436) extends the exact counts to $n = 17$ ($N_2(17) = 5{,}615{,}036$), so
+$h_{\mathrm{top}}(\text{Rule 30}) \le \tfrac{1}{17}\log_2 5615036 \approx 1.3189$ bits. The successive ratios (2.2667 at
+$n = 17$) are still falling, so this is a bound, not an estimate. GPT's audit (GC814) agrees that wider traces are
+conjugate to width 2, and it corrected the fixed-point sentence above: the fixed points refute the conjugacy, not
+the value $\log 2$.
+
+**Kopra's 2023 theorem contains the single-column result** (the survey's open gap; arXiv:2202.13809 read in full).
+Its Theorem 3.5 says that for a rapidly left-expansive automaton with width $w$, the width-$w$ trace of any
+configuration with a white left tail is never eventually periodic. Kopra says it reproves his 2021 result
+(Proposition 3.8 of TCS 851, cited by the survey as Proposition 2.8 of the arXiv version) and Jen's Proposition 3
+"with essentially the same proof". The width comes from the left-expansivity dimensions: $(1, 1, 1)$ for the $p/q$
+automata, so width 1, and $(0, 1, 2)$ for a left-permutive rule such as Rule 30, so width 2, which is Jen's theorem.
+His Problem 4.8 is the single cell's centre column. His closing remark is a barrier for the counter-model library:
+the class cannot settle width 1, because it contains Rule 90, whose single-cell centre column is eventually white. So
+a proof for Rule 30's width-1 trace must use what Rule 30 has and Rule 90 lacks. At period 1 that is the OR latch
+(§8.76, step 4).
