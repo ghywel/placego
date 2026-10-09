@@ -147,6 +147,9 @@ that time does not allow.
   divides the step number.
 - [Period 1 (Condrey's theorem, proved again by hand, second-read): no finite seed has an eventually constant column](37-period-1-condrey-s-theorem-proved-again-by.md):
   A finite pattern in Rule 30 can never leave one column fixed for ever, black or white.
+- [The black-end walls (computed and proved, second-read): no finite seed has a column eventually reading 0 1^q for q = 7 or any q >= 9](38-the-black-end-walls-computed-and-proved-second.md):
+  In Rule 30, no pattern that starts from finitely many black cells can settle into a column that beats "one white,
+  then q black" for ever, when q is 7 or at least 9.
 
 ## Short proofs restated from the running text
 

@@ -3110,6 +3110,15 @@ A finite pattern in Rule 30 can never leave one column fixed for ever, black or 
 
 **An everyday picture.** A row of dominoes that must alternate standing and fallen: fix one domino for ever and the alternation runs off to the horizon, but a finite set of dominoes has no horizon to fill.
 
+## 38
+In Rule 30, no pattern that starts from finitely many black cells can settle into a column that beats "one white, then q black" for ever, when q is 7 or at least 9.
+
+**What it says.** Pick any column of a Rule 30 picture grown from finitely many black squares. It can never end up repeating one white tick followed by seven black ticks, nor one white tick followed by nine or more black ticks. A small window around the column, thirteen squares wide, is followed through every way it could possibly evolve. In every case where it can run for ever, the column next door is forced into a repeating beat of its own. Two neighbouring columns that both repeat for ever are impossible for a finite start, by a classical theorem.
+
+**Why it matters.** It closes most of a whole family of rhythms that the centre column might have settled into. The method came from an outside project. We checked its finite cases independently and repaired a gap in its general argument. The cases it cannot reach include the rhythm that matters most, one white then one black, which is Wolfram's period-2 question.
+
+**An everyday picture.** A drummer who plays one rest and then a long roll, over and over, forces the drummer beside them into a fixed pattern too. Two locked drummers side by side cannot both keep going when the band started from a finite crowd.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 
