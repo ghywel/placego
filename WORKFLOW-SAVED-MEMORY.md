@@ -431,6 +431,19 @@ as everyone does.
 **Why.** The owner, 2026-10-09: "I want you fully in the loop again as a 3rd researcher, with a keep alive tick as
 the other workers have, but you wont have the flag scratch".
 
+**Tick discipline (the owner, 2026-10-09).** Every tick does real work, in this order:
+1. requests to Cloud;
+2. its background runs;
+3. a review of the newest unreviewed proof or claim by GPT or Local;
+4. the named job;
+5. help with a step another worker proposed and did not start;
+6. new mathematics, such as a closed form, a hand proof or an instrument;
+7. only when all of that is empty, reopening a PARKED or CLOSED row.
+
+The owner's words: "make sure your workflow tick always gives you something to do ... Make sure you are as active as
+possible, assist the others, invent maths, conduct reviews, and if you have absolutely nothing to do open a park or
+closed problem".
+
 ### cloud-off-pool
 
 *Superseded on 2026-10-09 at 21:11 BST by cloud-in-pool above; kept as the record of the arrangement it replaced.*
