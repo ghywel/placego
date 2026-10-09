@@ -183,8 +183,9 @@ PART: as on the board.
 - Width-1 rain is the fixed point (01)^inf eaten from the left one cell a row; a stack lasts i - a rows; stack
   births 1/16 per site, lengths 2^-k — PROVED (GC847; K1 by hand L470; second-read CL103) / MEASURED for the single
   seed — rule30_cloud_rain.py, CL094
-- Triangles are not carried; their births echo rightwards, C(d,d) = 0, 2.10, 0.25, 1.92, ... — MEASURED —
-  rule30_cloud_velocimetry.py, CL095
+- Triangles are not carried; their births echo rightwards. Under fair rows, exactly: P(top) = 21/128 and C(d,d) =
+  0, 928/441, 16/63, 94/49, 36/49, 17695/14112, ... (d = 1..9), alternating about 1 — COMPUTED (exact) —
+  rule30_cloud_triangle_echo.py (EC), CL108; measured first in rule30_cloud_velocimetry.py, CL095
 - The centre's wave moves at speed 1 and never reaches the right edge: the gap W + tau is exact; leftward influence
   can reach speed 1 on white — PROVED — GC856 (second-read CL103); rule30_cloud_centre_wave.py, CL097
 

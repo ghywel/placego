@@ -31,6 +31,16 @@ PREDICTIONS, written 2026-10-09 22:01 BST, before any run of this script.
   Counterfactual. If EC-P1 fails by more than the measurement's scale, the random-line run was not measuring the
   fair-row law, and CL095's line should be re-read. If EC-P3 fails, the "alternation law in triangles" reading of
   CL095 was too strong.
+OUTCOME of the first run, 2026-10-09 22:03 BST (DMAX 9; about a minute, one core, run at commit c90f004): EC-C1
+  PASS, EC-C2 PASS, EC-P1 HELD, EC-P2 HELD, EC-P3 HELD, EC-U REFUTED.
+  - P(top) = 21/128 per site and row, exactly (direct: 0.16402 against 0.16406).
+  - C(d, d) for d = 1 .. 9, exact: 0, 928/441, 16/63, 94/49, 36/49, 17695/14112, 49279/56448, 154457/112896 and
+    112517/129024, that is 0, 2.1043, 0.2540, 1.9184, 0.7347, 1.2539, 0.8730, 1.3681 and 0.8721. CL095's measured
+    values agree to the two decimals printed (P1). The denominators divide 441 2^k, because P(top)^2 = 441/2^14.
+  - C(d, s) = 1 exactly at s = d - 7 and d + 7 for d = 1, 2, 3 (C1, GC851's band). C(1, 1) = 0 exactly (P2), and
+    direct simulation gives C(2, 2) = 2.10402 against 2.10431 (se 0.00108).
+  - The sign of C(d, d) - 1 alternates exactly through d = 9 (P3). The even-d excesses 1.104, 0.918, 0.254 and 0.368
+    are not monotone (U). The dip at d = 6 is in the law itself, not noise in CL095's run.
 """
 import random
 import sys
