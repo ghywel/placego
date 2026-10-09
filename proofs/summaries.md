@@ -3148,6 +3148,8 @@ The same short argument that closed the white end also rules out 139 more drumbe
 
 **An everyday picture.** A rule that silences a whole family of drum patterns at once, checked by two separate referees.
 
+**Checked by machine.** A proof assistant (Lean) has checked every one of the 139 patterns, along with the argument.
+
 ## G259
 Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right half: one goes blank and the other freezes.
 

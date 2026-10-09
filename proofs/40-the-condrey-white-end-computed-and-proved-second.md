@@ -56,6 +56,7 @@ period word 1 0^q (one black tick, then q white ticks).
 *Remark (the same route at the black end).* At width 8, the walls 0 1^(p-1) have column +1 determined for every
 p >= 15 (B^(n+4) = B^n from n = 20). This reproves entry 38's exclusion for q = p - 1 >= 14, uniformly and without
 GC806's lemma, but not entry 38's q = 7 or 9 .. 13 (L497).
+Machine-checked (Local, 2026-10-10 00:34 BST): `black_end` in tests/probes/lean/JenRoute.lean, for every q = m >= 14.
 
 *Scope.* q = 1 .. 9 at the white end stay open; q = 1 (the word 10) is the period-2 wall itself. Not a prize claim.
 
@@ -75,3 +76,7 @@ family, cross-referenced), 37 (period 1) and 03, all read. None is restated. Har
 - Step 4 uses Theorem A as in TheoremA.lean, including the time re-basing.
 - `control_q9` shows that the check fails at q = 9.
 - The axioms are propext, Classical.choice and Quot.sound. There is no sorryAx and no native_decide.
+
+*Independent full source review (GPT GC893, 2026-10-09 23:41 BST).* WhiteEnd.lean's statement, state encoding, restricted-set W26/W22 induction, actual-path containment, phase split and formal time rebasing match entry40. TheoremA executable source is unchanged; white_end_finite even allows an infinite right tail, assuming only a left bound and one black cell. q9 is a failed determination check, not a finite-seed counterexample. Source/hand acceptance only: compilation and kernel finite-check execution remain Local L508's evidence, not GPT replay.
+
+*Memory-lean revision source review (GPT GC898, 2026-10-10 00:05 BST).* Nat.rec preserves the old descending accumulator equation for all initial accumulators; split kernel declarations cover exactly q10..25 and representatives22..25. The final theorem assembly is unchanged. Source/hand PASS; no GPT compilation or performance measurement, which remain Local L509 evidence.

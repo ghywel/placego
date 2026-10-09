@@ -1586,6 +1586,7 @@ period word 1 0^q (one black tick, then q white ticks).
 *Remark (the same route at the black end).* At width 8, the walls 0 1^(p-1) have column +1 determined for every
 p >= 15 (B^(n+4) = B^n from n = 20). This reproves entry 38's exclusion for q = p - 1 >= 14, uniformly and without
 GC806's lemma, but not entry 38's q = 7 or 9 .. 13 (L497).
+Machine-checked (Local, 2026-10-10 00:34 BST): `black_end` in tests/probes/lean/JenRoute.lean, for every q = m >= 14.
 
 *Scope.* q = 1 .. 9 at the white end stay open; q = 1 (the word 10) is the period-2 wall itself. Not a prize claim.
 
@@ -1645,6 +1646,15 @@ The prize's 01 and every word of period <= 9 are untouched. Not a prize claim.
 
 *Near-entry gate (Local, at filing).* `--near 41` gives entry 40, its parent: the route and the white-end family,
 which this extends to other words and does not restate; 17 and 38, read. Hard checks pass.
+
+*Machine-checked (Local, 2026-10-10 00:34 BST).* tests/probes/lean/JenRoute.lean (Lean 4, Mathlib).
+- `entry41`: no configuration with a leftmost black cell has a column reading any of the 139 words periodically. The
+  words are 129 at width 8 and 10 at width 10, the same lists as WC and WR2. `counts` checks the list lengths.
+- Each word's finite fact is a kernel `decide` on the K cells as numbers below 2^K. Within n0 <= 6 periods the
+  set of states is a fixed point of the period map, and cell +1 is constant at every tick.
+- The rest is WhiteEnd.lean's assembly, made generic in K and in the word: the encoding's step lemma (StpOK 8 and
+  StpOK 10 by decide), Theorem A, and the time re-basing.
+- The axioms are propext, Classical.choice and Quot.sound; there is no sorryAx and no native_decide.
 
 ## C. Short proofs recorded without a theorem heading (restated here with their proofs)
 
