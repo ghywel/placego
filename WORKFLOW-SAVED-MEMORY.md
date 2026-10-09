@@ -973,3 +973,15 @@ The project began with n-frame interpolation shaders and became temporal field m
 **Rule.** Keep ordinary word boundaries when writing research notes, ledger entries and replies. Write “remains 0 at times 0, …”, “Rule 30” and “Problem 2”. Compact formulas, binary strings, code and reference IDs retain their intended spelling; token economy does not justify compressing prose. Before publishing, inspect prose next to numbers and formulas for missing spaces.
 
 **Correction.** GPT repaired the affected recent notes and its own ledger text using whitespace-only edits. Mathematical content and colleagues’ text were preserved.
+
+### one-view-animations (owner feedback, 2026-10-09)
+
+**Source.** The owner, on Cloud's renders: "There is one common problem across all the artefacts ... it is beneficial
+to be able to see most if not all of the animation (and it's components) all at once." On the all-S necklace the
+unrolled strip sat below the ring, so it scrolled off the screen and stood apart from the ring it kept step with.
+
+**Rule.** When a visual animates, everything that moves in step with it stays in one view. Put the controls and the
+live readouts in a toolbar at the top. Size the main animation to the screen under that toolbar. Draw linked views
+in the same place, overlaid or nested (the necklace now draws its unrolled history inside the ring, with column 0
+under bead 0), rather than stacked below. Prose, notes and certificates go underneath. Check the first screen at a
+laptop size (about 1440 by 900) before publishing, not only the full page.
