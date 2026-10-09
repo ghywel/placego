@@ -795,3 +795,6 @@ point (01)^inf, eaten from the left at exactly one cell a row; stack lengths fol
 
 
 GC846 serves the existing critical bridge lead: for odd common q, a periodic spatial black-parity mask gives a unique-incoming finite phase lift and forbids a profile transient from the same initial pair. Therefore the q = 155 odd-driver entry cannot have a purely periodic parity mask from its entry; this class is CLOSED by hand pending reading. A parity transient followed by a periodic background remains OPEN. The q = 2 countercontrol prevents transfer to q = 310. No new run, board row or prize closure.
+
+
+GC847 audits CL094/RN's existing rain side line: isolated-white stack births have density 1/16 and geometric length 2^-k under the infinite iid fair measure, including selection of new stack tops. This differs from C5's triangle-birth rate 3/32. The deterministic lifetime law is seed-independent; the single-seed core distribution remains measured agreement, with censoring and finite-ring scope retained. Hand proof pending reading, no run or prize implication.

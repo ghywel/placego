@@ -19991,3 +19991,36 @@ If the parity mask becomes periodic only after a spatial cutoff, the profiles be
 **Unexpected even-period countercontrol.** At q = 2, the right profiles V0 = 11 and V_i = 00 for i >= 1 satisfy every equation Delta V_i = V_(i+1) OR V_(i+2). All temporal black parities are 0. The path (11,00) to (00,00) has a transient despite a constant parity mask. Both cyclic primitives 00 and 11 have the same parity, so the claimed unique incoming edge fails exactly where odd q was used. This control rejects an even-period transfer and does not assert a q = 155 or all-L realization.
 
 **Disposition.** Purely periodic spatial parity masks from an odd-driver entry are CLOSED by hand pending independent reading. Eventually periodic masks with a nonempty transient remain OPEN, including the retained template. No full critical uniqueness, higher-period or prize result follows. This is a structural reachability restriction; it does not justify resuming TC or enlarging RD. Next investigate whether the aligned left reference restricts that required parity transient, with GC762's failed conservation shortcut retained.
+
+
+## GC847 — Rain stack births have an exact geometric Bernoulli null; the single-seed law remains measured (2026-10-09 19:40 BST)
+
+CL094's rain has a deterministic lifetime mechanism and an exact random-row comparison. These are distinct from proving a distribution for the single-seed core. This block audits the actual stack-top selection in rule30_cloud_rain.py; no trajectory or census is replayed. Bears on the owner's rain side question, not a prize closure.
+
+**Main-lane stall retained.** GC846 supplies conditional rigidity, but no independent reason that the all-L clock forces a suitable spatial parity mask. An even-phase adaptation would still need that missing forcing input; no such invariant was proved. Do not treat a uniform-label target as progress on bridge reachability. Switch this bounded block to the new owner-directed result's probability and sampling scope, keeping TC stopped.
+
+**Prediction and existing record.** Expected the geometric law to survive selection of stack tops under an infinite iid fair row. Counterfactual: the existing triangle-birth density from C5 is also the stack-birth density. The hand count below refutes it. Read CL094, the full RN analysis routine, C5's independent second reading in RULE30-GPT and the prior-art triangle-statistics receipt. Reuse C5's proved uniform-measure invariance, rather than filing it again. No external novelty or full literature search is claimed.
+
+**The deterministic law, with its boundary.** For an isolated white cell, the three bits are 101. The next centre remains 0 and the next right neighbour remains 1 regardless of its further right input. Its left neighbour becomes the complement of the bit two sites left. Hence a finite alternating stretch is eaten from the left one cell per row; the isolated white cell lasts exactly i - a rows when a is that stretch's finite left end. A white run of width at least 2 instead has both endpoints turn black and its interior remain white, so the same white interval cannot stack. An infinitely alternating left stretch has no finite a and can give infinite lifetime; it is not a finite-length instance of the formula.
+
+**Which five-bit predecessors start a stack?** Write a,b,c,d,e for the previous row's sites i-2 through i+2. The new 101 requires
+
+    a xor(b OR c) = 1,
+    b xor(c OR d) = 0,
+    c xor(d OR e) = 1.
+
+The four solutions are 10001, 01100, 01010 and 01011. The last two already have an isolated white centre in the previous row; they continue the same stack. Only 10001 and 01100 are new stack tops. Under the infinite iid fair measure each has probability 1/32, so the stack-birth density is exactly 1/16 per site per transition. This matches RN's test that the isolated bit was absent on the previous row.
+
+**Geometric length after the top selection.** C5's four-preimage argument proves that every evolved infinite row is iid fair. Condition on either of the two birth predecessors. The new row already has its two bits 10 at sites i-1,i. Each further prescribed alternating output bit to their left fixes exactly one fresh predecessor bit: Rule 30 is XOR in that left input, while the two inputs to its right are already fixed. Those fresh predecessor bits remain independent fair bits after conditioning on the five-bit birth word. Thus every extra leftward alternating step has conditional probability 1/2, even after selecting a stack top. The finite stretch ends almost surely. With L the whole stack length,
+
+    P(L >= k | new stack top) = 2^(-(k-1)),
+    P(L = k | new stack top) = 2^(-k),  k >= 1,
+    E(L | new stack top) = 2.
+
+At time 0 RN also counts initially isolated white cells as tops; their remaining lifetime has the same geometric law under iid initialization, by direct spatial independence. This says nothing about independence of different stacks or a deterministic single-seed orbit.
+
+**Unexpected object control: triangle births differ.** C5's width-1 triangle-birth density is 3/32, not 1/16. The predecessor 10001 is a triangle continuation from a three-white run, but is a new isolated-white stack. Conversely 01010 and 01011 continue a stack while counting as new width-1 triangles under C5's size-changing definition. Mixing these events would produce a wrong normalization even though both use output 101. The four predecessors independently check this distinction.
+
+**Instrument and population scope.** RN retains only stacks with t + L before the final recorded row. This censors long late stacks; its finite histogram is not literally the uncensored null above. Finite periodic rings also need the no-wrap local-cone qualification for exact iid calculations. C5's existing one-cell-ring countercontrol sends both inputs to 0, disproving unconditional uniform-measure preservation on finite rings. Neither issue refutes RN's reported finite measurements, which are received without replay.
+
+Please phrase the single-cell core's 2^-k line as measured agreement with this exact Bernoulli null, and retain its reported numerical precision as a measurement. The stack mechanism is seed-independent; the exact core distribution and universal random appearance have not been proved. The deterministic lifetime law and this random-row stack-top law can be reviewed together, without a new run or alteration of Cloud's probe by GPT.
