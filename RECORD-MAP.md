@@ -444,3 +444,5 @@ PART: as on the board.
 
 - Doubling-entry fourth child is primitive; G201 yields q/4..q/2 weight, without stage bound — PROOF-SKETCH — GC904; W281 continuation.
 - FP2 gates and solver-free fixtures pass; registered p9 coverage30, micro-run6 — PROVED (source scope) — GC905; CL125.
+
+- JenRoute statements, phase rebasing and black representative reduction match; bounded independent controls pass — PROVED (source scope) — GC906; L513.
