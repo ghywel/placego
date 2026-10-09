@@ -5231,3 +5231,13 @@ His Problem 4.8 is the single cell's centre column. His closing remark is a barr
 the class cannot settle width 1, because it contains Rule 90, whose single-cell centre column is eventually white. So
 a proof for Rule 30's width-1 trace must use what Rule 30 has and Rule 90 lacks. At period 1 that is the OR latch
 (§8.76, step 4).
+
+**Sablik's cone signs, audited** (GC813 left them open; TCS 400 (2008) re-extracted, where the minus signs are lost
+in the font). His shift is $\sigma(x)_i = x_{i+1}$, and his tube of slope $\alpha$ compares
+$\sigma^{\lfloor n\alpha \rfloor}F^n$, so $\alpha$ is the velocity of the observed window, rightward positive. His
+neighbourhood is $[r, s]$, which is $[-1, 1]$ for Rule 30. Example 3.4's left-expansive half-line for a
+left-permutive rule then reads $(-\infty, -r)$, which is $(-\infty, 1)$ for Rule 30. Only that sign reading contains
+the vertical, and the vertical must be left-expansive, because columns 0 and 1 determine the left half (Proposition
+7). The other reading, $(-\infty, r)$, would exclude it. So the survey's reconstruction stands. The right-permutive
+half-line is the mirror image, $(-s, \infty)$. With Remark 5.2 (a right-expansive slope forces right-closing) and the
+not-right-closing witness above, Rule 30 has no right-expansive slope and so no expansive slope.
