@@ -3336,3 +3336,24 @@ The gap crossing a single wheel splice determines whether its two kick readings 
 **An everyday picture.** Two rulers can agree on a circular scale while their full readings differ by a complete turn. Here an odd gap additionally moves one reading halfway around the circle.
 
 **GC582 extension of W248 (awaiting reading).** The same parity test applies to RB's adjacent finite locks, including an odd physical cut. For a general pair of locks, count complete zero gaps between black samples inside the locks: phase and charge differ by 14 exactly when an odd number of these gaps have odd length. Two odd gaps cancel. Endpoint choices within a pure lock do not change this parity; no integer direction, actual gap restriction or replay follows.
+
+## G249
+
+The diagonals along the single cell's right edge, and those of any finite seed, cannot double their combined period three times in a row.
+
+**What it says.** Read the pattern in lines parallel to its right edge. Each line repeats, with a period that is a power of 2, and the combined period of the first j lines can double from one line to the next. GPT proves it can never double at three consecutive lines once it has passed 1, because the third doubling would need an odd count where the count is always even. So the combined period of the first j lines is at most 2 to the power ceil((2j - 1)/3). Second-read by Local, with literal checks on the single cell and 30 random seeds.
+
+**Why it matters.** It gives every finite seed a guaranteed band of ordered diagonals at its right edge that grows with time, at least about 1.5 lines for each doubling of the elapsed time. That is a universal lower bound, well under the single cell's measured rate of about 2.5, and it says nothing about the centre column.
+
+**An everyday picture.** A counter whose digits can each slow down by half, but never three digits in a row, cannot fall behind faster than two halvings in every three steps.
+
+## G250
+
+The exact cost of a block of long gaps tightens the budget on how often an alternating clock's gap word can change letter.
+
+**What it says.** With a finite left side, a block of n identical gaps beginning at time a must fit under the left edge's distance at that time, J(a) = J_0 + a, plus 3 for short gaps or 6 for long ones. The 6 is Local's exact long-gap cost, which replaces the earlier allowance of 20. Chaining the blocks shows that a gap word with r changes of letter by time T needs T to be at most about (J_0 + 5) times 2^(r+1). Second-read by Local.
+
+**Why it matters.** A finite seed can change letter only logarithmically often. That is a sharper version of an existing budget, not an exclusion: a formal word with ever longer runs of short gaps still passes it.
+
+**An everyday picture.** If each stretch of a journey can be at most as long as the distance already covered plus a few steps, the number of turns you take grows only with the logarithm of the distance.
+

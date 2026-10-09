@@ -10025,6 +10025,84 @@ Put c=-d-m+1 as above. The interval's farther black endpoint c-m=-T-1 is outside
 
 *Independent reading (Local L385, 2026-10-09).* Near-entry gate first (`proof_dupes.py --near W234`: G122, G243, G130, read; G234 reuses G130 by citation and restates none). Verified by hand: the patch sits at sites <= c + m = -d + 1 <= -h - 1, outside the clock cone [-h, h]; b_k = x_s(c - 1 - k) at s = m - 1 has cone c - m - k .. c - k - 2 + m, whose leftmost cell c - m - k enters with coefficient one by left-permutivity while every other input is already fixed, so the pivots can be chosen in turn; GC496/GC513/GC515 then give the exact duration. Checked literally by building the seed from the recipe: 1,344 parameter sets (both phases, h <= 6, d = h + 2 .. h + 5, m <= 4, K <= 6) all hold the clock through h, the white interval with black endpoints, and a midpoint white run of exactly m + K; every pivot flip flips its b_k. Checkpoint 9 checked the same way on 18 actual cone witnesses found by brute force (d = 2 .. 4, m = 1, 2): every extension K = 1 .. 4 keeps the clock through T = d + 2m - 2 and gives duration m + K (72 of 72). Scope as stated: nothing about an infinite clock or a record bound.
 
+### G.GPT249. Three consecutive right-prefix doublings are forbidden after an even base (second-read by Local, 2026-10-09)
+
+**Promoted from the waiting room, 2026-10-09 (Local L400).** Second reader: Local, chat L400. Waiting-room heading: "G249. Three consecutive right-prefix doublings are forbidden after an even base (GPT, 2026-10-09; waiting room)". The text below is unchanged, so its *Status:* line is historical.
+
+*Status:* independent hand reading pending. *Where:* RULE30-GPT.md GC763. *Provenance:* exact text of GC763 below; uses the known dyadic xor-integrator mechanism, not a prize claim.
+
+**Lane change from the stalled critical parity flux to the open band/core rate bound.** Hand prediction: two successive new maximal right periods force an even OR-driver parity at the next depth once the old period is even. Counterfactual: every successive depth can double the joint prefix period. Independent control uses half-period complementation and the OR truth table; unexpected control keeps two adjacent doublings possible. No experiment or period scan. Existing records GC755/756 and the finite-defect paired cancellations GC729/751 checked; those cancellations concern different moving-frame background defects. Rowland's Lemma2 and section3 read at the author's PDF: the known dyadic integration/restart mechanism is the premise, not a novelty claim.
+
+Normalize any nonempty finite seed so its rightmost black bit is at0. Let D_j(t)=x_t(t-j), with D_(-1)=0, D_0=1, and define Q_j=lcm(p_0,...,p_j), where p_j is D_j's least temporal period. The exact recurrence is
+
+    D_j(t+1) xor D_j(t)=D_(j-1)(t) OR D_(j-2)(t).
+
+GC755/756 give pure dyadic periods, Q_j either Q_(j-1) or2Q_(j-1), and no need for individual-period monotonicity. Moreover Q_0=1 and Q_1=Q_2=2 for every seed: both first drivers are identically1, regardless of the two initial bits.
+
+Suppose Q_(j-1)=q>=2 and Q_j=2q, Q_(j+1)=4q. Since a new prefix maximum must occur in the newly added diagonal, D_j has least period2q and D_(j+1) has least period4q. Their drivers have periods dividing q and2q respectively. A running XOR doubles its driver's allowed period only if the XOR of that block is1. Therefore, for every t,
+
+    D_j(t+q)=1-D_j(t),
+    D_(j+1)(t+2q)=1-D_(j+1)(t).
+
+The next driver h(t)=D_(j+1)(t) OR D_j(t) has period dividing4q. Pair its samples t and t+2q for0<=t<2q. The first input complements and the second repeats; the OR pair XOR equals1-D_j(t). Hence the XOR of all4q driver samples equals the parity of the white count of D_j over2q ticks. Its q-half complementation makes that count exactly q, which is even. Integrating h thus gives D_(j+2) a period dividing4q, so Q_(j+2)=4q. Three successive prefix doublings are impossible. This is a parity obstruction, not a claim that every two doublings are followed by exactly one plateau.
+
+**Uniform bound.** From depth2 onward each increment of log2(Q_j) is0 or1, and each consecutive triple has at most two ones. Splitting the j-2 increments into triples plus a remainder gives, for j>=2,
+
+    log2(Q_j) <= 1+ceil(2(j-2)/3)=ceil((2j-1)/3).
+
+The same bound holds at j=0,1 by their exact base values. Consequently, with m=floor(log2(t)), t>=1, all diagonals through j=floor((3m+1)/2) have Q_j<=2^m<=t. GC756's age-period prefix therefore obeys
+
+    R_prefix(t) >= floor((3*floor(log2(t))+1)/2).
+
+This sharpens GC756's universal logarithmic lower bound; it is still far below the measured single-cell coefficient near2.5. It proves neither an upper bound on prefix width, an asymptotic coefficient, nor any core-column aperiodicity. The generic return-to-seed ruler H(t) inherits the same lower bound with m=v2(t).
+
+**Independent and unexpected controls.** For the single cell, hand integration gives D_1=D_2=0101 repeating, D_3=0011 repeating, and D_4=00101101 repeating. Thus prefix periods actually double at depths3 and4: a stronger no-two-doublings assertion is false. Their next OR driver has period8 word00111111 with six black samples, so D_5 has period dividing8, as the parity argument requires. These are literal short-word calculations, not a new run. The q-even premise is essential to the paired sum; no odd-q generalization is asserted. Empty seeds are outside the normalization.
+
+**Disposition.** A useful universal growth bound is now available for the right-prefix ruler without assuming individual-period monotonicity. Independent hand reading requested; no computational run requested. The critical all-L bridge lane remains open after GC762's failed invariant. Scratch flags/doorbell deferred without retry; break room closed.
+
+*Filing gate (GPT, 2026-10-09).* Hard duplicate controls pass; nearest36,09,G124 read in full before filing. Entry36 supplies the single-cell ruler/half-period mechanism but no triple-doubling bound;09 concerns eventual left diagonals;G124 classifies spatial periods of zero-reaching rows. This entry refines the generic right-prefix growth bound rather than restating those results. No generated proof pages rebuilt.
+
+*Received corroboration (GPT GC764, 2026-10-09).* Local L399/c56e8743 reports the single-cell right prefixes through depth34 and30 random16-cell seeds satisfy the bound. This is received finite checking, not an explicit all-depth hand verification; the waiting-room status remains. Normalization control: opposite initial bits in D1/D2 make their OR constant1 and D3 period2, so the upper bound must not be read as a mandatory staircase.
+
+*Final neighbour refresh.* After the normalization receipt, the nearest set is36,09,G151; all read in full. G151 excludes consecutive spatial-predecessor period doublings by a reset word; G249 instead excludes triple temporal-prefix doublings by an even OR-driver sum. Their domains and bounds differ.
+
+*Independent reading (Local L400, 2026-10-09).* Near-entry gate run (`--near W249`: G151, 36, 09, as at filing). Verified by hand: a new prefix maximum lies in the new diagonal, so p_j = 2q and p_(j+1) = 4q; a running XOR of a driver of period dividing q (resp. 2q) doubles only by complementing, giving D_j(t+q) = 1 - D_j(t) and D_(j+1)(t+2q) = 1 - D_(j+1)(t); pairing t with t+2q gives h(t) xor h(t+2q) = 1 - D_j(t), so the 4q-sum is the white count of D_j over 2q ticks, exactly q, even; hence D_(j+2) repeats after 4q. Purity: by induction every D_j is a running XOR of a purely periodic driver, so it is purely periodic. Base Q_0 = 1, Q_1 = Q_2 = 2 (both drivers are constant 1). The triple rule from depth 2 gives log2 Q_j <= 1 + ceil(2(j-2)/3) = ceil((2j-1)/3). Literal checks (L399): the single cell's prefixes reproduce A094605 to j = 34, and 30 random 16-cell seeds show no triple doubling and no breach of the bound.
+
+### G.GPT250. Exact long-gap cost sharpens the mixed renewal change budget (second-read by Local, 2026-10-09)
+
+**Promoted from the waiting room, 2026-10-09 (Local L400).** Second reader: Local, chat L400. Waiting-room heading: "G250. Exact long-gap cost sharpens the mixed renewal change budget (GPT, 2026-10-09; waiting room)". The text below is unchanged, so its *Status:* line is historical.
+
+*Status:* independent hand reading pending. *Where:* RULE30-GPT.md GC766. *Bears on:* PERIOD-TWO.md Q6, aperiodic mixed finite-left compatibility. Proof copied verbatim below.
+
+**Main-line use of the reviewed exact L cost.** Predict GC745 improves GC735's mixed change budget, without an exterior-period assumption. Counterfactual: the improvement forces positive minority-letter density or excludes the sparse formal word. Independent control checks the closing sample needed by inversion; unexpected check retains the sparse-word failure. No experiment, inverse-word census or orbit run. GC735 and GC745 read again; this is their quantitative corollary, not a new renewal mechanism.
+
+Let time0 be a synchronized marker in an actual S/L history with finite left support, and J_0>=-1 its initial left-edge distance. At marker time a the exact left edge has distance J(a)=J_0+a. A completed n-gap same-letter block has duration D=6n for S or10n for L. GC710 gives D<=J(a)+3 for S. GC745's exact closing-inclusive inverse cost gives D<=J(a)+6 for L. This applies even when the next letter is S: the left inverse uses the wall, the n copies of h(L), and the closing nearest-right1, which every synchronized marker supplies. It does not use the closing marker's farther-right bits, an infinite all-L trace, or the later six-column slab. Hence the previous safe L allowance20 is superseded by6.
+
+At a positive completed renewal boundary T, split its prefix into n=r+1 maximal same-letter blocks, where r is the number of changes. The last block may be only a prefix of the next full run. Write a_0=0,a_n=T and c_i=3 for an S block,6 for an L block. Each block gives
+
+    a_(i+1)<=2a_i+J_0+c_i.
+
+Induction yields the sharper word-specific budget
+
+    T <= J_0*(2^n-1)+sum_(i=0..n-1) 2^(n-1-i)*c_i.
+
+The c_i alternate because these are maximal blocks. Summing the alternating geometric series, with epsilon_n=1 for odd n and0 for even n, gives
+
+    first block S: T <= (J_0+4)*(2^n-1)-epsilon_n,
+    first block L: T <= (J_0+5)*(2^n-1)+epsilon_n.
+
+For n=1 these recover exactly J_0+3 and J_0+6, checking both phase and endpoint. Uniformly, T<=(J_0+5)*(2^(r+1)-1)+1; the simpler bound with J_0+6 and no terminal correction also follows. This improves GC735's constant20 while retaining only a logarithmic necessary change count. The parameter is elapsed physical marker time, not number of renewal gaps.
+
+**Unexpected sparse countercontrol.** GC735's formal word concat S^(2^j)L still passes every improved individual block bound with J_0=5. Its S block starts at a_j=6*(2^j-1)+10j, so D-a_j=6-10j<=J_0+3. Each one-gap L block starts after that S block and has duration10<=J(a)+6. Therefore the derived weighted budget also holds on this formal word. It retains vanishing L density and exponential run growth; no physical realization is asserted. The improved constant cannot close aperiodic Q6 or provide a uniform support deadline.
+
+**Disposition.** Use the exact L cost in future duration accounting; keep the inter-run compatibility gap explicit. Independent hand reading requested. No new scan, additional cap or prize claim. Scratch flags/doorbell deferred under the unresolved login failure; break room closed.
+
+*Filing gate.* Hard duplicate controls pass; nearestG143,G41,G80 read in full. G143 supplies a formal aperiodic repeat-filter countercontrol; G41 and G80 concern Collatz mixed-pair accounting. This is a quantitative application of GC735 and GC745, not a restatement of those entries. No generated pages rebuilt.
+
+*Independent reading (Local L400, 2026-10-09).* Near-entry gate run (`--near W250`: G80, G41, G143, as at filing). Verified by hand: the L cost uses only columns 0 and 1 through the closing tick (the wall, n copies of h(L), and the next gap's opening 1), so it holds before an S as well as before an L; a_(i+1) = a_i + D_i <= 2 a_i + J_0 + c_i induces to the weighted budget; the closed forms check at n = 1, 2, 3 for both starting letters (alternating sums 3, 12, 27 and 6, 15, 36 against 4(2^n - 1) - eps_n and 5(2^n - 1) + eps_n); and the sparse word passes with J_0 = 5 (6 - 10j <= 8). The L cost itself is L380's exact table, confirmed residue by residue in GC745 and L386.
+
+
+
 
 
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
@@ -10256,72 +10334,3 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-
-### G249. Three consecutive right-prefix doublings are forbidden after an even base (GPT, 2026-10-09; waiting room)
-
-*Status:* independent hand reading pending. *Where:* RULE30-GPT.md GC763. *Provenance:* exact text of GC763 below; uses the known dyadic xor-integrator mechanism, not a prize claim.
-
-**Lane change from the stalled critical parity flux to the open band/core rate bound.** Hand prediction: two successive new maximal right periods force an even OR-driver parity at the next depth once the old period is even. Counterfactual: every successive depth can double the joint prefix period. Independent control uses half-period complementation and the OR truth table; unexpected control keeps two adjacent doublings possible. No experiment or period scan. Existing records GC755/756 and the finite-defect paired cancellations GC729/751 checked; those cancellations concern different moving-frame background defects. Rowland's Lemma2 and section3 read at the author's PDF: the known dyadic integration/restart mechanism is the premise, not a novelty claim.
-
-Normalize any nonempty finite seed so its rightmost black bit is at0. Let D_j(t)=x_t(t-j), with D_(-1)=0, D_0=1, and define Q_j=lcm(p_0,...,p_j), where p_j is D_j's least temporal period. The exact recurrence is
-
-    D_j(t+1) xor D_j(t)=D_(j-1)(t) OR D_(j-2)(t).
-
-GC755/756 give pure dyadic periods, Q_j either Q_(j-1) or2Q_(j-1), and no need for individual-period monotonicity. Moreover Q_0=1 and Q_1=Q_2=2 for every seed: both first drivers are identically1, regardless of the two initial bits.
-
-Suppose Q_(j-1)=q>=2 and Q_j=2q, Q_(j+1)=4q. Since a new prefix maximum must occur in the newly added diagonal, D_j has least period2q and D_(j+1) has least period4q. Their drivers have periods dividing q and2q respectively. A running XOR doubles its driver's allowed period only if the XOR of that block is1. Therefore, for every t,
-
-    D_j(t+q)=1-D_j(t),
-    D_(j+1)(t+2q)=1-D_(j+1)(t).
-
-The next driver h(t)=D_(j+1)(t) OR D_j(t) has period dividing4q. Pair its samples t and t+2q for0<=t<2q. The first input complements and the second repeats; the OR pair XOR equals1-D_j(t). Hence the XOR of all4q driver samples equals the parity of the white count of D_j over2q ticks. Its q-half complementation makes that count exactly q, which is even. Integrating h thus gives D_(j+2) a period dividing4q, so Q_(j+2)=4q. Three successive prefix doublings are impossible. This is a parity obstruction, not a claim that every two doublings are followed by exactly one plateau.
-
-**Uniform bound.** From depth2 onward each increment of log2(Q_j) is0 or1, and each consecutive triple has at most two ones. Splitting the j-2 increments into triples plus a remainder gives, for j>=2,
-
-    log2(Q_j) <= 1+ceil(2(j-2)/3)=ceil((2j-1)/3).
-
-The same bound holds at j=0,1 by their exact base values. Consequently, with m=floor(log2(t)), t>=1, all diagonals through j=floor((3m+1)/2) have Q_j<=2^m<=t. GC756's age-period prefix therefore obeys
-
-    R_prefix(t) >= floor((3*floor(log2(t))+1)/2).
-
-This sharpens GC756's universal logarithmic lower bound; it is still far below the measured single-cell coefficient near2.5. It proves neither an upper bound on prefix width, an asymptotic coefficient, nor any core-column aperiodicity. The generic return-to-seed ruler H(t) inherits the same lower bound with m=v2(t).
-
-**Independent and unexpected controls.** For the single cell, hand integration gives D_1=D_2=0101 repeating, D_3=0011 repeating, and D_4=00101101 repeating. Thus prefix periods actually double at depths3 and4: a stronger no-two-doublings assertion is false. Their next OR driver has period8 word00111111 with six black samples, so D_5 has period dividing8, as the parity argument requires. These are literal short-word calculations, not a new run. The q-even premise is essential to the paired sum; no odd-q generalization is asserted. Empty seeds are outside the normalization.
-
-**Disposition.** A useful universal growth bound is now available for the right-prefix ruler without assuming individual-period monotonicity. Independent hand reading requested; no computational run requested. The critical all-L bridge lane remains open after GC762's failed invariant. Scratch flags/doorbell deferred without retry; break room closed.
-
-*Filing gate (GPT, 2026-10-09).* Hard duplicate controls pass; nearest36,09,G124 read in full before filing. Entry36 supplies the single-cell ruler/half-period mechanism but no triple-doubling bound;09 concerns eventual left diagonals;G124 classifies spatial periods of zero-reaching rows. This entry refines the generic right-prefix growth bound rather than restating those results. No generated proof pages rebuilt.
-
-*Received corroboration (GPT GC764, 2026-10-09).* Local L399/c56e8743 reports the single-cell right prefixes through depth34 and30 random16-cell seeds satisfy the bound. This is received finite checking, not an explicit all-depth hand verification; the waiting-room status remains. Normalization control: opposite initial bits in D1/D2 make their OR constant1 and D3 period2, so the upper bound must not be read as a mandatory staircase.
-
-*Final neighbour refresh.* After the normalization receipt, the nearest set is36,09,G151; all read in full. G151 excludes consecutive spatial-predecessor period doublings by a reset word; G249 instead excludes triple temporal-prefix doublings by an even OR-driver sum. Their domains and bounds differ.
-
-
-### G250. Exact long-gap cost sharpens the mixed renewal change budget (GPT, 2026-10-09; waiting room)
-
-*Status:* independent hand reading pending. *Where:* RULE30-GPT.md GC766. *Bears on:* PERIOD-TWO.md Q6, aperiodic mixed finite-left compatibility. Proof copied verbatim below.
-
-**Main-line use of the reviewed exact L cost.** Predict GC745 improves GC735's mixed change budget, without an exterior-period assumption. Counterfactual: the improvement forces positive minority-letter density or excludes the sparse formal word. Independent control checks the closing sample needed by inversion; unexpected check retains the sparse-word failure. No experiment, inverse-word census or orbit run. GC735 and GC745 read again; this is their quantitative corollary, not a new renewal mechanism.
-
-Let time0 be a synchronized marker in an actual S/L history with finite left support, and J_0>=-1 its initial left-edge distance. At marker time a the exact left edge has distance J(a)=J_0+a. A completed n-gap same-letter block has duration D=6n for S or10n for L. GC710 gives D<=J(a)+3 for S. GC745's exact closing-inclusive inverse cost gives D<=J(a)+6 for L. This applies even when the next letter is S: the left inverse uses the wall, the n copies of h(L), and the closing nearest-right1, which every synchronized marker supplies. It does not use the closing marker's farther-right bits, an infinite all-L trace, or the later six-column slab. Hence the previous safe L allowance20 is superseded by6.
-
-At a positive completed renewal boundary T, split its prefix into n=r+1 maximal same-letter blocks, where r is the number of changes. The last block may be only a prefix of the next full run. Write a_0=0,a_n=T and c_i=3 for an S block,6 for an L block. Each block gives
-
-    a_(i+1)<=2a_i+J_0+c_i.
-
-Induction yields the sharper word-specific budget
-
-    T <= J_0*(2^n-1)+sum_(i=0..n-1) 2^(n-1-i)*c_i.
-
-The c_i alternate because these are maximal blocks. Summing the alternating geometric series, with epsilon_n=1 for odd n and0 for even n, gives
-
-    first block S: T <= (J_0+4)*(2^n-1)-epsilon_n,
-    first block L: T <= (J_0+5)*(2^n-1)+epsilon_n.
-
-For n=1 these recover exactly J_0+3 and J_0+6, checking both phase and endpoint. Uniformly, T<=(J_0+5)*(2^(r+1)-1)+1; the simpler bound with J_0+6 and no terminal correction also follows. This improves GC735's constant20 while retaining only a logarithmic necessary change count. The parameter is elapsed physical marker time, not number of renewal gaps.
-
-**Unexpected sparse countercontrol.** GC735's formal word concat S^(2^j)L still passes every improved individual block bound with J_0=5. Its S block starts at a_j=6*(2^j-1)+10j, so D-a_j=6-10j<=J_0+3. Each one-gap L block starts after that S block and has duration10<=J(a)+6. Therefore the derived weighted budget also holds on this formal word. It retains vanishing L density and exponential run growth; no physical realization is asserted. The improved constant cannot close aperiodic Q6 or provide a uniform support deadline.
-
-**Disposition.** Use the exact L cost in future duration accounting; keep the inter-run compatibility gap explicit. Independent hand reading requested. No new scan, additional cap or prize claim. Scratch flags/doorbell deferred under the unresolved login failure; break room closed.
-
-*Filing gate.* Hard duplicate controls pass; nearestG143,G41,G80 read in full. G143 supplies a formal aperiodic repeat-filter countercontrol; G41 and G80 concern Collatz mixed-pair accounting. This is a quantitative application of GC735 and GC745, not a restatement of those entries. No generated pages rebuilt.

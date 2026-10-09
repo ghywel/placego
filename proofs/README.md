@@ -627,6 +627,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
   The gap crossing a single wheel splice determines whether its two kick readings disagree by half a turn.
 - [Finite early clock and arbitrarily delayed deep resonance](G234-finite-early-clock-and-arbitrarily-delayed-deep-resonance.md):
   A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
+- [Three consecutive right-prefix doublings are forbidden after an even base](G249-three-consecutive-right-prefix-doublings-are-forbidden-after.md):
+  The diagonals along the single cell's right edge, and those of any finite seed, cannot double their combined
+  period three times in a row.
+- [Exact long-gap cost sharpens the mixed renewal change budget](G250-exact-long-gap-cost-sharpens-the-mixed-renewal.md):
+  The exact cost of a block of long gaps tightens the budget on how often an alternating clock's gap word can change
+  letter.
 
 ## Proofs from the sparks
 

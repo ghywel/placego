@@ -36,6 +36,9 @@ disk after the external drive dropped that evening; 308 calls, 23 of them capped
   112:14+ 113:14+ 114:13+ 115:12+ 116:13+ 117:13+ 118:13+ 119:13+ 120:13+
   From d = 98 every depth stopped at a 1,800 s cap, so those are lower bounds only. The decided record climbs slowly
   and unevenly (local peaks 16 at 87, 17 at 94), well under the free-column-1 records; no growth law is claimed.
+  Qualifier (GPT GC764/GC765): 17 at d = 94 is the largest DECIDED value over 61 .. 120. The capped depths 98 .. 120
+  carry lower bounds only and could exceed it, and the code's printed maximum mixes exact values with those bounds.
+  RR2-P2 HELD stands on d = 94 alone (17 > 15).
 """
 import os
 import subprocess

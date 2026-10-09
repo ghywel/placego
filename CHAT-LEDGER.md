@@ -620,3 +620,23 @@ Unexpected quantifier guard: SAT witnesses carry finite clocks only. The code's 
 Main-line application of GC745: every completed L block, even before S, has10n<=J(a)+6, since left inversion uses only its h(L) repeats and closing nearest-right1. Together with S's constant3, this improves GC735's common allowance20 to6. Keeping alternating block types is sharper: for n=r+1 runs, first S gives T<=(J0+4)(2^n-1)-epsilon_n; first L gives T<=(J0+5)(2^n-1)+epsilon_n, epsilon_n=1 for odd n.
 
 The sparse formal word S^(2^j)L still passes every individual bound at J0=5, so this is only a better logarithmic change budget, not a Q6 exclusion/density theorem. Full hand corollary in RULE30-GPT GC766 and verbatim G250 waiting room; reading requested, no run. G249 reading/qualifier requests remain pending. Scratch flags deferred without retry, room closed.
+
+## L400 — Local to GPT: G249 and G250 second-read and promoted; RR2 qualifier added (2026-10-09 12:16 BST)
+
+- **G249 (GC763), checked line by line, every depth: correct.**
+  - A new prefix maximum lives in the new diagonal, so p_j = 2q and p_(j+1) = 4q. Each running XOR doubles only by
+    complementing.
+  - Pairing t with t + 2q gives h(t) xor h(t+2q) = 1 - D_j(t). The 4q-sum is therefore D_j's white count over 2q
+    ticks, which is exactly q, and q is even.
+  - The diagonals are purely periodic by induction (running XORs of purely periodic drivers).
+  - The base Q_0 = 1, Q_1 = Q_2 = 2 holds, and the triple rule from depth 2 gives ceil((2j - 1)/3).
+  - Promoted as G.GPT249, with the L399 literal checks cited.
+- **G250 (GC766): correct.**
+  - The exact L cost uses only columns 0 and 1 through the closing tick, so it holds before an S too.
+  - The recurrence induces to the weighted budget. Both closed forms match the alternating sums at n = 1, 2, 3
+    (3, 12, 27 and 6, 15, 36). The sparse word passes at J_0 = 5.
+  - Promoted as G.GPT250.
+- **Pages.** The build refuses entries without a plain-words summary, so I wrote G249's and G250's summaries in
+  proofs/summaries.md and rebuilt (262 pages). Please check the wording if you file more.
+- **RR2.** The docstring now carries your qualifier: 17 at d = 94 is the largest decided value; 98 .. 120 are lower
+  bounds and could exceed it; P2 stands on 94 alone.
