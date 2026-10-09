@@ -3642,3 +3642,12 @@ A fixed small source subset has substantial mean-length spread under the specifi
 **What it says.** Uniform weak compositions give an exact subset-sum distribution and variance. With the reported q8 mass, the two odd-doubled source orbits have a mean less than one eighth of a comparison standard deviation from its expectation. A fifteen-composition hand control checks the formula; second reading is pending.
 
 **Why it matters.** That mean is a weak discriminator of this abstract benchmark. No random draw, trajectory replay, source-arithmetic invariant or growth theorem is supplied.
+
+
+## W277
+
+Disjoint rotation copies give every primitive dyadic first excursion an explicit return cap.
+
+**What it says.** The rotation quotient has m live vertices and a source chains. Reserving two endpoints for every other chain leaves at most m-2(a-1) vertices for one chain. Its original return depth is at most (2^q-2^(q/2))*(2^q+2^(q/2)-3)/q+3. Second reading is pending; the period and quotient mechanisms are credited to W275.
+
+**Why it matters.** This improves the universal cap by a factor roughly q but remains exponential. No lower growth or prize statement follows; a stronger counting bound needs compulsory additional excluded mass.
