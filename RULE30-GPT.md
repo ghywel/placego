@@ -17141,3 +17141,31 @@ The common-prefix and opposite-pivot controls PASS, with GC708's independent for
 For SL or LS, once the initial bits through depth 22 are fixed by that common history, an all-zero continuation rejects S at the depth-23 branch pivot. Selecting L makes that pivot zero but requires a black at depth 24. The latter is the black-wall guard at time 23: changing the forced depth-24 bit to zero changes the nearest-left bit at time 23 by the rightmost-difference front, and the black wall's next value at time 24 cannot be rescued by any right neighbor. Thus a finite zero tail can fail immediately after making its uniquely permitted letter choice. This establishes a concrete guard obstruction, not universal eventual failure.
 
 **Unexpected endpoint scope.** The LL comparison uses depth 28; its short branch has already returned at time 26, so the stored fourth gap supplies the wall through time 28. The analogous SL/LS short branch returns at 22. For an infinite synchronized renewal trace, the next letter shares the needed initial samples, so the comparison holds regardless of that next letter. A finite trace stopped at its third return does not contain every partner test and is not excluded by this block. No claim is made that the earlier prefixes or their decoded tails have actual right realizations. The result gives a necessary depth obstruction for infinite traces beginning SL or LS, while longer mixed histories still require a scalable criterion for failure of the zero-selected branch. Stop common-partner assumptions; next seek the actual dependence of the black-time guard on the selected prefix. Independent reading requested.
+
+
+## GC715 — The partner difference is a parity along the common front diagonal (2026-10-09, GPT)
+
+**Hand mechanism for GC714's failed constant-partner prediction.** Read the existing rightmost-difference argument (Proposition 21/GC700), the diagonal difference scope guards, and GC713-GC714. Predict that the bit immediately behind a moving difference front is driven by common white cells immediately ahead of it. Counterfactual: the front alone fixes the partner difference to a constant. A white/black wall phase control below rejects that simplification. No computation or additional mixed words.
+
+Compare two left evolutions with the same prescribed wall. Suppose their time-zero rows agree at depths 1 through d-1, differ at d, and have partner difference eta_0 at depth d+1. Write p_t=-d+t. For 0<=t<=d-1, left permutivity gives the rightmost difference at p_t, with bit difference 1, and agreement strictly to its right. Let
+
+    eta_t = x_t(p_t-1) xor y_t(p_t-1),
+    r_t = x_t(p_t+1) = y_t(p_t+1).
+
+Rule 30 at p_t gives
+
+    eta_(t+1) = eta_t xor (1-r_t).
+
+Indeed the left-parent difference is eta_t, while toggling the center bit with a common right bit r_t changes their OR exactly when r_t=0. Notice the orientation: eta_(t+1) is at p_(t+1)-1=p_t, so it is the cell immediately behind the *new* front. Farther initial differences cannot reach this diagonal earlier and do not enter the formula. At the final step the front reaches the clamped wall and is overwritten there, but the update at its old site -1 remains valid. Therefore
+
+    x_d(-1) xor y_d(-1) = eta_0 xor XOR_(t=0..d-1)(1-r_t).
+
+For an S/L branch at B, d=B+7 is odd. Both full-clock histories require x_d(-1)=y_d(-1)=1 at that black wall time. Hence their initial even partner difference is exactly the parity of the common white samples on this moving diagonal:
+
+    eta_0 = XOR_(t=0..B+6)(1-r_t).
+
+The shared diagonal starts at initial site -(B+6), immediately to the right of the branch pivot, and ends at the wall at time B+6. Its values depend only on the shared earlier initial bits and the prescribed wall, not on the new pivot choice or farther tail. This supplies a structural explanation for why GC714 can have equal partners after SL/LS but opposite partners after SS/LL. It determines the **difference** of the two required partner bits; it does not determine their absolute value, so even parity does not distinguish the obstructing 1/1 case from 0/0.
+
+**Unexpected phase control.** At d=1, with a white wall at time zero, the next nearest-left bit is a_2 xor a_1. Opposite nearest-left starting bits require opposite partners to make the next values equal, matching one common white sample and eta_0=1. With a black wall instead, the next bit is a_2 xor 1, independent of a_1; equal partners suffice, matching eta_0=0. These literal one-tick controls reject ignoring the common right bit or using black parity instead of white parity. They are algebraic controls, not renewal examples.
+
+For a finite zero tail, both new initial bits must be zero; knowing their difference alone is insufficient to prove failure of the next black-time guard. The remaining target is the absolute guard value, or a forced parity/absolute-value obstruction along sufficiently late selected diagonals. No global parity law, density assumption, periodicity premise or mixed-tail exclusion has been supplied. Independent hand reading requested; stop constant-partner or difference-only counting arguments.

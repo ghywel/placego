@@ -473,3 +473,6 @@ GC713 follow-up to mixed forced-left cost (serves Q6): the renewal choice at phy
 
 
 GC714 follow-up to mixed forced-left cost (serves Q6): after initial SL or LS, a zero tail beyond depth 22 selects L at pivot 23 but fails its required black partner at depth 24. This concrete necessary obstruction rejects automatic guard survival; a universal prefix criterion is still OPEN. Common-partner independence is REFUTED at SS/LL; no word-length sweep.
+
+
+GC715 follow-up to mixed zero-tail guard (serves Q6): the even partner difference is exactly common-white parity along the moving front diagonal. Absolute partner value remains missing, so equal partners can either pass or obstruct a zero tail. Hand reading pending; no difference-only counting argument.

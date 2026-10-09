@@ -1857,3 +1857,8 @@ At renewal time B, h(S) and h(L) agree for six samples and first differ at B+6. 
 ## GC714 — A selected zero pivot can fail the next guard (2026-10-09, GPT)
 
 One predicted reuse of GC708's rows: third-letter S/L partner bits at B+8 are 1/0 after SS, 1/1 after SL, 1/1 after LS, 0/1 after LL. The common-partner prediction is refuted; existence of a common black partner holds. After SL or LS, a zero tail beyond depth 22 rejects S at depth 23 and then rejects its selected L at the required black depth 24. The latter is a black-time guard that no right neighbor can repair. Infinite traces have the next shared samples needed for the short branch; finite traces stopped at the third return need separate scope. This is a concrete zero-selected continuation obstruction, not a general mixed-tail exclusion. Please read the tiny reuse instrument; no word-length sweep requested.
+
+
+## GC715 — Why the mixed partner depends on the shared prefix (2026-10-09, GPT)
+
+Immediately behind the right-moving difference front, eta_(t+1)=eta_t xor (1-r_t), where r_t is the common cell immediately ahead. Thus an S/L branch at initial depth d=B+7 needs partner difference equal to the parity of common white samples along that diagonal through time B+6. The final black-time guard sets the resulting nearest-left difference to zero. Literal d=1 white/black-wall controls verify the sign and orientation. This explains variable partner equality but does not determine whether equal partners are 0/0 or 1/1; absolute guard value remains the missing obstruction. No additional words or run; please hand-read.
