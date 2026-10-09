@@ -23,6 +23,45 @@ PREDICTIONS (Local's, published before the run):
   RC-P2 (blind, confidence 0.5): first returns occur at more than 20 distinct depths r <= 400.
   RC-D1 (descriptive): the first-return depths r <= 400 with their counts of return words. At r = 88: every return
         word, its rotation class, and whether it has the D0 shape.
+OUTCOME, 2026-10-09 20:51 BST (M5, seconds, run at commit f43de64c): RC-C1 PASS, RC-P1 REFUTED, RC-P2 REFUTED.
+  - Over every q = 8 rooted walk (all eight odd sources, every child choice), first returns to zero occur at only two
+    depths up to 400: r = 88 and r = 371, with 8 return states at each.
+  - At r = 88, all 8 return words are rotations of one word (class 11110100, D0 shape, sources 17, 34, 68, 136, which
+    are rotations of each other). They are the eight phases of S84's eight-cycle.
+  - So, up to rotation, there is no other rooted r = 88 component. The one there is, PR195-D0 already closed.
+  - Exploratory, after the run (no predictions), the same census to depth 5000:
+    - every rooted walk has returned by then (nothing is alive at 5000);
+    - the live set never exceeds 16 states;
+    - the only depths are 88 and 371;
+    - r = 371 is one class, 10110000 (sources 119, 187, 221, 238), also with prof[r-2] = prof[r-1]. But r - 2 = 369 is
+      odd, so it is the odd case and outside D0's m = (r - 2)/2 construction.
+  - So the q = 8 rooted returns are completely classified: two classes, each a single rotation orbit.
+Q16 (registered 20:51 BST, before running; COMMAND: ... rule30_r88_census.py 16):
+  The same census at q = 16. The sources are a = blk | blk << 8 for odd 8-bit blocks, which include the rooted
+  witness's 161. It is tracked to depth 60,000, with a cap of 200,000 live states.
+  RC16-C1 (control): the census contains the rooted witness, a first return at r = 52,808 from a = 161 | 161 << 8 with
+          w = 1000101001100001.
+  RC16-P1 (blind, confidence 0.5): at r = 52,808 there is exactly one return word up to rotation.
+  RC16-P2 (blind, confidence 0.5): every q = 16 rooted walk has returned by depth 60,000.
+RC16 OUTCOME, 2026-10-09 20:54 BST (M5, 87 s, 0.57 GB peak, run at commit 3397ff5f): RC16-C1 PASS, RC16-P1 HELD,
+  RC16-P2 REFUTED.
+  - The 128 odd doubled sources give first returns at exactly nine depths up to 60,000. Each depth has 16 return states
+    forming one rotation class, all of D0 shape, from 8 sources (one rotation orbit):
+    - even r: 18826, 26356, 34854, 40804, 49732 and 52808;
+    - odd r: 6343, 29167 and 44841.
+    Some walks are still alive at 60,000 (the live set peaks at 256).
+  - At r = 52,808 there is exactly one return word up to rotation, the rooted witness's. So there is no other component
+    at that depth; other components exist only at the other depths.
+  - EXPLORATORY, after the run (no predictions; whether G196 applies to these returns is not established):
+    - PR196-D1's exit derivative d was computed on each even return's class representative (rule30_pr196_d1's U_masks
+      and d_masks, checked against its scalar lists).
+    - At r = 52,808 it reproduces PR196's recorded d rotated by one phase, with legal decisions {1, 5} for PR196's
+      {0, 4}.
+    - Legal unordered decisions at the others: 18826: [1]; 26356: [2, 7]; 34854: [1, 4, 5]; 40804: [0, 1, 7];
+      49732: none.
+    - Every one has lp(w) = 16, and U_(r - 3) is all ones, as at the witness.
+    - If D1's derivation applies, the rooted r = 49,732 component is exactly its sixteen-cycle (closed, as PR195-D0
+      closed q = 8). The others have exits, which would need PR198-D2's successor test.
 """
 import sys
 
@@ -47,6 +86,52 @@ def rotclass(w, q=Q):
 
 def tstr(w, q=Q):
     return ''.join(str((w >> t) & 1) for t in range(q))
+
+
+def main_q16(RMAX=60000, CAP=200000):
+    q = 16
+    roots = [blk | (blk << 8) for blk in range(256) if bin(blk).count('1') % 2]
+    CH = {}
+
+    def ch(x, y):
+        k = (x, y)
+        if k not in CH:
+            CH[k] = children(x, y, q)
+        return CH[k]
+    layer = {}
+    for a in roots:
+        for c in ch(a, 0):
+            if c:
+                layer.setdefault((0, c), set()).add(a)
+    returns, depth, maxl, wit = {}, 1, 0, False
+    W = int('1000101001100001'[::-1], 2)
+    while layer and depth < RMAX:
+        nxt = {}
+        for (x, y), srcs in layer.items():
+            for c in ch(x, y):
+                if c == 0:
+                    returns.setdefault(depth + 1, set()).add((x, y, frozenset(srcs)))
+                    if depth + 1 == 52808 and (161 | 161 << 8) in srcs and y == W:
+                        wit = True
+                else:
+                    nxt.setdefault((y, c), set()).update(srcs)
+        layer = nxt
+        depth += 1
+        maxl = max(maxl, len(layer))
+        if len(layer) > CAP:
+            print('CAPPED at depth', depth, 'live', len(layer))
+            break
+        if len(CH) > 2000000:
+            CH.clear()
+    print('RC16-C1', 'PASS' if wit else 'FAIL')
+    print('depth reached %d; alive %s; max live %d' % (depth, bool(layer), maxl))
+    for r in sorted(returns):
+        cls = {rotclass(y, q) for x, y, s2 in returns[r]}
+        print('r = %d: %d states, %d classes %s, D0 shape %s, sources %d' % (r, len(returns[r]), len(cls), [tstr(c, q) for c in sorted(cls)][:4], sorted({x == y for x, y, s2 in returns[r]}), len({a for x, y, s2 in returns[r] for a in s2})))
+    one = {rotclass(y, q) for x, y, s2 in returns.get(52808, set())}
+    print('RC16-P1', 'HELD' if len(one) == 1 else 'REFUTED (%d classes)' % len(one))
+    print('RC16-P2', 'HELD' if not layer else 'REFUTED (alive at %d)' % depth)
+    print('COMPLETE')
 
 
 def main(RMAX=400):
@@ -93,4 +178,4 @@ def main(RMAX=400):
 
 
 if __name__ == '__main__':
-    main()
+    main_q16() if sys.argv[1:2] == ['16'] else main()
