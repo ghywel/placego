@@ -647,6 +647,12 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [Exact overlap and lag cutoff for fair-row window density](G255-exact-overlap-and-lag-cutoff-for-fair-row.md):
   Over a random row, how much a fixed window's black count now predicts the same window's count k steps later is
   exact, and drops to zero once k reaches the window's width.
+- [Corrected two-neighbour density obstruction for an alternating wall](G256-corrected-two-neighbour-density-obstruction-for-an-alternating.md):
+  If the centre ever ticks white, black, white, black for good, the column just to its left must eventually be at
+  least three-quarters black.
+- [Width-two future-block dependence despite lag-two row independence](G257-width-two-future-block-dependence-despite-lag-two.md):
+  Over a random row, a pair of neighbouring cells two steps later is completely independent of the pair now, yet the
+  next two steps together are not.
 
 ## Proofs from the sparks
 

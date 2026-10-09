@@ -3407,3 +3407,23 @@ Over a random row, how much a fixed window's black count now predicts the same w
 
 **An everyday picture.** Watching a fixed stretch of a conveyor belt, you lose sight of each parcel once it has moved past the end, even though the parcel itself is unchanged.
 
+## G256
+
+If the centre ever ticks white, black, white, black for good, the column just to its left must eventually be at least three-quarters black.
+
+**What it says.** Beside an alternating centre, the two columns to its left are fixed by the column to its right through exact rules. Counting black cells over any stretch of rows gives an exact identity, up to one boundary term, which forces one of the two columns to be at least two-thirds black. The column to the right is known never to have two blacks in a row at the centre's white times, and with that the first column on the left must be at least three-quarters black over long stretches. Second-read by Local.
+
+**Why it matters.** It turns the period-two question into a statement about balance: a column beside the centre measured below three-quarters black over long stretches would rule the clock out. No such balance is proved, so it does not settle the question.
+
+**An everyday picture.** If a metronome ticks perfectly, the person beside it has to clap on most beats to keep the rhythm going.
+
+## G257
+
+Over a random row, a pair of neighbouring cells two steps later is completely independent of the pair now, yet the next two steps together are not.
+
+**What it says.** Watch cells 0 and 1. Their colours two steps later are independent of their colours now: two fresh random cells further left decide them. But a three-way average across the starting cell, cell 0 two steps on, and cell 1 three steps on comes out at exactly 1/8, not 0. So the starting pair and the following two-step block are dependent. Second-read by Local, with GPT's exact replay over all 256 starting words repeated.
+
+**Why it matters.** Independence of one later row does not mean independence of the whole future. Statements about the rule forgetting its start have to be made carefully about which observations are compared.
+
+**An everyday picture.** Two snapshots of a shuffled deck can each look unrelated to the start, while a pair of consecutive snapshots still gives the original order away.
+

@@ -10271,6 +10271,66 @@ In particular every lag k >= w has zero covariance, for any value of rho_k. With
 
 *Independent reading (Local L407, 2026-10-09).* Verified by hand: for i outside the cone of x_(t+k)(j) independence and zero means kill the covariance; for i inside it but not j - k, averaging the independent fair bit x_t(j - k), which enters with coefficient one, kills it; at i = j - k it is the diagonal correlation rho_k by shift and stationarity; summing gives rho_k |I intersect (J - k)| and the stated window factors. Checked exactly by enumerating every fair row on the cone for a width-3 window: correlations -1/3, 1/12, 0 at k = 1, 2, 3, equal to rho_k (w - k)/w with rho = -1/2, 1/4, -1/4.
 
+### G.GPT256. Corrected two-neighbour density obstruction for an alternating wall (second-read by Local, 2026-10-09)
+
+**Promoted from the waiting room, 2026-10-09 (Local L409).** Second reader: Local, chat L409 (the identity also in L408). Waiting-room heading: "GPT G256 — Corrected two-neighbour density obstruction for an alternating wall (GPT, 2026-10-09; waiting room)". The text below is unchanged, so its *Status:* line is historical.
+
+*Status:* corrected endpoint formulation awaits Cloud or Local confirmation. *Where:* RULE30-GPT.md GC779. *Provenance:* Cloud CL081 density corollary of Lemma 1/R0; GPT explicit boundary audit, sharp formal control and actual-right application of reviewed G240. No novelty claim. Nearest G146,G240,G234 read in full; G240 supplies the no-11 premise, while phase-limit and resonance results do not restate this density application. Proof copied verbatim below.
+
+**Independent hand review of Cloud's f985263a / CL081.** Read §8.34's addendum and Lemma 1/R0. Expected the weighted identity to hold with an explicit endpoint correction, and audited whether a strict deficit alone excludes an eventual clock. Counterfactual: a density combination infinitesimally below 2 contradicts the identity on every late window. Unexpected check is a formal clock-compatible boundary word approaching 2 from below. No replay of the reported scratch trials. Virtual duplicate gate passes; nearest entries 01,10,11 read in full. Entry 01 supplies the inverse identity; the two window-repeat entries do not already state this density consequence.
+
+**Exact boundary audit.** Choose the phase where column 0 is white at even times and black at odd times. For a window [a,b] with N=b-a+1 lying after clock onset, write S=sum of sigma(t) over its even times. R0 gives n_(-1)=N-S exactly. The odd samples of column -2 are the even sigma samples shifted forward one row, so
+
+    n_(-2)=2S+delta,
+    delta=1_(b odd)*sigma(b+1)-1_(a even)*sigma(a),
+    2*n_(-1)+n_(-2)=2N+delta,  |delta|<=1.
+
+The possible sample at b+1 must be included even though it lies just beyond the counted window. The clock and column 1 must be defined there; eventual clock onset supplies this. Swapping the clock phase simply swaps the parity labels, or equivalently shifts the time origin by one. Thus the identity holds for both phases and arbitrary starts, with the stated bound.
+
+The sharp bound obtained directly from the identity is max(d_(-1),d_(-2)) >= 2/3-1/(3N). Also n_(-1)>=floor(N/2); its fraction is at least 1/2-1/(2N), not literally at least half on every odd-length window. The latter half bound is exact on even-length windows and in any limiting density. These endpoint distinctions do not weaken the asymptotic two-thirds requirement.
+
+**The exclusion sentence needs qualification.** “Below 2 on infinitely many late windows” alone does not contradict 2N+delta: the normalized combination can equal 2-1/N. A uniform deficit epsilon>0 along windows whose lengths tend to infinity does exclude an eventual clock, as does any measured deficit exceeding 1/N on a window wholly after clock onset. Another exact version uses even-length windows beginning at a black clock row: then a is odd and b even in this phase, delta=0, and any strict deficit is impossible. Merely letting the two fractions approach 2/3 from below need not supply a margin.
+
+**Unexpected explicit boundary control.** Set the visible even sigma word to repeat 101, beginning with 1 at a white row a=0. On windows N=6r+2, S=2r+1, sigma(N)=0 and delta=-1. The two black counts are both 4r+1. Both fractions therefore equal 2/3-1/(3N), while their weighted combination is 2-1/N. This is a formal wall-profile control for the inference, not a finite seed or a globally realized right half; it uses R0's exact local formulas. It confirms the endpoint bound is sharp and refutes exclusion from strict deficit without a margin. Shifting this control supplies the opposite clock phase.
+
+**The actual-right language already sharpens the threshold.** The filing gate led back to reviewed G240: the actual visible code c_s=sigma(2s) has no adjacent 11. Thus among M consecutive white-clock samples, S<=ceil(M/2). On an even-length black-start window N=2M, the endpoint term is zero and n_(-1)=2M-S, so d_(-1)>=3/4-1/(4M). On arbitrary long windows, the same count gives liminf d_(-1)>=3/4, with endpoint errors tending to zero. This holds under the actual right-history premise, in either clock phase, without assuming a limiting visible density. It is stronger than the generic two-thirds alternative and is a direct corollary of G240's already reviewed no-11 count, not a new right-language theorem. Formal 101 violates no-11 across its repeat boundary, so it tests only the unrestricted R0 algebra. Even the no-11 formal word 10 gives weighted deficit -1/N on white-start windows N=4r+2; this retains the strict-deficit caveat at the level of the known necessary language, without asserting full right realization. Actual neighbour balance below three quarters would exclude the clock, but that balance is still unproved.
+
+**Prior record, prior art and disposition.** The local column formulas were already recorded in Lemma 1/R0; the density corollary is new packaging of that elementary inverse calculation. Targeted primary-domain searches found no exact two-thirds neighbour statement; this is a limited NOT FOUND, not a priority claim. The requested corrections are the finite half-bound qualifier and the deficit margin or phase-aligned-window condition. With them, the hand identity is verified. No neighbour-balance theorem is established for the single seed or all finite seeds, and measured core balance cannot supply one. A single-seed two-neighbour balance result would exclude its period-two centre; generic LR still requires balance or another argument in the full finite-left class. Q6 remains PART, no new board row or prize proof. Scratch deferred without retry; room closed.
+
+*Independent reading (Local L409, 2026-10-09).* Verified by hand: n_(-1) = N - S exactly from R0; the odd samples of column -2 are the even sigma samples shifted to [a+1, b+1], which gives delta = 1_(b odd) sigma(b+1) - 1_(a even) sigma(a) and 2 n_(-1) + n_(-2) = 2N + delta; both phases by relabelling; the max bound 2/3 - 1/(3N); the formal 101 control at a = 0, N = 6r + 2 (S = 2r + 1, delta = -1, both counts 4r + 1) reaches it exactly; on a black-start even window delta = 0 and G240's no-11 gives S <= ceil(M/2), hence d_(-1) >= 3/4 - 1/(4M). The record allows visible 101 (only no-11 and no-101001 are proved), so no-11 is the binding restriction here and 3/4 is the bound it gives.
+
+### G.GPT257. Width-two future-block dependence despite lag-two row independence (second-read by Local, 2026-10-09)
+
+**Promoted from the waiting room, 2026-10-09 (Local L409).** Second reader: Local, chat L409. Waiting-room heading: "GPT G257 — Width-two future-block dependence despite lag-two row independence (GPT, 2026-10-09; waiting room)". The text below is unchanged, so its *Status:* line is historical.
+
+*Status:* independent hand reading pending. *Where:* RULE30-GPT.md GC780. *Provenance:* reviewed G97/G255, CL078 exact rho2 and elementary spin identity. No novelty claim. Duplicate gate passes; nearest G254,G255,G97 read in full. These supply short diagonal memory, the covariance cutoff and the genuine fresh pivots; none states the mixed future-block moment. Proof copied verbatim below.
+
+**Bounded scope result after G255.** For iid fair initial rows on the line, predict a two-column row at lag two is independent of the starting two-column row, while the next two-column time block is not. Counterfactual: that independent row or zero covariance implies independence of every future block. Independent hand checks use the OR spin identity and the genuine leftmost affine pivots; unexpected check keeps a fixed single-column history iid by G97. A 256-word literal finite-cone replay is registered before execution; no random, single-seed or larger-lag scan. This is an elementary higher-order scope control of reviewed G97/G255, not a new mixing theorem or general novelty claim.
+
+Write S_t(i)=(-1)^x_t(i), W_t=(x_t(0),x_t(1)), and rho2=E[S_0(0)S_2(2)]=1/4, the exact received and independently replayed CL078 value. The Rule 30 update at site 1 gives
+
+    S_2(0)*S_3(1) = (-1)^(x_2(1) OR x_2(2))
+                    = [-1+S_2(1)+S_2(2)+S_2(1)*S_2(2)]/2.
+
+Multiply by S_0(0) and average. The constant term vanishes because S_0(0) is fair. The term with S_2(1) vanishes by the cell-covariance collapse. The mixed term also vanishes: S_2(1) contains the independent initial bit x_0(-1) with XOR coefficient one, while neither S_0(0) nor S_2(2) depends on that bit. Averaging it cancels the mixed product. The remaining term is rho2/2. Hence
+
+    E[S_0(0)*S_2(0)*S_3(1)] = 1/8.
+
+If W_0 were independent of the future block (W_2,W_3), this moment would factor through E[S_0(0)]=0 and vanish. Thus those blocks are dependent. This is a concrete failure of upgrading the lag-two single-row cutoff to independence of the whole future.
+
+**The lag-two single row really is independent, not just uncorrelated.** Conditional on every initial bit except x_0(-2),x_0(-1), the output x_2(1) is affine in x_0(-1) and independent of x_0(-2), and x_2(0) is affine in x_0(-2). Solve from right to left: these two independent fair pivots give each W_2 value exactly one preimage. Neither pivot occurs in W_0. Thus W_2 is uniform and independent of W_0. There is no contradiction with the mixed moment: observing both W_2 and W_3 reveals a nonlinear driver relation involving information that one row alone hides.
+
+**Unexpected one-column guard.** G97's genuine non-rightward observer theorem makes S_0(0),S_2(0),S_3(0) independent fair spins, so their triple moment is zero. Enlarging the observation to two columns changes this higher-order test. No claim is made about independence at every larger gap, absence of any finite dependence range, entropy, a Markov order, asymptotic mixing or the selected finite-seed orbit. The result concerns precisely W_0 versus (W_2,W_3) under the fair-row ensemble.
+
+**Registered replay.** tests/probes/lexicon/rule30_gpt_window_memory.py uses literal spatial XOR/OR updates on every initial word over [-3,4], retaining only complete cones for rows through 3. WM0 expects all sixteen joint W_0,W_2 states equally often; WM1 expects mixed spin sum 32/256; WM2's independent-future prediction zero must fail; WM3 expects the fixed-column sum zero. The hand theorem is independent of running the probe. Outcome is pending until these predictions are published. Scratch deferred without retry; room closed.
+
+
+**GC780 registered replay outcome (2026-10-09, GPT).** Executed only after predictions were published at 222b76a2. All 256 words on [-3,4] checked with literal complete-cone updates. WM0 PASS: all sixteen joint W_0,W_2 states occur sixteen times each. WM1 PASS: mixed sum 32/256 gives 1/8. WM2's future-block independence prediction is REFUTED as required. WM3 PASS: fixed-column triple sum is 0/256. This is a bounded exact control of the hand identity, not an empirical mixing estimate or single-seed measurement. Independent hand reading of G257 remains pending.
+
+*Independent reading (Local L409, 2026-10-09).* Verified by hand: S_2(0) S_3(1) = (-1)^(x_2(1) or x_2(2)) by the update at site 1, and (-1)^(a or b) = (-1 + s_a + s_b + s_a s_b)/2 checks on all four cases; against S_0(0) the constant term vanishes, the S_2(1) term by the cell-covariance collapse (0 is not 1 - 2), the S_2(2) term is rho_2 = 1/4, and the mixed term by the fresh pivot x_0(-1), leftmost in S_2(1)'s cone [-1, 3] and absent from S_0(0) and from S_2(2)'s cone [0, 4]; so the moment is 1/8. The lag-two row is independent of W_0 by the triangular pivots x_0(-2), x_0(-1). Replayed GPT's registered instrument: WM0, WM1, WM3 PASS and WM2 refuted as required.
+
+
+
 
 
 
@@ -10506,54 +10566,3 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
   a theorem.
 
 
-
-### GPT G256 — Corrected two-neighbour density obstruction for an alternating wall (GPT, 2026-10-09; waiting room)
-
-*Status:* corrected endpoint formulation awaits Cloud or Local confirmation. *Where:* RULE30-GPT.md GC779. *Provenance:* Cloud CL081 density corollary of Lemma 1/R0; GPT explicit boundary audit, sharp formal control and actual-right application of reviewed G240. No novelty claim. Nearest G146,G240,G234 read in full; G240 supplies the no-11 premise, while phase-limit and resonance results do not restate this density application. Proof copied verbatim below.
-
-**Independent hand review of Cloud's f985263a / CL081.** Read §8.34's addendum and Lemma 1/R0. Expected the weighted identity to hold with an explicit endpoint correction, and audited whether a strict deficit alone excludes an eventual clock. Counterfactual: a density combination infinitesimally below 2 contradicts the identity on every late window. Unexpected check is a formal clock-compatible boundary word approaching 2 from below. No replay of the reported scratch trials. Virtual duplicate gate passes; nearest entries 01,10,11 read in full. Entry 01 supplies the inverse identity; the two window-repeat entries do not already state this density consequence.
-
-**Exact boundary audit.** Choose the phase where column 0 is white at even times and black at odd times. For a window [a,b] with N=b-a+1 lying after clock onset, write S=sum of sigma(t) over its even times. R0 gives n_(-1)=N-S exactly. The odd samples of column -2 are the even sigma samples shifted forward one row, so
-
-    n_(-2)=2S+delta,
-    delta=1_(b odd)*sigma(b+1)-1_(a even)*sigma(a),
-    2*n_(-1)+n_(-2)=2N+delta,  |delta|<=1.
-
-The possible sample at b+1 must be included even though it lies just beyond the counted window. The clock and column 1 must be defined there; eventual clock onset supplies this. Swapping the clock phase simply swaps the parity labels, or equivalently shifts the time origin by one. Thus the identity holds for both phases and arbitrary starts, with the stated bound.
-
-The sharp bound obtained directly from the identity is max(d_(-1),d_(-2)) >= 2/3-1/(3N). Also n_(-1)>=floor(N/2); its fraction is at least 1/2-1/(2N), not literally at least half on every odd-length window. The latter half bound is exact on even-length windows and in any limiting density. These endpoint distinctions do not weaken the asymptotic two-thirds requirement.
-
-**The exclusion sentence needs qualification.** “Below 2 on infinitely many late windows” alone does not contradict 2N+delta: the normalized combination can equal 2-1/N. A uniform deficit epsilon>0 along windows whose lengths tend to infinity does exclude an eventual clock, as does any measured deficit exceeding 1/N on a window wholly after clock onset. Another exact version uses even-length windows beginning at a black clock row: then a is odd and b even in this phase, delta=0, and any strict deficit is impossible. Merely letting the two fractions approach 2/3 from below need not supply a margin.
-
-**Unexpected explicit boundary control.** Set the visible even sigma word to repeat 101, beginning with 1 at a white row a=0. On windows N=6r+2, S=2r+1, sigma(N)=0 and delta=-1. The two black counts are both 4r+1. Both fractions therefore equal 2/3-1/(3N), while their weighted combination is 2-1/N. This is a formal wall-profile control for the inference, not a finite seed or a globally realized right half; it uses R0's exact local formulas. It confirms the endpoint bound is sharp and refutes exclusion from strict deficit without a margin. Shifting this control supplies the opposite clock phase.
-
-**The actual-right language already sharpens the threshold.** The filing gate led back to reviewed G240: the actual visible code c_s=sigma(2s) has no adjacent 11. Thus among M consecutive white-clock samples, S<=ceil(M/2). On an even-length black-start window N=2M, the endpoint term is zero and n_(-1)=2M-S, so d_(-1)>=3/4-1/(4M). On arbitrary long windows, the same count gives liminf d_(-1)>=3/4, with endpoint errors tending to zero. This holds under the actual right-history premise, in either clock phase, without assuming a limiting visible density. It is stronger than the generic two-thirds alternative and is a direct corollary of G240's already reviewed no-11 count, not a new right-language theorem. Formal 101 violates no-11 across its repeat boundary, so it tests only the unrestricted R0 algebra. Even the no-11 formal word 10 gives weighted deficit -1/N on white-start windows N=4r+2; this retains the strict-deficit caveat at the level of the known necessary language, without asserting full right realization. Actual neighbour balance below three quarters would exclude the clock, but that balance is still unproved.
-
-**Prior record, prior art and disposition.** The local column formulas were already recorded in Lemma 1/R0; the density corollary is new packaging of that elementary inverse calculation. Targeted primary-domain searches found no exact two-thirds neighbour statement; this is a limited NOT FOUND, not a priority claim. The requested corrections are the finite half-bound qualifier and the deficit margin or phase-aligned-window condition. With them, the hand identity is verified. No neighbour-balance theorem is established for the single seed or all finite seeds, and measured core balance cannot supply one. A single-seed two-neighbour balance result would exclude its period-two centre; generic LR still requires balance or another argument in the full finite-left class. Q6 remains PART, no new board row or prize proof. Scratch deferred without retry; room closed.
-
-
-### GPT G257 — Width-two future-block dependence despite lag-two row independence (GPT, 2026-10-09; waiting room)
-
-*Status:* independent hand reading pending. *Where:* RULE30-GPT.md GC780. *Provenance:* reviewed G97/G255, CL078 exact rho2 and elementary spin identity. No novelty claim. Duplicate gate passes; nearest G254,G255,G97 read in full. These supply short diagonal memory, the covariance cutoff and the genuine fresh pivots; none states the mixed future-block moment. Proof copied verbatim below.
-
-**Bounded scope result after G255.** For iid fair initial rows on the line, predict a two-column row at lag two is independent of the starting two-column row, while the next two-column time block is not. Counterfactual: that independent row or zero covariance implies independence of every future block. Independent hand checks use the OR spin identity and the genuine leftmost affine pivots; unexpected check keeps a fixed single-column history iid by G97. A 256-word literal finite-cone replay is registered before execution; no random, single-seed or larger-lag scan. This is an elementary higher-order scope control of reviewed G97/G255, not a new mixing theorem or general novelty claim.
-
-Write S_t(i)=(-1)^x_t(i), W_t=(x_t(0),x_t(1)), and rho2=E[S_0(0)S_2(2)]=1/4, the exact received and independently replayed CL078 value. The Rule 30 update at site 1 gives
-
-    S_2(0)*S_3(1) = (-1)^(x_2(1) OR x_2(2))
-                    = [-1+S_2(1)+S_2(2)+S_2(1)*S_2(2)]/2.
-
-Multiply by S_0(0) and average. The constant term vanishes because S_0(0) is fair. The term with S_2(1) vanishes by the cell-covariance collapse. The mixed term also vanishes: S_2(1) contains the independent initial bit x_0(-1) with XOR coefficient one, while neither S_0(0) nor S_2(2) depends on that bit. Averaging it cancels the mixed product. The remaining term is rho2/2. Hence
-
-    E[S_0(0)*S_2(0)*S_3(1)] = 1/8.
-
-If W_0 were independent of the future block (W_2,W_3), this moment would factor through E[S_0(0)]=0 and vanish. Thus those blocks are dependent. This is a concrete failure of upgrading the lag-two single-row cutoff to independence of the whole future.
-
-**The lag-two single row really is independent, not just uncorrelated.** Conditional on every initial bit except x_0(-2),x_0(-1), the output x_2(1) is affine in x_0(-1) and independent of x_0(-2), and x_2(0) is affine in x_0(-2). Solve from right to left: these two independent fair pivots give each W_2 value exactly one preimage. Neither pivot occurs in W_0. Thus W_2 is uniform and independent of W_0. There is no contradiction with the mixed moment: observing both W_2 and W_3 reveals a nonlinear driver relation involving information that one row alone hides.
-
-**Unexpected one-column guard.** G97's genuine non-rightward observer theorem makes S_0(0),S_2(0),S_3(0) independent fair spins, so their triple moment is zero. Enlarging the observation to two columns changes this higher-order test. No claim is made about independence at every larger gap, absence of any finite dependence range, entropy, a Markov order, asymptotic mixing or the selected finite-seed orbit. The result concerns precisely W_0 versus (W_2,W_3) under the fair-row ensemble.
-
-**Registered replay.** tests/probes/lexicon/rule30_gpt_window_memory.py uses literal spatial XOR/OR updates on every initial word over [-3,4], retaining only complete cones for rows through 3. WM0 expects all sixteen joint W_0,W_2 states equally often; WM1 expects mixed spin sum 32/256; WM2's independent-future prediction zero must fail; WM3 expects the fixed-column sum zero. The hand theorem is independent of running the probe. Outcome is pending until these predictions are published. Scratch deferred without retry; room closed.
-
-
-**GC780 registered replay outcome (2026-10-09, GPT).** Executed only after predictions were published at 222b76a2. All 256 words on [-3,4] checked with literal complete-cone updates. WM0 PASS: all sixteen joint W_0,W_2 states occur sixteen times each. WM1 PASS: mixed sum 32/256 gives 1/8. WM2's future-block independence prediction is REFUTED as required. WM3 PASS: fixed-column triple sum is 0/256. This is a bounded exact control of the hand identity, not an empirical mixing estimate or single-seed measurement. Independent hand reading of G257 remains pending.
