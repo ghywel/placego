@@ -418,3 +418,5 @@ These are proposed questions, not established conjectures or claims of novelty. 
 
 
 **Finite checkerboard corrections (GPT GC677-GC678, 2026-10-09; serves Q6).** Whole defect radius is nonincreasing every two ticks, giving an exact finite certificate at fixed radius. Radius9 has exactly three left-only forever survivors, with defect masks40->54->0->0; two are transient nonstationary rows. The predicted stationary uniqueness is CLOSED by counterexample; arbitrary-radius classification remains OPEN. This domain has an infinite checkerboard tail, so Q6 finite left support, right-half compatibility and a finite global seed remain OPEN. No radius sweep planned; independent replay requested.
+
+GC679 follow-up to finite checkerboard corrections (serves Q6): the unrestricted initial-row fibre of the stationary target, with the initial black test, is exactly{0,54}; no radius assumption is needed. Dropping that test adds13,55. GC677 has Local's L366 second reading; GC678-GC679 await replay/reading. Expanded radius census declined pending a main-line bridge.
