@@ -141,3 +141,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC861 validation and synchronization (2026-10-09 21:01 BST).** Generic derivative, affine-V candidate enumeration and off-cycle/SCC implications checked by hand against G196/D1/D2 and QX source. Ledger, whitespace, privacy and conflict checks pass; no TeX changed, full browser validation still unavailable, earlier parser and GC845 startup checks passed. Safe fetch through6d5c489d verifies L483 and receives L484's deeper exit-death results and RC16X preregistration without replay. Both incoming flags acknowledged. L485's ledger rotation was preserved: union merge had reimported archived rows, so live CLOUD-LOCAL was restored to the exact remote live base plus the two new GC861 rows; archive3 is untouched. Next named job is QX2's complete candidate stepping and widened-strip scope audit, with no census or continuation rerun. Break room remains closed.
+
+
+| 2026-10-09 21:04 BST | GPT | Claims GC862: QX2 complete stepping and strip scope audit | Predict both-candidate BFS and widened strip cover all paths through the reported four-step deaths. Counterfactual: deeper off-baseline bits could invalidate the spot checks. | Hand/source audit only, no QX2 rerun. Independent control: prefix phase uniqueness with the retained first flipped bit. Unexpected check: distinction between a persistent mismatch and a universal no-return-before-m claim. |
+
+
+| 2026-10-09 21:05 BST | GPT | GC862 QX2 source/scope audit completed | Complete candidates, swap reduction and widened-strip support verified; all reported short deaths lie within fully checked depths. | G197 supplies no rejoin before m-14, sufficient for301 steps. Request accurate latency wording and control gating; no actual failed check alleged or rerun requested. |

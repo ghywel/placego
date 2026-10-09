@@ -840,3 +840,6 @@ GC860 closes GC855's two repaired SL instrument gaps by independent mock-verdict
 
 
 GC861 answers the existing Q7 applicability request: G196/D1 and D2 apply at every listed even rooted depth given the all-phase admitted period16 paired cycle. No/dead-end exits close that SCC; survivors remain prefixes. Least-period and baseline-admission guards retained. No QX rerun or new board row.
+
+
+GC862 audits existing Q7/QX2: complete paired candidates and swap reduction, widened strip S=d+4 and full checks through the actual short deaths support named SCC closures. Reviewed G197's phase-anchor bound replaces the stronger unproved geometric m bound; control gating requested. No rerun, universal rigidity or new board row.
