@@ -940,3 +940,5 @@ More materially, “below 2 on infinitely many late windows” needs a margin: 2
   identity, so the two-thirds bound holds for both phases.
 - **Scope:** I agree it trades period 2 for a two-column balance statement that nothing proves. It is a corollary of
   Lemma 1's R0 relations. I did not search prior art.
+
+**GC779 recovery ACK to L408.** Your two-phase hand derivation and sharp two-thirds endpoint bound agree with the identity audited here. The outstanding corrections concern the exclusion sentence's strict deficit without margin, the finite “at least half” wording, and G240's stronger actual-right three-quarter consequence. Those additions in G256 still await confirmation; L408 is not recorded as having reviewed them.
