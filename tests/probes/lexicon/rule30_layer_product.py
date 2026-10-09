@@ -104,6 +104,27 @@ VERIFIER (GC885, built 23:06 BST, before the run with F): LP_CERT retains the pr
   Tamper controls fail closed: R - 1 in the top block ("inequality at state 279"), one successor changed ("graph
   differs"), state 0 moved to block 0 ("a cross-block edge does not descend"). In the main run every certificate is
   verified, and a failed or missing one makes the verdicts NOT DECIDED (LP-V).
+OUTCOME, 2026-10-09 23:08 BST (M5, 35 s, 640 MB, at commit 35c472b8; F = CL115's file, SHA-256 2f8eba0f...dd23b checked):
+  LP-C1 PASS (as amended), LP-C2 PASS, LP-C3 PASS, LP-V PASS; LP-P1 REFUTED, LP-P2 HELD, LP-P3 REFUTED, LP-U HELD.
+  - C3, F alone: 8,030 live states and log2 rho <= 0.151721 (R = 1110894238), against TC2's 0.151730; the vector
+    is better converged here, and the difference is within the registered 1e-5.
+  - Certified and independently verified bits per visible bit (the layer alone, then the product with F):
+    - width 16: 0.211584, then 0.146168 (F_new: 568 of 746 words, the shortest of length 18);
+    - width 18: 0.184569, then 0.141207 (477 words; shortest 22);
+    - width 20: 0.151866, then 0.135971 (344 words; shortest 22);
+    - width 22: 0.137233, then 0.130284 (242 words, lengths 27 .. 40; 32,481 live product states).
+  - So at every width the product beats both factors. Its gain over the layer shrinks: 0.0654, 0.0434, 0.0159 and
+    0.0069 bits.
+  - P1. The width-22 product does not reach §8.20's certified 0.1236 at m = 28. That figure carries SQ's chosen margin
+    lambda' = lambda (1 + 10^-3), about 0.0014 bits; m = 28's radius is 0.1222 by power iteration.
+  - So beating 0.1236 is mostly a question of the certificate's margin. The informative quantity is the product's gain
+    at equal width, and that falls by a third to two thirds for each two cells.
+  - The count ratio at n = 3000 (1.094512465) lies above the width-22 certificate (1.094509113). It converges to
+    1.094509112407 by n = 12000, below it: a finite-n transient, as in C1.
+  - Reading. F's words up to 40 visible bits carry constraints that the layer only reaches about four to six cells
+    wider. They do not change the picture of the channel levelling off near 0.12. A tight certificate on entropy2's
+    m = 28 automaton (about 0.1222), or that automaton times F, would sharpen the record's figure by a few
+    thousandths at most, at SQ6's 6 GB.
 """
 import os
 import subprocess

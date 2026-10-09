@@ -146,6 +146,8 @@ PART: as on the board.
 ## Correlations, entropy and traces
 - Channel bound: next to 0101 column 1 carries at most 0.1236 bits per visible bit, whatever the right half —
   COMPUTED (certified in integers) — §8.20, §8.33; SQ6, EN6
+- Layer times true forbidden words (TC2's F): width 22 certifies 0.130284, below both factors; gain over the layer
+  shrinks with width; 0.1236 not beaten — COMPUTED (verified) — rule30_layer_product.py (LP), L505
 - Entropy squeeze: every column left of column 0 = 0101 has at most 0.0618 bits a step — PROVED (adversarial
   review, PRIOR-ART.md) — §8.33
 - Information reaches column 1 at about 0.2 cells a step; at fixed depth the channel, not the seed, sets the
