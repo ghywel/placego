@@ -23,6 +23,19 @@ PREDICTIONS (Local's, published before the run):
   QX-P1 (blind, confidence 0.5): at 18826, 26356, 34854 and 40804, every exit target has out-degree 0, so all four
         components are exactly their sixteen-cycles.
   QX-D1 (descriptive): the out-degree of every exit target.
+OUTCOME, 2026-10-09 20:56 BST (M5, 13 s, 44 MB, run at commit 6b1b9e23): QX-C1 PASS, QX-C2 PASS, QX-P1 REFUTED.
+  - Every sixteen-cycle is in its H_m, and every D1 exit is a legal edge under PR198-D2's evaluators.
+  - Exit phases and exit-target out-degrees:
+    - 18826: phases 1, 9; out-degrees 1, 1;
+    - 26356: phases 2, 7, 10, 15; all 0;
+    - 34854: phases 1, 4, 5, 9, 12, 13; out-degrees 1, 0, 0, 1, 0, 0;
+    - 40804: phases 0, 1, 7, 8, 9, 15; out-degrees 0, 2, 0, 0, 2, 0;
+    - 49732: no exits;
+    - 52808: phases 1, 5, 9, 13; all 0. That is PR198-D2's result in the class representative's phases.
+  - Closed, each component exactly its directed sixteen-cycle (swap displacement 8; q = 16 only): r = 26,356, 49,732
+    and 52,808.
+  - Open: 18,826, 34,854 and 40,804. Each has an exit target with a successor, which is a two-edge prefix only (no
+    return or persistence shown).
 """
 import sys
 
