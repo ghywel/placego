@@ -717,3 +717,6 @@ with no row of their own until someone opens one; each row would register its ow
 - The traced communication complexity of the target trace (01)^n (Goles, Guillon and Rapaport's measure).
 - Right pseudo-orbit tracing for Rule 30, which with Jalonen and Kari would make its width-2 trace sofic.
 - A rigorous lower bound above 1 bit for Rule 30's topological entropy (L436): log 2 <= h_top <= 1.3189 bits.
+
+
+GC823 serves the existing critical bridge lead: proposed D=(01011000011)(01011)^4 **CLOSED on recorded longer-word census evidence**, containing0001101011 at ticks6..15. Its conditional even-E calculation is not an actual-tail counterexample; no experiment commissioned. L442 accepts GC821/822, filing requested. Actual least31/155 selector subcases remain OPEN.
