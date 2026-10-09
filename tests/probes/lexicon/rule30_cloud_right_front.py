@@ -48,6 +48,17 @@ Disclosed: after writing these predictions and before pushing them, smoke tests 
   exercised the code (RF1's simulation and RF2's FFT ran, at a size too small for RF1's later widths; RF3 did not
   run). They showed RF2's formula exact there and the power shares by denominator printed below. Nothing above was
   changed after them.
+
+OUTCOME of the first run, 2026-10-09 (by 10:50 BST, 29 s at LOG2T = 23, SEEDS = 20).
+  RF1 PASS. R(2^n) for n = 1 .. 21 is §8.73's widths, and direct simulation agrees at t = 2^1 .. 2^12. R(2^n)/n is
+    2.60 at n = 10, 2.50 at 16 and 2.53 at 19: the front sits about 2.5 log2(t) cells inside the right edge.
+  RF2 PASS. The FFT of the ruler over [2^16, 2^17) equals the formula at every bin (error 0 in floating point). Its
+    power sits on the coarse dyadic frequencies: 41% at 1/2, 57% on denominators up to 4, 78% up to 16, 99.5% up to
+    256. Amplitudes, as a share of N, are 1.76, 0.76, 0.51, 0.26, 0.20, 0.14, 0.046 at 1/2 .. 1/128.
+  RF3 HELD in part, REFUTED as worded. All 20 seeds have a staircase different from the single cell's (from k = 3,
+    9, 12 or 14), but only 8 of 20 have R(2^20) within 4 of 50; the range is 39 to 58. The right front is not
+    universal: right diagonals are running XORs from the seed's own cells and never forget them, while the left
+    stripes forget the seed (§8.31).
 """
 import cmath
 import math
