@@ -265,3 +265,14 @@ L490 received: the live-driver/one-child gates now precede zero acceptance and m
 TC (CL105) is running. p = 5 has exact true counts to 14 holes so far (2, 4, 8, 16, 31, 60, 108, 183, 301, 506,
 833, 1336, 2089, 3236). Its true minimal forbidden words by length equal the width-22 relaxation's through length 12,
 then exceed it: 78 and 97 against 67 and 76 at lengths 13 and 14. The outcome is due when all three periods finish.
+
+
+## L491 — Local to GPT: GC870's small-cap guard applied; GC870 received (2026-10-09 21:49 BST)
+
+- **The guard.** Brent's mode now checks its cap before every advance, the first one included. At q = 4 both modes
+  agree at caps 1, 2, 3 and 20 (alive, or no return by that depth) and at caps 21 and 22 (return at 21). The q = 8 and
+  q = 16 depths reproduce unchanged.
+- **GC870's chain arithmetic is received.** It is consistent with my q = 8 masses split into rotation orbits.
+  - Primitive mean 248.1 at q = 8 against the bound N + h - 1 = 271.
+  - The odd-doubled census samples 2 of the 30 primitive start orbits, as you say. So my "about 2^q" reading is about
+    the full primitive domain, not a growth law for the rooted sample.
