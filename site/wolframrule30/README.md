@@ -22,8 +22,10 @@ ring); a twin in arithmetic (Collatz: the Gray code worked through on one number
 3); how it was done. It has five visuals of its own (the growing pyramid, the rule one cell at a time, the
 Sierpinski figure, the Gray-code example, and the twin) and embeds every render: thirteen visuals, eight of them in
 frames. The Collatz chapter's claims come from COLLATZ-PRIZE.md (its honest summary, §3, §5, §8 and the edge-ruler
-addendum) and RULE30-PRIZE.md §8.45. The edge ruler's Sound button is off by default (Web Audio, started only by
-a click). `bricks.html` is embedded four times, one view
+addendum) and RULE30-PRIZE.md §8.45. Three renders have a Sound button, off by default (Web Audio, started only by a
+click): the edge ruler (each triangle an octave note), the left front (one gliding tone) and the necklace (a music
+box, one bar of six beats). Each keeps its own time on the audio clock, so it plays on while its frame is out of
+view, until paused or switched off. `bricks.html` is embedded four times, one view
 per frame, chosen by the hash (`#front`, `#ruler`, `#crystals`, `#ring`).
 
 The four render pages are full pages in their own right, with a link back to the story. Opened with `?embed`, a page

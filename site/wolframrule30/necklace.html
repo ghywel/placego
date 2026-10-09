@@ -149,6 +149,7 @@ html.embed .page { padding-bottom: 0 !important; }
           <option value="800" selected>Normal</option>
           <option value="350">Fast</option>
         </select>
+        <button id="sound" type="button" aria-pressed="false">Sound: off</button>
         <span class="phase" id="phase">t = 0 · phase 0 of 6</span>
       </div>
     </div>
@@ -178,6 +179,15 @@ html.embed .page { padding-bottom: 0 !important; }
         30 row that plays S for ever, so arbitrarily long all-S stretches are physically possible.</p>
       <p>Every all-S trace has to look like this one near the centre. Its first five rows repeat with period six,
         whatever lies further out.</p>
+    </section>
+    <section>
+      <h2>The music box</h2>
+      <p>Each step of Rule 30 turns this ring by 14 of its 84 beads, so a fixed comb over the 14 beads at the top
+        right reads the whole ring once every six steps. <b>Sound</b>, off until you press it, plays it that way: one
+        beat per step, each beat a sweep along the comb in which every black bead plucks a note of A minor pentatonic,
+        with a low A under it when site 0, the clock, is black and an E when site 1 is. The ring's whole infinite
+        history is one bar of six beats, playing for ever. The music keeps its own time and goes on while the page is
+        out of sight, until you pause it.</p>
     </section>
     <section>
       <h2>The catch</h2>
@@ -326,6 +336,13 @@ html.embed .page { padding-bottom: 0 !important; }
     // the ring
     g.strokeStyle = css("--rule"); g.lineWidth = 1;
     g.beginPath(); g.arc(cx, cy, R, 0, 2 * Math.PI); g.stroke();
+    if (typeof Music !== "undefined" && Music.on) {          // the music box's comb over sites 0 .. 13, and its playhead
+      const a0 = -Math.PI / 2 + 2 * Math.PI * -0.5 / N, a1 = -Math.PI / 2 + 2 * Math.PI * 13.5 / N;
+      g.strokeStyle = css("--clock-soft"); g.lineWidth = br * 3.4; g.lineCap = "round";
+      g.beginPath(); g.arc(cx, cy, R, a0, a1); g.stroke(); g.lineCap = "butt";
+      const fr = Music.beat() % 1, j = Math.min(13, Math.floor(fr * 14)), [px, py] = bead(j);
+      g.strokeStyle = clock; g.lineWidth = 2.5; g.beginPath(); g.arc(px, py, br * 1.6, 0, 2 * Math.PI); g.stroke();
+    }
     const cur = rows[t % 6], prev = rows[(t + 5) % 6];
     const halo = new Map([[1, ["--mate", "--mate-soft"]], ...TRACE.map(([site, tok]) => [(site + N) % N, [tok, null]])]);
     for (let i = 0; i < N; i++) {
@@ -379,6 +396,75 @@ html.embed .page { padding-bottom: 0 !important; }
     document.getElementById("phase").textContent = `t = ${t} · phase ${t % 6} of 6`;
   }
 
+  // The necklace as a music box, off until pressed. Each step of Rule 30 turns the ring by 14 of its 84 cells, so a
+  // fixed comb of 14 tines over sites 0 .. 13 reads the whole ring once every 6 steps: its entire infinite history
+  // is one bar of six beats. Each beat sweeps the comb from site 0 to site 13, plucking a note of A minor pentatonic
+  // (A3 up two octaves and more) for every black cell; under it a low A sounds when site 0, the clock, is black,
+  // and an E when site 1 is. It keeps its own time on the audio clock, and the ring follows it while it plays.
+  const SCALE = [220, 261.63, 293.66, 329.63, 392, 440, 523.25, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66, 1318.51];
+  const Music = (() => {
+    let ctx = null, master = null, bus = null, on = false, running = false, timer = 0;
+    let beat0 = 0, time0 = 0, next = 0, sec = 0.8, onBeat = null;
+    const AHEAD = 2.5;                                  // seconds ahead: background tabs run timers about once a second
+    function freshBus() { if (bus) bus.disconnect(); bus = ctx.createGain(); bus.connect(master); }
+    function pluck(when, f, peak, dur, type) {
+      const o = ctx.createOscillator(), o2 = ctx.createOscillator(), e = ctx.createGain(), e2 = ctx.createGain();
+      o.type = type; o.frequency.value = f; o2.type = "sine"; o2.frequency.value = f * 4;   // a tine's bright overtone
+      e.gain.setValueAtTime(0.0001, when); e.gain.exponentialRampToValueAtTime(peak, when + 0.004);
+      e.gain.exponentialRampToValueAtTime(0.0001, when + dur);
+      e2.gain.setValueAtTime(0.0001, when); e2.gain.exponentialRampToValueAtTime(peak * 0.12, when + 0.002);
+      e2.gain.exponentialRampToValueAtTime(0.0001, when + dur * 0.3);
+      o.connect(e); e.connect(bus); o2.connect(e2); e2.connect(bus);
+      o.start(when); o2.start(when); o.stop(when + dur + 0.05); o2.stop(when + dur + 0.05);
+    }
+    function playBeat(when, b) {                        // the ring at time b, read by the comb
+      const row = rows[((b % 6) + 6) % 6];
+      for (let j = 0; j < 14; j++) if (row[j]) pluck(when + j * sec / 14, SCALE[j], 0.45, 0.5, "sine");
+      if (row[0]) pluck(when, 110, 0.7, Math.min(0.9, sec * 0.9), "triangle");
+      if (row[1]) pluck(when, 164.81, 0.45, Math.min(0.7, sec * 0.7), "triangle");
+    }
+    const beatNow = () => running ? beat0 + Math.max(0, ctx.currentTime - time0) / sec : beat0;
+    function pump() {
+      timer = 0;
+      if (!running) return;
+      const until = ctx.currentTime + AHEAD;
+      for (;;) {
+        const when = time0 + (next - beat0) * sec;
+        if (when > until) break;
+        if (when >= ctx.currentTime - 0.02) playBeat(Math.max(when, ctx.currentTime), next);
+        next++;
+      }
+      if (onBeat) onBeat(beatNow());
+      timer = setTimeout(pump, 100);
+    }
+    function rebase(b) { beat0 = b; time0 = ctx ? ctx.currentTime : 0; next = Math.ceil(b); if (ctx) freshBus(); }
+    return {
+      get on() { return on; },
+      get running() { return running; },
+      beat: () => ctx ? beatNow() : beat0,
+      listen(fn) { onBeat = fn; },
+      start(b, s, play) {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return false;
+        if (!ctx) { ctx = new AC(); master = ctx.createGain(); master.gain.value = 0.14; master.connect(ctx.destination); }
+        ctx.resume().catch(() => {});
+        on = true; sec = s; rebase(b);
+        running = !!play; if (running && !timer) pump();
+        return true;
+      },
+      stop() {
+        if (!on) return;
+        beat0 = beatNow(); on = false; running = false;
+        if (timer) { clearTimeout(timer); timer = 0; }
+        if (ctx) { freshBus(); ctx.suspend().catch(() => {}); }
+      },
+      play(yes) { if (!on || yes === running) return; const b = beatNow(); running = yes; rebase(b); if (running && !timer) pump(); },
+      setSec(s) { if (!on) { sec = s; return; } const b = beatNow(); sec = s; rebase(b); },
+      seek(b) { if (on) rebase(b); else beat0 = b; },
+      blip(b) { if (on && ctx) playBeat(ctx.currentTime, b); },
+    };
+  })();
+
   function tick() {
     lastT = t; t += 1; fade = 0; readouts();
     const t0 = performance.now(), dur = Math.min(320, interval * 0.45);
@@ -387,12 +473,35 @@ html.embed .page { padding-bottom: 0 !important; }
   }
   function schedule() {
     clearInterval(timer);
-    if (playing) timer = setInterval(tick, interval);
+    if (playing && !Music.on) timer = setInterval(tick, interval);   // with the music on, the music keeps time
     document.getElementById("play").textContent = playing ? "Pause" : "Play";
   }
-  document.getElementById("play").addEventListener("click", () => { playing = !playing; schedule(); });
-  document.getElementById("step").addEventListener("click", () => { playing = false; schedule(); tick(); });
-  document.getElementById("speed").addEventListener("change", e => { interval = Number(e.target.value); schedule(); });
+  document.getElementById("play").addEventListener("click", () => { playing = !playing; Music.play(playing); schedule(); });
+  document.getElementById("step").addEventListener("click", () => {
+    playing = false; Music.play(false); schedule(); tick(); Music.seek(t); Music.blip(t);
+  });
+  document.getElementById("speed").addEventListener("change", e => {
+    interval = Number(e.target.value); Music.setSec(interval / 1000); schedule();
+  });
+  const sb = document.getElementById("sound");
+  const soundLabel = () => {
+    sb.setAttribute("aria-pressed", String(Music.on)); sb.textContent = Music.on ? "Sound: on" : "Sound: off";
+  };
+  let playhead = 0;
+  function sweep() {                                  // redraw the comb's playhead while the music plays
+    if (!Music.on) { draw(); return; }
+    draw(); playhead = requestAnimationFrame(sweep);
+  }
+  sb.addEventListener("click", () => {
+    if (Music.on) { Music.stop(); cancelAnimationFrame(playhead); }
+    else { Music.start(t, interval / 1000, playing); playhead = requestAnimationFrame(sweep); }
+    soundLabel(); schedule(); draw();
+  });
+  Music.listen(b => {                                 // the ring follows the music's beat, also while unseen
+    const target = Math.floor(b);
+    if (target - t > 2) { t = target - 1; }
+    while (t < target) tick();
+  });
 
   layout(); draw(); readouts(); schedule();
   let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => { layout(); draw(); }, 120); });
