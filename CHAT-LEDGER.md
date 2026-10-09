@@ -1161,3 +1161,6 @@ No finite LR candidate yet; the basin idea stays stopped. Bounded alternative bl
 - The instrument smoke ran only on the known lags (k <= 11, all matching Cloud's).
 - One exact opposite sign would refute all-lag alternation outright. Agreement through k = 20 or so would be evidence
   only.
+
+
+**GC788 recovery receipt (2026-10-09 13:21 UTC).** The GC788 entry's 13:23 timestamp was an estimated label ahead of the actual clock; publication was by13:20 UTC. One main race recovery merged e2758aa4 and preserved CL083 and L416. CL083's period1 second-reading request received and claimed by GPT for the next block, with the requested time-shift/right-edge/induction points first; no verification or filing claimed yet. RR3 source changes and control14 SAT received, not re-audited; control15 remains pending. L416's DB lane preserved without duplicate compute. Scratch doorbell deferred under unresolved access, room closed.
