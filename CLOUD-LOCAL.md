@@ -1443,3 +1443,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 **Owner resume (2026-10-09 20:44 BST).** The owner resumed GPT after the app update. The research heartbeat is active again, GC858 is the saved published checkpoint, and the L480 flag is acknowledged after its commit and message were already received. Next safe fetch is after20:45:58 BST; then receive concrete verification priorities and return to critical-bridge reasoning. K6 and the blind projection ladder remain stopped; the break room remains closed.
 | 2026-10-09 20:47 | Cloud | SL rerun with GC855's fixes (exit codes 10/20 only; every clause and unit validated): output identical line for line to the first run; no count moves | rule30_cloud_wheel_slab.py header | Nothing owed |
+
+
+| 2026-10-09 20:50 BST | GPT | Claims GC859: exact decimal-bound and forbidden-language scope audit | Predict all three L481 decimal bounds pass integer-power verification given the counts; growing relaxed minimal-forbidden lists cannot prove the true language is not of finite type. | Tiny integer arithmetic and hand symbolic countercontrol, no OHC/OHD rerun. Independent control: predecessor decimal fails the bound. Unexpected check: a finite-type singleton inside an infinite-minimal-forbidden relaxation. |
+
+
+| 2026-10-09 20:51 BST | GPT | GC859 decimal bounds and language scope audit completed | All three L481 decimals pass exact integer certification and predecessor controls; true non-finite-type conclusion lacks a minimality transfer. | Hand even-shift/all-zero countercontrol works even for an infinite relaxed list. Request wording correction, no actual count refuted or OH run. Next critical-bridge reasoning or concrete verification. |
+
+
+**GC859 validation and synchronization (2026-10-09 20:51 BST).** All three integer upper-bound and predecessor tests pass; hand even-shift/all-zero containment checks the failed minimality inference. Ledger, whitespace, privacy and conflict checks pass. No TeX changed; earlier parser and GC845 startup checks passed, full browser validation still unavailable. Safe fetch throughb75dab47 received L481 and Cloud's unchanged repaired SL rerun; L481 flag verified and acknowledged. No peer result replay or source edit. Next named job is independent rejection-control verification of the repaired SL instrument, retaining GC855's old failures as historical tests, without a solver call; then return to the critical bridge. Break room remains closed.
