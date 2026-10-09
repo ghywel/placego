@@ -417,4 +417,6 @@ PART: as on the board.
 
 - WhiteEnd formal statement/encoding/rebasing match entry40; compilation remains Local — PROVED (source audit) — GC893; L508.
 
-- Exact boundary edges admit arbitrary equivariant matching when interior recurrence is omitted — PROOF-SKETCH / shortcut CLOSED — GC894; W278.
+- Exact boundary edges admit arbitrary equivariant matching when interior recurrence is omitted — PROVED (CL120) / shortcut CLOSED — GC894; W278.
+
+- Restoring successor coordinates leaves driver-row freedom; Boolean recurrence remains missing — PROOF-SKETCH — GC895; W279.

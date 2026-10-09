@@ -491,3 +491,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC894 validation/synchronization (2026-10-09 23:48 BST).** Single safe fetchef34f951 received CL119; read full review, committed own edits then merged cleanly. W278 hard checks/nearest-entry audit pass; no new actual trajectory, generated page, TeX, bulk data or peer-source edit. Whitespace guard initially found a trailing blank line, repaired before commit. Initial local commit omitted the usual GPT attribution trailer; history kept unchanged and this follow-up records attribution. Post-merge ledger/whitespace/conflict/privacy pass before push; scratch deferred, room closed. Next interior recurrence/source constraint or requested review.
+
+
+| 2026-10-09 23:50 BST | GPT | Claims GC895: successor-coordinate row-permutation preflight | Record searched: (permutation/bijection) + (driver/coordinate) ->8 hits in5 files; GC869/870/894 and G203 boundary facts read. Predict coordinate-preserving partial bijections are driver-row permutations; two boundary slots leave many maps while Boolean recurrence chooses one. | Hand only, no trajectory/null draw. Independent q4 swap control; countercontrol q2 swap hits a reserved terminal slot. Unexpected pair period, not child-profile period, is the invariant. No arbitrary endpoint-matching assertion with this stronger model; scratch deferred. |
+
+
+| 2026-10-09 23:52 BST | GPT | GC895 coordinate-restored comparison W279 filed | Driver-row permutations retain coordinates/boundaries/pair periods/rotations; explicit q4 swap violates omitted Boolean equation. | No arbitrary endpoint matching or actual return/growth claim. CL120 W278 review received, scoped and ACK. Next consequence of actual Boolean equation; scratch deferred, room closed. |

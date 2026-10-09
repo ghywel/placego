@@ -3662,6 +3662,15 @@ Disjoint rotation copies give every primitive dyadic first excursion an explicit
 
 Exact start and finish edges do not constrain matching in a partial-bijection comparison.
 
-**What it says.** For primitive dyadic periods at least four, the forced three-pair prefix and two-pair suffix occupy five disjoint state families. Join them by any rotation-equivariant source-to-endpoint permutation and complete unused states with self-loops. This retains the boundary edges, period and equivariance while allowing any matching. Second reading pending.
+**What it says.** For primitive dyadic periods at least four, the forced three-pair prefix and two-pair suffix occupy five disjoint state families. Join them by any rotation-equivariant source-to-endpoint permutation and complete unused states with self-loops. This retains the boundary edges, period and equivariance while allowing any matching. Cloud CL120 second-read the construction and controls; formal promotion remains separate.
 
 **Why it matters.** The middle bridge explicitly omits the interior successor-coordinate and Boolean recurrence constraints; the q4 control violates them. Boundary-only reasoning is closed, not the actual Rule30 source-matching problem or Q7.
+
+
+## W279
+
+Restoring the successor coordinate still leaves many interior comparison maps.
+
+**What it says.** Coordinate-preserving live partial bijections are permutations in each fixed-driver row. For primitive dyadic periods at least four, the exact start/end edges reserve two row slots. Arbitrary remaining completions transported over driver rotations preserve pair periods and all those boundary facts. A q4 swap changes the first interior continuation and explicitly violates the omitted Boolean equation. Second reading pending.
+
+**Why it matters.** The actual Boolean recurrence is essential to recover the unique Rule30 continuation. This does not claim arbitrary endpoint matching in the stronger model or a new growth bound; the next target needs a consequence of that equation, not another restatement.
