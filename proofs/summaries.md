@@ -3209,6 +3209,15 @@ Another short pattern can never appear in a column of Rule 30 read in its light-
 
 **An everyday picture.** A footprint trail that, traced backwards, would need the walker to have stood in two places at once.
 
+## G269
+If the black-cell counts down the columns of a repeating stretch of Rule 30 follow a fixed repeating odd-even pattern, the stretch cannot have a lead-in: it repeats from its very first column.
+
+**What it says.** Fix an odd time period. Each column then has exactly two possible left neighbours, one with an odd count of black cells and one with an even count. A prescribed odd-even pattern picks at most one of them. So every column has at most one possible predecessor, and a finite system in which every state has at most one predecessor and goes on for ever can only run in closed loops. A starting column of the kind that never has a predecessor therefore cannot begin such a stretch.
+
+**Why it matters.** It removes one way the critical case could have hidden a lead-in, and it says what any real one would need: an odd-even pattern that does not repeat from the start.
+
+**An everyday picture.** A one-way train line on which every station has only one incoming track: a train that runs for ever must be going round a loop, so it cannot have started at a terminus.
+
 ## G234
 A finite early clock does not prevent arbitrarily delayed resonance in a deeper white interval.
 

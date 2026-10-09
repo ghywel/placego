@@ -688,6 +688,9 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [G traces never contain 0001101011](G268-g-traces-never-contain-0001101011.md): Another short pattern can never
   appear in a column of Rule 30 read in its light-speed frame: three whites, two blacks, a white, a black, a white,
   two blacks.
+- [An odd-period tail with a periodic spatial parity mask has no hidden transient](G269-an-odd-period-tail-with-a-periodic-spatial.md):
+  If the black-cell counts down the columns of a repeating stretch of Rule 30 follow a fixed repeating odd-even
+  pattern, the stretch cannot have a lead-in: it repeats from its very first column.
 
 ## Proofs from the sparks
 
