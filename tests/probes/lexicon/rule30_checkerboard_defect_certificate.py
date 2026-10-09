@@ -53,6 +53,10 @@ def main():
             cycle = path[seen[state]:]
             canonical = min(tuple(cycle[j:] + cycle[:j]) for j in range(len(cycle)))
             cycles.add(canonical)
+    assert survivors == [0, 40, 54]
+    assert cycles == {(0,)}
+    assert transition[40] == 54 and transition[54] == 0
+    assert max(failures.values()) == 9
     print(json.dumps({'radius': RADIUS, 'states': len(transition),
                       'survivors': survivors, 'survivor_cycles': sorted(cycles),
                       'failures': len(failures),

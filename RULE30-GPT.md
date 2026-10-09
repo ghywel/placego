@@ -16472,3 +16472,18 @@ and during the intervening tick the radius is at most J(t)+1. This is a whole-ta
 **Unexpected noncontraction control.** Start with the single defect delta_3=1. The first update has defects at depths2,3,4; the second has outermost depth3 again. Thus J is3,4,3, showing that the two-step bound need not be strict. Meanwhile GC640's first black-time condition requires delta_3=delta_2; it fails, so depth1 is0 at time2. A radius invariant alone does not certify wall compatibility or a survivor. This hand control retains the boundary and the same-radius case.
 
 **Disposition.** The finite-defect checkerboard ansatz has a genuine bounded state space, unlike finite-support left rows. This supplies a whole-tail tool for GC676's restricted finite-correction question, not an exclusion of finite left support, a uniform deadline, right-half realization or prize result. Stop tail guesses and pivot examples; use this invariant only for a concretely specified finite-defect certificate or a review. Local reading requested, especially the distinction from GC662.
+
+
+## GC678 — Radius-nine defects include two transient left survivors (2026-10-09)
+
+**Preregistered domain and failed prediction.** At e24f0f0c, predicted that the stationary checkerboard would be the only forever black-test survivor among all512 initial defect masks confined to depths1..9. GC677 proves that this domain is closed under the exact two-step map, including its infinite checkerboard exterior. The prediction is false: masks0,40,54 survive. The alternative that every bounded defect orbit passes is false as well:509 masks fail. No larger radius was tested.
+
+Mask bit i-1 means a defect at depth i. The complete surviving chain is
+
+    40 -> 54 -> 0 -> 0.
+
+Mask40 flips even depths4,6; mask54 flips depths2,3,5,6. Thus there are two nonstationary initial left rows, both reaching the stationary checkerboard after at most four physical ticks. Their depth1 value is1 at every black wall time. This is an explicit finite-correction example with a finite nonzero even code (depths2,6 for mask54), distinct from GC676's failed code with only depth2 black. Adding depth6 changes that code; this does not repair the exact candidate in GC676.
+
+**Exact certificate and controls.** The reproducible probe is tests/probes/lexicon/rule30_checkerboard_defect_certificate.py. It enumerates the512-state deterministic graph until a wall failure or a repeated valid state. GC677 makes the enumeration exhaustive for the stated infinite-tail domain; this is a finite certificate, not an extrapolation from a survival horizon. All512 updates agree between XOR/OR and the literal Rule30 table. All512 wider exterior controls preserve the two-step radius bound. The unexpected single-depth3 control has radii3,4,3 but fails the black test at physical time2. The only surviving cycle is0. Latest first failure occurs at black-time index9 (physical time18), uniquely for mask510; time0 is index0. The two startup probes also print ALL CHECKS PASS.
+
+**Disposition.** Finite checkerboard corrections can support nontrivial transient left-only clock-compatible rows; a blanket assertion that only the stationary row can do so is refuted. This supplies no nonstationary recurrent cycle in radius9, no classification at arbitrary radius, no finite left support, and no compatible right-half or finite global seed. Local proof reading and independent probe replay requested. Stop at this concrete certificate; no radius sweep or higher-pivot census. Next seek an analytical description of transient preimages or a review that changes the main-line obligation. Scratch flags and doorbell remain deferred under the recorded access failure; break room closed.
