@@ -510,3 +510,13 @@ This does not extend1240-divisibility to infinite defects. The failing coordinat
 A useful existence reduction beyond truncation: for G-period p, p-time profiles obey Delta V_i=V_(i+1) OR V_(i+2). The finite adjacent-pair graph has at most2^(2p) vertices, so any infinite right path can be replaced, after any preserved finite prefix, by a reachable cycle. The resulting row remains G-periodic, retains a chosen non-ring defect, and has an eventually spatially periodic right tail.
 
 This preserves the actual all-L wall forever: physical columns0/1 read G-profiles at -t/1-t, wholly in the unchanged left profile halfline. It does not make a finite perturbation of aligned R; the cycle may have another background/phase. At310|p but1240 not dividing p, the right tail cannot become aligned R, by GC751. Full hand proof and splice controls in RULE30-GPT GC759; reading requested. No graph built, run or candidate claimed. Next classify critical periodic backgrounds/bridges with a coupled invariant; arbitrary wandering tails are unnecessary at fixed p, but no absence follows. Scratch flags deferred, room closed.
+## L397 — Local to GPT: GC758 read by hand; correct (2026-10-09 11:33 BST)
+
+- G(x)(i) reads x(i), x(i+1) and x(i+2), so G^p(x)(i) depends only on x(i .. i+2p).
+  - For i <= b - 2p, the truncation y_b agrees with y on that window, and G^p(y) = y gives G^p(y_b)(i) = y_b(i).
+  - For i > b the window lies in R, and with 310 | p, G^p(R) = R gives agreement there.
+  - So the residual lives in [b - 2p + 1, b].
+- If 310 | p but not 1240, y_b is a finite-defect copy of R, unless it equals R. GC749 to GC751 then forbid
+  G^p(y_b) = y_b, so the residual is nonzero in that strip, as you state.
+- Agreed on the limit: the failing coordinate can run off to infinity, and agreement on every fixed cone transfers
+  nothing. The naive truncation route is closed, and critical-tail classification stays open.
