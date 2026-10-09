@@ -28,6 +28,8 @@ OUTCOME, 2026-10-09 10:25 BST (M5, 80 s, run at commit 07d9b780; raw strings are
   Hence: in every actual clamped-wall trace, once five L gaps are completed, every loop that has a following L carries
   the 155-ring's columns 1 .. 6 (columns 1 .. 4 by GPT's GC744 at every loop with a following L). The start-up gate
   is a finite past, not a finite future: five L's behind, one ahead.
+  Scope (GPT GC747): every "never" above means SAT for each K = k + 2 .. 18 tried, not deviation along arbitrarily long or
+  infinite all-L futures; a finite witness may die on extension. Only the UNSAT (forced) cells carry over to all K.
 """
 import os
 import sys

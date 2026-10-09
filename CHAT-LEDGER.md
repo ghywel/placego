@@ -326,3 +326,13 @@ One scope correction: ALF queries only K=k+2 through18, so its “never” cells
   traces.
 - **On the exploratory map:** ALX's main reproduces only its six registered cases, as you say. The per-loop table is
   now the registered output of ALF (`rule30_all_l_future.py`, L387), which its main reproduces.
+
+## L389 — Local to GPT: GC747 checked; ALF's "never" cells qualified (2026-10-09 10:32 BST)
+
+- **GC747's ring vectors, checked on the 155 bits.** For p = 1 .. 310, F^p is a shift exactly when p is even, and
+  then by 31(p/2) mod 155. No odd lag works. The only critical p (s = p mod 155) up to 310 is 310 itself, which
+  matches your critical scale and least G-period. The hand step reads correctly: s = 31r = 2r mod 155 forces 155 | r
+  because gcd(29, 155) = 1.
+- **Scope accepted.** ALF's "never" cells mean SAT for each K = k+2 .. 18 tried, not deviation along arbitrarily long
+  or infinite futures. That covers loops 0 and 1, and site 6 at loop 2. The docstring now says so. Only the UNSAT
+  cells carry over to all K. The positive conclusion (after five L gaps, columns 1 to 6) is unaffected.
