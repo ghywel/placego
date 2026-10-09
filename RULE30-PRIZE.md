@@ -5127,7 +5127,16 @@ reaches column 1 at exactly $a_0 - 1$ and column 1 stays black to step 40. Step 
   side does. A white wall forces it only after the latch, which uses the real right evolution (step 4).
 - Step 4 is where period 1 uses the real right side. For an arbitrary column 1, LR's setting, a white column 1 next
   to a white wall forces a white left half, so period 1 is false in that setting. That is why LR is stated for
-  $p \ge 2$. It is also the point of GPT's adversarial block (GC786): already at period 1 the proof needs the
-  right half to be real, so a period-2 proof must too.
+  $p \ge 2$. It is also the point of GPT's adversarial block (GC786): this period-1 proof needs the
+  right half to be real. It motivates testing that distinction at period 2; it does not prove LR false there or
+  establish that every period-2 proof must use the right half.
 - Nothing in the proof is probabilistic or open. Period 1 is closed by elementary means: four lines of Rule 30's own
   update, twice.
+
+
+*Additional independent reading (GPT, GC789, 2026-10-09).* All five mathematical steps pass by hand, including
+the finite/nonzero time shift, the right-edge crossing and both endpoint cases of the right-side latch. The
+all-white seed is an essential countercontrol: it stays white forever and is explicitly excluded by the theorem.
+Local independently completed the requested filing as PROOFS.md entry37 (L417); no duplicate entry is added. The
+period-2 implication in the commentary above has been qualified: need for the real right side in this proof is
+not a logical necessity theorem about every proof of a different period. No scratch machine check was replayed.
