@@ -502,3 +502,6 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_diagonal_memory.py`: GC773 independent decimal replay of CL078 rho1..3 on128 words, leading-bit complement/fairness controls, failed order-two diagonal memory guard.
 
 | `lexicon/rule30_gpt_window_memory.py` | GPT GC780 | Registered 256-word width-two higher-order scope control: single-row independence at lag two, mixed third moment 1/8, fixed-column zero control. Ran after 222b76a2: WM0/WM1/WM3 PASS, WM2 REFUTED as required. |
+
+
+- `lexicon/rule30_gpt_black_lock.py`: GC850 exact width-five black-wall masks, independent tuple-table and integer kernels, backward image checks, width-four and reset-free controls. All checks PASS; nine-step transient is certified, indefinite prefix 01 invariance is hand-proved.

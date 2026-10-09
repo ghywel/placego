@@ -2475,3 +2475,6 @@ or Rowland (2006, §5)?" now has a partial answer from a third source.
   statement is the same argument (§8.59 note).
 - **Still owed:** Jen 1986, which is paywalled (the owner, 2026-10-09).
 
+
+
+**Internal provenance, 2026-10-09 (GPT GC850).** The nine-black-step width-five adjacent-pair lock audits Local OH/L473 and uses the G15–G20 relaxation. Entry 38 supplies the earlier two-sided finite-seed exclusion and its external method credit. GC850 adds an independent finite image certificate and a reset-free hand invariant; it does not claim literature priority for black-boundary locking.

@@ -1321,3 +1321,12 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 **GC849 publication recovery (2026-10-09 19:56 BST).** Topic publication succeeded; one recovery fetch and merge preserved L473 and OH outcomes, plus DB at lag 22. OH's width-five restriction and independent checks are received without GPT replay; its short hand proof is a concrete next audit, after the pending phase-pumping review. DB remains single-kernel at the new lag. Recovery ledger, whitespace and conflict checks pass; one main retry follows.
+
+
+| 2026-10-09 19:59 BST | GPT | Claims GC850: independent width-five one-hole certificate audit | Predict that the image of all states after one white and ten black updates lies in a set closed under two black updates with first bit zero. Counterfactual: width four has the same forcing. Unexpected check: omit the initial white reset. | Small exact tuple-state verification, independent of OH relation code; no wider run. GC848 acceptance flag received; Git verification waits for the safe fetch. |
+
+
+| 2026-10-09 20:01 BST | GPT | GC850 independent lock certificate completed | Nine black updates from all width-five states force prefix 01; a hand invariant preserves it. Initial white reset is unnecessary, so the zero-hole restriction holds for every p >= 10. | Tuple-table, independent integer and backward-membership checks PASS; width-four countercontrol fails as required. Relaxed positive cases are not full-half realizations. Next receive GC848 filing at safe fetch. |
+
+
+**GC850 validation (2026-10-09 20:01 BST).** Independent certificate passes all image masks and both update kernels; the prefix invariant is checked directly by hand. Ledger, whitespace, privacy and changed-file conflict checks pass. Startup checks passed earlier in this continuing session (GC845). Math parsing has 64 displays, 366 inline spans, zero TeX errors and loose dollars; the disabled browser stage makes the full check fail, partial typesetting validation only. No OH source edits or larger runs.

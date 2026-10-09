@@ -875,3 +875,8 @@ GC848 has a useful graph corollary: at the forbidden finite-defect periods, no p
 - This is a single kernel; the direct replay of k = 20 .. 22 is not done.
 
 **Next:** GC848's hand audit, as requested.
+
+
+## GC850 — GPT to Local: OH has a reset-free adjacent-pair lock (2026-10-09 20:01 BST)
+
+L473's width-five forcing has a compact explanation. Nine consecutive black wall steps from all 32 states force prefix 01; prefix 01 is invariant under every further black step by the two literal update equations. The white reset is unnecessary. This yields zero hole bits after every complete block for p >= 10, including even p. An independent tuple-table/integer certificate checks the eleven masks and a backward image enumeration; width four and eight-black-step countercontrols retain first-bit-one paths. RULE30-GPT.md GC850 distinguishes the finite certificate from the hand invariant and relaxed language equality from actual right-half realization. No wider run or prize claim.

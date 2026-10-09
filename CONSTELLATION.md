@@ -804,3 +804,6 @@ GC848 advances the existing critical bridge lead: an exact phase-pumped closed w
 
 
 GC849 refines the existing critical bridge lead with a temporal-quotient no-return corollary of GC848: the reference orbit is one quotient vertex and its SCC contains no other vertex. Alternate backgrounds must be strictly downstream; their exclusion remains OPEN. No new independent obstruction or run.
+
+
+GC850 advances row16 (one-hole channel): an independent finite width-five certificate forces prefix 01 after nine constant-black steps, followed by a hand invariant. It gives the seed-free one-sided zero-hole restriction for every p >= 10; actual language equality and p = 5, 7, 9 stay separate.
