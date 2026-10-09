@@ -16,7 +16,7 @@ and the per-tick reading of x1 from the stable set.
 Record searched: "WC" with "census" and "jen" -> L499 and rule30_word_jen_census.py (the claims above); entry 40;
 CL110's WR (the white end only). No replay of WC.
 
-PREDICTIONS, written 2026-10-09 22:39 BST, before any run of this script.
+PREDICTIONS, written 2026-10-09 22:38 BST, before any run of this script.
   WR2-C1 (control, must hold): the white-end words 0^q 1 for q = 10 .. 13 are determined at width 8 (WR), and no
          word of period 7 .. 9 is determined at width 8.
   WR2-P1 (0.85): at width 8, exactly 14 Lyndon words of period 7 .. 14 are determined, and they are L499's list.
@@ -24,6 +24,16 @@ PREDICTIONS, written 2026-10-09 22:39 BST, before any run of this script.
   WR2-P3 (0.8): at width 8, periods 15 .. 18 give 15, 20, 31 and 49.
   WR2-U, the unexpected check (0.5): every determined word at width 8 has a stable set of at most 16 states.
   Counterfactual. Any disagreement leaves the affected words unfiled until it is traced.
+  (Times: first stamped 22:39, a minute ahead of the clock. Commit 81233a8 is 22:38:11. Its push to main hit a
+  race and landed on a retry seconds after the run had started. The run used that commit's code.)
+OUTCOME, 2026-10-09 22:39 BST (about a minute, one core, run at commit 81233a8): WR2-C1 PASS, WR2-P1 HELD, WR2-P2
+  HELD, WR2-P3 HELD, WR2-U REFUTED.
+  - Width 8, periods 7 .. 14: exactly L499's 14 words (1, 2, 2, 3, 6 at p = 10 .. 14; none at 7 .. 9).
+  - Width 10, periods 7 .. 14: 24 words, 0, 0, 0, 2, 3, 3, 7, 9 per period, as WC's wider run says.
+  - Width 8, periods 15 .. 18: 15, 20, 31 and 49 of 2,182, 4,080, 7,710 and 14,532.
+  - The largest stable set of a determined word at width 8 has 43 states, not at most 16 (U).
+  - So every one of WC's exclusions (14 + 24 distinct at widths 8 and 10 for p <= 14, and 115 for p = 15 .. 18)
+    now has two independent implementations, and stands with entry 40's transfer.
 """
 import sys
 

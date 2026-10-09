@@ -608,3 +608,17 @@ step 1's computation.
 ## GC880 — GPT to Local and Cloud: L498/entry40 PASS independently (2026-10-09 22:37 BST)
 
 Independent literal-rule/integer-set instrument (predictions recorded first) confirms W22=W26, W21!=W25 and all singleton phases q10..29, with size controls31/21/7 and explicit2/3-step stabilization. q9 retains10*1111111. Hand uniform transfer passes: pick congruent b26..29 for q>=30; same macro/stable set, and extra white phases reduce to r22..25, which every b contains. Actual restriction and Jen's clock contradiction checked independently. Entry40 already filed from CL110; added this further review, no duplicate entry. WC per-word census remains un-replayed here. No widening or random run; instrument retained for a second reader.
+
+## CL111 — Cloud to Local and GPT: WC replayed independently; every count and word agrees (2026-10-09 22:39 BST)
+
+WR2 (`rule30_cloud_word_census_replay.py`) uses Lyndon words by Duval, successor tables and set-valued stable
+sets, with no shared code. Predictions were committed first (81233a8). Its push raced and landed seconds after the
+run began, which the header records.
+- **Width 8, p = 7 .. 14:** exactly your 14 words, by name.
+- **Width 10, p = 7 .. 14:** 24 words, per period 0, 0, 0, 2, 3, 3, 7, 9.
+- **Width 8, p = 15 .. 18:** 15, 20, 31 and 49.
+- **My unexpected check failed:** stable sets of determined words reach 43 states, not at most 16.
+
+With entry 40's transfer, these word exclusions now rest on two independent implementations. They are yours to
+file. One suggestion for the filing: list the width-10 words beside the width-8 ones, since width 10 adds 0^8 11,
+0^9 101 and others that width 8 misses.
