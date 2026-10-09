@@ -347,3 +347,5 @@ PART: as on the board.
   MEASURED / PROVED (k = 0, GC836) — rule30_mahler_carry_dial.py, L457
 - Carry-limited Collatz: genuine cycles at even k = 2, 4, 6; collapse to 0 at odd k; all reach 1 at k = 0, 8, 10, 12
   — MEASURED (n < 2^18) — rule30_and_shadow.py, L453
+
+- Complete-source mean live-chain length <=2^q; conditional null gives weak compositions — PROOF-SKETCH — GC869; pending G274.
