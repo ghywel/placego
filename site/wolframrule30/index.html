@@ -104,7 +104,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
     <p class="eyebrow">A simple program, a forty-year question</p>
     <h1>Rule 30: <em>one black cell</em></h1>
     <p class="lede">Start with a single black square. Apply one tiny rule, row after row. What grows is part orderly,
-      part wild, and nobody can yet prove anything about the column running straight down its middle.</p>
+      part wild, and nobody can yet prove whether the column running straight down its middle ever repeats.</p>
   </header>
 
   <figure class="wide">
@@ -140,8 +140,8 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       Rule 30 does not. Its left side settles into regular stripes, but its right side never settles at all, and its
       centre column passes the standard tests of randomness.</p>
     <p>That observation, that a very simple rule can produce behaviour which looks random, became a cornerstone of
-      Wolfram's <em>A New Kind of Science</em> (2002). For many years Rule 30 was the random number source of the
-      Wolfram Language. Its pattern clads the walls of Cambridge North railway station. And it was the subject of a
+      Wolfram's <em>A New Kind of Science</em> (2002). For many years Rule 30 generated
+      Mathematica's random integers. Its pattern clads the walls of Cambridge North railway station. And it was the subject of a
       challenge.</p>
     <blockquote class="quote">It's been nearly 40 years since I first saw rule 30—but it still amazes me.
       <cite>Stephen Wolfram, announcing the Rule 30 Prizes, 1 October 2019</cite></blockquote>
@@ -186,9 +186,9 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
     <p class="chapter">4 · Assume the opposite</p>
     <h2>What a repeating centre would demand</h2>
     <p>Rule 30 has a useful property: if you know the centre column and the column beside it, every square to the left
-      is forced, one after another. So a repeating centre forces the whole left side. The prize is about a finite
-      start, a pattern with only finitely many black squares, and for one of those the forced left side would have to
-      turn white for good beyond some depth. A counterexample to Problem 1 is exactly that: a white edge that never
+      is forced, one after another. So a repeating centre forces the whole left side. The prize asks about one black
+      square; we ask the same of every finite start, a pattern with only finitely many black squares, which includes it.
+      For any of those the forced left side would have to turn white for good beyond some depth. A counterexample to Problem 1 is exactly that: a white edge that never
       breaks.</p>
     <p>We looked at what such an edge would cost. It drags a disturbance along with it, and that disturbance pulls on
       the squares that must stay white with a beat: odd, odd, even, odd, odd, even, the pattern of the Fibonacci numbers
@@ -213,9 +213,9 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       marked as such in the record.</p>
     <h3>The case we attacked</h3>
     <ul class="facts">
-      <li>A centre that eventually stays one colour for ever is impossible for any finite start. Condrey proved this
-        in September 2026. The next case, white, black, white, black, he named as the first unresolved one, and it is
-        the case this work is about.</li>
+      <li>A centre that eventually stays one colour for ever is impossible for any finite start with a black square.
+        Condrey proved this in September 2026. He named the next case, white, black, white, black, as the next
+        unresolved one, and it is the case this work is about.</li>
       <li>No such counterexample exists close to the centre. Its white edge would have to begin more than 248 squares
         to the left. No right side of up to 32 squares works with a left side of up to 108; that is 4.3 billion cases,
         all checked.</li>
@@ -227,13 +227,15 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       <ul>
         <li>its column beside the centre never settles into a repeating pattern, so the wheel above slips for ever;</li>
         <li>the slips cannot become rarer and rarer faster than a fixed ratio;</li>
-        <li>that column carries less than an eighth of a bit of information per step;</li>
-        <li>it cannot be the famous Fibonacci word or any sequence of that kind, nor a reading of a turning circle
-          through a single window; the Thue–Morse sequence is ruled out at least for left edges up to 15,868
+        <li>read every other step, which is all the left side ever sees of it, that column carries less than an eighth of
+          a bit per reading, whatever lies to its right;</li>
+        <li>it cannot be the famous Fibonacci word or any sequence of that kind, nor, for almost every turning speed,
+          a reading of a turning circle through windows; the Thue–Morse sequence is ruled out at least for left edges up to 15,868
           squares.</li>
       </ul>
     </div>
-    <p>None of this was known on 4 October. Together it makes a counterexample implausible, but it is not a proof.
+    <p>Apart from the first point, which is Jen's theorem of 1990, none of this was in our record on 4 October, and a
+      limited search did not find it in print. Together it makes a counterexample implausible, but it is not a proof.
       Everything comes down to one statement nobody has a method for. Holding the centre to its beat has to cost real
       information: the number of starting patterns that keep the beat should fall off exponentially with time. We can
       measure that fall-off, and it is close to one bit per step. The part of the cost paid by the start's left side
@@ -245,8 +247,8 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       <li>Its colours stay balanced like a fair coin's, and no word of up to 16 cells recurs more than chance allows,
         even when we looked for words that stayed favoured from one half of the sample to the other.</li>
       <li>Read as a code, the column cannot say where it came from. Infinitely many other finite starts, 11, 101, 1011,
-        10101 and so on, produce exactly the same centre column. In a search of every start with up to 28 squares on
-        the right and 500 on the left, they are the only ones.</li>
+        10101 and so on, produce exactly the same centre column. Searches of every start with up to 20 squares on the
+        right and 1,000 on the left, or up to 28 on the right and 200 on the left, found no others.</li>
     </ul>
     <h3>A ring that keeps the clock for ever</h3>
     <p>One construction shows how close the edge of possibility is. A row of 84 squares, repeated end to end for ever,
@@ -266,7 +268,7 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
     <h2>Five days, three collaborators, everything in the open</h2>
     <p>This work was done between 4 and 9 October 2026 by Gareth Herbert, working with AI collaborators: Claude,
       by Anthropic, in two roles, and GPT, by OpenAI. Each proof was proposed by one party and checked by another
-      before it entered the record. Predictions were written down before experiments, and every prediction that failed
+      before it was filed as proved. Predictions were written down before experiments, and every prediction that failed
       was kept. The full record, with its proofs, refutations and computations, is public.</p>
     <div class="more">
       <a href="https://github.com/ghywel/placego/blob/main/STATE-OF-THE-PROOF.md"><b>The state of the proof</b><span>Where the
