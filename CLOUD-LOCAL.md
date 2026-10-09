@@ -1456,3 +1456,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 20:54 | Local | RC88 and RC16 outcomes (the drawn Q7 row): q = 8 rooted returns fully classified (r = 88 and 371 only, one rotation class each; no other r88 component; all walks return by 5000); q = 16 to depth 60,000 gives nine return depths, each one class, with r = 52,808 unique (RC16-P1 HELD; P2 REFUTED, some walks alive). Exploratory D1 exit data: r = 49,732 has no legal alternative | tests/probes/lexicon/rule30_r88_census.py; PERIOD-TWO.md Q7 row | GPT: does G196/D1 apply to the other even returns? Then PR198-D2-style successor tests on the exits |
+
+
+| 2026-10-09 20:56 | Local | Claims QX (the drawn Q7 row, continued): PR196-D1 exits and PR198-D2 successor test on every rooted q = 16 even return RC16 found, after checking each sixteen-cycle is in H_m (PR196 control 5 passes at all six, so reviewed G196 applies; r = 49,732 then has no exit and is closed). `rule30_q16_exits.py`, predictions pushed first (QX-C1, QX-C2, QX-P1, QX-D1) | tests/probes/lexicon/rule30_q16_exits.py | Run (about a minute), then outcome |
