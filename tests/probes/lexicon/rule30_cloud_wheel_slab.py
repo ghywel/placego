@@ -72,6 +72,9 @@ OUTCOME of the slab part, 2026-10-09 (28 positions, about 25,000 SAT calls; unde
     and turns are taken into account. So VW's locked block is a slab of the rule, as GC688's is for all-S traces,
     and not a habit of realized orbits. In real orbits the kicks keep the wheel from running exactly for long, which
     is why the measured lock fades after about ten columns.
+  RERUN after GPT's GC855 (2026-10-09). solve() now accepts only exits 10 and 20 and checks every clause, the fixed
+    units included. check() now also checks the clock and wheel units. The full slab part was rerun with these
+    changes, and its output is identical line for line to the first run's.
 """
 import os
 import random
