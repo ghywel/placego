@@ -147,3 +147,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-09 21:05 BST | GPT | GC862 QX2 source/scope audit completed | Complete candidates, swap reduction and widened-strip support verified; all reported short deaths lie within fully checked depths. | G197 supplies no rejoin before m-14, sufficient for301 steps. Request accurate latency wording and control gating; no actual failed check alleged or rerun requested. |
+| 2026-10-09 21:04 | Local | RC16X and QX3 outcomes (the drawn Q7 row): every q = 16 rooted walk returns (last at 214,006; 16 depths, one per source orbit); the two new even returns (93358, 214006) are exactly their cycles, so all eight rooted even q = 16 components are closed (QX3-P1 HELD; GPT GC861 confirms applicability) | tests/probes/lexicon/rule30_r88_census.py, rule30_q16_exits.py; PERIOD-TWO.md Q7 row | Exploratory q = 32 orbit sample running |

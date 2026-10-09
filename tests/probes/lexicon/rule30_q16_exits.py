@@ -63,6 +63,25 @@ QX2 OUTCOME, 2026-10-09 20:59 BST (M5, 19 s, 41 MB, run at commit e2104580): QX2
     52808. With RC88, so is every rooted q = 8 even return (r = 88).
   - Finite evidence about these components, not a rigidity theorem. Walks alive past 60,000 and the odd returns
     (6343, 29167, 44841; 371 at q = 8) are not classified.
+  - EXPLORATORY (after the runs, no predictions): how each exit path dies. A path dies when both candidate appends fail
+    F_m on at least one window. The failing window alternates between X and Y, with no common deviated tail. Examples:
+    - 26356: phase 2 has candidates (0,0) F = 1,0 and (1,1) F = 0,0;
+    - 34854: phase 1 dies after 3 steps, with tails X 10100, Y 00000;
+    - 40804: phase 1 branches, and both branches die after 2 steps.
+    So no single forbidden pattern explains the fast deaths, and a hand rigidity argument is not visible from these data.
+  - GPT's GC861 independently confirms that D1 and D2 apply at every admitted even return under QX's control-5
+    premises, independent of depth, and that the SCC conclusions follow.
+NEW EVEN RETURNS (registered 21:03 BST, before running; COMMAND: ... rule30_q16_exits.py new): RC16X's two new even
+  returns, 93358 (class 1110000111000000) and 214006 (class 1101111000010000), get QX's control 5, D1, D2 and QX2's
+  deep search to 300.
+  QX3-P1 (blind, confidence 0.6): both pass control 5 (in H_m), and each component is exactly its sixteen-cycle (no
+         exit, or every exit path dies within 300 steps).
+QX3 OUTCOME, 2026-10-09 21:04 BST (M5, 16 s, 84 MB, run at commit aeb13dab): QX3-P1 HELD.
+  - 93358 is in H_m and has no exits. 214006 is in H_m, with exits at phases 3 and 11, both dead ends.
+  - So all eight rooted even q = 16 returns (18826, 26356, 34854, 40804, 49732, 52808, 93358, 214006) are exactly their
+    sixteen-cycles. Every rooted q = 16 walk returns (RC16X), so this covers every rooted even q = 16 component.
+  - Exploratory (scratch, after the run): followed orbit by orbit, each rooted walk keeps at most 2 live states. The
+    return depths are 21 at q = 4, 88 and 371 at q = 8, and the 16 depths above at q = 16.
 """
 import sys
 
@@ -72,7 +91,7 @@ import rule30_pr196_d1 as d1          # noqa: E402
 import rule30_pr198_d2 as d2          # noqa: E402
 
 Q, H = 16, 8
-RETS = {18826: '1111111111101110', 26356: '1011110111010000', 34854: '1111100111011000', 40804: '1001001111011000',
+RETS = {93358: '1110000111000000', 214006: '1101111000010000', 18826: '1111111111101110', 26356: '1011110111010000', 34854: '1111100111011000', 40804: '1001001111011000',
         49732: '1111111111111100', 52808: '1100010100110000'}
 
 
@@ -149,9 +168,9 @@ def FVs(bits, m, tab, phase, S):
     return res.pop()
 
 
-def deep(DEPTH=300):
+def deep(DEPTH=300, which=(18826, 34854, 40804)):
     out, spot_ok = {}, True
-    for r in (18826, 34854, 40804):
+    for r in which:
         cls = RETS[r]
         c5, exit_phases, lok, degs = analyse(r, cls)
         m = (r - 2) // 2
@@ -192,6 +211,9 @@ def deep(DEPTH=300):
               % (r, sizes[0], sizes[:12], ' ...' if len(sizes) > 12 else '', 'SURVIVES' if frontier else 'all dead', depth),
               flush=True)
     print('strip spot checks agree with the packed evaluator:', 'PASS' if spot_ok else 'FAIL')
+    if tuple(which) != (18826, 34854, 40804):
+        print('strip spot checks:', 'PASS' if spot_ok else 'FAIL')
+        return out
     c1 = out[18826][0] == 1 and out[34854][0] == 1 and out[40804][0] == 2
     print('QX2-C1', 'PASS' if c1 else 'FAIL (step-1 counts %s)' % {r: v[0] for r, v in out.items()})
     dead = [r for r, v in out.items() if not v[2]]
@@ -200,4 +222,16 @@ def deep(DEPTH=300):
 
 
 if __name__ == '__main__':
-    deep(int(_ARGS[1]) if len(_ARGS) > 1 else 300) if _ARGS[:1] == ['deep'] else main()
+    if _ARGS[:1] == ['new']:
+        for r in (93358, 214006):
+            c5, ex, lok, degs = analyse(r, RETS[r])
+            print('r = %6d: in H_m %s; exit phases %s; exits legal %s; exit-target out-degrees %s' % (r, c5, ex or 'none', lok, degs or '-'), flush=True)
+        live = [r for r in (93358, 214006) if any(analyse(r, RETS[r])[3].values())]
+        out = deep(300, live) if live else {}
+        ok = all(not v[2] for v in out.values())
+        print('QX3-P1', 'HELD' if ok else 'REFUTED')
+        print('COMPLETE')
+    elif _ARGS[:1] == ['deep']:
+        deep(int(_ARGS[1]) if len(_ARGS) > 1 else 300)
+    else:
+        main()
