@@ -17123,3 +17123,21 @@ For a prefix containing s short and l long gaps, B=6s+10l. Its next choice thus 
 **Unexpected terminal control.** An observation stopping at B+5 cannot distinguish the two letters and fixes left bits only through depth B+5. Observing the next neighbor bit at B+6 along with the next wall sample at B+7 is what fixes the branch pivot. Omitting those endpoints would lose the very bit being charged, as in GC710's closing-tick audit.
 
 For an initial support bound D, every pivot deeper than D is white. The fixed earlier left bits can therefore permit at most one of the two next choices; the other choice forces a black bit outside the box. Which letter is forbidden need not be the same at successive markers. This identifies a depth-growing pruning mechanism, but it still permits a single indefinitely selected aperiodic path. To turn it into GC708's missing support-cost theorem requires proving that both alternatives eventually fail the zero tail or that the zero-selected path violates an actual return gate. Neither is proved here. Do not replace this with an iid choice law after conditioning on all later gates; finite zero tails are deterministic. Independent hand reading requested; next seek compatibility of the zero-selected continuation rather than another branch-count estimate.
+
+
+## GC714 — The zero branch can fail its immediately following black-time guard (2026-10-09, GPT)
+
+**One bounded reuse computation, not a new word census.** `tests/probes/lexicon/rule30_gpt_mixed_pivot_partner.py` records predictions before its first execution and consumes GC708's existing sixteen decoded rows. For each two-gap prefix, compare third-letter S/L branches, each followed by S. MP-P1 predicted the even partner at depth B+8 was independent of the choice; MP-P2 predicted at least one common black partner, rejecting the inference that the zero odd pivot always passes the next guard. No new words or horizons were generated.
+
+| Earlier prefix | Marker B | S/L pivot bits at B+7 | S/L partner bits at B+8 |
+| --- | ---: | --- | --- |
+| SS | 12 | 1 / 0 | 1 / 0 |
+| SL | 16 | 1 / 0 | 1 / 1 |
+| LS | 16 | 1 / 0 | 1 / 1 |
+| LL | 20 | 0 / 1 | 0 / 1 |
+
+The common-prefix and opposite-pivot controls PASS, with GC708's independent forward controls also required to be PASS in the input. **MP-P1 REFUTED:** SS and LL have choice-dependent even partners. **MP-P2 HELD:** SL and LS have a black even partner under both choices. Both outcomes are retained; no prediction was changed. These are exact finite decoded-bit measurements with triangular uniqueness, not a second party's reading.
+
+For SL or LS, once the initial bits through depth 22 are fixed by that common history, an all-zero continuation rejects S at the depth-23 branch pivot. Selecting L makes that pivot zero but requires a black at depth 24. The latter is the black-wall guard at time 23: changing the forced depth-24 bit to zero changes the nearest-left bit at time 23 by the rightmost-difference front, and the black wall's next value at time 24 cannot be rescued by any right neighbor. Thus a finite zero tail can fail immediately after making its uniquely permitted letter choice. This establishes a concrete guard obstruction, not universal eventual failure.
+
+**Unexpected endpoint scope.** The LL comparison uses depth 28; its short branch has already returned at time 26, so the stored fourth gap supplies the wall through time 28. The analogous SL/LS short branch returns at 22. For an infinite synchronized renewal trace, the next letter shares the needed initial samples, so the comparison holds regardless of that next letter. A finite trace stopped at its third return does not contain every partner test and is not excluded by this block. No claim is made that the earlier prefixes or their decoded tails have actual right realizations. The result gives a necessary depth obstruction for infinite traces beginning SL or LS, while longer mixed histories still require a scalable criterion for failure of the zero-selected branch. Stop common-partner assumptions; next seek the actual dependence of the black-time guard on the selected prefix. Independent reading requested.

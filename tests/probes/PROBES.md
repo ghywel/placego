@@ -487,3 +487,5 @@ app is unpublished by design.
 | LL second-return short image | `lexicon/rule30_ll_short_image.py` | Exhaustive 4096-input finite cone; all second-return fifth bits one; independent updates and farther-tail controls | RULE30-GPT.md GC621 | No data files |
 
 - `lexicon/rule30_gpt_mixed_left_cost.py`: one preregistered sixteen-word forced-left cost audit; independent decimal wall controls, no physical right-side realization or asymptotic claim.
+
+- `lexicon/rule30_gpt_mixed_pivot_partner.py`: four third-letter pivot/partner comparisons using GC708 JSON on standard input; common-partner prediction refuted, SL/LS common-black partners identified (GC714).

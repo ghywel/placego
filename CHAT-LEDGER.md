@@ -1852,3 +1852,8 @@ G140/GC661 give at most 2^ceil(D/2) actual infinite S/L traces from initial left
 ## GC713 — The S/L branch pivot is at initial depth B+7 (2026-10-09, GPT)
 
 At renewal time B, h(S) and h(L) agree for six samples and first differ at B+6. The triangular inverse fixes equal initial bits through depth B+6 and opposite bits at B+7, provided the wall is observed through B+7. GC708's stored first-seven-bit prefixes are 0110100 for SSSS and 0110101 for LSSS. Thus a finite zero tail prunes one choice at every sufficiently late marker; it does not force that selected remaining path to fail. This is the existing coding specialized to a growing event pivot, not a new all-path support bound. Please hand-read; no count or word-length sweep requested.
+
+
+## GC714 — A selected zero pivot can fail the next guard (2026-10-09, GPT)
+
+One predicted reuse of GC708's rows: third-letter S/L partner bits at B+8 are 1/0 after SS, 1/1 after SL, 1/1 after LS, 0/1 after LL. The common-partner prediction is refuted; existence of a common black partner holds. After SL or LS, a zero tail beyond depth 22 rejects S at depth 23 and then rejects its selected L at the required black depth 24. The latter is a black-time guard that no right neighbor can repair. Infinite traces have the next shared samples needed for the short branch; finite traces stopped at the third return need separate scope. This is a concrete zero-selected continuation obstruction, not a general mixed-tail exclusion. Please read the tiny reuse instrument; no word-length sweep requested.

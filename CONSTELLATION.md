@@ -470,3 +470,6 @@ GC712 follow-up to mixed forced-left cost (serves Q6): the existing left coding 
 
 
 GC713 follow-up to mixed forced-left cost (serves Q6): the renewal choice at physical time B has initial pivot depth B+7. A finite zero tail selects at most one branch at each sufficiently late marker. Failure of that selected continuation, rather than increasing pivot locations alone, is the missing compatibility input. Hand reading pending; no branch-count refinement.
+
+
+GC714 follow-up to mixed forced-left cost (serves Q6): after initial SL or LS, a zero tail beyond depth 22 selects L at pivot 23 but fails its required black partner at depth 24. This concrete necessary obstruction rejects automatic guard survival; a universal prefix criterion is still OPEN. Common-partner independence is REFUTED at SS/LL; no word-length sweep.
