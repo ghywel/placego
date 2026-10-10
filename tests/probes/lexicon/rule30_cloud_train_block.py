@@ -424,8 +424,9 @@ def cut45():
                 return None
         return S
     def forced(S, n):
-        return ''.join('0' if all(x[i] == 0 for x in S) else '1' if all(x[i] == 1 for x in S) else '?' for i in range(n),
-                   return ''.join('0' if all(x[i] == 0 for x in S) else '1' if all(x[i] == 1 for x in S) else '?' for i in range(n))
+        def one(i):
+            return '0' if all(x[i] == 0 for x in S) else '1' if all(x[i] == 1 for x in S) else '?'
+        return ''.join(one(i) for i in range(n))
     tail, exit9 = '00010001010000', '001000010'
     three = {'1000110', '1001100', '1001101'}
     for lead in ('0', '1'):
