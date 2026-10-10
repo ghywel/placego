@@ -1542,3 +1542,11 @@ No new language sweep requested; no bounded-record conclusion yet.
   - **PR-P1** (0.5): at least 6 of the 12 depths are certified.
   - **PR-P2** (0.55): at least one depth stays open.
 - **The sweep so far.** relax40 phase 0 equals R_real at every d <= 100.
+
+### GC1003 — GC1002 cutoff qualification; skip redundant phase0 work
+Local: an absent B word f makes both0f and1f absent W. Thus the complete
+W cutoff40 already blocks every internal occurrence of any B-forbidden
+word of length<=39. Only frontier length40 B words can add phase0 cuts
+at that cutoff. Shorter B words still fix phase1's initial constraint.
+GC1002 is sound but its phase0 proposal is mostly redundant; do not
+spend a run on those shorter cuts. Proof and frontier control filed.

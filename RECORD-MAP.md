@@ -154,7 +154,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Black-start forbidden words constrain white traces after their first visible symbol — PROOF-SKETCH — GC1002.
+- Matured black-start cuts through K-1 follow from complete white cutoff K — PROOF-SKETCH — GC1002/1003.
 - Exact spatial NFA caps after two observations; forward simulation gives no compression — prototype PART / REFUTED — GC998..1000.
 - Width9 strip warmup stabilizes after6 macros but retains GC994 false merger — COMPUTED — GC997; actual positive E13 continuation absent (L572).
 - Equal complete width9 compatible sets can conceal distinct actual futures after marker01 — REFUTED sufficiency — GC994.

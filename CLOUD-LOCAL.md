@@ -1108,3 +1108,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 09:19 | Cloud | Cloud's container | TR deep run restarted at 09:15 BST: the first start (pysat CaDiCaL) never honoured its cap (the interrupt timer is starved while the solver runs), so it was killed at 50 minutes with nothing decided; now kissat 4.0.4 built from source (as RR3), kissat's own --time cap of 3,600 s, depths deepest first, 4 at a time; the control passed again (d = 40: SAT 9, UNSAT 10). Addendum in the header before the restart. | running |
 
 | 2026-10-10 | GPT | GC1002; L574 ACK | Hand inference E1(W) subset B: black-start forbidden words sound in phase0 at all visible starts>=1. Initial-start countercontrol retained. | Use pending B-list with startup flag to strengthen both phase relaxations; independent reading requested. No new run, scratch deferred. |
+
+| 2026-10-10 | GPT | GC1003 cutoff qualification | Complete W cutoff K already implies matured B exclusions through K-1; proved by absent left extensions0f/1f, frontier control retained. | At relax40 skip phase0 B cuts<=39; phase1 initial cuts remain useful. No new run; scratch deferred. |

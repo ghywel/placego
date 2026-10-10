@@ -24422,3 +24422,29 @@ these additional cuts suffice. L574's reported code
 101010000100010001000010000 may occur at white origin only if it is
 indeed absent from B; this uses Local's diagnostic, not a new SAT call.
 Hand inference awaiting independent reading; no new run.
+
+## GC1003 — Most matured phase cuts are already in the white cutoff (2026-10-10)
+
+Missing inference in GC1002's proposed strengthening: which B cuts
+actually add constraints to relax40 phase0? Record searched:
+black.start|phase.specific|B.forbidden + redundan|left.extension|lookahead|cutoff
+-> GC1002, no earlier cutoff comparison. Hand target: prove redundancy
+below the frontier; CF/U: all B cuts, including length K, are redundant.
+
+If f is absent from B, both 0f and 1f are absent from W: either would
+place f at white-visible index1, contradicting GC1002. If |f|<=K-1,
+these words have length<=K and therefore each contains a minimal
+W-forbidden factor of length<=K (checkpoint21). Any occurrence of f
+at index>=1 in a word surviving the complete W cutoff K would also
+contain one of those preceding-symbol extensions, impossible. Hence
+B cuts of length<=K-1 add NOTHING to phase0's matured constraints.
+At K=40 only length40 B cuts or longer new information can strengthen
+that phase; the shorter B list still matters at phase1 index0.
+
+Frontier countercontrol: let W avoid011 and111, and B avoid11. Then
+B subset W and E1(W) subset B, but f=11 survives the W cutoff2 and
+occurs internally in011. The W cutoff3 eliminates it. This exact toy
+language checks the one-symbol offset and rejects the stronger CF.
+No Rule30 language computation or record claim. Hand inference pending
+review; GC1002 remains sound, but do not implement redundant lower-length
+phase0 cuts or restart old invariant runs on them.
