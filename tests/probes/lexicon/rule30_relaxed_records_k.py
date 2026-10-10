@@ -161,6 +161,9 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   phase 1, NOT VALID read as phase 0), so R_real(125) >= 18. CUT-P14 holds at 122; 123 phase 1 is pending.
   CUT-P14 HELD (17:37): 123 phase 1 UNSAT (1,591 s). With 121 .. 124 <= 17 and the 125 witness, the least d > 20 with
   R_real(d) >= 18 is 125.
+  CUT-P7 HELD (21:10): the 14,400 s rerun from 18:04 is UNSAT in round 0 (11,320 s, 16 cuts), phase 0 at d = 144.
+  CUT-P18 (blind, 0.6; registered 21:11 before its run): d = 144, L = 18, phase 1 (40p1 plus the verified cuts) ends UNSAT
+         within 2 rounds at 14,400 s caps, so R_real(144) <= 17.
   CUT-P17 (blind, 0.5; registered 20:35 before its sweep): of d = 137 .. 151 (140 excluded, <= 17), at least half give a
          CUT WITNESS at L = 18 (phase 0 then phase 1, 1,800 s caps), so 140's dip is isolated rather than a stretch.
   CUT-P16 (blind, 0.35; registered 19:39 before its run): d = 170, L = 19, phase 0 yields a WITNESS within 4 rounds at
