@@ -180,6 +180,8 @@ PART: as on the board.
   (GC911, PROVED, CL132); mask shortcuts CLOSED (GC912, CL133; GC913, CL134); mixed-parity sources reach q/4 + 1
   (GC914, PROVED, CL135); entry children's three-state language (GC916, PROVED, CL136); the next profile has weight
   3q/4 (GC917, PROVED, L516); physical controls refute a sustained floor (GC918, PART)
+- Sharp entry's fourth profile k = 1_(pi+1) + S^-1 f + S^-2 f, weight q/2: sharp weights run q/4, 3q/4, 3q/4, q/2 —
+  PROOF-SKETCH (Cloud; all 556 sharp entries to q = 32 agree) — CL138
 - Conventions: RC88's zero-started 88/371 reconciled with physical ancestry (GC907, COMPUTED, scope); ZF's chain
   weights and repaired guards (GC908, GC910, PROVED, source scope, CL130)
 
