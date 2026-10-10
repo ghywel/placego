@@ -358,6 +358,229 @@ theorem run_bound_gcd (x0 : ℤ → Bool) (e : ℤ) (he : x0 e = true) (hl : ∀
     rw [show t - c + c = t by omega] at this
     exact this.symm) hg hw
 
+/-! ### Lemma B2 and entry 9's corollary: infinitely many eventually white and eventually black diagonals -/
+
+/-- The recurrence read backwards. -/
+lemma D_back (x0 : ℤ → Bool) (e m : ℤ) (t : ℕ) :
+    D x0 e (m - 2) t = xor (D x0 e m (t + 1)) (D x0 e (m - 1) t || D x0 e m t) := by
+  rw [D_succ]
+  cases D x0 e (m - 2) t <;> cases (D x0 e (m - 1) t || D x0 e m t) <;> rfl
+
+/-- Two sequences with period P from T that agree on [T, T + P) agree from T on. -/
+lemma ext_window (u v : ℕ → Bool) (T P : ℕ) (hP : 1 ≤ P) (hu : ∀ t, T ≤ t → u (t + P) = u t)
+    (hv : ∀ t, T ≤ t → v (t + P) = v t) (hw : ∀ s, s < P → u (T + s) = v (T + s)) :
+    ∀ t, T ≤ t → u t = v t := by
+  intro t
+  induction t using Nat.strong_induction_on with
+  | _ t ih =>
+    intro ht
+    by_cases h : t < T + P
+    · have := hw (t - T) (by omega)
+      rwa [show T + (t - T) = t by omega] at this
+    · have e1 := hu (t - P) (by omega)
+      have e2 := hv (t - P) (by omega)
+      rw [show t - P + P = t by omega] at e1 e2
+      rw [e1, e2, ih (t - P) (by omega) (by omega)]
+
+/-- A black input resets: once D_(k-1) is black at a time t0 ≥ T, D_k inherits its inputs' period p. -/
+lemma reset (a b x : ℕ → Bool) (T p : ℕ) (ha : ∀ t, T ≤ t → a (t + p) = a t) (hb : ∀ t, T ≤ t → b (t + p) = b t)
+    (hx : ∀ t, x (t + 1) = xor (a t) (b t || x t)) (t0 : ℕ) (ht0 : T ≤ t0) (hb1 : b t0 = true) :
+    ∀ t, t0 + 1 ≤ t → x (t + p) = x t := by
+  have h1 : x (t0 + 1 + 1 * p) = x (t0 + 1) := by
+    simp only [show t0 + 1 + 1 * p = (t0 + p) + 1 by ring, hx, ha t0 ht0, hb t0 ht0, hb1, Bool.true_or]
+  have d := det a b x T p ha hb hx 1 (t0 + 1) (by omega) h1.symm
+  intro t ht
+  have := d (t - (t0 + 1))
+  rw [show t0 + 1 + (t - (t0 + 1)) = t by omega, show t0 + 1 + 1 * p + (t - (t0 + 1)) = t + p by omega] at this
+  exact this.symm
+
+/-- Eventually white / eventually black (as in LemmaB1.lean). -/
+def EvW (x0 : ℤ → Bool) (e j : ℤ) : Prop := ∃ T : ℕ, ∀ t, T ≤ t → D x0 e j t = false
+def EvB (x0 : ℤ → Bool) (e j : ℤ) : Prop := ∃ T : ℕ, ∀ t, T ≤ t → D x0 e j t = true
+
+section band
+variable (x0 : ℤ → Bool) (e : ℤ) (he : x0 e = true) (hl : ∀ j < e, x0 j = false)
+include he hl
+
+/-- Lemma B2, quantitative: some diagonal k ≤ 4^P + 1 does not have eventual period P (the form of Nersissian's
+m + 2 ≤ 4^(Q_m), here for every configuration with a leftmost black cell). -/
+theorem lemma_B2_quant (P : ℕ) (hP : 1 ≤ P) :
+    ¬ ∀ k : ℕ, k ≤ 4 ^ P + 1 → ∃ T : ℕ, ∀ t, T ≤ t → D x0 e k (t + P) = D x0 e k t := by
+  intro h
+  have common : ∀ n : ℕ, n ≤ 4 ^ P + 1 →
+      ∃ Ts, ∀ k : ℕ, k ≤ n → ∀ t, Ts ≤ t → D x0 e k (t + P) = D x0 e k t := by
+    intro n
+    induction n with
+    | zero =>
+      intro hn
+      obtain ⟨T, hT⟩ := h 0 (by omega)
+      exact ⟨T, fun k hk t ht => by
+        have : k = 0 := by omega
+        subst this; exact hT t ht⟩
+    | succ n ih =>
+      intro hn
+      obtain ⟨T1, h1⟩ := ih (by omega)
+      obtain ⟨T2, h2⟩ := h (n + 1) hn
+      exact ⟨T1 + T2, fun k hk t ht => by
+        rcases (show k ≤ n ∨ k = n + 1 by omega) with hk' | hk'
+        · exact h1 k hk' t (by omega)
+        · subst hk'; exact h2 t (by omega)⟩
+  obtain ⟨Ts, hper⟩ := common (4 ^ P + 1) le_rfl
+  have hper1 : ∀ k : ℕ, k ≤ 4 ^ P → ∀ t, Ts ≤ t → D x0 e ((k : ℤ) + 1) (t + P) = D x0 e ((k : ℤ) + 1) t := by
+    intro k hk t ht
+    have := hper (k + 1) (by omega) t ht
+    push_cast at this
+    exact this
+  -- the windows (D_k, D_(k+1)) on [Ts, Ts + P)
+  let f : Fin (4 ^ P + 1) → (Fin P → Bool) × (Fin P → Bool) :=
+    fun k => (fun s => D x0 e ((k : ℕ) : ℤ) (Ts + s), fun s => D x0 e (((k : ℕ) : ℤ) + 1) (Ts + s))
+  have hcard : Fintype.card ((Fin P → Bool) × (Fin P → Bool)) < Fintype.card (Fin (4 ^ P + 1)) := by
+    simp only [Fintype.card_prod, Fintype.card_fun, Fintype.card_bool, Fintype.card_fin]
+    rw [← mul_pow]
+    norm_num
+  obtain ⟨a, b, hab, hfab⟩ := Fintype.exists_ne_map_eq_of_card_lt f hcard
+  -- two equal windows at k1 < k2 give a contradiction
+  have key : ∀ k1 k2 : ℕ, k1 < k2 → k2 ≤ 4 ^ P →
+      (∀ s, s < P → D x0 e (k1 : ℤ) (Ts + s) = D x0 e (k2 : ℤ) (Ts + s)) →
+      (∀ s, s < P → D x0 e ((k1 : ℤ) + 1) (Ts + s) = D x0 e ((k2 : ℤ) + 1) (Ts + s)) → False := by
+    intro k1 k2 hlt hk2 w0 w1
+    have E0 := ext_window (fun t => D x0 e (k1 : ℤ) t) (fun t => D x0 e (k2 : ℤ) t) Ts P hP
+      (hper k1 (by omega)) (hper k2 (by omega)) w0
+    have E1 := ext_window (fun t => D x0 e ((k1 : ℤ) + 1) t) (fun t => D x0 e ((k2 : ℤ) + 1) t) Ts P hP
+      (hper1 k1 (by omega)) (hper1 k2 hk2) w1
+    have Q : ∀ j : ℕ, ∀ t, Ts ≤ t → D x0 e ((k1 : ℤ) + 1 - j) t = D x0 e ((k2 : ℤ) + 1 - j) t ∧
+        D x0 e ((k1 : ℤ) - j) t = D x0 e ((k2 : ℤ) - j) t := by
+      intro j
+      induction j with
+      | zero => intro t ht; simpa using And.intro (E1 t ht) (E0 t ht)
+      | succ j ih =>
+        intro t ht
+        obtain ⟨h1, h0⟩ := ih t ht
+        obtain ⟨h1', -⟩ := ih (t + 1) (by omega)
+        refine ⟨?_, ?_⟩
+        · rw [show (k1 : ℤ) + 1 - ((j + 1 : ℕ) : ℤ) = k1 - j by push_cast; ring,
+            show (k2 : ℤ) + 1 - ((j + 1 : ℕ) : ℤ) = k2 - j by push_cast; ring]
+          exact h0
+        · have b1 := D_back x0 e ((k1 : ℤ) + 1 - j) t
+          have b2 := D_back x0 e ((k2 : ℤ) + 1 - j) t
+          rw [show (k1 : ℤ) + 1 - j - 2 = k1 - ((j + 1 : ℕ) : ℤ) by push_cast; ring,
+            show (k1 : ℤ) + 1 - j - 1 = k1 - j by ring] at b1
+          rw [show (k2 : ℤ) + 1 - j - 2 = k2 - ((j + 1 : ℕ) : ℤ) by push_cast; ring,
+            show (k2 : ℤ) + 1 - j - 1 = k2 - j by ring] at b2
+          rw [b1, b2, h1', h0, h1]
+    have := (Q k2 Ts le_rfl).2
+    rw [Dneg x0 e he hl ((k1 : ℤ) - k2) (by omega), sub_self, D0 x0 e he hl] at this
+    exact absurd this (by decide)
+  have hv : (a : ℕ) ≠ (b : ℕ) := fun h => hab (Fin.ext h)
+  have w0 : ∀ s, s < P → D x0 e ((a : ℕ) : ℤ) (Ts + s) = D x0 e ((b : ℕ) : ℤ) (Ts + s) :=
+    fun s hs => congrFun (congrArg Prod.fst hfab) ⟨s, hs⟩
+  have w1 : ∀ s, s < P → D x0 e (((a : ℕ) : ℤ) + 1) (Ts + s) = D x0 e (((b : ℕ) : ℤ) + 1) (Ts + s) :=
+    fun s hs => congrFun (congrArg Prod.snd hfab) ⟨s, hs⟩
+  rcases Nat.lt_or_gt_of_ne hv with hlt | hlt
+  · exact key a b hlt (by omega) w0 w1
+  · exact key b a hlt (by omega) (fun s hs => (w0 s hs).symm) (fun s hs => (w1 s hs).symm)
+
+/-- Lemma B2: no P ≥ 1 is an eventual period of every diagonal. -/
+theorem lemma_B2 (P : ℕ) (hP : 1 ≤ P) :
+    ¬ ∀ k : ℕ, ∃ T : ℕ, ∀ t, T ≤ t → D x0 e k (t + P) = D x0 e k t :=
+  fun h => lemma_B2_quant x0 e he hl P hP (fun k _ => h k)
+
+/-- Entry 9's corollary: for every N some diagonal k ≥ N is eventually white. -/
+theorem infinitely_many_white (N : ℕ) : ∃ k : ℕ, N ≤ k ∧ EvW x0 e k := by
+  by_contra hno
+  push Not at hno
+  have hinf : ∀ k : ℕ, N ≤ k → ∀ T, ∃ t, T ≤ t ∧ D x0 e k t = true := by
+    intro k hk T
+    by_contra hc
+    push Not at hc
+    exact hno k hk ⟨T, fun t ht => by simpa using hc t ht⟩
+  obtain ⟨T0, hT0⟩ := jen_pow2 x0 e he hl N
+  have grow : ∀ m : ℕ, ∃ T, ∀ k : ℤ, k ≤ (N : ℤ) + 2 + m → ∀ t, T ≤ t → D x0 e k (t + 2 ^ N) = D x0 e k t := by
+    intro m
+    induction m with
+    | zero => exact ⟨T0, fun k hk t ht => hT0 k (by simpa using hk) t ht⟩
+    | succ m ih =>
+      obtain ⟨T, hT⟩ := ih
+      obtain ⟨t0, ht0, hb1⟩ := hinf (N + 2 + m) (by omega) T
+      refine ⟨t0 + 1, fun k hk t ht => ?_⟩
+      rcases (show k ≤ (N : ℤ) + 2 + m ∨ k = (N : ℤ) + 2 + m + 1 by push_cast at hk; omega) with h | h
+      · exact hT k h t (by omega)
+      · exact reset (fun t => D x0 e (k - 2) t) (fun t => D x0 e (k - 1) t) (fun t => D x0 e k t) T (2 ^ N)
+          (fun t ht => hT (k - 2) (by omega) t ht) (fun t ht => hT (k - 1) (by omega) t ht)
+          (fun t => D_succ x0 e k t) t0 ht0 (by
+            show D x0 e (k - 1) t0 = true
+            rw [show k - 1 = ((N + 2 + m : ℕ) : ℤ) by push_cast; omega]
+            exact hb1) t ht
+  exact lemma_B2 x0 e he hl (2 ^ N) Nat.one_le_two_pow (fun k => by
+    obtain ⟨T, hT⟩ := grow k
+    exact ⟨T, fun t ht => hT k (by omega) t ht⟩)
+
+omit he hl in
+lemma down (j : ℤ) (h0 : EvW x0 e j) (h1 : EvW x0 e (j + 1)) : EvW x0 e (j - 1) := by
+  obtain ⟨T0, h0⟩ := h0
+  obtain ⟨T1, h1⟩ := h1
+  refine ⟨T0 + T1, fun t ht => ?_⟩
+  have := h1 (t + 1) (by omega)
+  rw [D_succ, show j + 1 - 2 = j - 1 by ring, show j + 1 - 1 = j by ring, h0 t (by omega), h1 t (by omega)] at this
+  simpa using this
+
+/-- B1 (1), as in LemmaB1.lean. -/
+theorem no_adjacent_white (j : ℤ) (hj : 0 ≤ j) (h0 : EvW x0 e j) (h1 : EvW x0 e (j + 1)) : False := by
+  have key : ∀ n : ℕ, ∀ j : ℤ, j = n → EvW x0 e j → EvW x0 e (j + 1) → False := by
+    intro n
+    induction n with
+    | zero =>
+      intro j hjn hw _
+      obtain ⟨T, hT⟩ := hw
+      have := hT T le_rfl
+      rw [hjn, show ((0 : ℕ) : ℤ) = 0 by simp, D0 x0 e he hl] at this
+      exact absurd this (by decide)
+    | succ n ih =>
+      intro j hjn hw hw1
+      exact ih (j - 1) (by rw [hjn]; push_cast; ring) (down x0 e j hw hw1) (by simpa using hw)
+  exact key j.toNat j (by omega) h0 h1
+
+omit he hl in
+lemma mono_eventually (j : ℤ) (T : ℕ) (hm : ∀ t, T ≤ t → D x0 e j t = true → D x0 e j (t + 1) = true) :
+    EvW x0 e j ∨ EvB x0 e j := by
+  by_cases h : ∃ t, T ≤ t ∧ D x0 e j t = true
+  · obtain ⟨t0, ht0, hb⟩ := h
+    right
+    refine ⟨t0, fun t ht => ?_⟩
+    induction t, ht using Nat.le_induction with
+    | base => exact hb
+    | succ t ht ih => exact hm t (by omega) ih
+  · push Not at h
+    left
+    exact ⟨T, fun t ht => by simpa using h t ht⟩
+
+/-- B1 (2), as in LemmaB1.lean. -/
+theorem white_then_black (j : ℤ) (hj : 0 ≤ j) (h0 : EvW x0 e j) : EvB x0 e (j + 2) := by
+  obtain ⟨T, hT⟩ := h0
+  have hm : ∀ t, T ≤ t → D x0 e (j + 2) t = true → D x0 e (j + 2) (t + 1) = true := by
+    intro t ht hb
+    rw [D_succ, show j + 2 - 2 = j by ring, hT t ht, hb]; simp
+  rcases mono_eventually x0 e (j + 2) T hm with hw | hb
+  · exfalso
+    obtain ⟨T2, h2⟩ := hw
+    have h1 : EvW x0 e (j + 1) := ⟨T + T2, fun t ht => by
+      have := h2 (t + 1) (by omega)
+      rw [D_succ, show j + 2 - 2 = j by ring, show j + 2 - 1 = j + 1 by ring, hT t (by omega)] at this
+      simp at this
+      exact this.1⟩
+    exact no_adjacent_white x0 e he hl j hj ⟨T, hT⟩ h1
+  · exact hb
+
+/-- Entry 9's corollary: for every N some diagonal k ≥ N is eventually black. -/
+theorem infinitely_many_black (N : ℕ) : ∃ k : ℕ, N ≤ k ∧ EvB x0 e k := by
+  obtain ⟨k, hk, hw⟩ := infinitely_many_white x0 e he hl N
+  refine ⟨k + 2, by omega, ?_⟩
+  have := white_then_black x0 e he hl k (by omega) hw
+  push_cast
+  exact this
+
+end band
+
 end JenPow2
 
 #print axioms JenPow2.forced_periodic
@@ -365,3 +588,7 @@ end JenPow2
 #print axioms JenPow2.run_bound
 #print axioms JenPow2.per_gcd
 #print axioms JenPow2.run_bound_gcd
+#print axioms JenPow2.lemma_B2_quant
+#print axioms JenPow2.lemma_B2
+#print axioms JenPow2.infinitely_many_white
+#print axioms JenPow2.infinitely_many_black

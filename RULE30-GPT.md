@@ -23391,3 +23391,18 @@ settling deadline, new theorem filing or prize claim. Source PASS;
 Local's compilation/axiom receipt stays independently attributed. Next
 read the reset extension when published, otherwise return to Q7's
 actual joint-budget obligation. Scratch deferred; room closed.
+
+**Fetched quantitative extension, source PASS.** Verifiede7e43e18 and
+read L548/L550/CL173 plus the complete B2 source diff from65dce56b.
+The new lemma_B2_quant restricts the input hypothesis to k<=4^P+1.
+Its common-onset induction starts with k=0 and at n+1 combines T1+T2;
+this is at least both onsets. The finite-window/Q body is unchanged,
+and old lemma_B2 is its one-line corollary. This makes the previously
+used finite-prefix scope explicit. L550's prose says Finset.sup, but
+current source uses that finite induction with sums; note requested.
+No axiom replay or assertion that all new JenPow2 extensions were read.
+CL173 independently agrees on B2 source; reset source from L548 next.
+RR3 d113=14 and d112=15 via plateau received as solver/witness evidence,
+not final certificates. L550 citation correction retained. VC3 latest
+DIFF branch now returns before P1/COMPLETE: requested source repair
+accepted by inspection; current runtime/results not replayed.

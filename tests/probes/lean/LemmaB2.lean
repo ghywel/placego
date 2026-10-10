@@ -13,7 +13,9 @@ at most 4^P values, so two agree, at k1 < k2; periodicity extends the agreement 
 (`ext_window`). The recurrence read backwards, D_(m-2)(t) = D_m(t+1) xor (D_(m-1)(t) or D_m(t)) (`D_back`), carries
 the agreement down until D_(k1-k2) = D_0: a negative diagonal, white, against the edge, black.
 
-How to check: as for TheoremA.lean; the `#print axioms` line must list no `sorryAx`.
+`lemma_B2_quant` is the quantitative form: some diagonal k ≤ 4^P + 1 lacks period P.
+
+How to check: as for TheoremA.lean; the `#print axioms` lines must list no `sorryAx`.
 -/
 
 set_option Elab.async false
@@ -91,15 +93,30 @@ lemma D0 (t : ℕ) : D x0 e 0 t = true := by
 lemma Dneg (k : ℤ) (hk : k < 0) (t : ℕ) : D x0 e k t = false := by
   unfold D; exact (edge x0 e he hl t).2 _ (by omega)
 
-/-- Lemma B2: no P ≥ 1 is an eventual period of every diagonal. -/
-theorem lemma_B2 (P : ℕ) (hP : 1 ≤ P) :
-    ¬ ∀ k : ℕ, ∃ T : ℕ, ∀ t, T ≤ t → D x0 e k (t + P) = D x0 e k t := by
+/-- Lemma B2, quantitative: some diagonal k ≤ 4^P + 1 does not have eventual period P (the form of Nersissian's
+m + 2 ≤ 4^(Q_m), here for every configuration with a leftmost black cell). -/
+theorem lemma_B2_quant (P : ℕ) (hP : 1 ≤ P) :
+    ¬ ∀ k : ℕ, k ≤ 4 ^ P + 1 → ∃ T : ℕ, ∀ t, T ≤ t → D x0 e k (t + P) = D x0 e k t := by
   intro h
-  choose T hT using h
-  obtain ⟨Ts, hTk⟩ : ∃ Ts, ∀ k, k ≤ 4 ^ P + 1 → T k ≤ Ts :=
-    ⟨(Finset.range (4 ^ P + 2)).sup T, fun k hk => Finset.le_sup (Finset.mem_range.mpr (by omega))⟩
-  have hper : ∀ k : ℕ, k ≤ 4 ^ P + 1 → ∀ t, Ts ≤ t → D x0 e k (t + P) = D x0 e k t :=
-    fun k hk t ht => hT k t (le_trans (hTk k hk) ht)
+  have common : ∀ n : ℕ, n ≤ 4 ^ P + 1 →
+      ∃ Ts, ∀ k : ℕ, k ≤ n → ∀ t, Ts ≤ t → D x0 e k (t + P) = D x0 e k t := by
+    intro n
+    induction n with
+    | zero =>
+      intro hn
+      obtain ⟨T, hT⟩ := h 0 (by omega)
+      exact ⟨T, fun k hk t ht => by
+        have : k = 0 := by omega
+        subst this; exact hT t ht⟩
+    | succ n ih =>
+      intro hn
+      obtain ⟨T1, h1⟩ := ih (by omega)
+      obtain ⟨T2, h2⟩ := h (n + 1) hn
+      exact ⟨T1 + T2, fun k hk t ht => by
+        rcases (show k ≤ n ∨ k = n + 1 by omega) with hk' | hk'
+        · exact h1 k hk' t (by omega)
+        · subst hk'; exact h2 t (by omega)⟩
+  obtain ⟨Ts, hper⟩ := common (4 ^ P + 1) le_rfl
   have hper1 : ∀ k : ℕ, k ≤ 4 ^ P → ∀ t, Ts ≤ t → D x0 e ((k : ℤ) + 1) (t + P) = D x0 e ((k : ℤ) + 1) t := by
     intro k hk t ht
     have := hper (k + 1) (by omega) t ht
@@ -154,8 +171,14 @@ theorem lemma_B2 (P : ℕ) (hP : 1 ≤ P) :
   · exact key a b hlt (by omega) w0 w1
   · exact key b a hlt (by omega) (fun s hs => (w0 s hs).symm) (fun s hs => (w1 s hs).symm)
 
+/-- Lemma B2: no P ≥ 1 is an eventual period of every diagonal. -/
+theorem lemma_B2 (P : ℕ) (hP : 1 ≤ P) :
+    ¬ ∀ k : ℕ, ∃ T : ℕ, ∀ t, T ≤ t → D x0 e k (t + P) = D x0 e k t :=
+  fun h => lemma_B2_quant x0 e he hl P hP (fun k _ => h k)
+
 end
 
 end LemmaB2
 
+#print axioms LemmaB2.lemma_B2_quant
 #print axioms LemmaB2.lemma_B2
