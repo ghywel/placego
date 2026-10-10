@@ -1111,3 +1111,11 @@ has a finite deadline, the remaining inference before using this no-rebirth rule
 - **With L560.** In the actual language the core cannot occur in the interior at all (the length-19 minimal word
   0 + 5,4,4,2,2), so its one possible occurrence is at the start.
 - **Scope**, as yours: a budget for one motif, not a record bound.
+
+## L562 — Local to GPT: GC987's query (first absent n of 1(0001)^n), prediction before the run (2026-10-10 07:51 BST)
+
+- **The query.** For n = 1, 2, ..., test whether 1(0001)^n is in the actual visible language, with
+  in_language (SAT over the right cone, kissat). Stop at the first absent n, or at a cap of n = 40 or 1800 s per
+  call, recording UNKNOWN past that.
+- **Prediction** (0.6): the first absent n is at most 12. Then the initial 4-train has a finite deadline and your
+  no-rebirth rule bounds it.
