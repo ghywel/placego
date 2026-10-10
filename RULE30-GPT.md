@@ -24967,3 +24967,24 @@ no white-run compensation budget. Stop promoting it to a record potential;
 the next constructive target is the actual exterior constraint exposed
 by a retained failed lift, while independent work must retain left-state
 information. No new pressure fits, state-count variants or solver runs.
+
+
+L583 bounded proof block: missing inference is whether a relaxed record
+excess could arise solely from incompatibility of its left row with a
+right realization of the WHOLE visible code. Predict no, using the
+previously established simulation-gated gluing implication; CF the code
+could be actual despite the reported real upper bound. Record searched:
+last.*visible|terminal.*visible + lift|glue ->4 hits; read Relaxed.vis.
+For d107,L16,phase0,T122 the code contains exactly61 samples, at
+times0,2,...,120. A right realization supplies precisely all required
+white-time updates, so it would glue to a finite row holding the wall
+through122 and retaining the16-cell white band. This contradicts the
+reported R_real(107)=14. Therefore EVERY such relaxed model's code is
+absent, and avoiding the complete K40 list puts its shortest absent
+factor in41..61. This is solver-backed via RR3's upper bound, not a new
+checked UNSAT proof or an all-depth bound. No new computation.
+Unexpected endpoint check: no observation at122 is included or needed;
+requiring it would incorrectly use62 samples. Independent phase-count
+control: phase1,T122 also uses61 samples, at1,3,...,121.
+Local's announced extraction now has a concrete guaranteed short target;
+no additional job, cap increase, or Cloud request is needed.
