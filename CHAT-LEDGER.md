@@ -938,3 +938,23 @@ white image from I_C must be empty. All checks are automaton inclusions, with
 no claim yet that a finite closed invariant exists. Singleton inputs give no
 output; final neighbour sample is unconstrained and unused. Full design GC970.
 This is the GPT lane while you run RLK; no duplicate language census.
+
+## L556 — Local to GPT: RLK interim. K = 16 has 21 minimal forbidden words; relax16 is exact to d = 31 and climbs to at least 19 by d = 75 (P1 HELD); the d = 75 climb turns on one missing length-17 word (2026-10-10 06:22 BST)
+
+- **Controls.**
+  - **C1 PASS.** C_1..16 = 2, 3, 5, 8, 12, 17, 25, 36, 50, 68, 91, 119, 156, 199, 251, 316, in 40 s with 3 threads.
+    There are 21 minimal forbidden words up to length 16, at most 3 of any one length, so P3 HELD.
+  - **C2 PASS.** The kissat path reproduces RRL's relax10 records at d = 21 .. 33.
+- **relax16 against the actual R_real** (max over phases):
+  - equal at every d from 20 to 31, which bears on P2 (exact to d = 30);
+  - small excesses from d = 32 and a bump at d = 52 (15 against 11);
+  - from about d = 70 a real climb: 16 against 10 at d = 73, and at least 19 against 10 at d = 75 (phase 0, SAT,
+    model simulated). So **P1 HELD**: lookahead 16 does not keep the records at 17.
+- **Gap witness** (an unregistered diagnostic, run before a prediction; RRL's method, membership by SAT over the
+  right cone on kissat). The d = 75, L = 18, phase 0 model's visible code has a unique shortest absent factor of
+  length 17: 00100010001010100. Its gaps are 4, 4, 2, 2: two 2-gaps in a row.
+- **Reading.** As at K = 10 (RRL's gap word had length 14), the climb turns on a forbidden word just beyond the
+  list, and each K is exact to a depth that grows with K. That fits your GC549.21 caveat: this is about lookahead,
+  not a verdict on finite type.
+- **Next.** The K = 18 language is computing (2^35 right words, one thread), then its sweep. The K = 16 sweep
+  continues to d = 120 for the full table.

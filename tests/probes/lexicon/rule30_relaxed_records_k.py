@@ -178,6 +178,43 @@ class Relaxed:
         bad = [w for w in forb if w in vis]
         if bad:
             raise RuntimeError('forbidden word in the model: %s' % bad[:3])
+        self.code = vis                                               # the visible code, for `gap`
+
+
+def in_language(w):
+    """RRL's in_language, on kissat: is the visible word w (white start, wall clamped) produced by some right half?
+    SAT over the cone of column 1 at the last visible time (sites 1 .. 2k - 1), as rule30_cloud_relaxed_records.py."""
+    k = len(w)
+    last = 2 * k - 2
+    var, nv, cl = {}, [0], []
+
+    def x(t, i):
+        if (t, i) not in var:
+            nv[0] += 1
+            var[(t, i)] = nv[0]
+        return var[(t, i)]
+    for t in range(last):
+        for i in range(1, last - t + 1):
+            r, c, y = x(t, i + 1), x(t, i), x(t + 1, i)
+            nv[0] += 1
+            o = nv[0]
+            cl += [[-c, o], [-r, o], [c, r, -o]]
+            if i == 1:                                       # left input is the wall, t mod 2
+                cl += ([[-y, -o], [y, o]] if t % 2 else [[-y, o], [y, -o]])
+            else:
+                l = x(t, i - 1)
+                cl += [[-y, l, o], [-y, -l, -o], [y, -l, o], [y, l, -o]]
+    for sidx, b in enumerate(w):
+        cl.append([x(2 * sidx, 1)] if b == '1' else [-x(2 * sidx, 1)])
+    with tempfile.NamedTemporaryFile('w', suffix='.cnf', dir=DIR, delete=False) as f:
+        f.write('p cnf %d %d\n' % (nv[0], len(cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in cl))
+        name = f.name
+    try:
+        rc = subprocess.run([KISSAT, '-q', '-n', name], capture_output=True).returncode
+    finally:
+        os.unlink(name)
+    assert rc in (10, 20), rc
+    return rc == 10
 
 
 def ck_path(K, phase):
@@ -300,6 +337,22 @@ def main():
             ok &= tuple(got) == want
             print('relax10 d=%d: %s (RRL %s)' % (d, tuple(got), want), flush=True)
         print('RLK-C2', 'PASS' if ok else 'FAIL')
+    elif cmd == 'gap':                                       # gap witness, as RRL's --gap (GC549.26)
+        K, d, L, ph = (int(z) for z in sys.argv[2:6])
+        forb = load_forbidden(K)
+        inst = Relaxed(d, L, ph, forb)
+        assert inst.solve(7200, forb) == 'SAT'
+        lang16 = language(16)                                      # control: the SAT membership agrees with C
+        assert all(not in_language(w) for w in forb[:10]) and all(in_language(w) for w in sorted(lang16[12])[:20])
+        code = inst.code
+        print('gap witness K=%d phase %d d=%d L=%d horizon T=%d visible code %s' % (K, ph, d, L, inst.T, code))
+        for k in range(K + 1, len(code) + 1):
+            absent = sorted({code[i:i + k] for i in range(len(code) - k + 1) if not in_language(code[i:i + k])})
+            if absent:
+                print('shortest absent factor length %d: %s' % (k, absent))
+                break
+        else:
+            print('no absent factor: the visible code is in the actual language')
     elif cmd == 'sweep':
         K, ph = int(sys.argv[2]), int(sys.argv[3])
         dmax = int(sys.argv[4]) if len(sys.argv) > 4 else 120
