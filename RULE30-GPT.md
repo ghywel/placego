@@ -28331,3 +28331,43 @@ For Q=0 the actual R=0 guard gives100 or101. For Q=1 it gives010 or011. These ar
 **Controls and unexpected check.** Predictions preceded execution. Six initial gates, eight one-step chain implications, four pair identities,96 guarded mid01 bands and32 free mid01 bands pass. Forty-eight selected actual origins pass independent literal and packed engines through both returns: returned011=18,010=13,100=11,101=6. The six101 cases all give H then S; the others give D then L0. The unexpected free time5 band010001000 returns111 under D, and eight of the32 free bands do so. Its x=y=0 violates the actual pair guard. This countercontrol identifies why projecting to the low fifth track alone loses closure. No failed prediction, language census, solver or relaxed-record run in this block; controls are evidence for the local identities, the induction is the all-length proof.
 
 CL249 at11371755 independently confirms GC1077's hand ancestry and forced010/D renewal; GC1077 is PROVED. L612 at2dc9537d reports R_real(144)<=17 in both phases by kissat on verified cuts, with certificate checks queued; that computational scope is retained without replay. Next specific inference: carry the b=0 high-LL returned001, together with its inherited past, through its D continuation or X exit and test whether it can re-enter111. That branch remains outside C; the full relaxation and prize bound remain open.
+
+
+## GC1079 — The inherited 001 branch really renews high after one low unit (2026-10-11)
+
+**Missing inference and failed shortcut.** Does GC1078's finite core C={010,011,100} absorb every b=0 high-LL branch after its001-to-D continuation? No: the actual 21-bit origin111001111011111110010, with EVERY farther tail, produces consecutive ordinary-long fifth tracks H,D,H and returns triples001 at10 and111 at20. This refutes absorption into C and any ban on H-D-H. It does not refute an at-most-one-high-LL statement: the third high unit's return is a separate obligation.
+
+Record searched:111001001|001.*high|high.*001 with inheritance/transport/renewal/shield/origin ->29 hits in9 files; the exact new origin or100011000001 with origin/shield/return ->no hit, including ledgers. No further solver, language or record scan.
+
+**Finite all-tail hand certificate, second reading pending.** At origin sites6..21 the asserted prefix is1111011111110010. The following prefixes at sites6 onward give a complete causal shield certificate:
+
+| Time | Prefix |
+| --- | --- |
+| 1 | 100001000000111 |
+| 2 | 010011100001100 |
+| 3 | 11111001001101 |
+| 4 | 0000011111100 |
+| 5 | 100011000001 |
+| 6 | 110110100011 |
+| 7 | 000100110110 |
+| 8 | 00111110010 |
+| 9 | 1110000111 |
+| 10 | 1001001100 |
+| 11 | 111111101 |
+| 12 | 000000001 |
+| 13 | 000000011 |
+| 14 | 100000110 |
+| 15 | 01000110 |
+| 16 | 11101 |
+| 17 | 10001 |
+| 18 | 1101 |
+| 19 | 1001 |
+| 20 | 1111 |
+
+Each next prefix follows by l XOR(c OR r). Every output has its three inputs displayed, or a displayed black OR input masks the missing right bit. Some prefix lengths are retained by that mask; no exterior is set to zero in the proof. GC1076's111 origin has time5 pair10 and hence H; the first five displayed steps use only GC1047's fixed first six ordinary-L fifth bits. The high fifth bits then supply times5..9. At10, prefix111001 is restored with triple001 and next sites10..12=001. Times10..14 again use only the fixed first six ordinary-L fifth bits. The time15 pair01 selects D, supplying the remaining low closing bits. At20 the returned triple is111, which selects H again by GC1076. Thus the boundary bits used in the certificate are justified at each selector, without circularly assuming a renewal.
+
+The first long has marker b=time5site9=0 and returns001. At15 the actual next low band begins010001: its time15 sites8,9 are BOTH white. This is exactly the exceptional low-band mechanism excluded by GC1078's x OR y=1 guard on C, now realized on the other inherited high past. Its closing shield at16..20 forces returned111 for all farther bits. Retaining the fifth track and the fact of a preceding high unit still loses this distinction.
+
+**Controls and unexpected check.** Predictions preceded execution. All40 one-step implications, including a fresh arbitrary right bit in each, pass;32 actual controls with four added initial bits and two far constants agree in literal and packed engines through30 ticks. They all have H,D,H, the predicted prefixes, and the exceptional actual mid01 band. The third H returns prefix111011 in these32 controls; this is evidence only, not an all-tail return theorem. The unexpected check therefore succeeds: GC1078's free-band111 successor can occur on an actual001 origin with inherited high past. Its C guard remains sound. The absorption shortcut is REFUTED; the new cylinder certificate is a proof sketch, with no failed certificate prediction.
+
+CL250 atf9460bdd independently confirms GC1078's origin guard, closing step and101 escape; GC1078 is PROVED. Its induction is unchanged. Next specific missing inference: when inherited001-to-D returns111, does the following H necessarily terminate with S, or can it renew high LL? Carry that next-return condition on the same history; do not assign a fresh111 tail. Full hidden closure and the all-depth prize bound remain open.
