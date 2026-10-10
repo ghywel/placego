@@ -94,8 +94,7 @@ PART: as on the board.
   happen is unmeasured — MEASURED — rule30_cloud_ruler_kicks.py, CL096, GC856
 
 ## Records R(d) and R_real(d) (Q6, RR, RR2, RR3)
-- Full79-state S/L component exceeds actual entropy ceiling; missing interior cut length41..5120 — COMPUTED / hand — GC1007.
-- Both cutoff40 lists retain a79-state recurrent S/L component; selected loops force initial black at depth146 — COMPUTED — GC1007.
+- Both cutoff40 lists retain79 recurrent S/L states above the entropy ceiling; missing cuts41..5120 — COMPUTED/hand — GC1007.
 - Interior visible gap4422 requires a neighboring gap2, conditional on reported minimal absence — hand inference — GC984; L556/L557.
 - Noninitial interior4422 forces preceding5 and following2 — hand inference from reported forbidden words — GC985; RLK K18.
 - FullK18 bounds4422 occurrences by1 at every word length — PROVED by finite potential, independent L561 review — GC986.
@@ -177,34 +176,34 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Trace repair needs initial rewrites; explicit edge merger — PROOF-SKETCH — GC1057.
+- Initial trace rewrite PROVED CL225 GC1057; unbounded merger cost/two-tick shield PROOF-SKETCH GC1058.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
-- Cut45: black16,20 necessary;18-pin past excludes; prefix15 fails; width24 join — COMPUTED CL210 — GC1036..1039.
+- Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - Hidden L1 startup-only — PROVED CL221 — GC1055; SS marker decay/fifth collar — PROVED CL223 — GC1056.
-- Cut45: reset merges at59; pair01 suffices; delayed NOT8, cone d+L — hand / COMPUTED — GC1030..1035.
+- Cut45 reset merges59; delayed NOT8/pair guard; whole-run cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
 - Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.
 - Shifted escape through100, hidden update failure, conditioned follower separation — evidence — GC1021/1022/1024/1025.
-- Finite clamped-clock seed1001 has eternal train; fourteen-site band closes by causal P8 lock — PROVED (CL189, L595) — GC1020/G282.
+- Clamped seed1001 eternal two-gap train via fourteen-site causal P8 lock — PROVED CL189/L595 — GC1020/G282.
 - Two-gap six-column slab: three failing interface prefixes; failure arrives eight ticks later — PROOF-SKETCH / COMPUTED — GC1017..1019.
 - Short-entry plus mature gate loses exact past — REFUTED — GC1015.
 - Mature S gate retains nine prefixes; G239 SL startup example has no two-tick past — COMPUTED / PROOF-SKETCH — GC1014.
 - Marker prehistory branches at arbitrary distance; some prefixes forget all tail constraints — COMPUTED / hand — GC1010/1012; G236 method.
 - S/L cut suffixes have exact maximum macro prehistory0/1; length40 exclusion after age2 — PROOF-SKETCH — GC1009/1011, L590.
 - Actual visible histories have a four-prefix nonlinear obstruction at left depth26 — COMPUTED — GC1008.
-- Fixed m wall updates admit every remote spatial tail; origin correlations remain — PROOF-SKETCH — GC1006.
-- Black-image rooted1 0^k 1 0 impossible; spatial010 admits every tail — PROOF-SKETCH — GC1005.
+- Fixed-m wall images admit remote tails; origin correlations remain — PROOF-SKETCH — GC1006.
+- Rooted black-image1 0^k 1 0 impossible;010 admits tails — PROOF-SKETCH — GC1005.
 - First black-start exclusion forces spatial10010, impossible after black-wall update — COMPUTED / hand — GC1004.
 - Matured black-start cuts through K-1 follow from complete white cutoff K — PROOF-SKETCH — GC1002/1003.
 - Exact spatial NFA caps after two observations; forward simulation gives no compression — prototype PART / REFUTED — GC998..1000.
 - Width9 strip warmup stabilizes after6 macros but retains GC994 false merger — COMPUTED — GC997; actual positive E13 continuation absent (L572).
 - Equal complete width9 compatible sets can conceal distinct actual futures after marker01 — REFUTED sufficiency — GC994.
 - GC992 gap-order distinction needs width9 in exact right-strip relaxation; width8 admits both — COMPUTED — GC993.
-- Equal gap multisets/endpoints/window7/lastgap can have different actual futures — COMPUTED discriminator — GC992.
-- Eight hidden phases can yield255 observer residuals; finite follower growth inconclusive — control PROOF-SKETCH / COMPUTED — GC991.
-- Equal elapsed phase/count/window7 can conceal different actual futures — COMPUTED finite discriminator — GC990, RLK K18.
+- Equal gap multisets/endpoints/window7/lastgap hide different futures — COMPUTED — GC992.
+- Eight hidden phases yield255 residuals; follower growth inconclusive — control PROOF-SKETCH/COMPUTED — GC991.
+- Equal phase/count/window7 hide different futures — COMPUTED — GC990, RLK K18.
 - Channel bound: next to 0101 column 1 carries at most 0.1236 bits per visible bit, whatever the right half —
   COMPUTED (certified in integers) — §8.20, §8.33; SQ6, EN6
 - Layer times true forbidden words (TC2's F): width 22 certifies 0.130284, below both factors; gain over the layer
