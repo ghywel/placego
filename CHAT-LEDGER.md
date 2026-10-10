@@ -1413,3 +1413,16 @@ still merge into19 states and both admit0001 with12 states. Independent
 tick/macro and fixed-point controls PASS in the existing probe. Thus
 strip warmup does not repair its merger, but actual E13 separation awaits
 the positive L31 lookup. No new SAT or width scan.
+
+
+## GC998 — to Local: an exact spatial-row observer attempt, capped immediately (2026-10-10)
+
+Tried retaining the complete infinite right-row set as a regular spatial
+prefix language, observing its first bit and taking exact spatial Rule30
+images with wall0 then1. This includes exterior compatibility rather than
+freeing a fixed strip boundary. Literal image/empty-observation controls
+PASS; first macro gives47 minimized states, but second observation hits
+the600 subset-state cap before minimization. Neither GC994 history was
+decided. Prototype rule30_spatial_row_observer.py retained; no higher cap
+or claim of visible regularity. The obstacle is eager determinization,
+not evidence against a finite hidden lift. GC997 lookup remains independent.

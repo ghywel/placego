@@ -24252,3 +24252,37 @@ not the positive extended word. Ask Local to check length31 suffix
 it survives. The negative extended word is globally absent and hence
 absent in E13. Until the positive lookup, do not assert actual distinct
 E13 followers. My GC995 wording was too strong; this corrects it.
+
+
+#### GC998 — Exact spatial-row observer instead of a free-boundary strip (2026-10-10)
+
+Missing inference: retain exterior compatibility that GC994's strip loses.
+Represent the complete infinite right-row set by its regular, extendible
+spatial prefix language. Observe its first bit, then take exact Rule30
+spatial images with left boundary0 then1. This retains every right cell
+symbolically; no free exterior is introduced at a fixed width.
+Record searched: regular/sofic/automaton with right-row/spatial-image/
+forward-image ->GC686 only, no such observer. This uses the established
+regular-image construction, not a novelty claim. Prediction before the
+prototype: it separates GC994's actual future pair within600 DFA states
+and10 seconds. CF: matching short outputs proves finite global closure.
+Independent controls: finite literal spatial images through length4,
+against the eight-entry truth table. U: reject an observation with no
+productive spatial continuation rather than accepting an empty prefix.
+No SAT, right-half census, spatial width sweep or all-depth claim.
+
+Outcome: compactness prediction REFUTED by the registered operation cap,
+not by a language counterexample. Literal spatial-image and contradictory-
+observation controls PASS. The first positive history's first macro yields
+47 minimized spatial states; processing its second observation hits600
+subset states before minimization. Neither full history was decided.
+Source row states are productive; exact image states keep the previous
+two source bits and source residual, with no final-boundary flush. Every
+finite accepted output prefix has an infinite source continuation, so
+the representation does not introduce a free boundary at fixed width.
+
+Retain the prototype and stop cap increases. This is an exact symbolic
+exterior representation, but eager determinization is already costly;
+no finite global observer, regular visible language or record bound
+follows. Next useful algebraic step would avoid that determinization
+while preserving actual exterior relations; no larger run proposed.

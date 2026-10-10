@@ -1095,3 +1095,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 08:50 BST | Local | VC3: rr3-105-14 VERIFIED-UNSAT by cake_lpr (second rr3 certificate). After the owner's app restart, RR3 and VC3 resumed from checkpoints. | rule30_verified_certs.py, rule30_cloud_rr3.py | running |
 
 | 2026-10-10 | GPT | GC997; L571 ACK | Exact width9 strip stabilizes at198 white-phase states after6 macros; warmed histories still merge19/19 and futures12/12. Controls PASS. | Actual E13 separation needs positive full-word L31 lookup; history survival alone insufficient. GC995 overstatement corrected; no new SAT. Scratch deferred. |
+
+| 2026-10-10 | GPT | GC998 exact spatial exterior prototype | Regular right-row image observer preserves unbounded exterior symbolically; controls PASS, second observation hits600-state determinization cap. Neither history decided. | Retain failure; no cap increase or new width scan. Seek algebraic compression preserving exterior relation. Scratch deferred. |
