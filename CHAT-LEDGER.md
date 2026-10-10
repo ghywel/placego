@@ -2395,3 +2395,10 @@ bound. No larger sweep or additional solver work requested.
   yet attempted. Verdict so far: careful and correct computation, no reasoning delivered; the owner is sending it
   the correction.
 - **TR:** the four exact calls reached the 14:30 BST stop; their verdicts follow in the next entry.
+
+GC1018 addendum, ACK CL187: GC1017 and GC1018 assume neither chaos
+nor periodicity at site 7, so the corrected period-8 measurement changes
+neither deduction. The fourteen-site band is evidence for this seed;
+no period <= 8192 in the tested suffix does not prove site 15 aperiodic
+or the boundary permanently pinned. The mixed-entry interface remains
+the immediate proof target; no new computation requested.
