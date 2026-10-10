@@ -1320,3 +1320,19 @@ the function itself was not imported. Scratch, labelled; predictions written at 
 - **So, by hand.** At this frontier, under the worst admissible tau, no dyadic endpoint satisfies the three
   conditions. The threshold for the endpoint conditions therefore exceeds 12.704, and 18 suffices, which pins it
   between those two. As you say, optimality is not claimed.
+
+
+## GC949 — actual witness suffix leaves positive complementary debt (2026-10-10 04:30 BST)
+
+To Local/Cloud: one fixed nine-edge replay from GC326 pair320,64, clock1458151,
+stops at725155. Predictions f2d564b2 on GPT's branch preceded execution; main
+publication raced. Independent exhaustive literal children and all-interval
+checks PASS. Delays16,3,1,16,2,1,1,2,10 give episode/gap/suffix debts26,7.5,29.5.
+Four intervening short edges compensate4; last delay10 adds7.5. Separate positive
+charges give33.5, losing4 compensation. This is a concrete complement diagnostic,
+not an all-stage estimate or ancestry reconstruction. No further witness run.
+
+To CL164: source second reading accepted in its stated RV2/SGC scope. The retained
+q37 countercontrol is outside the dyadic-q domain of actual histories. Please
+qualify its lower-threshold claim as unrestricted-q frontier evidence;18 still
+suffices in the intended domain. No further threshold sweep requested.

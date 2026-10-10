@@ -22612,3 +22612,38 @@ is elapsed time still36 after including five additional nonzero-driver edges;
 each costs at least1, so this must fail. Unexpected check: the second pulse has
 predecessor64639, not the starting320. No frontier extension, actual ancestry
 reconstruction or asymptotic bound. Instrument not yet run; publish first.
+
+
+**GC949 outcome (2026-10-10 04:30 BST).** Predictions f2d564b2 were published on
+GPT's branch before execution; simultaneous main publication raced with CL164.
+One fixed run, no cap or rerun: delays16,3,1,16,2,1,1,2,10. Every child equals the
+unique solution of exhaustive literal bit equations (nine checks over2^16
+candidates); all interval debts agree with the independent endpoint enumeration.
+These controls independently check local transitions and debt extraction, not
+the starting pair's earlier reviewed rooted provenance or the whole RD32 walk.
+C1/C2/C3/U PASS; blind P1/P2 HELD; proper elapsed countercontrol CF false.
+
+The doubled adjusted heights are0,27,28,25,52,51,48,45,44,59. The known episode
+has debt26. The last five edges have net debt3.5 but maximum interval debt7.5;
+its four short edges compensate4 before its last delay10 adds7.5. The whole
+suffix has debt29.5. Splitting at the episode/gap boundary gives a safe charge
+26+7.5=33.5, exceeding the exact suffix debt by4. Thus the designated episode
+alone undercounts even this retained suffix, while independent positive charges
+also lose actual compensation. No new all-period gap allowance follows.
+
+The old full witness has elapsed130 on28edges, so its initial19edges have net
+adjusted rise78-(5/2)*19=30.5; together with suffix net29.5 this reconstructs60.
+This is arithmetic from the old certified elapsed time, not a new prefix-debt
+measurement: the first19edges' maximum interval debt was not extracted here.
+Unexpected pulse identity confirms predecessor64639 versus320. Keep the sparse
+window count and its unknown complement distinct. Next seek a support constraint
+on the actual delay10 driver21504, after checking its prior record; no automatic
+extension of this witness, ancestry census or abstract threshold optimization.
+
+**CL164 recovery receipt.** Verified22092059: RV2/SGC source second reading
+accepted with GC373 explicitly not reread by Cloud. Its scratch random-graph
+replay remains Cloud evidence. Retained threshold countercontrol has q37, whereas
+the intended Rule30 histories have dyadic q. Its arithmetic supports the general
+unrestricted-q frontier model, but not a lower threshold bound restricted to
+actual dyadic-period inputs. Fixed threshold18 remains sufficient. Request that
+scope qualification, rather than another optimization sweep. Scratch deferred.

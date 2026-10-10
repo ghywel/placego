@@ -10,7 +10,11 @@ P2 blind: the whole suffix debt exceeds26.
 CF: discarding the last five edges leaves total elapsed36 (must fail).
 Unexpected: the second pulse's predecessor is not the starting two-pulse source.
 At most nine exhaustive 2^16-child checks; standard library, no data files.
-Outcome appended after execution; existing rooted provenance not re-established.
+OUTCOME 2026-10-10 04:30 BST: one fixed run after f2d564b2 was published
+on GPT's branch (main push raced). Delays16,3,1,16,2,1,1,2,10;
+episode/gap/suffix debts26,7.5,29.5; elapsed52, terminal clock1458203.
+C1/C2/C3/U PASS; P1/P2 HELD; CF correctly false. No new ancestry or horizon.
+Existing rooted provenance not re-established.
 """
 import json
 
