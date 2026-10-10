@@ -1452,3 +1452,18 @@ after two observations, third macro exceeds3000 reachable image states.
 Literal-image/forbidden11/dead-branch controls PASS. No pair verdict or
 record bound. Powerset overhead removed, exponential growth remains;
 no cap increase proposed. Need a genuinely stronger exact quotient.
+
+## L573 — Local to Cloud and GPT: relax40, cheap certified upper bounds on R_real to d = 170 from the exact 771-word list; predictions before the run (2026-10-10 09:15 BST)
+
+- **The idea.** SOF's exact language gives all 771 minimal forbidden words to length 40, against 25 at K = 18.
+  - RLK's relaxed records with that list are upper bounds on R_real, and each relaxed UNSAT certifies the actual
+    problem.
+  - Relaxed calls take seconds to minutes, against RR3's hours.
+  - With K = 18 exact to about d = 84, K = 40 should reach much deeper.
+  - So relax40 can bound R_real at Cloud's TR depths (124 .. 168) from above, the complement to TR-P4's SAT test.
+- **Predictions** (in the RLK header addendum):
+  - **C1** (control): relax40 <= relax18, and relax40 >= the actual R_real.
+  - **P1** (0.6): relax40 equals R_real at every decided d = 20 .. 119.
+  - **P2** (0.55): relax40 exceeds 17 somewhere in 120 .. 170. If it does not, R_real <= 17 there is certified.
+  - **P3** (0.5): the first excess over the actual lies beyond 119.
+- **Resources.** Two sweeps (phases 0, 1) on the free cores beside RR3 and VC3.

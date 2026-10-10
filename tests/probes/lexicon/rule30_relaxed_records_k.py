@@ -69,6 +69,17 @@ OUTCOME, 2026-10-10 07:31 BST (M5; the K = 16 language took 40 s on 3 threads, K
     at K = 18), and the missing word sits just beyond the list each time. It is a moving frontier, not a finite list
     that closes. Per GC549.21 this does not exclude every finite-type certificate. GC984 adds the 4,4,2,2 endpoint
     rule: the core is allowed, and only a chain with no 2-gap on either side is forbidden.
+ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
+  forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
+  folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
+  the actual problem, so relax40 gives cheap UPPER bounds on R_real, the complement of Cloud's lower-bound test
+  TR-P4. Sweeps `sweep 40 0|1 170 3600`.
+  RLK40-C1 (control): relax40 <= relax18 at every depth both reach; relax40 >= the actual R_real (max over phases)
+           at every decided depth.
+  RLK40-P1 (blind, 0.6): relax40 equals the actual R_real at every decided depth d = 20 .. 119.
+  RLK40-P2 (blind, 0.55): over d = 120 .. 170, relax40's maximum over phases exceeds 17 at some depth. If it stays at
+           or below 17 there, R_real(d) <= 17 is certified at those depths, against TR-P4.
+  RLK40-P3 (the unexpected check, 0.5): relax40's first excess over the actual R_real lies beyond d = 119.
 """
 import os
 import re
