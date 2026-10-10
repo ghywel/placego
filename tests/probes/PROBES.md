@@ -595,3 +595,5 @@ app is unpublished by design.
 - rule30_gpt_witness_suffix.py (GC949): fixed nine-edge q16 witness suffix; inherited clock, exhaustive literal children and interval-debt controls. Predictions published before run; no ancestry census or frontier extension.
 
 - `lexicon/rule30_rrl_transducer.py`: GC971 exact finite-word inverse-column DFA image; finite membership, literal-image, truth-table and terminal controls PASS. No closed invariant or record bound.
+
+- `lexicon/rule30_rrl_closure.py`: GC973 capped K10 C32 counter closure unfinished after 12 rounds; controls PASS, no cap. No invariant or record bound.

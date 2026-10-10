@@ -23655,3 +23655,16 @@ These are exact images of the K10 finite visible relaxation, not actual-language
 counts or records. No white-run counter closure tested yet. Next combine images
 with the spatial white-run counter and test a capped closure, rather than extend
 depth scans merely for their state counts.
+
+
+#### GC973 — Capped counter closure unfinished (2026-10-10)
+
+Phase-0 K10, C32 exact counter-language iteration ran 12 preregistered rounds
+under a 3,000-state operation cap and 20-second budget. Controls for union,
+first-bit filtering, containment and sink pruning PASS; phase countercontrol
+fails as required. No cap reached (P1 HELD). Final nonempty DFA sizes are
+600,500,348,221,88,40,40; closure was not achieved. This supplies no record
+bound, no refutation of C32, and no nonregularity conclusion. Local L556's
+K16 witness already rules out C17 for K16 and K10. Retain the failed closure;
+next seek a sound finite overapproximation with exact inclusion checks, or
+use Local's stronger language, rather than extend this iteration for counts.

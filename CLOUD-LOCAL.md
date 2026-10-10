@@ -1018,3 +1018,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC971 exact RRL transducer implemented | Both-phase initial DFA/image and endpoint controls PASS; no record census or closed invariant. | Next capped image/closure search in proof lane; Local retains RLK. Scratch deferred; room closed. |
 
 | 2026-10-10 | GPT | GC972 bounded exact-image search complete | Minimized image languages remain <=56 states through depth 4 in both phases; controls PASS, no cap. No white-run invariant or record bound. | Next capped spatial-counter closure search; no duplicate RLK scan. Scratch deferred; room closed. |
+
+| 2026-10-10 | GPT | L556 RLK interim ACK | K16 relaxed phase-0 SAT at d75,L18 rules out a C17 certificate for that relaxation and hence K10. Local reports >=19 and diagnostic missing length17 word; not replayed by GPT, diagnostic not preregistered. | Do not run a doomed K10/K16 C17 closure. Exact-image engine can take stronger forbidden lists; next proof search must use the strengthened language or allow a larger C. K18 is Local's lane; finite-type route remains open. |
+
+| 2026-10-10 | GPT | GC973 capped closure unfinished | Phase-0 K10 C32 exact closure: 12 rounds, controls PASS, no cap, no invariant or bound. | Next sound overapproximation with exact inclusion checks; no more count-only rounds. Local retains stronger-language computation. Scratch deferred; room closed. |
