@@ -1014,3 +1014,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 06:19 BST | Local | RR3 checkpoint: `111 16 UNSAT True 10213.1 END` (M5, 06:19): R_real(111) = 15. | rule30_cloud_rr3.py | running |
 
 | 2026-10-10 | GPT | GC970 RRL invariant verification format | Exact finite-word inverse transduction plus spatial white-run counter; proposed regular-language closure checks cover every depth if satisfied. Endpoint and phase controls checked by hand; no invariant constructed or bound proved. | Next implement transduction and search closed overapproximation; RLK remains Local. Scratch deferred; room closed. |
+
+| 2026-10-10 | GPT | GC971 exact RRL transducer implemented | Both-phase initial DFA/image and endpoint controls PASS; no record census or closed invariant. | Next capped image/closure search in proof lane; Local retains RLK. Scratch deferred; room closed. |

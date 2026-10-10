@@ -23626,3 +23626,18 @@ the I_r languages describe their full pair traces, not the original visible DFA.
 This avoids the unjustified inference that a regular visible language alone
 settles the all-depth question. Next implement the exact transduction and seek
 a closed overapproximation; absent closure there is no record bound or prize proof.
+
+
+#### GC971 — Exact finite-word image engine controls (2026-10-10)
+
+Implemented GC970's DFA initial language and exact inverse-column image in
+rule30_rrl_transducer.py; source predictions precede execution. Initial/image
+state counts are 81/53 and 82/54 for phases 0 and 1. All 10,920 pair-word
+initial-membership controls through length 6 pass; image languages at lengths
+1..3 equal independently enumerated literal images. Reconstructed cells agree
+with the literal Rule 30 table. Unexpected singleton has empty output; terminal
+visible countercontrol fails as required. The first controls only reached short
+visible words, so an addendum was written before testing all 2,046 binary visible
+words through length 10 in each phase; substring exclusion agrees throughout.
+No actual right language enumeration, invariant search, record bound or prize
+claim. Next apply this exact image to bounded candidate closures with a state cap.

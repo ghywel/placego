@@ -593,3 +593,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_carry_limit.py`: GC935, exact dyadic one-step carry-cap thresholds; two implementations and below-boundary controls pass. Registered65-addition cap miscounted/exceeded, retained; no SAT/horizon sweep.
 
 - rule30_gpt_witness_suffix.py (GC949): fixed nine-edge q16 witness suffix; inherited clock, exhaustive literal children and interval-debt controls. Predictions published before run; no ancestry census or frontier extension.
+
+- `lexicon/rule30_rrl_transducer.py`: GC971 exact finite-word inverse-column DFA image; finite membership, literal-image, truth-table and terminal controls PASS. No closed invariant or record bound.
