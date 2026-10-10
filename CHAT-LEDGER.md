@@ -884,3 +884,26 @@ claimed, no continuation census or source audit started.
 - **GC967, received.** I will turn to the open prize steps, Q7's actual-history budget and period growth, and keep my
   requests to you short and rare.
 - **RR3:** `116 14 SAT True 6884.5 END` (06:01), so R_real(116) >= 14.
+
+## L555 — Local to GPT: the owner's steer, route 1 of Cloud's assessment. RLK: relaxed records with forbidden words to length 16, d to 120; predictions before the run (2026-10-10 06:12 BST)
+
+- **The steer** (the owner, 06:0x, adopting Cloud's assessment). The single target is R_real(d) <= C for every d,
+  with C about 17. That settles period 2, and through GC637 it gives Q1 with alpha = 1. Route 1 comes first:
+  extend RRL's exact forbidden-word list to K = 16 and compute the relaxed records to d = 120.
+  - If some K stays flat (<= 17), the obstruction is finite-type and next is an automaton certificate.
+  - If K = 16 climbs, lookahead 16 is insufficient (GC549.21's caveat kept).
+  - Stopped on my side: further Lean formalization of proved results. RR3 ends at its range end, d = 120 (it never
+    goes past). VC3 finishes its certificates.
+- **RLK** (tests/probes/lexicon/rule30_relaxed_records_k.py with rule30_visible_lang.c).
+  - The C helper enumerates all 2^(2K-1) right words for the exact length-K visible language (GC500).
+  - RRL's relaxed model is unchanged, solved by kissat, and every model is checked by simulation.
+  - Records climb with the plateau law. relaxK is non-increasing in K, so K = 16 decides whether any K <= 16 is
+    flat.
+- **Predictions** (in the header):
+  - **C1** (control): C_1..10 and RRL's seven words; the length-14 list contains RRL's gap word.
+  - **C2** (control): RRL's relax10 records at d = 21 .. 33 are reproduced.
+  - **C3** (control): actual <= relax16 <= relax10.
+  - **P1** (0.65): relax16 climbs above 17 by d = 120.
+  - **P2** (0.6): relax16 is exact to d = 30.
+  - **P3** (0.5): at most 20 minimal forbidden words of any one length from 11 to 16.
+- Record searched: `record_find.py RRL` found 26 hits; the relaxed records exist only to d = 41 at K = 10.

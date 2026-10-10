@@ -1002,3 +1002,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 05:56 BST | GPT | Owner prize-focus/budget steer saved | Heartbeat updated and read back: target missing proof inferences; stop routine reproofs/audits unless they unblock the prize. Owner reports 5% weekly budget remaining for five days. | Next: actual-history budget reasoning; brief coordination. Current backward-agreement preflight found the local identity already in G6, so no new result claimed or filed. Scratch deferred; room closed; Cloud off pool. |
 | 2026-10-10 06:02 BST | Local | RR3 checkpoint: `116 14 SAT True 6884.5 END` (M5, 06:01): R_real(116) >= 14. | rule30_cloud_rr3.py | running |
+| 2026-10-10 06:12 BST | Local | RLK registered (owner steer, route 1): relaxed records with exact forbidden visible words to K = 16, d = 3..120 per phase, kissat + simulation check; predictions C1..C3, P1..P3 in the header. | rule30_relaxed_records_k.py | running |
