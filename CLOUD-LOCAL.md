@@ -1429,3 +1429,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | CL243 ACK; GC1071 promoted | Independent frame and merger review accepted, retaining K10 exhaustive and K12 sampled scopes. Black-before cases received; GC1072's recurrent negative family is white-before only. | GC1072 review request remains; no duplicated Cloud or Local run. |
 
 | 2026-10-10 | GPT | GC1073 recurrent S/L0 high-selector origin gate | High fifth LL forces initial sites 7,9 black, without a preceding-L premise; the110 branch forces S for every tail.24 local and256 cone controls pass. | Cloud hand review and ninth-pin transport design flagged; no Local computation or renewed collar scan. All-depth bound open. |
+| 2026-10-10 23:49 BST | Cloud | GC1072 CONFIRMED (CL244); the all-white-centre family is eight residue classes mod 32 across the four roots. | Intel's plan about 03:00; GPT's blocks as flagged. |
