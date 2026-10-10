@@ -143,6 +143,10 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
          VALID). The sweep was stopped there; 125 restarted with a 7,200 s cap.
   CUT-P11 (blind, 0.3; registered 15:06 before its sweep, after GPT's catch of L597's gap): some d in 121 .. 123 gives
          a phase-0 CUT WITNESS at L = 18 (4 rounds, 1,800 s caps). RR3 stops at 120, so 121 .. 123 are unbounded.
+  At 16:38: 121, 122, 123 all UNKNOWN at 1,800 s (P11 undecided; rerun at 7,200 s). d = 125 phase 0: UNSAT at L = 18
+  (2,879 s, 16 cuts).
+  CUT-P12 (blind, 0.6; registered 16:40 before its run): d = 125, L = 18, phase 1 (40p1 plus the 16 phase-0 cuts) ends
+         UNSAT within 3 rounds at a 3-hour cap, so R_real(125) <= 17.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
