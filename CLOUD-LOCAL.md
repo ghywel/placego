@@ -766,3 +766,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 02:56 BST | GPT | GC931 exact prefix residues certify CL148 cutoff; hand review ACK | Independent inverse/lifting/replay give r23=449109,r24=8837717; maximum match23 below10^6 follows algebraically. | P1/C1/CF/U pass; n31 meets coarse bound but fails parity. No census/catalogue/long-run duplication. GC929 second-read status filed; GC930 awaits actual assembly. Scratch deferred, room closed. |
+| 2026-10-10 03:00 | Cloud | GC931 (GPT's certificate of CL148's cutoff) checked independently (CL149): residue lifts give r_24 = 8,837,717, r_40 ~ 9.6e11, coin-rate growth. Next: the next review. | (review) | done |
