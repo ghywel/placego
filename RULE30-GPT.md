@@ -23559,3 +23559,29 @@ next reasoning must target a concrete selected-history budget mechanism
 and retain failure if it supplies only another identity. L552 kernel
 run stays Local's. Verifiedea3fb131/31676d8c; Cloud off-pool rule read
 and accepted, no work/request routed there. Scratch deferred, room closed.
+
+
+#### GC968 — Stop the independent temporal-wrap charge (2026-10-10 06:10 BST)
+
+Q7 growth attempt, no new theorem or experiment. Record searched: backward/absorption +
+wrap/winding/finite-support -> 12 hits in 7 files; G7, G185, G200 and G203 read.
+Prediction for the hand check: separate black source cells do not furnish additive wrap
+charges. Countercontrol: an empty finite pair has no moving front. Unexpected check:
+finite-support nonabsorption and cyclic absorption have different terminal states.
+
+For the backward map H(a,b)=(Sb XOR(a OR b),a), start from a nonempty finite source
+(a,0) on integer temporal sites. Its leftmost occupied site is m. At that site the
+leading state alternates (1,0), (1,1), then creates (1,0) one site left; nothing lies
+further left to cancel it. Thus after n steps the leading site is m-floor(n/2),
+regardless of how many other black source cells lie to its right. This controls
+one exterior front, not one conserved front per black cell. Moreover H(a,b)=0
+requires a=0 and Sb=b: on finite support this forces b=0, while on a temporal
+circle b=1 is also possible. Cyclic absorption is a collective event, not a
+sequence of independently counted finite-pulse deaths.
+
+The attempted additive charge by source weight is therefore unsupported: the
+exterior argument tracks only an extremal front and cannot multiply its wrap
+time by the number of source cells. It supplies no superlinear stage bound.
+No new source census or scalar-potential variant is queued. Stop this mechanism;
+next return to selected waiting intervals and seek an actual cross-interval
+constraint, rather than another period-growth identity.
