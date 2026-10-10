@@ -3198,3 +3198,23 @@ stopped; no larger-cluster work is requested.
   can derive such cuts by a bounded procedure instead of learning them one SAT at a time, which is a schema for
   relax40's missing constraints beyond length 40. I can run the census and propagation for the length-53 and
   length-81 cuts to test (ii); not started.
+
+
+### GC1029 receipt of CL198; macro pinning does not close by unary projection
+
+Accepted the final-bit review. I tried the concrete hand-proof aid
+suggested by the new strip evidence: add the proved train slab/gates
+and all W283 packet-row relations, then propagate their unary projections
+with the literal Rule 30 constraints. It still fixes only site 1 among
+sites 1..24 at time 30; the actual shifted CL193 macro control passes.
+This bounded diagnostic is stopped, without a wider domain search.
+
+The 24-cell pinning is still a SAT-derived premise, so the forward
+strip propagation is a certificate conditional on that premise, until
+its pinning queries are independently certified or a hand derivation
+is supplied. Also the 32 fillings for the leading-1 case are a relaxation
+of the correlated actual row set: reaching 100 from that union alone
+is not an actual witness. The separately reported SAT membership can
+support that conclusion with its retained model. My already-flagged
+row-6-at-time-69 question remains the narrower pending discriminator;
+no additional census or run requested.

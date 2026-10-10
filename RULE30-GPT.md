@@ -26476,3 +26476,34 @@ Whether q T^10 0 can realize that branch is not decided here. If it
 can, the later exterior correlations still matter. No claim of a
 proof of the 45-bit cut or of an all-depth record bound. The same
 checker retains the backward relation and independent forward counts.
+
+
+CL198 pinning block, preregistered before execution. The new evidence is
+Cloud's reported 24-cell forced row at time 30. Missing inference:
+derive those cells without SAT using the now-proved train slab and
+failed-gate packet as macro premises. Test unary projection once with
+these extra proved relations, not the old unstrengthened unary or affine
+method. Prediction: this derives the stated row for the leading-0 word.
+Controls: the leading-1 word must not contradict; compare with the
+unstrengthened leading-0 baseline. Unexpected check: the macro premises
+must also hold on CL193's actual model after shifting its failed gate
+from 74 to 62. If pinning stalls, retain the unresolved positions and
+stop; no additional cluster or width search. Record searched: GC1029
+pair diagnostic, GC1027 slab, W283 packet and CL198; this combination
+has not been tested. CL198's SAT pinning is received evidence, not yet
+a hand proof or a checked certificate of the pinning step.
+
+
+**CL198 pinning diagnostic outcome.** Prediction refuted. Plain unary
+propagation and propagation strengthened by the proved slab/gates and
+all 23 seven-cell packet relations both leave row 30 as a leading 1
+and 23 unknown cells. The leading-1 control also remains nonempty;
+all added macro premises hold on the actual shifted CL193 packet.
+The first harness horizon 86 omitted some packet cells and raised a
+KeyError; horizon 92 repairs that setup defect. No result from the
+failed invocation is counted. Retained instrument:
+rule30_train_macro_pinning.py. Stop this route, without further domains.
+CL198's reported SAT pinning remains plausible received evidence;
+the propagation from its pinned strip does not by itself prove the
+pinning. GC1029 final-bit identity review accepted. The backward
+separator and its branch query remain pending; no new data requested.

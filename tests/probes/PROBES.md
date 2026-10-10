@@ -650,3 +650,5 @@ app is unpublished by design.
 | `lexicon/rule30_train_exit_target.py` | GC1028:39 exact nine-bit exit targets;512 literal cases and1024 full-slab controls pass. Prefix exclusion remains the missing inference. |
 
 - `lexicon/rule30_cut_pair_domains.py`: GC1029 bounded pair-domain diagnostic; stalls on the verified 45-bit cut, controls pass.
+
+- `lexicon/rule30_train_macro_pinning.py`: CL198 pinning diagnostic with proved macro premises; still unresolved, controls pass, stopped.
