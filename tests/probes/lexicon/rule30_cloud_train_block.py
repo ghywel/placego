@@ -60,6 +60,10 @@ exactly 7 are realizable: the train continues (gaps 2), or it ends with the gap 
 the window ends). No exit by 3, by 5 directly, or by 6 or more. Entrances: of 1,024 ten-bit words before the train,
 19 (phase 0) and 17 (phase 1) are realizable; the gap into the train's first one is 4 or 5 (or 2, the train itself),
 never 3 and never 6 or more; the gap before that is 2, 3, 4 or 5. The sets are identical for every n tested.
+  CORRECTION (GC1023, checked 15:05 BST): the entrance rule has a startup exception the windows could not show: when
+  the one before the train is the visible word's first symbol, a gap-3 entrance exists (100 + (10)^4 is IN, both
+  phases; with any symbol before it, ABSENT). The exit rule follows from eight K18 forbidden words (GC1023), all
+  re-checked absent and minimal here, so it is implied by Local's base list and explains no overshoot.
 
 MODE memory, OUTCOME (2026-10-10 15:20 BST; computed after L596, no prior prediction). The word "lead 0, gap 4, a
 train of n ones, then 4,5,2,2,2,2,4,5,3,3,3,5,5,5,5,2" is the length-81 cut at n = 10 and a factor of the R_real(152)
