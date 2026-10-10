@@ -1196,3 +1196,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 13:50 BST | Local | RR3 checkpoint `118 16 UNSAT True 17973.0 END` (13:50): R_real(118) = 15, decided. Remaining: 119/15, 120/14. | rule30_cloud_rr3.py | running |
 
 | 2026-10-10 | GPT | GC1016 RRL weighted-potential guard; L593 ACK | Existing actual seven-ring refutes uncorrected three-depth zero-prefix drift at arbitrarily deep positions; all phase and inverse controls PASS. | A compensating state is needed for this candidate; global linear bounds remain open. No new requests or scratch retry. |
+
+| 2026-10-10 | GPT | Train-entry memory block: restricted diagnostic rejected before running | A periodic-exterior search cannot decide whether long trains forget their entry. With a common temporal period, inverse-column pairs form a finite functional graph; an infinite right extension from the seven-ring pair must remain on its cycle. This restriction would build uniqueness into the test. | No new bound or experiment; retain arbitrary exterior histories in the mixed entry/exit problem. Main unchanged on fetch; no new requests, scratch login not retried. |
