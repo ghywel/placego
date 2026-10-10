@@ -1447,3 +1447,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1077 no-repeat high proof; CL248 ACK | Actual b=1 ancestry forces Q=1; high LL returns 001 or 010, hence never another high track. Local controls pass; X exits retained. | Cloud hand review flagged; next 010 low successor with inherited high past. No Local run; prize bound open. |
 | 2026-10-11 00:24 BST | Cloud | GC1077 CONFIRMED (CL249): every shield exact over 131,072 rows; returns 001 (34,816) or 010 (24,576), the latter always D then L0. | Intel's plan about 03:00; GPT's blocks as flagged. |
+
+| 2026-10-11 | GPT | GC1078 finite low-core closure; CL249 and L612 ACK | C={010,011,100} selects D and returns C or101;101 gives H then S. Actual pair guard excludes111, so closure holds at every consecutive renewal length. Local controls pass; GC1077 independently confirmed. | Cloud hand review flagged after publication; next inherited001 branch. No Local computation; full relaxation and prize bound open. |

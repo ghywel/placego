@@ -28306,3 +28306,28 @@ The returned 010 origin always has the ordinary low track D: its sites 6 onward 
 **Controls and unexpected check.** All 16 local origin gates, 8 shield continuations, 4 closing identities and 48 actual controls on the two b=1 cylinders pass literal/packed engines. The retained 001-to-X witness still exits. A relaxed time 4 band 00001110 really reaches returned triple 111 and passes the next-high gate, but its eleventh site is black where actual ancestry forces white. This identifies the precise lost equation in fresh-state composition. No failed prediction in this block; no longer scan or solver run.
 
 CL248 at 8b86c271 independently confirms GC1076, now PROVED, and computes the no-repeat consequence exhaustively. Its 59,392 high-LL returns have next tracks D or X only. The new hand inference strengthens its b=1 disjunction to Q=1; review requested. Next missing inference is transport of the forced 010 low successor together with its inherited high past, toward restrictions on renewal after an intervening D. All-depth composition and the prize remain open.
+
+
+## GC1078 — A finite ordinary-low core closes at every renewal length (2026-10-11)
+
+**Missing inference.** Carry GC1077's forced 010 successor through arbitrarily many low renewals without a fresh 111 origin. Record searched: 111001010|H.D.H|high.*low.*high with ancestry/inheritance/transport/shield ->14 hits in7 files; 010.*011.*100|11100101 with ordinary|L0 and closure/invariant/shield ->21 hits in10 files. The broader search was noisy and replaced by this narrower intersection. GC1053 gives the general closing map, GC1077 the first D renewal; neither supplies this invariant component.
+
+**Hand theorem, proof sketch pending second reading.** Let C={010,011,100} denote origin sites 7..9 after ordinary-L prefix111001. Every such source has fifth track D=0101100000, returns L0 with triple in C or101, and has no other returned triple. If it returns101, the next long has high track H=0101101010 and returns S by GC1075. Thus, at every run length, successive L0 renewals stay in C until a possible single H-to-S escape. No high LL can occur after entering C while that consecutive long run continues. This is a sound finite hidden component; it is not a full hidden representation or an all-depth record bound.
+
+**Origin and pair guard.** Initial sites6..9 are1010,1011 or1100. Each forces time1 sites6..8=101; the common prefixes at times2..5 are001,011,010,01. These steps use only GC1047's already proved first six ordinary-L fifth bits010110. Its mid01 selector therefore gives D and L0, without assuming the track used to derive the selector.
+
+Write E,F at time4 sites9,10. The pair x,y at time5 sites8,9 is
+
+    x=NOT E, y=E OR F, hence x OR y=1.
+
+With z=time5site10 and B=x XOR(y OR z), GC1053's low update gives time6 sites6..9=110B. Writing K=time6site10, the next prefix is (1,0,NOT B,B OR K); time8 sites6..8=(1,B,1). Hence time9site8 Q=NOT B. If Q=0, B=1, so time7 sites6..9=1001 and time8 sites6..9=1111, whatever lies farther right. Thus time9site9 R=0 whenever Q=0.
+
+The reviewed mid01 closing map returns sites7..9
+
+    (NOT Q, Q OR R, Q XOR(R OR Z)), Z=time9site10.
+
+For Q=0 the actual R=0 guard gives100 or101. For Q=1 it gives010 or011. These are precisely C or101; no claim that every abstract transition is realizable. Apply this same implication at each actual return: the prefix is again111001 and the new triple again lies in C, so induction proves closure for every number of consecutive low renewals. The101 escape uses GC1075's all-tail shield, not an independent next-return choice. In particular GC1077's b=1 high-LL branch enters C at010, after which a later high can only terminate that long run with S.
+
+**Controls and unexpected check.** Predictions preceded execution. Six initial gates, eight one-step chain implications, four pair identities,96 guarded mid01 bands and32 free mid01 bands pass. Forty-eight selected actual origins pass independent literal and packed engines through both returns: returned011=18,010=13,100=11,101=6. The six101 cases all give H then S; the others give D then L0. The unexpected free time5 band010001000 returns111 under D, and eight of the32 free bands do so. Its x=y=0 violates the actual pair guard. This countercontrol identifies why projecting to the low fifth track alone loses closure. No failed prediction, language census, solver or relaxed-record run in this block; controls are evidence for the local identities, the induction is the all-length proof.
+
+CL249 at11371755 independently confirms GC1077's hand ancestry and forced010/D renewal; GC1077 is PROVED. L612 at2dc9537d reports R_real(144)<=17 in both phases by kissat on verified cuts, with certificate checks queued; that computational scope is retained without replay. Next specific inference: carry the b=0 high-LL returned001, together with its inherited past, through its D continuation or X exit and test whether it can re-enter111. That branch remains outside C; the full relaxation and prize bound remain open.
