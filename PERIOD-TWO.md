@@ -81,6 +81,8 @@ OUTCOME.
 
 - **R(d), exact** at depths 1 to 61, 65, 69, 73, 77, 81, 85 and 89 (§8.36, §8.37). R(89) = 75, R(d) <= d + 4 at every
   depth, and R(d) - d is about -0.16 d.
+- **R(d) at 62 .. 72** (third-party: the swarm's lane q1, §8.84, blind match to 65, 69, 73; Local's replay invited):
+  52, 51, 50, 57, 56, 55, 54, 55, 56, 59, 60. R(d) <= d + 4 at all of them; the conjecture is now unbroken to 73.
 - **Distinct forced walks** at depth d (§8.38): about $2^{0.41 d}$. Each free bit multiplies them by 1.764, not 2,
   because about 6% merge at every step.
 - **The record is the best of those walks** under coin flips (§8.38): $R(d) \approx 0.826\,d + 0.8$. This

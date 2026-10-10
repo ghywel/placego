@@ -5529,3 +5529,46 @@ L606 is the typical case of a law whose worst case is exactly one half. Nothing 
 lane's best proved bound is $2|f| - 2$. **Prior work.** §8.20 (TC2: $|L_n|$ to 39, the minimal forbidden words, the
 entropy ceiling), SW (L569, L570: strip widths for minimal words to width 35), L606 (77 learned cuts). New to the
 record: the complete $w_{\min}$ census to length 48, the trace form and its tightness, $\tau(W)$ and the 28-lane.
+
+
+### 8.84 The free record to depth 73, the (10)^k family bounded, and a Jen-type theorem for finite patterns (swarm lane q1, graded; 2026-10-10)
+
+*Lane q1 of the owner-authorized swarm (independent agent, no access to the record; briefed with R(1..61) and
+S(0..17) only) was given the wall-form bound: prove C1, C2, then bound the survival T(w) of every finite pattern.
+Graded by Cloud 21:35 BST; its skeptic is running. Code and raw outputs outside git.*
+
+**Proved by the lane and verified by Cloud.** C1 and C2 (§8.39's wall form, now with the extended sense: $R(d)$ is
+infinite iff $S(d-1)$ is). The light cone and left-permutivity: $x_t(-1) = y_{t+1} \oplus h_t(y_1 .. y_t)$. The
+**consistency count**: exactly $2^{\lceil n/2 \rceil}$ patterns of $n$ cells survive to time $n$ (Cloud: all $n \le 20$
+by own code), so $S(n) \ge n$ and $S$ is nondecreasing. The **edge and diagonal** structure: the deepest black cell
+recedes one site per step, the diagonals from it obey a triangular recurrence and are eventually periodic with
+power-of-two periods (§8.59's Jen lemmas in the wall form). A **Jen-type theorem** (hand proof, checked line by
+line by Cloud): for a nonzero finite pattern beside any eventually periodic wall, no column of the forward evolution
+is eventually periodic; so a pattern surviving for ever would have an aperiodic visible sequence, which is #14's
+fact (Jen settles every periodic column 1) reached from the other side. The **barrier lemma**: a spatial 10-domain
+from depth $D$ on is invariant whatever happens nearer the wall (Cloud: 300 random trials, no violation), so the
+cells nearer the wall form a finite system. The **front lemma** for patterns $u(10)^k 0^\infty$. And by hand
+$T((10)^k) = 2k + 1$ for every even $k$ (Cloud: $k \le 24$, with $c_k = 5, 3, 5, 3, 13, 3, 13, 3, \dots$ at odd $k$).
+
+**Computer-assisted by the lane (not rerun by Cloud).** $T((10)^k) = 2k + c_k$ with $c_k$ periodic in $k$ modulo 2048
+and at most 31; for every $u$ with $|u| \le 16$ and every $k$, $T(u(10)^k) \le |u| + 2k + 31$ (57 of the 131,071 words
+$u$ have $u(10)^\infty$ surviving for ever, all with a period-2 orbit next to the wall); for $|u|, |v| \le 8$,
+260,728 of 261,121 families $u(10)^k v$ resolved with excess at most 32; every pattern with at most five black
+cells has $T(w) \le S(66) = 121$ (an effective-prefix lemma and the chain $0 \to 2 \to 8 \to 18 \to 34 \to 66 \to 122$).
+The first infinite family of patterns with a proved bounded excess.
+
+**Computed.** $S(0..72)$ exactly, by a depth-first search over consistent prefixes in C (48 chunks), three
+implementations agreeing to $N = 40$ and every stored maximiser re-simulated. Hence $R(1..73)$: it equals the
+record's values at every $d \le 61$ **and at 65, 69 and 73 (57, 55, 59), which the lane was not given**; new to the
+record are $R(62..64) = 52, 51, 50$; $R(66..68) = 56, 55, 54$; $R(70..72) = 56, 59, 60$. $R(d) \le d + 4$ holds at all
+of them, with equality still only at 2 and 13. Cloud reproduced $S(0..20)$ by own code. Bulk survival per odd step is
+$0.500 \pm 0.003$; distinct configurations grow like $2^{0.415 n}$ against $2^{n/2}$ prefixes (§8.38's merging).
+
+**Refuted as a route.** Survival after the leftmost cell's influence reaches the wall is not bounded: 58 at $n = 64$,
+61 at $n = 71$, growing like $0.85n$. **Not proved.** Finiteness of $T(w)$, or any $F(n)$, for general $w$; $S(n) \le 2n + 5$
+is verified to 72 only. The lane says where each attempt broke: no finite-state reduction for a pigeonhole; survival
+involves wall-born diagonals at age one, before any periodicity; the barrier works only behind a 10-domain.
+
+**Where it bears.** The doubling conjecture is now checked to $d = 73$ with no gaps; Local's `records.c` can replay the
+nine new values cheaply if it wishes; and the $(10)^k$ family is the first place a bounded excess is proved rather
+than observed, by the barrier-and-front mechanism, which is the structural statement to try to generalise.

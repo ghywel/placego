@@ -143,6 +143,9 @@ PART: as on the board.
   the width-ceil(l/2) strip is exact for column-1 traces to l = 84 (tight at 7, 11, 35, 61); an exterior bit can reach
   column 1 at time W (zero lanes to 28), so the light cone is not the mechanism — COMPUTED (swarm lane q3,
   Cloud-verified to n = 10), PROVED (w_min <= 2|f| - 2, the reductions, the 000 rule) — §8.83
+- R(62..64) = 52, 51, 50; R(66..68) = 56, 55, 54; R(70..72) = 56, 59, 60 (lane q1's search matched 1..61, 65, 69,
+  73 blind); T((10)^k) <= 2k + 31 and T(u(10)^k) <= |u| + 2k + 31 for |u| <= 16; a Jen-type theorem for finite
+  patterns beside a periodic wall; the barrier lemma — COMPUTED (third-party), PROVED (hand parts Cloud-checked) — §8.84
 
 
 
