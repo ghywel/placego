@@ -25592,3 +25592,70 @@ counterexamples in each case. The four slab transitions match exactly
 the single phase-0 exterior condition. Unexpected check: C permits all
 four local pairs of column-7 values at phases 1 and 2; no periodic
 exterior was silently imposed. This does not assert their global extension.
+
+
+GC1017 continuation, registered before the return-gate calculation.
+Missing inference: does the reduced condition x_7(4n)=0 propagate from
+one cycle to the next, or what correlated exterior pattern breaks it?
+Compute the exact four-tick first-cell output on 0abcd beside 0111;
+this has only sixteen inputs and no membership solver. Prediction:
+zero is not invariant for arbitrary a,b,c,d. Countercontrol: deleting
+the exterior dependence would incorrectly certify all sixteen inputs.
+Independent controls: literal truth-table shrinking cones versus packed
+right-half updates with zero and one padding. Unexpected check: the
+last cone bit may be relevant only under a specific earlier-bit guard.
+Record searched: `0111|q.?=.?.?3|p.?=.?.?4` + `white|hole|latch`;
+G16 and the OHC strip are relaxations with fresh exterior input per tick,
+not this exact four-tick cone. This is a gate calculation for the train
+interface, not a new one-hole census.
+
+First outcome: the sixteen cases give next x_7 = (NOT a) AND
+(NOT b) AND (c OR d). Only 00001, 00010 and 00011 break the next gate.
+Before extending: test whether this one-cycle eligibility domain is
+itself preserved. This is a finite closure obligation on nine source
+cells, not a longer seed run. Prediction: it fails; a surviving first
+cycle does not guarantee the second. Counterfactual if all 256 pass:
+the gate would supply a finite invariant and must receive an independent
+check before use. Retain an explicit failure, if found, and stop there.
+
+### GC1018 — Exact train-interface return gate, with nonclosure witness
+
+Hand identity, independent local controls passed; second reading pending.
+Let H be four right-half updates driven by the wall 0111, and suppose
+the first five cells on its right are 0abcd at the white phase. Then
+
+    H(0abcd)_1 = (NOT a) AND (NOT b) AND (c OR d).
+
+Consequently the next train-interface gate fails exactly on prefixes
+00001, 00010 and 00011. This is a spatial condition at the reduced
+boundary, not a forbidden visible word beside the original clock.
+
+Proof by cases, using the Rule 30 formula. After two ticks the first
+cell is NOT(a OR b), and the second is (NOT a) AND (b OR c).
+After three ticks the first cell is a. If a=1, the fourth tick makes
+it zero. If a=0 and b=1, the first three cells after two ticks are
+0,1,0, so the next first two cells are 0,1 and the final first cell is
+zero. If a=b=0, the first three cells after two ticks are 1,c,c OR d;
+the next first two are 0,NOT(c OR d), giving the displayed formula.
+
+The eligibility domain is **not invariant**. The explicit shrinking
+cones are
+
+    011010000 --H--> 00010 --H--> 1.
+
+The source passes one return but fails the next. Of the 256 nine-cell
+sources beginning in zero, 39 have this failure. Thus the slab plus
+one valid return does not supply a finite certificate of persistence;
+the exterior correlations must survive composition. Stop this closure
+candidate here, without a wider prefix sweep.
+
+`rule30_train_return_gate.py` checks all sixteen cases using the literal
+truth table and independently with packed updates under both zero and
+one padding. The last cone bit matters on 0000d, the unexpected guard.
+For a control in the original clock, append the witness to the prepared
+slab 100110. With either tested far-tail padding, column 7 first fails
+the required sample at time 8 and the original visible train fails at
+time 16, within GC1017's implied deadline 20. This confirms the
+interface's orientation and phase; it is not an absent-word claim.
+Next substantive input is a constraint inherited from an actual mixed
+entry that rules out, or accounts for, these return failures.

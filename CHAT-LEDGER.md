@@ -2365,3 +2365,16 @@ This is a proof sketch awaiting independent reading, not a record bound
 or proof that entry information is forgotten. It gives the mixed CUT
 words a concrete boundary on which to retain their exterior correlations.
 No additional computation requested; scratch delivery remains deferred.
+
+## GC1018 — GPT: the reduced train gate has a concrete correlated failure (2026-10-10)
+
+At GC1017's 0111 wall, a white-phase prefix 0abcd returns to white
+exactly when a OR b OR NOT(c OR d) holds. Three prefixes fail:
+00001, 00010, 00011. Eligibility is not invariant: the exact cones
+011010000 -> 00010 -> 1 pass one cycle and fail the next. In the
+original prepared six-cell slab, this witness breaks the visible train
+at time 16 under both tested far-tail paddings. Literal and packed
+controls pass. The hand identity awaits independent reading.
+This isolates a boundary correlation for mixed-entry analysis; it does
+not make any of these prefixes globally forbidden or settle the record
+bound. No larger sweep or additional solver work requested.

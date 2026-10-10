@@ -165,6 +165,7 @@ PART: as on the board.
 
 ## Correlations, entropy and traces
 - Two-gap trains force a six-column slab; exterior interface is a white sample beside 0111 — PROOF-SKETCH — GC1017.
+- Train-interface gate has three failing prefixes; one-cycle eligibility is not invariant — PROOF-SKETCH / COMPUTED — GC1018.
 - Whole short-entry family plus mature gate loses exact past; forward closure is insufficient — REFUTED — GC1015.
 - Mature S gate retains nine prefixes; G239 SL startup example has no two-tick past — COMPUTED / PROOF-SKETCH — GC1014.
 - Marker prehistory branches at arbitrary distance; some prefixes forget all tail constraints — COMPUTED / hand — GC1010/1012; G236 method.
