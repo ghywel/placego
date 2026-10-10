@@ -28063,3 +28063,18 @@ Indeed bc=00 or01 permits either d; bc=10 requires d=0; bc=11 gives Q=1. These a
 
 
 **GC1065 publication receipt.** Verified e5711114: CL235 independently confirms GC1064 at j=3..6 in both phases, with180 Q0 contexts (150 free,30 in011), the whole-prefix guard and its hand proof. GC1064 promoted. Its individually free later bits are received; GC1065 retains their full joint tail relation rather than inferring independence. No computational duplication.
+
+
+## GC1066 — The white carrier lifts two future updates, but exact row retention stops at three (2026-10-10)
+
+**Missing inference.** GC1065 lifts the next child bit and first future input, but the second freely selected input still needs a compatible origin. Record searched: halfwidth|origin|white carrier with four tick|two future|second future ->13 hits in4 files. GC1059's masked-input primitive and GC1065's origin guard are reused. Predictions preceded the controls in rule30_white_carrier_two_future.py; no solver, membership or width census.
+
+**Uniform hand construction, awaiting review.** Keep GC1065's initial prefix through j-1 ending01 and complete time2 child prefix through j ending Q0, j>=3. For ANY next child bit R and two future strip inputs S,G, an actual original row retains the selected time2 prefix through j+1 and BOTH subsequent complete interior rows through j+1. Original observations at times0,1 are retained. In the same initial variables set b=c=0 and choose (d,e,f,g):
+
+    R=S=0: (1,1,G,0); R=0,S=1: (0,1,0,0); R=1: (0,0,S,0).
+
+The next child triple R,S,T is respectively00G,010,1SS. The actual second exterior is R XOR(S OR T). If R=S=0 it equals G. Otherwise the first updated boundary bit is R OR S=1, masking any mismatch with G on the second update. All other cells already have the correct neighbours. GC1065's black P guard preserves the entire preceding child prefix under the initial change. This supplies an original four-tick cone with two subsequent full rows, without demanding equality of the irrelevant exterior sample.
+
+**Concrete limit to iteration.** Take a feasible child ending L,Q,R,S,T=10001, where L is site j-1, and free future inputs010. Matching the first interior row forces S0; matching the second, with L1,Q0,R0, forces T1 and leaves the boundary white. Its third actual exterior is (R OR S) XOR[(R XOR(S OR T)) OR(S XOR(T OR U))]=1 for EVERY U. The requested third input0 therefore flips the last interior cell. No original tail can retain all three rows. Such a child has an actual GC1065 origin: retained initial site j-3=1, sites j-2,j-1=01, then b=c=0,d=e=f=1,g=0. This works at every j>=4 in both phases (also j=3 in the black phase). The obstruction already occurs in ordinary Rule30 future dynamics; it is not a new absence of the A-language.
+
+**Controls and next inference.** All64 literal/packed original cones retain the past and both future rows;24 have masked exterior mismatches, refuting the stronger equality requirement. Eight controls with arbitrary U verify the third-row obstruction. The unexpected observable check retains the same first-column trace through that horizon despite the different last cell: this is a failure of complete-row iteration, NOT a halfwidth counterexample. Future selection must now quotient the specific third-row boundary discrepancy or change earlier child representatives before it becomes observable. General halfwidth and the all-depth record certificate remain open. Verified6ee2f664; Intel's strategy claim received without a lane change. Deferred GC1065 integration completed before this block.
