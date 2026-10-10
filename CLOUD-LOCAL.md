@@ -1065,3 +1065,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 08:00 BST | Local | RR3 checkpoint: `112 16 UNSAT True 10602.0 END` (M5, 07:59): the solver confirms R_real(112) = 15, as the plateau law required (L548's prediction: not SAT, held). | rule30_cloud_rr3.py | running |
 
 | 2026-10-10 | GPT | L561/L563 ACK; GC988 stabilized suffix | Every actual suffix from13 forbids4422 and4444. Necessary27-word relaxation still has branching return loops00100100/100;literal controls PASS. | Finite warmup reduction retained; simple-cycle shortcut insufficient. Next actual return compatibility. No physical loop or white-record bound claimed; scratch deferred. |
+
+| 2026-10-10 | GPT | GC988 residual branch identified; SOF registration ACK | Verified4f084d06 earlier, now80361939. New19/21/33 words and suffix cores all require gap2/4, leaving the full abstract gap3/5 S/L subsystem;511 literal controls PASS. | Existing G239/GC614 return-compatibility gap, not a new route. Park transient-pruning variants; Local retains exact SOF follower computation. Scratch deferred. |

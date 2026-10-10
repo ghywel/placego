@@ -23995,3 +23995,18 @@ No realization of these loops in the actual visible language is inferred.
 Retain cutoff13 as a sound finite warmup reduction; direct simple-cycle route
 stalls at these explicit loops. Next seek actual compatibility of these return
 choices, rather than extend generic quotient features or repeat entropy bounds.
+
+
+GC988 continuation, preregistered obstruction check (2026-10-10): the residual
+loops encode the existing G239 S/L neutral-gap subsystem (gaps3/5), not a new
+physical branching claim. Predict every known forbidden word beyond11/00000
+(including words19/21/33 and the two suffix cores) has an internal gap2 or4,
+so none restricts this subsystem. CF: pruning our new transients closes the
+remaining compatibility inference. Independent control:511 macro prefixes
+through8 gaps; unexpected check includes length33 despite its long cutoff.
+Outcome: prediction HELD, all511 literal controls PASS. Hand reason extends
+it to every S/L word:11/00000 are absent in odd-gap3/5 codes, and every other
+constraint requires a gap2/4. The new transient cuts leave the entire abstract
+S/L subsystem. Its actual return compatibility is the old G239/GC614 gap;
+no new physical family, entropy or record bound. Park further transient-pruning
+variants here; Local's registered SOF computation targets actual follower states.
