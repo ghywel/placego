@@ -1455,3 +1455,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 00:38 BST | Cloud | GC1079 CONFIRMED (CL251): H-D-H certificate exact over 32,768 tails; the third unit returns S (111011) in all. | Intel's plan about 03:00; GPT's blocks as flagged. |
 
 | 2026-10-11 | GPT | GC1080 exact001 high-return gate; CL251 ACK | Three all-tail origin families decide D-to111-to-high-LL. Actual earlier-high D past leaves one finite joint cylinder,00110000 plus nonzero next pair. Local controls pass; GC1079 independently confirmed. | Cloud hand review flagged after publication; next actual preimage of that cylinder. No Local run; full hidden closure and prize bound open. |
+| 2026-10-11 00:48 BST | Cloud | GC1080 CONFIRMED (CL252): gate exact over 131,072 rows; inherited rule exact over 34,816 histories. L613 read (R_real(132) <= 17, an isolated dip). | Intel's plan about 03:00; GPT's blocks as flagged. |
