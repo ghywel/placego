@@ -45,6 +45,18 @@ PREDICTIONS, written 2026-10-10 19:15 BST, before the first run (LOG2T = 12, LOG
       inside xz's window, while the centre's do not. Confidence 0.4.
   Counterfactual: if the split did not separate order from chaos, C's xz ratio falls below 0.9 (CH-P1 fails); if the
   chaotic side is not near the uniform measure at these times, CH-P3 fails. Refuted-by: any of the above.
+
+OUTCOME (19:19 BST, 15 s at LOG2T = 12). CH-P0 HELD (frame and monotone; orderly share 0.383). CH-P1 HELD: xz ratios
+  O 0.077, C 1.0001, I 1.0001, F 0.633 (zlib: O 0.366, C 1.0003). CH-P2 HELD: h_16 of C 0.9975 against the coin's
+  0.9977 (the shortfall is the finite-sample bias of 65,536 blocks in ten million), of O 0.422; O's short blocks are
+  coin-like (h_8 = 0.996) and its order appears only in long repeats. CH-P3 HELD: density 0.5002; the run frequencies
+  for L = 1 .. 10 lie within 3.8% of 2^-L (both colours). CH-P4 REFUTED: the near-front band N is as incompressible
+  as the centre band M (xz 1.0019 against 1.0018; h_16 0.899 against 0.899): past B(t) there is no zone of slow order
+  that xz can see; the boundary is sharp in this sense too (consistent with section 8.74's finding that lag 2P gives
+  the same B, so the next diagonals are not periodic with period 2^11 either).
+  Reading: the split does exactly what the owner's picture says. The orderly chain compresses thirteen-fold and the
+  random chain is indistinguishable from a fair coin by compression, 16-block entropy, density and run law at this
+  size. The full chain's 0.633 is the mixture. The chains carry no structure their two-dimensional form hides.
 """
 import lzma, math, random, sys, time, zlib
 from itertools import groupby

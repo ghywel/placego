@@ -58,11 +58,18 @@ and S(n) + 1 is even (both should be easy); (ii) an exact S(n) for n <= 25 or as
 maximising words and how many there are; (iii) any linear or polynomial upper bound on S(n) for a restricted class of
 patterns (for instance words whose first k cells are fixed), with proof.
 
-**D (the other phase).** With the wall in the other phase, x_t(0) = (t + 1) mod 2, define R°(d) in the same way (runs
-at time 0, the condition now at even times). Computed: R°(d) = R(d - 2) for every d from 5 to 27, and R°(3) = R(1),
-R°(4) = R(2). Prove this identity for all d, or find the first depth where it fails. Hint: the other phase is the same
-problem one time step later, but a zero run at time 1 is not simply a shrunken run at time 0, since the time-0 row is
-recovered from the time-1 row by the same XOR-OR solving step.
+**D (the other phase; corrected 2026-10-10, see the note below).** With the wall in the other phase, x_t(0) = (t + 1)
+mod 2 (black at even times), the wall's own update requires x_t(-1) = 1 at every EVEN time, including t = 0, and the
+visible sequence is column 1 at odd times. Define R°(d) as before (runs at time 0). Computed by brute force over
+the forced left half: R°(1 .. 12) = 0, 1, 4, 3, 2, 3, 4, 5, 4, 9, 8, 19, with end depths d + R°(d) = 1, 3, 7, 7, 7, 9,
+11, 13, 13, 19, 19, 31, all odd (in this phase the odd depths are the checks and the even depths are free, the reverse
+of the first phase). An earlier version of this question quoted a relation R°(d) = R(d - 2); it came from a computation
+that kept the first phase's odd-time condition after changing the wall, a different game, and is withdrawn.
+Questions: (i) prove the parity statement (every finite record of this phase ends at an odd depth) and the analogue of
+C2; (ii) the two phases are one evolution a time step apart, so prove R°(d + 1) >= R(d) - 2 and R(d + 2) >= R°(d) - 4
+(forward shrinking), and say what exact relation, if any, holds between the two records; (iii) R°(12) = 19 = d + 7, so
+the first phase's conjecture R(d) <= d + 4 does not transfer with the same constant: extend R°(d) as far as you can
+compute it and state the least c for which R°(d) <= d + c holds in your data, with the depths that attain it.
 
 ## How to answer
 

@@ -681,3 +681,8 @@ app is unpublished by design.
 - lexicon/rule30_exterior_repair.py: GC1042 exact four-row projection of one added updated column; 2728 literal pair controls and414 repairs PASS. Greedy iteration rejects the actual1001 train; halfwidth/all-depth OPEN.
 
 - lexicon/rule30_black_wall_scope.py: GC1043 corrects WA3's phase interpretation and question D; true free R°(3)=4, finite black-phase endpoints odd. Literal, packed and inverse-column controls PASS; no new record census.
+
+- `lexicon/rule30_cloud_chains.py` (Cloud, 2026-10-10, the owner's lead, side question): CH, the pattern read as one
+  binary chain and split at §8.74's boundary B(t). CH-P0 .. CH-P3 HELD (orderly chain xz 0.077; random chain 1.0001,
+  h_16 0.9975, density 0.5002, runs within 3.8% of 2^-L: a coin to every test); CH-P4 REFUTED (no compressible zone
+  past B(t)). §8.80.
