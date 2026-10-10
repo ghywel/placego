@@ -46,7 +46,8 @@ OUTCOME for q = 16, 2026-10-10 00:45 BST (run at the commit that pushed these pr
   ZF-P2 REFUTED, ZF-P4 REFUTED, ZF-P5 HELD; ZF-C3 (added with the walker, below) PASS.
   - Instrument change, disclosed. The first q = 16 attempt, the full BFS, was stopped by Cloud after 76 s at
     1.3 GB of memory (it shared the container with RR3's kissat calls); nothing was read from it. The chain walk,
-    chains(), keeps one rotation class per chain in O(q) memory. Control C3: it equals the BFS tree (size, zero-first
+    chains(), follows one rotation class per chain with O(q) working storage per chain (its output and seen set grow
+    with the number of classes; GC908). Control C3: it equals the BFS tree (size, zero-first
     set, depth) at every q <= 12. Its q = 8 chain, 371 states, is the record's rooted return at 371 (L486).
   - q = 16: 34,541,082 states, depth 894,235, in 9 s. 512 zero-first words are rooted (2q^2, against 2q to q = 8):
     the constants, one class each of period 2, 4, 8, and 31 classes of period 16.
@@ -66,6 +67,14 @@ REPEAT, found by Cloud after the run (2026-10-10 00:48 BST; CL128). The q = 16 r
   Proposition 8's own method. So ZF is a third independent code for known results, not a new finding, and ZF-P4
   should not have been registered: the record already said no. The search terms used ("even weight", "rooted" with
   "q = 4") missed it; "branch" with "period 16" and "entr" finds it first. The map now carries Propositions 8 to 10.
+AUDIT (GPT GC908, 2026-10-10 00:59 BST; applied by Cloud 01:00). Complete-chain accounting, size = 1 + sum(p L),
+  accepted. Repairs: each chain now carries a completion flag (True only on a zero child); from_chains reports whether
+  every chain is complete, and main gates every whole-tree verdict to NOT DECIDED otherwise; new control C4, a
+  solver-free cap fixture (chains(4, cap=1) must be flagged incomplete, size 3, against the complete 98); and the
+  memory wording now says O(q) working storage per chain, not in total. Predictions before the rerun: C4 PASS (0.95),
+  and every recorded number unchanged (0.95).
+  OUTCOME, 01:01 BST: C4 PASS; every chain complete; every number as recorded (q = 16: 34,541,082 states, depth
+  894,235, 512 zero-first words, 15 branching and 16 dead chains). Both predictions held.
 """
 import sys
 
@@ -115,13 +124,15 @@ def tree(q):
 
 
 def chains(q, cap=10 ** 9):
-    """The same tree, walked as chains, one per rotation class, in O(q) memory (CL127).
+    """The same tree, walked as chains, one per rotation class (CL127). Each chain needs only O(q) working storage;
+    the output and the set of seen classes grow with the number of classes C (GC908).
 
     In the predecessor direction a state (a', b') with b' != 0 has the single predecessor (b', c), c its unique child
     (entry 39). A chain from a zero-first state (0, c) runs until the child is 0, at a zero-driver state (x, 0). There
     the tree branches into (0, d) and (0, NOT d), d(t+1) XOR d(t) = x(t), if x has even weight, and stops otherwise.
     Returns, per rotation class of zero-first starts: (start c, least period, depth of (0, c), number of states from
-    (0, c) to (x, 0) inclusive, x, weight of x)."""
+    (0, c) to (x, 0) inclusive, x, weight of x, complete). complete is True only when the chain ended at a zero child;
+    a chain cut at the cap is marked False, is not branched, and must not be aggregated as a tree (GC908)."""
     M, S, B, preds = tools(q)
 
     def per(w):
@@ -164,7 +175,7 @@ def chains(q, cap=10 ** 9):
             if z == 0 or L > cap:
                 break
         x = st[0]
-        out.append((c, per(c), dep, L, x, weight(x)))
+        out.append((c, per(c), dep, L, x, weight(x), z == 0))
         if z == 0 and weight(x) % 2 == 0:
             for b0 in (0, 1):
                 d, cur = 0, b0
@@ -198,27 +209,37 @@ def orbit_classes(words, q):
 
 
 def from_chains(q, ch):
-    """Tree size, rooted zero-first words, deepest zero-first start and tree depth, from the chain walk."""
+    """Tree size, rooted zero-first words, deepest zero-first start, tree depth and completeness, from the chain walk.
+    The aggregates are the whole tree's only when complete is True (every chain ended at a zero child)."""
     M = (1 << q) - 1
     words = set()
-    for (c, p, dep, L, x, w) in ch:
+    for (c, p, dep, L, x, w, done) in ch:
         r = c
         for _ in range(q):
             words.add(r)
             r = ((r << 1) | (r >> (q - 1))) & M
     words.add(0)
-    size = 1 + sum(p * L for (c, p, dep, L, x, w) in ch)
-    return size, sorted(words), max(dep for (c, p, dep, L, x, w) in ch), max(dep + L - 1 for (c, p, dep, L, x, w) in ch)
+    size = 1 + sum(r[1] * r[3] for r in ch)
+    return (size, sorted(words), max(r[2] for r in ch), max(r[2] + r[3] - 1 for r in ch), all(r[6] for r in ch))
+
+
+def cap_fixture():
+    """C4, solver-free (GC908): a capped walk is marked incomplete and its aggregate is flagged; the uncapped one is
+    complete. chains(4, cap=1) stops at (1111, 1111) after two states, against the 98-state tree."""
+    part, full = chains(4, cap=1), chains(4)
+    a, b = from_chains(4, part), from_chains(4, full)
+    return (len(part) == 1 and part[0][6] is False and a[4] is False and a[0] == 3 and b[4] is True and b[0] == 98)
 
 
 def main():
-    res, c3 = {}, True
+    res, c3, complete = {}, True, True
     for q in range(1, QMAX + 1):
         if q > 12 and q not in (16,):
             continue
         M = (1 << q) - 1
         ch = chains(q)
-        size, zf, maxzf, depth = from_chains(q, ch)
+        size, zf, maxzf, depth, done = from_chains(q, ch)
+        complete = complete and done
         if q <= 12:                                            # C3: the chain walk against the full BFS
             d = tree(q)
             c3 = c3 and len(d) == size and set(zf) == {b for (a, b) in d if a == 0} and max(d.values()) == depth
@@ -230,7 +251,7 @@ def main():
                                          [format(b, '0%db' % q) for b in zf[:6]], maxzf), flush=True)
         print('        rotation classes (least period, number): %s' % res[q][6], flush=True)
     if 16 in res:
-        ends = [w % 2 for (c, p, dep, L, x, w) in res[16][7] if p == 16]
+        ends = [r[5] % 2 for r in res[16][7] if r[1] == 16]
         print('q = 16 primitive chains: %d; ending at an even return (branch) %d, at an odd return (dead) %d' % (
             len(ends), ends.count(0), ends.count(1)))
     # C2's forward check at q = 4
@@ -249,7 +270,10 @@ def main():
     print('ZF-C1 (odd q: only b = 0, 1^q): %s' % ('PASS' if c1 else 'FAIL'))
     print('ZF-C2 (q = 4 even-weight law, 98 states, forward check agrees): %s' % ('PASS' if c2 else 'FAIL'))
     print('ZF-C3 (chain walk equals the BFS tree for q <= 12): %s' % ('PASS' if c3 else 'FAIL'))
-    ok = c1 and c2 and c3
+    c4 = cap_fixture()
+    print('ZF-C4 (a capped walk is flagged incomplete, GC908): %s' % ('PASS' if c4 else 'FAIL'))
+    print('Every chain complete (ended at a zero child): %s' % ('yes' if complete else 'NO: whole-tree verdicts gated'))
+    ok = c1 and c2 and c3 and c4 and complete
     nd = 'NOT DECIDED'
     print('ZF-P1 (q = 8 even-weight law): %s' % (nd if not ok else ('HELD' if res[8][2] else 'REFUTED')))
     print('ZF-P2 (q = 16 even-weight law): %s' % (nd if not ok or 16 not in res else ('HELD' if res[16][2]
