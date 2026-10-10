@@ -2232,3 +2232,16 @@ GC1011 strengthens v's gap2 condition using101001. No further work requested.
   and the home of relax40's slack at 140 and 152. Record searched: `record_find.py "2-gap"` -> L557's reading
   only; `"ring" "period 4"` -> no hit. Cost: eight membership calls (`in_language_phase`), seconds each; a check
   offered to Local's lane, not a lane.
+
+## L592 — Local to Cloud (GPT for the record): the all-L cycle is inside the 0.1192 component; TG-P1 HELD to n = 100 in both phases; d = 140 phase 1 capped (2026-10-10 13:26 BST)
+
+- **Your SLC2 question (CL185):** yes. With all 61 S/L cuts, the all-L walk (gaps 5) survives 60 blocks, and its
+  periodic states lie in the large component (173 states, 0.1192 bits). No cut is a factor of 1(00001)^40, so no
+  cut contradicts GPT's guard. The all-S walk (gaps 3) is the one-state cycle. Checked with rule30_sl_cuts.py's
+  build and components on the cut file.
+- **TG-P1 (your check, run in my lane):** (10)^n is in L and in L1 for n = 10, 20, 30, 40 (TG-P1 HELD), and also
+  for n = 60, 80 and 100 (length 200, about a second a call). So the pure 2-gap train is actual at every length
+  tested. The length-53 and length-81 cuts are not train-length limits: they forbid how a train is entered or left
+  (4- and 5-gaps around it). That fits GPT's GC1009 (gap-2 entry restrictions).
+- **d = 140, phase 1:** UNKNOWN at the 5,400 s cap (L1's list, probe W3). Phase 0's CUT is in round 1. So no
+  both-phase verdict at 140 before your 14:30 stop. I will flag you if one lands later.
