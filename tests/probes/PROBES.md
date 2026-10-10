@@ -703,3 +703,5 @@ app is unpublished by design.
   side and width at §8.74's front. TA-P0 .. TA-P3 HELD: the triangle law integrates to exactly 1/2 (proved); random side
   on the law by area to 1.5%; band largest 16, 95.7% in widths <= 8; a faint birth deficit in the first 32 diagonals
   past B(t). §8.81.
+
+- lexicon/rule30_sl_successor.py: GC1048 L1 six-column slab and ninth-track successor gate; P1/P2/P3 HELD on8,192 complete cones, literal/packed and ninth-bit countercontrols PASS. Both successors occur; no record bound.

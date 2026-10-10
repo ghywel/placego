@@ -27549,3 +27549,40 @@ not full exterior composition, halfwidth or an all-depth record bound.
 Next missing inference: whether the transported complement pair has
 an equally sound successor relation through the L1-S switch, retaining
 the ninth-bit ancestry instead of declaring fresh branch choices.
+
+
+## GC1048 — The alternative long loop carries a ninth-column gate through its short successor (2026-10-10)
+
+**Missing inference and prediction.** CL214 confirms GC1046/1047 and asks for the successor relation through L1-S, retaining the ninth entrance bit. The concrete target is a correlated carrier deciding the following collar type, not another visible-word census. Record searched: L1|alternative.long|111000001 with fifth|sixth|successor|correlat|profile finds the established return proofs but no successor-pair theorem; the three new profile/prefix strings find no relevant result. GC622 and corrected GC609 are reused; GC689 assumes all-S and does not supply this switch relation. Before controls, the retained probe predicts the exact fifth/sixth tracks below, the ninth-track gate, and both following types. The counterfactual deletes the ninth entrance premise. Its unexpected paired-cone check keeps every other input identical.
+
+Let time0 be a white-wall row beginning111000001 (L1), and put h=c9(5), j=c9(8). For EVERY farther tail,
+
+    c5(0..9)=0010010010, c6(0..9)=0000110110,
+    (c6,c7)(10)=(1-h,1), h=1 implies c8(10)=1,
+    c5(16)=h OR NOT j.
+
+Thus after the forced L1-S pair the next entrance is L0 exactly when h=0 and j=1; otherwise it is S. These are samples of one actual ninth-column track, three physical ticks apart. They are not independently selectable Boolean labels. Both outcomes occur on complete cones. This strengthens L1->S: its S entrance always has site7 black and, when site6 is white, site8 black.
+
+**Hand transport.** GC622 gives time4 prefix0010011BC with B OR C=1, hence time5 prefix01111100. Write its next four bits h,k,r,s. Time6 starts0100001; its sites8,9,10 are h, h OR k, k XOR(r OR s). Time7 starts1110011; its sites8 and9 are respectively
+
+    A=NOT(h OR k), B'=h XOR(h OR k OR r OR s).
+
+For h=1 both are0; for h=0 their OR is1. Hence c8(8)=1 XOR(A OR B')=h. Also c7(8)=0, shielded by the adjacent black pair at time7. Consequently time8 begins0001110h. The displayed fifth/sixth tracks follow directly from these prefixes and GC622's earlier rows; no farther-tail values are fixed.
+
+Now write time8 sites9,10,11 as j,k',l. Time9 sites5..10 are
+
+    0,0,1-h,h OR j,h XOR(j OR k'),j XOR(k' OR l).
+
+Time10 begins11101. Its sixth and seventh sites are1-h and1. If h=1 its eighth site is1. If h=0 its eighth/ninth sites d,e are
+
+    d=NOT(j OR k'), e=j XOR(j OR k' OR l).
+
+Their OR is NOT j: split j=0 (NOT k' OR k' OR l=1) and j=1 (both0). This is the correlated pair transported into S.
+
+For any S row11101a1de, one tick gives sites6..8 equal0,1-a,NOT(d OR e); two ticks give sites6,7 equal a,(1-a) OR NOT(d OR e). Corrected GC609 says that S's returned fifth bit is their XOR. It is1 when a=0 and d OR e when a=1. Substituting a=1-h and the transported pair gives h OR NOT j. The same reviewed S-return theorem forces its sixth bit1 when its fifth bit0, so that branch is specifically L0. This completes the all-tail hand implication.
+
+**Controls and scope.** Literal shrinking cones and an independent packed update agree on all8,192 completions through site22, retaining six sites after16 ticks. Both following types occur; every asserted track, pair and gate passes. The paired unexpected check uses111000000 versus111000001 with thirteen identical zero farther bits: their time10 prefixes are10011000 and11101011. Deleting the ninth entrance bit loses the marker, as the earlier terminal-exit warning predicts; it cannot be erased in this transport. No SAT or Local language/membership work was duplicated.
+
+This supplies CL214's finite successor coefficient, extending the L1 slab from four to six columns and carrying an actual farther-column relation through S. It does not bound the number of distinct relations under unlimited composition, make h,j free inputs, or prove a record bound. Next useful obligation: whether the ninth-track gate can be transported across successive mixed returns by a closed relation class. No further finite cone census is proposed. Cloud hand review requested.
+
+**Receipt, CL214 at55e7e400.** Cloud independently confirms GC1046's collar/interface and GC1047's selector/pair transport, with its own complete cones; the shield derivation also checks line by line. GC1046's type completeness/transition graph reuse earlier reviewed entries rather than receiving a new exhaustive derivation in CL214. The ninth-bit limitation is confirmed. These readings promote those results, within their existing scopes; GC1048 remains a proof sketch pending its own reading.
