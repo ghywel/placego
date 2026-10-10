@@ -845,3 +845,13 @@ The index retains Q6's unbounded compatibility and Q7's actual-history budget ob
 restricted q32 sample scope, RR3 solver/DRAT separation and relaxed/physical language separation.
 Sources unchanged; no theorem promotion. Verified977f3618 and replayed SAT R_real111>=15 ACK.
 GC937 hand reading remains pending; carry/profile refinements stay stopped.
+
+
+### GC940 — Finite debt evidence remains available (2026-10-10 03:40 BST)
+
+GC939 telemetry wording clarified: RD16/GC319 and RD32/GC325 already measured rooted
+whole-prefix debts, independently recomputed L197/199 with a shared audited constructor.
+Map pointer restored. Driver period16 at N5 and32 at frontier give phase allowances75/91,
+even when the maximum witness is inherited. Finite all-phase ratio lower1048576/123>8525
+is arithmetic on those existing certificates, not all-K extinction or a later stage bound.
+No replay, extension or asymptotic promotion.

@@ -22121,3 +22121,42 @@ actual debt telemetry or a divergent N_j/(P+D_j) ratio on every rooted history.
 **Disposition.** Existing conditional route retained; missing map pointer restored.
 No status promotion or new experiment; next an incoming proof audit or an ancestry input
 that bounds this exact debt on actual histories. Scratch deferred; room closed.
+
+
+## GC940 — Finite debt evidence recovered, with the common-period guard (2026-10-10 03:40 BST)
+
+**Bears on:** Q7 joint same-history growth/debt. Source and hand-arithmetic audit only;
+no new walk, experiment, proof unit or stage bound. Record searched: RD16/GC319 +
+75/period16/period32/debt ->21hits6files; 8525/123 + RD32/debt/frontier ->4hits3files
+(unrelated numeric matches). GC319..325, GC323 and Local L197..199 review receipts read.
+
+**Scope correction to GC939.** Its statement that the conditional notes do not themselves
+supply telemetry must not be read as saying no actual finite debt evidence exists. RD16
+(GC319/L197) measured all sixteen N5 entry prefixes; RD32 (GC325/L199) independently
+recomputed their extensions through1048576. Both share the audited child constructor,
+with independently recomputed clocks/debts. No all-period upper bound follows.
+
+**Prediction/countercontrol.** At an N5 entry the terminal driver is zero and every
+driver in the prefix has common period16, despite the endpoint node entering period32.
+Thus the finite reference upper60 transfers with overhead15, giving75. At frontier
+M=2^20 the driver period is32; the same reference upper60 transfers with overhead31,
+giving91. It does not stay75 merely because the largest witness was inherited from
+the old stage. Conversely this overhead change is not a measured increase in debt.
+These are the existing GC319/325 bounds, checked without replay.
+
+**Finite ratio arithmetic.** For each represented prefix and each omitted genuine global
+rotation, GC315 gives reference D_phi<=60+31=91. With certified common periodP=32,
+M/(P+D_phi)>=1048576/123. The unexpected strict integer boundary is
+8525*123=1048575, so every covered prefix has this ratio strictly greater than8525.
+The conservative denominator92 applies only to the chosen reference representatives;
+it is not a justified all-phase denominator. No exact minimum ratio is claimed.
+At8526 the conservative test fails:8526*123=1048698>M; this does not prove any actual
+ratio is below8526. All arithmetic uses one fixed slope5/2 and the same whole prefixes.
+
+**Limits.** This is a finite good-prefix certificate, not a new stage-entry computation
+or GC323's all-K extinction theorem. It covers the known finite frontier with existing
+rooted rotation coverage; no later depth, N6 or infinitely many useful scales follows.
+GC321/325's positive endpoint drawups also prevent treating old maximum debt as a
+reset state. Existing finite evidence therefore supports calibration while the actual
+ancestry bound on future joined debt remains open. Restore its explicit map pointer;
+no new run, automatic frontier extension or board/prize promotion. Scratch deferred.

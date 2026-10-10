@@ -121,22 +121,23 @@ PART: as on the board.
 - Settling needs uniform O(q) stage budgets and unbounded period growth — OPEN / conditional PROVED — G164/165/184/186/187, Q7.
 - Every rooted walk returns; fixed-q excursion bound, return-word bijection and root-tree/nonroot-cycle split — PROVED — entry39/GC867, G273 (GC864..866).
 - No return in first11 steps after doubling; return-eight acyclic; automatic baseline — PROVED — G188/192/203.
-- Endpoint debt identity and selected waits — PROVED — GC652..702/684; no adaptive uniform-budget conclusion.
+- Selected-wait debt identities — PROVED — GC652..702/684; no adaptive budget.
 - Complete-source/stratum means, dependent spread and factor-q cap — PROVED — G274..276/W277 (GC869/870/872/890); baseline counting CLOSED GC892.
 - Fair-reset leaf weight2^-branch-depth; ambient/uniform-leaf mean transfer CLOSED — PROVED — GC921/CL141, G158.
 - Spread<=q-1, split fixture and complete doubled sampling — PROVED / COMPUTED — G6, GC922/925 (CL142/145).
 - Two occupied lifts preserve first-reset coalescence iff odd source pulse — PROVED — GC923/CL144.
-- Six-edge re-coalescence extrapolation refuted, reproduces driver429; refinement stopped — REFUTED — GC926/CL146, G6.3 SF2; clock guard G174.
+- Re-coalescence extrapolation refuted, repeats driver429; stopped — REFUTED — GC926/CL146, G6.3 SF2; clock guard G174.
 - Physical q16 tree:15 branches,16 entries q32 at87867..894235; N1..4=3,8,29,400 — COMPUTED — entry21/Proposition8, TM5/TM5b/TM6.
 - Whole in-tree sizes4,14,98,3066,34541082 throughq16; RC88 source nonphysical,371 physical — COMPUTED — ZF/CL126..128, GC907..910.
 - q8/q16 even-return classifications complete; physical sharp one-parity odd return exists — COMPUTED — RC88/RC16/RC16X/QX/QX2, GC861/862/915, SE/CL134.
 - Period64 first depth65821413; q32 stage>2.6e10; sixteen finite debts<=60 — COMPUTED — TM6/Propositions9/10, RD32/GC325.
 - q32 first16 rooted orbits return, mean1.007x2^32: restricted-prefix descriptive scale only — COMPUTED — RWC/RWX L488/522, GC927.
-- RW caps/max-live repaired; Lean matches census walk — PART / source PROVED — GC868, L490/491, GC867 RootedReturn.lean.
+- RW repairs/Lean census match — PART / source PROVED — GC868, L490/491, GC867.
 - Driver response intervals/fibres exact; boundary-only and nonphysical-fibre transfers CLOSED — PROVED — W278..281, GC894..901/903, CL120..126, L510..512.
 - Primitive fourth child and sharp/mixed entry constraints — PROVED — GC904/909/911/914/916; mask shortcuts CLOSED GC912/913.
 - Sharp profiles/fifth rising-edge identity; sustained physical floor refuted; further refinement stopped — PROVED / REFUTED — GC917/918/924, CL138/143/151.
-- Same-prefix debt streaming/rotation certificate targets joint growth and debt — conditional audit — GC310/312/315/939.
+- Same-prefix debt/rotation/pruning reductions — conditional, reviewed — GC310/312/315/323; audit GC939.
+- Finite debt60 through2^20; phase allowance91, no later bound — COMPUTED L197/199 — RD16/RD32, GC319/325/940.
 - Remaining: actual-history budget, gap2, all-left-edge TM/paperfolding, Rudin-Shapiro, q>=32 odd returns — OPEN (PART) — Q7; G129/140/141, GC155.
 
 
