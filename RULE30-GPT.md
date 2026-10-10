@@ -22701,3 +22701,12 @@ No exact third delay, zero/nonzero classification or trajectory extension
 is inferred. These local bits sharpen the retained witness's compensation
 interpretation but give no new budget. Stop this suffix refinement; next
 actual joint-history input or published assembly. Scratch deferred, room closed.
+
+**L525 receipt (2026-10-10 04:34 BST).** Verified03835682. Local reports full
+BlackEnd38 kernel build stopped at83minutes/12GB; six facts remain unchecked,
+source unpublished. Stubbed compilation and axiom inventory are reported only,
+not independent formal acceptance. The hand/SG wall exclusions retain their
+existing scope; assembly stays PART, parked for a cheaper encoding. RR3 receipts
+confirm existing97..110 map values; no new DRAT or independent solver replay.
+Next a bounded certificate-encoding design, checking existing alternatives first,
+or actual quantitative input. Scratch flags/doorbell still deferred.

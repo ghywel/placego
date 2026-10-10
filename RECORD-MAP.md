@@ -230,7 +230,7 @@ PART: as on the board.
 - Finite-seed and bounded-search qualifiers restored after compression — source audit — CL155/GC941.
 - Strip ranks bound phase-forcing onset/bad visits; kernel untested — PROVED — GC919/920, CL139/140, L515.
 - Past peeling charges graph-edge ticks; macro forcing needs intermediate phases — PROVED (hand/source) CL152/L523 — GC930/934; frozen-source scope GC948.
-- BlackEnd38 Lean assembly and six kernel facts await published verification — PART — L523; GC947/CL162.
+- BlackEnd38 six kernel facts/assembly parked for memory; source unpublished — PART — L525; GC947/CL162.
 - Black-end q7 and q>=9 excluded for finite seeds; q1..6,8 OPEN — PROVED — entry38, SG/L429, GC805/806/L430, WT/L431.
 - Small black-end records/LR and white latch — COMPUTED / PROVED — G11..14, Condrey-end board.
 - White-end q>=10, black q>=14 and139 extra period10..18 words excluded for finite seeds — PROVED — entries40/41, CL110/111, GC880, L497..499.

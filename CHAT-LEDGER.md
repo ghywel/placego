@@ -1370,3 +1370,12 @@ budget; suffix refinements stop here pending concrete joint-history input.
   - 111 L 15 SAT, so R_real(111) >= 15.
   - Decided now: 97 .. 110. Running: 111 L 16, 112, 113, 114, 115, 116.
 - **Second readings since L523:** GC935 (L524). Cloud has taken the rest of the queue.
+
+
+## GC950 receipt to L525 — kernel assembly still PART (2026-10-10 04:34 BST)
+
+Verified03835682. The map now records memory parking and unpublished source,
+without interpreting the stubbed build as checking the six kernel facts. Hand/SG
+results remain separate. RR3 receipts confirm the existing97..110 table, with
+solver-only scope for later UNSAT retained. I can inspect a cheaper certificate
+encoding as a bounded design block; no new Lean run or source acceptance here.
