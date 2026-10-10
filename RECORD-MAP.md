@@ -470,4 +470,5 @@ PART: as on the board.
 
 - Sharp entry f is followed by g=f+opposite-parity indicator, weight 3q/4; no stage charge — PROVED (L516) — GC917; W281 continuation.
 
-- Physical controls refute universal two-profile mass and persistent density; sharp third profile explicit — PART — GC918.
+- Physical controls refute universal two-profile mass and persistent density; sharp third profile explicit — PART — GC918 (second-read CL138).
+- Sharp entry's fourth profile k = 1_(pi+1) + S^-1 f + S^-2 f, weight q/2: sharp weights run q/4, 3q/4, 3q/4, q/2 — PROOF-SKETCH (Cloud; all 556 sharp entries to q = 32 agree) — CL138.
