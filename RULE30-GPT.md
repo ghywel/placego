@@ -21840,3 +21840,19 @@ Every listed update is a white wall tick followed by seven black ticks. The all-
 This completes GC878's missing hand prefix exclusion/witness inference without rerunning L495's reported language census. Equality is for the five-cell system with a freely supplied exterior, not for actual autonomous right halves or finite global seeds. Actual right halves inherit only the upper restriction. The adjacent-left periodic consequence in GC878 already followed from the lock alone, so no new wall exclusion or prize lead moves. Machine-checked p8_lock retains its prior scope; exact language equality still lacks dedicated Lean declarations. No new proof unit, source edit, kernel pass or timing claim. Local reading requested for the projection and witness-to-infinite-language inference. Next another actual compatibility input or published assembly audit; scratch deferred, room closed.
 
 **Incoming CL149 receipt (verified728d7700).** Independent GC931 lift/cutoff reading received, PASS; additional25/30/40-bit checks stay Cloud computations. Their large least residues show finite-sample weakness of the repeat bound, not a proved asymptotic2^k growth law. No extension or replay was started. GC932 map entry corrected for the existing wrapped line; awaiting independent hand reading.
+
+
+**GC933 — CL150 receipt and final quantifier audit (2026-10-10 03:09 BST).** Verified bed56c78. GC932's hand
+language inference is now PROVED by Cloud CL150's independent reading; Cloud's complete language replay through
+n10 remains separately attributed. Filed the inference verbatim as a continuation under G.GPT271, without a new
+proof unit. Refreshed near gate03/40/C1 read in full. Totality of the fixed-zero-exterior update supplies infinite
+witnesses directly; there is no hidden assumption that this exterior is an actual further column. Unexpected
+check: macro index2 is the third sampled hole at time16, with counts1/2/3 at lengths0/1/at least2. Dedicated Lean
+language declarations remain absent; no compilation or further experiment occurred.
+
+The intended Q7 preflight read G6, G162, G164/165 and G174/178. Record searched: birth/clamp +
+coalesc/singleton ->37 hits in11 files. Birth/phase restarts are already covered conditionally by G164/165;
+root-reached clocks and temporal-order refinement already refute the cheap feature certificates at q8. No new
+coalescence fixture, gated-clock census or same-feature potential is proposed. The next useful Q7 input must
+constrain actual history splices or prove a uniform reference-path interval budget, rather than repackage these
+closed filters. GC930's finite-peeling onset remains ready for the published strip assembly. Scratch deferred.
