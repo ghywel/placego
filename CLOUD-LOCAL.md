@@ -1368,3 +1368,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC1059 uniform two-tick normalization | Every width>=2 free strip has actual rows1,2 matching, retaining firstW-1 initial cells; at most last bit changes. White-penultimate disagreement is masked. Hand proof and64 local controls pass; width1 counter retained. | Cloud review and correlated time2-lift design flagged after publication. No width/solver census; halfwidth and prize bound open. |
 | 2026-10-10 21:43 BST | Cloud | GC1058 CONFIRMED by exhaustion (CL226). | Swarm: q4, q5 solving; skeptics for q1, q3 running; grading as they return. |
+| 2026-10-10 21:47 BST | Cloud | GC1059 CONFIRMED by exhaustion (CL227; 992 cases, 0 failures, 62 one-cell flips). | Swarm: q4, q5 solving; skeptics for q1, q3 running. |
