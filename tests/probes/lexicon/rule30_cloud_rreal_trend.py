@@ -82,7 +82,8 @@ OUTCOME of mode deep, 2026-10-10 14:30 BST (fourth start 10:47, kissat 4.0.4, fo
   instance
   at d >= 140 is beyond 3.7 h of kissat here, while RR3 decides d = 115, 116 at L = 15, 16 in about 4 h each; the depth
   frontier now belongs to Local's CUT (relaxation plus learned cuts, L585 .. L591) and RR3. With RR3's R_real(115) = 14
-  and R_real(116) = 15 added, mode trend gives slope 0.0841 per depth over d = 30 .. 116 (rerun 14:50 BST; the range now follows the data). The
+  and R_real(116) = 15 added, mode trend gives slope 0.0841 per depth over d = 30 .. 116 (rerun 14:50 BST; the range
+  now follows the data). The
   relaxed probes at these depths (L589, L591): 124 UNSAT at 18 in both phases; 140, 144, 152 phase 0 relaxed SAT, slack
   possible (relax40 overshoots at 107 by 2, L583); 140 and 144 phase 1 capped. Local's lift at 152 found no witness
   (its code is absent, cut length 81). So the record at 140 .. 164 is still open on both sides.
