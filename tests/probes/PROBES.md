@@ -622,3 +622,8 @@ app is unpublished by design.
   01 and pi in binary. CPU, standard library. Predictions in the docstring, pushed before each run. No data.
 
 - `lexicon/rule30_rrl_core_budget.py` — GC986: fullK18 admits at most one4422 core at all lengths; finite edge potential, literal controls; not a record bound.
+
+- `lexicon/rule30_cloud_rreal_trend.py` (Cloud, 2026-10-10, row Q6, the uniform target's test): TR, the trend of the
+  decided realizable records R_real(d) over d = 30 .. 114 (slope, block means, a shuffle counterfactual), and a deep
+  test at L = 18 for sampled depths 121 .. 168 with RR's query (pysat CaDiCaL, capped, resumable). CPU. Predictions
+  in the docstring, pushed before each run. Checkpoint outside git.
