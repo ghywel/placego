@@ -2,7 +2,7 @@
 
 *Written by Cloud (Claude) on 2026-10-10 at the owner's request: "an onboarding document I can give to Kimi, so it
 can get up to speed with what is going on efficiently without ingesting the entire git repository". It summarises
-the record as of 2026-10-10 06:52 BST and adds no result. Where it and the record differ, the record wins. Where it
+the record as of 2026-10-10 06:53 BST and adds no result. Where it and the record differ, the record wins. Where it
 and the owner differ, the owner wins.*
 
 ## 0. Why you are here
@@ -74,20 +74,26 @@ The first route is **finite type**: perhaps the bound is enforced by a finite li
 - **RLK** (Local, L555 and L556, 2026-10-10; `tests/probes/lexicon/rule30_relaxed_records_k.py`). At K = 16 there
   are 21 minimal forbidden words. relax16 equals R_real exactly for every d from 20 to 31, then climbs: at least 19
   against 10 at d = 75. The climb turns on a single missing word of length 17, `00100010001010100`. So lookahead 16
-  is not enough; this is about lookahead, not a verdict on finite type. The K = 18 language is computing.
+  is not enough; this is about lookahead, not a verdict on finite type.
+- **K = 18** (Local, L557, 06:50 BST): 25 minimal forbidden words, including L556's gap word. Read as gaps between
+  1s, the long words are spacing rules on runs of 2-gaps. Its sweep to d = 120 is running, with predictions
+  published: relax18 is expected to fix d = 75 and still climb above 17 later. If it stays at or below 17 to
+  d = 120, K = 18 is the first flat lookahead, and the certificate design below gets a concrete finite input.
 - **The certificate format** (GPT, GC970). Regular languages I_0, ..., I_C of finite column-pair words, indexed by a
   spatial white-run counter r. The exact inverse-column transduction is
   `h(u, v)(t) = (u(t+1) XOR (u(t) OR v(t)), u(t))`. Black first outputs reset r to 0, white ones increment it. The
   initial clock language lies in I_0, and the white image of I_C must be empty. Every check is an automaton
   inclusion. Nobody has shown that a closed family exists.
-- **What GPT found on 2026-10-10** (GC971 to GC976, RULE30-GPT.md, PROOF-SKETCH, not second-read):
+- **What GPT found on 2026-10-10** (GC971 to GC977, RULE30-GPT.md, PROOF-SKETCH, not second-read):
   - the exact images stay small for four depths (43 to 56 states);
   - a capped closure did not close;
   - boundary-only widening admits arbitrary white runs, for every allowance (GC974);
   - widening by internal factors of length 3 loses the bound (GC975);
-  - the lost constraint is concrete: 000 against 0000 at exact depth 5 (GC976).
-  The next step, open: a *contextual* separating constraint that keeps the bound under widening. A longer factor
-  length or a bigger allowance, tried blindly, is not it.
+  - the lost constraint is concrete: 000 against 0000 at exact depth 5 (GC976);
+  - keeping the exact leading-zero profile repairs that trap, but the closure still overflows (GC977).
+  The next step, open: recover the full false history, find its first unsupported continuation, and keep a
+  *contextual* separating constraint that holds the bound under widening. A longer factor length, a bigger
+  allowance or another scalar patch, tried blindly, is not it.
 
 **This is the frontier.** If you can do one thing, find a sound abstraction of the counter languages that closes, or
 a reason why none of a given kind can.
@@ -150,7 +156,7 @@ closed".
 ## 6. Your lane, ledgers and git (a proposal; the owner decides)
 
 **Proposed lane.** While GPT is away, take GPT's lane:
-1. the all-depth certificate design of §2 (GC970's format, after GC976), in reasoning first;
+1. the all-depth certificate design of §2 (GC970's format, after GC977), in reasoning first;
 2. adversarial second readings of new proofs from Local or GPT;
 3. literature checks for anything that looks new.
 Local keeps the computations (RLK, RR3, VC3). Do not duplicate a run another party has claimed.
@@ -197,7 +203,7 @@ write each reply as a ready-to-paste chat entry with a `## KM...` heading, and s
 4. **WORKING-TOGETHER.md §2 to §4**: the standard, the method, the git lanes. It was written for GPT; read "GPT" as
    "Kimi" where it gives you instructions.
 5. **The frontier itself:** CHAT-LEDGER.md from L555 to the end; RULE30-GPT.md sections GC970 to GC976 (search for
-   `#### GC970`); the headers of `tests/probes/lexicon/rule30_relaxed_records_k.py` and
+   `#### GC970`, through GC977); the headers of `tests/probes/lexicon/rule30_relaxed_records_k.py` and
    `rule30_records_real_sat.py`.
 6. **AGENTS.md**: the standing rules for an agent in this repository. Its points apply to you, with Kimi for GPT
    (`kimi/<topic>`, RULE30-KIMI.md), except point 10, the shared-scratch flags.
