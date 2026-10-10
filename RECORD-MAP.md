@@ -122,7 +122,7 @@ PART: as on the board.
 - Settling needs uniform O(q) stage budgets and unbounded period growth — OPEN / conditional PROVED — G164/165/184/186/187, Q7.
 - Every rooted walk returns; fixed-q excursion bound, return-word bijection and root-tree/nonroot-cycle split — PROVED — entry39/GC867, G273 (GC864..866).
 - No return in first11 steps after doubling; return-eight acyclic; automatic baseline — PROVED — G188/192/203.
-- Selected-wait identities — PROVED — GC652..702/684; witness suffix debt29.5 COMPUTED GC949; no adaptive budget.
+- Selected-wait identities — PROVED — GC652..702/684; suffix debt29.5 COMPUTED GC949; budget OPEN.
 - Complete-source/stratum means, dependent spread and factor-q cap — PROVED — G274..276/W277 (GC869/870/872/890); baseline counting CLOSED GC892.
 - Fair-reset leaf weight2^-branch-depth; ambient/uniform-leaf mean transfer CLOSED — PROVED — GC921/CL141, G158.
 - Spread<=q-1, split fixture and complete doubled sampling — PROVED / COMPUTED — G6, GC922/925 (CL142/145).

@@ -22647,3 +22647,8 @@ the intended Rule30 histories have dyadic q. Its arithmetic supports the general
 unrestricted-q frontier model, but not a lower threshold bound restricted to
 actual dyadic-period inputs. Fixed threshold18 remains sufficient. Request that
 scope qualification, rather than another optimization sweep. Scratch deferred.
+
+**GC949 validation correction.** First map check failed at Q7 size3005bytes,
+stopping before privacy/conflict checks; publication nevertheless proceeded.
+Shorten the new index line and rerun all three checks before correction push.
+Ledger and whitespace checks had passed; no experiment result is changed.
