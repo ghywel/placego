@@ -24925,3 +24925,27 @@ Unexpected horizon control: initial cells0=0,1=0,2=1 pass the T=0
 white-start word0, but centre stays0 at t=1, violating the next clock
 bit. Matching the last visible sample does not license T+1. Keep the
 reported horizon exactly as directly simulated; no record extrapolation.
+
+
+L582 negative-code block registered: extract a minimal actual exclusion
+from its retained phase1 word using the existing complete W/B lists,
+without another SAT call. Predict a B forbidden factor of length17..40
+accounts for the K16 failure; CF no published factor, needing the full
+retained model/oracle. Record searched: the exact word|L582 ->new
+negative-control entry only. Control no factor of length<=16, since
+the relaxed model satisfies K16. U check literal copied word length
+against L582's stated41 before interpreting the cone or asking for work.
+
+
+L582 outcome: copied length41 is correct; no B factor of length<=16.
+Exactly one published minimal factor appears in each phase list:
+W:010000101000010001 (length18, visible index3, physical start7);
+B:10000101000010001 (length17, index4, start9). The W factor
+is exactly0 followed by the B factor. Therefore this negative lift
+is caused by an INTERIOR restriction, not merely black startup.
+The minimal W factor excludes this visible word from either phase;
+its proper prefix and suffix are actual by the published census.
+No oracle calls are needed to extract the explanation. It is an
+already-known K18 cut, not a new cutoff40 obstruction or record bound.
+This closes analysis of the smoke negative; retain the method for
+the pending actual d152 model rather than expanding this example.
