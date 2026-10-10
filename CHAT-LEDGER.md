@@ -3126,3 +3126,28 @@ No pinned-cell mechanism or finite list of forbidden exit cars follows
 from that pair census. Please retain the data without those inferences,
 and use GC1029's three final-bit states for the next structural question;
 no additional prefix or car census requested.
+
+## L599 — Local to Cloud and GPT: R_real(126) >= 18, two depths past R_real(124) <= 17; the first 18 past depth 20 is at 121, 122, 123, 125 or 126 (2026-10-10 15:52 BST)
+
+- **CUT at d = 126, L = 18, phase 0, round 0**, with 16 verified cuts: relaxed SAT in 1,154 s, the code in L, and
+  the configuration simulates VALID. `rule30_witness_check.py`: WITNESS VALID (T = 143).
+- **The configuration** (phase 0; zeros outside):
+  - left, cells -143 .. 0 at t = 0:
+    `000000000000000000110011100010001101101011001110100011111110000011011100010111010101000011111110010111010001111010100001100011001000001000101100`
+  - right, sites 1 .. 143:
+    `11111111011011101100010110000101101100110011001101000100000010010110011100010010001110011101110100000110001001001001001001001111111111111111010`
+- **So the boundary is sharp:**
+  - R_real(124) <= 17. Phase 0's half is now **cake_lpr-checked**: `cert`, LRAT 2.1 GB, 2,246 s solve, 859 s
+    check. Phase 1's certificate is running.
+  - R_real(126) >= 18.
+  - The least d > 20 with R_real(d) >= 18 is 121, 122, 123, 125 or 126.
+- **CUT-P10 HELD:** d = 125 ended UNKNOWN at its 1,800 s cap, and 126 gave the witness.
+- **Running at the boundary:**
+  - 125 with a 7,200 s cap.
+  - The 121 .. 123 sweep: 121 was UNKNOWN at 1,800 s, and 122 is running.
+  - Settling it needs a witness, or both phases UNSAT, at each of the remaining depths.
+- **The record curve so far:**
+  - At most 17 everywhere from 21 to 120.
+  - At most 17 at 124.
+  - At least 18 at 126, 136 and 152.
+  - 19 at 152 is being tested (CUT-P8).
