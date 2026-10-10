@@ -402,15 +402,30 @@ section band
 variable (x0 : ℤ → Bool) (e : ℤ) (he : x0 e = true) (hl : ∀ j < e, x0 j = false)
 include he hl
 
-/-- Lemma B2: no P ≥ 1 is an eventual period of every diagonal. -/
-theorem lemma_B2 (P : ℕ) (hP : 1 ≤ P) :
-    ¬ ∀ k : ℕ, ∃ T : ℕ, ∀ t, T ≤ t → D x0 e k (t + P) = D x0 e k t := by
+/-- Lemma B2, quantitative: some diagonal k ≤ 4^P + 1 does not have eventual period P (the form of Nersissian's
+m + 2 ≤ 4^(Q_m), here for every configuration with a leftmost black cell). -/
+theorem lemma_B2_quant (P : ℕ) (hP : 1 ≤ P) :
+    ¬ ∀ k : ℕ, k ≤ 4 ^ P + 1 → ∃ T : ℕ, ∀ t, T ≤ t → D x0 e k (t + P) = D x0 e k t := by
   intro h
-  choose T hT using h
-  obtain ⟨Ts, hTk⟩ : ∃ Ts, ∀ k, k ≤ 4 ^ P + 1 → T k ≤ Ts :=
-    ⟨(Finset.range (4 ^ P + 2)).sup T, fun k hk => Finset.le_sup (Finset.mem_range.mpr (by omega))⟩
-  have hper : ∀ k : ℕ, k ≤ 4 ^ P + 1 → ∀ t, Ts ≤ t → D x0 e k (t + P) = D x0 e k t :=
-    fun k hk t ht => hT k t (le_trans (hTk k hk) ht)
+  have common : ∀ n : ℕ, n ≤ 4 ^ P + 1 →
+      ∃ Ts, ∀ k : ℕ, k ≤ n → ∀ t, Ts ≤ t → D x0 e k (t + P) = D x0 e k t := by
+    intro n
+    induction n with
+    | zero =>
+      intro hn
+      obtain ⟨T, hT⟩ := h 0 (by omega)
+      exact ⟨T, fun k hk t ht => by
+        have : k = 0 := by omega
+        subst this; exact hT t ht⟩
+    | succ n ih =>
+      intro hn
+      obtain ⟨T1, h1⟩ := ih (by omega)
+      obtain ⟨T2, h2⟩ := h (n + 1) hn
+      exact ⟨T1 + T2, fun k hk t ht => by
+        rcases (show k ≤ n ∨ k = n + 1 by omega) with hk' | hk'
+        · exact h1 k hk' t (by omega)
+        · subst hk'; exact h2 t (by omega)⟩
+  obtain ⟨Ts, hper⟩ := common (4 ^ P + 1) le_rfl
   have hper1 : ∀ k : ℕ, k ≤ 4 ^ P → ∀ t, Ts ≤ t → D x0 e ((k : ℤ) + 1) (t + P) = D x0 e ((k : ℤ) + 1) t := by
     intro k hk t ht
     have := hper (k + 1) (by omega) t ht
@@ -464,6 +479,11 @@ theorem lemma_B2 (P : ℕ) (hP : 1 ≤ P) :
   rcases Nat.lt_or_gt_of_ne hv with hlt | hlt
   · exact key a b hlt (by omega) w0 w1
   · exact key b a hlt (by omega) (fun s hs => (w0 s hs).symm) (fun s hs => (w1 s hs).symm)
+
+/-- Lemma B2: no P ≥ 1 is an eventual period of every diagonal. -/
+theorem lemma_B2 (P : ℕ) (hP : 1 ≤ P) :
+    ¬ ∀ k : ℕ, ∃ T : ℕ, ∀ t, T ≤ t → D x0 e k (t + P) = D x0 e k t :=
+  fun h => lemma_B2_quant x0 e he hl P hP (fun k _ => h k)
 
 /-- Entry 9's corollary: for every N some diagonal k ≥ N is eventually white. -/
 theorem infinitely_many_white (N : ℕ) : ∃ k : ℕ, N ≤ k ∧ EvW x0 e k := by
@@ -568,6 +588,7 @@ end JenPow2
 #print axioms JenPow2.run_bound
 #print axioms JenPow2.per_gcd
 #print axioms JenPow2.run_bound_gcd
+#print axioms JenPow2.lemma_B2_quant
 #print axioms JenPow2.lemma_B2
 #print axioms JenPow2.infinitely_many_white
 #print axioms JenPow2.infinitely_many_black

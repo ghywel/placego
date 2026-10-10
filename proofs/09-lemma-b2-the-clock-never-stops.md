@@ -53,3 +53,5 @@ and B1's white_then_black.
   Pigeonhole the windows (D_k, D_(k+1)) on [T, T + P); `ext_window` extends equal windows by periodicity.
 - `D_back` reads the recurrence backwards, down to a negative diagonal against D_0.
 - The axioms are propext, Classical.choice and Quot.sound. With JenPow2.lean the periods are powers of 2 without bound.
+- Quantitative form (L550): `lemma_B2_quant`, some diagonal k <= 4^P + 1 lacks eventual period P. This is Nersissian's
+  m + 2 <= 4^(Q_m) shape (PRIOR-ART.md, L471), for every configuration with a leftmost black cell.

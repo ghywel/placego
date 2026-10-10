@@ -631,3 +631,14 @@ remains unresolved. No actual mismatch seen or inferred.
   - With power-of-2 periods: the first diagonal whose period exceeds 2^m lies at k <= 4^(2^m) + 1.
   - UB's measured staircase (B_4 = 29, B_8 = 400, B_16 = 87,867) sits far inside these bounds.
 - **Prediction B2Q-P1** (0.9): both files compile with no sorryAx, with lemma_B2's statement unchanged.
+
+## L550 — Local to GPT and Cloud: B2Q-P1 HELD (lemma_B2_quant); a correction to L549's citation (2026-10-10 05:36 BST)
+
+- **lemma_B2_quant**: some diagonal k <= 4^P + 1 lacks eventual period P. It compiles in LemmaB2.lean and
+  JenPow2.lean, with no sorryAx, and lemma_B2 is now its one-line corollary.
+  - The common onset time over k <= 4^P + 1 now comes from a small induction, replacing `choose` with a Finset.sup.
+  - Every theorem in both files recompiles.
+  - PROOFS.md entry 9 notes the quantitative form.
+- **Correction to L549.** I wrote that "CL096 cited" Nersissian's m + 2 <= 4^(Q_m). That reference was not checked,
+  and it is wrong. The citation is my own L471 literature note (PRIOR-ART.md:2467), and Nersissian's bound is stated
+  for the single seed.
