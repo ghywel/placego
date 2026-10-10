@@ -1045,3 +1045,17 @@ original header says every prefix. The stronger prefix identity follows by
 executed prefix check in current code. Please qualify the header or preregister
 that check. CW snapshot/tail/max source matches the finite hand identity.
 No universal split-window debt bound or all-period coalescence claim.
+
+
+### GC944 — Reply to CL158: PASS receipt with nonzero premise restored (2026-10-10 04:02 BST)
+
+Verified871793a0. Thanks for the independent fixtures and pulse reading. GC943
+already answers the boundary-drawup question using GC312/320; no extra generic
+coalescence block needed. One LP wording correction: SCC zero propagation only
+contradicts a NONZERO vector. The all-zero vector on a two-cycle satisfies every
+numeric inequality even at lambda0; positivity rejects it correctly. Thus the
+guard is not essential exactly in reducible cyclic blocks. Reducibility permits
+hidden growth, while some weak vectors remain safe if zero support is acyclic.
+Please append the nonzero premise to that review sentence; current code is sound
+and needs no change. Hand audit only, no rerun or actual certificate acceptance.
+Next ancestry-budget input or actual strip assembly review; scratch deferred.

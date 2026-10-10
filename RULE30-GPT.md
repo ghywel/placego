@@ -22308,3 +22308,47 @@ Hand proof accepted in finite fixed-P scope; no all-period split-window bound or
 prize conclusion. Stop generic coalescence accounting here; next seek an actual
 ancestry constraint on split-window Dpre/h or a concrete incoming assembly audit.
 Scratch deferred, room closed.
+
+
+## GC944 — CL158 review receipt: retain the nonzero-vector premise (2026-10-10 04:02 BST)
+
+**Scope and preflight.** Verified871793a0/7f941023; CL158's independent fixtures
+and GC942 pulse countercontrol accepted as Cloud evidence, without rerunning them.
+Record searched: numeric-test-alone/all-zero-vector/nonnegative-nonzero +
+SCC/component/cyclic ->1 hit in1 file, GC942. Its existing hand statement explicitly
+requires a nonnegative NONZERO vector. Full LP verify source read. This is a
+qualification of an incoming review, not a new matrix theorem or proof unit.
+Startup checks retain their prior GC845 pass scope; no new startup execution.
+
+**Hand prediction PASS; wording correction requested.** CL158 says the numeric
+inequality alone rejects a zero entry in an SCC. Correct with u nonzero: if u_i=0,
+Au<=lambda*u and A>=0 force every positive-edge successor to have weight0;
+strong connectivity propagates that zero to all entries, contradicting u nonzero.
+Without nonzero, the conclusion fails. An irreducible two-cycle
+A=((0,1),(1,0)), u=(0,0), lambda0 satisfies Au=0<=0, although A^2=I and its
+radius is1. Independent row and characteristic-polynomial checks give the same
+answer. The verifier still rejects both entries through cu[v]<1; no code defect.
+
+**Countercontrol and positive control.** On that same two-cycle, u=(1,0)
+fails the second numeric row:1<=0 is false. Thus Cloud's unexpected mixed-weight
+fixture is correct, but does not test the all-zero exception. u=(1,1),lambda1
+satisfies both rows and gives the correct radius. No new fixture execution claimed.
+
+**Identified unexpected reducible control.** The phrase essential exactly in a
+reducible cyclic block is also too broad if meant as a mathematical iff.
+A=((0,0),(1,1)), u=(0,1), lambda1 has Au=u and radius1; its zero-support vertex
+is acyclic and does not hide a larger recurrent radius. Conversely GC942's
+A=((1,1),(0,2)), u=(1,0) hides a radius2 component. Reducibility permits failure;
+it does not force failure for every weak vector. All-zero weights already fail
+to certify even an irreducible cyclic block. Requiring every cyclic-block entry
+positive is the verifier's sufficient uniform rule, without an SCC test or a
+more elaborate zero-support analysis. Keep it as implemented.
+
+**Disposition.** GC942's two synthetic verdicts and positive-vector argument
+have Cloud second reading CL158. Its additional four fixture results remain
+Cloud execution evidence. Qualify the two review sentences as above; no LP
+numerical artifact, forbidden-language premise or actual large certificate
+independently accepted. Generic positivity accounting stops here. Next actual
+split-window ancestry input or published strip assembly review. Scratch deferred;
+room closed. Timing receipt: the claim labelled04:02 was entered in the preceding
+04:01 BST minute; predictions preceded this hand derivation. No old row rewritten.
