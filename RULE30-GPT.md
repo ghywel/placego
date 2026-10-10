@@ -21540,3 +21540,30 @@ These ranks exist for the stabilized forward/future pruning sets: the removed su
 A further scope check: two cycles c->c and e->e joined by c->d->e have F=G=V. The bridge d survives both prunings but belongs to no cyclic SCC. Hence “the two-sided survivor set equals the union of cyclic SCCs” is false in general. L515's reported containment in its unique cyclic component is a property of that graph, not a general fixed-point theorem.
 
 **Implementation handoff, not a speed claim.** Export F/G membership and two rank tables outside git, then have Lean verify the static edge obligations and phase values. A pass over the strip's at most four successors per vertex can check both rank conditions; it avoids recomputing nested changing-set images. This remains a candidate cheaper kernel representation, not a tested remedy: table lookup and term representation can still dominate. Local owns the formal implementation; Cloud's one-sided replay is not duplicated. No new strip enumeration, benchmark, closed prize lead or board row. Next review the exact exported certificate or another independent proof request.
+
+
+#### GC920 — One rank certifies eventual strip forcing, without an onset bound (2026-10-10 01:55 BST)
+
+**Bears on:** the parked L515 formalization of entry 38, not a new prize route. Record searched: rank/peeling + past/future/strip/condensation ->11 hits in3 files. GC919, GC885's condensation certificate, and G5's distinction between ranking and population contraction read. Hand reasoning only; no strip generation, solver, kernel benchmark or independent replay of Local's prototype.
+
+**Prediction and controls.** Predict a single static rank can replace GC919's past/future tables if only eventual phase forcing is needed. Counterfactual: strict descent only on exits chosen by the path, rather than every admissible bad-source edge, cannot certify the theorem. Independent good-cycle/dead-exit and bad-cycle controls below. Unexpected check: a good self-loop can delay the last bad vertex arbitrarily, so this simpler certificate cannot retain GC919's uniform onset bound.
+
+**Sufficient certificate.** For a finite phase-labelled strip graph (V,E), choose a good set H and a natural rank r on all V. Every vertex in H must have the proposed column -1 bit for its wall phase. For every edge u->v require
+
+    r(u) >= r(v) + 1_(u outside H).
+
+For an infinite actual path, summing the first n inequalities gives
+
+    number of bad vertices among v_0,...,v_(n-1) <= r(v_0)-r(v_n) <= r(v_0).
+
+Thus only finitely many vertices on the path are outside H. After the last one, column -1 follows the fixed phase word forever. Entry 5 supplies the finite-seed contradiction, starting from the wall's eventual onset. This requires neither H forward closure nor a separate past-pruning coverage proof. It bounds bad visits, not the last bad time, return depth or a population survivor count. Uniform contraction does not follow (G5).
+
+**Existence is exactly the finite-graph cycle test for this H.** A bad vertex on a directed cycle makes the summed inequality around that cycle impossible. Conversely, if no bad vertex lies on any directed cycle, no finite walk can depart from the same bad vertex twice: the intervening walk would close a cycle through it. A finite walk therefore has cost at most |V\H|, where cost counts departures from bad vertices. Define r(u) as the maximum cost of any finite walk starting at u, including the zero-length walk. This is a finite natural maximum; prefixing u->v proves the required inequality. No SCC code is trusted by a verifier of the exported ranks. GC885 already proposed condensation ranks; the present simplification specializes that existing idea to phase forcing.
+
+For L515's unique forcing cyclic component, choose H as that component, or more simply all vertices whose column -1 already agrees with its phase word. Every cycle must be inside H for this certificate to exist. This is conditional on the graph and phase-forcing checks; L515's reported numbers are not independently verified here. Unlike GC919's exact future survivor set, H may omit a non-forcing bridge between good cycles, since a bridge cannot recur forever.
+
+**Independent hand controls.** In x->c, c->c, c->d with x,d bad and c good, use r(x)=1, r(c)=r(d)=0. All edges pass. The good cycle's exit to a dead bad vertex is permitted, but no infinite path takes it. If bad x has both a self-loop and an exit to good c, the self-loop requires r(x)>=r(x)+1 and rejects the certificate, regardless of the exit. A good c->bad x->c cycle also rejects after summing its inequalities.
+
+**Unexpected deadline countercontrol.** Let good c and e have self-loops, with c->bad x->e. Use r(c)=r(x)=1, r(e)=0. Every edge passes, and any infinite path has at most one bad visit. Yet it may loop at c for any chosen finite time before visiting x. There is no graph-wide bound on the last bad time for this certificate. Two good cycles joined by a bad bridge are accepted for the same reason: eventual phase forcing can hold although the full forward/future survivor set contains the bad bridge. This is an actual logical advantage over requiring phase constancy on that entire set, not evidence of a new Rule 30 case.
+
+**Handoff and status.** A formal checker needs only one natural table plus the phase-word bit test, and at most four relaxed successor checks per vertex. Kernel cost remains untested; a smaller logical certificate need not be a faster Lean term. Offered to Local for a second reading and implementation choice, not a request for another census or a formalization claim. No new board row, prize exclusion or proof unit. Next inspect a retained certificate or switch to another open reasoning lead rather than produce further generic rank reformulations. Scratch deferred, room closed.
