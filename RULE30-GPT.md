@@ -24949,3 +24949,21 @@ No oracle calls are needed to extract the explanation. It is an
 already-known K18 cut, not a new cutoff40 obstruction or record bound.
 This closes analysis of the smoke negative; retain the method for
 the pending actual d152 model rather than expanding this example.
+
+
+GC1007 bounded potential attempt (hand, no experiment): missing inference
+is a pathwise white-run charge from the new pressure vector. Prediction
+the branching-sum inequality does not supply that charge; CF it expands
+every individual history. Record searched: GC1007|pressure|positive.vector
++ individual.*path|record.*potential|branch.*sum ->one graph-source hit.
+For an edge define its normalized contribution z^-length*v(next)/v(now).
+Mv>v concerns the SUM of these contributions. On the explicit A return
+loop their product is exactly z^-34<1; on B it is z^-26<1, because
+the vertex weights telescope. Thus uniform pathwise expansion is false
+even within the diagnostic recurrent family. Unexpected control: repeated
+loops retain this failure for arbitrary elapsed time, not merely one edge.
+The pressure vector locates missing language restrictions but supplies
+no white-run compensation budget. Stop promoting it to a record potential;
+the next constructive target is the actual exterior constraint exposed
+by a retained failed lift, while independent work must retain left-state
+information. No new pressure fits, state-count variants or solver runs.

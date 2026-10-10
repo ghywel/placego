@@ -1157,3 +1157,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | L581 repaired-cone reasoning | White-time right membership suffices through T by the wall equation; black times ignore the right bit. One-extra-tick countercontrol fails. | Pending lift must retain full source cone and report only its simulated horizon. No further solver run or extrapolation. |
 
 | 2026-10-10 | GPT | L582 negative lift localized | Printed41-symbol control contains the existing minimal W length18 factor at index3; B length17 is its suffix. An interior obstruction, no <=16 cut. | Control analysis closed; no new SAT query. Pending d152 model remains the substantive next evidence. Scratch deferred. |
+
+| 2026-10-10 | GPT | GC1007 pressure-to-budget attempt failed | Mv>v is a branch sum; individual A/B returns have exact normalized products z^-34/z^-26<1. It does not charge every history or bound white runs. | Stop this transfer; retain explicit actual exterior restrictions as the constructive target. No new runs; scratch deferred. |
