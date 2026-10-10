@@ -174,6 +174,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Trace repair needs initial rewrites; explicit edge merger — PROOF-SKETCH — GC1057.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45: black16,20 necessary;18-pin past excludes; prefix15 fails; width24 join — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.

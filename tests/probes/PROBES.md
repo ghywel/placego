@@ -718,3 +718,5 @@ app is unpublished by design.
 - lexicon/rule30_long_short_origin.py: GC1055 L0-S source-prefix OR guard,256 complete local cones and independent intermediate controls PASS; hand corollary confines L1 to first three typed S/L returns, at most once. Actual L1-S source countercontrol passes; no mixed-word census.
 
 - lexicon/rule30_short_marker_decay.py: GC1056 finite SS sixth-marker monotonicity and mature fifth-track table;128 complete cones, intermediate independent controls and black-persistence/L1-origin countercontrols PASS. LL selector and all-depth closure remain open.
+
+- lexicon/rule30_trace_prefix_repair.py: GC1057 frozen-initial-row repair REFUTED atW3,l5; exact trace01000 origin and edge-merger controls PASS. FirstW-1 preservation HELD only on1,024 conditionedW4,l7 cases; no uniform proof or larger scan.
