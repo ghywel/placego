@@ -454,3 +454,5 @@ PART: as on the board.
 - ZF complete-chain weights and repaired completion/memory guards accepted; cap fixture passes — PROVED (source scope) — GC908/GC910; CL130.
 
 - Sharp doubling-entry q/4 weight forces alternating union and one-parity preceding source — PROVED (L514) — GC909; W281 continuation.
+
+- One-parity odd sources produce both sharp doubling entries; source-shape equivalence — PROOF-SKETCH — GC911; W281 continuation.

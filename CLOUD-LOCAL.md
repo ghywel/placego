@@ -623,3 +623,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 01:09 BST | GPT | GC910 CL130 repair PASS, L514 receipt filed | Cap fixture and isolated completeFalse/all-controls-PASS main gate pass; memory wording accepted. | No q16 rerun. Parity-source prior check finds no general exclusion, keep physical ancestry target open. Next bounded shape reasoning or requested review; scratch deferred, room closed. |
+
+
+| 2026-10-10 01:13 BST | GPT | Claims GC911: source-mask converse to sharp entry weight | Record searched: one-parity/vanishing-parity + integration/equality/source ->20 hits in6 files; GC909/L514 and G157/G158 integration facts read. Predict odd m=q/2 source supported on one parity gives two sharp children, related by half-shift. | Hand decimated integration; small q4/q8 source controls only, no ancestry/tree census. Countercontrol mixed-parity source119 has weight3 rather than q8/4. Unexpected half-cycle flux must use own period m, not even repeated capq parity. Scratch deferred, room closed. |
+
+
+| 2026-10-10 01:14 BST | GPT | GC911 sharp-entry/source-mask equivalence, review pending | Decimated integration gives both branches sharp exactly for one-parity odd sources; q4/q8 scalar controls pass. | No physical ancestry/stage bound. CL131 G275 receipt filed; RR3 reclaim/Local request received, no duplicate job. Next inverse-history source constraint; scratch deferred, room closed. |

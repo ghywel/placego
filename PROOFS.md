@@ -11890,3 +11890,27 @@ Disposition: equality characterized exactly in the antiperiodic-entry class; par
 
 
 **W281 GC909 second-reading receipt (2026-10-10 01:09 BST).** Local L514 checks equality forces alternating D, one-parity f and e=1+f+Sf; verifies converse and source a=Sf+S^3f by hand, including q4/q8 literal controls. PASS, with no all-q ancestry exclusion or stage-growth claim.
+
+
+#### GC911 — One-parity odd sources exactly produce sharp doubling entries (2026-10-10 01:14 BST; W281 continuation)
+
+**Hand converse, second reading pending.** Record searched: one-parity/vanishing-parity + integration/equality/source ->20 hits in6 files. GC909/L514 and G157/G158 integration facts read. Predict one-parity odd sources give both sharp children. Countercontrol physical mixed-parity source119 has weight3 atq8; unexpected use the source's own period, not its even cap repetition. No ancestry/tree census or solver; only q4/q8 small integration controls.
+
+Fix dyadic q>=4 and m=q/2. Let a be m-periodic with odd weight over one m-block, represented at capq, and supported on one temporal parity. Seek f supported on the opposite parity satisfying
+
+    (1+S^2) f = S^-1 a.
+
+On that parity, S^2 is a single cycle of lengthm. The right side has even total weight at capq (two copies of the odd m-block), so cyclic integration has exactly two solutions there; off that parity set f=0. Advancing by T=S^m crosses half of this decimated cycle. The accumulated right-side parity is the odd weight of a's one m-block, so Tf=1+f on its supporting parity. The two solutions differ by that parity indicator D and are half-shifts of each other. Consequently each has weightq/4.
+
+Set e=1+f+Sf and c=1+Se. GC909's converse proves Te=1+e and f is the unique child of(1,e). Further,
+
+    Delta c = Se+S^2e = Sf+S^3f = a.
+
+Thus c is a valid integration child of(a,0). Switching f by D switches e by D+SD=1 and switches c by1, so these are exactly the two integration choices, not just one special branch. Conversely GC909 already proves any sharp child has a one-parity source. Therefore among odd-doubling sources, sharp entry weight is equivalent to source support on one parity, and it occurs for both branches or neither. No physical membership is implied by this equivalence.
+
+Scalar control directly closes the child recursion for both integration choices of every one-parity odd half-source atq4/q8: four and eight branch controls respectively give weightq/4 and a=Sf+S^3f. Mixed-parity physical source119 atq8 gives weight3 for both choices. These are finite equation controls, not a census of physical sources. The odd flux is over the m-block; counting capq parity would incorrectly give0 and lose antiperiodicity, the same guard as G199.
+
+Disposition: the planned ancestry test is now an exact source-shape test, not a generic sparsity heuristic. A future proof that physical odd zero returns of least period>=4 cannot be supported on one parity would rule out equality at all doubled periods>=8; that hypothesis is OPEN. Even proving it gives only strict one-profile weight, not G184's stage budget. Next examine a concrete inverse-history constraint for the source mask; no new full-domain scan. Scratch deferred, room closed.
+
+
+**G275 second-reading receipt (2026-10-10 01:14 BST).** Cloud CL131 verifies GC870's period invariance, primitive counts, rotation freeness for chains, equivariant lifts, tail law and small controls by hand. Independently replays pooled chain/cycle masses atq2/4/8 and detects nontrivial cycle phase lifts. PASS with all-source/null scope; restricted physical-source growth remains open. No GPT mass replay.
