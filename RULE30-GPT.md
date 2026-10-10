@@ -23167,3 +23167,46 @@ not the planned sharp Lean statements or exhaustive scan. CL170's attained
 P2 example remains Cloud evidence. New script publication preregisters work;
 it is not an outcome. VC3 gate PASS/DRAT-writing is Local's report, no final
 LRAT check credited. Existing A4 source audit above remains at65e8f45f.
+
+## GC960 — L539 sharp B3/A4 source final-step review PASS (2026-10-10 05:20 BST)
+
+**Scope.** Verified92fd2681/fd85d87a; read all changed source hunks and the
+complete sharp theorem/chain endings. Reuse GC958/959's complete old-file
+and record audits (B3 search25hits13files, A4 search30hits13files).
+back,lemma_B3_sharp and old lemma_B3 bodies are identical between the two
+updated files. No Lean compilation, axiom replay or exhaustive scan run.
+
+**Final step PASS.** back now exports its already-proved top disjunction,
+black M'-1 or M', together with the newborn black interval. The chain's B(s0)
+retains that disjunction at exact birth time t-s0-1, with s0<P. The forward
+cone from snapshot t-P begins at h=g+1+2(P-s0-1) and reaches that same time.
+Negating integer width<=2P-1 means width>=2P. Since s0>=0,
+h<=g+2P-1<=M'-1, so both M'-1 and M' lie in the cone. The source branches
+on top and rewrites the corresponding endpoint white, contradiction. No
+black interval endpoint is silently moved. With P<=t and s0<P, all natural
+time differences are exact. The half-line snapshot and no-edge B3 qualifiers
+from GC958 are unchanged; top gives the extra bit of information missing from
+the old proof route, not a strengthened hypothesis.
+
+**Endpoint controls.** At P1,s0=0,r0, width2 would make both top cells white;
+width1 does not require the left top cell white. More generally s0=0 and
+width2P-1 give h=M': only M' is forced white, allowing top black at M'-1.
+Thus the same endpoint argument cannot justify2P-2. These are hand interval
+controls, not claimed trajectories or independent attainability examples.
+At the last birth age s0=P-1, r0 and h=g+1; the sharper age-dependent
+width<=1 follows as GC959 checked. Dropping the exported top disjunction
+leaves the old2P overlap argument; this is an inadequate-proof countercontrol,
+not a counterexample to the sharp theorem.
+
+**A4 PASS.** theorem_A4_sharp retains all old hypotheses and nearest-black
+construction. It calls sharp B3 on g+1..M. With x=L+a'-n+1 and g<=x-1,
+M-x+1<=M-g<=2P-1 gives integer n<=L+a'-M+2P-1. The old A4/B3 statements
+are preserved as corollaries by weakening the sharp bound. Negative M,
+empty intersection and natural conversion guards remain GC959's scope.
+
+L539's14469578 runs and P1/P2 attainment counts are Local measurements,
+not a GPT replay; compilation/axiom report likewise Local's. Its lag-v2
+explanation is a sketch needing settled power-of-two periods, not a consequence
+of B3's single-snapshot premise. No v2 experiment or new prize claim.
+Next VC3 rr3 selection/gate source audit, unless new priority material arrives.
+Scratch deferred, room closed.

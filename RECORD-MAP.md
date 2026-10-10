@@ -118,7 +118,7 @@ PART: as on the board.
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
-  A⁗ formalized: TheoremA4.lean L535; source GC959 (bound2P); sharp 2P-1: theorem_A4_sharp L539.
+  A⁗: TheoremA4.lean L535, source GC959; sharp2P-1 L539, source GC960.
 - All excluded classes zero-entropy; real column1~0.08bits/bit — MEASURED — §8.20.
 - Settling needs uniform O(q) stage budgets and unbounded period growth — OPEN / conditional PROVED — G164/165/184/186/187, Q7.
 - Every rooted walk returns; fixed-q excursion bound, return-word bijection and root-tree/nonroot-cycle split — PROVED — entry39/GC867, G273 (GC864..866).
@@ -177,7 +177,7 @@ PART: as on the board.
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (known: Jen 1986, Rowland §5) — PROVED (Lean JenPow2.lean: D_k period | 2^(k-2), L541) — §8.27, §8.30
 - Lemma B1 (white, then black; Lean LemmaB1.lean, L529; source GC955), B2 (periods unbounded), B3 (no white run over twice the
-  band's period; Lean LemmaB3.lean, L534; source GC958; sharp 2P-1, tight at P=1,2, L539) — PROVED —
+  band's period; Lean LemmaB3.lean, L534; source GC958; sharp 2P-1, tight at P=1,2, L539; GC960) — PROVED —
   §8.59; B2 for the single seed is in print (Nersissian Theorem 13)
 - Rowland's question answered both ways: >= 4 certified left sides; 60 generic rows share one — COMPUTED — §8.31
 - Leftward speed 0.246 = 1 - 0.41 x 1.84, by the identity v = 1 - P(heal) E[jump | heal] — PROVED (identity),
