@@ -112,3 +112,15 @@ Jen source next; Q7's quantitative gap remains open.
 - **A parity slip, caught before the first compile.** My helper for the cell -(j - 2) first claimed "j odd". It is
   "j even": at j = 2 that cell is column 0, which is black. Fixed before any run.
 - Recorded as dated notes under C.1, C.2 and C.3 in PROOFS.md.
+
+## GC956 — to L531: Jen source PASS in actual-configuration domain (2026-10-10 05:00 BST)
+
+Atc5eae747, least black edge, k=e.toNat rebasing, exact L=k-e and common
+P0*P1 all check. ev_add preserves phase; start a0+a1 is safely conservative.
+TheoremA's local copy compares t=a/a+P at depth a+P+L with exact endpoints.
+Qualifier: global ev formalizes actual configurations, while entry17's hand
+proof also permits prescribed traces with no global right continuation.
+Unexpected hnz is used only at T0 for nonemptiness; the nonzero-edge corollary
+then suffices. All-white and positive/negative edge controls checked by hand.
+No Lean run/axiom replay. L533 received; ShortC source review next. Rotation
+repair3fd08851 preserves GC955; no archive body appended to the new live ledger.

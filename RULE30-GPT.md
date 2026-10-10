@@ -22962,3 +22962,51 @@ No source sorry/admit/native_decide call; the docstring mentions sorryAx as
 an instruction, not an axiom report. Local's compilation and axiom receipt
 remain Local evidence. Reply PASS to L529/L531 for B1; Jen source next.
 Scratch deferred, break room closed.
+
+## GC956 — L531 Jen Lean statement review PASS for actual configurations (2026-10-10 05:00 BST)
+
+**Record.** Complete JenProp7.lean atc5eae747 and entry17 read, reusing GC882's
+Theorem A audit. Search JenProp7/Proposition7/GC882 with left/periodic/Lean
+->27hits11files. Existing-proof source audit, no experiment or new proof unit.
+
+**Statement PASS with domain qualification.** jen takes arbitrary x0 on integers
+white left of integer M, eventual periodicity at columns0/1 after a0/a1 with
+positive natural P0/P1, and black samples in column0 at arbitrarily late times.
+It concludes False. For Boolean traces, the last premise is not-eventually-white.
+No finite right support, least periods or identical start times are required.
+The statement formalizes entry17's actual-configuration obstruction. It does not
+formalize the stronger hand domain of arbitrary prescribed boundary traces,
+which need not extend to a global ev orbit. That hand argument remains intact.
+
+**Reduction and offsets.** hnz0 rules out an all-white initial row by induction
+on ev. White left of M bounds the nonempty black-cell set below, so
+Int.exists_least_of_bdd supplies e with x0(e)=1 and every j<e white.
+Set k=e.toNat. If e<=0, k0 and the edge distance is L=-e; if e>0,
+k=e and the edge reaches0, giving L0. In both cases e-k<=0 and
+L=(k-e).toNat is exact. edge gives the rebased row y0=ev(x0,k) a leftmost
+black cell at -L. ev_add proves ev(y0,s)=ev(x0,k+s), so no spatial or time
+phase is discarded. Both eventual columns have common period P0*P1>=1:
+per_mul repeats P0 P1-times at column0 and P1 P0-times at column1.
+The rebased start a0+a1 suffices because k+t>=a0,a1 for all t>=a0+a1.
+It need not be the earliest common start.
+
+The local theorem_A/no_two_periodic definitions reproduce the moving-edge
+argument: choose b=2a+L+2P, depth j=a+P+L, compare white at time a with
+black at a+P, and lose j endpoint observations by left_iter. The finite
+period hypothesis has endpoint t+P<=b; after j shifts it is t+P<=b-j,
+exactly available at t=a. Thus theorem_A asserts b<=b-1, impossible.
+The file contains its own copy of this argument, not an import of TheoremA.
+
+**Independent controls and unexpected premise use.** If hnz is removed, the
+all-white row with M0,P0=P1=1,a0=a1=0 satisfies all remaining hypotheses;
+a nonzero premise is necessary. With e=-3 the shift is k0,L3; with e=3
+it is k3,L0, confirming both signs. Periods2/3 give common6, not a presumed
+one-column phase match. Although jen states arbitrarily late black samples,
+its proof uses hnz only at T0 to establish nonemptiness; the later contradiction
+comes from the stronger nonzero left-edge corollary. This is consistent, not a
+missing use or an asserted new theorem. Initial black samples alone cannot
+replace eventual nonzeroness in entry17's arbitrary-boundary hand domain.
+No eventuality census, Lean compilation or compiled axiom replay. Local's
+propext/Classical.choice/Quot.sound report remains Local evidence. Source
+statement accepted; Jen attribution remains prior art. L533 source queued,
+BlackEnd38 memory parking unchanged; scratch deferred, room closed.
