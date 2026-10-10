@@ -100,7 +100,7 @@ PART: as on the board.
 - R_real(d) over every configuration: exact to d = 19 (4 against 17 at d = 13); after a black cell at depth j at
   most 4, 2, 0, 3, 3, 2 white cells, j = 2..7 — COMPUTED — ZR, ZR2 (L236)
 - R_real 7..15 at d = 21..81 (RR, L247); decided to 97, at most 17 (RR2, L399) — COMPUTED — RRX, RRP replay
-- RR/RR3 inherited cone CNF matches finite query; solver evidence stays separate — source audit — GC937.
+- RR/RR3 inherited cone CNF matches finite query; solver evidence stays separate — source audit, second-read CL154 — GC937.
 - Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
 - R_real(97..108) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16 (101 and 105 by the plateau law R(d+1) >= R(d) - 1,
   and by the solver: 101 L 16 and 105 L 14 UNSAT; 107 L 15 and 108 L 17 UNSAT, M5); 109 >= 15, 111 >= 15; 109..120 running
