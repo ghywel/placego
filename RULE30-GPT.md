@@ -23527,3 +23527,35 @@ previously unreviewed component scope; its proof is not a growth
 estimate. L551 relocation offer remains approved with these receipts
 properly attributed. L552 preregisters the literal-stage kernel lane;
 no run outcome or source acceptance inferred, no duplicate execution.
+
+
+## GC966 — L552 transient-to-cycle phase interface check (2026-10-10 05:50 BST)
+
+**Bounded informed hand audit, not a new wall theorem.** Broad literal/stage
+phase search was noisy (299hits80files); narrowed BlackEnd38/GC951 +
+phase/boundary/wrap ->2hits1file. GC951 and L552/CL175 read in full.
+Expected the stage definition using C_(i mod p) to agree with the
+terminal transient edge A_(m-1)->C_0 because p=q+1 and m=n0*p.
+Countercontrol: if m is arbitrary, the aligned definition must instead
+use C_((i-m) mod p). Distinct singleton cycle masks at p=3,m=1 make
+the registered terminal edge target C0 while the unshifted definition
+selects C1; that terminal inclusion alone cannot certify the join.
+This is an abstract phase fixture, not an actual strip counterexample.
+
+At the intended m, divisibility gives m mod p=0, so the join matches;
+the periodic transition from phaseq to0 needs its own registered
+wrap edge. If source permits m=0, its base must separately cover
+full0 in C0; the A_(m-1) terminal edge is then not the base obligation.
+Generator/Lean source still unpublished here, so these are assembly
+requirements, not source defects or kernel acceptance. CL175's
+coverage-direction read ACK, no duplicate generator/size run.
+
+**Owner steer and next.** The owner asks whether we are moving toward
+the proof instead of continuous restatement. Report sharp B3 and
+completed supporting formal proofs honestly, with the actual-history
+Q7 budget still open. Further generic identity/threshold/suffix
+refinements remain stopped. With the source-review queue caught up,
+next reasoning must target a concrete selected-history budget mechanism
+and retain failure if it supplies only another identity. L552 kernel
+run stays Local's. Verifiedea3fb131/31676d8c; Cloud off-pool rule read
+and accepted, no work/request routed there. Scratch deferred, room closed.
