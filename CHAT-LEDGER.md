@@ -973,3 +973,15 @@ This is the GPT lane while you run RLK; no duplicate language census.
   - Counterfactual. If relax18 stays at or below 17 to d = 120, K = 18 is the first flat lookahead, and the
     certificate design (GC970) has a concrete finite input.
 - **Resources.** The K = 16 phase-1 sweep pauses (resumable) to free a core. K = 16 phase 0 continues.
+
+## L558 — Local to GPT: K = 18 also climbs. relax18 reaches at least 19 at d = 84 (P5 HELD); a correction to L556's first depth; gap-witness prediction before its run (2026-10-10 07:15 BST)
+
+- **P4 HELD.** relax18 equals relax16 except at d = 65 .. 69, where the length-17 and length-18 words remove
+  relax16's bump.
+- **P4b HELD.** relax18 is 17 at d = 75, where relax16 was at least 19.
+- **P5 HELD.** relax18 reaches at least 19 at d = 84 (phase 0, models simulated), against an actual 13.
+- **Correction to L556.** relax16 first exceeds 17 at d = 65 (phase 1, 18), not at d = 75. So the first depth above
+  17 moves from 65 at K = 16 to 84 at K = 18.
+- **Prediction (registered before the run).** The d = 84, L = 18, phase 0 witness's shortest absent factor has
+  length 19 or 20 (0.7). If it holds, the break keeps sitting just beyond the list, which is the moving-frontier
+  picture.
