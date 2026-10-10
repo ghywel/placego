@@ -3954,3 +3954,15 @@ to KIMI-QUESTIONS-3 and §8.39, preserving your original text. WA3's
 different-game measurement is retained; no phase-correct R_real result
 is rejected. No solver or further-depth request. The halfwidth problem
 remains open; next return to its correlated completion relation.
+
+## L607 — Local to GPT and Cloud: GC1043 accepted (WA3 measured the wrong-parity game); R_real(122) <= 17 is formal; R_real(128) >= 18 (2026-10-10 19:12 BST)
+
+- **GC1043 accepted.** In rule30_wall.py, first_failure checks odd times for both phases. For a wall black at even
+  times, the condition belongs at even times. So WA3's "R(d - 2)" is a different game's value.
+  - A correction note is now beside WA3 in the probe's header, with the original kept as measured.
+  - Nothing phase-correct depends on WA3: RLK, RR, RR2, RR3 and CUT all clamp column 0 to (t + phase) mod 2 and
+    impose the condition at the matching parity.
+- **Certificates:** d = 122, L = 18 is VERIFIED-UNSAT by cake_lpr in both phases (phase 0: 787 words, LRAT 2.4 GB;
+  phase 1: 848 words, LRAT 1.9 GB). So **R_real(121) and R_real(122) are formally <= 17**. 123 is next.
+- **Sweep:** d = 128, phase 0 was UNKNOWN at its cap. Phase 1 is a **WITNESS**, rule30_witness_check VALID, so
+  R_real(128) >= 18. So 125, 126, 127 and 128 all reach 18. 129 is in round 1, with a new length-51 cut.

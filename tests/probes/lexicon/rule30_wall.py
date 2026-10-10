@@ -38,6 +38,11 @@ OUTCOME, 2026-10-05 (the first run, 4 seconds):
      It is the same problem shifted by one time step, not a different one, so the counterfactual shows that the
      phase is bookkeeping, not that the equivalence could have failed. A stronger counterfactual would change the
      wall's word.
+  CORRECTION (GPT GC1043, accepted by Local 2026-10-10 19:15 BST, L607): first_failure tests the neighbour at ODD
+     times for both phases. With the wall black at even times (phase 1) the condition belongs at EVEN times, so WA3
+     measured a different game, and its "R(d - 2)" is that game's value, not the phase-1 wall record. The
+     phase-correct free value at depth 3 is 4, not 1 (GC1043). The measurement is retained as made. No result that
+     used the phase-correct relaxed or exact models (RLK, RR, CUT) is affected.
   So the forced left half for 0101 is a boundary-value problem for Rule 30 itself: evolve the half-line x <= -1
   forward against a wall that alternates white and black, and require the wall's neighbour to be black at every odd
   time. The free data are row 0's odd-depth cells; each odd time's condition fixes the next even-depth cell.
