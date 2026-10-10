@@ -179,7 +179,7 @@ PART: as on the board.
   an alternating union and a one-parity source (GC909, PROVED, L514); one-parity odd sources give both sharp entries
   (GC911, PROVED, CL132); mask shortcuts CLOSED (GC912, CL133; GC913, CL134); mixed-parity sources reach q/4 + 1
   (GC914, PROVED, CL135); entry children's three-state language (GC916, PROVED, CL136); the next profile has weight
-  3q/4 (GC917, PROVED, L516); physical controls refute a sustained floor (GC918, PART)
+  3q/4 (GC917, PROVED, L516); fourth profile weight q/2 (CL138, second-read GC919); physical controls refute a sustained floor (GC918, PROVED, L519/CL138)
 - Sharp entry's fourth profile k = 1_(pi+1) + S^-1 f + S^-2 f, weight q/2: sharp weights run q/4, 3q/4, 3q/4, q/2 —
   PROOF-SKETCH (Cloud; all 556 sharp entries to q = 32 agree) — CL138
 - Conventions: RC88's zero-started 88/371 reconciled with physical ancestry (GC907, COMPUTED, scope); ZF's chain
@@ -270,6 +270,7 @@ PART: as on the board.
 - TheoremA.lean matches entry 5 (GC882, PROVED, source scope); its hand time re-basing is formal in WhiteEnd.lean
 
 ## Other walls, other periods and sibling rules
+- Strip past/future static ranks certify eventual phase forcing; kernel performance untested — PROOF-SKETCH — GC919; L515.
 - Periods 3 to 6: Theorems A, A′, B, E hold for every period — OPEN (parked) — board Rung 3; §8.42, §8.62
 - Black-end walls 0 1^q excluded for finite seeds at q = 7 and every q >= 9 — PROVED — entry 38 (SG L429, GC806
   read in L430, WT L431; method from an external repository, gap GC805); q = 1..6 and 8 OPEN
