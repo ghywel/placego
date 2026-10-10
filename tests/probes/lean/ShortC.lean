@@ -42,7 +42,7 @@ theorem shrink (x : ℤ → Bool) (a b : ℤ) (hab : a + 1 ≤ b) (hl : x (a - 1
     rw [hw (i - 1) (by omega) (by omega), hw i (by omega) (by omega), hw (i + 1) (by omega) (by omega)]; rfl
 
 /-- C.1, the checkerboard lemma (read with the inverse rule): column 0 black at times t .. t + k forces
-x(-j, t') = (j + 1) mod 2 at every time t' with column 0 black at t' .. t' + (k - j + 1). -/
+x(-j, t) = (j + 1) mod 2 for 1 ≤ j ≤ k. Depth j reads only times t .. t + j, so k = j is the minimal window. -/
 theorem checkerboard (x0 : ℤ → Bool) :
     ∀ j : ℕ, 1 ≤ j → ∀ t k : ℕ, j ≤ k → (∀ s, s ≤ k → ev x0 (t + s) 0 = true) →
       ev x0 t (-(j : ℤ)) = decide (j % 2 = 1 → False) := by
