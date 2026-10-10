@@ -96,8 +96,9 @@ PART: as on the board.
 ## Records R(d) and R_real(d) (Q6, RR, RR2, RR3)
 - Interior visible gap4422 requires a neighboring gap2, conditional on reported minimal absence — hand inference — GC984; L556/L557.
 - Noninitial interior4422 forces preceding5 and following2 — hand inference from reported forbidden words — GC985; RLK K18.
-- FullK18 bounds4422 occurrences by1 at every word length — COMPUTED potential, second read pending — GC986.
+- FullK18 bounds4422 occurrences by1 at every word length — PROVED by finite potential, independent L561 review — GC986.
 - Gap4 trains of length>=4 start only near the initial boundary; cannot restart — hand inference — GC987.
+- Actual suffix from13 forbids4422/4444; necessary relaxation still branches — hand inference / COMPUTED — GC988, L563.
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
 - R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111=15, 112=15 (plateau law, then solver), 113=14, 114=13, 115>=13, 116>=15, 117>=14 — COMPUTED — RR3
