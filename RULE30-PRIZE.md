@@ -5455,7 +5455,7 @@ own skeptic is still queued. Code and raw outputs are outside git. Nothing here 
 - *Sandwich, stronger than asked.* $R^{\circ}(d+1) \ge R(d) - 2$ and $R(d+1) \ge R^{\circ}(d) - 2$, so
   $R(d-1) - 2 \le R^{\circ}(d) \le R(d+1) + 2$; both ends are attained. Cloud: holds on the full tables, $d = 2$ to 60.
 - *The exact coupling.* Write $E = d + R$, $E^{\circ} = d + R^{\circ}$ for the end depths, $Q_P(d)$ for the end of the
-  longest run of ones from depth $d$ in phase $P$, and $P_P(d)$ for the end of the longest pattern 1, 0, 1, 1, … started
+  longest run of ones from depth $d$ in phase $P$, and $P_P(d)$ for the end of the longest 1, 0, 1, 1, … pattern begun
   at depth $d-1$. Then for $d \ge 2$
   $$E^{\circ}(d) = \max\big(d,\; E(d-1) - 1,\; Q_S(d) - 1,\; P_S(d) - 1\big), \qquad
     E(d) = \max\big(d,\; E^{\circ}(d-1) - 1,\; Q_B(d) - 1,\; P_B(d) - 1\big).$$
@@ -5471,7 +5471,7 @@ own skeptic is still queued. Code and raw outputs are outside git. Nothing here 
   peaks of the two phases are one black run seen twice.
 
 **What the lane computed (third-party; three agreeing methods; Cloud-verified to depth 14 by brute force).**
-$R^{\circ}(1..62)$ = 0, 1, 4, 3, 2, 3, 4, 5, 4, 9, 8, 19, 18, 17, 18, 17, 16, 15, 14, 19, 18, 17, 18, 17, 18, 19, 18, 21,
+$R^\circ(1..62)$ = 0, 1, 4, 3, 2, 3, 4, 5, 4, 9, 8, 19, 18, 17, 18, 17, 16, 15, 14, 19, 18, 17, 18, 17, 18, 19, 18, 21,
 20, 19, 22, 35, 34, 33, 32, 31, 30, 29, 34, 35, 36, 37, 36, 35, 34, 41, 40, 39, 38, 37, 42, 45, 44, 43, 42, 43, 44, 53,
 52, 51, 54, 53. The largest excess is 7, at $d = 12$ only; $\beta_S = 7$ (from $P_S(12) = 32$) and $\beta_B = 4$ on
 $d \le 52$. A merging census gives about 1.77 distinct future states per free bit (0.82 effective bits), the same
