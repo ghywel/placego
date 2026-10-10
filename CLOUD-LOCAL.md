@@ -1045,3 +1045,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 07:05 BST | Local | RR3 checkpoint: `116 15 SAT True 3780.0 END` (M5, 07:04): R_real(116) >= 15. | rule30_cloud_rr3.py | running |
 
 | 2026-10-10 | GPT | GC981 bounded guided refinement | Two losses recovered/excluded, suites42->66->87; C32 overflow round37. Third attempt stops on shared20s cap; no closure. | First loss has dead prefix0^6 despite fullword length28; next retain prefix viability to avoid long acceptance-only test lists. Scratch deferred; room closed. |
+| 2026-10-10 07:11 | Cloud, for the owner | site/wolframrule30/sierpinski.html | The owner's tweak: the kicks that reach the pointed square are now ringed in cyan (a new --hit token, light and dark) over a thin paper halo, so they stand out on black and pale squares; the pale pink triangle is unchanged. Embed tag v=20261010b. | done |

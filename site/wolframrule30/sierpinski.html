@@ -21,6 +21,7 @@
   --cover: #9B2C52;
   --tri: #1E5A86;
   --seed: #2D7A57;
+  --hit: #0089A8;
   --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -28,12 +29,12 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
-    --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; color-scheme: dark;
+    --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; --hit: #45D3EE; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
-  --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; color-scheme: dark;
+  --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; --hit: #45D3EE; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -135,7 +136,7 @@ html.embed .page { padding-bottom: 0 !important; }
     <div class="key">
       <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="3.2" fill="var(--kick)"/></svg>kick: a white square with a black one to its right</span>
       <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--cover)" opacity="0.25"/></svg>the pointed square's triangle</span>
-      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="var(--cover)" stroke-width="1.8"/></svg>a kick that reaches it</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="var(--hit)" stroke-width="2.2"/></svg>a kick that reaches it</span>
       <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--tri)" opacity="0.5"/></svg>the triangle a clicked kick spreads</span>
       <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="var(--seed)" stroke-width="1.8"/></svg>the starting square</span>
     </div>
@@ -193,7 +194,7 @@ html.embed .page { padding-bottom: 0 !important; }
   var colors = {};
   function readColors() {
     var cs = getComputedStyle(document.documentElement);
-    ["paper", "panel", "ink", "ink-soft", "rule", "kick", "cover", "tri", "seed"].forEach(function (k) {
+    ["paper", "panel", "ink", "ink-soft", "rule", "kick", "cover", "tri", "seed", "hit"].forEach(function (k) {
       colors[k] = cs.getPropertyValue("--" + k).trim();
     });
     colors.mono = cs.getPropertyValue("--font-mono").trim();
@@ -314,10 +315,13 @@ html.embed .page { padding-bottom: 0 !important; }
     if (mode === "r60") pl = [];                                      // no kicks to show in this mode
     ctx.fillStyle = colors.cover; ctx.globalAlpha = 0.25;
     pl.forEach(function (p) { ctx.fillRect(X0(p[1]), Y0(p[0]), c, c); });
-    ctx.globalAlpha = 1; ctx.strokeStyle = colors.cover; ctx.lineWidth = 1.5;
-    pl.forEach(function (p) {
-      if (!KK[p[0]][p[1]]) return;
-      n++; ctx.beginPath(); ctx.arc(X0(p[1]) + cell / 2, Y0(p[0]) + cell / 2, r, 0, 2 * Math.PI); ctx.stroke();
+    ctx.globalAlpha = 1;
+    var hits = pl.filter(function (p) { return KK[p[0]][p[1]]; }); n = hits.length;
+    [[colors.paper, 3.6], [colors.hit, 1.8]].forEach(function (pass) {    // a light halo, then the ring, so it pops
+      ctx.strokeStyle = pass[0]; ctx.lineWidth = pass[1];                //   on black squares and pale ones alike
+      hits.forEach(function (p) {
+        ctx.beginPath(); ctx.arc(X0(p[1]) + cell / 2, Y0(p[0]) + cell / 2, r, 0, 2 * Math.PI); ctx.stroke();
+      });
     });
     if (seedIn && t > 0) {
       ctx.strokeStyle = colors.seed; ctx.lineWidth = 2;
