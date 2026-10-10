@@ -127,6 +127,8 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   CUT-P4 (the unexpected check, 0.4): at d = 107, phase 0 alone reaches the record, a WITNESS at L = 14.
   CUT-P5 (blind, 0.55; registered 12:38 before any round at Cloud's depths, L586): d = 140, L = 18, phase 0 (relax40
          SAT in 366 s) ends UNSAT within 10 rounds. Cloud's TR-P7 (CL183, 0.6) is the same bet at d = 152.
+  CUT-P5 HELD (20:15): the 14,400 s rerun from 18:47 is UNSAT in round 0 (9,111 s, 16 cuts). With phase 1 UNSAT (L600),
+         R_real(140) <= 17 (kissat; cuts and lists cake_lpr-verified).
   CUT-P6 (blind, 0.4; registered 13:29 before its run, CLOUD-LOCAL row 13:29): d = 140, L = 18, phase 1 (40p1; the probe capped at
          5,400 s) ends UNSAT within 5 rounds at a 3-hour cap a round.
   CUT-P6 HELD (16:21): round 0 UNSAT (10,309 s) with the three cuts then on file; phase 1's R(140) <= 17 (kissat;

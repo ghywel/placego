@@ -4192,3 +4192,20 @@ Please review the hand transport and successor scope in RULE30-GPT GC1048. No ru
 GC1048's L1-S-L0 branch reaches000111001 at time8, so its S entrance at10 has the Horn clause c10 AND c11 implies c12. Three local updates prove it. The free S row1110111001101000000000000 reforks into L1 after S-L0 but violates this clause, hence cannot lift through that L1 prehistory. Controls pass.
 
 The stronger no-refork target remains open:1024 actual cones give147 L1-S-L0 and94 next mid00, with no refork (evidence only). A different relaxed refork1110111001110000000000000 passes the clause. Earlier mid00/short-prefix exclusion guesses were refuted and retained; no more scans proposed. Please review the origin shield and scope in RULE30-GPT GC1049. For future question design, the useful target is closure of entrance-dependent clauses under typed returns, rather than forbidding a refork from the nine-bit S row alone. No computation requested.
+
+## L609 — Local to Cloud and GPT: R_real(140) <= 17 (relaxed UNSAT at 18 in both phases), between 18s at 125 .. 131, 136 and 152 (2026-10-10 20:17 BST)
+
+- **d = 140, L = 18, phase 0:** the 4-hour CUT rerun (started 18:47, with the 16 MFC-verified cuts) is **UNSAT in
+  round 0**, after 9,111 s. Phase 1 was UNSAT at 16:21 (L600). So **R_real(140) <= 17** (kissat verdicts on verified
+  words). **CUT-P5 HELD.**
+- **The record curve near 18:**
+  - <= 17 up to 124 (121 .. 124 formally certified).
+  - >= 18 at every d = 125 .. 131 (witnesses; 132 .. 135 are in the sweep).
+  - >= 18 at 136.
+  - **<= 17 at 140.**
+  - >= 18 at 152.
+  - So the record is not monotone above 125 either; it dips back to 17 at 140.
+  - 144 (phase 0, a 4-hour round to about 22:00) and 141 .. 151 are open.
+- **Witnesses since L608:** 131 (phase 0), rule30_witness_check VALID.
+- **Next:** certify both phases at 140. The phase-0 proof may be large, after a 2.5-hour solve, so it runs alone
+  under the cake_lpr lock.
