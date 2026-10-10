@@ -28266,3 +28266,24 @@ CL246 at a2a3f25c independently confirms GC1074's gate and intermediate identiti
 
 
 CL246.1 at 9b31ba05 corrects CL246's truncated time-16 return read; its longer complete cones confirm S. The gate review is unchanged. The successor claim here uses the new all-tail shield and complete return controls, independently of that initial incomplete read.
+
+
+## GC1076 — An actual high LL carries a time-five marker into the next selector (2026-10-11)
+
+**Missing inference.** Carry GC1075's high-LL origin 111 through the ordinary-long return without assigning a fresh next triple. Record searched: 111001111|high.*LL|LL.*high with transport|return|site9|ninth ->31 hits in 12 files. GC1053 has the general closing map; it does not supply the marker-dependent shield below.
+
+**Hand transport, proof sketch.** An ordinary-L origin 111001111 has time 4 sites 6..8=000 and time 5 sites 6,7=10. Write a,b,c at time 5 sites 8,9,10. Its high fifth track returns L0 exactly when a=0 and b OR c=1: the time 7 seventh bit is automatically 0, and its eighth is 0 precisely under that condition, by GC1047's closing read.
+
+On that return, the two updates give time 6 sites 6..9=(1,1,b,1) and time 7 sites 6..9=(0,0,0,NOT b). The retained marker b is therefore essential. If b=0, c=1 and the time 7 tenth bit is also 0. GC1053's high closing map has p=1,q=0, hence returned sites 7,8=00; its proved OR guard forces returned site 9=1. This branch returns triple 001 and cannot make the next fifth track high.
+
+If b=1, time 7 has FOUR whites at sites 6..9. Write Q,R,S at its sites 10,11,12. Using the actual fifth bits 0,1,0 at times 7,8,9, three local updates give the returned triple
+
+    (NOT Q, Q OR R, NOT Q AND(R OR S)).
+
+It is 010,100,101 or111. GC1073's time-three/time-five identity at the returned L0 makes its next fifth track high exactly when its ninth bit is black, equivalently Q=0 and R OR S=1. Thus any further high track requires b=1; a further high LL additionally requires R=1, since 101 forces S by GC1075. These are correlated samples on the SAME actual history, not freely realizable Q,R,S states.
+
+**Failures and scope.** The first prediction incorrectly made time 6 site 8 equal b OR c, giving an unconditional four-white shield. The local b=0,c=1 control refuted it: that branch has 0001 at time 7. The second prediction wrongly made every non-high next track the low renewal D=0101100000. Origin 11100111101101 followed by zeros returns 001, then track X=0101100101 and exits the synchronized S/L0 collar. That unconditioned low-track inference is closed. On an actual continuing mature run, X is excluded by the next return premise; outside it, retain D and X separately.
+
+All 48 local two-tick shields and 8 closing identities pass. Among 64 selected actual origins, 29 are current high LL: 23 next D, 6 X exits, no next H. This sample absence does NOT prove that further H is impossible. Literal/packed engines agree. The unexpected common-map claim also fails: at Q=1,R=S=0 the reviewed low mid01 map gives 011, while this high branch gives 010. The added algebra control shows the maps agree only for Q=0; Q=1 is pinned to 010 here for every R,S. Thus the retained high past removes a low-branch output rather than merging the complete maps.
+
+CL247 at 8e871b28 independently confirms GC1075, now PROVED. Next specific obligation is whether the actual b=1 ancestry excludes or restricts Q=0,R=1 (the next high-LL gate), keeping the farther samples coupled. No Local solver, membership or relaxed-record run. No all-depth bound claimed.

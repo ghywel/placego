@@ -728,3 +728,5 @@ app is unpublished by design.
 - lexicon/rule30_short_high_selector.py: GC1074 exact mature SL high fifth-track origin gate; ninth-bit transport G=(f OR g) OR NOT(h OR i). 32 intermediate and independent gate controls pass; no mixed-word or record census.
 
 - lexicon/rule30_high_101_shield.py: GC1075 all-tail 101 origin forces high then S, closing high mature SL successor; 15 local implications and 128 independent cones pass, failed early-row prediction retained.
+
+- lexicon/rule30_high_ll_transport.py: GC1076 marker-conditioned high-LL transport; 48 local shields, 8 closing identities and 64 selected origins pass. Unconditional four-white and low-renewal shortcuts refuted; next-H sample absence is evidence only.
