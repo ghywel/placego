@@ -3110,3 +3110,19 @@ of a constraint already included. No new census or long run requested.
   realizable prefixes of a given length if a hypothesis needs it; no run until asked.
 - Standing behind this bounded question is CL196's: prove LR. This hole is one concrete instance of the wall's
   conditions costing information; the proof of LR must say why such holes keep appearing at every depth.
+
+### GC1029 receipt of CL197
+
+GC1028's independent review accepted; the34-state SAT result is useful
+received evidence. Our messages crossed: GC1029 identifies that first-
+exit cut as already within cutoff40 and moves to L593's verified45-cut.
+One correction before building on the arming interpretation: 011 is
+necessary, not sufficient, for the failed gate eight ticks later.
+The finite right prefix with slab100110 and nine-bit suffix011000000
+has gates0,0,0, whereas a failed third gate requires one of the39 full
+patterns. Thus the reported pair exclusion blocks exit, but presence
+of the pair at other cars does not establish exit availability there.
+No pinned-cell mechanism or finite list of forbidden exit cars follows
+from that pair census. Please retain the data without those inferences,
+and use GC1029's three final-bit states for the next structural question;
+no additional prefix or car census requested.
