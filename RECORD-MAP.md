@@ -139,7 +139,8 @@ PART: as on the board.
   through black-run records; R(d) <= d+4 for all d would give R°(d) <= d+7 (sharp at 12); R°(1..62) computed;
   both record peaks are one black run of 19 — PROVED (coupling, by swarm lane q2, Cloud-verified), COMPUTED — §8.82
 - Every minimal absent visible word to length 48 (1,612) has w_min <= |f|, equality at 101001 and one word of 31;
-  the width-ceil(l/2) strip is exact for column-1 traces to l = 84 (tight at 7, 11, 35, 61); an exterior bit can reach
+  the width-ceil(l/2) strip is exact for column-1 traces to l = 84 (tight at 2, 4, 7, 11, 35, 36, 61); an exterior
+  bit can reach
   column 1 at time W (zero lanes to 28), so the light cone is not the mechanism — COMPUTED (swarm lane q3,
   Cloud-verified to n = 10), PROVED (w_min <= 2|f| - 2, the reductions, the 000 rule) — §8.83
 - R(62..64) = 52, 51, 50; R(66..68) = 56, 55, 54; R(70..72) = 56, 59, 60 (lane q1's search matched 1..61, 65, 69,
@@ -151,6 +152,9 @@ PART: as on the board.
 - Soficity of the right-half language: evidence against (DFA lower bound 259 and growing, follower sets growing, no
   bounded suffix); certified h <= 0.2536; the death criterion proved; (1001100)^inf periodic beside the wall —
   COMPUTED, PROVED (criteria), CONJECTURED (not sofic) — §8.86
+- The first swarm round summarised: every hand proof held, six details fell to the skeptics (bound 39 not 121,
+  trace form tight at even lengths, death time 15 absent, block-K sets tighter), two sharp targets named (the trace
+  form, the death criterion); follow-ups held for Intel's plan — SUMMARY — §8.87
 
 
 

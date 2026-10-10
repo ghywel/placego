@@ -5494,8 +5494,8 @@ the coupling is first needed at $d = 41$; in the standard phase first at $d = 29
 ### 8.83 Every minimal absent word to length 48 is excluded by a strip no wider than itself; the trace form is tight (swarm lane q3, graded; 2026-10-10)
 
 *Lane q3 of the owner-authorized swarm (independent agent, no access to the record) was given the right-half language
-beside the wall, its minimal absent words, and the half-width question of CL210. Graded by Cloud 21:22 BST; the
-swarm's skeptic for this lane is still to run. Code and raw outputs outside git.*
+beside the wall, its minimal absent words, and the half-width question of CL210. Graded by Cloud 21:22 BST; skeptic
+graded 23:16 BST. Code and raw outputs outside git.*
 
 **Proved by the lane and verified by Cloud.** The one-sided reduction (any right half beside the wall extends to a
 configuration on $\mathbb Z$, so $L$ is the right halves' visible language; §8.39's mirror). The **000 rule**: at even
@@ -5529,6 +5529,21 @@ L606 is the typical case of a law whose worst case is exactly one half. Nothing 
 lane's best proved bound is $2|f| - 2$. **Prior work.** §8.20 (TC2: $|L_n|$ to 39, the minimal forbidden words, the
 entropy ceiling), SW (L569, L570: strip widths for minimal words to width 35), L606 (77 learned cuts). New to the
 record: the complete $w_{\min}$ census to length 48, the trace form and its tightness, $\tau(W)$ and the 28-lane.
+
+**Skeptic's verdict (independent agent, Cloud-checked, 23:16 BST).** Every proved claim (the reduction, the 000 rule,
+nesting and exactness at width $2m-2$, the factor reduction, the trace reduction, the front lemma, the sticky carry)
+was checked line by line and found correct, with only informal wording to object to. The computations were re-derived
+rather than trusted: $|L_n|$ to 15 by its own brute force, every $L_n$ to 48 and every trace language to $l = 84$ by
+an inductive candidate-partition audit with re-simulated witnesses, and all 1,612 values of $w_{\min}$ by two methods
+of its own, an exact SAT-free backward preimage propagation for the 1,260 words with $w_{\min} \le 27$ and its own CNF
+whose unsatisfiable cores carry RUP-checked proofs; the zero-lane counts, $\tau(W)$ to 32, the emulation failures and
+the front speeds were reproduced by different code. **One statement refuted, and the text above is corrected by it**:
+the trace form is tight not only at $l = 7, 11, 35, 61$ but also at $l = 2$ (10, width 1), $l = 4$ (0000 and 0101,
+width 2) and $l = 36$ (a length-36 trace with width 18); the lane's summary tested $2w \ge l+1$ and so missed every
+even length, and its own trace file lists all seven (Cloud read the file). So the trace form is critical at both
+parities, which matters for any proof attempt. Gaps named: ingredient (iii) of the mechanism story is asserted, not
+proved; the chaining of fast lanes behind $\tau(W) = W + o(W)$ is not shown, and $\tau$ is confirmed only to 32; the
+slope profiles were not rechecked. Nothing beyond $w_{\min} \le 2|f| - 2$ is proved for all lengths, as the lane said.
 
 
 ### 8.84 The free record to depth 73, the (10)^k family bounded, and a Jen-type theorem for finite patterns (swarm lane q1, graded; 2026-10-10)
@@ -5680,3 +5695,41 @@ to 20, then 56, 73, 93 at lengths 10, 11, 12; suffix-properness holds for every 
 search extends to period 20 with the same answer. The verdict on the main claim is unchanged: open, with the evidence
 against soficity somewhat weaker than the lane presented and the evidence for it (no deaths of short words after 16)
 somewhat stronger.
+
+### 8.87 The first swarm round, summarised: what held, what fell, what it changes (2026-10-10, 23:16 BST)
+
+*One owner-authorised round, 2026-10-10 evening: five lanes, each an independent solving agent followed by an
+independent skeptic, both barred from the record and briefed only with the record's numbers; Cloud graded every report
+and every verdict with its own code before writing §8.82 to §8.86. Code and raw outputs stay outside git.*
+
+**What held.** Every hand proof in the five reports survived its skeptic and Cloud's checks: the coupled recursion of
+the two wall phases (§8.82), the reductions and lemmas of the half-width question (§8.83), the wall-form identity, the
+barrier and front lemmas and the Jen-type theorem for finite patterns (§8.84), the lifetime lemma, locks and structure
+theorem of the 1100 wall (§8.85), and the regularity criteria with the death criterion (§8.86). Every computed table
+that a skeptic could reach was reproduced by independently written code: $R^\circ(1..62)$, $|L_n|$ to 48 and the 1,612
+minimal absent words with their widths (two methods, RUP-checked proofs), $S(0..56)$ and the stored maximisers to 72,
+$R'(1..26)$ by a forward lifetime search with spot values to 100, $|L_n|$ to 26 by a second lazy enumerator. The three
+exact free-record values the round added, $R(62..72)$, rest on lane q1's run plus re-simulated maximisers until Local
+replays them.
+
+**What fell.** No headline fell; six details did, each caught by a skeptic and confirmed by Cloud. The five-black-cell
+bound 121 is really 39, exact (§8.84). The 393 unresolved $u(10)^k v$ families genuinely exceed 32 ($T - |w| = 37$ at
+$k = 235{,}649$), so they were rightly excluded, not lost (§8.84). The trace form is tight at even lengths too, $l =
+2, 4, 36$ (§8.83). The 1100 lane misquoted its depth-100 rotation values and its structure theorem is looser than the
+data: the transition block after $(0100)^K$ is always 0001 for $K \ge 3$ (§8.85). The soficity lane listed a death
+time 15 that does not exist and an absent-word family that breaks at $r = 7$, and its DFA lower bound was a horizon
+cap, 291 with horizon 10 (§8.86). Several conclusions worded as theorems were heuristics: positive entropy of the
+$p$-sequences, 'not of finite type', 'no linear-algebra shortcut', 'the locks do not bound the runs'.
+
+**What it changes.** Two statements are now sharp enough to aim a proof at. First, the trace form: *the free-exterior
+strip of width $\lceil l/2 \rceil$ is exact for column-1 traces of length $l$*, verified to $l = 84$ and tight at
+seven lengths of both parities; it is the half-width question of CL210 in its strongest true form, and it is proved
+only as $2|f| - 2$. Second, the death criterion: a regular visible language has eventually constant late languages,
+and the late languages of lengths 8 to 12 are now proved constant from visible time 17 to the horizons reached (21 for
+length 8), with every death after time 14 implied by two minimal deaths; a death at a late time of a longer word would
+refute soficity outright, and none has been found. The 1100 wall is settled to depth 100 as the alternating wall is to
+124, by the same shape of argument and with the same absence of a proof for all depths. Nothing in the round touches
+the prize bound directly; the counting heuristic (slope $h/(1-h)$) is untested by it. Follow-up computations are held
+until Intel's strategy plan lands, because its doors D4 and D5 are these two statements, and the swarm's code is not
+in git. **Prior art for the round's method**: Kimi's two question sets (KIMI-QUESTIONS-2, -3) were the template; the
+skeptic stage is new and paid for itself six times.
