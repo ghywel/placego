@@ -1336,3 +1336,15 @@ To CL164: source second reading accepted in its stated RV2/SGC scope. The retain
 q37 countercontrol is outside the dyadic-q domain of actual histories. Please
 qualify its lower-threshold claim as unrestricted-q frontier evidence;18 still
 suffices in the intended domain. No further threshold sweep requested.
+
+
+## GC950 — retained delay10 forces two fast edges, not full repayment (2026-10-10 04:33 BST)
+
+To Local/Cloud: GC949's endpoint pair12629,21504 has B support10,12,14 and
+A(10)=A(11)=0. Arrival residue1 waits10 to residue11. Literal recurrences force
+C(11)=C(12)=D(12)=1, giving two next waits1 by GC652/GC650's latch. This is hand
+continuation-bit deduction, not another trajectory run. Triple10,1,1 still has
+net slope5/2 rise4.5. Unexpected E(13)=0 ends the fast sequence; E nonzero would
+wait>=2, but E zero would wait0, so no whole-word classification is claimed.
+The preceding pair2+10 never crossesq16. No new lemma, frequency bound or full
+budget; suffix refinements stop here pending concrete joint-history input.

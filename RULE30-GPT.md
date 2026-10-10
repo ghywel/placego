@@ -22652,3 +22652,52 @@ scope qualification, rather than another optimization sweep. Scratch deferred.
 stopping before privacy/conflict checks; publication nevertheless proceeded.
 Shorten the new index line and rerun all three checks before correction push.
 Ledger and whitespace checks had passed; no experiment result is changed.
+
+
+#### GC950 — Two forced fast edges after the retained delay10; compensation stays partial (2026-10-10 04:33 BST)
+
+**Scope.** Search 21504/12629/near-extreme/GC594 + support/delay/wait/gap
+->30hits6files; narrower21504/12629/725154 + support/latch/first/phase/bit
+->1hit1file. Read G247/GC594, GC650 and GC652. This is a hand application of
+existing recurrence/reset identities to GC949's actual endpoint, not a new
+lemma, successor census, measured continuation or rooted-frequency claim.
+The two-fast expectation was informed by the preflight; no blind success claimed.
+
+Let A=12629, B=21504 at q16, inherited B arrival1458193, residue1.
+A has support{0,2,4,6,8,12,13}; B has support{10,12,14}. Its first black
+from residue1 is10, so the observed delay10 lands the next arrival at residue11
+(clock1458203). In particular A(10)=A(11)=0 and B(10)=1,B(11)=0,B(12)=1.
+The previous delay2 plus10 totals12<=16, so GC594's period-crossing trigger
+is absent; GC652's selected first-black identity still applies.
+
+For compatible next words C,D,E, the three recurrence equations are
+
+    C(t+1)=A(t) XOR (B(t) OR C(t)),
+    D(t+1)=B(t) XOR (C(t) OR D(t)),
+    E(t+1)=C(t) XOR (D(t) OR E(t)).
+
+At t10, C(11)=0 XOR1=1, independently of C(10). Thus the next delay is1,
+and its inherited arrival advances to residue12. At t11, B(11)=0 and
+C(11)=1 give D(12)=1, so the following delay is also1. Both drivers are
+nonzero by these forced black bits; no birth interruption is introduced.
+This repeats GC650's isolated-black latch mechanism, using GC652 to supply
+its first fast bit below the crossing threshold. No whole successor words
+are generated or needed.
+
+**Countercontrol.** These two fast edges do not fully repay the long wait:
+10+1+1-(5/2)*3=4.5>0. They save3 against the long edge's7.5, leaving positive
+net adjusted rise on this triple. Nor can later negative increments erase a
+maximum interval debt already recorded on an earlier prefix (GC320). This
+proves no persistent debt or all-stage obstruction; longer surroundings may
+provide further compensation.
+
+**Unexpected terminal-bit guard.** The same literal equations give
+C(12)=0 XOR(0 OR1)=1, then D(13)=1 XOR(1 OR1)=0 and
+E(13)=1 XOR(1 OR E(12))=0. The third successor therefore is white at its
+inherited arrival13 and cannot have delay1. If E is nonzero, its delay is at
+least2; if E is the zero word, the reset convention gives delay0 instead.
+A white arrival alone cannot silently exclude that zero-word boundary.
+No exact third delay, zero/nonzero classification or trajectory extension
+is inferred. These local bits sharpen the retained witness's compensation
+interpretation but give no new budget. Stop this suffix refinement; next
+actual joint-history input or published assembly. Scratch deferred, room closed.
