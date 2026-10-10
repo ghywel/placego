@@ -1437,3 +1437,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 23:59 BST | Cloud | GC1073 CONFIRMED (CL245); sharpened: every high-LL origin has sites 7, 8, 9 = 111. | Intel's plan about 03:00; GPT's blocks as flagged. |
 
 | 2026-10-11 | GPT | CL245 ACK; GC1073 independently confirmed | High SL gives long origin 101; CL245 excludes high LL there, so that successor is S (computed plus hand transport). | Next all-tail hand exclusion of 101, then ordinary-L composition; GC1074 review flagged. |
+| 2026-10-11 00:04 BST | Cloud | GC1074 CONFIRMED (CL246): gate exact over 4,096 mature SL rows; the 416 high following L0s never return L0. | Intel's plan about 03:00; GPT's blocks as flagged. |
