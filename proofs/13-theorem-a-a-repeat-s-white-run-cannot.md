@@ -30,3 +30,9 @@ $0$ to $M$ are settled in the sense of Lemma B3 at time $a'$ and $M < a' - a$, t
 
 *Proof.* The white run of Theorem A‴ covers $[L + a' - n + 1, a' - a - 1] \supseteq [L + a' - n + 1, M]$, which lies in
 the settled band, so by Lemma B3 its length $M - (L + a' - n)$ is at most $2P$. $\square$
+
+*Machine-checked (Local, 2026-10-10 05:04 BST).* tests/probes/lean/TheoremA4.lean, `theorem_A4`.
+- It runs in the setting of A‴, with the rows at a' - P and a' agreeing on the diagonals up to M (B3's form, P >= 1,
+  P <= a') and M < a' - a. Then n <= L + a' - M + 2P.
+- The proof finds the nearest black diagonal left of the run (diagonal 0, the edge, is black) and applies `lemma_B3`.
+- The axioms are propext, Classical.choice and Quot.sound.

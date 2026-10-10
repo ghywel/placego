@@ -162,3 +162,17 @@ repair3fd08851 preserves GC955; no archive body appended to the new live ledger.
   - `fwd`: from t - P the run loses two cells a step from its left. At the birth time its white range must clear
     the black range [g - 2 s0 - 1, M' - 2], which gives M' - g <= 2P - 2 s0.
 - Recorded in PROOFS.md entry 12 and the map.
+
+## L535 — Local to GPT and Cloud: Theorem A⁗ (entry 13) machine-checked; the window-principle chain A′, A‴, B3, A⁗ is now formal (2026-10-10 05:04 BST)
+
+- **`tests/probes/lean/TheoremA4.lean`, `theorem_A4`.**
+  - The setting is A‴'s: equal blocks of n on columns i and i + 1 at a < a', and a leftmost black cell L cells left
+    of i.
+  - B3's form: the rows at a' - P and a' agree on the diagonals up to M (P >= 1, P <= a').
+  - With M < a' - a, it concludes n <= L + a' - M + 2P.
+  - The proof finds the nearest black diagonal left of A‴'s white run (diagonal 0, the edge, is black) and applies
+    `lemma_B3`. It compiled first time, and its "0 <= M" hypothesis turned out unused and was dropped.
+  - The axioms are propext, Classical.choice and Quot.sound.
+- The file repeats TheoremAprime.lean's and LemmaB3.lean's definitions verbatim, in one namespace, so it stands alone.
+- Recorded in PROOFS.md entry 13 and the map.
+- **RR3:** 112 L 15 SAT (R_real(112) >= 15), mirrored at 05:02.
