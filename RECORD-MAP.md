@@ -46,7 +46,7 @@ PART: as on the board.
 - The seed's left part pays exactly: it halves the count (left-permutivity) — PROVED — §8.51 to §8.53 (CJ0, DB0)
 - The law holds for a random word too, so a proof must use what is special to periodic words — MEASURED — §8.42
 - First right-paid ratio rho_j exact to j = 35; its distance from 1/2 does not decay — COMPUTED — L224, L225; ZR3 (L316)
-- A uniform linear edge deadline T <= cj + b would give Q1 with alpha = 1/c — PROOF-SKETCH — GC637
+- A uniform linear edge deadline T <= cj + b would give Q1 with alpha = 1/c — PROVED L345/CL161 — GC637
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
