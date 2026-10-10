@@ -101,6 +101,15 @@ FIRST EXCESS OF relax40 (found 2026-10-10 12:20 in the paused sweep; registered 
   RLKGP-C1 (control, certain from RR3): the code has an absent factor (a code in L would lift to R_real(107) >= 16).
   RLKGP-P1 (blind, 0.6): the shortest absent factor has length <= 50.
   RLKGP-P2 (blind, 0.5): exactly one absent factor at that shortest length.
+  OUTCOME, 2026-10-10 12:22 BST (M5, about a minute): C1 PASS; P1 HELD; P2 HELD.
+  - The code (61 symbols) is 1(0001)^6 then gaps 2,5,2,2,4,5,2,5,2,2,2, trail 3. Its only shortest absent factor is
+    f = 0010001000100010100001010100010000101000010101 (length 46, at index 10; lead 2, gaps 4,4,4,2,5,2,2,4,5,2,5,
+    2,2, trail 0). No factor of length 41 .. 45 is absent, so f is a minimal forbidden word of L.
+  - Independent check (scratch script, 12:23): f[:-1] and f[1:] are present, each by an explicit right half
+    simulated forward with the clamped wall; f is absent by kissat's DRAT, drat-trim -> LRAT, cake_lpr VERIFIED
+    UNSAT. The same pipeline passes on the control 11.
+  - The blocking word moves with K: length 17 for K = 16 (d = 75), 21 for K = 18 (d = 84; L559), 46 for K = 40
+    (d = 107). Each is the K-list's first missed constraint on a relaxed record, not a census of longer words.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
