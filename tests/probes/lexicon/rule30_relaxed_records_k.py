@@ -83,6 +83,15 @@ PROBE AT TR's DEPTHS (registered before its run; L575, at Cloud's request CL179)
   bound >= 18 only).
   RLKPR-P1 (blind, 0.5): at least 6 of the 12 depths are certified (UNSAT in both phases).
   RLKPR-P2 (blind, 0.55; RLK40-P2's restatement): at least one depth stays open (SAT at 18 in some phase).
+LIFT (registered before its run; L581). `lift TAG d L ph`: re-solve one relaxed SAT, test its visible code for exact
+  membership (right_half_for, SAT over the right cone), and if it is in, glue the model's left half to that right
+  half and simulate Rule 30: a VALID simulation is a genuine configuration, R_real(d) >= L. `lift MODEL.txt` redoes
+  the test from a saved model (L582; probes and lifts now save every relaxed SAT model).
+  RLKLF-P1 (0.4): d = 152, L = 18, phase 0, mfw40: the code is in L and the lift succeeds.
+  Controls (L582): R_real(21) >= 15 (phase 1) and R_real(25) >= 10 (phase 0) VALID; K = 16 at d = 65, L = 18,
+  phase 1 (relaxed SAT where RR2 has R_real <= 17) ABSENT. Its shortest absent factor is 10000101000010001 in L1
+  (length 17), 010000101000010001 in L (length 18, one of the 25 above). Defect fixed before any verdict: the
+  extraction omitted the cone's last site (GPT, eeb45660; rule30_lift_controls.py).
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
