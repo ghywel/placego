@@ -147,6 +147,9 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   (2,879 s, 16 cuts).
   CUT-P12 (blind, 0.6; registered 16:40 before its run): d = 125, L = 18, phase 1 (40p1 plus the 16 phase-0 cuts) ends
          UNSAT within 3 rounds at a 3-hour cap, so R_real(125) <= 17.
+  d = 121 phase 0: UNSAT at L = 18 (1,712 s, 16 cuts; the 7,200 s rerun).
+  CUT-P13 (blind, 0.6; registered 16:50 before its run): d = 121, L = 18, phase 1 ends UNSAT within 3 rounds at a
+         3-hour cap, so R_real(121) <= 17.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
