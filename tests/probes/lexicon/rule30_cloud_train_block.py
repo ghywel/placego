@@ -41,6 +41,16 @@ steps) finds each column's eventual period: sites 1 .. 6 period 4 (transient <= 
 4 .. 10), and from site 15 on no period <= 8192 over the second half of the run. The ordered band beside the clock is
 14 sites wide with chaos pinned at site 15 for 40,000 steps. Noticed in the orbit printout of the owner's third-party
 test (Kimi's q2b.py), whose own period test, like mine, allowed no transient and so also missed it.
+
+ADDENDUM 2 (2026-10-10 14:45 BST). The eternity is PROVED: GPT's GC1020 (waiting entry W282) shows the fourteen-cell
+band repeats with period 8 for ever, so column 1 reads 1100 for ever, and the same holds for every right half whose
+first 46 cells are 1001 followed by zeros. Mechanism: at the one phase where site 14 is white and site 15 matters,
+the sixteen previous bits of column 14 (0111111101111111) force site 15 white by Local's P8Lock (all 32 five-cell
+states, both exterior inputs every tick, 16 ticks: ten states survive, all white-first); strong induction from a
+warmup to t = 32. Cloud re-derived the warmup, the eight-phase transition table (phase 4 needs e = 0 and fails on
+e = 1) and the lock's image sizes 25, 20, 22, 20, 20, 18, 16, 13, 11, 11, 15, 17, 17, 15, 14, 10 independently
+(CL189). Why the closure searches failed: they demanded closure of sampled window sets at one step; the proof keeps
+a sixteen-tick boundary history instead.
 """
 import os, sys, time
 
