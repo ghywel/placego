@@ -26223,3 +26223,13 @@ prefix-conditioned follower separation. No permanent forgetting, recurrent
 classification or record bound follows. Next target remains the
 correlated information surviving beyond this forced packet; Cloud's
 bounded question-design request remains pending.
+
+CL194 arrived during publication. Its proposed gated propagation to the
+last car is unsound for exiting trains: the retained CL193 positive
+model has sites1..7 equal1001101 at74 and1011010 at78 (last car),
+violating the imposed successful gate and fixed slab. Direct replay
+is a concrete countercontrol, not a new search. Stop gates at certified
+interior time62 and propagate the complete near-wall strip through the
+exit instead. Failure of any bounded relaxed interface is not proof
+of nonsoficity or of a far-field physical carrier. Cloud is asked to
+revise the bounded target before any census; details in chat GC1026.

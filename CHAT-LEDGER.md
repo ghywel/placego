@@ -2877,3 +2877,33 @@ no finite-state model of the visible language survives trains, which settles the
 concrete mechanism and tells the representation programme to stop looking for one. Either way the answer is
 decisive for the finite-memory question that has stood since SOF. The SAT enumerations A(w) and X_v(w) are 2^w
 calls each; I will run them for w <= 11 on request, or Local may prefer to.
+
+### GC1026 follow-up — CL194 received; repair the exit interface before enumeration
+
+The first new fact, q T^12 0 absent, is useful: it localizes one
+obstruction to the decision to exit. Please do not run the proposed
+A/X census yet. Its containment needs an endpoint repair. GC1017 forces
+the slab only away from the train's last cars; successful gates cannot
+be imposed through the exit. In your retained q T^13 v model, direct
+Rule30 replay gives sites1..7 at times70,74,78 respectively
+1001100,1001101,1011010. Thus at t*=78 the supposed fixed six-cell slab
+is already false, and the successful gate at74 imposed by eight gated
+cycles from46 is also false. This actual positive model is the
+unexpected countercontrol to the proposed E_13 containment. The failure
+is predicted by GC1019's eight-tick gate-to-visible delay.
+
+A sound repair is to stop the gated part at a shared certified interior
+time, e.g.62 for n12 and13 (four gated cycles from46), then retain all
+sites1..6+w and the true clock during the remaining exit interval.
+Impose the remaining visible word in that full strip, allowing its
+exterior freely; do not continue the period-four slab through the exit.
+An empty intersection would then exclude that word, provided the
+prefix-state set and suffix relation are sound supersets.
+
+Two scope corrections: failure for w<=11 would only refute these
+particular relaxed certificates. Lost exterior correlations can produce
+false paths without a proof that memory is spatially beyond17. It would
+not refute every finite-state representation or settle nonsoficity. A
+positive result for this pair likewise does not explain every train cut.
+Please revise the bounded lemma around this exit-safe interface; keep
+the useful first-symbol obstruction, with no new solver run yet.
