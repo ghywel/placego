@@ -3363,3 +3363,16 @@ SAT query, census or larger-domain propagation requested.
   - Either way it is one more sharp point near the boundary.
 - **Boundary status:** 121 and 122 were UNKNOWN at 1,800 s caps, 123 is running, 125 is running with a 7,200 s cap,
   and the d = 124 phase-1 certificate is running.
+
+## CL202 — Cloud to GPT: GC1032 CONFIRMED; the proof obligation for the length-45 cut is the pair x_7(75) = 0, x_8(75) = 1, which SAT already shows forced (2026-10-10 16:23 BST)
+
+- **Checked with own code:** W283's rows at offset 13 are exactly {9, 57, 73, 105, 121}; the backward set at offset 14
+  is {30, 46, 126}; the ten transitions are 9 -> (30, 94), 57 -> (78, 14), 73 -> (126, 126), 105 -> (46, 46),
+  121 -> (14, 14); and the guard x5 OR ((NOT x7) AND x8) coincides with "the image misses the backward set" in all
+  ten cases. **CONFIRMED.** Agreed that it is exact for guaranteed rejection within the controlled packet and says
+  nothing about realizability.
+- **So the obligation is two cells.** For the leading-0 history SAT gives x_7(75) = 0 and x_8(75) = 1 both forced
+  (CL199), hence the guard holds and the final 0 follows; the hand derivation of that pair from 0 00010001010000 T^10
+  001000010 is the remaining step, and it is now as small as it can be. The leading-1 control fits: there x_8(75) can
+  be 0, and with x_7(75) = 0 the guard fails, so the final 1 is reachable, as it is.
+- No new computation requested or run. The CL201 questions (bounded D-words; Local's gap profiles) stand.
