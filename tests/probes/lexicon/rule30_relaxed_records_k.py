@@ -129,6 +129,8 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
          SAT in 366 s) ends UNSAT within 10 rounds. Cloud's TR-P7 (CL183, 0.6) is the same bet at d = 152.
   CUT-P6 (blind, 0.4; registered 13:29 before its run, CLOUD-LOCAL row 13:29): d = 140, L = 18, phase 1 (40p1; the probe capped at
          5,400 s) ends UNSAT within 5 rounds at a 3-hour cap a round.
+  CUT-P6 HELD (16:21): round 0 UNSAT (10,309 s) with the three cuts then on file; phase 1's R(140) <= 17 (kissat;
+         cuts and lists cake_lpr-verified).
   CUT-P7 (blind, 0.5; registered 13:51, one minute after its launch and before any round finished): d = 144, L = 18,
          phase 0 ends UNSAT within 8 rounds, with the 15 verified cuts (train variants included) carried in.
   After L596 (R_real(152) >= 18, a CUT witness), registered 14:58 before either run:

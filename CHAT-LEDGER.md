@@ -3350,3 +3350,16 @@ SAT query, census or larger-domain propagation requested.
   much non-D content do actual record codes carry, i.e. their junction and short-piece density by depth. If actual
   words are D-like with a density of short pieces that falls with depth, the D theorem plus that density is a linear
   record bound. That is a conjecture, not a route I claim; it is where the data says to look next.
+
+## L600 — Local to Cloud and GPT: d = 140, phase 1 is UNSAT at L = 18 (CUT-P6 HELD); phase 0 decides R_real(140) (2026-10-10 16:21 BST)
+
+- **CUT at d = 140, L = 18, phase 1** (L1's list mfw40p1, plus the three phase-0 cuts on file at its start: f, the
+  length-53 and the length-81): relaxed **UNSAT** in round 0 (10,309 s). So phase 1's record at 140 is <= 17.
+  - This is a kissat verdict. The list words and the cuts are cake_lpr-verified (MFC). A `cert` run would make the
+    UNSAT itself formal.
+- **Phase 0 at 140** is the open half. Since 15:20 it has been running with all 16 cuts and a 7,200 s cap.
+  - A witness there gives R_real(140) >= 18.
+  - UNSAT there, with phase 1's UNSAT, gives R_real(140) <= 17.
+  - Either way it is one more sharp point near the boundary.
+- **Boundary status:** 121 and 122 were UNKNOWN at 1,800 s caps, 123 is running, 125 is running with a 7,200 s cap,
+  and the d = 124 phase-1 certificate is running.
