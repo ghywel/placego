@@ -69,6 +69,14 @@ OUTCOME, 2026-10-10 07:31 BST (M5; the K = 16 language took 40 s on 3 threads, K
     at K = 18), and the missing word sits just beyond the list each time. It is a moving frontier, not a finite list
     that closes. Per GC549.21 this does not exclude every finite-type certificate. GC984 adds the 4,4,2,2 endpoint
     rule: the core is allowed, and only a chain with no 2-gap on either side is forbidden.
+PHASE-1 LANGUAGE (registered before its run; L574). relax40's phase-1 sweep uses the phase-0 language's words,
+  which only relaxes phase 1: phase 1's visible word starts one step after a black wall, and not every row is
+  reachable then. Its d = 45, L = 11 witness (an unregistered diagnostic) has a visible code in the phase-0 language
+  that no right half produces from a black start. The phase-1 language L1 is grown by SAT exactly as SOF grows L
+  (in_language_phase(w, 1)), and its minimal forbidden words mfw40p1 drive sweep tag 40p1, phase 1.
+  RLKP1-C1 (control): L1 is a subset of L at every length, and prefix- and factor-closed.
+  RLKP1-P1 (0.85): with mfw40p1, phase 1's record at d = 45 equals the actual (at most 9).
+  RLKP1-P2 (0.5): L1 first differs from L at some length <= 15.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
@@ -130,7 +138,7 @@ def forbidden(lang, K):
 
 
 def load_forbidden(K):
-    path = os.path.join(DIR, 'mfw%d.txt' % K)
+    path = os.path.join(DIR, 'mfw%s.txt' % K)
     if not os.path.exists(path):
         return None
     return open(path).read().split()
@@ -216,6 +224,45 @@ class Relaxed:
         self.code = vis                                               # the visible code, for `gap`
 
 
+def in_language_phase(w, phase):
+    """Visible word w (column 1 at the wall's white times) from some right half, the wall clamped to (t + phase) mod 2.
+    phase 0 is in_language's white start; phase 1 starts one step after a black wall (visible from t = 1)."""
+    k = len(w)
+    first = phase
+    last = first + 2 * k - 2
+    var, nv, cl = {}, [0], []
+
+    def x(t, i):
+        if (t, i) not in var:
+            nv[0] += 1
+            var[(t, i)] = nv[0]
+        return var[(t, i)]
+    for t in range(last):
+        for i in range(1, last - t + 1):
+            r, c, y = x(t, i + 1), x(t, i), x(t + 1, i)
+            nv[0] += 1
+            o = nv[0]
+            cl += [[-c, o], [-r, o], [c, r, -o]]
+            if i == 1:
+                wall = (t + phase) % 2
+                cl += ([[-y, -o], [y, o]] if wall else [[-y, o], [y, -o]])
+            else:
+                l = x(t, i - 1)
+                cl += [[-y, l, o], [-y, -l, -o], [y, -l, o], [y, l, -o]]
+    for s_, b in enumerate(w):
+        v = x(first + 2 * s_, 1)
+        cl.append([v] if b == '1' else [-v])
+    with tempfile.NamedTemporaryFile('w', suffix='.cnf', dir=DIR, delete=False) as f:
+        f.write('p cnf %d %d\n' % (nv[0], len(cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in cl))
+        name = f.name
+    try:
+        rc = subprocess.run([KISSAT, '-q', '-n', name], capture_output=True).returncode
+    finally:
+        os.unlink(name)
+    assert rc in (10, 20), rc
+    return rc == 10
+
+
 def in_language(w):
     """RRL's in_language, on kissat: is the visible word w (white start, wall clamped) produced by some right half?
     SAT over the cone of column 1 at the last visible time (sites 1 .. 2k - 1), as rule30_cloud_relaxed_records.py."""
@@ -253,7 +300,7 @@ def in_language(w):
 
 
 def ck_path(K, phase):
-    return os.path.join(DIR, 'rlk_K%d_p%d.ck' % (K, phase))
+    return os.path.join(DIR, 'rlk_K%s_p%d.ck' % (K, phase))
 
 
 def read_ck(K, phase):
@@ -389,12 +436,12 @@ def main():
         else:
             print('no absent factor: the visible code is in the actual language')
     elif cmd == 'sweep':
-        K, ph = int(sys.argv[2]), int(sys.argv[3])
+        K, ph = (int(sys.argv[2]) if sys.argv[2].isdigit() else sys.argv[2]), int(sys.argv[3])
         dmax = int(sys.argv[4]) if len(sys.argv) > 4 else 120
         cap = int(sys.argv[5]) if len(sys.argv) > 5 else 3600
         sweep(K, ph, dmax, cap)
     else:
-        status(int(sys.argv[2]) if len(sys.argv) > 2 else 16)
+        status((int(sys.argv[2]) if sys.argv[2].isdigit() else sys.argv[2]) if len(sys.argv) > 2 else 16)
 
 
 if __name__ == '__main__':

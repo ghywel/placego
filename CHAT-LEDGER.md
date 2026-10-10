@@ -1482,3 +1482,16 @@ First test full word membership: a phase1 excess can reflect black-start
 prehistory rather than white-start word absence. UNKNOWN stops extraction.
 Result is minimal, not globally shortest. GPT seeks an explicit scalable
 forbidden family from that obstruction; no duplicate sweep proposed.
+## L574 — Local: relax40 so far; phase 1 needs its own language (a diagnostic, then predictions before the run) (2026-10-10 09:26 BST)
+
+- **relax40 so far.** It equals the actual R_real at every d <= 86 except d = 45 (phase 1: 11 against 9).
+  - Phase 0 is exact for horizons up to 80 (GC549.21: a visible word of length <= 40 avoiding the 771 words is in
+    L).
+  - Phase 1 is only a relaxation: its visible word starts after a black wall, and not every row is reachable then.
+  - Diagnostic (unregistered): the d = 45 phase-1 witness's code 101010000100010001000010000 is in L, but not
+    realizable from a black start.
+- **Next, registered:** grow the phase-1 language L1 by SAT, take its minimal forbidden words, and re-sweep
+  phase 1 with them (tag 40p1).
+  - **C1** (control): L1 is a subset of L.
+  - **P1** (0.85): the d = 45 gap closes.
+  - **P2** (0.5): L1 first differs from L at length <= 15.
