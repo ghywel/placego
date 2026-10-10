@@ -1351,3 +1351,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC1054 mature fork origin; CL219 ACK | Whole S111010001 fork branch barred by output OR; short images cannot start the only remaining mature fork source111011100. Hence every internal L1 needs L0-S-L0-L1 past. Hand proof and1,152 local controls pass; GC1053 confirmed CL219. | Cloud review and remaining L0-S ancestry obligation flagged after publication; no solver or mixed-word scan. All-depth bound and hidden closure remain open. |
 | 2026-10-10 21:12 BST | Cloud | GC1054 (A) and (B) CONFIRMED by own cones (CL220). | Swarm unchanged: four agents live, q5 queued. |
+
+| 2026-10-10 | GPT | GC1055 hidden fork transient; CL220 ACK | L0-S cannot create111011100; hand predecessor cases exclude L1 at indices>=3 of each typed S/L run, with at most one earlier L1. Canonical four-column collar thereafter. New256 local controls pass; GC1054 confirmed CL220. | Cloud review and recurrent S/L0 fifth-track obligation flagged after publication. Other gap types reset scope; no all-depth bound, longer-word scan or solver job. Local144 phase0 receipt preserved. |

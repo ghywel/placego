@@ -27774,3 +27774,36 @@ and its S entrance begins111011100. An L1 is followed by S, so such a fork sits 
 **Predictions and independent controls.** P1 initially proposed a predecessor characterization for111011100 after S; lemma(B) makes it vacuous, so it is not reported as a nonempty branch classification. P2/P3 predicted both OR blockers before controls. All1,024 complete six-tick S cones (96 applicable black-sixth S returns) and128 first-branch cones pass literal/packed engines, including every displayed intermediate tuple. The retained failed GC1052 cone1110100010000100 still returns1110010101, consistent with(A), while the relaxed1110111001110... still reaches the fork prefix and L1: short sources must not be banned independently of their past. Startup111010010 still feeds L0 and violates the mature-prefix condition. No mixed-word, membership, solver or width scan.
 
 **CL219 receipt at95e0f521 and next intention.** Cloud independently checks16,384 L0 cones,9,376 L0 returns, confirms GC1053's OR guard and its hand implications. GC1053 is now second-read. Its additional reported absence of returned triple110 is received computation, not a new theorem here. Next substantive obligation: intersect the remaining111011100 fork gate with the actual L0-S past, retaining correlations, and determine whether a fork birth is realized or further shielded. Cloud hand review and question design requested and flagged; no computation requested from Local.
+
+
+## GC1055 — The hidden alternative-long fork is confined to startup of an S/L run (2026-10-10)
+
+**Missing inference.** Intersect GC1054's last possible mature origin L0-S-L0-L1 with actual L0-S past. Record searched:L0.S.L0.L1|111011100|long.*short.*fork with L0|ordinary|ancestr|preimage ->25 hits, GC1051..1054 and references, no origin exclusion. Further fork/alternative-long with at-most-one/first-three/transient finds26 unrelated hits, no startup-only result. Reuse GC1047's ordinary-L mid-selector, the reviewed fork gates, and the three mature S-to-L0 branches; no larger word or solver scan.
+
+**New all-tail lemma, review pending.** Every L0 return which is S with black site6 has returned sites6..9
+
+    (1,1,NOT H,H OR I), H=c9(9), I=c10(9).
+
+Therefore NO L0-S return can start111011100. The entire remaining origin is barred even before imposing its extra fork gate.
+
+**Hand proof.** GC1047's mid00 and mid01 cases return with white site5, so an S return requires mid1: time5 begins011001. Let time7 sites7..10 be u,v,p,q. From c5(6)=1,c5(7)=0,c5(8)=1, direct updates give time8 sites6..9 as
+
+    u, A=u OR v, B=u XOR(v OR p), C=v XOR(p OR q),
+
+and time9 sites6..8 as
+
+    NOT A, F=u XOR(A OR B), G=A XOR(B OR C).
+
+Returned site5 is A; returned site6 is (NOT A) OR F. A black fifth/sixth pair forces A=1,F=1. Then F=NOT u, so u=0 and v=1. These give B=1, G=0, and time9 sites6..8=010. The final update yields the claimed returned tuple, with its last pair having OR1. No earlier ancestry shield or independence of H,I is needed for this implication. A free S111011100 row is still permitted; it cannot be this L0 image.
+
+**Uniform startup bound for the hidden type.** Consider any run of synchronized return cylinders S,L0,L1, numbered0,1,..., with the wall white at the markers. Suppose L1 occurred at index k>=3. GC1050 and the collar table force its predecessor to be L0. GC1053 forces the predecessor of that L0 to be S (L1 would return S, and L0-L0-L1 is barred). That S entrance has an actual two-tick past because k-2>=1. By GC1014, GC1052 and GC1054, only S111011100 can prepare the required fork. A preceding S cannot create that prefix by GC1054. A preceding L1 cannot supply its fork gate by GC1051. A preceding L0 cannot create it by the new lemma. These exhaust the typed run and give a contradiction.
+
+Thus L1 can occur only at indices0,1,2. It can occur AT MOST ONCE there: an L1 returns S, and S cannot return L1, so two L1 entrances need separation at least three indices. After the third return every remaining long entrance in that run is L0. In particular the four-column collar then has no hidden L0/L1 ambiguity and is determined by the visible S or L symbol. This is a uniform finite startup statement, not a depth scan or a counting assumption.
+
+The scope is EACH uninterrupted synchronized S/L run. Other visible gap types can start a new run; an untyped terminal L remains outside the cylinder hypotheses. The surviving S/L0 component can still branch, its farther exterior correlations remain open, and no all-depth white-record bound or prize claim follows. The recurrent-L1 explanation route is closed in this precise scope.
+
+**Controls and initial proposal.** P1 sought a two-tick shield violation from the full fork gate; the stronger source-prefix exclusion makes that extraction vacuous, so it is not claimed as a new shield theorem. P2 predicted the displayed OR guard before controls. All256 complete five-tick mid1 cones pass literal/packed engines, including every intermediate tuple;112 have the applicable black-sixth S return. The startup bound is proved by the typed predecessor cases above, not by enumeration of longer words.
+
+**Unexpected origin check.** Initial L1 row111000001110011100 followed by zeros really returns1110111000101 at time10. Thus the L0-image lemma cannot be extended to every long source. Its sites10,11 are01 and fail the fork gate, agreeing with GC1051. The free S1110111001110... still reaches L1. These independent controls preserve the distinction between excluding a source prefix and excluding a gate on a source that does occur.
+
+**Receipts and next intention.** CL220 at ac858135 independently confirms both GC1054 lemmas (2,048 first-branch and32,768 S cones) and the origin placement; GC1054 is now second-read. Local4235d5c5 reports d144 phase0 UNSAT at18 with16 cuts; this is accepted as reported solver evidence, not independently certificate-replayed, and phase1 remains pending. Next proof target is the recurrent S/L0 fifth-track selector with the canonical four-column collar, retaining farther correlations. No more hidden-L1 recurrence or mixed-word scans. Cloud hand review and concrete next-obligation design requested and flagged.
