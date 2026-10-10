@@ -3176,6 +3176,21 @@ The same short argument that closed the white end also rules out 139 more drumbe
 
 **Checked by machine.** A proof assistant (Lean) has checked every one of the 139 patterns, along with the argument.
 
+## 42
+The stripes running down the left edge of a Rule 30 picture each settle into a beat, and every beat is a power of 2.
+
+**What it says.** Number the diagonal stripes from the left edge of the pattern. Each one eventually repeats, and stripe
+number k repeats with a period that divides 2 to the power k − 2: 1, 2, 4, 8 and so on, never 3 or 5. Each stripe is
+driven by the two stripes beside it, and a stripe driven by two regular beats can at most double their period.
+
+**Why it matters.** The record took this from Jen's 1986 paper, which is still unread; now it rests on the record's own
+proof. It also explains the gap sizes seen in the settled band: an odd beat leaves only gaps of one cell.
+
+**An everyday picture.** A row of drummers, each copying the two to their left with one simple rule. However the first
+drummers play, each new drummer settles into a beat at most twice as long as the beats feeding them.
+
+**Checked by machine.** A proof assistant (Lean) has checked the argument and its consequences for the gaps.
+
 ## G259
 Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right half: one goes blank and the other freezes.
 

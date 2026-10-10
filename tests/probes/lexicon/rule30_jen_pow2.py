@@ -40,6 +40,10 @@ OUTCOME, 2026-10-10 05:21 BST (M5; the scan about 20 s; Lean about 40 s): C1 PAS
     4 distinct patterns, which are phase shifts.
   - This fits §8.31's "generic rows share one left side". The proof explains only the power of 2; why the
     sequence of periods is seed-independent is not proved here.
+  - Correction (Cloud CL171): P3 was already against the record when I registered it. UB (L383,
+    rule30_edge_period_universal.py) measured the universal left-edge staircase on 21 rows: P_e = 4 for 8 <= e < 29.
+    My record search missed it, because UB says "staircase" and "P_e", not "period"; `record_find.py staircase`
+    finds it. Cloud's 300-seed replay gives the same periods out to k = 16.
 """
 import sys
 
