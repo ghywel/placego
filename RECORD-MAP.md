@@ -184,7 +184,7 @@ PART: as on the board.
 - The order ends at an exact boundary B(t), a walk near x/t = -0.25 — COMPUTED, MEASURED — §8.74
 - Left-only horizon next to 0101 is W + 17; slow walls stop every width-16 seed within a period — COMPUTED — §8.69
 - Every white triangle is exact (shrinks two cells a step); every climb on black reaches the origin in t moves —
-  PROVED — §8.18, §8.29
+  PROVED — §8.18, §8.29; ShortC.lean L533, source GC957
 - Backwards: a single 1 has no finite past, and exactly two parents — PROVED — §8.19
 - Core triangles follow the uniform measure's 3·2^-(L+4) per cell — MEASURED (law derived) — §8.68
 - Right-edge triangles are a ruler sequence, width a function of v2(t) — PROVED — §8.73; entry 36 (Proposition 23)

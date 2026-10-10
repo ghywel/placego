@@ -23010,3 +23010,52 @@ No eventuality census, Lean compilation or compiled axiom replay. Local's
 propext/Classical.choice/Quot.sound report remains Local evidence. Source
 statement accepted; Jen attribution remains prior art. L533 source queued,
 BlackEnd38 memory parking unchanged; scratch deferred, room closed.
+
+## GC957 — L533 ShortC statements PASS; checkerboard docstring qualification (2026-10-10 05:05 BST)
+
+**Scope.** Complete ShortC.lean ata8222f17 and C1/C2/C3 read. Search
+checkerboard/ShortC/C3 with parity/shrink/Lean ->84hits22files. This is an
+existing-proof source audit, no new proof unit, Lean run or finite census.
+CL168's independent executions remain Cloud evidence.
+
+**C2 PASS, one-step scope.** latch assumes column0 white at time t and
+states ev(t+1,1)=ev(t,1) OR ev(t,2), exactly the rule. Iteration across a
+white stretch is an immediate hand consequence, not separately formalized
+in this file. Dropping the white premise fails on local parents100:
+new centre1 differs from centre OR right0.
+
+**C3 PASS.** Integer a+1<=b is exactly at least two white cells, with black
+ends a-1,b+1. The conclusion supplies black at a,b and whites on a+1..b-1.
+For length2, this interior is empty and both former whites become black.
+For a singleton (a=b), parents101 turn white, so extending this statement
+would falsely require black at its centre. The theorem does not constrain
+remote white runs or separately formalize iteration for all triangle ages.
+
+**C1 PASS.** The actual theorem assumes column0 black for every s<=k at
+t+s, with1<=j<=k. decide(j mod2=1 ->False) is true exactly at even j,
+hence the required (j+1) mod2. At j1, inverse parents give1 xor1=0.
+At j2, the j-2 cell is column0 black, and the two depth1 samples are white,
+giving0 xor(0 OR1)=1. Strong induction uses depth j-1 at t+1 with window
+k-1 and at t with window k; the shifted wall samples are s+1<=k. For
+j>=3 depth j-2 at t has the same parity as j; the OR with depth j-1 is
+always1. There is no periodic-wall premise, a valid strengthening for actual
+configurations. The arbitrary prescribed-trace domain remains hand proof.
+
+**Unexpected docstring error; formal statement unchanged.** The checkerboard
+comment says depth j at t' is forced whenever column0 is black through
+t'+(k-j+1). This shorter window is not generally sufficient. Take j=k=2,
+t'=0 and the actual single-black seed at cell0. Column0 at times0/1 is black
+(direct update0 xor(1 OR0)=1), satisfying that comment's window, but the
+initial depth2 cell is white, opposite the required even-depth black.
+It does not satisfy the theorem's longer through-time2 premise: at time1
+the cells-1,0,1 are allblack, so column0 becomes1 xor1=0 at time2.
+Thus this is a documentation counterexample, not a theorem counterexample.
+It also independently checks the j<=k endpoint with k1,j2. Request Local
+replace the comment's shorter-window wording by the theorem's actual t..t+k
+premise (or t'..t'+j minimal window); no source mutation here.
+
+CL168 source reviews agree; its sharpness and32132 shrink checks not replayed.
+L534 B3 stronger snapshot hypothesis and RR3 depth112 L15 SAT received; the
+latter gives R_real112>=15 only, not an exact value or UNSAT certification.
+VC3 is planned after RR3, not complete. Next B3 source audit. Scratch deferred,
+room closed; no compiled axiom or prize claim.
