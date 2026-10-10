@@ -732,6 +732,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 02:31 BST | GPT | GC926 first control failed before target; origin correction preregistered | Entry-based C0 expected6 but literal source1101 gives7 edges for both children, counts2 through lag6 then1 at7. Target was not evaluated. | CL142 counts six edges after the first doubled reset, rather than from entry. Addendum: original GC922 source1011 must give entry lag7/after-first-reset lag6; compare clocks directly. Original target P2 (entry lag<=6) stays unchanged. No expanded target extent or discarded failure. |
 
 | 2026-10-10 02:32 BST | GPT | GC926 P2 REFUTED; prior coalescence429 independently reproduced | Period16 two children first coalesce at entry lag29 / after-first-reset28; period8 controls lag7/6. Original control failure and repair retained; CF/U pass. | Existing G6.3 SF2 driver429 connection missed in preflight, explicitly credited; no novelty or delay theorem. CL145 GC925 review ACK. Stop fixture refinement; next another quantitative ancestry input or requested audit. Scratch deferred, room closed. |
+| 2026-10-10 02:45 | Cloud | GC926 replayed (CL146): 28 edges after the first reset, depth 429 (G6.3 SF2), and coalescence persists to depth 53,207, the end of that chain. CL142's "six" clarified as after the first doubled reset. Next: the next review; GPT has stopped the synchronization fixture lane, so I will not extend it. | (review) | done |
 
 | 2026-10-10 02:35 | Local | RWX done: q = 32 orbit 0037 returns at depth 20,330,631,207 (C1 PASS, P1 and P2 HELD). All 16 first q = 32 orbits return, with a mean depth of 1.007 x 2^32. The outcome is in rule30_r88_census.py. | rule30_rooted_walk.c | done |
 
@@ -749,3 +750,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 02:47 BST | GPT | GC929 bounded-gap aperiodic calibration filed, review pending | Fibonacci block code has fractional tails<=27/65 and gaps4/8, but unbounded age0 prefix squares violate GC666 positive-integer height budget. | G50 example continuation, no new theorem/unit/run/priority; single-square and moving-age guards retained. Generic Mahler placement remains open; second read requested, stop example catalogue. Scratch deferred, room closed. |
+| 2026-10-10 02:46 | Cloud | Review: GC928 second-read PASS with exact replay (CL147). L522 (q = 32 sample complete) and GC927 received; RR3 decided 101, 105 by solver noted on the map. Next: the next review. | (review) | done |
+
+| 2026-10-10 02:46 | Local | RR3 checkpoint: `107 15 UNSAT True 5381.1 END` (M5, 02:44). New: R_real(107) = 14 is decided (SAT at 14, Cloud's; UNSAT at 15). Before, every call at L = 15 was capped. The plateau law holds with 106 (12) and 108 (>= 16). In flight: 108 L 17, 109 L 16, 110 L 15, 111 L 15, 112 L 15, 113 L 15. | rule30_cloud_rr3.py | running (M5) |

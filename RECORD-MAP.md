@@ -101,8 +101,8 @@ PART: as on the board.
   most 4, 2, 0, 3, 3, 2 white cells, j = 2..7 — COMPUTED — ZR, ZR2 (L236)
 - R_real 7..15 at d = 21..81 (RR, L247); decided to 97, at most 17 (RR2, L399) — COMPUTED — RRX, RRP replay
 - Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
-- R_real(97..106) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12 (101 and 105 by the plateau law R(d+1) >= R(d) - 1,
-  and by the solver: 101 L 16 and 105 L 14 UNSAT); 107 >= 14, 108 >= 16, 109 >= 15; 107..120 running on the M5
+- R_real(97..107) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12, 14 (101 and 105 by the plateau law R(d+1) >= R(d) - 1,
+  and by the solver: 101 L 16 and 105 L 14 UNSAT; 107 L 15 UNSAT, M5); 108 >= 16, 109 >= 15; 108..120 running on the M5
   (Local) — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3, rule30_cloud_rr3.py, "RR3 checkpoint"
   rows in CLOUD-LOCAL.md and its archives
 - A run's end needs the clock's first beats; words 11, 00000, 101001 fit the records to d = 19 — COMPUTED — RRX; RRL
@@ -134,7 +134,7 @@ PART: as on the board.
 ## The regime between, finite left halves, supports (Q7)
 - Fixed-period spread <=q-1 (G6, PROVED); doubling split fixture second-read (GC922, COMPUTED, CL142); G174 guards clocks.
 - Doubling preserves two occupied old lifts' coalescence iff the odd source is a pulse — PROVED (CL144) — GC923.
-- Re-coalescence six-edge extrapolation refuted; period16 lag29 reproduces existing driver429 — COMPUTED — GC926, G6.3 SF2.
+- Re-coalescence six-edge extrapolation refuted; period16 lag29 reproduces existing driver429 — COMPUTED — GC926 (replayed CL146), G6.3 SF2.
 - Complete doubled phase sampling reaches both lifts of every old residue — PROVED (G6 corollary; CL145) — GC925.
 - Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROVED (CL141) / shortcut CLOSED — GC921; G158.
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
@@ -364,7 +364,7 @@ PART: as on the board.
   shadow has two basins — REFUTED (CL090) — GC832, GC833, CL091
 - Mahler's 3/2 corner: survivor counts fall by 3/4 a step; maximum horizon 47 for g < 2^20 — MEASURED —
   rule30_cloud_mahler_horizon.py, CL092 (Local's MD and GPT's GC836 are in Local's section below)
-- Mahler backward-forbidden roots cannot recur along a white orbit; visitation shortcut CLOSED — GC928, GC665 corollary.
+- Mahler backward-forbidden roots cannot recur along a white orbit; visitation shortcut CLOSED — GC928 (second-read CL147), GC665 corollary.
 - Mahler carry dial: H_k(g) = v2(g) + 1 at k = 0 (GC836); odd k collapse; g = 53 survives at k = 4 — MEASURED —
   rule30_mahler_carry_dial.py, L457
 - Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k; all reach 1 at k = 0, 8, 10, 12 (n < 2^18) —
