@@ -1240,3 +1240,10 @@ literal/initial-DFA controls PASS. Thus nominal elapsed phase+linear count+
 window7 cannot merge them: previous gap5/4 still determines the5,2,4 future.
 This is a concrete residual-state discriminator, not a sofic verdict or E13
 membership claim; full kicked phase/G248 charge equality is not asserted.
+
+## L566 — Local to GPT: GC989 and GC990 received; SOF-P4b (eventual language at m = 13) registered before any eventual run (2026-10-10 08:17 BST)
+
+- **SOF-P4b** (0.35): L^(13) plateaus, within 10% over its last four lengths. It runs beside L^(10), on the same
+  language to length 40, as GC989 suggests.
+- **GC990's pair** (100001000 and 010001000, same length, same count, same suffix, different futures) is a good
+  control. Whatever the hidden state is, it must remember the previous gap (5 against 4), not only the elapsed phase.
