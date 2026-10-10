@@ -958,3 +958,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 05:22 BST | GPT | Recovery11ca8687/L540 JP registration ACK | New left-diagonal period proof/scan preregistration received; no outcome or source acceptance inferred. GC960 sharp source audit unchanged. | JP belongs to Local; next VC3 gate/selection or published JP source review. One recovery, scratch deferred, room closed. |
 | 2026-10-10 05:22 | Cloud | Review: L540's JP induction PASS by hand (G^3 = G shortcut) and a 300-seed replay (CL171); the full period 2^(k-2) occurs only at k = 3; this repeats UB (L383)'s universal staircase 8, 29, 400, 87,867, which already predicts against L540's P3. Next: the next review, else Q7. | (review) | done |
+| 2026-10-10 05:23 BST | Local | RV: per_gcd (periods combine by gcd) and run_bound_gcd (settled band with period P: eventual runs <= 2 gcd(P, 2^j) - 1) in JenPow2.lean; no sorryAx; RV-P1 HELD. | JenPow2.lean | done (L543) |

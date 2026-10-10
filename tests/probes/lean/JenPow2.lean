@@ -15,6 +15,8 @@ case x(T + 3p) = x(T + p), so x has period 2p from T + p (`forced_periodic`).
 
 `run_bound` combines it with Lemma B3's sharp form (`lemma_B3_sharp`, LemmaB3.lean, repeated here): from some time on,
 every white run [g + 1, M'] in the diagonals up to j + 2, bounded by a black diagonal g, has M' - g ≤ 2^(j+1) - 1.
+`run_bound_gcd` (settled form of L539's v2 pattern): if those diagonals have period P from some time, the bound is
+2 gcd(P, 2^j) - 1; `per_gcd` combines two periods by Euclid.
 
 How to check: as for TheoremA.lean; the `#print axioms` lines must list no `sorryAx`.
 -/
@@ -302,8 +304,64 @@ theorem run_bound (x0 : ℤ → Bool) (e : ℤ) (he : x0 e = true) (hl : ∀ j <
   push_cast at this ⊢
   linarith
 
+/-! ### Periods combine by gcd, and the v2 run bound (settled form) -/
+
+section gcdper
+variable (x : ℕ → Bool) (T : ℕ)
+
+lemma per_mul (p : ℕ) (hp : ∀ t, T ≤ t → x (t + p) = x t) : ∀ m t, T ≤ t → x (t + m * p) = x t := by
+  intro m
+  induction m with
+  | zero => intro t _; simp
+  | succ m ih =>
+    intro t ht
+    rw [show t + (m + 1) * p = (t + m * p) + p by ring, hp _ (le_trans ht (Nat.le_add_right _ _)), ih t ht]
+
+lemma per_sub (p q : ℕ) (hp : ∀ t, T ≤ t → x (t + p) = x t) (hq : ∀ t, T ≤ t → x (t + q) = x t) (hqp : q ≤ p) :
+    ∀ t, T ≤ t → x (t + (p - q)) = x t := by
+  intro t ht
+  rw [← hq (t + (p - q)) (by omega), show t + (p - q) + q = t + p by omega, hp t ht]
+
+/-- Two periods give their gcd (Euclid on periods). -/
+lemma per_gcd : ∀ m n : ℕ, (∀ t, T ≤ t → x (t + m) = x t) → (∀ t, T ≤ t → x (t + n) = x t) →
+    ∀ t, T ≤ t → x (t + Nat.gcd m n) = x t := by
+  intro m n
+  induction m, n using Nat.gcd.induction with
+  | H0 n => intro _ hn; simpa using hn
+  | H1 m n _ ih =>
+    intro hm hn
+    rw [Nat.gcd_rec]
+    apply ih _ hm
+    have hmod : n % m = n - m * (n / m) := Nat.eq_sub_of_add_eq (Nat.mod_add_div n m)
+    rw [hmod]
+    exact per_sub x T n (m * (n / m)) hn
+      (fun t ht => by rw [mul_comm]; exact per_mul x T m hm (n / m) t ht) (Nat.mul_div_le n m)
+
+end gcdper
+
+/-- The v2 bound, settled form: if the diagonals up to j + 2 have period P from some time, then from some later time
+every white run there is at most 2 gcd(P, 2^j) - 1 long (so at most 1 for odd P). -/
+theorem run_bound_gcd (x0 : ℤ → Bool) (e : ℤ) (he : x0 e = true) (hl : ∀ j < e, x0 j = false) (j P T0 : ℕ)
+    (hset : ∀ k : ℤ, k ≤ j + 2 → ∀ t, T0 ≤ t → D x0 e k (t + P) = D x0 e k t) :
+    ∃ T : ℕ, ∀ t, T ≤ t → ∀ g M' : ℤ, g + 1 ≤ M' → M' ≤ j + 2 → D x0 e g t = true →
+      (∀ k, g + 1 ≤ k → k ≤ M' → D x0 e k t = false) → M' - g ≤ 2 * (Nat.gcd P (2 ^ j) : ℤ) - 1 := by
+  obtain ⟨T1, hT1⟩ := jen_pow2 x0 e he hl j
+  set c := Nat.gcd P (2 ^ j) with hc
+  have hc1 : 1 ≤ c := Nat.gcd_pos_of_pos_right _ (Nat.two_pow_pos j)
+  have hper : ∀ k : ℤ, k ≤ j + 2 → ∀ t, T0 + T1 ≤ t → D x0 e k (t + c) = D x0 e k t := by
+    intro k hk
+    exact per_gcd (fun t => D x0 e k t) (T0 + T1) P (2 ^ j)
+      (fun t ht => hset k hk t (by omega)) (fun t ht => hT1 k hk t (by omega))
+  refine ⟨T0 + T1 + c, fun t ht g M' hgM hM hg hw => ?_⟩
+  exact lemma_B3_sharp x0 e t c g M' ((j : ℤ) + 2) hc1 (by omega) hgM hM (fun k hk => by
+    have := hper k hk (t - c) (by omega)
+    rw [show t - c + c = t by omega] at this
+    exact this.symm) hg hw
+
 end JenPow2
 
 #print axioms JenPow2.forced_periodic
 #print axioms JenPow2.jen_pow2
 #print axioms JenPow2.run_bound
+#print axioms JenPow2.per_gcd
+#print axioms JenPow2.run_bound_gcd
