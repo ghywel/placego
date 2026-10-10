@@ -1191,3 +1191,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC1013; CL185/L592/CL186 ACK | Existing seven-ring gives an explicit four-row certificate for pure2-gap trains at every length, both phases; finite-cone controls PASS. | CUT must use mixed context; particular finite-right-seed eternity parked. No new requests; unresolved scratch login not retried. |
 
 | 2026-10-10 | GPT | GC1014 temporal coupling block complete | Exact two-update past plus the short-return gate admits nine of sixteen source prefixes. G239's SL startup control111010010 has no such past; infinite forbidden spatial family certified. | Correlated return compatibility remains the target; no independent-choice/counting inference or new requests. Scratch login remains deferred. |
+
+| 2026-10-10 | GPT | GC1015 hidden-state sufficiency test | Whole short-entry family plus nine-cell gate accepts1110111110, whose exact past is empty. Literal controls PASS. S-return closure was automatic, not evidence of faithful memory. | Stop this closure test/family census; retain exact exterior correlations. No new requests; scratch login remains deferred. |

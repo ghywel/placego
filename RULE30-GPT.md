@@ -25421,3 +25421,63 @@ for111010010/11101010 finds G239's startup example but no past restriction.
 Next missing inference: propagate the surviving exterior relation through
 successive S/L returns; do not treat these nine cylinders as independent
 choices or infer a record bound from their counts.
+
+Short-return closure test registered: GC1014 gives the infinite necessary
+family11101 0^k 10. Missing inference is whether retaining this whole
+family, rather than only its nine-cell consequences, closes a hidden
+state under an S return. Prediction: it does not; a startup row satisfying
+the family returns in six ticks to forbidden1110110. Counterfactual: no
+such cylinder through13 cells; that is inconclusive for longer targets,
+not proof of closure. Record searched: 1110110|11101.*0^ + return|invariant|
+pullback|closure -> GC1010/1014, no return-closure test. Enumerate at most
+256 completions after11101, retaining an early11 that certifies membership
+in the entire family relaxation independently of the unexamined tail.
+Controls: literal and packed six-tick updates agree; an exact image-F
+prefix cannot produce the forbidden target. Unexpected check: initial
+nine-cell gate passes even for a failing longer cylinder. Stop on a concrete
+failure; no width sweep, no solver, no automatic cut-list expansion.
+
+The length13 test found no target1110110; prediction not established.
+Bounded adaptation: decide the ENTIRE regular family under six-tick S
+return, using an exact spatial transducer of memory12, not a width sweep.
+Track input11101(0*11 anything OR all zeros) and output111010*10.
+At most20000 product states; cap means unknown. Prediction remains a
+counterexample; if the exact reachable product has none, closure under S
+alone is proved, with L explicitly untested. Independent literal replay
+of a found cylinder, including all last-cone completions, is required.
+
+### GC1015 — Whole short-entry family loses past information despite return closure
+
+REFUTED sufficiency; Q6 hidden-representation block. The registered
+closure test found no length13 witness; the exact six-tick product then
+exhausted1542 states without one. This is NOT a new invariant theorem:
+any forward iterate already lies in image(F), so GC1014's image-necessary
+family is automatically regenerated. The prediction overlooked this
+simple inclusion. Stop that return-closure search; its success cannot
+certify that the abstraction retains the past.
+
+A concrete separator resolves the relevant sufficiency question instead.
+The spatial prefix1110111110 satisfies the ENTIRE family condition
+excluding11101 0^k 10: after its fifth bit its next two bits are11, so
+no farther extension can break that rooted condition. It also passes all
+three nine-cell gate implications (abcd=1111) and emits SS. Nevertheless
+it has NO full white/black predecessor. From A={4,5,6,7}, its remaining
+six symbols111110 take the exact residuals through
+
+    {13,14,15} -> {10,11,12} -> {4,5,6,7,8,9}
+    -> {0,13,14,15} -> {1,10,11,12} -> empty.
+
+Independent literal enumeration of all4096 twelve-bit sources confirms
+absence. The first nine symbols do have a predecessor, for example the
+source000111000011 produces that nine-symbol prefix. Three different
+farther tails replay the valid forward SS control. All checks PASS in
+`rule30_short_family_guard.py`. Exact-word record search found no prior
+hit. This is a spatial hidden-state separator, not a forbidden visible
+word or a new S/L cut. Both this rejected-past cylinder and its admitted
+nine-cell prefix have the same initial visible SS behavior.
+
+Thus even an infinite family plus the next-return gate loses information;
+closure under actual evolution does not repair that loss. Keep the full
+correlated exterior relation when composing observations. No larger
+family census, maturity-depth sweep or additional Local solver task is
+justified by this block; the record-bounding potential remains missing.

@@ -2301,3 +2301,18 @@ compatible past. This adds three gate exclusions beyond1110110, without
 removing SL itself or claiming a record bound. Evidence and exact scope in
 RULE30-GPT GC1014; no new solver run or review request. Next: compatibility
 of the surviving exterior relation across successive returns.
+
+## GC1015 — GPT: the whole short-entry family still loses essential past information (2026-10-10)
+
+The prefix1110111110 passes GC1014's entire infinite family and its
+nine-cell mature gate, and emits SS, but has no two-tick predecessor.
+The exact residual path empties at its tenth bit; independent4096-source
+truth-table checking agrees, while its nine-bit prefix has a predecessor.
+This is a hidden spatial separator, not another visible-word cut.
+
+A failed closure attempt is retained: exact S-return exploration found
+no violation, but that closure is automatic because every actual forward
+iterate lies in image(F). It does not make the abstraction faithful.
+I have stopped that test rather than expand the family census. Full
+correlated exterior information across observations remains the target;
+no additional computation or review requested.
