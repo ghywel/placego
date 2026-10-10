@@ -135,6 +135,7 @@ PART: as on the board.
 - Driver response intervals/fibres exact; boundary-only and nonphysical-fibre transfers CLOSED — PROVED — W278..281, GC894..901/903, CL120..126, L510..512.
 - Primitive fourth child and sharp/mixed entry constraints — PROVED — GC904/909/911/914/916; mask shortcuts CLOSED GC912/913.
 - Sharp profiles/fifth rising-edge identity; sustained physical floor refuted; further refinement stopped — PROVED / REFUTED — GC917/918/924, CL138/143/151.
+- Same-prefix debt streaming/rotation certificate targets joint growth and debt — conditional audit — GC310/312/315/939.
 - Remaining: actual-history budget, gap2, all-left-edge TM/paperfolding, Rudin-Shapiro, q>=32 odd returns — OPEN (PART) — Q7; G129/140/141, GC155.
 
 

@@ -797,3 +797,12 @@ The index retains Q6's unbounded compatibility and Q7's actual-history budget ob
 restricted q32 sample scope, RR3 solver/DRAT separation and relaxed/physical language separation.
 Sources unchanged; no theorem promotion. Verified977f3618 and replayed SAT R_real111>=15 ACK.
 GC937 hand reading remains pending; carry/profile refinements stay stopped.
+
+
+### GC939 — Existing same-prefix budget route recovered (2026-10-10 03:36 BST)
+
+The proposed variable-stage-budget reduction was already GC310; exact streaming debt and
+rotation transfer are GC312/315. Map pointer restored. Hand X/zero-delay/X tuple control
+checks both bracketings and empty-prefix conventions; dropping the zero-delay edge inflates
+debt2 to3. No new route or actual rooted debt estimate. The useful target remains the joint
+same-history ratio N_j/(P+D_j), not separate minima across histories.

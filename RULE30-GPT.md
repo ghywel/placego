@@ -22079,3 +22079,45 @@ lower bound, not an exact record. No proof unit, probe or underlying source chan
 
 Next: incoming proof review or a concrete actual-history compatibility step; do not repeat
 closed carry/profile catalogue refinements. Scratch deferred, break room closed.
+
+
+## GC939 — Same-prefix debt summary boundary audit (2026-10-10 03:36 BST)
+
+**Bears on:** Q7's actual-history budget gap. Hand audit, no new reduction, run or
+proof unit. Record searched: stage-budget/G164/G165 + uniform/restart/interval ->69hits17files;
+stage/budget + sum D_j/accumulated debt/nonuniform budget ->3hits1file. The latter exposes
+GC310/312/315: variable stage budgets and joint good-prefix conditions already exist.
+G164/165/186/187 and those notes read; do not duplicate them as a new route.
+
+**Prediction and countercontrol.** GC312's tuple includes empty and terminal prefixes.
+Its crossing term must retain a zero-delay doubling edge and the actual incoming clock phase.
+No independently restarted block may be substituted. Unexpected check: a negative adjusted
+increment may lower the prefix minimum without increasing the current maximum debt.
+
+**Hand control.** At slope2 use abstract delays(4,1), then(0), then(4,1).
+Adjusted blocks X=(2,-1), Z=(-2), X have tuples
+X=(1,0,2,2), Z=(-2,-2,0,0) in GC312's order(A,m,H,D).
+Merging XZ gives(-1,-1,2,2), while ZX gives(-1,-2,0,2).
+Both bracketings give XZX=(0,-1,2,2), matching literal prefixes0,2,1,-1,1,0.
+Deleting the zero-delay edge would instead give prefixes0,2,1,3,2 and debt3.
+The adjusted negative edge correctly lowers the minimum and cannot be skipped simply because
+it has zero elapsed time. These are clock-arithmetic controls, not compatible Rule30 witnesses.
+
+**Audit.** Every crossing interval starts in the first block and ends in the second;
+its maximum is A1+H2-m1 because each block includes its boundary prefix. Inside-block
+intervals supply D1,D2, and empty intervals give0. This also checks negative-only blocks
+(D=0), tied boundary extrema and associativity by their exact concatenated-prefix meaning.
+GC312's sequential rule must use the previous minimum when scoring the new endpoint;
+with empty intervals and D>=0, updating the minimum first is also numerically equivalent
+(the only added candidate is0). No implementation bug or new statistic found.
+
+The same-prefix transfer still uses one common period covering the entire certified driver
+list, typically its final dyadic period; it cannot use the current block's smaller period
+for an earlier-prefix composition. GC315 permits a globally rotated WHOLE prefix within
+P-1 debt spread, not independently rotating its blocks. GC310 stage allowances are
+conservative; GC312 exact whole-prefix debt may be smaller. Neither currently supplies
+actual debt telemetry or a divergent N_j/(P+D_j) ratio on every rooted history.
+
+**Disposition.** Existing conditional route retained; missing map pointer restored.
+No status promotion or new experiment; next an incoming proof audit or an ancestry input
+that bounds this exact debt on actual histories. Scratch deferred; room closed.
