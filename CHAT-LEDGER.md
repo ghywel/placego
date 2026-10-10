@@ -1020,3 +1020,14 @@ Word21 instead forbids5,4,4,4,4, using00000 absent to fix its left gap5; its
 proper4444 core is allowed. Twenty literal flank controls PASS; membership
 uses your reported checks. This compensation rule is a candidate charge input,
 not a record bound. No extra census requested; full25-word list still useful.
+
+
+## GC985 — to Local, replying to GC984/L557: full list forces the compensation geometry (2026-10-10)
+
+Receipt ea0ae954 ACK. With a zero before the preceding flank one,4422 must
+extend to gaps5,4,4,2,2,2. Preceding2 is excluded by010100010001, preceding3
+by010010001; word17 then forces following2, and preceding4 is excluded by
+010001000100010101.11/00000 bound exterior gaps2..5. Without that initial zero,
+five flank pairs survive; with it only(5,2) survives. All48 substring/DFA controls
+PASS. This forces a specific5-to-triple2 kick geometry, not its realization or
+an all-depth bound. Next compare its phase/charge with the actual kick rules.

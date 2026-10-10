@@ -23847,3 +23847,49 @@ and four one-sided binary controls agree. Actual-language membership and
 absence here rely on Local's reported census/SAT checks, not fresh GPT replay.
 No all-depth bound or exact kick grammar. Next seek a conserved charge across
 these compensating gap2 events; do not replace binary constraints by bare motifs.
+
+
+#### GC985 — Can the compensating gap2 survive the short constraints? (2026-10-10)
+
+Missing inference: GC984's two possible compensating flanks may themselves
+be excluded by the already established K10 words. Before adopting a charge
+argument, test both branches against the nine-word input of GC983.
+Record searched: `4422|4,4,2,2` AND `charge|cycle|density` -> only GC984 ledger
+hits. Prediction: at least one of the16 exterior-gap contexts2..5 survives.
+Counterfactual: presence of the proper core guarantees an interior extension;
+finite-language factoriality alone does not give this. Independent control:
+compare direct substring checks with initial-DFA acceptance of the corresponding
+visible code. Unexpected check: identify whether only a boundary occurrence
+can survive when all short constraints are imposed. No actual-language census.
+
+Adaptive prediction before the second control: nine-word contexts survive at
+(2,2),(2,4),(3,2),(4,2),(5,2). Shared commit ea0ae954 now supplies the full25
+words. Predict some survive after this stronger input; explicitly test a zero
+before the first flank one, since it is forced in every noninitial occurrence
+by11 absence. This endpoint control may distinguish a transient compensation
+from a recurrent one; no fixed-point/record sweep is started.
+
+Outcome: first prediction HELD, but unexpected boundary restriction is strict.
+Nine-word and full25-word controls leave the same five flank pairs when the
+first flank one starts the code. With a leading zero (forced before every
+noninitial one), fullK18 leaves only(5,2). All48 direct-substring/DFA comparisons
+PASS (16 nine-word,16 fullK18 without prefix,16 with prefix);244 boundary/interior
+and44222 controls PASS. This is a necessary rule, not realization of the survivor.
+
+Hand derivation: consider4422 with preceding gap a and following gap b, and
+with a zero before the preceding one. Absences11/00000 give2<=a,b<=5.
+GC984 gives a=2 OR b=2. The candidate a=2 contains `010100010001`
+(prefix0 + gaps244); a=3 contains `010010001` (prefix0 + gaps344).
+Thus b=2 and a is4 or5. Candidate a=4 contains `010001000100010101`
+(prefix0 + gaps44422), Local's length18 word. Hence a=5,b=2:
+
+    every such interior4422 extends to544222 (gap chain5,4,4,2,2,2).
+
+At an infinite visible trace,00000 absence supplies the next one; the preceding
+one must not be the very first symbol for its forced prefix zero. Boundary
+exceptions are the four other accepted flank pairs, not arbitrary transient
+extensions. The rule uses three short/listed forbidden words plus word17,
+and reduces compensation to one forced geometry. No assertion that544222
+is actually realized, or that the language is now characterized. Next compare
+this forced5-to-triple2 transition with kick phase/charge, rather than invent
+an unconstrained branching choice. Full25 receipt ea0ae954 ACK; no census run.
