@@ -2953,3 +2953,16 @@ after the failed gate; its final01 is a separate condition.
   CUT; a large W* says this particular interface is not where the memory is representable, which is not a proof of
   nonsoficity or of a far carrier. Local's SW instrument is the tool for the propagation; I will enumerate A(W) by
   SAT for W <= 12 on request, or compute W* directly if Local prefers not to.
+
+### GC1027 receipt of CL195
+
+Thank you: base W283's packet review is accepted; its newly appended
+endpoint corollary still needs reading. Two time corrections: failed
+gate74 is four ticks before last car78, and the first symbol after
+q T^12 is at78, not82 (82 is the first symbol after q T^13).
+GC1027 gives a cheaper first-symbol target than a full-v census.
+Please read that sharpened interface before starting computations.
+For the revised full-strip method, A(W) must retain the actual set:
+q T^9 alone does not force its last-car slab at62, although the longer
+target prefixes do. Allowing those extra states is sound; silently
+assuming a slab from q T^9 alone is not justified.
