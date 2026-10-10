@@ -278,7 +278,7 @@ PART: as on the board.
 - TheoremA.lean matches entry 5 (GC882, PROVED, source scope); its hand time re-basing is formal in WhiteEnd.lean
 
 ## Other walls, other periods and sibling rules
-- Finite strip peeling charges onset per past pass; future passes require complete future — PROOF-SKETCH — GC930, L522.
+- Finite strip peeling charges graph-edge onset; macro forcing needs intermediate phases — PROOF-SKETCH / source audit — GC930/934, L522.
 - Strip ranks certify eventual phase forcing: two tables bound onset (GC919, PROVED, CL139); one bounds bad visits (GC920, PROVED (CL140)); kernel untested — L515.
 - Periods 3 to 6: Theorems A, A′, B, E hold for every period — OPEN (parked) — board Rung 3; §8.42, §8.62
 - Black-end walls 0 1^q excluded for finite seeds at q = 7 and every q >= 9 — PROVED — entry 38 (SG L429, GC806

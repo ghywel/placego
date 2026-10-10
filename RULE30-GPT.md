@@ -21856,3 +21856,50 @@ root-reached clocks and temporal-order refinement already refute the cheap featu
 coalescence fixture, gated-clock census or same-feature potential is proposed. The next useful Q7 input must
 constrain actual history splices or prove a uniform reference-path interval budget, rather than repackage these
 closed filters. GC930's finite-peeling onset remains ready for the published strip assembly. Scratch deferred.
+
+
+#### GC934 — Strip peeling counts graph edges; macro compression needs intermediate-phase coverage (2026-10-10 03:12 BST)
+
+**Source/transfer audit, not a strip computation.** Record searched: peel/rank + macro/period-onset/tick ->2 hits
+in2 files, both unrelated. Read GC919/920/930, SG and RG's graph definitions, and SGC's row_of/id_of/succ source.
+The assembled entry38 Lean file is still absent; no source acceptance or compilation is claimed. Prediction:
+SG/SGC uses one tick per edge, whereas a whole-period relation would change the physical onset conversion.
+Countercontrol: a forced bit at one macro sampling phase proves whole-column periodicity. Unexpected check:
+SCC cycle periods need not equal the wall's period. Hand controls only, no new census, benchmark or proof ID.
+
+**Existing instrument's time unit.** SGC decodes a row and phase, updates every interior cell by one literal
+Rule30 step, leaves the two new endpoints free, and advances nph=(ph+1) mod p. Its centre test checks the next
+wall bit. Consequently an actual strip from wall onset T maps to vertices at physical times T+t with one graph
+edge per tick. GC930's a past peels therefore give onset T+a in this graph, not T+a*p. SG and RG state the same
+one-tick relation. The bit-vector formula's interior bit k is old(k-1) XOR(old(k) OR old(k+1)), consistent with
+the row indexing; endpoint freedom is a relaxation. This is source inspection, not execution of SGC or its SCC code.
+
+**Guard for a possible macro implementation.** If instead a certificate uses E^p on vertices of one selected wall
+phase, actual macro index j is physical time T+j*p. GC930 then gives coverage only from macro index a, hence
+T+a*p at that sampled phase. For a finite tick path0..L, it gives a<=j<=floor(L/p)-f. Intermediate phases require
+an additional verified image containment: for each i=0..p-1, every vertex in E^i(S) must have the proposed
+neighbour bit for phase i, where S is the retained macro set. Actual paths supply the intermediate vertices;
+uniqueness of hidden paths is unnecessary. The phase-zero bit alone is insufficient. This is a conditional
+implementation obligation, not a claim that Local's planned Lean certificate uses macro edges.
+
+**Independent controls.** A length-a transient chain into a loop takes a graph edges to enter its past-peeled
+core. Declaring each edge a p-tick macro changes that onset to a*p; it does not change the abstract peeling proof.
+For the phase-coverage countercontrol take p2 and vertices g at phase0, h0/h1 at phase1, with g->h0->g and
+g->h1->g. Label g's neighbour0, h0's neighbour0 and h1's neighbour1. The macro graph is the single loop g->g
+and its phase0 bit is fixed, but an infinite path can choose arbitrary bits at phase1. Thus even exact macro
+stabilization and a phase0 singleton do not prove a periodic neighbour. This abstract graph is not asserted a
+Rule30 strip realization; it tests logical sufficiency only.
+
+**Unexpected SCC-class guard.** In any phase-advancing graph, every closed walk has length divisible by p,
+so the gcd P of a cyclic component's closed-walk lengths is a positive multiple of p, not necessarily p itself.
+A single directed cycle of length2p is a sharp elementary distinction. SGC deliberately tests neighbour constancy
+on its BFS level classes mod P; along each internal edge that class advances by one mod P. If the actual path
+stays in that component, the forced neighbour is P-periodic and the wall is also P-periodic because p divides P.
+Entry5 then applies from that tail. GC919's simpler wall-phase bit certificate asks the stronger phasewise
+constancy; it cannot be substituted automatically for SGC's finer class certificate. These are already known
+SCC/phase mechanisms, with no new wall exclusion or priority claim.
+
+**Disposition.** The public SG/SGC clock unit matches GC930's T+a onset. No bug or new result in their outputs
+is alleged. Keep the tick/macro distinction and all-phase image obligation explicit when the assembled Lean
+source arrives. Stop this semantic refinement here; next audit that source or advance a quantitatively selected
+history input. Scratch deferred; break room closed.
