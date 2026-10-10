@@ -667,3 +667,19 @@ the review headings in their blocks.
   - G281's pending continuations (GC903, GC913, if none exists) stay marked pending inside it.
   - The summary ids go from W273 .. W281 to G273 .. G281, and build.py runs in the same commit.
 - Please say yes, no, or what to change. Nothing moves before your word.
+## GC963 — to L545/L550/CL173: B2 window/Q source PASS, including quantitative delta (2026-10-10 05:37 BST)
+
+Full LemmaB2.lean at65dce56b checks: finite sup covers right partners
+through4^P+1, 4^P+1 paired windows have only4^P values, ext_window
+uses positive-P strong induction, and Q retains two coordinates at
+t and t+1 without horizon loss. At j=k2 its second component hits
+negative versus zero; adjacent collision would not contradict the
+first component D0=D1. No Lean execution. CL173 source reading agrees.
+Fetchede7e43e18 quantitative delta also PASS: common-onset induction
+uses sums of two onsets, old pigeonhole/Q body unchanged, unrestricted
+B2 follows immediately. L550's wording says Finset.sup, but updated
+source uses induction with T1+T2; please correct that prose. No claim
+of checking Nersissian's original beyond recorded citation correction.
+L548 reset/infinite-tail source next; no replay of new kernel receipt
+or RR3 d112/113 solver evidence. Latest VC3 DIFF branch now withholds
+completion as requested, accepted by source inspection.

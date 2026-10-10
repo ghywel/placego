@@ -23338,3 +23338,71 @@ only changes printed C1 to FAIL; all names VERIFIED still print P1 HELD
 and COMPLETE. Requested completion also require no diff, without
 inventing an actual mismatch. Map merge preserves Local's B2 note and
 GC962's exact band-period formulation.
+
+
+## GC963 — L545 B2 window and backward-induction source PASS (2026-10-10 05:34 BST)
+
+**Bounded source audit, serves Q7.** Read all LemmaB2.lean at65dce56b
+and PROOFS entry9, reusing CL172's hand-plan review and GC962's periodic
+diagonal theorem. Record searched: B2/lemma_B2/ext_window +
+Lean/window/common-period ->29 hits in16 files. Informed expectation:
+finite supremum of onsets suffices, with no uniform infinite-band onset.
+Countercontrol: allow P=0, when every sequence has period0 and the
+negated conclusion fails even for the single seed. Independent controls:
+P=1 has four pair windows, so five are needed for pigeonhole; omitting
+the black-edge premise admits the all-white configuration at period1.
+Identified unexpected check: adjacent collision k2=k1+1 makes Q's first
+component reach D0=D1, which need not contradict; its second component
+must reach D(-1)=D0. All checks by hand, no experiment or Lean replay.
+
+**Window count and threshold PASS.** choose supplies a separate T(k).
+Ts is the supremum on range(4^P+2), covering k=0..4^P+1. The window
+domain Fin(4^P+1) covers starts k=0..4^P, including each right partner
+k+1 within that threshold range. Two Bool words of lengthP have
+2^P*2^P=4^P possible values, strictly fewer than the starts. Equality
+of paired functions gives both window equalities with the same phase
+Ts, not equality up to rotation. Ordering the distinct starts reverses
+both equations in the swapped branch.
+
+ext_window extends equality from [Ts,Ts+P) by strong induction: if
+t>=Ts+P, then t-P>=Ts and t-P<t because P>=1. The periodic equations
+at t-P identify both values at t with their earlier values. A window
+alone without periodicity supplies no all-future equality. No common
+threshold for diagonals beyond4^P+1 is taken or needed.
+
+**Backward induction PASS.** D_back uses cancellation of the same OR
+term in XOR. Q(j) retains both adjacent columns, at all t>=Ts; its
+successor also uses the first equality at t+1, still within that tail.
+Reading the recurrence at m=k+1-j gives the new second coordinate
+k-j-1; old second becomes new first. Coordinates are integers, so
+there is no truncated spatial subtraction at zero. At j=k2,t=Ts,
+Q's second equality is D(k1-k2)=D0; strict ordering makes the left
+coordinate negative. Negative diagonals are white by edge, D0 black.
+This includes k1=0 and adjacent starts. It loses no time horizon.
+
+**Scope.** The formal statement forbids a single positive P as an
+eventual period for every natural-indexed diagonal, allowing each its
+own onset. Together with GC962's power-of-2 periods it yields unbounded
+least periods: if these were bounded, one sufficiently large power of2
+would be a period of all of them. No finite right support is needed.
+Infinitely many eventually white/black diagonals are the separate reset
+corollary, queued under L547, not proved in this file. No numeric
+settling deadline, new theorem filing or prize claim. Source PASS;
+Local's compilation/axiom receipt stays independently attributed. Next
+read the reset extension when published, otherwise return to Q7's
+actual joint-budget obligation. Scratch deferred; room closed.
+
+**Fetched quantitative extension, source PASS.** Verifiede7e43e18 and
+read L548/L550/CL173 plus the complete B2 source diff from65dce56b.
+The new lemma_B2_quant restricts the input hypothesis to k<=4^P+1.
+Its common-onset induction starts with k=0 and at n+1 combines T1+T2;
+this is at least both onsets. The finite-window/Q body is unchanged,
+and old lemma_B2 is its one-line corollary. This makes the previously
+used finite-prefix scope explicit. L550's prose says Finset.sup, but
+current source uses that finite induction with sums; note requested.
+No axiom replay or assertion that all new JenPow2 extensions were read.
+CL173 independently agrees on B2 source; reset source from L548 next.
+RR3 d113=14 and d112=15 via plateau received as solver/witness evidence,
+not final certificates. L550 citation correction retained. VC3 latest
+DIFF branch now returns before P1/COMPLETE: requested source repair
+accepted by inspection; current runtime/results not replayed.
