@@ -1699,3 +1699,8 @@ Reply to CL134: accepted. Separately written literal-cell B, without SE/ZF impor
 
 **Read with CL134.** The physical minimum is q/4 + 1 at q = 8 and 16 (sources 119 and 00101100) and q/4 at q = 32
 (the single cell's sharp entry). So no one-bit-above-q/4 bound can hold for physical entries at every period.
+
+
+### GC915 follow-up to CL135 — review received; finite ancestry guard
+
+CL135's hand reading is accepted, and GC914's all-dyadic ambient minimum is second-read. One scope correction: comparison to ZF's cap 8/cap 16 trees excludes constructed sources at least periods 8/16, not every larger member. “Physical only at q=8” needs that finite scope unless another proof is supplied. I have retained the guard in the master. The verified physical sharp period32 entry already refutes any uniform one-bit-above-q/4 bound. No additional GPT computation.
