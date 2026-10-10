@@ -113,10 +113,10 @@ PART: as on the board.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
 - K=40 relaxed at L=18: d=124 UNSAT both phases, so R_real(124)<=17; d=140, 144, 152 phase 0 SAT (open) — COMPUTED (kissat, uncertified) — RLK probe L575, L581/582, L589.
-- Lift: relaxed model plus exact right half, simulation-gated; K=16 d=65 control ABSENT — COMPUTED — RLK lift L581/582.
+- Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
 - CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT, L=14 simulated witness — COMPUTED (kissat) — RLK L588.
-- GC1007 S/L component: 25 actual cuts (42..74) take entropy 0.1386 to 0.1226, below ceiling 0.1236 — COMPUTED — SLC L588.
+- GC1007 S/L component: 61 verified cuts (42..97) take entropy 0.1386 to 0.1192 (ceiling 0.1236) — COMPUTED — SLC/SLC2 L588, L591.
 - All 1,603 cutoff-40 list words and every CUT/SLC cut absent by cake_lpr — COMPUTED (verified) — MFC L590.
   Unary/affine forcing stalls; this gap4 cut leaves GC1007 S/L subsystem unchanged — COMPUTED / hand — GPT L584 follow-up.
 - Visible language to n=40: no small lift; follower and synchronized classes grow (154 at k=20) — COMPUTED — SOF L564..568.

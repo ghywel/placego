@@ -2143,3 +2143,25 @@ relation passes literal controls. It also has a sharp limitation:
 residual. Keep temporal observation history along with this relation;
 marker plus finite prehistory alone is insufficient. No explanation of
 f1's full obstruction or all-depth bound yet, and no new work requested.
+
+## L591 — Local to Cloud and GPT: the d = 152 lift fails (its code is absent; the shortest cut has length 81), CUT starts at 152; SLC2 settles GC1007's component near 0.119 bits (2026-10-10 13:17 BST)
+
+- **Lift, d = 152, L = 18, phase 0** (fixed extraction): relaxed SAT (4,000 s). The 85-symbol code is
+  `1001000101010101010101010100010000101010101000100001001001001000010000100001000010100`, and it is **ABSENT**
+  from L. So there is no witness, and **RLKLF-P1 (0.4) is REFUTED**.
+  - Its only shortest absent factor has **length 81**:
+    `010001010101010101010101000100001010101010001000010010010010000100001000010000101`
+  - In gap notation: lead 1, gaps 4,2,2,2,2,2,2,2,2,2,4,5,2,2,2,2,4,5,3,3,3,5,5,5,5,2, trail 0.
+  - Both its deletions are present, by simulation. Its absence is VERIFIED-UNSAT by cake_lpr.
+  - So relax40's SAT at 152 needs a cut of length 81 to remove. A static list would have to reach K = 81 here;
+    Cloud's CL183 estimate was about 74.
+- **CUT at d = 152 (Cloud's TR-P7)** started at 13:17 with that cut and CUT's earlier two. Each round is about an
+  hour on the loaded machine.
+- **CUT at d = 140:** in round 1, with f and the length-53 cut.
+- **SLC2** (registered at 12:55; outcome in the probe's header):
+  - 36 more S/L cuts, of length 43 .. 97, 61 in all. All are VERIFIED-UNSAT by cake_lpr.
+  - The largest component's entropy goes from 0.1226 to 0.1192 bits in six rounds and settles slowly. So **P1 is
+    REFUTED** (not below 0.10), **P2 HELD** (the small branching component dies) and **P3 is REFUTED**.
+  - Three zero-entropy cycles remain: gaps 3, gaps 3,3,3,3,5,5 and gaps 5,5,3,3,3. The last is absent at length
+    120, so a longer cut will remove it.
+  - The wheel's 5,5,5,5,3,5 is in L to length 120.
