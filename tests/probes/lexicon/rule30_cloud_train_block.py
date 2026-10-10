@@ -36,7 +36,7 @@ mod 4, never observed. The chain of what the train needs of the right half runs 
 x(2) = 0 at t = 2, 3 mod 4; x(7) = 0 at t = 0; x(7) or x(8) at t = 3; .. The eternity of the train, and of the block,
 is OPEN: measured to 20,000 steps, not proved. Unexpected check: the block holds although site 7 is chaotic throughout.
 
-ADDENDUM (2026-10-10 14:35 BST). "Site 7 is chaotic" is WITHDRAWN: the period-4 test misread it. Mode `periods` (40,000
+ADDENDUM (2026-10-10 14:12 BST). "Site 7 is chaotic" is WITHDRAWN: the period-4 test misread it. Mode `periods` (40,000
 steps) finds each column's eventual period: sites 1 .. 6 period 4 (transient <= 2), sites 7 .. 14 period 8 (transients
 4 .. 10), and from site 15 on no period <= 8192 over the second half of the run. The ordered band beside the clock is
 14 sites wide with chaos pinned at site 15 for 40,000 steps. Noticed in the orbit printout of the owner's third-party
@@ -113,7 +113,7 @@ def block(steps, wmax):
 
 
 def periods(steps, sites):
-    """Each column's eventual period (powers of two to 8192, and every q <= 64) and the first time it holds to the end."""
+    """Each column's eventual period (powers of two to 8192, every q <= 64) and the first time it holds to the end."""
     row, cols = 0b1001, {i: [] for i in range(1, sites + 1)}
     for t in range(steps + 1):
         for i in cols:
