@@ -516,7 +516,8 @@ def separator():
 
 
 def entrymemory():
-    """GC1033's request (CL203): where the leading symbol's memory sits during the train. Entry + ten cars only (no exit).
+    """GC1033's request (CL203): where the leading symbol's memory sits during the train.
+    Entry + ten cars only (no exit).
     (1) Cells forced at t = 5, 10, 15, 20, 30 over sites 1 .. 45, both leads. (2) The exact sets of sites 7 .. 18 at
     t = 30 (SAT, 4096 calls a lead, about 3 min each) and their free-exterior propagation through the cars (gates pass
     at 30 .. 58, fail at 62) to t = 75. Runtime about ten minutes."""
