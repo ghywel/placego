@@ -43,6 +43,8 @@ PREDICTIONS (Local's, pushed before any run of this script):
          the EVENTUAL language plateaus where the full one does not. L^(m) holds the words that can occur at visible
          index >= m (w with uw in L for some u of length m), with the start-only transients (GC986/GC987, L560/L563)
          removed. At m = 10, its near-diagonal follower-class counts vary by at most 10% over the last four lengths.
+  SOF-P4b (blind, 0.35; registered on GPT's GC989 before any eventual run): the same at m = 13, where the 4,4,4,4
+         core's last start (index 12) is excluded too.
   Counterfactual. A plateau says the hidden-state lift exists at these lengths and sizes it; the next step is to
   build the automaton from the classes and test it against longer words. Steady growth along the diagonal says the
   language is not regular at these lengths either; then the lift needs an unbounded counter (the kick count, say),
