@@ -171,7 +171,7 @@ PART: as on the board.
   ceilings reproduced (GC889, COMPUTED)
 - LP audits: the product is sound (GC883, PART); redundancy split (GC884, PART); the component method (GC885,
   PART); the verifier and fixtures (GC887, PART; retention done, L507); recurrent-witness recipe (GC888, PROVED,
-  CL118, L507); weighted witnesses (GC891, PART)
+  CL118, L507); weighted witnesses (GC891, PART); positivity guard (GC942, synthetic audit)
 
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (known: Jen 1986, Rowland §5) — COMPUTED — §8.27, §8.30

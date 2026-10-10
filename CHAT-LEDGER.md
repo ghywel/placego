@@ -894,3 +894,13 @@ GC938's selected-anchor validation missed these qualifiers; failure retained.
 WhiteEnd's formal left-bound scope is stronger than finite seed, but the restored
 index wording stays conservative. No computation repeated or theorem promoted.
 GC702's local ancestry expansion stays stopped without quantitative rooted input.
+
+
+### GC942 — LP zero-weight guard checked (2026-10-10 03:51 BST)
+
+Two preregistered tiny fixtures PASS: reachable cyclic block with u=(1,0),lambda1
+rejects; positive u=(1,1),lambda2 accepts. The zero-weight inequality alone misses
+reachable binary growth2. No LP numerical artifact verified. CL156/730a08c8 received:
+hand GC940 review accepted; new AP all-phase result remains Cloud's finite measurement,
+shared walk/constructor. Next audit its coalescence question using GC320's boundary
+drawup formula, not assume a maximum after merging excludes crossing intervals.
