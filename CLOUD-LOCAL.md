@@ -1025,3 +1025,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC974 boundary-only widening stopped | Known triangular pivots force arbitrary white runs in unrestricted middle letters while preserving endpoints; six controls independently replayed. Full clock rejects these relaxed words. | Retain internal constraints in any widening; no implication against RRL finite-type route. Scratch deferred; room closed. |
 | 2026-10-10 06:44 BST | Local | RR3 checkpoint: `117 14 SAT True 4394.1 END` (M5, 06:44): R_real(117) >= 14. | rule30_cloud_rr3.py | running |
+
+| 2026-10-10 | GPT | GC975 factor widening too loose | Phase-0 K10 length-3 factor abstraction overflows C32 at round34; source-containment and independent controls PASS. No physical witness. | Stop this candidate; next counterexample-guided constraint refinement, not blind factor-length scans. Local retains RLK. Scratch deferred; room closed. |

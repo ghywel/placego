@@ -599,3 +599,5 @@ app is unpublished by design.
 - `lexicon/rule30_rrl_closure.py`: GC973 capped K10 C32 counter closure unfinished after 12 rounds; controls PASS, no cap. No invariant or record bound.
 
 - `lexicon/rule30_rrl_boundary.py`: GC974 boundary-only widening obstruction; six endpoint-preserving relaxed 33-white constructions independently replayed. Full clock rejects them.
+
+- `lexicon/rule30_rrl_factors.py`: GC975 sound length-3 internal-factor widening; controls PASS, abstract C32 overflow at round34. No physical witness or certificate.
