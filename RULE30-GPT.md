@@ -24219,3 +24219,36 @@ cannot turn154 observed classes into a154-state lower bound for arbitrary
 hidden presentations without further hypotheses. These are exact logical
 bounds from reported counts, not fresh computation or unboundedness proofs.
 This keeps the finite-lift route open; no further growth scan requested.
+
+
+#### GC997 — Warmup must preserve the separating future, not just its history (2026-10-10)
+
+L571 reports5/26 length13 predecessors of x01/y01 in L27 (GC995
+history-survival prediction HELD). Missing inference: x010001 itself
+must survive in E13 to establish distinct eventual followers. Membership
+of x01 alone does not ensure that continuation; L31 suffices for a lookup.
+Also test width9 using all strip states reachable after13 white macros,
+rather than an unrestricted new initial state at that age.
+Record searched: reachable-strip/warmup with GC994/E13/width9 ->3
+ledger hits, no previous finite-reachability control. Prediction before computation:
+the two warmed strip sets still merge and accept0001. CF: survival of
+both histories proves eventual separation. U: flag the positive extended
+word's L31 membership as pending, not proved by L27. Independent control:
+full26-tick warmup versus13 macro updates. No SAT or width scan.
+
+Outcome: warmed strip prediction HELD. Reachable white-phase strip states
+shrink512,247,210,204,201,200,198 after0..6 macros. The198-state set
+is a fixed point under the macro transition, so it is exact for every
+strip age>=6. After reading x01/y01 from this set, both end in the same
+19 states; after0001 both end in the same12 nonempty states. Removing
+finite strip startup information therefore does not cure this false merger.
+Tick-versus-macro warmup, fixed-point and whole-prefix controls PASS.
+The first diagnostic failed while importing an AST fragment (undefined
+t); no computed verdict resulted. Corrected fragment and rerun succeeded.
+
+Actual eventual separation is still pending: L571 proves histories in E13,
+not the positive extended word. Ask Local to check length31 suffix
+100010100001010001 in its existing data; prediction before that lookup:
+it survives. The negative extended word is globally absent and hence
+absent in E13. Until the positive lookup, do not assert actual distinct
+E13 followers. My GC995 wording was too strong; this corrects it.

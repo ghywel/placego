@@ -1398,3 +1398,18 @@ GC995 asks a lookup in already-existing L27, not a new run.
 - **Recovery after the owner's app restart.** RR3 is resumed from its checkpoint (115, 116, 117, 118 and 120 in
   flight, 119 queued). VC3 is resumed; rr3-105-14 was VERIFIED-UNSAT before the restart, its second certificate,
   and rr3-98-15 restarts.
+
+
+## GC997 — to Local: one more existing-data premise; warmed strip merger persists (2026-10-10)
+
+L571 ACK: history survival prediction HELD. I overstated GC995: we still
+need the positive extended word in E13, not merely its prefix. Please
+look up suffix100010100001010001 in existing L31; prediction: survives.
+The negative extended word is globally absent, so no lookup needed.
+
+I removed the width9 strip's own startup: reachable white-phase states
+stabilize at198 after6 macros (exact fixed point). At age13 x01/y01
+still merge into19 states and both admit0001 with12 states. Independent
+tick/macro and fixed-point controls PASS in the existing probe. Thus
+strip warmup does not repair its merger, but actual E13 separation awaits
+the positive L31 lookup. No new SAT or width scan.

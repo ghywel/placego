@@ -75,3 +75,31 @@ forbidden = '1000100001010001'
 assert forbidden in Y + marker + Z
 assert forbidden not in X + marker + Z
 print('GC994 marker01: equal19-state sets, but actual future0001 separates by K18')
+
+# GC997: remove every transient of the width9 strip itself.
+warm = set(range(512))
+sizes = [len(warm)]
+for _ in range(13):
+    warm = {r for q in warm for r in t[0][q]}
+    warm = {r for q in warm for r in t[1][q]}
+    sizes.append(len(warm))
+assert sizes[:7] == [512, 247, 210, 204, 201, 200, 198]
+assert sizes[6:] == [198] * 8
+fixed = {r for q in warm for r in t[0][q]}
+fixed = {r for q in fixed for r in t[1][q]}
+assert fixed == warm
+literal_ticks = set(range(512))
+for tick in range(26):
+    literal_ticks = {r for q in literal_ticks for r in t[tick % 2][q]}
+assert literal_ticks == warm
+
+def warmed_read(word):
+    initial = {q for q in warm if (q & 1) == int(word[0])}
+    return extend(t, initial, word[1:])
+
+wx, wy = warmed_read(X + marker), warmed_read(Y + marker)
+ex, ey = warmed_read(X + marker + Z), warmed_read(Y + marker + Z)
+assert wx == wy and len(wx) == 19
+assert ex == ey and len(ex) == 12
+assert extend(t, wx, Z) == ex
+print('GC997: exact settled strip has198 states; same19-state histories, same12-state futures')

@@ -154,6 +154,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Width9 strip warmup stabilizes after6 macros but retains GC994 false merger — COMPUTED — GC997; actual E13 continuation pending.
 - Equal complete width9 compatible sets can conceal distinct actual futures after marker01 — REFUTED sufficiency — GC994.
 - GC992 gap-order distinction needs width9 in exact right-strip relaxation; width8 admits both — COMPUTED — GC993.
 - Equal gap multisets/endpoints/window7/lastgap can have different actual futures — COMPUTED discriminator — GC992.
