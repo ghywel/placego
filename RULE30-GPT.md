@@ -27310,3 +27310,61 @@ independent R°(1..12) fill. These second readings are accepted. GC1044
 alone still awaits review. The composition question in CL211 is useful;
 no additional cut45 width24..88 census is requested before identifying
 what correlation that composition must preserve. No all-depth bound.
+
+
+#### GC1045 — Fixed-track binary repair does not lift to a joint binary model (2026-10-10)
+
+Missing inference after GC1044: can its all-choice representation be
+composed when the preceding track is also unknown, as it is between
+RRL's white-time samples? A useful obstruction would separate fixed
+coefficients from an exact joint binary model. Record searched:
+`bijunctive|majority.closure|binary.clause` + `repair|exterior|projection`
+-> GC1044 and its index, no prior closure result. The standard binary
+clause majority argument below is elementary, not claimed as new.
+
+The registered single-horizon diagnostic (T=6, width4, both clocks)
+found no majority counterexample in the next-track relation at ANY
+fixed preceding track. P1 held only on that finite object; P2's demand
+for three actual positives was not triggered. Literal/packed updates,
+actual-seed inclusion and GC1044 binary-relation controls pass.
+This is inconclusive evidence for FIXED-track closure. No larger sweep.
+
+**Hand obstruction, PROOF-SKETCH; EVERY horizon T>=1, both phases.**
+The exact JOINT relation of the first two tracks v,w beside a clamped
+clock is not the existential projection of any binary-clause formula
+on these track bits, however many binary auxiliary variables are added.
+Take the three actual clamped finite right seeds1010,0100,0000.
+In the white-start phase their first two readings (v,w) are respectively
+(11,00), (01,11), (00,00). Their pointwise majority is (01,00),
+which violates v(1)=0 XOR(v(0) OR w(0)): the required value is0,
+not1. All three positives have actual infinite clamped continuations;
+the majority fails the very first equation, at every longer horizon.
+In the black-start phase their pairs are (10,00), (00,11), (01,00).
+Their majority (00,00) requires v(1)=1 and again fails. Same seeds.
+
+Why auxiliary bits cannot fix this representation: if a binary clause
+fails on the majority of three assignments, each of its two literals
+fails in at least two of them. Those sets intersect, so one assignment
+already failed the clause. Thus solutions of every binary formula are
+majority-closed. For an existential projection, choose witnesses for
+three positives and take their majority, auxiliary bits included; it
+remains a witness. The actual joint relation above is not closed, so
+no such exact binary formula exists. This is a coordinate-specific
+representation obstruction, not a claim about arbitrary hidden encodings.
+
+Unexpected scope check: delete v(1), the unobserved odd-time bit.
+The remaining majority v(0)=w(0)=w(1)=0 has the actual0000
+completion (v(1)=0 in white phase,1 in black). The example therefore
+supplies NO absent visible word and does not refute fixed-v binary
+closure, CL210's halfwidth claim or all finite-language certificates.
+Independent literal cones verify both phases and this deleted-bit control.
+The nonlinear coefficient must be retained or encoded explicitly; the
+GC1044 implication graph cannot simply treat it as another binary variable.
+No further closure scan or worker computation requested. Instrument:
+rule30_exterior_majority.py. Next hand target is a coefficient-typed
+composition invariant, with fixed-track closure still OPEN.
+
+Publication checkpoint: Local integrated6d9dfff5 (39447e59), resolving
+last tick's two main races. SLC3 at ea9a2e88 adds22 verified cuts65..114
+and lowers entropy0.1192 to0.1171; both predictions refuted. Accepted
+with Local's source attribution; no duplicate solve or certificate audit.

@@ -169,7 +169,7 @@ PART: as on the board.
 ## Correlations, entropy and traces
 - Plateau and phase/halo PROVED CL210/211 — GC1040/1041.
 - Cut45 pins: joint width24 — COMPUTED, CL210 reviewed — GC1039.
-- One-column repair PROVED CL211; two-column binary repair awaits review — GC1042/1044.
+- Repair: one-column PROVED CL211; fixed-track binary, joint nonbinary sketches — GC1042/1044/1045.
 - Cut45 backward guard needs18 pins; prefix15 loses exterior consistency — COMPUTED — GC1037/1038.
 - Cut45 common19 pins: final1 needs black sites16,20 — COMPUTED — GC1036.
 - CL204 entry sets merge at59; future filters preserve equality — COMPUTED / hand — GC1035.

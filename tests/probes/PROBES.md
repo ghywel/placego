@@ -689,3 +689,6 @@ app is unpublished by design.
   binary chain and split at §8.74's boundary B(t). CH-P0 .. CH-P3 HELD (orderly chain xz 0.077; random chain 1.0001,
   h_16 0.9975, density 0.5002, runs within 3.8% of 2^-L: a coin to every test); CH-P4 REFUTED (no compressible zone
   past B(t)). §8.80.
+
+
+- lexicon/rule30_exterior_majority.py: GC1045 fixed-v closure diagnostic atT6 inconclusive, stopped; hand joint-track majority obstruction at every horizon, both phases. Three actual seeds and deleted-odd-bit controls PASS; no visible-language bound.
