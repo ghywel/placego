@@ -61,6 +61,11 @@ ADDENDUM, 2026-10-10 09:15 BST, before the deep run's second start. The first st
   kissat 4.0.4, built from source here as RR3 did, with kissat's own --time cap (3,600 s), and the depths run deepest
   first, where the trend makes SAT at L = 18 likeliest. TR-P6 is read with the 3,600 s cap. The control ran again
   with kissat before the deep calls (its line is in the run log).
+ADDENDUM 2, 2026-10-10 10:29 BST, before the third start. Second start: the control passed (d = 100 SAT at 15 in 750 s);
+  the first batch, d = 168, 160, 152, 144 at L = 18, all CAPPED at 3,600 s (four unknowns, no verdict); the second
+  batch (164, 156, 148, 140) was killed after about 25 minutes rather than spend three more hours on hour caps. Third
+  start: only d = 140, 148, 156, 164 (bracketing the trend's crossing of 18, near d = 147), each with a 14,400 s
+  cap, four at once, no further depths. TR-P6 is read with the 14,400 s cap. A capped call still refutes nothing.
 """
 import os
 import sys
@@ -81,7 +86,7 @@ RR2 = """20:16 21:15 22:14 23:13 24:12 25:11 26:10 27:9 28:8 29:7 30:8 31:8 32:8
 61:9 62:12 63:11 64:12 65:11 66:10 67:14 68:13 69:12 70:11 71:12 72:11 73:10 74:10 75:10 76:10 77:10 78:11 79:10
 80:10 81:12 82:11 83:14 84:13 85:12 86:13 87:16 88:15 89:14 90:13 91:12 92:12 93:16 94:17 95:16 96:15 97:14"""
 RR3 = [14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16, 15, 14, 15, 15, 14, 13]              # d = 98 .. 114
-DEEP = [168, 160, 152, 144, 164, 156, 148, 140, 136, 132, 128, 124]      # deepest first: likeliest SAT on the trend
+DEEP = [140, 148, 156, 164]           # third start: the bracket of the trend's crossing of 18, long caps (addendum 2)
 L_DEEP = 18
 
 
