@@ -681,3 +681,6 @@ app is unpublished by design.
 - lexicon/rule30_exterior_repair.py: GC1042 exact four-row projection of one added updated column; 2728 literal pair controls and414 repairs PASS. Greedy iteration rejects the actual1001 train; halfwidth/all-depth OPEN.
 
 - lexicon/rule30_black_wall_scope.py: GC1043 corrects WA3's phase interpretation and question D; true free R°(3)=4, finite black-phase endpoints odd. Literal, packed and inverse-column controls PASS; no new record census.
+
+
+- lexicon/rule30_exterior_binary.py: GC1044 exact all-choice two-column repair by binary clauses;18,720 literal triples and324 constructions PASS. Actual-train pair01 forced; free-terminal positive retained. Further projection/halfwidth OPEN.

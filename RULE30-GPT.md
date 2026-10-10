@@ -27224,3 +27224,79 @@ rule30_black_wall_scope.py; no SAT, record extension or Local run.
 Cloud asked to correct D's supplied data and the phase interpretation,
 then independently read this refutation. Next return to the correlated
 exterior lift; CL210's halfwidth and the prize bound remain open.
+
+
+#### GC1044 — Two-column exterior repair retains every choice in a binary relation (2026-10-10)
+
+Missing inference, CL210: GC1042's greedy completion loses an actual
+train. A useful concrete advance is an exact representation of ALL
+repairs admitting two additional updated columns, with no choice
+selected prematurely. Record searched: `2.SAT|bijunctive|binary clause`
++ `repair|column|exterior` -> two unrelated SAT probes, no such repair
+lemma; GC1042's exact guard equivalence is reused. No Local solver,
+membership, width or language census. L607 at b3da78b3/8533dbe5 read:
+WA3 phase correction accepted, matching-parity R_real unaffected;
+122's both-phase cake_lpr receipt and128's validated witness accepted
+with Local's stated provenance, without a duplicate run.
+
+**Hand theorem, PROOF-SKETCH.** Fix u(0..T-1), v(0..T), T>=1,
+and q(t)=v(t+1) XOR u(t). The complete set of w(0..T) for which
+there exist z(0..T), h(0..T-1) satisfying ALL THREE equations
+v'=u XOR(v OR w), w'=v XOR(w OR z), z'=w XOR(z OR h)
+is the following binary-clause relation. If any v(t)=1,q(t)=0 it
+is empty. Otherwise impose:
+
+- w(t)=q(t) wherever v(t)=0, t<T;
+- for every t<T, NOT w(t) OR [w(t+1)=1-v(t)];
+- A, t<=T-2: if v(t)=v(t+1)=1, w(t) OR NOT w(t+2);
+  if v(t)=1,v(t+1)=0,q(t+1)=0, w(t) OR w(t+2);
+- B, t<=T-3, only when v(t)=q(t)=0:
+  if v(t+2)=q(t+2)=0, NOT w(t+1) OR NOT w(t+3);
+  if v(t+2)=v(t+1)=1, NOT w(t+1) OR w(t+3).
+
+Here the equality in the second item is a literal since v is fixed.
+The terminal w(T) remains a variable; no update or q(T) is invented.
+
+Proof: the first item is exactly v's update, and the second is exactly
+GC1042's base guard for the pair v,w. Apply its A/B guards to that pair,
+with r(t)=w(t+1) XOR v(t). A requires w(t),w(t+1)=00,
+v(t)=1 and w(t+2)=v(t+1). If v(t+1)=1, w(t+2)=1
+already forces w(t+1)=0 by the base guard, giving the first A clause.
+If v(t+1)=0, w(t+1)=q(t+1) is fixed; it either eliminates A
+or gives its second clause. These exhaust A.
+
+B requires w(t..t+2)=010 and r(t)=r(t+2)=1. Its first r
+forces v(t)=0, hence w(t)=q(t)=0. If v(t+2)=0, w(t+2)
+is fixed; when it is zero, B is precisely w(t+1)=w(t+3)=1.
+If v(t+2)=1, w(t+1)=1 forces w(t+2)=1-v(t+1): B
+is impossible unless v(t+1)=1, when it reduces to w(t+1)=1,
+w(t+3)=0. These are exactly the two B clauses. GC1042 then constructs
+z,h for every accepted w. Necessity and sufficiency hold at every T.
+
+There are at most4T clauses on T+1 variables, each spanning at most
+four rows. The full repair relation has an exact eight-state scan
+(remember the last three w bits), or a linear-size implication graph;
+2-SAT decides nonemptiness in linear time. This retains correlations
+and ALL options, rather than the exponential list of optional assignments.
+It is the exact projection of a width W+2 strip onto a FIXED width W
+history. It is not a fixed-size automaton for the entire visible language:
+its coefficients depend on u,v. Further spatial projection need not
+preserve binary clauses, and CL210's halfwidth/all-depth bound stays OPEN.
+
+**Actual-train inference.** Literal seed1001 beside the white-start
+clock has u=0101, v=11001, so q=1100 and w(2)=w(3)=0.
+The second A clause at t=1 gives w(1) OR w(3), forcing w(1)=1;
+the base clause at t=0 then forces w(0)=0. Thus every two-column repair
+has first pair01, the actual train's pair. The selected00 repair fails
+for an interior reason through this complete four-tick cycle.
+
+P1 (all-choice clause equivalence) and P2 (forced pair01) registered
+before controls and HELD. All18,720 arbitrary u,v,w triples through
+T=1..4 agree with independent literal existential enumeration of z;
+324 accepted repairs construct and replay all three equations. Unexpected
+endpoint check: at T=3, w=0001 repairs the actual v=1100, whereas
+GC1042's selected0000 fails. At T=4, its would-be terminal site3 is
+prescribed zero, so the first00 cannot be saved. Instrument:
+rule30_exterior_binary.py. Next missing inference: whether correlated
+repair choices admit an invariant under further spatial extension,
+without presuming this binary class is closed. No new worker run.
