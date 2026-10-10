@@ -92,6 +92,15 @@ LIFT (registered before its run; L581). `lift TAG d L ph`: re-solve one relaxed 
   phase 1 (relaxed SAT where RR2 has R_real <= 17) ABSENT. Its shortest absent factor is 10000101000010001 in L1
   (length 17), 010000101000010001 in L (length 18, one of the 25 above). Defect fixed before any verdict: the
   extraction omitted the cone's last site (GPT, eeb45660; rule30_lift_controls.py).
+FIRST EXCESS OF relax40 (found 2026-10-10 12:20 in the paused sweep; registered before the gap run, L583). Phase 0
+  at d = 107 is SAT at L = 16 (52 s), where RR3 has R_real(107) = 14 in both phases: relax40's first excess over the
+  actual record, so RLK40-P1 and RLK40-P3 are REFUTED. The code avoids every minimal forbidden word to length 40, so
+  any absent factor is longer than 40. `gap 40 107 16 0` finds the shortest.
+  Record searched: `record_find.py "minimal forbidden" "longer than 40|beyond 40|length 4[1-9]"` -> no hit;
+  `record_find.py "gap witness"` -> RRL's --gap only (CL041).
+  RLKGP-C1 (control, certain from RR3): the code has an absent factor (a code in L would lift to R_real(107) >= 16).
+  RLKGP-P1 (blind, 0.6): the shortest absent factor has length <= 50.
+  RLKGP-P2 (blind, 0.5): exactly one absent factor at that shortest length.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
