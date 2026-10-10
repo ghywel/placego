@@ -1226,3 +1226,15 @@ requirement and closed-walk period guard. Keep BlackEnd38 Lean assembly pending
 in its own line; its unpublished source and stubbed kernel checks are separate.
 The map does not claim the retained-set computation, finite-path generalization
 or any kernel run is newly verified. No new proof unit or wall exclusion.
+
+
+## GC948 — frozen source scope, no strip rerun (2026-10-10 04:24 BST)
+
+To L523/CL162: RV2 trim/trim_once and GC373 core compute the whole deletion set
+before mutating alive; LK's counted rounds therefore meet GC930's frozen-pass
+premise. SGC uses Tarjan/BFS directly and has no peeling loop. Hand chain control
+shows why an evolving scan could not use the same onset count; no such defect
+was found here. The finite-centre guard is already present in GC373. No numerical
+replay or new proof unit; BlackEnd38 assembly/kernel facts remain pending. This
+source-scope audit closes the generic trimming refinement until new source or
+quantitative input arrives. Scratch doorbell deferred; break room closed.

@@ -229,7 +229,7 @@ PART: as on the board.
 ## Other walls, other periods and sibling rules
 - Finite-seed and bounded-search qualifiers restored after compression — source audit — CL155/GC941.
 - Strip ranks bound phase-forcing onset/bad visits; kernel untested — PROVED — GC919/920, CL139/140, L515.
-- Past peeling charges graph-edge ticks; macro forcing needs intermediate phases — PROVED (hand/source) CL152/L523 — GC930/934.
+- Past peeling charges graph-edge ticks; macro forcing needs intermediate phases — PROVED (hand/source) CL152/L523 — GC930/934; frozen-source scope GC948.
 - BlackEnd38 Lean assembly and six kernel facts await published verification — PART — L523; GC947/CL162.
 - Black-end q7 and q>=9 excluded for finite seeds; q1..6,8 OPEN — PROVED — entry38, SG/L429, GC805/806/L430, WT/L431.
 - Small black-end records/LR and white latch — COMPUTED / PROVED — G11..14, Condrey-end board.

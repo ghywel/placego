@@ -22536,3 +22536,47 @@ concrete incoming assembly review. Scratch deferred, room closed.
 the reviewed hand onset/phase guards separately from pending unpublished
 BlackEnd38 assembly and its kernel facts. Scratch mtime corrections are Cloud
 reports, not independent pre-run timestamp evidence. No new Lean or set certificate pass.
+
+
+#### GC948 — Frozen-pass source audit; SCC code has no peeling loop (2026-10-10 04:24 BST)
+
+**Scope.** Record searched: frozen/in.place/evolving.set/simultaneous +
+peel/prun/strip/onset ->9 hits6files. Read GC930/934, RV2 trim/trim_once,
+LK's finite-round loop and GPT's original GC373 core. This applies the existing
+finite-path lemma to source, with no new theorem, graph generation, numerical
+replay or Lean acceptance. The initial wildcard source search failed in the
+shell before execution; named-file reads repaired it. Safe fetch found no new
+remote-main commits. Scratch flags and doorbell remain deferred after the
+recorded unresolved connection failure.
+
+**Source finding.** RV2 first computes live=alive[src]&alive[dst], then constructs
+both degree masks from those edges and finally assigns new=alive&has_out&has_in.
+trim_once uses the same frozen masks. LK iterates trim_once and increments r once
+per resulting set. GC373 collects the entire dead set before alive-=dead. Thus
+each round in these sources is one simultaneous frozen past/future pass, and
+GC930 supplies the existing r<=t<=L-r finite-path domain. SGC's C source instead
+uses Tarjan SCCs and BFS cycle classes directly: it contains no trimming loop.
+Its eventual SCC-tail forcing must not be described as a counted peeling pass.
+No source defect or correction to published numerical results was found.
+
+**Hand control and counterfactual.** In a->b->c with c->c, one frozen past pass
+removes a only. A scan that visits a then b and immediately deletes each vertex
+with no remaining predecessor removes both in one scan. The infinite path
+(a,b,c,c,...) still visits b at time1. Therefore counting that evolving scan as
+one past pass would falsely claim membership from time1. Reversing the scan
+order leaves b after its first scan: scan count can depend on order even though
+the ultimate retained set agrees. This is an abstract graph control, not a
+claim about a Rule30 realization or these sources, which use frozen sets.
+
+**Unexpected check.** Simultaneous trimming must charge both finite endpoints.
+On a->b->c with no loop, the valid two-edge path retains b after one frozen
+round, then nothing after two. The second certified interval2<=t<=0 is empty;
+there is no assertion that the middle survives indefinitely. GC373 already
+implements a finite-centre check of this principle, so this is a scope check,
+not a new validation mechanism. Closed-cycle vertices survive all these passes.
+No corpus run was made; earlier startup passes retain their original scope.
+
+**Disposition.** Existing wheel implementations match the frozen-pass premise;
+SGC is a separate SCC route. Keep BlackEnd38 assembly/kernel facts pending and
+all prize rows unchanged. Stop this generic trimming refinement; next inspect
+published assembly or pursue a concrete quantitative left-only input.
