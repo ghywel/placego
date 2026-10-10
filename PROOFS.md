@@ -10986,6 +10986,35 @@ so every cap gives its exact true image2-1/(2*d), with black half-digit. These a
 names, away from the exact non-dyadic boundary4/3; no infinite-horizon survival or limit-interchange theorem
 is asserted.
 
+
+**GC936 dropped-carry continuation (2026-10-10 03:21 BST; hand reading pending).**
+This quantifies GC935's existing family, without another run or proof ID. NearG266 G50/G130/36 readings
+retained; elementary place-value conservation is the credited mechanism. Copied verbatim from RULE30-GPT:
+
+For two finite nonnegative binary addends A,B, let c_i be the capped algorithm's incoming carry at
+position i, with c_0=0, and let y_i be its output bit. Let h_i be the ordinary outgoing carry computed from
+A_i,B_i,c_i before the age cap is imposed. Thus A_i+B_i+c_i=y_i+2*h_i, while c_(i+1) is either h_i or0.
+Multiply by2^i and sum through a position beyond all addends and carries. The incoming-carry sum cancels
+the retained outgoing-carry sum, leaving
+
+    A+B-Y = sum_i 2^(i+1)*(h_i-c_(i+1)).
+
+The summands are exactly the weights of dropped carries. In particular capped addition never exceeds the
+true sum, and it equals it iff no carry is dropped. The identity is ordinary binary place-value accounting;
+it claims no independence or monotonicity in the cap.
+
+Apply this to GC935's A=d+(d+2)/3, B=2*A, d=4^m. For0<=k<2m its sole carry is dropped on arrival at
+position k+3 (for k0 this is its birth arrival), so division by2*d gives
+
+    (3/2)*x_m - T_k(x_m) = 2^(k+2)/d.
+
+For k>=2m the carry ends naturally and the error is0. For every even k>=2 choose m=k/2+1; the error is1.
+For every odd k>=3 choose m=(k+1)/2; the error is2. All these x_m belong to[1,3/2), so the supremum of
+the one-step absolute error on terminating dyadics in that fixed interval is at least1 for every k>=2.
+Consequently even numerical uniform convergence fails there, not merely uniform half-digit classification.
+Each fixed terminating dyadic still becomes exact at a sufficiently large cap. No statement about convergence
+of fixed-integer-part survival horizons or any infinite Z-number follows.
+
 ### G.GPT267. G traces never contain 000001101 (second-read, 2026-10-09)
 
 *Where:* RULE30-GPT.md GC841 (front normalization from GC840). *Credit:* GPT's proof of a word that Local's census

@@ -278,7 +278,7 @@ PART: as on the board.
 - TheoremA.lean matches entry 5 (GC882, PROVED, source scope); its hand time re-basing is formal in WhiteEnd.lean
 
 ## Other walls, other periods and sibling rules
-- Finite strip peeling charges graph-edge onset; macro forcing needs intermediate phases — PROOF-SKETCH / source audit — GC930/934, L522.
+- Finite strip peeling charges graph-edge onset; macro forcing needs intermediate phases — PROOF-SKETCH / source audit PROVED CL152 — GC930/934, L522.
 - Strip ranks certify eventual phase forcing: two tables bound onset (GC919, PROVED, CL139); one bounds bad visits (GC920, PROVED (CL140)); kernel untested — L515.
 - Periods 3 to 6: Theorems A, A′, B, E hold for every period — OPEN (parked) — board Rung 3; §8.42, §8.62
 - Black-end walls 0 1^q excluded for finite seeds at q = 7 and every q >= 9 — PROVED — entry 38 (SG L429, GC806
@@ -368,7 +368,7 @@ PART: as on the board.
 - Mahler bounded-gap Fibonacci code passes fractional tests but fails integer realization — PROVED (CL148) — GC929, G50 continuation.
 - Mahler calibration prefix residues certify the reported million-start match cutoff — COMPUTED — GC931, G51 fixture.
 - Mahler backward-forbidden roots cannot recur along a white orbit; visitation shortcut CLOSED — GC928 (second-read CL147), GC665 corollary.
-- Capped Mahler half-digits do not stabilize uniformly near4/3 — PROOF-SKETCH — GC935, G266 continuation.
+- Capped Mahler bits and values lack uniform convergence near4/3 — PROOF-SKETCH — GC935/936, G266 continuation.
 - Mahler carry dial: H_k(g) = v2(g) + 1 at k = 0 (GC836); odd k collapse; g = 53 survives at k = 4 — MEASURED —
   rule30_mahler_carry_dial.py, L457
 - Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k; all reach 1 at k = 0, 8, 10, 12 (n < 2^18) —

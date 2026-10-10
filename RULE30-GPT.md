@@ -21952,3 +21952,53 @@ inputs close to a discontinuity. Finite-k survivor tables therefore provide no s
 Mahler map. This does not prove that horizons fail to converge at fixed g or identify an infinite survivor.
 Hand reading requested; no map-to-prize bound. CL151's ambient sharp-profile refinement is received without
 replay, and its stopped lane stays stopped. Next actual proof review or selected-history budget; scratch deferred.
+
+
+#### GC936 — Dropped carries quantify numerical nonuniformity in GC935 (2026-10-10 03:21 BST)
+
+**Hand audit only, independent reading pending.** Record searched: carry + numeric/error/drop-value/approx
+->25 hits in18 files. GC836/837/935 and MD's age recurrence read. G266's nearest G50/G130/36 full readings
+from GC935 remain applicable; this is one continuation, not a new proof unit or carry catalogue. No new or
+repeated computation. Prediction: dropped-carry weights telescope exactly, making the nonuniformity numeric
+as well as symbolic. Countercontrol: only a discontinuous half-digit reader causes GC935's transfer failure.
+
+**Place-value argument.**
+For two finite nonnegative binary addends A,B, let c_i be the capped algorithm's incoming carry at
+position i, with c_0=0, and let y_i be its output bit. Let h_i be the ordinary outgoing carry computed from
+A_i,B_i,c_i before the age cap is imposed. Thus A_i+B_i+c_i=y_i+2*h_i, while c_(i+1) is either h_i or0.
+Multiply by2^i and sum through a position beyond all addends and carries. The incoming-carry sum cancels
+the retained outgoing-carry sum, leaving
+
+    A+B-Y = sum_i 2^(i+1)*(h_i-c_(i+1)).
+
+The summands are exactly the weights of dropped carries. In particular capped addition never exceeds the
+true sum, and it equals it iff no carry is dropped. The identity is ordinary binary place-value accounting;
+it claims no independence or monotonicity in the cap.
+
+Apply this to GC935's A=d+(d+2)/3, B=2*A, d=4^m. For0<=k<2m its sole carry is dropped on arrival at
+position k+3 (for k0 this is its birth arrival), so division by2*d gives
+
+    (3/2)*x_m - T_k(x_m) = 2^(k+2)/d.
+
+For k>=2m the carry ends naturally and the error is0. For every even k>=2 choose m=k/2+1; the error is1.
+For every odd k>=3 choose m=(k+1)/2; the error is2. All these x_m belong to[1,3/2), so the supremum of
+the one-step absolute error on terminating dyadics in that fixed interval is at least1 for every k>=2.
+Consequently even numerical uniform convergence fails there, not merely uniform half-digit classification.
+Each fixed terminating dyadic still becomes exact at a sufficiently large cap. No statement about convergence
+of fixed-integer-part survival horizons or any infinite Z-number follows.
+
+**Independent hand controls and unexpected nonmonotonicity.** At m2, x=11/8, true image33/16, the five caps
+k0..4 give29/16,25/16,17/16,1/16,33/16. Their errors are1/4,1/2,1,2,0, respectively. The k2 value17/16
+is the pre-existing GC837 two-carry control; k0 is direct XOR22 XOR44=58, divided by32. The sole-birth
+propagation gives the other values without a new run. Raising the cap can increase the numerical error
+before it abruptly vanishes; the positive error identity does not imply cap monotonicity. The below-boundary
+GC935 y_m has no birth and zero error for every cap. A+B-Y counts the carry weight at its arrival position,
+not at its birth: using the birth's weight alone fails the k2 hand control. These fixed checks are algebra,
+not additional data in the prior90-case experiment.
+
+**Disposition.** This corrects the possible interpretation of GC935 as only a bit-threshold issue: numerical
+uniform convergence also fails on a bounded positive-integer-part interval. Pointwise finite-dyadic exactness
+remains compatible with this failure. No monotone horizon convergence or limit interchange is supplied;
+stop this carry-family refinement here, pending independent reading. CL152 at21a93c1b independently accepts
+GC934's one-tick source, phase-choice countercontrol and SCC-period guard, with no strip execution; receipt
+accepted. Scratch deferred; break room closed.
