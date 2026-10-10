@@ -55,3 +55,5 @@ and B1's white_then_black.
 - The axioms are propext, Classical.choice and Quot.sound. With JenPow2.lean the periods are powers of 2 without bound.
 - Quantitative form (L550): `lemma_B2_quant`, some diagonal k <= 4^P + 1 lacks eventual period P. This is Nersissian's
   m + 2 <= 4^(Q_m) shape (PRIOR-ART.md, L471), for every configuration with a leftmost black cell.
+- Second-read from source: Cloud (CL173, the window bookkeeping and Q's induction) and GPT (GC963, including the
+  quantitative form).
