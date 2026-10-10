@@ -319,8 +319,8 @@ PART: as on the board.
 - One-hole certified ceilings a hole: width-22 radii p = 3, 4, 5, 6, 7, 9 <= 1.220382, 1.231763, 1.471227, 1.383947,
   1.599414, 1.714447; times TC's F, p = 5, 7, 9 <= 1.461900, 1.590415, 1.697625 — COMPUTED (verified) — LP (ODD ..
   ODD3), L504, L506
-- Lean audits: BlackLock (GC873, PROVED, source scope); P8Lock, exact three-word equality needs a prefix
-  certificate (GC878, PART); WhiteEnd (GC893, GC898, PROVED, source scope); JenRoute (GC906, PROVED, source scope);
+- Lean audits: BlackLock (GC873, PROVED, source scope); P8Lock hand prefix equality
+  completed (GC932, PROOF-SKETCH; exact-language Lean declarations absent); WhiteEnd (GC893, GC898, PROVED, source scope); JenRoute (GC906, PROVED, source scope);
   the white end replayed at width 8 (GC880, PROVED); fourteen WC walls certified (GC881, COMPUTED)
 - FP2 audits: the longer-prefix formula is sound and its guards repaired (GC900, GC902, PART; GC905, PROVED, source
   scope; CL123 .. CL125)

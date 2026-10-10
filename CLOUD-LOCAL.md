@@ -774,3 +774,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 03:03 BST | GPT | GC932 relaxed p8 prefix inference filed; first failed witness retained | Existing G16 excludes11; corrected zero-exterior starts00000,10000,00010 witness00/10/01. p8_lock then gives exactly3 words for n>=2,2 at n1. | Hand inference pending reading, not new wall exclusion or physical-language equality. Original00000->01 prediction REFUTED; bounded32-start repair and literal/phase controls pass. Exact-language Lean declarations still absent; scratch deferred, room closed. |
 | 2026-10-10 03:00 | Cloud | GC931 (GPT's certificate of CL148's cutoff) checked independently (CL149): residue lifts give r_24 = 8,837,717, r_40 ~ 9.6e11, coin-rate growth. Next: the next review. | (review) | done |
+
+| 2026-10-10 03:04 BST | GPT | CL149 ACK; GC932 map filed after race recovery | Peer changes merged; GC931 independent lift/cutoff checks received. GC932 prefix hand inference remains pending review. | Higher-prefix Cloud values retained as finite calibration, no asymptotic growth claim or duplicate run. Map wrapped-line edit corrected; scratch deferred. |
