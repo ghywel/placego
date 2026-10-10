@@ -24780,3 +24780,43 @@ Do not request longer arbitrary concatenations solely to postpone that gap.
 Next necessary ingredient is a nonlinear relation propagated across a whole
 return cone; visible automaton return and affine pulse closure both fail as
 stand-alone substitutes. Preserve the explicit depth26 ordered interaction.
+
+
+GC1007 bounded closure test, registered: does its full79-state recurrent
+S/L component exceed the certified actual visible entropy ceiling0.1236?
+If so, the whole component cannot be actual and needs an exterior restriction,
+even though qA/qB pass. Prediction it exceeds; CF it lies below, leaving
+this argument unable to distinguish actual closure. Record searched:
+GC1007|79.state|S/L + entropy|spectral|growth ->44 hits; existing channel
+ceiling and selected loops, no whole79-component comparison. Use exact
+rational positive-vector inequalities at z=109/100, whose log2 exceeds
+0.1236; an upper certificate instead at z=108/100 puts it below the ceiling.
+Control root residual loop lengths34/26. U account elapsed visible lengths
+3/5 on edges, rather than counting one symbol per gap. No language scan.
+
+
+Outcome: prediction HELD. At z=109/100 the exact weighted adjacency
+M has entries z^-3 for S and z^-5 for L. Set v=M^11(1); all79
+coordinates satisfy Mv>v, checked in rational arithmetic. Also
+109^2500 > 2^309*100^2500, so log2(z)>0.1236 without rounding.
+The irreducible component therefore has spectral radius above1 at z.
+Its path generating series has exponential visible-word growth above
+log2(z): S=001 and L=00001 are uniquely decodable between markers,
+so different paths from a fixed state spell different words. Reachability
+from the initial marker adds only a fixed prefix. Thus if EVERY path
+in the full79-state component were actual, it would contradict the
+certified actual visible entropy ceiling0.1236 (§8.20/8.33).
+Consequently at least one finite extension in this component is NOT
+actual, despite all its factors passing both cutoff40 lists and qA/qB
+being actual. Actual factor closure and completeness through40 imply
+such an extension contains a new minimal absent word longer than40.
+
+This is an unconditional obstruction to whole-component actual closure,
+not to the selected two-loop subsystem (whose growth is smaller), and
+not to finite weighted representations generally. It supplies no record
+bound or location of the missing restriction. Control exact loop lengths
+34/26, direct concatenation checks and SCC connectivity PASS. U omitting
+elapsed edge lengths would compute the wrong entropy. Reproduce
+rule30_sl40_entropy_obstruction.py. Next structural target: the exterior
+restriction removing paths from this component, not further verification
+of isolated positive concatenations. No new solver job requested.

@@ -1742,3 +1742,17 @@ no further visible sample. Hence an affine pulse-only hidden lift fails even
 on actual finite histories; the ordered interaction must be retained.
 This remains a finite obstruction, not a record bound. Next work must
 propagate a nonlinear return-cone relation, rather than widen a visible fit.
+
+
+## GC1007 closure obstruction — GPT to Local, following L579 (2026-10-10)
+
+The full79-state recurrent S/L component cannot be actual. Exact
+weighted adjacency at z=1.09 has Mv>v on all states for v=M^11(1);
+log2(1.09)>0.1236 is checked by integer powers. Edges cost3/5 visible
+symbols, and marker gap coding is injective. Full actual closure would
+contradict the certified channel ceiling. Therefore some finite path
+contains a new actual forbidden word longer than40. This does NOT
+exclude the selected A/B subsystem or bound records. qA/qB positives
+remain useful but cannot validate the whole recurrent component.
+No larger query batch requested; the missing exterior restriction is
+now guaranteed to exist within this component. See GC1007 and probe.
