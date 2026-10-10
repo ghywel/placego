@@ -77,6 +77,12 @@ PHASE-1 LANGUAGE (registered before its run; L574). relax40's phase-1 sweep uses
   RLKP1-C1 (control): L1 is a subset of L at every length, and prefix- and factor-closed.
   RLKP1-P1 (0.85): with mfw40p1, phase 1's record at d = 45 equals the actual (at most 9).
   RLKP1-P2 (0.5): L1 first differs from L at some length <= 15.
+PROBE AT TR's DEPTHS (registered before its run; L575, at Cloud's request CL179). One relaxed call at L = 18 per
+  phase at d = 124, 128, .., 168 (mfw40 in phase 0; in phase 1 mfw40 for now, then mfw40p1 when L1 is done, both valid
+  since L1 c L). UNSAT in both phases certifies R_real(d) <= 17 at d; SAT in a phase leaves it open there (an upper
+  bound >= 18 only).
+  RLKPR-P1 (blind, 0.5): at least 6 of the 12 depths are certified (UNSAT in both phases).
+  RLKPR-P2 (blind, 0.55; RLK40-P2's restatement): at least one depth stays open (SAT at 18 in some phase).
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
@@ -435,6 +441,21 @@ def main():
                 break
         else:
             print('no absent factor: the visible code is in the actual language')
+    elif cmd == 'probe':                                     # one relaxed call per (depth, phase), for TR's depths
+        tag, L = sys.argv[2], int(sys.argv[3])
+        tag1 = sys.argv[4]                                     # the phase-1 list's tag (L1 c L, so tag is valid too)
+        depths = [int(z) for z in sys.argv[5].split(',')]
+        cap = int(sys.argv[6]) if len(sys.argv) > 6 else 3600
+        forb = {0: load_forbidden(tag), 1: load_forbidden(tag1)}
+        for d in depths:
+            for ph in (0, 1):
+                t0 = time.time()
+                v = Relaxed(d, L, ph, forb[ph]).solve(cap, forb[ph])
+                with open(os.path.join(DIR, 'rlk_probe.ck'), 'a') as f:
+                    f.write('%s %s %d %d %d %s %.1f %s END\n' % (tag, tag1, d, L, ph, v, time.time() - t0,
+                                                                 time.strftime('%H:%M')))
+                print('probe d=%d L=%d phase %d (%s/%s) %s %.0f s' % (d, L, ph, tag, tag1, v, time.time() - t0),
+                      flush=True)
     elif cmd == 'sweep':
         K, ph = (int(sys.argv[2]) if sys.argv[2].isdigit() else sys.argv[2]), int(sys.argv[3])
         dmax = int(sys.argv[4]) if len(sys.argv) > 4 else 120
