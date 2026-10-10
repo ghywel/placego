@@ -152,7 +152,7 @@ PART: as on the board.
   GC862) — rule30_r88_census.py, rule30_q16_exits.py, L486
 - A physical one-parity odd return exists: the single cell's q = 16 end 1010100010100000 (depth 87,867, N_5's
   minimum); its period-32 entry is sharp, wt(f) = 8 = q/4. None of TM6b's 56 exits to period 64 is one-parity —
-  COMPUTED — rule30_cloud_sharp_entry.py (SE), CL134; refutes the hoped-for exclusion of GC911
+  COMPUTED — rule30_cloud_sharp_entry.py (SE), CL134; GC915 independently verifies the fixed witness; exclusion REFUTED
 - Rooted (physical) tree, period-16 stage: fifteen branch nodes, sixteen histories entering period 32 at 87,867 ..
   894,235; earlier entries N_j = 3, 8, 29, 400 — COMPUTED (second-read) — Proposition 8, entry 21 (TM5, TM5b, TM6)
 - Its whole in-tree at fixed q: 4, 14, 98, 3,066, 34,541,082 states (q = 1 .. 16); non-dyadic q repeat their dyadic
