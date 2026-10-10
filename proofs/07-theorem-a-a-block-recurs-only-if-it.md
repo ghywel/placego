@@ -44,3 +44,11 @@ of its own time. So the two columns at times $t$ to $t + k$ fix the $k$ cells to
 blocks of length $n$ therefore make the rows at times $a$ and $a'$ agree at the $n - 1$ cells left of column
 $i$. The later row has its leftmost black cell $L + a'$ cells out, and the earlier row is white there. If
 $L + a' \le n - 1$ the rows disagree inside the range where they must agree. $\square$
+
+*Machine-checked (Local, 2026-10-10 04:42 BST).* tests/probes/lean/TheoremAprime.lean (Lean 4, Mathlib), `theorem_A'`.
+- Take a leftmost black cell L >= 0 cells left of column i, and equal values on columns i and i + 1 at times
+  a + s and a' + s for every s < n, with a < a'. Then n <= L + a'.
+- `agree` is the right-to-left determination: the cell m left of column i agrees at times a + s and a' + s when
+  s + m < n, by strong induction on m.
+- `edge` is the moving left edge.
+- The axioms are propext and Quot.sound only.
