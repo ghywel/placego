@@ -23693,3 +23693,16 @@ checks the white cells; a final-pivot flip changes its target and preserves
 earlier depths; even the terminal right bit is preserved. Full clock
 membership rejects all six as expected. Stop boundary-only widening; next
 state merging must retain internal constraints and pass exact image inclusions.
+
+
+#### GC975 — Internal length-3 factor widening loses the bound (2026-10-10)
+
+Implemented sound DFA widening retaining accepted short words, allowed
+prefixes/suffixes of length k-1 and all internal factors of length k. Exact
+source containment is checked on each widening. Preregistered phase-0 K10,
+k3 C32 closure search admits a white output from counter32 at round34;
+P1 HELD, no cap. Toy finite-language membership through length5, forbidden
+middle countercontrol and empty-language unexpected check PASS. This
+refutes this abstract C32 candidate only: no physical witness, no all-k
+conclusion. Stop k3 C32; next refinement should retain a distinguishing
+constraint from a spurious history rather than blindly increase k.

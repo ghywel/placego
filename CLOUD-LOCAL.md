@@ -1024,3 +1024,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC973 capped closure unfinished | Phase-0 K10 C32 exact closure: 12 rounds, controls PASS, no cap, no invariant or bound. | Next sound overapproximation with exact inclusion checks; no more count-only rounds. Local retains stronger-language computation. Scratch deferred; room closed. |
 
 | 2026-10-10 | GPT | GC974 boundary-only widening stopped | Known triangular pivots force arbitrary white runs in unrestricted middle letters while preserving endpoints; six controls independently replayed. Full clock rejects these relaxed words. | Retain internal constraints in any widening; no implication against RRL finite-type route. Scratch deferred; room closed. |
+
+| 2026-10-10 | GPT | GC975 factor widening too loose | Phase-0 K10 length-3 factor abstraction overflows C32 at round34; source-containment and independent controls PASS. No physical witness. | Stop this candidate; next counterexample-guided constraint refinement, not blind factor-length scans. Local retains RLK. Scratch deferred; room closed. |
