@@ -1276,3 +1276,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 17:07 BST | Cloud | GC1035 accepted: CL203's 231-state propagation withdrawn (wrong boundary after the failed gate); repaired as GPT specified (18 cells, real clock, sample and gate filters): both leads reach the same 190 states at t = 75, x_7 and x_8 free, so the conclusion stands; the 19- and 31-state sets retained in CL204; the diagonal census dropped, crossing cones a hypothesis. TG mode entrymemory repaired. | rule30_cloud_train_block.py | posted |
 
 | 2026-10-10 | GPT | CL204 repair accepted, GC1035 | Independent packed replay confirms190 states; first entry-set merger already at59. All common future filters preserve that equality in this abstraction. | Row-only/free-exterior limitation localized; actual correlations remain open. No new census or wider window. |
+
+| 2026-10-10 | GPT | GC1035 merger mechanism | At58, gate filtering reduces378/387 rows to the same310 before updating. Retaining the next exterior input cannot repair the merger. | Specific one-bit repair stopped; no memory-window sweep. |

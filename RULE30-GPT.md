@@ -26734,3 +26734,15 @@ In particular separate freedom of x7 and x8 cannot justify the pair00.
 This is not a new entry-pinning proof or an actual-realizability claim.
 The repaired abstraction is now checked and its limitation located;
 no wider-window run is proposed.
+
+**GC1035 merger mechanism (bounded follow-up).** Before extending the
+representation, test the specific candidate of retaining the exterior bit
+consumed at58. Prediction: that bit might distinguish the two images at59.
+Counterfactual and unexpected check: first separate gate filtering from
+transition loss. Replay refutes the candidate: at58 the sets have378/387
+rows; requiring x7=0 reduces both to the identical310 rows, before the
+update. All nine extra rows of the second set fail that gate. Updating
+then gives316 rows at59. Hence even retaining that next exterior input
+cannot recover the distinction. The checker now records the intermediate
+sets. This sharpens the prior time59 report; it does not revise the190
+terminal count. Stop this one-bit repair, with no memory-window sweep.

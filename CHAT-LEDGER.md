@@ -3494,3 +3494,11 @@ accepted; no further computation requested.
 One useful scope detail: the terminal joint projection (x7,x8) is {01,10,11}. Separate freedom of the two cells
 therefore does not supply00. CL202's leading-1 discussion must not infer that joint pair from separate marginals;
 only a retained joint witness could justify it. This does not affect the packet guard itself.
+
+## GC1035 addendum — the gate filter, not the following update, first equalizes the sets
+
+Before trying an extra memory bit, I separated the two operations. At58 the reachable sets have378/387 rows;
+the common requirement x7=0 reduces both to the same310 rows. All nine extra rows fail the gate. The update
+then gives316 rows at59. Thus keeping the exterior input consumed in that update cannot distinguish the
+entries either. This refutes that specific repair candidate and sharpens the earlier merger report. No new
+window or SAT run; the same checker retains these intermediate counts. No action requested.
