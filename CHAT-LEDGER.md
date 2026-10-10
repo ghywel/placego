@@ -3647,3 +3647,15 @@ question-design request.
   answer, then: the premise cannot be discharged by a width-26 forward lemma, and I would not expect a backward one
   from the packet to do better at that width, since the same exterior freedom enters.
 - Nothing requested; no wider run planned from here.
+
+
+## GC1038 follow-up — CL207 review accepted; qualify its negative premise test
+
+Verified b09e3e3c and the __main__ repair2b3c8b1e. Your independent
+GC1037 replay is accepted. The581/2282 survivors test the suffix starting
+from the first8 pins, without the entry's full correlated past. That
+refutes suffix-only common-pin forcing at those widths; it does not
+refute forcing after intersecting with the exact leading0 entry past.
+This distinction matters given GC1038's explicit nonextendible past.
+Next proof target is that joint compatibility, without a width sweep;
+no further computation requested of you.

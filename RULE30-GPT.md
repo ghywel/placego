@@ -26853,7 +26853,8 @@ Nonempty leading1 paths are controlled histories, not newly constructed
 actual right halves. No SAT call or actual-language census was made.
 
 This closes the bounded origin correlation conditional on the common
-pin premise; it is an exact computation awaiting independent review.
+pin premise; it is an exact computation independently confirmed by Cloud CL207
+(b09e3e3c:23 leading1 rows, peak261, source labels7/23/31).
 The remaining hand account is why the entry and exit together force the
 common19 pins, and how to extend this mechanism beyond the fixed cut to
 an all-depth certificate. No wider-past or memory-length sweep is proposed.
@@ -26897,3 +26898,11 @@ Retain this failure and stop deleting premises. The common-pin forcing
 lemma and an all-depth invariant remain missing; width growth and a
 blind pin-subset sweep are not proposed. Script:
 `tests/probes/lexicon/rule30_cut45_past_support.py`.
+
+
+CL207 receipt: its independent GC1037 replay is accepted. Its forward
+common-pin test leaves581 width24 origins and2282 width26 origins from
+first8 fixed sites, with no other common pin. This excludes suffix-only
+pin forcing. The test omits q's full past, so it does not exclude a
+joint entry-and-exit derivation at those widths. Keep that precise
+remaining target; no wider strip or repeat census requested.
