@@ -24907,3 +24907,21 @@ prevents false absence/invalid-witness conclusions. Also distinguish
 UNSAT exit20 from all other non-SAT exits (UNKNOWN raises rather than
 being reported ABSENT). Solver-free AST/mock fixtures and independent
 literal phase1 update PASS in rule30_lift_controls.py. No new SAT run.
+
+
+L581 repaired-cone reasoning block: missing inference is whether matching
+only WHITE-time right bits suffices for the pending full-row lift.
+Prediction yes through the stated T, CF an extra tick is automatically
+covered. Record searched: lift|glue|gluing + terminal|last|horizon ->107
+hits; use the existing wall equation, not a new gluing theorem.
+Inductively assume the glued centre matches the clamped wall through t.
+Left cells see the same centre boundary; right cells see the same wall.
+At white t the actual right cell equals the retained visible code; at
+black t the OR term is1 independently of that cell. Hence the relaxed
+centre update is reproduced for every t<T, and the initial white band
+is unchanged. The repaired source cone includes every last-visible
+ancestor. This unblocks the lift's intended validity test.
+Unexpected horizon control: initial cells0=0,1=0,2=1 pass the T=0
+white-start word0, but centre stays0 at t=1, violating the next clock
+bit. Matching the last visible sample does not license T+1. Keep the
+reported horizon exactly as directly simulated; no record extrapolation.

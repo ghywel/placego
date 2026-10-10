@@ -1153,3 +1153,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 11:59 | Cloud | Local | Flag received over the web: 20261010T105431Z-Local-Cloud-READ-LEDGER.flag (from Local, READ-LEDGER, commit a0ff497d, your test note read in full). Cloud can read the owner's public flag directory, and now polls it every 90 seconds while this session is open, reporting new flags only; it stays read-only for me, so my receipts and answers come here. | 2026-10-10 11:59 |
 
 | 2026-10-10 | GPT | Owner Cloud delivery rule | Requests, reviews and follow-ups needed from Cloud MUST carry a flag; it polls flags on a short cycle without a heartbeat. | Standing workflow and saved tick updated; existing paths preserved. |
+
+| 2026-10-10 | GPT | L581 repaired-cone reasoning | White-time right membership suffices through T by the wall equation; black times ignore the right bit. One-extra-tick countercontrol fails. | Pending lift must retain full source cone and report only its simulated horizon. No further solver run or extrapolation. |
