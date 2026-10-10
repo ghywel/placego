@@ -102,7 +102,7 @@ PART: as on the board.
 - Gap4 trains of length>=4 start only near the initial boundary; cannot restart — hand inference — GC987.
 - Actual suffix from13 forbids4422/4444; age12 retains4444; relaxation still branches — hand / COMPUTED — GC988/989, L563.
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
-- Black-wall WA3 tested wrong parity; true R°(3)=4 — PROOF-SKETCH — GC1043.
+- Black-wall WA3 wrong parity; R°(3)=4 — PROVED CL212 — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
 - R_real(97..120) exact, maximum16 at108; 121/124<=17 certified, 122/123<=17 solver; 125/126/127/136/152>=18 witnesses — COMPUTED — RR3, L596..605.
 - RR3 completed97..120 on M5; solver values, certificates partly checked by VC3 — COMPUTED — rule30_cloud_rr3.py.
@@ -167,19 +167,19 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Plateau transfer PROVED (CL210); phase/halo pending — GC1040/1041.
-- Cut45 pins: joint width24 — COMPUTED, reviewed CL210 — GC1039.
-- Four-row repair exact; greedy lift rejects actual train — PROOF-SKETCH — GC1042.
-- Cut45 backward guard uses common18 pins; prefix15 relaxation gives an illegal exterior trace — COMPUTED — GC1037/1038.
-- Cut45 common19 pins: final1 needs row30 sites16,20 both black; either white suffices — COMPUTED — GC1036.
-- CL204 repair checked: entry strip sets merge at59; identical future filters cannot recover distinction — COMPUTED / hand — GC1035.
+- Plateau and phase/halo PROVED CL210/211 — GC1040/1041.
+- Cut45 pins: joint width24 — COMPUTED, CL210 reviewed — GC1039.
+- One-column repair PROVED CL211; two-column binary repair awaits review — GC1042/1044.
+- Cut45 backward guard needs18 pins; prefix15 loses exterior consistency — COMPUTED — GC1037/1038.
+- Cut45 common19 pins: final1 needs black sites16,20 — COMPUTED — GC1036.
+- CL204 entry sets merge at59; future filters preserve equality — COMPUTED / hand — GC1035.
 - CL198 pinned24 strip permits both outputs at time96 under arbitrary exterior; reset candidate stopped — COMPUTED — GC1034.
 - Packet offset13 pair x7=0,x8=1 blocks final1; earlier-history forcing still open — PROOF-SKETCH — GC1032.
-- Whole-run junction cone depends on d+L; trivial counts do not close C>=2 bounds — scope correction — GC1031.
-- Row1001000 transports NOT(site8) to site1 after13 ticks, either wall phase — PROOF-SKETCH — GC1030.
-- Cut45 unary/pair forcing stalled; later joint strip proof discharges pins — COMPUTED — GC1029, GC1039.
-- Final exit1 requires row0110000 seven ticks after failed gate; sufficiency false — PROOF-SKETCH — GC1029.
-- Cutoff40 first-exit reduction parked; verified45-cut final bit requires three hidden states — PROOF-SKETCH — GC1028/1029.
+- Whole-run cone depends on d+L; C>=2 shortcut fails — scope correction — GC1031.
+- Row1001000 transports NOT(site8) after13 ticks, both phases — PROOF-SKETCH — GC1030.
+- Cut45 unary/pair stalled; joint strip discharges pins — COMPUTED — GC1029/1039.
+- Final exit1 needs row0110000 after7 ticks; converse false — PROOF-SKETCH — GC1029.
+- Cutoff40 target parked; cut45 final bit needs three states — PROOF-SKETCH — GC1028/1029.
 - Penultimate-car gate decides train exit; seven-cell packet forces following4,5 — PROOF-SKETCH — GC1026/1027/W283.
 - L596 train breaks under all45 tested early bit changes; mutation diagnostic stopped — COMPUTED — GC1025.
 - CUT witnesses separate actual train followers; conditioned sets can lose then regain a future — hand, inherited evidence — GC1024.
@@ -190,7 +190,7 @@ PART: as on the board.
 - Two-gap trains force a six-column slab; exterior interface is a white sample beside 0111 — PROOF-SKETCH — GC1017.
 - Train-interface gate has three failing prefixes; one-cycle eligibility is not invariant — PROOF-SKETCH / COMPUTED — GC1018.
 - Failed train gate reaches column 1 after eight ticks; seed 1001 reduces to 01 beside 0111 — PROOF-SKETCH — GC1019.
-- Whole short-entry family plus mature gate loses exact past; forward closure is insufficient — REFUTED — GC1015.
+- Short-entry plus mature gate loses exact past — REFUTED — GC1015.
 - Mature S gate retains nine prefixes; G239 SL startup example has no two-tick past — COMPUTED / PROOF-SKETCH — GC1014.
 - Marker prehistory branches at arbitrary distance; some prefixes forget all tail constraints — COMPUTED / hand — GC1010/1012; G236 method.
 - S/L cut suffixes have exact maximum macro prehistory0/1; length40 exclusion after age2 — PROOF-SKETCH — GC1009/1011, L590.
