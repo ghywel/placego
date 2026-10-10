@@ -114,4 +114,57 @@ def controls():
     assert direct_initial(witness,0) and not direct_initial(witness,0,terminal=True)
     print('C1/C2/C3/CF/U PASS; initial membership cases',checks)
 
-if __name__=='__main__': controls()
+def minimize(dfa):
+    rows,finals=dfa
+    # Include a rejecting sink, then refine exact right-language equivalence.
+    sink=len(rows); rows=[[sink if x<0 else x for x in row] for row in rows]+[[sink]*4]
+    blocks=[int(i in finals) for i in range(len(rows))]
+    while True:
+        signatures=[(i in finals,tuple(blocks[j] for j in row)) for i,row in enumerate(rows)]
+        ids={}; refined=[]
+        for sig in signatures:
+            if sig not in ids: ids[sig]=len(ids)
+            refined.append(ids[sig])
+        if refined==blocks: break
+        blocks=refined
+    reps={}
+    for i,b in enumerate(blocks): reps.setdefault(b,i)
+    order=[blocks[0]]+[b for b in reps if b!=blocks[0]]
+    renumber={b:i for i,b in enumerate(order)}
+    return ([[renumber[blocks[j]] for j in rows[reps[b]]] for b in order],
+            {renumber[b] for b in order if reps[b] in finals})
+
+# GC972 preregistration BEFORE image-search execution:
+# One CPU, 20-second alarm, 2,000 determinized states, at most 4 inverse depths/phase.
+# Blind P1: minimized images through depth 4 each have at most 200 states.
+# Independent control: minimization preserves membership for all words through length 3.
+# Countercontrol: two wall phases have identical initial languages; must fail.
+# Unexpected: state count includes the complete rejecting sink after minimization.
+# No white-counter closure or record value is inferred from image sizes.
+# OUTCOME GC972: P1 HELD. Complete minimized DFA counts at depths 0..4:
+# phase 0: 55,54,52,50,43; phase 1: 56,55,54,52,50.
+# All finite membership controls PASS; no cap reached. Counts include sink.
+def search():
+    import signal
+    signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(RuntimeError('time cap')))
+    signal.alarm(20)
+    try:
+        assert accepted(initial(0),(0,)) and not accepted(initial(1),(0,))
+        for phase in (0,1):
+            dfa=minimize(initial(phase))
+            print('SEARCH phase',phase,'depth 0 states',len(dfa[0]),flush=True)
+            for depth in range(1,5):
+                original=image(dfa,cap=2000); reduced=minimize(original)
+                for n in range(1,4):
+                    for word in product(range(4),repeat=n):
+                        assert accepted(original,word)==accepted(reduced,word)
+                dfa=reduced
+                print('SEARCH phase',phase,'depth',depth,'raw',len(original[0]),'min',len(dfa[0]),flush=True)
+    except RuntimeError as e:
+        print('SEARCH STOP',str(e),flush=True)
+    finally: signal.alarm(0)
+
+if __name__=='__main__':
+    import sys
+    if len(sys.argv)>1 and sys.argv[1]=='search': search()
+    else: controls()

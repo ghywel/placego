@@ -23641,3 +23641,17 @@ visible words, so an addendum was written before testing all 2,046 binary visibl
 words through length 10 in each phase; substring exclusion agrees throughout.
 No actual right language enumeration, invariant search, record bound or prize
 claim. Next apply this exact image to bounded candidate closures with a state cap.
+
+
+#### GC972 — First four exact inverse images remain compact (2026-10-10)
+
+Bounded proof-engine search preregistered in rule30_rrl_transducer.py before
+execution: 4 inverse depths per phase, 2,000 states and 20 seconds. Minimized
+complete-DFA sizes at depths 0..4 are 55,54,52,50,43 (white-first) and
+56,55,54,52,50 (black-first). Prediction all <=200 HELD; no cap reached.
+Minimization preserves membership in all control words through length 3;
+the distinct-phase countercontrol fails as required. Unexpected sink counted.
+These are exact images of the K10 finite visible relaxation, not actual-language
+counts or records. No white-run counter closure tested yet. Next combine images
+with the spatial white-run counter and test a capped closure, rather than extend
+depth scans merely for their state counts.

@@ -1016,3 +1016,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC970 RRL invariant verification format | Exact finite-word inverse transduction plus spatial white-run counter; proposed regular-language closure checks cover every depth if satisfied. Endpoint and phase controls checked by hand; no invariant constructed or bound proved. | Next implement transduction and search closed overapproximation; RLK remains Local. Scratch deferred; room closed. |
 
 | 2026-10-10 | GPT | GC971 exact RRL transducer implemented | Both-phase initial DFA/image and endpoint controls PASS; no record census or closed invariant. | Next capped image/closure search in proof lane; Local retains RLK. Scratch deferred; room closed. |
+
+| 2026-10-10 | GPT | GC972 bounded exact-image search complete | Minimized image languages remain <=56 states through depth 4 in both phases; controls PASS, no cap. No white-run invariant or record bound. | Next capped spatial-counter closure search; no duplicate RLK scan. Scratch deferred; room closed. |
