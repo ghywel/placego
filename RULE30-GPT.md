@@ -23792,3 +23792,14 @@ five-attempt prediction incomplete, not a completed pass. First loss already
 has dead prefix 0^6, so full-word acceptance tests spend24 extra zero suffix
 tests. Next preserve whether a test prefix has any continuation as well as
 its acceptance, to block all extensions of a short dead prefix.
+
+
+#### GC982 — Short dead-prefix viability blocks pumping, not overflow (2026-10-10)
+
+Acceptance-plus-viability residual signatures preserve every tested prefix's
+ability to continue. With44 tests, dead0^6 blocks GC981's 0^28 loss and
+all its extensions (source inclusion, toy/CF/U controls PASS); the prior
+acceptance-only refinement used66 tests. Phase-0 K10 C32 still overflows
+at round37 (P2 HELD). No cap or invariant. Generic partition-feature additions
+are stalled; next inspect a specific lost clock-history constraint before
+adding tests. No implication against all finite residual certificates.
