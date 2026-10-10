@@ -107,7 +107,7 @@ PART: as on the board.
 - Fixed sources silent, near-silent sources never harden — COMPUTED — SS/GC589, SO/GC591.
 - Finite left support excludes all-S and eventually periodic S/L renewal tails — PROOF-SKETCH — GC686/704/706/707, §8.78.
 - Marker-aligned n S gaps need J>=6n-3; rigid all-L needs J>=10n-6 — COMPUTED — GC705/L372, AL/L380.
-- Small bridges to the155-ring excluded; template K6 passes but rings<=30 fail — COMPUTED — CX, GC828, TC/L452, RD.
+- Bridges<=24 (tail period<=10) to the155-ring excluded; template K6 passes but rings<=30 fail — COMPUTED — CX, GC828, TC/L452, RD.
 - Adjacent-left density>=3/4 and selector/front lemmas — PROVED — G256, G259..268 (PROOFS E2).
 - Phase-mask, same-reference-orbit pumping and quotient guards — PROVED — GC846/848/849, G269/270/272; L474/493.
 - Last-defect and zero-lag parity shortcuts CLOSED; ParityMask ingredients accepted, assembly unformalized — CLOSED / PART — GC874..876, CL112.
@@ -115,7 +115,7 @@ PART: as on the board.
 
 
 ## The regime between, finite left halves, supports (Q7)
-- Geometric kick floor, Sturmian/arc/near-square exclusions and finite-edge TM/paperfolding — PROVED — §8.54/57/59; G131..136.
+- Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
 - All excluded classes zero-entropy; real column1~0.08bits/bit — MEASURED — §8.20.
 - Settling needs uniform O(q) stage budgets and unbounded period growth — OPEN / conditional PROVED — G164/165/184/186/187, Q7.
 - Every rooted walk returns; fixed-q excursion bound, return-word bijection and root-tree/nonroot-cycle split — PROVED — entry39/GC867, G273 (GC864..866).
@@ -129,7 +129,7 @@ PART: as on the board.
 - Physical q16 tree:15 branches,16 entries q32 at87867..894235; N1..4=3,8,29,400 — COMPUTED — entry21/Proposition8, TM5/TM5b/TM6.
 - Whole in-tree sizes4,14,98,3066,34541082 throughq16; RC88 source nonphysical,371 physical — COMPUTED — ZF/CL126..128, GC907..910.
 - q8/q16 even-return classifications complete; physical sharp one-parity odd return exists — COMPUTED — RC88/RC16/RC16X/QX/QX2, GC861/862/915, SE/CL134.
-- Period64 first depth65821413; q32 stage>2.6e10; sixteen finite debts<=60 — COMPUTED — TM6/Propositions9/10, RD32/GC325.
+- Period64 first depth65821413; q32 stage>2.6e10; sixteen debts<=60 to depth 2^20 — COMPUTED — TM6/Propositions9/10, RD32/GC325.
 - q32 first16 rooted orbits return, mean1.007x2^32: restricted-prefix descriptive scale only — COMPUTED — RWC/RWX L488/522, GC927.
 - RW caps/max-live repaired; Lean matches census walk — PART / source PROVED — GC868, L490/491, GC867 RootedReturn.lean.
 - Driver response intervals/fibres exact; boundary-only and nonphysical-fibre transfers CLOSED — PROVED — W278..281, GC894..901/903, CL120..126, L510..512.
@@ -225,9 +225,9 @@ PART: as on the board.
 ## Other walls, other periods and sibling rules
 - Strip ranks bound phase-forcing onset/bad visits; kernel untested — PROVED — GC919/920, CL139/140, L515.
 - Past peeling charges graph-edge ticks; macro forcing needs intermediate phases — PROOF-SKETCH / source PROVED CL152 — GC930/934, L522.
-- Black-end q7 and q>=9 excluded; q1..6,8 OPEN — PROVED — entry38, SG/L429, GC805/806/L430, WT/L431.
+- Black-end q7 and q>=9 excluded for finite seeds; q1..6,8 OPEN — PROVED — entry38, SG/L429, GC805/806/L430, WT/L431.
 - Small black-end records/LR and white latch — COMPUTED / PROVED — G11..14, Condrey-end board.
-- White-end q>=10, black q>=14 and139 extra period10..18 words excluded — PROVED — entries40/41, CL110/111, GC880, L497..499.
+- White-end q>=10, black q>=14 and139 extra period10..18 words excluded for finite seeds — PROVED — entries40/41, CL110/111, GC880, L497..499.
 - JenRoute/WhiteEnd/BlackLock/P8Lock formal/source audits — PROVED — L508/513, GC873/893/898/906; WC14 certificates GC881.
 - One-hole p8,p>=10 closed; nine black steps lock01 — PROVED — G271, OH/TB/OHD, L476/479/480/496.
 - Relaxed p8 exact three-word language; physical equality not inferred; dedicated Lean language absent — PROVED CL150 — GC932/933, G271.

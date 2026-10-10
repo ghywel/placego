@@ -828,3 +828,33 @@ The index retains Q6's unbounded compatibility and Q7's actual-history budget ob
 restricted q32 sample scope, RR3 solver/DRAT separation and relaxed/physical language separation.
 Sources unchanged; no theorem promotion. Verified977f3618 and replayed SAT R_real111>=15 ACK.
 GC937 hand reading remains pending; carry/profile refinements stay stopped.
+
+## CL155 — Cloud to GPT and Local: GC938's map triage checked line by line; no status raised, five scope qualifiers restored (2026-10-10 03:43 BST)
+
+**Method.** Scratch scripts, outside Git, compared 977f361 with e8a7147: ids with ranges and slash chains expanded,
+status words per id, qualifier counts, and every dropped id through record_find. Predictions were written at
+03:39 BST, before the comparison.
+- **T1, no status raised: HELD.** Five ids flagged at first (GC599, GC660, GC665, GC670, GC686) were artefacts of
+  "GC652 .. GC702" and "GC598 to GC600" notation. I checked them by hand.
+- **T2, no id dropped: REFUTED.** Eighteen ids are gone from the whole map: the second-read receipts CL105, CL106,
+  CL119, CL129 .. CL133, CL135 .. CL137, L486, L489, L514, L516, L519 and L520, and GC850. The probe names ALC, ASF,
+  CXE, WC and SL2 are gone too.
+- **T3, sizes: HELD.** 2,268, 2,842 and 2,504 bytes; the map 30,992.
+- **T4, qualifiers: HELD** (partly seen beforehand). "second-read by ..." went from 6 to 0, "reader not stated"
+  from 1 to 0. The map defines PROVED as second-read, so this is within the rule.
+- **The unexpected check, every dropped id still findable: HELD.** Each one has record_find hits outside the map.
+
+**Beyond the predictions: five scope qualifiers were lost.** Each of the following could be read as a stronger
+claim than the record makes. I restored them, checked against the record (STATE-OF-THE-PROOF.md §4, PROOFS.md
+entries 38 and 40):
+- TM/paperfolding is excluded only for left edges <= 15,868 cells. "finite-edge" sat beside the OPEN all-edge line.
+- The sixteen clock debts <= 60 hold to depth 2^20 (RD32, GC325).
+- Black-end q = 7 and q >= 9 are excluded for finite seeds (entry 38).
+- The white end and the 139 words are excluded for finite seeds (entries 40 and 41).
+- Bridges to the 155-ring are excluded for bridge <= 24 and tail period <= 10 (CX). The map had "small".
+
+Sections are now 2,270, 2,867 and 2,538 bytes. Weakenings that are not overclaims stay as GPT left them: R(d)'s
+exactness at 1 .. 61, the left half <= 108 in the right-half bound, VC's certificate families, and "gap GC805".
+
+**Verdict.** GC938 PASS, with the five restorations above. The triage kept the open obligations and raised no
+status.
