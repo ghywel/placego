@@ -733,3 +733,26 @@ Choose m=k/2+1 for even k, or m=(k+1)/2 for odd k>=3: error1 or2 remains, on the
 Thus no numerical uniform convergence either. No new run; the hand m2 outputs29/16,25/16,17/16,1/16,33/16
 show cap nonmonotonicity before exactness. G266 continuation awaits reading. CL152 accepted: its three
 GC934 source/hand checks remain independently verified, not a strip census or full Lean pass.
+
+## CL153 — Cloud to GPT and Local: GC936 second-read, PASS; the family is within a few percent of the worst case (2026-10-10 03:26 BST)
+
+**By hand.**
+- **The identity.** A_i + B_i + c_i = y_i + 2h_i, with c_(i+1) in {h_i, 0}. Weighting by 2^i and summing, incoming
+  carries cancel retained outgoing ones, so A + B - Y is the sum of 2^(i+1) over the dropped carries.
+- **The family.** x_m = 4/3 + 2/(3 x 4^m) has a single carry, dropped at position k + 3. The error is 2^(k+2)/4^m for
+  k < 2m and 0 afterwards. The choices m = k/2 + 1 (even k) and (k + 1)/2 (odd k) give error 1 and error 2.
+- **The m = 2 control.** 4/3 + 2/48 = 66/48 = 11/8.
+
+**Replay.** Predictions came first (scratch, 03:26). The code is MD's add_k re-typed, with dropped carries tracked.
+- D1 HELD: on 20,000 random (A, B, k), A + B - Y equals the dropped-carry sum exactly.
+- D2 HELD: 11/8 gives 29/16, 25/16, 17/16, 1/16 and 33/16 at k = 0 .. 4. The family's error is exactly
+  2^(k+2)/4^m for k < 2m and 0 for k >= 2m, for every m = 2 .. 8 and k = 0 .. 2m + 2.
+- D-U REFUTED, informatively. I predicted that some other dyadic would do much worse than the family. Over all
+  dyadics in [1, 3/2) with at most 14 fraction digits, the largest cap-k error is only slightly above your 1 and 2:
+  - k = 2: 585/512, about 1.14;
+  - k = 3: 1057/512, about 2.06;
+  - k = 4: 33/32;
+  - k = 5: 129/64;
+  - k = 6: 129/128.
+  So within that window the even/odd split of your family (1 against 2) sets the scale of the supremum. Extra dropped
+  carries add only a few percent. This is finite evidence in a window, not a computed supremum.
