@@ -28377,7 +28377,7 @@ CL250 atf9460bdd independently confirms GC1078's origin guard, closing step and1
 
 **Missing inference.** Decide whether the high after an ordinary001 low renewal returns L0 or S, retaining its actual past. Record searched:001/111 or H-D-H with inheritance/third/repeat/marker/return and ordinary/high/renew ->50 hits in16 files;00100001|00110000|001011 with high/HLL/ordinary and gate/origin/inheritance ->5 hits in3 files (old31-template and GC1079, no exact gate). No language census or solver.
 
-**Exact all-tail gate, proof sketch pending review.** Let initial sites7..9=001 after111001, and name sites10..19 a,b,c,d,e,f,g,h,i,j. The conjunction of D, returned111 at10, and following H returning L0 at20 holds exactly on the union:
+**Exact all-tail gate, PROVED (independent CL252).** Let initial sites7..9=001 after111001, and name sites10..19 a,b,c,d,e,f,g,h,i,j. The conjunction of D, returned111 at10, and following H returning L0 at20 holds exactly on the union:
 
 - A: sites10..17=00100001; sites18,19 arbitrary.
 - B: sites10..17=00110000 and i OR j=1.
@@ -28404,3 +28404,37 @@ Substituting time1 bits from the initial row completes the finite gate. A=B=C=1 
 The unexpected actual origin11100100100100001 gives D then high LL for every farther tail, while c=1,d=0 violates the inherited inequality. Thus the source001 alone does not force a high successor to terminate; its earlier high past must remain in the hidden representation. No unconditional low-to-high ban survives this control.
 
 CL251 atab233880 independently confirms GC1079, now PROVED, and exhaustively confirms that its specific21-bit cylinder ends the third high with S. That cylinder conclusion does not exclude the remaining B origin on another inherited history. Next: its actual earlier-high preimage, using the exact pair guards above. Full hidden closure and the all-depth record bound remain open.
+
+
+## GC1081 — The remaining inherited origin is actual: high LL can repeat after D (2026-10-11)
+
+**Missing inference resolved; a shortcut refuted.** GC1080 leaves only B on an actual earlier-high past. The 24-bit source **111001111011111110011101**, with every farther tail, realizes B and has successive ordinary-long fifth tracks H,D,H, with both H units returning L0. Thus even an at-most-one-high-LL rule within a consecutive long run is false. This is an all-tail finite certificate, pending second reading; it does not assert arbitrarily many repeats or an all-depth bound.
+
+Record searched: 00110000|11100100100110000|high.*low.*high with inherited/preimage/origin/shield/gate ->29 hits in 11 files; exact source or 100011000001111 with origin/shield/return/repeat ->0 hits. Local's membership and relaxed-record lane was not duplicated.
+
+**Exact inherited gate.** On the earlier high's time-5 band, suppose sites 6..13=10001100, and name sites 14..24 g,h,i,j,k,l,m,n,o,p,q. Its time-10 ordinary 001 origin is in B exactly when
+
+    g=h=i=0, j=k=l=m=1,
+    n OR o=1, and [(n,o)!=11 or p=q=0].
+
+The returned sites 18,19 then equal 01. The premise retains the inherited pair 00 needed for D, rather than assigning a fresh low origin.
+
+Here is the Boolean elimination. The required returned sites 12,13=11 first force g=h=0 and i OR j=1. The next returned pair 14,15=00 forces i=0,j=1: the alternative i=1 makes the two white conditions incompatible. Direct updates now give time-7 site 18 A=k AND(l OR m), and returned sites 16,17=(0,NOT A). Thus A=1, so k=1 and l OR m=1. Write
+
+    L=l XOR(m OR n), M=m XOR(n OR o),
+    N=n XOR(o OR p), O=o XOR(p OR q).
+
+Under A=1, returned site 18 is 0. Returned site 19 is 1 precisely when L=M=0 and N OR O=1: time-7 sites 19,20 are L,L OR M; when both vanish, sites 21,22 are N,N OR O. Substituting these into the two remaining updates gives that equivalence. With l OR m=1, L=M=0 is equivalent to l=m=1,n OR o=1. If (n,o)=01 or 10 then N OR O=1 automatically; if 11, it requires p=q=0. This proves both directions of the exact gate without a cutoff extrapolation.
+
+**Actual all-tail construction.** The source's prefixes at sites 6 onward are tabulated in `tests/probes/lexicon/rule30_inherited_high_repeat.py`. Each next prefix follows from l XOR(c OR r), with every right input either displayed or masked by a displayed black OR input. In particular:
+
+- At 5: 100011000001111011; the pair 10 selects H by GC1047, and the joint gate above is satisfied with n,o=01.
+- At 7: 00010011011010011; sites 7,8=00 give the first high LL by GC1047.
+- At 10: 100100110000010; the restored ordinary origin begins 1110010010011000001, exactly B with sites 18,19=01.
+- At 15: 010001100100; pair 01 selects D. Its return at 20 has prefix 1110011111000, so the next selector is H and its return is L0 by GC1080's high decoder.
+
+The boundary bits used through 20 are justified at each selector: first six ordinary-L bits 010110, then H, then the fixed initial ordinary-L bits and D. The certificate stops at 20; it does not extrapolate its shrinking prefix through 30. The third return uses the independently confirmed all-tail decoder, whose criterion is initial site 13=0. Both high LL units therefore hold for every far tail.
+
+**Controls and unexpected check.** Predictions preceded execution. 40 one-step implications with a fresh arbitrary right bit, 2,048 local Boolean-band controls (nine positives), and 64 selected actual histories pass; the actual histories agree in independent literal and packed engines. Changing only initial site 21 from 1 to 0 makes the source a GC1079 sibling: its first 21 bits are 111001111011111110010. That sibling has the same H,D,H fifth tracks but ends the third H in S, for every tail by CL251. The new source ends in L0. This single-bit countercontrol shows why the fifth-track sequence and an earlier high label alone do not decide the return. No failed control prediction; the at-most-one-high shortcut is REFUTED.
+
+CL252 at ca6ee8c8 confirms GC1080's exact gate, high decoder and conditional inherited rule; GC1080 is PROVED. L613 at 6949a727 is ACKed with its kissat/verified-cut scope and pending certificates retained. Next specific inference: transport the post-repeat high origin 1110011111000 through its returned 001, retaining the joint tail gate above, to decide whether another D-to-high-LL renewal is possible. The sound low core C remains closed, while this branch genuinely lies outside it. Arbitrary repetition, the full hidden relaxation and the all-depth prize bound remain open.

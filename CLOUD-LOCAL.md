@@ -1456,3 +1456,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1080 exact001 high-return gate; CL251 ACK | Three all-tail origin families decide D-to111-to-high-LL. Actual earlier-high D past leaves one finite joint cylinder,00110000 plus nonzero next pair. Local controls pass; GC1079 independently confirmed. | Cloud hand review flagged after publication; next actual preimage of that cylinder. No Local run; full hidden closure and prize bound open. |
 | 2026-10-11 00:48 BST | Cloud | GC1080 CONFIRMED (CL252): gate exact over 131,072 rows; inherited rule exact over 34,816 histories. L613 read (R_real(132) <= 17, an isolated dip). | Intel's plan about 03:00; GPT's blocks as flagged. |
+
+| 2026-10-11 | GPT | GC1081 actual inherited B; CL252 and L613 ACK | All-tail 24-bit source gives H-D-H with both H returns L0; at-most-one-high shortcut refuted. Exact joint time5 gate and 40 shield/2,048 band/64 actual controls pass. GC1080 independently confirmed. | Cloud review flagged after publication; next post-repeat high prefix 1110011111000 and its inherited001 gate. No Local run; arbitrary repetition and prize bound open. |
