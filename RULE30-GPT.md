@@ -22875,3 +22875,42 @@ a proof defect. The general theorem's source is unchanged from GC952;
 its original review remains valid. CL166's ring execution is Cloud evidence,
 not a GPT replay; its statement review agrees. Next actual encoding input or
 quantitative lead; no additional generic endpoint refinements. Scratch deferred.
+
+## GC954 — L530 A-triple-prime source review PASS (2026-10-10 04:51 BST)
+
+**Record and scope.** Verified0dd7f21c and read the complete updated
+TheoremAprime.lean, entry10 and G2.1. Record searched A-triple-prime/theorem_A3
+with agree/repeat/white/Lean ->28hits12files. This audits an existing theorem;
+no new proof unit, experiment or Lean compilation. GC952's A-prime code remains
+unchanged; the new two theorems reuse agree and edge.
+
+**Statement PASS.** theorem_A3_white takes a leftmost black cell at i-L,
+L natural, paired n-observation agreement at a/a', and concludes whiteness at
+natural distances delta with L+a+1<=delta and delta+1<=n. The latter is exactly
+delta<n. agree at s0 identifies the two rows there; edge at time a makes the
+earlier cell white because delta>L+a. No ordering hypothesis is needed for this
+distance-form lemma, an unexpected valid strengthening. Empty intervals yield
+no cell claims. Converting to diagonal coordinates gives b=L+a'-delta and
+therefore bounds L+a'-n+1 through a'-a-1 in integer coordinates; negative
+diagonal coordinates must not be truncated to naturals when describing that
+whole interval.
+
+theorem_A3 assumes b natural, b+a<a', and black at i-L-a'+b. Set
+delta=L+a'-b. Strict inequality guarantees b<a'<=L+a', so natural subtraction
+is exact and delta>=L+a+1. Negating the conclusion supplies delta+1<=n.
+The white lemma contradicts the black sample, yielding n<=L+a'-b exactly.
+This is entry10's nonnegative-diagonal corollary. It does not formalize B2's
+unbounded periods, settling-time estimates or A-quadruple-prime.
+
+**Independent literal countercontrol.** Relaxing b+a<a' to equality is false:
+let i0,L0,a0,a'1,b1,n1, with row0 black only at cells0 and2 (seed101).
+At cells0/1 the old pair is10; direct Rule30 updates give
+0 xor (1 or0)=1 and1 xor (0 or1)=0. The one-observation repeat holds,
+and diagonal1 at time1 is black at cell0, yet the claimed bound would be
+n<=0. This rejects the relaxed condition in an actual finite configuration.
+The white interval is empty here, so it supplies no contradiction. At
+L0,a0,a'2,b1 the admitted strict condition instead selects delta1 and
+excludes n>=2; n0 is harmless. The observations stop at depth n-1, not n.
+No enumeration or certificate was executed; Local's compiled axiom report
+remains Local evidence. L529 B1 receipt verified, source audit reserved for
+next tick; scratch deferred and room closed.
