@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Make the Centre Say Anything</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a toolbar (what the centre should say, the start's width, a tip, the live readout, the key) on top; one
+   stage under it, sized to the screen: Rule 30 from the built start, with the wanted and actual centre columns as two
+   strips beside it and the chart of steps against squares in the picture's empty upper-right wedge; notes under. */
+:root {
+  --paper: #ECEFEA;
+  --panel: #F5F6F2;
+  --ink: #1E1F1C;
+  --ink-soft: #5B6157;
+  --rule: #C8CDC2;
+  --centre: #2D7A57;
+  --start: #1E5A86;
+  --brk: #C0392B;
+  --best: #A87306;
+  --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+    --centre: #5CC496; --start: #62A6DA; --brk: #FF6B5E; --best: #E2B444; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+  --centre: #5CC496; --start: #62A6DA; --brk: #FF6B5E; --best: #E2B444; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 0.95rem;
+  line-height: 1.5; }
+.page { max-width: 1280px; margin: 0 auto; padding-inline: 20px; padding-block: 0 44px; display: grid; gap: 20px; }
+.toolbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 3; background: var(--panel);
+  border: 1px solid var(--rule); border-top: 0; padding: 10px 14px 11px; display: grid; gap: 8px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; line-height: 1.1; margin: 0 auto 0 0; }
+.seg { display: flex; flex-wrap: wrap; }
+.seg button { border-radius: 0; margin-right: -1px; }
+.seg button:first-child { border-radius: 2px 0 0 2px; }
+.seg button:last-child { border-radius: 0 2px 2px 0; }
+button { font: 500 0.82rem var(--font-body); color: var(--ink); background: var(--paper); border: 1px solid var(--ink-soft);
+  padding: 5px 11px; cursor: pointer; border-radius: 2px; }
+button:hover { background: var(--panel); }
+button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--start); outline-offset: 2px; }
+.ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 0.84rem; color: var(--ink-soft); }
+.ctl label { display: flex; align-items: center; gap: 8px; }
+.ctl input[type="range"] { width: 200px; accent-color: var(--start); }
+.ctl input[type="text"] { font: 500 0.86rem var(--font-mono); width: 14ch; padding: 4px 6px; border: 1px solid var(--ink-soft);
+  border-radius: 2px; background: var(--paper); color: var(--ink); }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink); }
+.tip { margin: 0; font-size: 0.86rem; max-width: 112ch; min-height: 2.9em; }
+.tip b, .readout b { font-weight: 600; }
+.readout { margin: 0; font-family: var(--font-mono); font-size: 0.78rem; font-variant-numeric: tabular-nums;
+  min-height: calc(3em + 3px); }
+.key { display: flex; flex-wrap: wrap; gap: 3px 16px; font-size: 0.78rem; color: var(--ink-soft); align-items: center; }
+.key span { display: inline-flex; align-items: center; gap: 6px; }
+.chip { width: 13px; height: 13px; flex: none; }
+.stage { display: grid; justify-items: center; min-width: 0; }
+canvas { display: block; max-width: none; }
+.lede { margin: 0; max-width: 78ch; font-size: 1.02rem; }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px 26px; }
+.notes section { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.notes h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; margin: 0; }
+.notes p { margin: 0; max-width: 62ch; }
+.notes table { border-collapse: collapse; font-family: var(--font-mono); font-size: 0.74rem; margin-top: 4px; }
+.notes td, .notes th { padding: 1px 6px; text-align: right; border-bottom: 1px solid var(--rule); font-weight: 400; }
+.notes th:first-child, .notes td:first-child { text-align: left; }
+.foot { font-size: 0.8rem; color: var(--ink-soft); margin: 0; max-width: 84ch; }
+.foot code { overflow-wrap: anywhere; }
+.back { font-size: 0.9rem; margin: 18px 0 0; }
+@media (max-width: 760px) {
+  .page { padding-inline: 16px; }
+  .toolbar { position: static; }
+  .ctl input[type="range"] { width: 150px; }
+}
+html.embed .page > :not(.toolbar):not(.stage) { display: none !important; }
+html.embed .page { padding-bottom: 0 !important; }
+</style>
+<script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add("embed");</script>
+<script>
+/* Embedded in the Rule 30 page, this frame animates only while it is on screen. The page posts
+   {r30: "visibility", visible} as the frame scrolls in and out of view; while it is out, animation frames are held and
+   interval ticks are skipped, so nothing runs unseen. The frame asks once as it starts. Opened on its own, the page
+   always runs. (The same snippet is in every page the Rule 30 page embeds.) */
+(function () {
+  if (window.parent === window) return;
+  var on = true, held = {}, nid = 1e9;
+  var raf = window.requestAnimationFrame.bind(window), caf = window.cancelAnimationFrame.bind(window);
+  var si = window.setInterval.bind(window);
+  window.requestAnimationFrame = function (cb) { if (on) return raf(cb); held[++nid] = cb; return nid; };
+  window.cancelAnimationFrame = function (id) { if (held[id]) delete held[id]; else caf(id); };
+  window.setInterval = function (fn, ms) {
+    if (typeof fn !== "function") return si(fn, ms);
+    var rest = Array.prototype.slice.call(arguments, 2);
+    return si(function () { if (on) fn.apply(this, rest); }, ms);
+  };
+  window.addEventListener("message", function (e) {
+    if (e.source !== window.parent || !e.data || e.data.r30 !== "visibility") return;
+    var was = on; on = !!e.data.visible;
+    if (on && !was) { var q = held; held = {}; Object.keys(q).forEach(function (k) { raf(q[k]); }); }
+  });
+  try { window.parent.postMessage({ r30: "ask" }, "*"); } catch (e) {}      // ask whether we start on screen
+})();
+</script>
+</head>
+<body>
+<div class="page">
+  <div class="toolbar" id="toolbar">
+    <div class="bar">
+      <h1>Make the Centre Say Anything</h1>
+      <div class="seg" role="group" aria-label="What the centre should say">
+        <button id="t-primes" type="button" aria-pressed="true">Primes</button>
+        <button id="t-fib" type="button" aria-pressed="false">Fibonacci numbers</button>
+        <button id="t-par" type="button" aria-pressed="false">Fibonacci odd or even</button>
+        <button id="t-pi" type="button" aria-pressed="false">&pi; in binary</button>
+        <button id="t-alt" type="button" aria-pressed="false">0101&hellip; (the open case)</button>
+        <button id="t-word" type="button" aria-pressed="false">Your word</button>
+        <button id="t-own" type="button" aria-pressed="false">Rule 30's own</button>
+      </div>
+    </div>
+    <div class="bar">
+      <div class="ctl">
+        <label for="w">squares in the start <input id="w" type="range" min="1" max="100" value="30"> <span id="wval" class="mono">30</span></label>
+        <button id="grow" type="button" aria-pressed="false">Grow the start</button>
+        <label for="word" id="wordwrap" hidden>word <input id="word" type="text" value="Rule 30" maxlength="24" spellcheck="false"></label>
+      </div>
+    </div>
+    <p class="tip" id="tip"></p>
+    <p class="readout" id="readout" aria-live="polite"></p>
+    <div class="key">
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" fill="none" stroke="var(--start)" stroke-width="2"/></svg>the start: squares chosen one by one</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="5" y="1" width="4" height="12" fill="none" stroke="var(--centre)" stroke-width="1.6"/></svg>the centre column</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 13 L13 1" stroke="var(--brk)" stroke-width="1.6" stroke-dasharray="3 2"/></svg>the first missing square, on its way to the centre</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--brk)"/></svg>where the centre stops saying it</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="3.4" fill="var(--best)"/></svg>chart: the best of every finite start</span>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <canvas id="cv" role="img" aria-label="Rule 30 run down the page from a start built square by square so that its centre column spells a chosen sequence. Beside the picture, two strips compare the wanted sequence with the centre's actual colours; the first difference is marked in red. A small chart in the empty corner plots how many steps the centre follows the sequence against the number of squares in the start."></canvas>
+  </div>
+
+  <p class="lede">Choose what the centre column should say: the primes, the Fibonacci numbers, &pi;, your own word. The start is
+    built one square at a time, leftwards, so that the centre says it. Each square decides the centre at one more step,
+    without disturbing the steps before. So a start of a given number of squares makes the centre say the sequence for
+    that many steps, and then, almost always, it breaks: the first square the start lacks reaches the centre, one step
+    per square of distance. To say it for ever, the start would need infinitely many squares.</p>
+
+  <div class="notes">
+    <section>
+      <h2>Any sequence, from an infinite start</h2>
+      <p>Rule 30 makes a square black when its upper-left neighbour differs from (the square above or its upper-right
+        neighbour). Follow that back from the centre at step t, and the square t places to the left of the centre in
+        the start decides it outright: flip that one square and the centre flips at step t, and nothing earlier
+        changes, because its influence takes t steps to arrive. So choose the centre's square for step 0, the next
+        square left for step 1, and so on. Every sequence can be made this way, with the right half left white. But
+        about half the squares come out black, for ever: the start never ends.</p>
+    </section>
+    <section>
+      <h2>A finite start runs out</h2>
+      <p>Cut the start to a number of squares and the centre follows the sequence for at least that many steps, then
+        breaks at the first square it needed and lacks. Building it this way is not the cleverest finite start, so the
+        page checked every one. Over every start of up to 18 squares, in every position around the centre, the best
+        follows the sequence only a few steps longer than its width:</p>
+      <table>
+        <tr><th>squares</th><th>6</th><th>10</th><th>14</th><th>18</th></tr>
+        <tr><td>primes</td><td>7</td><td>11</td><td>16</td><td>18</td></tr>
+        <tr><td>Fibonacci numbers</td><td>8</td><td>11</td><td>15</td><td>20</td></tr>
+        <tr><td>Fibonacci odd or even</td><td>7</td><td>11</td><td>15</td><td>21</td></tr>
+        <tr><td>&pi; in binary</td><td>6</td><td>10</td><td>14</td><td>19</td></tr>
+        <tr><td>0101&hellip;</td><td>7</td><td>15</td><td>15</td><td>18</td></tr>
+      </table>
+      <p>About one step per square, as the record found on 5 October for every pattern it tried, random ones included.</p>
+    </section>
+    <section>
+      <h2>Why this is the prize question</h2>
+      <p>A finite start can say a sequence for ever only if the sequence is one Rule 30 makes by itself, like the
+        single black square's own centre column (press <b>Rule 30's own</b>: one square, and it never breaks). Problem 1
+        asks whether any repeating pattern is among those. For a pattern that repeats every step the answer is no
+        (Condrey). For 0101&hellip;, repeating every two, it is open, and it is the case this record works on. The
+        Fibonacci numbers' odd and even, 0, 1, 1, 0, 1, 1, repeat every three, so saying them for ever is the same
+        question at period 3. The primes and &pi; never repeat, so Problem 1 does not cover them; nothing proved
+        rules them out, and every measurement says a finite start cannot keep them up. &pi; has a further echo: its
+        digits look random, and whether they are balanced in the long run is unproved, just as Problem 2 asks of
+        Rule 30's own centre column.</p>
+    </section>
+  </div>
+  <p class="foot">The table and the chart's ochre dots come from <code>tests/probes/lexicon/rule30_cloud_centre_sequences.py</code>
+    (CS, 10 October 2026, predictions written before it ran; every start of total width w = 1 to 18 tried, horizon 70
+    steps). The law it confirms is RULE30-PRIZE.md §8.42 (<code>rule30_uniform.py</code>), and the square-by-square
+    construction is the left-permutive inverse of <code>rule30_periodic.py</code>. These are measurements on small
+    starts, not theorems. The page checks itself: it rebuilds the centre from the start it shows, and confirms that
+    each break falls exactly at the first square the start lacks.</p>
+  <p class="back"><a href="./">&larr; Rule 30: the whole story</a></p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var cv = document.getElementById("cv"), ctx = cv.getContext("2d"), bar = document.getElementById("toolbar");
+  var stage = document.getElementById("stage");
+  var colors = {};
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    ["paper", "panel", "ink", "ink-soft", "rule", "centre", "start", "brk", "best"].forEach(function (k) {
+      colors[k] = cs.getPropertyValue("--" + k).trim();
+    });
+    colors.mono = cs.getPropertyValue("--font-mono").trim();
+    colors.body = cs.getPropertyValue("--font-body").trim();
+  }
+
+  /* ---- the best of every finite start, by total width w = 1 .. 18 (CS, rule30_cloud_centre_sequences.py) ---- */
+  var BEST = {
+    primes: [0, 1, 6, 6, 6, 7, 7, 8, 11, 11, 11, 15, 15, 16, 17, 17, 17, 18],
+    fib: [0, 3, 5, 5, 8, 8, 11, 11, 11, 11, 11, 13, 15, 15, 16, 20, 20, 20],
+    par: [0, 4, 4, 6, 6, 7, 7, 11, 11, 11, 11, 12, 15, 15, 21, 21, 21, 21],
+    alt: [0, 7, 7, 7, 7, 7, 7, 9, 10, 15, 15, 15, 15, 15, 16, 17, 18, 18],
+    pi: [3, 3, 6, 6, 6, 6, 8, 8, 9, 10, 11, 14, 14, 14, 16, 16, 19, 19]
+  }, BEST_H = 70;                                                    // the probe's horizon
+
+  /* ---- data ---- */
+  var H = 100, NW = 0, OFF = 0, target = [], full = null, breakAt = [], blackAt = [], rows = [], check = "";
+  var kind = "primes", w = 30, playing = false, word = "Rule 30", wordBits = [];
+  function step(a) {
+    var b = new Uint8Array(NW);
+    for (var i = 1; i < NW - 1; i++) b[i] = a[i - 1] ^ (a[i] | a[i + 1]);
+    return b;
+  }
+  function centreAfter(start, t) { var a = start; for (var s = 0; s < t; s++) a = step(a); return a[OFF]; }
+  function makeTarget() {
+    var n = H, out = [], i;
+    if (kind === "primes") {
+      var sv = []; for (i = 0; i < n; i++) sv.push(i >= 2 ? 1 : 0);
+      for (i = 2; i * i < n; i++) if (sv[i]) for (var q = i * i; q < n; q += i) sv[q] = 0;
+      out = sv;
+    } else if (kind === "fib") {
+      var f = {}, a = 1, b = 2; f[1] = 1; f[2] = 1;
+      while (b < n) { var c = a + b; a = b; b = c; f[b] = 1; }
+      for (i = 0; i < n; i++) out.push(f[i] ? 1 : 0);
+    } else if (kind === "par") {
+      var f0 = 0, f1 = 1;
+      for (i = 0; i < n; i++) { out.push(f0 & 1); var f2 = (f0 + f1) % 2; f0 = f1; f1 = f2; }
+    } else if (kind === "pi") {
+      out = piBits(n);
+    } else if (kind === "alt") {
+      for (i = 0; i < n; i++) out.push(i % 2);
+    } else if (kind === "word") {
+      for (i = 0; i < n; i++) out.push(wordBits[i % wordBits.length]);
+    } else {                                                         // Rule 30's own centre, from one black square
+      NW = 2 * n + 6; OFF = n + 3;
+      var r = new Uint8Array(NW); r[OFF] = 1;
+      for (i = 0; i < n; i++) { out.push(r[OFF]); r = step(r); }
+    }
+    return out;
+  }
+  var piOk = true;
+  function piBits(n) {                                               // pi in base 2, exactly (Machin's formula)
+    var prec = BigInt(n + 32), one = 1n << prec;
+    function atanInv(x) {
+      var X = BigInt(x), total = 0n, term = one / X, k = 0n, x2 = X * X;
+      while (term > 0n) { total += (k % 2n === 0n ? 1n : -1n) * (term / (2n * k + 1n)); term /= x2; k++; }
+      return total;
+    }
+    var bits = (16n * atanInv(5) - 4n * atanInv(239)).toString(2);  // "11" then the fractional bits
+    piOk = BigInt("0b" + bits.slice(2, 66)).toString(16).toUpperCase() === "243F6A8885A308D3";
+    return bits.slice(0, n).split("").map(Number);
+  }
+  function bitsOf(s) {
+    if (/^[01]+$/.test(s)) return s.split("").map(Number);
+    var out = [];
+    for (var i = 0; i < s.length; i++) {
+      var c = s.charCodeAt(i) & 255;
+      for (var k = 7; k >= 0; k--) out.push((c >> k) & 1);
+    }
+    return out.length ? out : [0, 1];
+  }
+  function build() {
+    NW = 3 * H + 6; OFF = 2 * H + 2;                                 // cells -OFF .. NW-1-OFF; the start ends at -(H-1)
+    if (kind === "word") wordBits = bitsOf(word);
+    target = makeTarget();
+    NW = 3 * H + 6; OFF = 2 * H + 2;
+    full = new Uint8Array(NW); full[OFF] = target[0];
+    for (var t = 1; t < H; t++) if (centreAfter(full, t) !== target[t]) full[OFF - t] = 1;   // square -t decides step t
+    breakAt = [0]; blackAt = [0]; var ok = true;
+    for (var ww = 1; ww <= H; ww++) {
+      var s = trunc(ww), a = s, b = H, k = 0;
+      for (var i = 0; i < NW; i++) k += s[i];
+      for (var t2 = 0; t2 < H; t2++) { if (a[OFF] !== target[t2]) { b = t2; break; } a = step(a); }
+      breakAt.push(b); blackAt.push(k);
+      var first = H; for (var t3 = ww; t3 < H; t3++) if (full[OFF - t3]) { first = t3; break; }
+      if (first !== b || b < ww) ok = false;                         // the break is the first square the start lacks
+    }
+    check = ok && (kind !== "pi" || piOk) ? "every break falls at the first missing square" +
+      (kind === "pi" ? "; π's bits begin 243F6A8885A308D3 in hex, as they should" : "") : "MISMATCH";
+    simulate();
+  }
+  function trunc(ww) { var s = new Uint8Array(NW); for (var x = 0; x < ww; x++) s[OFF - x] = full[OFF - x]; return s; }
+  function simulate() {
+    rows = []; var a = trunc(w);
+    for (var t = 0; t < H; t++) { rows.push(a); a = step(a); }
+  }
+
+  /* ---- geometry: picture, strips beside it, chart in the empty wedge (or underneath on a phone) ---- */
+  var dpr = 1, Wc = 800, Hc = 600, cell = 5, LAB = 30, TOP = 34, SG = 10, SW = 12, CH = 0, narrow = false;
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var pg = stage.parentElement, ps = getComputedStyle(pg);
+    var availW = pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);
+    var sticky = getComputedStyle(bar).position === "sticky";
+    var availH = Math.max(300, window.innerHeight - (sticky ? bar.getBoundingClientRect().height : 0) - 34);
+    narrow = availW < 640;
+    var want = narrow ? 60 : 100;
+    if (want !== H) {
+      H = want; var wi = document.getElementById("w"); wi.max = String(H);
+      if (w > H) w = H; wi.value = String(w); document.getElementById("wval").textContent = String(w);
+      build();
+    }
+    LAB = narrow ? 22 : 30; TOP = narrow ? 30 : 34; SG = narrow ? 6 : 10;
+    CH = narrow ? Math.min(220, availW * 0.62) : 0;                  // the chart goes underneath on a phone
+    var cols = 2 * H - 1;
+    cell = Math.min((availW - LAB - 3 * SG - 2 * 44 - 6) / cols, (availH - TOP - 12 - CH) / H);
+    SW = Math.max(8, Math.min(16, cell * 2.4));
+    Wc = Math.round(LAB + cols * cell + SG + 2 * SW + SG + 2 * 30);
+    Hc = Math.round(TOP + H * cell + 12 + CH);
+    cv.width = Math.round(Wc * dpr); cv.height = Math.round(Hc * dpr);
+    cv.style.width = Wc + "px"; cv.style.height = Hc + "px";
+  }
+  function PX(x) { return LAB + (x + H - 1) * cell; }
+  function PY(t) { return TOP + t * cell; }
+  function stripX(k) { return PX(H) + SG + k * (SW + 30); }
+
+  /* ---- drawing ---- */
+  function text(s, x, y, col, align, size, base, weight) {
+    ctx.fillStyle = col; ctx.textAlign = align || "left"; ctx.textBaseline = base || "middle";
+    ctx.font = (weight || "500") + " " + (size || 10) + "px " + colors.mono; ctx.fillText(s, x, y);
+  }
+  function halo(s, x, y, col, align, size, weight) {               // text readable over the cells
+    ctx.font = (weight || "600") + " " + (size || 10) + "px " + colors.mono; ctx.textAlign = align || "left";
+    ctx.textBaseline = "middle"; ctx.lineJoin = "round"; ctx.lineWidth = 3.5; ctx.strokeStyle = colors.paper;
+    ctx.strokeText(s, x, y); ctx.fillStyle = col; ctx.fillText(s, x, y);
+  }
+  function dash(x0, y0, x1, y1, col, wd) {
+    ctx.setLineDash([4, 3]);
+    ctx.strokeStyle = colors.paper; ctx.lineWidth = (wd || 1.6) + 2.4;
+    ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+    ctx.strokeStyle = col; ctx.lineWidth = wd || 1.6;
+    ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  function draw() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = colors.paper; ctx.fillRect(0, 0, Wc, Hc);
+    var c = cell + 0.3, b = breakAt[w], fs = narrow ? 8 : 10;
+    ctx.fillStyle = colors.ink;
+    for (var t = 0; t < H; t++) {
+      var r = rows[t];
+      for (var x = -(H - 1); x <= H - 1; x++) if (r[OFF + x]) ctx.fillRect(PX(x), PY(t), c, c);
+    }
+    // the start's squares on row 0, boxed; the white beyond them, named
+    var sx0 = PX(-(w - 1)), sx1 = PX(1);
+    ctx.strokeStyle = colors.start; ctx.lineWidth = 2;
+    ctx.strokeRect(sx0 - 1, PY(0) - 1, sx1 - sx0 + 2, c + 2);
+    ctx.beginPath(); ctx.moveTo(sx0, PY(0) - 6); ctx.lineTo(sx0, PY(0) - 10); ctx.lineTo(sx1, PY(0) - 10);
+    ctx.lineTo(sx1, PY(0) - 6); ctx.stroke();
+    text("the start: " + w + " square" + (w === 1 ? "" : "s"), (sx0 + sx1) / 2, PY(0) - 13, colors.start, "center", fs, "bottom", "600");
+    if (w < H * 0.45 && !narrow) text("all white beyond the start →", PX(-(H - 1)), PY(0) - 13, colors["ink-soft"], "left", fs, "bottom");
+    // the centre column
+    ctx.strokeStyle = colors.centre; ctx.lineWidth = 1.6;
+    ctx.strokeRect(PX(0) - 0.8, PY(0) - 0.8, c + 1.6, H * cell + 1.6);
+    // the first missing square that matters, travelling to the centre one square per step
+    if (b < H) {
+      ctx.fillStyle = colors.brk; ctx.globalAlpha = 0.9;
+      ctx.fillRect(PX(0) - 1.5, PY(b) - 1.5, c + 3, c + 3); ctx.globalAlpha = 1;
+      ctx.strokeStyle = colors.brk; ctx.lineWidth = 1.5; ctx.strokeRect(PX(-b) + 0.5, PY(0) + 0.5, c - 1, c - 1);
+      dash(PX(-b) + c / 2, PY(0) + c / 2, PX(0) + c / 2, PY(b) + c / 2, colors.brk, 1.8);
+      dash(PX(0) + c + 2, PY(b) + c / 2, stripX(1) + SW / 2, PY(b) + c / 2, colors.brk, 1.2);
+      var lab = b === w ? "the first square it lacks reaches the centre at step " + b
+        : "the first missing square that matters, " + b + " out, reaches the centre at step " + b;
+      if (!narrow) {
+        ctx.font = "600 " + fs + "px " + colors.mono;
+        var lw = ctx.measureText(lab).width, lx = PX(-b / 2) - 28;
+        if (lx - lw < LAB + 4) halo(lab, LAB + 4, PY(b / 2) + 16 + (lx - lw < LAB + 4 ? 6 : 0), colors.brk, "left", fs);
+        else halo(lab, lx, PY(b / 2) + 20, colors.brk, "right", fs);
+      }
+    }
+    // the two strips: what the centre should say, and what it does say
+    ["wanted", "got"].forEach(function (name, k) {
+      var x0 = stripX(k);
+      text(name, x0 + SW / 2, TOP - 4, colors["ink-soft"], "center", fs, "bottom");
+      for (var t2 = 0; t2 < H; t2++) {
+        var v = k === 0 ? target[t2] : rows[t2][OFF];
+        var bad = k === 1 && v !== target[t2];
+        ctx.fillStyle = bad ? colors.brk : (v ? colors.ink : colors.paper);
+        ctx.fillRect(x0, PY(t2), SW, c);
+      }
+      ctx.strokeStyle = colors.rule; ctx.lineWidth = 1; ctx.strokeRect(x0 - 0.5, PY(0) - 0.5, SW + 1, H * cell + 1);
+    });
+    [0, 10, 20, 40, 60, 80].forEach(function (tt) {                 // step numbers
+      if (tt >= H) return;
+      text(String(tt), LAB - 4, PY(tt) + c / 2, colors["ink-soft"], "right", fs);
+    });
+    if (!narrow) {
+      ctx.save(); ctx.translate(8, PY(Math.min(25, H - 30))); ctx.rotate(Math.PI / 2);   // reads downwards
+      text("step →", 0, 0, colors["ink-soft"], "left", fs); ctx.restore();
+    }
+    drawChart();
+  }
+  function drawChart() {                                             // steps followed against squares in the start
+    var x0, y0, cw, chh, fs = narrow ? 8 : 9;
+    if (narrow) { x0 = LAB + 26; cw = Wc - x0 - 14; y0 = PY(H) + 22; chh = CH - 44; }
+    else {
+      x0 = PX(Math.round(H * 0.5)) + 26; cw = PX(H - 2) - x0; y0 = PY(4); chh = Math.min(cw * 0.8, PY(Math.round(H * 0.44)) - y0);
+    }
+    ctx.globalAlpha = 0.94; ctx.fillStyle = colors.paper; ctx.fillRect(x0 - 26, y0 - 16, cw + 34, chh + 40); ctx.globalAlpha = 1;
+    ctx.strokeStyle = colors.rule; ctx.lineWidth = 1; ctx.strokeRect(x0 - 26.5, y0 - 16.5, cw + 34, chh + 40);
+    function gx(v) { return x0 + cw * v / H; }
+    function gy(v) { return y0 + chh - chh * Math.min(v, H) / H; }
+    ctx.strokeStyle = colors["ink-soft"]; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x0, y0 + chh); ctx.lineTo(x0 + cw, y0 + chh); ctx.stroke();
+    ctx.setLineDash([3, 3]); ctx.beginPath(); ctx.moveTo(gx(0), gy(0)); ctx.lineTo(gx(H), gy(H)); ctx.stroke(); ctx.setLineDash([]);
+    text("one step per square", gx(H * 0.62), gy(H * 0.62) + 2, colors["ink-soft"], "left", fs, "top");
+    ctx.strokeStyle = colors.start; ctx.lineWidth = 1.6; ctx.beginPath();          // the built start, every width
+    for (var ww = 1; ww <= H; ww++) {
+      var px = gx(ww), py = gy(breakAt[ww]);
+      if (ww === 1) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+    var best = BEST[kind];
+    if (best) {
+      ctx.fillStyle = colors.best;
+      best.forEach(function (v, i) { ctx.beginPath(); ctx.arc(gx(i + 1), gy(v), narrow ? 1.8 : 2.3, 0, 2 * Math.PI); ctx.fill(); });
+    } else if (kind === "own") {
+      ctx.fillStyle = colors.best;
+      for (var i2 = 1; i2 <= 18; i2++) { ctx.beginPath(); ctx.arc(gx(i2), gy(H), 2.3, 0, 2 * Math.PI); ctx.fill(); }
+    }
+    var cx = gx(w), cy = gy(breakAt[w]);
+    ctx.strokeStyle = colors.brk; ctx.lineWidth = 1; ctx.setLineDash([2, 2]);
+    ctx.beginPath(); ctx.moveTo(cx, y0 + chh); ctx.lineTo(cx, cy); ctx.lineTo(x0, cy); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle = colors.brk; ctx.beginPath(); ctx.arc(cx, cy, 3.4, 0, 2 * Math.PI); ctx.fill();
+    text("squares in the start →", x0 + cw - 22, y0 + chh + 4, colors["ink-soft"], "right", fs, "top");
+    text("steps it says the sequence", x0 - 20, y0 - 6, colors["ink-soft"], "left", fs, "bottom");
+    text("0", x0 - 4, y0 + chh, colors["ink-soft"], "right", fs);
+    text(String(H), x0 - 4, y0, colors["ink-soft"], "right", fs);
+    text(String(H), x0 + cw, y0 + chh + 4, colors["ink-soft"], "center", fs, "top");
+    text(best || kind === "own" ? "● best of every start, to 18 squares" : "this start", x0 + 6, y0 + 4,
+      best || kind === "own" ? colors.best : colors.start, "left", fs, "top");
+    if (best || kind === "own") text("— this start, built square by square", x0 + 6, y0 + 6 + fs + 2, colors.start, "left", fs, "top");
+  }
+  var names = { primes: "the primes", fib: "the Fibonacci numbers", par: "the Fibonacci numbers' odd and even",
+    alt: "0101…", pi: "π in binary", word: "your word", own: "Rule 30's own centre column" };
+  function readout() {
+    var b = breakAt[w], k = blackAt[w], el = document.getElementById("readout"), s;
+    s = "<b>" + names[kind] + "</b> · the start uses <b>" + w + "</b> square" + (w === 1 ? "" : "s") + ", " + k + " black · ";
+    if (b >= H) s += "the centre says it for every one of the " + H + " steps shown";
+    else s += "the centre says it for <b>" + b + "</b> steps, then breaks at step " + b + (b > w ? " (" + (b - w) + " lucky step" + (b - w === 1 ? "" : "s") + ": the squares it lacked there were white anyway)" : "");
+    if (kind === "word") s += " · your word is " + wordBits.length + " bits, repeated for ever";
+    s += " · self-check: <span style=\"color: var(--" + (check === "MISMATCH" ? "brk" : "centre") + ")\">" + check + "</span>";
+    el.innerHTML = s;
+  }
+  var tips = {
+    primes: "<b>The primes:</b> the centre should be black at steps 2, 3, 5, 7, 11, 13, ... Slide the number of squares, or press <b>Grow the start</b>: the break moves down one step for each square you add.",
+    fib: "<b>The Fibonacci numbers:</b> black at steps 1, 2, 3, 5, 8, 13, 21, ... They thin out fast, so the centre must stay white for longer and longer, and that costs squares too.",
+    par: "<b>Fibonacci odd or even:</b> 0, 1, 1, 0, 1, 1, ... repeats every three. Saying it for ever from a finite start is Problem 1's question at period 3.",
+    pi: "<b>π in binary:</b> 11.0010010000111111... (the same number, written with two digits instead of ten). Its digits look random, and nobody has proved that, in the long run, they are balanced: the same open question Problem 2 asks of Rule 30's own centre. Here it behaves like every other sequence.",
+    alt: "<b>0101...:</b> the open case of Problem 1, the one this record works on. In these pictures it behaves like every other sequence: about one step per square.",
+    word: "<b>Your word:</b> type letters (each becomes 8 bits) or 0s and 1s. The word repeats for ever, so it is a repeating centre: Problem 1's question for its period.",
+    own: "<b>Rule 30's own centre column:</b> the column the single black square makes. Building it needs just that one square, and it never breaks: the only kind of sequence a finite start can keep up for ever."
+  };
+  function render() { draw(); readout(); }
+  function setKind(kd) {
+    kind = kd;
+    ["primes", "fib", "par", "pi", "alt", "word", "own"].forEach(function (x) {
+      var id = x === "primes" ? "t-primes" : "t-" + x;
+      document.getElementById(id).setAttribute("aria-pressed", String(x === kd));
+    });
+    document.getElementById("wordwrap").hidden = kd !== "word";
+    document.getElementById("tip").innerHTML = tips[kd];
+    build(); render();
+  }
+  function setW(v) {
+    w = Math.max(1, Math.min(H, v)); document.getElementById("w").value = String(w);
+    document.getElementById("wval").textContent = String(w); simulate(); render();
+  }
+
+  /* ---- controls ---- */
+  ["primes", "fib", "par", "pi", "alt", "word", "own"].forEach(function (x) {
+    document.getElementById("t-" + x).addEventListener("click", function () { setKind(x); });
+  });
+  document.getElementById("w").addEventListener("input", function (e) { setPlay(false); setW(+e.target.value); });
+  var wordIn = document.getElementById("word"), wt;
+  wordIn.addEventListener("input", function () {
+    clearTimeout(wt); wt = setTimeout(function () { word = wordIn.value || "0"; build(); render(); }, 200);
+  });
+  var growBtn = document.getElementById("grow"), timer = null, hold = 0;
+  function setPlay(on) {
+    playing = on; growBtn.setAttribute("aria-pressed", String(on)); growBtn.textContent = on ? "Pause" : "Grow the start";
+    if (timer) { clearInterval(timer); timer = null; }
+    if (!on) return;
+    if (w >= H) setW(1);
+    timer = setInterval(function () {
+      if (w >= H) { if (++hold > 18) { hold = 0; setW(1); } return; }
+      setW(w + 1);
+    }, 140);
+  }
+  growBtn.addEventListener("click", function () { setPlay(!playing); });
+  function retheme() { readColors(); render(); }
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", retheme);
+  }
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(function () { size(); render(); }, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { readColors(); size(); render(); });
+
+  readColors(); build(); size(); setKind("primes");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce) { setW(1); setPlay(true); }
+})();
+</script>
+</body>
+</html>

@@ -615,3 +615,8 @@ app is unpublished by design.
 - `lexicon/rule30_rrl_viable.py`: GC982 short dead-prefix viability blocks GC981 pumping with44 tests; controls PASS, C32 overflow round37. No invariant.
 
 - `lexicon/rule30_rrl_origin.py`: GC983 exact white-first origin preserved through all black resets; nine-word input, controls PASS, abstract C32 overflow round38. No invariant.
+
+- `lexicon/rule30_cloud_centre_sequences.py` (Cloud, 2026-10-10, the owner's question: can the centre column follow
+  the primes, the Fibonacci numbers, pi?): CS, builds any target square by square (the left-permutive inverse) and
+  finds the best prefix over every start of total width up to 18 for the primes, the Fibonacci positions and parity,
+  01 and pi in binary. CPU, standard library. Predictions in the docstring, pushed before each run. No data.

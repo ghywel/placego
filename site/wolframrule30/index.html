@@ -249,6 +249,28 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       square; we ask the same of every finite start, a pattern with only finitely many black squares, which includes it.
       For any of those the forced left side would have to turn white for good beyond some depth. A counterexample to
       Problem 1 is exactly that: a white edge that never breaks.</p>
+    <h3>Make the centre say anything, and watch a finite start run out</h3>
+    <p>The same property works the other way round. Choose anything for the centre to say, the primes, the Fibonacci
+      numbers, the digits of &pi; in binary, your own name, and build the start one square at a time, leftwards: the
+      square t places left of the centre decides the centre at step t outright, without disturbing the steps before.
+      So every sequence can be made. The catch is that the start never ends; each step needs one more square. Cut it
+      to a finite start and the sequence breaks, just as the first square it lacks reaches the centre. Even the best
+      of every start of 18 squares follows the primes for only 18 steps, and &pi; for 19. A finite start buys about one
+      step per square, whatever it is asked to say, unless the sequence is one Rule 30 makes by itself. Problem 1 asks
+      whether any repeating pattern is one of those.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="centre.html?embed&amp;v=20261010a" title="Make the Centre Say Anything, live" loading="lazy"></iframe></div>
+    <a class="open" href="centre.html">Open Make the Centre Say Anything on its own page →</a>
+    <figcaption>Interactive: pick what the centre should say and how many squares the start may use, or press <b>Grow
+      the start</b>. The two strips beside the picture compare what was wanted with what the centre does; the red
+      dashed line follows the first missing square on its way to the centre, and the chart in the empty corner plots
+      steps against squares, with the best of every finite start up to 18 squares in ochre. That every sequence can
+      be built from an infinite start is exact; the one step per square is a measurement on small starts, not a
+      theorem.</figcaption>
+  </figure>
+
+  <section class="col">
     <h3>If the column beside the centre repeats too, the left side crystallises</h3>
     <p>Try it. Below, the centre is held to its beat (teal) and the column beside it (amber) is given a repeating
       pattern; pick one from the menu or ask for a random one. Rule 30 then fixes the columns to the left one at a
