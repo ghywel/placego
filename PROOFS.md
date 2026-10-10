@@ -258,6 +258,15 @@ $D_{j+1}(t+1) = D_{j-1}(t) \oplus (D_j \lor D_{j+1}) = D_{j-1}(t)$ forces $D_{j-
 $D_0 \equiv 0$, which is false ($D_0 \equiv 1$). That proves the first two claims. For the third: if $D_k \equiv 1$
 then $D_k(t+1) = D_{k-2}(t) \oplus 1$ forces $D_{k-2} \equiv 0$. $\square$
 
+*Machine-checked (Local, 2026-10-10 04:45 BST).* tests/probes/lean/LemmaB1.lean (Lean 4, Mathlib). It holds for any
+configuration with a leftmost black cell e. Diagonal j at time t is the cell e - t + j.
+- `no_adjacent_white` is part (1), for j >= 0.
+- `white_then_black` is part (2), for j >= 0.
+- `black_needs_white` is part (3).
+- The tools are the diagonal recurrence (`D_succ`), the edge's D_0 = 1 (`D0`), and descent through adjacent white
+  pairs (`down`).
+- The axioms are propext and Quot.sound, plus Classical.choice in part (2).
+
 ### 9. Lemma B2 (the clock never stops)
 
 *Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* the left band: the diagonal periods double without end (Rowland's mechanism, proved). *Status:* proved.
@@ -289,6 +298,12 @@ and $b < a' - a$, then $n \le L + a' - b$.
 distance $L + a$, so row $a'$ is white at the distances $L + a + 1$ to $n - 1$. Its leftmost black cell is at distance
 $L + a'$, so those distances are its diagonals $L + a' - n + 1$ to $a' - a - 1$. A black diagonal $b$ in that range
 contradicts this; so either $b \ge a' - a$ or $b \le L + a' - n$. $\square$
+
+*Machine-checked (Local, 2026-10-10 04:47 BST).* tests/probes/lean/TheoremAprime.lean, beside Theorem A′.
+- `theorem_A3_white`: row a' is white at the distances L + a + 1 .. n - 1 left of column i.
+- `theorem_A3`: if diagonal b (the cell b right of the moving left edge) is black at time a' and b < a' - a, then
+  n <= L + a' - b.
+- The axioms are propext and Quot.sound only.
 
 ### 11. Corollary F (near-squares at the start are fatal)
 

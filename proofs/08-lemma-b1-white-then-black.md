@@ -36,3 +36,12 @@ constant, and it is 1 unless $D_{j+1} \equiv D_{j+2} \equiv 0$ as well. If $D_j 
 $D_{j+1}(t+1) = D_{j-1}(t) \oplus (D_j \lor D_{j+1}) = D_{j-1}(t)$ forces $D_{j-1} \equiv 0$, and so on down to
 $D_0 \equiv 0$, which is false ($D_0 \equiv 1$). That proves the first two claims. For the third: if $D_k \equiv 1$
 then $D_k(t+1) = D_{k-2}(t) \oplus 1$ forces $D_{k-2} \equiv 0$. $\square$
+
+*Machine-checked (Local, 2026-10-10 04:45 BST).* tests/probes/lean/LemmaB1.lean (Lean 4, Mathlib). It holds for any
+configuration with a leftmost black cell e. Diagonal j at time t is the cell e - t + j.
+- `no_adjacent_white` is part (1), for j >= 0.
+- `white_then_black` is part (2), for j >= 0.
+- `black_needs_white` is part (3).
+- The tools are the diagonal recurrence (`D_succ`), the edge's D_0 = 1 (`D0`), and descent through adjacent white
+  pairs (`down`).
+- The axioms are propext and Quot.sound, plus Classical.choice in part (2).

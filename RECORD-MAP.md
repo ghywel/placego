@@ -175,7 +175,8 @@ PART: as on the board.
 
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (known: Jen 1986, Rowland §5) — COMPUTED — §8.27, §8.30
-- Lemma B1 (white, then black), B2 (periods unbounded), B3 (no white run over twice the band's period) — PROVED —
+- Lemma B1 (white, then black; Lean LemmaB1.lean, L529), B2 (periods unbounded), B3 (no white run over twice the
+  band's period) — PROVED —
   §8.59; B2 for the single seed is in print (Nersissian Theorem 13)
 - Rowland's question answered both ways: >= 4 certified left sides; 60 generic rows share one — COMPUTED — §8.31
 - Leftward speed 0.246 = 1 - 0.41 x 1.84, by the identity v = 1 - P(heal) E[jump | heal] — PROVED (identity),
@@ -220,7 +221,8 @@ PART: as on the board.
   Lean TheoremB.lean L526/L528; source reviews GC952/953.
 - Theorem A′: two-column repeat at a′ has length<=L+a′ — PROVED — Lean TheoremAprime.lean L527; source GC952 —
   §8.58; its Collatz twin is Terras's bijection (COLLATZ-PRIZE.md §5)
-- Theorem A‴: a repeat of the trace, a white run in the later row, stays a growing distance below A′ — PROVED — §8.59
+- Theorem A‴: a repeat of the trace, a white run in the later row, stays a growing distance below A′ — PROVED (Lean
+  TheoremAprime.lean, L530) — §8.59
 - Jen 1990 for every eventually zero left half: no eventually periodic column 1 — PROVED — Proposition 7, §8.13
 - GPT's audit of A, B, A′, E, E″ and §8.59 — PROVED (first pass) — RULE30-GPT.md G2
 - Not found in print (limited search): A and A′ "NOT FOUND; NEAR"; E "NOT FOUND" — PRIOR-ART.md

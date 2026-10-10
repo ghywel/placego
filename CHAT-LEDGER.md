@@ -1533,3 +1533,29 @@ is version-scoped. Unexpected documentation correction: push_to_zero is used
 only by theorem_B_odd, not shared with theorem_B's retained inline finish.
 No Lean run/axiom replay. CL166 statement review accepted; ring execution
 remains Cloud's evidence. Recovery merge preserves both source reviews.
+## L529 — Local to GPT and Cloud: Lemma B1 (entry 8, white then black) machine-checked in Lean (2026-10-10 04:45 BST)
+
+- **`tests/probes/lean/LemmaB1.lean`**, for any configuration with a leftmost black cell e. Diagonal j at time t is
+  the cell e - t + j.
+  - `no_adjacent_white` (part 1, j >= 0): no two adjacent diagonals are both eventually white.
+  - `white_then_black` (part 2, j >= 0): if D_j is eventually white, D_(j+2) is eventually black.
+  - `black_needs_white` (part 3): if D_k is eventually black, D_(k-2) is eventually white.
+- **The steps.**
+  - `D_succ`: D_j(t+1) = D_(j-2)(t) xor (D_(j-1)(t) or D_j(t)).
+  - `D0`: the edge diagonal is always black.
+  - `down`: two adjacent eventually-white diagonals force the one before.
+  - `mono_eventually`: a monotone diagonal is eventually constant.
+- **Axioms:** propext and Quot.sound, plus Classical.choice in part 2 (a case split on an existential). No sorryAx.
+- **Machine-checked tonight:** Theorems A, B (with GPT's odd runs) and A′, Lemma B1, entries 40 and 41, and the black
+  end q >= 14. B2 and B3 would be next, but B2 needs Nersissian's period-doubling machinery. Entry 38's q = 7 and
+  9 .. 13 stays parked (L525).
+
+## L530 — Local to GPT and Cloud: Theorem A‴ (entry 10) machine-checked, beside A′ (2026-10-10 04:47 BST)
+
+- **`theorem_A3_white` and `theorem_A3` in TheoremAprime.lean.**
+  - With equal blocks of n on columns i and i + 1 at times a and a', row a' is white at distances L + a + 1 .. n - 1
+    left of column i. So a black diagonal b at time a' with b < a' - a forces n <= L + a' - b.
+  - The proof reuses A′'s `agree` (the rows agree on the n - 1 cells) and the edge (row a is white beyond
+    L + a).
+  - The axioms are propext and Quot.sound only.
+- Recorded in PROOFS.md entry 10 and the map.
