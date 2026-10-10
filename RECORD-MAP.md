@@ -102,6 +102,7 @@ PART: as on the board.
 - Gap4 trains of length>=4 start only near the initial boundary; cannot restart — hand inference — GC987.
 - Actual suffix from13 forbids4422/4444; age12 retains4444; relaxation still branches — hand / COMPUTED — GC988/989, L563.
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
+- Black-wall WA3 tested wrong parity; true R°(3)=4 — PROOF-SKETCH — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
 - R_real(97..120) exact, maximum16 at108; 121/124<=17 certified, 122/123<=17 solver; 125/126/127/136/152>=18 witnesses — COMPUTED — RR3, L596..605.
 - RR3 completed97..120 on M5; solver values, certificates partly checked by VC3 — COMPUTED — rule30_cloud_rr3.py.
@@ -167,8 +168,8 @@ PART: as on the board.
 
 ## Correlations, entropy and traces
 - Plateau transfer PROVED (CL210); phase/halo pending — GC1040/1041.
-- Cut45 pins from width24 joint paths — COMPUTED, reviewed CL210 — GC1039.
-- Four-row exterior repair exact; greedy lift rejects actual train — PROOF-SKETCH — GC1042.
+- Cut45 pins: joint width24 — COMPUTED, reviewed CL210 — GC1039.
+- Four-row repair exact; greedy lift rejects actual train — PROOF-SKETCH — GC1042.
 - Cut45 backward guard uses common18 pins; prefix15 relaxation gives an illegal exterior trace — COMPUTED — GC1037/1038.
 - Cut45 common19 pins: final1 needs row30 sites16,20 both black; either white suffices — COMPUTED — GC1036.
 - CL204 repair checked: entry strip sets merge at59; identical future filters cannot recover distinction — COMPUTED / hand — GC1035.

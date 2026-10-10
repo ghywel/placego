@@ -27158,3 +27158,69 @@ quantifiers; the bounded controls do not certify the halfwidth claim.
 Instrument: rule30_exterior_repair.py. Next retain the FULL repair
 relation when testing CL210's completion idea; no greedy lift, new
 solver job, wider census or claimed quarter-cone law.
+
+#### GC1043 — The black-wall phase data test a different game; the true free record at depth3 is4 (2026-10-10)
+
+Specific defect in an owner-authorized proof question: KIMI-QUESTIONS-3
+D defines the correct black-start clock, but imports WA3's opposite
+mandatory parity. Correct this before a phase-transfer proof is attempted.
+Record searched: `R°|other.phase|opposite.phase|black.start` +
+`record|free` -> question D, WA3, RULE30-PRIZE8.39, GC549 checkpoint22.
+Those read. WA3's first_failure ALWAYS checks odd times, even with
+phase1. Its measured R(d-2) concerns that different game. This is not
+a rejection of its measurement or of phase-correct R_real certificates.
+
+At a black wall time, the wall's own update is
+0=x(-1) XOR(1 OR x(1)), requiring x(-1)=1. Thus white-start clocks
+test odd times, while black-start clocks test EVEN times, including0.
+WA3 intentionally kept its odd-time condition when flipping the wall;
+its later interpretation as the true phase-shifted record is unsupported.
+
+**Hand refutation of D, PROOF-SKETCH: R°(3)=4, not R(1)=1.** To have
+five initial zeros at depths3..7, only the first two bits a,b remain
+in the determining seven-cell cone. If a=0, the even-time condition
+fails at0. If a=1,b=0, it fails at2: the nearest bit at time1 is1-b,
+and the next-nearest is1, so the nearest at2 is b. The remaining
+case a=b=1 has the following exact shrinking rows in DEPTH order:
+
+    t0: 1100000
+    t1: 011000
+    t2: 10110
+    t3: 1001
+    t4: 111
+    t5: 00
+    t6: 0
+
+It fails at6. No deeper initial bit reaches the tested cell earlier,
+so every length5 zero band from depth3 is impossible.
+Conversely, the black-start inverse-column construction with visible
+prefix101 gives initial depths1..7 equal1100001. Literal evolution
+has nearest track1011101, black at0,2,4,6. Taking all later visible
+symbols0 in that same inverse construction completes an infinite
+formal forced left half. Hence its zero band at depths3..6 has
+length4. This uses the FREE visible model, not an autonomous right
+half or a new actual-language witness.
+
+**All-depth parity guard on any finite phase record.** Left permutivity
+makes the condition at time t solve uniquely for initial depth t+1,
+given shallower cells. For a black-start clock, odd depths are forced
+and even depths free; a free even-depth bit can be changed without
+altering any shallower cells. A maximal finite zero run therefore
+ends just before an ODD depth: d+R°(d) is odd. In the white-start
+game the corresponding endpoint is even (the existing triangular
+coding used in C2). So whenever R(d-2) is finite, it cannot equal
+R°(d): its proposed endpoint d+R(d-2) is even. The quoted finite
+phase-shift values have the wrong parity throughout, independently
+of the depth3 control. No new bound on either phase follows.
+
+P1 (R°(3)=4) was informed by the hand calculation before controls
+and HELD. P2 is the source-scope finding above. Independent literal
+shrinking cones and packed updates agree on the four forbidden-band
+cases; inverse columns independently recover the positive1100001.
+Unexpected empty-pattern control fails the mandatory even test at0
+while passing the wrong odd test at1. The positive11 pattern instead
+passes the even test and fails the odd test at1. Instrument:
+rule30_black_wall_scope.py; no SAT, record extension or Local run.
+Cloud asked to correct D's supplied data and the phase interpretation,
+then independently read this refutation. Next return to the correlated
+exterior lift; CL210's halfwidth and the prize bound remain open.

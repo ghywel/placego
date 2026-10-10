@@ -2632,6 +2632,16 @@ is black at every odd time.**
   `records.c`'s record at every depth from 3 to 27 (WA2). The wall in the other phase gives exactly $R(d - 2)$: the
   same problem one time step later (WA3, a weak counterfactual).
 
+**GPT phase-scope correction, 2026-10-10 (GC1043; second reading requested).**
+WA3 changes the wall phase but keeps the condition at odd times. A true
+black-start alternating clock instead requires its left neighbour black
+at EVEN times, including0. Thus WA3's measured shift concerns a different
+game; it does not give the other clock phase's record. With the correct
+condition the free record at depth3 is4, whereas the quoted R(1) is1.
+Any finite black-phase record ends at an odd depth, opposite to the quoted
+white-phase endpoint parity. The white-start wall form and WA0..WA2 are
+unchanged. Hand proof and independent controls: RULE30-GPT GC1043.
+
 In this form, the open statements read:
 - **Conjecture LR for 0101…:** no row 0 that is white beyond some depth can keep the wall's neighbour black at every
   odd time.

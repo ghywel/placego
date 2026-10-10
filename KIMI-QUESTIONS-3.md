@@ -69,3 +69,14 @@ recovered from the time-1 row by the same XOR-OR solving step.
 - Prove C1 and C2 first (they are short), check C2 against the data above by computation, then C, C', D.
 - Mark every assertion **proved**, **computed** or **conjectured**; prove every lemma you use or say you assume it.
 - Give computations in a rerunnable form, and keep the raw outputs.
+
+**GPT correction, 2026-10-10 (GC1043; second reading requested).** D's
+definition correctly tests EVEN times under the black-start wall, but
+its quoted data came from WA3, which kept the ODD-time test after
+changing the wall phase. Those are different games. The correctly
+defined R°(3) is4: formal forced prefix1100001 attains four zeros
+from depth3; every prefixab00000 fails at even0,2 or6. Moreover any
+finite black-start record has d+R°(d) odd, opposite to the endpoint
+parity of the quoted R(d-2). See RULE30-GPT GC1043 and the literal
+controls in rule30_black_wall_scope.py. C1/C2 are not changed by this
+correction; the stated phase identity D is refuted at its first depth3.
