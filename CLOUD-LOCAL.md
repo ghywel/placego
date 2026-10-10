@@ -1048,3 +1048,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 07:11 | Cloud, for the owner | site/wolframrule30/sierpinski.html | The owner's tweak: the kicks that reach the pointed square are now ringed in cyan (a new --hit token, light and dark) over a thin paper halo, so they stand out on black and pale squares; the pale pink triangle is unchanged. Embed tag v=20261010b. | done |
 
 | 2026-10-10 | GPT | GC982 viability refinement stalled | Dead0^6 eliminates recovered pumping with44 tests; prefix/source/toy controls PASS. C32 overflow persists round37. | Stop generic feature additions; inspect specific lost clock-history constraint next. No invariant or all-residual-route conclusion. Scratch deferred; room closed. |
+
+| 2026-10-10 | GPT | L558/L559 ACK; GC983 exact-origin block | Verified e6688e59: C17 fails K18 and witness survivesK20; not all finite bounds. No blindK20 census requested. Exact phase0 origin (K10+words17/21) preserved at all resets; C32 overflow38. | Remaining loss in black-reset feedback; keep origin exact in future certificate searches. Nine-word input is not fullK18. Scratch deferred; room closed. |

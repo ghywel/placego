@@ -68,11 +68,12 @@ def controls():
     print('factor controls C/CF/U PASS',flush=True)
 
 
-def run(transform=widen,diagnostic=None,seconds=20):
+def run(transform=widen,diagnostic=None,seconds=20,origin=None,reset=None):
     controls()
     signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(RuntimeError('time cap')))
     signal.alarm(seconds)
-    inv=[c.EMPTY for _ in range(33)]; inv[0]=transform(t.initial(0))
+    initial=t.initial(0) if origin is None else origin
+    inv=[c.EMPTY for _ in range(33)]; inv[0]=t.minimize(initial) if reset else transform(initial)
     history=[list(inv)] if diagnostic else None
     try:
         for n in range(1,41):
@@ -80,7 +81,7 @@ def run(transform=widen,diagnostic=None,seconds=20):
             for r,a in enumerate(inv):
                 if c.subset(a,c.EMPTY): continue
                 o=t.minimize(t.image(c.prune(a),cap=c.CAP))
-                nxt[0]=transform(c.union(nxt[0],c.first(o,1)))
+                nxt[0]=(reset or transform)(c.union(nxt[0],c.first(o,1)))
                 white=c.first(o,0)
                 if r==32:
                     if not c.subset(white,c.EMPTY):
@@ -91,7 +92,7 @@ def run(transform=widen,diagnostic=None,seconds=20):
             stable=all(c.subset(x,y) for x,y in zip(nxt,inv)); inv=nxt
             if diagnostic: history.append(list(inv))
             if stable:
-                assert c.subset(t.initial(0),inv[0])
+                assert c.subset(initial,inv[0])
                 for r,a in enumerate(inv):
                     o=t.minimize(t.image(c.prune(a),cap=c.CAP))
                     assert c.subset(c.first(o,1),inv[0])

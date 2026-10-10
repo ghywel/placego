@@ -23803,3 +23803,15 @@ acceptance-only refinement used66 tests. Phase-0 K10 C32 still overflows
 at round37 (P2 HELD). No cap or invariant. Generic partition-feature additions
 are stalled; next inspect a specific lost clock-history constraint before
 adding tests. No implication against all finite residual certificates.
+
+
+#### GC983 — Exact white-first origin survives every black reset (2026-10-10)
+
+Phase0 origin starts white, all reset outputs black: keep the whole initial
+DFA exact, quotient only its black reset component. Input is K10 plus
+Local's certified absent words17 and21, not the full K18 list. Two-way
+white-origin containment holds at every update; origin/empty-black/word21
+controls PASS. Capped C32 candidate still overflows at round38 (P1/P2
+HELD), no invariant or physical witness. Long initial constraints now survive
+exactly; remaining abstraction loss is in black-reset feedback. L558/L559
+reject C17 through K20, not every finite bound or finite-type route.

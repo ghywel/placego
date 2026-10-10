@@ -613,3 +613,5 @@ app is unpublished by design.
 - `lexicon/rule30_rrl_learn.py`: GC981 two guided loss refinements verified; third attempt hits shared time cap. No certificate; short dead-prefix viability identified as next refinement.
 
 - `lexicon/rule30_rrl_viable.py`: GC982 short dead-prefix viability blocks GC981 pumping with44 tests; controls PASS, C32 overflow round37. No invariant.
+
+- `lexicon/rule30_rrl_origin.py`: GC983 exact white-first origin preserved through all black resets; nine-word input, controls PASS, abstract C32 overflow round38. No invariant.
