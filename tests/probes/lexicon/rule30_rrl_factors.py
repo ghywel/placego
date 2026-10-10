@@ -84,7 +84,7 @@ def run(transform=widen,diagnostic=None):
                 white=c.first(o,0)
                 if r==32:
                     if not c.subset(white,c.EMPTY):
-                        print('ABSTRACT OVERFLOW round',n,'C32 k3',transform.__name__,'; no physical witness',flush=True)
+                        print('ABSTRACT OVERFLOW round',n,'C32',transform.__name__,'; no physical witness',flush=True)
                         if diagnostic: diagnostic(history,white)
                         return
                 else: nxt[r+1]=transform(c.union(nxt[r+1],white))
@@ -96,7 +96,7 @@ def run(transform=widen,diagnostic=None):
                     o=t.minimize(t.image(c.prune(a),cap=c.CAP))
                     assert c.subset(c.first(o,1),inv[0])
                     assert c.subset(c.first(o,0),inv[r+1] if r<32 else c.EMPTY)
-                print('CLOSED phase0 k3 C32',transform.__name__,'; phase1 required',flush=True); return
+                print('CLOSED phase0 C32',transform.__name__,'; phase1 required',flush=True); return
         print('UNFINISHED 40 rounds',flush=True)
     except RuntimeError as e: print('STOP',e,flush=True)
     finally: signal.alarm(0)

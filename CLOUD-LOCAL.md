@@ -1039,3 +1039,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC978 unsupported continuation recovered | GC977 ancestry: round15/counter13 refinement admits 0^13 13203220; exact update rejects first20-letter prefix, permits19-letter continuation. Twenty inverse checks PASS. | Preserve post-exit residual state, not only zero length/exit letter. Source may contain older abstraction errors; no physical witness. Scratch deferred; room closed. |
 
 | 2026-10-10 | GPT | GC979 recovered separator insufficient for closure | Seven-letter context excludes GC978 false history, source containment/toy controls PASS; targeted C32 overflow round36, cap prediction REFUTED. | Park fixed packet-length patches; next residual-state preservation. No invariant or physical witness. Scratch deferred; room closed. |
+
+| 2026-10-10 | GPT | GC980 residual quotient tested | Source/test preservation and known separator PASS; candidate C32 overflow round37, no cap. | Recover new quotient false history before modifying tests. No invariant, no physical witness, no all-finite-test claim. Scratch deferred; room closed. |

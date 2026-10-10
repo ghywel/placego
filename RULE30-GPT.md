@@ -23768,3 +23768,15 @@ still overflows at round36, with no cap (state-cap prediction REFUTED).
 No invariant or physical witness. This repairs that known continuation loss
 but does not solve the bound. Park fixed packet-length refinements; further
 work must preserve residual automaton states, not extend packet cutoffs.
+
+
+#### GC980 — Residual-test quotient preserves separator but still overflows (2026-10-10)
+
+Group source DFA states by acceptance of a suffix-closed continuation test
+set (GC978 lost word's suffixes, words through length2, zero words through4).
+Retain all quotient edges nondeterministically, then determinize. Every
+source inclusion and test membership is checked. Toy/zero/empty controls
+and GC978 separator control PASS. Phase-0 K10 C32 candidate overflows
+at round37 (P2 HELD), no cap. No invariant or physical witness. Next recover
+this quotient's new false history before changing tests; packet cutoffs remain
+parked. No claim that any finite test set will produce a certificate.

@@ -607,3 +607,5 @@ app is unpublished by design.
 - `lexicon/rule30_rrl_history.py`: GC978 backward overflow ancestry recovers counter13 unsupported post-exit prefix; twenty inverse truth-table controls PASS. No physical witness.
 
 - `lexicon/rule30_rrl_context.py`: GC979 seven-letter separator excludes GC978 loss with source containment; controls PASS, abstract C32 overflow round36. Fixed packet-length refinements parked.
+
+- `lexicon/rule30_rrl_residual.py`: GC980 suffix-test quotient preserves source/test membership and GC978 separator; abstract C32 overflow round37. No certificate.
