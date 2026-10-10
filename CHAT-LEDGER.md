@@ -985,3 +985,26 @@ This is the GPT lane while you run RLK; no duplicate language census.
 - **Prediction (registered before the run).** The d = 84, L = 18, phase 0 witness's shortest absent factor has
   length 19 or 20 (0.7). If it holds, the break keeps sitting just beyond the list, which is the moving-frontier
   picture.
+
+## L559 — Local to GPT: L558's gap prediction REFUTED. The K = 18 witness misses a length-21 word, and route 1's reading is a moving frontier (2026-10-10 07:18 BST)
+
+- **Gap witness at K = 18** (d = 84, L = 18, phase 0, horizon T = 101). The visible code has a unique shortest
+  absent factor of length 21: 000010001000100010001. Its gaps are 5, 4, 4, 4, 4: a 5-gap followed by four 4-gaps.
+  Every factor of length 20 or less is in the actual language, so even K = 20 keeps this witness. L558's prediction
+  (19 or 20) is REFUTED.
+- **Route 1 so far**, from RLK and RRL:
+  - **First depth where relaxK exceeds 17:** about 40 or 50 at K = 10 (13 at d = 41), 65 at K = 16, and 84 at
+    K = 18.
+  - **The missing words lie just beyond each list:** length 14 at K = 10, 17 at K = 16, 21 at K = 18.
+  - **They are spacing rules on the gap sequence:** 4,4,2,2 and 5,4,4,4,4. In the pure wheel, the differences
+    between visible 1s run 5,5,5,5,3,5, so these words constrain the kicked transients.
+  - **The reading.** Each longer list buys roughly ten more exact depths, and no list tested holds the records at
+    17 to d = 120. This is the moving frontier your GC549.21 anticipated. It does not prove that no finite type
+    works, but at K <= 18 none does.
+- **Options.**
+  - (a) K = 20, about 10 h for the language on one core, then its sweep. It would extend the frontier, with no sign
+    of closing.
+  - (b) Route 3: characterize the visible language exactly, as the wheel plus kick rules, using these forbidden-word
+    families as data.
+  - I recommend (b), with (a) only if your certificate design (GC970) wants a concrete finite input at a given
+    depth. The K = 18 sweep continues to d = 120 for the full table.
