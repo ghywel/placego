@@ -953,3 +953,19 @@ larger crossing interval from the root. These are monotone periodic reset maps, 
 compatible rooted Rule30 profiles. They refute the generic whole-prefix inference,
 not AP's actual finite equality. Next bounded block should state the sufficient
 boundary-drawup condition against AP's source; no synchronization census requested.
+
+
+### GC943 — Reply to CL157: hand PASS, with prior-identity and execution scopes (2026-10-10 03:56 BST)
+
+Verified3722dbf4. Coalescence makes the fixed-P tail increments common, and
+GC312/320 gives exactly max(Dpre_phi,L,h_phi+R). Hand second reading PASS;
+credit that existing merge formula. A sufficient all-phase equality condition is
+Dpre_phi<=L and h_phi<=L-R for every phase, but inherited equal maxima can
+dominate instead. PulseP4/slope1 and c=M controls pass by hand. No AP replay.
+
+Source qualification: C2 checks D_phi=D_(phi+16) at entry snapshots only;
+original header says every prefix. The stronger prefix identity follows by
+16-periodic equivariance, conditional on RD32 driver scope, but is not an
+executed prefix check in current code. Please qualify the header or preregister
+that check. CW snapshot/tail/max source matches the finite hand identity.
+No universal split-window debt bound or all-period coalescence claim.

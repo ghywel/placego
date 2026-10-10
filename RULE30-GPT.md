@@ -22245,3 +22245,66 @@ No numeric LP bound, physical forbidden-word premise or retained large certifica
 independently verified. Next priority: Cloud CL156's actual coalescence/debt question;
 its all-phase measurement must retain its finite scope and shared-constructor credit.
 Scratch deferred, room closed.
+
+
+## GC943 — CL157 fixed-period coalescence window: hand second reading (2026-10-10 03:56 BST)
+
+**Bears on:** Q7 certificate accounting, not a bound on actual stage debt. Record
+searched: coalescence/merge-clock+drawup/crossing/D_phi/debt ->4hits3files. A later
+broad h.*H/D_new+coalescence/phase search was noisy (2427hits300files); targeted
+GC312/315/320 read instead. Full AP source and incoming3722dbf4 CW diff read.
+No AP execution, synchronization census, new proof unit or numeric acceptance.
+
+**Hand verdict: CL157 identity PASS.** Fix finite frontier M and cut c<=M.
+All future drivers through M must have period dividing the SAME P. Monotonicity
+and P-equivariance sandwich clocks started at phi in[0,P) between U0 and U0+P.
+If at c they agree moduloP, their differences are multiples ofP and remain
+constant under every later reset, including zero-driver identities. Consequently
+all adjusted tail increments coincide. Replacing P by a smaller current period
+before a later doubling does not establish persistence through that doubling.
+
+In ordinary debt units, let Dpre_phi be the maximum debt through c and
+h_phi=z_phi(c)-min_(a<=c) z_phi(a). Let the common relative tail have maximum
+prefix height R>=0 and maximum forward rise L>=0, including its empty prefix.
+GC320's already reviewed concatenation formula gives exactly
+
+    D_phi(M)=max(Dpre_phi, L, h_phi+R).
+
+This is the same formula as CL157; its useful addition is phase-free L,R after
+coalescence. Credit the GC312/320 merge identity rather than file another version
+of it as a new general debt theorem. Both old-prefix and crossing intervals must
+be covered; a maximizing reference interval that starts after c is insufficient.
+
+**Explicit sufficient condition.** If every Dpre_phi<=L and every h_phi<=L-R,
+then all final debts equal L. This is sufficient, not necessary: equal inherited
+maxima can dominate L, as Cloud CW measures on eleven walks. If the common tail
+ever reaches a new adjusted minimum below every old minimum, the h terms merge
+as well, but differing historical Dpre can still persist until a larger common
+tail maximum dominates them. Neither criterion supplies a Rule30 stage bound.
+
+**Independent countercontrol.** Repeat one period4 pulse at black residue0,
+slope1, initial phases0/1. First waits1/4; subsequent waits4. After c=1 clocks
+are congruent modulo4. Through n>=1, L=R=3(n-1), old debts/drawups are0/0 and3/3.
+The formula gives3(n-1) and3n. This reproduces the previous reply by independent
+interval splitting: generic whole-prefix equality is false even after coalescence.
+No compatible rooted Rule30 realization is claimed. Unexpected endpoint c=M
+gives L=R=0 and max(Dpre,h)=Dpre, since h is itself a suffix debt already counted.
+
+**AP/CW source audit.** CW snapshots Dp,H,z0c at its detected cut, initializes
+L/Rmax to0 and tail minimum to z0c, and updates later heights with the previous
+minimum. Its final max(L,Dp,H+Rmax) equals the hand identity; stay checks common
+residues through the finite frontier. Detection occurs strictly after N5 because
+entry is assigned later in that tick; this matches the stated after-entry cut.
+Existing C2 is updated only when De is captured at N5, not on every prefix as
+the original header says. Its executed control is entry equality; equality at
+every earlier prefix follows separately from16-periodic driver equivariance,
+conditional on the inherited RD32 stage coverage. Request qualify the header or
+add a preregistered prefix check before calling it an executed every-prefix test.
+No failed numerical assertion or invalidity of AP's final all-phase result inferred.
+
+CW's measurements (cut offsets17..232; inherited maxima; equal final debts) remain
+Cloud evidence with shared walk/constructor and separate clocks, not GPT replay.
+Hand proof accepted in finite fixed-P scope; no all-period split-window bound or
+prize conclusion. Stop generic coalescence accounting here; next seek an actual
+ancestry constraint on split-window Dpre/h or a concrete incoming assembly audit.
+Scratch deferred, room closed.
