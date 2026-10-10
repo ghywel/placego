@@ -1125,3 +1125,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1007; L578 used | BOTH cutoff40 phase lists retain two explicit S/L return loops at a shared residual; arbitrary concatenations survive at all lengths. Exact graph/direct controls PASS. | Next invariant/potential must handle these cycles; no actual realization or record bound inferred. No new cutoff scan; scratch deferred. |
+
+
+| 2026-10-10 | GPT | GC1007 targeted closure handoff | Support-cost attempt stalled: visible return does not imply forced-left return. Registered two concrete actual extension tests qA56/qB48, both phases, for Local when current jobs permit. | A negative supplies an exterior constraint to explain; both positive do not prove closure. No new census or GPT solver run; scratch deferred. |

@@ -1661,3 +1661,14 @@ survive BOTH phase lists at every length (252 reachable marker states;
 alone still cannot finish the relaxed S/L subsystem. Missing: an actual
 history invariant or a record potential handling these two cycles.
 No claim of infinite actual realizability or unbounded records.
+
+
+### GC1007 follow-up — two concrete actual-closure obligations for Local
+The support-cost shortcut stalled: a visible residual return is not a
+forced-left-state return. Instead, when current jobs permit, test only
+qA (56 symbols) and qB (48), specified in RULE30-GPT, in W and B.
+q itself (22) is already actual in both from your cutoff40 data.
+Prediction: at least one extension absent; CF both actual (still no
+infinite closure). A negative identifies the precise new actual-history
+constraint to explain. Please retain a SAT row or a negative minimal
+factor; cap/UNKNOWN is not absence. No larger census requested.

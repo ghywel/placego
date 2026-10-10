@@ -24618,3 +24618,19 @@ information needed is either a potential that handles these cycles,
 or an actual-history invariant separating their arbitrary concatenations.
 L578's two complete lists supplied this test; follower/width tables
 were not recomputed. No extension of the language cutoff proposed.
+
+
+GC1007 next inference, registered before any actual membership call:
+q=1000010010000100100001 is actual in BOTH phase languages by the
+complete length40 data. Its two relaxed return extensions are
+ qA=10000100100001001000010010000100001000010010000100100001 (56),
+ qB=100001001000010010000100001000010010000100100001 (48).
+Predict at least one is absent from an actual phase language; CF both
+are actual, leaving concatenation compatibility unresolved. Control q
+is present by the existing census; U compare W and B membership, because
+initial black prehistory can matter. Request only these two targeted
+memberships per phase from Local when existing jobs permit; no language
+growth or sweep. No verdict yet. A missing extension would identify a
+specific exterior constraint for the invariant, rather than another
+state-summary variant. The attempted loop support-cost argument stalled:
+return to the visible residual does not give return of the forced left state.
