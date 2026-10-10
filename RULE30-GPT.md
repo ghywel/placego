@@ -28038,3 +28038,25 @@ This supplies an arbitrary-depth alternative to the special zero collar: the for
 
 
 **GC1064 recovery receipt.** Verified016a8e79: CL232 independently confirms GC1063, including correct exterior indexing, the full root-cylinder formula and every farther-tail origin; promoted. IN001, CL233 and L611 received. The skeptics qualify the soficity evidence and correct the absent-word family; no lane change or repeated computation. The owner-requested connectivity check succeeds, the research heartbeat remains active, and publication resumes from the committed GC1064 checkpoint.
+
+
+## GC1065 — The remaining white carrier lifts its next bit and first future input together (2026-10-10)
+
+**Missing inference, GC1064.** Its sole white-predecessor guard011,Q0,R1 still blocks a future R0. Release the preceding initial boundary position too, while retaining the COMPLETE child prefix. Record searched:white carrier/origin release/prefix j-1 ->12 hits in4 files; frontier/ENTRY/G236 with011 and origin/prefix ->82 hits in33 files. GC549 checkpoint28 already has exactly the five-state frontier encountered below; its missing011 certificate is reused, not re-derived by another subset census. Predictions and independent controls precede execution in rule30_white_carrier_pair_lift.py.
+
+**Joint actual lift at every depth, hand proof awaiting review.** Fix an initial prefix through j-1 ending01 at sites j-2,j-1, j>=3, and its feasible time2 child prefix through j ending Q=0. Every pair R,S at the next two child sites has an actual two-tick origin retaining these prefixes. S is the first future exterior, so the selected child row through j+1 AND its whole first future interior update lift together. The first two original trace observations remain unchanged. Relative to GC1060, two initial positions j,j+1 are released; in its remaining011 branch the pair construction changes only the formerly fixed bit at j from1 to0.
+
+Use GC1064's u,a,b,c,d,e and let f be the next initial bit. Here u=0,a=1, so the first-update bit P at j-1 is1 for either b. Consequently the second-update cells j-2 and j-1 are independent of BOTH released b,c: their OR gates see this black P. Every earlier child cell is already fixed by the retained initial prefix. Choose
+
+    b=c=0, d=(NOT R) AND(NOT S), e=(NOT R) AND S,
+    f=S when R=1; arbitrary f when R=0.
+
+Then A=1,B=d,C=d OR e,D=d XOR(e OR f). Thus Q=0, the next child bit is1 XOR(d OR e)=R, and the following bit is d XOR[(d OR e) OR D]=S. For R=0 this is S=NOT d; for R=1, d=e=0 and S=f. Farther initial bits cannot affect the specified child prefix and pair. This is an actual origin construction, not a trace-only toggle or a restarted orbit.
+
+**Exact remaining tail carrier, reusing G236.** After Q=0, the two-step transducer's state (a,b,c,d) ranges over exactly
+
+    A={1000,1001,1010,1011,1100}.
+
+Indeed bc=00 or01 permits either d; bc=10 requires d=0; bc=11 gives Q=1. These are compatible with the entire preceding child prefix as proved above. Therefore the conditional language of EVERY remaining child-tail cell is exactly the existing G236 language from A, uniformly in j and wall phase. A path supplies an initial extension, and conversely every extension supplies a path; the finite-prefix and infinite-path scopes are the usual G236 construction. In particular G236's known missing tail011 still applies: releasing two positions does NOT make arbitrary whole child tails lift.
+
+**Independent controls and unexpected failure of a greedy origin.** All256 local cones in both phases pass literal/packed checks;160 qualifying Q0 origins respect the reviewed guard. All64 joint constructors preserve the full child prefix, first two original observations and first future interior update. Unexpectedly the convenient b=c=00 normal form loses valid three-bit tails: with R=S=1 it forces the third child bit1, whereas b,c,d,e,f,g=0,1,1,1,0,1 realizes110. Four selected controls verify this discrepancy. Thus retain all five carrier states for longer selection; do not iterate the chosen normal form greedily. No solver, visible membership, width sweep or automaton exploration. Verifiedd7c4544c: CL234's orchestration update received without lane change. Next missing inference is trace-preserving future selection inside this specific retained A-language, beyond its first boundary pair. Cloud review and that concrete design target flagged; general halfwidth and the all-depth record bound remain open.
