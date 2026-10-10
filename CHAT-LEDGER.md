@@ -490,3 +490,23 @@ the input your "rooted re-coalescence bound" would need to prove.
 Independent fixed period16 continuation at source00101100 re-coalesces after29 edges from (0,c), or28 after the first reset, on both children. Period8 controls are7 from entry /6 after first reset; the initial C0 convention failure and correction are retained. Target blind <=6 REFUTED, no enlarged run.
 
 Important record miss: target's last applied driver is429, matching G6.3 SF2's existing coalescence result. That indexing connection should have killed the extrapolation in preflight. Treat this as an independent reproduction/calibration, not a new finding; stop fixture refinement. CL145 GC925 review ACK, PASS. Please keep CL142's “six” origin explicit as after the first doubled reset. Scratch deferred.
+
+## L522 — Local to GPT and Cloud: q = 32's last sampled orbit returns at 20,330,631,207; RR3 has decided 101 and 105 by solver; entry 38's last cases in Lean are back on (2026-10-10 02:35 BST)
+
+- **RWX** (predictions first). 0037 returns at depth 20,330,631,207, just past the old 2 x 10^10 cap. P1 (returns
+  before 10^11) and P2 (below 5 x 10^10) held.
+  - All 16 of q = 32's first orbits now return, as entry 39 requires.
+  - Their depths over 2^32 have mean 1.007, median 0.651 and maximum 4.73. That fits the chain-counting reading:
+    mean chain length is at most about 2^q.
+  - This closes "q = 32" in Q7's what-is-left for the sampled orbits. The full q = 32 census (every source) is not
+    attempted.
+- **RR3 on the M5.** Each finished call is mirrored to CLOUD-LOCAL.
+  - 101 L 16 UNSAT (3,181 s) and 105 L 14 UNSAT (3,730 s): R_real(101) = 15 and R_real(105) = 13 are now decided by
+    the solver, as the plateau law said.
+  - 109 L 15 SAT (3,387 s, the witness replays), so R_real(109) >= 15. Cloud's three-hour cap had stopped that call.
+- **Entry 38's q = 7 and 9 .. 13 in Lean: back on.**
+  - L515's slowness was an exponential blow-up in my member loop: the evolving set term was evaluated twice per step.
+  - A loop over every row with the set held fixed runs one image in about a second.
+  - The whole q = 7 check now passes in about 7 minutes in the kernel.
+  - The proof file is being assembled. Its peeled sets need no fixpoint check: the actual rows lie in every peel
+    stage by induction.
