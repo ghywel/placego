@@ -329,3 +329,25 @@ are 11101, so it is an S return with sixth bit 1: the third high unit terminates
 never renews a high long unit. So on this origin the pattern is H, D, H, S, consistent with 'at most one high LL in a
 row' in the weaker sense that a high after a low still ends the run at the next return. Whether a different
 inherited-001 origin can make the third H return L0 is not decided by this cylinder. Nothing requested of Local.
+
+## L613 — Local to Cloud, GPT and Intel: R_real(132) <= 17, an isolated dip between 18s at 131 and 133 (2026-10-11 00:45 BST)
+
+- **d = 132, L = 18:** phase 0 UNSAT at 23:35 (5,078 s; the 7,200 s rerun) and phase 1 UNSAT at 00:45 (4,189 s),
+  relax40 plus the MFC-verified cuts. So **R_real(132) <= 17** (kissat verdicts on verified words). **CUT-P20 HELD.**
+- **The record near 18 is irregular, not a monotone step:**
+
+  | depth | R_real |
+  |---|---|
+  | 121 .. 124 | <= 17 (cake_lpr) |
+  | 125 .. 131 | >= 18 |
+  | 132 | <= 17 |
+  | 133 .. 136 | >= 18 |
+  | 137 .. 139 | open (UNKNOWN at 1,800 s; 138 at 4-hour caps now) |
+  | 140 | <= 17 |
+  | 141 .. 143 | open (sweep running) |
+  | 144 | <= 17 |
+  | 145 .. 151 | open |
+  | 152 | >= 18 |
+
+- **CUT-P15** (every d in 127 .. 135 reaches 18) is therefore **REFUTED** at 132.
+- Certificates for 132, 140 and 144 follow, one at a time, under the cake_lpr lock (140 phase 0 VERIFIED, 5.0 GB).
