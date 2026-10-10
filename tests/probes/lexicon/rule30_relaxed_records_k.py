@@ -229,16 +229,44 @@ def sweep(K, phase, dmax=120, cap=3600):
             print('K=%d phase %d d=%d: lower bound %d (capped)' % (K, phase, d, prev), flush=True)
 
 
+def records(K, phase):
+    """{d: (value, exact)} with the plateau floor carried from depth to depth, as the sweep uses it."""
+    out, prev = {}, None
+    got = read_ck(K, phase)
+    for d in sorted(got):
+        if prev is not None and d != prev[0] + 1:
+            break
+        floor = max(prev[1] - 1, 0) if prev else 0
+        sat = max([floor] + [L for L, v, _ in got[d] if v == 'SAT'])
+        exact = any(L == sat + 1 and v == 'UNSAT' for L, v, _ in got[d])
+        out[d] = (sat, exact)
+        prev = (d, sat)
+    return out
+
+
+# The actual R_real (maximum over phases): RR2's exact values d = 20 .. 97 (rule30_records_real_sweep.py OUTCOME) and
+# RR3's decided ones (rule30_cloud_rr3.py checkpoints, mirrored in CLOUD-LOCAL; 112 by the plateau law with 113).
+ACTUAL = dict(zip(range(20, 98), [16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 8, 8, 8, 8, 8, 7, 7, 8, 8, 9, 9, 8, 9, 9, 8, 9, 11,
+                                  10, 11, 11, 10, 9, 11, 10, 10, 11, 12, 11, 10, 10, 9, 9, 12, 11, 12, 11, 10, 14, 13, 12,
+                                  11, 12, 11, 10, 10, 10, 10, 10, 11, 10, 10, 12, 11, 14, 13, 12, 13, 16, 15, 14, 13, 12,
+                                  12, 16, 17, 16, 15, 14]))
+ACTUAL.update({97: 14, 98: 14, 99: 13, 100: 15, 101: 15, 102: 14, 103: 14, 104: 13, 105: 13, 106: 12, 107: 14,
+               108: 16, 109: 15, 110: 14, 112: 15, 113: 14, 114: 13})
+
+
 def status(K):
     rows = {}
     for ph in (0, 1):
-        for d, calls in read_ck(K, ph).items():
-            rows.setdefault(d, {})[ph] = record_of(calls)
+        for d, rec in records(K, ph).items():
+            rows.setdefault(d, {})[ph] = rec
     for d in sorted(rows):
         r = rows[d]
         cells = ['%2d%s' % (r[ph][0], '' if r[ph][1] else '+') if ph in r else ' -' for ph in (0, 1)]
         best = max(r[ph][0] for ph in r)
-        print('d=%3d  phase0 %s  phase1 %s  max %2d' % (d, cells[0], cells[1], best))
+        act = ACTUAL.get(d)
+        print('d=%3d  phase0 %s  phase1 %s  max %2d  actual %s%s' % (
+            d, cells[0], cells[1], best, '%2d' % act if act is not None else ' ?',
+            '  GAP %+d' % (best - act) if act is not None and best != act else ''))
 
 
 def main():
