@@ -93,6 +93,22 @@ def main():
     assert history[70][6] == 0 and history[74][6] == 1
     assert history[78][:6] != [1,0,0,1,1,0]  # old last-car interface fails
     assert ''.join(str(history[t][0]) for t in range(82,97,2)) == '00100001'
+    # GC1029: next white0 is automatic; final exit1 has three hidden targets.
+    targets = set()
+    for r in ROWS[22]:
+        outcomes = set()
+        for exterior in range(16):
+            state = r
+            for t in range(4):
+                state = literal(state,t%2,(exterior>>t)&1)
+                if t == 1:
+                    assert state & 1 == 0
+            outcomes.add(state & 1)
+        assert outcomes == {int((r & 6) == 0 and (r & 24) != 0)}
+        if outcomes == {1}:
+            targets.add(r)
+    assert targets == {25,49,89}
+    print('PASS: GC1029 240 continuations; final exit1 iff state22 in25,49,89')
     print('PASS: GC1027 endpoint identities on retained CL193 model, n=5..13')
     print('PASS: 512 literal gates, 22 exact image transitions, 65536 cones and countercontrols')
     print('full trace:',full,'; white trace:',full[::2])

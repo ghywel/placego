@@ -165,7 +165,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Fixed train-exit obstruction equals39 nine-bit targets conditioned on its actual prefix — PROOF-SKETCH — GC1028.
+- Cutoff40 first-exit reduction parked; verified45-cut final bit requires three hidden states — PROOF-SKETCH — GC1028/1029.
 - Penultimate-car gate decides train exit; seven-cell packet forces following4,5 — PROOF-SKETCH — GC1026/1027/W283.
 - L596 train breaks under all45 tested early bit changes; mutation diagnostic stopped — COMPUTED — GC1025.
 - CUT witnesses separate actual train followers; conditioned sets can lose then regain a future — hand, inherited evidence — GC1024.

@@ -3785,3 +3785,7 @@ proposed train-memory interface and removes its first-symbol suffix census.
 GC1028 reduces the fixed q T^12 exit obstruction to39 nine-bit interior
 targets after conditioning on the actual prefix and prepared slab. It
 isolates the earlier-history exclusion still needing a structural proof.
+
+GC1029 isolates the beyond-cutoff45 obstruction: nine exit bits are
+forced, and its final1 requires one of three explicit hidden states.
+Their incompatibility with the earlier entry remains the proof target.

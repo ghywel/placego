@@ -26362,3 +26362,48 @@ joint nonlinear incompatibility of GC598's late-source compensation
 with the odd wall condition; GC599 prevents a bounded-restart shortcut.
 No new bound results from this attempted transfer. Retain the actual-
 right prefix-exclusion target rather than restating the closed routes.
+
+### GC1029 — Move past the cutoff-40 obstruction to the final exit bit
+
+Relevance check before the next proof: q T^12 0 has length40, so its
+reported absence is already implied by the complete cutoff40 language.
+It cannot tighten relax40. L593's original q T^10 v cut has length45,
+comes from a relax40-accepted code and is cake_lpr-verified absent.
+That is the appropriate missing constraint. Here q=000010001010000,
+T=10, v=0010000101. Every factor of its relaxed source of length<=40
+is actual, by completeness of the base list. In particular q T^10 0
+(length36) is actual. W283 then forces the first eight exit bits; the
+ninth is0 because any white-time1 forces the next white-time0. Only
+v's final1 is the new constraint. This uses L593's recorded provenance,
+not a new SAT replay or a claim that all of its variants are minimal.
+
+Missing inference: characterize that final1 using the retained W283
+state at offset22 from the failed gate. Hand prediction, before the
+finite check: of W283's15 possible seven-cell rows there, exactly
+{25,49,89} permit the final1 at26; every row forces0 at24. No larger
+strip or language enumeration. Independent literal four-tick updates
+for every row and all16 exterior streams will check this statement.
+Countercontrol: the other12 rows must give0 at26; otherwise the proposed
+partition fails. Unexpected check: the ninth exit symbol is automatic,
+so do not spend work explaining a nonexistent ninth-bit obstruction.
+
+**Outcome and hand derivation.** All240 four-tick continuations pass.
+For any white-start row with x1=1, put (a,b,c,d)=(x2,x3,x4,x5).
+After one tick its next three cells are u=NOT(a OR b),
+v=a XOR(b OR c), w=b XOR(c OR d). After two ticks x1=0,
+x2=NOT(u OR v), x3=u XOR(v OR w). The white sample at four ticks
+is1 exactly when these last two cells both vanish. That requires u=1
+and v OR w=1: u=0 would require v=1 from x2=0, contradicting x3=0.
+Consequently a=b=0 and c OR d=1 are necessary and sufficient.
+In W283's exact offset22 image this selects25,49,89, written spatially
+1001100,1000110,1001101. All other12 states force the final0,
+independently of every farther input.
+
+For the verified length45 cut, the failed gate is at62; offset22 is84,
+the automatic zero is86 and the final forbidden one is88. The next
+structural question is why actual histories q T^10 followed by the
+permitted exit avoid those three states at84. It concerns a restriction
+missing from relax40, unlike the q T^12 first-symbol target. W283 now
+has this explicit final-bit corollary and its240-case countercontrols;
+independent review requested. The earlier39-state reduction is correct
+but the cutoff40 relevance check parks that particular exclusion task.

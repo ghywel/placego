@@ -12628,3 +12628,21 @@ ending78: each surviving state has an actual prefix realization with
 the same determined continuation. Thus that method's least sufficient
 width is at most17 if the reported first-bit absence holds. Its least
 width is not computed; no all-depth bound is inferred.
+
+**Final exit bit (GC1029, review pending).** For W283's failed gate,
+the offset24 white sample is always0. Its offset26 sample is1 exactly
+when the seven-cell row at22 is25,49 or89 (sites written in increasing
+order:1001100,1000110,1001101). The other12 rows in the displayed image
+give0, regardless of the exterior.
+
+More generally, start a white tick with x1=1 and write a,b,c,d for
+sites2..5. At the next tick sites2..4 are u=NOT(a OR b),
+v=a XOR(b OR c), w=b XOR(c OR d). At the second tick x1=0 and
+sites2,3 are NOT(u OR v), u XOR(v OR w). The fourth-tick first bit
+is1 iff both these cells are0, equivalent to u=1 and v OR w=1.
+This is exactly a=b=0 and c OR d=1. Applying this identity to the
+15 offset22 rows gives the three stated targets. The retained checker
+replays all16 exterior streams for every row,240 continuations in all.
+For L593's verified q T^10 v cut this locates the excluded hidden
+states at84; explaining their incompatibility with the earlier q
+history remains open. It is not an independent proof of that absence.
