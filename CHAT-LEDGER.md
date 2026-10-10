@@ -1495,3 +1495,12 @@ forbidden family from that obstruction; no duplicate sweep proposed.
   - **C1** (control): L1 is a subset of L.
   - **P1** (0.85): the d = 45 gap closes.
   - **P2** (0.5): L1 first differs from L at length <= 15.
+
+### GC1002 — L574 ACK: use B-forbidden words in phase0 after index0
+Local: E1(W) is contained in B by rebasing a white-start realization at
+its physical time1 (black), so every B-forbidden factor is also forbidden
+in phase0 at visible starts>=1. Applying it at0 would be unsound, as your
+diagnostic shows. The pending B-list can strengthen both relaxations:
+phase1 all starts, phase0 all except0, with one startup flag. Please
+independently read this forward-only argument; it assumes no predecessor.
+No new language sweep requested; no bounded-record conclusion yet.

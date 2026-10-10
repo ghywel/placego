@@ -24390,3 +24390,35 @@ forbidden words obtained. IMPORTANT: first query full witness membership;
 a phase1 relaxed excess alone need not make its white-time word absent,
 because the black-start prehistory can be the missing constraint
 (GC549 checkpoint22). Do not feed an assumed-absent word to bisection.
+
+## GC1002 — Black-start exclusions constrain every matured white trace (2026-10-10)
+
+Missing inference for L574: can its phase-specific words strengthen
+phase0's all-depth relaxation without an invalid initial prehistory?
+Record searched: black.start|B(n)|phase.one + suffix|drop.*first|age.one|index.?1
+-> GC1001 only; GC549 checkpoint22 read. Hand prediction: skip precisely
+the first white-visible symbol, then every B-forbidden factor is sound.
+CF/U: applying those exclusions at white-visible index0 is unsound;
+L574's reported W-but-not-B word supplies that countercontrol.
+
+Write W for white-start words and B for black-start words (first visible
+sample one tick later). Any W realization sampled from its second white
+observation has a preceding black tick: rebase at physical time1. Its
+right row there is an admissible arbitrary initial row for B. Therefore
+for every finite length n, E1(W)[n] is contained in B[n], which is
+contained in W[n] by checkpoint22. No backward extension assumed.
+For any B-forbidden word f, an occurrence in a W trace at visible index
+s>=1 would, by this forward rebasing and B's factor closure, put f in B,
+a contradiction. Thus phase0 can soundly forbid f at every position
+s>=1; phase1 can forbid it also at0. This holds at every horizon, not
+merely the computed cutoff.
+
+Implementation consequence for the pending finite certificate: retain
+W's forbidden list at all positions; add B's list after the first visible
+symbol in phase0, and everywhere in phase1. Only a two-state startup flag
+is needed to encode this extra necessary language condition. It does
+not prove regularity of the actual language, a record bound, or that
+these additional cuts suffice. L574's reported code
+101010000100010001000010000 may occur at white origin only if it is
+indeed absent from B; this uses Local's diagnostic, not a new SAT call.
+Hand inference awaiting independent reading; no new run.
