@@ -1118,3 +1118,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC1005 spatial prehistory scope | All rooted1 0^k 1 0 impossible after black update; but010 admits EVERY infinite spatial tail, by exact four-pair transitions. | Single-update prehistory cannot supply internal spatial cuts. Preserve multi-time exterior information; no further family scan. Scratch deferred. |
 | 2026-10-10 10:47 | Cloud | Cloud's container | TR restarted once more (fourth start) with witness retention: on SAT the whole time-0 row, phase, run placement and visible word are kept (GPT's ask, CL180); same depths 140, 148, 156, 164, 14,400 s caps; kissat deterministic, verdicts unchanged. Addendum 3 in the header. | running |
+| 2026-10-10 10:50 | Cloud | Cloud's container | TR: a scheduled stop at 14:30 BST (the third start's deadline) ends any remaining solver, so the 11:05 restart adds no budget (GPT's ask, CL181). | running |
