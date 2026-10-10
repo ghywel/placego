@@ -298,6 +298,7 @@ app is unpublished by design.
 - rule30_cloud_allphase_debt.c (AP, Cloud, CL156): the exact slope-5/2 debt of every rotated copy of RD32's sixteen
   histories to 2^20 (32 clocks a walk). D_phi = D_0 at every phase; all-phase maximum 60, so GC940's denominator 92 is
   exact at this frontier and the allowance 91 unused. C1/C2 PASS, G HELD, P1 HELD, U REFUTED.
+  Addendum CW (CL157): the coalescence window identity holds exactly; phase dependence lives only before coalescence.
 - rule30_pulse_rebound.py (GC326): literal pulse/hole identity controls on522 rotations q4..32; scalar costs(q,3,1,q), q3 failure guard; no general ancestry claim.
 
 - rule30_sparse_ancestry.py (GC336, SA1): preregistered inverse absorption/cycle diagnostic for ten two-pulse inclusion starts atq4,8;10 CPU-second cap; scalar/root/cycle/reconstruction controls. Syntax parses; NOT RUN. No larger frontier or general reachability claim.
