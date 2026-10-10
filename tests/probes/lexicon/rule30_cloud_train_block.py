@@ -7,6 +7,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMA
             python3 tests/probes/lexicon/rule30_cloud_train_block.py periods [STEPS=40000] [SITES=40]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py boundary [N=8] [W=10]      (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py memory [LEAD=4] [NMAX=16]   (needs kissat)
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py follower [N=13]            (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -72,6 +73,10 @@ agree); with the lead gap 5 it is IN for n = 10, 11 and ABSENT for 8, 9, 12, 13.
 prefix of the tail is IN for both n = 10 and n = 11; only the final gap 2 separates them. So a train does not forget
 its length: it is read back some 60 visible symbols later, and the dependence on n is not monotone and not a parity.
 CL190's Question B is false in its strong form at this scale; whether the set stabilizes for n >= 12 is open.
+
+MODE follower, OUTCOME (2026-10-10 15:15 BST; GC1024's request). q T^11 v IN, q T^12 v ABSENT, q T^13 v IN, q T^14 v IN
+(phase 0). A 101-site right half for q T^13 v is found by SAT and read back by a plain simulation; flipping site 21
+breaks it. The right half is printed by the mode and kept in CL193. So n0(10) >= 13 rests on a simulated model.
 """
 import os, sys, time
 
@@ -199,10 +204,37 @@ def memory(lead, nmax):
                                           verdict(word([4] + [2] * 10 + tail[:k]), 0)), flush=True)
 
 
+def follower(n):
+    """GC1024's request: one retained, directly simulated right half for q T^n v (q = 000010001010000, v = 0010000101,
+    T = 10; L593 reports q T^12 v absent and q T^13 v present). Finds a right half by SAT, simulates it with a plain
+    loop, and prints it; a flipped site is the countercontrol."""
+    import rule30_relaxed_records_k as rk
+    q, v = '000010001010000', '0010000101'
+    for k in (11, 12, 13, 14):
+        print('q T^%d v: %s' % (k, 'IN' if rk.in_language_phase(q + '10' * k + v, 0) else 'ABSENT'))
+    w = q + '10' * n + v
+    right = rk.right_half_for(w, 0)
+    rh = ''.join(str(right.get(i, 0)) for i in range(1, max(right) + 1))
+    def reads(rh):
+        T = 2 * len(w) - 2
+        row = [0] + [int(c) for c in rh] + [0] * (T + 4)
+        vis = []
+        for t in range(T + 1):
+            row[0] = t % 2
+            if t % 2 == 0:
+                vis.append(str(row[1]))
+            row = [row[0]] + [row[i - 1] ^ (row[i] | row[i + 1]) for i in range(1, len(row) - 1)] + [0]
+        return ''.join(vis) == w
+    print('right half (%d sites) for q T^%d v, phase 0: %s' % (len(rh), n, rh))
+    print('direct simulation reads the word: %s; with site 21 flipped: %s'
+          % (reads(rh), reads(rh[:20] + ('1' if rh[20] == '0' else '0') + rh[21:])))
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
     {'member': lambda: member(*(a or [200])), 'seeds': lambda: seeds(*(a or [12, 400])),
      'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40])),
-     'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16]))}[cmd]()
+     'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16])),
+     'follower': lambda: follower(*(a or [13]))}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
