@@ -25481,3 +25481,41 @@ closure under actual evolution does not repair that loss. Keep the full
 correlated exterior relation when composing observations. No larger
 family census, maturity-depth sweep or additional Local solver task is
 justified by this block; the record-bounding potential remains missing.
+
+Weighted inverse-column block registered: test the proposed local drift
+Z(d+3)<=Z(d)+1, where Z(d) counts initial physical times when both columns
+-d and1-d are zero. Such a drift would supply a depth-dependent zero-domain
+budget; it is stronger than a global linear bound. Missing inference is
+whether the budget is locally monotone. Record searched: zero.*prefix|unary
++ three.step|3.step|drift|potential|rank -> RRL/G5, no such drift lemma.
+Use the already certified seven-ring first, before any language scan.
+Prediction: the local drift fails even on that actual orbit; counterfactual
+all seven spatial phases pass, leaving the general claim undecided.
+Independent control: literal inverse-column reconstruction must match the
+explicit ring. Unexpected check: any failure is actual at all horizons,
+so strengthening a finite visible forbidden list cannot remove it.
+The first time origin passes: Z on seven depths is0,1,0,0,0,1,0.
+Before any larger search, complete the same orbit control at its other
+three time origins; the proposed inequality has no time-origin restriction.
+
+### GC1016 — Actual periodic control rejects uncorrected zero-domain drift
+
+REFUTED candidate; serves RRL's depth-dependent potential, not a new
+record census. The proposed Z(d+3)<=Z(d)+1 fails on the existing seven-ring
+at time origin2 (still a white-start0101 wall): Z across depths0..6 is
+1,0,0,1,2,3,2. In particular Z(2)=0 and Z(5)=3. Spatial period7 repeats
+this violation at every d=2+7j, so discarding finitely many shallow depths
+cannot repair this local drift. It does not refute a global linear bound.
+
+The first time origin passed, as retained above; all four origins and
+literal inverse-column reconstruction now pass independent checks in
+`rule30_zero_drift_guard.py`. This is an actual all-time orbit, so adding
+sound visible forbidden words cannot remove the counterexample. A
+potential of the form 3Z-d+phi, required to be nonincreasing every three
+depths, must compensate by at least 6
+between the two named states; phi cannot depend only on the original
+clock's colour, which is the same at both depths here. No larger
+scan is needed. This particular weighted candidate needs a compensating
+state distinguishing the two configurations; zero-prefix length with
+the proposed uncorrected drift is insufficient. No all-depth bound
+or necessity of infinitely many hidden states follows.

@@ -2339,3 +2339,14 @@ no additional computation or review requested.
 - **The ten absent variants are added as cuts** (cuts40_p0.txt, provenance "gen"). Any absent word is a valid
   cut. All 15 of CUT's cuts are **VERIFIED-UNSAT by cake_lpr** (MFC).
 - **RR3:** `118 16 UNSAT True 17973.0 END` (13:50), so **R_real(118) = 15**, decided. 119/15 and 120/14 remain.
+
+## GC1016 — GPT: actual-orbit guard for a depth-dependent record potential (2026-10-10)
+
+The candidate drift Z(d+3)<=Z(d)+1, with Z the initial zero-pair duration,
+fails on the known seven-ring: at time origin2, Z(2)=0 and Z(5)=3. Period7
+repeats this at arbitrarily large depths. No sound CUT can remove that
+actual orbit. This rejects the uncorrected local drift, not a global
+linear bound or a potential with a compensating phase state. Controls PASS;
+no wider scan warranted. L593 read: the checked train variants are useful
+mixed-context evidence; eventual forgetting is not established by them.
+No new computation or review requested.

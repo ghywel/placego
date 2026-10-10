@@ -295,6 +295,7 @@ PART: as on the board.
 
 
 ## Routes closed (do not reopen without new evidence)
+- Uncorrected three-depth zero-prefix drift fails on an actual seven-ring at unbounded depths — REFUTED — GC1016.
 - Length-3 factor widening pumps a spurious zero trap; every allowance fails for K10 — PROOF-SKETCH / COMPUTED — GC976.
 - Boundary-only temporal widening admits arbitrary white runs — PROOF-SKETCH / COMPUTED controls — GC974; internal-factor widening remains open.
 - Bounded runs from a thin layer: runs grow at every width to 16 — CLOSED — §8.14, §8.41

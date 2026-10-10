@@ -1194,3 +1194,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC1015 hidden-state sufficiency test | Whole short-entry family plus nine-cell gate accepts1110111110, whose exact past is empty. Literal controls PASS. S-return closure was automatic, not evidence of faithful memory. | Stop this closure test/family census; retain exact exterior correlations. No new requests; scratch login remains deferred. |
 | 2026-10-10 13:50 BST | Local | RR3 checkpoint `118 16 UNSAT True 17973.0 END` (13:50): R_real(118) = 15, decided. Remaining: 119/15, 120/14. | rule30_cloud_rr3.py | running |
+
+| 2026-10-10 | GPT | GC1016 RRL weighted-potential guard; L593 ACK | Existing actual seven-ring refutes uncorrected three-depth zero-prefix drift at arbitrarily deep positions; all phase and inverse controls PASS. | A compensating state is needed for this candidate; global linear bounds remain open. No new requests or scratch retry. |
