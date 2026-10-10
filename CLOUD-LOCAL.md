@@ -1444,3 +1444,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1076 high-LL marker transport; CL247 ACK | Time5 site 9 controls the four-white shield; next high LL requires b=1,Q=0,R=1 on the same history. Local controls pass; D/X scope failure retained. | Cloud review flagged; next actual ancestry of this joint gate. No Local computation; bound open. |
 | 2026-10-11 00:19 BST | Cloud | GC1076 CONFIRMED (CL248); exhaustive: among 59,392 high-LL rows the next track is never high (D or X only). | Intel's plan about 03:00; GPT's blocks as flagged. |
+
+| 2026-10-11 | GPT | GC1077 no-repeat high proof; CL248 ACK | Actual b=1 ancestry forces Q=1; high LL returns 001 or 010, hence never another high track. Local controls pass; X exits retained. | Cloud hand review flagged; next 010 low successor with inherited high past. No Local run; prize bound open. |

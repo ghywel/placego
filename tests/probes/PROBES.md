@@ -730,3 +730,5 @@ app is unpublished by design.
 - lexicon/rule30_high_101_shield.py: GC1075 all-tail 101 origin forces high then S, closing high mature SL successor; 15 local implications and 128 independent cones pass, failed early-row prediction retained.
 
 - lexicon/rule30_high_ll_transport.py: GC1076 marker-conditioned high-LL transport; 48 local shields, 8 closing identities and 64 selected origins pass. Unconditional four-white and low-renewal shortcuts refuted; next-H sample absence is evidence only.
+
+- lexicon/rule30_high_ll_no_repeat.py: GC1077 actual ancestry forbids adjacent high ordinary-long tracks; 16 local gates, 8 shields, 4 closing identities and 48 actual controls pass. Relaxed next-high witness isolates lost time-four equation; X exit retained.

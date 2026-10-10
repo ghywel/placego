@@ -28287,3 +28287,22 @@ It is 010,100,101 or111. GC1073's time-three/time-five identity at the returned 
 All 48 local two-tick shields and 8 closing identities pass. Among 64 selected actual origins, 29 are current high LL: 23 next D, 6 X exits, no next H. This sample absence does NOT prove that further H is impossible. Literal/packed engines agree. The unexpected common-map claim also fails: at Q=1,R=S=0 the reviewed low mid01 map gives 011, while this high branch gives 010. The added algebra control shows the maps agree only for Q=0; Q=1 is pinned to 010 here for every R,S. Thus the retained high past removes a low-branch output rather than merging the complete maps.
 
 CL247 at 8e871b28 independently confirms GC1075, now PROVED. Next specific obligation is whether the actual b=1 ancestry excludes or restricts Q=0,R=1 (the next high-LL gate), keeping the farther samples coupled. No Local solver, membership or relaxed-record run. No all-depth bound claimed.
+
+
+## GC1077 — Actual high LL forces a white seventh return and cannot repeat high (2026-10-11)
+
+**Missing inference.** GC1076 leaves a relaxed next-high gate b=1,Q=0,R OR S=1. Derive its actual ancestry exclusion. Record searched: high/high or 111001111 with ancestry/transport/gate ->21 hits in 8 files; high LL with 001/010, consecutive high or Q=1 ->18 hits in 11 files. The retained 29-sample absence was not proof. Predictions and local controls preceded the incoming CL248 computation.
+
+**All-tail hand proof, second reading pending.** A high LL origin begins 111001111 by GC1075. At time 1 its sites 6..9 are 1000. Write u,v,w at sites 10,11,12 there. Local updates give time 2 sites 9..11=(u,u OR v,u XOR(v OR w)), and time 3 sites 8..10=(NOT u,u OR v,NOT u AND(v OR w)). Consequently the time 5 eighth bit a equals 1 when u=1 and NOT(v OR w) when u=0. Closing L0 requires a=0, so u=0,v OR w=1. Under that condition the time 5 ninth bit b is NOT v.
+
+For b=0 GC1076 already forces returned sites 7..9=001, whose following fifth track cannot be high. For b=1 the actual earlier bits must be u=v=0,w=1. They force time 3 sites 6..12=1110110 and time 4 sites 6..11=000010. Write E,F for the next two sites of that time 4 row. Time 5 sites 6..12 are then
+
+    (1,0,0,1,1,NOT E,E OR F).
+
+Since NOT E OR(E OR F)=1, the next row has sites 6..11=111100, and time 7 sites 6..10=00001. Thus Q=1, independent of every farther tail. GC1076's closing map returns 010 regardless of R,S, contradicting the necessary Q=0 for another high track.
+
+The returned 010 origin always has the ordinary low track D: its sites 6 onward at times 1..5 are 101,001,011,010,01, so its time 5 pair is the reviewed mid01 selector. It renews L0. Therefore every high LL returns triple 001 or 010, with seventh site WHITE; its successor ordinary-long fifth track is never high. In a continuing mature S/L0 run it is D. The 001 branch can instead exit with X outside that premise. This is an all-length hidden-track exclusion, not a ban on untyped visible LL or a record bound.
+
+**Controls and unexpected check.** All 16 local origin gates, 8 shield continuations, 4 closing identities and 48 actual controls on the two b=1 cylinders pass literal/packed engines. The retained 001-to-X witness still exits. A relaxed time 4 band 00001110 really reaches returned triple 111 and passes the next-high gate, but its eleventh site is black where actual ancestry forces white. This identifies the precise lost equation in fresh-state composition. No failed prediction in this block; no longer scan or solver run.
+
+CL248 at 8b86c271 independently confirms GC1076, now PROVED, and computes the no-repeat consequence exhaustively. Its 59,392 high-LL returns have next tracks D or X only. The new hand inference strengthens its b=1 disjunction to Q=1; review requested. Next missing inference is transport of the forced 010 low successor together with its inherited high past, toward restrictions on renewal after an intervening D. All-depth composition and the prize remain open.
