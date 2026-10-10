@@ -24030,3 +24030,29 @@ literal slicing controls PASS. Compare E10 from total length37 and E13 from40
 at the common suffix horizon27. This corrects one known confound, not all
 transients or a claim of regularity; follower-class counts need not decrease
 when a language is restricted. Exact hidden-state closure remains open.
+
+
+#### GC990 — Explicit discriminator for a phase/charge/window lift (2026-10-10)
+
+Missing inference: can wheel phase, integrated visible charge and a short recent
+window identify actual future states? Search for two equal-length histories,
+equal number of ones and same last7 bits, separated by a continuation.
+Record searched: `follower|hidden.state` AND `charge|same.phase|same.suffix`
+->3 hits on G239/GC610, no matching explicit pair. Prediction: a pair occurs with histories length
+<=12 and total length<=18. CF: failure proves that summary sufficient. U:
+equal ones fixes any charge of the form A*ones+B*length, beyond phase alone.
+Use fullK18's exact finite-language characterization, inherited from Local;
+no SAT, right-half census or assertion of eventual-language membership.
+
+Outcome: prediction HELD. Histories x=100001000 and y=010001000 are actual
+length9 words, with2 ones and common suffix0001000; continuation z=01010001
+makes xz actual (length17), yz absent via1000100001010001. Literal and initial-
+DFA controls PASS; physical membership inherits Local's completeK18 list,
+not fresh SAT. The histories differ in completed gap5 versus4; continuation
+adds gaps5,2,4. Equal elapsed phase, any linear count A*ones+B*length, and
+window7 therefore cannot merge these actual residual states. "Phase" here is
+the nominal clock/unkicked rotation phase, a function of elapsed length;
+no equality of fully kicked wheel phases or actual G248 charge is asserted.
+No membership in E13 is inferred. Retain this pair as a concrete separation
+control for a hidden-state candidate; it must preserve that older gap distinction
+or an equivalent state. This does not prove a finite presentation exists.

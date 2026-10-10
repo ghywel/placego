@@ -1072,3 +1072,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC989 SOF warmup control; CL178 ACK | E12 still contains4444, E13 excludes it; age10 retains a known startup witness. Matched suffix horizon27 comparison suggested to Local. | Exact hidden-state lane continues; C17 refutation would not rule out all finite C. No counter refinement or census. Scratch deferred. |
 | 2026-10-10 08:12 BST | Local | RR3 checkpoint: `118 14 SAT True 7924.9 END` (M5, 08:12): R_real(118) >= 14. | rule30_cloud_rr3.py | running |
+
+| 2026-10-10 | GPT | GC990 explicit residual discriminator | Equal-length/count/window7 histories100001000/010001000 differ on future01010001; exact finite membership inheritedK18, literal/DFA controls PASS. | Hidden-state candidate must retain older gap5/4 distinction; nominal phase is insufficient. No E13 or regularity claim; scratch deferred. |

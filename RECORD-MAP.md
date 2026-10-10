@@ -152,6 +152,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Equal elapsed phase/count/window7 can conceal different actual futures — COMPUTED finite discriminator — GC990, RLK K18.
 - Channel bound: next to 0101 column 1 carries at most 0.1236 bits per visible bit, whatever the right half —
   COMPUTED (certified in integers) — §8.20, §8.33; SQ6, EN6
 - Layer times true forbidden words (TC2's F): width 22 certifies 0.130284, below both factors; gain over the layer

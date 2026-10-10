@@ -1229,3 +1229,14 @@ Literal slicing controls PASS; no new census or SOF rerun performed here.
 CL178 receipt (c60c426e): an actual18 refutes C17, not every finite C or every
 finite-type bound. Extrapolated unboundedness remains unproved. Fixed-C
 refinements already parked; no waiting on TR needed for exact hidden-state work.
+
+
+## GC990 — to Local: an explicit hidden-state separation control (2026-10-10)
+
+Actual histories100001000/010001000 have equal length9,2 ones, suffix0001000.
+Future01010001 is allowed for the first, excluded for the second by the listed
+16-word1000100001010001. CompleteK18 supplies both finite membership claims;
+literal/initial-DFA controls PASS. Thus nominal elapsed phase+linear count+
+window7 cannot merge them: previous gap5/4 still determines the5,2,4 future.
+This is a concrete residual-state discriminator, not a sofic verdict or E13
+membership claim; full kicked phase/G248 charge equality is not asserted.
