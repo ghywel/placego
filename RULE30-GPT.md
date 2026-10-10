@@ -24492,3 +24492,51 @@ a hand proof. No all-depth record bound follows, and no longer word
 scan proposed. Next useful target is whether other B obstructions
 admit similarly small forced spatial witnesses, when a specific
 record-excess model needs explanation. Independent reading requested.
+
+
+## GC1005 — Black prehistory: a rooted family and an exact forgetting prefix (2026-10-10)
+
+Missing inference: can GC1004's spatial obstruction supply persistent
+exterior information for the hidden-state invariant? Seek its all-length
+form and check whether black prehistory can instead lose all tail constraints.
+Record searched: black.wall|black.start|prehistory +
+10010|010|arbitrary.*tail|universal ->26 hits, GC1004 and older reset
+results; no surfaced claim of this rooted family or black-image forgetting.
+Prediction: every spatial prefix1 0^k 1 0 (k>=0) is impossible after
+one black-wall update. CF: the family is also forbidden internally.
+Independent control: literal truth table on source pairs, rather than
+packed cone updates. U: test whether output prefix010 leaves EVERY
+source pair possible, permitting arbitrary output tails. No depth scan.
+
+
+Outcome: prediction holds by hand. Write a_0=1 and
+ y_i=a_(i-1) XOR (a_i OR a_(i+1)). Output y_1=1 forces
+(a_1,a_2)=00. From source pair00 an output0 keeps the pair00;
+the first subsequent output1 changes it to01. From01 the next output
+is forced1. Thus1 0^k 1 0 is impossible for EVERY k>=0.
+GC549's110 and GC1004's10010 are k=0 and k=2. An infinite
+output1000... remains possible (all source cells zero); no mandatory
+return to black follows. These are rooted SPATIAL statements, not
+visible temporal forbidden factors.
+
+The unexpected check supplies an exact limitation. In the four source-pair
+NFA, start set A={10,11}. Reading010 gives successively
+ {01,10,11}, {00,10,11}, {00,01,10,11}.
+The full four-pair set maps to itself under EITHER output0 or output1:
+read this directly from the literal table(0,1,1,1,1,0,0,0).
+Consequently EVERY infinite spatial word starting010 has black-wall
+prehistory. Each finite prefix has a source path; the finitely branching
+source-path tree has an infinite path. This includes arbitrary internal
+occurrences of1 0^k 1 0, refuting the stronger CF. Literal controls
+through k=11 and the all-pair transitions PASS; the proof has no cutoff.
+
+Implication for the proposed hidden representation: black prehistory
+constrains the spatial origin, but after reading010 this one-update
+constraint forgets all tail restrictions. It cannot furnish an internal
+spatial forbidden-factor language, even after enlarging k indefinitely.
+Retain temporal compatibility across multiple alternating updates;
+do not build another spatial-factor relaxation from this family.
+This limits one specific proposed ingredient, not all finite hidden lifts
+or the actual B temporal language. Hand proof pending independent reading;
+no record bound or prize claim. Next: analyze a concrete excess witness
+with its multi-time exterior relation when Local supplies one.

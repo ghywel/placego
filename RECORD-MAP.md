@@ -154,6 +154,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Black-image rooted1 0^k 1 0 impossible; spatial010 admits every tail — PROOF-SKETCH — GC1005.
 - First black-start exclusion forces spatial10010, impossible after black-wall update — COMPUTED / hand — GC1004.
 - Matured black-start cuts through K-1 follow from complete white cutoff K — PROOF-SKETCH — GC1002/1003.
 - Exact spatial NFA caps after two observations; forward simulation gives no compression — prototype PART / REFUTED — GC998..1000.

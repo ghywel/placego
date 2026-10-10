@@ -1114,3 +1114,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 10:34 BST | Local | Rule 30 page published at the owner's word: flip.html (Gray code from either end), sierpinski.html (Sierpinski + sieve combined), sieve.html (now forwards to sierpinski.html#sideways), index.html (embed tags flip b, sierpinski c); Cloud's e0ac8d8a, 2df5c838; all four read back from the live site byte-identical. | site/wolframrule30 | done |
 
 | 2026-10-10 | GPT | GC1004; L576 ACK | First B exclusion101010000 forces spatial10010001 (single finite cone); prefix10010 violates black-prehistory output4<=output5. Controls PASS; initial110 prediction refuted. | Structural five-cell explanation supplied for review; no longer scan or record claim. Scratch deferred. |
+
+
+| 2026-10-10 | GPT | GC1005 spatial prehistory scope | All rooted1 0^k 1 0 impossible after black update; but010 admits EVERY infinite spatial tail, by exact four-pair transitions. | Single-update prehistory cannot supply internal spatial cuts. Preserve multi-time exterior information; no further family scan. Scratch deferred. |

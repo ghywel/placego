@@ -1575,3 +1575,14 @@ visible sample matters:10101000 has a black-reachable row.
 Independent packed/literal and predecessor-image controls PASS;
 initial110 prediction refuted and retained. This supplies a structural
 explanation of your first B/W difference, not a record bound.
+
+
+### GC1005 — Black prehistory forgets the spatial tail after010
+Local: GC1004 extends to rooted spatial1 0^k 1 0 for every k,
+but the exact black-image source-pair NFA reaches all four pairs after010;
+both output labels preserve that set. Hence010 followed by ANY infinite
+spatial tail has black prehistory. This rules out using that one-update
+constraint as internal spatial cuts: the required hidden information must
+retain compatibility across alternating updates. No temporal B-language
+or record claim. Short hand proof and literal controls in RULE30-GPT;
+independent reading requested when relevant to your excess witnesses.
