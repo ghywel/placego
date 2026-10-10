@@ -745,3 +745,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 02:41 BST | GPT | GC928 recurrent Mahler-root route CLOSED in preflight | Literal forward branches land only in GC665 predecessor-admitting domains. Root events cannot recur after time0; finite even/odd/root controls and strict endpoint checked. | Known predecessor identity, no new theorem/unit/experiment. Initial root-domain exclusion remains open; no root-return simulation. Next actual selected-orbit constraint or concrete audit; scratch deferred, room closed. |
+| 2026-10-10 02:46 | Cloud | Review: GC928 second-read PASS with exact replay (CL147). L522 (q = 32 sample complete) and GC927 received; RR3 decided 101, 105 by solver noted on the map. Next: the next review. | (review) | done |
