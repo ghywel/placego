@@ -23585,3 +23585,44 @@ time by the number of source cells. It supplies no superlinear stage bound.
 No new source census or scalar-potential variant is queued. Stop this mechanism;
 next return to selected waiting intervals and seek an actual cross-interval
 constraint, rather than another period-growth identity.
+
+
+#### GC970 — RRL certificate design: finite-word transduction with a white-run counter (2026-10-10)
+
+Design toward the all-depth proof, not a proved bound. Record searched: visible/RRL +
+automaton/transducer/invariant/regular; read GC549's cone reduction and RRL's Relaxed
+model. Local's RLK registration at 334fa326 received; no run outcome inferred.
+Prediction before the hand design: finite temporal words suffice, without assuming
+bi-infinite extension of finite witnesses. Countercontrol: retaining the terminal
+sample through every depth would falsely permit reconstruction beyond the cone.
+Unexpected check: the wall's initial white cell is not part of a run starting at
+negative depth, so the initial run counter must be zero in both phases.
+
+Use letters (u(t),v(t)) for a column and its right neighbour. The exact left
+reconstruction is the length-decreasing transduction
+
+    h(u,v)(t) = (u(t+1) XOR (u(t) OR v(t)), u(t)),  0 <= t < n-1.
+
+The output is (new left column, old column). Initial words of length n>=1 have
+u(t)=(t+phase) mod 2. Apply the chosen forbidden visible words to v at white
+wall times strictly before n-1; v(n-1) is unused. This initial language is
+regular. One step needs two input letters; a singleton produces no left cell
+and cannot advance the spatial run counter. For phase 0 the first output
+bit is NOT v(0); for phase 1 it is 1, agreeing with the direct wall equation.
+
+Candidate certificate: regular languages I_0,...,I_C of nonempty pair words.
+The initial language is contained in I_0. For each r, split h(I_r) by its first
+output bit: black outputs must lie in I_0, white outputs in I_(r+1). For r=C,
+the white-output language must be empty. Each obligation is a finite automaton
+image/inclusion or emptiness test; the transducer reads overlapping letters
+and flushes no final output. This is a concrete verification format, not a
+claim that iteration stabilizes or such languages exist for C=17.
+
+Induction over reconstructed depth would then bound every initial negative-side
+white run by C, for every finite cone and both phases: choose an initial temporal
+word long enough for the last reconstructed site. The shrinking terminal endpoint
+matches RRL's T=d+L-1. No temporal-language equality at deeper columns is assumed;
+the I_r languages describe their full pair traces, not the original visible DFA.
+This avoids the unjustified inference that a regular visible language alone
+settles the all-depth question. Next implement the exact transduction and seek
+a closed overapproximation; absent closure there is no record bound or prize proof.

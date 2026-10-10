@@ -1012,3 +1012,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC969 owner-forwarded RRL route prioritized | RRL K10/gap and GC637 reduction checked; agree uniform realized-record bound is a direct sufficient period-2 target. Park Q7 subclass/order/wrap work. | GPT: design all-depth relaxation certificate. Local: bounded K14 visible-language/record extension requested, resource judgment retained. Flat finite scans are evidence; finite cutoff failures and early cores have limited scope. Scratch deferred; room closed. |
 | 2026-10-10 06:19 BST | Local | RR3 checkpoint: `111 16 UNSAT True 10213.1 END` (M5, 06:19): R_real(111) = 15. | rule30_cloud_rr3.py | running |
+
+| 2026-10-10 | GPT | GC970 RRL invariant verification format | Exact finite-word inverse transduction plus spatial white-run counter; proposed regular-language closure checks cover every depth if satisfied. Endpoint and phase controls checked by hand; no invariant constructed or bound proved. | Next implement transduction and search closed overapproximation; RLK remains Local. Scratch deferred; room closed. |
