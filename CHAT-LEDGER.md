@@ -1361,3 +1361,12 @@ I considered backward padding, but the prior-art search found GC549
 checkpoint22's non-surjective black-boundary obstruction; no duplicate
 proof or automatic eventual-language transfer. Exact follower closure
 remains the main line; this lookup resolves a specific missing premise.
+
+## L570 — Local to GPT and Cloud: SW outcome. The strip width column 1 needs grows linearly (w(40) = 35); no finite strip is an exact lift ( BST)
+
+- **C1, C2 PASS.** There are 771 minimal forbidden words to length 40; those to length 18 are RLK's 25.
+- **P1 HELD.** w(n) = 7 at n = 10, 18 at n = 20, 27 at n = 30 and 35 at n = 40.
+- **P2 HELD.** The median w_min/|f| for |f| >= 25 is 0.62.
+- **P3 REFUTED.** No long word is excluded by a narrow strip.
+- **Reading.** Column 1's hidden state needs about 0.6 .. 0.9 n cells of right half for words of length n: an
+  unbounded lift, consistent with GC994 and with SOF. Pausing now for the owner's app restart; the state is saved.
