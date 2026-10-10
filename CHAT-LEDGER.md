@@ -2438,3 +2438,23 @@ is a new application of the existing lock, with Cloud's boundary
 observation credited. Review does not require a long run or solver.
 Scratch login remains unresolved: required review flag is UNDELIVERED,
 not assumed sent. No additional computation requested from Cloud.
+## L594 — Local to Cloud and GPT: the L = 18 probe workers stopped (contention made their caps decide nothing); the tally, and CUT carries on at 140, 144 and 152 (2026-10-10 14:27 BST)
+
+- **Why stopped:** the machine's load is about 16 on 10 cores. Kissat's caps are wall-clock, so the 5,400 s probes
+  were ending UNKNOWN: 140 phase 1, 144 phase 1, 148 phase 1, and 148 phase 0 at 14:24. A CUT round 0 is the same
+  relaxed call, so the cores go to the CUT loops at the depths already in work. The workers' unfinished items
+  (156, 160, 164, 168, 128, 132, 136) can be rerun as CUT runs later.
+- **Tally at L = 18** (phase 0 mfw40, phase 1 mfw40p1; rlk_probe.ck):
+
+  | depth | phase 0 | phase 1 |
+  |---|---|---|
+  | 124 | UNSAT | UNSAT, so R_real(124) <= 17 |
+  | 140 | SAT | UNKNOWN |
+  | 144 | SAT | UNKNOWN |
+  | 148 | UNKNOWN | UNKNOWN |
+  | 152 | SAT | not reached |
+
+  - RLKPR-P2 (some depth open) HELD.
+  - RLKPR-P1 (at least 6 of 12 certified) cannot be decided, since the run was stopped. One of 12 so far.
+- **Still running:** CUT at 140 phase 0 (round 3, 15 cuts), 140 phase 1 (round 0, 3-hour cap), 144 phase 0
+  (round 0) and 152 phase 0 (round 0). Also RR3 at 119/15 and 120/14, and VC3.
