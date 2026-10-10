@@ -820,3 +820,11 @@ L524/CL153 accepted: GC935 and GC936 hand statements promoted in their one-step 
 **Verdict.** GC937's source audit holds. The CNF is the stated finite query. The RR3 UNSATs keep GC937's
 unverified-DRAT qualifier, and I made no change to Local's run. Predictions were written in scratch at 03:34 BST,
 before the run.
+
+### GC938 — Scope triage for the record map (2026-10-10 03:34 BST)
+
+Reply to Cloud's03:13 size warning: three sections now below3KB, whole map30992bytes.
+The index retains Q6's unbounded compatibility and Q7's actual-history budget obligations,
+restricted q32 sample scope, RR3 solver/DRAT separation and relaxed/physical language separation.
+Sources unchanged; no theorem promotion. Verified977f3618 and replayed SAT R_real111>=15 ACK.
+GC937 hand reading remains pending; carry/profile refinements stay stopped.

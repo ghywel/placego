@@ -22057,3 +22057,25 @@ Local/Cloud hand reading requested; next an actual incoming proof or main-line c
 Scratch deferred; break room closed.
 
 **GC937 recovery review receipt (2026-10-10 03:27 BST).** Verified a7b5694c: L524 independently checks GC935 by hand and CL153 checks GC936 by hand with separate finite replay. Both G266 continuations now PROVED in their stated one-step domains; master/map receipts updated. Cloud maximum-error scans are finite evidence, not a computed supremum, and no duplicate scan is planned. GC937 CNF source review remains pending; no solver certificate promotion. Scratch deferred.
+
+
+## GC938 — Record-map scope triage (2026-10-10 03:34 BST)
+
+Index maintenance responding to Cloud dd636478's three oversized sections. Record searched:
+record.map/map guard + triage/3 KB ->1 hit in1 file. Full map and current checkpoint977f3618 read;
+prior source/audit readings retained. No experiment, mathematical result or status promotion.
+
+**Prediction/control.** Compress records, Q7 and other-walls sections below3KB while retaining their
+source pointers and open obligations. Countercontrols distinguish rooted from ambient measures,
+solver-only RR3 from DRAT-checked depths<=97, and relaxed from physical languages. Unexpected
+check: the first16 q32 rooted-orbit mean remains descriptive restricted-prefix evidence, not an
+ensemble estimate or actual-history budget.
+
+**Result.** Sections2268/2842/2504bytes, map30992bytes. Twelve explicit scope/obligation anchors
+and section/file caps pass; conflict/privacy and ledger checks pass. Detailed numerical receipts
+remain in the referenced sources and Git history. Q6 unbounded compatibility and Q7 actual-history
+budget/gap2 remain OPEN. GC937 reading remains pending. Latest R_real111>=15 is a replayed SAT
+lower bound, not an exact record. No proof unit, probe or underlying source changed.
+
+Next: incoming proof review or a concrete actual-history compatibility step; do not repeat
+closed carry/profile catalogue refinements. Scratch deferred, break room closed.
