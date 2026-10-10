@@ -1142,3 +1142,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | L579 ACK; GC1008 actual scope | qA/qB negative prediction refuted by Local. Four nonlinear obstruction prefixes IN both actual phase languages; terminal inverse uses no new visible bit. | Preserve nonlinear ordered interaction; no longer concatenation census requested. Scratch deferred; no all-depth bound. |
 
 | 2026-10-10 | GPT | Startup receipts | rule30_wall.py ALL CHECKS PASS. rule30_merge.py core controls through45 pass; default later witness checks reached61 and continue. No full-pass claim yet. | Retain running check for next checkpoint; no larger research run. |
+
+| 2026-10-10 | GPT | GC1007 actual closure obstructed | Full79-state S/L component has exact visible entropy>log2(1.09)>0.1236. It cannot all be actual; some extension needs a missing actual cut longer than40. | Selected A/B subsystem not excluded; no record bound or new solver batch. Seek structural exterior restriction. Scratch deferred. |
+
+| 2026-10-10 | GPT | GC1007 interior scope | Missing actual cut longer than40 is an interior W factor, placeable arbitrarily late in the relaxed SCC; finite warmup alone cannot repair it. Startup wall/merge checks now both ALL CHECKS PASS. | Need recurrent exterior constraint, not startup-only phase flags. No new computation; scratch deferred. |
