@@ -457,6 +457,6 @@ PART: as on the board.
 
 - One-parity odd sources produce both sharp doubling entries; source-shape equivalence — PROVED (CL132; replayed to q = 32) — GC911; W281 continuation.
 
-- One-profile source mask is not backward invariant; fourth pair gives no zero-source renewal — CLOSED (shortcut) — GC912; W281 continuation.
+- One-profile source mask is not backward invariant; fourth pair gives no zero-source renewal — CLOSED (shortcut) — GC912 (second-read CL133); W281 continuation.
 
 - Shared-parity inverse pair loses its mask four steps later beyond period 2 — CLOSED (shortcut) — GC913; W281 continuation.
