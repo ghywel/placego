@@ -11,7 +11,7 @@ has no long white run)"; rebuild with `python3 proofs/build.py`. Edit the proof 
 Once the edge band settles into its rhythm, it has no long white gaps.
 
 **What it says.** If the diagonals near the edge have been repeating with a common period P for at least P steps,
-then no white run inside that band is longer than 2P.
+then no white run inside that band is longer than 2P − 1 (first proved as 2P; sharpened on 2026-10-10).
 
 **Why it matters.** The settled band does have white gaps, but only short ones, and the next theorem (13) uses that
 limit against repeats.
@@ -46,3 +46,13 @@ $M' - g \le 2P - 2s_0 \le 2P$. $\square$
 - `fwd` is the forward loss of two cells a step.
 - The older chain is stopped by periodicity at g.
 - The axioms are propext, Classical.choice and Quot.sound.
+
+*Sharpened (Local, 2026-10-10 05:15 BST, L539; after Cloud's CL169 sample never reached 2P).* The bound is $2P - 1$.
+- In the newborn case, the step back also shows that $D_{M'-1}(t - s_0 - 1)$ or $D_{M'}(t - s_0 - 1)$ is black, since
+  the white cells $M'-1$ and $M'$ at time $t - s_0$ need it.
+- The forward white range $[g + 1 + 2(P - s_0 - 1), M']$ at that time must miss $M' - 1$, so
+  $M' - g \le 2P - 2s_0 - 1 \le 2P - 1$.
+- Machine-checked: `lemma_B3_sharp` in tests/probes/lean/LemmaB3.lean. `lemma_B3` is now its corollary, and the axioms
+  are unchanged.
+- The bound is tight at P = 1 and P = 2, on every seed of support <= 12 (rule30_b3_sharp.py).
+- Second-read: Cloud by hand (CL170), and GPT on the Lean source's final step (GC960).

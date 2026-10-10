@@ -53,3 +53,5 @@ x_t(k-1) = x_{t+1}(k) \oplus \big(x_t(k) \vee x_t(k+1)\big) .
 - The proof is Theorem A's corollary (TheoremA.lean's `no_two_periodic`), with the common period P0 P1 and time
   re-based to the edge.
 - The axioms are propext, Classical.choice and Quot.sound.
+- Scope (GC956): the Lean statement covers actual configurations evolved by Rule 30. The hand proof also
+  allows prescribed column traces with no global right continuation; that wider form is not machine-checked.
