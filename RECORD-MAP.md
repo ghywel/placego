@@ -162,6 +162,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Checked S/L cuts force startup-only suffix and gap2 entrance; boundary exceptions actual — PROOF-SKETCH — GC1009/L590.
 - Actual visible histories have a four-prefix nonlinear obstruction at left depth26 — COMPUTED — GC1008.
 - Fixed m wall updates admit every remote spatial tail; origin correlations remain — PROOF-SKETCH — GC1006.
 - Black-image rooted1 0^k 1 0 impossible; spatial010 admits every tail — PROOF-SKETCH — GC1005.

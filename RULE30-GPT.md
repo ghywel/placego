@@ -25062,3 +25062,82 @@ GC706 then excludes finite initial left support. This would close the
 entire eventually-S/L subclass, not just the selected A/B loops. It would
 NOT cover actual histories with infinitely many other gap lengths or
 settle the all-period prize. No branch-free certificate exists yet.
+
+
+SLC recurrent representation block registered: identify exactly what
+leading/trailing zeros in a binary cut mean in the S/L gap alphabet.
+Prediction: at interior markers, 0..2 padding zeros impose no gap
+restriction, while3..4 require an adjacent L; internal distances3/5
+become S/L. This would express each recurrent binary cut as one macro
+forbidden factor without discarding nonlinear word context. CF startup
+and finite terminal positions obey the same rule. Record searched:
+leading|trailing + S/L + forbidden|cut ->no hit. Controls: exhaustively
+compare cyclic spellings up to6 macro letters and binary factors through
+length16; unexpected check rooted1001 lacks001001 despite containing S.
+This is a representation check, no actual-language membership queries.
+
+
+### GC1009 — Checked S/L cuts expose startup-only and gap-2 entry constraints
+
+Status: PROOF-SKETCH (new hand consequences of Local's checked cuts;
+not independently second-read). Serves Q6 / GC1007's recurrent restriction.
+L590 at e2be768c supplies the following W-forbidden words, each length42:
+
+    f1 = 010010010000100001001001000010000100001001
+    f2 = 001001000010000100001000010010000100001001
+
+Local reports cake_lpr VERIFIED UNSAT for both, and simulated right halves
+for both proper one-symbol deletions. Those receipts are Local's; no
+membership solver was rerun here. W denotes white-start visible words,
+sampled every two wall ticks. It is closed under taking factors; 11 is
+forbidden. Write u=f1[1:] (length41), v=f2[2:] (length40).
+Record searched: startup.only|entry.only|left.extension + S/L|length42|length.42
+-> no hit. Missing inference: what prior visible context is necessary for
+these actual deletion words, and how does that constrain recurrent S/L?
+
+1. **u is actual but startup-only.** L590's suffix control realizes u.
+If u occurred at positive visible index, its preceding bit would be 0
+or 1. The first gives f1; the second gives 11 since u begins with 1.
+Both are impossible. Thus no actual W history contains u except at index0.
+Let F be the right-half map obtained by the white then black wall updates.
+Every right row whose next41 visible bits are u lies outside image(F):
+a predecessor row would contribute a bit followed by u. This is a precise
+origin-conditioned prehistory exclusion, compatible with GC1006's
+surjectivity onto unconditional remote spatial tails.
+
+2. **v requires a gap-2 entrance after startup.** At an occurrence starting
+at index s>=2, the bit at s-1 must be 0 (11 forbidden). The bit at s-2 must
+be 1 (otherwise f2=00v occurs). Hence the context is 10v: the initial 1
+of v follows the preceding 1 at distance2. Inside a persistent S/L segment,
+where successive ones are at distances3 or5, v therefore cannot start at
+an internal marker whose preceding marker is already in that segment.
+The exact startup exceptions are real: 0v is L590's simulated suffix, and
+v its factor. They must not be discarded from the initial W language.
+
+**Macro interpretation.** In a bi-infinite S/L spelling, a cut's internal
+distances3/5 translate to S/L; leading or trailing0..2 zeros add no
+restriction, whereas3..4 zeros require an adjoining L. Any other internal
+distance or padding>4 makes occurrence impossible. The cases with no 1
+are immediate: one/two zeros occur universally, three/four require L,
+five cannot occur. Thus the two recurrent forbidden macro factors are
+SSLLSSLLLS and SLLLLSLLS. This is an occurrence equivalence for recurrent
+spellings, with startup and finite-terminal padding explicitly excluded.
+
+The registered representation control passes35658 comparisons of direct
+cyclic binary spelling against macro-factor detection (all macro periods
+through6, binary factors through16). New exact-cut controls check the two
+translations and enumerate the one/two predecessor bits: no predecessor
+of u survives, and only10 precedes v without already containing11 or f2.
+The unexpected rooted1001/001001 control confirms that blindly applying
+the recurrent translation at startup would remove a legitimate boundary
+case. Local's actual u and0v witnesses are independent countercontrols to
+such blanket bans. Script: tests/probes/lexicon/rule30_sl_macro_cut.py.
+
+These cuts remove specific mixed transitions; they neither remove the
+actual pure S/L cycles nor prove eventual periodicity of all mixed tails.
+The finite certificates still supply f1/f2's absence: the prehistory
+argument explains their boundary consequences, not their original
+Rule30 impossibility. The missing main-line inference remains a structural
+restriction strong enough to bound all admissible histories at every depth.
+Next: retain these origin-conditioned exclusions when constructing the
+hidden transition relation; no more unary/affine forcing or duplicate SAT.
