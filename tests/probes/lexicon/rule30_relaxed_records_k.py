@@ -449,7 +449,17 @@ def main():
             items += [(int(z.split(':')[0]), int(z.split(':')[1]))] if ':' in z else [(int(z), 0), (int(z), 1)]
         cap = int(sys.argv[6]) if len(sys.argv) > 6 else 3600
         forb = {0: load_forbidden(tag), 1: load_forbidden(tag1)}
+        done = set()                                           # skip (d, L, phase, list) already decided
+        pck = os.path.join(DIR, 'rlk_probe.ck')
+        if os.path.exists(pck):
+            for line in open(pck):
+                f = line.split()
+                if line.endswith('\n') and len(f) == 9 and f[8] == 'END' and f[5] in ('SAT', 'UNSAT'):
+                    done.add((int(f[2]), int(f[3]), int(f[4]), f[0] if f[4] == '0' else f[1]))
         for d, ph in items:
+            if (d, L, ph, tag if ph == 0 else tag1) in done:
+                print('probe d=%d L=%d phase %d: already decided, skipped' % (d, L, ph), flush=True)
+                continue
             if True:
                 t0 = time.time()
                 v = Relaxed(d, L, ph, forb[ph]).solve(cap, forb[ph])
