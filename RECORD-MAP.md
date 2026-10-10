@@ -136,6 +136,9 @@ PART: as on the board.
 - Phase-mask, same-reference-orbit pumping and quotient guards — PROVED — GC846/848/849, G269/270/272; L474/493.
 - Last-defect and zero-lag parity shortcuts CLOSED; ParityMask ingredients accepted, assembly unformalized — CLOSED / PART — GC874..876, CL112.
 - Remaining Q6: inter-run compatibility with unbounded reach — OPEN (PART) — GC845, PERIOD-TWO §6.
+- The two wall phases' records are coupled exactly: E°(d) = max(d, E(d-1)-1, Q_S(d)-1, P_S(d)-1) and its mirror,
+  through black-run records; R(d) <= d+4 for all d would give R°(d) <= d+7 (sharp at 12); R°(1..62) computed;
+  both record peaks are one black run of 19 — PROVED (coupling, by swarm lane q2, Cloud-verified), COMPUTED — §8.82
 
 
 

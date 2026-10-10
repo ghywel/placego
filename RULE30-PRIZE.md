@@ -5432,3 +5432,54 @@ see (CH-P4). **What it means.** Both sides are half white; the owner's eye is ri
 large triangles (one of width 33 against the band's 16), but they hold a few percent of the area: most white, on both
 sides, is specks of width 1 to 3. **Prior work.** §8.68 counted tops by width and by $x/t$; the areas, the identity
 and the split at $B(t)$ are new to the record.
+
+
+### 8.82 The two wall phases' records are coupled exactly through black runs (swarm lane q2, graded; 2026-10-10)
+
+*The owner-authorized question swarm: five independent agents (no access to the record), each with a self-contained
+brief, each to be followed by a skeptic. Lane q2 was given the black-even phase (wall black at even times): parity,
+the shrink inequalities, R°(d) as far as feasible, and why its constant differs. Graded by Cloud as below; the swarm's
+own skeptic is still queued. Code and raw outputs are outside git. Nothing here is a bound for all depths.*
+
+**What the lane proved, and Cloud verified independently.**
+- *Lemma (what lies above a zero run).* Let $y = F(x)$ be one forward step of a left row beside the wall (any wall
+  colour). Then $y$ is zero on depths $[d, e-1]$ if and only if $x$ is zero on $[d-1, e]$, or $x$ is one on $[d, e]$,
+  or $x$ reads 1 at $d-1$, 0 at $d$ and ones on $[d+1, e]$. (Proof: $y(k) = 0$ means $x(k+1) = x(k) \lor x(k-1)$, a
+  recurrence that the pair $(x(d-1), x(d))$ drives to one of the three shapes.) Cloud: exhaustive over all 12-cell
+  rows, both walls, all $d < e$: 450,560 cases, no violation.
+- *Time shift.* The black-even time-0 row of a visible sequence $w$ is $F_0$ of the standard row of $u.w$ (any $u$),
+  and the standard row of $w$ is $F_1$ of the black-even row of $w$: the two phases are one evolution one step apart.
+  Cloud: 100 random sequences, depths to 18, no mismatch.
+- *Parity.* Every finite black-even record ends at an odd depth, every standard one at an even depth (flip the last
+  free bit to extend otherwise). GPT's GC1043 and Cloud's own computation agree.
+- *Sandwich, stronger than asked.* $R^{\circ}(d+1) \ge R(d) - 2$ and $R(d+1) \ge R^{\circ}(d) - 2$, so
+  $R(d-1) - 2 \le R^{\circ}(d) \le R(d+1) + 2$; both ends are attained. Cloud: holds on the full tables, $d = 2$ to 60.
+- *The exact coupling.* Write $E = d + R$, $E^{\circ} = d + R^{\circ}$ for the end depths, $Q_P(d)$ for the end of the
+  longest run of ones from depth $d$ in phase $P$, and $P_P(d)$ for the end of the longest pattern 1, 0, 1, 1, … started
+  at depth $d-1$. Then for $d \ge 2$
+  $$E^{\circ}(d) = \max\big(d,\; E(d-1) - 1,\; Q_S(d) - 1,\; P_S(d) - 1\big), \qquad
+    E(d) = \max\big(d,\; E^{\circ}(d-1) - 1,\; Q_B(d) - 1,\; P_B(d) - 1\big).$$
+  So each phase's zero records are the other phase's zero records and **black-run** records, shifted by one. Cloud:
+  both identities by brute force for $d = 2$ to 8 in both phases; the lane checked them to 52.
+- *The constants are tied.* With $\beta_P$ the largest excess of a black-run birth over $2d$, the lane derives
+  $c^{\circ} = \max(\beta_S, \beta_B - 3)$ and $c = \max(\beta_B, \beta_S - 3)$ for the least constants with
+  $R^{\circ} \le d + c^{\circ}$ and $R \le d + c$ on any finite range, so $|c^{\circ} - c| \le 3$; and
+  $R(d) \le d + 4$ for all $d$ would give $R^{\circ}(d) \le d + 7$ for all $d$, sharp at $d = 12$.
+- *The chain behind both peaks.* The standard row of $u.w$, $w = 1001011011010110010$, reads 1 at depth 11, 0 at 12
+  and **nineteen ones** on 13 to 31; one step gives the black-even zero run 12 to 30 ($R^{\circ}(12) = 19 = d + 7$),
+  one more the standard zero run 13 to 29 ($R(13) = 17 = d + 4$). Cloud reproduced all three rows. The two record
+  peaks of the two phases are one black run seen twice.
+
+**What the lane computed (third-party; three agreeing methods; Cloud-verified to depth 14 by brute force).**
+$R^{\circ}(1..62)$ = 0, 1, 4, 3, 2, 3, 4, 5, 4, 9, 8, 19, 18, 17, 18, 17, 16, 15, 14, 19, 18, 17, 18, 17, 18, 19, 18, 21,
+20, 19, 22, 35, 34, 33, 32, 31, 30, 29, 34, 35, 36, 37, 36, 35, 34, 41, 40, 39, 38, 37, 42, 45, 44, 43, 42, 43, 44, 53,
+52, 51, 54, 53. The largest excess is 7, at $d = 12$ only; $\beta_S = 7$ (from $P_S(12) = 32$) and $\beta_B = 4$ on
+$d \le 52$. A merging census gives about 1.77 distinct future states per free bit (0.82 effective bits), the same
+mechanism §8.38 measured for the standard phase.
+
+**What it does not give.** No bound for all $d$ in either phase; why $\beta_S > \beta_B$ (the lane traces black runs to
+period-3 patterns one phase over, and the hierarchy does not close); whether the extremal excesses are attained at
+small depth. **Where it bears.** Question D of KIMI-QUESTIONS-3.md is answered in the strong form; §8.39's doubling
+conjecture now has a companion statement for the other phase with constant 7, and the black-run records $Q$, $P$ are
+the new objects to study: the standard phase's $R(d) \le d + 4$ is, by the coupling, a statement about how long a
+black run can live one step earlier.
