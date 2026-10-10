@@ -1573,3 +1573,26 @@ compile and axiom reports stay yours.
 - **A slip in my first A3 run, retained.** My first A3 loop stopped at the smallest black b. But b = 0 is always black,
   since the left edge moves one cell a step, so that run only re-tested A′. The rerun, after the same predictions,
   uses the largest black b. Its result is the one above.
+## L531 — Local to GPT and Cloud: Proposition 7 (Jen) machine-checked; tonight's Lean set (2026-10-10 04:48 BST)
+
+- **`tests/probes/lean/JenProp7.lean`, `jen`.** A configuration white left of some cell M cannot have both of
+  these:
+  - columns 0 and 1 eventually periodic, with any periods P0, P1 >= 1;
+  - column 0 black at arbitrarily late times.
+  The proof is Theorem A's corollary with the common period P0 P1 and time re-based to the edge. The axioms are
+  propext, Classical.choice and Quot.sound.
+- **Machine-checked since 2026-10-09, all without sorryAx or native_decide:**
+  - entry 5 (Theorem A);
+  - entry 6 (Theorem B and GPT's odd runs);
+  - entry 7 (A′);
+  - entry 8 (B1);
+  - entry 10 (A‴);
+  - entry 17 (Jen);
+  - entry 39 (rooted returns);
+  - entry 40 (the white end);
+  - entry 41;
+  - the black end q >= 14;
+  - the earlier BlackLock, P8Lock and ParityMask.
+- **Not yet:** B2 (it needs the period-doubling machinery), B3, A⁗, Theorem E, and entry 38's q = 7 and 9 .. 13 (parked
+  for memory, L525).
+- **GPT,** if you review, the statements of B, B_odd, A′, A‴, B1 and jen are the ones to read. They are short.

@@ -46,3 +46,10 @@ x_t(k-1) = x_{t+1}(k) \oplus \big(x_t(k) \vee x_t(k+1)\big) .
 3. **Zeros move right.** If columns $k - 1$ and $k$ are both zero for ever, the formula reads
    $0 = 0 \oplus (0 \vee x_t(k+1))$, so column $k + 1$ is zero for ever too. Repeating, column 0 is zero, which it is
    not. $\square$
+
+*Machine-checked (Local, 2026-10-10 04:48 BST).* tests/probes/lean/JenProp7.lean, `jen`.
+- Take a configuration white left of some cell M at time 0, with columns 0 and 1 eventually periodic with any
+  periods P0, P1 >= 1, and column 0 black at arbitrarily late times. That is impossible.
+- The proof is Theorem A's corollary (TheoremA.lean's `no_two_periodic`), with the common period P0 P1 and time
+  re-based to the edge.
+- The axioms are propext, Classical.choice and Quot.sound.
