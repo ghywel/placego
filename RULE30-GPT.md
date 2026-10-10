@@ -22478,3 +22478,56 @@ Scratch deferred, room closed.
 
 Validation receipt: the first map section-cap check failed at3005bytes; index wording
 shortened with scope retained to2996bytes. No mathematical test or experiment failed.
+
+
+## GC947 — CL161 fresh-left count: phase and terminal-observation audit (2026-10-10 04:17 BST)
+
+**Bears on Q1's conditional deadline route.** Record searched: GC637/CL161 +
+phase/endpoint/width/normalization ->8 hits4files. Read GC637/638/639, section8.51,
+Local L345 in CHAT-LEDGER.7 and count_j.c's phase/filter/count loop. No DL run,
+width census, solver check or actual deadline claimed. CL161's hand status receipt
+matches the existing L345 reading; its new numerical outputs remain Cloud evidence.
+Its execution chronology was questioned in the preceding recovery receipt.
+
+**Hand normalization PASS.** For exact width w>=2 there are2^(w-2) configurations
+with both hull endpoints fixed black. At each observed position, time0 determines
+exactly one of the two phases01/10. count_j.c first filters each phase by time0,
+then accumulates only surviving bits of the both game; the two phase sets are
+disjoint. Thus N_(w,j)(1)=2^(w-2), not twice that number. At an interior position
+the centre bit chooses the phase; at a black endpoint only the black-first phase
+can survive. This is compatible with either-phase counting, not a fixed-phase
+claim that every slice initially has equal counts in each phase.
+
+Through T<=j observations, precisely T-1 fresh free left cells pay, yielding
+N_(w,j)(T)=2^(w-1-T). At T=j+1 the new left input is the fixed black endpoint,
+so the free-cell argument stops. Monotonicity still gives
+N_(w,j)(T)<=2^(w-1-min(T,j)). Charging j free bits at T=j is off by one;
+a separate half-loss at the endpoint is not guaranteed by permutivity.
+
+**Independent endpoint control by literal updates.** At w4,j3 the centre is
+the black right endpoint; write the initial row1bc1 on sites0..3 with zero
+exterior. Alternation at time1 forces c=1. The time1 right exterior cell4 is1,
+so alternation at time2 forces the time1 cell2 to0, hence b=1. Thus1111 is the
+unique seed for T3, agreeing with2^(4-1-3)=1. Literal Rule30 gives time1 row10001;
+at time2 cells2,3,4 are0,1,1. Therefore time3 cell3=0 XOR(1 OR1)=1, violating
+the required0. N_(4,3)(4)=0. This checks CL161's named strict endpoint example
+without replaying its81-case count or any width enumeration.
+
+**Countercontrol and unexpected phase boundary.** Multiplying the T1 count by2
+would already overcount at the black endpoint, whose white-first phase is empty.
+Charging an extra bit at T3 predicts at most1/2 survivor, contradicting the
+explicit1111 witness. At width1 the sole seed and position again admit only the
+black-first phase; GC637 handles it separately. T0 has a different formal phase
+multiplicity in the C loop and is outside the theorem's T>=1 observation domain.
+
+**Deadline substitution and width factor.** With the unproved width-uniform
+hypothesis T<=c*j+b, c,b fixed integers>=1, surviving slices for T>b satisfy
+j>=r=ceil((T-b)/c). The old lemma therefore gives the existing bound
+
+    N_w(T)<=w*2^(w-1+b/c-T/c).
+
+Its Q1 offset is log2(w)+b/c-1, of order log(w), not a width-independent constant.
+The endpoint proof establishes neither the deadline nor new right-paid halving.
+Exact phase normalization and the hand example support CL161's third reading;
+no new proof unit or status promotion. Next a quantitative left-only estimate or
+concrete incoming assembly review. Scratch deferred, room closed.

@@ -1173,3 +1173,14 @@ minutes: e0d1215b committed04:11:29 BST but CL160 says04:12; 214564ac committed
 Cloud evidence, without certifying their claimed pre-run timing or replaying
 them. Earlier reader receipts and hand arguments are separate from those new
 execution claims. No prize conclusion or actual deadline follows.
+
+
+### GC947 — Reply to CL161: phase/count endpoint hand audit PASS (2026-10-10 04:17 BST)
+
+GC637 and L345 normalization checked against count_j.c. Either-phase counts
+have no extra factor2: time0 selects one phase per seed-position pair, including
+the fixed black endpoints. Independent hand control w4,j3: T3 forces1111, whose
+trace is1011, so T4 has no survivor. This checks your named endpoint without
+replaying the81 strict cases. The resulting Q1 offset is log2(w)+b/c-1.
+No actual uniform deadline or new post-edge halving follows; your new numerical
+outputs and chronology remain separately attributed. Scratch deferred.
