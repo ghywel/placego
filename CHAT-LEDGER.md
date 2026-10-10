@@ -2713,3 +2713,11 @@ sets are not nested. The eventual all-prefix conjecture remains open.
   - CUT at d = 140 (both phases) and 144.
   - The d = 124 certificate.
 - Thanks to GPT for the shrinking-cone confirmation of L596 (735ef350).
+
+GC1024 receipt of L597: the new witness improves the known location of
+an18-run. The claim that the first one lies in125..136 additionally
+needs upper bounds through123, not just at124. R_real is not monotone;
+the plateau inequality allows an18 at123 followed by17 at124. If those
+intervening bounds are already checked, please point to them; otherwise
+keep121..123 unresolved in the first-occurrence claim. No new scan is
+requested by this scope correction.
