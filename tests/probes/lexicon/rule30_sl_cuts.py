@@ -37,6 +37,22 @@ PREDICTIONS (Local's, pushed before any run of this script):
   SLC-P3 (blind, 0.4): within ROUNDS = 6 rounds the component loses all branching.
   SLC-P4 (the unexpected check, 0.3): some cut is a factor of a single-block power, (001)^k or (00001)^k, so it
          kills a pure cycle.
+OUTCOME, 2026-10-10 12:55 BST (M5, 2 jobs, about 12 minutes; `replay` recomputes the entropies): C1 PASS; P1 REFUTED;
+P2 HELD; P3 REFUTED; P4 REFUTED.
+  - 25 cuts in 6 rounds, lengths 42, 42, 43, 44, 45, 46, 46, 47, 47, 48, 48, 50, 50, 51, 51, 52, 52, 53, 54, 59, 61,
+    61, 62, 72, 74 (cuts40_sl.txt). Sampled windows absent per round: 4, 6, 5, 4, 3, 3 of 12.
+  - Entropy of the recurrent part, bits per visible symbol (the actual language is at most 0.1236):
+    - Rounds 0 .. 2: 0.1386, 0.1351, 0.1325.
+    - Round 3: it splits, 0.1254 and 0.0916 (and a one-state cycle).
+    - Round 4: 0.1239 and 0.0829. Round 5: 0.1226 and 0.0821. Round 6: 0.1226 and 0.0695.
+  - So the 25 cuts take GC1007's component below the ceiling, removing the surplus that forced a missing cut. The
+    larger part (55 states, 25 branching) did not move in round 6; all three cuts fell in the smaller one.
+  - P1: the first cut has length 42. P3: branching remains. P4: no cut is a factor of a single-block power.
+EXTENSION SLC2 (registered 12:55, before its run): `continue` resumes from cuts40_sl.txt and samples SAMPLES windows
+  from EACH live branching component (so a small component cannot starve a large one), at NS = 100.
+  SLC2-P1 (blind, 0.5): after 6 more rounds the largest component entropy is below 0.10.
+  SLC2-P2 (blind, 0.35): some branching component dies (no branching state left) within those 6 rounds.
+  SLC2-P3 (the unexpected check, 0.4): at NS = 100 more than half of each round's sampled windows are absent.
 """
 import os
 import random
@@ -225,6 +241,11 @@ def shrink(w):
     return w
 
 
+CONT = 'continue' in sys.argv[1:]
+if CONT:
+    sys.argv.remove('continue')
+
+
 def main():
     rounds = int(sys.argv[1]) if len(sys.argv) > 1 else 6
     samples = int(sys.argv[2]) if len(sys.argv) > 2 else 12
@@ -232,6 +253,12 @@ def main():
     jobs = int(sys.argv[4]) if len(sys.argv) > 4 else 3
     W, B = lists()
     F = set(W | B)
+    start = 1
+    if CONT:                                                   # SLC2: resume from the cuts found so far
+        prev = [line.split() for line in open(os.path.join(rlk.DIR, 'cuts40_sl.txt'))]
+        F |= {z[0] for z in prev}
+        start = 1 + max(int(z[1].split('=')[1]) for z in prev)
+        print('continuing from %d cuts, round %d' % (len(prev), start), flush=True)
     nodes, edges = build(F)
     comps, rec = components(nodes, edges)
     print('S/L graph: %d states, %d components, recurrent %s' % (len(nodes), len(comps),
@@ -241,26 +268,32 @@ def main():
     rng = random.Random(1007)
     allcuts = []
     with Pool(jobs) as pool:
-        sample = sorted(windows(rec[0][0], edges, 40))
-        rng.shuffle(sample)
-        ctl = pool.map(member, sample[:20])
-        c1 = c1 and all(a and b for _, a, b in ctl)
-        print('SLC-C1', 'PASS' if c1 else 'FAIL', '(%d windows of length 40 in the component)' % len(sample),
-              flush=True)
-        for rnd in range(1, rounds + 1):
+        if not CONT:                                           # C1 is the fresh start's control
+            sample = sorted(windows(rec[0][0], edges, 40))
+            rng.shuffle(sample)
+            ctl = pool.map(member, sample[:20])
+            c1 = c1 and all(a and b for _, a, b in ctl)
+            print('SLC-C1', 'PASS' if c1 else 'FAIL', '(%d windows of length 40 in the component)' % len(sample),
+                  flush=True)
+        for rnd in range(start, start + rounds):
             live = [(g, b) for g, b in rec if b > 0]
             if not live:
                 print('round %d: no recurrent component with a branching state is left' % rnd, flush=True)
                 break
-            ws = set()
+            ws, pick = set(), []
             for g, b in live:
-                ws |= windows(g, edges, ns)
+                wg = sorted(windows(g, edges, ns))
+                ws |= set(wg)
+                rng.shuffle(wg)
+                pick += wg[:samples] if CONT else []
             ws = sorted(ws)
-            rng.shuffle(ws)
-            mins = pool.map(shrink, ws[:samples])
+            if not CONT:
+                rng.shuffle(ws)
+                pick = ws[:samples]
+            mins = pool.map(shrink, pick)
             found = sorted({w for w in mins if w}, key=lambda w: (len(w), w))
             print('round %d: %d windows of length %d in live components; %d of %d sampled absent; %d distinct cuts' % (
-                rnd, len(ws), ns, sum(1 for w in mins if w), min(samples, len(ws)), len(found)), flush=True)
+                rnd, len(ws), ns, sum(1 for w in mins if w), len(pick), len(found)), flush=True)
             if not found:
                 print('round %d: every sampled window is in L; stopping' % rnd, flush=True)
                 break
