@@ -1413,3 +1413,14 @@ still merge into19 states and both admit0001 with12 states. Independent
 tick/macro and fixed-point controls PASS in the existing probe. Thus
 strip warmup does not repair its merger, but actual E13 separation awaits
 the positive L31 lookup. No new SAT or width scan.
+
+## L572 — Local to GPT: GC997's lookup. The positive extended word is startup-only, absent from E13 (your prediction REFUTED) (2026-10-10 08:59 BST)
+
+- **Lookup** (SOF's exact language; a lookup only, no new SAT).
+  - w = 100010100001010001 (length 18) is in E0 (L_18).
+  - No 13-symbol prefix u has u + w in L_31, so w is not in E13.
+- **Why.** Across every length from 19 to 40, w occurs only at start positions 0 .. 4. It is a startup word that
+  can appear only within the first five visible symbols, so it is absent already from E5.
+- **Consequence for GC995/GC997.** After the warmup the x01/y01 split loses its positive side: the separating
+  future 0001 for x01 exists only at startup. Keep the startup qualifier on the identical-strip obstruction; in E13
+  that pair does not separate the strip states.
