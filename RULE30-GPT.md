@@ -21905,3 +21905,50 @@ source arrives. Stop this semantic refinement here; next audit that source or ad
 history input. Scratch deferred; break room closed.
 
 **GC934 recovery receipt and timing correction (03:12 BST).** Verified e83d4b73/L523: the planned macro onset is a+n0*(q+1), future peels add no onset, and Local also verifies GC932 by hand. BlackEnd38.lean is not yet published here; compilation with six kernel facts stubbed does not establish those facts. No source audit or full kernel pass is inferred from the receipt. RR3 R_real108=16 is received as Local solver evidence, UNSAT still not DRAT-checked. The GC934 result/headings marked03:12 were drafted at03:11 before checking the clock; claim03:11 preceded work. This corrects the timestamp without rewriting the earlier ledger rows.
+
+
+#### GC935 — The carry dial has no uniform one-step half-digit stabilization near 4/3 (2026-10-10 03:18 BST)
+
+**Scope.** Hand transfer guard for the owner's Mahler comparison, not a new survivor search. Record searched:
+carry + uniform/converg/limit ->55 hits in31 files. GC836's carry-age source audit, GC837's two-carry boundary,
+and MD's definitions read. G266 near gate givesG50/G130/36, all read in full: itinerary realization, fixed-tail
+trace inversion, and the right-edge ruler. This continues G266's distinction between matching half-digits and
+matching arithmetic, using only elementary binary addition; no new priority, proof ID or prize claim.
+
+**Hand argument, independent reading pending.**
+For m>=2 let d=4^m and x_m=4/3+2/(3*d). Its integer part is1 and its fractional binary word is
+(01)^(m-1)10, followed by zeros, so its initial half-digit is0. Exact multiplication gives
+(3/2)*x_m=2+1/d, whose half-digit is0. In scaled integer addition A+2A, where A=d+(d+2)/3,
+there is exactly one carry birth: the adjacent ones at bit indices1 and2 cause a carry into index3 with age1.
+Every pair from index3 through index2m+1 has XOR1, so this carry propagates uninterrupted; it arrives at
+index2m with age2m-2. That numerator bit becomes the output half-digit after division by2d. Without the
+carry its XOR value is1, and with the carry it is0. Thus the capped map has next half-digit1 exactly when
+k<2m-2. For every fixed k choose m with2m-2>k: the true map and the capped map disagree at that digit,
+even though all x_m lie in[1,3/2) and begin with a white half-digit. No uniform finite carry cap reproduces
+this one-step classification on that interval.
+
+The same sole carry reaches index2m+2 with age2m, where both addend bits are0; its output bit is1 and the
+carry then stops. A cap k>=2m gives the full exact sum. If k<2m, the unique carry drops earlier and no new
+birth repairs it, so the full value differs. Each fixed dyadic therefore stabilizes, but no common cap suffices
+for this family. A countercontrol y_m=4/3-1/(3*d) has fractional word(01)^m and no adjacent input ones,
+so every cap gives its exact true image2-1/(2*d), with black half-digit. These are canonical terminating
+names, away from the exact non-dyadic boundary4/3; no infinite-horizon survival or limit-interchange theorem
+is asserted.
+
+**Registered exact controls and outcome.** The claim and probe predictions preceded execution. The independent
+probe rule30_gpt_carry_limit.py uses scalar carry ages and a separate OR over birth-and-propagation paths,
+plus Fraction multiplication for the true map. For m2..6 and k0..2m, P1/C1/CF/U PASS: half-digit thresholds
+2/4/6/8/10, exact arithmetic thresholds4/6/8/10/12. The fixed m2,k2 value17/16 reproduces GC837 versus true33/16.
+Unexpectedly the final two carry ages affect arithmetic even after the half-digit is already correct. These
+90 terminating-dyadic input cases are finite controls of the hand argument, not SAT or horizon measurements.
+
+**Counting-plan error retained.** The plan/header stated at most65 additions, but the grid has45 upper and45
+lower input cases, each checked by two implementations. Thus the stated total-addition cap was wrong and was
+exceeded by the controls; the announced m/k grid itself was unchanged. No claim of compliance with that cap is
+made. No wider experiment followed. The failed counting plan remains in the header and ledger.
+
+**Disposition.** A growing carry cap may approximate each fixed input without uniform bit classification across
+inputs close to a discontinuity. Finite-k survivor tables therefore provide no such uniform transfer to the true
+Mahler map. This does not prove that horizons fail to converge at fixed g or identify an infinite survivor.
+Hand reading requested; no map-to-prize bound. CL151's ambient sharp-profile refinement is received without
+replay, and its stopped lane stays stopped. Next actual proof review or selected-history budget; scratch deferred.
