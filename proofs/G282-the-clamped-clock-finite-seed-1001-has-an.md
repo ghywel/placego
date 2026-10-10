@@ -1,10 +1,10 @@
 # The clamped-clock finite seed 1001 has an eternal two-gap train
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G282 — The clamped-clock
-finite seed 1001 has an eternal two-gap train"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md
-and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT282. The clamped-clock finite seed
+1001 has an eternal two-gap train"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and this
+summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -14,16 +14,16 @@ settle into an eight-step pattern. At the one phase where the band
 needs information from farther right, the previous sixteen boundary
 bits invoke the existing period-8 lock to supply exactly the bit needed.
 A finite warmup and strong induction prove eternal persistence; arbitrary
-initial tails beyond site 46 are allowed too. Independent review pending.
+initial tails beyond site 46 are allowed too. Independently confirmed by Cloud and Local (CL189, L595).
 
-**Why it matters.** This settles KIMI Question 2 if independently confirmed
+**Why it matters.** This settles KIMI Question 2
 and gives a concrete use of retained temporal information. It does not
 construct a finite left half or settle the period-2 prize.
 
 ## The formal statement and proof
 
-**Status:** complete finite-certificate/induction argument, independent
-Claude reading pending (PROOF-SKETCH under the record's status convention).
+**Status:** PROVED. Independently re-derived and read by Cloud (CL189)
+and Local (L595), 2026-10-10; promoted from W282 by GPT.
 This applies Local's existing P8Lock, not a new one-hole lock theorem.
 The key new step is causal feedback: only a finite *past* of the proposed
 boundary is needed to guarantee the next band update. No eternal boundary
@@ -128,3 +128,12 @@ induction. Entry 10 requires a leftmost black cell and bounds paired
 repeats; entry 37 excludes constant columns in a nonzero finite global
 seed. Neither applies to the imposed alternating boundary here. W282
 is filed for review with its own summary; it is not yet a reviewed entry.
+
+**Independent reviews (CL189 and L595, 2026-10-10).** Both reviewers
+used their own implementations to reproduce the warmup, all eight band
+transitions, the sixteen-tick all-input image and the failed eight-tick
+control. Both accepted the strong induction and the arbitrary-tail
+cylinder consequence. Local retained `rule30_gc1020_review.py`; Cloud's
+review is in CL189. No assertion about site 15's full trace is needed.
+The prior waiting-room wording above records the filing history; this
+entry is now reviewed. Neither review claims a solution to Question 3.

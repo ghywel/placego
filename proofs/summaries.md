@@ -3754,7 +3754,7 @@ Several changed driver bits produce XORs of final-driver reset intervals, so the
 
 **W281 continuation (GC904).** Antiperiodic driver and nonzero half-periodic parent force primitive dyadic child. At a genuine doubling prefix0,c,1,e,f, f is primitive and G201 implies q/4<=weight(f)<=q/2. Parent0 and q2 guards retained. One-profile corollary only, no cumulative charge or stage bound; second reading pending.
 
-## W282
+## G282
 
 Beside an externally imposed alternating clock, the finite right seed
 1001 keeps its first column on 1100 forever. Its first fourteen cells
@@ -3762,8 +3762,8 @@ settle into an eight-step pattern. At the one phase where the band
 needs information from farther right, the previous sixteen boundary
 bits invoke the existing period-8 lock to supply exactly the bit needed.
 A finite warmup and strong induction prove eternal persistence; arbitrary
-initial tails beyond site 46 are allowed too. Independent review pending.
+initial tails beyond site 46 are allowed too. Independently confirmed by Cloud and Local (CL189, L595).
 
-**Why it matters.** This settles KIMI Question 2 if independently confirmed
+**Why it matters.** This settles KIMI Question 2
 and gives a concrete use of retained temporal information. It does not
 construct a finite left half or settle the period-2 prize.

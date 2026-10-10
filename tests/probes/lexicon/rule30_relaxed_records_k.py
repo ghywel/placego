@@ -671,6 +671,41 @@ def main():
             f.write('%s %d %d %d %s %d %d %.1f %s END\n' % (tag, d, L, ph, verdict, it, len(load_cuts(ph, K)),
                                                           time.time() - t00, time.strftime('%H:%M')))
         print('cut d=%d L=%d phase %d: %s after %d cut round(s), %.0f s' % (d, L, ph, verdict, it, time.time() - t00))
+    elif cmd == 'cert':                                      # L595: a relaxed UNSAT checked by cake_lpr
+        tag, d, L, ph = sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5])
+        forb = load_forbidden(tag) + (load_cuts(ph, int(sys.argv[6])) if len(sys.argv) > 6 else [])
+        inst = Relaxed(d, L, ph, forb)
+        base = os.path.join(DIR, 'cert_d%d_L%d_p%d_%s' % (d, L, ph, tag))
+        text = 'p cnf %d %d\n' % (inst.nv, len(inst.cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in inst.cl)
+        open(base + '.cnf', 'w').write(text)
+        import hashlib
+        sha = hashlib.sha256(text.encode()).hexdigest()[:16]
+        t0 = time.time()
+        k = subprocess.run([KISSAT, '-q', '-f', '--no-binary', base + '.cnf', base + '.drat'], capture_output=True)
+        t1 = time.time()
+        verdict, stage = 'UNKNOWN%d' % k.returncode, 'kissat'
+        if k.returncode == 10:
+            verdict = 'SAT'
+        elif k.returncode == 20:
+            v = subprocess.run(['drat-trim', base + '.cnf', base + '.drat', '-L', base + '.lrat', '-t', '400000'],
+                               capture_output=True, text=True)
+            stage = 'drat-trim'
+            verdict = 'ELAB-FAILED'
+            if 's VERIFIED' in [z.strip() for z in v.stdout.splitlines()]:
+                os.unlink(base + '.drat')
+                c = subprocess.run([os.path.expanduser('~/np-build/cake_lpr/cake_lpr'), '--CML_HEAP_SIZE=6000',
+                                    '--CML_STACK_SIZE=2000', base + '.cnf', base + '.lrat'], capture_output=True, text=True)
+                stage = 'cake'
+                verdict = 'VERIFIED-UNSAT' if 's VERIFIED UNSAT' in c.stdout else 'CAKE-FAILED'
+        size = os.path.getsize(base + '.lrat') if os.path.exists(base + '.lrat') else 0
+        with open(os.path.join(DIR, 'rlk_cert.ck'), 'a') as f:
+            f.write('%s %d %d %d %d %s %s %s %d %.1f %.1f %s END\n' % (tag, d, L, ph, len(forb), sha, verdict, stage, size,
+                                                                     t1 - t0, time.time() - t1, time.strftime('%H:%M')))
+        print('cert d=%d L=%d phase %d (%s, %d words): %s at %s, cnf %s, LRAT %d bytes, solve %.0f s, check %.0f s' % (
+            d, L, ph, tag, len(forb), verdict, stage, sha, size, t1 - t0, time.time() - t1))
+        for e in ('.drat', '.lrat'):
+            if verdict == 'VERIFIED-UNSAT' and os.path.exists(base + e):
+                os.unlink(base + e)
     elif cmd == 'probe':                                     # one relaxed call per (depth, phase), for TR's depths
         tag, L = sys.argv[2], int(sys.argv[3])
         tag1 = sys.argv[4]                                     # the phase-1 list's tag (L1 c L, so tag is valid too)

@@ -97,3 +97,7 @@ Its causal sixteen-tick conclusion closes a strong induction after a
 finite warmup. `tests/probes/lexicon/rule30_train_p8_closure.py` replays
 all finite premises. This proves the specified claim if the argument
 is confirmed; it does not resolve Question 3.
+
+**Confirmed, 2026-10-10:** Cloud (CL189) and Local (L595) independently
+reproduced the finite premises and accepted the induction. Question 2
+is PROVED, filed as reviewed entry G282 in PROOFS.md. Question 3 is open.

@@ -25907,3 +25907,13 @@ pulse cannot be assumed to supply its counterexamples. CL188 received:
 GC1018 is independently checked, GC1019's equivalence is hand-accepted;
 GC1017's independently checked finite instance is not itself a review
 of the all-length proof. TR's capped deep calls remain UNKNOWN.
+
+GC1020 review receipt, 2026-10-10: CL189 and L595 independently
+reproduce every finite premise and accept the causal induction and
+arbitrary-tail consequence. Question 2 is now PROVED; W282 promoted
+to reviewed G282. The same three near-entry comparisons were read
+before promotion; no new theorem beyond GC1020. Scope clarification
+for CL189: failure of sampled-window closures does not establish that
+no finite spatial invariant can carry the correlation. GC1020 proves
+sufficiency of temporal information, not necessity of that representation.
+Question 3 remains open.
