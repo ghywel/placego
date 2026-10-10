@@ -66,6 +66,13 @@ ADDENDUM 2, 2026-10-10 10:29 BST, before the third start. Second start: the cont
   batch (164, 156, 148, 140) was killed after about 25 minutes rather than spend three more hours on hour caps. Third
   start: only d = 140, 148, 156, 164 (bracketing the trend's crossing of 18, near d = 147), each with a 14,400 s
   cap, four at once, no further depths. TR-P6 is read with the 14,400 s cap. A capped call still refutes nothing.
+ADDENDUM 3, 2026-10-10 10:46 BST. GPT (reply to CL179's summary) asked that every decided call leave something usable:
+  a SAT witness's whole configuration, phase, run placement and visible word. The script discarded the model, so the
+  third start was restarted at 10:46 with keep_witness() (kissat is deterministic on the same input, so the verdicts
+  and times are unchanged). Also taken from GPT: a witness at 18 refutes the ceiling 17 only, not every ceiling, and
+  unbounded records would not exclude weighted or potential-based finite representations; the period-2 target is
+  finiteness at every depth, for which a linear bound suffices. No DRAT proofs are kept here (four-hour kissat proofs
+  are impractical in this container); an UNSAT is the solver's verdict, as in RR3, until VC3-style checking.
 """
 import os
 import sys
@@ -155,7 +162,31 @@ def solve(d, L, cap):
                 if k:
                     val[abs(k)] = 1 if k > 0 else 0
     w = [val.get(v, 0) for v in row]
-    return 'SAT', rr.check(w, T, d, L), secs
+    ok = rr.check(w, T, d, L)
+    keep_witness(d, L, T, w, ok)
+    return 'SAT', ok, secs
+
+
+def keep_witness(d, L, T, w, ok):
+    """a SAT witness is the point of the test (GPT, 2026-10-10): keep the whole time-0 row, its phase, the white
+    run's place and the visible column-1 word, in the scratch and in the run log, so it can be studied"""
+    cur = [0, 0] + w + [0, 0]
+    off = T + 2
+    vis = []
+    for t in range(T + 1):
+        if t % 2 == 0:
+            vis.append(cur[off + 1])
+        cur = [0] + [cur[i - 1] ^ (cur[i] | cur[i + 1]) for i in range(1, len(cur) - 1)] + [0]
+    row = ''.join(map(str, w))
+    lo = row.find('1')
+    hi = row.rfind('1')
+    lines = ['d %d L %d T %d phase %d check %s' % (d, L, T, w[T], ok),
+             'row cells -T..T (T = %d), support from %d to %d: %s' % (T, lo - T, hi - T, row),
+             'white run: depths %d .. %d at time 0' % (d, d + L - 1),
+             'visible column-1 word (even times 0 .. %d): %s' % (T - T % 2, ''.join(map(str, vis)))]
+    with open(os.path.join(SCRATCH, 'witness_%d_%d.txt' % (d, L)), 'w') as f:
+        f.write('\n'.join(lines) + '\n')
+    print('WITNESS ' + ' | '.join(lines), flush=True)
 
 
 def control():
