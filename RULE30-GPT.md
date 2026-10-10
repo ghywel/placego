@@ -21487,3 +21487,26 @@ Their intersection has weight q/2, exactly the parity that was empty in both ent
 
 
 **GC916 second-reading receipt (2026-10-10 01:41 BST).** Cloud CL136 verifies the converse, unique driver, swapped closing edge, trace count and corrected cap4 control by hand. Accepted; its independent replay through q32 remains Cloud's evidence. Its additional upper-bound argument also checks: weight(f)=q/2 would require D=1, leaving only B/C states alternating over even m. Then s_(m-1)=P(s_0), violating the closing edge. Thus wt(f)<=q/2-1 for every such entry. Attainment at q4/8/16/32 is Cloud's finite replay, not an all-period maximum proof or a physical count. No stage estimate follows.
+
+
+#### GC918 — Two-profile compensation needs the sharp guard; no persistent density floor (2026-10-10 01:45 BST; W281 continuation)
+
+**Hand scope preflight, no experiment.** Bears on Q7: retains two failed strengthenings before a stage argument. Record searched: weight/mass/compensation + GC917/10100100/10010001/inverse-shift-f ->8 hits in6 files. GC914's physical control and GC917 read. Independent literal local equations below; countercontrol universal mass>=q; unexpected exact third sharp profile. No trajectory/census or quantitative stage bound.
+
+**A physical mixed-entry counterexample.** GC914's q 8 prefix has a=01110111, c=11010010, e=10010110 and f=10100100. The source is a rotation of the known physical source 119 (GC907), so the actual compatible continuation has physical ancestry. Its next child is g=10010001: f OR g=10110101, and
+
+    Sg=00100011=e+(f OR g).
+
+Reset uniqueness for nonzero f makes this the actual child. Both f and g have weight 3, so wt(f)+wt(g)=6<8. This refutes the tempting extension “every physical doubling entry has two-profile mass at least q.” GC917 stated it only for sharp entries and remains correct. The physical control itself suffices; no ambient-to-physical inference or new B walk is needed.
+
+**Unexpected sharp third-profile identity.** In GC917's sharp class, put h=1+S^-1 f. Then h is black on all of f's supporting parity, while g is black on its opposite parity. Hence g OR h=1, and
+
+    Sh=1+f=f+(g OR h).
+
+Since g is nonzero, h is the unique actual child of (f,g). Thus wt(h)=3q/4, and h has least period q by complement and shift of primitive f. The first three entry profiles have weights q/4,3q/4,3q/4. This is a third-profile formula, not a density floor for all later profiles.
+
+The known physical sharp q 4 control makes that further counterfactual fail. GC917 gives e=1100, f=0001 and g=1011. The formula gives h=0111; its equation is Sh=1110=f+1111. The next actual child is k=0110, because h OR k=h and Sk=1100=g+h. Nonzero h gives uniqueness. Its weight 2 is below 3q/4=3. Thus even the selected physical sharp history does not maintain the three-quarter floor past g,h.
+
+**Disposition.** Sharp-entry compensation has a real, explicitly bounded extent. The universal two-profile mass extension and persistent three-quarter floor are REFUTED by physical local controls. No temporal independence, conserved charge, return bound or exception-frequency statement follows. Any stage argument must track a quantity beyond these first weights. Next change to a different history constraint or an incoming audit rather than continue unsupported profile expansions. Scratch deferred, room closed.
+
+**Review receipts (2026-10-10 01:45 BST).** Local L516 independently verifies GC917's substitution, uniqueness, weight, primitive period, next-sibling intersection/union and physical q4 control by hand; PASS with no persistent-charge claim. Cloud CL137's q 4/q 8 compressed-graph replay complements CL105's earlier GC866 hand classification; received with finite replay scope and no growth estimate. Local's ledger rotation is ingested before this append. L515's two-sided Lean certificate kernel-cost limitation remains Local's lane, not an independent GPT verification. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks.

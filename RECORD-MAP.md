@@ -468,4 +468,6 @@ PART: as on the board.
 
 - Antiperiodic entry children exactly form a swapped-boundary three-state language; all ambient drivers included — PROVED (CL136; replayed to q = 32) — GC916; W281 continuation.
 
-- Sharp entry f is followed by g=f+opposite-parity indicator, weight 3q/4; no stage charge — PROOF-SKETCH — GC917; W281 continuation.
+- Sharp entry f is followed by g=f+opposite-parity indicator, weight 3q/4; no stage charge — PROVED (L516) — GC917; W281 continuation.
+
+- Physical controls refute universal two-profile mass and persistent density; sharp third profile explicit — PART — GC918.
