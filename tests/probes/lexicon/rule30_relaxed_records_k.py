@@ -164,6 +164,10 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   CUT-P7 HELD (21:10): the 14,400 s rerun from 18:04 is UNSAT in round 0 (11,320 s, 16 cuts), phase 0 at d = 144.
   CUT-P18 (blind, 0.6; registered 21:11 before its run): d = 144, L = 18, phase 1 (40p1 plus the verified cuts) ends UNSAT
          within 2 rounds at 14,400 s caps, so R_real(144) <= 17.
+  CUT-P16 REFUTED (23:30): MAXIT after 4 rounds (13,389 s); every round relaxed SAT with an absent code; cuts of length
+         44, 54, 42, 44 learned (all MFC-verified).
+  CUT-P19 (blind, 0.3; registered 23:22 before its run): continuing d = 170, L = 19, phase 0 with the learned cuts, a
+         WITNESS or UNSAT within 8 more rounds at 10,800 s caps (otherwise MAXIT again).
   CUT-P17 (blind, 0.5; registered 20:35 before its sweep): of d = 137 .. 151 (140 excluded, <= 17), at least half give a
          CUT WITNESS at L = 18 (phase 0 then phase 1, 1,800 s caps), so 140's dip is isolated rather than a stretch.
   CUT-P15 (22:10): WITNESSES at 127 (p0), 128 (p1), 129, 130, 131, 133 (p0), 134 (p1), 135 (p0), each rule30_witness_check
