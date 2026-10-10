@@ -53,6 +53,16 @@ EXTENSION SLC2 (registered 12:55, before its run): `continue` resumes from cuts4
   SLC2-P1 (blind, 0.5): after 6 more rounds the largest component entropy is below 0.10.
   SLC2-P2 (blind, 0.35): some branching component dies (no branching state left) within those 6 rounds.
   SLC2-P3 (the unexpected check, 0.4): at NS = 100 more than half of each round's sampled windows are absent.
+SLC2 OUTCOME, 2026-10-10 13:17 BST (M5, 2 jobs, about 20 minutes): P1 REFUTED; P2 HELD; P3 REFUTED.
+  - Rounds 7 .. 12 add 36 cuts of length 43 .. 97 (61 in all). Sampled windows absent: 16/24, 16/24, 4/12, 1/12, 6/12,
+    1/12 (one live component from round 8, so 12 a round).
+  - Largest component entropy: 0.1220, 0.1210, 0.1206, 0.1205, 0.1192, 0.1192 (rounds 7 .. 12; 173 states, 76
+    branching at the end). Not below 0.10 (P1). The small branching component dies in round 8 (P2).
+  - Zero-entropy cycles left after round 8 (unregistered observation, 13:06): gaps 3 (period 3), 3,3,3,3,5,5 (22)
+    and 5,5,3,3,3 (19). Their spelled powers, and the wheel's 5,5,5,5,3,5, are in L and L1 at length 60 and 90;
+    at 120 all are in except 5,5,3,3,3, so that cycle will be cut by a longer word.
+  - All 61 cuts VERIFIED-UNSAT by cake_lpr (MFC). Reading: GC1007's surplus is gone, and the large component
+    settles slowly near 0.12 under cuts to length 100. Whether longer cuts take it to 0 is open.
 """
 import os
 import random
