@@ -101,8 +101,8 @@ PART: as on the board.
   most 4, 2, 0, 3, 3, 2 white cells, j = 2..7 — COMPUTED — ZR, ZR2 (L236)
 - R_real 7..15 at d = 21..81 (RR, L247); decided to 97, at most 17 (RR2, L399) — COMPUTED — RRX, RRP replay
 - Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
-- R_real(97..107) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12, 14 (101 and 105 by the plateau law R(d+1) >= R(d) - 1,
-  and by the solver: 101 L 16 and 105 L 14 UNSAT; 107 L 15 UNSAT, M5); 108 >= 16, 109 >= 15; 108..120 running on the M5
+- R_real(97..108) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16 (101 and 105 by the plateau law R(d+1) >= R(d) - 1,
+  and by the solver: 101 L 16 and 105 L 14 UNSAT; 107 L 15 and 108 L 17 UNSAT, M5); 109 >= 15; 109..120 running on the M5
   (Local) — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3, rule30_cloud_rr3.py, "RR3 checkpoint"
   rows in CLOUD-LOCAL.md and its archives
 - A run's end needs the clock's first beats; words 11, 00000, 101001 fit the records to d = 19 — COMPUTED — RRX; RRL
