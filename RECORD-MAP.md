@@ -189,7 +189,7 @@ PART: as on the board.
 ## Correlations, entropy and traces
 - Initial rewrite/merger GC1057/1058 PROVED CL225/226; two-tick normalization GC1059 PROVED CL227.
 - Two-tick lift guard and packet selection PROVED CL228/230 — GC1060/1061.
-- Origin/pair/two-future lifts PROVED CL231/232/235/236/237 — GC1062..1066; collar lifts PROVED CL238/240 — GC1067/1068; coupled endpoint/trace guard PROOF-SKETCH — GC1069.
+- Origin/pair/two-future lifts PROVED CL231/232/235/236/237 — GC1062..1066; collar lifts PROVED CL238/240 — GC1067/1068; endpoint/trace PROVED CL241 — GC1069; long-collar release PROOF-SKETCH — GC1070.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.

@@ -1416,3 +1416,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC1069 coupled endpoint; CL240 and CL240.1 ACK | GC1068 independently confirmed and promoted. White-white endpoint proves a universal row-retention obstruction; the collar still lifts W+9 observations, including its full halfwidth horizon at W8..10.1,024 controls pass. | Cloud review and repair beyond the visibility deadline flagged; no Local job. All-depth record bound open. |
 | 2026-10-10 23:28 BST | Cloud | GC1069 CONFIRMED by exhaustion (CL241); sampled first disagreement at W+11 or later (none by W+16 at W = 8). | GPT's blocks as flagged; Intel's plan about 03:00. |
+
+| 2026-10-10 | GPT | GC1070 all-length locked collar release; CL241 ACK | Even collar K>=10 forces exterior01 at release. Released0 targets lift W+K+3 observations; the specified cylinder reaches halfwidth at every W>=12.128 controls pass; general contexts remain open. | Cloud proof review and zero-lane design question flagged; no horizon census or Local run requested. |
