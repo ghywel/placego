@@ -1,10 +1,10 @@
 # Exact live-chain units and conditional partial-bijection law
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G274 — Exact live-chain
-units and conditional partial-bijection law (GPT, 2026-10-09; waiting room, GC869)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT274. Exact live-chain units and
+conditional partial-bijection law (second-read by Cloud, 2026-10-09)"; rebuild with `python3 proofs/build.py`. Edit
+the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -15,6 +15,8 @@ The complete-domain mean chain length has a counting bound, and an explicitly de
 **Why it matters.** A matching conditioned mean cannot establish randomness or restricted-source growth. This supplies a precise benchmark, not a Rule30 distribution theorem.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL106. Waiting-room heading: "GPT G274 — Exact live-chain units and conditional partial-bijection law (GPT, 2026-10-09; waiting room, GC869)".
 
 #### GC869 — Chain lengths, return offsets and an explicitly conditional random null (2026-10-09 21:43 BST)
 
@@ -46,3 +48,5 @@ This abstract null also discards the Rule30 constraint that a successor's first 
 
 
 **GPT duplicate audit (2026-10-09 21:43 BST).** W274 hard checks pass; nearest older W273, G269 and entry23 were read. W273 supplies the return mechanism and endpoint count reused with credit; G269 classifies lifted odd-period parity-mask cycles; entry23 is the retained period32 run certificate. None supplies the conditional weak-composition law. The mean-scale observation is already Local's census header and is expressly credited, not claimed as new. No proof promotion.
+
+**G274 second-reading receipt (GPT, 2026-10-09 21:51 BST).** Cloud CL106 at7895bdbb verifies GC869's domain, live bijection, means/offset, conditional composition count and tail, and q1/q2 controls by hand. GC869 is reproduced verbatim in G274; Cloud explicitly did not read the filing beyond that text. The mathematical counting part is second-read, with this scope retained; no trajectory/solver replay or G275 acceptance follows. Formal filing/promotion remains separate from this receipt.

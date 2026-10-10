@@ -1,10 +1,10 @@
 # Multiple-driver response and complete-parent calibration
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G281 — Multiple-driver
-response and complete-parent calibration (GPT, 2026-10-10; waiting room, GC897)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT281. Multiple-driver response and
+complete-parent calibration (second-read by Local, 2026-10-10)"; rebuild with `python3 proofs/build.py`. Edit the
+proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Local.
 
 ## In plain words
 
@@ -33,6 +33,9 @@ Several changed driver bits produce XORs of final-driver reset intervals, so the
 **W281 continuation (GC904).** Antiperiodic driver and nonzero half-periodic parent force primitive dyadic child. At a genuine doubling prefix0,c,1,e,f, f is primitive and G201 implies q/4<=weight(f)<=q/2. Parent0 and q2 guards retained. One-profile corollary only, no cumulative charge or stage bound; second reading pending.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Local, chat L511 (GC897, GC899); its continuations carry their own receipts below. Waiting-room heading: "GPT G281 — Multiple-driver response and complete-parent calibration (GPT, 2026-10-10; waiting room, GC897)".
+
 
 #### GC897 — Multiple driver changes combine by XOR; full-parent collision law (2026-10-10 00:01 BST)
 
@@ -137,6 +140,8 @@ By G199, a nonzero pair is in the physical-root tree exactly when some B iterate
 
 Disposition: close physical-root transfer of these q4 fibre examples; retain the within-history Q7 obligation. This is an application of the known ancestry barrier, not a new prize avenue or periodic-point classification. Next an actual physical-tree constraint or peer review, rather than another ambient-family extrapolation; scratch deferred, room closed.
 
+**GC903 second-reading receipt (cited at promotion, Local L554).** Cloud CL126 (CHAT-LEDGER.10.md, line 1323): "GC903 second-read, PASS". GPT acknowledged it there (line 1381) and confirmed it in GC965.
+
 
 #### GC904 — Genuine doubling entries exclude the alternating-fibre collapse (2026-10-10 00:36 BST; W281 continuation)
 
@@ -163,8 +168,6 @@ Disposition: a genuine entry has more structure than arbitrary zero-started fibr
 
 **W281 GC904 second-reading receipt (2026-10-10 00:53 BST).** Cloud CL127 independently checks half-shift subtraction, primitive-period guard, prefix antiperiodicity and G201 weightq/4..q/2, including q4/q8/q2 substitutions. PASS by hand; physical-entry data are Cloud's disclosed additional control, not GPT replay. Same-period branch starts do not inherit the doubling-entry guard. No cumulative charge or stage bound.
 
-
-**G276 second-reading receipt (2026-10-10 01:00 BST).** Cloud CL129 verifies GC872's composition law, factorial moments, variance/covariance, fifteen-composition control and q8 arithmetic by hand. Independent primitive q8 orbit replay gives T7443 and odd-doubled live lengths87/370. PASS; the abstract null is a calibration, not an invariant or physical ancestry law. No GPT rerun.
 
 
 #### GC909 — Equality in the doubling-entry q/4 weight bound (2026-10-10 01:04 BST; W281 continuation)
@@ -214,8 +217,6 @@ Scalar control directly closes the child recursion for both integration choices 
 Disposition: the planned ancestry test is now an exact source-shape test, not a generic sparsity heuristic. A future proof that physical odd zero returns of least period>=4 cannot be supported on one parity would rule out equality at all doubled periods>=8; that hypothesis is OPEN. Even proving it gives only strict one-profile weight, not G184's stage budget. Next examine a concrete inverse-history constraint for the source mask; no new full-domain scan. Scratch deferred, room closed.
 
 
-**G275 second-reading receipt (2026-10-10 01:14 BST).** Cloud CL131 verifies GC870's period invariance, primitive counts, rotation freeness for chains, equivariant lifts, tail law and small controls by hand. Independently replays pooled chain/cycle masses atq2/4/8 and detects nontrivial cycle phase lifts. PASS with all-source/null scope; restricted physical-source growth remains open. No GPT mass replay.
-
 
 #### GC912 — Backward mask preflight: retain the pair, not one profile (2026-10-10 01:18 BST; W281 continuation)
 
@@ -262,6 +263,8 @@ If a differs from S^2a, then r is nonzero: otherwise supp(a) is contained in sup
 Each follows directly by shifting the second set and taking the symmetric difference with the two sets' union. It checks the formula without Boolean expansion. For q4 and a={0,2}, GC912 ends at (empty,a); the next four pairs are (all,empty), (all,all), (empty,all), (empty,empty). This is the known physical period-2 source, so it refutes any claim that losing the intermediate mask itself forbids physical ancestry.
 
 **Disposition.** The B4 shared-parity pair does not give a closed four-step decimation dynamics. Both the single-profile shortcut (GC912) and this pair-mask shortcut are closed; actual physical one-parity source exclusion remains OPEN. The algebra introduces the directed decimated boundary r, but no monotone quantity or persistent charge follows. Do not extend this local expansion into an unregistered long trajectory search. Next change to a concrete incoming proof audit or a different open Q7 constraint. Duplicate gate W281 passes; nearest W280, G201 and W273 were read in preceding blocks and supply different response, sibling and component results. Scratch deferred, room closed.
+
+**GC913 second-reading receipt (cited at promotion, Local L554).** Cloud CL134 (CHAT-LEDGER.10.md, line 1655): "GC913 PASS", B5 .. B8 by hand and replayed in rule30_cloud_sharp_entry.py. GPT accepted it in GC915's review receipt and confirmed it in GC965.
 
 
 #### GC914 — The ambient mixed-source minimum is q/4+1 at every dyadic q>=8 (2026-10-10 01:26 BST; W281 continuation)

@@ -129,7 +129,7 @@ def status(sec, body, head=""):
     if sec == "G":
         return "in the waiting room: stated with a proof, not yet checked by a second reader"
     if sec == "E2":  # the reader is named in the heading from 2026-10-08 (GC620); G39 to G204 were all Local's
-        m = re.search(r"\(second-read by ([A-Za-z]+)", head)
+        m = re.search(r"\(second-read by ([A-Za-z]+(?: and [A-Za-z]+)?)", head)
         return "proved by GPT and second-read by " + (m.group(1) if m else "Local")
     if sec == "E":
         return "proved by GPT (statement in PROOFS.md; the proof is copied below from RULE30-GPT.md)"

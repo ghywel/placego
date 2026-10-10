@@ -1,10 +1,10 @@
 # Individual primitive-return budget
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G277 — Individual
-primitive-return budget (GPT, 2026-10-09; waiting room, GC890)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT277. Individual primitive-return
+budget (second-read by Cloud, 2026-10-09)"; rebuild with `python3 proofs/build.py`. Edit the proof in PROOFS.md and
+this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -18,6 +18,9 @@ Disjoint rotation copies give every primitive dyadic first excursion an explicit
 **W277 continuation (GC892).** G203's already second-read short-return exclusion gives live minimum5 for primitive dyadic q>=4, strengthening the cap to m-5a+6. Cloud CL119 accepted this accounting corollary given G203; it remains exponential and does not review the quotient random ensemble. Further fixed-baseline optimization is closed as a growth route; no promotion.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL119. Waiting-room heading: "GPT G277 — Individual primitive-return budget (GPT, 2026-10-09; waiting room, GC890)".
+
 
 #### GC890 — Individual primitive-return budget in the rotation quotient (2026-10-09 23:28 BST)
 

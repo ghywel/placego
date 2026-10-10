@@ -11402,6 +11402,757 @@ p = 310. Other q = 310 orbits and the q = 155 template remain open.
 - Entry 38 is the finite-seed exclusion that G271 explains one-sidedly; it is cited, not restated.
 - Hard checks pass.
 
+### G.GPT273. Fixed-period zero-started return and complete endpoint interface (second-read by Cloud, 2026-10-10)
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL103 (GC864's return proof and bound, GC865's endpoint bijection), CL105 (GC866's component, period and count arguments) and CL174 (GC866's physical-root identification, by hand; CL137 checked it at q = 4 and 8). G199's source classification stays a classification, not a growth estimate. Waiting-room heading: "GPT G273 — Fixed-period zero-started return and complete endpoint interface (GPT, 2026-10-09; waiting room, GC864-GC865)".
+
+*Provenance:* GC864 and GC865, hand reasoning; existence agrees independently with Local L487. Coarse bound and endpoint theorem await second reading. Uses G7/G156/G158, no novelty claim for those mechanisms.
+
+#### GC864 — Every fixed-period zero-started excursion returns; the remaining question is quantitative (2026-10-09 21:17 BST)
+
+**Registered hand ancestry audit, review pending.** Prediction: unique backward ancestry forces a first zero return even for arbitrary zero-driver sources not reachable from G7's physical root. Countercontrol: GC863's ambient nonzero cycle has no zero anchor. Unexpected check: the all-zero integrated child stops immediately rather than supplying a live cycle. No computation or RW replay. Existing G7/G156's predecessor mechanism and G158's reset lemma suffice; this is an application of recorded prior art, not a new invariant or prize claim.
+
+**Statement.** Fix any common temporal period q>=1. Start at v_0=(a,0), choose a q-periodic child c when one exists, and stop at the first later pair whose second profile is zero. Every such excursion returns in finitely many edges. If c is nonzero, its return index r obeys the coarse bound
+
+    r <= (2^q-1)^2+2.
+
+No physical-root reachability assumption and no odd-half assumption are required. A source with no q-periodic integrated child has no excursion; it is not a nonreturning live path.
+
+**Proof.** For an edge (a,b)->(b,c), the temporal equation is S c=a XOR(b OR c). Thus every target has exactly one predecessor
+
+    H(b,c)=(S c XOR(b OR c),b).
+
+This is the same backward map as G7/G156, with letters renamed. Every live node has nonzero second profile and therefore exactly one q-periodic child, by reset uniqueness. Hence a path cannot terminate while its driver is nonzero.
+
+Suppose v_i=v_j before the first zero return, with 1<=i<j. Applying H exactly i times gives v_0=v_(j-i). The latter node has nonzero second profile because 1<=j-i<j precedes the first return, whereas v_0 has zero second profile. Contradiction. All live nodes are therefore distinct. There are only finitely many q-profile pairs, so an infinite live path is impossible and a zero return must occur.
+
+For the stated bound put N=2^q. The first live pair v_1=(0,c) has zero first profile. Every later live pair has both profiles nonzero: its first is the previous live driver. There are at most (N-1)^2 such pairs. Thus r-1<=1+(N-1)^2, proving the bound. This elementary bound is deliberately not advertised as sharp for larger q.
+
+**Independent controls and unexpected endpoint.** At q1, the excursion (0,0)->(0,1)->(1,1)->(1,0) returns at r3 and attains the displayed bound. Literal substitution verifies all three edges. If the selected child c=0, integration requires a=0, and v_1=(0,0) is already a return at r1. Continuing its fixed zero loop would violate the specified stopping rule. This is the unexpected endpoint guard.
+
+For the ambient q2 cycle (01,10)->(10,01)->(01,10), H sends each cycle vertex to the other. It cannot be reached by a finite zero-started live path: backward iteration from either vertex stays on that nonzero cycle forever. This supplies the countercontrol missing from an argument based on forward determinism alone. General finite deterministic systems without unique backward ancestry can feed a zero-started path into a nonzero cycle, so that hypothesis is essential.
+
+**Correction to GC863 and interpretation of RW.** GC863 correctly separates reset uniqueness alone from absorption, but its final identification of fixed-q return existence as substantive open work was premature. Adding the already recorded unique predecessor closes that qualitative question for every admissible zero-started excursion, including q32 and beyond. The two initial complementary paths for odd doubled sources return at the same depth by GC863's rotation argument. Consequently one rotated first-return class per source orbit is structural, not a conjecture to be established by a larger census. Different source orbits having distinct return depths is not implied.
+
+The bound at q32 is astronomical; this proof supplies no practical horizon, growth law, parity classification, graph-exit death, or SCC closure. Local's RW sample remains useful to measure depths and returned words and test stronger quantitative/closure predictions. It need not be interpreted as testing whether some admissible fixed-q excursion never returns. The physical first-zero tree and arbitrary zero-started excursions are different domains; only their shared backward-ancestry mechanism was used. No settling theorem or prize result follows.
+
+
+#### GC865 — The full fixed-q zero-return interface is bijective, but its parity census does not bound depths (2026-10-09 21:21 BST)
+
+**Registered hand continuation of GC864; review pending.** Predict ancestry makes different first excursions have different return words, and the complete source count then exhausts the nonzero return words. Countercontrol: omitting the zero-source excursion loses one endpoint. Unexpected check: literal q2 excursions have odd lengths but different returned-word parity. Read G158, G200 and G202 first; the overlap-parity shortcut is already closed and is not reopened. No experiment, RW replay, new literature claim or prize-board row.
+
+Let N=2^q, with all profiles represented in a fixed temporal phase. Include every zero-driver source (a,0) for which q-periodic integration exists, and distinguish its two initial children. Discard just the all-zero child from a=0, and stop every other excursion at its first later zero driver. By GC864 all these excursions return. Integration exists precisely for even total q-block parity of a. There are N/2 such sources, each with two children, so there are N-1 nontrivial excursions.
+
+**Endpoint uniqueness.** Suppose two excursions have the same return pair (w,0), at lengths r and s with r>=s. Applying the unique predecessor H exactly s times gives the second source at depth r-s of the first excursion. If r>s, this is an internal zero driver (strictly before r), contradicting first return. If r=s, both sources coincide, and backward reconstruction of every intermediate pair also identifies the initial child. Thus the excursions are identical. An endpoint w=0 is impossible: H(0,0)=(0,0), so its entire backward ancestry is zero, contrary to the nonzero first child. There are N-1 possible nonzero endpoint words. The injective map between two sets of size N-1 is therefore bijective.
+
+**What the parity count actually says.** In this complete fixed-q interface, exactly N/2 excursions return to odd-parity words and N/2-1 return to nonzero even-parity words. This is a global identity, not a distribution for physical-root-reachable sources or RC16's odd-doubled-source subset. It does not assign parity to an individual source, bound a return length, or prove reachability from the physical root. The compressed zero-driver graph has indegree exactly one at each nonzero word, no incoming edge at zero, outdegree two at each nonzero even-parity word, outdegree zero at odd-parity words, and outdegree one at zero after the discarded trivial child. These degree counts alone do not exclude components disconnected from the physical root.
+
+**Rotation classes and least periods.** H commutes with rotation. Hence the endpoint-injectivity argument also identifies two excursions whenever their endpoint words are temporal rotations: rotate one whole path and apply the same proof. Distinct initial excursion orbits therefore have distinct return-word orbits. This makes one distinct return class per odd-doubled source orbit structural, strengthening GC863's count clarification. It does not make their depths distinct. Moreover a temporal period of the endpoint pair propagates backward through H to the first child pair. Thus an excursion whose first child has least period q returns to a word of least period q; a period drop cannot hide a repeated orbit.
+
+**Independent literal q2 control and unexpected parity guard.** In temporal order, the zero source's nontrivial excursion is (00,00)->(00,11)->(11,11)->(11,00), with length3 and returned word11 of even parity. Source11 has initial children c=01 or10; each has the exact path (11,00)->(00,c)->(c,11)->(11,c)->(c,c)->(c,00), length5, returned word c of odd parity. Substitution uses S c=NOT c and verifies every edge. These three excursions exhaust the three nonzero endpoint words. The last two have different literal return words and equal lengths. All three lengths are odd, while endpoint parities differ at this same q. Therefore length parity does not determine endpoint parity even at fixed q, and complete endpoint coverage does not imply distinct lengths.
+
+If the source00 is omitted, only01 and10 are returned in this q2 control; endpoint11 is missing. This is the countercontrol to applying the global parity census to only the odd-doubled-source sample. The all-zero endpoint remains excluded, not counted as a fourth return.
+
+**Disposition.** The exact endpoint census is another consequence of the recorded integration/reset/backward mechanism. It narrows what a computational endpoint census can teach: depths, source-to-endpoint matching and root reachability carry information; endpoint completeness in the full fixed-q domain is structural. The attempted universal length-parity inference fails at q2. G200's cumulative-stage growth, individual return parity prediction in the restricted domain, and SCC closure remain open. Next useful step must retain the source-to-endpoint matching or a quantitative path invariant, rather than promote this global parity count into a growth estimate.
+
+
+**GPT filing audit (2026-10-09 21:22 BST).** The duplicate check passes for W273. Its three nearest older entries G203, G200 and G188 were read in full: they give overlap lower bounds, cumulative-stage telescoping and short-return exclusions. This entry instead uses finite backward ancestry for existence and a global endpoint bijection; it does not restate their conclusions. Its base mechanism is still G7/G156/G158, with no novelty claim. The first query used G273, which the waiting-room parser does not expose; rerunning with its actual W273 ID succeeds. No browser, TeX, run or proof promotion.
+
+
+#### GC866 — Zero-return cycles are outside the physical root component; qualitative return does not remove ancestry (2026-10-09 21:26 BST)
+
+**Registered hand graph audit; review pending.** Predict GC865's compressed interface has a root tree and disjoint cycle components, with constant least period and even least-block parity on each cycle. Countercontrol: degree balance alone cannot force connectivity. Unexpected check: GC864's universal first return is compatible with G199's nonabsorbing backward ancestry. No graph enumeration or RW run; existing G7/G158/G199 and pending GC864-GC865 are the dependencies. This is a graph-theoretic consequence, not a new quantitative route.
+
+At fixed q, make one vertex for each q-bit word a. A directed edge a->w is each nontrivial first excursion (a,0)->...->(w,0); discard only the all-zero initial child. GC865 gives indegree0 at zero and indegree1 everywhere else. Following the unique incoming edge backwards therefore either ends at zero or enters a directed cycle. Any two vertices in a weak component have the same backward endpoint or cycle, because an edge links a vertex to its unique predecessor. Thus the zero component is an outward directed tree; every other weak component contains exactly one directed cycle with outward trees attached. No directed path can enter that cycle from outside it, since every cycle vertex has already used its sole incoming edge.
+
+The zero component is exactly the compressed physical-root zero-driver tree: its first edge expands the nontrivial path from (0,0) through (0,1), the G7 root, to its next zero. Subsequent compressed edges expand compatible paths with that ancestry. Conversely every physical-root zero-driver node is reached by contracting its successive first excursions. Every other component is outside the backward basin of (0,0). This proves connectivity classification, not a method for deciding a given large word's component without reconstructing ancestry.
+
+**Least periods on a cycle.** Let nonzero a have least temporal period d. Integration yields a first child of least period d when a's d-block has even parity, and least period2d when its d-block has odd parity (the latter requires2d dividing q). Reset continuation preserves that child's period as an upper bound. Any period of a later pair propagates backward through H, so the returned word has exactly the first child's least period. Consequently every compressed edge either keeps the source's least period or doubles it. Around a directed cycle no period can increase, so every cycle edge keeps a common least period d and every source on it has even parity in its own d-block. Cap-q parity alone would miss this distinction for repeated odd blocks.
+
+**Component count, with an independent abstract guard.** In the zero component let E count nonzero even-cap-parity vertices and O count odd-cap-parity vertices. Its edge count is1+2E and its vertex count is1+E+O; the tree identity gives O=E+1. In a cycle component the edge and vertex counts agree, giving O=E. Thus the global excess of one odd endpoint belongs to the root component but does not exclude additional cycle components.
+
+For an abstract eight-vertex control, take root0->e0 and e0->o0,o1, plus e1->e2,o2 and e2->e1,o3. Nonroot indegrees are one, the three e vertices have outdegree two, the four o vertices have outdegree zero, and root outdegree is one. The same global counts as q3 coexist with a disconnected two-cycle. This is an abstract degree control, not a claimed Rule30 graph; it refutes inferring root connectivity from those counts.
+
+**Unexpected actual scope reconciliation.** Reviewed G199's cap8 source a=10110100 is outside the physical-root backward basin, although it has even cap parity and admits nontrivial zero excursions. By the compressed graph classification it belongs to a cycle component, possibly in an outward tree rather than on the cycle itself. There is therefore a compressed cycle somewhere in that component; no cycle word, period or length was computed here. Every individual first excursion still returns by GC864. Following the unique predecessors of successive zero-driver nodes never reaches the all-zero pair. These statements coexist: first return to a zero driver and backward absorption at the all-zero pair are different events.
+
+**Disposition.** The compressed graph exposes rather than removes G199's missing ancestry. Fixed-q interface cycles outside the root tree cannot refute physical-root settling; their existence also does not invalidate universal first-return existence. This compressed source graph is not G190's paired-window graph at fixed return distance, so its cycles do not contradict QX's named SCC closures. Root-component growth still needs quantitative path or matching information. Stop connectivity/degree-count reformulations as a growth strategy; next choose a concrete quantitative subclaim or a requested proof audit. No prize-board promotion or new computation.
+
+**GPT continuation duplicate audit (2026-10-09 21:27 BST).** Adding GC866 changes W273's nearest neighbours to G198, G191 and G190. All three were read in full: their fixed-return paired-window graphs evolve temporal windows and permit recurrent branching; this compressed graph evolves whole zero-driver sources through spatial excursions and has indegree one. No statement about those window SCCs follows from this component classification. The continuation reconciles reviewed G199 with GC864, rather than improving G191's absolute-delay or main-line normalized-growth bounds. No duplicate paragraph or heading found.
+
+**Partial second reading received (GPT, 2026-10-09 21:38 BST).** Cloud CL103 atc111e308 verifies GC864's return proof and bound and GC865's endpoint bijection and controls by hand, without computation replay. Those two parts are second-read. The subsequent GC866 component continuation has not been second-read; this combined entry therefore remains in the waiting room. GC867 separately accepts Local L489's Lean statement match, with compiler verification explicitly Local's evidence, not an independent GPT compilation.
+
+**G273 additional review receipt (GPT, 2026-10-09 21:47 BST).** CL105 at87ae6f5c accepts GC866's component, period and count arguments by hand; it explicitly does not independently re-derive physical-root identification or G199's source. This scope is preserved. G274 and G275 remain unreviewed; no waiting-room promotion performed here.
+
+
+### G.GPT274. Exact live-chain units and conditional partial-bijection law (second-read by Cloud, 2026-10-09)
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL106. Waiting-room heading: "GPT G274 — Exact live-chain units and conditional partial-bijection law (GPT, 2026-10-09; waiting room, GC869)".
+
+#### GC869 — Chain lengths, return offsets and an explicitly conditional random null (2026-10-09 21:43 BST)
+
+**Registered hand audit; second reading pending.** Record searched: partial permutation -> one hit, the RC/RW census header; chain states -> same header. Local already records the partial-permutation decomposition, start count and mean-chain bound. This entry sharpens units and specifies a null; it does not claim discovery of that mechanism. Predict the mean is structural, while a uniform partial-bijection null conditional on chain mass is a uniform weak composition after removing two endpoints per chain. Countercontrol: conditioning on chain mass fixes the mean and cannot test randomness. Independent q1/q2 controls and the unexpected restricted-source mean check below. No random draw, trajectory replay, literature claim or prize-board expansion.
+
+**Exact complete-domain count and units.** Write N=2^q. The live domain V consists of (x,y) with y nonzero, so M=|V|=N(N-1), rather than N^2. By the reset existence/uniqueness argument, each live pair has one child. Its successor leaves V precisely when the child is zero, which in the cyclic equation means x=y. Thus B={(w,w): w nonzero} is the terminal set, of size s=N-1. By unique predecessor H, precisely A={(0,c): c nonzero} has no live predecessor. A and B are disjoint. The live transition is a bijection V\B -> V\A: injectivity is H, and the two sets both have (N-1)^2 elements.
+
+Consequently V decomposes into s disjoint directed chains from A to B, and directed cycles. If L_i counts live vertices on chain i, including both its start and terminal, and S is total live chain mass, then sum L_i=S<=M and mean L=S/s<=N. The original excursion begins one edge earlier at (a,0) and stops one edge later at (w,0). A chain with L vertices therefore has return depth r=L+1; its complete-source mean r is at most N+1. The correspondence to admissible excursions is bijective: a first child c determines a=S c XOR c, and all nonzero c occur.
+
+Local's reported q4 figures S=226, s=15 give live mean226/15, with return mean241/15; q8 figures S=59770, s=255 give live mean59770/255, with return mean60025/255. These arithmetic conversions use reported exhaustive counts, not GPT reruns. The published rounded means15.1 and234.4 match live-node lengths. Local's bound N^2/(N-1) is valid and slightly looser than the exact N. Neither is an individual-path bound.
+
+**Specified abstract null, not an identification of the earlier random split.** Fix M labelled vertices and disjoint labelled sets A and B of size s. Choose uniformly a bijection f:V\B -> V\A. Its graph again consists of s chains and cycles. Condition on total chain mass S, where 2s<=S<=M, and set K=S-2s. Order chains by their labelled starts. Then L_i=k_i+2 with k_i>=0 and sum k_i=K.
+
+Each fixed weak composition (k_1,...,k_s) is realized by exactly binom(M-2s,K) K! s! (M-S)! bijections. Choose the K intermediate chain vertices from V\(A union B), put them in ordered positions along the chains (K!), match the starts to terminals (s!), and freely permute the remaining M-S vertices into cycles. Conversely every bijection supplies these choices uniquely. The count is independent of the composition, so the conditional k-vector is uniform over binom(K+s-1,s-1) weak compositions.
+
+For s>=2 and integer 0<=t<=K this gives
+
+P(L_1>=2+t | S) = binom(K-t+s-1,s-1) / binom(K+s-1,s-1).
+
+The probability is zero for t>K. Exchangeability and the fixed sum give E[L_i|S]=S/s. For s=1 there is one chain, deterministically L_1=S. This is an exact counting theorem for the defined ensemble, not a theorem that Rule30 samples that ensemble.
+
+**Independent literal controls.** At q1, V has two vertices (0,1),(1,1), forming one chain: L=2 and r=3. At q2, GC865's literal paths have live lengths2,4,4 and return depths3,5,5. Their ten live chain vertices leave the two-cycle (01,10)<->(10,01), giving M=12, s=3, S=10, K=4. The null has binom(6,2)=15 equally likely ordered compositions. The observed length vector(2,4,4) corresponds to k=(0,2,2), one of the fifteen vectors. Its one-chain tail at L>=4 is binom(4,2)/binom(6,2)=2/5, directly checked by the six triples with k_1>=2. There can be no one-vertex chain because starts and terminals are disjoint. A uniform positive composition of S, allowing L=1, is a different null. The earlier header does not specify its random-split algorithm, so its law is not inferred here.
+
+**Unexpected domain guard and failure retained.** The reported q16 odd-doubled-source mean around72000 exceeds N=65536 without contradicting mean L<=N: that bound averages all N-1 nonzero first children, whereas the census selects a restricted set of initial children. A subset mean need not obey the full-domain bound. Similarly, a fixed-sum null's matching mean is automatic and cannot support the randomness analogy. The observed q8 maximum667 versus one random maximum1656 remains descriptive; a lighter-tail claim needs a defined statistic and calibrated ensemble, not one draw. No new random test is proposed or run here.
+
+This abstract null also discards the Rule30 constraint that a successor's first coordinate is the preceding second coordinate, and discards rotation equivariance. Any rejection would distinguish Rule30 from this particular ensemble, without proving individual growth or the prize statement. Even within the null, all K intermediate vertices can occupy one chain, so an average bound supplies no per-chain bound. This is an abstract countercontrol, not a claimed realizable Rule30 path.
+
+**Disposition.** The complete-domain mean scale is already explained by Local's counting observation. The new conditional law makes a future comparison reviewable, but neither the mean nor an exponential-looking histogram proves restricted rooted growth. Next useful mathematical target is information in source-to-length matching, retained after controlling for total mass and rotations. Leave Local's running census and Cloud's one-hole construction in their lanes; no expensive experiment requested.
+
+
+**GPT duplicate audit (2026-10-09 21:43 BST).** W274 hard checks pass; nearest older W273, G269 and entry23 were read. W273 supplies the return mechanism and endpoint count reused with credit; G269 classifies lifted odd-period parity-mask cycles; entry23 is the retained period32 run certificate. None supplies the conditional weak-composition law. The mean-scale observation is already Local's census header and is expressly credited, not claimed as new. No proof promotion.
+
+**G274 second-reading receipt (GPT, 2026-10-09 21:51 BST).** Cloud CL106 at7895bdbb verifies GC869's domain, live bijection, means/offset, conditional composition count and tail, and q1/q2 controls by hand. GC869 is reproduced verbatim in G274; Cloud explicitly did not read the filing beyond that text. The mathematical counting part is second-read, with this scope retained; no trajectory/solver replay or G275 acceptance follows. Formal filing/promotion remains separate from this receipt.
+
+
+### G.GPT275. Primitive chain strata and rotation-equivariant conditional null (second-read by Cloud, 2026-10-10)
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL131. Waiting-room heading: "GPT G275 — Primitive chain strata and rotation-equivariant conditional null (GPT, 2026-10-09; waiting room, GC870)".
+
+#### GC870 — Primitive-period chain strata and a rotation-respecting null (2026-10-09 21:45 BST)
+
+**Registered hand continuation; second reading pending.** Record searched: rotation + excursion ->19 hits in8 files, including GC863/GC865/G273; targeted primitive-chain search in GPT and the census source finds no matching result. Predict exact pair period is invariant along live edges, so the cap-q mean can be separated into primitive periods and the GC869 null can respect rotations. Countercontrol: pooled cap-q lengths contain smaller-period components. Independent q2 control; unexpected check: reported q4/q8 chain masses subtract and divide exactly by q. No enumeration, random draw or trajectory replay. Reset uniqueness, H and rotation equivariance are existing mechanisms, not new claims.
+
+**Period invariance.** For a live edge (x,y)->(y,c), let d be the least common period of x,y. Since y is nonzero, reset uniqueness supplies a unique d-periodic child; lifting it to cap q gives the unique q-periodic child. Thus the target pair's period divides d. Conversely H reconstructs the source from the target by shift and bitwise operations, so the source period divides the target period. They agree. This includes an edge ending at c=0: then x=y and the target is (y,0). Hence every chain and every live cycle stays in one exact pair-period stratum. A chain starting at (0,c) has that stratum equal to the least period of c.
+
+Restrict now to dyadic q>=2. Every proper divisor of q divides q/2, so all nonprimitive live pairs are precisely lifts of the cap-(q/2) domain. Write N=2^q and h=2^(q/2), so h^2=N. The primitive live mass and primitive start count are
+
+M_q=N(N-1)-h(h-1),   P_q=N-h.
+
+Terminal count is also P_q. Therefore the full primitive-source mean live length is at most M_q/P_q=N+h-1, and the corresponding mean original return depth is at most N+h. These means average all primitive first children, not just the odd-doubled-source subset. For q1, separately M_1=2 and P_1=1. The primitive-stratum bound can exceed GC869's pooled N bound without contradiction: a stratum and the pooled domain have different measures.
+
+**Rotation quotient.** Primitive pair states have free temporal rotation orbits of size q. The transition and H commute with rotation. Their quotient is therefore a partial bijection on m=M_q/q state orbits, with a=P_q/q start orbits and a terminal orbits. A chain cannot meet a temporal rotation of itself at a different depth: unique backward iteration would place one of the two zero-first-coordinate starts strictly inside the other chain, contradicting its lack of a live predecessor. At equal depth a nontrivial stabilizing rotation contradicts primitive period. Thus each quotient chain of length L represents exactly q separate literal chains of that same length. Quotient cycles may lift with nontrivial phase shifts; no assertion that their literal cycle lengths equal quotient lengths is needed for the chain argument.
+
+**Defined rotation-respecting ensemble.** On this primitive free rotation set, take a uniformly random equivariant bijection between nonterminal and nonstart vertices. Each quotient bijection has exactly q^(m-a) equivariant lifts: independently choose a relative phase for every mapped domain orbit. Thus the induced quotient bijection is uniform. Conditional on quotient chain mass T, the quotient chain lengths minus two endpoints are uniform weak compositions of T-2a into a parts, by GC869. For a>=2, integer 0<=t<=T-2a,
+
+P(L_1>=2+t | T)=binom(T-2a-t+a-1,a-1)/binom(T-2a+a-1,a-1).
+
+For a=1 the sole chain length is T. This repairs automatic rotations and period mixing in the abstract null. It still discards the actual recurrence constraint on the successor's first coordinate; it is not a distribution theorem for Rule30. The earlier random split's algorithm remains unspecified, so no retrospective p-value or tail verdict follows.
+
+**Independent q2 control.** Its primitive live domain has M_2=12-2=10 vertices, P_2=4-2=2 starts, hence m=5 and a=1. GC865's two complementary chains each have live length4 and are rotations of each other; their quotient has four chain vertices and one cycle vertex. The actual primitive mean4 is below the bound N+h-1=5. The single quotient cycle vertex represents (01,10) and (10,01), whose actual transition is a half-turn. This explicitly shows why quotient cycle lengths need not equal literal lengths.
+
+**Unexpected arithmetic check on retained measurements.** Local reports total cap4 chain mass226 and cap8 mass59770. Cap2's hand-verified mass is10. By period invariance the primitive cap4 mass is226-10=216, divisible by4; its quotient has54 chain vertices out of57 and three chains, so primitive mean18 (bound19). Its cycle mass is14-2=12, also divisible by4. Primitive cap8 chain mass is59770-226=59544, divisible by8, yielding T=7443 chain vertices out of m=8130 and a=30 chains. The primitive mean is7443/30=248.1 (bound271); primitive cycle mass5510-14=5496 gives687 quotient vertices, and7443+687=8130. This checks consistency of previously reported measurements with the proof, not their independent execution.
+
+For comparison, the odd-doubled cap8 census has only two source orbits with return depths88 and371, hence mean live length228.5. It samples two of the thirty primitive start orbits, not all of them. At cap16 the full primitive bound is65791 for live length,65792 for return depth; the reported restricted mean around72000 still does not violate either full-domain bound.
+
+**Disposition.** Structural rotation copies and period mixing can be removed before any statistical comparison. The natural quotient null is now specified, but no individual lower bound or source-to-length relation has been proved. Treat the all-source mean explanation as settled counting and retain restricted-source growth as open. No new run requested; next seek a path statistic tied to source arithmetic rather than another equivalent graph description.
+
+
+**GPT duplicate audit (2026-10-09 21:46 BST).** W275 passes hard checks; nearest W274, G55 and W273 were read. W274 supplies the conditional composition count reused explicitly; W273 supplies reset/H and endpoint injection; G55 already proves cyclic-group cycle lifting, whose phase-shift caveat is reused rather than claimed anew. This continuation adds the primitive live-pair stratum count and the exact equal-multiplicity chain quotient, not a new symmetry mechanism. No proof promotion.
+
+**G275 second-reading receipt (2026-10-10 01:14 BST).** Cloud CL131 verifies GC870's period invariance, primitive counts, rotation freeness for chains, equivariant lifts, tail law and small controls by hand. Independently replays pooled chain/cycle masses atq2/4/8 and detects nontrivial cycle phase lifts. PASS with all-source/null scope; restricted physical-source growth remains open. No GPT mass replay.
+
+
+### G.GPT276. Conditional fixed-subset chain-mean law (second-read by Cloud, 2026-10-10)
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL129. Waiting-room heading: "GPT G276 — Conditional fixed-subset chain-mean law (GPT, 2026-10-09; waiting room, GC872)".
+
+#### GC872 — A fixed restricted-source mean under the quotient null (2026-10-09 21:55 BST)
+
+**Registered hand calibration; review pending.** Record searched: conditional + chain ->45 hits in15 files; relevant GC869/GC870, with no prior subset-variance formula in the targeted GPT search. Predict a fixed source subset has the full conditional expected mean, but substantial dependent spread. Countercontrol: selecting the subset after seeing lengths invalidates this law. Independent small composition enumeration; unexpected check: fixed-sum lengths have negative covariance. No random sample, CA trajectory, or new proposed computation. This is elementary counting applied to the already specified abstract null, not an arithmetic invariant of Rule30.
+
+In GC870's primitive rotation quotient let s be the number of start orbits, T the total chain mass, and K=T-2s. Conditional on T the excess lengths k_i=L_i-2 form a uniform weak composition of K into s parts. Fix in advance a subset J of j starts, with 1<=j<s, and put U=sum_(i in J) k_i. Then, for 0<=u<=K,
+
+P(U=u | T)=binom(u+j-1,j-1)*binom(K-u+s-j-1,s-j-1)/binom(K+s-1,s-1).
+
+The two factors independently count compositions inside and outside J. This depends on the subset's size, not its labels. When j=s, U=K deterministically.
+
+For completeness the first two falling-factorial moments follow from coefficient extraction. Summing (U)_r over compositions has generating function (j)^(r) z^r/(1-z)^(s+r), where (U)_r is falling and (j)^(r) rising. Divide its z^K coefficient by binom(K+s-1,s-1) to get E[(U)_r]=(j)^(r)(K)_r/(s)^(r). Thus E U=jK/s and E[U(U-1)]=j(j+1)K(K-1)/(s(s+1)). Subtracting the squared mean gives
+
+Var U=K*j*(s-j)*(K+s)/(s^2*(s+1)).
+
+The selected mean live length is bar L_J=2+U/j. Therefore E bar L_J=T/s and
+
+Var(bar L_J)=K*(s-j)*(K+s)/(j*s^2*(s+1)).
+
+**Independent literal composition control.** Take s=3,K=4,j=2. There are15 weak compositions. For U=0,1,2,3,4 there are respectively1,2,3,4,5 choices: the last coordinate is4-U and the first two split U in U+1 ways. Hence E U=40/15=8/3 and E U^2=130/15=26/3, giving variance14/9, exactly the formula. For j=s variance is zero. The same moment identities give Cov(k_i,k_l)=-K(K+s)/(s^2(s+1)) for i!=l, which checks that treating chain lengths as independent geometric variables misses the fixed-total dependence.
+
+**q8 application, conditional on the reported mass and the abstract null.** GC870 gives s=30,T=7443,K=7383. The odd-doubled sources select j=2 fixed primitive start orbits, with reported return depths88 and371, hence live lengths87 and370 and mean228.5. The conditional expected mean is7443/30=248.1. Its variance is exactly
+
+7383*28*7413/(2*30^2*31)=1532445012/55800 >25000.
+
+The discrepancy19.6 is therefore less than one eighth of a null standard deviation (which exceeds158). This is a scale comparison, not a p-value or evidence that Rule30 follows the null. The reported trajectory lengths/mass were not replayed. It shows why this two-orbit mean is a weak discriminator for the particular conditional ensemble; it does not refute an arithmetic relation detectable by another statistic.
+
+**Disposition.** A mean above or below the full-domain mean is possible for a fixed small subset, and its benchmark spread is now explicit. If source labels were selected after observing lengths, this fixed-J calculation would not apply. The null still omits the Rule30 successor-coordinate constraint. No prize lower bound, source-to-length invariant or physical-root growth theorem follows. Stop using the small-sample mean alone to support that route; next require a source-dependent statistic with a stated mechanism and independent control.
+
+
+**GPT duplicate audit (2026-10-09 21:56 BST).** W276 hard checks pass. Nearest W274/W275/G107 were read: the first two supply the credited composition null and rotation quotient, while G107 supplies a fair-row fresh-pivot trace law, not a chain subset law. This is an elementary conditional-moment refinement of W274/W275, not a new Rule30 mechanism. No promotion.
+
+**G276 second-reading receipt (2026-10-10 01:00 BST).** Cloud CL129 verifies GC872's composition law, factorial moments, variance/covariance, fifteen-composition control and q8 arithmetic by hand. Independent primitive q8 orbit replay gives T7443 and odd-doubled live lengths87/370. PASS; the abstract null is a calibration, not an invariant or physical ancestry law. No GPT rerun.
+
+
+### G.GPT277. Individual primitive-return budget (second-read by Cloud, 2026-10-09)
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL119. Waiting-room heading: "GPT G277 — Individual primitive-return budget (GPT, 2026-10-09; waiting room, GC890)".
+
+
+#### GC890 — Individual primitive-return budget in the rotation quotient (2026-10-09 23:28 BST)
+
+**Registered hand refinement; second reading pending.** Record searched: primitive + chain ->37 hits in9 files; GC869/GC870 and relevant GC872 read. Targeted individual/maximum-bound search finds no matching formula. Predict disjoint rotation-orbit chains improve the universal dyadic primitive return cap by an asymptotic factor q, while retaining its exponential order. Counterfactual: identifying distinct depths under rotation would invalidate this budget. Independent q2/q4/q8 arithmetic controls; unexpected check: quotient cycles can have rotational monodromy, whereas chains cannot. No trajectory, random draw or new census; existing reset/H and quotient arguments are credited to GC865/GC870.
+
+**Claim.** Let q>=2 be a power of two. Any zero-started fixed-q excursion whose nonzero first child has least temporal period q has original return depth
+
+r <= ((2^q-2^(q/2))*(2^q+2^(q/2)-3))/q + 3.
+
+Original depth counts the zero start as depth zero, its first live pair as depth one, and the next zero column as the return. This is an upper bound for every primitive source, including a physical rooted subset when its first child has exact period q. It is not a lower bound, a mean claim, or a bound on period-growth waiting across successive periods.
+
+**Proof.** Put N=2^q and h=2^(q/2). The live domain consists of pairs (x,y) with y nonzero. Unique reset and inverse reconstruction H preserve the pair's least temporal period along each live edge. For dyadic q, its nonprimitive states are exactly the lifts of cap q/2. The primitive live mass is therefore
+
+M=N*(N-1)-h*(h-1)=(N-h)*(N+h-1),
+
+and there are P=N-h primitive starts (0,c), equally many terminals (w,w). The live map is a bijection from nonterminal states to nonstart states; starts and terminals are disjoint. Thus this finite graph is disjoint source-to-terminal chains, each with at least two live vertices, and cycles.
+
+Rotation acts freely on primitive pairs, and the map and H commute with it. Each literal chain has q disjoint rotated copies of equal length. To check disjointness, a rotated copy meeting the chain at unequal depths would, by unique backward iteration from the meeting, put a start strictly inside the other chain; starts have no live predecessor. Meeting at equal depths would give a nontrivial rotation fixing a primitive pair. Both are impossible. Consequently the rotation quotient has m=M/q live vertices and a=P/q disjoint chains, with exactly the same live lengths as their literal lifts. Quotient cycles may have phase shifts on lifting; no equality of cycle lengths is used.
+
+Choose any one chain of live length L. The other a-1 chains reserve at least 2*(a-1) quotient vertices. Remaining cycles reserve a nonnegative number, so
+
+L <= m-2*(a-1).
+
+Return depth r=L+1, giving r<=m-2*a+3=(N-h)*(N+h-3)/q+3, as claimed. This is elementary endpoint reservation added to GC870's quotient, not a new dynamical mechanism.
+
+**Controls and unexpected check.** q2 gives m=5,a=1 and r<=6, above the hand-verified primitive returns r=5. The quotient's one-vertex cycle lifts to a two-vertex literal cycle: the proof correctly counts orbit vertices rather than requiring equal cycle lengths. q4 gives m=57,a=3 and r<=54; q8 gives m=8130,a=30 and r<=8073. These integer substitutions were independently calculated, without replaying the census. At q16 the cap is268419123; at q32 it is576460751766558723. The separate q1 hand chain has L=2,r=3; the displayed dyadic formula is not asserted there.
+
+**Limit.** Compared with GC864's universal cap (2^q-1)^2+2, this primitive bound saves an asymptotic factor q but still has order 2^(2q)/q. It does not approach the linear stage budget or prove Q7's required lower growth. In an abstract quotient partial bijection, one chain can occupy all vertices not reserved by the others, so counting alone cannot sharpen this budget without extra information about cycles or the recurrence. No claim that this extremum is realizable by Rule30. Next seek a compulsory excluded mass or source-dependent path constraint; the counting route by itself has reached its explicit limitation.
+
+
+**GPT duplicate audit (2026-10-09 23:30 BST).** W277 hard checks pass. Nearest W275/W274/W273 read in full: they supply primitive mass, the rotation quotient, two-endpoint chain minimum and existence/offset. This entry is their elementary individual endpoint-reservation corollary, explicitly credited; no new recurrence mechanism or proof promotion. Verbatim GC890 filed here; generated proof pages left to Local.
+
+
+#### GC892 — G203 already strengthens the reservation budget; counting-only route closed (2026-10-09 23:36 BST)
+
+**Registered preflight; no new mechanism.** Record searched: return + short-depth variants ->432 hits in134 files. Targeted G203 read in full, with relevant G188/G192 scope checks. Predict known short-return exclusions tighten GC890 without changing its exponential scale. Countercontrol: the actual primitive q2 return at r5 prevents using the q>=4 minimum there. Unexpected index check: reserve live length r-1, not return depth r. No trajectory, census or compiler run. This is a credited accounting corollary of second-read G203 and GC870's still-pending quotient, filed as a continuation of W277 rather than a new theorem number.
+
+**Correction of sharpness, not validity.** GC890's two-vertex minimum is valid but unnecessarily weak for primitive sources. G203 already proves nonconstant first children and endpoints have return depth r>=5. At r5, the forced prefix 0,c,1,e and final repeated pair imply 1=w XOR S w. Thus w is alternating of least period2; period conservation excludes r5 at primitive q>=4. Every primitive dyadic q>=4 chain therefore has r>=6, or live length L>=5. No claim that r6 is attained.
+
+Use GC890's m=(2^q-2^(q/2))*(2^q+2^(q/2)-1)/q and a=(2^q-2^(q/2))/q. Reserving five vertices for each of the other a-1 chains gives
+
+L<=m-5*(a-1),   r<=m-5*a+6.
+
+This tightens the q4 cap54 to48, and q8 cap8073 to7986. At q16 it gives268406886. These are integer substitutions, not replayed maxima. At q2 the minimum is instead L>=4 and the same accounting leaves r<=6 because a=1; the actual r5 remains compatible. Reserving six live vertices for q>=4 would misread r>=6 by one; the live/return offset is essential.
+
+**Closed counting-only direction.** Even the strengthened cap remains asymptotic to2^(2q)/q. Any fixed baseline b merely subtracts b*(a-1), of order2^q/q, from mass of order2^(2q)/q. Finite short-return exclusions alone cannot change that leading scale. In the abstract quotient a single chain can use all vertices left after reserving the others' minima; this does not claim a realizable Rule30 extremum. More baseline bookkeeping is not a new source-dependent or physical-root constraint and supplies no Q7 lower growth. Retain this bound as corrected accounting; close further optimization of this counting-only route unless compulsory mass on the leading scale or a dynamical constraint is supplied. Next useful work must bound actual source-dependent paths, not repackage total mass. Prize board remains Q7 PART.
+
+
+**GC892 filing check (2026-10-09 23:36 BST).** W277 hard checks pass; nearest W275/W274/W273 are unchanged and were read in full for GC890. G203, read in full this block, supplies the credited primitive short-return minimum. This is a continuation/correction of accounting sharpness, not a new proof unit or promotion; quotient second reading remains pending.
+
+
+**W277 second-reading receipt (GPT, 2026-10-09 23:47 BST).** Cloud CL119 atef34f951 verifies GC890's primitive mass, free rotation chain copies, individual budget and return offset by hand, and GC892's tightening conditional on already second-read G203 (not reread by Cloud). The accounting part is now second-read; no trajectory replay or lower-growth claim. It does not review GC870's conditional random ensemble or GC894. Formal promotion/pages remain separate.
+
+
+### G.GPT278. Boundary-only matching countermodel (second-read by Cloud, 2026-10-09)
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL120. Waiting-room heading: "GPT G278 — Boundary-only matching countermodel (GPT, 2026-10-09; waiting room, GC894)".
+
+
+#### GC894 — Exact boundary edges still allow arbitrary matching in the relaxed interface (2026-10-09 23:46 BST)
+
+**Registered hand preflight; second reading pending.** Record searched: (source/endpoint) + (matching/bijection) ->94 hits in27 files. Read G203's boundary proof and GC865/GC870 mechanisms; targeted search finds no five-boundary construction. Predict those exact boundary edges alone leave arbitrary rotation-equivariant endpoint matching in a partial-bijection relaxation. Countercontrol q2 has overlapping boundary sets. Unexpected omitted assumption is the middle bridge's successor-coordinate constraint. No actual trajectory, enumeration or random draw. This refines the known limitation of GC869's abstract null; it supplies no Rule30 example or prize claim.
+
+**Construction.** Fix dyadic q>=4. Let C be the set of words of least temporal period q, S the temporal shift and Delta=I XOR S. For each c in C and w in C, define five families of live pairs:
+
+A_c=(0,c), B_c=(c,1), C_c=(1,1 XOR S^(-1)c), D_w=(Delta w,w), E_w=(w,w).
+
+The symbols0 and1 here denote the constant q-words. Every displayed pair has nonzero driver and least pair period q. Each family has |C| distinct members. All five families are disjoint: A has first coordinate0 and the others do not (Delta w cannot vanish for primitive w); B has second coordinate1 while the other families do not; C has first coordinate1, which cannot equal w or Delta w for primitive w of period at least4; D=E would require S w=0. In particular Delta w=1 would force an alternating w of least period2, excluded here.
+
+Let pi:C->C be ANY bijection commuting with S. In the primitive live domain define the chains
+
+A_c -> B_c -> C_c -> D_(pi(c)) -> E_(pi(c)),
+
+with E terminal, and give every remaining primitive live pair an identity self-loop. This is a rotation-equivariant bijection from nonterminal pairs to nonstart pairs. Chains are disjoint by the five-family disjointness and pi's injectivity; complement states are identical domain/range leftovers, so their self-loops complete the bijection. Their period strata remain primitive. The first two arrows and D_w->E_w are genuine Rule30-compatible edges: S1=1, S(1 XOR S^(-1)c)=1 XOR c, and S w=Delta w XOR w. Also E_w has the genuine exit to(w,0). Thus the model retains the exact forced three-pair prefix and two-pair suffix, but its source-to-endpoint matching is the arbitrary pi. Each primitive word orbit is free of size q, so arbitrary permutations of the source orbits and arbitrary relative rotations define such pi.
+
+**Independent literal control and missing interior.** At q4 take pi the identity and c=w=1000 in increasing temporal order. The five pairs are(0000,1000),(1000,1111),(1111,1011),(1001,1000),(1000,1000), all distinct. The bridge from the third to fourth pair fails the actual successor-coordinate condition: the next pair's first word1001 is not the previous driver1011. Hence this is explicitly NOT a compatible Rule30 excursion or a claimed return at r6. It is a countermodel only to deductions using the preserved boundary facts, partial bijectivity, period and rotation constraints. The complement self-loops may likewise violate Rule30; they are included solely to complete that comparison model.
+
+At q2, c=w=01 gives C_c=(11,01)=D_w, because Delta w=11. The five-family construction fails exactly at the boundary overlap already identified in G203's r5 control. This is why q>=4 was imposed. It is not a defect repaired by counting the same vertex twice.
+
+**Disposition.** Boundary-only source-to-endpoint matching is CLOSED as a route to an additional invariant: every equivariant matching is represented in a comparison model satisfying these particular boundary constraints. The actual interior recurrence, including the successor-coordinate relation and the Boolean child equation, is indispensable to distinguish Rule30. This does not show arbitrary matching in Rule30, does not model physical-root ancestry, does not satisfy G202's whole-path overlap identity, and does not rule out a mechanism using those omitted facts. Next select an interior relation that is not implied by the boundary package; do not spend a census rediscovering boundary period/rotation correlations. Q7 remains PART.
+
+
+**GC894 duplicate audit (2026-10-09 23:47 BST).** W278 hard checks pass. Nearest W275 and W273 were read in full earlier this session and credited; W277 was reread in full for this block. They supply quotient symmetry, endpoint injection and reservations, while this comparison construction deliberately retains G203's exact boundary edges and shows their insufficiency without the interior equation. It is not an arbitrary-matching claim for Rule30. No promotion.
+
+
+**W278 second-reading receipt (GPT, 2026-10-09 23:52 BST).** Cloud CL120 atc9361fcf verifies GC894's genuine boundary arrows, five-family disjointness, primitive pair periods, equivariant partial bijection and q4/q2 controls by hand. Boundary-only closure accepted with the omitted-interior scope preserved. No actual Rule30 matching or trajectory claim, and no review of GC895 follows; formal promotion is separate.
+
+
+### G.GPT279. Coordinate-preserving driver-row comparison (second-read by Cloud, 2026-10-09)
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL121. Waiting-room heading: "GPT G279 — Coordinate-preserving driver-row comparison (GPT, 2026-10-09; waiting room, GC895)".
+
+
+#### GC895 — Restoring successor coordinates leaves driver-row permutation freedom (2026-10-09 23:51 BST)
+
+**Registered hand preflight; second reading pending.** Record searched: (permutation/bijection) + (driver/coordinate) ->8 hits in5 files. GC869/GC870/GC894 and G203 boundary facts read. Predict the successor-coordinate constraint converts the comparison into driver-row permutations; retained boundaries still leave many maps, whereas the Boolean equation selects the actual map. Independent q4 swap, q2 reserved-slot countercontrol and unexpected pair-versus-profile period check. No trajectory, random draw or new actual endpoint census. No claim that endpoint matching remains arbitrary after adding coordinates.
+
+**Row description.** At cap q let Q be all N=2^q temporal words. Live pairs have y!=0. Nonterminal pairs exclude x=y, and nonstart targets have first coordinate nonzero. Any bijection between those domains satisfying the successor-coordinate rule has the form
+
+f(x,y)=(y,g_y(x)),  g_y:Q\{y}->Q\{0} a bijection for every y!=0.
+
+Indeed each domain row has N-1 inputs and its targets are exactly the N-1 pairs with first coordinate y and nonzero second coordinate. Global injectivity makes each row injective, hence bijective; conversely row bijections give a global one. This retains a unique inverse, but not the specific Boolean reconstruction H.
+
+**Retained boundaries, dyadic q>=4.** Keep the actual Rule30 rows for nonprimitive drivers, including driver1. For each primitive driver y, the forced prefix and suffix require just
+
+g_y(0)=1,   g_y(Delta y)=y,
+
+where Delta=I XOR S. These are two distinct inputs and outputs: Delta y!=0, Delta y!=y, and y!=1. The fixed driver1 row already supplies g_1(c)=1 XOR S^(-1)c for primitive c. Thus GC894's exact prefix/suffix edges are preserved. Every remaining primitive row admits (N-3)! completions.
+
+To impose rotation equivariance choose a completion for one driver in each primitive rotation orbit and transport it by
+
+g_(S y)(S x)=S(g_y(x)).
+
+Primitive drivers have free orbits of size q, so this is consistent without extra stabilizer restrictions. With P primitive words and a=P/q driver orbits, this constructs ((N-3)!)^a distinct maps. For primitive y both input and target pairs have least pair period q because they contain y. Nonprimitive rows are unchanged actual rows, so all pair-period strata are preserved. Global partial bijectivity, starts, terminals, exact boundary edges, successor coordinates and rotations therefore do not uniquely determine the interior map. This is a comparison-family count, not a statistical law or a Rule30 orbit count.
+
+**Independent literal swap at q4.** Let y=1000, S y=0001 and Delta y=1001 in increasing temporal order. The actual row has g_y(1111)=1010 and g_y(0001)=0111. Directly checking S z=x XOR(y OR z) verifies both. Inputs1111 and0001 are distinct and outside the reserved slots0,1000,1001. Swap these two outputs and transport the swap over y's rotation orbit, leaving all other rows unchanged. The altered edge(1111,1000)->(1000,0111) preserves the successor coordinate and injective row structure but fails the actual equation at time0: its child bit at time1 is1, while1111(0) XOR(1000(0) OR0111(0))=0. The genuine forced prefix with c=1110 reaches(1,y), so the altered edge changes the first interior continuation of an admissible start. No return endpoint or depth in this altered map was computed.
+
+**Unexpected period scope and small-period guard.** The actual child1010 in this control has least profile period2, though its pair with1000 has least period4. The model correctly preserves pair period, not the period of every individual child. At q2 choose y=01: Delta y=11, so the proposed input1 is a reserved suffix slot and the swap is invalid. This independently prevents extending the q4 witness to the exceptional boundary-overlap case. No q2 model count or rigidity claim follows.
+
+**Disposition.** Coordinate restoration removes GC894's artificial bridge defect but does not recover the Rule30 equation. The decisive remaining condition is x=S z XOR(y OR z); for each actual row it fixes the permutation through reset uniqueness. Adding that full equation exactly recovers the original dynamics, so it is not by itself a reduction of Q7. This preflight closes attempts to infer unique interior continuation from boundary/coordinate/permutation structure alone. It does not close endpoint invariants common to this stronger family, physical-root ancestry or any actual recurrence-based growth route. Next seek an inequality or obstruction using the Boolean equation without merely enumerating its whole dynamics; no further bare permutation-family census is warranted. Q7 stays PART.
+
+
+**GC895 duplicate audit (2026-10-09 23:52 BST).** W279 hard checks pass. W278 reread in full; W275 and W277 were read in full earlier this session. W278 omits the middle coordinate; this continuation restores it globally using driver rows, without claiming arbitrary endpoint matching. W275 supplies credited free rotations/pair-period scope; W277 supplies credited live interface/reserved endpoints. No new Rule30 growth theorem or promotion.
+
+
+**W279 second-reading receipt (GPT, 2026-10-09 23:57 BST).** Cloud CL121 atefb7b0c3 verifies GC895's driver-row decomposition, two boundary slots, rotation transport/count and literal q4/q2 controls by hand. Comparison scope accepted; no actual endpoint permutation, return trajectory or GC896 review follows. Formal promotion remains separate.
+
+
+### G.GPT280. Exact one-driver-bit reset response (second-read by Cloud and Local, 2026-10-10)
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL122, and Local, chat L510. Waiting-room heading: "GPT G280 — Exact one-driver-bit reset response (GPT, 2026-10-09; waiting room, GC896)".
+
+
+#### GC896 — One driver-bit perturbation has an exact reset-interval response (2026-10-09 23:56 BST)
+
+**Registered actual-recurrence hand block; second reading pending.** Record searched: (affine/linear) + (driver/reset) ->40 hits in15 files. Targeted perturbation/rank-one search finds no identical one-bit response formula. Read G2 reset mechanism and GC895's actual row equation; these are the credited basis, not a new reset theorem. Predict one-bit driver change, with a common remaining reset, affects either no child bits or the precise interval before that reset. Independent q4 direct substitutions; last-reset countercontrol; unexpected sharp q-1 response. No trajectory, census, random model or literature novelty claim.
+
+**Statement.** Let x,y be q-periodic binary words, q>=2. Toggle y at one temporal position j to get y'. Assume there is a black position in y other than j, hence a common black reset in y,y'. Both drivers are nonzero and their children z,z' solving
+
+S z=x XOR(y OR z),   S z'=x XOR(y' OR z')
+
+are unique. Let k be the first common black position strictly after j in cyclic temporal order. Let I consist of positions j+1 through k inclusive, with cyclic length d between1 andq-1. Then
+
+z' XOR z = (1 XOR z(j))*1_I.
+
+Thus the exact Hamming distance is0 if z(j)=1, and d if z(j)=0. It need not be bounded independently of q.
+
+**Proof.** At any common black position t, both equations reset the following bit to1 XOR x(t), so their difference is zero immediately after that position. Starting at the preceding common black and propagating forward to j encounters no driver difference; at a white tick the difference propagates unchanged and at a black tick it resets to zero. Hence z'(j)=z(j). At the changed tick j the two OR expressions, with identical child bit z(j), differ by1 XOR z(j), so the child difference at j+1 is that value. Until k the common driver is white, hence the difference propagates unchanged. At k it resets to zero at k+1 and stays zero up to j again. This gives exactly the stated cyclic interval. The argument uses actual Boolean equations, not merely global injectivity, row permutations or boundary matching.
+
+**Independent direct q4 controls.** Take x=1111,y=1000,j=1, so y'=1100. The cyclic children are z=1010,z'=0001. Directly substituting their four equations verifies both; their XOR1011 is supported at positions2,3,0, precisely I before the common reset at0. Here z(1)=0 and distance3=q-1. Conversely toggle j=2 instead: y'=1010 while z(2)=1, and z'=1010 remains unchanged. At the changed tick the child1 masks the OR driver change; direct substitution verifies the unchanged child. This latter comparison need not preserve the driver's least period, and no such premise was used.
+
+**Sharp family and unexpected locality failure.** For every q>=2 choose x=1, y black only at0, and toggle the white position j=1 to black. The original reset forces z(1)=0. The first common reset after1 is0 after a full cyclic gap, so d=q-1 and the children differ at every position except1. This realizes the maximal response in actual cyclic equations, for arbitrary q; it is not a physical-root reachability claim. Locality of the Boolean rule in time does not give uniform sensitivity of its cyclic inverse.
+
+**Last-reset countercontrol.** If the only black bit is toggled off, there is no common reset and the stated law does not apply. At q4,x=1111,y=1000, turning y into0000 leaves the two alternating children1010 and0101. Thus the new child is not unique, and the perturbation cannot be assigned one deterministic interval response. This is the same zero-driver integration exception already handled in G2/G158, retained here as a domain guard.
+
+**Relation to row affinity and scope.** For fixed y, write the inverse equation over F2 as x=y+S z+(1+y)*z. It is affine in z; nonzero y makes its linear part invertible by reset uniqueness. This is another expression of the existing reset mechanism, not a growth reduction. The interval formula supplies a specific cross-driver consequence of that equation and a sharp failure of uniform local sensitivity. Comparing different drivers does not show either pair is reached in the physical-root tree, control the frequency of perturbations along a spatial path, or bound a first-return depth. Next require a rooted occurrence/cancellation mechanism before using the interval law for Q7; no sensitivity census is requested. Q7 remains PART.
+
+
+**GC896 duplicate audit (2026-10-09 23:57 BST).** W280 hard checks pass; nearest G162/G157/G201 read in full. They supply credited reset/run accounting, period preservation and a two-sibling one-profile identity. This entry compares the actual children for one changed driver bit with the same parent, retaining the exact common-reset interval and last-reset guard. No rooted-growth or new reset theorem is claimed; no promotion.
+
+
+**W280 second-reading receipt (GPT, 2026-10-10 00:03 BST).** Cloud CL122 at8a63a8ae and Local L510 at89e95f43 independently verify GC896's common-reset interval, changed-tick gate, q4 controls, sharp family, singular last-reset guard and affine form by hand. The actual cross-driver lemma is second-read; no rooted reachability/return bound or GC897 review follows. Formal promotion remains separate.
+
+
+### G.GPT281. Multiple-driver response and complete-parent calibration (second-read by Local, 2026-10-10)
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Local, chat L511 (GC897, GC899); its continuations carry their own receipts below. Waiting-room heading: "GPT G281 — Multiple-driver response and complete-parent calibration (GPT, 2026-10-10; waiting room, GC897)".
+
+
+#### GC897 — Multiple driver changes combine by XOR; full-parent collision law (2026-10-10 00:01 BST)
+
+**Registered actual-recurrence hand continuation; second reading pending.** Record searched: (perturb/difference) + (driver/reset) ->87 hits in21 files. GC896 and G4's averaging-scope warning read. Predict modified-driver reset intervals superpose by XOR, not by adding their lengths. Independent q4 two-removal control, unexpected terminal-parent conditioning and zero-driver guard. No trajectory, random draw, census or rooted distribution claim. The Boolean/reset mechanism is credited; this is its finite-row response/calibration, not a growth invariant.
+
+**Exact response.** For fixed parent x and nonzero drivers y,y', let z,z' be their unique cyclic children. Work over F2, put delta=y+y' and d=z+z'. Expanding OR gives
+
+S d=(1+y')*d+delta*(1+z).
+
+The scalar products are pointwise. The linear operator L_(y')(v)=S v+(1+y')*v is invertible: a homogeneous solution resets to zero after any black tick of y' and remains zero everywhere by cyclic propagation. Therefore
+
+d=L_(y')^(-1)(delta*(1+z)).
+
+For each changed tick j, let I_j be the cyclic interval from j+1 through the first black tick of y' strictly after j, inclusive. Its length is1..q, allowing a full turn when j is the only black tick of y'. Direct propagation gives L_(y')(1_(I_j))=e_j. Hence
+
+d = XOR_(j:delta(j)=1) [(1+z(j))*1_(I_j)].
+
+All intervals use the FINAL driver y', not independently toggled intermediate drivers. Supports may overlap and cancel. Both drivers must be nonzero; no common black tick between them is required for this multiple-change identity. It recovers GC896 when there is just one toggle and a common remaining reset.
+
+**Exact complete-parent average, not a rooted law.** Fix distinct nonzero y,y', with k=weight(delta)>=1, and choose x uniformly from all2^q parent words. The map z->x=y+L_y(z) is affine bijective by reset, so z is uniform on all words. The forcing delta*(1+z) is uniform on the k-dimensional coordinate subspace supported at changed positions. Invertibility of L_(y') makes d uniform on the k-dimensional span of the interval vectors. Consequently
+
+P(z'=z)=2^(-k),   E weight(d)=|union_(delta(j)=1) I_j|/2.
+
+Each coordinate in that union is a nonzero linear functional of the k fair forcing bits, so is1 half the time; outside the union it is always0. The mean is half the union size, not half the sum of lengths. This is exact finite averaging over all parents; it does not assume Rule30 spatial trajectories select those parents uniformly.
+
+**Independent literal cancellation control.** At q4 use x=1111,y=1110,y'=1000. Their children z=1000 and z'=1010 satisfy all four equations directly, giving d=0010. Changed ticks1 and2 have final-driver intervals I_1={2,3,0}, I_2={3,0}. Both forcing bits1+z(j) equal1. Their indicators1011 and1001 XOR to0010: the sum of lengths is5 but the response weight is1. Over the complete parent domain the four equally likely response words are0000,1011,1001,0010. Their mean weight is3/2, half the three-position union, rather than5/2; the collision probability is1/4. This four-word algebraic control is not a random experiment or a trajectory enumeration.
+
+**Unexpected live-domain conditioning guard.** Complete-parent averaging includes x=y (original child0) and x=y' (new child0). Neither can be a collision when y!=y': a common zero child would force both parents to equal their drivers. Removing these two distinct terminal parents leaves the same2^(q-k) collision parents among2^q-2 choices, so the simultaneous-nonterminal collision rate is
+
+2^(q-k)/(2^q-2),
+
+not2^(-k). In the q4 control it is4/14=2/7, not1/4. This does not compute a conditional mean weight or justify any rooted sampling law. If either driver is zero, L may be singular and child uniqueness fails; the formulas require the stated nonzero-driver hypotheses.
+
+**Disposition.** Actual response intervals can cancel heavily, and full-parent probabilities are structural calibration rather than evidence of randomness or lower growth. This prevents using independent one-bit response lengths as additive charges. A Q7 argument needs retained backgrounds/occurrences or a cancellation-resistant quantity along the actual rooted history. No sensitivity census or new averaging-based growth shortcut is proposed. Next requested review or a rooted coupling obstruction; scratch deferred and room closed.
+
+
+**GC897 duplicate audit (2026-10-10 00:03 BST).** W281 hard checks pass; nearest W280/G201 were read in full in the preceding blocks, and G185 read in full here. W280 supplies the credited single-toggle mechanism; G201 supplies a different sibling-support relation/failure; G185 warns against transferring ambient behaviour to growth. This continuation keeps final-driver Green intervals, XOR cancellation and the explicit complete-parent measure. No promotion or rooted law.
+
+
+#### GC899 — Exact fixed-parent same-child driver fibres (2026-10-10 00:10 BST; W281 continuation)
+
+**Hand corollary of GC897; second reading pending.** Record searched: (driver/parent) + (collision/fibre/fiber/same.child) ->16 hits in7 files; W281 and G4.4 read. Prediction: driver changes supported on child-black positions are invisible, except for exclusion of the zero driver. Independent q4 controls; unexpected constant child1 needs parent0. No census, trajectory or rooted measure claim. This makes the existing reset/OR mechanism explicit rather than claiming a new dynamical principle.
+
+Fix q>=1 and parent x. For a proposed child z let a=x+S z over F2. The actual equation is a=y OR z. At every z-black tick it requires a=1, while y is free; at every z-white tick it requires y=a. Hence the nonzero-driver fibre is empty unless
+
+z*(1+x+S z)=0.
+
+If this compatibility holds, its exact cardinality is
+
+2^weight(z) - indicator[x=Delta z],   Delta=I+S.
+
+Indeed the bits on z's black support are free, so there are2^weight(z) drivers before exclusion. The zero driver is in the fibre precisely when a=z, equivalently x=Delta z. Every remaining nonzero driver gives a unique cyclic child by reset; conversely all such drivers have been listed. Equivalently, two nonzero drivers give the same child under fixed x exactly when their difference is supported on that child's black positions, as follows directly from GC897's invertible response operator. This counts the complete driver domain, not the drivers encountered on a rooted path. Zero-child fibres are terminal states, not live continuations.
+
+**Independent controls.** At q4, x=1111 and z=1010: S z=0101, a=1010=z and Delta z=1111. The allowed drivers are exactly1000,0010,1010; all give child1010, while0000 is excluded. The other alternating child0101 similarly has drivers0100,0001,0101. Thus fixed-parent cross-driver injectivity is false, despite injectivity of the pair map (its outputs retain the driver coordinate). For z=1000, S z=0001 and a=1110; the driver bits at positions1,2,3 are1,1,0, while position0 is free. The two drivers are0110 and1110. Here x!=Delta z=1001, so no driver is removed. These are direct four-bit substitutions, no enumeration.
+
+**Unexpected endpoint controls.** For z=1, compatibility forces x=0; its fibre is all2^q-1 nonzero drivers, recovering the already credited prefix edge (0,y)->(y,1). For z=0, compatibility is vacuous and the sole possible driver is y=x; its count is1 for x!=0 and0 for x=0, exactly the terminal guard. At q1 the same formula yields just (x,y,z)=(0,1,1) or(1,1,0), so no hidden q>=2 assumption is used.
+
+For every even q>=2, x=1 and either alternating z has2^(q/2)-1 nonzero drivers producing that same child. **Rooted control, not just ambient:** for dyadic q>=4, exactly2^(q/2)-2^(q/4) of those drivers are primitive. The nonprimitive words are precisely those of period dividing q/2; their allowed alternating support has q/4 free bits, so subtraction gives the count. Each primitive y occurs at depth2 of the genuine prefix (0,c)->(c,1)->(1,y), with c=1+S y (thus y=1+S^(-1)c); c is also primitive. The next state is (y,z). At q4 the primitive drivers1000 and0010 both give z1010, from roots c1110 and1011 respectively. These are different roots, not repeated events on one history, and their successor pairs remain different. No return length, charge, probability or growth conclusion follows. The fibre equation closes only a cross-driver injectivity shortcut, including across rooted prefixes. Next require within-history occurrence information rather than more complete-domain averages; scratch deferred.
+
+
+**W281 second-reading receipt (2026-10-10 00:16 BST).** Local L511 atb9f47663 independently checks GC897's forcing law, Green intervals, rank/collision/union mean, cancellation and measure guard, and GC899's fibre formula, endpoints and primitive rooted-prefix count. PASS by hand with scope retained: no rooted frequency or return bound. Formal promotion remains separate.
+
+
+#### GC901 — Alternating-child collisions recover the driver one profile later (2026-10-10 00:20 BST; W281 continuation)
+
+**Hand continuation, second reading pending.** Record searched: (alternat/period2) + (recover/driver/doubl) ->110 hits in34 files. Read G128.1's period-two closure guard, G201's nonpersistent sibling separation and G185's period/order recovery failure. Prediction: GC899's shared alternating child is followed by a profile that duplicates complemented driver bits. Countercontrol period recovery need not have large Hamming weight; unexpected q2/full alternating driver and rooted-ancestry guards. No trajectory, census, new order-growth claim or novelty claim for reset recovery.
+
+Fix dyadic q>=4, m=q/2, parent x=1 and shared child z with z(2r)=1,z(2r+1)=0. GC899's driver fibre consists of nonzero y with y(2r)=b_r and y(2r+1)=0. Let v be the unique child of (y,z). A black z tick resets the following v bit, and a white z tick has y=0 and copies v. Therefore, cyclically,
+
+v(2r+1)=v(2r+2)=1+b_r.
+
+This explicit inverse recovers b_r=1+v(2r+1); distinct drivers in the same fibre cannot produce the same v. Its weight is q-2*weight(y). If y is primitive q, b is primitive m and nonconstant. For any proper dyadic divisor p>=2 of q, shifting v by p preserves the pair phases and is equivalent to shifting y by p; constant v would force constant b. Hence v is primitive q too. The other alternating phase follows by translation. This is profile-period recovery, not a new stage entry or exit.
+
+**Independent substitutions.** q4, y1000 and z1010 give v1001; y0010 with the same z gives v0110. Each triple satisfies S v=y+(z OR v) directly. Their zero-started prefixes are (0,1110),(1110,1),(1,1000),(1000,1010),(1010,1001), and the corresponding root1011 with driver0010. Distinct successor pairs were never merged; the projected child alone collided.
+
+**Sparse recovery family.** Take b all1 except one0. For m>=2 it is primitive m, so y is primitive q, yet v consists of exactly two adjacent black bits at the complementary pair. At q8 choose y10101000,z10101010,v10000001; the shared z has period2 while v recovers period8 with weight2. Thus profile-period recovery alone supplies no weight growing with q. This is a literal family of actual Boolean transitions in zero-started fixed-q excursions: c=1+S y is primitive, and (0,c)->(c,1)->(1,y) is the known prefix. It does not prove those starts occur after a smaller-period stage of the physical rooted history, or recur on one selected path. GC899's “different rooted prefixes” must be read with this same fixed-q zero-started scope; no physical-root ancestry was added by the count or by L511's hand review.
+
+**Unexpected terminal guard.** If y equals the full alternating z then b=1 and v=0, as y=z is the terminal condition; y has period2 and is excluded from primitive q>=4. At q2 it is the sole nonzero fibre driver, so the claimed recovery fails there. If y=0 then b=0 and v=1, but the original fibre excludes that driver. These extremes explain both exclusions without a run.
+
+Disposition: the response's loss of visible driver information is temporary in this family, and the next profile retains it sparsely. Cross-driver collision size is neither coalescence of full states nor a large-charge certificate. This is a W281 scope corollary, not a replacement for G184's within-history normalized stage-length obligation. Next a concrete physical-ancestry or within-history constraint, no new full-domain census; scratch deferred, room closed.
+
+
+**GC901 second-reading receipt (2026-10-10 00:26 BST).** Local L512 at77967ffa verifies the reset/copy formula, primitive-period transfer, q4/q8 sparse controls and full-alternating terminal guard by hand. PASS with zero-started-root scope and no physical ancestry, rooted frequency or return bound. This continuation is reviewed; formal promotion remains separate.
+
+
+#### GC903 — The q4 fibre examples lie on a nonrooted predecessor cycle (2026-10-10 00:31 BST; W281 scope correction)
+
+**Bounded exact check and short hand certificate; second reading pending.** Record searched: (root/ancestr) + (first.hit/backward/predecessor) ->266 hits in49 files; (1110/1011) + (ancestr/cycle/root) ->84 hits in28 files. Read G7/G156/G157 and reviewed G199's absorption criterion; reset/ancestry mechanisms are existing results, not new claims. Predicted GC899's q4 zero-starts share a nonabsorbing orbit. Two named starts only, <=256 states each, independently scalar-bit and packed implementations, cap1 control and unexpected all-rotation checks. No census, new large run, physical-seed evolution or all-q ancestry classification.
+
+**Exact result.** For B(a,b)=(S b XOR(a OR b),a), the start (0,1110) returns to itself after28 steps, with no transient or zero visit. (0,1011) lies on that same orbit,14 steps away. Scalar and packed predecessor updates agree throughout each named chain; cap1 (0,1) hits zero in1 step and (1,0) in3. All four simultaneous rotations have the same28-cycle result. These computations are exact small-state controls, not evidence of absorption for any untested family.
+
+**Seven-step certificate, words in increasing temporal order.** The successive B states are
+
+(0000,1110), (0011,0000), (0011,0011), (0101,0011),
+(0001,0101), (1111,0001), (1101,1111), (0000,1101).
+
+Each arrow is direct substitution. The last state is (0,S(1110)); B commutes with simultaneous S, so four copies give B^28(0,1110)=(0,1110). None of the seven states is zero, and the rotations of their seven pair types are distinct: the two zero-coordinate types have distinct coordinate locations, the equal pair has neither zero nor alternating/constant companion, the alternating-driver and alternating-first types differ, and the two constant-one types have different coordinate locations. Within each type a primitive four-bit coordinate distinguishes its four rotations. Thus the cycle has exactly28 distinct states. This short certificate proves nonabsorption without trusting a long trace. Since1011=S^2(1110), its start is reached at14 steps and has the same property.
+
+By G199, a nonzero pair is in the physical-root tree exactly when some B iterate reaches(0,0); its last nonzero predecessor would necessarily be(0,1). These q4 starts fail that test, as do all their actual prefix/continuation states from GC899/GC901. More strongly, their zero-first-coordinate starts are themselves cyclic, so compatibility and a finite zero-started excursion are not physical ancestry. Root phase shifts cannot repair this, because B commutes with temporal rotation.
+
+**Correction retained.** GC899's earlier “rooted control” and “all realized at depth2 from different roots” refer only to arbitrary zero-started fixed-q excursion starts. They must not be cited as occurrence in the physical tree rooted at(0,1). GC901 already narrowed that claim; GC903 now proves physical nonrootedness for the q4 controls. L511/L512 validate the fibre and sparse-recovery algebra, not physical ancestry. Their reviews remain valid in that narrowed scope. The formulas, primitive-driver count and q8 algebraic control are unaffected, but no larger-q physical rejection or rooted occurrence claim is inferred.
+
+Disposition: close physical-root transfer of these q4 fibre examples; retain the within-history Q7 obligation. This is an application of the known ancestry barrier, not a new prize avenue or periodic-point classification. Next an actual physical-tree constraint or peer review, rather than another ambient-family extrapolation; scratch deferred, room closed.
+
+**GC903 second-reading receipt (cited at promotion, Local L554).** Cloud CL126 (CHAT-LEDGER.10.md, line 1323): "GC903 second-read, PASS". GPT acknowledged it there (line 1381) and confirmed it in GC965.
+
+
+#### GC904 — Genuine doubling entries exclude the alternating-fibre collapse (2026-10-10 00:36 BST; W281 continuation)
+
+**Hand corollaries of reset and G201; second reading pending.** Record searched: (complement/half-shift/half-difference) + (primitive/period-f/last-profile) ->187 hits in36 files. Read G157/G162/G185/G188 and G201 in full. Predict an antiperiodic driver with a nonzero half-periodic parent forces primitive dyadic child. Countercontrol parent0 permits constant child1. No solver, trajectory or census. The preregistered broad expectation of no weight-growth consequence was too strong: G201 gives a linear ONE-profile weight bound below, while cumulative charge and stage growth remain unproved. A draft q4 control child0010 failed substitution; reset recomputation corrected it to0001, and all four triples then pass. The failed control is retained, not attributed to the theorem.
+
+**Primitive-child guard.** Let q>=2 be dyadic, T=S^(q/2), Tx=x!=0, Ty=1+y, and let z be the unique q-periodic child of (x,y). If Tz=z, subtract the original and shifted compatibility equations to obtain
+
+0=(y+Ty)*(1+z)=1+z.
+
+Thus z=1. Its original equation would give1=x+1, forcing x=0, a contradiction. Hence Tz!=z. Every proper divisor of dyadic q divides q/2, so z has least period q. The nonzero-parent hypothesis is essential: (0,y) always has child1 for nonzero y, including antiperiodic y. No order-maximality claim is made.
+
+**Actual doubling application.** At an odd zero-driver integration from q/2 to q, the prefix is0,c,1,e,f with Tc=1+c and e=1+S^(-1)c, so Te=1+e. The guard with parent1 gives f primitive q. This applies at every genuine doubling entry, including physical ones, without asserting that every arbitrary antiperiodic c has physical ancestry. At q>=4 it excludes GC899/GC901's alternating child at this early position. For q2 alternation itself is primitive, so it is not excluded.
+
+**G201's one-profile charge, now symmetric in half-shift.** The child of (1,Te) is Tf by reset uniqueness and translation. G201's complementary-driver equations give f*(Tf)=0 and D=f+Tf has no cyclic00. Since weight(Tf)=weight(f),
+
+q/4 <= weight(f) <= q/2.
+
+The lower inequality follows from weight(D)>=q/2 and the upper from disjointness. Interpret these integer inequalities with rounding when q2. This is an explicit consequence of the reviewed G201 coupling, not a new invariant. Thus the entry's shared-child collapse is ruled out both by primitive period and, for larger q, by a one-profile mass constraint. The bound is not summed across later profiles: G201 already supplies an actual rooted counterexample to persistent sibling disjointness.
+
+**Independent controls and sharpness.** The q4 genuine doubling prefix a1010,0,c0110,1,e1100,f0001 satisfies all four scalar triples. Its f has weight1=q/4 and primitive4. At q8 take e11110000 and f00000101; black resets and four white toggles give that child directly, with weight2=q/4 and primitive8. Then c=1+S e=00011110 has complementary halves and Delta c=00100010 repeats the odd block0010, so this is an actual odd-doubling-compatible prefix (physical ancestry not asserted). Parent0 gives constant1, the exceptional guard. At q2 the entry c01,e01,f01 is the known smallest doubling and f is primitive2, consistent with the lemma and weight interval.
+
+Disposition: a genuine entry has more structure than arbitrary zero-started fibres; GC903's nonrooted q4 controls cannot be transferred there. This closes that early-position collapse scenario, not later same-period branch scenarios or all-period ancestry. The main Q7 obligation remains normalized lengths along each physical history. Next exploit retained actual backgrounds or review CL125's repaired gates; scratch deferred, room closed.
+
+
+**W281 GC904 second-reading receipt (2026-10-10 00:53 BST).** Cloud CL127 independently checks half-shift subtraction, primitive-period guard, prefix antiperiodicity and G201 weightq/4..q/2, including q4/q8/q2 substitutions. PASS by hand; physical-entry data are Cloud's disclosed additional control, not GPT replay. Same-period branch starts do not inherit the doubling-entry guard. No cumulative charge or stage bound.
+
+
+
+#### GC909 — Equality in the doubling-entry q/4 weight bound (2026-10-10 01:04 BST; W281 continuation)
+
+**Hand equality audit; second reading pending.** Record searched: q/4/quarter/lower-bound + G201/half-shift/antiperiod ->18 hits in11 files; GC904, full G201 immediate coupling and G199 physical-entry exclusion read. Prediction: equality forces alternating union and a one-parity source. Countercontrol sharp ambient q8 example is not physical; unexpected finiteq8 exclusion must not become an all-period assertion. No solver, trajectory or census. This refines the reviewed coupling bound, not its cumulative/stage scope.
+
+Let q>=4 be dyadic, T=S^(q/2), and e the antiperiodic entry driver, with child f of(1,e). GC904/G201 give f*Tf=0 and D=f+Tf no cyclic00. If weight(f)=q/4, then weight(D)=q/2. A cyclic binary word with no00 and exactly half ones must alternate: every zero has a following one, exhausting the ones, so no11 can remain. Thus D is one alternating parity indicator and f vanishes on the opposite parity. On the supported parity, Tf=1+f.
+
+The driver is then forced, not free:
+
+    e = 1 + f + S f.
+
+At a supported tick t the next f is0. If f(t)=0, its child equation requires e(t)=1. If f(t)=1, the half-shifted tick has f=0 and hence Te(t)=1; antiperiodicity gives e(t)=0. At the other parity f(t)=0, so the child equation says e(t)=1+f(t+1). Together these are the displayed identity. Conversely if f is supported on one parity and f+Tf equals its alternating indicator, defining e by that identity gives Te=1+e and S f=(1+e)(1+f) at both parities. Its weight isq/4, because each half-shifted support pair contributes exactly one black bit.
+
+In the integration prefix, c=1+S e and the preceding source a=Delta c. Therefore
+
+    a = S e + S^2 e = S f + S^3 f.
+
+Both terms lie on the parity opposite f, so a vanishes on f's parity. The known odd-half-block integration condition is retained; this identity does not prove physical ancestry of a. It identifies the precise extra shape a future ancestry exclusion would need to rule out, rather than testing generic sparse drivers.
+
+Independent literal substitutions: q4 f0001 gives e1100 and a1010, the reviewed physical sharp control. q8 f00000101 gives e11110000 and a00100010, the reviewed ambient sharp control. Its source is a rotation of RC88's repeated one-hot half-source17, so G199/GC907 excludes physical ancestry atq8. By the existing unique physical q8 entry class, equality cannot occur there (Cloud CL127 separately reports weight3); rotations do not change weight. This is a finite known-ancestry consequence, not a new all-q strict inequality. No claim that every larger physical source fails the one-parity shape, or that even a strict one-profile bound can be summed over a stage.
+
+Disposition: equality characterized exactly in the antiperiodic-entry class; parity support is a concrete ancestry test target, not yet an asymptotic obstruction. Next check the existing physical-source record for this shape before any computation; scratch deferred, room closed.
+
+
+**W281 GC909 second-reading receipt (2026-10-10 01:09 BST).** Local L514 checks equality forces alternating D, one-parity f and e=1+f+Sf; verifies converse and source a=Sf+S^3f by hand, including q4/q8 literal controls. PASS, with no all-q ancestry exclusion or stage-growth claim.
+
+
+#### GC911 — One-parity odd sources exactly produce sharp doubling entries (2026-10-10 01:14 BST; W281 continuation)
+
+**Hand converse, second reading pending.** Record searched: one-parity/vanishing-parity + integration/equality/source ->20 hits in6 files. GC909/L514 and G157/G158 integration facts read. Predict one-parity odd sources give both sharp children. Countercontrol physical mixed-parity source119 has weight3 atq8; unexpected use the source's own period, not its even cap repetition. No ancestry/tree census or solver; only q4/q8 small integration controls.
+
+Fix dyadic q>=4 and m=q/2. Let a be m-periodic with odd weight over one m-block, represented at capq, and supported on one temporal parity. Seek f supported on the opposite parity satisfying
+
+    (1+S^2) f = S^-1 a.
+
+On that parity, S^2 is a single cycle of lengthm. The right side has even total weight at capq (two copies of the odd m-block), so cyclic integration has exactly two solutions there; off that parity set f=0. Advancing by T=S^m crosses half of this decimated cycle. The accumulated right-side parity is the odd weight of a's one m-block, so Tf=1+f on its supporting parity. The two solutions differ by that parity indicator D and are half-shifts of each other. Consequently each has weightq/4.
+
+Set e=1+f+Sf and c=1+Se. GC909's converse proves Te=1+e and f is the unique child of(1,e). Further,
+
+    Delta c = Se+S^2e = Sf+S^3f = a.
+
+Thus c is a valid integration child of(a,0). Switching f by D switches e by D+SD=1 and switches c by1, so these are exactly the two integration choices, not just one special branch. Conversely GC909 already proves any sharp child has a one-parity source. Therefore among odd-doubling sources, sharp entry weight is equivalent to source support on one parity, and it occurs for both branches or neither. No physical membership is implied by this equivalence.
+
+Scalar control directly closes the child recursion for both integration choices of every one-parity odd half-source atq4/q8: four and eight branch controls respectively give weightq/4 and a=Sf+S^3f. Mixed-parity physical source119 atq8 gives weight3 for both choices. These are finite equation controls, not a census of physical sources. The odd flux is over the m-block; counting capq parity would incorrectly give0 and lose antiperiodicity, the same guard as G199.
+
+Disposition: the planned ancestry test is now an exact source-shape test, not a generic sparsity heuristic. A future proof that physical odd zero returns of least period>=4 cannot be supported on one parity would rule out equality at all doubled periods>=8; that hypothesis is OPEN. Even proving it gives only strict one-profile weight, not G184's stage budget. Next examine a concrete inverse-history constraint for the source mask; no new full-domain scan. Scratch deferred, room closed.
+
+
+
+#### GC912 — Backward mask preflight: retain the pair, not one profile (2026-10-10 01:18 BST; W281 continuation)
+
+**Hand shortcut audit; no general ancestry result.** Record searched: parity/mask/support + backward/predecessor ->226 hits in56 files; GC911/G199 and CL132 read. Predicted single-profile parity support fails as a backward invariant. Countercontrol physical q4 source suffers the same mask loss. Unexpected structured fourth pair must not be treated as a new zero-driver source. No solver, physical-tree census or growth claim.
+
+Let a be any nonzero word supported on one parity at an even capq. Then a and Sa have disjoint support, so OR equals XOR for those two words. Four direct applications of B(x,y)=(Sy+(x OR y),x) give
+
+    (a,0) -> (a,a) -> (a+Sa,a) -> (a,a+Sa) -> (a+S^2a,a).
+
+For the second arrow, a OR a=a. For the third, (a+Sa) OR a=a+Sa because a and Sa are disjoint, and Sa+(a+Sa)=a. The fourth uses a OR(a+Sa)=a+Sa, giving S(a+Sa)+(a+Sa)=a+S^2a. These are backward steps, not the forward zero-return excursion.
+
+At B^2 the first profile a+Sa has black bits on both parities for every nonzero a. Therefore the property “first profile supported on one parity” is not backward invariant, even on physically ancestral controls. At B^4 both profiles again have support on a's parity, but the second is a!=0; this is not a renewed zero-driver state and supplies no source-only decimation recursion. The full pair is essential. At least-period2 source a1010 at cap4, S^2a=a and B^4=(0,a), consistent with the known physical prefix, so mask loss cannot certify nonphysicality by itself. No conclusion about higher-period absorption follows from these four steps.
+
+Literal scalar controls over the six q4 and thirty q8 nonzero one-parity words agree with all four pairs and the mixed-parity B^2 claim. These are finite local identities, not an ancestry census. The immediate single-profile invariant shortcut is closed; a pair-level inverse condition or a later zero-return constraint would be new required input.
+
+**GC911 second-reading receipt.** Cloud CL132 checks decimated cycle/half-cycle flux, GC909 converse, source identity and exact correspondence of the two integration choices by hand. Independent all-odd-source replay toq32 agrees, with mixed-parity minimumq/4+1 there. PASS; replay is Cloud's evidence, not GPT execution, and does not assert physical ancestry. Next seek an actual pair-level constraint or change lane if none emerges; scratch deferred, room closed.
+
+
+#### GC913 — Four-step pair-mask closure fails beyond period 2 (2026-10-10 01:22 BST; W281 continuation)
+
+**Hand Boolean preflight; second reading pending.** Bears on Q7: closes the masked-pair recursion shortcut, not physical ancestry or either growth gap. Record searched: backward/inverse/predecessor + decimation/four-step/parity-mask/pair-mask ->13 hits in6 files; GC912 and GC911 read. Predicted shared-parity support at B4 is lost at B8 beyond period 2. Countercontrol: the physical alternating source must absorb instead. Independent one-hot q8 substitutions below; unexpected check proves both parity parts nonzero, rather than assuming a surviving term cannot cancel. No computation, census, solver or source-frequency claim.
+
+Let q be even, with all words cyclic at cap q, and let a be supported on one parity. S is the one-tick shift, addition is XOR, products are pointwise AND. Set
+
+    d = a + S^2 a,    h = a OR S^2 a,    r = a * (1 + S^2 a).
+
+GC912 gives B^4(a,0)=(d,a). Since d is supported inside h, and Sa lies on the opposite parity, four further applications of B(x,y)=(Sy+(x OR y),x) give
+
+    B^5 = (h + Sa, d),
+    B^6 = (h + S^3 a, h + Sa),
+    B^7 = (r, h + S^3 a),
+    B^8 = (h + S^4 a + Sr, r).
+
+For B5, d OR a=h. For B6, (h+Sa) OR d=h+Sa, and Sd=Sa+S^3a. For B7, the union is h+(Sa OR S^3a)=h+Sh, while the shifted second profile is Sh+S^2a. Their XOR is h+S^2a=r. For B8, r is contained in h, so the union is h+S^3a. Its XOR with Sh+S^4a has opposite-parity part Sh+S^3a=S(a*(1+S^2a))=Sr, giving the formula. These are local substitutions in the full pair, not a source-only map.
+
+If a differs from S^2a, then r is nonzero: otherwise supp(a) is contained in supp(S^2a), and equal cyclic weights force equality. The even-side term h+S^4a (the parity supporting a, whether literally even or odd) is also nonzero. If it vanished, wt(h)=wt(a); since h contains both a and S^2a, again a=S^2a. Thus B8's first profile has both parities whenever a is not period-2 invariant. The second profile is nonzero and remains on a's parity. The condition that BOTH profiles lie on that parity is therefore not invariant under four backward steps: it holds at B4 and fails at B8. If a=S^2a, then r=0 and h=S^4a=a, so B8=(0,0). This also covers a=0; no nonzero higher-period source absorbs within these eight steps. Later absorption is unresolved by this calculation.
+
+**Independent literal controls.** Define S to send support j to j-1 modulo q. For q8 and a supported at {0}, the eight pairs, after the initial ({0},empty), are
+
+    ({0},{0}), ({0,7},{0}), ({0},{0,7}), ({0,6},{0}),
+    ({0,6,7},{0,6}), ({0,5,6},{0,6,7}),
+    ({0},{0,5,6}), ({0,4,6,7},{0}).
+
+Each follows directly by shifting the second set and taking the symmetric difference with the two sets' union. It checks the formula without Boolean expansion. For q4 and a={0,2}, GC912 ends at (empty,a); the next four pairs are (all,empty), (all,all), (empty,all), (empty,empty). This is the known physical period-2 source, so it refutes any claim that losing the intermediate mask itself forbids physical ancestry.
+
+**Disposition.** The B4 shared-parity pair does not give a closed four-step decimation dynamics. Both the single-profile shortcut (GC912) and this pair-mask shortcut are closed; actual physical one-parity source exclusion remains OPEN. The algebra introduces the directed decimated boundary r, but no monotone quantity or persistent charge follows. Do not extend this local expansion into an unregistered long trajectory search. Next change to a concrete incoming proof audit or a different open Q7 constraint. Duplicate gate W281 passes; nearest W280, G201 and W273 were read in preceding blocks and supply different response, sibling and component results. Scratch deferred, room closed.
+
+**GC913 second-reading receipt (cited at promotion, Local L554).** Cloud CL134 (CHAT-LEDGER.10.md, line 1655): "GC913 PASS", B5 .. B8 by hand and replayed in rule30_cloud_sharp_entry.py. GPT accepted it in GC915's review receipt and confirmed it in GC965.
+
+
+#### GC914 — The ambient mixed-source minimum is q/4+1 at every dyadic q>=8 (2026-10-10 01:26 BST; W281 continuation)
+
+**Hand construction, second reading pending.** Bears on Q7: calibrates the strict one-profile bound, without a physical stage estimate. Record searched: G201/half-shift/antiperiod + converse/minimum/q/4+1 ->11 hits in5 files; G201, GC904, GC909/GC911 and CL132 read. Predict CL132's measured mixed-source minimum extends to every dyadic q>=8. Independent q8 literal control below; countercontrol admissible integration does not imply physical ancestry (G199's source17). Unexpected check uses half-block flux to prove the source's least period, not merely its cap period. No run, scan or external theorem is used; this is a converse construction from the recorded child equation.
+
+**A general realization guard.** Put m=q/2 and T=S^m. Suppose a binary f has f*Tf=0, no cyclic11, and D=f+Tf has no cyclic00. Define the driver at each tick by
+
+    e(t) = 1+f(t+1) if f(t)=0;   e(t) = f(t+m+1) if f(t)=1.
+
+Then Sf=(1+e)(1+f): at a white tick this is the defining formula, and at a black tick both sides vanish because f has no11. Also Te=1+e. If D(t)=1, exactly one of f(t),Tf(t) is black; the two case formulas at those ticks sum to1. If D(t)=0, both are white, and e(t)+Te(t)=Sf(t)+STf(t)=D(t+1)=1. Thus e is antiperiodic and nonzero. Define c=1+Se and a=c+Sc. Then Tc=1+c, Ta=a, and (a,0,c,1,e,f) is an admissible integration prefix. In particular a's weight on any m-block is odd: XOR over that block of c(t)+c(t+1) telescopes to c(t)+c(t+m)=1. Since m is a power of2, any smaller least period would repeat an even number of times in that block and give even parity. Therefore a has least period m. This guard realizes a child; it does not certify a's physical ancestry.
+
+**Explicit near-sharp family.** Index ticks 0..q-1 in increasing time. Set f black at every even tick in 0..m-1, and at the single tick m+1, and white elsewhere. For q>=8, m>=4 is even. The first half ends in a white tick; the second half has an isolated black tick at m+1; the cyclic join also has no11. Its half-shift is disjoint from it. D is the alternating even-parity indicator with two extra black ticks at1 and m+1, so it has no00. The guard therefore realizes a genuine odd doubling entry, with
+
+    wt(f) = m/2+1 = q/4+1.
+
+GC911's reviewed equivalence implies the source a is mixed-parity: a one-parity source would instead force wt(f)=q/4. Conversely every mixed-parity odd source has weight strictly greater than q/4 by GC909/GC911, hence at least q/4+1 by integrality. The construction attains it at every dyadic q>=8. Both integration choices have the same weight, since their entry children are half-shifts. This turns CL132's finite ambient minimum into a hand all-period statement. It makes no claim about the minimum over physical sources.
+
+**Independent q8 literal check.** In increasing time order the construction gives
+
+    f=10100100, e=10010110, c=11010010, a=01110111.
+
+Directly shift each string one tick left cyclically to check Sc=a+c, Se=1+c and Sf=(1+e)(1+f). Also Te=1+e, and a repeats the odd-weight block0111. Its entry child has weight3, equal to8/4+1. The source is the known physical source119 from GC907/CL132, so this smallest control is physical; that does not promote the whole constructed family. In contrast, G199's cap8 source17 gives valid odd integration and sharp weight2 but is nonphysical, refuting the general admissibility-to-ancestry inference.
+
+**Disposition.** Merely excluding one-parity sources cannot strengthen the ambient weight bound beyond q/4+1; a larger physical bound must use an additional ancestry restriction. This is a calibration of a possible argument, not a claim that one-bit improvement is useless or that it bounds a whole stage. No persistent charge or growth inference follows. Next ask for the realization guard and period-flux check to be second-read, then choose a physical-history constraint or a concrete audit rather than resuming mask expansions. Scratch deferred, room closed.
+
+**GC914 filing check.** W281 duplicate gate passes; nearest W280, G201 and W273 supply response, sibling and component mechanisms rather than this realization family. G201 was reread in full this block. Draft future time labels were corrected before publication to the verified clock at 01:26 BST; the claim and predictions were written before the hand derivation. No computational experiment or formal promotion.
+
+
+#### GC915 — Physical sharp-entry witness independently verified; exclusion REFUTED (2026-10-10 01:30 BST; W281 continuation)
+
+**Fixed-witness computational audit of Cloud CL134 at 2b55b6cb.** Bears on Q7: closes the proposed universal physical one-parity-source exclusion. Record searched: one-parity/1010100010100000 + physical/87867 ->30 hits in6 files. Read SE's full source/header, CL134 and GC911. Predictions and countercontrols were registered before execution in rule30_gpt_sharp_witness_audit.py, which imports neither SE nor ZF. The initially intended study of GC914's source family was deferred for this priority counterexample.
+
+The time-order source a=1010100010100000 has weight 5, least period 16, and all odd ticks white. An independently written literal-cell B recurrence reaches (0,0) from (a,0) in exactly 87867 steps. The repeated cap 32 lift reaches it at the identical step. Both integrations and the following prefix give entry children of weight 8=32/4; every local child equation was independently tested. Controls: physical q 4 source1010 absorbs at 8; nonphysical q 8 source10001000 instead enters a backward cycle with transient 29 and cycle 28. All checks PASS. The identified unexpected cap-lift check preserves absorption depth exactly. No ZF tree, SE randomness, census, branch count or TM6b parse was replayed.
+
+Thus a physical odd source of least period 16 is one-parity, and its doubled entry is sharp. GC911's possible universal exclusion for least period >=4 is REFUTED. Its equivalence and GC909's equality characterization remain valid; only the proposed physical exclusion fails. GC913's mask-closure failures also remain valid. Proposition8/CL134 identify this exact witness as the single cell's own minimum-N5 history; that attribution is credited to the existing certificate, while the independent calculation verifies its physical absorption and entry weight. Cloud's rarity counts (one of sixteen period 32 entries, none of 56 recorded period64 exits) remain Cloud-only evidence, not a GPT census.
+
+**Review receipt.** CL134 separately verifies GC913's B5..B8 identities, containment/nonvanishing and literal control by hand, then replays small caps and samples cap 32. Accepted as the second reading of the hand shortcut; no quantitative ancestry result follows. Its new physical witness is the separately replicated counterexample above.
+
+**Disposition.** Board note corrected to REFUTED and failure retained in the master. Do not reopen universal parity exclusion without an explicitly narrower new hypothesis. Sharp mass can occur on the target history, so any eventual ancestry-based inequality must allow exceptions or use another quantity. Next examine a different physical-history constraint or a concrete review, not a further parity-mask expansion. No prize claim; scratch deferred, room closed.
+
+
+**GC914 second-reading receipt and scope guard (GC915 follow-up).** Cloud CL135 checks the realization guard, antiperiodicity, admissible prefix, half-block flux and explicit family by hand; accepted. It independently replays q=8,16,32,64, giving weights 3,5,9,17. These are Cloud's controls, not GPT runs. Its ancestry comparison excludes the constructed source at source periods 8 and 16 (entry periods 16 and 32), using the complete ZF trees. That finite comparison does not establish nonphysicality at every larger period: CL135's wording “physical only at q=8”/“beyond q=8” must be scoped to the compared members unless a further argument is supplied. The all-dyadic ambient minimum proof is unaffected.
+
+
+#### GC916 — Exact three-state language for all antiperiodic entry children (2026-10-10 01:35 BST; W281 continuation)
+
+**Hand converse audit; second reading pending.** Bears on Q7: identifies an ambient compression without an ancestry filter. Record searched: antiperiod/half-shift/G201 + bijection/three-state/converse/realization ->15 hits in3 files; reviewed G201 necessity and GC914/CL135 realization guard. No run or census. The independent control is a cap4 literal word; countercontrol uses the wrong ordinary closing edge; the unexpected check counts the full language against the antiperiodic driver domain.
+
+Fix dyadic q>=4, m=q/2 and T=S^m. A word f is the child of (1,e) for some Te=1+e if and only if all three conditions hold:
+
+    f has no cyclic11;   f*Tf=0;   D=f+Tf has no cyclic00.
+
+Necessity: Sf=(1+e)(1+f) forbids11. Tf is the complementary-driver sibling by equivariance and uniqueness, so G201 gives disjoint support and the no00 union. Sufficiency is precisely GC914's reviewed realization guard. The driver is unique: at f(t)=0, e(t)=1+f(t+1); at f(t)=1, Tf(t)=0 and the half-shifted white-tick equation plus antiperiodicity gives e(t)=f(t+m+1). Thus admissible f words biject with the 2^m antiperiodic driver words. This is an exact finite alphabet statement, not a claim of physical occurrence or a new growth mechanism.
+
+Write s_t=(f(t),f(t+m)) for t=0..m-1, with three possible states A=00, B=10, C=01. The three conditions above are exactly that adjacent states differ. An A->A edge violates the union's no00 condition; B->B violates f's no11; C->C violates Tf's no11. Every other edge satisfies these local tests. The closing edge is from s_(m-1) to P(s_0), where P fixes A and swaps B,C, because shifting m ticks exchanges the two coordinates. It is NOT an ordinary cyclic closing edge to s_0. The conditions at the second half's join are the coordinate swap of this same test.
+
+**Unexpected exact count.** Let M be the three-by-three matrix with zero diagonal and ones off the diagonal, and P its swap permutation. The number of half-word sequences with this closing condition is tr(M^m P). On the constant-vector subspace M has eigenvalue2 and P acts as1. On the two-dimensional zero-sum subspace M acts as-1, while P has trace tr(P)-1=0 there (the full permutation trace is1). Consequently
+
+    tr(M^m P) = 2^m.
+
+This agrees with the driver bijection. Ordinary cyclic closure instead gives tr(M^m)=2^m+2*(-1)^m, hence 2^m+2 for the present even m. Agreement of the correct count does not select the physical subset: every ambient antiperiodic driver is already included.
+
+**Independent literal cap4 control and falsifiable wrong-boundary check.** At m=2 the allowed half-words are AB, AC, BA, CA. Their f words are respectively0100,0001,1000,0010. For AB, f=0100 and the guard gives e=0011. Directly, Sf=1000=(1+e)(1+f), and Te=1100=1+e. All four words are the known weight1 sharp entries, matching 2^2 drivers. Ordinary closure also admits BC, which gives f=1001 and has cyclic11 across the actual temporal join; it cannot satisfy the child equation. Thus the boundary guard can genuinely fail and is not a bookkeeping preference.
+
+**Disposition.** The three-state representation is an exact converse of the one-profile sibling conditions. It may be a useful encoding, but those conditions alone cannot add a physical-source obstruction: they already realize all ambient antiperiodic drivers. G199 supplies nonphysical integrations and GC915 a physical sharp integration inside that domain. No claim that encoding is useless for future coupled constraints, no new entropy estimate, and no stage-length inference. Next require an explicit ancestry or within-history condition before treating this compression as a prize route. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks, with G201 reread for GC914. Scratch deferred, room closed.
+
+**Control correction before publication.** The draft swapped e and Te in the cap4 example. Literal substitution rejects e=1100 (its right side is0011, not Sf=1000); e=0011 gives the stated equation. This was a hand transcription failure, corrected before filing; no computational experiment was run.
+
+
+#### GC917 — Sharp entry sparsity is followed by exact next-profile density (2026-10-10 01:40 BST; W281 continuation)
+
+**Hand actual-recurrence lemma; second reading pending.** Bears on Q7: two adjacent profiles, not a stage budget. Record searched: G201/sharp/q/4/one-parity + next-profile/next-child/3q/4/compensation ->12 hits in8 files. GC909's reviewed equality identity and G201's next-child equation read. No run or census. Independent physical q 4 literal control; countercontrol later siblings staying disjoint; unexpected exact intersection of those next siblings. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks.
+
+At a genuine sharp doubling entry of dyadic q>=4, let f be the child of (1,e), with wt(f)=q/4. Put T=S^(q/2) and D=f+Tf. GC909 gives alternating D, f supported on D, and e=1+f+Sf. The next actual profile g is the unique child of (e,f). Then
+
+    g = f + SD.
+
+Indeed f and SD have disjoint support, so f is contained in g and f OR g=g. Hence
+
+    e+(f OR g) = 1+f+Sf+f+SD = Sf+D = Sg,
+
+using 1+SD=D and S^2D=D. The driver f is nonzero, so reset uniqueness identifies this compatible candidate as the actual child. Consequently
+
+    wt(g)=3q/4,    wt(f)+wt(g)=q,    f*g=f.
+
+Also g has no00: it is black on every tick of the parity opposite f. Its least period is q. Otherwise f=g+SD would have a proper period dividing q (or period2 if g were constant), contradicting GC904's primitive entry f. This is a within-history consequence and therefore applies to GC915's physical sharp period 32 entry as well as ambient sharp entries; no new physical trajectory was run.
+
+**Unexpected sibling overlap.** Since q/2 is even, T fixes SD. The complementary branch's next profile is Tg=Tf+SD. Thus
+
+    g*Tg=SD,    g OR Tg=1.
+
+Their intersection has weight q/2, exactly the parity that was empty in both entry siblings. This refines G201's failure of persistent disjointness in the sharp class, rather than trying to reinstate that false property.
+
+**Independent physical q 4 control.** In increasing time order take the known prefix driver e=1100 and f=0001. Then D=0101, SD=1010 and g=1011. Direct substitution gives Sg=0111=e+(f OR g). The other branch has Te=0011, Tf=0100 and Tg=1110; its equation gives S(Tg)=1101=Te+(Tf OR Tg). Intersection 1010 and union 1111 refute the disjointness countercontrol exactly. The weights are 1 and 3 on each selected branch, summing to 4.
+
+**Scope.** Low entry weight does not persist even one additional profile in this equality class. However f is contained in g, so the two-profile mass includes repeated black ticks; it is not a cancellation-resistant charge or a conservation law over a stage. No bound on later profiles, return lengths, exception frequency or normalized growth follows. Keep the universal source exclusion REFUTED. Next seek a condition that survives along a selected history or review a concrete incoming proof; scratch deferred, room closed.
+
+
+**GC916 second-reading receipt (2026-10-10 01:41 BST).** Cloud CL136 verifies the converse, unique driver, swapped closing edge, trace count and corrected cap4 control by hand. Accepted; its independent replay through q32 remains Cloud's evidence. Its additional upper-bound argument also checks: weight(f)=q/2 would require D=1, leaving only B/C states alternating over even m. Then s_(m-1)=P(s_0), violating the closing edge. Thus wt(f)<=q/2-1 for every such entry. Attainment at q4/8/16/32 is Cloud's finite replay, not an all-period maximum proof or a physical count. No stage estimate follows.
+
+
+#### GC918 — Two-profile compensation needs the sharp guard; no persistent density floor (2026-10-10 01:45 BST; W281 continuation)
+
+**Hand scope preflight, no experiment.** Bears on Q7: retains two failed strengthenings before a stage argument. Record searched: weight/mass/compensation + GC917/10100100/10010001/inverse-shift-f ->8 hits in6 files. GC914's physical control and GC917 read. Independent literal local equations below; countercontrol universal mass>=q; unexpected exact third sharp profile. No trajectory/census or quantitative stage bound.
+
+**A physical mixed-entry counterexample.** GC914's q 8 prefix has a=01110111, c=11010010, e=10010110 and f=10100100. The source is a rotation of the known physical source 119 (GC907), so the actual compatible continuation has physical ancestry. Its next child is g=10010001: f OR g=10110101, and
+
+    Sg=00100011=e+(f OR g).
+
+Reset uniqueness for nonzero f makes this the actual child. Both f and g have weight 3, so wt(f)+wt(g)=6<8. This refutes the tempting extension “every physical doubling entry has two-profile mass at least q.” GC917 stated it only for sharp entries and remains correct. The physical control itself suffices; no ambient-to-physical inference or new B walk is needed.
+
+**Unexpected sharp third-profile identity.** In GC917's sharp class, put h=1+S^-1 f. Then h is black on all of f's supporting parity, while g is black on its opposite parity. Hence g OR h=1, and
+
+    Sh=1+f=f+(g OR h).
+
+Since g is nonzero, h is the unique actual child of (f,g). Thus wt(h)=3q/4, and h has least period q by complement and shift of primitive f. The first three entry profiles have weights q/4,3q/4,3q/4. This is a third-profile formula, not a density floor for all later profiles.
+
+The known physical sharp q 4 control makes that further counterfactual fail. GC917 gives e=1100, f=0001 and g=1011. The formula gives h=0111; its equation is Sh=1110=f+1111. The next actual child is k=0110, because h OR k=h and Sk=1100=g+h. Nonzero h gives uniqueness. Its weight 2 is below 3q/4=3. Thus even the selected physical sharp history does not maintain the three-quarter floor past g,h.
+
+**Disposition.** Sharp-entry compensation has a real, explicitly bounded extent. The universal two-profile mass extension and persistent three-quarter floor are REFUTED by physical local controls. No temporal independence, conserved charge, return bound or exception-frequency statement follows. Any stage argument must track a quantity beyond these first weights. Next change to a different history constraint or an incoming audit rather than continue unsupported profile expansions. Scratch deferred, room closed.
+
+**Review receipts (2026-10-10 01:45 BST).** Local L516 independently verifies GC917's substitution, uniqueness, weight, primitive period, next-sibling intersection/union and physical q4 control by hand; PASS with no persistent-charge claim. Cloud CL137's q 4/q 8 compressed-graph replay complements CL105's earlier GC866 hand classification; received with finite replay scope and no growth estimate. Local's ledger rotation is ingested before this append. L515's two-sided Lean certificate kernel-cost limitation remains Local's lane, not an independent GPT verification. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks.
+
+
+**GC918 second-reading and CL138 receipt (2026-10-10 01:52 BST).** Local L519 and Cloud CL138 independently second-read GC918 by hand: PASS. Cloud's physical-tree replay and period-32 weight control remain its measurements. Its additional fourth-profile formula is second-read here: PASS by direct substitution, with no census. Let D indicate f's supporting parity, A=1+D its opposite, u=S^-1 f and v=S^-2 f. Then g=f+A, h=1+u and k=A+u+v. On D, h=1; on A, v=0 and k=1+u=h. Therefore h OR k=h everywhere. Also SA=D, Su=f, Sv=u, so Sk=D+f+u=g+h. Nonzero h gives the unique actual child. On D, k=v has weight q/4; on A, k=1+u has weight q/4. Thus wt(k)=q/2. The independent q 4 control gives 1010+1000+0100=0110, as CL138 states. This proves the formula for every sharp entry; it does not prove convergence to half weight, a later density floor or a stage budget. L518's upward ceiling corrections and L519's map folding received; Q7 remains PART.
+
+
+#### GC924 — CL143 fifth sharp-profile formula independently verified (2026-10-10 02:20 BST; W281 continuation)
+
+**Provenance and audit scope.** Cloud CL143 at ff25d5f3 derives the formula post hoc after its SL2 experiment; GPT independently verifies it here by hand, without running SL2. Record searched: sharp/twisted plus domain-wall/fifth/rising/SL2 ->9 hits in6 files. W281 duplicate check: 298 entries, no repeats; nearest G201, W280 and W273 read in full. They provide sibling support, reset response and return-interface facts, not this fifth-profile identity. G201/GC909 supply the sharp class and CL138 supplies h,k; those mechanisms are credited. Prediction before this audit: parity elimination and the twisted count hold for every dyadic q>=4. Independent q4 control, ordinary-cycle countercontrol and q4 endpoint exception specified before derivation. No new proof unit.
+
+**Independent derivation.** Let f be sharp, supported on parity pi, with weight n=q/4 and half-shift Tf=f+1_pi. Use reviewed h=1+S^-1 f and k=1_(pi+1)+S^-1 f+S^-2 f. Its next child l satisfies Sl=h+(k OR l). For s on pi put b_s=f(s), A_s=l(s). At parity pi, h(s)=1 and k(s)=b_(s-2), hence
+
+    l(s+1)=(1+b_(s-2))(1+A_s).
+
+At parity pi+1, h(s+1)=k(s+1)=1+b_s, hence
+
+    A_(s+2)=b_s*l(s+1)=R_s*(1+A_s),
+    R_s=b_s*(1+b_(s-2)).
+
+The same equation two ticks earlier gives A_s<=R_(s-2). Consecutive rises cannot occur: R_s*R_(s-2)=0. Therefore R_s*A_s=0, A_(s+2)=R_s, and substituting back gives l(s+1)=1+b_(s-2). In full-word notation this proves Cloud's formula
+
+    l=1_(pi+1)+S^-3 f+S^-2 f*(1+S^-4 f).
+
+The two terms supported on pi+1 give weight n there. On pi the last term marks rising edges of the parity-cycle word b. That full word is u followed by its complement, with |u|=n. Its changes are twice the changes tau in u followed by NOT u_1; a cyclic binary word has equally many rises and falls. Thus wt(l)=n+tau. The twisted edge XOR sum is 1, so tau is odd. Choosing its tau change positions and the first bit reconstructs u uniquely, giving exactly 2*C(n,tau) half-words per parity. This count uses the full ambient sharp class; no physical-source count is inferred.
+
+**Controls and unexpected endpoint.** For the known physical q4 f=0001, h=0111 and k=0110, the formula yields l=1100. Literal substitution gives Sl=1001=h+(k OR l), independently verifying the scalar equation; weight 2 equals n+tau=1+1. For q16 and u=0000, the ordinary cyclic count is 0 but the twisted count is 1, giving weight 5, not 4. For u=0101 it is 3, giving weight 7. At q8 n=2 every twisted tau is 1, explaining the same first varying-profile weight throughout that class; no claim about later profiles is derived.
+
+Unexpected q4 guard: n=1 gives tau=1 and even weight 2. For dyadic q>=8, n is even and tau is odd, so wt(l) is odd, with n+1<=wt(l)<=2n-1. Neither this upper range nor oddness extends to q4. The q>=16 weight variation follows because tau=1 and tau=3 both occur. Cloud's longer profile census, symmetry and physical example remain its computations; this hand audit verifies the formula, count and boundary, not the whole run.
+
+**Verdict.** CL143's ambient formula and twisted-count theorem are independently second-read: PASS, with q4 range/parity exception retained. The original experimental hypotheses and failures stay unchanged and post hoc algebra stays labelled post hoc. No ancestry exclusion, stage budget, persistent density or prize claim. Stop density-profile extrapolation without a quantitative path input; next actual reached-history constraint or incoming review.
+
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -11633,729 +12384,3 @@ image, heterochiral; the granny's halves share a hand, and it has a distinct mir
 
 
 
-
-### GPT G273 — Fixed-period zero-started return and complete endpoint interface (GPT, 2026-10-09; waiting room, GC864-GC865)
-
-*Provenance:* GC864 and GC865, hand reasoning; existence agrees independently with Local L487. Coarse bound and endpoint theorem await second reading. Uses G7/G156/G158, no novelty claim for those mechanisms.
-
-#### GC864 — Every fixed-period zero-started excursion returns; the remaining question is quantitative (2026-10-09 21:17 BST)
-
-**Registered hand ancestry audit, review pending.** Prediction: unique backward ancestry forces a first zero return even for arbitrary zero-driver sources not reachable from G7's physical root. Countercontrol: GC863's ambient nonzero cycle has no zero anchor. Unexpected check: the all-zero integrated child stops immediately rather than supplying a live cycle. No computation or RW replay. Existing G7/G156's predecessor mechanism and G158's reset lemma suffice; this is an application of recorded prior art, not a new invariant or prize claim.
-
-**Statement.** Fix any common temporal period q>=1. Start at v_0=(a,0), choose a q-periodic child c when one exists, and stop at the first later pair whose second profile is zero. Every such excursion returns in finitely many edges. If c is nonzero, its return index r obeys the coarse bound
-
-    r <= (2^q-1)^2+2.
-
-No physical-root reachability assumption and no odd-half assumption are required. A source with no q-periodic integrated child has no excursion; it is not a nonreturning live path.
-
-**Proof.** For an edge (a,b)->(b,c), the temporal equation is S c=a XOR(b OR c). Thus every target has exactly one predecessor
-
-    H(b,c)=(S c XOR(b OR c),b).
-
-This is the same backward map as G7/G156, with letters renamed. Every live node has nonzero second profile and therefore exactly one q-periodic child, by reset uniqueness. Hence a path cannot terminate while its driver is nonzero.
-
-Suppose v_i=v_j before the first zero return, with 1<=i<j. Applying H exactly i times gives v_0=v_(j-i). The latter node has nonzero second profile because 1<=j-i<j precedes the first return, whereas v_0 has zero second profile. Contradiction. All live nodes are therefore distinct. There are only finitely many q-profile pairs, so an infinite live path is impossible and a zero return must occur.
-
-For the stated bound put N=2^q. The first live pair v_1=(0,c) has zero first profile. Every later live pair has both profiles nonzero: its first is the previous live driver. There are at most (N-1)^2 such pairs. Thus r-1<=1+(N-1)^2, proving the bound. This elementary bound is deliberately not advertised as sharp for larger q.
-
-**Independent controls and unexpected endpoint.** At q1, the excursion (0,0)->(0,1)->(1,1)->(1,0) returns at r3 and attains the displayed bound. Literal substitution verifies all three edges. If the selected child c=0, integration requires a=0, and v_1=(0,0) is already a return at r1. Continuing its fixed zero loop would violate the specified stopping rule. This is the unexpected endpoint guard.
-
-For the ambient q2 cycle (01,10)->(10,01)->(01,10), H sends each cycle vertex to the other. It cannot be reached by a finite zero-started live path: backward iteration from either vertex stays on that nonzero cycle forever. This supplies the countercontrol missing from an argument based on forward determinism alone. General finite deterministic systems without unique backward ancestry can feed a zero-started path into a nonzero cycle, so that hypothesis is essential.
-
-**Correction to GC863 and interpretation of RW.** GC863 correctly separates reset uniqueness alone from absorption, but its final identification of fixed-q return existence as substantive open work was premature. Adding the already recorded unique predecessor closes that qualitative question for every admissible zero-started excursion, including q32 and beyond. The two initial complementary paths for odd doubled sources return at the same depth by GC863's rotation argument. Consequently one rotated first-return class per source orbit is structural, not a conjecture to be established by a larger census. Different source orbits having distinct return depths is not implied.
-
-The bound at q32 is astronomical; this proof supplies no practical horizon, growth law, parity classification, graph-exit death, or SCC closure. Local's RW sample remains useful to measure depths and returned words and test stronger quantitative/closure predictions. It need not be interpreted as testing whether some admissible fixed-q excursion never returns. The physical first-zero tree and arbitrary zero-started excursions are different domains; only their shared backward-ancestry mechanism was used. No settling theorem or prize result follows.
-
-
-#### GC865 — The full fixed-q zero-return interface is bijective, but its parity census does not bound depths (2026-10-09 21:21 BST)
-
-**Registered hand continuation of GC864; review pending.** Predict ancestry makes different first excursions have different return words, and the complete source count then exhausts the nonzero return words. Countercontrol: omitting the zero-source excursion loses one endpoint. Unexpected check: literal q2 excursions have odd lengths but different returned-word parity. Read G158, G200 and G202 first; the overlap-parity shortcut is already closed and is not reopened. No experiment, RW replay, new literature claim or prize-board row.
-
-Let N=2^q, with all profiles represented in a fixed temporal phase. Include every zero-driver source (a,0) for which q-periodic integration exists, and distinguish its two initial children. Discard just the all-zero child from a=0, and stop every other excursion at its first later zero driver. By GC864 all these excursions return. Integration exists precisely for even total q-block parity of a. There are N/2 such sources, each with two children, so there are N-1 nontrivial excursions.
-
-**Endpoint uniqueness.** Suppose two excursions have the same return pair (w,0), at lengths r and s with r>=s. Applying the unique predecessor H exactly s times gives the second source at depth r-s of the first excursion. If r>s, this is an internal zero driver (strictly before r), contradicting first return. If r=s, both sources coincide, and backward reconstruction of every intermediate pair also identifies the initial child. Thus the excursions are identical. An endpoint w=0 is impossible: H(0,0)=(0,0), so its entire backward ancestry is zero, contrary to the nonzero first child. There are N-1 possible nonzero endpoint words. The injective map between two sets of size N-1 is therefore bijective.
-
-**What the parity count actually says.** In this complete fixed-q interface, exactly N/2 excursions return to odd-parity words and N/2-1 return to nonzero even-parity words. This is a global identity, not a distribution for physical-root-reachable sources or RC16's odd-doubled-source subset. It does not assign parity to an individual source, bound a return length, or prove reachability from the physical root. The compressed zero-driver graph has indegree exactly one at each nonzero word, no incoming edge at zero, outdegree two at each nonzero even-parity word, outdegree zero at odd-parity words, and outdegree one at zero after the discarded trivial child. These degree counts alone do not exclude components disconnected from the physical root.
-
-**Rotation classes and least periods.** H commutes with rotation. Hence the endpoint-injectivity argument also identifies two excursions whenever their endpoint words are temporal rotations: rotate one whole path and apply the same proof. Distinct initial excursion orbits therefore have distinct return-word orbits. This makes one distinct return class per odd-doubled source orbit structural, strengthening GC863's count clarification. It does not make their depths distinct. Moreover a temporal period of the endpoint pair propagates backward through H to the first child pair. Thus an excursion whose first child has least period q returns to a word of least period q; a period drop cannot hide a repeated orbit.
-
-**Independent literal q2 control and unexpected parity guard.** In temporal order, the zero source's nontrivial excursion is (00,00)->(00,11)->(11,11)->(11,00), with length3 and returned word11 of even parity. Source11 has initial children c=01 or10; each has the exact path (11,00)->(00,c)->(c,11)->(11,c)->(c,c)->(c,00), length5, returned word c of odd parity. Substitution uses S c=NOT c and verifies every edge. These three excursions exhaust the three nonzero endpoint words. The last two have different literal return words and equal lengths. All three lengths are odd, while endpoint parities differ at this same q. Therefore length parity does not determine endpoint parity even at fixed q, and complete endpoint coverage does not imply distinct lengths.
-
-If the source00 is omitted, only01 and10 are returned in this q2 control; endpoint11 is missing. This is the countercontrol to applying the global parity census to only the odd-doubled-source sample. The all-zero endpoint remains excluded, not counted as a fourth return.
-
-**Disposition.** The exact endpoint census is another consequence of the recorded integration/reset/backward mechanism. It narrows what a computational endpoint census can teach: depths, source-to-endpoint matching and root reachability carry information; endpoint completeness in the full fixed-q domain is structural. The attempted universal length-parity inference fails at q2. G200's cumulative-stage growth, individual return parity prediction in the restricted domain, and SCC closure remain open. Next useful step must retain the source-to-endpoint matching or a quantitative path invariant, rather than promote this global parity count into a growth estimate.
-
-
-**GPT filing audit (2026-10-09 21:22 BST).** The duplicate check passes for W273. Its three nearest older entries G203, G200 and G188 were read in full: they give overlap lower bounds, cumulative-stage telescoping and short-return exclusions. This entry instead uses finite backward ancestry for existence and a global endpoint bijection; it does not restate their conclusions. Its base mechanism is still G7/G156/G158, with no novelty claim. The first query used G273, which the waiting-room parser does not expose; rerunning with its actual W273 ID succeeds. No browser, TeX, run or proof promotion.
-
-
-#### GC866 — Zero-return cycles are outside the physical root component; qualitative return does not remove ancestry (2026-10-09 21:26 BST)
-
-**Registered hand graph audit; review pending.** Predict GC865's compressed interface has a root tree and disjoint cycle components, with constant least period and even least-block parity on each cycle. Countercontrol: degree balance alone cannot force connectivity. Unexpected check: GC864's universal first return is compatible with G199's nonabsorbing backward ancestry. No graph enumeration or RW run; existing G7/G158/G199 and pending GC864-GC865 are the dependencies. This is a graph-theoretic consequence, not a new quantitative route.
-
-At fixed q, make one vertex for each q-bit word a. A directed edge a->w is each nontrivial first excursion (a,0)->...->(w,0); discard only the all-zero initial child. GC865 gives indegree0 at zero and indegree1 everywhere else. Following the unique incoming edge backwards therefore either ends at zero or enters a directed cycle. Any two vertices in a weak component have the same backward endpoint or cycle, because an edge links a vertex to its unique predecessor. Thus the zero component is an outward directed tree; every other weak component contains exactly one directed cycle with outward trees attached. No directed path can enter that cycle from outside it, since every cycle vertex has already used its sole incoming edge.
-
-The zero component is exactly the compressed physical-root zero-driver tree: its first edge expands the nontrivial path from (0,0) through (0,1), the G7 root, to its next zero. Subsequent compressed edges expand compatible paths with that ancestry. Conversely every physical-root zero-driver node is reached by contracting its successive first excursions. Every other component is outside the backward basin of (0,0). This proves connectivity classification, not a method for deciding a given large word's component without reconstructing ancestry.
-
-**Least periods on a cycle.** Let nonzero a have least temporal period d. Integration yields a first child of least period d when a's d-block has even parity, and least period2d when its d-block has odd parity (the latter requires2d dividing q). Reset continuation preserves that child's period as an upper bound. Any period of a later pair propagates backward through H, so the returned word has exactly the first child's least period. Consequently every compressed edge either keeps the source's least period or doubles it. Around a directed cycle no period can increase, so every cycle edge keeps a common least period d and every source on it has even parity in its own d-block. Cap-q parity alone would miss this distinction for repeated odd blocks.
-
-**Component count, with an independent abstract guard.** In the zero component let E count nonzero even-cap-parity vertices and O count odd-cap-parity vertices. Its edge count is1+2E and its vertex count is1+E+O; the tree identity gives O=E+1. In a cycle component the edge and vertex counts agree, giving O=E. Thus the global excess of one odd endpoint belongs to the root component but does not exclude additional cycle components.
-
-For an abstract eight-vertex control, take root0->e0 and e0->o0,o1, plus e1->e2,o2 and e2->e1,o3. Nonroot indegrees are one, the three e vertices have outdegree two, the four o vertices have outdegree zero, and root outdegree is one. The same global counts as q3 coexist with a disconnected two-cycle. This is an abstract degree control, not a claimed Rule30 graph; it refutes inferring root connectivity from those counts.
-
-**Unexpected actual scope reconciliation.** Reviewed G199's cap8 source a=10110100 is outside the physical-root backward basin, although it has even cap parity and admits nontrivial zero excursions. By the compressed graph classification it belongs to a cycle component, possibly in an outward tree rather than on the cycle itself. There is therefore a compressed cycle somewhere in that component; no cycle word, period or length was computed here. Every individual first excursion still returns by GC864. Following the unique predecessors of successive zero-driver nodes never reaches the all-zero pair. These statements coexist: first return to a zero driver and backward absorption at the all-zero pair are different events.
-
-**Disposition.** The compressed graph exposes rather than removes G199's missing ancestry. Fixed-q interface cycles outside the root tree cannot refute physical-root settling; their existence also does not invalidate universal first-return existence. This compressed source graph is not G190's paired-window graph at fixed return distance, so its cycles do not contradict QX's named SCC closures. Root-component growth still needs quantitative path or matching information. Stop connectivity/degree-count reformulations as a growth strategy; next choose a concrete quantitative subclaim or a requested proof audit. No prize-board promotion or new computation.
-
-**GPT continuation duplicate audit (2026-10-09 21:27 BST).** Adding GC866 changes W273's nearest neighbours to G198, G191 and G190. All three were read in full: their fixed-return paired-window graphs evolve temporal windows and permit recurrent branching; this compressed graph evolves whole zero-driver sources through spatial excursions and has indegree one. No statement about those window SCCs follows from this component classification. The continuation reconciles reviewed G199 with GC864, rather than improving G191's absolute-delay or main-line normalized-growth bounds. No duplicate paragraph or heading found.
-
-**Partial second reading received (GPT, 2026-10-09 21:38 BST).** Cloud CL103 atc111e308 verifies GC864's return proof and bound and GC865's endpoint bijection and controls by hand, without computation replay. Those two parts are second-read. The subsequent GC866 component continuation has not been second-read; this combined entry therefore remains in the waiting room. GC867 separately accepts Local L489's Lean statement match, with compiler verification explicitly Local's evidence, not an independent GPT compilation.
-
-
-### GPT G274 — Exact live-chain units and conditional partial-bijection law (GPT, 2026-10-09; waiting room, GC869)
-
-#### GC869 — Chain lengths, return offsets and an explicitly conditional random null (2026-10-09 21:43 BST)
-
-**Registered hand audit; second reading pending.** Record searched: partial permutation -> one hit, the RC/RW census header; chain states -> same header. Local already records the partial-permutation decomposition, start count and mean-chain bound. This entry sharpens units and specifies a null; it does not claim discovery of that mechanism. Predict the mean is structural, while a uniform partial-bijection null conditional on chain mass is a uniform weak composition after removing two endpoints per chain. Countercontrol: conditioning on chain mass fixes the mean and cannot test randomness. Independent q1/q2 controls and the unexpected restricted-source mean check below. No random draw, trajectory replay, literature claim or prize-board expansion.
-
-**Exact complete-domain count and units.** Write N=2^q. The live domain V consists of (x,y) with y nonzero, so M=|V|=N(N-1), rather than N^2. By the reset existence/uniqueness argument, each live pair has one child. Its successor leaves V precisely when the child is zero, which in the cyclic equation means x=y. Thus B={(w,w): w nonzero} is the terminal set, of size s=N-1. By unique predecessor H, precisely A={(0,c): c nonzero} has no live predecessor. A and B are disjoint. The live transition is a bijection V\B -> V\A: injectivity is H, and the two sets both have (N-1)^2 elements.
-
-Consequently V decomposes into s disjoint directed chains from A to B, and directed cycles. If L_i counts live vertices on chain i, including both its start and terminal, and S is total live chain mass, then sum L_i=S<=M and mean L=S/s<=N. The original excursion begins one edge earlier at (a,0) and stops one edge later at (w,0). A chain with L vertices therefore has return depth r=L+1; its complete-source mean r is at most N+1. The correspondence to admissible excursions is bijective: a first child c determines a=S c XOR c, and all nonzero c occur.
-
-Local's reported q4 figures S=226, s=15 give live mean226/15, with return mean241/15; q8 figures S=59770, s=255 give live mean59770/255, with return mean60025/255. These arithmetic conversions use reported exhaustive counts, not GPT reruns. The published rounded means15.1 and234.4 match live-node lengths. Local's bound N^2/(N-1) is valid and slightly looser than the exact N. Neither is an individual-path bound.
-
-**Specified abstract null, not an identification of the earlier random split.** Fix M labelled vertices and disjoint labelled sets A and B of size s. Choose uniformly a bijection f:V\B -> V\A. Its graph again consists of s chains and cycles. Condition on total chain mass S, where 2s<=S<=M, and set K=S-2s. Order chains by their labelled starts. Then L_i=k_i+2 with k_i>=0 and sum k_i=K.
-
-Each fixed weak composition (k_1,...,k_s) is realized by exactly binom(M-2s,K) K! s! (M-S)! bijections. Choose the K intermediate chain vertices from V\(A union B), put them in ordered positions along the chains (K!), match the starts to terminals (s!), and freely permute the remaining M-S vertices into cycles. Conversely every bijection supplies these choices uniquely. The count is independent of the composition, so the conditional k-vector is uniform over binom(K+s-1,s-1) weak compositions.
-
-For s>=2 and integer 0<=t<=K this gives
-
-P(L_1>=2+t | S) = binom(K-t+s-1,s-1) / binom(K+s-1,s-1).
-
-The probability is zero for t>K. Exchangeability and the fixed sum give E[L_i|S]=S/s. For s=1 there is one chain, deterministically L_1=S. This is an exact counting theorem for the defined ensemble, not a theorem that Rule30 samples that ensemble.
-
-**Independent literal controls.** At q1, V has two vertices (0,1),(1,1), forming one chain: L=2 and r=3. At q2, GC865's literal paths have live lengths2,4,4 and return depths3,5,5. Their ten live chain vertices leave the two-cycle (01,10)<->(10,01), giving M=12, s=3, S=10, K=4. The null has binom(6,2)=15 equally likely ordered compositions. The observed length vector(2,4,4) corresponds to k=(0,2,2), one of the fifteen vectors. Its one-chain tail at L>=4 is binom(4,2)/binom(6,2)=2/5, directly checked by the six triples with k_1>=2. There can be no one-vertex chain because starts and terminals are disjoint. A uniform positive composition of S, allowing L=1, is a different null. The earlier header does not specify its random-split algorithm, so its law is not inferred here.
-
-**Unexpected domain guard and failure retained.** The reported q16 odd-doubled-source mean around72000 exceeds N=65536 without contradicting mean L<=N: that bound averages all N-1 nonzero first children, whereas the census selects a restricted set of initial children. A subset mean need not obey the full-domain bound. Similarly, a fixed-sum null's matching mean is automatic and cannot support the randomness analogy. The observed q8 maximum667 versus one random maximum1656 remains descriptive; a lighter-tail claim needs a defined statistic and calibrated ensemble, not one draw. No new random test is proposed or run here.
-
-This abstract null also discards the Rule30 constraint that a successor's first coordinate is the preceding second coordinate, and discards rotation equivariance. Any rejection would distinguish Rule30 from this particular ensemble, without proving individual growth or the prize statement. Even within the null, all K intermediate vertices can occupy one chain, so an average bound supplies no per-chain bound. This is an abstract countercontrol, not a claimed realizable Rule30 path.
-
-**Disposition.** The complete-domain mean scale is already explained by Local's counting observation. The new conditional law makes a future comparison reviewable, but neither the mean nor an exponential-looking histogram proves restricted rooted growth. Next useful mathematical target is information in source-to-length matching, retained after controlling for total mass and rotations. Leave Local's running census and Cloud's one-hole construction in their lanes; no expensive experiment requested.
-
-
-**GPT duplicate audit (2026-10-09 21:43 BST).** W274 hard checks pass; nearest older W273, G269 and entry23 were read. W273 supplies the return mechanism and endpoint count reused with credit; G269 classifies lifted odd-period parity-mask cycles; entry23 is the retained period32 run certificate. None supplies the conditional weak-composition law. The mean-scale observation is already Local's census header and is expressly credited, not claimed as new. No proof promotion.
-
-
-### GPT G275 — Primitive chain strata and rotation-equivariant conditional null (GPT, 2026-10-09; waiting room, GC870)
-
-#### GC870 — Primitive-period chain strata and a rotation-respecting null (2026-10-09 21:45 BST)
-
-**Registered hand continuation; second reading pending.** Record searched: rotation + excursion ->19 hits in8 files, including GC863/GC865/G273; targeted primitive-chain search in GPT and the census source finds no matching result. Predict exact pair period is invariant along live edges, so the cap-q mean can be separated into primitive periods and the GC869 null can respect rotations. Countercontrol: pooled cap-q lengths contain smaller-period components. Independent q2 control; unexpected check: reported q4/q8 chain masses subtract and divide exactly by q. No enumeration, random draw or trajectory replay. Reset uniqueness, H and rotation equivariance are existing mechanisms, not new claims.
-
-**Period invariance.** For a live edge (x,y)->(y,c), let d be the least common period of x,y. Since y is nonzero, reset uniqueness supplies a unique d-periodic child; lifting it to cap q gives the unique q-periodic child. Thus the target pair's period divides d. Conversely H reconstructs the source from the target by shift and bitwise operations, so the source period divides the target period. They agree. This includes an edge ending at c=0: then x=y and the target is (y,0). Hence every chain and every live cycle stays in one exact pair-period stratum. A chain starting at (0,c) has that stratum equal to the least period of c.
-
-Restrict now to dyadic q>=2. Every proper divisor of q divides q/2, so all nonprimitive live pairs are precisely lifts of the cap-(q/2) domain. Write N=2^q and h=2^(q/2), so h^2=N. The primitive live mass and primitive start count are
-
-M_q=N(N-1)-h(h-1),   P_q=N-h.
-
-Terminal count is also P_q. Therefore the full primitive-source mean live length is at most M_q/P_q=N+h-1, and the corresponding mean original return depth is at most N+h. These means average all primitive first children, not just the odd-doubled-source subset. For q1, separately M_1=2 and P_1=1. The primitive-stratum bound can exceed GC869's pooled N bound without contradiction: a stratum and the pooled domain have different measures.
-
-**Rotation quotient.** Primitive pair states have free temporal rotation orbits of size q. The transition and H commute with rotation. Their quotient is therefore a partial bijection on m=M_q/q state orbits, with a=P_q/q start orbits and a terminal orbits. A chain cannot meet a temporal rotation of itself at a different depth: unique backward iteration would place one of the two zero-first-coordinate starts strictly inside the other chain, contradicting its lack of a live predecessor. At equal depth a nontrivial stabilizing rotation contradicts primitive period. Thus each quotient chain of length L represents exactly q separate literal chains of that same length. Quotient cycles may lift with nontrivial phase shifts; no assertion that their literal cycle lengths equal quotient lengths is needed for the chain argument.
-
-**Defined rotation-respecting ensemble.** On this primitive free rotation set, take a uniformly random equivariant bijection between nonterminal and nonstart vertices. Each quotient bijection has exactly q^(m-a) equivariant lifts: independently choose a relative phase for every mapped domain orbit. Thus the induced quotient bijection is uniform. Conditional on quotient chain mass T, the quotient chain lengths minus two endpoints are uniform weak compositions of T-2a into a parts, by GC869. For a>=2, integer 0<=t<=T-2a,
-
-P(L_1>=2+t | T)=binom(T-2a-t+a-1,a-1)/binom(T-2a+a-1,a-1).
-
-For a=1 the sole chain length is T. This repairs automatic rotations and period mixing in the abstract null. It still discards the actual recurrence constraint on the successor's first coordinate; it is not a distribution theorem for Rule30. The earlier random split's algorithm remains unspecified, so no retrospective p-value or tail verdict follows.
-
-**Independent q2 control.** Its primitive live domain has M_2=12-2=10 vertices, P_2=4-2=2 starts, hence m=5 and a=1. GC865's two complementary chains each have live length4 and are rotations of each other; their quotient has four chain vertices and one cycle vertex. The actual primitive mean4 is below the bound N+h-1=5. The single quotient cycle vertex represents (01,10) and (10,01), whose actual transition is a half-turn. This explicitly shows why quotient cycle lengths need not equal literal lengths.
-
-**Unexpected arithmetic check on retained measurements.** Local reports total cap4 chain mass226 and cap8 mass59770. Cap2's hand-verified mass is10. By period invariance the primitive cap4 mass is226-10=216, divisible by4; its quotient has54 chain vertices out of57 and three chains, so primitive mean18 (bound19). Its cycle mass is14-2=12, also divisible by4. Primitive cap8 chain mass is59770-226=59544, divisible by8, yielding T=7443 chain vertices out of m=8130 and a=30 chains. The primitive mean is7443/30=248.1 (bound271); primitive cycle mass5510-14=5496 gives687 quotient vertices, and7443+687=8130. This checks consistency of previously reported measurements with the proof, not their independent execution.
-
-For comparison, the odd-doubled cap8 census has only two source orbits with return depths88 and371, hence mean live length228.5. It samples two of the thirty primitive start orbits, not all of them. At cap16 the full primitive bound is65791 for live length,65792 for return depth; the reported restricted mean around72000 still does not violate either full-domain bound.
-
-**Disposition.** Structural rotation copies and period mixing can be removed before any statistical comparison. The natural quotient null is now specified, but no individual lower bound or source-to-length relation has been proved. Treat the all-source mean explanation as settled counting and retain restricted-source growth as open. No new run requested; next seek a path statistic tied to source arithmetic rather than another equivalent graph description.
-
-
-**GPT duplicate audit (2026-10-09 21:46 BST).** W275 passes hard checks; nearest W274, G55 and W273 were read. W274 supplies the conditional composition count reused explicitly; W273 supplies reset/H and endpoint injection; G55 already proves cyclic-group cycle lifting, whose phase-shift caveat is reused rather than claimed anew. This continuation adds the primitive live-pair stratum count and the exact equal-multiplicity chain quotient, not a new symmetry mechanism. No proof promotion.
-
-
-**G273 additional review receipt (GPT, 2026-10-09 21:47 BST).** CL105 at87ae6f5c accepts GC866's component, period and count arguments by hand; it explicitly does not independently re-derive physical-root identification or G199's source. This scope is preserved. G274 and G275 remain unreviewed; no waiting-room promotion performed here.
-
-
-**G274 second-reading receipt (GPT, 2026-10-09 21:51 BST).** Cloud CL106 at7895bdbb verifies GC869's domain, live bijection, means/offset, conditional composition count and tail, and q1/q2 controls by hand. GC869 is reproduced verbatim in G274; Cloud explicitly did not read the filing beyond that text. The mathematical counting part is second-read, with this scope retained; no trajectory/solver replay or G275 acceptance follows. Formal filing/promotion remains separate from this receipt.
-
-
-### GPT G276 — Conditional fixed-subset chain-mean law (GPT, 2026-10-09; waiting room, GC872)
-
-#### GC872 — A fixed restricted-source mean under the quotient null (2026-10-09 21:55 BST)
-
-**Registered hand calibration; review pending.** Record searched: conditional + chain ->45 hits in15 files; relevant GC869/GC870, with no prior subset-variance formula in the targeted GPT search. Predict a fixed source subset has the full conditional expected mean, but substantial dependent spread. Countercontrol: selecting the subset after seeing lengths invalidates this law. Independent small composition enumeration; unexpected check: fixed-sum lengths have negative covariance. No random sample, CA trajectory, or new proposed computation. This is elementary counting applied to the already specified abstract null, not an arithmetic invariant of Rule30.
-
-In GC870's primitive rotation quotient let s be the number of start orbits, T the total chain mass, and K=T-2s. Conditional on T the excess lengths k_i=L_i-2 form a uniform weak composition of K into s parts. Fix in advance a subset J of j starts, with 1<=j<s, and put U=sum_(i in J) k_i. Then, for 0<=u<=K,
-
-P(U=u | T)=binom(u+j-1,j-1)*binom(K-u+s-j-1,s-j-1)/binom(K+s-1,s-1).
-
-The two factors independently count compositions inside and outside J. This depends on the subset's size, not its labels. When j=s, U=K deterministically.
-
-For completeness the first two falling-factorial moments follow from coefficient extraction. Summing (U)_r over compositions has generating function (j)^(r) z^r/(1-z)^(s+r), where (U)_r is falling and (j)^(r) rising. Divide its z^K coefficient by binom(K+s-1,s-1) to get E[(U)_r]=(j)^(r)(K)_r/(s)^(r). Thus E U=jK/s and E[U(U-1)]=j(j+1)K(K-1)/(s(s+1)). Subtracting the squared mean gives
-
-Var U=K*j*(s-j)*(K+s)/(s^2*(s+1)).
-
-The selected mean live length is bar L_J=2+U/j. Therefore E bar L_J=T/s and
-
-Var(bar L_J)=K*(s-j)*(K+s)/(j*s^2*(s+1)).
-
-**Independent literal composition control.** Take s=3,K=4,j=2. There are15 weak compositions. For U=0,1,2,3,4 there are respectively1,2,3,4,5 choices: the last coordinate is4-U and the first two split U in U+1 ways. Hence E U=40/15=8/3 and E U^2=130/15=26/3, giving variance14/9, exactly the formula. For j=s variance is zero. The same moment identities give Cov(k_i,k_l)=-K(K+s)/(s^2(s+1)) for i!=l, which checks that treating chain lengths as independent geometric variables misses the fixed-total dependence.
-
-**q8 application, conditional on the reported mass and the abstract null.** GC870 gives s=30,T=7443,K=7383. The odd-doubled sources select j=2 fixed primitive start orbits, with reported return depths88 and371, hence live lengths87 and370 and mean228.5. The conditional expected mean is7443/30=248.1. Its variance is exactly
-
-7383*28*7413/(2*30^2*31)=1532445012/55800 >25000.
-
-The discrepancy19.6 is therefore less than one eighth of a null standard deviation (which exceeds158). This is a scale comparison, not a p-value or evidence that Rule30 follows the null. The reported trajectory lengths/mass were not replayed. It shows why this two-orbit mean is a weak discriminator for the particular conditional ensemble; it does not refute an arithmetic relation detectable by another statistic.
-
-**Disposition.** A mean above or below the full-domain mean is possible for a fixed small subset, and its benchmark spread is now explicit. If source labels were selected after observing lengths, this fixed-J calculation would not apply. The null still omits the Rule30 successor-coordinate constraint. No prize lower bound, source-to-length invariant or physical-root growth theorem follows. Stop using the small-sample mean alone to support that route; next require a source-dependent statistic with a stated mechanism and independent control.
-
-
-**GPT duplicate audit (2026-10-09 21:56 BST).** W276 hard checks pass. Nearest W274/W275/G107 were read: the first two supply the credited composition null and rotation quotient, while G107 supplies a fair-row fresh-pivot trace law, not a chain subset law. This is an elementary conditional-moment refinement of W274/W275, not a new Rule30 mechanism. No promotion.
-
-
-### GPT G277 — Individual primitive-return budget (GPT, 2026-10-09; waiting room, GC890)
-
-
-#### GC890 — Individual primitive-return budget in the rotation quotient (2026-10-09 23:28 BST)
-
-**Registered hand refinement; second reading pending.** Record searched: primitive + chain ->37 hits in9 files; GC869/GC870 and relevant GC872 read. Targeted individual/maximum-bound search finds no matching formula. Predict disjoint rotation-orbit chains improve the universal dyadic primitive return cap by an asymptotic factor q, while retaining its exponential order. Counterfactual: identifying distinct depths under rotation would invalidate this budget. Independent q2/q4/q8 arithmetic controls; unexpected check: quotient cycles can have rotational monodromy, whereas chains cannot. No trajectory, random draw or new census; existing reset/H and quotient arguments are credited to GC865/GC870.
-
-**Claim.** Let q>=2 be a power of two. Any zero-started fixed-q excursion whose nonzero first child has least temporal period q has original return depth
-
-r <= ((2^q-2^(q/2))*(2^q+2^(q/2)-3))/q + 3.
-
-Original depth counts the zero start as depth zero, its first live pair as depth one, and the next zero column as the return. This is an upper bound for every primitive source, including a physical rooted subset when its first child has exact period q. It is not a lower bound, a mean claim, or a bound on period-growth waiting across successive periods.
-
-**Proof.** Put N=2^q and h=2^(q/2). The live domain consists of pairs (x,y) with y nonzero. Unique reset and inverse reconstruction H preserve the pair's least temporal period along each live edge. For dyadic q, its nonprimitive states are exactly the lifts of cap q/2. The primitive live mass is therefore
-
-M=N*(N-1)-h*(h-1)=(N-h)*(N+h-1),
-
-and there are P=N-h primitive starts (0,c), equally many terminals (w,w). The live map is a bijection from nonterminal states to nonstart states; starts and terminals are disjoint. Thus this finite graph is disjoint source-to-terminal chains, each with at least two live vertices, and cycles.
-
-Rotation acts freely on primitive pairs, and the map and H commute with it. Each literal chain has q disjoint rotated copies of equal length. To check disjointness, a rotated copy meeting the chain at unequal depths would, by unique backward iteration from the meeting, put a start strictly inside the other chain; starts have no live predecessor. Meeting at equal depths would give a nontrivial rotation fixing a primitive pair. Both are impossible. Consequently the rotation quotient has m=M/q live vertices and a=P/q disjoint chains, with exactly the same live lengths as their literal lifts. Quotient cycles may have phase shifts on lifting; no equality of cycle lengths is used.
-
-Choose any one chain of live length L. The other a-1 chains reserve at least 2*(a-1) quotient vertices. Remaining cycles reserve a nonnegative number, so
-
-L <= m-2*(a-1).
-
-Return depth r=L+1, giving r<=m-2*a+3=(N-h)*(N+h-3)/q+3, as claimed. This is elementary endpoint reservation added to GC870's quotient, not a new dynamical mechanism.
-
-**Controls and unexpected check.** q2 gives m=5,a=1 and r<=6, above the hand-verified primitive returns r=5. The quotient's one-vertex cycle lifts to a two-vertex literal cycle: the proof correctly counts orbit vertices rather than requiring equal cycle lengths. q4 gives m=57,a=3 and r<=54; q8 gives m=8130,a=30 and r<=8073. These integer substitutions were independently calculated, without replaying the census. At q16 the cap is268419123; at q32 it is576460751766558723. The separate q1 hand chain has L=2,r=3; the displayed dyadic formula is not asserted there.
-
-**Limit.** Compared with GC864's universal cap (2^q-1)^2+2, this primitive bound saves an asymptotic factor q but still has order 2^(2q)/q. It does not approach the linear stage budget or prove Q7's required lower growth. In an abstract quotient partial bijection, one chain can occupy all vertices not reserved by the others, so counting alone cannot sharpen this budget without extra information about cycles or the recurrence. No claim that this extremum is realizable by Rule30. Next seek a compulsory excluded mass or source-dependent path constraint; the counting route by itself has reached its explicit limitation.
-
-
-**GPT duplicate audit (2026-10-09 23:30 BST).** W277 hard checks pass. Nearest W275/W274/W273 read in full: they supply primitive mass, the rotation quotient, two-endpoint chain minimum and existence/offset. This entry is their elementary individual endpoint-reservation corollary, explicitly credited; no new recurrence mechanism or proof promotion. Verbatim GC890 filed here; generated proof pages left to Local.
-
-
-#### GC892 — G203 already strengthens the reservation budget; counting-only route closed (2026-10-09 23:36 BST)
-
-**Registered preflight; no new mechanism.** Record searched: return + short-depth variants ->432 hits in134 files. Targeted G203 read in full, with relevant G188/G192 scope checks. Predict known short-return exclusions tighten GC890 without changing its exponential scale. Countercontrol: the actual primitive q2 return at r5 prevents using the q>=4 minimum there. Unexpected index check: reserve live length r-1, not return depth r. No trajectory, census or compiler run. This is a credited accounting corollary of second-read G203 and GC870's still-pending quotient, filed as a continuation of W277 rather than a new theorem number.
-
-**Correction of sharpness, not validity.** GC890's two-vertex minimum is valid but unnecessarily weak for primitive sources. G203 already proves nonconstant first children and endpoints have return depth r>=5. At r5, the forced prefix 0,c,1,e and final repeated pair imply 1=w XOR S w. Thus w is alternating of least period2; period conservation excludes r5 at primitive q>=4. Every primitive dyadic q>=4 chain therefore has r>=6, or live length L>=5. No claim that r6 is attained.
-
-Use GC890's m=(2^q-2^(q/2))*(2^q+2^(q/2)-1)/q and a=(2^q-2^(q/2))/q. Reserving five vertices for each of the other a-1 chains gives
-
-L<=m-5*(a-1),   r<=m-5*a+6.
-
-This tightens the q4 cap54 to48, and q8 cap8073 to7986. At q16 it gives268406886. These are integer substitutions, not replayed maxima. At q2 the minimum is instead L>=4 and the same accounting leaves r<=6 because a=1; the actual r5 remains compatible. Reserving six live vertices for q>=4 would misread r>=6 by one; the live/return offset is essential.
-
-**Closed counting-only direction.** Even the strengthened cap remains asymptotic to2^(2q)/q. Any fixed baseline b merely subtracts b*(a-1), of order2^q/q, from mass of order2^(2q)/q. Finite short-return exclusions alone cannot change that leading scale. In the abstract quotient a single chain can use all vertices left after reserving the others' minima; this does not claim a realizable Rule30 extremum. More baseline bookkeeping is not a new source-dependent or physical-root constraint and supplies no Q7 lower growth. Retain this bound as corrected accounting; close further optimization of this counting-only route unless compulsory mass on the leading scale or a dynamical constraint is supplied. Next useful work must bound actual source-dependent paths, not repackage total mass. Prize board remains Q7 PART.
-
-
-**GC892 filing check (2026-10-09 23:36 BST).** W277 hard checks pass; nearest W275/W274/W273 are unchanged and were read in full for GC890. G203, read in full this block, supplies the credited primitive short-return minimum. This is a continuation/correction of accounting sharpness, not a new proof unit or promotion; quotient second reading remains pending.
-
-
-**W277 second-reading receipt (GPT, 2026-10-09 23:47 BST).** Cloud CL119 atef34f951 verifies GC890's primitive mass, free rotation chain copies, individual budget and return offset by hand, and GC892's tightening conditional on already second-read G203 (not reread by Cloud). The accounting part is now second-read; no trajectory replay or lower-growth claim. It does not review GC870's conditional random ensemble or GC894. Formal promotion/pages remain separate.
-
-### GPT G278 — Boundary-only matching countermodel (GPT, 2026-10-09; waiting room, GC894)
-
-
-#### GC894 — Exact boundary edges still allow arbitrary matching in the relaxed interface (2026-10-09 23:46 BST)
-
-**Registered hand preflight; second reading pending.** Record searched: (source/endpoint) + (matching/bijection) ->94 hits in27 files. Read G203's boundary proof and GC865/GC870 mechanisms; targeted search finds no five-boundary construction. Predict those exact boundary edges alone leave arbitrary rotation-equivariant endpoint matching in a partial-bijection relaxation. Countercontrol q2 has overlapping boundary sets. Unexpected omitted assumption is the middle bridge's successor-coordinate constraint. No actual trajectory, enumeration or random draw. This refines the known limitation of GC869's abstract null; it supplies no Rule30 example or prize claim.
-
-**Construction.** Fix dyadic q>=4. Let C be the set of words of least temporal period q, S the temporal shift and Delta=I XOR S. For each c in C and w in C, define five families of live pairs:
-
-A_c=(0,c), B_c=(c,1), C_c=(1,1 XOR S^(-1)c), D_w=(Delta w,w), E_w=(w,w).
-
-The symbols0 and1 here denote the constant q-words. Every displayed pair has nonzero driver and least pair period q. Each family has |C| distinct members. All five families are disjoint: A has first coordinate0 and the others do not (Delta w cannot vanish for primitive w); B has second coordinate1 while the other families do not; C has first coordinate1, which cannot equal w or Delta w for primitive w of period at least4; D=E would require S w=0. In particular Delta w=1 would force an alternating w of least period2, excluded here.
-
-Let pi:C->C be ANY bijection commuting with S. In the primitive live domain define the chains
-
-A_c -> B_c -> C_c -> D_(pi(c)) -> E_(pi(c)),
-
-with E terminal, and give every remaining primitive live pair an identity self-loop. This is a rotation-equivariant bijection from nonterminal pairs to nonstart pairs. Chains are disjoint by the five-family disjointness and pi's injectivity; complement states are identical domain/range leftovers, so their self-loops complete the bijection. Their period strata remain primitive. The first two arrows and D_w->E_w are genuine Rule30-compatible edges: S1=1, S(1 XOR S^(-1)c)=1 XOR c, and S w=Delta w XOR w. Also E_w has the genuine exit to(w,0). Thus the model retains the exact forced three-pair prefix and two-pair suffix, but its source-to-endpoint matching is the arbitrary pi. Each primitive word orbit is free of size q, so arbitrary permutations of the source orbits and arbitrary relative rotations define such pi.
-
-**Independent literal control and missing interior.** At q4 take pi the identity and c=w=1000 in increasing temporal order. The five pairs are(0000,1000),(1000,1111),(1111,1011),(1001,1000),(1000,1000), all distinct. The bridge from the third to fourth pair fails the actual successor-coordinate condition: the next pair's first word1001 is not the previous driver1011. Hence this is explicitly NOT a compatible Rule30 excursion or a claimed return at r6. It is a countermodel only to deductions using the preserved boundary facts, partial bijectivity, period and rotation constraints. The complement self-loops may likewise violate Rule30; they are included solely to complete that comparison model.
-
-At q2, c=w=01 gives C_c=(11,01)=D_w, because Delta w=11. The five-family construction fails exactly at the boundary overlap already identified in G203's r5 control. This is why q>=4 was imposed. It is not a defect repaired by counting the same vertex twice.
-
-**Disposition.** Boundary-only source-to-endpoint matching is CLOSED as a route to an additional invariant: every equivariant matching is represented in a comparison model satisfying these particular boundary constraints. The actual interior recurrence, including the successor-coordinate relation and the Boolean child equation, is indispensable to distinguish Rule30. This does not show arbitrary matching in Rule30, does not model physical-root ancestry, does not satisfy G202's whole-path overlap identity, and does not rule out a mechanism using those omitted facts. Next select an interior relation that is not implied by the boundary package; do not spend a census rediscovering boundary period/rotation correlations. Q7 remains PART.
-
-
-**GC894 duplicate audit (2026-10-09 23:47 BST).** W278 hard checks pass. Nearest W275 and W273 were read in full earlier this session and credited; W277 was reread in full for this block. They supply quotient symmetry, endpoint injection and reservations, while this comparison construction deliberately retains G203's exact boundary edges and shows their insufficiency without the interior equation. It is not an arbitrary-matching claim for Rule30. No promotion.
-
-
-**W278 second-reading receipt (GPT, 2026-10-09 23:52 BST).** Cloud CL120 atc9361fcf verifies GC894's genuine boundary arrows, five-family disjointness, primitive pair periods, equivariant partial bijection and q4/q2 controls by hand. Boundary-only closure accepted with the omitted-interior scope preserved. No actual Rule30 matching or trajectory claim, and no review of GC895 follows; formal promotion is separate.
-
-### GPT G279 — Coordinate-preserving driver-row comparison (GPT, 2026-10-09; waiting room, GC895)
-
-
-#### GC895 — Restoring successor coordinates leaves driver-row permutation freedom (2026-10-09 23:51 BST)
-
-**Registered hand preflight; second reading pending.** Record searched: (permutation/bijection) + (driver/coordinate) ->8 hits in5 files. GC869/GC870/GC894 and G203 boundary facts read. Predict the successor-coordinate constraint converts the comparison into driver-row permutations; retained boundaries still leave many maps, whereas the Boolean equation selects the actual map. Independent q4 swap, q2 reserved-slot countercontrol and unexpected pair-versus-profile period check. No trajectory, random draw or new actual endpoint census. No claim that endpoint matching remains arbitrary after adding coordinates.
-
-**Row description.** At cap q let Q be all N=2^q temporal words. Live pairs have y!=0. Nonterminal pairs exclude x=y, and nonstart targets have first coordinate nonzero. Any bijection between those domains satisfying the successor-coordinate rule has the form
-
-f(x,y)=(y,g_y(x)),  g_y:Q\{y}->Q\{0} a bijection for every y!=0.
-
-Indeed each domain row has N-1 inputs and its targets are exactly the N-1 pairs with first coordinate y and nonzero second coordinate. Global injectivity makes each row injective, hence bijective; conversely row bijections give a global one. This retains a unique inverse, but not the specific Boolean reconstruction H.
-
-**Retained boundaries, dyadic q>=4.** Keep the actual Rule30 rows for nonprimitive drivers, including driver1. For each primitive driver y, the forced prefix and suffix require just
-
-g_y(0)=1,   g_y(Delta y)=y,
-
-where Delta=I XOR S. These are two distinct inputs and outputs: Delta y!=0, Delta y!=y, and y!=1. The fixed driver1 row already supplies g_1(c)=1 XOR S^(-1)c for primitive c. Thus GC894's exact prefix/suffix edges are preserved. Every remaining primitive row admits (N-3)! completions.
-
-To impose rotation equivariance choose a completion for one driver in each primitive rotation orbit and transport it by
-
-g_(S y)(S x)=S(g_y(x)).
-
-Primitive drivers have free orbits of size q, so this is consistent without extra stabilizer restrictions. With P primitive words and a=P/q driver orbits, this constructs ((N-3)!)^a distinct maps. For primitive y both input and target pairs have least pair period q because they contain y. Nonprimitive rows are unchanged actual rows, so all pair-period strata are preserved. Global partial bijectivity, starts, terminals, exact boundary edges, successor coordinates and rotations therefore do not uniquely determine the interior map. This is a comparison-family count, not a statistical law or a Rule30 orbit count.
-
-**Independent literal swap at q4.** Let y=1000, S y=0001 and Delta y=1001 in increasing temporal order. The actual row has g_y(1111)=1010 and g_y(0001)=0111. Directly checking S z=x XOR(y OR z) verifies both. Inputs1111 and0001 are distinct and outside the reserved slots0,1000,1001. Swap these two outputs and transport the swap over y's rotation orbit, leaving all other rows unchanged. The altered edge(1111,1000)->(1000,0111) preserves the successor coordinate and injective row structure but fails the actual equation at time0: its child bit at time1 is1, while1111(0) XOR(1000(0) OR0111(0))=0. The genuine forced prefix with c=1110 reaches(1,y), so the altered edge changes the first interior continuation of an admissible start. No return endpoint or depth in this altered map was computed.
-
-**Unexpected period scope and small-period guard.** The actual child1010 in this control has least profile period2, though its pair with1000 has least period4. The model correctly preserves pair period, not the period of every individual child. At q2 choose y=01: Delta y=11, so the proposed input1 is a reserved suffix slot and the swap is invalid. This independently prevents extending the q4 witness to the exceptional boundary-overlap case. No q2 model count or rigidity claim follows.
-
-**Disposition.** Coordinate restoration removes GC894's artificial bridge defect but does not recover the Rule30 equation. The decisive remaining condition is x=S z XOR(y OR z); for each actual row it fixes the permutation through reset uniqueness. Adding that full equation exactly recovers the original dynamics, so it is not by itself a reduction of Q7. This preflight closes attempts to infer unique interior continuation from boundary/coordinate/permutation structure alone. It does not close endpoint invariants common to this stronger family, physical-root ancestry or any actual recurrence-based growth route. Next seek an inequality or obstruction using the Boolean equation without merely enumerating its whole dynamics; no further bare permutation-family census is warranted. Q7 stays PART.
-
-
-**GC895 duplicate audit (2026-10-09 23:52 BST).** W279 hard checks pass. W278 reread in full; W275 and W277 were read in full earlier this session. W278 omits the middle coordinate; this continuation restores it globally using driver rows, without claiming arbitrary endpoint matching. W275 supplies credited free rotations/pair-period scope; W277 supplies credited live interface/reserved endpoints. No new Rule30 growth theorem or promotion.
-
-
-**W279 second-reading receipt (GPT, 2026-10-09 23:57 BST).** Cloud CL121 atefb7b0c3 verifies GC895's driver-row decomposition, two boundary slots, rotation transport/count and literal q4/q2 controls by hand. Comparison scope accepted; no actual endpoint permutation, return trajectory or GC896 review follows. Formal promotion remains separate.
-
-### GPT G280 — Exact one-driver-bit reset response (GPT, 2026-10-09; waiting room, GC896)
-
-
-#### GC896 — One driver-bit perturbation has an exact reset-interval response (2026-10-09 23:56 BST)
-
-**Registered actual-recurrence hand block; second reading pending.** Record searched: (affine/linear) + (driver/reset) ->40 hits in15 files. Targeted perturbation/rank-one search finds no identical one-bit response formula. Read G2 reset mechanism and GC895's actual row equation; these are the credited basis, not a new reset theorem. Predict one-bit driver change, with a common remaining reset, affects either no child bits or the precise interval before that reset. Independent q4 direct substitutions; last-reset countercontrol; unexpected sharp q-1 response. No trajectory, census, random model or literature novelty claim.
-
-**Statement.** Let x,y be q-periodic binary words, q>=2. Toggle y at one temporal position j to get y'. Assume there is a black position in y other than j, hence a common black reset in y,y'. Both drivers are nonzero and their children z,z' solving
-
-S z=x XOR(y OR z),   S z'=x XOR(y' OR z')
-
-are unique. Let k be the first common black position strictly after j in cyclic temporal order. Let I consist of positions j+1 through k inclusive, with cyclic length d between1 andq-1. Then
-
-z' XOR z = (1 XOR z(j))*1_I.
-
-Thus the exact Hamming distance is0 if z(j)=1, and d if z(j)=0. It need not be bounded independently of q.
-
-**Proof.** At any common black position t, both equations reset the following bit to1 XOR x(t), so their difference is zero immediately after that position. Starting at the preceding common black and propagating forward to j encounters no driver difference; at a white tick the difference propagates unchanged and at a black tick it resets to zero. Hence z'(j)=z(j). At the changed tick j the two OR expressions, with identical child bit z(j), differ by1 XOR z(j), so the child difference at j+1 is that value. Until k the common driver is white, hence the difference propagates unchanged. At k it resets to zero at k+1 and stays zero up to j again. This gives exactly the stated cyclic interval. The argument uses actual Boolean equations, not merely global injectivity, row permutations or boundary matching.
-
-**Independent direct q4 controls.** Take x=1111,y=1000,j=1, so y'=1100. The cyclic children are z=1010,z'=0001. Directly substituting their four equations verifies both; their XOR1011 is supported at positions2,3,0, precisely I before the common reset at0. Here z(1)=0 and distance3=q-1. Conversely toggle j=2 instead: y'=1010 while z(2)=1, and z'=1010 remains unchanged. At the changed tick the child1 masks the OR driver change; direct substitution verifies the unchanged child. This latter comparison need not preserve the driver's least period, and no such premise was used.
-
-**Sharp family and unexpected locality failure.** For every q>=2 choose x=1, y black only at0, and toggle the white position j=1 to black. The original reset forces z(1)=0. The first common reset after1 is0 after a full cyclic gap, so d=q-1 and the children differ at every position except1. This realizes the maximal response in actual cyclic equations, for arbitrary q; it is not a physical-root reachability claim. Locality of the Boolean rule in time does not give uniform sensitivity of its cyclic inverse.
-
-**Last-reset countercontrol.** If the only black bit is toggled off, there is no common reset and the stated law does not apply. At q4,x=1111,y=1000, turning y into0000 leaves the two alternating children1010 and0101. Thus the new child is not unique, and the perturbation cannot be assigned one deterministic interval response. This is the same zero-driver integration exception already handled in G2/G158, retained here as a domain guard.
-
-**Relation to row affinity and scope.** For fixed y, write the inverse equation over F2 as x=y+S z+(1+y)*z. It is affine in z; nonzero y makes its linear part invertible by reset uniqueness. This is another expression of the existing reset mechanism, not a growth reduction. The interval formula supplies a specific cross-driver consequence of that equation and a sharp failure of uniform local sensitivity. Comparing different drivers does not show either pair is reached in the physical-root tree, control the frequency of perturbations along a spatial path, or bound a first-return depth. Next require a rooted occurrence/cancellation mechanism before using the interval law for Q7; no sensitivity census is requested. Q7 remains PART.
-
-
-**GC896 duplicate audit (2026-10-09 23:57 BST).** W280 hard checks pass; nearest G162/G157/G201 read in full. They supply credited reset/run accounting, period preservation and a two-sibling one-profile identity. This entry compares the actual children for one changed driver bit with the same parent, retaining the exact common-reset interval and last-reset guard. No rooted-growth or new reset theorem is claimed; no promotion.
-
-
-**W280 second-reading receipt (GPT, 2026-10-10 00:03 BST).** Cloud CL122 at8a63a8ae and Local L510 at89e95f43 independently verify GC896's common-reset interval, changed-tick gate, q4 controls, sharp family, singular last-reset guard and affine form by hand. The actual cross-driver lemma is second-read; no rooted reachability/return bound or GC897 review follows. Formal promotion remains separate.
-
-### GPT G281 — Multiple-driver response and complete-parent calibration (GPT, 2026-10-10; waiting room, GC897)
-
-
-#### GC897 — Multiple driver changes combine by XOR; full-parent collision law (2026-10-10 00:01 BST)
-
-**Registered actual-recurrence hand continuation; second reading pending.** Record searched: (perturb/difference) + (driver/reset) ->87 hits in21 files. GC896 and G4's averaging-scope warning read. Predict modified-driver reset intervals superpose by XOR, not by adding their lengths. Independent q4 two-removal control, unexpected terminal-parent conditioning and zero-driver guard. No trajectory, random draw, census or rooted distribution claim. The Boolean/reset mechanism is credited; this is its finite-row response/calibration, not a growth invariant.
-
-**Exact response.** For fixed parent x and nonzero drivers y,y', let z,z' be their unique cyclic children. Work over F2, put delta=y+y' and d=z+z'. Expanding OR gives
-
-S d=(1+y')*d+delta*(1+z).
-
-The scalar products are pointwise. The linear operator L_(y')(v)=S v+(1+y')*v is invertible: a homogeneous solution resets to zero after any black tick of y' and remains zero everywhere by cyclic propagation. Therefore
-
-d=L_(y')^(-1)(delta*(1+z)).
-
-For each changed tick j, let I_j be the cyclic interval from j+1 through the first black tick of y' strictly after j, inclusive. Its length is1..q, allowing a full turn when j is the only black tick of y'. Direct propagation gives L_(y')(1_(I_j))=e_j. Hence
-
-d = XOR_(j:delta(j)=1) [(1+z(j))*1_(I_j)].
-
-All intervals use the FINAL driver y', not independently toggled intermediate drivers. Supports may overlap and cancel. Both drivers must be nonzero; no common black tick between them is required for this multiple-change identity. It recovers GC896 when there is just one toggle and a common remaining reset.
-
-**Exact complete-parent average, not a rooted law.** Fix distinct nonzero y,y', with k=weight(delta)>=1, and choose x uniformly from all2^q parent words. The map z->x=y+L_y(z) is affine bijective by reset, so z is uniform on all words. The forcing delta*(1+z) is uniform on the k-dimensional coordinate subspace supported at changed positions. Invertibility of L_(y') makes d uniform on the k-dimensional span of the interval vectors. Consequently
-
-P(z'=z)=2^(-k),   E weight(d)=|union_(delta(j)=1) I_j|/2.
-
-Each coordinate in that union is a nonzero linear functional of the k fair forcing bits, so is1 half the time; outside the union it is always0. The mean is half the union size, not half the sum of lengths. This is exact finite averaging over all parents; it does not assume Rule30 spatial trajectories select those parents uniformly.
-
-**Independent literal cancellation control.** At q4 use x=1111,y=1110,y'=1000. Their children z=1000 and z'=1010 satisfy all four equations directly, giving d=0010. Changed ticks1 and2 have final-driver intervals I_1={2,3,0}, I_2={3,0}. Both forcing bits1+z(j) equal1. Their indicators1011 and1001 XOR to0010: the sum of lengths is5 but the response weight is1. Over the complete parent domain the four equally likely response words are0000,1011,1001,0010. Their mean weight is3/2, half the three-position union, rather than5/2; the collision probability is1/4. This four-word algebraic control is not a random experiment or a trajectory enumeration.
-
-**Unexpected live-domain conditioning guard.** Complete-parent averaging includes x=y (original child0) and x=y' (new child0). Neither can be a collision when y!=y': a common zero child would force both parents to equal their drivers. Removing these two distinct terminal parents leaves the same2^(q-k) collision parents among2^q-2 choices, so the simultaneous-nonterminal collision rate is
-
-2^(q-k)/(2^q-2),
-
-not2^(-k). In the q4 control it is4/14=2/7, not1/4. This does not compute a conditional mean weight or justify any rooted sampling law. If either driver is zero, L may be singular and child uniqueness fails; the formulas require the stated nonzero-driver hypotheses.
-
-**Disposition.** Actual response intervals can cancel heavily, and full-parent probabilities are structural calibration rather than evidence of randomness or lower growth. This prevents using independent one-bit response lengths as additive charges. A Q7 argument needs retained backgrounds/occurrences or a cancellation-resistant quantity along the actual rooted history. No sensitivity census or new averaging-based growth shortcut is proposed. Next requested review or a rooted coupling obstruction; scratch deferred and room closed.
-
-
-**GC897 duplicate audit (2026-10-10 00:03 BST).** W281 hard checks pass; nearest W280/G201 were read in full in the preceding blocks, and G185 read in full here. W280 supplies the credited single-toggle mechanism; G201 supplies a different sibling-support relation/failure; G185 warns against transferring ambient behaviour to growth. This continuation keeps final-driver Green intervals, XOR cancellation and the explicit complete-parent measure. No promotion or rooted law.
-
-
-#### GC899 — Exact fixed-parent same-child driver fibres (2026-10-10 00:10 BST; W281 continuation)
-
-**Hand corollary of GC897; second reading pending.** Record searched: (driver/parent) + (collision/fibre/fiber/same.child) ->16 hits in7 files; W281 and G4.4 read. Prediction: driver changes supported on child-black positions are invisible, except for exclusion of the zero driver. Independent q4 controls; unexpected constant child1 needs parent0. No census, trajectory or rooted measure claim. This makes the existing reset/OR mechanism explicit rather than claiming a new dynamical principle.
-
-Fix q>=1 and parent x. For a proposed child z let a=x+S z over F2. The actual equation is a=y OR z. At every z-black tick it requires a=1, while y is free; at every z-white tick it requires y=a. Hence the nonzero-driver fibre is empty unless
-
-z*(1+x+S z)=0.
-
-If this compatibility holds, its exact cardinality is
-
-2^weight(z) - indicator[x=Delta z],   Delta=I+S.
-
-Indeed the bits on z's black support are free, so there are2^weight(z) drivers before exclusion. The zero driver is in the fibre precisely when a=z, equivalently x=Delta z. Every remaining nonzero driver gives a unique cyclic child by reset; conversely all such drivers have been listed. Equivalently, two nonzero drivers give the same child under fixed x exactly when their difference is supported on that child's black positions, as follows directly from GC897's invertible response operator. This counts the complete driver domain, not the drivers encountered on a rooted path. Zero-child fibres are terminal states, not live continuations.
-
-**Independent controls.** At q4, x=1111 and z=1010: S z=0101, a=1010=z and Delta z=1111. The allowed drivers are exactly1000,0010,1010; all give child1010, while0000 is excluded. The other alternating child0101 similarly has drivers0100,0001,0101. Thus fixed-parent cross-driver injectivity is false, despite injectivity of the pair map (its outputs retain the driver coordinate). For z=1000, S z=0001 and a=1110; the driver bits at positions1,2,3 are1,1,0, while position0 is free. The two drivers are0110 and1110. Here x!=Delta z=1001, so no driver is removed. These are direct four-bit substitutions, no enumeration.
-
-**Unexpected endpoint controls.** For z=1, compatibility forces x=0; its fibre is all2^q-1 nonzero drivers, recovering the already credited prefix edge (0,y)->(y,1). For z=0, compatibility is vacuous and the sole possible driver is y=x; its count is1 for x!=0 and0 for x=0, exactly the terminal guard. At q1 the same formula yields just (x,y,z)=(0,1,1) or(1,1,0), so no hidden q>=2 assumption is used.
-
-For every even q>=2, x=1 and either alternating z has2^(q/2)-1 nonzero drivers producing that same child. **Rooted control, not just ambient:** for dyadic q>=4, exactly2^(q/2)-2^(q/4) of those drivers are primitive. The nonprimitive words are precisely those of period dividing q/2; their allowed alternating support has q/4 free bits, so subtraction gives the count. Each primitive y occurs at depth2 of the genuine prefix (0,c)->(c,1)->(1,y), with c=1+S y (thus y=1+S^(-1)c); c is also primitive. The next state is (y,z). At q4 the primitive drivers1000 and0010 both give z1010, from roots c1110 and1011 respectively. These are different roots, not repeated events on one history, and their successor pairs remain different. No return length, charge, probability or growth conclusion follows. The fibre equation closes only a cross-driver injectivity shortcut, including across rooted prefixes. Next require within-history occurrence information rather than more complete-domain averages; scratch deferred.
-
-
-**W281 second-reading receipt (2026-10-10 00:16 BST).** Local L511 atb9f47663 independently checks GC897's forcing law, Green intervals, rank/collision/union mean, cancellation and measure guard, and GC899's fibre formula, endpoints and primitive rooted-prefix count. PASS by hand with scope retained: no rooted frequency or return bound. Formal promotion remains separate.
-
-
-#### GC901 — Alternating-child collisions recover the driver one profile later (2026-10-10 00:20 BST; W281 continuation)
-
-**Hand continuation, second reading pending.** Record searched: (alternat/period2) + (recover/driver/doubl) ->110 hits in34 files. Read G128.1's period-two closure guard, G201's nonpersistent sibling separation and G185's period/order recovery failure. Prediction: GC899's shared alternating child is followed by a profile that duplicates complemented driver bits. Countercontrol period recovery need not have large Hamming weight; unexpected q2/full alternating driver and rooted-ancestry guards. No trajectory, census, new order-growth claim or novelty claim for reset recovery.
-
-Fix dyadic q>=4, m=q/2, parent x=1 and shared child z with z(2r)=1,z(2r+1)=0. GC899's driver fibre consists of nonzero y with y(2r)=b_r and y(2r+1)=0. Let v be the unique child of (y,z). A black z tick resets the following v bit, and a white z tick has y=0 and copies v. Therefore, cyclically,
-
-v(2r+1)=v(2r+2)=1+b_r.
-
-This explicit inverse recovers b_r=1+v(2r+1); distinct drivers in the same fibre cannot produce the same v. Its weight is q-2*weight(y). If y is primitive q, b is primitive m and nonconstant. For any proper dyadic divisor p>=2 of q, shifting v by p preserves the pair phases and is equivalent to shifting y by p; constant v would force constant b. Hence v is primitive q too. The other alternating phase follows by translation. This is profile-period recovery, not a new stage entry or exit.
-
-**Independent substitutions.** q4, y1000 and z1010 give v1001; y0010 with the same z gives v0110. Each triple satisfies S v=y+(z OR v) directly. Their zero-started prefixes are (0,1110),(1110,1),(1,1000),(1000,1010),(1010,1001), and the corresponding root1011 with driver0010. Distinct successor pairs were never merged; the projected child alone collided.
-
-**Sparse recovery family.** Take b all1 except one0. For m>=2 it is primitive m, so y is primitive q, yet v consists of exactly two adjacent black bits at the complementary pair. At q8 choose y10101000,z10101010,v10000001; the shared z has period2 while v recovers period8 with weight2. Thus profile-period recovery alone supplies no weight growing with q. This is a literal family of actual Boolean transitions in zero-started fixed-q excursions: c=1+S y is primitive, and (0,c)->(c,1)->(1,y) is the known prefix. It does not prove those starts occur after a smaller-period stage of the physical rooted history, or recur on one selected path. GC899's “different rooted prefixes” must be read with this same fixed-q zero-started scope; no physical-root ancestry was added by the count or by L511's hand review.
-
-**Unexpected terminal guard.** If y equals the full alternating z then b=1 and v=0, as y=z is the terminal condition; y has period2 and is excluded from primitive q>=4. At q2 it is the sole nonzero fibre driver, so the claimed recovery fails there. If y=0 then b=0 and v=1, but the original fibre excludes that driver. These extremes explain both exclusions without a run.
-
-Disposition: the response's loss of visible driver information is temporary in this family, and the next profile retains it sparsely. Cross-driver collision size is neither coalescence of full states nor a large-charge certificate. This is a W281 scope corollary, not a replacement for G184's within-history normalized stage-length obligation. Next a concrete physical-ancestry or within-history constraint, no new full-domain census; scratch deferred, room closed.
-
-
-**GC901 second-reading receipt (2026-10-10 00:26 BST).** Local L512 at77967ffa verifies the reset/copy formula, primitive-period transfer, q4/q8 sparse controls and full-alternating terminal guard by hand. PASS with zero-started-root scope and no physical ancestry, rooted frequency or return bound. This continuation is reviewed; formal promotion remains separate.
-
-
-#### GC903 — The q4 fibre examples lie on a nonrooted predecessor cycle (2026-10-10 00:31 BST; W281 scope correction)
-
-**Bounded exact check and short hand certificate; second reading pending.** Record searched: (root/ancestr) + (first.hit/backward/predecessor) ->266 hits in49 files; (1110/1011) + (ancestr/cycle/root) ->84 hits in28 files. Read G7/G156/G157 and reviewed G199's absorption criterion; reset/ancestry mechanisms are existing results, not new claims. Predicted GC899's q4 zero-starts share a nonabsorbing orbit. Two named starts only, <=256 states each, independently scalar-bit and packed implementations, cap1 control and unexpected all-rotation checks. No census, new large run, physical-seed evolution or all-q ancestry classification.
-
-**Exact result.** For B(a,b)=(S b XOR(a OR b),a), the start (0,1110) returns to itself after28 steps, with no transient or zero visit. (0,1011) lies on that same orbit,14 steps away. Scalar and packed predecessor updates agree throughout each named chain; cap1 (0,1) hits zero in1 step and (1,0) in3. All four simultaneous rotations have the same28-cycle result. These computations are exact small-state controls, not evidence of absorption for any untested family.
-
-**Seven-step certificate, words in increasing temporal order.** The successive B states are
-
-(0000,1110), (0011,0000), (0011,0011), (0101,0011),
-(0001,0101), (1111,0001), (1101,1111), (0000,1101).
-
-Each arrow is direct substitution. The last state is (0,S(1110)); B commutes with simultaneous S, so four copies give B^28(0,1110)=(0,1110). None of the seven states is zero, and the rotations of their seven pair types are distinct: the two zero-coordinate types have distinct coordinate locations, the equal pair has neither zero nor alternating/constant companion, the alternating-driver and alternating-first types differ, and the two constant-one types have different coordinate locations. Within each type a primitive four-bit coordinate distinguishes its four rotations. Thus the cycle has exactly28 distinct states. This short certificate proves nonabsorption without trusting a long trace. Since1011=S^2(1110), its start is reached at14 steps and has the same property.
-
-By G199, a nonzero pair is in the physical-root tree exactly when some B iterate reaches(0,0); its last nonzero predecessor would necessarily be(0,1). These q4 starts fail that test, as do all their actual prefix/continuation states from GC899/GC901. More strongly, their zero-first-coordinate starts are themselves cyclic, so compatibility and a finite zero-started excursion are not physical ancestry. Root phase shifts cannot repair this, because B commutes with temporal rotation.
-
-**Correction retained.** GC899's earlier “rooted control” and “all realized at depth2 from different roots” refer only to arbitrary zero-started fixed-q excursion starts. They must not be cited as occurrence in the physical tree rooted at(0,1). GC901 already narrowed that claim; GC903 now proves physical nonrootedness for the q4 controls. L511/L512 validate the fibre and sparse-recovery algebra, not physical ancestry. Their reviews remain valid in that narrowed scope. The formulas, primitive-driver count and q8 algebraic control are unaffected, but no larger-q physical rejection or rooted occurrence claim is inferred.
-
-Disposition: close physical-root transfer of these q4 fibre examples; retain the within-history Q7 obligation. This is an application of the known ancestry barrier, not a new prize avenue or periodic-point classification. Next an actual physical-tree constraint or peer review, rather than another ambient-family extrapolation; scratch deferred, room closed.
-
-
-#### GC904 — Genuine doubling entries exclude the alternating-fibre collapse (2026-10-10 00:36 BST; W281 continuation)
-
-**Hand corollaries of reset and G201; second reading pending.** Record searched: (complement/half-shift/half-difference) + (primitive/period-f/last-profile) ->187 hits in36 files. Read G157/G162/G185/G188 and G201 in full. Predict an antiperiodic driver with a nonzero half-periodic parent forces primitive dyadic child. Countercontrol parent0 permits constant child1. No solver, trajectory or census. The preregistered broad expectation of no weight-growth consequence was too strong: G201 gives a linear ONE-profile weight bound below, while cumulative charge and stage growth remain unproved. A draft q4 control child0010 failed substitution; reset recomputation corrected it to0001, and all four triples then pass. The failed control is retained, not attributed to the theorem.
-
-**Primitive-child guard.** Let q>=2 be dyadic, T=S^(q/2), Tx=x!=0, Ty=1+y, and let z be the unique q-periodic child of (x,y). If Tz=z, subtract the original and shifted compatibility equations to obtain
-
-0=(y+Ty)*(1+z)=1+z.
-
-Thus z=1. Its original equation would give1=x+1, forcing x=0, a contradiction. Hence Tz!=z. Every proper divisor of dyadic q divides q/2, so z has least period q. The nonzero-parent hypothesis is essential: (0,y) always has child1 for nonzero y, including antiperiodic y. No order-maximality claim is made.
-
-**Actual doubling application.** At an odd zero-driver integration from q/2 to q, the prefix is0,c,1,e,f with Tc=1+c and e=1+S^(-1)c, so Te=1+e. The guard with parent1 gives f primitive q. This applies at every genuine doubling entry, including physical ones, without asserting that every arbitrary antiperiodic c has physical ancestry. At q>=4 it excludes GC899/GC901's alternating child at this early position. For q2 alternation itself is primitive, so it is not excluded.
-
-**G201's one-profile charge, now symmetric in half-shift.** The child of (1,Te) is Tf by reset uniqueness and translation. G201's complementary-driver equations give f*(Tf)=0 and D=f+Tf has no cyclic00. Since weight(Tf)=weight(f),
-
-q/4 <= weight(f) <= q/2.
-
-The lower inequality follows from weight(D)>=q/2 and the upper from disjointness. Interpret these integer inequalities with rounding when q2. This is an explicit consequence of the reviewed G201 coupling, not a new invariant. Thus the entry's shared-child collapse is ruled out both by primitive period and, for larger q, by a one-profile mass constraint. The bound is not summed across later profiles: G201 already supplies an actual rooted counterexample to persistent sibling disjointness.
-
-**Independent controls and sharpness.** The q4 genuine doubling prefix a1010,0,c0110,1,e1100,f0001 satisfies all four scalar triples. Its f has weight1=q/4 and primitive4. At q8 take e11110000 and f00000101; black resets and four white toggles give that child directly, with weight2=q/4 and primitive8. Then c=1+S e=00011110 has complementary halves and Delta c=00100010 repeats the odd block0010, so this is an actual odd-doubling-compatible prefix (physical ancestry not asserted). Parent0 gives constant1, the exceptional guard. At q2 the entry c01,e01,f01 is the known smallest doubling and f is primitive2, consistent with the lemma and weight interval.
-
-Disposition: a genuine entry has more structure than arbitrary zero-started fibres; GC903's nonrooted q4 controls cannot be transferred there. This closes that early-position collapse scenario, not later same-period branch scenarios or all-period ancestry. The main Q7 obligation remains normalized lengths along each physical history. Next exploit retained actual backgrounds or review CL125's repaired gates; scratch deferred, room closed.
-
-
-**W281 GC904 second-reading receipt (2026-10-10 00:53 BST).** Cloud CL127 independently checks half-shift subtraction, primitive-period guard, prefix antiperiodicity and G201 weightq/4..q/2, including q4/q8/q2 substitutions. PASS by hand; physical-entry data are Cloud's disclosed additional control, not GPT replay. Same-period branch starts do not inherit the doubling-entry guard. No cumulative charge or stage bound.
-
-
-**G276 second-reading receipt (2026-10-10 01:00 BST).** Cloud CL129 verifies GC872's composition law, factorial moments, variance/covariance, fifteen-composition control and q8 arithmetic by hand. Independent primitive q8 orbit replay gives T7443 and odd-doubled live lengths87/370. PASS; the abstract null is a calibration, not an invariant or physical ancestry law. No GPT rerun.
-
-
-#### GC909 — Equality in the doubling-entry q/4 weight bound (2026-10-10 01:04 BST; W281 continuation)
-
-**Hand equality audit; second reading pending.** Record searched: q/4/quarter/lower-bound + G201/half-shift/antiperiod ->18 hits in11 files; GC904, full G201 immediate coupling and G199 physical-entry exclusion read. Prediction: equality forces alternating union and a one-parity source. Countercontrol sharp ambient q8 example is not physical; unexpected finiteq8 exclusion must not become an all-period assertion. No solver, trajectory or census. This refines the reviewed coupling bound, not its cumulative/stage scope.
-
-Let q>=4 be dyadic, T=S^(q/2), and e the antiperiodic entry driver, with child f of(1,e). GC904/G201 give f*Tf=0 and D=f+Tf no cyclic00. If weight(f)=q/4, then weight(D)=q/2. A cyclic binary word with no00 and exactly half ones must alternate: every zero has a following one, exhausting the ones, so no11 can remain. Thus D is one alternating parity indicator and f vanishes on the opposite parity. On the supported parity, Tf=1+f.
-
-The driver is then forced, not free:
-
-    e = 1 + f + S f.
-
-At a supported tick t the next f is0. If f(t)=0, its child equation requires e(t)=1. If f(t)=1, the half-shifted tick has f=0 and hence Te(t)=1; antiperiodicity gives e(t)=0. At the other parity f(t)=0, so the child equation says e(t)=1+f(t+1). Together these are the displayed identity. Conversely if f is supported on one parity and f+Tf equals its alternating indicator, defining e by that identity gives Te=1+e and S f=(1+e)(1+f) at both parities. Its weight isq/4, because each half-shifted support pair contributes exactly one black bit.
-
-In the integration prefix, c=1+S e and the preceding source a=Delta c. Therefore
-
-    a = S e + S^2 e = S f + S^3 f.
-
-Both terms lie on the parity opposite f, so a vanishes on f's parity. The known odd-half-block integration condition is retained; this identity does not prove physical ancestry of a. It identifies the precise extra shape a future ancestry exclusion would need to rule out, rather than testing generic sparse drivers.
-
-Independent literal substitutions: q4 f0001 gives e1100 and a1010, the reviewed physical sharp control. q8 f00000101 gives e11110000 and a00100010, the reviewed ambient sharp control. Its source is a rotation of RC88's repeated one-hot half-source17, so G199/GC907 excludes physical ancestry atq8. By the existing unique physical q8 entry class, equality cannot occur there (Cloud CL127 separately reports weight3); rotations do not change weight. This is a finite known-ancestry consequence, not a new all-q strict inequality. No claim that every larger physical source fails the one-parity shape, or that even a strict one-profile bound can be summed over a stage.
-
-Disposition: equality characterized exactly in the antiperiodic-entry class; parity support is a concrete ancestry test target, not yet an asymptotic obstruction. Next check the existing physical-source record for this shape before any computation; scratch deferred, room closed.
-
-
-**W281 GC909 second-reading receipt (2026-10-10 01:09 BST).** Local L514 checks equality forces alternating D, one-parity f and e=1+f+Sf; verifies converse and source a=Sf+S^3f by hand, including q4/q8 literal controls. PASS, with no all-q ancestry exclusion or stage-growth claim.
-
-
-#### GC911 — One-parity odd sources exactly produce sharp doubling entries (2026-10-10 01:14 BST; W281 continuation)
-
-**Hand converse, second reading pending.** Record searched: one-parity/vanishing-parity + integration/equality/source ->20 hits in6 files. GC909/L514 and G157/G158 integration facts read. Predict one-parity odd sources give both sharp children. Countercontrol physical mixed-parity source119 has weight3 atq8; unexpected use the source's own period, not its even cap repetition. No ancestry/tree census or solver; only q4/q8 small integration controls.
-
-Fix dyadic q>=4 and m=q/2. Let a be m-periodic with odd weight over one m-block, represented at capq, and supported on one temporal parity. Seek f supported on the opposite parity satisfying
-
-    (1+S^2) f = S^-1 a.
-
-On that parity, S^2 is a single cycle of lengthm. The right side has even total weight at capq (two copies of the odd m-block), so cyclic integration has exactly two solutions there; off that parity set f=0. Advancing by T=S^m crosses half of this decimated cycle. The accumulated right-side parity is the odd weight of a's one m-block, so Tf=1+f on its supporting parity. The two solutions differ by that parity indicator D and are half-shifts of each other. Consequently each has weightq/4.
-
-Set e=1+f+Sf and c=1+Se. GC909's converse proves Te=1+e and f is the unique child of(1,e). Further,
-
-    Delta c = Se+S^2e = Sf+S^3f = a.
-
-Thus c is a valid integration child of(a,0). Switching f by D switches e by D+SD=1 and switches c by1, so these are exactly the two integration choices, not just one special branch. Conversely GC909 already proves any sharp child has a one-parity source. Therefore among odd-doubling sources, sharp entry weight is equivalent to source support on one parity, and it occurs for both branches or neither. No physical membership is implied by this equivalence.
-
-Scalar control directly closes the child recursion for both integration choices of every one-parity odd half-source atq4/q8: four and eight branch controls respectively give weightq/4 and a=Sf+S^3f. Mixed-parity physical source119 atq8 gives weight3 for both choices. These are finite equation controls, not a census of physical sources. The odd flux is over the m-block; counting capq parity would incorrectly give0 and lose antiperiodicity, the same guard as G199.
-
-Disposition: the planned ancestry test is now an exact source-shape test, not a generic sparsity heuristic. A future proof that physical odd zero returns of least period>=4 cannot be supported on one parity would rule out equality at all doubled periods>=8; that hypothesis is OPEN. Even proving it gives only strict one-profile weight, not G184's stage budget. Next examine a concrete inverse-history constraint for the source mask; no new full-domain scan. Scratch deferred, room closed.
-
-
-**G275 second-reading receipt (2026-10-10 01:14 BST).** Cloud CL131 verifies GC870's period invariance, primitive counts, rotation freeness for chains, equivariant lifts, tail law and small controls by hand. Independently replays pooled chain/cycle masses atq2/4/8 and detects nontrivial cycle phase lifts. PASS with all-source/null scope; restricted physical-source growth remains open. No GPT mass replay.
-
-
-#### GC912 — Backward mask preflight: retain the pair, not one profile (2026-10-10 01:18 BST; W281 continuation)
-
-**Hand shortcut audit; no general ancestry result.** Record searched: parity/mask/support + backward/predecessor ->226 hits in56 files; GC911/G199 and CL132 read. Predicted single-profile parity support fails as a backward invariant. Countercontrol physical q4 source suffers the same mask loss. Unexpected structured fourth pair must not be treated as a new zero-driver source. No solver, physical-tree census or growth claim.
-
-Let a be any nonzero word supported on one parity at an even capq. Then a and Sa have disjoint support, so OR equals XOR for those two words. Four direct applications of B(x,y)=(Sy+(x OR y),x) give
-
-    (a,0) -> (a,a) -> (a+Sa,a) -> (a,a+Sa) -> (a+S^2a,a).
-
-For the second arrow, a OR a=a. For the third, (a+Sa) OR a=a+Sa because a and Sa are disjoint, and Sa+(a+Sa)=a. The fourth uses a OR(a+Sa)=a+Sa, giving S(a+Sa)+(a+Sa)=a+S^2a. These are backward steps, not the forward zero-return excursion.
-
-At B^2 the first profile a+Sa has black bits on both parities for every nonzero a. Therefore the property “first profile supported on one parity” is not backward invariant, even on physically ancestral controls. At B^4 both profiles again have support on a's parity, but the second is a!=0; this is not a renewed zero-driver state and supplies no source-only decimation recursion. The full pair is essential. At least-period2 source a1010 at cap4, S^2a=a and B^4=(0,a), consistent with the known physical prefix, so mask loss cannot certify nonphysicality by itself. No conclusion about higher-period absorption follows from these four steps.
-
-Literal scalar controls over the six q4 and thirty q8 nonzero one-parity words agree with all four pairs and the mixed-parity B^2 claim. These are finite local identities, not an ancestry census. The immediate single-profile invariant shortcut is closed; a pair-level inverse condition or a later zero-return constraint would be new required input.
-
-**GC911 second-reading receipt.** Cloud CL132 checks decimated cycle/half-cycle flux, GC909 converse, source identity and exact correspondence of the two integration choices by hand. Independent all-odd-source replay toq32 agrees, with mixed-parity minimumq/4+1 there. PASS; replay is Cloud's evidence, not GPT execution, and does not assert physical ancestry. Next seek an actual pair-level constraint or change lane if none emerges; scratch deferred, room closed.
-
-
-#### GC913 — Four-step pair-mask closure fails beyond period 2 (2026-10-10 01:22 BST; W281 continuation)
-
-**Hand Boolean preflight; second reading pending.** Bears on Q7: closes the masked-pair recursion shortcut, not physical ancestry or either growth gap. Record searched: backward/inverse/predecessor + decimation/four-step/parity-mask/pair-mask ->13 hits in6 files; GC912 and GC911 read. Predicted shared-parity support at B4 is lost at B8 beyond period 2. Countercontrol: the physical alternating source must absorb instead. Independent one-hot q8 substitutions below; unexpected check proves both parity parts nonzero, rather than assuming a surviving term cannot cancel. No computation, census, solver or source-frequency claim.
-
-Let q be even, with all words cyclic at cap q, and let a be supported on one parity. S is the one-tick shift, addition is XOR, products are pointwise AND. Set
-
-    d = a + S^2 a,    h = a OR S^2 a,    r = a * (1 + S^2 a).
-
-GC912 gives B^4(a,0)=(d,a). Since d is supported inside h, and Sa lies on the opposite parity, four further applications of B(x,y)=(Sy+(x OR y),x) give
-
-    B^5 = (h + Sa, d),
-    B^6 = (h + S^3 a, h + Sa),
-    B^7 = (r, h + S^3 a),
-    B^8 = (h + S^4 a + Sr, r).
-
-For B5, d OR a=h. For B6, (h+Sa) OR d=h+Sa, and Sd=Sa+S^3a. For B7, the union is h+(Sa OR S^3a)=h+Sh, while the shifted second profile is Sh+S^2a. Their XOR is h+S^2a=r. For B8, r is contained in h, so the union is h+S^3a. Its XOR with Sh+S^4a has opposite-parity part Sh+S^3a=S(a*(1+S^2a))=Sr, giving the formula. These are local substitutions in the full pair, not a source-only map.
-
-If a differs from S^2a, then r is nonzero: otherwise supp(a) is contained in supp(S^2a), and equal cyclic weights force equality. The even-side term h+S^4a (the parity supporting a, whether literally even or odd) is also nonzero. If it vanished, wt(h)=wt(a); since h contains both a and S^2a, again a=S^2a. Thus B8's first profile has both parities whenever a is not period-2 invariant. The second profile is nonzero and remains on a's parity. The condition that BOTH profiles lie on that parity is therefore not invariant under four backward steps: it holds at B4 and fails at B8. If a=S^2a, then r=0 and h=S^4a=a, so B8=(0,0). This also covers a=0; no nonzero higher-period source absorbs within these eight steps. Later absorption is unresolved by this calculation.
-
-**Independent literal controls.** Define S to send support j to j-1 modulo q. For q8 and a supported at {0}, the eight pairs, after the initial ({0},empty), are
-
-    ({0},{0}), ({0,7},{0}), ({0},{0,7}), ({0,6},{0}),
-    ({0,6,7},{0,6}), ({0,5,6},{0,6,7}),
-    ({0},{0,5,6}), ({0,4,6,7},{0}).
-
-Each follows directly by shifting the second set and taking the symmetric difference with the two sets' union. It checks the formula without Boolean expansion. For q4 and a={0,2}, GC912 ends at (empty,a); the next four pairs are (all,empty), (all,all), (empty,all), (empty,empty). This is the known physical period-2 source, so it refutes any claim that losing the intermediate mask itself forbids physical ancestry.
-
-**Disposition.** The B4 shared-parity pair does not give a closed four-step decimation dynamics. Both the single-profile shortcut (GC912) and this pair-mask shortcut are closed; actual physical one-parity source exclusion remains OPEN. The algebra introduces the directed decimated boundary r, but no monotone quantity or persistent charge follows. Do not extend this local expansion into an unregistered long trajectory search. Next change to a concrete incoming proof audit or a different open Q7 constraint. Duplicate gate W281 passes; nearest W280, G201 and W273 were read in preceding blocks and supply different response, sibling and component results. Scratch deferred, room closed.
-
-
-#### GC914 — The ambient mixed-source minimum is q/4+1 at every dyadic q>=8 (2026-10-10 01:26 BST; W281 continuation)
-
-**Hand construction, second reading pending.** Bears on Q7: calibrates the strict one-profile bound, without a physical stage estimate. Record searched: G201/half-shift/antiperiod + converse/minimum/q/4+1 ->11 hits in5 files; G201, GC904, GC909/GC911 and CL132 read. Predict CL132's measured mixed-source minimum extends to every dyadic q>=8. Independent q8 literal control below; countercontrol admissible integration does not imply physical ancestry (G199's source17). Unexpected check uses half-block flux to prove the source's least period, not merely its cap period. No run, scan or external theorem is used; this is a converse construction from the recorded child equation.
-
-**A general realization guard.** Put m=q/2 and T=S^m. Suppose a binary f has f*Tf=0, no cyclic11, and D=f+Tf has no cyclic00. Define the driver at each tick by
-
-    e(t) = 1+f(t+1) if f(t)=0;   e(t) = f(t+m+1) if f(t)=1.
-
-Then Sf=(1+e)(1+f): at a white tick this is the defining formula, and at a black tick both sides vanish because f has no11. Also Te=1+e. If D(t)=1, exactly one of f(t),Tf(t) is black; the two case formulas at those ticks sum to1. If D(t)=0, both are white, and e(t)+Te(t)=Sf(t)+STf(t)=D(t+1)=1. Thus e is antiperiodic and nonzero. Define c=1+Se and a=c+Sc. Then Tc=1+c, Ta=a, and (a,0,c,1,e,f) is an admissible integration prefix. In particular a's weight on any m-block is odd: XOR over that block of c(t)+c(t+1) telescopes to c(t)+c(t+m)=1. Since m is a power of2, any smaller least period would repeat an even number of times in that block and give even parity. Therefore a has least period m. This guard realizes a child; it does not certify a's physical ancestry.
-
-**Explicit near-sharp family.** Index ticks 0..q-1 in increasing time. Set f black at every even tick in 0..m-1, and at the single tick m+1, and white elsewhere. For q>=8, m>=4 is even. The first half ends in a white tick; the second half has an isolated black tick at m+1; the cyclic join also has no11. Its half-shift is disjoint from it. D is the alternating even-parity indicator with two extra black ticks at1 and m+1, so it has no00. The guard therefore realizes a genuine odd doubling entry, with
-
-    wt(f) = m/2+1 = q/4+1.
-
-GC911's reviewed equivalence implies the source a is mixed-parity: a one-parity source would instead force wt(f)=q/4. Conversely every mixed-parity odd source has weight strictly greater than q/4 by GC909/GC911, hence at least q/4+1 by integrality. The construction attains it at every dyadic q>=8. Both integration choices have the same weight, since their entry children are half-shifts. This turns CL132's finite ambient minimum into a hand all-period statement. It makes no claim about the minimum over physical sources.
-
-**Independent q8 literal check.** In increasing time order the construction gives
-
-    f=10100100, e=10010110, c=11010010, a=01110111.
-
-Directly shift each string one tick left cyclically to check Sc=a+c, Se=1+c and Sf=(1+e)(1+f). Also Te=1+e, and a repeats the odd-weight block0111. Its entry child has weight3, equal to8/4+1. The source is the known physical source119 from GC907/CL132, so this smallest control is physical; that does not promote the whole constructed family. In contrast, G199's cap8 source17 gives valid odd integration and sharp weight2 but is nonphysical, refuting the general admissibility-to-ancestry inference.
-
-**Disposition.** Merely excluding one-parity sources cannot strengthen the ambient weight bound beyond q/4+1; a larger physical bound must use an additional ancestry restriction. This is a calibration of a possible argument, not a claim that one-bit improvement is useless or that it bounds a whole stage. No persistent charge or growth inference follows. Next ask for the realization guard and period-flux check to be second-read, then choose a physical-history constraint or a concrete audit rather than resuming mask expansions. Scratch deferred, room closed.
-
-**GC914 filing check.** W281 duplicate gate passes; nearest W280, G201 and W273 supply response, sibling and component mechanisms rather than this realization family. G201 was reread in full this block. Draft future time labels were corrected before publication to the verified clock at 01:26 BST; the claim and predictions were written before the hand derivation. No computational experiment or formal promotion.
-
-
-#### GC915 — Physical sharp-entry witness independently verified; exclusion REFUTED (2026-10-10 01:30 BST; W281 continuation)
-
-**Fixed-witness computational audit of Cloud CL134 at 2b55b6cb.** Bears on Q7: closes the proposed universal physical one-parity-source exclusion. Record searched: one-parity/1010100010100000 + physical/87867 ->30 hits in6 files. Read SE's full source/header, CL134 and GC911. Predictions and countercontrols were registered before execution in rule30_gpt_sharp_witness_audit.py, which imports neither SE nor ZF. The initially intended study of GC914's source family was deferred for this priority counterexample.
-
-The time-order source a=1010100010100000 has weight 5, least period 16, and all odd ticks white. An independently written literal-cell B recurrence reaches (0,0) from (a,0) in exactly 87867 steps. The repeated cap 32 lift reaches it at the identical step. Both integrations and the following prefix give entry children of weight 8=32/4; every local child equation was independently tested. Controls: physical q 4 source1010 absorbs at 8; nonphysical q 8 source10001000 instead enters a backward cycle with transient 29 and cycle 28. All checks PASS. The identified unexpected cap-lift check preserves absorption depth exactly. No ZF tree, SE randomness, census, branch count or TM6b parse was replayed.
-
-Thus a physical odd source of least period 16 is one-parity, and its doubled entry is sharp. GC911's possible universal exclusion for least period >=4 is REFUTED. Its equivalence and GC909's equality characterization remain valid; only the proposed physical exclusion fails. GC913's mask-closure failures also remain valid. Proposition8/CL134 identify this exact witness as the single cell's own minimum-N5 history; that attribution is credited to the existing certificate, while the independent calculation verifies its physical absorption and entry weight. Cloud's rarity counts (one of sixteen period 32 entries, none of 56 recorded period64 exits) remain Cloud-only evidence, not a GPT census.
-
-**Review receipt.** CL134 separately verifies GC913's B5..B8 identities, containment/nonvanishing and literal control by hand, then replays small caps and samples cap 32. Accepted as the second reading of the hand shortcut; no quantitative ancestry result follows. Its new physical witness is the separately replicated counterexample above.
-
-**Disposition.** Board note corrected to REFUTED and failure retained in the master. Do not reopen universal parity exclusion without an explicitly narrower new hypothesis. Sharp mass can occur on the target history, so any eventual ancestry-based inequality must allow exceptions or use another quantity. Next examine a different physical-history constraint or a concrete review, not a further parity-mask expansion. No prize claim; scratch deferred, room closed.
-
-
-**GC914 second-reading receipt and scope guard (GC915 follow-up).** Cloud CL135 checks the realization guard, antiperiodicity, admissible prefix, half-block flux and explicit family by hand; accepted. It independently replays q=8,16,32,64, giving weights 3,5,9,17. These are Cloud's controls, not GPT runs. Its ancestry comparison excludes the constructed source at source periods 8 and 16 (entry periods 16 and 32), using the complete ZF trees. That finite comparison does not establish nonphysicality at every larger period: CL135's wording “physical only at q=8”/“beyond q=8” must be scoped to the compared members unless a further argument is supplied. The all-dyadic ambient minimum proof is unaffected.
-
-
-#### GC916 — Exact three-state language for all antiperiodic entry children (2026-10-10 01:35 BST; W281 continuation)
-
-**Hand converse audit; second reading pending.** Bears on Q7: identifies an ambient compression without an ancestry filter. Record searched: antiperiod/half-shift/G201 + bijection/three-state/converse/realization ->15 hits in3 files; reviewed G201 necessity and GC914/CL135 realization guard. No run or census. The independent control is a cap4 literal word; countercontrol uses the wrong ordinary closing edge; the unexpected check counts the full language against the antiperiodic driver domain.
-
-Fix dyadic q>=4, m=q/2 and T=S^m. A word f is the child of (1,e) for some Te=1+e if and only if all three conditions hold:
-
-    f has no cyclic11;   f*Tf=0;   D=f+Tf has no cyclic00.
-
-Necessity: Sf=(1+e)(1+f) forbids11. Tf is the complementary-driver sibling by equivariance and uniqueness, so G201 gives disjoint support and the no00 union. Sufficiency is precisely GC914's reviewed realization guard. The driver is unique: at f(t)=0, e(t)=1+f(t+1); at f(t)=1, Tf(t)=0 and the half-shifted white-tick equation plus antiperiodicity gives e(t)=f(t+m+1). Thus admissible f words biject with the 2^m antiperiodic driver words. This is an exact finite alphabet statement, not a claim of physical occurrence or a new growth mechanism.
-
-Write s_t=(f(t),f(t+m)) for t=0..m-1, with three possible states A=00, B=10, C=01. The three conditions above are exactly that adjacent states differ. An A->A edge violates the union's no00 condition; B->B violates f's no11; C->C violates Tf's no11. Every other edge satisfies these local tests. The closing edge is from s_(m-1) to P(s_0), where P fixes A and swaps B,C, because shifting m ticks exchanges the two coordinates. It is NOT an ordinary cyclic closing edge to s_0. The conditions at the second half's join are the coordinate swap of this same test.
-
-**Unexpected exact count.** Let M be the three-by-three matrix with zero diagonal and ones off the diagonal, and P its swap permutation. The number of half-word sequences with this closing condition is tr(M^m P). On the constant-vector subspace M has eigenvalue2 and P acts as1. On the two-dimensional zero-sum subspace M acts as-1, while P has trace tr(P)-1=0 there (the full permutation trace is1). Consequently
-
-    tr(M^m P) = 2^m.
-
-This agrees with the driver bijection. Ordinary cyclic closure instead gives tr(M^m)=2^m+2*(-1)^m, hence 2^m+2 for the present even m. Agreement of the correct count does not select the physical subset: every ambient antiperiodic driver is already included.
-
-**Independent literal cap4 control and falsifiable wrong-boundary check.** At m=2 the allowed half-words are AB, AC, BA, CA. Their f words are respectively0100,0001,1000,0010. For AB, f=0100 and the guard gives e=0011. Directly, Sf=1000=(1+e)(1+f), and Te=1100=1+e. All four words are the known weight1 sharp entries, matching 2^2 drivers. Ordinary closure also admits BC, which gives f=1001 and has cyclic11 across the actual temporal join; it cannot satisfy the child equation. Thus the boundary guard can genuinely fail and is not a bookkeeping preference.
-
-**Disposition.** The three-state representation is an exact converse of the one-profile sibling conditions. It may be a useful encoding, but those conditions alone cannot add a physical-source obstruction: they already realize all ambient antiperiodic drivers. G199 supplies nonphysical integrations and GC915 a physical sharp integration inside that domain. No claim that encoding is useless for future coupled constraints, no new entropy estimate, and no stage-length inference. Next require an explicit ancestry or within-history condition before treating this compression as a prize route. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks, with G201 reread for GC914. Scratch deferred, room closed.
-
-**Control correction before publication.** The draft swapped e and Te in the cap4 example. Literal substitution rejects e=1100 (its right side is0011, not Sf=1000); e=0011 gives the stated equation. This was a hand transcription failure, corrected before filing; no computational experiment was run.
-
-
-#### GC917 — Sharp entry sparsity is followed by exact next-profile density (2026-10-10 01:40 BST; W281 continuation)
-
-**Hand actual-recurrence lemma; second reading pending.** Bears on Q7: two adjacent profiles, not a stage budget. Record searched: G201/sharp/q/4/one-parity + next-profile/next-child/3q/4/compensation ->12 hits in8 files. GC909's reviewed equality identity and G201's next-child equation read. No run or census. Independent physical q 4 literal control; countercontrol later siblings staying disjoint; unexpected exact intersection of those next siblings. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks.
-
-At a genuine sharp doubling entry of dyadic q>=4, let f be the child of (1,e), with wt(f)=q/4. Put T=S^(q/2) and D=f+Tf. GC909 gives alternating D, f supported on D, and e=1+f+Sf. The next actual profile g is the unique child of (e,f). Then
-
-    g = f + SD.
-
-Indeed f and SD have disjoint support, so f is contained in g and f OR g=g. Hence
-
-    e+(f OR g) = 1+f+Sf+f+SD = Sf+D = Sg,
-
-using 1+SD=D and S^2D=D. The driver f is nonzero, so reset uniqueness identifies this compatible candidate as the actual child. Consequently
-
-    wt(g)=3q/4,    wt(f)+wt(g)=q,    f*g=f.
-
-Also g has no00: it is black on every tick of the parity opposite f. Its least period is q. Otherwise f=g+SD would have a proper period dividing q (or period2 if g were constant), contradicting GC904's primitive entry f. This is a within-history consequence and therefore applies to GC915's physical sharp period 32 entry as well as ambient sharp entries; no new physical trajectory was run.
-
-**Unexpected sibling overlap.** Since q/2 is even, T fixes SD. The complementary branch's next profile is Tg=Tf+SD. Thus
-
-    g*Tg=SD,    g OR Tg=1.
-
-Their intersection has weight q/2, exactly the parity that was empty in both entry siblings. This refines G201's failure of persistent disjointness in the sharp class, rather than trying to reinstate that false property.
-
-**Independent physical q 4 control.** In increasing time order take the known prefix driver e=1100 and f=0001. Then D=0101, SD=1010 and g=1011. Direct substitution gives Sg=0111=e+(f OR g). The other branch has Te=0011, Tf=0100 and Tg=1110; its equation gives S(Tg)=1101=Te+(Tf OR Tg). Intersection 1010 and union 1111 refute the disjointness countercontrol exactly. The weights are 1 and 3 on each selected branch, summing to 4.
-
-**Scope.** Low entry weight does not persist even one additional profile in this equality class. However f is contained in g, so the two-profile mass includes repeated black ticks; it is not a cancellation-resistant charge or a conservation law over a stage. No bound on later profiles, return lengths, exception frequency or normalized growth follows. Keep the universal source exclusion REFUTED. Next seek a condition that survives along a selected history or review a concrete incoming proof; scratch deferred, room closed.
-
-
-**GC916 second-reading receipt (2026-10-10 01:41 BST).** Cloud CL136 verifies the converse, unique driver, swapped closing edge, trace count and corrected cap4 control by hand. Accepted; its independent replay through q32 remains Cloud's evidence. Its additional upper-bound argument also checks: weight(f)=q/2 would require D=1, leaving only B/C states alternating over even m. Then s_(m-1)=P(s_0), violating the closing edge. Thus wt(f)<=q/2-1 for every such entry. Attainment at q4/8/16/32 is Cloud's finite replay, not an all-period maximum proof or a physical count. No stage estimate follows.
-
-
-#### GC918 — Two-profile compensation needs the sharp guard; no persistent density floor (2026-10-10 01:45 BST; W281 continuation)
-
-**Hand scope preflight, no experiment.** Bears on Q7: retains two failed strengthenings before a stage argument. Record searched: weight/mass/compensation + GC917/10100100/10010001/inverse-shift-f ->8 hits in6 files. GC914's physical control and GC917 read. Independent literal local equations below; countercontrol universal mass>=q; unexpected exact third sharp profile. No trajectory/census or quantitative stage bound.
-
-**A physical mixed-entry counterexample.** GC914's q 8 prefix has a=01110111, c=11010010, e=10010110 and f=10100100. The source is a rotation of the known physical source 119 (GC907), so the actual compatible continuation has physical ancestry. Its next child is g=10010001: f OR g=10110101, and
-
-    Sg=00100011=e+(f OR g).
-
-Reset uniqueness for nonzero f makes this the actual child. Both f and g have weight 3, so wt(f)+wt(g)=6<8. This refutes the tempting extension “every physical doubling entry has two-profile mass at least q.” GC917 stated it only for sharp entries and remains correct. The physical control itself suffices; no ambient-to-physical inference or new B walk is needed.
-
-**Unexpected sharp third-profile identity.** In GC917's sharp class, put h=1+S^-1 f. Then h is black on all of f's supporting parity, while g is black on its opposite parity. Hence g OR h=1, and
-
-    Sh=1+f=f+(g OR h).
-
-Since g is nonzero, h is the unique actual child of (f,g). Thus wt(h)=3q/4, and h has least period q by complement and shift of primitive f. The first three entry profiles have weights q/4,3q/4,3q/4. This is a third-profile formula, not a density floor for all later profiles.
-
-The known physical sharp q 4 control makes that further counterfactual fail. GC917 gives e=1100, f=0001 and g=1011. The formula gives h=0111; its equation is Sh=1110=f+1111. The next actual child is k=0110, because h OR k=h and Sk=1100=g+h. Nonzero h gives uniqueness. Its weight 2 is below 3q/4=3. Thus even the selected physical sharp history does not maintain the three-quarter floor past g,h.
-
-**Disposition.** Sharp-entry compensation has a real, explicitly bounded extent. The universal two-profile mass extension and persistent three-quarter floor are REFUTED by physical local controls. No temporal independence, conserved charge, return bound or exception-frequency statement follows. Any stage argument must track a quantity beyond these first weights. Next change to a different history constraint or an incoming audit rather than continue unsupported profile expansions. Scratch deferred, room closed.
-
-**Review receipts (2026-10-10 01:45 BST).** Local L516 independently verifies GC917's substitution, uniqueness, weight, primitive period, next-sibling intersection/union and physical q4 control by hand; PASS with no persistent-charge claim. Cloud CL137's q 4/q 8 compressed-graph replay complements CL105's earlier GC866 hand classification; received with finite replay scope and no growth estimate. Local's ledger rotation is ingested before this append. L515's two-sided Lean certificate kernel-cost limitation remains Local's lane, not an independent GPT verification. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks.
-
-
-**GC918 second-reading and CL138 receipt (2026-10-10 01:52 BST).** Local L519 and Cloud CL138 independently second-read GC918 by hand: PASS. Cloud's physical-tree replay and period-32 weight control remain its measurements. Its additional fourth-profile formula is second-read here: PASS by direct substitution, with no census. Let D indicate f's supporting parity, A=1+D its opposite, u=S^-1 f and v=S^-2 f. Then g=f+A, h=1+u and k=A+u+v. On D, h=1; on A, v=0 and k=1+u=h. Therefore h OR k=h everywhere. Also SA=D, Su=f, Sv=u, so Sk=D+f+u=g+h. Nonzero h gives the unique actual child. On D, k=v has weight q/4; on A, k=1+u has weight q/4. Thus wt(k)=q/2. The independent q 4 control gives 1010+1000+0100=0110, as CL138 states. This proves the formula for every sharp entry; it does not prove convergence to half weight, a later density floor or a stage budget. L518's upward ceiling corrections and L519's map folding received; Q7 remains PART.
-
-
-#### GC924 — CL143 fifth sharp-profile formula independently verified (2026-10-10 02:20 BST; W281 continuation)
-
-**Provenance and audit scope.** Cloud CL143 at ff25d5f3 derives the formula post hoc after its SL2 experiment; GPT independently verifies it here by hand, without running SL2. Record searched: sharp/twisted plus domain-wall/fifth/rising/SL2 ->9 hits in6 files. W281 duplicate check: 298 entries, no repeats; nearest G201, W280 and W273 read in full. They provide sibling support, reset response and return-interface facts, not this fifth-profile identity. G201/GC909 supply the sharp class and CL138 supplies h,k; those mechanisms are credited. Prediction before this audit: parity elimination and the twisted count hold for every dyadic q>=4. Independent q4 control, ordinary-cycle countercontrol and q4 endpoint exception specified before derivation. No new proof unit.
-
-**Independent derivation.** Let f be sharp, supported on parity pi, with weight n=q/4 and half-shift Tf=f+1_pi. Use reviewed h=1+S^-1 f and k=1_(pi+1)+S^-1 f+S^-2 f. Its next child l satisfies Sl=h+(k OR l). For s on pi put b_s=f(s), A_s=l(s). At parity pi, h(s)=1 and k(s)=b_(s-2), hence
-
-    l(s+1)=(1+b_(s-2))(1+A_s).
-
-At parity pi+1, h(s+1)=k(s+1)=1+b_s, hence
-
-    A_(s+2)=b_s*l(s+1)=R_s*(1+A_s),
-    R_s=b_s*(1+b_(s-2)).
-
-The same equation two ticks earlier gives A_s<=R_(s-2). Consecutive rises cannot occur: R_s*R_(s-2)=0. Therefore R_s*A_s=0, A_(s+2)=R_s, and substituting back gives l(s+1)=1+b_(s-2). In full-word notation this proves Cloud's formula
-
-    l=1_(pi+1)+S^-3 f+S^-2 f*(1+S^-4 f).
-
-The two terms supported on pi+1 give weight n there. On pi the last term marks rising edges of the parity-cycle word b. That full word is u followed by its complement, with |u|=n. Its changes are twice the changes tau in u followed by NOT u_1; a cyclic binary word has equally many rises and falls. Thus wt(l)=n+tau. The twisted edge XOR sum is 1, so tau is odd. Choosing its tau change positions and the first bit reconstructs u uniquely, giving exactly 2*C(n,tau) half-words per parity. This count uses the full ambient sharp class; no physical-source count is inferred.
-
-**Controls and unexpected endpoint.** For the known physical q4 f=0001, h=0111 and k=0110, the formula yields l=1100. Literal substitution gives Sl=1001=h+(k OR l), independently verifying the scalar equation; weight 2 equals n+tau=1+1. For q16 and u=0000, the ordinary cyclic count is 0 but the twisted count is 1, giving weight 5, not 4. For u=0101 it is 3, giving weight 7. At q8 n=2 every twisted tau is 1, explaining the same first varying-profile weight throughout that class; no claim about later profiles is derived.
-
-Unexpected q4 guard: n=1 gives tau=1 and even weight 2. For dyadic q>=8, n is even and tau is odd, so wt(l) is odd, with n+1<=wt(l)<=2n-1. Neither this upper range nor oddness extends to q4. The q>=16 weight variation follows because tau=1 and tau=3 both occur. Cloud's longer profile census, symmetry and physical example remain its computations; this hand audit verifies the formula, count and boundary, not the whole run.
-
-**Verdict.** CL143's ambient formula and twisted-count theorem are independently second-read: PASS, with q4 range/parity exception retained. The original experimental hypotheses and failures stay unchanged and post hoc algebra stays labelled post hoc. No ancestry exclusion, stage budget, persistent density or prize claim. Stop density-profile extrapolation without a quantitative path input; next actual reached-history constraint or incoming review.

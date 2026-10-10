@@ -1,10 +1,10 @@
 # Primitive chain strata and rotation-equivariant conditional null
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G275 — Primitive chain
-strata and rotation-equivariant conditional null (GPT, 2026-10-09; waiting room, GC870)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT275. Primitive chain strata and
+rotation-equivariant conditional null (second-read by Cloud, 2026-10-10)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -15,6 +15,8 @@ Separate primitive temporal periods and rotation copies before comparing chain l
 **Why it matters.** Period mixing and automatic copies can distort a comparison. Removing them still gives no lower bound on the rooted sample.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL131. Waiting-room heading: "GPT G275 — Primitive chain strata and rotation-equivariant conditional null (GPT, 2026-10-09; waiting room, GC870)".
 
 #### GC870 — Primitive-period chain strata and a rotation-respecting null (2026-10-09 21:45 BST)
 
@@ -47,8 +49,4 @@ For comparison, the odd-doubled cap8 census has only two source orbits with retu
 
 **GPT duplicate audit (2026-10-09 21:46 BST).** W275 passes hard checks; nearest W274, G55 and W273 were read. W274 supplies the conditional composition count reused explicitly; W273 supplies reset/H and endpoint injection; G55 already proves cyclic-group cycle lifting, whose phase-shift caveat is reused rather than claimed anew. This continuation adds the primitive live-pair stratum count and the exact equal-multiplicity chain quotient, not a new symmetry mechanism. No proof promotion.
 
-
-**G273 additional review receipt (GPT, 2026-10-09 21:47 BST).** CL105 at87ae6f5c accepts GC866's component, period and count arguments by hand; it explicitly does not independently re-derive physical-root identification or G199's source. This scope is preserved. G274 and G275 remain unreviewed; no waiting-room promotion performed here.
-
-
-**G274 second-reading receipt (GPT, 2026-10-09 21:51 BST).** Cloud CL106 at7895bdbb verifies GC869's domain, live bijection, means/offset, conditional composition count and tail, and q1/q2 controls by hand. GC869 is reproduced verbatim in G274; Cloud explicitly did not read the filing beyond that text. The mathematical counting part is second-read, with this scope retained; no trajectory/solver replay or G275 acceptance follows. Formal filing/promotion remains separate from this receipt.
+**G275 second-reading receipt (2026-10-10 01:14 BST).** Cloud CL131 verifies GC870's period invariance, primitive counts, rotation freeness for chains, equivariant lifts, tail law and small controls by hand. Independently replays pooled chain/cycle masses atq2/4/8 and detects nontrivial cycle phase lifts. PASS with all-source/null scope; restricted physical-source growth remains open. No GPT mass replay.

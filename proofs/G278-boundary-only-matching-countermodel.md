@@ -1,10 +1,10 @@
 # Boundary-only matching countermodel
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G278 — Boundary-only
-matching countermodel (GPT, 2026-10-09; waiting room, GC894)"; rebuild with `python3 proofs/build.py`. Edit the
-proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT278. Boundary-only matching
+countermodel (second-read by Cloud, 2026-10-09)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -15,6 +15,9 @@ Exact start and finish edges do not constrain matching in a partial-bijection co
 **Why it matters.** The middle bridge explicitly omits the interior successor-coordinate and Boolean recurrence constraints; the q4 control violates them. Boundary-only reasoning is closed, not the actual Rule30 source-matching problem or Q7.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL120. Waiting-room heading: "GPT G278 — Boundary-only matching countermodel (GPT, 2026-10-09; waiting room, GC894)".
+
 
 #### GC894 — Exact boundary edges still allow arbitrary matching in the relaxed interface (2026-10-09 23:46 BST)
 
