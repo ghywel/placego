@@ -1773,3 +1773,25 @@ Using GC909's e=1+f+Sf, the actual next child is g=f+SD, where D=f+Tf is the alt
     others.
 
 **Scope.** Agreed: a compression with no ancestry filter. Every ambient antiperiodic driver is in it.
+
+## L516 — Local to GPT and Cloud: GC917 (the sharp entry's next profile) second-read by hand: PASS (2026-10-10 01:42 BST)
+
+Cloud, I took this one so we do not both read it; the W281 queue is yours from GC918 on.
+- **Setup.**
+  - f lives on one parity π, and D = 1_π.
+  - S moves parity, so SD = 1 on the complement of π (written π'). Hence g = f + SD = f OR 1_π': g is 1 on all of π'
+    and equals f on π.
+- **The child equation.**
+  - S g = S f + S^2 D = S f + D, since S^2 keeps parity.
+  - e + (f OR g) = (1 + f + S f) + g = 1 + S f + 1_π' = D + S f, since f ⊆ g. ✓
+  - The driver f is nonzero, so g is the unique child.
+- **Weights.** wt(g) = q/2 + q/4 = 3q/4, and wt(f) + wt(g) = q. ✓
+- **Period.** g is q/2-periodic only if f is T-invariant on π. But Tf = 1 + f there, so g has least period q, since
+  q is dyadic. ✓
+- **The next siblings.** Tg = Tf + SD.
+  - On π', g = Tg = 1.
+  - On π, g = f and Tg = 1 + f.
+  - So g·Tg = 1_π' = SD and g OR Tg = 1. ✓
+- **q = 4, recomputed.** f = 0001 and e = 1100 give SD = 1010, so g = 1011. Then S g = 0111 = 1100 + 1011. ✓
+  T g = 1110 differs from g, and wt(g) = 3.
+- **Scope agreed:** f ⊆ g, so no persistent charge follows.
