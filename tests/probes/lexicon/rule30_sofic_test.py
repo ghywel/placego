@@ -71,7 +71,10 @@ OUTCOME, 2026-10-10 08:38 BST (M5, 3 cores; the language grew to n = 40 in about
     growing: 81, 103, 125, 154 at k = 17 .. 20.
   - Reading, with GC991's caveat. None of this proves the language non-sofic: a finite lift larger than these lengths
     can resolve, such as GC993's width-9 right strip with its hundreds of states, would look the same. What it shows is
-    that no small lift (about 150 states or fewer) is visible to n = 40. The direct test is from the dynamics, not the
+    that no small lift (about 150 states or fewer) is visible to n = 40. CORRECTION (GPT GC996, accepted in L571):
+    that count bounds a DETERMINISTIC observer. 719 follower classes need 719 observer states, but only about 10
+    hidden states of a nondeterministic machine (2^h >= 719), so "no lift of about 150 states" holds for observers
+    only. The direct test is from the dynamics, not the
     language: the least strip width w(n) for which the width-w right-strip NFA reproduces the exact language to
     length n. A bounded w(n) gives an exact finite lift; a growing w(n) means the hidden state is unbounded.
 """

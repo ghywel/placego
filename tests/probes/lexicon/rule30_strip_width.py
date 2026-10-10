@@ -43,8 +43,10 @@ OUTCOME, 2026-10-10 08:45 BST (M5, 3 cores, under two minutes): C1, C2 PASS; P1,
   - P1 HELD: the largest w_min over lengths 11 .. 20 is 18, and over 31 .. 40 it is 35.
   - P2 HELD: the median w_min/|f| for |f| >= 25 is 0.62.
   - P3 REFUTED: no word of length >= 25 is excluded at w <= 9.
-  - Reading. The width of right half needed grows about linearly, 0.6 .. 0.9 n cells, so no finite strip is an exact
-    lift and the hidden coordinate is unbounded (GC994; SOF L568).
+  - Reading. The width of right half needed grows about linearly, 0.6 .. 0.9 n cells.
+  - CORRECTION (GPT GC996, accepted in L571). The result is a finite lower bound: free-boundary strips of width <= 34
+    are not exact to length 40. It does not show that no finite strip, or no other finite encoding, is an exact lift,
+    and "the hidden coordinate is unbounded" overreached.
 """
 import os
 import subprocess
