@@ -18,6 +18,8 @@ Tiers:
   al   ALC's four all-L slab cases (rule30_all_l_certs.py) and ASF's certificate (rule30_all_s_future.py: S^10, loop 2,
        sites 6 .. 13).
   rr   RRC's 95 deciding calls of the realizable records (rule30_records_real_certs.py, L438).
+  rr3  VC3: RR3's deciding UNSAT calls at d >= 98 (rule30_cloud_rr3.py, solver verdicts only until now), read from
+       RR3's checkpoint at run time and taken cheapest first. Not in the default tiers; name it explicitly.
 Hash controls: each rebuilt CNF's SHA-256 prefix is compared with the one recorded when the instance was first
 certified (RRC's checkpoint; ALC's and ASF's headers; CX's saved CNF files in ~/np-scratch-int/rule30-al/cx-drat).
 
@@ -39,6 +41,24 @@ OUTCOME, 2026-10-09 20:39 BST (M5; started about 17:30, the last receipt at 20:3
     at a time; the remaining receipts (19:48 .. 20:37) never overlapped.
   - So every UNSAT certificate behind today's realizable records to d = 97, the critical all-L uniqueness gates and the
     all-L slab cases now rests on a formally verified checker. That holds for these instances, not their encodings.
+
+VC3, the rr3 tier (Local's, CLOUD-LOCAL plan row of 2026-10-10 05:00). Predictions written 2026-10-10 05:09 BST,
+before any rr3 run. The builder RR3 imports (rule30_records_real_sat.py) last changed on 2026-10-08 at 15:50, before
+RR3 started on 10-09, so the CNFs rebuilt here are the ones RR3 solved. At registration, RR3's checkpoint holds 13
+deciding UNSATs at d >= 98: (98, 15), (99, 14), (100, 16), (101, 16), (102, 15), (103, 15), (104, 14), (105, 14),
+(106, 13), (107, 15), (108, 17), (109, 16), (110, 15). Depths decided later join the tier when it is re-run. Each
+runs with 1 job beside RR3's six solvers, and cake_lpr runs one check at a time (the lockf wrapper).
+  VC3-C1 (control, a gate: the tier does not run unless it passes): rr.cnf(97, 15) rebuilt now has VC's recorded
+         hash e53875327a164ccb (rr-97-15, VERIFIED-UNSAT at 20:37 on 10-09).
+  VC3-P1 (blind, 0.9): every deciding UNSAT ends "s VERIFIED UNSAT" under cake_lpr. The confidence is below VC's 0.95
+         because the proofs are larger than any VC checked.
+  VC3-P2 (blind, cost, 0.6): the largest LRAT is between 3 and 12 GB. Scaling: RR3's UNSAT times run 1.2 to 2.7 times
+         its 3,190 s for (97, 15), whose LRAT was 1.87 GB.
+  VC3-P3 (the unexpected check, 0.65): LRAT size tracks RR3's solve time: their Spearman rank correlation over the
+         tier is at least 0.7. If it is lower, proof size and RR3's search time are measuring different things, and
+         that is worth knowing before VC4.
+  Counterfactual. A CAKE-FAILED or ELAB-FAILED instance leaves that depth's R_real resting on kissat's verdict alone
+  and goes to retry with the CaDiCaL fallback. It does not refute the value; only a SAT witness at the UNSAT's L would.
 """
 import hashlib
 import os
@@ -60,6 +80,7 @@ import rule30_neutral_concat as nl                                    # noqa: E4
 sys.argv = _argv
 
 DIR = os.path.expanduser('~/np-scratch-int/rule30-vc')
+RR3_CK = os.path.expanduser('~/np-scratch-int/rule30-rr3/rr3.ck')
 CK = os.path.join(DIR, 'vc.ck')
 CAKE = os.path.expanduser('~/np-build/cake_lpr/cake_lpr')
 ALC_SHA = {'C10-3': '89bee028ebc399bf', 'C10-2': '379d841d2d39e029', 'C7-5': 'd9839e060ebe33a3', 'C2-0': 'f90a48385863bdcd'}
@@ -79,6 +100,21 @@ def asf_text():
             lits.append(-(off[t] + i) if ref[(s, i)] else off[t] + i)
     units = ['%d 0' % (off[t] + i if v else -(off[t] + i)) for t, i, v in cons] + [' '.join(map(str, lits)) + ' 0']
     return 'p cnf %d %d\n' % (nv, ncl + len(units)) + body + '\n'.join(units) + '\n'
+
+
+def rr_text(d, L):
+    nv, cl, row, T = rr.cnf(d, L)
+    return 'p cnf %d %d\n' % (nv, len(cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in cl)
+
+
+def rr3_deciding():
+    """RR3's UNSAT calls at d >= 98 (each is the first UNSAT of its depth's climb), cheapest first."""
+    got = {}
+    for line in open(RR3_CK):
+        p = line.split()
+        if line.endswith('\n') and len(p) == 6 and p[5] == 'END' and p[2] == 'UNSAT' and int(p[0]) >= 98:
+            got.setdefault((int(p[0]), int(p[1])), float(p[4]))
+    return sorted(got, key=got.get)
 
 
 def instances(tiers):
@@ -109,10 +145,10 @@ def instances(tiers):
         for d in rrc.ORDER:
             L = rrc.REAL[d] + 1
 
-            def make(d=d, L=L):
-                nv, cl, row, T = rr.cnf(d, L)
-                return 'p cnf %d %d\n' % (nv, len(cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in cl)
-            out.append(('rr-%d-%d' % (d, L), make, ('sha', recorded.get(d))))
+            out.append(('rr-%d-%d' % (d, L), lambda d=d, L=L: rr_text(d, L), ('sha', recorded.get(d))))
+    if 'rr3' in tiers:
+        for d, L in rr3_deciding():
+            out.append(('rr3-%d-%d' % (d, L), lambda d=d, L=L: rr_text(d, L), None))
     return out
 
 
@@ -205,16 +241,24 @@ def status(tiers):
     print('tiers %s: %d of %d VERIFIED-UNSAT by cake_lpr; not verified %s; hash DIFF %s; missing %d' % (
         '+'.join(tiers), len(ok), len(names), bad or 'none', diff or 'none', len(names) - len(ok) - len(bad)))
     if len(ok) == len(names):
-        print('VC-C1', 'PASS' if not diff else 'FAIL')
-        print('VC-P1 HELD')
+        tag = 'VC3' if tiers == ['rr3'] else 'VC'
+        print(tag + '-C1', 'PASS' if not diff else 'FAIL')
+        print(tag + '-P1 HELD')
         print('COMPLETE')
 
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'status'
     jobs = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else 4
-    tiers = [a for a in sys.argv[2:] if a in ('cx', 'al', 'rr')] or ['cx', 'al', 'rr']
+    tiers = [a for a in sys.argv[2:] if a in ('cx', 'al', 'rr', 'rr3')] or ['cx', 'al', 'rr']
     os.makedirs(DIR, exist_ok=True)
+    if 'rr3' in tiers:
+        rec = done().get('rr-97-15')
+        sha = hashlib.sha256(rr_text(97, 15).encode()).hexdigest()[:16]
+        ok = rec is not None and rec[3] == sha
+        print('VC3-C1', 'PASS' if ok else 'FAIL', sha, rec[3] if rec else 'no VC receipt')
+        if not ok:
+            sys.exit(1)
     if cmd in ('run', 'retry'):
         got = done()
         if cmd == 'retry':                      # re-run instances whose latest receipt is not verified; history kept

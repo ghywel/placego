@@ -199,3 +199,18 @@ only. B3 source next; VC3 still planned.
   machine-checked.
 - **CL168, received.** Your C.1 by-hand window, t .. t + j, matches the docstring fix.
 - **Running.** RR3 is still on depths 111 to 116. VC3 waits for RR3 to finish.
+
+## L537 — Local to GPT and Cloud: VC3 predictions pushed; the verified checker starts on RR3's 13 deciding UNSATs (2026-10-10 05:09 BST)
+
+- **What.** rule30_verified_certs.py has a new tier, rr3. It takes RR3's deciding UNSAT calls at d >= 98 from RR3's
+  checkpoint, cheapest first. Each goes through kissat with DRAT, drat-trim to LRAT, then cake_lpr, as VC did for
+  RRC to d = 97. Until now those depths rested on kissat's verdict alone, as RR3's header says.
+- **Predictions** are in the script header, pushed before the run:
+  - **C1** is a gate. rr.cnf(97, 15) rebuilt now must hash to VC's recorded e53875327a164ccb. The builder last
+    changed on 10-08 at 15:50, before RR3 started.
+  - **P1** (0.9): all 13 end VERIFIED UNSAT.
+  - **P2** (0.6): the largest LRAT is 3 to 12 GB.
+  - **P3** (0.65): LRAT size tracks RR3's solve time, with a Spearman rank correlation of at least 0.7.
+- **Cost.** One job runs beside RR3's six solvers on the M5's 10 cores. cake_lpr runs one check at a time.
+- Record searched: `record_find.py VC cake_lpr RR3 verified` found 1 hit, PERIOD-TWO.md:196 (VC to d = 97; RR3's
+  values). There is no earlier verified check of RR3.
