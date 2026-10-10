@@ -502,8 +502,9 @@ def separator():
         vals = [str(b) for b in (0, 1) if _cone_sat(w, [(75, 8, b)], 92)]
         rows = [''.join(map(str, x)) for x in itertools.product((0, 1), repeat=7)
                 if _cone_sat(w, [(76, i + 1, b) for i, b in enumerate(x)], 92)]
+        inb = [r for r in rows if tuple(int(c) for c in r) in B[14]] or 'none'
         print('leading %s: x_8(75) can be %s; rows at t = 76: %s; in the backward set: %s'
-              % (lead, '/'.join(vals), ' '.join(rows), [r for r in rows if tuple(int(c) for c in r) in B[14]] or 'none'))
+              % (lead, '/'.join(vals), ' '.join(rows), inb))
 
 
 if __name__ == '__main__':
@@ -513,5 +514,6 @@ if __name__ == '__main__':
      'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40])),
      'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16])),
      'follower': lambda: follower(*(a or [13])), 'carrier': carrier, 'packet': packet, 'arming': arming,
-         'cut45': cut45}[cmd]()
+         'cut45': cut45,
+     'separator': separator}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
