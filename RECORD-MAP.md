@@ -116,7 +116,8 @@ PART: as on the board.
 - Lift: relaxed model plus exact right half, simulation-gated; K=16 d=65 control ABSENT — COMPUTED — RLK lift L581/582.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
 - CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT, L=14 simulated witness — COMPUTED (kissat) — RLK L588.
-- GC1007 S/L component: 19 actual cuts (42..74) cut entropy 0.1386 to 0.1239; ceiling 0.1236 — COMPUTED — SLC L588.
+- GC1007 S/L component: 25 actual cuts (42..74) take entropy 0.1386 to 0.1226, below ceiling 0.1236 — COMPUTED — SLC L588.
+- All 1,603 cutoff-40 list words and every CUT/SLC cut absent by cake_lpr — COMPUTED (verified) — MFC L590.
   Unary/affine forcing stalls; this gap4 cut leaves GC1007 S/L subsystem unchanged — COMPUTED / hand — GPT L584 follow-up.
 - Visible language to n=40: no small lift; follower and synchronized classes grow (154 at k=20) — COMPUTED — SOF L564..568.
 - Exactness through40 needs strip width35; widths<=34 excluded, all-depth boundedness OPEN — COMPUTED / scope GC996 — SW L569/570.
