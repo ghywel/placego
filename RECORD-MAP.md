@@ -103,7 +103,7 @@ PART: as on the board.
 - Actual suffix from13 forbids4422/4444; age12 retains4444; relaxation still branches — hand / COMPUTED — GC988/989, L563.
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111=15, 112=15 (plateau law, then solver), 113=14, 114=13, 115>=14, 116>=15, 117>=14, 118>=15, 119>=14 — COMPUTED — RR3
+- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111=15, 112=15 (plateau law, then solver), 113=14, 114=13, 115=14, 116>=15, 117>=14, 118>=15, 119>=14 — COMPUTED — RR3
   checkpoints, CLOUD-LOCAL archives.
 - RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 111..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
@@ -115,6 +115,8 @@ PART: as on the board.
 - K=40 relaxed at L=18, phase 0: d=124 UNSAT; d=144, 152 SAT (open) — COMPUTED (kissat, uncertified) — RLK probe L575, L581/582.
 - Lift: relaxed model plus exact right half, simulation-gated; K=16 d=65 control ABSENT — COMPUTED — RLK lift L581/582.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
+- CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT, L=14 simulated witness — COMPUTED (kissat) — RLK L588.
+- GC1007 S/L component: 19 actual cuts (42..74) cut entropy 0.1386 to 0.1239; ceiling 0.1236 — COMPUTED — SLC L588.
   Unary/affine forcing stalls; this gap4 cut leaves GC1007 S/L subsystem unchanged — COMPUTED / hand — GPT L584 follow-up.
 - Visible language to n=40: no small lift; follower and synchronized classes grow (154 at k=20) — COMPUTED — SOF L564..568.
 - Exactness through40 needs strip width35; widths<=34 excluded, all-depth boundedness OPEN — COMPUTED / scope GC996 — SW L569/570.

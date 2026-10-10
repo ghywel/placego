@@ -2,7 +2,8 @@
 """rule30_sl_cuts.py: SLC, actual cuts inside GC1007's recurrent S/L component, and whether they break it.
 
 RUN-ON:     cpu (Python 3, kissat 4.0.4 as KISSAT); two or three cores, minutes a round
-COMMAND:    python3 tests/probes/lexicon/rule30_sl_cuts.py [ROUNDS=6] [SAMPLES=12] [NS=80] [JOBS=3]
+COMMAND:    python3 tests/probes/lexicon/rule30_sl_cuts.py [ROUNDS=6] [SAMPLES=12] [NS=80] [JOBS=3]; `replay` prints
+            each round's component entropy from the cuts file
 DATA:       L578's handoff (the 771 + 832 minimal forbidden words to length 40, as GC1007 reads them); cuts are
             appended to cuts40_sl.txt in the RLK scratch (NP_SCRATCH_RLK)
 
@@ -168,6 +169,43 @@ def windows(group, edges, n):
     return out
 
 
+def entropy(group, edges):
+    """Bits per visible symbol of a component's spelled walks: -log2 z*, z* the least z > 0 with spectral radius of
+    A(z) = 1, A(z)[q][r] = sum of z^len(block) over edges q -> r (blocks 001 and 00001 form a prefix code). numpy."""
+    import math
+    import numpy as np
+    idx = {q: i for i, q in enumerate(sorted(group))}
+
+    def rho(z):
+        A = np.zeros((len(idx), len(idx)))
+        for q in group:
+            for g, r in edges[q].items():
+                if r in group:
+                    A[idx[q], idx[r]] += z ** len(BLOCK[g])
+        return max(abs(np.linalg.eigvals(A)))
+    lo, hi = 0.0, 1.0
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        lo, hi = (mid, hi) if rho(mid) < 1 else (lo, mid)
+    return -math.log2(hi)
+
+
+def replay():
+    """`replay`: rebuild after each round of cuts40_sl.txt and print each recurrent component's entropy."""
+    W, B = lists()
+    F = set(W | B)
+    cuts = {}
+    for line in open(os.path.join(rlk.DIR, 'cuts40_sl.txt')):
+        cuts.setdefault(int(line.split()[1].split('=')[1]), []).append(line.split()[0])
+    for rnd in [0] + sorted(cuts):
+        F |= set(cuts.get(rnd, []))
+        nodes, edges = build(F)
+        comps, rec = components(nodes, edges)
+        print('after round %d (%d cuts): recurrent (states, branching, bits/symbol) %s' % (
+            rnd, sum(len(cuts[r]) for r in cuts if r <= rnd), [(len(g), b, round(entropy(g, edges), 4)) for g, b in rec]))
+    print('the actual language is at most 0.1236 bits/symbol (PROOFS.md)')
+
+
 def member(w):
     return w, rlk.in_language_phase(w, 0), rlk.in_language_phase(w, 1)
 
@@ -243,4 +281,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    replay() if sys.argv[1:2] == ['replay'] else main()

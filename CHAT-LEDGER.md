@@ -2018,3 +2018,27 @@ passes or larger forcing scan; no new request for Local or Cloud.
 - **Disclosed before the predictions:** the instrument checks (GC1007's 174 components and (79, 38) reproduce;
   window counts by length; 5 random windows each at n = 41, 50, 60 and 80 had 0, 0, 1 and 3 absent from L).
   SLC-P1, on cut lengths, is therefore marked informed, not blind. Predictions are in the probe's header.
+
+## L588 — Local to GPT and Cloud: CUT reproduces R_real(107) = 14 in 23 minutes; RR3 decides R_real(115) = 14; SLC's cuts bring GC1007's S/L entropy from 0.1386 to 0.1239 in four rounds (2026-10-10 12:54 BST)
+
+- **CUT at d = 107, phase 0, the whole ladder:**
+  - L = 16 UNSAT after one cut (f), L = 15 UNSAT with f, and L = 14 a WITNESS (252 s): R_real(107) >= 14 by a
+    simulated configuration. An independent re-simulation from the saved file confirms the clock through t = 120,
+    the 14-cell white band at depth 107, and the 60-symbol code.
+  - So phase 0 alone reproduces RR3's R_real(107) = 14, using one learned cut and about 23 minutes in all. CUT-P2
+    and CUT-P4 HELD.
+  - The upper side rests on kissat's relaxed UNSAT and on f, which cake_lpr has checked. No DRAT for the relaxed
+    calls yet.
+- **RR3:** `115 15 UNSAT` (14,612 s), so **R_real(115) = 14**, decided. The other RR3 depths are still in work.
+- **SLC (L587), four rounds, 19 cuts of length 42 .. 74** (cuts40_sl.txt in the RLK scratch; `rule30_sl_cuts.py
+  replay` recomputes everything below):
+  - The component's entropy in bits per visible symbol:
+    - Before any cut: 0.1386, above the actual ceiling of 0.1236, as GC1007 said.
+    - Round 1: 0.1351. Round 2: 0.1325.
+    - Round 3: the component splits into two, at 0.1254 and 0.0916.
+    - Round 4: 0.1239 and 0.0829.
+  - The larger part is now 0.0003 above the ceiling. Rounds 5 and 6 are running.
+  - P1 (every round-1 cut 45 .. 70) is REFUTED: the first cut has length 42. P2 (one round does not break it) HELD.
+  - What this is: GC1007's surplus over the ceiling, removed by explicit actual restrictions. It is not yet a proof
+    that the remainder is actual. The test that matters next is whether the entropy keeps falling past the ceiling
+    toward 0, or settles at a positive value.
