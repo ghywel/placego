@@ -5351,3 +5351,49 @@ The barrier claim above needs only the proved centre column.
 | Lead | Status | What we have | What is left |
 |---|---|---|---|
 | The one-hole channel layers (GPT G15-G17/G20; CONSTELLATION row16) | **PARKED**, other walls, behind period 2 (first triage of 2026-10-06, CL009 and GC155; was: **PART**, GPT reasoning) | Width one is fully free at p>=3; widths two/three restrict even p and p3 but allow all odd p>=5. G20 proves width four still allows every hole-bit sequence at every odd p>=5, by B^8=B^16 and six exact subset certificates; blind first-restriction prediction refuted. G15's `rule30_gpt_gap_language.py` replicated by Local (2026-10-06, at ee23889; all controls as recorded). **2026-10-09 (Local, OH, a drawn row):** the first restrictive width is attained. For every odd p >= 11, width 5 forces the hole bit to 0 after the first hole; the language is 0^n and 1 0^(n-1), with the same language at widths 5 .. 10. p = 5 and 7 are first restricted at width 7, and p = 9 at width 8. All three keep positive entropy at width 10 (growth 1.73, 1.88, 1.87). The results come from exhaustive automata, with every odd p covered through the eventual period of the black relation, and the key word was brute-forced independently. Seed-free and one-sided; for finite seeds, entry 38 already excludes p = 8 and p >= 10, and the surviving odd periods are exactly its open q = 4, 6, 8. Widening to width 13: p = 5, 7, 9 keep positive entropy but keep narrowing (at width 13 the growth is 1.6725, 1.7882, 1.8537); none closes by width 13. **Later the same evening (OHC in C, OHD direct simulation):** to width 22, p = 5, 7, 9 still narrow and none closes (growth 1.4712, 1.5994, 1.7144 at width 22). By compactness the true one-sided entropy is the limit of these upper bounds. Exact forms hold at the plateaus: x^4-2x^3+x-1 (p = 9, widths 8 .. 12) and x^5-x^4-x^3-x^2-x+1 (p = 7, widths 7 .. 9). Plain forward simulation agrees with the automata, and for p = 5 the hole word 10000 is forbidden in the true half-line system. GC850 (G.GPT271) gives the hand reason for p >= 10: nine black steps lock the pair 01. **TB (late evening):** p = 8 also closes at width 5 (hole words 0^n, 1 0^(n-1), 0 1 0^(n-2); confirmed in the true system). p = 3, 4, 6 stay open at width 22 (certified ceilings 1.302, 1.291, 1.407). So the one-sided channel is closed exactly at p = 8 and p >= 10, which is entry 38's exclusion set, and open at p = 2 .. 7 and 9, its open cases. **LP (Local, 2026-10-09 late evening):** the width-22 automata's radii, certified in integers and verified independently, replace the c_60 ceilings: p = 3, 4, 5, 6, 7, 9 <= 1.2204, 1.2318, 1.4712, 1.3839, 1.5994, 1.7144. Times Cloud's true forbidden words (TC), p = 5, 7, 9 <= 1.4619, 1.5904, 1.6976 a hole, below both factors (L506). | Does the one-sided entropy of p = 5, 7, 9 reach zero? The upper bounds fall about 0.015 per width at 22, so a lower bound (a construction realising exponentially many hole words) or a lock argument for shorter black runs is needed; more width alone will not decide it. p = 3 and the even periods are separate. |
+
+
+### 8.80 The pattern as one chain, and the chain split at the front (the owner's lead, 2026-10-10)
+
+*Cloud, from the owner's questions of 2026-10-10: read the single cell's pattern not as rows and columns but as one
+long binary chain, the rows concatenated; then split that chain at the orderly wave front into an orderly chain and a
+random chain, "like a complex number". Probe `rule30_cloud_chains.py`; predictions CH-P0 .. CH-P4 pushed before the
+run; chat CL211, CL212. A side question (CONSTELLATION.md F); it serves no status-board row directly.*
+
+**What is exact.** Read row $t$ from the left edge; cell $e$ of row $t$ sits at chain position $t^2 + t + e - t$, that
+is cell $i$ (absolute) at $t^2 + t + i$. Row starts are the squares, the centre column is the pronic numbers $t(t+1)$,
+and the rule becomes one recurrence with a growing lag,
+$a_p = a_{p-2t-1} \oplus (a_{p-2t} \lor a_{p-2t+1})$ with $t = \lfloor \sqrt p \rfloor$, except at the two cells
+at each end of a row, where a lagged term falls outside the previous row and reads 0. So the chain is a nonlinear
+shift register whose tap distance grows like $2\sqrt p$; on a finite ring the lag is fixed and the sequence periodic,
+here it never is. The first $e$ diagonals are a closed system (§8.31), so the orderly chain (each row's first $B(t)$
+bits, $B$ the exact boundary of §8.74) is autonomous, and the random chain (the rest) is driven by it at its left
+boundary and never feeds back: a clock driving a register, not two independent coordinates. The centre column lies
+in the random chain at offset $t - B(t) \approx 0.25t$ from the front, which never returns to it (§8.74). Rows 1 to 4
+of either chain determine row 5 of the orderly chain; row 5 of the random chain needs its own past as well.
+
+**What was measured** (rows 2 to 4,096, $P = 2^{10}$; chains F full, O orderly, C random, I an i.i.d. coin of C's
+length; N the 64 bits after $B(t)$, M the 64 bits about the centre column):
+
+| chain | bits | xz ratio | zlib ratio | density | $h_{16}$ bits per bit |
+|---|---|---|---|---|---|
+| F | 16,785,405 | 0.633 | 0.629 | 0.5008 | 0.912 |
+| O | 6,436,255 | 0.077 | 0.366 | 0.5018 | 0.422 |
+| C | 10,349,150 | 1.0001 | 1.0003 | 0.5002 | 0.9975 |
+| I | 10,349,150 | 1.0001 | 1.0003 | 0.4999 | 0.9977 |
+| N | 260,338 | 1.0019 | 1.0005 | 0.5011 | 0.899 |
+| M | 261,180 | 1.0018 | 1.0005 | 0.5007 | 0.899 |
+
+CH-P0 to CH-P3 HELD: the orderly share is 0.383; the orderly chain compresses thirteen-fold under xz while its short
+blocks are coin-like ($h_8 = 0.996$), so its order lives in long repeats, as the stripes' periods say it must; the
+random chain matches the coin in compression, 16-block entropy, density and the run law (every run frequency for
+$L \le 10$ within 3.8% of $2^{-L}$). CH-P4, the unexpected check, REFUTED: the band just past $B(t)$ is as
+incompressible as the centre, so there is no zone of slow order beyond the exact boundary that a compressor can see;
+the front is sharp in this sense as well, consistent with §8.74's lag-$2P$ control.
+
+**What it means.** The owner's split does exactly what the picture says: it separates a zero-entropy clock from a
+register that passes every coin test used here. It does not reduce the problem: the register's width grows without
+bound, which is the one thing that lets a system driven by periodic clocks avoid eventual periodicity. The chains
+carry no structure that the two-dimensional form hides. **Prior work.** No chain or row-major reading was found in the
+record or in the literature read for PRIOR-ART.md; the row-by-row reading is OEIS A070950 as a triangle, without
+results on the concatenation.

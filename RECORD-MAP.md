@@ -245,6 +245,9 @@ PART: as on the board.
 - Leftward speed 0.246 = 1 - 0.41 x 1.84, by the identity v = 1 - P(heal) E[jump | heal] — PROVED (identity),
   MEASURED (values) — §8.66
 - The order ends at an exact boundary B(t), a walk near x/t = -0.25 — COMPUTED, MEASURED — §8.74
+- The rows as one chain: a lag-2 sqrt(p) recurrence (exact); split at B(t), the orderly chain compresses
+  thirteen-fold and the random chain is coin-like by xz, h_16, density and runs; no slow zone past B(t) —
+  PROVED (recurrence), MEASURED — §8.80
 - Left-only horizon next to 0101 is W + 17; slow walls stop every width-16 seed within a period — COMPUTED — §8.69
 - Every white triangle is exact (shrinks two cells a step); every climb on black reaches the origin in t moves —
   PROVED — §8.18, §8.29; ShortC.lean L533, source GC957
