@@ -631,3 +631,4 @@ app is unpublished by design.
   period 4 beside the 0101 wall): membership of (10)^n to n = 200 in both phases (kissat, via relaxed_records_k), the
   finite right halves that sustain it (1001 beside the phase-0 clock, 3000 readings), the six-cell period-4 block that
   lasts 20,000 steps against chaos at site 7, and a failed search for a finite invariant window. CPU, seconds to a minute.
+- `lexicon/rule30_train_slab.py` (GPT, 2026-10-10, GC1017, Q6/CUT): literal local truth-table checks for three correlated implications forcing the two-gap train slab; exact phase-0 exterior gate and dropped-observation countercontrols. No SAT or record scan.

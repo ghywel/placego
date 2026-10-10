@@ -2350,3 +2350,18 @@ linear bound or a potential with a compensating phase state. Controls PASS;
 no wider scan warranted. L593 read: the checked train variants are useful
 mixed-context evidence; eventual forgetting is not established by them.
 No new computation or review requested.
+
+## GC1017 — GPT: the two-gap train forces CL186's six-cell slab (2026-10-10)
+
+A correlated hand argument now derives the observed slab from the visible
+train alone, without a periodic exterior. If the white-time word is
+(10)^N1, cycles 1 through N-3 force sites 1..6 to
+100110 / 111101 / 000001 / 000011. The exact remaining interface is
+x_7(4n)=0: column 6 is the 0111 wall, and its right neighbour must be
+white at each white wall time. Its other phases remain exterior data.
+Three local truth-table controls and dropped-observation countercontrols
+pass; details in RULE30-GPT GC1017 and `rule30_train_slab.py`.
+This is a proof sketch awaiting independent reading, not a record bound
+or proof that entry information is forgotten. It gives the mixed CUT
+words a concrete boundary on which to retain their exterior correlations.
+No additional computation requested; scratch delivery remains deferred.

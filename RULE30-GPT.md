@@ -25519,3 +25519,76 @@ scan is needed. This particular weighted candidate needs a compensating
 state distinguishing the two configurations; zero-prefix length with
 the proposed uncorrected drift is insufficient. No all-depth bound
 or necessity of infinitely many hidden states follows.
+
+
+### GC1017 — Two-gap train: correlated forcing of its six-column boundary (2026-10-10)
+
+Registered before controls; informed by a hand derivation, not a blind
+prediction. The missing inference is which exterior data can affect a long
+train's exit. Target: prove the six-column slab seen in CL186 is forced by
+the train, without assuming temporal periodicity of the exterior.
+Record searched: `train|2.gap` + `forced.*six|six.*forced|slab|0100`;
+CL186 supplies the observed slab, GC1013 its periodic witness; the wheel
+and S/L slab results concern different visible words.
+Prediction: three short overlapping local deductions force the slab.
+Independent control: enumerate the free Boolean variables in each deduction
+using the literal Rule 30 truth table. Countercontrol: removing the second
+column's prescribed observations must admit other values. Unexpected check:
+the conclusion must force only one phase of column 7, not assume that
+column's whole temporal word is periodic. No SAT membership or record run.
+
+**Outcome: hand proof, second reading pending.** This is forced structure,
+not just the orbit seen from seed 1001. Write x_j(t) for site j. Suppose
+x_0(t) = t mod 2 through time 4N and its white-time neighbour reads
+(10)^N1, with N >= 4. For every cycle n = 1,...,N-3 the six sites 1,...,6
+at times 4n,...,4n+3 are respectively
+
+    100110, 111101, 000001, 000011.
+
+Moreover x_7(4n) = 0. The right exterior need not be periodic.
+
+Proof. Each white-time triple 1,0,1 forces the full column-1 segment
+11001: a 1 at a white wall time forces the next value 1, and the final
+1 requires both inputs to the OR at the preceding black wall time to
+vanish. Work in local time modulo 4, using
+x_j(t+1) = x_(j-1)(t) XOR (x_j(t) OR x_(j+1)(t)).
+
+A. Column 1 equal to 11001 first forces column 2 to a,b,0,0. If b=0,
+the column-2 equation at time 1 forces x_3(1)=1. Its equation at time 2
+forces x_3(2)=0, whereas the column-3 equation at time 1 forces
+x_3(2)=1. Hence b=1. The column-2 equation at time 0 now forces a=0
+and x_3(0)=0. Thus column 2 is 0100 in every complete cycle.
+
+B. Use columns 1 and 2 through the first two times of the next cycle:
+110011 and 010001. The column-2 equations give column 3 as 0,d,0,0,0.
+Then x_4(0)=d and d OR x_4(1)=1. The column-4 equation at time 0
+gives x_4(1) >= d; together these force x_4(1)=1. Also x_4(2)=0,
+while its own equation at time 1 gives x_4(2)=1 XOR d. Therefore d=1.
+Finally x_4(3)=0. Columns 3 and 4 are 0100 and 1100.
+
+C. Use those two columns from time -1 through time 5. The column-4
+equation at time -1 forces x_5(-1)=1. Its own next two updates give
+x_5(0)=1 and x_5(1)=0. The column-4 equations at times 2 and 3 give
+x_5(2)=0 and x_5(3)=1. The column-5 equations now give x_6(1)=1
+and x_6(2)=1. The column-6 equation at time 0 forces x_6(0)=0
+and x_7(0)=0; at time 2 it forces x_6(3)=1. This proves the slab.
+For the finite endpoints, A applies to cycles 0,...,N-1; B to
+0,...,N-2; C to 1,...,N-3, exactly the stated range.
+
+The slab's four transitions can also be read in the forward direction.
+Starting from its first row, it persists for a cycle if and only if
+x_7 is 0 at phase 0; its other three phases do not enter any of these
+six updates. Thus the interior train has an exact correlated boundary:
+column 6 is the period-4 wall 0111, and column 7 must be white at that
+wall's white times. Compatibility of this boundary with the entry and
+exit remains necessary; arbitrary column-7 words are not claimed actual.
+This reduces the exterior interface, without proving forgetting, finite
+right-seed eternity, or an all-depth record bound.
+
+Controls in `rule30_train_slab.py` PASS: literal truth-table enumeration
+leaves 3, 4 and 12 local patches for A, B and C, all satisfying the
+conclusions. Dropping the prescribed second-column observations admits
+counterexamples in each case. The four slab transitions match exactly
+the single phase-0 exterior condition. Unexpected check: C permits all
+four local pairs of column-7 values at phases 1 and 2; no periodic
+exterior was silently imposed. This does not assert their global extension.
