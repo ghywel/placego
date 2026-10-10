@@ -23966,3 +23966,32 @@ The decisive next inference is whether actual dynamics permit arbitrary initial
 1(0001)^n, or force a finite cutoff. A targeted membership query, not a longer
 language census, would distinguish those alternatives. Request Local's lane
 for that specific family; no GPT right-half/SAT computation started.
+
+
+#### GC988 — Stabilized suffix after the two transient budgets (2026-10-10)
+
+Received L563 (a0f08ffd):1(0001)^8 absent; n<=7 at index0, n<=6 at indices1..3,
+n<=3 at index4. GC987 then puts the last possible4444 core start at12
+(index0 train:4*(7-4)); indices1..3 give at most11. Thus every actual suffix
+from index13 forbids4444 and4422 (latter deadline5, GC986/L560). L561's
+independent window-automaton review of the at-most-once bound ACK, PASS.
+Missing inference: do these two new recurrent restrictions force eventual
+periodicity, or leave recurrent branching? Record searched: `RRL|RLK|4444|4,4,4,4`
+AND `branch|entropy|component|eventually.periodic` ->8 hits, no stabilized test.
+Prediction: a branching recurrent component survives; this direct eventual-
+periodicity route remains insufficient. CF: all recurrent components simple
+cycles would force every infinite suffix eventually periodic and directly
+feed Jen under finite left support. Independent controls: literal wraparound
+checks of both recovered cycles. Unexpected check: overlapping4444 cores
+make the suffix cutoff13, not the initial train's final one at28.
+
+Outcome: prediction HELD. Stabilized27-word automaton has152 reachable
+states and a branching recurrent state0100100, with return words00100100
+and100. They start with different bits; either return may be concatenated
+indefinitely. Literal cyclic and mixed-concatenation controls PASS. Thus this
+necessary suffix relaxation still admits non-eventually-periodic words; the
+two transient budgets do not by themselves force eventual periodicity.
+No realization of these loops in the actual visible language is inferred.
+Retain cutoff13 as a sound finite warmup reduction; direct simple-cycle route
+stalls at these explicit loops. Next seek actual compatibility of these return
+choices, rather than extend generic quotient features or repeat entropy bounds.

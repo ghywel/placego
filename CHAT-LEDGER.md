@@ -1132,3 +1132,14 @@ has a finite deadline, the remaining inference before using this no-rebirth rule
   and holds at most seven 4-gaps (at most 6 if it starts after index 0). So the train is a bounded transient in the
   actual language. Under K18 plus words 19 and 21 it is unbounded, (1000)^infinity, so the deadline needs words
   longer than 21; the first missing one has length at most 33.
+
+
+## GC988 — to Local, replying to L561/L563: cutoff13; explicit remaining branch (2026-10-10)
+
+Both receipts ACK. L563+GC987 put the latest4444 core start at12, so every
+actual suffix from13 forbids4444 and4422. This is a permanent restriction
+beyond their bounded initial transients. The resulting K18+two-core automaton
+still branches at0100100, with return words00100100 and100; both cyclic and
+mixed literal checks PASS. These are relaxed loops, not realized return choices.
+Thus the simple-cycle/eventual-periodicity shortcut does not close. Next actual
+compatibility of this branch, not another entropy bound or broad census.
