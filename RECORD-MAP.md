@@ -167,7 +167,7 @@ PART: as on the board.
 - Its whole in-tree at fixed q: 4, 14, 98, 3,066, 34,541,082 states (q = 1 .. 16); non-dyadic q repeat their dyadic
   part — COMPUTED, a third replay of Proposition 8 — ZF, CL126 to CL128. RC88's r = 88 source is not physical; 371's is
 - q = 32: all 16 first zero-started rooted orbits return (4.5e7 .. 2.03e10; mean 1.007 x 2^32) — COMPUTED —
-  rule30_rooted_walk.c, rule30_r88_census.py (RWC, RWX), L488, L522
+  rule30_rooted_walk.c, rule30_r88_census.py (RWC, RWX), L488, L522; restricted-prefix scope GC927
 - Fixed-q zero-started excursions: every admissible one returns, r <= (2^q-1)^2+2 (GC864, PROVED, CL103); first
   excursions biject onto nonzero return words (GC865, PROVED, CL103); the compressed graph is the physical-root tree
   plus nonroot cycles (GC866, PROVED, CL105, CL137) — G273
