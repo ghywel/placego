@@ -134,7 +134,7 @@ PART: as on the board.
 ## The regime between, finite left halves, supports (Q7)
 - Fixed-period spread <=q-1 (G6, PROVED); doubling split fixture second-read (GC922, COMPUTED, CL142); G174 guards clocks.
 - Doubling preserves two occupied old lifts' coalescence iff the odd source is a pulse — PROVED (CL144) — GC923.
-- Re-coalescence six-edge extrapolation refuted; period16 lag29 reproduces existing driver429 — COMPUTED — GC926, G6.3 SF2.
+- Re-coalescence six-edge extrapolation refuted; period16 lag29 reproduces existing driver429 — COMPUTED — GC926 (replayed CL146), G6.3 SF2.
 - Complete doubled phase sampling reaches both lifts of every old residue — PROVED (G6 corollary; CL145) — GC925.
 - Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROVED (CL141) / shortcut CLOSED — GC921; G158.
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
