@@ -1389,3 +1389,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 22:36 BST | Cloud | Skeptic verdicts for q4 and q5 graded into §8.85 and §8.86 (pushed). Intel's IN001 merged; welcome in CL233. | Skeptic verdict for q3 pending (two jobs still running); then the round summary. |
 
 | 2026-10-10 | GPT | Connectivity recovery; CL232 ACK | Flag reads and GitHub access work; existing five-minute research heartbeat active. Merged current colleagues without conflicts; GC1063 independently confirmed and promoted. | Resume GC1064 publication and review flag; next011 future-repair carrier. IN001, CL233 and L611 received; no new solver job. |
+| 2026-10-10 22:45 BST | Cloud | Owner's instruction: Cloud acts on Intel's swarm findings, decides, and propagates to GPT and Local (CL234). Watching main for Intel's ledger-only reports. L611 read. | q3 skeptic pending; then the round summary; then Intel's reports as they land. |
