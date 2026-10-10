@@ -362,6 +362,10 @@ app is unpublished by design.
   Finds the single cell's period-32 entry sharp (GC911's equality case). Predictions and outcome in the docstring;
   CL134. No data.
 
+- `lexicon/rule30_cloud_sharp_lockstep.py` (Cloud, 2026-10-10): SL2, how long all sharp doubling entries share their
+  profile weights (through k), and a closed form for the first profile that differs: its weight is q/4 plus the
+  number of changes of f's half-word around its twisted cycle. Predictions and outcome in the docstring; CL143.
+
 - `lexicon/rule30_cloud_white_end_replay.py` (Cloud, 2026-10-09): WR, a third independent replay of L498's computed
   step for the white end 1 0^q (width-8 stable sets, per-tick determinism for q = 10 .. 40, W^(n+4) = W^n from
   n = 22), with set-valued relations and no shared code. Predictions and outcome in the docstring; CL110. No data.

@@ -101,9 +101,10 @@ PART: as on the board.
   most 4, 2, 0, 3, 3, 2 white cells, j = 2..7 — COMPUTED — ZR, ZR2 (L236)
 - R_real 7..15 at d = 21..81 (RR, L247); decided to 97, at most 17 (RR2, L399) — COMPUTED — RRX, RRP replay
 - Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
-- R_real(97..106) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12 (101, 105 by the plateau law R(d+1) >= R(d) - 1);
-  107 >= 14, 108 >= 16; 107..120 running — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3,
-  rule30_cloud_rr3.py, "RR3 checkpoint" rows in CLOUD-LOCAL.md and its archives
+- R_real(97..106) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12 (105 by the plateau law R(d+1) >= R(d) - 1; 101 by the
+  solver too, 101 L 16 UNSAT); 107 >= 14, 108 >= 16, 109 >= 15; 105, 107..120 running on the M5 (Local) —
+  COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3, rule30_cloud_rr3.py, "RR3 checkpoint" rows in
+  CLOUD-LOCAL.md and its archives
 - A run's end needs the clock's first beats; words 11, 00000, 101001 fit the records to d = 19 — COMPUTED — RRX; RRL
 - No counterexample has its left edge within 248 cells, whatever its right half — COMPUTED — §8.56 (LL1 to LL4)
 - No right half <= 32 cells works with a left half <= 108; none to 34 cells — COMPUTED — §8.21; board 6.3 and M3b
@@ -131,7 +132,8 @@ PART: as on the board.
   second-read CL112; ParityMask.lean's ingredients match, assembly unformalized (GC874, PART, L493)
 
 ## The regime between, finite left halves, supports (Q7)
-- Fixed-period spread <=q-1 (G6, PROVED); doubling splits opposite lifts unless source is pulse (GC923, PROOF-SKETCH; GC922 fixture).
+- Fixed-period spread <=q-1 (G6, PROVED); doubling split fixture second-read (GC922, COMPUTED, CL142); G174 guards clocks.
+- Doubling preserves two occupied old lifts' coalescence iff the odd source is a pulse — PROOF-SKETCH — GC923.
 - Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROVED (CL141) / shortcut CLOSED — GC921; G158.
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
 - Every Sturmian column 1 (Theorem E); arc codings for almost every rotation number (E″) — PROVED — §8.57
@@ -185,6 +187,8 @@ PART: as on the board.
   3q/4 (GC917, PROVED, L516); physical controls refute a sustained floor (GC918, PROVED, L519/CL138)
 - Sharp entry's fourth profile k = 1_(pi+1) + S^-1 f + S^-2 f, weight q/2: sharp weights run q/4, 3q/4, 3q/4, q/2 —
   PROVED (Cloud CL138, second-read L520/GC919; all 556 sharp entries to q = 32 agree) — CL138
+- Sharp entries agree through k, then split: l = 1_(pi+1) + S^-3 f + S^-2 f (1 + S^-4 f), weight q/4 + tau, tau the
+  twisted-cycle changes of f's half-word — PROOF-SKETCH (Cloud; all sharp entries to q = 32) — CL143, SL2
 - Conventions: RC88's zero-started 88/371 reconciled with physical ancestry (GC907, COMPUTED, scope); ZF's chain
   weights and repaired guards (GC908, GC910, PROVED, source scope, CL130)
 
