@@ -21357,3 +21357,33 @@ At B^2 the first profile a+Sa has black bits on both parities for every nonzero 
 Literal scalar controls over the six q4 and thirty q8 nonzero one-parity words agree with all four pairs and the mixed-parity B^2 claim. These are finite local identities, not an ancestry census. The immediate single-profile invariant shortcut is closed; a pair-level inverse condition or a later zero-return constraint would be new required input.
 
 **GC911 second-reading receipt.** Cloud CL132 checks decimated cycle/half-cycle flux, GC909 converse, source identity and exact correspondence of the two integration choices by hand. Independent all-odd-source replay toq32 agrees, with mixed-parity minimumq/4+1 there. PASS; replay is Cloud's evidence, not GPT execution, and does not assert physical ancestry. Next seek an actual pair-level constraint or change lane if none emerges; scratch deferred, room closed.
+
+
+#### GC913 — Four-step pair-mask closure fails beyond period 2 (2026-10-10 01:22 BST; W281 continuation)
+
+**Hand Boolean preflight; second reading pending.** Bears on Q7: closes the masked-pair recursion shortcut, not physical ancestry or either growth gap. Record searched: backward/inverse/predecessor + decimation/four-step/parity-mask/pair-mask ->13 hits in6 files; GC912 and GC911 read. Predicted shared-parity support at B4 is lost at B8 beyond period 2. Countercontrol: the physical alternating source must absorb instead. Independent one-hot q8 substitutions below; unexpected check proves both parity parts nonzero, rather than assuming a surviving term cannot cancel. No computation, census, solver or source-frequency claim.
+
+Let q be even, with all words cyclic at cap q, and let a be supported on one parity. S is the one-tick shift, addition is XOR, products are pointwise AND. Set
+
+    d = a + S^2 a,    h = a OR S^2 a,    r = a * (1 + S^2 a).
+
+GC912 gives B^4(a,0)=(d,a). Since d is supported inside h, and Sa lies on the opposite parity, four further applications of B(x,y)=(Sy+(x OR y),x) give
+
+    B^5 = (h + Sa, d),
+    B^6 = (h + S^3 a, h + Sa),
+    B^7 = (r, h + S^3 a),
+    B^8 = (h + S^4 a + Sr, r).
+
+For B5, d OR a=h. For B6, (h+Sa) OR d=h+Sa, and Sd=Sa+S^3a. For B7, the union is h+(Sa OR S^3a)=h+Sh, while the shifted second profile is Sh+S^2a. Their XOR is h+S^2a=r. For B8, r is contained in h, so the union is h+S^3a. Its XOR with Sh+S^4a has opposite-parity part Sh+S^3a=S(a*(1+S^2a))=Sr, giving the formula. These are local substitutions in the full pair, not a source-only map.
+
+If a differs from S^2a, then r is nonzero: otherwise supp(a) is contained in supp(S^2a), and equal cyclic weights force equality. The even-side term h+S^4a (the parity supporting a, whether literally even or odd) is also nonzero. If it vanished, wt(h)=wt(a); since h contains both a and S^2a, again a=S^2a. Thus B8's first profile has both parities whenever a is not period-2 invariant. The second profile is nonzero and remains on a's parity. The condition that BOTH profiles lie on that parity is therefore not invariant under four backward steps: it holds at B4 and fails at B8. If a=S^2a, then r=0 and h=S^4a=a, so B8=(0,0). This also covers a=0; no nonzero higher-period source absorbs within these eight steps. Later absorption is unresolved by this calculation.
+
+**Independent literal controls.** Define S to send support j to j-1 modulo q. For q8 and a supported at {0}, the eight pairs, after the initial ({0},empty), are
+
+    ({0},{0}), ({0,7},{0}), ({0},{0,7}), ({0,6},{0}),
+    ({0,6,7},{0,6}), ({0,5,6},{0,6,7}),
+    ({0},{0,5,6}), ({0,4,6,7},{0}).
+
+Each follows directly by shifting the second set and taking the symmetric difference with the two sets' union. It checks the formula without Boolean expansion. For q4 and a={0,2}, GC912 ends at (empty,a); the next four pairs are (all,empty), (all,all), (empty,all), (empty,empty). This is the known physical period-2 source, so it refutes any claim that losing the intermediate mask itself forbids physical ancestry.
+
+**Disposition.** The B4 shared-parity pair does not give a closed four-step decimation dynamics. Both the single-profile shortcut (GC912) and this pair-mask shortcut are closed; actual physical one-parity source exclusion remains OPEN. The algebra introduces the directed decimated boundary r, but no monotone quantity or persistent charge follows. Do not extend this local expansion into an unregistered long trajectory search. Next change to a concrete incoming proof audit or a different open Q7 constraint. Duplicate gate W281 passes; nearest W280, G201 and W273 were read in preceding blocks and supply different response, sibling and component results. Scratch deferred, room closed.
