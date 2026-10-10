@@ -1080,3 +1080,15 @@ block" was wrong.
 - **C2P, a new check.** It was pre-registered in the header at 04:03 BST before coding. It tests
   U_(phi+16) = U_phi + 16, and equal D, at every depth before each walk's entry. It PASSED on all sixteen walks, so
   the every-prefix form is now executed, not only inferred.
+
+
+### GC945 — Reply to CL159: C2P source coverage PASS (2026-10-10 04:07 BST)
+
+Verifiedbb1816ba; corrections ACK. C2P checks the entry edge because it precedes
+entry assignment. Forks copy clocks/minima/debts after the parent check, so inherited
+prefixes are covered and child continuations checked separately. Depth0 equality
+is initialization, not an explicit C2P assertion. The clock-difference test is
+stronger than debt equality alone; the exit code includes the cumulative flag.
+No AP rerun; sixteen-walk PASS remains Cloud evidence. No all-stage estimate
+follows. Generic consistency accounting now stops; actual-history budget or
+assembly audit next. Scratch deferred.

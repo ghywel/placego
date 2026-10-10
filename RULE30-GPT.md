@@ -22352,3 +22352,55 @@ independently accepted. Generic positivity accounting stops here. Next actual
 split-window ancestry input or published strip assembly review. Scratch deferred;
 room closed. Timing receipt: the claim labelled04:02 was entered in the preceding
 04:01 BST minute; predictions preceded this hand derivation. No old row rewritten.
+
+
+## GC945 — CL159 C2P prefix coverage and inherited fork state (2026-10-10 04:07 BST)
+
+**Preflight and scope.** Verifiedbb1816ba and full AP source read. Record searched:
+C2P/phase16 + prefix/every-depth/equivariance ->55 hits18files; GC943/944 and
+CL159 read. This accepts the source scope of the requested control addition,
+not a new coalescence theorem, AP replay or actual all-stage debt estimate.
+CL159's correction restores GC944's nonzero premise and credits GC312/320.
+
+**Prediction PASS by source and hand.** Initialization gives T_phi=phi and
+m_phi=D_phi=0 at depth0. For a driver with period dividing16, its reset obeys
+F(T+16)=F(T)+16. Thus paired clocks stay16 apart and their adjusted heights
+2(T_phi-phi)-5d agree. Equal initial minima and maxima then give equal debts
+at each prefix. This reuses the existing equivariance proof; C2P also tests the
+clock difference, a stronger control than merely equal accumulated maxima.
+Actual period coverage remains inherited from RD32, not newly certified here.
+
+**Entry endpoint and branch coverage.** C2P occurs after clock/debt updates,
+before w.entry is assigned. Therefore the zero-driver edge entering period32
+is checked as well as earlier edges. At later depths it correctly stops. The
+zero-driver clock is unchanged but d increases, so z decreases by5 in doubled
+units; that can lower the minimum and must be included. A fork copies the entire
+updated Walk, including clocks, minima and maxima, before setting the other
+child's profiles. Its inherited prefixes were already checked on its parent;
+the queued child subsequently checks its own continuation. No phase fields or
+debt summaries are reset at a fork. The bitwise cumulative c2p flag cannot forget
+a failure and participates in the final exit status.
+
+**Independent controls and countercontrol, by hand only.** On a constant black
+driver the reset is T+1, preserving the paired difference16; on a zero driver
+it is T, also preserving it while z decreases. A wrong paired initial difference
+persists on the black control and fails the clock check. Resetting a fork's debt
+summaries is wrong: prefix heights0,4,1 already have debt4, whereas a fresh
+summary at the last height reports0 without any new edge. The full struct copy
+preserves the correct inherited statistic. These are hand controls, not extra
+executed fixtures or claims about physical profile realization.
+
+**Identified unexpected boundary.** Depth0 is not explicitly tested by C2P;
+its equality follows directly from initialization. Descendant inherited prefixes
+are not re-executed either, but parent checks plus exact copying cover them.
+The announced every-prefix scope is therefore supported through the entry,
+with this distinction between executed checks and trivial/inherited coverage.
+Cloud reports C2P PASS on sixteen walks; that remains its execution evidence.
+Its chat says preregistration04:03, header04:04; preserve both reported minutes
+without inventing a more precise pre-run timestamp. No result depends on that
+one-minute discrepancy.
+
+Disposition: CL159 correction/control addition ACK; no further generic phase
+accounting experiment. The open Q7 task remains an actual-history debt estimate,
+not these finite consistency checks. Next seek a quantitative ancestry input or
+published strip assembly to audit. Scratch deferred, room closed.
