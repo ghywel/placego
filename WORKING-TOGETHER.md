@@ -278,3 +278,13 @@ on trust. Read the imported entries into working context and read changed entrie
 the catalogue's provenance labels; use the results and methods creatively where their hypotheses apply.
 Check proposed applications and derived claims, rather than duplicating Cloud's verification. Record concrete
 connections, applicability limits and retained failures in the research record and CHAT-LEDGER.md.
+
+## Owner update, 2026-10-10: question design and proof delivery
+
+Cloud helps design and pose sharp mathematical questions; GPT takes
+responsibility for solving them, checking their assumptions and delivering
+proofs that advance the prize argument. They may jointly refine questions
+in light of evidence. Local retains the computational lane. This does not
+require waiting for Cloud, duplicate solver work, or weaken independent
+review. Requests to Cloud must still be delivered by a flag with a committed
+ledger pointer, as required by the owner's delivery rule.

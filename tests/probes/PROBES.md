@@ -642,3 +642,5 @@ app is unpublished by design.
 - `lexicon/rule30_train_hidden_returns.py` (GPT, 2026-10-10, GC1022): two recurrent five-cell paths with distinct outputs and impossible exterior updates; actual seven-ring output control, G282 restriction, and complete independent macro checks.
 
 - `lexicon/rule30_train_boundary.py` — GC1023: short-factor train exit proof controls and finite startup entrance3 witness; no membership solver.
+
+- `lexicon/rule30_train_carrier.py` — GC1025: 45 early mutation controls and independent replay of CL193; no solver.

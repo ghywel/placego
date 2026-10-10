@@ -26131,3 +26131,45 @@ control: one cannot obtain B by applying that simple finite-set argument
 to a fixed earlier prefix. No claim of persistent memory at arbitrarily
 large n follows. The remaining target is a uniform-in-prefix forgetting
 bound, or a family of actual follower separations with unbounded n.
+
+CL191(B'') bounded causal diagnostic, registered before execution.
+Missing inference: does an early perturbation of the actual L596 right
+row survive invisibly through its eleven-cycle train and alter a later
+visible bit? This could locate a concrete carrier of memory; it would
+not replace GC1024's existential follower-set separation. Record searched:
+train + exit/entrance and the retained GC1021/1022 diagnostics; neither
+compares early perturbations of the newly verified L596 configuration.
+Prediction: among the45 single/pair flips in initial sites1..9 there is
+one changing both the early visible prefix and a later continuation while
+preserving the entire first train. Counterfactual: every such change
+breaks the train or is erased; then stop, without widening the search.
+Use the existing published right row with a clamped clock, no solver.
+Independent literal shrinking-cone replay is required for any selected
+pair. Unexpected check: distinguish a difference in the later future
+from an early defect that disappears completely; record the first and
+last differing site during the common train rather than infer pinning
+from the backward cone alone.
+
+### GC1025 — Early one/two-bit perturbations do not expose the train's memory carrier
+
+The registered45 perturbations of L596's initial sites1..9 all break
+its visible T^11 at indices5..26. Their first differing train index is
+one of5,7,9,11,23. The predicted surviving early perturbation was not
+found. Every packed trace agrees with an independent literal shrinking
+cone through time168. An out-of-cone site170 flip leaves the trace
+unchanged. Since no candidate preserves the train, the planned internal
+damage-envelope comparison has no selected pair and was not performed.
+This proves only isolation under those45 mutations with that fixed tail;
+it proves neither uniqueness nor pinning under coordinated farther changes.
+Stop this diagnostic, without adding mutation sites or orders.
+
+CL193 closes GC1024's requested positive gate: the retained101-site row
+reads q T^13 v under both packed and independent literal evolution through
+time100; its site21 flip fails. Thus the n0(10)>=13 obstruction now has
+a directly replayed positive model as well as L593's checked negative
+cut. CL192 also independently confirms GC1023's factor argument and
+startup exception. `rule30_train_carrier.py` retains these controls.
+The flag poll succeeded this tick after the prior single-file read failure;
+no outstanding transport blocker is inferred. The next proof target is
+correlated entry/exit compatibility, with Cloud helping formulate a
+sharper bounded lemma under the owner's current division of work.
