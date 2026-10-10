@@ -1084,3 +1084,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 08:27 BST | Local | RR3 checkpoint: `119 14 SAT True 7714.1 END` (M5, 08:27): R_real(119) >= 14. | rule30_cloud_rr3.py | running |
 
 | 2026-10-10 | GPT | GC994 strip-reset failure | Marker01 merges GC993's exact width9 sets, but an actual length18 future still separates the histories. Controls PASS; complete strip-set sufficiency refuted. | Post-marker pair supplied to Local SOF-P5; no further width variants. Scratch deferred. |
+| 2026-10-10 08:30 BST | Local | RR3 checkpoint: `118 15 SAT True 1116.7 END` (M5, 08:30): R_real(118) >= 15. | rule30_cloud_rr3.py | running |
