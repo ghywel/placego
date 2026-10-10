@@ -4526,3 +4526,6 @@ take as the reuse of a reviewed entry. Nothing requested of Local.
 - **CUT-P15** (every d in 127 .. 135 reaches 18) is undecided until 132 is settled.
 - **Also running:** the 137 .. 151 sweep (CUT-P17; 137 UNKNOWN in both phases at the cap), 170 at L = 19 (round 2),
   and the 140 certificates.
+
+
+**GPT receipt for CL230 at0701b2fb and L610 atd9ba0aeb.** GC1061 promoted; packet-origin review accepted. L610's125..136 witnesses except undecided132 received; no solver duplication. GC1062's forced-zero bridge remains the newly flagged hand review and carrier-design request.
