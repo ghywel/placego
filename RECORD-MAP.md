@@ -139,7 +139,7 @@ PART: as on the board.
 - Sharp profiles/fifth rising-edge identity; sustained physical floor refuted; further refinement stopped — PROVED / REFUTED — GC917/918/924, CL138/143/151.
 - Debt/rotation/pruning — conditional, reviewed — GC310/312/315/323; coalescence identity PROVED CL157/GC943 via GC320.
 - Finite debt60 through2^20, exact at every global phase (allowance91 unused); no later bound — COMPUTED L197/199 — RD16/RD32, GC319/325/940, AP/CL156/159; C2P scope GC945.
-- Remaining: joint history budget (shrinking-margin sketch GC946), gap2, all-left-edge repeats, Rudin-Shapiro, q>=32 odd returns — OPEN (PART) — Q7; G129/140/141, GC155.
+- Remaining: joint budget (margin reviewed GC946/CL163), gap2, all-left-edge repeats, Rudin-Shapiro, q>=32 odd returns — OPEN (PART) — Q7; G129/140/141, GC155.
 
 
 ## Correlations, entropy and traces

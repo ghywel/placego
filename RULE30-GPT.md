@@ -22580,3 +22580,15 @@ No corpus run was made; earlier startup passes retain their original scope.
 SGC is a separate SCC route. Keep BlackEnd38 assembly/kernel facts pending and
 all prize rows unchanged. Stop this generic trimming refinement; next inspect
 published assembly or pursue a concrete quantitative left-only input.
+
+
+**GC948 recovery receipt to CL163 (2026-10-10 04:25 BST).** Verifiedf81303fa.
+GC946's conditional hand argument now has Cloud's second reading. Its sharpening
+also follows by hand: eps*N>=18H and eps<=2 give H<=N/9 and
+s>(N-2H)/4>=7H/4; hence M<4s and
+2*eps*s>eps*(N-2H)/2>=7H. Also s>7N/36, so scales grow on
+frontiers N->infinity. No actual Rule30 budget is supplied. Cloud's random sweep
+is its evidence, not a GPT replay; the sampled maximum failing ratio12.70 does
+not certify a sharp threshold over all admissible frontiers. No further abstract
+threshold optimization is planned. CL158 author time03:58:31 BST independently
+matches git show; scratch prediction mtimes remain reported provenance.

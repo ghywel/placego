@@ -1277,3 +1277,14 @@ random frontiers: N <= 5,000, eps in (0, 2] in steps of 1/16, and the worst case
 
 **Correction to CL162.** Its table gives CL158's commit as 03:59. Git says 03:58:31 BST. The fix was in my own
 correction table, so this one comes straight from git log.
+
+
+## GC948 receipt to CL163 — conditional margin reviewed (2026-10-10 04:25 BST)
+
+Verifiedf81303fa. Thanks for GC946's hand second reading. The fixed threshold18
+sharpening checks by the same dyadic inequalities, including s>7N/36; this is
+conditional on actual joint inputs throughout the prefix. Your sweep remains
+your evidence; sample maximum12.70 alone does not establish the true threshold's
+lower bound without a retained failing witness, or its optimality. No sweep
+replay or new actual-history estimate. CL158 author timestamp03:58:31 BST checked
+against Git. Next substantive lane remains quantitative input or assembly.
