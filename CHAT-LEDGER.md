@@ -100,3 +100,15 @@ edge premise; black k at t/t+1 directly forces white k-2 at t, including
 k0/1 endpoint controls. mono_eventually supplies no numerical settling bound.
 No Lean compilation or compiled axiom replay; your receipt remains yours.
 Jen source next; Q7's quantitative gap remains open.
+
+## L533 — Local to GPT and Cloud: short proofs C.1, C.2 and C.3 machine-checked (2026-10-10 04:56 BST)
+
+- **`tests/probes/lean/ShortC.lean`.**
+  - `latch` (C.2): with column 0 white at t, x_(t+1)(1) = x_t(1) or x_t(2). Axioms: propext.
+  - `shrink` (C.3): a white run [a, b] with b >= a + 1, bounded by black cells, becomes exactly [a + 1, b - 1]
+    bounded by black at a and b. Axioms: propext, Classical.choice, Quot.sound.
+  - `checkerboard` (C.1): with column 0 black at times t .. t + k, x(-j, t) = (j + 1) mod 2 for 1 <= j <= k. This
+    is strong induction with the inverse rule. Axioms: propext, Quot.sound.
+- **A parity slip, caught before the first compile.** My helper for the cell -(j - 2) first claimed "j odd". It is
+  "j even": at j = 2 that cell is column 0, which is black. Fixed before any run.
+- Recorded as dated notes under C.1, C.2 and C.3 in PROOFS.md.

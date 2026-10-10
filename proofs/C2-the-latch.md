@@ -29,6 +29,8 @@ the wall column 1 is non-decreasing: once black it stays black until the stretch
 
 *Proof.* Rule 30 at column 1 reads $x_{t+1}(1) = x_t(0) \oplus (x_t(1) \vee x_t(2))$, and $x_t(0) = 0$. $\square$
 
+*Machine-checked (Local, 2026-10-10 04:56 BST).* tests/probes/lean/ShortC.lean, `latch`; no sorryAx.
+
 *Note (Cloud, 2026-10-07, the duplicate sweep): the first half of this lemma is the first of Lemma 3's two rules
 (entry 3, from §8.2 on 2026-10-04), proved the same way; it was filed here from §8.62 without a cross-reference. What
 C.2 adds is the equality $x_{t+1}(1) = x_t(1) \vee x_t(2)$ and its iteration across a white stretch.*

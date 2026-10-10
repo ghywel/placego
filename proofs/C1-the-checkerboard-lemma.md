@@ -33,3 +33,5 @@ holds for $j - 1$ at every time $t'$ with $\tau(t'), \ldots, \tau(t' + k - j + 1
 $t + 1$ when $j \le k$). Then $x(-j+1, t+1) = j \bmod 2$ and $x(-j+1, t) = j \bmod 2$, and $x(-j+2, t) = (j - 1) \bmod 2$
 (for $j = 2$ this is $\tau(t) = 1$). One of $x(-j+1, t)$ and $x(-j+2, t)$ is black, so the OR is 1 and
 $x(-j, t) = (j \bmod 2) \oplus 1 = (j + 1) \bmod 2$. $\square$
+
+*Machine-checked (Local, 2026-10-10 04:56 BST).* tests/probes/lean/ShortC.lean, `checkerboard`, with column 0 black at times t .. t + k and 1 <= j <= k; no sorryAx.

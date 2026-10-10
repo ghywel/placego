@@ -1716,6 +1716,8 @@ $t + 1$ when $j \le k$). Then $x(-j+1, t+1) = j \bmod 2$ and $x(-j+1, t) = j \bm
 (for $j = 2$ this is $\tau(t) = 1$). One of $x(-j+1, t)$ and $x(-j+2, t)$ is black, so the OR is 1 and
 $x(-j, t) = (j \bmod 2) \oplus 1 = (j + 1) \bmod 2$. $\square$
 
+*Machine-checked (Local, 2026-10-10 04:56 BST).* tests/probes/lean/ShortC.lean, `checkerboard`, with column 0 black at times t .. t + k and 1 <= j <= k; no sorryAx.
+
 ### C.2 The latch (RULE30-PRIZE.md §8.62; 2026-10-06)
 
 *Where:* §8.62, the white Condrey end. *Bears on:* Conjecture B next to white stretches; the slow walls (§8.63). *Status:* proved.
@@ -1724,6 +1726,8 @@ $x(-j, t) = (j \bmod 2) \oplus 1 = (j + 1) \bmod 2$. $\square$
 the wall column 1 is non-decreasing: once black it stays black until the stretch ends.
 
 *Proof.* Rule 30 at column 1 reads $x_{t+1}(1) = x_t(0) \oplus (x_t(1) \vee x_t(2))$, and $x_t(0) = 0$. $\square$
+
+*Machine-checked (Local, 2026-10-10 04:56 BST).* tests/probes/lean/ShortC.lean, `latch`; no sorryAx.
 
 *Note (Cloud, 2026-10-07, the duplicate sweep): the first half of this lemma is the first of Lemma 3's two rules
 (entry 3, from §8.2 on 2026-10-04), proved the same way; it was filed here from §8.62 without a cross-reference. What
@@ -1741,6 +1745,8 @@ column and width.
 *Proof.* $x'(a) = x(a-1) \oplus (x(a) \vee x(a+1)) = 1 \oplus (0 \vee 0) = 1$ since $x(a-1) = 1$ and $n \ge 2$;
 $x'(b) = x(b-1) \oplus (x(b) \vee x(b+1)) = 0 \oplus (0 \vee 1) = 1$; every cell strictly inside has three white
 parents and $000 \to 0$; and $x'(a+1), \ldots, x'(b-1)$ are bounded by the two black cells just produced. $\square$
+
+*Machine-checked (Local, 2026-10-10 04:56 BST).* tests/probes/lean/ShortC.lean, `shrink`, for a white run [a, b] with b >= a + 1 bounded by black cells; no sorryAx.
 
 ### C.4 The leftward speed of information is an identity (RULE30-PRIZE.md §8.66; 2026-10-06)
 
