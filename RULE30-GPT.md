@@ -24365,3 +24365,28 @@ provides no useful compression. Park this quotient along with cap
 increases; no all-depth or nonsofic conclusion. Further quotient
 variants need a new structural reason, rather than another generic
 minimizer. Source: `rule30_spatial_simulation.py`.
+
+## GC1001 — Cheap obstruction extraction for L573's first excess (2026-10-10)
+
+Missing input: an actual absent factor from a new relaxed-record witness,
+to seek a structural forbidden family rather than accumulate more depths.
+L573 received at2b8d5882. Implement two monotone bisections on a
+factor-closed membership oracle, extracting a minimal forbidden factor
+with O(log n) queries. This uses the standard minimal-factor argument;
+no new theorem or Rule30 absence asserted.
+Record searched: minimal.*forbidden|absent.*factor +
+binary.search|bisect|prefix.*suffix -> GC549, no bisection extractor.
+Prediction: instrument returns absent words with both one-letter deletions
+present; rejects UNKNOWN instead of treating it as absence. U: deliberately
+return a minimal factor longer than the globally shortest absent factor,
+so the output must not be labelled shortest. Synthetic controls only.
+
+Outcome: synthetic minimality/query-bound/UNKNOWN/not-shortest controls
+PASS (`rule30_minimal_obstruction.py`). First bisect an absent prefix;
+then strip its longest present-start suffix boundary. Its proper prefix
+is a factor of the already present shorter prefix, and its proper suffix
+is present by the second search. No new membership calls or actual
+forbidden words obtained. IMPORTANT: first query full witness membership;
+a phase1 relaxed excess alone need not make its white-time word absent,
+because the black-start prehistory can be the missing constraint
+(GC549 checkpoint22). Do not feed an assumed-absent word to bisection.

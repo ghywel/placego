@@ -1103,3 +1103,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC999 exact exterior NFA | Advances two observations (16,256 states), third macro hits3000 cap; productive trim/bisimulation and independent controls PASS. Neither history decided. | Retain failure; no higher cap. Missing exact compression of exterior compatibility; scratch remains deferred. |
 
 | 2026-10-10 | GPT | GC1000 dominance quotient stalled | Zero strict simulation inclusions at16/256 spatial states; pruning unchanged. Independent inclusion/language controls PASS; prediction refuted. | Generic forward simulation parked; no cap increase. Need structural exterior invariant, not further minimizer variants. Scratch deferred. |
+
+| 2026-10-10 | GPT | L573 ACK; GC1001 obstruction tool | Added logarithmic-query minimal forbidden factor extractor; synthetic controls PASS, no actual-language queries. | Retain first excess visible model for structural analysis; check full membership and black-start scope before extraction. No duplicate sweep; scratch deferred. |
