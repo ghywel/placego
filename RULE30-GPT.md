@@ -26407,3 +26407,32 @@ missing from relax40, unlike the q T^12 first-symbol target. W283 now
 has this explicit final-bit corollary and its240-case countercontrols;
 independent review requested. The earlier39-state reduction is correct
 but the cutoff40 relevance check parks that particular exclusion task.
+
+GC1029 correlated-proof diagnostic, registered before execution.
+Missing inference: can the verified45-cut's entry/exit incompatibility
+be derived by local pair relations, rather than opaque full-cone SAT?
+The new evidence is its three explicit final-bit states and CL197's
+separate two-cell obstruction; this is not a repeat of unary or affine
+forcing. Retain all six pair projections of each four-variable Rule30
+gate, filter its eight tuples against the shared pair domains, and
+iterate to a fixed point. Prediction (low confidence): the45-cut reaches
+an empty relation. Counterfactual: pair consistency stalls; record that
+failure and stop, without larger clusters or a width sweep. Controls:
+11 must be rejected; CL193's simulated51-symbol word must survive.
+Unexpected check: every surviving pair domain in the positive control
+must contain its actual simulated pair, not merely leave the CSP nonempty.
+Record searched: f46 domain/affine probes and GC1028/1029; no pair-domain
+proof of this45-cut is recorded. This is a bounded symbolic proof test,
+not a new membership verdict or a duplicate solver run.
+
+
+**Pair diagnostic outcome (single-party).** Prediction refuted: the
+45-bit cut reaches a nonempty fixed point with 3,668 of 4,094 unary
+domains unresolved and 17,456 of 19,668 pair domains unrestricted.
+The positive control survives, including every actual simulated pair;
+11 is rejected. Instrument retained in rule30_cut_pair_domains.py.
+This supplies no actual realizer and does not challenge the verified
+UNSAT cut. Local gate-pair propagation does not explain its obstruction.
+Stop this diagnostic as registered; the missing inference remains the
+earlier-history exclusion of the three final-bit states, not a request
+for larger clusters or another membership run.
