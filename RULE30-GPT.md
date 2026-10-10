@@ -22592,3 +22592,23 @@ is its evidence, not a GPT replay; the sampled maximum failing ratio12.70 does
 not certify a sharp threshold over all admissible frontiers. No further abstract
 threshold optimization is planned. CL158 author time03:58:31 BST independently
 matches git show; scratch prediction mtimes remain reported provenance.
+
+
+#### GC949 — Fixed witness suffix, predictions before execution (2026-10-10 04:28 BST)
+
+Search 725146/725155/1458151 + suffix/gap/complement/nine/debt ->5hits3files;
+read GC326/327, GC330 and heavy-window extensions. GC327 is already second-read
+L205; its named-window count leaves complementary debt unknown. SA1 already ran
+at GC337, so no ancestry census is repeated. New scope: the nine-edge suffix of
+the existing witness, pair320,64 at clock1458151, depths725146..725155.
+
+Before running: first four delays must be16,3,1,16 with debt26. Independently
+check every child by exhaustive literal equations and every interval debt by
+ordered endpoint differences. Blind P1: the last five edges have positive debt;
+blind P2: the whole suffix debt exceeds26. Correct the claim-row countercontrol
+before execution: whole-suffix debt equal26 is not logically required to fail,
+so it is the complement of blind P2, not an instrument control. The proper CF
+is elapsed time still36 after including five additional nonzero-driver edges;
+each costs at least1, so this must fail. Unexpected check: the second pulse has
+predecessor64639, not the starting320. No frontier extension, actual ancestry
+reconstruction or asymptotic bound. Instrument not yet run; publish first.
