@@ -49,6 +49,10 @@ cut, CUT's (cuts40_p0.txt) and SLC's (cuts40_sl.txt), each checked by cake_lpr a
   SWT-P1 (blind, 0.5): the median w_min/|f| over the learned cuts is at most 0.62 (SW's median for minimal words of
          length >= 25).
   SWT-P2 (blind, 0.6): every learned cut has w_min <= |f|.
+  TABLE OUTCOME (18:22, about four minutes, swt.out in the RLK scratch): C1 PASS; P1 HELD (median 0.535); P2 HELD.
+  - All 77 cuts are VERIFIED UNSAT by cake_lpr at their w_min.
+  - CUT's 16 cuts: lengths 35 .. 81, w_min 13 .. 48, median ratio 0.50 (0.36 .. 0.59). The length-81 cut: w_min = 48.
+  - SLC's 61 cuts: lengths 42 .. 97, w_min 16 .. 54, median ratio 0.56 (0.33 .. 0.86).
 """
 import os
 import subprocess

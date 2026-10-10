@@ -115,7 +115,7 @@ PART: as on the board.
 - The 2-gap train 1010.. is actual to n = 200 in both phases; the finite right half 1001 beside the phase-0 clock keeps column 1 on it for 3000 readings (an ordered band of 14 sites: period 4 to site 6, period 8 to site 14, chaos pinned at site 15 for 40,000 steps); no finite invariant window to W = 60; eternity PROVED by GPT (GC1020, W282: sixteen-tick causal lock on column 14 plus strong induction; also for every tail beyond site 46), independently re-derived and read by Cloud (CL189) — PROVED, review complete — TG, rule30_cloud_train_block.py, CL186 .. CL189.
 - Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each (14:30 stop); 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, rule30_cloud_rreal_trend.py, CL178, CL188.
 - Least d>20 with R_real(d)>=18 is 125: 21..124 all <=17, 125 has a witness — COMPUTED (122/123 solver; 121/124 cake_lpr) — L603..605.
-- Length-45 cut f excluded by a width-24 free-boundary strip (23 admits); cake_lpr-checked; 18 pins forced from width 19 — COMPUTED (verified) — SWP L605.
+- Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
 - Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
 - CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT (cake_lpr), L=14 simulated witness — COMPUTED — RLK L588, L595.
@@ -166,6 +166,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Clock and child1(0011)^m 0^r select parent plateau; reset unnecessary — PROOF-SKETCH — GC1040.
 - Cut45 common pins follow from joint entry/exit compatibility at width24; no SAT pin premise — COMPUTED — GC1039.
 - Cut45 backward guard uses common18 pins; prefix15 relaxation gives an illegal exterior trace — COMPUTED — GC1037/1038.
 - Cut45 common19 pins: final1 needs row30 sites16,20 both black; either white suffices — COMPUTED — GC1036.

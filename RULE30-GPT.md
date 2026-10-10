@@ -26969,3 +26969,64 @@ require at most nine columns; they hold inside a width24 strip too.
 Thus the computation assembles the strip obstruction, rather than
 assuming exact-cone pins. A human-sized reusable invariant is still
 missing; no extra width or pin test is proposed.
+
+#### GC1040 — A clock-selected parent plateau, without a spatial reset (2026-10-10)
+
+Missing inference: what small structural correlation survives at GC1039's
+two joint origins? Record searched: `(preimage|parent|backward)` +
+`(0101|1010|reset)` -> G13's exact single-row scanner; GC1010/1012 use
+a different two-update source automaton. G13 read, not reproved. The
+specific `1(0011)^m` plateau transfer was not found before this block.
+
+P1, both surviving origins spatially reset, was REFUTED: the origin with
+site24=0 has scanner rank1, but site24=1 has rank2. P2 HELD: under the
+time29 wall, both fix the SAME first21 parent bits,
+`000011010000111111111`. This follows from a parametric hand identity,
+not from their finite enumeration. It needs only the shared first22
+child bits; sites23 and24 do not enter the proof.
+
+**Hand lemma (PROOF-SKETCH, second reading requested).** If a Rule30
+child row begins `1(0011)^m 0^r`, m>=0, r>=1, and its parent wall is b,
+then parent sites4m+1..4m+r are all c=1 XOR b XOR (m mod2).
+The preceding m four-bit parent blocks, read from right to left, are
+0000 when the entering c is1, and1101 when it is0; c flips after each
+block. These assertions hold for every completion beyond the prefix.
+
+Proof. A zero child at j gives x(j-1)=x(j) OR x(j+1). Two consecutive
+zero children make x(j-1)=x(j), so r zeros fix a constant parent plateau
+of length r. At its left edge the pair (x(4m+1),x(4m+2)) can only be
+00,10 or11, even when r=1. The inverse scanner step is
+(a,d) -> (y XOR (a OR d),a). Reading one0011 block from right to left
+means reading1100. Its exact transfers, with the four newly generated
+parent bits listed in spatial order, are:
+
+| entering pair | outgoing pair | parent block |
+|---|---|---|
+| 00 | 11 | 1101 |
+| 10 | 00 | 0000 |
+| 11 | 00 | 0000 |
+
+Thus the first block replaces the entering plateau c by1-c; subsequent
+blocks swap00 and11. After m blocks the pair is (d,d), d=c XOR(m mod2),
+unless m=0 when the original allowed pair remains. The leading child1
+gives wall b=1-d in the first case and b=1-c in the second. Solving gives
+the asserted c. The block table supplies the entire prefix formula.
+
+For GC1039, m=3,r=9,b=1, hence c=1: the black parent plateau occupies
+sites13..21, preceded by0000,1101,0000. This explicitly carries origin
+information through a nonlinear plateau selected by the clock. A
+universal spatial reset is unnecessary; this is an exact conditional
+selection rather than a new unary or global affine explanation attempt.
+
+Controls: independently literal-forward reconstructed all admitted
+parents of both origins; all252 terminal-pair cases with m0..6,r1..9
+match the formula. The proof, not those finite cases, supplies its full
+quantifiers. Unexpected retained failure: the proposed r=1 counterexample
+did not exist, causing an assertion failure after224 controls passed.
+The three-pair table explains why the lemma extends to r=1. At r=0,
+child10011 admits parent11100 with wall0 and exterior1; its first parent
+block1110 contradicts the predicted1101. The zero hypothesis matters.
+Instrument: rule30_cut45_origin_scan.py. No SAT, new language query,
+width sweep or additional past window. Next use this explicit plateau
+transfer to compress the joint-past mechanism; full cut pin forcing
+remains GC1039's computation and an all-depth record bound stays open.

@@ -1,5 +1,7 @@
 # Probes: one-off measurements that produced a recorded finding
 
+- GC1040: rule30_cut45_origin_scan.py — two joint origins, one inverse tick; spatial reset prediction fails, clock selects a common21-bit parent prefix. Parametric plateau proof,252 literal controls and r0 counterexample; failed r1 countercontrol retained.
+
 Each directory holds the driver that made one measurement, with its method in the docstring and, where one
 was written first, the pre-registered PREDICTION.md. They are kept because the record (NFRAME-LIMITS.md) quotes
 their numbers and a number without its instrument is not reproducible. They are not regression tests and
