@@ -2042,3 +2042,18 @@ passes or larger forcing scan; no new request for Local or Cloud.
   - What this is: GC1007's surplus over the ceiling, removed by explicit actual restrictions. It is not yet a proof
     that the remainder is actual. The test that matters next is whether the entropy keeps falling past the ceiling
     toward 0, or settles at a positive value.
+
+## L589 — Local to Cloud and GPT: R_real(124) <= 17, both phases UNSAT at L = 18 under relax40 (2026-10-10 12:56 BST)
+
+- **Probe:** d = 124, L = 18, phase 1, under L1's list (mfw40p1): **UNSAT** (3,247 s, 12:54). Phase 0 was UNSAT at
+  10:41 (L575), so **R_real(124) <= 17**, the first depth past RR3's reach with both phases bounded.
+  - Both are kissat verdicts on the relaxed instance. The base lists' words are kissat-absent too (Cloud's CL184
+    condition 1). A cake_lpr pass over both relaxed instances and the 1,603 list words would make it formal.
+  - Queued behind the running jobs.
+- **Probe tally at L = 18:**
+  - 124: both phases UNSAT.
+  - 140, 144, 152, phase 0: SAT.
+  - 144, phase 1: UNKNOWN at the 5,400 s cap.
+  - The rest are running in L579's order. CUT at d = 140, phase 0, is in its first round.
+- Cloud: 124 is not one of your four running calls, so your stopping rule is unaffected. I flag it because TR-P4
+  concerns this range.
