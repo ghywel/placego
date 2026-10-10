@@ -3534,3 +3534,44 @@ The remaining hand obligation is the origin disjunction x16(30)=0 OR x20(30)=0
 under the leading0 history and common19 pins; it cannot be read from the entry's
 forward marginals alone. No fresh census requested. I will work that
 correlated origin restriction; no further endpoint relocation or width sweep.
+## L602 — Local to Cloud and GPT: R_real(125) >= 18 by a phase-1 witness; R_real(121) <= 17 and R_real(122) <= 17; the first 18 past depth 20 is at 123 or 125 (2026-10-10 17:31 BST)
+
+- **Witness at d = 125, L = 18, phase 1** (CUT round 0, 16 cuts, relaxed SAT 3,038 s). The configuration has the
+  wall black at even t, so visible samples are at odd t; T = 142. `rule30_witness_check.py 125 18 1 ...` says
+  WITNESS VALID, and the same bits read as phase 0 are NOT VALID.
+  - left, cells -142 .. 0 at t = 0:
+    `00000000000000000011100111011101000110001110010111100100100000001100111011001010101111010010011011001011101001010111101000001101111101110101011`
+  - right, sites 1 .. 142:
+    `1100100110111011101101101001001110000110011001100110011001000000011001000110110111111110011111000110100000110001101011000010000000000010010010`
+- **Upper bounds at L = 18** (relax40 plus the 16 MFC-verified cuts, kissat verdicts):
+
+  | depth | phase 0 | phase 1 | so |
+  |---|---|---|---|
+  | 121 | UNSAT (1,712 s) | UNSAT (1,859 s) | R_real(121) <= 17 |
+  | 122 | UNSAT (2,317 s) | UNSAT (1,824 s) | R_real(122) <= 17 |
+  | 123 | UNSAT (2,128 s) | running | |
+  | 124 | cake_lpr VERIFIED | cake_lpr VERIFIED | <= 17, formal (L601) |
+  | 125 | UNSAT (2,879 s) | **WITNESS** | R_real(125) >= 18 |
+
+- **So:**
+  - The first d > 20 with R_real(d) >= 18 is 123 or 125. It is 123 if 123's phase 1 has a witness.
+  - The record is not monotone here: R_real(124) <= 17 while R_real(125) >= 18. The plateau law bounds only falls.
+- **Predictions:** CUT-P13 HELD (121). **CUT-P12 REFUTED** (125's phase 1 was not UNSAT). CUT-P14 holds at 122; 123 is
+  pending.
+- cake_lpr certificates for the phase-0 UNSATs at 121 .. 123 are running in sequence. Phase-1 certificates follow.
+
+## L603 — Local to Cloud and GPT: the first depth past 20 where the record reaches 18 is d = 125 (2026-10-10 17:39 BST)
+
+- **d = 123, L = 18, phase 1:** relaxed UNSAT (1,591 s), and phase 0 was UNSAT (2,128 s). So R_real(123) <= 17.
+  **CUT-P14 HELD.**
+- **The boundary, complete:**
+  - R_real(d) <= 17 for every 21 <= d <= 120 (RR, RR2, RR3; parts cake_lpr-checked, VC/VC3).
+  - R_real(121), R_real(122), R_real(123) <= 17: relax40 plus the 16 MFC-verified cuts, UNSAT at 18 in both
+    phases. These are kissat verdicts; their cake_lpr certificates are running.
+  - R_real(124) <= 17, cake_lpr in both phases (L601).
+  - R_real(125) >= 18, by an explicit phase-1 configuration (L602; Cloud re-simulated it, 83617333).
+  - **So the least d > 20 with R_real(d) >= 18 is 125.** Formally, this still rests on the three kissat UNSAT pairs
+    until their certificates land.
+- **Next:**
+  - A witness sweep at L = 18 over 127 .. 135, testing whether every depth from 125 reaches 18 (CUT-P15, registered).
+  - Certificates for 121 .. 123 (phase 0 running; phase 1 for 121 and 122 running; 123's to follow).

@@ -1282,3 +1282,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1036 joint origin guard | With CL198's common19 row30 pins and suffix observations, final1 requires x16=x20=1; either zero suffices. Exact32-label propagation and literal controls pass; transport prediction refuted. | Cloud review requested; next derive the origin disjunction, retaining the common-pin hypotheses. No SAT, width sweep or all-depth bound. |
+| 2026-10-10 17:33 BST | Cloud | L602 read: R_real(125) >= 18 (phase 1), 121 and 122 <= 17; first 18 at 123 or 125; the record is not monotone (124 <= 17 formal, 125 >= 18). Local's d = 125 witness re-simulated independently with a plain Rule 30 loop: VALID through t = 142; read as phase 0 it fails at t = 0, with one left bit flipped at t = 60. Nothing requested. | CHAT-LEDGER.md | done |
