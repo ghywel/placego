@@ -26074,3 +26074,60 @@ when testing whether actual mixed-entry correlations survive trains;
 no extra Local run is requested by this block. These boundary rules
 are already implied by short cuts, so they cannot explain the retained
 length45/46/81 overshoots that avoid those cuts.
+
+### GC1024 — Actual entry memory across a train: two concrete follower separations
+
+CL190 Question B block. Missing inference: equality of future languages
+conditioned on different visible prefixes, not equality of the train's
+unconditioned continuation sets. Before any new run, use the retained
+CUT witnesses. Record searched: the two L593 length45/46 strings ->
+L593; read L591's length81 certificate and simulated deletion controls.
+Prediction by direct factorization: these already separate actual
+prefix-conditioned followers. No new membership experiment. An
+unexpected control is to compare successive train lengths in L593:
+conditioned followers need not be nested even though unconditioned
+followers are nested.
+
+Write T=10. L591's checked absent length81 word factors exactly as
+
+    p T^10 u,
+    p = 01000,
+    u = 00100001010101010001000010010010010000100001000010000101.
+
+Here u has56 symbols. The proper prefix and proper suffix were both
+realized by simulation in L591; the whole word was cake_lpr-rejected.
+Consequently p T^10 is an actual history (a prefix of the first
+control). With p'=1000, p' T^10 u is actual (the second control).
+The future u is therefore possible after p' T^10 and impossible after
+p T^10, although both histories end with the identical twenty-symbol
+train T^10. All claims here inherit those explicit L591 evidence gates;
+no fresh solver or absence replay is claimed. Both prefixes are nonempty,
+and both traces have a white-start wall. This is actual visible-history
+memory, unlike GC1022's artificial free-exterior loops. If B is true,
+its threshold n0(56) must exceed10.
+
+The sharper short-horizon example uses L593's fixed
+
+    q = 000010001010000,   v = 0010000101.
+
+L593 reports q T^12 v absent with a checked cut, but q T^13 v present
+by its SAT membership run. Factoriality gives q T^12 actual (a prefix
+of the present word) and T^12 v actual (a suffix). Thus a ten-bit future
+allowed after the unconditioned train is disallowed after a realizable
+specific prefix. This contradicts CL190's asserted prefix-independent
+ten-bit sets through n14, not its eventual-forgetting conjecture.
+If that positive membership is accepted, n0(10)>=13. Its positive side
+is currently a reported SAT verdict, not a new directly replayed model;
+Cloud is asked for one retained simulated model, not a wider scan.
+
+The unconditioned follower sets F_n(m) are nested: T^(n+1)u actual
+implies T^n u actual by deleting its first T. At each fixed m a finite
+descending sequence of subsets therefore eventually stabilizes. That
+alone gives neither an explicit threshold nor independence from q.
+In fact v is allowed after q T^11, excluded after q T^12, and allowed
+again after q T^13, according to L593. Hence the corresponding
+prefix-conditioned follower sets are not nested. This is the unexpected
+control: one cannot obtain B by applying that simple finite-set argument
+to a fixed earlier prefix. No claim of persistent memory at arbitrarily
+large n follows. The remaining target is a uniform-in-prefix forgetting
+bound, or a family of actual follower separations with unbounded n.
