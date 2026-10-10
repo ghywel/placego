@@ -345,13 +345,13 @@ def sweep(K, phase, dmax=120, cap=3600):
                 v = Relaxed(d, L, phase, forb).solve(cap, forb)
                 with open(ck_path(K, phase), 'a') as f:
                     f.write('%d %d %s %.1f %s END\n' % (d, L, v, time.time() - t0, time.strftime('%H:%M')))
-                print('K=%d phase %d d=%d L=%d %s %.0f s' % (K, phase, d, L, v, time.time() - t0), flush=True)
+                print('K=%s phase %d d=%d L=%d %s %.0f s' % (K, phase, d, L, v, time.time() - t0), flush=True)
             if v != 'SAT':
                 break
             L += 1
         prev = L - 1
         if v == 'UNKNOWN':
-            print('K=%d phase %d d=%d: lower bound %d (capped)' % (K, phase, d, prev), flush=True)
+            print('K=%s phase %d d=%d: lower bound %d (capped)' % (K, phase, d, prev), flush=True)
 
 
 def records(K, phase):

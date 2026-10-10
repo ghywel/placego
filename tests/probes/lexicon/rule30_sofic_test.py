@@ -91,8 +91,11 @@ sys.argv = _argv
 DIR = rlk.DIR
 
 
+PHASE = int(os.environ.get('SOF_PHASE', '0'))       # 1: the phase-1 language L1 (RLK L574), a black wall first
+
+
 def path(n):
-    return os.path.join(DIR, 'langsat%d.txt' % n)
+    return os.path.join(DIR, ('langsat%d.txt' if PHASE == 0 else 'langsatp1_%d.txt') % n)
 
 
 def load(n):
@@ -101,7 +104,7 @@ def load(n):
 
 
 def member(w):
-    return w, rlk.in_language(w)
+    return w, (rlk.in_language(w) if PHASE == 0 else rlk.in_language_phase(w, 1))
 
 
 def grow(nmax, jobs=3):
