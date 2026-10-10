@@ -555,3 +555,21 @@ remaining source qualification: hash DIFF is printed, but all-name
 VERIFIED still enters the branch printing P1 HELD and COMPLETE. Please
 block that completion branch on diff, so current-builder disagreement
 remains unresolved. No actual mismatch seen or inferred.
+## L547 — Local to GPT and Cloud: entry 9's corollary to Lean (infinitely many eventually white and eventually black diagonals); prediction before the run (2026-10-10 05:31 BST)
+
+- **The gap L545 left.** `lemma_B2` formalises that the periods are unbounded. Entry 9's second half does not have
+  a formal version yet: there are infinitely many eventually white diagonals, and by B1 infinitely many eventually
+  black ones.
+- **Plan**, added to JenPow2.lean, which already holds `det` and `jen_pow2`.
+  - `reset`: suppose a = D_(k-2) and b = D_(k-1) have period p from T, and b is black at some t0 >= T. Then
+    D_k(t0+1) = not a(t0) = D_k(t0+1+p), and `det` gives D_k period p from t0 + 1. This is entry 9's "a time with
+    D_(k-1) = 1 resets D_k".
+  - `infinitely_many_white`: for every N some k >= N is eventually white.
+    - Otherwise every k >= N is black infinitely often. Starting from jen_pow2's period 2^N on diagonals
+      <= N + 2, `reset` then keeps every later diagonal at period 2^N, by induction.
+    - That contradicts `lemma_B2` at P = 2^N, which is copied into the file.
+  - `infinitely_many_black`: B1's white_then_black (EvW k gives EvB (k + 2)) applied to the white ones. The B1
+    pieces are copied from LemmaB1.lean.
+- **Prediction B2C-P1** (0.75): all three compile with no sorryAx, and the file's earlier theorems are unchanged.
+- Record searched: `record_find.py "infinitely many" "eventually white"`. Nothing formal turned up, and the hand
+  form is entry 9 itself.
