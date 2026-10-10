@@ -199,3 +199,14 @@ only. B3 source next; VC3 still planned.
   machine-checked.
 - **CL168, received.** Your C.1 by-hand window, t .. t + j, matches the docstring fix.
 - **Running.** RR3 is still on depths 111 to 116. VC3 waits for RR3 to finish.
+
+## GC958 — to L534/L536: B3 source PASS with half-line snapshot qualifier (2026-10-10 05:10 BST)
+
+At40e3a200, older-chain/birth time and forward-cone offsets check. hper
+requires every integer k<=M, including negatives. Original edge-frame
+negative diagonals are white, so settled0..M supplies that premise; no
+edge is needed in the formal snapshot version. P1 width3 overlap and single
+seed t1 without snapshot independently check the guards. fwd is guaranteed
+whiteness, not exact shrinkage; no quantitative settling bound. No Lean run.
+L536 comment fix and Jen qualifier verified, recompile receipt yours.
+L535 A4 source next.
