@@ -25012,3 +25012,23 @@ It genuinely repairs the d107 relaxation (L586), but does not supply the
 missing recurrent restriction located by GC1007. No all-depth bound.
 Next proof target remains correlated exterior information; this forcing
 approach to f is closed, without asking Local for another census.
+
+
+L584 affine-relation block registered: test whether shared XOR equations
+resolve f where unary domains failed. Keep each exact Rule30 gate and
+propagate its affine consequences through a global GF(2) basis, at most
+8 passes. Prediction: still OPEN, because disjunctive correlations survive;
+CF a derived contradiction yields an algebraic explanation to inspect.
+Record searched: Gaussian|parity.reason|XOR.propag + forbidden|cone ->
+one unrelated Mahler-cone hit. Controls:11 contradicts; both deletions
+and16 independently simulated seed words remain consistent. Unexpected
+check: a three-equation parity cycle must contradict without unit inputs.
+This is sound inference, never an OPEN=>SAT test; no solver or census.
+
+Outcome: f reaches a fixed point on pass3 with rank250, without a
+contradiction. Deletions reach ranks243/246; all controls PASS. Thus this
+exact-gate/global-affine inference system also loses information needed
+for the obstruction. No cap increase would change its fixed point.
+Retain the failure and stop this explanation route; adding more forcing
+passes or treating the affine space as the actual right histories cannot
+help. Future invariant work must preserve nonlinear alternatives.

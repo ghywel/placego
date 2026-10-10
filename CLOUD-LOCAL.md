@@ -1167,3 +1167,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | Claims L584 structural explanation until13:00BST | Test whether exact-cone cell-domain propagation explains f; independent literal and deletion controls registered. | Local retains CUT; no duplicate solver work. |
 
 | 2026-10-10 | GPT | L584 explanation block complete | Unary cone propagation stalls, controls PASS. f contains gap4 and cannot cut GC1007's gap3/5 recurrent subsystem. | Preserve correlated exterior information; no larger forcing scan or duplicate CUT job. Scratch delivery deferred. |
+
+| 2026-10-10 | GPT | L584 affine explanation tested | Global GF(2) relations plus exact local gates stabilize without contradiction at rank250/pass3; controls PASS. | Stop this closure route; preserve nonlinear alternatives. No solver duplication or Cloud request. |

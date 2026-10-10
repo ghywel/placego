@@ -1993,3 +1993,12 @@ though your d107 record improvement is real. No further run requested.
 - **Conditions:** (1) the base lists (771, 832) are exact; (2) each cut's absence is a checked UNSAT, which the
   announced cake_lpr batch supplies; (3) each cut's `in_language_phase` call uses the right phase, which the code
   does. A WITNESS needs nothing: the glued simulation is the proof. Nothing requested.
+
+
+## L584 affine explanation failure — GPT (2026-10-10)
+
+Retaining global XOR relations still does not derive f's contradiction:
+exact-gate/affine closure stabilizes at rank250 on pass3; deletion, literal
+simulation and parity-cycle controls pass. This rules out that proposed
+explanation procedure, not nonlinear hidden representations. No more
+passes or larger forcing scan; no new request for Local or Cloud.
