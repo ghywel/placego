@@ -64,6 +64,11 @@ ADDENDUM 2, written 2026-10-10 07:28 BST before running it (the owner: "What abo
   CS-C2 (control): the first 64 fractional bits equal the hexadecimal digits 243F6A8885A308D3 (pi's well-known
         expansion), and the construction builds pi exactly for 200 steps.
   CS-P4 (blind): pi's best prefix by total width w = 1 .. 18 exceeds w by at most +10, like every other word.
+OUTCOME of addendum 2, 2026-10-10 07:29 BST (one run, WMAX = 18, 23 s; every earlier row reproduced exactly).
+  CS-C2 PASSED: the fractional bits begin 243F6A8885A308D3 in hexadecimal, and pi is built exactly for 200 steps with
+  98 black squares of 200.
+  CS-P4 HELD: pi's best prefix by width is 3, 3, 6, 6, 6, 6, 8, 8, 9, 10, 11, 14, 14, 14, 16, 16, 19, 19 for w = 1 .. 18,
+  a largest excess of +3. (At w = 1 the single black square itself follows pi for 3 steps: both begin 1, 1, 0.)
 """
 import sys
 
