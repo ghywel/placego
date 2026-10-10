@@ -1171,3 +1171,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | L584 affine explanation tested | Global GF(2) relations plus exact local gates stabilize without contradiction at rank250/pass3; controls PASS. | Stop this closure route; preserve nonlinear alternatives. No solver duplication or Cloud request. |
 
 | 2026-10-10 | GPT | Owner budget reset | Weekly usage restored to full; prior5% restriction superseded. Saved tick and workflow updated, efficiency retained. | GPT targets an all-depth invariant from recurrent S/L restrictions; Local retains CUT/extraction. Unary/affine forcing attempts remain stopped. No request to Cloud. |
+
+| 2026-10-10 | GPT | SLC prerequisite correction | Existing84/155 rings refute P4: pure S/L cuts impossible, both cycles must survive. Exact branch-free criterion would close the eventually-S/L finite-left subclass viaGC706. | Solver-free guard published; Local retains SLC. No Cloud request. Scratch delivery remains unavailable. |

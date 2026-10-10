@@ -25032,3 +25032,33 @@ for the obstruction. No cap increase would change its fixed point.
 Retain the failure and stop this explanation route; adding more forcing
 passes or treating the affine space as the actual right histories cannot
 help. Future invariant work must preserve nonlinear alternatives.
+
+
+SLC prerequisite check (L587): the registered P4 asks whether an actual
+cut kills a pure S or L cycle. Record searched: SLC|GC1007 + pure|periodic|branch;
+read GC686 and L380's actual84/155-cell rings. Prediction: P4 is already
+ruled out by those certificates; a pure-power cut signals an error.
+Use literal ring updates as a solver-independent gate, solely because
+this live prediction conflicts with an established construction. Control
+both full temporal periods and all visible rotations; unexpected control
+flip the wall bit and require failure. No new ring search or SAT call.
+
+Both existing ring certificates and all rotation/mutation controls PASS.
+Every finite factor of (001)^infinity or (00001)^infinity is actual in
+both phase languages: rotate the orbit to the appropriate white time,
+or start one black tick earlier. Thus SLC-P4 is structurally refuted
+before SLC outcomes; both pure cycles MUST survive every sound cut list.
+They may split into separate SCCs; their survival does not force mixed
+branching. This is a guard from existing results, not a new orbit theorem.
+
+The exact useful SLC success condition is no internal branching in ANY
+reachable recurrent SCC of the rebuilt graph. For an actual eventually
+S/L trace, shift to an internal renewal marker with a preceding black
+tick; its suffix belongs to both phase languages and avoids all sound
+cuts. It gives an infinite path from the marker root. The finite SCC DAG
+allows only finitely many component changes; a recurrent component with
+internal outdegree1 is a cycle, so the S/L tail is eventually periodic.
+GC706 then excludes finite initial left support. This would close the
+entire eventually-S/L subclass, not just the selected A/B loops. It would
+NOT cover actual histories with infinitely many other gap lengths or
+settle the all-period prize. No branch-free certificate exists yet.
