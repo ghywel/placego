@@ -177,7 +177,7 @@ PART: as on the board.
 
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (Jen 1986, Rowland §5) — PROVED — JenPow2.lean L541: band k<=j+2 period2^j; settled gcd run bound L543; source GC962; §8.27/30.
-- Lemma B1 (white, then black; Lean LemmaB1.lean L529; source GC955), B2 (unbounded periods; LemmaB2.lean L545/550, source GC963; infinite white/black JenPow2.lean L548), B3 (no white run over twice the
+- Lemma B1 (white, then black; Lean LemmaB1.lean L529; source GC955), B2 (unbounded periods; LemmaB2.lean L545/550, source GC963; infinite white/black JenPow2.lean L548, source GC964), B3 (no white run over twice the
   band's period; Lean LemmaB3.lean, L534; source GC958; sharp 2P-1, tight at P=1,2, L539; GC960) — PROVED —
   §8.59; B2 for the single seed is in print (Nersissian Theorem 13)
 - Rowland's question answered both ways: >= 4 certified left sides; 60 generic rows share one — COMPUTED — §8.31
