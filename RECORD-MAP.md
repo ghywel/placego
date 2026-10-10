@@ -176,7 +176,8 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Initial rewrite GC1057 PROVED CL225; forced merger GC1058 PROVED CL226; two-tick normalization GC1059 PROOF-SKETCH.
+- Initial rewrite/merger GC1057/1058 PROVED CL225/226; two-tick normalization GC1059 PROVED CL227.
+- Prefix-conditioned two-tick lift has an exact boundary-pair guard — PROOF-SKETCH — GC1060.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
@@ -197,10 +198,10 @@ PART: as on the board.
 - Rooted black-image1 0^k 1 0 impossible;010 admits tails — PROOF-SKETCH — GC1005.
 - First black-start exclusion forces spatial10010, impossible after black-wall update — COMPUTED / hand — GC1004.
 - Matured black-start cuts through K-1 follow from complete white cutoff K — PROOF-SKETCH — GC1002/1003.
-- Exact spatial NFA caps after two observations; forward simulation gives no compression — prototype PART / REFUTED — GC998..1000.
-- Width9 strip warmup stabilizes after6 macros but retains GC994 false merger — COMPUTED — GC997; actual positive E13 continuation absent (L572).
-- Equal complete width9 compatible sets can conceal distinct actual futures after marker01 — REFUTED sufficiency — GC994.
-- GC992 gap-order distinction needs width9 in exact right-strip relaxation; width8 admits both — COMPUTED — GC993.
+- Spatial NFA caps after two observations; simulation compression fails — PART/REFUTED — GC998..1000.
+- Width9 warmup stabilizes after6 macros but keeps GC994 false merger; actual E13 absent — COMPUTED — GC997/L572.
+- Equal width9 compatible sets hide distinct actual futures after01 — REFUTED sufficiency — GC994.
+- Gap-order distinction needs width9; width8 admits both — COMPUTED — GC993 (GC992).
 - Equal gap multisets/endpoints/window7/lastgap hide different futures — COMPUTED — GC992.
 - Eight phases yield255 residuals; follower growth inconclusive — control sketch/computation — GC991.
 - Equal phase/count/window7 hide different futures — COMPUTED — GC990, RLK K18.

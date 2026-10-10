@@ -27890,7 +27890,7 @@ The first cell is black in both parents, so its child is NOT L and shields the c
 
 **Missing inference, CL222.** Does the white-penultimate case actually require GC1058's unbounded one-step merger to normalize the next exterior input? A uniform two-tick realization would identify which apparent exterior disagreements need repair. Record searched: trace/halfwidth/repair with two-tick/two-step/preimage ->59 hits; strip/exterior/repair with two-tick/time2 and initial/prefix ->28 hits. The existing exterior relations, inverse scanner and GC1057/1058 are reused; no uniform initial-prefix normalization found. Predictions and negative control precede the64 local controls in rule30_two_tick_normalize.py.
 
-**Uniform construction, hand proof awaiting review.** For ANY width W>=2, initial strip row x and first two free exterior samples E,G, there is an actual initial right row preserving initial sites1..W-1 and both entire strip rows at times1,2. Only initial site W may change; two actual cells appended at W+1,W+2 suffice, followed by any tail. Either alternating-wall phase works.
+**Uniform construction, independently confirmed CL227.** For ANY width W>=2, initial strip row x and first two free exterior samples E,G, there is an actual initial right row preserving initial sites1..W-1 and both entire strip rows at times1,2. Only initial site W may change; two actual cells appended at W+1,W+2 suffice, followed by any tail. Either alternating-wall phase works.
 
 Write a=x(W-1), b=x(W), and v for the first strip child. If E=0, append actual cells E,F with F=b XOR G. Their actual next exterior is b XOR(E OR F)=G, so both rows agree without changing x. If E=1 and G=NOT b, append E,F=1,0; again the next exterior is G and no rewrite is needed.
 
@@ -27904,3 +27904,29 @@ The remaining case is E=1,G=b. Its first child has last bit v(W)=NOT a. When a=1
 
 
 **GC1059 publication receipt, CL226.** Verified4a7937fb. Cloud independently confirms GC1058's merger on360 selected cases and its actual two-tick guard on5,760, and accepts the inverse-cost corollary. Its closing phrase “no bounded local primitive exists there” must be restricted to an opposite-outer-bit rewrite preserving the whole one-step interior image with fixed exterior. It is not a prohibition on every trace repair: GC1059 supplies a bounded two-tick normalization precisely by declining the unnecessary flip in the white-penultimate branch. No computational duplication here; CL226 received with that qualification.
+
+
+## GC1060 — Exact prefix-conditioned boundary relation for the two-tick lift (2026-10-10)
+
+**Missing inference, GC1059/CL222.** Can the next bit of a repaired time2 row be lifted while retaining its preceding child prefix and the prescribed initial prefix? Determine the exact admissible boundary relation, rather than treating this bit as freely replaceable. Record searched: two-tick/two-step with lift/fixed-prefix/prehistory ->26 hits; with prefix/lift and toggle/surject/last-bit/penultimate/freedom ->6 hits. G236's existing two-step spatial map is reused; no new generic image transducer or subset census. Predictions, counterfactual and controls precede execution in rule30_two_tick_prefix_lift.py.
+
+**Exact local lift criterion, hand proof awaiting review.** Fix ANY initial prefix through site j+1, j>=3, with u,a,b,c at sites j-2..j+1. Put P=u XOR(a OR b), the time1 bit at j-1. Let Q,R be time2 bits at j,j+1. All child bits through j-1 are already fixed by that initial prefix, in either wall phase. Varying the next two initial bits d,e, with any farther tail, gives EXACTLY:
+
+| Initial suffix condition | Admissible Q,R |
+| --- | --- |
+| bc=01 | Q=NOT P, R=a |
+| bc=10, a=0 | Q=NOT P, R=0 |
+| bc=10, a=1 | Either Q, R=1 |
+| bc=11 | Q=P XOR NOT a, either R |
+| bc=00, a=1 | Q=NOT P, either R |
+| bc=00, a=0 | (P,0), (P,1), (NOT P,1) |
+
+Therefore, given feasible Q, BOTH values of the next child bit R lift with the entire initial prefix and child prefix through j retained IF AND ONLY IF bc=11 OR [bc=00 AND(a=1 OR Q=P)]. Mixed bc locks R to a. Initial000 with Q=NOT P instead locks R to1. The first two original trace bits are retained, since their initial dependency lies within the fixed prefix. This is a boundary-pair lift, not a claim that every subsequent child tail lifts.
+
+**Derivation and explicit realizers.** From G236's two-step map, the relevant first-row bits are A=a XOR(b OR c), B=b XOR(c OR d), C=c XOR(d OR e); Q=P XOR(A OR B), R=A XOR(B OR C). For mixed bc, B OR C=1 and A=NOT a, giving R=a and the displayed Q branches. For bc=11, B=0, C=NOT(d OR e), so Q is fixed and both R values occur. For bc=00, Q=P XOR(a OR d), R=a XOR(d OR e). If a=1, Q is fixed and R is free. If a=0, d=Q XOR P; d=1 forces R=1, while d=0 leaves R=e free. This proves necessity.
+
+Sufficiency is constructive. For bc=11 choose d=0,e=a XOR R. For bc=00,a=1 choose d=0,e=NOT R; for bc=00,a=0 choose d=Q XOR P and e=R when d=0, else e=0. For bc=10,a=1 choose d=1 XOR Q XOR P,e=0. The other two mixed branches use d=e=0. Every admitted pair thus has an explicit two-cell initial extension; arbitrary farther tails leave the specified child prefix unchanged.
+
+**Controls and concrete obstruction.** All128 complete six-input local cones (both wall phases) agree under literal and packed evolution, giving exactly the table and freedom criterion; all56 admitted pair/phase witnesses pass the explicit construction. Initial prefix0001 at white start always gives time2 prefix1110, so replacing its fourth child bit by1 while retaining the initial0001 and first three child bits111 cannot lift. The same boundary blocker survives translation past common prefix1010. The unexpected0000 case admits both R values before fixing Q, but Q=1 forces R=1; an unconditional output-bit freedom test misses the constraint. No solver, word-membership, wider strip or NFA census.
+
+**Receipt and next intention.** Verified22c5c852: CL227 confirms GC1059 on992 local cases across widths2..6 and accepts the CL226 scope correction; GC1059 is second-read. The proposed two-observation induction must carry this prefix-conditioned relation, not just a repaired time2 row with a free next bit. Next missing inference: choose a future trace representative satisfying the forced boundary value when the pair is mixed or the000 guard is active, or move the initial repair farther left while preserving the trace. Cloud review and that concrete representative-selection obligation requested and flagged; no new computation. Halfwidth and the prize bound remain open.
