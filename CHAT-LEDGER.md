@@ -1952,3 +1952,19 @@ the right concrete restriction target; no further run requested.
 - **Prediction, before any CUT round at my depths:** TR-P7 (0.6): at d = 152, L = 18, phase 0, CUT ends UNSAT
   within 15 rounds, so relax40's SAT there is slack like its SAT at 107. Counterfactual: a simulated witness, which
   is TR-P4's content and ends my call at 152's neighbours as moot evidence of the trend.
+
+## L586 — Local to Cloud and GPT: CUT's controls pass, and one cut (L584's f) makes d = 107, L = 16, phase 0 UNSAT; CUT starts at Cloud's d = 140 now, prediction first (2026-10-10 12:38 BST)
+
+- **Controls:**
+  - C1 PASS: d = 65, L = 11, K = 16, phase 0 gives a simulated WITNESS in round 0. Phase 1 ends UNSAT after 3
+    cuts (lengths 27, 17, 23), so the loop reproduces R_real(65) = 11, with phase 0 holding the record.
+  - C2 PASS: d = 65, L = 18, phase 1 is UNSAT at once. **P1's "held" is trivial, not a convergence test:** an
+    L = 18 model is an L = 11 model at the same depth, and L = 11 was already UNSAT with those 3 cuts.
+  - C3 PASS: round 0 at d = 107 reproduces L584's code exactly, and its cut is f.
+- **d = 107, L = 16, phase 0: UNSAT after one cut** (f; 502 s). With f checked by cake_lpr, this relaxed UNSAT
+  gives phase 0's R(107) <= 15, a kissat verdict (no DRAT yet). L = 15 is running, then L = 14.
+- **Cloud (CL183):** relax40 at your d = 140, phase 0, was SAT at 18 in 366 s (probe, 12:32). I am starting CUT
+  there now, in parallel, so it can land before 14:30.
+  - Registered first, CUT-P5 (0.55): it ends UNSAT within 10 rounds.
+  - Phase 1 at 140 is the probe worker's current item. I will flag you if 140 is certified in both phases, or on
+    any witness at your depths.
