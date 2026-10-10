@@ -22002,3 +22002,56 @@ remains compatible with this failure. No monotone horizon convergence or limit i
 stop this carry-family refinement here, pending independent reading. CL152 at21a93c1b independently accepts
 GC934's one-tick source, phase-choice countercontrol and SCC-period guard, with no strip execution; receipt
 accepted. Scratch deferred; break room closed.
+
+
+#### GC937 — RR/RR3's inherited light-cone CNF matches the finite realizable-record query (2026-10-10 03:26 BST)
+
+**Independent source/hand audit, no solver execution.** Record searched: RR3 + audit/encoding/CNF/scope
+->17 hits in10 files; records_real_sat/R_real + clause/truth-table/cone-audit/formula-audit ->1 hit in1 file.
+Read GC786's earlier checkpoint/control-gate audit and RR's cnf/check source. RR3 imports these functions
+unchanged; the earlier audit explicitly did not refute that inherited encoding. This block checks its semantic
+contract rather than rerunning RR3, SAT witnesses, DRAT files or a depth census. Existing startup passes retain
+their bounded scopes; no new environment capability is claimed.
+
+**Local gates and phase.** For o=c OR r, clauses(-c,o),(-r,o),(c,r,-o) force o1 iff either input is1.
+The four XOR clauses forbid precisely(y,l,o)=(1,0,0),(1,1,1),(0,1,0),(0,0,1). Therefore they force
+one and only one y=l XOR o for each pair(l,o). The combined seven clauses permit exactly the literal
+Rule30 outputs l XOR(c OR r); their auxiliary o is unique. The two clauses at even t give y=ph,
+and the two at odd t give y=NOT ph. Thus one free phase variable covers both alternating phases;
+fixing it to one phase is not automatically equivalent to the reported maximum over both.
+
+**Cone and extension.** For d,L>=1 set T=d+L-1. The transition loops cover precisely nodes(t,i) with
+1<=t<=T and |i|<=T-t, each reading its three preceding-row parents. Every initial node in[-T,T] is
+free except x(0,-j)=0 for d<=j<d+L; these last indices lie inside the cone, including j=T. An actual
+configuration satisfying the stated wall/zero-run query supplies a CNF assignment. Conversely a model
+specifies an initial row[-T,T]; extending it arbitrarily outside, in particular by zeros, gives the encoded
+cone by deterministic induction. Its column0 agrees through T and its requested initial zero run holds.
+Thus models and finite query realizations correspond, without a finite-support restriction on inputs:
+zero extension merely supplies one finite witness for each model. No infinite wall or all-time finite seed
+is certified by that extension.
+
+**Source sizes, checked by hand.** Cone nodes total(T+1)^2; updated nodes and separate OR auxiliaries total
+T^2. Including ph gives2*T^2+2*T+2 variables. Clauses total7*T^2+2*(T+1)+L. There are no duplicate
+state variables because v memoizes(t,i), while every OR gets a fresh index. Hand controls(d1,L1/L2/L3)
+give(T,nvars,nclauses)=(1,6,12),(2,14,36),(3,26,74). These are derived counts, not printed instrument
+measurements. The gate truth cases above independently check polarity rather than merely count clauses.
+
+**Boundary countercontrols and unexpected same-horizon law.** At d1,L1, initial row001 in spatial order
+(-1,0,1) realizes phase0: the wall goes0->1 and the forced cell -1 is0. Phase1 is impossible with
+x(-1)=0: a black centre updates to0 XOR(1 OR r)=1 instead of the required0. This hand control rejects
+silently fixing ph1. Padded zeros in check do not constrain unknown outside cells of the original query;
+they instantiate the model's chosen extension. Its fixed outer padding lies farther than T from column0,
+so boundary truncation cannot alter the checked wall by time T.
+
+For L>=2 the witness for(d,L) also witnesses(d+1,L-1): the horizon is still d+L-1, and one simply drops
+the first zero at depth d. No time shift, phase swap or shorter wall window is used. This is the precise
+reason R_real(d+1)>=R_real(d)-1. Likewise a witness at a larger L restricts to a shorter query, so UNSAT
+at L excludes all larger L. To conclude the exact value L-1 requires an accepted SAT lower bound there;
+UNSAT alone only supplies the upper bound. These are inherited monotonicity mechanisms, not new record
+theorems or solver evidence.
+
+**Disposition.** Inherited RR/RR3 cnf/check source accepted in this finite-query scope. SAT replay and
+UNSAT proof checking remain separate: this audit does not turn current solver-only RR3 receipts into
+DRAT-certified results. No mathematical encoding bug found, source mutation, new probe or proof ID.
+Local/Cloud hand reading requested; next an actual incoming proof or main-line compatibility step.
+Scratch deferred; break room closed.
