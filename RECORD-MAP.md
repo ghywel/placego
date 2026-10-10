@@ -298,24 +298,17 @@ PART: as on the board.
   PROVED — §8.65, §8.70; entry 32 (Proposition 19), GC479; entry 29, Entry 31
 - Rule 90: no finite configuration has a period-2 column (Lucas); the search sees Rule 60's counterexample —
   PROVED, COMPUTED — Proposition 5; §8.3
-- White end 1 0^q excluded for finite seeds, every q >= 10 (one-sided width 8 + Theorem A) — PROVED (CL110,
-  GC880; Lean WhiteEnd.lean, L508) — entry 40, rule30_white_end_jen.py, L498
-- Black end 0 1^q, q >= 14, reproved the same one-sided way — PROVED (CL110; Lean JenRoute.lean, L513) —
-  rule30_one_hole_widths.py jen, L497
-- One-sided Jen census: 24 words of period 10 .. 14 (width 10), 115 of 15 .. 18 (width 8), none at p <= 9 — PROVED
-  (CL111; Lean JenRoute.lean, L513) — entry 41, rule30_word_jen_census.py, L499
+- One-sided Jen route + Theorem A excludes, for finite seeds: the white end 1 0^q, q >= 10 (entry 40); the black end
+  q >= 14 (L497); 139 more words of period 10 .. 18, none at p <= 9 (entry 41) — PROVED (CL110, CL111, GC880; Lean
+  WhiteEnd, JenRoute: L508, L513) — rule30_white_end_jen.py, rule30_word_jen_census.py, L498, L499
 - Strip test fails for every primitive word of period 3 .. 6 (radius 9) and every open Condrey case (radius 11) —
   COMPUTED — rule30_rung3_strip.py (RG, WE), rule30_strip_c.c (SGC), L488
-- One-hole: nine black steps lock 01 for p >= 10; closed exactly at p = 8 and p >= 10 (Lean BlackLock, P8Lock) —
-  PROVED / COMPUTED — G.GPT271, rule30_one_hole_widths.py (OH, TB), L476, L496
-- One-hole exact relaxed languages: p = 9 x^4-2x^3+x-1 (widths 8 .. 12), p = 7 x^5-x^4-x^3-x^2-x+1 (7 .. 9) —
-  PROVED (GC857) — L479
-- True half-line beside 0 1^4: hole word 10000 never occurs; |L_5..7| = 31, 60, 108 — COMPUTED —
-  rule30_one_hole_direct.c, L480
-- One-hole width-22 radii, certified: p = 3, 4, 5, 6, 7, 9 <= 1.220382, 1.231763, 1.471227, 1.383947, 1.599414,
-  1.714447 — COMPUTED — rule30_layer_product.py (ODD, ODD2), L504
-- Best true one-hole ceilings, width-22 layer times TC's F: p = 5, 7, 9 <= 1.461900, 1.590415, 1.697625 a hole —
-  COMPUTED (verified) — rule30_layer_product.py (ODD3), L506
+- One-hole: closed exactly at p = 8 and p >= 10 (nine black steps lock 01; Lean BlackLock, P8Lock); exact relaxed
+  forms p = 9 x^4-2x^3+x-1, p = 7 x^5-x^4-x^3-x^2-x+1 (GC857); beside the true 0 1^4, hole word 10000 never occurs —
+  PROVED / COMPUTED — G.GPT271, OH, TB, OHD; L476, L479, L480, L496
+- One-hole certified ceilings a hole: width-22 radii p = 3, 4, 5, 6, 7, 9 <= 1.220382, 1.231763, 1.471227, 1.383947,
+  1.599414, 1.714447; times TC's F, p = 5, 7, 9 <= 1.461900, 1.590415, 1.697625 — COMPUTED (verified) — LP (ODD ..
+  ODD3), L504, L506
 - Lean audits: BlackLock (GC873, PROVED, source scope); P8Lock, exact three-word equality needs a prefix
   certificate (GC878, PART); WhiteEnd (GC893, GC898, PROVED, source scope); JenRoute (GC906, PROVED, source scope);
   the white end replayed at width 8 (GC880, PROVED); fourteen WC walls certified (GC881, COMPUTED)
