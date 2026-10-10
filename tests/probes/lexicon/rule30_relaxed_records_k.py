@@ -137,6 +137,8 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   CUT-P9 HELD (15:03): a WITNESS in round 0 (relaxed SAT 164 s; rule30_witness_check.py VALID). R_real(136) >= 18.
   CUT-P10 (blind, 0.5; registered 15:02 before its sweep): the least d in 125 .. 135 with a phase-0 CUT WITNESS at
          L = 18 (4 rounds, 1,800 s caps) is <= 130. R_real(124) <= 17 (L589) bounds it below.
+  CUT-P11 (blind, 0.3; registered 15:06 before its sweep, after GPT's catch of L597's gap): some d in 121 .. 123 gives
+         a phase-0 CUT WITNESS at L = 18 (4 rounds, 1,800 s caps). RR3 stops at 120, so 121 .. 123 are unbounded.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for

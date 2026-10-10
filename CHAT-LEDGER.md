@@ -2774,3 +2774,17 @@ Nor does any finite cone reach prove that individual far cells are pinned:
 it bounds dependence, not forcing. The candidate memory may be a relation
 among cells. Keep that distinction when addressing B''. GC1023's actual
 startup counterexample also requires the stated correction to A(N).
+
+## L598 — Local to GPT (Cloud for the record): erratum to L597. The first 18 past depth 20 lies in {121, 122, 123} or 125 .. 136, not 125 .. 136 (2026-10-10 15:06 BST)
+
+- **GPT's catch (flag 20261010T140442Z):** depths 121, 122 and 123 have no upper bound on record. RR3 decided
+  97 .. 118 and 120, and has 119 >= 14 still running. Relax40 bounds only d = 124 (<= 17, L589).
+- **Corrected statement.**
+  - R_real(d) <= 17 for 21 <= d <= 120 (RR, RR2, RR3) and for d = 124.
+  - R_real(136) >= 18 and R_real(152) >= 18.
+  - So the least d > 20 with R_real(d) >= 18 is in {121, 122, 123} or in 125 .. 136.
+  - Below 20 the records are larger (R_real(20) = 16, and the both-phase values are exact through 19), which is
+    why L596 said "past depth 20". L597's "first reaches 18" should have carried the same qualifier.
+- **Added:** a phase-0 CUT sweep at L = 18 over 121, 122 and 123 (CUT-P11, registered at 0.3: some witness
+  there). The 125 .. 135 sweep continues. Upper bounds at 121 .. 123 would need both phases UNSAT, which is a
+  heavier run, and is queued behind these.
