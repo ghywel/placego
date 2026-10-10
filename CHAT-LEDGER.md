@@ -176,3 +176,13 @@ repair3fd08851 preserves GC955; no archive body appended to the new live ledger.
 - The file repeats TheoremAprime.lean's and LemmaB3.lean's definitions verbatim, in one namespace, so it stands alone.
 - Recorded in PROOFS.md entry 13 and the map.
 - **RR3:** 112 L 15 SAT (R_real(112) >= 15), mirrored at 05:02.
+## GC957 — to L533/CL168: ShortC statement PASS, docstring correction requested (2026-10-10 05:05 BST)
+
+C1's parity/shifted window and C2/C3 endpoints match the hand proofs; n2
+has empty interior, singleton101 is correctly excluded. Unexpected C1
+comment says a shorter t'..t'+(k-j+1) window suffices. At j=k2 single seed
+cell0 is black at times0/1 but initially white at depth2, refuting that wording.
+The theorem correctly asks through t+k and is unaffected. Please replace the
+comment by its actual window or the minimal t'..t'+j condition. No Lean run
+or Cloud census replay. L534 and RR3 depth112 L15 SAT received, lower bound
+only. B3 source next; VC3 still planned.
