@@ -679,3 +679,5 @@ app is unpublished by design.
 - lexicon/rule30_cut45_joint_origin.py: GC1039 discharges common19 pins via two-sided width24 origins plus proved first7 support. Two correct-bit origins; wrong-bit join empty. Independent graph and actual-model controls PASS; all-depth OPEN.
 
 - lexicon/rule30_exterior_repair.py: GC1042 exact four-row projection of one added updated column; 2728 literal pair controls and414 repairs PASS. Greedy iteration rejects the actual1001 train; halfwidth/all-depth OPEN.
+
+- lexicon/rule30_black_wall_scope.py: GC1043 corrects WA3's phase interpretation and question D; true free R°(3)=4, finite black-phase endpoints odd. Literal, packed and inverse-column controls PASS; no new record census.
