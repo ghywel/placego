@@ -22787,3 +22787,54 @@ all greater than6s. Even flooring tau to an integer preserves all failures.
 Thus a positive-width dyadic arithmetic failure is retained without another
 sweep; it remains a synthetic frontier, not an actual Rule30 clock. Fixed18
 sufficiency unchanged; no optimal threshold claim or further optimization.
+
+
+#### GC952 — L526/L527 Lean statements match Theorems B and A-prime (2026-10-10 04:43 BST)
+
+**Requested source review.** Verifiede0e575f1/5121bea6; read both complete Lean
+files and PROOFS entries6/7. Local's compilation and axiom inventories are
+reported evidence, not a GPT Lean run or independent kernel inventory. This is
+statement/index matching of existing proved entries, not a new proof filing.
+The attempted sandboxed dry-run fetch failed DNS; the permitted escalated fetch
+succeeded. Decoder design was deferred to prioritize these concrete requests.
+
+**Theorem B: PASS in stated scope.** theorem_B assumes arbitrary configurations
+on integers, paired columns0/1 periodic from time0, P>=2, a black sample somewhere
+in column0, and a row0 white run at depths d..d+R-1 with d>=1. Its conclusion
+R<=2P-2 is entry6's bound. Right finiteness and least temporal period are not
+required by either argument. left_all inverts the same literal Rule30 rule;
+left_all_iter supplies periodicity for every left column. triangle uses
+ d+t<=i and i+t<d+R. Under R>=2P-1, k=d+P-1 satisfies both conditions for
+all t<P. per_mod then covers every time using t mod P. The adjacent depth
+k-1=d+P-2 is inside the initial run because P>=2. Latching and periodic return
+to time0 make it permanently white; push_right reaches column0 and contradicts
+its black sample. No time-tail shift is silently included.
+
+**B countercontrols and boundary.** Dropping the black-sample hypothesis admits
+the all-white configuration with arbitrary R, so the hypothesis is essential.
+P1's separate bound1 is not the expression2P-2 and is intentionally absent.
+At P2,d1, the contradiction run R3 selects k2 and neighbour depth1; the whole
+first period is inside the triangle, verifying the smallest admitted arithmetic.
+R0 is vacuous. The odd-run sharpening remains unformalized as L526 states.
+
+**A-prime: PASS in stated scope.** theorem_A' assumes x0(i-L)=true and all
+strictly farther-left cells white, L a natural, a<a', and both columns i/i+1
+agree at a+s/a'+s for every s<n. It concludes n<=L+a', matching entry7.
+No finite right edge or non-overlap of the repeated time blocks is assumed.
+agree propagates equality exactly when s+m<n. For m1 it uses column i+1;
+for larger m the two shallower depths are available by strong induction.
+If n>L+a', set m=L+a',s0. The later edge is black there, while strict a<a'
+places that site beyond the earlier edge and hence white. This checks the
+observation-count offset: n observations determine depths0 through n-1,
+not depth n. No leftmost-edge hypothesis to the right of i is covered by L.
+
+**A-prime countercontrols and unexpected boundaries.** If a=a', the repeat
+premise is automatic for arbitrarily large n, so strict inequality is necessary.
+Without the leftmost black cell, the all-white repeat likewise invalidates the
+bound. n0 is immediate; L0,a0,a'1 would use depth1 if n>=2, forcing the same
+black/white contradiction. Overlapping repeats remain admitted: the agreement
+induction never uses disjoint windows. Both files contain no source sorry,
+admit or native_decide call; this source observation does not replace checking
+the compiled axiom list. No new compilation, numeric experiment or prize claim.
+Reply PASS to L526/L527 with these scope qualifiers; next new encoding input
+or an open quantitative lead. Scratch deferred, room closed.
