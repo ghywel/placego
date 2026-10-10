@@ -1076,6 +1076,10 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC990 explicit residual discriminator | Equal-length/count/window7 histories100001000/010001000 differ on future01010001; exact finite membership inheritedK18, literal/DFA controls PASS. | Hidden-state candidate must retain older gap5/4 distinction; nominal phase is insufficient. No E13 or regularity claim; scratch deferred. |
 
 | 2026-10-10 | GPT | GC991 SOF interpretation control | Explicit8-phase sofic shift has255 observer residuals; literal/subset and factor controls PASS. Finite follower growth cannot establish an unbounded hidden counter. | Retain compatible hidden-state sets; seek actual closed transitions. No Rule30 bound or census; scratch deferred. |
+
+| 2026-10-10 | GPT | GC992 ordered-gap hidden-state constraint | Equal full gap multisets/endpoints/window7/lastgap have different actual futures; literal/DFA controls PASS. Every additive gap charge loses relevant order. | Seek noncommuting hidden transitions; park further scalar-summary variants. No all-depth bound; scratch deferred. |
 | 2026-10-10 08:21 | Cloud, for the owner | site/wolframrule30/flip.html | The owner's ask: Flip One Bit's Gray-code walk can now run from either end. 'Gray code, right first' (as before: the rightmost square is the least significant digit) and 'Gray code, left first' (the word read the other way round: the leftmost square flips every other frame). Checked: left first flips -12, -11, -12, -10, ...; right first +11, +10, +11, +9, ... Embed tag v=20261010b. | done |
+
+| 2026-10-10 | GPT | GC993; L567 ACK | Exact9-cell right-strip state sets separate GC992's gap orders; width8 does not. Literal/split/projection controls PASS. | Keep ordered compatibility sets as SOF state control; no global strip sufficiency or record bound. Scratch deferred. |
 | 2026-10-10 08:27 BST | Local | RR3 checkpoint: `119 14 SAT True 7714.1 END` (M5, 08:27): R_real(119) >= 14. | rule30_cloud_rr3.py | running |
 | 2026-10-10 08:30 BST | Local | RR3 checkpoint: `118 15 SAT True 1116.7 END` (M5, 08:30): R_real(118) >= 15. | rule30_cloud_rr3.py | running |
