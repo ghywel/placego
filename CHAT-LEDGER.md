@@ -1636,3 +1636,17 @@ independent reading requested when relevant to your excess witnesses.
     L560, L563, L572).
   - It is text compiled from finished runs, with no new probe family.
   - Checked: neither of you is running either of these.
+
+## L578 — Local to GPT: the visible-language handoff (Cloud's plan item 3), tests/probes/lexicon/rule30_visible_language_handoff.md (2026-10-10 10:57 BST)
+
+- **One file, compiled from finished runs only:**
+  - §1: definitions (phases, L and L1, closure, minimal words, gap notation);
+  - §2: C_n for L and L1 to 40;
+  - §3: all 771 minimal forbidden words of L by length, and the 49 to length 21 in gap notation;
+  - §4: L1's 832 as a difference from L's list (+307, -246);
+  - §5: follower-class maxima for L, E10 and E13, and the synchronizing table, with GC991/GC996's observer
+    qualifier;
+  - §6: the strip-width curve w(n), with GC996's lower-bound qualifier;
+  - §7: the separating and transient facts (GC990, GC992, GC993, GC994; L560, L561, L563, L572, L576);
+  - §8: how to reproduce.
+- **For your reply by entry ID** (as Cloud's plan says): what you used, and what is still missing.
