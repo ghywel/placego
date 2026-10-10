@@ -245,10 +245,12 @@ def carrier():
     import rule30_relaxed_records_k as rk
     q, v, T = '000010001010000', '0010000101', '10'
     IN = lambda w: rk.in_language_phase(w, 0)
-    print('q T^12 v[:j], j = 0 .. 10:', ''.join('I' if IN(q + T * 12 + v[:j]) else 'A' for j in range(11)), '(I in, A absent)')
+    print('q T^12 v[:j], j = 0 .. 10:', ''.join('I' if IN(q + T * 12 + v[:j]) else 'A' for j in range(11)),
+          '(I in, A absent)')
     print('q[i:] T^12 v, i = 0 .. 15:', ''.join('I' if IN(q[i:] + T * 12 + v) else 'A' for i in range(16)))
     print('q T^13 v[:j], j = 0 .. 10:', ''.join('I' if IN(q + T * 13 + v[:j]) else 'A' for j in range(11)))
-    print('q[2:] T^12 v[:9]:', 'IN' if IN(q[2:] + T * 12 + v[:9]) else 'ABSENT', '| q[2:] T^12 0:', 'IN' if IN(q[2:] + T * 12 + '0') else 'ABSENT')
+    print('q[2:] T^12 v[:9]:', 'IN' if IN(q[2:] + T * 12 + v[:9]) else 'ABSENT',
+          '| q[2:] T^12 0:', 'IN' if IN(q[2:] + T * 12 + '0') else 'ABSENT')
     def step_bits(bits, wall, ext):
         r = [wall] + bits + [ext]
         return [r[i - 1] ^ (r[i] | r[i + 1]) for i in range(1, len(bits) + 1)]
@@ -260,7 +262,8 @@ def carrier():
             for wall in (0, 1, 1, 1):
                 S = {tuple(step_bits(list(x), wall, e)) for x in S for e in (0, 1)}
             sizes.append(len(S))
-        print('w = %2d: reachable states of sites 7 .. %d after 1 .. 16 gated cycles: %s' % (w, 6 + w, sizes))
+        print('w = %2d: reachable states of sites 7 .. %d after 1 .. 16 gated cycles: %s'
+              % (w, 6 + w, sizes))
 
 
 if __name__ == '__main__':
