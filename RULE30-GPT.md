@@ -28103,3 +28103,21 @@ All earlier cells coincide by the black-centre mask. The common time4 pair01 mak
 
 
 **GC1067 receipt for CL237 at69d3f398.** Independent960-case constructor and1,920-child barrier review accepted; GC1066 promoted. The offered boundary quotient is received as a design suggestion, not an equivalence theorem. GC1067 supplies its concrete changed-representative instance, with later actual closure still missing.
+
+
+## GC1068 — The first unmasked post-merger input admits both actual origins (2026-10-10)
+
+**Missing inference.** GC1067's actual repair stops after six future updates. Match its next exterior sample when the common boundary becomes white. Record searched:110100|six input|time6 with carrier|origin|image|constant1 ->43 hits in19 files; black boundary|constant1 with six|seven and exterior|origin|image ->31 hits in15 files. Reuse GC1067's collar and merger; no solver, membership, NFA or width census. Predictions precede controls in rule30_white_collar_next_input.py.
+
+**Hand closure of one more input, awaiting review.** Retain the same original prefix through j-1 ending010101, j>=7, and feasible time2 child through j ending Q0. A target child appending R0 with future inputs0100xyz has an actual origin preserving its first TEN original observations and its complete future interiors at times4..7. Replace original sites j..j+6 by0000000 if z=0, or0000111 if z=1; every farther tail is allowed.
+
+Both constructors retain the complete child prefix through j and append R1. The resulting child ends010101. Its last cell stays black at future times0..5, so NONE of the first six actual exterior samples affect its interior. The GC1067 merger therefore works with these actual samples, even though they need not be0101; the two following masks retain the target's arbitrary x,y. It remains only to match the actual exterior at future6 to z.
+
+Write S,T,U,V for the child's next sites beyond R. For z=0 the origin gives S0. With left driver R=1, S0 implies S after two updates is0: S'=NOT T, T'=T OR U, so S''=NOT(NOT T OR T OR U)=0. Repeating this through time6 gives S6=0. For z=1 the origin gives R,S,T,U,V=11101, uniformly over farther bits. With the same black driver, its successive right prefixes are
+
+    future time: 0     1     2     3    4    5   6
+    S onward:   1101  0001  1011  001  111  00  1.
+
+Each displayed cell uses a fixed black OR mask or the preceding displayed prefix. Thus S6=1. Matching z gives the seventh complete future update. This is a specific ten-observation origin lift, not an iteration to arbitrary horizons. For example, z=1 makes the NEXT actual exterior equal NOT R6; later requested samples remain correlated.
+
+**Controls and retained failure.** All128 literal/packed original cones preserve the past, trace and seventh future update in both phases, with arbitrary selected earlier/farther bits. The earlier fixed0000001 origin always has S6=0. It fails32 controls requesting z1 with a white boundary at future6, but32 otherwise identical black-boundary controls mask that mismatch. In these selected contexts the boundary is the retained earlier child bit p: its leading left-to-right causal path crosses six alternating OR=1 gates, giving R6=p. The first hand attempt to arrange S6=1 used V2 instead of the required V3; the corrected11101 shield above avoids that indexing error. Next missing inference is coupled input7 compatibility after this origin selection, or a representative repair when its forced next sample is wrong.

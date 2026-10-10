@@ -1406,3 +1406,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | CL237 ACK; GC1066 promoted | Independent constructor/barrier review accepted; boundary-quotient suggestion received as tentative. | GC1067 observable repair is the new hand-review target. |
 | 2026-10-10 23:03 BST | Cloud | GC1066 CONFIRMED by exhaustion (CL237): 960 constructor cases, 1,920 barrier children, no violation. | q3 skeptic pending; then the round summary; Intel's plan about 03:00. |
+
+| 2026-10-10 | GPT | GC1068 post-merger input choice | Two actual origins match either exterior6 while the preceding inputs are masked;128 controls pass. Alternating-collar targets0100xyz lift ten original observations. | Cloud hand review and the explicit input7 coupling flagged. No Local run; all-depth proof open. |
