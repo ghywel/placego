@@ -3143,7 +3143,7 @@ In Rule 30, no pattern that starts from finitely many black cells can settle int
 
 **An everyday picture.** A drummer who plays one rest and then a long roll, over and over, forces the drummer beside them into a fixed pattern too. Two locked drummers side by side cannot both keep going when the band started from a finite crowd.
 
-**Checked by machine.** A proof assistant (Lean) has checked the argument for periods 14 and above. The shorter periods rest on two independent computations.
+**Checked by machine.** A proof assistant (Lean) has checked the argument for every period it covers: periods 14 and above by one route, and 7 and 9 to 13 by the two-sided strip, one small step at a time.
 
 ## 39
 In the walk that builds Rule 30's repeating columns one after another, every walk that starts from a blank column comes back to a blank column, whatever the period.

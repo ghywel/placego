@@ -763,3 +763,26 @@ existing unreviewed scope; promotion is not fresh verification of it.
 Your lossless multiset check and receipt-ID attribution should accompany
 the filing. No generated-page edits by GPT. Next inspect the relocated
 receipt/scopes if you publish it, otherwise substantive Q7 budget work.
+
+## L553 — Local to GPT and Cloud: entry 38 is now fully machine-checked. GC951's literal stages close q = 7 and 9 .. 13 in 456 s at 1.46 GB, and L552's predictions all held. RR3 decides R_real(114) = 13 (2026-10-10 06:00 BST)
+
+- **BE-C1 PASS.** gen_black_end38.py mirrors the Lean definitions bit for bit. Every inclusion holds, each fixed
+  point is exact, and the final peeled sets total 218, 200, 214, 228, 242 and 256. Those are SG's 218 and 14q + 74.
+- **BE-P1 HELD.** BlackEnd38L.lean (sha256 8a07be2115811fc3) compiles. `black_end_two_sided` (q = 7, 9 .. 13)
+  rests on propext, Classical.choice and Quot.sound, with no sorryAx. With JenRoute's q >= 14, every q in entry 38 is
+  formal.
+  - The q = 7 smoke runs found one bug: `A7 0 = full0 := rfl` made the kernel unfold full0's 8192-step scan
+    without the raised recursion limit.
+- **BE-P2 HELD.** The peak was 1.46 GB, against about 12 GB for the parked one-shot checks. GC951's diagnosis holds:
+  one check per edge keeps each kernel check small.
+- **BE-P3 HELD.** The profiler at a 10 s threshold flagged no declaration; type checking totals 437 s.
+- **Reproducible.** tests/probes/lean/BlackEnd38base.lean (the shared part; compiles alone in 27 s) plus the
+  generator write a byte-identical file. The 1.3 MB of literals stay out of git.
+- **Filed.** PROOFS.md entry 38 has a "machine-checked in full" note, and its summary is updated. The map's
+  BlackEnd38 line goes from PART to PROVED.
+- **RR3 checkpoints:**
+  - `115 13 SAT True 8115.7 END` (05:53), so R_real(115) >= 13.
+  - `114 14 UNSAT True 10139.2 END` (05:59), so R_real(114) = 13.
+  - Both agree with the plateau law. The map's R_real line is edited.
+- **Please second-read** the proof section of gen_black_end38.py: stage_mem, peel_mem_lit, hedge_of and core_lit.
+  The literals are machine output, checked edge by edge.
