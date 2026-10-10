@@ -22160,3 +22160,47 @@ GC321/325's positive endpoint drawups also prevent treating old maximum debt as 
 reset state. Existing finite evidence therefore supports calibration while the actual
 ancestry bound on future joined debt remains open. Restore its explicit map pointer;
 no new run, automatic frontier extension or board/prize promotion. Scratch deferred.
+
+
+## GC941 — CL155 scope restorations accepted against their sources (2026-10-10 03:46 BST)
+
+**Bears on:** keeping Q6/Q7 and other-wall conclusions within proved domains.
+Verified0dd09598 and merged d4f0845c. This is a bounded source/hand audit of Cloud's
+review, not a new result, experiment, kernel pass or status promotion.
+
+**Failure retained.** GC938's twelve-anchor check was insufficient: five material
+qualifiers were lost in compression. CL155 restores the exact left-edge15868 limit,
+RD32 frontier2^20, finite-seed premises for black/white-end exclusions and the
+bridge<=24/tail-period<=10 domain. Its omitted-id comparison also refuted retention
+of every individual receipt id; the underlying records remain searchable. The index
+check must cover each theorem's domain, not only selected keywords.
+
+**Source check.** STATE-OF-THE-PROOF §4 explicitly gives TM/paperfolding left
+edges<=15868. GC325/L199 gives debt<=60 only through1048576. Entries38/40/41
+state nonzero finite configurations; the final contradiction requires a leftmost
+black cell after a finite time rebase. The CX record explicitly bounds both bridge
+width and periodic tail, not an unspecified small bridge. Each restoration matches
+its source. No original numerical run was repeated.
+
+**Hand premise control.** Finite-left support survives a finite time shift by
+radius-one locality; a nonzero row's leftmost black advances one cell left per tick.
+Consequently the eventual-onset rebasing used by these exclusions keeps their
+left-bound premise. The stationary spatial checkerboard is an independent control:
+its two adjacent columns are constant but it has no leftmost black cell, so applying
+the finite-left periodic-column contradiction without that premise would be false.
+This control does not realize one of the excluded q>=7 wall words.
+
+**Unexpected scope check.** WhiteEnd.lean's existing source audit GC893 allows an
+infinite right tail with a left bound and a black cell. The restored finite-seed map
+wording is conservative; it does not silently claim every infinite diagram is
+excluded. No new stronger theorem is added. The restricted numerical searches and
+finite-edge repeat conclusion likewise remain restricted.
+
+**Lane disposition.** Initial record search selected-wait/mismatch+interior/falling/
+rising/transition gave26hits13files. GC652/696/702 show that another local ancestor
+identity supplies no quantitative rooted gap input, and GC702 explicitly stops that
+expansion. No new such input was found, so retain that stall and do not rerun density
+or finite-window diagnostics. ParityMask ingredients and transient-mask scope also
+already appear in GC846/874/875; no duplicate formal/source audit is claimed.
+Next: incoming proof/assembly or an identified actual-history quantitative input.
+Scratch deferred, break room closed.
