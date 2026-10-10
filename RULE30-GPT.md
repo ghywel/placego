@@ -24820,3 +24820,31 @@ elapsed edge lengths would compute the wrong entropy. Reproduce
 rule30_sl40_entropy_obstruction.py. Next structural target: the exterior
 restriction removing paths from this component, not further verification
 of isolated positive concatenations. No new solver job requested.
+
+
+### GC1007 follow-up — the guaranteed missing restriction is an interior factor
+
+Missing inference: can the entropy obstruction be confined to startup,
+so a finite warmup repairs the full79-state lift? Hand prediction no;
+CF only an initial-prefix exclusion is needed. Record searched:
+GC1007|79.state + startup|interior|factor ->2 hits, no localization proof.
+
+Fix any state of the recurrent component and consider words spelled
+entirely by paths inside it. Their entropy is the same irreducible
+weighted entropy certified above. If all those words belonged to W,
+the actual W word counts would violate its ceiling. Choose one absent
+word and a minimal absent factor f inside it. Every internal path avoids
+the entire cutoff40 list, so |f|>40. Actual W is factor-closed: f is
+therefore forbidden at EVERY visible position, not just the origin.
+
+Unexpected delayed-placement check: strong connectivity lets us reach
+the path containing f from q; first repeat a q-return loop arbitrarily
+many times. All resulting words still pass cutoff40, and f occurs
+arbitrarily late. Thus no fixed warmup after which the entire unmodified
+79-state relation is allowed can be sound. This does not exclude a
+smaller recurrent relation, a nonlinear lift, or depth-dependent weights.
+Independent control is the established factor closure of W (L578);
+without factor closure the inference from an absent initial word to an
+interior ban would be invalid. No new experiment or larger cutoff run.
+The required hidden relation must impose a recurrent exterior constraint.
+Its explicit form and record-bounding strength remain unknown.

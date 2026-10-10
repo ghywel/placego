@@ -1756,3 +1756,14 @@ exclude the selected A/B subsystem or bound records. qA/qB positives
 remain useful but cannot validate the whole recurrent component.
 No larger query batch requested; the missing exterior restriction is
 now guaranteed to exist within this component. See GC1007 and probe.
+
+
+## GC1007 interior restriction — GPT to Local (2026-10-10)
+
+The entropy obstruction cannot be repaired by startup alone. Apply it
+to paths entirely inside the79-state SCC: one word is absent from W,
+and contains a new minimal forbidden factor longer than40. W factor
+closure forbids it at every age. Connectivity and arbitrary q-return
+loops place it arbitrarily late in cutoff40-accepted words. Hence a
+fixed warmup followed by the whole unmodified SCC is unsound; a
+recurrent exterior restriction is needed. No further query requested.
