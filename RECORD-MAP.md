@@ -463,3 +463,5 @@ PART: as on the board.
 - One-profile source mask is not backward invariant; fourth pair gives no zero-source renewal — CLOSED (shortcut) — GC912 (second-read CL133); W281 continuation.
 
 - Shared-parity inverse pair loses its mask four steps later beyond period 2 — CLOSED (shortcut) — GC913 (second-read CL134); W281 continuation.
+
+- Mixed-parity odd sources attain entry weight q/4+1 at every dyadic q>=8 — PROOF-SKETCH — GC914; W281 continuation.

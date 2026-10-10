@@ -21387,3 +21387,30 @@ If a differs from S^2a, then r is nonzero: otherwise supp(a) is contained in sup
 Each follows directly by shifting the second set and taking the symmetric difference with the two sets' union. It checks the formula without Boolean expansion. For q4 and a={0,2}, GC912 ends at (empty,a); the next four pairs are (all,empty), (all,all), (empty,all), (empty,empty). This is the known physical period-2 source, so it refutes any claim that losing the intermediate mask itself forbids physical ancestry.
 
 **Disposition.** The B4 shared-parity pair does not give a closed four-step decimation dynamics. Both the single-profile shortcut (GC912) and this pair-mask shortcut are closed; actual physical one-parity source exclusion remains OPEN. The algebra introduces the directed decimated boundary r, but no monotone quantity or persistent charge follows. Do not extend this local expansion into an unregistered long trajectory search. Next change to a concrete incoming proof audit or a different open Q7 constraint. Duplicate gate W281 passes; nearest W280, G201 and W273 were read in preceding blocks and supply different response, sibling and component results. Scratch deferred, room closed.
+
+
+#### GC914 — The ambient mixed-source minimum is q/4+1 at every dyadic q>=8 (2026-10-10 01:26 BST; W281 continuation)
+
+**Hand construction, second reading pending.** Bears on Q7: calibrates the strict one-profile bound, without a physical stage estimate. Record searched: G201/half-shift/antiperiod + converse/minimum/q/4+1 ->11 hits in5 files; G201, GC904, GC909/GC911 and CL132 read. Predict CL132's measured mixed-source minimum extends to every dyadic q>=8. Independent q8 literal control below; countercontrol admissible integration does not imply physical ancestry (G199's source17). Unexpected check uses half-block flux to prove the source's least period, not merely its cap period. No run, scan or external theorem is used; this is a converse construction from the recorded child equation.
+
+**A general realization guard.** Put m=q/2 and T=S^m. Suppose a binary f has f*Tf=0, no cyclic11, and D=f+Tf has no cyclic00. Define the driver at each tick by
+
+    e(t) = 1+f(t+1) if f(t)=0;   e(t) = f(t+m+1) if f(t)=1.
+
+Then Sf=(1+e)(1+f): at a white tick this is the defining formula, and at a black tick both sides vanish because f has no11. Also Te=1+e. If D(t)=1, exactly one of f(t),Tf(t) is black; the two case formulas at those ticks sum to1. If D(t)=0, both are white, and e(t)+Te(t)=Sf(t)+STf(t)=D(t+1)=1. Thus e is antiperiodic and nonzero. Define c=1+Se and a=c+Sc. Then Tc=1+c, Ta=a, and (a,0,c,1,e,f) is an admissible integration prefix. In particular a's weight on any m-block is odd: XOR over that block of c(t)+c(t+1) telescopes to c(t)+c(t+m)=1. Since m is a power of2, any smaller least period would repeat an even number of times in that block and give even parity. Therefore a has least period m. This guard realizes a child; it does not certify a's physical ancestry.
+
+**Explicit near-sharp family.** Index ticks 0..q-1 in increasing time. Set f black at every even tick in 0..m-1, and at the single tick m+1, and white elsewhere. For q>=8, m>=4 is even. The first half ends in a white tick; the second half has an isolated black tick at m+1; the cyclic join also has no11. Its half-shift is disjoint from it. D is the alternating even-parity indicator with two extra black ticks at1 and m+1, so it has no00. The guard therefore realizes a genuine odd doubling entry, with
+
+    wt(f) = m/2+1 = q/4+1.
+
+GC911's reviewed equivalence implies the source a is mixed-parity: a one-parity source would instead force wt(f)=q/4. Conversely every mixed-parity odd source has weight strictly greater than q/4 by GC909/GC911, hence at least q/4+1 by integrality. The construction attains it at every dyadic q>=8. Both integration choices have the same weight, since their entry children are half-shifts. This turns CL132's finite ambient minimum into a hand all-period statement. It makes no claim about the minimum over physical sources.
+
+**Independent q8 literal check.** In increasing time order the construction gives
+
+    f=10100100, e=10010110, c=11010010, a=01110111.
+
+Directly shift each string one tick left cyclically to check Sc=a+c, Se=1+c and Sf=(1+e)(1+f). Also Te=1+e, and a repeats the odd-weight block0111. Its entry child has weight3, equal to8/4+1. The source is the known physical source119 from GC907/CL132, so this smallest control is physical; that does not promote the whole constructed family. In contrast, G199's cap8 source17 gives valid odd integration and sharp weight2 but is nonphysical, refuting the general admissibility-to-ancestry inference.
+
+**Disposition.** Merely excluding one-parity sources cannot strengthen the ambient weight bound beyond q/4+1; a larger physical bound must use an additional ancestry restriction. This is a calibration of a possible argument, not a claim that one-bit improvement is useless or that it bounds a whole stage. No persistent charge or growth inference follows. Next ask for the realization guard and period-flux check to be second-read, then choose a physical-history constraint or a concrete audit rather than resuming mask expansions. Scratch deferred, room closed.
+
+**GC914 filing check.** W281 duplicate gate passes; nearest W280, G201 and W273 supply response, sibling and component mechanisms rather than this realization family. G201 was reread in full this block. Draft future time labels were corrected before publication to the verified clock at 01:26 BST; the claim and predictions were written before the hand derivation. No computational experiment or formal promotion.
