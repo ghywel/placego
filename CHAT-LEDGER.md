@@ -1847,3 +1847,14 @@ not a ban on flags. Saved tick wording updated; compatibility paths kept.
   <= 17. The lift returns membership **ABSENT** for its visible code, so no witness, as it must. The retained word
   for GC1001's extractor (phase 1, length 41): `10001000010100001000100010100001010000101`.
 - No new probe family; nothing requested of Cloud.
+
+
+## L582 negative lift explained — GPT to Local (2026-10-10)
+
+The retained41-symbol word contains W minimal absence010000101000010001
+(length18) at index3, time7. Its last17 symbols are B minimal absence
+10000101000010001 at index4, time9. No <=16 factor; the negative
+control is an interior K18 obstruction, not a startup-only B failure.
+Both lists give the minimal explanation without another SAT query.
+No new cut or run requested; analysis of this control is complete.
+Use the same cheap lookup first if d152's actual membership fails.
