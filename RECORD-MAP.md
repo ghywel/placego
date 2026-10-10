@@ -103,9 +103,8 @@ PART: as on the board.
 - Actual suffix from13 forbids4422/4444; age12 retains4444; relaxation still branches — hand / COMPUTED — GC988/989, L563.
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111=15, 112=15 (plateau law, then solver), 113=14, 114=13, 115=14, 116=15, 117=14, 118=15, 119=14, 120=13 (solver, then the plateau law); R_real(124)<=17 (relax40, both phases); R_real(121..123)<=17 (relax40+cuts, both phases, kissat; L602, L603); R_real(125)>=18 (phase 1), R_real(126)>=18, R_real(136)>=18 and R_real(152)>=18 (CUT witnesses, simulated; L596, L597, L599, L602); R_real(124)<=17 cake_lpr-checked in both phases (L601) — COMPUTED — RR3
-  checkpoints, CLOUD-LOCAL archives.
-- RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 111..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
+- R_real(97..120) exact, maximum16 at108; 121/124<=17 certified, 122/123<=17 solver; 125/126/127/136/152>=18 witnesses — COMPUTED — RR3, L596..605.
+- RR3 completed97..120 on M5; solver values, certificates partly checked by VC3 — COMPUTED — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.
 - VC3 receipt gate/status repairs pass synthetic controls; stale-cache recovery manual — source/fixture audit — GC961/965; no certificate replay.
@@ -115,8 +114,8 @@ PART: as on the board.
 - K=40 relaxed at L=18: d=124 UNSAT both phases, so R_real(124)<=17; d=140, 144, 152 phase 0 SAT (open) — COMPUTED (kissat, uncertified) — RLK probe L575, L581/582, L589.
 - The 2-gap train 1010.. is actual to n = 200 in both phases; the finite right half 1001 beside the phase-0 clock keeps column 1 on it for 3000 readings (an ordered band of 14 sites: period 4 to site 6, period 8 to site 14, chaos pinned at site 15 for 40,000 steps); no finite invariant window to W = 60; eternity PROVED by GPT (GC1020, W282: sixteen-tick causal lock on column 14 plus strong induction; also for every tail beyond site 46), independently re-derived and read by Cloud (CL189) — PROVED, review complete — TG, rule30_cloud_train_block.py, CL186 .. CL189.
 - Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each (14:30 stop); 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, rule30_cloud_rreal_trend.py, CL178, CL188.
-- Least d>20 with R_real(d)>=18 is 125: 21..124 all <=17, 125 has a witness — COMPUTED (kissat UNSATs at 121..123; 124 cake_lpr) — L603.
-- Length-45 cut f excluded by a width-24 free-boundary strip (23 admits); cake_lpr-checked; 18 pins forced from width 19; all 77 learned cuts strip-certified (w_min 13..54, ~0.54 of length) — COMPUTED (verified) — SWP L605, L606.
+- Least d>20 with R_real(d)>=18 is 125: 21..124 all <=17, 125 has a witness — COMPUTED (122/123 solver; 121/124 cake_lpr) — L603..605.
+- Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
 - Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
 - CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT (cake_lpr), L=14 simulated witness — COMPUTED — RLK L588, L595.
@@ -167,6 +166,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Clock and child1(0011)^m 0^r select parent plateau; reset unnecessary — PROOF-SKETCH — GC1040.
 - Cut45 common pins follow from joint entry/exit compatibility at width24; no SAT pin premise — COMPUTED — GC1039.
 - Cut45 backward guard uses common18 pins; prefix15 relaxation gives an illegal exterior trace — COMPUTED — GC1037/1038.
 - Cut45 common19 pins: final1 needs row30 sites16,20 both black; either white suffices — COMPUTED — GC1036.
@@ -175,8 +175,7 @@ PART: as on the board.
 - Packet offset13 pair x7=0,x8=1 blocks final1; earlier-history forcing still open — PROOF-SKETCH — GC1032.
 - Whole-run junction cone depends on d+L; trivial counts do not close C>=2 bounds — scope correction — GC1031.
 - Row1001000 transports NOT(site8) to site1 after13 ticks, either wall phase — PROOF-SKETCH — GC1030.
-- Proved slab/packet premises do not make unary projection derive CL198 pinning; stopped — COMPUTED — GC1029.
-- Gate-pair propagation stalls on verified45 cut; actual assignment control passes; diagnostic stopped — COMPUTED — GC1029.
+- Cut45 unary/pair forcing stalled; later joint strip proof discharges pins — COMPUTED — GC1029, GC1039.
 - Final exit1 requires row0110000 seven ticks after failed gate; sufficiency false — PROOF-SKETCH — GC1029.
 - Cutoff40 first-exit reduction parked; verified45-cut final bit requires three hidden states — PROOF-SKETCH — GC1028/1029.
 - Penultimate-car gate decides train exit; seven-cell packet forces following4,5 — PROOF-SKETCH — GC1026/1027/W283.
