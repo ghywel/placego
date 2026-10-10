@@ -228,6 +228,75 @@ class Relaxed:
         if bad:
             raise RuntimeError('forbidden word in the model: %s' % bad[:3])
         self.code = vis                                               # the visible code, for `gap`
+        self.left0 = {i: int(self.x(0, i) in m) for i in range(-T, 1)}    # time-0 left half and wall, for `lift`
+
+
+def right_half_for(w, phase):
+    """A right half (time-0 sites 1 .. 2k - 1 + phase) producing visible word w with the wall clamped to
+    (t + phase) mod 2, or None. The witness version of in_language_phase."""
+    k = len(w)
+    first = phase
+    last = first + 2 * k - 2
+    var, nv, cl = {}, [0], []
+
+    def x(t, i):
+        if (t, i) not in var:
+            nv[0] += 1
+            var[(t, i)] = nv[0]
+        return var[(t, i)]
+    for t in range(last):
+        for i in range(1, last - t + 1):
+            r, c, y = x(t, i + 1), x(t, i), x(t + 1, i)
+            nv[0] += 1
+            o = nv[0]
+            cl += [[-c, o], [-r, o], [c, r, -o]]
+            if i == 1:
+                wall = (t + phase) % 2
+                cl += ([[-y, -o], [y, o]] if wall else [[-y, o], [y, -o]])
+            else:
+                l = x(t, i - 1)
+                cl += [[-y, l, o], [-y, -l, -o], [y, -l, o], [y, l, -o]]
+    for s_, b in enumerate(w):
+        v = x(first + 2 * s_, 1)
+        cl.append([v] if b == '1' else [-v])
+    with tempfile.NamedTemporaryFile('w', suffix='.cnf', dir=DIR, delete=False) as f:
+        f.write('p cnf %d %d\n' % (nv[0], len(cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in cl))
+        name = f.name
+    try:
+        p = subprocess.run([KISSAT, '-q', name], capture_output=True, text=True)
+    finally:
+        os.unlink(name)
+    if p.returncode != 10:
+        return None
+    m = set()
+    for line in p.stdout.splitlines():
+        if line.startswith('v'):
+            m.update(int(z) for z in line.split()[1:] if int(z) > 0)
+    return {i: int(x(0, i) in m) for i in range(1, last + 1)}
+
+
+def simulate_glued(left0, right0, T, phase, d, L, code):
+    """Glue a left half (cells <= 0 at time 0) to a right half (sites >= 1) and run Rule 30 for T steps. True if
+    column 0 follows (t + phase) mod 2 for t = 0 .. T, the band d .. d + L - 1 is white at time 0, and column 1
+    reads `code` at the wall's white times."""
+    lo, hi = min(left0) - T - 2, max(right0) + T + 2
+    row = {i: 0 for i in range(lo, hi + 1)}
+    row.update(left0)
+    row.update(right0)
+    if any(row[-j] for j in range(d, d + L)):
+        return False, 'band not white'
+    vis = []
+    for t in range(T + 1):
+        if row[0] != (t + phase) % 2:
+            return False, 'clock fails at t=%d' % t
+        if (t + phase) % 2 == 0 and len(vis) < len(code):
+            vis.append(str(row[1]))
+        if t == T:
+            break
+        row = {i: row.get(i - 1, 0) ^ (row.get(i, 0) | row.get(i + 1, 0)) for i in range(lo, hi + 1)}
+    if ''.join(vis) != code:
+        return False, 'column 1 does not read the code'
+    return True, 'ok'
 
 
 def in_language_phase(w, phase):
@@ -441,6 +510,30 @@ def main():
                 break
         else:
             print('no absent factor: the visible code is in the actual language')
+    elif cmd == 'lift':                                      # L581: relaxed model + actual right half = real witness
+        tag, d, L, ph = sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5])
+        cap = int(sys.argv[6]) if len(sys.argv) > 6 else 5400
+        forb = load_forbidden(tag)
+        inst = Relaxed(d, L, ph, forb)
+        t0 = time.time()
+        v = inst.solve(cap, forb)
+        print('lift d=%d L=%d phase %d (%s): relaxed %s %.0f s' % (d, L, ph, tag, v, time.time() - t0), flush=True)
+        if v != 'SAT':
+            raise SystemExit(0)
+        code = inst.code
+        print('visible code (%d): %s' % (len(code), code), flush=True)
+        right = right_half_for(code, ph)
+        print('exact membership of the code (phase %d): %s' % (ph, 'IN' if right else 'ABSENT'), flush=True)
+        if right:
+            ok, why = simulate_glued(inst.left0, right, inst.T, ph, d, L, code)
+            print('glued configuration simulated: %s (%s)' % ('VALID' if ok else 'INVALID', why), flush=True)
+            if ok:
+                out = os.path.join(DIR, 'lift_d%d_L%d_p%d.txt' % (d, L, ph))
+                left = ''.join(str(inst.left0[i]) for i in range(min(inst.left0), 1))
+                rgt = ''.join(str(right[i]) for i in range(1, max(right) + 1))
+                open(out, 'w').write('d=%d L=%d phase=%d T=%d\nleft (cells %d .. 0)=%s\nright (sites 1 .. %d)=%s\n'
+                                     'visible=%s\n' % (d, L, ph, inst.T, min(inst.left0), left, max(right), rgt, code))
+                print('WITNESS: R_real(%d) >= %d; saved %s' % (d, L, out), flush=True)
     elif cmd == 'probe':                                     # one relaxed call per (depth, phase), for TR's depths
         tag, L = sys.argv[2], int(sys.argv[3])
         tag1 = sys.argv[4]                                     # the phase-1 list's tag (L1 c L, so tag is valid too)
