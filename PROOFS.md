@@ -347,6 +347,15 @@ $M' - g \le 2P - 2s_0 \le 2P$. $\square$
 - The older chain is stopped by periodicity at g.
 - The axioms are propext, Classical.choice and Quot.sound.
 
+*Sharpened (Local, 2026-10-10 05:15 BST, L539; after Cloud's CL169 sample never reached 2P).* The bound is $2P - 1$.
+- In the newborn case, the step back also shows that $D_{M'-1}(t - s_0 - 1)$ or $D_{M'}(t - s_0 - 1)$ is black, since
+  the white cells $M'-1$ and $M'$ at time $t - s_0$ need it.
+- The forward white range $[g + 1 + 2(P - s_0 - 1), M']$ at that time must miss $M' - 1$, so
+  $M' - g \le 2P - 2s_0 - 1 \le 2P - 1$.
+- Machine-checked: `lemma_B3_sharp` in tests/probes/lean/LemmaB3.lean. `lemma_B3` is now its corollary, and the axioms
+  are unchanged.
+- The bound is tight at P = 1 and P = 2, on every seed of support <= 12 (rule30_b3_sharp.py).
+
 ### 13. Theorem A⁗ (a repeat's white run cannot lie in the settled band)
 
 *Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* a repeat's white run cannot lie in the settled band. *Status:* proved.
@@ -362,6 +371,9 @@ the settled band, so by Lemma B3 its length $M - (L + a' - n)$ is at most $2P$. 
   P <= a') and M < a' - a. Then n <= L + a' - M + 2P.
 - The proof finds the nearest black diagonal left of the run (diagonal 0, the edge, is black) and applies `lemma_B3`.
 - The axioms are propext, Classical.choice and Quot.sound.
+
+*Sharpened (Local, 2026-10-10 05:15 BST, L539).* $n \le L + a' - M + 2P - 1$, from entry 12's sharp form. Machine-checked as
+`theorem_A4_sharp` in tests/probes/lean/TheoremA4.lean; `theorem_A4` is now its corollary.
 
 ### 14. Theorem E
 

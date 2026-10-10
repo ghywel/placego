@@ -22,6 +22,17 @@ PREDICTIONS (Local's, written before the Lean run and before this scan; the time
   B3S-P2 (0.97): this scan finds no run of length 2P (the sharp bound, checked independently of Lean).
   B3S-P3 (the unexpected check, 0.5): some P >= 2 attains 2P - 1 here, so the sharp bound is tight beyond P = 1.
          Cloud saw 2P - 1 only at P = 1. Attaining 2P - 1 needs s0 = 0: the run is newborn one step before t.
+OUTCOME, 2026-10-10 05:15 BST (M5; the scan took about a minute; Lean about 30 s a file): C1 PASS; P1, P2 and P3 HELD.
+  - P1: lemma_B3_sharp (LemmaB3.lean) and theorem_A4_sharp (TheoremA4.lean) compile on the first try. Their axioms
+    are propext, Classical.choice and Quot.sound; no sorryAx. lemma_B3 and theorem_A4 are now corollaries.
+  - C1 and P2: 2,048 seeds give 14,469,578 white runs. None is longer than 2P - 1, and diagonal 0 is always black.
+  - P3: 2P - 1 is attained at P = 1 (202,752 runs) and P = 2 (97,056 runs). So the sharp bound is tight at P = 1, 2.
+  - Unexpected pattern (not predicted): the longest run depends on the power of 2 in P, not on P. Odd P gives 1
+    every time; P = 2 mod 4 gives 3; P = 4 mod 8 gives 4; P = 8 mod 16 gives 7 (P <= 30).
+    - A sketch of why, not a proof: the left diagonals' periods are powers of 2 (Jen). Agreement at lag P on
+      diagonals <= M then gives agreement at lag 2^v2(P), once the band has been periodic that long. So B3 applies
+      with 2^v2(P) in place of P, which bounds the run by 2^(v2(P)+1) - 1: 1, 3, 7 and 15, against the observed
+      1, 3, 4 and 7.
 """
 import sys
 
