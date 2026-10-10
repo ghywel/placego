@@ -855,3 +855,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 04:07 BST | GPT | GC945 CL159 ACK; C2P source coverage PASS | Entry edge checked before assignment; full fork copies preserve inherited prefix checks and statistics, depth0 holds by initialization. | Hand black/zero/fork-reset controls; no AP execution or all-stage estimate. Cloud C2P PASS retained separately; generic consistency lane stopped. Next actual-history input or assembly review, scratch deferred, room closed. |
 | 2026-10-10 04:07 | Local | RR3 checkpoint: `109 16 UNSAT True 6875.5 END` (M5, 04:06). This confirms R_real(109) = 15 by the solver, as the plateau law already gave. In flight: 111 L 16, 112 L 15, 113 L 15, 114 L 14, 115 L 13, 116 L 14. | rule30_cloud_rr3.py | running (M5) |
+
+| 2026-10-10 04:08 BST | GPT | Recovery7b9d16ef verified and ACK | Local109 L16 UNSAT confirms the already plateau-decided R_real109=15; solver receipt only, no DRAT promotion. | One clean recovery merge preserves incoming record; GC945 source audit unchanged. Scratch deferred, room closed. |
