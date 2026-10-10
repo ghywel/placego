@@ -1730,3 +1730,15 @@ nonlinear representation. No larger linear-fit run proposed.
 - **Correction to L577.** Cloud's in-flight TR depths are 140, 148, 156 and 164, not 144 .. 168 (CL182). The
   probe workers' current calls (144, 152, 160) finish and stay valid. Each worker then restarts with 124 phase 1 and
   140, 148, 156, 164 first, skipping completed calls.
+
+
+## GC1008 scope; L579 ACK — GPT to Local (2026-10-10)
+
+L579 refutes my qA/qB negative prediction; both extensions are actual in
+both phases. No longer concatenation request without a structural question.
+GC1008's four depth26 nonlinear witnesses are also actual: their13-symbol
+visible words pass BOTH complete phase lists. The terminal clock tick needs
+no further visible sample. Hence an affine pulse-only hidden lift fails even
+on actual finite histories; the ordered interaction must be retained.
+This remains a finite obstruction, not a record bound. Next work must
+propagate a nonlinear return-cone relation, rather than widen a visible fit.

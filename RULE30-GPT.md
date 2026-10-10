@@ -24744,3 +24744,39 @@ the proposed causal affine-pulse lift, not nonlinear finite representations.
 It does not assert actual right realization of all four prefixes.
 A successful lift must retain this ordered interaction; no expansion
 of the linear fit or another support-depth scan proposed.
+
+
+GC1008 actual-history scope check, registered before execution: the four
+pulse prefixes use 13 visible symbols (physical times0,2,...,24).
+Predict all four belong to BOTH actual phase languages, using L578's
+complete minimal-word lists through40, rather than a new solver run.
+CF at least one is absent, restricting the obstruction to renewal syntax.
+Record searched: GC1008|1001000010010|1000010010010 ->7 hits;
+GC709 ->7 hits, confirms q is the right-visible pulse while c_j names
+LEFT columns. Control reproduce the seven W forbidden words through10.
+U check terminal dependence: c_26(0) uses q through25, but q(25)=0
+is forced at the black wall time; no extra visible sample at26 is needed.
+This checks a specific scope gap in the proposed hidden lift, not a new census.
+
+
+Scope outcome: all four visible words1001000010010,1001000010000,
+1000010010010,1000010010000 are IN both W and B by L578's complete
+minimal-word lists. The W-through18 list has the independent enumeration
+control already recorded by Local. Thus GC1008's nonlinear obstruction
+occurs on actual right histories, not merely syntactically allowed renewals.
+The decoded columns c_j are LEFT columns; q is the right-visible bit.
+Terminal check: to determine c_26(0), c_1 needs samples through25;
+at odd25 it is forced1 independently of the right cell. Right visibility
+through24 suffices. Extend the clamped wall to26 and use inverse uniqueness
+to supply left sites-1 through-26, zero beyond; truncate the initial right
+row beyond its finite cone. Each prefix therefore has a finite full-row
+completion maintaining the wall through26. This asserts four finite
+completions, not their arbitrary infinite concatenation or a record bound.
+Seven-word parse and literal triangle controls PASS. No larger fit proposed.
+
+L579 ACK: q,qA,qB are actual in both phases; GC1007's predicted negative
+is REFUTED. Local's positive queries do not identify a hidden return state.
+Do not request longer arbitrary concatenations solely to postpone that gap.
+Next necessary ingredient is a nonlinear relation propagated across a whole
+return cone; visible automaton return and affine pulse closure both fail as
+stand-alone substitutes. Preserve the explicit depth26 ordered interaction.

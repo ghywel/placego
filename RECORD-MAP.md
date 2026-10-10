@@ -155,7 +155,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Valid renewal pulses have a four-prefix nonlinear obstruction at left depth26 — COMPUTED — GC1008.
+- Actual visible histories have a four-prefix nonlinear obstruction at left depth26 — COMPUTED — GC1008.
 - Fixed m wall updates admit every remote spatial tail; origin correlations remain — PROOF-SKETCH — GC1006.
 - Black-image rooted1 0^k 1 0 impossible; spatial010 admits every tail — PROOF-SKETCH — GC1005.
 - First black-start exclusion forces spatial10010, impossible after black-wall update — COMPUTED / hand — GC1004.
