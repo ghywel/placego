@@ -290,16 +290,42 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
   </figure>
 
   <section class="col">
-    <p>The sieve below is that picture for real. Press <b>Counterexample wedge</b> and click a square on the green
-      line, time 0, to choose a depth: the shaded wedge is everything a counterexample with its white edge from that
-      depth would need to be white, and the darker squares in it are where this random start breaks that.</p>
+    <h3>Sierpinski triangles on both sides</h3>
+    <p>This is not special to the left side, nor to running sideways. Read the ordinary way, down the page, Rule 30
+      is the same kind of rule: do what Rule 60 does, black when the square up-left and the square above differ, then
+      flip the square under every <em>kick</em>, a white square with a black one to its right. Rule 60 alone grows
+      one black square into a Sierpinski triangle, and each kick starts another, so every square of the whole pyramid,
+      the striped side and the wild side alike, is an odd overlap of Sierpinski triangles. About a quarter of all
+      squares are kicks on both sides; what differs is only how they are arranged, in regular stripes on the left and
+      scattered on the right. All the triangles lean the same way, down and to the right, because Rule 30 uses its
+      left neighbour exactly and its right neighbour only through the kick, which is also why only the left side can
+      be built sideways.</p>
   </section>
   <figure>
-    <div class="frame"><iframe src="sieve.html?embed&amp;v=20261009e" title="The Edge-Event Sieve, live" loading="lazy"></iframe></div>
+    <div class="frame"><iframe src="sierpinski.html?embed&amp;v=20261010a" title="Sierpinski Everywhere, live" loading="lazy"></iframe></div>
+    <a class="open" href="sierpinski.html">Open Sierpinski Everywhere on its own page →</a>
+    <figcaption>Interactive: point at any square, on either side, to see the triangle of kicks that decides it and
+      their count, odd for black and even for white; click a kick to draw the triangle it spreads; <b>Kicks removed</b>
+      shows the single Sierpinski triangle Rule 30 would draw without them. The page rebuilds every square from the
+      triangles alone and checks the result against Rule 30. The rewriting is exact algebra; the quarter is a
+      measurement.</figcaption>
+  </figure>
+
+  <section class="col">
+    <p>The sieve below is the sideways picture for real, beside a wall held to the beat. Point at any square: the red
+      triangle above it holds the dots that decide it, and the card counts them. Click a dot to see the triangle it
+      spreads. Then click or drag on the green line, time 0, to ask what a counterexample would need: if its white
+      edge started at that depth, everything in the shaded wedge below would have to stay white, one depth deeper at
+      every step. The darker squares are where this random start is black instead. With every row shown, the wedge
+      closes into a whole triangle where the picture itself ends; in a real counterexample it would go on for
+      ever.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="sieve.html?embed&amp;v=20261010a" title="The Edge-Event Sieve, live" loading="lazy"></iframe></div>
     <a class="open" href="sieve.html">Open the sieve on its own page →</a>
-    <figcaption>Interactive: point at a square to see the triangle of slots whose dots decide it; click a dot to draw
-      the triangle it seeds; <b>Build sideways</b> grows the picture row by row. The page checks its own arithmetic
-      against the rule as it draws.</figcaption>
+    <figcaption>Interactive: point at a square to see the triangle of dots that decides it; click a dot to draw the
+      triangle it seeds; click or drag on the green line to set the counterexample's wedge; <b>Build sideways</b>
+      grows the picture row by row. The page checks its own arithmetic against the rule as it draws.</figcaption>
   </figure>
 
   <section class="col">
@@ -311,11 +337,12 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
       events, and how real Rule 30 keeps trying regardless.</p>
   </section>
   <figure>
-    <div class="frame"><iframe src="heartbeat.html?embed&amp;v=20261009e" title="Frontier Heartbeat, live" loading="lazy"></iframe></div>
+    <div class="frame"><iframe src="heartbeat.html?embed&amp;v=20261010a" title="Frontier Heartbeat, live" loading="lazy"></iframe></div>
     <a class="open" href="heartbeat.html">Open the four acts on their own page →</a>
     <figcaption>Live: start with act 0, which shows how this frame is the familiar pyramid turned on its side: time runs
-      across, depth into the left side runs down. Each act then labels its own parts on the picture. The red dots are
-      the edge's disturbance, the dotted lines count how often it lands among the squares that decide a target, and
+      across, depth into the left side runs down. The line under the buttons gives the whole argument in one sentence
+      and marks the act you are on. In acts 1 and 2 the red dots are the edge's disturbance; each one that lands in the
+      target's triangle is numbered and traced to the target, the target's label gives the count, odd or even, and
       the bars beside the rows show the beat that must be paid.</figcaption>
   </figure>
 

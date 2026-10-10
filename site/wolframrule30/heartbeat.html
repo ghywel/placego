@@ -59,6 +59,10 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--stencil); o
 .readout { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink); font-variant-numeric: tabular-nums;
   min-width: 0; flex: 1 1 360px; }
 .readout b { font-weight: 600; }
+.chain { margin: 0; font-size: 0.86rem; line-height: 1.45; color: var(--ink-soft); }
+.chain b { color: var(--ink); font-weight: 600; }
+.chain .now { color: var(--ink); background: var(--paper); border: 1px solid var(--stencil); border-radius: 4px;
+  padding: 0 4px; }
 .key { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink-soft); }
 .key span { display: inline-flex; align-items: center; gap: 6px; }
 .sw { width: 11px; height: 11px; border-radius: 50%; flex: none; display: inline-block; }
@@ -138,6 +142,7 @@ html.embed .page { padding-bottom: 0 !important; }
       </div>
       <div class="readout" id="readout" aria-live="polite"></div>
     </div>
+    <p class="chain" id="chain"></p>
     <div class="key" id="key"></div>
   </div>
 
@@ -306,10 +311,10 @@ html.embed .page { padding-bottom: 0 !important; }
     ctx.fillStyle = colors.ink; ctx.textAlign = "left"; ctx.textBaseline = "middle";
     ctx.fillText(label, lx + 6, ly + h / 2 + 0.5);
   }
-  function axes(top) {                                                    // the frame's two directions, named
+  function axes(top, from) {                                              // the frame's two directions, named
     var fsz = W < 520 ? 9 : 11;
     text("time, step by step →", X(0), TOP - 4, colors["ink-soft"], "left", fsz, "bottom");
-    ctx.save(); ctx.translate(7, Y(Math.max(top, 1), top)); ctx.rotate(Math.PI / 2);   // reads downwards, as depth grows
+    ctx.save(); ctx.translate(7, Y(Math.max(top, from || 1), top)); ctx.rotate(Math.PI / 2);   // reads downwards, below the bars
     text("depth into the left half →", 0, 0, colors["ink-soft"], "left", fsz, "middle"); ctx.restore();
   }
   function labels(top, list) {
@@ -335,7 +340,7 @@ html.embed .page { padding-bottom: 0 !important; }
       var j2 = L + t2 + 2; if (j2 > K) break;
       var cx = X(t2) + cell / 2, cy = Y(j2, top) + cell / 2, hit = sub(t2, k - j2);
       dot(cx, cy, hit ? r * 1.25 : r, colors.front);
-      if (hit) { ring(cx, cy, r * 2.1, colors.front, Math.max(1, cell * 0.12)); hits.push([cx, cy, colors.front]); }
+      if (hit) { ring(cx, cy, r * 2.1, colors.front, Math.max(1, cell * 0.12)); hits.push([cx, cy, colors.front, "red"]); }
     }
     if (act === 2) {
       for (var t3 = 0; t3 <= T; t3++) {                                  // the twin, three depths in
@@ -343,17 +348,32 @@ html.embed .page { padding-bottom: 0 !important; }
         var x3 = X(t3) + cell / 2, y3 = Y(j3, top) + cell / 2, hit3 = sub(t3, k - j3);
         if (real && t3 % 2 === 1) { cross(x3, y3, r * 0.9, colors.twin); continue; }
         dot(x3, y3, hit3 ? r * 1.25 : r, colors.twin);
-        if (hit3) { ring(x3, y3, r * 2.1, colors.twin, Math.max(1, cell * 0.12)); hits.push([x3, y3, colors.twin]); }
+        if (hit3) { ring(x3, y3, r * 2.1, colors.twin, Math.max(1, cell * 0.12)); hits.push([x3, y3, colors.twin, "teal"]); }
       }
     }
     hits.forEach(function (h) { tracer(h[0], h[1], tx, ty, h[2], Math.max(1, cell * 0.11)); });   // each landing -> its target
+    var nRed = 0, nTeal = 0, nfs = W < 520 ? 9 : 11;
+    hits.forEach(function (h) {                                         // number the landings, so they can be counted
+      var lab = h[3] === "red" ? ++nRed : ++nTeal;
+      ctx.font = "600 " + nfs + "px " + colors.mono; ctx.lineWidth = 3; ctx.strokeStyle = colors.paper;
+      ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+      ctx.strokeText(String(lab), h[0] + r * 1.9, h[1] - r * 1.4); ctx.fillStyle = h[2];
+      ctx.fillText(String(lab), h[0] + r * 1.9, h[1] - r * 1.4);
+    });
     ctx.strokeStyle = colors.stencil; ctx.lineWidth = Math.max(1.5, cell * 0.22);
     ctx.strokeRect(X(0) + 1, Y(k, top) + 1, cell - 2, cell - 2);
     drawBeatColumn(top);
     labels(top, [1, 10, 20, 30, 40]);
-    axes(top);
+    axes(top, 23);
     var small = W < 520;
-    callout("target", X(1.6), Y(k, top) - cell * 0.2, X(0) + cell, Y(k, top) + cell / 2, colors.stencil);
+    var verdict;
+    if (act === 1) verdict = nRed + " red landing" + (nRed === 1 ? "" : "s") + ", " + (nRed % 2 ? "odd: owed" : "even");
+    else verdict = nRed + " red + " + nTeal + " teal = " + (nRed + nTeal) + ", " + ((nRed + nTeal) % 2 ? "odd: unpaid" : "even: paid");
+    callout("target: " + verdict, X(1.6), Y(k, top) - cell * 0.2, X(0) + cell, Y(k, top) + cell / 2, colors.stencil);
+    if (!CAPH) {                                                        // the unseen inside, named where it is empty
+      text("above the staircase: unseen cells,", X(23), Y(24.6, top), colors["ink-soft"], "left", 11);
+      text("whose dots must answer the beat", X(23), Y(25.9, top), colors["ink-soft"], "left", 11);
+    }
     callout(small ? "its triangle" : "its triangle: the cells whose events decide it", X(Math.min(k + 1, T - 12)), Y(2, top),
       X(Math.max(0, k - 2)) + cell, Y(1.5, top), colors.stencil);
     callout(small ? "black edge" : "black edge: one depth deeper each step", X(2), Y(36.5, top), X(24) + cell / 2, Y(L + 24, top) + cell / 2, colors.ink);
@@ -363,9 +383,9 @@ html.embed .page { padding-bottom: 0 !important; }
     var cx0 = X(Math.min(k + 3, 23)), cw = Math.min(X(T) + cell - cx0, small ? 220 : 340);
     cx0 = Math.min(cx0, X(T) + cell - cw);
     var paras = act === 1 ? [
-      "Suppose some finite start made the centre tick 0101 for ever. Then everything below the black edge would stay white.",
-      "Each target cell (amber box) is decided by its triangle: it turns black when an odd number of events land there. The edge's own events land odd, odd, even, and so on for ever: the beat in the bars on the left.",
-      "To keep every target white, events inside the edge must answer that beat, target after target."
+      "Suppose some finite start made the centre (the top row) tick 0101 for ever. Then everything below the black staircase would stay white, and the staircase drops a red dot at every step.",
+      "Take one white cell below it, the target (amber box). Built sideways, it is decided by its triangle (pale amber): black if an odd number of dots land there. Count the red landings, numbered: odd, odd, even, odd, odd, even, for ever, like the Fibonacci numbers 1, 1, 2, 3, 5, 8. That is the beat, drawn as the bars on the left.",
+      "So whenever the beat is odd, the dots above the staircase must land an odd number of times too, or the target turns black. They must answer the beat, target after target, for ever."
     ] : [
       "A twin ray of events three depths inside the edge (teal) would answer the beat exactly: edge plus twin is even at every target, so every bar is short.",
       "Real Rule 30 cannot keep such a ray going. Tick \u201cas Rule 30 allows\u201d: the twin fires only every other step, and the targets it misses get long red bars."
@@ -385,7 +405,7 @@ html.embed .page { padding-bottom: 0 !important; }
       if (i === n) { ctx.strokeStyle = colors.stencil; ctx.lineWidth = 2; ctx.strokeRect(x1 - full - 2, y - 1, full + 4, cell + 2); }
     }
     var hy = Y(L + 2, top) - cell * 0.7;
-    text(act === 1 ? "beat: long = odd" : (real ? "long = unpaid" : "paid? long = no"), x1, hy, colors["ink-soft"], "right", W < 520 ? 8 : 10, "bottom");
+    text(W < 520 ? (act === 1 ? "beat" : "unpaid") : (act === 1 ? "beat: long = odd" : "long = unpaid"), x1, hy, colors["ink-soft"], "right", W < 520 ? 8 : 10, "bottom");
   }
 
   /* ---- act 4: the singleton's left half, the moving strip and its magnifier in the empty wedge ---- */
@@ -531,7 +551,7 @@ html.embed .page { padding-bottom: 0 !important; }
       body: "<p>Every act draws the left half of Rule 30 the same way: time runs left to right, and depth below the centre runs downward. The picture on the left is the familiar pyramid from one black cell; the one on the right is its left half, turned into that frame. The top row of the turned picture is the centre column.</p><p>The prize asks whether that column ever settles into a repeat. The acts take the opposite view for a moment: suppose some finite start made the centre tick 0101 for ever. Then the left half would have to turn white beyond a black edge that moves one depth deeper each step, and acts 1 to 4 show what that would cost.</p>",
       key: [["twin", "the centre column, in both pictures"], ["stencil", "a cell halfway out"], ["front", "the left edge"], ["wedge", "the left half", true]] },
     1: { title: "The beat", cite: "GC585, GC586",
-      body: "<p>A white edge would have to move outward one depth per step, and it carries its own edge event along with it: the red dots. Every cell under the wedge must stay white.</p><p>Each target cell (boxed, at time 0) is decided by its triangle of slots. A dotted line runs from each place where the red ray lands in the triangle to the target, so the lines count the landings: odd, odd, even, over and over, the parity of the Fibonacci numbers 1, 1, 2, 3, 5, 8, 13. The bar beside each target's row shows that beat. To keep the target white, the events inside the edge have to answer with the same beat.</p>",
+      body: "<p>If the centre repeated, the left half would have a black staircase edge moving one depth deeper per step, with everything below it white for ever. The staircase drops a dot (an edge event) at every step: the red ray.</p><p>Pick one white cell below the staircase, the target. Built sideways, its colour is the count of dots in its triangle: odd makes it black, even keeps it white. The red ray lands in each target's triangle an odd, odd, even, odd, odd, even number of times, for ever, the same pattern as the Fibonacci numbers 1, 1, 2, 3, 5, 8, 13; the landings are numbered so you can count them. That pattern is the beat, drawn as a bar beside each target. Whenever the beat is odd, the dots hidden above the staircase must land an odd number of times as well, or the target turns black. Acts 2 to 4 ask what could answer that for ever.</p>",
       key: [["front", "the edge's event; a dotted line for each landing"], ["stencil", "the target's triangle of slots", true], ["wedge", "cells that would have to stay white", true]] },
     2: { title: "The twin", cite: "GC597",
       body: "<p>A second ray three depths inside the edge would pay the beat exactly. Its landings, traced in teal, follow the parity of the Fibonacci numbers three further on, and that parity repeats every three, so it is the same odd, odd, even pattern. Edge plus twin is even everywhere, so every target stays white, and every bar beside the targets is short.</p><p>Real Rule 30 forbids it. A run of events D depths behind the edge needs a block of white cells that the edge's black cell would break: at most D/2 in a row, here one. Tick \"as Rule 30 allows\" and the twin can fire at most every other step (here, the even steps). The targets it then fails to pay show up as long red bars.</p>",
@@ -543,8 +563,13 @@ html.embed .page { padding-bottom: 0 !important; }
       body: "<p>Real Rule 30 keeps trying. This is the actual left half of a single black cell. Just behind its edge (the boxed strip, magnified at the lower left), the outer five cells read 1, 1, 0, then a cell that flips every step, then 1, for ever, counting from the edge.</p><p>So two events, three and four depths behind the edge's own event (teal), take turns at every step, never in a long run but never stopping. The inside never runs out of tries. What is still missing is a reason, from the actual clock, why those tries can never add up to the beat.</p>",
       key: [["front", "the edge's event"], ["twin", "the two events that take turns"], ["other", "other events"], ["stencil", "the moving strip, its magnifier and the flipping cell", true]] }
   };
+  var chain = ["the frame", "a repeating centre would owe a beat", "one neat payer, which Rule 30 forbids",
+    "young dots can never pay it all", "real Rule 30 keeps trying"];
   function setAct(a) {
     act = a; n = a === 4 ? 4 : 0; acc = 0;
+    document.getElementById("chain").innerHTML = "<b>The argument:</b> " + chain.map(function (c, i) {
+      return '<span class="' + (i === a ? "now" : "") + '">' + i + " " + c + "</span>";
+    }).join(" &rarr; ") + " &rarr; <b>open:</b> can older and older dots pay it at every depth?";
     ["a0", "a1", "a2", "a3", "a4"].forEach(function (id, i) { document.getElementById(id).setAttribute("aria-pressed", String(i === a)); });
     document.getElementById("modewrap").hidden = a !== 2;
     document.getElementById("agewrap").hidden = a !== 3;
@@ -564,7 +589,7 @@ html.embed .page { padding-bottom: 0 !important; }
       el.innerHTML = "step <b>" + Math.min(n, T) + "</b> · the same three cells in both pictures: the centre, halfway out and the left edge";
     } else if (act === 1) {
       var f = frontHits(n);
-      el.innerHTML = "target at depth <b>" + (L + 2 + n) + "</b> · the edge's events land <b>" + f + "</b> times in its triangle (" + (f % 2 ? "odd" : "even") + ", like F" + (n + 1) + " = " + fib[n + 1] +
+      el.innerHTML = "target at depth <b>" + (L + 2 + n) + "</b> · the edge's events land <b>" + f + "</b> time" + (f === 1 ? "" : "s") + " in its triangle (" + (f % 2 ? "odd" : "even") + ", like F" + (n + 1) + " = " + fib[n + 1] +
         ") · so the events inside must land an <b>" + (f % 2 ? "odd" : "even") + "</b> number of times too";
     } else if (act === 2) {
       var a = frontHits(n), b = twinHits(n, real);

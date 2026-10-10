@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sierpinski Everywhere</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a toolbar (what to draw, controls, a tip, the live readout, the key) on top; one stage under it, sized to
+   the screen, holding the familiar pyramid from one black square, with the pointed square's card beside it; the
+   notes follow underneath. */
+:root {
+  --paper: #ECEFEA;
+  --panel: #F5F6F2;
+  --ink: #1E1F1C;
+  --ink-soft: #5B6157;
+  --rule: #C8CDC2;
+  --kick: #A87306;
+  --cover: #9B2C52;
+  --tri: #1E5A86;
+  --seed: #2D7A57;
+  --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+    --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+  --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 0.95rem;
+  line-height: 1.5; }
+.page { max-width: 1280px; margin: 0 auto; padding-inline: 20px; padding-block: 0 44px; display: grid; gap: 20px; }
+.toolbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 3; background: var(--panel);
+  border: 1px solid var(--rule); border-top: 0; padding: 10px 14px 11px; display: grid; gap: 8px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; line-height: 1.1; margin: 0 auto 0 0; }
+.seg { display: flex; flex-wrap: wrap; }
+.seg button { border-radius: 0; margin-right: -1px; }
+.seg button:first-child { border-radius: 2px 0 0 2px; }
+.seg button:last-child { border-radius: 0 2px 2px 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 6px; }
+button { font: 500 0.82rem var(--font-body); color: var(--ink); background: var(--paper); border: 1px solid var(--ink-soft);
+  padding: 5px 11px; cursor: pointer; border-radius: 2px; }
+button:hover { background: var(--panel); }
+button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+button:focus-visible { outline: 2px solid var(--tri); outline-offset: 2px; }
+.tip { margin: 0; font-size: 0.86rem; max-width: 110ch; min-height: 2.9em; }
+.tip b { font-weight: 600; }
+.readout { margin: 0; font-family: var(--font-mono); font-size: 0.76rem; font-variant-numeric: tabular-nums;
+  min-height: calc(3em + 3px); }
+.ok { color: var(--seed); }
+.bad { color: var(--cover); }
+.key { display: flex; flex-wrap: wrap; gap: 3px 16px; font-size: 0.78rem; color: var(--ink-soft); align-items: center; }
+.key span { display: inline-flex; align-items: center; gap: 6px; }
+.chip { width: 13px; height: 13px; flex: none; }
+.stage { position: relative; display: grid; justify-items: center; min-width: 0; }
+canvas { display: block; max-width: none; cursor: crosshair; touch-action: manipulation; }
+.card { position: absolute; z-index: 2; pointer-events: none; background: var(--panel); border: 1px solid var(--rule);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12); padding: 7px 10px; max-width: 310px; }
+.card p { margin: 0 0 6px; font-size: 0.8rem; line-height: 1.4; }
+.card dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 1px 10px; font-family: var(--font-mono);
+  font-size: 0.74rem; font-variant-numeric: tabular-nums; }
+.card dt { color: var(--ink-soft); }
+.card dd { margin: 0; }
+.lede { margin: 0; max-width: 78ch; font-size: 1.02rem; }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px 26px; }
+.notes section { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.notes h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; margin: 0; }
+.notes p { margin: 0; max-width: 62ch; }
+.foot { font-size: 0.8rem; color: var(--ink-soft); margin: 0; max-width: 84ch; }
+.back { font-size: 0.9rem; margin: 18px 0 0; }
+@media (max-width: 760px) {
+  .page { padding-inline: 16px; }
+  .toolbar { position: static; }
+  .card { position: static; max-width: none; box-shadow: none; margin-top: 8px; width: 100%; }
+}
+html.embed .page > :not(.toolbar):not(.stage) { display: none !important; }
+html.embed .page { padding-bottom: 0 !important; }
+</style>
+<script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add("embed");</script>
+<script>
+/* Embedded in the Rule 30 page, this frame animates only while it is on screen. The page posts
+   {r30: "visibility", visible} as the frame scrolls in and out of view; while it is out, animation frames are held and
+   interval ticks are skipped, so nothing runs unseen. The frame asks once as it starts. Opened on its own, the page
+   always runs. (The same snippet is in every page the Rule 30 page embeds.) */
+(function () {
+  if (window.parent === window) return;
+  var on = true, held = {}, nid = 1e9;
+  var raf = window.requestAnimationFrame.bind(window), caf = window.cancelAnimationFrame.bind(window);
+  var si = window.setInterval.bind(window);
+  window.requestAnimationFrame = function (cb) { if (on) return raf(cb); held[++nid] = cb; return nid; };
+  window.cancelAnimationFrame = function (id) { if (held[id]) delete held[id]; else caf(id); };
+  window.setInterval = function (fn, ms) {
+    if (typeof fn !== "function") return si(fn, ms);
+    var rest = Array.prototype.slice.call(arguments, 2);
+    return si(function () { if (on) fn.apply(this, rest); }, ms);
+  };
+  window.addEventListener("message", function (e) {
+    if (e.source !== window.parent || !e.data || e.data.r30 !== "visibility") return;
+    var was = on; on = !!e.data.visible;
+    if (on && !was) { var q = held; held = {}; Object.keys(q).forEach(function (k) { raf(q[k]); }); }
+  });
+  try { window.parent.postMessage({ r30: "ask" }, "*"); } catch (e) {}      // ask whether we start on screen
+})();
+</script>
+</head>
+<body>
+<div class="page">
+  <div class="toolbar" id="toolbar">
+    <div class="bar">
+      <h1>Sierpinski Everywhere</h1>
+      <div class="seg" role="group" aria-label="What to draw">
+        <button id="m-r30" type="button" aria-pressed="true">Rule 30</button>
+        <button id="m-r60" type="button" aria-pressed="false">Kicks removed</button>
+        <button id="m-kicks" type="button" aria-pressed="false">Kicks only</button>
+      </div>
+      <div class="controls">
+        <button id="grow" type="button" aria-pressed="false">Grow row by row</button>
+        <button id="clear" type="button">Clear triangles</button>
+        <button id="dots" type="button" aria-pressed="true">Kicks shown</button>
+      </div>
+    </div>
+    <p class="tip" id="tip"></p>
+    <p class="readout" id="readout"></p>
+    <div class="key">
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="3.2" fill="var(--kick)"/></svg>kick: a white square with a black one to its right</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--cover)" opacity="0.25"/></svg>the pointed square's triangle</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="var(--cover)" stroke-width="1.8"/></svg>a kick that reaches it</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--tri)" opacity="0.5"/></svg>the triangle a clicked kick spreads</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="var(--seed)" stroke-width="1.8"/></svg>the starting square</span>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <canvas id="cv" role="img" aria-label="Rule 30 grown from one black square, time running down. Pointing at a square shades the triangle of earlier squares whose kicks reach it and circles those kicks; the card counts them. Clicking a kick draws the Sierpinski triangle it spreads."></canvas>
+    <div class="card" id="card" hidden><p id="say"></p><dl id="info"></dl></div>
+  </div>
+
+  <p class="lede">The familiar pyramid of Rule 30, grown from one black square, with time running down. Every square of
+    it, on the striped left side and on the wild right side alike, is an odd overlap of Sierpinski triangles: one grows
+    from the starting square, and one from every kick, a white square with a black square to its right. Point at any
+    square to see the kicks that decide it; click a kick to see the triangle it spreads.</p>
+
+  <div class="notes">
+    <section>
+      <h2>Rule 30 is a simpler rule plus kicks</h2>
+      <p>Rule 30 makes a square black when its upper-left neighbour differs from (the square above or its upper-right
+        neighbour). Rewritten, that says: do what Rule 60 does, black when the upper-left square and the square above
+        differ, and then flip the square under every kick. Rule 60 on its own grows one black square into a Sierpinski
+        triangle; press <b>Kicks removed</b> to see it. Each kick starts a triangle of its own, and where triangles
+        overlap they cancel in pairs. So a square is black exactly when an odd number of triangles cover it.</p>
+    </section>
+    <section>
+      <h2>On both sides</h2>
+      <p>The striped left side and the wild right side are built the same way, from the same kind of kick, and about a
+        quarter of all squares are kicks on both sides; the readout counts them. What differs is how the kicks are
+        arranged. On the left they fall in regular diagonal stripes, so their triangles stack into stripes; on the
+        right they are scattered, and the overlapping triangles look like noise. Point at a square on the wild side:
+        its triangle of kicks reaches back across the centre into the striped side.</p>
+    </section>
+    <section>
+      <h2>Why they all lean one way</h2>
+      <p>Every triangle spreads down and to the right, never to the left. Rule 30 uses its upper-left neighbour
+        exactly: flip that square and the square below always flips. Its upper-right neighbour counts only through
+        the kick. That one-sidedness is also why the left side can be built sideways from the centre column outwards,
+        as the Edge-Event Sieve does, and the right side cannot.</p>
+    </section>
+  </div>
+  <p class="foot">Run sideways, the same kicks build the left half from the centre: the Edge-Event Sieve draws that
+    picture, with its triangles spreading down and back in time. The page checks its own arithmetic: it rebuilds every
+    square from the triangles alone (Lucas's theorem: a triangle started r rows up reaches the square d places to its
+    right exactly when C(r, d) is odd) and compares the result with Rule 30 itself. The rewriting is exact algebra.
+    The quarter is a measurement: from one black square, over rows 400 to 799, the left third of the pyramid is 25.8%
+    kicks, the middle third 24.9% and the right third 25.0% (checked on 10 October 2026).</p>
+  <p class="back"><a href="./">&larr; Rule 30: the whole story</a></p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var cv = document.getElementById("cv"), ctx = cv.getContext("2d"), bar = document.getElementById("toolbar");
+  var card = document.getElementById("card"), stage = document.getElementById("stage");
+  var colors = {};
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    ["paper", "panel", "ink", "ink-soft", "rule", "kick", "cover", "tri", "seed"].forEach(function (k) {
+      colors[k] = cs.getPropertyValue("--" + k).trim();
+    });
+    colors.mono = cs.getPropertyValue("--font-mono").trim();
+  }
+  function sub(d, m) { return d >= 0 && d <= m && (d & m) === d; }      // C(m, d) is odd (Lucas)
+
+  /* ---- data: rows 0..T from one black square at index C; kicks of each row; a white margin either side ---- */
+  var T = 128, W = 0, C = 0, X = [], KK = [], check = "", mode = "r30", shown = 0, showDots = true, pinned = {};
+  function build() {
+    W = 2 * T + 3; C = T + 1; X = []; KK = [];
+    var row = new Uint8Array(W); row[C] = 1; X.push(row);
+    for (var t = 0; t < T; t++) {
+      var k = new Uint8Array(W), nx = new Uint8Array(W);
+      for (var i = 1; i < W - 1; i++) {
+        k[i] = row[i] === 0 && row[i + 1] === 1 ? 1 : 0;           // the kick: white, with black to its right
+        nx[i] = row[i - 1] ^ (row[i] | row[i + 1]);                   // Rule 30 itself
+      }
+      KK.push(k); X.push(nx); row = nx;
+    }
+    shown = T; pinned = {}; selfCheck();
+  }
+  function selfCheck() {                                              // every square again, from triangles alone
+    var big = KK.map(function (k) { var v = 0n; for (var i = W - 1; i >= 0; i--) v = (v << 1n) | BigInt(k[i]); return v; });
+    var mask = (1n << BigInt(W)) - 1n, ok = true, cells = 0;
+    for (var t = 1; t <= T; t++) {
+      var acc = 0n, s = t;
+      while (true) { acc ^= 1n << BigInt(C + s); if (s === 0) break; s = (s - 1) & t; }   // the starting square's
+      for (var tp = 0; tp < t; tp++) {
+        var m = t - 1 - tp, j = m;
+        while (true) { acc ^= big[tp] << BigInt(j); if (j === 0) break; j = (j - 1) & m; }
+      }
+      var v = 0n, r = X[t];
+      for (var i = W - 1; i >= 0; i--) v = (v << 1n) | BigInt(r[i]);
+      ok = ok && (acc & mask) === v; cells += 2 * t + 1;
+    }
+    check = ok ? "all " + cells.toLocaleString("en-GB") + " squares agree" : "MISMATCH";
+  }
+  function density(lo, hi) {                                          // kicks per square, rows T/2..T-1
+    var n = 0, k = 0;
+    for (var t = T >> 1; t < T; t++) {
+      var a = C + Math.round(lo * t), b = C + Math.round(hi * t);
+      if (lo === -1) a += 2; if (hi === 1) b -= 2;
+      for (var i = a; i < b; i++) { n++; k += KK[t][i]; }
+    }
+    return n ? k / n : 0;
+  }
+
+  /* ---- geometry ---- */
+  var dpr = 1, Wc = 800, Hc = 500, cell = 4, PAD = 8, TOP = 20;
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var pg = stage.parentElement, ps = getComputedStyle(pg);
+    var availW = pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);
+    var sticky = getComputedStyle(bar).position === "sticky";
+    var availH = Math.max(260, window.innerHeight - (sticky ? bar.getBoundingClientRect().height : 0) - 34);
+    var want = availW < 600 ? 64 : 128;
+    if (want !== T) { T = want; build(); }
+    cell = Math.min((availW - 2 * PAD) / W, (availH - TOP - 10) / (T + 1));
+    Wc = Math.round(W * cell + 2 * PAD); Hc = Math.round(TOP + (T + 1) * cell + 10);
+    cv.width = Math.round(Wc * dpr); cv.height = Math.round(Hc * dpr);
+    cv.style.width = Wc + "px"; cv.style.height = Hc + "px";
+  }
+  function X0(i) { return PAD + i * cell; }
+  function Y0(t) { return TOP + t * cell; }
+
+  /* ---- drawing ---- */
+  var hover = null;
+  function draw() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = colors.paper; ctx.fillRect(0, 0, Wc, Hc);
+    var c = cell + 0.3, t, i;
+    if (mode === "r60") {                                             // the starting square's triangle, alone
+      ctx.fillStyle = colors.ink;
+      for (t = 0; t <= shown; t++) for (var d = 0; d <= t; d++) if (sub(d, t)) ctx.fillRect(X0(C + d), Y0(t), c, c);
+    } else {
+      ctx.fillStyle = colors.ink; ctx.globalAlpha = mode === "kicks" ? 0.12 : 0.88;
+      for (t = 0; t <= shown; t++) { var r = X[t]; for (i = 0; i < W; i++) if (r[i]) ctx.fillRect(X0(i), Y0(t), c, c); }
+      ctx.globalAlpha = 1;
+    }
+    ctx.fillStyle = colors.tri; ctx.globalAlpha = 0.5;                // clicked kicks' triangles
+    Object.keys(pinned).forEach(function (key) {
+      var p = key.split(",").map(Number), tp = p[0], ip = p[1];
+      for (var t2 = tp + 1; t2 <= shown; t2++) {
+        var m = t2 - tp - 1, j = m;
+        while (true) { if (ip + j < W) ctx.fillRect(X0(ip + j), Y0(t2), c, c); if (j === 0) break; j = (j - 1) & m; }
+      }
+    });
+    ctx.globalAlpha = 1;
+    if (mode !== "r60" && showDots) {
+      var rr = Math.max(0.8, cell * (mode === "kicks" ? 0.42 : 0.3));
+      ctx.fillStyle = colors.kick;
+      for (t = 0; t < Math.min(shown, T); t++) {
+        var k = KK[t];
+        for (i = 0; i < W; i++) if (k[i]) { ctx.beginPath(); ctx.arc(X0(i) + cell / 2, Y0(t) + cell / 2, rr, 0, 2 * Math.PI); ctx.fill(); }
+      }
+    }
+    var fs = Wc < 600 ? 9 : 11;                                      // the two sides, named
+    ctx.font = "500 " + fs + "px " + colors.mono; ctx.textBaseline = "bottom"; ctx.fillStyle = colors["ink-soft"];
+    ctx.textAlign = "right"; ctx.fillText(Wc < 600 ? "← striped" : "← the striped left side", X0(C) - 6, TOP - 4);
+    ctx.textAlign = "left"; ctx.fillText(Wc < 600 ? "wild →" : "the wild right side →", X0(C + 1) + 6, TOP - 4);
+    ctx.strokeStyle = colors.rule; ctx.lineWidth = 1; ctx.setLineDash([2, 3]);
+    ctx.beginPath(); ctx.moveTo(X0(C) + cell / 2, TOP - 2); ctx.lineTo(X0(C) + cell / 2, Y0(shown + 1)); ctx.stroke();
+    ctx.setLineDash([]);
+    if (hover) drawHover(); else card.hidden = true;
+    readout();
+  }
+  function cone(t, i) {                                              // the places whose kicks reach (t, i)
+    var out = [];
+    for (var tp = t - 1; tp >= 0; tp--) {
+      var m = t - 1 - tp, d = m;
+      while (true) { if (i - d >= 0) out.push([tp, i - d]); if (d === 0) break; d = (d - 1) & m; }
+    }
+    return out;
+  }
+  function drawHover() {
+    var t = hover[0], i = hover[1], c = cell + 0.3, pl = cone(t, i), n = 0;
+    var seedIn = sub(i - C, t), r = Math.max(2.2, cell * 0.72);
+    if (mode === "r60") pl = [];                                      // no kicks to show in this mode
+    ctx.fillStyle = colors.cover; ctx.globalAlpha = 0.25;
+    pl.forEach(function (p) { ctx.fillRect(X0(p[1]), Y0(p[0]), c, c); });
+    ctx.globalAlpha = 1; ctx.strokeStyle = colors.cover; ctx.lineWidth = 1.5;
+    pl.forEach(function (p) {
+      if (!KK[p[0]][p[1]]) return;
+      n++; ctx.beginPath(); ctx.arc(X0(p[1]) + cell / 2, Y0(p[0]) + cell / 2, r, 0, 2 * Math.PI); ctx.stroke();
+    });
+    if (seedIn && t > 0) {
+      ctx.strokeStyle = colors.seed; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(X0(C) + cell / 2, Y0(0) + cell / 2, r * 1.3, 0, 2 * Math.PI); ctx.stroke();
+    }
+    ctx.strokeStyle = colors.cover; ctx.lineWidth = 2; ctx.strokeRect(X0(i) - 1, Y0(t) - 1, cell + 2, cell + 2);
+    var v = mode === "r60" ? (sub(i - C, t) ? 1 : 0) : X[t][i], tot = n + (seedIn ? 1 : 0), par = tot % 2;
+    var side = i === C ? "the centre column" : Math.abs(i - C) + (i < C ? " left of centre" : " right of centre");
+    var say, rows = [["square", "row " + t + ", " + side + ", " + (v ? "black" : "white")]];
+    if (mode === "r60") {
+      say = "With the kicks removed only the starting square's triangle is left: this square is " + (v ? "inside" : "outside") +
+        " it, so it is " + (v ? "black." : "white.");
+    } else if (t === 0) {
+      say = "The first row: the starting square is the only black one.";
+    } else {
+      say = "Each circled kick in the red triangle spreads its own Sierpinski triangle down to this square" +
+        (seedIn ? ", and so does the starting square (green ring)" : "") + ". That is " + tot + ": " +
+        (par ? "odd, so one is left over and the square is black." : "even, so they cancel in pairs and the square is white.");
+      var A = X[t - 1];
+      rows.push(["built from", "up-left " + A[i - 1] + " XOR above " + A[i] + " XOR kick " + KK[t - 1][i] + " = " + X[t][i]]);
+      rows.push(["its triangle", pl.length + " places, " + n + " kicks" + (seedIn ? " + the start" : "")]);
+      rows.push(["count", tot + " is " + (par ? "odd" : "even") + " → " + (par ? "black" : "white") +
+        (par === v ? ' <span class="ok">✓</span>' : ' <span class="bad">mismatch</span>')]);
+    }
+    document.getElementById("say").textContent = say;
+    document.getElementById("info").innerHTML = rows.map(function (q) { return "<dt>" + q[0] + "</dt><dd>" + q[1] + "</dd>"; }).join("");
+    placeCard(X0(i), Y0(t));
+  }
+  function placeCard(x, y) {
+    card.hidden = false;
+    if (getComputedStyle(card).position === "static") return;
+    var off = cv.offsetLeft, cw = card.offsetWidth, ch = card.offsetHeight;
+    var left = off + x + cell * 2 + 16, top = y + cell * 2 + 10;
+    if (left + cw > stage.clientWidth - 4) left = off + x - cw - 16;
+    if (top + ch > Hc) top = Math.max(4, y - ch - 12);
+    card.style.left = Math.round(Math.max(4, left)) + "px"; card.style.top = Math.round(top) + "px";
+  }
+  function readout() {
+    var L = density(-1, 0), R = density(0, 1);
+    document.getElementById("readout").innerHTML = "kicks, rows " + (T >> 1) + " to " + (T - 1) + ": left side <b>" +
+      (100 * L).toFixed(1) + "%</b> of squares, right side <b>" + (100 * R).toFixed(1) + "%</b> · rows shown " + shown +
+      " · self-check <span class=\"" + (check === "MISMATCH" ? "bad" : "ok") + "\">" + check + "</span>";
+  }
+  var tips = {
+    r30: "<b>Try:</b> point at any square, on either side, to see the triangle of kicks that decides it; click a kick " +
+      "(an ochre dot) to see the Sierpinski triangle it spreads. Press <b>Kicks removed</b> to see what is left without them.",
+    r60: "<b>Kicks removed:</b> this is Rule 60, Rule 30 without its kicks. One black square grows into a single Sierpinski " +
+      "triangle leaning right. Rule 30 is this plus one more triangle from every kick.",
+    kicks: "<b>Kicks only:</b> the squares are faded so the kicks show. On the left they fall in regular stripes; on the " +
+      "right they are scattered. Both sides have about a quarter of their squares as kicks."
+  };
+  function setMode(m) {
+    mode = m;
+    ["r30", "r60", "kicks"].forEach(function (x) { document.getElementById("m-" + x).setAttribute("aria-pressed", String(x === m)); });
+    document.getElementById("tip").innerHTML = tips[m];
+    draw();
+  }
+
+  /* ---- interaction ---- */
+  function at(ev) {
+    var b = cv.getBoundingClientRect(), x = ev.clientX - b.left, y = ev.clientY - b.top;
+    var i = Math.floor((x - PAD) / cell), t = Math.floor((y - TOP) / cell);
+    if (t < 0 || t > shown || i < 1 || i > W - 2 || Math.abs(i - C) > t + 1) return null;
+    return [t, i];
+  }
+  cv.addEventListener("pointermove", function (ev) {
+    var h = at(ev);
+    if ((h && hover && h[0] === hover[0] && h[1] === hover[1]) || (!h && !hover)) return;
+    hover = h; draw();
+  });
+  cv.addEventListener("pointerleave", function () { hover = null; draw(); });
+  cv.addEventListener("click", function (ev) {
+    var h = at(ev); if (!h) return;
+    hover = h;
+    if (h[0] < T && KK[h[0]][h[1]] && mode !== "r60") {
+      var key = h[0] + "," + h[1]; if (pinned[key]) delete pinned[key]; else pinned[key] = 1;
+    }
+    draw();
+  });
+  ["r30", "r60", "kicks"].forEach(function (x) { document.getElementById("m-" + x).addEventListener("click", function () { setMode(x); }); });
+  document.getElementById("clear").addEventListener("click", function () { pinned = {}; draw(); });
+  var dotsBtn = document.getElementById("dots");
+  dotsBtn.addEventListener("click", function () {
+    showDots = !showDots; dotsBtn.setAttribute("aria-pressed", String(showDots));
+    dotsBtn.textContent = showDots ? "Kicks shown" : "Kicks hidden"; draw();
+  });
+  var growBtn = document.getElementById("grow"), timer = null;
+  function setGrow(on) {
+    growBtn.setAttribute("aria-pressed", String(on)); growBtn.textContent = on ? "Pause" : "Grow row by row";
+    if (timer) { clearInterval(timer); timer = null; }
+    if (!on) return;
+    if (shown >= T) shown = 0;
+    hover = null;
+    timer = setInterval(function () { shown++; draw(); if (shown >= T) setGrow(false); }, 70);
+  }
+  growBtn.addEventListener("click", function () { setGrow(!timer); });
+  function retheme() { readColors(); draw(); }
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", retheme);
+  }
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(function () { size(); hover = null; draw(); }, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { readColors(); size(); draw(); });
+
+  readColors(); build(); size();
+  hover = [Math.round(T * 0.55), C + Math.round(T * 0.3)];
+  setMode("r30");
+})();
+</script>
+</body>
+</html>
