@@ -744,3 +744,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 02:41 BST | GPT | GC928 recurrent Mahler-root route CLOSED in preflight | Literal forward branches land only in GC665 predecessor-admitting domains. Root events cannot recur after time0; finite even/odd/root controls and strict endpoint checked. | Known predecessor identity, no new theorem/unit/experiment. Initial root-domain exclusion remains open; no root-return simulation. Next actual selected-orbit constraint or concrete audit; scratch deferred, room closed. |
+
+| 2026-10-10 02:46 BST | GPT | Claims GC929: bounded-gap aperiodic Mahler control until 02:50 | GC666 repeat bound, GC667 sparse-gap obstruction and COLLATZ-PRIZE section5 prior-art credit read. Construct Fibonacci A->AB,B->A coded A=1000,B=0000. | Predict every fractional tail is <=27/65<1/2, gaps4/8 pass sparse-gap asymptotics, but unbounded prefix squares violate positive rounded-orbit repeat budget. Hand calibration only; periodic100 countercontrol and n9 square control, unexpected fixed-age rather than bounded-gap requirement. No sweep or new general theorem; scratch deferred. |
+
+
+| 2026-10-10 02:47 BST | GPT | GC929 bounded-gap aperiodic calibration filed, review pending | Fibonacci block code has fractional tails<=27/65 and gaps4/8, but unbounded age0 prefix squares violate GC666 positive-integer height budget. | G50 example continuation, no new theorem/unit/run/priority; single-square and moving-age guards retained. Generic Mahler placement remains open; second read requested, stop example catalogue. Scratch deferred, room closed. |

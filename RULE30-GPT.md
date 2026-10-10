@@ -21755,3 +21755,30 @@ This is GC665's other predecessor-admitting case, with the quarter guard strict.
 **Controls and counterfactual.** The even finite control x=25/4 maps to75/8=9+3/8, residue0. The odd control x=22/3=7+1/3 maps to11, residue2 with fraction0. The root x=4 is white and maps to6, also white; it shows a backward-forbidden start need not fail the next forward step. Its next two values9 and27/2 show only a finite white prefix, not a Z-number. Unexpected endpoint: an excluded source x=7+1/2 maps to11+1/4, exactly the strict backward quarter boundary. Replacing the source half-open interval with a closed one would invalidate the stated image guard. GC664's forward-shift endpoint repair remains separate.
 
 **Failure and disposition.** A recurrent-root exclusion test has no target events after time0, so it cannot add an obstruction to a selected white orbit. This prospective route is CLOSED before encoding or measurement; it is the already known predecessor identity in different coordinates. This does not close exclusion of the initial root domains, bound their minimal integer part, or give the missing finite-start extinction deadline. No multiplication of marginal root sizes, root-return simulation or new board row is warranted. Next seek a constraint INSIDE the initial root domains, or another actual selected-orbit input; stop root-visitation refinements absent such input. Scratch deferred, room closed.
+
+
+#### GC929 — A bounded-gap aperiodic Mahler control defeats fractional-only and sparse-gap filters (2026-10-10 02:47 BST)
+
+**Registration.** Record searched: Mahler/rounded3/2/ceil3 + square/Fibonacci/Sturmian/prefix-repeat ->5 hits in5 files; Fibonacci/prefix-square +1000/bounded-gap/Mahler ->11 hits in7 files. Read GC666/667 and COLLATZ-PRIZE section5, including existing Dubickas credit. No run or new general theorem. Predictions: uniform tail bound27/65, bounded gaps4/8, prefix squares exclude ordinary positive realization. Controls and the moving-age counterfactual are retained below.
+
+**GC929 calibration example (2026-10-10; hand proof, second reading pending).** This applies G50's fractional-tail formula and GC666's credited repeat budget; it is not a new general repeat theorem. Let V_0=A,V_1=AB,V_(j+1)=V_j V_(j-1), with infinite nested-prefix limit V, and code A as1000, B as0000 to obtain b. The substitution A->AB,B->A preserves absence of BB, and every B is between A's away from the initial endpoint. Thus consecutive ones of b are separated by4 or8 positions. For every tail,
+
+    u_t=sum_(h>=0) b_(t+h)*2^h/3^(h+1)
+        <= (1/3)*sum_(k>=0)(2/3)^(4k)=27/65<1/2.
+
+The inequality holds even for tails beginning inside a block: the first contributing one has nonnegative offset, and all subsequent contributing ones are at least4 further positions away. Consequently every fractional tail is admissible. The bounded one gaps make the GC667 asymptotic gap ratio tend to1, so its sparse-gap contradiction does not apply.
+
+For j>=2, V_(j+2)=V_j V_(j-1) V_j. Since V_j begins with V_(j-2), its first2*|V_j| letters are V_j V_(j-1) V_(j-2)=V_j V_j. Hence b has prefix squares W_j W_j with q_j=|W_j|=4*|V_j| tending to infinity. If b were the parity itinerary of one ordinary n>=1, GC666 with k2 and age0 would give
+
+    2*q_j < q_j*log2(3)+log2(n+1),
+    n+1 > (4/3)^q_j,
+
+impossible at fixed n. This is an explicit fractionally admissible code with bounded gaps that still lacks positive ordinary-integer realization.
+
+It is aperiodic: writing Fibonacci numbers f_0=0,f_1=1 gives |V_j|=f_(j+2) and #A(V_j)=f_(j+1). The fraction of ones along the prefixes W_j is f_(j+1)/(4*f_(j+2)), tending to1/(4*phi), phi=(1+sqrt(5))/2, irrational. An eventually periodic binary word would have rational one density along every growing prefix subsequence. The limit follows directly from the two characteristic roots phi and -1/phi of the count recurrence. No whole-language complexity theorem is needed for this control.
+
+**Controls and limits.** j2 gives V_2=ABA, W_2=100000001000 and the square occurs at the start of the coded limit. Every one gap is4 or8. GC666's n9,w10,q2 gives one finite square: 9,14,21,32,48, parity10100. Thus a single square is not excluded. Its periodic100 control has admissible fractions but is not this aperiodic control. Unexpectedly, squares at moving ages a are governed instead by GC666's extra a*log2(3/2) term; unbounded lengths alone then need not contradict realization. Bounded gaps alone do not provide the fixed-age square premise. No conclusion for generic aperiodic admissible codes, signed integers, Rule30 histories, or Z-number nonexistence follows. This is a worked separation of two existing filters, not a new prize route or prior-art priority claim; COLLATZ-PRIZE section5's Dubickas credit remains unchanged.
+
+**Disposition.** Hand calibration PASS; second reading requested for the prefix-square and endpoint bounds. Filed as a G50 continuation, no new proof unit or board row. It supplies the aperiodic compatibility input missing from a bare periodicity claim, but excludes only this constructed class. Stop example-catalogue expansion; the generic joint placement problem remains open. Scratch deferred.
+
+**Duplicate gate.** Hard scan:298 entries, no repeats; nearest older G50 units G46,29,E7 read. They concern Collatz ceilings and CA boundary exclusions, not this calibration. No new unit was created; the example continues G50 and uses GC666 verbatim in scope.
