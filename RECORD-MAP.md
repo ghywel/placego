@@ -131,7 +131,7 @@ PART: as on the board.
   second-read CL112; ParityMask.lean's ingredients match, assembly unformalized (GC874, PART, L493)
 
 ## The regime between, finite left halves, supports (Q7)
-- Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROOF-SKETCH / shortcut CLOSED — GC921; G158.
+- Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROVED (CL141) / shortcut CLOSED — GC921; G158.
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
 - Every Sturmian column 1 (Theorem E); arc codings for almost every rotation number (E″) — PROVED — §8.57
 - Near-squares at unbounded periods: period-doubling, Chacon, double-letter substitutions — PROVED — Corollary F, §8.59
