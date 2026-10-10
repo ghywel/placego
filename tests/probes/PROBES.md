@@ -611,3 +611,5 @@ app is unpublished by design.
 - `lexicon/rule30_rrl_residual.py`: GC980 suffix-test quotient preserves source/test membership and GC978 separator; abstract C32 overflow round37. No certificate.
 
 - `lexicon/rule30_rrl_learn.py`: GC981 two guided loss refinements verified; third attempt hits shared time cap. No certificate; short dead-prefix viability identified as next refinement.
+
+- `lexicon/rule30_rrl_viable.py`: GC982 short dead-prefix viability blocks GC981 pumping with44 tests; controls PASS, C32 overflow round37. No invariant.

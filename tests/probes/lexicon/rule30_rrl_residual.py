@@ -28,14 +28,22 @@ TESTS=sorted({LOSS[i:] for i in range(len(LOSS)+1)} |
              {(0,)*n for n in range(5)},key=lambda w:(len(w),w))
 
 
-def residual(a):
+def residual(a,viability=False):
     a=c.prune(a); rows,finals=a
     def member(q,w):
         for x in w:
             q=rows[q][x]
             if q<0: return False
         return q in finals
-    signatures=[tuple(member(q,w) for w in TESTS) for q in range(len(rows))]
+    live={q for q,row in enumerate(rows) if q in finals or any(j>=0 for j in row)}
+    def viable(q,w):
+        for x in w:
+            q=rows[q][x]
+            if q<0: return False
+        return q in live
+    signatures=[tuple(member(q,w) for w in TESTS) +
+                (tuple(viable(q,w) for w in TESTS) if viability else ())
+                for q in range(len(rows))]
     groups={}; blocks=[]
     for sig in signatures:
         if sig not in groups: groups[sig]=len(groups)
@@ -54,7 +62,19 @@ def residual(a):
     assert c.subset(a,out)
     for w in TESTS:
         if w: assert t.accepted(a,w)==t.accepted(out,w)
+    if viability:
+        trimmed=c.prune(out)
+        for w in TESTS:
+            assert viable(0,w)==prefix_viable(trimmed,w)
     return out
+
+
+def prefix_viable(a,w):
+    q=0
+    for x in w:
+        q=a[0][q][x]
+        if q<0: return False
+    return q in a[1] or any(j>=0 for j in a[0][q])
 
 
 def controls():
