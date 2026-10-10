@@ -23668,3 +23668,28 @@ bound, no refutation of C32, and no nonregularity conclusion. Local L556's
 K16 witness already rules out C17 for K16 and K10. Retain the failed closure;
 next seek a sound finite overapproximation with exact inclusion checks, or
 use Local's stronger language, rather than extend this iteration for counts.
+
+
+#### GC974 — Boundary-only widening cannot certify a white-run bound (2026-10-10)
+
+Specific obstruction to the proposed GC973 next step; hand argument, not second-read.
+Known triangular mechanism: G18.4 and G130; certificate object: GC970. Fix v.
+After d inverse-column steps the first bit is u(d) XOR a function of earlier
+u bits and v(0..d-1), by induction in GC970's recurrence. Thus each successive
+u(d) independently sets that depth's initial-row cell without changing earlier
+depths. This applies to arbitrary pair words, not only clock words.
+
+For a boundary-only abstraction retaining the first and last m letters and
+forgetting the middle, take an accepted clock word of length n=2m+C+1.
+Modify only u(m)..u(m+C) to force depths m..m+C white. Both boundaries
+remain unchanged, so the abstraction admits this C+1 run for every C.
+Therefore this abstraction cannot satisfy GC970's all-depth bounded-run
+obligations for any finite allowance. This is not a witness in the full clock
+language, and does not close widening that retains internal factor constraints.
+
+Preregistered controls in rule30_rrl_boundary.py: both phases, m=4,8,16,
+C=32, all six constructions PASS. Independent inverse truth-table replay
+checks the white cells; a final-pivot flip changes its target and preserves
+earlier depths; even the terminal right bit is preserved. Full clock
+membership rejects all six as expected. Stop boundary-only widening; next
+state merging must retain internal constraints and pass exact image inclusions.

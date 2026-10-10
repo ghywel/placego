@@ -259,6 +259,7 @@ PART: as on the board.
 
 
 ## Routes closed (do not reopen without new evidence)
+- Boundary-only temporal widening admits arbitrary white runs — PROOF-SKETCH / COMPUTED controls — GC974; internal-factor widening remains open.
 - Bounded runs from a thin layer: runs grow at every width to 16 — CLOSED — §8.14, §8.41
 - Periodic column 1: Jen's theorem; the 550,201 words were an instrument check — CLOSED — §8.13; M2
 - "Structured families" beating chance: luck — CLOSED — §8.16
