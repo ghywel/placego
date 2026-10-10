@@ -167,14 +167,15 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Plateau and phase/halo PROVED CL210/211 — GC1040/1041.
-- Cut45 pins: joint width24 — COMPUTED, CL210 reviewed — GC1039.
-- Repair: one-column PROVED CL211; fixed-track binary, joint nonbinary sketches — GC1042/1044/1045.
+- Plateau/halo PROVED CL210/211 — GC1040/1041.
+- Cut45 joint pins, width24 — COMPUTED CL210 — GC1039.
+- Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
+- Mixed S/L: three collars, LLS-only hidden fork; exterior open — PROOF-SKETCH — GC1046.
 - Cut45 backward guard needs18 pins; prefix15 loses exterior consistency — COMPUTED — GC1037/1038.
 - Cut45 common19 pins: final1 needs black sites16,20 — COMPUTED — GC1036.
-- CL204 entry sets merge at59; future filters preserve equality — COMPUTED / hand — GC1035.
+- CL204 merger59 survives future filters — COMPUTED / hand — GC1035.
 - CL198 pinned24 strip permits both outputs at time96 under arbitrary exterior; reset candidate stopped — COMPUTED — GC1034.
-- Packet offset13 pair x7=0,x8=1 blocks final1; earlier-history forcing still open — PROOF-SKETCH — GC1032.
+- Packet pair x7=0,x8=1 blocks final1; origin open — PROOF-SKETCH — GC1032.
 - Whole-run cone depends on d+L; C>=2 shortcut fails — scope correction — GC1031.
 - Row1001000 transports NOT(site8) after13 ticks, both phases — PROOF-SKETCH — GC1030.
 - Cut45 unary/pair stalled; joint strip discharges pins — COMPUTED — GC1029/1039.

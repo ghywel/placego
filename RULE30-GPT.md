@@ -27368,3 +27368,93 @@ Publication checkpoint: Local integrated6d9dfff5 (39447e59), resolving
 last tick's two main races. SLC3 at ea9a2e88 adds22 verified cuts65..114
 and lowers entropy0.1192 to0.1171; both predictions refuted. Accepted
 with Local's source attribution; no duplicate solve or certificate audit.
+
+
+#### GC1046 — Mixed S/L collars have three types; their ambiguity sits at LLS junctions (2026-10-10)
+
+Missing inference for CL213's typed composition: a finite, sound coefficient
+alphabet for mixed synchronized S/L histories, retaining the hidden long
+branch that visible letters miss. Record searched: `1011011100` -> GC744;
+`0110010011|1010110101` with `S/L|long|slab|column` -> no mixed
+alternative-L collar theorem. Reuse GC606/607, corrected GC609,
+GC622/623/625/626 and GC706; their returns are not claimed anew.
+P1/P2 and terminal counterfactual registered in rule30_sl_collar.py before
+its independent controls. No SAT, cut extraction or width census.
+
+**Hand result, PROOF-SKETCH.** Let c0(t)=t mod2 be the externally
+clamped wall; no finite full configuration carrying that clock is assumed.
+At a white-time marker1110, every S/L
+interval that also closes at marker1110 has exactly one of these types.
+Entries are initial spatial cylinders; strings are times0 through D-1.
+
+| Type | Entry | D | c1 | c2 | c3 | c4 |
+| --- | --- | --- | --- | --- | --- | --- |
+| S | 11101 | 6 | 110100 | 101100 | 100001 | 001111 |
+| L0 | 111001 | 10 | 1101000100 | 1011011100 | 1010110001 | 0110101111 |
+| L1 | 111000001 | 10 | 1101000100 | 1011011100 | 1010110101 | 0110010011 |
+
+Completeness follows from GC623's disjoint prescribed-long cylinders and
+GC624/625's marker-return requirement; marker S starts with fifth bit1.
+GC606's even prefixes11101,01011,0001,1110 and intervening prefixes
+1000,1101,0011 give the S collar. GC744's ordinary-L shielding uses only
+entry111001 and closing1110. GC607 supplies that closing marker for
+EVERY tail of111001, so the following visible letter need not be L.
+The strengthened prefixes of GC622 give L1: at times 0..10 the first
+four bits are1110,1001,0111,1100,0010,0111,0100,1110,0001,0011,1110.
+These are local shielded identities, not sampled profiles. All three
+cylinders close regardless of farther initial tail.
+
+Corrected GC609 gives S -> S or L0; GC622 gives L1 -> S. Consequently
+any consecutive synchronized types obey the finite necessary graph
+
+    S -> {S,L0};  L0 -> {S,L0,L1};  L1 -> {S}.
+
+The L0 row does NOT assert that its every tail renews: only when the next
+interval is a marker-return S/L interval does GC623 classify it. Nor
+are arbitrary paths through this graph asserted realizable. In an
+interior interval L1 therefore occurs only as L0,L1,S, projecting to
+visible LLS. Both L types have identical c1,c2, and differ in c3 ONLY
+at time7 (0 versus1); their c4 differences are exactly times4,6,7.
+Thus a fixed synchronized visible K-gap word determines its entire
+four-column collar except for at most one binary choice at each LLS
+junction, plus the two boundary intervals. If N_LLS counts its internal
+LLS factors, the number of actual four-column collars is at most
+2^(N_LLS+2). This is an upper bound on collar multiplicity, not a
+realizability claim or a bound on left-hand records.
+
+**Exact interface equations.** For each type the site4 update with a
+proposed next track c5 is equivalent to the following units; all its
+other times have black c4 and are shielded. The closing sample c4(D)=0
+is included when evaluating the last update.
+
+    S:  c5(0)=c5(1)=1.
+    L0: c5(0)=0, c5(3)=1, c5(5)=0.
+    L1: c5(0)=c5(3)=c5(4)=c5(6)=c5(7)=0.
+
+Indeed, at each listed white time, c5(t)=c4(t+1) XOR c3(t);
+at black times the table directly satisfies c4(t+1)=1 XOR c3(t).
+Concatenate these translated units to obtain ALL boundary input tracks
+that produce that typed four-column band. The next track's OWN updates
+and its actual past remain obligations. This exact interface relation
+is the finite coefficient object for further correlated extension;
+it must not be promoted to a closed exterior or an all-depth certificate.
+
+**Independent and unexpected controls.** Literal shrinking cones and a
+separate packed engine agree on all 1,280 full cylinder assignments with
+six sites retained at the closing time. P1 and P2 HELD: ordinary L has
+both following S and ordinary-L entrances, with the same collar. It also
+has returns outside those two simple cylinders; these are retained.
+All 128 complete cones of111000000 still emit visible L but miss marker1110.
+Thus a final visible L without a prescribed hidden return must be exempt.
+GC626 synchronizes arbitrary-start S/L words at their internal boundaries;
+apply the collar to the middle intervals after deleting the first and
+last gaps. Initial1101/1111 and a terminal failed L are not erased by fiat.
+No new all-depth bound, and no solver work requested.
+
+CL213 at 57032c74 is accepted: GC1044's fixed-track binary repair and
+GC1045's direct joint-track obstruction are independently CONFIRMED.
+Further fixed-track spatial closure remains OPEN; the joint obstruction
+does not refute it. The present collar localizes a finite hidden fork,
+but the relations carried by its fifth and farther columns are not yet
+closed under composition. Next hand target: transport those correlated
+relations across an LLS switch without discarding the exterior past.

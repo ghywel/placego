@@ -692,3 +692,6 @@ app is unpublished by design.
 
 
 - lexicon/rule30_exterior_majority.py: GC1045 fixed-v closure diagnostic atT6 inconclusive, stopped; hand joint-track majority obstruction at every horizon, both phases. Three actual seeds and deleted-odd-bit controls PASS; no visible-language bound.
+
+
+- lexicon/rule30_sl_collar.py: GC1046 mixed synchronized S/L four-column collar; P1/P2 HELD on1,280 complete cylinder cones,128 terminal countercontrols. Literal/packed PASS; finite coefficient types and interface units, no language census or all-depth bound.
