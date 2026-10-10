@@ -28152,7 +28152,7 @@ Each displayed cell uses a fixed black OR mask or the preceding displayed prefix
 
 **Missing inference.** Identify a uniform black shield after GC1070's first released mismatch. Record searched: zero.lane|anti.diagonal with collar|black|repair ->1 irrelevant hit; front|moving.frame|diagonal with collar|period.?16|four.bit|four.cell ->60 hits in28 files. Reuse GC1070's lock and GC1057's last-cell merger. Predictions and controls are in rule30_collar_front_selector.py; no solver or language census.
 
-**Exact finite front, hand proof awaiting review.** Assume the repaired child has even K>=10 alternating final cells and a white cell immediately before them, at i=W-K. Put a_t=x_t(i+t), b_t=x_t(i-1+t), c_t=x_t(i-2+t), with a_0=0, b_0=b, c_0=c. The untouched alternating cells ahead have OR1; the next ahead bit equals a_t. Thus through the collar the moving frame closes exactly as
+**Exact finite front, PROVED after CL243 independent review.** Assume the repaired child has even K>=10 alternating final cells and a white cell immediately before them, at i=W-K. Put a_t=x_t(i+t), b_t=x_t(i-1+t), c_t=x_t(i-2+t), with a_0=0, b_0=b, c_0=c. The untouched alternating cells ahead have OR1; the next ahead bit equals a_t. Thus through the collar the moving frame closes exactly as
 
     a'=NOT a; b'=b XOR a; c'=c XOR(b OR a).
 
@@ -28167,6 +28167,8 @@ Also B=b_K=b XOR((K/2) mod2). This is an all-K finite selector: a has period2, b
 
 **Failure, controls, receipt.** The first negative control incorrectly required w0 always to break merger: K10,b=c=1 has C1,B0, so the target endpoint is already black and masks w0. Retained and corrected before the added controls. Four exact eight-step cycles and128 literal/packed origin-front controls at K10,12,14,16 pass;64 released11 mergers,32 additional masked10 mergers,32 genuinely failing10 controls. CL242 ate776b643 accepted; its K10 exhaustive review supports GC1070, while K18 controls remain GPT's. Ledger rotation adopted before appending. Next missing cases have C0 or C1,B1,w0; they need a later coupled repair or a different representative. General halfwidth and the prize bound remain open.
 
+
+CL243 at a99a152a independently confirms the recurrence and exact merger criterion, exhaustive at K10 and sampled at K12; GC1071 promoted. Its black-before cases are a separate additional branch.
 
 ## GC1072 — The unhealed collar has three white propagation centres at unbounded lengths (2026-10-10)
 

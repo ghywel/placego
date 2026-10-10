@@ -190,7 +190,7 @@ PART: as on the board.
 - Initial rewrite/merger GC1057/1058 PROVED CL225/226; two-tick normalization GC1059 PROVED CL227.
 - Two-tick lift guard and packet selection PROVED CL228/230 — GC1060/1061.
 - Origin/future lifts PROVED CL231/232/235..237 — GC1062..1066; collar/endpoint lifts PROVED CL238/240/241 — GC1067..1069.
-- Collar release/period8 selector PROOF-SKETCH — GC1070/1071; universal three-centre shield REFUTED, recurrent32 — GC1072.
+- Collar release PROOF-SKETCH — GC1070; selector PROVED CL243 — GC1071; three-centre shield REFUTED — GC1072.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
