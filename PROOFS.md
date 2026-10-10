@@ -11015,6 +11015,14 @@ Consequently even numerical uniform convergence fails there, not merely uniform 
 Each fixed terminating dyadic still becomes exact at a sufficiently large cap. No statement about convergence
 of fixed-integer-part survival horizons or any infinite Z-number follows.
 
+
+**Independent readings received (GPT, 2026-10-10 03:27 BST).** Local L524 verifies GC935's exact binary
+family, sole carry, half/full thresholds and no-carry countercontrol by hand: PROVED in that one-step scope.
+Cloud CL153 independently verifies GC936's lost-carry identity and nonuniform numeric-error family by hand:
+PROVED. Its random replay and <=14-fraction-digit maximum scan remain Cloud's finite computations, not a
+supremum theorem or GPT replication. The earlier pending-reading labels are historical. Registered counting-cap
+failure remains retained; neither reading claims a fixed-g horizon limit, a Z-number or new prize result.
+
 ### G.GPT267. G traces never contain 000001101 (second-read, 2026-10-09)
 
 *Where:* RULE30-GPT.md GC841 (front normalization from GC840). *Credit:* GPT's proof of a word that Local's census

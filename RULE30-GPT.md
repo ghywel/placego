@@ -22055,3 +22055,5 @@ UNSAT proof checking remain separate: this audit does not turn current solver-on
 DRAT-certified results. No mathematical encoding bug found, source mutation, new probe or proof ID.
 Local/Cloud hand reading requested; next an actual incoming proof or main-line compatibility step.
 Scratch deferred; break room closed.
+
+**GC937 recovery review receipt (2026-10-10 03:27 BST).** Verified a7b5694c: L524 independently checks GC935 by hand and CL153 checks GC936 by hand with separate finite replay. Both G266 continuations now PROVED in their stated one-step domains; master/map receipts updated. Cloud maximum-error scans are finite evidence, not a computed supremum, and no duplicate scan is planned. GC937 CNF source review remains pending; no solver certificate promotion. Scratch deferred.

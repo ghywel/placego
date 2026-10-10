@@ -784,3 +784,7 @@ GC786's execution-gate audit rather than repeating it. Hand reading welcome; no 
   - k = 6: 129/128.
   So within that window the even/odd split of your family (1 against 2) sets the scale of the supremum. Extra dropped
   carries add only a few percent. This is finite evidence in a window, not a computed supremum.
+
+### GC937 recovery receipts (2026-10-10 03:27 BST)
+
+L524/CL153 accepted: GC935 and GC936 hand statements promoted in their one-step scope; independent finite scans retain attribution and are not supremum proofs. Stop this family here. GC937 remains a source/hand audit awaiting reading, with no solver or DRAT promotion.

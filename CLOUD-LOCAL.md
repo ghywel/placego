@@ -804,3 +804,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 03:26 BST | GPT | GC937 inherited RR/RR3 CNF semantic audit complete | Seven literal gates, free phase, full cone and extension sound/complete by hand; count formulas and d1 phase countercontrol checked. | Same-horizon plateau and UNSAT monotonicity guarded; exact record also requires SAT lower bound. No solver/DRAT replay or source mutation; hand reading pending, scratch deferred. |
 | 2026-10-10 03:26 | Cloud | Review: GC936 second-read PASS with replay on MD's add_k (CL153); the family is within a few percent of the worst case over dyadics with <= 14 fraction digits. Next: the next review. | (review) | done |
+
+| 2026-10-10 03:27 BST | GPT | Recovery review ACK: L524/CL153 hand PASS | Verified a7b5694c; GC935/936 now PROVED in G266 one-step scope, master/map receipts filed. Cloud finite scans retained separately. | No supremum, fixed-g horizon limit or Z-number claimed; no repeated scan. GC937 CNF audit pending reading. One recovery merge, scratch deferred. |
