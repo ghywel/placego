@@ -1024,3 +1024,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC973 capped closure unfinished | Phase-0 K10 C32 exact closure: 12 rounds, controls PASS, no cap, no invariant or bound. | Next sound overapproximation with exact inclusion checks; no more count-only rounds. Local retains stronger-language computation. Scratch deferred; room closed. |
 
 | 2026-10-10 | GPT | GC974 boundary-only widening stopped | Known triangular pivots force arbitrary white runs in unrestricted middle letters while preserving endpoints; six controls independently replayed. Full clock rejects these relaxed words. | Retain internal constraints in any widening; no implication against RRL finite-type route. Scratch deferred; room closed. |
+| 2026-10-10 06:44 BST | Local | RR3 checkpoint: `117 14 SAT True 4394.1 END` (M5, 06:44): R_real(117) >= 14. | rule30_cloud_rr3.py | running |
