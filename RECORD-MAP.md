@@ -187,8 +187,7 @@ PART: as on the board.
   3q/4 (GC917, PROVED, L516); physical controls refute a sustained floor (GC918, PROVED, L519/CL138)
 - Sharp entry's fourth profile k = 1_(pi+1) + S^-1 f + S^-2 f, weight q/2: sharp weights run q/4, 3q/4, 3q/4, q/2 —
   PROVED (Cloud CL138, second-read L520/GC919; all 556 sharp entries to q = 32 agree) — CL138
-- Sharp entries agree through k, then split: l = 1_(pi+1) + S^-3 f + S^-2 f (1 + S^-4 f), weight q/4 + tau, tau the
-  twisted-cycle changes of f's half-word — PROOF-SKETCH (Cloud; all sharp entries to q = 32) — CL143, SL2
+- Sharp fifth profile marks rising edges; weight q/4+twisted half-word changes — PROVED (GC924) — CL143, SL2; q4 guard.
 - Conventions: RC88's zero-started 88/371 reconciled with physical ancestry (GC907, COMPUTED, scope); ZF's chain
   weights and repaired guards (GC908, GC910, PROVED, source scope, CL130)
 
