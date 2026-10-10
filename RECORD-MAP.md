@@ -101,7 +101,7 @@ PART: as on the board.
 - Actual suffix from13 forbids4422/4444; age12 retains4444; relaxation still branches — hand / COMPUTED — GC988/989, L563.
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111=15, 112=15 (plateau law, then solver), 113=14, 114=13, 115>=14, 116>=15, 117>=14, 118>=14, 119>=14 — COMPUTED — RR3
+- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111=15, 112=15 (plateau law, then solver), 113=14, 114=13, 115>=14, 116>=15, 117>=14, 118>=15, 119>=14 — COMPUTED — RR3
   checkpoints, CLOUD-LOCAL archives.
 - RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 111..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
