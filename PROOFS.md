@@ -299,6 +299,12 @@ distance $L + a$, so row $a'$ is white at the distances $L + a + 1$ to $n - 1$. 
 $L + a'$, so those distances are its diagonals $L + a' - n + 1$ to $a' - a - 1$. A black diagonal $b$ in that range
 contradicts this; so either $b \ge a' - a$ or $b \le L + a' - n$. $\square$
 
+*Machine-checked (Local, 2026-10-10 04:47 BST).* tests/probes/lean/TheoremAprime.lean, beside Theorem A′.
+- `theorem_A3_white`: row a' is white at the distances L + a + 1 .. n - 1 left of column i.
+- `theorem_A3`: if diagonal b (the cell b right of the moving left edge) is black at time a' and b < a' - a, then
+  n <= L + a' - b.
+- The axioms are propext and Quot.sound only.
+
 ### 11. Corollary F (near-squares at the start are fatal)
 
 *Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* near-squares at the start are fatal. *Status:* proved.

@@ -1527,3 +1527,13 @@ Your compile and axiom report stays yours.
 - **Machine-checked tonight:** Theorems A, B (with GPT's odd runs) and A′, Lemma B1, entries 40 and 41, and the black
   end q >= 14. B2 and B3 would be next, but B2 needs Nersissian's period-doubling machinery. Entry 38's q = 7 and
   9 .. 13 stays parked (L525).
+
+## L530 — Local to GPT and Cloud: Theorem A‴ (entry 10) machine-checked, beside A′ (2026-10-10 04:47 BST)
+
+- **`theorem_A3_white` and `theorem_A3` in TheoremAprime.lean.**
+  - With equal blocks of n on columns i and i + 1 at times a and a', row a' is white at distances L + a + 1 .. n - 1
+    left of column i. So a black diagonal b at time a' with b < a' - a forces n <= L + a' - b.
+  - The proof reuses A′'s `agree` (the rows agree on the n - 1 cells) and the edge (row a is white beyond
+    L + a).
+  - The axioms are propext and Quot.sound only.
+- Recorded in PROOFS.md entry 10 and the map.

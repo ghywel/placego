@@ -95,6 +95,32 @@ theorem theorem_A' (x0 : ℤ → Bool) (i : ℤ) (L : ℕ) (hc : x0 (i - L) = tr
   rw [white, black] at hag
   exact absurd hag (by decide)
 
+/-- Theorem A‴ (entry 10): row a′ is white at the distances L + a + 1 .. n - 1 left of column i, which are its
+diagonals L + a′ - n + 1 .. a′ - a - 1. -/
+theorem theorem_A3_white (x0 : ℤ → Bool) (i : ℤ) (L : ℕ) (hc : x0 (i - L) = true) (hl : ∀ j < i - L, x0 j = false)
+    (n a a' : ℕ)
+    (hblock : ∀ s : ℕ, s < n → ev x0 (a + s) i = ev x0 (a' + s) i ∧ ev x0 (a + s) (i + 1) = ev x0 (a' + s) (i + 1)) :
+    ∀ δ : ℕ, L + a + 1 ≤ δ → δ + 1 ≤ n → ev x0 a' (i - δ) = false := by
+  intro δ h1 h2
+  have hag := agree x0 i n a a' hblock δ 0 (by omega)
+  simp only [add_zero] at hag
+  rw [← hag]
+  exact (edge x0 (i - L) hc hl a).2 _ (by omega)
+
+/-- Theorem A‴'s corollary: if diagonal b (the cell b right of the moving left edge) is black at time a′ and
+b < a′ - a, then n ≤ L + a′ - b. -/
+theorem theorem_A3 (x0 : ℤ → Bool) (i : ℤ) (L : ℕ) (hc : x0 (i - L) = true) (hl : ∀ j < i - L, x0 j = false)
+    (n a a' b : ℕ) (hb : b + a < a') (hblack : ev x0 a' (i - L - a' + b) = true)
+    (hblock : ∀ s : ℕ, s < n → ev x0 (a + s) i = ev x0 (a' + s) i ∧ ev x0 (a + s) (i + 1) = ev x0 (a' + s) (i + 1)) :
+    n ≤ L + a' - b := by
+  by_contra h
+  push Not at h
+  have hw := theorem_A3_white x0 i L hc hl n a a' hblock (L + a' - b) (by omega) (by omega)
+  rw [show i - ((L + a' - b : ℕ) : ℤ) = i - L - a' + b by push_cast [show b ≤ L + a' by omega]; ring] at hw
+  rw [hw] at hblack
+  exact absurd hblack (by decide)
+
 end TheoremAprime
 
 #print axioms TheoremAprime.theorem_A'
+#print axioms TheoremAprime.theorem_A3
