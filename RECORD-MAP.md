@@ -126,6 +126,8 @@ PART: as on the board.
   rule30_verified_certs.py, L480
 - GC846, GC848, GC849 filed as G.GPT269, 270, 272; G269's ingredients in Lean (ParityMask.lean) — PROVED —
   PROOFS.md E2, L493
+- Bridge shortcuts: last-defect parity pullback (GC875) and interior zero-lag overlap parity (GC876) — CLOSED,
+  second-read CL112; ParityMask.lean's ingredients match, assembly unformalized (GC874, PART, L493)
 
 ## The regime between, finite left halves, supports (Q7)
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
@@ -159,6 +161,27 @@ PART: as on the board.
   part — COMPUTED, a third replay of Proposition 8 — ZF, CL126 to CL128. RC88's r = 88 source is not physical; 371's is
 - q = 32: 15 of 16 sampled zero-started orbits return (4.5e7 .. 9.1e9), one beyond 2e10 — COMPUTED — rule30_rooted_walk.c,
   L488
+- Fixed-q zero-started excursions: every admissible one returns, r <= (2^q-1)^2+2 (GC864, PROVED, CL103); first
+  excursions biject onto nonzero return words (GC865, PROVED, CL103); the compressed graph is the physical-root tree
+  plus nonroot cycles (GC866, PROVED, CL105, CL137) — G273
+- Return budgets: complete-source mean live chain <= 2^q (GC869, PROVED, CL106); dyadic strata mean <= 2^q +
+  2^(q/2) - 1 (GC870, PROVED, CL131); exact dependent spread (GC872, PROVED, CL129); individual cap saves a factor q
+  (GC890, PROVED, CL119); G203 tightens it to m - 5a + 6, fixed-baseline counting CLOSED (GC892, PROVED, CL119) —
+  G274 .. G276, W277
+- RW instrument: depth caps and initial max-live REFUTED by hand (GC868), repaired (L490, PART, source audit), small
+  caps guarded (L491, PROVED, source scope); RootedReturn.lean's statement matches the census walk (GC867, PROVED,
+  source scope)
+- W278 .. W281, the driver row: boundary-only matching (GC894, PROVED, CL120; shortcut CLOSED); driver-row freedom
+  (GC895, PROVED, CL121); the one-bit response interval (GC896, PROVED, CL122, L510); multiple-driver XOR and measure
+  guards (GC897, PROVED, L511); same-child fibres (GC899, PROVED, L511); alternating-child fibres recover the
+  driver (GC901, PROVED, L512); q = 4 fibre starts are nonphysical (GC903, PROVED, CL126; transfer CLOSED)
+- Doubling entries: the fourth child is primitive with weight q/4 .. q/2 (GC904, PROVED, CL127); sharp q/4 forces
+  an alternating union and a one-parity source (GC909, PROVED, L514); one-parity odd sources give both sharp entries
+  (GC911, PROVED, CL132); mask shortcuts CLOSED (GC912, CL133; GC913, CL134); mixed-parity sources reach q/4 + 1
+  (GC914, PROVED, CL135); entry children's three-state language (GC916, PROVED, CL136); the next profile has weight
+  3q/4 (GC917, PROVED, L516); physical controls refute a sustained floor (GC918, PART)
+- Conventions: RC88's zero-started 88/371 reconciled with physical ancestry (GC907, COMPUTED, scope); ZF's chain
+  weights and repaired guards (GC908, GC910, PROVED, source scope, CL130)
 
 ## Correlations, entropy and traces
 - Channel bound: next to 0101 column 1 carries at most 0.1236 bits per visible bit, whatever the right half —
@@ -184,6 +207,12 @@ PART: as on the board.
 - Forbidden G-trace words to length 11 certified minimal (cake_lpr); completeness rests on the census — COMPUTED —
   rule30_trace_word_certs.py, L467, GC844
 - OHC at p = 2 reproduces §8.20's table to 3 decimals, m <= 22 — COMPUTED — rule30_one_hole_widths.py (XC)
+- TC and TC2 audits: TC's CNF and pruning (GC871, PART), gates repaired (PART, source accepted, CL107); TC2's live
+  automaton (GC877, PART), integer vector (GC879, PART, CL109), F digest and counts (GC886, COMPUTED), F count-root
+  ceilings reproduced (GC889, COMPUTED)
+- LP audits: the product is sound (GC883, PART); redundancy split (GC884, PART); the component method (GC885,
+  PART); the verifier and fixtures (GC887, PART; retention done, L507); recurrent-witness recipe (GC888, PROVED,
+  CL118, L507); weighted witnesses (GC891, PART)
 
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (known: Jen 1986, Rowland §5) — COMPUTED — §8.27, §8.30
@@ -236,6 +265,7 @@ PART: as on the board.
 - GPT's audit of A, B, A′, E, E″ and §8.59 — PROVED (first pass) — RULE30-GPT.md G2
 - Not found in print (limited search): A and A′ "NOT FOUND; NEAR"; E "NOT FOUND" — PRIOR-ART.md
 - Theorem A and its no-two-periodic-columns corollary machine-checked in Lean — PROVED — TheoremA.lean, L501, GC882
+- TheoremA.lean matches entry 5 (GC882, PROVED, source scope); its hand time re-basing is formal in WhiteEnd.lean
 
 ## Other walls, other periods and sibling rules
 - Periods 3 to 6: Theorems A, A′, B, E hold for every period — OPEN (parked) — board Rung 3; §8.42, §8.62
@@ -284,6 +314,11 @@ PART: as on the board.
   1.714447 — COMPUTED — rule30_layer_product.py (ODD, ODD2), L504
 - Best true one-hole ceilings, width-22 layer times TC's F: p = 5, 7, 9 <= 1.461900, 1.590415, 1.697625 a hole —
   COMPUTED (verified) — rule30_layer_product.py (ODD3), L506
+- Lean audits: BlackLock (GC873, PROVED, source scope); P8Lock, exact three-word equality needs a prefix
+  certificate (GC878, PART); WhiteEnd (GC893, GC898, PROVED, source scope); JenRoute (GC906, PROVED, source scope);
+  the white end replayed at width 8 (GC880, PROVED); fourteen WC walls certified (GC881, COMPUTED)
+- FP2 audits: the longer-prefix formula is sound and its guards repaired (GC900, GC902, PART; GC905, PROVED, source
+  scope; CL123 .. CL125)
 
 ## Routes closed (do not reopen without new evidence)
 - Bounded runs from a thin layer: runs grow at every width to 16 — CLOSED — §8.14, §8.41
@@ -360,114 +395,3 @@ PART: as on the board.
   relativity and the lopsided light cone; unequal ticks; alternation, heard
 - Section E, portfolio: seed universality in a deterministic core; a transport law for a defect; the arithmetic of
   the ordered edge; the infinite-width boundary information limit
-
-## Fixed-period zero returns and recent GPT audits
-
-- Every admissible zero-started fixed-q excursion returns; r <= (2^q-1)^2+2 — PROVED (Cloud CL103) — GC864; pending G273's reviewed part.
-- Complete fixed-q first excursions biject onto nonzero return words; rotation classes inject — PROVED (CL103) — GC865.
-- Compressed zero-return graph: physical-root tree plus nonroot cycle components; no growth estimate — PROVED (CL105 by hand; CL137 replay at q = 4, 8) — GC866; G199; G273 continuation.
-- Lean termination statement matches the cyclic census walk; compilation is Local's verification — PROVED (source scope) — GC867; L489; RootedReturn.lean.
-- RW modes share identical depth caps and always report initial max-live correctly — REFUTED (hand trace) — GC868; no large-return index error shown.
-
-## Audit receipts of 2026-10-09 (GPT's; Local's results of the day are folded into the sections above)
-
-
-- Complete-source mean live-chain length <=2^q; conditional null gives weak compositions — PROVED (Cloud CL106) — GC869; G274 review receipt.
-
-- Primitive dyadic chain strata have mean <=2^q+2^(q/2)-1; quotient null respects rotations — PROVED (CL131; masses replayed) — GC870; G275.
-
-- RW gates/max-live repaired; Brent cap1/2 still advance to depth3 — PART (source audit) — GC868 repair receipt; L490.
-
-- TC true-language CNF/pruning match; replay quotas and decimal ceiling need certification gates — PART (source audit) — GC871.
-
-- RW small caps now guarded before every advance — PROVED (source scope) — L491; GC871 receipt; runs Local-only.
-
-- Fixed-subset quotient-null mean has exact dependent spread; q8 mean weakly discriminates — PROVED (CL129; T = 7443 replayed) — GC872; G276.
-
-- TC replay/completion gates and exact decimal certificate repaired; execution not replayed — PART (source accepted) — GC871 receipt; CL107.
-
-- BlackLock formal statement matches five-cell lock; reset-conditioned countercontrol stays computational — PROVED (source scope) — GC873; G.GPT271.
-
-- ParityMask formal ingredients match; lifted graph and full theorem assembly remain unformalized — PART (source accepted) — GC874; L493.
-
-- Last-defect parity pullback restates existing rigidity; single-site parity cannot certify bridge completion — CLOSED (shortcut) — GC875.
-
-- Interior zero-lag overlap parity is determined by adjacent black parities; boundary obstruction remains — CLOSED (extra-label shortcut) — GC876.
-- TC2 live automaton bounds growth; exact spectral certificate and inference/completion gates requested — PART (source audit) — GC877.
-
-- P8Lock statement matches third-hole zeros; exact three-word equality needs separate prefix certificate — PART (source review) — GC878; L496.
-
-- TC2 integer-vector inequality accepted; witness retention and one-sided verdict/completion scopes remain — PART (source audit) — GC879; CL109.
-
-- White-end q>=10 independently replayed at width8; uniform phase/actual-path transfer verified — PROVED (additional audit) — GC880; entry40.
-
-- Fourteen named WC walls independently certified; full necklace census not replayed — COMPUTED / transfer verified — GC881.
-
-- TheoremA source matches entry5; empty-window indices safe, time rebasing remains hand — PROVED (source scope) — GC882.
-
-- TC2/layer product sound; labelled export needed, sharper certificate remains open — PART (source/hand audit) — GC883.
-
-- LP full-root redundancy split justified; prediction gates and exact P2 requested — PART (source/hand audit) — GC884.
-
-- LP component integer method accepted; all-block vectors and condensation verification need retention — PART (source audit) — GC885.
-
-- TC2 F digest and39 avoidance counts independently checked;46 partial-level40 words — COMPUTED (consistency only) — GC886.
-
-- LP verifier source/six fixtures pass; wrapper deletes successful artifacts, retention requested — PART — GC887.
-
-- Recurrent forbidden witnesses give conservative block ceiling; no actual covering radius verified — PROVED (recipe, CL118) — GC888.
-
-- Four published F count-root bounds independently reproduced; solver premises remain conditional — COMPUTED — GC889.
-
-- Primitive dyadic individual return cap saves factor q via endpoint reservation — PROVED (CL119) — GC890; W277.
-
-- Weighted forbidden witnesses accept row slack; occurrence overlap invalidates summed losses — PART (hand audit) — GC891; L507 refinement.
-
-- G203 tightens primitive return budget to m-5a+6; fixed-baseline counting cannot change scale — PROVED (CL119, given G203) / route CLOSED — GC892; W277 continuation.
-
-- WhiteEnd formal statement/encoding/rebasing match entry40; compilation remains Local — PROVED (source audit) — GC893; L508.
-
-- Exact boundary edges admit arbitrary equivariant matching when interior recurrence is omitted — PROVED (CL120) / shortcut CLOSED — GC894; W278.
-
-- Restoring successor coordinates leaves driver-row freedom; Boolean recurrence remains missing — PROVED (CL121) — GC895; W279.
-
-- One driver-bit change flips no child bits or the exact next-reset interval; sharp q-1 — PROVED (CL122, L510) — GC896; W280.
-
-- Multiple-driver response intervals XOR; full-parent collision and union-size mean have explicit measure guards — PROVED (L511) — GC897; W281.
-
-- Memory-lean WhiteEnd preserves accumulator recurrence, certificate ranges and final assembly — PROVED (source audit) — GC898; L509.
-
-- Same-child fibres have exact count and zero-started examples; physical ancestry is separate — PROVED (L511) — GC899; W281 continuation.
-
-- FP2 longer-prefix formula sound; partial refutation/replay/budget guards need repair — PART (source audit) — GC900; CL123.
-
-- Alternating-child fibres recover primitive period next profile, even at weight2; physical ancestry unproved — PROVED (L512) — GC901; W281 continuation.
-
-- FP2 initial verdict/UNKNOWN repaired; extra-loop HELD and C2 completion remain unsafe — PART — GC902; CL124.
-
-- q4 fibre examples form a28-step predecessor cycle, excluding physical-root ancestry — PROVED (CL126) / transfer CLOSED — GC903; W281 scope correction.
-
-- Doubling-entry fourth child is primitive; G201 yields q/4..q/2 weight, without stage bound — PROVED (CL127) — GC904; W281 continuation.
-- FP2 gates and solver-free fixtures pass; registered p9 coverage30, micro-run6 — PROVED (source scope) — GC905; CL125.
-
-- JenRoute statements, phase rebasing and black representative reduction match; bounded independent controls pass — PROVED (source scope) — GC906; L513.
-
-- RC88 zero-started convention differs from physical ancestry; named88/371 sources independently reconciled — COMPUTED (scope) — GC907; G199.
-
-- ZF complete-chain weights and repaired completion/memory guards accepted; cap fixture passes — PROVED (source scope) — GC908/GC910; CL130.
-
-- Sharp doubling-entry q/4 weight forces alternating union and one-parity preceding source — PROVED (L514) — GC909; W281 continuation.
-
-- One-parity odd sources produce both sharp doubling entries; source-shape equivalence — PROVED (CL132; replayed to q = 32) — GC911; W281 continuation.
-
-- One-profile source mask is not backward invariant; fourth pair gives no zero-source renewal — CLOSED (shortcut) — GC912 (second-read CL133); W281 continuation.
-
-- Shared-parity inverse pair loses its mask four steps later beyond period 2 — CLOSED (shortcut) — GC913 (second-read CL134); W281 continuation.
-
-- Mixed-parity odd sources attain entry weight q/4+1 at every dyadic q>=8 — PROVED (CL135; replayed to q = 64) — GC914; W281 continuation.
-
-- Antiperiodic entry children exactly form a swapped-boundary three-state language; all ambient drivers included — PROVED (CL136; replayed to q = 32) — GC916; W281 continuation.
-
-- Sharp entry f is followed by g=f+opposite-parity indicator, weight 3q/4; no stage charge — PROVED (L516) — GC917; W281 continuation.
-
-- Physical controls refute universal two-profile mass and persistent density; sharp third profile explicit — PART — GC918.
