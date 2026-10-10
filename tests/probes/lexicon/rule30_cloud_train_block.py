@@ -676,7 +676,8 @@ def past():
     for name, tpl, W in (('pin 23 released, width 24', '1001100110011001' + '000' + '1' + '????', 24),
                          ('prefix 15 only, width 20', '100110011001100' + '1' + '???' + '1', 20)):
         rows0, pk = pasts(tpl, W)
-        print('%s: rows at t = 0 %d, with a leading 0 %d, peak %d' % (name, len(rows0), sum(r[0] == 0 for r in rows0), pk))
+        print('%s: rows at t = 0 %d, with a leading 0 %d, peak %d'
+              % (name, len(rows0), sum(r[0] == 0 for r in rows0), pk))
 
 
 
