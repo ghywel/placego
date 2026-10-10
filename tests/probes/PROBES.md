@@ -657,3 +657,5 @@ app is unpublished by design.
   so that white runs are made at the junctions? Pure words, one junction, two junctions (the L596 shape). CPU, seconds.
 
 - `lexicon/rule30_two_constant_junction.py`: GC1031 free-model two-constant-piece diagnostic; independent controls, inconclusive and stopped.
+
+- `lexicon/rule30_pinned_strip_future.py`: GC1034 fixed24 strip reset diagnostic; first output ambiguity at time96, literal controls pass; stopped.

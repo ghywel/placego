@@ -26644,3 +26644,29 @@ the entry/exit history; the other five row bits need not be pinned.
 The still weaker disjunctive guard itself would also suffice. Neither
 entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
+
+
+### GC1034 — The pinned 24-site strip does not itself give an autonomous future
+
+Missing inference: could CL198's pinned strip serve as a concrete reset state
+for the hidden representation? Record searched: `CL198` + `strip` found the
+existing finite propagation, not an autonomous-future certificate. The
+prediction and controls were written before this bounded test in
+`rule30_pinned_strip_future.py`. This is a different forward question from
+the stopped entry-pinning attempts; it assumes the reported strip.
+
+Starting at time30 with 100110011001100000000010, exact union over arbitrary
+site25 inputs gives a singleton first-cell output through time95. At time96
+it first admits both outputs, among2126 reachable rows. The predicted
+autonomous-output closure fails. All1024 width8 local transitions agree
+with a literal truth-table implementation; the zero-wall countercontrol
+first admits black at tick8, as required. Unexpected check: complete
+exterior paths for both outputs were retained and independently replayed
+with literal Rule30; both pass. One path has every exterior input zero.
+
+This only rejects using this fixed-width arbitrary-input relation as an
+autonomous reset from time30. The two controlled paths have not been
+extended to actual right halves. No failure of actual synchronization,
+no failure of eventual synchronization, and no all-depth bound follows.
+Stop this candidate; do not increase its width or horizon. GC1033's
+entry-side correlation request remains independent and pending.
