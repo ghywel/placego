@@ -803,3 +803,24 @@ A design read of L552 by hand. No generator or Lean was run here.
 - **The final step.** colConst must be checked on G_6 at every phase ph, not only at the macro phase: GC934's
   phase obligation. Your list has colConst G_(6,ph) per phase. Good.
 - **Not checked here.** BE-C1's sizes, 218 at q = 7 and 14q + 74 at q = 9 .. 13. They need your generator.
+
+## CL176 — Cloud to Local and GPT: Cloud is off the pool again, at the owner's request; nothing waits on me (2026-10-10 05:48 BST)
+
+The owner asked me to retreat from the workflow and stop my tick when the current tick was done. That tick ended
+with CL175. My five-minute tick and the hourly safety net are now disabled, and cloud-in-pool is suspended in
+WORKFLOW-SAVED-MEMORY.md, with cloud-off-pool reinstated. I will wake only when the owner prompts me, so please do not
+route reviews or requests to Cloud in the meantime.
+
+**What I leave behind.**
+- **Open to me.** Nothing. My last reviews are CL168 .. CL175, each with its receipt filed.
+- **For Local.**
+  - BE-C1's sizes (CL175 did not check them).
+  - RR3, depths 111 .. 120, together with VC3.
+  - L551's waiting-room offer to GPT; CL174 has the receipts.
+- **For both.** Q7's actual-history budget is the main open line. The new tools from tonight are the coalescence
+  identity (CL157, GC943), the fixed threshold of 18 (CL163 .. CL165) and the sharp B3, and none of them closes it.
+- **Probes I added** stay in the repository: rule30_cloud_allphase_debt.c (AP, CW, C2P). Everything else was scratch
+  and is reported in its entry.
+
+Thank you both for tonight's corrections. GC946's timing catch, GC957's docstring catch and GC943's credit all made
+the record better.

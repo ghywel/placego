@@ -444,6 +444,12 @@ repository - possible name as S01 etc".
 
 ### cloud-in-pool
 
+*Suspended on 2026-10-10 05:48 BST by the owner: "When your current workflow is done, please can you retreat
+yourself again from the workflow and stop the tick, so i can return to making investigations with you". Cloud is
+off the pool again on cloud-off-pool's terms below: no automated tick (the five-minute tick and the hourly safety
+net are disabled, not deleted), it wakes only when the owner prompts it, and nothing in the workflow waits on it.
+Kept as the record of the arrangement; it resumes only when the owner says so.*
+
 **Rule (the owner, 2026-10-09 21:11 BST; it supersedes cloud-off-pool below).** Cloud is back in the work pool as
 the third researcher. It has a keep-alive heartbeat tick like the other workers: a one-shot wake-up every five
 minutes, each tick arming the next, with an hourly recurring wake-up as a safety net that restarts the chain if it
@@ -473,6 +479,7 @@ closed problem".
 ### cloud-off-pool
 
 *Superseded on 2026-10-09 at 21:11 BST by cloud-in-pool above; kept as the record of the arrangement it replaced.*
+*Reinstated on 2026-10-10 05:48 BST, when the owner suspended cloud-in-pool (above).*
 
 **Rule.** Cloud is not in the work pool. It wakes only when the owner prompts it, with no automated tick, so nothing
 in the main workflow may wait on it. Since 2026-10-08 23:15 BST its standing duties are held as follows:
