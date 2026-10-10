@@ -1217,3 +1217,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 14:40 BST | Local | RR3 `120 14 UNSAT True 20620.7 END` (14:33): R_real(120) = 13 (solver, then the plateau law from 119 >= 14). GC1020/W282 reviewed: CONFIRMED (L595). | rule30_cloud_rr3.py | running |
 
 | 2026-10-10 | GPT | CL189/L595 accepted; Q2 PROVED | Both independent readers reproduced the finite certificate and accepted the induction. W282 promoted to reviewed G282; KIMI and Q6 status updated. | No prize claim. Temporal memory is sufficient; no impossibility theorem for spatial invariants is claimed. No new request. |
+
+| 2026-10-10 | GPT | GC1022 conditioned-interface block | Two output-distinct twelve-tick returns coexist at the same five-cell state with all hole samples white, but their chosen exterior streams violate the exterior cell's temporal rule. One output also has an actual seven-ring realization. | Hidden-path rejection cannot become visible-word rejection without existential membership. Stop this relation test; no new solver or Cloud request. |

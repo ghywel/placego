@@ -25917,3 +25917,78 @@ for CL189: failure of sampled-window closures does not establish that
 no finite spatial invariant can carry the correlation. GC1020 proves
 sufficiency of temporal information, not necessity of that representation.
 Question 3 remains open.
+
+
+Preregistered conditioned-interface block (Q6, after G282). Missing
+inference: whether a sustained visible two-gap train forces the reduced
+0111 interface into just its period-4 or period-8 modes. GC1017 supplies
+the exact zero hole samples, but not the intervening three samples.
+Inspect only the five-cell, four-tick transition relation, retaining
+zero first cells at both endpoints and all sixteen exterior streams.
+Prediction: its recurrent part still permits branching nonperiodic
+first-cell output; if so, a concrete recurrent ambiguity, not a larger
+width sweep, is the result. Counterfactual: if every recurrent output is
+periodic, derive that finite implication and its entry margin. Literal
+and packed macro encodings must agree. Controls: known seven-ring and
+G282 trajectories restrict to accepted edges; a failing GC1018 source
+is rejected. Unexpected check: distinguish multiple input paths with
+identical visible output from genuine output ambiguity at the same state.
+Record searched: `0111|p.?=.?.?4` + `condition|zero.*hole|hole.*zero|zero.*sample`
+-> GC1017/1018; one-hole language results alone do not give this
+conditioned full-trace implication. No SAT, record scan or Local job.
+
+The five-cell graph has two distinct twelve-tick returns to state
+01001, so the predicted visible ambiguity is present. Before treating
+this as a real right-half ambiguity, check the prescribed exterior
+stream against its own Rule 30 equation with the known fifth cell.
+Prediction: at least one artificial return violates this one-cell
+temporal compatibility. Countercontrol: the true seven-ring's exterior
+passes. This identifies what correlation the relaxation discards, rather
+than claiming its recurrent paths are actual or increasing the strip.
+
+### GC1022 — Recurrent train-interface ambiguity is already lost at the exterior cell
+
+Exact countermodel for the five-cell free-exterior relaxation, not
+for actual right halves. Drive it by 0111 and retain white first cells
+at times 4n. The following four-tick returns, each checked by literal
+and packed Rule 30, all have white endpoints (state bits left first):
+
+    start   exterior   end     first-cell trace
+    01001     0001     01001       0101
+    01001     0000     01000       0101
+    01000     0000     00100       0101
+    00100     0110     01001       0000
+
+Thus state 01001 has two twelve-tick return words with traces
+A = 010101010101 and B = 010101010000. Concatenate the first loop
+three times for A, or the last three edges for B. Every binary choice
+of these returns stays within the zero-hole constraint. The bit at
+position 9 of each twelve-tick trace distinguishes A from B, so an
+non-eventually-periodic choice yields a non-eventually-periodic trace in this
+relaxation. This is genuine output ambiguity, not merely multiple
+inputs carrying the same trace. The reduced five-cell relation alone
+cannot force the interface to its period-4 or period-8 modes.
+
+**The missing correlation is explicit.** Let u_t be the prescribed
+exterior bit and z_t the fifth retained cell. A real exterior cell
+must satisfy u_(t+1) = z_t XOR (u_t OR v_t) for some next cell v_t.
+When u_t = 1 it necessarily has u_(t+1) = 1 - z_t. The artificial
+A stream 000100010001 violates this at ticks 3,7,11 of its periodic
+repeat; B's stream 000000000110 violates it at tick 10. In every
+violation (z_t,u_t,u_(t+1)) = (0,1,0), impossible for either v_t.
+So these precise return paths cannot be actual, even though their
+interior states recur and all required hole samples are white.
+
+**Do not delete their output words.** At the same start 01001, the
+actual seven-ring exterior 100110011001 returns to that state with
+the same output A and satisfies the exterior equation. Excluding a
+spurious hidden path does not license excluding its visible trace.
+No claim about all realizations of B, or any longer strip, is made.
+The G282 seed and seven-ring positive controls restrict correctly to
+the relation; GC1018's failing prefix 00010 is rejected for every
+exterior block. All 32 states and sixteen four-tick exterior blocks
+pass independent encodings. `rule30_train_hidden_returns.py` retains
+the checks. Stop this bounded relation test: its concrete lost
+constraint is temporal compatibility of the exterior, not lack of
+a recurrent state or failure of one-tick cell domains. The all-depth
+record bound remains open; no Local solver work is duplicated.

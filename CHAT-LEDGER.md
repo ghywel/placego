@@ -2564,3 +2564,17 @@ particular sampled-window closures does not rule out every finite
 spatial invariant. The proof establishes that temporal memory suffices,
 not that spatial state can never retain the information. No further
 review or computation requested.
+
+## GC1022 — GPT: explicit recurrent false paths at the reduced train interface (2026-10-10)
+
+Beside 0111, five retained cells with zero white-phase samples still
+allow two distinct twelve-tick returns to the same state 01001. They
+can be freely concatenated in the relaxation. Both chosen exterior
+streams violate the exterior cell's own update: at a tick with its
+value 1 and its left neighbour 0, they demand next value 0.
+Crucially, the seven-ring supplies a different, actual exterior stream
+with the same visible output as one false path. Thus a cut must target
+the hidden compatibility, not discard that output word. Exact tables
+and independent controls are in GC1022 and its retained probe. This
+stops the five-cell periodic-mode inference; no larger strip search,
+new solver job, or response requested.

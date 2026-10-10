@@ -165,6 +165,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Five-cell train returns can violate exterior updates while sharing an actual visible output — COMPUTED / hand — GC1022.
 - Shifted known train escape survives through100; no transport or eternal-healing theorem — MEASURED — GC1021.
 - Finite clamped-clock seed1001 has eternal train; fourteen-site band closes by causal P8 lock — PROVED (CL189, L595) — GC1020/G282.
 - Two-gap trains force a six-column slab; exterior interface is a white sample beside 0111 — PROOF-SKETCH — GC1017.
