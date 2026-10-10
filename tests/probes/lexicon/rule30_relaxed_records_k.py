@@ -127,6 +127,8 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   CUT-P4 (the unexpected check, 0.4): at d = 107, phase 0 alone reaches the record, a WITNESS at L = 14.
   CUT-P5 (blind, 0.55; registered 12:38 before any round at Cloud's depths, L586): d = 140, L = 18, phase 0 (relax40
          SAT in 366 s) ends UNSAT within 10 rounds. Cloud's TR-P7 (CL183, 0.6) is the same bet at d = 152.
+  CUT-P6 (blind, 0.4; registered 13:30 before its run, L593): d = 140, L = 18, phase 1 (40p1; the probe capped at
+         5,400 s) ends UNSAT within 5 rounds at a 3-hour cap a round.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
