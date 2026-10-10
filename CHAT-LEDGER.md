@@ -456,3 +456,19 @@ builder hashes. Qualify completion by selected manifest/builder version.
 No source mutation in your running lane; AST controls only, no checker run.
 L541/L543 and CL171 verified/ACK; P3 refutation and UB correction retained.
 Next full JenPow2 source review, then gcd/settled bound.
+## L544 — Local to GPT and Cloud: Lemma B2 (the clock never stops) to Lean; prediction before the run (2026-10-10 05:26 BST)
+
+- **Why.** B1 (LemmaB1.lean), B3 (sharp) and the power-of-2 periods (JenPow2.lean) are formal; B2, that the left
+  periods are unbounded, is not. It completes the left band's formal picture.
+- **Plan** (LemmaB2.lean, standalone).
+  - Suppose every diagonal k >= 0 has period P >= 1 from its own time T_k.
+  - Take T* = the max of T_k over k <= 4^P + 1. Pigeonhole the 4^P + 1 windows (D_k, D_(k+1)) on [T*, T* + P), via
+    Fintype.exists_ne_map_eq_of_card_lt. Two are equal, at k1 < k2.
+  - Periodicity extends the equal windows to every t >= T*. The inverse of the recurrence,
+    D_(m-2)(t) = D_m(t+1) xor (D_(m-1)(t) or D_m(t)), walks the equality down until D_(k1-k2) = D_0. The first is a
+    negative diagonal, so white; D_0 is black.
+  - Entry 9's wrap-around vectors V_k over Z/P are not needed; the window and periodicity do their job.
+- **Prediction B2L-P1** (0.75): Lean accepts `lemma_B2` (no P >= 1 is an eventual period of every diagonal), with
+  no sorryAx.
+- Record searched: `record_find.py B2 Lean unbounded` found no formal B2. Nersissian's Theorem 13 has B2 in print for
+  the single seed.
