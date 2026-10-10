@@ -6,6 +6,7 @@ RUN-ON:     cpu (Python 3; mode member needs kissat and rule30_relaxed_records_k
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMAX=200]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py periods [STEPS=40000] [SITES=40]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py boundary [N=8] [W=10]      (needs kissat)
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py memory [LEAD=4] [NMAX=16]   (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -59,6 +60,14 @@ exactly 7 are realizable: the train continues (gaps 2), or it ends with the gap 
 the window ends). No exit by 3, by 5 directly, or by 6 or more. Entrances: of 1,024 ten-bit words before the train,
 19 (phase 0) and 17 (phase 1) are realizable; the gap into the train's first one is 4 or 5 (or 2, the train itself),
 never 3 and never 6 or more; the gap before that is 2, 3, 4 or 5. The sets are identical for every n tested.
+
+MODE memory, OUTCOME (2026-10-10 15:20 BST; computed after L596, no prior prediction). The word "lead 0, gap 4, a
+train of n ones, then 4,5,2,2,2,2,4,5,3,3,3,5,5,5,5,2" is the length-81 cut at n = 10 and a factor of the R_real(152)
+witness at n = 11. By SAT it is IN for n = 6, 7, 8, 9, 11 and ABSENT for n = 5, 10, 12, 13, 14, 15, 16 (both phases
+agree); with the lead gap 5 it is IN for n = 10, 11 and ABSENT for 8, 9, 12, 13. With the tail cut short, every
+prefix of the tail is IN for both n = 10 and n = 11; only the final gap 2 separates them. So a train does not forget
+its length: it is read back some 60 visible symbols later, and the dependence on n is not monotone and not a parity.
+CL190's Question B is false in its strong form at this scale; whether the set stabilizes for n >= 12 is open.
 """
 import os, sys, time
 
@@ -168,10 +177,28 @@ def boundary(n, W):
             print('  entrance %s  gaps up to the train\'s first one: %s' % (w, gaps(w + '1')))
 
 
+def memory(lead, nmax):
+    """Does a train remember its length? The length-81 cut (L591) is lead 0, gap 4, a train of 10 ones, then the gaps
+    4,5,2,2,2,2,4,5,3,3,3,5,5,5,5,2; the R_real(152) >= 18 witness (L596) is the same word with a train of 11 ones.
+    Membership of that word for a train of n ones, and for the tail cut short (n = 10 against 11)."""
+    import rule30_relaxed_records_k as rk
+    word = lambda gaps: '0' + '1' + ''.join('0' * (g - 1) + '1' for g in gaps)
+    tail = [4, 5, 2, 2, 2, 2, 4, 5, 3, 3, 3, 5, 5, 5, 5, 2]
+    verdict = lambda w, ph: 'IN' if rk.in_language_phase(w, ph) else 'ABSENT'
+    print('lead gap %d, train of n ones, then the tail %s:' % (lead, tail))
+    for n in range(5, nmax + 1):
+        w = word([lead] + [2] * (n - 1) + tail)
+        print('  n = %2d (length %3d): phase 0 %-6s phase 1 %s' % (n, len(w), verdict(w, 0), verdict(w, 1)), flush=True)
+    print('tail cut short, lead 4, n = 10 against n = 11 (phase 0):')
+    for k in range(2, len(tail) + 1):
+        print('  %-42s n=10 %-6s n=11 %s' % (tail[:k], verdict(word([4] + [2] * 9 + tail[:k]), 0),
+                                          verdict(word([4] + [2] * 10 + tail[:k]), 0)), flush=True)
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
     {'member': lambda: member(*(a or [200])), 'seeds': lambda: seeds(*(a or [12, 400])),
      'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40])),
-     'boundary': lambda: boundary(*(a or [8, 10]))}[cmd]()
+     'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16]))}[cmd]()
     print('(%.0f s)' % (time.time() - t0))

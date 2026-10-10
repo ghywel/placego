@@ -87,6 +87,11 @@ OUTCOME of mode deep, 2026-10-10 14:30 BST (fourth start 10:47, kissat 4.0.4, fo
   relaxed probes at these depths (L589, L591): 124 UNSAT at 18 in both phases; 140, 144, 152 phase 0 relaxed SAT, slack
   possible (relax40 overshoots at 107 by 2, L583); 140 and 144 phase 1 capped. Local's lift at 152 found no witness
   (its code is absent, cut length 81). So the record at 140 .. 164 is still open on both sides.
+ADDENDUM 4, 2026-10-10 15:20 BST. L596 (Local, CUT at d = 152, round 0 with three cuts): an explicit configuration
+  with R_real(152) >= 18, simulated by Local twice and by Cloud independently (VALID; a flipped left bit fails the
+  clock at t = 69). So TR-P4 HELD (a depth in 121 .. 168 has R_real >= 18; found from above, not by these calls),
+  TR-P5 still undecided (140 open), and CL183's TR-P7 (CUT ends UNSAT at 152) REFUTED. The ceiling 17 is refuted
+  outright: 16 at d = 20, at most 17 from 21 to 124, at least 18 at 152.
 """
 import os
 import sys
