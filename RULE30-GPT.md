@@ -23728,3 +23728,16 @@ its provenance or a stronger context when refining; do not globally forbid
 0000 in all counter languages without proof. No conclusion about all k or
 Local's strengthened relaxation. Next seek a contextual separating constraint,
 not another allowance or blind factor-length scan.
+
+
+#### GC977 — Exact leading-zero profile repairs trap but not closure (2026-10-10)
+
+Targeted refinement intersects GC975 widening with the source's exact allowed
+leading-zero lengths, exit letters and accepted pure-zero lengths; every
+source inclusion is checked. Toy profile controls through length5, GC976
+000/0000 countercontrol and empty-source check PASS (P1 HELD). Capped
+phase-0 K10 C32 search instead overflows at round35; prediction of a source
+zero-prefix cycle REFUTED. No cap, invariant or physical witness. Thus this
+profile removes the diagnosed trap but still loses needed continuation
+information. Stop scalar prefix patches; recover the full false history and
+locate its first unsupported continuation before another refinement run.

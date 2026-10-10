@@ -68,23 +68,23 @@ def controls():
     print('factor controls C/CF/U PASS',flush=True)
 
 
-def run():
+def run(transform=widen):
     controls()
     signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(RuntimeError('time cap')))
     signal.alarm(20)
-    inv=[c.EMPTY for _ in range(33)]; inv[0]=widen(t.initial(0))
+    inv=[c.EMPTY for _ in range(33)]; inv[0]=transform(t.initial(0))
     try:
         for n in range(1,41):
             nxt=list(inv)
             for r,a in enumerate(inv):
                 if c.subset(a,c.EMPTY): continue
                 o=t.minimize(t.image(c.prune(a),cap=c.CAP))
-                nxt[0]=widen(c.union(nxt[0],c.first(o,1)))
+                nxt[0]=transform(c.union(nxt[0],c.first(o,1)))
                 white=c.first(o,0)
                 if r==32:
                     if not c.subset(white,c.EMPTY):
-                        print('ABSTRACT OVERFLOW round',n,'C32 k3; no physical witness',flush=True); return
-                else: nxt[r+1]=widen(c.union(nxt[r+1],white))
+                        print('ABSTRACT OVERFLOW round',n,'C32 k3',transform.__name__,'; no physical witness',flush=True); return
+                else: nxt[r+1]=transform(c.union(nxt[r+1],white))
             stable=all(c.subset(x,y) for x,y in zip(nxt,inv)); inv=nxt
             if stable:
                 assert c.subset(t.initial(0),inv[0])
@@ -92,7 +92,7 @@ def run():
                     o=t.minimize(t.image(c.prune(a),cap=c.CAP))
                     assert c.subset(c.first(o,1),inv[0])
                     assert c.subset(c.first(o,0),inv[r+1] if r<32 else c.EMPTY)
-                print('CLOSED phase0 k3 C32; phase1 required',flush=True); return
+                print('CLOSED phase0 k3 C32',transform.__name__,'; phase1 required',flush=True); return
         print('UNFINISHED 40 rounds',flush=True)
     except RuntimeError as e: print('STOP',e,flush=True)
     finally: signal.alarm(0)
