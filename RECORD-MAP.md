@@ -270,7 +270,7 @@ PART: as on the board.
 - TheoremA.lean matches entry 5 (GC882, PROVED, source scope); its hand time re-basing is formal in WhiteEnd.lean
 
 ## Other walls, other periods and sibling rules
-- Strip past/future static ranks certify eventual phase forcing; kernel performance untested — PROOF-SKETCH — GC919; L515.
+- Strip past/future static ranks certify eventual phase forcing; kernel performance untested — PROOF-SKETCH — GC919 (second-read CL139); L515.
 - Periods 3 to 6: Theorems A, A′, B, E hold for every period — OPEN (parked) — board Rung 3; §8.42, §8.62
 - Black-end walls 0 1^q excluded for finite seeds at q = 7 and every q >= 9 — PROVED — entry 38 (SG L429, GC806
   read in L430, WT L431; method from an external repository, gap GC805); q = 1..6 and 8 OPEN
