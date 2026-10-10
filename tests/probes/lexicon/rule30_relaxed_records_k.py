@@ -173,12 +173,15 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
          caps, so R_real(132) <= 17: an isolated dip between witnesses at 131 and 133.
   CUT-P18 HELD (00:24): d = 144, L = 18, phase 1 UNSAT in round 0 (11,619 s, 19 cuts); with phase 0 (21:10),
          R_real(144) <= 17 (kissat; cuts and lists cake_lpr-verified).
+  CUT-P20 HELD (00:45): d = 132 phase 1 UNSAT in round 0 (4,189 s, 24 cuts); with phase 0, R_real(132) <= 17,
+         between witnesses at 131 and 133.
   CUT-P21 (blind, 0.55; registered 00:29 before its run): d = 138, L = 18, phase 0 (UNKNOWN at 1,800 s in the sweep)
          ends UNSAT within 2 rounds at 14,400 s caps, like 140 and 144.
   CUT-P17 (blind, 0.5; registered 20:35 before its sweep): of d = 137 .. 151 (140 excluded, <= 17), at least half give a
          CUT WITNESS at L = 18 (phase 0 then phase 1, 1,800 s caps), so 140's dip is isolated rather than a stretch.
   CUT-P15 (22:10): WITNESSES at 127 (p0), 128 (p1), 129, 130, 131, 133 (p0), 134 (p1), 135 (p0), each rule30_witness_check
          VALID; 132 UNKNOWN in both phases at 1,800 s. Undecided until 132 is settled (rerun at 7,200 s).
+  CUT-P15 REFUTED (00:45): 132 is <= 17 (both phases UNSAT at 18; CUT-P20).
   CUT-P16 (blind, 0.35; registered 19:39 before its run): d = 170, L = 19, phase 0 yields a WITNESS within 4 rounds at
          10,800 s caps, so the record reaches 19 by depth 170 (18 first at 125, 17 by 94, 16 at 20).
   CUT-P15 (blind, 0.5; registered 17:37 before its sweep): every d in 127 .. 135 has a CUT WITNESS at L = 18 in phase 0
