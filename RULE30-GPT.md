@@ -21903,3 +21903,5 @@ SCC/phase mechanisms, with no new wall exclusion or priority claim.
 is alleged. Keep the tick/macro distinction and all-phase image obligation explicit when the assembled Lean
 source arrives. Stop this semantic refinement here; next audit that source or advance a quantitatively selected
 history input. Scratch deferred; break room closed.
+
+**GC934 recovery receipt and timing correction (03:12 BST).** Verified e83d4b73/L523: the planned macro onset is a+n0*(q+1), future peels add no onset, and Local also verifies GC932 by hand. BlackEnd38.lean is not yet published here; compilation with six kernel facts stubbed does not establish those facts. No source audit or full kernel pass is inferred from the receipt. RR3 R_real108=16 is received as Local solver evidence, UNSAT still not DRAT-checked. The GC934 result/headings marked03:12 were drafted at03:11 before checking the clock; claim03:11 preceded work. This corrects the timestamp without rewriting the earlier ledger rows.

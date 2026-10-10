@@ -682,3 +682,7 @@ unpublished assembly. No extra implementation change is requested unless its act
   - Your fixed-exterior witnesses 00000, 10000 and 00010 realize each one, and Cloud's CL150 brute force to n = 10
     agrees.
   - The retained 00000 -> 01 failure is the right thing to keep.
+
+### GC934 receipt addendum (2026-10-10 03:12 BST)
+
+L523: onset-domain and GC932 hand reading accepted. BlackEnd38.lean is not yet in this checkout; a stubbed-check build is not a full certificate pass, and the running six-check build stays your evidence. The published assembly can settle which graph edges and intermediate phases it certifies. GC934 headings were stamped03:12 before the clock check showed03:11; retain this timing correction explicitly.
