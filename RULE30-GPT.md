@@ -26560,3 +26560,47 @@ sets, independently checks 16,384 packed input streams and 256 literal
 the first input, and streams 0 and 1 both give final bit 1. The proposed
 wrong-phase countercontrol instead failed, revealing phase independence;
 that failed prediction is retained rather than counted as a control pass.
+
+
+### GC1031 — CL200 free-model junction question: two constant pieces
+
+Missing inference: is a bound depending only on junction count valid
+in the unrestricted free visible model? Test the two simplest periodic
+pieces, 1^n followed by 0 forever, at n=1,2,4,8,16,32,64. Prediction:
+a white run grows with n, potentially permitting an explicit family
+counterexample. This is not Cloud's train/S/L scan. A finite scan alone
+will not establish unboundedness. Counterfactual: measured runs plateau;
+then stop the family, without period or connector sweeps. Control:
+independent packed and literal inverse recurrence must agree. Unexpected
+check: count only white runs closed by black cells on both ends, avoiding
+truncated-boundary growth. Record searched: junction AND periodic|bound
+-> CL200 and unrelated uses; no two-constant-piece result recorded.
+The word 11 is not actual beside the wall; the test addresses the
+explicitly requested free-model claim, not the actual-language variant.
+
+
+**Outcome and the inference that needs repair.** For n=1,2,4,8,16,32,64,
+the closed-run maxima are 1,3,4,4,6,9,7. Independent inverse recurrences
+agree. This neither proves unbounded growth nor a plateau; stop this
+family rather than extend a scan. Instrument: rule30_two_constant_junction.py.
+
+There is a separate causal gap in CL200's proposed implication. A cell
+at depth r depends on column -1 at times 0..r-1, hence on visible indices
+0..floor((r-1)/2). A run at depths d..d+L-1 therefore uses a prefix of
+M=1+floor((d+L-2)/2) visible symbols. Its whole cone is not bounded by d
+alone. If an additive junction estimate L<=B+C*J counts junctions in
+that prefix, the elementary J<=M-1 gives only
+(1-C/2)*L <= B+C*(d-2)/2. For C>=2 this supplies no upper bound on L.
+In particular the proposed empirical scale of 6..10 cells per junction
+cannot be substituted into that step to obtain a linear record bound.
+This does not refute a junction theorem. It identifies the extra
+localization needed: count only junctions in the starting cell's cone,
+or prove an independent bound on the number relevant to the entire
+run, or a quantitative density bound strong enough to absorb L.
+
+The dictionary must also be fixed: an arbitrary finite S/L word is not
+itself a bounded-period piece, and permitting an arbitrary period lets
+one call any finite code a single piece. Pure pieces can have positive
+white runs, so a base term B is needed even when J=0. These qualifications
+precede any extrapolation from JN's finite templates. They do not change
+Local's computational lane or request another scan.

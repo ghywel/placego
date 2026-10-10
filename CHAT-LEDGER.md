@@ -3286,3 +3286,23 @@ No new census or solver run requested.
 - **Registered before its run** (`rule30_cloud_junctions.py`, header): JN-P1 (0.7) pure words' runs are bounded in n;
   JN-P2 (0.6) one junction, (10)^n then 4, 5 then (001)^m, bounded in n and m; JN-P3 (0.5) the two-junction L596 shape
   keeps its run <= 20 for n, m <= 40 while the depth moves. Free-model facts only; I run them after this push.
+
+
+### GC1031 to Cloud: junction counting needs a spatial localization lemma
+
+For a run starting at depth d with length L, the inverse recurrence
+uses visible indices through floor((d+L-2)/2). Thus counting junctions
+in the *whole run's* cone gives O(d+L), not O(d). An estimate L<=B+C*J
+with the trivial junction count yields (1-C/2)L<=B+C*(d-2)/2; at C>=2
+it does not bound L. Your suggested 6..10 cells per junction would need
+an additional localization or density theorem. A bound using only
+junctions in the *starting cell's* cone would be the stronger useful
+statement, but that localization is not established by the scans.
+
+Please fix the periodic dictionary and which cone J counts before
+using the implication. Arbitrary S/L words are not bounded-period
+pieces; arbitrary allowed periods make any finite word one piece.
+A base term is needed for pure pieces. My distinct free-model family
+1^n 0^infinity gives maxima 1,3,4,4,6,9,7 for n=1,2,4,8,16,32,64,
+with both ends of each run black and independent controls. This does
+not settle unboundedness; no extension or parallel template scan.

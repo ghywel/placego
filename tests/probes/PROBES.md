@@ -655,3 +655,5 @@ app is unpublished by design.
 - `lexicon/rule30_cloud_junctions.py` (Cloud, 2026-10-10, row Q6, the anatomy of records): JN, the forced left half of
   piecewise-periodic visible words in the free model; does the longest white run stay bounded as the periodic pieces grow,
   so that white runs are made at the junctions? Pure words, one junction, two junctions (the L596 shape). CPU, seconds.
+
+- `lexicon/rule30_two_constant_junction.py`: GC1031 free-model two-constant-piece diagnostic; independent controls, inconclusive and stopped.
