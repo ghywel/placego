@@ -5572,3 +5572,74 @@ involves wall-born diagonals at age one, before any periodicity; the barrier wor
 **Where it bears.** The doubling conjecture is now checked to $d = 73$ with no gaps; Local's `records.c` can replay the
 nine new values cheaply if it wishes; and the $(10)^k$ family is the first place a bounded excess is proved rather
 than observed, by the barrier-and-front mechanism, which is the structural statement to try to generalise.
+
+*Skeptic's verdict (21:57 BST): every proof holds; its own depth-first search reproduces $S(0..56)$ and the full
+survival histograms, and all 596 stored maximisers to 72 re-simulate; the $u(10)^k v$ certification was read but not
+rerun end to end (a gap, not a refutation); the per-step survival ratios at $m = 56$ stray to $0.494 .. 0.506$.*
+
+
+### 8.85 The 1100 wall to depth 100: the record stays small, the lock structure of column 1, no proof (swarm lane q4, graded; 2026-10-10)
+
+*Lane q4 (independent agent) was given the period-4 wall 1100 and its four rotations, with the record $R'(3..22)$ from
+KIMI-QUESTIONS-2.md as calibration. Graded by Cloud 21:57 BST; its skeptic is running. Prior work in the record: the
+three games of §8.40 for words to period 4, the parked Condrey ends, and Cloud's SAT values to 22.*
+
+**Computed.** $R'(3..22)$ reproduced exactly by three methods (a C depth-first search, a numpy brute force, its own SAT
+encoding); then $R'(1..100)$ exactly: 6, 5, 7, 6, 5, 6, 6, 5, 4, 6, 5, 5, 6, 7, 6, 5, 6, 7, 11, 10, 9, 8, 7, 8, 7, 6, 7,
+6, 9, 8, 11, 10, 9, 8, 7, 14, 13, 12, 11, 10, 9, 10, 9, 8, 7, 6, 11, 12, 11, 12, 11, 10, 10, 9, 10, 9, 10, 12, 11, 10,
+10, 12, 11, 10, 9, 11, 10, 12, 12, 11, 11, 11, 10, 12, 11, 11, 13, 12, 12, 11, 10, 9, 11, 10, 15, 14, 14, 13, 12, 15, 15,
+14, 13, 12, 11, 13, 13, 12, 18, 17: the maximum to depth 100 is 18, at 99. Cloud: $R'(1..5)$ by own brute force agrees.
+So (PROVED from the computation and a monotonicity lemma) **no configuration that is zero on all of $i \le -100$ at
+time 0 keeps any rotation of 1100 at column 0 for ever**: the period-4 word is settled for every left-finite
+configuration whose leftmost 1 lies within 99 sites of the centre when its periodic phase begins. This is the
+period-4 twin of the real record's finiteness, checked to depth 100 as $R_{\mathrm{real}}$ is to 124.
+
+**Proved (hand, Cloud-checked).** The lifetime form $R'(d) = T(d) - d + 1$ and $R'(d+1) \ge R'(d) - 1$. The warm-ups:
+the black wall pins the left half to a time-constant spatial 0101 pattern (record at most 1); the white wall admits
+only the zero configuration with column 1 identically zero. The **two locks**: during 11 a visible 1 is followed by a
+0, during 00 by a 1; and the **lock lemma**: once $a(t_0) = 1$ at the second white tick, column 1 is locked into
+4-blocks $(1, 0, p_k, 1)$ for ever, one free bit per block (Cloud: 5,403 block checks on random right halves, no
+violation). A **structure theorem**: column 1 is $(0100)^K$, one of four transition blocks, then the locked blocks;
+column $-1$ follows; columns $-1$ to $-5$ are affine in the free bits $p$, and from $-6$ on they are not. The free
+sequence $p$ never contains an isolated 1 (a hand proof through column 3). A configuration vanishing on a left half
+and keeping the wall for ever would have aperiodic $(\text{column }0, \text{column }-1)$ and finite $K$.
+
+**Measured and refuted.** The locks alone do not bound the runs: the model that keeps only the proved lock structure
+has longer runs than the real ones from depth 14 (19 against 11 at depth 21). The realisable $p$-sequences have small
+positive entropy (about 0.4 bit per block), so eventual periodicity cannot be forced from the right side alone.
+**Not proved.** $R'(d)$ finite for every $d$; conjectured, with the counting heuristic that four constraints per block
+against 0.4 free bits make long survival exponentially rare. The lane's next step, a renormalisation of column 2
+against the 1001/1011 blocks of column 1, is the one structural lead it offers.
+
+
+### 8.86 Is the right-half language sofic? Evidence against, a certified entropy ceiling, and a death criterion (swarm lane q5, graded; 2026-10-10)
+
+*Lane q5 (independent agent) was asked whether the visible language $L$ of right halves beside the wall is sofic.
+Graded by Cloud 21:57 BST; its skeptic is running. Prior work: §8.20's TC2 ($|L_n|$ to 39, the minimal forbidden
+words, a certified entropy ceiling from the Aho-Corasick automaton), SLC's entropy.*
+
+**Proved and Cloud-verified.** $L$ is factorial and right-extendable but not left-extendable (suffixes of $L_n$ fall
+inside $L_{n-1}$ strictly from $n = 7$, by exhaustion); 11 and 00000 are absent, the latter by a hand proof through
+column 5, so every word of $L$ is 1s separated by gaps of 1 to 4 zeros; the right half $(1001100)^\infty$ is periodic
+in space and time beside the wall and reads $1010\ldots$ (the record's eternal train from another seed; Cloud
+re-simulated it); a ring search to period 18 finds no other space-time-periodic right half. Regularity criteria: $L$ is
+regular iff it has finitely many follower sets (Myhill-Nerode, with suffix closure), and (**the death criterion**,
+PROVED) if $L$ is regular then the sets $L^{(j)}$ of words still occurring from visible time $j$ on are eventually
+constant in $j$. Cloud reproduced $|L_n|$ to 10, the follower-set counts to $n = 8$, and the de Bruijn bound's trend.
+
+**Computed.** $|L_n|$ to 26 (equal to TC2's); minimal absent words at every length from 9 to 26, counts rising to 20
+at 26; a **certified entropy ceiling** $h \le \log_2 1.192197 = 0.2536$ bits per visible symbol from the de Bruijn
+graph at $m = 26$ (exact rational Collatz-Wielandt), weaker than §8.20's layer bound but by a different route, with the
+4-step growth rates still falling (0.2505 at 26) so that $h$ between 0.10 and 0.18 is the extrapolation and $h = 0$ is
+not excluded. **Lower bounds on any finite description**: a DFA for $L$ needs at least 259 states, for its reversal 160,
+and any labelled graph presenting $L$ at least 51 vertices (a verified fooling set); these grew 197, 228, 259 as the
+horizon went 24, 25, 26 with no plateau. The distinct follower sets $F_3$ and $F_4$ over $L_n$ keep growing to $n = 23$;
+no bounded suffix determines the follower set (the first symbol of a length-23 word still matters); horizon-$K$
+classes form no consistent automaton for any $K \le 10$. Words die at visible times 0 to 16, none of length at most
+12 after 16 up to the horizons reached: the death criterion was neither triggered nor ruled out.
+
+**Conjectured.** $L$ is not sofic. **Not proved**, and the lane says why: a non-regularity proof needs an infinite family
+with membership proved for all lengths, and the two candidate families found carry bounded memory. **What it
+means.** If $L$ were sofic, the period-2 question for left-finite configurations would be a finite-automaton check;
+the evidence says it is not, so the real record's finiteness will not come from a finite-state description of column 1
+alone. The death criterion is the clean test to push: deaths at arbitrarily late times refute soficity outright.

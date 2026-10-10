@@ -145,6 +145,12 @@ PART: as on the board.
 - R(62..64) = 52, 51, 50; R(66..68) = 56, 55, 54; R(70..72) = 56, 59, 60 (lane q1's search matched 1..61, 65, 69,
   73 blind); T((10)^k) <= 2k + 31 and T(u(10)^k) <= |u| + 2k + 31 for |u| <= 16; a Jen-type theorem for finite
   patterns beside a periodic wall; the barrier lemma — COMPUTED (third-party), PROVED (hand parts Cloud-checked) — §8.84
+- The 1100 wall: R'(1..100) exact, maximum 18 at 99, so no left-finite configuration within 99 sites keeps any
+  rotation of 1100 for ever; the lock lemma and structure theorem for column 1; finiteness for all d OPEN — COMPUTED
+  (lane q4, Cloud-verified to 5), PROVED (locks) — §8.85
+- Soficity of the right-half language: evidence against (DFA lower bound 259 and growing, follower sets growing, no
+  bounded suffix); certified h <= 0.2536; the death criterion proved; (1001100)^inf periodic beside the wall —
+  COMPUTED, PROVED (criteria), CONJECTURED (not sofic) — §8.86
 
 
 
