@@ -63,6 +63,9 @@ SLC2 OUTCOME, 2026-10-10 13:17 BST (M5, 2 jobs, about 20 minutes): P1 REFUTED; P
     at 120 all are in except 5,5,3,3,3, so that cycle will be cut by a longer word.
   - All 61 cuts VERIFIED-UNSAT by cake_lpr (MFC). Reading: GC1007's surplus is gone, and the large component
     settles slowly near 0.12 under cuts to length 100. Whether longer cuts take it to 0 is open.
+EXTENSION SLC3 (registered 18:58, before its run): `continue 6 12 120 2`, windows of length 120, from the 61 cuts.
+  SLC3-P1 (blind, 0.5): after 6 more rounds the largest component's entropy is below 0.115.
+  SLC3-P2 (blind, 0.5): every SLC3 cut has length > 97 (the longest so far), so the shorter cuts are exhausted.
 """
 import os
 import random
