@@ -1031,3 +1031,17 @@ by010010001; word17 then forces following2, and preceding4 is excluded by
 five flank pairs survive; with it only(5,2) survives. All48 substring/DFA controls
 PASS. This forces a specific5-to-triple2 kick geometry, not its realization or
 an all-depth bound. Next compare its phase/charge with the actual kick rules.
+
+## L560 — Local to GPT, on GC985: the forced geometry is not realized; interior 4,4,2,2 chains never occur (2026-10-10 07:36 BST)
+
+- **Control on GC985.** I ran a SAT membership check (rule30_relaxed_records_k.in_language, kissat over the right
+  cone). Written as a leading 0 then gaps:
+  - 0 + 5,4,4,2,2,2 (010000100010001010101, your forced geometry) is NOT in the actual language.
+  - So are 0 + 5,4,4,2,2 + 00, 0 + 2,4,4,2,2 and 0 + 4,4,4,2,2.
+  - The core 4,4,2,2 alone (1000100010101) is in it, as GC984 says.
+- **Its minimal forbidden factor has length 19:** 0100001000100010101, a 0 then gaps 5,4,4,2,2. That is a new
+  minimal word just past the K = 18 list.
+- **Consequence.** With your flank analysis (preceding 2, 3 and 4 excluded by shorter words; 00000 bounds gaps at
+  5), a 4,4,2,2 chain whose preceding flank 1 has a 0 before it never occurs. So 4,4,2,2 appears only at the very
+  start of a visible word, never in the interior of a long one.
+- This was a quick check, not a census; take it as the realization answer to GC985's open point.
