@@ -45,6 +45,14 @@ PREDICTIONS (Local's, pushed before any run of this script):
          removed. At m = 10, its near-diagonal follower-class counts vary by at most 10% over the last four lengths.
   SOF-P4b (blind, 0.35; registered on GPT's GC989 before any eventual run): the same at m = 13, where the 4,4,4,4
          core's last start (index 12) is excluded too.
+  CAVEAT (GPT GC991, before any verdict): Myhill-Nerode counts are observer sizes. A finite hidden cycle can give
+         exponentially many classes through the subset construction (an 8-phase example gives 255), so growth is
+         inconclusive and P2's 20 .. 120 is a guess, not a necessary scale.
+  SOF-P5 (blind, 0.35; registered after GC991, before its run): the synchronizing-word test. w is synchronizing at
+         context j and horizon l when F_l(uw) = F_l(w) for every u in L_j with uw in L. For a sofic language its
+         synchronized follower sets are the Fischer cover's states, finitely many. With j = l = 10 and k = |w| up to
+         20: at k = 20 at least 10% of words synchronize, and the number of distinct synchronized classes varies by at
+         most 10% over k = 17 .. 20.
   Counterfactual. A plateau says the hidden-state lift exists at these lengths and sizes it; the next step is to
   build the automaton from the classes and test it against longer words. Steady growth along the diagonal says the
   language is not regular at these lengths either; then the lift needs an unbounded counter (the kick count, say),
@@ -160,10 +168,36 @@ def eventual(m, nmax):
     print('SOF-P4', 'HELD' if max(last) <= 1.1 * min(last) else 'REFUTED', last)
 
 
+def sync(j, l, kmax):
+    """Synchronizing words (F_l(uw) = F_l(w) for all u in L_j with uw in L) and their distinct follower sets."""
+    L = {n: load(n) for n in range(1, j + kmax + l + 1)}
+    L[1] = {'0', '1'}
+    rows = {}
+    for k in range(1, kmax + 1):
+        fw = {}
+        for x in L[k + l]:
+            fw.setdefault(x[:k], set()).add(x[k:])
+        fuw = {}
+        for x in L[j + k + l]:
+            fuw.setdefault((x[:j], x[j:j + k]), set()).add(x[j + k:])
+        bad = {w for (u, w), vs in fuw.items() if vs != fw.get(w, set())}
+        good = [w for w in L[k] if w not in bad]
+        cls = {frozenset(fw[w]) for w in good}
+        rows[k] = (len(L[k]), len(good), len(cls))
+        print('k=%2d words %6d synchronizing %6d (%.0f%%) distinct synchronized classes %5d' % (
+            k, len(L[k]), len(good), 100.0 * len(good) / len(L[k]), len(cls)), flush=True)
+    frac = rows[kmax][1] / rows[kmax][0]
+    last = [rows[k][2] for k in range(kmax - 3, kmax + 1)]
+    ok = frac >= 0.10 and max(last) <= 1.1 * min(last)
+    print('SOF-P5', 'HELD' if ok else 'REFUTED', '(sync fraction %.2f at k = %d; classes %s)' % (frac, kmax, last))
+
+
 def main():
     os.makedirs(DIR, exist_ok=True)
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'classes'
-    if cmd == 'eventual':
+    if cmd == 'sync':
+        sync(int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
+    elif cmd == 'eventual':
         eventual(int(sys.argv[2]), int(sys.argv[3]))
     elif cmd == 'grow':
         grow(int(sys.argv[2]), int(sys.argv[3]) if len(sys.argv) > 3 else 3)
