@@ -124,22 +124,22 @@ PART: as on the board.
 - Every rooted walk returns; fixed-q excursion bound, return-word bijection and root-tree/nonroot-cycle split — PROVED — entry39/GC867, G273 (GC864..866).
 - No return in first11 steps after doubling; return-eight acyclic; automatic baseline — PROVED — G188/192/203.
 - Selected-wait identities — PROVED — GC652..702/684; suffix debt29.5 COMPUTED GC949; budget OPEN.
-- Complete-source/stratum means, dependent spread and factor-q cap — PROVED — G274..276/W277 (GC869/870/872/890); baseline counting CLOSED GC892.
+- Source/stratum means, dependent spread, factor-q cap — PROVED — G274..276/W277 (GC869/870/872/890); baseline counting CLOSED GC892.
 - Fair-reset leaf weight2^-branch-depth; ambient/uniform-leaf mean transfer CLOSED — PROVED — GC921/CL141, G158.
 - Spread<=q-1, split fixture and complete doubled sampling — PROVED / COMPUTED — G6, GC922/925 (CL142/145).
 - Two lifts preserve first-reset coalescence iff odd source pulse — PROVED — GC923/CL144.
-- Re-coalescence extrapolation refuted, repeats driver429; stopped — REFUTED — GC926/CL146, G6.3 SF2; clock guard G174.
-- Physical q16 tree:15 branches,16 entries q32 at87867..894235; N1..4=3,8,29,400 — COMPUTED — entry21/Proposition8, TM5/TM5b/TM6.
+- Re-coalescence refuted, driver429; stopped — REFUTED — GC926/CL146, G6.3 SF2; clock guard G174.
+- Physical q16:15 branches,16 q32 entries at87867..894235; N1..4=3,8,29,400 — COMPUTED — entry21/Proposition8, TM5/TM5b/TM6.
 - Whole in-tree sizes4,14,98,3066,34541082 throughq16; RC88 source nonphysical,371 physical — COMPUTED — ZF/CL126..128, GC907..910.
 - q8/q16 even-return classifications complete; physical sharp one-parity odd return exists — COMPUTED — RC88/RC16/RC16X/QX/QX2, GC861/862/915, SE/CL134.
 - Period64 first depth65821413; q32 stage>2.6e10 — COMPUTED — TM6/Propositions9/10.
-- q32 first16 rooted orbits return, mean1.007x2^32: restricted-prefix scale only — COMPUTED — RWC/RWX L488/522, GC927.
+- q32 first16 rooted returns, mean1.007x2^32: restricted prefix only — COMPUTED — RWC/RWX L488/522, GC927.
 - RW repairs/Lean census match — PART / source PROVED — GC868, L490/491, GC867.
 - Driver fibres exact; boundary/nonphysical transfers CLOSED — PROVED — W278..281, GC894..901/903, CL120..126, L510..512.
 - Primitive fourth child and sharp/mixed entry constraints — PROVED — GC904/909/911/914/916; mask shortcuts CLOSED GC912/913.
-- Sharp profiles/fifth rising-edge identity; sustained physical floor refuted; further refinement stopped — PROVED / REFUTED — GC917/918/924, CL138/143/151.
+- Sharp profiles/fifth-edge identity; sustained floor refuted; refinement stopped — PROVED / REFUTED — GC917/918/924, CL138/143/151.
 - Debt/rotation/pruning — conditional, reviewed — GC310/312/315/323; coalescence identity PROVED CL157/GC943 via GC320.
-- Finite debt60 through2^20 at every phase (allowance91 unused); no later bound — COMPUTED L197/199 — RD16/RD32, GC319/325/940, AP/CL156/159; C2P scope GC945.
+- Debt60 through2^20, all phases (91 unused); no later bound — COMPUTED L197/199 — RD16/RD32, GC319/325/940, AP/CL156/159; C2P scope GC945.
 - Remaining: joint budget (margin reviewed GC946/CL163), gap2, all-left-edge repeats, Rudin-Shapiro, q>=32 odd returns — OPEN (PART) — Q7; G129/140/141, GC155.
 
 
@@ -177,7 +177,7 @@ PART: as on the board.
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (known: Jen 1986, Rowland §5) — COMPUTED — §8.27, §8.30
 - Lemma B1 (white, then black; Lean LemmaB1.lean, L529; source GC955), B2 (periods unbounded), B3 (no white run over twice the
-  band's period; Lean LemmaB3.lean, L534) — PROVED —
+  band's period; Lean LemmaB3.lean, L534; source GC958) — PROVED —
   §8.59; B2 for the single seed is in print (Nersissian Theorem 13)
 - Rowland's question answered both ways: >= 4 certified left sides; 60 generic rows share one — COMPUTED — §8.31
 - Leftward speed 0.246 = 1 - 0.41 x 1.84, by the identity v = 1 - P(heal) E[jump | heal] — PROVED (identity),

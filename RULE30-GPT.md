@@ -23059,3 +23059,54 @@ L534 B3 stronger snapshot hypothesis and RR3 depth112 L15 SAT received; the
 latter gives R_real112>=15 only, not an exact value or UNSAT certification.
 VC3 is planned after RR3, not complete. Next B3 source audit. Scratch deferred,
 room closed; no compiled axiom or prize claim.
+
+## GC958 — L534 B3 source review PASS, half-line snapshot qualification (2026-10-10 05:10 BST)
+
+**Record.** Complete LemmaB3.lean at40e3a200 and entry12 read. Search
+B3/older-chain/newborn with snapshot/Lean/birth/periodic ->25hits13files.
+Existing-proof source audit, no Lean execution, census or new proof unit.
+
+**Statement PASS in its exact domain.** Arbitrary x0 and integer frame origin e,
+natural P>=1 and t>=P; integer g,M',M with g+1<=M'<=M; black at diagonal g,
+white g+1..M' at t; and equal snapshots t-P/t for EVERY integer k<=M
+imply M'-g<=2P. No leftmost black cell is assumed. The time requirement is
+weaker than a full settled periodic regime; the spatial snapshot premise is
+an entire left half-line, not just0..M. In entry12's edge frame, negative
+diagonals are identically white, so the settled0..M hypothesis extends to
+this half-line. Calling it simply a snapshot assumption must retain that domain.
+The introductory edge language is context, not a hidden Lean hypothesis.
+
+**Backward and forward checks.** constraint is exactly white output iff
+D_(k-2)=D_(k-1) OR D_k. In back, an all-white prior interval g-1..M'
+forces black g-2 from the current black g. Otherwise a prior black exists;
+if the top two prior cells M'-1,M' were both white, repeated constraint
+would make the whole prior interval white, contradiction. A top black thus
+propagates through constraints to black g-1..M'-2. This is the older/newborn
+dichotomy, with singleton intervals allowed. fwd asserts only guaranteed
+whites g+1+2r..M', not exact shrinkage without a black boundary.
+
+The older chain at age s has white g-2s+1..M' and black g-2s at t-s.
+If ageP exists, g is white at t-P, contradicting snapshot equality and black
+g at t. Therefore a birth exists at s0<P, with black interval
+g-2s0-1..M'-2 at time t-s0-1. Replaying the snapshot whites from t-P
+for r=P-s0-1 reaches that exact birth time, with first guaranteed white
+k=g+1+2(P-s0-1). Under width>2P this k lies in both intervals, contradiction.
+All natural time subtractions are exact because s0<P<=t. Entry12's stronger
+birth-specific inequality width<=2P-2s0 is compatible, but the Lean theorem
+concludes only the advertised2P bound.
+
+**Independent hand controls and unexpected domain.** For P1 the birth age is
+s0=0, r0, and width3 forces the first white g+1 into the newborn black
+interval ending M'-2; width2 need not overlap. Removing snapshot equality
+is false: single seed at cell0, e0,t1,P1,g2,M'=M6 has black physical cell1
+and white cells2..5, a width4 run>2. At time0 diagonal2 is white, so the
+required equality fails. Removing the black boundary admits the all-white
+row with arbitrarily long runs and exact snapshot equality. These are literal
+one-step controls, not a trajectory experiment. The unexpected check is the
+unbounded lower side of hper: weakening it to0<=k<=M without an edge premise
+is not covered by this source or claimed here. No settling-time bound follows.
+
+L536's ShortC comment now uses the correct through-t+k window, and entry17
+files GC956's actual-configuration qualifier. Source correction verified;
+Local's recompile/axiom receipt remains Local evidence. L535 A4 source queued.
+Scratch deferred, room closed; no independent kernel or prize claim.
