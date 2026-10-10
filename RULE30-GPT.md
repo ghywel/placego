@@ -27702,3 +27702,42 @@ Consequently a mature S-L0-L1 must start from111010001 or111011100. The latter h
 **CL216 receipt at7f41518c.** Read §8.82 and the ledger: the swarm's black-phase coupling and three-shape lemma are accepted with Cloud's stated independent checks, its depth62 table remains third-party computation, and the lane's skeptic is still queued. It supplies no all-depth bound. No duplicate record computation or certificate audit. The present proof block remains on the hidden S/L ancestry target.
 
 **CL217 receipt at4a41cdec.** Accepted: Cloud independently checks all131,072 L1 cones through site26;18,432 have the L0 branch and none has the barred ten-bit prefix at16. The five reported prefixes are1110010011,1110010100,1110010101,1110011011,1110011110. GC1051 is now second-read, within its typed-sequence scope; GC1052 remains pending. These concrete successor prefixes offer the next hand transport target across an intervening ordinary L, without a new width or mixed-word census.
+
+
+## GC1053 — No ordinary-long return can prepare an immediate hidden fork (2026-10-10)
+
+**Missing inference.** Transport CL217's five L1-S-L0 successor prefixes through an intervening ordinary L0. Record searched: their five strings with return|transport|interven|fork ->14 hits, GC1049..1052 and references, no intervening-L0 guard. A narrower L0.L0.L1|111001000|ordinary.*ordinary with preced|imposs|forbid|all.L|ALF|GC746|GC747 gives11 hits. Read GC744..747: their all-L future budgets do not give the single-return hand implication below. Reuse GC1047's exact mid-selector and two-tick ancestry shield, and GC1050's necessary fork prefix.
+
+**All-tail hand theorem, second reader pending.** Every white-wall row initially beginning111001 which returns to L0 after ten ticks satisfies
+
+    c7(10) OR c8(10) OR c9(10) = 1.
+
+Thus the typed sequence L0-L0-L1 is impossible, since GC1050 requires the middle L0 to begin1110010001 to feed L1. This also excludes L1-S-L0-L0-L1, independently of CL217's five-prefix census. These are hidden collar constraints, not bans on the corresponding untyped visible words. No all-depth record bound is claimed.
+
+**Proof.** Put z=c6(5), a=c7(5). GC1047 supplies the exhaustive cases. If z=a=0, the return has c6(10)=0 and cannot be L0. If z=0,a=1, time5 begins0110001. Write x,y,w for its sites8,9,10, and put A=NOT(x OR y), B=x XOR(y OR w). Its next two rows have sites6..9 equal(1,1,A,B) and(1,0,D,E), where D=NOT(A OR B) and E=A XOR(B OR right). At time8 sites6..8 are(1,NOT D,D OR E); their last pair has OR1. Hence time9 sites5..7 are(0,1,0). For Q=c8(9), R=c9(9), the returned sites7,8 are(NOT Q,Q OR R), with OR1. This establishes the stronger two-site blocker in the mid01 case.
+
+It remains z=1. At time5 sites5,6 are01 and the prefix is011001. GC1047 gives c5(6)=1, c5(7)=0, c5(8)=1. Let time7 sites7..12 be u,v,p,q,r,s. At time8,
+
+    (c6,c7) = (u,u OR v).
+
+The GC1047 closing-L0 criterion requires these two sites both white, so u=v=0. Crucially the actual time5 anchor01 and its two Rule30 updates impose GC1047's translated shield
+
+    u=v=0 implies (p,q) != (1,1).
+
+For u=v=0 the same updates give time8 sites8..11 as
+
+    p, p OR q, p XOR(q OR r), q XOR(r OR s).
+
+At time9, c7=p and c8=p OR q. Therefore c7(10)=NOT(p OR q). If the returned sites7 and8 are both0, the first equation gives p OR q=1; the second then forces p=1. With p=1, time9 sites8,9 are10. If returned site9 is also0, time9 site10 must be1. Its equation is
+
+    c10(9) = 1 XOR[(1 XOR(q OR r)) OR(q XOR(r OR s))].
+
+A value1 forces q OR r=1 and q=r OR s. They imply q=1: q=0 would give r=s=0 and contradict the first equality. Thus three returned zeros force p=q=1, contrary to the translated shield. This proves the claimed OR guard for every farther tail.
+
+**Initial bounded attempt and controls.** Before controls P1 predicted that CL217's five prefixes already barred the next fork precursor. All5*1,024 complete ten-tick local cones passed literal/packed engines. Their hand blockers were: the first three use mid00 or mid01;1110011011 returns S;1110011110, if it returns L0, has returned site9=1. Following those explicit equations, I predicted and derived the stronger P2 above, replacing reliance on the five-prefix list by the universal ancestry shield. Separate controls check256 complete five-tick black-phase mid1 cones (48 L0 returns),128 mid01 cones, and64 translated shield cones (12 applicable), including the displayed intermediate equations. They test the local proof steps rather than substitute a depth scan for proof.
+
+**Unexpected check and retained failure.** The unlifted black-phase row11010000111 followed by zeros reaches1110010001 in three ticks. Its input sites7..10=0011 violate the shield; a free-row relaxation would really admit the barred target. My first unexpected-control prediction used1101000011 followed by zeros and failed, returning1110010011. The correction retains the additionally necessary time7sites11 OR12=1; p=q=1 alone was never a sufficiency claim in the proof. The existing relaxed S row1110111001110... also reaches the fork precursor, confirming that fork births from S are not excluded. Both independent engines agree.
+
+**Consequence and next intention.** Together with GC1046/1051, an interior L1 birth has a preceding S-L0, and that S cannot be the immediate successor of L1. The surviving birth past must therefore pass through another S or L0 before that S; this is a concrete separation constraint, not a finite-state closure certificate or bound on the number of births. Next hand target is transport of this shield through the surviving S entrance, retaining its actual past. Cloud hand review and one concrete next obligation requested; no solver, membership or mixed-word scan.
+
+**CL218 receipt at31364769.** Cloud independently checks8,192 S111010011 cones, with returned pair10 in2,048 and01 in6,144; accepts the hand relation and retained failure. GC1052 is now second-read. No run requested from Local.
