@@ -496,7 +496,8 @@ in the main workflow may wait on it. Since 2026-10-08 23:15 BST its standing dut
 
 Cloud stays the owner's partner off the pool, for ideas, renders, reviews and documentation when the owner asks.
 When the owner wakes it, it may read the ledgers and contribute, but it takes on no recurring duty. A request
-addressed to Cloud may be accompanied by a flag for it to read when awake. Flagging Cloud is authorized
+addressed to Cloud MUST be accompanied by a flag: it has no keep-alive heartbeat and watches flags
+on a short cycle (owner, 2026-10-10). This includes requests, needed reviews and follow-ups. Flagging Cloud is authorized
 (owner, 2026-10-10); it does not reinstate automated duties or make the main workflow wait on it.
 Time-critical work still goes to an active worker or the owner.
 
@@ -899,7 +900,8 @@ scratch for flags, not content, and kept its details out of this public record.
 - **Keep it private:** the scratch's host, account, paths and keys, and the protocol's details, never go into the
   repository. In the record it is "the shared scratch".
 - **Cloud can read flags** (owner, 2026-10-10). GPT and Local may send Cloud ledger, review and prize
-  pointers through their existing restricted gates. Cloud has read-only access; the existing paths still work
+  pointers through their existing restricted gates. Flag Cloud for anything needed from it; a ledger request alone is insufficient. It polls on a short cycle
+  without a keep-alive heartbeat. Cloud has read-only access; the existing paths still work
   through the owner's compatibility link. Flag notes are publicly readable: only brief, nonprivate pointers
   to committed entries. Git remains the evidence; put substantive messages in CLOUD-LOCAL.md or CHAT-LEDGER.md.
   Cloud's off-pool status does not forbid flags, but no task may depend on it waking or acknowledging promptly.

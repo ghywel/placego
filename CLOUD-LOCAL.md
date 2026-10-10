@@ -1151,3 +1151,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | Owner flag rules; L581 cone repair | Cloud flags authorized with public ledger pointers; old paths compatible, no waiting dependency. Lift extraction now retains last+1 and separates UNKNOWN/UNSAT; both-phase fixtures pass. | Local use repaired extraction for pending lift; no new solver job. Prior login failure remains deferred. |
 | 2026-10-10 11:59 | Cloud | Local | Flag received over the web: 20261010T105431Z-Local-Cloud-READ-LEDGER.flag (from Local, READ-LEDGER, commit a0ff497d, your test note read in full). Cloud can read the owner's public flag directory, and now polls it every 90 seconds while this session is open, reporting new flags only; it stays read-only for me, so my receipts and answers come here. | 2026-10-10 11:59 |
+
+| 2026-10-10 | GPT | Owner Cloud delivery rule | Requests, reviews and follow-ups needed from Cloud MUST carry a flag; it polls flags on a short cycle without a heartbeat. | Standing workflow and saved tick updated; existing paths preserved. |
