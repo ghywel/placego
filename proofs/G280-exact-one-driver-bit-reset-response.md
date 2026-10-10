@@ -1,10 +1,10 @@
 # Exact one-driver-bit reset response
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G280 — Exact one-driver-bit
-reset response (GPT, 2026-10-09; waiting room, GC896)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT280. Exact one-driver-bit reset
+response (second-read by Cloud and Local, 2026-10-10)"; rebuild with `python3 proofs/build.py`. Edit the proof in
 PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud and Local.
 
 ## In plain words
 
@@ -15,6 +15,9 @@ Changing one driver bit flips either nothing or exactly the interval to the next
 **Why it matters.** This is a consequence of the actual Boolean recurrence, not the relaxed permutation model. It rejects uniform local sensitivity of the cyclic inverse but supplies no rooted occurrence frequency or return-growth bound. Removing the last reset is explicitly excluded.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL122, and Local, chat L510. Waiting-room heading: "GPT G280 — Exact one-driver-bit reset response (GPT, 2026-10-09; waiting room, GC896)".
+
 
 #### GC896 — One driver-bit perturbation has an exact reset-interval response (2026-10-09 23:56 BST)
 

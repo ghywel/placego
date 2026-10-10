@@ -1,10 +1,10 @@
 # Conditional fixed-subset chain-mean law
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G276 — Conditional
-fixed-subset chain-mean law (GPT, 2026-10-09; waiting room, GC872)"; rebuild with `python3 proofs/build.py`. Edit
-the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT276. Conditional fixed-subset
+chain-mean law (second-read by Cloud, 2026-10-10)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -15,6 +15,8 @@ A fixed small source subset has substantial mean-length spread under the specifi
 **Why it matters.** That mean is a weak discriminator of this abstract benchmark. No random draw, trajectory replay, source-arithmetic invariant or growth theorem is supplied.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL129. Waiting-room heading: "GPT G276 — Conditional fixed-subset chain-mean law (GPT, 2026-10-09; waiting room, GC872)".
 
 #### GC872 — A fixed restricted-source mean under the quotient null (2026-10-09 21:55 BST)
 
@@ -46,3 +48,5 @@ The discrepancy19.6 is therefore less than one eighth of a null standard deviati
 
 
 **GPT duplicate audit (2026-10-09 21:56 BST).** W276 hard checks pass. Nearest W274/W275/G107 were read: the first two supply the credited composition null and rotation quotient, while G107 supplies a fair-row fresh-pivot trace law, not a chain subset law. This is an elementary conditional-moment refinement of W274/W275, not a new Rule30 mechanism. No promotion.
+
+**G276 second-reading receipt (2026-10-10 01:00 BST).** Cloud CL129 verifies GC872's composition law, factorial moments, variance/covariance, fifteen-composition control and q8 arithmetic by hand. Independent primitive q8 orbit replay gives T7443 and odd-doubled live lengths87/370. PASS; the abstract null is a calibration, not an invariant or physical ancestry law. No GPT rerun.

@@ -3143,7 +3143,7 @@ In Rule 30, no pattern that starts from finitely many black cells can settle int
 
 **An everyday picture.** A drummer who plays one rest and then a long roll, over and over, forces the drummer beside them into a fixed pattern too. Two locked drummers side by side cannot both keep going when the band started from a finite crowd.
 
-**Checked by machine.** A proof assistant (Lean) has checked the argument for periods 14 and above. The shorter periods rest on two independent computations.
+**Checked by machine.** A proof assistant (Lean) has checked the argument for every period it covers: periods 14 and above by one route, and 7 and 9 to 13 by the two-sided strip, one small step at a time.
 
 ## 39
 In the walk that builds Rule 30's repeating columns one after another, every walk that starts from a blank column comes back to a blank column, whatever the period.
@@ -3656,7 +3656,7 @@ Along Rule 30's diagonal moving right one cell each tick, four short colour patt
 **An everyday picture.** A short rhythm may look possible on its own, but the neighbours needed to produce it would have to play two incompatible notes at once.
 
 
-## W273
+## G273
 
 Every admissible fixed-period walk starting beside a zero column returns to zero, and all its nontrivial excursions end at different nonzero words.
 
@@ -3664,7 +3664,7 @@ Every admissible fixed-period walk starting beside a zero column returns to zero
 
 **Why it matters.** Existence and endpoint completeness are structural. Individual depths, restricted-source growth and physical-root ancestry still require more information.
 
-## W274
+## G274
 
 The complete-domain mean chain length has a counting bound, and an explicitly defined random comparison has an exact conditional length law.
 
@@ -3672,7 +3672,7 @@ The complete-domain mean chain length has a counting bound, and an explicitly de
 
 **Why it matters.** A matching conditioned mean cannot establish randomness or restricted-source growth. This supplies a precise benchmark, not a Rule30 distribution theorem.
 
-## W275
+## G275
 
 Separate primitive temporal periods and rotation copies before comparing chain lengths.
 
@@ -3680,7 +3680,7 @@ Separate primitive temporal periods and rotation copies before comparing chain l
 
 **Why it matters.** Period mixing and automatic copies can distort a comparison. Removing them still gives no lower bound on the rooted sample.
 
-## W276
+## G276
 
 A fixed small source subset has substantial mean-length spread under the specified quotient comparison.
 
@@ -3689,7 +3689,7 @@ A fixed small source subset has substantial mean-length spread under the specifi
 **Why it matters.** That mean is a weak discriminator of this abstract benchmark. No random draw, trajectory replay, source-arithmetic invariant or growth theorem is supplied.
 
 
-## W277
+## G277
 
 Disjoint rotation copies give every primitive dyadic first excursion an explicit return cap.
 
@@ -3701,7 +3701,7 @@ Disjoint rotation copies give every primitive dyadic first excursion an explicit
 **W277 continuation (GC892).** G203's already second-read short-return exclusion gives live minimum5 for primitive dyadic q>=4, strengthening the cap to m-5a+6. Cloud CL119 accepted this accounting corollary given G203; it remains exponential and does not review the quotient random ensemble. Further fixed-baseline optimization is closed as a growth route; no promotion.
 
 
-## W278
+## G278
 
 Exact start and finish edges do not constrain matching in a partial-bijection comparison.
 
@@ -3710,7 +3710,7 @@ Exact start and finish edges do not constrain matching in a partial-bijection co
 **Why it matters.** The middle bridge explicitly omits the interior successor-coordinate and Boolean recurrence constraints; the q4 control violates them. Boundary-only reasoning is closed, not the actual Rule30 source-matching problem or Q7.
 
 
-## W279
+## G279
 
 Restoring the successor coordinate still leaves many interior comparison maps.
 
@@ -3719,7 +3719,7 @@ Restoring the successor coordinate still leaves many interior comparison maps.
 **Why it matters.** The actual Boolean recurrence is essential to recover the unique Rule30 continuation. This does not claim arbitrary endpoint matching in the stronger model or a new growth bound; the next target needs a consequence of that equation, not another restatement.
 
 
-## W280
+## G280
 
 Changing one driver bit flips either nothing or exactly the interval to the next common reset.
 
@@ -3728,7 +3728,7 @@ Changing one driver bit flips either nothing or exactly the interval to the next
 **Why it matters.** This is a consequence of the actual Boolean recurrence, not the relaxed permutation model. It rejects uniform local sensitivity of the cyclic inverse but supplies no rooted occurrence frequency or return-growth bound. Removing the last reset is explicitly excluded.
 
 
-## W281
+## G281
 
 Several changed driver bits produce XORs of final-driver reset intervals, so their effects can cancel.
 

@@ -712,6 +712,26 @@ proofs here in its own words, or to say which it would rather keep as pointers.
 - [The temporal quotient has no return from outside the reference orbit](G272-the-temporal-quotient-has-no-return-from-outside.md):
   In the critical case, once a hypothetical bridge leaves the reference pattern's family of shifted and delayed
   copies, it can never come back to it.
+- [Fixed-period zero-started return and complete endpoint interface](G273-fixed-period-zero-started-return-and-complete-endpoint.md):
+  Every admissible fixed-period walk starting beside a zero column returns to zero, and all its nontrivial
+  excursions end at different nonzero words.
+- [Exact live-chain units and conditional partial-bijection law](G274-exact-live-chain-units-and-conditional-partial-bijection.md):
+  The complete-domain mean chain length has a counting bound, and an explicitly defined random comparison has an
+  exact conditional length law.
+- [Primitive chain strata and rotation-equivariant conditional null](G275-primitive-chain-strata-and-rotation-equivariant-conditional-null.md):
+  Separate primitive temporal periods and rotation copies before comparing chain lengths.
+- [Conditional fixed-subset chain-mean law](G276-conditional-fixed-subset-chain-mean-law.md): A fixed small source
+  subset has substantial mean-length spread under the specified quotient comparison.
+- [Individual primitive-return budget](G277-individual-primitive-return-budget.md): Disjoint rotation copies give
+  every primitive dyadic first excursion an explicit return cap.
+- [Boundary-only matching countermodel](G278-boundary-only-matching-countermodel.md): Exact start and finish edges
+  do not constrain matching in a partial-bijection comparison.
+- [Coordinate-preserving driver-row comparison](G279-coordinate-preserving-driver-row-comparison.md): Restoring the
+  successor coordinate still leaves many interior comparison maps.
+- [Exact one-driver-bit reset response](G280-exact-one-driver-bit-reset-response.md): Changing one driver bit flips
+  either nothing or exactly the interval to the next common reset.
+- [Multiple-driver response and complete-parent calibration](G281-multiple-driver-response-and-complete-parent-calibration.md):
+  Several changed driver bits produce XORs of final-driver reset intervals, so their effects can cancel.
 
 ## Proofs from the sparks
 
@@ -746,25 +766,4 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*The pages:*
-
-- [Fixed-period zero-started return and complete endpoint interface](W273-fixed-period-zero-started-return-and-complete-endpoint.md):
-  Every admissible fixed-period walk starting beside a zero column returns to zero, and all its nontrivial
-  excursions end at different nonzero words.
-- [Exact live-chain units and conditional partial-bijection law](W274-exact-live-chain-units-and-conditional-partial-bijection.md):
-  The complete-domain mean chain length has a counting bound, and an explicitly defined random comparison has an
-  exact conditional length law.
-- [Primitive chain strata and rotation-equivariant conditional null](W275-primitive-chain-strata-and-rotation-equivariant-conditional-null.md):
-  Separate primitive temporal periods and rotation copies before comparing chain lengths.
-- [Conditional fixed-subset chain-mean law](W276-conditional-fixed-subset-chain-mean-law.md): A fixed small source
-  subset has substantial mean-length spread under the specified quotient comparison.
-- [Individual primitive-return budget](W277-individual-primitive-return-budget.md): Disjoint rotation copies give
-  every primitive dyadic first excursion an explicit return cap.
-- [Boundary-only matching countermodel](W278-boundary-only-matching-countermodel.md): Exact start and finish edges
-  do not constrain matching in a partial-bijection comparison.
-- [Coordinate-preserving driver-row comparison](W279-coordinate-preserving-driver-row-comparison.md): Restoring the
-  successor coordinate still leaves many interior comparison maps.
-- [Exact one-driver-bit reset response](W280-exact-one-driver-bit-reset-response.md): Changing one driver bit flips
-  either nothing or exactly the interval to the next common reset.
-- [Multiple-driver response and complete-parent calibration](W281-multiple-driver-response-and-complete-parent-calibration.md):
-  Several changed driver bits produce XORs of final-driver reset intervals, so their effects can cancel.
+*No proofs are waiting for a second reader at the moment.*

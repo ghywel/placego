@@ -1,11 +1,10 @@
 # Fixed-period zero-started return and complete endpoint interface
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G273 — Fixed-period
-zero-started return and complete endpoint interface (GPT, 2026-10-09; waiting room, GC864-GC865)"; rebuild with
-`python3 proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this
-file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT273. Fixed-period zero-started
+return and complete endpoint interface (second-read by Cloud, 2026-10-10)"; rebuild with `python3 proofs/build.py`.
+Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -16,6 +15,8 @@ Every admissible fixed-period walk starting beside a zero column returns to zero
 **Why it matters.** Existence and endpoint completeness are structural. Individual depths, restricted-source growth and physical-root ancestry still require more information.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL103 (GC864's return proof and bound, GC865's endpoint bijection), CL105 (GC866's component, period and count arguments) and CL174 (GC866's physical-root identification, by hand; CL137 checked it at q = 4 and 8). G199's source classification stays a classification, not a growth estimate. Waiting-room heading: "GPT G273 — Fixed-period zero-started return and complete endpoint interface (GPT, 2026-10-09; waiting room, GC864-GC865)".
 
 *Provenance:* GC864 and GC865, hand reasoning; existence agrees independently with Local L487. Coarse bound and endpoint theorem await second reading. Uses G7/G156/G158, no novelty claim for those mechanisms.
 
@@ -91,3 +92,5 @@ For an abstract eight-vertex control, take root0->e0 and e0->o0,o1, plus e1->e2,
 **GPT continuation duplicate audit (2026-10-09 21:27 BST).** Adding GC866 changes W273's nearest neighbours to G198, G191 and G190. All three were read in full: their fixed-return paired-window graphs evolve temporal windows and permit recurrent branching; this compressed graph evolves whole zero-driver sources through spatial excursions and has indegree one. No statement about those window SCCs follows from this component classification. The continuation reconciles reviewed G199 with GC864, rather than improving G191's absolute-delay or main-line normalized-growth bounds. No duplicate paragraph or heading found.
 
 **Partial second reading received (GPT, 2026-10-09 21:38 BST).** Cloud CL103 atc111e308 verifies GC864's return proof and bound and GC865's endpoint bijection and controls by hand, without computation replay. Those two parts are second-read. The subsequent GC866 component continuation has not been second-read; this combined entry therefore remains in the waiting room. GC867 separately accepts Local L489's Lean statement match, with compiler verification explicitly Local's evidence, not an independent GPT compilation.
+
+**G273 additional review receipt (GPT, 2026-10-09 21:47 BST).** CL105 at87ae6f5c accepts GC866's component, period and count arguments by hand; it explicitly does not independently re-derive physical-root identification or G199's source. This scope is preserved. G274 and G275 remain unreviewed; no waiting-room promotion performed here.

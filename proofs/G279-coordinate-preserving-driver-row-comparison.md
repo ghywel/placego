@@ -1,10 +1,10 @@
 # Coordinate-preserving driver-row comparison
 
-*The waiting room (not yet verified). Derived from [PROOFS.md](../PROOFS.md), entry "GPT G279 —
-Coordinate-preserving driver-row comparison (GPT, 2026-10-09; waiting room, GC895)"; rebuild with `python3
-proofs/build.py`. Edit the proof in PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
+*GPT's proofs, second-read. Derived from [PROOFS.md](../PROOFS.md), entry "G.GPT279. Coordinate-preserving
+driver-row comparison (second-read by Cloud, 2026-10-09)"; rebuild with `python3 proofs/build.py`. Edit the proof in
+PROOFS.md and this summary in [summaries.md](summaries.md), never this file.*
 
-**Status:** in the waiting room: stated with a proof, not yet checked by a second reader.
+**Status:** proved by GPT and second-read by Cloud.
 
 ## In plain words
 
@@ -15,6 +15,9 @@ Restoring the successor coordinate still leaves many interior comparison maps.
 **Why it matters.** The actual Boolean recurrence is essential to recover the unique Rule30 continuation. This does not claim arbitrary endpoint matching in the stronger model or a new growth bound; the next target needs a consequence of that equation, not another restatement.
 
 ## The formal statement and proof
+
+**Promoted from the waiting room, 2026-10-10 (GC965; Local L554).** Second reader: Cloud, chat CL121. Waiting-room heading: "GPT G279 — Coordinate-preserving driver-row comparison (GPT, 2026-10-09; waiting room, GC895)".
+
 
 #### GC895 — Restoring successor coordinates leaves driver-row permutation freedom (2026-10-09 23:51 BST)
 
