@@ -92,6 +92,8 @@ ADDENDUM 4, 2026-10-10 15:20 BST. L596 (Local, CUT at d = 152, round 0 with thre
   clock at t = 69). So TR-P4 HELD (a depth in 121 .. 168 has R_real >= 18; found from above, not by these calls),
   TR-P5 still undecided (140 open), and CL183's TR-P7 (CUT ends UNSAT at 152) REFUTED. The ceiling 17 is refuted
   outright: 16 at d = 20, at most 17 from 21 to 124, at least 18 at 152.
+ADDENDUM 5, 2026-10-10 15:19 BST. RR3 complete (Local, every depth 97 .. 120 decided; its header has the outcome):
+  117 = 14, 118 = 15, 119 = 14, 120 = 13 added; mode trend now gives slope 0.0802 per depth over d = 30 .. 120.
 """
 import os
 import sys
@@ -111,7 +113,8 @@ RR2 = """20:16 21:15 22:14 23:13 24:12 25:11 26:10 27:9 28:8 29:7 30:8 31:8 32:8
 41:8 42:9 43:9 44:8 45:9 46:11 47:10 48:11 49:11 50:10 51:9 52:11 53:10 54:10 55:11 56:12 57:11 58:10 59:10 60:9
 61:9 62:12 63:11 64:12 65:11 66:10 67:14 68:13 69:12 70:11 71:12 72:11 73:10 74:10 75:10 76:10 77:10 78:11 79:10
 80:10 81:12 82:11 83:14 84:13 85:12 86:13 87:16 88:15 89:14 90:13 91:12 92:12 93:16 94:17 95:16 96:15 97:14"""
-RR3 = [14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16, 15, 14, 15, 15, 14, 13, 14, 15]      # d = 98 .. 116 (L588, 13:18)
+RR3 = [14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16, 15, 14, 15, 15, 14, 13, 14, 15,       # d = 98 .. 116 (L588)
+       14, 15, 14, 13]                                   # d = 117 .. 120 (RR3 complete, 15:15)
 DEEP = [140, 148, 156, 164]           # third start: the bracket of the trend's crossing of 18, long caps (addendum 2)
 L_DEEP = 18
 

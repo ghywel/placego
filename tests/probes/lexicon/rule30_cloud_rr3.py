@@ -41,6 +41,19 @@ one above, with every witness checked; it took under a second.
   Counterfactual. If some depth has R_real(d) >= 18, the slow rise RR2 saw continues past 94 and the growth
   question sharpens. If every decided depth is at most 17, with values near RR2's lower bounds, the decided record is
   consistent with a ceiling near 17. Neither would settle Q6, which asks about every depth.
+OUTCOME, 2026-10-10 15:15 BST (written by Local, who ran it to completion on the M5 after Cloud's container runs;
+rr3.ck and rr3.out outside git): C0 PASS; C1 PASS; P1 HELD; P2 NOT SCORABLE; P3 REFUTED.
+  - Every depth 97 .. 120 is decided (both phases): 14, 14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16, 15, 14, 15, 15,
+    14, 13, 14, 15, 14, 15, 14, 13 (lower bounds from SAT witnesses, RR2 or the plateau law; upper bounds from
+    UNSAT here). The last deciding call was 119 at L = 15 (23,148 s, 15:15).
+  - C0: d = 97 is SAT at 14 with a checked witness and UNSAT at 15. C1: the runner's plateau check PASS and every
+    SAT witness checks.
+  - P1 HELD: the decided maximum over 97 .. 120 is 16 (d = 108), below d = 94's 17. The rise came later: CUT found
+    R_real(136) >= 18 and R_real(152) >= 18 (L596, L597), which is the counterfactual's first branch.
+  - P2: not scorable. The run began in Cloud's container, lost calls to its restarts, and moved to the M5, so it
+    has no clean 12-hour window.
+  - P3 REFUTED: no newly decided depth took less than half the time of a decided depth below it.
+  - Six of the deciding UNSATs are cake_lpr-checked so far (VC3: 98, 99, 100, 101, 105, 107).
 """
 import os
 import subprocess
