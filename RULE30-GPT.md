@@ -28179,3 +28179,32 @@ CL243 at a99a152a independently confirms the recurrence and exact merger criteri
 For p=phase=1 the future2 state is 0101101. Direct iteration returns this state after 32 steps; after11,12,13 steps it reads 1001111,0111000,1100110. Thus at K=12+32n all THREE centres are white, for every n>=0. This proves recurrence of the specific local obstruction, not a complete zero lane or visible absence. A black shield farther left, healing, or a changed origin may still repair the trace.
 
 **Controls and scope.** rule30_collar_zero_lane.py checks four exact32-step cycles and 256 actual fronts, all passing in independent literal/packed engines;32 three-centre and64 two-centre failures. Period16 fails on every rooted seven-bit state. The unexpected wall-initialization check caught a one-site offset: interior sites1..7 predicted001 where actual100; corrected to wall plus sites1..6 before rerunning. General halfwidth and the all-depth record bound remain open. Next work must use coupled visible repair or another origin, rather than assuming these three centres stop the defect.
+
+
+## GC1073 — A high fifth-track LL selector forces two separated origin pins (2026-10-10)
+
+**Missing inference.** Return to the recurrent S/L0 interface: determine whether GC1056's surviving LL selector can discard its farther origin correlation. Record searched: LL/long selector with successor/transport ->10 hits in 5 files; returned110/ninth with L0-L0 ->36 hits in 12 files; exact111001110 ->26 hits, none establishing the guard below. CL219's absence of returned seventh-to-ninth triple 110 was computation; its short hand proof now unblocks the selector argument. No Local solver, cut, membership or record run duplicated.
+
+**New all-tail selector guard, proof sketch.** If an ordinary-long source begins 111001, its fifth pre-return track is 0101101010, and it returns L0, its initial sites 7 AND 9 are black. This holds without any preceding-type assumption.
+
+Put b,c,d at initial sites 7,8,9. The time 3 sixth bit is NOT(A OR B), where A=NOT(b OR c), B=b XOR(c OR d). The time 3 and time 5 sixth bits are equal: GC1044's exact projection clauses A at 3 and B at 2, using the fixed fifth prefix 010110, give both implications. The high fifth selector has time 5 sixth 1 by GC1047. Hence A=B=0, which forces b=1 and c OR d=1.
+
+The remaining branch bcd=110 ALWAYS returns S. Let e be initial site 10. The following shielding chains give actual sites 6 onward (only shown cells asserted; every farther tail is arbitrary):
+
+| Time | e=0 | e=1 |
+| --- | --- | --- |
+| 1 | 100 | 100 |
+| 2 | 011 | 0101 |
+| 3 | 1100 | 1101 |
+| 4 | 001 | 0001 |
+| 5 | 111 | 101 |
+| 6 | 100 | 101 |
+| 7 | 01 | 001 |
+| 8 | 11 | 01 |
+| 9 | 0 | 0 |
+
+GC1047 supplies fifth track 0101101010 in either branch. Its time 9 bit is0 and site 4 there is1; the displayed time 9 sixth 0 therefore gives returned fifth 1. This is S, contradicting the asserted L0 successor. Thus d=1 and the only high-LL origin triples are 101 or111. Their occurrence is not asserted sufficient.
+
+**Past gate and retained failures.** GC1053's mid01 branch has time 9 sites 6..10=(1,0,Q,R,Z), so its returned triple is(NOT Q,Q OR R,Q XOR(R OR Z)), never 110. Its mid1 branch gives time 9=(1,p,p OR q,N,z), N=NOT p AND(q OR r); the return is(NOT(p OR q),N,(p OR q) XOR(N OR z)), also never 110. Thus a preceding L0 independently excludes that origin triple, but the new future-conditioned pin is stronger.
+
+The initial proposed counterexample without an L0 past failed. A second prediction incorrectly held time2 site8 constant, omitting e; the intermediate control caught it. Splitting e repairs the proof. Changing e to1 still fails to restore high LL. Final controls:24 local identities,256 complete shielding cones,15 selected high-LL positives, independent literal/packed updates all pass. This supplies a correlated hidden-interface pin, not a record bound. Next inference is its transport through mixed S/L0 returns, retaining ninth-site correlation instead of fresh LL choices.

@@ -722,3 +722,5 @@ app is unpublished by design.
 - lexicon/rule30_trace_prefix_repair.py: GC1057 frozen-initial-row repair REFUTED atW3,l5; exact trace01000 origin and edge-merger controls PASS. FirstW-1 preservation HELD only on1,024 conditionedW4,l7 cases; no uniform proof or larger scan.
 
 - lexicon/rule30_collar_zero_lane.py: GC1072 exact rooted period32 front certifies three white propagation centres at K=12+32n; universal three-centre shield REFUTED. Four cycles and 256 independent actual controls pass; no language census.
+
+- lexicon/rule30_long_high_past_gate.py: GC1073 high fifth-track LL forces origin sites 7,9 black; initial110 always returns S. 24 local identities and256 independent cones pass; failed no-past countercontrols retained.
