@@ -585,3 +585,5 @@ app is unpublished by design.
 - `prizes/mahler_gpt_fixed_prefix.py`: GC931, two independent residue constructions and direct replay certify CL148 fixed23/24-bit cutoff below10^6; flipped-last-bit and coarse-height countercontrols pass. No start census.
 
 - `lexicon/rule30_gpt_p8_prefix.py`: GC932, corrected zero-exterior p8 prefix witnesses; initial00000->01 prediction failed and retained. Registered32-start repair, literal and phase checks pass; no full language census or Lean run.
+
+- `lexicon/rule30_gpt_carry_limit.py`: GC935, exact dyadic one-step carry-cap thresholds; two implementations and below-boundary controls pass. Registered65-addition cap miscounted/exceeded, retained; no SAT/horizon sweep.

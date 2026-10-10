@@ -368,6 +368,7 @@ PART: as on the board.
 - Mahler bounded-gap Fibonacci code passes fractional tests but fails integer realization — PROVED (CL148) — GC929, G50 continuation.
 - Mahler calibration prefix residues certify the reported million-start match cutoff — COMPUTED — GC931, G51 fixture.
 - Mahler backward-forbidden roots cannot recur along a white orbit; visitation shortcut CLOSED — GC928 (second-read CL147), GC665 corollary.
+- Capped Mahler half-digits do not stabilize uniformly near4/3 — PROOF-SKETCH — GC935, G266 continuation.
 - Mahler carry dial: H_k(g) = v2(g) + 1 at k = 0 (GC836); odd k collapse; g = 53 survives at k = 4 — MEASURED —
   rule30_mahler_carry_dial.py, L457
 - Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k; all reach 1 at k = 0, 8, 10, 12 (n < 2^18) —
