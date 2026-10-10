@@ -66,6 +66,10 @@ SLC2 OUTCOME, 2026-10-10 13:17 BST (M5, 2 jobs, about 20 minutes): P1 REFUTED; P
 EXTENSION SLC3 (registered 18:58, before its run): `continue 6 12 120 2`, windows of length 120, from the 61 cuts.
   SLC3-P1 (blind, 0.5): after 6 more rounds the largest component's entropy is below 0.115.
   SLC3-P2 (blind, 0.5): every SLC3 cut has length > 97 (the longest so far), so the shorter cuts are exhausted.
+  SLC3 OUTCOME (19:20; about 20 minutes): P1 REFUTED; P2 REFUTED. Rounds 13 .. 18 add 22 cuts of length 65 .. 114
+  (83 S/L cuts in all, every one cake_lpr-verified by MFC). Sampled windows absent per round: 5, 4, 1, 3, 6, 3 of 12.
+  The largest component goes from 0.1192 to 0.1171 bits (288 then 310 states). A seven-state zero-entropy cycle
+  appears beside the three earlier ones. The entropy still falls, slowly, and shows no sign of reaching 0.
 """
 import os
 import random
