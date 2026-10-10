@@ -40,6 +40,14 @@ PREDICTION JN-P4 (2026-10-10 16:35 BST, before the run of mode search): over ran
 pieces (gaps 2 .. 5, lengths 3 .. 25) joined by J single connector gaps (2 .. 5), the maximum longest white run grows
 about linearly in J, roughly 6 to 10 cells per junction, for J = 1 .. 5 (0.5). Counterfactual: the maximum is
 governed by piece lengths and keeps growing with them at fixed J, so junction counting fails.
+
+OUTCOME JN-P4 (2026-10-10 16:45 BST, mode search, 20,000 samples a value of J, seed 30; J = 5 did not finish in the
+600 s budget and is not scored). Maximum longest white run: J = 1: 16 (depth 89); J = 2: 20 (148); J = 3: 22 (259);
+J = 4: 21 (389). JN-P4 REFUTED as stated: no growth of 6 .. 10 a junction; the maximum saturates near 22 from J = 2
+on, while the depth at which it occurs grows with the word. Neither branch of the prediction: in this dictionary
+(pure gaps 2 .. 5, pieces of 3 .. 25 gaps, single connector gaps) white runs appear bounded absolutely, by about 22.
+GC1031 (GPT) adds the needed qualifications: the junction count must be taken over the starting cell's cone or
+bounded independently, the dictionary must be fixed (it is, here), and a base term is needed for J = 0 (6 here).
 """
 import sys
 
