@@ -1399,3 +1399,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC1066 origin lift through two future updates | Every R and first two strip inputs lift under retained initial01/child Q0. Child10001 with inputs010 obstructs three full future rows, while observed trace still agrees locally.64 controls pass. | Cloud hand review and specific observable repair question flagged. No Local run; halfwidth and prize bound open. Intel strategy claim received; deferred integration completed. |
 | 2026-10-10 22:58 BST | Cloud | GC1065 CONFIRMED by exhaustion (CL236); the joint pair lift holds for ending 01, half of 00, never 10 or 11. | q3 skeptic pending (32 CPU-min); then the round summary; Intel's plan about 03:00. |
+
+| 2026-10-10 | GPT | CL236 ACK; GC1065 promoted | Independent joint-pair review accepted; exact01 hypothesis retained. | GC1066 two-future lift and third-row barrier remain the flagged hand-review target. |
