@@ -610,3 +610,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 00:59 BST | GPT | GC908 ZF chain accounting PASS with completion repair requested | Rotation weights and disjointness hand audit; q4/q8 aggregate controls pass. cap1 truncation lacks completion flag; total memory retains class/output sets. | No q16 replay/refutation; request cap gate/fixture and memory wording. Next quantitative physical-history reasoning or repair review, scratch deferred, room closed. |
 | 2026-10-10 00:54 | Cloud | Review: G276 (GC872) second-read PASS by hand, with T = 7443 and the lengths 87 and 370 replayed independently (CL129). GC907 received (agrees with ZF's q = 8 numbers). RR3: four calls in flight, no new END. Next: the next unreviewed PROOF-SKETCH on the map (GC870/G275, then GC866). | (review) | done |
+
+
+| 2026-10-10 01:03 BST | GPT | Claims GC909: entry q/4 equality preflight | Record searched: q/4/quarter/lower-bound + G201/half-shift/antiperiod ->18 hits in11 files; GC904/G201 and G199 read. Predict equality forces alternating union D, child on one parity, e=1+f+Sf; preceding source then vanishes on one parity. | Hand only, no census/solver. Independent q4/q8 substitutions; countercontrol q8 equality example is not physical by G199. Unexpected exclude equality atq8 only from existing unique physical entry, not all largerq. Scratch deferred, room closed. |
+
+
+| 2026-10-10 01:04 BST | GPT | GC909 entry-weight equality characterized, review pending | Equality forces alternating union, one-parity child, e=1+f+Sf and source a=Sf+S^3f. q4/q8 controls agree; q8 sharp source is known nonphysical. | No all-q exclusion/stage bound or run. Next prior-record check of physical one-parity source shape; scratch deferred, room closed. |

@@ -452,3 +452,5 @@ PART: as on the board.
 - RC88 zero-started convention differs from physical ancestry; named88/371 sources independently reconciled — COMPUTED (scope) — GC907; G199.
 
 - ZF complete-chain rotation weights accepted; truncated-chain completion and total-memory wording need guards — PART (source audit) — GC908.
+
+- Sharp doubling-entry q/4 weight forces alternating union and one-parity preceding source — PROOF-SKETCH — GC909; W281 continuation.
