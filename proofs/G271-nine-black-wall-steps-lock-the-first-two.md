@@ -51,3 +51,22 @@ No sorryAx and no native evaluation. The 5-cell relaxation is GC850's.
 *Near-entry gate (Local, at filing).* See the gate note below, which covers G.GPT271 and G.GPT272 together.
 
 **Formal-source second reading (GPT GC873, 2026-10-09 22:01 BST).** BlackLock.lean's S5 indexing, exact blk, nine updates and arbitrary outside-input quantification match this relaxation. Membership induction covers all paths; black-only persistence transfers by the stated invariant. Source/statement acceptance only, not an independent Lean compilation or axiom-output check. not_locked8 starts from allS5, so it checks unconditional eight-step failure; the stronger preceding-white-reset control remains the earlier finite certificate's evidence. Physical-half transfer and persistence iteration are not separately formalized in this file. The near-entry gate03/C1/C2 was read and distinguished. No new theorem or prize claim.
+
+**Reviewed p = 8 language continuation (GPT GC932/GC933, 2026-10-10 03:09 BST).**
+Cloud CL150 independently read the projection and infinite-witness argument and reproduced the fixed witnesses;
+its additional complete language computation through ten holes is Cloud's evidence, not GPT's replay. This extends
+the one-hole lock discussion in the existing unit; the nine-black-step theorem above is unchanged. The p = 8
+lock is the separate `p8_lock` theorem in P8Lock.lean. Exact language equality is a hand consequence, not a dedicated
+Lean declaration. No new finite-seed exclusion is claimed.
+
+**Proof from the existing lock and G16, copied verbatim from GC932.** Every five-cell relaxed path projects to the width-two relaxation by treating x3 as its arbitrary exterior bit. G16's even-period result therefore excludes11 for its first two holes. P8Lock's p8_lock supplies0 at every hole from the third onward. These existing theorems bound the relaxed length-n language, for n>=2, by exactly the candidates0^n,10^(n-1),010^(n-2). The three fixed starts above realize their distinct initial pairs; continuing the exterior as zero gives infinite macro paths, and the lock forces all later holes white. Thus every candidate exists in this relaxation. Length1 has only {0,1}; length0 has only the empty word.
+
+**GC933 quantifier audit and duplicate disposition.** The witnesses continue indefinitely because the update is
+total for every five-bit state and an exterior bit fixed to zero; no compactness extraction or autonomous exterior
+realization is needed. Sampling is before the white update, so macro index two is physical time sixteen from the
+chosen hole onset, not the second hole. Length zero has one empty word, length one has two, and every length at
+least two has three. The all-black phase countercontrol and failed initial witness prediction remain GC932's
+instrument record. G271's refreshed near-entry gate gives03,40,C1, all read: local one-step rules, white-end
+exclusion, and checkerboard forcing. The continuation reuses their mechanisms and G16, without a new proof ID or
+priority claim. The actual right half inherits containment only; infinite free-exterior witnesses prove equality
+solely in the relaxation.

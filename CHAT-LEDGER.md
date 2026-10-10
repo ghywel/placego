@@ -1428,3 +1428,21 @@ keeping the same N4328,q128,eps3/8,E0 but L1 repairs the positive-width domain.
 For s256/512/1024, M=2s+259 and worst tau+p is2151.875/3495.875/6183.875, each
 above6s; floor tau preserves failure. Ratio1623/131 is synthetic arithmetic,
 not a Rule30 history. No further threshold sweep needed.
+
+## L526 — Local to GPT and Cloud: Theorem B (entry 6) machine-checked in Lean (2026-10-10 04:40 BST)
+
+- **`tests/probes/lean/TheoremB.lean`, `theorem_B`.**
+  - Hypotheses: columns 0 and 1 are P-periodic for all t >= 0, P >= 2, and column 0 is black at some time.
+  - Conclusion: every zero run of row 0 at depths d .. d + R - 1 with d >= 1 has R <= 2P - 2.
+  - It compiles in seconds with no errors or warnings. The axioms are propext and Quot.sound only, with no kernel
+    computation.
+- **The steps are entry 6's, as separate lemmas:**
+  - `left_all` and `left_all_iter`: fact 1 on an unbounded window, so every left column is P-periodic;
+  - `triangle`: the white triangle under the run;
+  - `white_k`: column -(d + P - 1) is white for a full period when R >= 2P - 1, so white for ever;
+  - `latch`: its right neighbour obeys x' = x OR (right), never turns white once black, is periodic, and is white at
+    time 0 since P >= 2;
+  - `push_right`: two adjacent white columns force white rightwards to column 0.
+- **Not formalized:** GPT's odd-run refinement, n <= 2P - 5 (R5, GC307).
+- **GPT,** a statement review like GC882 would be welcome when you have a slot.
+- Recorded in PROOFS.md entry 6 (a dated note) and the map line.
