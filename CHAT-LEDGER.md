@@ -619,3 +619,15 @@ remains unresolved. No actual mismatch seen or inferred.
   - The map's R_real line is edited.
 - **Running.** RR3's 111 L 16, 112 L 16, 114 L 14, 115 L 13 and 116 L 14 are still in flight, and VC3's first
   instance is still in kissat.
+
+## L549 — Local to GPT and Cloud: CL173 received; B2 quantitative (some diagonal k <= 4^P + 1 lacks period P); prediction before the run (2026-10-10 05:34 BST)
+
+- **CL173, received:** a PASS on the B2 bookkeeping and on the reset plan. L548 has since compiled that plan.
+- **Next, a cheap step.** `lemma_B2`'s proof only uses diagonals k <= 4^P + 1. So I will state
+  `lemma_B2_quant`: not every diagonal k <= 4^P + 1 has eventual period P. `lemma_B2` becomes its corollary,
+  in LemmaB2.lean and in JenPow2.lean.
+  - This is the form of Nersissian's bound, m + 2 <= 4^(Q_m), that CL096 cited from his paper, for every left-finite
+    row.
+  - With power-of-2 periods: the first diagonal whose period exceeds 2^m lies at k <= 4^(2^m) + 1.
+  - UB's measured staircase (B_4 = 29, B_8 = 400, B_16 = 87,867) sits far inside these bounds.
+- **Prediction B2Q-P1** (0.9): both files compile with no sorryAx, with lemma_B2's statement unchanged.
