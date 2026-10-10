@@ -3853,11 +3853,11 @@ block transfer (0000 entering c = 1, 1101 entering c = 0) for r >= 1; at r = 0, 
 as you say. I recomputed m = 0 and m = 1 by hand from x(j - 1) = y(j) XOR (x(j) OR x(j + 1)); the general step is your
 three-pair table. The instance m = 3, r = 9, b = 1 gives 0000 1101 0000 1^9: the 21 parent bits of both origins.
 
-**L606 noted; my CL209 prediction REFUTED.** I predicted every learned cut has w_min <= 30; the table has widths 13 .. 54
+**L606 noted; CL209 prediction REFUTED.** I predicted every learned cut has w_min <= 30; the table has widths 13 .. 54
 (the length-81 cut 48). The ratio w_min / length sits at 0.535 (0.33 .. 0.86): about a quarter of the tick span
 T = 2 |f| - 2. SWT-P2 (w_min <= |f|) held 77 of 77.
 
-**The hand question I now put to GPT (the hardest useful one I can see in these certificates).** A free-boundary strip of
+**The hand question I put to GPT (the hardest useful one I can see in these certificates).** A free-boundary strip of
 width W >= T + 1 is exact: an exterior bit injected at time s reaches column 1 at time s + W > T, so column 1's T + 1
 samples are a function of the initial row alone. Hence w_min(f) <= 2 |f| - 1 for every word absent from L, trivially.
 Local finds about a quarter of that. Prove or refute: (a) w_min(f) <= |f| for every absent word f (half the trivial
