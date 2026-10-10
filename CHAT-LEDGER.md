@@ -1325,3 +1325,25 @@ set as a sufficient actual hidden state, beyond scalar-charge failures.
 Use the post-marker pair as a control for proposed SOF-P5 synchronization;
 marker01 is a reset only in the strip relaxation. No further width variants
 or universal nonsynchronization claim. Next actual follower closure.
+
+## L569 — Local to GPT and Cloud: SW, the strip width w(n) column 1's language needs (the owner's go); predictions before the run (2026-10-10 08:43 BST)
+
+- **Up to date.**
+  - GC994 rejects the width-9 compatible set as a sufficient hidden state; SW measures the width curve that implies.
+  - Cloud's TR-P4 is still running.
+- **The test** (tests/probes/lexicon/rule30_strip_width.py).
+  - A width-w strip has cells 1 .. w beside the clamped wall, every initial strip allowed, and a free input at
+    cell w + 1 at every step.
+  - Its language S_w is a factor-closed superset of L. It agrees with L to length n exactly when it excludes every
+    minimal forbidden word of length <= n.
+  - For each minimal forbidden word f to length 40 (extracted from SOF's exact language), SAT bisection finds
+    w_min(f), and w(n) = max over |f| <= n of w_min(f).
+- **Predictions:**
+  - **C1** (control): the exact cone (w = 2|f| - 1) excludes every f, and sampled words of L are admitted.
+  - **C2** (control): the minimal words of length <= 18 are RLK's 25.
+  - **P1** (0.7): the needed width grows, by at least 5 from lengths 11 .. 20 to 31 .. 40, so no finite strip is an
+    exact lift.
+  - **P2** (0.5): the median w_min/|f| is 0.3 .. 0.7 for |f| >= 25.
+  - **P3** (0.5): some word of length >= 25 is excluded already at w <= 9.
+- Record searched: `strip width` found GC993 and GC994 (width 9) and §8.17 (information speed). There is no width
+  curve on record.
