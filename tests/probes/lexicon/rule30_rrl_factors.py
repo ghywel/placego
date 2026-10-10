@@ -68,10 +68,10 @@ def controls():
     print('factor controls C/CF/U PASS',flush=True)
 
 
-def run(transform=widen,diagnostic=None):
+def run(transform=widen,diagnostic=None,seconds=20):
     controls()
     signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(RuntimeError('time cap')))
-    signal.alarm(20)
+    signal.alarm(seconds)
     inv=[c.EMPTY for _ in range(33)]; inv[0]=transform(t.initial(0))
     history=[list(inv)] if diagnostic else None
     try:

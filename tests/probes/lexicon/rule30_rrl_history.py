@@ -46,7 +46,7 @@ def invert(a,word):
     return source
 
 
-def diagnose(history,white,separator=None):
+def diagnose(history,white,separator=None,transform=p.refine):
     word=invert(history[-1][32],shortest(white)); r=32; n=len(history)-1
     steps=0; inherited=0
     while n:
@@ -58,7 +58,7 @@ def diagnose(history,white,separator=None):
         image=t.minimize(t.image(c.prune(old[r-1]),cap=c.CAP))
         incoming=c.first(image,0); exact=c.union(old[r],incoming)
         if not t.accepted(exact,word):
-            assert t.accepted(p.refine(exact),word)
+            assert t.accepted(transform(exact),word)
             print('FIRST LOSS round',n,'counter',r,'word',word,
                   'inverse controls',steps+1,'inherited skips',inherited,flush=True)
             trim=c.prune(exact); state=0; dead=None
@@ -71,7 +71,7 @@ def diagnose(history,white,separator=None):
                 print('targeted separator rejects loss and contains exact source',flush=True)
             print('exact source rejects; refined widening accepts; first dead prefix',
                   word[:dead] if dead else 'none (endpoint rejection)',flush=True)
-            return
+            return word,exact,r,n
         word=invert(old[r-1],word); r-=1; n-=1; steps+=1
     assert r==0
     assert not t.direct_initial(word,0)

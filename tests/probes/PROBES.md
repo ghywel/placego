@@ -609,3 +609,5 @@ app is unpublished by design.
 - `lexicon/rule30_rrl_context.py`: GC979 seven-letter separator excludes GC978 loss with source containment; controls PASS, abstract C32 overflow round36. Fixed packet-length refinements parked.
 
 - `lexicon/rule30_rrl_residual.py`: GC980 suffix-test quotient preserves source/test membership and GC978 separator; abstract C32 overflow round37. No certificate.
+
+- `lexicon/rule30_rrl_learn.py`: GC981 two guided loss refinements verified; third attempt hits shared time cap. No certificate; short dead-prefix viability identified as next refinement.

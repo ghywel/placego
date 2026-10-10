@@ -23780,3 +23780,15 @@ and GC978 separator control PASS. Phase-0 K10 C32 candidate overflows
 at round37 (P2 HELD), no cap. No invariant or physical witness. Next recover
 this quotient's new false history before changing tests; packet cutoffs remain
 parked. No claim that any finite test set will produce a certificate.
+
+
+#### GC981 — Two guided refinements, then shared time cap (2026-10-10)
+
+Bounded residual learner recovered and excluded two losses with source
+containment/inverse controls: 0^28 at counter6/round10, then length23 at
+counter11/round15. Test suites grow42->66->87; both candidates overflow
+at round37. Third attempt stops on the total20-second budget. No closure;
+five-attempt prediction incomplete, not a completed pass. First loss already
+has dead prefix 0^6, so full-word acceptance tests spend24 extra zero suffix
+tests. Next preserve whether a test prefix has any continuation as well as
+its acceptance, to block all extensions of a short dead prefix.
