@@ -24848,3 +24848,41 @@ without factor closure the inference from an absent initial word to an
 interior ban would be invalid. No new experiment or larger cutoff run.
 The required hidden relation must impose a recurrent exterior constraint.
 Its explicit form and record-bounding strength remain unknown.
+
+
+GC1007 finite witness bound, registered: replace the qualitative missing
+interior cut by a finite upper length bound, using the same positive vector
+and §8.33/SQ6's uniform word-count prefactor. Predict a bound below10000
+visible symbols; CF larger, making direct search impractical. Record searched:
+count|prefactor|finite.*bound + EN6|SQ6|0.1236 -> existing135663
+channel prefactor, no finite bound for this SCC. Use conservative C=1000000
+and b=1.0898 for |W_n|<=C*b^n, safely above SQ6's rounded growth/prefactor.
+Exact control b^10000>2^1237 (0.1237 exceeds the printed0.1236 ceiling's
+rounding interval). U bound a sum over all lengths, not a single edge count,
+since S/L edges cost different numbers of visible symbols. No word census.
+
+First finite-bound attempt REFUTED the practical prediction: v=M^11(1)'s
+minimum one-step ratio is too close to1 to beat the geometric actual
+count bound within10000 gaps (50000 visible symbols). This is weakness
+of that vector's uniform ratio, not absence of a finite cut. Bounded
+repair registered: use v=M^79(1) on the SAME79-state graph, then exact
+powers of its minimum ratio. Predict a bound below10000 symbols; CF
+still too large. No additional language states or solver queries.
+
+
+Repair outcome HELD: v=M^79(1) gives an exact minimum ratio r>1;
+a=v(q)/max(v) satisfies a*r^1024 > 1000000/(1-b/z), with
+z=1.09 and b=1.0898. These are rational inequalities, not floating
+fits. Since 1>=v/max(v), the total z^-length weight of1024-gap
+paths from q exceeds that entire upper bound for actual words.
+Gap codes are uniquely decodable; paths spell distinct words, each
+of length at most5120. SQ6's reported prefactor135663 is safely
+below1000000 and its four-decimal0.1236 entropy below0.1237;
+integer powers check log2(b)>0.1237. Thus the actual-word sum
+is bounded by sum_n C*(b/z)^n=C/(1-b/z). At least one internal
+path is absent from W and contains a minimal absent factor with
+length41..5120. This is a finite existence bound for the missing
+recurrent restriction, not its explicit discovery or a record bound.
+The first vector's impractical bound remains recorded; no brute-force
+search through this length is proposed. Verification reuses the79-state
+graph and the independently established SQ6 ceiling.

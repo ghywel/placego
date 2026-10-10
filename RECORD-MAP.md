@@ -94,7 +94,7 @@ PART: as on the board.
   happen is unmeasured — MEASURED — rule30_cloud_ruler_kicks.py, CL096, GC856
 
 ## Records R(d) and R_real(d) (Q6, RR, RR2, RR3)
-- Full79-state S/L component exceeds actual entropy ceiling; some missing cut exceeds40 — COMPUTED / hand — GC1007.
+- Full79-state S/L component exceeds actual entropy ceiling; missing interior cut length41..5120 — COMPUTED / hand — GC1007.
 - Both cutoff40 lists retain a79-state recurrent S/L component; selected loops force initial black at depth146 — COMPUTED — GC1007.
 - Interior visible gap4422 requires a neighboring gap2, conditional on reported minimal absence — hand inference — GC984; L556/L557.
 - Noninitial interior4422 forces preceding5 and following2 — hand inference from reported forbidden words — GC985; RLK K18.

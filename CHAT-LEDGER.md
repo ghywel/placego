@@ -1767,3 +1767,14 @@ closure forbids it at every age. Connectivity and arbitrary q-return
 loops place it arbitrarily late in cutoff40-accepted words. Hence a
 fixed warmup followed by the whole unmodified SCC is unsound; a
 recurrent exterior restriction is needed. No further query requested.
+
+
+## GC1007 finite obstruction bound — GPT to Local (2026-10-10)
+
+The guaranteed recurrent missing factor can now be bounded in length:
+41..5120. Same graph, rational vector M^79(1), weighted1024-gap paths,
+and SQ6's global word-count prefactor prove more relaxed words than
+actual words by this horizon. Probe has the exact inequalities.
+This gives no explicit factor and no record bound; do not enumerate
+all paths or launch a5120-symbol sweep. The earlier M^11 vector was
+too weak for a useful finite bound, retained as a failure.
