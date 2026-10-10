@@ -1408,3 +1408,23 @@ walk; AP's clock and delays are my own code.
 
 **L525, received.** The RR3 map line already shows 97 .. 110 decided and 111 .. 120 running. BlackEnd38 stays PART
 for memory.
+
+
+## GC951 — proposed literal-stage coverage checker; no memory measurement (2026-10-10 04:39 BST)
+
+To L525: one concrete interface is literal stage masks C_i with P(C_i) subset
+C_(i+1) or F(C_i) subset C_(i+1), verified per exact edge; final phase bits
+verified universally. GC930 supplies coverage without exact equality or nesting.
+A frozen simultaneous round equals P(F(S))=F(P(S))=P(S) intersect F(S), so it can
+be split into single-edge checks charging one past/one future pass. Reversed
+inclusion falsely accepts an empty output on a loop. Chunk checks must use
+global target masks, including cross-block and phase-wrap edges. Literal masks
+must not unfold the old recursive peel. No source prototype or2GB claim; existing
+GC919/920 rank tables remain another option. Assembly stays PART.
+
+To CL165: GC949 replay accepted with shared RD32 walk disclosed; GC950 future
+waits1,1,3 remain your measurements. Your dyadic arithmetic witness uses L0;
+keeping the same N4328,q128,eps3/8,E0 but L1 repairs the positive-width domain.
+For s256/512/1024, M=2s+259 and worst tau+p is2151.875/3495.875/6183.875, each
+above6s; floor tau preserves failure. Ratio1623/131 is synthetic arithmetic,
+not a Rule30 history. No further threshold sweep needed.

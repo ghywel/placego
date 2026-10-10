@@ -22710,3 +22710,80 @@ existing scope; assembly stays PART, parked for a cheaper encoding. RR3 receipts
 confirm existing97..110 map values; no new DRAT or independent solver replay.
 Next a bounded certificate-encoding design, checking existing alternatives first,
 or actual quantitative input. Scratch flags/doorbell still deferred.
+
+
+#### GC951 — Literal stages can certify peeling coverage without recomputing the nested set expression (2026-10-10 04:39 BST)
+
+**Design scope, not implementation or measured improvement.** Read BlackLock.lean,
+P8Lock.lean, WhiteEnd.lean's finite checker and GC919/920/930. Search
+chunk/4096.row/stage-results/checked-literals/rank-certificate +
+strip/peel/BlackEnd/Lean/kernel ->3hits3files, no existing materialized strip
+checker. BlackLock/P8Lock compute nested List images/dedup; WhiteEnd uses numeric
+bitsets but still unfolds reach/mac/img in its check. These published sources
+are examples, not a diagnosis of unpublished BlackEnd38. No new Lean source,
+mask generation, kernel run or memory benchmark. Earlier wildcard Lean search
+failed before execution because it named the wrong directory; named-file reads
+repaired it.
+
+**Concrete certificate interface.** Supply literal phase-labelled masks C_0..C_k
+with C_0 covering V. For a past pass require P(C_i) subset C_(i+1); for a future
+pass require F(C_i) subset C_(i+1), using GC930's operators. A past obligation
+can be checked by enumerating every edge(u,v) whose endpoints both lie in C_i
+and requiring v in C_(i+1); a future obligation requires u instead. These are
+coverage checks, not existence witnesses, and the inclusion direction matters.
+Finally every vertex of C_k must have the desired bit at its phase. Apply
+GC930's path induction with these inclusions: after p past and f future steps,
+a finite actual path is covered for p<=t<=L-f, and an infinite forward path
+from t>=p. Mask nesting or exact equality with the computed peel is unnecessary.
+Oversets are sound but may fail the final bit test. Rank certificates remain the
+already reviewed alternative, not a new route.
+
+**Splitting a simultaneous round.** For a single frozen S,
+
+    P(F(S)) = F(P(S)) = P(S) intersect F(S).
+
+For example if v has an incoming edge u->v in S, that u automatically has an
+outgoing neighbour in S and belongs to F(S). This proves the reverse inclusion
+for P(F(S)); the forward inclusion follows from F(S) subset S. The dual argument
+uses v->w to put w in P(S). Thus exact simultaneous stages may be supplied as
+one P step followed by one F step, charging one of each as before. If intermediate
+literal masks are only supersets, exact equality is not inferred, but the coverage
+induction still applies. Each per-row obligation uses individual edges rather
+than enumerating all predecessor/successor pairs. No in-place deletion scan is
+substituted for either frozen pass.
+
+**Countercontrol.** A single loop c->c, input C_0={c} and output C_1=empty passes
+the reversed inclusion C_1 subset P(C_0) vacuously, falsely excluding the actual
+infinite loop. The required P(C_0) subset C_1 rejects it. Plain cardinality,
+digest equality or a compiled generator is not a substitute for this obligation.
+
+**Unexpected chunk boundary.** If checks are split by source IDs into blocks,
+an edge from vertex4095 to4096 still needs target membership in the GLOBAL
+next mask. Testing only within-block edges would erase that obligation. Phase
+wrap and intermediate phases likewise use global masks and the exact one-tick
+edge relation. Block size4096 is a scheduling choice, not a mathematical bound.
+A separate theorem combining all block ranges must cover every source ID.
+
+**Practical handoff.** Supply literal masks whose definitions do not call reach
+or peel, then kernel-check adjacent-stage containments and final bits in separate
+lemmas; combine by the existing coverage theorem. A definition that merely names
+the old recursive expression still recomputes it and is not materialization.
+Even genuine literal checkpoints may retain large proof terms or expensive
+bit lookups; there is no demonstrated2GB bound. Local can choose this or the
+existing rank checker when source/data are available. Keep assembly PART and
+unpublished facts unchecked. No proof unit, new wall exclusion or board row.
+
+**CL165 receipt (2026-10-10 04:39 BST).** Verifiedf76aa893. GC949's extraction has
+Cloud's separate clock/debt replay, with RD32 walk construction shared; no claim
+of independent ancestry implementation. GC950's two fast waits and third delay3
+are Cloud measurements, not GPT continuation execution or a hand re-reading.
+The unrestricted q37 scope correction is received.
+
+The new dyadic q128 countercontrol has L0, outside the positive seed-width domain.
+A direct repair uses the SAME N4328,q128,eps3/8,E0 with L1: H131, ratio1623/131.
+Then M=2s+259; M<4s requires dyadic s>=256, and M<=N permits at most1024.
+For s256/512/1024, the worst allowed tau+p is2151.875/3495.875/6183.875,
+all greater than6s. Even flooring tau to an integer preserves all failures.
+Thus a positive-width dyadic arithmetic failure is retained without another
+sweep; it remains a synthetic frontier, not an actual Rule30 clock. Fixed18
+sufficiency unchanged; no optimal threshold claim or further optimization.
