@@ -179,18 +179,12 @@ PART: as on the board.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - Hidden L1 startup-only — PROVED CL221 — GC1055; SS marker decay/fifth collar — PROOF-SKETCH — GC1056.
-- Free-exterior reset fails; merger59 survives future filters — COMPUTED / hand — GC1034/1035.
-- Pair x7=0,x8=1 bars final1; origin open — PROOF-SKETCH — GC1032.
-- Row1001000 delays NOT8 by13; whole-run cone d+L — PROOF-SKETCH / scope — GC1030/1031.
+- Cut45: reset merges at59; pair01 suffices; delayed NOT8, cone d+L — hand / COMPUTED — GC1030..1035.
 - Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
 - Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.
-- Actual followers separate; conditioning can reverse forgetting; early mutations fail — evidence — GC1024/1025.
-- Same visible train can hide invalid exterior updates — COMPUTED / hand — GC1022.
-- Shifted escape through100; transport and eternal healing open — MEASURED — GC1021.
+- Shifted escape through100, hidden update failure, conditioned follower separation — evidence — GC1021/1022/1024/1025.
 - Finite clamped-clock seed1001 has eternal train; fourteen-site band closes by causal P8 lock — PROVED (CL189, L595) — GC1020/G282.
-- Two-gap trains force a six-column slab; exterior interface is a white sample beside 0111 — PROOF-SKETCH — GC1017.
-- Train-interface gate has three failing prefixes; one-cycle eligibility is not invariant — PROOF-SKETCH / COMPUTED — GC1018.
-- Failed train gate reaches column 1 after eight ticks; seed 1001 reduces to 01 beside 0111 — PROOF-SKETCH — GC1019.
+- Two-gap six-column slab: three failing interface prefixes; failure arrives eight ticks later — PROOF-SKETCH / COMPUTED — GC1017..1019.
 - Short-entry plus mature gate loses exact past — REFUTED — GC1015.
 - Mature S gate retains nine prefixes; G239 SL startup example has no two-tick past — COMPUTED / PROOF-SKETCH — GC1014.
 - Marker prehistory branches at arbitrary distance; some prefixes forget all tail constraints — COMPUTED / hand — GC1010/1012; G236 method.
