@@ -100,7 +100,7 @@ PART: as on the board.
 - RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 111..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.
-- VC3 rebuilt-query checks; receipt gate/status guards incomplete — source/fixture audit — GC961; no actual failure inferred.
+- VC3 receipt gate/status repairs pass synthetic controls; stale-cache recovery manual — source/fixture audit — GC961/965; no certificate replay.
 - Deciding UNSAT d3..97 checked by drat-trim/cake_lpr; VC checks200/200 — COMPUTED — RRC L438, L480, rule30_verified_certs.py.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - No left edge within248, any right half; right-half bounds32/34 — COMPUTED — LL1..LL4 §8.56; §8.21, M3b.

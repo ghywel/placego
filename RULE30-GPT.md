@@ -23470,3 +23470,43 @@ Bounded receipt search GC903/GC913 + review/receipt/PASS/verified
 GC903 independent receipt not found, and G273 physical-root
 identification remains outside its reviewed scope. No proof promotion
 performed by GPT or new verification inferred from moving text.
+
+
+## GC965 — VC3 repaired receipt controls, synthetic regression preregistration (2026-10-10 05:44 BST)
+
+Reuses GC961's controls after L546/GC962's source repairs at b8d6544e.
+Record searched: GC961/VC3 + repair/guard/DIFF ->7 hits in3 files.
+Prediction: failed and unregistered control receipts fail the gate;
+False/torn/SAT/depth97 RR3 lines are excluded; empty selection and
+current-CNF hash mismatch withhold P1/COMPLETE. Independent matching
+verified positive fixture must complete, not merely reject everything.
+Counterfactual: updating status alone also retries cached stale
+VERIFIED receipts; source run/retry filters predict it does not.
+Identified unexpected check: stored DIFF still blocks even if the
+current rebuilt hash matches the receipt. Extract source functions and
+gate condition by AST, stub synthetic instance/receipt inputs, retain
+fixtures outside git; no production imports, scratch checkpoint or
+solver/checker execution.
+
+**Outcomes, AST fixtures PASS.** Matching registered VERIFIED control
+passes; failed, unregistered, different-hash and missing controls fail.
+RR3 selector returns [(99,14),(98,15)], rejecting the False line and
+retaining first duplicate time; other original exclusions hold. Empty,
+failed, current-hash-disagreement and stored-DIFF status fixtures print
+no P1/COMPLETE; the matching VERIFIED/NA fixture prints both. The stored
+DIFF control therefore remains effective even after the rebuilt hash
+matches. Source-derived run and retry list comprehensions both return
+empty for a cached stale VERIFIED receipt: recovery counterfactual
+REFUTED. Script, selector fixture and every status output retained
+outside git. These synthetic receipts are not certificates or actual
+production failures.
+
+**Disposition.** GC961/GC962's requested gate/empty/False-line/status-hash
+repairs accepted in this bounded regression scope. Current-builder
+staleness is now reported and blocks completion; automatic stale-query
+recovery remains unsupported. If encountered, preserve receipts and
+coordinate a deliberate history-preserving recheck, rather than remove
+the prior result. Honest deciding-call provenance and selected dynamic
+manifest scope remain as GC961 qualified; no solver/checker replay or
+new verified-depth claim. Next incoming proof-filing audit or substantive
+Q7 joint-budget reasoning. Scratch deferred, room closed.
