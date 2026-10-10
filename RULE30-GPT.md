@@ -25360,3 +25360,64 @@ periodic witness above still realizes it. Finite right support and finite
 support on both sides are also different conditions. No additional
 finite-seed scan is requested; the main proof target remains mixed-context
 compatibility and its effect on the forced left white run.
+
+Temporal coupling block registered (GC1010 with GC629): missing inference
+is whether exact marker prehistory restricts the next S/L return beyond
+its first spatial exclusion1110110. Compare GC629's sixteen short-entry
+prefixes11101abcd with the exact two-update image, then classify SS/SL.
+Record searched: 1110110|mature.*short|mature.*gate + S|short|gap -> GC1010,
+GC629 and G236, no joint gate table. Prediction: farther prehistory removes
+at least one additional assignment after excluding ab=10. Counterfactual:
+all twelve remaining prefixes have prehistory, so this finite gate adds
+nothing beyond the known exclusion. Controls: direct truth-table image
+and the existing transducer agree; direct visible outputs match GC629.
+Unexpected check: retain an excluded startup prefix's valid forward SS/SL
+trace, distinguishing lack of past from lack of future. At most2048 source
+prefixes, no solver, no fixed-past graph census or larger-width follow-up.
+
+### GC1014 — Prehistory removes three more short-return gate branches
+
+COMPUTED / PROOF-SKETCH; single-party. Bears on Q6: couple correlated
+exterior memory to the actual S/L return gate, rather than count spatial
+image states. Let a current white-time right row start11101abcd and have
+at least one full white/black update pair of past. GC629 gives its first
+return S and its next return SS or SL from a,b,c,d. Exact past compatibility
+of this nine-cell prefix is equivalent to
+
+    a implies b;   b implies (a OR c);   c implies (a OR b OR d).
+
+Here compatibility means existence of SOME farther tail and predecessor,
+not that every continuation of the prefix has a predecessor. Equivalently:
+for ab=00 require c<=d; for ab=01 require c=1; ab=10 is impossible;
+ab=11 allows every cd. The nine admitted assignments give six SS and three
+SL prefixes under GC629. These counts are not transition probabilities.
+GC1010's1110110 removes only ab=10; the registered prediction HELD:
+0010,0100,0101 are three further excluded abcd assignments.
+
+There is a short all-length explanation of these extra exclusions. In
+G236/GC1010's exact two-update spatial transducer, after marker1110 the
+residual is A={4,5,6,7}. Reading1 gives B={13,14,15}; reading0 preserves B;
+reading1 then gives C={10,11,12}, and reading0 empties C. Thus
+
+    11101 0^k 10 is impossible after a full update pair, for every k>=0.
+
+For k=0,1,2 this rejects1110110,11101010,111010010. Within the sixteen
+nine-bit short-entry prefixes these reject exactly the seven listed above;
+independent literal images of all2048 eleven-bit sources confirm that each
+of the other nine has a predecessor. This is a necessary local restriction
+on every mature S entry; it does not classify its longer future.
+
+**Unexpected control and consequence.** G239/GC609's established prefix
+111010010 realizes SL with arbitrary farther tail, but it is startup-only:
+it has NO full white/black past. Its forward freedom therefore cannot be
+reused at an internal return. This does not retract G239, which explicitly
+did not claim independently repeatable choices. Other SL prefixes survive,
+so neither SL nor a recurrent S/L cycle is excluded by this result alone.
+The script `rule30_mature_short_gate.py` independently compares literal
+images, the exact transducer and the Boolean criterion, checks GC629's
+forward returns with three distinct tails, and verifies the four residual
+identities proving the infinite family. All controls PASS. A record search
+for111010010/11101010 finds G239's startup example but no past restriction.
+Next missing inference: propagate the surviving exterior relation through
+successive S/L returns; do not treat these nine cylinders as independent
+choices or infer a record bound from their counts.

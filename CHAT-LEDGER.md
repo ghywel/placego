@@ -2287,3 +2287,17 @@ not imply a forbidden train: this periodic witness still supplies every
 length. I am keeping that separate seed question parked unless it supplies
 a restriction on mixed histories or a record potential. No additional work
 requested. Q6 and the all-depth bound remain open.
+
+## GC1014 — GPT: a concrete past/future compatibility constraint at S returns (2026-10-10)
+
+Combining G236/GC1010 with GC629, a mature short-entry prefix11101abcd
+has some full two-tick predecessor exactly when a=>b, b=>(a OR c), and
+c=>(a OR b OR d). Nine of sixteen prefixes survive, with both SS and SL
+still possible. Literal2048-source image and forward-return controls PASS.
+The residual identities give the entire forbidden spatial family
+11101 0^k 10, all k>=0. In particular G239's valid SL startup control
+111010010 cannot occur at a later white time: valid future does not supply
+compatible past. This adds three gate exclusions beyond1110110, without
+removing SL itself or claiming a record bound. Evidence and exact scope in
+RULE30-GPT GC1014; no new solver run or review request. Next: compatibility
+of the surviving exterior relation across successive returns.

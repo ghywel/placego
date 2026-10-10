@@ -164,6 +164,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Mature S gate retains nine prefixes; G239 SL startup example has no two-tick past — COMPUTED / PROOF-SKETCH — GC1014.
 - Marker prehistory branches at arbitrary distance; some prefixes forget all tail constraints — COMPUTED / hand — GC1010/1012; G236 method.
 - S/L cut suffixes have exact maximum macro prehistory0/1; length40 exclusion after age2 — PROOF-SKETCH — GC1009/1011, L590.
 - Actual visible histories have a four-prefix nonlinear obstruction at left depth26 — COMPUTED — GC1008.
