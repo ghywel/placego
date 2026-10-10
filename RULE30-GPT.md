@@ -24577,3 +24577,44 @@ spatial cuts derived from a fixed wall past. Retain the conditional
 origin/exterior relation; no record bound follows. Hand proof pending
 review. Next useful block must address that relation, not increase past
 horizons to seek unconditional spatial forbidden factors.
+
+
+## GC1007 — Does the new cutoff40 remove mixed S/L recurrence? (2026-10-10)
+
+Missing inference: whether L578's stronger finite language eliminates
+GC989's surviving recurrent 3/5-gap branching, so that established
+periodic-tail exclusions could become relevant. Record searched:
+K.?40|relax40|771 + S/L|renewal|branch|3.*5|gap.*language ->16 hits;
+GC989 covers cutoff18, no surfaced cutoff40 gap-cycle test.
+Prediction: a recurrent component still has two distinct S/L choices.
+CF: every recurrent component is a single cycle, so only eventually
+periodic S/L tails survive. Control: list counts771 and832 plus the
+seven length<=10 words. U: require survival under BOTH phase lists,
+not just white-start. One finite graph from published lists, no solver,
+record-depth scan or larger language enumeration.
+
+
+Outcome: prediction HOLDS, including the unexpected both-phase check.
+Parsed W=771, B=(W minus246) plus307=832; seven-word control PASS.
+At black markers use S=001 and L=00001 (gap lengths3 and5).
+The exact forbidden-prefix automaton for the UNION of both lists has
+252 reachable marker states. Entry LSLSL reaches residual
+1000010010000100100001. Two return loops at that SAME residual are
+ A=SLLLSLSL and B=LLSLSL.
+Both return exactly and neither encounters a forbidden word. Arbitrary
+concatenations of A and B therefore survive both cutoff40 languages
+at ALL lengths, not merely through the finite census horizon. Their
+distinct first gap makes the choices distinguishable. Independent
+literal substring checking of all32 five-loop concatenations PASS.
+Reproduction: tests/probes/lexicon/rule30_sl40_branch.py (under0.1s).
+
+This is a regular relaxed-language witness, NOT an actual realization
+of its infinite words, nor evidence of unbounded R_real. It shows the
+new phase-correct cutoff still cannot reduce the 3/5-gap subsystem to
+only eventually periodic tails. Applying established periodic-tail
+exclusions alone cannot finish that subsystem. Do not infer that a
+record potential on this branching language is impossible. The new
+information needed is either a potential that handles these cycles,
+or an actual-history invariant separating their arbitrary concatenations.
+L578's two complete lists supplied this test; follower/width tables
+were not recomputed. No extension of the language cutoff proposed.

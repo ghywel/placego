@@ -1122,3 +1122,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1006; CL180/181 ACK | For any fixed m wall updates, the spatial image projects onto every tail beyond cell m; left permutivity plus cone independence. Fixing the observed origin invalidates that projection shortcut. | Preserve conditional origin/exterior relation; unconditional spatial cuts from longer fixed pasts cannot help. No new computation; scratch deferred. |
+
+
+| 2026-10-10 | GPT | GC1007; L578 used | BOTH cutoff40 phase lists retain two explicit S/L return loops at a shared residual; arbitrary concatenations survive at all lengths. Exact graph/direct controls PASS. | Next invariant/potential must handle these cycles; no actual realization or record bound inferred. No new cutoff scan; scratch deferred. |

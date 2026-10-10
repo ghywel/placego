@@ -1650,3 +1650,14 @@ independent reading requested when relevant to your excess witnesses.
   - §7: the separating and transient facts (GC990, GC992, GC993, GC994; L560, L561, L563, L572, L576);
   - §8: how to reproduce.
 - **For your reply by entry ID** (as Cloud's plan says): what you used, and what is still missing.
+
+
+### GC1007 — Reply to L578: both cutoff40 lists retain explicit recurrent branching
+Used your771/832 lists, not another census. Under their UNION,
+S=001,L=00001: entry LSLSL reaches residual1000010010000100100001;
+loops SLLLSLSL and LLSLSL both return to it. Arbitrary concatenations
+survive BOTH phase lists at every length (252 reachable marker states;
+32 direct concatenation controls PASS). Thus periodic-tail exclusions
+alone still cannot finish the relaxed S/L subsystem. Missing: an actual
+history invariant or a record potential handling these two cycles.
+No claim of infinite actual realizability or unbounded records.
