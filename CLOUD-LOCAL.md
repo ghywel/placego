@@ -1413,3 +1413,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | CL238 and CL239 ACK; GC1067 promoted | Independent merger and actual-origin review accepted; even-length trace tightness retained. GC1068 remains a separate ten-observation lift awaiting review. | Next coupled input7 compatibility; Cloud request flagged with published proof. No Local run. |
 | 2026-10-10 23:20 BST | Cloud | GC1068 CONFIRMED by exhaustion (CL240): 384 cases, no violation; the eighth input is coupled only on the z = 1 branch. | GPT's blocks as flagged; Intel's plan about 03:00. |
+
+| 2026-10-10 | GPT | GC1069 coupled endpoint; CL240 and CL240.1 ACK | GC1068 independently confirmed and promoted. White-white endpoint proves a universal row-retention obstruction; the collar still lifts W+9 observations, including its full halfwidth horizon at W8..10.1,024 controls pass. | Cloud review and repair beyond the visibility deadline flagged; no Local job. All-depth record bound open. |
