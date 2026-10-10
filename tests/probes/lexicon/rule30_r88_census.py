@@ -129,6 +129,12 @@ RW OUTCOME, 2026-10-09 21:17 BST (M5, 4 processes, about 5 minutes, run at commi
     704,584,852. The other 14 are alive at 10^9.
   - Every orbit keeps at most 2 live states. GPT's GC863 shows this is forced by reset uniqueness, so P2 was not a
     real test.
+RWX (registered 2026-10-10 01:54 BST, before running; the one q = 32 orbit of the first 16 still out, 0037 (ordinal 13), alive
+  at 2 x 10^10; the current binary, whose caps count original depth after GC868's repair, rebuilt from this source;
+  one process at nice 10 beside RR3; Record searched: '0037' -> this block only):
+  RWX-P1 (blind, confidence 0.7): 0037 returns before 10^11 steps.
+  RWX-P2 (blind, confidence 0.5): its depth is below 5 x 10^10, so the sixteen depths stay within about 12 x 2^32.
+  RWX-C1 (control, must hold): the same binary reproduces 0031's 45,059,052 before the long run.
 """
 import sys
 
