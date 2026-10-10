@@ -5397,3 +5397,38 @@ bound, which is the one thing that lets a system driven by periodic clocks avoid
 carry no structure that the two-dimensional form hides. **Prior work.** No chain or row-major reading was found in the
 record or in the literature read for PRIOR-ART.md; the row-by-row reading is OEIS A070950 as a triangle, without
 results on the concatenation.
+
+
+### 8.81 The triangle law integrates to one half; the white area of each side, split at the front (the owner's lead, 2026-10-10)
+
+*Cloud, from the owner's question of 2026-10-10: would adding up the area of the white triangles on the orderly and
+the random side, not just their number, reveal anything? Probe `rule30_cloud_triangles.py`, predictions TA-P0 .. TA-P3
+pushed before the run; a side question (CONSTELLATION.md F).*
+
+**An identity (PROVED by hand).** Every white triangle is exact (§8.18), so a top of width $L$ colours
+$A(L)$ cells, $A(2m-1) = m^2$ and $A(2m) = m(m+1)$, and every white cell lies in exactly one triangle. Under the
+uniform measure the tops of width $L$ have density $3 \cdot 2^{-(L+4)}$ per cell (§8.68). With
+$\sum_{m \ge 1} m 4^{-m} = 4/9$ and $\sum_{m \ge 1} m^2 4^{-m} = 20/27$,
+$$\sum_{L \ge 1} 3 \cdot 2^{-(L+4)} A(L) = \tfrac{3}{16}\Big(3 \cdot \tfrac{20}{27} + \tfrac{4}{9}\Big)
+= \tfrac{3}{16} \cdot \tfrac{72}{27} = \tfrac12 ,$$
+the measure's white density. The triangle law and the half-density are one fact seen twice; so the summed area of a
+side says nothing, and the content is the share by width: $3/32$ of all cells for each of $L = 1, 2, 3$, then halving,
+with widths 8 and up holding about 3.6% of the cells (7% of the white).
+
+**Measured** (rows 2 to 4,096; sides split at §8.74's exact front $B(t)$):
+
+| side | cells | white | triangle area | largest top | white in widths $\le 8$ |
+|---|---|---|---|---|---|
+| orderly ($e < B(t)$) | 6,436,261 | 0.4982 | 0.4979 | 16 | 95.7% |
+| random ($e \ge B(t)$) | 10,349,144 | 0.4998 | 0.4996 | 33 | 92.5% |
+
+TA-P0 to TA-P3 HELD. The random side's area shares match the law within 1.5% for every width to 11 (and its largest top,
+33 on the right edge, is §8.68's $\log_2 t + 22$). The orderly band's largest top is 16, its period (§8.68 saw the
+same in $x/t < -0.6$), and its census beyond width 8 is the stripes', not geometric: 2,233 tops of width 10 against
+1,275 of width 9, 429 of width 12 against 113 of width 11, none of 13 or 14, then 180 of 15 and 63 of 16. One nuance:
+in the first 32 diagonals past $B(t)$ the births of widths 1, 2, 3 and 6 run 2% to 9% below the law, and sit at
+1.00 beyond; so the front has a faint graded edge in triangle births that the chains probe's compressors could not
+see (CH-P4). **What it means.** Both sides are half white; the owner's eye is right that the random side has the
+large triangles (one of width 33 against the band's 16), but they hold a few percent of the area: most white, on both
+sides, is specks of width 1 to 3. **Prior work.** §8.68 counted tops by width and by $x/t$; the areas, the identity
+and the split at $B(t)$ are new to the record.

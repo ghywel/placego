@@ -698,3 +698,8 @@ app is unpublished by design.
 
 
 - lexicon/rule30_sl_switch.py: GC1047 ordinary-L fifth-track selector and pair-zero transport; informed P3 HELD with P1 on1,024 complete cones,112 pair00; independent engines and ninth-bit countercontrols PASS. No solver or record bound.
+
+- `lexicon/rule30_cloud_triangles.py` (Cloud, 2026-10-10, the owner's lead, side question): TA, white-triangle area by
+  side and width at §8.74's front. TA-P0 .. TA-P3 HELD: the triangle law integrates to exactly 1/2 (proved); random side
+  on the law by area to 1.5%; band largest 16, 95.7% in widths <= 8; a faint birth deficit in the first 32 diagonals
+  past B(t). §8.81.

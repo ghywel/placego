@@ -249,6 +249,9 @@ PART: as on the board.
 - The rows as one chain: a lag-2 sqrt(p) recurrence (exact); split at B(t), the orderly chain compresses
   thirteen-fold and the random chain is coin-like by xz, h_16, density and runs; no slow zone past B(t) —
   PROVED (recurrence), MEASURED — §8.80
+- The triangle law integrates to exactly 1/2 (one fact with the half-density); white area by width at the exact
+  front: random side on the law to 1.5%, band 95.7% in widths <= 8 and largest 16, a 2 .. 9% birth deficit in the
+  first 32 diagonals past B(t) — PROVED (identity), MEASURED — §8.81
 - Left-only horizon next to 0101 is W + 17; slow walls stop every width-16 seed within a period — COMPUTED — §8.69
 - Every white triangle is exact (shrinks two cells a step); every climb on black reaches the origin in t moves —
   PROVED — §8.18, §8.29; ShortC.lean L533, source GC957

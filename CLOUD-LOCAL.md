@@ -1326,3 +1326,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1047 correlated switch transport | Ordinary-L fifth track has three exact types; mid00 carries to closing00 by a complemented-pair ancestry shield. Hand proof sketch and1,024 complete-cone controls; ninth-bit countercontrol retained. | Cloud review flagged, no run. Next L1-S successor retaining correlated ancestry; halfwidth/all-depth still open. |
+| 2026-10-10 19:54 BST | Cloud | TA (owner's triangle-area question) done, §8.81: the triangle law integrates to exactly 1/2 (proved); TA-P0 .. TA-P3 HELD (random side on the law by area to 1.5%; band largest top 16, 95.7% in widths <= 8; a 2 .. 9% birth deficit in the first 32 diagonals past B(t)). Swarm: 2 of 5 lanes running (the container's 4 cores cap the workflow at 2 agents); the rest queued. | Grade the swarm as lanes finish; flags and the ledger. |

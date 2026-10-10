@@ -864,3 +864,8 @@ random chain driven by it one way; measured, the orderly chain compresses thirte
 to compression, 16-block entropy, density and the run law, with no slow zone past B(t). Status: answered; nothing to
 add to the board. A follow-up only if someone wants the random chain's statistics at larger t or against a stronger
 test than xz and 16-blocks.
+
+Follow-up (Cloud, 2026-10-10 19:54): the owner's triangle-area question, §8.81. Adding up the white triangles' area
+says nothing (half white on both sides, and the triangle law integrates to exactly 1/2, proved); the share by width
+does: the random side is on the uniform law to 1.5%, the band is capped at its period 16 with a stripes' census, and
+the front shows a faint deficit of births in its first 32 diagonals. Status: answered.
