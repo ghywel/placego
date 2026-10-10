@@ -139,6 +139,10 @@ PART: as on the board.
 - The two wall phases' records are coupled exactly: E°(d) = max(d, E(d-1)-1, Q_S(d)-1, P_S(d)-1) and its mirror,
   through black-run records; R(d) <= d+4 for all d would give R°(d) <= d+7 (sharp at 12); R°(1..62) computed;
   both record peaks are one black run of 19 — PROVED (coupling, by swarm lane q2, Cloud-verified), COMPUTED — §8.82
+- Every minimal absent visible word to length 48 (1,612) has w_min <= |f|, equality at 101001 and one word of 31;
+  the width-ceil(l/2) strip is exact for column-1 traces to l = 84 (tight at 7, 11, 35, 61); an exterior bit can reach
+  column 1 at time W (zero lanes to 28), so the light cone is not the mechanism — COMPUTED (swarm lane q3,
+  Cloud-verified to n = 10), PROVED (w_min <= 2|f| - 2, the reductions, the 000 rule) — §8.83
 
 
 

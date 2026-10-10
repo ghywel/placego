@@ -5483,3 +5483,49 @@ small depth. **Where it bears.** Question D of KIMI-QUESTIONS-3.md is answered i
 conjecture now has a companion statement for the other phase with constant 7, and the black-run records $Q$, $P$ are
 the new objects to study: the standard phase's $R(d) \le d + 4$ is, by the coupling, a statement about how long a
 black run can live one step earlier.
+
+*Skeptic's verdict (the swarm's own, graded by Cloud, 21:22 BST): no claim refuted; every proof above holds as written;
+the upper bounds in $R^\circ(45..62)$ rest on the lane's engine (the skeptic certified the lower bounds by completing
+every witness); "the exact relation must include black-run records" is an overclaim, since only specific forms were
+refuted. Its unexpected check: $E^\circ(d) = \max(d, T_S(d))$ for every $d \le 38$, so the shrinking-zero-run term of
+the coupling is first needed at $d = 41$; in the standard phase first at $d = 29$.*
+
+
+### 8.83 Every minimal absent word to length 48 is excluded by a strip no wider than itself; the trace form is tight (swarm lane q3, graded; 2026-10-10)
+
+*Lane q3 of the owner-authorized swarm (independent agent, no access to the record) was given the right-half language
+beside the wall, its minimal absent words, and the half-width question of CL210. Graded by Cloud 21:22 BST; the
+swarm's skeptic for this lane is still to run. Code and raw outputs outside git.*
+
+**Proved by the lane and verified by Cloud.** The one-sided reduction (any right half beside the wall extends to a
+configuration on $\mathbb Z$, so $L$ is the right halves' visible language; §8.39's mirror). The **000 rule**: at even
+$t$, $x_{t+2}(1) = 1$ exactly when $x_t(1..3) = 000$, so a visible 1 is always followed by a visible 0 and 11 is
+absent with $w_{\min} = 1$ (Cloud: all 1,024 rows of width 10). The strip languages are nested, $L \subseteq L^{W+1}
+\subseteq L^W$, and the width-$(2m-2)$ strip is exact for words of length $m$, one better than the cone, so
+$w_{\min}(f) \le 2|f| - 2$. If $g$ occurs in $f$ then $w_{\min}(f) \le w_{\min}(g)$, so any linear bound need only be
+proved for minimal absent words; the same reduction holds for full column-1 traces (all times, not only even ones).
+The **front lemma**: two histories that first differ at site $\ell$ differ at site $\ell - 1$ a step later only if
+the cell there was white, so an exterior bit walks left one site per zero. Cloud's own brute force reproduces
+$|L_n|$ for $n \le 10$ and the seven minimal absent words to length 10 (11, 00000, 101001, 0100101, 010010001,
+0101000101, 0101010000), and $w_{\min} = 1, 4, 6, 5$ for the first four by set propagation.
+
+**Computed by the lane (third-party; its $|L_n|$ agree with §8.20's TC2 at every $n \le 39$).** $|L_n|$ to $n = 48$
+($|L_{48}| = 32{,}656$). The minimal absent words to length 48: 1,612 of them, counts per length rising from 1 at 2,
+5, 6, 7, 9 to 132 at 48. **Every one has $w_{\min}(f) \le |f|$**, with equality only for 101001 and one word of
+length 31; the ratio runs from 0.294 to 1.000 with median 0.595 (L606's learned cuts sat at 0.535). Cross-checked by
+set propagation for 251 of them with $w_{\min} \le 26$; the rest by SAT without proof logs. The **trace form** is
+sharper: for full column-1 traces of length $l \le 84$ (938 minimal absent traces) $w_{\min} \le \lceil l/2 \rceil$,
+with equality only at $l = 7, 11, 35, 61$; and the width-$W$ strip generates exactly the real traces of length
+$2W - 1$ for every $W \le 12$ (exhaustive). **The light cone is not the mechanism**: the earliest time an exterior
+change can reach column 1 is $\tau(W) = W$ for every even $W \le 28$ (a zero anti-diagonal lane of length $W$ carries
+it at full speed; the longest such lane ending at column 1 is 28, exhaustively), $W + 1$ for odd $5 \le W \le 27$,
+and only $W + 4$ or $W + 5$ for $29 \le W \le 40$. So the claim "an exterior bit cannot arrive before $s + 2W$" is
+REFUTED, and influence arguments alone cannot give any constant below 2.
+
+**What it means.** CL210(a), that half the trivial width always suffices, now holds for every absent word to length
+48, minimal or not, and the sharper statement to aim at is the trace form: *the free-exterior strip of width
+$\lceil l/2 \rceil$ is exact for column-1 traces of length $l$*, tight at four lengths so far. The quarter seen in
+L606 is the typical case of a law whose worst case is exactly one half. Nothing here is proved for all lengths; the
+lane's best proved bound is $2|f| - 2$. **Prior work.** §8.20 (TC2: $|L_n|$ to 39, the minimal forbidden words, the
+entropy ceiling), SW (L569, L570: strip widths for minimal words to width 35), L606 (77 learned cuts). New to the
+record: the complete $w_{\min}$ census to length 48, the trace form and its tightness, $\tau(W)$ and the 28-lane.
