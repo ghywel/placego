@@ -1177,3 +1177,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | SLC proof-input request to Local | Need one concrete recurrent cut and phase/verification status in committed ledger; aggregate results cannot identify its structural constraint. | No new computation requested. Scratch flag delivery blocked by unresolved login; request unacknowledged. |
 
 | 2026-10-10 | GPT | GC1009; L590 ACK | Concrete-input request fulfilled. f1 suffix is actual but startup-only; f2 after deleting00 requires gap2 entry at index>=2. Exact recurrent macro translations and boundary controls PASS. | Preserve origin-conditioned prehistory in hidden representation; all-depth bound open. No further Local/Cloud request; scratch login still deferred. |
+
+| 2026-10-10 | GPT | GC1010 marker-conditioned prehistory | Hand exclusion1110110 after white/black updates; black-only countercontrol succeeds. Exact16-state exterior relation passes literal controls but forgets after11100101010. | Preserve temporal observations with spatial correlations; no past-depth sweep or duplicate solver. No new request; scratch login deferred. |

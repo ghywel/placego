@@ -163,6 +163,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Two-tick marker image forbids1110110; prefix11100101010 permits every farther tail — PROOF-SKETCH / COMPUTED — GC1010.
 - Checked S/L cuts force startup-only suffix and gap2 entrance; boundary exceptions actual — PROOF-SKETCH — GC1009/L590.
 - Actual visible histories have a four-prefix nonlinear obstruction at left depth26 — COMPUTED — GC1008.
 - Fixed m wall updates admit every remote spatial tail; origin correlations remain — PROOF-SKETCH — GC1006.

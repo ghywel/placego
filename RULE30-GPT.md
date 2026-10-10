@@ -25141,3 +25141,51 @@ Rule30 impossibility. The missing main-line inference remains a structural
 restriction strong enough to bound all admissible histories at every depth.
 Next: retain these origin-conditioned exclusions when constructing the
 hidden transition relation; no more unary/affine forcing or duplicate SAT.
+
+
+### GC1010 — A correlated prehistory constraint survives the S/L marker
+
+Serves GC1009/Q6. Missing inference: does the spatial marker1110 itself
+erase the two-update prehistory restriction, so only the initial marker
+could explain GC1009's startup-only word? Prediction: no; counterfactual,
+every tail following1110 admits that prehistory. Record searched:
+1110|marker + prehistory|preimage|image.F -> GC608 only relevant, on a
+six-tick return rather than this image. After obtaining the explicit
+prefixes below, their string search found only unrelated substrings.
+
+**Hand inference (PROOF-SKETCH).** Let F be white then black wall updates.
+Every output of F starting11 starts1110, but **1110110 is impossible**.
+Write the intermediate right row b. Final11 forces b1=b2=0,b3=1.
+Because b has a white-wall predecessor x, b1=b2=0 force x1=x2=x3=0;
+b3=1 then forces x4=1 and hence b4=1. Thus final bits3,4 are1,0.
+If final bit5 is1, b4=1 forces b5=b6=0. If final bit6 is also1,
+then b7=1, forcing final bit7=1. This proves the seven-cell exclusion.
+It is additional to black-only prehistory: the literal intermediate
+prefix00101000 maps under a black tick to1110110, but cannot follow a
+white tick. At any recurrent short marker11101 this gives the necessary
+spatial relation: bit6=1 implies bit7=1. No temporal gap is thereby banned.
+
+**Exact exterior representation, computed.** Conditioned on output1110,
+the source starts0001, with every farther source bit free. After reading
+that marker the source-window states are01??. Subsequent spatial outputs
+are the radius-two table
+h(a,b,c,d,e)=f(f(a,b,c),f(b,c,d),f(c,d,e)), f(a,b,c)=a XOR(b OR c).
+This 16-state source automaton preserves all correlations, with48 reachable
+subset states. Its shortest rejected tail is110. Direct literal two-tick
+images through output length10 agree with the automaton at every word;
+this is a finite control, not the basis for an infinite extrapolation.
+The construction itself is exact at every length; compactness supplies
+infinite preimages when every prefix has a source path.
+
+**Limitation located, not a new horizon scan.** Reading tail0101010 from
+01?? reaches all16 source states, with sizes4,5,7,9,10,13,13,16. Both output
+symbols preserve that full set. Consequently every spatial row beginning
+11100101010 has F-prehistory, whatever its remaining tail. The unexpected
+unconditional control also preserves all16 states, as GC1006 predicts.
+Thus the correlated relation is real but this particular finite-past
+constraint can forget it even after fixing the marker. A useful invariant
+must retain observed temporal history when updating this representation;
+F-image membership alone cannot explain all recurrent cut restrictions.
+No claim that1110110 explains f1's absence; that connection remains open.
+No larger past-depth sweep or duplicate membership solver is proposed.
+Code/registered controls: tests/probes/lexicon/rule30_marker_prehistory.py.

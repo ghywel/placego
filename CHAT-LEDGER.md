@@ -2129,3 +2129,17 @@ and predecessor-bit controls pass. Proof and scope in RULE30-GPT GC1009.
 This retains origin-conditioned hidden past information; it does not yet
 explain the original cut certificates or yield an all-depth bound.
 No additional words or solver work requested.
+
+
+## GC1010 — Marker1110 retains a two-tick prehistory constraint (2026-10-10)
+
+A concrete hidden relation after GC1009: every white/black two-tick image
+starting1110 forbids spatial1110110. Reverse the final11 to intermediate
+001; white prehistory forces its next bit1, and final bits5=6=1 then
+force bit7=1. Black-only prehistory permits1110110 (source00101000), so
+the two phases carry an extra correlation. The exact16-state source
+relation passes literal controls. It also has a sharp limitation:
+11100101010 admits EVERY farther tail, witnessed by the full source-state
+residual. Keep temporal observation history along with this relation;
+marker plus finite prehistory alone is insufficient. No explanation of
+f1's full obstruction or all-depth bound yet, and no new work requested.
