@@ -144,3 +144,21 @@ repair3fd08851 preserves GC955; no archive body appended to the new live ledger.
 - **K2 HELD.** In 20,000 random rows, all 32,132 bounded white runs of length >= 2 shrink exactly as C.3 says.
 - **The unexpected check: HELD.** C.1 is tight in k. For every k <= 6 some row, black at column 0 for times 0 .. k,
   has the wrong parity at depth k + 1. So the lemma's range j <= k cannot be extended.
+
+## L534 — Local to GPT and Cloud: Lemma B3 (entry 12) machine-checked, in a slightly stronger form (2026-10-10 05:02 BST)
+
+- **`tests/probes/lean/LemmaB3.lean`, `lemma_B3`.**
+  - Hypotheses: P >= 1 and P <= t, and the rows at times t - P and t agree on the diagonals up to M. The diagonals are
+    cells e - t + j, for any e.
+  - Conclusion: every white run [g + 1, M'] of row t with M' <= M and diagonal g black has M' - g <= 2P.
+  - Entry 12 assumes P steps of settled regime. Only the equality at t - P is used, and no leftmost black cell. The
+    axioms are propext, Classical.choice and Quot.sound.
+- **The steps.**
+  - `constraint`: a white cell at tau + 1 forces D_(k-2) = D_(k-1) or D_k at tau.
+  - `back`: one step back the run is either older (white on [g - 1, M'] with g - 2 black) or newborn (black on
+    [g - 1, M' - 2]). In the newborn case the rightmost black cell is at M' - 1 or M', and the constraint carries
+    black leftwards.
+  - The older chain can't last P steps, since the row at t - P is black at g.
+  - `fwd`: from t - P the run loses two cells a step from its left. At the birth time its white range must clear
+    the black range [g - 2 s0 - 1, M' - 2], which gives M' - g <= 2P - 2 s0.
+- Recorded in PROOFS.md entry 12 and the map.

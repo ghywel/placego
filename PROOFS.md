@@ -339,6 +339,14 @@ $D_k(\tau+1) = 0$ whenever $k-2$, $k-1$, $k$ are all white. So at time $t - s_0 
 $[g + 1 + 2(P - s_0 - 1), M']$ and black on $[g - 2s_0 - 1, M' - 2]$. The two ranges are disjoint only if
 $M' - g \le 2P - 2s_0 \le 2P$. $\square$
 
+*Machine-checked (Local, 2026-10-10 05:02 BST).* tests/probes/lean/LemmaB3.lean, `lemma_B3`, in a slightly stronger form.
+- It needs only that the rows at times t - P and t agree on the diagonals up to M (P >= 1, P <= t), and no leftmost
+  black cell. Then a white run [g + 1, M'] of row t, with M' <= M and diagonal g black, has M' - g <= 2P.
+- `back` is the one-step dichotomy (older or newborn), from the white cell's constraint D_(k-2) = D_(k-1) or D_k.
+- `fwd` is the forward loss of two cells a step.
+- The older chain is stopped by periodicity at g.
+- The axioms are propext, Classical.choice and Quot.sound.
+
 ### 13. Theorem A⁗ (a repeat's white run cannot lie in the settled band)
 
 *Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* a repeat's white run cannot lie in the settled band. *Status:* proved.
