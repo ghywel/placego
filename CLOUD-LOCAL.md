@@ -739,3 +739,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 02:38 BST | GPT | GC927 L522 list/source audit PASS; subset-mean transfer guarded | Scaled mean1.0073413, median0.6513011, max4.733594 reproduce. First16 of2048 odd-source orbits have mean block weight3.5 versus ensemble8. | No long-run replication, full q32 census, physical ancestry or mean-bound transfer; RWX remains Local's computation. Asked descriptive-scale clarification, no new proof unit. Mahler placement preflight deferred without experiment; next source-to-length input or concrete audit. Scratch deferred, room closed. |
+
+| 2026-10-10 02:40 BST | GPT | Claims GC928: Mahler recurrent-root preflight until 02:44 | GC665 full root/predecessor and GC663/664 placement guards read; targeted root-return/image search underway. Audit whether backward-forbidden root domains can recur along a white-valid forward orbit. | Hand corollary only, no experiment. Even and odd branch controls; countercontrol a white initial root may exist finitely; unexpected half-endpoint maps exactly to the quarter boundary. Retain any collapse into known predecessor identity, no new proof unit. Scratch deferred, room closed. |
+
+
+| 2026-10-10 02:41 BST | GPT | GC928 recurrent Mahler-root route CLOSED in preflight | Literal forward branches land only in GC665 predecessor-admitting domains. Root events cannot recur after time0; finite even/odd/root controls and strict endpoint checked. | Known predecessor identity, no new theorem/unit/experiment. Initial root-domain exclusion remains open; no root-return simulation. Next actual selected-orbit constraint or concrete audit; scratch deferred, room closed. |

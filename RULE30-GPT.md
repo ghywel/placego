@@ -21736,3 +21736,22 @@ In particular, if the old clock ensemble has coalesced modulo m, the complete do
 GC869's mean bound averages all nonzero first children; GC870's primitive mean averages all primitive first children. Even the complete2,048 odd-doubled-source orbits form a restricted subset of those domains. This first16 prefix is a further deterministic selection; it is also not asserted to carry G7's physical-root ancestry. Its measured mean near2^32 is descriptive agreement with a scale, not a consequence of either counting bound or a statistical test of the random partial-permutation null. Entry39 already proves every zero-started orbit returns; completing this sample supplies measured depths, not a new termination theorem or full q32 census.
 
 **Disposition.** L522 arithmetic/source-scope PASS; RWX remains Local's computation. Requested clarification of the header's "matches the chain-counting reading" wording: qualitative scale agreement only. No new proof unit or prize-board row. Keep the completion in the map with restricted-sample scope. Mahler GC663-GC671's actual-placement obstruction remains open; no new repeated-window, sparse-gap or prescribed-hole refinement was started. Next an actual source-to-length constraint or concrete proof audit; scratch remains deferred.
+
+
+#### GC928 — Mahler recurrent-root testing collapses before any experiment (2026-10-10 02:41 BST)
+
+**Registered hand preflight; a GC665 corollary, not new arithmetic input.** Record searched: Mahler/rounded3/2/Z-number + image/renewal/root-visit/root-return ->3 hits in3 files; GC665 read in full together with GC663/664 placement/endpoint guards. Check the tempting idea that repeated visits to backward-forbidden root domains could obstruct a hypothetical positive white orbit. Predict nonrecurrence from the actual forward branch equations; this is a hand hypothesis audit, not a blind experiment. No computation, marginal-density estimate, new prior-art claim or proof unit.
+
+Let x=n+u, 0<=u<1/2, and suppose both x and x'=3x/2 are white (fractional part below1/2). If n=2m, forward admissibility requires u<1/3 and
+
+    x'=3m+u',  u'=3u/2 in[0,1/2).
+
+Its integer part is0 modulo3, the always-predecessor-admitting case of GC665. If n=2m+1, forward admissibility requires1/3<=u<1/2 and
+
+    x'=3m+2+u',  u'=(3u-1)/2 in[0,1/4).
+
+This is GC665's other predecessor-admitting case, with the quarter guard strict. Thus every later point of any white-valid forward orbit automatically avoids ALL backward-forbidden domains: integer part1 modulo3, or integer part2 modulo3 with fraction>=1/4. Those are precisely the domains in which a predecessor-minimal candidate can start after the initial forward-admissibility intersection. The nonrecurrence is also immediate from the previous white point being the unique real predecessor; the residue calculation exposes why an independent root-frequency model would be wrong.
+
+**Controls and counterfactual.** The even finite control x=25/4 maps to75/8=9+3/8, residue0. The odd control x=22/3=7+1/3 maps to11, residue2 with fraction0. The root x=4 is white and maps to6, also white; it shows a backward-forbidden start need not fail the next forward step. Its next two values9 and27/2 show only a finite white prefix, not a Z-number. Unexpected endpoint: an excluded source x=7+1/2 maps to11+1/4, exactly the strict backward quarter boundary. Replacing the source half-open interval with a closed one would invalidate the stated image guard. GC664's forward-shift endpoint repair remains separate.
+
+**Failure and disposition.** A recurrent-root exclusion test has no target events after time0, so it cannot add an obstruction to a selected white orbit. This prospective route is CLOSED before encoding or measurement; it is the already known predecessor identity in different coordinates. This does not close exclusion of the initial root domains, bound their minimal integer part, or give the missing finite-start extinction deadline. No multiplication of marginal root sizes, root-return simulation or new board row is warranted. Next seek a constraint INSIDE the initial root domains, or another actual selected-orbit input; stop root-visitation refinements absent such input. Scratch deferred, room closed.
