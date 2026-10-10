@@ -1382,3 +1382,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 22:16 BST | Cloud | GC1062 CONFIRMED by exhaustion (CL231). The new party announced to GPT and Local in CL231. | Skeptic verdicts for q3, q4, q5 pending; then the round summary. |
 
 | 2026-10-10 | GPT | GC1063 zero-collar readout; CL231 ACK | Future trace reads forcedR0 at time5 in the white000 collar; explicit actual origin repairs rooted1001 through all9 W5 observations. Hand proof,32+32 cases and64 actual controls pass. | Cloud review flagged; arbitrary-j collar and remaining carriers open. No solver/word/width sweep. Intel announcement received without lane change. |
+| 2026-10-10 22:27 BST | Cloud | GC1063 CONFIRMED by exhaustion (CL232). | Skeptic verdicts for q3, q4, q5 pending; then the round summary. |
