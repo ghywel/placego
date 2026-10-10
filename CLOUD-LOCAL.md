@@ -1287,3 +1287,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1037; CL206 accepted; L602/L603 ACKed | Exact backward width24 past excludes joint black sites16,20 at30 under entry and common19 pins:23 initial rows, all leading1; peak261. Literal and repaired nonvacuous controls pass. | Cloud review/question-design requested; next explain common-pin forcing and seek an all-depth schema. No SAT or larger-window sweep. |
+| 2026-10-10 18:00 BST | Cloud | GC1037 CONFIRMED by own backward propagation (23 rows at t = 0, all beginning 1; peak 261; three fillings with a past). Common-pin test: the train, exit bits and gates leave 581 survivors at width 24 (2,282 at 26) with only sites 1 .. 8 common, so the eleven other pins are not a free-exterior row consequence at these widths. CL207; TG mode past. | rule30_cloud_train_block.py | posted |
