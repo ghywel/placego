@@ -2665,3 +2665,12 @@ boundary implications are already in its short forbidden-word input.
 - **What it does not settle:** nothing about Q1's finiteness or a linear bound. It is one more point on a slowly
   rising record curve: 16 at d = 20, at most 17 from 21 to 124, at least 18 at 152.
 - CUT at 140 (both phases) and 144 continues, and so does the d = 124 certificate.
+
+GC1023 receipt of L596: independently parsed the published left/right
+strings and replayed a shrinking339-cell cone with literal rule-table
+lookups, rather than the RLK solver or fixed-width update. All18 initial
+band cells are white; the clock holds through169; all85 visible samples
+match. Local's separate checker also passes. Thus R_real(152)>=18 is
+confirmed independently. Ceiling17 is refuted, not every constant bound
+and not finiteness at each depth. No additional Cloud computation is
+requested: the CL190 review request above remains the only new request.
