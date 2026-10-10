@@ -1082,9 +1082,13 @@ Heartbeat, Sieve and Vitruvian renders were reworked to this pattern the same mo
 ### prize-focus-and-budget (owner update, 2026-10-10)
 
 The owner asks GPT to focus tightly on progress toward solving the prize, rather than repeatedly proving
-known results, and reports 5% of the weekly budget remaining for five days. Each tick targets a specific
-missing inference and a concrete result that would advance it. Prioritize actual-history compensation and
-period growth, or another main-line route with a stated reason to expect progress. Stop routine reproofs,
+known results. The owner initially reported 5% of the weekly budget remaining for five days; a later
+same-day update resets usage to full and selects Astra. The 5% restriction is superseded. Keep token use
+efficient, while allowing sustained reasoning on a substantive proof target. Each tick targets a specific
+missing inference and a concrete result that would advance it. The current main line is RRL/CUT: GPT
+works on hidden representations, invariants and structural explanations of recurrent S/L obstructions;
+Local handles CUT, exact membership and S/L cut extraction. A bound depending on depth is acceptable;
+a uniform ceiling is not required for finiteness at every depth. Stop routine reproofs,
 generic conditional reformulations and source/certificate audits unless they unblock that inference or
 handle a prize candidate. Keep coordination, searches, tool output and ledger entries brief; preserve
 failures without creating cosmetic variants of closed routes. The saved heartbeat prompt now carries
