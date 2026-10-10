@@ -22,6 +22,8 @@
   --tri: #1E5A86;
   --seed: #2D7A57;
   --hit: #0089A8;
+  --event: #A87306;
+  --step: #2D7A57;
   --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -29,12 +31,12 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
-    --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; --hit: #45D3EE; color-scheme: dark;
+    --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; --hit: #45D3EE; --event: #E2B444; --step: #5CC496; color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
-  --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; --hit: #45D3EE; color-scheme: dark;
+  --kick: #E2B444; --cover: #E0688F; --tri: #62A6DA; --seed: #5CC496; --hit: #45D3EE; --event: #E2B444; --step: #5CC496; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
@@ -85,6 +87,19 @@ canvas { display: block; max-width: none; cursor: crosshair; touch-action: manip
   .toolbar { position: static; }
   .card { position: static; max-width: none; box-shadow: none; margin-top: 8px; width: 100%; }
 }
+.depth { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--ink-soft); }
+.depth input { width: 130px; accent-color: var(--tri); }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.summary { display: flex; flex-wrap: wrap; gap: 3px 18px; margin: 0; font-family: var(--font-mono); font-size: 0.76rem;
+  font-variant-numeric: tabular-nums; min-height: calc(3em + 3px); }
+.summary div { display: flex; gap: 6px; min-width: 0; }
+.summary dt { color: var(--ink-soft); }
+.summary dd { margin: 0; }
+.hint { margin: 0; font-size: 0.8rem; color: var(--ink-soft); }
+#s-wedgectl.off { visibility: hidden; }
+.tbview { display: grid; gap: 8px; }
+.notes h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.05rem; margin: 0; color: var(--ink-soft); }
+.off-view { display: none !important; }
 html.embed .page > :not(.toolbar):not(.stage) { display: none !important; }
 html.embed .page { padding-bottom: 0 !important; }
 </style>
@@ -120,6 +135,13 @@ html.embed .page { padding-bottom: 0 !important; }
   <div class="toolbar" id="toolbar">
     <div class="bar">
       <h1>Sierpinski Everywhere</h1>
+      <div class="seg" role="group" aria-label="Which way to read Rule 30">
+        <button id="v-down" type="button" aria-pressed="true">Down the page</button>
+        <button id="v-side" type="button" aria-pressed="false">Sideways, beside the wall</button>
+      </div>
+    </div>
+    <div class="tbview" id="tb-down">
+      <div class="bar">
       <div class="seg" role="group" aria-label="What to draw">
         <button id="m-r30" type="button" aria-pressed="true">Rule 30</button>
         <button id="m-r60" type="button" aria-pressed="false">Kicks removed</button>
@@ -140,21 +162,75 @@ html.embed .page { padding-bottom: 0 !important; }
       <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--tri)" opacity="0.5"/></svg>the triangle a clicked kick spreads</span>
       <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="var(--seed)" stroke-width="1.8"/></svg>the starting square</span>
     </div>
+    </div>
+    <div class="tbview off-view" id="tb-side">
+      <div class="bar">
+      <div class="seg" role="group" aria-label="Where the edge events come from">
+        <button id="s-m-r30" type="button" aria-pressed="true">Rule 30</button>
+        <button id="s-m-rand" type="button" aria-pressed="false">Random photons</button>
+        <button id="s-m-gray" type="button" aria-pressed="false">Pure Gray</button>
+      </div>
+      <div class="controls">
+        <button id="s-build" type="button" aria-pressed="false">Build sideways</button>
+        <button id="s-wedge" type="button" aria-pressed="false">Counterexample wedge</button>
+        <button id="s-reseed" type="button">New right half</button>
+        <button id="s-clear" type="button">Clear triangles</button>
+        <button id="s-dots" type="button" aria-pressed="true">Dots shown</button>
+      </div>
+      <div class="depth">
+        <label for="s-depth">Rows shown</label>
+        <input id="s-depth" type="range" min="1" max="200" value="200">
+        <span id="s-depthval" class="mono">200</span>
+      </div>
+      <div class="depth off" id="s-wedgectl">
+        <label for="s-wd">White from depth</label>
+        <input id="s-wd" type="range" min="2" max="190" value="20">
+        <span id="s-wdval" class="mono">20</span>
+      </div>
+    </div>
+    <p class="tip" id="s-tip"></p>
+    <dl class="summary" id="s-summary"></dl>
+    <div class="key">
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="3.2" fill="var(--event)"/></svg>dot (edge event)</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="4.6" fill="none" stroke="var(--hit)" stroke-width="2.2"/></svg>a dot that decides the pointed cell</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--cover)" opacity="0.22"/></svg>the pointed cell's triangle</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 3 L11 11 M11 3 L3 11" stroke="var(--ink-soft)" stroke-width="1.6"/></svg>a place no dot can ever be</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--tri)" opacity="0.5"/></svg>the triangle a clicked dot spreads</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--cover)" opacity="0.55"/></svg>wedge: black where white is needed</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="5" width="12" height="4" fill="var(--event)"/></svg>margin: each row's event rate</span>
+    </div>
+    </div>
   </div>
 
   <div class="stage" id="stage">
     <canvas id="cv" role="img" aria-label="Rule 30 grown from one black square, time running down. Pointing at a square shades the triangle of earlier squares whose kicks reach it and circles those kicks; the card counts them. Clicking a kick draws the Sierpinski triangle it spreads."></canvas>
     <div class="card" id="card" hidden><p id="say"></p><dl id="info"></dl></div>
+    <canvas id="s-sheet" class="off-view" role="img" aria-label="Time runs left to right. The top two rows are the wall clock and column 1. Below them, row k is the column k cells to the left of the wall, with that row's edge-event rate as a bar in the right margin. Pointing at a cell shows the triangle of dots that decides it, and a card beside the cell that counts them. Clicking the green line, time 0, draws the wedge a counterexample would have to leave white."></canvas>
+    <div class="card off-view" id="s-card" hidden><p id="s-cellsay"></p><dl id="s-cellinfo"></dl></div>
   </div>
 
-  <p class="lede">The familiar pyramid of Rule 30, grown from one black square, with time running down. Every square of
-    it, on the striped left side and on the wild right side alike, is an odd overlap of Sierpinski triangles: one grows
-    from the starting square, and one from every kick, a white square with a black square to its right. Point at any
-    square to see the kicks that decide it; click a kick to see the triangle it spreads.</p>
+  <p class="lede">Rule 30 is Rule 60 plus kicks: each square is its upper-left neighbour XOR the square above it,
+    flipped once more when the square above is a <em>kick</em>, a white square with a black square to its right. That
+    one equation can be read two ways. <b>Down the page</b> it builds the familiar pyramid, row by row from one black
+    square. <b>Sideways</b> it is solved for the upper-left square instead, and builds the left half outwards from the
+    centre column, beside a wall held at white, black, white&hellip; Either way every black square is an odd overlap
+    of Sierpinski triangles, one spreading from each kick. Point at a square to see the kicks that decide it; click a
+    kick to see the triangle it spreads.</p>
+  <p class="hint" id="s-modehint"></p>
 
   <div class="notes">
     <section>
-      <h2>Rule 30 is a simpler rule plus kicks</h2>
+      <h2>One equation, two directions</h2>
+      <p>Down the page, the equation fixes each square from the row above it, so every triangle spreads down and to
+        the right. Sideways, the same equation fixes each square from the column to its right, so the left half can
+        be built outwards from the centre column, and every triangle spreads down and back in time. The kicks are
+        the same squares in both. Only where the dot is drawn differs: down the page it sits on the kick's own white
+        square, whose triangle starts just below it; sideways it sits on the square it decides, one place further
+        from the wall. Rule 30 can be solved this way for its upper-left square but not for its upper-right one, which
+        is why only the left half can be built sideways.</p>
+    </section>
+    <section>
+      <h2>Down the page: Rule 30 is a simpler rule plus kicks</h2>
       <p>Rule 30 makes a square black when its upper-left neighbour differs from (the square above or its upper-right
         neighbour). Rewritten, that says: do what Rule 60 does, black when the upper-left square and the square above
         differ, and then flip the square under every kick. Rule 60 on its own grows one black square into a Sierpinski
@@ -162,7 +238,7 @@ html.embed .page { padding-bottom: 0 !important; }
         overlap they cancel in pairs. So a square is black exactly when an odd number of triangles cover it.</p>
     </section>
     <section>
-      <h2>On both sides</h2>
+      <h2>Down the page: On both sides</h2>
       <p>The striped left side and the wild right side are built the same way, from the same kind of kick, and about a
         quarter of all squares are kicks on both sides; the readout counts them. What differs is how the kicks are
         arranged. On the left they fall in regular diagonal stripes, so their triangles stack into stripes; on the
@@ -170,19 +246,65 @@ html.embed .page { padding-bottom: 0 !important; }
         its triangle of kicks reaches back across the centre into the striped side.</p>
     </section>
     <section>
-      <h2>Why they all lean one way</h2>
+      <h2>Down the page: Why they all lean one way</h2>
       <p>Every triangle spreads down and to the right, never to the left. Rule 30 uses its upper-left neighbour
         exactly: flip that square and the square below always flips. Its upper-right neighbour counts only through
         the kick. That one-sidedness is also why the left side can be built sideways from the centre column outwards,
-        as the Edge-Event Sieve does, and the right side cannot.</p>
+        as the sideways view does, and the right side cannot.</p>
+    </section>
+    <section>
+      <h2>Sideways: How a row is made</h2>
+      <p>Run sideways, Rule 30 writes each row of this picture from the row above it. A cell is the row above at the
+        next moment, XOR the row above now, XOR an edge event. The first two parts are one step of the Gray code in
+        time: the row records where the row above flips.</p>
+    </section>
+    <section>
+      <h2>Sideways: The triangle under the pointer</h2>
+      <p>Click a dot and you see the triangle it spreads: down the picture and back in time, three half-size copies
+        of itself, each made of three smaller copies, the odd entries of Pascal's triangle. The cell under the pointer
+        is covered by the triangles of exactly the dots inside the red triangle drawn above it, which is the same shape
+        turned round, up the picture and forward in time. Where triangles overlap they cancel in pairs, so the cell is
+        black exactly when its red triangle holds an odd number of dots. The card counts them and checks the count
+        against the cell.</p>
+      <p>Some places in that triangle can never hold a dot, whatever the right half (marked &times;): depths 2 and 6
+        never do, nor depth 1 at odd times or depths 4 and 14 at even times. Its slanted and upright edges never hold
+        two dots side by side either (the rules below), so at most every other place on them is filled.</p>
+    </section>
+    <section>
+      <h2>Sideways: Random photons</h2>
+      <p>Rule 30 makes its own events: only the first row's come from outside, from column 1, and every deeper one is
+        born where the pattern leaves a white cell beside a black one. Random photons keep the first row and scatter
+        every deeper event at random at the same overall rate. What changes is what self-feedback does.</p>
+      <p>Because the picture makes its own dots, three exact rules hold in Rule 30 and nowhere else. A dot never has
+        another dot straight below it, nor one below and to the left. Along a row, a dot is followed by another
+        exactly when the cell under it is black, so each line of dots runs over black cells and ends on one white.
+        Below and to the right, one more dot costs two more white cells. The &ldquo;dots continue&rdquo; readout
+        counts how often the next cell in each direction also holds a dot: about 54%, 24%, 0% and 0% for Rule 30,
+        and the overall rate, about 26%, in every direction for random photons.</p>
+    </section>
+    <section>
+      <h2>Sideways: The counterexample wedge</h2>
+      <p>Suppose a finite start, nothing black beyond some depth, made the wall repeat for ever. A change spreads at
+        most one cell per step, so at time t everything deeper than that depth plus t would still be white: a wedge
+        whose upper side drops one depth per step. Click or drag on the green line, or use the slider, to choose
+        where the white edge starts.</p>
+      <p>In a real counterexample the wedge would go on for ever. This picture holds 200 steps, and row k is known
+        only up to time 200 &minus; k, because each row is one cell shorter than the row above it. So the wedge ends
+        where the picture does, at its slanted right side, and with every row shown it closes into a complete
+        triangle. Shaded cells are ones a counterexample must leave white; the darker ones are where this right half
+        is black, so it does not come from a counterexample.</p>
     </section>
   </div>
-  <p class="foot">Run sideways, the same kicks build the left half from the centre: the Edge-Event Sieve draws that
-    picture, with its triangles spreading down and back in time. The page checks its own arithmetic: it rebuilds every
-    square from the triangles alone (Lucas's theorem: a triangle started r rows up reaches the square d places to its
-    right exactly when C(r, d) is odd) and compares the result with Rule 30 itself. The rewriting is exact algebra.
-    The quarter is a measurement: from one black square, over rows 400 to 799, the left third of the pyramid is 25.8%
-    kicks, the middle third 24.9% and the right third 25.0% (checked on 10 October 2026).</p>
+  <p class="foot">Down the page: the page rebuilds every square from the triangles alone (Lucas's theorem: a triangle
+    started r rows up reaches the square d places to its right exactly when C(r, d) is odd) and compares the result
+    with Rule 30 itself. The rewriting is exact algebra. The quarter is a measurement: from one black square, over rows
+    400 to 799, the left third of the pyramid is 25.8% kicks, the middle third 24.9% and the right third 25.0%
+    (checked on 10 October 2026). Sideways: the right half starts as 24 random cells beside the wall and is run for
+    200 steps; its column 1 drives everything. The page rebuilds every cell from depth 2 on as a sum of Pascal
+    triangles and compares it with the rule run sideways. Silent rows: depth 2 is proved in G240, depth 6 in CL048,
+    depth 14 at white times in GC589 (with an exhaustive check in L309), and depth 1 at black times and depth 4 at
+    white times too. The three dot rules are filed under G240. The sideways view was the Edge-Event Sieve until
+    10 October 2026; its old address now opens this page at that view.</p>
   <p class="back"><a href="./">&larr; Rule 30: the whole story</a></p>
 </div>
 
@@ -430,6 +552,525 @@ html.embed .page { padding-bottom: 0 !important; }
   readColors(); build(); size();
   hover = [Math.round(T * 0.55), C + Math.round(T * 0.3)];
   setMode("r30");
+  window.__downShow = function () { readColors(); size(); draw(); };
+})();
+</script>
+<script>
+(function () {
+  "use strict";
+  var K = 200, T = 200, W0 = 24;               // K = T: every row down to the last, so the wedge closes
+  var MINLEN = 40;                             // a row shorter than this is too short to call silent
+  var sheet = document.getElementById("s-sheet"), ctx = sheet.getContext("2d"), bar = document.getElementById("toolbar");
+  var card = document.getElementById("s-card"), stage = document.getElementById("stage");
+  var colors = {};
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    ["paper", "panel", "ink", "ink-soft", "rule", "event", "cover", "tri", "step", "hit"].forEach(function (k) {
+      colors[k] = cs.getPropertyValue("--" + k).trim();
+    });
+    colors.mono = cs.getPropertyValue("--font-mono").trim();
+  }
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  /* ---- data: clock, column 1, and the forced left half under one of three sources of events ---- */
+  var c0, c1, L, E, seed = 7, mode = "r30", shown = K, pinned = {}, check = "", rate = 0, wedgeOn = false, wedgeD = null;
+  function column1(sd) {
+    var rnd = mulberry32(sd), n = W0 + T + 6, cur = new Uint8Array(n), nxt = new Uint8Array(n), out = [];
+    for (var i = 1; i <= W0; i++) cur[i] = rnd() < 0.5 ? 1 : 0;
+    cur[W0] = 1;
+    for (var t = 0; t <= T + 1; t++) {
+      out.push(cur[1]); cur[0] = t % 2;
+      var lim = Math.min(W0 + t + 2, n - 2);
+      for (var j = 1; j <= lim; j++) nxt[j] = cur[j - 1] ^ (cur[j] | cur[j + 1]);
+      nxt[0] = (t + 1) % 2;
+      var sw = cur; cur = nxt; nxt = sw;
+    }
+    return out;
+  }
+  function run(source) {
+    var Ls = [null], Es = [null], rnd = mulberry32(seed * 7 + 13);
+    for (var k = 1; k <= K; k++) {
+      var A = k === 1 ? c0 : Ls[k - 1], B = k === 1 ? c1 : (k === 2 ? c0 : Ls[k - 2]);
+      var n = T - k + 1, col = new Uint8Array(n), ev = new Uint8Array(n);
+      for (var s = 0; s < n; s++) {
+        var e;
+        if (source === "gray") e = 0;
+        else if (source === "rand" && k > 1) e = rnd() < rate ? 1 : 0;
+        else e = B[s] & (1 - A[s]);                          // edge event: white cell, black to its right
+        ev[s] = e;
+        col[s] = A[s + 1] ^ A[s] ^ e;                        // Gray step in time, corrected by the event
+      }
+      Ls.push(col); Es.push(ev);
+    }
+    return [Ls, Es];
+  }
+  function build() {
+    c0 = []; for (var t = 0; t <= T + 1; t++) c0.push(t % 2);
+    c1 = column1(seed);
+    var r = run("r30"), ev = 0, cells = 0;
+    for (var k = 2; k <= K; k++) for (var s = 0; s < r[1][k].length; s++) { ev += r[1][k][s]; cells++; }
+    rate = ev / cells;                                         // Rule 30's own rate below depth 1
+    if (mode === "r30") { L = r[0]; E = r[1]; } else { var q = run(mode); L = q[0]; E = q[1]; }
+    selfCheck();
+    if (wedgeD === null) wedgeD = 19;                          // a visible default; the green line or slider moves it
+  }
+  function selfCheck() {
+    if (mode === "gray") { check = ""; return; }
+    var big = [null], ok = true, cells = 0;
+    for (var k = 1; k <= K; k++) {
+      var v = 0n, ev = E[k];
+      for (var s = ev.length - 1; s >= 0; s--) v = (v << 1n) | BigInt(ev[s]);
+      big.push(v);
+    }
+    for (var k2 = 2; k2 <= K; k2++) {
+      var acc = 0n;
+      for (var j = 1; j <= k2; j++) {
+        var m = k2 - j, i = m;
+        while (true) { acc ^= big[j] >> BigInt(i); if (i === 0) break; i = (i - 1) & m; }
+      }
+      var n2 = T - k2 + 1, mask = (1n << BigInt(n2)) - 1n, col = 0n;
+      for (var s2 = n2 - 1; s2 >= 0; s2--) col = (col << 1n) | BigInt(L[k2][s2]);
+      ok = ok && (acc & mask) === col; cells += n2;
+    }
+    check = ok ? "all " + cells.toLocaleString("en-GB") + " cells agree" : "MISMATCH";
+  }
+  function fixedHole(j, t) {                                   // slots no actual right half can ever fill
+    return mode === "r30" && (j === 2 || j === 6 || (j === 1 && t % 2 === 1) ||
+      ((j === 4 || j === 14) && t % 2 === 0));
+  }
+  function bestRun() {
+    var best = 0, at = null, run2 = 0;
+    for (var k = 1; k <= shown; k++) {
+      if (L[k][0] === 0) { run2++; if (run2 > best) { best = run2; at = k - run2 + 1; } } else run2 = 0;
+    }
+    return { best: best, at: at };
+  }
+  function rowRate(k) { var ev = E[k], n = 0; for (var s = 0; s < ev.length; s++) n += ev[s]; return ev.length ? n / ev.length : 0; }
+
+  /* ---- geometry: one stage under the toolbar; time across, depth down; the rate margin on the right ---- */
+  var Wc = 900, Hc = 500, cell = 3, dpr = 1, TOP = 3, HEAD = 16, GUT = 66, MARG = 120, RMAX = 0.6, showDots = true;
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var pg = stage.parentElement, ps = getComputedStyle(pg);
+    var availW = pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);
+    var sticky = getComputedStyle(bar).position === "sticky";
+    var availH = Math.max(260, window.innerHeight - (sticky ? bar.getBoundingClientRect().height : 0) - 34);
+    GUT = availW < 520 ? 44 : 66; MARG = availW < 520 ? 70 : 130;
+    cell = Math.min((availW - GUT - MARG - 6) / (T + 1), (availH - 24 - HEAD) / (K + TOP));
+    Wc = Math.round(GUT + (T + 1) * cell + MARG + 6); Hc = Math.round(HEAD + (K + TOP) * cell + 24);
+    sheet.width = Math.round(Wc * dpr); sheet.height = Math.round(Hc * dpr);
+    sheet.style.width = Wc + "px"; sheet.style.height = Hc + "px";
+  }
+  function rowY(k) { return HEAD + (k + TOP - 1) * cell; }
+  function colX(t) { return GUT + t * cell; }
+  function margX0() { return GUT + (T + 1) * cell + 14; }
+  function margW() { return MARG - 22; }
+
+  var hover = null, buildRow = null;
+  function draw() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = colors.paper; ctx.fillRect(0, 0, Wc, Hc);
+    var c = cell + 0.3;
+    for (var t = 0; t <= T; t++) {
+      if (c0[t]) { ctx.fillStyle = colors.tri; ctx.fillRect(colX(t), HEAD, c, c); }
+      if (c1[t]) { ctx.fillStyle = colors.event; ctx.fillRect(colX(t), HEAD + cell, c, c); }
+    }
+    ctx.fillStyle = colors.ink; ctx.globalAlpha = 0.86;
+    for (var k = 1; k <= shown; k++) {
+      var col = L[k];
+      for (var s = 0; s < col.length; s++) if (col[s]) ctx.fillRect(colX(s), rowY(k), c, c);
+    }
+    ctx.globalAlpha = 1;
+    if (wedgeOn && wedgeD !== null) drawWedge();
+    ctx.fillStyle = colors.tri;                                 // clicked triangles, over the cells
+    Object.keys(pinned).forEach(function (key) {
+      var p = key.split(",").map(Number), j = p[0], tp = p[1];
+      ctx.globalAlpha = 0.5;
+      for (var k2 = j; k2 <= shown; k2++) {
+        var m = k2 - j, i = m;
+        while (true) {
+          var tt = tp - i;
+          if (tt >= 0 && tt <= T - k2) ctx.fillRect(colX(tt), rowY(k2), c, c);
+          if (i === 0) break; i = (i - 1) & m;
+        }
+      }
+      ctx.globalAlpha = 1;
+    });
+    var r = Math.max(0.9, cell * 0.32);
+    ctx.fillStyle = colors.event;
+    for (var k3 = 1; k3 <= (showDots ? shown : 0); k3++) {
+      var ev = E[k3];
+      for (var s3 = 0; s3 < ev.length; s3++) {
+        if (ev[s3]) { ctx.beginPath(); ctx.arc(colX(s3) + cell / 2, rowY(k3) + cell / 2, r, 0, 2 * Math.PI); ctx.fill(); }
+      }
+    }
+    var fs = Wc < 600 ? 8 : 10;
+    ctx.font = "500 " + fs + "px " + colors.mono; ctx.textBaseline = "middle"; ctx.textAlign = "right";
+    for (var k4 = 1; k4 <= shown && mode !== "gray"; k4++) {   // silent rows
+      if (E[k4].length >= MINLEN && E[k4].every(function (x) { return x === 0; })) {
+        ctx.fillStyle = colors.event; ctx.globalAlpha = 0.35;
+        ctx.fillRect(GUT, rowY(k4), colX(T - k4 + 1) - GUT, cell);
+        ctx.globalAlpha = 1; ctx.fillRect(GUT - 10, rowY(k4), 8, Math.max(1.5, cell));
+      }
+    }
+    ctx.fillStyle = colors["ink-soft"];
+    [25, 50, 100, 150, 200].forEach(function (kk) {
+      if (kk > shown) return;
+      ctx.fillText(Wc < 600 ? String(kk) : "depth " + kk, GUT - 12, rowY(kk) + cell / 2);
+      ctx.fillRect(GUT - 4, rowY(kk) + cell / 2 - 0.5, 3, 1);
+    });
+    ctx.strokeStyle = colors.step; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(GUT - 1.25, rowY(1)); ctx.lineTo(GUT - 1.25, rowY(shown) + cell); ctx.stroke();
+    ctx.textBaseline = "bottom"; ctx.textAlign = "left"; ctx.fillStyle = colors.step;
+    ctx.fillText(Wc < 600 ? "time 0" : "time 0 (green line: click or drag)", GUT - 2, HEAD - 3);
+    ctx.fillStyle = colors["ink-soft"]; ctx.textAlign = "right";
+    ctx.fillText("time \u2192", colX(T + 1), HEAD - 3);
+    ctx.textBaseline = "middle"; ctx.font = "500 8px " + colors.mono;
+    ctx.fillText(Wc < 600 ? "top" : "wall, col 1", GUT - 6, HEAD + cell);
+    ctx.font = "500 " + fs + "px " + colors.mono;
+    if (wedgeOn && wedgeD !== null) {                            // the wedge's handle on the green line
+      var hy = rowY(wedgeD + 1);
+      ctx.fillStyle = colors.cover; ctx.beginPath();
+      ctx.moveTo(GUT - 2, hy); ctx.lineTo(GUT - 10, hy - 5); ctx.lineTo(GUT - 10, hy + 5); ctx.closePath(); ctx.fill();
+    }
+    drawMargin();
+    if (buildRow !== null) {                                     // the row being built, across the sheet and its bar
+      ctx.fillStyle = colors.tri; ctx.globalAlpha = 0.14;
+      ctx.fillRect(GUT, rowY(buildRow), margX0() + margW() - GUT, cell); ctx.globalAlpha = 1;
+    }
+    if (hover) drawHover();
+  }
+  function drawMargin() {                                      // each row's edge-event rate, in that row's margin
+    var x0 = margX0(), w = margW(), fs = Wc < 600 ? 8 : 10;
+    ctx.fillStyle = colors["ink-soft"]; ctx.font = "500 " + fs + "px " + colors.mono;
+    ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+    ctx.fillText("events per row", x0, rowY(1) - 2 * cell - 2);
+    ctx.strokeStyle = colors.rule; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x0, rowY(1)); ctx.lineTo(x0, rowY(K) + cell); ctx.stroke();
+    for (var k = 1; k <= K; k++) {
+      var v = rowRate(k);
+      ctx.fillStyle = k <= shown ? colors.event : colors.rule;
+      ctx.fillRect(x0, rowY(k) + cell * 0.12, Math.max(0.6, w * Math.min(v, RMAX) / RMAX), Math.max(0.8, cell * 0.76));
+    }
+    ctx.setLineDash([3, 3]); ctx.strokeStyle = colors["ink-soft"];
+    var xq = x0 + w * 0.25 / RMAX;
+    ctx.beginPath(); ctx.moveTo(xq, rowY(1)); ctx.lineTo(xq, rowY(K) + cell); ctx.stroke(); ctx.setLineDash([]);
+    ctx.textBaseline = "top"; ctx.textAlign = "center"; ctx.fillStyle = colors["ink-soft"];
+    ctx.fillText("0", x0, rowY(K) + cell + 3);
+    ctx.fillText("1/4", xq, rowY(K) + cell + 3);
+    ctx.fillText("0.6", x0 + w, rowY(K) + cell + 3);
+  }
+  function wedgeStats() {
+    var d = wedgeD, tot = 0, black = 0, first = null;
+    for (var k = d + 1; k <= shown; k++) {
+      for (var t = 0; t <= Math.min(k - d - 1, T - k); t++) {
+        tot++;
+        if (L[k][t]) { black++; if (!first || t < first[1] || (t === first[1] && k < first[0])) first = [k, t]; }
+      }
+    }
+    return { tot: tot, black: black, first: first };
+  }
+  function drawWedge() {
+    var d = wedgeD, c = cell + 0.3, yb = rowY(shown) + cell, fs = Wc < 600 ? 8 : 10;
+    ctx.fillStyle = colors.cover; ctx.globalAlpha = 0.12;      // every cell a counterexample must leave white
+    for (var t0 = 0; d + t0 + 1 <= Math.min(shown, T - t0); t0++) {
+      var ka = d + t0 + 1, kb = Math.min(shown, T - t0);
+      ctx.fillRect(colX(t0), rowY(ka), c, rowY(kb) + cell - rowY(ka));
+    }
+    ctx.globalAlpha = 0.6;                                      // where this right half is black instead
+    for (var k = d + 1; k <= shown; k++) {
+      for (var t = 0; t <= Math.min(k - d - 1, T - k); t++) if (L[k][t]) ctx.fillRect(colX(t), rowY(k), c, c);
+    }
+    ctx.globalAlpha = 1;
+    // the upper side drops one depth per step; the picture's own slanted end, x + y = S, closes the triangle
+    var y0 = rowY(d + 1), S = GUT + HEAD + (T + TOP) * cell;
+    var ym = (S - GUT + y0) / 2, xm = (S + GUT - y0) / 2;
+    if (ym > yb) { ym = yb; xm = GUT + (yb - y0); }
+    ctx.strokeStyle = colors.cover; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(GUT, y0); ctx.lineTo(xm, ym); ctx.stroke();
+    ctx.setLineDash([4, 3]); ctx.lineWidth = 1.4;
+    ctx.beginPath(); ctx.moveTo(xm, ym); ctx.lineTo(Math.max(GUT, S - yb), yb); ctx.lineTo(GUT, yb); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.font = "600 " + fs + "px " + colors.mono; ctx.fillStyle = colors.cover;
+    ctx.strokeStyle = colors.paper; ctx.lineWidth = 3.5; ctx.lineJoin = "round";
+    function halo(str, x, y) { ctx.strokeText(str, x, y); ctx.fillText(str, x, y); }   // readable over the cells
+    var lx = GUT + (ym - y0) * 0.35, ly = y0 + (ym - y0) * 0.35;
+    ctx.save(); ctx.translate(lx + 6, ly - 6); ctx.rotate(Math.PI / 4);
+    ctx.textAlign = "left"; ctx.textBaseline = "bottom";
+    halo(Wc < 600 ? "one depth per step" : "white edge: one depth deeper per step", 0, 0); ctx.restore();
+    if (ym < yb - 4 * fs) {
+      var sx = (xm + S - yb) / 2 + 6, sy = (ym + yb) / 2;
+      ctx.save(); ctx.translate(sx, sy); ctx.rotate(-Math.PI / 4);
+      ctx.textAlign = "center"; ctx.textBaseline = "top";
+      halo(Wc < 600 ? "picture ends" : "the picture ends here, not the wedge", 0, 0); ctx.restore();
+    }
+  }
+  function inWedge(k, t) { return wedgeOn && wedgeD !== null && k > wedgeD + t; }
+  function slots(k, t) {
+    var out = [];
+    for (var j = 1; j <= k; j++) {
+      var m = k - j, i = m;
+      while (true) {
+        var tp = t + i;
+        if (tp <= T - j) out.push([j, tp]);
+        if (i === 0) break; i = (i - 1) & m;
+      }
+    }
+    return out;
+  }
+  function drawHover() {
+    var k = hover[0], t = hover[1], sl = slots(k, t), n = 0, holes = 0;
+    var r = Math.max(2.2, cell * 0.75), sq = Math.max(1.2, cell * 0.55);
+    ctx.fillStyle = colors.cover; ctx.globalAlpha = 0.22;          // the triangle itself, so its shape reads
+    sl.forEach(function (p) { ctx.fillRect(colX(p[1]), rowY(p[0]), cell + 0.3, cell + 0.3); });
+    ctx.globalAlpha = 1;
+    sl.forEach(function (p) {
+      var x = colX(p[1]) + cell / 2, y = rowY(p[0]) + cell / 2;
+      if (E[p[0]][p[1]]) {
+        n++; ctx.globalAlpha = 1;
+        ctx.strokeStyle = colors.paper; ctx.lineWidth = 3.4;                 // a light halo, then the contrasting ring
+        ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.stroke();
+        ctx.strokeStyle = colors.hit; ctx.lineWidth = 1.8;
+        ctx.beginPath(); ctx.arc(x, y, r, 0, 2 * Math.PI); ctx.stroke();
+      } else if (fixedHole(p[0], p[1])) {
+        holes++; ctx.strokeStyle = colors["ink-soft"]; ctx.lineWidth = 1.1; ctx.globalAlpha = 0.9;
+        ctx.beginPath(); ctx.moveTo(x - sq, y - sq); ctx.lineTo(x + sq, y + sq); ctx.moveTo(x + sq, y - sq);
+        ctx.lineTo(x - sq, y + sq); ctx.stroke();
+      }
+    });
+    ctx.globalAlpha = 1;
+    ctx.strokeStyle = colors.step; ctx.lineWidth = 1.4;
+    function yOf(dd) { return dd >= 1 ? rowY(dd) : (dd === 0 ? HEAD : HEAD + cell); }
+    var yA = k === 1 ? HEAD : yOf(k - 1), yB = k === 1 ? HEAD + cell : (k === 2 ? HEAD : yOf(k - 2));
+    ctx.strokeRect(colX(t) + 0.5, yA + 0.5, cell - 1, cell - 1);
+    ctx.strokeRect(colX(t + 1) + 0.5, yA + 0.5, cell - 1, cell - 1);
+    ctx.strokeRect(colX(t) + 0.5, yB + 0.5, cell - 1, cell - 1);
+    // a tracer from the cell to its row's bar in the margin
+    var cx = colX(t) + cell, cy = rowY(k) + cell / 2, bx = margX0() + margW() * Math.min(rowRate(k), RMAX) / RMAX;
+    ctx.setLineDash([4, 3]); ctx.lineWidth = 3.4; ctx.strokeStyle = colors.paper;
+    ctx.beginPath(); ctx.moveTo(cx + 2, cy); ctx.lineTo(bx + 3, cy); ctx.stroke();
+    ctx.lineWidth = 1.4; ctx.strokeStyle = colors.cover;
+    ctx.beginPath(); ctx.moveTo(cx + 2, cy); ctx.lineTo(bx + 3, cy); ctx.stroke(); ctx.setLineDash([]);
+    ctx.strokeStyle = colors.cover; ctx.lineWidth = 2;
+    ctx.strokeRect(colX(t) - 1, rowY(k) - 1, cell + 2, cell + 2);
+    ctx.strokeRect(margX0() - 1, rowY(k) - 1, margW() + 2, cell + 2);
+    var v = L[k][t], rows = [["cell", "depth " + k + ", time " + t + ", " + (v ? "black" : "white")]], say;
+    if (mode === "gray") {
+      say = k === 1 ? "The first row just copies the clock's flips: black at every step."
+        : "No dots in this mode, so nothing reaches this cell: every row after the first is white.";
+    } else {
+      var A = k === 1 ? c0 : L[k - 1], par = (n + (k === 1 ? 1 : 0)) % 2;
+      say = "Each circled dot in the red triangle spreads its own Sierpinski triangle down to this cell. There " +
+        (n === 1 ? "is 1" : "are " + n) + (k === 1 ? ", plus the clock's own 1" : "") + ": " +
+        (par ? "odd, so one is left over and the cell is black." : "even, so they cancel in pairs and the cell is white.");
+      rows.push(["built from", A[t + 1] + " XOR " + A[t] + " XOR dot " + E[k][t] + " = " + v + " (green boxes)"]);
+      rows.push(["its triangle", sl.length + " places, " + n + " dots" + (mode === "r30" ? ", " + holes + " never a dot (\u00d7)" : "")]);
+      rows.push(["count", n + (k === 1 ? " + 1" : "") + " is " + (par ? "odd" : "even") + " \u2192 " + (par ? "black" : "white") +
+        (par === v ? ' <span class="ok">✓</span>' : ' <span class="bad">mismatch</span>')]);
+    }
+    if (inWedge(k, t)) rows.push(["wedge", v ? '<span class="bad">black where a counterexample needs white</span>'
+      : "white, as a counterexample needs"]);
+    rows.push(["this row", (100 * rowRate(k)).toFixed(1) + "% of its cells are dots (bar, right)"]);
+    document.getElementById("s-cellsay").textContent = say;
+    document.getElementById("s-cellinfo").innerHTML = rows.map(function (r2) { return "<dt>" + r2[0] + "</dt><dd>" + r2[1] + "</dd>"; }).join("");
+    placeCard(colX(t), rowY(k));
+  }
+  function placeCard(x, y) {                                   // the card sits beside the pointed cell
+    card.hidden = false;
+    if (getComputedStyle(card).position === "static") return;   // phones: the card sits under the stage
+    var off = sheet.offsetLeft, cw = card.offsetWidth, ch = card.offsetHeight;
+    var left = off + x - cw - 16, top = y - ch - 12;
+    if (left < 4) left = off + x + cell * 2 + 16;
+    if (top < 4) top = y + cell * 2 + 12;
+    if (top + ch > Hc) top = Math.max(4, Hc - ch - 4);
+    card.style.left = Math.round(left) + "px"; card.style.top = Math.round(top) + "px";
+  }
+  function summary() {
+    var ev = 0, cells = 0, silent = [];
+    for (var k = 1; k <= shown; k++) {
+      var n = 0; for (var s = 0; s < E[k].length; s++) n += E[k][s];
+      ev += n; cells += E[k].length;
+      if (mode !== "gray" && n === 0 && E[k].length >= MINLEN) silent.push(k);
+    }
+    var b = bestRun();
+    function cont(dk, dt) {                                    // share of dots whose neighbour (k + dk, t + dt) is a dot
+      var have = 0, both = 0;
+      for (var k = 2; k + dk <= shown; k++) {
+        var a = E[k], nb = E[k + dk];
+        for (var s = 0; s < a.length; s++) {
+          if (!a[s] || s + dt < 0 || s + dt >= nb.length) continue;
+          have++; both += nb[s + dt];
+        }
+      }
+      return have ? Math.round(100 * both / have) + "%" : "-";
+    }
+    var rows = [["edge events", ev.toLocaleString("en-GB") + " (" + (cells ? (100 * ev / cells).toFixed(1) : 0) + "%)"],
+      ["dots continue", mode === "gray" ? "no dots" : "&rarr; " + cont(0, 1) + " &searr; " + cont(1, 1) +
+        " &darr; " + cont(1, 0) + " &swarr; " + cont(1, -1)],
+      ["silent rows", mode === "gray" ? "all" : (silent.length ? silent.join(", ") : "none")],
+      ["time-0 edge", "white run " + b.best + (b.at ? " from depth " + b.at : "")]];
+    if (wedgeOn && wedgeD !== null) {
+      var w = wedgeStats();
+      rows.push(["wedge", "white from depth " + (wedgeD + 1) + ": " + w.black + " of " + w.tot + " cells black " +
+        (w.first ? '<span class="bad">(first at depth ' + w.first[0] + ", time " + w.first[1] + ")</span>"
+          : '<span class="ok">(all white so far)</span>')]);
+    }
+    if (check) rows.push(["self-check", '<span class="' + (check === "MISMATCH" ? "bad" : "ok") + '">' + check + "</span>"]);
+    document.getElementById("s-summary").innerHTML =
+      rows.map(function (r) { return "<div><dt>" + r[0] + "</dt><dd>" + r[1] + "</dd></div>"; }).join("");
+  }
+  var hints = {
+    r30: "Events from Rule 30: it makes its own events; only the first row's come from outside, from column 1.",
+    rand: "Events from random photons: the first row's events are kept; every deeper event is scattered at random at " +
+      "Rule 30's own rate, so the only difference is self-feedback.",
+    gray: "Pure Gray: no events at all, Rule 60, the plain Gray-code rule. The left half empties after the first row."
+  };
+  function setMode(m) {
+    mode = m;
+    ["r30", "rand", "gray"].forEach(function (x) {
+      document.getElementById("s-m-" + x).setAttribute("aria-pressed", String(x === m));
+    });
+    pinned = {}; build();
+    document.getElementById("s-modehint").textContent = hints[m] + (m === "rand" ? " Rate: " + (100 * rate).toFixed(1) + "%." : "");
+    draw(); summary();
+  }
+
+  /* ---- interaction ---- */
+  function cellAt(ev) {
+    var rect = sheet.getBoundingClientRect(), x = ev.clientX - rect.left, y = ev.clientY - rect.top;
+    var t = Math.floor((x - GUT) / cell), k = Math.floor((y - HEAD) / cell) - TOP + 1;
+    if (k < 1 || k > shown || t < 0 || t > T - k) return null;
+    return [k, t];
+  }
+  function edgeAt(ev) {                                       // the depth under the pointer on the green line, or 0
+    var rect = sheet.getBoundingClientRect(), x = ev.clientX - rect.left, y = ev.clientY - rect.top;
+    var k = Math.floor((y - HEAD) / cell) - TOP + 1;
+    if (k < 1 || k > shown || x < GUT - 18 || x >= GUT + (wedgeOn ? Math.max(cell, 5) : 1)) return 0;
+    return k;
+  }
+  var wdIn = document.getElementById("s-wd"), wdVal = document.getElementById("s-wdval");
+  var wedgeBtn = document.getElementById("s-wedge"), wedgeCtl = document.getElementById("s-wedgectl");
+  function setWedge(on, from) {                               // from: the first white depth at time 0
+    wedgeOn = on;
+    if (from) wedgeD = Math.max(1, Math.min(K - 10, from - 1));
+    wedgeBtn.setAttribute("aria-pressed", String(on)); wedgeCtl.classList.toggle("off", !on);   // no layout jump
+    wdIn.value = wedgeD + 1; wdVal.textContent = String(wedgeD + 1);
+    tip(); draw(); summary();
+  }
+  function tip() {
+    document.getElementById("s-tip").innerHTML = wedgeOn
+      ? "<b>Wedge:</b> drag along the green line (time 0) or use the slider to choose where a counterexample's white" +
+        " edge starts. Pale cells are ones it would have to leave white; dark ones are where this right half is black."
+      : "<b>Try:</b> point at any cell to see the red triangle of dots that decides it; click a dot to see the" +
+        " triangle it spreads; click the green line (time 0) to draw a counterexample's wedge.";
+  }
+  function edgeCard(k) {
+    document.getElementById("s-cellsay").textContent = "Time 0, depth " + k + ". Click or drag here to start a " +
+      "counterexample's white edge at this depth: the wedge below it is what such a start would have to leave white.";
+    document.getElementById("s-cellinfo").innerHTML = "";
+    placeCard(GUT, rowY(k));
+  }
+  var dragging = false;
+  sheet.addEventListener("pointerdown", function (ev) {
+    var k = edgeAt(ev); if (!k) return;
+    dragging = true; try { sheet.setPointerCapture(ev.pointerId); } catch (e) {}
+    hover = null; setWedge(true, k); edgeCard(k); ev.preventDefault();
+  });
+  sheet.addEventListener("pointerup", function () { dragging = false; });
+  sheet.addEventListener("pointercancel", function () { dragging = false; });
+  sheet.addEventListener("pointermove", function (ev) {
+    if (dragging) {
+      var rect = sheet.getBoundingClientRect();
+      var kd = Math.max(2, Math.min(shown, Math.floor((ev.clientY - rect.top - HEAD) / cell) - TOP + 1));
+      if (kd !== wedgeD + 1) { setWedge(true, kd); edgeCard(kd); }
+      return;
+    }
+    var ke = edgeAt(ev);
+    sheet.style.cursor = ke ? "ns-resize" : "crosshair";
+    if (ke) { if (hover) { hover = null; draw(); } edgeCard(ke); return; }
+    var h = cellAt(ev);
+    if ((h && hover && h[0] === hover[0] && h[1] === hover[1]) || (!h && !hover)) return;
+    hover = h; if (!h) card.hidden = true; draw();
+  });
+  sheet.addEventListener("pointerleave", function () { if (dragging) return; hover = null; card.hidden = true; draw(); });
+  sheet.addEventListener("click", function (ev) {
+    if (edgeAt(ev)) return;                                   // the green line was handled on pointerdown
+    var h = cellAt(ev); if (!h) return;
+    hover = h;
+    if (E[h[0]][h[1]]) { var key = h[0] + "," + h[1]; if (pinned[key]) delete pinned[key]; else pinned[key] = 1; }
+    draw(); summary();
+  });
+  wdIn.addEventListener("input", function () { setWedge(true, Number(wdIn.value)); });
+  var depthIn = document.getElementById("s-depth"), depthVal = document.getElementById("s-depthval");
+  depthIn.addEventListener("input", function () {
+    shown = Number(depthIn.value); depthVal.textContent = shown; hover = null; card.hidden = true; draw(); summary();
+  });
+  var building = false, buildBtn = document.getElementById("s-build"), timer = null;
+  function setBuilding(b) {
+    building = b; buildBtn.setAttribute("aria-pressed", String(b));
+    buildBtn.textContent = b ? "Pause" : "Build sideways";
+    if (timer) { clearInterval(timer); timer = null; }
+    if (b) {
+      if (shown >= K) shown = 1;
+      hover = null; card.hidden = true;
+      timer = setInterval(function () {
+        shown++; depthIn.value = shown; depthVal.textContent = shown; buildRow = shown; draw(); summary();
+        if (shown >= K) { buildRow = null; setBuilding(false); draw(); }
+      }, 60);
+    } else { buildRow = null; }
+  }
+  buildBtn.addEventListener("click", function () { setBuilding(!building); });
+  ["r30", "rand", "gray"].forEach(function (x) {
+    document.getElementById("s-m-" + x).addEventListener("click", function () { setMode(x); });
+  });
+  wedgeBtn.addEventListener("click", function () { setWedge(!wedgeOn); });
+  document.getElementById("s-reseed").addEventListener("click", function () {
+    seed = Math.floor(Math.random() * 1e9); setMode(mode);
+  });
+  document.getElementById("s-clear").addEventListener("click", function () { pinned = {}; draw(); });
+  var dotsBtn = document.getElementById("s-dots");
+  dotsBtn.addEventListener("click", function () {
+    showDots = !showDots; dotsBtn.setAttribute("aria-pressed", String(showDots));
+    dotsBtn.textContent = showDots ? "Dots shown" : "Dots hidden"; draw();
+  });
+  function retheme() { readColors(); draw(); }
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", retheme);
+  }
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(function () { size(); draw(); }, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { readColors(); size(); draw(); });
+
+  readColors(); build(); size(); tip();
+  document.getElementById("s-modehint").textContent = hints.r30;
+  hover = [32, 100]; draw(); summary();
+  window.__sideShow = function () { readColors(); size(); draw(); summary(); };
+})();
+</script>
+<script>
+/* One page, two readings of one equation: switch between them; the URL's #sideways opens the sideways view. */
+(function () {
+  var parts = { down: ["tb-down", "cv", "card"], side: ["tb-side", "s-sheet", "s-card"] };
+  function setView(v, keep) {
+    Object.keys(parts).forEach(function (k) {
+      parts[k].forEach(function (id) { document.getElementById(id).classList.toggle("off-view", k !== v); });
+      document.getElementById("v-" + k).setAttribute("aria-pressed", String(k === v));
+    });
+    if (!keep) try { history.replaceState(null, "", location.pathname + location.search + (v === "side" ? "#sideways" : "")); } catch (e) {}
+    var show = v === "side" ? window.__sideShow : window.__downShow;
+    if (show) show();
+  }
+  document.getElementById("v-down").addEventListener("click", function () { setView("down"); });
+  document.getElementById("v-side").addEventListener("click", function () { setView("side"); });
+  setView(location.hash === "#sideways" ? "side" : "down", true);
 })();
 </script>
 </body>
