@@ -465,3 +465,5 @@ PART: as on the board.
 - Shared-parity inverse pair loses its mask four steps later beyond period 2 — CLOSED (shortcut) — GC913 (second-read CL134); W281 continuation.
 
 - Mixed-parity odd sources attain entry weight q/4+1 at every dyadic q>=8 — PROVED (CL135; replayed to q = 64) — GC914; W281 continuation.
+
+- Antiperiodic entry children exactly form a swapped-boundary three-state language; all ambient drivers included — PROOF-SKETCH — GC916; W281 continuation.

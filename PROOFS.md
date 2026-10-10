@@ -12004,3 +12004,28 @@ Thus a physical odd source of least period 16 is one-parity, and its doubled ent
 
 
 **GC914 second-reading receipt and scope guard (GC915 follow-up).** Cloud CL135 checks the realization guard, antiperiodicity, admissible prefix, half-block flux and explicit family by hand; accepted. It independently replays q=8,16,32,64, giving weights 3,5,9,17. These are Cloud's controls, not GPT runs. Its ancestry comparison excludes the constructed source at source periods 8 and 16 (entry periods 16 and 32), using the complete ZF trees. That finite comparison does not establish nonphysicality at every larger period: CL135's wording “physical only at q=8”/“beyond q=8” must be scoped to the compared members unless a further argument is supplied. The all-dyadic ambient minimum proof is unaffected.
+
+
+#### GC916 — Exact three-state language for all antiperiodic entry children (2026-10-10 01:35 BST; W281 continuation)
+
+**Hand converse audit; second reading pending.** Bears on Q7: identifies an ambient compression without an ancestry filter. Record searched: antiperiod/half-shift/G201 + bijection/three-state/converse/realization ->15 hits in3 files; reviewed G201 necessity and GC914/CL135 realization guard. No run or census. The independent control is a cap4 literal word; countercontrol uses the wrong ordinary closing edge; the unexpected check counts the full language against the antiperiodic driver domain.
+
+Fix dyadic q>=4, m=q/2 and T=S^m. A word f is the child of (1,e) for some Te=1+e if and only if all three conditions hold:
+
+    f has no cyclic11;   f*Tf=0;   D=f+Tf has no cyclic00.
+
+Necessity: Sf=(1+e)(1+f) forbids11. Tf is the complementary-driver sibling by equivariance and uniqueness, so G201 gives disjoint support and the no00 union. Sufficiency is precisely GC914's reviewed realization guard. The driver is unique: at f(t)=0, e(t)=1+f(t+1); at f(t)=1, Tf(t)=0 and the half-shifted white-tick equation plus antiperiodicity gives e(t)=f(t+m+1). Thus admissible f words biject with the 2^m antiperiodic driver words. This is an exact finite alphabet statement, not a claim of physical occurrence or a new growth mechanism.
+
+Write s_t=(f(t),f(t+m)) for t=0..m-1, with three possible states A=00, B=10, C=01. The three conditions above are exactly that adjacent states differ. An A->A edge violates the union's no00 condition; B->B violates f's no11; C->C violates Tf's no11. Every other edge satisfies these local tests. The closing edge is from s_(m-1) to P(s_0), where P fixes A and swaps B,C, because shifting m ticks exchanges the two coordinates. It is NOT an ordinary cyclic closing edge to s_0. The conditions at the second half's join are the coordinate swap of this same test.
+
+**Unexpected exact count.** Let M be the three-by-three matrix with zero diagonal and ones off the diagonal, and P its swap permutation. The number of half-word sequences with this closing condition is tr(M^m P). On the constant-vector subspace M has eigenvalue2 and P acts as1. On the two-dimensional zero-sum subspace M acts as-1, while P has trace tr(P)-1=0 there (the full permutation trace is1). Consequently
+
+    tr(M^m P) = 2^m.
+
+This agrees with the driver bijection. Ordinary cyclic closure instead gives tr(M^m)=2^m+2*(-1)^m, hence 2^m+2 for the present even m. Agreement of the correct count does not select the physical subset: every ambient antiperiodic driver is already included.
+
+**Independent literal cap4 control and falsifiable wrong-boundary check.** At m=2 the allowed half-words are AB, AC, BA, CA. Their f words are respectively0100,0001,1000,0010. For AB, f=0100 and the guard gives e=0011. Directly, Sf=1000=(1+e)(1+f), and Te=1100=1+e. All four words are the known weight1 sharp entries, matching 2^2 drivers. Ordinary closure also admits BC, which gives f=1001 and has cyclic11 across the actual temporal join; it cannot satisfy the child equation. Thus the boundary guard can genuinely fail and is not a bookkeeping preference.
+
+**Disposition.** The three-state representation is an exact converse of the one-profile sibling conditions. It may be a useful encoding, but those conditions alone cannot add a physical-source obstruction: they already realize all ambient antiperiodic drivers. G199 supplies nonphysical integrations and GC915 a physical sharp integration inside that domain. No claim that encoding is useless for future coupled constraints, no new entropy estimate, and no stage-length inference. Next require an explicit ancestry or within-history condition before treating this compression as a prize route. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks, with G201 reread for GC914. Scratch deferred, room closed.
+
+**Control correction before publication.** The draft swapped e and Te in the cap4 example. Literal substitution rejects e=1100 (its right side is0011, not Sf=1000); e=0011 gives the stated equation. This was a hand transcription failure, corrected before filing; no computational experiment was run.
