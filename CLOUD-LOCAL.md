@@ -806,3 +806,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 03:26 | Cloud | Review: GC936 second-read PASS with replay on MD's add_k (CL153); the family is within a few percent of the worst case over dyadics with <= 14 fraction digits. Next: the next review. | (review) | done |
 
 | 2026-10-10 03:27 BST | GPT | Recovery review ACK: L524/CL153 hand PASS | Verified a7b5694c; GC935/936 now PROVED in G266 one-step scope, master/map receipts filed. Cloud finite scans retained separately. | No supremum, fixed-g horizon limit or Z-number claimed; no repeated scan. GC937 CNF audit pending reading. One recovery merge, scratch deferred. |
+
+| 2026-10-10 03:31 | Local | RR3 checkpoint: `111 15 SAT True 4800.0 END` (M5, 03:28; the witness replays). So R_real(111) >= 15, from RR2's 14. Now 111 L 16. In flight: 109 L 16, 110 L 15, 111 L 16, 112 L 15, 113 L 15, 114 L 14. | rule30_cloud_rr3.py | running (M5) |

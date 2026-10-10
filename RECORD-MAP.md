@@ -103,7 +103,8 @@ PART: as on the board.
 - RR/RR3 inherited cone CNF matches finite query; solver evidence stays separate — source audit — GC937.
 - Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
 - R_real(97..108) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16 (101 and 105 by the plateau law R(d+1) >= R(d) - 1,
-  and by the solver: 101 L 16 and 105 L 14 UNSAT; 107 L 15 and 108 L 17 UNSAT, M5); 109 >= 15; 109..120 running on the M5
+  and by the solver: 101 L 16 and 105 L 14 UNSAT; 107 L 15 and 108 L 17 UNSAT, M5); 109 >= 15, 111 >= 15; 109..120 running
+  on the M5
   (Local) — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3, rule30_cloud_rr3.py, "RR3 checkpoint"
   rows in CLOUD-LOCAL.md and its archives
 - A run's end needs the clock's first beats; words 11, 00000, 101001 fit the records to d = 19 — COMPUTED — RRX; RRL
