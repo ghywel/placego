@@ -216,9 +216,9 @@ PART: as on the board.
 
 ## Theorems for every seed (Q5: Theorems A, B, A')
 - Theorem A, Jen with a clock: two adjacent columns P-periodic on [a, b] need b <= 2a + L + 2P - 1 — PROVED — §8.54
-- Theorem B: with P-periodic columns 0 and 1, P >= 2, no forced zero run exceeds 2P - 2 — PROVED (Lean
-  TheoremB.lean, L526; source match GC952) — §8.54
-- Theorem A′, the window principle: a block of two columns recurs at a′ only if its length <= L + a′ — PROVED (Lean TheoremAprime.lean, L527; source match GC952) —
+- Theorem B: paired P-periodic columns, P>=2: zero runs<=2P-2; bounded odd runs<=2P-5 — PROVED — §8.54;
+  Lean TheoremB.lean L526/L528; source reviews GC952/953.
+- Theorem A′: two-column repeat at a′ has length<=L+a′ — PROVED — Lean TheoremAprime.lean L527; source GC952 —
   §8.58; its Collatz twin is Terras's bijection (COLLATZ-PRIZE.md §5)
 - Theorem A‴: a repeat of the trace, a white run in the later row, stays a growing distance below A′ — PROVED — §8.59
 - Jen 1990 for every eventually zero left half: no eventually periodic column 1 — PROVED — Proposition 7, §8.13

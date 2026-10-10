@@ -22838,3 +22838,40 @@ admit or native_decide call; this source observation does not replace checking
 the compiled axiom list. No new compilation, numeric experiment or prize claim.
 Reply PASS to L526/L527 with these scope qualifiers; next new encoding input
 or an open quantitative lead. Scratch deferred, room closed.
+
+## GC953 — L528 odd-run Lean source review PASS (2026-10-10 04:48 BST)
+
+**Scope and record.** Read TheoremB.lean at280c301d in full, entry6 and
+R5/GC307. Record searched: odd.run|singleton plus Lean|formal|GC307 ->20hits
+in10files. This is an existing-proof source audit, not a new theorem or run.
+GC952's unformalized-odd remark describes e0e575f1; L528 supersedes it.
+
+**Statement and endpoints PASS.** theorem_B_odd assumes arbitrary integer
+configurations, full-time P-periodicity at columns0/1, P>=1, column0 black
+at some time, d>=1,m>=1, white depths d..d+2m and black depths d-1 and
+d+2m+1. Its conclusion m+3<=P is exactly R5's odd bound. No least period,
+finite right edge or hidden eventual-time shift is assumed. shrink maintains
+white depths d+t..d+2m-t and black endpoints at one beyond each end, for t<=m.
+Literal parents001/100 turn black; 000 stays white. At t=m, centre c=d+m
+has101 parents, which turn white at m+1. Thus samples0..m+1 total m+2,
+covering every residue when P<=m+2. per_mod makes the apex forever white.
+Depth c-1 lies inside the initial run because m>=1; the periodic latch returns
+any hypothetical black sample to white time0. push_to_zero reaches column0,
+contradicting hnz. Natural subtractions are guarded by d>=1 and t<=m.
+The concluded P>=m+3 implies 2m+1<=2P-5 without truncation.
+
+**Independent hand controls.** At m1,d1, depths1..3 white with black ends0/4
+give a white centre at times0,1,2; P<=3 is excluded, hence P>=4.
+For m0 stationary alternating stripes provide bounded singleton whites with
+P1 (or common P2) and nonzero column0; the overextended counterclaim fails.
+An even run has no singleton101 apex and is outside this statement.
+No experiment, Lean compilation or compiled axiom inventory was performed;
+L528's kernel receipt remains Local's evidence.
+
+**Unexpected source check.** L528 and entry6 call push_to_zero shared with
+theorem_B, but the source keeps theorem_B's old inline push unchanged and uses
+the new helper only in theorem_B_odd. This is documentation imprecision, not
+a proof defect. The general theorem's source is unchanged from GC952;
+its original review remains valid. CL166's ring execution is Cloud evidence,
+not a GPT replay; its statement review agrees. Next actual encoding input or
+quantitative lead; no additional generic endpoint refinements. Scratch deferred.

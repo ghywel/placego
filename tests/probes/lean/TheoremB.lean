@@ -150,6 +150,131 @@ theorem theorem_B (x0 : ℤ → Bool) (P : ℕ) (hP : 2 ≤ P) (h0 : PerAll x0 0
   rw [show -(k : ℤ) + (k : ℤ) = 0 by ring] at this
   rw [this] at ht; exact absurd ht (by decide)
 
+
+/-- Two white columns at -k and -k + 1 force column 0 white. -/
+lemma push_to_zero (x0 : ℤ → Bool) (k : ℕ) (a0 : ∀ t : ℕ, ev x0 t (-(k : ℤ)) = false)
+    (b0 : ∀ t : ℕ, ev x0 t (-(k : ℤ) + 1) = false) : ∀ t : ℕ, ev x0 t 0 = false := by
+  have push : ∀ j : ℕ, j ≤ k → (∀ t : ℕ, ev x0 t (-(k : ℤ) + j) = false) ∧
+      (∀ t : ℕ, ev x0 t (-(k : ℤ) + j + 1) = false) := by
+    intro j
+    induction j with
+    | zero =>
+      intro _
+      refine ⟨fun t => ?_, fun t => ?_⟩
+      · rw [show -(k : ℤ) + ((0 : ℕ) : ℤ) = -(k : ℤ) by push_cast; ring]; exact a0 t
+      · rw [show -(k : ℤ) + ((0 : ℕ) : ℤ) + 1 = -(k : ℤ) + 1 by push_cast; ring]; exact b0 t
+    | succ j ih =>
+      intro hj
+      obtain ⟨a, b⟩ := ih (by omega)
+      have a' : ∀ t : ℕ, ev x0 t (-(k : ℤ) + (j : ℤ) + 1 - 1) = false := fun t => by
+        rw [show -(k : ℤ) + (j : ℤ) + 1 - 1 = -(k : ℤ) + (j : ℤ) by ring]; exact a t
+      have c := push_right x0 (-(k : ℤ) + (j : ℤ) + 1) a' b
+      refine ⟨fun t => ?_, fun t => ?_⟩
+      · rw [show -(k : ℤ) + ((j + 1 : ℕ) : ℤ) = -(k : ℤ) + (j : ℤ) + 1 by push_cast; ring]; exact b t
+      · rw [show -(k : ℤ) + ((j + 1 : ℕ) : ℤ) + 1 = -(k : ℤ) + (j : ℤ) + 1 + 1 by push_cast; ring]; exact c t
+  intro t
+  have := (push k le_rfl).1 t
+  rwa [show -(k : ℤ) + (k : ℤ) = 0 by ring] at this
+
+/-- A white run of row 0 bounded by black cells shrinks by one cell at each end per step. -/
+lemma shrink (x0 : ℤ → Bool) (d m : ℕ) (hd : 1 ≤ d)
+    (hrun : ∀ i : ℕ, d ≤ i → i ≤ d + 2 * m → x0 (-(i : ℤ)) = false)
+    (hL : x0 (-((d - 1 : ℕ) : ℤ)) = true) (hR : x0 (-((d + 2 * m + 1 : ℕ) : ℤ)) = true) :
+    ∀ t : ℕ, t ≤ m → (∀ i : ℕ, d + t ≤ i → i ≤ d + 2 * m - t → ev x0 t (-(i : ℤ)) = false) ∧
+      ev x0 t (-((d + t - 1 : ℕ) : ℤ)) = true ∧ ev x0 t (-((d + 2 * m - t + 1 : ℕ) : ℤ)) = true := by
+  intro t
+  induction t with
+  | zero =>
+    intro _
+    refine ⟨fun i h1 h2 => hrun i (by omega) (by omega), ?_, ?_⟩
+    · rw [show d + 0 - 1 = d - 1 by omega]; exact hL
+    · rw [show d + 2 * m - 0 + 1 = d + 2 * m + 1 by omega]; exact hR
+  | succ t ih =>
+    intro ht
+    obtain ⟨hw, hl, hr⟩ := ih (by omega)
+    -- the row at time t, around column -i, as a function of depth
+    have W : ∀ i : ℕ, d + t ≤ i → i ≤ d + 2 * m - t → ev x0 t (-(i : ℤ)) = false := hw
+    refine ⟨fun i h1 h2 => ?_, ?_, ?_⟩
+    · rw [ev_succ]
+      have e1 : ev x0 t (-(i : ℤ) - 1) = false := by
+        have := W (i + 1) (by omega) (by omega)
+        rwa [show -((i + 1 : ℕ) : ℤ) = -(i : ℤ) - 1 by push_cast; ring] at this
+      have e2 : ev x0 t (-(i : ℤ)) = false := W i (by omega) (by omega)
+      have e3 : ev x0 t (-(i : ℤ) + 1) = false := by
+        have := W (i - 1) (by omega) (by omega)
+        rwa [show -((i - 1 : ℕ) : ℤ) = -(i : ℤ) + 1 by push_cast [show 1 ≤ i by omega]; ring] at this
+      rw [e1, e2, e3]; rfl
+    · -- new left end (depth d + t): parents at depths d + t + 1 (white), d + t (white), d + t - 1 (black)
+      rw [show d + (t + 1) - 1 = d + t by omega, ev_succ]
+      have e1 : ev x0 t (-((d + t : ℕ) : ℤ) - 1) = false := by
+        have := W (d + t + 1) (by omega) (by omega)
+        rwa [show -((d + t + 1 : ℕ) : ℤ) = -((d + t : ℕ) : ℤ) - 1 by push_cast; ring] at this
+      have e2 : ev x0 t (-((d + t : ℕ) : ℤ)) = false := W (d + t) (by omega) (by omega)
+      have e3 : ev x0 t (-((d + t : ℕ) : ℤ) + 1) = true := by
+        rwa [show -((d + t : ℕ) : ℤ) + 1 = -((d + t - 1 : ℕ) : ℤ) by push_cast [show 1 ≤ d + t by omega]; ring]
+      rw [e1, e2, e3]; rfl
+    · -- new right end (depth d + 2m - t): parents at depths d + 2m - t + 1 (black), d + 2m - t, d + 2m - t - 1 (white)
+      rw [show d + 2 * m - (t + 1) + 1 = d + 2 * m - t by omega, ev_succ]
+      have e1 : ev x0 t (-((d + 2 * m - t : ℕ) : ℤ) - 1) = true := by
+        rwa [show -((d + 2 * m - t : ℕ) : ℤ) - 1 = -((d + 2 * m - t + 1 : ℕ) : ℤ) by push_cast; ring]
+      have e2 : ev x0 t (-((d + 2 * m - t : ℕ) : ℤ)) = false := W (d + 2 * m - t) (by omega) (by omega)
+      have e3 : ev x0 t (-((d + 2 * m - t : ℕ) : ℤ) + 1) = false := by
+        have := W (d + 2 * m - t - 1) (by omega) (by omega)
+        rwa [show -((d + 2 * m - t - 1 : ℕ) : ℤ) = -((d + 2 * m - t : ℕ) : ℤ) + 1 by
+          push_cast [show 1 ≤ d + 2 * m - t by omega]; ring] at this
+      rw [e1, e2, e3]; rfl
+
+/-- GPT's odd-run refinement (R5, GC307): a maximal odd white run of row 0 of length 2m + 1 >= 3, bounded by black
+cells, needs P >= m + 3, so its length is at most 2P - 5. -/
+theorem theorem_B_odd (x0 : ℤ → Bool) (P : ℕ) (hP : 1 ≤ P) (h0 : PerAll x0 0 P) (h1 : PerAll x0 1 P)
+    (hnz : ∃ t : ℕ, ev x0 t 0 = true) (d m : ℕ) (hd : 1 ≤ d) (hm : 1 ≤ m)
+    (hrun : ∀ i : ℕ, d ≤ i → i ≤ d + 2 * m → x0 (-(i : ℤ)) = false)
+    (hL : x0 (-((d - 1 : ℕ) : ℤ)) = true) (hR : x0 (-((d + 2 * m + 1 : ℕ) : ℤ)) = true) : m + 3 ≤ P := by
+  by_contra hP'
+  push Not at hP'
+  have hper := left_all_iter x0 P h0 h1
+  have S := shrink x0 d m hd hrun hL hR
+  set c : ℕ := d + m with hc
+  -- the apex column -c is white at times 0 .. m + 1, which covers a period
+  have apex : ∀ s : ℕ, s ≤ m + 1 → ev x0 s (-(c : ℤ)) = false := by
+    intro s hs
+    rcases Nat.lt_or_ge s (m + 1) with h | h
+    · exact (S s (by omega)).1 c (by omega) (by omega)
+    · have hs' : s = m + 1 := by omega
+      subst hs'
+      obtain ⟨_, hl, hr⟩ := S m le_rfl
+      have hw := (S m le_rfl).1 c (by omega) (by omega)
+      rw [ev_succ]
+      have e1 : ev x0 m (-(c : ℤ) - 1) = true := by
+        rwa [show -(c : ℤ) - 1 = -((d + 2 * m - m + 1 : ℕ) : ℤ) by push_cast [show m ≤ d + 2 * m by omega]; omega]
+      have e3 : ev x0 m (-(c : ℤ) + 1) = true := by
+        rwa [show -(c : ℤ) + 1 = -((d + m - 1 : ℕ) : ℤ) by push_cast [show 1 ≤ d + m by omega]; omega]
+      rw [e1, hw, e3]; rfl
+  have white_c : ∀ t : ℕ, ev x0 t (-(c : ℤ)) = false := by
+    intro t
+    have := per_mod x0 _ P (hper c).1 (t / P) (t % P)
+    rw [show t % P + t / P * P = t by rw [Nat.mod_add_div' t P]] at this
+    rw [this]; exact apex _ (by have := Nat.mod_lt t (show 0 < P by omega); omega)
+  -- its right neighbour is latched, periodic and white at time 0
+  have white_c1 : ∀ t : ℕ, ev x0 t (-(c : ℤ) + 1) = false := by
+    intro t
+    by_contra hb
+    have hb' : ev x0 t (-(c : ℤ) + 1) = true := by simpa using hb
+    have hl := latch x0 (-(c : ℤ) + 1) (by intro s; rw [show -(c : ℤ) + 1 - 1 = -(c : ℤ) by ring]; exact white_c s)
+      t hb' (t * P - t)
+    rw [show t + (t * P - t) = 0 + t * P by
+      have : t ≤ t * P := Nat.le_mul_of_pos_right t (by omega)
+      omega] at hl
+    rw [per_mod x0 _ P (hper c).2 t 0] at hl
+    have h0w : ev x0 0 (-(c : ℤ) + 1) = false := by
+      have := hrun (c - 1) (by omega) (by omega)
+      rwa [show -((c - 1 : ℕ) : ℤ) = -(c : ℤ) + 1 by push_cast [show 1 ≤ c by omega]; ring] at this
+    rw [h0w] at hl; exact absurd hl (by decide)
+  obtain ⟨t, ht⟩ := hnz
+  rw [push_to_zero x0 c white_c white_c1 t] at ht
+  exact absurd ht (by decide)
+
 end TheoremB
 
 #print axioms TheoremB.theorem_B
+#print axioms TheoremB.theorem_B_odd
