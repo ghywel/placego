@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Exact two-tick prehistory conditioned on spatial marker1110.
+Construction already in G236 / rule30_gpt_entry_image.py; this extends
+its first-missing-prefix search to all residuals.
 Missing inference: does the marker itself erase the prehistory obstruction
 in GC1009, or must a hidden representation retain an exterior relation?
 Record searched: 1110|marker + prehistory|preimage|image.F -> GC608 only
@@ -72,6 +74,60 @@ def main():
     assert advance(edges,root,'0101010')==full
     print('Literal marker-conditioned images through10 and unconditional full-tail control PASS')
     print('shortest universal residual prefix',next((seen[q] for q in todo if q==full),None))
-    # Print only shortest rejection; full automaton reproducible from source.
+    # Complete proper-residual structure; registered in RULE30-GPT before this run.
+    proper=set(todo)-{frozenset(),full}
+    graph={q:[advance(edges,q,b) for b in '01' if advance(edges,q,b) in proper]
+           for q in proper}
+    rev={q:[] for q in proper}
+    for q,rs in graph.items():
+        for r in rs:rev[r].append(q)
+    reached=set();order=[]
+    def dfs(q):
+        reached.add(q)
+        for r in graph[q]:
+            if r not in reached:dfs(r)
+        order.append(q)
+    for q in proper:
+        if q not in reached:dfs(q)
+    reached=set();comps=[]
+    for q in reversed(order):
+        if q in reached:continue
+        comp={q};queue=[q];reached.add(q)
+        for r in queue:
+            for t in rev[r]:
+                if t not in reached:reached.add(t);comp.add(t);queue.append(t)
+        comps.append(comp)
+    def reach(q):
+        found={q};queue=[q]
+        for r in queue:
+            for t in graph[r]:
+                if t not in found:found.add(t);queue.append(t)
+        return found
+    closure={q:reach(q) for q in proper}
+    for comp in comps:
+        for q in comp:
+            assert comp=={r for r in proper if r in closure[q] and q in closure[r]}
+    recurrent=[c for c in comps if len(c)>1 or next(iter(c)) in graph[next(iter(c))]]
+    print('Proper recurrent SCCs (size, internal branching):',
+          sorted((len(c),sum(sum(r in c for r in graph[q])>1 for q in c)) for c in recurrent))
+    for q in todo:
+        for b in '01':
+            assert advance(edges,full-q,b)==full-advance(edges,q,b)
+    print('Independent mutual reachability and complement controls PASS')
+    for comp in recurrent:
+        for q in sorted(comp,key=lambda q:(len(seen[q]),seen[q])):
+            if sum(r in comp for r in graph[q])<2:continue
+            def path(start,end):
+                visit={start};queue=[(start,'')]
+                for r,w in queue:
+                    if r==end:return w
+                    for b in '01':
+                        t=advance(edges,r,b)
+                        if t in comp and t not in visit:visit.add(t);queue.append((t,w+b))
+                raise AssertionError('SCC path missing')
+            loops=[b+path(advance(edges,q,b),q) for b in '01']
+            print('Branching witness: entry',seen[q],'source states',sorted(q),'loops',loops)
+            for w in loops:assert advance(edges,q,w)==q
+            return
 
 if __name__=='__main__':main()

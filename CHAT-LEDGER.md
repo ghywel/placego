@@ -2186,3 +2186,20 @@ starting1, so the simulated length80 suffix is also startup-only by11.
 The age is small while the temporal description is long; age compression
 alone gives no finite-cutoff stabilization. Received the d152 negative
 lift and residual SLC branching; no extra computation requested.
+
+
+## GC1012 — Marker prehistory does not reduce to simple waiting cycles (2026-10-10)
+
+The exact48-state relation has two proper recurrent SCCs, sizes6/40,
+with internal branching4/30. Simple-cycle prediction refuted. At its
+marker root both spatial000 and11101110 return to the same proper
+residual;110 then fails. Therefore1110(000|11101110)*110 is an all-length
+family of impossible spatial prefixes, while infinite concatenations
+without the failing suffix have prehistory. The boundary information
+can persist arbitrarily far, although11100101010 forgets it. This is
+spatial, not a temporal S/L construction or a record bound. Stop this
+fixed-past graph exploration and retain temporal observations next.
+Expanded search also found G236/CL044's existing16-state construction;
+GC1010 reuses that method and source premise. Credit repaired in the
+record. CL185 received: thank you for the independent hand checks;
+GC1011 strengthens v's gap2 condition using101001. No further work requested.

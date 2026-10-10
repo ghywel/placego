@@ -25249,3 +25249,64 @@ the aged language, or stabilization of its finite cutoff, is inferred.
 Local's61 S/L cuts leave positive measured entropy~0.1192; the branch-free
 certificate remains absent. Continue structural work without duplicating
 its CUT/SLC runs.
+
+
+GC1010 structural follow-up registered: classify its48 reachable subset
+states after removing the empty and universal states. Missing inference:
+can the marker-conditioned exterior relation be represented by finitely
+many phases and simple waiting counters? Prediction: every remaining
+recurrent SCC is a simple cycle; counterfactual, a branching SCC retains
+arbitrarily long spatial ambiguity. Check SCCs independently by mutual
+reachability; unexpected control checks that label transitions preserve
+complements, since the radius-two rule is left-permutive. No increase in
+past horizon, strip width, language cutoff or actual membership calls.
+Record searched: marker|1110 + subset|synchroniz.*automaton|nonuniversal|prehistory.*cycle
+->18 hits; G236/CL044 already supplies the exact16-state image
+construction and forced0001 premise. Read before this follow-up. The
+new target is the complete proper-residual SCC structure, not that
+established construction; GC1010 and GC1011 should cite G236 for it.
+
+
+### GC1012 — Marker prehistory retains branching at arbitrary spatial distance
+
+COMPUTED / PROOF-SKETCH. The registered simple-cycle prediction fails:
+GC1010's46 proper nonempty residuals form recurrent SCCs of sizes6 and40,
+with4 and30 internally branching states. Independent mutual reachability
+agrees with the SCC partition; complement transitions also agree, as
+left permutivity predicts. This does not exclude another representation;
+it rules out simplifying this exact relation to transient paths and
+simple repeated words.
+
+A short all-length certificate uses the initial residual A={4,5,6,7},
+where integers encode four source bits. Both words p=000 and q=11101110
+return A to itself, while r=110 sends A to the empty set. The p path is
+
+    A -> {8,9,10,11,12} -> {1,2,3} -> A.
+
+The q path is
+
+    A -> {13,14,15} -> {10,11,12} -> {4,5,6,7,8,9}
+      -> {1,2,3,8,9,10,11,12} -> {0,2,3,4,5,6,7,8,9}
+      -> {0,1,13,14,15} -> {1,2,3,10,11,12} -> A.
+
+The r path is A -> {13,14,15} -> {10,11,12} -> empty.
+Consequently EVERY spatial prefix1110 w 110, w any concatenation of p/q,
+is impossible after the two wall updates. Conversely1110 followed by
+any infinite concatenation of p/q has prehistory: every finite prefix
+has a source path, so compactness supplies an infinite source row.
+This is a rooted spatial image statement, not a temporal S/L realization.
+Both chosen cycles stay proper; origin information can survive arbitrarily
+far with arbitrary choices between the two blocks. A fixed maximum
+forgetting distance is therefore impossible despite GC1010's particular
+forgetting word. No further fixed-past graph census is warranted: future
+work needs its interaction with the temporal observation constraints.
+
+**Prior-art correction and receipts.** The expanded record search surfaced
+G236/CL044: the16-state transducer, forced0001 source premise and first
+farther-site exclusions were already established there. Credit those
+rather than treating GC1010's construction as new. The complete48-state
+analysis and these two return words extend that checkpoint. CL185 now
+independently confirms GC1010's hand exclusion1110110 and source premise;
+its automaton/forgetting conclusions were not reviewed. CL185 also checks
+GC1009's original predecessor cases; GC1011 adds the101001 obstruction.
+No extra review or computation requested from Cloud.

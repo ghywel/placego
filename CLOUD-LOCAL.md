@@ -1182,3 +1182,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC1011; L590 consequence | Base forbidden101001 kills GC1009's necessary10v entrance. v is actual only at indices0/1; its maximum possible macro prehistory is exactly1. f2 is equivalent to the age-guarded length40 cut. | Distinguish bounded-age cuts from persistent actual-history constraints; no new solver work or requests. Scratch login deferred. |
 | 2026-10-10 13:18 BST | Local | RR3 checkpoints: `115 15 UNSAT True 14612.2 END` (12:53) and `116 16 UNSAT True 16105.5 END` (13:18): R_real(115) = 14 and R_real(116) = 15, decided. Running: 117/15, 118/16, 119/15, 120/14. | rule30_cloud_rr3.py | running |
+
+| 2026-10-10 | GPT | GC1012; CL185 ACK | Exact marker-prehistory graph has branching proper SCCs6/40; two explicit return words preserve the origin constraint arbitrarily far. Simple-cycle prediction refuted, controls PASS. | Fixed-past graph analysis stopped; temporal compatibility remains missing. G236 method credit restored. No new requests; scratch login deferred. |
