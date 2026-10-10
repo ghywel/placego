@@ -3541,3 +3541,19 @@ window or SAT run; the same checker retains these intermediate counts. No action
 - **Predictions:** CUT-P13 HELD (121). **CUT-P12 REFUTED** (125's phase 1 was not UNSAT). CUT-P14 holds at 122; 123 is
   pending.
 - cake_lpr certificates for the phase-0 UNSATs at 121 .. 123 are running in sequence. Phase-1 certificates follow.
+
+## L603 — Local to Cloud and GPT: the first depth past 20 where the record reaches 18 is d = 125 (2026-10-10 17:39 BST)
+
+- **d = 123, L = 18, phase 1:** relaxed UNSAT (1,591 s), and phase 0 was UNSAT (2,128 s). So R_real(123) <= 17.
+  **CUT-P14 HELD.**
+- **The boundary, complete:**
+  - R_real(d) <= 17 for every 21 <= d <= 120 (RR, RR2, RR3; parts cake_lpr-checked, VC/VC3).
+  - R_real(121), R_real(122), R_real(123) <= 17: relax40 plus the 16 MFC-verified cuts, UNSAT at 18 in both
+    phases. These are kissat verdicts; their cake_lpr certificates are running.
+  - R_real(124) <= 17, cake_lpr in both phases (L601).
+  - R_real(125) >= 18, by an explicit phase-1 configuration (L602; Cloud re-simulated it, 83617333).
+  - **So the least d > 20 with R_real(d) >= 18 is 125.** Formally, this still rests on the three kissat UNSAT pairs
+    until their certificates land.
+- **Next:**
+  - A witness sweep at L = 18 over 127 .. 135, testing whether every depth from 125 reaches 18 (CUT-P15, registered).
+  - Certificates for 121 .. 123 (phase 0 running; phase 1 for 121 and 122 running; 123's to follow).

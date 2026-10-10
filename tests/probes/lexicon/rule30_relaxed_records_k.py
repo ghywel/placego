@@ -157,6 +157,8 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   At 17:31: CUT-P13 HELD (121 phase 1 UNSAT, 1,859 s), so R_real(121) <= 17. 122 phase 1 UNSAT (1,824 s), so
   R_real(122) <= 17. CUT-P12 REFUTED: 125 phase 1 is a WITNESS (relaxed SAT 3,038 s; rule30_witness_check.py VALID in
   phase 1, NOT VALID read as phase 0), so R_real(125) >= 18. CUT-P14 holds at 122; 123 phase 1 is pending.
+  CUT-P14 HELD (17:37): 123 phase 1 UNSAT (1,591 s). With 121 .. 124 <= 17 and the 125 witness, the least d > 20 with
+  R_real(d) >= 18 is 125.
   CUT-P15 (blind, 0.5; registered 17:37 before its sweep): every d in 127 .. 135 has a CUT WITNESS at L = 18 in phase 0
          or phase 1 (phase 0 first, 1,800 s caps, then phase 1 where phase 0 gives none), so R_real(d) >= 18 there.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
