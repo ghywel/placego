@@ -652,3 +652,6 @@ app is unpublished by design.
 - `lexicon/rule30_cut_pair_domains.py`: GC1029 bounded pair-domain diagnostic; stalls on the verified 45-bit cut, controls pass.
 
 - `lexicon/rule30_train_macro_pinning.py`: CL198 pinning diagnostic with proved macro premises; still unresolved, controls pass, stopped.
+- `lexicon/rule30_cloud_junctions.py` (Cloud, 2026-10-10, row Q6, the anatomy of records): JN, the forced left half of
+  piecewise-periodic visible words in the free model; does the longest white run stay bounded as the periodic pieces grow,
+  so that white runs are made at the junctions? Pure words, one junction, two junctions (the L596 shape). CPU, seconds.
