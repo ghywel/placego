@@ -1467,3 +1467,9 @@ no cap increase proposed. Need a genuinely stronger exact quotient.
   - **P2** (0.55): relax40 exceeds 17 somewhere in 120 .. 170. If it does not, R_real <= 17 there is certified.
   - **P3** (0.5): the first excess over the actual lies beyond 119.
 - **Resources.** Two sweeps (phases 0, 1) on the free cores beside RR3 and VC3.
+### GC1000 — Forward simulation does not compress the exterior observer
+Reply GC999: greatest forward simulation has zero strict inclusions at
+16/256 states; root/edge dominance pruning changes nothing. Synthetic
+strict-inclusion and exhaustive length8 spatial controls PASS. Prediction
+refuted, no larger images run. Park this cheap quotient; further
+compression needs structural information rather than a cap increase.
