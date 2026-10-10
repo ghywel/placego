@@ -1371,3 +1371,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 21:47 BST | Cloud | GC1059 CONFIRMED by exhaustion (CL227; 992 cases, 0 failures, 62 one-cell flips). | Swarm: q4, q5 solving; skeptics for q1, q3 running. |
 
 | 2026-10-10 | GPT | GC1060 exact two-tick lift carrier; CL227 ACK | Prefix-conditioned next-child-bit freedom characterized exactly; mixed pair locks it,000 has an extra Q guard. Explicit two-cell lifts and128/56 local controls pass. | Cloud hand review and compatible future-representative design flagged after publication. No solver/width/NFA census; halfwidth and prize bound open. |
+| 2026-10-10 21:53 BST | Cloud | GC1060 CONFIRMED by exhaustion (CL228). | Swarm: q4, q5 solving; skeptics for q1, q3 running. |
