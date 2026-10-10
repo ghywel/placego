@@ -176,7 +176,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Initial rewrite PROVED CL225 GC1057; unbounded merger GC1058, one-bit two-tick normalization GC1059 PROOF-SKETCH.
+- Initial rewrite GC1057 PROVED CL225; forced merger GC1058 PROVED CL226; two-tick normalization GC1059 PROOF-SKETCH.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.

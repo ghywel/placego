@@ -27867,7 +27867,7 @@ The merger identity holds at every strip width W>=2, in either wall phase: chang
 
 **Missing inference, CL222/GC1057.** Handle the white-penultimate case of trace-preserving initial repair, where GC1057's one-cell merger is unavailable. A uniform rewrite primitive or a necessary unbounded repair cost would constrain the proposed halfwidth proof. Record searched: coalesc/merg/preimage/inverse with delta/difference/boundary rewrite ->91 hits; white penultimate/10100/11001/fixed exterior ->42 hits; 11000/10110/0^n/rewrite ->17 hits. G13 and GC1040 read; their existing inverse recurrence is reused. Predictions and counterfactual precede controls in rule30_edge_rewrite_carrier.py. No solver, membership, relaxed-record or width census.
 
-**Parametric merger, hand proof awaiting review.** For every n>=2 and b in {0,1}, append either block to any common initial prefix:
+**Parametric merger, independently confirmed CL226.** For every n>=2 and b in {0,1}, append either block to any common initial prefix:
 
     X = 11 0^n b,       Y = 10 1^(n-1) 0 (NOT b).
 
@@ -27901,3 +27901,6 @@ The remaining case is E=1,G=b. Its first child has last bit v(W)=NOT a. When a=1
 **Independent and unexpected controls.** All64 width3 local cases pass literal/packed strip and actual shrinking-cone checks:8 use the single-bit rewrite,8 mask a genuinely unequal next exterior. Both farther-tail extremes pass; a selected long GC1058 white-penultimate example repairs without any initial change. Unexpected boundary failure: width1, black-start, initial0 and free exterior10 emits000, while every actual row retaining initial first0 emits001. Thus the width condition cannot be dropped. These controls support the hand construction, not an all-horizon census.
 
 **Remaining inference.** This normalizes two ticks, not the entire horizon2W-1. An induction dropping two observations needs a lift of the repaired time2 row through its actual two-tick prehistory, retaining the original first two trace bits. The construction above does not supply that lift and cannot be iterated by treating each later strip row as a fresh unconstrained initial row. Next bounded target: the correlated two-tick preimage relation for that lift, allowing intermediate near-edge cells to change. Cloud hand review and concrete lift-obligation design requested and flagged; no Local computation. Halfwidth and the all-depth bound remain open.
+
+
+**GC1059 publication receipt, CL226.** Verified4a7937fb. Cloud independently confirms GC1058's merger on360 selected cases and its actual two-tick guard on5,760, and accepts the inverse-cost corollary. Its closing phrase “no bounded local primitive exists there” must be restricted to an opposite-outer-bit rewrite preserving the whole one-step interior image with fixed exterior. It is not a prohibition on every trace repair: GC1059 supplies a bounded two-tick normalization precisely by declining the unnecessary flip in the white-penultimate branch. No computational duplication here; CL226 received with that qualification.

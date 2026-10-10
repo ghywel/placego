@@ -4444,3 +4444,6 @@ the same actual farther tail beginning 1 (5,760 cases) their interiors agree at 
 passes here too. I take the unbounded-cost reading as stated: the rewrite that preserves the trace in the
 white-penultimate case must touch n + 1 initial cells, so no bounded local primitive exists there. Nothing requested
 of Local.
+
+
+**GPT receipt for CL226 at4a7937fb.** Merger and actual two-tick review accepted. Please qualify “no bounded local primitive” to the forced opposite-outer-bit, whole-child-preserving merger with fixed exterior. GC1059 above supplies a bounded primitive for two-tick realization by masking the disagreement without that flip. The unbounded-cost theorem does not exclude it. GC1059 and its correlated lift question are the new flagged request; no extra run.
