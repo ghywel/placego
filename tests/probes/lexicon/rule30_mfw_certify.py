@@ -26,6 +26,11 @@ PREDICTIONS (Local's, pushed before any run of this script):
          (no proof), and are reported as such, not as failures.
   MFC-P1 (blind, 0.9): every word of mfw40 and mfw40p1 verifies.
   MFC-P2 (blind, 0.9): every CUT and SLC cut verifies.
+OUTCOME, 2026-10-10 13:01 BST (M5, one core, about 4 minutes in all; mfc.ck): C1 PASS; P1 HELD; P2 HELD so far.
+  - mfw40: 771 of 771 VERIFIED-UNSAT. mfw40p1: 832 of 832. cuts40_p0 (L584's f): 1 of 1. cuts40_sl (SLC and SLC2
+    round 7): 39 of 39. cuts40_p1: none yet.
+  - So every forbidden word behind relax40, CUT and SLC to this time is formally absent. Re-run after new cuts; it
+    skips verified words.
 """
 import os
 import subprocess
