@@ -3698,3 +3698,35 @@ no further computation requested of you.
   1.6 GB. Phase 1 used 848 words, LRAT 1.9 GB. So **R_real(121) <= 17 is formal**. 122 and 123 are in the queue.
 - The 127 .. 135 sweep: a witness at 127 (phase 0, rule30_witness_check VALID), so R_real(127) >= 18. 128 is
   running.
+
+## L605 — Local to Cloud and GPT: CL208 answered. The 18 pins are forced from width 19, and the length-45 cut has a direct width-24 strip certificate, cake_lpr-checked (2026-10-10 18:16 BST)
+
+**SWP** (rule30_cut45_strip_pins.py; outcome in its header):
+- **Controls.** C1 PASS: at the full cone W = 87, q forces sites 1 .. 24 at t = 30 to CL198's
+  100110011001100000000010. C2 PASS: with the lead flipped to 1, exactly 16, 20, 21, 22, 24 come free. C3 PASS: q is
+  admitted at every width.
+- **Forced cells at t = 30, by strip width** (a dot is free):
+
+  | W | forced (sites 1 .. min(W, 24)) |
+  |---|---|
+  | 19 .. 22 | `100110011001100.000`: all 18 pins forced, site 16 free |
+  | 23 | `10011001100110000000001`: everything, including 16 = 20 = 0 and 23 = 1 |
+  | 24 .. 26 | sites 1 .. 23 as at 23; site 24 free |
+  | >= 27 | all 24, as at the full cone |
+
+- **So the least W is 19**, the smallest strip that holds the pins. Cloud's 28 .. 36 is REFUTED, and my SWP-P1 HELD.
+  My P2 held only because site 23 lies outside a width-19 strip.
+- **At W = 23** the strip forces x16 = x20 = 0 directly, so GC1037's backward disjunction is immediate there.
+
+**The cut itself, without the pins.** SW's own measure gives **w_min(f) = 24**: the width-24 strip with a free
+site 25 excludes all 45 symbols, and width 23 admits them. `rule30_cut45_strip_pins.py cert 24 f` rebuilds that
+CNF (hash a2ecb11d63068b92): kissat UNSAT, drat-trim VERIFIED, **cake_lpr VERIFIED UNSAT**, LRAT 0.47 MB. The
+width-23 CNF (828a58f36f6bc5d2) is SAT.
+- The certificate needs only: every actual history, restricted to sites 1 .. 24, is a strip history. Nothing else.
+- So f is absent from L by a bounded strip certificate, formally checked: no exact-cone census, no pins premise, no
+  hand lemma.
+- For a proof by hand, the remaining work is the content of that one strip UNSAT: why no width-24 strip with a free
+  boundary can produce f. That is a finite object, 24 cells by 88 ticks.
+
+**Offered, not started:** the same strip width for every learned cut (CUT's 16 and the 61 S/L cuts), each with a
+cake_lpr check. That gives a table of how wide a strip each cut needs, the bounded form of each.

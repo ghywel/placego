@@ -3,6 +3,7 @@
 
 RUN-ON:     cpu (Python 3, kissat 4.0.4 as KISSAT); one core, minutes
 COMMAND:    python3 tests/probes/lexicon/rule30_cut45_strip_pins.py [WMIN=24] [WMAX=40]
+            python3 tests/probes/lexicon/rule30_cut45_strip_pins.py cert W WORD   (strip exclusion -> cake_lpr)
 
 The question (CL208). q = 00001000101000010101010101010101010001000010 is the length-45 cut f (L593) without its
 final 1: the leading 0, the entry, ten cars, nine exit bits. Over all actual realizers, q forces sites 1 .. 24 at
@@ -29,6 +30,19 @@ PREDICTIONS (pushed before any run):
   Cloud's CL208 prediction (0.5): the least W is in 28 .. 36.
   SWP-P1 (Local's, blind, 0.55): some W <= 40 forces all 18 pins.
   SWP-P2 (Local's, blind, 0.4): at the least such W, site 23 (the pin GC1038 found dispensable) is not yet forced.
+OUTCOME, 2026-10-10 18:16 BST (M5, one core, minutes): C1, C2, C3 PASS; Cloud's 28 .. 36 REFUTED; P1 HELD; P2 HELD
+(degenerately, see below).
+  - Forced cells at t = 30 (a dot is free), with the default range 24 .. 40 and an extension 19 .. 23 (same code):
+    W = 19 .. 22: 100110011001100.000 (and free beyond 19): all 18 pins forced, site 16 free.
+    W = 23: 10011001100110000000001, every site 1 .. 23 forced, 16 = 20 = 0 and 23 = 1 included.
+    W = 24 .. 26: sites 1 .. 23 forced, site 24 free. W >= 27: all 24 forced, equal to the full cone (C1).
+  - So the least width forcing the 18 pins is 19, the smallest strip that contains them. P2 holds only because
+    site 23 lies outside a width-19 strip.
+  - SW's own question settles the cut outright: w_min(f) = 24 (rule30_strip_width.wmin). The width-24 strip with a
+    free site 25 excludes the whole length-45 word, and width 23 admits it. `cert` below rebuilds that CNF (hash
+    a2ecb11d63068b92): kissat UNSAT, drat-trim VERIFIED, cake_lpr VERIFIED UNSAT, LRAT 0.47 MB. Width 23 is SAT
+    (828a58f36f6bc5d2). Every actual history restricted to sites 1 .. 24 is such a strip history, so f is absent from
+    L by a formally checked bounded certificate, with no SAT census and no hand lemma in the chain.
 """
 import os
 import subprocess
@@ -122,5 +136,30 @@ def main():
     print('least W in %d .. %d forcing the 18 pins: %s' % (wmin, wmax, least))
 
 
+def cert(W, word):
+    """kissat DRAT -> drat-trim -L -> cake_lpr (the lockf wrapper) on the width-W strip CNF of word."""
+    import hashlib
+    text = cnf(word, W, [])
+    d = tempfile.mkdtemp()
+    base = os.path.join(d, 'strip')
+    open(base + '.cnf', 'w').write(text)
+    k = subprocess.run([KISSAT, '-q', '-f', '--no-binary', base + '.cnf', base + '.drat'], capture_output=True)
+    out = 'W=%d cnf %s kissat %s' % (W, hashlib.sha256(text.encode()).hexdigest()[:16], {10: 'SAT', 20: 'UNSAT'}.get(k.returncode))
+    if k.returncode == 20:
+        v = subprocess.run(['drat-trim', base + '.cnf', base + '.drat', '-L', base + '.lrat'], capture_output=True, text=True)
+        c = subprocess.run([os.path.expanduser('~/np-build/cake_lpr/cake_lpr'), '--CML_HEAP_SIZE=2000', '--CML_STACK_SIZE=1000',
+                            base + '.cnf', base + '.lrat'], capture_output=True, text=True)
+        out += '; drat-trim %s; cake_lpr %s' % ('VERIFIED' if 's VERIFIED' in v.stdout else 'FAILED',
+                                                'VERIFIED UNSAT' if 's VERIFIED UNSAT' in c.stdout else 'FAILED')
+    for e in ('.cnf', '.drat', '.lrat'):
+        if os.path.exists(base + e):
+            os.unlink(base + e)
+    os.rmdir(d)
+    print(out)
+
+
 if __name__ == '__main__':
-    main()
+    if sys.argv[1:2] == ['cert']:
+        cert(int(sys.argv[2]), sys.argv[3])
+    else:
+        main()
