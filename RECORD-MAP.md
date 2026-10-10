@@ -103,7 +103,7 @@ PART: as on the board.
 - Actual suffix from13 forbids4422/4444; age12 retains4444; relaxation still branches — hand / COMPUTED — GC988/989, L563.
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111=15, 112=15 (plateau law, then solver), 113=14, 114=13, 115=14, 116=15, 117=14, 118=15, 119>=14 — COMPUTED — RR3
+- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111=15, 112=15 (plateau law, then solver), 113=14, 114=13, 115=14, 116=15, 117=14, 118=15, 119>=14, 120=13 (solver, then the plateau law) — COMPUTED — RR3
   checkpoints, CLOUD-LOCAL archives.
 - RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 111..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
@@ -117,7 +117,7 @@ PART: as on the board.
 - Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each (14:30 stop); 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, rule30_cloud_rreal_trend.py, CL178, CL188.
 - Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
-- CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT, L=14 simulated witness — COMPUTED (kissat) — RLK L588.
+- CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT (cake_lpr), L=14 simulated witness — COMPUTED — RLK L588, L595.
 - GC1007 S/L component: 61 verified cuts (42..97) take entropy 0.1386 to 0.1192 (ceiling 0.1236) — COMPUTED — SLC/SLC2 L588, L591.
 - All 1,603 cutoff-40 list words and every CUT/SLC cut absent by cake_lpr — COMPUTED (verified) — MFC L590.
   Unary/affine forcing stalls; this gap4 cut leaves GC1007 S/L subsystem unchanged — COMPUTED / hand — GPT L584 follow-up.
@@ -165,7 +165,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Finite clamped-clock seed1001 has eternal train; fourteen-site band closes by causal P8 lock — PROOF-SKETCH — GC1020.
+- Finite clamped-clock seed1001 has eternal train; fourteen-site band closes by causal P8 lock — PROVED (second reads CL189, L595) — GC1020/W282.
 - Two-gap trains force a six-column slab; exterior interface is a white sample beside 0111 — PROOF-SKETCH — GC1017.
 - Train-interface gate has three failing prefixes; one-cycle eligibility is not invariant — PROOF-SKETCH / COMPUTED — GC1018.
 - Failed train gate reaches column 1 after eight ticks; seed 1001 reduces to 01 beside 0111 — PROOF-SKETCH — GC1019.
