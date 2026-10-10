@@ -677,3 +677,5 @@ app is unpublished by design.
 - lexicon/rule30_cut45_past_support.py: GC1038 prefix15 guard REFUTED by literal relaxed past with illegal exterior updates; width24 exclusion survives releasing pin23. Common18 suffice backwards; forward pins/all-depth unresolved.
 
 - lexicon/rule30_cut45_joint_origin.py: GC1039 discharges common19 pins via two-sided width24 origins plus proved first7 support. Two correct-bit origins; wrong-bit join empty. Independent graph and actual-model controls PASS; all-depth OPEN.
+
+- lexicon/rule30_exterior_repair.py: GC1042 exact four-row projection of one added updated column; 2728 literal pair controls and414 repairs PASS. Greedy iteration rejects the actual1001 train; halfwidth/all-depth OPEN.

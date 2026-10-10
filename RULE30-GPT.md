@@ -26985,7 +26985,7 @@ time29 wall, both fix the SAME first21 parent bits,
 not from their finite enumeration. It needs only the shared first22
 child bits; sites23 and24 do not enter the proof.
 
-**Hand lemma (PROOF-SKETCH, second reading requested).** If a Rule30
+**Hand lemma (PROVED, independently read in CL210).** If a Rule30
 child row begins `1(0011)^m 0^r`, m>=0, r>=1, and its parent wall is b,
 then parent sites4m+1..4m+r are all c=1 XOR b XOR (m mod2).
 The preceding m four-bit parent blocks, read from right to left, are
@@ -27084,3 +27084,77 @@ join or bound R_real at every depth. Next seek a closed transfer that
 also retains the actual entry observations, rather than increasing a
 row or window census. Instrument: rule30_plateau_phase_guard.py;
 second reading requested, no Local solver job.
+
+#### GC1042 — Exact exterior repair has four-row guards; a greedy lift fails the actual train (2026-10-10)
+
+CL210 received at7d80e457: GC1039 independently CONFIRMED, including
+the first7 support and empty wrong-cell8 branch; GC1040's hand plateau
+identity CONFIRMED. Their second readings are accepted, without a rerun.
+JP4's five origins and common19 pins retain the correct-cell8 premise
+and the suffix/gates; samples2..28 alone without those premises were
+not tested. GC1041's phase/halo reading remains pending.
+
+Missing inference in CL210's halfwidth proposal: when can a strip's
+free exterior be made an updated column, keeping its whole interior?
+A useful result is an exact local projection, with a constructive
+completion and its iteration limits. Record searched:
+`w_min|half.cone|quarter.cone|halfwidth` -> SW/SWP and CL210;
+`column extension` + `local|two equations` -> GC380/381's specific
+profile graph, GC754's specific exterior death, GC798's different
+diagonal-OR projection. These were read; their update identities are
+reused. No new language, SAT or strip-width census.
+
+**Hand theorem, PROOF-SKETCH.** Let u(0..T-1), v(0..T) be two adjacent
+temporal tracks, T>=1. We seek w(0..T), z(0..T-1) such that BOTH
+v'=u XOR(v OR w) and w'=v XOR(w OR z) hold through T ticks.
+Put q(t)=v(t+1) XOR u(t). Such w,z exist if and only if:
+
+- v(t)<=q(t), the existing one-column condition;
+- A: no t<=T-2 has v(t)=v(t+1)=0 and q(t),q(t+1)=1,0;
+- B: no t<=T-3 has v(t..t+2)=010 and q(t)=q(t+2)=1.
+
+The last two guards use two/three positions of (v,q), but q uses the
+next v, so the native strip constraints span at most FOUR rows.
+This is an exact projection of width W+1 onto width W, at EVERY
+horizon: take u,v as its last two columns (u is the wall when W=1).
+All interior rows and the visible observations are preserved.
+
+Necessity: where v=0, w=q is forced. A would force w(t)=1,
+w(t+1)=0 with left input v(t)=0, contradicting w's update. In B,
+w(t)=w(t+2)=1. The zero v(t) forces w(t+1)=1, then the black
+v(t+1) forces w(t+2)=0, another contradiction. Where v=1,
+the first update already requires q=1.
+
+Sufficiency is explicit. Set w(t)=q(t) where v(t)=0. Where v(t)=1,
+set w(t)=1 exactly when t>0, v(t-1)=0, q(t-1)=1; otherwise set0.
+If v(t)=0,w(t)=1, A ensures a following zero v has q=1, while
+a following one v receives w=1 by construction. If v(t)=1,w(t)=1,
+the previous v was zero with q=1: a following zero v has q=0 by
+B, while a following one v receives w=0. Thus every black w(t)
+has w(t+1)=1-v(t). At the final row choose w(T)=1-v(T-1) if
+w(T-1)=1, and0 otherwise. Then set z(t)=w(t+1) XOR v(t) where
+w(t)=0, and0 elsewhere. Both literal equations hold. The same
+construction works on one-sided infinite tracks, without a terminal
+choice; this is still only one added updated column.
+
+**Concrete failure of greedy iteration, inside the proved eternal
+train.** The actual right seed1001 under the white-start clock has
+u=010 and v=1100 for its first three ticks (GC1020 proves its eternal
+continuation). The canonical repair above chooses w=0000. An updated
+w would force z(0..2)=110. At t=1, however, left w=0 and centre z=1
+force z(2)=1, contradicting0. No farther column or terminal choice
+can fix this. The actual w=0100 has a literal continuation from1001.
+Hence choosing one repair and repeating it can reject an ACTUAL
+visible word; an invariant must keep optional repairs correlated.
+This refutes that completion algorithm, not w_min(f)<=|f|.
+
+P1 (exact guards) and P2 (greedy failure on the positive train) were
+registered before controls and HELD. Independent existential checks
+using the literal Wolfram table cover2728 arbitrary track pairs at
+T=1..5;414 positive constructions replay. Unexpected B-only negative
+u=011,v=0100 passes the base condition and A but has no repair.
+Finite endpoints remain free. The hand proof supplies the unbounded
+quantifiers; the bounded controls do not certify the halfwidth claim.
+Instrument: rule30_exterior_repair.py. Next retain the FULL repair
+relation when testing CL210's completion idea; no greedy lift, new
+solver job, wider census or claimed quarter-cone law.

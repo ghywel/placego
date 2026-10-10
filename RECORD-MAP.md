@@ -166,8 +166,9 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Clock selects parent plateau/halo; mature black100110 excluded, reset unnecessary — PROOF-SKETCH — GC1040/1041.
-- Cut45 common pins follow from joint entry/exit compatibility at width24; no SAT pin premise — COMPUTED — GC1039.
+- Plateau transfer PROVED (CL210); phase/halo pending — GC1040/1041.
+- Cut45 pins from width24 joint paths — COMPUTED, reviewed CL210 — GC1039.
+- Four-row exterior repair exact; greedy lift rejects actual train — PROOF-SKETCH — GC1042.
 - Cut45 backward guard uses common18 pins; prefix15 relaxation gives an illegal exterior trace — COMPUTED — GC1037/1038.
 - Cut45 common19 pins: final1 needs row30 sites16,20 both black; either white suffices — COMPUTED — GC1036.
 - CL204 repair checked: entry strip sets merge at59; identical future filters cannot recover distinction — COMPUTED / hand — GC1035.
