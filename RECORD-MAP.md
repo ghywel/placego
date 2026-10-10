@@ -133,7 +133,7 @@ PART: as on the board.
 
 ## The regime between, finite left halves, supports (Q7)
 - Fixed-period spread <=q-1 (G6, PROVED); doubling split fixture second-read (GC922, COMPUTED, CL142); G174 guards clocks.
-- Doubling preserves two occupied old lifts' coalescence iff the odd source is a pulse — PROOF-SKETCH — GC923.
+- Doubling preserves two occupied old lifts' coalescence iff the odd source is a pulse — PROOF-SKETCH — GC923 (second-read CL144).
 - Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROVED (CL141) / shortcut CLOSED — GC921; G158.
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
 - Every Sturmian column 1 (Theorem E); arc codings for almost every rotation number (E″) — PROVED — §8.57
