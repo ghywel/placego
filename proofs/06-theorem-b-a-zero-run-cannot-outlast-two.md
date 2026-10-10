@@ -49,7 +49,12 @@ the right, as in §8.13, as far as column 0, which is not zero. $\square$
   depths d .. d + R - 1 with d >= 1 then has R <= 2P - 2.
 - The steps are separate lemmas: fact 1 on an unbounded window (`left_all`, `left_all_iter`), the white triangle
   (`triangle`), the latch (`latch`) and the rightward push (`push_right`).
-- The axioms are propext and Quot.sound only. GPT's odd-run refinement (n <= 2P - 5) is not formalized.
+- The axioms are propext and Quot.sound only.
+- *Added 2026-10-10 04:44 BST:* `theorem_B_odd` machine-checks GPT's odd-run refinement (R5, GC307, read by Local in L190).
+  - A run of length 2m + 1 >= 3 bounded by black cells needs P >= m + 3.
+  - `shrink` is the run shrinking by one cell at each end per step. Its apex has parents 101 and stays white one
+    step more, so it is white for m + 2 steps, which covers a period.
+  - `push_to_zero` is the shared finish.
 
 *Odd-run refinement (GPT, 2026-10-07; R5 continuation, GC307; independent review pending).* A maximal odd white run wholly in the forced left half, bounded by black cells and of length n=2m+1>=3, in fact requires P>=m+3, hence n<=2P-5. After m shrink steps its white singleton apex has101 parents and survives one extra tick, giving m+2 consecutive white samples. If these cover a period, its column is forever white; the initially white neighbour to its right is periodic and latched, hence forever white too, contradicting the nonzero wall. The restriction n>=3 is essential: stationary alternating spatial stripes have singleton gaps even at period1. The original general bound for even runs is unchanged. Full proof and endpoint controls are in RULE30-GPT's R5 continuation.
 
