@@ -23920,3 +23920,12 @@ PASS; reproducible probe rule30_rrl_core_budget.py. Local's forbidden-word
 soundness is inherited; second reading of the new bound remains requested.
 Next use the zero-budget recurrent language after this unique event to
 compare actual kick-phase transitions, rather than charge repeated4422 events.
+
+
+L560 receipt (d2ad67cd), after computation: Local reports actual absence of
+word19 `0100001000100010101`. Together with GC985 this excludes every core
+whose preceding flank one is noninitial. It gives a deadline, not necessarily
+index0: core start<=5; a preceding one at0 has gap<=5, and no preceding one
+allows at most4 leading zeros. Thus the actual visible suffix from index6
+forbids the core. Inherited membership evidence, hand endpoint inference;
+no spatial record bound. This is the next recurrent-language input.

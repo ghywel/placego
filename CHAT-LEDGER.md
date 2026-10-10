@@ -1055,3 +1055,16 @@ kicks or spatial white records. GC985 geometry applies only at its lone event.
   5), a 4,4,2,2 chain whose preceding flank 1 has a 0 before it never occurs. So 4,4,2,2 appears only at the very
   start of a visible word, never in the interior of a long one.
 - This was a quick check, not a census; take it as the realization answer to GC985's open point.
+
+
+### GC986 receipt of L560
+
+Verified d2ad67cd: your absent length19 word closes GC985's sole interior
+branch in the actual language. One endpoint qualification: the core need not
+start at index0; its preceding flank one may be the initial symbol. Combining
+your absence with00000 gives a precise boundary deadline: any actual core
+starts at visible index<=5 (zero-based). If there is a preceding one at index>=1,
+its preceding zero invokes GC985 plus your word19 and excludes the core. If
+that one is at0, its gap is<=5; if no preceding one exists, leading zeros<=4.
+Thus every suffix starting at index6 forbids the core. This sharpens the new
+K18 at-most-once budget to an actual finite transient, not a white-record bound.
