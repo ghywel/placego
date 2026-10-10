@@ -15,6 +15,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMA
             python3 tests/probes/lexicon/rule30_cloud_train_block.py separator                (needs kissat, ~1 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py entrymemory              (needs kissat, ~10 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py past
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py joint                    (GC1039 second reading)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -143,6 +144,24 @@ nine-bit words (01101????, 01110????, 0111100??, 0111111ab with ab != 00), all b
 misses the target: over A' the pair (site 8, site 9) is never (1, 1), while every target word has it. After q the
 arming pattern (slab, sites 7 .. 9 = 011 at the k-th car's white tick) is realizable at every car 5 .. 16 except the
 ninth; after the prefixes 1000, 01000 and the empty prefix it is realizable at every car 5 .. 16.
+
+JOINT (mode joint; GPT's GC1039 second reading, CL210). Predictions written 2026-10-10 18:42 BST, before the mode's
+first run; GPT's script was run once (its printed counts seen: 581, 2, 4975, 0, two prefixes), my code is independent.
+Record searched: GC1039, CL207, CL198, "common pin", "joint".
+  JP1: from CL207's 581 suffix origins at t = 30 (first 8 sites 10011001, width 24, free exterior, samples to 86 and the
+       site-7 gates), the exact width-24 reverse to t = 0 under the whole entry, leading 0 included, leaves exactly 2
+       origins, equal at sites 1 .. 23 (10011001100110000000001) and differing at site 24 (0.85).
+  JP2: with first 8 sites 10011000 the forward suffix set has 4975 origins with a future and none has an entry past
+       (0.85).
+  JP3: the width-12 reverse from the slab 1001100 at t = 34 (five free sites) to t = 20 under the samples leaves exactly
+       the two first-8 patterns 10011000 and 10011001 at t = 30 (0.8).
+  JP4 (unexpected check): with only the leading 0 relaxed (t = 0 unconstrained, samples 2 .. 28 kept), at least 10 of
+       the 581 keep a past: the leading 0 does the work, as in GC1037 and CL207 (0.7).
+  Counterfactual: if GPT's label merging, parent enumeration or the gate at 62 were off, the counts differ from 2,
+  4975 and 0, or the prefix set differs from {10011000, 10011001}.
+  What a HELD JP1 .. JP3 gives: GC1039's inference (all 19 common pins, indeed sites 1 .. 23, follow from the entry,
+  the samples, the proved slab and gates in the width-24 free-exterior strip) is CONFIRMED by independent code; the
+  premises (GC1027's slab and gates; the gate at 62 from the first exit 0) are those already accepted in CL206 .. CL208.
 """
 import os, sys, time
 
@@ -680,6 +699,106 @@ def past():
               % (name, len(rows0), sum(r[0] == 0 for r in rows0), pk))
 
 
+def joint():
+    """GC1039's joint entry-and-exit relation (CL210), own code. Forward from t = 30 at width 24 with a free exterior
+    (first 8 sites fixed, 16 free), filtered by the 44-prefix's samples to t = 86 and the site-7 gates, then reversed
+    exactly through the kept layers to the origins with a future (CL207's 581); then those origins reversed to t = 0
+    under the whole entry, leading 0 included. Also the wrong-x8 branch, the width-12 slab support, and the
+    leading-0 relaxation as the unexpected check."""
+    import itertools
+    entry = '000010001010000'
+    word = entry + '10' * 10 + '001000010'
+    samples = {2 * k: int(c) for k, c in enumerate(word)}
+
+    def step_bits(bits, wall, ext):
+        r = (wall,) + bits + (ext,)
+        return tuple(r[i - 1] ^ (r[i] | r[i + 1]) for i in range(1, len(bits) + 1))
+
+    def parents(child, t, W):
+        out = set()
+        for a, b in itertools.product((0, 1), repeat=2):
+            p = [None] * (W + 2)
+            p[W], p[W + 1] = a, b
+            for i in range(W, 0, -1):
+                p[i - 1] = child[i - 1] ^ (p[i] | p[i + 1])
+            if p[0] == t % 2:
+                out.add(tuple(p[1:W + 1]))
+        return out
+
+    def keep(t, r):
+        if t in samples and r[0] != samples[t]:
+            return False
+        if t % 4 == 2 and 34 <= t <= 62 and r[6] != (1 if t == 62 else 0):
+            return False
+        return True
+
+    def origins_with_future(prefix, W=24):
+        head = tuple(int(c) for c in prefix)
+        layers = {30: {r for r in (head + x for x in itertools.product((0, 1), repeat=W - len(head))) if keep(30, r)}}
+        for t in range(30, 86):
+            layers[t + 1] = {s for r in layers[t] for e in (0, 1) for s in (step_bits(r, t % 2, e),) if keep(t + 1, s)}
+        cur = layers[86]
+        for t in range(85, 29, -1):
+            cur = {p for s in cur for p in parents(s, t, W) if p in layers[t]}
+        return cur, max(len(l) for l in layers.values())
+
+    def entry_pasts(origins, leading0=True, W=24):
+        src = sorted(origins)
+        rows = {r: 1 << i for i, r in enumerate(src)}
+        peak = len(rows)
+        for t in range(29, -1, -1):
+            nxt = {}
+            for child, m in rows.items():
+                for p in parents(child, t, W):
+                    if t % 2 == 0 and (t > 0 or leading0) and p[0] != int(entry[t // 2]):
+                        continue
+                    nxt[p] = nxt.get(p, 0) | m
+            rows, peak = nxt, max(peak, len(nxt))
+        alive = 0
+        for m in rows.values():
+            alive |= m
+        return [r for i, r in enumerate(src) if alive >> i & 1], len(rows), peak
+
+    def slab_support(W=12):
+        rows = {tuple(int(c) for c in '1001100') + x: 0 for x in itertools.product((0, 1), repeat=W - 7)}
+        peak = len(rows)
+        for t in range(33, 19, -1):
+            nxt = {}
+            for child, m in rows.items():
+                for p in parents(child, t, W):
+                    if t % 2 == 0 and p[0] != samples[t]:
+                        continue
+                    lab = (1 << sum(b << i for i, b in enumerate(p[:8]))) if t == 30 else m
+                    nxt[p] = nxt.get(p, 0) | lab
+            rows, peak = nxt, max(peak, len(nxt))
+        alive = 0
+        for m in rows.values():
+            alive |= m
+        return sorted(format(k, '08b')[::-1] for k in range(256) if alive >> k & 1), peak
+
+    def common(rows):
+        return ''.join(str(rows[0][i]) if all(r[i] == rows[0][i] for r in rows) else '?' for i in range(len(rows[0])))
+
+    o1, pk1 = origins_with_future('10011001')
+    print('first 8 = 10011001: origins with a future %d (CL207: 581), forward peak %d' % (len(o1), pk1))
+    j1, n0, pk = entry_pasts(o1)
+    print('  with an entry past, leading 0 included: %d, rows at t = 0 %d, past peak %d, common %s'
+          % (len(j1), n0, pk, common(j1) if j1 else '-'))
+    jp1 = len(j1) == 2 and common(j1) == '10011001100110000000001?'
+    print('JP1', 'HELD' if jp1 else 'REFUTED')
+    r1, n0r, pkr = entry_pasts(o1, leading0=False)
+    print('  unexpected check, leading 0 relaxed: %d origins keep a past (rows at t = 0 %d, peak %d), common %s'
+          % (len(r1), n0r, pkr, common(r1) if r1 else '-'))
+    print('JP4', 'HELD' if len(r1) >= 10 else 'REFUTED')
+    o0, pk0 = origins_with_future('10011000')
+    j0, _, pk = entry_pasts(o0)
+    print('first 8 = 10011000: origins with a future %d (GPT: 4975), with an entry past %d (GPT: 0), past peak %d'
+          % (len(o0), len(j0), pk))
+    print('JP2', 'HELD' if (len(o0), len(j0)) == (4975, 0) else 'REFUTED')
+    pats, pk = slab_support()
+    print('slab 1001100 at t = 34, width 12, back to t = 20: first-8 patterns at t = 30 %s, peak %d' % (pats, pk))
+    print('JP3', 'HELD' if pats == ['10011000', '10011001'] else 'REFUTED')
+
 
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
@@ -689,5 +808,5 @@ if __name__ == '__main__':
      'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16])),
      'follower': lambda: follower(*(a or [13])), 'carrier': carrier, 'packet': packet, 'arming': arming,
          'cut45': cut45,
-     'separator': separator, 'entrymemory': entrymemory, 'past': past}[cmd]()
+     'separator': separator, 'entrymemory': entrymemory, 'past': past, 'joint': joint}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
