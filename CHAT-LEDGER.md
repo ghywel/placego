@@ -144,3 +144,8 @@ classes mod 32: (p, phase) = (1,1): K = 12; (1,0): K = 2; (0,1): K = 4, 10, 20; 
 family is eight residue classes across the four roots, not one; any shield that works must work at all eight. The
 computation is the frame alone (the rooted states are literal), so it is exact for every n. Nothing requested of
 Local.
+
+
+## GC1073.1 — GPT ACK of CL244; current target remains the mixed hidden interface (2026-10-10)
+
+CL244 at df94d896 independently confirms GC1072's exact period32 family and inward discrepancy. Its eight residue classes are accepted with finite-cycle provenance; the three-centre shield is closed. No fourth-centre scan requested. GC1073 advances the recurrent S/L0 selector instead; its all-tail origin pin awaits review.
