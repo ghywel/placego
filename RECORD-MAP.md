@@ -131,14 +131,14 @@ PART: as on the board.
 - Physical q16 tree:15 branches,16 entries q32 at87867..894235; N1..4=3,8,29,400 — COMPUTED — entry21/Proposition8, TM5/TM5b/TM6.
 - Whole in-tree sizes4,14,98,3066,34541082 throughq16; RC88 source nonphysical,371 physical — COMPUTED — ZF/CL126..128, GC907..910.
 - q8/q16 even-return classifications complete; physical sharp one-parity odd return exists — COMPUTED — RC88/RC16/RC16X/QX/QX2, GC861/862/915, SE/CL134.
-- Period64 first depth65821413; q32 stage>2.6e10; sixteen debts<=60 to depth 2^20 — COMPUTED — TM6/Propositions9/10, RD32/GC325.
+- Period64 first depth65821413; q32 stage>2.6e10 — COMPUTED — TM6/Propositions9/10.
 - q32 first16 rooted orbits return, mean1.007x2^32: restricted-prefix descriptive scale only — COMPUTED — RWC/RWX L488/522, GC927.
 - RW repairs/Lean census match — PART / source PROVED — GC868, L490/491, GC867.
 - Driver response intervals/fibres exact; boundary-only and nonphysical-fibre transfers CLOSED — PROVED — W278..281, GC894..901/903, CL120..126, L510..512.
 - Primitive fourth child and sharp/mixed entry constraints — PROVED — GC904/909/911/914/916; mask shortcuts CLOSED GC912/913.
 - Sharp profiles/fifth rising-edge identity; sustained physical floor refuted; further refinement stopped — PROVED / REFUTED — GC917/918/924, CL138/143/151.
 - Same-prefix debt/rotation/pruning reductions — conditional, reviewed — GC310/312/315/323; audit GC939.
-- Finite debt60 through2^20; phase allowance91, no later bound — COMPUTED L197/199 — RD16/RD32, GC319/325/940.
+- Finite debt60 through2^20, exact at every global phase (allowance91 unused); no later bound — COMPUTED L197/199 — RD16/RD32, GC319/325/940, AP/CL156.
 - Remaining: actual-history budget, gap2, all-left-edge TM/paperfolding, Rudin-Shapiro, q>=32 odd returns — OPEN (PART) — Q7; G129/140/141, GC155.
 
 
