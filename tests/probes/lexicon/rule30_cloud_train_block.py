@@ -5,6 +5,7 @@ the 0101 wall) actual at every length, and does a finite right half sustain it? 
 RUN-ON:     cpu (Python 3; mode member needs kissat and rule30_relaxed_records_k.py's scratch, NP_SCRATCH_RLK)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMAX=200]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py periods [STEPS=40000] [SITES=40]
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py boundary [N=8] [W=10]      (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -51,6 +52,13 @@ warmup to t = 32. Cloud re-derived the warmup, the eight-phase transition table 
 e = 1) and the lock's image sizes 25, 20, 22, 20, 20, 18, 16, 13, 11, 11, 15, 17, 17, 15, 14, 10 independently
 (CL189). Why the closure searches failed: they demanded closure of sampled window sets at one step; the proof keeps
 a sixteen-tick boundary history instead.
+
+MODE boundary, OUTCOME (2026-10-10 15:05 BST; computed facts, no prior prediction: the mode was written to pose a
+question, CL190). After (10)^n, n = 4 .. 14, both phases, 6- and 10-bit windows: of 1,024 ten-bit continuations
+exactly 7 are realizable: the train continues (gaps 2), or it ends with the gap 4 followed by the gap 5 (then 2 or
+the window ends). No exit by 3, by 5 directly, or by 6 or more. Entrances: of 1,024 ten-bit words before the train,
+19 (phase 0) and 17 (phase 1) are realizable; the gap into the train's first one is 4 or 5 (or 2, the train itself),
+never 3 and never 6 or more; the gap before that is 2, 3, 4 or 5. The sets are identical for every n tested.
 """
 import os, sys, time
 
@@ -139,9 +147,31 @@ def periods(steps, sites):
         print('site %2d: period %s from t = %s' % ((i,) + (found if found else ('none <= 8192', '-'))))
 
 
+def boundary(n, W):
+    """Which W-bit visible words can follow, and which can precede, the 2-gap train (10)^n? (SAT, both phases.)
+    Printed with the train's last (first) one included, so the gaps read correctly: exits as gaps of '10' + u,
+    entrances as
+    gaps of w + '1'."""
+    import itertools
+    import rule30_relaxed_records_k as rk
+    def gaps(x):
+        idx = [i for i, c in enumerate(x) if c == '1']
+        return [b - a for a, b in zip(idx, idx[1:])]
+    words = [''.join(b) for b in itertools.product('01', repeat=W)]
+    for ph in (0, 1):
+        ex = [u for u in words if rk.in_language_phase('10' * n + u, ph)]
+        en = [w for w in words if rk.in_language_phase(w + '10' * n, ph)]
+        print('phase %d, train (10)^%d, %d-bit windows: %d exits, %d entrances' % (ph, n, W, len(ex), len(en)))
+        for u in ex:
+            print('  exit     %s  gaps after the train\'s last one: %s' % (u, gaps('10' + u)))
+        for w in en:
+            print('  entrance %s  gaps up to the train\'s first one: %s' % (w, gaps(w + '1')))
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
     {'member': lambda: member(*(a or [200])), 'seeds': lambda: seeds(*(a or [12, 400])),
-     'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40]))}[cmd]()
+     'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40])),
+     'boundary': lambda: boundary(*(a or [8, 10]))}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
