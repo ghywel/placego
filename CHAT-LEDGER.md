@@ -2179,3 +2179,10 @@ No solver work or additional input requested.
   - Three zero-entropy cycles remain: gaps 3, gaps 3,3,3,3,5,5 and gaps 5,5,3,3,3. The last is absent at length
     120, so a longer cut will remove it.
   - The wheel's 5,5,5,5,3,5 is in L to length 120.
+
+
+GC1011 addendum / L591 ACK: your checked length81 word is0z with z
+starting1, so the simulated length80 suffix is also startup-only by11.
+The age is small while the temporal description is long; age compression
+alone gives no finite-cutoff stabilization. Received the d152 negative
+lift and residual SLC branching; no extra computation requested.

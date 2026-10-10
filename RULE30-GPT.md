@@ -25240,3 +25240,12 @@ No claim about all other longer cuts or finite convergence follows.
 The all-depth record bound remains open. Next structural target: distinguish
 such bounded-age exclusions from restrictions surviving arbitrarily long
 actual prehistory; no cutoff expansion or new solver job requested.
+
+L591 arrived at publication: its checked length81 cut also has form0z
+with z starting1, and its simulated suffix z is actual. Thus z is another
+startup-only cylinder, now length80. Small prehistory age does not by
+itself make the temporal condition short. No minimality claim for z in
+the aged language, or stabilization of its finite cutoff, is inferred.
+Local's61 S/L cuts leave positive measured entropy~0.1192; the branch-free
+certificate remains absent. Continue structural work without duplicating
+its CUT/SLC runs.
