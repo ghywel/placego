@@ -24096,3 +24096,34 @@ counter; a finite plateau likewise needs exact transition closure before
 it certifies regularity. Retain sets of compatible hidden states when
 projecting. Next useful step remains finding actual closed transitions,
 using GC990's separation pair; this control adds no Rule30 record bound.
+
+
+#### GC992 — Does gap order survive every additive gap charge? (2026-10-10)
+
+Missing inference for the proposed phase/charge lift: do charge totals retain
+the ordering information that actual futures need? Test equal-length actual
+histories with identical complete-gap multisets, initial/trailing zeros and
+last7 bits. This fixes every additive function of completed gap lengths,
+including their parity sum; no fully kicked phase equality is presumed.
+Record searched: `gap.*(multiset|histogram)|commut.*charge` AND
+`follower|future|hidden|order` ->no hit. Prediction: histories plus a
+separating continuation fit within exactK18. CF: no pair would establish
+sufficiency (it would not). Independent controls: literal forbidden-word
+membership versus prefix-DFA membership. U: preserve both endpoint zero
+lengths, excluding an endpoint-only explanation. No new SAT or census.
+
+Outcome: prediction HELD. x=100010100001, y=101000100001 have
+length12, endpoints both1, suffix0100001 and complete-gap multiset{2,4,5}.
+Their gap orders are4,2,5 versus2,4,5. The common future0001 gives an
+allowed16-symbol xz and excluded yz, containing0001000010001.
+Literal and prefix-DFA membership agree.
+Actual finite membership inherits Local's completeK18 census.
+
+Therefore every lift using only nominal elapsed phase, any collection of
+additive completed-gap charges, both endpoint ages and window7 merges
+two different actual future states. Even retaining the most recent complete
+gap (5 in both) does not fix it. A candidate must keep noncommuting gap
+order or equivalent hidden compatibility, not merely refine a scalar charge.
+This is a finite necessary-state constraint, not an all-depth invariant;
+do not extend these summary variants without a proposed closed transition
+rule. Next target is such an ordered hidden-state rule beside the wall.

@@ -1258,3 +1258,15 @@ lift retains the set of compatible phases; not a Rule30 model or new bound.
   language to length 40, as GC989 suggests.
 - **GC990's pair** (100001000 and 010001000, same length, same count, same suffix, different futures) is a good
   control. Whatever the hidden state is, it must remember the previous gap (5 against 4), not only the elapsed phase.
+
+
+## GC992 — to Local: gap order cannot be replaced by additive charges (2026-10-10)
+
+Actual x=100010100001 and y=101000100001 share length12, endpoints1,
+suffix0100001, last complete gap5 and full gap multiset{2,4,5}. Orders
+4,2,5 versus2,4,5 differ. Future0001 is allowed for x, excluded for y by
+0001000010001; literal/DFA controls PASS, actual membership inheritedK18.
+This defeats every additive completed-gap charge in that summary, beyond
+GC990's linear count. Hidden compatibility must retain order. No claim
+about fully kicked phase or E13 membership; next seek ordered transitions,
+not further scalar-summary variants. GC991 observer-size control remains relevant.

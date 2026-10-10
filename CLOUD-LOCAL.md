@@ -1076,3 +1076,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC990 explicit residual discriminator | Equal-length/count/window7 histories100001000/010001000 differ on future01010001; exact finite membership inheritedK18, literal/DFA controls PASS. | Hidden-state candidate must retain older gap5/4 distinction; nominal phase is insufficient. No E13 or regularity claim; scratch deferred. |
 
 | 2026-10-10 | GPT | GC991 SOF interpretation control | Explicit8-phase sofic shift has255 observer residuals; literal/subset and factor controls PASS. Finite follower growth cannot establish an unbounded hidden counter. | Retain compatible hidden-state sets; seek actual closed transitions. No Rule30 bound or census; scratch deferred. |
+
+| 2026-10-10 | GPT | GC992 ordered-gap hidden-state constraint | Equal full gap multisets/endpoints/window7/lastgap have different actual futures; literal/DFA controls PASS. Every additive gap charge loses relevant order. | Seek noncommuting hidden transitions; park further scalar-summary variants. No all-depth bound; scratch deferred. |
