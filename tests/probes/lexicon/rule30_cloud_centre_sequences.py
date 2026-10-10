@@ -52,6 +52,18 @@ OUTCOME, 2026-10-10 07:18 BST (first run, WMAX = 13, then WMAX = 18; horizon 70;
 ADDENDUM, written 2026-10-10 07:23 BST before running it: the open case itself, the word 01 (0, 1, 0, 1, ...).
   CS-P3 (blind): the best prefix of 01 by total width w = 1 .. 18 exceeds w by at most +10 (section 8.42 found +9 for
         01 by exact right width, and section 8.24 at most +9 beyond the total width for right halves up to 32 cells).
+OUTCOME of the addendum, 2026-10-10 07:23 BST (one run of this filed script, WMAX = 18, 17 s). The earlier rows were
+  reproduced exactly (CS-C0, CS-C1, CS-P1, CS-P2 as above), and 01 is built exactly with 88 black squares of 200.
+  CS-P3 HELD: the best prefix of 01 by width is 0, 7, 7, 7, 7, 7, 7, 9, 10, 15, 15, 15, 15, 15, 16, 17, 18, 18 for
+  w = 1 .. 18, a largest excess of +5 (at w = 2 and w = 10). In these numbers the open case looks like every other
+  target: about one step per square.
+
+ADDENDUM 2, written 2026-10-10 07:28 BST before running it (the owner: "What about digits of pi?"): pi in binary,
+  11.0010010000111111..., read from its first bit (the integer part 11, then the fractional bits), computed exactly by
+  Machin's formula in integer arithmetic.
+  CS-C2 (control): the first 64 fractional bits equal the hexadecimal digits 243F6A8885A308D3 (pi's well-known
+        expansion), and the construction builds pi exactly for 200 steps.
+  CS-P4 (blind): pi's best prefix by total width w = 1 .. 18 exceeds w by at most +10, like every other word.
 """
 import sys
 
@@ -94,7 +106,25 @@ def targets():
         single.append((x >> off) & 1)
         x = step(x)
     return {"primes": primes(N), "fib positions": [1 if t in fibs else 0 for t in range(N)],
-            "fib parity": par, "01": [t % 2 for t in range(N)], "single cell": single}
+            "fib parity": par, "01": [t % 2 for t in range(N)], "pi": pi_bits(N), "single cell": single}
+
+
+def pi_bits(n):                             # pi in binary from its first bit, exactly (Machin's formula)
+    prec = n + 32
+    one = 1 << prec
+
+    def atan_inv(x):                        # atan(1/x) * 2^prec
+        total, term, k, x2 = 0, one // x, 0, x * x
+        while term:
+            total += term // (2 * k + 1) if k % 2 == 0 else -(term // (2 * k + 1))
+            term //= x2
+            k += 1
+        return total
+    v = 16 * atan_inv(5) - 4 * atan_inv(239)          # pi * 2^prec
+    bits = bin(v)[2:]                                 # '11' then the fractional bits
+    frac64 = int(bits[2:66], 2)
+    assert f"{frac64:016X}" == "243F6A8885A308D3", "pi bits wrong"   # CS-C2
+    return [int(c) for c in bits[:n]]
 
 
 def construct(tg):                          # right half white; square -t chosen so the centre is right at time t
@@ -134,11 +164,11 @@ def main():
         x0, off = construct(tg)
         ok = centre_run(x0, off, tg, N) == N
         print(f"{name:14s} built for {N} steps: {'exact' if ok else 'FAILED'}; black squares: {bin(x0).count('1')}")
-    names = ["primes", "fib positions", "fib parity", "01", "single cell"]
+    names = ["primes", "fib positions", "fib parity", "01", "pi", "single cell"]
     print(f"best prefix held by any start of total width w (horizon {H}):")
     print("  w  " + "  ".join(f"{n:>13s}" for n in names))
     rows = best_by_width(names, tgs, wmax)
-    for n in names[:4]:
+    for n in names[:5]:
         print(f"{n:14s} largest excess over w: {max(b[n] - w for w, b in rows):+d}")
 
 
