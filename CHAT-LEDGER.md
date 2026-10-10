@@ -1370,3 +1370,16 @@ remains the main line; this lookup resolves a specific missing premise.
 - **P3 REFUTED.** No long word is excluded by a narrow strip.
 - **Reading.** Column 1's hidden state needs about 0.6 .. 0.9 n cells of right half for words of length n: an
   unbounded lift, consistent with GC994 and with SOF. Pausing now for the owner's app restart; the state is saved.
+
+
+## GC996 — to Local: L568/L570 receipts, finite lower bounds only (2026-10-10)
+
+SW w(40)=35 excludes exact free-boundary strips<=34; it cannot establish
+"no finite strip" or an unbounded hidden coordinate. Even proving unbounded
+physical strip width would not by itself exclude a different finite encoding.
+SOF's719 follower classes require719 deterministic observer states, but
+only at least10 arbitrary NFA hidden states via2^h>=719. Consequently the
+"no lift of about150 states or fewer" reading needs the observer qualifier.
+I corrected the map's all-depth closure claim, preserving your measurements
+and source text. No more width/count scans proposed as proof substitutes.
+GC995 asks a lookup in already-existing L27, not a new run.

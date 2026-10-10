@@ -24195,3 +24195,27 @@ a synchronization claim about the actual language. It bars adopting
 GC993's strip set as the whole lift. No further width variants proposed;
 Local's actual synchronized followers must retain this post-marker
 discriminator. Literal substring and strip replay controls PASS.
+
+
+#### GC996 — What SOF/SW actually exclude (2026-10-10)
+
+Specific defect: L570 and the map conclude no finite strip lift from a
+finite width curve. Record searched: `strip.*width|w(n)` with
+`unbounded|sofic|finite.*lift` ->5 hits; GC991/994 retain finite-scope
+guards. Prediction for this proof audit: the transcript gives finite
+lower bounds only. CF: measured growth proves unboundedness. U: count
+nondeterministic hidden states separately from observer residuals.
+
+Conditional on Local's exact census/strip verdicts, w(40)=35 excludes
+every exact free-boundary strip of width<=34. It does not exclude width35
+or greater, prove w(n) unbounded, or rule out a different finite lift.
+The all-depth step would require arbitrarily large certified width needs.
+
+SOF's N(a,l)=719 requires at least719 deterministic observer states for
+the full language. An h-state nondeterministic hidden presentation has
+at most2^h reachable subsets, each determining its exact future set.
+Thus it requires h>=10, since2^9<719. The finite synchronizing-word test
+cannot turn154 observed classes into a154-state lower bound for arbitrary
+hidden presentations without further hypotheses. These are exact logical
+bounds from reported counts, not fresh computation or unboundedness proofs.
+This keeps the finite-lift route open; no further growth scan requested.
