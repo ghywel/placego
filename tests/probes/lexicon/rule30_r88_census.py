@@ -135,6 +135,13 @@ RWX (registered 2026-10-10 01:54 BST, before running; the one q = 32 orbit of th
   RWX-P1 (blind, confidence 0.7): 0037 returns before 10^11 steps.
   RWX-P2 (blind, confidence 0.5): its depth is below 5 x 10^10, so the sixteen depths stay within about 12 x 2^32.
   RWX-C1 (control, must hold): the same binary reproduces 0031's 45,059,052 before the long run.
+RWX OUTCOME, 2026-10-10 02:35 BST (M5, one process at nice 10 beside RR3, about 40 minutes; run at commit of the RWX
+  registration): RWX-C1 PASS, RWX-P1 HELD, RWX-P2 HELD.
+  - 0037 returns at depth 20,330,631,207, just past the earlier 2 x 10^10 cap (4.73 x 2^32). It keeps at most two live
+    states.
+  - So all 16 of q = 32's first orbits return, as PROOFS.md entry 39 requires. Their depths over 2^32 have mean 1.007,
+    median 0.651, minimum 0.0105 and maximum 4.73. That matches the chain-counting reading above: mean chain length at
+    most 4^q / (2^q - 1), about 2^q.
 """
 import sys
 
