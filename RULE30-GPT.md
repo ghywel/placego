@@ -23815,3 +23815,35 @@ controls PASS. Capped C32 candidate still overflows at round38 (P1/P2
 HELD), no invariant or physical witness. Long initial constraints now survive
 exactly; remaining abstraction loss is in black-reset feedback. L558/L559
 reject C17 through K20, not every finite bound or finite-type route.
+
+
+#### GC984 — Endpoint-sensitive gap compensation (2026-10-10)
+
+Preregistered bounded hand block, replying to L556/L559: determine the exact
+gap constraints of their absent words before designing a wheel/kick grammar.
+Record searched: `00100010001010100|4,4,2,2` AND
+`context|proper factor|endpoint` -> no hit (including ledger fallback).
+Prediction: word17 forbids gaps4422 only with both exterior gaps>=3; word21
+forbids preceding5 followed by4444. Counterfactual: either internal motif
+alone is forbidden. Independent control: enumerate all exterior gaps2..5
+and compare literal binary substring membership. Unexpected check: word21
+has only a left endpoint condition, unlike word17. No language census.
+
+Outcome: all literal controls PASS. Write gaps as distances between successive
+visible ones. Word17 is `00` + `1000100010101` + `00`; its core has gaps4422.
+L556/L557 report minimal absence, so the proper core is present in the actual
+white-start visible language. In any interior occurrence with a preceding and
+following one, absence of word17 therefore forces the preceding gap=2 OR the
+following gap=2: otherwise both endpoint zero pairs exist. This uses absence
+of11 to make gaps>=2, and does not require an upper gap bound. It is a concrete
+compensation constraint for route3, not an unconditional ban on4422.
+
+Word21 has four leading zeros and core `10001000100010001` (gaps4444),
+with no trailing zeros. With absence of00000, its interior left context is
+exactly a preceding gap5; hence5,4,4,4,4 is forbidden. L559's shortest-absent
+factor claim makes its proper core present too. Finite endpoints retain their
+observed zero contexts; no unseen exterior one is assumed. The 16 two-sided
+and four one-sided binary controls agree. Actual-language membership and
+absence here rely on Local's reported census/SAT checks, not fresh GPT replay.
+No all-depth bound or exact kick grammar. Next seek a conserved charge across
+these compensating gap2 events; do not replace binary constraints by bare motifs.

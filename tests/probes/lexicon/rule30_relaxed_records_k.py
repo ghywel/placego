@@ -45,6 +45,30 @@ PREDICTIONS (Local's, pushed before any run of this script):
   for the relaxed system and a certificate of boundedness. If it climbs, lookahead 16 is insufficient. By GC549.21 a
   climb at fixed K does not prove the obstruction is not of finite type; it says the forbidden words that matter are
   longer than K, and K = 18 is the next step.
+OUTCOME, 2026-10-10 07:31 BST (M5; the K = 16 language took 40 s on 3 threads, K = 18 2,167 s on one; most SAT calls take seconds,
+  a few minutes by d = 85). C1, C2 and C3 PASS; P1, P2 and P3 HELD. The K = 18 extension (L557) gave P4, P4b and P5
+  HELD, and L558's gap-length prediction REFUTED.
+  - C1. C_1..18 = 2, 3, 5, 8, 12, 17, 25, 36, 50, 68, 91, 119, 156, 199, 251, 316, 393, 487. RRL's seven words and
+    its gap word are in the list.
+  - C2. RRL's relax10 records are reproduced at d = 21 .. 33.
+  - C3. No relaxed record falls below the actual R_real (K = 16 or 18). relax18 <= relax16 everywhere.
+  - The 25 minimal forbidden words up to length 18 (21 up to length 16; at most 3 of any one length, so P3 HELD):
+      11 00000 101001 0100101 010010001 0101000101 0101010000 01010001001 10010001001 010010000101 010100010001
+      100100010000 0001000010001 1001000010001 00100010000101 01000010001001 10101000010000 001000100001001
+      010000100010000 0101000010000101 1000100001010001 00100010001010100 001000010001010100 010000101000010001
+      010001000100010101
+  - P2: relax16 equals the actual R_real at every d <= 31 (d <= 19 by RRL's relax10 = actual and actual <= relax16 <=
+    relax10).
+  - P1: relax16 first exceeds 17 at d = 65 (phase 1, 18). It reaches at least 19 at d = 75 and d = 84.
+  - P4: relax18 = relax16 except at d = 65 .. 69. P4b: relax18 is 17 at d = 75. P5: relax18 first exceeds 17 at
+    d = 84 (at least 19, against an actual 13).
+  - Gap witnesses (`gap`):
+    - K = 16, d = 75: shortest absent factor of length 17, 00100010001010100 (gaps 4,4,2,2). Unregistered.
+    - K = 18, d = 84: length 21, 000010001000100010001 (gaps 5,4,4,4,4). L558 predicted 19 or 20: REFUTED.
+  - Reading (L559). Each longer list moves the first excess past 17 deeper (about 40 to 50 at K = 10, 65 at K = 16, 84
+    at K = 18), and the missing word sits just beyond the list each time. It is a moving frontier, not a finite list
+    that closes. Per GC549.21 this does not exclude every finite-type certificate. GC984 adds the 4,4,2,2 endpoint
+    rule: the core is allowed, and only a chain with no 2-gap on either side is forbidden.
 """
 import os
 import re
