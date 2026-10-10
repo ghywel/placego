@@ -170,23 +170,22 @@ PART: as on the board.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45 joint pins, width24 — COMPUTED CL210 — GC1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
-- Mixed S/L collar; L0 fifth-track selector, pair transport — PROOF-SKETCH — GC1046/1047.
-- Cut45 backward guard needs18 pins; prefix15 loses exterior consistency — COMPUTED — GC1037/1038.
-- Cut45 common19 pins: final1 needs black sites16,20 — COMPUTED — GC1036.
+- S/L collar, fifth-track selector/pair transport — PROOF-SKETCH — GC1046/1047.
+- Cut45 guard:18 pins suffice; prefix15 misses exterior — COMPUTED — GC1037/1038.
+- Cut45 final1 needs black16,20 under common19 — COMPUTED — GC1036.
 - CL204 merger59 survives future filters — COMPUTED / hand — GC1035.
-- CL198 pinned24 strip permits both outputs at time96 under arbitrary exterior; reset candidate stopped — COMPUTED — GC1034.
-- Packet pair x7=0,x8=1 blocks final1; origin open — PROOF-SKETCH — GC1032.
-- Whole-run cone depends on d+L; C>=2 shortcut fails — scope correction — GC1031.
-- Row1001000 transports NOT(site8) after13 ticks, both phases — PROOF-SKETCH — GC1030.
-- Cut45 unary/pair stalled; joint strip discharges pins — COMPUTED — GC1029/1039.
-- Final exit1 needs row0110000 after7 ticks; converse false — PROOF-SKETCH — GC1029.
-- Cutoff40 target parked; cut45 final bit needs three states — PROOF-SKETCH — GC1028/1029.
+- Pinned24/free exterior branches at96; reset stopped — COMPUTED — GC1034.
+- Pair x7=0,x8=1 bars final1; origin open — PROOF-SKETCH — GC1032.
+- Whole-run cone uses d+L; C>=2 shortcut fails — scope — GC1031.
+- Row1001000 delays NOT(site8) by13 ticks, both phases — PROOF-SKETCH — GC1030.
+- Cut45 final1 needs row0110000 after7; converse false, three states — PROOF-SKETCH — GC1028/1029.
+- Unary/pair stalls; joint strip fixes pins; cutoff40 parked — COMPUTED / hand — GC1028/1029/1039.
 - Penultimate-car gate decides train exit; seven-cell packet forces following4,5 — PROOF-SKETCH — GC1026/1027/W283.
-- L596 train breaks under all45 tested early bit changes; mutation diagnostic stopped — COMPUTED — GC1025.
-- CUT witnesses separate actual train followers; conditioned sets can lose then regain a future — hand, inherited evidence — GC1024.
+- All45 early train mutations break; diagnostic stopped — COMPUTED — GC1025.
+- Actual CUT followers separate; conditioned forgetting can reverse — hand / evidence — GC1024.
 - Train exits4,5 follow short absences; entrance3 occurs only at startup, with finite witness — hand / COMPUTED — GC1023.
-- Five-cell train returns can violate exterior updates while sharing an actual visible output — COMPUTED / hand — GC1022.
-- Shifted known train escape survives through100; no transport or eternal-healing theorem — MEASURED — GC1021.
+- Same visible train can hide invalid exterior updates — COMPUTED / hand — GC1022.
+- Shifted escape through100; transport and eternal healing open — MEASURED — GC1021.
 - Finite clamped-clock seed1001 has eternal train; fourteen-site band closes by causal P8 lock — PROVED (CL189, L595) — GC1020/G282.
 - Two-gap trains force a six-column slab; exterior interface is a white sample beside 0111 — PROOF-SKETCH — GC1017.
 - Train-interface gate has three failing prefixes; one-cycle eligibility is not invariant — PROOF-SKETCH / COMPUTED — GC1018.
