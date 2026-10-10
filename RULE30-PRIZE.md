@@ -5578,7 +5578,8 @@ survival histograms, and all 596 stored maximisers to 72 re-simulate; the $u(10)
 rerun end to end (a gap, not a refutation); the per-step survival ratios at $m = 56$ stray to $0.494 .. 0.506$.*
 
 
-### 8.85 The 1100 wall to depth 100: the record stays small, the lock structure of column 1, no proof (swarm lane q4, graded; 2026-10-10)
+### 8.85 The 1100 wall to depth 100: the record stays small, the lock structure of column 1, no proof (swarm lane q4,
+graded; 2026-10-10)
 
 *Lane q4 (independent agent) was given the period-4 wall 1100 and its four rotations, with the record $R'(3..22)$ from
 KIMI-QUESTIONS-2.md as calibration. Graded by Cloud 21:57 BST; its skeptic is running. Prior work in the record: the
@@ -5587,7 +5588,8 @@ three games of §8.40 for words to period 4, the parked Condrey ends, and Cloud'
 **Computed.** $R'(3..22)$ reproduced exactly by three methods (a C depth-first search, a numpy brute force, its own SAT
 encoding); then $R'(1..100)$ exactly: 6, 5, 7, 6, 5, 6, 6, 5, 4, 6, 5, 5, 6, 7, 6, 5, 6, 7, 11, 10, 9, 8, 7, 8, 7, 6, 7,
 6, 9, 8, 11, 10, 9, 8, 7, 14, 13, 12, 11, 10, 9, 10, 9, 8, 7, 6, 11, 12, 11, 12, 11, 10, 10, 9, 10, 9, 10, 12, 11, 10,
-10, 12, 11, 10, 9, 11, 10, 12, 12, 11, 11, 11, 10, 12, 11, 11, 13, 12, 12, 11, 10, 9, 11, 10, 15, 14, 14, 13, 12, 15, 15,
+10, 12, 11, 10, 9, 11, 10, 12, 12, 11, 11, 11, 10, 12, 11, 11, 13, 12, 12, 11, 10, 9, 11, 10, 15, 14, 14, 13, 12, 15,
+15,
 14, 13, 12, 11, 13, 13, 12, 18, 17: the maximum to depth 100 is 18, at 99. Cloud: $R'(1..5)$ by own brute force agrees.
 So (PROVED from the computation and a monotonicity lemma) **no configuration that is zero on all of $i \le -100$ at
 time 0 keeps any rotation of 1100 at column 0 for ever**: the period-4 word is settled for every left-finite
@@ -5612,7 +5614,8 @@ against 0.4 free bits make long survival exponentially rare. The lane's next ste
 against the 1001/1011 blocks of column 1, is the one structural lead it offers.
 
 
-### 8.86 Is the right-half language sofic? Evidence against, a certified entropy ceiling, and a death criterion (swarm lane q5, graded; 2026-10-10)
+### 8.86 Is the right-half language sofic? Evidence against, a certified entropy ceiling, and a death criterion
+(swarm lane q5, graded; 2026-10-10)
 
 *Lane q5 (independent agent) was asked whether the visible language $L$ of right halves beside the wall is sofic.
 Graded by Cloud 21:57 BST; its skeptic is running. Prior work: §8.20's TC2 ($|L_n|$ to 39, the minimal forbidden
@@ -5638,7 +5641,8 @@ no bounded suffix determines the follower set (the first symbol of a length-23 w
 classes form no consistent automaton for any $K \le 10$. Words die at visible times 0 to 16, none of length at most
 12 after 16 up to the horizons reached: the death criterion was neither triggered nor ruled out.
 
-**Conjectured.** $L$ is not sofic. **Not proved**, and the lane says why: a non-regularity proof needs an infinite family
+**Conjectured.** $L$ is not sofic. **Not proved**, and the lane says why: a non-regularity proof needs an infinite
+family
 with membership proved for all lengths, and the two candidate families found carry bounded memory. **What it
 means.** If $L$ were sofic, the period-2 question for left-finite configurations would be a finite-automaton check;
 the evidence says it is not, so the real record's finiteness will not come from a finite-state description of column 1
