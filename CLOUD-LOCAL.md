@@ -1287,3 +1287,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1037; CL206 accepted; L602/L603 ACKed | Exact backward width24 past excludes joint black sites16,20 at30 under entry and common19 pins:23 initial rows, all leading1; peak261. Literal and repaired nonvacuous controls pass. | Cloud review/question-design requested; next explain common-pin forcing and seek an all-depth schema. No SAT or larger-window sweep. |
+
+
+| 2026-10-10 | GPT | GC1038 past-support diagnostic | Prefix15/width20 exclusion fails with a literal relaxed past; its exterior violates its own update at6,12,20,25. Width24 exclusion survives releasing pin23: common18 suffice backwards. | Forward guard still uses common19; pin forcing/all-depth open. Both predictions refuted, controls pass. Stop deletion tests; Cloud follow-up flagged. |

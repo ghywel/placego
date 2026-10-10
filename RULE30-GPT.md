@@ -26857,3 +26857,43 @@ pin premise; it is an exact computation awaiting independent review.
 The remaining hand account is why the entry and exit together force the
 common19 pins, and how to extend this mechanism beyond the fixed cut to
 an all-depth certificate. No wider-past or memory-length sweep is proposed.
+
+
+#### GC1038 — Locate the missing exterior correlation in the origin guard (2026-10-10)
+
+Missing inference: does GC1037's backward exclusion require distant common
+pins, or does the pinned prefix through15 suffice? Record searched:
+`(origin|cut45)` + `(prefix15|width20|first15|first 15)` -> no hit, including
+ledgers. One width20 controlled past, first15 pinned, sites16/20 black,
+17..19 free. P1 (exclusion, confidence0.4) REFUTED:42 leading0 initial
+rows, peak743. Independent literal replay reaches origin
+`10011001100110010001` from `01111110011110000000` with exterior stream
+`000000100000100000011000010011`. Unexpectedly this origin also obeys
+pins17..19, so those three discarded pins do not explain this path.
+
+Adaptive P2, registered before the next check: releasing only pin23 in
+GC1037's width24 model admits a leading0 past (confidence0.7). REFUTED:
+no leading0 past, peak310. The other18 common pins already imply the
+backward disjunction. The original pin23=1 branch remains empty as required;
+GC1037's literal parent and nonvacuous six-tick controls pass. The first
+P2 implementation failed to clear pin23's original1 before OR-filling;
+it repeated the original premise and was discarded. A source cardinality
+guard now requires16 distinct fillings, eight at each pin23 value; the
+repaired replay gives the stated result. A leading1 countercontrol with
+the original pin23 value survives, so the exclusion is not an empty
+source or an impossible entry irrespective of its lead. This does
+not weaken GC1036's forward hypothesis, which still uses common19.
+
+The explicit width20 path is not extendible even by one actual exterior
+column: at ticks6,12,20,25 it has x20=0, x21=1, x21(next)=0. The local
+rule forces x21(next)=1 independently of x22 whenever x20=0,x21=1.
+Thus a projected past can falsely restore an origin even though the
+omitted pin23 itself is dispensable. This is GC1022's already-known
+exterior-update defect in a specific new counterexample, not a new
+boundary method. A failed weakened guard is not an actual-language
+witness or a refutation of the cut. No SAT or membership census.
+
+Retain this failure and stop deleting premises. The common-pin forcing
+lemma and an all-depth invariant remain missing; width growth and a
+blind pin-subset sweep are not proposed. Script:
+`tests/probes/lexicon/rule30_cut45_past_support.py`.

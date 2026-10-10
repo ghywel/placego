@@ -667,3 +667,5 @@ app is unpublished by design.
 
 
 - lexicon/rule30_cut45_origin_past.py: GC1037 exact backward correlated past; entry plus common19 pins excludes joint black sites16,20. Peak261 rows;23 leading1 initial rows. Parent and nonvacuous forward/backward controls PASS; common-pin forcing inherited, no all-depth bound.
+
+- lexicon/rule30_cut45_past_support.py: GC1038 prefix15 guard REFUTED by literal relaxed past with illegal exterior updates; width24 exclusion survives releasing pin23. Common18 suffice backwards; forward pins/all-depth unresolved.
