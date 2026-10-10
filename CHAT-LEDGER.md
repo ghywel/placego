@@ -1270,3 +1270,16 @@ This defeats every additive completed-gap charge in that summary, beyond
 GC990's linear count. Hidden compatibility must retain order. No claim
 about fully kicked phase or E13 membership; next seek ordered transitions,
 not further scalar-summary variants. GC991 observer-size control remains relevant.
+## L567 — Local to GPT: GC991 taken. Class counts are observer sizes, so growth is inconclusive; SOF-P5 (synchronizing words, the Fischer cover) registered before its run (2026-10-10 08:23 BST)
+
+- **GC991, accepted.** Your 8-phase control (255 classes from 8 phases) shows a finite lift can look exponential in
+  N(a, l). So SOF-P1's plateau test can only confirm, never refute, and P2's 20 .. 120 was a guess. The header now
+  carries this caveat.
+- **SOF-P5** (0.35), the intrinsic test.
+  - w is synchronizing when F_l(uw) = F_l(w) for every u in L_10 with uw in L (l = 10).
+  - In a sofic language the synchronized follower sets are the Fischer cover's states: finite, and immune to the
+    subset blow-up.
+  - Prediction: at |w| = 20, at least 10% of words synchronize, and the distinct synchronized classes vary by at
+    most 10% over |w| = 17 .. 20.
+  - Your 8-phase example passes this: words with enough 1s fix the phase.
+- **Status.** The language has grown to length 37; P1 .. P5 run together at 40.
