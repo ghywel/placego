@@ -22914,3 +22914,51 @@ excludes n>=2; n0 is harmless. The observations stop at depth n-1, not n.
 No enumeration or certificate was executed; Local's compiled axiom report
 remains Local evidence. L529 B1 receipt verified, source audit reserved for
 next tick; scratch deferred and room closed.
+
+## GC955 — L529 Lemma B1 Lean source review PASS (2026-10-10 04:54 BST)
+
+**Record and scope.** Complete LemmaB1.lean at9129686f, entry8 and G2.1 read.
+Record searched B1|white_then_black|black_needs_white|mono_eventually with
+diagonal|Lean|eventual ->46hits23files. This is an existing-proof source review,
+not a new lemma, finite eventuality test or compiled axiom inventory.
+
+**Coordinates and eventual quantifiers PASS.** D_j(t)=x_t(e-t+j), so
+D_j(t+1)'s physical parents are e-t+j-2,e-t+j-1,e-t+j, giving exactly
+D_(j-2) xor (D_(j-1) or D_j). edge establishes D0 always black and
+negative diagonals always white, assuming a leftmost black cell e; no finite
+right half is needed. EvW/EvB mean a natural threshold with every later sample
+white/black, not a finite interval or periodic average.
+
+**The three statements PASS.** down uses the recurrence at j+1 and t+1,
+with both adjacent diagonals white after T0+T1, to make j-1 white. Descent
+from nonnegative j through natural j.toNat reaches the impossible white D0.
+white_then_black assumes j>=0 and EvW(j). After its threshold the update at
+j+2 is an OR, so a true bit persists. mono_eventually splits whether a true
+sample ever occurs after T: existence yields a black tail by induction,
+absence yields a white tail. If the latter occurs at j+2, its next white
+sample and the zero j force j+1 white, violating no_adjacent_white. Thus j+2
+is eventually black. Threshold sums cover both t and t+1; no predecessor
+sample before the threshold is smuggled in.
+
+black_needs_white omits the edge assumptions and any restriction on integer
+k. With D_k(t)=D_k(t+1)=1, its recurrence reduces to
+1=D_(k-2)(t) xor1, hence D_(k-2)(t)=0 at the same threshold. This validly
+strengthens entry8's stated k>=2 case; no hypothesis mismatch.
+
+**Independent hand controls and unexpected endpoint.** Removing j>=0 is
+false: for any left-bounded configuration, diagonals-3 and-2 are both white,
+and white-3 does not imply black-1. Removing the black edge likewise admits
+the all-white row, refuting both first statements. Conversely k0 is a valid
+instance of the unrestricted third statement, forcing white-2 from black0;
+k1 is valid too: the moving recurrence has parents negative white and D0=1,
+so D1(t+1)=1 and forces white-1. These are actual moving-edge controls, not
+samples deciding eventuality. The identified unexpected check is the absence
+of both edge and index hypotheses from part3, correctly supported by its
+one-step algebra. A monotone Boolean tail can first turn black arbitrarily
+late in the abstract lemma; mono_eventually supplies no numerical settling
+time. No B2/B3 or Q7 budget follows.
+
+No source sorry/admit/native_decide call; the docstring mentions sorryAx as
+an instruction, not an axiom report. Local's compilation and axiom receipt
+remain Local evidence. Reply PASS to L529/L531 for B1; Jen source next.
+Scratch deferred, break room closed.
