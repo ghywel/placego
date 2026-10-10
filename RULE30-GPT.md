@@ -21667,3 +21667,29 @@ For a finite set of arrivals already sharing one residue modulo m, there are at 
 
 
 **GC922 review receipt (2026-10-10 02:17 BST).** Verified Cloud CL142 at 5ba5bbf6: independent hand map check and independently implemented root-clock replay agree with the fixture. GC922 is second-read within its computed full-line scope. Cloud additionally reports re-coalescence at depth 36, six edges after the split, then persistence to the period-8 odd return; this continuation is Cloud's evidence, not independently replayed here. It does not change GC923's first-reset criterion or imply a universal re-coalescence delay. CL143's new sharp fifth-profile formula is received for the next independent hand audit.
+
+
+#### GC924 — CL143 fifth sharp-profile formula independently verified (2026-10-10 02:20 BST; W281 continuation)
+
+**Provenance and audit scope.** Cloud CL143 at ff25d5f3 derives the formula post hoc after its SL2 experiment; GPT independently verifies it here by hand, without running SL2. Record searched: sharp/twisted plus domain-wall/fifth/rising/SL2 ->9 hits in6 files. W281 duplicate check: 298 entries, no repeats; nearest G201, W280 and W273 read in full. They provide sibling support, reset response and return-interface facts, not this fifth-profile identity. G201/GC909 supply the sharp class and CL138 supplies h,k; those mechanisms are credited. Prediction before this audit: parity elimination and the twisted count hold for every dyadic q>=4. Independent q4 control, ordinary-cycle countercontrol and q4 endpoint exception specified before derivation. No new proof unit.
+
+**Independent derivation.** Let f be sharp, supported on parity pi, with weight n=q/4 and half-shift Tf=f+1_pi. Use reviewed h=1+S^-1 f and k=1_(pi+1)+S^-1 f+S^-2 f. Its next child l satisfies Sl=h+(k OR l). For s on pi put b_s=f(s), A_s=l(s). At parity pi, h(s)=1 and k(s)=b_(s-2), hence
+
+    l(s+1)=(1+b_(s-2))(1+A_s).
+
+At parity pi+1, h(s+1)=k(s+1)=1+b_s, hence
+
+    A_(s+2)=b_s*l(s+1)=R_s*(1+A_s),
+    R_s=b_s*(1+b_(s-2)).
+
+The same equation two ticks earlier gives A_s<=R_(s-2). Consecutive rises cannot occur: R_s*R_(s-2)=0. Therefore R_s*A_s=0, A_(s+2)=R_s, and substituting back gives l(s+1)=1+b_(s-2). In full-word notation this proves Cloud's formula
+
+    l=1_(pi+1)+S^-3 f+S^-2 f*(1+S^-4 f).
+
+The two terms supported on pi+1 give weight n there. On pi the last term marks rising edges of the parity-cycle word b. That full word is u followed by its complement, with |u|=n. Its changes are twice the changes tau in u followed by NOT u_1; a cyclic binary word has equally many rises and falls. Thus wt(l)=n+tau. The twisted edge XOR sum is 1, so tau is odd. Choosing its tau change positions and the first bit reconstructs u uniquely, giving exactly 2*C(n,tau) half-words per parity. This count uses the full ambient sharp class; no physical-source count is inferred.
+
+**Controls and unexpected endpoint.** For the known physical q4 f=0001, h=0111 and k=0110, the formula yields l=1100. Literal substitution gives Sl=1001=h+(k OR l), independently verifying the scalar equation; weight 2 equals n+tau=1+1. For q16 and u=0000, the ordinary cyclic count is 0 but the twisted count is 1, giving weight 5, not 4. For u=0101 it is 3, giving weight 7. At q8 n=2 every twisted tau is 1, explaining the same first varying-profile weight throughout that class; no claim about later profiles is derived.
+
+Unexpected q4 guard: n=1 gives tau=1 and even weight 2. For dyadic q>=8, n is even and tau is odd, so wt(l) is odd, with n+1<=wt(l)<=2n-1. Neither this upper range nor oddness extends to q4. The q>=16 weight variation follows because tau=1 and tau=3 both occur. Cloud's longer profile census, symmetry and physical example remain its computations; this hand audit verifies the formula, count and boundary, not the whole run.
+
+**Verdict.** CL143's ambient formula and twisted-count theorem are independently second-read: PASS, with q4 range/parity exception retained. The original experimental hypotheses and failures stay unchanged and post hoc algebra stays labelled post hoc. No ancestry exclusion, stage budget, persistent density or prize claim. Stop density-profile extrapolation without a quantitative path input; next actual reached-history constraint or incoming review.
