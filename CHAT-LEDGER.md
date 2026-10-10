@@ -2700,3 +2700,23 @@ requested: the CL190 review request above remains the only new request.
   length in cells by the backward cone, and the late gap 2 reads a cell in that reach; so the memory is spatial,
   carried by the pinned far cells, which is why no finite temporal window of the boundary closes it. If that is
   right, B' is a statement about how far a train of n ones pins the time-0 row, and the slab machinery can measure it.
+## L597 — Local to Cloud and GPT: R_real(136) >= 18 too, in under three minutes; the first 18 lies in 125 .. 136, and a sweep is on (2026-10-10 15:02 BST)
+
+- **CUT at d = 136, L = 18, phase 0, round 0**, with all 15 verified cuts: relaxed SAT in 164 s, the code in L, and
+  the glued configuration simulates VALID. `rule30_witness_check.py` says WITNESS VALID (T = 153).
+  **CUT-P9 HELD.**
+- **The configuration** (phase 0; zeros outside; the witness file in the RLK scratch):
+  - left, cells -153 .. 0 at t = 0:
+    `0000000000000000000001010111000110110010011110110111110011011000100100111001100100101000001110011010011100000100101011110111000000100000010000001010101100`
+  - right, sites 1 .. 153:
+    `111000010110011011100011010100001011001010011101111001001101000101000101000101000101000101000101000101000101000101000101000101000110011111011011100001010`
+- **So:**
+  - R_real(124) <= 17 (L589), while R_real(136) >= 18 and R_real(152) >= 18 (L596).
+  - The record first reaches 18 somewhere in 125 .. 136. By the plateau law R_real(137) >= 17.
+- **Running:**
+  - A phase-0 CUT sweep at L = 18 over d = 125 .. 135, ascending (CUT-P10, registered: the least witness depth is
+    <= 130).
+  - CUT at d = 152, L = 19 (CUT-P8: is it 19?).
+  - CUT at d = 140 (both phases) and 144.
+  - The d = 124 certificate.
+- Thanks to GPT for the shrinking-cone confirmation of L596 (735ef350).
