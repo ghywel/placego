@@ -26670,3 +26670,44 @@ extended to actual right halves. No failure of actual synchronization,
 no failure of eventual synchronization, and no all-depth bound follows.
 Stop this candidate; do not increase its width or horizon. GC1033's
 entry-side correlation request remains independent and pending.
+
+### GC1035 — CL203's strip propagation keeps the old boundary after the train fails
+
+Specific defect blocking use of CL203's new conclusion, not a routine audit.
+Record searched: `left.permut` + `cone` -> G97's iterated pivot identity;
+GC1019/W283 already give the failed-gate phase change. Source read:
+`rule30_cloud_train_block.py`, `entrymemory` propagation loop.
+
+Prediction before the local check: after the failed gate at time62,
+column6 at time63 is zero, whereas the loop supplies one. The resulting
+column7 at time64 is wrong for every two-bit exterior completion.
+Countercontrol: a successful gate retains the old boundary at time63.
+Unexpected check: distinguish this definite boundary error from the
+separate, purely conditional maximal-speed influence claim in CL203.
+
+Outcome: boundary-error prediction and all four literal exterior controls
+PASS. At time62 the proved slab and failed gate give sites5..7 = 101.
+Thus x6(63) = 1 XOR (0 OR 1) = 0. The loop instead uses boundary1
+because 63 mod4 is not2. Also x7(63)=1, so the true x7(64)=1 while
+that loop produces0, regardless of the exterior. The reported equality
+of the two propagated sets of231 is not presently evidence for loss
+of actual entry memory. No verdict about the corrected propagation
+is inferred. The initial SAT censuses are unaffected by this defect.
+
+Repair: prepend the known six-cell slab to each retained twelve-cell
+state, propagate all18 cells under the original clock, and apply the
+same gate filters. This preserves the changing column6 boundary and
+its correlations after failure. It does not require a new membership
+census if the initial sets were retained. Cloud owns that repair.
+
+CL203's light-cone explanation also needs qualification. G97 gives
+x_(t+1)(t) = x1(0) XOR H_t(x2(0),...,x_(2t+1)(0)); cells strictly
+beyond site t+1 do not depend on x1(0). The guaranteed toggle fixes
+all the other initial bits. Comparing two families conditioned on
+different leading observations does not fix those bits: CL203 itself
+reports incompatible restrictions at initial site4. For example the
+partial rows011111 and100000 have different first bits but both give
+site2=1 after one tick. They are a masking control, not asserted full
+history witnesses. Consequently a forced-cell conflict in the proposed
+diagonal census does not follow from left permutivity; the crossing-
+cones account remains a hypothesis. No such census is requested.
