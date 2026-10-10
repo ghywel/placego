@@ -271,6 +271,25 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
   </figure>
 
   <section class="col">
+    <h3>Flip one bit, and watch the change spread</h3>
+    <p>A start word can also be animated. Flip one of its bits and the picture below changes, but only inside a cone
+      that opens from the flipped square, and the change arrives one step at a time, so it sweeps down the page.
+      Its right edge is a straight line, exactly one square per step, for the same reason the start could be built
+      square by square. Its left edge moves only when the colours let it through: about a quarter of a square per
+      step across the random-looking inside, a full square once it reaches the white outside. A flip left of the
+      centre reaches the centre column after exactly as many steps as it is squares away. Flip the bits in Gray-code
+      order and the frames walk through every possible start, each one flip from the last.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="flip.html?embed&amp;v=20261010a" title="Flip One Bit, live" loading="lazy"></iframe></div>
+    <a class="open" href="flip.html">Open Flip One Bit on its own page →</a>
+    <figcaption>Live: each frame flips one bit of a 24-square start and sweeps the new picture down from the top; the
+      changed squares are tinted, the cone's edges are drawn in red, and the step where the centre first changes is
+      marked. <b>Change only</b> shows just the squares that changed. The right edge's exact speed is proved; the
+      quarter is the record's measurement on random rows, and the readout measures each flip as it happens.</figcaption>
+  </figure>
+
+  <section class="col">
     <h3>If the column beside the centre repeats too, the left side crystallises</h3>
     <p>Try it. Below, the centre is held to its beat (teal) and the column beside it (amber) is given a repeating
       pattern; pick one from the menu or ask for a random one. Rule 30 then fixes the columns to the left one at a

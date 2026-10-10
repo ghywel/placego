@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flip One Bit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a toolbar (the order of flips, play controls, the start's width, a tip, the live readout, the key) on top;
+   one stage under it, sized to the screen: Rule 30 from a start word, redrawn as each flip's change sweeps down
+   inside its cone, with the cone's two edges and the centre's first change marked on the picture; notes under. */
+:root {
+  --paper: #ECEFEA;
+  --panel: #F5F6F2;
+  --ink: #1E1F1C;
+  --ink-soft: #5B6157;
+  --rule: #C8CDC2;
+  --change: #D9961F;
+  --edge: #C0392B;
+  --start: #1E5A86;
+  --centre: #2D7A57;
+  --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+    --change: #F0B24A; --edge: #FF6B5E; --start: #62A6DA; --centre: #5CC496; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+  --change: #F0B24A; --edge: #FF6B5E; --start: #62A6DA; --centre: #5CC496; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 0.95rem;
+  line-height: 1.5; }
+.page { max-width: 1280px; margin: 0 auto; padding-inline: 20px; padding-block: 0 44px; display: grid; gap: 20px; }
+.toolbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 3; background: var(--panel);
+  border: 1px solid var(--rule); border-top: 0; padding: 10px 14px 11px; display: grid; gap: 8px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; line-height: 1.1; margin: 0 auto 0 0; }
+.seg { display: flex; flex-wrap: wrap; }
+.seg button { border-radius: 0; margin-right: -1px; }
+.seg button:first-child { border-radius: 2px 0 0 2px; }
+.seg button:last-child { border-radius: 0 2px 2px 0; }
+button { font: 500 0.82rem var(--font-body); color: var(--ink); background: var(--paper); border: 1px solid var(--ink-soft);
+  padding: 5px 11px; cursor: pointer; border-radius: 2px; }
+button:hover { background: var(--panel); }
+button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--start); outline-offset: 2px; }
+.ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: 0.84rem; color: var(--ink-soft); }
+.ctl label { display: flex; align-items: center; gap: 8px; }
+.ctl input[type="range"] { width: 130px; accent-color: var(--start); }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink); }
+.tip { margin: 0; font-size: 0.86rem; max-width: 112ch; min-height: 2.9em; }
+.tip b, .readout b { font-weight: 600; }
+.readout { margin: 0; font-family: var(--font-mono); font-size: 0.78rem; font-variant-numeric: tabular-nums;
+  min-height: calc(3em + 3px); }
+.key { display: flex; flex-wrap: wrap; gap: 3px 16px; font-size: 0.78rem; color: var(--ink-soft); align-items: center; }
+.key span { display: inline-flex; align-items: center; gap: 6px; }
+.chip { width: 13px; height: 13px; flex: none; }
+.stage { display: grid; justify-items: center; min-width: 0; }
+canvas { display: block; max-width: none; touch-action: manipulation; }
+.lede { margin: 0; max-width: 78ch; font-size: 1.02rem; }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px 26px; }
+.notes section { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.notes h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; margin: 0; }
+.notes p { margin: 0; max-width: 62ch; }
+.foot { font-size: 0.8rem; color: var(--ink-soft); margin: 0; max-width: 84ch; }
+.foot code { overflow-wrap: anywhere; }
+.back { font-size: 0.9rem; margin: 18px 0 0; }
+@media (max-width: 760px) {
+  .page { padding-inline: 16px; }
+  .toolbar { position: static; }
+  .ctl input[type="range"] { width: 110px; }
+}
+html.embed .page > :not(.toolbar):not(.stage) { display: none !important; }
+html.embed .page { padding-bottom: 0 !important; }
+</style>
+<script>if (/[?&]embed\b/.test(location.search)) document.documentElement.classList.add("embed");</script>
+<script>
+/* Embedded in the Rule 30 page, this frame animates only while it is on screen. The page posts
+   {r30: "visibility", visible} as the frame scrolls in and out of view; while it is out, animation frames are held and
+   interval ticks are skipped, so nothing runs unseen. The frame asks once as it starts. Opened on its own, the page
+   always runs. (The same snippet is in every page the Rule 30 page embeds.) */
+(function () {
+  if (window.parent === window) return;
+  var on = true, held = {}, nid = 1e9;
+  var raf = window.requestAnimationFrame.bind(window), caf = window.cancelAnimationFrame.bind(window);
+  var si = window.setInterval.bind(window);
+  window.requestAnimationFrame = function (cb) { if (on) return raf(cb); held[++nid] = cb; return nid; };
+  window.cancelAnimationFrame = function (id) { if (held[id]) delete held[id]; else caf(id); };
+  window.setInterval = function (fn, ms) {
+    if (typeof fn !== "function") return si(fn, ms);
+    var rest = Array.prototype.slice.call(arguments, 2);
+    return si(function () { if (on) fn.apply(this, rest); }, ms);
+  };
+  window.addEventListener("message", function (e) {
+    if (e.source !== window.parent || !e.data || e.data.r30 !== "visibility") return;
+    var was = on; on = !!e.data.visible;
+    if (on && !was) { var q = held; held = {}; Object.keys(q).forEach(function (k) { raf(q[k]); }); }
+  });
+  try { window.parent.postMessage({ r30: "ask" }, "*"); } catch (e) {}      // ask whether we start on screen
+})();
+</script>
+</head>
+<body>
+<div class="page">
+  <div class="toolbar" id="toolbar">
+    <div class="bar">
+      <h1>Flip One Bit</h1>
+      <div class="seg" role="group" aria-label="Which bit to flip next">
+        <button id="o-sweep" type="button" aria-pressed="true">Sweep across</button>
+        <button id="o-gray" type="button" aria-pressed="false">Gray code: every start</button>
+        <button id="o-rand" type="button" aria-pressed="false">Random</button>
+      </div>
+      <div class="seg" role="group" aria-label="What to draw">
+        <button id="v-pic" type="button" aria-pressed="true">Picture</button>
+        <button id="v-diff" type="button" aria-pressed="false">Change only</button>
+      </div>
+    </div>
+    <div class="bar">
+      <div class="ctl">
+        <button id="play" type="button">Pause</button>
+        <button id="stepb" type="button">Flip once</button>
+        <label for="speed">speed <input id="speed" type="range" min="1" max="6" value="3"></label>
+        <label for="width">squares in the start <input id="width" type="range" min="4" max="64" value="24"> <span id="wval" class="mono">24</span></label>
+        <button id="fresh" type="button">New start</button>
+      </div>
+    </div>
+    <p class="tip" id="tip"></p>
+    <p class="readout" id="readout" aria-live="polite"></p>
+    <div class="key">
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" fill="none" stroke="var(--start)" stroke-width="2"/></svg>the start word (click a square to flip it)</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="1" y="1" width="12" height="12" fill="var(--change)" opacity="0.7"/></svg>squares this flip changed</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 2 L12 12" stroke="var(--edge)" stroke-width="2"/></svg>the change's edges</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><path d="M12 2 L6 12" stroke="var(--ink-soft)" stroke-width="1.4" stroke-dasharray="2 2"/></svg>a quarter of a square per step</span>
+      <span><svg class="chip" viewBox="0 0 14 14" aria-hidden="true"><rect x="5" y="1" width="4" height="12" fill="none" stroke="var(--centre)" stroke-width="1.6"/></svg>the centre column</span>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <canvas id="cv" role="img" aria-label="Rule 30 run down the page from a start word. Each frame flips one bit of the start, and the new picture sweeps down from the top, inside a lopsided cone below the flipped square: its right edge moves exactly one square per step, its left edge about a quarter. Changed squares are tinted, and the step at which the centre column first changes is marked."></canvas>
+  </div>
+
+  <p class="lede">The pyramid only grows. Give Rule 30 a start word instead of one black square, and you can animate the
+    whole picture: flip one bit of the start, and the picture below changes, but only inside a cone that opens from the
+    flipped square, and the change arrives one step at a time, so it sweeps down the page. Everything outside the cone
+    stays exactly as it was. Each frame here is one flip; the order of flips is yours to choose.</p>
+
+  <div class="notes">
+    <section>
+      <h2>The cone of a flip</h2>
+      <p>Rule 30 makes a square black when its upper-left neighbour differs from (the square above or its upper-right
+        neighbour). Flip the upper-left square and the square below always flips. So a change moves right exactly one
+        square per step, every time: that edge of the cone is a straight line. Its left edge moves only when the colours
+        let it through, so its speed depends on what it crosses:</p>
+      <p>through the random-looking inside of the picture, about a quarter of a square per step (the record's 0.246);
+        once it reaches the white outside a finite start, the full one square per step; and a flip at the very right
+        end of the start can stay pinned to the right edge, its change never spreading inward, so its left edge moves
+        right. Inside the cone, the readout counts how many squares change: about half, as if the picture were
+        reshuffled.</p>
+    </section>
+    <section>
+      <h2>When the centre hears about it</h2>
+      <p>A flip to the left of the centre reaches the centre column after exactly as many steps as it is squares away,
+        never sooner and never later, because the right edge cannot slow down. That is the same fact that let the
+        start be built square by square in <i>Make the Centre Say Anything</i>. A flip to the right of the centre has to
+        travel against the grain, at the left edge's slow, wandering pace, so the centre hears about it much later.</p>
+    </section>
+    <section>
+      <h2>A video of every start</h2>
+      <p>Flip the bits in the order of the Gray code, the counting system in which each step changes a single digit,
+        and the frames walk through every possible start word exactly once, each frame one flip from the last. It is
+        the same Gray code that runs inside Rule 30's sideways picture. Sweep across instead and the flipped square
+        moves one place each frame, so you can watch the cone change shape with its position.</p>
+    </section>
+  </div>
+  <p class="foot">The edges' speeds: the rightward one, exactly 1, follows from the rule in one line; the leftward 0.246
+    is RULE30-PRIZE.md §8.30 and §8.66 (<code>rule30_damage_speed.py</code>: the identity v = 1 &minus; P(heal) E[jump | heal]
+    is proved, the values are measured), and on white a change can run left at full speed (GC856). Checked for this
+    page on 20 random starts of 24 squares over 120 steps (Cloud, 10 October 2026, prediction written first): the
+    change's left edge averages 0.80 to 1.00 squares a step for flips in the left part of the start, 0.21 to 0.25 for
+    flips in its right half, and below zero for the last three squares, whose change often stays at the right edge
+    (that part of the prediction was refuted). The right edge was exactly one square a step on every row of every
+    flip. The share of the cone that changes is counted live, for the picture you are looking at. The page checks itself: every
+    flip's right edge must sit exactly one square further right on every row, and the readout says if it ever does not.</p>
+  <p class="back"><a href="./">&larr; Rule 30: the whole story</a></p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var cv = document.getElementById("cv"), ctx = cv.getContext("2d"), bar = document.getElementById("toolbar");
+  var stage = document.getElementById("stage");
+  var colors = {};
+  function readColors() {
+    var cs = getComputedStyle(document.documentElement);
+    ["paper", "panel", "ink", "ink-soft", "rule", "change", "edge", "start", "centre"].forEach(function (k) {
+      colors[k] = cs.getPropertyValue("--" + k).trim();
+    });
+    colors.mono = cs.getPropertyValue("--font-mono").trim();
+  }
+  var seed = 30;
+  function rnd() { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; }
+
+  /* ---- the model: a start word of W squares centred on the centre column, run for D steps ---- */
+  var WMAX = 64, D = 120, NW = 0, OFF = 0, W = 24, A = 0, start = null, rows = null;
+  function layoutModel() { NW = WMAX + 2 * D + 8; OFF = (WMAX >> 1) + D + 4; A = -(W >> 1); }   // start: A .. A + W - 1
+  function evolve(s) {
+    var a = new Uint8Array(NW), out = [];
+    for (var i = 0; i < W; i++) a[OFF + A + i] = s[i];
+    for (var t = 0; t < D; t++) {
+      out.push(a);
+      var b = new Uint8Array(NW);
+      for (var x = 1; x < NW - 1; x++) b[x] = a[x - 1] ^ (a[x] | a[x + 1]);
+      a = b;
+    }
+    return out;
+  }
+  function freshStart() { start = new Uint8Array(W); for (var i = 0; i < W; i++) start[i] = rnd() < 0.5 ? 1 : 0; rows = evolve(start); }
+
+  /* ---- a flip: the new picture, what changed, the cone's edges, when the centre first changes ---- */
+  var flip = null, frame = 0, order = "sweep", view = "pic", sweepAt = 0, faults = 0;
+  function doFlip(k) {
+    var s2 = start.slice(); s2[k] ^= 1;
+    var nr = evolve(s2), j = A + k, left = [], right = [], changed = 0, cone = 0, centreAt = -1, exact = true;
+    for (var t = 0; t < D; t++) {
+      var lo = null, hi = null, o = rows[t], n = nr[t];
+      for (var x = 0; x < NW; x++) if (o[x] !== n[x]) { if (lo === null) lo = x; hi = x; changed++; }
+      left.push(lo === null ? null : lo - OFF); right.push(hi === null ? null : hi - OFF);
+      if (lo !== null) cone += hi - lo + 1;
+      if (hi === null || hi - OFF !== j + t) exact = false;            // the right edge: exactly one square a step
+      if (centreAt < 0 && o[OFF] !== n[OFF]) centreAt = t;
+    }
+    if (!exact) faults++;
+    flip = { k: k, j: j, old: rows, now: nr, left: left, right: right, changed: changed, cone: cone, centreAt: centreAt,
+      front: 0, hold: 0 };
+    start = s2; rows = nr; frame++;
+  }
+  function nextBit() {
+    if (order === "gray") {                                           // the Gray code: flip the lowest set bit of the count
+      var c = frame + 1, k = 0; while ((c & 1) === 0 && k < W - 1) { c >>= 1; k++; }
+      return W - 1 - k;                                               // the rightmost square is the fastest digit
+    }
+    if (order === "rand") return Math.floor(rnd() * W);
+    var k2 = sweepAt % W; sweepAt++; return k2;                       // sweep: left to right, one place a frame
+  }
+
+  /* ---- geometry ---- */
+  var dpr = 1, Wc = 800, Hc = 600, cell = 4, TOP = 24, PAD = 8, narrow = false;
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var pg = stage.parentElement, ps = getComputedStyle(pg);
+    var availW = pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);
+    var sticky = getComputedStyle(bar).position === "sticky";
+    var availH = Math.max(300, window.innerHeight - (sticky ? bar.getBoundingClientRect().height : 0) - 34);
+    narrow = availW < 640;
+    var want = narrow ? 70 : 120;
+    if (want !== D) { D = want; layoutModel(); rows = evolve(start); flip = null; }
+    var cols = WMAX + 2 * D;
+    cell = Math.min((availW - 2 * PAD) / cols, (availH - TOP - 10) / D);
+    Wc = Math.round(cols * cell + 2 * PAD); Hc = Math.round(TOP + D * cell + 10);
+    cv.width = Math.round(Wc * dpr); cv.height = Math.round(Hc * dpr);
+    cv.style.width = Wc + "px"; cv.style.height = Hc + "px";
+  }
+  function PX(x) { return PAD + (x + (WMAX >> 1) + D) * cell; }
+  function PY(t) { return TOP + t * cell; }
+
+  /* ---- drawing ---- */
+  function text(s, x, y, col, align, size, base, weight) {
+    ctx.fillStyle = col; ctx.textAlign = align || "left"; ctx.textBaseline = base || "middle";
+    ctx.font = (weight || "500") + " " + (size || 10) + "px " + colors.mono; ctx.fillText(s, x, y);
+  }
+  function halo(s, x, y, col, align, size) {
+    ctx.font = "600 " + (size || 10) + "px " + colors.mono; ctx.textAlign = align || "left"; ctx.textBaseline = "middle";
+    ctx.lineJoin = "round"; ctx.lineWidth = 3.5; ctx.strokeStyle = colors.paper; ctx.strokeText(s, x, y);
+    ctx.fillStyle = col; ctx.fillText(s, x, y);
+  }
+  function draw() {
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = colors.paper; ctx.fillRect(0, 0, Wc, Hc);
+    var c = cell + 0.3, xlo = -(WMAX >> 1) - D, xhi = (WMAX >> 1) + D - 1, fs = narrow ? 8 : 10;
+    var front = flip ? Math.min(D, Math.floor(flip.front)) : D;
+    var tint = flip ? (flip.front < D ? 1 : Math.max(0, 1 - flip.hold / 900)) : 0;
+    for (var t = 0; t < D; t++) {
+      var showNew = !flip || t < front, r = showNew ? (flip ? flip.now[t] : rows[t]) : flip.old[t];
+      if (view === "pic") {
+        ctx.fillStyle = colors.ink;
+        for (var x = xlo; x <= xhi; x++) if (r[OFF + x]) ctx.fillRect(PX(x), PY(t), c, c);
+      }
+      if (flip && showNew && (view === "diff" || tint > 0)) {
+        var o = flip.old[t], n = flip.now[t];
+        ctx.fillStyle = view === "diff" ? colors.ink : colors.change; ctx.globalAlpha = view === "diff" ? 1 : 0.62 * tint;
+        for (var x2 = xlo; x2 <= xhi; x2++) if (o[OFF + x2] !== n[OFF + x2]) ctx.fillRect(PX(x2), PY(t), c, c);
+        ctx.globalAlpha = 1;
+      }
+    }
+    if (flip && flip.front < D) {                                     // the sweeping front
+      ctx.strokeStyle = colors.change; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(PX(xlo), PY(front)); ctx.lineTo(PX(xhi + 1), PY(front)); ctx.stroke();
+    }
+    // the centre column
+    ctx.strokeStyle = colors.centre; ctx.lineWidth = 1.4;
+    ctx.strokeRect(PX(0) - 0.7, PY(0) - 0.7, c + 1.4, D * cell + 1.4);
+    // the start word on row 0
+    ctx.strokeStyle = colors.start; ctx.lineWidth = 2;
+    ctx.strokeRect(PX(A) - 1, PY(0) - 1, W * cell + 2, c + 2);
+    text("the start word: " + W + " squares", PX(A + W / 2), PY(0) - 6, colors.start, "center", fs, "bottom", "600");
+    if (flip) drawEdges(front, fs);
+  }
+  function drawEdges(front, fs) {
+    var f = flip, c = cell;
+    ctx.strokeStyle = colors.edge; ctx.lineWidth = 2;                 // the flipped square
+    ctx.strokeRect(PX(f.j) - 1.5, PY(0) - 1.5, c + 3, c + 3);
+    var last = Math.min(front, D) - 1;
+    if (last < 1) return;
+    ctx.setLineDash([3, 3]); ctx.strokeStyle = colors["ink-soft"]; ctx.lineWidth = 1.2;   // a quarter of a square a step
+    ctx.beginPath(); ctx.moveTo(PX(f.j), PY(0)); ctx.lineTo(PX(f.j - 0.246 * last), PY(last + 1)); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.strokeStyle = colors.edge; ctx.lineWidth = 1.8;                // the right edge, exact
+    ctx.beginPath(); ctx.moveTo(PX(f.j) + c, PY(0)); ctx.lineTo(PX(f.j + last) + c, PY(last + 1)); ctx.stroke();
+    ctx.beginPath(); var started = false;                              // the left edge, as it happens
+    for (var t = 0; t <= last; t++) {
+      if (f.left[t] === null) continue;
+      var x = PX(f.left[t]), y = PY(t) + c / 2;
+      if (!started) { ctx.moveTo(x, y); started = true; } else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    if (!narrow && last > 30) {
+      var tl = Math.min(last, Math.round(D * 0.55));
+      halo("right edge: exactly 1 square a step", PX(f.j + tl) + c + 8, PY(tl), colors.edge, "left", fs);
+      if (f.left[tl] !== null) halo("left edge: as the colours allow", PX(f.left[tl]) - 8, PY(tl), colors.edge, "right", fs);
+    }
+    if (f.centreAt >= 0 && f.centreAt <= last) {                       // the centre's first change, traced
+      var cy = PY(f.centreAt);
+      ctx.strokeStyle = colors.edge; ctx.lineWidth = 2; ctx.strokeRect(PX(0) - 2, cy - 2, c + 4, c + 4);
+      ctx.setLineDash([4, 3]); ctx.lineWidth = 1.4;
+      ctx.beginPath(); ctx.moveTo(PX(f.j) + c / 2, PY(0) + c); ctx.lineTo(PX(0) + c / 2, cy); ctx.stroke(); ctx.setLineDash([]);
+      if (!narrow) halo("the centre first changes at step " + f.centreAt, PX(0) + c + 8, cy + (f.j <= 0 ? 12 : -12),
+        colors.edge, "left", fs);
+    }
+  }
+  function readout() {
+    var el = document.getElementById("readout");
+    if (!flip) { el.innerHTML = "the start word, before any flip · press <b>Flip once</b>, or <b>Play</b>"; return; }
+    var f = flip, side = f.j === 0 ? "the centre square" : Math.abs(f.j) + " square" + (Math.abs(f.j) === 1 ? "" : "s") +
+      (f.j < 0 ? " left of the centre" : " right of the centre");
+    var lastLeft = null; for (var t = D - 1; t >= 0; t--) if (f.left[t] !== null) { lastLeft = f.left[t]; break; }
+    var vleft = lastLeft === null ? 0 : (f.j - lastLeft) / (D - 1);
+    var s = "flip <b>" + frame + "</b>: the square " + side + " · it changed <b>" + f.changed.toLocaleString("en-GB") +
+      "</b> of the " + f.cone.toLocaleString("en-GB") + " squares in its cone (<b>" + Math.round(100 * f.changed / Math.max(1, f.cone)) +
+      "%</b>) · its left edge moved " + vleft.toFixed(2) + " squares a step · ";
+    if (f.centreAt < 0) s += "the centre did not change within " + D + " steps";
+    else s += "the centre first changed at step <b>" + f.centreAt + "</b>" + (f.j <= 0 ? " (exactly " + (-f.j) + ", its distance)" : "");
+    s += " · self-check: " + (faults ? '<span style="color: var(--edge)">' + faults + " right edge out of place</span>"
+      : '<span style="color: var(--centre)">every right edge exact</span>');
+    el.innerHTML = s;
+  }
+  var tips = {
+    sweep: "<b>Sweep across:</b> each frame flips the next square of the start, from left to right, so the cone's starting point moves one place a frame. Flips on the left run along the white outside at full speed; flips on the right creep left at about a quarter; the last few can stay pinned to the right edge.",
+    gray: "<b>Gray code:</b> each frame flips a single square, in the order that walks through every possible start word exactly once. The rightmost square flips every other frame, the next every fourth, and so on.",
+    rand: "<b>Random:</b> each frame flips a square chosen at random. Click any square of the start to flip it yourself."
+  };
+
+  /* ---- the animation: each flip's change sweeps down; a pause; the next flip ---- */
+  var playing = true, last = 0;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) playing = false;
+  function tick(ts) {
+    var dt = Math.min(100, ts - (last || ts)); last = ts;
+    var sp = +document.getElementById("speed").value;
+    if (flip && flip.front < D) { flip.front += D * dt * sp / 2400; draw(); }
+    else if (flip && flip.hold < 900) { flip.hold += dt * sp / 2; draw(); if (flip.hold >= 900 && playing) { doFlip(nextBit()); readout(); } }
+    else if (playing) { doFlip(nextBit()); readout(); draw(); }
+    requestAnimationFrame(tick);
+  }
+  function instant() { if (flip) { flip.front = D; flip.hold = 0; } }
+  function setOrder(o) {
+    order = o; sweepAt = 0;
+    ["sweep", "gray", "rand"].forEach(function (x) { document.getElementById("o-" + x).setAttribute("aria-pressed", String(x === o)); });
+    document.getElementById("tip").innerHTML = tips[o];
+  }
+  function setView(v) {
+    view = v;
+    ["pic", "diff"].forEach(function (x) { document.getElementById("v-" + x).setAttribute("aria-pressed", String(x === v)); });
+    draw();
+  }
+  var playBtn = document.getElementById("play");
+  function syncPlay() { playBtn.textContent = playing ? "Pause" : "Play"; }
+  playBtn.addEventListener("click", function () { playing = !playing; syncPlay(); });
+  document.getElementById("stepb").addEventListener("click", function () { playing = false; syncPlay(); doFlip(nextBit()); if (reduce) instant(); readout(); draw(); });
+  ["sweep", "gray", "rand"].forEach(function (x) { document.getElementById("o-" + x).addEventListener("click", function () { setOrder(x); }); });
+  ["pic", "diff"].forEach(function (x) { document.getElementById("v-" + x).addEventListener("click", function () { setView(x); }); });
+  document.getElementById("width").addEventListener("input", function (e) {
+    W = +e.target.value; document.getElementById("wval").textContent = String(W);
+    layoutModel(); freshStart(); flip = null; frame = 0; sweepAt = 0; faults = 0; readout(); draw();
+  });
+  document.getElementById("fresh").addEventListener("click", function () { freshStart(); flip = null; frame = 0; sweepAt = 0; faults = 0; readout(); draw(); });
+  cv.addEventListener("click", function (ev) {                       // click a square of the start to flip it
+    var b = cv.getBoundingClientRect(), x = Math.floor((ev.clientX - b.left - PAD) / cell) - (WMAX >> 1) - D;
+    var y = ev.clientY - b.top;
+    if (y < PY(0) - 14 || y > PY(0) + cell + 10) return;
+    var k = x - A; if (k < 0 || k >= W) return;
+    playing = false; syncPlay(); doFlip(k); if (reduce) instant(); readout(); draw();
+  });
+  function retheme() { readColors(); draw(); }
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", retheme);
+  }
+  new MutationObserver(retheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(function () { size(); draw(); }, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { readColors(); size(); draw(); });
+
+  readColors(); layoutModel(); freshStart(); size(); setOrder("sweep"); syncPlay(); readout(); draw();
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
