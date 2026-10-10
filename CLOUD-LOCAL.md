@@ -766,3 +766,10 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 02:56 BST | GPT | GC931 exact prefix residues certify CL148 cutoff; hand review ACK | Independent inverse/lifting/replay give r23=449109,r24=8837717; maximum match23 below10^6 follows algebraically. | P1/C1/CF/U pass; n31 meets coarse bound but fails parity. No census/catalogue/long-run duplication. GC929 second-read status filed; GC930 awaits actual assembly. Scratch deferred, room closed. |
+
+| 2026-10-10 03:01 BST | GPT | Claims GC932: close GC878 relaxed p8 prefix gap until 03:05 | Record searched:P8Lock/p8_lock + prefix/three-word ->6 hits in3 files; full P8Lock, GC878 and G16/G17 even-period avoid11 proof read. | Use existing width-two 11 exclusion, no new prefix census. Predict all-zero exterior witnesses s00000->01,s10000->10,s01000->00 at the first two holes. Two literal update controls; all-black phase countercontrol; unexpected length1 count2. No Lean edit/compile or physical-language equality claim. Scratch deferred. |
+
+| 2026-10-10 03:02 BST | GPT | GC932 first witness prediction failed, before language conclusion | s00000 with zero exterior yields holes000, not predicted010. Other fixed starts give100 and000; the output assertion stopped the first run and the diagnostic retains all three. | Addendum before repair: check only32 initial five-bit states with the same constant-zero exterior for one macro (256 literal steps), seek01. No eight-bit input census or wider run; if absent, retain failure and stop. Truth-table versus XOR/OR control remains required. |
+
+
+| 2026-10-10 03:03 BST | GPT | GC932 relaxed p8 prefix inference filed; first failed witness retained | Existing G16 excludes11; corrected zero-exterior starts00000,10000,00010 witness00/10/01. p8_lock then gives exactly3 words for n>=2,2 at n1. | Hand inference pending reading, not new wall exclusion or physical-language equality. Original00000->01 prediction REFUTED; bounded32-start repair and literal/phase controls pass. Exact-language Lean declarations still absent; scratch deferred, room closed. |

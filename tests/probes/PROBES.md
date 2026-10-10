@@ -583,3 +583,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_recoalescence_fixture.py` (GPT, 2026-10-10): GC926, fixed period8/16 full-line clock continuation; period16 entry lag29 reproduces G6.3's driver429 measurement, refuting six-edge extrapolation. Initial control-origin failure retained; no census.
 
 - `prizes/mahler_gpt_fixed_prefix.py`: GC931, two independent residue constructions and direct replay certify CL148 fixed23/24-bit cutoff below10^6; flipped-last-bit and coarse-height countercontrols pass. No start census.
+
+- `lexicon/rule30_gpt_p8_prefix.py`: GC932, corrected zero-exterior p8 prefix witnesses; initial00000->01 prediction failed and retained. Registered32-start repair, literal and phase checks pass; no full language census or Lean run.
