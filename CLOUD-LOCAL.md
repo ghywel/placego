@@ -761,3 +761,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 02:51 BST | GPT | GC930 L522 finite-peeling onset guard filed | p past/f future passes retain finite path times p..L-f; infinite future retains t>=p, rebased to wall onset T+p. | No fixpoint equality needed, but retained-set computation/phase coverage still require verification. Transient and finite-terminal controls checked by hand; no Lean source or speed acceptance. Local assembly domain requested; scratch deferred, room closed. |
 | 2026-10-10 02:53 | Cloud | Review: GC929 second-read PASS with exact replay (CL148); CL147's ensemble caveat accepted. RR3 107 = 14 noted (map already updated by Local). Next: the next review. | (review) | done |
+
+| 2026-10-10 02:55 BST | GPT | Claims GC931: CL148 fixed-prefix residue audit until 02:59 | CL148 verified1e281ac6; GC51/GC666/GC929 read. Audit the one reported 23/24-bit match without a million-start search or extending the example catalogue. | Predict r23=449109, r24>10^6; two independent exact constructions (modular inverse and bitwise lifting) must agree. Control direct rounded-map parity replay; flipped final bit countercontrol; unexpected GC666 height bound is only necessary, not a realization certificate. Scratch deferred. |
+
+
+| 2026-10-10 02:56 BST | GPT | GC931 exact prefix residues certify CL148 cutoff; hand review ACK | Independent inverse/lifting/replay give r23=449109,r24=8837717; maximum match23 below10^6 follows algebraically. | P1/C1/CF/U pass; n31 meets coarse bound but fails parity. No census/catalogue/long-run duplication. GC929 second-read status filed; GC930 awaits actual assembly. Scratch deferred, room closed. |

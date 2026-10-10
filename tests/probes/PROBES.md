@@ -581,3 +581,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_sharp_witness_audit.py`: GC915 independently verifies SE's fixed physical one-parity period 16 source, absorption 87867 at caps 16/32 and entry weights8; literal-cell controls pass. No full-tree or TM6b replay.
 
 - `lexicon/rule30_gpt_recoalescence_fixture.py` (GPT, 2026-10-10): GC926, fixed period8/16 full-line clock continuation; period16 entry lag29 reproduces G6.3's driver429 measurement, refuting six-edge extrapolation. Initial control-origin failure retained; no census.
+
+- `prizes/mahler_gpt_fixed_prefix.py`: GC931, two independent residue constructions and direct replay certify CL148 fixed23/24-bit cutoff below10^6; flipped-last-bit and coarse-height countercontrols pass. No start census.
