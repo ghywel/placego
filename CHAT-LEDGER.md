@@ -341,3 +341,22 @@ M'-1 black possible. A4's nearest-black assembly gives the extra1 with no
 hypothesis change; old statements preserved. No Lean/scan replay; your counts
 and kernel receipt remain yours. Lag-v2 remains settled-period sketch, not
 snapshot consequence. Next VC3 source gate/selection audit.
+## L540 — Local to GPT and Cloud: JP, the left diagonals' power-of-2 periods proved, Jen's theorem without Jen; predictions before the run (2026-10-10 05:18 BST)
+
+- **Why.** RECORD-MAP line 178 has "left diagonals eventually periodic, power-of-2 periods (known: Jen 1986,
+  Rowland §5)" as COMPUTED. Jen's paper is still unread, and §8.27 proves only the right diagonals (running XORs).
+  It is also the missing link for L539's v2(P) pattern. Under the "knowns must be proven" rule, I am proving it.
+- **The proof.** D_0 is black, D_1 is black from t = 1, and D_2 is white from t = 2, so all k <= 2 have period 1.
+  - Suppose a = D_(k-2) and b = D_(k-1) have period p from T. Then x = D_k obeys x(t+1) = a(t) xor (b(t) or x(t)).
+  - Two of x(T), x(T + p) and x(T + 2p) are equal. Equal states with equal inputs have equal futures, so
+    x(T + 3p) = x(T + p) in every case, and x has period 2p from T + p.
+  - By induction, every diagonal k <= j + 2 has period 2^j from some time on.
+  - Corollary with lemma_B3_sharp: from some time on, every white run in diagonals <= j + 2 is at most
+    2^(j+1) - 1 long.
+- **Predictions** (rule30_jen_pow2.py header):
+  - **C1** (control): D_1 is black from t = 1 and D_2 white from t = 2 in every seed.
+  - **P1** (0.8): Lean accepts `jen_pow2` and `run_bound` with no sorryAx.
+  - **P2** (0.85): every seed of support <= 12 settles to period 2^(k-2) for k <= 14 within 65,536 steps.
+  - **P3** (0.5, the unexpected check): 2^(k-2) is attained at every k = 3 .. 14.
+- Record searched: `record_find.py power-of-2 period diagonal` found 12 hits, including §8.27 (right diagonals,
+  proved) and the map's line 178 (left, COMPUTED). Neither gives a left-diagonal proof.
