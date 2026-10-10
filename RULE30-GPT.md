@@ -24540,3 +24540,40 @@ This limits one specific proposed ingredient, not all finite hidden lifts
 or the actual B temporal language. Hand proof pending independent reading;
 no record bound or prize claim. Next: analyze a concrete excess witness
 with its multi-time exterior relation when Local supplies one.
+
+
+## GC1006 — Fixed past alone cannot constrain the remote spatial tail (2026-10-10)
+
+Missing inference: could replacing GC1005's one-update past by a fixed
+number m of alternating wall updates supply internal spatial cuts?
+Record searched: prehistory|past.depth|past.horizon|image.*half +
+surject|full.shift|arbitrary.*tail|boundary.*distance ->2 hits, GC608
+return-image discussion; use established left permutivity, not a new
+surjectivity claim. Prediction: for every fixed m and prescribed wall
+history, the projection of its right-row image onto cells m+1 onward
+is the entire binary shift. CF/U: this remains true after fixing the
+observed prefix; GC1004 should refute that strengthening. Hand block,
+no computation or observer-cap increase.
+
+Proof: any finite output block on the whole line has a preimage under
+Rule30. Choose the two rightmost source bits arbitrarily, then solve
+successive source bits from right to left using left permutivity.
+Compactness gives a preimage of any infinite whole-line target, and
+iteration gives one under m updates. Extend any desired right tail
+on cells m+1 onward to a whole-line target and choose such a preimage.
+Restrict the source to positive cells and evolve with the prescribed
+wall at column0. The final outputs at i>=m+1 agree with the whole-line
+evolution because their initial cones lie entirely at positive cells.
+Thus the remote-tail projection is full for every m. For finite target
+blocks a finite source truncation beyond their cones suffices as well.
+
+Unexpected guard: fixing the origin destroys the conclusion. At m=1,
+fixed output prefix100 forces output4<=output5, so tail10 is impossible
+(GC1004); without that prefix both symbols are allowed arbitrarily in
+the projected tail. Therefore this theorem does NOT remove correlations
+between the observed origin and the exterior, or exclude fixed-width
+proofs retaining that relation. It excludes only unconditional internal
+spatial cuts derived from a fixed wall past. Retain the conditional
+origin/exterior relation; no record bound follows. Hand proof pending
+review. Next useful block must address that relation, not increase past
+horizons to seek unconditional spatial forbidden factors.
