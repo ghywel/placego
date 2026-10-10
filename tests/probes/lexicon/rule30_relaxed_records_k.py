@@ -444,11 +444,13 @@ def main():
     elif cmd == 'probe':                                     # one relaxed call per (depth, phase), for TR's depths
         tag, L = sys.argv[2], int(sys.argv[3])
         tag1 = sys.argv[4]                                     # the phase-1 list's tag (L1 c L, so tag is valid too)
-        depths = [int(z) for z in sys.argv[5].split(',')]
+        items = []                                             # "d" (both phases) or "d:phase"
+        for z in sys.argv[5].split(','):
+            items += [(int(z.split(':')[0]), int(z.split(':')[1]))] if ':' in z else [(int(z), 0), (int(z), 1)]
         cap = int(sys.argv[6]) if len(sys.argv) > 6 else 3600
         forb = {0: load_forbidden(tag), 1: load_forbidden(tag1)}
-        for d in depths:
-            for ph in (0, 1):
+        for d, ph in items:
+            if True:
                 t0 = time.time()
                 v = Relaxed(d, L, ph, forb[ph]).solve(cap, forb[ph])
                 with open(os.path.join(DIR, 'rlk_probe.ck'), 'a') as f:
