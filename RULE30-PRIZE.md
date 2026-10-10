@@ -5582,7 +5582,7 @@ rerun end to end (a gap, not a refutation); the per-step survival ratios at $m =
 graded; 2026-10-10)
 
 *Lane q4 (independent agent) was given the period-4 wall 1100 and its four rotations, with the record $R'(3..22)$ from
-KIMI-QUESTIONS-2.md as calibration. Graded by Cloud 21:57 BST; its skeptic is running. Prior work in the record: the
+KIMI-QUESTIONS-2.md as calibration. Graded by Cloud 21:57 BST; skeptic graded 22:34 BST. Prior work in the record: the
 three games of §8.40 for words to period 4, the parked Condrey ends, and Cloud's SAT values to 22.*
 
 **Computed.** $R'(3..22)$ reproduced exactly by three methods (a C depth-first search, a numpy brute force, its own SAT
@@ -5613,12 +5613,28 @@ positive entropy (about 0.4 bit per block), so eventual periodicity cannot be fo
 against 0.4 free bits make long survival exponentially rare. The lane's next step, a renormalisation of column 2
 against the 1001/1011 blocks of column 1, is the one structural lead it offers.
 
+**Skeptic's verdict (independent agent, Cloud-checked, 22:34 BST).** Every computed value it could reach was
+reproduced by a different method: a forward-simulation lifetime search gives all 104 per-rotation values to depth 26;
+its own forward light-cone SAT encoding, with two other solvers, confirms $R'(100) = 17$ (unsatisfiable at $T = 117$
+for all four rotations) and spot values at depths 29, 36, 50, 77, 85 and 99; the lifetime lemma, the warm-ups, the
+locks, the lock lemma, the structure theorem, the closed forms and the forbidden word 010 hold line by line, the last
+three also under exhaustion of every length-28 column-1 trace. Two statements refuted. The per-rotation values at
+depth 100 quoted in the lane's argument (13, 13, 12, 17) are not what its own file holds (17, 16, 13, 11; the maximum
+17 stands; Cloud read the file). And 'the trace enumeration matches the structure theorem exactly' is false in a
+useful direction: the transition block after $(0100)^K$ is 0101 only for $K \le 1$, 1011 only for $K \le 2$, and
+always 0001 for $K = 3$ to 6 (Cloud recomputed this from the lane's trace file), a sharper structure than the theorem
+states and a candidate for a hand proof. Gaps: 'no linear-algebra shortcut', 'the locks do not bound the runs',
+'positive entropy' and 'not of finite type' are heuristics from at most ten data points, not theorems; the bound $K
+\le (d+1)/4$ shifts by up to 3 for rotations other than 0; one lane script prints wrong zero-run maxima for the
+periodic left halves through a period-concatenation bug while the report quotes the right values. The values at depths
+30 to 98, other than the spot checks, rest on the lane's solver alone.
+
 
 ### 8.86 Is the right-half language sofic? Evidence against, a certified entropy ceiling, and a death criterion
 (swarm lane q5, graded; 2026-10-10)
 
 *Lane q5 (independent agent) was asked whether the visible language $L$ of right halves beside the wall is sofic.
-Graded by Cloud 21:57 BST; its skeptic is running. Prior work: §8.20's TC2 ($|L_n|$ to 39, the minimal forbidden
+Graded by Cloud 21:57 BST; skeptic graded 22:34 BST. Prior work: §8.20's TC2 ($|L_n|$ to 39, the minimal forbidden
 words, a certified entropy ceiling from the Aho-Corasick automaton), SLC's entropy.*
 
 **Proved and Cloud-verified.** $L$ is factorial and right-extendable but not left-extendable (suffixes of $L_n$ fall
@@ -5647,3 +5663,20 @@ with membership proved for all lengths, and the two candidate families found car
 means.** If $L$ were sofic, the period-2 question for left-finite configurations would be a finite-automaton check;
 the evidence says it is not, so the real record's finiteness will not come from a finite-state description of column 1
 alone. The death criterion is the clean test to push: deaths at arbitrarily late times refute soficity outright.
+
+**Skeptic's verdict (independent agent, Cloud-checked, 22:34 BST).** The exact sets $L_n$ to 26 survived: a brute
+force in C to 16 and an independently written lazy enumerator to 26 agree word for word, with identical leaf counts;
+the hand proofs for 11 and 00000, the regularity criteria, the fooling sets (51 pairs re-verified), the follower-set
+tables, the spectral radii and an independent exact certificate for $h \le 0.2536$ all hold. One item refuted: 15 is
+not a minimal death time; the minimal death times in the exact data are 0 to 6, 8, 9, 11, 12, 14 and 16 (Cloud: the
+lane's own deaths file lists exactly these), and every later death the lane found is implied by the two minimal deaths
+10001001 at 16 and 00001000100 at 14. The 'recurring' absent family $0(1000)^2(10)^r100$ is a window $r = 4, 5, 6$
+only: its $r = 7$ member, of length 26 and inside the data, is in $L$ (Cloud re-simulated the witness; 200 random
+tails all read the word). The DFA lower bound was capped at horizon 8: with horizon 10 the same method gives at least
+291 states at $N = 26$, so part of the 'no plateau' growth is the cap, and inconsistency of horizon-$K$ classes for $K
+\le 10$ is expected even for a regular language with hundreds of states, so that evidence is weak. Strengthened: the
+late-time stabilisation is now proved by witnesses, $|L^{(j)}_8| = 32$ for $j = 17$ to 21, $|L^{(j)}_9| = 43$ for 17
+to 20, then 56, 73, 93 at lengths 10, 11, 12; suffix-properness holds for every $n \ge 7$, not only to 26; the ring
+search extends to period 20 with the same answer. The verdict on the main claim is unchanged: open, with the evidence
+against soficity somewhat weaker than the lane presented and the evidence for it (no deaths of short words after 16)
+somewhat stronger.
