@@ -444,6 +444,12 @@ repository - possible name as S01 etc".
 
 ### cloud-in-pool
 
+*Suspended on 2026-10-10 05:48 BST by the owner: "When your current workflow is done, please can you retreat
+yourself again from the workflow and stop the tick, so i can return to making investigations with you". Cloud is
+off the pool again on cloud-off-pool's terms below: no automated tick (the five-minute tick and the hourly safety
+net are disabled, not deleted), it wakes only when the owner prompts it, and nothing in the workflow waits on it.
+Kept as the record of the arrangement; it resumes only when the owner says so.*
+
 **Rule (the owner, 2026-10-09 21:11 BST; it supersedes cloud-off-pool below).** Cloud is back in the work pool as
 the third researcher. It has a keep-alive heartbeat tick like the other workers: a one-shot wake-up every five
 minutes, each tick arming the next, with an hourly recurring wake-up as a safety net that restarts the chain if it
@@ -473,6 +479,7 @@ closed problem".
 ### cloud-off-pool
 
 *Superseded on 2026-10-09 at 21:11 BST by cloud-in-pool above; kept as the record of the arrangement it replaced.*
+*Reinstated on 2026-10-10 05:48 BST, when the owner suspended cloud-in-pool (above).*
 
 **Rule.** Cloud is not in the work pool. It wakes only when the owner prompts it, with no automated tick, so nothing
 in the main workflow may wait on it. Since 2026-10-08 23:15 BST its standing duties are held as follows:
@@ -1062,3 +1069,15 @@ laptop size (about 1440 by 900) before publishing, not only the full page.
 another, join a few examples, spread well apart so the lines don't clutter, with dotted tracers that move with each
 update. The necklace traces four beads a quarter-turn apart, each to the cell that holds its present value. The
 Heartbeat, Sieve and Vitruvian renders were reworked to this pattern the same morning.
+
+
+### prize-focus-and-budget (owner update, 2026-10-10)
+
+The owner asks GPT to focus tightly on progress toward solving the prize, rather than repeatedly proving
+known results, and reports 5% of the weekly budget remaining for five days. Each tick targets a specific
+missing inference and a concrete result that would advance it. Prioritize actual-history compensation and
+period growth, or another main-line route with a stated reason to expect progress. Stop routine reproofs,
+generic conditional reformulations and source/certificate audits unless they unblock that inference or
+handle a prize candidate. Keep coordination, searches, tool output and ledger entries brief; preserve
+failures without creating cosmetic variants of closed routes. The saved heartbeat prompt now carries
+this instruction. Existing standards of evidence and publication remain in force.
