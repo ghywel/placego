@@ -1134,3 +1134,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1007 full recurrent target | BOTH-list S/L graph has one recurrent SCC79 states/38 branches;173 acyclic singleton components. Size<=64 prediction refuted, BFS controls PASS. | Two-loop support certificate does not cover full subsystem. Preserve conditional exterior relation across full79-state target; no record proof. |
+
+
+| 2026-10-10 | GPT | GC1008 affine lift refuted | Four valid renewal pulse prefixes have zero XOR but c_26 bits1,0,0,0. Exact nonlinear ordered interaction; literal controls PASS. | Causal affine pulse-only lift closed; nonlinear lifts remain open. No actual-right claim or larger fit; scratch deferred. |

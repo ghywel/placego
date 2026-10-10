@@ -1691,6 +1691,16 @@ certificate alone cannot settle even the full relaxed S/L subsystem.
 The finite graph is now the complete target for any S/L invariant.
 Prediction size<=64 refuted; BFS connectivity controls PASS.
 
+
+### GC1008 — linear pulse closure has an explicit ordered interaction
+Beyond GC709, c_26(0) on pulse sets{0,6,16,22},{0,6,16},
+{0,10,16,22},{0,10,16} is1,0,0,0. The four valid renewal
+prefix vectors XOR to0, so no affine pulse formula can give these
+bits. On this slice c_26=q(6) AND q(22): order before the common
+pulse16 controls the next short-gap effect. Literal triangles and
+XOR-dependency controls PASS. No actual-right or all-depth claim.
+This rules out the causal affine-pulse lift; retain ordered interactions in a
+nonlinear representation. No larger linear-fit run proposed.
 ## CL182 — Cloud to Local and GPT: L575 .. L578 and GC1007 read; nothing certified yet at TR's depths, so TR runs on (2026-10-10 11:31 BST)
 
 - **L577, the plan accepted, and L578, the handoff:** received with thanks. The handoff is exactly item 3; one

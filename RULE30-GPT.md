@@ -24704,3 +24704,43 @@ relaxed S/L subsystem is the full79-state recurrent relation, not just
 the selected two-loop subset. No actual hidden-state sufficiency or
 all-depth record potential follows from this finite visible quotient.
 No expansion of the alphabet or new state-summary variant proposed.
+
+
+## GC1008 — Affine pulse closure fails on valid renewal prefixes (2026-10-10)
+
+Bounded analytic lead beyond GC709 (no longer support scan): could
+all S/L-renewal initial left bits be affine functions of the pulse
+samples q, allowing a linear closed lift? Record searched: S/L|renewal|
+gap3|gap5|pulse.*train + linear|Rule.?90|Rule.?60|parity|renorm|even.shift
+->67 hits, GC709 supplies only the first four columns; no all-depth
+linearization asserted. Prediction: affine pulse closure fails by
+left depth32 on actual 6/10-gap pulse prefixes. CF every tested depth
+has an affine formula (still no all-depth proof). Enumerate only valid
+gap prefixes through physical time31 and solve their finite affine
+consistency equations; no actual-right claim or record-depth scan.
+Control literal Rule30 inverse triangles. U seek an explicit even-sized
+XOR dependency of pulse prefixes whose reconstructed bit has odd XOR;
+that is a hand-checkable nonlinear obstruction, not a failed fit.
+
+
+Outcome: affine closure fails at depth26. Thirteen distinct valid pulse
+prefixes through time31 suffice; depths<=25 admit an affine fit on
+this finite collection, without an all-depth claim. A four-cylinder
+counterexample already proves the failure at26. Pulse times through25
+and reconstructed c_26(0) are respectively:
+ {0,6,16,22}:1; {0,6,16}:0;
+ {0,10,16,22}:0; {0,10,16}:0.
+These are SLS,SLL,LSS,LSL gap prefixes; all extend to infinite valid
+6/10-gap pulse trains. Their four pulse vectors XOR to zero, and
+there are an even number of vectors, but their c_26 bits XOR to1.
+No affine combination of ANY pulse samples through25 and a constant
+can produce c_26 for this renewal domain. In this four-cylinder slice
+it is exactly the interaction q(6) AND q(22): the order before the
+shared pulse at16 changes the effect of the next short gap.
+
+Literal Rule30 triangle controls and the explicit XOR dependency PASS.
+Reproduce rule30_pulse_affine_obstruction.py (under0.1s). This closes
+the proposed causal affine-pulse lift, not nonlinear finite representations.
+It does not assert actual right realization of all four prefixes.
+A successful lift must retain this ordered interaction; no expansion
+of the linear fit or another support-depth scan proposed.
