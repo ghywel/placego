@@ -52,6 +52,15 @@
  *   period-16 stage, where the same lemma at P = 16 (clocks agree mod 16 by depth 429 on walk 0) makes them
  *   phase-free too. Phase dependence lives only in the short split windows after doublings (at most 232 steps here)
  *   and the first few hundred steps; on these histories it never reaches the maximum.
+ *
+ * ADDENDUM C2P (GC943's source qualification). As run above, C2 compared D_phi with D_(phi+16) only at each walk's
+ *   N5 entry snapshot, not on every prefix as its prediction says; that executed scope is what C2 PASS covers.
+ *   PREDICTIONS, written 2026-10-10 04:04 BST before the check was coded:
+ *   C2P (control, 0.99): at every depth before a walk's N5 entry, U_(phi+16) = U_phi + 16 for phi < 16 (16-periodic
+ *        equivariance), hence z and D agree for phi and phi + 16 on every prefix through the entry.
+ *   OUTCOME, 2026-10-10 04:04 BST: C2P PASS on all sixteen walks.
+ *   Credit (GC943): the CW identity is GC312/GC320's merge formula max(D1, D2, h1 + R2), applied at the coalescence
+ *   depth; what CW adds is the constant shift that makes L and R phase-free after coalescence.
  */
 #include <stdint.h>
 #include <stdio.h>
@@ -86,7 +95,7 @@ static int distinct(const int64_t *v) {
 }
 
 int main(void) {
-  int nw = 1, c2 = 1;
+  int nw = 1, c2 = 1, c2p = 1;
   int64_t maxall = 0, maxdev = 0;
   walks[0].y = 0xffffffffu;
   for (int p = 0; p < NP; p++) walks[0].T[p] = p;          /* clock started at phi; z(0) = 0, m = D = 0 */
@@ -107,6 +116,8 @@ int main(void) {
         if (z - w.m[p] > w.D[p]) w.D[p] = z - w.m[p];
         if (z < w.m[p]) w.m[p] = z;
       }
+      if (!w.entry)                                        /* C2P: every depth before the N5 entry */
+        for (int p = 0; p < 16; p++) c2p &= w.T[p + 16] == w.T[p] + 16 && w.D[p + 16] == w.D[p];
       for (unsigned k = 0; i == 0 && k < sizeof probe / sizeof probe[0]; k++)
         if (w.d == probe[k]) {
           int64_t a[NP], b[NP];
@@ -178,5 +189,6 @@ int main(void) {
          "2^20/(32 + max) = %.1f\n", c1 ? "PASS" : "FAIL", c2 ? "PASS" : "FAIL", g ? "HELD" : "REFUTED",
          maxdev / 2.0, maxall / 2.0, above60, 1048576.0 / (32 + maxall / 2.0));
   printf("CW %s (W1 identity and W2 stay-coalesced on all sixteen walks)\n", cw ? "PASS" : "FAIL");
-  return !(c1 && c2 && g && cw);
+  printf("C2P %s (U_(phi+16) = U_phi + 16 and equal D at every depth before each entry)\n", c2p ? "PASS" : "FAIL");
+  return !(c1 && c2 && g && cw && c2p);
 }
