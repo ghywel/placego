@@ -724,3 +724,5 @@ app is unpublished by design.
 - lexicon/rule30_collar_zero_lane.py: GC1072 exact rooted period32 front certifies three white propagation centres at K=12+32n; universal three-centre shield REFUTED. Four cycles and 256 independent actual controls pass; no language census.
 
 - lexicon/rule30_long_high_past_gate.py: GC1073 high fifth-track LL forces origin sites 7,9 black; initial110 always returns S. 24 local identities and256 independent cones pass; failed no-past countercontrols retained.
+
+- lexicon/rule30_short_high_selector.py: GC1074 exact mature SL high fifth-track origin gate; ninth-bit transport G=(f OR g) OR NOT(h OR i). 32 intermediate and independent gate controls pass; no mixed-word or record census.

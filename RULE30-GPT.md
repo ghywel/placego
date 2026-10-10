@@ -28210,3 +28210,25 @@ GC1047 supplies fifth track 0101101010 in either branch. Its time 9 bit is0 and 
 **Past gate and retained failures.** GC1053's mid01 branch has time 9 sites 6..10=(1,0,Q,R,Z), so its returned triple is(NOT Q,Q OR R,Q XOR(R OR Z)), never 110. Its mid1 branch gives time 9=(1,p,p OR q,N,z), N=NOT p AND(q OR r); the return is(NOT(p OR q),N,(p OR q) XOR(N OR z)), also never 110. Thus a preceding L0 independently excludes that origin triple, but the new future-conditioned pin is stronger.
 
 The initial proposed counterexample without an L0 past failed. A second prediction incorrectly held time2 site8 constant, omitting e; the intermediate control caught it. Splitting e repairs the proof. Changing e to1 still fails to restore high LL. Final controls:24 local identities,256 complete shielding cones,15 selected high-LL positives, independent literal/packed updates all pass. This supplies a correlated hidden-interface pin, not a record bound. Next inference is its transport through mixed S/L0 returns, retaining ninth-site correlation instead of fresh LL choices.
+
+
+## GC1074 — The mature short-to-long high selector has an exact correlated origin gate (2026-10-10)
+
+**Missing inference.** Transport GC1073's high-LL origin pins through a preceding S, retaining the ninth-site correlation. Record searched: 111010011|1110011 with high LL/profile/ninth pin/selector ->7 hits in 5 files; GC1052/1054/1056 give the existing mature branches and returned pair, not this ninth-bit formula. Reuse them and GC1073's equality of the time 3 and time 5 sixth bits. No solver, membership, mixed-word scan or relaxed-record computation.
+
+**Complete mature SL coefficient gate, proof sketch.** At a mature S entrance (index 4 or later in a synchronized S/L run), the following L0 fifth track is high 0101101010 exactly when the S origin begins 11101001100 and, writing f,g,h,i for its sites 12..15,
+
+    G = (f OR g) OR NOT(h OR i) = 1.
+
+Otherwise that following L0 has low track 0101100000. This selects its fifth track; its next return may still be S or L0. The high track by itself does not assert a following L0.
+
+**Hand transport.** GC1056 restricts a mature SL source to GC1054's branch A=111010001 or GC1052's branch B=111010011. A returns with site 7 white and sites 8 OR 9=1. B returns sites 7,8=(NOT w,w), w=initial 10 OR 11. When w=1, site 7 is also white. In both cases the next L0 time 3 sixth bit is white; the reviewed nonfork guards exclude the mid00 alternative, so its fifth track is low.
+
+For B with w=0, the origin begins 11101001100. The returned sites 7,8 are 10. Define time 2 sites 11,12,13 by
+
+    A=NOT(f OR g), B=NOT f AND(g OR h),
+    C=(f OR g) XOR[(f XOR(g OR h)) OR(g XOR(h OR i))].
+
+Their next first pair is D=NOT(A OR B), E=A XOR(B OR C). Local updates give time 4 sites 9..11=(1,0,NOT(D OR E)), time 5 sites 8..10=(0,0,D OR E), and returned site 9=D OR E. If f OR g=1, A=0 and D OR E=NOT B OR B OR C=1. If f=g=0, A=1,B=h,C=h OR i, giving D OR E=NOT(h OR i). Thus returned site 9 is exactly G for every farther tail. The next L0 has initial sites 7..9=(1,0,G), so its time 3/time 5 sixth bit equals G. GC1047 then selects the high track when G=1; when G=0, GC1052 bars L1 and the track is low.
+
+**Finite hidden relation.** The high branch requires initial 10=initial 11=0 plus BOTH clauses (f OR g OR NOT h) and (f OR g OR NOT i). These are correlated origin conditions, not fresh ninth-bit choices. All-white f,g,h,i gives high, while f=g=0 and h OR i=1 gives low; the first pair alone does not decide it. 32 exact local gate controls, 26 high and 6 low, agree in independent literal/packed engines and all intermediate identities. The first white pair countercontrol passes. Next missing inference is transport through an ordinary L0 and composition without fresh origin bits; no all-depth record bound is claimed.

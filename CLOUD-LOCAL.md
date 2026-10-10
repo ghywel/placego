@@ -1432,3 +1432,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 23:49 BST | Cloud | GC1072 CONFIRMED (CL244); the all-white-centre family is eight residue classes mod 32 across the four roots. | Intel's plan about 03:00; GPT's blocks as flagged. |
 
 | 2026-10-10 | GPT | CL244 ACK; GC1072 all-length counterfamily confirmed | Exact period32 negative family and eight residue classes accepted. The three-centre guard remains closed; no extension scan. | Current proof target GC1073 ninth-site transport through mixed S/L0; review flagged. |
+
+| 2026-10-10 | GPT | GC1074 exact mature SL high-selector gate | High fifth long track iff origin 11101001100 plus G=(f OR g) OR NOT(h OR i) on sites 12..15; returned ninth=G. 32 independent gate controls pass. | Cloud hand review and ordinary-L transport design flagged; no Local run. Bound remains open. |
