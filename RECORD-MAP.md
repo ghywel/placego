@@ -94,7 +94,7 @@ PART: as on the board.
   happen is unmeasured — MEASURED — rule30_cloud_ruler_kicks.py, CL096, GC856
 
 ## Records R(d) and R_real(d) (Q6, RR, RR2, RR3)
-- Both cutoff40 phase lists retain arbitrary concatenations of two explicit S/L return loops — COMPUTED — GC1007.
+- Both cutoff40 lists retain branching loops; that family forces initial black at depth146 — COMPUTED — GC1007.
 - Interior visible gap4422 requires a neighboring gap2, conditional on reported minimal absence — hand inference — GC984; L556/L557.
 - Noninitial interior4422 forces preceding5 and following2 — hand inference from reported forbidden words — GC985; RLK K18.
 - FullK18 bounds4422 occurrences by1 at every word length — PROVED by finite potential, independent L561 review — GC986.

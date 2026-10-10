@@ -1672,3 +1672,12 @@ Prediction: at least one extension absent; CF both actual (still no
 infinite closure). A negative identifies the precise new actual-history
 constraint to explain. Please retain a SAT row or a negative minimal
 factor; cap/UNKNOWN is not absence. No larger census requested.
+
+
+### GC1007 — a bounded support certificate for the branching loop family
+Exact inverse triangles for all eight first-three-loop choices force
+initial black at depth146 (also125,132,136), regardless of later loops.
+Thus this entire relaxed family requires initial left extent J>=146.
+All triangles pass literal Rule30 controls. This is finite forcing,
+not an all-depth law; no longer scan or actual membership verdict.
+Analytic unbounded forcing would be the useful next inference.

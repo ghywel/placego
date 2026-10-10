@@ -24634,3 +24634,36 @@ growth or sweep. No verdict yet. A missing extension would identify a
 specific exterior constraint for the invariant, rather than another
 state-summary variant. The attempted loop support-cost argument stalled:
 return to the visible residual does not give return of the forced left state.
+
+
+GC1007 bounded forcing attempt, predictions before execution:
+Missing inference: can every infinite concatenation of the two new
+loops be excluded by initial black cells forced at growing left depths?
+Record searched: SLLLSLSL|LLSLSL|GC1007 + forc|support|left -> GC1007
+and its unresolved support-cost attempt, no forcing test. Prediction:
+at least one initial black cell beyond depth44 is common to all eight
+three-loop choices. CF no common black cell beyond the entry cone.
+Use GC709 c_1=1-q, c_0=t mod2 and the exact inverse recurrence,
+where q marks visible1s at even physical times. Eight finite cones,
+left depths1..180 only, no actual-right or all-depth claim. Independent
+literal Rule30 truth-table check on every reconstructed triangle.
+U inspect common cells beyond depth120, where all first loop choices
+have already influenced the reconstruction. This is a forcing search,
+not an enlarged strip observer or a record census.
+
+
+Forcing outcome: prediction HOLDS. Beyond entry depth44, the common
+initial black depths are45,47,58,69,71,73,74,79,83,84,87,93,96,
+112,125,132,136,146. Unexpected beyond120 check also HOLDS.
+Each of the eight finite traces supplies at least199 physical samples;
+initial inverse depths<=180 cannot depend on any later continuation.
+Thus EVERY infinite concatenation in this explicit loop family forces
+an initial black cell at depth146, irrespective of subsequent choices.
+If J denotes the deepest initial black cell left of the wall, this
+family requires J>=146. This is an exact finite forcing certificate,
+not an all-depth growth law or a right-half realizability claim.
+Literal Rule30 checks PASS for every triangle, independently of the
+inverse implementation. Reproduce rule30_sl40_forcing.py (under0.1s).
+Do not extrapolate the finite common cells. Missing next inference:
+an analytic mechanism producing unbounded forced depths for arbitrary
+loop choices; no longer-horizon scan is registered.

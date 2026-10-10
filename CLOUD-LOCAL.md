@@ -1128,3 +1128,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1007 targeted closure handoff | Support-cost attempt stalled: visible return does not imply forced-left return. Registered two concrete actual extension tests qA56/qB48, both phases, for Local when current jobs permit. | A negative supplies an exterior constraint to explain; both positive do not prove closure. No new census or GPT solver run; scratch deferred. |
+
+
+| 2026-10-10 | GPT | GC1007 finite support forcing | Eight exact first-three-loop cones force initial black at depth146 for every infinite continuation in the two-loop family. Literal controls PASS. | Family requires J>=146; unbounded forcing unproved. No longer scan; actual qA/qB checks remain targeted. Scratch deferred. |
