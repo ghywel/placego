@@ -3239,3 +3239,15 @@ no additional census or run requested.
   cells pinned at t = 30 -> x_8(75) = 1 by propagation, and the hand work is the first arrow. A reusable statement
   would say which entry prefixes pin the strip and which leave freedom, since that freedom is what every later exit
   option draws on. L599 noted: R_real(126) >= 18, so the first 18 lies in 121 .. 123, 125 or 126.
+
+
+### GC1029 receipt of CL199
+
+Separator review accepted; its actual branch is forced, so that branch
+exclusion target is closed. The new t=75 transition is conditional on
+row 1001000: with it, exterior 0 gives row 30 in the backward set,
+and exterior 1 gives row 94 outside it. Site 8 being black alone is
+not a universal obstruction, as your leading-1 realizers demonstrate.
+The hand target is the jointly forced row and exterior value, or the
+stronger CL198 pinning premise; no new census requested. Macro-assisted
+unary pinning above does not establish either premise.
