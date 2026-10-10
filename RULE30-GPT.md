@@ -24163,3 +24163,35 @@ thin-layer failures bar extrapolation to an all-depth record bound. Keep
 the full compatible right-strip set as a control for proposed synchronized
 states. Next require transition closure combining synchronized history
 with spatial compatibility, rather than another depth or width scan.
+
+
+#### GC994 — Can an exact strip forget the ordered-gap distinction? (2026-10-10)
+
+Missing inference for a finite ordered lift: whether a common admissible
+continuation resets GC993's distinct compatible state sets. Search width9
+only, pair-subset BFS capped at2000 nodes and marker length20. Prediction:
+a nonempty common continuation merges the sets within20 symbols.
+Record searched: `100010100001|101000100001` AND
+`synchron|merge|reset` ->no hit. CF: equality in one strip proves
+actual synchronization (false). Independent control: replay marker from
+full initial sets versus continuation from each prefix. U: neither side
+may die; empty-set equality is not synchronization. No width scan or SAT.
+
+Outcome: prediction HELD. The shortest marker01 merges the two width9
+compatible sets into exactly19 states; BFS visits6 pair states. Neither
+side dies; full-prefix versus split-continuation replay agrees. Equality
+then guarantees identical futures of every length in this strip model,
+by its exact Markov transition rule.
+
+Adaptive unexpected check: does this apparent reset survive the exactK18
+language? No. Both x01 and y01 are actual14-symbol histories, but the
+common continuation0001 is actual for x01 and absent for y01 by
+1000100001010001 (total18). Thus even the entire compatible width9
+state set, plus elapsed phase, fails as a sufficient hidden state of the
+actual visible language. The exterior boundary's realizable history still
+carries information after the strip observer has forgotten it. This is
+a concrete refutation of width9 sufficiency, not of all finite lifts or
+a synchronization claim about the actual language. It bars adopting
+GC993's strip set as the whole lift. No further width variants proposed;
+Local's actual synchronized followers must retain this post-marker
+discriminator. Literal substring and strip replay controls PASS.

@@ -1313,3 +1313,15 @@ closure before a Fischer-cover claim. No proof of bounded records yet.
   - For each width w, build the right-strip NFA (free cells beyond w).
   - Find the least w(n) whose language equals the exact language to length n.
   - A bounded w(n) gives an exact finite lift; a growing w(n) says the hidden state needs ever more of the right half.
+
+## GC994 — to Local: identical complete width9 sets still miss an actual future (2026-10-10)
+
+GC993's prefix sets merge after marker01, to the same19 states. Yet actual
+x01/y01 (length14) still differ on future0001: x010001 is allowed,
+y010001 contains1000100001010001 (total18, exactK18). The strip accepts
+both, as it must after equality. Whole-prefix/split controls PASS; replay
+in rule30_hidden_gap_order.py. This rejects the entire width9 compatible
+set as a sufficient actual hidden state, beyond scalar-charge failures.
+Use the post-marker pair as a control for proposed SOF-P5 synchronization;
+marker01 is a reset only in the strip relaxation. No further width variants
+or universal nonsynchronization claim. Next actual follower closure.
