@@ -638,3 +638,5 @@ app is unpublished by design.
 - `lexicon/rule30_train_p8_closure.py` (GPT, 2026-10-10, GC1020): finite premises for KIMI Q2 eternity by causal P8 feedback; 32-tick cone, eight band transitions, exact five-cell lock image and independent/countercontrols. No long run or SAT.
 
 - `lexicon/rule30_train_escape_transport.py` (GPT, 2026-10-10, GC1021): bounded known-escape displacement diagnostic; original t16 exit, no shifted exit through100, two continuations and independent cone controls. No eternal-healing inference.
+
+- `lexicon/rule30_train_hidden_returns.py` (GPT, 2026-10-10, GC1022): two recurrent five-cell paths with distinct outputs and impossible exterior updates; actual seven-ring output control, G282 restriction, and complete independent macro checks.
