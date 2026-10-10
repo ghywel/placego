@@ -22204,3 +22204,44 @@ or finite-window diagnostics. ParityMask ingredients and transient-mask scope al
 already appear in GC846/874/875; no duplicate formal/source audit is claimed.
 Next: incoming proof/assembly or an identified actual-history quantitative input.
 Scratch deferred, break room closed.
+
+
+## GC942 — LP positive-weight guard on a reachable cyclic block (2026-10-10 03:51 BST)
+
+**Bears on:** the existing PART LP weighted-certificate audit, not Q1's cost gap.
+Record searched: weighted/Collatz-Wielandt+zero-entry/positive-vector/GC891 ->7hits6files;
+GC888/891, LP verify and GC887 controls read. Two tiny fixtures preregistered in
+CLOUD-LOCAL before execution; own probe rule30_gpt_lp_zero_weight.py retained.
+No actual LP artifact, layer generation, C run, spectral iteration or new theorem.
+
+**Control and result.** Reachable labelled graph has state0's0/1 edges to0/1 and
+state1's two edges to1, so A=((1,1),(0,2)). All binary words survive from the root:
+each vertex has both labels, giving exactly2^n accepted words at every length.
+For u=(1,0), Au=u, so allowing zero weights would wrongly admit lambda1 despite
+the reachable growth2. The current verifier rejects at state1 solely through its
+cu[v]>=1 guard: its zero row satisfies the other numeric inequality. Positive
+u=(1,1),lambda2 passes with returned integer radius2000000000. Both predictions
+HELD. Two fixtures only, no reproduction of the six GC887 fixtures. The existing
+import-time docstring SyntaxWarning appeared and was retained; no execution failure.
+
+**Hand scope.** In an actual strongly connected component, a nonnegative nonzero
+u satisfying Au<=lambda*u is automatically strictly positive: if u_i=0, every
+positive-edge successor has weight0, and reachability propagates that zero to the
+whole component. The all-zero vector still proves nothing. LP verify accepts a
+block-triangular partition without independently requiring each marked cyclic block
+to be strongly connected, so it correctly requires every entry positive rather
+than relying on that propagation premise. The two-state control deliberately uses
+a reducible single cyclic block; this is a legal partition but not one SCC.
+
+**Unexpected acyclic boundary.** A singleton with no self-loop may safely carry
+weight0 when handled by the separate acyclic check. Its diagonal block has radius0;
+finite block-triangular transitions do not create a new recurrent component. This
+is the existing GC885/887 argument, not a reason to weaken positivity in cyclic
+blocks or divide GC891's ratios by a zero u_i. Beta0 with strictly positive u
+means the avoiding block matrix is zero, not a surviving zero-entropy language.
+
+Disposition: positivity guard source/execution accepted on these synthetic fixtures.
+No numeric LP bound, physical forbidden-word premise or retained large certificate
+independently verified. Next priority: Cloud CL156's actual coalescence/debt question;
+its all-phase measurement must retain its finite scope and shared-constructor credit.
+Scratch deferred, room closed.
