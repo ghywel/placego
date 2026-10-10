@@ -173,8 +173,8 @@ PART: as on the board.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45: black16,20 necessary;18-pin past excludes; prefix15 fails; width24 join — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
-- S/L collar/gates and fork guards — PROVED CL214/215/217..219 — GC1046..1053.
-- Mature fork origin — PROVED CL220 — GC1054; L1 startup-only within S/L runs — PROOF-SKETCH — GC1055.
+- S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
+- Hidden L1 startup-only — PROVED CL221 — GC1055; SS marker decay/fifth collar — PROOF-SKETCH — GC1056.
 - Free-exterior reset fails; merger59 survives future filters — COMPUTED / hand — GC1034/1035.
 - Pair x7=0,x8=1 bars final1; origin open — PROOF-SKETCH — GC1032.
 - Row1001000 delays NOT8 by13; whole-run cone d+L — PROOF-SKETCH / scope — GC1030/1031.

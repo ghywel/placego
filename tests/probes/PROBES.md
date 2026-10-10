@@ -716,3 +716,5 @@ app is unpublished by design.
 - lexicon/rule30_long_successor_shield.py: GC1053 universal L0-to-L0 successor OR guard bars L0-L0-L1 by translated two-tick ancestry;448 local controls PASS, two engines. First unlifted countercontrol REFUTED; corrected ancestry and S-birth controls PASS. No record/membership scan.
 - lexicon/rule30_short_fork_origin.py: GC1054 all-tail S111010001 output blocker and black-sixth short-image guard reduce mature forks to L0-S-L0-L1;1,152 complete local cones and intermediate independent controls PASS. Startup exemption retained; no mixed-word scan.
 - lexicon/rule30_long_short_origin.py: GC1055 L0-S source-prefix OR guard,256 complete local cones and independent intermediate controls PASS; hand corollary confines L1 to first three typed S/L returns, at most once. Actual L1-S source countercontrol passes; no mixed-word census.
+
+- lexicon/rule30_short_marker_decay.py: GC1056 finite SS sixth-marker monotonicity and mature fifth-track table;128 complete cones, intermediate independent controls and black-persistence/L1-origin countercontrols PASS. LL selector and all-depth closure remain open.

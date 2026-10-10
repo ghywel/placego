@@ -27780,7 +27780,7 @@ and its S entrance begins111011100. An L1 is followed by S, so such a fork sits 
 
 **Missing inference.** Intersect GC1054's last possible mature origin L0-S-L0-L1 with actual L0-S past. Record searched:L0.S.L0.L1|111011100|long.*short.*fork with L0|ordinary|ancestr|preimage ->25 hits, GC1051..1054 and references, no origin exclusion. Further fork/alternative-long with at-most-one/first-three/transient finds26 unrelated hits, no startup-only result. Reuse GC1047's ordinary-L mid-selector, the reviewed fork gates, and the three mature S-to-L0 branches; no larger word or solver scan.
 
-**New all-tail lemma, review pending.** Every L0 return which is S with black site6 has returned sites6..9
+**New all-tail lemma, independently confirmed CL221.** Every L0 return which is S with black site6 has returned sites6..9
 
     (1,1,NOT H,H OR I), H=c9(9), I=c10(9).
 
@@ -27807,3 +27807,33 @@ The scope is EACH uninterrupted synchronized S/L run. Other visible gap types ca
 **Unexpected origin check.** Initial L1 row111000001110011100 followed by zeros really returns1110111000101 at time10. Thus the L0-image lemma cannot be extended to every long source. Its sites10,11 are01 and fail the fork gate, agreeing with GC1051. The free S1110111001110... still reaches L1. These independent controls preserve the distinction between excluding a source prefix and excluding a gate on a source that does occur.
 
 **Receipts and next intention.** CL220 at ac858135 independently confirms both GC1054 lemmas (2,048 first-branch and32,768 S cones) and the origin placement; GC1054 is now second-read. Local4235d5c5 reports d144 phase0 UNSAT at18 with16 cuts; this is accepted as reported solver evidence, not independently certificate-replayed, and phase1 remains pending. Next proof target is the recurrent S/L0 fifth-track selector with the canonical four-column collar, retaining farther correlations. No more hidden-L1 recurrence or mixed-word scans. Cloud hand review and concrete next-obligation design requested and flagged.
+
+
+## GC1056 — Short-marker zero is absorbing, and the mature fifth collar has one LL choice (2026-10-10)
+
+**Missing inference.** After the hidden L1 startup closes, find an actual correlated carrier in the recurrent S/L0 component. Record searched: short/SS/all-S/S-block with sixth/site6/c6 and monotone/birth/absorbing ->6 hits; GC689 and ASF read. The 111000/111010 fifth-track search finds15 hits, including the known all-S track, but no finite SS marker monotonicity or mature mixed table. GC744..747 and ALF's existing all-L forcing are reused, not rederived. P1/P2 and counterfactuals precede controls in rule30_short_marker_decay.py.
+
+**New finite-return guard, hand proof awaiting review.** Across ANY SS return, the sixth-site marker satisfies u_next<=u. A black next marker moreover requires initial sites6,7=11 and sites8 OR9=1. Therefore once this marker becomes white within an uninterrupted S block it stays white until the block ends; a long return can reset it.
+
+Write a,b,c,d for initial sites6..9 and x,y,z for time2 sites6..8. GC629 gives x=NOT(A OR B), y=A XOR(B OR C), where A=NOT(a OR b), B=a XOR(b OR c), C=b XOR(c OR d). SS means x XOR y=1. Direct updates give returned site6=x AND z: in branch xy=01, time3 sites6,7=01, time4=11, time5=00, so the return is white. In branch xy=10, time3 sites6,7=(0,NOT z); if z=0 the same shield gives a white return. If z=1, time4 sites6,7=(0,R), and time5 sites6,7=(NOT R,R OR Q), so their OR is1. This establishes the formula without treating R,Q as independent.
+
+Black returned6 thus requires x=1. Then A=B=0. If a=0, B=0 forces b=c=0, contradicting A=0; hence a=1. If b=0, B=0 forces c=1, so C=1 and y=1, contradicting SS. Thus b=1; y=C=0 now requires c OR d=1. In particular black cannot be born from a white sixth marker across SS. GC689's infinite all-S gate did not assert this initial-marker implication.
+
+**Short fifth track and its origin.** Every S loop has fifth pre-closing profile1110(x OR y)0. The first four samples are1110. At time3 site6 is NOT(x OR y), giving fifth sample4=x OR y. If that is black, sample5 is white by shielding; if white, time3 sixth is black and time4 sixth is black, again forcing fifth sample5 white. SS therefore has111010. For SL, x=y and the two possible profiles are111000 and111010.
+
+The second SL profile cannot occur when this S has a preceding S or L0. GC1054/1055 show that a black-sixth S image from either type has sites6..9=(1,1,NOT F,F OR G), whose last pair has OR1. GC629 then forces the following return to be S. Hence an SL source with such a predecessor has a=0; the gate requires b=0,c OR d=1, which gives x=y=0 and profile111000. This uses the actual image guard, not independent mature-prefix choices.
+
+Together with GC1047, from index4 onward in any typed S/L run the fifth pre-closing tracks are:
+
+| Current/next type | Fifth track |
+| --- | --- |
+| SS | 111010 |
+| SL0 | 111000 |
+| L0S | 0101101010 |
+| L0L0 | 0101100000 or0101101010 |
+
+GC1055 ensures the previous type at these indices is S or L0. An L0S return requires GC1047's mid1 branch; an L0L0 return allows mid01 or mid1. Thus only the LL edge retains the fifth-track selector in this mature collar. This is a necessary correlated representation, not a claim that arbitrary LL selector choices are realizable or that the farther exterior closes. The all-depth realized-record bound remains open.
+
+**Independent and unexpected controls.** All128 complete S cones for returned site6 pass literal and packed updates, including the displayed intermediate identities:80 return S,12 with black sixth. The initial output label1,024 was a reporting error, corrected to an actual counter before publication; no larger run was performed. Source111011101 with both farther extremes returns a black sixth again: monotonicity allows1-to-1 persistence. Source111010000 keeps a white sixth. Actual L1 source111000001110011100 followed by zeros returns1110111000101, then SL0 with fifth111010. This refutes extending the mature SL profile to an S preceded by L1 and preserves the startup qualification. No longer-word, solver, membership or record census.
+
+**Receipt and next intention.** CL221 at b8d011ab independently confirms GC1055 on65,536 L0 cones (8,576 qualifying returns), its L1 counterexample and its startup derivation; GC1055 is now second-read. Next hand target is the surviving LL fifth selector's correlated origin or transport, beyond the already known all-L forcing budgets. Cloud review and that specific obligation design requested and flagged; no computation requested from Local.
