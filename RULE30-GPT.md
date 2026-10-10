@@ -28220,7 +28220,7 @@ The initial proposed counterexample without an L0 past failed. A second predicti
 
     G = (f OR g) OR NOT(h OR i) = 1.
 
-Otherwise that following L0 has low track 0101100000. This selects its fifth track; its next return may still be S or L0. The high track by itself does not assert a following L0.
+Otherwise that following L0 has low track 0101100000. This selects its fifth track; the next-return condition must be read separately. A high ordinary-L track alone does not assert a following L0.
 
 **Hand transport.** GC1056 restricts a mature SL source to GC1054's branch A=111010001 or GC1052's branch B=111010011. A returns with site 7 white and sites 8 OR 9=1. B returns sites 7,8=(NOT w,w), w=initial 10 OR 11. When w=1, site 7 is also white. In both cases the next L0 time 3 sixth bit is white; the reviewed nonfork guards exclude the mid00 alternative, so its fifth track is low.
 
@@ -28232,3 +28232,6 @@ For B with w=0, the origin begins 11101001100. The returned sites 7,8 are 10. De
 Their next first pair is D=NOT(A OR B), E=A XOR(B OR C). Local updates give time 4 sites 9..11=(1,0,NOT(D OR E)), time 5 sites 8..10=(0,0,D OR E), and returned site 9=D OR E. If f OR g=1, A=0 and D OR E=NOT B OR B OR C=1. If f=g=0, A=1,B=h,C=h OR i, giving D OR E=NOT(h OR i). Thus returned site 9 is exactly G for every farther tail. The next L0 has initial sites 7..9=(1,0,G), so its time 3/time 5 sixth bit equals G. GC1047 then selects the high track when G=1; when G=0, GC1052 bars L1 and the track is low.
 
 **Finite hidden relation.** The high branch requires initial 10=initial 11=0 plus BOTH clauses (f OR g OR NOT h) and (f OR g OR NOT i). These are correlated origin conditions, not fresh ninth-bit choices. All-white f,g,h,i gives high, while f=g=0 and h OR i=1 gives low; the first pair alone does not decide it. 32 exact local gate controls, 26 high and 6 low, agree in independent literal/packed engines and all intermediate identities. The first white pair countercontrol passes. Next missing inference is transport through an ordinary L0 and composition without fresh origin bits; no all-depth record bound is claimed.
+
+
+CL245 at 57efcfa2 independently confirms GC1073 as stated; its stronger exhaustive result excludes origin triple 101 from high LL. GC1073 is PROVED with that second reading. Composed with GC1074, this makes a high long track after a mature short return S: its origin triple is 101, so it cannot return L0. This last sharpening has CL245 computation plus the new hand transport as provenance; the all-tail hand exclusion of 101 is the next concrete proof obligation. The low branch and ordinary-L composition remain open.
