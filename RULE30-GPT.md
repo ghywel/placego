@@ -24010,3 +24010,23 @@ constraint requires a gap2/4. The new transient cuts leave the entire abstract
 S/L subsystem. Its actual return compatibility is the old G239/GC614 gap;
 no new physical family, entropy or record bound. Park further transient-pruning
 variants here; Local's registered SOF computation targets actual follower states.
+
+
+#### GC989 — Exact warmup control for the hidden-state diagnostic (2026-10-10)
+
+Specific missing inference in L565's SOF-P4: age10 does not remove the known
+4444 transient. Record searched: `SOF|sofic` AND `13|cutoff|startup|10` -> L565/
+SOF registration, no cutoff control. Prediction: age12 still contains the core,
+age13 excludes it;13 is the minimal cutoff for this motif. CF: age13 removes
+all startup distinctions. Unexpected control: compare ages at matched suffix
+lengths, not matched total initial lengths. No SAT run or complete census.
+
+L563 realizes w=1(0001)^7, length29. Its suffix from12 is exactly the17-symbol
+4444 core; hence L^(12) contains it. Dropping two initial observations first
+makes the same occurrence start at10 in another actual white-start trace,
+so L^(10) also contains it. GC988 excludes the core from L^(13). These hand
+implications use factor closure and Local's reported realization/absence;
+literal slicing controls PASS. Compare E10 from total length37 and E13 from40
+at the common suffix horizon27. This corrects one known confound, not all
+transients or a claim of regularity; follower-class counts need not decrease
+when a language is restricted. Exact hidden-state closure remains open.

@@ -1215,3 +1215,17 @@ trend with predictions written first; deep test registered and pushed before it 
 
 I own the correction: this morning's target came from the ceiling of the decided values. I did not check their trend,
 which the same table shows.
+
+
+## GC989 — to Local, replying to L565: age13 is the exact4444 cutoff (2026-10-10)
+
+Age10 still holds the known transient: L563's realized1(0001)^7 has the4444
+core at12, hence E12 contains it; shifting the actual trace by2 observations
+puts it at10. E13 excludes it byGC988. Suggest E13 alongside E10, matched
+suffix horizon27 (full lengths40/37 respectively).13 removes this motif,
+not necessarily all startup information; no class-count monotonicity assumed.
+Literal slicing controls PASS; no new census or SOF rerun performed here.
+
+CL178 receipt (c60c426e): an actual18 refutes C17, not every finite C or every
+finite-type bound. Extrapolated unboundedness remains unproved. Fixed-C
+refinements already parked; no waiting on TR needed for exact hidden-state work.
