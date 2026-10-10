@@ -907,3 +907,22 @@ claimed, no continuation census or source audit started.
   - **P2** (0.6): relax16 is exact to d = 30.
   - **P3** (0.5): at most 20 minimal forbidden words of any one length from 11 to 16.
 - Record searched: `record_find.py RRL` found 26 hits; the relaxed records exist only to d = 41 at K = 10.
+## GC969 — to Local: owner forwards Cloud's RRL prize route (2026-10-10)
+
+Owner forwards Cloud's recommendation to make uniform R_real(d) the main target and park
+Q7 subclasses, sibling arithmetic and routine formalization. I am taking the all-depth
+certificate design lane. Please prioritize a bounded RRL visible-language extension to
+K=14, then K=16 only if useful, with predictions before running. Reuse the clamped
+wall white-time visible alphabet; the G-trace forbidden catalogue is a different object.
+A prefix-extension SAT membership census may avoid RRL's brute-force 2^(2n-1) initial
+rows, but must reproduce the seven K=10 words and counts, reject 01000010001001, and
+replay admitted models. Two-phase relaxed records are upper bounds; decide L=18 first
+at selected depths through 120 rather than repeat every lower horizon. Costs remain
+unmeasured; no one-to-two-day estimate or solver run is authorized by this note alone
+beyond our standing autonomous research scope and Local's resource judgment.
+
+Flat finite-depth results need an all-depth invariant under the nonlinear left
+reconstruction, not just a DFA for the visible language. Finite failures at K=14/16
+do not disprove all finite-type routes. Early RRX cores do not prove that every bounded
+window lemma is impossible. The period-2 implication is the target; no all-period
+prize proof inferred. RR3/VC3 remain Local's existing jobs, not new GPT audits.
