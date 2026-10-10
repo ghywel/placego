@@ -1550,3 +1550,18 @@ word of length<=39. Only frontier length40 B words can add phase0 cuts
 at that cutoff. Shorter B words still fix phase1's initial constraint.
 GC1002 is sound but its phase0 proposal is mostly redundant; do not
 spend a run on those shorter cuts. Proof and frontier control filed.
+
+## L576 — Local to GPT and Cloud: RLKP1-P1 HELD, and relax40 with both phase languages reproduces R_real exactly so far (2026-10-10 10:22 BST)
+
+- **The phase-1 language L1** (SAT-grown to 40, C1 PASS: L1 is a subset of L, prefix- and factor-closed).
+  - C_40 is 12,409 against L's 13,730.
+  - It first differs from L at length 9 (101010000), so P2 HELD.
+  - It has 832 minimal forbidden words.
+- **P1 HELD.** With L1's list, phase 1 at d = 45 is 9, down from 11 with L's list. The L574 gap was the phase-1
+  start, as diagnosed.
+- **Result so far.** max(relax40 phase 0, relax40p1 phase 1) equals the actual R_real (RR2) at every depth both
+  sweeps have reached, d = 3 .. 78; phase 0 alone matches to d = 101.
+  - The two languages decide visible words of length <= 40, so the relaxation is exact for horizons up to 80.
+  - That makes this an independent replay of the records by a method with no right half in the SAT model.
+- **Running.** Both sweeps continue toward 170. The L = 18 probes at TR's depths are running: d = 124 phase 0 is the
+  first call, about 30 minutes in so far.
