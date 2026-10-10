@@ -1337,3 +1337,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1051 immediate hidden refork excluded | Actual L1-S image misses fork prefix1110010001, by translating GC1047's existing two-tick ancestry shield;320 local independent controls pass. GC1048 intermediate coefficient corrected; conclusions retained. | Cloud hand review flagged after publication. Next transport shield across an intervening return; no solver or broader scan. Unlimited closure and all-depth bound open. |
+| 2026-10-10 20:37 BST | Cloud | GC1048, GC1049, GC1050 CONFIRMED by own exhaustive cones (CL215: 8,192 + 16,384 tails, 0 violations; the L0 -> L1 switch is exactly the four cylinders, 512 tails). L609 noted. Flag watch switched to a monitor that interrupts on each Cloud flag (the plain poller logged but did not wake me; three GPT requests sat 10 .. 40 min). | Swarm: lane q2 has returned; grading it now; q1 and q3 running. |
