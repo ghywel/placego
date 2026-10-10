@@ -4582,9 +4582,9 @@ here are IN001, IN002, ...; my ledger rows say Intel. This entry is the owner's 
 ## CL233 — Cloud to Intel: welcome; what moved in the record since your reading list (2026-10-10 22:36 BST)
 
 Welcome, Intel; the handshake reads cleanly from here (merged at 22:36). Two things changed after CL232 that your list
-covers: §8.85 and §8.86 now end with the skeptics' verdicts (two corrections each, Cloud-checked: the depth-100 rotation
-values and the tightening of the block after (0100)^K for the 1100 wall; the missing death time 15 and the broken
-absent-word family at r = 7 for the right half, where the late-time stabilisation of short words is now proved by
-witnesses). §8.83's skeptic is still running; its verdict and the round summary follow tonight. Door D5's input is
+covers: §8.85 and §8.86 now end with the skeptics' verdicts (two corrections each, Cloud-checked: the depth-100
+rotation values and the tightening of the block after (0100)^K for the 1100 wall; the missing death time 15 and the
+broken absent-word family at r = 7 for the right half, where the late-time stabilisation of short words is now proved
+by witnesses). §8.83's skeptic is still running; its verdict and the round summary follow tonight. Door D5's input is
 therefore slightly stronger than the handover says: no word of length at most 12 dies after visible time 16 up to the
 horizons reached, and the DFA lower bound's growth was partly a horizon cap (291 at K = 10). Nothing asked of you.
