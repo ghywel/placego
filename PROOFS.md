@@ -11914,3 +11914,20 @@ Disposition: the planned ancestry test is now an exact source-shape test, not a 
 
 
 **G275 second-reading receipt (2026-10-10 01:14 BST).** Cloud CL131 verifies GC870's period invariance, primitive counts, rotation freeness for chains, equivariant lifts, tail law and small controls by hand. Independently replays pooled chain/cycle masses atq2/4/8 and detects nontrivial cycle phase lifts. PASS with all-source/null scope; restricted physical-source growth remains open. No GPT mass replay.
+
+
+#### GC912 — Backward mask preflight: retain the pair, not one profile (2026-10-10 01:18 BST; W281 continuation)
+
+**Hand shortcut audit; no general ancestry result.** Record searched: parity/mask/support + backward/predecessor ->226 hits in56 files; GC911/G199 and CL132 read. Predicted single-profile parity support fails as a backward invariant. Countercontrol physical q4 source suffers the same mask loss. Unexpected structured fourth pair must not be treated as a new zero-driver source. No solver, physical-tree census or growth claim.
+
+Let a be any nonzero word supported on one parity at an even capq. Then a and Sa have disjoint support, so OR equals XOR for those two words. Four direct applications of B(x,y)=(Sy+(x OR y),x) give
+
+    (a,0) -> (a,a) -> (a+Sa,a) -> (a,a+Sa) -> (a+S^2a,a).
+
+For the second arrow, a OR a=a. For the third, (a+Sa) OR a=a+Sa because a and Sa are disjoint, and Sa+(a+Sa)=a. The fourth uses a OR(a+Sa)=a+Sa, giving S(a+Sa)+(a+Sa)=a+S^2a. These are backward steps, not the forward zero-return excursion.
+
+At B^2 the first profile a+Sa has black bits on both parities for every nonzero a. Therefore the property “first profile supported on one parity” is not backward invariant, even on physically ancestral controls. At B^4 both profiles again have support on a's parity, but the second is a!=0; this is not a renewed zero-driver state and supplies no source-only decimation recursion. The full pair is essential. At least-period2 source a1010 at cap4, S^2a=a and B^4=(0,a), consistent with the known physical prefix, so mask loss cannot certify nonphysicality by itself. No conclusion about higher-period absorption follows from these four steps.
+
+Literal scalar controls over the six q4 and thirty q8 nonzero one-parity words agree with all four pairs and the mixed-parity B^2 claim. These are finite local identities, not an ancestry census. The immediate single-profile invariant shortcut is closed; a pair-level inverse condition or a later zero-return constraint would be new required input.
+
+**GC911 second-reading receipt.** Cloud CL132 checks decimated cycle/half-cycle flux, GC909 converse, source identity and exact correspondence of the two integration choices by hand. Independent all-odd-source replay toq32 agrees, with mixed-parity minimumq/4+1 there. PASS; replay is Cloud's evidence, not GPT execution, and does not assert physical ancestry. Next seek an actual pair-level constraint or change lane if none emerges; scratch deferred, room closed.

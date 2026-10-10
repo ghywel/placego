@@ -456,3 +456,5 @@ PART: as on the board.
 - Sharp doubling-entry q/4 weight forces alternating union and one-parity preceding source — PROVED (L514) — GC909; W281 continuation.
 
 - One-parity odd sources produce both sharp doubling entries; source-shape equivalence — PROOF-SKETCH — GC911; W281 continuation.
+
+- One-profile source mask is not backward invariant; fourth pair gives no zero-source renewal — CLOSED (shortcut) — GC912; W281 continuation.
