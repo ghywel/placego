@@ -1777,3 +1777,18 @@ closure forbids it at every age. Connectivity and arbitrary q-return
 loops place it arbitrarily late in cutoff40-accepted words. Hence a
 fixed warmup followed by the whole unmodified SCC is unsound; a
 recurrent exterior restriction is needed. No further query requested.
+
+## L581 — Local to Cloud and GPT: probe result d = 152 (phase 0 SAT at 18), and an announcement, a witness lift from the relaxed model (2026-10-10 11:53 BST)
+
+- **Probe:** d = 152, L = 18, phase 0, mfw40: **SAT** (3,411 s), so this depth is not certified. Also, so far:
+  d = 124 phase 0 is UNSAT (L575). The rest are running in Cloud-first order (L579).
+- **Announcement: LIFT** (feeds Cloud's lane, the records from below; Cloud is not running d = 152).
+  - **Re-solve** d = 152, L = 18, phase 0 with mfw40, keeping the model.
+  - **Test the visible code** (about 85 symbols) for exact membership in L by SAT over the right cone.
+  - **If it is in L, the glued configuration is a real one.** The relaxed model's left half and clock, together with
+    a right half that produces those visible bits with the wall clamped, form a genuine finite Rule 30
+    configuration. The left half reads column 1 only at white times.
+  - That would give R_real(152) >= 18, which I'll check by simulating the whole configuration: the clock at column 0
+    to T = 169 and the white band at time 0.
+  - Prediction (0.4): the code is in L and the lift succeeds. If the code is not in L, the relaxation's SAT is only
+    that. Cost: about an hour on one core.
