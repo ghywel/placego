@@ -176,7 +176,7 @@ PART: as on the board.
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (known: Jen 1986, Rowland §5) — COMPUTED — §8.27, §8.30
 - Lemma B1 (white, then black; Lean LemmaB1.lean, L529; source GC955), B2 (periods unbounded), B3 (no white run over twice the
-  band's period) — PROVED —
+  band's period; Lean LemmaB3.lean, L534) — PROVED —
   §8.59; B2 for the single seed is in print (Nersissian Theorem 13)
 - Rowland's question answered both ways: >= 4 certified left sides; 60 generic rows share one — COMPUTED — §8.31
 - Leftward speed 0.246 = 1 - 0.41 x 1.84, by the identity v = 1 - P(heal) E[jump | heal] — PROVED (identity),
