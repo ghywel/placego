@@ -98,7 +98,7 @@ PART: as on the board.
 - R_real(97..108)=14,14,13,15,15,14,14,13,13,12,14,16; 109>=15,111>=15 — COMPUTED — RR3 checkpoints, CLOUD-LOCAL archives.
 - RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 109..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
-- Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — source audit, second-read CL154 — GC937.
+- Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.
 - Deciding UNSAT d3..97 checked by drat-trim/cake_lpr; VC checks200/200 — COMPUTED — RRC L438, L480, rule30_verified_certs.py.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - No left edge within248, any right half; right-half bounds32/34 — COMPUTED — LL1..LL4 §8.56; §8.21, M3b.
@@ -114,27 +114,30 @@ PART: as on the board.
 - Remaining Q6: inter-run compatibility with unbounded reach — OPEN (PART) — GC845, PERIOD-TWO §6.
 
 
+
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
 - All excluded classes zero-entropy; real column1~0.08bits/bit — MEASURED — §8.20.
 - Settling needs uniform O(q) stage budgets and unbounded period growth — OPEN / conditional PROVED — G164/165/184/186/187, Q7.
 - Every rooted walk returns; fixed-q excursion bound, return-word bijection and root-tree/nonroot-cycle split — PROVED — entry39/GC867, G273 (GC864..866).
 - No return in first11 steps after doubling; return-eight acyclic; automatic baseline — PROVED — G188/192/203.
-- Endpoint debt identity and selected waits — PROVED — GC652..702/684; no adaptive uniform-budget conclusion.
+- Selected-wait debt identities — PROVED — GC652..702/684; no adaptive budget.
 - Complete-source/stratum means, dependent spread and factor-q cap — PROVED — G274..276/W277 (GC869/870/872/890); baseline counting CLOSED GC892.
 - Fair-reset leaf weight2^-branch-depth; ambient/uniform-leaf mean transfer CLOSED — PROVED — GC921/CL141, G158.
 - Spread<=q-1, split fixture and complete doubled sampling — PROVED / COMPUTED — G6, GC922/925 (CL142/145).
 - Two occupied lifts preserve first-reset coalescence iff odd source pulse — PROVED — GC923/CL144.
-- Six-edge re-coalescence extrapolation refuted, reproduces driver429; refinement stopped — REFUTED — GC926/CL146, G6.3 SF2; clock guard G174.
+- Re-coalescence extrapolation refuted, repeats driver429; stopped — REFUTED — GC926/CL146, G6.3 SF2; clock guard G174.
 - Physical q16 tree:15 branches,16 entries q32 at87867..894235; N1..4=3,8,29,400 — COMPUTED — entry21/Proposition8, TM5/TM5b/TM6.
 - Whole in-tree sizes4,14,98,3066,34541082 throughq16; RC88 source nonphysical,371 physical — COMPUTED — ZF/CL126..128, GC907..910.
 - q8/q16 even-return classifications complete; physical sharp one-parity odd return exists — COMPUTED — RC88/RC16/RC16X/QX/QX2, GC861/862/915, SE/CL134.
 - Period64 first depth65821413; q32 stage>2.6e10; sixteen debts<=60 to depth 2^20 — COMPUTED — TM6/Propositions9/10, RD32/GC325.
 - q32 first16 rooted orbits return, mean1.007x2^32: restricted-prefix descriptive scale only — COMPUTED — RWC/RWX L488/522, GC927.
-- RW caps/max-live repaired; Lean matches census walk — PART / source PROVED — GC868, L490/491, GC867 RootedReturn.lean.
+- RW repairs/Lean census match — PART / source PROVED — GC868, L490/491, GC867.
 - Driver response intervals/fibres exact; boundary-only and nonphysical-fibre transfers CLOSED — PROVED — W278..281, GC894..901/903, CL120..126, L510..512.
 - Primitive fourth child and sharp/mixed entry constraints — PROVED — GC904/909/911/914/916; mask shortcuts CLOSED GC912/913.
 - Sharp profiles/fifth rising-edge identity; sustained physical floor refuted; further refinement stopped — PROVED / REFUTED — GC917/918/924, CL138/143/151.
+- Same-prefix debt/rotation/pruning reductions — conditional, reviewed — GC310/312/315/323; audit GC939.
+- Finite debt60 through2^20; phase allowance91, no later bound — COMPUTED L197/199 — RD16/RD32, GC319/325/940.
 - Remaining: actual-history budget, gap2, all-left-edge TM/paperfolding, Rudin-Shapiro, q>=32 odd returns — OPEN (PART) — Q7; G129/140/141, GC155.
 
 
