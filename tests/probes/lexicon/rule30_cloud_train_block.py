@@ -14,6 +14,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMA
             python3 tests/probes/lexicon/rule30_cloud_train_block.py cut45                    (needs kissat, ~3 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py separator                (needs kissat, ~1 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py entrymemory              (needs kissat, ~10 min)
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py past
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -129,6 +130,13 @@ sets reach the same 231 states at t = 75 with x_7 and x_8 free: the near-wall st
   propagated as 18 cells under the real clock with the sample and gate filters, reach the same 190 states at t = 75,
   sites 1 .. 5 forced 10010, x_7 and x_8 free, for both leads. The strip of sites 1 .. 18 at the first car, with a
   free exterior beyond it, still carries no trace of the leading symbol; the conclusion stands on the repaired loop.
+
+MODE past, OUTCOME (2026-10-10 18:00 BST; GC1037 reviewed, CL207). GPT's backward propagation reproduced: from the
+eight fillings with cells 16 and 20 black, with the entry samples at 2 .. 28 imposed, 23 rows survive at t = 0, every
+one beginning 1, peak layer 261, three fillings with a past; so under the 19 common pins the leading 0 excludes a
+black (16, 20) origin and the final 1. Common-pin test: with sites 1 .. 8 fixed and 9 .. 24 free at t = 30, the train,
+the exit bits and the gates leave 581 survivors (2,282 at width 26) with only sites 1 .. 8 in common: the eleven other
+pins are not forced in a free-exterior row of width 24 or 26; they remain an exact-cone (SAT) fact of the whole word.
 
 MODE arming, OUTCOME (2026-10-10 15:45 BST; review of GC1028 and data for CL197). The exit target is exactly GPT's 39
 nine-bit words (01101????, 01110????, 0111100??, 0111111ab with ab != 00), all beginning 011. A' has 34 states and
@@ -568,6 +576,82 @@ def entrymemory():
                                         for i in range(8)), sorted({x[6] for x in S}), sorted({x[7] for x in S})))
 
 
+def past():
+    """GC1037's backward propagation (CL207), own code. From the eight row-30 fillings with cells 16 and 20
+    black (the 19
+    common pins of CL198 held), reverse Rule 30 exactly under the clock (each parent is fixed by its two rightmost
+    cells and left-permutivity, with the wall checked), imposing the entry's samples at t = 2 .. 28 and leaving t = 0
+    free: every row at t = 0 that survives begins with 1, so the leading 0 excludes a black (16, 20) origin. Then the
+    common-pin test: do the train, the exit bits and the gates alone force the 11 common pins beyond sites 1 .. 8 at
+    t = 30 in a free-exterior row of width 24? (They do not: only sites 1 .. 8 are common to the survivors.)"""
+    import itertools
+    def step_bits(bits, wall, ext):
+        r = [wall] + bits + [ext]
+        return [r[i - 1] ^ (r[i] | r[i + 1]) for i in range(1, len(bits) + 1)]
+    entry = '000010001010000'
+    base = list('100110011001100?000???1?')
+    free = [i for i, c in enumerate(base) if c == '?']
+    def parents(child, t):
+        out = []
+        for p24 in (0, 1):
+            for p25 in (0, 1):
+                p = [None] * 26
+                p[24], p[25] = p24, p25
+                for i in range(24, 0, -1):
+                    p[i - 1] = child[i - 1] ^ (p[i] | p[i + 1])
+                if p[0] == t % 2:
+                    out.append(tuple(p[1:25]))
+        return out
+    layer = {}
+    for c, d, e in itertools.product((0, 1), repeat=3):
+        row = base[:]
+        for i, v in zip(free, (1, 1, c, d, e)):
+            row[i] = str(v)
+        r = tuple(int(x) for x in row)
+        layer[r] = {r}
+    peak = len(layer)
+    for t in range(29, -1, -1):
+        new = {}
+        for child, labels in layer.items():
+            for q in parents(child, t):
+                if t % 2 == 0 and t >= 2 and q[0] != int(entry[t // 2]):
+                    continue
+                new.setdefault(q, set()).update(labels)
+        layer, peak = new, max(peak, len(new))
+    srcs = set().union(*layer.values()) if layer else set()
+    print('rows at t = 0 from a black (16, 20) origin, entry samples 2 .. 28 imposed: %d, all beginning 1: %s, peak %d'
+          % (len(layer), all(r[0] == 1 for r in layer), peak))
+    print('fillings (16, 20, 21, 22, 24) with a past:', sorted(''.join(str(r[i]) for i in free) for r in srcs))
+    word = '0' + entry[1:] + '10' * 10 + '001000010'
+    samples = {2 * k: int(c) for k, c in enumerate(word)}
+    inits = [tuple(int(c) for c in '10011001') + x for x in itertools.product((0, 1), repeat=16)]
+    cur = {}
+    for k, r in enumerate(inits):
+        cur[r] = cur.get(r, 0) | (1 << k)
+    for t in range(30, 87):
+        if t in samples:
+            cur = {r: m for r, m in cur.items() if r[0] == samples[t]}
+        if t % 4 == 2 and 34 <= t <= 62:
+            cur = {r: m for r, m in cur.items() if r[6] == (1 if t == 62 else 0)}
+        if t == 86:
+            break
+        nxt = {}
+        for r, m in cur.items():
+            for e in (0, 1):
+                c = tuple(step_bits(list(r), t % 2, e))
+                nxt[c] = nxt.get(c, 0) | m
+        cur = nxt
+    alive = 0
+    for m in cur.values():
+        alive |= m
+    surv = [inits[k] for k in range(len(inits)) if (alive >> k) & 1]
+    common = ''.join('0' if all(r[i] == 0 for r in surv) else '1' if all(r[i] == 1 for r in surv) else '?'
+                     for i in range(24))
+    print('common-pin test, width 24: %d of 65536 rows survive the train, exit bits and gates; common cells %s'
+          % (len(surv), common))
+
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
@@ -576,5 +660,5 @@ if __name__ == '__main__':
      'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16])),
      'follower': lambda: follower(*(a or [13])), 'carrier': carrier, 'packet': packet, 'arming': arming,
          'cut45': cut45,
-     'separator': separator, 'entrymemory': entrymemory}[cmd]()
+     'separator': separator, 'entrymemory': entrymemory, 'past': past}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
