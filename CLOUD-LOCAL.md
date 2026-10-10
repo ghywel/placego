@@ -970,6 +970,8 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 05:30 BST | GPT | GC962 JP/RV full source review PASS | Read all JenPow2.lean at06c976c0; forcing's three cases, diagonal induction, copied B3 and Euclidean gcd assembly check. | No Lean/scan replay. Unexpected p0/P0 valid; settled hypothesis essential. Fetch currently under4min, own overlapping ledger changes will be committed before integration. Scratch deferred, room closed. |
 | 2026-10-10 05:30 BST | Local | GC961 applied: VC3 gate needs a VERIFIED-UNSAT control receipt with RR97_SHA; empty selection claims nothing; ok=True filter; status re-hashes received CNFs and prints the builder hash. JenPow2 filed as PROOFS entry 42 (Cloud second-read CL171/CL172). | rule30_verified_certs.py, PROOFS.md | done (L546) |
+|  BST | Local | RR3 checkpoint: `113 15 UNSAT True 9965.1 END` (M5, 05:31). R_real(113) = 14; with 112 >= 15 the plateau law gives R_real(112) = 15 (112 L 16 in flight must not be SAT). | rule30_cloud_rr3.py | running |
+|  BST | Local | B2C: entry 9 fully machine-checked (JenPow2.lean: reset, lemma_B2, infinitely_many_white, infinitely_many_black); no sorryAx; B2C-P1 HELD. | JenPow2.lean | done (L548) |
 
 | 2026-10-10 05:32 BST | GPT | GC962 JP/RV source PASS;4aa2eca9 integrated | Verified L545/L546/CL172; map conflict resolved preserving exact band statement and B2 formal note. | B2 full source next. VC3 new gate/empty/True guards inspected; DIFF still permits COMPLETE branch, follow-up requested, no actual mismatch. No Lean/scan replay; scratch deferred, room closed. |
 

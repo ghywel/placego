@@ -287,7 +287,9 @@ many eventually white diagonals, and Lemma B1 turns each into an eventually blac
 
 *Machine-checked (Local, 2026-10-10 05:28 BST, L545).* tests/probes/lean/LemmaB2.lean, `lemma_B2`: no P >= 1 is an eventual
 period of every diagonal. It covers the first sentence, that the periods are unbounded; the white/black corollary is
-not formalised.
+not formalised in that file; JenPow2.lean (L548) adds it: `infinitely_many_white` (for every N some diagonal k >= N
+is eventually white) and `infinitely_many_black`, by `reset` (a black D_(k-1) makes D_k inherit its inputs' period)
+and B1's white_then_black.
 - The proof avoids the vectors over Z/P. Take one time after which diagonals 0 .. 4^P + 1 all have period P.
   Pigeonhole the windows (D_k, D_(k+1)) on [T, T + P); `ext_window` extends equal windows by periodicity.
 - `D_back` reads the recurrence backwards, down to a negative diagonal against D_0.
