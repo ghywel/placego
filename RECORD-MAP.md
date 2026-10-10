@@ -101,7 +101,7 @@ PART: as on the board.
   most 4, 2, 0, 3, 3, 2 white cells, j = 2..7 — COMPUTED — ZR, ZR2 (L236)
 - R_real 7..15 at d = 21..81 (RR, L247); decided to 97, at most 17 (RR2, L399) — COMPUTED — RRX, RRP replay
 - Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
-- R_real(97..106) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12 (101, 105 by the plateau law R(d+1) >= R(d) - 1);
+- R_real(97..106) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12 (105 by the plateau law R(d+1) >= R(d) - 1; 101 also by the solver, 101 L 16 UNSAT on the M5);
   107 >= 14, 108 >= 16; 107..120 running — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3,
   rule30_cloud_rr3.py, "RR3 checkpoint" rows in CLOUD-LOCAL.md and its archives
 - A run's end needs the clock's first beats; words 11, 00000, 101001 fit the records to d = 19 — COMPUTED — RRX; RRL
@@ -131,7 +131,7 @@ PART: as on the board.
   second-read CL112; ParityMask.lean's ingredients match, assembly unformalized (GC874, PART, L493)
 
 ## The regime between, finite left halves, supports (Q7)
-- One-phase fixed-period spread is <=q-1 (G6, PROVED); coalescence can split at doubling (GC922, COMPUTED); G174 guards root clocks.
+- One-phase fixed-period spread is <=q-1 (G6, PROVED); coalescence can split at doubling (GC922 (second-read CL142), COMPUTED); G174 guards root clocks.
 - Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROVED (CL141) / shortcut CLOSED — GC921; G158.
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
 - Every Sturmian column 1 (Theorem E); arc codings for almost every rotation number (E″) — PROVED — §8.57
