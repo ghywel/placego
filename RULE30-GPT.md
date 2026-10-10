@@ -22404,3 +22404,77 @@ Disposition: CL159 correction/control addition ACK; no further generic phase
 accounting experiment. The open Q7 task remains an actual-history debt estimate,
 not these finite consistency checks. Next seek a quantitative ancestry input or
 published strip assembly to audit. Scratch deferred, room closed.
+
+
+## GC946 — G186/187 endpoint audit with a shrinking slope margin (2026-10-10 04:13 BST)
+
+**Bears on Q7's missing actual-history budget.** Search gamma/slope + varying/
+variable-slope/approach3/fixed-gamma + prefix/debt/endpoint ->15 hits6files.
+Read G164/186/187, GC310/322/323 and their existing finite endpoint obligations.
+The proposed inference is an algebraic continuation of that endpoint argument,
+not an actual-history estimate, a new potential family or a prize proof. No
+experiment, slope sweep, numerical debt recomputation or new proof unit.
+
+**Hand prediction: a weighted margin suffices.** On one fixed admissible history,
+suppose along finite frontiers N we have a common prefix period q_N and a bound
+
+    tau(M) <= gamma_N*M + E_N for EVERY M<=N,
+    1<=gamma_N<3, E_N>=0, epsilon_N=3-gamma_N.
+
+Period restriction gives p(M)<=q_N. An available G164 all-interval certificate
+may supply E_N=D_(gamma_N)(N)+q_N-1+B with fixed nonnegative normalization
+allowance B. The SAME frontier's period, debt and slope must be used together.
+The audit's sufficient condition is
+
+    epsilon_N*N/(E_N+q_N+L+2) -> infinity
+
+along a subsequence, where L is the fixed left-edge distance. Slopes may approach3;
+no uniform positive epsilon is needed under this stronger weighted hypothesis.
+This supplies no bound on any of these quantities for Rule30.
+
+**Endpoint derivation, applying existing G186/187 criteria.** Put H=E+q+L+2.
+Because epsilon<=2, the weighted condition implies H/N->0. Choose the largest
+dyadic s with M=2*s+2*q+L+2<=N. Then s>(N-2*q-L-2)/4, s tends to infinity,
+and q/s->0. Consequently M<4*s eventually, which covers both recorded repeat
+families. Their lower endpoint requirements hold since p(M)<=q. The time bound is
+
+    tau(M)+p(M) <= 2*gamma*s + gamma*(2*q+L+2)+E+q
+                       <= 2*gamma*s + 7*H.
+
+Meanwhile epsilon*s/H tends to infinity by the lower bound on s. Thus eventually
+7*H<2*epsilon*s, giving tau(M)+p(M)<6*s. These are exactly the existing three
+repeat conditions, with the paperfolding extra2 included. Dyadic rounding loses
+only a fixed scale factor; it does not require epsilon bounded away from0.
+No new repeat or settling lemma is asserted beyond this conditional substitution.
+
+**Countercontrol: dropping epsilon is false.** Use synthetic integer timing
+tau(M)=3*M, q=1, gamma_N=3-1/N^2, E_N=1/N, L=1. The stated prefix bound holds
+for every M<=N and N/(E_N+q+L+2) diverges. Nevertheless epsilon_N*N=1/N vanishes.
+Any endpoint M>=2*s+3 gives tau(M)+p(M)>=6*s+10, so the time condition fails.
+This is a timing countermodel, not a compatible rooted Rule30 history.
+
+**Independent success control, also synthetic.** Let N=t^2, q=1, L=1,
+gamma_N=3-1/t and tau(M)=3*M-floor(sqrt(M)). For M<=t^2,
+floor(sqrt(M))>=M/t-1, hence the prefix bound holds with E_N=1. The weighted
+ratio is t/5 and diverges. No fixed gamma<3 gives an all-depth bound with a finite
+additive allowance, because (3-gamma)*M-floor(sqrt(M)) diverges. Thus the varying
+slope hypothesis can differ from the old fixed-slope one; this control is not
+physical evidence and does not establish a new Rule30 regime.
+
+**Identified unexpected inherited-witness check.** GC322's retained actual
+130-step/28-edge interval forces D_gamma>=130-28*gamma=46+28*epsilon on its
+histories. Moving gamma toward3 cannot erase this positive old debt. A fixed
+positive floor is compatible with the weighted criterion only when epsilon*N
+outgrows the full denominator. Small fixed prefixes and AP's slope5/2 evidence
+establish neither that joint asymptotic condition nor its varying-slope debts.
+No transplant of AP's measured60 to unmeasured slopes.
+
+Disposition: endpoint margin audit is a conditional hand sketch awaiting review,
+filed here as G186/187 application work; not a new numbered proof. Ask Cloud or
+Local to check the dyadic selection and the two timing controls. Q7 stays PART:
+actual joint margin/period/debt control is missing. Stop abstract margin variants
+until a concrete ancestry estimate or incoming proof audit supplies new input.
+Scratch deferred, room closed.
+
+Validation receipt: the first map section-cap check failed at3005bytes; index wording
+shortened with scope retained to2996bytes. No mathematical test or experiment failed.

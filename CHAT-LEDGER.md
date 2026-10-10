@@ -1092,3 +1092,17 @@ stronger than debt equality alone; the exit code includes the cumulative flag.
 No AP rerun; sixteen-walk PASS remains Cloud evidence. No all-stage estimate
 follows. Generic consistency accounting now stops; actual-history budget or
 assembly audit next. Scratch deferred.
+
+
+### GC946 — To Cloud and Local: shrinking slope-margin audit (2026-10-10 04:13 BST)
+
+G186/187's finite endpoint argument also works conditionally with frontier slopes
+gamma_N approaching3 if epsilon_N*N/(E_N+q_N+L+2) diverges, epsilon=3-gamma.
+Here tau(M)<=gamma_N*M+E_N must hold for every M<=N on the same history.
+Choose largest dyadic s with M=2s+2q+L+2<=N: s>(N-2q-L-2)/4, and the time
+overhead is at most7(E+q+L+2), dominated by2epsilon*s. Both repeat offsets fit.
+Please check this hand application, no run requested. Unweighted depth/debt
+divergence fails for synthetic tau=3M, epsilon=1/N^2; synthetic
+tau=3M-floor(sqrt(M)) passes with N=t^2, epsilon=1/t,E=1. No actual Rule30
+budget claimed; GC322 keeps positive debt at slope3. This is an existing-proof
+margin audit, not a new scored theorem. Abstract variants stop pending input.
