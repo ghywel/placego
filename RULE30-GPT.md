@@ -27458,3 +27458,94 @@ does not refute it. The present collar localizes a finite hidden fork,
 but the relations carried by its fifth and farther columns are not yet
 closed under composition. Next hand target: transport those correlated
 relations across an LLS switch without discarding the exterior past.
+
+
+#### GC1047 — An ordinary long loop has exactly three fifth tracks; a zero pair travels through its return (2026-10-10)
+
+Missing inference after GC1046: what actual correlation crosses an
+L0 -> L1 switch beyond the four-column collar? Record searched:
+`0101100000|0101100101|0101101010` with `fifth|c_5|column.?5|long|L0`
+-> wheel substrings and ALS/ALX's two sampled all-L fifth profiles,
+not an all-tail selector theorem. Reuse GC744's prefix010110 and
+GC619's exceptional cylinders; no new solver or language census. GC744 gives the common four-column
+collar and the first six samples of column5; only the remaining
+correlated selector is new here.
+
+**Hand result, PROOF-SKETCH.** Let the wall be externally clamped to
+c0(t)=t mod2 and the initial right row start111001. At time5 put
+z=c6(5), a=c7(5). Every farther initial tail obeys this complete table
+for the ten pre-return samples of column5:
+
+| Mid-pair (z,a) | c5(0..9) | Return pair (c5(10),c6(10)) |
+| --- | --- | --- |
+| 00 | 0101100101 | 00 |
+| 01 | 0101100000 | 01 |
+| 1* | 0101101010 | 01 or a pair starting1 |
+
+In particular the closing pair is00 iff the mid-pair is00. This is an
+exact correlated transport by five ticks and one column to the left,
+not a claim about independently assignable bits. When the next S/L interval ALSO closes at marker1110,
+fifth profile0101100101 selects next type L1;
+0000 selects L0, while1010 permits S or L0. The untyped last column
+remains an interface, not an invariant autonomous exterior.
+
+**The ancestry shield missing from a free-row argument.** At time2
+write (u,v,p,q)=(c7,c8,c9,c10). If u=v=0, then (p,q) cannot be11.
+To see this, write initial sites7..10 as b,c,d,e and time1 sites7..10
+as X,Y,Z,H. Then X=NOT(b OR c), Y=b XOR(c OR d),
+Z=c XOR(d OR e), u=NOT(X OR Y), v=X XOR(Y OR Z).
+The two zeros imply X=1: X=0 would force Y=Z=0, contradicting
+X OR Y=1. Thus b=c=0, Y=d, Z=d OR e=1 and p=NOT d.
+If p=1, then d=0,e=1, hence H=1 and q=Z XOR(H OR right)=0.
+This is the four-cell correlation; no farther input is assumed free.
+
+Now let (A,B,C,D,E)=(c6,c7,c8,c9,c10)(4). GC744 gives c5(4)=1,
+so z=NOT(A OR B), a=A XOR(B OR C). If z=a=0, then A=1;
+otherwise B=C=0 contradict z=0. Since A=NOT(u OR v), this forces
+u=v=0. Their two-step updates give B=p, C=p OR q. The second
+mid-zero further gives p OR q=1. The preceding shield leaves only
+(p,q)=10 or01. In case10 the time4 tuple is(1,1,1,0,0);
+in case01 it begins(1,0,1,1), with E immaterial. Therefore at time5
+(c6,c7,c8,c9)=(0,0,P,1-P) for some actual P. This complementarity
+is essential: a free row with all four zero would fail the claimed
+return and would not have this ordinary-L ancestry.
+
+**Transport and the two other cases.** For the complemented mid-row,
+local updates give
+
+    time6: (c5,c6,c7,c8)=(0,0,P,1);
+    time7: (c5,c6,c7,c8,c9)=(1,P,1,1-P,0);
+    time8: (c5,c6,c7,c8)=(0,0,1-P,P);
+    time9: (c5,c6,c7)=(1,1-P,1);
+    time10: (c5,c6)=(0,0).
+
+The zero at time7 site9 is shielded in both P cases: if P=0 its
+left predecessor at time6 is1 and its centre1; if P=1, the two
+right predecessors are NOT r and r OR s, whose OR is1.
+Together with the known c5 prefix010110 this proves row00 of the table.
+If z=0,a=1, the black c6 at time6 stays black through time10,
+while c5 stays zero, giving row01. If z=1, the next pairs(c5,c6)
+are11 then00; c5's remaining values are10. At time8 let
+r=c6(8),s=c7(8). Then c5(10)=r OR s; if this is zero,
+c6(9)=1 and c6(10)=1. Thus this last case never returns pair00.
+These three cases exhaust all actual tails.
+
+**Independent controls and scope countercheck.** P1 was registered
+before the first controls; P3 was explicitly informed by their three
+profiles and registered before its checks. All 1,024 complete cones
+through site16 pass literal and independent packed updates, including
+the early ancestry shield, exact selector and pair transport;112 have
+mid/return00. No bounded scan is being used as the universal proof.
+GC619's prefixes1110010001000 and1110010001001, each with both farther
+cone extremes, share fifth profile0101100101 and return first eight
+bits11100000; their ninth bits are respectively1 and0. Thus the
+profile alone does NOT force the full L1 entrance. The extra ninth
+bit is real correlated information, not disposable boundary slack.
+In an already synchronized next L, its closing-marker demand selects
+the valid L1 branch by GC623; without that future demand it may fail.
+
+This closes the fifth-track selector and pair-transport inference,
+not full exterior composition, halfwidth or an all-depth record bound.
+Next missing inference: whether the transported complement pair has
+an equally sound successor relation through the L1-S switch, retaining
+the ninth-bit ancestry instead of declaring fresh branch choices.

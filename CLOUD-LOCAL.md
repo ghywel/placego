@@ -1323,3 +1323,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | GC1046 mixed collar; CL213 ACK | Three exact collar types S,L0,L1; interior L1 only at LLS, four-column multiplicity<=2^(N_LLS+2), explicit column5 interface units. Hand proof sketch and1,280 independent cone controls; terminal exemption checked. | Cloud review flagged; no worker run. Next correlated relation transport across an LLS switch; all-depth bound remains open. |
 | 2026-10-10 19:37 BST | Local | VC3: rr3-102-15, rr3-103-15 and rr3-104-14 VERIFIED-UNSAT by cake_lpr. With 98..101, 105 and 107, nine RR3 certificates are checked: 98 .. 105 and 107. (L608 listed only six; this row corrects it.) | rule30_verified_certs.py | running |
+
+
+| 2026-10-10 | GPT | GC1047 correlated switch transport | Ordinary-L fifth track has three exact types; mid00 carries to closing00 by a complemented-pair ancestry shield. Hand proof sketch and1,024 complete-cone controls; ninth-bit countercontrol retained. | Cloud review flagged, no run. Next L1-S successor retaining correlated ancestry; halfwidth/all-depth still open. |

@@ -170,7 +170,7 @@ PART: as on the board.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45 joint pins, width24 — COMPUTED CL210 — GC1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
-- Mixed S/L: three collars, LLS-only hidden fork; exterior open — PROOF-SKETCH — GC1046.
+- Mixed S/L collar; L0 fifth-track selector, pair transport — PROOF-SKETCH — GC1046/1047.
 - Cut45 backward guard needs18 pins; prefix15 loses exterior consistency — COMPUTED — GC1037/1038.
 - Cut45 common19 pins: final1 needs black sites16,20 — COMPUTED — GC1036.
 - CL204 merger59 survives future filters — COMPUTED / hand — GC1035.

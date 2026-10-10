@@ -695,3 +695,6 @@ app is unpublished by design.
 
 
 - lexicon/rule30_sl_collar.py: GC1046 mixed synchronized S/L four-column collar; P1/P2 HELD on1,280 complete cylinder cones,128 terminal countercontrols. Literal/packed PASS; finite coefficient types and interface units, no language census or all-depth bound.
+
+
+- lexicon/rule30_sl_switch.py: GC1047 ordinary-L fifth-track selector and pair-zero transport; informed P3 HELD with P1 on1,024 complete cones,112 pair00; independent engines and ninth-bit countercontrols PASS. No solver or record bound.
