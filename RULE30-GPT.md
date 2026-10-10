@@ -26797,3 +26797,63 @@ prefix and cannot be counted as forced-zero examples. The sufficient
 entry-side target is now the disjunction x16(30)=0 OR x20(30)=0 together
 with the common19 pins, rather than a five-cell pinning proof. Next seek
 that correlated origin restriction; no further filling or width sweep.
+
+**CL206:** Cloud independently reproduced all32 joint predicates and accepted
+their scope. The forward guard is confirmed. GC1037 below closes the
+conditional origin disjunction by a different, exact backward relation.
+
+
+#### GC1037 — Exact correlated past excludes the joint black origin (2026-10-10)
+
+Missing inference: show x16(30)=0 OR x20(30)=0 from the entry observations,
+retaining CL198's common19 pins. Record searched: `(cut45|CL198|GC1036|entrymemory)`
+AND `(preimage|backward row|past strip)` -> no hit, including ledgers.
+New evidence CL206 confirms the eight joint-black fillings are exactly the
+forward final1-admitting cases. Test their correlated past, rather than
+another forward marginal, affine approximation or larger window.
+Predictions precede execution in `rule30_cut45_origin_past.py`.
+
+For a child row y of width W and a fixed parent wall b, there are at most
+four parent row/exterior pairs. Choose the two rightmost parent bits
+x_W,x_(W+1) and compute, for i=W down to1,
+
+    x_(i-1) = y_i XOR (x_i OR x_(i+1)).
+
+Retain exactly the choices giving x_0=b. Every forward parent satisfies
+this recurrence, and every retained choice satisfies every Rule30 update;
+hence the enumeration is exact. The exterior bit remains free on each
+tick. This inverse preserves whole-row correlations.
+
+Start with the eight width24 rows having CL198's common19 pins and
+x16=x20=1 at30. Apply that exact parent relation down to time0 with
+wall(t)=t mod2, imposing q's observations only at ticks2,4,...,28.
+Do not impose its leading sample at0. Each parent retains the bitset
+of precisely those original fillings to which it has a compatible path.
+Union and filtering preserve that meaning by induction.
+
+Outcome: at time0 there are23 rows, **all with x1=1**. The only source
+labels still admitting any past are7,23,31 (bit order16,20,21,22,24).
+Thus no leading0 entry reaches a joint-black origin under the common19
+pins, even with arbitrary site25 inputs throughout the past. This proves
+the required conditional disjunction in the controlled-strip model.
+Together with GC1036's forward guard it excludes the last exit1, provided
+the common19 pin premise holds. Their actual-history forcing is inherited
+from CL198's reported SAT census, not proved anew here.
+
+P1 (no leading0 past) and P2 (some leading1 past) HELD. Peak261 rows;
+no cap reached. All512 width8 child/wall parent sets agree with independent
+literal forward images, and exhaustive six-tick width6 forward histories
+agree with the backward relation for two target rows. Wall-phase countercontrol
+passes. A nonvacuity check caught the original control target0 having no
+admissible forward history; controls were repaired with targets18/60 and
+explicit positive initial rows0/8, and the full result replayed unchanged.
+Unexpected check: five of the eight source fillings have no past
+with either lead; surviving labels force x21=1 and x22 implies x24.
+Nonempty leading1 paths are controlled histories, not newly constructed
+actual right halves. No SAT call or actual-language census was made.
+
+This closes the bounded origin correlation conditional on the common
+pin premise; it is an exact computation awaiting independent review.
+The remaining hand account is why the entry and exit together force the
+common19 pins, and how to extend this mechanism beyond the fixed cut to
+an all-depth certificate. No wider-past or memory-length sweep is proposed.

@@ -166,6 +166,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Cut45 entry controlled past excludes joint black sites16,20 under common19 pins — COMPUTED — GC1037.
 - Cut45 common19 pins: final1 needs row30 sites16,20 both black; either white suffices — COMPUTED — GC1036.
 - CL204 repair checked: entry strip sets merge at59; identical future filters cannot recover distinction — COMPUTED / hand — GC1035.
 - CL198 pinned24 strip permits both outputs at time96 under arbitrary exterior; reset candidate stopped — COMPUTED — GC1034.

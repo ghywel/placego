@@ -664,3 +664,6 @@ app is unpublished by design.
 
 
 - lexicon/rule30_cut45_pin_guard.py: GC1036 exact joint five-pin predicates; common19 pins plus suffix require sites16,20 black for final1. Peak2554 rows; literal controls PASS, transport prediction REFUTED; no actual membership or all-depth bound.
+
+
+- lexicon/rule30_cut45_origin_past.py: GC1037 exact backward correlated past; entry plus common19 pins excludes joint black sites16,20. Peak261 rows;23 leading1 initial rows. Parent and nonvacuous forward/backward controls PASS; common-pin forcing inherited, no all-depth bound.
