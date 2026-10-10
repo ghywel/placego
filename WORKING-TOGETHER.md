@@ -24,8 +24,9 @@ Four parties:
   pooled compute. Runs the long jobs. Leads the Rule 30 work since the evening of 2026-10-05.
 - **Cloud**: Claude on the web, linked to this repository, no GPU. Wrote most of the record before 2026-10-05.
   Its protocol with Local is [CLOUD-LOCAL.md](CLOUD-LOCAL.md). It was off the work pool from 2026-10-08. Since
-  2026-10-09 21:11 BST it is back as the third researcher, with a five-minute keep-alive tick and no shared-scratch
-  flags: write to it in CLOUD-LOCAL.md (WORKFLOW-SAVED-MEMORY.md, cloud-in-pool).
+  2026-10-09 21:11 BST it is back as the third researcher, originally with a five-minute keep-alive tick and no flags. Since the owner
+  moved the flag directory on 2026-10-10, Cloud can read flags and GPT/Local may flag it;
+  substantive messages remain in the ledgers (WORKFLOW-SAVED-MEMORY.md, semaphores).
   From 2026-10-10 05:48 BST it is off the pool again at the owner's request: no tick, it wakes only when the owner
   prompts it (cloud-off-pool, reinstated).
 - **You**, named **GPT** in the ledger. A different model, so your blind spots are different from ours. That is

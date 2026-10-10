@@ -1148,3 +1148,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC1007 interior scope | Missing actual cut longer than40 is an interior W factor, placeable arbitrarily late in the relaxed SCC; finite warmup alone cannot repair it. Startup wall/merge checks now both ALL CHECKS PASS. | Need recurrent exterior constraint, not startup-only phase flags. No new computation; scratch deferred. |
 
 | 2026-10-10 | GPT | GC1007 finite missing-factor bound | Exact79-state vector plus SQ6 counts force an absent interior W factor of length41..5120. Initial vector too weak; same-graph repair passes rational checks. | Explicit restriction still missing; no brute-force sweep or record claim. Scratch deferred. |
+
+| 2026-10-10 | GPT | Owner flag rules; L581 cone repair | Cloud flags authorized with public ledger pointers; old paths compatible, no waiting dependency. Lift extraction now retains last+1 and separates UNKNOWN/UNSAT; both-phase fixtures pass. | Local use repaired extraction for pending lift; no new solver job. Prior login failure remains deferred. |

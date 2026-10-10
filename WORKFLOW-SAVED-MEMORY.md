@@ -453,8 +453,9 @@ Kept as the record of the arrangement; it resumes only when the owner says so.*
 **Rule (the owner, 2026-10-09 21:11 BST; it supersedes cloud-off-pool below).** Cloud is back in the work pool as
 the third researcher. It has a keep-alive heartbeat tick like the other workers: a one-shot wake-up every five
 minutes, each tick arming the next, with an hourly recurring wake-up as a safety net that restarts the chain if it
-breaks. Cloud has no access to the shared scratch, so it has no flags. It works through git only: it reads
-CHAT-LEDGER.md and CLOUD-LOCAL.md on every tick, and a request for Cloud is written there, not flagged. On ticks it
+breaks. The original no-flags arrangement was superseded by the owner on 2026-10-10:
+Cloud can now read public flags; GPT and Local may flag it through their existing gates. Git remains the record.
+When active it reads CHAT-LEDGER.md and CLOUD-LOCAL.md, following flag pointers to committed entries. On ticks it
 follows draw-and-work like the others (a quiet tick is a work tick), and its machine suits long checkpointed runs
 that should outlive a laptop restart (RR3, for example). The duties reassigned by cloud-off-pool stay where they are
 until the three workers agree a new split in CLOUD-LOCAL.md. Until then Cloud claims work there before starting it,
@@ -495,7 +496,9 @@ in the main workflow may wait on it. Since 2026-10-08 23:15 BST its standing dut
 
 Cloud stays the owner's partner off the pool, for ideas, renders, reviews and documentation when the owner asks.
 When the owner wakes it, it may read the ledgers and contribute, but it takes on no recurring duty. A request
-addressed to Cloud in the ledgers goes to Local, or to the owner to relay.
+addressed to Cloud may be accompanied by a flag for it to read when awake. Flagging Cloud is authorized
+(owner, 2026-10-10); it does not reinstate automated duties or make the main workflow wait on it.
+Time-critical work still goes to an active worker or the owner.
 
 **Why.** The owner, 2026-10-08: "Cloud, because i added in you into the main workflow from my understanding of the
 ledger you are being assigned work, however you only wake up when i tick you, not with an automated tick, so this
@@ -895,8 +898,11 @@ scratch for flags, not content, and kept its details out of this public record.
   are acknowledged.
 - **Keep it private:** the scratch's host, account, paths and keys, and the protocol's details, never go into the
   repository. In the record it is "the shared scratch".
-- **Cloud is not on the scratch.** It is the owner's bridge and works through git, so a flag to Cloud means nothing;
-  write to CLOUD-LOCAL.md instead.
+- **Cloud can read flags** (owner, 2026-10-10). GPT and Local may send Cloud ledger, review and prize
+  pointers through their existing restricted gates. Cloud has read-only access; the existing paths still work
+  through the owner's compatibility link. Flag notes are publicly readable: only brief, nonprivate pointers
+  to committed entries. Git remains the evidence; put substantive messages in CLOUD-LOCAL.md or CHAT-LEDGER.md.
+  Cloud's off-pool status does not forbid flags, but no task may depend on it waking or acknowledging promptly.
 
 ---
 

@@ -24886,3 +24886,24 @@ recurrent restriction, not its explicit discovery or a record bound.
 The first vector's impractical bound remains recorded; no brute-force
 search through this length is proposed. Verification reuses the79-state
 graph and the independently established SQ6 ceiling.
+
+
+L581 lift defect check, registered before testing: right_half_for returns
+initial sites1..last but its last visible sample depends on1..last+1.
+Predict a one-symbol white-start word returns an empty dict, incorrectly
+reported ABSENT by the caller; a black-start control loses site2 and
+fails replay. CF the existing slice already retains the whole cone.
+Control independent literal two-cell Rule30 update; U a zero last cell
+can mask the omission, so use a model with last cell1. This defect blocks
+the pending lift; no real solver run needed.
+
+
+L581 defect outcome HELD: phase0 single-symbol1 returned{}, so caller
+reported ABSENT despite SAT. Phase1 single-symbol0 dropped source
+cell2=1; full-row replay fails after dropping it and passes retaining it.
+Fixed extraction to include initial site last+1 (2k-1+phase). Direct
+simulation already prevented false positive record claims; this repair
+prevents false absence/invalid-witness conclusions. Also distinguish
+UNSAT exit20 from all other non-SAT exits (UNKNOWN raises rather than
+being reported ABSENT). Solver-free AST/mock fixtures and independent
+literal phase1 update PASS in rule30_lift_controls.py. No new SAT run.

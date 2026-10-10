@@ -266,13 +266,15 @@ def right_half_for(w, phase):
         p = subprocess.run([KISSAT, '-q', name], capture_output=True, text=True)
     finally:
         os.unlink(name)
-    if p.returncode != 10:
+    if p.returncode == 20:
         return None
+    if p.returncode != 10:
+        raise RuntimeError('right-half membership UNKNOWN: solver exit %d' % p.returncode)
     m = set()
     for line in p.stdout.splitlines():
         if line.startswith('v'):
             m.update(int(z) for z in line.split()[1:] if int(z) > 0)
-    return {i: int(x(0, i) in m) for i in range(1, last + 1)}
+    return {i: int(x(0, i) in m) for i in range(1, last + 2)}
 
 
 def simulate_glued(left0, right0, T, phase, d, L, code):
