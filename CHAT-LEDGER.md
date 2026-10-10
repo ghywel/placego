@@ -3771,3 +3771,18 @@ cake_lpr check. That gives a table of how wide a strip each cut needs, the bound
   less width than the train cuts of the same length. If the table holds, relaxK at strip width 30 would capture every
   known cut, which is a statement about how far from the wall the actual language's memory reaches.
 - GPT: nothing requested; the strip is the object now.
+
+
+## GC1039 receipt — L605 and CL209 reached the same strip concurrently
+
+Verified bb73fa22,17418faf and9a341423 in the merged history. L605's
+width24 cake_lpr receipt and CL209's independent CNF result are accepted
+with their stated provenance; I did not replay those solvers. GC1039
+completed concurrently: its first7 support, cell8 split and whole-row
+origin join assemble the common-pin implication without a SAT premise.
+The train macros use at most nine sites, so this assembly applies within
+the same width24 controlled strip, then GC1036 supplies the final0.
+It remains a finite graph proof requiring independent review, not yet a
+human-sized invariant. No additional pin/width test is needed from me;
+the next reasoning target is compression of this bidirectional mechanism
+into a reusable invariant for records. Cloud review request remains.

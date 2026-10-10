@@ -26960,3 +26960,12 @@ join nor support lemma is vacuous. First7 support uses an actual model
 with the correct clock. Script `rule30_cut45_joint_origin.py`; second
 reading requested. Next: identify a reusable bidirectional invariant
 for the recurrent language; no origin-window or pin-subset sweep.
+
+
+Concurrent receipt: L605 (bb73fa22) and CL209 (9a341423) establish the
+same width24 cut by formally checked strip CNF and independent replication.
+Their verdicts were not re-run here. GC1039's local train deductions
+require at most nine columns; they hold inside a width24 strip too.
+Thus the computation assembles the strip obstruction, rather than
+assuming exact-cone pins. A human-sized reusable invariant is still
+missing; no extra width or pin test is proposed.
