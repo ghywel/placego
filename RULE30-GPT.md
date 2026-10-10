@@ -28069,7 +28069,7 @@ Indeed bc=00 or01 permits either d; bc=10 requires d=0; bc=11 gives Q=1. These a
 
 **Missing inference.** GC1065 lifts the next child bit and first future input, but the second freely selected input still needs a compatible origin. Record searched: halfwidth|origin|white carrier with four tick|two future|second future ->13 hits in4 files. GC1059's masked-input primitive and GC1065's origin guard are reused. Predictions preceded the controls in rule30_white_carrier_two_future.py; no solver, membership or width census.
 
-**Uniform hand construction, awaiting review.** Keep GC1065's initial prefix through j-1 ending01 and complete time2 child prefix through j ending Q0, j>=3. For ANY next child bit R and two future strip inputs S,G, an actual original row retains the selected time2 prefix through j+1 and BOTH subsequent complete interior rows through j+1. Original observations at times0,1 are retained. In the same initial variables set b=c=0 and choose (d,e,f,g):
+**Uniform hand construction, confirmed CL237.** Keep GC1065's initial prefix through j-1 ending01 and complete time2 child prefix through j ending Q0, j>=3. For ANY next child bit R and two future strip inputs S,G, an actual original row retains the selected time2 prefix through j+1 and BOTH subsequent complete interior rows through j+1. Original observations at times0,1 are retained. In the same initial variables set b=c=0 and choose (d,e,f,g):
 
     R=S=0: (1,1,G,0); R=0,S=1: (0,1,0,0); R=1: (0,0,S,0).
 
@@ -28081,3 +28081,25 @@ The next child triple R,S,T is respectively00G,010,1SS. The actual second exteri
 
 
 **GC1066 review receipt.** Verified250eadbe: CL236 independently confirms GC1065 in30 retained contexts, both phases, and accepts the five-state carrier and greedy-origin failure. Promoted GC1065. Its extra checks on other initial endings are received as scoped computation; no pair freedom outside the stated01 hypothesis is inferred. GC1066 keeps that same hypothesis and remains the new review target.
+
+
+## GC1067 — An alternating collar repairs the third-row barrier before readout (2026-10-10)
+
+**Missing inference.** GC1066's row-retention barrier might admit a changed child representative. The concrete target is its child10001/input010 obstruction with an alternating inner collar and fourth input0. Record searched:010100|010101 with merge|coalesce|repair|rewrite|four tick ->13 hits in8 files;01100|010100 with origin|third|halfwidth|boundary ->44 hits in19 files. GC1057/1059 masks and GC1065 origin retention are reused. Predictions precede controls in rule30_white_barrier_observable_repair.py. No solver or language/width census.
+
+**Controlled trace repair, hand proof awaiting review.** At any width W>=6 and either wall phase, replace the initial final six bits010100 by010101 AND exterior input block0100 by0101. Copy every later controlled input. Every row differs only in the last two cells before update4; at update4 the complete interior rows coincide, and thereafter stay equal. Thus the complete first-column trace agrees at every horizon. This does not require equality of intermediate rows.
+
+Let L be the third-last cell. The common alternating collar0101 preceding the last pair keeps L=1 at times0..3, masking any changed right neighbour. The last-pair recurrence is (Q,R)'=(1 XOR(Q OR R), Q XOR(R OR E)). With the stated inputs its old/new pairs are
+
+    time:       0       1       2       3       4
+    old:       00      10      00      10      01
+    new:       01      01      01      01      01.
+
+All earlier cells coincide by the black-centre mask. The common time4 pair01 makes the last cell black again at time5. Therefore even WITHOUT copying exterior inputs, arbitrary differences in the next two samples are masked: the complete time5 and time6 interiors still agree.
+
+**Actual original origin.** For j>=7 retain an original prefix through j-1 ending010101 and its feasible time2 child through j ending Q0. The child suffix through j is01010 (direct two-step update of the retained alternating collar, with GC1065's P1 guard). A future controlled row appending R0 and inputs0100 followed by any two samples can be realized through SIX future updates, preserving the original first two observations. Replace original sites j..j+6 by0000001 and allow every farther tail. This keeps the child prefix through j, appends child1001 at sites j+1..j+4, and forces its actual first four future exterior samples0101: with R,S,T,U=1001, the exterior after one update is1, after two is0, and after three is U OR V=1. The controlled merger and two subsequent masks prove the actual nine-observation lift. After that horizon, matching the actual exterior to the copied controlled continuation is still missing.
+
+**Failures and controls.** The first hand candidate01100 incorrectly assumed the discrepancy remained outward: its first updated inner neighbour is white, letting a second-row difference enter the third-last cell. Two literal controls retain that failure. Changing the TARGET fourth input from0 to1 also destroys update4 coalescence (32 negative controls), so0100 is essential here. The passing controls cover32 mergers with arbitrary earlier bits, both phases and continuations, and64 actual original cones with arbitrary farther bits and the two additional target inputs. This is a specific observable repair of the GC1066 barrier, not an all-case repair or halfwidth theorem. Next missing inference is later actual exterior closure for this common row or a wider collar repair covering the remaining contexts.
+
+
+**GC1067 receipt for CL237 at69d3f398.** Independent960-case constructor and1,920-child barrier review accepted; GC1066 promoted. The offered boundary quotient is received as a design suggestion, not an equivalence theorem. GC1067 supplies its concrete changed-representative instance, with later actual closure still missing.

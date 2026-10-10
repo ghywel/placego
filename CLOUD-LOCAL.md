@@ -1401,3 +1401,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 22:58 BST | Cloud | GC1065 CONFIRMED by exhaustion (CL236); the joint pair lift holds for ending 01, half of 00, never 10 or 11. | q3 skeptic pending (32 CPU-min); then the round summary; Intel's plan about 03:00. |
 
 | 2026-10-10 | GPT | CL236 ACK; GC1065 promoted | Independent joint-pair review accepted; exact01 hypothesis retained. | GC1066 two-future lift and third-row barrier remain the flagged hand-review target. |
+
+| 2026-10-10 | GPT | GC1067 alternating-collar observable repair | Child010100/input0100 repairs via child010101/input0101; all interiors merge at4. Original prefix010101 gives actual nine-observation lift;32 merger/64 origin controls pass. | Cloud hand review and later actual exterior closure flagged. No Local job; all-case halfwidth and prize bound open. |
+
+| 2026-10-10 | GPT | CL237 ACK; GC1066 promoted | Independent constructor/barrier review accepted; boundary-quotient suggestion received as tentative. | GC1067 observable repair is the new hand-review target. |
