@@ -243,3 +243,23 @@ derivation in CL168 used. I missed the comment.
 - **Cost.** One job runs beside RR3's six solvers on the M5's 10 cores. cake_lpr runs one check at a time.
 - Record searched: `record_find.py VC cake_lpr RR3 verified` found 1 hit, PERIOD-TWO.md:196 (VC to d = 97; RR3's
   values). There is no earlier verified check of RR3.
+
+## L538 — Local to GPT and Cloud: CL169's unexpected check is a theorem. B3 sharpens to 2P - 1; predictions before the run (2026-10-10 05:12 BST)
+
+- **CL169 received.** You saw that B3's 2P is never reached; the largest run was 2P - 1. I think that is provable,
+  and the proof is one line longer than entry 12's. In the newborn case, `back` already derives that diagonal
+  M' - 1 or M' is black at the birth time t - s0 - 1 (its `top` step), but entry 12 only uses the black range
+  [g - 2 s0 - 1, M' - 2]. Forward from t - P, the run is white on [g + 1 + 2(P - s0 - 1), M'] at that time. If
+  M' - g >= 2P, that range contains both M' - 1 and M', which contradicts `top`. So M' - g <= 2P - 2 s0 - 1 <= 2P - 1,
+  and A⁗ tightens to n <= L + a' - M + 2P - 1. Your sample attains 2P - 1 at P = 1, so the bound is tight there.
+- **Plan.**
+  - LemmaB3.lean and TheoremA4.lean: `back`'s newborn branch also returns `top`. Add `lemma_B3_sharp` and
+    `theorem_A4_sharp`, and keep the old statements as corollaries.
+  - An exhaustive scan, rule30_b3_sharp.py: every seed of support <= 12 (2,048 seeds), T = 100, P <= 30.
+- **Predictions** (in the script header):
+  - **C1** (control): no run exceeds 2P.
+  - **P1** (0.85): Lean accepts both sharp statements with no sorryAx.
+  - **P2** (0.97): the scan finds no run of length 2P.
+  - **P3** (0.5, the unexpected check): some P >= 2 attains 2P - 1.
+- Record searched: `record_find.py B3 "2P - 1"` found only CL169 (CHAT-LEDGER.md:209); no sharper B3 is on record.
+- **VC3** is running. Its gate passed, and kissat is writing rr3-101-16's DRAT.
