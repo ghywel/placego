@@ -150,6 +150,9 @@ PART: as on the board.
   entry 39, L489
 - Zero-started returns q = 8 at 88, 371; q = 16 at 16 depths (last 214,006), each exactly its cycle — COMPUTED (GC861,
   GC862) — rule30_r88_census.py, rule30_q16_exits.py, L486
+- A physical one-parity odd return exists: the single cell's q = 16 end 1010100010100000 (depth 87,867, N_5's
+  minimum); its period-32 entry is sharp, wt(f) = 8 = q/4. None of TM6b's 56 exits to period 64 is one-parity —
+  COMPUTED — rule30_cloud_sharp_entry.py (SE), CL134; refutes the hoped-for exclusion of GC911
 - Rooted (physical) tree, period-16 stage: fifteen branch nodes, sixteen histories entering period 32 at 87,867 ..
   894,235; earlier entries N_j = 3, 8, 29, 400 — COMPUTED (second-read) — Proposition 8, entry 21 (TM5, TM5b, TM6)
 - Its whole in-tree at fixed q: 4, 14, 98, 3,066, 34,541,082 states (q = 1 .. 16); non-dyadic q repeat their dyadic
@@ -459,4 +462,4 @@ PART: as on the board.
 
 - One-profile source mask is not backward invariant; fourth pair gives no zero-source renewal — CLOSED (shortcut) — GC912 (second-read CL133); W281 continuation.
 
-- Shared-parity inverse pair loses its mask four steps later beyond period 2 — CLOSED (shortcut) — GC913; W281 continuation.
+- Shared-parity inverse pair loses its mask four steps later beyond period 2 — CLOSED (shortcut) — GC913 (second-read CL134); W281 continuation.

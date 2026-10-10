@@ -357,6 +357,11 @@ app is unpublished by design.
   zero-first pairs (0, b) it contains; q = 1 .. 12 and 16. Predictions and outcomes in the docstring; CL126. No data.
   Its q = 16 tree is a third independent replay of Proposition 8 (entry 21), found to be a repeat after the run (CL128).
 
+- `lexicon/rule30_cloud_sharp_entry.py` (Cloud, 2026-10-10): SE, a replay of GC913's eight backward pair formulas,
+  and a look at which physical odd zero returns are one-parity (ZF's trees to q = 16, TM6b's q = 32 certificate).
+  Finds the single cell's period-32 entry sharp (GC911's equality case). Predictions and outcome in the docstring;
+  CL134. No data.
+
 - `lexicon/rule30_cloud_white_end_replay.py` (Cloud, 2026-10-09): WR, a third independent replay of L498's computed
   step for the white end 1 0^q (width-8 stable sets, per-tick determinism for q = 10 .. 40, W^(n+4) = W^n from
   n = 22), with set-valued relations and no shared code. Predictions and outcome in the docstring; CL110. No data.
