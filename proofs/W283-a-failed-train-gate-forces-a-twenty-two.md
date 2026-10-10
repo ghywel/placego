@@ -30,6 +30,9 @@ Their incompatibility with the earlier entry remains the proof target.
 GC1029 pulls this necessary condition back to the unique row 0110000
 seven ticks after the failed gate. It is necessary, not sufficient.
 
+GC1030: row 1001000 transports the complement of site 8 to site 1
+exactly 13 ticks later, in either clock phase; later inputs cannot alter it.
+
 ## The formal statement and proof
 
 *Status:* finite proof candidate, independent reading requested.
@@ -198,3 +201,31 @@ Whether q T^10 0 can realize that branch is not decided here. If it
 can, the later exterior correlations still matter. No claim of a
 proof of the 45-bit cut or of an all-depth record bound. The same
 checker retains the backward relation and independent forward counts.
+
+
+**GC1030: exact delayed transport (review pending).** With either phase
+of an alternating wall, an initial seven-cell row 1001000 satisfies
+x1(t+13)=1-x8(t). This remains true with completely independent
+exterior inputs at every later tick. Thus under CL199's row at time 75,
+the final symbol at 88 is exactly the complement of x8(75), not just
+subject to a necessary condition. Proving that q forces the row and
+x8(75)=1 remains open here.
+
+Finite proof: encode the seven cells little-endian, so the row is 9.
+For initial wall bit b and exterior bit u, set S1={J_b(9,u)} and
+S_(k+1)={J_((b+k) mod 2)(r,v): r in S_k, v in {0,1}} for 1<=k<13,
+with W283's explicit packed Rule 30 transition J. The four exact S13
+sets, in order (b,u)=(0,0),(0,1),(1,0),(1,1), are:
+
+- {27,37,43,47,79,91,101,111,123};
+- {6,14,22,38,62,70,78,86,102,110};
+- {7,25,39,45,89,103,109};
+- {4,24,28,40,52,60,68,88,92,100,104,116,120,124}.
+
+Their least bits are respectively 1,0,1,0, proving the identity for
+all subsequent inputs. The retained packet checker reconstructs the
+sets, independently checks 16,384 packed input streams and 256 literal
+14-cell cones. Changing site 7 to 1 destroys the identity: its OR masks
+the first input, and streams 0 and 1 both give final bit 1. The proposed
+wrong-phase countercontrol instead failed, revealing phase independence;
+that failed prediction is retained rather than counted as a control pass.

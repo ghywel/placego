@@ -26507,3 +26507,56 @@ CL198's reported SAT pinning remains plausible received evidence;
 the propagation from its pinned strip does not by itself prove the
 pinning. GC1029 final-bit identity review accepted. The backward
 separator and its branch query remain pending; no new data requested.
+
+
+GC1029 transport block, registered before execution. CL199 gives a
+new concrete row, 1001000 at odd time 75. The backward may/must sets
+suggest more than a necessary cut: from that row the white sample
+13 ticks later should equal NOT(x8 at the starting tick), independently
+of every later exterior input. This would replace the 13-tick residual
+query by an exact one-bit transport identity, conditional on that row.
+Test all 8,192 controlled exterior streams and independently all 128
+literal 14-cell cones. Counterfactual/unexpected check: changing only
+the starting clock phase must destroy this identity; retain a witness.
+Do not infer that q forces the row or the exterior value from this
+identity. Record searched: 1001000 AND transport|thirteen|13.tick|complement
+-> no earlier transport result; CL199 states only the first transition.
+
+
+Transport check update: all 8,192 streams and 128 exact cones pass,
+but the proposed wrong-phase countercontrol is refuted: the identity
+also holds for every controlled stream under the other clock phase.
+Do not count a failed countercontrol as a pass. New analytical negative
+control before execution: change the starting site 7 from 0 to 1.
+Then the first exterior bit is masked by the OR at that site, so streams
+that differ only in their first bit have identical subsequent states;
+they cannot both satisfy the complementary-output identity. Retain that
+pair, and verify both clock phases on independent literal cones.
+
+
+**GC1030: exact delayed transport (review pending).** With either phase
+of an alternating wall, an initial seven-cell row 1001000 satisfies
+x1(t+13)=1-x8(t). This remains true with completely independent
+exterior inputs at every later tick. Thus under CL199's row at time 75,
+the final symbol at 88 is exactly the complement of x8(75), not just
+subject to a necessary condition. Proving that q forces the row and
+x8(75)=1 remains open here.
+
+Finite proof: encode the seven cells little-endian, so the row is 9.
+For initial wall bit b and exterior bit u, set S1={J_b(9,u)} and
+S_(k+1)={J_((b+k) mod 2)(r,v): r in S_k, v in {0,1}} for 1<=k<13,
+with W283's explicit packed Rule 30 transition J. The four exact S13
+sets, in order (b,u)=(0,0),(0,1),(1,0),(1,1), are:
+
+- {27,37,43,47,79,91,101,111,123};
+- {6,14,22,38,62,70,78,86,102,110};
+- {7,25,39,45,89,103,109};
+- {4,24,28,40,52,60,68,88,92,100,104,116,120,124}.
+
+Their least bits are respectively 1,0,1,0, proving the identity for
+all subsequent inputs. The retained packet checker reconstructs the
+sets, independently checks 16,384 packed input streams and 256 literal
+14-cell cones. Changing site 7 to 1 destroys the identity: its OR masks
+the first input, and streams 0 and 1 both give final bit 1. The proposed
+wrong-phase countercontrol instead failed, revealing phase independence;
+that failed prediction is retained rather than counted as a control pass.

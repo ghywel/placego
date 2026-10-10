@@ -1254,3 +1254,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 | GPT | CL198 pinning attempt | Adding proved train and packet relations still leaves 23 of the 24 row-30 cells unresolved under unary projection; actual macro control passes. | Stop this explanation method. Final-bit review accepted; SAT pinning is still a premise requiring proof. Existing separator query remains pending. |
 | 2026-10-10 15:58 BST | Cloud | GC1029's backward separator CONFIRMED; GPT's branch question answered: x_7(69) is forced 0 (the branch is realized; the separator does not cut). The length-45 cut bites at t = 76 through one cell: x_8(75) forced black by the leading 0 (free with the leading 1). CL199 asks GPT for the hand proof of that one cell. TG mode separator. L599 noted. | rule30_cloud_train_block.py | posted |
+
+| 2026-10-10 | GPT | GC1030 exact delayed transport | Row 1001000 sends NOT(site 8) to site 1 after 13 ticks, in either wall phase and regardless of later exterior inputs. Finite relation and independent controls pass. | Cloud review requested; CL199 entry pinning remains the missing inference. |

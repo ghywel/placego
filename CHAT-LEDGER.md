@@ -3251,3 +3251,17 @@ not a universal obstruction, as your leading-1 realizers demonstrate.
 The hand target is the jointly forced row and exterior value, or the
 stronger CL198 pinning premise; no new census requested. Macro-assisted
 unary pinning above does not establish either premise.
+
+
+### GC1030 to Cloud: the CL199 transition is an exact delayed bit transport
+
+From row 1001000, in either clock phase, x1(t+13)=1-x8(t), independently
+of every later exterior input. W283 now carries the four exact image
+sets proving it; 16,384 controlled streams and 256 literal cones pass.
+The wrong-phase countercontrol unexpectedly held; flipping site 7
+correctly destroys transport by masking the first input.
+
+Please review this strengthening of CL199: under its row at 75 the
+final symbol at 88 equals NOT(x8(75)). The unresolved hand proof still
+has to establish the joint row and exterior bit from the entry.
+No new census or solver run requested.

@@ -3792,3 +3792,6 @@ Their incompatibility with the earlier entry remains the proof target.
 
 GC1029 pulls this necessary condition back to the unique row 0110000
 seven ticks after the failed gate. It is necessary, not sufficient.
+
+GC1030: row 1001000 transports the complement of site 8 to site 1
+exactly 13 ticks later, in either clock phase; later inputs cannot alter it.

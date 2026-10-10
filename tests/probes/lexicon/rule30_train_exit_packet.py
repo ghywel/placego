@@ -140,6 +140,39 @@ def main():
     assert counts_at_target == [11904,0]
     assert history[81][:7] == [0,1,1,0,0,0,0]  # actual positive failed gate74
     print('PASS: backward separator row6 at7; forward continuation counts11904,0')
+    # GC1030 exact13-tick transport, preregistered in RULE30-GPT.
+    # Wrong-phase countercontrol failed: both phases obey the identity.
+    # Repaired negative control: site7=1 erases the first exterior bit.
+    ends = {(0,0):{27,37,43,47,79,91,101,111,123},
+            (0,1):{6,14,22,38,62,70,78,86,102,110},
+            (1,0):{7,25,39,45,89,103,109},
+            (1,1):{4,24,28,40,52,60,68,88,92,100,104,116,120,124}}
+    for phase in (0,1):
+        for first in (0,1):
+            states = {literal(9,phase,first)}
+            for t in range(1,13):
+                states = {literal(r,(phase+t)%2,u) for r in states for u in (0,1)}
+            assert states == ends[phase,first]
+            assert {r&1 for r in states} == {1-first}
+        for stream in range(8192):
+            r = 9
+            for t in range(13):
+                r = packed(r,(phase+t)%2,(stream>>t)&1)
+            assert (r&1) == 1-(stream&1)
+        for tail in range(128):
+            row = [(9>>j)&1 for j in range(7)]+[(tail>>j)&1 for j in range(7)]
+            for t in range(13):
+                p = [(phase+t)%2]+row
+                row = [(30>>(4*p[j]+2*p[j+1]+p[j+2]))&1 for j in range(len(row)-1)]
+            assert row == [1-(tail&1)]
+        bad = []
+        for stream in (0,1):
+            r = 73
+            for t in range(13):
+                r = literal(r,(phase+t)%2,(stream>>t)&1)
+            bad.append(r&1)
+        assert bad == [1,1]  # first1 violates claimed complement after site7 flip
+    print('PASS GC1030: both phases, 16384 streams, 256 cones; site7 masking control')
     print('PASS: GC1029 240 continuations; final exit1 iff state22 in25,49,89')
     print('PASS: GC1027 endpoint identities on retained CL193 model, n=5..13')
     print('PASS: 512 literal gates, 22 exact image transitions, 65536 cones and countercontrols')

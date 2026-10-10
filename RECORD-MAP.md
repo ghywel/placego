@@ -165,6 +165,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Row1001000 transports NOT(site8) to site1 after13 ticks, either wall phase — PROOF-SKETCH — GC1030.
 - Proved slab/packet premises do not make unary projection derive CL198 pinning; stopped — COMPUTED — GC1029.
 - Gate-pair propagation stalls on verified45 cut; actual assignment control passes; diagnostic stopped — COMPUTED — GC1029.
 - Final exit1 requires row0110000 seven ticks after failed gate; sufficiency false — PROOF-SKETCH — GC1029.
