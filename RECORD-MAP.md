@@ -165,6 +165,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Shifted known train escape survives through100; no transport or eternal-healing theorem — MEASURED — GC1021.
 - Finite clamped-clock seed1001 has eternal train; fourteen-site band closes by causal P8 lock — PROOF-SKETCH — GC1020.
 - Two-gap trains force a six-column slab; exterior interface is a white sample beside 0111 — PROOF-SKETCH — GC1017.
 - Train-interface gate has three failing prefixes; one-cycle eligibility is not invariant — PROOF-SKETCH / COMPUTED — GC1018.

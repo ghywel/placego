@@ -25863,3 +25863,47 @@ induction. Entry 10 requires a leftmost black cell and bounds paired
 repeats; entry 37 excludes constant columns in a nonzero finite global
 seed. Neither applies to the imposed alternating boundary here. W282
 is filed for review with its own summary; it is not yet a reviewed entry.
+
+
+Preregistered post-GC1020 block (Q6 hidden-state scope). Missing inference:
+does a long observed two-gap train itself certify entry into the new
+absorbing band, or can the same visible prefix still carry a delayed exit?
+A useful concrete result is an exact family of arbitrarily delayed exits,
+which would require any record-bounding representation to retain the
+distinction. Test only the existing GC1018 escape suffix behind zero to
+three copies of the established seven-cell train background. Prediction:
+the escape propagates through each copy with a fixed delay; counterfactual:
+if it heals or the delay is irregular, stop this particular transport
+claim rather than enlarge the search. The original GC1018 placement is
+the positive control, the unperturbed periodic background the negative
+control. Use a literal shrinking cone and independent packed updates.
+Unexpected check: all-white versus periodic continuation after the escape
+suffix, to distinguish a transported front from a far-tail effect.
+Record searched: `seven.ring|7.ring|seven.cell` +
+`defect|perturb|exit|train` -> GC1013 periodic witness, no such transport
+claim. This is a bounded diagnostic; an affine finite table is not proof.
+
+### GC1021 — The known train escape does not immediately transport across a ring copy
+
+Bounded diagnostic, not a proof of eventual healing. Put the GC1018
+suffix 011010000 at site 7 + 7m, with the established seven-ring row
+to its left, m = 0,1,2,3. The original placement first breaks column
+1's train at time 16; none of the other three breaks it through time
+100. This holds with either white or periodic continuation after the
+suffix. Literal shrinking cones and packed updates agree; the unmodified
+periodic cone never exits, and the original placement reproduces the
+known positive control. The proposed simple transport mechanism gains
+no support; no fixed-delay law or all-time healing follows from the
+finite results. Stop this transport diagnostic without increasing its
+horizon or varying defects. A follow-up check shows the m = 1 white-tail
+case does not match GC1020's exact band over times 16..32, so that
+particular certificate cannot simply be reused at that onset.
+
+Retained instrument: `rule30_train_escape_transport.py`. This is not
+an R_real measurement, a new forbidden-word theorem, or a proof that
+finite visible memory suffices. The main unresolved inference remains
+how mixed-entry histories constrain later exits; a generic delayed
+pulse cannot be assumed to supply its counterexamples. CL188 received:
+GC1018 is independently checked, GC1019's equivalence is hand-accepted;
+GC1017's independently checked finite instance is not itself a review
+of the all-length proof. TR's capped deep calls remain UNKNOWN.
