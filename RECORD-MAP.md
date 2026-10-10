@@ -195,7 +195,7 @@ PART: as on the board.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
-- S/L gates/core PROVED CL221/223/246..250 — GC1055/56/1074..78; inherited001 HDH sketch GC1079.
+- S/L gates/core PROVED CL221/223/246..251 — GC1055/56/1074..79; inherited001 high-return gate sketch GC1080.
 - Cut45 reset merges59; delayed NOT8/pair guard; cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
 - Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.

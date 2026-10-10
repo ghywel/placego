@@ -28371,3 +28371,36 @@ The first long has marker b=time5site9=0 and returns001. At15 the actual next lo
 **Controls and unexpected check.** Predictions preceded execution. All40 one-step implications, including a fresh arbitrary right bit in each, pass;32 actual controls with four added initial bits and two far constants agree in literal and packed engines through30 ticks. They all have H,D,H, the predicted prefixes, and the exceptional actual mid01 band. The third H returns prefix111011 in these32 controls; this is evidence only, not an all-tail return theorem. The unexpected check therefore succeeds: GC1078's free-band111 successor can occur on an actual001 origin with inherited high past. Its C guard remains sound. The absorption shortcut is REFUTED; the new cylinder certificate is a proof sketch, with no failed certificate prediction.
 
 CL250 atf9460bdd independently confirms GC1078's origin guard, closing step and101 escape; GC1078 is PROVED. Its induction is unchanged. Next specific missing inference: when inherited001-to-D returns111, does the following H necessarily terminate with S, or can it renew high LL? Carry that next-return condition on the same history; do not assign a fresh111 tail. Full hidden closure and the all-depth prize bound remain open.
+
+
+## GC1080 — The 001 low-to-high return has an exact finite origin gate (2026-10-11)
+
+**Missing inference.** Decide whether the high after an ordinary001 low renewal returns L0 or S, retaining its actual past. Record searched:001/111 or H-D-H with inheritance/third/repeat/marker/return and ordinary/high/renew ->50 hits in16 files;00100001|00110000|001011 with high/HLL/ordinary and gate/origin/inheritance ->5 hits in3 files (old31-template and GC1079, no exact gate). No language census or solver.
+
+**Exact all-tail gate, proof sketch pending review.** Let initial sites7..9=001 after111001, and name sites10..19 a,b,c,d,e,f,g,h,i,j. The conjunction of D, returned111 at10, and following H returning L0 at20 holds exactly on the union:
+
+- A: sites10..17=00100001; sites18,19 arbitrary.
+- B: sites10..17=00110000 and i OR j=1.
+- C: sites10..15=001011, g OR h=1, and either (g,h) is not11 or i=j=0.
+
+Every such cylinder is an all-tail statement. No earlier-high premise is used in this first gate. Conditional on D returning111, the equivalent same-history gate is simply time3sites15=time3site16=0. Otherwise its following H returns S. This decides a next-return condition, not just the next fifth track.
+
+**Hand derivation.** The001 origin forces time1 sites6..9=1111. Write A through I at time1 sites10..18. At time2 sites10..17 are
+
+    p=NOT(A OR B), q=A XOR(B OR C), r=B XOR(C OR D),
+    s=C XOR(D OR E), t=D XOR(E OR F),
+    U=E XOR(F OR G), V=F XOR(G OR H), W=G XOR(H OR I).
+
+D requires p=0. In its mid01 closing map, a returned111 requires time5sites8,9 both0, since GC1078's guarded map excludes111. For that white pair, with z=time5site10 and k=time5site11, direct updates give closing Q=z and, when z=0, R=k. Thus returned111 is equivalent to z=0,k=1. Translating these four conditions backward through the two zero-prefix updates gives p=q=r=s=0,t=1; time3sites6..14=000000011. The first four equations imply A=B=C=1 and D OR E=1. With t=1, either D=1,E=F=0 or D=0,E=1 (F free).
+
+Let v,w be time3sites15,16. They are NOT(U OR V), U XOR(V OR W). From the forced black time3site14, updates give time5prefix01000110, time5site14 a'=v OR w, and time10sites6..12=(1,1,1,1,1,a',a'). If a'=1, the next high origin has sites10,11,12=111. Its time1 u=v=w=0 violates GC1077's necessary high-LL gate, so it returns S. If a'=0, the time5 fifteenth bit is1; its low closing OR shield also forces time10site13=0. The next origin therefore begins1110011111000. For an ordinary high origin111001111100d, name its next three initial bits e,f,g. Its time1 samples u,v,w are0,1,d; time2 gives M=NOT(d OR e), N=NOT d AND(e OR f OR g), hence M OR N=NOT d. GC1076/77's b=0 closing sample c=M OR N therefore gives the all-tail criterion d=0. Hence it returns L0 here. The next-return gate is v=w=0, equivalently U=1,V OR W=1.
+
+Substituting time1 bits from the initial row completes the finite gate. A=B=C=1 forces a=b=0,c=1. The D=1,E=F=0 case plus U=1 gives A's00100001. The D=0,E=1 case plus U=1 gives either B's00110000 with i OR j=1, or C's001011. In C, G=0 means g OR h=1; H OR I=1 is automatic for01/10 and requires i=j=0 for11. These exhaust the Boolean cases, with no farther-tail assumption.
+
+**Inherited-high restriction.** GC1077's earlier high b=0 branch has time5prefix100011. Naming its next two bits e',f', the returned001 origin has sites10=11=e' OR f'. If that pair is11, the next001 selector is X; D requires e'=f'=0 and the returned pair00. On this00 branch, two further shared samples M,N give returned sites12,13=(M,M OR N), so12<=13. Cases A and C above both require c=1,d=0 and are impossible with this inherited D past. Therefore an actual earlier high followed by001-D-111 can renew high LL only in B: the low origin must begin11100100100110000 and sites18 OR19 must be1. Conversely B gives that high LL whenever such an inherited origin exists. Excluding or realizing this exact remaining joint cylinder is the next obligation; it has not been assumed absent.
+
+**Controls, correction and unexpected check.**48 qualified time1 bands,32 direct high-return decoder controls and128 inherited pair controls pass;32 pair00 cases give D and the inequality,96 others give X.56 selected actual001 origins give32 high LL and24 high S, matching the gate.64 selected earlier-high origins plus two known GC1079 controls pass literal/packed engines. The initial64 selection had no composed D-to111 case; the two explicit GC1079 controls supply nonvacuous composition, both S. An initial hand claim placed12<=13 on every b=0 return; its derivation uses the00 pair, so that unconditioned claim was withdrawn. The64 passing samples did not justify it. The published gate keeps the D premise.
+
+The unexpected actual origin11100100100100001 gives D then high LL for every farther tail, while c=1,d=0 violates the inherited inequality. Thus the source001 alone does not force a high successor to terminate; its earlier high past must remain in the hidden representation. No unconditional low-to-high ban survives this control.
+
+CL251 atab233880 independently confirms GC1079, now PROVED, and exhaustively confirms that its specific21-bit cylinder ends the third high with S. That cylinder conclusion does not exclude the remaining B origin on another inherited history. Next: its actual earlier-high preimage, using the exact pair guards above. Full hidden closure and the all-depth record bound remain open.
