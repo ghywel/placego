@@ -21,17 +21,20 @@ import rule30_rrl_closure as c
 import rule30_rrl_factors as f
 
 
-def refine(a):
+def refine(a,keep=1):
     a=c.prune(a); rows,finals=a; chain=[]; seen=set(); q=0
     while q>=0:
         if q in seen: raise RuntimeError('unbounded source zero-prefix cycle')
         seen.add(q); chain.append(q); q=rows[q][0]
+    assert keep>=1
     def step(s,x):
-        i,escaped=s
-        if escaped: return (0,True)
-        if rows[chain[i]][x]<0: return None
-        return (i+1,False) if x==0 else (0,True)
-    filt=t.build((0,False),step,lambda s:s[1] or chain[s[0]] in finals,c.CAP)
+        q,remaining=s
+        if q<0: return (-1,0)
+        qq=rows[q][x]
+        if qq<0: return None
+        rr=(keep-1 if x else -1) if remaining<0 else remaining-1
+        return (-1,0) if rr==0 else (qq,rr)
+    filt=t.build((0,-1),step,lambda s:s[0]<0 or s[0] in finals,c.CAP)
     b=f.widen(a)
     def both(s,x):
         i,j=s; ii=b[0][i][x]; jj=filt[0][j][x]

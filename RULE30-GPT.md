@@ -23756,3 +23756,15 @@ continuation is unsupported. This is one ancestry's first encountered loss,
 not the earliest loss globally; the source itself may contain older abstract
 losses. No physical witness or new record bound. Next retain the residual
 continuation state after this exit instead of another scalar prefix summary.
+
+
+#### GC979 — Recovered seven-letter separator works, closure still fails (2026-10-10)
+
+Preserve exact source residual states through the first7 letters starting at
+the zero block's exit, then widen. Preregistered GC978 separator control
+rejects its loss and contains the exact union source (P1 HELD); independent
+finite-toy and keep1/empty controls PASS. Targeted phase-0 K10 C32 closure
+still overflows at round36, with no cap (state-cap prediction REFUTED).
+No invariant or physical witness. This repairs that known continuation loss
+but does not solve the bound. Park fixed packet-length refinements; further
+work must preserve residual automaton states, not extend packet cutoffs.

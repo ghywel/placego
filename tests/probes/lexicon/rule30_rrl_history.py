@@ -46,7 +46,7 @@ def invert(a,word):
     return source
 
 
-def diagnose(history,white):
+def diagnose(history,white,separator=None):
     word=invert(history[-1][32],shortest(white)); r=32; n=len(history)-1
     steps=0; inherited=0
     while n:
@@ -65,6 +65,10 @@ def diagnose(history,white):
             for i,x in enumerate(word):
                 state=trim[0][state][x]
                 if state<0: dead=i+1; break
+            if separator:
+                assert c.subset(exact,separator(exact))
+                assert not t.accepted(separator(exact),word)
+                print('targeted separator rejects loss and contains exact source',flush=True)
             print('exact source rejects; refined widening accepts; first dead prefix',
                   word[:dead] if dead else 'none (endpoint rejection)',flush=True)
             return
