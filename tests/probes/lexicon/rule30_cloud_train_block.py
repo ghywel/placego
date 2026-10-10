@@ -577,7 +577,8 @@ def entrymemory():
 
 
 def past():
-    """GC1037's backward propagation (CL207), own code. From the eight row-30 fillings with cells 16 and 20 black (the 19
+    """GC1037's backward propagation (CL207), own code. From the eight row-30 fillings with cells 16 and 20
+    black (the 19
     common pins of CL198 held), reverse Rule 30 exactly under the clock (each parent is fixed by its two rightmost
     cells and left-permutivity, with the wall checked), imposing the entry's samples at t = 2 .. 28 and leaving t = 0
     free: every row at t = 0 that survives begins with 1, so the leading 0 excludes a black (16, 20) origin. Then the
