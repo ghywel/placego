@@ -14,6 +14,11 @@ seven-cell transition table forces the exit gaps4 then5, even with arbitrary
 inputs farther right. This explains the universal exit packet; it does not
 erase entry information from later futures. Independent review is pending.
 
+GC1027's corollary places the decision exactly: a long train forces the
+slab to its penultimate car; that car's exterior gate decides the first
+following symbol. The last-car slab need not persist. This repairs the
+proposed train-memory interface and removes its first-symbol suffix census.
+
 ## The formal statement and proof
 
 *Status:* finite proof candidate, independent reading requested.
@@ -91,3 +96,23 @@ method is ordinary exact finite-state propagation, with GC1019's gate
 and GC1023's exit rule as direct antecedents; no new general method is
 claimed. Unlike the forbidden-factor argument, this establishes the
 sufficient spatial source and tolerates arbitrary time-varying site8.
+
+**Endpoint corollary (GC1027, independent reading pending).** If a
+white-time trace starts T^n at physical time a, with T=10 and n>=5,
+then sites1..6 are100110 at times a+4j for1<=j<=n-2. The gate
+x_7(a+4j) is0 for1<=j<=n-3, and
+
+    x_1(a+4n) = 1 XOR x_7(a+4(n-2)).
+
+Indeed GC1017 applied to T^(n-1)1 supplies the slab at a+4. From a
+known slab at a+4j with j<=n-3, the observed black at a+4(j+2) and
+GC1019's eight-tick identity force the current gate to0. The four
+slab transitions return100110, so induction reaches the penultimate
+car. GC1019 there gives the identity, without assuming the next symbol.
+If that next symbol is0, W283 at this endpoint forces the first eight
+following white-time symbols00100001. There is no claim about later
+bits. CL193's retained actual model checks all indices for n5..13:
+its failed gate at74 gives a nonslab last-car row at78, explicitly
+refuting the extra successful cycle proposed in CL194. This is a
+corollary of the existing slab/delay lemmas and the packet, not a
+new numbered theorem or a claim about a finite left half.

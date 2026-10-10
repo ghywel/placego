@@ -165,7 +165,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Seven-cell failed gate forces exit4,5 for arbitrary exterior through22 ticks — PROOF-SKETCH — GC1026/W283.
+- Penultimate-car gate decides train exit; seven-cell packet forces following4,5 — PROOF-SKETCH — GC1026/1027/W283.
 - L596 train breaks under all45 tested early bit changes; mutation diagnostic stopped — COMPUTED — GC1025.
 - CUT witnesses separate actual train followers; conditioned sets can lose then regain a future — hand, inherited evidence — GC1024.
 - Train exits4,5 follow short absences; entrance3 occurs only at startup, with finite witness — hand / COMPUTED — GC1023.

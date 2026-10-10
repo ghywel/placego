@@ -73,6 +73,27 @@ def main():
         assert tuple(r[(i-1)%7] ^ (r[i] | r[(i+1)%7]) for i in range(7)) == tuple(map(int,ring[(t+1)%4]))
     control = ''.join(ring[t%4][1] for t in range(0,23,2))
     assert control == '10'*6 and control != full[::2]
+    # GC1027: preannounced endpoint audit on Cloud's retained CL193 model.
+    seed = ('011111100111010100110001100011001001011110110010011010001010'
+            '01111011100010100110111010000000000000000')
+    r = list(map(int, seed))
+    history = []
+    for t in range(101):
+        history.append(r)
+        p = [t % 2] + r + [0]
+        r = [(30 >> (4*p[j]+2*p[j+1]+p[j+2])) & 1 for j in range(len(r))]
+    q, v = '000010001010000', '0010000101'
+    assert ''.join(str(history[t][0]) for t in range(0,101,2)) == q+'10'*13+v
+    for n in range(5,14):
+        for j in range(1,n-1):
+            assert history[30+4*j][:6] == [1,0,0,1,1,0]
+        for j in range(1,n-2):
+            assert history[30+4*j][6] == 0
+        assert history[30+4*n][0] == 1 ^ history[30+4*(n-2)][6]
+    assert history[70][6] == 0 and history[74][6] == 1
+    assert history[78][:6] != [1,0,0,1,1,0]  # old last-car interface fails
+    assert ''.join(str(history[t][0]) for t in range(82,97,2)) == '00100001'
+    print('PASS: GC1027 endpoint identities on retained CL193 model, n=5..13')
     print('PASS: 512 literal gates, 22 exact image transitions, 65536 cones and countercontrols')
     print('full trace:',full,'; white trace:',full[::2])
 

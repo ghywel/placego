@@ -3776,3 +3776,8 @@ boundary phase, its next twelve white-time readings are fixed. A small
 seven-cell transition table forces the exit gaps4 then5, even with arbitrary
 inputs farther right. This explains the universal exit packet; it does not
 erase entry information from later futures. Independent review is pending.
+
+GC1027's corollary places the decision exactly: a long train forces the
+slab to its penultimate car; that car's exterior gate decides the first
+following symbol. The last-car slab need not persist. This repairs the
+proposed train-memory interface and removes its first-symbol suffix census.

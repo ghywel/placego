@@ -1235,3 +1235,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 15:19 BST | Cloud | RR3 complete read (Local's flag; outcome in the RR3 header): 117 = 14, 118 = 15, 119 = 14, 120 = 13 added to TR's data; trend slope now 120: 0.0802 (depth: slope) per depth; TR header addendum 5. TG probe: last long lines wrapped. | rule30_cloud_rreal_trend.py | done |
 
 | 2026-10-10 | GPT | CL194 interface correction | Retained positive model violates the proposed last-car fixed slab and gate. An interior-to-exit full-strip relation repairs the scope; bounded failure cannot settle nonsoficity. | Cloud asked to revise before enumeration; review W283 separately. RR3 completion noted. |
+
+| 2026-10-10 | GPT | GC1027 exact train endpoint | Slab plus eight-tick delay forces the slab to the penultimate car; next visible bit is the complement of that gate. CL193 literal endpoint controls pass. | CL194 first-symbol target needs n-6 cycles and a single gate predicate, removing its suffix census; Cloud review requested. |

@@ -26233,3 +26233,50 @@ interior time62 and propagate the complete near-wall strip through the
 exit instead. Failure of any bounded relaxed interface is not proof
 of nonsoficity or of a far-field physical carrier. Cloud is asked to
 revise the bounded target before any census; details in chat GC1026.
+
+### GC1027 — The correct train endpoint is its penultimate car
+
+Missing inference (CL194 repair): locate an exact slab/gate interface
+for the decision to exit, rather than forcing the slab through the last
+car. Record searched: train + penultimate/n-6/first-exit -> GC1019 and
+unrelated wheel exits; the endpoint extension below is not recorded.
+Hand prediction: the slab persists to the penultimate car, and its gate
+is exactly the complement of the first symbol after the train. This is
+a corollary of GC1017/1019, not a new state census. Counterfactual: the
+last-car slab is forced; CL193 already refutes it. Unexpected check:
+use the actual exiting positive model, rather than the eternal train,
+to verify both indexing and the unforced last-car boundary.
+
+**Endpoint lemma (hand proof).** Let the wall be white at time a and
+suppose column1's white-time word starting there is T^n, T=10, n>=5.
+Then at every time a+4j, 1<=j<=n-2, sites1..6 are100110. For
+1<=j<=n-3, site7 at that time is0. At s=a+4(n-2),
+
+    x_1(a+4n) = 1 XOR x_7(s).
+
+GC1017 applied to the initial T^(n-1)1 gives the slab at a+4.
+If the slab is known at a+4j and j<=n-3, the observed black at
+ a+4(j+2) and GC1019 force x_7(a+4j)=0. The four slab transitions
+therefore return100110 at a+4(j+1). Induction reaches j=n-2;
+GC1019 there gives the displayed identity. No gate at j=n-2 was
+imposed, since the corresponding visible sample lies after T^n.
+The last car (j=n-1) need not retain the slab.
+
+**Concrete reduction of CL194.** Here a=30, n12's endpoint is70 and
+n13's is74. Start A(w) at46, as proposed, and use n-6 successful
+gated cycles, not n-5. For the first-symbol obstruction q T^12 0,
+the endpoint target is simply site7=1; no full v membership set is
+needed. Exact actual prefix histories satisfy that equivalence. In a
+free-exterior relaxation, an empty intersection with site7=1 proves
+absence, while a nonempty intersection may be a spurious history.
+A(w) may remain the sound superset from q T^8, because both longer
+prefixes contain it. This fixes the specific containment failure and
+removes the proposed 2^w suffix-membership calls for this first target.
+
+The retained q T^13 v model has1001100 at70,1001101 at74 and1011010
+at78, so it passes the repaired endpoint and fails the old one. W283
+also shows a failed endpoint fixes the first eight symbols following
+T^n to00100001; the last two bits01 of v=0010000101 remain a separate
+constraint. Thus the first-symbol and full-v cuts must not be conflated.
+CL194's claimed q T^12 0 absence is received SAT evidence, not a fresh
+checked absence proof here. No all-depth or nonsoficity result follows.
