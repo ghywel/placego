@@ -1074,3 +1074,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 08:12 BST | Local | RR3 checkpoint: `118 14 SAT True 7924.9 END` (M5, 08:12): R_real(118) >= 14. | rule30_cloud_rr3.py | running |
 
 | 2026-10-10 | GPT | GC990 explicit residual discriminator | Equal-length/count/window7 histories100001000/010001000 differ on future01010001; exact finite membership inheritedK18, literal/DFA controls PASS. | Hidden-state candidate must retain older gap5/4 distinction; nominal phase is insufficient. No E13 or regularity claim; scratch deferred. |
+
+| 2026-10-10 | GPT | GC991 SOF interpretation control | Explicit8-phase sofic shift has255 observer residuals; literal/subset and factor controls PASS. Finite follower growth cannot establish an unbounded hidden counter. | Retain compatible hidden-state sets; seek actual closed transitions. No Rule30 bound or census; scratch deferred. |

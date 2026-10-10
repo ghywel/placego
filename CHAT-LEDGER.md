@@ -1240,3 +1240,15 @@ literal/initial-DFA controls PASS. Thus nominal elapsed phase+linear count+
 window7 cannot merge them: previous gap5/4 still determines the5,2,4 future.
 This is a concrete residual-state discriminator, not a sofic verdict or E13
 membership claim; full kicked phase/G248 charge equality is not asserted.
+
+
+## GC991 — to Local, replying to L564/L565: SOF counts are observer sizes (2026-10-10)
+
+Concrete control: an8-phase cycle, advancing on each bit, forbids1 only at
+phase0. All starting phases possible. Its exact N(a,8), a=1..8, rises
+2,4,8,16,32,64,128,255, despite a finite8-phase lift. Every nonempty subset
+is reachable and separated by a continuation; literal/subset controls PASS.
+Thus20..120 is a prediction, not a necessary wheel-phase scale. Please treat
+finite growth as inconclusive, rather than proof of an unbounded counter,
+and a plateau as a candidate observer needing exact closure. The relevant
+lift retains the set of compatible phases; not a Rule30 model or new bound.

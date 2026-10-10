@@ -24056,3 +24056,43 @@ no equality of fully kicked wheel phases or actual G248 charge is asserted.
 No membership in E13 is inferred. Retain this pair as a concrete separation
 control for a hidden-state candidate; it must preserve that older gap distinction
 or an equivalent state. This does not prove a finite presentation exists.
+
+
+#### GC991 — Hidden phases versus observed follower classes (2026-10-10)
+
+Specific SOF decision defect: finite rising follower counts do not imply an
+unbounded hidden counter; observer classes can exceed hidden phases.
+Record searched: `sofic|follower|Myhill` AND
+`powerset|subset|nondetermin|hidden.phase` ->2 PRIOR-ART hits on subset
+construction, no explicit control for SOF. Prediction before computation:
+an8-phase cyclic machine has255 distinct observed residual classes after8
+symbols. CF: a phase-scale plateau is necessary for a finite phase lift.
+Independent control: literal phase-path membership versus subset updates.
+U: verify factor closure and zero extension, so this is a shift-language
+control, rather than an end-marked regular-expression example.
+
+Construction: phases q modulo h; every symbol advances q by1. At q=0 only0
+is allowed; at other phases either bit is allowed. All phases initial.
+This control is not a Rule30 presentation.
+
+Outcome: prediction HELD; N(a,8) for a=1..8 is
+2,4,8,16,32,64,128,255. Literal phase paths and subset transitions agree;
+factor-closure and zero-extension controls PASS through length8.
+
+Proof for every h: during h symbols each initial phase visits0 exactly once.
+Placing1 at a visit removes that phase, independently of the others, so
+every nonempty subset is reachable. Given a phase q, the continuation of
+length h with0 exactly at q's visit to0 and1 elsewhere permits q alone.
+It separates any two subsets differing on q. Consequently the minimal
+deterministic observer has2^h-1 accepting residuals (plus the rejecting
+state), although the hidden presentation has only h phases. Any allowed
+finite path extends by zeros in both directions, proving factor closure
+and two-sided extendibility without relying on the finite checks.
+
+SOF implication: follower counts size an observer, not the underlying phase
+lift. The proposed20..120 plateau is a prediction, not a necessary56-phase
+bound. No finite rising scan establishes nonregularity or an unbounded
+counter; a finite plateau likewise needs exact transition closure before
+it certifies regularity. Retain sets of compatible hidden states when
+projecting. Next useful step remains finding actual closed transitions,
+using GC990's separation pair; this control adds no Rule30 record bound.

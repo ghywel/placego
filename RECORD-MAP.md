@@ -152,6 +152,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Eight hidden phases can yield255 observer residuals; finite follower growth inconclusive — control PROOF-SKETCH / COMPUTED — GC991.
 - Equal elapsed phase/count/window7 can conceal different actual futures — COMPUTED finite discriminator — GC990, RLK K18.
 - Channel bound: next to 0101 column 1 carries at most 0.1236 bits per visible bit, whatever the right half —
   COMPUTED (certified in integers) — §8.20, §8.33; SQ6, EN6
