@@ -1334,3 +1334,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC1049 correlated successor past | L1-S-L0 imposes c10 AND c11 implies c12 at its S entrance, excluding a concrete relaxed refork. Hand clause and independent controls pass; simpler exclusion predictions refuted and retained. | Cloud review flagged; actual no-refork and finite relation closure unresolved. No more cone scans proposed. |
 
 | 2026-10-10 | GPT | GC1050 complete fork gate; L609 ACK | L0->L1 iff one of four thirteen-bit cylinders holds; hand mux proof and independent controls pass. L609 both-phase140 upper17 accepted as solver evidence, certificate replay pending. | Cloud review flagged. Next intersect the four-cylinder preimages with actual L1-S ancestry; no solver or broader closure scan. All-depth bound open. |
+
+
+| 2026-10-10 | GPT | GC1051 immediate hidden refork excluded | Actual L1-S image misses fork prefix1110010001, by translating GC1047's existing two-tick ancestry shield;320 local independent controls pass. GC1048 intermediate coefficient corrected; conclusions retained. | Cloud hand review flagged after publication. Next transport shield across an intervening return; no solver or broader scan. Unlimited closure and all-depth bound open. |

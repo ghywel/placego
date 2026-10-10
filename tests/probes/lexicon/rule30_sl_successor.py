@@ -31,6 +31,10 @@ def main():
         rows = literal(start, 16)
         assert rows == packed(start, 16)
         h, j = rows[5][8], rows[8][8]
+        k, r, s = rows[5][9:12]
+        # GC1051 fixes a shifted coefficient in the original hand text.
+        assert rows[6][7:11] == (h, h | k, h ^ (k | r), k ^ (r | s))
+        assert rows[7][7:9] == (1-(h | k), h ^ (h | k | r))
         assert "".join(str(r[4]) for r in rows[:10]) == "0010010010"
         assert "".join(str(r[5]) for r in rows[:10]) == "0000110110"
         assert rows[10][5:7] == (1-h, 1)

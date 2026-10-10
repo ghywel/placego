@@ -709,3 +709,5 @@ app is unpublished by design.
 - lexicon/rule30_sl_ancestry.py: GC1049 entrance-sensitive successor clause;32 exact cones and retained countercontrols PASS. Several closure guesses refuted; actual no-refork UNKNOWN after nonvacuous1,024-cone sample. No wider scan proposed.
 
 - lexicon/rule30_long_fork_gate.py: GC1050 complete L0-to-L1 fork gate, four thirteen-bit cylinders; hand proof,512 exact mux cones and256 prefix extremes, independent engines and unexpected controls PASS. No record bound.
+
+- lexicon/rule30_sl_no_refork.py: GC1051 hand exclusion of actual L1-S-L0-L1 by translated ancestry shield;320 local cone controls, independent engines and relaxed countercontrol PASS. Three construction guesses REFUTED; GC1048 intermediate coefficient corrected, conclusions unchanged. All-depth bound open.

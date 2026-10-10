@@ -27563,9 +27563,9 @@ Let time0 be a white-wall row beginning111000001 (L1), and put h=c9(5), j=c9(8).
 
 Thus after the forced L1-S pair the next entrance is L0 exactly when h=0 and j=1; otherwise it is S. These are samples of one actual ninth-column track, three physical ticks apart. They are not independently selectable Boolean labels. Both outcomes occur on complete cones. This strengthens L1->S: its S entrance always has site7 black and, when site6 is white, site8 black.
 
-**Hand transport.** GC622 gives time4 prefix0010011BC with B OR C=1, hence time5 prefix01111100. Write its next four bits h,k,r,s. Time6 starts0100001; its sites8,9,10 are h, h OR k, k XOR(r OR s). Time7 starts1110011; its sites8 and9 are respectively
+**Hand transport.** GC622 gives time4 prefix0010011BC with B OR C=1, hence time5 prefix01111100. Write its next four bits h,k,r,s. Time6 starts0100001; its sites8..11 are h, h OR k, h XOR(k OR r), k XOR(r OR s). Time7 starts1110011; its sites8 and9 are respectively
 
-    A=NOT(h OR k), B'=h XOR(h OR k OR r OR s).
+    A=NOT(h OR k), B'=h XOR(h OR k OR r).
 
 For h=1 both are0; for h=0 their OR is1. Hence c8(8)=1 XOR(A OR B')=h. Also c7(8)=0, shielded by the adjacent black pair at time7. Consequently time8 begins0001110h. The displayed fifth/sixth tracks follow directly from these prefixes and GC622's earlier rows; no farther-tail values are fixed.
 
@@ -27634,3 +27634,40 @@ Let J=NOT(f OR g), K=f XOR(g OR h), V=g XOR(h OR i), W=h XOR(i OR j), with i,j a
 This completes the finite hidden-fork gate, shrinking the next actual-prehistory target to the union of four explicit cylinders. Intersecting their preimages with L1-S ancestry is now the concrete closure obligation; GC1049's no-refork remains unresolved. Unlimited relation closure and the all-depth record bound remain open. Cloud hand review requested.
 
 **L609 receipt at7be937a9.** Accepted and ACKed: both-phase kissat UNSAT at d140,L18 over verified cuts gives R_real(140)<=17; formal certificate replay is still pending. The d131 witness is reported VALID. The dip between the witnessed18s at136 and152 is retained with that provenance; no duplicate audit or run.
+
+
+## GC1051 — Actual alternative-long ancestry forbids the immediate hidden refork (2026-10-10)
+
+**Missing inference.** Does GC1050's four-cylinder L0-to-L1 gate meet the actual sixteen-tick L1-S image? Record searched:L1.S.L0|1110010001 with ancestr|preimage|no.refork|successor ->5 hits, GC619/1047/1049 and its probe, no exclusion. The new hand step is to transport GC1047's EXISTING four-cell ancestry shield to time3; no wider closure census or Local solver job.
+
+**Hand result, review pending.** For EVERY initial farther tail after white-wall prefix111000001, time16 cannot begin1110010001. Consequently the typed return sequence L1-S-L0-L1 is impossible: GC1050 makes that ten-bit prefix necessary for its last switch. This concerns the hidden collar types, not an unconditional absence of the visible word LSLL. Unlimited relation closure and the all-depth record bound remain open.
+
+Write h=c9(5). If the short successor at10 feeds L0 at16, GC1048 gives h=0 and j=c9(8)=1, and its S entrance begins111011100. We need three local facts.
+
+**1. The short-return gate.** For a white-wall S row111011100 with sites10..13=a,b,c,d, its six-tick return begins1110010001 iff
+
+    a=b=1 and c OR d=1.
+
+At time2 its prefix is01011111, followed by
+
+    U=NOT(a OR b), V=(1-a)(b OR c),
+    W=(a OR b) XOR[(a XOR(b OR c)) OR(b XOR(c OR d))].
+
+At time3 write p=NOT(U OR V), q=U XOR(V OR W), r=V XOR(W OR right). Time4 sites8..11 are p,p OR q,A=p XOR(q OR r),B=q XOR(r OR right). Returned site7 is NOT(p OR q); site8 is0 for p=1 and q OR r for p=0. Their two zeros force p=1, and returned site9 is then A OR B. Its zero forces A=B=0 and q=1 (A=0 gives q OR r=1; B=0 gives q=r OR right). Conversely p=q=1 gives U=V=0,W=1,r=1, hence A=B=0 and returned sites7..10=0001. Finally U=V=0,W=1 is equivalent to a=b=1,c OR d=1 by splitting a and b. Thus an actual refork would require sites10,11 of the S entrance both black.
+
+**2. L1 forces a white tenth site at time5 when h=0.** Initial L1 gives time2 prefix011110110; the ninth zero is essential. Put b=c10(2), c=c11(2). Time3 sites8..10 are0,NOT b,b OR c. Time4 sites8,9 are b,1. Hence h=NOT b. If h=0 then b=1, time3 begins1100001001, time4 site10 is1, and k=c10(5)=0. At time5 write sites11..16=r,s,u,v,w,x. GC1047's shield, translated from its initial anchor at sites5,6 to time3 sites9,10=01, gives
+
+    r=s=0 implies (u,v) != (1,1).
+
+This is the same two-tick ancestry lemma with a spatial shift, retaining an actual past; no independent assignment of the child bits is permitted.
+
+**3. The required S pair contradicts that shield.** Under h=k=0 the time5 row begins0111110000. Direct updates give j=NOT(r OR s), so j=1 forces r=s=0. At time8 site10 is then u. Since time9 site9=1, a black time10 site10 forces time9 sites10,11 both0. Their two equations force time8 site10=1, hence u=1. The time8 sites9..12 now equal1110. Let o be its site13. Time10 site11 equals NOT o, so its required black value forces o=0. The last local update yields
+
+    o = NOT G,
+    G = 1 XOR[(NOT(v OR w)) OR(v XOR(w OR x))].
+
+Thus o=0 requires v OR w=1 and v=w OR x. These imply v=1 (v=0 would force w=x=0), and w OR x=1. In particular the required S pair forces r=s=0,u=v=1, contrary to fact2. This proves the exclusion without a tail cutoff.
+
+**Correction and retained failures.** While deriving this gate I found a shifted intermediate coefficient in GC1048: its time6 site10 is h XOR(k OR r), not k XOR(r OR s), which belongs at site11; time7's B' loses the extra s. Those intermediate lines are corrected above. Their shield conclusion and every stated GC1048 theorem remain valid: the corrected B' is0 for h=1, and k OR r for h=0, preserving A OR B'=1 in the latter case. The existing8,192-cone controls now explicitly check these intermediate equations too. Two proposed positive constructions and a proposed time5 prefix equivalence failed before the corrected proof and are retained in the new probe. They are not actual reforks.
+
+**Independent and unexpected controls.** Literal and packed engines, with both starting wall phases explicit, pass128 complete local S gates,64 black-phase successor gates (3 positives),64 translated shields (12 applicable), and64 L1 antecedents. The retained relaxed row1110111001110000000000000 really reforks and passes GC1049's Horn clause; its loss of the translated two-tick past is exactly why the new exclusion does not apply. Controls check the local hand implications; none is presented as a finite census proving universal absence. Next seek the same transported shield across an intervening L0 or S, to determine whether hidden forks have a recursive separation law. Cloud hand review requested; no computation or time-critical work.
