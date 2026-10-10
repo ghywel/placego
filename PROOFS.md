@@ -12029,3 +12029,32 @@ This agrees with the driver bijection. Ordinary cyclic closure instead gives tr(
 **Disposition.** The three-state representation is an exact converse of the one-profile sibling conditions. It may be a useful encoding, but those conditions alone cannot add a physical-source obstruction: they already realize all ambient antiperiodic drivers. G199 supplies nonphysical integrations and GC915 a physical sharp integration inside that domain. No claim that encoding is useless for future coupled constraints, no new entropy estimate, and no stage-length inference. Next require an explicit ancestry or within-history condition before treating this compression as a prize route. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks, with G201 reread for GC914. Scratch deferred, room closed.
 
 **Control correction before publication.** The draft swapped e and Te in the cap4 example. Literal substitution rejects e=1100 (its right side is0011, not Sf=1000); e=0011 gives the stated equation. This was a hand transcription failure, corrected before filing; no computational experiment was run.
+
+
+#### GC917 — Sharp entry sparsity is followed by exact next-profile density (2026-10-10 01:40 BST; W281 continuation)
+
+**Hand actual-recurrence lemma; second reading pending.** Bears on Q7: two adjacent profiles, not a stage budget. Record searched: G201/sharp/q/4/one-parity + next-profile/next-child/3q/4/compensation ->12 hits in8 files. GC909's reviewed equality identity and G201's next-child equation read. No run or census. Independent physical q 4 literal control; countercontrol later siblings staying disjoint; unexpected exact intersection of those next siblings. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks.
+
+At a genuine sharp doubling entry of dyadic q>=4, let f be the child of (1,e), with wt(f)=q/4. Put T=S^(q/2) and D=f+Tf. GC909 gives alternating D, f supported on D, and e=1+f+Sf. The next actual profile g is the unique child of (e,f). Then
+
+    g = f + SD.
+
+Indeed f and SD have disjoint support, so f is contained in g and f OR g=g. Hence
+
+    e+(f OR g) = 1+f+Sf+f+SD = Sf+D = Sg,
+
+using 1+SD=D and S^2D=D. The driver f is nonzero, so reset uniqueness identifies this compatible candidate as the actual child. Consequently
+
+    wt(g)=3q/4,    wt(f)+wt(g)=q,    f*g=f.
+
+Also g has no00: it is black on every tick of the parity opposite f. Its least period is q. Otherwise f=g+SD would have a proper period dividing q (or period2 if g were constant), contradicting GC904's primitive entry f. This is a within-history consequence and therefore applies to GC915's physical sharp period 32 entry as well as ambient sharp entries; no new physical trajectory was run.
+
+**Unexpected sibling overlap.** Since q/2 is even, T fixes SD. The complementary branch's next profile is Tg=Tf+SD. Thus
+
+    g*Tg=SD,    g OR Tg=1.
+
+Their intersection has weight q/2, exactly the parity that was empty in both entry siblings. This refines G201's failure of persistent disjointness in the sharp class, rather than trying to reinstate that false property.
+
+**Independent physical q 4 control.** In increasing time order take the known prefix driver e=1100 and f=0001. Then D=0101, SD=1010 and g=1011. Direct substitution gives Sg=0111=e+(f OR g). The other branch has Te=0011, Tf=0100 and Tg=1110; its equation gives S(Tg)=1101=Te+(Tf OR Tg). Intersection 1010 and union 1111 refute the disjointness countercontrol exactly. The weights are 1 and 3 on each selected branch, summing to 4.
+
+**Scope.** Low entry weight does not persist even one additional profile in this equality class. However f is contained in g, so the two-profile mass includes repeated black ticks; it is not a cancellation-resistant charge or a conservation law over a stage. No bound on later profiles, return lengths, exception frequency or normalized growth follows. Keep the universal source exclusion REFUTED. Next seek a condition that survives along a selected history or review a concrete incoming proof; scratch deferred, room closed.
