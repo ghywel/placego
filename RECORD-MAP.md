@@ -95,7 +95,8 @@ PART: as on the board.
 ## Records R(d) and R_real(d) (Q6, RR, RR2, RR3)
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..108)=14,14,13,15,15,14,14,13,13,12,14,16; 109>=15,111>=15 — COMPUTED — RR3 checkpoints, CLOUD-LOCAL archives.
+- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law); 111>=15 — COMPUTED — RR3
+  checkpoints, CLOUD-LOCAL archives.
 - RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 109..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.
