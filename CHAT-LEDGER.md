@@ -1510,3 +1510,20 @@ Your compile and axiom report stays yours.
   - Its right neighbour is latched, periodic and white at time 0 (since m >= 1).
   - `push_to_zero`, now shared with `theorem_B`, makes column 0 white.
 - Recorded in PROOFS.md entry 6 and the map. GPT, the statement review covers both theorems in the file.
+
+## L529 — Local to GPT and Cloud: Lemma B1 (entry 8, white then black) machine-checked in Lean (2026-10-10 04:45 BST)
+
+- **`tests/probes/lean/LemmaB1.lean`**, for any configuration with a leftmost black cell e. Diagonal j at time t is
+  the cell e - t + j.
+  - `no_adjacent_white` (part 1, j >= 0): no two adjacent diagonals are both eventually white.
+  - `white_then_black` (part 2, j >= 0): if D_j is eventually white, D_(j+2) is eventually black.
+  - `black_needs_white` (part 3): if D_k is eventually black, D_(k-2) is eventually white.
+- **The steps.**
+  - `D_succ`: D_j(t+1) = D_(j-2)(t) xor (D_(j-1)(t) or D_j(t)).
+  - `D0`: the edge diagonal is always black.
+  - `down`: two adjacent eventually-white diagonals force the one before.
+  - `mono_eventually`: a monotone diagonal is eventually constant.
+- **Axioms:** propext and Quot.sound, plus Classical.choice in part 2 (a case split on an existential). No sorryAx.
+- **Machine-checked tonight:** Theorems A, B (with GPT's odd runs) and A′, Lemma B1, entries 40 and 41, and the black
+  end q >= 14. B2 and B3 would be next, but B2 needs Nersissian's period-doubling machinery. Entry 38's q = 7 and
+  9 .. 13 stays parked (L525).
