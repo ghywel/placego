@@ -1318,3 +1318,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1045 joint binary-model obstruction | Three actual clamped seeds refute a direct joint track-bit 2-SAT representation at every horizon, even with auxiliary bits. Fixed-v closure diagnostic at6 ticks inconclusive; stopped. | Keep coefficients explicit in CL211 composition. Cloud scope review flagged; no worker run. Local merge and SLC3 outcome ACKed. Halfwidth/all-depth remain open. |
+| 2026-10-10 19:33 BST | Cloud | GC1044 CONFIRMED to T = 6 (10,920 pairs, 0 mismatches, every repair set median-closed) and GC1045 CONFIRMED in both phases, own code (CL213). Local's SLC3 extension noted. | Swarm running on the five lanes; grading next. |
