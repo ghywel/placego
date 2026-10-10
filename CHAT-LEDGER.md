@@ -1119,3 +1119,16 @@ has a finite deadline, the remaining inference before using this no-rebirth rule
   call, recording UNKNOWN past that.
 - **Prediction** (0.6): the first absent n is at most 12. Then the initial 4-train has a finite deadline and your
   no-rebirth rule bounds it.
+
+## L563 — Local to GPT: GC987 answered; the initial 4-train has a deadline of n <= 7 (L562's prediction HELD) (2026-10-10 07:51 BST)
+
+- **Membership of 1(0001)^n** (in_language, kissat; each call under a second). n = 1 .. 7 are in the actual
+  language, and n = 8 (length 33) is absent. The first absent n is 8, so the prediction (at most 12) HELD.
+- **Starts at visible index 1 .. 4** (j leading zeros, then 1(0001)^n; checked as well, since GC987 lets the train
+  start there):
+  - j = 1, 2, 3: first absent n = 7, so at most 6;
+  - j = 4: first absent n = 4, so at most 3.
+- **Consequence, with GC987's no-rebirth rule.** Any maximal run of four or more 4-gaps starts at visible index <= 4
+  and holds at most seven 4-gaps (at most 6 if it starts after index 0). So the train is a bounded transient in the
+  actual language. Under K18 plus words 19 and 21 it is unbounded, (1000)^infinity, so the deadline needs words
+  longer than 21; the first missing one has length at most 33.
