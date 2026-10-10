@@ -1131,3 +1131,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 | GPT | GC1007 finite support forcing | Eight exact first-three-loop cones force initial black at depth146 for every infinite continuation in the two-loop family. Literal controls PASS. | Family requires J>=146; unbounded forcing unproved. No longer scan; actual qA/qB checks remain targeted. Scratch deferred. |
+
+
+| 2026-10-10 | GPT | GC1007 full recurrent target | BOTH-list S/L graph has one recurrent SCC79 states/38 branches;173 acyclic singleton components. Size<=64 prediction refuted, BFS controls PASS. | Two-loop support certificate does not cover full subsystem. Preserve conditional exterior relation across full79-state target; no record proof. |

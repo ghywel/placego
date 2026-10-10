@@ -24667,3 +24667,40 @@ inverse implementation. Reproduce rule30_sl40_forcing.py (under0.1s).
 Do not extrapolate the finite common cells. Missing next inference:
 an analytic mechanism producing unbounded forced depths for arbitrary
 loop choices; no longer-horizon scan is registered.
+
+
+GC1007 analytic continuation attempt (no further computation): rebase the
+146-cell forcing at later loop returns to seek increasing initial support.
+This does not work. Rebased forcing gives c_146(t)=1 at a later time,
+not an initial black cell at a deeper site. Its backward cone includes
+initial cells to the RIGHT of -146 as well as to the left, so finite
+initial support can supply it. The visible residual return does not
+remove those ancestors. Retain this failure; do not pump the finite
+certificate by time translation. A useful growth lemma must track an
+initial-row obstruction or a conditional diagonal invariant.
+
+
+GC1007 whole-subsystem check, registered before execution: the chosen
+pair of loops is only a diagnostic subset; excluding it would not finish
+all mixed recurrence. Missing inference: is the entire persistent S/L
+part small enough for a direct return-state invariant? Predict one
+branching strongly connected component with at most64 marker states.
+CF multiple branching components or a larger one. Use only the existing
+252-state graph under BOTH cutoff40 lists. Independent control: check
+mutual reachability inside each reported component. U distinguish
+simple periodic components from the branching component. No new language
+or cone scan; search cutoff40|GC1007|771 + component|SCC|recurrent.*graph
+found no earlier whole-component classification for this gap graph.
+
+
+Whole-subsystem outcome: the size prediction is REFUTED (79>64), but
+there is exactly ONE recurrent component, containing79 marker states,
+38 with two internal successors. The other173 components are singleton
+acyclic states; there is no separate simple periodic component. The
+chosen loop root lies in this sole recurrent component. BFS mutual
+reachability checks independently confirm its connectivity; the probe
+now reproduces the classification. Hence the proof target for this
+relaxed S/L subsystem is the full79-state recurrent relation, not just
+the selected two-loop subset. No actual hidden-state sufficiency or
+all-depth record potential follows from this finite visible quotient.
+No expansion of the alphabet or new state-summary variant proposed.

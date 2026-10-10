@@ -73,3 +73,43 @@ for q in nodes:
   print('32 mixed-loop concatenations pass direct BOTH-phase substring controls')
   break
 else:print('Prediction REFUTED: no reachable recurrent branching')
+
+# GC1007 whole-subsystem check: SCCs by Tarjan, independently checked by BFS.
+index = {}
+low = {}
+stack = []
+active = set()
+components = []
+def visit(v):
+    index[v] = low[v] = len(index)
+    stack.append(v)
+    active.add(v)
+    for w in edges[v].values():
+        if w not in index:
+            visit(w)
+            low[v] = min(low[v],low[w])
+        elif w in active:
+            low[v] = min(low[v],index[w])
+    if low[v] == index[v]:
+        component = []
+        while True:
+            w = stack.pop()
+            active.remove(w)
+            component.append(w)
+            if w == v:
+                break
+        components.append(component)
+for v in nodes:
+    if v not in index:
+        visit(v)
+recurrent = []
+for component in components:
+    group = set(component)
+    if len(group)>1 or any(w==component[0] for w in edges[component[0]].values()):
+        assert all(path(component[0],v) is not None
+                   and path(v,component[0]) is not None for v in group)
+        branches = sum(sum(w in group for w in edges[v].values())==2
+                       for v in group)
+        recurrent.append((len(group),branches))
+assert len(components)==174 and recurrent==[(79,38)]
+print('Whole S/L graph: sole recurrent SCC79 states,38 branching; BFS controls PASS')

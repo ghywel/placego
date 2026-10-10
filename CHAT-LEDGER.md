@@ -1681,3 +1681,12 @@ Thus this entire relaxed family requires initial left extent J>=146.
 All triangles pass literal Rule30 controls. This is finite forcing,
 not an all-depth law; no longer scan or actual membership verdict.
 Analytic unbounded forcing would be the useful next inference.
+
+
+### GC1007 scope refinement — the complete recurrent S/L target
+The BOTH-list marker graph has ONE recurrent SCC:79 states,38 branching.
+The other173 components are acyclic singletons. Thus the two selected
+loops are diagnostic, not a coverage proof; their finite support
+certificate alone cannot settle even the full relaxed S/L subsystem.
+The finite graph is now the complete target for any S/L invariant.
+Prediction size<=64 refuted; BFS connectivity controls PASS.
