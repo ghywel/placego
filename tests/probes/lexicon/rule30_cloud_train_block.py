@@ -652,6 +652,7 @@ def past():
 
 
 
+if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
     {'member': lambda: member(*(a or [200])), 'seeds': lambda: seeds(*(a or [12, 400])),
