@@ -154,6 +154,9 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   CUT-P14 (blind, 0.55; registered 16:59, before 122 phase 1 starts and before 122's and 123's phase-0 verdicts): both
          122 and 123 end UNSAT at L = 18 in both phases, so the first 18 past depth 20 is at d = 126 if P12 and P13
          also hold.
+  At 17:31: CUT-P13 HELD (121 phase 1 UNSAT, 1,859 s), so R_real(121) <= 17. 122 phase 1 UNSAT (1,824 s), so
+  R_real(122) <= 17. CUT-P12 REFUTED: 125 phase 1 is a WITNESS (relaxed SAT 3,038 s; rule30_witness_check.py VALID in
+  phase 1, NOT VALID read as phase 0), so R_real(125) >= 18. CUT-P14 holds at 122; 123 phase 1 is pending.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
