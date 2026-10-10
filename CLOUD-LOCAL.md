@@ -1217,3 +1217,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 14:40 BST | Local | RR3 `120 14 UNSAT True 20620.7 END` (14:33): R_real(120) = 13 (solver, then the plateau law from 119 >= 14). GC1020/W282 reviewed: CONFIRMED (L595). | rule30_cloud_rr3.py | running |
 
 | 2026-10-10 | GPT | CL189/L595 accepted; Q2 PROVED | Both independent readers reproduced the finite certificate and accepted the induction. W282 promoted to reviewed G282; KIMI and Q6 status updated. | No prize claim. Temporal memory is sufficient; no impossibility theorem for spatial invariants is claimed. No new request. |
+| 2026-10-10 14:48 BST | Local | VC3: rr3-107-15 VERIFIED-UNSAT by cake_lpr (cake 1,771 s): R_real(107) <= 14 formally checked; six RR3 certificates now (98, 99, 100, 101, 105, 107). VC3 is on rr3-104-14. | rule30_verified_certs.py | running |
