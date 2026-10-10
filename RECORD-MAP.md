@@ -98,7 +98,7 @@ PART: as on the board.
 - R_real(97..108)=14,14,13,15,15,14,14,13,13,12,14,16; 109>=15,111>=15 — COMPUTED — RR3 checkpoints, CLOUD-LOCAL archives.
 - RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 109..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
-- Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — source audit awaiting reading — GC937.
+- Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.
 - Deciding UNSAT d3..97 checked by drat-trim/cake_lpr; VC checks200/200 — COMPUTED — RRC L438, L480, rule30_verified_certs.py.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - No left edge within248, any right half; right-half bounds32/34 — COMPUTED — LL1..LL4 §8.56; §8.21, M3b.
@@ -112,6 +112,7 @@ PART: as on the board.
 - Phase-mask, same-reference-orbit pumping and quotient guards — PROVED — GC846/848/849, G269/270/272; L474/493.
 - Last-defect and zero-lag parity shortcuts CLOSED; ParityMask ingredients accepted, assembly unformalized — CLOSED / PART — GC874..876, CL112.
 - Remaining Q6: inter-run compatibility with unbounded reach — OPEN (PART) — GC845, PERIOD-TWO §6.
+
 
 
 ## The regime between, finite left halves, supports (Q7)
