@@ -23741,3 +23741,18 @@ zero-prefix cycle REFUTED. No cap, invariant or physical witness. Thus this
 profile removes the diagnosed trap but still loses needed continuation
 information. Stop scalar prefix patches; recover the full false history and
 locate its first unsupported continuation before another refinement run.
+
+
+#### GC978 — Counter13 overflow ancestry loses post-exit continuation (2026-10-10)
+
+Preregistered backward diagnostic of GC977's same capped search. Starting
+from its shortest overflow word, twenty recovered inverse edges pass independent
+truth-table checks. The backward trace first encounters widening loss at
+round15/counter13: 0^13 13203220 is accepted by refinement but rejected
+by that update's exact union source (P1/P2 HELD). Its first nonextendible
+prefix is 0^13 1320322, length20; the length19 prefix is still coaccessible.
+Thus leading-zero length and exit letter agree with the source while a later
+continuation is unsupported. This is one ancestry's first encountered loss,
+not the earliest loss globally; the source itself may contain older abstract
+losses. No physical witness or new record bound. Next retain the residual
+continuation state after this exit instead of another scalar prefix summary.

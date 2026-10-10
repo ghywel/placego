@@ -603,3 +603,5 @@ app is unpublished by design.
 - `lexicon/rule30_rrl_factors.py`: GC975 sound length-3 internal-factor widening; controls PASS, abstract C32 overflow at round34. No physical witness or certificate. GC976 recovers depth5 zero trap: exact maximum3, widening pumps all lengths; independent source replay PASS.
 
 - `lexicon/rule30_rrl_prefix_refine.py`: GC977 exact leading-zero-profile refinement repairs GC976 trap; controls PASS, abstract C32 overflow round35. No certificate or physical witness.
+
+- `lexicon/rule30_rrl_history.py`: GC978 backward overflow ancestry recovers counter13 unsupported post-exit prefix; twenty inverse truth-table controls PASS. No physical witness.

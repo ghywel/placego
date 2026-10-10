@@ -68,11 +68,12 @@ def controls():
     print('factor controls C/CF/U PASS',flush=True)
 
 
-def run(transform=widen):
+def run(transform=widen,diagnostic=None):
     controls()
     signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(RuntimeError('time cap')))
     signal.alarm(20)
     inv=[c.EMPTY for _ in range(33)]; inv[0]=transform(t.initial(0))
+    history=[list(inv)] if diagnostic else None
     try:
         for n in range(1,41):
             nxt=list(inv)
@@ -83,9 +84,12 @@ def run(transform=widen):
                 white=c.first(o,0)
                 if r==32:
                     if not c.subset(white,c.EMPTY):
-                        print('ABSTRACT OVERFLOW round',n,'C32 k3',transform.__name__,'; no physical witness',flush=True); return
+                        print('ABSTRACT OVERFLOW round',n,'C32 k3',transform.__name__,'; no physical witness',flush=True)
+                        if diagnostic: diagnostic(history,white)
+                        return
                 else: nxt[r+1]=transform(c.union(nxt[r+1],white))
             stable=all(c.subset(x,y) for x,y in zip(nxt,inv)); inv=nxt
+            if diagnostic: history.append(list(inv))
             if stable:
                 assert c.subset(t.initial(0),inv[0])
                 for r,a in enumerate(inv):
