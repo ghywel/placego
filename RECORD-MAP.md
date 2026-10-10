@@ -226,6 +226,7 @@ PART: as on the board.
 - TheoremA.lean matches entry 5 (GC882, PROVED, source scope); its hand time re-basing is formal in WhiteEnd.lean
 
 ## Other walls, other periods and sibling rules
+- Finite-seed and bounded-search qualifiers restored after compression — source audit — CL155/GC941.
 - Strip ranks bound phase-forcing onset/bad visits; kernel untested — PROVED — GC919/920, CL139/140, L515.
 - Past peeling charges graph-edge ticks; macro forcing needs intermediate phases — PROOF-SKETCH / source PROVED CL152 — GC930/934, L522.
 - Black-end q7 and q>=9 excluded for finite seeds; q1..6,8 OPEN — PROVED — entry38, SG/L429, GC805/806/L430, WT/L431.
