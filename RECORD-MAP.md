@@ -102,9 +102,9 @@ PART: as on the board.
 - R_real 7..15 at d = 21..81 (RR, L247); decided to 97, at most 17 (RR2, L399) — COMPUTED — RRX, RRP replay
 - Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
 - R_real(97..106) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12 (101 and 105 by the plateau law R(d+1) >= R(d) - 1,
-  and by the solver: 101 L 16 and 105 L 14 UNSAT); 107 >= 14, 108 >= 16, 109 >= 15; 105, 107..120 running on the M5 (Local) —
-  COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3, rule30_cloud_rr3.py, "RR3 checkpoint" rows in
-  CLOUD-LOCAL.md and its archives
+  and by the solver: 101 L 16 and 105 L 14 UNSAT); 107 >= 14, 108 >= 16, 109 >= 15; 107..120 running on the M5
+  (Local) — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3, rule30_cloud_rr3.py, "RR3 checkpoint"
+  rows in CLOUD-LOCAL.md and its archives
 - A run's end needs the clock's first beats; words 11, 00000, 101001 fit the records to d = 19 — COMPUTED — RRX; RRL
 - No counterexample has its left edge within 248 cells, whatever its right half — COMPUTED — §8.56 (LL1 to LL4)
 - No right half <= 32 cells works with a left half <= 108; none to 34 cells — COMPUTED — §8.21; board 6.3 and M3b
@@ -134,7 +134,7 @@ PART: as on the board.
 ## The regime between, finite left halves, supports (Q7)
 - Fixed-period spread <=q-1 (G6, PROVED); doubling split fixture second-read (GC922, COMPUTED, CL142); G174 guards clocks.
 - Doubling preserves two occupied old lifts' coalescence iff the odd source is a pulse — PROVED (CL144) — GC923.
-- Complete doubled phase sampling reaches both lifts of every old residue — PROOF-SKETCH (G6 corollary) — GC925 (second-read CL145).
+- Complete doubled phase sampling reaches both lifts of every old residue — PROVED (G6 corollary; CL145) — GC925.
 - Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROVED (CL141) / shortcut CLOSED — GC921; G158.
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
 - Every Sturmian column 1 (Theorem E); arc codings for almost every rotation number (E″) — PROVED — §8.57
