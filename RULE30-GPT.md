@@ -23263,3 +23263,78 @@ refuted is retained by Local. No JP source acceptance yet. Next read
 JenPow2.lean in full, prioritizing forced_periodic/jen_pow2 and then
 per_gcd/run_bound_gcd. VC3 still running, no final certificate verdict
 inferred. Scratch deferred; room closed.
+
+
+## GC962 — JP/RV complete source audit: periodic forcing, induction and settled gcd bound (2026-10-10 05:30 BST)
+
+**Scope and informed controls, serves Q7.** Read JenPow2.lean in full at
+06c976c0, including all five printed-axiom declarations; source review only,
+no Lean execution or scan replay. Record searched:
+forced_periodic/jen_pow2/per_gcd/run_bound_gcd + proof/source/period
+->3 hits in2 files. Existing GC958/960 B3 and CL171 JP hand reading reused.
+Expected the three pigeonhole cases and Euclidean period reduction to
+preserve the stated transient. Countercontrol: replace forced onset T+p
+by T; constant a=b=true with x(T)=true resets to false and violates
+periodicity at T (p=1). Independent toggle control a=true,b=false requires
+period2; reset control a=b=true becomes constant. Identified unexpected
+check: neither forced_periodic nor run_bound_gcd requires positive input
+period; inspect p=0/P=0 rather than silently adding that hypothesis. These
+are hand controls, not blind predictions or executed experiments.
+
+**Forced recurrence PASS.** det propagates equal states separated by m*p
+using both inputs' iterated periodicity at s+k>=T. Pigeonhole at T,T+p,T+2p
+has three cases: first equality propagates across the next two p-blocks;
+second equality propagates by p; third equality at T+p propagates by p
+and composes. All give x(T+p)=x(T+3p). det at s=T+p,m=2 then extends this
+to each t>=T+p; the natural subtraction t-(T+p) is exact there. At p=0
+the conclusion is merely x(t)=x(t); this is valid but does not assert a
+positive eventual period. The diagonal induction always supplies p=2^j>=1.
+
+**Diagonal induction and run assembly PASS.** D_succ uses parents k-2,k-1,k
+in the moving frame. Edge black and negative whites force D1 black from1,
+D2 white from2; the base T=2 covers every integer k<=2, including all
+negative k. The successor retains existing diagonals by doubling their
+period and adds k=j+3, whose two drivers already lie in the preceding
+band. One common T+2^j works. This proves a period, not the least period
+or seed independence. No finite right-support premise is used.
+
+After removing comments and whitespace, constraint/back/fwd/lemma_B3_sharp
+are identical to LemmaB3.lean. run_bound chooses T+2^j, so t-2^j>=T;
+periodicity reverses to the snapshot equality B3 needs on all k<=j+2.
+The natural time subtraction and integer width bound are distinct and
+correctly converted; the bound is 2^(j+1)-1. Black left endpoint and
+nonempty run remain explicit, so no bound on the infinite white region
+left of the edge is asserted.
+
+**Euclidean reduction and settled gcd assembly PASS.** per_sub uses the
+q-period identity at t+(p-q)>=T, not an unavailable backwards-time
+identity. Multiples supply m*(n/m), and n mod m=n-m*(n/m) gives the next
+Euclidean pair (n mod m,m); zero base retains the other period. Both
+periods hold from the same threshold throughout. In run_bound_gcd,
+c=gcd(P,2^j)>=1 even when P=0. Choosing T0+T1+c makes t-c>=T0+T1, so the
+gcd-period equality supplies B3's whole half-line snapshot. At P=0 the
+conclusion reduces to the JP run bound (gcd(0,2^j)=2^j); v2(0) is not
+asserted. At odd positive P, gcd(P,2^j)=1, giving eventual width<=1.
+The gcd theorem itself does not need Bool specifically, although this
+source states it for Bool; no generalization is filed.
+
+**Scope countercontrol and disposition.** Single snapshot equalities at
+t=10 with lags6 and10 do not imply equality at lag2: a scalar sequence
+with x(0)=x(4)=x(10)=false and x(8)=true disproves that inference. This
+is an abstract scope control, not a Rule30 configuration counterexample.
+The source correctly uses settled periodicity, not those two equalities.
+JP/RV source PASS, Local compilation/axioms and both parties' measurements
+remain separately attributed. Original Jen1986 still unread. No prize
+claim, new proof unit or re-run. Next B2 source review when published;
+otherwise return to the actual open Q7 joint-budget lead.
+
+**Fetched priority receipts.** Verified4aa2eca9,65dce56b,35c38c36 and read
+L545/L546/CL172. B2 source now queued; no independent acceptance yet.
+CL172 JP/RV statement reading agrees, including P0; its finite maximum4
+against bound7 is Cloud's measurement, not GPT replay. VC3 repair delta
+by inspection fixes failed-control, empty-tier and False-line controls;
+full re-audit pending. Remaining qualification: current-builder DIFF
+only changes printed C1 to FAIL; all names VERIFIED still print P1 HELD
+and COMPLETE. Requested completion also require no diff, without
+inventing an actual mismatch. Map merge preserves Local's B2 note and
+GC962's exact band-period formulation.

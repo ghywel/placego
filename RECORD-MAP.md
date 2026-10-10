@@ -176,7 +176,7 @@ PART: as on the board.
   CL118, L507); weighted witnesses (GC891, PART); positivity guard (GC942/944, CL158; synthetic and hand scope)
 
 ## The left front, triangles and the right edge
-- Left diagonals eventually periodic, power-of-2 periods (known: Jen 1986, Rowland §5) — PROVED (Lean JenPow2.lean: D_k period | 2^(k-2), L541; settled runs <= 2gcd(P,2^j)-1, L543) — §8.27, §8.30
+- Left diagonals eventually periodic, power-of-2 periods (Jen 1986, Rowland §5) — PROVED — JenPow2.lean L541: band k<=j+2 period2^j; settled gcd run bound L543; source GC962; §8.27/30.
 - Lemma B1 (white, then black; Lean LemmaB1.lean, L529; source GC955), B2 (periods unbounded; Lean LemmaB2.lean, L545; infinitely many white and black, JenPow2.lean L548), B3 (no white run over twice the
   band's period; Lean LemmaB3.lean, L534; source GC958; sharp 2P-1, tight at P=1,2, L539; GC960) — PROVED —
   §8.59; B2 for the single seed is in print (Nersissian Theorem 13)
