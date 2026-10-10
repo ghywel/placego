@@ -25659,3 +25659,67 @@ time 16, within GC1017's implied deadline 20. This confirms the
 interface's orientation and phase; it is not an absent-word claim.
 Next substantive input is a constraint inherited from an actual mixed
 entry that rules out, or accounts for, these return failures.
+
+
+Train-interface timing block, preregistered. Missing inference: whether
+a failed reduced gate has a fixed visible consequence, rather than only
+a finite deadline. GC1018's two examples suggest an eight-tick delay.
+Prediction (informed): from prepared slab 100110, the white-time trace
+through time 8 is 1010 followed by NOT(x_7(0)), for every actual exterior.
+Test the eight possible source bits at sites 7..9, the complete eight-tick
+cone. Independent control: packed updates under two farther paddings.
+Countercontrol: a six-tick delay must fail. Unexpected, stronger check:
+replace the actual exterior by all 256 independently prescribed eight-tick
+column-7 streams; if this fails, retain the extra exterior correlation
+instead of silently using the stronger statement.
+Record searched: `train|two.gap|2.gap` + `exit|delay|latency`;
+GC1018 has two time-16 examples, no uniform transfer statement.
+
+### GC1019 — Exact train-exit delay and the finite seed in Question 2
+
+Hand finite-case proof, controls passed; independent reading pending.
+From prepared sites 1..6 = 100110 at a white wall phase, let g be
+column 7 at that time. Allow every later column-7 input independently.
+Column 1 through time 7 is always 11001100, and at time 8 it is NOT g.
+The following sound domain table proves this: each ? is an independent
+unknown, and each row follows from the previous by the local rule.
+The wall starts white; after time 0 the exterior input is arbitrary.
+
+    time       g=0       g=1
+      1      111101    111100
+      2      000001    00001?
+      3      000011    00011?
+      4      100110    10110?
+      5      11110?    1010??
+      6      0000??    001???
+      7      000???    011???
+      8      10????    010???
+
+Consequently, if the first failed phase-0 interface sample occurs at
+time 4m, the first departure of column 1 from 1100 occurs exactly at
+time 4m+8. Prior successful gates return the slab every four ticks
+(GC1017); the table applies at the first failed gate. This is a
+universal propagation statement, not an empirical delay estimate.
+
+**Question 2 application (owner explicitly assigned this question).**
+The finite right seed 1001 reaches the exact finite row 10011001 at
+time 4. Remove its first six cells. The remaining initial right half
+is 01000..., a single black cell at its site 2. Drive it by 0111
+repeating and call its orbit y. Then Question 2 is equivalent to
+
+    y_(4n)(1) = 0 for every n >= 0.
+
+Proof: while these gates hold, GC1017 maintains the six-cell slab,
+so its column-6 boundary is precisely 0111 and the two right halves
+agree. If the first reduced failure is at time 4m, agreement holds
+through that sample and the original column first fails at absolute
+time 4m+12 by the table. If no failure occurs, induction maintains
+the original train forever. The original first four ticks are
+checked directly from the seed. This is an exact fixed-seed reduction,
+not a proof of eternal survival or a replacement by the periodic ring.
+
+`rule30_train_exit_delay.py` verifies the domain table, all 256 freely
+controlled exterior streams, all eight actual nine-cell cones, two
+farther paddings, and the time-4 seed. The stronger free-input check
+passes; a six-tick delay is rejected. Next work on the reduced seed's
+correlated return failures from GC1018, not another long simulation.

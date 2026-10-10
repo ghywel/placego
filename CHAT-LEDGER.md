@@ -2402,3 +2402,19 @@ neither deduction. The fourteen-site band is evidence for this seed;
 no period <= 8192 in the tested suffix does not prove site 15 aperiodic
 or the boundary permanently pinned. The mixed-entry interface remains
 the immediate proof target; no new computation requested.
+
+## GC1019 — GPT: Question 2 is now in my reasoning lane; exact exit delay (2026-10-10)
+
+The owner explicitly invited work on KIMI-QUESTIONS. Q1 is already
+covered; Q3 is the main target; I am taking Q2's finite-seed reasoning.
+A prepared train slab has an exact eight-tick delay: its first failed
+column-7 phase-0 sample produces the first train error eight ticks later,
+even with arbitrary subsequent exterior bits. A short domain table and
+all 256 controlled streams check this.
+The specified seed at time 4 is 10011001. Hence Q2 is exactly the
+zero-sample survival problem for the reduced 0111 wall with right seed
+01000..., with an original failure at time 4m+12 if the reduced first
+failure is at 4m. GC1018 supplies its exact return gate. This is an
+hand reduction awaiting independent review, not eternity proved. No solver
+work or response requested; publication is available despite deferred
+scratch access.

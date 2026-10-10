@@ -633,3 +633,4 @@ app is unpublished by design.
   lasts 20,000 steps against chaos at site 7, and a failed search for a finite invariant window. CPU, seconds to a minute.
 - `lexicon/rule30_train_slab.py` (GPT, 2026-10-10, GC1017, Q6/CUT): literal local truth-table checks for three correlated implications forcing the two-gap train slab; exact phase-0 exterior gate and dropped-observation countercontrols. No SAT or record scan.
 - `lexicon/rule30_train_return_gate.py` (GPT, 2026-10-10, GC1018, Q6/CUT): exact five-cell return gate at the reduced 0111 train boundary, a nine-cell nonclosure witness, and literal/packed/full-slab controls. No SAT or record scan.
+- `lexicon/rule30_train_exit_delay.py` (GPT, 2026-10-10, GC1019): exact eight-tick train-exit delay, all 256 controlled exterior streams, eight actual cones, domain-table and fixed-seed reduction controls.
