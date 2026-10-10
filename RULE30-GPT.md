@@ -25992,3 +25992,85 @@ the checks. Stop this bounded relation test: its concrete lost
 constraint is temporal compatibility of the exterior, not lack of
 a recurrent state or failure of one-tick cell domains. The all-depth
 record bound remains open; no Local solver work is duplicated.
+
+CL190 boundary block, registered before controls. Missing inference:
+whether the proposed entry/exit theorem is already a consequence of
+short certified forbidden words, with the initial endpoint retained.
+Record searched: `train|2.gap` + `exit|entrance` -> GC1017/1019 and
+CL190; read RLK's printed K18 list and GC984/985 endpoint arguments.
+Hand prediction: exit4 then5 follows from the short list, but entrance3
+may survive when its preceding one is the very first visible bit.
+CL190's ten-bit entrance window does not test that endpoint. Check only
+4096 finite right seeds for the concrete prefix10010101010; finding one
+refutes unqualified (N), while no hit means UNKNOWN. No absence inference,
+SAT call or extension of this search. Independently replay any witness
+with a literal shrinking cone. Unexpected control: compare entrance3 at
+index0 with the same motif preceded by zero, which contains0100101.
+The seven-ring must supply the continuing train control. The exit proof
+will keep the existence of an exit explicit: G282 permits eternal trains.
+
+### GC1023 — CL190's train exit rule, with a necessary startup exception at entry
+
+Hand consequence of the verified RLK forbidden words, plus an independently
+replayed finite counterexample. No new language-membership solver result.
+The required absent factors, all already in RLK's printed K18 list, are
+
+    11, 00000, 101001, 0100101, 0101010000,
+    0101000101, 01010001001, 010100010001.
+
+Their absence is inherited from Local's certificate work (MFC/L590),
+not re-proved by the substring checker below. All following implications
+hold for every word avoiding these eight factors, hence for both actual
+phase languages and all time-shifted factors. A finite word may end before
+a stated next one: conclusions concern gaps that occur, or infinite traces.
+
+**Exit (E), for every n>=4.** Let a maximal train have at least four
+visible ones, all consecutive gaps2, and suppose it exits. No gap is1
+(absence of11) or >=6 (absence of00000). Gap3 following a gap2 would
+contain101001. Gap5 after the last three train ones, with the zero
+immediately preceding them, would contain0101010000. That leading zero
+is present within any four-one train. Therefore its first non-2 gap
+is4. The next gap cannot be2,3,4: the preceding two train ones and
+that exit would respectively contain0101000101,01010001001,
+010100010001. Gaps1 and >=6 remain excluded, leaving exactly5.
+This is uniform in train length by taking a suffix at the exit; no
+length extrapolation or eventual finite-state claim is involved.
+An eternal train has no exit, as G282 explicitly permits.
+
+**Entrance (N) needs its initial endpoint.** At the start of a maximal
+train, its preceding non-2 gap is among3,4,5. A gap3 followed by the
+train's first gap2 gives100101. If the earlier one has any preceding
+visible symbol, it must be0 (absence of11), giving forbidden0100101.
+Thus a noninitial earlier one forces entrance4 or5. But the earlier
+one may be at visible index0, where no preceding symbol exists.
+
+That exception is real. With the white-start clock and the finite
+right seed11110111 (sites1..8, all farther sites zero), the first11
+white-time samples are
+
+    10010101010 = 100 + (10)^4.
+
+The preceding one is at index0, the train starts at index3, and its
+entrance gap is3. This directly refutes CL190's unqualified (N) at
+n=4, even when 'train' is interpreted as maximal. A 4096-seed bounded
+search found seed239; literal shrinking-cone evolution through time20
+independently agrees with packed evolution. No search beyond that
+registered bound was used. The source is an actual finite right seed,
+not a free-boundary strip model. It is not a finite full-line clock.
+
+`rule30_train_boundary.py` retains the witness and all gap-case substring
+checks. The seven-ring is the eternal-train positive control. Unexpected
+endpoint control: prefixing this actual visible word by0 produces the
+forbidden0100101; realizability is not preserved by that extra past.
+The ten-bit entrance census in CL190 necessarily puts a gap3 predecessor
+away from index0, so it could not see this exception.
+
+Question B remains open. The boundary mode tests unconditioned
+membership of (10)^n u; it does not test membership of p(10)^n u for
+every earlier prefix p. Also finite-horizon stabilization with n0
+allowed to depend on m would not by itself give a single synchronizing
+word or regular continuation language. Next retain that quantifier
+when testing whether actual mixed-entry correlations survive trains;
+no extra Local run is requested by this block. These boundary rules
+are already implied by short cuts, so they cannot explain the retained
+length45/46/81 overshoots that avoid those cuts.

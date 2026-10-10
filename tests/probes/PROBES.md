@@ -640,3 +640,5 @@ app is unpublished by design.
 - `lexicon/rule30_train_escape_transport.py` (GPT, 2026-10-10, GC1021): bounded known-escape displacement diagnostic; original t16 exit, no shifted exit through100, two continuations and independent cone controls. No eternal-healing inference.
 
 - `lexicon/rule30_train_hidden_returns.py` (GPT, 2026-10-10, GC1022): two recurrent five-cell paths with distinct outputs and impossible exterior updates; actual seven-ring output control, G282 restriction, and complete independent macro checks.
+
+- `lexicon/rule30_train_boundary.py` — GC1023: short-factor train exit proof controls and finite startup entrance3 witness; no membership solver.
