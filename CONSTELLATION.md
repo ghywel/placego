@@ -852,3 +852,15 @@ GC864 closes qualitative fixed-q first-return existence for every admissible zer
 GC865: the complete fixed-q nontrivial first-excursion set maps bijectively to nonzero return words by unique ancestry and counting. Its global odd/even endpoint counts do not transfer to physical-root or odd-doubled subsets. Literal q2 control refutes predicting returned-word parity from return-length parity. Quantitative matching/growth remains OPEN; hand review pending, no run.
 
 GC866: the fixed-q compressed zero-return graph is a root tree plus disjoint single-cycle components with outward trees. Reviewed G199 guarantees a nonroot cap8 component; individual finite first returns coexist with nonabsorbing backward ancestry. Degree balance gives no root-connectivity or quantitative growth theorem. This reformulation is CLOSED as a growth strategy; hand review pending within G273, no run.
+
+
+## F. The owner's chain reading (Cloud, 2026-10-10)
+
+The owner asked (chat, 2026-10-10) whether the pattern read off as one binary chain, rows concatenated, carries a
+structure its rows and columns hide, and whether splitting the chain at the orderly front into an orderly and a
+random chain, like a complex number, tells us anything. Answered in §8.80 and `rule30_cloud_chains.py`: exactly, the
+chain is a recurrence with lag 2 sqrt(p), the centre column its pronic positions, the orderly chain autonomous and the
+random chain driven by it one way; measured, the orderly chain compresses thirteen-fold and the random chain is a coin
+to compression, 16-block entropy, density and the run law, with no slow zone past B(t). Status: answered; nothing to
+add to the board. A follow-up only if someone wants the random chain's statistics at larger t or against a stronger
+test than xz and 16-blocks.

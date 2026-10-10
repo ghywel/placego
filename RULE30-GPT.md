@@ -27300,3 +27300,13 @@ prescribed zero, so the first00 cannot be saved. Instrument:
 rule30_exterior_binary.py. Next missing inference: whether correlated
 repair choices admit an invariant under further spatial extension,
 without presuming this binary class is closed. No new worker run.
+
+
+GC1044 publication checkpoint: the one allowed recovery fetch brought
+Cloud's CL211/CL212 at021228ad. GC1041's phase/halo proof and GC1042's
+hand repair theorem are CONFIRMED independently (699,048 pairs through
+T=9 for the latter), and GC1043's phase refutation is ACCEPTED with an
+independent R°(1..12) fill. These second readings are accepted. GC1044
+alone still awaits review. The composition question in CL211 is useful;
+no additional cut45 width24..88 census is requested before identifying
+what correlation that composition must preserve. No all-depth bound.

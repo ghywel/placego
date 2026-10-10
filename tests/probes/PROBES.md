@@ -684,3 +684,8 @@ app is unpublished by design.
 
 
 - lexicon/rule30_exterior_binary.py: GC1044 exact all-choice two-column repair by binary clauses;18,720 literal triples and324 constructions PASS. Actual-train pair01 forced; free-terminal positive retained. Further projection/halfwidth OPEN.
+
+- `lexicon/rule30_cloud_chains.py` (Cloud, 2026-10-10, the owner's lead, side question): CH, the pattern read as one
+  binary chain and split at §8.74's boundary B(t). CH-P0 .. CH-P3 HELD (orderly chain xz 0.077; random chain 1.0001,
+  h_16 0.9975, density 0.5002, runs within 3.8% of 2^-L: a coin to every test); CH-P4 REFUTED (no compressible zone
+  past B(t)). §8.80.
