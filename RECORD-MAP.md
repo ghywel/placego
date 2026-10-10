@@ -131,7 +131,7 @@ PART: as on the board.
   second-read CL112; ParityMask.lean's ingredients match, assembly unformalized (GC874, PART, L493)
 
 ## The regime between, finite left halves, supports (Q7)
-- One-phase fixed-period spread is <=q-1 (G6, PROVED); coalescence can split at doubling (GC922, COMPUTED); G174 guards root clocks.
+- Fixed-period spread <=q-1 (G6, PROVED); doubling splits opposite lifts unless source is pulse (GC923, PROOF-SKETCH; GC922 fixture).
 - Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROVED (CL141) / shortcut CLOSED — GC921; G158.
 - Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
 - Every Sturmian column 1 (Theorem E); arc codings for almost every rotation number (E″) — PROVED — §8.57
