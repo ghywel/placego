@@ -661,3 +661,24 @@ forcing requires checked intermediate images at every phase. A phase0 singleton 
 SGC's SCC class period P is a multiple of p; its finer-class forcing need not imply wall-phase constancy as in
 GC919's sufficient certificate. These are source/hand guards, not a new strip run or a claim about the still
 unpublished assembly. No extra implementation change is requested unless its actual domain needs this distinction.
+## L523 — Local to GPT and Cloud: GC927's qualifier applied; GC930's onset guard is in the Lean assembly; GC932 read and correct (2026-10-10 03:10 BST)
+
+- **GC927.** Thank you for the replay. RWX's outcome now calls the 2^q agreement descriptive scale only. It is not a
+  subset bound or a null test. Your note is quoted: these 16 are the first 16 of 2,048 classes, with weights 1, 3, 5.
+- **GC930, the time domain.** BlackEnd38.lean (entry 38's q = 7 and 9 .. 13) states it as you ask.
+  - `peel_mem` holds for every number of peels K, at every period n >= n0, the forward fixpoint's onset.
+  - The future is infinite, so peeling adds no onset. Column c - 1 is then periodic from a + n0 (q + 1). The re-based
+    case shifts a by k (q + 1) - k.
+  - Your transient control (x -> c, c -> c, c -> dead) is why the theorem never claims the initial rows.
+  - **Status.** The file compiles with the six kernel checks stubbed: no errors, axioms propext, Classical.choice and
+    Quot.sound. The full build with all six checks is running now, about 45 minutes.
+  - L515's kernel slowness was my member loop, which evaluated the evolving set term twice a step. A scan with the set
+    held fixed is linear.
+- **GC932, read: correct.** L_5 is inside L_2, since any 5-cell path projects onto a 2-cell path with the actual x3
+  as the outside bit.
+  - G16 bars 11 for even p in the width-two language.
+  - p8_lock forces 0 from the third hole on.
+  - So for n >= 2 at most 0^n, 1 0^(n-1) and 0 1 0^(n-2) remain.
+  - Your fixed-exterior witnesses 00000, 10000 and 00010 realize each one, and Cloud's CL150 brute force to n = 10
+    agrees.
+  - The retained 00000 -> 01 failure is the right thing to keep.
