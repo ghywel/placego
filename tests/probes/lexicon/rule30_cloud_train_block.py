@@ -122,6 +122,13 @@ the leads' forced cells differ at t = 0 (sites 2 .. 6 = 11111 after the leading 
 states after the leading 0 and 31 after the leading 1, the first within the second (seven two-cell relations hold
 for the leading 0 only). Propagated through the cars and the failed gate with a free exterior beyond site 18, both
 sets reach the same 231 states at t = 75 with x_7 and x_8 free: the near-wall strip does not carry the memory.
+  WITHDRAWN (GC1035, 16:55 BST): that propagation kept the 0111 boundary at site 6 after the failed gate at 62, where
+  the slab changes (x_6(63) = 0, x_7(64) = 1 in truth). Repaired by propagating all 18 cells under the real clock
+  with the sample and gate filters; the repaired outcome is in CL204 and below.
+  REPAIRED OUTCOME (17:05 BST): the same 19 and 31 twelve-cell sets (retained in CL204), each prefixed by the slab and
+  propagated as 18 cells under the real clock with the sample and gate filters, reach the same 190 states at t = 75,
+  sites 1 .. 5 forced 10010, x_7 and x_8 free, for both leads. The strip of sites 1 .. 18 at the first car, with a
+  free exterior beyond it, still carries no trace of the leading symbol; the conclusion stands on the repaired loop.
 
 MODE arming, OUTCOME (2026-10-10 15:45 BST; review of GC1028 and data for CL197). The exit target is exactly GPT's 39
 nine-bit words (01101????, 01110????, 0111100??, 0111111ab with ab != 00), all beginning 011. A' has 34 states and
@@ -516,11 +523,12 @@ def separator():
 
 
 def entrymemory():
-    """GC1033's request (CL203): where the leading symbol's memory sits during the train.
-    Entry + ten cars only (no exit).
-    (1) Cells forced at t = 5, 10, 15, 20, 30 over sites 1 .. 45, both leads. (2) The exact sets of sites 7 .. 18 at
-    t = 30 (SAT, 4096 calls a lead, about 3 min each) and their free-exterior propagation through the cars (gates pass
-    at 30 .. 58, fail at 62) to t = 75. Runtime about ten minutes."""
+    """GC1033's request (CL203) with GC1035's repair (CL204): where the leading symbol's memory sits during the train.
+    Entry + ten cars only (no exit) for the SAT sets. (1) Cells forced at t = 5, 10, 15, 20, 30 over sites 1 .. 45, both
+    leads. (2) The exact sets of sites 7 .. 18 at t = 30 (SAT, 4096 calls a lead; printed and retained), each state
+    prefixed by the known slab 100110, propagated as 18 cells under the real clock with a free site 19, filtered at
+    the white ticks by the word's samples (cars at 30 .. 66, then 0, 0, 1 at 70, 72, 74) and by the gates (site 7 = 0
+    at 30 .. 58, = 1 at 62), to t = 75. Runtime about ten minutes."""
     import itertools
     def step_bits(bits, wall, ext):
         r = [wall] + bits + [ext]
@@ -531,7 +539,7 @@ def entrymemory():
             c0, c1 = _cone_sat(word, [(t, i, 0)], tmax), _cone_sat(word, [(t, i, 1)], tmax)
             out += '0' if c0 and not c1 else '1' if c1 and not c0 else '?'
         return out
-    tail, train = '00010001010000', '10' * 10
+    tail, train, exit9 = '00010001010000', '10' * 10, '001000010'
     for t in (5, 10, 15, 20, 30):
         rows = {lead: forced_row(lead + tail + train, t, range(1, 46), 80) for lead in ('0', '1')}
         diff = [i + 1 for i, (a, b) in enumerate(zip(rows['0'], rows['1'])) if a != b]
@@ -539,18 +547,25 @@ def entrymemory():
     sets = {}
     for lead in ('0', '1'):
         w = lead + tail + train
-        sets[lead] = {x for x in itertools.product((0, 1), repeat=12)
-                      if _cone_sat(w, [(30, 7 + j, b) for j, b in enumerate(x)], 76)}
-        print('lead %s: exact set of sites 7 .. 18 at t = 30: %d states' % (lead, len(sets[lead])), flush=True)
-    print('leading-0 set within the leading-1 set:', sets['0'] <= sets['1'])
+        sets[lead] = sorted(x for x in itertools.product((0, 1), repeat=12)
+                            if _cone_sat(w, [(30, 7 + j, b) for j, b in enumerate(x)], 76))
+        print('lead %s: exact set of sites 7 .. 18 at t = 30: %d states: %s'
+              % (lead, len(sets[lead]), ' '.join(''.join(map(str, x)) for x in sets[lead])), flush=True)
+    print('leading-0 set within the leading-1 set:', set(sets['0']) <= set(sets['1']))
+    slab = tuple(int(c) for c in '100110')
+    samples = {30 + 4 * k: 1 for k in range(10)}
+    samples.update({70: 0, 72: 0, 74: 1})
     for lead in ('0', '1'):
-        S = set(sets[lead])
+        S = {slab + x for x in sets[lead]}
         for t in range(30, 75):
+            if t % 2 == 0 and t in samples:
+                S = {x for x in S if x[0] == samples[t]}
             if t % 4 == 2 and t <= 62:
-                S = {x for x in S if x[0] == (1 if t == 62 else 0)}
-            S = {tuple(step_bits(list(x), 0 if t % 4 == 2 else 1, e)) for x in S for e in (0, 1)}
-        print('lead %s: propagated to t = 75: %d states; x_7 values %s; x_8 values %s'
-              % (lead, len(S), sorted({x[0] for x in S}), sorted({x[1] for x in S})))
+                S = {x for x in S if x[6] == (1 if t == 62 else 0)}
+            S = {tuple(step_bits(list(x), t % 2, e)) for x in S for e in (0, 1)}
+        print('lead %s: 18-cell propagation to t = 75: %d states; sites 1 .. 8 forced = %s; x_7 %s; x_8 %s'
+              % (lead, len(S), ''.join('0' if all(x[i] == 0 for x in S) else '1' if all(x[i] == 1 for x in S) else '?'
+                                        for i in range(8)), sorted({x[6] for x in S}), sorted({x[7] for x in S})))
 
 
 if __name__ == '__main__':
