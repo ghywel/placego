@@ -21,6 +21,8 @@ where they are can circle for ever while spaces are made all around them (the ow
 that car park. White gaps are born in it all the time, but none is wider than 2P or older than P steps (12), so the
 long white stripe a repeat needs is never there at the moment and place it is needed.
 
+**Checked by machine.** A proof assistant (Lean) has checked it, in the sharper form with 2P − 1.
+
 ## The formal statement and proof
 
 *Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* a repeat's white run cannot lie in the settled band. *Status:* proved.

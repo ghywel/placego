@@ -17,6 +17,8 @@ In Rule 30, no pattern that starts from finitely many black cells can settle int
 
 **An everyday picture.** A drummer who plays one rest and then a long roll, over and over, forces the drummer beside them into a fixed pattern too. Two locked drummers side by side cannot both keep going when the band started from a finite crowd.
 
+**Checked by machine.** A proof assistant (Lean) has checked the argument for periods 14 and above. The shorter periods rest on two independent computations.
+
 ## The formal statement and proof
 
 *Status:* second-read both ways. GPT's GC806 lemma was second-read by hand by Local (chat L430). The logic of

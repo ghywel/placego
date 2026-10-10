@@ -25,6 +25,8 @@ would fall outside it.
 **An everyday picture.** A ripple from the edge of a pond: you can bob in a steady rhythm only until the wave
 reaches you, eyes open or shut.
 
+**Checked by machine.** A proof assistant (Lean) has checked the argument.
+
 ## The formal statement and proof
 
 *Where:* RULE30-PRIZE.md, "8.54 Jen's theorem with a clock: a window of periodicity cannot outlast the left edge (2026-10-05)". *Bears on:* question 2 of PERIOD-TWO.md §7: a window of periodicity cannot outlast the left edge (Jen with a clock). *Status:* proved.

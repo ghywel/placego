@@ -23,6 +23,8 @@ power cut, which would have to reach back to the supply (the owner's distinction
 off, but two neighbours dark for good would mean the power had failed all the way back to the station, and it never
 does.
 
+**Checked by machine.** A proof assistant (Lean) has checked all three parts.
+
 ## The formal statement and proof
 
 *Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* the left band: an eventually white diagonal is preceded by an eventually black one. *Status:* proved.

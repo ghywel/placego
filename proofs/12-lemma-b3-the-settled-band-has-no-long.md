@@ -21,6 +21,8 @@ square, cut so that small animals can pass through and are not trapped (the owne
 that fence. Its white gaps are never wider than 2P, so only something small can get through; page 13 shows that a
 long repeat, which needs a white stripe roughly as long as itself (page 10), is too big.
 
+**Checked by machine.** A proof assistant (Lean) has checked it, in the sharper form: no gap longer than 2P − 1.
+
 ## The formal statement and proof
 
 *Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* the settled band has no long white run. *Status:* proved.

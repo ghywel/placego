@@ -27,6 +27,8 @@ catches the edge.
 **An everyday picture.** Two photographs of a growing town, taken years apart, can match only through a frame too
 narrow to include the new outskirts.
 
+**Checked by machine.** A proof assistant (Lean) has checked the argument.
+
 ## The formal statement and proof
 
 *Where:* RULE30-PRIZE.md, "8.58 The window principle: Theorem A′, and what the Collatz twin shows is missing (2026-10-05)". *Bears on:* the window principle: a block recurs only if it is no longer than the edge is far. *Status:* proved.

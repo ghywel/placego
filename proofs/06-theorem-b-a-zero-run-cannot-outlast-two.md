@@ -27,6 +27,8 @@ played back (the owner's question; see G98).
 gap two loops wide guarantees such a silence somewhere, and silence spreads until it reaches the drummer in the
 middle, who is still playing.
 
+**Checked by machine.** A proof assistant (Lean) has checked the argument.
+
 ## The formal statement and proof
 
 *Where:* RULE30-PRIZE.md, "8.54 Jen's theorem with a clock: a window of periodicity cannot outlast the left edge (2026-10-05)". *Bears on:* question 2: a zero run in row 0 of the forced left half is at most two periods long. *Status:* proved; sharp at q = 2.

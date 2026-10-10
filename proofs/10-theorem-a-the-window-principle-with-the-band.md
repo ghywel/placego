@@ -23,6 +23,8 @@ them, which is why a repeat can be checked at all.
 document brings the older document's blank margin with it. If the new page has ink where that margin falls, the copy
 is exposed.
 
+**Checked by machine.** A proof assistant (Lean) has checked the argument.
+
 ## The formal statement and proof
 
 *Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* the window principle with the band. *Status:* proved.

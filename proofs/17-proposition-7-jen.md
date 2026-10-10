@@ -23,6 +23,8 @@ open case is exactly the irregular one.
 steady columns set every column to their left on repeat; far out, the first loop was silent; and the silence works
 its way back in, one column at a time, until it reaches the beat that started it.
 
+**Checked by machine.** A proof assistant (Lean) has checked it for patterns grown from an actual starting row. The wider form, for prescribed columns, is checked by hand only.
+
 ## The formal statement and proof
 
 *Where:* RULE30-PRIZE.md, "8.13 Jen's theorem settles every periodic column 1: a correction (2026-10-05)". *Bears on:* Jen's theorem in the form the record uses (every periodic column 1 is settled). *Status:* proved (Jen 1986, restated with proof).

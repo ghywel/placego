@@ -22,6 +22,8 @@ rule of the same kind, breaks it.
 **An everyday picture.** The triangles on the shell of the *Conus textile* snail; or a sheet of ice melting evenly
 in from both edges.
 
+**Checked by machine.** A proof assistant (Lean) has checked it.
+
 ## The formal statement and proof
 
 *Where:* §8.18; checked on 1,005,083 runs by `rule30_triangles.py` (0 exceptions; Rule 110 breaks it). *Bears on:* the

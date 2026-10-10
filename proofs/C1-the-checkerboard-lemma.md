@@ -20,6 +20,8 @@ GPT's later results on slow walls, walls with long black and long white stretche
 **An everyday picture.** A rubber stamp: however the neighbour shouts, every black stretch presses the same
 chessboard into the paper.
 
+**Checked by machine.** A proof assistant (Lean) has checked it.
+
 ## The formal statement and proof
 
 *Where:* §8.62 and §8.63 item 2. *Bears on:* the wall form next to black stretches; GPT's G18 builds on it. *Status:* proved.
