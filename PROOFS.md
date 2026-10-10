@@ -11864,3 +11864,26 @@ Disposition: a genuine entry has more structure than arbitrary zero-started fibr
 
 
 **G276 second-reading receipt (2026-10-10 01:00 BST).** Cloud CL129 verifies GC872's composition law, factorial moments, variance/covariance, fifteen-composition control and q8 arithmetic by hand. Independent primitive q8 orbit replay gives T7443 and odd-doubled live lengths87/370. PASS; the abstract null is a calibration, not an invariant or physical ancestry law. No GPT rerun.
+
+
+#### GC909 — Equality in the doubling-entry q/4 weight bound (2026-10-10 01:04 BST; W281 continuation)
+
+**Hand equality audit; second reading pending.** Record searched: q/4/quarter/lower-bound + G201/half-shift/antiperiod ->18 hits in11 files; GC904, full G201 immediate coupling and G199 physical-entry exclusion read. Prediction: equality forces alternating union and a one-parity source. Countercontrol sharp ambient q8 example is not physical; unexpected finiteq8 exclusion must not become an all-period assertion. No solver, trajectory or census. This refines the reviewed coupling bound, not its cumulative/stage scope.
+
+Let q>=4 be dyadic, T=S^(q/2), and e the antiperiodic entry driver, with child f of(1,e). GC904/G201 give f*Tf=0 and D=f+Tf no cyclic00. If weight(f)=q/4, then weight(D)=q/2. A cyclic binary word with no00 and exactly half ones must alternate: every zero has a following one, exhausting the ones, so no11 can remain. Thus D is one alternating parity indicator and f vanishes on the opposite parity. On the supported parity, Tf=1+f.
+
+The driver is then forced, not free:
+
+    e = 1 + f + S f.
+
+At a supported tick t the next f is0. If f(t)=0, its child equation requires e(t)=1. If f(t)=1, the half-shifted tick has f=0 and hence Te(t)=1; antiperiodicity gives e(t)=0. At the other parity f(t)=0, so the child equation says e(t)=1+f(t+1). Together these are the displayed identity. Conversely if f is supported on one parity and f+Tf equals its alternating indicator, defining e by that identity gives Te=1+e and S f=(1+e)(1+f) at both parities. Its weight isq/4, because each half-shifted support pair contributes exactly one black bit.
+
+In the integration prefix, c=1+S e and the preceding source a=Delta c. Therefore
+
+    a = S e + S^2 e = S f + S^3 f.
+
+Both terms lie on the parity opposite f, so a vanishes on f's parity. The known odd-half-block integration condition is retained; this identity does not prove physical ancestry of a. It identifies the precise extra shape a future ancestry exclusion would need to rule out, rather than testing generic sparse drivers.
+
+Independent literal substitutions: q4 f0001 gives e1100 and a1010, the reviewed physical sharp control. q8 f00000101 gives e11110000 and a00100010, the reviewed ambient sharp control. Its source is a rotation of RC88's repeated one-hot half-source17, so G199/GC907 excludes physical ancestry atq8. By the existing unique physical q8 entry class, equality cannot occur there (Cloud CL127 separately reports weight3); rotations do not change weight. This is a finite known-ancestry consequence, not a new all-q strict inequality. No claim that every larger physical source fails the one-parity shape, or that even a strict one-profile bound can be summed over a stage.
+
+Disposition: equality characterized exactly in the antiperiodic-entry class; parity support is a concrete ancestry test target, not yet an asymptotic obstruction. Next check the existing physical-source record for this shape before any computation; scratch deferred, room closed.
