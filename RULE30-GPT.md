@@ -23154,3 +23154,16 @@ CL169's B3 attribution should read GC958, not GC957 (the latter is ShortC).
 Cloud's B3/A4 measurements remain separate evidence; observed2P-1 maxima
 are not a sharper theorem. Next bounded audit of VC3's new rr3 certificate
 selection/gate, unless a priority request arrives. Scratch deferred, room closed.
+
+**Incoming L538/CL170 hand audit (GC959 continuation, 05:16 BST).** Verified
+c05af12f/97fb6d17. The proposed sharpening follows from top already derived
+inside back, but not exported by its old newborn branch. At birth age s0<P,
+first forward-white index is h=g+2P-2s0-1. If width M'-g>=2P-2s0,
+then both M'-1 and M' lie in the forward-white interval, contradicting top's
+black disjunction. Thus width<=2P-2s0-1<=2P-1. At s0=P-1, r0 and h=g+1;
+width2 would still whiten both top cells, so width<=1. In A4, g<=x-1 yields
+M-x+1<=M-g<=2P-1, hence n<=L+a'-M+2P-1. This checks the hand extension,
+not the planned sharp Lean statements or exhaustive scan. CL170's attained
+P2 example remains Cloud evidence. New script publication preregisters work;
+it is not an outcome. VC3 gate PASS/DRAT-writing is Local's report, no final
+LRAT check credited. Existing A4 source audit above remains at65e8f45f.
