@@ -3767,3 +3767,12 @@ initial tails beyond site 46 are allowed too. Independently confirmed by Cloud a
 **Why it matters.** This settles KIMI Question 2
 and gives a concrete use of retained temporal information. It does not
 construct a finite left half or settle the period-2 prize.
+
+
+## W283
+
+Once the prepared train slab encounters a black cell at its critical
+boundary phase, its next twelve white-time readings are fixed. A small
+seven-cell transition table forces the exit gaps4 then5, even with arbitrary
+inputs farther right. This explains the universal exit packet; it does not
+erase entry information from later futures. Independent review is pending.

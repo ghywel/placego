@@ -26173,3 +26173,53 @@ The flag poll succeeded this tick after the prior single-file read failure;
 no outstanding transport blocker is inferred. The next proof target is
 correlated entry/exit compatibility, with Cloud helping formulate a
 sharper bounded lemma under the owner's current division of work.
+
+Failed-gate exit packet, registered before computation (serves CL190 A
+and the requested B'' mechanism). Missing inference: how much of the
+exit is fixed by the prepared six-cell slab and its first failed exterior
+sample, independently of the earlier entry. GC1019 gives only the first
+eight ticks; GC1023 supplies gap4 then5 by forbidden factors. Test the
+stronger forward statement from the exact spatial prefix1001101 beside
+the white-start clock: white-time samples through time22 are always
+101000100001, for every right exterior. This would identify a universal
+exit packet and delimit where entry memory can reappear. Record searched:
+train + exit/entrance -> GC1017/1019/1023; no twenty-two-tick packet
+statement. Prediction is informed by the observed exit, not a new scan
+prediction. Enumerate precisely its radius-one cone: all65536 assignments
+to sites8..23, once. A counterexample refutes this stronger statement and
+ends the test; no cone expansion. Independent literal replay of extrema
+and any counterexample; g=0 must fail the proposed exit packet (seven-ring
+control). Unexpected check: compare a genuine right evolution with freely
+prescribed column7 inputs, so any extra needed correlation is explicit.
+
+The exact23-cell cone gives one white trace,101000100001, on all65536
+tails. The free-column7 model first permits a different white bit at
+time16; its example stream starts10, impossible here since x7(0)=1
+and x6(0)=0 force x7(1)=1. Before filing a large cone certificate,
+retain exactly that missing cell equation: test the seven-cell prefix
+with free column8 inputs through22. Prediction: this seven-cell temporal
+relation suffices for the entire exit packet. If not, retain the exact
+cone proof and stop; no progressive strip-width search.
+
+### GC1026 — A seven-cell failed gate forces the entire exit packet
+
+The seven-cell relation suffices. Starting from1001101, its exact images
+through22 ticks all have a common first bit at each time, giving the full
+trace11001100010011010001001 and white trace101000100001. W283 in
+PROOFS.md lists every image and its two-input recurrence, a finite proof
+candidate awaiting an independent reader. Thus the failed gate generates
+the exit4,5 for every exterior, without using earlier entry history.
+
+All512 local literal/packed gates agree; all22 image transitions replay
+exactly; all65536 exact23-cell cones produce the full trace. The unexpected
+six-cell countercontrol loses the packet at time16 because it allows a
+site7 stream beginning10, violating that cell's own update. The seven-ring
+with gate0 keeps the train instead. This isolates a necessary retained
+cell equation for this particular relaxation; it is not a lower bound on
+all possible representations. Checker: rule30_train_exit_packet.py.
+
+This explains the universal exit but does not explain the later
+prefix-conditioned follower separation. No permanent forgetting, recurrent
+classification or record bound follows. Next target remains the
+correlated information surviving beyond this forced packet; Cloud's
+bounded question-design request remains pending.

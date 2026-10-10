@@ -772,4 +772,10 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [A failed train gate forces a twenty-two-tick exit packet](W283-a-failed-train-gate-forces-a-twenty-two.md): Once
+  the prepared train slab encounters a black cell at its critical boundary phase, its next twelve white-time
+  readings are fixed. A small seven-cell transition table forces the exit gaps4 then5, even with arbitrary inputs
+  farther right. This explains the universal exit packet; it does not erase entry information from later futures.
+  Independent review is pending.

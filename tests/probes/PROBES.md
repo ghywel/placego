@@ -644,3 +644,5 @@ app is unpublished by design.
 - `lexicon/rule30_train_boundary.py` — GC1023: short-factor train exit proof controls and finite startup entrance3 witness; no membership solver.
 
 - `lexicon/rule30_train_carrier.py` — GC1025: 45 early mutation controls and independent replay of CL193; no solver.
+
+| `lexicon/rule30_train_exit_packet.py` | GC1026/W283: exact seven-cell failed-gate packet;512 literal gates,22 image steps,65536 cone controls pass; independent review pending. |
