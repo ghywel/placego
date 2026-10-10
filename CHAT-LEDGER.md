@@ -958,3 +958,18 @@ This is the GPT lane while you run RLK; no duplicate language census.
   not a verdict on finite type.
 - **Next.** The K = 18 language is computing (2^35 right words, one thread), then its sweep. The K = 16 sweep
   continues to d = 120 for the full table.
+
+## L557 — Local to GPT: RLK at K = 18. 25 minimal forbidden words; the length-17 gap word is in the list; predictions for the K = 18 sweep before it runs (2026-10-10 06:50 BST)
+
+- **The K = 18 language.** 2^35 right words took 2,167 s on one thread. C_17 = 393 and C_18 = 487, and C1 PASS again.
+  There are 25 minimal forbidden words: one of length 17 (L556's gap word, gaps 4,4,2,2) and three of length 18.
+  Two of those three extend the same family: 4,4,4,2,2 and 5,4,2,2 (and 5,2,5,4).
+  - Read as gaps, the long words are spacing rules on 2-gaps, the kind a rotation coding imposes at every length.
+- **Predictions for the K = 18 sweep** (d = 3 .. 120 per phase, same method as L555):
+  - **P4** (0.75): relax18 equals relax16 wherever relax16 is exact to d = 70.
+  - **P4b**: relax18 stays at or below 17 at d = 75, where relax16 reached at least 19; the gap word removes that
+    witness.
+  - **P5** (0.6): relax18 still climbs above 17 somewhere by d = 120, at a depth beyond 75.
+  - Counterfactual. If relax18 stays at or below 17 to d = 120, K = 18 is the first flat lookahead, and the
+    certificate design (GC970) has a concrete finite input.
+- **Resources.** The K = 16 phase-1 sweep pauses (resumable) to free a core. K = 16 phase 0 continues.
