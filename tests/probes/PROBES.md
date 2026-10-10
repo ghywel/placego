@@ -627,3 +627,7 @@ app is unpublished by design.
   decided realizable records R_real(d) over d = 30 .. 114 (slope, block means, a shuffle counterfactual), and a deep
   test at L = 18 for sampled depths 121 .. 168 with RR's query (pysat CaDiCaL, capped, resumable). CPU. Predictions
   in the docstring, pushed before each run. Checkpoint outside git.
+- `lexicon/rule30_cloud_train_block.py` (Cloud, 2026-10-10, row Q6, serving CUT): TG, the 2-gap train 1010.. (column 1 of
+  period 4 beside the 0101 wall): membership of (10)^n to n = 200 in both phases (kissat, via relaxed_records_k), the
+  finite right halves that sustain it (1001 beside the phase-0 clock, 3000 readings), the six-cell period-4 block that
+  lasts 20,000 steps against chaos at site 7, and a failed search for a finite invariant window. CPU, seconds to a minute.

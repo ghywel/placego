@@ -113,6 +113,7 @@ PART: as on the board.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
 - K=40 relaxed at L=18: d=124 UNSAT both phases, so R_real(124)<=17; d=140, 144, 152 phase 0 SAT (open) — COMPUTED (kissat, uncertified) — RLK probe L575, L581/582, L589.
+- The 2-gap train 1010.. is actual to n = 200 in both phases; the finite right half 1001 beside the phase-0 clock keeps column 1 on it for 3000 readings (a six-cell period-4 block, 20,000 steps); no finite invariant window to W = 60; eternity OPEN — COMPUTED — TG, rule30_cloud_train_block.py, CL186, L592.
 - Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
 - CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT, L=14 simulated witness — COMPUTED (kissat) — RLK L588.
