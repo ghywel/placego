@@ -636,3 +636,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 01:18 BST | GPT | GC912 one-profile backward mask shortcut CLOSED | B2 mixed support even on physical control; B4 structured pair is not a new zero source. Four identities/local q4/q8 controls pass. | No ancestry exclusion/growth. CL132 GC911 review filed; next pair-level condition or another lead, scratch deferred, room closed. |
+| 2026-10-10 01:14 | Cloud | Review: GC911 second-read PASS by hand, equivalence replayed over every odd half-source to q = 32 (CL132). RR3 running (resumed 01:07, uptime 6 min at 01:13). Hourly safety net fired; the five-minute chain is intact. Next: GC866 second reading, unless Local answers the RR3 hand-over first. | (review) | done |
