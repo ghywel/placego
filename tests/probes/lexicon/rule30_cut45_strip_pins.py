@@ -43,6 +43,12 @@ OUTCOME, 2026-10-10 18:16 BST (M5, one core, minutes): C1, C2, C3 PASS; Cloud's 
     a2ecb11d63068b92): kissat UNSAT, drat-trim VERIFIED, cake_lpr VERIFIED UNSAT, LRAT 0.47 MB. Width 23 is SAT
     (828a58f36f6bc5d2). Every actual history restricted to sites 1 .. 24 is such a strip history, so f is absent from
     L by a formally checked bounded certificate, with no SAT census and no hand lemma in the chain.
+TABLE (registered 18:17 before its run; L605's offer): `table` gives w_min (rule30_strip_width.wmin) for every learned
+cut, CUT's (cuts40_p0.txt) and SLC's (cuts40_sl.txt), each checked by cake_lpr at its w_min (phase 0, as SW).
+  SWT-C1 (control): f's w_min is 24, as above.
+  SWT-P1 (blind, 0.5): the median w_min/|f| over the learned cuts is at most 0.62 (SW's median for minimal words of
+         length >= 25).
+  SWT-P2 (blind, 0.6): every learned cut has w_min <= |f|.
 """
 import os
 import subprocess
@@ -158,7 +164,34 @@ def cert(W, word):
     print(out)
 
 
+def table():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    _a = sys.argv
+    sys.argv = sys.argv[:1]
+    import rule30_strip_width as sw                           # wmin: least width excluding a word
+    import rule30_relaxed_records_k as rlk
+    sys.argv = _a
+    rows = []
+    for stem in ('cuts40_p0', 'cuts40_sl'):
+        for line in open(os.path.join(rlk.DIR, stem + '.txt')):
+            w = line.split()[0]
+            _, wm = sw.wmin(w)
+            rows.append((stem, w, wm))
+    c1 = dict((w, wm) for _, w, wm in rows).get('000010001010000101010101010101010100010000101') == 24
+    print('SWT-C1', 'PASS' if c1 else 'FAIL', flush=True)
+    for stem, w, wm in rows:
+        cert(wm, w)                                            # prints the cake receipt at w_min
+        print('  %s |f| = %d  w_min = %s  ratio %.2f' % (stem, len(w), wm, wm / len(w)), flush=True)
+    ratios = sorted(wm / len(w) for _, w, wm in rows)
+    med = ratios[len(ratios) // 2]
+    print('SWT-P1', 'HELD' if med <= 0.62 else 'REFUTED', '(median w_min/|f| = %.3f over %d cuts)' % (med, len(rows)))
+    print('SWT-P2', 'HELD' if all(wm <= len(w) for _, w, wm in rows) else 'REFUTED')
+
+
 if __name__ == '__main__':
+    if sys.argv[1:2] == ['table']:
+        table()
+        raise SystemExit(0)
     if sys.argv[1:2] == ['cert']:
         cert(int(sys.argv[2]), sys.argv[3])
     else:
