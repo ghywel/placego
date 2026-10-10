@@ -39,6 +39,10 @@ PREDICTIONS (Local's, pushed before any run of this script):
          56 temporal phases.
   SOF-P3 (the unexpected check, 0.5): C_n keeps growing roughly quadratically to NMAX, between 1.0 and 1.6 n^2 at
          n = NMAX (C_18 = 487 = 1.50 n^2).
+  SOF-P4 (blind, 0.35; added before the eventual-language run, after an early look at the full language's table):
+         the EVENTUAL language plateaus where the full one does not. L^(m) holds the words that can occur at visible
+         index >= m (w with uw in L for some u of length m), with the start-only transients (GC986/GC987, L560/L563)
+         removed. At m = 10, its near-diagonal follower-class counts vary by at most 10% over the last four lengths.
   Counterfactual. A plateau says the hidden-state lift exists at these lengths and sizes it; the next step is to
   build the automaton from the classes and test it against longer words. Steady growth along the diagonal says the
   language is not regular at these lengths either; then the lift needs an unbounded counter (the kick count, say),
@@ -129,10 +133,37 @@ def classes(nmax):
     print('SOF-P3', 'HELD' if 1.0 <= c <= 1.6 else 'REFUTED', 'C_%d / %d^2 = %.3f' % (nmax, nmax, c))
 
 
+def eventual(m, nmax):
+    """Follower classes of L^(m): words that occur at visible index >= m."""
+    L = {n: load(n) for n in range(1, nmax + 1)}
+    L[1] = {'0', '1'}
+    E = {}
+    for n in range(1, nmax - m + 1):
+        E[n] = {u[m:] for u in L[m + n]}
+    top = nmax - m
+    print('eventual language L^(%d): sizes n = 1 .. %d: %s' % (m, top, [len(E[n]) for n in range(1, top + 1)]))
+    table = {}
+    for total in range(2, top + 1):
+        fol = {}
+        for u in E[total]:
+            for a in range(1, total):
+                fol.setdefault((a, u[:a]), set()).add(u[a:])
+        for a in range(1, total):
+            table[(a, total - a)] = len({frozenset(fol[(a, w)]) for w in E[a] if (a, w) in fol})
+    for a in range(1, top):
+        print('a=%2d ' % a + ' '.join('%4d' % table[(a, l)] for l in range(1, top - a + 1)))
+    diag = {t: max(table[(a, t - a)] for a in range(max(1, t // 2 - 2), min(t, t // 2 + 3))) for t in range(4, top + 1)}
+    print('near-diagonal maxima:', diag)
+    last = [diag[t] for t in range(top - 3, top + 1)]
+    print('SOF-P4', 'HELD' if max(last) <= 1.1 * min(last) else 'REFUTED', last)
+
+
 def main():
     os.makedirs(DIR, exist_ok=True)
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'classes'
-    if cmd == 'grow':
+    if cmd == 'eventual':
+        eventual(int(sys.argv[2]), int(sys.argv[3]))
+    elif cmd == 'grow':
         grow(int(sys.argv[2]), int(sys.argv[3]) if len(sys.argv) > 3 else 3)
     else:
         classes(int(sys.argv[2]) if len(sys.argv) > 2 else max(n for n in range(1, 200) if load(n) is not None))
