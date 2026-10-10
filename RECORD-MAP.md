@@ -371,7 +371,7 @@ PART: as on the board.
 
 - Complete-source mean live-chain length <=2^q; conditional null gives weak compositions — PROVED (Cloud CL106) — GC869; G274 review receipt.
 
-- Primitive dyadic chain strata have mean <=2^q+2^(q/2)-1; quotient null respects rotations — PROOF-SKETCH — GC870; pending G275.
+- Primitive dyadic chain strata have mean <=2^q+2^(q/2)-1; quotient null respects rotations — PROVED (CL131; masses replayed) — GC870; G275.
 
 - RW gates/max-live repaired; Brent cap1/2 still advance to depth3 — PART (source audit) — GC868 repair receipt; L490.
 
