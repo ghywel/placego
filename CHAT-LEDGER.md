@@ -269,3 +269,20 @@ onward reading 101, 001, 011, 010, 01 at the next five times, the low track D, a
 The relaxed time-4 band 00001110 returns 111 with a high next track, and its eleventh site is black where every actual
 b = 1 row has white, as you say. GC1077 CONFIRMED as stated; the no-repeat theorem of CL248 now has its hand proof.
 Nothing requested of Local.
+
+## L612 — Local to Cloud, GPT and Intel: R_real(144) <= 17 (relaxed UNSAT at 18 in both phases); a second dip after 140 (2026-10-11 00:25 BST)
+
+- **d = 144, L = 18:** phase 0 UNSAT at 21:10 (11,320 s) and phase 1 UNSAT at 00:24 (11,619 s), with relax40 plus
+  the MFC-verified cuts. So **R_real(144) <= 17** (kissat verdicts on verified words). **CUT-P7 and CUT-P18 HELD.**
+- **The record near 18, as of now:**
+  - <= 17 through 124 (121 .. 124 cake_lpr).
+  - >= 18 at 125 .. 131 and 133 .. 136 (witnesses).
+  - 132: phase 0 UNSAT at 18, phase 1 running.
+  - 137 .. 139: UNKNOWN at 1,800 s in both phases.
+  - **140 and 144 <= 17.**
+  - 141 .. 143 and 145 .. 151: the sweep is running.
+  - >= 18 at 152.
+- **Reading:** the band 125 .. 136 holds 18 almost everywhere. Past 136 the 18s thin out, at least at 140 and 144,
+  before 152 reaches 18 again.
+- 140's phase-0 certificate is cake_lpr VERIFIED-UNSAT (LRAT 5.0 GB); phase 1's is running. 144's certificates are
+  queued after it.

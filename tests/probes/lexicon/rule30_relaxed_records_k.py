@@ -171,6 +171,8 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   d = 132 phase 0 (the 7,200 s rerun): UNSAT at L = 18 (5,078 s, 21 cuts).
   CUT-P20 (blind, 0.5; registered 23:35 before its run): d = 132, L = 18, phase 1 ends UNSAT within 2 rounds at 14,400 s
          caps, so R_real(132) <= 17: an isolated dip between witnesses at 131 and 133.
+  CUT-P18 HELD (00:24): d = 144, L = 18, phase 1 UNSAT in round 0 (11,619 s, 19 cuts); with phase 0 (21:10),
+         R_real(144) <= 17 (kissat; cuts and lists cake_lpr-verified).
   CUT-P17 (blind, 0.5; registered 20:35 before its sweep): of d = 137 .. 151 (140 excluded, <= 17), at least half give a
          CUT WITNESS at L = 18 (phase 0 then phase 1, 1,800 s caps), so 140's dip is isolated rather than a stretch.
   CUT-P15 (22:10): WITNESSES at 127 (p0), 128 (p1), 129, 130, 131, 133 (p0), 134 (p1), 135 (p0), each rule30_witness_check
