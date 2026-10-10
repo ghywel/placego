@@ -112,7 +112,8 @@ PART: as on the board.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
 - K=40 relaxed at L=18: d=124 UNSAT both phases, so R_real(124)<=17; d=140, 144, 152 phase 0 SAT (open) — COMPUTED (kissat, uncertified) — RLK probe L575, L581/582, L589.
-- The 2-gap train 1010.. is actual to n = 200 in both phases; the finite right half 1001 beside the phase-0 clock keeps column 1 on it for 3000 readings (an ordered band of 14 sites: period 4 to site 6, period 8 to site 14, chaos pinned at site 15 for 40,000 steps); no finite invariant window to W = 60; eternity PROVED by GPT (GC1020, W282: sixteen-tick causal lock on column 14 plus strong induction; also for every tail beyond site 46), independently re-derived and read by Cloud (CL189) — PROVED, review complete — TG, rule30_cloud_train_block.py, CL186 .. CL189.
+- Two-gap train: clamped phase-0 seed1001 eternal via sixteen-tick causal lock at14, every tail beyond46 — PROVED CL189/L595 — GC1020/W282; TG. Measured period4 to6, period8 to14, chaos pinned15; no finite invariant window to60.
+
 - Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each (14:30 stop); 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, rule30_cloud_rreal_trend.py, CL178, CL188.
 - Least d>20 with R_real(d)>=18 is 125: 21..124 all <=17, 125 has a witness — COMPUTED (121..124 cake_lpr, both phases) — L603..605.
 - Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
@@ -188,7 +189,7 @@ PART: as on the board.
 ## Correlations, entropy and traces
 - Initial rewrite/merger GC1057/1058 PROVED CL225/226; two-tick normalization GC1059 PROVED CL227.
 - Two-tick lift guard and packet selection PROVED CL228/230 — GC1060/1061.
-- Origin/pair/two-future lifts PROVED CL231/232/235/236/237 — GC1062..1066; observable collar/input repair PROOF-SKETCH — GC1067/1068.
+- Origin/pair/two-future lifts PROVED CL231/232/235/236/237 — GC1062..1066; collar repair PROVED CL238 — GC1067; next-input lift PROOF-SKETCH — GC1068.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
