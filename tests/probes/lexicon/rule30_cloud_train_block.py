@@ -11,6 +11,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMA
             python3 tests/probes/lexicon/rule30_cloud_train_block.py carrier                  (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py packet
             python3 tests/probes/lexicon/rule30_cloud_train_block.py arming                   (needs kissat, ~1 min)
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py cut45                    (needs kissat, ~3 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -93,6 +94,17 @@ claimed 23-tick column 1 and white trace 101000100001 (exit 4, 5): CONFIRMED. Si
 column 1 undetermined from tick 8. The CL193 model has the slab 1001100 at t = 62 .. 70, the failed gate 1001101
 at t = 74 and 1011010 at t = 78 (the last car): CL194's gated propagation to the last car was unsound; revised in
 CL195 to a strip propagation from the interior time 62 with the visible word imposed.
+
+MODE cut45, OUTCOME (2026-10-10 15:55 BST; GC1029 reviewed, CL198). GC1029's final-bit criterion holds (all 256 rows;
+W283's 15 states at offset 22; exactly 1000110, 1001100, 1001101 permit the final 1). Over realizers of the 44-symbol
+word (entry 000010001010000, ten cars, the nine forced exit bits) the seven cells at t = 84 are 1110101 or 1110111,
+so sites 2 and 3 are black and the final 1 is impossible: the length-45 cut. Certificate: the whole word forces all
+24 cells of sites 1 .. 24 at t = 30 (SAT census) to 100110011001100000000010, and that strip alone, with a free site
+25 at every tick and no further samples, reaches 736 states at t = 84, every one beginning 11101. The entry and train
+alone force only sites 1 .. 8 at t = 30; the exit's forced packet pins the rest. Control: with the leading 0 replaced
+by 1, five strip cells (16, 20, 21, 22, 24) stay free and the propagation reaches states beginning 100 (final 1
+possible), as 1 + 00010001010000 T^10 v is IN. The cut needs the leading 0 exactly: every proper suffix of the entry
+gives IN.
 
 MODE arming, OUTCOME (2026-10-10 15:45 BST; review of GC1028 and data for CL197). The exit target is exactly GPT's 39
 nine-bit words (01101????, 01110????, 0111100??, 0111111ab with ab != 00), all beginning 011. A' has 34 states and
@@ -388,11 +400,62 @@ def arming():
         print('prefix %-16s arming realizable at cars %s' % (repr(prefix), cars(prefix)))
 
 
+def cut45():
+    """The length-45 cut q T^10 v (L593; GC1029) explained by a finite certificate (CL198). Steps: GC1029's criterion
+    for
+    the exit's final bit; the seven-cell states at t = 84 over realizers of q T^10 and the forced nine exit bits; the
+    cells forced at t = 30 by the entry alone and by the whole word; propagation of the forced strip to t = 84 with a
+    free exterior (union over inputs). Control: the same entry preceded by a 1 instead of a 0."""
+    import itertools
+    def step_bits(bits, wall, ext):
+        r = [wall] + bits + [ext]
+        return [r[i - 1] ^ (r[i] | r[i + 1]) for i in range(1, len(bits) + 1)]
+    def forced_row(word, t, n, tmax):
+        out = ''
+        for i in range(1, n + 1):
+            c0, c1 = _cone_sat(word, [(t, i, 0)], tmax), _cone_sat(word, [(t, i, 1)], tmax)
+            out += '0' if c0 and not c1 else '1' if c1 and not c0 else '?' if c0 and c1 else '!'
+        return out
+    def propagate(starts, t0, t1, cap=3_000_000):
+        S = set(starts)
+        for t in range(t0, t1):
+            S = {tuple(step_bits(list(x), t % 2, e)) for x in S for e in (0, 1)}
+            if len(S) > cap:
+                return None
+        return S
+    def forced(S, n):
+        return ''.join('0' if all(x[i] == 0 for x in S) else '1' if all(x[i] == 1 for x in S) else '?' for i in range(n),
+                   return ''.join('0' if all(x[i] == 0 for x in S) else '1' if all(x[i] == 1 for x in S) else '?' for i in range(n))
+    tail, exit9 = '00010001010000', '001000010'
+    three = {'1000110', '1001100', '1001101'}
+    for lead in ('0', '1'):
+        entry = lead + tail
+        word = entry + '10' * 10 + exit9                      # 44 symbols, samples to t = 86
+        B = [''.join(map(str, x)) for x in itertools.product((0, 1), repeat=7)
+             if _cone_sat(word, [(84, i + 1, b) for i, b in enumerate(x)], 92)]
+        print('entry %s: states of sites 1..7 at t = 84: %s; meets GC1029\'s three: %s'
+              % (entry, ' '.join(B), bool(set(B) & three)))
+        f_entry = forced_row(entry + '10' * 10, 30, 24, 76)
+        f_word = forced_row(word, 30, 24, 92)
+        print('  forced at t = 30, sites 1..24, by entry + train: %s | by the whole word: %s' % (f_entry, f_word))
+        free = [i for i, c in enumerate(f_word) if c == '?']
+        starts = []
+        for bits in itertools.product((0, 1), repeat=len(free)):
+            x = [int(c) if c != '?' else 0 for c in f_word]
+            for j, i in enumerate(free):
+                x[i] = bits[j]
+            starts.append(tuple(x))
+        S = propagate(starts, 30, 84)
+        print('  propagation of the forced strip (free site 25 every tick, no samples used): %s states at t = 84, '
+              'forced sites 1..8 = %s' % (len(S) if S else '>cap', forced(S, 8) if S else '-'))
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
     {'member': lambda: member(*(a or [200])), 'seeds': lambda: seeds(*(a or [12, 400])),
      'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40])),
      'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16])),
-     'follower': lambda: follower(*(a or [13])), 'carrier': carrier, 'packet': packet, 'arming': arming}[cmd]()
+     'follower': lambda: follower(*(a or [13])), 'carrier': carrier, 'packet': packet, 'arming': arming,
+         'cut45': cut45}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
