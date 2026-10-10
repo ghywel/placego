@@ -110,6 +110,21 @@ FIRST EXCESS OF relax40 (found 2026-10-10 12:20 in the paused sweep; registered 
     UNSAT. The same pipeline passes on the control 11.
   - The blocking word moves with K: length 17 for K = 16 (d = 75), 21 for K = 18 (d = 84; L559), 46 for K = 40
     (d = 107). Each is the K-list's first missed constraint on a relaxed record, not a census of longer words.
+CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MAXIT] [CAP]`: solve the relaxed model
+  with the base list and every cut found so far; if SAT, test the visible code for membership (right_half_for). In:
+  glue and simulate, a WITNESS (R_real(d) >= L in that phase). Absent: add all shortest absent factors (lengths > K,
+  in_language_phase) to cutsK_p{ph}.txt and solve again. Ends UNSAT (with valid cuts, R_real(d) <= L - 1 in that
+  phase), WITNESS, or MAXIT. Cuts are facts about the language, so they carry over to every depth and L (phase-0
+  cuts to phase 1 too, L1 c L). Distinct from GC981 (a finite quotient's residual refinement): this decides records.
+  Record searched: `record_find.py cut relaxed forbidden` -> RLK only; `record_find.py "CEGAR|counterexample-guided|
+  refinement loop"` -> GC981 (rule30_rrl_learn.py, language quotient, no records).
+  CUT-C1 (control): K = 16, d = 65, L = 11 (R_real(65) = 11): a WITNESS in at least one phase.
+  CUT-C2 (control): K = 16, d = 65, L = 18, phase 1 (relaxed SAT, actual 11): never a WITNESS.
+  CUT-C3 (control): K = 40, d = 107, L = 16, phase 0: round 0 reproduces L584's model, first cut the length-46 f.
+  CUT-P1 (blind, 0.5): C2 ends UNSAT within 40 rounds (the slack there is 7).
+  CUT-P2 (blind, 0.6): K = 40, d = 107, phase 0 ends UNSAT at L = 16 and at L = 15 within 10 rounds each.
+  CUT-P3 (blind, 0.5): every K = 40 cut found at d = 107 has length <= 50.
+  CUT-P4 (the unexpected check, 0.4): at d = 107, phase 0 alone reaches the record, a WITNESS at L = 14.
 ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). The forbidden list is now all 771 minimal
   forbidden words to length 40, extracted from SOF's exact language (rule30_sofic_test.py; mfw40.txt in the data
   folder, written from langsat2..40 by RRL's rule; its first 25 are RLK's). Each relaxed UNSAT is a certificate for
@@ -320,6 +335,26 @@ def load_model(path):
     m = re.match(r'left \(cells (-?\d+) \.\. 0\)=([01]+)$', lines[1])
     left0 = {int(m.group(1)) + j: int(b) for j, b in enumerate(m.group(2))}
     return int(head['d']), int(head['L']), int(head['phase']), int(head['T']), left0, lines[2].split('=', 1)[1]
+
+
+def load_cuts(phase, K):
+    """Language cuts found by `cut` (L585) over a base list to length K: words absent from L (cutsK_p0.txt, valid in
+    both phases since L1 c L) and, for phase 1, words absent from L1 (cutsK_p1.txt). One word a line, then provenance."""
+    out = []
+    for p in ((0,) if phase == 0 else (0, 1)):
+        path = os.path.join(DIR, 'cuts%d_p%d.txt' % (K, p))
+        if os.path.exists(path):
+            out += [line.split()[0] for line in open(path) if line.strip()]
+    return out
+
+
+def shortest_absent(code, phase, kmin):
+    """All shortest factors of code absent from the phase's language (factor-closed), searching lengths >= kmin."""
+    for k in range(kmin, len(code) + 1):
+        absent = sorted({code[i:i + k] for i in range(len(code) - k + 1) if not in_language_phase(code[i:i + k], phase)})
+        if absent:
+            return absent
+    return []
 
 
 def simulate_glued(left0, right0, T, phase, d, L, code):
@@ -586,6 +621,50 @@ def main():
                 open(out, 'w').write('d=%d L=%d phase=%d T=%d\nleft (cells %d .. 0)=%s\nright (sites 1 .. %d)=%s\n'
                                      'visible=%s\n' % (d, L, ph, T, min(left0), left, max(right), rgt, code))
                 print('WITNESS: R_real(%d) >= %d; saved %s' % (d, L, out), flush=True)
+    elif cmd == 'cut':                                       # L585: language cuts until UNSAT or a real witness
+        tag, d, L, ph = sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5])
+        maxit = int(sys.argv[6]) if len(sys.argv) > 6 else 40
+        cap = int(sys.argv[7]) if len(sys.argv) > 7 else 5400
+        base = load_forbidden(tag)
+        K = max(map(len, base))
+        t00, it, verdict = time.time(), 0, 'MAXIT'
+        while it < maxit:
+            cuts = load_cuts(ph, K)
+            forb = base + cuts
+            inst = Relaxed(d, L, ph, forb)
+            t0 = time.time()
+            v = inst.solve(cap, forb)
+            print('cut d=%d L=%d phase %d (%s) it %d, %d cuts: relaxed %s %.0f s' % (d, L, ph, tag, it, len(cuts), v,
+                                                                                    time.time() - t0), flush=True)
+            if v != 'SAT':
+                verdict = v
+                break
+            it += 1
+            code = inst.code
+            right = right_half_for(code, ph)
+            if right:
+                ok, why = simulate_glued(inst.left0, right, inst.T, ph, d, L, code)
+                if not ok:
+                    raise RuntimeError('code in the language but the glued simulation failed: %s' % why)
+                save_model(inst, d, L, ph, tag)
+                out = os.path.join(DIR, 'lift_d%d_L%d_p%d.txt' % (d, L, ph))
+                open(out, 'w').write('d=%d L=%d phase=%d T=%d\nleft (cells %d .. 0)=%s\nright (sites 1 .. %d)=%s\n'
+                                     'visible=%s\n' % (d, L, ph, inst.T, min(inst.left0),
+                                                       ''.join(str(inst.left0[i]) for i in range(min(inst.left0), 1)),
+                                                       max(right), ''.join(str(right[i]) for i in range(1, max(right) + 1)),
+                                                       code))
+                print('WITNESS: R_real(%d) >= %d (phase %d); saved %s' % (d, L, ph, out), flush=True)
+                verdict = 'WITNESS'
+                break
+            new = shortest_absent(code, ph, K + 1)
+            assert new and not set(new) & set(forb), new
+            with open(os.path.join(DIR, 'cuts%d_p%d.txt' % (K, ph)), 'a') as f:
+                f.writelines('%s d=%d L=%d it=%d %s\n' % (w, d, L, it, time.strftime('%H:%M')) for w in new)
+            print('  code %s\n  %d cut(s), length %d: %s' % (code, len(new), len(new[0]), ' '.join(new)), flush=True)
+        with open(os.path.join(DIR, 'rlk_cut.ck'), 'a') as f:
+            f.write('%s %d %d %d %s %d %d %.1f %s END\n' % (tag, d, L, ph, verdict, it, len(load_cuts(ph, K)),
+                                                          time.time() - t00, time.strftime('%H:%M')))
+        print('cut d=%d L=%d phase %d: %s after %d cut round(s), %.0f s' % (d, L, ph, verdict, it, time.time() - t00))
     elif cmd == 'probe':                                     # one relaxed call per (depth, phase), for TR's depths
         tag, L = sys.argv[2], int(sys.argv[3])
         tag1 = sys.argv[4]                                     # the phase-1 list's tag (L1 c L, so tag is valid too)
