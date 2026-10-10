@@ -28004,3 +28004,34 @@ For either b, actual initial100100(NOT b), with ANY farther tail, has that trace
 The last two have OR=NOT f: f=1 makes both zero; f=0 gives NOT g and g OR h. The actual version of the readout for prefix0000def has seventh symbol(NOT d) AND(e OR f), so this origin has endpoint NOT(initial site7)=b. Thus the whole horizon2W-1=9 closes in this rooted Q=0 branch, including the correlated two-bit child tail; no arbitrary repaired row is restarted mid-orbit.
 
 **Controls, limitation and receipt.** Thirty-two selected width4 streams verify the readout under independent literal and packed updates. All32 root parameter combinations match64 actual normal-form controls (two farther-tail extremes). Unexpected spatial guard: prefix010r, also with penultimate0, emits1 at time5 for BOTH r values (four selected controls). Q=0 alone therefore supplies no readout; the three-zero collar is essential. This countercontrol leaves the other rooted Q=0 branch (initial0010 at white phase) for a different mechanism, and no translation to arbitrary j is claimed. Verified186484b3: CL231 confirms GC1062's carrier and both trace formulas, with its stated896/512 cases; promoted. The new Intel handover announcement changes no present lane. Next missing inference is a depth-uniform collar or replacement argument for the remaining forced carriers. General halfwidth, later exterior compatibility and the all-depth prize bound remain open.
+
+
+## GC1064 — Releasing one origin cell removes every white forced-zero carrier at arbitrary depth (2026-10-10)
+
+**Missing inference, GC1060/1063.** The white-predecessor forced-zero readout lacks a depth-uniform collar. Instead of fixing the original initial prefix through j+1, retain it through j, while still retaining the COMPLETE time2 child prefix through j. This is permitted by the unconditioned halfwidth question, which prescribes a trace rather than its entire initial row. Record searched:two.tick|two.step|halfwidth|child.*prefix with one.*(cell|bit)|releas|relax|shorter and lift|boundary|origin|freedom ->30 hits in13 files. GC1060's local equations are reused; no released-cell whole-prefix criterion surfaced. Predictions and controls precede execution in rule30_released_origin_cell.py. No solver, word-membership or width census.
+
+**Uniform actual-origin freedom, hand proof awaiting review.** Fix any actual initial prefix through j, j>=3, and any feasible time2 child prefix through j. Suppose its last bit Q is white. Let u,a,b be initial sites j-2,j-1,j. Either value of the next child bit R has an actual two-tick origin retaining BOTH prefixes, except when uab=011, which forces R=1. Thus every forced-zero case with Q=0 in GC1060 becomes free after releasing exactly one initial cell. This holds at every j and both clock phases, with any farther tail. The original first two trace observations remain unchanged.
+
+**The preceding child cell is the essential guard.** Write c,d,e for initial sites j+1..j+3. In GC1060 notation put
+
+    P=u XOR(a OR b), A=a XOR(b OR c), B=b XOR(c OR d),
+    C=c XOR(d OR e), Q=P XOR(A OR B), R=A XOR(B OR C).
+
+The preceding child bit is F=H XOR(P OR A), with H the first-update bit at j-2, fixed by the retained initial prefix. All earlier child cells through j-2 are fixed too. If b=1, A=NOT a is independent of c; if P=1, P OR A=1. Hence c may change while retaining F exactly when b=1 OR P=1. Otherwise b=P=0 and A=a XOR c, so retaining F pins c. An unguarded union of GC1060's pair tables would miss this constraint.
+
+For Q=0 the feasible origin triples and explicit extensions are:
+
+| Retained uab | New c,d,e realizing desired R |
+| --- | --- |
+| 000 | 0,0,R |
+| 001 | 1,0,R |
+| 010 | 0,0,NOT R |
+| 011 | 0,0,0; only R=1 |
+| 100 | 1,0,0 for R=0; 0,1,0 for R=1 |
+| 111 | 1,0,NOT R |
+
+The other triples101,110 cannot have Q=0. In the000 row, feasibility already requires the original c=0; the construction keeps it. Every other row permits c to change by the guard above. Substitution gives Q=0 and the claimed R, while preserving F and every preceding child cell. This proves sufficiency with an explicit finite origin extension, not a free mid-orbit restart. For011, P=1,A=0; Q=0 requires B=1, forcing c=d=0. Then R=0 XOR(1 OR C)=1 for every e, proving the sole obstruction's necessity.
+
+**Controls, sharpness and next inference.** All256 seven-cell local cones in both phases agree under literal and packed updates; all456 permitted-bit constructors preserve the full child prefix and the original first two observations under both farther-tail extremes. Of these,152 change the released initial cell. The first executable111,Q1 constructor used the wrong d; its mixed-pair equation gives d=0, and the witness was corrected before the passing run. The fibre criterion itself was unaffected. Unexpected check: original0001 with Q=1 appears to gain R=1 by releasing c if only Q is retained, but the preceding child cell flips. Whole-prefix retention correctly excludes that construction.
+
+This supplies an arbitrary-depth alternative to the special zero collar: the forced-zero/white-predecessor origin obstruction itself disappears when one initial cell is released. It does not supply the selected child's whole tail or a matching future trace. The remaining white-predecessor carrier is now precisely011 with Q=0,R=1; black-predecessor carriers and later exterior compatibility also remain. Next useful inference is a future-trace repair compatible with that single white carrier, or a counterexample to that repair. Cloud hand review and that concrete design question requested and flagged; no worker run. Halfwidth and the all-depth prize bound remain open.
