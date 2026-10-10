@@ -349,7 +349,8 @@ def _cone_sat(word, extra, tmax):
 
 
 def arming():
-    """GC1028's exit target and q's allowed states (CL197). Target: nine bits of sites 7 .. 15 at the white tick 62 (slab
+    """GC1028's exit target and q's allowed states (CL197). Target: nine bits of sites 7 .. 15 at the white tick 62 (sla
+        b
     100110 at sites 1 .. 6) whose gates read 0 at 62, 0 at 66, 1 at 70. A': those nine bits over realizers of q T^9 with
     the slab at 62 (SAT). Then the cars at which the arming pattern (slab, sites 7 .. 9 = 011) is realizable after a
     prefix."""
