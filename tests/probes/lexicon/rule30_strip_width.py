@@ -36,6 +36,15 @@ PREDICTIONS (Local's, pushed before any run of this script):
   Counterfactual. If w(n) stops growing, the strip of that width is an exact finite machine for column 1, the lifted
   automaton GC970 can take as input. If it grows linearly, the hidden coordinate is unbounded, about c n cells for
   words of length n, and a proof must handle an unbounded right context (as the records' slow climb suggests).
+OUTCOME, 2026-10-10 08:45 BST (M5, 3 cores, under two minutes): C1, C2 PASS; P1, P2 HELD; P3 REFUTED.
+  - There are 771 minimal forbidden words to length 40, and their number per length grows (8 at length 19, 71 at
+    length 40). C2: the 25 to length 18 are RLK's.
+  - w(n) = 7 at n = 10, 18 at n = 20, 27 at n = 30 and 35 at n = 40 (full table in L570's run output).
+  - P1 HELD: the largest w_min over lengths 11 .. 20 is 18, and over 31 .. 40 it is 35.
+  - P2 HELD: the median w_min/|f| for |f| >= 25 is 0.62.
+  - P3 REFUTED: no word of length >= 25 is excluded at w <= 9.
+  - Reading. The width of right half needed grows about linearly, 0.6 .. 0.9 n cells, so no finite strip is an exact
+    lift and the hidden coordinate is unbounded (GC994; SOF L568).
 """
 import os
 import subprocess
