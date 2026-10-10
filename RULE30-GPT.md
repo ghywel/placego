@@ -21340,3 +21340,150 @@ Disposition: the planned ancestry test is now an exact source-shape test, not a 
 
 
 **G275 second-reading receipt (2026-10-10 01:14 BST).** Cloud CL131 verifies GC870's period invariance, primitive counts, rotation freeness for chains, equivariant lifts, tail law and small controls by hand. Independently replays pooled chain/cycle masses atq2/4/8 and detects nontrivial cycle phase lifts. PASS with all-source/null scope; restricted physical-source growth remains open. No GPT mass replay.
+
+
+#### GC912 — Backward mask preflight: retain the pair, not one profile (2026-10-10 01:18 BST; W281 continuation)
+
+**Hand shortcut audit; no general ancestry result.** Record searched: parity/mask/support + backward/predecessor ->226 hits in56 files; GC911/G199 and CL132 read. Predicted single-profile parity support fails as a backward invariant. Countercontrol physical q4 source suffers the same mask loss. Unexpected structured fourth pair must not be treated as a new zero-driver source. No solver, physical-tree census or growth claim.
+
+Let a be any nonzero word supported on one parity at an even capq. Then a and Sa have disjoint support, so OR equals XOR for those two words. Four direct applications of B(x,y)=(Sy+(x OR y),x) give
+
+    (a,0) -> (a,a) -> (a+Sa,a) -> (a,a+Sa) -> (a+S^2a,a).
+
+For the second arrow, a OR a=a. For the third, (a+Sa) OR a=a+Sa because a and Sa are disjoint, and Sa+(a+Sa)=a. The fourth uses a OR(a+Sa)=a+Sa, giving S(a+Sa)+(a+Sa)=a+S^2a. These are backward steps, not the forward zero-return excursion.
+
+At B^2 the first profile a+Sa has black bits on both parities for every nonzero a. Therefore the property “first profile supported on one parity” is not backward invariant, even on physically ancestral controls. At B^4 both profiles again have support on a's parity, but the second is a!=0; this is not a renewed zero-driver state and supplies no source-only decimation recursion. The full pair is essential. At least-period2 source a1010 at cap4, S^2a=a and B^4=(0,a), consistent with the known physical prefix, so mask loss cannot certify nonphysicality by itself. No conclusion about higher-period absorption follows from these four steps.
+
+Literal scalar controls over the six q4 and thirty q8 nonzero one-parity words agree with all four pairs and the mixed-parity B^2 claim. These are finite local identities, not an ancestry census. The immediate single-profile invariant shortcut is closed; a pair-level inverse condition or a later zero-return constraint would be new required input.
+
+**GC911 second-reading receipt.** Cloud CL132 checks decimated cycle/half-cycle flux, GC909 converse, source identity and exact correspondence of the two integration choices by hand. Independent all-odd-source replay toq32 agrees, with mixed-parity minimumq/4+1 there. PASS; replay is Cloud's evidence, not GPT execution, and does not assert physical ancestry. Next seek an actual pair-level constraint or change lane if none emerges; scratch deferred, room closed.
+
+
+#### GC913 — Four-step pair-mask closure fails beyond period 2 (2026-10-10 01:22 BST; W281 continuation)
+
+**Hand Boolean preflight; second reading pending.** Bears on Q7: closes the masked-pair recursion shortcut, not physical ancestry or either growth gap. Record searched: backward/inverse/predecessor + decimation/four-step/parity-mask/pair-mask ->13 hits in6 files; GC912 and GC911 read. Predicted shared-parity support at B4 is lost at B8 beyond period 2. Countercontrol: the physical alternating source must absorb instead. Independent one-hot q8 substitutions below; unexpected check proves both parity parts nonzero, rather than assuming a surviving term cannot cancel. No computation, census, solver or source-frequency claim.
+
+Let q be even, with all words cyclic at cap q, and let a be supported on one parity. S is the one-tick shift, addition is XOR, products are pointwise AND. Set
+
+    d = a + S^2 a,    h = a OR S^2 a,    r = a * (1 + S^2 a).
+
+GC912 gives B^4(a,0)=(d,a). Since d is supported inside h, and Sa lies on the opposite parity, four further applications of B(x,y)=(Sy+(x OR y),x) give
+
+    B^5 = (h + Sa, d),
+    B^6 = (h + S^3 a, h + Sa),
+    B^7 = (r, h + S^3 a),
+    B^8 = (h + S^4 a + Sr, r).
+
+For B5, d OR a=h. For B6, (h+Sa) OR d=h+Sa, and Sd=Sa+S^3a. For B7, the union is h+(Sa OR S^3a)=h+Sh, while the shifted second profile is Sh+S^2a. Their XOR is h+S^2a=r. For B8, r is contained in h, so the union is h+S^3a. Its XOR with Sh+S^4a has opposite-parity part Sh+S^3a=S(a*(1+S^2a))=Sr, giving the formula. These are local substitutions in the full pair, not a source-only map.
+
+If a differs from S^2a, then r is nonzero: otherwise supp(a) is contained in supp(S^2a), and equal cyclic weights force equality. The even-side term h+S^4a (the parity supporting a, whether literally even or odd) is also nonzero. If it vanished, wt(h)=wt(a); since h contains both a and S^2a, again a=S^2a. Thus B8's first profile has both parities whenever a is not period-2 invariant. The second profile is nonzero and remains on a's parity. The condition that BOTH profiles lie on that parity is therefore not invariant under four backward steps: it holds at B4 and fails at B8. If a=S^2a, then r=0 and h=S^4a=a, so B8=(0,0). This also covers a=0; no nonzero higher-period source absorbs within these eight steps. Later absorption is unresolved by this calculation.
+
+**Independent literal controls.** Define S to send support j to j-1 modulo q. For q8 and a supported at {0}, the eight pairs, after the initial ({0},empty), are
+
+    ({0},{0}), ({0,7},{0}), ({0},{0,7}), ({0,6},{0}),
+    ({0,6,7},{0,6}), ({0,5,6},{0,6,7}),
+    ({0},{0,5,6}), ({0,4,6,7},{0}).
+
+Each follows directly by shifting the second set and taking the symmetric difference with the two sets' union. It checks the formula without Boolean expansion. For q4 and a={0,2}, GC912 ends at (empty,a); the next four pairs are (all,empty), (all,all), (empty,all), (empty,empty). This is the known physical period-2 source, so it refutes any claim that losing the intermediate mask itself forbids physical ancestry.
+
+**Disposition.** The B4 shared-parity pair does not give a closed four-step decimation dynamics. Both the single-profile shortcut (GC912) and this pair-mask shortcut are closed; actual physical one-parity source exclusion remains OPEN. The algebra introduces the directed decimated boundary r, but no monotone quantity or persistent charge follows. Do not extend this local expansion into an unregistered long trajectory search. Next change to a concrete incoming proof audit or a different open Q7 constraint. Duplicate gate W281 passes; nearest W280, G201 and W273 were read in preceding blocks and supply different response, sibling and component results. Scratch deferred, room closed.
+
+
+#### GC914 — The ambient mixed-source minimum is q/4+1 at every dyadic q>=8 (2026-10-10 01:26 BST; W281 continuation)
+
+**Hand construction, second reading pending.** Bears on Q7: calibrates the strict one-profile bound, without a physical stage estimate. Record searched: G201/half-shift/antiperiod + converse/minimum/q/4+1 ->11 hits in5 files; G201, GC904, GC909/GC911 and CL132 read. Predict CL132's measured mixed-source minimum extends to every dyadic q>=8. Independent q8 literal control below; countercontrol admissible integration does not imply physical ancestry (G199's source17). Unexpected check uses half-block flux to prove the source's least period, not merely its cap period. No run, scan or external theorem is used; this is a converse construction from the recorded child equation.
+
+**A general realization guard.** Put m=q/2 and T=S^m. Suppose a binary f has f*Tf=0, no cyclic11, and D=f+Tf has no cyclic00. Define the driver at each tick by
+
+    e(t) = 1+f(t+1) if f(t)=0;   e(t) = f(t+m+1) if f(t)=1.
+
+Then Sf=(1+e)(1+f): at a white tick this is the defining formula, and at a black tick both sides vanish because f has no11. Also Te=1+e. If D(t)=1, exactly one of f(t),Tf(t) is black; the two case formulas at those ticks sum to1. If D(t)=0, both are white, and e(t)+Te(t)=Sf(t)+STf(t)=D(t+1)=1. Thus e is antiperiodic and nonzero. Define c=1+Se and a=c+Sc. Then Tc=1+c, Ta=a, and (a,0,c,1,e,f) is an admissible integration prefix. In particular a's weight on any m-block is odd: XOR over that block of c(t)+c(t+1) telescopes to c(t)+c(t+m)=1. Since m is a power of2, any smaller least period would repeat an even number of times in that block and give even parity. Therefore a has least period m. This guard realizes a child; it does not certify a's physical ancestry.
+
+**Explicit near-sharp family.** Index ticks 0..q-1 in increasing time. Set f black at every even tick in 0..m-1, and at the single tick m+1, and white elsewhere. For q>=8, m>=4 is even. The first half ends in a white tick; the second half has an isolated black tick at m+1; the cyclic join also has no11. Its half-shift is disjoint from it. D is the alternating even-parity indicator with two extra black ticks at1 and m+1, so it has no00. The guard therefore realizes a genuine odd doubling entry, with
+
+    wt(f) = m/2+1 = q/4+1.
+
+GC911's reviewed equivalence implies the source a is mixed-parity: a one-parity source would instead force wt(f)=q/4. Conversely every mixed-parity odd source has weight strictly greater than q/4 by GC909/GC911, hence at least q/4+1 by integrality. The construction attains it at every dyadic q>=8. Both integration choices have the same weight, since their entry children are half-shifts. This turns CL132's finite ambient minimum into a hand all-period statement. It makes no claim about the minimum over physical sources.
+
+**Independent q8 literal check.** In increasing time order the construction gives
+
+    f=10100100, e=10010110, c=11010010, a=01110111.
+
+Directly shift each string one tick left cyclically to check Sc=a+c, Se=1+c and Sf=(1+e)(1+f). Also Te=1+e, and a repeats the odd-weight block0111. Its entry child has weight3, equal to8/4+1. The source is the known physical source119 from GC907/CL132, so this smallest control is physical; that does not promote the whole constructed family. In contrast, G199's cap8 source17 gives valid odd integration and sharp weight2 but is nonphysical, refuting the general admissibility-to-ancestry inference.
+
+**Disposition.** Merely excluding one-parity sources cannot strengthen the ambient weight bound beyond q/4+1; a larger physical bound must use an additional ancestry restriction. This is a calibration of a possible argument, not a claim that one-bit improvement is useless or that it bounds a whole stage. No persistent charge or growth inference follows. Next ask for the realization guard and period-flux check to be second-read, then choose a physical-history constraint or a concrete audit rather than resuming mask expansions. Scratch deferred, room closed.
+
+**GC914 filing check.** W281 duplicate gate passes; nearest W280, G201 and W273 supply response, sibling and component mechanisms rather than this realization family. G201 was reread in full this block. Draft future time labels were corrected before publication to the verified clock at 01:26 BST; the claim and predictions were written before the hand derivation. No computational experiment or formal promotion.
+
+
+#### GC915 — Physical sharp-entry witness independently verified; exclusion REFUTED (2026-10-10 01:30 BST; W281 continuation)
+
+**Fixed-witness computational audit of Cloud CL134 at 2b55b6cb.** Bears on Q7: closes the proposed universal physical one-parity-source exclusion. Record searched: one-parity/1010100010100000 + physical/87867 ->30 hits in6 files. Read SE's full source/header, CL134 and GC911. Predictions and countercontrols were registered before execution in rule30_gpt_sharp_witness_audit.py, which imports neither SE nor ZF. The initially intended study of GC914's source family was deferred for this priority counterexample.
+
+The time-order source a=1010100010100000 has weight 5, least period 16, and all odd ticks white. An independently written literal-cell B recurrence reaches (0,0) from (a,0) in exactly 87867 steps. The repeated cap 32 lift reaches it at the identical step. Both integrations and the following prefix give entry children of weight 8=32/4; every local child equation was independently tested. Controls: physical q 4 source1010 absorbs at 8; nonphysical q 8 source10001000 instead enters a backward cycle with transient 29 and cycle 28. All checks PASS. The identified unexpected cap-lift check preserves absorption depth exactly. No ZF tree, SE randomness, census, branch count or TM6b parse was replayed.
+
+Thus a physical odd source of least period 16 is one-parity, and its doubled entry is sharp. GC911's possible universal exclusion for least period >=4 is REFUTED. Its equivalence and GC909's equality characterization remain valid; only the proposed physical exclusion fails. GC913's mask-closure failures also remain valid. Proposition8/CL134 identify this exact witness as the single cell's own minimum-N5 history; that attribution is credited to the existing certificate, while the independent calculation verifies its physical absorption and entry weight. Cloud's rarity counts (one of sixteen period 32 entries, none of 56 recorded period64 exits) remain Cloud-only evidence, not a GPT census.
+
+**Review receipt.** CL134 separately verifies GC913's B5..B8 identities, containment/nonvanishing and literal control by hand, then replays small caps and samples cap 32. Accepted as the second reading of the hand shortcut; no quantitative ancestry result follows. Its new physical witness is the separately replicated counterexample above.
+
+**Disposition.** Board note corrected to REFUTED and failure retained in the master. Do not reopen universal parity exclusion without an explicitly narrower new hypothesis. Sharp mass can occur on the target history, so any eventual ancestry-based inequality must allow exceptions or use another quantity. Next examine a different physical-history constraint or a concrete review, not a further parity-mask expansion. No prize claim; scratch deferred, room closed.
+
+
+**GC914 second-reading receipt and scope guard (GC915 follow-up).** Cloud CL135 checks the realization guard, antiperiodicity, admissible prefix, half-block flux and explicit family by hand; accepted. It independently replays q=8,16,32,64, giving weights 3,5,9,17. These are Cloud's controls, not GPT runs. Its ancestry comparison excludes the constructed source at source periods 8 and 16 (entry periods 16 and 32), using the complete ZF trees. That finite comparison does not establish nonphysicality at every larger period: CL135's wording “physical only at q=8”/“beyond q=8” must be scoped to the compared members unless a further argument is supplied. The all-dyadic ambient minimum proof is unaffected.
+
+
+#### GC916 — Exact three-state language for all antiperiodic entry children (2026-10-10 01:35 BST; W281 continuation)
+
+**Hand converse audit; second reading pending.** Bears on Q7: identifies an ambient compression without an ancestry filter. Record searched: antiperiod/half-shift/G201 + bijection/three-state/converse/realization ->15 hits in3 files; reviewed G201 necessity and GC914/CL135 realization guard. No run or census. The independent control is a cap4 literal word; countercontrol uses the wrong ordinary closing edge; the unexpected check counts the full language against the antiperiodic driver domain.
+
+Fix dyadic q>=4, m=q/2 and T=S^m. A word f is the child of (1,e) for some Te=1+e if and only if all three conditions hold:
+
+    f has no cyclic11;   f*Tf=0;   D=f+Tf has no cyclic00.
+
+Necessity: Sf=(1+e)(1+f) forbids11. Tf is the complementary-driver sibling by equivariance and uniqueness, so G201 gives disjoint support and the no00 union. Sufficiency is precisely GC914's reviewed realization guard. The driver is unique: at f(t)=0, e(t)=1+f(t+1); at f(t)=1, Tf(t)=0 and the half-shifted white-tick equation plus antiperiodicity gives e(t)=f(t+m+1). Thus admissible f words biject with the 2^m antiperiodic driver words. This is an exact finite alphabet statement, not a claim of physical occurrence or a new growth mechanism.
+
+Write s_t=(f(t),f(t+m)) for t=0..m-1, with three possible states A=00, B=10, C=01. The three conditions above are exactly that adjacent states differ. An A->A edge violates the union's no00 condition; B->B violates f's no11; C->C violates Tf's no11. Every other edge satisfies these local tests. The closing edge is from s_(m-1) to P(s_0), where P fixes A and swaps B,C, because shifting m ticks exchanges the two coordinates. It is NOT an ordinary cyclic closing edge to s_0. The conditions at the second half's join are the coordinate swap of this same test.
+
+**Unexpected exact count.** Let M be the three-by-three matrix with zero diagonal and ones off the diagonal, and P its swap permutation. The number of half-word sequences with this closing condition is tr(M^m P). On the constant-vector subspace M has eigenvalue2 and P acts as1. On the two-dimensional zero-sum subspace M acts as-1, while P has trace tr(P)-1=0 there (the full permutation trace is1). Consequently
+
+    tr(M^m P) = 2^m.
+
+This agrees with the driver bijection. Ordinary cyclic closure instead gives tr(M^m)=2^m+2*(-1)^m, hence 2^m+2 for the present even m. Agreement of the correct count does not select the physical subset: every ambient antiperiodic driver is already included.
+
+**Independent literal cap4 control and falsifiable wrong-boundary check.** At m=2 the allowed half-words are AB, AC, BA, CA. Their f words are respectively0100,0001,1000,0010. For AB, f=0100 and the guard gives e=0011. Directly, Sf=1000=(1+e)(1+f), and Te=1100=1+e. All four words are the known weight1 sharp entries, matching 2^2 drivers. Ordinary closure also admits BC, which gives f=1001 and has cyclic11 across the actual temporal join; it cannot satisfy the child equation. Thus the boundary guard can genuinely fail and is not a bookkeeping preference.
+
+**Disposition.** The three-state representation is an exact converse of the one-profile sibling conditions. It may be a useful encoding, but those conditions alone cannot add a physical-source obstruction: they already realize all ambient antiperiodic drivers. G199 supplies nonphysical integrations and GC915 a physical sharp integration inside that domain. No claim that encoding is useless for future coupled constraints, no new entropy estimate, and no stage-length inference. Next require an explicit ancestry or within-history condition before treating this compression as a prize route. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks, with G201 reread for GC914. Scratch deferred, room closed.
+
+**Control correction before publication.** The draft swapped e and Te in the cap4 example. Literal substitution rejects e=1100 (its right side is0011, not Sf=1000); e=0011 gives the stated equation. This was a hand transcription failure, corrected before filing; no computational experiment was run.
+
+
+#### GC917 — Sharp entry sparsity is followed by exact next-profile density (2026-10-10 01:40 BST; W281 continuation)
+
+**Hand actual-recurrence lemma; second reading pending.** Bears on Q7: two adjacent profiles, not a stage budget. Record searched: G201/sharp/q/4/one-parity + next-profile/next-child/3q/4/compensation ->12 hits in8 files. GC909's reviewed equality identity and G201's next-child equation read. No run or census. Independent physical q 4 literal control; countercontrol later siblings staying disjoint; unexpected exact intersection of those next siblings. W281 duplicate gate passes; nearest W280/G201/W273 were read in preceding blocks.
+
+At a genuine sharp doubling entry of dyadic q>=4, let f be the child of (1,e), with wt(f)=q/4. Put T=S^(q/2) and D=f+Tf. GC909 gives alternating D, f supported on D, and e=1+f+Sf. The next actual profile g is the unique child of (e,f). Then
+
+    g = f + SD.
+
+Indeed f and SD have disjoint support, so f is contained in g and f OR g=g. Hence
+
+    e+(f OR g) = 1+f+Sf+f+SD = Sf+D = Sg,
+
+using 1+SD=D and S^2D=D. The driver f is nonzero, so reset uniqueness identifies this compatible candidate as the actual child. Consequently
+
+    wt(g)=3q/4,    wt(f)+wt(g)=q,    f*g=f.
+
+Also g has no00: it is black on every tick of the parity opposite f. Its least period is q. Otherwise f=g+SD would have a proper period dividing q (or period2 if g were constant), contradicting GC904's primitive entry f. This is a within-history consequence and therefore applies to GC915's physical sharp period 32 entry as well as ambient sharp entries; no new physical trajectory was run.
+
+**Unexpected sibling overlap.** Since q/2 is even, T fixes SD. The complementary branch's next profile is Tg=Tf+SD. Thus
+
+    g*Tg=SD,    g OR Tg=1.
+
+Their intersection has weight q/2, exactly the parity that was empty in both entry siblings. This refines G201's failure of persistent disjointness in the sharp class, rather than trying to reinstate that false property.
+
+**Independent physical q 4 control.** In increasing time order take the known prefix driver e=1100 and f=0001. Then D=0101, SD=1010 and g=1011. Direct substitution gives Sg=0111=e+(f OR g). The other branch has Te=0011, Tf=0100 and Tg=1110; its equation gives S(Tg)=1101=Te+(Tf OR Tg). Intersection 1010 and union 1111 refute the disjointness countercontrol exactly. The weights are 1 and 3 on each selected branch, summing to 4.
+
+**Scope.** Low entry weight does not persist even one additional profile in this equality class. However f is contained in g, so the two-profile mass includes repeated black ticks; it is not a cancellation-resistant charge or a conservation law over a stage. No bound on later profiles, return lengths, exception frequency or normalized growth follows. Keep the universal source exclusion REFUTED. Next seek a condition that survives along a selected history or review a concrete incoming proof; scratch deferred, room closed.
+
+
+**GC916 second-reading receipt (2026-10-10 01:41 BST).** Cloud CL136 verifies the converse, unique driver, swapped closing edge, trace count and corrected cap4 control by hand. Accepted; its independent replay through q32 remains Cloud's evidence. Its additional upper-bound argument also checks: weight(f)=q/2 would require D=1, leaving only B/C states alternating over even m. Then s_(m-1)=P(s_0), violating the closing edge. Thus wt(f)<=q/2-1 for every such entry. Attainment at q4/8/16/32 is Cloud's finite replay, not an all-period maximum proof or a physical count. No stage estimate follows.
