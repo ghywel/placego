@@ -12,6 +12,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMA
             python3 tests/probes/lexicon/rule30_cloud_train_block.py packet
             python3 tests/probes/lexicon/rule30_cloud_train_block.py arming                   (needs kissat, ~1 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py cut45                    (needs kissat, ~3 min)
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py separator                (needs kissat, ~1 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -105,6 +106,14 @@ alone force only sites 1 .. 8 at t = 30; the exit's forced packet pins the rest.
 by 1, five strip cells (16, 20, 21, 22, 24) stay free and the propagation reaches states beginning 100 (final 1
 possible), as 1 + 00010001010000 T^10 v is IN. The cut needs the leading 0 exactly: every proper suffix of the entry
 gives IN.
+
+MODE separator, OUTCOME (2026-10-10 16:05 BST; GC1029's backward separator reviewed, CL199). Rows at offset 7 after the
+failed gate are 0110000 and 0110001; only 0110000 can reach the three final-one states at offset 22; backward set
+sizes 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 3, 3, 3, 3 at offsets 7 .. 22 (GPT's figures). For the length-45 cut
+(gate failed at 62) the separator x_7(69) = 0 is realized, indeed forced, so it does not cut. The cut bites at t = 76:
+the leading-0 history's row at 75 is 1001000 and x_8(75) is forced 1, so the row at 76 is 0111101, outside the
+backward set {0111010, 0111100, 0111111}; the pinned strip's free-exterior propagation forces x_8(75) = 1 too. With
+the leading 1, x_8(75) can be 0 or 1 and the final 1 is realizable either way.
 
 MODE arming, OUTCOME (2026-10-10 15:45 BST; review of GC1028 and data for CL197). The exit target is exactly GPT's 39
 nine-bit words (01101????, 01110????, 0111100??, 0111111ab with ab != 00), all beginning 011. A' has 34 states and
@@ -449,6 +458,52 @@ def cut45():
         S = propagate(starts, 30, 84)
         print('  propagation of the forced strip (free site 25 every tick, no samples used): %s states at t = 84, '
               'forced sites 1..8 = %s' % (len(S) if S else '>cap', forced(S, 8) if S else '-'))
+
+
+def separator():
+    """GC1029's backward separator (CL199): from the failed gate 1001101, which seven-cell rows at each offset can still
+    reach the three final-one states at offset 22; where the leading-0 history leaves that set; the single cell that
+    decides it."""
+    import itertools
+    def step_bits(bits, wall, ext):
+        r = [wall] + bits + [ext]
+        return [r[i - 1] ^ (r[i] | r[i + 1]) for i in range(1, len(bits) + 1)]
+    three = {tuple(int(c) for c in w) for w in ('1000110', '1001100', '1001101')}
+    S = {tuple(int(c) for c in '1001101')}
+    layers = [S]
+    for t in range(22):
+        S = {tuple(step_bits(list(x), t % 2, e)) for x in S for e in (0, 1)}
+        layers.append(S)
+    def can_reach(row, k):
+        T = {row}
+        for t in range(k, 22):
+            T = {tuple(step_bits(list(x), t % 2, e)) for x in T for e in (0, 1)}
+        return bool(T & three)
+    B = {k: {r for r in layers[k] if can_reach(r, k)} for k in range(23)}
+    print('rows at offset 7:', sorted(''.join(map(str, r)) for r in layers[7]),
+          '| able to reach the three:', sorted(''.join(map(str, r)) for r in B[7]))
+    print('backward set sizes, offsets 7 .. 22:', [len(B[k]) for k in range(7, 23)])
+    strip = tuple(int(c) for c in '100110011001100000000010')
+    T = {strip}
+    for t in range(30, 62):
+        T = {tuple(step_bits(list(x), t % 2, e)) for x in T for e in (0, 1)}
+    first = None
+    for t in range(62, 85):
+        if not {x[:7] for x in T} & B[t - 62] and first is None:
+            first = t
+        if t == 75:
+            print('pinned strip propagated to t = 75: site 8 forced to',
+                  ''.join(sorted({str(x[7]) for x in T})))
+        if t < 84:
+            T = {tuple(step_bits(list(x), t % 2, e)) for x in T for e in (0, 1)}
+    print('first tick at which the propagated rows all leave the backward set:', first)
+    for lead in ('0', '1'):
+        w = lead + '00010001010000' + '10' * 10 + '001000010'
+        vals = [str(b) for b in (0, 1) if _cone_sat(w, [(75, 8, b)], 92)]
+        rows = [''.join(map(str, x)) for x in itertools.product((0, 1), repeat=7)
+                if _cone_sat(w, [(76, i + 1, b) for i, b in enumerate(x)], 92)]
+        print('leading %s: x_8(75) can be %s; rows at t = 76: %s; in the backward set: %s'
+              % (lead, '/'.join(vals), ' '.join(rows), [r for r in rows if tuple(int(c) for c in r) in B[14]] or 'none'))
 
 
 if __name__ == '__main__':
