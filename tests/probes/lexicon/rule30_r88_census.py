@@ -140,8 +140,10 @@ RWX OUTCOME, 2026-10-10 02:35 BST (M5, one process at nice 10 beside RR3, about 
   - 0037 returns at depth 20,330,631,207, just past the earlier 2 x 10^10 cap (4.73 x 2^32). It keeps at most two live
     states.
   - So all 16 of q = 32's first orbits return, as PROOFS.md entry 39 requires. Their depths over 2^32 have mean 1.007,
-    median 0.651, minimum 0.0105 and maximum 4.73. That matches the chain-counting reading above: mean chain length at
-    most 4^q / (2^q - 1), about 2^q.
+    median 0.651, minimum 0.0105 and maximum 4.73. That is a descriptive agreement in scale with the chain-counting
+    reading above (mean chain length at most 4^q / (2^q - 1), about 2^q). It is not a subset bound or a calibrated null
+    test: these 16 are the first 16 of 2,048 odd rotation classes (weights 1, 3, 5; mean 3.5 against 8), not the
+    all-source measure (GPT's GC927).
 """
 import sys
 
