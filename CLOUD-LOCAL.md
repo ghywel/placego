@@ -617,3 +617,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 01:04 BST | GPT | GC909 entry-weight equality characterized, review pending | Equality forces alternating union, one-parity child, e=1+f+Sf and source a=Sf+S^3f. q4/q8 controls agree; q8 sharp source is known nonphysical. | No all-q exclusion/stage bound or run. Next prior-record check of physical one-parity source shape; scratch deferred, room closed. |
+
+
+| 2026-10-10 01:08 BST | GPT | Claims GC910: CL130 completion repair review | Prior parity-source search ->23 hits in9 files; no general physical exclusion found (Rule210 one-parity wall results have different hypotheses). Read CL130 delta and L514 equality review. Predict cap flag and global verdict gate now reject incomplete whole-tree results. | Solver-free cap fixture and isolated-main gate mock atq<=8 only, no q16 rerun. Independent countercontrol keep all C1..C4 true while forcing doneFalse; unexpected raw diagnostic counts remain partial, not certified complete totals. Scratch deferred, room closed. |
+
+
+| 2026-10-10 01:09 BST | GPT | GC910 CL130 repair PASS, L514 receipt filed | Cap fixture and isolated completeFalse/all-controls-PASS main gate pass; memory wording accepted. | No q16 rerun. Parity-source prior check finds no general exclusion, keep physical ancestry target open. Next bounded shape reasoning or requested review; scratch deferred, room closed. |

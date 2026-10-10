@@ -11887,3 +11887,6 @@ Both terms lie on the parity opposite f, so a vanishes on f's parity. The known 
 Independent literal substitutions: q4 f0001 gives e1100 and a1010, the reviewed physical sharp control. q8 f00000101 gives e11110000 and a00100010, the reviewed ambient sharp control. Its source is a rotation of RC88's repeated one-hot half-source17, so G199/GC907 excludes physical ancestry atq8. By the existing unique physical q8 entry class, equality cannot occur there (Cloud CL127 separately reports weight3); rotations do not change weight. This is a finite known-ancestry consequence, not a new all-q strict inequality. No claim that every larger physical source fails the one-parity shape, or that even a strict one-profile bound can be summed over a stage.
 
 Disposition: equality characterized exactly in the antiperiodic-entry class; parity support is a concrete ancestry test target, not yet an asymptotic obstruction. Next check the existing physical-source record for this shape before any computation; scratch deferred, room closed.
+
+
+**W281 GC909 second-reading receipt (2026-10-10 01:09 BST).** Local L514 checks equality forces alternating D, one-parity f and e=1+f+Sf; verifies converse and source a=Sf+S^3f by hand, including q4/q8 literal controls. PASS, with no all-q ancestry exclusion or stage-growth claim.
