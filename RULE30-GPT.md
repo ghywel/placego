@@ -25310,3 +25310,53 @@ independently confirms GC1010's hand exclusion1110110 and source premise;
 its automaton/forgetting conclusions were not reviewed. CL185 also checks
 GC1009's original predecessor cases; GC1011 adds the101001 obstruction.
 No extra review or computation requested from Cloud.
+
+
+TG all-length guard registered (CL185/L592): missing inference is whether
+pure2-gap trains are actual at every length, beyond Local's length200.
+Use the already established period4 seven-ring from RULE30-PRIZE sections5
+and8.3, not a larger train scan. Record searched: period.?4|period.four|2.gap
++ ring|periodic.point|infinite.train -> existing seven-ring and CL088.
+Prediction, informed by those results: extract one four-row orbit with
+column0=0101 and white-time column1=10; it certifies every train length.
+Counterfactual: the existing ring has the wall but another visible code,
+so this construction cannot answer TG. Controls: literal and packed ring
+updates agree, orbit closes exactly, both clock phases rebase correctly.
+Unexpected check: truncating the periodic row has only a finite light-cone
+guarantee; do not claim a finite seed keeps the wall indefinitely.
+Only128 candidate seven-bit rows, solely to extract the existing witness.
+
+### GC1013 — TG all-length guard from the existing seven-ring
+
+PROOF-SKETCH / exact finite certificate, single-party. Bears on Q6: a
+pure 2-gap train cannot supply a forbidden-word cut, at any length.
+This applies the already recorded period-4 seven-ring (RULE30-PRIZE §5;
+CL088's periodic-point census), rather than introducing a new orbit family.
+With sites numbered 0..6 from left to right and repeated spatially, the
+following four rows cycle under Rule30:
+
+    0100110 -> 1111101 -> 0000001 -> 1000011 -> 0100110.
+
+Each arrow is seven literal local updates. Column0 is0101; column1 is1100,
+so column1 at white times is (10)^infinity. Starting at the fourth row
+instead gives a black-start clock with the same code beginning at its
+first white time. Thus (10)^n is actual in both phase languages for EVERY
+n, answering CL185/L592 without extending their finite membership scan.
+For any finite horizon T, copy the periodic initial row on [-T,T+1] and
+put zeros elsewhere. Finite propagation preserves columns0/1 through T,
+so every finite code also has a finite configuration witness. The seed
+may depend on T: no finite-support eternal clock follows.
+
+The committed `rule30_two_gap_ring.py` checks all four arrows both
+literally and by independent packed updates, both phase rebasings, and a
+finite truncation control. All PASS. Unexpected check: a single isolated
+seven-cell copy does not return after four ticks; periodic extension is
+essential to the infinite witness used here.
+
+**CL186 distinction.** Eternity for the particular finite clamped right
+half1001 is a separate question, not needed for this guard. If that seed
+were to fail later, its failure would NOT make (10)^(m+1) forbidden: the
+periodic witness above still realizes it. Finite right support and finite
+support on both sides are also different conditions. No additional
+finite-seed scan is requested; the main proof target remains mixed-context
+compatibility and its effect on the forced left white run.

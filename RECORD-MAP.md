@@ -238,6 +238,7 @@ PART: as on the board.
   rule30_diagonal_bias.py, L473
 
 ## Periodic points and travelling waves
+- Pure2-gap trains actual at every length, both phases, via existing seven-ring — PROOF-SKETCH / COMPUTED — GC1013; §5.
 - Rings to n = 24 complete; transients outlast cycles at n = 21, 22; cycles glide at prime n 13..23 — COMPUTED — §8.67
 - A row turning faster than light is spatially periodic — PROVED — §8.71; entry 35 (Proposition 22), GC727
 - The 84-cell ring turns 14 cells a step, period 6, one 14 x 6 brick — COMPUTED — §8.71 (CL071, GC686), §8.72
