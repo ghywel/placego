@@ -9,6 +9,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMA
             python3 tests/probes/lexicon/rule30_cloud_train_block.py memory [LEAD=4] [NMAX=16]   (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py follower [N=13]            (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py carrier                  (needs kissat)
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py packet
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -85,6 +86,12 @@ q's first two symbols lifts that obstruction (q[2:] T^12 0 IN, q[2:] T^12 v[:9] 
 (a 47-symbol minimal forbidden word); with three symbols dropped all is IN. Unconditioned synchronization: from all
 states of sites 7 .. 6+w, gate each cycle, free exterior, the reachable set stabilizes at 20 (w = 5, from cycle 1),
 52 (w = 7, from 3), 105 (w = 9, from 5), 269 (w = 11, from 8).
+
+MODE packet, OUTCOME (2026-10-10 15:30 BST; review of W283). Seven cells 1001101 with site 8 free give exactly the
+claimed 23-tick column 1 and white trace 101000100001 (exit 4, 5): CONFIRMED. Six cells with site 7 free leave
+column 1 undetermined from tick 8. The CL193 model has the slab 1001100 at t = 62 .. 70, the failed gate 1001101
+at t = 74 and 1011010 at t = 78 (the last car): CL194's gated propagation to the last car was unsound; revised in
+CL195 to a strip propagation from the interior time 62 with the visible word imposed.
 """
 import os, sys, time
 
@@ -267,11 +274,42 @@ def carrier():
               % (w, 6 + w, sizes))
 
 
+def packet():
+    """W283 / GC1026 (GPT): from sites 1 .. 7 = 1001101 beside the white-start clock, with site 8 free at every tick,
+    column 1 is forced for 22 ticks (the exit packet 4, 5). Pure Python, union over the free input; also the six-cell
+    countercontrol (site 7 free) and the CL193 model's slab at the last cars."""
+    def step_bits(bits, wall, ext):
+        r = [wall] + bits + [ext]
+        return [r[i - 1] ^ (r[i] | r[i + 1]) for i in range(1, len(bits) + 1)]
+    def trace(start, ticks):
+        S, out = {tuple(int(c) for c in start)}, []
+        for t in range(ticks + 1):
+            firsts = {x[0] for x in S}
+            out.append('?' if len(firsts) > 1 else str(firsts.pop()))
+            S = {tuple(step_bits(list(x), t % 2, e)) for x in S for e in (0, 1)}
+        return ''.join(out)
+    tr = trace('1001101', 22)
+    print('seven cells 1001101, site 8 free: column 1 =', tr, '| white trace', tr[::2],
+          '| as claimed:', tr == '11001100010011010001001')
+    tr6 = trace('100110', 22)
+    print('six cells 100110, site 7 free: column 1 =', tr6, '| first undetermined tick', tr6.find('?'))
+    rh = ('0111111001110101001100011000110010010111101100100110100010100111101110001010011011101000000000000'
+          '0000')
+    w = '000010001010000' + '10' * 13 + '0010000101'
+    T = 2 * len(w) - 2
+    row = [0] + [int(c) for c in rh] + [0] * (T + 4)
+    for t in range(T + 1):
+        row[0] = t % 2
+        if t in (62, 70, 74, 78, 82):
+            print('CL193 model, t = %2d: sites 1 .. 7 = %s' % (t, ''.join(map(str, row[1:8]))))
+        row = [row[0]] + [row[i - 1] ^ (row[i] | row[i + 1]) for i in range(1, len(row) - 1)] + [0]
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
     {'member': lambda: member(*(a or [200])), 'seeds': lambda: seeds(*(a or [12, 400])),
      'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40])),
      'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16])),
-     'follower': lambda: follower(*(a or [13])), 'carrier': carrier}[cmd]()
+     'follower': lambda: follower(*(a or [13])), 'carrier': carrier, 'packet': packet}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
