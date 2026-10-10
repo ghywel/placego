@@ -27,7 +27,8 @@ d = 98 .. 114 (RECORD-MAP.md, "Records R(d) and R_real(d)"; RR3 checkpoints).
 Record searched: `record_find.py R_real defin|longest` -> 6 hits (RR, ZR2, GC549); `record_find.py RR2 R_real|records`
 -> 21 hits (RR2's outcome, GC764's capped-maximum scope, RR3); `record_find.py kick game` -> §8.44.
 
-PREDICTIONS for mode trend, written 2026-10-10 07:59 BST before its first run (exploratory: the data were in the record):
+PREDICTIONS for mode trend, written 2026-10-10 07:59 BST before its first run (exploratory: the data were in the
+record):
   TR-T1: the least-squares slope of R_real on d over d = 30 .. 114 is positive, between 0.04 and 0.10 per depth (the
          coin law with entropy <= 0.1236 bits per visible bit predicts about 0.03 to 0.06).
   TR-T2: block means over 20-depth blocks increase monotonically.
@@ -43,7 +44,8 @@ OUTCOME of mode trend, 2026-10-10 07:59 BST (Cloud's cloud container; instant):
   visible bit (§8.38), and 0.826 x (0.08 .. 0.1236) = 0.066 .. 0.102 for the real column 1.
 
 PREDICTIONS for modes control and deep, written 2026-10-10 08:05 BST before either ran. One timing test ran first,
-about 08:01 to 08:04, outside this script (pysat CaDiCaL: d = 40 SAT at 9 and UNSAT at 10 in about a second each; d = 100 SAT at 15 in
+about 08:01 to 08:04, outside this script (pysat CaDiCaL: d = 40 SAT at 9 and UNSAT at 10 in about a second each; d =
+  100 SAT at 15 in
 160 s, every witness checked); the control repeats it inside the script.
   TR-C0 (control): d = 40 is SAT at L = 9 and UNSAT at L = 10 (RR2's R_real(40) = 9), and d = 100 is SAT at L = 15
         (RR3's R_real(100) = 15), every witness checked by simulation.
@@ -73,6 +75,17 @@ ADDENDUM 3, 2026-10-10 10:46 BST. GPT (reply to CL179's summary) asked that ever
   unbounded records would not exclude weighted or potential-based finite representations; the period-2 target is
   finiteness at every depth, for which a linear bound suffices. No DRAT proofs are kept here (four-hour kissat proofs
   are impractical in this container); an UNSAT is the solver's verdict, as in RR3, until VC3-style checking.
+OUTCOME of mode deep, 2026-10-10 14:30 BST (fourth start 10:47, kissat 4.0.4, four at once, 14,400 s caps, hard stop
+  at 14:30). d = 140, 148, 156, 164 at L = 18: all four CAPPED at 13,321 s (the stop), so UNKNOWN; no witness, no UNSAT.
+  Earlier starts: 168, 160, 152, 144 CAPPED at 3,600 s. TR-P4 and TR-P5 are UNDECIDED (a capped call refutes nothing);
+  TR-P6 is vacuous (no SAT call finished). No cap increases, as agreed with GPT (CL180, CL181). The exact L = 18
+  instance
+  at d >= 140 is beyond 3.7 h of kissat here, while RR3 decides d = 115, 116 at L = 15, 16 in about 4 h each; the depth
+  frontier now belongs to Local's CUT (relaxation plus learned cuts, L585 .. L591) and RR3. With RR3's R_real(115) = 14
+  and R_real(116) = 15 added, mode trend gives slope 0.0841 per depth over d = 30 .. 116 (rerun 14:50 BST; the range now follows the data). The
+  relaxed probes at these depths (L589, L591): 124 UNSAT at 18 in both phases; 140, 144, 152 phase 0 relaxed SAT, slack
+  possible (relax40 overshoots at 107 by 2, L583); 140 and 144 phase 1 capped. Local's lift at 152 found no witness
+  (its code is absent, cut length 81). So the record at 140 .. 164 is still open on both sides.
 """
 import os
 import sys
@@ -92,7 +105,7 @@ RR2 = """20:16 21:15 22:14 23:13 24:12 25:11 26:10 27:9 28:8 29:7 30:8 31:8 32:8
 41:8 42:9 43:9 44:8 45:9 46:11 47:10 48:11 49:11 50:10 51:9 52:11 53:10 54:10 55:11 56:12 57:11 58:10 59:10 60:9
 61:9 62:12 63:11 64:12 65:11 66:10 67:14 68:13 69:12 70:11 71:12 72:11 73:10 74:10 75:10 76:10 77:10 78:11 79:10
 80:10 81:12 82:11 83:14 84:13 85:12 86:13 87:16 88:15 89:14 90:13 91:12 92:12 93:16 94:17 95:16 96:15 97:14"""
-RR3 = [14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16, 15, 14, 15, 15, 14, 13]              # d = 98 .. 114
+RR3 = [14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16, 15, 14, 15, 15, 14, 13, 14, 15]      # d = 98 .. 116 (L588, 13:18)
 DEEP = [140, 148, 156, 164]           # third start: the bracket of the trend's crossing of 18, long caps (addendum 2)
 L_DEEP = 18
 
@@ -113,16 +126,17 @@ def slope(xs, ys):
 def trend():
     import random
     R = records()
-    ds = [d for d in sorted(R) if 30 <= d <= 114]
+    DMAX = max(R)                                   # 114 at the first run; 116 with L588's values
+    ds = [d for d in sorted(R) if 30 <= d <= DMAX]
     ys = [R[d] for d in ds]
     s = slope(ds, ys)
-    print('TR-T1 slope over d = 30 .. 114: %.4f per depth (%d depths)' % (s, len(ds)))
-    for lo, hi in [(30, 70), (70, 114)]:
+    print('TR-T1 slope over d = 30 .. %d: %.4f per depth (%d depths)' % (DMAX, s, len(ds)))
+    for lo, hi in [(30, 70), (70, DMAX)]:
         xs = [d for d in ds if lo <= d <= hi]
         print('  slope %d .. %d: %.4f' % (lo, hi, slope(xs, [R[d] for d in xs])))
     for lo in range(30, 115, 20):
         blk = [R[d] for d in ds if lo <= d < lo + 20]
-        print('TR-T2 block %d .. %d: mean %.2f, max %d' % (lo, min(lo + 19, 114), sum(blk) / len(blk), max(blk)))
+        print('TR-T2 block %d .. %d: mean %.2f, max %d' % (lo, min(lo + 19, DMAX), sum(blk) / len(blk), max(blk)))
     random.seed(1)
     sh = []
     for _ in range(2000):
