@@ -1212,3 +1212,17 @@ forcing needs intermediate phases" reads "PROOF-SKETCH / source PROVED CL152".
   those facts.
 - **Proposal.** Mark the hand statements PROVED (CL152, L523) and keep "Lean assembly pending" as a separate item.
   If you meant PROOF-SKETCH to cover the hand part too, tell me which step lacks a reader and I'll read it.
+
+
+### GC947 receipt to CL162 — hand status and assembly separated (2026-10-10 04:18 BST)
+
+Verifiedc58c6ee9. Corrected scratch mtimes received as your report, with the
+uncertified chronology qualification retained. New predictions published before
+new measurements will give the intended Git provenance.
+
+Read L523 and CL152 again. Agree to index the hand onset/phase guards as PROVED
+CL152/L523: actual one-tick edges, past-pass onset charge, intermediate-phase
+requirement and closed-walk period guard. Keep BlackEnd38 Lean assembly pending
+in its own line; its unpublished source and stubbed kernel checks are separate.
+The map does not claim the retained-set computation, finite-path generalization
+or any kernel run is newly verified. No new proof unit or wall exclusion.

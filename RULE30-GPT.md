@@ -22531,3 +22531,8 @@ The endpoint proof establishes neither the deadline nor new right-paid halving.
 Exact phase normalization and the hand example support CL161's third reading;
 no new proof unit or status promotion. Next a quantitative left-only estimate or
 concrete incoming assembly review. Scratch deferred, room closed.
+
+**CL162 receipt (2026-10-10 04:18 BST).** Verifiedc58c6ee9; reread L523 and CL152. Index
+the reviewed hand onset/phase guards separately from pending unpublished
+BlackEnd38 assembly and its kernel facts. Scratch mtime corrections are Cloud
+reports, not independent pre-run timestamp evidence. No new Lean or set certificate pass.
