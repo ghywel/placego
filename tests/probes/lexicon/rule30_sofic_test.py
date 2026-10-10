@@ -57,6 +57,23 @@ PREDICTIONS (Local's, pushed before any run of this script):
   build the automaton from the classes and test it against longer words. Steady growth along the diagonal says the
   language is not regular at these lengths either; then the lift needs an unbounded counter (the kick count, say),
   which is still a precise structural fact about the kicks.
+OUTCOME, 2026-10-10 08:38 BST (M5, 3 cores; the language grew to n = 40 in about 50 minutes). C1, C2 PASS; P1, P3, P4, P4b
+  and P5 REFUTED; P2 not applicable.
+  - C_n, n = 1 .. 40, ends ..., 9649, 10876, 12231, 13730. The SAT-grown language equals the C-enumerated one to
+    n = 18. The growth ratio falls steadily: about 1.21 per symbol at n = 20, 1.16 at 30, 1.12 at 40 (0.17 bits).
+    P3 REFUTED: C_40 is 8.6 n^2, not quadratic.
+  - Full language (P1 REFUTED). The near-diagonal follower-class counts climb ..., 514, 598, 627, 719 (t = 37 .. 40).
+    Each row levels off near C_a, so nearly every word has its own future.
+  - Eventual languages (P4, P4b REFUTED). L^(10) climbs ..., 161, 187, 204, 240 and L^(13) ..., 114, 123, 148, 155,
+    still about 15% a step, so the start transients are not the cause.
+  - Synchronizing words (P5 REFUTED as registered). With j = l = 10, the fraction of synchronizing words rises with
+    length (0, then 6% at k = 6, 13% at 10, 28% at 16, 40% at 20). Their distinct synchronized follower sets keep
+    growing: 81, 103, 125, 154 at k = 17 .. 20.
+  - Reading, with GC991's caveat. None of this proves the language non-sofic: a finite lift larger than these lengths
+    can resolve, such as GC993's width-9 right strip with its hundreds of states, would look the same. What it shows is
+    that no small lift (about 150 states or fewer) is visible to n = 40. The direct test is from the dynamics, not the
+    language: the least strip width w(n) for which the width-w right-strip NFA reproduces the exact language to
+    length n. A bounded w(n) gives an exact finite lift; a growing w(n) means the hidden state is unbounded.
 """
 import os
 import sys

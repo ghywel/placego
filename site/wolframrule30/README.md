@@ -12,18 +12,18 @@ Stephen Wolfram, so it is written for a reader with no background, and every cla
 | `vitruvian.html` | Vitruvian Rule 30: pyramid, square, prize column, wheel, clocks, wall run. |
 | `heartbeat.html` | Frontier Heartbeat: a starting frame and four labelled acts on a repeating centre's cost. |
 | `necklace.html` | The All-S Necklace: GPT's 84-cell ring that keeps the clock for ever. |
-| `sieve.html` | The Edge-Event Sieve: the forced left side, interactive, with the counterexample wedge. |
+| `sieve.html` | A forwarding page: the Edge-Event Sieve is now Sierpinski Everywhere's sideways view (`sierpinski.html#sideways`). |
 | `centre.html` | Make the Centre Say Anything: build a start so the centre spells the primes, Fibonacci, pi or a word; watch a finite start run out. |
 | `flip.html` | Flip One Bit: each frame flips one bit of a start word; the change sweeps down inside its cone. |
-| `sierpinski.html` | Sierpinski Everywhere: the whole pyramid as odd overlaps of Sierpinski triangles, one per kick. |
+| `sierpinski.html` | Sierpinski Everywhere: Rule 30 as Rule 60 plus kicks, read down the page (the pyramid) or sideways beside the wall (the former Edge-Event Sieve, with its counterexample wedge; `#sideways` opens that view). |
 | `bricks.html` | Bricks, Rulers and Fronts: the left front, the edge ruler, the crystals and the turning ring. |
 
 The landing page walks a reader with no background to the current state of Problem 1, in eight chapters: the rule;
 why it matters; order at the edges (the left front, the edge ruler); the whole picture (the plate); assume the
-opposite (making the centre say anything, flipping one bit, the crystals, Sierpinski triangles, Sierpinski Everywhere, the sieve, the heartbeat); what we found (the necklace, the turning
+opposite (making the centre say anything, flipping one bit, the crystals, Sierpinski triangles, Sierpinski Everywhere with the sideways sieve, the heartbeat); what we found (the necklace, the turning
 ring); a twin in arithmetic (Collatz: the Gray code worked through on one number, then Rule 30 beside the powers of
 3); how it was done. It has five visuals of its own (the growing pyramid, the rule one cell at a time, the
-Sierpinski figure, the Gray-code example, and the twin) and embeds every render: sixteen visuals, eleven of them in
+Sierpinski figure, the Gray-code example, and the twin) and embeds every render: fifteen visuals, ten of them in
 frames. The Collatz chapter's claims come from COLLATZ-PRIZE.md (its honest summary, §3, §5, §8 and the edge-ruler
 addendum) and RULE30-PRIZE.md §8.45. Three renders have a Sound button, off by default (Web Audio, started only by a
 click): the edge ruler (each triangle an octave note), the left front (one gliding tone) and the necklace (a music
@@ -31,13 +31,13 @@ box, one bar of six beats). Each keeps its own time on the audio clock, so it pl
 view, until paused or switched off. `bricks.html` is embedded four times, one view
 per frame, chosen by the hash (`#front`, `#ruler`, `#crystals`, `#ring`).
 
-The eight render pages are full pages in their own right, with a link back to the story. Opened with `?embed`, a page
+The seven render pages are full pages in their own right, with a link back to the story. Opened with `?embed`, a page
 hides its prose and shows only its toolbar and stage; that is how `index.html` embeds them in iframes. Each
 render is the same page as its Claude artifact of 2026-10-09, wrapped in a full HTML document.
 
 Every visual animates only while it is on screen. The landing page watches its own two canvases and each frame with an
 IntersectionObserver and tells each frame by `postMessage({r30: "visibility", visible})` as it scrolls in and out of
-view (a hidden tab counts as off screen). A short snippet in the head of each render, the same in all eight, holds the
+view (a hidden tab counts as off screen). A short snippet in the head of each render, the same in all seven, holds the
 page's animation frames and skips its interval ticks while it is told it is out of view, and asks once as it starts.
 Opened on its own, a render always runs.
 
@@ -52,8 +52,8 @@ Opened on its own, a render always runs.
 ## Checks after deploying
 
 - `/wolframrule30/` opens on the title and the growing pyramid, and its tally counts up.
-- The eleven frames (left front, edge ruler, plate, the centre saying anything, flip one bit, crystals, Sierpinski
-  Everywhere, sieve, heartbeat, necklace, turning ring) show their toolbar and picture with no prose inside the frame, and each "Open ... on its own page"
+- The ten frames (left front, edge ruler, plate, the centre saying anything, flip one bit, crystals, Sierpinski
+  Everywhere, heartbeat, necklace, turning ring) show their toolbar and picture with no prose inside the frame, and each "Open ... on its own page"
   link opens the full page with its notes and a working back link.
 - A frame scrolled out of view stops, and carries on from the same place when it comes back.
 - On a phone-width window nothing scrolls sideways.
