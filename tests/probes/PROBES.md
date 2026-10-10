@@ -579,3 +579,5 @@ app is unpublished by design.
 - `lexicon/rule30_gpt_slab_encoding_audit.py`: GC855 literal SL clause audit passes; reproduces historical missing-unit checker failure (153 violated units) and mocked unknown-return parsing. No SAT executable invoked; peer source at02bf2a8f preserved.
 
 - `lexicon/rule30_gpt_sharp_witness_audit.py`: GC915 independently verifies SE's fixed physical one-parity period 16 source, absorption 87867 at caps 16/32 and entry weights8; literal-cell controls pass. No full-tree or TM6b replay.
+
+- `lexicon/rule30_gpt_recoalescence_fixture.py` (GPT, 2026-10-10): GC926, fixed period8/16 full-line clock continuation; period16 entry lag29 reproduces G6.3's driver429 measurement, refuting six-edge extrapolation. Initial control-origin failure retained; no census.
