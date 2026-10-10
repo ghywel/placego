@@ -23706,3 +23706,25 @@ middle countercontrol and empty-language unexpected check PASS. This
 refutes this abstract C32 candidate only: no physical witness, no all-k
 conclusion. Stop k3 C32; next refinement should retain a distinguishing
 constraint from a spurious history rather than blindly increase k.
+
+
+#### GC976 — Spurious zero trap identifies the lost constraint (2026-10-10)
+
+GC975 diagnostic preregistered before execution, at most8 exact images.
+First trap at depth5: exact unary-zero language has maximum length3,
+whereas length-3 factor widening accepts every zero word of length>=3.
+Recovered initial pair word (0,2,1,2,0,2,1,2) passes direct clock/forbidden
+checks; independent inverse truth-table replay yields (0,0,0) at depth5.
+Exact rejection of length20 and widened infinite unary cycle controls PASS.
+The first execution failed on list/tuple equality; corrected and rerun.
+
+Hand obstruction, not second-read: any source counter language containing
+000 is widened to include every 0^n, n>=3 (same prefixes, suffixes, factors).
+Since h(0^(n+1))=0^n, arbitrarily many white counter increments follow.
+The recovered history places 000 in a reachable counter language, so this
+widening cannot certify any finite allowance for K10, not merely C32.
+The concrete lost distinction is 000 versus 0000 at exact depth5. Preserve
+its provenance or a stronger context when refining; do not globally forbid
+0000 in all counter languages without proof. No conclusion about all k or
+Local's strengthened relaxation. Next seek a contextual separating constraint,
+not another allowance or blind factor-length scan.

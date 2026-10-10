@@ -99,3 +99,70 @@ def run():
 
 
 if __name__=='__main__': run()
+
+# GC976 ADDENDUM, before running trap(): inspect at most 8 exact images, cap3000,
+# 10 seconds. P1: an exact image accepts 000 (three zero pair letters), but
+# widening pumps 0 indefinitely while that exact image's unary language is finite.
+# Independent control: recover a source preimage, direct clock/forbidden checks,
+# and inverse Rule30 truth-table replay. CF: the pumped 20-letter zero word
+# must reject in the exact image. U: unary cycles, not a finite scan, decide pumping.
+# Record searched: RRL/GC970/GC975 + zero/absor/trap/factor -> 23 hits in9 files.
+# COMMAND: python3 -c 'import sys; sys.path.insert(0,"tests/probes/lexicon"); import rule30_rrl_factors as f; f.trap()'
+# First execution failed at list/tuple equality in replay assertion; normalize
+# the representation and rerun the same preregistered check. No math conclusion
+# from that failed execution.
+# OUTCOME GC976: corrected replay PASS. First zero trap at exact depth5:
+# maximum unary-zero length3; widened language accepts all lengths>=3.
+# Source pair word (0,2,1,2,0,2,1,2) passes direct initial/replay controls.
+# CF20 rejects exactly; infinite pumping decided from the unary DFA cycle.
+
+def preimage(a,word):
+    rows,finals=a
+    paths={(x,rows[0][x]):(x,) for x in range(4) if rows[0][x]>=0}
+    for out in word:
+        nxt={}
+        for (prev,state),path in paths.items():
+            for x in range(4):
+                q=rows[state][x]
+                if q>=0 and 2*((x//2)^((prev//2)|(prev%2)))+prev//2==out:
+                    nxt.setdefault((x,q),path+(x,))
+        paths=nxt
+    return next(path for (_,q),path in paths.items() if q in finals)
+
+
+def unary(a):
+    rows,finals=a; seen={}; states=[]; q=0
+    while q>=0 and q not in seen:
+        seen[q]=len(states); states.append(q); q=rows[q][0]
+    loop=states[seen[q]:] if q>=0 else []
+    infinite=any(q in finals for q in loop)
+    maximum=None if infinite else max((n for n,q in enumerate(states) if n and q in finals),default=0)
+    all_after3=bool(loop) and all(q in finals for q in states[3:]+loop)
+    return infinite,maximum,all_after3
+
+
+def trap():
+    from rule30_rrl_boundary import table_inverse
+    signal.signal(signal.SIGALRM,lambda *_: (_ for _ in ()).throw(RuntimeError('time cap')))
+    signal.alarm(10)
+    exact=[t.minimize(t.initial(0))]
+    try:
+        for d in range(1,9):
+            exact.append(t.minimize(t.image(c.prune(exact[-1]),cap=c.CAP)))
+            a=exact[-1]
+            if not t.accepted(a,(0,0,0)): continue
+            b=widen(a)
+            assert not unary(a)[0] and unary(b)[2]
+            assert not t.accepted(a,(0,)*20)
+            word=(0,0,0)
+            for previous in reversed(exact[:-1]): word=preimage(previous,word)
+            assert t.direct_initial(word,0)
+            source=word
+            for _ in range(d): word=table_inverse(word)
+            assert tuple(word)==(0,0,0)
+            print('ZERO TRAP depth',d,'exact maximum',unary(a)[1],
+                  'widening accepts every zero length>=3; source',source,flush=True)
+            return
+        print('NO TRAP within8 exact images',flush=True)
+    except RuntimeError as e: print('STOP',e,flush=True)
+    finally: signal.alarm(0)
