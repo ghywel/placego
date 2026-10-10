@@ -23406,3 +23406,58 @@ RR3 d113=14 and d112=15 via plateau received as solver/witness evidence,
 not final certificates. L550 citation correction retained. VC3 latest
 DIFF branch now returns before P1/COMPLETE: requested source repair
 accepted by inspection; current runtime/results not replayed.
+
+
+## GC964 — L548 reset and infinite white/black diagonal source PASS (2026-10-10 05:39 BST)
+
+**Bounded source audit, serves Q7.** Read complete new JenPow2 extension
+at e7e43e18, reusing GC962's det/jen_pow2, GC963's quantitative B2 and
+GC955's B1. Broad reset search produced377 hits in72 files; narrowed
+infinitely_many_white/infinitely_many_black/black-input-resets +
+Lean/period/corollary ->3 hits in3 files. Read entry9 and §8.27's reset
+paragraph; this is the known mechanism's source audit, not a new route.
+Informed expectation: a black neighbour removes the child state and
+permits inherited period with independent onsets at successive heights.
+Countercontrol: a=true,b=false,p=1 gives a toggling child, so omitting
+the black input loses inherited period1. Independent reset control:
+a=false,b=true,p=1,x(t0)=false yields x(t0+1)=true; onset t0 itself
+would fail, so the stated t0+1 matters. Identified unexpected check:
+black infinitely often guarantees a black time after each threshold,
+but supplies no numerical deadline. Hand checks only, no experiment.
+
+**Reset PASS.** With t0>=T and b(t0)=true, periodicity gives b(t0+p)=true
+and a(t0+p)=a(t0). At both next ticks the OR term is true regardless
+of x, so x(t0+1+p)=x(t0+1). det at s=t0+1,m=1 extends that equality
+for all t>=t0+1, using exact natural subtraction. The lemma permits
+p=0 as the trivial equality, but its diagonal application always uses
+the positive period2^N. It requires common periodic inputs; one black
+input alone with nonperiodic future inputs would not suffice.
+
+**Unbounded white indices PASS.** Negating eventual whiteness for every
+k>=N gives, for each thresholdT, some t>=T with D_k(t)=true (Bool
+negation is used explicitly). jen_pow2 starts a band k<=N+2 at period
+2^N. grow(m) has one onset for its finite band throughN+2+m. At the
+next step choose a black time t0>=that onset on neighbourN+2+m;
+reset adds precisely the next diagonal and old members retain period
+at the later onset t0+1. Both drivers are within the earlier band.
+For each natural k, grow(k) supplies a period2^N witness for that
+diagonal. Their onsets may differ; lemma_B2 refutes exactly this
+individual-onset premise, requiring no infinite common onset.
+
+**Unbounded black indices and copies PASS.** After stripping comments,
+whitespace and intervening section declarations, copied D_back,
+ext_window, lemma_B2_quant/lemma_B2, EvW/EvB and B1's down,
+no_adjacent_white, mono_eventually, white_then_black match their reviewed
+files. A white natural-index diagonal k supplies a black diagonalk+2;
+k+2>=N and the integer/natural cast is exact. B1's nonnegative-index
+guard is retained: removing it would falsely make negative white
+diagonals lead to negative black ones. The assertions mean unbounded
+sets of indices, with separate eventual thresholds; no density,
+next-event deadline or actual joint selected-history budget follows.
+Local's kernel/axiom receipt remains separately attributed.
+
+**Disposition.** L548 corollary source PASS, with no Lean replay, new
+proof unit or prize claim. Infinite white/black formalization closes
+this source-review queue through e7e43e18; later changes need separate
+review. Next concrete Q7 joint-budget work or a new priority source
+request. Scratch deferred, room closed.
