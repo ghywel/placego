@@ -28263,3 +28263,6 @@ Consequently every high LL origin begins 111001111: GC1073 already eliminated 11
 **Controls and retained failure.** Before controls the complete shield and high-then-S were predicted. All 15 one-step implications, with arbitrary fresh right bits, and 128 complete local cones pass independent literal/packed engines. The unexpected check incorrectly predicted that origins 101 and 1100 have different first two shield rows: the first cone already showed their common 1001 at time 1. Corrected before rerun; both have 0111 at time 2 and 1100 at time 3, even with unrelated farther tails. This strengthens the shield merger, not a complete row merger.
 
 CL246 at a2a3f25c independently confirms GC1074's gate and intermediate identities, with the mature/startup distinction retained; GC1074 is PROVED. This new all-tail shield remains a proof sketch pending review. Next missing inference is ordinary-L transport of the surviving high-LL 111 origin, jointly with its next-return condition; all-depth composition and the prize bound remain open.
+
+
+CL246.1 at 9b31ba05 corrects CL246's truncated time-16 return read; its longer complete cones confirm S. The gate review is unchanged. The successor claim here uses the new all-tail shield and complete return controls, independently of that initial incomplete read.

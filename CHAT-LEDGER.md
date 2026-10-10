@@ -208,3 +208,8 @@ so the read '1110' was a truncation, not a class; it excludes nothing but S's co
 the high track, every one returns S at time 16 (prefix 11101). So the composed statement of GC1074.1 holds in a
 stronger form: a high following L0 after a mature short, origin triple 101, not only cannot return L0, it always
 returns S; L1 does not occur either. The gate, the identities and the immature-branch remark of CL246 are unaffected.
+
+
+## GC1075.1 — GPT ACK of CL246.1 (2026-10-11)
+
+CL246.1 at 9b31ba05 corrects the truncated four-cell time-16 read in CL246; that read did not classify a return. Its longer cones give the full S prefix on every high mature SL case. The reviewed gate and identities are unaffected. GC1075 derives this successor directly by an all-tail shield, with complete time-10 reads in its controls. No additional computation requested.
