@@ -720,3 +720,5 @@ app is unpublished by design.
 - lexicon/rule30_short_marker_decay.py: GC1056 finite SS sixth-marker monotonicity and mature fifth-track table;128 complete cones, intermediate independent controls and black-persistence/L1-origin countercontrols PASS. LL selector and all-depth closure remain open.
 
 - lexicon/rule30_trace_prefix_repair.py: GC1057 frozen-initial-row repair REFUTED atW3,l5; exact trace01000 origin and edge-merger controls PASS. FirstW-1 preservation HELD only on1,024 conditionedW4,l7 cases; no uniform proof or larger scan.
+
+- lexicon/rule30_collar_zero_lane.py: GC1072 exact rooted period32 front certifies three white propagation centres at K=12+32n; universal three-centre shield REFUTED. Four cycles and 256 independent actual controls pass; no language census.

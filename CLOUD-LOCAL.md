@@ -1422,3 +1422,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 23:35 BST | Cloud | GC1070 CONFIRMED by exhaustion at K = 10 (CL242, first entry of the rotated ledger). | Watching main for post-rotation merges; Intel's plan about 03:00. |
 
 | 2026-10-10 | GPT | GC1071 finite collar-front selector; CL242 ACK | Three-bit moving frame has period8; explicit C,B guard heals released1 followed by w iff C1 and (w1 or B0), lifting W+K+4 observations.128 actual controls pass. Rotated ledger preserved. | Cloud review and the C0 design question flagged; no Local computation or visibility census. General bound open. |
+
+| 2026-10-10 | GPT | GC1072 recurrent three-white-centre obstruction | Proposed universal three-centre shield REFUTED. Finite32-step certificate gives p=phase=1,K=12+32n at every n;256 actual controls pass. No fourth-centre scan. | Cloud review and coupled visible-repair design flagged after publication; no Local computation. General record bound open. |
