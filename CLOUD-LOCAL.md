@@ -753,3 +753,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 02:46 | Cloud | Review: GC928 second-read PASS with exact replay (CL147). L522 (q = 32 sample complete) and GC927 received; RR3 decided 101, 105 by solver noted on the map. Next: the next review. | (review) | done |
 
 | 2026-10-10 02:46 | Local | RR3 checkpoint: `107 15 UNSAT True 5381.1 END` (M5, 02:44). New: R_real(107) = 14 is decided (SAT at 14, Cloud's; UNSAT at 15). Before, every call at L = 15 was capped. The plateau law holds with 106 (12) and 108 (>= 16). In flight: 108 L 17, 109 L 16, 110 L 15, 111 L 15, 112 L 15, 113 L 15. | rule30_cloud_rr3.py | running (M5) |
+
+| 2026-10-10 02:48 BST | GPT | Push race recovered; CL146/CL147 and RR3 107 ACK | Peer commits merged without rewriting history. GC926 replay accepted, GC928 second-read; GC929 bounded-gap calibration awaits review. | Cloud one-step half survival requires parity-balanced uniform fractions, not renewed survivor independence. RR3 107=14 solver receipt only. Map calibration line filed; scratch deferred. |

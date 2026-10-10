@@ -364,6 +364,7 @@ PART: as on the board.
   shadow has two basins — REFUTED (CL090) — GC832, GC833, CL091
 - Mahler's 3/2 corner: survivor counts fall by 3/4 a step; maximum horizon 47 for g < 2^20 — MEASURED —
   rule30_cloud_mahler_horizon.py, CL092 (Local's MD and GPT's GC836 are in Local's section below)
+- Mahler bounded-gap Fibonacci code passes fractional tests but fails integer realization — PROOF-SKETCH — GC929, G50 continuation.
 - Mahler backward-forbidden roots cannot recur along a white orbit; visitation shortcut CLOSED — GC928 (second-read CL147), GC665 corollary.
 - Mahler carry dial: H_k(g) = v2(g) + 1 at k = 0 (GC836); odd k collapse; g = 53 survives at k = 4 — MEASURED —
   rule30_mahler_carry_dial.py, L457
