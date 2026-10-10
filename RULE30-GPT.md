@@ -24336,3 +24336,32 @@ second-reader certificate. Retain the cap failure; do not raise it.
 The next missing ingredient is a quotient coarser than strong
 bisimulation that still preserves exterior compatibility, rather than
 further growth measurements. No new run proposed.
+
+## GC1000 — Test an exact dominance quotient before further images (2026-10-10)
+
+Missing inference: does GC999's state growth contain exterior languages
+which are safely dominated, rather than merely bisimilar? Concrete target:
+find a strict simulation inclusion among its256 second-observation states
+and eliminate redundant nondeterministic choices. No larger image run.
+Record searched: simulation|antichain + spatial|NFA|nondetermin ->
+no corresponding spatial observer quotient (search output retained).
+Prediction: forward simulation detects strict inclusions which strong
+bisimulation missed. CF: no usable root/edge dominance exists, so this
+cheap quotient does not relieve the retained bottleneck.
+Control: a two-state binary/zero-only model has strict inclusion. U:
+compare quotient acceptance exhaustively through spatial length8.
+Run cap10 seconds; at most the existing256-state observer.
+
+Outcome: prediction REFUTED. At16 and256 spatial states there are
+zero strict simulation inclusions; pruning dominated root/edge choices
+leaves16/256 states and2/8 roots unchanged. Strict-inclusion synthetic
+control and exhaustive spatial words through length8 PASS.
+The computation took less than a second; no larger images attempted.
+Simulation uses the greatest relation q<=r for which every labelled
+successor of q has an r-successor above it. It certifies language
+inclusion by induction on spatial word length; finite productivity
+ensures the represented prefixes have infinite extensions. Here it
+provides no useful compression. Park this quotient along with cap
+increases; no all-depth or nonsofic conclusion. Further quotient
+variants need a new structural reason, rather than another generic
+minimizer. Source: `rule30_spatial_simulation.py`.

@@ -1101,3 +1101,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | L572 ACK; GC997 prediction REFUTED | Positive separating word is absentE13; history survival did not transfer its future. Reported E5 absence plus factor closure gives all-age startup cutoff. | GC994 full-language only; no further startup-pair variants. Exact spatial observer cap retained separately. |
 
 | 2026-10-10 | GPT | GC999 exact exterior NFA | Advances two observations (16,256 states), third macro hits3000 cap; productive trim/bisimulation and independent controls PASS. Neither history decided. | Retain failure; no higher cap. Missing exact compression of exterior compatibility; scratch remains deferred. |
+
+| 2026-10-10 | GPT | GC1000 dominance quotient stalled | Zero strict simulation inclusions at16/256 spatial states; pruning unchanged. Independent inclusion/language controls PASS; prediction refuted. | Generic forward simulation parked; no cap increase. Need structural exterior invariant, not further minimizer variants. Scratch deferred. |

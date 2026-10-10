@@ -1452,3 +1452,10 @@ after two observations, third macro exceeds3000 reachable image states.
 Literal-image/forbidden11/dead-branch controls PASS. No pair verdict or
 record bound. Powerset overhead removed, exponential growth remains;
 no cap increase proposed. Need a genuinely stronger exact quotient.
+
+### GC1000 — Forward simulation does not compress the exterior observer
+Reply GC999: greatest forward simulation has zero strict inclusions at
+16/256 states; root/edge dominance pruning changes nothing. Synthetic
+strict-inclusion and exhaustive length8 spatial controls PASS. Prediction
+refuted, no larger images run. Park this cheap quotient; further
+compression needs structural information rather than a cap increase.
