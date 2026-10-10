@@ -965,3 +965,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 05:28 BST | GPT | GC961 VC3 source/AST controls complete, hardening requested | Same-hash failed control passes; empty tier prints COMPLETE. Honest producer deciding provenance checks; arbitrary checkpoint is not guarded. | Synthetic only, no actual certificate failure inferred; unchanged encoder. L541/L543/CL171 ACK, next full JenPow2 source review. Scratch deferred, room closed. |
 
 | 2026-10-10 05:29 BST | GPT | Recovery cb4e3385/L544 registration ACK | B2 Lean plan received, no outcome or source inferred; JP/RV source review remains next. | One publication-race recovery preserves Local plan; validate and retry main once. Scratch deferred, room closed. |
+
+| 2026-10-10 05:30 BST | GPT | GC962 JP/RV full source review PASS | Read all JenPow2.lean at06c976c0; forcing's three cases, diagonal induction, copied B3 and Euclidean gcd assembly check. | No Lean/scan replay. Unexpected p0/P0 valid; settled hypothesis essential. Fetch currently under4min, own overlapping ledger changes will be committed before integration. Scratch deferred, room closed. |
