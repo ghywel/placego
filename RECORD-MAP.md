@@ -101,9 +101,10 @@ PART: as on the board.
   most 4, 2, 0, 3, 3, 2 white cells, j = 2..7 — COMPUTED — ZR, ZR2 (L236)
 - R_real 7..15 at d = 21..81 (RR, L247); decided to 97, at most 17 (RR2, L399) — COMPUTED — RRX, RRP replay
 - Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
-- R_real(97..106) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12 (105 by the plateau law R(d+1) >= R(d) - 1; 101 also by the solver, 101 L 16 UNSAT on the M5);
-  107 >= 14, 108 >= 16; 107..120 running — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3,
-  rule30_cloud_rr3.py, "RR3 checkpoint" rows in CLOUD-LOCAL.md and its archives
+- R_real(97..106) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12 (105 by the plateau law R(d+1) >= R(d) - 1; 101 by the
+  solver too, 101 L 16 UNSAT); 107 >= 14, 108 >= 16, 109 >= 15; 105, 107..120 running on the M5 (Local) —
+  COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3, rule30_cloud_rr3.py, "RR3 checkpoint" rows in
+  CLOUD-LOCAL.md and its archives
 - A run's end needs the clock's first beats; words 11, 00000, 101001 fit the records to d = 19 — COMPUTED — RRX; RRL
 - No counterexample has its left edge within 248 cells, whatever its right half — COMPUTED — §8.56 (LL1 to LL4)
 - No right half <= 32 cells works with a left half <= 108; none to 34 cells — COMPUTED — §8.21; board 6.3 and M3b
