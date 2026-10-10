@@ -116,7 +116,8 @@ html.embed .page { padding-bottom: 0 !important; }
       <h1>Flip One Bit</h1>
       <div class="seg" role="group" aria-label="Which bit to flip next">
         <button id="o-sweep" type="button" aria-pressed="true">Sweep across</button>
-        <button id="o-gray" type="button" aria-pressed="false">Gray code: every start</button>
+        <button id="o-gray" type="button" aria-pressed="false">Gray code, right first</button>
+        <button id="o-grayl" type="button" aria-pressed="false">Gray code, left first</button>
         <button id="o-rand" type="button" aria-pressed="false">Random</button>
       </div>
       <div class="seg" role="group" aria-label="What to draw">
@@ -177,7 +178,9 @@ html.embed .page { padding-bottom: 0 !important; }
       <h2>A video of every start</h2>
       <p>Flip the bits in the order of the Gray code, the counting system in which each step changes a single digit,
         and the frames walk through every possible start word exactly once, each frame one flip from the last. It is
-        the same Gray code that runs inside Rule 30's sideways picture. Sweep across instead and the flipped square
+        the same Gray code that runs inside Rule 30's sideways picture. Which end counts as the least significant
+        digit is a choice, like the order of bytes in a computer: <b>right first</b> makes the rightmost square flip
+        every other frame, <b>left first</b> the leftmost. Sweep across instead and the flipped square
         moves one place each frame, so you can watch the cone change shape with its position.</p>
     </section>
   </div>
@@ -244,10 +247,10 @@ html.embed .page { padding-bottom: 0 !important; }
     start = s2; rows = nr; frame++;
   }
   function nextBit() {
-    if (order === "gray") {                                           // the Gray code: flip the lowest set bit of the count
+    if (order === "gray" || order === "grayl") {                      // the Gray code: flip the lowest set bit of the count
       var c = frame + 1, k = 0; while ((c & 1) === 0 && k < W - 1) { c >>= 1; k++; }
-      return W - 1 - k;                                               // the rightmost square is the fastest digit
-    }
+      return order === "gray" ? W - 1 - k : k;                        // right first: the rightmost square is the fastest digit;
+    }                                                                 // left first: the word read the other way round
     if (order === "rand") return Math.floor(rnd() * W);
     var k2 = sweepAt % W; sweepAt++; return k2;                       // sweep: left to right, one place a frame
   }
@@ -364,7 +367,8 @@ html.embed .page { padding-bottom: 0 !important; }
   }
   var tips = {
     sweep: "<b>Sweep across:</b> each frame flips the next square of the start, from left to right, so the cone's starting point moves one place a frame. Flips on the left run along the white outside at full speed; flips on the right creep left at about a quarter; the last few can stay pinned to the right edge.",
-    gray: "<b>Gray code:</b> each frame flips a single square, in the order that walks through every possible start word exactly once. The rightmost square flips every other frame, the next every fourth, and so on.",
+    gray: "<b>Gray code, right first:</b> each frame flips a single square, in the order that walks through every possible start word exactly once. The rightmost square is the least significant digit: it flips every other frame, the next every fourth, and so on. Those frequent flips sit at the right end, where the change often stays pinned to the edge.",
+    grayl: "<b>Gray code, left first:</b> the same walk through every start word, with the word read the other way round: the leftmost square is now the least significant digit and flips every other frame. Its change runs along the white outside at full speed, so every other frame sweeps a large cone across the picture.",
     rand: "<b>Random:</b> each frame flips a square chosen at random. Click any square of the start to flip it yourself."
   };
 
@@ -383,7 +387,7 @@ html.embed .page { padding-bottom: 0 !important; }
   function instant() { if (flip) { flip.front = D; flip.hold = 0; } }
   function setOrder(o) {
     order = o; sweepAt = 0;
-    ["sweep", "gray", "rand"].forEach(function (x) { document.getElementById("o-" + x).setAttribute("aria-pressed", String(x === o)); });
+    ["sweep", "gray", "grayl", "rand"].forEach(function (x) { document.getElementById("o-" + x).setAttribute("aria-pressed", String(x === o)); });
     document.getElementById("tip").innerHTML = tips[o];
   }
   function setView(v) {
@@ -395,7 +399,7 @@ html.embed .page { padding-bottom: 0 !important; }
   function syncPlay() { playBtn.textContent = playing ? "Pause" : "Play"; }
   playBtn.addEventListener("click", function () { playing = !playing; syncPlay(); });
   document.getElementById("stepb").addEventListener("click", function () { playing = false; syncPlay(); doFlip(nextBit()); if (reduce) instant(); readout(); draw(); });
-  ["sweep", "gray", "rand"].forEach(function (x) { document.getElementById("o-" + x).addEventListener("click", function () { setOrder(x); }); });
+  ["sweep", "gray", "grayl", "rand"].forEach(function (x) { document.getElementById("o-" + x).addEventListener("click", function () { setOrder(x); }); });
   ["pic", "diff"].forEach(function (x) { document.getElementById("v-" + x).addEventListener("click", function () { setView(x); }); });
   document.getElementById("width").addEventListener("input", function (e) {
     W = +e.target.value; document.getElementById("wval").textContent = String(W);
