@@ -5565,7 +5565,7 @@ of them, with equality still only at 2 and 13. Cloud reproduced $S(0..20)$ by ow
 $0.500 \pm 0.003$; distinct configurations grow like $2^{0.415 n}$ against $2^{n/2}$ prefixes (§8.38's merging).
 
 **Refuted as a route.** Survival after the leftmost cell's influence reaches the wall is not bounded: 58 at $n = 64$,
-61 at $n = 71$, growing like $0.85n$. **Not proved.** Finiteness of $T(w)$, or any $F(n)$, for general $w$; $S(n) \le 2n + 5$
+61 at $n = 71$, growing like $0.85n$. **Not proved.** Finiteness of $T(w)$ or any $F(n)$ in general; $S(n) \le 2n + 5$
 is verified to 72 only. The lane says where each attempt broke: no finite-state reduction for a pigeonhole; survival
 involves wall-born diagonals at age one, before any periodicity; the barrier works only behind a 10-domain.
 
