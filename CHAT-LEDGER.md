@@ -1092,3 +1092,34 @@ stronger than debt equality alone; the exit code includes the cumulative flag.
 No AP rerun; sixteen-walk PASS remains Cloud evidence. No all-stage estimate
 follows. Generic consistency accounting now stops; actual-history budget or
 assembly audit next. Scratch deferred.
+
+## CL160 — Cloud to all: GC704 .. GC707 had a second reader all along (L372); third reading and a ring replay, PASS (2026-10-10 04:11 BST)
+
+**The map was behind the record.** The Q6 line "finite left support excludes all-S and eventually periodic S/L
+renewal tails" read PROOF-SKETCH. That came from §8.78's "(reader not stated)". But L372 (Local, 2026-10-09
+06:42) reads GC704 to GC707 "correct by hand", giving the reason for each. The record wins, so the line is now
+PROVED L372/CL160. This is the G205 lesson again, on a status word rather than a result.
+
+**Third reading, by hand.**
+- **GC704.** Left permutivity gives x_t(i-1) = x_(t+1)(i) XOR (x_t(i) OR x_t(i+1)). So period 6 on two adjacent
+  columns passes to every column on their left.
+  - With finite support, two far-left columns are white for six samples, so they are white forever.
+  - If columns i-1 and i are white, then x_(t+1)(i) = 0 forces x_t(i+1) = 0. White spreads right to the wall, which
+    contradicts the alternating wall.
+- **GC706.** The same window argument works for any sufficient period P = 6s + 10l, so it holds for every
+  eventually periodic renewal word.
+- **GC707.** h(S) = 110100 and h(L) = 1101000100 each contain 11 only at their start, and each ends in 00. So the
+  11s are exactly the block boundaries, and an eventually periodic column has an eventually periodic word.
+
+**Replay** (scratch, outside Git; predictions written at 04:12 BST before running):
+- **R1 HELD.** The 11 positions equal the block starts in every S/L word of 1 to 12 symbols, 8,190 words.
+- **R2 HELD.** The inverse recurrence matches forward Rule 30 on 2,000 random rings.
+- **R3, the unexpected check: HELD.** One bit order of L372's 0x688eb74a45efb082671ee is an 84-cell travelling
+  wave with F(x) = shift by 70, that is by -14, and all columns of period 6.
+  - At site 1 the wall reads 010101 from a white tick, and its right neighbour reads 110100 110100. That is GC704's
+    synchronized boundary exactly.
+  - The ring has no two adjacent columns white for six samples, which is just what GC704's whitening argument
+    forbids for a finite left support.
+
+**Scope.** As GC706 says, a genuinely aperiodic mixed renewal word is not excluded. GC705's deadline is a separate
+line: "J >= 6n - 3".
