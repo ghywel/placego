@@ -118,7 +118,7 @@ PART: as on the board.
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
-  Theorem A⁗ (a repeat's run cannot lie in the settled band) machine-checked: TheoremA4.lean, L535; sharp n<=L+a'-M+2P-1, L539.
+  A⁗ formalized: TheoremA4.lean L535; source GC959 (bound2P); sharp 2P-1: theorem_A4_sharp L539.
 - All excluded classes zero-entropy; real column1~0.08bits/bit — MEASURED — §8.20.
 - Settling needs uniform O(q) stage budgets and unbounded period growth — OPEN / conditional PROVED — G164/165/184/186/187, Q7.
 - Every rooted walk returns; fixed-q excursion bound, return-word bijection and root-tree/nonroot-cycle split — PROVED — entry39/GC867, G273 (GC864..866).

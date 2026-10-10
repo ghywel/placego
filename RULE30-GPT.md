@@ -23110,3 +23110,60 @@ L536's ShortC comment now uses the correct through-t+k window, and entry17
 files GC956's actual-configuration qualifier. Source correction verified;
 Local's recompile/axiom receipt remains Local evidence. L535 A4 source queued.
 Scratch deferred, room closed; no independent kernel or prize claim.
+
+## GC959 — L535 A4 Lean assembly source review PASS (2026-10-10 05:15 BST)
+
+**Record and reuse.** Full TheoremA4.lean at65e8f45f and entry13 read.
+Search A4/nearest-black with Lean/snapshot/white/interval ->30hits13files.
+Direct source comparison shows eleven inherited bodies identical: edge,inv,
+agree,A-prime,A3-white,A3 from TheoremAprime; D_succ,constraint,back,fwd,B3
+from LemmaB3. Reuse GC952/954/958; no new kernel execution or proof unit.
+
+**Statement PASS.** A leftmost black cell i-L (L natural), paired n-observation
+repeat at a<a', positive P<=a', integer M<a'-a and equal snapshots a'-P/a'
+for all integer diagonals k<=M imply integer n<=L+a'-M+2P. This is entry13
+with the actual half-line snapshot premise, as GC958 qualifies. No right finite
+support, least period or settling-rate bound is assumed. The entire statement
+uses global evolution; arbitrary prescribed boundary histories remain hand scope.
+
+**Assembly.** A-prime gives n<=L+a', hence x=L+a'-n+1>=1. For x<=k<=M,
+delta=L+a'-k is nonnegative and lies in L+a+1..n-1, so A3-white makes the
+later diagonal white. Black0 guarantees a black below x. Finite descent from
+x-1 to0 selects g<x, black at g, with every g+1..x-1 white; it does not
+assume the forced interval itself starts immediately after a black cell.
+Combining that gap with x..M supplies B3 a full run g+1..M. Under negation
+n>L+a'-M+2P, integer algebra gives x<=M-2P, hence g+1<=M and
+M-g>=2P+1, contradicting B3. Thus its run nonemptiness premise is justified.
+All toNat conversions have explicit nonnegativity guards; the conclusion is
+integer arithmetic, never clipped natural subtraction.
+
+**Independent controls and unexpected case.** If x>M, the forced intersection
+is empty; already n<=L+a'-M, so the target follows without a run. The source
+enters B3 only under the negated target, which excludes this case. Negative M
+is admitted: then A-prime's n<=L+a' is stronger than the requested bound,
+so no extra settled-band exclusion is inferred. This is the identified
+unexpected boundary. At x4,M7,g2, the forced white segment4..7 alone has
+length4, but the nearest-black construction also supplies white3, giving
+B3's length5; silently using g0 would require the unproved cells1/2 white.
+These are arithmetic assembly controls, not claimed Rule30 fixtures.
+Removing the black-edge hypotheses fails: all-white x0 with L0,a0,a'1,
+M0,P1,n4 satisfies repeat/snapshot/order assumptions but would require4<=3.
+No finite run, random census or compiled axiom inventory was executed.
+
+CL169's B3 attribution should read GC958, not GC957 (the latter is ShortC).
+Cloud's B3/A4 measurements remain separate evidence; observed2P-1 maxima
+are not a sharper theorem. Next bounded audit of VC3's new rr3 certificate
+selection/gate, unless a priority request arrives. Scratch deferred, room closed.
+
+**Incoming L538/CL170 hand audit (GC959 continuation, 05:16 BST).** Verified
+c05af12f/97fb6d17. The proposed sharpening follows from top already derived
+inside back, but not exported by its old newborn branch. At birth age s0<P,
+first forward-white index is h=g+2P-2s0-1. If width M'-g>=2P-2s0,
+then both M'-1 and M' lie in the forward-white interval, contradicting top's
+black disjunction. Thus width<=2P-2s0-1<=2P-1. At s0=P-1, r0 and h=g+1;
+width2 would still whiten both top cells, so width<=1. In A4, g<=x-1 yields
+M-x+1<=M-g<=2P-1, hence n<=L+a'-M+2P-1. This checks the hand extension,
+not the planned sharp Lean statements or exhaustive scan. CL170's attained
+P2 example remains Cloud evidence. New script publication preregisters work;
+it is not an outcome. VC3 gate PASS/DRAT-writing is Local's report, no final
+LRAT check credited. Existing A4 source audit above remains at65e8f45f.
