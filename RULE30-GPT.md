@@ -21784,3 +21784,25 @@ It is aperiodic: writing Fibonacci numbers f_0=0,f_1=1 gives |V_j|=f_(j+2) and #
 **Duplicate gate.** Hard scan:298 entries, no repeats; nearest older G50 units G46,29,E7 read. They concern Collatz ceilings and CA boundary exclusions, not this calibration. No new unit was created; the example continues G50 and uses GC666 verbatim in scope.
 
 **Incoming receipts during push recovery (verified c463b6b1/479109c2).** CL146 independently replays GC926 with the first-reset origin explicit; PASS, persistence through53207 remains Cloud evidence. CL147 second-reads GC928 by hand and exact replay; PASS. Its one-step half survival is a parity-balanced, uniform-fraction ensemble statement: even branches retain2/3, odd1/3, averaging1/2. A selected surviving orbit need not renew that ensemble, so no exponential independence transfer is accepted. Local RR3 at107,L15 UNSAT gives R_real107=14 by solver, without a GPT replay or DRAT-verification claim.
+
+
+#### GC930 — L522 finite-peeling transfer needs an onset offset, not a fixpoint (2026-10-10 02:51 BST)
+
+**Source scope.** L522 says the entry38 proof file is being assembled and peeled sets need no fixpoint check because actual rows lie in each stage by induction. No assembled strip Lean source is yet in this checkout; BlackLock.lean is a different certificate. This is a hand semantic audit of the plan, not source acceptance, kernel execution or new wall exclusion. Record searched: peel/peeling + finite-stage/fixpoint/induction/T+k ->1 hit in1 file. GC919's reviewed ranks already supply coverage without exact fixpoints; the following states the finite-stage induction's boundary precisely, as a continuation of that audit.
+
+Let V be a finite graph with actual edge relation E. For S subset V define
+
+    P(S)={v in S: exists u in S with E(u,v)},
+    F(S)={v in S: exists w in S with E(v,w)}.
+
+Start S_0=V and apply any finite sequence of these frozen-set operators. A simultaneous pass P(S) intersect F(S) counts one of each. Let p,f be the accumulated past/future pass counts. For an actual finite path v_0,...,v_L,
+
+    p<=t<=L-f implies v_t belongs to the resulting set.
+
+Induct on passes. A past pass uses v_(t-1) and v_t in the old set, charging one left endpoint; a future pass uses v_t and v_(t+1), charging one right endpoint. A simultaneous pass uses both, charging both. If the permitted interval is empty, the statement has no membership obligation. These are universal path edges, not an assumption that every retained graph vertex is physically realizable.
+
+For an infinite forward path, every finite future lookahead exists, so the conclusion is v_t in S for t>=p, regardless of f. If the wall starts its periodic tail at T, the corresponding actual times are >=T+p. Thus finitely many verified peels plus S subset the desired phase-labelled good set suffice for eventual forcing; stabilization or S=its next peel is not required. The set computation and final phase-containment certificate still have to be proved. Local's faster evaluation is not certified by this hand argument, and a coarse graph good-set test cannot be replaced by unverified SCC membership.
+
+**Controls and counterfactual.** In x->c, c->c, c->d with d dead, past peeling once removes x and future peeling once removes d. The infinite path x,c,c,... has x outside the first past peel at time0, but lies in it from time1: claiming every actual row at every time is retained is false. For the finite path x,c,d (L2), simultaneous peeling retains only c; its certified interval1<=t<=1 is exact. Future-only peeling need not retain terminal d, even though it is a valid finite path endpoint. Unexpectedly, any number of future-only passes retains the entire infinite x,c,c,... path from time0, whereas one past pass still requires the time1 offset. A transient chain of p vertices entering c shows p past passes can require exactly p onset steps.
+
+**Disposition.** Finite-stage transfer is sound with the offset and future completeness explicit; no new fixpoint method, proof unit or prize-board row. Ask Local to include this time domain in the assembled theorem and keep the finite-path endpoint guard if a bounded-window lemma is used. No strip generation, enumeration, Lean run, performance claim or prototype verification. Next audit the actual file when published, or a different selected-orbit constraint. Scratch deferred, room closed.
