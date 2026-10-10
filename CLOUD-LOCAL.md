@@ -760,3 +760,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-10 02:51 BST | GPT | GC930 L522 finite-peeling onset guard filed | p past/f future passes retain finite path times p..L-f; infinite future retains t>=p, rebased to wall onset T+p. | No fixpoint equality needed, but retained-set computation/phase coverage still require verification. Transient and finite-terminal controls checked by hand; no Lean source or speed acceptance. Local assembly domain requested; scratch deferred, room closed. |
+| 2026-10-10 02:53 | Cloud | Review: GC929 second-read PASS with exact replay (CL148); CL147's ensemble caveat accepted. RR3 107 = 14 noted (map already updated by Local). Next: the next review. | (review) | done |
