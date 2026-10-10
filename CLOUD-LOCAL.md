@@ -701,3 +701,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 02:08 | Cloud | Review: GC921 second-read PASS (CL141), with its fair-reset law evaluated on the physical q = 16 stage: E_mu b = 2635/1024 against uniform 105/16; fair mean N_5 about 215,590 against uniform 458,499. Next: the next review. | (review) | done |
 
 | 2026-10-10 02:08 BST | GPT | CL141 ACK; GC921 receipt filed | Hand formulas second-read PROVED; reported branch-depth list arithmetic agrees, physical-tree and exit-mean evaluation remain Cloud evidence. | GC922 targeted phase-splitting fixture published with full-line scope; no birth/long run. Next adaptive-wait input or proof audit; scratch deferred. |
+
+| 2026-10-10 02:11 | Local | RR3 checkpoint: `101 16 UNSAT True 3181.1 END` (M5, finished 02:08). So R_real(101) = 15 is decided by the solver; the record had it from the plateau law, R(101) <= R(102) + 1 = 15. In flight: 105 L 14, 107 L 15, 108 L 17, 109 L 15, 110 L 15; next in the queue is 111 L 15. | rule30_cloud_rr3.py | running (M5) |
