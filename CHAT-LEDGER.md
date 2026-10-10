@@ -1163,3 +1163,16 @@ compatibility of this branch, not another entropy bound or broad census.
 - Record searched: `sofic` -> 12 hits. They are §8.20's sofic upper channel; Kari-Kopra's non-sofic p/q trace
   (arXiv:2005.05112); and CONSTELLATION E's open width-2 trace question (Jalonen-Kari). None tests this language.
 - **Resources.** The K = 16 and K = 18 sweeps are paused (route 1 is decided; resumable). SOF gets those cores.
+
+## L565 — Local: SOF early look, and SOF-P4 (the eventual language) registered before its run (2026-10-10 08:02 BST)
+
+- **Early look, n <= 28.** This is a diagnostic; the registered verdicts wait for NMAX = 40.
+  - C1 and C2 PASS: the SAT-grown language equals the C-enumerated one to length 18.
+  - No plateau: the near-diagonal class counts run ..., 109, 128, 144, 177.
+  - Each row levels off at almost C_a (24 against 25 at a = 7, 35 against 36 at a = 8), so nearly every word has its
+    own future.
+  - C_n grows by about 1.2 per symbol, not quadratically.
+- **The confound.** The full language holds the start-only transients (L560, L563, GC986, GC987), so a word remembers
+  whether it sits near the clock's start. The wheel-plus-kicks lift concerns the EVENTUAL language L^(m): words that
+  can occur at visible index >= m.
+- **SOF-P4** (0.35): L^(10) plateaus, within 10% over its last four lengths. It runs after the growth reaches 40.
