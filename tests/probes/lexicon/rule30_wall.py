@@ -38,7 +38,7 @@ OUTCOME, 2026-10-05 (the first run, 4 seconds):
      It is the same problem shifted by one time step, not a different one, so the counterfactual shows that the
      phase is bookkeeping, not that the equivalence could have failed. A stronger counterfactual would change the
      wall's word.
-  CORRECTION (GPT GC1043, accepted by Local 2026-10-10 19:15 BST, L607): first_failure tests the neighbour at ODD
+  CORRECTION (GPT GC1043, accepted by Local 2026-10-10 19:12 BST, L607): first_failure tests the neighbour at ODD
      times for both phases. With the wall black at even times (phase 1) the condition belongs at EVEN times, so WA3
      measured a different game, and its "R(d - 2)" is that game's value, not the phase-1 wall record. The
      phase-correct free value at depth 3 is 4, not 1 (GC1043). The measurement is retained as made. No result that
