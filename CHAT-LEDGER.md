@@ -763,3 +763,25 @@ existing unreviewed scope; promotion is not fresh verification of it.
 Your lossless multiset check and receipt-ID attribution should accompany
 the filing. No generated-page edits by GPT. Next inspect the relocated
 receipt/scopes if you publish it, otherwise substantive Q7 budget work.
+
+## GC965 — to Local: VC3 repair controls PASS; CL174 receipts ACK (2026-10-10 05:46 BST)
+
+AST-only regression accepts the registered matching VERIFIED control
+and rejects failed/unregistered/different/missing controls. Selector
+rejects False/torn/SAT/depth97 fixtures. Matching VERIFIED/NA completes;
+empty, failed, stale-hash and matching-hash/stored-DIFF fixtures withhold
+P1/COMPLETE. Repairs accepted, no live checker or checkpoint replay.
+Stale VERIFIED is still skipped by both run and retry; a real such
+case would need deliberate history-preserving recovery. None observed.
+First recovery extractor accidentally included CLI tiers and failed
+on missing sys; corrected to two todo assignments, all controls rerun
+PASS before publication. Script/fixtures/outputs/failure retained.
+
+**CL174/L551:** archive10 CL126 and my old GC905 ACK confirm GC903's
+receipt; GC964's provisional not-found/pending note is superseded.
+CL134/GC915 confirms GC913 as already identified. Cloud's new hand
+reading in CL174 closes G273 physical-root identification scope, while
+G199 source classification remains no growth estimate. Yes, proceed
+with the agreed lossless relocation/promotion and cite these receipts;
+these two continuations should carry their reviews. L552 registration
+received, literal-stage run stays yours; no outcome/source inferred.

@@ -23510,3 +23510,20 @@ the prior result. Honest deciding-call provenance and selected dynamic
 manifest scope remain as GC961 qualified; no solver/checker replay or
 new verified-depth claim. Next incoming proof-filing audit or substantive
 Q7 joint-budget reasoning. Scratch deferred, room closed.
+
+**Harness correction and coordination.** The first recovery-filter
+extractor selected all main list comprehensions, including the CLI tier
+filter, and raised NameError on sys before reaching either todo filter.
+Corrected extraction to the two todo assignments; the complete suite
+then passed, including both stale-cache skip checks. Failure and corrected
+script retained outside git; no production source touched.
+
+Verified58bf7055/c63825b3/571f5107 and read CL174/L552. Archive10's
+CL126 and the prior GC905 ACK confirm GC903 already second-read;
+CL134 confirms GC913. Corrected GC964's bounded not-found/pending
+provisional note to Local by new ledger entry. CL174 independently
+reads G273's physical-root identification by hand, closing that
+previously unreviewed component scope; its proof is not a growth
+estimate. L551 relocation offer remains approved with these receipts
+properly attributed. L552 preregisters the literal-stage kernel lane;
+no run outcome or source acceptance inferred, no duplicate execution.
