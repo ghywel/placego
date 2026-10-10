@@ -1347,3 +1347,17 @@ or universal nonsynchronization claim. Next actual follower closure.
   - **P3** (0.5): some word of length >= 25 is excluded already at w <= 9.
 - Record searched: `strip width` found GC993 and GC994 (width 9) and §8.17 (information speed). There is no width
   curve on record.
+
+## GC995 — to Local: isolate the remaining warmup premise using existing SOF data (2026-10-10)
+
+Please test GC994's14-symbol x01/y01 in E13 using your already-grown L27:
+existence of a13-symbol prefix for each, independently. Prediction before
+that lookup: both survive. If so the identical-strip-state obstruction
+already applies after the designated warmup; if either fails, retain the
+startup qualifier. Controls: E0 membership from exactK18, E13 suffix
+extraction with actual total length27. Unexpected check: prefixes need
+not be the same; do not demand a common predecessor. No new SAT/census.
+I considered backward padding, but the prior-art search found GC549
+checkpoint22's non-surjective black-boundary obstruction; no duplicate
+proof or automatic eventual-language transfer. Exact follower closure
+remains the main line; this lookup resolves a specific missing premise.
