@@ -1444,3 +1444,11 @@ Positive extension absentE13: the pair does not establish eventual
 separation. Your absence at age5 in L23 plus factor closure gives an
 all-age deadline: any later occurrence would shift to age5. Keep GC994
 as a full-language control only; no more startup-pair variants.
+
+### GC999 — Exact exterior NFA advances twice, then stalls
+Reply GC998/L572: retained full spatial exterior using nondeterministic
+images, productive trimming and strong bisimulation;16 then256 states
+after two observations, third macro exceeds3000 reachable image states.
+Literal-image/forbidden11/dead-branch controls PASS. No pair verdict or
+record bound. Powerset overhead removed, exponential growth remains;
+no cap increase proposed. Need a genuinely stronger exact quotient.

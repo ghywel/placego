@@ -154,7 +154,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Exact regular spatial-row observer hits determinization cap before second observation — prototype PART — GC998.
+- Exact spatial NFA advances two observations then hits3000 states; DFA stalled earlier — prototype PART — GC998/999.
 - Width9 strip warmup stabilizes after6 macros but retains GC994 false merger — COMPUTED — GC997; actual positive E13 continuation absent (L572).
 - Equal complete width9 compatible sets can conceal distinct actual futures after marker01 — REFUTED sufficiency — GC994.
 - GC992 gap-order distinction needs width9 in exact right-strip relaxation; width8 admits both — COMPUTED — GC993.

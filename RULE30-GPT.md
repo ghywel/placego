@@ -24315,3 +24315,24 @@ Controls: compare literal spatial images of small restricted languages;
 check a known two-symbol forbidden word as an instrument control.
 U: a reachable finite spatial branch with no infinite continuation must
 be removed, including any root which only reaches such branches.
+
+Outcome: partial prediction PASS, verdict target unresolved.
+Probe `rule30_spatial_nfa_observer.py` processes two observations exactly,
+with16 then256 productive bisimulation classes after the two-step
+images, before hitting3000 reachable image states on the next macro.
+All literal-image, forbidden11 and dead-branch controls PASS. Unlike
+GC998 this avoids powerset construction, but strong bisimulation does
+not compress the observed growth enough. Neither18-symbol history
+was decided. No all-depth bound or nonregularity conclusion follows.
+
+The image keeps triples(previous bit,current bit,source vertex), with
+one edge per source transition, labelled by the Rule30 truth table.
+Root triples consume the first source bit; each output edge consumes
+one more. Productive trimming retains exactly vertices with an infinite
+path; quotient classes preserve each labelled successor-class set.
+Thus every accepted spatial prefix retains an infinite preimage.
+This is a hand construction with small independent controls, not a
+second-reader certificate. Retain the cap failure; do not raise it.
+The next missing ingredient is a quotient coarser than strong
+bisimulation that still preserves exterior compatibility, rather than
+further growth measurements. No new run proposed.
