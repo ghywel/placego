@@ -19,6 +19,10 @@ slab to its penultimate car; that car's exterior gate decides the first
 following symbol. The last-car slab need not persist. This repairs the
 proposed train-memory interface and removes its first-symbol suffix census.
 
+GC1028 reduces the fixed q T^12 exit obstruction to39 nine-bit interior
+targets after conditioning on the actual prefix and prepared slab. It
+isolates the earlier-history exclusion still needing a structural proof.
+
 ## The formal statement and proof
 
 *Status:* finite proof candidate, independent reading requested.
@@ -116,3 +120,33 @@ its failed gate at74 gives a nonslab last-car row at78, explicitly
 refuting the extra successful cycle proposed in CL194. This is a
 corollary of the existing slab/delay lemmas and the packet, not a
 new numbered theorem or a claim about a finite left half.
+
+**Fixed-prefix exit target (GC1028, review pending).** Put
+q=000010001010000 and T=10. Let A' be the nine-bit states of sites7..15
+at physical time62 arising in actual realizations of q T^9 whose first
+six cells at62 are100110. Define B by the disjoint patterns
+01101????, 01110????, 0111100??, and0111111ab with ab in{01,10,11}.
+Then q T^12 0 is realizable if and only if A' intersects B.
+
+To verify the finite local premise, evolve a nine-cell source beside
+0111 and record its first cell at offsets0,4,8. Shrinking the domain
+by one each tick computes these three bits exactly. Of all512 sources,
+precisely the39 states in B give0,0,1; the full case check, independent
+literal and packed implementations, is in rule30_train_exit_target.py.
+From a prepared slab these are precisely two successful cycles and a
+failed endpoint. GC1027 supplies the forward implication from the
+visible word. For the reverse, choose the actual prefix realization
+in the definition of A'. Its nine bits determine all three gates
+without exterior assumptions; hence the slab/delay identities force
+T^4 0 from time62, which overlaps q T^9 in its final car. This gives
+q T^12 0 in that very realization, not by joining incompatible pasts.
+
+The difficult prefix-state exclusion A' intersect B empty remains to
+be explained structurally. The claim does not prove a finite-state
+representation for all prefixes. It gives width15 sufficiency for
+this specially slab-filtered test. In CL195's unfiltered full-strip
+method, the ordinary cone instead gives width17 at62 for the query
+ending78: each surviving state has an actual prefix realization with
+the same determined continuation. Thus that method's least sufficient
+width is at most17 if the reported first-bit absence holds. Its least
+width is not computed; no all-depth bound is inferred.

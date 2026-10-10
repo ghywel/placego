@@ -26280,3 +26280,74 @@ T^n to00100001; the last two bits01 of v=0010000101 remain a separate
 constraint. Thus the first-symbol and full-v cuts must not be conflated.
 CL194's claimed q T^12 0 absence is received SAT evidence, not a fresh
 checked absence proof here. No all-depth or nonsoficity result follows.
+
+### GC1028 — A nine-bit interior target replaces the proposed width search
+
+Before computation: missing inference in CL195 is whether a finite width
+must certify the specific first-symbol obstruction. At time62 the
+longer target forces the six-cell slab. Its two further successful gates
+are at62 and66; exit after twelve cars is the failed gate at70 (GC1027).
+Thus sites7..15 at62 determine all three gates by finite speed: no site16
+input can reach site7 by70. Prediction: the exact predicate on these nine
+bits, gates0,0,1 at offsets0,4,8 beside0111, is equivalent to the desired
+exit for an actual row with the prepared slab. This gives a concrete
+width15 sufficiency with an exact prefix-conditioned set, rather than
+an unknown width to search. Record searched: train/0111 + nine/9.bit/
+gate-eight/width15/width17 -> GC1018's return formula and unrelated wheel
+widths, not this prefix-conditioned exit predicate.
+
+Enumerate only the512 nine-bit local sources to retain that target set;
+this is not a language-membership census. Independent literal shrinking
+cones and full six-cell-slab evolution must agree on the predicate.
+Counterfactual: the gate at offset8 can be changed by a farther exterior
+input; the cone forbids this. Unexpected check: neither the slab nor
+the target predicate may be assigned to every q T^9 history without
+conditioning; include the slab explicitly in the prefix-state query.
+No new SAT job or width sweep is authorized by this computation.
+
+**Outcome and exact reduction.** The target set B consists of39 words,
+written site7 first:
+
+    01101????       (16)
+    01110????       (16)
+    0111100??       (4)
+    0111111ab, (a,b) != (0,0)    (3).
+
+Question marks are independent bits. Literal shrinking cones, packed
+updates with two opposite far tails, and1024 full-slab traces agree on
+all512 sources. The checker also verifies the four patterns equal the
+computed set exactly. In every case the three gates0,0,1 are equivalent
+to the full-slab white trace T^4 0 through16 ticks. This finite table
+identity is independently reproducible in rule30_train_exit_target.py.
+
+Let A' be the set of nine-bit words at sites7..15 at time62 among actual
+right halves realizing q T^9 AND having sites1..6=100110 at62. Then
+
+    q T^12 0 is realizable  iff  A' intersects B.
+
+Forwards: GC1027 forces the slab and successful gates62,66, followed by
+failed gate70. Their cones give a word in B. Backwards: take the actual
+prefix realizer witnessing A'. Its gates through70 depend only on
+sites7..15 at62 while the slab persists through the two successful
+cycles. Membership in B gives exactly the remaining T^4 0, overlapping
+the last car of q T^9, hence the desired full visible word. No splicing
+of independently chosen histories is used. Every actual witness for
+A' already supplies the entire right exterior.
+
+This proves width15 suffices for THIS slab-filtered interface. It does
+not assert that CL195's unfiltered free-strip propagation is exact at15.
+For that original method, width17 at62 always suffices for the first-bit
+query ending78: site18 cannot reach site1 within16 ticks. Each accepted
+17-bit state has one actual prefix realizer; the entire remaining
+column1 trace is determined by that state and the clock. Thus any
+surviving relaxed path has a real trace, and conversely. Conditional on
+CL194's reported first-bit absence, CL195's original W*<=17 and it
+empties by78, without a width search. For the full-v horizon96, the
+analogous elementary bound is35. These are causal bounds, not SW's
+empirical width40 comparison and not uniform bounds for growing words.
+
+The least width remains uncomputed. More importantly, recognizing A'
+retains the difficult earlier-prefix correlations: the39 local targets
+are not a finite-state description of all actual histories. This
+reduction identifies exactly what the next structural explanation must
+exclude; it does not manufacture the missing prefix invariant.

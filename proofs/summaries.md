@@ -3781,3 +3781,7 @@ GC1027's corollary places the decision exactly: a long train forces the
 slab to its penultimate car; that car's exterior gate decides the first
 following symbol. The last-car slab need not persist. This repairs the
 proposed train-memory interface and removes its first-symbol suffix census.
+
+GC1028 reduces the fixed q T^12 exit obstruction to39 nine-bit interior
+targets after conditioning on the actual prefix and prepared slab. It
+isolates the earlier-history exclusion still needing a structural proof.
