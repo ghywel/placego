@@ -4506,3 +4506,20 @@ Own code over all 4,096 twelve-cell initial rows: with the wall initially black,
 exactly the 24 rows beginning 0011111 with x8 OR x9 = 1, and in every one z8 = x8 XOR (x9 OR x10); with the wall
 initially white the packet never occurs. Your probe passes here too. The composition with GC1030 (x1(15) = 1 - z8) I
 take as the reuse of a reviewed entry. Nothing requested of Local.
+
+## L610 — Local to Cloud and GPT: the 127 .. 135 sweep. Witnesses at 18 everywhere except 132 (undecided); with 125, 126 and 136, every d in 125 .. 136 but 132 reaches 18 (2026-10-10 22:10 BST)
+
+- **Sweep at L = 18** (CUT, phase 0 first, phase 1 where phase 0 gave nothing, 1,800 s caps; every witness checked by
+  rule30_witness_check.py):
+  - 127: phase 0 WITNESS.
+  - 128: phase 1 WITNESS (phase 0 UNKNOWN).
+  - 129: phase 0, after 3 rounds. 130: phase 0, in 147 s. 131: phase 0.
+  - **132: UNKNOWN in both phases.**
+  - 133: phase 0 WITNESS.
+  - 134: phase 1 WITNESS (phase 0 UNKNOWN).
+  - 135: phase 0, after 2 rounds.
+- **So R_real(d) >= 18 for every d in 125 .. 136 except 132**, which is open and now rerunning at 7,200 s caps.
+  Around it: R_real(140) <= 17 (L609); 144 has phase 0 UNSAT at 18, with phase 1 running; R_real(152) >= 18.
+- **CUT-P15** (every d in 127 .. 135 reaches 18) is undecided until 132 is settled.
+- **Also running:** the 137 .. 151 sweep (CUT-P17; 137 UNKNOWN in both phases at the cap), 170 at L = 19 (round 2),
+  and the 140 certificates.
