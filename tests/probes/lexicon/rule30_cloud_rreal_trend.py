@@ -55,10 +55,15 @@ about 08:01 to 08:04, outside this script (pysat CaDiCaL: d = 40 SAT at 9 and UN
   capped call is UNKNOWN and refutes nothing.
   Counterfactual. If R_real were bounded near 17, L = 18 would be UNSAT at every sampled depth, and SAT calls would not
   appear; the trend reading would then be a transient, and the uniform target would stand.
+ADDENDUM, 2026-10-10 09:15 BST, before the deep run's second start. The first start (08:08, pysat's CaDiCaL) never
+  returned: its 2,400 s cap did not fire inside the solver (the interrupt timer is starved while the solver holds the
+  interpreter), and all four workers were at 50 minutes with nothing written, so it was killed. The solver is now
+  kissat 4.0.4, built from source here as RR3 did, with kissat's own --time cap (3,600 s), and the depths run deepest
+  first, where the trend makes SAT at L = 18 likeliest. TR-P6 is read with the 3,600 s cap. The control ran again
+  with kissat before the deep calls (its line is in the run log).
 """
 import os
 import sys
-import threading
 import time
 from concurrent.futures import ProcessPoolExecutor, FIRST_COMPLETED, wait
 
@@ -76,7 +81,7 @@ RR2 = """20:16 21:15 22:14 23:13 24:12 25:11 26:10 27:9 28:8 29:7 30:8 31:8 32:8
 61:9 62:12 63:11 64:12 65:11 66:10 67:14 68:13 69:12 70:11 71:12 72:11 73:10 74:10 75:10 76:10 77:10 78:11 79:10
 80:10 81:12 82:11 83:14 84:13 85:12 86:13 87:16 88:15 89:14 90:13 91:12 92:12 93:16 94:17 95:16 96:15 97:14"""
 RR3 = [14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16, 15, 14, 15, 15, 14, 13]              # d = 98 .. 114
-DEEP = [124, 132, 140, 148, 156, 164, 128, 136, 144, 152, 160, 168]
+DEEP = [168, 160, 152, 144, 164, 156, 148, 140, 136, 132, 128, 124]      # deepest first: likeliest SAT on the trend
 L_DEEP = 18
 
 
@@ -116,23 +121,35 @@ def trend():
           % (sum(1 for v in sh if v >= s), sorted(abs(v) for v in sh)[1000]))
 
 
+KISSAT = os.environ.get('KISSAT', 'kissat')
+
+
 def solve(d, L, cap):
-    """one RR query with CaDiCaL under a wall-clock cap; returns (verdict, witness checked, seconds)"""
-    from pysat.solvers import Solver
+    """one RR query with kissat under its own wall-clock cap (--time); returns (verdict, witness checked, seconds)"""
+    import subprocess
     nv, cl, row, T = rr.cnf(d, L)
+    os.makedirs(SCRATCH, exist_ok=True)
+    path = os.path.join(SCRATCH, 'tr_%d_%d.cnf' % (d, L))
+    with open(path, 'w') as f:
+        f.write('p cnf %d %d\n' % (nv, len(cl)))
+        for c in cl:
+            f.write(' '.join(map(str, c)) + ' 0\n')
     t0 = time.time()
-    s = Solver(name='cadical195', bootstrap_with=cl)
-    timer = threading.Timer(cap, s.interrupt)
-    timer.start()
-    r = s.solve_limited(expect_interrupt=True)
-    timer.cancel()
+    r = subprocess.run([KISSAT, '-q', '--time=%d' % cap, path], capture_output=True, text=True)
     secs = time.time() - t0
-    if r is None:
-        return 'CAPPED', None, secs
-    if r is False:
+    os.remove(path)
+    if r.returncode == 20:
         return 'UNSAT', None, secs
-    m = s.get_model()
-    w = [1 if m[v - 1] > 0 else 0 for v in row]
+    if r.returncode != 10:
+        return 'CAPPED', None, secs
+    val = {}
+    for line in r.stdout.splitlines():
+        if line.startswith('v '):
+            for tok in line[2:].split():
+                k = int(tok)
+                if k:
+                    val[abs(k)] = 1 if k > 0 else 0
+    w = [val.get(v, 0) for v in row]
     return 'SAT', rr.check(w, T, d, L), secs
 
 
