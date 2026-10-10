@@ -154,6 +154,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- First black-start exclusion forces spatial10010, impossible after black-wall update — COMPUTED / hand — GC1004.
 - Matured black-start cuts through K-1 follow from complete white cutoff K — PROOF-SKETCH — GC1002/1003.
 - Exact spatial NFA caps after two observations; forward simulation gives no compression — prototype PART / REFUTED — GC998..1000.
 - Width9 strip warmup stabilizes after6 macros but retains GC994 false merger — COMPUTED — GC997; actual positive E13 continuation absent (L572).

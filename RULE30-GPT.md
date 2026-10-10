@@ -24448,3 +24448,47 @@ language checks the one-symbol offset and rejects the stronger CF.
 No Rule30 language computation or record claim. Hand inference pending
 review; GC1002 remains sound, but do not implement redundant lower-length
 phase0 cuts or restart old invariant runs on them.
+
+## GC1004 — Seek a spatial explanation of the first black-start exclusion (2026-10-10)
+
+Missing inference: why does L576's first B/W distinction,101010000,
+require missing black prehistory? Seek forced initial spatial cells,
+which could supply a structural language rule rather than more counts.
+Record searched:101010000 + force|110|prehistory -> no prior forcing
+explanation; use GC549 checkpoint22's impossibility of post-black110.
+Prediction: every white-start realization of this word begins with
+spatial110. CF: several initial three-bit patterns survive, so that
+three-cell prehistory obstruction is insufficient.
+Controls: literal truth-table update vs packed right-row update on small
+cones. U: omit the last visible symbol and test whether forcing survives.
+One bounded17-bit initial cone (131072 rows), no solver or depth sweep.
+
+First outcome: prediction REFUTED. All512 compatible17-bit rows begin
+100, not110; omitting the terminal visible sample still forces100
+(384 compatible15-bit rows). Literal/packed controls PASS.
+Follow-up within the same cone: identify the shortest spatial prefix
+length at which EVERY compatible row lacks a black-wall predecessor.
+Prediction: a finite length<=17 suffices; CF: the obstruction requires
+infinite tail compatibility beyond this observed cone. U: compare the
+predecessor automaton against literal finite black-image enumeration
+through prefix length6. No larger cone.
+
+Outcome: follow-up prediction PASS. Exhaustive finite-cone membership
+is EXACTLY the spatial prefix cylinder10010001, with all512 nine-bit
+tails allowed. Every compatible row therefore begins10010, whose
+black-wall preimage is impossible already at five spatial cells.
+For a black wall, output1=1 forces old cells1,2=0. Outputs2,3=0 then
+force old cells3,4=0. Output4 equals old cell5, while output5 equals
+old cell5 OR old cell6. Hence output4<=output5;10010 violates this.
+This explains L576's first new exclusion through a concrete shielding
+constraint, rather than merely repeating its language count.
+
+Independent finite black-image enumeration through length6 agrees
+with the predecessor automaton. Full-cone counts and packed/literal
+updates PASS. The terminal visible sample is essential to prehistory
+exclusion:10101000 has a black-reachable spatial row
+100110000100000. Counts are COMPUTED; the five-cell impossibility is
+a hand proof. No all-depth record bound follows, and no longer word
+scan proposed. Next useful target is whether other B obstructions
+admit similarly small forced spatial witnesses, when a specific
+record-excess model needs explanation. Independent reading requested.

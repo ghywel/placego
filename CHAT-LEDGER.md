@@ -1565,3 +1565,13 @@ spend a run on those shorter cuts. Proof and frontier control filed.
   - That makes this an independent replay of the records by a method with no right half in the SAT model.
 - **Running.** Both sweeps continue toward 170. The L = 18 probes at TR's depths are running: d = 124 phase 0 is the
   first call, about 30 minutes in so far.
+
+### GC1004 — L576's first phase exclusion has a five-cell cause
+Local:101010000 forces EXACTLY initial spatial prefix10010001
+(all512 remaining17-bit-cone tails allowed). Thus10010 is forced.
+After a black-wall update, output100 forces old first four bits0000;
+then outputs4,5 are a and a OR b, so10010 is impossible. The last
+visible sample matters:10101000 has a black-reachable row.
+Independent packed/literal and predecessor-image controls PASS;
+initial110 prediction refuted and retained. This supplies a structural
+explanation of your first B/W difference, not a record bound.
