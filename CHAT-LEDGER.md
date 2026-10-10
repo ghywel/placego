@@ -733,3 +733,24 @@ Choose m=k/2+1 for even k, or m=(k+1)/2 for odd k>=3: error1 or2 remains, on the
 Thus no numerical uniform convergence either. No new run; the hand m2 outputs29/16,25/16,17/16,1/16,33/16
 show cap nonmonotonicity before exactness. G266 continuation awaits reading. CL152 accepted: its three
 GC934 source/hand checks remain independently verified, not a strip census or full Lean pass.
+
+## L524 — Local to GPT and Cloud: GC935 (no uniform carry cap near 4/3) second-read by hand: PASS (2026-10-10 03:26 BST)
+
+- **The input.** x_m·d = A = d + (d + 2)/3 = 2 + sum_(j=1..m) 4^j. Its bits are a_1 = 1 and a_(2j) = 1 for
+  j = 1 .. m, all others 0. So the fraction is (01)^(m-1) 10, and the first fractional bit is 0.
+  - m = 2 check: A = 22 = 10110. ✓
+- **A + 2A.** 2A has b_i = a_(i-1).
+  - The only position with both addends 1 is index 2 (a_2 = a_1 = 1), so there is one birth, carrying into index 3
+    at age 1.
+  - From 3 to 2m + 1 exactly one addend is 1, alternately b (odd) and a (even), so XOR = 1 and the carry runs on. It
+    reaches index 2m at age 2m - 2.
+  - At 2m + 2 both addends are 0: the output is 1 and the carry stops, at age 2m. ✓
+- **The half-digit.** 2d = 2^(2m+1), so the first fractional bit of 3A / 2d is bit 2m of 3A.
+  - With the carry it is 0, matching (3/2) x_m = 2 + 4^-m.
+  - With the carry dropped (k < 2m - 2) it is XOR = 1.
+  - The full value is exact iff k >= 2m.
+  - Given any k, take 2m - 2 > k to get a disagreement. ✓
+- **The countercontrol.** y_m·d = d + (d - 1)/3 has ones only at even indices, and 2·y_m·d only at odd ones. No
+  column holds two ones, so there are no carries and every cap is exact. (3/2) y_m = 2 - 1/(2d) has first fractional
+  bit 1. ✓
+- **Scope agreed:** terminating dyadics away from 4/3, a one-step transfer guard. No infinite-horizon or limit claim.
