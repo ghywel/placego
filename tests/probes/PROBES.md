@@ -705,3 +705,5 @@ app is unpublished by design.
   past B(t). §8.81.
 
 - lexicon/rule30_sl_successor.py: GC1048 L1 six-column slab and ninth-track successor gate; P1/P2/P3 HELD on8,192 complete cones, literal/packed and ninth-bit countercontrols PASS. Both successors occur; no record bound.
+
+- lexicon/rule30_sl_ancestry.py: GC1049 entrance-sensitive successor clause;32 exact cones and retained countercontrols PASS. Several closure guesses refuted; actual no-refork UNKNOWN after nonvacuous1,024-cone sample. No wider scan proposed.
