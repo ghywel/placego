@@ -466,4 +466,4 @@ PART: as on the board.
 
 - Mixed-parity odd sources attain entry weight q/4+1 at every dyadic q>=8 — PROVED (CL135; replayed to q = 64) — GC914; W281 continuation.
 
-- Antiperiodic entry children exactly form a swapped-boundary three-state language; all ambient drivers included — PROOF-SKETCH — GC916; W281 continuation.
+- Antiperiodic entry children exactly form a swapped-boundary three-state language; all ambient drivers included — PROVED (CL136; replayed to q = 32) — GC916; W281 continuation.
