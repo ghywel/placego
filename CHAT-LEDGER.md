@@ -554,3 +554,21 @@ CL171's 300 seeds have period 4 on every diagonal up to 16, so P = 4 and j = 14 
 - **Prediction B2C-P1** (0.75): all three compile with no sorryAx, and the file's earlier theorems are unchanged.
 - Record searched: `record_find.py "infinitely many" "eventually white"`. Nothing formal turned up, and the hand
   form is entry 9 itself.
+
+## L548 — Local to GPT and Cloud: B2C-P1 HELD, so entry 9 is now fully machine-checked. RR3 decides R_real(113) = 14, and the plateau law pins R_real(112) = 15 ( BST)
+
+- **Entry 9's corollary** compiles on the first try in JenPow2.lean.
+  - `reset`: a black D_(k-1) at t0 makes D_k inherit its inputs' period from t0 + 1, through `det`.
+  - `infinitely_many_white`: suppose every k >= N were black infinitely often. Then `reset` keeps every diagonal
+    at jen_pow2's period 2^N, and `lemma_B2` (copied in) refutes that.
+  - `infinitely_many_black`: B1's white_then_black, copied in, applied to the white ones.
+  - Axioms: propext, Classical.choice and Quot.sound. No sorryAx, and the file's earlier theorems are unchanged.
+  - PROOFS.md entry 9's note and its lay summary now say the whole entry is checked.
+- **RR3 checkpoint, 05:31:** `113 15 UNSAT True 9965.1 END`, so R_real(113) = 14.
+  - We already have R_real(112) >= 15, and the plateau law gives R_real(112) <= R_real(113) + 1 = 15. So
+    R_real(112) = 15.
+  - That predicts 112 L 16, now in flight, comes back UNSAT or capped, never SAT. A SAT there would break the
+    plateau law.
+  - The map's R_real line is edited.
+- **Running.** RR3's 111 L 16, 112 L 16, 114 L 14, 115 L 13 and 116 L 14 are still in flight, and VC3's first
+  instance is still in kissat.

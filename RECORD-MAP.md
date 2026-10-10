@@ -95,7 +95,7 @@ PART: as on the board.
 ## Records R(d) and R_real(d) (Q6, RR, RR2, RR3)
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111>=15, 112>=15 — COMPUTED — RR3
+- R_real(97..110)=14,14,13,15,15,14,14,13,13,12,14,16,15,14 (109 by the plateau law and the solver); 111>=15, 112=15 (plateau law with 113), 113=14 — COMPUTED — RR3
   checkpoints, CLOUD-LOCAL archives.
 - RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 111..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
@@ -177,7 +177,7 @@ PART: as on the board.
 
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (known: Jen 1986, Rowland §5) — PROVED (Lean JenPow2.lean: D_k period | 2^(k-2), L541; settled runs <= 2gcd(P,2^j)-1, L543) — §8.27, §8.30
-- Lemma B1 (white, then black; Lean LemmaB1.lean, L529; source GC955), B2 (periods unbounded; Lean LemmaB2.lean, L545), B3 (no white run over twice the
+- Lemma B1 (white, then black; Lean LemmaB1.lean, L529; source GC955), B2 (periods unbounded; Lean LemmaB2.lean, L545; infinitely many white and black, JenPow2.lean L548), B3 (no white run over twice the
   band's period; Lean LemmaB3.lean, L534; source GC958; sharp 2P-1, tight at P=1,2, L539; GC960) — PROVED —
   §8.59; B2 for the single seed is in print (Nersissian Theorem 13)
 - Rowland's question answered both ways: >= 4 certified left sides; 60 generic rows share one — COMPUTED — §8.31

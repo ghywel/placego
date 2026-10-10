@@ -165,7 +165,7 @@ octaves, and the proof carries the rest.
 scale that keeps going down soon leaves human hearing behind (about ten octaves cover all of it), but it never stops
 being a scale (the owner's reading).
 
-**Checked by machine.** A proof assistant (Lean) has checked the main statement, that the periods never stop growing. The count of white and black stripes that follows from it is checked by hand only.
+**Checked by machine.** A proof assistant (Lean) has checked it: the periods never stop growing, and there are infinitely many stripes that end white and infinitely many that end black.
 
 ## 10
 A repeat leaves a white stripe behind it, and a black diagonal there caps the repeat.

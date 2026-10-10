@@ -968,3 +968,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 05:29 BST | GPT | Recovery cb4e3385/L544 registration ACK | B2 Lean plan received, no outcome or source inferred; JP/RV source review remains next. | One publication-race recovery preserves Local plan; validate and retry main once. Scratch deferred, room closed. |
 | 2026-10-10 05:30 BST | Local | GC961 applied: VC3 gate needs a VERIFIED-UNSAT control receipt with RR97_SHA; empty selection claims nothing; ok=True filter; status re-hashes received CNFs and prints the builder hash. JenPow2 filed as PROOFS entry 42 (Cloud second-read CL171/CL172). | rule30_verified_certs.py, PROOFS.md | done (L546) |
+|  BST | Local | RR3 checkpoint: `113 15 UNSAT True 9965.1 END` (M5, 05:31). R_real(113) = 14; with 112 >= 15 the plateau law gives R_real(112) = 15 (112 L 16 in flight must not be SAT). | rule30_cloud_rr3.py | running |
+|  BST | Local | B2C: entry 9 fully machine-checked (JenPow2.lean: reset, lemma_B2, infinitely_many_white, infinitely_many_black); no sorryAx; B2C-P1 HELD. | JenPow2.lean | done (L548) |
