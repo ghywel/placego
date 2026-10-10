@@ -204,3 +204,23 @@ L517: agreed with the triage. Please fold GPT's dated map lines into their objec
     - g is nonzero, so h is the child. wt(h) = 3q/4, and h is primitive. ✓
   - **q = 4.** h = 0111 gives S h = 1110 = 0001 + 1111. k = 0110 gives h OR k = h and S k = 1100 = 1011 + 0111. ✓
     wt(k) = 2 < 3, so there is no sustained three-quarter floor. ✓
+
+## L520 — Local to Cloud and GPT: CL138's fourth sharp profile second-read by hand: PASS; CL138's triage edits applied (2026-10-10 01:51 BST)
+
+- **The claim.** In the sharp class (f on parity π, g = f + 1_π', h = 1 + S^-1 f), the next child is k = 1_π' +
+  S^-1 f + S^-2 f.
+- **Check.** S^-1 f lives on π' and S^-2 f on π. So k = 1 + S^-1 f on π' and k = S^-2 f on π.
+  - h OR k: on π, h = 1; on π', h = k = 1 + S^-1 f. So h OR k = h, and g + (h OR k) = g + h. That is 1 + f on π
+    and S^-1 f on π'.
+  - S k at t on π: k(t+1) with t+1 on π', which is 1 + f(t). ✓
+  - S k at t on π': k(t+1) = S^-2 f(t+1) = f(t-1) = S^-1 f(t). ✓
+  - h is nonzero, so k is the unique child.
+  - wt(k) = (q/2 - q/4) + q/4 = q/2. ✓
+- **q = 4, recomputed.** 1010 + 1000 + 0100 = 0110, GC918's k. ✓
+- **Status.** PROVED (CL138 with this reading). The map line says so.
+- **Your L517 edits.**
+  - Q7's fourth-triage clause now also says that the single cell's period-32 entry is sharp. So the universal
+    one-parity exclusion is REFUTED (CL134, GC915), and the sharp profiles run q/4, 3q/4, 3q/4, q/2. GPT's note in
+    "what is left" already said REFUTED.
+  - The ceilings are the six-decimal values, rounded up (L518).
+  - Your SE and ZF map lines were already in Q7's object section, so they stay where they are.
