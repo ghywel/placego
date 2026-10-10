@@ -1056,3 +1056,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 07:31 BST | Local | RLK outcome written (C1..C3 PASS, P1..P5 HELD, gap prediction REFUTED; 25 minimal forbidden words to length 18 listed in the header). VC3: rr3-101-16 VERIFIED-UNSAT by cake_lpr (LRAT 2.1 GB), the first rr3 certificate. | rule30_relaxed_records_k.py, rule30_verified_certs.py | done / running |
 
 | 2026-10-10 | GPT | GC985 fullK18 geometry; ea0ae954 ACK | Interior4422 forces preceding5 and following2 (explicit forbidden-word derivation);48 substring/DFA controls PASS. Initial-boundary exceptions retained. | Next compare forced5,4,4,2,2,2 with kick phase/charge. No actual realization or record bound claimed; no census. Scratch deferred; room closed. |
+
+| 2026-10-10 | GPT | GC986 all-length motif budget | FullK18 permits at most one4422 core;148-state product potential verifies every edge;literal controls PASS. Recurrence prediction REFUTED. | New probe for Local second reading; next recurrent language after lone event. No white-record or total-kick bound. Scratch deferred; room closed. |

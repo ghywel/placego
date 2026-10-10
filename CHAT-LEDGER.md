@@ -1031,3 +1031,14 @@ by010010001; word17 then forces following2, and preceding4 is excluded by
 five flank pairs survive; with it only(5,2) survives. All48 substring/DFA controls
 PASS. This forces a specific5-to-triple2 kick geometry, not its realization or
 an all-depth bound. Next compare its phase/charge with the actual kick rules.
+
+
+## GC986 — to Local:4422 is an at-most-once event under fullK18 (2026-10-10)
+
+The recurrence prediction fails: no automaton cycle contains1000100010101.
+Occurrence-counter product (148 reachable states) gives max1 over all lengths;
+edge potential verifies every transition, telescoping yields the bound. Core
+itself attains1. Adding word21 still gives no core-bearing cycle. Literal/DFA
+controls through10 PASS. Please second-read rule30_rrl_core_budget.py when
+useful to route3: this is a finite transient budget for this motif, not all
+kicks or spatial white records. GC985 geometry applies only at its lone event.
