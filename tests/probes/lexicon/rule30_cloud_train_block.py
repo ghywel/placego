@@ -13,6 +13,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMA
             python3 tests/probes/lexicon/rule30_cloud_train_block.py arming                   (needs kissat, ~1 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py cut45                    (needs kissat, ~3 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py separator                (needs kissat, ~1 min)
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py entrymemory              (needs kissat, ~10 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -114,6 +115,13 @@ sizes 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 3, 3, 3, 3 at offsets 7 .. 22 (GPT's f
 the leading-0 history's row at 75 is 1001000 and x_8(75) is forced 1, so the row at 76 is 0111101, outside the
 backward set {0111010, 0111100, 0111111}; the pinned strip's free-exterior propagation forces x_8(75) = 1 too. With
 the leading 1, x_8(75) can be 0 or 1 and the final 1 is realizable either way.
+
+MODE entrymemory, OUTCOME (2026-10-10 16:50 BST; GC1033's request, CL203). Entry + ten cars, no exit, sites 1 .. 45:
+the leads' forced cells differ at t = 0 (sites 2 .. 6 = 11111 after the leading 0), t = 5 (sites 4, 8, 9) and t = 10
+(site 7 = 0 after the leading 0), and not at all at t = 15, 20, 30. At t = 30 the exact set of sites 7 .. 18 is 19
+states after the leading 0 and 31 after the leading 1, the first within the second (seven two-cell relations hold
+for the leading 0 only). Propagated through the cars and the failed gate with a free exterior beyond site 18, both
+sets reach the same 231 states at t = 75 with x_7 and x_8 free: the near-wall strip does not carry the memory.
 
 MODE arming, OUTCOME (2026-10-10 15:45 BST; review of GC1028 and data for CL197). The exit target is exactly GPT's 39
 nine-bit words (01101????, 01110????, 0111100??, 0111111ab with ab != 00), all beginning 011. A' has 34 states and
@@ -507,6 +515,43 @@ def separator():
               % (lead, '/'.join(vals), ' '.join(rows), inb))
 
 
+def entrymemory():
+    """GC1033's request (CL203): where the leading symbol's memory sits during the train. Entry + ten cars only (no exit).
+    (1) Cells forced at t = 5, 10, 15, 20, 30 over sites 1 .. 45, both leads. (2) The exact sets of sites 7 .. 18 at
+    t = 30 (SAT, 4096 calls a lead, about 3 min each) and their free-exterior propagation through the cars (gates pass
+    at 30 .. 58, fail at 62) to t = 75. Runtime about ten minutes."""
+    import itertools
+    def step_bits(bits, wall, ext):
+        r = [wall] + bits + [ext]
+        return [r[i - 1] ^ (r[i] | r[i + 1]) for i in range(1, len(bits) + 1)]
+    def forced_row(word, t, sites, tmax):
+        out = ''
+        for i in sites:
+            c0, c1 = _cone_sat(word, [(t, i, 0)], tmax), _cone_sat(word, [(t, i, 1)], tmax)
+            out += '0' if c0 and not c1 else '1' if c1 and not c0 else '?'
+        return out
+    tail, train = '00010001010000', '10' * 10
+    for t in (5, 10, 15, 20, 30):
+        rows = {lead: forced_row(lead + tail + train, t, range(1, 46), 80) for lead in ('0', '1')}
+        diff = [i + 1 for i, (a, b) in enumerate(zip(rows['0'], rows['1'])) if a != b]
+        print('t = %2d: lead 0 %s | lead 1 %s | differ at sites %s' % (t, rows['0'], rows['1'], diff))
+    sets = {}
+    for lead in ('0', '1'):
+        w = lead + tail + train
+        sets[lead] = {x for x in itertools.product((0, 1), repeat=12)
+                      if _cone_sat(w, [(30, 7 + j, b) for j, b in enumerate(x)], 76)}
+        print('lead %s: exact set of sites 7 .. 18 at t = 30: %d states' % (lead, len(sets[lead])), flush=True)
+    print('leading-0 set within the leading-1 set:', sets['0'] <= sets['1'])
+    for lead in ('0', '1'):
+        S = set(sets[lead])
+        for t in range(30, 75):
+            if t % 4 == 2 and t <= 62:
+                S = {x for x in S if x[0] == (1 if t == 62 else 0)}
+            S = {tuple(step_bits(list(x), 0 if t % 4 == 2 else 1, e)) for x in S for e in (0, 1)}
+        print('lead %s: propagated to t = 75: %d states; x_7 values %s; x_8 values %s'
+              % (lead, len(S), sorted({x[0] for x in S}), sorted({x[1] for x in S})))
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
@@ -515,5 +560,5 @@ if __name__ == '__main__':
      'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16])),
      'follower': lambda: follower(*(a or [13])), 'carrier': carrier, 'packet': packet, 'arming': arming,
          'cut45': cut45,
-     'separator': separator}[cmd]()
+     'separator': separator, 'entrymemory': entrymemory}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
