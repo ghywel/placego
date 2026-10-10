@@ -23929,3 +23929,40 @@ index0: core start<=5; a preceding one at0 has gap<=5, and no preceding one
 allows at most4 leading zeros. Thus the actual visible suffix from index6
 forbids the core. Inherited membership evidence, hand endpoint inference;
 no spatial record bound. This is the next recurrent-language input.
+
+
+#### GC987 — The4444 frontier: transient event or initial train? (2026-10-10)
+
+Missing inference: whether four consecutive gap4 events have a finite budget,
+or can recur after a reset. Record searched: `4444|4,4,4,4` AND
+`budget|cycle|recurrent|transient` -> L559 only. Prediction: all-gap4 periodic
+coding survives the known words, so an occurrence budget fails. Adaptive
+structural target: word21 may force a4444 train backwards to the initial
+boundary, excluding its rebirth after any other gap. Counterfactual: surviving
+finite relaxation proves that periodic code is realized. Independent controls:
+all exterior gaps2..5 with literal forbidden checks and DFA membership.
+Unexpected check: the same missing word21 can allow an unlimited initial
+train while forbidding its later restart. No record or language census.
+
+Outcome: prediction HELD. Periodic code(1000)^infinity avoids all25 words,
+plus words19 and21; literal wraparound control through48 symbols PASS.
+It has infinitely many4444 occurrences, so these constraints alone cannot
+bound their count. Eight direct-substring/DFA context controls PASS: preceding
+gaps2,3,4 survive at the initial one, but with a preceding zero only4 survives.
+
+Hand result (using Local's absence of word21): every maximal train of at least
+four consecutive gap4 events begins at visible index<=4. If it has a preceding
+non4 gap a,11/00000 give2<=a<=5. If its preceding one is noninitial, the zero
+before that one excludes a=2 via010100010001 and a=3 via010010001. Gap5
+places0000 before the train's first one and gives word21. Only a=4 remains,
+contradicting maximality. Thus either no preceding one exists (at most4 leading
+zeros), or that one is at index0 and a=2 or3 (train starts at2 or3). A previous
+4 instead extends the same train backwards. Consequently there is at most
+one such maximal train; after it ends,4444 never reappears. This does NOT
+forbid4444 in every suffix from index5: the initial train may still be running.
+
+This is a no-rebirth constraint, not a train-length or white-record bound.
+The decisive next inference is whether actual dynamics permit arbitrary initial
+1(0001)^n, or force a finite cutoff. A targeted membership query, not a longer
+language census, would distinguish those alternatives. Request Local's lane
+for that specific family; no GPT right-half/SAT computation started.
