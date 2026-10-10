@@ -8,6 +8,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMA
             python3 tests/probes/lexicon/rule30_cloud_train_block.py boundary [N=8] [W=10]      (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py memory [LEAD=4] [NMAX=16]   (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py follower [N=13]            (needs kissat)
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py carrier                  (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -77,6 +78,13 @@ CL190's Question B is false in its strong form at this scale; whether the set st
 MODE follower, OUTCOME (2026-10-10 15:15 BST; GC1024's request). q T^11 v IN, q T^12 v ABSENT, q T^13 v IN, q T^14 v IN
 (phase 0). A 101-site right half for q T^13 v is found by SAT and read back by a plain simulation; flipping site 21
 breaks it. The right half is printed by the mode and kept in CL193. So n0(10) >= 13 rests on a simulated model.
+
+MODE carrier, OUTCOME (2026-10-10 15:25 BST; data for the lemma posed in CL194). After q T^12 not even a 0 can follow
+(q T^12 IN, q T^12 0 ABSENT): the 13th car is forced by the prefix q. After q T^13 every prefix of v is IN. Dropping
+q's first two symbols lifts that obstruction (q[2:] T^12 0 IN, q[2:] T^12 v[:9] IN) but q[2:] T^12 v is still ABSENT
+(a 47-symbol minimal forbidden word); with three symbols dropped all is IN. Unconditioned synchronization: from all
+states of sites 7 .. 6+w, gate each cycle, free exterior, the reachable set stabilizes at 20 (w = 5, from cycle 1),
+52 (w = 7, from 3), 105 (w = 9, from 5), 269 (w = 11, from 8).
 """
 import os, sys, time
 
@@ -230,11 +238,36 @@ def follower(n):
           % (reads(rh), reads(rh[:20] + ('1' if rh[20] == '0' else '0') + rh[21:])))
 
 
+def carrier():
+    """Where the memory across the train sits (CL194). (1) By SAT: how much of q and of v the obstruction q T^12 v needs.
+    (2) Pure Python: starting from all states of sites 7 .. 6+w, with the gate (site 7 white at the phase-0 tick) each
+    cycle and a free exterior at site 7+w every tick, how fast the reachable set under the train stabilizes."""
+    import rule30_relaxed_records_k as rk
+    q, v, T = '000010001010000', '0010000101', '10'
+    IN = lambda w: rk.in_language_phase(w, 0)
+    print('q T^12 v[:j], j = 0 .. 10:', ''.join('I' if IN(q + T * 12 + v[:j]) else 'A' for j in range(11)), '(I in, A absent)')
+    print('q[i:] T^12 v, i = 0 .. 15:', ''.join('I' if IN(q[i:] + T * 12 + v) else 'A' for i in range(16)))
+    print('q T^13 v[:j], j = 0 .. 10:', ''.join('I' if IN(q + T * 13 + v[:j]) else 'A' for j in range(11)))
+    print('q[2:] T^12 v[:9]:', 'IN' if IN(q[2:] + T * 12 + v[:9]) else 'ABSENT', '| q[2:] T^12 0:', 'IN' if IN(q[2:] + T * 12 + '0') else 'ABSENT')
+    def step_bits(bits, wall, ext):
+        r = [wall] + bits + [ext]
+        return [r[i - 1] ^ (r[i] | r[i + 1]) for i in range(1, len(bits) + 1)]
+    for w in (5, 7, 9, 11):
+        S = {tuple((m >> j) & 1 for j in range(w)) for m in range(1 << w)}
+        sizes = []
+        for k in range(16):
+            S = {x for x in S if x[0] == 0}
+            for wall in (0, 1, 1, 1):
+                S = {tuple(step_bits(list(x), wall, e)) for x in S for e in (0, 1)}
+            sizes.append(len(S))
+        print('w = %2d: reachable states of sites 7 .. %d after 1 .. 16 gated cycles: %s' % (w, 6 + w, sizes))
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
     {'member': lambda: member(*(a or [200])), 'seeds': lambda: seeds(*(a or [12, 400])),
      'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40])),
      'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16])),
-     'follower': lambda: follower(*(a or [13]))}[cmd]()
+     'follower': lambda: follower(*(a or [13])), 'carrier': carrier}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
