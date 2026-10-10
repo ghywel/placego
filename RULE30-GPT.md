@@ -27603,3 +27603,34 @@ All32 complete two-tick cones agree with independent literal/packed updates and 
 **Failures retained.** P1 predicted no next mid00 from the S cylinder111011100;228 of512 complete cones refute it. Informed P2 predicted no full refork in that S cylinder; the displayed complete cone refutes it. P3 then predicted an actual L1-S-L0-L1 among1024 deterministic random full cones: the sample expectation is REFUTED, while actual existence remains UNKNOWN, with no absence claim. The sample is nonvacuous:147 L1-S-L0 cases,94 with the next mid00. P4 predicted that a seven-bit return1110000 from the S cylinder requires initialsites10..12=110;11101110011100000000000 refutes it. Informed P5 repaired that hypothesis to the full nine-bit L1 gate;1110111001110000000000000 refutes it too. All retained counterexamples replay independently. The latter111-tail is the unexpected check: it passes the new clause while reforking in the relaxed S cylinder, so the clause alone does not discharge the closure target. No larger scan is proposed.
 
 **Disposition.** This narrows the missing invariant to correlations in the L1 prehistory beyond the nine-bit S entrance. The simple mid-pair and three-bit origin-shield shortcuts are stopped; the actual no-refork claim is neither proved nor refuted. Next seek a backward-closed family of entrance-dependent clauses under the typed return maps, without treating a necessary clause as a sufficient lift or adding another window census. Cloud review requested for the hand clause and the distinction between the actual and relaxed reforks. All-depth record boundedness remains open.
+
+
+## GC1050 — The complete ordinary-to-alternative long switch has four thirteen-bit cylinders (2026-10-10)
+
+**Missing inference.** Typed composition needs the complete L0->L1 entrance, not just GC619's one sufficient cylinder. The new hand observation is that GC1047's complemented mid-pair also transports its first bit to returned site7. Record searched:1110010001 with complete|necessary|MUX|selector|gate|thirteen gives9 hits, the earlier GC614/618/619 and GC1047 facts, not a complete switch classification. This block switches from GC1049's stopped closure scans to an all-tail Boolean derivation. Predictions before controls: the return first8 is11100000 iff the input begins1110010001; its ninth bit then has the mux formula below.
+
+For every white-wall row beginning111001, the next row after its ten-tick L0 is in L1 exactly when the initial row begins one of
+
+    1110010001000, 1110010001010,
+    1110010001011, 1110010001100.
+
+Every farther tail is allowed in each cylinder. Equivalently, the initial first10 bits must be1110010001 and, for f,g,h at initialsites11,12,13,
+
+    L1 gate = (NOT f AND g) OR (NOT g AND NOT h).
+
+This is a multiplexer: g=1 selects NOT f, g=0 selects NOT h. GC619's old cylinder is just f=g=0; its NOT-thirteenth-bit gate cannot be applied after forgetting those two whites.
+
+**Necessity of the ten-bit prefix.** If the return starts1110000, its sites5,6 are00. GC1047 therefore gives mid00 and time5 sites8,9 equal P,1-P. Its time9 sites6,7 are1-P,1, so returned site7 equals P. Thus P=0. In GC1047's proof the time2 pair(p,q) atsites9,10 is10 when P=0, and01 when P=1. The same proof forces time2 sites7,8 both0; its initialsites7,8 are both0. Writing initialsites9,10 as d,e, its intermediate Y=d, Z=d OR e=1 and p=NOT d show that p=1 forces d=0,e=1. This is exactly1110010001. Conversely that prefix gives time2 sites7..10=0010, then the mid-pair with P=0. GC1047's transport gives the first7 return bits1110000. At time8 its sites6..8 are010. Writing its sites9,10 as w,z, the time9 sites7..9 are1,NOT w,w OR z; returned site8 is0 because (NOT w) OR(w OR z)=1. Hence the first8 return bits are11100000 iff that ten-bit prefix holds.
+
+**The ninth-bit mux.** The ten-bit prefix gives time4 prefix0011111100. GC618/619's shielded calculation, which uses that prefix and arbitrary farther bits, says returned site9 is NOT E, where E=c11(4). To expose its original coefficients, write time2 sites11..13 as r,s,t. Its prefix0111000010 gives time3 sites10..12 equal NOT r,r OR s,r XOR(s OR t). Consequently
+
+    E = r OR NOT(s OR t),
+    return site9 = NOT r AND(s OR t).
+
+Let J=NOT(f OR g), K=f XOR(g OR h), V=g XOR(h OR i), W=h XOR(i OR j), with i,j arbitrary farther initial bits. Direct two-tick updates give r=NOT(J OR K), s=J XOR(K OR V), t=K XOR(V OR W). For r=0 there are two cases. J=0,K=1 forces s=1, so the gate is1. J=1 means f=g=0, giving K=h,V=h OR i; here s OR t=NOT h, as in GC619's reviewed cancellation. J=K=0 has r=1 and gate0. The J=0,K=1 case is precisely g=1,f=0 or g=0,f=1,h=0. Together these cases yield the displayed mux and exhaust all initial bits, proving the four cylinders.
+
+**Controls and scope.** All512 complete fixed-ten-prefix cones for the ninth return bit agree with independent literal/packed updates. Another256 varied-prefix farther-tail extremes check the necessary prefix; these are controls, not the proof of all-tail necessity. Both predictions hold. The unexpected positive1110010001100 lies outside GC619's old cylinder and succeeds;1110010001110 has a white thirteenth bit but fails, refuting extension of the old single-bit formula without its coefficient prefix. No solver, visible-language membership job or strip-width scan.
+
+This completes the finite hidden-fork gate, shrinking the next actual-prehistory target to the union of four explicit cylinders. Intersecting their preimages with L1-S ancestry is now the concrete closure obligation; GC1049's no-refork remains unresolved. Unlimited relation closure and the all-depth record bound remain open. Cloud hand review requested.
+
+**L609 receipt at7be937a9.** Accepted and ACKed: both-phase kissat UNSAT at d140,L18 over verified cuts gives R_real(140)<=17; formal certificate replay is still pending. The d131 witness is reported VALID. The dip between the witnessed18s at136 and152 is retained with that provenance; no duplicate audit or run.

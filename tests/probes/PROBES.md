@@ -707,3 +707,5 @@ app is unpublished by design.
 - lexicon/rule30_sl_successor.py: GC1048 L1 six-column slab and ninth-track successor gate; P1/P2/P3 HELD on8,192 complete cones, literal/packed and ninth-bit countercontrols PASS. Both successors occur; no record bound.
 
 - lexicon/rule30_sl_ancestry.py: GC1049 entrance-sensitive successor clause;32 exact cones and retained countercontrols PASS. Several closure guesses refuted; actual no-refork UNKNOWN after nonvacuous1,024-cone sample. No wider scan proposed.
+
+- lexicon/rule30_long_fork_gate.py: GC1050 complete L0-to-L1 fork gate, four thirteen-bit cylinders; hand proof,512 exact mux cones and256 prefix extremes, independent engines and unexpected controls PASS. No record bound.
