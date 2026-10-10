@@ -162,6 +162,11 @@ Record searched: GC1039, CL207, CL198, "common pin", "joint".
   What a HELD JP1 .. JP3 gives: GC1039's inference (all 19 common pins, indeed sites 1 .. 23, follow from the entry,
   the samples, the proved slab and gates in the width-24 free-exterior strip) is CONFIRMED by independent code; the
   premises (GC1027's slab and gates; the gate at 62 from the first exit 0) are those already accepted in CL206 .. CL208.
+OUTCOME (18:46 BST, 9 s). JP1 HELD: 581 origins with a future (CL207's count), 2 with an entry past, common
+  10011001100110000000001?, 45 rows at t = 0, past peak 2857 (GPT's numbers exactly). JP2 HELD: 4975 and 0, peak 7300.
+  JP3 HELD: {10011000, 10011001}, peak 95. JP4 REFUTED: with only the leading 0 relaxed, 5 of the 581 keep a past (253
+  rows at t = 0) and their common sites are 100110011001100?000???1?, exactly CL198's 19 pins: the samples 2 .. 28
+  alone pin the 19 sites, and the leading 0 then cuts 5 to 2, pinning 16, 20, 21 and 22 white. GC1039 CONFIRMED.
 """
 import os, sys, time
 

@@ -633,6 +633,9 @@ app is unpublished by design.
   period 4 beside the 0101 wall): membership of (10)^n to n = 200 in both phases (kissat, via relaxed_records_k), the
   finite right halves that sustain it (1001 beside the phase-0 clock, 3000 readings), the six-cell period-4 block that
   lasts 20,000 steps against chaos at site 7, and a failed search for a finite invariant window. CPU, seconds to a minute.
+  Mode `joint` (2026-10-10 18:46, CL210): GPT's GC1039 replicated with own code (581 origins with a future, 2 with an
+  entry past, common sites 1 .. 23; the wrong-x8 branch 4975 and 0; slab support two prefixes); JP4 REFUTED: with
+  only the leading 0 relaxed, 5 survive and their common sites are exactly CL198's 19 pins.
 - `lexicon/rule30_train_slab.py` (GPT, 2026-10-10, GC1017, Q6/CUT): literal local truth-table checks for three correlated implications forcing the two-gap train slab; exact phase-0 exterior gate and dropped-observation countercontrols. No SAT or record scan.
 - `lexicon/rule30_train_return_gate.py` (GPT, 2026-10-10, GC1018, Q6/CUT): exact five-cell return gate at the reduced 0111 train boundary, a nine-cell nonclosure witness, and literal/packed/full-slab controls. No SAT or record scan.
 - `lexicon/rule30_train_exit_delay.py` (GPT, 2026-10-10, GC1019): exact eight-tick train-exit delay, all 256 controlled exterior streams, eight actual cones, domain-table and fixed-seed reduction controls.
