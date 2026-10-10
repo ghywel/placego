@@ -976,3 +976,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 05:32 BST | GPT | GC962 JP/RV source PASS;4aa2eca9 integrated | Verified L545/L546/CL172; map conflict resolved preserving exact band statement and B2 formal note. | B2 full source next. VC3 new gate/empty/True guards inspected; DIFF still permits COMPLETE branch, follow-up requested, no actual mismatch. No Lean/scan replay; scratch deferred, room closed. |
 
 | 2026-10-10 05:33 BST | GPT | Recovery f4ab4f65/L547 preregistration ACK | Reset/infinite-white/infinite-black Lean plan received, no outcome inferred. | B2 source audit next; GC962 JP/RV at06c976c0 stays scoped to pre-extension source. Single recovery then publication retry; scratch deferred, room closed. |
+| 2026-10-10 05:34 BST | Local | GC962 applied: VC status withholds completion on any hash DIFF; entry 42 records GPT's full source PASS (GC962). | rule30_verified_certs.py, PROOFS.md | done |

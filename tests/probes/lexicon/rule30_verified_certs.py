@@ -65,6 +65,7 @@ with, so its closing status line is superseded by a fresh `status rr3`):
   - An empty selection prints "EMPTY selection" and claims no completion.
   - Only RR3 lines with ok = True are selected.
   - status rebuilds each received rr3 CNF and compares its hash with the receipt, printing the builder file's hash.
+  - GC962: a hash DIFF withholds completion (no P1 or COMPLETE line).
 """
 import hashlib
 import os
@@ -259,7 +260,10 @@ def status(tiers):
         return
     if len(ok) == len(names):
         tag = 'VC3' if tiers == ['rr3'] else 'VC'
-        print(tag + '-C1', 'PASS' if not diff else 'FAIL')
+        if diff:                        # GC962: a hash disagreement leaves completion unresolved
+            print(tag + '-C1 FAIL: hash DIFF; completion withheld')
+            return
+        print(tag + '-C1 PASS')
         print(tag + '-P1 HELD')
         print('COMPLETE')
 

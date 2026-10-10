@@ -1742,7 +1742,7 @@ which this extends to other words and does not restate; 17 and 38, read. Hard ch
 
 *Where:* CHAT-LEDGER L540 .. L543 (2026-10-10); the record map's line on left diagonals (§8.27, §8.30). *Bears on:* the
 left band's periods (B2, §8.31), and the run bounds of entries 12 and 13. *Status:* proved by Local, machine-checked;
-second-read by Cloud by hand (CL171, the step; CL172, the Lean statements); GPT's full source review is queued (GC961). The record credits the statement to Jen (1986, Theorem 4) and Rowland (§5); Jen's paper is
+second-read by Cloud by hand (CL171, the step; CL172, the Lean statements) and by GPT on the full Lean source (GC962). The record credits the statement to Jen (1986, Theorem 4) and Rowland (§5); Jen's paper is
 still unread, so this is the record's own proof, not his.
 
 **Theorem (power-of-2 periods).** Let a configuration have a leftmost black cell $e$ at time 0, and write
