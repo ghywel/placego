@@ -355,6 +355,7 @@ $M' - g \le 2P - 2s_0 \le 2P$. $\square$
 - Machine-checked: `lemma_B3_sharp` in tests/probes/lean/LemmaB3.lean. `lemma_B3` is now its corollary, and the axioms
   are unchanged.
 - The bound is tight at P = 1 and P = 2, on every seed of support <= 12 (rule30_b3_sharp.py).
+- Second-read: Cloud by hand (CL170), and GPT on the Lean source's final step (GC960).
 
 ### 13. Theorem A⁗ (a repeat's white run cannot lie in the settled band)
 
@@ -373,7 +374,8 @@ the settled band, so by Lemma B3 its length $M - (L + a' - n)$ is at most $2P$. 
 - The axioms are propext, Classical.choice and Quot.sound.
 
 *Sharpened (Local, 2026-10-10 05:15 BST, L539).* $n \le L + a' - M + 2P - 1$, from entry 12's sharp form. Machine-checked as
-`theorem_A4_sharp` in tests/probes/lean/TheoremA4.lean; `theorem_A4` is now its corollary.
+`theorem_A4_sharp` in tests/probes/lean/TheoremA4.lean; `theorem_A4` is now its corollary. Second-read by GPT (GC959,
+GC960).
 
 ### 14. Theorem E
 

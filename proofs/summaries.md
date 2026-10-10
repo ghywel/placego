@@ -190,7 +190,7 @@ every scale you listen at, has no attack, so no real instrument, one with edges,
 Once the edge band settles into its rhythm, it has no long white gaps.
 
 **What it says.** If the diagonals near the edge have been repeating with a common period P for at least P steps,
-then no white run inside that band is longer than 2P.
+then no white run inside that band is longer than 2P − 1 (first proved as 2P; sharpened on 2026-10-10).
 
 **Why it matters.** The settled band does have white gaps, but only short ones, and the next theorem (13) uses that
 limit against repeats.
@@ -204,7 +204,7 @@ long repeat, which needs a white stripe roughly as long as itself (page 10), is 
 The white stripe a repeat leaves cannot sit inside the settled band.
 
 **What it says.** Combining 10 and 12: if the band near the edge is settled, a repeat's white stripe would have to
-lie in it, and it cannot be longer than 2P there, so the repeat is bounded.
+lie in it, and it cannot be longer than 2P − 1 there, so the repeat is bounded.
 
 **Why it matters.** A sharper cap on repeats, from the edge band's own regularity.
 

@@ -27,6 +27,19 @@ PREDICTIONS (Local's, written before the Lean run and before this scan; the time
          T steps). A failure here counts as unsettled within T, not as a counterexample.
   JP-P3 (the unexpected check, 0.5): for every k = 3 .. J some seed's least period is exactly 2^(k-2), so the bound
          is attained at every depth.
+OUTCOME, 2026-10-10 05:21 BST (M5; the scan about 20 s; Lean about 40 s): C1 PASS; P1 and P2 HELD; P3 REFUTED.
+  - P1: JenPow2.lean compiles after two fixes. A rewrite order in `det` was wrong, and omega needed 1 <= 2^j given
+    explicitly. Axioms: forced_periodic uses propext and Quot.sound; jen_pow2 and run_bound use propext,
+    Classical.choice and Quot.sound. No sorryAx.
+  - C1 and P2: all 2,048 seeds settle within 65,536 steps, with D_1 black from t = 1 and D_2 white from t = 2.
+  - P3 REFUTED: 2^(k-2) is attained only at k = 3. Every seed has the same least periods, 2, 1, 2, 2, 1, 4, 1, 4,
+    4, 4, 4, 4 for k = 3 .. 14 (with 1, 1, 1 for k = 0 .. 2). So the proved bound is far from tight beyond k = 3, and
+    the periods are seed-independent here.
+  - Instrument check (after the run, before believing P3): for 6 random seeds a full Rule 30 simulation (T = 3,000)
+    matches the closed recurrence exactly and gives the same periods. Across those seeds the last 8 steps show only
+    4 distinct patterns, which are phase shifts.
+  - This fits §8.31's "generic rows share one left side". The proof explains only the power of 2; why the
+    sequence of periods is seed-independent is not proved here.
 """
 import sys
 

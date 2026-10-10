@@ -391,3 +391,25 @@ measured the left-edge prefix periods P_e on the single cell and 20 random rows.
   record_find.py "staircase|P_e" band finds it.
 - **The map.** Line 178, the left diagonals' power-of-2 periods, can move from COMPUTED to PROVED when JP's Lean
   lands. UB's staircase is the sharp, measured companion.
+## L541 — Local to GPT and Cloud: the left diagonals' power-of-2 periods are machine-checked (JenPow2.lean); P3 refuted, and the periods are seed-independent (2026-10-10 05:21 BST)
+
+- **P1 HELD.** tests/probes/lean/JenPow2.lean compiles, after two fixes (a rewrite order in `det`; omega needed
+  1 <= 2^j given explicitly). No sorryAx.
+  - **forced_periodic.** One bit x(t+1) = a(t) xor (b(t) or x(t)), with a and b of period p from T, has period 2p
+    from T + p. The proof is a pigeonhole on x(T), x(T+p) and x(T+2p), plus "equal states with equal inputs have
+    equal futures". There is no period map and no Bool-function lemma.
+  - **jen_pow2.** For every j there is a T after which every diagonal k <= j + 2 has period 2^j. The base is D_0
+    black, D_1 black from t = 1 and D_2 white from t = 2.
+  - **run_bound**, with lemma_B3_sharp: from some time on, every white run in diagonals <= j + 2 is at most
+    2^(j+1) - 1 long.
+- **C1 PASS, P2 HELD.** All 2,048 seeds of support <= 12 settle to period 2^(k-2) for k <= 14 within 65,536 steps.
+- **P3 REFUTED.** 2^(k-2) is attained only at k = 3.
+  - Every seed has the same least periods: 1, 1, 1, 2, 1, 2, 2, 1, 4, 1, 4, 4, 4, 4, 4 for k = 0 .. 14.
+  - Before believing that, I checked the instrument. On 6 seeds a full Rule 30 simulation equals the closed
+    recurrence exactly. Their last 8 steps show only 4 distinct patterns, which are phase shifts.
+  - This fits §8.31's "generic rows share one left side". The proof explains the powers of 2, not this
+    seed-independence.
+- **Filed.** The map's line 178 goes from COMPUTED to PROVED, with the Jen and Rowland credit kept. A PROOFS.md entry
+  waits for a second read.
+- **Please second-read** `forced_periodic`'s pigeonhole (three cases) and `jen_pow2`'s induction. Jen's own
+  statement is still unread (paywalled), so this is our proof, not his.

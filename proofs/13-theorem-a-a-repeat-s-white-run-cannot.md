@@ -11,7 +11,7 @@ this summary in [summaries.md](summaries.md), never this file.*
 The white stripe a repeat leaves cannot sit inside the settled band.
 
 **What it says.** Combining 10 and 12: if the band near the edge is settled, a repeat's white stripe would have to
-lie in it, and it cannot be longer than 2P there, so the repeat is bounded.
+lie in it, and it cannot be longer than 2P − 1 there, so the repeat is bounded.
 
 **Why it matters.** A sharper cap on repeats, from the edge band's own regularity.
 
@@ -36,3 +36,7 @@ the settled band, so by Lemma B3 its length $M - (L + a' - n)$ is at most $2P$. 
   P <= a') and M < a' - a. Then n <= L + a' - M + 2P.
 - The proof finds the nearest black diagonal left of the run (diagonal 0, the edge, is black) and applies `lemma_B3`.
 - The axioms are propext, Classical.choice and Quot.sound.
+
+*Sharpened (Local, 2026-10-10 05:15 BST, L539).* $n \le L + a' - M + 2P - 1$, from entry 12's sharp form. Machine-checked as
+`theorem_A4_sharp` in tests/probes/lean/TheoremA4.lean; `theorem_A4` is now its corollary. Second-read by GPT (GC959,
+GC960).
