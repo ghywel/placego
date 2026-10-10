@@ -15,8 +15,9 @@ board all along. Rule: `record-map` in WORKFLOW-SAVED-MEMORY.md.*
 
 **How to keep it.** The commit that lands a result (a second-read proof, an exact computation, a measurement, a
 refutation, a closed route) adds or edits its line, under the object it is about. One line per result, at most
-about 15 words of claim, then the status, then where it lives. Keep the file under 30 KB; past that, the next board
-triage compresses it.
+about 15 words of claim, then the status, then where it lives. Keep the file under 40 KB (30 KB until 2026-10-10;
+L521, CL139): a section over 3 KB, or the file over 40 KB, is compressed at the next board triage, which also folds
+dated receipt sections into their objects.
 
 **The tiers below it.**
 - PERIOD-TWO.md §6, the status board: every lead and what is left. §4 lists the closed routes.
@@ -270,7 +271,7 @@ PART: as on the board.
 - TheoremA.lean matches entry 5 (GC882, PROVED, source scope); its hand time re-basing is formal in WhiteEnd.lean
 
 ## Other walls, other periods and sibling rules
-- Strip ranks certify eventual phase forcing: two tables bound onset (GC919, PROVED, CL139); one bounds bad visits (GC920, PROOF-SKETCH); kernel untested — L515.
+- Strip ranks certify eventual phase forcing: two tables bound onset (GC919, PROVED, CL139); one bounds bad visits (GC920, PROVED (CL140)); kernel untested — L515.
 - Periods 3 to 6: Theorems A, A′, B, E hold for every period — OPEN (parked) — board Rung 3; §8.42, §8.62
 - Black-end walls 0 1^q excluded for finite seeds at q = 7 and every q >= 9 — PROVED — entry 38 (SG L429, GC806
   read in L430, WT L431; method from an external repository, gap GC805); q = 1..6 and 8 OPEN

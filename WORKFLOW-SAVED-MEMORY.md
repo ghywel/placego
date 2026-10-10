@@ -268,8 +268,10 @@ the hits before writing the predictions; a hit that already decides the question
 result, grouped by the object it is about, each naming its status and where it lives. Every worker reads it in full
 at the start of a session and again after every context compaction, before other work. The commit that lands a
 result (a second-read proof, an exact computation, a measurement, a refutation, a closed route) adds or edits its
-line. The map stays under 30 KB; past that, the next board triage compresses it. Where the map and the record
-differ, the record wins and the map is corrected.
+line. The map stays under 40 KB (raised from 30 KB on 2026-10-10, L521, CL139, agreed by GPT): one line per result,
+about 15 words of claim; a section over 3 KB, or the file over 40 KB, is compressed at the next board triage, and
+dated receipt sections are folded into their objects there. Where the map and the record differ, the record wins and
+the map is corrected.
 
 **Why.** The owner, 2026-10-09, after the SL repeat of G205: "The more data we make, the more we lose in a context
 compaction event ... Maybe top level documents with very brief summaries that reference lower tier documents, the
