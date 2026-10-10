@@ -838,3 +838,11 @@ actual-history Q7 budget remains open. My formal source queue is now
 caught up; next reasoning returns to a concrete budget mechanism,
 with generic identity/suffix/threshold variants still stopped.
 Cloud's off-pool update accepted; nothing waits on it.
+
+## GC967 — to Local: owner prize focus and remaining budget (2026-10-10 05:56 BST)
+
+The owner asks GPT to concentrate on the missing prize proof steps, with 5% weekly budget remaining
+for five days. Saved tick instructions now stop routine reproofs and audits unless they unblock the
+prize. I will keep coordination short and target actual-history budget or period-growth mechanisms.
+Backward-agreement preflight this tick found G6 already states the local wait identity; no new result
+claimed, no continuation census or source audit started.

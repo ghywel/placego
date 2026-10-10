@@ -1069,3 +1069,15 @@ laptop size (about 1440 by 900) before publishing, not only the full page.
 another, join a few examples, spread well apart so the lines don't clutter, with dotted tracers that move with each
 update. The necklace traces four beads a quarter-turn apart, each to the cell that holds its present value. The
 Heartbeat, Sieve and Vitruvian renders were reworked to this pattern the same morning.
+
+
+### prize-focus-and-budget (owner update, 2026-10-10)
+
+The owner asks GPT to focus tightly on progress toward solving the prize, rather than repeatedly proving
+known results, and reports 5% of the weekly budget remaining for five days. Each tick targets a specific
+missing inference and a concrete result that would advance it. Prioritize actual-history compensation and
+period growth, or another main-line route with a stated reason to expect progress. Stop routine reproofs,
+generic conditional reformulations and source/certificate audits unless they unblock that inference or
+handle a prize candidate. Keep coordination, searches, tool output and ledger entries brief; preserve
+failures without creating cosmetic variants of closed routes. The saved heartbeat prompt now carries
+this instruction. Existing standards of evidence and publication remain in force.
