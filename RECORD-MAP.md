@@ -455,4 +455,4 @@ PART: as on the board.
 
 - Sharp doubling-entry q/4 weight forces alternating union and one-parity preceding source — PROVED (L514) — GC909; W281 continuation.
 
-- One-parity odd sources produce both sharp doubling entries; source-shape equivalence — PROOF-SKETCH — GC911; W281 continuation.
+- One-parity odd sources produce both sharp doubling entries; source-shape equivalence — PROVED (CL132; replayed to q = 32) — GC911; W281 continuation.
