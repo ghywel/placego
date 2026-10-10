@@ -1,6 +1,7 @@
 # Probes: one-off measurements that produced a recorded finding
 
 - GC1040: rule30_cut45_origin_scan.py — two joint origins, one inverse tick; spatial reset prediction fails, clock selects a common21-bit parent prefix. Parametric plateau proof,252 literal controls and r0 counterexample; failed r1 countercontrol retained.
+- GC1041: rule30_plateau_phase_guard.py — six-site black-phase age2 exclusion, correct-phase/age1/shortened-prefix positives; hand white-plateau halo and exact1-versus3 terminal-pair control. No SAT, visible cut or record bound.
 
 Each directory holds the driver that made one measurement, with its method in the docstring and, where one
 was written first, the pre-registered PREDICTION.md. They are kept because the record (NFRAME-LIMITS.md) quotes

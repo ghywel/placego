@@ -27030,3 +27030,57 @@ Instrument: rule30_cut45_origin_scan.py. No SAT, new language query,
 width sweep or additional past window. Next use this explicit plateau
 transfer to compress the joint-past mechanism; full cut pin forcing
 remains GC1039's computation and an all-depth record bound stays open.
+
+#### GC1041 — Plateau grammar retains a two-tick phase guard and a white halo (2026-10-10)
+
+Missing inference: GC1040's prefix grammar loses maturity and the clock
+unless these are proved as part of its hidden representation. Seek a
+phase/age clause valid at every later time, not another finite cut census.
+Record searched: `(100110|0011)` + `(black|two.step|prehistory)` ->
+GC1017's white train slab, GC1004/1005's one-black-update exclusions,
+and GC1010's opposite-order two-update marker. All read. The new clause
+is on spatial strip states, not a temporal forbidden factor or a new
+S/L recurrent restriction.
+
+**Hand phase guard (PROOF-SKETCH).** At any black clock time of age>=2,
+the right row cannot begin100110. In particular it cannot begin
+`1(0011)^m 0^r` with m>=1,r>=1. This uses only six columns and the two
+preceding clock ticks, so it holds within every controlled strip of
+width>=6 with an arbitrary exterior, as well as actual configurations.
+
+Proof directly from Rule30, independently of GC1040. Let y=100110 and
+its white-wall parent be a. The zero outputs2,3 give a1=a2. Output1=1
+gives a1=a2=1. Output6=0 gives a5=a6 OR a7. Thus output5=1 gives
+a4 XOR a5=1, so a4 OR a5=1. Output4=1 then forces a3=0. Hence the
+parent begins110 (indeed1101000). This has no black-wall predecessor:
+the first two output ones force preceding cells1,2,3=001, making the
+third output1. This last three-cell obstruction is GC549, already
+used in GC1004/1005. Both older clock ticks exist when the age is>=2.
+The entire parametric family has the forbidden six-bit prefix.
+
+The phase and age cannot be omitted. Literal two-step shrinking cones
+give white-phase source00000100 ->100110, and black-phase source00111000
+->100111 (so removing the sixth symbol admits the prefix). At age1,
+the white-wall parent1101000 produces100110. P1/P2/P3 HELD in the
+256-source, two-phase controls; these positives are replayed. The hand
+contradiction, not enumeration, proves the unbounded-age assertion.
+
+**Quantitative halo, also by hand.** In GC1040, when the selected c=0,
+the parent's white plateau extends TWO further sites:4m+1..4m+r+2.
+The last zero child has left parent c=0 and therefore its other two
+parent bits are both0. If c=1, those two terminal bits have OR1 and
+can be01,10 or11. Thus the two choices of parent-wall parity select
+exactly ONE versus THREE right terminal pairs at this prefix boundary.
+The 252 previously bounded m0..6,r1..9 literal cases pass this additional
+halo/count control. These count terminal pairs, not histories or seeds;
+no independent-coin assumption or uniform record contraction follows.
+
+For GC1039's m3,r9 white-clock origin, c=1, so the black plateau carries
+three boundary-pair alternatives. A proposed invariant must retain that
+nonlinear choice and the phase/age guard. For the opposite phase, the
+same spatial origin has no mature history. This supplies explicit
+obligations for the plateau representation; it does not close the entry
+join or bound R_real at every depth. Next seek a closed transfer that
+also retains the actual entry observations, rather than increasing a
+row or window census. Instrument: rule30_plateau_phase_guard.py;
+second reading requested, no Local solver job.

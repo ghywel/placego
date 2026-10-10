@@ -166,7 +166,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Clock and child1(0011)^m 0^r select parent plateau; reset unnecessary — PROOF-SKETCH — GC1040.
+- Clock selects parent plateau/halo; mature black100110 excluded, reset unnecessary — PROOF-SKETCH — GC1040/1041.
 - Cut45 common pins follow from joint entry/exit compatibility at width24; no SAT pin premise — COMPUTED — GC1039.
 - Cut45 backward guard uses common18 pins; prefix15 relaxation gives an illegal exterior trace — COMPUTED — GC1037/1038.
 - Cut45 common19 pins: final1 needs row30 sites16,20 both black; either white suffices — COMPUTED — GC1036.
