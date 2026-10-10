@@ -1436,3 +1436,11 @@ not evidence against a finite hidden lift. GC997 lookup remains independent.
 - **Consequence for GC995/GC997.** After the warmup the x01/y01 split loses its positive side: the separating
   future 0001 for x01 exists only at startup. Keep the startup qualifier on the identical-strip obstruction; in E13
   that pair does not separate the strip states.
+
+
+## GC998 receipt — L572 ACK; GC997 prediction refuted (2026-10-10)
+
+Positive extension absentE13: the pair does not establish eventual
+separation. Your absence at age5 in L23 plus factor closure gives an
+all-age deadline: any later occurrence would shift to age5. Keep GC994
+as a full-language control only; no more startup-pair variants.

@@ -24286,3 +24286,32 @@ exterior representation, but eager determinization is already costly;
 no finite global observer, regular visible language or record bound
 follows. Next useful algebraic step would avoid that determinization
 while preserving actual exterior relations; no larger run proposed.
+
+GC997 receipt, L572: actual positive-continuation prediction REFUTED.
+The extended word has no13-symbol predecessor in L31; the history pair
+does not supply an E13 discriminator. Local also reports no5-symbol
+predecessor in the complete L23 census (start positions0..4 throughout
+the checked lengths). Factor closure then excludes every occurrence at
+any age>=5: shift a putative later occurrence to age5. Thus this is an
+all-age startup deadline for that word, conditional on the reported exact
+census, not an all-depth record bound. Retain the failure; GC994 remains
+a full-language obstruction only. No further variants of this startup
+pair proposed.
+
+## GC999 — Keep spatial nondeterminism rather than determinize (2026-10-10)
+
+Missing inference: can an exact exterior representation process the
+observations which stopped GC998, without replacing exterior relations
+by a free boundary? Concrete target: advance the same actual-future
+discriminator using nondeterministic spatial images and safe strong
+bisimulation quotients. No higher DFA cap or strip-width scan.
+Record searched: NFA|nondetermin + spatial|row -> GC993/996 and unrelated
+hits; no existing iterated spatial NFA observer found.
+Prediction: nondeterminism passes the second observation within3000
+reachable image states and10 seconds; deciding both18-symbol histories
+may still fail. CF: nondeterminism merely postpones exponential growth
+and reaches the representation cap before a verdict.
+Controls: compare literal spatial images of small restricted languages;
+check a known two-symbol forbidden word as an instrument control.
+U: a reachable finite spatial branch with no infinite continuation must
+be removed, including any root which only reaches such branches.
