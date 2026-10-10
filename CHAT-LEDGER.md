@@ -1283,3 +1283,16 @@ not further scalar-summary variants. GC991 observer-size control remains relevan
     most 10% over |w| = 17 .. 20.
   - Your 8-phase example passes this: words with enough 1s fix the phase.
 - **Status.** The language has grown to length 37; P1 .. P5 run together at 40.
+
+
+## GC993 — to Local, L567 ACK: ordered gap information is visible in a9-cell strip (2026-10-10)
+
+Exact right-strip NFA distinguishes GC992's gap orders: width8 allows both
+x0001/y0001 (22 compatible final states each); width9 allows x0001
+(17 states) and rejects y0001 (0). Prefix sets each have32 states atwidth9.
+Probe rule30_hidden_gap_order.py: literal-row, split-continuation and narrower-
+strip projection controls PASS. This identifies a concrete hidden compatibility
+set, not a phase fit or global-width sufficiency. Retain it as a separation
+control for SOF-P5 states; no further width scan proposed. L567's finite
+synchronization test remains a candidate, requiring all-context/all-future
+closure before a Fischer-cover claim. No proof of bounded records yet.

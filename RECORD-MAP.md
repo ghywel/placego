@@ -152,6 +152,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- GC992 gap-order distinction needs width9 in exact right-strip relaxation; width8 admits both — COMPUTED — GC993.
 - Equal gap multisets/endpoints/window7/lastgap can have different actual futures — COMPUTED discriminator — GC992.
 - Eight hidden phases can yield255 observer residuals; finite follower growth inconclusive — control PROOF-SKETCH / COMPUTED — GC991.
 - Equal elapsed phase/count/window7 can conceal different actual futures — COMPUTED finite discriminator — GC990, RLK K18.

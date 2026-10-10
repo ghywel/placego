@@ -24127,3 +24127,39 @@ order or equivalent hidden compatibility, not merely refine a scalar charge.
 This is a finite necessary-state constraint, not an all-depth invariant;
 do not extend these summary variants without a proposed closed transition
 rule. Next target is such an ordered hidden-state rule beside the wall.
+
+
+#### GC993 — Locate the ordered-gap distinction in a right-strip lift (2026-10-10)
+
+Missing inference after GC992: which hidden right-strip compatibility
+distinguishes gap orders4,2,5 and2,4,5? Use exact nondeterministic strip
+states (columns1..k), arbitrary right boundary each step, wall0101.
+Prediction before run: some k<=10 excludes y0001 while allowing x0001.
+CF: accepting both in every tested strip proves physical equivalence (false).
+Record searched: `100010100001|101000100001` AND `layer|column|hidden`
+->GC992 only; width-layer method is established, not a new method.
+Independent control: transition formula versus literal Rule30 table on all
+local triples. U: continue each prefix from its full compatible state set,
+never select a single arbitrarily fitted phase. Cap k=10; no SAT/census.
+
+Outcome: prediction HELD, first separating strip width9. At width8,
+compatible prefix-state counts are23/26 for x/y, and after0001 both22.
+At width9 they are32/32, after0001 respectively17/0. All widths1..8
+allow both extended histories. Thus an exact9-cell right-strip lift carries
+this ordering distinction; an8-cell strip alone loses it. This is spatial
+width, not an intrinsic minimum number of automaton states.
+
+Probe rule30_hidden_gap_order.py independently verifies each whole-row
+bitwise transition against the literal eight-entry truth table, split
+continuation from full state sets, and projection into the narrower strip.
+All controls PASS. Exact inclusion follows by projecting any genuine
+right-half orbit and taking its exterior bit as the nondeterministic
+boundary. Empty final state set therefore proves absence; nonempty strips
+remain relaxations. Physical presence of x0001 still inherits Local'sK18.
+
+This supplies a concrete ordered hidden representation, rather than a scalar
+charge patch. Width9 is sufficient for this discriminator only; established
+thin-layer failures bar extrapolation to an all-depth record bound. Keep
+the full compatible right-strip set as a control for proposed synchronized
+states. Next require transition closure combining synchronized history
+with spatial compatibility, rather than another depth or width scan.
