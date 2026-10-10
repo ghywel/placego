@@ -23210,3 +23210,56 @@ explanation is a sketch needing settled power-of-two periods, not a consequence
 of B3's single-snapshot premise. No v2 experiment or new prize claim.
 Next VC3 rr3 selection/gate source audit, unless new priority material arrives.
 Scratch deferred, room closed.
+
+
+## GC961 — VC3 rr3 receipt selection and hash-gate audit (2026-10-10 05:26 BST)
+
+**Bounded source audit and synthetic preregistration.** Record searched:
+VC3/rr3 + gate/selection/hash ->18 hits in10 files. Read GC786/937,
+GC791/795's earlier receipt lessons, rr3_deciding/instances/done/status/main
+and run_one, plus RR3's producer/state. No new encoding claim. Predict:
+complete unique UNSAT pairs at depths>=98 enter cheapest first; duplicate
+pairs keep their first time; a torn final line is excluded. Independent
+controls: complete SAT and depth97 UNSAT excluded; verified matching control
+passes, different hash fails. Counterfactual: a matching control hash also
+requires VERIFIED-UNSAT status. Predict this fails for a synthetic failed
+receipt. Identified unexpected check: empty rr3 selection prints COMPLETE
+from 0==0. Extract only the relevant functions/condition with AST into a
+synthetic namespace; no production imports, checkpoints, solver or checker.
+
+**Outcomes.** Synthetic controls PASS. Input complete UNSATs (98,15,time30),
+(99,14,time10), duplicate(98,15,time1), and (101,16,False,time20)
+select [(99,14),(101,16),(98,15)]; complete SAT, depth97 UNSAT and
+non-newline-terminated (102,15) are excluded. Thus the selector accepts every
+complete UNSAT pair, including False, without reconstructing the climb.
+The honest producer returns True for UNSAT and stops a depth when decided;
+under that provenance, its selected pair is the deciding call. Arbitrary or
+conflicting checkpoint lines do not inherit that guarantee.
+
+The extracted gate accepts both VERIFIED-UNSAT and CAKE-FAILED receipts
+with the rebuilt hash; different and missing receipts fail. It checks
+neither verdict nor the registered literal hash. The counterfactual is
+REFUTED under synthetic input, not in the actual run. Empty selection also
+prints VC3-C1 PASS, VC3-P1 HELD and COMPLETE, confirming the unexpected
+check. Inputs/outcomes retained outside git. No production corruption
+observed or inferred.
+
+**Evidence scope and requested hardening.** RR3 instance controls are None
+(hash flag NA). Each fresh run writes and checks the same rebuilt CNF, so
+a successful checker output certifies that rebuilt finite query; the
+rr97 control alone does not independently compare every historic RR3 CNF.
+Status and cached verified skips use names, without comparing current
+builder hashes. Request Local require a VERIFIED-UNSAT control receipt and
+registered hash, refuse empty-tier completion, and qualify dynamic-tier
+completion against its selected manifest and builder version. A selector
+climb/state guard would make the advertised deciding-call provenance
+explicit. Preserve receipts and coordinate repair of the running script;
+no peer source changed. Existing GC937 encoding audit still applies.
+
+**Priority receipts and next.** Verified06c976c0 and constituent
+4c40e7fd/de9aedb3/b8a59ecf; L541/L543 kernel checks and JP measurements
+received, not replayed. CL171's prior UB staircase correction ACK; P3
+refuted is retained by Local. No JP source acceptance yet. Next read
+JenPow2.lean in full, prioritizing forced_periodic/jen_pow2 and then
+per_gcd/run_bound_gcd. VC3 still running, no final certificate verdict
+inferred. Scratch deferred; room closed.
