@@ -10,6 +10,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMA
             python3 tests/probes/lexicon/rule30_cloud_train_block.py follower [N=13]            (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py carrier                  (needs kissat)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py packet
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py arming                   (needs kissat, ~1 min)
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -92,6 +93,12 @@ claimed 23-tick column 1 and white trace 101000100001 (exit 4, 5): CONFIRMED. Si
 column 1 undetermined from tick 8. The CL193 model has the slab 1001100 at t = 62 .. 70, the failed gate 1001101
 at t = 74 and 1011010 at t = 78 (the last car): CL194's gated propagation to the last car was unsound; revised in
 CL195 to a strip propagation from the interior time 62 with the visible word imposed.
+
+MODE arming, OUTCOME (2026-10-10 15:45 BST; review of GC1028 and data for CL197). The exit target is exactly GPT's 39
+nine-bit words (01101????, 01110????, 0111100??, 0111111ab with ab != 00), all beginning 011. A' has 34 states and
+misses the target: over A' the pair (site 8, site 9) is never (1, 1), while every target word has it. After q the
+arming pattern (slab, sites 7 .. 9 = 011 at the k-th car's white tick) is realizable at every car 5 .. 16 except the
+ninth; after the prefixes 1000, 01000 and the empty prefix it is realizable at every car 5 .. 16.
 """
 import os, sys, time
 
@@ -305,11 +312,86 @@ def packet():
         row = [row[0]] + [row[i - 1] ^ (row[i] | row[i + 1]) for i in range(1, len(row) - 1)] + [0]
 
 
+def _cone_sat(word, extra, tmax):
+    """SAT over the right cone to time tmax: the visible word at the white ticks and extra unit cells (t, i, b)."""
+    import os, subprocess, tempfile
+    import rule30_relaxed_records_k as rk
+    var, nv, cl = {}, [0], []
+    def x(t, i):
+        if (t, i) not in var:
+            nv[0] += 1
+            var[(t, i)] = nv[0]
+        return var[(t, i)]
+    for t in range(tmax):
+        for i in range(1, tmax - t + 1):
+            r, c, y = x(t, i + 1), x(t, i), x(t + 1, i)
+            nv[0] += 1
+            o = nv[0]
+            cl += [[-c, o], [-r, o], [c, r, -o]]
+            if i == 1:
+                cl += ([[-y, -o], [y, o]] if t % 2 else [[-y, o], [y, -o]])
+            else:
+                l = x(t, i - 1)
+                cl += [[-y, l, o], [-y, -l, -o], [y, -l, o], [y, l, -o]]
+    for k, b in enumerate(word):
+        cl.append([x(2 * k, 1)] if b == '1' else [-x(2 * k, 1)])
+    for (t, i, b) in extra:
+        cl.append([x(t, i)] if b else [-x(t, i)])
+    with tempfile.NamedTemporaryFile('w', suffix='.cnf', dir=rk.DIR, delete=False) as f:
+        f.write('p cnf %d %d\n' % (nv[0], len(cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in cl))
+        name = f.name
+    try:
+        rc = subprocess.run([rk.KISSAT, '-q', '-n', name], capture_output=True).returncode
+    finally:
+        os.unlink(name)
+    assert rc in (10, 20), rc
+    return rc == 10
+
+
+def arming():
+    """GC1028's exit target and q's allowed states (CL197). Target: nine bits of sites 7 .. 15 at the white tick 62 (slab
+    100110 at sites 1 .. 6) whose gates read 0 at 62, 0 at 66, 1 at 70. A': those nine bits over realizers of q T^9 with
+    the slab at 62 (SAT). Then the cars at which the arming pattern (slab, sites 7 .. 9 = 011) is realizable after a
+    prefix."""
+    import itertools
+    def gates(nine):
+        cells, g = list(nine), {}
+        g[62] = cells[0]
+        for k in range(8):
+            wall = 0 if (62 + k) % 4 == 2 else 1
+            r = [wall] + cells
+            cells = [r[i - 1] ^ (r[i] | r[i + 1]) for i in range(1, len(cells))]
+            if 62 + k + 1 in (66, 70):
+                g[62 + k + 1] = cells[0]
+        return g
+    target = {''.join(map(str, s)) for s in itertools.product((0, 1), repeat=9)
+              if (lambda g: g[62] == 0 and g[66] == 0 and g[70] == 1)(gates(s))}
+    print('target (gates 0, 0, 1 at 62, 66, 70): %d nine-bit words; all begin 011: %s'
+          % (len(target), all(w.startswith('011') for w in target)))
+    q = '000010001010000'
+    slab = [(62, i + 1, int(b)) for i, b in enumerate('100110')]
+    A = [''.join(map(str, s)) for s in itertools.product((0, 1), repeat=9)
+         if _cone_sat(q + '10' * 9, slab + [(62, 7 + j, b) for j, b in enumerate(s)], 78)]
+    print("A' (sites 7 .. 15 at 62 over q T^9 realizers with the slab): %d states; meets the target: %s"
+          % (len(A), bool(set(A) & target)))
+    print("  (site 8, site 9) over A':", sorted({(w[1], w[2]) for w in A}), '| over the target: only (1, 1)')
+    def cars(prefix, kmax=16):
+        out = []
+        for k in range(5, kmax + 1):
+            s_k = 2 * len(prefix) + 4 * (k - 1)
+            extra = [(s_k, i + 1, int(b)) for i, b in enumerate('100110')] + [(s_k, 7, 0), (s_k, 8, 1), (s_k, 9, 1)]
+            if _cone_sat(prefix + '10' * k, extra, s_k + 12):
+                out.append(k)
+        return out
+    for prefix in (q, '1000', '01000', ''):
+        print('prefix %-16s arming realizable at cars %s' % (repr(prefix), cars(prefix)))
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
     {'member': lambda: member(*(a or [200])), 'seeds': lambda: seeds(*(a or [12, 400])),
      'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40])),
      'boundary': lambda: boundary(*(a or [8, 10])), 'memory': lambda: memory(*(a or [4, 16])),
-     'follower': lambda: follower(*(a or [13])), 'carrier': carrier, 'packet': packet}[cmd]()
+     'follower': lambda: follower(*(a or [13])), 'carrier': carrier, 'packet': packet, 'arming': arming}[cmd]()
     print('(%.0f s)' % (time.time() - t0))
