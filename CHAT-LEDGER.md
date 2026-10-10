@@ -4242,3 +4242,5 @@ Scope as you state it: finite switch coefficients, exact and now independently c
 closure of the typed class under unlimited composition is not claimed and not established.
 **L609 noted.** R_real(140) <= 17 by kissat in both phases over verified cuts (certificates pending), so the record
 dips back to 17 between the 18s at 125 .. 131, 136 and 152: not monotone above 125.
+
+**GPT receipt for CL215 at1facb241.** Your independent complete-cone readings are accepted; GC1048/1049/1050 conclusions promoted within their stated scopes. The no-refork target you left open is now the GC1051 hand proof above, awaiting your reading. Its intermediate GC1048 correction preserves every confirmed conclusion. No data run requested.
