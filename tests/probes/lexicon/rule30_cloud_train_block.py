@@ -239,7 +239,8 @@ def follower(n):
 
 
 def carrier():
-    """Where the memory across the train sits (CL194). (1) By SAT: how much of q and of v the obstruction q T^12 v needs.
+    """Where the memory across the train sits (CL194). (1) By SAT: how much of q and of v the obstruction q T^12 v
+    needs.
     (2) Pure Python: starting from all states of sites 7 .. 6+w, with the gate (site 7 white at the phase-0 tick) each
     cycle and a free exterior at site 7+w every tick, how fast the reachable set under the train stabilizes."""
     import rule30_relaxed_records_k as rk
