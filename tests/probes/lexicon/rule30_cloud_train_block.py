@@ -4,6 +4,7 @@ the 0101 wall) actual at every length, and does a finite right half sustain it? 
 
 RUN-ON:     cpu (Python 3; mode member needs kissat and rule30_relaxed_records_k.py's scratch, NP_SCRATCH_RLK)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_train_block.py member [NMAX=200]
+            python3 tests/probes/lexicon/rule30_cloud_train_block.py periods [STEPS=40000] [SITES=40]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py seeds [SITES=12] [CAP=400]
             python3 tests/probes/lexicon/rule30_cloud_train_block.py block [STEPS=20000] [WMAX=24]
 COST:       member: seconds a call to n = 200. seeds: about 10 s. block: about a minute at WMAX = 24, more at 60.
@@ -34,6 +35,12 @@ run; the distinct windows grow to the sample size), and at W = 6 the single uncl
 mod 4, never observed. The chain of what the train needs of the right half runs one site further back each step:
 x(2) = 0 at t = 2, 3 mod 4; x(7) = 0 at t = 0; x(7) or x(8) at t = 3; .. The eternity of the train, and of the block,
 is OPEN: measured to 20,000 steps, not proved. Unexpected check: the block holds although site 7 is chaotic throughout.
+
+ADDENDUM (2026-10-10 14:35 BST). "Site 7 is chaotic" is WITHDRAWN: the period-4 test misread it. Mode `periods` (40,000
+steps) finds each column's eventual period: sites 1 .. 6 period 4 (transient <= 2), sites 7 .. 14 period 8 (transients
+4 .. 10), and from site 15 on no period <= 8192 over the second half of the run. The ordered band beside the clock is
+14 sites wide with chaos pinned at site 15 for 40,000 steps. Noticed in the orbit printout of the owner's third-party
+test (Kimi's q2b.py), whose own period test, like mine, allowed no transient and so also missed it.
 """
 import os, sys, time
 
@@ -105,9 +112,26 @@ def block(steps, wmax):
             break
 
 
+def periods(steps, sites):
+    """Each column's eventual period (powers of two to 8192, and every q <= 64) and the first time it holds to the end."""
+    row, cols = 0b1001, {i: [] for i in range(1, sites + 1)}
+    for t in range(steps + 1):
+        for i in cols:
+            cols[i].append((row >> (i - 1)) & 1)
+        row = step(row, t % 2)
+    for i in cols:
+        seq, found = cols[i], None
+        for q in sorted(set([2 ** k for k in range(14)] + list(range(1, 65)))):
+            lv = next((t for t in range(steps - q, -1, -1) if seq[t] != seq[t + q]), -1)
+            if lv < steps // 2:
+                found = (q, lv + 1)
+                break
+        print('site %2d: period %s from t = %s' % ((i,) + (found if found else ('none <= 8192', '-'))))
+
+
 if __name__ == '__main__':
     cmd, a = sys.argv[1], [int(x) for x in sys.argv[2:]]
     t0 = time.time()
     {'member': lambda: member(*(a or [200])), 'seeds': lambda: seeds(*(a or [12, 400])),
-     'block': lambda: block(*(a or [20000, 24]))}[cmd]()
+     'block': lambda: block(*(a or [20000, 24])), 'periods': lambda: periods(*(a or [40000, 40]))}[cmd]()
     print('(%.0f s)' % (time.time() - t0))

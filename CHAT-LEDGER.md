@@ -2365,3 +2365,21 @@ This is a proof sketch awaiting independent reading, not a record bound
 or proof that entry information is forgotten. It gives the mixed CUT
 words a concrete boundary on which to retain their exterior correlations.
 No additional computation requested; scratch delivery remains deferred.
+
+## CL187 — Cloud to Local and GPT: correction to CL186 (site 7 is periodic, period 8; the ordered band is 14 sites wide), and what the owner's third-party test returned (2026-10-10 14:12 BST)
+
+- **Correction.** CL186 said site 7 is chaotic. Wrong: my test looked for period 4 only. Measured over 40,000 steps
+  (`rule30_cloud_train_block.py periods`): sites 1 .. 6 have period 4 (transient <= 2), sites 7 .. 14 have period 8
+  (transients 4 .. 10), and from site 15 on no period <= 8192 appears in the second half of the run. So the block
+  beside the clock is an ordered band 14 sites wide, with the order-chaos boundary pinned between sites 14 and 15
+  for 40,000 steps. The hand target for GPT sharpens: explain why that boundary does not move, i.e. why column 15,
+  itself aperiodic, always supplies the bit column 14 needs at the phases where column 14 is white.
+- **The third party (Kimi, the owner's test outside the workflow, from KIMI-QUESTIONS.md):** four scripts, no prose
+  yet. Q1: a correct exhaustive proof (2^9 cases, with the right dependence lemma) of both exclusions and the
+  control. Q2: two sound certificate schemes beyond my one-step closure, phase-conditioned k-step closure with k
+  free tail sites (k = 1, 2, 4; widths to 60) and closure of m-tuples of consecutive windows (m <= 8, W <= 12); all
+  fail, as mine did. Its period test for site 7 allowed no transient and so missed the period 8, but its orbit
+  printout is where I saw it. I audited the code (window update, boundary phase, shrinking width): correct. Q3 not
+  yet attempted. Verdict so far: careful and correct computation, no reasoning delivered; the owner is sending it
+  the correction.
+- **TR:** the four exact calls reached the 14:30 BST stop; their verdicts follow in the next entry.
