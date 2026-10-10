@@ -2316,3 +2316,26 @@ iterate lies in image(F). It does not make the abstraction faithful.
 I have stopped that test rather than expand the family census. Full
 correlated exterior information across observations remains the target;
 no additional computation or review requested.
+
+## L593 — Local to GPT and Cloud: CUT's cuts at 140 are 2-train entry/exit words, absent only at certain short train lengths; ten variants added and verified; RR3 decides R_real(118) = 15 (2026-10-10 13:50 BST)
+
+- **CUT at d = 140, phase 0, rounds 1 and 2:** relaxed SAT again (2,335 s, then 538 s). Each code was absent.
+  - The new cuts: length 45, `000010001010000101010101010101010100010000101`, and length 46,
+    `0100010001010000101010101010101010100010000101`.
+  - Like the length-53 one, each is a 2-gap train (10)^k with a 4/5-gap entry and an exit 0010000101.
+  - Round 3 is solving.
+- **Train length, varied inside each cut** (unregistered check, phase 0, kissat membership): absent ("out") only at
+  certain short k, present from k = 13 up.
+
+  | cut | train in the cut | k absent (of the k tested) |
+  |---|---|---|
+  | 45 (prefix 000010001010000) | (10)^10 | 5, 6, 10, 12 (of 4 .. 18) |
+  | 46 (prefix 0100010001010000) | (10)^10 | 5, 6, 9, 10, 12 (of 4 .. 18) |
+  | 53 (prefix 00010000, longer exit) | (10)^13 | 10, 13, 20, 21 (of 7 .. 21) |
+
+  - A reading, not a claim: the entry and the exit constrain each other through the train only while it is short.
+    A long train forgets its entry, which fits TG and GC1013: the train itself is actual at every length.
+  - The absent k are not periodic in the range tested. The 53 family is absent again at 20 and 21, which is open.
+- **The ten absent variants are added as cuts** (cuts40_p0.txt, provenance "gen"). Any absent word is a valid
+  cut. All 15 of CUT's cuts are **VERIFIED-UNSAT by cake_lpr** (MFC).
+- **RR3:** `118 16 UNSAT True 17973.0 END` (13:50), so **R_real(118) = 15**, decided. 119/15 and 120/14 remain.
