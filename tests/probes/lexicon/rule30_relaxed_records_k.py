@@ -277,6 +277,24 @@ def right_half_for(w, phase):
     return {i: int(x(0, i) in m) for i in range(1, last + 2)}
 
 
+def save_model(inst, d, L, ph, tag):
+    """Keep a relaxed SAT model (left half, clock and visible code) so membership and the glued simulation can be
+    redone without a re-solve; GPT's L581 ACK asks for the visible word even when membership fails."""
+    out = os.path.join(DIR, 'model_d%d_L%d_p%d_%s.txt' % (d, L, ph, tag))
+    left = ''.join(str(inst.left0[i]) for i in range(min(inst.left0), 1))
+    open(out, 'w').write('d=%d L=%d phase=%d T=%d tag=%s\nleft (cells %d .. 0)=%s\nvisible=%s\n'
+                         % (d, L, ph, inst.T, tag, min(inst.left0), left, inst.code))
+    return out
+
+
+def load_model(path):
+    lines = open(path).read().splitlines()
+    head = dict(z.split('=') for z in lines[0].split())
+    m = re.match(r'left \(cells (-?\d+) \.\. 0\)=([01]+)$', lines[1])
+    left0 = {int(m.group(1)) + j: int(b) for j, b in enumerate(m.group(2))}
+    return int(head['d']), int(head['L']), int(head['phase']), int(head['T']), left0, lines[2].split('=', 1)[1]
+
+
 def simulate_glued(left0, right0, T, phase, d, L, code):
     """Glue a left half (cells <= 0 at time 0) to a right half (sites >= 1) and run Rule 30 for T steps. True if
     column 0 follows (t + phase) mod 2 for t = 0 .. T, the band d .. d + L - 1 is white at time 0, and column 1
@@ -513,28 +531,33 @@ def main():
         else:
             print('no absent factor: the visible code is in the actual language')
     elif cmd == 'lift':                                      # L581: relaxed model + actual right half = real witness
-        tag, d, L, ph = sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5])
-        cap = int(sys.argv[6]) if len(sys.argv) > 6 else 5400
-        forb = load_forbidden(tag)
-        inst = Relaxed(d, L, ph, forb)
-        t0 = time.time()
-        v = inst.solve(cap, forb)
-        print('lift d=%d L=%d phase %d (%s): relaxed %s %.0f s' % (d, L, ph, tag, v, time.time() - t0), flush=True)
-        if v != 'SAT':
-            raise SystemExit(0)
-        code = inst.code
+        if sys.argv[2].endswith('.txt'):                       # `lift MODEL.txt`: a saved model, no re-solve
+            d, L, ph, T, left0, code = load_model(sys.argv[2])
+            print('lift d=%d L=%d phase %d: model %s' % (d, L, ph, sys.argv[2]), flush=True)
+        else:
+            tag, d, L, ph = sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5])
+            cap = int(sys.argv[6]) if len(sys.argv) > 6 else 5400
+            forb = load_forbidden(tag)
+            inst = Relaxed(d, L, ph, forb)
+            t0 = time.time()
+            v = inst.solve(cap, forb)
+            print('lift d=%d L=%d phase %d (%s): relaxed %s %.0f s' % (d, L, ph, tag, v, time.time() - t0), flush=True)
+            if v != 'SAT':
+                raise SystemExit(0)
+            T, left0, code = inst.T, inst.left0, inst.code
+            print('model saved: %s' % save_model(inst, d, L, ph, tag), flush=True)
         print('visible code (%d): %s' % (len(code), code), flush=True)
         right = right_half_for(code, ph)
         print('exact membership of the code (phase %d): %s' % (ph, 'IN' if right else 'ABSENT'), flush=True)
         if right:
-            ok, why = simulate_glued(inst.left0, right, inst.T, ph, d, L, code)
+            ok, why = simulate_glued(left0, right, T, ph, d, L, code)
             print('glued configuration simulated: %s (%s)' % ('VALID' if ok else 'INVALID', why), flush=True)
             if ok:
                 out = os.path.join(DIR, 'lift_d%d_L%d_p%d.txt' % (d, L, ph))
-                left = ''.join(str(inst.left0[i]) for i in range(min(inst.left0), 1))
+                left = ''.join(str(left0[i]) for i in range(min(left0), 1))
                 rgt = ''.join(str(right[i]) for i in range(1, max(right) + 1))
                 open(out, 'w').write('d=%d L=%d phase=%d T=%d\nleft (cells %d .. 0)=%s\nright (sites 1 .. %d)=%s\n'
-                                     'visible=%s\n' % (d, L, ph, inst.T, min(inst.left0), left, max(right), rgt, code))
+                                     'visible=%s\n' % (d, L, ph, T, min(left0), left, max(right), rgt, code))
                 print('WITNESS: R_real(%d) >= %d; saved %s' % (d, L, out), flush=True)
     elif cmd == 'probe':                                     # one relaxed call per (depth, phase), for TR's depths
         tag, L = sys.argv[2], int(sys.argv[3])
@@ -557,7 +580,10 @@ def main():
                 continue
             if True:
                 t0 = time.time()
-                v = Relaxed(d, L, ph, forb[ph]).solve(cap, forb[ph])
+                inst = Relaxed(d, L, ph, forb[ph])
+                v = inst.solve(cap, forb[ph])
+                if v == 'SAT':                                 # keep the model for `lift MODEL.txt`
+                    save_model(inst, d, L, ph, tag if ph == 0 else tag1)
                 with open(os.path.join(DIR, 'rlk_probe.ck'), 'a') as f:
                     f.write('%s %s %d %d %d %s %.1f %s END\n' % (tag, tag1, d, L, ph, v, time.time() - t0,
                                                                  time.strftime('%H:%M')))
