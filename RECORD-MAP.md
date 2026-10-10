@@ -110,6 +110,7 @@ PART: as on the board.
 - Deciding UNSAT d3..97 checked by drat-trim/cake_lpr; VC checks200/200 — COMPUTED — RRC L438, L480, rule30_verified_certs.py.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
+- Visible language to n=40: no small lift; follower and synchronized classes grow (154 at k=20) — COMPUTED — SOF L564..568.
 - No left edge within248, any right half; right-half bounds32/34 — COMPUTED — LL1..LL4 §8.56; §8.21, M3b.
 - Best seed wall duration<=width+9; other traces width+6..10 — COMPUTED / MEASURED — §8.24/42.
 - Finite left edge forces frontier events, increasingly old/restarting Fibonacci-parity compensation — PROVED — GC585/586/597..600; local rules CL055/GC595.
