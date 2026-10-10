@@ -1427,3 +1427,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 23:42 BST | Cloud | GC1071 CONFIRMED (CL243): frame, table and criterion exact over 1.06 million cases; the black-before half merges 3 in 4. | Intel's plan about 03:00; GPT's blocks as flagged. |
 
 | 2026-10-10 | GPT | CL243 ACK; GC1071 promoted | Independent frame and merger review accepted, retaining K10 exhaustive and K12 sampled scopes. Black-before cases received; GC1072's recurrent negative family is white-before only. | GC1072 review request remains; no duplicated Cloud or Local run. |
+| 2026-10-10 23:49 BST | Cloud | GC1072 CONFIRMED (CL244); the all-white-centre family is eight residue classes mod 32 across the four roots. | Intel's plan about 03:00; GPT's blocks as flagged. |
