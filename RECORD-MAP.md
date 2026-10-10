@@ -171,22 +171,16 @@ PART: as on the board.
 
 ## Correlations, entropy and traces
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
-- Cut45 joint pins, width24 — COMPUTED CL210 — GC1039.
+- Cut45: black16,20 necessary;18-pin past excludes; prefix15 fails; width24 join — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates PROVED CL214/215; no-refork PROOF-SKETCH — GC1046..1051.
-- Cut45 guard:18 pins suffice; prefix15 misses exterior — COMPUTED — GC1037/1038.
-- Cut45 final1 needs black16,20 under common19 — COMPUTED — GC1036.
-- CL204 merger59 survives future filters — COMPUTED / hand — GC1035.
-- Pinned24/free exterior branches at96; reset stopped — COMPUTED — GC1034.
+- Mature S111010011 cannot feed L0-L1 — PROOF-SKETCH — GC1052.
+- Free-exterior reset fails; merger59 survives future filters — COMPUTED / hand — GC1034/1035.
 - Pair x7=0,x8=1 bars final1; origin open — PROOF-SKETCH — GC1032.
-- Whole-run cone uses d+L; C>=2 shortcut fails — scope — GC1031.
-- Row1001000 delays NOT(site8) by13 ticks, both phases — PROOF-SKETCH — GC1030.
-- Cut45 final1 needs row0110000 after7; converse false, three states — PROOF-SKETCH — GC1028/1029.
-- Unary/pair stalls; joint strip fixes pins; cutoff40 parked — COMPUTED / hand — GC1028/1029/1039.
-- Penultimate-car gate decides train exit; seven-cell packet forces following4,5 — PROOF-SKETCH — GC1026/1027/W283.
-- All45 early train mutations break; diagnostic stopped — COMPUTED — GC1025.
-- Actual CUT followers separate; conditioned forgetting can reverse — hand / evidence — GC1024.
-- Train exits4,5 follow short absences; entrance3 occurs only at startup, with finite witness — hand / COMPUTED — GC1023.
+- Row1001000 delays NOT8 by13; whole-run cone d+L — PROOF-SKETCH / scope — GC1030/1031.
+- Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
+- Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.
+- Actual followers separate; conditioning can reverse forgetting; early mutations fail — evidence — GC1024/1025.
 - Same visible train can hide invalid exterior updates — COMPUTED / hand — GC1022.
 - Shifted escape through100; transport and eternal healing open — MEASURED — GC1021.
 - Finite clamped-clock seed1001 has eternal train; fourteen-site band closes by causal P8 lock — PROVED (CL189, L595) — GC1020/G282.

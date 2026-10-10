@@ -27673,3 +27673,30 @@ Thus o=0 requires v OR w=1 and v=w OR x. These imply v=1 (v=0 would force w=x=0)
 **Independent and unexpected controls.** Literal and packed engines, with both starting wall phases explicit, pass128 complete local S gates,64 black-phase successor gates (3 positives),64 translated shields (12 applicable), and64 L1 antecedents. The retained relaxed row1110111001110000000000000 really reforks and passes GC1049's Horn clause; its loss of the translated two-tick past is exactly why the new exclusion does not apply. Controls check the local hand implications; none is presented as a finite census proving universal absence. Next seek the same transported shield across an intervening L0 or S, to determine whether hidden forks have a recursive separation law. Cloud hand review requested; no computation or time-critical work.
 
 **Recovery receipt, CL215 at1facb241.** Accepted: Cloud independently exhausts the full cones for GC1048/1049 (8,192 tails) and GC1050 (16,384 tails), confirming the successor, Horn clause and exact four-cylinder gate in both directions. These conclusions now have a second reader; the intermediate indexing correction above does not change them. GC1051 itself still awaits its reading. No further run requested.
+
+
+## GC1052 — One whole mature short-to-long branch cannot renew the hidden fork (2026-10-10)
+
+**Missing inference.** GC1051 excludes immediate L1-S-L0-L1; locate which other mature S entrances could renew a fork before attempting a longer-return closure. Record searched:S.L0.L1|short.*fork|111010110|111011101 with gate|preimage|ancestr|successor ->6 hits, GC1049/1051 and references, no three-branch fork precursor. Reuse GC1014's maturity clauses and GC629's four-bit return gate: a mature S feeding L0 starts exactly one of111010001,111010011,111011100. This classification is established, not proved anew.
+
+**New hand result, review pending.** The entire middle branch111010011 returns L0 with
+
+    (c7(6),c8(6)) = (NOT w,w), w=initialsite10 OR initialsite11,
+
+for EVERY farther tail. Therefore this branch cannot feed the next L1: GC1050 requires the L0 entrance to begin1110010001, with both sites7,8 white. This removes a whole mature hidden precursor independently of how it was entered.
+
+The initial prefix gives time2 prefix01011000. Put w=c9(2), q=c10(2). Direct updates retain
+
+    time3 sites6..9 = (1,0,w,w OR q);
+    time4 sites5..8 = (0,1,1-w,w OR q);
+    time5 sites6,7 = (1,0).
+
+The last zero is shielded by (1-w) OR(w OR q)=1. Now write H=c8(5), I=c9(5). The return sites7,8 are exactly(1-H,H OR I), whose OR is1. Retaining one more ancestry relation sharpens this: w=initialsite10 OR initialsite11, and w=0 forces q=1. If w=1, the displayed updates give H=1; if w=0,q=1, time4 sites7..9 are111, giving H=I=0. Hence the pair is exactly(1-w,w). This initial-coordinate selector was predicted after the first controls suggested complementarity, then checked separately in the same complete cones. No free assignment of H,I or loss of their past is used.
+
+Consequently a mature S-L0-L1 must start from111010001 or111011100. The latter has GC1051's exact first-ten-bit gate and is excluded specifically when preceded by L1-S. Whether the first prefix or an intervening return propagates a closed ancestry relation remains open; no bound on total fork counts follows yet.
+
+**Failure retained.** In parallel with this hand step I predicted a complete fork gate for111010001. It fails on1110100010000100: its six-tick return starts1110010101, not1110010001. The proposed derivation made time4 site6 white; it is black. This gate classification is stopped for this block, with the concrete failure in the probe; no repaired variants or wider mixed-word scan.
+
+**Controls.** All128 complete six-tick cones for111010011 pass literal and packed engines, including each displayed intermediate relation; both returned pairs01,10 occur; the new selector also passes. The unexpected startup111010010 really feeds L0 but violates GC1014's mature ab=00,c<=d condition, so it must remain outside the three-prefix classification. The earlier relaxed1110111001110... still reaches L1, preventing extension of this new obstruction to every S-to-L0 branch. Cloud hand review requested, no computation requested. Next useful obligation is transport of the surviving111010001 branch's correlated past; unlimited coefficient closure and the all-depth prize bound remain open.
+
+**CL216 receipt at7f41518c.** Read §8.82 and the ledger: the swarm's black-phase coupling and three-shape lemma are accepted with Cloud's stated independent checks, its depth62 table remains third-party computation, and the lane's skeptic is still queued. It supplies no all-depth bound. No duplicate record computation or certificate audit. The present proof block remains on the hidden S/L ancestry target.
