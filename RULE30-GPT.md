@@ -21570,3 +21570,34 @@ For L515's unique forcing cyclic component, choose H as that component, or more 
 
 
 **GC919 review receipt (2026-10-10 01:58 BST).** Cloud CL139 second-read the two rank obligations, canonical rank existence, dead-exit/bridge controls and coverage-versus-equality distinction by hand: PASS. Its independently written randomized replay remains Cloud's evidence (3,000 canonical graphs; 4,693 passing certificates), not a GPT run. GC919's transfer is now PROVED by second reading; the newer one-rank GC920 is still PROOF-SKETCH. No kernel performance claim follows.
+
+
+#### GC921 — Fair reset choices are not uniform physical leaves (2026-10-10 02:00 BST)
+
+**Bears on:** Q7's physical-history gap, as a measure preflight before any new average. Record searched: physical/rooted + return-graph/compressed/mean/strat ->99 hits in29 files; Kraft/prefix-code/binary-tree/branch-depth + stage/return/physical/root/dyadic ->2 hits in2 files. Read G158, GC866, GC869/870 and ZF's chain convention. The complementary-child orbit classification is already G158, not a discovery here. No computation, new census, stage bound or prior-art claim.
+
+**Prediction and controls.** A fair coin at each genuine same-period fork gives leaf mass 2^-b, with b its number of such forks; this differs from uniform physical leaves on an unbalanced tree. Independent balanced and comb controls below. Counterfactual: a leaf-count or ambient-start average cannot be substituted for this law without checking the weights. Unexpected check: odd doubling has only one child orbit and contributes no choice entropy.
+
+**The auxiliary law.** Fix a physically reached stage entry of primitive dyadic period q. In the temporal-rotation quotient, stop at each odd zero-driver node that would exit to period 2q. G158/GC866 make this a finite tree. Contract its deterministic one-child segments. Each internal node then has two distinct child classes, from even-parity integration; each leaf is an odd exit. The initial odd integration's two complementary representatives are rotations of one continuation, so they are not a fork. If the contracted tree has L leaves, a leaf ell at branch depth b(ell) is reached under independent fair choices with probability
+
+    mu(ell)=2^-b(ell),     sum_ell mu(ell)=1.
+
+The sum identity follows by splitting each node's probability equally between its two children, preserving total mass until the finite tree ends. It is an auxiliary probability distribution on a deterministic physical tree, not a stochastic law for Rule 30 or for a particular selected history.
+
+Its leaf entropy equals its expected branch count:
+
+    H(mu)=sum_ell mu(ell)*log2(1/mu(ell))=E_mu b <= log2 L.
+
+The last bound follows from concavity of log: E_mu log2(1/mu)<=log2(E_mu(1/mu))=log2 L. Equivalently E_mu b is the sum of the reach probabilities of all internal fork nodes. This controls the number of choices under mu, not spatial time between resets.
+
+**Independent hand controls.** In a balanced depth-d tree, all L=2^d leaves have mass 1/L, so both leaf laws agree and E_mu b=d. In a two-fork comb, the three depths are 1,2,2, giving masses 1/2,1/4,1/4 and mean 3/2; uniform leaves instead give mean 5/3. In a b-fork comb, depths are 1,...,b-1,b,b. The fair mean is sum_(j=0)^(b-1) 2^-j=2(1-2^-b), while the uniform-leaf mean is b(b+3)/(2(b+1)). Their difference can grow without bound. These are synthetic tree calibrations, not claimed shapes of any Rule 30 stage.
+
+**Exact waiting-time accounting, no bound.** Assign each contracted edge its actual number w(e) of spatial advances, and let w0 be any common deterministic entry segment. Then for this fixed tree
+
+    E_mu D = w0 + sum_edges mu(reaching the edge's child)*w(e).
+
+This is the finite sum identity obtained by expanding D on each leaf path and interchanging sums. It needs no independence between chain length and branch choice. Uniform leaves would replace each edge's reach probability by its descendant-leaf count divided by L; GC870's ambient primitive starts use yet another measure. None may silently replace the others. The topology alone supplies no scale for w(e): a synthetic tree of the same shape with long deterministic edges retains all its branch entropy identities. Actual recurrence and physical ancestry must constrain those lengths for a useful stage estimate.
+
+**Unexpected phase-copy guard.** G158's a=01 integration gives c=0011 and 1100, exchanged by a two-tick rotation. At this doubling, choosing c(0) fairly does not split into two physical history classes: the quotient mass stays 1. At even same-period a=0110, c=0010 and 1101 are different child classes of that fixed parent; these receive 1/2 each. These are G158's existing local controls, with no newly asserted physical membership for the second example. Counting literal copies as choices would introduce a spurious bit at every doubling.
+
+**Disposition.** The tempting transfer from ambient mean or uniform physical leaves to a fair-reset mean is CLOSED unless the sampling law is explicitly changed and justified. The auxiliary law's exact entropy/edge accounting is a PROOF-SKETCH pending second reading. It yields no universal waiting bound, selected-history growth, stage debt or prize claim. No new board row or experiment. Next seek a length constraint tied to actual recurrence on a physical chain, or review a concrete incoming certificate; do not extend generic tree counting as a growth route. Scratch deferred, room closed.
