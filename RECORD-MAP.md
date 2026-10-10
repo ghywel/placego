@@ -93,107 +93,50 @@ PART: as on the board.
   happen is unmeasured — MEASURED — rule30_cloud_ruler_kicks.py, CL096, GC856
 
 ## Records R(d) and R_real(d) (Q6, RR, RR2, RR3)
-- R(d) exact at 1..61, 65 and every fourth depth to 89; R(89) = 75; R(d) <= d + 4 throughout — COMPUTED — §8.36,
-  §8.37; board 6.2 and M4. R(93) runs — OPEN — RK93
-- §8.36's R(d) is the phase-0 record; RR, RR2 and R_real are maxima over both phases — COMPUTED — L286; CL038
-- About 2^(0.41 d) distinct forced walks; the best under coin flips gives 0.826 d + 0.8 — MEASURED — §8.38
-- R_real(d) over every configuration: exact to d = 19 (4 against 17 at d = 13); after a black cell at depth j at
-  most 4, 2, 0, 3, 3, 2 white cells, j = 2..7 — COMPUTED — ZR, ZR2 (L236)
-- R_real 7..15 at d = 21..81 (RR, L247); decided to 97, at most 17 (RR2, L399) — COMPUTED — RRX, RRP replay
-- RR/RR3 inherited cone CNF matches finite query; solver evidence stays separate — source audit — GC937.
-- Every deciding UNSAT, d = 3..97, has a DRAT proof checked by drat-trim and cake_lpr — COMPUTED — RRC (L438), VC
-- R_real(97..108) = 14, 14, 13, 15, 15, 14, 14, 13, 13, 12, 14, 16 (101 and 105 by the plateau law R(d+1) >= R(d) - 1,
-  and by the solver: 101 L 16 and 105 L 14 UNSAT; 107 L 15 and 108 L 17 UNSAT, M5); 109 >= 15, 111 >= 15; 109..120 running
-  on the M5
-  (Local) — COMPUTED (kissat; SAT replayed, UNSAT not DRAT-checked) — RR3, rule30_cloud_rr3.py, "RR3 checkpoint"
-  rows in CLOUD-LOCAL.md and its archives
-- A run's end needs the clock's first beats; words 11, 00000, 101001 fit the records to d = 19 — COMPUTED — RRX; RRL
-- No counterexample has its left edge within 248 cells, whatever its right half — COMPUTED — §8.56 (LL1 to LL4)
-- No right half <= 32 cells works with a left half <= 108; none to 34 cells — COMPUTED — §8.21; board 6.3 and M3b
-- Best seed keeps 0101 at most width + 9 steps; words to period 4 and a random word: width + 6..10, growing like a
-  log — COMPUTED, MEASURED — §8.24, §8.42
-- Q6 ray: a finite left edge forces an edge event at every frontier step; the inside pays its Fibonacci-parity beat
-  with ever older, restarting events, never a long streak — PROVED — GC585, GC586, GC597, GC598 to GC600
-- Five fixed sources silent at the frontier; near-silent ones never harden — COMPUTED — SS and GC589, SO and GC591
-- Edge events obey three local rules — PROVED — CL055 (read in GC595)
-- An all-S orbit exists (the 84-ring); finite left support forbids an all-S tail and any eventually periodic S/L
-  renewal tail — PROOF-SKETCH (reader not stated) — GC686, GC704, GC706, GC707; §8.78
-- n completed marker-aligned S gaps force J >= 6n - 3; a rigid 155-cell all-L ring: n L gaps force J >= 10n - 6 —
-  COMPUTED — GC705, L372; AL (L380)
-- No non-ring row with G^310 = id left-asymptotic to the 155-ring has bridge <= 24, tail period <= 10 — COMPUTED — CX
-- A 0101 centre forces column -1 to long-run density at least 3/4 — PROVED (second-read by Local) — G256
-- Selector-parity and front lemmas — PROVED — G.GPT259 .. G.GPT268 (PROOFS.md E2)
-- GC828's template passes a K = 6 coupling gate; no ring of up to 30 cells carries it — COMPUTED — TC (L452), RD
-- Same-reference-orbit backgrounds at p = 310 excluded by phase pumping — PROVED — GC848 (L474; G.GPT270)
-- Left: an inter-run compatibility input with unbounded reach — OPEN — board Q6 (PART); GC845
-- VC: every UNSAT behind CX, CXE, ALC, ASF and RRC (d <= 97) checked by cake_lpr, 200/200 — COMPUTED —
-  rule30_verified_certs.py, L480
-- GC846, GC848, GC849 filed as G.GPT269, 270, 272; G269's ingredients in Lean (ParityMask.lean) — PROVED —
-  PROOFS.md E2, L493
-- Bridge shortcuts: last-defect parity pullback (GC875) and interior zero-lag overlap parity (GC876) — CLOSED,
-  second-read CL112; ParityMask.lean's ingredients match, assembly unformalized (GC874, PART, L493)
+- Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
+- Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
+- R_real(97..108)=14,14,13,15,15,14,14,13,13,12,14,16; 109>=15,111>=15 — COMPUTED — RR3 checkpoints, CLOUD-LOCAL archives.
+- RR3 on M5: SAT replayed, UNSAT not DRAT-checked; 109..120 running — COMPUTED / OPEN — rule30_cloud_rr3.py.
+- Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
+- Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — source audit awaiting reading — GC937.
+- Deciding UNSAT d3..97 checked by drat-trim/cake_lpr; VC checks200/200 — COMPUTED — RRC L438, L480, rule30_verified_certs.py.
+- Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
+- No left edge within248, any right half; right-half bounds32/34 — COMPUTED — LL1..LL4 §8.56; §8.21, M3b.
+- Best seed wall duration<=width+9; other traces width+6..10 — COMPUTED / MEASURED — §8.24/42.
+- Finite left edge forces frontier events, increasingly old/restarting Fibonacci-parity compensation — PROVED — GC585/586/597..600; local rules CL055/GC595.
+- Fixed sources silent, near-silent sources never harden — COMPUTED — SS/GC589, SO/GC591.
+- Finite left support excludes all-S and eventually periodic S/L renewal tails — PROOF-SKETCH — GC686/704/706/707, §8.78.
+- Marker-aligned n S gaps need J>=6n-3; rigid all-L needs J>=10n-6 — COMPUTED — GC705/L372, AL/L380.
+- Small bridges to the155-ring excluded; template K6 passes but rings<=30 fail — COMPUTED — CX, GC828, TC/L452, RD.
+- Adjacent-left density>=3/4 and selector/front lemmas — PROVED — G256, G259..268 (PROOFS E2).
+- Phase-mask, same-reference-orbit pumping and quotient guards — PROVED — GC846/848/849, G269/270/272; L474/493.
+- Last-defect and zero-lag parity shortcuts CLOSED; ParityMask ingredients accepted, assembly unformalized — CLOSED / PART — GC874..876, CL112.
+- Remaining Q6: inter-run compatibility with unbounded reach — OPEN (PART) — GC845, PERIOD-TWO §6.
+
 
 ## The regime between, finite left halves, supports (Q7)
-- Fixed-period spread <=q-1 (G6, PROVED); doubling split fixture second-read (GC922, COMPUTED, CL142); G174 guards clocks.
-- Doubling preserves two occupied old lifts' coalescence iff the odd source is a pulse — PROVED (CL144) — GC923.
-- Re-coalescence six-edge extrapolation refuted; period16 lag29 reproduces existing driver429 — COMPUTED — GC926 (replayed CL146), G6.3 SF2.
-- Complete doubled phase sampling reaches both lifts of every old residue — PROVED (G6 corollary; CL145) — GC925.
-- Fair-reset leaf weights are 2^-branch-depth; uniform-leaf/ambient mean transfer invalid — PROVED (CL141) / shortcut CLOSED — GC921; G158.
-- Kicks cannot thin out faster than geometrically — PROVED — Theorem A, §8.54
-- Every Sturmian column 1 (Theorem E); arc codings for almost every rotation number (E″) — PROVED — §8.57
-- Near-squares at unbounded periods: period-doubling, Chacon, double-letter substitutions — PROVED — Corollary F, §8.59
-- Thue–Morse and paperfolding, for every left edge up to 15,868 cells — PROVED — Theorem A⁗, §8.59
-- Sturmian block codes, one-orbit arc unions, single-character torus codes, slower-than-geometric resets — PROVED
-  — G131, G132; G131 to G136 (STATE-OF-THE-PROOF.md §3)
-- All excluded classes have zero entropy; a real column 1 has about 0.08 bits per visible bit — MEASURED — §8.20
-- Settling reduces to gap 1, a stage budget O(q) at each dyadic period q, and gap 2, period growth R_j to infinity
-  — PROVED — G164, G165, G184; a threshold of 17 at slope 5/2 suffices (G186, G187)
-- Exact debt identity at mismatch endpoints — PROVED (second-read by Local) — GC652 .. GC702; GC684
-- No zero return within eleven steps after doubling (period >= 4); the return-eight graph is acyclic — PROVED —
-  G188, G192; every excursion pays an automatic baseline (G203)
-- Every zero-started even return at q = 8 and q = 16 is exactly its cycle; the q = 16 even classification is complete —
-  COMPUTED — RC88, RC16, RC16X, QX, QX2; GC861
-- Period 64 first entered at depth 65,821,413; the rooted period-32 stage passes 2.6 x 10^10 steps — COMPUTED —
-  Proposition 9 (TM6), Proposition 10; clock debt <= 60 on sixteen histories to 1,048,576 (RD32, GC325)
-- Left: gap 2; Thue–Morse and paperfolding for every left edge; Rudin–Shapiro; q >= 32; odd returns — OPEN —
-  board Q7 (PART); the finite-left support question (G129, G140, G141) is part of Q7 (GC155)
-- Rooted walks return at every period q (injective step, unique reset) — PROVED (GC867; Lean RootedReturn.lean) —
-  entry 39, L489
-- Zero-started returns q = 8 at 88, 371; q = 16 at 16 depths (last 214,006), each exactly its cycle — COMPUTED (GC861,
-  GC862) — rule30_r88_census.py, rule30_q16_exits.py, L486
-- A physical one-parity odd return exists: the single cell's q = 16 end 1010100010100000 (depth 87,867, N_5's
-  minimum); its period-32 entry is sharp, wt(f) = 8 = q/4. None of TM6b's 56 exits to period 64 is one-parity —
-  COMPUTED — rule30_cloud_sharp_entry.py (SE), CL134; GC915 independently verifies the fixed witness; exclusion REFUTED
-- Rooted (physical) tree, period-16 stage: fifteen branch nodes, sixteen histories entering period 32 at 87,867 ..
-  894,235; earlier entries N_j = 3, 8, 29, 400 — COMPUTED (second-read) — Proposition 8, entry 21 (TM5, TM5b, TM6)
-- Its whole in-tree at fixed q: 4, 14, 98, 3,066, 34,541,082 states (q = 1 .. 16); non-dyadic q repeat their dyadic
-  part — COMPUTED, a third replay of Proposition 8 — ZF, CL126 to CL128. RC88's r = 88 source is not physical; 371's is
-- q = 32: all 16 first zero-started rooted orbits return (4.5e7 .. 2.03e10; mean 1.007 x 2^32) — COMPUTED —
-  rule30_rooted_walk.c, rule30_r88_census.py (RWC, RWX), L488, L522; restricted-prefix scope GC927
-- Fixed-q zero-started excursions: every admissible one returns, r <= (2^q-1)^2+2 (GC864, PROVED, CL103); first
-  excursions biject onto nonzero return words (GC865, PROVED, CL103); the compressed graph is the physical-root tree
-  plus nonroot cycles (GC866, PROVED, CL105, CL137) — G273
-- Return budgets: complete-source mean live chain <= 2^q (GC869, PROVED, CL106); dyadic strata mean <= 2^q +
-  2^(q/2) - 1 (GC870, PROVED, CL131); exact dependent spread (GC872, PROVED, CL129); individual cap saves a factor q
-  (GC890, PROVED, CL119); G203 tightens it to m - 5a + 6, fixed-baseline counting CLOSED (GC892, PROVED, CL119) —
-  G274 .. G276, W277
-- RW instrument: depth caps and initial max-live REFUTED by hand (GC868), repaired (L490, PART, source audit), small
-  caps guarded (L491, PROVED, source scope); RootedReturn.lean's statement matches the census walk (GC867, PROVED,
-  source scope)
-- W278 .. W281, the driver row: boundary-only matching (GC894, PROVED, CL120; shortcut CLOSED); driver-row freedom
-  (GC895, PROVED, CL121); the one-bit response interval (GC896, PROVED, CL122, L510); multiple-driver XOR and measure
-  guards (GC897, PROVED, L511); same-child fibres (GC899, PROVED, L511); alternating-child fibres recover the
-  driver (GC901, PROVED, L512); q = 4 fibre starts are nonphysical (GC903, PROVED, CL126; transfer CLOSED)
-- Doubling entries: the fourth child is primitive with weight q/4 .. q/2 (GC904, PROVED, CL127); sharp q/4 forces
-  an alternating union and a one-parity source (GC909, PROVED, L514); one-parity odd sources give both sharp entries
-  (GC911, PROVED, CL132); mask shortcuts CLOSED (GC912, CL133; GC913, CL134); mixed-parity sources reach q/4 + 1
-  (GC914, PROVED, CL135); entry children's three-state language (GC916, PROVED, CL136); the next profile has weight
-  3q/4 (GC917, PROVED, L516); physical controls refute a sustained floor (GC918, PROVED, L519/CL138)
-- Sharp entry's fourth profile k = 1_(pi+1) + S^-1 f + S^-2 f, weight q/2: sharp weights run q/4, 3q/4, 3q/4, q/2 —
-  PROVED (Cloud CL138, second-read L520/GC919; all 556 sharp entries to q = 32 agree) — CL138
-- Sharp fifth profile marks rising edges; weight q/4+twisted half-word changes — PROVED (GC924) — CL143, SL2; q4 guard.
-- Conventions: RC88's zero-started 88/371 reconciled with physical ancestry (GC907, COMPUTED, scope); ZF's chain
-  weights and repaired guards (GC908, GC910, PROVED, source scope, CL130)
+- Geometric kick floor, Sturmian/arc/near-square exclusions and finite-edge TM/paperfolding — PROVED — §8.54/57/59; G131..136.
+- All excluded classes zero-entropy; real column1~0.08bits/bit — MEASURED — §8.20.
+- Settling needs uniform O(q) stage budgets and unbounded period growth — OPEN / conditional PROVED — G164/165/184/186/187, Q7.
+- Every rooted walk returns; fixed-q excursion bound, return-word bijection and root-tree/nonroot-cycle split — PROVED — entry39/GC867, G273 (GC864..866).
+- No return in first11 steps after doubling; return-eight acyclic; automatic baseline — PROVED — G188/192/203.
+- Endpoint debt identity and selected waits — PROVED — GC652..702/684; no adaptive uniform-budget conclusion.
+- Complete-source/stratum means, dependent spread and factor-q cap — PROVED — G274..276/W277 (GC869/870/872/890); baseline counting CLOSED GC892.
+- Fair-reset leaf weight2^-branch-depth; ambient/uniform-leaf mean transfer CLOSED — PROVED — GC921/CL141, G158.
+- Spread<=q-1, split fixture and complete doubled sampling — PROVED / COMPUTED — G6, GC922/925 (CL142/145).
+- Two occupied lifts preserve first-reset coalescence iff odd source pulse — PROVED — GC923/CL144.
+- Six-edge re-coalescence extrapolation refuted, reproduces driver429; refinement stopped — REFUTED — GC926/CL146, G6.3 SF2; clock guard G174.
+- Physical q16 tree:15 branches,16 entries q32 at87867..894235; N1..4=3,8,29,400 — COMPUTED — entry21/Proposition8, TM5/TM5b/TM6.
+- Whole in-tree sizes4,14,98,3066,34541082 throughq16; RC88 source nonphysical,371 physical — COMPUTED — ZF/CL126..128, GC907..910.
+- q8/q16 even-return classifications complete; physical sharp one-parity odd return exists — COMPUTED — RC88/RC16/RC16X/QX/QX2, GC861/862/915, SE/CL134.
+- Period64 first depth65821413; q32 stage>2.6e10; sixteen finite debts<=60 — COMPUTED — TM6/Propositions9/10, RD32/GC325.
+- q32 first16 rooted orbits return, mean1.007x2^32: restricted-prefix descriptive scale only — COMPUTED — RWC/RWX L488/522, GC927.
+- RW caps/max-live repaired; Lean matches census walk — PART / source PROVED — GC868, L490/491, GC867 RootedReturn.lean.
+- Driver response intervals/fibres exact; boundary-only and nonphysical-fibre transfers CLOSED — PROVED — W278..281, GC894..901/903, CL120..126, L510..512.
+- Primitive fourth child and sharp/mixed entry constraints — PROVED — GC904/909/911/914/916; mask shortcuts CLOSED GC912/913.
+- Sharp profiles/fifth rising-edge identity; sustained physical floor refuted; further refinement stopped — PROVED / REFUTED — GC917/918/924, CL138/143/151.
+- Remaining: actual-history budget, gap2, all-left-edge TM/paperfolding, Rudin-Shapiro, q>=32 odd returns — OPEN (PART) — Q7; G129/140/141, GC155.
+
 
 ## Correlations, entropy and traces
 - Channel bound: next to 0101 column 1 carries at most 0.1236 bits per visible bit, whatever the right half —
@@ -280,52 +223,28 @@ PART: as on the board.
 - TheoremA.lean matches entry 5 (GC882, PROVED, source scope); its hand time re-basing is formal in WhiteEnd.lean
 
 ## Other walls, other periods and sibling rules
-- Finite strip peeling charges graph-edge onset; macro forcing needs intermediate phases — PROOF-SKETCH / source audit PROVED CL152 — GC930/934, L522.
-- Strip ranks certify eventual phase forcing: two tables bound onset (GC919, PROVED, CL139); one bounds bad visits (GC920, PROVED (CL140)); kernel untested — L515.
-- Periods 3 to 6: Theorems A, A′, B, E hold for every period — OPEN (parked) — board Rung 3; §8.42, §8.62
-- Black-end walls 0 1^q excluded for finite seeds at q = 7 and every q >= 9 — PROVED — entry 38 (SG L429, GC806
-  read in L430, WT L431; method from an external repository, gap GC805); q = 1..6 and 8 OPEN
-- Black end: exact records p = 3..8 to 32 free bits, LR holds; white end: the latch lemma, too weak alone —
-  COMPUTED, PROVED — board (the two Condrey ends); §G11, G12, G13, G14
-- One-hole layers: width 5 forces the hole bit to 0 for odd p >= 11; p = 5, 7, 9 narrow to width 22 without closing
-  — COMPUTED — OH, OHC, OHD; GC850 (G.GPT271)
-- One-hole walls under random right halves: p = 5 alternates between locks (column 1 period 10, about 1,000 holes,
-  kicked at a constant 1.0e-3 a hole) and free stretches; p = 7, 9 keep about 0.36 and 0.56 bits a hole, stationary
-  — MEASURED — HE, HE2, HE3, rule30_cloud_hole_entropy.py
-- One-hole TRUE language by SAT: exact counts to 17, 15, 14 holes; certified rho <= 1.512835, 1.642221, 1.709537
-  (p = 5, 7, 9): below width 22's c_60 roots, but only p = 9's beats width 22's own radius (1.714447; L504); zero
-  entropy still OPEN — COMPUTED (CaDiCaL UNSAT, integer Collatz-Wielandt) — TC, rule30_cloud_hole_truecount.py,
-  CL114, CL116; GC871, GC877
-- Free pairs to the reached length: p = 9 (000, 001), p = 7 (00, 010), p = 5 (10, 111000), but p = 9's pair
-  fails at 30 holes (001001001000000001001000000000 unrealised; CaDiCaL and kissat) — REFUTED as free —
-  FP, FP2, rule30_cloud_hole_freepairs{,_long}.py, CL114, CL123
-- The TRUE 0101 channel to 39 visible bits certifies only 0.1517 bits, not below §8.20's 0.1236; a product with the
-  layer automaton is the suggested next step — COMPUTED — TC2, rule30_cloud_channel_truecount.py, CL113
-- Kopra's marker-word barrier does not rest on symmetry; K4 (moves -3, -1, +3): centre eventually white, other
-  columns decided only for |j| <= 64 — PROVED (centre) / COMPUTED — rule30_cloud_lone_column.py, CL088, GC829
-- Columns of linear CA are 2-automatic (a known theorem, rechecked); restart lemma (0 in S: eventually periodic
-  means purely periodic, of a power-of-2 period) — PROOF-SKETCH — rule30_cloud_lone_column.py
-- Slow walls 0^a 1^b: injection rate log2(a + 1)/(a + b), reset for b >= 3a + 1 — PROVED — G15, G18, G19 (§8.63)
-- Rule 210 (Rule 30's velocity): LR false; no finite seed keeps the full 0101 clock; not verbatim for Rule 30 —
-  PROVED — §8.65, §8.70; entry 32 (Proposition 19), GC479; entry 29, Entry 31
-- Rule 90: no finite configuration has a period-2 column (Lucas); the search sees Rule 60's counterexample —
-  PROVED, COMPUTED — Proposition 5; §8.3
-- One-sided Jen route + Theorem A excludes, for finite seeds: the white end 1 0^q, q >= 10 (entry 40); the black end
-  q >= 14 (L497); 139 more words of period 10 .. 18, none at p <= 9 (entry 41) — PROVED (CL110, CL111, GC880; Lean
-  WhiteEnd, JenRoute: L508, L513) — rule30_white_end_jen.py, rule30_word_jen_census.py, L498, L499
-- Strip test fails for every primitive word of period 3 .. 6 (radius 9) and every open Condrey case (radius 11) —
-  COMPUTED — rule30_rung3_strip.py (RG, WE), rule30_strip_c.c (SGC), L488
-- One-hole: closed exactly at p = 8 and p >= 10 (nine black steps lock 01; Lean BlackLock, P8Lock); exact relaxed
-  forms p = 9 x^4-2x^3+x-1, p = 7 x^5-x^4-x^3-x^2-x+1 (GC857); beside the true 0 1^4, hole word 10000 never occurs —
-  PROVED / COMPUTED — G.GPT271, OH, TB, OHD; L476, L479, L480, L496
-- One-hole certified ceilings a hole: width-22 radii p = 3, 4, 5, 6, 7, 9 <= 1.220382, 1.231763, 1.471227, 1.383947,
-  1.599414, 1.714447; times TC's F, p = 5, 7, 9 <= 1.461900, 1.590415, 1.697625 — COMPUTED (verified) — LP (ODD ..
-  ODD3), L504, L506
-- Lean audits: BlackLock (GC873, PROVED, source scope); P8Lock hand prefix equality
-  completed (GC932/933, PROVED CL150; filed G271; exact-language Lean declarations absent); WhiteEnd (GC893, GC898, PROVED, source scope); JenRoute (GC906, PROVED, source scope);
-  the white end replayed at width 8 (GC880, PROVED); fourteen WC walls certified (GC881, COMPUTED)
-- FP2 audits: the longer-prefix formula is sound and its guards repaired (GC900, GC902, PART; GC905, PROVED, source
-  scope; CL123 .. CL125)
+- Strip ranks bound phase-forcing onset/bad visits; kernel untested — PROVED — GC919/920, CL139/140, L515.
+- Past peeling charges graph-edge ticks; macro forcing needs intermediate phases — PROOF-SKETCH / source PROVED CL152 — GC930/934, L522.
+- Black-end q7 and q>=9 excluded; q1..6,8 OPEN — PROVED — entry38, SG/L429, GC805/806/L430, WT/L431.
+- Small black-end records/LR and white latch — COMPUTED / PROVED — G11..14, Condrey-end board.
+- White-end q>=10, black q>=14 and139 extra period10..18 words excluded — PROVED — entries40/41, CL110/111, GC880, L497..499.
+- JenRoute/WhiteEnd/BlackLock/P8Lock formal/source audits — PROVED — L508/513, GC873/893/898/906; WC14 certificates GC881.
+- One-hole p8,p>=10 closed; nine black steps lock01 — PROVED — G271, OH/TB/OHD, L476/479/480/496.
+- Relaxed p8 exact three-word language; physical equality not inferred; dedicated Lean language absent — PROVED CL150 — GC932/933, G271.
+- Relaxed p7/p9 characteristic polynomials; true p5 forbids10000 — COMPUTED — GC857, TB/OHD.
+- TRUE p5/7/9 finite counts/ceilings improve count roots; zero entropy OPEN — COMPUTED — TC/CL114/116, GC871/877, L504.
+- Width22 and layer-times-F ceilings certified; 0101 product still above0.1236 — COMPUTED — LP/ODD..ODD3, L504..506; entropy section.
+- TRUE0101 finite-language bound0.1517 also fails to beat0.1236 — COMPUTED — TC2/CL113; product route LP.
+- Random-right p5 lock/free alternation, p7/9 positive hole entropy — MEASURED — HE/HE2/HE3, rule30_cloud_hole_entropy.py.
+- Candidate p9 free pair fails at30 holes; finite-prefix formula guards repaired — REFUTED / PART / source PROVED — FP/FP2, CL123..125, GC900/902/905.
+- Every primitive p3..6 radius9 and open Condrey radius11 strip test fails — COMPUTED — RG/WE/SGC, L488; not counterexamples.
+- Every-period theorem extensions p3..6 remain parked — OPEN — Rung3, §8.42/62.
+- Slow-wall injection/reset bounds — PROVED — G15/18/19, §8.63.
+- Kopra marker K4 centre eventually white; other columns only |j|<=64 — PROVED / COMPUTED — CL088/GC829, rule30_cloud_lone_column.py.
+- Linear-CA columns2-automatic; restart statement only sketch — known / PROOF-SKETCH — same probe.
+- Rule210 LR false, no finite full0101 clock; transfer to30 invalid — PROVED — §8.65/70, entries29/31/32, GC479.
+- Rule90 no finite period2 column; Rule60 control differs — PROVED / COMPUTED — Proposition5, §8.3.
+
 
 ## Routes closed (do not reopen without new evidence)
 - Bounded runs from a thin layer: runs grow at every width to 16 — CLOSED — §8.14, §8.41

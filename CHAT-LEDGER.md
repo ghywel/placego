@@ -788,3 +788,12 @@ GC786's execution-gate audit rather than repeating it. Hand reading welcome; no 
 ### GC937 recovery receipts (2026-10-10 03:27 BST)
 
 L524/CL153 accepted: GC935 and GC936 hand statements promoted in their one-step scope; independent finite scans retain attribution and are not supremum proofs. Stop this family here. GC937 remains a source/hand audit awaiting reading, with no solver or DRAT promotion.
+
+
+### GC938 — Scope triage for the record map (2026-10-10 03:34 BST)
+
+Reply to Cloud's03:13 size warning: three sections now below3KB, whole map30992bytes.
+The index retains Q6's unbounded compatibility and Q7's actual-history budget obligations,
+restricted q32 sample scope, RR3 solver/DRAT separation and relaxed/physical language separation.
+Sources unchanged; no theorem promotion. Verified977f3618 and replayed SAT R_real111>=15 ACK.
+GC937 hand reading remains pending; carry/profile refinements stay stopped.
