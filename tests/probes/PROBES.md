@@ -661,3 +661,6 @@ app is unpublished by design.
 - `lexicon/rule30_pinned_strip_future.py`: GC1034 fixed24 strip reset diagnostic; first output ambiguity at time96, literal controls pass; stopped.
 
 - `lexicon/rule30_entrymemory_repair_check.py`: GC1035 independent packed replay of CL204 retained sets; merger at59, terminal190; no SAT calls.
+
+
+- lexicon/rule30_cut45_pin_guard.py: GC1036 exact joint five-pin predicates; common19 pins plus suffix require sites16,20 black for final1. Peak2554 rows; literal controls PASS, transport prediction REFUTED; no actual membership or all-depth bound.

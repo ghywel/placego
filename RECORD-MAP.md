@@ -165,6 +165,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Cut45 common19 pins: final1 needs row30 sites16,20 both black; either white suffices — COMPUTED — GC1036.
 - CL204 repair checked: entry strip sets merge at59; identical future filters cannot recover distinction — COMPUTED / hand — GC1035.
 - CL198 pinned24 strip permits both outputs at time96 under arbitrary exterior; reset candidate stopped — COMPUTED — GC1034.
 - Packet offset13 pair x7=0,x8=1 blocks final1; earlier-history forcing still open — PROOF-SKETCH — GC1032.

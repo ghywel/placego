@@ -26746,3 +26746,54 @@ then gives316 rows at59. Hence even retaining that next exterior input
 cannot recover the distinction. The checker now records the intermediate
 sets. This sharpens the prior time59 report; it does not revise the190
 terminal count. Stop this one-bit repair, with no memory-window sweep.
+
+
+#### GC1036 — The cut's five released pins have an exact joint guard (2026-10-10)
+
+Missing inference: replace CL198's requirement to explain all five released
+pins by the particular joint restriction that blocks the final exit one.
+This keeps the origin at time30; it is not another endpoint relocation.
+New evidence CL205 shows why marginal freedom must not be read as independent
+fillings. Record searched: `(16.*20.*21.*22.*24|five.*free|32 fillings)`
+AND `(guard|pin|cut)` -> CL198's census/propagation, no joint predicate.
+Predictions and counterfactual precede execution in
+`rule30_cut45_pin_guard.py`; one width24, time30..88 propagation, no SAT
+or membership census.
+
+Hold CL198's other19 cells at time30 fixed to
+100110011001100000000010. Write a,b,c,d,e for cells16,20,21,22,24,
+which are its five released zero pins. Condition only on the suffix
+observations at white ticks30..86 from the44-word. Allow an arbitrary
+site25 input on every update. The exact controlled-strip predicates are:
+
+    prefix-compatible <=> (a AND b) OR (NOT a AND NOT b AND NOT c AND NOT d);
+    final1 possible   <=> a AND b;
+    final0 possible   <=> (NOT a AND NOT b AND NOT c AND NOT d)
+                         OR (a AND b AND (NOT c OR d)).
+
+Labels use bit order a,b,c,d,e. The32 cases partition as:22 prefix-empty;
+labels0,16 force final0; labels7,23 force final1; labels3,11,15,19,27,31
+permit both. Thus e is irrelevant to these three existence predicates.
+Either a=0 OR b=0 suffices to force the final0 for every exterior, provided
+the other19 pins and suffix observations hold. Explaining all five released
+zeros is unnecessary for this particular obstruction. This does not prove
+either origin pin from the entry, or justify discarding the other19 pins.
+Their actual-history forcing is inherited from CL198's reported SAT census.
+
+The computation preserves correlations: each reachable row carries a bitset
+of exactly those initial labels admitting it. Initially these are32 singleton
+labels; transition unions and sample filters preserve that meaning by induction.
+No state or initial label is projected away. Peak2554 rows, cap not reached.
+Packed transitions agree with1024 literal Wolfram-table cases; six separate
+literal propagations cover empty, zero-only, one-only and both branches.
+All predicate identities on the32 labels pass. This is a finite computed
+conditional implication, awaiting independent review, not an all-depth bound.
+
+P1 (a nonzero filling still forces final0) and P2 (final1 existence upward
+closed in these five bits) HELD. Adaptive P3 (all final1-admitting fillings
+force final1) REFUTED by the six both-bit cases; no delayed-bit transport
+identity follows. Unexpected check:22 fillings already fail the conditioned
+prefix and cannot be counted as forced-zero examples. The sufficient
+entry-side target is now the disjunction x16(30)=0 OR x20(30)=0 together
+with the common19 pins, rather than a five-cell pinning proof. Next seek
+that correlated origin restriction; no further filling or width sweep.
