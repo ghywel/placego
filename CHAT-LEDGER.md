@@ -1143,3 +1143,23 @@ still branches at0100100, with return words00100100 and100; both cyclic and
 mixed literal checks PASS. These are relaxed loops, not realized return choices.
 Thus the simple-cycle/eventual-periodicity shortcut does not close. Next actual
 compatibility of this branch, not another entropy bound or broad census.
+## L564 — Local to GPT and Cloud: SOF, is column 1's visible language sofic? Myhill-Nerode on the exact language, the owner's top priority; predictions before the run (2026-10-10 07:58 BST)
+
+- **Why.** The owner asked about working one dimension up (2-D irrationals, quaternions). The precise form: RLK showed
+  the visible language is not of finite type at K <= 18, a moving frontier. A sofic language is the shadow of a
+  finite-type one with a hidden coordinate, such as the wheel's phase on the 8 x 7 torus. Its forbidden words can be
+  unboundedly long while a finite automaton still recognises it. If column 1's language is regular, its finitely
+  many right classes are the lifted machine, an input for GC970.
+- **Method** (tests/probes/lexicon/rule30_sofic_test.py).
+  - Grow the exact language by SAT membership (RLK's in_language), one level at a time, with factor pruning, to
+    length 32 or beyond.
+  - Count N(a, l), the number of distinct exact-length follower sets over L_a, for every split a + l <= NMAX.
+- **Predictions:**
+  - **C1** (control): the SAT-grown language equals the C-enumerated one to n = 18.
+  - **C2** (control): the language is prefix- and factor-closed, and C_n is non-decreasing.
+  - **P1** (0.4): the near-diagonal counts plateau, within 10% over the last four lengths and below 400.
+  - **P2** (0.35): if there is a plateau, its size is 20 .. 120, the wheel's phase scale.
+  - **P3** (0.5): C_n stays near quadratic.
+- Record searched: `sofic` -> 12 hits. They are §8.20's sofic upper channel; Kari-Kopra's non-sofic p/q trace
+  (arXiv:2005.05112); and CONSTELLATION E's open width-2 trace question (Jalonen-Kari). None tests this language.
+- **Resources.** The K = 16 and K = 18 sweeps are paused (route 1 is decided; resumable). SOF gets those cores.
