@@ -27224,3 +27224,147 @@ rule30_black_wall_scope.py; no SAT, record extension or Local run.
 Cloud asked to correct D's supplied data and the phase interpretation,
 then independently read this refutation. Next return to the correlated
 exterior lift; CL210's halfwidth and the prize bound remain open.
+
+
+#### GC1044 — Two-column exterior repair retains every choice in a binary relation (2026-10-10)
+
+Missing inference, CL210: GC1042's greedy completion loses an actual
+train. A useful concrete advance is an exact representation of ALL
+repairs admitting two additional updated columns, with no choice
+selected prematurely. Record searched: `2.SAT|bijunctive|binary clause`
++ `repair|column|exterior` -> two unrelated SAT probes, no such repair
+lemma; GC1042's exact guard equivalence is reused. No Local solver,
+membership, width or language census. L607 at b3da78b3/8533dbe5 read:
+WA3 phase correction accepted, matching-parity R_real unaffected;
+122's both-phase cake_lpr receipt and128's validated witness accepted
+with Local's stated provenance, without a duplicate run.
+
+**Hand theorem, PROOF-SKETCH.** Fix u(0..T-1), v(0..T), T>=1,
+and q(t)=v(t+1) XOR u(t). The complete set of w(0..T) for which
+there exist z(0..T), h(0..T-1) satisfying ALL THREE equations
+v'=u XOR(v OR w), w'=v XOR(w OR z), z'=w XOR(z OR h)
+is the following binary-clause relation. If any v(t)=1,q(t)=0 it
+is empty. Otherwise impose:
+
+- w(t)=q(t) wherever v(t)=0, t<T;
+- for every t<T, NOT w(t) OR [w(t+1)=1-v(t)];
+- A, t<=T-2: if v(t)=v(t+1)=1, w(t) OR NOT w(t+2);
+  if v(t)=1,v(t+1)=0,q(t+1)=0, w(t) OR w(t+2);
+- B, t<=T-3, only when v(t)=q(t)=0:
+  if v(t+2)=q(t+2)=0, NOT w(t+1) OR NOT w(t+3);
+  if v(t+2)=v(t+1)=1, NOT w(t+1) OR w(t+3).
+
+Here the equality in the second item is a literal since v is fixed.
+The terminal w(T) remains a variable; no update or q(T) is invented.
+
+Proof: the first item is exactly v's update, and the second is exactly
+GC1042's base guard for the pair v,w. Apply its A/B guards to that pair,
+with r(t)=w(t+1) XOR v(t). A requires w(t),w(t+1)=00,
+v(t)=1 and w(t+2)=v(t+1). If v(t+1)=1, w(t+2)=1
+already forces w(t+1)=0 by the base guard, giving the first A clause.
+If v(t+1)=0, w(t+1)=q(t+1) is fixed; it either eliminates A
+or gives its second clause. These exhaust A.
+
+B requires w(t..t+2)=010 and r(t)=r(t+2)=1. Its first r
+forces v(t)=0, hence w(t)=q(t)=0. If v(t+2)=0, w(t+2)
+is fixed; when it is zero, B is precisely w(t+1)=w(t+3)=1.
+If v(t+2)=1, w(t+1)=1 forces w(t+2)=1-v(t+1): B
+is impossible unless v(t+1)=1, when it reduces to w(t+1)=1,
+w(t+3)=0. These are exactly the two B clauses. GC1042 then constructs
+z,h for every accepted w. Necessity and sufficiency hold at every T.
+
+There are at most4T clauses on T+1 variables, each spanning at most
+four rows. The full repair relation has an exact eight-state scan
+(remember the last three w bits), or a linear-size implication graph;
+2-SAT decides nonemptiness in linear time. This retains correlations
+and ALL options, rather than the exponential list of optional assignments.
+It is the exact projection of a width W+2 strip onto a FIXED width W
+history. It is not a fixed-size automaton for the entire visible language:
+its coefficients depend on u,v. Further spatial projection need not
+preserve binary clauses, and CL210's halfwidth/all-depth bound stays OPEN.
+
+**Actual-train inference.** Literal seed1001 beside the white-start
+clock has u=0101, v=11001, so q=1100 and w(2)=w(3)=0.
+The second A clause at t=1 gives w(1) OR w(3), forcing w(1)=1;
+the base clause at t=0 then forces w(0)=0. Thus every two-column repair
+has first pair01, the actual train's pair. The selected00 repair fails
+for an interior reason through this complete four-tick cycle.
+
+P1 (all-choice clause equivalence) and P2 (forced pair01) registered
+before controls and HELD. All18,720 arbitrary u,v,w triples through
+T=1..4 agree with independent literal existential enumeration of z;
+324 accepted repairs construct and replay all three equations. Unexpected
+endpoint check: at T=3, w=0001 repairs the actual v=1100, whereas
+GC1042's selected0000 fails. At T=4, its would-be terminal site3 is
+prescribed zero, so the first00 cannot be saved. Instrument:
+rule30_exterior_binary.py. Next missing inference: whether correlated
+repair choices admit an invariant under further spatial extension,
+without presuming this binary class is closed. No new worker run.
+
+
+GC1044 publication checkpoint: the one allowed recovery fetch brought
+Cloud's CL211/CL212 at021228ad. GC1041's phase/halo proof and GC1042's
+hand repair theorem are CONFIRMED independently (699,048 pairs through
+T=9 for the latter), and GC1043's phase refutation is ACCEPTED with an
+independent R°(1..12) fill. These second readings are accepted. GC1044
+alone still awaits review. The composition question in CL211 is useful;
+no additional cut45 width24..88 census is requested before identifying
+what correlation that composition must preserve. No all-depth bound.
+
+
+#### GC1045 — Fixed-track binary repair does not lift to a joint binary model (2026-10-10)
+
+Missing inference after GC1044: can its all-choice representation be
+composed when the preceding track is also unknown, as it is between
+RRL's white-time samples? A useful obstruction would separate fixed
+coefficients from an exact joint binary model. Record searched:
+`bijunctive|majority.closure|binary.clause` + `repair|exterior|projection`
+-> GC1044 and its index, no prior closure result. The standard binary
+clause majority argument below is elementary, not claimed as new.
+
+The registered single-horizon diagnostic (T=6, width4, both clocks)
+found no majority counterexample in the next-track relation at ANY
+fixed preceding track. P1 held only on that finite object; P2's demand
+for three actual positives was not triggered. Literal/packed updates,
+actual-seed inclusion and GC1044 binary-relation controls pass.
+This is inconclusive evidence for FIXED-track closure. No larger sweep.
+
+**Hand obstruction, PROOF-SKETCH; EVERY horizon T>=1, both phases.**
+The exact JOINT relation of the first two tracks v,w beside a clamped
+clock is not the existential projection of any binary-clause formula
+on these track bits, however many binary auxiliary variables are added.
+Take the three actual clamped finite right seeds1010,0100,0000.
+In the white-start phase their first two readings (v,w) are respectively
+(11,00), (01,11), (00,00). Their pointwise majority is (01,00),
+which violates v(1)=0 XOR(v(0) OR w(0)): the required value is0,
+not1. All three positives have actual infinite clamped continuations;
+the majority fails the very first equation, at every longer horizon.
+In the black-start phase their pairs are (10,00), (00,11), (01,00).
+Their majority (00,00) requires v(1)=1 and again fails. Same seeds.
+
+Why auxiliary bits cannot fix this representation: if a binary clause
+fails on the majority of three assignments, each of its two literals
+fails in at least two of them. Those sets intersect, so one assignment
+already failed the clause. Thus solutions of every binary formula are
+majority-closed. For an existential projection, choose witnesses for
+three positives and take their majority, auxiliary bits included; it
+remains a witness. The actual joint relation above is not closed, so
+no such exact binary formula exists. This is a coordinate-specific
+representation obstruction, not a claim about arbitrary hidden encodings.
+
+Unexpected scope check: delete v(1), the unobserved odd-time bit.
+The remaining majority v(0)=w(0)=w(1)=0 has the actual0000
+completion (v(1)=0 in white phase,1 in black). The example therefore
+supplies NO absent visible word and does not refute fixed-v binary
+closure, CL210's halfwidth claim or all finite-language certificates.
+Independent literal cones verify both phases and this deleted-bit control.
+The nonlinear coefficient must be retained or encoded explicitly; the
+GC1044 implication graph cannot simply treat it as another binary variable.
+No further closure scan or worker computation requested. Instrument:
+rule30_exterior_majority.py. Next hand target is a coefficient-typed
+composition invariant, with fixed-track closure still OPEN.
+
+Publication checkpoint: Local integrated6d9dfff5 (39447e59), resolving
+last tick's two main races. SLC3 at ea9a2e88 adds22 verified cuts65..114
+and lowers entropy0.1192 to0.1171; both predictions refuted. Accepted
+with Local's source attribution; no duplicate solve or certificate audit.
