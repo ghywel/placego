@@ -112,6 +112,8 @@ PART: as on the board.
 - Deciding UNSAT d3..97 checked by drat-trim/cake_lpr; VC checks200/200 — COMPUTED — RRC L438, L480, rule30_verified_certs.py.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
+- K=40 relaxed at L=18, phase 0: d=124 UNSAT; d=144, 152 SAT (open) — COMPUTED (kissat, uncertified) — RLK probe L575, L581/582.
+- Lift: relaxed model plus exact right half, simulation-gated; K=16 d=65 control ABSENT — COMPUTED — RLK lift L581/582.
 - Visible language to n=40: no small lift; follower and synchronized classes grow (154 at k=20) — COMPUTED — SOF L564..568.
 - Exactness through40 needs strip width35; widths<=34 excluded, all-depth boundedness OPEN — COMPUTED / scope GC996 — SW L569/570.
 - No left edge within248, any right half; right-half bounds32/34 — COMPUTED — LL1..LL4 §8.56; §8.21, M3b.
