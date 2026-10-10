@@ -27741,3 +27741,36 @@ A value1 forces q OR r=1 and q=r OR s. They imply q=1: q=0 would give r=s=0 and 
 **Consequence and next intention.** Together with GC1046/1051, an interior L1 birth has a preceding S-L0, and that S cannot be the immediate successor of L1. The surviving birth past must therefore pass through another S or L0 before that S; this is a concrete separation constraint, not a finite-state closure certificate or bound on the number of births. Next hand target is transport of this shield through the surviving S entrance, retaining its actual past. Cloud hand review and one concrete next obligation requested; no solver, membership or mixed-word scan.
 
 **CL218 receipt at31364769.** Cloud independently checks8,192 S111010011 cones, with returned pair10 in2,048 and01 in6,144; accepts the hand relation and retained failure. GC1052 is now second-read. No run requested from Local.
+
+
+## GC1054 — A mature hidden fork must have an ordinary-long/short past (2026-10-10)
+
+**Missing inference.** GC1053 removes L0-L0-L1; determine which S ancestry can still prepare a fork. Record searched:S.S.L0.L1|S.S.L1|short.*short|111010001|111011100 with fork|ancestr|preimage|successor|gate ->40 hits. Read GC629/689 and GC1014. The new input is GC1053's adjacent-pair shield, which suggests an output obstruction for the first mature S branch rather than repairing GC1052's failed complete fork formula.
+
+**Two all-tail hand lemmas, review pending.** (A) Every white-wall row111010001 returns L0 after six ticks with c8 OR c9=1. Therefore this whole mature S branch cannot feed L1. (B) Any S return which is again S and has black site6 has site7 black and c8 OR c9=1. Consequently a short-return image cannot begin111011100.
+
+For (A), initial111010001 gives time2 prefix010110010. Write U=c10(2), V=c11(2). At time3 sites6..10 are(1,1,1,NOT U,U OR V). Thus time4 first9 is000101000: the zero at its site9 is shielded by (NOT U) OR(U OR V)=1. In particular its site6 is BLACK, retaining the correction which invalidated GC1052's old gate. Put C=c10(4), E=c11(4). Time5 sites6..10 are(1,1,0,C,C OR E), hence returned sites7..9 are
+
+    (0, NOT C, C OR E).
+
+Their last pair has OR1 for every actual C,E. GC1050's necessary fork prefix requires both sites white, proving the obstruction independently of any farther tail or earlier entry.
+
+For (B), let time2 sites6,7,8 be x,y,z. A following S requires x XOR y=1 (GC609/629). If xy=01 then time3 sites6,7 are01, time4 sites6,7 are11, time5 sites6,7 are00, and returned site6 is0. Thus a black returned sixth site forces xy=10. Here time3 site7=NOT z. Its site8 is z OR right, so time4 site7=1. Time5 site6=0 and site7=z; returned site6=z. A black return therefore forces z=1. The successive triples at sites6..8 are now
+
+    time3: (0,0,1); time4: (0,1,1); time5: (0,1,0).
+
+For F=c9(5), G=c10(5), the return sites6..9 are exactly
+
+    (1,1,NOT F,F OR G).
+
+This proves the second OR blocker. Prefix111011100 would instead have sites6..9=1100, contradicting it. Unlike GC689, this is a finite-return necessity without assuming an infinite all-S future.
+
+**Concrete fork-origin consequence.** GC1014's mature S-to-L0 entrances are111010001,111010011,111011100. Lemma(A) and GC1052 exclude the first two from feeding L1. Therefore every mature S-L0-L1 birth uses the last prefix, with its exact GC1051 gate: S-entry sites10,11 both1 and sites12 OR13=1. First, GC1053 requires the L0 immediately before a fork to have an S predecessor: an L0 predecessor is barred, and an L1 predecessor would itself return S. At that S entrance, lemma(B) excludes a preceding S, while GC1051 excludes a preceding L1 when the required fork gate is imposed. The remaining predecessor is L0. Thus every fully internal hidden fork has the past
+
+    L0-S-L0-L1,
+
+and its S entrance begins111011100. An L1 is followed by S, so such a fork sits in an untyped visible LSLLS block. This is a necessary placement of the hidden type; it does not forbid LSLLS, force a fork there, or bound total fork counts. Initial S entries lacking a two-tick past and terminal unsynchronized L entries remain exempt. The all-depth record bound and a closed hidden representation remain open.
+
+**Predictions and independent controls.** P1 initially proposed a predecessor characterization for111011100 after S; lemma(B) makes it vacuous, so it is not reported as a nonempty branch classification. P2/P3 predicted both OR blockers before controls. All1,024 complete six-tick S cones (96 applicable black-sixth S returns) and128 first-branch cones pass literal/packed engines, including every displayed intermediate tuple. The retained failed GC1052 cone1110100010000100 still returns1110010101, consistent with(A), while the relaxed1110111001110... still reaches the fork prefix and L1: short sources must not be banned independently of their past. Startup111010010 still feeds L0 and violates the mature-prefix condition. No mixed-word, membership, solver or width scan.
+
+**CL219 receipt at95e0f521 and next intention.** Cloud independently checks16,384 L0 cones,9,376 L0 returns, confirms GC1053's OR guard and its hand implications. GC1053 is now second-read. Its additional reported absence of returned triple110 is received computation, not a new theorem here. Next substantive obligation: intersect the remaining111011100 fork gate with the actual L0-S past, retaining correlations, and determine whether a fork birth is realized or further shielded. Cloud hand review and question design requested and flagged; no computation requested from Local.

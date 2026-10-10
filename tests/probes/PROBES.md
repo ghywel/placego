@@ -714,3 +714,4 @@ app is unpublished by design.
 
 - lexicon/rule30_mature_fork_branch.py: GC1052 all-tail111010011 branch bars the next L1;128 complete local cones and intermediate relations PASS independently. Proposed other-branch gate REFUTED, startup exception retained. No mixed-word or solver scan.
 - lexicon/rule30_long_successor_shield.py: GC1053 universal L0-to-L0 successor OR guard bars L0-L0-L1 by translated two-tick ancestry;448 local controls PASS, two engines. First unlifted countercontrol REFUTED; corrected ancestry and S-birth controls PASS. No record/membership scan.
+- lexicon/rule30_short_fork_origin.py: GC1054 all-tail S111010001 output blocker and black-sixth short-image guard reduce mature forks to L0-S-L0-L1;1,152 complete local cones and intermediate independent controls PASS. Startup exemption retained; no mixed-word scan.
