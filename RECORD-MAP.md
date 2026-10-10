@@ -223,7 +223,8 @@ PART: as on the board.
   §8.58; its Collatz twin is Terras's bijection (COLLATZ-PRIZE.md §5)
 - Theorem A‴: a repeat of the trace, a white run in the later row, stays a growing distance below A′ — PROVED (Lean
   TheoremAprime.lean, L530; source GC954) — §8.59
-- Jen 1990 for every eventually zero left half: no eventually periodic column 1 — PROVED — Proposition 7, §8.13
+- Jen 1990 for every eventually zero left half: no eventually periodic column 1 — PROVED (Lean JenProp7.lean,
+  L531) — Proposition 7, §8.13
 - GPT's audit of A, B, A′, E, E″ and §8.59 — PROVED (first pass) — RULE30-GPT.md G2
 - Not found in print (limited search): A and A′ "NOT FOUND; NEAR"; E "NOT FOUND" — PRIOR-ART.md
 - Theorem A and its no-two-periodic-columns corollary machine-checked in Lean — PROVED — TheoremA.lean, L501, GC882
