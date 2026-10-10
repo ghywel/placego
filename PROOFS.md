@@ -12646,3 +12646,26 @@ replays all16 exterior streams for every row,240 continuations in all.
 For L593's verified q T^10 v cut this locates the excluded hidden
 states at84; explaining their incompatibility with the earlier q
 history remains open. It is not an independent proof of that absence.
+
+
+**Backward separator corollary (GC1029, review pending).**
+At offset 7 the forward image is {6,70}, but only row 6 can reach
+{25,49,89} at offset 22. In spatial order the necessary row is
+0110000 rather than 0110001. Define B22={25,49,89} and
+Bt={r in St: some u has J_(t mod 2)(r,u) in B_(t+1)} using W283's
+exact image table. Direct backward recurrence gives B7={6}; its
+cardinalities at offsets 8..22 are
+2,2,2,2,2,3,3,3,3,4,4,3,3,3,3.
+Independent forward counts with the packed transition give 11,904 of
+32,768 exterior strings successful from row 6 at offset 7, and zero
+from row 70. Therefore this is a necessary separator, not a sufficient
+exit condition. The actual CL193 positive model has row 6 at time 81,
+seven ticks after its failed gate at 74, as required.
+
+For q T^10 v the separator is at time 69: its forbidden final 1 at
+88 would require x7(69)=0. This moves the earlier-history question
+15 ticks earlier, to one branch of an already forced six-cell row.
+Whether q T^10 0 can realize that branch is not decided here. If it
+can, the later exterior correlations still matter. No claim of a
+proof of the 45-bit cut or of an all-depth record bound. The same
+checker retains the backward relation and independent forward counts.

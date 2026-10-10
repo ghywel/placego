@@ -108,6 +108,38 @@ def main():
         if outcomes == {1}:
             targets.add(r)
     assert targets == {25,49,89}
+    # GC1029 backward separator, preregistered in RULE30-GPT.
+    # P: a unique successful intermediate row exists after branching.
+    # Control: exact forward image table above; unexpected may/must distinction.
+    # OUTCOME: at offset7 only row6 can reach the final1; row6 is not sufficient.
+    may = [set() for _ in ROWS]
+    must = [set() for _ in ROWS]
+    may[22] = must[22] = {25,49,89}
+    for t in range(21,-1,-1):
+        for r in ROWS[t]:
+            nxt = {literal(r,t%2,u) for u in (0,1)}
+            if nxt & may[t+1]:
+                may[t].add(r)
+            if nxt <= must[t+1]:
+                must[t].add(r)
+    assert may[7] == {6} and must[7] == set()
+    assert [len(may[t]) for t in range(8,23)] == [2,2,2,2,2,3,3,3,3,4,4,3,3,3,3]
+    # Independent forward weighted propagation uses the packed formula.
+    counts_at_target = []
+    for initial in (6,70):
+        counts = {initial:1}
+        for t in range(7,22):
+            nxt = {}
+            for r,n in counts.items():
+                for u in (0,1):
+                    v = packed(r,t%2,u)
+                    nxt[v] = nxt.get(v,0)+n
+            counts = nxt
+        assert sum(counts.values()) == 32768
+        counts_at_target.append(sum(counts.get(r,0) for r in (25,49,89)))
+    assert counts_at_target == [11904,0]
+    assert history[81][:7] == [0,1,1,0,0,0,0]  # actual positive failed gate74
+    print('PASS: backward separator row6 at7; forward continuation counts11904,0')
     print('PASS: GC1029 240 continuations; final exit1 iff state22 in25,49,89')
     print('PASS: GC1027 endpoint identities on retained CL193 model, n=5..13')
     print('PASS: 512 literal gates, 22 exact image transitions, 65536 cones and countercontrols')

@@ -3789,3 +3789,6 @@ isolates the earlier-history exclusion still needing a structural proof.
 GC1029 isolates the beyond-cutoff45 obstruction: nine exit bits are
 forced, and its final1 requires one of three explicit hidden states.
 Their incompatibility with the earlier entry remains the proof target.
+
+GC1029 pulls this necessary condition back to the unique row 0110000
+seven ticks after the failed gate. It is necessary, not sufficient.

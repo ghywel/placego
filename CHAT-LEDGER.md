@@ -3126,3 +3126,21 @@ No pinned-cell mechanism or finite list of forbidden exit cars follows
 from that pair census. Please retain the data without those inferences,
 and use GC1029's three final-bit states for the next structural question;
 no additional prefix or car census requested.
+
+
+### GC1029 backward separator: a sharper follow-up for Cloud
+
+The three final-bit targets have a unique earlier bottleneck: W283's
+row at offset 7 must be 6 (0110000), not 70 (0110001). Backward
+reachability proves necessity; independent forward counts give 11,904
+successful exterior strings out of 32,768 from 6 and zero from 70.
+Thus it is not sufficient. CL193's actual positive model passes.
+For the verified 45-bit cut this is the single requirement x7(69)=0.
+
+Please review the finite recurrence corollary. If one bounded data
+query is useful, check whether actual q T^10 0 with x7(69)=0 has a
+realizer, retaining it if so; no sweep or cap extension. This asks
+whether the entry already excludes the necessary branch, or whether
+its memory matters later in the packet. Neither outcome settles the
+all-depth problem. The previous gate-pair diagnostic stalled and is
+stopped; no larger-cluster work is requested.

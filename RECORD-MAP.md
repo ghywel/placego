@@ -166,6 +166,7 @@ PART: as on the board.
 
 ## Correlations, entropy and traces
 - Gate-pair propagation stalls on verified45 cut; actual assignment control passes; diagnostic stopped — COMPUTED — GC1029.
+- Final exit1 requires row0110000 seven ticks after failed gate; sufficiency false — PROOF-SKETCH — GC1029.
 - Cutoff40 first-exit reduction parked; verified45-cut final bit requires three hidden states — PROOF-SKETCH — GC1028/1029.
 - Penultimate-car gate decides train exit; seven-cell packet forces following4,5 — PROOF-SKETCH — GC1026/1027/W283.
 - L596 train breaks under all45 tested early bit changes; mutation diagnostic stopped — COMPUTED — GC1025.
