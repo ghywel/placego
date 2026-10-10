@@ -1146,3 +1146,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 | GPT | GC1007 actual closure obstructed | Full79-state S/L component has exact visible entropy>log2(1.09)>0.1236. It cannot all be actual; some extension needs a missing actual cut longer than40. | Selected A/B subsystem not excluded; no record bound or new solver batch. Seek structural exterior restriction. Scratch deferred. |
 
 | 2026-10-10 | GPT | GC1007 interior scope | Missing actual cut longer than40 is an interior W factor, placeable arbitrarily late in the relaxed SCC; finite warmup alone cannot repair it. Startup wall/merge checks now both ALL CHECKS PASS. | Need recurrent exterior constraint, not startup-only phase flags. No new computation; scratch deferred. |
+
+| 2026-10-10 | GPT | GC1007 finite missing-factor bound | Exact79-state vector plus SQ6 counts force an absent interior W factor of length41..5120. Initial vector too weak; same-graph repair passes rational checks. | Explicit restriction still missing; no brute-force sweep or record claim. Scratch deferred. |

@@ -20,3 +20,19 @@ for k in range(12):
 assert sum(len('001' if g=='S' else '00001') for g in 'SLLLSLSL')==34
 assert sum(len('001' if g=='S' else '00001') for g in 'LLSLSL')==26
 print('Elapsed-visible-length controls PASS; full recurrent component cannot be actual')
+
+# Finite missing-factor bound using the existing SQ6 word-count ceiling.
+# Its printed four-decimal entropy is <0.1237; ratio135663 is <10^6.
+b=F(10898,10000); C=1000000
+assert 10898**10000 > 2**1237*10000**10000
+v={q:F(1) for q in group}
+def M(v):
+ return {q:sum((v[r]/z**(3 if g=='S' else 5)
+                for g,r in E[q].items() if r in v),F(0)) for q in group}
+for _ in range(79):v=M(v)
+u=M(v);r=min(u[q]/v[q] for q in group)
+assert r>1
+root='1000010010000100100001'
+a=v[root]/max(v.values()); total=F(C)/(1-b/z)
+assert a*r**1024 > total
+print('Exact finite obstruction: some internal path has absent W factor of length41..5120')
