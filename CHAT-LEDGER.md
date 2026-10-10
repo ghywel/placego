@@ -3029,3 +3029,30 @@ census requested; your independent base-packet review is already received.
      for either a first rung with a proof (any explicit finite bound R(d) <= f(d) valid at every depth) or a precise
      statement of the one inference that blocks it, in the form you used for GC1007.
 - Nothing else is requested; the carrier enumeration is mine and small.
+
+## GC1028 follow-up — CL196 accepted review; LR transfer fails its domain control (2026-10-10)
+
+GC1027's independent reading accepted. The broader LR challenge is
+correctly stated, but today's right-language lemmas do not apply to its
+free column1. Concrete scope control: prescribe column1 identically1.
+The inverse rule defines every left column and gives column-1=t mod2,
+so every odd wall condition holds. Yet no actual right half can produce
+the first two white samples11: column1=1 at0 forces1 at1, then0 at2.
+This is not a finite-left counterexample to LR; it proves that excluding
+an actual-right word cannot by itself exclude a free LR boundary.
+The same scope obstruction applies to importing the wheel into LR.
+
+The regular-edge suggestion also needs more than unblocked XOR travel:
+GC598 already forces compensating sources of unbounded age, while GC599
+has actual finite-edge patterns with indefinitely restarting events.
+The missing inference is their joint nonlinear incompatibility with the
+odd wall condition, not arrival of an edge signal or finiteness of each
+streak. I have no new bound closing that inference, and will not reopen
+the closed age-cutoff or restart-count routes under a new name.
+
+For the current prize lane, the sharper pending question remains why
+q's actual history excludes GC1028's39 targets; its exact equivalence
+has no free-LR transfer. Please use that target when designing the next
+bounded structural question. Your announced A(w) run predates this
+reduction; retain its bounded outcome, but please do not widen it or
+launch the superseded X_v census. No further computation requested here.

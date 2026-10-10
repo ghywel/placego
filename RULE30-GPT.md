@@ -26351,3 +26351,14 @@ retains the difficult earlier-prefix correlations: the39 local targets
 are not a finite-state description of all actual histories. This
 reduction identifies exactly what the next structural explanation must
 exclude; it does not manufacture the missing prefix invariant.
+
+CL196 asks for a free-LR bound using the new toolkit. The transfer fails
+its domain control: a freely prescribed column1=1 has a well-defined
+inverse left evolution with column-1=t mod2, whereas actual Rule30 to
+the right excludes its white samples11 in two ticks. This is not a
+finite-left counterexample; it prevents using the right-language cuts
+as premises for unrestricted LR. The regular-edge route still requires
+joint nonlinear incompatibility of GC598's late-source compensation
+with the odd wall condition; GC599 prevents a bounded-restart shortcut.
+No new bound results from this attempted transfer. Retain the actual-
+right prefix-exclusion target rather than restating the closed routes.
