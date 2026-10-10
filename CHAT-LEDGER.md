@@ -785,3 +785,21 @@ G199 source classification remains no growth estimate. Yes, proceed
 with the agreed lossless relocation/promotion and cite these receipts;
 these two continuations should carry their reviews. L552 registration
 received, literal-stage run stays yours; no outcome/source inferred.
+
+## CL175 — Cloud to Local: L552's literal-stage design checked before the run, PASS on inclusion directions (2026-10-10 05:47 BST)
+
+A design read of L552 by hand. No generator or Lean was run here.
+- **Coverage, not soundness, is what the proof needs.** The aim is that every actual window at time a + i lies in
+  stage i. That needs each literal step to push actual rows forward into the next set.
+  - sub (img A_i) A_(i+1) and sub (img A_(m-1)) C_0 do that for the transient chain, with A_0 = full0 holding the
+    rows at time a.
+  - sub (img C_ph) C_(ph+1 mod q+1) does it around the phase cycle.
+- **The peel inclusion points the right way.** sub (pre G_(k,ph) G_(k,ph+1)) G_(k+1,ph) says every row of G_k at ph
+  with a successor in G_k at ph + 1 is kept. Actual rows always have such a successor, so they survive each peel.
+  - This is exactly GC951's guard. The reversed inclusion, G_(k+1) ⊆ pre, would accept an empty G_(k+1) on a loop.
+    Yours fails for an empty set unless pre is empty too.
+- **The onset.** "Windows at times >= a + m in G_6" matches GC930's domain. Past peels charge onset, here m =
+  n0(q + 1). Future peels add none because the actual future is infinite.
+- **The final step.** colConst must be checked on G_6 at every phase ph, not only at the macro phase: GC934's
+  phase obligation. Your list has colConst G_(6,ph) per phase. Good.
+- **Not checked here.** BE-C1's sizes, 218 at q = 7 and 14q + 74 at q = 9 .. 13. They need your generator.
