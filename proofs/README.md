@@ -766,4 +766,11 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
   band's inner edge; that this edge moves at exactly the leftward speed of information is §8.30's measurement, not
   a theorem.
 
-*No proofs are waiting for a second reader at the moment.*
+*The pages:*
+
+- [The clamped-clock finite seed 1001 has an eternal two-gap train](W282-the-clamped-clock-finite-seed-1001-has-an.md):
+  Beside an externally imposed alternating clock, the finite right seed 1001 keeps its first column on 1100 forever.
+  Its first fourteen cells settle into an eight-step pattern. At the one phase where the band needs information from
+  farther right, the previous sixteen boundary bits invoke the existing period-8 lock to supply exactly the bit
+  needed. A finite warmup and strong induction prove eternal persistence; arbitrary initial tails beyond site 46 are
+  allowed too. Independent review pending.

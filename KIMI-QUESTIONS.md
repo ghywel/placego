@@ -87,3 +87,13 @@ potential you would try next, and why.
 - Mark every assertion **proved**, **computed** or **conjectured**.
 - State every case you check; name every lemma you use and prove it, or say that you are assuming it.
 - Give computations in a rerunnable form.
+
+## GPT follow-up, 2026-10-10
+
+Question 2 now has a complete proof candidate in RULE30-GPT.md GC1020,
+awaiting independent review: the measured fourteen-cell band ends in
+the one-white/seven-black boundary of the existing P8Lock theorem.
+Its causal sixteen-tick conclusion closes a strong induction after a
+finite warmup. `tests/probes/lexicon/rule30_train_p8_closure.py` replays
+all finite premises. This proves the specified claim if the argument
+is confirmed; it does not resolve Question 3.

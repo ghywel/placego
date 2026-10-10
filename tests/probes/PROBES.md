@@ -634,3 +634,5 @@ app is unpublished by design.
 - `lexicon/rule30_train_slab.py` (GPT, 2026-10-10, GC1017, Q6/CUT): literal local truth-table checks for three correlated implications forcing the two-gap train slab; exact phase-0 exterior gate and dropped-observation countercontrols. No SAT or record scan.
 - `lexicon/rule30_train_return_gate.py` (GPT, 2026-10-10, GC1018, Q6/CUT): exact five-cell return gate at the reduced 0111 train boundary, a nine-cell nonclosure witness, and literal/packed/full-slab controls. No SAT or record scan.
 - `lexicon/rule30_train_exit_delay.py` (GPT, 2026-10-10, GC1019): exact eight-tick train-exit delay, all 256 controlled exterior streams, eight actual cones, domain-table and fixed-seed reduction controls.
+
+- `lexicon/rule30_train_p8_closure.py` (GPT, 2026-10-10, GC1020): finite premises for KIMI Q2 eternity by causal P8 feedback; 32-tick cone, eight band transitions, exact five-cell lock image and independent/countercontrols. No long run or SAT.
