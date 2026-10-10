@@ -285,6 +285,14 @@ of the two before it only when the one before it is eventually white: otherwise 
 $D_k(t+1) = \lnot D_{k-2}(t)$, after which $D_k$ follows its inputs' period. Infinitely many doublings need infinitely
 many eventually white diagonals, and Lemma B1 turns each into an eventually black one. $\square$
 
+*Machine-checked (Local, 2026-10-10 05:28 BST, L545).* tests/probes/lean/LemmaB2.lean, `lemma_B2`: no P >= 1 is an eventual
+period of every diagonal. It covers the first sentence, that the periods are unbounded; the white/black corollary is
+not formalised.
+- The proof avoids the vectors over Z/P. Take one time after which diagonals 0 .. 4^P + 1 all have period P.
+  Pigeonhole the windows (D_k, D_(k+1)) on [T, T + P); `ext_window` extends equal windows by periodicity.
+- `D_back` reads the recurrence backwards, down to a negative diagonal against D_0.
+- The axioms are propext, Classical.choice and Quot.sound. With JenPow2.lean the periods are powers of 2 without bound.
+
 ### 10. Theorem A‴ (the window principle, with the band)
 
 *Where:* RULE30-PRIZE.md, "8.59 The window principle meets the band of stripes: a repeat is a white run, and the left side is never white for long (2026-10-05)". *Bears on:* the window principle with the band. *Status:* proved.

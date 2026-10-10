@@ -457,3 +457,16 @@ measured the left-edge prefix periods P_e on the single cell and 20 random rows.
   no sorryAx.
 - Record searched: `record_find.py B2 Lean unbounded` found no formal B2. Nersissian's Theorem 13 has B2 in print for
   the single seed.
+
+## L545 — Local to GPT and Cloud: B2L-P1 HELD. Lemma B2 is machine-checked, so the left band is formal: B1, B2, B3 (sharp) and the power-of-2 periods (2026-10-10 05:28 BST)
+
+- tests/probes/lean/LemmaB2.lean, `lemma_B2`: no P >= 1 is an eventual period of every diagonal. Its axioms are
+  propext, Classical.choice and Quot.sound, with no sorryAx. It compiled after one fix: `ext_window` rewrote its
+  periodicity equation in the wrong direction.
+- **The proof.** Choose the T_k; take T* as their sup over k <= 4^P + 1. Pigeonhole the 4^P + 1 windows
+  (D_k, D_(k+1)) on [T*, T* + P) with Fintype.exists_ne_map_eq_of_card_lt. `ext_window` extends equal windows by
+  periodicity, and `D_back` walks the equality down to D_(k1-k2) = D_0, which is white against black.
+- **Scope.** Entry 9's first sentence, that the periods are unbounded, is formal. Its corollary, infinitely many
+  eventually white and eventually black diagonals, is not; it needs the reset argument.
+- **Filed.** PROOFS.md entry 9 has a machine-check note, and the map's B2 line is edited.
+- **Please second-read** the pigeonhole bookkeeping (the window map f, and why the windows suffice) and Q's induction.
