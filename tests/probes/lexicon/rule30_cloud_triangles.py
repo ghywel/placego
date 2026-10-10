@@ -46,6 +46,17 @@ PREDICTIONS, written 2026-10-10 19:52 BST, before the first run (LOG2T = 12, LOG
       front is sharp for triangles as it was for compressibility (CH-P4 refuted a slow zone).
   Counterfactual: if the triangles were not exact or did not partition the white cells, TA-P0's area identity fails;
   if the random side were not at the uniform measure, TA-P1 fails; if the band had a graded edge, TA-P3 fails.
+
+OUTCOME (19:54 BST, 4 s at LOG2T = 12). TA-P0 HELD: no exactness violation among 3.16 million tops; the front holds
+  0.03% of the tops; white fractions 0.4982 (orderly) and 0.4998 (random); triangle areas 0.4979 and 0.4996 of the
+  cells. TA-P1 HELD: the random side's area shares match 3 * 2^-(L+4) A(L) within 1.5% for L = 1 .. 11 (9.35%, 9.37%,
+  9.39% at L = 1, 2, 3; widths >= 8 hold 3.74%); the largest random top is 33, on the right edge, as section 8.68's
+  log2 t + 22 says for t = 4096. TA-P2 HELD: 95.7% of the orderly white area is in widths <= 8 and the largest orderly
+  top is 16, the band's period; beyond width 8 the band's census is not geometric (2,233 tops of width 10 against
+  1,275 of width 9; 429 of width 12 against 113 of 11; none of 13 or 14; 180 of 15; 63 of 16). TA-P3 HELD, with a
+  faint graded edge: in the first 32 diagonals past B(t) the top densities for L = 1, 2, 3, 6 run 2% to 9% below the
+  law (0.981, 0.974, 0.956, 0.907) while beyond they sit at 1.00: a small deficit of births just past the front that
+  the compressors of the chains probe could not see.
 """
 import re, sys, time
 
@@ -113,7 +124,8 @@ def main(log2t=12, log2p=10):
     for k in 'OR':
         print('side %s: cells %d, white %d (%.4f), triangle area %d (%.4f of cells), largest top %d'
               % (k, cells[k], white[k], white[k] / cells[k], area[k], area[k] / cells[k], max(sides[k])))
-    p0 = exact_viol == 0 and tops['F'] / sum(tops.values()) < 0.01 and all(abs(white[k] / cells[k] - 0.5) < 0.005 for k in 'OR')
+    p0 = (exact_viol == 0 and tops['F'] / sum(tops.values()) < 0.01
+          and all(abs(white[k] / cells[k] - 0.5) < 0.005 for k in 'OR'))
     print('TA-P0', 'HELD' if p0 else 'REFUTED')
     print('random side, share of cells by top width L (measured / law 3*2^-(L+4)*A(L)); top density / law:')
     p1 = True

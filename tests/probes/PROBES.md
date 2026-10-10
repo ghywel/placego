@@ -695,3 +695,8 @@ app is unpublished by design.
 
 
 - lexicon/rule30_sl_collar.py: GC1046 mixed synchronized S/L four-column collar; P1/P2 HELD on1,280 complete cylinder cones,128 terminal countercontrols. Literal/packed PASS; finite coefficient types and interface units, no language census or all-depth bound.
+
+- `lexicon/rule30_cloud_triangles.py` (Cloud, 2026-10-10, the owner's lead, side question): TA, white-triangle area by
+  side and width at §8.74's front. TA-P0 .. TA-P3 HELD: the triangle law integrates to exactly 1/2 (proved); random side
+  on the law by area to 1.5%; band largest 16, 95.7% in widths <= 8; a faint birth deficit in the first 32 diagonals
+  past B(t). §8.81.
