@@ -166,6 +166,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Cut45 common pins follow from joint entry/exit compatibility at width24; no SAT pin premise — COMPUTED — GC1039.
 - Cut45 backward guard uses common18 pins; prefix15 relaxation gives an illegal exterior trace — COMPUTED — GC1037/1038.
 - Cut45 common19 pins: final1 needs row30 sites16,20 both black; either white suffices — COMPUTED — GC1036.
 - CL204 repair checked: entry strip sets merge at59; identical future filters cannot recover distinction — COMPUTED / hand — GC1035.

@@ -26906,3 +26906,57 @@ first8 fixed sites, with no other common pin. This excludes suffix-only
 pin forcing. The test omits q's full past, so it does not exclude a
 joint entry-and-exit derivation at those widths. Keep that precise
 remaining target; no wider strip or repeat census requested.
+
+
+#### GC1039 — Joint entry/exit compatibility discharges the common-pin premise (2026-10-10)
+
+Missing inference: CL207's suffix-only survivors omit the entry's exact
+past; does their joint compatibility force the common19 pins? Record
+searched: `(CL207|581|common.pin)` + `(joint|past|entry)` -> GC1038 scope
+correction, no joint computation. P1 (common19 forced,0.45) and P2
+(nonempty joint relation) HELD. No SAT or actual-language membership call.
+
+At width24, reconstruct CL207's581 suffix-compatible origins at30 from
+first8=10011001, car/exit samples to86 and proved gates34..62. Keep sets
+of whole rows at each tick; reverse exact edges through those sets to
+recover the origin relation without huge provenance bitsets. Then reverse
+those origins to0, retaining source labels and imposing q's complete
+entry, including its leading0. Exactly TWO origins remain:
+`10011001100110000000001?`. They have45 initial rows; past peak2857;
+future peak65536. Thus joint compatibility fixes all first23 cells,
+stronger than the common19 claim. The prescribed pinned row survives.
+
+The remaining first8 premise is also discharged, rather than inherited
+from CL198's SAT census. GC1027 gives sites1..7=1001100 at34. A width12
+exact reverse relation with q's white observations20..32 leaves only
+row30 prefixes10011000 and10011001 (peak95). P3, that this short support
+lemma fixes all8, was REFUTED; it fixes7. CL193's actual positive seed
+survives this implication by independent literal simulation.
+
+Adaptive P4, registered before its run: the SAME width24 joint relation
+with first8=10011000 is empty (0.8). HELD:4975 suffix-compatible origins
+but NO leading0 entry past, peak7300. No cap or width was increased.
+The two branches for cell8 are exhaustive, so first8=10011001 follows
+from the full entry/suffix join and the proved first7 support.
+Consequently all19 common pins follow without any inherited pin census.
+
+Soundness: every actual44-prefix realizer satisfies GC1027's slab and
+successful gates34..58, and its first exit0 forces the failed gate62.
+It therefore enters the width12 support relation, then exactly one of
+the two width24 origin branches. Every actual path is a controlled-strip
+path, and reversing exact parents with whole-row labels preserves its
+origin. The absence in the wrong-cell8 branch and the two origins in
+the other branch prove the pin statement. GC1036's reviewed forward
+guard then forces the45th symbol0. GC1037 remains a correct independently
+reviewed intermediate implication; its pin premise is now discharged.
+This is a finite correlated-strip explanation of the already verified
+cut, not an all-depth bound or a new actual-language verdict.
+
+Controls:512 literal parent tables, nonvacuous six-tick forward/backward
+checks, and an independent exhaustive six-tick literal comparison of
+whole-graph origin extraction (seven positive sources) PASS. Unexpected
+checks reproduce CL207's581 origins and retain the pinned row; neither
+join nor support lemma is vacuous. First7 support uses an actual model
+with the correct clock. Script `rule30_cut45_joint_origin.py`; second
+reading requested. Next: identify a reusable bidirectional invariant
+for the recurrent language; no origin-window or pin-subset sweep.

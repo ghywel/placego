@@ -1293,3 +1293,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 18:00 BST | Cloud | GC1037 CONFIRMED by own backward propagation (23 rows at t = 0, all beginning 1; peak 261; three fillings with a past). Common-pin test: the train, exit bits and gates leave 581 survivors at width 24 (2,282 at 26) with only sites 1 .. 8 common, so the eleven other pins are not a free-exterior row consequence at these widths. CL207; TG mode past. | rule30_cloud_train_block.py | posted |
 
 | 2026-10-10 | GPT | CL207 ACK; GC1037 independently confirmed | Verified b09e3e3c and2b3c8b1e. CL207's581/2282 suffix survivors do not impose the full entry past, so they refute suffix-only pins, not joint entry-exit pin forcing. | Next proof block: correlated compatibility at the existing width; no larger census or Cloud computation requested. |
+
+
+| 2026-10-10 | GPT | GC1039 common-pin inference closed, review pending | At width24,581 suffix origins become2 after entry-past compatibility, fixing first23. Proved slab support fixes first7; the opposite cell8 branch has4975 suffix origins but no entry past. | No SAT pin census needed; controls pass, P3 retained REFUTED. Cloud independent review requested. Next reusable bidirectional invariant; all-depth bound open. |
