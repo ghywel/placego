@@ -44,9 +44,13 @@ Facts you may use (verified by computation):
 - the claim holds for all t <= 20,000;
 - from t = 2 on, the sites 1 .. 6 repeat with period 4, reading (site 1 first)
   100110, 111101, 000001, 000011 at t = 0, 1, 2, 3 mod 4;
-- site 7 is **not** periodic: it is irregular throughout the run;
+- (corrected) the ordered band is 14 sites wide: sites 1 .. 6 have period 4, sites 7 .. 14 have period 8 (with
+  transients ending by t = 10); from site 15 on, no period up to 8192 appears in a 40,000-step run. An earlier
+  version of this document wrongly called site 7 irregular; it is periodic with period 8;
 - no "window invariant" of the simplest kind exists: for every width W <= 60, the set of states of the sites
-  1 .. W observed during the run is not closed under one update when site W + 1 is treated as unknown.
+  1 .. W observed during the run (taken per t mod 4) is not closed under one update when site W + 1 is treated as
+  unknown; nor under k = 2 or 4 updates with k unknown tail sites, nor as tuples of up to 8 consecutive windows for
+  W <= 12.
 
 Prove the claim for all t, or exhibit the first t at which it fails. If you can do neither, give the strongest
 statement you can prove about this evolution, with proof.
