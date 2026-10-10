@@ -23893,3 +23893,30 @@ and reduces compensation to one forced geometry. No assertion that544222
 is actually realized, or that the language is now characterized. Next compare
 this forced5-to-triple2 transition with kick phase/charge, rather than invent
 an unconstrained branching choice. Full25 receipt ea0ae954 ACK; no census run.
+
+
+#### GC986 — Recurrent or boundary-only compensation? (2026-10-10)
+
+Missing inference: does the fullK18 relaxation confine544222 to an initial
+transient, permitting a finite kick budget? Record searched: `RRL|RLK|544222|4,4,2,2`
+AND `recurrent|SCC|transient` -> GC985 only. Prediction: a directed cycle
+containing the4422 core survivesK18 (so transience fails). Counterfactual:
+a relaxed periodic word is an actual right-half history or a prize obstruction.
+Independent control: literal forbidden-substring checks, including wraparound,
+versus prefix-suffix DFA. Unexpected check: also impose Local's absent word21;
+it is beyondK18 and may kill the recurrence witness. Bound: finite automaton
+only, no right-half enumeration or record sweep.
+
+Outcome: prediction REFUTED. No core-bearing cycle exists in the144-state
+prefix-suffix automaton, nor in the160-state variant adding word21. The
+adaptive occurrence-counter product has148 reachable states; exact maximum
+is1, achieved by the core itself. The computed potential V starts at0,
+never exceeds1, and verifies V(next)>=V(state)+[core completed] on every
+reachable edge. Telescoping proves at most one occurrence, including overlaps,
+in every finite word avoidingK18, and therefore every actual visible trace.
+This is an all-length motif budget, not a white-record bound or total kick
+budget. Exhaustive literal/DFA controls through10 and all edge inequalities
+PASS; reproducible probe rule30_rrl_core_budget.py. Local's forbidden-word
+soundness is inherited; second reading of the new bound remains requested.
+Next use the zero-budget recurrent language after this unique event to
+compare actual kick-phase transitions, rather than charge repeated4422 events.

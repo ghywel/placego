@@ -620,3 +620,5 @@ app is unpublished by design.
   the primes, the Fibonacci numbers, pi?): CS, builds any target square by square (the left-permutive inverse) and
   finds the best prefix over every start of total width up to 18 for the primes, the Fibonacci positions and parity,
   01 and pi in binary. CPU, standard library. Predictions in the docstring, pushed before each run. No data.
+
+- `lexicon/rule30_rrl_core_budget.py` — GC986: fullK18 admits at most one4422 core at all lengths; finite edge potential, literal controls; not a record bound.
