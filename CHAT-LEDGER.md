@@ -1106,3 +1106,60 @@ divergence fails for synthetic tau=3M, epsilon=1/N^2; synthetic
 tau=3M-floor(sqrt(M)) passes with N=t^2, epsilon=1/t,E=1. No actual Rule30
 budget claimed; GC322 keeps positive debt at slope3. This is an existing-proof
 margin audit, not a new scored theorem. Abstract variants stop pending input.
+## CL160 — Cloud to all: GC704 .. GC707 had a second reader all along (L372); third reading and a ring replay, PASS (2026-10-10 04:11 BST)
+
+**The map was behind the record.** The Q6 line "finite left support excludes all-S and eventually periodic S/L
+renewal tails" read PROOF-SKETCH. That came from §8.78's "(reader not stated)". But L372 (Local, 2026-10-09
+06:42) reads GC704 to GC707 "correct by hand", giving the reason for each. The record wins, so the line is now
+PROVED L372/CL160. This is the G205 lesson again, on a status word rather than a result.
+
+**Third reading, by hand.**
+- **GC704.** Left permutivity gives x_t(i-1) = x_(t+1)(i) XOR (x_t(i) OR x_t(i+1)). So period 6 on two adjacent
+  columns passes to every column on their left.
+  - With finite support, two far-left columns are white for six samples, so they are white forever.
+  - If columns i-1 and i are white, then x_(t+1)(i) = 0 forces x_t(i+1) = 0. White spreads right to the wall, which
+    contradicts the alternating wall.
+- **GC706.** The same window argument works for any sufficient period P = 6s + 10l, so it holds for every
+  eventually periodic renewal word.
+- **GC707.** h(S) = 110100 and h(L) = 1101000100 each contain 11 only at their start, and each ends in 00. So the
+  11s are exactly the block boundaries, and an eventually periodic column has an eventually periodic word.
+
+**Replay** (scratch, outside Git; predictions written at 04:12 BST before running):
+- **R1 HELD.** The 11 positions equal the block starts in every S/L word of 1 to 12 symbols, 8,190 words.
+- **R2 HELD.** The inverse recurrence matches forward Rule 30 on 2,000 random rings.
+- **R3, the unexpected check: HELD.** One bit order of L372's 0x688eb74a45efb082671ee is an 84-cell travelling
+  wave with F(x) = shift by 70, that is by -14, and all columns of period 6.
+  - At site 1 the wall reads 010101 from a white tick, and its right neighbour reads 110100 110100. That is GC704's
+    synchronized boundary exactly.
+  - The ring has no two adjacent columns white for six samples, which is just what GC704's whitening argument
+    forbids for a finite left support.
+
+**Scope.** As GC706 says, a genuinely aperiodic mixed renewal word is not excluded. GC705's deadline is a separate
+line: "J >= 6n - 3".
+
+## CL161 — Cloud to all: GC637 was second-read too (L345); third reading and a brute-force check of its lemma, PASS (2026-10-10 04:14 BST)
+
+**Another stale status.** Map line 49 read PROOF-SKETCH for GC637. That is the conditional route: a uniform linear
+edge deadline T <= cj + b would give Q1 with alpha = 1/c. But L345 (Local, 2026-10-09 00:34) says "GC637 is
+correct", and GC638 files that receipt. The line now reads PROVED L345/CL161. The route stays conditional: no
+deadline for actual Rule 30 is proved.
+
+**Third reading, by hand.**
+- **The rate.** Take T > b and r = ceil((T - b)/c). A survivor needs cj + b >= T, so j >= r. Since b >= 1, also
+  1 <= r <= T.
+- **The bound.** §8.51 halves exactly once per observation 1 .. min(T, j) - 1. So
+  N_(w,j)(T) <= 2^(w-1-min(T,j)) <= 2^(w-1-r). Summing over at most w slices gives
+  N_w(T) <= w 2^(w-1+b/c-T/c).
+- **The endpoint.** j observations cost j - 1 bits: time 0 picks the phase, and at time j the left input is the
+  black end. This is GC637's own control, and it is right.
+
+**Brute force of the lemma GC637 uses** (scratch, outside Git; predictions written at 04:17 BST before running).
+The setup is exact hulls of width 2 .. 14, every position j, and T = 1 .. w + 2 alternating observations, with
+zeros outside.
+- **E1 HELD.** N_(w,j)(T) = 2^(w-1-T) exactly for 1 <= T <= j: one fresh free left cell per observation.
+- **E2 HELD.** N_(w,j)(T) <= 2^(w-1-min(T,j)) everywhere.
+- **The unexpected check: HELD.** At T = j + 1 the bound is strict in 81 cases; for example w = 4, j = 3 has no
+  survivor at all. So the endpoint observation at time j is a real extra cut, which GC637's bound does not need.
+
+**Last PROOF-SKETCH line.** The only one left on the map is GC930/GC934, strip peeling. I'll check next whether it
+has an uncited reader.
