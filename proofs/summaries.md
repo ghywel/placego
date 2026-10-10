@@ -84,6 +84,8 @@ would fall outside it.
 **An everyday picture.** A ripple from the edge of a pond: you can bob in a steady rhythm only until the wave
 reaches you, eyes open or shut.
 
+**Checked by machine.** A proof assistant (Lean) has checked the argument.
+
 ## 06
 If the middle and column 1 both repeat, the left half can never show a white gap more than two periods wide.
 
@@ -103,6 +105,8 @@ played back (the owner's question; see G98).
 **An everyday picture.** Music on a loop: if it is silent for one whole play-through, it is silent for ever. A white
 gap two loops wide guarantees such a silence somewhere, and silence spreads until it reaches the drummer in the
 middle, who is still playing.
+
+**Checked by machine.** A proof assistant (Lean) has checked the argument.
 
 ## 07
 A pattern can only repeat if it is shorter than the distance to the edge.
@@ -124,6 +128,8 @@ catches the edge.
 **An everyday picture.** Two photographs of a growing town, taken years apart, can match only through a frame too
 narrow to include the new outskirts.
 
+**Checked by machine.** A proof assistant (Lean) has checked the argument.
+
 ## 08
 In the band near the edge, two neighbouring diagonals can never both fall silent for ever.
 
@@ -139,6 +145,8 @@ power cut, which would have to reach back to the supply (the owner's distinction
 **An everyday picture.** Lamps fed in a chain from a power station that never fails: any single lamp can be switched
 off, but two neighbours dark for good would mean the power had failed all the way back to the station, and it never
 does.
+
+**Checked by machine.** A proof assistant (Lean) has checked all three parts.
 
 ## 09
 The diagonals near the edge each keep a steady beat, and going deeper the beats keep dropping by octaves, for ever.
@@ -157,6 +165,8 @@ octaves, and the proof carries the rest.
 scale that keeps going down soon leaves human hearing behind (about ten octaves cover all of it), but it never stops
 being a scale (the owner's reading).
 
+**Checked by machine.** A proof assistant (Lean) has checked the main statement, that the periods never stop growing. The count of white and black stripes that follows from it is checked by hand only.
+
 ## 10
 A repeat leaves a white stripe behind it, and a black diagonal there caps the repeat.
 
@@ -172,6 +182,8 @@ them, which is why a repeat can be checked at all.
 **An everyday picture.** A forged page (the owner's forensic reading): a passage copied from an older, smaller
 document brings the older document's blank margin with it. If the new page has ink where that margin falls, the copy
 is exposed.
+
+**Checked by machine.** A proof assistant (Lean) has checked the argument.
 
 ## 11
 A column 1 that starts by almost repeating itself, at bigger and bigger scales, is fatal.
@@ -200,6 +212,8 @@ square, cut so that small animals can pass through and are not trapped (the owne
 that fence. Its white gaps are never wider than 2P, so only something small can get through; page 13 shows that a
 long repeat, which needs a white stripe roughly as long as itself (page 10), is too big.
 
+**Checked by machine.** A proof assistant (Lean) has checked it, in the sharper form: no gap longer than 2P − 1.
+
 ## 13
 The white stripe a repeat leaves cannot sit inside the settled band.
 
@@ -213,6 +227,8 @@ gone within moments, and you pass the car about to leave just before it goes, so
 where they are can circle for ever while spaces are made all around them (the owner's reading). The settled band is
 that car park. White gaps are born in it all the time, but none is wider than 2P or older than P steps (12), so the
 long white stripe a repeat needs is never there at the moment and place it is needed.
+
+**Checked by machine.** A proof assistant (Lean) has checked it, in the sharper form with 2P − 1.
 
 ## 14
 A perfectly regular wheel, never nudged, cannot produce the pattern.
@@ -281,6 +297,8 @@ open case is exactly the irregular one.
 steady columns set every column to their left on repeat; far out, the first loop was silent; and the silence works
 its way back in, one column at a time, until it reaches the beat that started it.
 
+**Checked by machine.** A proof assistant (Lean) has checked it for patterns grown from an actual starting row. The wider form, for prescribed columns, is checked by hand only.
+
 ## 18
 Next to a blinking wall, Rule 30's sibling Rule 210 behaves exactly like the simple cousin Rule 90.
 
@@ -336,6 +354,8 @@ GPT's later results on slow walls, walls with long black and long white stretche
 **An everyday picture.** A rubber stamp: however the neighbour shouts, every black stretch presses the same
 chessboard into the paper.
 
+**Checked by machine.** A proof assistant (Lean) has checked it.
+
 ## C2
 While the middle column stays white, column 1 can switch on but never off.
 
@@ -348,6 +368,8 @@ right side can say there. Walls with long white and long black stretches ("slow 
 **An everyday picture.** A set-reset latch (the owner's picture): column 2 can press "set", and pressing it again
 changes nothing; only a black beat of the wall, a button the right side cannot reach, resets it. Proof 03 is the
 same latch with its reset written in.
+
+**Checked by machine.** A proof assistant (Lean) has checked it.
 
 ## C3
 A run of white squares shrinks by exactly one square at each end per tick, so Rule 30's white triangles are perfect.
@@ -363,6 +385,8 @@ rule of the same kind, breaks it.
 
 **An everyday picture.** The triangles on the shell of the *Conus textile* snail; or a sheet of ice melting evenly
 in from both edges.
+
+**Checked by machine.** A proof assistant (Lean) has checked it.
 
 ## C4
 How fast news travels leftwards in Rule 30 is an exact bookkeeping identity: full speed, minus the times it gets
@@ -3119,6 +3143,8 @@ In Rule 30, no pattern that starts from finitely many black cells can settle int
 
 **An everyday picture.** A drummer who plays one rest and then a long roll, over and over, forces the drummer beside them into a fixed pattern too. Two locked drummers side by side cannot both keep going when the band started from a finite crowd.
 
+**Checked by machine.** A proof assistant (Lean) has checked the argument for periods 14 and above. The shorter periods rest on two independent computations.
+
 ## 39
 In the walk that builds Rule 30's repeating columns one after another, every walk that starts from a blank column comes back to a blank column, whatever the period.
 
@@ -3149,6 +3175,21 @@ The same short argument that closed the white end also rules out 139 more drumbe
 **An everyday picture.** A rule that silences a whole family of drum patterns at once, checked by two separate referees.
 
 **Checked by machine.** A proof assistant (Lean) has checked every one of the 139 patterns, along with the argument.
+
+## 42
+The stripes running down the left edge of a Rule 30 picture each settle into a beat, and every beat is a power of 2.
+
+**What it says.** Number the diagonal stripes from the left edge of the pattern. Each one eventually repeats, and stripe
+number k repeats with a period that divides 2 to the power k − 2: 1, 2, 4, 8 and so on, never 3 or 5. Each stripe is
+driven by the two stripes beside it, and a stripe driven by two regular beats can at most double their period.
+
+**Why it matters.** The record took this from Jen's 1986 paper, which is still unread; now it rests on the record's own
+proof. It also explains the gap sizes seen in the settled band: an odd beat leaves only gaps of one cell.
+
+**An everyday picture.** A row of drummers, each copying the two to their left with one simple rule. However the first
+drummers play, each new drummer settles into a beat at most twice as long as the beats feeding them.
+
+**Checked by machine.** A proof assistant (Lean) has checked the argument and its consequences for the gaps.
 
 ## G259
 Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right half: one goes blank and the other freezes.

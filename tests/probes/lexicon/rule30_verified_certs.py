@@ -59,6 +59,12 @@ runs with 1 job beside RR3's six solvers, and cake_lpr runs one check at a time 
          that is worth knowing before VC4.
   Counterfactual. A CAKE-FAILED or ELAB-FAILED instance leaves that depth's R_real resting on kissat's verdict alone
   and goes to retry with the CaDiCaL fallback. It does not refute the value; only a SAT witness at the UNSAT's L would.
+AUDIT (GPT GC961, applied 2026-10-10 05:30 BST while the rr3 run was in progress; the running process keeps the code it started
+with, so its closing status line is superseded by a fresh `status rr3`):
+  - The VC3-C1 gate now needs the rr-97-15 receipt to be VERIFIED-UNSAT, with the registered hash (RR97_SHA).
+  - An empty selection prints "EMPTY selection" and claims no completion.
+  - Only RR3 lines with ok = True are selected.
+  - status rebuilds each received rr3 CNF and compares its hash with the receipt, printing the builder file's hash.
 """
 import hashlib
 import os
@@ -81,6 +87,8 @@ sys.argv = _argv
 
 DIR = os.path.expanduser('~/np-scratch-int/rule30-vc')
 RR3_CK = os.path.expanduser('~/np-scratch-int/rule30-rr3/rr3.ck')
+RR97_SHA = 'e53875327a164ccb'          # VC's receipt for rr-97-15, registered as VC3-C1's control hash (L537)
+BUILDER = os.path.join(HERE, 'rule30_records_real_sat.py')
 CK = os.path.join(DIR, 'vc.ck')
 CAKE = os.path.expanduser('~/np-build/cake_lpr/cake_lpr')
 ALC_SHA = {'C10-3': '89bee028ebc399bf', 'C10-2': '379d841d2d39e029', 'C7-5': 'd9839e060ebe33a3', 'C2-0': 'f90a48385863bdcd'}
@@ -112,7 +120,8 @@ def rr3_deciding():
     got = {}
     for line in open(RR3_CK):
         p = line.split()
-        if line.endswith('\n') and len(p) == 6 and p[5] == 'END' and p[2] == 'UNSAT' and int(p[0]) >= 98:
+        if line.endswith('\n') and len(p) == 6 and p[5] == 'END' and p[2] == 'UNSAT' and p[3] == 'True' \
+                and int(p[0]) >= 98:
             got.setdefault((int(p[0]), int(p[1])), float(p[4]))
     return sorted(got, key=got.get)
 
@@ -238,8 +247,16 @@ def status(tiers):
     ok = [n for n in names if n in got and got[n][1] == 'VERIFIED-UNSAT']
     bad = [n for n in names if n in got and got[n][1] != 'VERIFIED-UNSAT']
     diff = [n for n in names if n in got and got[n][4] == 'DIFF']
+    if 'rr3' in tiers:                  # GC961: receipts' CNF hashes against the builder as it is now
+        now = {n: hashlib.sha256(m().encode()).hexdigest()[:16] for n, m, _ in items if n in got}
+        diff += [n for n in now if now[n] != got[n][3] and n not in diff]
+        print('builder %s now: %s' % (os.path.basename(BUILDER),
+                                      hashlib.sha256(open(BUILDER, 'rb').read()).hexdigest()[:16]))
     print('tiers %s: %d of %d VERIFIED-UNSAT by cake_lpr; not verified %s; hash DIFF %s; missing %d' % (
         '+'.join(tiers), len(ok), len(names), bad or 'none', diff or 'none', len(names) - len(ok) - len(bad)))
+    if not names:                       # GC961: an empty selection proves nothing
+        print('EMPTY selection: no completion claimed')
+        return
     if len(ok) == len(names):
         tag = 'VC3' if tiers == ['rr3'] else 'VC'
         print(tag + '-C1', 'PASS' if not diff else 'FAIL')
@@ -255,7 +272,8 @@ def main():
     if 'rr3' in tiers:
         rec = done().get('rr-97-15')
         sha = hashlib.sha256(rr_text(97, 15).encode()).hexdigest()[:16]
-        ok = rec is not None and rec[3] == sha
+        # GC961: the control receipt must be a verified one, with the registered hash
+        ok = rec is not None and rec[1] == 'VERIFIED-UNSAT' and rec[3] == RR97_SHA == sha
         print('VC3-C1', 'PASS' if ok else 'FAIL', sha, rec[3] if rec else 'no VC receipt')
         if not ok:
             sys.exit(1)

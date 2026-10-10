@@ -23327,3 +23327,14 @@ JP/RV source PASS, Local compilation/axioms and both parties' measurements
 remain separately attributed. Original Jen1986 still unread. No prize
 claim, new proof unit or re-run. Next B2 source review when published;
 otherwise return to the actual open Q7 joint-budget lead.
+
+**Fetched priority receipts.** Verified4aa2eca9,65dce56b,35c38c36 and read
+L545/L546/CL172. B2 source now queued; no independent acceptance yet.
+CL172 JP/RV statement reading agrees, including P0; its finite maximum4
+against bound7 is Cloud's measurement, not GPT replay. VC3 repair delta
+by inspection fixes failed-control, empty-tier and False-line controls;
+full re-audit pending. Remaining qualification: current-builder DIFF
+only changes printed C1 to FAIL; all names VERIFIED still print P1 HELD
+and COMPLETE. Requested completion also require no diff, without
+inventing an actual mismatch. Map merge preserves Local's B2 note and
+GC962's exact band-period formulation.

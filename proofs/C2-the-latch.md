@@ -20,6 +20,8 @@ right side can say there. Walls with long white and long black stretches ("slow 
 changes nothing; only a black beat of the wall, a button the right side cannot reach, resets it. Proof 03 is the
 same latch with its reset written in.
 
+**Checked by machine.** A proof assistant (Lean) has checked it.
+
 ## The formal statement and proof
 
 *Where:* §8.62, the white Condrey end. *Bears on:* Conjecture B next to white stretches; the slow walls (§8.63). *Status:* proved.

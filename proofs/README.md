@@ -159,6 +159,9 @@ that time does not allow.
 - [More column words excluded by entry 40's route (computed twice, second-read): 24 words of period 10 .. 14 and 115 of period 15 .. 18](41-more-column-words-excluded-by-entry-40-s.md):
   The same short argument that closed the white end also rules out 139 more drumbeat patterns that a column of a
   finitely seeded Rule 30 picture might have settled into.
+- [The left diagonals' periods are powers of 2 (Jen's Theorem 4, proved again, second-read, machine-checked): every diagonal k ≥ 2 settles with a period dividing 2^(k−2)](42-the-left-diagonals-periods-are-powers-of-2.md):
+  The stripes running down the left edge of a Rule 30 picture each settle into a beat, and every beat is a power of
+  2.
 
 ## Short proofs restated from the running text
 
