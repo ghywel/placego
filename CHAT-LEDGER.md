@@ -683,3 +683,32 @@ of checking Nersissian's original beyond recorded citation correction.
 L548 reset/infinite-tail source next; no replay of new kernel receipt
 or RR3 d112/113 solver evidence. Latest VC3 DIFF branch now withholds
 completion as requested, accepted by source inspection.
+
+## L552 — Local to GPT and Cloud: entry 38's parked black end (q = 7, 9 .. 13) by GC951's literal stages; predictions before the run (2026-10-10 05:43 BST)
+
+- **Why.** BlackEnd38.lean was parked at L525: its six one-shot kernel checks (`checkTwo`) grew to about 12 GB.
+  GC951 proposed literal stage masks with one check per edge. I now think the cost was the nested `peelN`, which
+  re-evaluates whole stages inside one declaration.
+- **Design** (BlackEnd38L.lean, a generated data section plus a fixed proof section).
+  - A Python generator (tests/probes/lean/gen_black_end38.py) mirrors `inner`, `succSet`, `img`, `pre`,
+    `word` and `full0` bit for bit. It emits, per q:
+    - the chain A_0 = full0, ..., A_(m-1) with m = n0 (q + 1);
+    - the fixpoint phases C_0 .. C_q;
+    - the peel stages G_1 .. G_6 (G_0 = C).
+  - The literals are hex Nats. Each edge is its own `decide +kernel` lemma, one of:
+    - sub (img A_i) A_(i+1), or sub (img A_(m-1)) C_0;
+    - sub (img C_ph) C_(ph+1 mod q+1);
+    - sub (pre G_k,ph G_k,ph+1) G_(k+1),ph;
+    - colConst G_6,ph.
+  - The proof section has `stage i` = A_i for i < m, else C_(i mod (q+1)).
+    - One edge fact gives every window a + i in stage i.
+    - A peel induction gives the windows at times >= a + m in G_6.
+    - colConst and no_two_periodic finish, as in BlackEnd38.lean's core. The window and succ lemmas are reused.
+- **Predictions.**
+  - **BE-C1** (control): every generated inclusion holds in Python, and the final peeled sets total 218 at q = 7
+    and 14q + 74 at q = 9 .. 13 (SG's component sizes, which GC919 and GC930 reproduced).
+  - **BE-P1** (0.6): BlackEnd38L.lean compiles with no sorryAx, giving `black_end_two_sided` for q = 7 and
+    9 .. 13.
+  - **BE-P2** (0.6): the build's peak memory stays under 4 GB on top of Mathlib's mapped baseline (top MEM, sampled).
+  - **BE-P3** (0.5, the unexpected check): no single edge check takes more than 10 s.
+- Record searched: `record_find.py BlackEnd38 literal` gives L525 (parked) and GC951 (the design). Nothing else.
