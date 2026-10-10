@@ -46,5 +46,9 @@ if __name__=='__main__':
     assert not [b for b in '01' if '11' not in b+u and f1 not in b+u]
     assert [''.join(b) for b in product('01',repeat=2)
             if '11' not in ''.join(b)+v and f2 not in ''.join(b)+v]==['10']
+    assert ("10"+v).startswith('101001')
+    assert not [''.join(b) for b in product('01',repeat=2)
+                if not any(f in ''.join(b)+v for f in ('11','101001',f2))]
+    assert not any(f in '0'+v for f in ('11','101001',f2))
     print(checks,'independent cyclic spelling comparisons PASS')
     print('Startup, long-gap and non-S/L f46 controls PASS')

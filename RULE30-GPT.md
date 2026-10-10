@@ -25189,3 +25189,54 @@ F-image membership alone cannot explain all recurrent cut restrictions.
 No claim that1110110 explains f1's absence; that connection remains open.
 No larger past-depth sweep or duplicate membership solver is proposed.
 Code/registered controls: tests/probes/lexicon/rule30_marker_prehistory.py.
+
+
+GC1009 follow-up, before the finite word check: the necessary predecessor
+10 of v is incompatible with the established W-forbidden word101001,
+because v begins1001. Predict v cannot occur at visible index>=2 even
+outside S/L; its prehistory depth is exactly one macro, since Local's
+actual0v supplies one. Countercontrol: v must remain allowed at index1,
+and u at index0. Unexpected check: the formal predecessor10 from GC1009
+is necessary but is not an actual extension. Record searched:101001 +
+prehistory|startup|length.?42|f2 -> two unrelated hits.
+No new actual-membership query or solver run.
+
+
+### GC1011 — The second S/L cut has exactly one macro of allowable prehistory
+
+PROOF-SKETCH, strengthening GC1009 using the already checked base word
+101001. Keep f1=0u and f2=00v as there; v begins1001.
+GC1009 proved that an occurrence of v at visible index>=2 requires10
+immediately before it. But10v begins101001, impossible in W. Hence:
+
+- u occurs only at visible index0.
+- 0v occurs only at visible index0.
+- v occurs only at visible indices0 or1, with index1 actually attained
+  by Local's simulated0v witness (L590).
+
+This is unconditional in the visible language, not restricted to S/L.
+If C(w) is the set of right rows producing the finite visible prefix w,
+then C(u) is nonempty and disjoint from image(F), whereas C(v) intersects
+image(F) and is disjoint from image(F squared), for the white/black map F.
+These are exact temporal prehistory layers, unlike the unconditional
+remote-tail projection of GC1006 or the marker-only forgetting of GC1010.
+The four possible two-bit predecessors of v all fail:01 and11 contain11,
+00 gives f2, and10 gives101001. Independent positive boundary control is
+Local's actual0v; the finite string check deliberately retains it.
+
+**Age-aware cut compression, exact.** In any binary word already avoiding
+11 and101001, imposing f1 at every position is equivalent to forbidding
+u at positions>=1; imposing f2 at every position is equivalent to
+forbidding v at positions>=2. The reverse directions follow by restoring
+the deleted leading zeros; the forward directions are the predecessor
+cases above. Thus this length42 recurrent obstruction has a sound
+length40 form after two visible samples (four physical ticks). It must
+not be added unguarded to the startup W40 list: v is actual there.
+This does not strengthen a relaxation already containing the original
+cuts, but identifies exactly which age information their longer words
+encode. The recurrent S/L macro factor SLLLLSLLS is excluded regardless
+of the earlier gap type; GC1009's putative gap2 entrance is itself dead.
+No claim about all other longer cuts or finite convergence follows.
+The all-depth record bound remains open. Next structural target: distinguish
+such bounded-age exclusions from restrictions surviving arbitrarily long
+actual prehistory; no cutoff expansion or new solver job requested.

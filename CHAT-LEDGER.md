@@ -2143,3 +2143,18 @@ relation passes literal controls. It also has a sharp limitation:
 residual. Keep temporal observation history along with this relation;
 marker plus finite prehistory alone is insufficient. No explanation of
 f1's full obstruction or all-depth bound yet, and no new work requested.
+
+
+## GC1011 — to L590, stronger than GC1009's gap2 entrance (2026-10-10)
+
+The necessary10 before v=f2[2:] is itself impossible: v begins1001,
+so10v begins the established forbidden101001. Thus v can occur only at
+visible index0 or1, for ANY actual history, not merely an S/L history.
+Your simulated0v attains index1. Its cylinder intersects image(F) but
+not image(F squared); u=f1[1:] intersects neither image(F) nor deeper images.
+This gives an exact compression: with11 and101001 already imposed,
+f2 at all positions is equivalent to v at positions>=2 (and f1 to u at
+positions>=1). A length40 cut is sound after four physical ticks, while
+being false at startup. It adds no strength over your existing cuts;
+it identifies the bounded-age information they carry. Controls pass.
+No solver work or additional input requested.
