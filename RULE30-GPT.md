@@ -27910,7 +27910,7 @@ The remaining case is E=1,G=b. Its first child has last bit v(W)=NOT a. When a=1
 
 **Missing inference, GC1059/CL222.** Can the next bit of a repaired time2 row be lifted while retaining its preceding child prefix and the prescribed initial prefix? Determine the exact admissible boundary relation, rather than treating this bit as freely replaceable. Record searched: two-tick/two-step with lift/fixed-prefix/prehistory ->26 hits; with prefix/lift and toggle/surject/last-bit/penultimate/freedom ->6 hits. G236's existing two-step spatial map is reused; no new generic image transducer or subset census. Predictions, counterfactual and controls precede execution in rule30_two_tick_prefix_lift.py.
 
-**Exact local lift criterion, hand proof awaiting review.** Fix ANY initial prefix through site j+1, j>=3, with u,a,b,c at sites j-2..j+1. Put P=u XOR(a OR b), the time1 bit at j-1. Let Q,R be time2 bits at j,j+1. All child bits through j-1 are already fixed by that initial prefix, in either wall phase. Varying the next two initial bits d,e, with any farther tail, gives EXACTLY:
+**Exact local lift criterion, confirmed CL228.** Fix ANY initial prefix through site j+1, j>=3, with u,a,b,c at sites j-2..j+1. Put P=u XOR(a OR b), the time1 bit at j-1. Let Q,R be time2 bits at j,j+1. All child bits through j-1 are already fixed by that initial prefix, in either wall phase. Varying the next two initial bits d,e, with any farther tail, gives EXACTLY:
 
 | Initial suffix condition | Admissible Q,R |
 | --- | --- |
@@ -27930,3 +27930,26 @@ Sufficiency is constructive. For bc=11 choose d=0,e=a XOR R. For bc=00,a=1 choos
 **Controls and concrete obstruction.** All128 complete six-input local cones (both wall phases) agree under literal and packed evolution, giving exactly the table and freedom criterion; all56 admitted pair/phase witnesses pass the explicit construction. Initial prefix0001 at white start always gives time2 prefix1110, so replacing its fourth child bit by1 while retaining the initial0001 and first three child bits111 cannot lift. The same boundary blocker survives translation past common prefix1010. The unexpected0000 case admits both R values before fixing Q, but Q=1 forces R=1; an unconditional output-bit freedom test misses the constraint. No solver, word-membership, wider strip or NFA census.
 
 **Receipt and next intention.** Verified22c5c852: CL227 confirms GC1059 on992 local cases across widths2..6 and accepts the CL226 scope correction; GC1059 is second-read. The proposed two-observation induction must carry this prefix-conditioned relation, not just a repaired time2 row with a free next bit. Next missing inference: choose a future trace representative satisfying the forced boundary value when the pair is mixed or the000 guard is active, or move the initial repair farther left while preserving the trace. Cloud review and that concrete representative-selection obligation requested and flagged; no new computation. Halfwidth and the prize bound remain open.
+
+
+## GC1061 — A delayed packet enforces its prefix-conditioned lift bit (2026-10-10)
+
+**Missing inference, GC1060/CL222.** Does future trace matching itself retain a forced boundary bit in a nonvacuous actual two-tick image? Compose the reviewed GC1030 packet transport with the exact lift guard. Record searched:1001000|0011111 with ancestr|preimage|past|two.tick|time.?2 ->22 hits; GC1004/1005 give the phase obstruction, GC1030 gives transport, no complete packet origin surfaced. Predictions, counterfactual and selected independent controls were written before execution in rule30_packet_origin_lift.py. No word-membership, solver or width scan.
+
+**Complete packet origin, hand proof awaiting review.** Let x be an actual initial right row, y its first update and z its second, with the wall initially black. Then
+
+    z1..7=1001000 iff x1..7=0011111 and x8 OR x9=1.
+    Under that condition, z8=x8 XOR(x9 OR x10).
+
+Write c,d,e for x8,x9,x10. Necessity follows from the two local updates. Since the second update has a white wall, z1..4=1001 forces y1=y2=1 and either y1..4=1110 or1101. The second option has rooted prefix110, impossible after a black-wall update by GC1005. Thus y1..4=1110. Successively z5=z6=z7=0 force y5..8=0000, so y1..8=11100000.
+
+The black-wall update then gives x1=x2=0,x3=1, x4 OR x5=1, and
+
+    x4=x5 OR x6, x5=x6 OR x7,
+    x6=x7 OR x8, x7=x8 OR x9.
+
+These equations force x4=x5=x6=x7=1: if x5=0 then x6=0 and x4=0; if x6=0 then x7=0 and x5=0; if x7=0 then x8=0 and x6=0. Each contradicts the already forced preceding black bit. Hence c OR d=1. Conversely, initial prefix0011111 with c OR d=1 gives y1..8=11100000 directly, establishing the required z prefix. Its next bit is z8=y7 XOR(y8 OR y9)=y9=c XOR(d OR e). This proves both directions, for every farther tail. At initially white wall phase this time2 packet is impossible: z would be a black-wall image containing rooted10010, barred by GC1004. Phase matters for actual ancestry despite GC1030's phase-independent future transport.
+
+**Concrete representative selection.** GC1030 gives x1(15)=1-z8. Therefore every future representative starting with z1..7=1001000 and matching the original first-column trace at times2..15 must retain z8. In the fixed-initial-prefix branch c=0, the origin relation forces d=1 and z8=1; future trace matching through its thirteenth tick automatically imposes this GC1060 mixed-pair lift guard. The guard is nonvacuous: initial001111101 gives this packet and z8=1, regardless of farther tail. For c=1 either z8 lifts: choose d=e=0 for z8=1, or d=1,e=0 for z8=0. In particular a black trace endpoint at time15 forces initial site8 black in this packet cylinder. For width W>=9 the original horizon2W-2 includes time15, and its proposed width W-1 future representative can retain the first seven cells and observe all14 symbols. This discharges the *next-bit* obligation in this one cylinder; it does not lift the remainder of the child tail.
+
+**Controls, limitations and receipt.** Eight c,d,e cones agree under independent literal and packed updates; twelve selected actual endpoint controls (the six feasible cases, two farther-tail extremes) agree with the composed formula. The short64-case black-image negative control passes. Unexpected check:0011111100 gives z8=1, whereas0011111110 gives z8=0; ancestry alone cannot force the packet's next bit. The white-phase impossibility and the two positive black-phase witnesses prevent a vacuous compatibility lemma. No exhaustive rerun of GC1030's established transport proof. Verified0fe7193b/14d52ffa: CL228 confirms GC1060's full table and freedom criterion, now second-read. CL229 received; nonsoficity, even if proved, would not exclude a finite visible-language relaxation certificate. Next missing inference: an analogous trace-preserving choice for other forced-bit cylinders, especially those where the bit is masked rather than observed. General representative selection, whole-tail lifting, halfwidth and the all-depth prize bound remain open.

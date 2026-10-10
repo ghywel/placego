@@ -183,7 +183,7 @@ PART: as on the board.
 
 ## Correlations, entropy and traces
 - Initial rewrite/merger GC1057/1058 PROVED CL225/226; two-tick normalization GC1059 PROVED CL227.
-- Prefix-conditioned two-tick lift has an exact boundary-pair guard — PROOF-SKETCH — GC1060.
+- Two-tick boundary lift guard PROVED CL228 — GC1060; packet selects its lift bit — PROOF-SKETCH GC1061.
 - Plateau/halo PROVED CL210/211 — GC1040/1041.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
@@ -198,19 +198,12 @@ PART: as on the board.
 - Short-entry plus mature gate loses exact past — REFUTED — GC1015.
 - Mature S gate retains nine prefixes; G239 SL startup example has no two-tick past — COMPUTED / PROOF-SKETCH — GC1014.
 - Marker prehistory branches at arbitrary distance; some prefixes forget all tail constraints — COMPUTED / hand — GC1010/1012; G236 method.
-- S/L cut suffixes have exact maximum macro prehistory0/1; length40 exclusion after age2 — PROOF-SKETCH — GC1009/1011, L590.
-- Actual visible histories have a four-prefix nonlinear obstruction at left depth26 — COMPUTED — GC1008.
-- Fixed-m wall images admit remote tails; origin correlations remain — PROOF-SKETCH — GC1006.
-- Rooted black-image1 0^k 1 0 impossible;010 admits tails — PROOF-SKETCH — GC1005.
-- First black-start exclusion forces spatial10010, impossible after black-wall update — COMPUTED / hand — GC1004.
-- Matured black-start cuts through K-1 follow from complete white cutoff K — PROOF-SKETCH — GC1002/1003.
-- Spatial NFA caps after two observations; simulation compression fails — PART/REFUTED — GC998..1000.
-- Width9 warmup stabilizes after6 macros but keeps GC994 false merger; actual E13 absent — COMPUTED — GC997/L572.
-- Equal width9 compatible sets hide distinct actual futures after01 — REFUTED sufficiency — GC994.
-- Gap-order distinction needs width9; width8 admits both — COMPUTED — GC993 (GC992).
-- Equal gap multisets/endpoints/window7/lastgap hide different futures — COMPUTED — GC992.
-- Eight phases yield255 residuals; follower growth inconclusive — control sketch/computation — GC991.
-- Equal phase/count/window7 hide different futures — COMPUTED — GC990, RLK K18.
+- S/L macro past0/1 and age2 cutoff40 shield — PROOF-SKETCH — GC1009/1011, L590.
+- Actual nonlinear origin obstruction at depth26 — COMPUTED — GC1008.
+- Fixed-m remote tails full; rooted black-image shield and010 forgetting — hand — GC1004..1006.
+- Mature black cuts inherited from white cutoff — hand — GC1002/1003.
+- NFA/residual mergers fail; phase255 and W9 warmup inconclusive — PART/REFUTED — GC991/994/997..1000.
+- Window7/gap multiset fails; gap order first separates at width9 — COMPUTED — GC990/992/993.
 - Channel bound: next to 0101 column 1 carries at most 0.1236 bits per visible bit, whatever the right half —
   COMPUTED (certified in integers) — §8.20, §8.33; SQ6, EN6
 - Layer times true forbidden words (TC2's F): width 22 certifies 0.130284, below both factors; gain over the layer
