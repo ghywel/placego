@@ -177,6 +177,8 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
          between witnesses at 131 and 133.
   CUT-P21 (blind, 0.55; registered 00:29 before its run): d = 138, L = 18, phase 0 (UNKNOWN at 1,800 s in the sweep)
          ends UNSAT within 2 rounds at 14,400 s caps, like 140 and 144.
+  CUT-P22 (blind, 0.5; registered 00:49 before either run): d = 137 and d = 139, L = 18, phase 0 each end UNSAT within 2
+         rounds at 14,400 s caps (137 now, 139 when a core frees).
   CUT-P17 (blind, 0.5; registered 20:35 before its sweep): of d = 137 .. 151 (140 excluded, <= 17), at least half give a
          CUT WITNESS at L = 18 (phase 0 then phase 1, 1,800 s caps), so 140's dip is isolated rather than a stretch.
   CUT-P15 (22:10): WITNESSES at 127 (p0), 128 (p1), 129, 130, 131, 133 (p0), 134 (p1), 135 (p0), each rule30_witness_check
