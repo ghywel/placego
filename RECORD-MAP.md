@@ -165,6 +165,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Packet offset13 pair x7=0,x8=1 blocks final1; earlier-history forcing still open — PROOF-SKETCH — GC1032.
 - Whole-run junction cone depends on d+L; trivial counts do not close C>=2 bounds — scope correction — GC1031.
 - Row1001000 transports NOT(site8) to site1 after13 ticks, either wall phase — PROOF-SKETCH — GC1030.
 - Proved slab/packet premises do not make unary projection derive CL198 pinning; stopped — COMPUTED — GC1029.

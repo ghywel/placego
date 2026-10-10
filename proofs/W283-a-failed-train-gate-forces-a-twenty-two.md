@@ -33,6 +33,9 @@ seven ticks after the failed gate. It is necessary, not sufficient.
 GC1030: row 1001000 transports the complement of site 8 to site 1
 exactly 13 ticks later, in either clock phase; later inputs cannot alter it.
 
+GC1032: the pair x7=0, x8=1 at packet offset13 suffices to block
+the final1; proving the whole seven-cell row is unnecessary.
+
 ## The formal statement and proof
 
 *Status:* finite proof candidate, independent reading requested.
@@ -229,3 +232,24 @@ sets, independently checks 16,384 packed input streams and 256 literal
 the first input, and streams 0 and 1 both give final bit 1. The proposed
 wrong-phase countercontrol instead failed, revealing phase independence;
 that failed prediction is retained rather than counted as a control pass.
+
+
+**GC1032, packet barrier (review pending).** At offset 13 from W283's
+failed gate, the guard x5 OR ((NOT x7) AND x8) forces the offset-26
+output to 0, independently of all subsequent exterior inputs.
+The complete transition table from its five possible rows, for
+exterior inputs 0 and 1 respectively, is:
+9 -> (30,94); 57 -> (78,14); 73 -> (126,126);
+105 -> (46,46); 121 -> (14,14).
+The previously established backward set at offset 14 is {30,46,126}.
+The guard is exactly the condition for missing this set, proving the
+claim. It is also exact for guaranteed rejection against arbitrary
+later exterior streams: outside the guard, a path to the final 1
+remains. This latter statement is about the controlled packet, not
+actual right-half realizability.
+
+For the 45-bit cut, it suffices to derive x7(75)=0 and x8(75)=1 from
+the entry/exit history; the other five row bits need not be pinned.
+The still weaker disjunctive guard itself would also suffice. Neither
+entry implication is proved here. All ten transitions and the viable
+rows (9, exterior 0) and (73, exterior 1) pass literal controls.

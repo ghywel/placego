@@ -3795,3 +3795,6 @@ seven ticks after the failed gate. It is necessary, not sufficient.
 
 GC1030: row 1001000 transports the complement of site 8 to site 1
 exactly 13 ticks later, in either clock phase; later inputs cannot alter it.
+
+GC1032: the pair x7=0, x8=1 at packet offset13 suffices to block
+the final1; proving the whole seven-cell row is unnecessary.

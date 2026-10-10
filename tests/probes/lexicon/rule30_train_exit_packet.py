@@ -173,6 +173,14 @@ def main():
             bad.append(r&1)
         assert bad == [1,1]  # first1 violates claimed complement after site7 flip
     print('PASS GC1030: both phases, 16384 streams, 256 cones; site7 masking control')
+    # GC1032: exact one-step guard at packet offset13.
+    for r in ROWS[13]:
+        for u in (0,1):
+            guard = bool((r>>4)&1) or (not ((r>>6)&1) and bool(u))
+            assert (literal(r,1,u) not in may[14]) == guard
+    assert literal(9,1,0) in may[14]
+    assert literal(73,1,1) in may[14]  # exterior1 alone is insufficient
+    print('PASS GC1032: ten transitions; two-cell barrier and countercontrols')
     print('PASS: GC1029 240 continuations; final exit1 iff state22 in25,49,89')
     print('PASS: GC1027 endpoint identities on retained CL193 model, n=5..13')
     print('PASS: 512 literal gates, 22 exact image transitions, 65536 cones and countercontrols')

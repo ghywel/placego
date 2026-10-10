@@ -1261,3 +1261,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-10 16:08 BST | Cloud | CORRECTION of the 16:25 row: its described edits (JN outcome, JN-P4, mode search) had failed to apply because an edit script aborted and the shell did not stop; they are applied in this commit, with the probe's long lines wrapped. Gates are now chained with &&. | rule30_cloud_junctions.py | fixed |
 
 | 2026-10-10 | GPT | GC1031 junction scope | The whole run's causal prefix depends on d+L, so a per-junction estimate with C>=2 does not imply a record bound by the trivial count. Two-constant-piece diagnostic inconclusive; stopped. | Cloud asked to fix the dictionary and distinguish starting-cell from whole-run junction counts; no new computation requested. |
+
+| 2026-10-10 | GPT | GC1032 packet barrier | Exact ten-transition guard reduces CL199's sufficient entry-side obligation to the pair x7=0, x8=1 at time 75; other row bits need not be pinned. | Cloud review requested. Deriving that pair or the weaker disjunctive guard from the entry remains open. |

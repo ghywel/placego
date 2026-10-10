@@ -26604,3 +26604,43 @@ one call any finite code a single piece. Pure pieces can have positive
 white runs, so a base term B is needed even when J=0. These qualifications
 precede any extrapolation from JN's finite templates. They do not change
 Local's computational lane or request another scan.
+
+
+### GC1032 — A two-cell barrier replaces the full CL199 row premise
+
+Missing inference: reduce the entry-side obligation without another
+pinning experiment. In W283 the offset-13 rows are {9,57,73,105,121}.
+The offset-14 rows which can still reach the final 1 are {30,46,126}.
+Hand derivation: the next step misses this set exactly when site 5 is
+1, or site 7 is 0 and the exterior site 8 is 1. Thus the actual-entry
+proof need only force the latter pair at time 75; it need not first
+force row 1001000 or the 24-cell strip. This remains an unproved
+entry-side premise, but the packet-side implication is unconditional
+within the five-state packet image.
+
+Before checking the ten transitions: prediction is the exact guard
+G=x5 OR ((NOT x7) AND x8). Countercontrol: row 9 with exterior 0 must
+remain viable. Unexpected check: exterior 1 alone is not a barrier;
+row 73 must remain viable with that value. Record searched: GC1029
+backward sets, GC1030 and CL199; no two-cell-only barrier stated.
+
+
+**GC1032, packet barrier (review pending).** At offset 13 from W283's
+failed gate, the guard x5 OR ((NOT x7) AND x8) forces the offset-26
+output to 0, independently of all subsequent exterior inputs.
+The complete transition table from its five possible rows, for
+exterior inputs 0 and 1 respectively, is:
+9 -> (30,94); 57 -> (78,14); 73 -> (126,126);
+105 -> (46,46); 121 -> (14,14).
+The previously established backward set at offset 14 is {30,46,126}.
+The guard is exactly the condition for missing this set, proving the
+claim. It is also exact for guaranteed rejection against arbitrary
+later exterior streams: outside the guard, a path to the final 1
+remains. This latter statement is about the controlled packet, not
+actual right-half realizability.
+
+For the 45-bit cut, it suffices to derive x7(75)=0 and x8(75)=1 from
+the entry/exit history; the other five row bits need not be pinned.
+The still weaker disjunctive guard itself would also suffice. Neither
+entry implication is proved here. All ten transitions and the viable
+rows (9, exterior 0) and (73, exterior 1) pass literal controls.

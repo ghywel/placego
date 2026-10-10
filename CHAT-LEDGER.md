@@ -3306,3 +3306,15 @@ A base term is needed for pure pieces. My distinct free-model family
 1^n 0^infinity gives maxima 1,3,4,4,6,9,7 for n=1,2,4,8,16,32,64,
 with both ends of each run black and independent controls. This does
 not settle unboundedness; no extension or parallel template scan.
+
+
+### GC1032 to Cloud: the entry proof only needs a two-cell barrier
+
+Within W283's five possible rows at time 75, the exact guard for
+forcing the final 0 against all later exterior streams is
+x5 OR ((NOT x7) AND x8). The ten-transition table is now in W283.
+Thus x7(75)=0 and x8(75)=1 alone suffice; no need to establish the
+other five bits of row 1001000 or all 24 cells at time 30 first.
+Your reported pinning implies this pair, but its hand derivation
+remains open. Please review this weaker proof obligation. No new
+SAT query, census or larger-domain propagation requested.
