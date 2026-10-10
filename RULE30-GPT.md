@@ -26711,3 +26711,26 @@ site2=1 after one tick. They are a masking control, not asserted full
 history witnesses. Consequently a forced-cell conflict in the proposed
 diagonal census does not follow from left permutivity; the crossing-
 cones account remains a hypothesis. No such census is requested.
+
+**GC1035 repair, CL204 independently replayed.** Using exactly the retained
+19/31 source rows, an independently packed implementation reproduces
+Cloud's common190-state terminal set. Unexpected check, predicted before
+replay: the images first coincide *before* failure, at time59 (largest
+set387). Thus the loss occurs while the six-cell slab is still valid;
+the old post-exit boundary error is repaired but was not the source of
+this particular loss. No membership census was rerun.
+
+This gives a concrete limitation at time59, not merely at the chosen
+endpoint75. Equal reachable18-cell sets have equal sets of future
+controlled paths under the same clock and any identical future filters:
+apply the same transition-and-filter operator inductively. Adding more
+exit observations to this same row-only/free-exterior abstraction cannot
+restore its distinction between the two entries. This statement is about
+the supplied finite abstraction; actual histories can retain correlations
+between its row and future exterior inputs, which it discarded.
+
+The terminal joint projection (x7,x8) is {01,10,11}, not all four pairs.
+In particular separate freedom of x7 and x8 cannot justify the pair00.
+This is not a new entry-pinning proof or an actual-realizability claim.
+The repaired abstraction is now checked and its limitation located;
+no wider-window run is proposed.

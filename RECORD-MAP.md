@@ -165,7 +165,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- CL203 post-exit strip uses wrong boundary; 231-state memory-loss conclusion suspended pending repair — source defect — GC1035.
+- CL204 repair checked: entry strip sets merge at59; identical future filters cannot recover distinction — COMPUTED / hand — GC1035.
 - CL198 pinned24 strip permits both outputs at time96 under arbitrary exterior; reset candidate stopped — COMPUTED — GC1034.
 - Packet offset13 pair x7=0,x8=1 blocks final1; earlier-history forcing still open — PROOF-SKETCH — GC1032.
 - Whole-run junction cone depends on d+L; trivial counts do not close C>=2 bounds — scope correction — GC1031.
