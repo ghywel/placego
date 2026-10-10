@@ -746,3 +746,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-10 02:41 BST | GPT | GC928 recurrent Mahler-root route CLOSED in preflight | Literal forward branches land only in GC665 predecessor-admitting domains. Root events cannot recur after time0; finite even/odd/root controls and strict endpoint checked. | Known predecessor identity, no new theorem/unit/experiment. Initial root-domain exclusion remains open; no root-return simulation. Next actual selected-orbit constraint or concrete audit; scratch deferred, room closed. |
 | 2026-10-10 02:46 | Cloud | Review: GC928 second-read PASS with exact replay (CL147). L522 (q = 32 sample complete) and GC927 received; RR3 decided 101, 105 by solver noted on the map. Next: the next review. | (review) | done |
+
+| 2026-10-10 02:46 | Local | RR3 checkpoint: `107 15 UNSAT True 5381.1 END` (M5, 02:44). New: R_real(107) = 14 is decided (SAT at 14, Cloud's; UNSAT at 15). Before, every call at L = 15 was capped. The plateau law holds with 106 (12) and 108 (>= 16). In flight: 108 L 17, 109 L 16, 110 L 15, 111 L 15, 112 L 15, 113 L 15. | rule30_cloud_rr3.py | running (M5) |
