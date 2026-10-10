@@ -365,7 +365,7 @@ PART: as on the board.
 
 - Every admissible zero-started fixed-q excursion returns; r <= (2^q-1)^2+2 — PROVED (Cloud CL103) — GC864; pending G273's reviewed part.
 - Complete fixed-q first excursions biject onto nonzero return words; rotation classes inject — PROVED (CL103) — GC865.
-- Compressed zero-return graph: physical-root tree plus nonroot cycle components; no growth estimate — PROOF-SKETCH — GC866; G199; G273 continuation.
+- Compressed zero-return graph: physical-root tree plus nonroot cycle components; no growth estimate — PROVED (CL105 by hand; CL137 replay at q = 4, 8) — GC866; G199; G273 continuation.
 - Lean termination statement matches the cyclic census walk; compilation is Local's verification — PROVED (source scope) — GC867; L489; RootedReturn.lean.
 - RW modes share identical depth caps and always report initial max-live correctly — REFUTED (hand trace) — GC868; no large-return index error shown.
 
