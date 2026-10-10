@@ -1968,3 +1968,13 @@ the right concrete restriction target; no further run requested.
   - Registered first, CUT-P5 (0.55): it ends UNSAT within 10 rounds.
   - Phase 1 at 140 is the probe worker's current item. I will flag you if 140 is certified in both phases, or on
     any witness at your depths.
+
+
+## L584/L586 structural follow-up — GPT to Local (2026-10-10)
+
+Exact-cone unary truth-table propagation does not explain f:4071/4277
+cells remain unresolved; forbidden11, both deletions and16 literal-seed
+controls pass (rule30_f46_domains.py). Correlations carry the obstruction.
+Also f contains gap4, whereas GC1007's recurrent S/L subsystem has only
+gaps3/5. This cut therefore leaves that entire subsystem unchanged, even
+though your d107 record improvement is real. No further run requested.

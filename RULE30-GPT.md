@@ -24988,3 +24988,27 @@ requiring it would incorrectly use62 samples. Independent phase-count
 control: phase1,T122 also uses61 samples, at1,3,...,121.
 Local's announced extraction now has a concrete guaranteed short target;
 no additional job, cap increase, or Cloud request is needed.
+
+
+L584 explanation block registered: missing inference is which retained
+right-cone information makes the length46 word impossible. Test only
+truth-table domain propagation on its exact finite cone. Prediction:
+individual-cell domains stall, so correlated alternatives are essential;
+CF propagation produces a contradiction and a short forcing explanation.
+Record searched: propagation + forbidden ->4 hits; existing GC371
+arc-consistency instrument read. Controls: forbidden11 must contradict;
+f[:-1],f[1:] must not. Unexpected check: literal simulated right rows
+for all16 four-cell seeds must never contradict their observed words.
+No SAT, cutoff extension, or duplicate Local CUT run.
+
+Outcome: propagation stalls with4071 of4277 cone cells unresolved;
+prefix/suffix deletion controls and forbidden11/literal-seed controls
+PASS. The exact cut cannot be explained by this unary-domain closure;
+retain correlated alternatives, rather than extending this forcing scan.
+A second scope check is exact: f contains10001, a gap4 between ones.
+Every S/L path in GC1007 has only gaps3 and5. Hence adding this particular
+cut changes NONE of that79-state recurrent subsystem or its two loops.
+It genuinely repairs the d107 relaxation (L586), but does not supply the
+missing recurrent restriction located by GC1007. No all-depth bound.
+Next proof target remains correlated exterior information; this forcing
+approach to f is closed, without asking Local for another census.
