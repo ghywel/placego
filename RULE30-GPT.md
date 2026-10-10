@@ -21604,3 +21604,33 @@ This is the finite sum identity obtained by expanding D on each leaf path and in
 
 
 **GC920 second-reading receipt (2026-10-10 02:02 BST).** Cloud CL140 independently second-read summation, cycle-test equivalence, max-cost construction and deadline countercontrol by hand: PASS. Its separately written 5,000-graph replay and 46 bad-bridge comparison cases remain Cloud's measurements, not a GPT run. GC920 is PROVED by second reading; no kernel benchmark or new Rule 30 exclusion. The agreed 40 KB map rule and section/receipt guards are ingested.
+
+
+#### GC922 — Root-reached clock coalescence can split at the next doubling (2026-10-10 02:07 BST)
+
+**Bears on:** Q7's phase-aware waiting budget. The initial hope of removing phase was preflighted against existing work: phase/clock + span/monotone ->255 hits in77 files; coalescence/singleton-residue + doubling/larger-period ->8 hits in6 files. G6 already proves the q-1 coherent-phase bound, and G174 already separates rooted words from root-reached clocks. Read both plus G8. No rediscovery claim for those results. The concrete remaining check is whether fixed-period coalescence can be carried through doubling; G6.3 explicitly left this unproved.
+
+**Preregistered bounded audit.** At cap 8 use the old-period-4 source a=10111011. P1: its zero-driver pair absorbs at (0,0) after 29 backward steps. P2: full-line clocks from the constant root coalesce modulo 4 at that pair. P3 (blind): at least one of its period-8 integration children splits the reached clocks modulo 8. Fixed-period next-black control; flipped-child incompatibility countercontrol. Unexpected: some source times differ by 4 despite equal old residues. Only 64 possible ancestor steps; no tree, long orbit, birth or kernel run. No peer code imported.
+
+**Execution and outcome.** Literal-list B reconstruction in `rule30_gpt_doubling_clock_audit.py` reaches (0,0) after 29 steps. Reversing from (0,1) gives 28 physical word edges to (a,0). An independently written scalar forward check verifies every triple. From initial root times 0,...,7, G8's full-line reset scan reaches the source at
+
+    40,40,40,44,44,44,44,48.
+
+All residues modulo 4 are 0, and all source clocks pass a(T-1)=1. The first four initial times alone already exhibit the old coalescence with a surviving absolute-time separation of 4.
+
+The two integration children satisfy Sc=a+c:
+
+    c0=01101001,    c1=10010110.
+
+The zero-driver integration costs no time. At the following nonzero-driver edge their clocks become respectively
+
+    42,42,42,45,45,45,45,50   (residues 2,5 modulo 8),
+    41,41,41,46,46,46,46,49   (residues 1,6 modulo 8).
+
+Thus both children split, stronger than registered P3; the exact two-residue cardinalities are measured after the prediction. P1/P2/P3, fixed-period control, flipped-child rejection and unexpected absolute separation all PASS. The retained instrument adds the independent forward triple replay and source gate before its second execution; these extra checks also pass, with the same outputs. This second execution is a verification of the added checks, not a second independent experiment.
+
+**Hand explanation and limit.** For c0, F_c(40)=42 while F_c(44)=45; a separation of 4 becomes 3. For c1 the corresponding outputs are 41 and 46, separated by 5. These maps commute with translation by 8, not by 4, because c(t+4)=1+c(t). In contrast F_a still commutes with translation by 4, so its fixed-period control preserves the old shared residue. Modulo-4 equality never implied equality of the absolute lifted clocks.
+
+This is a physically rooted word prefix with actually reconstructed full-line root clocks, not merely a word-rooted arbitrary gate example. It is still not a birth-clamped front measurement. It refutes automatic persistence of fixed-period coalescence through doubling, not eventual re-coalescence later in the period-8 stage or at arbitrary periods. G6's one-phase spread theorem is unchanged. No new phase-budget bound, all-history growth, stage cost or prize result follows.
+
+**Disposition.** Naive coalescence inheritance is CLOSED by this fixed control. Retain absolute clock lifts across changes of period; a unique old residue does not remove the phase coordinate at the next stage. No new board row. Next actual adaptive-wait compatibility constraint or incoming proof audit, rather than another synchronization census. Scratch deferred, room closed.
