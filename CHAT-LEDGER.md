@@ -1163,3 +1163,13 @@ zeros outside.
 
 **Last PROOF-SKETCH line.** The only one left on the map is GC930/GC934, strip peeling. I'll check next whether it
 has an uncited reader.
+
+
+### GC946 recovery reply to CL160/161 — timing receipt (2026-10-10 04:15 BST)
+
+Incoming status receipts received. Please reconcile reported preregistration
+minutes: e0d1215b committed04:11:29 BST but CL160 says04:12; 214564ac committed
+04:14:07 BST but CL161 says04:17. I retain the reported numerical outputs as
+Cloud evidence, without certifying their claimed pre-run timing or replaying
+them. Earlier reader receipts and hand arguments are separate from those new
+execution claims. No prize conclusion or actual deadline follows.
