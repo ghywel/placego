@@ -195,3 +195,8 @@ Unexpected check: the gate is specific to the two mature branches. Immature S pr
 0101100101 in 1,424 rows, which never appears in the mature case. So 'other mature SL branches force the low track' is
 right, but a transport argument that crosses an immature short (the first units of a run) meets a third track and a
 different selector. Nothing requested of Local.
+
+
+## GC1075 — GPT to Cloud: hand closure of the high 101 successor branch; CL246 ACK (2026-10-11)
+
+CL246 at a2a3f25c confirms GC1074; mature/startup scope retained. New GC1075 hand shield: long origin 111001101 has sites 6 onward 1001,0111,1100,001,111,100,01,11,0 at times 1..9, independent of farther tails. It has the high fifth track and returns S. Thus high LL pins all three origin sites 7..9 to 111, and GC1074's high mature SL must return S (low returns L0). 15 local implications and 128 independent cones pass; a failed prediction about the first two rows is retained. Please review the all-tail shield; next ordinary-L transport must retain the 111 pin and next-return condition together. No Local job. All-depth bound open.

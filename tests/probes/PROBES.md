@@ -726,3 +726,5 @@ app is unpublished by design.
 - lexicon/rule30_long_high_past_gate.py: GC1073 high fifth-track LL forces origin sites 7,9 black; initial110 always returns S. 24 local identities and256 independent cones pass; failed no-past countercontrols retained.
 
 - lexicon/rule30_short_high_selector.py: GC1074 exact mature SL high fifth-track origin gate; ninth-bit transport G=(f OR g) OR NOT(h OR i). 32 intermediate and independent gate controls pass; no mixed-word or record census.
+
+- lexicon/rule30_high_101_shield.py: GC1075 all-tail 101 origin forces high then S, closing high mature SL successor; 15 local implications and 128 independent cones pass, failed early-row prediction retained.

@@ -28235,3 +28235,31 @@ Their next first pair is D=NOT(A OR B), E=A XOR(B OR C). Local updates give time
 
 
 CL245 at 57efcfa2 independently confirms GC1073 as stated; its stronger exhaustive result excludes origin triple 101 from high LL. GC1073 is PROVED with that second reading. Composed with GC1074, this makes a high long track after a mature short return S: its origin triple is 101, so it cannot return L0. This last sharpening has CL245 computation plus the new hand transport as provenance; the all-tail hand exclusion of 101 is the next concrete proof obligation. The low branch and ordinary-L composition remain open.
+
+
+## GC1075 — The high 101 long origin has an all-tail short-return shield (2026-10-11)
+
+**Missing inference.** Replace CL245's exhaustive exclusion of high-LL origin 101 by hand transport, closing GC1074's high mature SL successor read. Record searched: 111001101|101.*high|high.*101 with shield|return|exclu ->11 hits in 5 files. GC1053 already handles 1011, but not the full 101 cylinder. No solver, language membership or mixed-word scan.
+
+**All-tail hand proof, second reading pending.** Every ordinary-L origin beginning 111001101 has high fifth track 0101101010 and returns S. Its exact shield at sites 6 onward is:
+
+| Time | Asserted prefix |
+| --- | --- |
+| 0 | 1101 |
+| 1 | 1001 |
+| 2 | 0111 |
+| 3 | 1100 |
+| 4 | 001 |
+| 5 | 111 |
+| 6 | 100 |
+| 7 | 01 |
+| 8 | 11 |
+| 9 | 0 |
+
+The first three updates use GC1047's ordinary-L fifth prefix 010110, valid for every farther tail. Each asserted output bit either has both right inputs displayed or has a displayed black input that masks the unshown bit. In particular the time 3 sixth bit is 1. GC1073's exact projection equates this to the time 5 sixth bit, so GC1047 selects the high track. This supplies the fifth bits used in the remaining displayed updates. They are the existing GC1073 1100 shield after time 3. At time 9 sites 4,5,6 are 1,0,0, hence the returned fifth bit is 1: the successor is S. No origin bit after site 9 is constrained.
+
+Consequently every high LL origin begins 111001111: GC1073 already eliminated 110, and the new shield eliminates 101. GC1074's high mature SL produces precisely the long origin triple 101, so that long returns S. Its low track returns L0 by GC1047. Thus the fifth selector after a mature short determines the next S/L0 type; it cannot be an independently chosen high LL branch.
+
+**Controls and retained failure.** Before controls the complete shield and high-then-S were predicted. All 15 one-step implications, with arbitrary fresh right bits, and 128 complete local cones pass independent literal/packed engines. The unexpected check incorrectly predicted that origins 101 and 1100 have different first two shield rows: the first cone already showed their common 1001 at time 1. Corrected before rerun; both have 0111 at time 2 and 1100 at time 3, even with unrelated farther tails. This strengthens the shield merger, not a complete row merger.
+
+CL246 at a2a3f25c independently confirms GC1074's gate and intermediate identities, with the mature/startup distinction retained; GC1074 is PROVED. This new all-tail shield remains a proof sketch pending review. Next missing inference is ordinary-L transport of the surviving high-LL 111 origin, jointly with its next-return condition; all-depth composition and the prize bound remain open.
