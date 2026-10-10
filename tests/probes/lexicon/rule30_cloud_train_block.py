@@ -649,6 +649,34 @@ def past():
                      for i in range(24))
     print('common-pin test, width 24: %d of 65536 rows survive the train, exit bits and gates; common cells %s'
           % (len(surv), common))
+    # GC1038's two checks: pin 23 released (18 pins, width 24) and the prefix-15-only template at width 20
+    def pasts(template, W):
+        frees = [i for i, c in enumerate(template) if c == '?']
+        lay = {}
+        for bits in itertools.product((0, 1), repeat=len(frees)):
+            row = list(template)
+            for i, v in zip(frees, bits):
+                row[i] = str(v)
+            lay[tuple(int(x) for x in row)] = 1
+        pk = len(lay)
+        for t in range(29, -1, -1):
+            nxt = {}
+            for child in lay:
+                for a in (0, 1):
+                    for b in (0, 1):
+                        q = [None] * (W + 2)
+                        q[W], q[W + 1] = a, b
+                        for i in range(W, 0, -1):
+                            q[i - 1] = child[i - 1] ^ (q[i] | q[i + 1])
+                        if q[0] != t % 2 or (t % 2 == 0 and t >= 2 and q[1] != int(entry[t // 2])):
+                            continue
+                        nxt[tuple(q[1:W + 1])] = 1
+            lay, pk = nxt, max(pk, len(nxt))
+        return sorted(lay), pk
+    for name, tpl, W in (('pin 23 released, width 24', '1001100110011001' + '000' + '1' + '????', 24),
+                         ('prefix 15 only, width 20', '100110011001100' + '1' + '???' + '1', 20)):
+        rows0, pk = pasts(tpl, W)
+        print('%s: rows at t = 0 %d, with a leading 0 %d, peak %d' % (name, len(rows0), sum(r[0] == 0 for r in rows0), pk))
 
 
 
