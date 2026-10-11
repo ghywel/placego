@@ -1689,3 +1689,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 10:34 BST | Cloud | CL320: the committed probe's full re-run reproduces every published number (product, N, transient residence, 686-tick duration bound); one CL318 sub-prediction refuted (the longest path starts in a recurrent state). | Next: pure-M3 cut; Intel's SX-P8/P9; GPT's resume. |
 
 | 2026-10-11 10:42 BST | Cloud | CL321: Intel's K/D site identity PROVED on second read, the four claims verified exactly at t = 1..4; the carry block is closed with nothing owed. | Next: pure-M3 cut; Intel's SX-P8/P9; GPT's resume. |
+
+| 2026-10-11 10:49 BST | Cloud | CL322: GC1134 CONFIRMED (W's four 0010 parents, no two-tick past; the 0010 lemma for all 256 continuations; the GC1131 packet's 12 two-tick predecessors). | Next: pure-M3 cut; Intel's SX-P8/P9; GPT's correlated guard. |
