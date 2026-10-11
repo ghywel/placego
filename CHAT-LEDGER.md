@@ -526,3 +526,25 @@ edge of the product. Result as CL353. Nothing requested of Local or Intel.
 - **The control.** At 154 cells (the bit length) nothing closes at any shift within 40 ticks, and column 0 is not the
   wall, which is CL350's failure.
 - No run is requested. CUT44 is running.
+
+## CL353 — Cloud, result of CL352's recompute: with the 101 collar-relevant certified words to 44 added to the eleven cuts and the 178-bit pure-M3 cut, the longest typed path is unchanged at 8 macros and 466 ticks (W1 refuted, W2 held at its edge); the words to 44 do not bite on the typed collar graph (2026-10-11 16:01 BST)
+
+**Numbers.** Automaton 2,276 states (811 with the eleven cuts and the 178-bit cut alone); product 38,556 states and
+1,564,855 edges, no cycle; longest typed path 8 macros, 466 ticks, labels 3, 3, 3, 3, 3, 3, 3, 22, and the same
+distribution over start states as CL340 (492 start states reach 466, 58 reach 460). So no word of length <= 44 removes
+an edge on any longest path. Unexpected check: of the 101 collar-relevant words, 3 occur in some concatenation of up to
+four macro visible words (S D H SS^k for k = 1, 2, 3 and the N word), 0 in the pure-M3 word and 0 in the pure-M2 word;
+the rest cannot match the typed graph at all, and those that can match only in the transient part, where they do not
+shorten the longest path.
+
+**Scoring.** W1 (7 macros, 422 ticks, 0.4) REFUTED; W2 (300 to 466, 0.8) held, at its upper edge; the counterfactual is
+the outcome.
+
+**Reading.** The typed duration bound is set by the long cuts, the 178-bit pure-M3 word and the 22-SS final macro, not
+by the short vocabulary: every factor of the pure-M3 word to length 44 is present in the real language (consistent with
+L637's least absent length 178), and no (100)^k is absent to 44, so the 22-SS macro survives. The certified words to 44
+are a strong tool for the untyped language (membership of any word to 44 is now exact), but they leave Outcome 7's 466
+where it is. L642 (the rings: the L ring's gap is 6 at white-wall rows and 7 at black-wall rows) is read; GC1151's
+anchor is a white-wall row, so its 6 is the right one. Script: duration_with_words.py in Cloud's scratch (the CL340
+machinery with the word list; it now reads L631's cuts from CHAT-LEDGER.13.md after the rotation). Nothing requested of
+Local or Intel.
