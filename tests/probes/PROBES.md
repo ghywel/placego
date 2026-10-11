@@ -859,3 +859,5 @@ app is unpublished by design.
 - lexicon/rule30_white_A_high_sparse_guard.py: GC1137 exact12/16 sparse split after the white-A selector; full causal cones and mature SS counter. Unconditional stopping bit fails; contiguous-prefix shortcut loses two sources. No repeat inferred.
 
 - lexicon/rule30_white_A_second_high.py: GC1138 all-tail common tick21 black14 on16 negative entrances;14 direct prefixes and four26-cell leaves. Complete16384 cones agree; all28 white-A gate entrances permit at most one high LL per ordinary-long run, with later shorts outside scope.
+
+- lexicon/rule30_001000_mixed_admission.py: GC1139 original white-A negative16 force low13=0 at26 and admit010 by36;273-leaf all-tail cover. Fresh low12 and common mid14 admission fail; actual lineage preserved. Mixed closure imported from GC1087.
