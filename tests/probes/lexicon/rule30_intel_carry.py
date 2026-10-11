@@ -172,9 +172,9 @@ all 2^32 rows in 22 s, 8 threads) and what it showed. All COMPUTED exactly unles
          entropy estimates converge so fast (ratio 0.118) without ever becoming exact. No novelty is claimed for the
          one-line identity; the record searched has the Gray split (CL046) but not this form of its correction.
 
-CAR-P11, registered 2026-10-11 10:04 BST before the lag run (CL310: the lag laws exactly). Mode lag: for each t, every row
-of the cells -4..2t+5, so Cov(X_0, X_t)/n is a finite sum of exact rationals; calibrated at t = 1, 2 against the
-exhaustive rings (K 1/2, 1/8; D -1/2, 11/40; B -1/2, 1/4, all reproduced exactly) before this registration.
+CAR-P11, registered 2026-10-11 10:04 BST before the lag run (CL310: the lag laws exactly). Mode lag: for each t,
+every row of the cells -4..2t+5, so Cov(X_0, X_t)/n is a finite sum of exact rationals; calibrated at t = 1, 2 against
+the exhaustive rings (K 1/2, 1/8; D -1/2, 11/40; B -1/2, 1/4, all reproduced exactly) before this registration.
   PROVED by hand first (the fresh-cell argument, left-permutivity): the pair (x_t(j), x_{t+1}(j)) is a bijective
   function of x_0(j-t-1), x_0(j-t) given x_0 to their right, so it is uniform and independent of x_0(>= j-t+1); the
   same holds for (x_t(j), x_t(j+1)) with x_0(j-t), x_0(j-t+1), and for x_t(j) alone. Hence only sites on the rightward
@@ -185,6 +185,25 @@ exhaustive rings (K 1/2, 1/8; D -1/2, 11/40; B -1/2, 1/4, all reproduced exactly
   (c, 0.5) corr(K_0, K_4) = 5/128 exactly (CL310's conjecture). (d, 0.5) corr(D_0, D_3) = -29/160 exactly.
   (e, 0.6) |corr(K_0, K_t)| < 0.01 for every t = 8..12. (f, 0.4) corr(K_0, K_t) > 0 for every t <= 12.
   Unexpected check (not predicted): whether the K and D lag laws are fixed by the B law (rho) alone.
+
+OUTCOME of CAR-P11 (2026-10-11 10:06 BST): t = 1..12, the last over all 2^34 rows of its window in 22 s (16 threads).
+All COMPUTED exactly (rationals); the site restriction PROVED as registered.
+  (a) HELD: every site outside the proved diagonal ranges gives exactly zero; and K's site t + 2, allowed by the proof,
+         is zero at every t too (sharper than proved). (b) HELD: corr(B_0, B_t) = rho_t at every t = 1..12.
+  corr(K_0, K_t), t = 1..12: 1/2, 1/8, 1/32, 5/128, 17/512, 57/2048, 395/8192, 2205/32768, 2341/131072,
+         -15925/524288, -87003/2097152, -130429/8388608 (+0.0673 at t = 8; negative from t = 10).
+  corr(D_0, D_t), t = 1..12: -1/2, 11/40, -29/160, 87/640, -153/2560, 747/10240, -2919/40960, 12179/163840,
+         -31769/655360, 58149/2621440, -200601/10485760, 83325/8388608 (alternating in sign at every t).
+  (c) HELD: corr(K_0, K_4) = 5/128. (d) HELD: corr(D_0, D_3) = -29/160 (both CL310's conjectures, now exact).
+  (e) REFUTED: |corr(K_0, K_t)| is 0.067, 0.018, 0.030, 0.041, 0.016 at t = 8..12, never below 0.01.
+  (f) REFUTED: corr(K_0, K_t) < 0 at t = 10, 11, 12.
+  Unexpected check: no simple law in rho alone (corr_K / rho^2 = 2, 2, 1/2, 8/5, 136/25, ...), but K and D share their
+         diagonal sites exactly. With m_d(t) = |Cov(D_0(0), D_t(t + d))| > 0 at d = -1, 0, +1, every t = 1..12 has
+         Cov(K_0(0), K_t(t + d)) = (-1)^(t+1) s_d m_d(t) with s = (+, -, +) and Cov(D_0(0), D_t(t + d)) = (-1)^t m_d(t),
+         so Cov_K(t)/n = (-1)^(t+1) (m_-1 - m_0 + m_1) and Cov_D(t)/n = (-1)^t (m_-1 + m_0 + m_1). A partial reason:
+         K's term at site j is x_t(j) minus D's term at j - 1 (x_t(j) x_{t+1}(j) + x_t(j-1) x_t(j) = x_t(j)), so the
+         K law is the B law, two cross laws and the D law; the exact site-by-site equality is COMPUTED to t = 12 and
+         its proof is owed.
 """
 import math, os, re, subprocess, sys, time
 from collections import defaultdict

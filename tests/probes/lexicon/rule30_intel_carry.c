@@ -263,7 +263,8 @@ static void lag(int TMAX) {
                 for (int th = 0; th < nth; th++) {
                     size_t o = ((size_t)th * 3 * NJ + q * NJ + jj) * 2; both += acc[o]; tt += acc[o + 1];
                 }
-                printf("L %d %d %c %d %llu %llu\n", t, W, Q[q], J0 + jj, (unsigned long long)both, (unsigned long long)tt);
+                printf("L %d %d %c %d %llu %llu\n", t, W, Q[q], J0 + jj, (unsigned long long)both,
+                       (unsigned long long)tt);
             }
         fflush(stdout); fprintf(stderr, "lag t = %d: 2^%d rows, %.1f s\n", t, W, omp_get_wtime() - t0); free(acc);
     }
