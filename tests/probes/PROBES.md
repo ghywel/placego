@@ -793,3 +793,5 @@ app is unpublished by design.
 - lexicon/rule30_sl_short_marker_inverse.py: GC1108 lossless nonlinear short-marker inverse under noLLL;131 cyclic controls,110 isolated-L cases; FE/EF left12 first differ at34. Entropy unchanged; depth update OPEN.
 
 - lexicon/rule30_sl_carrier_depth_return.py: GC1109 eight-depth canonical carrier return refuted; complete SLL cone forces left19 phase10 and left20 even1. Endpoint-only check misses it; all-depth bound OPEN.
+
+- lexicon/rule30_sl_phase_collision.py: GC1110 exact sparse phase polynomial; S/L reduces left20 even trace to a positive renewal code with no00. Cubic SS term essential;88 sparse and640 S/L phase controls pass. Fixed-depth shield, not a record bound.

@@ -29053,7 +29053,7 @@ CL286 independently verifies GC1107's whole sparse-cone premise and all twelve p
 
 ## GC1109 — The SLL prefix destroys the proposed eight-depth carrier return (2026-10-11)
 
-**Canonical-return route refuted; universal cone certificate awaits reading.** Missing inference after GC1108: can its finite-window left pair advance by repeating the same two-field template? At depths3/4 and11/12, the right column has equal even/odd samples R_s and the left column's odd sample is1-R_(s+1). Registered prediction: the same class returns eight depths later at19/20 on the admitted mixed FE output. It fails, already at physical time2. Pure M2 and M3 controls fail identically. This closes that specific proposed return, not every finite-type representation. No nearby-depth or width sweep follows.
+**Canonical-return route refuted; universal cone certificate PROVED (CL288).** Missing inference after GC1108: can its finite-window left pair advance by repeating the same two-field template? At depths3/4 and11/12, the right column has equal even/odd samples R_s and the left column's odd sample is1-R_(s+1). Registered prediction: the same class returns eight depths later at19/20 on the admitted mixed FE output. It fails, already at physical time2. Pure M2 and M3 controls fail identically. This closes that specific proposed return, not every finite-type representation. No nearby-depth or width sweep follows.
 
 The failure is independent of the later mixed choices. Every macro begins h(S)h(L)h(L), whose first eleven even samples are q=10010000100. The wall inverse fixes column -1 as pairs(1-q_s,1); forcing successively left through the complete22-sample triangle leaves, at depths14..20,
 
@@ -29066,3 +29066,27 @@ Record searched: GC1108/canonical-pair/paired-return/eight-column/depth20 with l
 
 
 GC1109 receipt update: CL287 confirms GC1108's interior inverse, decoder and carrier grammar; promoted with the finite terminal-boundary qualification. Its control-count discrepancy exposed our mislabeled LSL predicate:82 were isolated-S controls, while SLS gives110 isolated-L controls. Corrected the predicate and descriptions; all131 inverse controls still pass. No new record run or replay of Cloud's larger checks.
+
+
+## GC1110 — A recurrent phase field rectifies into a positive S/L black shield (2026-10-11)
+
+**Proof sketch, serves Q6's hidden representation.** Missing inference: which renewal interactions produce GC1109's dropped phase field, and what does it force in the next column? It is recurrent even without L gaps. Exact nonlinear forcing yields a positive renewal code at left20: its even-time trace has no consecutive whites, on every synchronized S/L continuation. This is a temporal shield at a fixed depth, not an all-depth record bound or a closed spatial update.
+
+Put q_i=q_(s+i), and delta_19(s)=x_-19(2s) XOR x_-19(2s+1). Boolean substitution, reducing only products whose markers are less than3 apart, gives
+
+    delta_19 = q5 XOR q6 XOR q7 XOR q2q5 XOR q3q6 XOR q3q7
+               XOR q4q8 XOR q5q9 XOR q6q9 XOR q2q5q8,
+    x_-20(2s) = q5 XOR q7 XOR q3q7 XOR q4q9 XOR q5q9
+                XOR q2q5q9 XOR q3q6q9.
+
+In S/L, markers four samples apart are impossible: separation at least3 prevents an intervening marker, while consecutive gaps are3 or5. Delete those products. The remaining four terms in the second identity are pairwise disjoint, so
+
+    x_-20(2s) = q5 OR q7 OR (q4 AND q9) OR (q3 AND q6 AND q9).
+
+Let b_u=x_-20(2u-14), u>=7. Partition b between consecutive renewals. A long gap gives10110; a short gap preceded by L gives101; a short gap preceded by S gives111. Indeed each renewal r supplies black samples at u=r and r+2; an L adds r+3, and an SS pair adds r+4. These are exactly the four positive terms. The three blocks start black and contain no00, proving the shield across boundaries too. In particular every renewal r>=7 forces x_-20(2r-14)=1. At that sample, column -19's pair is(1-q_(r-3),q_(r-3)), so its phase defect is1.
+
+**Structural consequence and controls.** On all-S, delta_19 and left20's even trace are identically1. Thus this phase field cannot be budgeted as a finite set of L-induced exceptions. At an all-S window10010010010, the cubic SS term alone supplies the left20 black cell; deleting it fails. The general sparse formula also covers arbitrary larger gaps, but the positive S/L simplification requires exclusion of gap4.
+
+Record searched: phase/ANF/polynomial/cubic/degree, sparse/Boolean/polynomial, GC1109 ->20 hits11files; G138/139 and GC1107..1109 read. Predictions precede the symbolic derivation and controls in rule30_sl_phase_collision.py. Exact Boolean-polynomial reduction and independent literal Rule30 triangles agree on all88 sparse length11 windows, including23 with a gap exceeding5 (the identified unexpected domain check), and640 phase windows of32 cyclic five-letter S/L controls. P1/P2 hold; the singleton truncation and cubic deletion fail as specified. No solver, visible-membership, record, width or nearby-depth sweep. Next missing inference is transport of this recurrent positive shield and its renewal code in spatial depth while retaining the initial-row condition; the fixed-depth code alone does not supply it.
+
+CL288 independently confirms GC1109's universal cone and failed return; promoted. Cloud's larger finite triangle and failure counts are received, not rerun. Our119/19/24 counts sum both template failures over each entire circular FE/M2/M3 word; CL288 uses finite interior windows. The scopes differ, not the verdict. No Local or Intel job.
