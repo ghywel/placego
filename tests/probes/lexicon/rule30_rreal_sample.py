@@ -128,6 +128,13 @@ phase, seeds 41 and 42, four threads; four times deep B, fresh seeds; 2^(rounds 
       that is 0.6 .. 1.2 a doubling above deep B's 26.2.
   SP13 (blind, 0.35): some depth reaches 36 or more.
   SP14 (blind, 0.4): 1232 >= 29 or 1552 >= 31 (Intel's bounds) is reached by this run.
+OUTCOME, deep D (2026-10-11 05:49 BST; 2^30 a phase, seeds 41 and 42, four threads, 3,170 s and 3,157 s):
+  SP11 PASS: every witness of both phases valid.
+  SP12 HELD: mean bound over 300 .. 1,600 = 27.76 (deep B 26.2 at 2^28): 0.78 a doubling.
+  SP13 HELD: R_real(1035) >= 38 (phase 0; rule30_witness_check VALID), the sampled maximum.
+  SP14 REFUTED: 1232 and 1552 reach 28 each; Intel's 29 and 31 (IW, re-simulated) remain the bounds there.
+  Decade maxima, deep B and D together: 300s 26, 400s 31, 500s 31, 600s 35, 700s 35, 800s 34, 900s 35, 1000s 38,
+      1100s 34, 1200s 34, 1300s 35, 1400s 35, 1500s 35. (recorded 05:49)
 """
 import os
 import re
