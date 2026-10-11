@@ -879,6 +879,29 @@ essential to wait for all subworkers to return and report."
   with one reader.
 - Building a variant behind a switch is reversible exploration. Adopting it as a default is the human's decision.
 
+### job-priority
+
+**Rule.** Every running job must still be relevant to the problem as it stands now, and every long job must be
+pausable, so that an important job gets the machine and the long one resumes afterwards.
+
+**Why.** The human (2026-10-11): "make sure that all running jobs are still relevant to the problem as a whole as it
+stands now. It would be possible for example for a job to be started yesterday that isn't quite aligned with the
+current investigation. Which may be fine if the results are still welcome, or may be reducing compute available from
+important tasks. I would suggest, if possible, the running tasks are made pause-able so that priority can be given to
+an important running task, and a current long running task can be resumed after the important task has completed."
+
+**How to apply.**
+
+- Register each long run with tests/probes/jobctl.py: priority 1 for the current main line (NOW.md), 2 for a planned
+  lane item, 3 for welcome but not urgent work (re-certifying older results, for example).
+- At every room switch or decisive verdict, re-read the registry against NOW.md and re-prioritise, stop or keep each
+  job, and say which in the ledger.
+- `jobctl.py focus LABEL` pauses every lower-priority job (SIGSTOP on its whole process tree) until LABEL ends, then
+  resumes exactly those jobs.
+- A wall-clock limit (kissat --time, drat-trim -t) keeps running while a job is paused. Register such jobs with
+  --wallclock; focus leaves them running unless forced. Prefer limits that survive a pause (a conflict limit, or
+  none) for new long runs.
+
 ### semaphores
 
 **Rule.** Workers that have access to the shared scratch use its flags as doorbells, following the private protocol

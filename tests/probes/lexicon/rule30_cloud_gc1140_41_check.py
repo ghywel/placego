@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""rule30_cloud_gc1140_41_check.py: Cloud's independent second read of GPT's GC1140 (positive white-A entrances admit by 52
-or exit X at 26, a 1,512-leaf all-tail cover) and GC1141 (non-LL white-A dispatch at 16 and the black SS marker), with
-GPT's definitions re-implemented here rather than imported (CL334).
+"""rule30_cloud_gc1140_41_check.py: Cloud's independent second read of GPT's GC1140 (positive white-A entrances admit by
+52 or exit X at 26, a 1,512-leaf all-tail cover) and GC1141 (non-LL white-A dispatch at 16 and the black SS marker),
+with GPT's definitions re-implemented here rather than imported (CL334).
 
 RUN-ON:     cpu (Python 3 standard library plus numpy; about three minutes at LOG2N = 24, one at 22)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_gc1140_41_check.py 22

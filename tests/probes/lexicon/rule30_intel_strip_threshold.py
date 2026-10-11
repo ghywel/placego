@@ -184,6 +184,28 @@ threads; 842 real traces of length 40. All COMPUTED.
          length-38 run. (b) HELD: Conjecture S holds at W = 19. (c) REFUTED: L(19) >= 40, not 39, so the odd run
          L(W) = 2W + 1 (W = 16, 17, 18) stops at W = 18, and the slack at W = 19 is at least 3. (d) not testable: no
          extra trace at W = 19 within length 40. (e) HELD: L(20) >= 40, not determined.
+
+SX-P10, registered 2026-10-11 13:47 BST before its runs (CL326: the standard phase's L(18) and beyond, and the death
+columns of the standard tight traces). The brute force stops near length 40, so a second engine (mode grow, pysat
+1.9 with CaDiCaL): T(l) grown level by level, a candidate g + b (g in T(l), b in {0, 1}, its two-step suffix in
+T(l - 1)) tested for realness by one incremental SAT solver on the length-64 light cone with the trace assumed; the
+candidates that are absent are the minimal absent traces (prefix and two-step suffix real), and each gets its least
+excluding width w(f) by bisection over strip widths, each width one more incremental solver (the strip's cells with
+a free input beyond). Since the shortest absent trace a width-W strip produces is itself minimal absent, L(W) + 1 is
+the least length of a minimal absent trace with w(f) > W, determined wherever that length is reached. Target length
+61 in both phases (8.83's tight length), further if time allows.
+  (a, control) |T(l)| equals the exhaustive counts at every l <= 38 (standard) and l <= 40 (odd); the thresholds and
+         extra traces reproduce the brute force for W <= 17 (standard) and W <= 18 (odd), and every w(f) of the
+         family file.
+  (b, 0.85) Conjecture S, L(W) >= 2W - 1, holds at every W determined in both phases.
+  (c, 0.6) standard phase: every minimal absent trace reached has w(f) <= ceil(l/2) (8.83's lane, to 84); the tight
+         lengths are among 2, 4, 7, 11, 35, 36, 61 and include 7, 11, 35 and 61.
+  (d, 0.5) odd phase: at least one more trace above ceil(l/2) beyond length 38.
+  (e, 0.6) standard L(18) lies in 38..42.
+  (f, 0.5) the standard tight traces of length 36 and 61, when found, have SX-P9's death-column shape: a forced spine,
+         a fan-out in the last three or four columns, every final failure at time t <= 12.
+  Counterfactual: an L(W) < 2W - 1 refutes Conjecture S; a standard w(f) > ceil(l/2) refutes 8.83's per-trace claim.
+  Unexpected check (not predicted): how the number of minimal absent traces grows with l in each phase.
 """
 import os, re, subprocess, sys, time
 import numpy as np
