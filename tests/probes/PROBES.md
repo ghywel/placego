@@ -732,3 +732,5 @@ app is unpublished by design.
 - lexicon/rule30_high_ll_transport.py: GC1076 marker-conditioned high-LL transport; 48 local shields, 8 closing identities and 64 selected origins pass. Unconditional four-white and low-renewal shortcuts refuted; next-H sample absence is evidence only.
 
 - lexicon/rule30_high_ll_no_repeat.py: GC1077 actual ancestry forbids adjacent high ordinary-long tracks; 16 local gates, 8 shields, 4 closing identities and 48 actual controls pass. Relaxed next-high witness isolates lost time-four equation; X exit retained.
+
+- lexicon/rule30_core_short_bridge.py: GC1083 actual C-to101-toS-A sparse guard and all-tail high/short transport; local implications and literal/packed controls pass. Unrestricted 25-bit bridge lacks the core guard; three failed core constructions retained. No membership or record run.
