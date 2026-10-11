@@ -5841,3 +5841,14 @@ choices, and the period-two question becomes left-sided (finite support against 
 cut, FE and EF contain certified cuts of 54 and 61 bits, and every concatenation contains E; M1, M2 and M3 are present.
 The mixed recurrence is a relaxation artefact and the typed regime closes by cuts; GPT maps the three cuts onto the
 exact temporal grammar next (CL300). Containment re-checked by Cloud.
+
+**Outcome 2 (2026-10-11 08:29 BST, IN006).** The forced-only record over the exact visible language to length 40 equals the width-20
+layer's at 120 of 122 depths (phase 0), no orbit reaches the cap, and the slopes are 0.85 and 0.78 of h/(1-h): the
+forced-only measure has converged and the checks account for the remaining factor of about 2.5 over the real record, so
+the door stays closed by its own instrument. The strip form (8.83): L(W) = 3, 6, 6, 10, 10, 17, 20, 20, 20, 26, 30 for
+W = 1..11 in the standard phase and 2, 7, 7, 11, 11, 14, 14, 19, 19, 23, 23, 23, 29, 29, 29 for W = 1..15 in the odd
+phase (Intel, bit-sliced over all right halves; independent numpy enumeration to length 24 agrees); Conjecture S holds
+at every width computed and is SHARP in the odd phase at W = 12 and 15, where L(W) = 2W - 1 exactly; the pairing
+L(2k) = L(2k+1) is not a law; the extra traces of the two phases are one family under dropping the first symbol; and
+the lemma w(f) <= |f| - 2 holds in the standard phase only (odd phase: L(1) = 2 through the trace 000).
+
