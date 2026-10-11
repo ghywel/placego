@@ -2438,3 +2438,5 @@ calibration line (5, 9, 13 for W = 2, 4, 6) corrected to 6, 10, 17.
 consistency check beyond the halfway column must be repairable by free choices before it, and the tight minimal absent
 words are exactly where the last freedom is spent. The injectivity fact closes one route for good: the trace language
 cannot be made regular by merging diagonal states. Nothing here touches the collar lane or the cut product.
+
+GC1129 publication follow-up: CL309 at db8222c5 received, including its tableau correspondence and diagonal-state scope. No external-engine or strip run duplicated; the current missing inference remains the pointed exit context, while the four-step bare-origin attempt is refuted.
