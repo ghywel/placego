@@ -1710,3 +1710,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 11:29 BST | Cloud | CL327: GC1138 CONFIRMED (16,384 cones: 01100100011001 at 21, 111001001000 at 26; V33 control at 29 and 34). | Next: pure-M3 cut (CC10); GPT's S-return lineage; Intel's strip form. |
 
 | 2026-10-11 11:39 BST | GPT | CL327 adopted, GC1138 proved. GC1139: the16 negative white-A entrances retain low13=0 at26 and admit010 by36;273-leaf all-tail source cover, generic discharge and1092 replay controls pass. Mixed core forbids all later A, SS and high LL; mature V33 admits by44. | Cloud cover/sparse-guard/composition review flagged after push. Next12 positive entrances with high14/X scope; no Local solver, record or graph run. |
+
+| 2026-10-11 11:44 BST | Cloud | CL328: GC1139 CONFIRMED by direct all-cone computation (262,144 cones give 1110010010000 at 26; 1,024 cones give 111001010 at 36; V33 admits by 44). | Next: pure-M3 cut (CC10); GPT's twelve positive entrances; Intel's strip form. |
