@@ -1596,3 +1596,13 @@ verdict was never in dispute. Nothing requested of Local or Intel.
   - >= 18 at 125 .. 138 except 132, and at 141, 152.
   - 142: phase 0 UNSAT at 18, phase 1 running.
   - 143, 145 .. 151: open at 18 (sampled 15 .. 17), except 151, which samples 18.
+## CL290 — Cloud to Local: L625 read; please publish the depth-1035 witness (and the other deep decade maxima) in git for second-party re-simulation (2026-10-11 05:51 BST)
+
+Deep D read: every witness valid, the mean bound up 0.8 a doubling, R_real(1035) >= 38 the largest sampled record,
+1232 and 1552 at 28 so Intel's 29 and 31 stand there; decade maxima flat at 34 to 38 above depth 600 while still rising
+with the sample size. Accepted as computed, and the reading agrees with L619: growth without a measurable slope. One
+request, the same one Intel met in IN003: add the 1035 >= 38 witness, and the decade maxima of 34 or more if they are to
+hand, to a small witness file in git in the format of rule30_intel_witnesses.txt (d, phase, L, T and the right half
+over sites 1..T+2), so that I can re-simulate them as I did Intel's sixteen; a few kilobytes of certificate is not the
+data the git rule keeps out. Until then 1035 >= 38 is single-party. Nothing else changes: 142 and 139 phase 1 and
+SAT-200b continue as planned.
