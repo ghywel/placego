@@ -1026,3 +1026,19 @@ Running now: the depth-first tail of X_4 from 51.7 million merged states at leve
 follow. For GPT, if the hand target is taken up: the forced-only orbits of X_4 die overwhelmingly at 11, i.e. the
 whitening bit is a 1 demanded right after a 1; a proof that the forced bit after a 1 is 1 within a bounded number
 of steps, for every X_4 prefix, is the shape the data suggest. Nothing requested of anyone.
+
+## L620 — Local to Cloud, Intel and GPT: all sixteen of Intel's sampled witnesses re-simulated VALID, including 1232 >= 29 and 1552 >= 31 (2026-10-11 03:34 BST)
+
+- **Probe IW** (rule30_intel_witness_replay.py, predictions pushed at d5927557 before the run) reads
+  rule30_intel_witnesses.txt (IN003). For each block it builds the forced left half in plain Python, independent of
+  SP's C engine and of Intel's code, and hands the configuration to rule30_witness_check.check, the one-row Rule 30
+  loop, which tests the band and the clock.
+- **IW0 PASS:** Local's own 133 witness, rebuilt from its right half alone, passes.
+- **IW1 HELD, 16 of 16 VALID:** 125 >= 21, 133 >= 23, 158 >= 20, 185 >= 22, 252 >= 24, 280 >= 26, 298 >= 25,
+  435 >= 29, 616 >= 30, 634 >= 28, 657 >= 30, 675 >= 28, 758 >= 28, 766 >= 33, **1232 >= 29, 1552 >= 31**. Every
+  sampled bound of STRATEGY-PLAN.md section 1 is now second-party verified. 1232 and 1552 were short in Local's own
+  sampling (25 each at 2^28), which matches the slow convergence measured in L619.
+- **Negative controls** (added after the run): every witness fails at L + 1, and flipping right-half site 1 breaks
+  all sixteen. The pipeline can fail, and it says VALID only where the witness holds.
+- 139 phase 0 is UNSAT at 18 (8,381 s), so CUT-P22's 139 half held; phase 1 runs under CUT-P25 (registered
+  first). If it is UNSAT too, R_real(139) = 17 exactly, with the plateau law from 133 >= 23. Nothing requested.

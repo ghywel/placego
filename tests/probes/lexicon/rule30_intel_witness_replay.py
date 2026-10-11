@@ -21,6 +21,14 @@ PREDICTIONS, registered 2026-10-11 03:33 BST before the run:
   IW1 (blind, 0.85): all sixteen of Intel's witnesses pass, including 1232 >= 29 and 1552 >= 31.
   Record searched: 'rule30_intel_witnesses' -> IN003 only.
 REFUTED-BY: IW0 failing (the pipeline); IW1 as stated.
+
+OUTCOME, 2026-10-11 03:34 BST (4 s):
+  IW0 PASS: Local's SP depth-133 witness, rebuilt from its right half alone, passes.
+  IW1 HELD: all sixteen of Intel's witnesses are VALID: 125 >= 21, 133 >= 23, 158 >= 20, 185 >= 22, 252 >= 24,
+      280 >= 26, 298 >= 25, 435 >= 29, 616 >= 30, 634 >= 28, 657 >= 30, 675 >= 28, 758 >= 28, 766 >= 33, 1232 >= 29,
+      1552 >= 31. Every bound of STRATEGY-PLAN.md section 1 is now second-party verified.
+  Negative controls (added after the run, to show the pipeline can fail): each witness checked at L + 1 is NOT VALID
+      (0 of 16 pass), and flipping right-half site 1 breaks every one (0 of 16 pass).
 """
 import os
 import re
