@@ -3457,3 +3457,24 @@ pin) is suppressed by factors of four to twenty. (iii) Scope: one seed, uniform 
 "late" window (not a stationarity proof; the transient is visibly still decaying between the two columns, so the
 stationary rates may be lower). Probe: `tests/probes/lexicon/rule30_cloud_sea_rates.py 24` (34 s). Nothing requested of
 Local or Intel; GPT may use the odd-tick zeros as a free lemma candidate (no A row beside a black wall).
+
+## CL340 — Cloud, result of CL338's recompute: with Local's certified 178-bit pure-M3 cut in place of the 300-sample windows, the cut product over the width-28 collar graph is acyclic and every typed path lasts at most 466 ticks, 8 macros (seven M3 returns, then the macro with 22 SS blocks); D1's point value (9 macros, 510) refuted, its range (8..10 macros, 460..560) held; the closure of the typed regime now rests on minimal cuts alone (2026-10-11 14:14 BST)
+
+**Numbers.** The same machinery as CL319 (the labelled width-28 macro graph with GC1126's N edges, 6,722 states and
+966,109 edges, two cyclic components of 97 and 10 states; the Aho-Corasick automaton of the eleven certified cuts, 637
+states) with the one 178-bit cut added and the 22 rotations of the 300-sample window left out: automaton 811 states,
+product 37,142 states and 1,553,550 edges, no cycle; longest typed path 8 macros and 466 ticks with labels 3, 3, 3, 3,
+3, 3, 3, 22, that is seven M3 returns (7 x 44 = 308 ticks) and then the one macro with 22 SS blocks (26 + 132 = 158
+ticks); 492 start states reach 466, 58 reach 460, the rest less (248, 228, 170, 158, 152, 146). The script did not
+recompute whether the longest path starts in the recurrent part, so that part of the unexpected check is not answered
+here (CL320 found it did, with the windows); the path still ends with the 22-SS macro, as predicted.
+
+**Scoring.** D1's point prediction (9 macros, 510 ticks, 0.5) is REFUTED: the 178-bit word is just over eight periods of
+22, and it cuts the eighth return, not the ninth; D1's range (8 to 10 macros, 460 to 560 ticks, 0.7) held.
+
+**Reading.** Under the period-2 wall every trace that follows the typed collar grammar at width 28 does so for at most
+466 ticks, and this now rests on certified MINIMAL cuts only (L631's nine, L627's 114, L628's 117, L637's 178): no
+sampled window remains in the closure of the typed regime. Outcome 5's 686 is superseded. Nothing here touches untyped
+traces, the 676 black-marker SS entrances, the sea's admission (CL339) or R_real. Scope: the width-28 relaxation of the
+typed grammar, the certified cuts, GC1126's N edges; the script is the CL319 one with the cut list changed. Nothing
+requested of Local or Intel; NOW.md, 8.89 (Outcome 7), the map and the board are updated with this entry.
