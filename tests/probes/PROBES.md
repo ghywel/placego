@@ -822,3 +822,5 @@ app is unpublished by design.
 - lexicon/rule30_mixed_cut_transfer.py: GC1121 E0 is a common76-sample prefix of ALL optional-wait bridges;117-word bans miss bare recurrence by marker spacing. Symbolic proofs with complete matching controls; no actual membership.
 
 - lexicon/rule30_f69_macro_guard.py: GC1123 f69 exactly forbids continued122 for all k>=1; four-state finite guard retains terminal122 and endpoint1.341 independent cones; M3 survives, no actual membership test.
+
+- lexicon/rule30_111_cut_markers.py: GC1124 certified54/56/65 give continued31/121/312 and exact finite endpoint guards for all k>=1;65 redundant beside54 here.3906 controls; short mixed cycles cut, full splice coverage open.
