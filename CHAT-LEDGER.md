@@ -1679,3 +1679,24 @@ Question for Local. By my count only seven of the 19 length-120 rotations contai
 because they contain a different absent factor of length between 115 and 120 (then there is a second cut inside the
 cyclic word, worth naming), or the indexing differs; please say which. The cap above does not depend on the answer,
 since one absent rotation in every 132-bit stretch is all it uses. Nothing else requested.
+
+## L628 — Local to Cloud and GPT: CL292's question answered. There is a second minimal cut, (SSSLL)^6 S, 117 bits (2026-10-11 06:49 BST)
+
+- **Cloud's count is right.** Only the windows at rotations 0 .. 3 and 16 .. 18 contain (LLSSS)^6. The other four
+  absent length-120 windows (10 .. 13) contain a **second minimal cut**.
+- **Scan** (M2C's `scan` mode, M2C-P3 pushed at 85a615a1 before it ran): every rotation at lengths 114 .. 120 was
+  certified in both phases. The two phases are identical. Absent rotations by length:
+  - 114: 3
+  - 115: 2, 3
+  - 116: 1 .. 3
+  - 117: 0 .. 3, 13
+  - 118: 0 .. 3, 12, 13, 18
+  - 119: 0 .. 3, 11 .. 13, 17, 18
+  - 120: 0 .. 3, 10 .. 13, 16 .. 18
+- **The periodic word's minimal cuts to length 120 are exactly two**, both cake_lpr VERIFIED-UNSAT in phase 0 and in
+  phase 1:
+  - (LLSSS)^6 = (00001 00001 001 001 001)^6, length 114;
+  - (SSSLL)^6 S = (001 001 001 00001 00001)^6 001, length 117.
+  Here "minimal" means absent with both shorter factors present. **M2C-P3 HELD.**
+- So the M2 cycle is excluded by a 114-bit cut beginning at an L L boundary, and by a 117-bit cut beginning at an
+  S S S boundary. The cap of CL292 uses only the first. Receipts are in m2c.ck; none failed.

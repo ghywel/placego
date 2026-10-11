@@ -42,6 +42,13 @@ SCAN (CL292's question, registered 2026-10-11 06:29 BST before its run): `scan` 
 length 120: absent at n, with both of its length-(n - 1) factors present.
   M2C-P3 (blind, 0.7): there is a second minimal cut, of length 115 .. 120, inside the windows starting at rotations
       10 .. 13 (which cannot contain (LLSSS)^6, as CL292 counts), the same in both phases.
+  SCAN OUTCOME (06:49; both phases identical, every receipt SAT or VERIFIED-UNSAT, none failed):
+      absent rotations by length: 114: 3; 115: 2, 3; 116: 1 .. 3; 117: 0 .. 3, 13; 118: 0 .. 3, 12, 13, 18;
+      119: 0 .. 3, 11 .. 13, 17, 18; 120: 0 .. 3, 10 .. 13, 16 .. 18.
+      Minimal cuts of the periodic word to length 120: exactly two, (LLSSS)^6 (length 114, rotation 3) and
+      (SSSLL)^6 S (length 117, rotation 13), both VERIFIED-UNSAT by cake_lpr in phase 0 and in phase 1.
+  M2C-P3 HELD: the second cut, (SSSLL)^6 S, is what rotations 10 .. 13 contain at 120; CL292's count of seven windows for
+      (LLSSS)^6 is right, and the other four are this cut's. (recorded 06:49)
 """
 import os
 import sys
