@@ -153,16 +153,11 @@ PART: as on the board.
 - Soficity of the right-half language: evidence against (DFA lower bound 259 and growing, follower sets growing, no
   bounded suffix); certified h <= 0.2536; the death criterion proved; (1001100)^inf periodic beside the wall —
   COMPUTED, PROVED (criteria), CONJECTURED (not sofic) — §8.86
-- The first swarm round summarised: every hand proof held, six details fell to the skeptics (bound 39 not 121,
-  trace form tight at even lengths, death time 15 absent, block-K sets tighter), two sharp targets named (the trace
-  form, the death criterion); follow-ups held for Intel's plan — SUMMARY — §8.87
+- Swarm proofs held; six skeptic corrections, trace/death targets retained — SUMMARY — §8.87
 
 
 
-- Strategy swarm (nine doors, skeptics, two judges): sampled R_real(125) >= 21, (280) >= 26, (766) >= 33, (1552) >= 31
-  (five witnesses Intel-verified); slope h/(2-h); the typicality lemma per depth restates the target (PROVED); the
-  check-free conjecture on {no 11, no 00000} proposed first; trace form exact to W = 18 both phases; deaths at 32,
-  34, 43 — COMPUTED/PROVED/CONJECTURED — STRATEGY-PLAN.md
+- Strategy: check-free proposal; deep sampled records, width18 trace census, death counterexamples — mixed statuses — STRATEGY-PLAN.md
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
@@ -200,7 +195,7 @@ PART: as on the board.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
-- Mixed core absorbing PROVED CL259; upstream B reset reaches SS PROOF-SKETCH — GC1087/88; earlier guards GC1055..86.
+- Mixed core absorbing PROVED CL259; black-SS A-reset selector PROOF-SKETCH — GC1087..89; earlier guards GC1055..86.
 - Cut45 reset merges59; delayed NOT8/pair guard; cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
 - Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.

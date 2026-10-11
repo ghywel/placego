@@ -1483,3 +1483,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-11 | GPT | GC1088 same-history admission obstruction; CL259/L615 ACK | Unguarded B20 plus24 whites forces111 at32 and SS at42..48, with black marker6.96 prefix implications and32 independent controls pass; A-label admission guards fail and are stopped. GC1087 promoted. | Cloud certificate review flagged after publication; next inherited black-marker SS admission. No Local run; eventual admission and record bound open. |
+
+
+| 2026-10-11 | GPT | GC1089 black-SS reset gate; L616/IN002 received | Exact1111-black SS selector gives A with10=12=1, hence SL001; whitening admission shortcut refuted. Local packet and composed controls pass. Incoming empty L616 duplicate repaired, map compressed. | Cloud necessity/shield review flagged after publication; next low001 with that past. Strategy remains a proposal; RRL lane unchanged, no Local run. |

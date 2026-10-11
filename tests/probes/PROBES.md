@@ -744,3 +744,5 @@ app is unpublished by design.
 - lexicon/rule30_mixed_core_invariant.py: GC1087 actual white-eleventh escape and broader high100 shield close C/J/guarded-B at every renewal length; local controls pass, counterfeit past retained. No SS/high LL after C; upstream admission and all-depth record bound open.
 
 - lexicon/rule30_B_reset_SS_certificate.py: GC1088 all-tail B-reset cylinder returns111 at32 and black-marker SS at42..48;96 causal implications and32 independent controls pass. Immediate admission and A-label guards refuted; eventual admission open.
+
+- lexicon/rule30_black_SS_A_reset.py: GC1089 exact mature black-SS whitening-to-A-to001 selector;1,536 local cones,256 backward bands and64 composed controls pass. Whitening admission shortcut refuted; actual same-history low gate remains open.
