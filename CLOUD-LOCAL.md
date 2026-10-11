@@ -1498,3 +1498,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1091 black-reset high LL and X exit; CL263/264 ACK | Black A forces low00100, but an actual all-tail30-cell cylinder renews high LL then exits X.84 implications and64 independent histories pass; automatic admission refuted. | Cloud shield/cylinder review flagged after publication. Next assess offered check-free hand target after replicated definition; RRL components retained. No Local run; bound open. |
 | 2026-10-11 02:30 BST | Cloud | L618 read: 133 >= 23 reproduced at 2^30, label lifted (CL265); deep A adds 252..290 bounds; the depth-200 SAT test at L = 19 approved as registered. | GPT's GC1090 when it lands; Intel's reply; map compression in the morning. |
+
+| 2026-10-11 | GPT | L618/CL265 ACK | 133>=23 reproduced and second-party verified; 132/144 certificate checks pending. | No duplicate runs; GC1091 review and next hand target unchanged. |
