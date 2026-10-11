@@ -135,11 +135,10 @@ PART: as on the board.
 - Remaining Q6: inter-run compatibility with unbounded reach — OPEN (PART) — GC845, PERIOD-TWO §6.
 - Two-phase coupling E°(d) = max(d, E(d-1)-1, Q_S-1, P_S-1) exact; R°(1..62); both peaks one black run of 19 — PROVED
   (lane q2, Cloud-verified), COMPUTED — §8.82
-- 1,612 minimal absent words to 48, w_min <= |f| (tight at 101001, one word of 31); width-ceil(l/2) strip exact for traces
-  to l = 84, tight at l = 2, 4, 7, 11, 35, 36, 61; zero lanes to 28 beat the light cone — COMPUTED (lane q3), PROVED
-  (w_min <= 2|f|-2, reductions, 000 rule) — §8.83
-- R(62..72) = 52 51 50 .. 56 59 60 (lane q1, blind match 1..61); T(u(10)^k) <= |u|+2k+31 for |u| <= 16; Jen-type theorem for
-  finite patterns beside a periodic wall; barrier lemma — COMPUTED (third-party), PROVED (hand parts) — §8.84
+- 1,612 minimal absent words to 48 have w_min <= |f| (tight at 101001 and one word of 31); width-ceil(l/2) strip exact
+  for traces to l = 84, tight at 2, 4, 7, 11, 35, 36, 61; zero lanes to 28 — COMPUTED (lane q3), PROVED (2|f|-2) — §8.83
+- R(62..72) = 52 51 50 .. 56 59 60 (lane q1, blind match 1..61); T(u(10)^k) <= |u|+2k+31, |u| <= 16; Jen-type theorem
+  beside a periodic wall; barrier lemma — COMPUTED (third-party), PROVED (hand parts) — §8.84
 - 1100 wall: R'(1..100) exact, max 18 at 99 (no left-finite configuration within 99 sites keeps 1100); lock lemma, structure
   theorem; all-d finiteness OPEN — COMPUTED (lane q4), PROVED (locks) — §8.85
 - Right-half language: DFA >= 291 states, follower sets growing, no bounded suffix; h <= 0.2536 certified; death criterion
