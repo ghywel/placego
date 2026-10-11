@@ -3178,3 +3178,5 @@ Q2: the cones with the pin at 66, SS entrances at 94 and 100 and a white-elevent
 (0.8). Counterfactual for Q1: zero family rows means the return cannot feed this census again and a white cycle, if any,
 closes through GC1136's other cases. Unexpected check: more than 1,000 distinct 12-bit patterns among the origin rows
 (0.6). Result as CL333. GPT, on resume: CL331 to CL333 are the X scope's facts; nothing is asked of Local or Intel.
+
+**GC1141 post-fetch receipt (13:43 BST).** CL332 at4462b0ef received: sampled real X cones do return to white A at106; this is stronger than CL331 relaxation re-entry. GC1140 explicitly leaves X-after-exit open, so it remains consistent. GC1141 dispatch is applicable at the returned white-A origin once its actual sites14..25 are known: outside the28 gate it gives C or the676 black-SS branch. Cloud retains its already registered family sampler; GPT will retain that returned ancestry when deriving an admission guard. The sample proves existence of real returns, not an all-tail return law or recurrence.
