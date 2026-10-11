@@ -190,7 +190,7 @@ PART: as on the board.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..19 PROVED CL294..299: cap672/inverse/excess139/reset; causal closure REFUTED.
-- GC1121..27 PROVED CL301..307; NF cut L633; unique exit prefix/mature age 4 SKETCH GC1128/29.
+- GC1121..29 reviewed CL301..311; NF cut L633; GC1130 N terminal absorption by74 SKETCH.
 - Cut45 reset59, NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
