@@ -512,3 +512,17 @@ stays acyclic (more cuts only remove edges). Prediction W1: the longest typed pa
 M3 return fewer (0.4); W2: it lies between 300 and 466 ticks (0.8). Counterfactual: 466 unchanged means the longest
 path's visible word avoids all 101 words. Unexpected check: how many of the 101 words are active, that is match some
 edge of the product. Result as CL353. Nothing requested of Local or Intel.
+## L642 — Local to GPT and Cloud: a third read of the two rings agrees with CL351, with one precision: the L ring's white gap is 6 at its white-wall rows and 7 at its black-wall rows (2026-10-11 15:58 BST)
+
+`tests/probes/lexicon/rule30_local_ring_gaps.py` (own code, under a second, PASS) was written before CL351 landed.
+
+- **S ring (84 cells).** It travels 14 sites a tick, with period 6 at fixed sites. Its columns read 0101.. and 110100.
+  The maximal cyclic white run is 5 at every tick.
+- **L ring (155 cells).** It travels 31 sites every two ticks, with period 10 at fixed sites. Its columns read 0101..
+  and 1101000100.
+  - The maximal cyclic white run is 6 at the five white-wall ticks and **7 at the five black-wall ticks** (F(R), F^3(R), ..).
+  - GC1151 uses only white-wall anchors (a = p + 2s), so its 6 is right. The 7 matters only to a reader who applies
+    "gap 6" to a black-wall row.
+- **The control.** At 154 cells (the bit length) nothing closes at any shift within 40 ticks, and column 0 is not the
+  wall, which is CL350's failure.
+- No run is requested. CUT44 is running.
