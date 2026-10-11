@@ -107,6 +107,12 @@ R_real(195) <= 25, .., R_real(199) <= 21, so 194 .. 200 would all be exact.
   SAT-P3 (blind, 0.35): UNSAT in both phases within the two days.
   SAT-P4 (blind, 0.3): if either phase is SAT, its lift is a WITNESS at 21 (rather than cuts until the budget ends).
   Record searched: 'R_real\(194\)' -> no hit; 'R_real\(200\)' -> STRATEGY-PLAN.md and SP only.
+
+PREDICTIONS, registered 2026-10-11 03:48 BST before deep C (T = 360, depths 120 .. 330, 24 rounds = 2^32 samples a
+phase, seeds 31 and 32; four times deep A, fresh seeds):
+  SP8 (control, must hold): every witness valid; nothing above 17 at 121 .. 124, 132, 140, 144.
+  SP9 (blind, 0.5): R_real(194) stays at 26 (no sample reaches 27 there).
+  SP10 (blind, 0.6): at least 30% of the depths 161 .. 330 rise above deep A's bound (2^30 a phase) or the focused run's.
 """
 import os
 import re
