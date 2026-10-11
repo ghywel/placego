@@ -27,7 +27,7 @@
  *   given and larger than the last merged index, every remaining state is extended depth-first (no merging) to this
  *   forced index, with the path evaluated at every node. Depths are reported to (last index)+1.
  * output: "L m states children seconds" per merged level, "BFSSTOP m states" when merging stops, "D d R cens witness"
- *   per depth, "K m k11 kother kcap" cumulative death kinds (11; other forbidden word; capped), "DONE".
+ *   per depth, "K m k11 k00000 klong kcap" cumulative death kinds (11; 00000; a longer forbidden word; capped), "DONE".
  * Compile with the OpenMP line of COMMON rule 3 (Apple clang needs libomp).
  */
 #include <stdio.h>
@@ -58,9 +58,13 @@ static inline int allowed(u64 ls, int k, int y) {
     return 1;
 }
 static inline u64 next_ls(u64 ls, int y) { return LANG == 3 ? (u64)DFA[2 * (int)ls + y] : (((ls << 1) | (u64)y) & 0xFFF); }
-static inline int death_kind(u64 ls, int k, int y) {
-    if (LANG == 3) return 2;
-    u64 s = (ls << 1) | (u64)y; return (k >= 1 && (s & 3) == 3) ? 1 : 2;
+/* death kind from the last four visible bits (hist, newest at bit 0) and the refused bit y: 1 = 11, 2 = 00000,
+ * 3 = a longer forbidden word (automaton and twelve-word languages) */
+static inline int death_kind(u64 hist, int k, int y) {
+    u64 s = (hist << 1) | (u64)y;
+    if (k >= 1 && (s & 3) == 3) return 1;
+    if (k >= 4 && (s & 31) == 0) return 2;
+    return 3;
 }
 
 static inline void prefix_xor(u64 *v, int nw) {
@@ -88,17 +92,17 @@ static inline void next_diag(const u64 *a1, const u64 *a2, int nw, int m, int y,
 static inline int getbit(const u64 *a, int j) { return (a[j >> 6] >> (j & 63)) & 1; }
 
 /* ---- per-thread result arrays ---- */
-typedef struct { int *R, *C, *Wk; u64 *W; long long k11, k00, kcap; } res_t;
+typedef struct { int *R, *C, *Wk; u64 *W; long long k11, k00, klong, kcap; } res_t;
 static int NREP;
-static void res_init(res_t *r) { r->R = calloc(NREP, sizeof(int)); r->C = calloc(NREP, sizeof(int)); r->Wk = calloc(NREP, sizeof(int)); r->W = calloc(NREP, 8); r->k11 = r->k00 = r->kcap = 0; }
+static void res_init(res_t *r) { r->R = calloc(NREP, sizeof(int)); r->C = calloc(NREP, sizeof(int)); r->Wk = calloc(NREP, sizeof(int)); r->W = calloc(NREP, 8); r->k11 = r->k00 = r->klong = r->kcap = 0; }
 static void res_merge(res_t *g, const res_t *t) {
     for (int d = 0; d < NREP; d++) if (t->R[d] > g->R[d] || (t->R[d] == g->R[d] && t->C[d] && t->R[d] > 0)) { g->R[d] = t->R[d]; g->C[d] = t->C[d]; g->W[d] = t->W[d]; g->Wk[d] = t->Wk[d]; }
-    g->k11 += t->k11; g->k00 += t->k00; g->kcap += t->kcap;
+    g->k11 += t->k11; g->k00 += t->k00; g->klong += t->klong; g->kcap += t->kcap;
 }
 
 /* the forced-only path from (A = A_m, B = masked A_{m-1}); contributes to depths m-2*streak+1 .. m+1 */
 typedef struct { int E, censored, y0; } path_t;
-static path_t eval_path(const u64 *Ain, const u64 *Bin, int nw, int m, u64 ls, int k, int streak, u64 rep, res_t *r, const path_t *known) {
+static path_t eval_path(const u64 *Ain, const u64 *Bin, int nw, int m, u64 ls, u64 hist, int k, int streak, u64 rep, res_t *r, const path_t *known) {
     u64 A[MAXW], B[MAXW], C[MAXW];
     int nwp = (4 * m + 400) / 64 + 1; if (nwp > MAXW) nwp = MAXW;
     int cap = 3 * m + 300;
@@ -110,15 +114,15 @@ static path_t eval_path(const u64 *Ain, const u64 *Bin, int nw, int m, u64 ls, i
         next_diag(C, A, nwp, mm + 2, 0, B);           /* forced index, y = 0 */
         int y = getbit(B, mm + 2);                    /* whitening bit */
         if (y0 < 0) y0 = y;
-        if (!allowed(ls, k, y)) { E = mm + 2; kind = death_kind(ls, k, y); break; }
+        if (!allowed(ls, k, y)) { E = mm + 2; kind = death_kind(hist, k, y); break; }
         if (y) { int top = mm + 2; for (int i = 0; i < nwp; i++) B[i] ^= ~0ULL; B[0] ^= 1ULL;
                  int tw = top >> 6; if (tw < nwp) { B[tw] &= ((top & 63) == 63) ? ~0ULL : ((1ULL << ((top & 63) + 1)) - 1); for (int i = tw + 1; i < nwp; i++) B[i] = 0; } }
-        ls = next_ls(ls, y); k++;
+        ls = next_ls(ls, y); hist = ((hist << 1) | (u64)y) & 15; k++;
         memcpy(A, B, sizeof A); memcpy(B, C, sizeof B);
         mm += 2; steps += 2;
         if (steps >= cap) { E = mm + 1; censored = 1; break; }
     }
-    if (censored) r->kcap++; else if (kind == 1) r->k11++; else r->k00++;
+    if (censored) r->kcap++; else if (kind == 1) r->k11++; else if (kind == 2) r->k00++; else r->klong++;
 contribute:;
     int dlo = m - 2 * streak + 1; if (dlo < 1) dlo = 1; int dhi = m + 1;
     for (int d = dlo; d <= dhi && d < NREP; d++) {
@@ -130,8 +134,8 @@ contribute:;
 
 /* depth-first tail: from a node at forced index m, expand to DFSMAX, evaluating every node */
 static int DFSMAX;
-static void dfs(const u64 *A, const u64 *B, int nw, int m, u64 ls, int k, int streak, u64 rep, res_t *r, const path_t *known) {
-    path_t pt = eval_path(A, B, nw, m, ls, k, streak, rep, r, known);
+static void dfs(const u64 *A, const u64 *B, int nw, int m, u64 ls, u64 hist, int k, int streak, u64 rep, res_t *r, const path_t *known) {
+    path_t pt = eval_path(A, B, nw, m, ls, hist, k, streak, rep, r, known);
     if (m + 2 > DFSMAX) return;
     int nw2 = (m + 2) / 64 + 1;
     u64 C[MAXW], D[MAXW], Bm[MAXW];
@@ -143,11 +147,12 @@ static void dfs(const u64 *A, const u64 *B, int nw, int m, u64 ls, int k, int st
         int white = !getbit(D, m + 2);
         for (int i = 0; i < nw2; i++) { u64 sh = (D[i] >> 1) | (i + 1 < nw2 ? D[i + 1] << 63 : 0); Bm[i] = C[i] & ~sh; }
         const path_t *kn = (white && y == pt.y0 && !pt.censored && pt.E > m + 2) ? &pt : NULL;   /* the forced child inherits */
-        dfs(D, Bm, nw2, m + 2, next_ls(ls, y), k + 1, white ? streak + 1 : 0, (k < 64) ? (rep | ((u64)y << k)) : rep, r, kn);
+        dfs(D, Bm, nw2, m + 2, next_ls(ls, y), ((hist << 1) | (u64)y) & 15, k + 1, white ? streak + 1 : 0, (k < 64) ? (rep | ((u64)y << k)) : rep, r, kn);
     }
 }
 
-/* ---- state records for the merged stage: [A_m (nw)] [A_{m-1} masked (nw)] [rep] [meta] ; meta = ls | streak<<16 | k<<32 */
+/* ---- state records for the merged stage: [A_m (nw)] [A_{m-1} masked (nw)] [rep] [meta] ; meta = ls | streak<<16 | k<<32 | hist<<48 (hist: the last four
+ * visible bits, newest at bit 0; part of the merging key, so that the death word of every path is classified exactly) */
 typedef struct { u64 *buf; size_t n, cap; } vec;
 static void vpush(vec *v, const u64 *rec, int stride) {
     if (v->n + stride > v->cap) { v->cap = v->cap ? v->cap * 2 : (size_t)stride * 1024; v->buf = realloc(v->buf, v->cap * 8); if (!v->buf) { fprintf(stderr, "out of memory\n"); exit(2); } }
@@ -160,11 +165,11 @@ static int cmp_hi(const void *pa, const void *pb) {
     if (a->h != b->h) return a->h < b->h ? -1 : 1;
     const u64 *ra = G_BASE + (size_t)a->idx * G_STRIDE, *rb = G_BASE + (size_t)b->idx * G_STRIDE;
     for (int i = 0; i < G_KEYW; i++) if (ra[i] != rb[i]) return ra[i] < rb[i] ? -1 : 1;
-    u64 la = ra[G_KEYW + 1] & 0xFFFF, lb = rb[G_KEYW + 1] & 0xFFFF;
+    u64 la = (ra[G_KEYW + 1] & 0xFFFF) | ((ra[G_KEYW + 1] >> 48) << 16), lb = (rb[G_KEYW + 1] & 0xFFFF) | ((rb[G_KEYW + 1] >> 48) << 16);
     return la == lb ? 0 : (la < lb ? -1 : 1);
 }
 static inline u64 hash_rec(const u64 *r, int keywords) {
-    u64 h = 0x9E3779B97F4A7C15ULL ^ (r[keywords + 1] & 0xFFFF);
+    u64 h = 0x9E3779B97F4A7C15ULL ^ ((r[keywords + 1] & 0xFFFF) | ((r[keywords + 1] >> 48) << 16));
     for (int i = 0; i < keywords; i++) { h ^= r[i]; h *= 0xBF58476D1CE4E5B9ULL; h ^= h >> 31; }
     return h;
 }
@@ -195,7 +200,7 @@ int main(int argc, char **argv) {
                 if (!allowed(0, 0, y)) continue;
                 next_diag(A0, Am1, nw, 1, y, A1);
                 int white = !getbit(A1, 1);
-                memset(rec, 0, sizeof rec); rec[0] = A1[0]; rec[1] = A0[0] & ~(A1[0] >> 1); rec[2] = (u64)y; rec[3] = next_ls(0, y) | ((u64)white << 16) | (1ULL << 32);
+                memset(rec, 0, sizeof rec); rec[0] = A1[0]; rec[1] = A0[0] & ~(A1[0] >> 1); rec[2] = (u64)y; rec[3] = next_ls(0, y) | ((u64)white << 16) | (1ULL << 32) | ((u64)y << 48);
                 vpush(&cur, rec, stride);
             }
         } else {
@@ -204,7 +209,7 @@ int main(int argc, char **argv) {
                 if (!allowed(0, 0, y)) continue;
                 next_diag(A1, A0, nw, 2, y, A2);
                 int white = !getbit(A2, 2);
-                memset(rec, 0, sizeof rec); rec[0] = A2[0]; rec[1] = A1[0] & ~(A2[0] >> 1); rec[2] = (u64)y; rec[3] = next_ls(0, y) | ((u64)white << 16) | (1ULL << 32);
+                memset(rec, 0, sizeof rec); rec[0] = A2[0]; rec[1] = A1[0] & ~(A2[0] >> 1); rec[2] = (u64)y; rec[3] = next_ls(0, y) | ((u64)white << 16) | (1ULL << 32) | ((u64)y << 48);
                 vpush(&cur, rec, stride);
             }
         }
@@ -221,7 +226,7 @@ int main(int argc, char **argv) {
             #pragma omp for schedule(dynamic, 2048)
             for (size_t s = 0; s < nstates; s++) {
                 const u64 *rec = cur.buf + s * stride; u64 meta = rec[2 * nw + 1];
-                eval_path(rec, rec + nw, nw, m, meta & 0xFFFF, (int)(meta >> 32), (int)((meta >> 16) & 0xFFFF), rec[2 * nw], &T[tid], NULL);
+                eval_path(rec, rec + nw, nw, m, meta & 0xFFFF, (meta >> 48) & 15, (int)((meta >> 32) & 0xFFFF), (int)((meta >> 16) & 0xFFFF), rec[2 * nw], &T[tid], NULL);
             }
         }
         if (m + 2 > MAXM) break;
@@ -236,7 +241,7 @@ int main(int argc, char **argv) {
             for (size_t s = 0; s < nstates; s++) {
                 const u64 *rec = cur.buf + s * stride;
                 memset(A, 0, sizeof A); memset(B, 0, sizeof B); memcpy(A, rec, nw * 8); memcpy(B, rec + nw, nw * 8);
-                u64 rep = rec[2 * nw], meta = rec[2 * nw + 1], ls = meta & 0xFFFF; int streak = (meta >> 16) & 0xFFFF, k = (int)(meta >> 32);
+                u64 rep = rec[2 * nw], meta = rec[2 * nw + 1], ls = meta & 0xFFFF, hist = (meta >> 48) & 15; int streak = (meta >> 16) & 0xFFFF, k = (int)((meta >> 32) & 0xFFFF);
                 next_diag(A, B, nw2, m + 1, 0, C);
                 for (int y = 0; y < 2; y++) {
                     if (!allowed(ls, k, y)) continue;
@@ -245,7 +250,7 @@ int main(int argc, char **argv) {
                     for (int i = 0; i < nw2; i++) rec2[i] = D[i];
                     for (int i = 0; i < nw2; i++) { u64 sh = (D[i] >> 1) | (i + 1 < nw2 ? D[i + 1] << 63 : 0); rec2[nw2 + i] = C[i] & ~sh; }
                     rec2[2 * nw2] = (k < 64) ? (rep | ((u64)y << k)) : rep;
-                    rec2[2 * nw2 + 1] = next_ls(ls, y) | ((u64)ns << 16) | ((u64)(k + 1) << 32);
+                    rec2[2 * nw2 + 1] = next_ls(ls, y) | ((u64)ns << 16) | ((u64)(k + 1) << 32) | ((((hist << 1) | (u64)y) & 15) << 48);
                     vpush(&tb[tid], rec2, stride2);
                 }
             }
@@ -301,21 +306,21 @@ int main(int argc, char **argv) {
                 u64 A[MAXW], B[MAXW]; memset(A, 0, sizeof A); memset(B, 0, sizeof B); memcpy(A, rec, nw * 8); memcpy(B, rec + nw, nw * 8);
                 /* the node itself was evaluated in the merged stage; expand its children */
                 int m2 = lastm + 2, nw2 = m2 / 64 + 1; u64 C[MAXW], D[MAXW], Bm[MAXW]; memset(C, 0, sizeof C);
-                u64 ls = meta & 0xFFFF; int k = (int)(meta >> 32), streak = (int)((meta >> 16) & 0xFFFF); u64 rep = rec[2 * nw];
+                u64 ls = meta & 0xFFFF, hist = (meta >> 48) & 15; int k = (int)((meta >> 32) & 0xFFFF), streak = (int)((meta >> 16) & 0xFFFF); u64 rep = rec[2 * nw];
                 next_diag(A, B, nw2, lastm + 1, 0, C);
                 for (int y = 0; y < 2; y++) {
                     if (!allowed(ls, k, y)) continue;
                     next_diag(C, A, nw2, m2, y, D);
                     int white = !getbit(D, m2);
                     for (int i = 0; i < nw2; i++) { u64 sh = (D[i] >> 1) | (i + 1 < nw2 ? D[i + 1] << 63 : 0); Bm[i] = C[i] & ~sh; }
-                    dfs(D, Bm, nw2, m2, next_ls(ls, y), k + 1, white ? streak + 1 : 0, (k < 64) ? (rep | ((u64)y << k)) : rep, &T[tid], NULL);
+                    dfs(D, Bm, nw2, m2, next_ls(ls, y), ((hist << 1) | (u64)y) & 15, k + 1, white ? streak + 1 : 0, (k < 64) ? (rep | ((u64)y << k)) : rep, &T[tid], NULL);
                 }
             }
         }
         lastm = DFSMAX;
     }
     for (int t = 0; t < nthreads; t++) res_merge(&G, &T[t]);
-    printf("K %d %lld %lld %lld\n", lastm, G.k11, G.k00, G.kcap);
+    printf("K %d %lld %lld %lld %lld\n", lastm, G.k11, G.k00, G.klong, G.kcap);
     for (int d = 1; d <= lastm + 1 && d < NREP; d++) {
         if (G.R[d] <= 0 && !G.C[d]) continue;
         printf("D %d %d %d ", d, G.R[d], G.C[d]);
