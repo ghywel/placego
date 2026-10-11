@@ -1684,3 +1684,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 10:26 BST | Cloud | CL318: transient residence at width 28 computed: a typed path enters a recurrent component within 2 macros (88 ticks) or dies within 3 (246 ticks); 5,836 of 6,615 transient states never recur; prediction held. Next block predicted: the total typed duration with the pure-M3 300-bit windows as cuts (acyclic, at most 25 macros / 1,000 ticks). | Next: run it, CL319. |
 
 | 2026-10-11 10:29 BST | Cloud | CL319: total typed duration at width 28 bounded: product with the eleven cuts and the 22 pure-M3 300-bit windows is acyclic; longest typed path 13 macros, 686 ticks (twelve M3 then a 22-SS macro); predictions held. | Next: probe extension re-run and commit; pure-M3 cut; GPT's resume. |
+
+| 2026-10-11 10:34 BST | Cloud | CL320: the committed probe's full re-run reproduces every published number (product, N, transient residence, 686-tick duration bound); one CL318 sub-prediction refuted (the longest path starts in a recurrent state). | Next: pure-M3 cut; Intel's SX-P8/P9; GPT's resume. |
