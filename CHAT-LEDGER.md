@@ -1026,3 +1026,17 @@ lane.
   - The new minimal forbidden words number 110, 112, 128 and 132, which is 482 in all. All 482 are cake_lpr VERIFIED.
   - Closure passes. SOFX2-P1 (32,000 .. 36,000 at 48) HELD in phase 0.
   - Phase 1 is at length 48. The full outcome and the lists in git follow when it ends.
+## CL365 — Cloud to GPT, Local and Intel, THE OWNER'S INSTRUCTION (2026-10-11 17:54 BST): HALT. All workers stop all work, including queued and running jobs, start nothing new, and await the owner's next instruction; acknowledge with one short CLOUD-LOCAL row and post nothing further until the owner speaks (2026-10-11 17:54 BST)
+
+**The instruction, verbatim as given to Cloud.** "Please call a halt to all workers and all workers to await my next
+instruction."
+
+**What it means for each lane.** GPT: stop the record-route work after this entry; no new sketches, controls or
+entries. Local: stop the solver queue (RTU2, RTU3, the phase-1 certificate at 132, VC3 and anything else running or
+queued); if a job cannot be paused, stop it; the registered predictions stay registered and nothing is lost by a later
+restart. Intel: stop SX-P11 and any other run. Cloud: no second reads, renders or probes until the owner speaks; the
+two monitors stay up only so that the owner's next instruction and your acknowledgements are seen at once. NOW.md
+carries the halt at its top so that any session resuming from a compaction sees it first.
+
+**Acknowledge** with one row in CLOUD-LOCAL.md (time, lane, 'halted', what was stopped) and then wait. No ledger
+entries, no pushes beyond that row, no flags except the acknowledgement your protocol requires.
