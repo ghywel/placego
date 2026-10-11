@@ -12,21 +12,22 @@
 </head>
 <body>
 <header class="top"><div class="in">
-  <a class="brand" href="index.html">Wolfram · Collatz · Mahler</a>
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
   <nav><a href="learn.html">Learn</a><a href="rule30/">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a>
   <a href="need.html" aria-current="page">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
 <main>
 <p class="kicker">What we need from you</p>
 <h1>Seven ways to move this problem</h1>
 <p class="lede">Each ask below says what it is in plain words, what it is exactly, what we already have, and what you would
 need to know. None requires permission. Everything we have is in <a href="trove.html">the trove</a> and the repository.</p>
 
-<h2>1. The white-band lemma <span class="status">Open</span></h2>
+<h2 data-glyph="cones">1. The white-band lemma <span class="status">Open</span></h2>
 <div class="level"><p class="kicker">Plain words</p><p>Show that the forced left side of a pattern with an alternating
 centre cannot stay white for ever at any depth. Not "white runs are bounded": they grow with depth. Just finite, at every
 depth.</p></div>
-<div class="level"><p class="kicker">Exactly</p><p>Beside the wall x₀(t) = t mod 2, the left half-plane is determined by
+<div class="level open"><p class="kicker">Exactly</p><p>Beside the wall x₀(t) = t mod 2, the left half-plane is determined by
 column 1 (left permutivity: x(i−1, t) = x(i, t+1) XOR (x(i, t) OR x(i+1, t))). Call a column-1 sequence real if some
 configuration beside the wall produces it. For a depth d, let R(d) be the supremum over real sequences of the length of
 the white run of the left row at time 0 starting at depth d. Prove R(d) < ∞ for every d.</p></div>
@@ -39,46 +40,46 @@ you would need:</b> combinatorics on words, automata, and the certified forbidde
 <p class="source"><b>Sources.</b> PERIOD-TWO.md section 2 and row Q6; CHAT-LEDGER.md CL355, GC1148, GC1151, GC1153, GC1155 to
 GC1157, CL356, CL359; L643 (the census).</p>
 
-<h2>2. Conjecture LR for the kicked wheel <span class="status">Open</span></h2>
+<h2 data-glyph="wheel">2. Conjecture LR for the kicked wheel <span class="status">Open</span></h2>
 <div class="level"><p class="kicker">Plain words</p><p>Beside an alternating centre the next column is a rotation with
 kicks. Show that no such column, kicked however it may be, lets the left side become empty.</p></div>
-<div class="level"><p class="kicker">Exactly</p><p>Conjecture LR: no column 1 beside the alternating wall makes the left
+<div class="level open"><p class="kicker">Exactly</p><p>Conjecture LR: no column 1 beside the alternating wall makes the left
 half eventually white. Proved when column 1 is eventually periodic (Jen) and when it is Sturmian (Theorem E, section
 8.57), and for near-squares, block codes of Sturmian words and resets that come further apart than geometrically
 (Corollary F, Theorems E″, A⁗). Open for the real column, whose kicks occur at four classes with short size ranges
 (Proposition 13).</p></div>
 <p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.13, 8.54, 8.57; PERIOD-TWO.md row Q7; PROOFS.md entry 26.</p>
 
-<h2>3. The counting form <span class="status">Open</span></h2>
+<h2 data-glyph="coin">3. The counting form <span class="status">Open</span></h2>
 <div class="level"><p class="kicker">Plain words</p><p>Count the starting patterns of a given width whose centre stays
 alternating for T steps, and show the count shrinks by a fixed fraction with every step.</p></div>
-<div class="level"><p class="kicker">Exactly</p><p>Let N(w, T) be the number of configurations on w cells whose centre
+<div class="level open"><p class="kicker">Exactly</p><p>Let N(w, T) be the number of configurations on w cells whose centre
 reads 0101… for T steps. Prove N(w, T) ≤ 2^(w − αT + c) for some α > 0. Measured: α close to 1 at w = 24. Proved: the
 part paid by the seed's left part (section 8.51). Open: the right part. The same statement for Collatz, with the free
 bits in place of the left part, is in COLLATZ-PRIZE.md section 1.</p></div>
 <p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.51; PERIOD-TWO.md section 2, question 1; COLLATZ-PRIZE.md section 1.</p>
 
-<h2>4. Read our proofs</h2>
+<h2 data-glyph="map">4. Read our proofs</h2>
 <p>306 statements have a written proof and a second reader inside the project. None has been reviewed outside it. The
 ones that carry weight are Theorems A, B, E and the channel bound (RULE30-PRIZE.md sections 8.54, 8.57, 8.20 and 8.33).
 If you find an error, we want to know; if you confirm one, say so and we will record it with your name or handle.</p>
 
-<h2>5. Go deeper with a machine</h2>
+<h2 data-glyph="trove">5. Go deeper with a machine</h2>
 <p>The record census is exact to depth 120 and at three depths beyond, by SAT with machine-checked certificates. Deeper
 exact values, and the exact value at depth 125 to 138 where only lower bounds of 18 are known, would tell the lemma
 hunters what the mechanism looks like at scale. The certified forbidden-word lists stop at 44 (48 in one phase, in
 progress). The code is in the repository under tests/probes; the formats are in the trove.</p>
 
-<h2>6. Formalise</h2>
+<h2 data-glyph="join">6. Formalise</h2>
 <p>Theorems A, B and E and the solid-row proposition are short and elementary. A Lean formalisation of any of them
 would make the first outside-checked piece of this record.</p>
 
-<h2>7. Tell us what we missed</h2>
+<h2 data-glyph="ring">7. Tell us what we missed</h2>
 <p>PRIOR-ART.md lists what we found: Jen, Condrey, Kopra, Kari and Kopra, Flatto, Lagarias and Pollington, Terras,
 Lagarias, Dubickas, Tao, Yolcu, Aaronson and Heule, and more. Two of our "new" results turned out to be known
 (the window principle's complexity bound is Dubickas 2009). If a paper settles or sharpens anything above, send it.</p>
 
-<h2>How we check a contribution</h2>
+<h2 data-glyph="map">How we check a contribution</h2>
 <ul>
 <li>A proof is read in full by one of us and the step it rests on is checked independently, by a second person or a
 program; a refutation waits for the author's reply before the record changes.</li>
@@ -89,6 +90,7 @@ program; a refutation waits for the author's reply before the record changes.</l
 <p class="source"><b>Sources.</b> WORKFLOW-SAVED-MEMORY.md (the two-tier review rule, predictions first, failures retained) and
 WORKING-TOGETHER.md.</p>
 </main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
 <footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
 </body>
 </html>

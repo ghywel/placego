@@ -76,3 +76,66 @@ function strip(canvas,bits){const n=bits.length,s=Math.max(4,Math.floor(900/n));
   ctx.strokeStyle=css("--line");ctx.strokeRect(i*s+.5,.5,s-1,s-1);});}
 window.R30={step,pyramid,ruleTable,coin,clamped,collatzStrip,mahlerStrip,strip,onScreen};
 })();
+/* ---- decoration: glyphs, ribbons, door art, the hero reader. Appended for the redesign of 2026-10-11. ---- */
+(function(){
+"use strict";
+const R=window.R30, css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const INK=()=>css("--ink")||"#14181d", CREAM=()=>css("--cream")||"#f4eedf", EMBER=()=>css("--ember")||"#d9542b",
+      TEAL=()=>css("--teal")||"#1f7a8c", GOLD=()=>css("--gold")||"#d8a21c", GREEN=()=>css("--green")||"#2f8f5b";
+function rows30(W,T,seedRow){let r=seedRow||(()=>{const a=new Uint8Array(W);a[W>>1]=1;return a;})();const out=[r];for(let t=1;t<T;t++){r=R.step(r,0,0);out.push(r);}return out;}
+function randomRow(W,seed){let x=seed>>>0||1;const a=new Uint8Array(W);for(let i=0;i<W;i++){x^=x<<13;x>>>=0;x^=x>>>17;x^=x<<5;x>>>=0;a[i]=x&1;}return a;}
+// glyph kinds: pyramid, cones, strip, wheel, coin, ring, collatz, circle, map, trove, join, people
+function glyph(canvas,kind,colour){
+  const s=16;canvas.width=s*4;canvas.height=s*4;const ctx=canvas.getContext("2d");const n=canvas.width;
+  ctx.fillStyle=INK();ctx.fillRect(0,0,n,n);const fg=colour||CREAM(),ac=EMBER();
+  const cell=(x,y,c)=>{ctx.fillStyle=c||fg;ctx.fillRect(x*4,y*4,4,4);};
+  if(kind==="pyramid"){const rs=rows30(16,8);for(let t=0;t<8;t++)for(let i=0;i<16;i++)if(rs[t][i])cell(i,t+4,i===8?ac:fg);}
+  else if(kind==="cones"){for(let y=0;y<16;y++)for(let x=0;x<16;x++){if(x>=8&&x<8+Math.max(0,8-Math.abs(y-8)))cell(x,y,GREEN());else if((x+y)%3===0)cell(x,y,"#3a4450");}cell(7,0,ac);for(let y=1;y<16;y++)cell(7,y,ac);}
+  else if(kind==="strip"){for(let x=0;x<16;x++)cell(x,7,(x*7)%3?fg:"#3a4450");}
+  else if(kind==="wheel"){for(let k=0;k<56;k+=2){const a=k*17/56*2*Math.PI;cell(8+Math.round(6*Math.cos(a)),8+Math.round(6*Math.sin(a)),k%14?fg:ac);}}
+  else if(kind==="coin"){const rs=rows30(41,16);for(let t=0;t<16;t++)cell(t,8,rs[t][20]?fg:"#3a4450");}
+  else if(kind==="ring"){for(let k=0;k<24;k++){const a=k/24*2*Math.PI;cell(8+Math.round(6.5*Math.cos(a)),8+Math.round(6.5*Math.sin(a)),k%3?fg:"#3a4450");}}
+  else if(kind==="collatz"){let v=27,x=0;const pts=[];while(x<16){pts.push(v);v=v%2?(3*v+1)/2:v/2;x++;}const mx=Math.max(...pts);pts.forEach((p,i)=>cell(i,15-Math.round(p/mx*13),TEAL()));}
+  else if(kind==="circle"){for(let k=0;k<40;k++){const a=k/40*2*Math.PI;cell(8+Math.round(6.5*Math.cos(a)),8+Math.round(6.5*Math.sin(a)),a<Math.PI?GOLD():"#3a4450");}let x=.37;for(let i=0;i<6;i++){const a=x*2*Math.PI;cell(8+Math.round(4*Math.cos(a)),8+Math.round(4*Math.sin(a)),ac);x=(x*1.5)%1;}}
+  else if(kind==="map"){for(let y=2;y<14;y+=4)for(let x=2;x<14;x++)cell(x,y,(x+y)%5?"#3a4450":fg);cell(13,13,ac);cell(2,2,GREEN());cell(8,6,TEAL());}
+  else if(kind==="trove"){for(let y=4;y<13;y++)for(let x=3;x<13;x++)if(y===4||y===12||x===3||x===12)cell(x,y,fg);for(let y=6;y<11;y+=2)for(let x=5;x<11;x+=2)cell(x,y,GOLD());}
+  else if(kind==="join"){for(let x=2;x<14;x++)cell(x,8,"#3a4450");cell(3,8,fg);cell(7,8,fg);cell(11,8,fg);cell(12,7,ac);cell(13,8,ac);cell(12,9,ac);}
+  else if(kind==="people"){[[4,6],[8,6],[12,6]].forEach(([x,y],i)=>{cell(x,y,i===0?ac:fg);cell(x-1,y+2,i===0?ac:fg);cell(x,y+2,i===0?ac:fg);cell(x+1,y+2,i===0?ac:fg);cell(x,y+3,i===0?ac:fg);});}
+  else{const rs=rows30(16,8);for(let t=0;t<8;t++)for(let i=0;i<16;i++)if(rs[t][i])cell(i,t+4);}
+}
+function ribbon(canvas,seed){const W=Math.max(240,Math.floor((canvas.clientWidth||900)/4)),T=6;canvas.width=W;canvas.height=T;const ctx=canvas.getContext("2d");
+  ctx.fillStyle=INK();ctx.fillRect(0,0,W,T);const rs=rows30(W,T,randomRow(W,seed||2026));ctx.fillStyle="#5b6672";
+  for(let t=0;t<T;t++)for(let i=0;i<W;i++)if(rs[t][i])ctx.fillRect(i,t,1,1);}
+function doorArt(canvas,kind){const W=300,H=96;canvas.width=W;canvas.height=H;const ctx=canvas.getContext("2d");ctx.fillStyle=INK();ctx.fillRect(0,0,W,H);
+  if(kind==="pyramid"){const rs=rows30(W,H);ctx.fillStyle=CREAM();for(let t=0;t<H;t++)for(let i=0;i<W;i++)if(rs[t][i])ctx.fillRect(i,t,1,1);ctx.fillStyle=EMBER();for(let t=0;t<H;t++)if(rs[t][W>>1])ctx.fillRect(W>>1,t,1,1);}
+  else if(kind==="map"){ctx.fillStyle="#2a323b";for(let y=0;y<H;y+=8)for(let x=0;x<W;x+=8)if(((x/8+y/8)*7)%11<4)ctx.fillRect(x+2,y+2,4,4);
+    const cols=[GREEN(),TEAL(),EMBER()];for(let k=0;k<3;k++){ctx.fillStyle=cols[k];ctx.fillRect(40+k*90,30,70,36);}ctx.fillStyle=INK();ctx.font="bold 11px Inter,system-ui,sans-serif";["PROVED","MEASURED","OPEN"].forEach((w,k)=>ctx.fillText(w,48+k*90,52));}
+  else if(kind==="need"){ctx.fillStyle="#2a323b";for(let x=0;x<W;x+=10)ctx.fillRect(x,48,6,1);const r=rows30(60,40,randomRow(60,7));ctx.fillStyle=CREAM();for(let t=0;t<40;t++)for(let i=0;i<60;i++)if(r[t][i])ctx.fillRect(20+i*2,8+t*2,2,2);
+    ctx.fillStyle=EMBER();ctx.fillRect(150,8,2,80);ctx.fillStyle=GOLD();ctx.font="bold 12.5px Inter,system-ui,sans-serif";ctx.fillText("R(d) < ∞, every d?",160,54);}
+}
+function heroReader(art,reader,tally,T){ // the big pyramid on ink with the centre column read off below as coin flips
+  if(!art)return;const W=2*T+1,s=2;art.width=W*s;art.height=T*s;const ctx=art.getContext("2d");
+  const rctx=reader.getContext("2d");const n=120;reader.width=n*6;reader.height=18;
+  let row=new Uint8Array(W);row[T]=1;const rows=[row];let t=0,live=false,timer=null,black=0;
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const draw=()=>{ctx.fillStyle=INK();ctx.fillRect(0,0,art.width,art.height);ctx.fillStyle=CREAM();
+    for(let tt=0;tt<rows.length;tt++){const r=rows[tt];for(let i=0;i<W;i++)if(r[i]&&i!==T)ctx.fillRect(i*s,tt*s,s,s);}
+    ctx.fillStyle=EMBER();for(let tt=0;tt<rows.length;tt++)if(rows[tt][T])ctx.fillRect(T*s,tt*s,s,s);ctx.fillStyle="rgba(217,84,43,.25)";ctx.fillRect(T*s,0,s,art.height);
+    rctx.fillStyle=INK();rctx.fillRect(0,0,reader.width,reader.height);black=0;
+    for(let k=0;k<Math.min(rows.length,n);k++){const b=rows[k][T];black+=b;rctx.fillStyle=b?EMBER():"#3a4450";rctx.fillRect(k*6+1,3,4,12);}
+    if(tally)tally.innerHTML="centre column so far: <b>"+black+"</b> black, <b>"+(Math.min(rows.length,n)-black)+"</b> white, of "+Math.min(rows.length,n);};
+  const tick=()=>{if(!live)return;if(t<T-1){rows.push(R.step(rows[t],0,0));t++;draw();}else{rows.length=1;t=0;draw();}};
+  draw();if(reduced){while(t<T-1){rows.push(R.step(rows[t],0,0));t++;}draw();return;}
+  R.onScreen(art,v=>{live=v;if(v&&!timer)timer=setInterval(tick,28);else if(!v&&timer){clearInterval(timer);timer=null;}});
+}
+function decorate(){
+  document.querySelectorAll("h2").forEach(h=>{if(h.querySelector("canvas.glyph"))return;const c=document.createElement("canvas");c.className="glyph";c.setAttribute("aria-hidden","true");
+    glyph(c,h.dataset.glyph||"pyramid");h.insertBefore(c,h.firstChild);});
+  document.querySelectorAll("canvas.ribbon").forEach((c,i)=>ribbon(c,2026+i*7));
+  document.querySelectorAll("canvas.door-art").forEach(c=>doorArt(c,c.dataset.art));
+  document.querySelectorAll("canvas.panel-glyph").forEach(c=>glyph(c,c.dataset.glyph));
+  document.querySelectorAll("canvas.brand-mark").forEach(c=>{c.width=28;c.height=16;const x=c.getContext("2d");x.fillStyle=INK();x.fillRect(0,0,28,16);const rs=rows30(28,8);x.fillStyle=CREAM();for(let t=0;t<8;t++)for(let i=0;i<28;i++)if(rs[t][i])x.fillRect(i,t+4,1,1);x.fillStyle=EMBER();for(let t=0;t<8;t++)if(rs[t][14])x.fillRect(14,t+4,1,1);});
+}
+Object.assign(R,{glyph,ribbon,doorArt,heroReader,decorate});
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",decorate);else decorate();
+})();

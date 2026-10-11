@@ -12,10 +12,11 @@
 </head>
 <body>
 <header class="top"><div class="in">
-  <a class="brand" href="index.html">Wolfram · Collatz · Mahler</a>
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
   <nav><a href="learn.html">Learn</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a>
   <a href="need.html">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
 <main>
 <p class="kicker">Where we stand</p>
 <h1>No proof. A map of the problem, and one missing sentence.</h1>
@@ -24,7 +25,7 @@ the record uses. Three labels appear throughout. <span class="status ok">Proved<
 reader inside the project and no outside review yet. <span class="status meas">Measured</span> means an exact computation
 with its code and data in the trove. <span class="status">Open</span> means open.</p>
 
-<h2>The case we work on</h2>
+<h2 data-glyph="pyramid">The case we work on</h2>
 <p>Problem 1 asks whether the centre column ever repeats for ever. Period one, a constant centre, is closed for every
 finite start (Condrey, 2026). Period two, a centre that alternates, is the first open case, and the work treats it for
 every finite starting pattern, which is more than the prize asks. A finite pattern with an alternating centre, kept for
@@ -34,8 +35,8 @@ ever, is the thing we are trying to show cannot exist.</p>
 very particular way, and everything to the left is determined by those two columns. A counterexample would have to make
 the left side empty beyond some point. The picture is read down the page; the right half is a random start.</figcaption></figure>
 
-<h2>Proved <span class="status ok">Proved</span></h2>
-<ul>
+<h2 data-glyph="cones">Proved <span class="status ok">Proved</span></h2>
+<ul class="proved">
 <li><b>Two adjacent columns are never both eventually periodic</b> in a finite pattern (Jen, 1990; prior art). So beside
 an alternating centre, the next column can never settle into a repeating word.</li>
 <li><b>Theorem A, Jen with a clock.</b> Two adjacent columns can agree with a periodic pattern only over a bounded window,
@@ -55,8 +56,8 @@ all black are the three phases of 100100…; none is finite, so no finite patter
 8.33 (the channel bound), 8.58 (the window principle); CHAT-LEDGER.md CL363 (solid rows). The written proofs are in
 PROOFS.md and the proofs directory.</p>
 
-<h2>Measured exactly <span class="status meas">Measured</span></h2>
-<ul>
+<h2 data-glyph="map">Measured exactly <span class="status meas">Measured</span></h2>
+<ul class="measured">
 <li><b>Nothing close to the centre.</b> No period-two counterexample has its left edge within 248 cells of the centre,
 whatever its right half. No right half of at most 32 cells works with a left half of at most 108 cells: 4.3 billion
 cases.</li>
@@ -76,7 +77,7 @@ proved. The other half is the open part.</li>
 <p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.56 and 8.21 (searches), 8.4 and 8.13 (the wheel), 8.51 (counting);
 CHAT-LEDGER.md L643, L640, L641 and CL357 (records, forbidden words, other columns). Data in <a href="trove.html">the trove</a>.</p>
 
-<h2>Closed routes</h2>
+<h2 data-glyph="coin">Closed routes</h2>
 <p>More than a dozen approaches have been tried to the end and closed, each with the reason it fails written down:
 entropy and counting arguments (they bound sets of patterns, never the single one), Fourier and spectral methods, the
 "admission deadline" for the wheel's kicks (closed on 2026-10-11 by an explicit witness that renews the pattern after
@@ -85,13 +86,13 @@ board. Keeping them on record is what stops the next person from walking the sam
 <p class="source"><b>Sources.</b> PERIOD-TWO.md sections 4 and 6 (the board); RULE30-PRIZE.md section 8.89 and CHAT-LEDGER.md CL355
 (the entrance lane); L644 (comparators).</p>
 
-<h2>The one missing statement <span class="status">Open</span></h2>
+<h2 data-glyph="ring">The one missing statement <span class="status">Open</span></h2>
 <div class="level"><p class="kicker">Plain words</p>
 <p>Keeping the centre alternating for ever must cost the pattern real information, one bit per step or thereabouts, and
 a finite pattern only has finitely many bits to spend. The delivery side of that sentence is a theorem (the channel
 bound). The cost side is proved only next to a constant centre, which is Condrey's case. Next to an alternating centre
 it is measured, as a coin model, and not proved.</p></div>
-<div class="level"><p class="kicker">Exact words, the route we hold today</p>
+<div class="level open"><p class="kicker">Exact words, the route we hold today</p>
 <p>Let R(d) be the longest white run the forced left side can show at depth d, over all real traces beside the
 alternating centre. Prove that R(d) is finite at every depth d. (Finite, not bounded: the data say it grows.) A finite
 pattern with an alternating centre would be white beyond its support, an infinite run, so this single statement
@@ -102,7 +103,7 @@ such a word must appear for every long run at every depth.</p></div>
 <p class="source"><b>Sources.</b> PERIOD-TWO.md section 5 (the one sentence); CHAT-LEDGER.md CL355 (the record route), GC1148,
 GC1151, GC1153 (rings), GC1155 to GC1157 and CL356, CL359 (the endpoint mechanism).</p>
 
-<h2>Why we believe it, and why belief is not enough</h2>
+<h2 data-glyph="circle">Why we believe it, and why belief is not enough</h2>
 <p>Everything measured agrees with a fair coin, at every width and depth we can reach, and the structure beside the
 centre is now known in detail. That is why the project believes period two is impossible. It is also exactly why a
 proof is hard: a theorem that holds for a random centre word as well as for the alternating one cannot be the proof,
@@ -110,6 +111,7 @@ because the alternating case is the only one that is true for a reason. The proo
 alternating centre, as Jen's and Condrey's do. The one such structure found is the wheel.</p>
 <p class="source"><b>Sources.</b> PERIOD-TWO.md section 5; RULE30-PRIZE.md sections 8.42, 8.45 and 8.47.</p>
 </main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
 <footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
 <script src="r30.js"></script>
 <script>(function(){const r=[];for(let i=0;i<12;i++)r.push(Math.random()<.5?1:0);

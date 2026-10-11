@@ -12,10 +12,11 @@
 </head>
 <body>
 <header class="top"><div class="in">
-  <a class="brand" href="index.html">Wolfram · Collatz · Mahler</a>
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
   <nav><a href="learn.html">Learn</a><a href="rule30/">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html" aria-current="page">Rule 30, Collatz, Mahler</a>
   <a href="need.html">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
 <main>
 <p class="kicker">The same problem, three times</p>
 <h1>A free side and a constrained side that must agree for ever</h1>
@@ -23,23 +24,23 @@
 narrow is required of it, and the question is whether the two can stay in step for ever. Where the narrow side can do
 only finitely many things, all three are solved by one argument. Where it can do infinitely many, all three are open.</p>
 
-<h2>The three, in plain words</h2>
-<h3>Rule 30</h3>
+<h2 data-glyph="pyramid">The three, in plain words</h2>
+<div class="panel r30"><h3><canvas class="panel-glyph" data-glyph="pyramid" aria-hidden="true"></canvas>Rule 30</h3>
 <p>Can a finite pattern keep an alternating centre column for ever? The free side is the left half of the pattern,
 which can be anything. The constrained side is the column beside the centre, which must keep the centre alternating,
-and that forces it into a thin language of allowed words (the wheel). The prize is Wolfram's, ten thousand dollars.</p>
-<h3>Collatz</h3>
+and that forces it into a thin language of allowed words (the wheel). The prize is Wolfram's, ten thousand dollars.</p></div>
+<div class="panel collatz"><h3><canvas class="panel-glyph" data-glyph="collatz" aria-hidden="true"></canvas>Collatz</h3>
 <p>Take any whole number; halve it if even, triple it and add one if odd; repeat. Does every start reach 1? The free side
 is the number's low bits, which choose the first steps outright. The constrained side is what remains after those free
 steps, a remainder modulo a power of three, which must keep the orbit from climbing for ever. Bakuage's prize is 120
-million yen.</p>
-<h3>Mahler's 3/2 problem (1968)</h3>
+million yen.</p></div>
+<div class="panel mahler"><h3><canvas class="panel-glyph" data-glyph="circle" aria-hidden="true"></canvas>Mahler's 3/2 problem (1968)</h3>
 <p>Is there a positive number ξ such that ξ, ξ·3/2, ξ·(3/2)², … all have fractional part below one half? Such a ξ is
 called a Z-number, and nobody knows whether one exists. The free side is the integer parts, which form a full shift.
 The constrained side is the fractional parts, which must keep to half the circle for ever. No prize, and open for 58
-years.</p>
+years.</p></div>
 
-<h2>Side by side</h2>
+<h2 data-glyph="strip">Side by side</h2>
 <figure><canvas id="s1" aria-label="Rule 30: the column beside an alternating centre, as a strip"></canvas>
 <figcaption>Rule 30: the column beside an alternating centre, 120 steps, black for 1. Between kicks it is a rotation.</figcaption></figure>
 <figure><canvas id="s2" aria-label="Collatz: the parity sequence of 27"></canvas>
@@ -48,7 +49,7 @@ years.</p>
 <figcaption>Mahler: whether the fractional part of ξ(3/2)ⁿ is above one half, black for yes, ξ = 0.37, 120 terms
 (an illustration in floating point; a Z-number would show all white).</figcaption></figure>
 
-<h2>The shared skeleton</h2>
+<h2 data-glyph="map">The shared skeleton</h2>
 <table>
 <tr><th></th><th>Rule 30, period two</th><th>Collatz</th><th>Mahler's 3/2</th></tr>
 <tr><td>The free side</td><td>the left half at the wall: every itinerary occurs once (a full shift)</td>
@@ -77,7 +78,7 @@ Pollington 1995), 8.47 (the survey), 8.58 (the window principle); COLLATZ-PRIZE.
 and 5; PRIOR-ART.md (Kari and Kopra's restatement of Mahler's problem as a question about one column of the automaton
 that multiplies by 3/2; Terras 1976; Lagarias 1985; Dubickas 2009; Tao 2019).</p>
 
-<h2>What the comparison says, and what it does not</h2>
+<h2 data-glyph="circle">What the comparison says, and what it does not</h2>
 <p>It is a calibration, not a route. It says precisely where the problem sits: in the regime where the one method that
 closes such problems has not worked for 58 years on Mahler's. It explains in one frame why every counting result we
 proved gives sparsity but never emptiness, and why the solved cases are exactly the ones where the constrained side
@@ -89,6 +90,7 @@ combinatorics on words and automata. That is why Rule 30's record holds exact au
 a census of records where Collatz's holds residues and exponential sums.</p>
 <p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.45, "What it means"; COLLATZ-PRIZE.md sections 2 and 3.</p>
 </main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
 <footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
 <script src="r30.js"></script>
 <script>(function(){const r=[1,1,1,1,0,1,1,0,1,1,1,0];const c=R30.clamped(document.createElement("canvas"),120,4,[0,1],r,{scale:1}).trace;

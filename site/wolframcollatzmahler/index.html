@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Wolfram, Collatz, Mahler: an open problem, in the open</title>
+<title>Wolfram, Collatz, Mahler: $30,000 or ¥120,000,000 could be yours</title>
 <meta name="description" content="An open problem with a prize, worked in public by one person and four AIs, and now handed to everyone: what we learned, how close we are, what is missing, and the data to pick it up.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,76 +13,82 @@
 </head>
 <body>
 <header class="top"><div class="in">
-  <a class="brand" href="index.html">Wolfram · Collatz · Mahler</a>
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
   <nav><a href="learn.html">Learn</a><a href="rule30/">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a>
   <a href="need.html">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
-<main>
-<p class="kicker">An open problem, handed to everyone</p>
-<h1>One rule, one column, ten thousand dollars, and a question nobody can answer.</h1>
-<div class="hero">
-  <figure><canvas id="hero" aria-label="Rule 30 growing from a single black cell, its centre column tinted"></canvas>
-  <figcaption>Rule 30 from one black cell. Each row is made from the row above by one tiny rule. The tinted column down
-  the middle is the prize column.</figcaption></figure>
-  <div>
-  <p class="lede">Rule 30 is a rule for colouring squares. Start with one black square, apply the rule row after row, and the
-  middle column comes out looking like coin flips. Nobody can prove that it never settles into a repeating pattern.
-  Stephen Wolfram offers a prize for a proof.</p>
-  <p>Since the fourth of October 2026, one person and four AI collaborators have worked on it in public: every claim, every
-  failure, every piece of data in one repository. We did not solve it. We learned a great deal about what a solution has to
-  look like, and we found the exact sentence that is missing. This site hands all of it to you.</p>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<section class="hero-band"><div class="in">
+  <div class="hero-art">
+    <canvas id="hero" aria-label="Rule 30 growing from a single black cell, its centre column in red"></canvas>
+    <canvas id="reader" class="reader" aria-label="The centre column read off as a strip, like coin flips"></canvas>
+    <div class="tally" id="tally"></div>
   </div>
-</div>
-
-<h2>Where we stand, in one breath</h2>
+  <div>
+    <p class="kicker">An open problem, handed to everyone</p>
+    <h1>$30,000 or ¥120,000,000 could be yours.</h1>
+    <p class="lede">Three questions about one simple rule carry $10,000 each from Stephen Wolfram. The Collatz conjecture
+    carries ¥120,000,000 from Bakuage. Rule 30 is a rule for colouring squares: start with one black square, apply the rule
+    row after row, and the middle column comes out looking like coin flips. Nobody can prove that it never settles into a
+    repeating pattern, and the same missing idea stands behind all four prizes.</p>
+    <p>Since the fourth of October 2026, one person and four AI collaborators have worked on it in public: every claim,
+    every failure, every piece of data in one repository. We did not solve it. We learned a great deal about what a
+    solution has to look like, and we found the exact sentence that is missing. This site hands all of it to you.</p>
+  </div>
+</div></section>
+<main>
+<h2 data-glyph="map">Where we stand, in one breath</h2>
 <p>There is no proof, and nothing to submit. The constant case was settled before we began (Condrey, 2026). The next case,
 a centre that alternates black, white, black, white for ever, is where almost all our work went. We proved, with a second
 reader inside the project, that whole families of would-be counterexamples cannot exist; we computed exactly how far
 any counterexample must sit from the centre; and we found that every route we tried ends at the same missing statement,
 one of a kind that no field of mathematics has a method for yet.</p>
-<div class="stat">
-  <div><b>0</b><span>proofs of any of the three prize problems</span></div>
-  <div><b>306</b><span>statements with a written proof and a second reader</span></div>
-  <div><b>638</b><span>pre-registered experiments, failures kept</span></div>
-  <div><b>1</b><span>missing statement, named exactly</span></div>
+<div class="state">
+  <div class="open"><b>0</b><span>proofs of any of the three prize problems</span></div>
+  <div class="proved"><b>306</b><span>statements proved, with a second reader</span></div>
+  <div class="measured"><b>638</b><span>pre-registered experiments, failures kept</span></div>
+  <div class="open"><b>1</b><span>missing statement, named exactly</span></div>
 </div>
 <p class="source"><b>Sources.</b> STATE-OF-THE-PROOF.md and PERIOD-TWO.md section 5 in the repository; the counts are of the
 proofs and probes directories on 2026-10-11. Every page here names its sources the same way.</p>
 
-<h2>Three doors</h2>
+<h2 data-glyph="pyramid">Three doors</h2>
 <div class="doors">
-  <a class="door" href="learn.html"><p class="kicker">Start here</p><p>What Rule 30 is, what the three prize questions ask,
-  and why a rule you could run with a pencil defeats everyone. No background needed.</p></a>
-  <a class="door" href="stand.html"><p class="kicker">Where we stand</p><p>What is proved, what is measured, which routes are
-  closed and why, and the one sentence that is missing.</p></a>
-  <a class="door" href="need.html"><p class="kicker">What we need from you</p><p>The open statements in plain words and in
-  exact words, what a contribution looks like, and how we check it.</p></a>
+  <a class="door" href="learn.html"><canvas class="door-art" data-art="pyramid" aria-hidden="true"></canvas><div class="body">
+  <p class="kicker">Start here</p><p>What Rule 30 is, what the three prize questions ask, and why a rule you could run with a
+  pencil defeats everyone. No background needed.</p></div></a>
+  <a class="door" href="stand.html"><canvas class="door-art" data-art="map" aria-hidden="true"></canvas><div class="body">
+  <p class="kicker">Where we stand</p><p>What is proved, what is measured, which routes are closed and why, and the one
+  sentence that is missing.</p></div></a>
+  <a class="door" href="need.html"><canvas class="door-art" data-art="need" aria-hidden="true"></canvas><div class="body">
+  <p class="kicker">What we need from you</p><p>The open statements in plain words and in exact words, what a contribution
+  looks like, and how we check it.</p></div></a>
 </div>
 
-<h2>The worked problem</h2>
+<h2 data-glyph="pyramid">The worked problem</h2>
 <p>Rule 30 itself, worked through from the first row to where Problem 1 stands, with ten interactive visuals and sound,
 is a full page of this site: <a href="rule30/">the Wolfram Rule 30 page</a>. It is written for a reader with no background
 and is the long version of everything the Learn page says in a few minutes.</p>
 
-<h2>The same problem, three times</h2>
+<h2 data-glyph="wheel">The same problem, three times</h2>
 <p>Rule 30's alternating-centre question has the same shape as two famous open problems in arithmetic: the Collatz
 conjecture, which carries a prize of its own, and Mahler's 3/2 problem from 1968. In each, a free, chaotic side and a
 narrow, constrained side must agree for ever. Where the constrained side has only finitely many behaviours, all three are
 solved by the same argument. Where it does not, all three are open, and for the same reason.
 <a href="trio.html">The three side by side.</a></p>
 
-<h2>The trove</h2>
+<h2 data-glyph="trove">The trove</h2>
 <p>Everything we computed is yours: exact record tables with the configurations that achieve them, certified lists of words
 the system can never produce, the census of rings, the witnesses, the probes that made them, each with a checksum and a
 command that re-checks it in seconds. <a href="trove.html">Search the trove.</a></p>
 
-<h2>Why we are asking</h2>
+<h2 data-glyph="join">Why we are asking</h2>
 <p>We are few, and the problem is big. Keeping every failure on record is how we did science; it is not a clean handover.
 This site is the clean handover. If you can read a proof, check one of ours. If you can write one, the missing statement
 is stated for you. If you have a machine, the census can go deeper. If you know a paper we missed, tell us.
 <a href="join.html">How to join.</a></p>
 
-<h2 id="who">Who did this?</h2>
+<h2 id="who" data-glyph="people">Who did this?</h2>
 <p>This project and everything in it were made by one human, Gareth, working with super intelligent systems built by
 Anthropic and OpenAI: a GPT, two Claudes on his own machines and one in the cloud, each with its own lane, each reading and checking
 the others, all of it in the open.</p>
@@ -97,9 +103,10 @@ nothing. From there, anyone, at any level, is invited to take the reins and win 
 <p>Gareth asks one thing in return. If this work helps you claim a prize, Wolfram's or the Collatz prize, please consider
 sharing some of it with him, as a gesture of goodwill. The reins are yours.</p>
 </main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
 <footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.
 No cookies, no analytics, no build step. Every factual claim on these pages names its source in the record.</div></footer>
 <script src="r30.js"></script>
-<script>R30.pyramid(document.getElementById("hero"),160,{centre:true,loop:true,ms:35});</script>
+<script>R30.heroReader(document.getElementById("hero"),document.getElementById("reader"),document.getElementById("tally"),150);</script>
 </body>
 </html>
