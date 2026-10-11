@@ -25,6 +25,17 @@ PREDICTIONS, registered 2026-10-11 06:03 BST before the run:
   M2C-P2 (blind, 0.5): phase 1's least absent length is strictly below phase 0's.
   Record searched: '5,5,3,3,3' -> SLC2's header and L591 only.
 REFUTED-BY: M2C-P0 failing (the instrument); M2C-P1, M2C-P2 as stated.
+
+OUTCOME, 2026-10-11 06:21 BST (about 15 minutes beside the solvers; 332 receipts in m2c.ck, every one SAT or
+VERIFIED-UNSAT by cake_lpr, none failed):
+  M2C-P0 PASS.
+  Phase 0 and phase 1 alike: the least absent length is 114, with one absent rotation (3), and that cut is exactly
+      (L L S S S)^6 = (00001 00001 001 001 001)^6, 114 bits, VERIFIED-UNSAT in both phases.
+  Length 120: 11 of the 19 rotations are absent in each phase (rotations 0, 1, 2, 3, 10, 11, 12, 13, 16, 17, 18; each
+      contains the cut), and 8 are present. So L591's "absent at length 120" held for the rotation it tested, not for all.
+  Any M2-periodic stretch of 114 + 18 = 132 visible bits (seven periods, 133 bits) contains (LLSSS)^6, so it is absent.
+  M2C-P1 REFUTED (114, not 91 .. 102; and only 11 of 19 length-120 rotations are absent). M2C-P2 REFUTED (equal, 114).
+  (recorded 06:22)
 """
 import os
 import sys
