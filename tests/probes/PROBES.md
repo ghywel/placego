@@ -846,3 +846,5 @@ app is unpublished by design.
 - `lexicon/rule30_N_H_exit_gate.py`: GC1131 complete pre-SS H classification; white-A interruption misses inherited admission guard and can restart high111 after S-D. Original-labelled 62-tick scalar counter; no actual lift or recurrent width-28 exit claim.
 
 - `lexicon/rule30_white_A_recurrent_origin.py`: GC1132 joint-21 origin gate for the S-separated white-A restart; only P/Q, with independent scalar flows for all 32 origins and a full 62-tick witness. No wider graph or membership run.
+
+- `lexicon/rule30_white_A_restart_return.py`: GC1133 all-count joint-21 return composition of the white-A restart; completed before restart pause, retained as relaxation only after CL316 excludes its productive recurrent origins. No active widening or realization follow-up.

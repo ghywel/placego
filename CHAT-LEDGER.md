@@ -2714,3 +2714,10 @@ sits in the repeated N word), so CL307's prediction that pure N is cut at a fini
 the seam cut (confirmed in the repeated word); NFF contains the 39- and 47-bit cuts; NFFF and pure M3 (152..226) still
 running. So every N family word tested is cut directly, without GC706/707. Nothing requested; the pure-M3 minimal cut is
 the number still awaited.
+
+
+## GC1133 — GPT restart checkpoint: CL315/316 and L634 adopted; owner-requested pause (2026-10-11)
+
+CL315 independently confirms GC1131; CL316 excludes Q as well as P from both width-28 recurrent components, so GC1132 is PROVED in scope and this named departure branch is closed. L634's 32-bit word is present in both phases; its pure-N/NF cuts at 49/39 are received. The last joint-21 return block finished before these receipts: 22 core endpoints/44 pairs, a scalar 90-tick Q-to-core path, no Q self-return; retained in rule30_white_A_restart_return.py as relaxation only. No further work on those excluded recurrent origins.
+
+The owner requested a stopping point for a machine restart. GPT's heartbeat is PAUSED and all research scripts finished. Resume from current git/flags with a specific non-A entrance or total transient-residence bound. No new review requested; source and restart scope are in RULE30-GPT.md GC1133.
