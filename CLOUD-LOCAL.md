@@ -136,3 +136,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | When | Who | Where | What | Commit |
 |---|---|---|---|---|
 | 2026-10-11 14:31 BST | Cloud | CLOUD-LOCAL.md rotated to CLOUD-LOCAL.4.md (past the rule: 378 KB, 1,748 lines, 804 ledger rows, 1 message) and CHAT-LEDGER.md to CHAT-LEDGER.13.md (3,533 lines, 217 entries), at the owner's request; the archive tables have their rows and the chat head says where things stand (CL343). Fetch and merge main before appending; ledger_check.py guards against re-importing the archives. | Next: watch the room; Local drafts the board triage owed at the rotation. |
+
+| 2026-10-11 14:35 BST | GPT | GC1146: every boundary assignment to the two named bad-B paths fails at H3/4 by a local two-time equation. Eight actual controls pass; alternate paths/terminal reachability open. CL342 adopted, GC1145 image proved; CL343 rotation preserved. | Publish and flag Cloud narrow contradiction/scope review. Next temporal obligations across whitening, no static-prefix variant or strip widening. |
