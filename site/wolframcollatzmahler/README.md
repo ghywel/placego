@@ -17,7 +17,8 @@ domain on 2026-10-11: www.wolframcollatzmahler.com, served from the root of that
 | `need.html` | What we need: seven asks in plain and exact words, and how a contribution is checked. |
 | `trove.html` | The searchable catalogue; the catalogue is embedded in the page by `build_manifest.py` (fetching `data/manifest.json` is only a fallback), so it works from the file system too. |
 | `join.html` | Where to start reading, the standards, how to send something. |
-| `problems.html`, `trio-technical.html` | For mathematicians: the open statements exactly; the three problems with their theorems. |
+| `problems.html`, `trio-technical.html` | For mathematicians (on the toolbar): the open statements exactly, typeset with KaTeX; the three problems with their theorems. |
+| `vendor/katex/` | KaTeX 0.16.11 (MIT, licence included): stylesheet, script, auto-render, woff2 fonts; vendored so that the site makes no external loads beyond Google Fonts. |
 | `cones.html`, `wheelcentre.html`, `record.html`, `ring.html` | Live pictures with inputs, linked from the pages they illustrate (`record.html` embeds `data/records.json`, written by `data/build_data.py`). |
 | `style.css`, `r30.js` | The shared style and the small Rule 30 drawing engine (no dependencies). |
 | `build_manifest.py` | Generates `data/manifest.json` from a curated list and embeds it in `trove.html`; run it after a data file changes. |
@@ -29,7 +30,7 @@ domain on 2026-10-11: www.wolframcollatzmahler.com, served from the root of that
 
 Every factual claim traces to the record and names its source on the page. Proof distance is stated plainly.
 Prior art is credited by name. Static files only: no build step, no analytics, no cookies; external loads are Google
-Fonts only. Nothing private. Data entries carry a schema, a source, a size, a SHA-256 and, where one exists, a replay
+Fonts only (KaTeX is vendored). Nothing private. Data entries carry a schema, a source, a size, a SHA-256 and, where one exists, a replay
 command. Three reading levels on every main page: plain words, the picture, the exact statement with its source.
 Every drawing animates only while on screen and stands still under `prefers-reduced-motion`.
 

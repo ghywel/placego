@@ -2,150 +2,172 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The open statements, exactly</title>
-<meta name="description" content="The Rule 30 period-two problem stated exactly for mathematicians: definitions, what is proved, what is measured, the record route, and the one missing lemma, each with its source in the record.">
+<title>For mathematicians: the open statements, exactly</title>
+<meta name="description" content="The Rule 30 period-two problem stated exactly: the rule, masking and the visible word, the record route and the missing lemma, what is known about column 1, the counting form, the exact machinery, the carry, and where the problem sits beside Collatz and Mahler.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
 <link rel="canonical" href="https://www.wolframcollatzmahler.com/problems.html">
+<style>.katex-display{margin:14px 0 18px;overflow-x:auto;overflow-y:hidden}.katex{font-size:1.06em}</style>
 </head>
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
-  <nav><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html" aria-current="page">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+  <nav><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html" aria-current="page">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
 <canvas class="ribbon" aria-hidden="true"></canvas>
 <main>
 <p class="kicker">For mathematicians</p>
 <h1>The open statements, exactly</h1>
-<p class="lede">This page states the period-two problem and the route we hold in the words a proof would use, says what is
-proved and what is only measured, and names the section of the record each claim comes from. Nothing here is new; it is
-the record, compressed.</p>
+<p class="lede">The period-two problem and the route we hold, in the words a proof would use, most important first. Each
+statement says whether it is proved (a written proof with a second reader inside the project, no outside review),
+measured (an exact computation in the trove) or open, and names its section of the record. Nothing here is new; it is the
+record, compressed and typeset.</p>
 
-<h2 data-glyph="pyramid">Definitions</h2>
-<p>Rule 30 acts on bi-infinite rows of cells x(i, t) in {0, 1} (0 white, 1 black) by</p>
-<pre>x(i, t+1) = x(i−1, t) XOR ( x(i, t) OR x(i+1, t) ).</pre>
-<p>It is left-permutive: x(i−1, t) = x(i, t+1) XOR (x(i, t) OR x(i+1, t)), so columns i and i+1 over time determine
-every column to their left. A <b>finite configuration</b> has finitely many black cells; the single-seed pattern is one. A
-column is <b>eventually periodic</b> if it is periodic from some time on. <b>Problem 1</b> (Wolfram, 2019) asks whether the
-centre column of the single-seed pattern is eventually periodic; the claim is that it is not.</p>
-<p><b>The wall.</b> Period two means the centre column reads 0101… from some time on. Shift time so that it does so from
-t = 0 and call column 0 the wall, x(0, t) = t mod 2 (phase 0; phase 1 is (t+1) mod 2). <b>Column 1</b> is the trace,
-c(t) = x(1, t). By left permutivity the whole left half-plane is a function of the wall and the trace. Since x(−1, t) =
-x(0, t+1) XOR (x(0, t) OR c(t)) equals 1 whenever x(0, t) = 1, only the samples at white-wall ticks reach the left: the
-<b>visible word</b> is c at the white ticks, in time order, and the left half-plane depends on nothing else.</p>
-<p><b>Real traces.</b> A trace is real if some configuration beside the wall produces it. The set of real visible words is
-a factorial language L (one per phase). Its minimal forbidden words are the <b>cuts</b>.</p>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> section 8.13 and 8.54 (left permutivity and the forced left half); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL356
-(the masking identity, checked); L640 and L641 (the language and its cuts).</p>
+<h2 data-glyph="pyramid">1. The rule, and what a proof must show</h2>
+<p>Rule 30 acts on bi-infinite rows $x(\cdot,t)\in\{0,1\}^{\mathbb Z}$ by</p>
+$$x(i,\,t+1)\;=\;x(i-1,\,t)\;\oplus\;\bigl(x(i,\,t)\;\vee\;x(i+1,\,t)\bigr).$$
+<p>It is left-permutive: solving for the left neighbour,</p>
+$$x(i-1,\,t)\;=\;x(i,\,t+1)\;\oplus\;\bigl(x(i,\,t)\vee x(i+1,\,t)\bigr),$$
+<p>so columns $i$ and $i+1$ over time determine every column to their left. A configuration is <em>finite</em> if it has
+finitely many black cells; the single-seed pattern is one. <b>Problem 1</b> (Wolfram, 2019) asks whether the centre column
+$t\mapsto x(0,t)$ of the single-seed pattern is eventually periodic. Period one is closed:</p>
+<div class="level"><p class="kicker">Condrey (2026), proved</p>
+<p>No column of a nonzero finite configuration is eventually constant.</p></div>
+<p><b>Period two is the open case.</b> Shift time so that the centre reads $0101\ldots$ from $t=0$ and call it the wall,
+$x(0,t)=t \bmod 2$. Column 1 is the trace $c(t)=x(1,t)$. The target of all the work:</p>
+<div class="level open"><p class="kicker">The statement to prove</p>
+$$\text{No finite configuration has } x(0,t)=t\bmod 2 \text{ for all } t\ge 0.$$
+<p>This is more than the prize asks (the prize is about one configuration) and is where the work went, because the
+constant case was closed for all finite configurations and the tools are the same.</p></div>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.13 and 8.54; Condrey, arXiv:2609.09431; PERIOD-TWO.md section 2.</p>
 
-<h2 data-glyph="wheel">What is proved beside an alternating wall</h2>
-<ul class="proved">
-<li><b>Jen (1990).</b> In a finite configuration, two adjacent columns are never both eventually periodic. So beside
-the alternating wall, column 1 of a finite configuration is never eventually periodic.</li>
-<li><b>Condrey (2026, arXiv:2609.09431).</b> No column of a nonzero finite configuration is eventually constant. This
-closes period one.</li>
-<li><b>Theorem B.</b> If columns 0 and 1 are both P-periodic, the white runs of every left column are at most 2P − 2.
-Corollary: if the visible word is periodic with period m over a window, the left cells that window determines have white
-gaps at most 4m − 2 (checked exhaustively for m ≤ 5, tight at m = 2).</li>
-<li><b>Theorem A (Jen with a clock).</b> Columns 0 and 1 of a finite configuration can agree with a periodic pair only
-over a bounded window, so the kicks that break column 1's periodicity cannot thin out faster than geometrically.</li>
-<li><b>Theorem A′ (the window principle).</b> A block of column 1 can recur only if its length is small compared with
-the time elapsed; its complexity bound is Dubickas (2009) in the Collatz setting.</li>
-<li><b>Theorem E.</b> Column 1 cannot be a Sturmian word (a coding of an irrational rotation with a half-circle arc);
-with Jen's theorem, no rotation coding, rational or irrational, is column 1. Corollary F, Theorems E″ and A⁗ extend this
-to near-squares at unbounded periods, block codes of Sturmian words, resets that come further apart than
-geometrically, and Thue–Morse and paperfolding for every left edge up to 15,868 cells.</li>
-<li><b>The channel bound.</b> Beside the alternating wall, column 1 carries at most 0.1236 bits per visible bit
-(log₂ of the growth rate of the visible language's layer count at width 28, certified in exact arithmetic).</li>
-<li><b>No finite configuration reaches a solid row.</b> The only preimages of the all-white row are all-white and
-all-black; the only preimages of all-black are the three phases of (100)<sup>∞</sup>. Neither is finite.</li>
-</ul>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.13, 8.54, 8.57, 8.58, 8.20 and 8.33; <a href="https://github.com/ghywel/placego/blob/main/PROOFS.md">PROOFS.md</a>; proofs directory entries 05
-to 12; <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL356 (the Theorem B corollary) and CL363 (solid rows). Proved means a written proof with a second
-reader inside the project and no outside review.</p>
+<h2 data-glyph="strip">2. What the left half can see: masking and the visible word</h2>
+<p>Beside the wall, the first left column is</p>
+$$x(-1,t)\;=\;x(0,t+1)\oplus\bigl(x(0,t)\vee c(t)\bigr)\;=\;\begin{cases}1-c(t) & t \text{ even (white wall)}\\ 1 & t \text{ odd (black wall)}\end{cases}$$
+<p>so only the samples at white-wall ticks reach the left half-plane. The <em>visible word</em> is
+$q=c(0)\,c(2)\,c(4)\cdots$, and the whole left half-plane is a function of $q$ alone. In the left row at time 0, the cell
+at depth $k$ depends on $c(t)$ for even $t\le k-1$ only.</p>
+<p>A trace is <em>real</em> if some configuration beside the wall produces it; the real visible words form a factorial
+language $L$ (one per phase). Its minimal forbidden words are the <em>cuts</em>: every cut of length at most 44 is known
+and certified (1,130 in phase 0, 1,199 in phase 1).</p>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL356 (the masking identity, checked); L640, L641 (the language and its certified cuts).</p>
 
-<h2 data-glyph="coin">What is measured</h2>
-<ul class="measured">
-<li><b>The wheel.</b> Beside the alternating wall, column 1 between kicks is the two-arc coding of the rotation
-t ↦ 17t mod 56: the 56-step word U = 0001001101 0001001101 0001001101 0001001101 0001001101 001101, five blocks of ten
-and one of six (17 turns in 56 steps). Kicks occur at four classes with short size ranges (Proposition 13). No other
-column of the single-seed pattern, −40 to 40, shows any such structure (block complexity of a fair coin, exploratory).</li>
-<li><b>The carry.</b> x(i, t+1) = x(i−1, t) XOR x(i, t) XOR c(i, t) with c(i, t) = x(i+1, t) x(i+1, t+1) (proved); under
-the coin measure the column carry is the sliding AND of fair coins, with lag-1 correlation 1/3, gap law F(m+1)/(2F(m+3))
-and entropy rate 0.69924320338768 bits (RULE30-PRIZE.md 8.90; <a href="carry.html">drawn and checked live</a>).</li>
-<li><b>The rings.</b> Column 1 can run in two travelling waves: the S ring (84 cells, one step is a shift by 14,
-column-1 word 110100, largest cyclic white gap 5) and the L ring (155 cells, two steps are a shift by 31, column-1 word
-1101000100, gap 6). U is made of their words.</li>
-<li><b>Nothing near the centre.</b> No period-two counterexample has its left edge within 248 cells of the centre for
-any right half; none with a right half of at most 32 cells and a left half of at most 108 (4.3 × 10<sup>9</sup> cases).</li>
-<li><b>The record R(d).</b> Exact at every depth 20..120 and at 132, 139, 142 (17 at each of those three), at least 18
-at 125..138 and 141, and by sampling at least 20 at depth 200, 28 at 279, 38 at 1,035. Witness configurations for every
-value are in the trove.</li>
-<li><b>The cuts.</b> All 1,130 (phase 0) and 1,199 (phase 1) minimal forbidden visible words of length ≤ 44, each with a
-cake_lpr-checked certificate; phase 0 extended to 48 with 482 words (in certification).</li>
-<li><b>The counting form.</b> N(w, T), the number of configurations on w cells whose centre reads 0101… for T steps,
-falls like 2<sup>w − αT</sup> with α measured near 1 at w = 24. The part paid by the seed's left part is proved exactly.</li>
-</ul>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.4, 8.13 (the wheel), 8.56, 8.21 (searches), 8.51 (counting); <a href="https://github.com/ghywel/placego/blob/main/PROOFS.md">PROOFS.md</a> entry 26
-(Proposition 13); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL351 (rings), L643 and L645 (records and cuts), CL357 (other columns); the trove.</p>
+<h2 data-glyph="cones">3. The record route, and the missing lemma</h2>
+<p>Suppose a finite configuration kept the wall for ever. Its left half at time 0 is white beyond its support, so its real
+trace has a left image white on an infinite interval. Define the record at depth $d$:</p>
+$$R(d)\;=\;\sup\Bigl\{\,L\;:\;\exists\ \text{real } c \text{ with } x(-d,0)=x(-d-1,0)=\cdots=x(-d-L+1,0)=0\Bigr\}.$$
+<div class="level open"><p class="kicker">Target (open)</p>
+$$R(d)<\infty\quad\text{for every } d\ge 1 .$$
+<p>Finiteness at each depth, not a uniform bound: the data grow with $d$. This single statement refutes period two for
+every finite configuration.</p></div>
+<div class="level"><p class="kicker">Theorem B (proved), the engine of every solved case</p>
+<p>If columns 0 and 1 are both $P$-periodic, every white run in every left column has length at most $2P-2$. Corollary
+(checked exhaustively for $m\le 5$, tight at $m=2$): a visible word periodic with period $m$ over a window fixes the left
+cells the window determines, and their white gaps are at most $4m-2$.</p></div>
+<div class="level"><p class="kicker">The rings (proved for the pure traces)</p>
+<p>Column 1 can run in two travelling waves, the S ring (84 cells, column-1 word $110100$, largest white gap 5) and the L
+ring (155 cells, word $1101000100$, gap 6). For a white interval $[d,\,d+L-1]$ at a white anchor $a$ with $N$ samples of
+the S trace,</p>
+$$L\le 2a+5\quad\text{or}\quad N\le d+a+5,$$
+<p>and the same with 6 for the L trace. A mixed prefix $LSLSL$ forces seven white left cells at depths 30 to 36.</p></div>
+<div class="level"><p class="kicker">Two endpoints, explained exactly (proved for those two records)</p>
+<p>At depth 139 the record is 17 and its endpoint is forced by masking: the cell at depth 156 is black from the 78 visible
+samples through tick 154, and no change at sites 156 and beyond can move it. At depth 132 the record is 17 and the white
+extension would force the certified cut $100100001001000010000101$ into the visible word at index 51 (tick 102).</p></div>
+<div class="level open"><p class="kicker">The missing lemma (open)</p>
+$$\forall d\ \exists L(d):\quad \bigl\{\,q\in L\;:\;\text{the depth-}d\text{ image of } q \text{ is white on } [d,\,d+L(d))\bigr\}=\varnothing .$$
+<p>A white band of length $L$ at depth $d$ forces a pattern in the visible samples over a window growing with $L$, and
+every such pattern long enough contains a cut. Theorem B is this lemma for periodic samples; the two endpoints are what the
+pattern looks like in two real cases; the general argument is open.</p></div>
+<p><b>Data.</b> $R(d)$ is exact at every depth $20\le d\le 120$ and at $d=132,139,142$ (17 at each); at least 18 for
+$125\le d\le 138$ and $d=141$; by sampling at least 20 at $d=200$, 28 at 279, 38 at 1{,}035. Every witness is in the
+trove. <a href="record.html">Drawn depth by depth.</a></p>
+<p class="source"><b>Sources.</b> PERIOD-TWO.md section 2 and row Q6; CHAT-LEDGER.md CL355, GC1148, GC1151, GC1153, GC1154 with CL356, GC1155 to GC1157 with CL356 and CL359; L643 (the census).</p>
 
-<h2 data-glyph="cones">The route we hold: finite support</h2>
-<div class="level"><p class="kicker">The hypothesis and the target</p>
-<p>Suppose a finite configuration has centre 0101… from time 0. Its left half at time 0 is white beyond its support, so
-its real trace has a left image white on an infinite interval at some depth. Define</p>
-<pre>R(d) = sup { L : some real trace beside the wall has x(−d, 0) = … = x(−d−L+1, 0) = 0 }.</pre>
-<p><b>Target.</b> R(d) < ∞ for every d (<a href="record.html">the data, depth by depth</a>). This refutes period two for every finite configuration. It is finiteness at each
-depth, not a uniform bound: the data grow with d.</p></div>
-<div class="level"><p class="kicker">What is known on this route</p>
+<h2 data-glyph="wheel">4. What is known about column 1 beside the wall</h2>
+<div class="level"><p class="kicker">Jen (1990), proved</p>
+<p>In a finite configuration, two adjacent columns are never both eventually periodic. So beside the wall, column 1 of a
+finite configuration is never eventually periodic.</p></div>
+<div class="level"><p class="kicker">Theorem A, proved (Jen with a clock)</p>
+<p>Columns 0 and 1 of a finite configuration can agree with a periodic pair only over a bounded window; the kicks that
+break column 1's periodicity cannot thin out faster than geometrically.</p></div>
+<div class="level"><p class="kicker">Theorem E, proved</p>
+<p>Column 1 cannot be a Sturmian word (the coding of an irrational rotation by a half-circle arc). With Jen's theorem,
+no rotation coding, rational or irrational, is column 1. Corollary F, Theorems E″ and A⁗ extend this to near-squares at
+unbounded periods, block codes of Sturmian words, resets that come further apart than geometrically, and to Thue–Morse
+and paperfolding for every left edge up to 15,868 cells.</p></div>
+<div class="level"><p class="kicker">The channel bound, proved (certified in exact arithmetic)</p>
+$$\limsup_{n\to\infty}\frac{\log_2 \#\{\text{real visible words of length } n\}}{n}\;\le\;\log_2\lambda'_{28}\;=\;0.1236 \text{ bits per visible bit.}$$</div>
+<div class="level"><p class="kicker">The wheel, measured</p>
+<p>Between kicks, column 1 is the two-arc coding of the rotation $t\mapsto 17t \bmod 56$, the word</p>
+$$U=\underbrace{0001001101}_{10}\ \underbrace{0001001101}_{10}\ \underbrace{0001001101}_{10}\ \underbrace{0001001101}_{10}\ \underbrace{0001001101}_{10}\ \underbrace{001101}_{6},$$
+<p>seventeen turns in 56 steps. Kicks occur at four classes with short size ranges (Proposition 13). No other column of the
+single-seed pattern, $-40\le i\le 40$, shows any such structure (exploratory).</p></div>
+<div class="level open"><p class="kicker">Conjecture LR (open for the real column)</p>
+<p>No column 1 beside the wall makes the left half eventually white. Proved for eventually periodic column 1 (Jen) and for
+Sturmian column 1 (Theorem E); open for the kicked wheel.</p></div>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.4, 8.13, 8.20, 8.33, 8.54, 8.57; PROOFS.md entry 26; PERIOD-TWO.md row Q7.</p>
+
+<h2 data-glyph="coin">5. The counting form and the one sentence</h2>
+<p>Let $N(w,T)$ be the number of configurations on $w$ cells whose centre reads $0101\ldots$ for $T$ steps.</p>
+<div class="level open"><p class="kicker">Open</p>
+$$N(w,T)\;\le\;2^{\,w-\alpha T+c}\quad\text{for some }\alpha>0 .$$
+<p>Measured: $\alpha$ close to 1 at $w=24$. Proved: the part paid by the seed's left part. Open: the right part. The same
+statement for Collatz, with the free bits in place of the left part, is COLLATZ-PRIZE.md section 1.</p></div>
+<p>Every form of the problem ends at one sentence: <em>keeping the wall's conditions costs real information.</em> The
+delivery side is the channel bound. The cost side is proved only beside a constant wall (Condrey); beside $0101\ldots$ it
+is a coin model, measured and not proved. A proof must use what is special about the alternating wall, as Jen's and
+Condrey's do; the one such structure found is the wheel.</p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.51; PERIOD-TWO.md sections 2 and 5.</p>
+
+<h2 data-glyph="map">6. Exact machinery at fixed depth</h2>
+<p>The depth-$k$ left images of cut-avoiding traces form a regular language. A seeded decoder presents them exactly in both
+directions with at most</p>
+$$2\,S\,2^{\lceil (k-1)/2\rceil}$$
+<p>live states, $S$ the cut automaton's live states; checked exact by exhaustive enumeration for $k\le 5$. For $k\ge 4$ in
+the white-start phase, under the gate that $11$ never occurs in a visible word, the first visible bit $q_0$ leaves the image
+unchanged (at time 0 the depth-3 and depth-4 values are $1-q_1$ and $q_0q_1$), so it can be quotiented away provided the
+cut obligation of both origins is carried. The state space grows with $k$: none of this is a closure across depths.</p>
+<p class="source"><b>Sources.</b> CHAT-LEDGER.md GC1158 with CL361, GC1159 with CL364; RULE30-GPT.md GC971, GC1158, GC1159.</p>
+
+<h2 data-glyph="ring">7. The carry</h2>
+<p>Rule 30 is the Gray step plus a correction, and the correction is a two-time AND:</p>
+$$x(i,t+1)=x(i-1,t)\oplus x(i,t)\oplus c(i,t),\qquad c(i,t)=\bigl(1-x(i,t)\bigr)\,x(i+1,t)=x(i+1,t)\,x(i+1,t+1).$$
+<p>Under the fair-coin measure, which Rule 30 preserves, every column is a sequence of independent fair coins, and the carry
+feeding a column is the sliding AND of fair coins $a(t)a(t+1)$: correlation $\tfrac13$ at lag 1 and $0$ beyond, not Markov
+of any finite order, with</p>
+$$\Pr\bigl(c(t)=1\,\big|\,c(t-1)=\cdots=c(t-m)=0\bigr)=\frac{F_{m+1}}{2F_{m+3}},\qquad
+h=1-\frac1{16}\sum_{g\ge1}\frac{F_g\log_2 F_g}{2^{g}}=0.69924320338768\ \text{bits}.$$
+<p>Multiplying by three is the same Gray step plus carries: bit $k$ of $3n$ is $n_k\oplus n_{k-1}\oplus\text{carry}$.
+<a href="carry.html">Drawn and checked live.</a></p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.90; KIMI-QUESTIONS-5.md; COLLATZ-PRIZE.md section 8.</p>
+
+<h2 data-glyph="circle">8. Where the problem sits</h2>
+<p>Three problems share one skeleton: a free side that is a full shift, a constrained side that is a thin language, and the
+requirement that they agree for ever.</p>
 <ul>
-<li>Theorem B gives it when the visible word is periodic over the relevant window.</li>
-<li>For the pure S and L rings: a white interval [d, d+L−1] at a white anchor a with N samples of the ring's trace
-forces L ≤ 2a + 5 or N ≤ d + a + 5 (S), and the same with 6 (L).</li>
-<li>A mixed prefix LSLSL forces seven white left cells at depths 30..36 (the converse direction: structure in the trace
-forces white on the left).</li>
-<li>At depth 139 the record's endpoint is forced by masking: the cell at depth 156 is black from the 78 visible samples
-through tick 154, and no change beyond site 155 can move it. At depth 132 it is forced by a cut: extending the record
-word by one white would put the certified cut 100100001001000010000101 at visible index 51 (tick 102). Both are exact
-explanations of one data point each.</li>
-<li>Exact images at fixed depth k are regular; a seeded decoder presents them with at most 2 S 2<sup>⌈(k−1)/2⌉</sup> states (S the
-cut automaton's live states), exact in both directions; the first visible bit can be quotiented away for k ≥ 4 in the
-white-start phase under the no-11 gate. The state space grows with k, so none of this is a closure across depths.</li>
-</ul></div>
-<div class="level open"><p class="kicker">The missing lemma</p>
-<p>A white band of length L at depth d forces a pattern in the visible samples over a window that grows with L, and every
-such pattern long enough contains a cut. Equivalently: the set of real visible words whose depth-d image is white on
-[d, d+L) is empty for some L = L(d), at every d. Theorem B is this lemma for periodic samples; the two endpoint
-explanations are what the pattern looks like in two real cases; the general argument is open.</p></div>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 2 and row Q6; <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL355 (the route), GC1148, GC1151 (rings), GC1153
-(mixed prefix), GC1154 and CL356 (Theorem B's corollary), GC1155 to GC1157 with CL356 and CL359 (endpoints), GC1158 and
-CL361 (decoder), GC1159 and CL364 (quotient).</p>
-
-<h2 data-glyph="map">The other forms of the same problem</h2>
-<ul>
-<li><b>Conjecture LR.</b> No column 1 beside the alternating wall makes the left half eventually white. Proved for
-eventually periodic and for Sturmian column 1; open for the kicked wheel.</li>
-<li><b>The counting form.</b> N(w, T) ≤ 2<sup>w − αT + c</sup> for some α > 0. The left part's cost is proved; the right part's
-is open. Its Collatz twin, with the free bits in place of the left part, is <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a> section 1.</li>
-<li><b>The one sentence.</b> Keeping the wall's conditions costs real information. The delivery side is the channel
-bound; the cost side is proved only beside a constant wall (Condrey), and beside 0101… it is a coin model, measured and
-not proved.</li>
+<li><b>Rule 30.</b> Free side: the left half at the wall. Constrained side: $L$. Emptiness proved when column 1 is eventually
+periodic or Sturmian; open for the kicked wheel.</li>
+<li><b>Collatz.</b> $T(n)=n/2$ or $(3n+1)/2$. Free side: the first $w-1$ parities $\leftrightarrow n \bmod 2^{w-1}$ (Terras).
+Constrained side: $T^k(2^k m+r)=3^a m+T^k(r)$ with $0\le T^k(r)<3^a$ (the least-residue lemma). Sparsity: Tao 2019, almost
+all. Emptiness for periodic and Sturmian parity sequences (the window principle; Dubickas 2009). Open for a single orbit.</li>
+<li><b>Mahler's $\tfrac32$ problem.</b> Is there $\xi>0$ with $\{\xi(\tfrac32)^n\}<\tfrac12$ for all $n\ge 0$? Sparsity: at most
+$x^{\gamma}$ Z-numbers below $x$ (Flatto, Lagarias, Pollington 1995). Emptiness when only finitely many fractional orbits are
+admissible (FLP, Theorem 3.2). Open on the interval of length $\tfrac12$. Kari and Kopra restate it as a question about one
+column of the automaton that multiplies by $\tfrac32$.</li>
 </ul>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> sections 2, 5 and 6 (rows Q1, Q6, Q7); <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.45, 8.47, 8.51.</p>
-
-<h2 data-glyph="ring">Where the problem sits</h2>
-<p>It has the structure of Mahler's 3/2 problem and of Collatz for a single orbit: a free side (the left half at the wall,
-a full shift) and a constrained side (column 1, a language of positive entropy but tiny rate) that must agree for ever.
-The method that closes such problems, pigeonhole on a finite constrained side and injectivity of the free side, is exactly
-Jen's and Condrey's argument, and it stops where the constrained side has positive entropy. Any theorem about almost all
-configurations (entropy, ergodic, Fourier) bounds a set and says nothing about the single configuration the prize is
-about. A proof must use what is special about the alternating wall; the one such structure found is the wheel.
-<a href="trio-technical.html">The three problems side by side, technically.</a></p>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.45 and 8.47; <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 5.</p>
+<p>The common mechanism: a finite constrained side plus an injective free side gives periodicity and a contradiction. The
+common gap: every sparsity theorem is about sets, and each prize is about one object. <a href="trio-technical.html">The
+three side by side, with the theorems.</a></p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.45 and 8.47; COLLATZ-PRIZE.md; PRIOR-ART.md.</p>
 </main>
 <canvas class="ribbon" aria-hidden="true"></canvas>
-<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>. Mathematics set with KaTeX (MIT licence, vendored in vendor/katex).</div></footer>
 <script src="r30.js"></script>
+<script defer src="vendor/katex/katex.min.js"></script>
+<script defer src="vendor/katex/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});"></script>
 </body>
 </html>
