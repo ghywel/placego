@@ -18,7 +18,14 @@ file is the self-contained re-run of that computation). Whole graph: 6,431 state
 components (97 states, mixed labels 1, 2, 3; 10 states, pure M2). No cuts: two cyclic product SCCs (186 states; 10
 states). L631's nine cuts: 62 states of label 3 only (branch 111), and the pure-M2 one. All eleven cuts: ONE cyclic
 SCC, the pure-M3 self-loops (62 states, 1,073 edges). After an M1 edge the next label is always 2; the realised
-consecutive label pairs are 12, 21, 23, 31 and 33. """
+consecutive label pairs are 12, 21, 23, 31 and 33. 
+
+ADDED 2026-10-11 (CL306): GC1126's H-low route N = S, D (111 pin), H with site 5 = 0, D (101 pin), H, white SS, white
+SS, 58 ticks, as a fourth macro. From all 98,304 A-type rows at width 28: 96,029 origin/end pairs, 185 N sources (none
+in the macro graph), 681 N endpoints (575 in it); the closure from them adds nothing; N lies on no cycle; no N endpoint
+reaches an N source again; the cut product with N is unchanged (pure M3 only with all eleven cuts). Width-20 control:
+1,530 pairs and 51 endpoints, GC1126's numbers.
+"""
 import itertools, time, sys, re
 from collections import deque
 sys.setrecursionlimit(1000000)
@@ -295,3 +302,111 @@ for title,names in (('no cuts',set()),('L631 nine cuts only',NINE),('all eleven 
     print('==',title,': product states',n,'| cyclic SCCs',len(res))
     for size,ne,labs,brs in sorted(res,reverse=True)[:12]:
         print('   SCC states',size,'internal edges',ne,'k labels',labs,'branches',brs)
+
+# ---------- N edges (GC1126's H-low route) added to the whole width-28 graph, then the cut product ----------
+S_=B('111000'); D_=B('0101100000'); H_=B('0101101010'); SS_=B('111010')
+def flow5(lab,t0,track,W,pinfn=None):
+    cur=dict(lab); t=t0
+    for bit in track:
+        nxt={}
+        for r,o in cur.items():
+            if r[4]!=bit: continue
+            for s in imgs(r,t,W): nxt[s]=nxt.get(s,0)|o
+        cur=nxt; t+=1
+    if pinfn: cur={r:o for r,o in cur.items() if pinfn(r)}
+    return cur,t
+def n_edges(startrows,W):
+    E=set()
+    for c0 in range(0,len(startrows),4096):
+        ch=startrows[c0:c0+4096]; lab={s:(1<<i) for i,s in enumerate(ch) if s[:13] in TYPESET}
+        a,t=flow5(lab,0,S_,W,lambda r: r[:9]==B('111001001'))
+        a,t=flow5(a,t,D_,W,lambda r: r[:9]==B('111001111'))
+        a,t=flow5(a,t,H_,W,lambda r: r[4]==0)
+        a,t=flow5(a,t,D_,W,lambda r: r[:10]==B('1110011011'))
+        a,t=flow5(a,t,H_,W,lambda r: r[:9] in VALID)
+        a,t=flow5(a,t,SS_,W,lambda r: r[:9] in VALID)
+        a,t=flow5(a,t,SS_,W,lambda r: r[:13] in TYPESET)
+        assert t==58
+        for x,o in a.items():
+            for i in range(len(ch)):
+                if o>>i&1: E.add((ch[i],x,'N','N'))
+    return E
+
+# control at W = 20 from ALL A-type rows (gc1126b: 51 endpoints, 1,530 pairs)
+A20=[tp+tail for tp in TYPES for tail in itertools.product((0,1),repeat=7)]
+E20n=n_edges(A20,20)
+print('W=20 control: N edges',len(E20n),'(pairs)','| endpoints',len({b for a,b,_,_ in E20n}))
+# N at W = 28 from ALL A-type rows
+A28=[tp+tail for tp in TYPES for tail in itertools.product((0,1),repeat=15)]
+EN=n_edges(A28,28); Nend={b for a,b,_,_ in EN}; Nsrc={a for a,b,_,_ in EN}
+alls={a for a,b,_,_ in E28}|{b for a,b,_,_ in E28}
+print('W=28 from all',len(A28),'A rows: N edges',len(EN),'| N sources',len(Nsrc),'| N endpoints',len(Nend))
+print('   sources in the macro graph',len(Nsrc&alls),'| endpoints in the macro graph',len(Nend&alls))
+# closure from the N endpoints: macro edges and N edges, until nothing new
+EALL=set(E28)|EN; known=set(alls)|Nsrc; frontier=sorted(Nend-known); rounds=0
+while frontier and rounds<8:
+    rounds+=1; known|=set(frontier)
+    Ek,_=labelled_edges(frontier,28); En=n_edges(frontier,28); EALL|=Ek|En
+    frontier=sorted(({b for a,b,_,_ in Ek}|{b for a,b,_,_ in En})-known)
+    print('  closure round',rounds,': new macro edges',len(Ek),'new N edges',len(En),
+          '| next frontier',len(frontier))
+adj={}
+for a,b,br,k in EALL: adj.setdefault(a,[]).append((b,br,k))
+cs={a for a,b,_,_ in EALL}|{b for a,b,_,_ in EALL}
+compsN=components(EALL)
+print('graph with N: states',len(cs),'edges',len(EALL),'components',len(compsN),
+      'sizes',sorted((len(c) for c in compsN),reverse=True)[:8])
+for c in compsN:
+    S=set(c); labs=sorted({str(k) for a,b,_,k in EALL if a in S and b in S})
+    if 'N' in labs: print('  component of size',len(c),'has internal N edges; labels',labs)
+# can an N endpoint ever reach an N source again (any path)?  BFS over EALL from Nend
+reach=set(Nend); stack=list(Nend)
+while stack:
+    x=stack.pop()
+    for b,_,_ in adj.get(x,[]):
+        if b not in reach: reach.add(b); stack.append(b)
+print('N endpoints reach',len(reach),'states; among them N sources:',len(reach&Nsrc),
+      '| macro-component states:',len(reach&alls))
+visN=''.join(str(b) for b in (hS+hL*4+hS*2)[0::2]); assert len(visN)==29
+def run_cuts2(name_set):
+    words={k:vis((k,)) for k in range(1,40)}; words['N']=visN
+    dead=lambda s: bool(out[s]&name_set)
+    padj={}; start=[(s,0) for s in cs]; stack=list(start); pseen=set(start)
+    while stack:
+        (s,a)=stack.pop()
+        for b,br,k in adj.get(s,[]):
+            a2=a; ok=True
+            for ch in words[k]:
+                a2=step(a2,ch)
+                if dead(a2): ok=False; break
+            if not ok: continue
+            padj.setdefault((s,a),[]).append(((b,a2),br,k))
+            if (b,a2) not in pseen: pseen.add((b,a2)); stack.append((b,a2))
+    index={}; low={}; onst=set(); st=[]; sccs=[]; cnt=[0]
+    def strong(v):
+        index[v]=low[v]=cnt[0]; cnt[0]+=1; st.append(v); onst.add(v)
+        for w,_,_ in padj.get(v,[]):
+            if w not in index: strong(w); low[v]=min(low[v],low[w])
+            elif w in onst: low[v]=min(low[v],index[w])
+        if low[v]==index[v]:
+            comp=[]
+            while True:
+                w=st.pop(); onst.discard(w); comp.append(w)
+                if w==v: break
+            sccs.append(comp)
+    for v in list(pseen):
+        if v not in index: strong(v)
+    res=[]
+    for comp in sccs:
+        Sx=set(comp); labs=set(); brs=set(); n=0
+        for v in comp:
+            for w,br,k in padj.get(v,[]):
+                if w in Sx: labs.add(str(k)); brs.add(br); n+=1
+        if n: res.append((len(comp),n,sorted(labs),sorted(brs)))
+    return len(pseen),res
+NINE=set(n for n in cuts if n not in ('f114','f117'))
+for title,names in (('no cuts',set()),('L631 nine cuts',NINE),('all eleven cuts',set(cuts))):
+    n,res=run_cuts2(names)
+    print('== with N,',title,': product states',n,'| cyclic SCCs',len(res))
+    for size,ne,labs,brs in sorted(res,reverse=True)[:12]:
+        print('   SCC states',size,'internal edges',ne,'labels',labs,'branches',brs)
