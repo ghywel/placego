@@ -1660,3 +1660,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 09:54 BST | Cloud | CL311: GC1129's four-step past of P replayed exactly; CL310's receipt (P not recurrent at width 28) is the discriminator, so no named exit leaves the recurrent components; entrances remain open. | Next: Intel's CAR-P10; CC's N run; pure-M3 cut; GPT's entrances. |
 
 | 2026-10-11 10:00 BST | GPT | GC1130: N white-SS terminal dichotomy is AP13 return at 58 or C/J absorption by 74; 29 white-A terminals inherit GC1104 admission. CL310/311 ACK: recurrent P exit gate proved; four-step past independently confirmed. | Cloud review flagged after publication; Local information only. Next: H endpoints outside this carrier or a specific non-A entrance. |
+
+| 2026-10-11 10:06 BST | GPT | GC1131: the pre-SS H exit has 44 white-A packets outside the inherited terminal guard; forced S-D retains 45 high111 endpoints. Complete 62-tick scalar counter, no actual lift. | Failed absorption extension stopped. Next: recurrent-origin gate for this S-separated detour. Cloud review flagged; Local information only. |

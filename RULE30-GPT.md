@@ -29443,3 +29443,19 @@ The admission premise is nonvacuous: all 29 white terminals are outside C/J at t
 **CL310/CL311 adopted.** Cloud at fce9c640 independently verifies GC1128's projection and checks P = 111010001110111000011 against the retained width-28 recurrent components: none of the 97 mixed or 10 pure-M2 states extends it, while 96 transient states do. GC1128 is promoted to PROVED; neither a second D111 nor an X selector starts from these recurrent states. N is separately excluded there by CL306. Cloud at 2d011fe8 independently scalar-replays GC1129's four-step past; its failed mature-origin exclusion is confirmed. Together these receipts close those specified departures from the recurrent components, without an admission theorem for all untyped traces. This new terminal rule handles an additional transient branch rather than repeating that closed exit check.
 
 Next target H endpoints outside the white-SS carrier or non-A entrances, retaining a specific inherited origin. Cloud: review the terminal subset implication and the 74-tick scope. Local: information only; no new run requested. The all-depth realized-record bound and the prize proof remain open.
+
+
+## GC1131 — The pre-SS H exit leaves a white-A interruption that can restart 111 (2026-10-11)
+
+**Absorption extension REFUTED in the sound 20-cell relation; serves Q10.** Missing inference: GC1130 covers terminals after entry into N's white-SS carrier, but the preceding H at tick 46 was filtered before that entry. In the same original AP13 ancestry A-S-D111-H-low(pair00)-D101-H, its complete H image has 196 packets: 22 enter white SS, 130 already satisfy C/J or guarded B, and 44 are white-eleventh A. No additional black AP13 return occurs there. The 44 remaining A packets have prefix13 1110100011010 (27) or 1110100011011 (17), but are not a subset of GC1104's 38 admitted SS terminals. Thus that theorem cannot be imported merely from their white-A label.
+
+The attempted smaller sufficient-guard transfer also fails. Their unfiltered six-tick S images number 85; some have prefix15 **111001001001100** or **111001001001111**, instead of GC1104's inherited **111001001001001** guard. Unfiltered D then yields 225 packets, including 45 outside C/J, all high111: prefix13 1110011111110 (32) or 1110011111000 (13). One original-labelled 62-tick path, independently scalar checked at every update, is:
+
+    t=0  : 11101000111011100000
+    t=46 : 11101000110110110111
+    t=52 : 11100100100110000110
+    t=62 : 11100111110000000000
+
+The white-A interruption forces an S between the high excursions, but it need not carry the low OR shield that makes the older SS terminal absorb. It can therefore restart high111 after that short interruption. The settled bound on consecutive high-low blocks does not discharge this route, because its intervening S breaks that consecutive run. This is a necessary obstruction to extending the admission proof, with no actual right-half lift or departure from a width-28 recurrent state inferred.
+
+P1's immediate absorption, P2's old terminal-set inclusion and the adaptive P3/P4 guard/absorption predictions are refuted; the original-label and scalar-path controls pass. The identified unexpected check distinguishes these white-A packets from an extra black AP13 macro. The 22 known white-SS entrances remain intact. Source: tests/probes/lexicon/rule30_N_H_exit_gate.py; record searched H-endpoint/white-SS with outside-carrier/terminal -> 18 hits in 8 files, then D101/H101/H-low with non-SS/A-return/guarded-B -> 23 hits in 9 files. No solver, CUT, membership, product, widening, record or origin-age run. Stop this failed absorption extension. Next seek a recurrent-origin gate for this particular white-A interruption; CL310 excludes the earlier direct second111/X exits, not this later S-separated branch. Cloud: review the counter and this scope distinction. Local: information only, no run requested.

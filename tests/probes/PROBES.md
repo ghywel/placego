@@ -837,3 +837,5 @@ app is unpublished by design.
 - lexicon/rule30_pointed_origin_past.py: GC1129 P = 111010001110111000011 has a 25-bit causal parent at clamped age 4, refuting the four-step origin guard. Complete inverse edges and 32 scalar/literal/packed tail controls; no later-excursion lift claim.
 
 - `lexicon/rule30_N_terminal_admission.py`: GC1130 complete N-ancestry white-SS terminals; AP13 return at 58 or inherited C/J admission by 74. Existing carrier/rank reused; unfiltered scalar control, no solver or membership run.
+
+- `lexicon/rule30_N_H_exit_gate.py`: GC1131 complete pre-SS H classification; white-A interruption misses inherited admission guard and can restart high111 after S-D. Original-labelled 62-tick scalar counter; no actual lift or recurrent width-28 exit claim.
