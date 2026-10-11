@@ -36,6 +36,12 @@ VERIFIED-UNSAT by cake_lpr, none failed):
   Any M2-periodic stretch of 114 + 18 = 132 visible bits (seven periods, 133 bits) contains (LLSSS)^6, so it is absent.
   M2C-P1 REFUTED (114, not 91 .. 102; and only 11 of 19 length-120 rotations are absent). M2C-P2 REFUTED (equal, 114).
   (recorded 06:22)
+
+SCAN (CL292's question, registered 2026-10-11 06:29 BST before its run): `scan` certifies every rotation at lengths
+115 .. 119 in both phases (114 and 120 are in m2c.ck), and names every minimal absent factor of the periodic word up to
+length 120: absent at n, with both of its length-(n - 1) factors present.
+  M2C-P3 (blind, 0.7): there is a second minimal cut, of length 115 .. 120, inside the windows starting at rotations
+      10 .. 13 (which cannot contain (LLSSS)^6, as CL292 counts), the same in both phases.
 """
 import os
 import sys
@@ -96,5 +102,15 @@ def main():
     print('M2C-P2 %s  (phase 1 least %d, phase 0 least %d)' % ('HELD' if res[1] < res[0] else 'REFUTED', res[1], res[0]))
 
 
+def scan():
+    for ph in (0, 1):
+        ab = {n: set(absent_at(n, ph)) for n in range(114, 121)}
+        print('phase %d: absent rotations by length: %s' % (ph, ' '.join('%d:%s' % (n, sorted(ab[n])) for n in ab)))
+        for n in range(115, 121):
+            for r in sorted(ab[n]):
+                if r not in ab[n - 1] and (r + 1) % 19 not in ab[n - 1]:
+                    print('  minimal cut, phase %d, length %d, rotation %d: %s' % (ph, n, r, rot(r, n)), flush=True)
+
+
 if __name__ == '__main__':
-    main()
+    scan() if len(sys.argv) > 1 and sys.argv[1] == 'scan' else main()
