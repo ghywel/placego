@@ -144,3 +144,23 @@ What to do next, in order: Q2 in the tableau form (a proof or a counterexample t
 minimal absent traces of Q3 are where the last repair freedom is exhausted); Q4 to length 42 and beyond (the parity
 observation, lanes at odd t only, should be proved or refuted on the way); Q3's list of tight words. Q1 and Q5 are
 answered; do not spend time on them.
+
+## Third addendum (2026-10-11, later; optional to hand over)
+
+Computed since by a second engine over all right halves (traces to length 40, both wall phases). In the other phase L(W)
+= 29, 33, 35, 37 at W = 15..18 and at least 40 at W = 19 and 20, so the bound 2W - 1 is attained at W = 12 and 15 only,
+L(W) = 2W + 1 holds at W = 16, 17, 18 and fails at 19 (slack at least 3); in this phase L(W) = 3, 6, 6, 10, 10, 17, 20,
+20, 20, 26, 30, 32, 34, 34, 34, 34, 34 for W = 1..17 and at least 38 from 18, tightest at W = 17 (slack 1, the extra
+being the tight trace of length 35). Conjecture S holds at every width determined.
+
+For Q2 and Q3, the shape of the column search (the tableau form of S) on all 16 tight or above-half extra traces of
+lengths 3 to 38 in both phases: the deepest death column equals the least excluding width w(f) in every case; the
+deepest branch is a single forced column pair from column 1 to column 7..13 (one length-36 trace carries two parallel
+deepest branches from column 2); in the last three or four columns before w(f) it fans out into tens to hundreds of
+distinct column pairs (the length-35 trace of this phase has 2, 12, 21, 84, 360 branches at columns 13..17; the
+length-34 trace of the other phase has 577 at column 16), and every branch dies at column w(f); every final failure is
+at a time at most 9, near the initial row, inside a check range of up to 19 times; the last repair column is w(f) - 2
+for every trace; only 1.4 to 3.7 percent of branches are dead by column 3. Real traces of lengths 22 to 34 admit
+complete tableaux (the positive control); at 36 and 38 the search hit its cap. So a proof of the halfway statement
+should explain why a forced spine followed by a short burst of freedom always ends in a contradiction near the top of
+the column, exactly at the halfway width.
