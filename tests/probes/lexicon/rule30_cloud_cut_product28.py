@@ -25,7 +25,12 @@ SS, 58 ticks, as a fourth macro. From all 98,304 A-type rows at width 28: 96,029
 in the macro graph), 681 N endpoints (575 in it); the closure from them adds nothing; N lies on no cycle; no N endpoint
 reaches an N source again; the cut product with N is unchanged (pure M3 only with all eleven cuts). Width-20 control:
 1,530 pairs and 51 endpoints, GC1126's numbers.
-"""
+
+ADDED 2026-10-11 (CL318, CL319): transient residence (outside the two recurrent components the graph is acyclic;
+longest transient path 3 macros / 246 ticks, longest path into a recurrent component 2 macros / 88 ticks; 5,836 of
+6,615 transient states never recur) and the total typed duration with the 22 rotations of the 300-sample pure-M3 word
+added as cuts: the product (71,852 states) is acyclic and the longest typed path is 13 macros, 686 ticks (twelve M3,
+then a 22-SS macro)."""
 import itertools, time, sys, re
 from collections import deque
 sys.setrecursionlimit(1000000)
@@ -410,3 +415,116 @@ for title,names in (('no cuts',set()),('L631 nine cuts',NINE),('all eleven cuts'
     print('== with N,',title,': product states',n,'| cyclic SCCs',len(res))
     for size,ne,labs,brs in sorted(res,reverse=True)[:12]:
         print('   SCC states',size,'internal edges',ne,'labels',labs,'branches',brs)
+
+# ---------- transient residence: longest path to a recurrent component or a dead end, in macros and ticks ----------
+dur={k:26+6*k for k in range(1,40)}; dur['N']=58
+recset=set().union(*[set(c) for c in compsN])     # cyclic components (97 + 10)
+# condensation: outside recset the graph is acyclic (every cycle lies in a cyclic component); DP over reverse
+# topological order
+import sys
+sys.setrecursionlimit(1000000)
+memo_m={}; memo_t={}; onpath=set()
+def best(v):
+    """(max macros, max ticks, reaches_recurrent) over paths from v until entering recset or dying"""
+    if v in memo_m: return memo_m[v],memo_t[v],memo_r[v]
+    assert v not in onpath, 'cycle outside the cyclic components'
+    onpath.add(v)
+    bm=bt=0; reach=False
+    for b,br,k in adj.get(v,[]):
+        if b in recset:
+            m,t,r=1,dur[k],True
+        else:
+            m2,t2,r2=best(b); m,t,r=1+m2,dur[k]+t2,r2
+        bm=max(bm,m); bt=max(bt,t); reach=reach or r
+    onpath.discard(v); memo_m[v]=bm; memo_t[v]=bt; memo_r[v]=reach
+    return bm,bt,reach
+memo_r={}
+trans=[s for s in cs if s not in recset]
+for s in trans: best(s)
+Astarts=[s for s in trans if s[:13] in TYPESET]
+print('transient states',len(trans),'| A-type transient states',len(Astarts),
+      '| with a path to a recurrent component',sum(1 for s in trans if memo_r[s]),
+      '| dead ends (no outgoing edge)',sum(1 for s in trans if not adj.get(s)))
+mm=max(memo_m[s] for s in trans); mt=max(memo_t[s] for s in trans)
+print('longest transient path: macros',mm,'| ticks',mt)
+# the longest path among paths that END in a recurrent component vs those that die
+def best_reach(v):
+    bm=bt=-1
+    for b,br,k in adj.get(v,[]):
+        if b in recset: m,t=1,dur[k]
+        elif memo_r[b]: m,t=1+memo_mr[b],dur[k]+memo_tr[b]
+        else: continue
+        bm=max(bm,m); bt=max(bt,t)
+    return bm,bt
+memo_mr={}; memo_tr={}
+order=sorted(trans,key=lambda s:memo_m[s])   # increasing longest-path length = valid topological order for the DP
+for s in order:
+    m,t=best_reach(s); memo_mr[s]=m; memo_tr[s]=t
+reach=[s for s in trans if memo_r[s]]
+print('among transient states that reach a recurrent component: max macros',max(memo_mr[s] for s in reach),
+      '| max ticks',max(memo_tr[s] for s in reach))
+from collections import Counter
+print('distribution of longest-path macro counts over transient states:',
+      sorted(Counter(memo_m[s] for s in trans).items()))
+print('transient states whose every path dies (never recurrent):',sum(1 for s in trans if not memo_r[s]))
+
+# ---------- total typed duration: product with the eleven cuts plus the 22 rotations of the 300-bit pure-M3 window
+# ----------
+M3=vis((3,)); assert len(M3)==22
+P300=(M3*20)[:300]
+for r in range(22): cuts['m3rot%d'%r]=(M3*20)[r:r+300]
+# rebuild the Aho-Corasick automaton with the new patterns
+goto=[{}]; fail=[0]; out=[set()]
+for name,p in cuts.items():
+    s=0
+    for ch in p:
+        if ch not in goto[s]: goto.append({}); fail.append(0); out.append(set()); goto[s][ch]=len(goto)-1
+        s=goto[s][ch]
+    out[s].add(name)
+from collections import deque
+q=deque([s for s in goto[0].values()])
+while q:
+    r=q.popleft()
+    for ch,s in goto[r].items():
+        q.append(s); f=fail[r]
+        while f and ch not in goto[f]: f=fail[f]
+        fail[s]=goto[f][ch] if ch in goto[f] and goto[f][ch]!=s else 0
+        out[s]|=out[fail[s]]
+def step(s,ch):
+    while s and ch not in goto[s]: s=fail[s]
+    return goto[s].get(ch,0)
+print('AC states with the pure-M3 windows:',len(goto))
+dur={k:26+6*k for k in range(1,40)}; dur['N']=58
+words={k:vis((k,)) for k in range(1,40)}; words['N']=''.join(str(b) for b in (hS+hL*4+hS*2)[0::2])
+names=set(cuts); dead=lambda s: bool(out[s]&names)
+padj={}; start=[(s,0) for s in cs]; stack=list(start); pseen=set(start)
+while stack:
+    (s,a)=stack.pop()
+    for b,br,k in adj.get(s,[]):
+        a2=a; ok=True
+        for ch in words[k]:
+            a2=step(a2,ch)
+            if dead(a2): ok=False; break
+        if not ok: continue
+        padj.setdefault((s,a),[]).append(((b,a2),br,k))
+        if (b,a2) not in pseen: pseen.add((b,a2)); stack.append((b,a2))
+print('product states',len(pseen),'edges',sum(len(v) for v in padj.values()))
+# acyclicity and longest path by DFS with memo
+sys.setrecursionlimit(1000000)
+memo={}; onp=set(); cyc=[False]
+def best(v):
+    if v in memo: return memo[v]
+    if v in onp: cyc[0]=True; return (0,0,[])
+    onp.add(v); bm=bt=0; bp=[]
+    for w,br,k in padj.get(v,[]):
+        m,t,p=best(w); m+=1; t+=dur[k]
+        if t>bt: bm,bt,bp=m,t,[k]+p
+    onp.discard(v); memo[v]=(bm,bt,bp); return memo[v]
+for v in list(pseen): best(v)
+print('cycle in the product:',cyc[0])
+mv=max(pseen,key=lambda v: memo[v][1]); m,t,p=memo[mv]
+print('longest typed path: macros',m,'ticks',t,'| labels',p,'| start state recurrent:',
+      mv[0] in recset if 'recset' in dir() else 'n/a')
+from collections import Counter
+print('distribution of longest-path ticks over start states (top):',
+      sorted(Counter(memo[(s,0)][1] for s in cs).items())[-8:])
