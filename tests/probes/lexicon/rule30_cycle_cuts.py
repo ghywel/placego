@@ -38,6 +38,14 @@ PREDICTIONS, registered 2026-10-11 09:28 BST before their run (CL305: N's period
   CC7 (blind, 0.5): N repeated (period 29) has an absent factor of length <= 300 in phase 0.
   CC8 (blind, 0.6): each N-with-M3 splice repeated has an absent factor of length <= 300 in phase 0.
   CC9 (blind, 0.4): at least one of the four already contains a certified cut (list, M2C, or MW), before any search.
+
+FAST note (2026-10-11 10:50 BST, before its use): the certified search was too slow for pure M3 under load (certify
+writes a DRAT proof even for present words; about 5 minutes a length-189 window). `fast NAME PHASE LO HI [WORKERS]`
+keeps the method and the cone CNF but decides membership during the search with kissat alone (no proof), three
+rotations at a time, ending a step at its first absent rotation. It starts from bounds already certified in cc.ck
+(pure M3, phase 0: every length-151 factor SAT, so LO = 152; 22 of 22 length-226 factors VERIFIED-UNSAT, so HI = 226).
+Every minimal cut it reports is then certified by cake_lpr, and length n - 1 is checked to have no absent factor.
+  CC10 (blind, 0.5): pure M3's least absent length is <= 189 in phase 0.
 """
 import os
 import re
@@ -105,7 +113,67 @@ def run(name, c, ph):
     return lo, mins
 
 
+def member(args):
+    """Fast membership for the search only: the same cone CNF as rule30_mfw_certify.cnf, kissat without a proof.
+    Returns (r, present). Minimal cuts found this way are certified afterwards by mfc.certify (cake_lpr)."""
+    import subprocess
+    import tempfile
+    w, ph, r = args
+    with tempfile.NamedTemporaryFile('w', suffix='.cnf', dir=mfc.DIR, delete=False) as f:
+        f.write(mfc.cnf(w, ph))
+        name = f.name
+    try:
+        rc = subprocess.run([mfc.KISSAT, '-q', '-n', name], capture_output=True).returncode
+    finally:
+        os.unlink(name)
+    assert rc in (10, 20), rc
+    return r, rc == 10
+
+
+def absent_fast(pool, c, n, ph, tag, stop_early):
+    out = set()
+    for r, present in pool.imap_unordered(member, [(fac(c, r, n), ph, r) for r in range(len(c))]):
+        with open(CK, 'a') as f:
+            f.write('%s %d %d r%d %s fast\n' % (tag, ph, n, r, 'SAT' if present else 'UNSAT'))
+        if not present:
+            out.add(r)
+            if stop_early:
+                pool.terminate()
+                return out
+    return out
+
+
+def fast(name, ph, lo, hi, workers):
+    """FAST mode (registered 2026-10-11 10:50 BST; see the header's FAST note): binary search between certified
+    bounds lo (every factor of length lo - 1 present) and hi (some factor of length hi absent), kissat without proofs,
+    WORKERS rotations at a time, stopping a step at its first absent rotation; then the full absent sets at the least
+    length n and at n - 1, and every minimal cut certified by mfc.certify (cake_lpr)."""
+    from multiprocessing import Pool
+    c = dict(CYCLES)[name]
+    while lo < hi:
+        mid = (lo + hi) // 2
+        with Pool(workers) as pool:
+            got = absent_fast(pool, c, mid, ph, name, True)
+        print('  %s phase %d: length %d %s' % (name, ph, mid, 'has an absent factor' if got else 'all present'), flush=True)
+        if got:
+            hi = mid
+        else:
+            lo = mid + 1
+    with Pool(workers) as pool:
+        a = absent_fast(pool, c, lo, ph, name, False)
+    with Pool(workers) as pool:
+        b = absent_fast(pool, c, lo - 1, ph, name, False)
+    mins = sorted({fac(c, r, lo) for r in a if r not in b and (r + 1) % len(c) not in b})
+    assert not b, 'length %d must have no absent factor' % (lo - 1)
+    cert = {m: absent(m, ph, name + '-mincut') for m in mins}
+    print('%s phase %d: least absent length %d; minimal cuts: %s; cake_lpr VERIFIED: %s' % (
+        name, ph, lo, mins, all(cert.values())), flush=True)
+
+
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == 'fast':
+        fast(sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]), int(sys.argv[6]) if len(sys.argv) > 6 else 3)
+        return
     sel = sys.argv[1:]
     res = {}
     for ph in (0, 1):
