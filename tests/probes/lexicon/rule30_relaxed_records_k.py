@@ -171,6 +171,10 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   CUT-P19 REFUTED (03:07): round 1 ended relaxed UNKNOWN at its 10,800 s cap (one more cut learned, length 47, MFC
          VERIFIED), so the run stopped UNKNOWN after 13,434 s, neither a witness nor UNSAT. Not restarted: CL260 moves lower
          bounds to sampling, and SP's deep A gives R_real(170) >= 17 (2^30 samples a phase).
+  CUT-P22, 139's half HELD (03:29): d = 139 phase 0 UNSAT in round 0 (8,381 s, 24 cuts). (P22 as a whole was refuted at 137.)
+  CUT-P25 (blind, 0.6; registered 03:29 before its run): d = 139, L = 18, phase 1 (40p1 plus the verified cuts) ends UNSAT
+         within 2 rounds at 14,400 s caps, so R_real(139) <= 17; with the plateau law from 133 >= 23 (SP), R_real(139) = 17.
+         Record searched: 'R_real\(139\)' -> no hit.
   d = 132 phase 0 (the 7,200 s rerun): UNSAT at L = 18 (5,078 s, 21 cuts).
   CUT-P20 (blind, 0.5; registered 23:35 before its run): d = 132, L = 18, phase 1 ends UNSAT within 2 rounds at 14,400 s
          caps, so R_real(132) <= 17: an isolated dip between witnesses at 131 and 133.
