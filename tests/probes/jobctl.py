@@ -17,7 +17,8 @@ number), waits until LABEL's root process exits, then resumes exactly the jobs i
 The one hazard is a wall-clock limit. kissat's --time is an alarm() on real time and drat-trim's -t is measured
 with gettimeofday, so a job with such a limit loses its budget while it is paused (kissat -q -n or -f without --time,
 drat-trim -t 400000 and cake_lpr are safe). Register such jobs with --wallclock; pause and focus skip them unless
---force is given, and say so.
+--force is given, and say so. A job whose tree holds a shared lock (cake_lpr's lockf wrapper with a running child) is
+never paused by focus, and pause refuses it without --force: the lock's other users would wait on a stopped holder.
 
 The registry is a JSON file beside the run data (JOBS below), outside git.
 """
@@ -66,6 +67,17 @@ def tree(root, rows):
             out.append(p)
             todo.extend(kids.get(p, []))
     return out
+
+
+def holds_lock(label, reg, rows):
+    """True if the job's tree holds a shared lock: a lockf process with a running child (cake_lpr's wrapper
+    serialises verified checks). Pausing such a job would block every other job waiting on that lock (2026-10-11
+    14:04: a paused cert144 held the cake_lpr lock while the focused job waited for it)."""
+    pids = set(tree(reg[label]['root'], rows))
+    for p in pids:
+        if 'lockf' in rows[p]['cmd'] and any(r['ppid'] == p for r in rows.values()):
+            return True
+    return False
 
 
 def signal_tree(label, sig, reg, rows):
@@ -122,6 +134,8 @@ def main():
         label = a[1]
         if a[0] == 'pause' and reg[label].get('wallclock') and not force:
             sys.exit('%s has a wall-clock limit; pausing it spends its budget (use --force)' % label)
+        if a[0] == 'pause' and holds_lock(label, reg, table()) and not force:
+            sys.exit('%s holds a shared lock (cake_lpr); pausing it would block the lock\'s other users (use --force)' % label)
         pids = signal_tree(label, signal.SIGSTOP if a[0] == 'pause' else signal.SIGCONT, reg, table())
         if a[0] == 'resume':
             reg[label].pop('paused_by', None)
@@ -137,6 +151,9 @@ def main():
                 continue
             if j.get('wallclock') and not force:
                 print('focus %s: leaving %s running (wall-clock limit)' % (label, other))
+                continue
+            if holds_lock(other, reg, rows):
+                print('focus %s: leaving %s running (it holds a shared lock)' % (label, other))
                 continue
             if tree(j['root'], rows):
                 signal_tree(other, signal.SIGSTOP, reg, rows)
