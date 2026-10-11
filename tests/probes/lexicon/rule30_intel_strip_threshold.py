@@ -100,8 +100,7 @@ traces and their least excluding widths: rule30_intel_strip_threshold.txt beside
          more end in 10011000.
 
 SX-P7, registered 2026-10-11 09:30 BST before the extension runs (CL302 (a): push the odd phase beyond W = 15). The
-  engine
-now keeps the real traces in per-thread hash sets instead of a 2^N bitmap (output identical at N = 32 in both
+engine now keeps the real traces in per-thread hash sets instead of a 2^N bitmap (output identical at N = 32 in both
 phases), so N is bounded by time only: N = 38 (2^38 rows), odd phase first, then the standard phase, W = 1..20.
 Disclosed third-party claims (the swarm's door D4, SAT with DRAT-checked UNSATs, unverified by Intel beyond W = 15):
 in the odd phase T^W(2W-1) = T(2W-1) for W <= 18 and T^W(2W) = T(2W) except at W = 12, 15; that is, L(W) >= 2W at
@@ -114,6 +113,28 @@ W = 16, 17, 18.
          among the other phase's threshold extras, as four of the earlier ones do.
   Counterfactual: an L(W) < 2W - 1 refutes Conjecture S in that phase; it would be reported with a strip witness and
   re-checked by SAT on the light cone before any claim.
+
+OUTCOME of SX-P7 (2026-10-11 09:59 BST). Both phases, traces to length 38 (2^38 right halves each; 912 s odd, 746 s
+standard, 16 threads), W = 1..20. Containment PASS at every width and length; the results at W <= 14 (odd) and
+W <= 11 (standard) are identical to the length-32 run. Tables: rule30_intel_strip_threshold.txt; the extra traces
+with least widths, partners and strip witnesses: rule30_intel_strip_extras.txt (CL302 (b)). All COMPUTED.
+  L(W), W = 1..20, odd phase:      2 7 7 11 11 14 14 19 19 23 23 23 29 29 29 33 35 37, and >= 38 at 19, 20.
+  L(W), W = 1..20, standard phase: 3 6 6 10 10 17 20 20 20 26 30 32 34 34 34 34 34, and >= 38 at 18..20.
+  (a) HELD: Conjecture S holds at every width determined (odd W <= 18, standard W <= 17). (b) HELD: the odd slack
+         L(W) - (2W - 1) is 2 at W = 16, 17, 18; zero slack occurs only at W = 12 and 15. (c) HELD: odd L(16) = 33.
+  (d) REFUTED: standard L(12) = 32. (e) REFUTED: all nine new extra traces are minimal absent, but only four have a
+         first-symbol partner (two new pairs: odd 0110001001100010011000100110011001 with standard
+         00110001001100010011000100110011001, odd 100010011010001001101000100110011000 with standard
+         00010011010001001101000100110011000); five have none.
+  The swarm door's claims are reproduced to the widths they name: standard T^W(2W+1) differs from T(2W+1) exactly
+         at W = 3, 5, 17 (W <= 17) and T^W(2W) = T(2W) to W = 17; odd T^W(2W-1) = T(2W-1) to W = 18.
+  Reading. The standard slack rises to 9 at W = 11..13 and then falls along the plateau L = 34 (W = 13..17) to 1 at
+         W = 17, where the extra is 8.83's tight trace of length 35 (w = 18). In the odd phase every extra from W = 16
+         on is tight (w = ceil(l/2) at lengths 34, 36, 36, 38), with L(W) = 2W + 1 at W = 16, 17, 18; the two odd
+         extras above ceil(l/2) (lengths 24 and 30) are the only ones of their kind to length 38 in either phase. So
+         the odd phase has a run of tight cases at every length 34..38 of its thresholds, the material Q3 of
+         KIMI-QUESTIONS-4 asks for. Every extra of length 20 or more ends in 0011000 or 0011001 except the odd one of
+         length 24 (ending 1101000). The run of tight cases is evidence for an infinite tight family, not a proof.
 """
 import os, re, subprocess, sys, time
 import numpy as np
@@ -182,7 +203,7 @@ def report(n):
            '# Engine rule30_intel_strip_trace.c; see rule30_intel_strip_threshold.py. Traces are written y_0 first.']
     LWall = {}
     for phase in (0, 1):
-        log = os.path.join(SCRATCH, f'sx_p{phase}_n{n}_w1-14.log')
+        log = os.path.join(SCRATCH, f'sx_p{phase}_n{n}_w1-{14 if n <= 32 else 20}.log')
         T, LW, X, contain, real, extra = parse(log); LWall[phase] = LW
         out += ['', f'## phase {phase} (wall x_t(0) = (t + {phase}) mod 2), traces to length {n}',
                 '|T(l)|, l = 1..%d: %s' % (n, ' '.join(str(T[l]) for l in range(1, n + 1)))]
@@ -192,7 +213,82 @@ def report(n):
                 wf = least_width(f, phase, w + 1)
                 out.append(f'    extra at l = {l}: {f} ({mn}); w(f) = {wf}, ceil(l/2) = {(l + 1) // 2}'
                            f'{" TIGHT" if wf == (l + 1) // 2 else ""}')
+    import textwrap
+    out = [w for l in out for w in (textwrap.wrap(l, 118, subsequent_indent='    ') if len(l) > 118 else [l])]
     open(OUT, 'w').write('\n'.join(out) + '\n'); print('\n'.join(out))
+
+
+def strip_witness(f, V, phase):
+    """an initial strip row (sites 1..V, site 1 first) and inputs e_0..e_{l-2} with which the width-V strip produces
+    the trace f, by forward subset sets and a backward choice; verified by direct simulation"""
+    n = np.arange(1 << V, dtype=np.int64); mask = (1 << V) - 1; l = len(f); S = []
+    cur = (n & 1) == int(f[0])
+    for t in range(l):
+        S.append(cur)
+        if t == l - 1: break
+        wall = (t + phase) & 1; idx = np.flatnonzero(cur); nxt = np.zeros(1 << V, dtype=bool)
+        for e in (0, 1):
+            nxt[((((idx << 1) | wall) & mask) ^ (idx | ((idx >> 1) | (e << (V - 1))))) & mask] = True
+        cur = nxt & ((n & 1) == int(f[t + 1]))
+        if not cur.any(): return None
+    state = int(np.flatnonzero(S[-1])[0]); inputs = []
+    for t in range(l - 2, -1, -1):
+        wall = (t + phase) & 1; idx = np.flatnonzero(S[t]); found = None
+        for e in (0, 1):
+            img = ((((idx << 1) | wall) & mask) ^ (idx | ((idx >> 1) | (e << (V - 1))))) & mask
+            hit = np.flatnonzero(img == state)
+            if hit.size: found = (int(idx[hit[0]]), e); break
+        state, e = found; inputs.append(e)
+    row, inputs = state, inputs[::-1]
+    x = row; tr = ''
+    for t in range(l):                                   # verification by direct simulation
+        tr += str(x & 1)
+        if t < l - 1:
+            x = ((((x << 1) | ((t + phase) & 1)) & mask) ^ (x | ((x >> 1) | (inputs[t] << (V - 1))))) & mask
+    assert tr == f, (f, tr)
+    return ''.join(str((row >> i) & 1) for i in range(V)), ''.join(map(str, inputs))
+
+
+def extras(n_by_phase):
+    """CL302 (b): the extra traces at L(W) + 1 for both phases, with least excluding widths, the first-symbol map
+    between the phases and a strip witness at width w(f) - 1, written to rule30_intel_strip_extras.txt"""
+    out = ['# SX extras: the traces of T^W(L(W)+1) outside T(L(W)+1), both phases (KIMI-QUESTIONS-4 Q1, CL302 (b)).',
+           '# Intel, 2026-10-11, rule30_intel_strip_threshold.py. Traces are written y_0 first (column 1 at every',
+           '# time t >= 0); the wall is x_t(0) = (t + phase) mod 2. Per threshold: the widths W sharing it, L, the',
+           '# trace, its least excluding width w(f) against ceil(l/2), and "minimal" when the trace without its first',
+           '# two symbols is real. The partner is a threshold extra of the other phase equal to the trace without its',
+           '# first symbol, or one whose own first-symbol drop is the trace. The witness, at width w(f) - 1, is the',
+           '# initial strip (sites 1..w(f)-1, site 1 first) and the inputs e_0 .. e_(l-2) fed at site w(f); every',
+           '# witness is re-simulated to the trace.']
+    found = {}
+    for phase in (0, 1):
+        T, LW, X, contain, real, extra = parse(os.path.join(SCRATCH, f'sx_p{phase}_n{n_by_phase[phase]}_w1-20.log'))
+        found[phase] = (LW, X)
+    allx = {p: {f for w in found[p][1] for (_, f, _) in found[p][1][w]} for p in (0, 1)}
+    for phase in (0, 1):
+        LW, X = found[phase]; groups = {}
+        for w in sorted(X):
+            key = tuple(sorted(f for (_, f, _) in X[w])); groups.setdefault(key, []).append(w)
+        out += ['', f'## phase {phase}, traces to length {n_by_phase[phase]}; thresholds L(W): '
+                + ' '.join(f'{w}:{LW[w]}' for w in sorted(LW))]
+        for key, ws in groups.items():
+            out.append(f'W = {ws[0]}..{ws[-1]}: L = {LW[ws[0]]}')
+            for f in key:
+                l = len(f); wf = least_width(f, phase, ws[-1] + 1, cap=24)
+                mn = [m for (_, g, m) in X[ws[0]] if g == f][0]
+                other = 1 - phase
+                part = [g for g in allx[other] if g == f[1:]] + [g for g in allx[other] if g[1:] == f]
+                wit = strip_witness(f, wf - 1, phase)
+                out += [f'  {f}  (l = {l}) w(f) = {wf}, ceil(l/2) = {(l + 1) // 2}'
+                        f'{" TIGHT" if wf == (l + 1) // 2 else (" ABOVE" if wf > (l + 1) // 2 else "")}, {mn}; '
+                        f'partner in phase {other}: {", ".join(part) if part else "none"}',
+                        f'    witness at width {wf - 1}: strip {wit[0]}, inputs {wit[1]}']
+    import textwrap
+    wrapped = []
+    for l in out:
+        wrapped += textwrap.wrap(l, 118, subsequent_indent='      ', break_long_words=True) if len(l) > 118 else [l]
+    open(os.path.join(HERE, 'rule30_intel_strip_extras.txt'), 'w').write('\n'.join(wrapped) + '\n')
+    print('\n'.join(wrapped))
 
 
 if __name__ == '__main__':
@@ -200,3 +296,4 @@ if __name__ == '__main__':
     if mode == 'build': build()
     elif mode == 'run': run(*[int(a) for a in sys.argv[2:6]])
     elif mode == 'report': report(int(sys.argv[2]) if len(sys.argv) > 2 else 32)
+    elif mode == 'extras': extras({0: int(sys.argv[2]), 1: int(sys.argv[3])})
