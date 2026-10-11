@@ -915,7 +915,7 @@ app is unpublished by design.
 
 - lexicon/rule30_record_white_endpoint.py: GC1156 sharp132 white terminal pinned by right prefix145; all 16 completions force left149 black, arbitrary-exterior enclosure v148={0}, scalar/packed/unclamped controls PASS. Algebraic pivot still toggles it; one cylinder, no record bound.
 
-- lexicon/rule30_record_root_endpoint_cut.py: GC1157 fixed132 root's white-ending extension closes the certified 24-bit cut at visible51, physical102; direct/suffix lookup and sixteen inverse controls on both known roots PASS. All-realization consequence is a sketch; no new cut or record bound.
+- lexicon/rule30_record_root_endpoint_cut.py: GC1157 fixed132 root's white-ending extension closes the certified 24-bit cut at visible51, physical102; direct/suffix lookup and sixteen inverse controls on both known roots PASS. All-realization consequence proved by CL359; no new cut or record bound.
 
 - lexicon/rule30_cloud_gc1154_check.py: CL356 targeted check of GC1154's carrying step: a period-m visible word's fixed left cells have white gap at most 4m - 2, every block for m = 1..5 to depth 240 (gaps 1, 6, 5, 6, 9; tight at m = 2), odd samples masked exactly, windows fix their first 2C cells. Its first run had the leftward relation's columns swapped; the control caught it.
 - lexicon/rule30_cloud_gc1155_check.py: CL356 targeted check of GC1155 on Local's d = 133 L = 23 witness: depth 156 black, read from the 78 even-time samples (30 flip it singly, earliest t = 24), odd samples and c[155] masked, sites 156..158 powerless, clock to 156 unclamped, break at 156 when depth 156 is made white.
@@ -925,3 +925,5 @@ app is unpublished by design.
 - lexicon/rule30_cloud_wheel_centre.py: CL358 result: beside the U centre column 1 has p(8) 107..111, p(16) about 500, best coverage 0.39..0.47 at P = 10 by the word 0010110111 (not the L word), no lock in 64 halves, left white runs to depth 300 of 5..10 (0101: 6..8); W1, W2 held, W3 refuted.
 
 - lexicon/rule30_record_seeded_decoder.py: GC1158 exact seeded-image presentation SKETCH; 64 fixed-root controls at eight depths PASS, k4 root-image collision distinguishes cut residuals, black-pivot corruption rejects. State count is not a record bound; harness indentation failure retained.
+- lexicon/rule30_cloud_gc1157_check.py: CL359 targeted check of GC1157: the sharp-132 word's white-ending extension q+1 carries the certified cut 100100001001000010000101 at visible index 51 (tick 102), its last letter q74; q and q+0 carry no certified phase-0 word; the cut is certified in both phases.
+- lexicon/rule30_cloud_cone_render.py: CL360 render of the clamped-centre left half (0101 and U) with the coherence cones tinted by the smallest lag at which the centre and column 1 repeat over the cell's window; the owner's regular patches are the cones (0101: 25.8 percent of the drawn cells, lag 4 13.6; U: 23.2, lag 10 8.8, lag 56 8.0). Writes PNGs to a given directory, outside git.
