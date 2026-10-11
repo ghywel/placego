@@ -129,8 +129,8 @@ def main():
     print(dict(local_identities=local, nilpotent_patterns=4,
                finite_fixtures=fixtures, rejected_premises=rejected,
                periodic_controls=periodic, even_q_counterexample='PASS',
-               odd_q_bridge='ALL q PROOF-SKETCH',
-               periodic_forced_only_general='REVIEW GAP',
+               odd_q_bridge='ALL q PROVED CL268',
+               periodic_forced_only_general='ARGUMENT OWED CL268',
                prize_bound='OPEN'))
     print(controls)
 
