@@ -48,6 +48,14 @@ scan. All 511 cone controls and the known-wrong M2 extension check
 pass. This defeats a finite charge for N in this 20-cell machine
 and gives a concrete next cut target; actual lifting stays open.
 No wider-strip/product/SAT/membership computation follows.
+P5 BEFORE CL305 follow-up controls: although arbitrary N/F words
+can contain a long F run, words over NF and FN contain at most
+two consecutive F blocks. They therefore avoid all 22 reported
+length-300 pure-M3 cuts: each has at least 12 successive 22 marker
+spacings, whereas these walks have at most two. No membership or
+certificate claim is made by this literal-spelling control.
+P5 HELD: 255 complete walk cones avoid all 22 reported words;
+the pure-F positive control detects those same words.
 """
 import ast
 from pathlib import Path
@@ -104,6 +112,29 @@ def cut_certificate():
           'wrong_M2_extension_rejected_PASS',flush=True)
 
 
+def pure_f_controls():
+    f='100'+'10000'*2+'100'*3
+    n='100'+'10000'*4+'100'*2
+    patterns={(f*15)[i:i+300] for i in range(22)}
+    assert len(patterns)==22
+    for word in patterns:
+        _,gaps=marker_gaps(word)
+        assert len(gaps)>=12 and all(g==22 for g in gaps)
+    count=0
+    for size in range(8):
+        for blocks in product(('NF','FN'),repeat=size):
+            letters=''.join(blocks)
+            word=''.join(n if a=='N' else f for a in letters)+'1'
+            assert 'FFF' not in letters
+            _,gaps=marker_gaps(word)
+            assert all(gaps[i:i+3]!=[22,22,22] for i in range(len(gaps)-2))
+            assert not any(c in word for c in patterns)
+            count+=1
+    assert any(c in f*14+'1' for c in patterns)
+    print('NF_FN_complete_cones',count,'all22_pure_F_300_words_avoided_PASS',
+          'pure_F_positive_control_PASS',flush=True)
+
+
 def main():
     starts,_,_,_,_,_,ends,_,_=n.relation()
     edges={(starts[i],z) for z,o in ends.items()
@@ -137,6 +168,7 @@ def main():
     print('NF_FN_closed_walk_ticks',102,'first_visible_disagreement_physical_tick',first,
           'two_independent_scalar_loops_PASS',flush=True)
     cut_certificate()
+    pure_f_controls()
 
 
 if __name__=='__main__':main()

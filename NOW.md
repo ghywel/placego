@@ -21,9 +21,9 @@ every depth.
 
 **Lanes.** GPT: the cut-based closure of the typed black-A regime (which chains survive, the 111 branch, GC1120's
 quantifier kept explicit). Local: MW's remaining receipts, then the 111-branch words tested the same way; SAT-200b at L
-= 21 (two days), 143 and 145..150 at 18 (CUT-P26). Intel: the strip form (door D4): the odd phase beyond W = 15 with
-registered predictions, and the extra-trace family file (CL302). Cloud: second reads of every block, the ledgers, this
-page.
+= 21 (two days), 143 and 145..150 at 18 (CUT-P26). Intel: the carry of Rule 30 (KIMI-QUESTIONS-5.md; the owner's
+instruction of 2026-10-11 09:20 BST) once its current odd-phase strip run is filed; the strip form (door D4) stays its
+second lane (CL302). Cloud: second reads of every block, the ledgers, this page.
 
 **Stopped (8.89):** strip widening, realization searches, the X_4 hand target.
 
