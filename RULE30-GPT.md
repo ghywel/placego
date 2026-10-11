@@ -29462,3 +29462,29 @@ P1's immediate absorption, P2's old terminal-set inclusion and the adaptive P3/P
 
 
 **GC1131 publication checkpoint, CL312/IN007 received.** Cloud at 921b5f9b independently reproduces GC1130's complete terminal split and unfiltered S-D flow; promoted to PROVED, including the 74-tick scope. GC1131 concerns the different H endpoints before that carrier, so this review does not remove its counter. IN007's two-time AND carry identity and exact hidden-chain column law are received for Intel's owner-assigned lane; no duplicate GPT carry computation or transfer is proposed here.
+
+
+## GC1132 — The S-separated white-A restart has only two recurrent-origin prefixes (2026-10-11)
+
+**PROOF-SKETCH finite origin gate; serves Q10/GC1131.** Missing inference: can GC1131's white-A interruption start inside the width-28 recurrent regime, or is it another transient-only escape? In the existing joint-21 cyclic component, exactly two original states permit A-S-D111-H-low(pair00)-D101-H-whiteA-S-D111:
+
+    P = 111010001110111000011
+    Q = 111010001111111101000
+
+P is GC1128's already excluded origin; Q is the old M2 self-packet with its evolving 21st bit white. The complete relation retains 64 white-A endpoints at tick 46 and 65 high111 endpoints at tick 62, with 130 productive origin/end pairs. Both origin sets are exactly {P,Q}; the identified unexpected check finds no origin that reaches white A but dies before high111. Every one of the 32 independently scalar-propagated original origins agrees with the labelled packed flow; all white-A endpoints project into GC1131's 44 packets. Its proved unfiltered S-D control therefore supplies the forced continuation premise. A full scalar-replayed Q path has these 21-cell prefixes:
+
+    t=0  : 111010001111111101000
+    t=26 : 111001001000110111100
+    t=46 : 111010001101101101110
+    t=52 : 111001001001100000000
+    t=62 : 111001111111010000000
+
+**Consequence for the mixed component.** GC1128's reviewed projection lemma puts every width-28 recurrent origin inside this joint-21 component. Neither P nor Q appears among CL310's published 11 distinct 21-prefixes of the 97-state mixed component. Consequently this S-separated restart cannot depart from that component. P is also absent from the 10-state pure-M2 component. Whether Q extends a state there was not reported: do not infer that the whole restart is transient. Cloud: check Q against the retained 10-state component, and review the origin gate; no graph reconstruction requested.
+
+**Visible target.** Every represented path has the same completed 32-bit visible word
+
+    100(10000)^4 100 10000 1 = 10010000100001000010000100100001.
+
+Local: compare this word with the existing exact visible language through 40 in both phases; this is an existing-list lookup, not a new solver job. Absence would cut the whole branch, whereas presence would leave its later return context open. A complete witness checks the spelling independently against its even-time column-1 samples.
+
+P1's no-recurrent-origin and P2's only-old-P predictions are refuted; the two-prefix certificate and scalar controls pass. Source: tests/probes/lexicon/rule30_white_A_recurrent_origin.py. Record searched: white-A/GC1131/S-separated with recurrent/origin-gate/interruption -> 9 hits in 5 files; follow-up Q prefix with width28/component -> 3 hits in 2 files, naming its old M2 role but no retained width-28 membership receipt. No solver, membership, product, width refinement, record or deeper ancestry run. No actual lift or prize bound. IN008/CL313/314 received for Intel's separate lane; GPT stays on this entrance gate. Next use the Q receipt and visible-word verdict to isolate the remaining branch without repeating the 97-state exclusion.
