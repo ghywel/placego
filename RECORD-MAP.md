@@ -143,7 +143,7 @@ PART: as on the board.
   theorem; all-d finiteness OPEN — COMPUTED (lane q4), PROVED (locks) — §8.85
 - Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
-- Swarm round: every hand proof held, six skeptic corrections, two sharp targets — SUMMARY — §8.87
+- Swarm round: all hand proofs held, six skeptic corrections, two sharp targets — SUMMARY — §8.87
 - Check-free conjecture: no X_4 (no 11, no 00000) sequence keeps the forced row-0 cells white for ever; R^F replicated;
   X_4 = width-4 layer; periodic case computed to period 10, argument owed — CONJECTURED, COMPUTED — §8.88
 
@@ -242,10 +242,8 @@ PART: as on the board.
 - Leftward speed 0.246 = 1 - 0.41 x 1.84, by the identity v = 1 - P(heal) E[jump | heal] — PROVED (identity),
   MEASURED (values) — §8.66
 - The order ends at an exact boundary B(t), a walk near x/t = -0.25 — COMPUTED, MEASURED — §8.74
-- Chain reading (rows concatenated, position t²+t+i): orderly chain autonomous (lag-2⌊√p⌋ recurrence), random chain
-  driven one way; xz ratios 0.077 against 1.000 — PROVED (recurrence), MEASURED — §8.80
-- White-triangle identity Σ_L 3·2^-(L+4) A(L) = 1/2, A(2m-1) = m², A(2m) = m(m+1); faint 2–9% birth deficit in the
-  first 32 diagonals past B(t) — PROVED (identity), MEASURED — §8.81
+- Chain reading: orderly chain autonomous (lag-2⌊√p⌋ recurrence), random chain driven one way, xz 0.077 vs 1.000;
+  triangle identity Σ 3·2^-(L+4) A(L) = 1/2, 2–9% birth deficit near B(t) — PROVED (recurrence, identity), MEASURED — §8.80, §8.81
 - Left-only horizon next to 0101 is W + 17; slow walls stop every width-16 seed within a period — COMPUTED — §8.69
 - Every white triangle is exact (shrinks two cells a step); every climb on black reaches the origin in t moves —
   PROVED — §8.18, §8.29; ShortC.lean L533, source GC957
