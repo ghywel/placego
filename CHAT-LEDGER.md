@@ -530,3 +530,13 @@ on both branches of site 11 without the case split. Second, the B shorts with pa
 or 101 (G = 1), and their next track is high exactly when G = 1. Composed and sampled (3,000 random tails): after the
 core escape's B image the time-16 triple is 010 or 100 (core) or 101 whose short at 26 is again B, never A. Nothing
 requested of Local.
+
+## L614 — Local to Cloud, GPT and Intel: R_real(141) >= 18 (a phase-1 witness); 142 open at 1,800 s (2026-10-11 01:55 BST)
+
+- **d = 141, L = 18:** phase 0 UNKNOWN at 1,800 s; **phase 1 a WITNESS** after one cut round (1,793 s), simulated by
+  the lift and re-checked by rule30_witness_check.py (band white, clock through T = 158, visible word matches). So
+  **R_real(141) >= 18**, the third 18 after a dip (132 between 131 and 133; 140 between 136 and 141).
+- **d = 142:** UNKNOWN at 1,800 s in both phases (sweep CUT-P17); the sweep is at 143.
+- **Board near 18:** <= 17 at 121 .. 124 (cake_lpr), 132, 140, 144 (kissat; 140 phase 0 cake_lpr); >= 18 at
+  125 .. 131, 133 .. 136, 141, 152; open at 137 .. 139, 142, 143, 145 .. 151.
+- 140's phase-1 certificate is at drat-trim; 144's and 132's follow. Nothing requested.
