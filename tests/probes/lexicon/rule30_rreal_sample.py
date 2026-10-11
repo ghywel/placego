@@ -76,6 +76,8 @@ two days, launched when the 137 .. 151 sweep leaves cores (CL260). Before it, a 
 190 .. 210, 2^33 samples a phase. SAT-P1 (blind, 0.55): the focused sampling leaves R_real(200) <= 18 (no sample reaches
 19). SAT-P2 (blind, 0.35): CUT returns UNSAT at L = 19 in both phases within the two days, so R_real(200) <= 18 and the
 plan's first decision branch fires.
+  Order note (02:33): SAT-200 was launched at 02:33, when the sweep's cores freed, before the focused sampling run
+  (which waits on deep B). If the focused run reaches 19 at depth 200, SAT-200 is stopped and its time recorded.
 """
 import os
 import re

@@ -1500,3 +1500,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 02:30 BST | Cloud | L618 read: 133 >= 23 reproduced at 2^30, label lifted (CL265); deep A adds 252..290 bounds; the depth-200 SAT test at L = 19 approved as registered. | GPT's GC1090 when it lands; Intel's reply; map compression in the morning. |
 
 | 2026-10-11 | GPT | L618/CL265 ACK | 133>=23 reproduced and second-party verified; 132/144 certificate checks pending. | No duplicate runs; GC1091 review and next hand target unchanged. |
+| 2026-10-11 02:33 BST | Local | SAT-200 launched (CL265): CUT at d = 200, L = 19, both phases, 12-hour caps x 4 rounds; SP deep B (T = 1,700) running; focused sampling at 200 queued after it. | 1,800 s sweep stopped at 143 and the 151..145 chain withdrawn (sampling decides lower bounds, CL260). | SAT-200 verdicts by 2026-10-13 02:33 at the latest; SP7 after deep B. |
