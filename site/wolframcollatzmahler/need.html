@@ -37,7 +37,7 @@ when column 1 is periodic over the relevant window, and GC1148 and GC1151 prove 
 can run in, with gaps 5 and 6. At depths 132 and 139 the exact mechanism that ends the record is known: the white
 extension would force a certified forbidden word of length 24 into column 1, or is read off the masked samples. <b>What
 you would need:</b> combinatorics on words, automata, and the certified forbidden-word lists in the trove.</p>
-<p class="source"><b>Sources.</b> PERIOD-TWO.md section 2 and row Q6; CHAT-LEDGER.md CL355, GC1148, GC1151, GC1153, GC1155 to
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 2 and row Q6; <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL355, GC1148, GC1151, GC1153, GC1155 to
 GC1157, CL356, CL359; L643 (the census).</p>
 
 <h2 data-glyph="wheel">2. Conjecture LR for the kicked wheel <span class="status">Open</span></h2>
@@ -48,7 +48,7 @@ half eventually white. Proved when column 1 is eventually periodic (Jen) and whe
 8.57), and for near-squares, block codes of Sturmian words and resets that come further apart than geometrically
 (Corollary F, Theorems E″, A⁗). Open for the real column, whose kicks occur at four classes with short size ranges
 (Proposition 13).</p></div>
-<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.13, 8.54, 8.57; PERIOD-TWO.md row Q7; PROOFS.md entry 26.</p>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.13, 8.54, 8.57; <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> row Q7; <a href="https://github.com/ghywel/placego/blob/main/PROOFS.md">PROOFS.md</a> entry 26.</p>
 
 <h2 data-glyph="coin">3. The counting form <span class="status">Open</span></h2>
 <div class="level"><p class="kicker">Plain words</p><p>Count the starting patterns of a given width whose centre stays
@@ -56,26 +56,26 @@ alternating for T steps, and show the count shrinks by a fixed fraction with eve
 <div class="level open"><p class="kicker">Exactly</p><p>Let N(w, T) be the number of configurations on w cells whose centre
 reads 0101… for T steps. Prove N(w, T) ≤ 2^(w − αT + c) for some α > 0. Measured: α close to 1 at w = 24. Proved: the
 part paid by the seed's left part (section 8.51). Open: the right part. The same statement for Collatz, with the free
-bits in place of the left part, is in COLLATZ-PRIZE.md section 1.</p></div>
-<p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.51; PERIOD-TWO.md section 2, question 1; COLLATZ-PRIZE.md section 1.</p>
+bits in place of the left part, is in <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a> section 1.</p></div>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> section 8.51; <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 2, question 1; <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a> section 1.</p>
 
 <h2 data-glyph="map">4. Read our proofs</h2>
 <p>306 statements have a written proof and a second reader inside the project. None has been reviewed outside it. The
-ones that carry weight are Theorems A, B, E and the channel bound (RULE30-PRIZE.md sections 8.54, 8.57, 8.20 and 8.33).
+ones that carry weight are Theorems A, B, E and the channel bound (<a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.54, 8.57, 8.20 and 8.33).
 If you find an error, we want to know; if you confirm one, say so and we will record it with your name or handle.</p>
 
 <h2 data-glyph="trove">5. Go deeper with a machine</h2>
 <p>The record census is exact to depth 120 and at three depths beyond, by SAT with machine-checked certificates. Deeper
 exact values, and the exact value at depth 125 to 138 where only lower bounds of 18 are known, would tell the lemma
 hunters what the mechanism looks like at scale. The certified forbidden-word lists stop at 44 (48 in one phase, in
-progress). The code is in the repository under tests/probes; the formats are in the trove.</p>
+progress). The code is in the repository under <a href="https://github.com/ghywel/placego/tree/main/tests/probes">tests/probes</a>; the formats are in the trove.</p>
 
 <h2 data-glyph="join">6. Formalise</h2>
 <p>Theorems A, B and E and the solid-row proposition are short and elementary. A Lean formalisation of any of them
 would make the first outside-checked piece of this record.</p>
 
 <h2 data-glyph="ring">7. Tell us what we missed</h2>
-<p>PRIOR-ART.md lists what we found: Jen, Condrey, Kopra, Kari and Kopra, Flatto, Lagarias and Pollington, Terras,
+<p><a href="https://github.com/ghywel/placego/blob/main/PRIOR-ART.md">PRIOR-ART.md</a> lists what we found: Jen, Condrey, Kopra, Kari and Kopra, Flatto, Lagarias and Pollington, Terras,
 Lagarias, Dubickas, Tao, Yolcu, Aaronson and Heule, and more. Two of our "new" results turned out to be known
 (the window principle's complexity bound is Dubickas 2009). If a paper settles or sharpens anything above, send it.</p>
 
@@ -87,10 +87,11 @@ program; a refutation waits for the author's reply before the record changes.</l
 (SAT, DRAT) is adopted on sight once replayed.</li>
 <li>Failures are kept. A closed route is recorded with the reason it closes.</li>
 </ul>
-<p class="source"><b>Sources.</b> WORKFLOW-SAVED-MEMORY.md (the two-tier review rule, predictions first, failures retained) and
-WORKING-TOGETHER.md.</p>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/WORKFLOW-SAVED-MEMORY.md">WORKFLOW-SAVED-MEMORY.md</a> (the two-tier review rule, predictions first, failures retained) and
+<a href="https://github.com/ghywel/placego/blob/main/WORKING-TOGETHER.md">WORKING-TOGETHER.md</a>.</p>
 </main>
 <canvas class="ribbon" aria-hidden="true"></canvas>
 <footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
 </body>
 </html>

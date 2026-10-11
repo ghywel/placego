@@ -37,7 +37,7 @@ x(0, t+1) XOR (x(0, t) OR c(t)) equals 1 whenever x(0, t) = 1, only the samples 
 <b>visible word</b> is c at the white ticks, in time order, and the left half-plane depends on nothing else.</p>
 <p><b>Real traces.</b> A trace is real if some configuration beside the wall produces it. The set of real visible words is
 a factorial language L (one per phase). Its minimal forbidden words are the <b>cuts</b>.</p>
-<p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.13 and 8.54 (left permutivity and the forced left half); CHAT-LEDGER.md CL356
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> section 8.13 and 8.54 (left permutivity and the forced left half); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL356
 (the masking identity, checked); L640 and L641 (the language and its cuts).</p>
 
 <h2 data-glyph="wheel">What is proved beside an alternating wall</h2>
@@ -62,8 +62,8 @@ geometrically, and Thue–Morse and paperfolding for every left edge up to 15,86
 <li><b>No finite configuration reaches a solid row.</b> The only preimages of the all-white row are all-white and
 all-black; the only preimages of all-black are the three phases of (100)<sup>∞</sup>. Neither is finite.</li>
 </ul>
-<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.13, 8.54, 8.57, 8.58, 8.20 and 8.33; PROOFS.md; proofs directory entries 05
-to 12; CHAT-LEDGER.md CL356 (the Theorem B corollary) and CL363 (solid rows). Proved means a written proof with a second
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.13, 8.54, 8.57, 8.58, 8.20 and 8.33; <a href="https://github.com/ghywel/placego/blob/main/PROOFS.md">PROOFS.md</a>; proofs directory entries 05
+to 12; <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL356 (the Theorem B corollary) and CL363 (solid rows). Proved means a written proof with a second
 reader inside the project and no outside review.</p>
 
 <h2 data-glyph="coin">What is measured</h2>
@@ -85,8 +85,8 @@ cake_lpr-checked certificate; phase 0 extended to 48 with 482 words (in certific
 <li><b>The counting form.</b> N(w, T), the number of configurations on w cells whose centre reads 0101… for T steps,
 falls like 2<sup>w − αT</sup> with α measured near 1 at w = 24. The part paid by the seed's left part is proved exactly.</li>
 </ul>
-<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.4, 8.13 (the wheel), 8.56, 8.21 (searches), 8.51 (counting); PROOFS.md entry 26
-(Proposition 13); CHAT-LEDGER.md CL351 (rings), L643 and L645 (records and cuts), CL357 (other columns); the trove.</p>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.4, 8.13 (the wheel), 8.56, 8.21 (searches), 8.51 (counting); <a href="https://github.com/ghywel/placego/blob/main/PROOFS.md">PROOFS.md</a> entry 26
+(Proposition 13); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL351 (rings), L643 and L645 (records and cuts), CL357 (other columns); the trove.</p>
 
 <h2 data-glyph="cones">The route we hold: finite support</h2>
 <div class="level"><p class="kicker">The hypothesis and the target</p>
@@ -115,7 +115,7 @@ white-start phase under the no-11 gate. The state space grows with k, so none of
 such pattern long enough contains a cut. Equivalently: the set of real visible words whose depth-d image is white on
 [d, d+L) is empty for some L = L(d), at every d. Theorem B is this lemma for periodic samples; the two endpoint
 explanations are what the pattern looks like in two real cases; the general argument is open.</p></div>
-<p class="source"><b>Sources.</b> PERIOD-TWO.md section 2 and row Q6; CHAT-LEDGER.md CL355 (the route), GC1148, GC1151 (rings), GC1153
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 2 and row Q6; <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL355 (the route), GC1148, GC1151 (rings), GC1153
 (mixed prefix), GC1154 and CL356 (Theorem B's corollary), GC1155 to GC1157 with CL356 and CL359 (endpoints), GC1158 and
 CL361 (decoder), GC1159 and CL364 (quotient).</p>
 
@@ -124,12 +124,12 @@ CL361 (decoder), GC1159 and CL364 (quotient).</p>
 <li><b>Conjecture LR.</b> No column 1 beside the alternating wall makes the left half eventually white. Proved for
 eventually periodic and for Sturmian column 1; open for the kicked wheel.</li>
 <li><b>The counting form.</b> N(w, T) ≤ 2<sup>w − αT + c</sup> for some α > 0. The left part's cost is proved; the right part's
-is open. Its Collatz twin, with the free bits in place of the left part, is COLLATZ-PRIZE.md section 1.</li>
+is open. Its Collatz twin, with the free bits in place of the left part, is <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a> section 1.</li>
 <li><b>The one sentence.</b> Keeping the wall's conditions costs real information. The delivery side is the channel
 bound; the cost side is proved only beside a constant wall (Condrey), and beside 0101… it is a coin model, measured and
 not proved.</li>
 </ul>
-<p class="source"><b>Sources.</b> PERIOD-TWO.md sections 2, 5 and 6 (rows Q1, Q6, Q7); RULE30-PRIZE.md sections 8.45, 8.47, 8.51.</p>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> sections 2, 5 and 6 (rows Q1, Q6, Q7); <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.45, 8.47, 8.51.</p>
 
 <h2 data-glyph="ring">Where the problem sits</h2>
 <p>It has the structure of Mahler's 3/2 problem and of Collatz for a single orbit: a free side (the left half at the wall,
@@ -139,7 +139,7 @@ Jen's and Condrey's argument, and it stops where the constrained side has positi
 configurations (entropy, ergodic, Fourier) bounds a set and says nothing about the single configuration the prize is
 about. A proof must use what is special about the alternating wall; the one such structure found is the wheel.
 <a href="trio-technical.html">The three problems side by side, technically.</a></p>
-<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.45 and 8.47; PERIOD-TWO.md section 5.</p>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.45 and 8.47; <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 5.</p>
 </main>
 <canvas class="ribbon" aria-hidden="true"></canvas>
 <footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
