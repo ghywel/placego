@@ -4,6 +4,16 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Where we stand</title>
 <meta name="description" content="Honest state of the Rule 30 prize work: no proof; what is proved, what is measured, which routes are closed, and the one missing statement.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wolfram · Collatz · Mahler">
+<meta property="og:title" content="Where we stand">
+<meta property="og:description" content="Honest state of the Rule 30 prize work: no proof; what is proved, what is measured, which routes are closed, and the one missing statement.">
+<meta property="og:url" content="https://www.wolframcollatzmahler.com/stand.html">
+<meta property="og:image" content="https://www.wolframcollatzmahler.com/share/stand.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wolfram, Collatz, Mahler: No proof. A map of the problem, and one missing sentence, beside a Rule 30 pyramid grown from one black cell">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -11,12 +21,13 @@
 <link rel="canonical" href="https://www.wolframcollatzmahler.com/stand.html">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
-  <nav><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+  <nav aria-label="Site"><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
 <canvas class="ribbon" aria-hidden="true"></canvas>
-<main>
+<main id="main" tabindex="-1">
 <p class="kicker">Where we stand</p>
 <h1>No proof. A map of the problem, and one missing sentence.</h1>
 <p class="lede">This page says what is proved, what is measured, what is closed, and what is missing, with the same words
@@ -29,7 +40,7 @@ with its code and data in the trove. <span class="status">Open</span> means open
 finite start (Condrey, 2026). Period two, a centre that alternates, is the first open case, and the work treats it for
 every finite starting pattern, which is more than the prize asks. A finite pattern with an alternating centre, kept for
 ever, is the thing we are trying to show cannot exist.</p>
-<figure><canvas id="clamp" aria-label="A clamped alternating centre with the right half running free and the left half forced"></canvas>
+<figure><canvas role="img" id="clamp" aria-label="A clamped alternating centre with the right half running free and the left half forced"></canvas>
 <figcaption>Suppose the centre (tinted) alternates for ever. Then the column next to it (blue) is forced to behave in a
 very particular way, and everything to the left is determined by those two columns. A counterexample would have to make
 the left side empty beyond some point. The picture is read down the page; the right half is a random start.</figcaption></figure>

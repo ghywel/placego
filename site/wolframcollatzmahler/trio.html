@@ -4,6 +4,16 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rule 30, Collatz, Mahler</title>
 <meta name="description" content="Rule 30's alternating centre, the Collatz conjecture and Mahler's 3/2 problem have one shape: a free side and a constrained side that must agree for ever.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wolfram · Collatz · Mahler">
+<meta property="og:title" content="Rule 30, Collatz, Mahler">
+<meta property="og:description" content="Rule 30&#x27;s alternating centre, the Collatz conjecture and Mahler&#x27;s 3/2 problem have one shape: a free side and a constrained side that must agree for ever.">
+<meta property="og:url" content="https://www.wolframcollatzmahler.com/trio.html">
+<meta property="og:image" content="https://www.wolframcollatzmahler.com/share/trio.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wolfram, Collatz, Mahler: A free side and a constrained side that must agree for ever, beside a Rule 30 pyramid grown from one black cell">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -11,12 +21,13 @@
 <link rel="canonical" href="https://www.wolframcollatzmahler.com/trio.html">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
-  <nav><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html" aria-current="page">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+  <nav aria-label="Site"><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html" aria-current="page">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
 <canvas class="ribbon" aria-hidden="true"></canvas>
-<main>
+<main id="main" tabindex="-1">
 <p class="kicker">The same problem, three times</p>
 <h1>A free side and a constrained side that must agree for ever</h1>
 <p class="lede">Three famous open questions turn out to have one skeleton. In each, something chaotic runs freely, something
@@ -41,17 +52,17 @@ The constrained side is the fractional parts, which must keep to half the circle
 years.</p></div>
 
 <h2 data-glyph="strip">Side by side</h2>
-<figure><canvas id="s1" aria-label="Rule 30: the column beside an alternating centre, as a strip"></canvas>
+<figure><canvas role="img" id="s1" aria-label="Rule 30: the column beside an alternating centre, as a strip"></canvas>
 <figcaption>Rule 30: the column beside an alternating centre, 120 steps, black for 1. Between kicks it is a rotation.</figcaption></figure>
-<figure><canvas id="s2" aria-label="Collatz: the parity sequence of 27"></canvas>
+<figure><canvas role="img" id="s2" aria-label="Collatz: the parity sequence of 27"></canvas>
 <figcaption>Collatz: the parity sequence of 27, black for an odd step, 120 steps.</figcaption></figure>
-<figure><canvas id="s3" aria-label="Mahler: fractional parts of a number times powers of three halves"></canvas>
+<figure><canvas role="img" id="s3" aria-label="Mahler: fractional parts of a number times powers of three halves"></canvas>
 <figcaption>Mahler: whether the fractional part of ξ(3/2)ⁿ is above one half, black for yes, ξ = 0.37, 120 terms
 (an illustration in floating point; a Z-number would show all white).</figcaption></figure>
 
 <h2 data-glyph="map">The shared skeleton</h2>
 <table>
-<tr><th></th><th>Rule 30, period two</th><th>Collatz</th><th>Mahler's 3/2</th></tr>
+<tr><th scope="col"></th><th scope="col">Rule 30, period two</th><th scope="col">Collatz</th><th scope="col">Mahler's 3/2</th></tr>
 <tr><td>The free side</td><td>the left half at the wall: every itinerary occurs once (a full shift)</td>
 <td>the first w−1 parities are a bijection with the number mod 2^(w−1) (Terras)</td>
 <td>the integer parts: every itinerary occurs once, by residues mod q^k</td></tr>

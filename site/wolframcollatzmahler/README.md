@@ -22,6 +22,7 @@ domain on 2026-10-11: www.wolframcollatzmahler.com, served from the root of that
 | `cones.html`, `wheelcentre.html`, `record.html`, `ring.html` | Live pictures with inputs, linked from the pages they illustrate (`record.html` embeds `data/records.json`, written by `data/build_data.py`). |
 | `style.css`, `r30.js` | The shared style and the small Rule 30 drawing engine (no dependencies). |
 | `build_manifest.py` | Generates `data/manifest.json` from a curated list and embeds it in `trove.html`; run it after a data file changes. |
+| `share/`, `build_share.py` | One share image per page (1200 x 630, flat colours, about 50 KB each) and the Open Graph and Twitter card tags in every page's head that point at it, so that a link to any page unfurls with its headline beside the Rule 30 pyramid. `python3 build_share.py` re-renders them with a headless Chromium (`CHROME=...` or `--chrome`); `--tags-only` refreshes the tags without a browser. The real faces need `--fonts DIR` with a `local.css` of `@font-face` rules and the latin woff2 files of Source Serif 4 and Inter beside it (download them from Google Fonts; nothing in that directory is committed); without it the renderer falls back to the system serif and sans. Re-run after a page's title, headline or description changes. |
 | `data/build_data.py`, `data/replay.py` | Build the clean exports (records, forbidden words, rings) and embed the records in `record.html`; replay every record row in seconds. |
 | `rule30/` | The Wolfram Rule 30 page, the worked problem: the nine HTML files of `site/wolframrule30/` copied verbatim (the owner, 2026-10-11: "perfect as it is"); served at `/rule30/`. Keep the nine files together; they load one another by relative path. |
 | `content/` | Markdown written by the other workers (GPT: `problems.md`, `trio-technical.md`), rendered into pages by Cloud. |
@@ -33,6 +34,11 @@ Prior art is credited by name. Static files only: no build step, no analytics, n
 Fonts only (KaTeX is vendored). Nothing private. Data entries carry a schema, a source, a size, a SHA-256 and, where one exists, a replay
 command. Three reading levels on every main page: plain words, the picture, the exact statement with its source.
 Every drawing animates only while on screen and stands still under `prefers-reduced-motion`.
+Keyboard and screen readers: a skip link to the content on every page (including the worked page), a labelled site
+navigation landmark, a visible focus ring on every link, card and control, every labelled drawing marked as an image,
+scoped table headers, and the text-sized uses of the working colours (links, kickers, labels, status pills) darkened to
+at least 4.5:1 against the paper in both light and dark modes (`--link`, `--teal-text`, `--green-text`, `--gold-text`
+in `style.css`); the large and decorative uses keep the full colours.
 
 ## Deploying
 

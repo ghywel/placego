@@ -4,6 +4,16 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>A periodic centre makes its own chaos</title>
 <meta name="description" content="Hold any repeating word down the centre and watch the column beside it refuse to repeat, whatever the right half.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wolfram · Collatz · Mahler">
+<meta property="og:title" content="A periodic centre makes its own chaos">
+<meta property="og:description" content="Hold any repeating word down the centre and watch the column beside it refuse to repeat, whatever the right half.">
+<meta property="og:url" content="https://www.wolframcollatzmahler.com/wheelcentre.html">
+<meta property="og:image" content="https://www.wolframcollatzmahler.com/share/wheelcentre.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wolfram, Collatz, Mahler: A periodic centre makes its own chaos, beside a Rule 30 pyramid grown from one black cell">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -11,12 +21,13 @@
 <link rel="canonical" href="https://www.wolframcollatzmahler.com/wheelcentre.html">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
-  <nav><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+  <nav aria-label="Site"><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
 <canvas class="ribbon" aria-hidden="true"></canvas>
-<main>
+<main id="main" tabindex="-1">
 <p class="kicker">Live picture</p>
 <h1>A periodic centre makes its own chaos</h1>
 <p class="lede">Put any repeating word down the centre column and run the rule on an all-white right half. The centre seeds
@@ -25,7 +36,7 @@ centre is never periodic. The left half copies it. Try the alternating word, the
 <div class="tools"><label>Centre word <select id="w"><option value="01">0101… (the prize column)</option><option value="00010011010001001101000100110100010011010001001101001101">U, the unkicked wheel (period 56)</option><option value="0">all white</option><option value="1">all black</option><option value="001">001001…</option><option value="custom">custom…</option></select></label>
 <input id="custom" type="text" placeholder="e.g. 0110" size="12" aria-label="custom word" style="display:none">
 <label>Right half <select id="r"><option value="white">all white</option><option value="rand">random 12 cells</option></select></label><button id="go">Run</button><span class="pill" id="st"></span></div>
-<figure><canvas id="c" aria-label="The clamped centre with the forced left half and the right half"></canvas>
+<figure><canvas role="img" id="c" aria-label="The clamped centre with the forced left half and the right half"></canvas>
 <figcaption>Time downward. The centre word in ember, the column beside it in blue; left of that, the half-plane the two
 force; right of it, the pattern the centre seeds.</figcaption></figure>
 <h2 data-glyph="wheel">What this shows</h2>

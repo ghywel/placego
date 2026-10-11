@@ -4,6 +4,16 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The carry of Rule 30</title>
 <meta name="description" content="Rule 30 is the Sierpinski rule plus a carry: the correction is the AND of the right neighbour at two consecutive times, and under the coin measure the column carry is solved exactly, with a Fibonacci entropy rate.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wolfram · Collatz · Mahler">
+<meta property="og:title" content="The carry of Rule 30">
+<meta property="og:description" content="Rule 30 is the Sierpinski rule plus a carry: the correction is the AND of the right neighbour at two consecutive times, and under the coin measure the column carry is solved exactly, with a Fibonacci entropy rate.">
+<meta property="og:url" content="https://www.wolframcollatzmahler.com/carry.html">
+<meta property="og:image" content="https://www.wolframcollatzmahler.com/share/carry.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wolfram, Collatz, Mahler: The carry of Rule 30, beside a Rule 30 pyramid grown from one black cell">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -11,12 +21,13 @@
 <link rel="canonical" href="https://www.wolframcollatzmahler.com/carry.html">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
-  <nav><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+  <nav aria-label="Site"><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
 <canvas class="ribbon" aria-hidden="true"></canvas>
-<main>
+<main id="main" tabindex="-1">
 <p class="kicker">Live picture</p>
 <h1>The carry of Rule 30</h1>
 <p class="lede">Rule 30 is the Sierpinski rule plus a carry. Take the rule that makes the Sierpinski triangle, new = left XOR
@@ -26,10 +37,10 @@ correction is the whole of Rule 30's randomness, and it behaves like the carry i
 <h2 data-glyph="pyramid">Seen</h2>
 <div class="tools"><label>Rows <select id="T"><option>64</option><option selected>128</option><option>256</option></select></label>
 <label><input type="checkbox" id="showc" checked> mark the carries</label><span class="pill" id="st"></span></div>
-<figure><canvas id="a" aria-label="The Sierpinski rule, Rule 60, from one black cell"></canvas>
+<figure><canvas role="img" id="a" aria-label="The Sierpinski rule, Rule 60, from one black cell"></canvas>
 <figcaption>Left XOR centre alone, from one black cell: the Sierpinski triangle, Rule 60. It grows to the right only; it is the
 carry that lets Rule 30 grow to the left as well.</figcaption></figure>
-<figure><canvas id="b" aria-label="Rule 30 from one black cell with its carries marked"></canvas>
+<figure><canvas role="img" id="b" aria-label="Rule 30 from one black cell with its carries marked"></canvas>
 <figcaption>The same start under Rule 30. Black cells as usual; the cells where the carry fired, where the right
 neighbour was black at two consecutive times, are marked in ember. Remove every ember cell's flip and you are back to the
 triangle above.</figcaption></figure>
@@ -68,7 +79,7 @@ addition); <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md
 <p>The exact laws above are for fair coins. Press the button and your browser fills a ring with fair coins, runs Rule 30,
 reads the carry into every column, and compares what it sees with the formulas.</p>
 <div class="tools"><button id="run">Run the check</button><span class="pill" id="prog"></span></div>
-<table id="res"><tr><th>Quantity</th><th>Exact</th><th>Measured</th></tr></table>
+<table id="res"><tr><th scope="col">Quantity</th><th scope="col">Exact</th><th scope="col">Measured</th></tr></table>
 <p class="note">Ring of 4,096 cells, 1,500 steps, every column read: about six million carries. The measured values should
 sit within a few thousandths of the exact ones; they will not match to more decimals than that, because the sample is
 finite.</p>
@@ -113,7 +124,7 @@ document.getElementById("run").onclick=function(){const N=4096,T=1500;let x=new 
     const p=ones/n,v=p*(1-p);const corr=s=>((s/n-p*p)/v).toFixed(4);const F=[0,1,1,2,3,5,8,13,21,34,55];
     const rows=[["carry rate","1/4 = 0.2500",p.toFixed(4)],["correlation at lag 1","1/3 = 0.3333",corr(s11)],["correlation at lag 2","0",corr(s12)],["correlation at lag 3","0",corr(s13)]];
     for(let m=1;m<=6;m++)rows.push(["carry, given "+m+" carry-free steps before",F[m+1]+"/"+(2*F[m+3])+" = "+(F[m+1]/(2*F[m+3])).toFixed(4),(gap[m][0]/gap[m][1]).toFixed(4)]);
-    const tb=document.getElementById("res");tb.innerHTML="<tr><th>Quantity</th><th>Exact</th><th>Measured</th></tr>"+rows.map(r=>"<tr><td>"+r[0]+"</td><td>"+r[1]+"</td><td>"+r[2]+"</td></tr>").join("");
+    const tb=document.getElementById("res");tb.innerHTML="<tr><th scope=\"col\">Quantity</th><th scope=\"col\">Exact</th><th scope=\"col\">Measured</th></tr>"+rows.map(r=>"<tr><td>"+r[0]+"</td><td>"+r[1]+"</td><td>"+r[2]+"</td></tr>").join("");
     document.getElementById("prog").textContent="done: "+n.toLocaleString()+" carries read";btn.disabled=false;}
   chunk();};
 })();</script>
