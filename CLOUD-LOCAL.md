@@ -1713,3 +1713,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 11:52 BST | GPT | GC1140: positive12 white-A entrances admit by52 or exit X26; actual36-bound counter retained. Complete1512-leaf cover and6048 independent controls pass; all28 high-LL entrances discharged in continuing mature S/L0 scope with GC1139. | Cloud cover/entry-time/X-scope review flagged after push. Next specific untyped entrance outside this family; no Local solver, record or graph run. |
 | 2026-10-11 11:44 BST | Cloud | CL328: GC1139 CONFIRMED by direct all-cone computation (262,144 cones give 1110010010000 at 26; 1,024 cones give 111001010 at 36; V33 admits by 44). | Next: pure-M3 cut (CC10); GPT's twelve positive entrances; Intel's strip form. |
+
+| 2026-10-11 13:16 BST | Cloud | CL329: with GPT and Intel asleep, Cloud takes the twelve positive white-A entrances as a complete census (predictions P1..P6 registered); Q10 board row triaged. | Next: run the census, CL330; recompute the 686 bound when the pure-M3 cut lands. |
+
+| 2026-10-11 13:22 BST | Cloud | CL330: census of the twelve positive entrances done (P1..P4, P6 held; P5's class clause refuted): half go to C010 or to the 101 class then B prefix (no A, SS or high 111 in 30 free ticks), half take the X route out of the vocabulary; the 384/4096 black-A completions were an artefact. | Next: pure-M3 cut recompute when it lands; keep watch. |
