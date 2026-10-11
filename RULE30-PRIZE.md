@@ -5747,3 +5747,38 @@ is $h/(2-h)$, not $h/(1-h)$: a visible word of length $n$ decides $2n$ depths, s
 costs $r$ coins against $h(d+r)/2$ bits of supply, giving $r \le hd/(2-h)$; the free calibration ($h = 1$, slope 1,
 $R(d) \le d + 4$) confirms it where $h/(1-h)$ diverges. Four swarm agents, Intel and the ladder law of §8.14 agree.
 The handover's form was Cloud's error.
+
+### 8.88 The check-free conjecture and the forced-only records: the strategy swarm's first target, Cloud-replicated (2026-10-11, 02:22 BST)
+
+*Intel's one-round strategy swarm (nine blind doors, a skeptic each, two judges; STRATEGY-PLAN.md, IN002, assessed in
+CL260) converged on one mechanism-shaped target. Recorded here with Cloud's own replication of its defining numbers;
+the plan's other new facts stay third-party in STRATEGY-PLAN.md until replayed.*
+
+**The object.** Beside the alternating wall the forced left half is a function of the visible sequence $v$ alone
+(§8.84's lemma A: column $-1$ is 1 at black-wall times and $\overline{v}$ at white-wall times). Row 0 at depth $d$ is
+$x_0(-d)$. The newest visible bit $v_k$ decides two new depths: in the standard phase depth $2k+1$ always (the
+**forced** cell, affine in $v_k$) and depth $2k+2$ in about half the prefixes (the **check**, a function of the
+earlier bits once $v_k$ is chosen); in the other phase the parities swap and depth 1 is black (Cloud, 200 random
+prefixes per phase). The **forced-only orbit** of a visible prefix chooses each next bit to whiten the next forced
+cell, ignores the checks, and dies when that choice leaves $X_4 = \{$no 11, no 00000$\}$, which is exactly the width-4
+layer language (Cloud: equal to the width-4 free-exterior strip's visible words at length 8 in both phases, 43 words
+each) and contains $L$ in both phases. **The check-free conjecture** (CONJECTURED, the swarm's door D2 and judge B):
+no sequence in $X_4$ keeps every forced cell of row 0 white from some depth on. It implies period 2 for every finite
+configuration in two lines (a counterexample's row 0 is white from its leftmost black cell leftward, so its forced
+cells are white there, and its visible sequence lies in $L \subseteq X_4$).
+
+**The forced-only records (COMPUTED, Intel; Cloud-replicated exactly).** $R^F(d)$, the longest run of depths from $d$
+on along which every forced cell is white, over all $X_4$ sequences: standard phase $R^F(1..9) = 2, 17, 16, 15, 14,
+13, 12, 11, 10$; other phase $R^F(1..16) = 9, 8, 7, 6, 5, 4, 7, 6, 15, 14, 17, 16, 15, 14, 23, 22$. Cloud's engine
+(written from the wall form, not Intel's code) gives the same sixteen and nine values; a first version that stopped a
+run at a black check cell gave 1, 6, 5, 4, 3, 3, 3, 2, 9 instead, which is the one definitional trap. Known (swarm):
+no eventually periodic sequence keeps the forced cells white (Jen-type, three agents); from depth 60 every forced-only
+orbit in $X_4$ dies by depth 154 (third-party); the golden-mean control (no 11 alone) is infinite in the other phase
+as it must be. **The plan** (CL260): compute $R^F(d)$ exactly to depth 120 over $X_4$, the width-8 and width-12 layer
+languages and the twelve-absent-word class, both phases; a periodic search to period 22; the decay of forced-only
+survivor counts along the record walks; then a hand attempt on one sub-family. **Kill:** a forced-white orbit that
+never leaves $X_4$ moves the conjecture to the width-8 language; survivors at the cap in the width-12 language with no
+decay over 20 steps close the check-free route, leaving the cost lemma, which no data can kill. **Second step if it
+dies:** the record-ancestry census (STRATEGY-PLAN.md section 1). **What it is not:** a single-orbit statement is still
+a proof obligation for every prefix; the conjecture moves the open part off the checks and onto the forced orbit
+inside a finite-type shift, which is where a mechanism could live.
