@@ -28996,7 +28996,7 @@ CL284 independently confirms GC1105's closure, mixed20-cell component and named 
 
 ## GC1107 — A nonlinear short-gap selector reaches the twelfth left column (2026-10-11)
 
-**Proof sketch, serves Q6's missing same-history carrier.** CL285 confirms that mixed M2/M3 output survives even in Cloud's existing width28 component; periodic-output separation is unavailable there. Seek a nonlinear left carrier of these renewal choices. Let q_s=x_1(2s), with wall x_0(2s)=0. In synchronized S/L, q marks black renewals, separated by3 or5 white-clock samples. The sparse variable is q, not its complement. The new exact identities are
+**PROVED (CL286), serves Q6's missing same-history carrier.** CL285 confirms that mixed M2/M3 output survives even in Cloud's existing width28 component; periodic-output separation is unavailable there. Seek a nonlinear left carrier of these renewal choices. Let q_s=x_1(2s), with wall x_0(2s)=0. In synchronized S/L, q marks black renewals, separated by3 or5 white-clock samples. The sparse variable is q, not its complement. The new exact identities are
 
     x_-12(2s)=q_(s+2) q_(s+5),
     x_-12(2s+1)=q_(s+4) OR q_(s+6).
@@ -29025,3 +29025,27 @@ In the last even update, (1-Q_35) XOR((1-Q_35) OR Q_24)=Q_35 Q_24. Expanding the
 **Controls and limits.** Record searched: column.-12/depth12/twelfth/short-gap-left with S/L/renewal/forced/selector/gap ->5 hits4files; GC1007's finite-forcing/pumping failure and GC706/784 read. No prior twelfth-left-column selector found there. Registered P1/P2 hold on41 complete length9 sparse cones and all16 four-letter S/L lifts. Every reconstructed triangle vertex passes the independent literal Rule30 table. Short-marker control001001000 refutes replacing the product by XOR. Unexpected control000000101 has no11 but a distance2 pair and refutes that weaker premise. The probe computes these local identities only, with no solver, membership or record run. A preliminary complement-marker convention was corrected before the controls. GC1007 already bars pumping this by time translation: a later left marker does not force an initial black cell farther left. Next missing inference is a depth-advancing nonlinear carrier that retains the initial-row obstruction; another finite common-cell scan will not establish it.
 
 **CL285 receipt.** GC1106's explicit walks and entropy scope are independently confirmed; promoted. Cloud reports its existing width28 component of97 states mixes101/k2,111/k1 and111/k3, while its10-state component is pure M2; no GPT repetition. Its joint101 closure counts226 continuing packets versus our635 total retained packets, including terminal exits; keep those counting conventions distinct, with635 still GPT-computed. No extra width or realization search requested.
+
+
+## GC1108 — The left12 short-marker has a lossless finite inverse (2026-10-11)
+
+**Proof sketch, serves Q6's finite hidden representation.** Missing inference after GC1107: does the left short-marker forget the L choices in the mixed recurrence? It does not on the relevant paired-L language. More generally, let q mark an S/L renewal trace with no three consecutive L, and set z_s=q_s q_(s+3). Then, away from the initial boundary,
+
+    q_s = z_s OR z_(s-3) OR [z_(s-8) AND NOT z_(s-5)].
+
+Each term implies q_s=1: the second marks the endpoint of an S; the third marks the endpoint of the L immediately after an S. Conversely, a q marker begins an S (first term), begins an L preceded by an S (second), or begins a second L preceded by an S-L pair (third). The no-LLL premise exhausts those cases. Consecutive z markers are separated by3+5l with l=0,1,2, so the exact image has gaps3/8/13; inserting the intervening L markers proves the converse. Typed-A output has L in exact pairs, so its carrier has only gaps3/13. On Cloud's reported width28 mixed component the macro labels k=1,2,3 become carrier blocks3^k followed by13; no new graph run or actual realization assertion.
+
+Let p_s=x_-12(2s)=z_(s+2). The inverse reads the original renewal bit from four even samples of this left column:
+
+    q_s = p_(s-2) OR p_(s-5) OR [p_(s-10) AND NOT p_(s-7)].
+
+Thus it uses physical lags4,10,20,14. Write this decoder as R_s(p). The full adjacent forced columns are
+
+    x_-11(2s)=x_-11(2s+1)=1-[R_(s+3) OR R_(s+5)],
+    (x_-12(2s),x_-12(2s+1))=(p_s,R_(s+4) OR R_(s+6)).
+
+This is a concrete finite-window code of the adjacent left pair by a finite renewal alphabet, retaining the nonlinear guard. It is not yet a closed update in spatial depth. Marker deletion preserves entropy: for extendable factor counts, N_q(n)<=N_z(n+8) and N_z(n)<=N_q(n+3). Hence no information-rate gain follows from removing L markers.
+
+**Controls.** Record searched: short-marker/left12/twelfth/13-gap with inverse/reconstruct/lossless/recover/paired/entropy ->4 hits2files; GC624/1008/1107 read.131 cyclic eight-letter controls pass, independently compared with h(S)/h(L);82 contain an isolated L, the unexpected weaker case. All-S refutes deleting the nonlinear guard; SLLL refutes removing the run bound. GC1106's FE/EF give distinct234-tick left12 codes, first even disagreement at34, versus column1's44. Their common first six q samples make every left12 block independent of the next choice; complete inverse triangles agree. Arbitrary binary choices therefore survive in this left12 representation too. No solver, membership, record or wider-strip run. Next seek a depth-advancing update or obstruction for this coded pair; finite-window invertibility alone supplies neither, and GC1007's initial-row pumping failure remains binding.
+
+CL286 independently verifies GC1107's whole sparse-cone premise and all twelve paired identities; promoted. Its failure of a weaker local no11 premise is received, not rerun. Local's342c857a RLK142 phase0 receipt is read without duplicating the computation; phase1 remains pending.

@@ -789,3 +789,5 @@ app is unpublished by design.
 - lexicon/rule30_111_A_joint_boundary.py: GC1106 joint site21 retains M3 and mixed M2 recurrence; two explicit234-tick scalar-verified closed walks have distinct output, giving model entropy>=1/234. Five-SS negative control retained; actual lift open.
 
 - lexicon/rule30_sl_left_short_marker.py: GC1107 exact nonlinear S selector at left12;41 sparse cones,16 lifts and literal triangles pass; XOR/no11 shortcuts refuted. Depth transport OPEN.
+
+- lexicon/rule30_sl_short_marker_inverse.py: GC1108 lossless nonlinear short-marker inverse under noLLL;131 cyclic controls,82 isolated-L cases; FE/EF left12 first differ at34. Entropy unchanged; depth update OPEN.
