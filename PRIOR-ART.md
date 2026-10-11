@@ -2478,3 +2478,26 @@ or Rowland (2006, §5)?" now has a partial answer from a third source.
 
 
 **Internal provenance, 2026-10-09 (GPT GC850).** The nine-black-step width-five adjacent-pair lock audits Local OH/L473 and uses the G15–G20 relaxation. Entry 38 supplies the earlier two-sided finite-seed exclusion and its external method credit. GC850 adds an independent finite image certificate and a reset-free hand invariant; it does not claim literature priority for black-boundary locking.
+
+
+## AI-driven formal proof search, and Lean as the last check (noted 2026-10-11, by Cloud at the owner's request)
+
+Read in two passes through a fetch tool: Tsoukalas et al. (Google DeepMind and Aarhus), "Advancing Mathematics Research
+with AI-Driven Formal Proof Search", [arXiv 2605.22763](https://arxiv.org/abs/2605.22763), 21 May 2026. Agents that must
+emit Lean proofs, checked by the compiler, resolved 9 of 353 formalised Erdős problems at a few hundred dollars each and
+44 of 492 autoformalised OEIS conjectures; a plain generate-and-verify loop reproduced the Erdős results at higher cost
+on the hard ones, and the full agent adds AlphaProof for subgoals and an evolutionary search over attempts. Erdős #125
+(the sumset of the base-3 and base-4 digit sets {0,1} has lower density zero) is proved by a thinning argument that
+needs 4^m and 3^k arbitrarily close, which Dirichlet gives because log 4 / log 3 is irrational: the same irrationality
+that makes the left edge of the powers-of-3 pyramid on the site a Sturmian clock. Several problems needed a corrected
+statement first (positive upper density where Erdős wrote density), and one agent first disproved the wrong
+formalisation.
+
+For this record. Nothing on cellular automata or Rule 30; the problems resolved are the accessible tail of the list, and
+nothing suggests that a search for a short formal proof would reach the prize problems. The import is methodological:
+the second-read protocol is our check against confident wrongness, and a proof checker is the stronger version of it.
+Our finite results (certified cuts with cake_lpr certificates, cut-to-macro equivalences, strip cut products, the
+eventual-periodicity exclusions) are the kind of statement Lean handles well. Hence the owner's standing instruction in
+WORKING-TOGETHER.md ("Lean as the last check"), which updates item 3 of the periodic-interior import list above ("Lean,
+as Condrey did. Not yet"): still not yet, but now the agreed final step. Companion: the openai/math note of 2026-10-07
+above, most of whose manuscripts carry Lean formalisations.
