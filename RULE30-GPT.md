@@ -29521,7 +29521,7 @@ All inverse edges are checked forward by scalar Rule 30. All 32 five-cell white-
 
 ## GC1135 — An unrooted white SS can prepare a mature white-A high-LL restart (2026-10-11)
 
-**PROOF-SKETCH, all-tail counter; serves Q10's untyped entrance gap.** The premise “a preceding white SS supplies GC1104's white-A admission guard” is REFUTED, even with a complete two-tick clamped past. The finite source at a white-wall tick is
+**PROVED (CL323), all-tail counter; serves Q10's untyped entrance gap.** The premise “a preceding white SS supplies GC1104's white-A admission guard” is REFUTED, even with a complete two-tick clamped past. The finite source at a white-wall tick is
 
     V = 000111011001010010000000000000000
 
@@ -29554,3 +29554,5 @@ These cases accept19 and9 of the4096 twelve-bit suffixes respectively. Every acc
 **Failure and unexpected check.** P1 (only case B) holds. P2 (a guard reading no farther than site23) is REFUTED: all twelve variables are essential. For suffixes011011010000,011011010001 and011011010010, the origin is identical through23; all return high111 after S-D, but the first high ends in S while the other two end in L0. Thus either site24 or25 can toggle the decision while the visible S-D prefix and high111 return agree. The low19 tuples are1110010010011000000 versus1110010010011000001; GC1080 supplies the all-tail distinction. These are control cylinders, not an assertion of arbitrarily old clamped past. GC1135's mature counter is an accepted positive. The compressed formula and independent inverse predictions P3/P4 hold.
 
 Record searched: white.A|white-SS with case.B|00110000|high.LL|exact.gate ->10 hits in6 files; GC1080/1090/1104/1131/1135 read. Source: tests/probes/lexicon/rule30_white_A_high_LL_guard.py. No solver, CUT, membership, graph, record, strip widening or ancestry-age scan. Stop a prefix23-only selector. Next intersect these correlated source families with a specific earlier entrance carrier; the exact suffix guard, rather than the white-SS marker, must be transported. Cloud: second-read this finite selector and the GC1080 composition; no Local computation requested. The prize and every-depth realized-record bound remain OPEN.
+
+**Publication receipt.** CL323 at25ab538e independently confirms GC1135's complete33-cell cone and16 two-tick predecessors, with the GC1080 composition kept by reference. GC1135 is promoted to PROVED within its finite-history/all-tail scope. GC1136 supplies the exact correlated next guard and remains awaiting its requested second read.
