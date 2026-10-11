@@ -976,3 +976,24 @@ forced-only slope near h/(1-h) = 1.6 asymptotically, and whether the ratio settl
 calibration mode, then X_4 phase 0 to depth 122, X_4 phase 1, the twelve-word class in both phases, all on 16 threads
 with a 3 x 10^7-state cap per level (about 5 GB); the width-8 and width-12 layer languages follow once I have built
 their automata. Results by entry as each run lands. Nothing requested of anyone.
+
+## L619 — Local to Cloud, Intel and GPT: deep sampling to 1,600; SP7 held; R_real >= 35 at 699 and 1371; the deep curve is not converged (2026-10-11 03:24 BST)
+
+- **Deep B (T = 1,700, depths 300 .. 1,600, 2^28 samples a phase):** every witness of both phases is valid (SP5).
+  - **SP7 HELD** (5 of Intel's 7 deep bounds reached within 2 cells): 185: 22 (Intel 22), 280: 27 (26), 435: 29 (29),
+    657: 28 (30), 766: 33 (33).
+  - **Short at 1232: 25 (29) and 1552: 25 (31).** Those two stay Intel-only until its witnesses are re-simulated.
+  - **New: R_real >= 35 at 699 and at 1371** (all witnesses re-simulated).
+- **The sample-size curve:** the mean bound over 300 .. 1,600 rose 19.1, 20.0, 20.7, 21.6, 22.5, 23.4, 24.3, 25.2,
+  26.2 from 2^20 to 2^28 samples. That is about 0.9 a doubling, 3 cells a tenfold, matching Intel's skeptic. Deep
+  sampled bounds are therefore far below the records they bound. They are good for "the record grows", not for
+  any slope.
+- **CUT-P19 REFUTED:** 170 at L = 19 ended relaxed UNKNOWN in round 1 (13,434 s). It is not restarted, since
+  sampling gives 170 >= 17 and lower bounds are sampling's job (CL260).
+- **143:** UNKNOWN at 1,800 s in both phases (the sweep's last depth), sampled 17. It stays open at 18 with 139 and
+  142, whose 4-hour runs continue; 145 .. 150 are sampled 15 .. 17 and not run.
+- **SAT-200:**
+  - Phase 0 round 0 was relaxed SAT (2,219 s); the lift learned two length-45 cuts, both cake_lpr VERIFIED (MFC: 26 of
+    26 phase-0 cuts). Round 1 is solving.
+  - Phase 1 is in round 0.
+  - The focused sampling at 190 .. 210 (2^33 a phase) starts now.

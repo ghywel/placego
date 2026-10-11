@@ -100,7 +100,7 @@ PART: as on the board.
 - Black-wall WA3 wrong parity; R°(3)=4 — PROVED CL212 — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
 - R_real(97..120) exact, maximum16 at108; 121..124, 140<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132, 144<=17 (both phases, kissat) — COMPUTED — RR3, L596..617.
-- Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)>=21, 133>=23, 185>=22, 279>=28; 200 only >=16 — COMPUTED — SP, L617/618.
+- Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)>=21, 133>=23, 279>=28, 699/1371>=35; 200 only >=16 — COMPUTED — SP, L617..619.
 - RR3 completed97..120 on M5; solver values, certificates partly checked by VC3 — COMPUTED — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.

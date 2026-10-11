@@ -70,6 +70,17 @@ phase at two threads):
       280 >= 27 (Intel: 26), 290 >= 26; the full table is in deepA.out (outside git).
   SP7 is scored after deep B.
 
+OUTCOME, deep B (2026-10-11 03:23 BST; T = 1,700, depths 300 .. 1,600, 2^28 samples a phase, seeds 11 and 12, 1,722 s
+and 1,651 s at two threads beside nine solver processes):
+  SP5 PASS (deep B): every witness of both phases passes rule30_witness_check.check.
+  SP7 HELD (5 of 7 within 2 cells): 185: 22 (Intel 22), 280: 27 (26), 435: 29 (29), 657: 28 (30), 766: 33 (33); short
+      at 1232: 25 (29) and 1552: 25 (31). Those two stay Intel-only until its witnesses are re-simulated.
+  New: R_real >= 35 at 699 and at 1371 (the sample maximum); decade maxima 300 .. 1599: 24 29 29 35 34 31 30 34 32 33
+      35 34 31.
+  The curve is far from converged at depth: the mean bound over 300 .. 1,600 rose 19.1, 20.0, 20.7, 21.6, 22.5, 23.4,
+      24.3, 25.2, 26.2 from 2^20 to 2^28 samples, about 0.9 a doubling (3 cells a tenfold), as Intel's skeptic said.
+  (recorded 03:24)
+
 SAT-200 (registered 2026-10-11 02:28 BST, before its run; STRATEGY-PLAN.md section 1's one pre-registered upper bound,
 CL260, CL264): R_real(200) at L = 19, both phases, relax40 (40p1) plus the MFC-verified cuts, CUT at caps that total
 two days, launched when the 137 .. 151 sweep leaves cores (CL260). Before it, a focused sampling run (seeds 21, 22) at T = 240, depths
