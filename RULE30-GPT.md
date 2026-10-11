@@ -28795,7 +28795,7 @@ Next transport the full black-SS past into the entire101-toA selector, beyond th
 
 Record searched: black.eleventh|GC1096 with101|guard|restart ->16hits8files; GC1083/91/96 read. Predictions and adaptive alternatives preceded each packet check. Source:tests/probes/lexicon/rule30_black_A_no_restart.py. No solver, CUT, visible-language membership or record computation.
 
-**Statement, proof sketch with complete finite packet certificate.** Let the row at even T>=4 start1110100011111, the black-A prefix with sites6..13=00011111. GC1091 gives low00100 after S6. Suppose its next ten ticks have fifth track D and return101. GC1075 gives H, and GC1083 says returning A after H requires that101 origin's sites10..14 be11100 or1101*. Neither alternative is possible with this past.
+**Statement, PROVED (CL274 atc4744f11), with complete finite packet certificate.** Let the row at even T>=4 start1110100011111, the black-A prefix with sites6..13=00011111. GC1091 gives low00100 after S6. Suppose its next ten ticks have fifth track D and return101. GC1075 gives H, and GC1083 says returning A after H requires that101 origin's sites10..14 be11100 or1101*. Neither alternative is possible with this past.
 
 Use GC1096's complete inverse substitution, checking its first cell against the wall. The full selector11100110111100 has no two-step clamped parent. Selector1110011011101 has exactly four two-step parents; their sites6..15 at D-time8 are
 
@@ -28835,3 +28835,26 @@ The complete retained sizes are12,20,29,14,24,25,23,64,228,108. Thus108 low pare
 **Errors retained.** The first apparent low-only exclusion used incorrectly copied D shields01111/1100. Direct scalar transport corrected them to11111/0000; the erroneous empty-set verdict is invalid and withdrawn. Ten fresh-right checks now guard those premises. The corrected108 low parents disprove that stronger inference, while the two preceding S ticks close the intended one. Two attempted A13 sharpness controls still had no parent; the first retained earlier consequences, and weakening all shields still retained the low premise. No necessity of A13black is claimed. The selected J control and four immediate exteriors predicted black B13 but gave it white; stop that selection, retain the earlier generic-pair refutation, and assert only sparse B12 here.
 
 Next carry the same inherited past through an arbitrary white-marker SS block to its first SL return. Immediate first-B admission and the mature no-A bridge leave precisely that inter-run transport missing; the all-depth record bound stays open. L619 at92bbe913 received: sampled bounds35 at699/1371, two unreproduced witness bounds, CUT-P19 UNKNOWN, verified SAT200 round0 cuts; no duplicate work.
+
+
+## GC1099 — One white SS after D-H preserves the sparse B guard (2026-10-11)
+
+**Missing inference moved.** Suppose a D renewal returns101, its H returns S, and that S performs one SS before returning B. If B10=B11white, then B12white. This all-tail macro exclusion does not need a black-A origin or a low100100 premise. It reaches the first delayed B branch; arbitrary white-SS blocks and their A exits remain open. CL274 atc4744f11 independently confirms GC1097, now promoted; its full-row proof and sharp age-2 countercontrol are received. L620 at2aa2c252 and CL273 independently verify all sixteen sampled witnesses; no duplicate replay.
+
+Record searched: white.SS|white.marker with admission|A11|eleventh ->5hits4files; relevant GC1056/1087/1089/1090/1098 sources read. The broader100100|00100 search with SS|short.block gave310hits116files; narrowed100100 with SS gave148hits66files, with the named ancestry sources read. Predictions and adaptive failures are retained in tests/probes/lexicon/rule30_white_SS_exit_guard.py. No solver, CUT, membership or record computation.
+
+**Proof sketch, uniform in time and arbitrary exterior.** Bad B is sites6..12=0011001. Its complete six-step SS pullback with a white initial marker has195 parents, all realizing SS in the full row. Pull those through H's ten ticks using reviewed GC1075 shields1101,1001,0111,1100,001,111,100. The retained counts are438,1351,4545,1595,1452,4487,8473,5590,14120,22724. Every high origin begins1101001 at sites6..12; its first10 cells are precisely that prefix followed by all eight three-bit words. Thus only one seven-cell necessary packet remains.
+
+That packet has no four-step past beside four white fifth cells. The complete inverse layers are
+
+    1101001
+    -> {01011010,01011011,01011100,01100001}
+    -> {001111010,001111011,001111100}
+    -> {0001001101,0001001110,0001001111}
+    -> empty.
+
+The last contradiction is already in00010: with a white left cell, its first three zero images force four initial white cells; image bit3black then forces the next parent black, contradicting image bit4white. Every inverse edge is forward checked. D's last four fifth cells are white, so any actual D-to101 high origin has exactly the past that this packet lacks. Bad B after H-SS is therefore impossible. This is a fixed joint-past certificate valid at every even translated origin, not a finite-depth record scan. B with black10 or black11 enters C by GC1052; B00 now has the sparse guard. This does not exclude A or a further SS.
+
+**Nonvacuity and limitations.** The fresh low29-cell source11100100100010000110100000000 forces D-H-SS-SS for every farther tail. Its causal prefixes at10,20,26 begin111001101,111010000,111010000 respectively. Thus white short blocks really can occur after a00100 low return; fifth-track freedom cannot be discarded. Its earlier actual black-SS ancestry is not established.140 fresh-right causal implications and320 literal/packed histories pass, including four generic white-SS/H-SS counter-cylinders and the known white-SS control111010000.
+
+**Failures retained, next inference.** White marker alone and fresh H101 both permit black-A and bad B after one SS. A ten-cell projection leaves11200 black-A parents with six different first13 prefixes, refuting the proposed five-white ancestry shortcut; these are relaxed packets, not actual restart witnesses. Full entrance transport through D and S reached220160 packets; its first preceding SS layer reached606208, over the preregistered500000 cap. That attempt is UNKNOWN and stopped. The initial full-row replay assertion exposed a separate defect: prescribing the fifth track is a relaxation, so the realized track must be checked; the corrected filter removes30 of212 white-SS A parents. Next seek a closed joint-past invariant for repeated white SS, including A exits; do not extend that capped inverse tree or infer all-block admission from this one-SS guard. The owner-prioritized RRL target remains active; the suggested check-free hand target stays parked while this missing inference is unresolved.

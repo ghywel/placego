@@ -25,6 +25,7 @@ histories literal/packed checked, plus the known fresh counter.
 Conclusion: any blackA at even clamped age>=4, followed by S,D and
 return101, cannot returnA through its H. ActualSS blackA at6 qualifies.
 This local all-tail macro exclusion is not an all-depth record bound.
+PROVED: independent Cloud full-row route confirms it, CL274 atc4744f11.
 """
 from itertools import product
 from rule30_black_A_ancestry_guard import inverse, SOURCE

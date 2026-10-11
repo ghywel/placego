@@ -769,3 +769,5 @@ app is unpublished by design.
   counts measure the merge rate of K-prefixes. Intel, 2026-10-11.
 
 - lexicon/rule30_black_A_B_admission.py: GC1098 first-B sparse admission and white H101 marker;112 high/108 low/240 short parents, then empty S4;76 implications/128 independent histories pass. Incorrect D shields corrected; later SS block open.
+
+- lexicon/rule30_white_SS_exit_guard.py: GC1099 D-H-SS bad B requires1101001, which has no four-white-fifth past; one-SS sparse B guard sketch.140 causal implications/320 independent histories pass. Fresh low forces two white SS; capped actual-black-SS ancestry UNKNOWN, arbitrary-block admission OPEN.

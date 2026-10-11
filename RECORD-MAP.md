@@ -149,7 +149,7 @@ PART: as on the board.
 
 
 
-- Check-free: STRATEGY-PLAN.md; GC1092..94 odd-period bridges PROVED CL268..270 (third image constants); periodic forced-only argument owed.
+- Check-free: STRATEGY-PLAN.md; parity bridges PROVED GC1092..94/CL268..270; forced-only periodic case OPEN.
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
@@ -187,7 +187,7 @@ PART: as on the board.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
-- Core/SS guards PROVED GC1087..96; black-A no-restart/first-B guard sketches GC1097/98; later whiteSS admission open.
+- Core closure PROVED GC1087; black-A no-restart PROVED GC1097/CL274; first-B/one-SS B guards sketches GC1098/99; admission OPEN.
 - Cut45 reset merges59; delayed NOT8/pair guard; cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
 - Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.
@@ -321,7 +321,7 @@ PART: as on the board.
 
 
 ## Routes closed (do not reopen without new evidence)
-- Static F³ parity carrier exits via0010 on recurrent1000 — REFUTED, PROVED CL271 — GC1095.
+- Static third-image carrier not forward closed — PROVED CL271 — GC1095.
 - Uncorrected three-depth zero-prefix drift fails on an actual seven-ring at unbounded depths — REFUTED — GC1016.
 - Length-3 factor widening pumps a spurious zero trap; every allowance fails for K10 — PROOF-SKETCH / COMPUTED — GC976.
 - Boundary-only temporal widening admits arbitrary white runs — PROOF-SKETCH / COMPUTED controls — GC974; internal-factor widening remains open.
