@@ -38,6 +38,19 @@ Three things make this coin unusual.
 
 ## The honest summary
 
+**Update, 2026-10-11 14:06 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. Since the
+12:35 update the entrance question of the collar lane has been answered for the white-A high-LL family and its exit:
+GPT's four certificates (GC1139 to GC1142) are all second-read by complete independent computation, so every white-A
+high-LL entrance admits the mixed core by 52 or exits X at 26, every white-A origin outside the gate admits C at 16 or
+enters a black-marker SS whose first SS cannot exit through unguarded B, and the X exit, measured in real cones to tick
+212 (201 million exteriors per run), returns to a white-A origin at tick 106 in 1.8 percent of its cones, a return that
+admits the core at 122 and renews nothing (8.89, Outcome 6). The typed collar regime therefore closes by cuts (at most
+686 ticks, Outcome 5) and its named entrances close by certificates; what remains open there is the 676 black-marker SS
+entrances, admission after an intervening white SS, and the sea's untyped admission, measured in X cones at about twice
+the fair-coin rate for black A rows. The pure-M3 minimal cut has least absent length 178 (Local, being certified).
+R_real at every depth is untouched by all of this. The one-page state is NOW.md; then RECORD-MAP.md and PERIOD-TWO.md
+section 6. The earlier dated updates below are kept as they were written.
+
 **Update, 2026-10-11 12:35 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. Since the
 morning's room switch (8.89) the new room has paid out in one direction: the collar lane's typed black-A regime is now
 excluded under the period-2 wall by certified absent words alone. The cut product over the whole width-28 strip graph
@@ -5899,6 +5912,22 @@ over the whole width-28 graph with N edges is acyclic: 71,852 product states, no
 686 ticks (twelve M3 returns, then one macro with 22 SS blocks). So under the period-2 wall every trace that follows the
 typed collar grammar does so for at most 686 ticks, a bound resting on certified absences only; the pure-M3 minimal cut
 will lower it. It says nothing about untyped traces, re-entries, or R_real.
+
+**Outcome 6 (2026-10-11 14:06 BST, CL329 to CL336, GC1139 to GC1142).** The entrances to the typed region are accounted
+for. GPT's certificates, each replayed here by an independent complete computation: the sixteen negative white-A high-LL
+entrances admit the mixed core by 36 (GC1139, CL328); the twelve positive ones admit by 52 or exit through X at 26
+(GC1140, a 1,512-leaf all-tail cover re-derived to the same digest, CL334); outside the 28-cylinder gate every white-A
+origin admits C at 16 (3,392 of 4,068) or returns high 111 into a black-marker SS (676) (GC1141, CL334); and the first
+SS after a high-111 origin never exits through unguarded B (GC1142, CL336, by a forward census of all 524,288 actual
+high-111 cones). The X exit, which the typed grammar does not describe, was measured in real cones to tick 212 with 2^24
+exteriors per cylinder (CL332 to CL335): X is fixed by the cylinder in ten cases of twelve; 3.2 percent of the X cones
+reach the pin shape 1110011110100 at 66; 98.2 percent of those run one chain of white SS entrances at 94 and 100 to a
+white-eleventh A at 106 (the white-A origin row itself in 58 percent); the returned origins carry ten rigid patterns
+outside the gate and admit the C core at 122 by GC1141; and through 212 those cones show no A of either colour, no pin
+and no SS entrance. The X exit renews nothing of this family. Open: the 676 black-marker SS entrances and admission
+after an intervening white SS (GPT), and the sea's untyped admission, whose rates in X cones were 7.4 x 10^-4 black AP13
+rows and 3.2 x 10^-5 white-A origin rows per cone per even tick. Scope: the certificates are all-tail; the X
+measurements are sampled real cones, three draws, one seed each.
 
 ### 8.90 The carry of Rule 30: the Gray correction is a two-time AND, and the column carry is exactly solvable (2026-10-11 10:06 BST)
 
