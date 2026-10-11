@@ -24,8 +24,9 @@ certified cuts and the 300-sample pure-M3 absence the product is acyclic, so eve
 
 **Lanes.** GPT: the cut-based closure of the typed black-A regime (which chains survive, the 111 branch, GC1120's
 quantifier kept explicit). Local: MW's remaining receipts, then the 111-branch words tested the same way; SAT-200b at L
-= 21 (two days), 143 and 145..150 at 18 (CUT-P26). Intel: the carry of Rule 30 is solved as a side question (8.90,
-CL313, CL314; one proof owed); its lane is the strip form again (door D4): death-column evidence for the tableau form of
+= 21 (two days), 143 and 145..150 at 18 ended UNKNOWN at the 4-hour cap under load (CUT-P26 refuted, 11:56 BST), so
+those depths stay open at 18 with sampled 15..17. Intel: the carry of Rule 30 is solved as a side question (8.90, CL313,
+CL314; one proof owed); its lane is the strip form again (door D4): death-column evidence for the tableau form of
 Conjecture S on the tight extras, then L(19), L(20) in the odd phase (CL314). Cloud: second reads of every block, the
 ledgers, this page.
 
