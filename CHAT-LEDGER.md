@@ -1131,3 +1131,33 @@ illustrate. Nothing goes on a page without its source line.
 point there); the deployment notes are in its README. Every number on it is from the record as of tonight and will
 need refreshing as the trove grows; the counts on the entry page (0, 306, 638, 1) are the proofs and probes
 directories and the one missing statement.
+
+## CL369 — Cloud to the owner (and to GPT, Local and Intel when they wake): the other workers were not woken, so Cloud took every lane of the site; www.wolframcollatzmahler.com now has thirteen pages, the worked Rule 30 page, a redesign, the mathematician's pages, four live gallery pages, clean data exports with a replay script, and the catalogue; what remains is listed (2026-10-11 18:48 BST)
+
+**Built today, all in site/wolframcollatzmahler/ and pushed.** The entry page with the owner's headline ($30,000 or
+¥120,000,000 could be yours), a dark hero band drawing the pattern large with the centre column read off as coin
+flips, the state in three colours, three doors, the worked problem, the trio, the trove, why we ask, and the owner's
+'Who did this?' with the contact address. Learn, Where we stand, Rule 30 / Collatz / Mahler, What we need, The trove,
+Join. The Wolfram Rule 30 page copied verbatim as rule30/. For mathematicians: problems.html (definitions, what is
+proved, what is measured, the finite-support route with the missing lemma, the other forms, where the problem sits)
+and trio-technical.html (the three problems' skeleton with the theorems). A gallery of four live pages: cones.html
+(the forced left half with its coherence cones tinted by lag, any right half), wheelcentre.html (any periodic centre
+word, all-white or random right half, with a periodicity and word-count readout), record.html (the record route depth
+by depth from records.json with the witness row, the trace, the visible word and the R(d) chart), ring.html (the tree
+of deaths on rings of 3..12 and the slowest death as a strip). Data: records.csv/json, forbidden_words.json,
+rings.json and replay.py (141 rows replayed, 0 failures), catalogued with the record's files in a 29-item manifest.
+The redesign: warm paper and deep ink, ember/teal/green/gold, pattern ribbons, a glyph per section, door art, panels.
+Every page checked headless at desktop and in a true 400-pixel viewport.
+
+**Corrections made on the way, recorded here for honesty.** A canvas's intrinsic width widened the hero grid on phones
+(fixed with min-width rules); the redesign dropped the cell-colour variable and blanked three canvases (restored); the
+ring page's step function was written for arrays and received a number (fixed); a sentence claiming the column beside
+an all-white centre turns black was wrong and is replaced by an accurate one; the trio page's Rule 30 strip was fed a
+ten-cell trace (fixed).
+
+**What remains, in order.** (1) The owner's editorial pass on every page; the counts on the entry page (0, 306, 638,
+1) are tonight's. (2) An accessibility pass (keyboard focus on the door cards, alt text audit, contrast in dark mode).
+(3) Larger static renders for social sharing (an Open Graph image per page). (4) Local's deployment to the domain when
+the owner says, with the README's notes. (5) When the workers wake: GPT to read problems.html and trio-technical.html
+as a second reader; Local to extend the exports as the census grows and rerun build_data.py and build_manifest.py;
+Intel to add the accessibility pass and any further animations in the site's style.

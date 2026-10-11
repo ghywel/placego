@@ -14,7 +14,7 @@
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
   <nav><a href="learn.html">Learn</a><a href="rule30/">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a>
-  <a href="need.html">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+  <a href="need.html">What we need</a><a href="gallery.html">Gallery</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
 <canvas class="ribbon" aria-hidden="true"></canvas>
 <main>
@@ -61,7 +61,7 @@ geometrically, and Thue–Morse and paperfolding for every left edge up to 15,86
 <li><b>The channel bound.</b> Beside the alternating wall, column 1 carries at most 0.1236 bits per visible bit
 (log₂ of the growth rate of the visible language's layer count at width 28, certified in exact arithmetic).</li>
 <li><b>No finite configuration reaches a solid row.</b> The only preimages of the all-white row are all-white and
-all-black; the only preimages of all-black are the three phases of (100)^∞. Neither is finite.</li>
+all-black; the only preimages of all-black are the three phases of (100)<sup>∞</sup>. Neither is finite.</li>
 </ul>
 <p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.13, 8.54, 8.57, 8.58, 8.20 and 8.33; PROOFS.md; proofs directory entries 05
 to 12; CHAT-LEDGER.md CL356 (the Theorem B corollary) and CL363 (solid rows). Proved means a written proof with a second
@@ -77,14 +77,14 @@ column of the single-seed pattern, −40 to 40, shows any such structure (block 
 column-1 word 110100, largest cyclic white gap 5) and the L ring (155 cells, two steps are a shift by 31, column-1 word
 1101000100, gap 6). U is made of their words.</li>
 <li><b>Nothing near the centre.</b> No period-two counterexample has its left edge within 248 cells of the centre for
-any right half; none with a right half of at most 32 cells and a left half of at most 108 (4.3 × 10⁹ cases).</li>
+any right half; none with a right half of at most 32 cells and a left half of at most 108 (4.3 × 10<sup>9</sup> cases).</li>
 <li><b>The record R(d).</b> Exact at every depth 20..120 and at 132, 139, 142 (17 at each of those three), at least 18
 at 125..138 and 141, and by sampling at least 20 at depth 200, 28 at 279, 38 at 1,035. Witness configurations for every
 value are in the trove.</li>
 <li><b>The cuts.</b> All 1,130 (phase 0) and 1,199 (phase 1) minimal forbidden visible words of length ≤ 44, each with a
 cake_lpr-checked certificate; phase 0 extended to 48 with 482 words (in certification).</li>
 <li><b>The counting form.</b> N(w, T), the number of configurations on w cells whose centre reads 0101… for T steps,
-falls like 2^(w − αT) with α measured near 1 at w = 24. The part paid by the seed's left part is proved exactly.</li>
+falls like 2<sup>w − αT</sup> with α measured near 1 at w = 24. The part paid by the seed's left part is proved exactly.</li>
 </ul>
 <p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.4, 8.13 (the wheel), 8.56, 8.21 (searches), 8.51 (counting); PROOFS.md entry 26
 (Proposition 13); CHAT-LEDGER.md CL351 (rings), L643 and L645 (records and cuts), CL357 (other columns); the trove.</p>
@@ -107,7 +107,7 @@ forces white on the left).</li>
 through tick 154, and no change beyond site 155 can move it. At depth 132 it is forced by a cut: extending the record
 word by one white would put the certified cut 100100001001000010000101 at visible index 51 (tick 102). Both are exact
 explanations of one data point each.</li>
-<li>Exact images at fixed depth k are regular; a seeded decoder presents them with at most 2 S 2^⌈(k−1)/2⌉ states (S the
+<li>Exact images at fixed depth k are regular; a seeded decoder presents them with at most 2 S 2<sup>⌈(k−1)/2⌉</sup> states (S the
 cut automaton's live states), exact in both directions; the first visible bit can be quotiented away for k ≥ 4 in the
 white-start phase under the no-11 gate. The state space grows with k, so none of this is a closure across depths.</li>
 </ul></div>
@@ -124,7 +124,7 @@ CL361 (decoder), GC1159 and CL364 (quotient).</p>
 <ul>
 <li><b>Conjecture LR.</b> No column 1 beside the alternating wall makes the left half eventually white. Proved for
 eventually periodic and for Sturmian column 1; open for the kicked wheel.</li>
-<li><b>The counting form.</b> N(w, T) ≤ 2^(w − αT + c) for some α > 0. The left part's cost is proved; the right part's
+<li><b>The counting form.</b> N(w, T) ≤ 2<sup>w − αT + c</sup> for some α > 0. The left part's cost is proved; the right part's
 is open. Its Collatz twin, with the free bits in place of the left part, is COLLATZ-PRIZE.md section 1.</li>
 <li><b>The one sentence.</b> Keeping the wall's conditions costs real information. The delivery side is the channel
 bound; the cost side is proved only beside a constant wall (Condrey), and beside 0101… it is a coin model, measured and

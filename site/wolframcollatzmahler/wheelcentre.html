@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A periodic centre makes its own chaos</title>
+<meta name="description" content="Hold any repeating word down the centre and watch the column beside it refuse to repeat, whatever the right half.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.wolframcollatzmahler.com/wheelcentre.html">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
+  <nav><a href="learn.html">Learn</a><a href="rule30/">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="gallery.html" aria-current="page">Gallery</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+</div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<main>
+<p class="kicker">Gallery</p>
+<h1>A periodic centre makes its own chaos</h1>
+<p class="lede">Put any repeating word down the centre column and run the rule on an all-white right half. The centre seeds
+the right side every tick, the right side runs Rule 30 on that stream, and what comes back into the column beside the
+centre is never periodic. The left half copies it. Try the alternating word, the wheel word U itself, or your own.</p>
+<div class="tools"><label>Centre word <select id="w"><option value="01">0101… (the prize column)</option><option value="00010011010001001101000100110100010011010001001101001101">U, the unkicked wheel (period 56)</option><option value="0">all white</option><option value="1">all black</option><option value="001">001001…</option><option value="custom">custom…</option></select></label>
+<input id="custom" type="text" placeholder="e.g. 0110" size="12" aria-label="custom word" style="display:none">
+<label>Right half <select id="r"><option value="white">all white</option><option value="rand">random 12 cells</option></select></label><button id="go">Run</button><span class="pill" id="st"></span></div>
+<figure><canvas id="c" aria-label="The clamped centre with the forced left half and the right half"></canvas>
+<figcaption>Time downward. The centre word in ember, the column beside it in blue; left of that, the half-plane the two
+force; right of it, the pattern the centre seeds.</figcaption></figure>
+<h2 data-glyph="wheel">What this shows</h2>
+<p>Beside the alternating centre the blue column is the kicked wheel: a rotation by 17/56 of a turn per step between
+kicks. Beside U it is a third kind of column, structured but not periodic, with its own preferred ten-step word. A
+constant centre, all white or all black, is Condrey's case: he proved that no finite pattern can hold a constant column
+for ever. The patterns drawn here are not finite (the forced left half never ends), so nothing is contradicted; with an
+all-white centre and an all-white right half nothing happens at all, and a random right half shows the usual refusal to
+settle. Jen's theorem is the same statement for every periodic centre, seen live here, and the left half inherits every
+kick.</p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md 8.4 and 8.13 (the wheel); CHAT-LEDGER.md CL358 (U as the centre) and CL360; Jen (1990).</p>
+</main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
+<script>(function(){
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();const W=document.getElementById("w"),C=document.getElementById("custom");
+W.onchange=()=>{C.style.display=W.value==="custom"?"":"none";};
+function run(){let word=W.value==="custom"?(C.value.match(/^[01]{1,64}$/)?C.value:"01"):W.value;const wall=word.split("").map(Number);
+  const right=document.getElementById("r").value==="rand"?Array.from({length:12},()=>Math.random()<.5?1:0):[0];
+  const T=160,Wd=120;const res=R30.clamped(document.getElementById("c"),T,Wd,wall,right,{markColumn1:true,scale:4});
+  const c=res.trace;let per=null;for(let P=1;P<=200&&!per;P++){let ok=true;for(let t=0;t+P<c.length;t++)if(c[t]!==c[t+P]){ok=false;break;}if(ok)per=P;}
+  const seen=new Set();for(let t=0;t+8<=c.length;t++)seen.add(Array.from(c.slice(t,t+8)).join(""));
+  document.getElementById("st").textContent="column beside the centre over "+c.length+" ticks: "+(per?"periodic with period "+per:"not periodic")+"; distinct 8-cell words "+seen.size+" of 256";}
+document.getElementById("go").onclick=run;run();})();</script>
+</body>
+</html>
