@@ -787,3 +787,5 @@ app is unpublished by design.
 - lexicon/rule30_black_A_111_diversion.py: GC1105 all-length111/black-SS relation replenishes the old rank and retains an M3 self-loop;20-cell extension refuted, actual lift open. Scalar and actual-history controls pass; no new high-run theorem.
 
 - lexicon/rule30_111_A_joint_boundary.py: GC1106 joint site21 retains M3 and mixed M2 recurrence; two explicit234-tick scalar-verified closed walks have distinct output, giving model entropy>=1/234. Five-SS negative control retained; actual lift open.
+
+- lexicon/rule30_sl_left_short_marker.py: GC1107 exact nonlinear S selector at left12;41 sparse cones,16 lifts and literal triangles pass; XOR/no11 shortcuts refuted. Depth transport OPEN.

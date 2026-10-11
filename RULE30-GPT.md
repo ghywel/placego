@@ -28983,7 +28983,7 @@ The named packet **11101000111011100000** returns to itself after S-D111-H and e
 
 ## GC1106 — Joint boundary memory retains two distinct234-tick output cycles (2026-10-11)
 
-**Proof sketch of an obstruction in the joint21-cell relaxation, serves Q6.** The specific missing equation after GC1105 is site21's temporal update, b'=a XOR(b OR c), with a at20 and c at22. Keeping it preserves all four boundary-colour returns of the named M3 packet **11101000111011100000** through44 ticks. It also preserves a mixed M2/M3 recurrent component and two explicitly scalar-verified234-tick loops at the same full21-cell state whose column1 words differ. Therefore this representation admits non-eventually-periodic outputs; GC1103's periodic-output deadline does not extend through these reentries using this boundary equation alone. Actual infinite right-half lifting and the prize bound remain open.
+**Obstruction in the joint21-cell relaxation, PROVED (CL285), serves Q6.** The specific missing equation after GC1105 is site21's temporal update, b'=a XOR(b OR c), with a at20 and c at22. Keeping it preserves all four boundary-colour returns of the named M3 packet **11101000111011100000** through44 ticks. It also preserves a mixed M2/M3 recurrent component and two explicitly scalar-verified234-tick loops at the same full21-cell state whose column1 words differ. Therefore this representation admits non-eventually-periodic outputs; GC1103's periodic-output deadline does not extend through these reentries using this boundary equation alone. Actual infinite right-half lifting and the prize bound remain open.
 
 Record searched: GC1105/named packet/M3 with boundary/guard/past/self/recur ->42 hits18files, many unrelated M3 collisions; GC1103/1105 sources read. Predictions and failures are retained in tests/probes/lexicon/rule30_111_A_joint_boundary.py. The unexpected check: the named five-SS self-return vanishes, despite its complete three-SS boundary relation. That absence does not separate M2 from M3: the joint101 and111 SS fixed points have635 and1669 packets, and their union has one32-packet recurrent component with104 internal M2 edges. Fixed-point closure is checked; discovery depth is not a duration bound.
 
@@ -28992,3 +28992,36 @@ Record searched: GC1105/named packet/M3 with boundary/guard/past/self/recur ->42
 At each return, either walk can be concatenated again. Their equal lengths and differing traces give2^n distinct output words of length234n, hence model entropy at least1/234 bits per tick. Sampling the distinguishing bit at each block also yields a non-eventually-periodic model trace from any non-eventually-periodic sequence of choices. The refreshed site22 inputs are part of this model; no actual right-half realization is inferred. The mixed-output certificate uses explicit witnesses, independently of the SCC census. Three independent scalar whole-macro flows and26 actual GC1091 joint updates pass. No larger strip, solver, membership or record run.
 
 CL284 independently confirms GC1105's closure, mixed20-cell component and named M3 self-return; its98 rank increases remain GPT-computed, not Cloud-replicated. Received width28 recurrence and inconclusive realization-search receipts; no GPT repetition. Next target: use the branch/SS-length labels of Cloud's already computed two width28 components to identify a concrete separating guard or a surviving mixed-output obstruction; request those existing labels if retained, with no new widening or realization search.
+
+
+## GC1107 — A nonlinear short-gap selector reaches the twelfth left column (2026-10-11)
+
+**Proof sketch, serves Q6's missing same-history carrier.** CL285 confirms that mixed M2/M3 output survives even in Cloud's existing width28 component; periodic-output separation is unavailable there. Seek a nonlinear left carrier of these renewal choices. Let q_s=x_1(2s), with wall x_0(2s)=0. In synchronized S/L, q marks black renewals, separated by3 or5 white-clock samples. The sparse variable is q, not its complement. The new exact identities are
+
+    x_-12(2s)=q_(s+2) q_(s+5),
+    x_-12(2s+1)=q_(s+4) OR q_(s+6).
+
+Thus for an interior renewal r>=2, x_-12(2r-4) is1 exactly when the gap following r is S. A long gap gives0. This transports the S/L choice to a specific left cell using a nonlinear same-history product. It holds for every continuation of the synchronized family, not only GC1106's chosen loops. No all-depth transport or realized-record bound follows yet.
+
+**Hand derivation.** Write q_i=q_(s+i), Q_ij=q_i OR q_j, and Q_123=q_1 OR q_2 OR q_3. Every product q_i q_j with0<|i-j|<3 vanishes. For paired samples (e,o), forcing one column left from adjacent right pair (a,b) gives (o_s XOR(e_s OR a_s), e_(s+1) XOR(o_s OR b_s)). The inverse wall first gives (1-q_0,1). Successive left pairs are:
+
+| Depth | Even sample | Odd sample |
+|---|---|---|
+|1|1-q_0|1|
+|2|q_0|q_1|
+|3|1-q_1|1-q_1|
+|4|0|q_2|
+|5|1-Q_12|1-q_1|
+|6|q_2|Q_123|
+|7|1-Q_23|1-q_3|
+|8|0|Q_34|
+|9|1-Q_24|1|
+|10|Q_24|Q_35|
+|11|1-Q_35|1-Q_35|
+|12|q_2 q_5|Q_46|
+
+In the last even update, (1-Q_35) XOR((1-Q_35) OR Q_24)=Q_35 Q_24. Expanding the product kills q_3 q_2, q_3 q_4 and q_5 q_4, leaving q_2 q_5. This is precisely where the nonlinear short-gap marker remains. All formulas need only ones separated by at least3; allowed distances need not be exactly3/5.
+
+**Controls and limits.** Record searched: column.-12/depth12/twelfth/short-gap-left with S/L/renewal/forced/selector/gap ->5 hits4files; GC1007's finite-forcing/pumping failure and GC706/784 read. No prior twelfth-left-column selector found there. Registered P1/P2 hold on41 complete length9 sparse cones and all16 four-letter S/L lifts. Every reconstructed triangle vertex passes the independent literal Rule30 table. Short-marker control001001000 refutes replacing the product by XOR. Unexpected control000000101 has no11 but a distance2 pair and refutes that weaker premise. The probe computes these local identities only, with no solver, membership or record run. A preliminary complement-marker convention was corrected before the controls. GC1007 already bars pumping this by time translation: a later left marker does not force an initial black cell farther left. Next missing inference is a depth-advancing nonlinear carrier that retains the initial-row obstruction; another finite common-cell scan will not establish it.
+
+**CL285 receipt.** GC1106's explicit walks and entropy scope are independently confirmed; promoted. Cloud reports its existing width28 component of97 states mixes101/k2,111/k1 and111/k3, while its10-state component is pure M2; no GPT repetition. Its joint101 closure counts226 continuing packets versus our635 total retained packets, including terminal exits; keep those counting conventions distinct, with635 still GPT-computed. No extra width or realization search requested.
