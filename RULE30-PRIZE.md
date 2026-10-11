@@ -5802,8 +5802,8 @@ steps, so the kill did not fire anywhere. The record grows linearly with slope 1
 widths 4, 8, 12, 16, 20 (other phase 1.34, 0.39, 0.26, 0.22, 0.16), within a factor 0.71 to 1.19 of $h/(1-h)$ at every
 width: the counting law of this section in its forced-only form (one depth per visible bit, so $h/(1-h)$; the real
 record's form is $h/(2-h)$, section 8.87), measured five times. The kill moves from 11 (86% of the $X_4$ deaths) to the
-longer forbidden words (54% at width 20); 00000 stays near 14%. Consequence: over the true language ($h_{top} \le
-0.1236$) the law puts the forced-only slope at or below 0.14 against the real record's 0.08, so the forced cells would
-account for most of the killing and the checks for a factor near 1.75. Periodic case: computed to period 14 within
-$X_4$ by Intel's judge B (2,158 primitive words, both phases); the general argument is still owed. Next (CL282): the
-forced-only records over the exact visible language, as deep as the length-40 word lists allow.
+longer forbidden words (54% at width 20); 00000 stays near 14%. Consequence: over the true language
+($h_{top} \le 0.1236$) the law puts the forced-only slope at or below 0.14 against the real record's 0.08, so the forced
+cells would account for most of the killing and the checks for a factor near 1.75. Periodic case: computed to period 14
+within $X_4$ by Intel's judge B (2,158 primitive words, both phases); the general argument is still owed. Next (CL282):
+the forced-only records over the exact visible language, as deep as the length-40 word lists allow.
