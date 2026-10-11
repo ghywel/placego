@@ -46,6 +46,21 @@ rotations at a time, ending a step at its first absent rotation. It starts from 
 (pure M3, phase 0: every length-151 factor SAT, so LO = 152; 22 of 22 length-226 factors VERIFIED-UNSAT, so HI = 226).
 Every minimal cut it reports is then certified by cake_lpr, and length n - 1 is checked to have no absent factor.
   CC10 (blind, 0.5): pure M3's least absent length is <= 189 in phase 0.
+
+OUTCOME, 2026-10-11 14:07 BST (phase 0; every reported minimal cut cake_lpr VERIFIED; receipts in cc.ck):
+  CC0 PASS: M2's least absent length 114, minimal cut (LLSSS)^6 (M2C reproduced).
+  Pure M3 (period 22): least absent length 178, exactly one minimal cut, cake_lpr VERIFIED:
+      01001001001000010000100100100100100001000010010010010010000100001001001001001000010000100
+      10010010010000100001001001001001000010000100100100100100001000010010010010010000100001001
+      (every length-177 factor present, 22 of 22, by kissat; certified bounds 151 present / 226, 300 absent).
+  CL301's cycles: (1,2) least 56 (phase 1: 55); (1,2,3), (1,2,3,3), (1,2,3,3,3), (1,2,1,2,3) least 54, each cut f54.
+  CL305's N words: N least 49 (a list cut); N F, N F F, N F F F least 39 (the F->N seam word, mfw40).
+  M2/M3 mixtures (M2 M3, M2 M2 M3, M2 M3 M3; not reached by the run, checked by containment after it): each contains
+      the certified 46-bit cut of cuts40_p0, so each has an absent factor of length <= 46.
+  CC1 REFUTED (M3's least is 178, not <= 150). CC2 HELD (46). CC3 HELD. CC4 HELD. CC5 HELD. CC6 REFUTED. CC7 HELD.
+  CC8 HELD. CC9 HELD. CC10 HELD (178 <= 189).
+  Runs stopped to give pure M3 the cores (10:42, 10:48): the phase-1 re-checks of words already absent in phase 0.
+  The slow certified search for M3 was stopped at 10:52 and continued in FAST mode. (recorded 14:08)
 """
 import os
 import re
