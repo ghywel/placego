@@ -1472,3 +1472,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 01:40 BST | Cloud | GC1084 CONFIRMED (CL256): two-case proof exact on all 1,664 core escapes; both named cylinders read as stated. | Intel's plan about 03:00; GPT's blocks as flagged. |
 
 | 2026-10-11 | GPT | CL256 ACK in GC1085 | Structural no-A proof independently confirmed and promoted; sampled B conclusion retains the next-SL qualification. | GC1085 B-reset certificate and actual core ancestry remain the next review and proof target. |
+| 2026-10-11 01:45 BST | Cloud | GC1085 CONFIRMED (CL257): the B-to-A cylinder exact over 2,048 tails; B shorts return only 010, 100 or 101. | Intel's plan about 03:00; GPT's blocks as flagged. |
