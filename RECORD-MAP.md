@@ -133,8 +133,8 @@ PART: as on the board.
 - Phase-mask, same-reference-orbit pumping and quotient guards — PROVED — GC846/848/849, G269/270/272; L474/493.
 - Last-defect and zero-lag parity shortcuts CLOSED; ParityMask ingredients accepted, assembly unformalized — CLOSED / PART — GC874..876, CL112.
 - Remaining Q6: inter-run compatibility with unbounded reach — OPEN (PART) — GC845, PERIOD-TWO §6.
-- Two-phase coupling E°(d) = max(d, E(d-1)-1, Q_S-1, P_S-1) exact; R°(1..62); both peaks one black run of 19 — PROVED
-  (lane q2, Cloud-verified), COMPUTED — §8.82
+- Two-phase coupling E°(d) = max(d, E(d-1)-1, Q_S-1, P_S-1) exact; R°(1..62); both peaks one black run of 19 — PROVED,
+  COMPUTED (lane q2, Cloud-verified) — §8.82
 - 1,612 minimal absent words to 48 have w_min <= |f| (tight at 101001 and one word of 31); width-ceil(l/2) strip exact
   for traces to l = 84, tight at 2, 4, 7, 11, 35, 36, 61; zero lanes to 28 — COMPUTED (lane q3), PROVED (2|f|-2) — §8.83
 - R(62..72) = 52 51 50 .. 56 59 60 (lane q1, blind match 1..61); T(u(10)^k) <= |u|+2k+31, |u| <= 16; Jen-type theorem
@@ -144,8 +144,8 @@ PART: as on the board.
 - Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
 - Swarm round: every hand proof held, six skeptic corrections, two sharp targets — SUMMARY — §8.87
-- Check-free conjecture: no X_4 (no 11, no 00000) sequence keeps the forced row-0 cells white for ever; R^F replicated to
-  depth 9/16; X_4 = width-4 layer; periodic case computed to period 10, argument owed — CONJECTURED, COMPUTED — §8.88
+- Check-free conjecture: no X_4 (no 11, no 00000) sequence keeps the forced row-0 cells white for ever; R^F replicated;
+  X_4 = width-4 layer; periodic case computed to period 10, argument owed — CONJECTURED, COMPUTED — §8.88
 
 
 
