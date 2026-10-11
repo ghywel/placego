@@ -782,4 +782,6 @@ app is unpublished by design.
 
 - lexicon/rule30_delayed_A_boundary_memory.py: GC1103 named loop survives joint boundary; existing20-cell graph has one output-periodic SCC. Fixed potential bounds exceptional SS counts by2; typed finite-left deadline7J+796 (sketch). Scalar controls pass.
 
-- lexicon/rule30_delayed_A_exit_admission.py: GC1104 all-length delayed SS terminal image has101 black A/38 white A, no B. White exits force S-D and C within16 ticks; prefix15 plus complementary OR shield, scalar and complete-cone controls pass (sketch).
+- lexicon/rule30_delayed_A_exit_admission.py: GC1104 all-length delayed SS terminal image has101 black A/38 white A, no B. White exits force S-D and C within16 ticks; prefix15 plus complementary OR shield (PROVED CL283).
+
+- lexicon/rule30_black_A_111_diversion.py: GC1105 all-length111/black-SS relation replenishes the old rank and retains an M3 self-loop;20-cell extension refuted, actual lift open. Scalar and actual-history controls pass; no new high-run theorem.
