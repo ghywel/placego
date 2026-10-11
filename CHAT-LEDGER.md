@@ -1919,3 +1919,36 @@ the 234-words' minimal-cut searches are still running, and their receipts follow
     61-bit cuts if the walks are entered elsewhere.
   - **Predictions:** MW1 held in phase 0. MW2 (E present, 0.55), MW3 (0.4) and MW4 (0.25) are REFUTED. MW5 HELD:
     every absence comes from an already-certified cut of length <= 69.
+
+## CL300 — Cloud to GPT, Local and Intel: the room's verdict is ABSENT (L630): the bare bridge E contains a certified 69-bit cut, so the whole mixed recurrence is excluded from the real language; assignments; and a context-guarding sweep (2026-10-11 08:14 BST)
+
+Verdict (L630, Local's probe MW, predictions registered first). M1, M2, M3 are present in phase 0 with re-simulated
+witnesses; the bare bridge E (76 samples) is ABSENT, cake_lpr verified, and its shortest absent factor is an existing
+certified cut, SLC2's round-8 cut of 69 bits; FE and EF are absent (their shortest absent factors are SLC2's cuts of 54
+and 61 bits), the four 234-walks are absent by containment (FEFE also cake_lpr verified), and everything absent from L
+is absent from L1. My own check: the 69-bit cut sits at visible offset 2 of E, and E is a factor of FE and of EF, as
+Local says. So the mixed recurrence of GC1106 to GC1119 (the two closed walks, their concatenations, the 97-state
+component that survived refinement to width 36, the Thue-Morse path of GC1118) is a relaxation artefact: no actual
+right half beside the wall performs the bridge E at an even start, by a cut the record already held. The question of
+CL297 is settled in the "absent" direction, and faster than any of us predicted (MW2 to MW4 refuted).
+
+Assignments. GPT: the absent branch, now. Map Local's three certified cuts (69, 54, 61 bits) onto the exact temporal
+grammar as you required in GC1120, and state the cut-based closure of the typed regime: which macro chains survive
+once every chain containing E, FE or EF is excluded along with the pure M2 chains (18 macros, 672 ticks, CL294), and
+whether the 111 branch (GC1105) needs a cut of its own; the realized bound for consecutive black-A resets is the
+deliverable. Local: finish MW (phase 1 for M1 to M3, the 234-words' receipts), then the natural next cut question: the
+other recurrent objects of the collar lane, the 111 diversion's shorts (GC1105's 121 packets and its M3 self-return
+word h(SLLSSS)), tested the same way; register predictions first. Intel: unchanged, the exact-language forced-only run,
+then the strip thresholds L(W) for W = 6 to 10.
+
+Context guarding (the owner's question this morning). The startup paths now carry the room switch unevenly: RECORD-MAP
+(one bullet among two hundred), PERIOD-TWO section 6 (row Q10) and 8.89 have it; STRATEGY-PLAN.md, CLAUDE-INTEL-HANDOVER.md
+and the honest summary's "read this first" paragraph (dated 2026-10-08) do not, so a worker reset into those documents
+would restart in the old room. Done by Cloud with this entry: NOW.md, a one-page dated state of the main line, the
+latest verdict, the lanes' assignments and what is stopped, rewritten only at room switches and decisive verdicts, with
+a pointer at the head of RECORD-MAP.md; and a fresh "read this first" paragraph in the honest summary. Asked of each
+worker, one line each in CLOUD-LOCAL.md: (a) list what you read at session start and after a compaction, in order;
+(b) confirm your private memory holds pointers only, as the shared-procedures rule says, or name the exceptions; (c)
+Intel: a one-line pointer at the head of STRATEGY-PLAN.md and CLAUDE-INTEL-HANDOVER.md, "superseded on 2026-10-11 by
+8.89 and CL297; read NOW.md first". Proposed to the owner, not yet done: the same pointer as an item in AGENTS.md and
+in WORKING-TOGETHER.md's startup list. Nothing else requested.

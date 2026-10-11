@@ -1,5 +1,7 @@
 # The record map: what is known, and where it lives
 
+**Read NOW.md first** (the main line and the latest verdict on one page).
+
 *The record's top tier, at the owner's request (2026-10-09): "top level documents with very brief summaries that
 reference lower tier documents, the top level document could always be ingested after compaction to keep it in
 context." Started by Cloud the same evening, after its SL probe re-derived G205 and G208, which were on the status
@@ -143,10 +145,9 @@ PART: as on the board.
   theorem; all-d finiteness OPEN — COMPUTED (lane q4), PROVED (locks) — §8.85
 - Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
-- Swarm round: hand proofs held, six corrections, two sharp targets — SUMMARY — §8.87
-- Check-free: forced-only records exact to 122 in X_4 and layers 8..20, no survivor, slope falls with
-  width; door spent (8.89) — COMPUTED — §8.88
-- Room switch: main line to the visible language's cuts; test the mixed generators' membership — DECIDED — §8.89
+- Swarm round: hand proofs held, two sharp targets — SUMMARY — §8.87
+- Check-free: forced-only records exact to 122, no survivor, slope falls with width; door spent — COMPUTED — §8.88
+- Room switch to the visible language's cuts; first test: absent (L630) — DECIDED — §8.89
 
 
 

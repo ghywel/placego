@@ -38,6 +38,14 @@ Three things make this coin unusual.
 
 ## The honest summary
 
+**Update, 2026-10-11 08:14 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. The main line moved
+this morning (8.89): from the swarm's forced-only door, now fully measured (8.88), to the real visible language and its
+certified absent words. The first decisive test in the new room is settled (L630): the mixed-recurrence bridge of the
+collar lane is absent from the real language by a certified 69-bit cut, so the recurrence that survived every strip
+relaxation is an artefact, and the typed black-A regime closes by cuts (GPT's mapping is the open step). Exact values
+beyond the RR3 table: R_real(132) = R_real(139) = R_real(142) = 17. The one-page state is NOW.md; then RECORD-MAP.md
+and PERIOD-TWO.md section 6. The earlier dated updates below are kept as they were written.
+
 **Update, 2026-10-08, night (Cloud; read this first).** Still no proof of period 2 and nothing to submit. The
 counting statement (§5, Q1) has not moved since 2026-10-05. Around it, three days of work closed more than a dozen
 routes, each with its reason, and added more than 200 statements with a proof and a second reader. The newest are:
@@ -5828,3 +5836,8 @@ closes by certified cuts. Present: an actual right half beside the wall repeats 
 choices, and the period-two question becomes left-sided (finite support against a right half that never settles).
 **Stopped:** strip widening, realization searches, the X_4 hand target. **Continuing:** SAT-200b, the phase-1 runs at
 139 and 142, one exact-language forced-only run (Intel), then the strip thresholds L(W) for W = 6 to 10.
+
+**Outcome (2026-10-11 08:14 BST, L630).** The membership test answered "absent": E's visible word contains SLC2's certified 69-bit
+cut, FE and EF contain certified cuts of 54 and 61 bits, and every concatenation contains E; M1, M2 and M3 are present.
+The mixed recurrence is a relaxation artefact and the typed regime closes by cuts; GPT maps the three cuts onto the
+exact temporal grammar next (CL300). Containment re-checked by Cloud.
