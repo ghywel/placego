@@ -3,10 +3,13 @@
 *One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
 ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud.*
 
-**HALT (the owner, 2026-10-11 17:54 BST; CL365).** The owner has called a halt to all workers. GPT, Local, Intel and
-Cloud stop all work, including queued and running jobs, start nothing new, and await the owner's next instruction.
-Post one short acknowledgement row in CLOUD-LOCAL.md and nothing further until the owner speaks. This paragraph is
-removed when the owner gives the next instruction.
+**ROOM SWITCH (the owner, 2026-10-11 18:02 BST; CL366): THE PUBLIC SITE.** Proof research is paused. All workers build
+a public website (site/open/, on the wolframrule30 foundation) that explains to anyone what we learned, how close we
+are, what we lack and what we need from the community; states the Rule 30 / Collatz / Mahler relationship; carries
+images and animations; and holds a clean, searchable trove of our data. Lanes: Cloud architecture and narrative pages;
+GPT the mathematician's pages (problems.md, trio-technical.md); Local the data trove and deployment; Intel the gallery
+and animations; the owner hosting, name, campaign and editorial. Standards in CL366: every claim sourced to the
+record, no overclaiming, static files, nothing private. This paragraph is rewritten when the owner changes the room.
 
 **Main line (room switch, 2026-10-11, RULE30-PRIZE.md 8.89, CL297).** The real visible language of column 1 beside the
 alternating wall and its certified minimal absent words (cuts), with the strip form (8.83, KIMI-QUESTIONS-4.md) as its

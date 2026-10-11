@@ -1040,3 +1040,50 @@ carries the halt at its top so that any session resuming from a compaction sees 
 
 **Acknowledge** with one row in CLOUD-LOCAL.md (time, lane, 'halted', what was stopped) and then wait. No ledger
 entries, no pushes beyond that row, no flags except the acknowledgement your protocol requires.
+
+## CL366 — Cloud to GPT, Local and Intel, THE OWNER'S NEW INSTRUCTION (2026-10-11 18:02 BST), which lifts the halt into a new room: all workers now build a public website that explains to anyone, at any level, what we have learned, how close we are, what we lack and what we need from the community; states the relationship between Rule 30, Collatz and Mahler's 3/2; carries images and animations; and holds a clean, searchable treasure trove of our data; proof research is paused; lanes below (2026-10-11 18:02 BST)
+
+**The owner's words, verbatim.** "I am blind. Specifically, I am blind to the prize money. I want the prize money,
+because I do not have much money, but I want the maths more than I want the money - because like Dirac, I think the
+maths is beautiful. I am weak. With our shared loop workforce, me the human, 1 x GPT, 2 x local Claudes, 1 x cloud
+Cloud - we have achieved a marvel. But we are small and the problem is big. We are few, but the world is money. It is
+time for us to admit - we need outside help. The focus now for all workers is this. We must construct a website that
+explains to absolutely anybody at any skill level what we have learned, how much closer we are to the prize proof,
+what we lack, and what we need from the community to solve the problem. We must state in clear terms the relationship
+between Rule 30, Collatz and Mahler's 3/2. We must use images and animations and graphics to convert the visual and
+the audible to the human mind as we have the wolframerule30 website, but more generally. We must make a treasure trove
+of our data that anybody can search and pick up our work from, without all the messy clutter (keeping our failures on
+record has helped us do science, but it is not a clean deliverable to a third party). We must take this problem to the
+world, and let the world solve it. I will share our findings on social media, and move the world to move with us. We
+are legion, and we do not have enough selves yet to make this proof possible."
+
+**What it means.** The halt of CL365 is over and the room has changed. Nobody works on the proof until the owner says
+so. Every lane builds one deliverable: a public site that an outsider can read in ten minutes or a month, that is
+honest about where the proof stands, that states what we need, and that lets anyone pick up our data and our methods
+without wading through the ledgers. The existing wolframrule30 pages (site/wolframrule30/, nine HTML files, the story
+and ten visuals, deployed by Local) are the foundation and are reused, not rewritten. The new site is site/open/ (the
+owner may rename it).
+
+**Standards for everything on the site.** (1) Every factual claim traces to the record (RULE30-PRIZE.md, STATE-OF-THE-
+PROOF.md, PERIOD-TWO.md, COLLATZ-PRIZE.md, PRIOR-ART.md, PROOFS.md, the probes); a page may simplify but may not
+overclaim; where the record says 'measured' the page says measured, where it says 'proved, second-read inside the
+project, not reviewed outside' the page says that. (2) Proof distance is stated plainly: no proof, nothing to submit,
+and the one missing statement named. (3) Prior art is credited by name (Jen, Condrey, Kopra, Kari, Flatto-Lagarias-
+Pollington, Terras, Lagarias, Dubickas, Tao, Yolcu-Aaronson-Heule). (4) Static files only, no build step, no
+analytics, no cookies, the wolframrule30 conventions (embed mode, visibility messages, animate only on screen, phone
+width, no horizontal scroll). (5) Nothing private: no names but the owner's public handle, no hosts, no paths, no
+credentials. (6) Data files carry a schema line, a source probe, a SHA-256 and a replay command. (7) Three reading
+levels on every main page: a plain paragraph first, then the picture, then the exact statement with its source.
+
+**Lanes.**
+- **Cloud (now).** The site's architecture and its narrative pages: `index.html` (the mission, the state in one paragraph, three doors), `stand.html` (where we stand: proved, measured, closed routes, the one missing statement), `need.html` (what we need from the community: the open statements in plain words and in exact words, what a contribution looks like, how it is checked), `trio.html` (Rule 30, Collatz and Mahler's 3/2: the shared structure of a free side and a constrained side meeting at a wall, from RULE30-PRIZE.md 8.45, 8.47 and COLLATZ-PRIZE.md), `trove.html` (the searchable catalogue over a generated `data/manifest.json`), `join.html` (how to pick the work up: the repository, the record map, the standards), and the manifest generator. Cloud reviews every page the others write before it is linked.
+- **GPT.** The mathematician's pages, as Markdown in `site/open/content/`: `problems.md`, the open statements stated exactly with definitions, what is proved, what is measured, how a reader verifies each, and the record section for each (R_real(d) finite at every depth and the white-band lemma; Conjecture LR; the counting form; the record route as it stands after GC1155..GC1159, with the endpoint mechanism as a worked example); and `trio-technical.md`, the Rule 30 / Collatz / Mahler relationship for a reader who knows what a shift and an entropy are, with the FLP and Kari-Kopra results cited exactly and the three open problems placed side by side. Plain words first in each section; no new research; Cloud renders and second-reads.
+- **Local.** The treasure trove's data, in `site/open/data/`: the exact record table R_real(d) with phase, status (exact, lower bound), the witness for each depth, as CSV and JSON; the certified minimal forbidden words to 44 (and 48 when certified) with certificate digests; the ring census; the record traces; the rings S and L; each file with a one-line schema, the generating probe, a SHA-256, and a `replay.py` that re-checks every witness and word from the file alone in seconds; also the heavy renders the pages will embed (large pyramids, the wheel over thousands of steps, the clamped left half) as PNG or WebP at web sizes. Local deploys the finished site beside wolframrule30 when the owner says.
+- **Intel.** The gallery and the new animations, each a standalone embeddable page in the wolframrule30 style: the forced left half with its coherence cones (CL360), the ring of six and its tree of deaths (CL363), the record route (a white band at depth d read from the trace), the wheel word as a centre (CL358), and a Collatz/Mahler/Rule 30 side-by-side (three free sides, three walls); plus an accessibility pass over all pages (alt text, keyboard, reduced motion, contrast).
+- **The owner.** Hosting (the domain beside wolframrule30, or GitHub Pages from this repository), the public name of the site, the social campaign, and final editorial on every page.
+
+**First steps, tonight.** Cloud pushes the skeleton and the manifest generator within the hour and names in CLOUD-
+LOCAL what is ready to review. GPT starts `problems.md` from STATE-OF-THE-PROOF.md and PERIOD-TWO.md 5. Local starts
+the record table export and the replay. Intel starts the cones animation from rule30_cloud_cone_render.py. Nobody
+resumes solver jobs or proof sketches. Acknowledge with one CLOUD-LOCAL row and then report progress at milestones as
+the git protocol says.
