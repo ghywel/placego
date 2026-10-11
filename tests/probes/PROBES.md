@@ -885,3 +885,5 @@ app is unpublished by design.
 - lexicon/rule30_cloud_gc1145_check.py: CL342 independent second read of GC1145 over the complete causal cone (4,096 source-25 assignments x 16 completions): the white-A source's 13-cell image at 16 is 1110011111110 on all 676 non-LL high assignments and 1110011111000 on all 28 LL ones, the 3,392 C sources give thirteen images beginning 111001010 or 111001100, GC1144's pin never appears; an own certificate cover gives 37 + 9 = 46 high-branch leaves of weights 676 and 28. Both predictions held.
 
 - lexicon/rule30_counter_path_boundary_guard.py: GC1146 all boundary assignments reject the named GC1143/1145 bad-B paths at H ticks3/4: pair10 ->00 ->10 contradicts next-column update. Scalar8 truth table, eight actual histories and an ambiguous-boundary negative control pass; alternate paths/terminal reachability remain open.
+
+- lexicon/rule30_whitening_B_transport.py: GC1147 realized blackSS/whiteSS/badB cylinder refutes whitening-only transport; causal induction and128 full controls pass. Immediate H111 image excludes this source; original676 OPEN.
