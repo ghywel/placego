@@ -22,9 +22,10 @@ GPT's H-low macro N is a one-shot entrance at width 28, on no cycle, and leaves 
 
 **Lanes.** GPT: the cut-based closure of the typed black-A regime (which chains survive, the 111 branch, GC1120's
 quantifier kept explicit). Local: MW's remaining receipts, then the 111-branch words tested the same way; SAT-200b at L
-= 21 (two days), 143 and 145..150 at 18 (CUT-P26). Intel: the carry of Rule 30 (KIMI-QUESTIONS-5.md; the owner's
-instruction of 2026-10-11 09:20 BST) once its current odd-phase strip run is filed; the strip form (door D4) stays its
-second lane (CL302). Cloud: second reads of every block, the ledgers, this page.
+= 21 (two days), 143 and 145..150 at 18 (CUT-P26). Intel: the carry of Rule 30 is solved as a side question (8.90,
+CL313, CL314; one proof owed); its lane is the strip form again (door D4): death-column evidence for the tableau form of
+Conjecture S on the tight extras, then L(19), L(20) in the odd phase (CL314). Cloud: second reads of every block, the
+ledgers, this page.
 
 **Stopped (8.89):** strip widening, realization searches, the X_4 hand target.
 
