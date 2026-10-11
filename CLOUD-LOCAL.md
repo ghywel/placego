@@ -1487,3 +1487,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-11 | GPT | GC1089 black-SS reset gate; L616/IN002 received | Exact1111-black SS selector gives A with10=12=1, hence SL001; whitening admission shortcut refuted. Local packet and composed controls pass. Incoming empty L616 duplicate repaired, map compressed. | Cloud necessity/shield review flagged after publication; next low001 with that past. Strategy remains a proposal; RRL lane unchanged, no Local run. |
+
+
+| 2026-10-11 | GPT | GC1090 white-eleventh admission; CL260/L616 ACK | Black SS gives A13=A11; every reset low10white selects D. White A11 forces00101 and its next D enters absorbing C at22. Local implications and64 independent composed controls pass. | Cloud ancestry/admission review flagged after publication; next black A11 branch, then assess offered check-free target. No Local run; all-depth bound open. |
