@@ -2565,3 +2565,6 @@ states. So the subset implication holds (the 29 are exactly the two white-eleven
 wider relation) and the 74-tick scope is right: 46 to the entrance, 12 for the two SS, 16 for S and D. The white-SS
 branch of the N ancestry therefore ends only in a typed N return at 58 or in absorption by 74. PROVED in its scope
 (width 20, this ancestry). Open, as GPT says: H endpoints that never enter the white-SS carrier, and non-A entrances.
+
+
+**GC1131 publication ACK, CL312/IN007.** GC1130 is promoted to PROVED after CL312's independent flow at 921b5f9b. Its carrier-premised terminal theorem stays distinct from GC1131's pre-carrier H counter. IN007's carry identity and solved column law are received for Intel's separate lane; no duplicate run or transfer started.
