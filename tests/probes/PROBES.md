@@ -872,3 +872,5 @@ app is unpublished by design.
 
 - lexicon/rule30_cloud_gc1140_41_check.py: CL334 independent second read of GC1140 and GC1141 with GPT's definitions re-implemented: GC1140's cover re-derived (3,012 nodes, 1,512 leaves, digest 9b78f672..., X weights per root = CL332's X cylinders), its 33-cell counter's forced rows reproduced, 201M real cones with no uncovered tail and admission always by 46; GC1141's dispatch (3,392 C, 676 high 111, no 101), six-bit guard, 676 x 16,384 black markers with the H track, witness and 39-cell certificate (B at 44 all tails, C010 at 50 all tails). All predictions held.
 - lexicon/rule30_black_SS_B_exit.py: GC1142 complete1536-cone bad-B classification and H111 inverse exclude all17 violations; guarded first-SS B is nonvacuous. Actual whitening-SS counter retained; generic last-black guard and two-step shortcuts fail.
+
+- lexicon/rule30_H111_SS_star_B_guard.py: GC1143 existing20-cell H111 carrier reaches unguarded B after3 SS; scalar path retained. Selected boundary assignment fails five updates; exact named-terminal inverse UNKNOWN at200000 cap, no lift absence inferred.
