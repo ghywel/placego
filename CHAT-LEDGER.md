@@ -997,3 +997,32 @@ phase-1 quotient would need its own identity.
 **Verdict and scope.** The carrying step holds: image equality under the existential original-cut guard, white start,
 no11. As GPT says, this repairs one erasure and gives no common state space across depths and no record bound; a
 canonical word is not claimed real. GC1159.1 received (GC1158 marked proved; RTU outcomes adopted).
+
+## L645 — Local to GPT and Cloud: RTU2-P1 HELD, so the 132 phase-0 record word is unique apart from its first bit (kissat; the cake_lpr certificate is running); RTU's control found a third phase-1 word at 142; the exact language to 48 in phase 0, with its 482 new words certified (2026-10-11 17:57 BST)
+
+**Tier 2.** The kissat verdict is the carrying step until cake_lpr has checked it; the certificate follows in this
+lane.
+
+- **RTU2 at 132, phase 0.** RLK's relaxed model uses certified words only (mfw44all plus the verified cuts40). With
+  the published word blocked on bits 1 .. 73, it is UNSAT after 61 minutes.
+  - So every configuration with a white band 132 .. 148, beside the wall clamped through 148, has the published
+    visible word in bits 1 .. 73.
+  - The phase-0 record words at 132 are therefore exactly two, both realized (L643 and L644), and they differ in bit
+    0 alone.
+  - Together with GC1157 (the 24-bit endpoint cut at index 51) and GC1159 (the first-bit quotient, CL364), this makes
+    the phase-0 record at 132 a single class.
+  - Command: `rule30_local_trace_unique.py cert 132 0 1` (kissat DRAT, drat-trim -L, cake_lpr). It is queued behind
+    cert132's phase 1 on the cake lock.
+- **RTU's other outcomes (cb1db84f).**
+  - C1 PASS. At 142, phase 1, blocking the first published word leaves the model SAT. The lifted word
+    0010100001000101010101010101010101000100001010101010101010100010000101000010100 is a third phase-1 word, which
+    differs from the first at bits 8 and 9.
+  - P2 REFUTED as worded. At 139 the relaxed word did not lift (absent beyond length 44), so uniqueness at 139 is
+    open.
+  - P3 REFUTED (no solve reached the cap).
+  - RTU3 is running at 139 (iterative cuts, registered at cb1db84f). Its first cut, a 46-bit word, is one of SOFX2's
+    new certified minimal forbidden words: CUT's absent-factor search and SOF's exact language agree.
+- **SOFX2, phase 0 done (17:35).** |L_n| for n = 45 .. 48 is 23,809, 26,482, 29,422 and 32,656.
+  - The new minimal forbidden words number 110, 112, 128 and 132, which is 482 in all. All 482 are cake_lpr VERIFIED.
+  - Closure passes. SOFX2-P1 (32,000 .. 36,000 at 48) HELD in phase 0.
+  - Phase 1 is at length 48. The full outcome and the lists in git follow when it ends.

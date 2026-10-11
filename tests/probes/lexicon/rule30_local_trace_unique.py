@@ -2,7 +2,8 @@
 """rule30_local_trace_unique.py: RTU, is the visible word of the exact 17-record at d = 132 and 139 (phase 0) unique?
 
 RUN-ON:     cpu (kissat; one relaxed solve a depth, 4-hour cap)
-COMMAND:    KISSAT=kissat python3 tests/probes/lexicon/rule30_local_trace_unique.py D PHASE [CAP] [K]
+COMMAND:    KISSAT=kissat python3 tests/probes/lexicon/rule30_local_trace_unique.py D PHASE [CAP] [K] [MAXIT]
+            KISSAT=kissat python3 tests/probes/lexicon/rule30_local_trace_unique.py cert D PHASE K   (cake_lpr)
             (K > 0, RTU2: block only on visible bits K .. end, so a new word must differ from bit K on)
 
 WHY. GC1155 reads the endpoint of the actual 139/17 record from Local's published row. In the data folder every source
@@ -39,6 +40,10 @@ OUTCOME, the rest of RTU (17:34 BST): RTU-C1 PASS: 142 phase 1 with its first wo
   block is relaxed SAT within a minute, but its word (below) has no right half (absent from L beyond length 44), so
   uniqueness at 139 is open. RTU-P3 REFUTED: no solve reached the cap (12 minutes, 52 minutes, 1 minute).
     010000100100001000010100001010101000100001010000100100001000010100001000010000
+OUTCOME, RTU2-P1 (17:56 BST, 61 minutes): HELD (kissat). 132 phase 0 with the block on bits 1 .. 73 is relaxed UNSAT,
+  on certified words only, so every configuration with a white band 132 .. 148 beside the wall clamped through 148
+  (phase 0) has the published visible word in bits 1 .. 73: exactly two phase-0 record words, both realized, which
+  differ in bit 0 alone. The cake_lpr certificate (`cert 132 0 1`) follows.
 RTU3 (registered 2026-10-11 17:35 BST, before its run): 139 phase 0, the full block, iterating as CUT does: an unlifted
   word gives its shortest absent factors (length >= 45) as cuts (rtu_cuts_p0.txt, to be certified by MFC before any
   verdict rests on them), up to 40 rounds at 4-hour caps.
@@ -118,5 +123,40 @@ def main():
     print('RTU d=%d: done' % d)
 
 
+def certify(d, ph, K):
+    """A relaxed UNSAT with the block from bit K, checked as RLK's `cert` checks: kissat DRAT, drat-trim -L, cake_lpr
+    (through the one-at-a-time lock wrapper). Certified words only (no RTU cuts)."""
+    import hashlib
+    import subprocess
+    L, vis = 17, published(d, ph)
+    forb = rlk.load_forbidden('44all' if ph == 0 else '44allp1') + rlk.load_cuts(ph, 40)
+    inst = rlk.Relaxed(d, L, ph, forb)
+    inst.cl.append([(-v if b == '1' else v) for v, b in list(zip(inst.vis, vis))[K:]])
+    base = os.path.join(rlk.DIR, 'rtu_cert_d%d_p%d_K%d' % (d, ph, K))
+    text = 'p cnf %d %d\n' % (inst.nv, len(inst.cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in inst.cl)
+    open(base + '.cnf', 'w').write(text)
+    sha = hashlib.sha256(text.encode()).hexdigest()[:16]
+    t0 = time.time()
+    k = subprocess.run([rlk.KISSAT, '-q', '-f', '--no-binary', base + '.cnf', base + '.drat'], capture_output=True)
+    t1 = time.time()
+    verdict = 'UNKNOWN%d' % k.returncode
+    if k.returncode == 10:
+        verdict = 'SAT'
+    elif k.returncode == 20:
+        v = subprocess.run(['drat-trim', base + '.cnf', base + '.drat', '-L', base + '.lrat', '-t', '400000'],
+                           capture_output=True, text=True)
+        verdict = 'ELAB-FAILED'
+        if 's VERIFIED' in [z.strip() for z in v.stdout.splitlines()]:
+            os.unlink(base + '.drat')
+            c = subprocess.run([os.path.expanduser('~/np-build/cake_lpr/cake_lpr'), '--CML_HEAP_SIZE=6000',
+                                '--CML_STACK_SIZE=2000', base + '.cnf', base + '.lrat'], capture_output=True, text=True)
+            verdict = 'VERIFIED-UNSAT' if 's VERIFIED UNSAT' in c.stdout else 'CAKE-FAILED'
+    print('RTU cert d=%d phase %d K=%d (%d words): %s, cnf %s, solve %.0f s, check %.0f s' % (
+        d, ph, K, len(forb), verdict, sha, t1 - t0, time.time() - t1), flush=True)
+
+
 if __name__ == '__main__':
-    main()
+    if sys.argv[1] == 'cert':
+        certify(int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]))
+    else:
+        main()
