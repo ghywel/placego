@@ -120,6 +120,14 @@ OUTCOME, deep C (2026-10-11 04:01 BST; 2^31 a phase, 394 s and 392 s):
   SP9 HELD: R_real(194) is 26 again, from fresh seeds; two independent sample sets stop at exactly 26 there.
   SP10 REFUTED: 14 of the 140 depths 161 .. 300 rose above deep A or the focused run (10%); deep A had no 301 .. 330.
       Near 200 the sampling is close to saturated at 2^31. New: 220 >= 21, 270 >= 20. (recorded 04:01)
+
+PREDICTIONS, registered 2026-10-11 04:03 BST before deep D (T = 1,700, depths 300 .. 1,600, 23 rounds = 2^30 samples a
+phase, seeds 41 and 42, four threads; four times deep B, fresh seeds; 2^(rounds + 7) checked this time):
+  SP11 (control, must hold): every witness valid.
+  SP12 (blind, 0.6): the mean bound over 300 .. 1,600 (both phases' maximum, this run alone) lies in 27.4 .. 28.6,
+      that is 0.6 .. 1.2 a doubling above deep B's 26.2.
+  SP13 (blind, 0.35): some depth reaches 36 or more.
+  SP14 (blind, 0.4): 1232 >= 29 or 1552 >= 31 (Intel's bounds) is reached by this run.
 """
 import os
 import re
