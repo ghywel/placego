@@ -3223,3 +3223,36 @@ where the 59,338 non-continuing pin cones went, read from the chain output's tic
 The generic last-black guard fails, but actual H111 ancestry excludes every bad-B source on its FIRST following SS. The complete17-cylinder inverse becomes empty at the time1 high shield: required0000/0100 versus actual1000. A28-cell original H source certifies guarded B16 and absorption22, with four independent controls. Another28-cell H source whitens into SS16 for every tail, refuting a last-black-only A/B exit partition. Details, complete counts and failures: RULE30-GPT.md GC1142 and its probe. Review requested for the finite cone/inverse implication, nonvacuity and first-SS scope; no larger solver or sampler requested.
 
 CL333 atcdbfd6bd received: sampled X-origin106 rows miss GC1136's28 gate, consistently feeding GC1141's complementary dispatch. Cloud retains its chain run and the pending GC1140/1141 reviews. Next GPT target is an inherited admission guard after intervening white SS, retaining original A/H ancestry; generic marker-only shortcuts are stopped.
+## L636 — Local to Cloud, GPT and Intel: the owner's job-priority rule; Local's running jobs reviewed and made pausable (2026-10-11 13:54 BST)
+
+**The owner's request (13:50):** every running job must still be relevant to the problem as it stands now, and long
+jobs should be pausable, so that an important job gets the machine and a long one resumes after it. It is now the
+shared rule `job-priority` in WORKFLOW-SAVED-MEMORY.md.
+
+**The tool:** tests/probes/jobctl.py. It keeps a registry of long runs with priorities (1 = the NOW.md main line,
+2 = a planned lane item, 3 = welcome but not urgent).
+- `pause` and `resume` stop and continue a job's whole process tree with SIGSTOP/SIGCONT.
+- `focus LABEL` pauses every lower-priority job until LABEL ends, then resumes exactly those.
+- Tested on VC3: its whole tree stopped (state T) and resumed (state R), with nothing lost.
+- **The one hazard is a wall-clock limit.** kissat's --time is an alarm() and drat-trim's -t uses gettimeofday, so a
+  paused job with either loses its budget. Such jobs are registered as wall-clock, and focus leaves them running
+  unless forced. The certificate pipeline is safe to pause: kissat without --time, drat-trim -t 400000, cake_lpr.
+
+**Local's jobs, reviewed against NOW.md:**
+
+| priority | job | status |
+|---|---|---|
+| 1 | M3fast | pure M3's minimal cut, the last uncut cycle of CL303. Least absent length 178; the minimal cut is being certified. |
+| 2 | SAT-200b, phases 0 and 1 | the NOW.md lane item (CL265, CL276). Wall-clock rounds, so kept running. |
+| 3 | cert144, then cert132, cert139, cert142 | cake_lpr re-certification of record-lane UNSATs; 144 phase 0 already VERIFIED. |
+| 3 | VC3 | certificates for RR3's deciding UNSATs, 15 of 23 done. |
+
+- The priority-3 rows are still welcome under knowns-must-be-proven, but they are off the main line.
+- **Focus is on M3fast now.** The priority-3 jobs are paused (13:54) and resume when it ends.
+
+**Already stopped today on the same grounds:**
+- CUT-P26's queued depths (146, 150);
+- CC's phase-1 re-checks of words already absent in phase 0;
+- the 1,800 s sweep and the 151..145 chain.
+
+Cloud: the priorities follow NOW.md's lanes. Say if any should move.
