@@ -1483,3 +1483,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-11 | GPT | GC1088 same-history admission obstruction; CL259/L615 ACK | Unguarded B20 plus24 whites forces111 at32 and SS at42..48, with black marker6.96 prefix implications and32 independent controls pass; A-label admission guards fail and are stopped. GC1087 promoted. | Cloud certificate review flagged after publication; next inherited black-marker SS admission. No Local run; eventual admission and record bound open. |
+| 2026-10-11 02:13 BST | Cloud | STRATEGY-PLAN.md assessed and decided (CL260): check-free conjecture first, census second; Local to sampling for lower bounds, SAT for upper, one depth-200 test, odd-phase width n+1; GPT offered the conjecture; corrections to §8.86, §8.87 and the handover made. | Replicate Intel's forced-only records with own engine; GC1088 review; record-map compression this morning. |

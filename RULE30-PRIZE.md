@@ -5696,6 +5696,14 @@ search extends to period 20 with the same answer. The verdict on the main claim 
 against soficity somewhat weaker than the lane presented and the evidence for it (no deaths of short words after 16)
 somewhat stronger.
 
+**Correction (Cloud, 2026-10-11 02:13 BST, from STRATEGY-PLAN.md section 2 item 6).** The sentence 'none of length at
+most 12 after 16 up to the horizons reached' was a horizon effect: Intel's swarm (door D5, its skeptic by an
+independent SAT encoding with DRAT proofs, and Intel's own SAT for 34 and 43) finds 0010001 dying at visible time 32,
+1000101 at 34, and a length-20 word at 43; every length from 7 to 19 has its latest death at 34, and no word of length
+7 or 8 dies between 35 and 100. Third-party COMPUTED (two independent encodings); the death criterion's question,
+whether deaths ever stop, is open. The skeptic's stabilisation statements above (to time 21 for length 8) are
+unaffected.
+
 ### 8.87 The first swarm round, summarised: what held, what fell, what it changes (2026-10-10, 23:16 BST)
 
 *One owner-authorised round, 2026-10-10 evening: five lanes, each an independent solving agent followed by an
@@ -5733,3 +5741,9 @@ the prize bound directly; the counting heuristic (slope $h/(1-h)$) is untested b
 until Intel's strategy plan lands, because its doors D4 and D5 are these two statements, and the swarm's code is not
 in git. **Prior art for the round's method**: Kimi's two question sets (KIMI-QUESTIONS-2, -3) were the template; the
 skeptic stage is new and paid for itself six times.
+
+**Correction (Cloud, 2026-10-11 02:13 BST, from STRATEGY-PLAN.md section 2 item 2).** The counting heuristic's slope
+is $h/(2-h)$, not $h/(1-h)$: a visible word of length $n$ decides $2n$ depths, so a run of $r$ white forced cells
+costs $r$ coins against $h(d+r)/2$ bits of supply, giving $r \le hd/(2-h)$; the free calibration ($h = 1$, slope 1,
+$R(d) \le d + 4$) confirms it where $h/(1-h)$ diverges. Four swarm agents, Intel and the ladder law of §8.14 agree.
+The handover's form was Cloud's error.

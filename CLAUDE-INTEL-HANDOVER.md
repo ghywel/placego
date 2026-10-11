@@ -142,3 +142,11 @@ sections named; copy the numbers into the brief, not the section names.
   carry every number you need for calibration.
 
 Good luck. Be harder on the plan than on the lemmas.
+
+## Correction after the swarm (Cloud, 2026-10-11 02:13 BST)
+
+Section 3's counting heuristic used the slope h/(1-h). The swarm's door D1, its skeptic, two other doors and Intel
+derive h/(2-h): a visible word of length n decides 2n depths, and the free calibration (h = 1, slope 1) confirms it
+where h/(1-h) diverges. The qualitative conclusion stands (the real record is probably unbounded, slope positive), the
+number does not: with the asymptotic rates the predicted slope is 0.042 to 0.066, and the measured 0.080 needs the
+finite-length growth of |L_n|. See STRATEGY-PLAN.md section 2.
