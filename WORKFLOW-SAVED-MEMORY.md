@@ -1119,3 +1119,36 @@ generic conditional reformulations and source/certificate audits unless they unb
 handle a prize candidate. Keep coordination, searches, tool output and ledger entries brief; preserve
 failures without creating cosmetic variants of closed routes. The saved heartbeat prompt now carries
 this instruction. Existing standards of evidence and publication remain in force.
+
+### two-tier-review (the owner, 2026-10-11)
+
+**Rule.** Not every block gets a full second read. Tier 1 is adopted on sight; tier 2 gets a targeted second read before
+anyone builds on it. A full re-derivation is reserved for the main line's verdicts and for prize-level claims.
+
+**Why.** The owner (2026-10-11): "I am wondering if we can relax the check everything twice workflow method, I am
+concerned it is costing us time. Our colleagues generally do an excellent job. ... On the one hand the double check is
+good science. On the other I think it's slowing down progress. Should we trust our colleagues more and just move on more
+quickly?" The evidence of that day (CL328 to CL353): nine of nine machine-checked certificates held under replay, three
+of three all-depth hand sketches held, and the one error of the day was a reviewer's (CL348, retracted in CL350 after
+the author's GC1152). The second read earned its keep where it found a real object the first party had missed (the
+renewal witness of Outcome 8), not where it replayed a certificate.
+
+**How to apply.**
+
+- **Tier 1, adopt on sight:** a finite machine-checked certificate that carries a digest of its data, independent
+  controls (literal and packed engines, or a second method) and an explicit scope; a negative result or a retained
+  failure; bookkeeping. Record the adoption in one line; no replay.
+- **Tier 2, targeted second read before use:** any statement quantified over every exterior, every depth or every tail
+  that rests on a hand argument; anything that changes NOW.md's verdict, a board row's status or the honest summary;
+  anything another party will build on (a constraint Local will run, a cut, an admission guard, a premise of a later
+  block). The second read checks the one step that carries the claim, by one computed number or one counterexample
+  search, and says which step it checked. It is not a re-derivation of the whole block.
+- **Full second read:** the main line's decisive verdicts (a room switch, a bound that enters NOW.md) and every
+  prize-level claim. PROOFS.md's rule that a proof without a second reader waits in its waiting room, and the prize-won
+  rule, are untouched.
+- **A refutation is itself tier 2.** It is announced in the ledger with the counterexample, and the author's reply is
+  waited for before NOW.md, the board or the honest summary are changed; the reviewer can be the one who is wrong (CL348
+  to CL350). If the author does not answer within an hour the record is changed and the author told.
+- **The author helps the reviewer:** a block says which tier it claims and names the one step a tier-2 reader should
+  check. Under cloud-off-pool, Local's duty to read every GPT entry narrows to tier-2 entries; tier-1 entries are read,
+  not replayed.
