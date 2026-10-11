@@ -20,8 +20,8 @@ ever a tick-16 image of a white-A origin.
 
 RESULT (CL342): both predictions held; no image varies with sites 26..29; the C sources give thirteen images, all
 beginning 111001010 or 111001100; the pin never appears. The own cover has 37 leaves of weight 676 for 1110011111110
-and 9 leaves of weight 28 for 1110011111000, GPT's 46 high-branch leaves (its 81 nodes count only the eleven high roots).
-"""
+and 9 leaves of weight 28 for 1110011111000, GPT's 46 high-branch leaves (its 81 nodes count only the eleven high
+roots)."""
 import itertools
 from collections import Counter
 B=lambda s: tuple(int(c) for c in s)
@@ -34,7 +34,7 @@ def run(start,n):
 def family(s):
     a,b,c,d,e,f,g,h,i,j,k,l=s
     f1=(a,b,c,d,e,f)==(0,1,1,0,1,1) and ((g==1 and h==1 and i==0 and j==0) or (g==1 and h==0 and (i or j)==1)
-                                        or (g==0 and h==1 and i==0 and j==0 and (k or l)==1))
+        or (g==0 and h==1 and i==0 and j==0 and (k or l)==1))
     f2=(a,b,c,d,e,f,g,h)==(0,1,1,1,0,0,0,0) and (((i^j)==1) or (i==1 and j==1 and k==0 and l==0))
     return f1 or f2
 WA=B('1110100011011')
@@ -67,8 +67,12 @@ from fractions import Fraction
 nodes=0; leaves=Counter(); weights=Counter(); stack=[WA]
 while stack:
     src=stack.pop(); nodes+=1; r=certificate(src,16)[16]
-    if len(r)>=13: leaves[''.join(map(str,r[:13]))]+=1; weights[''.join(map(str,r[:13]))]+=Fraction(1,1<<(len(src)-13))
-    elif len(r)>=9 and r[:9]!=B('111001111'): leaves['C:'+''.join(map(str,r[:9]))]+=1; weights['C:'+''.join(map(str,r[:9]))]+=Fraction(1,1<<(len(src)-13))
+    w=Fraction(1,1<<(len(src)-13))
+    if len(r)>=13:
+        k=''.join(map(str,r[:13])); leaves[k]+=1; weights[k]+=w
+    elif len(r)>=9 and r[:9]!=B('111001111'):
+        k='C:'+''.join(map(str,r[:9])); leaves[k]+=1; weights[k]+=w
     else: stack.extend([src+(1,),src+(0,)])
 print('own cover: nodes',nodes,'leaves',sum(leaves.values()),'(GPT 81 nodes, 46 leaves)')
-for k,v in sorted(weights.items(),key=lambda kv:-kv[1]): print('  leaf class %-16s leaves %3d  weight x 4096 = %s'%(k,leaves[k],v*4096))
+for k,v in sorted(weights.items(),key=lambda kv:-kv[1]):
+    print('  leaf class %-16s leaves %3d  weight x 4096 = %s'%(k,leaves[k],v*4096))
