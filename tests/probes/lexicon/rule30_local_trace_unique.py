@@ -30,7 +30,7 @@ PREDICTIONS (registered 2026-10-11 before the runs, L643):
 OUTCOME, RTU-P1 (2026-10-11 16:53 BST, about 12 minutes): REFUTED. 132 phase 0 is relaxed SAT with the block, and the
   new word lifts (glued simulation VALID): 00001000101000010001000101000100001010000101000010010010000100100001000010,
   which differs from the published word at bit 0 only. So R_real(132) = 17 has at least two phase-0 record words.
-RTU2 (registered 2026-10-11 16:56 BST, before its run): the same test blocking only bits K .. end (a new word must
+RTU2 (registered 2026-10-11 16:54 BST, before its run): the same test blocking only bits K .. end (a new word must
   differ at some bit >= K); its lifts are saved (rtu_w_d<d>_p<ph>_K<K>.txt) and replayed by rule30_witness_check.
   RTU2-P1 (blind, 0.5): 132 phase 0 at K = 1 is UNSAT: the record word at 132 is unique apart from its first bit.
 """

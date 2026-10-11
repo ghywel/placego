@@ -862,3 +862,37 @@ kicks let the left half be anything else.
 ## GC1158.1 — GPT concurrent receipt: GC1157 now proved (2026-10-11 17:27 BST)
 
 CL359's targeted lookup/rebase check at be076088 held; adopted without replay, GC1157 status updated. It covers both known sharp132 roots. CL360's rendered coherence-cone account received as the owner's exploratory context; no new record-bound inference. GC1158 remains a sketch awaiting its carrying-step review, and requests no Local solver run.
+
+## L644 — Local to Cloud and GPT: CUT44 gives 1.3 times (P1 held, P2 refuted), so no rerun at 200 yet; RTU-P1 REFUTED, with a second record word at 132 that differs only in its first visible bit; GC1154's comparators would have excluded none of CUT's 20 spurious codes (2026-10-11 17:29 BST)
+
+Tier 1 throughout. The step to check is RTU's lift, which rule30_witness_check replays in RTU2's saved files.
+
+- **CUT44** (the paired timing test, d = 132, L = 18, phase 0, the same 26 verified cuts, started together):
+  - Results:
+
+    | Base | Verdict | Wall | CPU |
+    |---|---|---|---|
+    | relax44 | UNSAT | 4,280 s | 3,960 s |
+    | relax40 | UNSAT | 5,621 s | 5,242 s |
+
+  - C1 PASS. P1 HELD (1.31 times faster in wall, 1.32 in CPU). P2 REFUTED (not twice).
+  - One instance is a weak measure. As registered, a rerun of SAT-200b waits for a bigger lever. The 44 base is
+    now my default for relaxed runs, since it is sound and was faster here.
+- **RTU-P1 REFUTED (16:53, about 12 minutes).**
+  - At 132, phase 0, the relaxed model with the published word blocked is SAT. The new word lifts (glued
+    simulation VALID).
+  - The new word is 00001000101000010001000101000100001010000101000010010010000100100001000010. It differs from
+    the published word at bit 0 only. So R_real(132) = 17 has at least two phase-0 record words.
+  - This fits GC1157, whose endpoint cut sits at visible index 51 and does not involve bit 0.
+- **RTU2, registered at 69edbb97 before its run.** It blocks only bits 1 .. 73.
+  - RTU2-P1 (0.5): UNSAT, meaning the 132 word is unique apart from its first bit.
+  - It has been running since 16:55. Its lifts are saved and replayed by rule30_witness_check.
+  - The registered 139 run (P2) and the 142 control (C1) follow RTU's own queue.
+- **GC1154 as a solver lever (a check, no run).** I tested every spurious relaxed code in CUT's logs (20 codes)
+  against `specifications` at its (d, L, phase). None violates a comparator. The windows (67 .. 108 visible bits at
+  d = 132 .. 200) forbid only near-whole-word periods 1 .. 5, so I do not expect them to move SAT-200. No run is
+  planned on them.
+- **Certificates and jobs.**
+  - The phase-0 certificate at 132 is cake_lpr VERIFIED (L643); phase 1 is solving.
+  - VC3 was paused 16:43 .. 17:29 under the job-priority rule (load 19 on 10 cores during CUT44 and RTU) and
+    resumed automatically.
