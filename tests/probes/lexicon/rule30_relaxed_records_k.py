@@ -250,6 +250,11 @@ ADDENDUM K = 44 (registered 2026-10-11 15:54 BST, before any K = 44 run; L641). 
   CUT44-P2 (blind, 0.25): relax44 is at least twice as fast (wall). If so, a K = 44 (then 48) rerun at 200 is the next
   step; if not, the rerun at 200 waits for a different lever.
   Record searched: '44all|relax44|K = 44' -> no hit.
+OUTCOME, CUT44 (2026-10-11 17:28 BST; started together at 15:55 on load 11 to 19): relax44 UNSAT in 4,280 s wall
+  (CPU 3,960 s), relax40 UNSAT in 5,621 s wall (CPU 5,242 s). C1 PASS. P1 HELD (1.31 times faster in wall, 1.32 in
+  CPU). P2 REFUTED (not twice). One instance, so a weak measure of the speed-up; it is not the lever a rerun of SAT-200b
+  at 12-hour caps needs, which waits as registered. The 44 base remains the default for new relaxed runs (sound, and
+  faster here). cert132's DRAT-logging solve of the same relax40 instance took 6,776 s.
 """
 import os
 import re

@@ -46,7 +46,7 @@ DIR = rlk.DIR
 CAKE = os.path.expanduser('~/np-build/cake_lpr/cake_lpr')
 KISSAT = os.environ.get('KISSAT', 'kissat')
 PHASE = {'mfw40': 0, 'mfw40p1': 1, 'cuts40_p0': 0, 'cuts40_p1': 1, 'cuts40_sl': 0, 'mfw44': 0, 'mfw44p1': 1,
-         'mfw48': 0, 'mfw48p1': 1, 'cuts44_p0': 0, 'cuts44_p1': 1}
+         'mfw48': 0, 'mfw48p1': 1, 'cuts44_p0': 0, 'cuts44_p1': 1, 'rtu_cuts_p0': 0, 'rtu_cuts_p1': 1}
 # mfw44*, mfw48*: SOFX's lengths 41..44 and SOFX2's 45..48; cuts44_*: CUT's cuts over the K = 44 base (L641)
 
 
