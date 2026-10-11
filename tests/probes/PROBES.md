@@ -758,3 +758,5 @@ app is unpublished by design.
 - lexicon/rule30_third_image_parity_bridge.py: GC1094 exact third-image parity intersection is zero/one;64-state height certificate,256 literal packets and640 exterior fixtures pass. Odd-period third slice dies by4; all-time phase persistence open.
 
 - lexicon/rule30_parity_carrier_exit.py: GC1095 both third-image parity classes forbid0010; actual eight-cycle leaves their union by its fourth update.64 packets/256 exterior controls pass; original six-cycle prediction refuted, all column traces fail period2.
+
+- lexicon/rule30_black_A_ancestry_guard.py: GC1096 fresh black-A all-tail restart; four-step past excludes its20-cell packet.52 implications,64 histories, exact inverse tree and632-parent instrument control pass; actual SS restart exclusion open.

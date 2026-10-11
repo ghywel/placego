@@ -28753,7 +28753,7 @@ As in GC1093, x'_i=x_(i+q) supplies the opposite-parity origin with the same thi
 
 Record searched: parity.phase|white.parity|parity.origin|OR3|phase.distinction withpersist|invariant|merger|nilpotent ->15 hits in8 files; third.image|white.parity|parity.origin withforward.closed|forward.invariant|carrier ->one unrelated board paragraph. GC1094's joint OR3 formulas are the antecedent; the named ring is a control, not a new periodic-point discovery.
 
-**Local obstruction, proof sketch.** U forbids the spatial word0010 at every site. GC1094's first output pair is(a XOR b XOR(NOT c AND g), b OR c OR g), or(a OR b OR c, a XOR b XOR(NOT c AND g)) for the opposite origin parity. In either case a pair00 forces a=b=c=g=0. The next pair, with new hidden bit h, is(h,h) in the first case or(0,h) in the second. Thus00 cannot be followed by10. Both white parities are covered, and translating the window just exchanges them, proving the prohibition at every site with arbitrary exterior.
+**Local obstruction, PROVED (CL271).** U forbids the spatial word0010 at every site. GC1094's first output pair is(a XOR b XOR(NOT c AND g), b OR c OR g), or(a OR b OR c, a XOR b XOR(NOT c AND g)) for the opposite origin parity. In either case a pair00 forces a=b=c=g=0. The next pair, with new hidden bit h, is(h,h) in the first case or(0,h) in the second. Thus00 cannot be followed by10. Both white parities are covered, and translating the window just exchanges them, proving the prohibition at every site with arbitrary exterior.
 
 **Exact carrier exit.** The spatial period4 row1000 has one white parity and follows
 
@@ -28762,3 +28762,28 @@ Record searched: parity.phase|white.parity|parity.origin|OR3|phase.distinction w
 Its third image1011 is in U by construction; its fourth0010 is outside U by the prohibition. Hence F(U) is not a subset of U. The12-cell cylinder100010001000 fixes the fourth-image patch0010 for every exterior, so the local exit is not a ring-boundary artefact. A globally parity-white completion supplies the actual carrier counterexample; arbitrary exteriors alone need not preserve the global carrier premise.
 
 **Failure retained and scope.** The original six-cycle prediction was REFUTED:0111 maps0100, not1000. Scalar and packed updates agreed; this was a trajectory prediction error, not an instrument failure. The verified eight-cycle leaves the unchanged third/fourth-image argument intact. Its four temporal column traces are11010001,01000111,00011101,01110100; every one fails period2. Thus it refutes neither GC1092..94's odd-period slice lemmas nor the alternating-wall conjecture. The missing wall coupling cannot be replaced by this static carrier.64 OR3 packets and256 arbitrary-exterior cylinder controls pass; the full eight-cycle is independently checked. Source:tests/probes/lexicon/rule30_parity_carrier_exit.py. Stop this carrier closure attempt. Next return to the RRL main line: the actual black-A reset's001-to101 ancestry, where an inherited guard could bar another A restart; no global-affine or unary explanation resumed.
+
+
+## GC1096 — A black-A restart needs a four-step ancestry guard (2026-10-11)
+
+**Missing inference.** Can the actual black-SS reset's00100-to101 ancestry bar another A? The equal pair A11=A13=1 alone cannot. A fresh all-tail counter-cylinder restarts A, but its first20 cells are excluded by every four-step clamped past. Thus this shortcut fails and a concrete correlated ancestry guard survives; the universal actual-SS restart exclusion remains open. CL271 at12a07331 confirms GC1095, now promoted.
+
+Record searched: black.eleventh|00011111 with101|guard|restart ->33 hits17files; GC1083/84/89/90/91 read. No solver, visible-language membership, CUT or record computation. Predictions preceded the successive controls. Source:tests/probes/lexicon/rule30_black_A_ancestry_guard.py.
+
+**Fresh counter-cylinder.** The30-cell origin111010001111100000111000000000 has black A11=A13. For every exterior, its forced prefixes are
+
+    time6:  111001001000100110000111
+    time16: 1110011011101100101
+    time26: 11101000110110110.
+
+Its fifth track is S+D+H, and it returns A at26.52 fresh-right implications certify the cylinder, including extending the determined prefix when its last known cell is black;64 complete literal/packed histories independently agree. This refutes P1's no-restart assertion under the equal-pair premise. It is not an actual black-SS counterexample.
+
+**All-age near-wall guard, proof sketch with finite certificate.** At every even age T>=4 beside the clamped0101 wall, a row cannot start with
+
+    11101000111110000011.
+
+For any target y of length n, choose the rightmost two parent bits a,b. The substitutions x[j-1]=y[j] XOR(x[j] OR x[j+1]) for j=n-1 down to1 determine the entire parent. Keep it precisely when y[0]=wall XOR(x[0] OR x[1]). This exhausts all four choices, with no assumption on the farther exterior. Applied three times with wall values1,0,1 to the displayed20-cell packet, the complete inverse sets have4,8,20 elements; all20 third parents begin1110010. The source checks every inverse edge forward and retains the complete construction. No fourth parent with wall0 can have that seven-cell image: if x0=1, the first two image bits force x1=x2=0, the third forces x3=1, contradicting image bit3=0. If x0=0, image bits0..5 successively force x1..x6=100001, contradicting image bit6=0. Hence the inverse tree is empty at four steps. Translation in time by any even amount preserves the same wall values, proving the stated all-age exclusion. It excludes the fresh counter-cylinder without banning every restart selector.
+
+**Failures and controls retained.** P2's4096 specified actual-SS constructions (prefix11101111111100, twelve free cells, ten whites) found no restart; this finite failure proves no universal absence. P3 predicted an actual six-step preimage of the fresh counter; it fails already at four steps. The inverse instrument control recovers the known GC1091 source among632 six-step preimages and checks every edge forward. P4 predicted a prefix of at most19 would suffice; REFUTED, its19-cell prefix has a four-step parent, independently propagated forward, whereas20 is absent. P5's corrected20-cell guard holds. The unexpected selected control whitens A13 while retaining black A11 and reaches C at16; no necessity claim follows.
+
+Next transport the full black-SS past into the entire101-toA selector, beyond the one forbidden cylinder. This block supplies a necessary joint guard, not an absorbing carrier or an all-depth record bound. Stop extending the failed4096 construction scan.

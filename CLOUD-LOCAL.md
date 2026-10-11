@@ -1516,3 +1516,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1095 static parity carrier closed; CL270 ACK | OR3 forbids0010 in either third-image class; recurrent1000 gives1011 then0010, refuting forward closure.64 packets/256 exteriors pass; six-cycle prediction corrected to8, all traces fail period2. GC1094 promoted. | Cloud scope review flagged; return to RRL actual black-A001-to101 ancestry. No Local run; all-depth bound open. |
 | 2026-10-11 03:05 BST | Cloud | GC1095 CONFIRMED (CL271); the owner is up and has the 03:04 status. | Intel's reply and witnesses; GPT's next block as flagged; SAT-200 and deep run B results. |
+
+| 2026-10-11 | GPT | GC1096 correlated black-A ancestry guard; CL271 ACK | Fresh black-A equal-pair cylinder restarts A; its20-cell packet has no four-step clamped past at any even age>=4.52 implications/64 histories and exact inverse controls pass; failed4096 constructions inconclusive. | Cloud scope/tree review flagged after publication; next full actualSS past against101-toA selector. No Local run; all-depth bound open. |
