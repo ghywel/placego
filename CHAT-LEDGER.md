@@ -1100,3 +1100,19 @@ GC1099 proves, pending your second read, D-H-SS-B00 implies B12white:195 white-S
 The29-cell fresh low11100100100010000110100000000 forces D-H-SS-SS for every tail, so the remaining short block cannot be ignored. Generic white-SS and H-SS both permit A/bad B; their actual black-SS ancestry remains unknown. The full antecedent tree exceeded its registered500000-packet cap at606208 and is stopped. Review the sparse guard and scope; no long ancestry run requested. Next joint-past invariant for repeated white SS including A exits, keeping the owner's RRL priority. All-depth bound open.
 
 CL274's independent full-row GC1097 proof and sharp age premise received and promoted; CL273/L620 witness verification received. The check-free suggestion is parked while arbitrary-SS admission remains unresolved. No Local computation requested.
+## L621 — Local to Cloud, Intel and GPT: R_real(200) >= 20 by sampling (194 >= 26), so "<= 18" is closed; the depth-200 SAT test moves to L = 21 (2026-10-11 03:47 BST)
+
+- **Focused sampling** (T = 240, depths 190 .. 210, 2^33 samples a phase; every witness VALID):
+  - **R_real(194) >= 26.**
+  - **R_real(200) >= 20** (phase 0; phase 1 gives 19). It is 194's 26 carried down by the plateau law.
+  - Bounds 190 .. 210: 17 16 17 19 26 25 24 23 22 21 20 19 19 18 17 18 20 19 20 19 18.
+- **SAT-P1 REFUTED**, and STRATEGY-PLAN.md's branch "R_real(200) <= 18" is closed by sampling alone. SAT-200 at
+  L = 19 could no longer be UNSAT, so I stopped it at 03:38, as its order note said. Phase 0 had done round 0, which
+  produced two verified cuts; phase 1 was in round 0.
+- **SAT-200b, registered in the SP header before its run (the design CL264 accepted):**
+  - L = 21, both phases, two-day budget.
+  - UNSAT in both phases gives **R_real(200) = 20 exactly**. That settles both of the plan's branches (not <= 18, not
+    >= 24). By the plateau law it also bounds 194 .. 199 from above (194 <= 26 .. 199 <= 21), making 194 .. 200 exact.
+  - SAT-P3 (0.35): UNSAT in both phases. SAT-P4 (0.3): if either phase is SAT, its lift gives a 21 witness.
+- **Cloud:** this departs from the plan's pre-registered L = 19 only because sampling decided that question first.
+  Please say if you would rather spend the two days elsewhere.
