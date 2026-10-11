@@ -204,6 +204,29 @@ All COMPUTED exactly (rationals); the site restriction PROVED as registered.
          K's term at site j is x_t(j) minus D's term at j - 1 (x_t(j) x_{t+1}(j) + x_t(j-1) x_t(j) = x_t(j)), so the
          K law is the B law, two cross laws and the D law; the exact site-by-site equality is COMPUTED to t = 12 and
          its proof is owed.
+
+THE K/D SITE IDENTITY, PROVED (2026-10-11 10:39 BST, by hand; closes IN008 and CL314 item 1). Notation: on the line
+under the coin measure, k_t(j) = x_t(j) x_{t+1}(j), d_t(j) = x_t(j) x_t(j+1), and C_K(t, j) = Cov(k_0(0), k_t(j)),
+C_D(t, j) = Cov(d_0(0), d_t(j)). Claim, for every t >= 1: C_K(t, t-1) = -C_D(t, t-1), C_K(t, t) = C_D(t, t),
+C_K(t, t+1) = -C_D(t, t+1), C_K(t, t+2) = 0.
+  Step 1 (the split). k_t(j) + d_t(j-1) = x_t(j): if x_t(j) = 1 the rule gives x_{t+1}(j) = 1 - x_t(j-1). So
+         C_K(t, j) = C_D(t, j) + Delta(j), Delta(j) = Cov(x_0(0), x_t(j)) - Cov(x_0(0), d_t(j-1)) - Cov(d_0(-1), x_t(j)),
+         using translation invariance for the d-d term.
+  Step 2 (fresh cells). By left-permutivity x_t(j) = x_0(j-t) XOR F(x_0(j-t+1), ..., x_0(j+t)). Cov(x_0(0), x_t(j)) is
+         rho_t / 4 at j = t and 0 otherwise; Cov(x_0(0), d_t(j-1)) can be non-zero only at j = t, t+1; and
+         Cov(d_0(-1), x_t(j)) only at j = t-1, t. So Delta(t+2) = 0, which with C_D(t, t+2) = 0 gives C_K(t, t+2) = 0.
+  Step 3 (halving). x_t(t-1) contains x_0(-1), which nothing else here contains, so it is a fair coin independent of
+         x_0(0), x_0(1), x_t(t). Hence Cov(x_0(0), d_t(t-1)) = (1/2) Cov(x_0(0), x_t(t)) = rho_t / 8, and likewise
+         Cov(d_0(-1), x_t(t)) = rho_t / 8 (x_t(t) does not contain x_0(-1)). So Delta(t) = rho_t/4 - rho_t/8 - rho_t/8 = 0.
+         In the same way C_D(t, t-1) = (1/2) Cov(d_0(0), x_t(t)), so Delta(t-1) = -Cov(d_0(-1), x_t(t-1)) =
+         -Cov(d_0(0), x_t(t)) = -2 C_D(t, t-1). And d_t(t+1) is a function of x_0(>= 1) only, so C_D(t, t+1) =
+         (1/2) Cov(x_0(1), d_t(t+1)) = (1/2) Cov(x_0(0), d_t(t)), and Delta(t+1) = -Cov(x_0(0), d_t(t)) = -2 C_D(t, t+1).
+  Step 4. C_K = C_D + Delta at the four sites gives the claim. So Cov(K_0, K_t)/n = C_D(t, t) - C_D(t, t-1) - C_D(t, t+1)
+         and Cov(D_0, D_t)/n = C_D(t, t) + C_D(t, t-1) + C_D(t, t+1). The computed sign pattern of the three D sites
+         (all of sign (-1)^t, to t = 12) is not proved here.
+CAR-P12, registered at the same time, a control of the identity before its check (CL314 item 3): from the single cell,
+x_t(0) = 1 XOR (the sum over s < t, j >= 0 of C(t-1-s, j) x_s(1-j) x_{s+1}(1-j)) mod 2, the vertical-domino form of
+fact 1; the domino count equals the carry count n_t cell by cell at every s < T and j (T = 4096 and 16384).
 """
 import math, os, re, subprocess, sys, time
 from collections import defaultdict
