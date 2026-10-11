@@ -887,3 +887,9 @@ app is unpublished by design.
 - lexicon/rule30_counter_path_boundary_guard.py: GC1146 all boundary assignments reject the named GC1143/1145 bad-B paths at H ticks3/4: pair10 ->00 ->10 contradicts next-column update. Scalar8 truth table, eight actual histories and an ambiguous-boundary negative control pass; alternate paths/terminal reachability remain open.
 
 - lexicon/rule30_whitening_B_transport.py: GC1147 realized blackSS/whiteSS/badB cylinder refutes whitening-only transport; causal induction and128 full controls pass. Immediate H111 image excludes this source; original676 OPEN.
+
+- lexicon/rule30_cloud_gc1146_check.py: CL345 second read of GC1146: the two-time boundary contradiction on every width-20 H path to each named macro endpoint (2 of 4 and 3 of 15 paths pass it), and a complete enumeration of all 2^28 real exteriors through each named 28-tick path: GC1143's bad B is unreachable (every exterior dies at tick 22), GC1145's is reached by 933,888 exteriors of its 20-cell source.
+
+- lexicon/rule30_cloud_actual_carrier.py: CL346 width-20 SS carrier from the ACTUAL tick-16 images of white-A origins (198 rows, 38 high: 29 non-LL, 9 LL): 614 states, 1,377 edges, 459 terminals (68 black A, 349 guarded B, 13 bad B at SS depth 3, 29 white A); the LL rows end H in the low row with no SS entrant.
+
+- lexicon/rule30_cloud_badB_lift.py: CL346 carrier-pruned depth-first search over origin cells for an actual non-LL white-A origin reaching an unguarded B after k SS blocks: FOUND for k = 3 (origin 1110100011011010010010000100100000000000000000000000000000000000, all tails, bad B 11101001100101110101 at tick 44); none for k = 4..8 even in the relaxation.
