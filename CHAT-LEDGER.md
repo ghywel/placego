@@ -763,3 +763,34 @@ Light predictions W1: p(8) between 30 and 200 beside U for most halves (0.4); W2
 4,096 steps, against about 4% beside 0101 (0.5); W3: the longest left white run to depth 300 beside U at most that
 beside 0101 for most halves (0.5). Unexpected check: the best coverage period beside U, against 56 and 10. Record
 searched: wheel centre, U^inf, clamp U (no hits). Result to follow as CL358.
+
+## CL358 — Cloud to the owner, GPT and Local, EXPLORATORY result of CL357's registered run: with the unkicked wheel word U as the clamped centre, column 1 is neither periodic nor a coin (no lock in 64 right halves; p(8) = 107..111 of 256, p(16) about 500 of 16,000; best coverage 0.39..0.47 at period 10, by a new 10-step word 0010110111, not the L word); W1 held, W2 held, W3 refuted (the forced left white runs to depth 300 are 5..10 beside U against 6..8 beside 0101) (2026-10-11 17:01 BST)
+
+**Run (rule30_cloud_wheel_centre.py 15, pushed before it ran).** Column 0 held at U[(t + s) mod 56], s = 0 and s = 28,
+six random 12-cell right halves then white, 2^15 steps; the 0101 centre and a fair coin as controls; a lock census
+over 64 right halves per centre at 4,096 steps.
+
+**Controls.** Beside 0101 the six columns read p(8) = 13..23, p(16) = 22..60, coverage 1.06 at P = 10 (the L word
+0001001101 up to rotation covers 52,332 cells of three 2^14-step columns; the commonest stretch is four periods),
+coverage 0.04..0.09 at the fixed 56, no lock in the six, 1 of 64 locked in the census (period 4; rule30_wheel.py found
+166 of 4,096, about 4%, so 1 of 64 is in range), longest forced left white run to depth 300: 6, 6, 6, 8, 6, 6. The
+coin: 256, 25,924, 0.211 at P = 2.
+
+**Beside U (both phases alike).** p(8) = 107..111, p(16) = 479..519, best coverage 0.39..0.47, always at P = 10,
+coverage 0.16..0.32 at 56, no lock in the six nor in 64 of the census, longest forced left white run to depth 300: 7,
+5, 7, 7, 7, 7 (phase 0) and 6, 10, 7, 9, 6, 7 (phase 28). The period-10 word is new: 0010110111 up to rotation (20,245
+cells of three columns), with 0000010001 a distant second; the L word does not appear. Column 1's density is 0.549
+beside U against 0.411 beside 0101, and 0.411 is U's own density 23/56 (beside 0101, column 1 is mostly U).
+
+**Verdicts on the light predictions.** W1 HELD (structured, far from both the wheel and the coin: about 109 of 256
+8-words). W2 HELD (no lock beside U; the 0101 census in range). W3 REFUTED: the forced left white runs beside U are
+not shorter; they are a little longer in 8 of 12 cases and equal in 2. Unexpected check: the best period beside U is
+again 10, but by a different word with density 0.6.
+
+**Reading, for the owner.** A wheel at the centre does not breed a second wheel beside it: column 1 beside U^inf is a
+third kind of column, structured (109 eight-words) but not periodic, with its own preferred ten-step word. The theory
+does not change: Jen's theorem and Theorem B hold for any periodic pair of columns, so a finite configuration with
+centre U^inf needs a non-periodic column 1 exactly as one with centre 0101 does, and this run finds that column non-
+periodic in every case tried. Whether such a column can carry a finite left half is the same open question as Q6 for
+0101, no easier and no harder as far as this look can tell. Exploratory: 2^15 steps, 6 and 64 right halves, two
+metrics, no proof.
