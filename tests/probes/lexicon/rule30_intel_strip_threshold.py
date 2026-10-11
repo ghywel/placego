@@ -53,6 +53,51 @@ each minimal absent, and 11 against 10 at W = 3, l = 7, 23 against 22 at W = 5, 
   the case that would make Conjecture S sharp at that length). Not predicted.
   Scope: N = 32 in both phases (traces to length 32), W = 1..14; L(W) is exact where L(W) + 1 <= 32 and is reported as
   a lower bound otherwise.
+
+OUTCOME (2026-10-11 08:21 BST). Both phases, N = 32 (2^32 rows each, 8 s on 16 threads), W = 1..14. Tables, extra
+traces and their least excluding widths: rule30_intel_strip_threshold.txt beside this file. All COMPUTED.
+  L(W), W = 1..14, standard phase: 3, 6, 6, 10, 10, 17, 20, 20, 20, 26, 30, >= 32, >= 32, >= 32.
+  L(W), W = 1..14, odd phase:      2, 7, 7, 11, 11, 14, 14, 19, 19, 23, 23, 23, 29, 29; and L(15) = 29 follows (below).
+  Cross-check: an independent numpy enumeration of all 2^24 rows gives the same |T(l)| for l = 1..24 in both phases,
+         and confirms every extra trace to length 24 absent, its prefix and its two-step suffix real, and its least
+         excluding width (width w(f) - 1 produces it, w(f) does not).
+  SX-C0: containment PASS at every W and l in both phases; L non-decreasing in W. The third clause, L(W) >= W + 2,
+         holds at every W in the standard phase and FAILS in the odd phase at W = 1: L(1) = 2, because the trace 000
+         is produced by the width-1 strip and by no right half. Checked by hand from the rule: with x_0(0) = 1,
+         y_0 = y_1 = 0 forces x_0(2) = 1, so x_1(2) = 1 and y_2 = x_1(2) = 1; the strip takes e_0 = 1, e_1 = 0. The
+         instrument is right; the registration was wrong to assume the lemma w(f) <= |f| - 2 in both phases. It is a
+         standard-phase lemma (KIMI-QUESTIONS-4's setting) and false in the odd phase at |f| = 3.
+  SX-C1 REPRODUCED in full: standard T^W(2W) = T(2W) for W <= 15 and T^W(2W+1) differs only at W = 3, 5 (W <= 15;
+         W = 12..15 by L(12) >= 32 and monotonicity); odd T^W(2W+1) differs at W = 1, 7, 12 (W <= 13) and T^W(2W)
+         at W = 12 and 15. The last follows from computed facts: L(15) >= L(14) = 29, and the length-30 extra trace
+         below has w(f) = 16, so the width-15 strip produces it and L(15) <= 29.
+  SX-P1 REFUTED: the standard phase pairs at k = 4 (20, 20) and not at k = 3 (17 against 20) or k = 5 (26 against 30).
+  SX-P2 REFUTED: the odd phase pairs at every k = 1..5 (7, 11, 14, 19, 23) and first breaks at k = 6 (23 against 29).
+  SX-P3 REFUTED: L(6) = 17, L(7) = 20 and L(10) = 26 exceed 2W + 4; held at W = 8, 9.
+  SX-P4 HELD (2, 2, 2, 2, 1 extra traces at W = 6..10). SX-P5 HELD (every equal pair shares its extra traces).
+  SX-P6 HELD: every extra trace at L(W) + 1 is minimal absent, both phases, every W reached.
+  Unexpected check, the least excluding widths. Standard phase: w(f) = ceil(l/2) at l = 4, 7, 11 (w = 2, 4, 6) and
+         well below it at l = 18, 21, 27, 31 (w = 7, 10, 11, 12 against 9, 11, 14, 16). Odd phase: w(f) = ceil(l/2)
+         at l = 3, 8, 12, 15, 20, and ABOVE it at l = 24 and 30: 001000100110001001101000 has w = 13 > 12 and
+         011001100010011001100110011000 has w = 16 > 15. So the per-trace form w(f) <= ceil(|f|/2) fails in the odd
+         phase (the record has this from the swarm's agent and skeptic, STRATEGY-PLAN.md; here by Intel's own code,
+         with the two shortest witnesses), while L(W) >= 2W - 1 holds there with no slack at W = 12 and 15
+         (L = 23, 29). KIMI-QUESTIONS-4's "equivalently" between the two forms holds for odd lengths only.
+  Reading (Q1). The pairing is not a law. L is a step function: L(W) + 1 is the length of the shortest absent trace
+         that width W does not exclude, and a plateau ends exactly at the least excluding width of its extra traces
+         (standard W = 7, 8, 9 share 000100110100010011000 and 110100110100010011000, both w = 10, and L jumps at 10).
+         Plateaus of two widths come from extras whose w(f) is the next even width (standard w = 4, 6; odd w = 4, 6, 8,
+         10); the odd plateaus of three widths (10..12, 13..15) come from the two extras with w = 13 and 16, the ones
+         above ceil(l/2). So L(2k) = L(2k+1) fails exactly when an extra trace at L(2k) + 1 has w(f) = 2k + 1: standard
+         k = 3 and 5 (w = 7, 11), odd k = 6 (w = 13); everywhere else to W = 14 the extras' w(f) is at least 2k + 2.
+         The slack L(W) - (2W - 1)
+         grows in the standard phase (2, 3, 1, 3, 1, 6, 7, 5, 3, 7, 9, then >= 9) and stays at most 4 in the odd
+         phase (1, 4, 2, 4, 2, 3, 1, 4, 2, 4, 2, 0, 4, 2, 0). So if Conjecture S fails anywhere, the odd phase is
+         where to look, and in the odd phase it cannot be improved to 2W. The extra traces form one family across
+         the phases: dropping the first symbol (one time step, which swaps the phase) takes a threshold extra of one
+         phase to a threshold extra of the other at four pairs: 0000 and 000, 0001000 and 10001000, 11001101001 and
+         011001101001, 110100110100010011000 and 10100110100010011000. Six of the nine extra traces of length 18 or
+         more end in 10011000.
 """
 import os, re, subprocess, sys, time
 import numpy as np
