@@ -77,6 +77,16 @@ OUTCOME, 2026-10-10 08:38 BST (M5, 3 cores; the language grew to n = 40 in about
     only. The direct test is from the dynamics, not the
     language: the least strip width w(n) for which the width-w right-strip NFA reproduces the exact language to
     length n. A bounded w(n) gives an exact finite lift; a growing w(n) means the hidden state is unbounded.
+
+EXTENSION SOFX (registered 2026-10-11 14:15 BST, before its run; the main line of CL297, the real visible language and
+its certified minimal absent words). `grow 44` in both phases (SOF_PHASE=0 with 3 jobs, SOF_PHASE=1 with 2), from the
+lists to 40. Every candidate wb (w in L_(n-1), wb[1:] in L_(n-1)) found absent is a minimal forbidden word of length n;
+those of lengths 41 .. 44 are new cuts, to be certified by cake_lpr (MFC) afterwards. Calibration: |L_n| grows about
+1.12 a bit near 40 (13,730 at 40), and lengths 36 .. 40 have 43 .. 76 minimal forbidden words each, phase 0.
+  SOFX-C1 (control): every grown level is prefix- and factor-closed, and the phase-1 level is a subset of phase 0's.
+  SOFX-P1 (blind, 0.6): |L_44| in phase 0 lies in 20,500 .. 22,500.
+  SOFX-P2 (blind, 0.6): each new length 41 .. 44 has 60 .. 120 minimal forbidden words, in each phase.
+  SOFX-P3 (blind, 0.5): every new minimal forbidden word passes cake_lpr (none is a solver artefact).
 """
 import os
 import sys
