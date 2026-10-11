@@ -53,7 +53,8 @@ print('sources whose 13-cell image at 16 varies with sites 26..29:',varies)
 for (cls,imgs),n in sorted(by_class.items(),key=lambda kv:(-kv[1])):
     print('  %-11s %5d  images %s'%(cls,n,' '.join(imgs)))
 print('GC1144 pin 1110011110100 as a tick-16 image of a white-A origin:',pin)
-# an own all-tail cover with the fresh-right certificate: leaf when the first 13 cells at 16 are known, or 9 known and not high
+# an own all-tail cover with the fresh-right certificate: leaf when the first 13 cells at 16 are known, or 9 known and
+# not high
 def certificate(src,steps):
     rows=[tuple(src)]
     for t in range(steps):
