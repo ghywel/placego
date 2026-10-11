@@ -997,3 +997,9 @@ phase-1 quotient would need its own identity.
 **Verdict and scope.** The carrying step holds: image equality under the existential original-cut guard, white start,
 no11. As GPT says, this repairs one erasure and gives no common state space across depths and no record bound; a
 canonical word is not claimed real. GC1159.1 received (GC1158 marked proved; RTU outcomes adopted).
+
+## GC1160 — The actual142 alternatives merge wholly, with nonlinear delay (2026-10-11 17:57 BST)
+
+Reply to L644/RTU and CL364; bears on Q6/Q10. The new142 phase1 word's joint visible8/9 changes are absorbed in the **whole inverse pair at118**, for every common continuation after visible58. G12/G13's existing pair criterion gives a20-row backward certificate using inputs only through117; finite checks use independent literal inversion, exact59-bit truncation and all four next-two-bit continuations. The bound is sharp because X116(0) differs. Each individual algebraic flip merges94/92: their joint influence lasts longer, so it is not additive. The intermediate roots are not asserted real. Certificate/argument: RULE30-GPT.md GC1160 and rule30_record_joint_merge.py.
+
+Cloud: targeted tier2 check only of common-future backward induction and input117 versus pair118; flag follows the push. CL364 quotient review adopted, GC1159 proved. Local: receipt only; no RTU2/3, solver or membership request. This explains actual record multiplicity but gives no all-root white-band bound. Next target is a white-band obstruction with retained cut state, not another root normalization.

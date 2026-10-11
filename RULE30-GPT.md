@@ -29917,7 +29917,7 @@ Record searched: GC978|GC970|root|provenance with annotation|label|register|orig
 
 ## GC1159 — Erase an image-invisible first bit only with its possible cut origins (2026-10-11 17:43 BST)
 
-**PROOF-SKETCH, tier 2; finite controls COMPUTED; serves Q6/Q10.** Missing inference: a sound first-bit quotient of the hidden root representation after that bit ceases to affect the inverse image. The shielding identity is already C7/R4, not a new result here. The basic white-band recurrence and inverse reset language were also found already in GC549 checkpoint 20 and G13, so those were not rederived or tested. The new step is retaining existential root-cut provenance when normalizing the first bit; its negative control uses an actual record word.
+**PROVED (CL364), tier 2; finite controls COMPUTED; serves Q6/Q10.** Missing inference: a sound first-bit quotient of the hidden root representation after that bit ceases to affect the inverse image. The shielding identity is already C7/R4, not a new result here. The basic white-band recurrence and inverse reset language were also found already in GC549 checkpoint 20 and G13, so those were not rederived or tested. The new step is retaining existential root-cut provenance when normalizing the first bit; its negative control uses an actual record word.
 
 Restrict to a **white-start wall**. Let F be a finite visible cut set containing 11, and use GC971's convention that cuts test visible samples strictly before the unused last root pair value. Every F-avoiding root with first visible bits q0,q1 has q0*q1 = 0. C7 gives first-track depth3 at time0 equal to 1-q1 and depth4 equal to q0*q1. At later times the root bit q0 is outside every input window. Thus setting q0 to 0 preserves the entire depth-4 inverse pair: if q1=0, both first depth3/4 values are unchanged; if q1=1, the gate 11 already forces q0=0. Iterating the literal inverse h proves equality at **every k>=4**, for every common continuation. This uses C7 and the inherited masking/cone identity, not an affine approximation or a depth scan.
 
@@ -29939,3 +29939,28 @@ The quotient repairs this one origin erasure; it neither gives a common bounded 
 
 
 **Concurrent receipt (CL361..363, L644 and RTU).** CL361 at a245bbeb held the targeted joint-initialization/converse check from an independent implementation; adopted without replay and GC1158 marked PROVED. Its finite enumeration supports the written general argument; no growing-depth record bound follows. L644 at c2e7964a and RTU outcomes at cb1db84f are adopted under tier 1: CUT44's paired timing is 1.31 times faster, not twice; the 132 bit0 alternative is real; 142/phase1 has a third lifted word differing at bits 8/9; the blocked139 relaxed word does not lift, leaving uniqueness open. RTU2/RTU3 remain Local's lane. None of CUT's 20 spurious codes violates GC1154 comparators, so those are not proposed as a solver lever. Scope clarification to CL362: an unlabelled output word cannot identify its original root, but an exact unlabelled image DFA can encode admissible origins in subset states (GC971). No impossibility of such DFAs is asserted. CL363's owner-requested solid-row discussion is received as context, without replay or a new prize inference.
+
+## GC1160 — Actual142 root changes merge completely at depth118 (2026-10-11 17:57 BST)
+
+**PROOF-SKETCH, tier2 carrying step; finite certificate COMPUTED; bears on Q6/Q10.** Missing inference: Local's third actual phase1 d142 record word differs from its first at visible8/9. Is their common deep white band incidental, or do their whole inverse images merge for every common continuation? The existing G12 terminal-pair criterion supplies a finite all-depth certificate: **h^k images agree at every time for every k>=118**, under the specified common prefix. No record bound follows.
+
+The two required 59-bit prefixes are
+
+    00101000100001010101010101010101010001000010101010101010101
+    00101000010001010101010101010101010001000010101010101010101
+
+Their differences are physical white times17/19. Give them any identical visible continuation after bit58 (physical117). Write X_0(t)=(1+t) mod2 for the wall, X_-1 for its masked right input, and X_j for the forced left columns. G25's exact inverse recurrence is
+
+    X_(j+1)(t) = X_j(t+1) XOR (X_j(t) OR X_(j-1)(t)).
+
+For t>=20 the root windows are identical at every depth, so those entire rows agree. For each earlier t the finite certificate gives a pair of consecutive common cells at depths C_t,C_t+1. Listed in time order0..19, its depths are
+
+    117,104,103,104,96,74,69,66,67,63,56,41,37,29,16,11,6,6,7,3.
+
+For every backward step **C_t+1>=C_(t+1)**. Starting with the common pair, the displayed recurrence uses only the common future driver at j>=C_t+1; induction in j proves agreement at every depth>=C_t. Induction backward in t completes the certificate. All twenty pairs depend on root inputs only through max(t+C_t)=117. Hence their values hold for every common continuation, not merely a padded or saved trace. The complete pairs and values are in `tests/probes/lexicon/rule30_record_joint_merge.py`. The largest C_t is117, so X_j(t) is common at every time for j>=117; h^118=(X_118,X_117) is common and all its subsequent images remain common. **Sharpness:** X_116(0) differs within the certified prefix, so equality of whole pair words at any earlier inverse depth would contradict its subsequent image.
+
+**Unexpected control.** Flipping only visible8 or only visible9 algebraically gives sharp whole-pair merge depths94 and92. At X_116(0) each individual flip has no effect, while the joint flip changes it. Thus even these finitely absorbed perturbations do not have additive influence. The intermediate single-flip roots are not asserted real (one creates11). This is a fixed actual-pair explanation, not a new unary or global-affine method.
+
+**Verification and scope.** Literal Wolfram-table inversion independently agrees with XOR/OR on the complete saved triangles. The same20-row certificate holds after truncation to exactly59 visible bits and under all four common next-two-white-bit choices; those controls support the instrument, while the backward induction supplies arbitrary-continuation scope. Both actual79-bit words are adopted from Local's RT fixture and RTU lift report, without rerunning their physical realization. No solver, language membership, CUT/S-L extraction or record census. Record searched: two.*(bit|input|defect)|swap|shift.*pulse|142 with coalesc|shield|finite.*influence|annihila|reset ->84 hits27files; G12/G13.3/G25/GC1158 read. G149's eventual-finiteness under temporal shifts is different. Preregistration preceded computation; its P1 held. Local's RTU2/3 jobs remain its lane.
+
+CL364 at3d45363b held GC1159's targeted quotient/guard check, including the essential white-start restriction; adopted without replay, GC1159 promoted to PROVED. Cloud's targeted GC1160 review: the common-future induction and max-input117 versus full-pair depth118. The new certificate explains a genuine record-root multiplicity; it does not bound reset distances across all cut-admitted roots. Next: a spatial white-band obstruction that uses their retained cut state, rather than further particular-root normalizations.
