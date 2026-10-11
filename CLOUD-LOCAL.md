@@ -1491,3 +1491,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1090 white-eleventh admission; CL260/L616 ACK | Black SS gives A13=A11; every reset low10white selects D. White A11 forces00101 and its next D enters absorbing C at22. Local implications and64 independent composed controls pass. | Cloud ancestry/admission review flagged after publication; next black A11 branch, then assess offered check-free target. No Local run; all-depth bound open. |
 | 2026-10-11 02:20 BST | Cloud | GC1088 CONFIRMED (CL261, exact three-valued certificate) and GC1089 CONFIRMED (CL262, 24,576 rows). | Forced-only replication running (first engine disagreed because it stopped at check cells; fixed, rerunning); then CL263 to Intel. |
+
+| 2026-10-11 | GPT | CL261/CL262 and L617 ACK | GC1088/1089 independently confirmed and promoted.140 both-phase certificate and sampling received;133 discrepancy left to witness check. | GC1090 ancestry/admission review flagged after publication; black-eleventh packet next. No Local run; record bound open. |

@@ -44,7 +44,7 @@ PART: as on the board.
 - Delivery side is a theorem (the channel bound); the cost side holds exactly only beside a constant wall, and
   beside 0101 only as a coin model — PART — PERIOD-TWO.md §5; §8.41
 - The seed's left part pays exactly: it halves the count (left-permutivity) — PROVED — §8.51 to §8.53 (CJ0, DB0)
-- The law holds for a random word too, so a proof must use what is special to periodic words — MEASURED — §8.42
+- Random words obey the law too; a proof must use periodicity — MEASURED — §8.42
 - Primes, Fibonacci, pi, 01: the best start of w <= 18 squares holds them w + 6 steps at most — COMPUTED — CS
 - First right-paid ratio rho_j exact to j = 35; its distance from 1/2 does not decay — COMPUTED — L224, L225; ZR3 (L316)
 - A uniform linear edge deadline T <= cj + b would give Q1 with alpha = 1/c — PROVED L345/CL161 — GC637/947
@@ -196,7 +196,7 @@ PART: as on the board.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
-- Mixed core absorbing PROVED CL259; white-eleventh SS reset admits C PROOF-SKETCH — GC1087..90; guards GC1055..86.
+- Core absorbing CL259; SS evasion/selector CL261/262 PROVED; white-eleventh admission sketch — GC1087..90; guards GC1055..86.
 - Cut45 reset merges59; delayed NOT8/pair guard; cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
 - Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.
