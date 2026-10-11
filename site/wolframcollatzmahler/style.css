@@ -24,7 +24,9 @@ header.top{background:var(--ink);color:var(--cream);font-family:var(--sans);font
 header.top .in{max-width:var(--maxw);margin:0 auto;padding:12px 18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 header.top .brand{font-weight:700;letter-spacing:.03em;color:var(--cream);text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:10px}
 header.top .brand canvas{width:28px;height:16px;image-rendering:pixelated;border-radius:2px}
-header.top nav{display:flex;gap:14px;flex-wrap:wrap}header.top nav a{color:#c9c2b3;text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
+header.top .other{margin-left:auto;color:#c9c2b3;text-decoration:none;font-size:13px;white-space:nowrap}
+header.top .other span{color:var(--cream);border-bottom:1px solid var(--gold)}header.top .other:hover{color:var(--cream)}
+header.top nav{display:flex;gap:14px;flex-wrap:wrap;flex-basis:100%}header.top nav a{color:#c9c2b3;text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
 header.top nav a:hover{color:var(--cream)}header.top nav a[aria-current]{color:var(--cream);border-bottom-color:var(--ember)}
 /* ribbons: a strip of the pattern itself, framing each page */
 .ribbon{display:block;width:100%;height:26px;background:var(--ink)}
