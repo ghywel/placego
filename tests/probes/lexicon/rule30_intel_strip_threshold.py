@@ -135,6 +135,28 @@ with least widths, partners and strip witnesses: rule30_intel_strip_extras.txt (
          the odd phase has a run of tight cases at every length 34..38 of its thresholds, the material Q3 of
          KIMI-QUESTIONS-4 asks for. Every extra of length 20 or more ends in 0011000 or 0011001 except the odd one of
          length 24 (ending 1101000). The run of tight cases is evidence for an infinite tight family, not a proof.
+
+SX-P8 and SX-P9, registered 2026-10-11 10:28 BST before their runs (CL314: Intel's lane is the strip form again).
+SX-P8: the odd phase with real traces to length 40 (2^40 right halves, about an hour on 16 threads), W = 1..20.
+  (a, control) containment PASS everywhere, and every result at W <= 18 identical to the length-38 run.
+  (b, 0.7) Conjecture S holds at W = 19 (L(19) >= 37). (c, 0.5) L(19) = 39, so the odd run L(W) = 2W + 1 continues.
+  (d, 0.5) the extra traces at L(19) + 1 are tight (w(f) = 20). (e, 0.6) L(20) is not determined at length 40.
+SX-P9: the column tableau of every tight extra trace and of the two above ceil(l/2) (rule30_intel_strip_extras.txt,
+lengths up to 38, both phases). Column 0 is the wall and column 1 the trace; column i+1 is forced where column i is
+white (x_t(i+1) = x_{t+1}(i) XOR x_t(i-1)) and free where it is black; column i passes its check when every black
+x_t(i) has x_{t+1}(i) XOR x_t(i-1) = 1. A branch is one choice of all free entries; it dies at the first column whose
+check fails, and w(f) is the deepest death column (CL309's correspondence). The search merges identical pairs of
+adjacent columns, so branch counts are exact integers. Measured per trace: the number of branches dying at each
+column; the number of distinct surviving column pairs per column; and the last repair column, the deepest column
+with a state whose free choices lead to subtrees of different maximal death column.
+  (a, control) the deepest death column equals w(f) of the family file for every trace, and sampled real traces of
+         length 30 to 38 have a branch passing every check.
+  (b, 0.6) for every trace more than 90% of all branches die by column 3.
+  (c, 0.5) for every tight trace the last repair column is at most ceil(l/2) - 2: the freedom is spent at least two
+         columns before the halfway column, and the deepest branches are forced from there to their death.
+  (d, 0.5) on the deepest branches a single column pair survives at every column from the last repair column on.
+  Unexpected check (not predicted): whether the two traces above ceil(l/2) (odd, lengths 24 and 30) spend their last
+  freedom later than the tight ones.
 """
 import os, re, subprocess, sys, time
 import numpy as np
