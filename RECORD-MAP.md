@@ -146,8 +146,8 @@ PART: as on the board.
 - Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
 - Swarm round: hand proofs held, two sharp targets — SUMMARY — §8.87
-- Check-free: forced-only records exact to 122, no survivor, slope falls with width; door spent — COMPUTED — §8.88
-- Room switch to the visible language's cuts; first test: absent (L630) — DECIDED — §8.89
+- Check-free: forced-only records exact to 122, no survivor, slope falls with width — COMPUTED — §8.88
+- Room switch to cuts; E absent (L630); W = 28 cut product leaves pure M3 (CL303) — DECIDED — §8.89
 
 
 
