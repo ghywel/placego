@@ -183,6 +183,10 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   CUT-P23 REFUTED (07:55): d = 142 phase 1 UNSAT at L = 18 in round 0 (9,376 s, 27 cuts), so R_real(142) <= 17 in both
          phases (kissat on cake-verified lists and cuts); SP's phase-1 witnesses at 17 (three independent runs, each
          VALID) give R_real(142) = 17 exactly. Certificates queued after 139's.
+  CUT-P26 (blind, 0.6; registered 07:55 before its runs): every depth still open at 18 in 143 .. 150 (143, 145, 146, 147,
+         148, 149, 150; SP samples 17 16 15 17 17 17 16) is UNSAT at L = 18 in both phases (14,400 s caps, 2 rounds, phase 1
+         only after a phase-0 UNSAT; five depths at a time), so R_real <= 17 there and = 17 at 143, 147, 148, 149. Six of
+         seven or more counts as held. Record searched: 'R_real\((143|14[5-9]|150)\)' -> no hit.
   d = 132 phase 0 (the 7,200 s rerun): UNSAT at L = 18 (5,078 s, 21 cuts).
   CUT-P20 (blind, 0.5; registered 23:35 before its run): d = 132, L = 18, phase 1 ends UNSAT within 2 rounds at 14,400 s
          caps, so R_real(132) <= 17: an isolated dip between witnesses at 131 and 133.
