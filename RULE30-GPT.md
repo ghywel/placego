@@ -28812,3 +28812,26 @@ The complete retained inverse sets have sizes788,522,1680,838,608,384. Every fin
 **Controls and retained uncertainty.** Every inverse edge is checked forward; all384 final packets independently propagate through S6+D8 to the target.64 nonvacuous literal/packed actual histories use the36-cell source111011111111000010000000000000000000: black A at6,low00100 at12,101 at22,H then B at32. The fresh GC1096 source still returns A, refuting deletion of the age premise. P3's shorter low10010001 packet has eight black-A parents and forces only A14..16white, so it alone does not prove exclusion; the full D8 packet is essential. P4's additional actual-SS time3 guard rules out A14..18fivewhites and holds, but the reviewed GC1096 guard suffices for this proof. The identified unexpected check is P6's three1110 alternatives, excluded only by earlier D past. No failed alternative is promoted to a theorem.
 
 Next carry this same black-A past through the remaining101-toB branch and decide B12 under white B10/B11; that is the missing guard for admission to GC1087's absorbing carrier. No additional construction scan or Local run requested.
+
+
+## GC1098 — Black-A past guards its first B; white short blocks remain (2026-10-11)
+
+**Missing inference moved.** If black-A's S-D101-H continuation returns B immediately, its B10=B11white forces B12white. Thus B with white10 enters GC1087's guarded-B carrier; black B10 instead enters C on its next short by GC1052. This handles the first-B branch for every tail. It does not cover an intervening unbounded SS block. The returned S's sixth marker is white, so those outstanding short blocks keep a white marker by GC1056. GC1097's no-A certificate is still awaiting independent review.
+
+Record searched:101.*B|B.*101 withwhite12|site.12|sparse|admission ->88hits28files; black.eleventh|GC1097 withguard|B ->22hits10files. GC1086/87/1075 read. Source:tests/probes/lexicon/rule30_black_A_B_admission.py. No solver, CUT, visible membership or record run.
+
+**Sparse guard, proof sketch with complete packet certificate.** Start with black-A1110100011111, sites6..13=00011111. Its fourth S row begins100010 at6, and its sixth is low100100, by GC1091. Suppose D returns101 and its H returns bad B, namely sites6..12=0011001. Pull the latter back through H's last three updates; intersect with its known time7prefix01. There are13 parents. Pull through its earlier seven updates, retaining GC1075's high101 shields1101,1001,0111,1100,001,111,100. The complete112 high parents have only three first-ten-cell prefixes:
+
+    1101101101,1101101110,1101110000.
+
+These are necessary conditions for bad B, without assuming core J ancestry. Pull all three backwards through D10, retaining the verified low prefix shields at its times0..5:
+
+    100100,11111,0000,000,10,0.
+
+The complete retained sizes are12,20,29,14,24,25,23,64,228,108. Thus108 low parents survive; low00100 alone has not excluded the bad prefixes. Pull those108 back through S's final tick, retaining S5prefix11011:240 parents. One more backwards S tick leaves no parent beginning10001. Black-A's actual S4prefix100010 implies10001, giving the contradiction. Completeness follows from the two free rightmost bits and left-permutive substitution at each inverse edge; every edge is checked forward. Hence the sparse B guard holds independently of farther tail or time origin. It needs the short past, not just the low label.
+
+**White marker and nonvacuity.** GC1075's H8prefix11 gives H9prefix00 by black-cell masking. H10's first cell is then white. The fixed36-cell actual SS source111011111111000011001000000000000000 forces black A at6,low00100 at12,101 at22,B0011000 at32, and core100 at38 for every tail.76 causal fresh-right implications and64 literal/packed histories confirm it. Conversely the fresh high source11100110110110100000000 forces bad B111010011001 after10 for every exterior, independently checked in64 histories; the preceding black-A short past is essential.
+
+**Errors retained.** The first apparent low-only exclusion used incorrectly copied D shields01111/1100. Direct scalar transport corrected them to11111/0000; the erroneous empty-set verdict is invalid and withdrawn. Ten fresh-right checks now guard those premises. The corrected108 low parents disprove that stronger inference, while the two preceding S ticks close the intended one. Two attempted A13 sharpness controls still had no parent; the first retained earlier consequences, and weakening all shields still retained the low premise. No necessity of A13black is claimed. The selected J control and four immediate exteriors predicted black B13 but gave it white; stop that selection, retain the earlier generic-pair refutation, and assert only sparse B12 here.
+
+Next carry the same inherited past through an arbitrary white-marker SS block to its first SL return. Immediate first-B admission and the mature no-A bridge leave precisely that inter-run transport missing; the all-depth record bound stays open. L619 at92bbe913 received: sampled bounds35 at699/1371, two unreproduced witness bounds, CUT-P19 UNKNOWN, verified SAT200 round0 cuts; no duplicate work.

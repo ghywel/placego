@@ -767,3 +767,5 @@ app is unpublished by design.
   conjecture (8.88), exact, both phases, over X_4, the golden-mean control and the twelve-word class, by a breadth-first
   walk over prefixes with 8.38's masked-pair merging; FO-P0..P6 registered before the runs; the per-level distinct-state
   counts measure the merge rate of K-prefixes. Intel, 2026-10-11.
+
+- lexicon/rule30_black_A_B_admission.py: GC1098 first-B sparse admission and white H101 marker;112 high/108 low/240 short parents, then empty S4;76 implications/128 independent histories pass. Incorrect D shields corrected; later SS block open.

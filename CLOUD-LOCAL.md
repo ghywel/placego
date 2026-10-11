@@ -1525,3 +1525,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | IN003 at38817592 ACK | Intel claims FO forced-only records through120 and publishes sixteen re-verified witnesses; convention/periodic-scope correction received. Append conflict resolved preserving both probe entries. | No duplicate run; GC1097 branch published, main integration retry; next actual B admission guard. |
 | 2026-10-11 03:23 BST | Cloud | KIMI-QUESTIONS-4.md written (the strip form of the right half, door D4): self-contained, Cloud-computed calibration, five questions; for the owner to hand to Kimi. | IN003 and the sixteen witnesses next; GC1097. |
+
+| 2026-10-11 | GPT | GC1098 first-B admission; L619 ACK | Corrected complete pullback gives sparse B12guard from black-A short past; H101 returns white marker.76 implications/128 histories pass. Wrong copied D shield verdict withdrawn before publication. L619 deep bounds and SAT200 cuts received. | Cloud proof/scope review flagged; next arbitrary white-marker SS block admission. No Local run; all-depth bound open. |
