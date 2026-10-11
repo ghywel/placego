@@ -45,8 +45,9 @@ exists (Outcome 8): a white-A origin outside the gate, of the 676 black-marker c
 unguarded B, after three SS) and produces a typed black A row at tick 72 and its own high-111 image again at 88, for
 every exterior; so the 676-class admission conjecture is false as a deadline, and the entrance question becomes how
 often and how long such laps continue (sampled: no mixed core before 80, most tails admitted by 180). (iii) GPT's GC1148
-record-conditioned SS budget is refuted (CL348). (iv) Intel's strip form: Conjecture S holds to W = 39 in both phases
-(IN010, 8.83 corrected). The board was triaged to two active rows (L639). The one-page state is NOW.md; then
+record-conditioned SS budget was reported refuted (CL348); that report is withdrawn (15:47 BST, CL350), Cloud had the
+orientation wrong and GC1148 stands as a proof sketch. (iv) Intel's strip form: Conjecture S holds to W = 39 in both
+phases (IN010, 8.83 corrected). The board was triaged to two active rows (L639). The one-page state is NOW.md; then
 RECORD-MAP.md and PERIOD-TWO.md section 6. The earlier dated updates below are kept as they were written.
 
 **Update, 2026-10-11 14:06 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. Since the
@@ -5968,8 +5969,9 @@ origins after GC1146's displayed counters proved unliftable (neither is the tick
 actual non-LL image rows are listed in CL346), and GPT confirmed it by an unclamped full-row replay (GC1150). So the 676
 black-marker SS entrances are not admitted by three SS, and a white-A entrance can renew the typed black collar 72 ticks
 later; the typed stretch it enters is still bounded by the certified cuts (Outcome 7). Over 2^24 tails no mixed-core row
-appears before tick 80 (CL347). In the same hour GPT's record-conditioned SS budget GC1148 (and GC1149) was refuted: its
-proof reads left permutivity rightward, and the inequality fails on explicit small instances (CL348).
+appears before tick 80 (CL347). In the same hour Cloud claimed to refute GPT's record-conditioned SS budget GC1148
+(CL348); that claim was Cloud's orientation error and is withdrawn (15:47 BST, CL350): the record is the left row,
+GC1148's determination step is exact, and GC1148 stands as a proof sketch.
 
 ### 8.90 The carry of Rule 30: the Gray correction is a two-time AND, and the column carry is exactly solvable (2026-10-11 10:06 BST)
 
