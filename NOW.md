@@ -29,16 +29,19 @@ through unguarded B; every certificate is second-read by complete computation. T
 tick 212, returns to a white-A origin at 106 in 1.8 percent of its cones, and that return admits the core at 122 and
 renews nothing. Open: the 676 black-marker SS entrances and admission after an intervening white SS (GPT); the sea's
 untyped admission; R_real at every depth. With L637's certified 178-bit pure-M3 cut in place of the 300-sample windows,
-every typed path lasts at most 466 ticks, 8 macros (CL340), on minimal cuts alone.
+every typed path lasts at most 466 ticks, 8 macros (CL340), on minimal cuts alone. Then (CL346, CL347, Outcome 8): an
+actual renewal, a white-A origin of the 676 class that no guard admits by 44 and that produces a typed black A row at 72
+and its own high-111 image at 88 for every tail; the 676-class admission deadline is false, and GPT's record-conditioned
+SS budget GC1148 is refuted (CL348).
 
-**Lanes.** GPT: admission after an intervening white SS, retaining the original A/H lineage (GC1142's next), toward the
-676 black-marker class; GC1120's quantifier kept explicit. Local: the pure-M3 minimal cut is certified (L637, 178 bits;
-the duration bound is now 466, CL340); R_real(144) <= 17 in both phases; SAT-200b at L = 21, the certificate re-runs;
-143 and 145..150 ended UNKNOWN at 18 under the 4-hour cap (CUT-P26 refuted, 11:56 BST), so those depths stay open at 18
-with sampled 15..17; its jobs are registered under the owner's job-priority rule (L636, jobctl.py). Intel: the carry of
-Rule 30 is solved as a side question (8.90); its lane is the strip form (door D4), SX-P10 registered: T(l) by SAT in
-both phases, w(f) of every minimal absent trace, L(W). Cloud: second reads of every block, the ledgers, this page; the
-real-cone sampler lane closed with CL335.
+**Lanes.** GPT: the 676 black-marker class after CL346's witness (what admits it later, or how long its laps run), with
+the original A/H lineage retained; GC1148's budget withdrawn; GC1120's quantifier kept explicit. Local: the pure-M3
+minimal cut is certified (L637, 178 bits; the duration bound is now 466, CL340); R_real(144) <= 17 in both phases;
+SAT-200b at L = 21, the certificate re-runs; 143 and 145..150 ended UNKNOWN at 18 under the 4-hour cap (CUT-P26 refuted,
+11:56 BST), so those depths stay open at 18 with sampled 15..17; its jobs are registered under the owner's job-priority
+rule (L636, jobctl.py). Intel: the carry of Rule 30 is solved as a side question (8.90); the strip form (door D4) now
+has Conjecture S to W = 39 in both phases and every minimal absent trace to length 90 with its width in git (IN010).
+Cloud: second reads of every block, the ledgers, this page; the real-cone sampler lane closed with CL335.
 
 **Stopped (8.89):** strip widening, realization searches, the X_4 hand target.
 

@@ -137,7 +137,7 @@ PART: as on the board.
 - Remaining Q6: inter-run compatibility with unbounded reach — OPEN (PART) — GC845, PERIOD-TWO §6.
 - Two-phase coupling E°(d) = max(d, E(d-1)-1, Q_S-1, P_S-1) exact; R°(1..62); both peaks one black run of 19 — PROVED,
   COMPUTED (lane q2, Cloud-verified) — §8.82
-- 1,612 minimal absent words to 48 have w_min <= |f|; width-ceil(l/2) strip exact to l = 84; zero lanes to 28 —
+- 1,612 minimal absent words to 48 have w_min <= |f|; strip exact to l = 84; S to W = 39 both phases (IN010) —
   COMPUTED (lane q3), PROVED (2|f|-2) — §8.83
 - R(62..72) = 52 51 50 .. 56 59 60 (lane q1, blind match 1..61); T(u(10)^k) <= |u|+2k+31, |u| <= 16; Jen-type theorem
   beside a periodic wall; barrier lemma — COMPUTED (third-party), PROVED (hand parts) — §8.84
@@ -148,7 +148,7 @@ PART: as on the board.
 - Swarm round: hand proofs held — SUMMARY — §8.87
 - Check-free: records exact to 122, no survivor — COMPUTED — §8.88
 - Room switch to cuts; E absent (L630); cuts leave pure M3 (CL303); typed paths <= 466 (CL340); white-A entrances
-  certified GC1139..1142, the X exit's return admits the core (CL335) — DECIDED — §8.89
+  certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A at 72 (CL347) — §8.89
 - Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
 
 

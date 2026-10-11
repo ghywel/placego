@@ -38,6 +38,17 @@ Three things make this coin unusual.
 
 ## The honest summary
 
+**Update, 2026-10-11 15:30 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. Since the
+14:06 update: (i) with Local's certified 178-bit pure-M3 cut every recurrent object of the collar lane is cut by
+certificate and every typed path at width 28 lasts at most 466 ticks, 8 macros (Outcome 7). (ii) An actual renewal
+exists (Outcome 8): a white-A origin outside the gate, of the 676 black-marker class, is not admitted by tick 44 (an
+unguarded B, after three SS) and produces a typed black A row at tick 72 and its own high-111 image again at 88, for
+every exterior; so the 676-class admission conjecture is false as a deadline, and the entrance question becomes how
+often and how long such laps continue (sampled: no mixed core before 80, most tails admitted by 180). (iii) GPT's GC1148
+record-conditioned SS budget is refuted (CL348). (iv) Intel's strip form: Conjecture S holds to W = 39 in both phases
+(IN010, 8.83 corrected). The board was triaged to two active rows (L639). The one-page state is NOW.md; then
+RECORD-MAP.md and PERIOD-TWO.md section 6. The earlier dated updates below are kept as they were written.
+
 **Update, 2026-10-11 14:06 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. Since the
 12:35 update the entrance question of the collar lane has been answered for the white-A high-LL family and its exit:
 GPT's four certificates (GC1139 to GC1142) are all second-read by complete independent computation, so every white-A
@@ -5585,6 +5596,15 @@ proved; the chaining of fast lanes behind $\tau(W) = W + o(W)$ is not shown, and
 slope profiles were not rechecked. Nothing beyond $w_{\min} \le 2|f| - 2$ is proved for all lengths, as the lane said.
 
 
+**Correction and extension (IN010, Intel, 2026-10-11 15:18 BST; recorded by Cloud 15:30 BST).** The tight lengths of the
+per-trace form in the standard phase, to length 90, are 2, 4, 7, 11, 35, 36 and 61 (the words 10; 0000 and 0101; and
+010001001100010011000100110001001100 at 36 join the list above), and in the odd phase 2, 3, 8, 12, 15, 20, 34, 36, 38
+and 62; the odd tight traces of lengths 36 and 62 are 1 and 0 followed by the standard ones of lengths 35 and 61.
+Conjecture S holds at every W <= 39 in both phases: standard L(W) for W = 18..39 is 40 42 42 49 52 52 54 56 56 59 60 60
+60 72 72 74 76 80 84 84 84 84, odd L(W) for W = 19..39 is 43 43 46 46 53 53 57 57 58 61 61 61 71 71 73 73 73 81 81 81
+81, both at least 90 from W = 40 (SAT without proof logs, two engines, controls against the exhaustive counts; the
+standard slack falls to 1 at W = 30, zero slack in the odd phase only at W = 12 and 15).
+
 ### 8.84 The free record to depth 73, the (10)^k family bounded, and a Jen-type theorem for finite patterns (swarm lane q1, graded; 2026-10-10)
 
 *Lane q1 of the owner-authorized swarm (independent agent, no access to the record; briefed with R(1..61) and
@@ -5937,6 +5957,19 @@ at 54 and 56, the M2/M3 mixtures by containment). With that cut in place of the 
 acyclic and the longest typed path is 8 macros and 466 ticks (seven M3 returns, then the macro with 22 SS blocks), so
 under the period-2 wall every trace that follows the typed collar grammar does so for at most 466 ticks, on certified
 minimal cuts alone; Outcome 5's 686 is superseded. R_real(144) <= 17 is certified in both phases (L637).
+
+**Outcome 8 (2026-10-11 15:30 BST, CL346, CL347, CL348, GC1150).** An actual renewal from a white-A entrance outside the
+gate. The origin 1110100011011010010010000100100000000000000000000000000000000000 (64 cells, every farther tail; sites
+14..25 = 010010010000, one of GC1141's 676 non-LL sources) runs high 111 at 16, a black-marker S at 26, SS at 32 and 38,
+the unguarded B 11101001100101110101 at 44 (so no known guard admits it), white SS entrances at 60 and 66, the black
+AP13 row 1110100011101 at 72, the low row at 78, the same high-111 image 1110011111110 at 88 and a black-marker S at 98,
+all fixed by the 64 cells; the exterior first matters at tick 112. It was found by a carrier-pruned search over actual
+origins after GC1146's displayed counters proved unliftable (neither is the tick-16 image of any white-A origin; the 29
+actual non-LL image rows are listed in CL346), and GPT confirmed it by an unclamped full-row replay (GC1150). So the 676
+black-marker SS entrances are not admitted by three SS, and a white-A entrance can renew the typed black collar 72 ticks
+later; the typed stretch it enters is still bounded by the certified cuts (Outcome 7). Over 2^24 tails no mixed-core row
+appears before tick 80 (CL347). In the same hour GPT's record-conditioned SS budget GC1148 (and GC1149) was refuted: its
+proof reads left permutivity rightward, and the inequality fails on explicit small instances (CL348).
 
 ### 8.90 The carry of Rule 30: the Gray correction is a two-time AND, and the column carry is exactly solvable (2026-10-11 10:06 BST)
 
