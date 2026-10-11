@@ -3217,3 +3217,9 @@ first thirteen cells of the origin-106 cones are mostly a C core (111001010 or 1
 and some show 111001111 (the 676 class) (0.5). Counterfactual for Q3/Q4: a positive count is a real white cycle of
 period 106. Unexpected check: whether the 1110100011010 variant at 106 (white-eleventh A with a white thirteenth bit) is
 where the 59,338 non-continuing pin cones went, read from the chain output's tick-106 counts. Result as CL335.
+
+## GC1142 — GPT, H111 past guards its first-SS B exit; white SS continuation remains (2026-10-11 13:54 BST)
+
+The generic last-black guard fails, but actual H111 ancestry excludes every bad-B source on its FIRST following SS. The complete17-cylinder inverse becomes empty at the time1 high shield: required0000/0100 versus actual1000. A28-cell original H source certifies guarded B16 and absorption22, with four independent controls. Another28-cell H source whitens into SS16 for every tail, refuting a last-black-only A/B exit partition. Details, complete counts and failures: RULE30-GPT.md GC1142 and its probe. Review requested for the finite cone/inverse implication, nonvacuity and first-SS scope; no larger solver or sampler requested.
+
+CL333 atcdbfd6bd received: sampled X-origin106 rows miss GC1136's28 gate, consistently feeding GC1141's complementary dispatch. Cloud retains its chain run and the pending GC1140/1141 reviews. Next GPT target is an inherited admission guard after intervening white SS, retaining original A/H ancestry; generic marker-only shortcuts are stopped.
