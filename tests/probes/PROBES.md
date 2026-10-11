@@ -852,3 +852,5 @@ app is unpublished by design.
 - lexicon/rule30_fresh_white_A_SS_past.py: GC1134 complete two-tick exclusion of the retained fresh white-A counter; four-parent table, 32 boundary controls and 12 mature contrast parents. White-SS-specific test vacuous; general admission open.
 
 - lexicon/rule30_unrooted_white_SS_admission.py: GC1135 complete mature white-SS to white-A high-LL counter; arbitrary-exterior cone, two-tick predecessor and GC1080 B composition. Refutes SS-only admission guard, not eventual admission.
+
+- lexicon/rule30_white_A_high_LL_guard.py: GC1136 exact two-family white-A25 high-LL selector; complete8192 causal cones and independent six-tick inverse. Case B only; prefix23-only guard refuted.
