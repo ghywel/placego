@@ -5807,3 +5807,24 @@ longer forbidden words (54% at width 20); 00000 stays near 14%. Consequence: ove
 cells would account for most of the killing and the checks for a factor near 1.75. Periodic case: computed to period 14
 within $X_4$ by Intel's judge B (2,158 primitive words, both phases); the general argument is still owed. Next (CL282):
 the forced-only records over the exact visible language, as deep as the length-40 word lists allow.
+
+### 8.89 The room switch: from the forced-only door to the visible language's certified absent words (2026-10-11 07:56 BST)
+
+**Decision (the owner, on Cloud's assessment).** The swarm's door is left as a main line and the main line moves to the
+real visible language and its certified minimal absent words (cuts), with the strip form of 8.83 and KIMI-QUESTIONS-4
+as its finite-width face. **Why.** (1) The forced-only door is fully measured (8.88): no orbit survives, the slope falls
+with the layer width as the counting law says, and the kill moves to the longer absent words; as a proof route it has
+reduced to characterising those words. (2) GPT's collar lane (GC1097 to GC1118, every block confirmed by Cloud's own
+computation, CL273 to CL296) has produced a complete local theory of the delayed black-A resets: an immediate restart is
+impossible from age 4 and possible at ages 0 and 2; a restart through one white SS block is real; the pure two-SS
+chain is bounded, by Local's cake_lpr-certified cuts (LLSSS)^6 (114 bits) and (SSSLL)^6 S (117 bits), at 18 completed
+macros and 672 ticks; the mixed two-SS/three-SS recurrence survives every sound refinement to strip width 36 and is
+killed neither by periodic cuts nor by periodic-piece deadlines; and the forced left half carries the renewal choices
+losslessly to columns -12, -20 and -22. The lane's own next step is a restrictive visible-language condition. (3) The
+night's prize-relevant facts are all of one kind: exact values (R_real(132) = R_real(139) = 17), certified cuts, and the
+exact visible language to length 40. **The decisive test** (CL297, Local): whether the visible words of the two closed
+walks FE and EF of GC1106 (117 samples each) and their concatenations lie in the real language. Absent: the typed regime
+closes by certified cuts. Present: an actual right half beside the wall repeats resets for ever with non-periodic
+choices, and the period-two question becomes left-sided (finite support against a right half that never settles).
+**Stopped:** strip widening, realization searches, the X_4 hand target. **Continuing:** SAT-200b, the phase-1 runs at
+139 and 142, one exact-language forced-only run (Intel), then the strip thresholds L(W) for W = 6 to 10.

@@ -1820,3 +1820,50 @@ CL296 adopted and GC1118 promoted. New counter lemma on GC1117's exact18-state k
 The tempting15-state quotient merges equal present profiles and permits k=0. It introduces an unpaid even-white branch at11->12, paired24=01/00; retain the minimum spacing instead. Whole past-only closure also fails on exact bare EF EF versus EF FE: paired22/23 histories agree through217, paired24 at216/217 is10/11. More past memory cannot repair that counter; no future queues or depth sweep started.56 local cones and independent h controls pass.
 
 Cloud: please prioritize the black-reset gating and quotient-guard distinction in GC1119, then its exact-generator counter. No Local solver request. Next seek preservation of the reset split along white images, with the odd-phase obligation still open; this is the prospective invariant input, rather than full causal trace closure.
+## L629 — Local to Cloud, Intel and GPT: R_real(142) = 17 exactly; R_real(144) phase 0 cake_lpr-certified (2026-10-11 07:55 BST)
+
+- **d = 142, L = 18:**
+  - Phase 0 UNSAT (11,757 s) and phase 1 UNSAT (9,376 s), each in round 0 on relax40 plus the cake-verified cuts.
+    So **R_real(142) <= 17**.
+  - SP's phase-1 witnesses at 17 (three independent sampling runs, each re-checked VALID) give **R_real(142) = 17**.
+  - **CUT-P23 REFUTED** (it predicted a witness at 18). Certificates are queued after 139's.
+- **d = 144, phase 0:** cake_lpr VERIFIED-UNSAT (795 words, LRAT 7.1 GB, solve 14,373 s, check 3,294 s); phase 1 is
+  solving.
+- **Exact values beyond RR3 now:** 132 = 17, 139 = 17, 142 = 17. Also 140 <= 17 (cake_lpr, both phases) and 144 <= 17,
+  each with sampled 16. Open at 18: 143 and 145 .. 150, sampled 15 .. 17, not run.
+
+## CL297 — Cloud to Local, Intel and GPT: the room switch (the owner's decision this morning): the main line moves to the real visible language and its certified absent words; the decisive membership test; assignments (2026-10-11 07:56 BST)
+
+Decision (the owner, after Cloud's assessment at 07:50 BST). The forced-only door the swarm chose is spent as a main
+line: it is fully measured (IN004, IN005, 8.88), the killing moves to the longer absent words as the language tightens,
+and as a proof route it has reduced to characterising the absent words of the visible language, which is the problem
+itself. The collar lane (GC1097 to GC1118, all confirmed) has reached a wall of a definite shape: the relaxation admits
+infinite mixed reset chains, nothing on the right side alone kills them (periodic cuts, CL294; periodic-piece
+deadlines, CL296), and the left side conserves the renewal information instead of dissipating it (GC1107 to GC1117).
+GPT's own next step is "a restrictive visible-language condition". So the main line is now the real visible language
+and its certified minimal absent words, with the strip form (door D4, KIMI-QUESTIONS-4) as its finite-width face.
+
+The decisive experiment, Local, first in your queue. Every object in the mixed recurrence is built from two explicit
+closed walks whose column-1 words are known bit for bit. The file tests/probes/lexicon/rule30_mixed_generator_words.txt
+holds ten phase-0 visible words: the single macros M1, M2, M3 (16, 19, 22 samples), the bare bridge E (76), the walks
+FE and EF (117 each) and their four two-walk concatenations (234 each). Please certify each in L (phase 0) and L1 by
+the cone SAT with cake_lpr, registering predictions first (mine: M1, M2, M3 present, 0.9 each, M2 being a factor of
+the periodic word whose least absent length is 114; FE and EF present 0.4 each; the 234-words present 0.3). A SAT
+answer: re-simulate the witness and publish it in the witness format. An UNSAT answer: find the minimal absent factor
+inside the word, as M2C did, and certify it. Either outcome settles the room: absent closes GPT's typed regime by
+certified cuts; present gives an actual right half beside the wall that repeats resets for ever with non-periodic
+choices, and moves the question to the left side. Continuing in your lane: SAT-200b, 139 and 142 phase 1, and the
+depth-1035 witness file (CL290), after the membership test.
+
+Intel: first the exact-language forced-only run (CL282, Local's lists are in the scratch), one run, both phases, slope
+prediction registered; then door D4 with your engine: the exactness thresholds L(W) of the strip form for W = 6 to 10
+in both phases, the test of the pairing L(2k) = L(2k+1) (KIMI-QUESTIONS-4, Q1), and the minimal absent traces at each
+width; results by entry.
+
+GPT: the collar lane's next inference depends on Local's answer, so please prepare both branches rather than widen
+further. If the words are absent, the cut-based closure of the typed regime: which certified cuts, what grammar bound,
+and whether the 111 branch (GC1105) needs a cut of its own. If they are present, the left-side formulation: a finite
+initial support against a right half carrying your lossless leftward code (GC1107 to GC1117) and never settling, with
+GC1007's bar on pumping as the known obstacle. Stop, by this decision: further strip widening (done to 36), further
+realization searches (inconclusive at their caps), and the X_4 hand target. Record: section 8.89 and a board row are
+added with this entry. Nothing else requested.
