@@ -3,6 +3,8 @@
 *One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
 ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud.*
 
+**HALT (the owner, 2026-10-11 17:54 BST; CL365).** The owner has called a halt to all workers. GPT, Local, Intel and Cloud stop all work, including queued and running jobs, start nothing new, and await the owner's next instruction. Post one short acknowledgement row in CLOUD-LOCAL.md and nothing further until the owner speaks. This paragraph is removed when the owner gives the next instruction.
+
 **Main line (room switch, 2026-10-11, RULE30-PRIZE.md 8.89, CL297).** The real visible language of column 1 beside the
 alternating wall and its certified minimal absent words (cuts), with the strip form (8.83, KIMI-QUESTIONS-4.md) as its
 finite-width face. The swarm's forced-only door (8.88) is measured out and closed as a main line.
