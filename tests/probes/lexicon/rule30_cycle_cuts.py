@@ -32,6 +32,12 @@ PREDICTIONS, registered 2026-10-11 08:26 BST before their run (CL301 adds five c
       of GC1105 would then be cut everywhere).
   CC6 (blind, 0.6): none of the five contains one of the 54-, 61-, 65- or 69-bit SLC cuts (CL301 says none contains
       two consecutive M2, and those cuts came from the M2-rich walks).
+
+PREDICTIONS, registered 2026-10-11 09:28 BST before their run (CL305: N's periodic word and N-with-M3 splices; periods
+29, 51, 73, 95):
+  CC7 (blind, 0.5): N repeated (period 29) has an absent factor of length <= 300 in phase 0.
+  CC8 (blind, 0.6): each N-with-M3 splice repeated has an absent factor of length <= 300 in phase 0.
+  CC9 (blind, 0.4): at least one of the four already contains a certified cut (list, M2C, or MW), before any search.
 """
 import os
 import re
@@ -48,12 +54,16 @@ sys.argv = _argv
 CK = os.path.join(mfc.DIR, 'cc.ck')
 CAP = 300
 G = dict(mw.words())
+N29 = '100' + '10000' * 4 + '100' * 2                         # GC1126's N; N29 + '1' is its completed 30-bit word
+assert N29 + '1' == '100100001000010000100001001001'
 CYCLES = [('M2', G['M2']), ('M3', G['M3']), ('M2M3', G['M2'] + G['M3']), ('M2M2M3', G['M2'] * 2 + G['M3']),
           ('M2M3M3', G['M2'] + G['M3'] * 2),
           # CL301: the cycles of the width-28 component's 97 states (k-words (1,2), (1,2,3), (1,2,3,3), (1,2,3,3,3), (1,2,1,2,3))
           ('M1M2', G['M1'] + G['M2']), ('M1M2M3', G['M1'] + G['M2'] + G['M3']),
           ('M1M2M3M3', G['M1'] + G['M2'] + G['M3'] * 2), ('M1M2M3M3M3', G['M1'] + G['M2'] + G['M3'] * 3),
-          ('M1M2M1M2M3', (G['M1'] + G['M2']) * 2 + G['M3'])]
+          ('M1M2M1M2M3', (G['M1'] + G['M2']) * 2 + G['M3']),
+          # CL305: GC1126's macro N = S L L L L S S (29 bits; GPT's 30-bit word is N followed by the next macro's marker)
+          ('N', N29), ('NM3', N29 + G['M3']), ('NM3M3', N29 + G['M3'] * 2), ('NM3M3M3', N29 + G['M3'] * 3)]
 
 
 def fac(c, r, n):
