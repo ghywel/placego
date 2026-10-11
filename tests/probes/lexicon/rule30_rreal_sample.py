@@ -3,7 +3,7 @@
 
 RUN-ON:     cpu (C engine rule30_rreal_sample.c, OpenMP; Python 3 driver, no solver)
 COMMAND:    python3 tests/probes/lexicon/rule30_rreal_sample.py control          (T = 180, depths 20 .. 160)
-            python3 tests/probes/lexicon/rule30_rreal_sample.py deep T DMIN DMAX ROUNDS
+            python3 tests/probes/lexicon/rule30_rreal_sample.py deep T DMIN DMAX ROUNDS [SEED]
 COST:       control: about a minute at two threads (2^28 samples a phase). deep at T = 1700: about 25 minutes a phase.
 
 Why (CL260, Cloud's decision on Intel's STRATEGY-PLAN.md section 1): lower bounds on R_real come from sampling, and
@@ -46,7 +46,7 @@ OUTCOME, 2026-10-11 02:20 BST (control, 2^28 samples a phase, T = 180, 14 s a ph
       17 16 17 16 15 15 20 19 18. New beyond SAT: R_real(125) >= 21 (so 126 >= 20, 127 >= 19 by the plateau law),
       129 >= 19, 135 >= 19, 158 >= 20.
 
-PREDICTIONS, registered 2026-10-11 02:22 BST before the deep runs (deep A: T = 330, depths 120 .. 300, 23 rounds,
+PREDICTIONS, registered 2026-10-11 02:21 BST before the deep runs (deep A: T = 330, depths 120 .. 300, 23 rounds,
 2^30 samples a phase; deep B: T = 1700, depths 300 .. 1600, 21 rounds, 2^28 samples a phase):
   SP5 (control, must hold): every witness of both runs passes rule30_witness_check.check; deep A agrees with the
       control's bounds at 121 .. 160 or exceeds them (it has 4 times the samples), and stays <= 17 at 121 .. 124, 132,
@@ -56,6 +56,26 @@ PREDICTIONS, registered 2026-10-11 02:22 BST before the deep runs (deep A: T = 3
   SP7 (blind, 0.5): Intel's deep bounds (185 >= 22, 280 >= 26, 435 >= 29, 657 >= 30, 766 >= 33, 1232 >= 29,
       1552 >= 31) are reached to within 2 cells at 5 or more of the 7 depths.
   Record searched: 'R_real\(200\)' -> STRATEGY-PLAN.md section 1 only (the pre-registered SAT test).
+
+OUTCOME, deep A (2026-10-11 02:27 BST; T = 330, depths 120 .. 300, 2^30 samples a phase, seeds 11 and 12, 173 s a
+phase at two threads):
+  SP5 PASS (deep A): every witness valid; every bound at 121 .. 160 equals or exceeds the control's; the certified
+      depths stay <= 17 (121:15 122:14 123:14 124:15 132:17 140:16 144:16; 132 now sits at its ceiling).
+  SP3, re-read: R_real(133) >= 23 IS reached at 2^30 (phase 0, seed 11; rule30_witness_check VALID, T = 155). The
+      control's 18 at 2^28 (seeds 1, 2) was a sample-size effect: the event is rare, not wrong. Intel's bound stands,
+      now second-party verified. SP3 stays REFUTED as registered (it named 2^28).
+  SP6 REFUTED: R_real(200) >= 16 only (199: 17, 201: 17, 202: 19). The branch "R_real(200) <= 18" stays open, so the
+      pre-registered SAT test is live at L = 19.
+  Bounds 120 .. 300 (two phases' maximum): 133 >= 23, 185 >= 22 (Intel's, reproduced), 252 >= 24, 279 >= 28,
+      280 >= 27 (Intel: 26), 290 >= 26; the full table is in deepA.out (outside git).
+  SP7 is scored after deep B.
+
+SAT-200 (registered 2026-10-11 02:28 BST, before its run; STRATEGY-PLAN.md section 1's one pre-registered upper bound,
+CL260, CL264): R_real(200) at L = 19, both phases, relax40 (40p1) plus the MFC-verified cuts, CUT at caps that total
+two days, launched when the 137 .. 151 sweep leaves cores (CL260). Before it, a focused sampling run (seeds 21, 22) at T = 240, depths
+190 .. 210, 2^33 samples a phase. SAT-P1 (blind, 0.55): the focused sampling leaves R_real(200) <= 18 (no sample reaches
+19). SAT-P2 (blind, 0.35): CUT returns UNSAT at L = 19 in both phases within the two days, so R_real(200) <= 18 and the
+plan's first decision branch fires.
 """
 import os
 import re
@@ -141,10 +161,10 @@ def control():
     print('bounds 121 .. 160: ' + ' '.join(f'{d}:{s[d]}' for d in range(121, 161)))
 
 
-def deep(T, dmin, dmax, rounds):
+def deep(T, dmin, dmax, rounds, seed=11):
     build()
-    c0, b0 = run(0, T, rounds, 11, dmin, dmax, f'deep{T}')
-    c1, b1 = run(1, T, rounds, 12, dmin, dmax, f'deep{T}')
+    c0, b0 = run(0, T, rounds, seed, dmin, dmax, f'deep{T}')
+    c1, b1 = run(1, T, rounds, seed + 1, dmin, dmax, f'deep{T}')
     s = {d: max(c0[-1][1][d], c1[-1][1][d]) for d in c0[-1][1]}
     print(f'witnesses: {b0 + b1} invalid')
     print('bounds: ' + ' '.join(f'{d}:{s[d]}' for d in range(dmin, dmax + 1)))
@@ -155,6 +175,6 @@ if __name__ == '__main__':
     if mode == 'control':
         control()
     elif mode == 'deep':
-        deep(*map(int, sys.argv[2:6]))
+        deep(*map(int, sys.argv[2:7]))               # T DMIN DMAX ROUNDS [SEED, default 11; phase 1 uses SEED + 1]
     else:
         sys.exit('modes: control | deep T DMIN DMAX ROUNDS')
