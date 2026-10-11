@@ -45,6 +45,17 @@ OUTCOME, 2026-10-11 02:20 BST (control, 2^28 samples a phase, T = 180, 14 s a ph
   Bounds 121 .. 160: 15 14 14 15 21 20 19 18 19 18 17 16 18 18 19 18 17 16 15 15 18 17 17 16 16 15 17 17 17 16 18
       17 16 17 16 15 15 20 19 18. New beyond SAT: R_real(125) >= 21 (so 126 >= 20, 127 >= 19 by the plateau law),
       129 >= 19, 135 >= 19, 158 >= 20.
+
+PREDICTIONS, registered 2026-10-11 02:22 BST before the deep runs (deep A: T = 330, depths 120 .. 300, 23 rounds,
+2^30 samples a phase; deep B: T = 1700, depths 300 .. 1600, 21 rounds, 2^28 samples a phase):
+  SP5 (control, must hold): every witness of both runs passes rule30_witness_check.check; deep A agrees with the
+      control's bounds at 121 .. 160 or exceeds them (it has 4 times the samples), and stays <= 17 at 121 .. 124, 132,
+      140, 144.
+  SP6 (blind, 0.5): the sampled R_real(200) >= 19, so the plan's branch "R_real(200) <= 18" is closed by sampling
+      alone and the SAT test at 200 is set at one above the sampled bound.
+  SP7 (blind, 0.5): Intel's deep bounds (185 >= 22, 280 >= 26, 435 >= 29, 657 >= 30, 766 >= 33, 1232 >= 29,
+      1552 >= 31) are reached to within 2 cells at 5 or more of the 7 depths.
+  Record searched: 'R_real\(200\)' -> STRATEGY-PLAN.md section 1 only (the pre-registered SAT test).
 """
 import os
 import re

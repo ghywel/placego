@@ -155,6 +155,8 @@ PART: as on the board.
   bounded suffix); certified h <= 0.2536; the death criterion proved; (1001100)^inf periodic beside the wall —
   COMPUTED, PROVED (criteria), CONJECTURED (not sofic) — §8.86
 - Swarm proofs held; six skeptic corrections, trace/death targets retained — SUMMARY — §8.87
+- Check-free conjecture: no X_4 sequence (no 11, no 00000) keeps the forced row-0 cells white for ever; forced-only
+  records R^F to depth 9/16 Cloud-replicated exactly; X_4 = width-4 layer — CONJECTURED, COMPUTED — §8.88
 
 
 
