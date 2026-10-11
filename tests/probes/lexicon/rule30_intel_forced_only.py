@@ -5,7 +5,8 @@
 RUN-ON:     the Intel MacBook (16 logical cores); C with OpenMP (forced_only_x4.c beside this file)
 COMMAND:    python3 tests/probes/lexicon/rule30_intel_forced_only.py build
             python3 tests/probes/lexicon/rule30_intel_forced_only.py calib
-            python3 tests/probes/lexicon/rule30_intel_forced_only.py run LANG PHASE MAXM [MAXSTATES]   (LANG x4|gm|maw12)
+            python3 tests/probes/lexicon/rule30_intel_forced_only.py run LANG PHASE MAXM [MAXSTATES [DFSMAX]]
+            (LANG x4|gm|maw12|dfa=FILE; MAXM is the last merged level; DFSMAX extends depth-first without merging)
 COST:       calib about a minute. A full run to MAXM = 121 (depths to 122) is bounded by memory, not time: the engine
             merges states on the record's masked anti-diagonal pair (8.38) and stops before a level whose children would
             exceed MAXSTATES (default 3e7, about 5 GB). Logs in NP_SCRATCH_FO (default ~/np-scratch/rule30-fo), outside git.
@@ -54,7 +55,36 @@ values of 8.88 before this header was pushed; those are the calibration numbers 
   Unexpected check: at which forbidden word the orbits die, by level (11 against 00000), and whether that ratio moves
   with depth. Not predicted.
 
-OUTCOME: (to be written after the runs, with every verdict and the numbers)
+OUTCOME, first block (2026-10-11 03:28 BST): the merged stage of X_4 and the full twelve-word class, both phases, 16 threads.
+  The depth-first tail of X_4 to depth 121 and the width-8 and width-12 layer languages are running; ADDENDUM below.
+  FO-P0 HELD: R^F(1..9) and R^F(1..16) equal 8.88's in both phases; merging on and off give identical records to
+         depth 42 in both phases; the golden-mean control is censored at every depth 1..20 in phase 1.
+  FO-P1 HELD: phase 0 R^F(60) = 95, the run covering depths 60..154 inclusive (D2's "reaches depth 154").
+  FO-P2 REFUTED as worded, held later: merged states grow as 2^(0.386) per visible bit over levels 21..41 (phase 1:
+         0.413), below the band, then 0.519 over 41..61 and 0.516 over 61..91 (phase 1: 0.519, 0.516); the ratio per
+         level settles at 1.429. X_4's words grow at 0.617 per bit, so merging removes 0.10 bit per visible bit, as it
+         removes 0.09 in the free case (0.5 -> 0.41, 8.38).
+  FO-P3 HELD in phase 0 (least-squares slope 1.451 over d = 40..92), REFUTED in phase 1 (1.215 over 40..93); R^F/d
+         is 1.58, 1.51, 1.42 at d = 60, 80, 92 (phase 0) and 1.27, 1.35, 1.41 at 60, 80, 93 (phase 1).
+  FO-P4 HELD at every depth reached: no path reached the cap (3m + 300). The kill did not fire.
+  FO-P5 HELD: the twelve-word class is <= X_4 at every common depth and strictly smaller at every depth 30..92
+         (phase 0) and 30..93 (phase 1); its slopes are 0.660 (phase 0, d = 40..122) and 0.346 (phase 1, 40..121).
+  FO-P6 HELD: X_4 exact to depth 92 (phase 0) and 93 (phase 1) at the 3 x 10^7-state cap (17.7 and 21.2 million
+         merged states at the last level); the twelve-word class is exact to 122 and 121 with 4.4 and 3.9 million
+         states at the top (growth 2^0.333 per bit). Every merged run took under 25 s; the twelve-word class 6 s.
+  Counterfactual: as required (the golden-mean control is infinite; merging on and off agree).
+  Exact tables and one witness prefix per depth: rule30_intel_forced_only.txt beside this file.
+  Unexpected check: the death word. In X_4, 85% of the forced-only orbits die by producing 11 (phase 0: 49,904,154
+         against 9,009,169 at 00000; phase 1: 59,657,063 against 10,775,372); in the twelve-word class about half die
+         at 11 (10,322,441 against 11,229,032; phase 1: 9,204,499 against 10,006,972). Not predicted; the plan's
+         expectation (judge B) was deaths at 00000.
+  Reading (MEASURED, these depths): R^F over X_4 grows at about 1.4 d where the real record grows at 0.08 d and the
+         free record at 0.83 d, so the check-free relaxation is loose by a factor of about 17 in slope and finite at
+         every depth computed; the twelve shortest absent words cut the forced-only slope to 0.66 and 0.35, so the
+         longer absent words, not the two of X_4, do most of the killing. The record prefixes at the top depths begin
+         with alternating runs (0101.. or 1010.., the wheel's two-gap train) followed by sparse 1s.
+
+ADDENDUM: (the depth-first tail of X_4 to 121 and the width-8 and width-12 layers, with their verdicts)
 """
 import os, subprocess, sys, time
 
@@ -74,15 +104,15 @@ def build():
     print('built', BIN)
 
 
-def run(lang, phase, maxm, maxstates='30000000', nodedup=0, threads=None, tag=None):
+def run(lang, phase, maxm, maxstates='30000000', nodedup=0, threads=None, tag=None, dfsmax=0):
     os.makedirs(SCRATCH, exist_ok=True)
     env = dict(os.environ)
     if threads: env['OMP_NUM_THREADS'] = str(threads)
-    tag = tag or f'{lang}_p{phase}_m{maxm}' + ('_nodedup' if nodedup else '')
+    tag = tag or f"{lang.replace('dfa=', '').replace('/', '_')}_p{phase}_m{maxm}" + ('_nodedup' if nodedup else '') + (f'_dfs{dfsmax}' if dfsmax else '')
     log = os.path.join(SCRATCH, tag + '.log')
     t0 = time.time()
     with open(log, 'w') as fh:
-        subprocess.run([BIN, str(phase), lang, str(maxm), str(maxstates), str(nodedup)], stdout=fh, check=True, env=env)
+        subprocess.run([BIN, str(phase), lang, str(maxm), str(maxstates), str(nodedup), str(dfsmax)], stdout=fh, check=True, env=env)
     R, cens, wit, levels, kinds = {}, {}, {}, [], []
     for line in open(log):
         p = line.split()
@@ -90,7 +120,8 @@ def run(lang, phase, maxm, maxstates='30000000', nodedup=0, threads=None, tag=No
         if p[0] == 'D': R[int(p[1])] = int(p[2]); cens[int(p[1])] = int(p[3]); wit[int(p[1])] = p[4] if len(p) > 4 else ''
         elif p[0] == 'L': levels.append((int(p[1]), int(p[2]), int(p[3]), float(p[4])))
         elif p[0] == 'K': kinds.append((int(p[1]), int(p[2]), int(p[3]), int(p[4])))
-    print(f'{tag}: {time.time() - t0:.0f} s; exact to depth {max(d for d in R if not cens.get(d, 0)) if R else 0}; log {log}')
+    exact = [d for d in R if not cens.get(d, 0)]
+    print(f'{tag}: {time.time() - t0:.0f} s; exact to depth {max(exact) if exact else 0}; censored depths {sum(cens.values())}; log {log}')
     return R, cens, wit, levels, kinds
 
 
@@ -118,7 +149,8 @@ if __name__ == '__main__':
     elif mode == 'run':
         lang, phase, maxm = sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
         maxstates = sys.argv[5] if len(sys.argv) > 5 else '30000000'
-        R, cens, wit, levels, kinds = run(lang, phase, maxm, maxstates)
+        dfsmax = int(sys.argv[6]) if len(sys.argv) > 6 else 0
+        R, cens, wit, levels, kinds = run(lang, phase, maxm, maxstates, dfsmax=dfsmax)
         print('levels (m, states, children, s):', levels[-3:])
         print('R^F(d):', ' '.join(f"{d}:{R[d]}{'*' if cens[d] else ''}" for d in sorted(R)))
         print('deaths (m, at 11, at other, capped):', kinds[-1] if kinds else None)
