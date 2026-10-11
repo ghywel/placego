@@ -902,3 +902,5 @@ app is unpublished by design.
 - lexicon/rule30_cloud_gc1148_check.py: CL348 second read of GC1148: the ring facts hold (shift 14, gap 5) but the finite-determination step fails for every N from 3 to 18 (the first N column-1 samples fix sites 1..3 only) and the inequality L <= 2a+5 OR N <= d+a+5 has 24 violations in 357 small instances (e.g. 111100000000 with sites 5..10 white gives the first eleven samples of 110100). GC1148 and GC1149 REFUTED.
 
 - lexicon/rule30_record_orientation_control.py: GC1152 signed-site controls on CL348/349 counters; both left targets contain black, both right targets white; independent unclamped scalar/packed replay PASS. All-depth sketches await corrected review.
+
+- lexicon/rule30_mixed_spatial_gap_control.py: GC1153 fixed qA/qAAA counter to uniform-six mixed spatial-gap bound; actual L579 qA forces left30..36 white; pure rings, packed/literal inverse and8 endpoint controls PASS.
