@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The carry of Rule 30</title>
+<meta name="description" content="Rule 30 is the Sierpinski rule plus a carry: the correction is the AND of the right neighbour at two consecutive times, and under the coin measure the column carry is solved exactly, with a Fibonacci entropy rate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.wolframcollatzmahler.com/carry.html">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
+  <nav><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+</div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<main>
+<p class="kicker">Live picture</p>
+<h1>The carry of Rule 30</h1>
+<p class="lede">Rule 30 is the Sierpinski rule plus a carry. Take the rule that makes the Sierpinski triangle, new = left XOR
+centre, and add one correction: whenever the cell to the right is black now and black again next step, flip. That
+correction is the whole of Rule 30's randomness, and it behaves like the carry in multiplying a number by three.</p>
+
+<h2 data-glyph="pyramid">Seen</h2>
+<div class="tools"><label>Rows <select id="T"><option>64</option><option selected>128</option><option>256</option></select></label>
+<label><input type="checkbox" id="showc" checked> mark the carries</label><span class="pill" id="st"></span></div>
+<figure><canvas id="a" aria-label="The Sierpinski rule, Rule 60, from one black cell"></canvas>
+<figcaption>Left XOR centre alone, from one black cell: the Sierpinski triangle, Rule 60. It grows to the right only; it is the
+carry that lets Rule 30 grow to the left as well.</figcaption></figure>
+<figure><canvas id="b" aria-label="Rule 30 from one black cell with its carries marked"></canvas>
+<figcaption>The same start under Rule 30. Black cells as usual; the cells where the carry fired, where the right
+neighbour was black at two consecutive times, are marked in ember. Remove every ember cell's flip and you are back to the
+triangle above.</figcaption></figure>
+
+<h2 data-glyph="strip">Stated</h2>
+<div class="level"><p class="kicker">The identity (proved)</p>
+<pre>x(i, t+1) = x(i−1, t) XOR x(i, t) XOR c(i, t)
+c(i, t)   = (1 − x(i, t)) · x(i+1, t)  =  x(i+1, t) · x(i+1, t+1)</pre>
+<p>The first line is the rule itself, written as the Gray step plus a correction. The second line is the discovery: the
+correction equals the AND of the column to the right at two consecutive times. Proof in one line: if x(i+1, t) = 1 the
+rule gives x(i+1, t+1) = 1 − x(i, t), which is the correction; if x(i+1, t) = 0 both sides are 0. Equivalently, in
+space-time form, x(i, t+1) XOR x(i+1, t) x(i+1, t+1) = x(i−1, t) XOR x(i, t).</p></div>
+<div class="level"><p class="kicker">The arithmetic twin</p>
+<p>Multiplying a binary number by three is the same Gray step plus carries: bit k of 3n is n<sub>k</sub> XOR n<sub>k−1</sub>
+XOR carry. Rule 30 is Rule 60 plus a one-cell correction; the powers of three are Rule 60 plus the carries of an
+addition. That is the sense in which Rule 30 sits beside Collatz and Mahler's 3/2 problem: one XOR skeleton, and a
+nonlinearity that is a carry.</p></div>
+<div class="level"><p class="kicker">The column carry, solved exactly under the coin measure (proved)</p>
+<p>Fill the whole line with fair coins, which Rule 30 preserves. Then every column is a sequence of independent fair coins,
+and by the identity the carry feeding a column, c(t) = a(t)·a(t+1) with a the column to its right, is the sliding AND of
+fair coins: a two-state hidden chain, not a Markov chain of any finite order. Its correlation is exactly 1/3 at lag 1
+and exactly 0 at every larger lag. The chance of a carry, given that the previous m steps carried nothing, is F(m+1) / (2 F(m+3)) with F the
+Fibonacci numbers: 1/6, 1/5, 3/16, 5/26, 4/21, 13/68 for m = 1..6. Its entropy rate is</p>
+<pre>h = 1 − (1/16) Σ<sub>g≥1</sub> F(g) 2<sup>−g</sup> log₂ F(g) = 0.69924320338768 bits per step.</pre>
+<p>Along the leftward light-speed diagonal the carry is independent Bernoulli(1/4); along the rightward one it has long
+memory. On rings, the count of carries per row has no finite transition matrix of Holte's kind (the owner's question),
+while the count of adjacent black pairs nearly does, with spectrum near the powers of −1/2.</p></div>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> section 8.90 (Intel's identity and exact solution,
+IN007; Cloud's checks CL308, CL310, CL313 on all sixteen windows and all 2<sup>15</sup> coin words);
+<a href="https://github.com/ghywel/placego/blob/main/KIMI-QUESTIONS-5.md">KIMI-QUESTIONS-5.md</a> (the owner's question, after Holte 1997 on the carries of
+addition); <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a> section 8 (the powers of three as Rule 60 plus carries);
+<a href="https://github.com/ghywel/placego/blob/main/tests/probes/lexicon/rule30_intel_carry.py">rule30_intel_carry.py</a> and
+<a href="https://github.com/ghywel/placego/blob/main/tests/probes/lexicon/rule30_intel_carry.txt">its data</a>.</p>
+
+<h2 data-glyph="coin">Checked, here, now</h2>
+<p>The exact laws above are for fair coins. Press the button and your browser fills a ring with fair coins, runs Rule 30,
+reads the carry into every column, and compares what it sees with the formulas.</p>
+<div class="tools"><button id="run">Run the check</button><span class="pill" id="prog"></span></div>
+<table id="res"><tr><th>Quantity</th><th>Exact</th><th>Measured</th></tr></table>
+<p class="note">Ring of 4,096 cells, 1,500 steps, every column read: about six million carries. The measured values should
+sit within a few thousandths of the exact ones; they will not match to more decimals than that, because the sample is
+finite.</p>
+
+<h2 data-glyph="map">What it is and what it is not</h2>
+<p>It is a clean object in place of an ad hoc correction field: the nonlinearity of Rule 30 is a two-time AND, and its
+statistics under the coin measure are solved in closed form, down to a Fibonacci entropy rate. It is not a step towards
+the prize: the exact solution lives under the coin measure, where the prize's questions are not asked, and the single
+cell's parity is coin-like without being proved so. What it gives the search is a precise way to say what the kicks are
+made of.</p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.90, "Scope".</p>
+</main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
+<script>(function(){
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function draw(){const T=+document.getElementById("T").value,W=2*T+1,S=Math.max(1,Math.floor(900/W));
+  const A=document.getElementById("a"),B=document.getElementById("b");A.width=B.width=W*S;A.height=B.height=T*S;const ca=A.getContext("2d"),cb=B.getContext("2d");
+  ca.fillStyle=css("--paper");ca.fillRect(0,0,A.width,A.height);cb.fillStyle=css("--paper");cb.fillRect(0,0,B.width,B.height);
+  let r60=new Uint8Array(W),r30=new Uint8Array(W);r60[T]=1;r30[T]=1;let carries=0,inside=0;const show=document.getElementById("showc").checked;
+  for(let t=0;t<T;t++){for(let i=0;i<W;i++){if(r60[i]){ca.fillStyle=css("--cell");ca.fillRect(i*S,t*S,S,S);}}
+    const n60=new Uint8Array(W),n30=new Uint8Array(W);
+    for(let i=0;i<W;i++){const l=i?r60[i-1]:0;n60[i]=l^r60[i];}
+    for(let i=0;i<W;i++){const l=i?r30[i-1]:0,c=r30[i],q=i+1<W?r30[i+1]:0;n30[i]=l^(c|q);}
+    for(let i=0;i<W;i++){const carry=(i+1<W)&&r30[i+1]&&n30[i+1];
+      if(r30[i]){cb.fillStyle=css("--cell");cb.fillRect(i*S,t*S,S,S);}
+      if(carry&&t+1<T){carries++;if(Math.abs(i-T)<=t+1)inside++;if(show){cb.fillStyle=css("--ember");cb.fillRect(i*S,(t+1)*S,S,S);}}}
+    r60=n60;r30=n30;}
+  document.getElementById("st").textContent="carries fired: "+carries+"; share of the light cone: "+(inside/(T*T)).toFixed(3)+" (the record's limit is 1/4)";}
+document.getElementById("T").onchange=draw;document.getElementById("showc").onchange=draw;draw();
+document.getElementById("run").onclick=function(){const N=4096,T=1500;let x=new Uint8Array(N);for(let i=0;i<N;i++)x[i]=Math.random()<.5?1:0;
+  const zeros=new Int32Array(N),prev1=new Uint8Array(N),prev2=new Uint8Array(N),prev3=new Uint8Array(N);const gap=[];for(let m=0;m<=7;m++)gap.push([0,0]);
+  let n=0,s1=0,s11=0,s12=0,s13=0,ones=0;const btn=this;btn.disabled=true;let t=0;
+  function chunk(){const end=Math.min(T,t+100);for(;t<end;t++){const y=new Uint8Array(N);for(let i=0;i<N;i++){const l=x[(i-1+N)%N],c=x[i],q=x[(i+1)%N];y[i]=l^(c|q);}
+      for(let i=0;i<N;i++){const cr=x[(i+1)%N]&y[(i+1)%N];
+        if(t>=3){n++;ones+=cr;s11+=cr&prev1[i];s12+=cr&prev2[i];s13+=cr&prev3[i];const z=Math.min(zeros[i],7);for(let m=1;m<=z;m++){gap[m][1]++;if(cr)gap[m][0]++;}}
+        zeros[i]=cr?0:zeros[i]+1;prev3[i]=prev2[i];prev2[i]=prev1[i];prev1[i]=cr;}
+      x=y;}
+    document.getElementById("prog").textContent="step "+t+" of "+T;
+    if(t<T){setTimeout(chunk,0);return;}
+    const p=ones/n,v=p*(1-p);const corr=s=>((s/n-p*p)/v).toFixed(4);const F=[0,1,1,2,3,5,8,13,21,34,55];
+    const rows=[["carry rate","1/4 = 0.2500",p.toFixed(4)],["correlation at lag 1","1/3 = 0.3333",corr(s11)],["correlation at lag 2","0",corr(s12)],["correlation at lag 3","0",corr(s13)]];
+    for(let m=1;m<=6;m++)rows.push(["carry, given "+m+" carry-free steps before",F[m+1]+"/"+(2*F[m+3])+" = "+(F[m+1]/(2*F[m+3])).toFixed(4),(gap[m][0]/gap[m][1]).toFixed(4)]);
+    const tb=document.getElementById("res");tb.innerHTML="<tr><th>Quantity</th><th>Exact</th><th>Measured</th></tr>"+rows.map(r=>"<tr><td>"+r[0]+"</td><td>"+r[1]+"</td><td>"+r[2]+"</td></tr>").join("");
+    document.getElementById("prog").textContent="done: "+n.toLocaleString()+" carries read";btn.disabled=false;}
+  chunk();};
+})();</script>
+</body>
+</html>

@@ -28,6 +28,9 @@ that makes the simplest possible beginning look like noise.</p>
 "the middle or the right". Written as a formula, new = left XOR (centre OR right).</p>
 <div class="level"><p class="kicker">The eight cases</p><div id="rule"></div>
 <p class="note">Top row: left, centre, right. Below: what the square underneath the centre becomes.</p></div>
+<p>One more way to read it. Drop the "or the right" and the rule becomes left XOR centre, which draws the Sierpinski
+triangle. Rule 30 is that triangle rule plus a carry that fires whenever the right neighbour is black twice running, and
+that carry is where all the disorder comes from. <a href="carry.html">The carry, drawn and checked.</a></p>
 
 <h2 data-glyph="pyramid">The pyramid</h2>
 <figure><canvas id="pyr" aria-label="The Rule 30 pyramid from one black cell"></canvas>
