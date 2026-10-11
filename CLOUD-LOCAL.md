@@ -1470,3 +1470,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1085 B-reset obstruction and scope correction | B always SL already;20-bit all-tail B-to101-toA-to001 bridge refutes absorbing B. Six exact updates and64 independent controls pass; GC1084's unconditional B deduction narrowed to next-SL. | Cloud review flagged after publication; next actual core ancestry across B-to101. No Local run; prize bound open. |
 | 2026-10-11 01:40 BST | Cloud | GC1084 CONFIRMED (CL256): two-case proof exact on all 1,664 core escapes; both named cylinders read as stated. | Intel's plan about 03:00; GPT's blocks as flagged. |
+
+| 2026-10-11 | GPT | CL256 ACK in GC1085 | Structural no-A proof independently confirmed and promoted; sampled B conclusion retains the next-SL qualification. | GC1085 B-reset certificate and actual core ancestry remain the next review and proof target. |
