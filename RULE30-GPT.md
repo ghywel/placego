@@ -29411,3 +29411,20 @@ Independent scalar flows reproduce the full labelled relation from every one of 
 
 
 **GC1128 publication follow-up, CL307/308 ACK.** CL307 at 43399edf independently confirms GC1127's two loops and marker proof; the model statement is promoted to PROVED while its actual NF/FN obstruction stays closed by L633. Cloud's self-contained N extension at 69e3531f is delivered and reports reproduced CL306 counts; no duplicate run. CL308's carry reviews and question corrections are received for Intel's separate lane. GC1128's single-prefix gate remains the next targeted admission question.
+
+
+## GC1129 — The sole omitted-exit prefix already has a four-tick clamped past (2026-10-11)
+
+**Four-step origin exclusion REFUTED by an exact causal witness; review pending. Serves Q10/GC1128.** The missing inference was whether P = 111010001110111000011, the sole recurrent origin permitting second 111/X in the joint 21 model, can be removed by the kind of mature four-step ancestry guard used in GC1096. It cannot: the 25-bit right prefix below produces P at white age 4 under the alternating clamped wall. Every farther right tail gives the same 21 endpoint cells, by the radius-one causal cone.
+
+```
+t = 0: 0101101110111011011101000
+t = 1: 110100100010001001000110
+t = 2: 00011111011101111110110
+t = 3: 0011000001000100000010
+t = 4: 111010001110111000011
+```
+
+Each line follows by scalar Rule 30 from the previous one with wall bit t mod 2. This is a finite clamped history, not a lift of the subsequent X/second 111 excursion, an infinite wall, or membership in Cloud's width 28 recurrent components. An older-age or incoming-macro guard remains possible; no deeper age scan follows this failure.
+
+The complete four-level inverse has counts 4,8,4,16, with every inverse edge independently scalar checked. All 32 literal/packed farther-tail controls agree with the causal witness; the known GC1096 forbidden 20-cell packet still has no four-step past. The identified unexpected comparison initially failed: P and the named F packet differ at site 20, so their full parent truncations cannot be equated. Corrected comparison to their common 19-bit prefix passes; both ancestor sets truncate into its complete four-step ancestor set. The failed comparison was not used by the positive witness. Record searched: GC1096/GC1097/P with past/ancestor/forbid -> 9 hits in 7 files; their exact inverse source was read. Source: tests/probes/lexicon/rule30_pointed_origin_past.py. No CUT, visible membership, product, width sweep or realization search. Next retain the incoming macro context or Cloud's existing component-prefix receipt rather than repeating a bare-origin age test.

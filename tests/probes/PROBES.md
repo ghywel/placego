@@ -833,3 +833,5 @@ app is unpublished by design.
 - lexicon/rule30_111_low_reset_gate.py: GC1127 N and M3 share a 20-cell self-packet; NF/FN give distinct 102-tick loops. FIRST-L spacings 5/19/22 with no consecutive 19 evade all eleven cuts at every length. 511 controls; actual lifting open.
 
 - lexicon/rule30_recurrent_low_exit_gate.py: GC1128 complete joint 21 origin gate for omitted H-low X and second 111 exits; both require the single recurrent prefix 111010001110111000011. All 32 scalar labelled flows and three reconstructed paths pass. Width28 component membership and return remain open.
+
+- lexicon/rule30_pointed_origin_past.py: GC1129 P = 111010001110111000011 has a 25-bit causal parent at clamped age 4, refuting the four-step origin guard. Complete inverse edges and 32 scalar/literal/packed tail controls; no later-excursion lift claim.
