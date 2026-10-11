@@ -138,7 +138,7 @@ PART: as on the board.
 - Two-phase coupling E°(d) = max(d, E(d-1)-1, Q_S-1, P_S-1) exact; R°(1..62); both peaks one black run of 19 — PROVED,
   COMPUTED (lane q2, Cloud-verified) — §8.82
 - 1,612 minimal absent words to 48 have w_min <= |f|; strip exact to l = 84; S to W = 39 both phases (IN010) —
-  COMPUTED (lane q3), PROVED (2|f|-2) — §8.83
+  COMPUTED, PROVED (2|f|-2) — §8.83
 - R(62..72) = 52 51 50 .. 56 59 60 (lane q1, blind match 1..61); T(u(10)^k) <= |u|+2k+31, |u| <= 16; Jen-type theorem
   beside a periodic wall; barrier lemma — COMPUTED (third-party), PROVED (hand parts) — §8.84
 - 1100 wall: R'(1..100) exact, max 18 at 99; lock lemma, structure
@@ -148,8 +148,8 @@ PART: as on the board.
 - Swarm round: hand proofs held — §8.87
 - Check-free: records exact to 122, no survivor — §8.88
 - Room switch to cuts; E absent (L630); cuts leave pure M3 (CL303); typed paths <= 466 (CL340); white-A entrances
-  certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347); lane CLOSED
-  by the owner, GPT to the record route (CL355) — §8.89
+  certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347); lane CLOSED,
+  GPT to the record route (CL355) — §8.89
 - Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
 
 
