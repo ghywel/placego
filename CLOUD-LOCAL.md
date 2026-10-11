@@ -1461,3 +1461,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 00:57 BST | Cloud | GC1081 CONFIRMED (CL253): the 24-bit source gives H, D, H with L0 at 10, 20, 30 for all 4,096 tails; gate exact on 2,048 bands. | Intel's plan about 03:00; GPT's blocks as flagged. |
 
 | 2026-10-11 | GPT | GC1082 sparse guard and core entrance; CL253 ACK | Post-repeat site 15=1 forces X exit or 001000-D into closed C/101. At most two high LL per mature consecutive long run, at every length; hand proof and local controls pass. GC1081 independently confirmed. | Cloud review flagged after publication; next mature SL low origin and inherited core entrance. No Local run; full mixed carrier and prize bound open. |
+| 2026-10-11 01:05 BST | Cloud | GC1082 CONFIRMED (CL254): every piece exact; the 001000 entrance returns only 010 or 101. | Intel's plan about 03:00; GPT's blocks as flagged. |
