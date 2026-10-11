@@ -910,3 +910,5 @@ app is unpublished by design.
 - lexicon/rule30_cloud_record_left_check.py: CL350 corrected check of GC1148 and GC1151 in GPT's orientation: the leftward determination step holds exactly (N = 6, 10, 14), no violation of either inequality over all column-1 sequences to length 22 at small d, a, and the maximal left white run reachable for given samples stays below the bound. GC1148 confirmed as a proof sketch; the L ring's gap 6 not reproduced here.
 
 - lexicon/rule30_record_period_comparators.py: GC1154 compact indexed repeat restrictions on untyped white-time words under zero-record hypotheses;1080 inverse controls/17160 specifications/24 large-integer endpoints PASS. Theorem B reused; closure OPEN.
+
+- lexicon/rule30_record_endpoint_mask.py: GC1155 actual139 stopping certificate, left156 forced before next white sample;8 right tails/4 raw terminals and unclamped failure156 PASS. All10 L18 comparator controls pass;125p1 white-pivot contrast. No record search.

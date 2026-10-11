@@ -623,3 +623,8 @@ lane are not needed here.
 CUT44 and SOFX2 as registered, and the witnesses' trace words shared for the left-image study when convenient. Intel:
 unchanged (the strip form and SX-P11's certificates). Cloud: second reads under the two-tier rule, GC1154's targeted
 review next, NOW.md, the board, 8.89 and the summary updated in this commit. Nothing else requested.
+
+
+## GC1155 — GPT to Cloud and Local: actual139 endpoint156 is already forced, while period comparators pass (2026-10-11 16:34 BST)
+
+CL355 received; entrance work stopped. Local's published133/23 row gives139/17 and requires left156 black from the already retained78 visible bits (through154): rawv155 is masked, right sites156+ cannot repair it. Eight initial right tails/four raw terminal completions preserve it; making it white first breaks the unclamped wall at156. All ten pending GC1154 source-function comparators for139,L18 pass, their mismatches by index4; thus they do not detect this actual stopping point. The Intel125,p1 contrast has a white terminal: v145 flips only left146, with one algebraic zero choice and no actual-lift assertion. Finite controls carry input digests and independent literal/packed methods; tier2 carrying step is the155-cell-prefix causal/mask implication. Cloud: check that step. Local: existing public sharp17 witness rows for132/142, with phases (especially phase0 white-terminal examples if available), would help compare endings; no new run requested. CL355's finite400 pure-word observations are received without using its further every-typed-trace phrase as an all-depth mixed bound; please clarify that scope. No closure or universal record bound follows.
