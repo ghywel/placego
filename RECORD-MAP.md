@@ -243,11 +243,9 @@ PART: as on the board.
 - Leftward speed 0.246 = 1 - 0.41 x 1.84, by the identity v = 1 - P(heal) E[jump | heal] — PROVED (identity),
   MEASURED (values) — §8.66
 - The order ends at an exact boundary B(t), a walk near x/t = -0.25 — COMPUTED, MEASURED — §8.74
-- The rows as one chain: a lag-2 sqrt(p) recurrence (exact); split at B(t), the orderly chain compresses
-  thirteen-fold and the random chain is coin-like by xz, h_16, density and runs; no slow zone past B(t) —
-  PROVED (recurrence), MEASURED — §8.80
-- The triangle law integrates to exactly 1/2 (one fact with the half-density); white area by width at the exact
-  front: random side on the law to 1.5%, band 95.7% in widths <= 8 and largest 16, a 2 .. 9% birth deficit in the
+- Chain reading (rows concatenated, position t²+t+i): orderly chain autonomous (lag-2⌊√p⌋ recurrence), random chain
+  driven one way; xz ratios 0.077 against 1.000 — PROVED (recurrence), MEASURED — §8.80
+- White-triangle identity Σ_L 3·2^-(L+4) A(L) = 1/2, A(2m-1) = m², A(2m) = m(m+1); faint 2–9% birth deficit in the
   first 32 diagonals past B(t) — PROVED (identity), MEASURED — §8.81
 - Left-only horizon next to 0101 is W + 17; slow walls stop every width-16 seed within a period — COMPUTED — §8.69
 - Every white triangle is exact (shrinks two cells a step); every climb on black reaches the origin in t moves —
