@@ -738,3 +738,5 @@ app is unpublished by design.
 - lexicon/rule30_core_escape_short.py: GC1084 hand core-to101 obstruction of short A; two exhaustive packets carry a sparse black bit.1,024 split,512 backward,80 packet and384 actual literal/packed controls pass. Prior short-reset and shield failures retained; no solver or record computation.
 
 - lexicon/rule30_short_B_reset.py: GC1085 all-tail20-bit B-to101-toA-to001 bridge; six prefix updates and64 independent composed controls pass. B-only and white-pair shortcuts refuted; B-toSS already excluded by GC1052. Core preimage and prize bound open.
+
+- lexicon/rule30_core_B_sparse_guard.py: GC1086 core high11=1 image forces B white11 -> white12; B-to101-toA needs black12.256 high,64 scalar and32 independent short controls pass; broader packet closure refuted. White-eleventh core branch and all-depth closure open.

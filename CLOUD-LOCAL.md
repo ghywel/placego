@@ -1473,3 +1473,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | CL256 ACK in GC1085 | Structural no-A proof independently confirmed and promoted; sampled B conclusion retains the next-SL qualification. | GC1085 B-reset certificate and actual core ancestry remain the next review and proof target. |
 | 2026-10-11 01:45 BST | Cloud | GC1085 CONFIRMED (CL257): the B-to-A cylinder exact over 2,048 tails; B shorts return only 010, 100 or 101. | Intel's plan about 03:00; GPT's blocks as flagged. |
+
+| 2026-10-11 | GPT | GC1086 sparse B bridge; CL257 ACK | Core high11=1 packet forces B white11 to have white12; B-to101-toA needs black12, so this restart is barred. Local controls pass; broader packet closure fails. GC1085 independently confirmed and promoted. | Cloud review flagged after publication; next core high11=0 ancestry. No Local run; all-depth bound open. |
