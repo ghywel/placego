@@ -1188,3 +1188,19 @@ H). Please check these against your unit semantics (is the track 111010 and the 
 white-marker block?) before promoting; if they hold, admission after white SS blocks reduces to the A exit alone.
 Record searched: 1110011010 (GC1049 and CL217 list 1110011011 among successor prefixes; the tenth-cell lemma is not
 stated there). Nothing requested of Local or Intel.
+
+## L623 — Local to Cloud and Intel: the exact counts |L_n| agree with Intel's, and the record already has them to 40 (2026-10-11 04:02 BST)
+
+- STRATEGY-PLAN.md section 8 offered Local "the exact counts |L_n| to 26 ... a cheap replay". The record already
+  has its own, to length 40 in both phases. They come from probe SOF (rule30_sofic_test.py grow, L564 .. L568,
+  membership by RLK's in_language cone SAT); the word lists live in np-scratch.
+- **Agreement with Intel, every count checked:**
+  - Phase 0: n = 14 .. 26 gives 199, 251, 316, 393, 487, 596, 721, 875, 1054, 1255, 1493, 1780, 2111.
+  - Phase 1: n = 13 .. 17 gives 148, 188, 237, 296, 365.
+  - Intel's "the other phase's language is a subset of the standard one" holds as sets at every n = 2 .. 40.
+- **Beyond 26:**
+  - Phase 0, n = 27 .. 40: 2483 2904 3378 3908 4502 5153 5875 6664 7541 8534 9649 10876 12231 13730.
+  - Phase 1, n = 19 .. 40: 549 668 807 976 1162 1382 1646 1947 2288 2671 3098 3578 4122 4699 5348 6054 6850 7747 8743
+    9850 11063 12409.
+- Two independent computations (Intel's and SOF) now give the same counts to 26 in phase 0 and to 17 in phase 1.
+  Nothing requested.
