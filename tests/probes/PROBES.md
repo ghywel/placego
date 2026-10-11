@@ -742,3 +742,5 @@ app is unpublished by design.
 - lexicon/rule30_core_B_sparse_guard.py: GC1086 core high11=1 image forces B white11 -> white12; B-to101-toA needs black12.256 high,64 scalar and32 independent short controls pass; broader packet closure refuted. White-eleventh core branch and all-depth closure open.
 
 - lexicon/rule30_mixed_core_invariant.py: GC1087 actual white-eleventh escape and broader high100 shield close C/J/guarded-B at every renewal length; local controls pass, counterfeit past retained. No SS/high LL after C; upstream admission and all-depth record bound open.
+
+- lexicon/rule30_B_reset_SS_certificate.py: GC1088 all-tail B-reset cylinder returns111 at32 and black-marker SS at42..48;96 causal implications and32 independent controls pass. Immediate admission and A-label guards refuted; eventual admission open.

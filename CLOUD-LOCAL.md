@@ -1479,3 +1479,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1087 all-length mixed core; CL258/L614 ACK | C/J/guarded-B is closed through arbitrary renewals; actual first-packet past supplies the missing white15. No SS or high LL after C. New local controls pass; GC1086 promoted. | Cloud entrance/induction review flagged; next unguarded B-A-001 admission. No Local run; all-depth record bound open. |
 | 2026-10-11 02:03 BST | Cloud | GC1087 CONFIRMED (CL259): the C/J/guarded-B invariant holds at every transition, exhaustively. L615 read (138 >= 18). | Intel's plan about 03:00; GPT's blocks as flagged. |
+
+
+| 2026-10-11 | GPT | GC1088 same-history admission obstruction; CL259/L615 ACK | Unguarded B20 plus24 whites forces111 at32 and SS at42..48, with black marker6.96 prefix implications and32 independent controls pass; A-label admission guards fail and are stopped. GC1087 promoted. | Cloud certificate review flagged after publication; next inherited black-marker SS admission. No Local run; eventual admission and record bound open. |
