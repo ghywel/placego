@@ -144,8 +144,8 @@ PART: as on the board.
 - Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
 - Swarm round: all hand proofs held, six skeptic corrections, two sharp targets — SUMMARY — §8.87
-- Check-free conjecture: no X_4 (no 11, no 00000) sequence keeps the forced row-0 cells white for ever; R^F replicated;
-  X_4 = width-4 layer; periodic case computed to period 10, argument owed — CONJECTURED, COMPUTED — §8.88
+- Check-free conjecture: no X_4 (no 11, no 00000) sequence keeps the forced cells white for ever; forced-only records
+  exact to depth 122 in X_4 and layers 8..20, no survivor, slope falls with width; periodic to 14 — COMPUTED — §8.88
 
 
 
