@@ -829,3 +829,5 @@ app is unpublished by design.
 - lexicon/rule30_macro_successor_gate.py: GC1125 complete32-state joint21 endpoint restrictions1->2 and no3->2 for all branches at k1..3; cut normal form gives actual J+640 in the restricted core.29524 controls; all-k/admission open.
 
 - lexicon/rule30_111_low_white_return.py: GC1126 H-low-D101 escape retains 1530 A-origin/end pairs; inherited rank bounds SS residence by two, all A returns exactly k=2 (58 ticks). Scalar path and all-count origin controls; actual lift open.
+
+- lexicon/rule30_111_low_reset_gate.py: GC1127 N and M3 share a 20-cell self-packet; NF/FN give distinct 102-tick loops. FIRST-L spacings 5/19/22 with no consecutive 19 evade all eleven cuts at every length. 511 controls; actual lifting open.
