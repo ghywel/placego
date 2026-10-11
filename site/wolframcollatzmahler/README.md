@@ -15,10 +15,13 @@ domain on 2026-10-11: www.wolframcollatzmahler.com, served from the root of that
 | `stand.html` | Where we stand: proved, measured, closed routes, the one missing statement, with sources. |
 | `trio.html` | Rule 30, Collatz and Mahler's 3/2 side by side: the shared skeleton and where each is open. |
 | `need.html` | What we need: seven asks in plain and exact words, and how a contribution is checked. |
-| `trove.html` | The searchable catalogue; reads `data/manifest.json`. |
+| `trove.html` | The searchable catalogue; the catalogue is embedded in the page by `build_manifest.py` (fetching `data/manifest.json` is only a fallback), so it works from the file system too. |
 | `join.html` | Where to start reading, the standards, how to send something. |
+| `problems.html`, `trio-technical.html` | For mathematicians: the open statements exactly; the three problems with their theorems. |
+| `cones.html`, `wheelcentre.html`, `record.html`, `ring.html` | Live pictures with inputs, linked from the pages they illustrate (`record.html` embeds `data/records.json`, written by `data/build_data.py`). |
 | `style.css`, `r30.js` | The shared style and the small Rule 30 drawing engine (no dependencies). |
-| `build_manifest.py` | Generates `data/manifest.json` from a curated list; run it after a data file changes. |
+| `build_manifest.py` | Generates `data/manifest.json` from a curated list and embeds it in `trove.html`; run it after a data file changes. |
+| `data/build_data.py`, `data/replay.py` | Build the clean exports (records, forbidden words, rings) and embed the records in `record.html`; replay every record row in seconds. |
 | `rule30/` | The Wolfram Rule 30 page, the worked problem: the nine HTML files of `site/wolframrule30/` copied verbatim (the owner, 2026-10-11: "perfect as it is"); served at `/rule30/`. Keep the nine files together; they load one another by relative path. |
 | `content/` | Markdown written by the other workers (GPT: `problems.md`, `trio-technical.md`), rendered into pages by Cloud. |
 

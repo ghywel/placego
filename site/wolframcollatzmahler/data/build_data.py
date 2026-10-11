@@ -57,3 +57,9 @@ json.dump({'what':'The two travelling waves column 1 can run in beside the alter
   'wheel':{'word_U':'00010011010001001101000100110100010011010001001101001101','period':56,'rotation':'t -> 17 t mod 56','kick_classes':[12,32,42,'...see PROOFS.md entry 26']}},
   open(os.path.join(HERE,'rings.json'),'w'),indent=1)
 print('records',len(recs),'| exact',sum(r['status']=='exact' for r in recs),'| words',len(words[0]),len(words[1]))
+# embed the records in record.html so the page works when opened from the file system
+import re
+rp=os.path.join(HERE,'..','record.html'); t=open(rp).read()
+payload=json.dumps(json.load(open(os.path.join(HERE,'records.json'))),separators=(',',':')).replace('</','<\\/')
+t=re.sub(r'<!-- RECORDS-JSON -->.*?<!-- /RECORDS-JSON -->',lambda m:'<!-- RECORDS-JSON -->'+payload+'<!-- /RECORDS-JSON -->',t,flags=re.S)
+open(rp,'w').write(t); print('embedded in record.html')

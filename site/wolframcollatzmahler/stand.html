@@ -13,7 +13,7 @@
 <body>
 <header class="top"><div class="in">
   <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
-  <nav><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="gallery.html">Gallery</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+  <nav><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
 </div></header>
 <canvas class="ribbon" aria-hidden="true"></canvas>
 <main>
@@ -33,6 +33,8 @@ ever, is the thing we are trying to show cannot exist.</p>
 <figcaption>Suppose the centre (tinted) alternates for ever. Then the column next to it (blue) is forced to behave in a
 very particular way, and everything to the left is determined by those two columns. A counterexample would have to make
 the left side empty beyond some point. The picture is read down the page; the right half is a random start.</figcaption></figure>
+<p class="note">Turn this by hand: <a href="cones.html">the forced left half and where it is still</a>, and
+<a href="wheelcentre.html">any periodic centre making its own chaos</a>.</p>
 
 <h2 data-glyph="cones">Proved <span class="status ok">Proved</span></h2>
 <ul class="proved">
@@ -49,7 +51,8 @@ per visible cell, whatever the rest of the pattern does. Certified exactly in in
 <li><b>The window principle.</b> A block of the next column can recur only if it is short compared with the time that
 has passed. The same statement holds, word for word, for the Collatz conjecture.</li>
 <li><b>No finite pattern ever dies.</b> The only row that maps to all white is all black, and the only rows that map to
-all black are the three phases of 100100…; none is finite, so no finite pattern ever reaches a solid row.</li>
+all black are the three phases of 100100…; none is finite, so no finite pattern ever reaches a solid row.
+<a href="ring.html">The ring of six, where almost everything dies, drawn.</a></li>
 </ul>
 <p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.13 (Jen), 8.54 (Theorems A and B), 8.57 (Theorem E), 8.20 and
 8.33 (the channel bound), 8.58 (the window principle); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL363 (solid rows). The written proofs are in
@@ -66,7 +69,7 @@ such wheel.</li>
 <li><b>The record of white runs.</b> How long can the forced left side stay white at a given depth? The exact answer is
 known at every depth to 120 and at depths 132, 139 and 142, with the configuration that achieves it. It is 17 cells at
 those three depths and at least 18 at the depths between. If this number is finite at every depth, period two is
-impossible for every finite pattern.</li>
+impossible for every finite pattern. <a href="record.html">See it depth by depth.</a></li>
 <li><b>The forbidden words.</b> Every word of length up to 44 that the next column can never produce is listed, 1,130 in
 one phase and 1,199 in the other, each with a machine-checked certificate of impossibility.</li>
 <li><b>The counting form.</b> The number of starting patterns on w cells whose centre alternates for T steps falls like

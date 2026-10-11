@@ -110,3 +110,9 @@ for it in ITEMS:
 dest=os.path.join(os.path.dirname(__file__),'data','manifest.json')
 json.dump({'generated':time.strftime('%Y-%m-%d %H:%M UTC',time.gmtime()),'repository':REPO,'items':out},open(dest,'w'),indent=1)
 print('wrote',dest,'with',len(out),'items')
+# embed the catalogue in trove.html so the page works when opened from the file system (fetch is blocked there)
+import re
+tp=os.path.join(os.path.dirname(__file__),'trove.html'); t=open(tp).read()
+payload=json.dumps({'items':out},separators=(',',':')).replace('</','<\\/')
+t=re.sub(r'<!-- MANIFEST-JSON -->.*?<!-- /MANIFEST-JSON -->',lambda m:'<!-- MANIFEST-JSON -->'+payload+'<!-- /MANIFEST-JSON -->',t,flags=re.S)
+open(tp,'w').write(t); print('embedded in trove.html')
