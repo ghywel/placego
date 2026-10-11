@@ -28650,7 +28650,7 @@ CL267 at632485b2 independently confirms the shield and all-tail result; promoted
 
 Record searched: forced.only|check.free withperiodic|Jen ->6 hits in3 files; odd.periodic|odd.spatial.period|odd.period withcheckerboard|alternating.white|white.*parity ->4 hits in2 files, no bridge theorem. STRATEGY-PLAN D2 and RULE30-PRIZE8.88 read. Predictions preceded all controls; no periodic search or record computation duplicated.
 
-**Finite bridge, proof sketch.** Let y=F(x) under ordinary Rule30, with either parity of x white throughout[a-2,b+2]. Suppose y is q-periodic on[a-1,b+1], for positive odd q, and b-a>=q+4. Then
+**Finite bridge, PROVED (CL268).** Let y=F(x) under ordinary Rule30, with either parity of x white throughout[a-2,b+2]. Suppose y is q-periodic on[a-1,b+1], for positive odd q, and b-a>=q+4. Then
 
     F^4(x)_i = 0 for every i in[a+2,b-q-2].
 
@@ -28663,3 +28663,52 @@ For a centre i on the white parent parity, the local image has y_(i-1)=x_(i-1), 
 Conversely, standard visible1 gives depth projection01 followed by the repeating01 tail; other-phase visible0 gives1 followed by01. Their forced tails are white while their check tails contain blacks. They violate11 and00000 respectively, so neither refutes X4. They do show precisely why Jen's full-white-tail exclusion cannot alone prove the stronger statement quoted in8.88. Please supply the separate forced-only periodic bridge or qualify that assertion pending it; keep the within-X4 conjecture unchanged.
 
 Controls pass:4 local parity identities, all4 nilpotent period3 patterns,352 finite odd-q fixtures with arbitrary exterior (288 others correctly fail the periodicity premise), the fixed even-q counterexample, and6 exact periodic-column controls independently reconstructed through128 depths. No failed prediction. No solver, CUT, membership, relaxed-record or broad period search. CL266/267 confirm GC1090/1091 and both are promoted. L618's flag is verified and ACKed. Next missing inference: extend this odd-period ancestry bridge across earlier time slices, or identify the exact separate periodic forced-only argument before using it. The all-depth prize bound remains open.
+
+
+## GC1093 — The two white-parity second images intersect in four nilpotent rows (2026-10-11)
+
+**Missing inference advanced.** GC1092 covers an odd-periodic immediate successor. It cannot be used for a later slice without retaining its earlier origin. A finite hidden graph now handles the second slice, at every odd spatial period; arbitrary earlier slices and the periodic forced-only theorem remain open. CL268 at0964681c confirms GC1092, now promoted, and accepts the scope correction:8.88's periodic forced-only exclusion is COMPUTED through visible period10, with its general argument owed. No Local or Intel run duplicated.
+
+Record searched: white.parity|alternating.white|checkerboard.white withancestor|earlier|period|collapse ->18 hits in5 files; parity.image|phase.intersection|white.parity withtwo.step|second.update|intersection ->0 hits. G122/G124 inverse graphs, G152, GC1092 and strategy D2/D3 read. Predictions preceded controls and the adaptive graph construction. The proposed XOR-linear second-image classification failed and is retained below.
+
+**Exact hidden representation, proof sketch.** Let A_even be all bi-infinite rows white at every even site, and A_odd the corresponding odd-white rows. Then
+
+    F^2(A_even) intersect F^2(A_odd)
+      = {000..., (001)..., (010)..., (100)...}.
+
+Write the free odd bits of x in A_even as z_j=x_(2j+1). Directly applying Rule30 twice gives its output pair
+
+    (w_(2j), w_(2j+1))
+      = (NOT z_(j-1) AND z_j,
+         z_(j-1) XOR (NOT z_j AND z_(j+1))).
+
+For an origin in A_odd with free even bits u_j, the output pair is
+
+    (u_(j-1) XOR (NOT u_j AND u_(j+1)),
+     NOT u_j AND u_(j+1)).
+
+Set a=z_(j-1), b=z_j, c=z_(j+1), d=u_(j-1), e=u_j, f=u_(j+1). Equating these two pairs gives an exact16-state graph with state(a,b,d,e), next state(b,c,e,f), and common output label(E,O). No independent choice is lost: consecutive states retain the overlapping hidden bits of both origins. Its complete nonempty edge table is below; all unlisted states have no outgoing edge. Each displayed label applies to every target in its row.
+
+| State | Targets | Output pair |
+| --- | --- | --- |
+|0000|0000|00|
+|0001|0010,0011|00|
+|0010|0101|01|
+|0110|1000,1100|10|
+|0111|1010,1011,1110,1111|10|
+|1000|0100|00|
+|1001|0110,0111|00|
+|1010|0001|01|
+|1110|1001,1101|01|
+
+The only cycles are the zero loop0000 and0111 ->1110 ->1001 ->0111. The latter's labels10,01,00 give100100..., a single-black period3 row. No noncycle edge enters either cycle. Every departure terminates within four edges: the longest is0111 ->1010 ->0001 ->0010 ->0101, whose last state has no successor. Other departures are the terminal choices at0111,1110 ->1101, and1001 ->0110 ->1000 ->0100 or1100; the remaining transient states lie on these chains. Thus a bi-infinite walk stays on one cycle, proving containment in the four stated rows. Conversely001010 ->011011 ->010010; shifting the origin by3 exchanges its white parity without changing that second image. Spatial rotations give all three singleton phases, and zero supplies the fourth row, proving equality.
+
+**Finite consequence, proof sketch.** A path of K output pairs has its first K-4 edges recurrent, since a noncycle edge cannot have four further edges after it. Those first pairs are therefore zero or one consistent singleton period3 pattern. Both types die after two more Rule30 updates wherever the radius2 cone fits. This finite statement allows arbitrary exterior cells; it does not assume a globally periodic parent or a recurrent physical orbit.
+
+Let x be white on either parity throughout[a-2,b+2], and w=F^2(x) q-periodic on[a,b], with q positive odd and b-a>=q+14. Then
+
+    F^4(x)_i=0 on[a+3,b-q-11].
+
+Use x'_i=x_(i+q), which has the opposite white parity and the same second image on[a,b-q]. Let c be the first site at least a on x's white parity, so c<=a+1, and take K=floor((b-q-c+1)/2) complete output pairs. Both origin cones fit inside their white-parity intervals. The graph forces the first K-4 pairs, on[c,c+2K-9], into one of the four nilpotent rows. Two updates kill[c+2,c+2K-11], which contains[a+3,b-q-11]. This proves the displayed all-odd-q bound and the corresponding far-left half-line statement. It extends the parity bridge by one earlier slice, still killing by time4. No encounter premise, arbitrary-time extension or prize bound is supplied.
+
+**Failures and controls.** P3 predicted the XOR-linear period3 family of GC1092 for the second image. REFUTED by the exact singleton cycle:100 fails the XOR-neighbor identity, while100 ->111 ->000 is the correct extinction mechanism. P1/P2 named seven-ring ancestry controls and the unexpected five-ring control pass on160 parity-white starts; this is evidence only, not the all-period proof. The initial temporary control stopped with an IndexError on short cycles before verdicts; padding repaired it, retaining scalar/packed crosschecks. The even-q fixed checkerboard remains a counterexample to dropping oddness. P4 finite interval controls pass:64 hidden packets independently checked by literal two-step cones, all16 five-edge graph paths start recurrent,352 arbitrary-exterior fixtures (288 other fixtures correctly fail periodicity). Source:tests/probes/lexicon/rule30_two_step_parity_bridge.py. Next substantive missing inference: decide whether later-image intersections admit new mergers outside these nilpotent rows; images do not in general commute with intersection, so this second-slice certificate cannot simply be iterated.

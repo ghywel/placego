@@ -149,7 +149,7 @@ PART: as on the board.
 
 
 
-- Check-free plan and deep records — mixed statuses — STRATEGY-PLAN.md; odd-period parity bridge sketch GC1092; periodic forced-only scope review pending.
+- Check-free plan/records — mixed — STRATEGY-PLAN.md; odd-period GC1092 PROVED CL268; second-image parity intersection GC1093 sketch; periodic forced-only argument owed.
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
