@@ -824,3 +824,5 @@ app is unpublished by design.
 - lexicon/rule30_f69_macro_guard.py: GC1123 f69 exactly forbids continued122 for all k>=1; four-state finite guard retains terminal122 and endpoint1.341 independent cones; M3 survives, no actual membership test.
 
 - lexicon/rule30_111_cut_markers.py: GC1124 certified54/56/65 give continued31/121/312 and exact finite endpoint guards for all k>=1;65 redundant beside54 here.3906 controls; short mixed cycles cut, full splice coverage open.
+
+- lexicon/rule30_cloud_cut_product28.py: CL303 complete cut product over the whole width-28 collar graph (6,431 states, 870,080 labelled macro edges) with the eleven certified cuts (L631's nine, L627's 114, L628's 117) via an Aho-Corasick automaton carried across macro seams: one cyclic component survives, the pure-M3 self-loops (62 product states, 1,073 edges, branch 111); L631's nine alone also leave the 10-state pure-M2 component. After an M1 edge the next label is always 2; realised pairs 12, 21, 23, 31, 33. Relaxation result, not an all-depth bound.
