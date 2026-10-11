@@ -18,6 +18,11 @@ the inequality holds on every small instance (0.7). RESULT (CL348): (1) held (sh
 1..3 are constant); (3) REFUTED: 24 violations among 357 instances, e.g. the row 111100000000 at a white-wall time with
 sites 5..10 white gives the samples 11010011010, the first eleven of (110100)^inf, while the ring reads 111011110001
 there. The proof reads left permutivity in the wrong direction: the trace fixes the row leftward, not to its right.
+
+CORRECTION (CL350, 15:46 BST). This probe's parts (2) and (3) impose the white interval at POSITIVE sites and compare
+the row to the RIGHT of the wall with the ring; GC1148's record is the LEFT row (depth k = site -k), which columns 0 and
+1 determine leftward exactly as the sketch says. The counterexamples here are right rows and do not touch the theorem.
+The refutation verdict above is withdrawn; see rule30_cloud_record_left_check.py.
 """
 import itertools
 RING=0x688eb74a45efb082671ee; P=84

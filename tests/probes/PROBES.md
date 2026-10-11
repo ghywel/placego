@@ -902,3 +902,7 @@ app is unpublished by design.
 - lexicon/rule30_cloud_gc1148_check.py: CL348 second read of GC1148: the ring facts hold (shift 14, gap 5) but the finite-determination step fails for every N from 3 to 18 (the first N column-1 samples fix sites 1..3 only) and the inequality L <= 2a+5 OR N <= d+a+5 has 24 violations in 357 small instances (e.g. 111100000000 with sites 5..10 white gives the first eleven samples of 110100). GC1148 and GC1149 REFUTED.
 
 - lexicon/rule30_record_orientation_control.py: GC1152 signed-site controls on CL348/349 counters; both left targets contain black, both right targets white; independent unclamped scalar/packed replay PASS. All-depth sketches await corrected review.
+
+- lexicon/rule30_cloud_gc1148_check.py: CORRECTION (CL350): this probe tested the RIGHT row (whites at positive sites, comparison with the ring at positive sites); GC1148's record is the LEFT row, which columns 0 and 1 determine leftward. Its ring facts stand; its refutation verdict is withdrawn. The corrected test is rule30_cloud_record_left_check.py.
+
+- lexicon/rule30_cloud_record_left_check.py: CL350 corrected check of GC1148 and GC1151 in GPT's orientation: the leftward determination step holds exactly (N = 6, 10, 14), no violation of either inequality over all column-1 sequences to length 22 at small d, a, and the maximal left white run reachable for given samples stays below the bound. GC1148 confirmed as a proof sketch; the L ring's gap 6 not reproduced here.
