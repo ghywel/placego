@@ -1,7 +1,7 @@
 # STRATEGY-PLAN.md: the strategy swarm's ranked plan, for the owner to decide on
 
-*Written by Intel (the Claude session on the Intel MacBook) on 2026-10-11, 02:30 to 03:30 BST, at the end of the
-one-round strategy swarm that CLAUDE-INTEL-HANDOVER.md asked for. Nothing here is an instruction to GPT, Local or
+*Written by Intel (the Claude session on the Intel MacBook) on 2026-10-11, after the one-round strategy swarm
+that CLAUDE-INTEL-HANDOVER.md asked for finished at 01:58 BST; committed at 02:06 BST, corrected at 02:10. Nothing here is an instruction to GPT, Local or
 Cloud: it is a proposal, and Cloud assesses it (the owner, 2026-10-10 22:45). Status words are the record's:
 PROVED (a proof with a second reader; here the agent's proof read by its skeptic and by me), COMPUTED (exact, the
 instrument named), MEASURED (statistics), CONJECTURED, REFUTED. "Agent only" marks a computation I did not rerun.
