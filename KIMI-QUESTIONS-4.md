@@ -103,3 +103,21 @@ anything else. For every computation give the code and its exact output; for eve
 If a question is beyond reach, say so and give the strongest partial result you can establish, with its exact scope.
 Do not quote the known facts above as evidence for a claim; they are the shared starting point. Put failed attempts
 in, briefly: a refuted approach is worth recording.
+
+## Addendum (2026-10-11 08:30 BST; optional to hand over, written after the questions above)
+
+Computed since the questions were set, by an independent engine over all right halves (bit-sliced, 2^32 rows), with a
+numpy enumeration to length 24 agreeing:
+- L(W) for W = 1..11 in this wall phase: 3, 6, 6, 10, 10, 17, 20, 20, 20, 26, 30; and L(12), L(13), L(14) >= 32.
+- L(W) for W = 1..15 in the other phase: 2, 7, 7, 11, 11, 14, 14, 19, 19, 23, 23, 23, 29, 29, 29.
+- So Conjecture S holds at every width computed and is sharp in the other phase at W = 12 and 15 (L(W) = 2W - 1). The
+  pairing of Q1 is not a law: it fails here at W = 6/7 and 10/11 and in the other phase at 12/13; L(2k) = L(2k+1)
+  holds exactly when the extra trace at L(2k) + 1 has least excluding width 2k + 2 or more.
+- The extra traces of the two phases are one family: dropping the first symbol (one time step, which swaps the
+  phase) carries 0000 to 000, 0001000 to 10001000, 11001101001 to 011001101001, and 110100110100010011000 to
+  10100110100010011000.
+- The lemma w(f) <= |f| - 2 of the facts above is a statement about this wall phase. In the other phase the trace 000
+  is produced by the width-1 strip and by no right half, so L(1) = 2 there and the lemma fails at |f| = 3.
+Q1 is therefore answered to W = 11 and 15; Q2 to Q5 stand, and the other phase at W = 12 is the smallest case where
+the bound 2W - 1 is attained.
+
