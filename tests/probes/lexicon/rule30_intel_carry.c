@@ -12,7 +12,10 @@
  *                  along the diagonals m + t and m - t for t < STEPS: counts of every 16-bit window (overlapping) and
  *                  the sums for correlations at lags 0..64. Output "W q pattern count" and "S q lag sum_xy sum_x n".
  * block K          every row of the 2K cells at sites -(K-1)..K: exact counts of the column-carry blocks c_t(0),
- *                  t = 0..K-1 (bit t of the pattern). Output "B K pattern count" (rows per pattern; 2^(2K) rows in all).
+ *                  t = 0..K-1 (bit t of the pattern). Output "B K pattern count" (rows per pattern; 2^(2K) rows
+ *                  in all).
+ * lag TMAX         exact lag laws of K (row overlap), D and B: for t = 1..TMAX the counts behind Cov(X_0, X_t) from
+ *                  every row of the window -4..2t+5 (see the function). Output "L t W q j both termt".
  * Compile with the OpenMP flags of COMMON rule 3 (Apple clang needs libomp).
  */
 #include <stdio.h>
@@ -181,7 +184,9 @@ static void column(long long R, int STEPS) {
 static void transpose64b(u64 a[64]) {
     u64 m = 0x00000000FFFFFFFFULL;
     for (int j = 32; j; j >>= 1, m ^= m << j)
-        for (int k = 0; k < 64; k = ((k | j) + 1) & ~j) { u64 t = ((a[k] >> j) ^ a[k | j]) & m; a[k] ^= t << j; a[k | j] ^= t; }
+        for (int k = 0; k < 64; k = ((k | j) + 1) & ~j) {
+            u64 t = ((a[k] >> j) ^ a[k | j]) & m; a[k] ^= t << j; a[k | j] ^= t;
+        }
 }
 static void block(int K) {
     static const u64 LANE[6] = {0xAAAAAAAAAAAAAAAAULL, 0xCCCCCCCCCCCCCCCCULL, 0xF0F0F0F0F0F0F0F0ULL,
@@ -214,12 +219,66 @@ static void block(int K) {
     free(H);
 }
 
+/* ---------------- lag ---------------- */
+/* exact lag laws: for each t, every row of the cells at sites -4..2t+5 (bit-sliced); for K (x_t(j) x_{t+1}(j), the row
+ * overlap), D (x_t(j) x_t(j+1)) and B (x_t(j)) the counts of rows with the time-0 term at site 0 and the time-t term at
+ * site j both 1, for j = t-3 .. t+4 (every cell used lies inside its own light cone in the window). Output
+ * "L t W q j both termt" with W the window width (2^W rows). */
+static void lag(int TMAX) {
+    static const u64 LANE[6] = {0xAAAAAAAAAAAAAAAAULL, 0xCCCCCCCCCCCCCCCCULL, 0xF0F0F0F0F0F0F0F0ULL,
+                                0xFF00FF00FF00FF00ULL, 0xFFFF0000FFFF0000ULL, 0xFFFFFFFF00000000ULL};
+    for (int t = 1; t <= TMAX; t++) {
+        int W = 2 * t + 10, O = 4, J0 = t - 3, NJ = 8, nth = omp_get_max_threads();
+        long long nblocks = 1LL << (W - 6); double t0 = omp_get_wtime();
+        u64 *acc = calloc((size_t)nth * 3 * NJ * 2, 8);
+        #pragma omp parallel
+        {
+            u64 *a = acc + (size_t)omp_get_thread_num() * 3 * NJ * 2;
+            u64 (*X)[64] = malloc(sizeof(u64[64]) * (t + 2));
+            #pragma omp for schedule(dynamic, 1024)
+            for (long long B = 0; B < nblocks; B++) {
+                for (int u = 0; u < W; u++) X[0][u] = (u < 6) ? LANE[u] : (((B >> (u - 6)) & 1) ? ~0ULL : 0);
+                for (int s = 0; s <= t; s++) {
+                    u64 left = 0;
+                    for (int u = 0; u < W; u++) {
+                        u64 r = (u + 1 < W) ? X[s][u + 1] : 0; X[s + 1][u] = left ^ (X[s][u] | r); left = X[s][u];
+                    }
+                }
+                u64 k0 = X[0][O] & X[1][O], d0 = X[0][O] & X[0][O + 1], b0 = X[0][O];
+                for (int q = 0; q < NJ; q++) {
+                    int u = O + J0 + q;
+                    u64 kt = X[t][u] & X[t + 1][u], dt = X[t][u] & X[t][u + 1], bt = X[t][u];
+                    u64 *p = a + (size_t)q * 2;
+                    p[0] += __builtin_popcountll(k0 & kt); p[1] += __builtin_popcountll(kt);
+                    p[2 * NJ] += __builtin_popcountll(d0 & dt); p[2 * NJ + 1] += __builtin_popcountll(dt);
+                    p[4 * NJ] += __builtin_popcountll(b0 & bt); p[4 * NJ + 1] += __builtin_popcountll(bt);
+                }
+            }
+            free(X);
+        }
+        const char *Q = "KDB";
+        for (int q = 0; q < 3; q++)
+            for (int jj = 0; jj < NJ; jj++) {
+                u64 both = 0, tt = 0;
+                for (int th = 0; th < nth; th++) {
+                    size_t o = ((size_t)th * 3 * NJ + q * NJ + jj) * 2; both += acc[o]; tt += acc[o + 1];
+                }
+                printf("L %d %d %c %d %llu %llu\n", t, W, Q[q], J0 + jj, (unsigned long long)both, (unsigned long long)tt);
+            }
+        fflush(stdout); fprintf(stderr, "lag t = %d: 2^%d rows, %.1f s\n", t, W, omp_get_wtime() - t0); free(acc);
+    }
+}
+
 int main(int argc, char **argv) {
-    if (argc < 3) { fprintf(stderr, "usage: %s ring NMIN NMAX | cone T | column R STEPS | block K\n", argv[0]); return 1; }
+    if (argc < 3) {
+        fprintf(stderr, "usage: %s ring NMIN NMAX | cone T | column R STEPS | block K | lag TMAX\n", argv[0]);
+        return 1;
+    }
     if (!strcmp(argv[1], "ring")) { for (int n = atoi(argv[2]); n <= atoi(argv[3]); n++) ring(n); }
     else if (!strcmp(argv[1], "cone")) cone(atoi(argv[2]));
     else if (!strcmp(argv[1], "column")) column(atoll(argv[2]), atoi(argv[3]));
     else if (!strcmp(argv[1], "block")) block(atoi(argv[2]));
+    else if (!strcmp(argv[1], "lag")) lag(atoi(argv[2]));
     else { fprintf(stderr, "unknown mode\n"); return 1; }
     return 0;
 }

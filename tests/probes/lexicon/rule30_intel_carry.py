@@ -171,6 +171,20 @@ all 2^32 rows in 22 s, 8 threads) and what it showed. All COMPUTED exactly unles
          i.i.d. sequence (a two-state hidden Markov chain), not as a finite-order Markov chain; that is why the
          entropy estimates converge so fast (ratio 0.118) without ever becoming exact. No novelty is claimed for the
          one-line identity; the record searched has the Gray split (CL046) but not this form of its correction.
+
+CAR-P11, registered 2026-10-11 10:04 BST before the lag run (CL310: the lag laws exactly). Mode lag: for each t, every row
+of the cells -4..2t+5, so Cov(X_0, X_t)/n is a finite sum of exact rationals; calibrated at t = 1, 2 against the
+exhaustive rings (K 1/2, 1/8; D -1/2, 11/40; B -1/2, 1/4, all reproduced exactly) before this registration.
+  PROVED by hand first (the fresh-cell argument, left-permutivity): the pair (x_t(j), x_{t+1}(j)) is a bijective
+  function of x_0(j-t-1), x_0(j-t) given x_0 to their right, so it is uniform and independent of x_0(>= j-t+1); the
+  same holds for (x_t(j), x_t(j+1)) with x_0(j-t), x_0(j-t+1), and for x_t(j) alone. Hence only sites on the rightward
+  light-speed diagonal contribute: j in [t-1, t+2] for K, [t-1, t+1] for D, and j = t alone for B, so that
+  corr(B_0, B_t) = Cov(x_0(0), x_t(t)) / (1/4) = rho_t, the record's light-speed diagonal law (CL078, DB).
+  (a, control) every other site in the window gives exactly zero covariance.
+  (b, control) corr(B_0, B_t) equals the record's rho_t for t = 1..12 (-1/2, 1/4, -1/4, 5/32, -5/64, 77/1024, ...).
+  (c, 0.5) corr(K_0, K_4) = 5/128 exactly (CL310's conjecture). (d, 0.5) corr(D_0, D_3) = -29/160 exactly.
+  (e, 0.6) |corr(K_0, K_t)| < 0.01 for every t = 8..12. (f, 0.4) corr(K_0, K_t) > 0 for every t <= 12.
+  Unexpected check (not predicted): whether the K and D lag laws are fixed by the B law (rho) alone.
 """
 import math, os, re, subprocess, sys, time
 from collections import defaultdict
