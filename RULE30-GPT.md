@@ -28523,7 +28523,7 @@ The parked short-B attempt had false predictions: the white short marker was cla
 
 ## GC1087 — The low core is absorbing through all mixed renewals (2026-10-11)
 
-**Result, PROOF-SKETCH.** The missing white-eleventh escape closes in the synchronized phase-zero renewal frame. The following concrete three-type union is forward invariant for every farther tail and every renewal length:
+**Result, PROVED (CL259).** The missing white-eleventh escape closes in the synchronized phase-zero renewal frame. The following concrete three-type union is forward invariant for every farther tail and every renewal length:
 
 | Type | Actual origin prefix or guard | Next type |
 | --- | --- | --- |
@@ -28540,3 +28540,25 @@ For E=1, GC1084's time4 split is000001 at9..14 or10001 at9..13. Its second packe
 **Mixed closure, without widening the tail independently.** The broader high100 prefix already reaches time4sites6..11=**001011**: time1sites10,11=01, then time2 and time3 have that same pair, forcing time4sites10,11=11. The rest of the packet is GC1075's common shield. Both J prefixes therefore satisfy GC1086's reviewed time4-to-B sparse guard. For guarded B, a black site11 puts the next long in C by GC1052. If site11 is white, site12=f is white. GC1074 gives either low100 in C or high101. In the high case GC1086's short proof gives time4site12=1, so time5sites10..12=111 and returned high10..12=100. The latter lies in the broader J prefix, including site13=1. The table now closes, and induction applies at every subsequent renewal.
 
 **Controls and remaining gap.** Predictions preceded the local controls:1,024 backward packets (eight qualified),four complementary-pair cases,16 white-E closures,32 high shields and64 short cones (40 high outputs) pass; full high/short cones agree literal/packed. Four unexpected counterfeit time4packets with black15 return101 with white11 and black12, outside J: they lack the just-proved core past. The previous B13-black exception and high1001 successor remain allowed, so the failed two-packet closure is not reinstated. Next concrete admission gap: the unguarded B-to101-toA-to001 bridge's D return on the same history. This invariant covers an entered component, while upstream admission and the all-depth record certificate remain open. No CUT, membership or solver run duplicated.
+
+
+## GC1088 — The unguarded B reset can return 111 and reach SS (2026-10-11)
+
+**Missing inference and result, proof sketch.** GC1087 closes the entered low core, but does GC1085's actual B-to101-toA-to001 bridge enter it at its next D return? Not necessarily. The finite origin **11101001100111010000 followed by 24 white cells**, with every farther tail, returns high111 at32, S at42 and S again at48. It gives concrete evasion of immediate admission and crosses back into SS. It does not refute eventual admission or prove arbitrarily many such resets.
+
+Record searched: B.to101.toA|11101001100111010000|unguarded B ->10 hits in6 files; GC1080/82/83/85/87 read. Predictions preceded the controls. The initial claim that A1a1 forces001000 failed; its low outputs include001011,001010 and001001. A proposed D-image inequality12<=13 failed in38/256 and64/256 local cones for the two marker choices. Actual high11011 past with A11=1 does force A13=1, but adding that bit still leaves24/128 violations. These label-only admission shortcuts are stopped. The white-tail diagnostic then returned111 at32 rather than C; the following certificate promotes that particular trajectory to an all-tail cylinder.
+
+**Causal certificate.** Starting from the 44 fixed bits, retain each completely determined spatial prefix under Rule30. An output before the last known cell has all three inputs displayed. If the last known cell is black, its OR masks the unknown next input and one additional output is determined. This is an exact induction over arbitrary exterior bits, not an assumption of a white infinite tail. The source retains24 fixed cells at32,20 at42 and17 at48; the probe checks both fresh exterior choices at every step. Selected checkpoints are:
+
+| Time | Forced origin prefix |
+| --- | --- |
+| 6 | 11100110111011 |
+| 16 | 1110100011111 |
+| 22 | 111001001001011 |
+| 32 | 111001111111 |
+| 42 | 11101110101000010111 |
+| 48 | 11101111000111011 |
+
+The actual fifth tracks are D=0101100000 on22..31, H=0101101010 on32..41, and SS=111010 on42..47. Thus the D return is outside C/J, its next high terminates in S, and that S takes SS. These are samples of the same forced rows, with no freely assigned tail at a renewal. The unexpected SS image still has a **black sixth marker**: the initial prediction of immediate whitening at48 failed. GC1056's monotone white-marker absorption does not imply instant whitening.
+
+All96 fresh-right prefix implications and32 independent literal/packed composed controls pass. The local failed inequalities have explicit retained witnesses. No solver, CUT, membership or relaxed-record computation was run. CL259 at e58f3e27 independently confirms all three GC1087 transitions and the induction, so GC1087 is promoted to PROVED; L615 at86391577 is ACKed with its138>=18 witness scope, and CUT-P23's142 run is left to Local. Next missing inference is admission after this actual black-marker SS segment, retaining the high-to-S past. The finite relaxation must carry that segment; neither this cylinder nor the absorbing component yet gives an all-depth record bound.
