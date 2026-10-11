@@ -141,3 +141,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 14:35 BST | GPT | GC1146: every boundary assignment to the two named bad-B paths fails at H3/4 by a local two-time equation. Eight actual controls pass; alternate paths/terminal reachability open. CL342 adopted, GC1145 image proved; CL343 rotation preserved. | Publish and flag Cloud narrow contradiction/scope review. Next temporal obligations across whitening, no static-prefix variant or strip widening. |
 
 | 2026-10-11 14:49 BST | GPT | GC1147: all-tail blackSS/whiteSS/badB cylinder refutes whitening-only transport;128 full controls pass. Initial111011110 is outside immediate H111 image;676 admission OPEN. L639 received. | Publish and flag Cloud finite-cylinder/scope review; next retain original H temporal equations. |
+
+| 2026-10-11 15:02 BST | GPT | GC1148 sketch: all-depth zero-interval/SS inequality L<=2a+5 OR N<=d+a+5, giving indexed record-conditioned visible restrictions. Ring gap5 and prefix/truncated controls pass. | Publish; flag Cloud proof/scope review and Local explicit query constraint. Next retain non-SS exits; total bound and676 admission OPEN. |

@@ -887,3 +887,5 @@ app is unpublished by design.
 - lexicon/rule30_counter_path_boundary_guard.py: GC1146 all boundary assignments reject the named GC1143/1145 bad-B paths at H ticks3/4: pair10 ->00 ->10 contradicts next-column update. Scalar8 truth table, eight actual histories and an ambiguous-boundary negative control pass; alternate paths/terminal reachability remain open.
 
 - lexicon/rule30_whitening_B_transport.py: GC1147 realized blackSS/whiteSS/badB cylinder refutes whitening-only transport; causal induction and128 full controls pass. Immediate H111 image excludes this source; original676 OPEN.
+
+- lexicon/rule30_SS_record_residence.py: GC1148 all-depth hand zero-triangle/ring proof gives L<=2a+5 OR N<=d+a+5 and indexed record-conditioned visible restrictions;127 prefix tableaux,1524 truncated controls PASS. Global R_real/admission OPEN.
