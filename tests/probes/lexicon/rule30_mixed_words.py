@@ -32,6 +32,18 @@ each; the 234-words present 0.3):
       minimal cut of length <= 120.
   Record searched: 'mixed_generator_words' -> PERIOD-TWO.md (CL297's board row) only; '\bFEFE\b' -> CL297 only.
 REFUTED-BY: MW0 failing (the instrument); MW1 .. MW5 as stated.
+
+OUTCOME, 2026-10-11 09:55 BST (first pass 08:02 .. 08:18, stopped by a temp-file collision with CC on MFC's fixed
+mfc_tmp name, caught by this probe's assert, no receipt from the overlap kept; MFC fixed at 0e4f5747; full rerun 08:20 ..
+09:55). Every verdict SAT with a re-simulated witness, or VERIFIED-UNSAT by cake_lpr:
+  MW0 PASS.
+  M1, M2, M3: PRESENT in both phases (witnesses in mw_witnesses.txt).
+  E: ABSENT in both phases. Shortest absent factor: phase 0 length 69 (SLC2 round-8 cut), phase 1 length 68
+      (10000100001001001000010000100100100100001000010010010010000100001001, a phase-1-only cut).
+  FE, EF: ABSENT in both phases; shortest absent factors 54 and 61 (SLC cuts) in each phase.
+  FEFE, EFEF, FEEF, EFFE: ABSENT in both phases; shortest absent factor 54 in each.
+  MW1 HELD. MW2 REFUTED (E absent). MW3 REFUTED. MW4 REFUTED. MW5 HELD (every absence is an already-certified cut of
+      length <= 69, or in phase 1 the new 68-bit one). Posted as L630 (phase 0), L632 (phase 1's 68). (recorded 09:55)
 """
 import os
 import re
