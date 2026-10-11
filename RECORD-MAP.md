@@ -190,7 +190,7 @@ PART: as on the board.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..18 PROVED CL294..296: cut672, left22 inverse, mixed excess139.
-- GC1119 reset PROVED CL299; causal closure REFUTED. GC1121/22: L630 f69 cuts all E_m (transfer sketch).
+- GC1119 reset PROVED CL299; causal closure REFUTED. GC1121..23: f69 cuts continued122 (sketch).
 - Cut45 reset59, NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.

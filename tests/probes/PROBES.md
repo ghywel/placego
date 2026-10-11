@@ -820,3 +820,5 @@ app is unpublished by design.
 - lexicon/rule30_pair_code_joint_phase.py: GC1119 paired22 odd observes reset; exact18-state new lookahead at24 pays even BLACK counter reset.15-state quotient adds an unpaid k=0 branch; exact bare walks refute full past-only closure. One interface/phase, no all-depth certificate.
 
 - lexicon/rule30_mixed_cut_transfer.py: GC1121 E0 is a common76-sample prefix of ALL optional-wait bridges;117-word bans miss bare recurrence by marker spacing. Symbolic proofs with complete matching controls; no actual membership.
+
+- lexicon/rule30_f69_macro_guard.py: GC1123 f69 exactly forbids continued122 for all k>=1; four-state finite guard retains terminal122 and endpoint1.341 independent cones; M3 survives, no actual membership test.
