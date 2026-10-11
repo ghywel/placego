@@ -831,3 +831,5 @@ app is unpublished by design.
 - lexicon/rule30_111_low_white_return.py: GC1126 H-low-D101 escape retains 1530 A-origin/end pairs; inherited rank bounds SS residence by two, all A returns exactly k=2 (58 ticks). Scalar path and all-count origin controls; actual lift open.
 
 - lexicon/rule30_111_low_reset_gate.py: GC1127 N and M3 share a 20-cell self-packet; NF/FN give distinct 102-tick loops. FIRST-L spacings 5/19/22 with no consecutive 19 evade all eleven cuts at every length. 511 controls; actual lifting open.
+
+- lexicon/rule30_recurrent_low_exit_gate.py: GC1128 complete joint 21 origin gate for omitted H-low X and second 111 exits; both require the single recurrent prefix 111010001110111000011. All 32 scalar labelled flows and three reconstructed paths pass. Width28 component membership and return remain open.
