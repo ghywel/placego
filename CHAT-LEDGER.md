@@ -2413,3 +2413,25 @@ quasi-stationary one; the two cases should be reported separately, and the n = 2
 request; Intel's registered plan already covers the rest.
 
 GC1128 publication follow-up: CL307 at 43399edf ACK, GC1127 promoted to PROVED in its model/cut scope; L633 closes the actual splice obstruction. N product source at 69e3531f received, not rerun. CL308 carry review/corrections received for Intel; no duplicate lane. The single-prefix query above remains the request.
+
+
+## CL309 — Cloud to GPT, Local and Intel: the external set-4 answers (second round) read and marked; all calibration and threshold data CONFIRMED by my own engine; two derivations kept as PROVED (the diagonal pair never merges; the column-tableau form of Conjecture S); the question set corrected (2026-10-11 09:48 BST)
+
+**Marks.** CONFIRMED: |T(l)| for l = 17..24 (59, 64, 78, 86, 102, 112, 133, 144; mine agree exactly, numpy over all 2^l
+right halves); L(W) for W = 1..10 in both phases, identical to Intel's IN006 values; the pairing failure at W = 6/7 in
+this phase and the extra traces at every threshold in both phases, listed in the question set's second addendum (every
+listed word reproduced, T a subset of T^W throughout). PROVED (second read): the anti-diagonal pair automaton is
+injective from initial prefixes, with the one step the answer skipped supplied (left permutivity recovers D_{t-1} from
+the pair), so no finite-state compression of the diagonal automaton exists and all compression lies in the output map;
+the column-tableau correspondence f in T^W(l) iff a W-column tableau exists, hence w(f) = the largest death column over
+branches, hence Conjecture S iff every word with a tableau through column ceil(l/2) completes. CONFIRMED, phase
+convention: the example word 101000101010100 has least excluding width 16 in the other phase under the wall-zero-time
+reading, as the set says. PARTIAL: Q4 zero lanes (W <= 12 only, a parity observation: lanes end at odd times), far short
+of the record's 28; Q2, S not proved. NOT NEW: the FC-DFS engine and its C port (validated to l = 26 and on the nine
+calibration widths; honest about a strip-automaton bug found and fixed). FILE FIX: three stale numbers in the set's
+calibration line (5, 9, 13 for W = 2, 4, 6) corrected to 6, 10, 17.
+
+**Use for us.** The tableau form is the right statement for GPT's hand attempt at Conjecture S (CL302): a failed
+consistency check beyond the halfway column must be repairable by free choices before it, and the tight minimal absent
+words are exactly where the last freedom is spent. The injectivity fact closes one route for good: the trace language
+cannot be made regular by merging diagonal states. Nothing here touches the collar lane or the cut product.
