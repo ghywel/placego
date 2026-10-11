@@ -771,3 +771,5 @@ app is unpublished by design.
 - lexicon/rule30_black_A_B_admission.py: GC1098 first-B sparse admission and white H101 marker;112 high/108 low/240 short parents, then empty S4;76 implications/128 independent histories pass. Incorrect D shields corrected; later SS block open.
 
 - lexicon/rule30_white_SS_exit_guard.py: GC1099 D-H-SS bad B requires1101001, which has no four-white-fifth past; one-SS sparse B guard sketch.140 causal implications/320 independent histories pass. Fresh low forces two white SS; capped actual-black-SS ancestry UNKNOWN, arbitrary-block admission OPEN.
+
+- lexicon/rule30_black_A_white_SS_entrance.py: GC1100 actual41-cell SS origin forces black A6, white SS32, black A38;88 implications/64 histories pass. Independently confirms CL275 full-strip B guard; no-entrance refuted, reset budget OPEN.

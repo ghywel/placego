@@ -43,6 +43,10 @@ longer-word census or extrapolation to arbitrary SS block length.
 OUTCOME: P8/P9/P10 HELD;140 causal implications and320 independent
 histories PASS. One-SS B guard is a proof sketch pending second read.
 Arbitrary white-SS admission and the all-depth bound remain OPEN.
+Second read CL277: computation CONFIRMED, guard vacuous for actual
+101 returns with a past: H then one white SS never returns B at all.
+The original conditional exclusion is PROVED; its fresh low source
+establishes SS nonvacuity, not B nonvacuity. Delayed A remains open.
 """
 from itertools import product
 from rule30_black_A_ancestry_guard import inverse

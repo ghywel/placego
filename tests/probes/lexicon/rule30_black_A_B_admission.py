@@ -27,6 +27,10 @@ Independent controls: every inverse edge forward checked; scalar
 fresh-right low shields; literal/packed badHigh and actual histories.
 Conclusion: conditional first-B admission, not admission after arbitrary
 white-marker SS blocks, and not an all-depth record bound.
+Second read CL275: CONFIRMED, now PROVED. Its stronger full-strip D-H
+exclusion needs neither black-A nor low ancestry; GC1100 replicates
+the five-D counts164,460,456,96,0. The original short-past proof above
+remains valid, but that past is not necessary for the guard.
 """
 from itertools import product
 from rule30_black_A_ancestry_guard import inverse
