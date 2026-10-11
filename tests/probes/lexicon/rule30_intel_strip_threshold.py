@@ -157,6 +157,33 @@ with a state whose free choices lead to subtrees of different maximal death colu
   (d, 0.5) on the deepest branches a single column pair survives at every column from the last repair column on.
   Unexpected check (not predicted): whether the two traces above ceil(l/2) (odd, lengths 24 and 30) spend their last
   freedom later than the tight ones.
+
+OUTCOME of SX-P9 (2026-10-11 11:02 BST): all 16 tight or above-half extra traces of the family file, lengths 3 to 38,
+both phases, 8.6 minutes in Python (tableau_profile; table in rule30_intel_strip_tableau.txt). All COMPUTED exactly.
+  (a) HELD to length 34, undetermined beyond: the deepest death column equals w(f) for all 16 traces; sampled real
+         traces of lengths 22, 24, ..., 34 admit complete tableaux; at 36 and 38 the search reached its cap of five
+         million column pairs per column before completing, so those controls are undetermined, not passed.
+  (b) REFUTED: the share of branches dead by column 3 is 1.4 to 3.7% for the long traces (lengths 34..38), 9 to 12%
+         for the two above-half traces, and above 90% only for 000, 0000 and 0101; most branches die in columns 4..13.
+  (c) HELD, with a caveat: the last repair column is w(f) - 2 for every trace, so ceil(l/2) - 2 for every tight one
+         (none for the three traces with w(f) = 2). Under this definition that is close to automatic (at column
+         w(f) - 2 some choices die at once and others reach w(f)), so it is weak evidence. Unexpected check: the two
+         above-half traces spend it one column later (11 and 14), as their w(f) is one more than ceil(l/2).
+  (d) REFUTED: the deepest branch is a single column pair from column 1 to column 7..13 for the long traces (one
+         length-36 trace carries two parallel deepest branches from column 2), and then fans out in the last three or
+         four columns: 2, 12, 21, 84, 360 deepest pairs at columns 13..17 for the standard length-35 trace, 577 at
+         column 16 for the odd length-34 trace. Every one of them dies at column w(f).
+  Reading for the tableau form of Conjecture S: a forced spine, a short burst of freedom just before the halfway
+         column, and then a contradiction for every alternative. Every final failure of a deepest branch is at time
+         t <= 9, inside a check range of up to 19 times: the contradiction appears near the initial row, in the early
+         half of the last column, not at its light-cone edge.
+
+OUTCOME of SX-P8 (2026-10-11 11:23 BST): the odd phase with real traces to length 40, 2^40 right halves, 3,260 s on 14
+threads; 842 real traces of length 40. All COMPUTED.
+  (a) HELD: containment PASS at every width 1..20, and every threshold and extra trace at W <= 18 identical to the
+         length-38 run. (b) HELD: Conjecture S holds at W = 19. (c) REFUTED: L(19) >= 40, not 39, so the odd run
+         L(W) = 2W + 1 (W = 16, 17, 18) stops at W = 18, and the slack at W = 19 is at least 3. (d) not testable: no
+         extra trace at W = 19 within length 40. (e) HELD: L(20) >= 40, not determined.
 """
 import os, re, subprocess, sys, time
 import numpy as np
@@ -313,9 +340,124 @@ def extras(n_by_phase):
     print('\n'.join(wrapped))
 
 
+def tableau_profile(f, phase, cap_states=5_000_000):
+    """SX-P9: the column tableau of trace f (column 0 the wall, column 1 the trace). Column i+1 is forced where column
+    i is white and free where it is black; column i passes its check when every black x_t(i), t <= l-i-1, has
+    x_{t+1}(i) XOR x_t(i-1) = 1. Layers merge identical pairs of adjacent columns; branch counts are exact."""
+    l = len(f)
+    wall = sum((((t + phase) & 1) << t) for t in range(l)); col1 = sum(int(c) << t for t, c in enumerate(f))
+    bit = lambda x, t: (x >> t) & 1
+
+    def check(prev, cur, i):
+        for t in range(0, l - i):
+            if bit(cur, t) and not (bit(cur, t + 1) ^ bit(prev, t)): return t
+        return None
+
+    def children(prev, cur, i, all_candidates=False):
+        n = l - i; forced = [None if bit(cur, t) else bit(cur, t + 1) ^ bit(prev, t) for t in range(n)]
+        free = sum(1 for v in forced if v is None); out = []
+
+        def dfs(t, val, last):
+            if t == n: out.append(val); return
+            for v in ((0, 1) if forced[t] is None else (forced[t],)):
+                if not all_candidates and t > 0 and last == 1 and v != (1 ^ bit(cur, t - 1)): continue
+                dfs(t + 1, val | (v << t), v)
+        dfs(0, 0, 0)
+        return out, free
+    if check(wall, col1, 1) is not None:
+        return dict(l=l, wmax=1, death={1: 1}, layers=[], deep=[], last_repair=None, freebits=[], fail_times=[])
+    death = {}; edges = []; cur = {(wall, col1): 1}; i = 1; complete = False
+    while True:
+        if i >= l - 1: complete = True; break
+        nxt = {}; E = {}
+        for (prev, c), cnt in cur.items():
+            ch, free = children(prev, c, i)
+            dead = (1 << free) - len(ch)
+            if dead: death[i + 1] = death.get(i + 1, 0) + dead * cnt
+            E[(prev, c)] = [(c, x) for x in ch]
+            for x in ch: nxt[(c, x)] = nxt.get((c, x), 0) + cnt
+        edges.append(E)
+        if not nxt: break
+        if len(nxt) > cap_states: return dict(l=l, capped=True, layers=[len(e) for e in edges])
+        cur = nxt; i += 1
+    layers = [len(e) for e in edges]
+    if complete: return dict(l=l, wmax=None, complete=True, death=death, layers=layers)
+    maxd = {}
+    for k in range(len(edges) - 1, -1, -1):
+        col = k + 1
+        for st, ch in edges[k].items():
+            maxd[(col, st)] = max((maxd[(col + 1, c)] for c in ch), default=col + 1)
+    wmax = max(death); last = None; deep = []; freebits = []; fail_times = set()
+    for k in range(len(edges)):
+        col = k + 1; ds_states = [st for st in edges[k] if maxd[(col, st)] == wmax]
+        deep.append(len(ds_states))
+        freebits.append(sorted({bin(st[1] & ((1 << (l - col)) - 1)).count('1') for st in ds_states}))
+        for st in ds_states:
+            ch = edges[k][st]; free = bin(st[1] & ((1 << (l - col)) - 1)).count('1')
+            outcomes = {maxd[(col + 1, c)] for c in ch}
+            if len(ch) < (1 << free): outcomes.add(col + 1)
+            if len(outcomes) > 1: last = col
+            if col == wmax - 1:                       # the deepest states: where does column wmax fail?
+                cands, _ = children(st[0], st[1], col, all_candidates=True)
+                for x in cands:
+                    t = check(st[1], x, wmax)
+                    if t is not None: fail_times.add(t)
+    tot = sum(death.values())
+    return dict(l=l, wmax=wmax, death=death, layers=layers, deep=deep, last_repair=last, freebits=freebits,
+                fail_times=sorted(fail_times), share3=sum(v for c, v in death.items() if c <= 3) / tot,
+                range_wmax=l - wmax + 1)
+
+
+def tableau_report(samples=6, seed=11):
+    """SX-P9 over every tight or above-half extra trace of rule30_intel_strip_extras.txt, plus sampled real traces"""
+    import random, re
+    rx = re.compile(r'^  ([01]+)  \(l = (\d+)\) w\(f\) = (\d+), ceil\(l/2\) = (\d+) (TIGHT|ABOVE)')
+    words = []; phase = None
+    for line in open(os.path.join(HERE, 'rule30_intel_strip_extras.txt')):
+        m = re.match(r'^## phase (\d)', line)
+        if m: phase = int(m.group(1))
+        m = rx.match(line)
+        if m and (m.group(1), phase) not in [(w[0], w[1]) for w in words]:
+            words.append((m.group(1), phase, int(m.group(3)), m.group(5)))
+    out = ['# SX-P9: the column tableau of every tight extra trace and of the two above ceil(l/2), both phases.',
+           '# Intel, 2026-10-11, rule30_intel_strip_threshold.py (tableau_profile). Per trace: deaths = branches dying',
+           '# at each column (exact); layers = distinct surviving column pairs per column; deep = deepest states per',
+           '# column; free = free bits on the deepest states per column; last repair = the deepest column where a free',
+           '# choice changes the maximal death column; fail t = the times at which the deepest branches fail their',
+           '# last check, with the check range of that column.']
+    for f, ph, wf, kind in sorted(words, key=lambda w: (w[1], len(w[0]))):
+        r = tableau_profile(f, ph)
+        ok = r.get('wmax') == wf
+        out += ['', f'phase {ph} {f} (l = {len(f)}, w(f) = {wf}, {kind}): deepest death column {r.get("wmax")} '
+                    f'({"matches" if ok else "DIFFERS"}); last repair column {r["last_repair"]}, ceil(l/2) - 2 = '
+                    f'{(len(f) + 1) // 2 - 2}; share dead by column 3: {r["share3"]:.4f}',
+                f'  deaths: ' + ' '.join(f'{c}:{v}' for c, v in sorted(r['death'].items())),
+                f'  layers: {" ".join(map(str, r["layers"]))}',
+                f'  deep:   {" ".join(map(str, r["deep"]))}',
+                f'  free:   ' + ' '.join('/'.join(map(str, x)) for x in r['freebits']),
+                f'  fail t at column {r["wmax"]} (its check range 0..{r["range_wmax"] - 2}): {r["fail_times"]}']
+    rnd = random.Random(seed)
+    out += ['', '# control: sampled real traces (random rows), each must admit a complete tableau']
+    for k in range(samples):
+        l = 22 + 2 * k; ph = k % 2; row = [rnd.randint(0, 1) for _ in range(l)]; tr = ''
+        x = row[:]
+        for t in range(l):
+            tr += str(x[0]); w = (t + ph) & 1
+            x = [(w if i == 0 else x[i - 1]) ^ (x[i] | (x[i + 1] if i + 1 < l else 0)) for i in range(l)]
+        r = tableau_profile(tr, ph)
+        out.append(f'  phase {ph} l = {l} {tr}: complete tableau {r.get("complete", False)}'
+                   + (' (capped)' if r.get('capped') else ''))
+    import textwrap
+    out = [w for line in out
+           for w in (textwrap.wrap(line, 118, subsequent_indent='    ', break_long_words=True)
+                     if len(line) > 118 else [line])]
+    open(os.path.join(HERE, 'rule30_intel_strip_tableau.txt'), 'w').write('\n'.join(out) + '\n'); print('\n'.join(out))
+
+
 if __name__ == '__main__':
     mode = sys.argv[1] if len(sys.argv) > 1 else 'report'
     if mode == 'build': build()
     elif mode == 'run': run(*[int(a) for a in sys.argv[2:6]])
     elif mode == 'report': report(int(sys.argv[2]) if len(sys.argv) > 2 else 32)
     elif mode == 'extras': extras({0: int(sys.argv[2]), 1: int(sys.argv[3])})
+    elif mode == 'tableau': tableau_report()
