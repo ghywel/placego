@@ -28562,3 +28562,31 @@ Record searched: B.to101.toA|11101001100111010000|unguarded B ->10 hits in6 file
 The actual fifth tracks are D=0101100000 on22..31, H=0101101010 on32..41, and SS=111010 on42..47. Thus the D return is outside C/J, its next high terminates in S, and that S takes SS. These are samples of the same forced rows, with no freely assigned tail at a renewal. The unexpected SS image still has a **black sixth marker**: the initial prediction of immediate whitening at48 failed. GC1056's monotone white-marker absorption does not imply instant whitening.
 
 All96 fresh-right prefix implications and32 independent literal/packed composed controls pass. The local failed inequalities have explicit retained witnesses. No solver, CUT, membership or relaxed-record computation was run. CL259 at e58f3e27 independently confirms all three GC1087 transitions and the induction, so GC1087 is promoted to PROVED; L615 at86391577 is ACKed with its138>=18 witness scope, and CUT-P23's142 run is left to Local. Next missing inference is admission after this actual black-marker SS segment, retaining the high-to-S past. The finite relaxation must carry that segment; neither this cylinder nor the absorbing component yet gives an all-depth record bound.
+
+
+## GC1089 — The last black SS marker can force A and another 001 reset (2026-10-11)
+
+**Missing inference and result, proof sketch.** Does whitening after a black-marker SS segment force core admission? No. A mature black S has sites6..9 in {1101,1110,1111}. Its SS image is S-A exactly when the origin begins **111011111** and sites10..14 are **11100 or1101***. That A image has **site10=site12=1**, so its next SL returns ordinary low001 by GC1083's reviewed gate. This exact dangerous-reset selector explains an upstream obstruction; it neither asserts recurrent resets nor a record bound.
+
+Record searched: black.*short|black.*marker|sixth.marker with001|111010001|core|admission ->22 hits in11 files; GC1054/55/56 read. ASF's established future forcing is reused without another all-S run. The initial no-A10-black prediction failed in12/384 complete local cones, all on1111. The corrected selector was derived before its controls. A separate prediction that GC1088's fixed44-bit source reaches this selector by54 or60 also failed: its forced prefixes are111011110001101 and1110111100011. Do not extend that cylinder or scan successors.
+
+**Hand necessity.** GC1056 gives the returned sixth marker. Initial1101 retains a black marker, excluding A. Initial1110 can whiten only with initial site10=1; its time1sites6..10=00001, which gives returned site7=1, again excluding A. For initial1111, time1sites6..9=0000. Name time1sites10..15 A,B,C,D,E,F. Direct SS transport gives returned site7=A. Under A=0, write Z,K for time5sites9,10. Then
+
+    Z = NOT B XOR(B OR C OR D).
+
+An A image requires Z=0 and K=1. The former gives B=0 and C OR D=1. With B=0, K=NOT C AND(D OR R), where R=time4site11. Therefore K=1 forces C=0, hence D=1. Thus the target requires time1sites10..13=0001. Conversely that packet gives the target by the shield below. If initial sites10..14 are e,f,g,h,i, the four equations are
+
+    NOT(e OR f)=0, e XOR(f OR g)=0,
+    f XOR(g OR h)=0, g XOR(h OR i)=1.
+
+They force e=1. For g=1, h=i=0 and f=1, giving11100. For g=0, f=h=1 and i is free, giving1101*. These exhaust both directions of the origin selector.
+
+**Same-history image shield.** Time1sites6..13=00000001 forces the successive prefixes at sites6 onward:
+
+    time2: 10000011; time3: 01000110; time4: 1110110.
+
+With u,v at time4sites13,14, time5sites6..13 are000010 followed by(NOT u,u OR v). The closing time6sites6..12 are **00011u1**. Hence the white S image is A with10=12=1, regardless of all farther cells. Its next short fifth track is111000, and GC1083's A gate has time4site10=A11 OR A12=1; the following long triple is001. No tail is selected independently at either return. This supports both actual finite cylinders11101111111100 and1110111111101 through SS then SL001.
+
+**Controls and limits.** All1,536 complete literal/packed six-tick cones agree (48 A images),256 scalar backward bands satisfy the iff, fresh-right shield implications pass, and64 composed controls verify both cylinders through12. The unexpected white A source1110100010000100 returns010 in C: the A-to001 claim requires the proved black-SS image packet. Next missing inference is the actual low001 return's high gate with this black-SS past retained, rather than a free A label. Eventual admission and the all-depth bound remain open; no solver, CUT, membership or record computation.
+
+L616's137 witness and CUT-P24 are received without duplication. IN002's strategy proposal is received; its preamble leaves assessment to Cloud and makes no lane change, so the owner-prioritized RRL structural block continues. The merged chat had an empty duplicate L616 heading and an older timestamp on its body; the empty heading is removed and the intended02:07 correction from3b74ce15 restored on that body. The over-limit map is compressed to its index role without changing the research claims.
