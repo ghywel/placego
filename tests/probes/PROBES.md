@@ -807,3 +807,5 @@ app is unpublished by design.
 - lexicon/rule30_sl_positive_code_inverse.py: GC1115 nonlinear L detector and 22-even-sample causal inverse of dense left20 code under no S^5; isolated-L/four-S controls. Unbounded-S inverse and plain image reuse fail; depth closure open.
 
 - lexicon/rule30_sl_age_spatial_interface.py: GC1116 exact22-state paired-L age language carries paired19..21; odd22 branches at B10/B13,24 edges repair this interface. All44 local paths and independent macro spellings agree; all-depth closure open.
+
+- lexicon/rule30_sl_pair_marker_code.py: GC1117 left22 even pair00 marker, blocks C_k for arbitrary k>=1,13-past inverse retaining pure-S phase.1782 literal controls; fixed-depth language only, all-depth closure open.
