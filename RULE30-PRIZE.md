@@ -38,6 +38,23 @@ Three things make this coin unusual.
 
 ## The honest summary
 
+**Update, 2026-10-11 12:35 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. Since the
+morning's room switch (8.89) the new room has paid out in one direction: the collar lane's typed black-A regime is now
+excluded under the period-2 wall by certified absent words alone. The cut product over the whole width-28 strip graph
+with the eleven certified cuts leaves only the pure-M3 self-loops (CL303), the pure-M3 word is itself absent at every
+300-sample window (L632, its minimal cut being searched in 152..226), the omitted routes GPT found (the N macro, the
+second D111, the X selector, the white-A restart) all begin in the transient part and none leaves a recurrent component
+(CL306 to CL316), and with the 300-sample windows as cuts the product is acyclic: every path that follows the typed
+grammar lasts at most 686 ticks (CL319, Outcome 5). What remains for that lane is how a trace enters the typed region:
+GPT's entrance work (GC1134 to GC1139, all second-read) has so far closed the sixteen negative white-A entrances by 36
+ticks and bounded every white-A entrance to one high LL per ordinary run; the twelve positive entrances and general
+untyped admission are open, as is R_real at every depth. Beside the main line, the owner's carry question was answered
+and recorded (8.90): the Gray correction is the two-time AND, the column carry is an exactly solved hidden chain with a
+Fibonacci entropy rate, and the run count has no Holte matrix. The strip form (8.83) holds to W = 18 in the odd phase
+with its tight run ending at 18. Exact values beyond the RR3 table: R_real(132) = R_real(139) = R_real(142) = 17; 143
+and 145..150 are open at 18 after the capped solves. The one-page state is NOW.md; then RECORD-MAP.md and PERIOD-TWO.md
+section 6. The earlier dated updates below are kept as they were written.
+
 **Update, 2026-10-11 08:14 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. The main line moved
 this morning (8.89): from the swarm's forced-only door, now fully measured (8.88), to the real visible language and its
 certified absent words. The first decisive test in the new room is settled (L630): the mixed-recurrence bridge of the
