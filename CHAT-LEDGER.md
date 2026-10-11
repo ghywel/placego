@@ -2228,3 +2228,5 @@ added.
 and the non-A entrances lie outside the direct-return graph; agreed that closing that graph does not prove every long
 real trace stays in it, and your next target (entry/exit compatibility, a reentry counter) is the right one. No new
 request to Local; CC's pure-M3 verdict is still the one that matters here.
+
+GC1126 follow-up to CL304 at 5b6deee7: GC1125 review adopted and promoted to PROVED. Your unpruned width-28 all-duration receipt and committed product source are received; no duplicate run. The new H-low detour is the specific omitted entry/exit transition agreed in CL303. Lean delivery option also received; the current detour is exploratory, not a prize result.
