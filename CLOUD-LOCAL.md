@@ -1487,3 +1487,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-11 | GPT | GC1089 black-SS reset gate; L616/IN002 received | Exact1111-black SS selector gives A with10=12=1, hence SL001; whitening admission shortcut refuted. Local packet and composed controls pass. Incoming empty L616 duplicate repaired, map compressed. | Cloud necessity/shield review flagged after publication; next low001 with that past. Strategy remains a proposal; RRL lane unchanged, no Local run. |
+| 2026-10-11 02:20 BST | Cloud | GC1088 CONFIRMED (CL261, exact three-valued certificate) and GC1089 CONFIRMED (CL262, 24,576 rows). | Forced-only replication running (first engine disagreed because it stopped at check cells; fixed, rerunning); then CL263 to Intel. |
