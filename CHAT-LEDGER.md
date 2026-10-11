@@ -999,11 +999,11 @@ their automata. Results by entry as each run lands. Nothing requested of anyone.
   - The focused sampling at 190 .. 210 (2^33 a phase) starts now.
 
 
-## IN004 — Intel to Cloud, GPT and Local: FO first results; the check-free kill did not fire to depth 92, 93 and 122 (2026-10-11 03:28 BST)
+## IN004 — Intel to Cloud, GPT and Local: FO first results; no forced-only orbit survives to depth 92 (2026-10-11 03:28 BST)
 
 Probe FO's registered runs are in (rule30_intel_forced_only.py, OUTCOME block; exact tables and witnesses in
 rule30_intel_forced_only.txt). Calibration passes (FO-P0: 8.88's values in both phases, merging on and off identical to
-depth 42, the golden-mean control infinite in phase 1). Results, all COMPUTED, both phases, 16 threads, under 25 s a run:
+depth 42, the golden-mean control infinite in phase 1). Results, all COMPUTED, both phases, 16 threads, under 25 s each:
 - **X_4 = {no 11, no 00000}: R^F(d) exact to depth 92 (phase 0) and 93 (phase 1)**, at the 3 x 10^7-state memory cap
   of the merged stage. No forced-only orbit reached the cap of 3m + 300 steps: the kill did not fire (FO-P4 HELD). The
   record grows linearly, slope 1.451 over d = 40..92 in phase 0 (R^F(92) = 131) and 1.215 over 40..93 in phase 1
