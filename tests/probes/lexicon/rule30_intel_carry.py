@@ -86,4 +86,227 @@ PREDICTIONS, registered 2026-10-11 09:36 BST before any run (the question set's 
   small k). An identity failure in F1 or a value off R1, R2, R5, R6 refutes the instrument.
   Unexpected checks (not predicted): Q1, at which n state 0 is reachable from another state; Q2, the correction
   density inside the part of the mask that lies in the light cone; Q3, the column carry's correlations at lags 2..7.
+
+OUTCOME, first block (2026-10-11 09:46 BST; the Intel MacBook, 8 threads beside another run). Rings n = 8..28 exhaustive
+(8 s in all); the cone to T = 2^14 (4 s) and 2^16 (64 s); 10^5 rings of 4096 cells for 2,000 steps (13.5 s). Every
+mode of the engine was first checked against naive Python (rings n = 6, 7; the cone to T = 40; 3 rings for 40 steps).
+Tables: rule30_intel_carry.txt. All COMPUTED unless marked.
+  CAR-C0 HELD. R1: the law of K_0 is C(n, 2k)/2^(n-1) exactly at every n. R2: E[K_1] = n/4 and Var(K_1) = n/16
+         exactly at every n >= 8. F1's identity x_t(0) = 1 XOR P_t holds at every t <= 65,536 (the set's P4). R5: the
+         column carry's lag-1 correlation is 0.33327 (1/3). R6: along i = -t every correlation is below 2 x 10^-4 and
+         H_k = 0.81130 k (H(1/4) = 0.81128): the carry there is i.i.d., so the set's P9 is REFUTED, by proof and run.
+         Absorbing states: K = 0 and B = 0 as R3 says, and also K = n/2 for even n (the alternating row is a fixed
+         point; not foreseen).
+  Exact second moments (COMPUTED exactly from the exhaustive counts; stable for n >= 12, so they are the line's):
+         K: Var/n = 1/16, Cov(K_0, K_1)/n = 1/32, Cov(K_0, K_2)/n = 1/128: corr01 = 1/2, corr02 = 1/8.
+         D: Var/n = 5/16, Cov01/n = -5/32, Cov02/n = 11/128: corr01 = -1/2, corr02 = 11/40.
+         B: Var/n = 1/4, Cov01/n = -1/8, Cov02/n = 1/16: corr01 = -1/2, corr02 = 1/4.
+         Only B meets the Gaussian Markov condition corr02 = corr01^2; K (1/8 against 1/4) and D (11/40) do not.
+  CAR-P1 HELD: the largest total-variation difference at n = 16 is 0.750 (K); the mass-weighted mean is 0.0894 at
+         n = 16, 0.0628 at 24, 0.0593 at 28: above 0.01, falling by a factor 1.42 from 16 to 24. K is not Markov.
+  CAR-P2: spectrum not 1, 1/2, 1/4 and n-dependent: HELD. An eigenvalue within 10^-3 of 1 beside the absorbing ones:
+         HELD (it equals 1 when 3 does not divide n, because the main class is then closed). Next eigenvalues rho,
+         rho^2, rho^3: REFUTED (n = 24: 0.5107, 0.3876, 0.2935; only the first tends to rho). rho != 1/2: REFUTED,
+         rho = corr(K_0, K_1) = 1/2 exactly. So the leading non-trivial eigenvalue of the run-count matrix tends to
+         Holte's base-2 value 1/2 (0.5275, 0.5107, 0.5067 at n = 16, 24, 28), and the rest of the spectrum does not.
+  CAR-P3 HELD: the set's P3 fails as worded (the point mass at 0 is stationary at every n, and at n/2 for even n;
+         the stationary distribution is not unique); the quasi-stationary distribution has mean 6.0000 and variance
+         1.5000 at n = 24 (n/4, n/16), and 7.0000, 1.7500 at n = 28.
+  CAR-P3b HELD: the control B at n = 24 has -0.4712, 0.2341, -0.1327 after its two unit eigenvalues (-1/2, 1/4,
+         -1/8 within 0.03). D, not predicted, does the same and closer: -0.5048, 0.2518, -0.1252, 0.0667 at n = 28.
+         So the Holte-like geometric spectrum, with ratio -1/2, belongs to the black count and the pair count, while
+         the carry count, the set's candidate, has only its first eigenvalue on the ladder.
+  Question 2. The set's P5 REFUTED: n_t/m_t tends to about 1/8, not to 0.20..0.30 (0.12563 at 2^14, 0.12469 at
+         2^16). CAR-P5 HELD as worded (0.1256 < 0.15; 0.12654 at 2^10 to 0.12563 at 2^14, not monotone in between),
+         with its mechanism corrected: the share of the mask inside the light cone tends to 1/2 (0.500003 at 2^14,
+         0.500000 at 2^16), not to at most 2/3. Unexpected check: inside the cone the carry density read by the mask is
+         0.2494..0.2522 at t = 2^12..2^16, the coin measure's 1/4. The set's P6: no correlation above 0.05, HELD;
+         its exception at powers of 2, REFUTED (none). CAR-P6 HELD: largest |autocorrelation| 0.0158 (T = 2^14) and
+         0.0110 (2^16), lags 1..64; windows of 1024 hold 0.4629..0.5283 ones.
+  Question 3. The set's P7 and CAR-P7 REFUTED: the column carry's entropy-rate estimates H_(k+1) - H_k are 0.73762,
+         0.70129, 0.69960, 0.69937, 0.69934 and then constant to five decimals through k = 15 (the last digit moves
+         by the estimator's bias): converged by k = 5. This is the set's Q3 counterfactual in its sampled form;
+         CAR-P10 below decides whether it is a finite-order chain or a hidden one. Along i = t the estimates are
+         still falling at k = 15 (0.6355, by 0.0015 a step). CAR-P8 and the set's P8 HELD: every column-carry
+         correlation at lags 2..64 is below 2 x 10^-4 (unexpected check: at lags 2..7 too). CAR-P9 HELD: along i = t
+         the correlations are -1/3, +0.2499, -0.1459, +0.1199 at lags 1..4, alternating, near 0.006 by lag 16.
+
+CAR-P10, registered 09:46 BST, before the exact enumeration (mode block): the column-carry block of length k at times
+0..k-1 depends on x_0 at sites -(k-1)..k, so its law is computed exactly from all 2^(2k) rows, k <= 16.
+  (a, control) the exact H_k match the sampled ones within 10^-4 for k <= 12.
+  (b, 0.6) the column carry is not a Markov chain of any order m <= 13: for every m the exact conditional law given
+         the last m values differs from the law given the last 15 for some context.
+  (c, 0.6) the exact conditional entropies h_k = H_(k+1) - H_k decrease strictly for every k <= 15, and h_k - h_15
+         shrinks by a factor between 0.05 and 0.25 per step for k = 2..8 (a hidden chain with a small fast state).
+  Counterfactual: equal conditional laws at some order m <= 13, which would make the column carry an exact Markov
+  chain of order m and would be the set's "new exactly solvable piece of Rule 30".
 """
+import math, os, re, subprocess, sys, time
+from collections import defaultdict
+import numpy as np
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE, 'rule30_intel_carry.c')
+SCRATCH = os.environ.get('NP_SCRATCH_CAR', os.path.join(os.path.expanduser('~'), 'np-scratch', 'rule30-car'))
+BIN = os.path.join(SCRATCH, 'rule30_intel_carry')
+OMP = ['-Xpreprocessor', '-fopenmp', '-I/usr/local/opt/libomp/include', '-L/usr/local/opt/libomp/lib', '-lomp'] \
+    if sys.platform == 'darwin' else ['-fopenmp']
+OUT = os.path.join(HERE, 'rule30_intel_carry.txt')
+
+
+def build():
+    os.makedirs(SCRATCH, exist_ok=True)
+    subprocess.run(['cc', '-O2', *OMP, SRC, '-o', BIN], check=True)
+    print('built', BIN)
+
+
+def engine(args, tag):
+    os.makedirs(SCRATCH, exist_ok=True)
+    log = os.path.join(SCRATCH, tag + '.log'); t0 = time.time()
+    with open(log, 'w') as fh:
+        subprocess.run([BIN, *map(str, args)], stdout=fh, check=True)
+    print(f'{log}: {time.time() - t0:.1f} s')
+    return log
+
+
+# ---------------- Question 1 ----------------
+def ring_analysis(log):
+    J = defaultdict(lambda: defaultdict(int))
+    for line in open(log):
+        p = line.split()
+        if p[0] == 'J': J[(int(p[1]), p[2])][(int(p[3]), int(p[4]), int(p[5]))] += int(p[6])
+    rows = []
+    for (n, q) in sorted(J):
+        N = J[(n, q)]; S = n + 1
+        A = np.zeros((S, S, S))
+        for (a, b, c), v in N.items(): A[a, b, c] = v
+        tot = A.sum(); p0 = A.sum(axis=(1, 2)) / tot; p01 = A.sum(axis=2); p12 = A.sum(axis=0)
+        sup = [a for a in range(S) if p0[a] > 0]
+        P = np.array([[p01[a, b] / p01[a].sum() for b in sup] for a in sup])
+        ev = np.linalg.eigvals(P); ev = ev[np.argsort(-np.abs(ev))]
+        # quasi-stationary: states >= 1 (q = K or B: 0 absorbing); for D use the full matrix
+        absorbing = [i for i, a in enumerate(sup) if P[i, i] == 1.0]
+        keep = [i for i in range(len(sup)) if i not in absorbing]
+        Q = P[np.ix_(keep, keep)]; w, V = np.linalg.eig(Q.T); i0 = np.argmax(w.real)
+        qs = np.abs(V[:, i0].real); qs /= qs.sum(); vals = np.array([sup[i] for i in keep])
+        qmean = float(qs @ vals); qvar = float(qs @ (vals - qmean) ** 2)
+        # moments and correlations of (X0, X1, X2) under the uniform row
+        k = np.arange(S); m0 = p0 @ k; m1 = A.sum(axis=(0, 2)) @ k / tot; m2 = A.sum(axis=(0, 1)) @ k / tot
+        v0 = p0 @ (k - m0) ** 2; v1 = (A.sum(axis=(0, 2)) / tot) @ (k - m1) ** 2
+        v2 = (A.sum(axis=(0, 1)) / tot) @ (k - m2) ** 2
+        c01 = sum(A[a, b, :].sum() * (a - m0) * (b - m1) for a in range(S) for b in range(S)) / tot
+        c02 = sum(A[a, :, c].sum() * (a - m0) * (c - m2) for a in range(S) for c in range(S)) / tot
+        r01 = c01 / math.sqrt(v0 * v1); r02 = c02 / math.sqrt(v0 * v2)
+        # Markov test
+        tvmax, where, tvw = 0.0, None, 0.0
+        for a in range(S):
+            for b in range(S):
+                mass = A[a, b, :].sum()
+                if mass == 0: continue
+                second = A[a, b, :] / mass; first = p12[b, :] / p12[b, :].sum()
+                tv = 0.5 * np.abs(second - first).sum(); tvw += tv * mass / tot
+                if tv > tvmax: tvmax, where = tv, (a, b, int(mass))
+        reach0 = int(A[1:, 0, :].sum()) if q in 'KB' else None
+        law0 = None
+        if q == 'K': law0 = max(abs(p0[kk] - math.comb(n, 2 * kk) / 2 ** (n - 1)) for kk in range(n // 2 + 1))
+        rows.append(dict(n=n, q=q, ev=ev, absorbing=[sup[i] for i in absorbing], qslam=float(w[i0].real), qmean=qmean,
+                         qvar=qvar, m0=m0, v0=v0, m1=m1, v1=v1, r01=r01, r02=r02, tvmax=tvmax, where=where, tvw=tvw,
+                         reach0=reach0, law0=law0, states=len(sup)))
+    return rows
+
+
+# ---------------- Question 2 ----------------
+def cone_analysis(log):
+    C = [tuple(map(int, l.split()[1:])) for l in open(log) if l.startswith('C ')]
+    ident = [l.split()[1] for l in open(log) if l.startswith('IDENTITY')][0]
+    t = np.array([c[0] for c in C]); P = np.array([c[2] for c in C], float); n = np.array([c[3] for c in C], float)
+    m = np.array([c[4] for c in C], float); mc = np.array([c[5] for c in C], float)
+    Pc = P - P.mean(); ac = [float((Pc[:-L] * Pc[L:]).mean() / Pc.var()) for L in range(1, 65)]
+    win = [float(P[i:i + 1024].mean()) for i in range(0, len(P) - 1023, 1024)]
+    pts = [2 ** a for a in range(4, 20) if 2 ** a <= len(C)]
+    dens = {tt: (n[tt - 1] / m[tt - 1], mc[tt - 1] / m[tt - 1], n[tt - 1] / mc[tt - 1]) for tt in pts}
+    return dict(T=len(C), ident=ident, ac=ac, win=win, dens=dens)
+
+
+# ---------------- Question 3 ----------------
+def column_analysis(log):
+    W = defaultdict(dict); S = defaultdict(dict)
+    for line in open(log):
+        p = line.split()
+        if p[0] == 'W': W[p[1]][int(p[2])] = int(p[3])
+        elif p[0] == 'S': S[p[1]][int(p[2])] = (int(p[3]), int(p[4]), int(p[5]))
+    res = {}
+    for q in W:
+        pats = np.array(list(W[q].keys())); cnt = np.array(list(W[q].values()), float); tot = cnt.sum(); H = []
+        for k in range(1, 17):
+            sub = defaultdict(float)
+            for pt, c in zip(pats & ((1 << k) - 1), cnt): sub[int(pt)] += c
+            pr = np.array(list(sub.values())) / tot; H.append(float(-(pr * np.log2(pr)).sum()))
+        mu = S[q][0][1] / S[q][0][2]
+        corr = [float((S[q][L][0] / S[q][L][2] - mu * mu) / (mu - mu * mu)) for L in range(1, 65)]
+        res[q] = dict(H=H, mu=mu, corr=corr, n=S[q][1][2])
+    return res
+
+
+def report():
+    out = ['# CAR: the carry of Rule 30 (KIMI-QUESTIONS-5). Intel, 2026-10-11. Engine rule30_intel_carry.c; see '
+           'rule30_intel_carry.py.']
+    rl = os.path.join(SCRATCH, 'ring.log')
+    if os.path.exists(rl):
+        out += ['', '## Question 1: exhaustive rings. Per n and count (K carries, D adjacent black pairs, B black',
+                '# cells):',
+                '# corr01, corr02 under the uniform row; Markov test (max and mass-weighted total variation between',
+                '# P(X2 | X1, X0) and P(X2 | X1)); quasi-stationary eigenvalue, mean and variance; leading',
+                '# eigenvalues.']
+        for r in ring_analysis(rl):
+            evs = ' '.join(f'{e.real:+.4f}' + (f'{e.imag:+.4f}i' if abs(e.imag) > 1e-9 else '') for e in r['ev'][:7])
+            out.append(f"n={r['n']:2d} {r['q']}: states {r['states']}; absorbing {r['absorbing']}; "
+                       f"corr01 {r['r01']:+.5f}, corr02 {r['r02']:+.5f} (corr01^2 {r['r01'] ** 2:.5f}); "
+                       f"TV max {r['tvmax']:.4f} at {r['where']}, "
+                       f"weighted {r['tvw']:.5f}")
+            out.append(f"      quasi-stationary: lambda {r['qslam']:.8f}, mean {r['qmean']:.4f} (n/4 = {r['n'] / 4}), "
+                       f"var "
+                       f"{r['qvar']:.4f} (n/16 = {r['n'] / 16}); X1 mean {r['m1']:.6f}, var {r['v1']:.6f}"
+                       + (f"; K0 law off C(n,2k)/2^(n-1) by {r['law0']:.2e}" if r['law0'] is not None else '')
+                       + (f"; rows with X0 > 0 and X1 = 0: {r['reach0']}" if r['reach0'] is not None else ''))
+            out.append(f"      eigenvalues: {evs}")
+    for T in (16384, 65536):
+        cl = os.path.join(SCRATCH, f'cone_{T}.log')
+        if not os.path.exists(cl): continue
+        c = cone_analysis(cl)
+        out += ['', f'## Question 2: the single cell, T = {T}. Identity x_t(0) = 1 XOR P_t: {c["ident"]}',
+                '# t, n_t/m_t (carries over the whole Pascal mask), mcone_t/m_t (share of the mask inside the light',
+                '# cone),',
+                '# n_t/mcone_t (carry density inside the cone part of the mask)']
+        out += [f'  t = {tt:6d}: {a:.6f} {b:.6f} {d:.6f}' for tt, (a, b, d) in c['dens'].items()]
+        out.append('autocorrelation of P_t, lags 1..64: ' + ' '.join(f'{x:+.4f}' for x in c['ac']))
+        amax = max(abs(x) for x in c['ac']); lag = 1 + int(np.argmax(np.abs(c['ac'])))
+        out.append(f"max |autocorrelation| {amax:.4f} at lag {lag}; "
+                   f"powers of 2: " + ' '.join(f"{L}:{c['ac'][L - 1]:+.4f}" for L in (1, 2, 4, 8, 16, 32, 64)))
+        out.append(f"windows of 1024: fraction of P_t = 1 in {min(c['win']):.4f}..{max(c['win']):.4f} "
+                   f"over {len(c['win'])} windows")
+    cl = os.path.join(SCRATCH, 'column.log')
+    if os.path.exists(cl):
+        res = column_analysis(cl)
+        out += ['', '## Question 3: the carry under the coin measure (rings of 4096, middle cell m; col = c_t(m),',
+                '# diag+ = c_t(m + t), diag- = c_t(m - t)): block entropies H_k, differences, correlations at',
+                '# lags 1..64']
+        for q, r in res.items():
+            out.append(f"{q}: mean {r['mu']:.6f} over {r['n']} pairs at lag 1")
+            out.append('  H_k, k = 1..16: ' + ' '.join(f'{h:.5f}' for h in r['H']))
+            out.append('  H_(k+1) - H_k: ' + ' '.join(f'{b - a:.5f}' for a, b in zip(r['H'], r['H'][1:])))
+            out.append('  corr, lags 1..64: ' + ' '.join(f'{x:+.5f}' for x in r['corr']))
+    import textwrap
+    wrapped = []
+    for l in out:
+        wrapped += textwrap.wrap(l, 118, subsequent_indent='      ', break_long_words=False) if len(l) > 118 else [l]
+    open(OUT, 'w').write('\n'.join(wrapped) + '\n'); print('\n'.join(wrapped))
+
+
+if __name__ == '__main__':
+    mode = sys.argv[1] if len(sys.argv) > 1 else 'report'
+    if mode == 'build': build()
+    elif mode == 'ring': engine(['ring', sys.argv[2], sys.argv[3]], 'ring')
+    elif mode == 'cone': engine(['cone', sys.argv[2]], f'cone_{sys.argv[2]}')
+    elif mode == 'column': engine(['column', sys.argv[2], sys.argv[3]], 'column')
+    elif mode == 'report': report()
