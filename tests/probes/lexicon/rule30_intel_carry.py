@@ -210,23 +210,34 @@ under the coin measure, k_t(j) = x_t(j) x_{t+1}(j), d_t(j) = x_t(j) x_t(j+1), an
 C_D(t, j) = Cov(d_0(0), d_t(j)). Claim, for every t >= 1: C_K(t, t-1) = -C_D(t, t-1), C_K(t, t) = C_D(t, t),
 C_K(t, t+1) = -C_D(t, t+1), C_K(t, t+2) = 0.
   Step 1 (the split). k_t(j) + d_t(j-1) = x_t(j): if x_t(j) = 1 the rule gives x_{t+1}(j) = 1 - x_t(j-1). So
-         C_K(t, j) = C_D(t, j) + Delta(j), Delta(j) = Cov(x_0(0), x_t(j)) - Cov(x_0(0), d_t(j-1)) - Cov(d_0(-1), x_t(j)),
+         C_K(t, j) = C_D(t, j) + Delta(j) with
+         Delta(j) = Cov(x_0(0), x_t(j)) - Cov(x_0(0), d_t(j-1)) - Cov(d_0(-1), x_t(j)),
          using translation invariance for the d-d term.
   Step 2 (fresh cells). By left-permutivity x_t(j) = x_0(j-t) XOR F(x_0(j-t+1), ..., x_0(j+t)). Cov(x_0(0), x_t(j)) is
          rho_t / 4 at j = t and 0 otherwise; Cov(x_0(0), d_t(j-1)) can be non-zero only at j = t, t+1; and
          Cov(d_0(-1), x_t(j)) only at j = t-1, t. So Delta(t+2) = 0, which with C_D(t, t+2) = 0 gives C_K(t, t+2) = 0.
   Step 3 (halving). x_t(t-1) contains x_0(-1), which nothing else here contains, so it is a fair coin independent of
          x_0(0), x_0(1), x_t(t). Hence Cov(x_0(0), d_t(t-1)) = (1/2) Cov(x_0(0), x_t(t)) = rho_t / 8, and likewise
-         Cov(d_0(-1), x_t(t)) = rho_t / 8 (x_t(t) does not contain x_0(-1)). So Delta(t) = rho_t/4 - rho_t/8 - rho_t/8 = 0.
+         Cov(d_0(-1), x_t(t)) = rho_t / 8 (x_t(t) does not contain x_0(-1)).
+         So Delta(t) = rho_t/4 - rho_t/8 - rho_t/8 = 0.
          In the same way C_D(t, t-1) = (1/2) Cov(d_0(0), x_t(t)), so Delta(t-1) = -Cov(d_0(-1), x_t(t-1)) =
          -Cov(d_0(0), x_t(t)) = -2 C_D(t, t-1). And d_t(t+1) is a function of x_0(>= 1) only, so C_D(t, t+1) =
-         (1/2) Cov(x_0(1), d_t(t+1)) = (1/2) Cov(x_0(0), d_t(t)), and Delta(t+1) = -Cov(x_0(0), d_t(t)) = -2 C_D(t, t+1).
-  Step 4. C_K = C_D + Delta at the four sites gives the claim. So Cov(K_0, K_t)/n = C_D(t, t) - C_D(t, t-1) - C_D(t, t+1)
+         (1/2) Cov(x_0(1), d_t(t+1)) = (1/2) Cov(x_0(0), d_t(t)),
+         and Delta(t+1) = -Cov(x_0(0), d_t(t)) = -2 C_D(t, t+1).
+  Step 4. C_K = C_D + Delta at the four sites gives the claim. So
+         Cov(K_0, K_t)/n = C_D(t, t) - C_D(t, t-1) - C_D(t, t+1)
          and Cov(D_0, D_t)/n = C_D(t, t) + C_D(t, t-1) + C_D(t, t+1). The computed sign pattern of the three D sites
          (all of sign (-1)^t, to t = 12) is not proved here.
 CAR-P12, registered at the same time, a control of the identity before its check (CL314 item 3): from the single cell,
 x_t(0) = 1 XOR (the sum over s < t, j >= 0 of C(t-1-s, j) x_s(1-j) x_{s+1}(1-j)) mod 2, the vertical-domino form of
 fact 1; the domino count equals the carry count n_t cell by cell at every s < T and j (T = 4096 and 16384).
+OUTCOME of CAR-P12 (10:51 BST) HELD: from the single cell the carry and the vertical domino x_s(i+1) x_{s+1}(i+1) agree
+at every site -16384..0 and every s < 16384 (no violation, 1 s), and the Pascal-masked domino count recomputed
+independently (numpy subset-sum transform of the domino rows) equals the engine's carry count at every t <= 4096.
+So x_t(0) = 1 XOR (masked domino count) mod 2. The domino count n_t beside the mask count m_t = 3^k at t = 2^k:
+         t:   16  32  64  128  256  512  1024  2048  4096  8192  16384
+       n_t:   12  33  96  266  828  2511  7472  22303  66776  201086  600881
+   n_t/m_t:   0.148 0.136 0.132 0.122 0.126 0.128 0.127 0.126 0.126 0.126 0.126
 """
 import math, os, re, subprocess, sys, time
 from collections import defaultdict

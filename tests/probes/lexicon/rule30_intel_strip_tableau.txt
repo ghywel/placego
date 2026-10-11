@@ -1,0 +1,153 @@
+# SX-P9: the column tableau of every tight extra trace and of the two above ceil(l/2), both phases.
+# Intel, 2026-10-11, rule30_intel_strip_threshold.py (tableau_profile). Per trace: deaths = branches dying
+# at each column (exact); layers = distinct surviving column pairs per column; deep = deepest states per
+# column; free = free bits on the deepest states per column; last repair = the deepest column where a free
+# choice changes the maximal death column; fail t = the times at which the deepest branches fail their
+# last check, with the check range of that column.
+
+phase 0 0000 (l = 4, w(f) = 2, TIGHT): deepest death column 2 (matches); last repair column None, ceil(l/2) - 2 = 0;
+    share dead by column 3: 1.0000
+  deaths: 2:1
+  layers: 1
+  deep:   1
+  free:   0
+  fail t at column 2 (its check range 0..1): [1]
+
+phase 0 0101 (l = 4, w(f) = 2, TIGHT): deepest death column 2 (matches); last repair column None, ceil(l/2) - 2 = 0;
+    share dead by column 3: 1.0000
+  deaths: 2:2
+  layers: 1
+  deep:   1
+  free:   1
+  fail t at column 2 (its check range 0..1): [0, 1]
+
+phase 0 0001000 (l = 7, w(f) = 4, TIGHT): deepest death column 4 (matches); last repair column 2, ceil(l/2) - 2 = 2;
+    share dead by column 3: 0.6667
+  deaths: 2:1 3:7 4:4
+  layers: 1 1 1
+  deep:   1 1 1
+  free:   1 3 2
+  fail t at column 4 (its check range 0..2): [0, 1, 2]
+
+phase 0 11001101001 (l = 11, w(f) = 6, TIGHT): deepest death column 6 (matches); last repair column 4, ceil(l/2) - 2 =
+    4; share dead by column 3: 0.4348
+  deaths: 2:26 3:54 4:57 5:31 6:16
+  layers: 1 6 6 3 1
+  deep:   1 1 1 1 1
+  free:   5 4 2 4 4
+  fail t at column 6 (its check range 0..4): [0, 1, 2]
+
+phase 0 00010011010001001101000100110011000 (l = 35, w(f) = 18, TIGHT): deepest death column 18 (matches); last repair
+    column 16, ceil(l/2) - 2 = 16; share dead by column 3: 0.0144
+  deaths: 2:8156 3:1843072 4:3732180 5:22186224 6:51007584 7:24000254 8:18746844 9:1880004 10:294688 11:902748
+    12:743244 13:945204 14:920874 15:634535 16:277286 17:255640 18:172032
+  layers: 1 36 128 300 8976 4416 5122 420 60 224 420 180 972 726 345 1242 360
+  deep:   1 1 1 1 1 1 1 1 1 1 2 2 2 12 21 84 360
+  free:   13 16 16 19 16 13 11 10 13 12 14/15 12/13 12/13 7/8/9 7/8/9/10/11/12 5/6/7/8/9/10 4/5/6/7/8/9/10/11/12
+  fail t at column 18 (its check range 0..16): [0, 1, 2, 3, 4, 5, 6, 7]
+
+phase 1 000 (l = 3, w(f) = 2, TIGHT): deepest death column 2 (matches); last repair column None, ceil(l/2) - 2 = 0;
+    share dead by column 3: 1.0000
+  deaths: 2:1
+  layers: 1
+  deep:   1
+  free:   0
+  fail t at column 2 (its check range 0..0): [0]
+
+phase 1 10001000 (l = 8, w(f) = 4, TIGHT): deepest death column 4 (matches); last repair column 2, ceil(l/2) - 2 = 2;
+    share dead by column 3: 0.6667
+  deaths: 2:2 3:22 4:12
+  layers: 1 2 2
+  deep:   1 2 2
+  free:   2 3/4 2/3
+  fail t at column 4 (its check range 0..3): [0, 1, 2, 3]
+
+phase 1 011001101001 (l = 12, w(f) = 6, TIGHT): deepest death column 6 (matches); last repair column 4, ceil(l/2) - 2
+    = 4; share dead by column 3: 0.4348
+  deaths: 2:26 3:54 4:57 5:31 6:16
+  layers: 1 6 6 3 1
+  deep:   1 1 1 1 1
+  free:   5 4 2 4 4
+  fail t at column 6 (its check range 0..5): [0, 1, 3]
+
+phase 1 011010011001101 (l = 15, w(f) = 8, TIGHT): deepest death column 8 (matches); last repair column 6, ceil(l/2) -
+    2 = 6; share dead by column 3: 0.3372
+  deaths: 2:116 3:174 4:234 5:116 6:94 7:62 8:64
+  layers: 1 12 6 6 4 2 2
+  deep:   1 1 1 1 2 2 2
+  free:   7 5 5 5 4 5 5
+  fail t at column 8 (its check range 0..6): [0, 1, 2]
+
+phase 1 10100110100010011000 (l = 20, w(f) = 10, TIGHT): deepest death column 10 (matches); last repair column 8,
+    ceil(l/2) - 2 = 8; share dead by column 3: 0.1160
+  deaths: 2:250 3:1896 4:3576 5:5928 6:5468 7:484 8:299 9:280 10:320
+  layers: 1 6 24 24 72 32 5 5 24
+  deep:   1 1 1 1 1 1 2 2 24
+  free:   8 8 9 7 5 5 6/7 6/7 2/3/4/5
+  fail t at column 10 (its check range 0..9): [0, 1, 3, 4, 5]
+
+phase 1 001000100110001001101000 (l = 24, w(f) = 13, ABOVE): deepest death column 13 (matches); last repair column 11,
+    ceil(l/2) - 2 = 10; share dead by column 3: 0.1205
+  deaths: 2:250 3:30672 4:43080 5:61020 6:55551 7:53040 8:3580 9:3033 10:2556 11:1496 12:1398 13:1024
+  layers: 1 6 48 120 180 321 80 20 39 4 40 10
+  deep:   1 1 1 1 1 1 1 1 1 2 4 10
+  free:   8 13 10 8 6 7 6 9 7 8 5/6/7 5/6/7/8
+  fail t at column 13 (its check range 0..10): [0, 1, 2]
+
+phase 1 011001100010011001100110011000 (l = 30, w(f) = 16, ABOVE): deepest death column 16 (matches); last repair
+    column 14, ceil(l/2) - 2 = 13; share dead by column 3: 0.0868
+  deaths: 2:7463 3:124872 4:24276 5:95992 6:230184 7:536880 8:89076 9:92124 10:48328 11:37974 12:99168 13:60900
+    14:36771 15:24510 16:16384
+  layers: 1 729 128 24 8 216 720 24 36 56 42 672 540 93 66
+  deep:   1 1 1 1 1 1 1 1 1 2 2 4 14 30 66
+  free:   13 7 11 13 17 13 9 11 11 9/10 12/13 8/9/10 4/5/6/7 6/7/8/9/10/11 5/6/7/8/9/10
+  fail t at column 16 (its check range 0..13): [0, 1, 2, 3]
+
+phase 1 0110001001100010011000100110011001 (l = 34, w(f) = 17, TIGHT): deepest death column 17 (matches); last repair
+    column 15, ceil(l/2) - 2 = 15; share dead by column 3: 0.0374
+  deaths: 2:7949 3:1599744 4:1940544 5:5062372 6:2774536 7:2874948 8:1505184 9:2530776 10:4926440 11:3824100
+    12:5119742 13:5974554 14:2339496 15:1613668 16:800191 17:131584
+  layers: 1 243 256 3456 128 1784 2700 336 3624 2328 5916 18690 2342 2712 1180 577
+  deep:   1 1 1 1 1 1 1 2 2 2 2 3 5 8 24 577
+  free:   13 13 13 9 13 12 9 11/12 13/15 10/11 12/16 9/10 9/10 9/10/11 8/9/10/11/12 2/3/4/5/6/7/8/9/10/11/12
+  fail t at column 17 (its check range 0..16): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+phase 1 100010011010001001101000100110011000 (l = 36, w(f) = 18, TIGHT): deepest death column 18 (matches); last
+    repair column 16, ceil(l/2) - 2 = 16; share dead by column 3: 0.0156
+  deaths: 2:16312 3:5529344 4:11196660 5:62651664 6:135368688 7:70098224 8:54870996 9:4308370 10:613924 11:1694934
+    12:2015896 13:1891164 14:2264126 15:1985985 16:693836 17:626520 18:442368
+  layers: 1 72 256 780 17136 9312 10192 780 110 476 810 360 1188 1474 575 2484 680
+  deep:   1 2 2 2 2 2 2 2 2 2 2 2 2 16 35 144 680
+  free:   14 16/17 16/17 19 16/17 13/14 11 10/11 13/14 12 14/16 13 13/14 7/8/9 7/8/9/10/11/12/13 5/6/7/8/9/10/11
+    4/5/6/7/8/9/10/11/12/13
+  fail t at column 18 (its check range 0..17): [0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+phase 1 101001100010011001101000100110011000 (l = 36, w(f) = 18, TIGHT): deepest death column 18 (matches); last
+    repair column 16, ceil(l/2) - 2 = 16; share dead by column 3: 0.0219
+  deaths: 2:32606 3:1919616 4:1943712 5:2159904 6:9598464 7:8160572 8:13226601 9:12592568 10:8703961 11:5786570
+    12:6505908 13:9782715 14:5011937 15:2473584 16:1241802 17:61296 18:46080
+  layers: 1 162 384 288 96 1536 196 10647 5480 1703 5174 2124 4677 2207 4048 54 144
+  deep:   1 1 1 1 1 1 1 1 1 1 1 1 1 2 6 8 144
+  free:   15 13 15 14 18 13 19 13 13 14 11 14 10 8/9 9/10/11 9/10/11/12 5/6/7/8/9/10/11
+  fail t at column 18 (its check range 0..17): [0, 1, 2, 3, 4, 6, 7, 8]
+
+phase 1 01100110001001100010011001100110011001 (l = 38, w(f) = 19, TIGHT): deepest death column 19 (matches); last
+    repair column 17, ceil(l/2) - 2 = 17; share dead by column 3: 0.0289
+  deaths: 2:63349 3:4999488 4:874512 5:4319976 6:3501612 7:16501200 8:20908344 9:48378060 10:37168728 11:7614174
+    12:17559744 13:11484272 14:449115 15:244356 16:248756 17:128949 18:327032 19:250880
+  layers: 1 2187 512 288 24 468 10800 456 5940 10920 546 12096 528 165 1404 460 75 648
+  deep:   1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 16 25 648
+  free:   16 12 13 14 18 15 11 16 15 9/10 14/15 9 10/12 11 10/11 8/9/10 10/11/12/13/14/15 4/5/6/7/8/9/10/11/12
+  fail t at column 19 (its check range 0..18): [0, 1, 2, 3, 4, 5, 7, 8, 9]
+
+# control: sampled real traces (random rows), each must admit a complete tableau
+  phase 0 l = 22 1101000100110100010011: complete tableau True
+  phase 1 l = 24 001001100110011001100110: complete tableau True
+  phase 0 l = 26 11000100110100110100110100: complete tableau True
+  phase 1 l = 28 1000100110100010011001101000: complete tableau True
+  phase 0 l = 30 110001001100010011001101000100: complete tableau True
+  phase 1 l = 32 00100110100010011010011010011010: complete tableau True
+  phase 0 l = 34 1100110001001100010011001101000100: complete tableau True
+  phase 1 l = 36 001001101000100110100110100010011010: undetermined (the search reached its cap of five million pairs)
+  phase 0 l = 38 11000100110001001101001101000100110100: undetermined (cap reached)
+  phase 1 l = 38 00100110100110100110100010011010001001: undetermined (cap reached)
