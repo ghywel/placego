@@ -310,3 +310,13 @@ The owner's note to all workers, 2026-10-11 10:20 BST: Intel does not have a hea
 arrive when its sessions run and not on a cadence. Do not block a workflow waiting for an Intel response: file the
 request in the ledger with a flag, carry on with the next item, and read Intel's answer when it lands. Requests to Intel
 are not deadlines, and a lane assigned to Intel stays open until it reports.
+
+## Two-tier review (the owner, 2026-10-11)
+
+Not every block is checked twice. A machine-checked certificate with a digest, independent controls and an explicit
+scope is adopted on sight; a hand argument over every exterior or depth, a change to NOW.md or the board, or a premise
+another party will build on gets a targeted second read of the step that carries it; only the main line's decisive
+verdicts and prize-level claims get a full second read. A refutation is announced and the author's reply awaited before
+the record beyond the ledger is changed. The rule, with its reasons and the day that prompted it, is `two-tier-review`
+in WORKFLOW-SAVED-MEMORY.md; it narrows section 3's second-read protocol, and leaves PROOFS.md's second-reader
+requirement and the prize-won rule as they are.

@@ -3,7 +3,7 @@
 level, the minimal absent traces, and the least excluding width w(f) of each, in either wall phase.
 
 RUN-ON:     the Intel MacBook; Python 3 with pysat 1.9 (CaDiCaL 1.5.3); a pool of worker processes
-COMMAND:    python3 tests/probes/lexicon/rule30_intel_trace_grow.py PHASE LMAX [WORKERS]
+COMMAND:    python3 tests/probes/lexicon/rule30_intel_trace_grow.py PHASE LMAX [WORKERS] [--witness]
             (writes NP_SCRATCH_SX/grow_p{PHASE}_l{LMAX}.log: "T l |T(l)|" and "M l trace w(f)")
 
 Wall x_t(0) = (t + phase) mod 2; rule x_{t+1}(i) = x_t(i-1) XOR (x_t(i) OR x_t(i+1)); a trace is y_t = x_t(1), t =
@@ -50,21 +50,21 @@ def _cone_clauses(phase, n, width=None):
                 a = v(('x', t - 1, i - 1))
                 cl += [[-y, a, o], [-y, -a, -o], [y, -a, o], [y, a, -o]]
     col1 = [var[('x', t, 1)] for t in range(n)]
-    return cl, col1
+    return cl, col1, var
 
 
 def _init(phase, cone):
     global PHASE, CONE
     PHASE, CONE = phase, cone
-    cl, col1 = _cone_clauses(phase, CONE)
+    cl, col1, var = _cone_clauses(phase, CONE)
     s = Solver(name='cadical153', bootstrap_with=cl)
-    _G['cone'] = (s, col1); _G['strips'] = {}
+    _G['cone'] = (s, col1, var); _G['strips'] = {}
 
 
 def _strip(W):
     if W not in _G['strips']:
-        cl, col1 = _cone_clauses(PHASE, CONE, width=W)
-        _G['strips'][W] = (Solver(name='cadical153', bootstrap_with=cl), col1)
+        cl, col1, var = _cone_clauses(PHASE, CONE, width=W)
+        _G['strips'][W] = (Solver(name='cadical153', bootstrap_with=cl), col1, var)
     return _G['strips'][W]
 
 
@@ -72,22 +72,39 @@ def _assume(col1, f): return [col1[t] if c == '1' else -col1[t] for t, c in enum
 
 
 def is_real(f):
-    s, col1 = _G['cone']; return f, s.solve(assumptions=_assume(col1, f))
+    s, col1, _ = _G['cone']; return f, s.solve(assumptions=_assume(col1, f))
 
 
 def least_width(f):
     lo, hi = 1, len(f)                          # f is in T^W for W < w(f), not for W >= w(f); not in T^l(l)
     while lo < hi:
         mid = (lo + hi) // 2
-        s, col1 = _strip(mid)
+        s, col1, _ = _strip(mid)
         if s.solve(assumptions=_assume(col1, f)): lo = mid + 1
         else: hi = mid
     return f, lo
 
 
-def grow(phase, lmax, workers=8, log=None):
+def real_witness(f):
+    """SX-P11: the time-0 row (sites 1..len(f)) of a model of the cone with f assumed"""
+    s, col1, var = _G['cone']; assert s.solve(assumptions=_assume(col1, f))
+    m = set(x for x in s.get_model() if x > 0)
+    return f, ''.join('1' if var[('x', 0, i)] in m else '0' for i in range(1, len(f) + 1))
+
+
+def strip_witness(fw):
+    """SX-P11: an initial strip row (sites 1..W) and inputs e_0..e_(l-2) with which the width-W strip makes f"""
+    f, W = fw; s, col1, var = _strip(W); assert s.solve(assumptions=_assume(col1, f))
+    m = set(x for x in s.get_model() if x > 0)
+    row = ''.join('1' if var[('x', 0, i)] in m else '0' for i in range(1, W + 1))
+    inp = ''.join('1' if var.get(('e', t)) in m else '0' for t in range(len(f) - 1))
+    return f, W, row, inp
+
+
+def grow(phase, lmax, workers=8, log=None, witness=None):
     t0 = time.time(); out = open(log, 'w') if log else sys.stdout
     T = {0: {''}, 1: {'0', '1'}}
+    absent_all = []
     print(f'T 1 2', file=out, flush=True)
     with Pool(workers, initializer=_init, initargs=(phase, lmax + 2)) as pool:
         for l in range(1, lmax):
@@ -97,14 +114,24 @@ def grow(phase, lmax, workers=8, log=None):
             widths = pool.map(least_width, absent, chunksize=1) if absent else []
             print(f'T {l + 1} {len(T[l + 1])}', file=out, flush=True)
             for f, w in widths: print(f'M {l + 1} {f} {w}', file=out, flush=True)
+            absent_all += widths
             if l >= 2: T.pop(l - 1, None)
             print(f'  phase {phase} l = {l + 1}: |T| = {len(T[l + 1])}, minimal absent {len(absent)}, '
                   f'{time.time() - t0:.0f} s', file=sys.stderr, flush=True)
+        if witness:
+            with open(witness, 'w') as wf:
+                for f, row in pool.map(real_witness, sorted(T[lmax]), chunksize=64):
+                    print(f'R {f} {row}', file=wf)
+                fw = [(f, w - 1) for f, w in absent_all if w >= 2]
+                for f, W, row, inp in pool.map(strip_witness, fw, chunksize=1):
+                    print(f'S {f} {W} {row} {inp}', file=wf)
     if log: out.close()
 
 
 if __name__ == '__main__':
-    phase, lmax = int(sys.argv[1]), int(sys.argv[2]); workers = int(sys.argv[3]) if len(sys.argv) > 3 else 8
+    phase, lmax = int(sys.argv[1]), int(sys.argv[2])
+    workers = int(sys.argv[3]) if len(sys.argv) > 3 and sys.argv[3].isdigit() else 8
     scratch = os.environ.get('NP_SCRATCH_SX', os.path.join(os.path.expanduser('~'), 'np-scratch', 'rule30-sx'))
     os.makedirs(scratch, exist_ok=True)
-    grow(phase, lmax, workers, os.path.join(scratch, f'grow_p{phase}_l{lmax}.log'))
+    wit = os.path.join(scratch, f'witness_p{phase}_l{lmax}.txt') if '--witness' in sys.argv else None
+    grow(phase, lmax, workers, os.path.join(scratch, f'grow_p{phase}_l{lmax}.log'), wit)

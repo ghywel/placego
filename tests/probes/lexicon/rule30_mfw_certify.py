@@ -45,7 +45,9 @@ sys.argv = _argv
 DIR = rlk.DIR
 CAKE = os.path.expanduser('~/np-build/cake_lpr/cake_lpr')
 KISSAT = os.environ.get('KISSAT', 'kissat')
-PHASE = {'mfw40': 0, 'mfw40p1': 1, 'cuts40_p0': 0, 'cuts40_p1': 1, 'cuts40_sl': 0, 'mfw44': 0, 'mfw44p1': 1}   # mfw44*: SOFX's lengths 41..44
+PHASE = {'mfw40': 0, 'mfw40p1': 1, 'cuts40_p0': 0, 'cuts40_p1': 1, 'cuts40_sl': 0, 'mfw44': 0, 'mfw44p1': 1,
+         'mfw48': 0, 'mfw48p1': 1, 'cuts44_p0': 0, 'cuts44_p1': 1}
+# mfw44*, mfw48*: SOFX's lengths 41..44 and SOFX2's 45..48; cuts44_*: CUT's cuts over the K = 44 base (L641)
 
 
 def cnf(w, phase):
@@ -77,7 +79,8 @@ def cnf(w, phase):
 
 
 def certify(w, phase):
-    base = os.path.join(DIR, 'mfc_tmp_%d' % os.getpid())        # per process: two concurrent callers collided (2026-10-11 08:18)
+    # per process: two concurrent callers collided on one fixed path (2026-10-11 08:18)
+    base = os.path.join(DIR, 'mfc_tmp_%d' % os.getpid())
     open(base + '.cnf', 'w').write(cnf(w, phase))
     try:
         k = subprocess.run([KISSAT, '-q', '-f', '--no-binary', base + '.cnf', base + '.drat'], capture_output=True)

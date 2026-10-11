@@ -234,6 +234,24 @@ traces, and all 1,245 standard and 1,623 odd minimal absent traces with w(f)). A
          first-symbol map between the phases (one time step, a change of length by one) implies. The long tight words
          pair across the phases the same way: the odd tight trace of length 62 is 0 followed by the standard one of
          length 61, and the odd one of length 36 is 1 followed by the standard one of length 35.
+
+SX-P11, registered 2026-10-11 16:12 BST before its runs: a certificate for SX-P10, so that the census can be adopted on
+sight under the owner's two-tier-review rule (CL354) and Q10's caveat "SAT without proof logs" (GC1150.1) can go.
+Method. (1) Realness: every real trace of length l is a prefix of a real trace of length 90 (a right half that makes
+it makes a length-90 trace too), so one witness row per trace of T(90) certifies every T(l), l <= 90; each row is
+re-simulated directly, and the prefix sets must reproduce every |T(l)|. (2) Completeness: the candidates at length
+l + 1 (extensions g + b of T(l) whose two-step suffix is in T(l - 1)) that are not prefixes of T(90) must be exactly
+the listed minimal absent traces; each one's absence gets a DRAT proof from the cadical binary, checked by drat-trim.
+(3) Widths: each w(f) gets a strip witness at width w(f) - 1 (an initial strip and its inputs, re-simulated) and a
+DRAT proof, checked by drat-trim, that width w(f) does not produce f. Certificate data in scratch; the verdicts and
+SHA-256 digests of the trace lists, the witness rows and the CNFs in git. The CNF encoding is the one SX-P10 used; its
+independent control remains the exhaustive brute force to lengths 38 and 40. Registered with jobctl.py at priority 3.
+  (a, 0.95, control) the regrown census equals SX-P10's line for line.
+  (b, 0.95) every length-90 witness row re-simulates to its trace, and the prefix sets reproduce |T(l)| for l <= 90.
+  (c, 0.9) every listed absence (1,245 standard, 1,623 odd) has a DRAT proof that drat-trim verifies, and the
+         candidates outside the prefix sets are exactly the listed traces.
+  (d, 0.9) every w(f) is confirmed by a re-simulated strip witness at w(f) - 1 and a verified DRAT proof at w(f).
+  Counterfactual: any failure withdraws the thresholds that depend on it until they are recomputed.
 """
 import os, re, subprocess, sys, time
 import numpy as np
