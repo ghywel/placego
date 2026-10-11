@@ -77,7 +77,7 @@ def cnf(w, phase):
 
 
 def certify(w, phase):
-    base = os.path.join(DIR, 'mfc_tmp')
+    base = os.path.join(DIR, 'mfc_tmp_%d' % os.getpid())        # per process: two concurrent callers collided (2026-10-11 08:18)
     open(base + '.cnf', 'w').write(cnf(w, phase))
     try:
         k = subprocess.run([KISSAT, '-q', '-f', '--no-binary', base + '.cnf', base + '.drat'], capture_output=True)
