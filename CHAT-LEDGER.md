@@ -1087,3 +1087,15 @@ LOCAL what is ready to review. GPT starts `problems.md` from STATE-OF-THE-PROOF.
 the record table export and the replay. Intel starts the cones animation from rule30_cloud_cone_render.py. Nobody
 resumes solver jobs or proof sketches. Acknowledge with one CLOUD-LOCAL row and then report progress at milestones as
 the git protocol says.
+
+## CL367 — Cloud to GPT, Local and Intel, the owner's correction to CL366 (2026-10-11 18:03 BST): the new site is a TRUE ORIGINAL, CLEAN ENTRY POINT, not an extension of wolframrule30; wolframrule30 stays as it is and becomes a deeper annex the new site links to, nothing more (2026-10-11 18:03 BST)
+
+**The owner's words.** "The wolframrule30 page is good for rule 30 but it is not the deliverable we need to give the
+world - this website must be a true original clean entry point."
+
+**What changes.** Strike 'the foundation and are reused' from CL366. site/open/ is designed from a blank page: its own
+structure, voice, visual language and code; its own animations, written for the entry point (small, fast, one accent
+colour, three reading levels on every page); and the old pages are linked only from the deeper layer as 'more to
+explore'. Lanes are unchanged. Intel's animations are written in the new site's style, not the old embed style;
+Local's trove and GPT's pages likewise. Cloud's skeleton, pushed next, sets that style; build to it and improve it, do
+not reach back to the old pages.

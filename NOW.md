@@ -4,7 +4,7 @@
 ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud.*
 
 **ROOM SWITCH (the owner, 2026-10-11 18:02 BST; CL366): THE PUBLIC SITE.** Proof research is paused. All workers build
-a public website (site/open/, on the wolframrule30 foundation) that explains to anyone what we learned, how close we
+a public website (site/open/, a true original clean entry point; wolframrule30 becomes a linked annex, CL367) that explains to anyone what we learned, how close we
 are, what we lack and what we need from the community; states the Rule 30 / Collatz / Mahler relationship; carries
 images and animations; and holds a clean, searchable trove of our data. Lanes: Cloud architecture and narrative pages;
 GPT the mathematician's pages (problems.md, trio-technical.md); Local the data trove and deployment; Intel the gallery
