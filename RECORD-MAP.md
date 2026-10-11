@@ -143,9 +143,10 @@ PART: as on the board.
   theorem; all-d finiteness OPEN — COMPUTED (lane q4), PROVED (locks) — §8.85
 - Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
-- Swarm round: all hand proofs held, six skeptic corrections, two sharp targets — SUMMARY — §8.87
-- Check-free conjecture: no X_4 (no 11, no 00000) sequence keeps the forced cells white for ever; forced-only records
-  exact to depth 122 in X_4 and layers 8..20, no survivor, slope falls with width; periodic to 14 — COMPUTED — §8.88
+- Swarm round: hand proofs held, six corrections, two sharp targets — SUMMARY — §8.87
+- Check-free: forced-only records exact to 122 in X_4 and layers 8..20, no survivor, slope falls with
+  width; door spent (8.89) — COMPUTED — §8.88
+- Room switch: main line to the visible language's cuts; test the mixed generators' membership — DECIDED — §8.89
 
 
 
