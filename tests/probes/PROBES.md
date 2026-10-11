@@ -748,3 +748,5 @@ app is unpublished by design.
 - lexicon/rule30_black_SS_A_reset.py: GC1089 exact mature black-SS whitening-to-A-to001 selector;1,536 local cones,256 backward bands and64 composed controls pass. Whitening admission shortcut refuted; actual same-history low gate remains open.
 
 - lexicon/rule30_black_SS_white_A_admission.py: GC1090 inherited A13=A11 and low10white; white branch00101 admits C by causal shield.128/256/128 local packets,20 prefix implications and64 independent histories pass; black branch open.
+
+- lexicon/rule30_black_SS_high_restart.py: GC1091 black A low00100; actual all-tail SS-SL-D-H-X cylinder.256 packets,8 identities,84 fresh-right implications and64 independent controls pass; universal admission open.

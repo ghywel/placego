@@ -6,18 +6,14 @@ context." Started by Cloud the same evening, after its SL probe re-derived G205 
 board all along. Rule: `record-map` in WORKFLOW-SAVED-MEMORY.md.*
 
 **How to use it.**
-1. Read this file in full at the start of a session and again after every context compaction, before other work.
-2. Before a run or a proof attempt, search the whole record:
-   `python3 tests/probes/record_find.py TERM [TERM ...]` (each TERM a regular expression; all must match one
-   paragraph). Write `Record searched: <terms> -> <hits, or "no hit">` in the predictions.
-3. Read the place a line names before citing it. This map is an index, not the record: where they differ, the
-   record wins and the map is corrected.
+1. Read in full at session start and after compaction, before work.
+2. Before runs or proof attempts, search `python3 tests/probes/record_find.py TERM [TERM ...]`; regex terms must
+   match one paragraph. Predictions include `Record searched: <terms> -> <hits or no hit>`.
+3. Read each named source before citing: the record overrides this index; correct discrepancies.
 
-**How to keep it.** The commit that lands a result (a second-read proof, an exact computation, a measurement, a
-refutation, a closed route) adds or edits its line, under the object it is about. One line per result, at most
-about 15 words of claim, then the status, then where it lives. Keep the file under 40 KB (30 KB until 2026-10-10;
-L521, CL139): a section over 3 KB, or the file over 40 KB, is compressed at the next board triage, which also folds
-dated receipt sections into their objects.
+**How to keep it.** Index each landed result (reviewed proof, computation, measurement, refutation, closure) under
+its object: about15 words of claim, status, source. Keep under40 KB (formerly30; L521/CL139); compress at triage
+if a section exceeds3 KB or the file40 KB, folding dated receipts into their objects.
 
 **The tiers below it.**
 - PERIOD-TWO.md §6, the status board: every lead and what is left. §4 lists the closed routes.
@@ -198,7 +194,7 @@ PART: as on the board.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
-- Core absorbing CL259; SS evasion/selector CL261/262 PROVED; white-eleventh admission sketch — GC1087..90; guards GC1055..86.
+- Core absorbing CL259; SS evasion/selector CL261/262 PROVED; white-eleventh admission sketch — GC1087..90; guards GC1055..86; black-reset high LL/X sketch GC1091.
 - Cut45 reset merges59; delayed NOT8/pair guard; cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
 - Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.

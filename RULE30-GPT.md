@@ -28613,3 +28613,28 @@ Record searched: black.SS|111011111|last black with001|gate|past|inherited ->25 
 **Controls and failures.**128 ancestry packets,256 generic A short packets,128 white packets,20 fresh-right low-shield implications and64 independent literal/packed composed controls pass;22 composed rows use the admitted branch. An initial prediction of a100/101 return used the wrong fifth-track phase and failed;256 complete controls instead give010, but only the sufficient010/011 shield is proved here. The unexpected fresh A with white11 and black13,11101000110110100010 followed by whites, gives111 after its D. It violates the actual A13=A11 guard. The first diagnostic mis-concatenated that retained tuple into17 bits and returned C; both strings remain in the probe, and its initial thirteenth-bit assertion was corrected accordingly.
 
 CL260 at60a23bb4 is ACKed: its strategy assessment offers GPT the check-free hand target and permits choosing the handoff moment. Finish the remaining black-eleventh reset packet first; then reassess that target after Cloud's forced-only definition replication. L616 is ACKed; the stray header mentioned by CL260 was already repaired in GC1089. No Local computation, CUT, membership or record run. Upstream black-eleventh admission and the all-depth prize bound remain open.
+
+
+## GC1091 — A black-SS reset can renew high LL before exiting through X (2026-10-11)
+
+**Missing inference and result, proof sketch.** GC1090's white-eleventh branch enters the absorbing core. Its black-eleventh branch instead has low prefix **11100100100**, but can still renew111 and high LL. The actual fixed30-cell origin **111011111111000000100011110111** forces SS, SL, D, H, X through42 ticks for every farther tail: high LL occurs22..32; the following ordinary long selects X and exits the mature S/L0 component. This is one all-tail transient family, not universal black-branch admission or a record bound.
+
+Record searched: black.SS|black.eleventh|00011111 with001|gate|past|admission ->37 hits in19 files; GC1080/1088/1090 read. Predictions preceded controls. The no111 D-return prediction fails on this actual source;61 of512 selected composed histories also fail, evidence only. No larger source census or extension of GC1088's failed cylinder was used.
+
+**Black A shield.** Actual A6..13=00011111. Name its time1sites14,15 q,r and time2site15 s. Successive short prefixes at sites6 onward are10110000;0010100;111011;100010;11011;100100. In the fourth row, sites12,13 are a=NOT(q OR r), h=NOT q AND(r OR s). Thus a OR h=NOT q. Time5sites11,12 are(q OR r,NOT q), whose OR is1, forcing returned low11=0; low10 is already white by GC1090. This proves the packet for arbitrary farther cells. It does not assert that A13=1 is necessary: the unexpected fresh source1110100011110 with white exterior also has this low packet, refuting that control prediction.
+
+**Same-history certificate.** Exact known-prefix propagation uses all three displayed inputs, or masks the unknown right input when the last known middle cell is black. The30 fixed initial cells force:
+
+| Time | Determined prefix |
+| --- | --- |
+| 6 | 1110100011111111010010000010 |
+| 12 | 1110010010010000100101100 |
+| 22 | 111001111100001101001 |
+| 32 | 1110010011101000 |
+| 42 | 111000101 |
+
+At12, sites10..17=00100001 are GC1080's reviewed family A, so D returns111 at22 and H returns L0 at32. This high LL is actual, with no independently reset tail. At32 sites10,11=11; time33sites10,11=00 and time34site10=1. The reviewed ordinary selector therefore takes X=0101100101 on32..41, rather than D. Its exit and all displayed prefixes are shielded against every farther tail.
+
+All256 scalar short packets,8 Boolean identities,84 fresh-right prefix implications and64 independent literal/packed histories pass. The failed universal admission prediction and failed necessity countercontrol remain explicit. No solver, CUT, membership or record computation.
+
+CL263/CL264 at0db2fc8c are received: the forced-only definition now replicates independently in both phases; sampled deep bounds retain their third-party qualification pending witnesses. L617's flag atbe538948 is verified and ACKed. The remaining black branch is not closed by this transient cylinder. After these failed automatic-admission shortcuts, next assess the offered check-free hand target from its proved periodic case, as CL260 permits; retain the RRL absorbing component and upstream past constraints, without further fixed-source extension scans. No Local task or time-critical Cloud dependency.
