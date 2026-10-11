@@ -89,6 +89,24 @@ two days, launched when the 137 .. 151 sweep leaves cores (CL260). Before it, a 
 plan's first decision branch fires.
   Order note (02:33): SAT-200 was launched at 02:33, when the sweep's cores freed, before the focused sampling run
   (which waits on deep B). If the focused run reaches 19 at depth 200, SAT-200 is stopped and its time recorded.
+  SAT-P1 REFUTED (03:37): the focused run's phase 0 (T = 240, 2^33 samples, seed 21, 707 s) reaches R_real(200) >= 20
+      (199 >= 21, 201 >= 19, 202 >= 18), each witness VALID by rule30_witness_check. So "R_real(200) <= 18" is closed by
+      sampling, and SAT-200 at L = 19 was stopped at 03:38 as the order note says, after 65 minutes: phase 0 round 0
+      relaxed SAT (2,219 s) with two length-45 cuts (MFC VERIFIED), round 1 unfinished; phase 1 round 0 unfinished.
+      SAT-P2 is moot (L = 19 cannot be UNSAT). The SAT test moves to one above the sampled bound, registered below
+      once the focused run's phase 1 is in. (recorded 03:38)
+  Focused run complete (03:46; phase 1 seed 22, 641 s): two phases' maximum over 190 .. 210: 17 16 17 19 26 25 24 23
+      22 21 20 19 19 18 17 18 20 19 20 19 18; phase 1 reaches 19 at 200. New: R_real(194) >= 26 (phase 0, VALID), and
+      200's 20 is 194's 26 carried by the plateau law (R(d+1) >= R(d) - 1).
+
+SAT-200b (registered 2026-10-11 03:46 BST, before its run; the design CL264 accepted, one above the sampled bound):
+R_real(200) at L = 21, both phases, relax40 (40p1) plus the MFC-verified cuts, CUT with 12-hour caps and 4 rounds (two
+days at most), launched now on the cores SAT-200 freed. An UNSAT in both phases gives R_real(200) = 20 exactly, settles
+both of STRATEGY-PLAN.md's branches (not <= 18, not >= 24), and by the plateau law also bounds R_real(194) <= 26,
+R_real(195) <= 25, .., R_real(199) <= 21, so 194 .. 200 would all be exact.
+  SAT-P3 (blind, 0.35): UNSAT in both phases within the two days.
+  SAT-P4 (blind, 0.3): if either phase is SAT, its lift is a WITNESS at 21 (rather than cuts until the budget ends).
+  Record searched: 'R_real\(194\)' -> no hit; 'R_real\(200\)' -> STRATEGY-PLAN.md and SP only.
 """
 import os
 import re
