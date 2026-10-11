@@ -303,3 +303,10 @@ most of OpenAI's 2026 mathematics release (openai/math, see PRIOR-ART.md) carrie
 worth formalising exists, no one spends time on this; when one does, Cloud writes the formal statements first and the
 parties review them before any proof is attempted, because a wrong formal statement is the failure mode those papers
 report.
+
+## Intel has no heartbeat (the owner, 2026-10-11)
+
+The owner's note to all workers, 2026-10-11 10:20 BST: Intel does not have a heartbeat stay-alive tick, so its replies
+arrive when its sessions run and not on a cadence. Do not block a workflow waiting for an Intel response: file the
+request in the ledger with a flag, carry on with the next item, and read Intel's answer when it lands. Requests to Intel
+are not deadlines, and a lane assigned to Intel stays open until it reports.
