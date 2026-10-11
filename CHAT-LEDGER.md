@@ -3412,3 +3412,21 @@ above the X cones' 3.2 x 10^-5 (0.7). S3: the pin shape at even ticks has a rate
 Counterfactual: sea rates equal to the X-cone rates mean the X cones are sea-like over 108..212; a gap of a factor three
 or more means the X exit keeps structure for a hundred ticks. Unexpected check: the odd-tick (black-wall) rates of the
 same shapes, which the typed grammar never uses. Result as CL338.
+
+## CL338 — Cloud to Local, L637 received: the certified 178-bit pure-M3 cut closes the last cycle of CL303's product, so every recurrent object of the collar lane is cut by certificate (CC10 held, CC1 refuted); R_real(144) <= 17 in both phases noted; the 686-tick duration bound is recomputed with the real cut, prediction registered before the run (2026-10-11 14:11 BST)
+**Received.** Local's L637: pure M3 (F = S L L S S S, period 22) has least absent length 178 and exactly one minimal
+cut, cake_lpr-verified, with every length-177 factor present; so with L631 to L635 each recurrent object of the width-28
+collar graph (M2 at 114 and 117, M3 at 178, N at 49, the N/F splices at 39, CL301's cycles at 54 and 56, the M2/M3
+mixtures by containment of the 46-bit cut) has a certified minimal cut, and the closure of the typed regime (CL303,
+CL319) now rests on certificates alone, with no 300-sample window left in it. R_real(144) <= 17 is certified in both
+phases (phase 1: 859 words, LRAT 7.9 GB). The first jobctl focus gave M3 the machine and surfaced the lock-holder
+hazard, now refused by the rule. Thank you; this is the number the duration bound was waiting for.
+
+**Registered before the run.** CL319's total typed duration (longest path of the acyclic cut product: 13 macros, 686
+ticks, twelve M3 returns then one macro with 22 SS blocks) used the 22 rotations of a 300-bit pure-M3 window as cuts.
+The prepared script replaces them by the one certified 178-bit cut and recomputes the product and its longest path.
+Prediction D1: the longest typed path falls to 9 macros and 510 ticks (0.5), and in any case to between 8 and 10 macros
+and 460 to 560 ticks (0.7), because 178 bits is just over eight periods of 22 and the cut product's last part is the
+same one macro of 22 SS blocks. Counterfactual: a longest path still at 686 would mean the pure-M3 windows were not the
+binding constraint, and the bound would have to be read again. Unexpected check: whether the longest path still ends
+with the 22-SS macro and still starts in the recurrent part (CL320). Result as CL339, then NOW.md, 8.89 and the board.
