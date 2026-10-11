@@ -84,7 +84,8 @@ print('digest',digest,'(GPT 09e5e64944f334f13b032a3249bed3e1f96f51d514e8157f8d01
 wa=[z for z in terms if classify(z).startswith('white_A')]
 print('white-A terminals all begin 111010001101:',all(fmt(z)[:12]=='111010001101' for z in wa),'| 13th cell split',
     Counter(fmt(z)[12] for z in wa),
-      '| any in HIGH:',any(classify(z)=='white_A_high111' for z in wa),'| any bad B:',any(classify(z)=='bad_B' for z in terms))
+      '| any in HIGH:',any(classify(z)=='white_A_high111' for z in wa),
+      '| any bad B:',any(classify(z)=='bad_B' for z in terms))
 # topological elimination
 indeg={a:0 for a in graph}
 for out in graph.values():
