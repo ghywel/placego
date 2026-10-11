@@ -7,9 +7,10 @@ COMMAND:    python3 tests/probes/lexicon/rule30_intel_forced_only.py build
             python3 tests/probes/lexicon/rule30_intel_forced_only.py calib
             python3 tests/probes/lexicon/rule30_intel_forced_only.py run LANG PHASE MAXM [MAXSTATES [DFSMAX]]
             (LANG x4|gm|maw12|dfa=FILE; MAXM is the last merged level; DFSMAX extends depth-first without merging)
-COST:       calib about a minute. A full run to MAXM = 121 (depths to 122) is bounded by memory, not time: the engine
-            merges states on the record's masked anti-diagonal pair (8.38) and stops before a level whose children would
-            exceed MAXSTATES (default 3e7, about 5 GB). Logs in NP_SCRATCH_FO (default ~/np-scratch/rule30-fo), outside git.
+COST:       calib about a minute. The merged stage is bounded by memory, not time: the engine merges states on the
+            record's masked anti-diagonal pair (8.38) and stops before a level whose children would exceed MAXSTATES
+            (default 3e7, about 5 GB); the depth-first tail past it costs about 1.5 x per level of CPU time (X_4 from
+            level 97 to 121: hours at 16 threads). Logs in NP_SCRATCH_FO (default ~/np-scratch/rule30-fo), outside git.
 
 The object (8.88). Beside the alternating wall the forced left half is a function of the visible bits. In phase 0
 (column 0 reads t mod 2) the newest visible bit v_k decides row 0's depth 2k+1 as a plain XOR (the forced cell) and
@@ -55,7 +56,8 @@ values of 8.88 before this header was pushed; those are the calibration numbers 
   Unexpected check: at which forbidden word the orbits die, by level (11 against 00000), and whether that ratio moves
   with depth. Not predicted.
 
-OUTCOME, first block (2026-10-11 03:28 BST): the merged stage of X_4 and the full twelve-word class, both phases, 16 threads.
+OUTCOME, first block (2026-10-11 03:28 BST): the merged stage of X_4 and the full twelve-word class, both phases, on
+  16 threads.
   The depth-first tail of X_4 to depth 121 and the width-8 and width-12 layer languages are running; ADDENDUM below.
   FO-P0 HELD: R^F(1..9) and R^F(1..16) equal 8.88's in both phases; merging on and off give identical records to
          depth 42 in both phases; the golden-mean control is censored at every depth 1..20 in phase 1.
