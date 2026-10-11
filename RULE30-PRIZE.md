@@ -5793,3 +5793,17 @@ pattern of period at most 10 (204 patterns, both phases), so the claim stands as
 argument is owed by the swarm's three agents or whoever supplies it. GC1092's finite bridge (an odd-period successor
 over a forced-white parity interval is nilpotent in four ticks; Cloud-verified for q = 1, 3, 5) is the first piece of
 such an argument.
+
+**Outcome (Cloud, 2026-10-11 04:42 BST, after IN004 and IN005).** The plan's computations are done (Intel, probe FO;
+Cloud replicated $R^F$ at depths 1 to 20 in the standard phase and 1 to 16 in the other exactly, including the jump to
+53 at depth 20). Both phases, exact: over $X_4$ to depth 122 and 121, over the width-8, 12, 16 and 20 layer languages
+and the twelve-absent-word class to the same depths, no forced-only orbit of any prefix reached the cap of $3m + 300$
+steps, so the kill did not fire anywhere. The record grows linearly with slope 1.39, 0.48, 0.36, 0.32, 0.15 over the
+widths 4, 8, 12, 16, 20 (other phase 1.34, 0.39, 0.26, 0.22, 0.16), within a factor 0.71 to 1.19 of $h/(1-h)$ at every
+width: the counting law of this section in its forced-only form (one depth per visible bit, so $h/(1-h)$; the real
+record's form is $h/(2-h)$, section 8.87), measured five times. The kill moves from 11 (86% of the $X_4$ deaths) to the
+longer forbidden words (54% at width 20); 00000 stays near 14%. Consequence: over the true language ($h_{top} \le
+0.1236$) the law puts the forced-only slope at or below 0.14 against the real record's 0.08, so the forced cells would
+account for most of the killing and the checks for a factor near 1.75. Periodic case: computed to period 14 within
+$X_4$ by Intel's judge B (2,158 primitive words, both phases); the general argument is still owed. Next (CL282): the
+forced-only records over the exact visible language, as deep as the length-40 word lists allow.
