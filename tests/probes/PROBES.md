@@ -893,3 +893,4 @@ app is unpublished by design.
 - lexicon/rule30_cloud_actual_carrier.py: CL346 width-20 SS carrier from the ACTUAL tick-16 images of white-A origins (198 rows, 38 high: 29 non-LL, 9 LL): 614 states, 1,377 edges, 459 terminals (68 black A, 349 guarded B, 13 bad B at SS depth 3, 29 white A); the LL rows end H in the low row with no SS entrant.
 
 - lexicon/rule30_cloud_badB_lift.py: CL346 carrier-pruned depth-first search over origin cells for an actual non-LL white-A origin reaching an unguarded B after k SS blocks: FOUND for k = 3 (origin 1110100011011010010010000100100000000000000000000000000000000000, all tails, bad B 11101001100101110101 at tick 44); none for k = 4..8 even in the relaxation.
+- lexicon/rule30_SS_record_residence.py: GC1148 all-depth hand zero-triangle/ring proof gives L<=2a+5 OR N<=d+a+5 and indexed record-conditioned visible restrictions;127 prefix tableaux,1524 truncated controls PASS. Global R_real/admission OPEN.
