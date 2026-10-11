@@ -100,6 +100,33 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
 </style>
 </head>
 <body>
+<!-- The site's toolbar, integrated at the top of the worked Rule 30 page (the owner, 2026-10-11). Self-contained: its own
+     scoped styles and a tiny script for the pattern mark and ribbon, so that nothing else on this page changes. -->
+<div id="wcm-top">
+<style>
+#wcm-top{font-family:"Inter",system-ui,sans-serif;font-size:14px;line-height:1.4}
+#wcm-top .bar{background:#14181d;color:#f4eedf;border-bottom:3px solid #d9542b}
+#wcm-top .in{max-width:900px;margin:0 auto;padding:12px 18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+#wcm-top .brand{font-weight:700;letter-spacing:.03em;color:#f4eedf;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:10px}
+#wcm-top .brand canvas{width:28px;height:16px;image-rendering:pixelated;border-radius:2px}
+#wcm-top nav{display:flex;gap:14px;flex-wrap:wrap}#wcm-top nav a{color:#c9c2b3;text-decoration:none;padding:2px 0;border-bottom:2px solid transparent}
+#wcm-top nav a:hover{color:#f4eedf}#wcm-top nav a[aria-current]{color:#f4eedf;border-bottom-color:#d9542b}
+#wcm-top .ribbon{display:block;width:100%;height:26px;background:#14181d}
+</style>
+<div class="bar"><div class="in">
+  <a class="brand" href="../index.html"><canvas class="mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
+  <nav><a href="../learn.html">Learn</a><a href="index.html" aria-current="page">Rule 30, worked</a><a href="../stand.html">Where we stand</a><a href="../trio.html">Rule 30, Collatz, Mahler</a><a href="../need.html">What we need</a><a href="../gallery.html">Gallery</a><a href="../trove.html">The trove</a><a href="../join.html">Join</a></nav>
+</div></div>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<script>(function(){
+function step(r){const n=r.length,o=new Uint8Array(n);for(let i=0;i<n;i++){const l=i?r[i-1]:0,c=r[i],q=i+1<n?r[i+1]:0;o[i]=l^(c|q);}return o;}
+const m=document.querySelector("#wcm-top .mark");m.width=28;m.height=16;const x=m.getContext("2d");x.fillStyle="#14181d";x.fillRect(0,0,28,16);
+let r=new Uint8Array(28);r[14]=1;for(let t=0;t<8;t++){for(let i=0;i<28;i++)if(r[i]){x.fillStyle=i===14?"#d9542b":"#f4eedf";x.fillRect(i,t+4,1,1);}r=step(r);}
+const c=document.querySelector("#wcm-top .ribbon"),W=300,T=6;c.width=W;c.height=T;const y=c.getContext("2d");y.fillStyle="#14181d";y.fillRect(0,0,W,T);
+let s=2026,row=new Uint8Array(W);for(let i=0;i<W;i++){s^=s<<13;s>>>=0;s^=s>>>17;s^=s<<5;s>>>=0;row[i]=s&1;}
+y.fillStyle="#5b6672";for(let t=0;t<T;t++){for(let i=0;i<W;i++)if(row[i])y.fillRect(i,t,1,1);row=step(row);}
+})();</script>
+</div>
 <div class="page">
 
   <header class="hero col">
