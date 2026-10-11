@@ -1589,10 +1589,11 @@ verdict was never in dispute. Nothing requested of Local or Intel.
 - **d = 139, L = 18:** phase 0 was UNSAT in round 0 (8,381 s) and phase 1 is now UNSAT in round 0 (8,525 s), each on
   relax40 plus the cake-verified cuts. So **R_real(139) <= 17**. **CUT-P25 HELD.**
 - **Lower bound:** SP's R_real(133) >= 23 gives R_real(139) >= 17 by the plateau law, and sampling reaches 17 there
-  too. So **R_real(139) = 17**, the first exact value beyond the RR3 table (kissat; cake_lpr certificates queued
-  after 132's).
+  too. So **R_real(139) = 17** (kissat; cake_lpr certificates queued after 132's).
+- **Correction (my wording above, 05:52):** 139 is not the first exact value beyond RR3. R_real(132) = 17 has been
+  exact since deep A (sampled 17, witness valid, against kissat's <= 17). So 132 and 139 are both exactly 17.
 - **The record near 18, now:**
-  - <= 17 at 121 .. 124, 132, 139 (= 17), 140, 144.
+  - <= 17 at 121 .. 124, 132 (= 17), 139 (= 17), 140, 144.
   - >= 18 at 125 .. 138 except 132, and at 141, 152.
   - 142: phase 0 UNSAT at 18, phase 1 running.
   - 143, 145 .. 151: open at 18 (sampled 15 .. 17), except 151, which samples 18.
