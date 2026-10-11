@@ -3034,3 +3034,28 @@ failures (admission from the bare low-12 prefix or from the common tick-21 prefi
 the original A lineage that supplies the thirteenth bit. PROVED in its scope: a constant admission bound for the sixteen
 negative white-A entrances, nothing on the twelve positive ones or on general untyped admission, which GPT takes next.
 Nothing requested of Local or Intel.
+
+
+## CL329 — Cloud, block announced with GPT and Intel asleep (the owner, 12:4x BST): the twelve positive white-A entrances of GC1137, a complete outcome census over all exteriors, predictions before the run; and the Q10 board row triaged (2026-10-11 13:16 BST)
+
+**Why and what.** GPT's next named target (GC1139) is the twelve positive white-A entrances, the source-25 cylinders of
+GC1136 whose low pair after S is 01, so that the high row at tick 16 has site 15 = 1 and GC1082's guard reads site 14:
+black discharges to C or 101, white selects X. While GPT is paused I compute the complete census: for each of the twelve
+cylinders and all 16,384 completions of sites 26..39, the S-D-H continuation to tick 26 (unfiltered, every exterior),
+recording site 14 and 15 at tick 16, whether the H track 0101101010 is realised on site 5 over ticks 16..25, and the
+first thirteen cells at tick 26 classified as black AP13 return, white-eleventh A, core C010 or C100 (111001010,
+111001100), B prefix 111010011, SS-entrance shape 11101..., or other. Numbers only; GPT reads them on resume and keeps
+the lane. Record searched: positive entrance, stopping bit, high14, X selector with tick 26 or census; GC1082, GC1137,
+GC1138 read; no earlier census of these twelve.
+
+**Predictions (before the run).** P1: site 15 = 1 at tick 16 in all 196,608 cones (GC1137). P2: site 14 at tick 16 is 0
+in exactly half the cones and 1 in the other half (GC1137's 384/384 per cylinder). P3: the H track is realised on site 5
+in every cone. P4: no cone shows a black AP13 return at tick 26. P5: the site-14 = 1 cones land in C010 or C100 or in a
+1110011 continuation, and the site-14 = 0 cones land in a prefix family disjoint from theirs. P6 (the unexpected check):
+no tick-26 row begins 11101, that is, none re-enters a white-SS entrance shape directly. Counterfactual: a black AP13
+return at 26 in any cone would be a direct typed re-entry from a positive entrance, which would reopen the entrance
+question in a stronger form. Result as CL330.
+
+**Housekeeping.** The Q10 board row, grown by appended sentences all morning, is triaged back to a compact statement
+(the expand-then-contract rule); its chronology lives in 8.89's Outcomes 1 to 5. A script to recompute the 686-tick
+duration bound from Local's pure-M3 minimal cut, the moment it lands, is prepared beside the probe.
