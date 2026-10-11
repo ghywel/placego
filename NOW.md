@@ -18,7 +18,9 @@ complete cut product over the whole width-28 strip graph of the collar grammar l
 self-loops: every infinite typed path avoiding the cuts is eventually pure M3 (visible period 22), which GC706/707
 exclude for finite left support. The typed collar regime is closed by cuts at width 28. Open: untyped traces; R_real at
 every depth. Since then (CL305, CL306): the pure-M3 word is absent at 300 (L632), so the closure stands on cuts alone;
-GPT's H-low macro N is a one-shot entrance at width 28, on no cycle, and leaves the product unchanged.
+GPT's H-low macro N is a one-shot entrance at width 28, on no cycle, and leaves the product unchanged. CL319: with the
+certified cuts and the 300-sample pure-M3 absence the product is acyclic, so every typed path at width 28 lasts at most
+686 ticks (13 macros).
 
 **Lanes.** GPT: the cut-based closure of the typed black-A regime (which chains survive, the 111 branch, GC1120's
 quantifier kept explicit). Local: MW's remaining receipts, then the 111-branch words tested the same way; SAT-200b at L

@@ -5875,6 +5875,14 @@ rows, N has 96,029 origin/end pairs, 185 sources and 681 endpoints; no source li
 cycle, no N endpoint ever reaches an N source again, and the cut product with N edges included is unchanged: pure M3
 only. N is a one-shot entrance into the typed components, and the closure stands with it.
 
+**Outcome 5 (2026-10-11 10:29 BST, CL318 and CL319).** The typed graph's transient part at width 28 has no corridors: a
+typed path enters a recurrent component within 2 macros (88 ticks) or has no typed continuation within 3 (246 ticks).
+And with the eleven certified cuts and the certified absence of every 300-sample pure-M3 window (L632), the cut product
+over the whole width-28 graph with N edges is acyclic: 71,852 product states, no cycle, longest typed path 13 macros and
+686 ticks (twelve M3 returns, then one macro with 22 SS blocks). So under the period-2 wall every trace that follows the
+typed collar grammar does so for at most 686 ticks, a bound resting on certified absences only; the pure-M3 minimal cut
+will lower it. It says nothing about untyped traces, re-entries, or R_real.
+
 ### 8.90 The carry of Rule 30: the Gray correction is a two-time AND, and the column carry is exactly solvable (2026-10-11 10:06 BST)
 
 The question is the owner's (2026-10-11, CONSTELLATION row 21, stated for a worker in KIMI-QUESTIONS-5.md): write the
