@@ -777,3 +777,5 @@ app is unpublished by design.
 - lexicon/rule30_delayed_A_strip_rank.py: GC1101 joint20-cell macro relation,384 typed states/273 edges, explicit rank<=2; consecutive one-white-SS black11 A resets bounded by2 (sketch).5120 selector cones/eight scalar set flows pass; extra A types retained, variable SS lengths OPEN.
 
 - lexicon/rule30_delayed_A_SS_star_rank.py: GC1102 all-k fixed point,137 SS packets/244 strictly decreasing inner edges, SS blocks<=3 after typed A-S-D-H (sketch). Reset rank fails:742 A edges, two-SS self-loop. One loop path violates boundary evolution; actual lift OPEN.
+
+- lexicon/rule30_delayed_A_boundary_memory.py: GC1103 named loop survives joint boundary; existing20-cell graph has one output-periodic SCC. Fixed potential bounds exceptional SS counts by2; typed finite-left deadline7J+796 (sketch). Scalar controls pass.

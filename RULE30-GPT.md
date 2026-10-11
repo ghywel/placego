@@ -28885,7 +28885,7 @@ Next seek an inherited joint-past invariant or record potential for repeated del
 
 ## GC1101 — A finite hidden potential bounds consecutive one-SS delayed A resets (2026-10-11)
 
-**Missing inference moved, proof sketch with finite certificate.** The GC1100 delayed reset cannot repeat indefinitely with exactly one white SS on each return to black-eleventh A. Starting with any of the three13-cell A prefixes specified below, at any even clamped age, at most two consecutive typed macros M=S6-D10110-H10-SS6 return black-eleventh A. This bound is independent of farther tails and age; it is not an all-depth record bound or a bound for variable SS-block lengths. GC1100 is now PROVED after CL278's independent16384-exterior exhaustion and three-valued check. No sharpness for two actual returns is asserted.
+**PROVED, independently confirmed CL279.** The GC1100 delayed reset cannot repeat indefinitely with exactly one white SS on each return to black-eleventh A. Starting with any of the three13-cell A prefixes specified below, at any even clamped age, at most two consecutive typed macros M=S6-D10110-H10-SS6 return black-eleventh A. This bound is independent of farther tails and age; it is not an all-depth record bound or a bound for variable SS-block lengths. GC1100 is now PROVED after CL278's independent16384-exterior exhaustion and three-valued check. No sharpness for two actual returns is asserted.
 
 Record searched: delayed|white.SS|black.A with strip|rank|potential ->28hits17files; white.SS|white.marker with A13|A11|black.eleventh ->6hits5files. GC1096..1100 and CL275/277 read. Predictions and adaptive failures are retained in tests/probes/lexicon/rule30_delayed_A_strip_rank.py. No solver, CUT, visible-membership or record computation.
 
@@ -28921,3 +28921,28 @@ occurs with two white SS blocks (M_2 has38 ticks), whereas it has no one-SS self
 **Controls.** The k=1 edge set equals GC1101's273-edge relation exactly. Eight independent scalar SS set flows match the packed propagation. The actual GC1100 delayed reset remains an edge and its real boundary passes15 nonvacuous black-mask controls; the fresh low counter-cylinder independently retains two SS blocks. Every extracted self-edge update is scalar-checked. The unexpected check separates the acyclic inner SS graph from the cyclic A-return graph; endpoint or iteration counts alone would miss that distinction.
 
 Next decide whether the named M_2 self-edge has any boundary history satisfying column21's own temporal update, and retain that consistency in a hidden invariant. No complete ancestry tree or larger-width sweep. GC1101 review is pending; no Local/Intel computation requested.
+
+
+## GC1103 — Variable A resets have at most two exceptional outputs and a finite-left deadline (2026-10-11)
+
+**Proof sketch with finite certificate, serves Q6.** Any consecutive typed black-eleventh A return chain M_k=S6-D10110-H10-SS6^k, with the same three A13 types and necessary pins as GC1101/1102, has at most two returns with k different from2. Thus its only recurrent macro output is M_2, even though its hidden packets can branch. For an actual full-line history with leftmost black at -J at the chain's start, J>=-1, the chain lasts at most7J+796 ticks. This bounds the delayed-A obstruction at every left depth; admission to this regime, exits from it and the full realized-record bound remain OPEN. CL279 at bc4876c9 independently confirmed GC1101; promoted here.
+
+Record searched: column21|GC1102|11101000111111110100 with boundary|lift|mask|loop ->6 hits4files. GC1101/1102 sources, GC706's reviewed finite periodic-motif cost and RULE30-PRIZE8.54 read. Predictions, counterfactuals, failures and controls are in tests/probes/lexicon/rule30_delayed_A_boundary_memory.py. No solver, CUT, visible-membership or record computation.
+
+**Boundary repair does not remove the loop.** Keep x=sites1..20 and b=site21. Update x jointly using b; update b by a XOR(b OR c), where a=site20 and c is an arbitrary fresh site22. Equivalently b=1 forces next b=1-a; b=0 permits either value. Every actual history projects to this relation. For GC1102's named20-packet11101000111111110100, the complete M_2 initial/terminal boundary relation is exactly0->0 and0->1. Initial b=1 dies at the101 pin at tick16. A retained0->0 path has boundary word000000111000000000110001100111100001100, including the final bit, and repeats as a controlled21-cell strip because38 is even. Hence the prediction that this specific temporal defect excludes every loop lift is REFUTED. Actual right-half realizability is still OPEN; do not widen cosmetically or confuse a controlled strip with an actual exterior.
+
+**Switch to the output invariant.** Reuse GC1102's existing20-cell relation and label each edge by its number k of SS blocks. The inner SS certificate bounds k by3; the union of k=1,2,3 edges equals its all-length fixed-point relation exactly (742 edges). Mutual reachability gives one recurrent component: the three packets11101000111111110100,11101000111111110101,11101000111111110111, all nine directed edges, all labelled k=2. This identified unexpected check separates packet branching from output branching.
+
+The source gives an explicit potential rho: rank2 on two hex packets, rank1 on eight, rank0 on the other374 represented packets (little-endian bit0 is site1). For every labelled edge x -> y,
+
+    rho(x) >= rho(y) + [k != 2].
+
+The verifier exhausts every edge and label against that fixed table. Telescoping bounds exceptional k=1 or3 returns by2 on any finite or infinite path. Unlike GC1101's strict reset rank, rho may remain constant on M_2 cycles. Forward joint-strip layers independently fix the full column1 word of every macro, including odd times: h(SLLS^k), with h(S)=110100 and h(L)=1101000100. Thus every infinite typed chain eventually repeats the38-tick word h(SLLSS); no packet determinism is assumed.
+
+**Concrete finite-left bound.** At most two exceptional macros, each duration<=44, split any chain into at most three runs of M_2. A run of n M_2 macros starting at elapsed time a has adjacent wall/column1 traces38-periodic on its38n pre-closing samples. The left edge is then J+a cells away. GC706's finite motif bound gives38n<=J+a+76, including J=-1. Hence its endpoint is at most2a+C, C=J+76. Inserting two exceptional intervals of duration at most E=44 yields the universal end bound
+
+    T <= 7C + 6E = 7J + 796.
+
+Empty runs only weaken this bound. No actual sharpness is claimed. It uses a fixed, proven exception budget; the earlier mixed-letter change inequality alone had no such budget. In particular an infinite typed A-return chain is incompatible with finite left support, despite the surviving controlled-strip loop.
+
+**Checks and next inference.** Four independent scalar21-cell macro set flows reproduce the named boundary relation;32 actual GC1100 joint updates pass. The previously chosen inconsistent loop path is rejected as a negative control. The explicit exception potential is checked on all labelled edges; the full column1 words agree with GC706's independently derived block lift. Network/gate connectivity works and the scheduled heartbeat remains ACTIVE; no recovery change needed. Next establish which non-A exits/reentries can replenish this exception potential, or extend the output certificate to those exact transitions. Repeating wider strips or insisting on packet acyclicity is not the next step. Cloud review requested for the labelled relation, potential and7J+796 composition; no Local/Intel run requested.
