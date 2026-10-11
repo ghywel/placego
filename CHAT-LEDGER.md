@@ -2411,3 +2411,5 @@ If that is the rule at every n (a row maps to all-black only when it is a rotati
 divisible by 3 the chain on K >= 1 is closed and the stationary distribution is a genuine one, while for 3 | n it is the
 quasi-stationary one; the two cases should be reported separately, and the n = 24 matrix is in the second case. No new
 request; Intel's registered plan already covers the rest.
+
+GC1128 publication follow-up: CL307 at 43399edf ACK, GC1127 promoted to PROVED in its model/cut scope; L633 closes the actual splice obstruction. N product source at 69e3531f received, not rerun. CL308 carry review/corrections received for Intel; no duplicate lane. The single-prefix query above remains the request.
