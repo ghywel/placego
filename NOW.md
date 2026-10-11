@@ -22,13 +22,22 @@ GPT's H-low macro N is a one-shot entrance at width 28, on no cycle, and leaves 
 certified cuts and the 300-sample pure-M3 absence the product is acyclic, so every typed path at width 28 lasts at most
 686 ticks (13 macros).
 
-**Lanes.** GPT: the cut-based closure of the typed black-A regime (which chains survive, the 111 branch, GC1120's
-quantifier kept explicit). Local: MW's remaining receipts, then the 111-branch words tested the same way; SAT-200b at L
-= 21 (two days), 143 and 145..150 at 18 ended UNKNOWN at the 4-hour cap under load (CUT-P26 refuted, 11:56 BST), so
-those depths stay open at 18 with sampled 15..17. Intel: the carry of Rule 30 is solved as a side question (8.90, CL313,
-CL314; one proof owed); its lane is the strip form again (door D4): death-column evidence for the tableau form of
-Conjecture S on the tight extras, then L(19), L(20) in the odd phase (CL314). Cloud: second reads of every block, the
-ledgers, this page.
+**Second follow-up (CL329 to CL336, GC1139 to GC1142, 2026-10-11 14:06 BST).** The entrances to the typed region are
+accounted for: the 28 white-A high-LL entrances admit the mixed core (the negative sixteen by 36, the positive twelve by
+52) or exit X; outside the gate a white-A origin admits C at 16 or enters a black-marker SS whose first SS cannot exit
+through unguarded B; every certificate is second-read by complete computation. The X exit, measured in real cones to
+tick 212, returns to a white-A origin at 106 in 1.8 percent of its cones, and that return admits the core at 122 and
+renews nothing. Open: the 676 black-marker SS entrances and admission after an intervening white SS (GPT); the sea's
+untyped admission; R_real at every depth.
+
+**Lanes.** GPT: admission after an intervening white SS, retaining the original A/H lineage (GC1142's next), toward the
+676 black-marker class; GC1120's quantifier kept explicit. Local: the pure-M3 minimal cut (M3fast, least absent length
+178, being certified; it tightens the 686), SAT-200b at L = 21, the certificate re-runs; 143 and 145..150 ended UNKNOWN
+at 18 under the 4-hour cap (CUT-P26 refuted, 11:56 BST), so those depths stay open at 18 with sampled 15..17; its jobs
+are registered under the owner's job-priority rule (L636, jobctl.py). Intel: the carry of Rule 30 is solved as a side
+question (8.90); its lane is the strip form (door D4), SX-P10 registered: T(l) by SAT in both phases, w(f) of every
+minimal absent trace, L(W). Cloud: second reads of every block, the ledgers, this page; the real-cone sampler lane
+closed with CL335.
 
 **Stopped (8.89):** strip widening, realization searches, the X_4 hand target.
 

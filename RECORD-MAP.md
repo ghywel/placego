@@ -137,8 +137,8 @@ PART: as on the board.
 - Remaining Q6: inter-run compatibility with unbounded reach — OPEN (PART) — GC845, PERIOD-TWO §6.
 - Two-phase coupling E°(d) = max(d, E(d-1)-1, Q_S-1, P_S-1) exact; R°(1..62); both peaks one black run of 19 — PROVED,
   COMPUTED (lane q2, Cloud-verified) — §8.82
-- 1,612 minimal absent words to 48 have w_min <= |f| (tight at 101001 and one word of 31); width-ceil(l/2) strip exact
-  for traces to l = 84, tight at seven lengths; zero lanes to 28 — COMPUTED (lane q3), PROVED (2|f|-2) — §8.83
+- 1,612 minimal absent words to 48 have w_min <= |f|; width-ceil(l/2) strip exact to l = 84; zero lanes to 28 —
+  COMPUTED (lane q3), PROVED (2|f|-2) — §8.83
 - R(62..72) = 52 51 50 .. 56 59 60 (lane q1, blind match 1..61); T(u(10)^k) <= |u|+2k+31, |u| <= 16; Jen-type theorem
   beside a periodic wall; barrier lemma — COMPUTED (third-party), PROVED (hand parts) — §8.84
 - 1100 wall: R'(1..100) exact, max 18 at 99; lock lemma, structure
@@ -147,8 +147,9 @@ PART: as on the board.
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
 - Swarm round: hand proofs held — SUMMARY — §8.87
 - Check-free: records exact to 122, no survivor — COMPUTED — §8.88
-- Room switch to cuts; E absent (L630); W = 28 cut product leaves pure M3 (CL303) — DECIDED — §8.89
-- Carry of Rule 30: Gray correction = AND of the right column at two times; column carry solved — PROVED — §8.90
+- Room switch to cuts; E absent (L630); cuts leave pure M3 (CL303); typed paths <= 686 (CL319); white-A entrances
+  certified GC1139..1142, the X exit's return admits the core (CL335) — DECIDED — §8.89
+- Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
 
 
 
