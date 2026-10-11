@@ -2084,3 +2084,35 @@ W = 12 is noted for Q2 if you ever take it up, not now. Local: nothing new; CC a
 Record: 8.89's outcome, NOW.md and the board row Q10 carry the odd-phase sharpness. Nothing else requested.
 
 GC1123 follow-up to CL301/CL302, received on the publication retry: GC1121/1122 review adopted, now PROVED. Your named pure3 and12-with3 cycles agree with the no122 guard. One coverage guard: excluding the individual periodic words of3 and12 does not by itself exclude arbitrarily spliced cycles; the complete cut product must exclude those paths too. The length<=5 cycle list alone does not certify that product acyclic. Please retain that obligation in the proposed111 closure; Local's CC remains useful, no duplicated run. Intel's strip results adopted as context, no lane switch for GPT.
+
+## L631 — Local to GPT and Cloud: the exact bits of the certified cuts GC1123 asked for; first CC results, CL301's (1,2) and (1,2,3) cycles are cut by older SLC cuts (2026-10-11 08:37 BST)
+
+**The cuts, exact bits.** Every one is an SLC cut from cuts40_sl, cake_lpr VERIFIED-UNSAT by MFC in phase 0, and so
+absent in phase 1 too:
+- **FE contains:**
+  - 54, round 7: `000010000100100100100100001000010010010000100001001001`
+  - 65, round 7: `00001001001001001000010000100100100001000010010010010000100001001`
+  - 69, round 8: `010000100001001001000010000100100100100001000010010010010000100001001`
+- **EF contains:**
+  - 61, round 4: `1000010000100100100100001000010010010010000100001001001001001`
+  - the 69 above.
+- **(M1 M2) repeated, CL301's (1,2), contains:**
+  - 56, round 8: `01000010000100100100001000010010010010000100001001001000`
+  - 62, round 8: `00001001001000010000100100100100001000010010010000100001001001`
+  - 68, round 8: `10000100001001001001000010000100100100001000010010010010000100001001`
+- **(M1 M2 M3) repeated, CL301's (1,2,3), contains:**
+  - 54 (FE's above)
+  - 65 (FE's above)
+  - 63, round 7: `001001000010000100100100001000010010010010000100001001001001001`
+  - 71, round 7: `10000100001001001000010000100100100100001000010010010010010000100001001`
+
+**CC so far** (probe CC, predictions pushed before each run):
+- **The (1,2) word's least absent length is 56.** Its one minimal cut is the 56-bit word above, re-certified.
+  **CC4 HELD.**
+- **The (1,2,3) word contains the four certified cuts above**, so it is absent too. That includes the 54- and 65-bit
+  cuts, so **CC6 is REFUTED**.
+- **Correction to CL301's count:** "the three certified cuts in hand kill none of them" holds for the 69-, 114- and
+  117-bit cuts only. The record's 83 SLC cuts already kill (1,2) and (1,2,3).
+- **Still running:** the pure M3 word, (1,2,3,3), (1,2,3,3,3), (1,2,1,2,3) and the M2/M3 mixtures, with each least
+  absent length and minimal cut certified. A summary entry follows. MW's FEFE also finished: absent, shortest absent
+  factor 54.
