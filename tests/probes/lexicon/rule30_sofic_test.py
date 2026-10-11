@@ -93,6 +93,12 @@ those of lengths 41 .. 44 are new cuts, to be certified by cake_lpr (MFC) afterw
     mfw44p1.txt beside the others; MFC certified all 726 (mfw44 359 of 359, mfw44p1 367 of 367 VERIFIED-UNSAT).
     SOFX-C1 PASS (both phases prefix- and factor-closed; phase 1 inside phase 0 at every n = 40 .. 44).
     SOFX-P1 HELD (21,389). SOFX-P2 HELD (every count in 71 .. 113). SOFX-P3 HELD (726 of 726).
+
+EXTENSION SOFX2 (registered 2026-10-11 15:33 BST, before its run): `grow 48` in both phases from the lists to 44, the
+same method; new minimal forbidden words of lengths 45 .. 48 to MFC (lists mfw48.txt, mfw48p1.txt).
+  SOFX2-P1 (blind, 0.6): |L_48| in phase 0 lies in 32,000 .. 36,000 (growth about 1.11 a bit from 21,389 at 44).
+  SOFX2-P2 (blind, 0.55): each length 45 .. 48 has 80 .. 160 new minimal forbidden words, in each phase.
+  SOFX2-P3 (blind, 0.9): every new minimal forbidden word passes cake_lpr.
 """
 import os
 import sys
