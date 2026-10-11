@@ -1,0 +1,33 @@
+{
+ "what": "The two travelling waves column 1 can run in beside the alternating wall (RULE30-PRIZE.md 8.4, CHAT-LEDGER.md GC686, GC1151, CL351, L642).",
+ "S": {
+  "cells": 84,
+  "ring_hex": "0x688eb74a45efb082671ee",
+  "bit_i_is_site_i": true,
+  "one_step_is_shift_by": 14,
+  "column0_word": "010101",
+  "column1_word": "110100",
+  "largest_cyclic_white_gap": 5
+ },
+ "L": {
+  "cells": 155,
+  "ring_hex": "0x35409b1caa645d715104db5291a2fe8415260ce",
+  "bit_i_is_site_i": true,
+  "two_steps_are_shift_by": 31,
+  "column0_word": "0101",
+  "column1_word": "1101000100",
+  "largest_cyclic_white_gap": 6,
+  "note": "gap 7 at black-wall rows (L642)"
+ },
+ "wheel": {
+  "word_U": "00010011010001001101000100110100010011010001001101001101",
+  "period": 56,
+  "rotation": "t -> 17 t mod 56",
+  "kick_classes": [
+   12,
+   32,
+   42,
+   "...see PROOFS.md entry 26"
+  ]
+ }
+}

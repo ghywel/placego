@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The open statements, exactly</title>
+<meta name="description" content="The Rule 30 period-two problem stated exactly for mathematicians: definitions, what is proved, what is measured, the record route, and the one missing lemma, each with its source in the record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.wolframcollatzmahler.com/problems.html">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
+  <nav><a href="learn.html">Learn</a><a href="rule30/">Rule 30, worked</a><a href="stand.html">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a>
+  <a href="need.html">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+</div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<main>
+<p class="kicker">For mathematicians</p>
+<h1>The open statements, exactly</h1>
+<p class="lede">This page states the period-two problem and the route we hold in the words a proof would use, says what is
+proved and what is only measured, and names the section of the record each claim comes from. Nothing here is new; it is
+the record, compressed.</p>
+
+<h2 data-glyph="pyramid">Definitions</h2>
+<p>Rule 30 acts on bi-infinite rows of cells x(i, t) in {0, 1} (0 white, 1 black) by</p>
+<pre>x(i, t+1) = x(i−1, t) XOR ( x(i, t) OR x(i+1, t) ).</pre>
+<p>It is left-permutive: x(i−1, t) = x(i, t+1) XOR (x(i, t) OR x(i+1, t)), so columns i and i+1 over time determine
+every column to their left. A <b>finite configuration</b> has finitely many black cells; the single-seed pattern is one. A
+column is <b>eventually periodic</b> if it is periodic from some time on. <b>Problem 1</b> (Wolfram, 2019) asks whether the
+centre column of the single-seed pattern is eventually periodic; the claim is that it is not.</p>
+<p><b>The wall.</b> Period two means the centre column reads 0101… from some time on. Shift time so that it does so from
+t = 0 and call column 0 the wall, x(0, t) = t mod 2 (phase 0; phase 1 is (t+1) mod 2). <b>Column 1</b> is the trace,
+c(t) = x(1, t). By left permutivity the whole left half-plane is a function of the wall and the trace. Since x(−1, t) =
+x(0, t+1) XOR (x(0, t) OR c(t)) equals 1 whenever x(0, t) = 1, only the samples at white-wall ticks reach the left: the
+<b>visible word</b> is c at the white ticks, in time order, and the left half-plane depends on nothing else.</p>
+<p><b>Real traces.</b> A trace is real if some configuration beside the wall produces it. The set of real visible words is
+a factorial language L (one per phase). Its minimal forbidden words are the <b>cuts</b>.</p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.13 and 8.54 (left permutivity and the forced left half); CHAT-LEDGER.md CL356
+(the masking identity, checked); L640 and L641 (the language and its cuts).</p>
+
+<h2 data-glyph="wheel">What is proved beside an alternating wall</h2>
+<ul class="proved">
+<li><b>Jen (1990).</b> In a finite configuration, two adjacent columns are never both eventually periodic. So beside
+the alternating wall, column 1 of a finite configuration is never eventually periodic.</li>
+<li><b>Condrey (2026, arXiv:2609.09431).</b> No column of a nonzero finite configuration is eventually constant. This
+closes period one.</li>
+<li><b>Theorem B.</b> If columns 0 and 1 are both P-periodic, the white runs of every left column are at most 2P − 2.
+Corollary: if the visible word is periodic with period m over a window, the left cells that window determines have white
+gaps at most 4m − 2 (checked exhaustively for m ≤ 5, tight at m = 2).</li>
+<li><b>Theorem A (Jen with a clock).</b> Columns 0 and 1 of a finite configuration can agree with a periodic pair only
+over a bounded window, so the kicks that break column 1's periodicity cannot thin out faster than geometrically.</li>
+<li><b>Theorem A′ (the window principle).</b> A block of column 1 can recur only if its length is small compared with
+the time elapsed; its complexity bound is Dubickas (2009) in the Collatz setting.</li>
+<li><b>Theorem E.</b> Column 1 cannot be a Sturmian word (a coding of an irrational rotation with a half-circle arc);
+with Jen's theorem, no rotation coding, rational or irrational, is column 1. Corollary F, Theorems E″ and A⁗ extend this
+to near-squares at unbounded periods, block codes of Sturmian words, resets that come further apart than
+geometrically, and Thue–Morse and paperfolding for every left edge up to 15,868 cells.</li>
+<li><b>The channel bound.</b> Beside the alternating wall, column 1 carries at most 0.1236 bits per visible bit
+(log₂ of the growth rate of the visible language's layer count at width 28, certified in exact arithmetic).</li>
+<li><b>No finite configuration reaches a solid row.</b> The only preimages of the all-white row are all-white and
+all-black; the only preimages of all-black are the three phases of (100)^∞. Neither is finite.</li>
+</ul>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.13, 8.54, 8.57, 8.58, 8.20 and 8.33; PROOFS.md; proofs directory entries 05
+to 12; CHAT-LEDGER.md CL356 (the Theorem B corollary) and CL363 (solid rows). Proved means a written proof with a second
+reader inside the project and no outside review.</p>
+
+<h2 data-glyph="coin">What is measured</h2>
+<ul class="measured">
+<li><b>The wheel.</b> Beside the alternating wall, column 1 between kicks is the two-arc coding of the rotation
+t ↦ 17t mod 56: the 56-step word U = 0001001101 0001001101 0001001101 0001001101 0001001101 001101, five blocks of ten
+and one of six (17 turns in 56 steps). Kicks occur at four classes with short size ranges (Proposition 13). No other
+column of the single-seed pattern, −40 to 40, shows any such structure (block complexity of a fair coin, exploratory).</li>
+<li><b>The rings.</b> Column 1 can run in two travelling waves: the S ring (84 cells, one step is a shift by 14,
+column-1 word 110100, largest cyclic white gap 5) and the L ring (155 cells, two steps are a shift by 31, column-1 word
+1101000100, gap 6). U is made of their words.</li>
+<li><b>Nothing near the centre.</b> No period-two counterexample has its left edge within 248 cells of the centre for
+any right half; none with a right half of at most 32 cells and a left half of at most 108 (4.3 × 10⁹ cases).</li>
+<li><b>The record R(d).</b> Exact at every depth 20..120 and at 132, 139, 142 (17 at each of those three), at least 18
+at 125..138 and 141, and by sampling at least 20 at depth 200, 28 at 279, 38 at 1,035. Witness configurations for every
+value are in the trove.</li>
+<li><b>The cuts.</b> All 1,130 (phase 0) and 1,199 (phase 1) minimal forbidden visible words of length ≤ 44, each with a
+cake_lpr-checked certificate; phase 0 extended to 48 with 482 words (in certification).</li>
+<li><b>The counting form.</b> N(w, T), the number of configurations on w cells whose centre reads 0101… for T steps,
+falls like 2^(w − αT) with α measured near 1 at w = 24. The part paid by the seed's left part is proved exactly.</li>
+</ul>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.4, 8.13 (the wheel), 8.56, 8.21 (searches), 8.51 (counting); PROOFS.md entry 26
+(Proposition 13); CHAT-LEDGER.md CL351 (rings), L643 and L645 (records and cuts), CL357 (other columns); the trove.</p>
+
+<h2 data-glyph="cones">The route we hold: finite support</h2>
+<div class="level"><p class="kicker">The hypothesis and the target</p>
+<p>Suppose a finite configuration has centre 0101… from time 0. Its left half at time 0 is white beyond its support, so
+its real trace has a left image white on an infinite interval at some depth. Define</p>
+<pre>R(d) = sup { L : some real trace beside the wall has x(−d, 0) = … = x(−d−L+1, 0) = 0 }.</pre>
+<p><b>Target.</b> R(d) < ∞ for every d. This refutes period two for every finite configuration. It is finiteness at each
+depth, not a uniform bound: the data grow with d.</p></div>
+<div class="level"><p class="kicker">What is known on this route</p>
+<ul>
+<li>Theorem B gives it when the visible word is periodic over the relevant window.</li>
+<li>For the pure S and L rings: a white interval [d, d+L−1] at a white anchor a with N samples of the ring's trace
+forces L ≤ 2a + 5 or N ≤ d + a + 5 (S), and the same with 6 (L).</li>
+<li>A mixed prefix LSLSL forces seven white left cells at depths 30..36 (the converse direction: structure in the trace
+forces white on the left).</li>
+<li>At depth 139 the record's endpoint is forced by masking: the cell at depth 156 is black from the 78 visible samples
+through tick 154, and no change beyond site 155 can move it. At depth 132 it is forced by a cut: extending the record
+word by one white would put the certified cut 100100001001000010000101 at visible index 51 (tick 102). Both are exact
+explanations of one data point each.</li>
+<li>Exact images at fixed depth k are regular; a seeded decoder presents them with at most 2 S 2^⌈(k−1)/2⌉ states (S the
+cut automaton's live states), exact in both directions; the first visible bit can be quotiented away for k ≥ 4 in the
+white-start phase under the no-11 gate. The state space grows with k, so none of this is a closure across depths.</li>
+</ul></div>
+<div class="level open"><p class="kicker">The missing lemma</p>
+<p>A white band of length L at depth d forces a pattern in the visible samples over a window that grows with L, and every
+such pattern long enough contains a cut. Equivalently: the set of real visible words whose depth-d image is white on
+[d, d+L) is empty for some L = L(d), at every d. Theorem B is this lemma for periodic samples; the two endpoint
+explanations are what the pattern looks like in two real cases; the general argument is open.</p></div>
+<p class="source"><b>Sources.</b> PERIOD-TWO.md section 2 and row Q6; CHAT-LEDGER.md CL355 (the route), GC1148, GC1151 (rings), GC1153
+(mixed prefix), GC1154 and CL356 (Theorem B's corollary), GC1155 to GC1157 with CL356 and CL359 (endpoints), GC1158 and
+CL361 (decoder), GC1159 and CL364 (quotient).</p>
+
+<h2 data-glyph="map">The other forms of the same problem</h2>
+<ul>
+<li><b>Conjecture LR.</b> No column 1 beside the alternating wall makes the left half eventually white. Proved for
+eventually periodic and for Sturmian column 1; open for the kicked wheel.</li>
+<li><b>The counting form.</b> N(w, T) ≤ 2^(w − αT + c) for some α > 0. The left part's cost is proved; the right part's
+is open. Its Collatz twin, with the free bits in place of the left part, is COLLATZ-PRIZE.md section 1.</li>
+<li><b>The one sentence.</b> Keeping the wall's conditions costs real information. The delivery side is the channel
+bound; the cost side is proved only beside a constant wall (Condrey), and beside 0101… it is a coin model, measured and
+not proved.</li>
+</ul>
+<p class="source"><b>Sources.</b> PERIOD-TWO.md sections 2, 5 and 6 (rows Q1, Q6, Q7); RULE30-PRIZE.md sections 8.45, 8.47, 8.51.</p>
+
+<h2 data-glyph="ring">Where the problem sits</h2>
+<p>It has the structure of Mahler's 3/2 problem and of Collatz for a single orbit: a free side (the left half at the wall,
+a full shift) and a constrained side (column 1, a language of positive entropy but tiny rate) that must agree for ever.
+The method that closes such problems, pigeonhole on a finite constrained side and injectivity of the free side, is exactly
+Jen's and Condrey's argument, and it stops where the constrained side has positive entropy. Any theorem about almost all
+configurations (entropy, ergodic, Fourier) bounds a set and says nothing about the single configuration the prize is
+about. A proof must use what is special about the alternating wall; the one such structure found is the wheel.
+<a href="trio-technical.html">The three problems side by side, technically.</a></p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.45 and 8.47; PERIOD-TWO.md section 5.</p>
+</main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
+</body>
+</html>

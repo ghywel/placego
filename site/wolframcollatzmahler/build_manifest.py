@@ -8,6 +8,27 @@ ROOT=os.path.abspath(os.path.join(os.path.dirname(__file__),'..','..'))
 REPO='https://github.com/ghywel/placego'; RAW='https://raw.githubusercontent.com/ghywel/placego/main/'
 L='tests/probes/lexicon/'
 ITEMS=[
+ dict(path='site/wolframcollatzmahler/data/records.csv',kind='records',title='The record R(d), clean table (CSV)',
+  what='One row per depth and phase, 20..160: the longest white run of the forced left row starting at that depth, whether the '
+       'value is exact (proved maximal by SAT with a certificate) or a lower bound, the horizon, and the witness\'s visible word.',
+  schema='depth, phase, L, status (exact or >=), T, visible_word.',source='build_data.py from rule30_local_record_traces.txt (L643).',
+  replay='python3 site/wolframcollatzmahler/data/replay.py'),
+ dict(path='site/wolframcollatzmahler/data/records.json',kind='records',title='The record R(d), with every witness (JSON)',
+  what='The same rows with the full witness: the column-1 trace, the forced left row at time 0 and the right half at time 0, so '
+       'that every value can be re-derived with a plain Rule 30 loop.',
+  schema='JSON: what, source, fields, rows[{depth, phase, L, status, T, visible, trace, left, right}].',
+  source='build_data.py (Cloud) from Local\'s record traces.',replay='python3 site/wolframcollatzmahler/data/replay.py'),
+ dict(path='site/wolframcollatzmahler/data/forbidden_words.json',kind='forbidden words',title='Certified minimal forbidden visible words (JSON)',
+  what='The 1,130 phase-0 and 1,199 phase-1 minimal forbidden words to length 44 as two sorted lists, with the source file\'s digest.',
+  schema='JSON: what, source, phase0[], phase1[].',source='build_data.py from rule30_local_mfw44.txt (L640, L641).'),
+ dict(path='site/wolframcollatzmahler/data/rings.json',kind='census',title='The S and L rings and the wheel word (JSON)',
+  what='The constants of the two travelling waves column 1 can run in, and the unkicked wheel word U with its rotation.',
+  schema='JSON: S{cells, ring_hex, shift, words, gap}, L{...}, wheel{word_U, period, rotation, kick_classes}.',
+  source='RULE30-PRIZE.md 8.4; CHAT-LEDGER.md GC686, GC1151, CL351, L642; PROOFS.md entry 26.'),
+ dict(path='site/wolframcollatzmahler/data/replay.py',kind='probes',title='replay.py: re-check every record row in seconds',
+  what='A plain Rule 30 loop and left permutivity, nothing else: replays the right half to the trace, the trace to the left row, '
+       'checks the white band and the visible word for every row of records.json.',
+  schema='Python 3, standard library.',source='Cloud, 2026-10-11.',replay='python3 site/wolframcollatzmahler/data/replay.py'),
  dict(path=L+'rule30_local_record_traces.txt',kind='records',title='Record witnesses and their traces, depths 20 to 160',
   what='The best known white-run record at every depth 20..160 of the forced left side beside the alternating wall: 141 '
        'blocks, 104 at the exact value (every depth 20..120 and 132, 139, 142). Each block gives the depth, the run L, the '

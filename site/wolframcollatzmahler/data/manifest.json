@@ -1,7 +1,70 @@
 {
- "generated": "2026-10-11 17:10 UTC",
+ "generated": "2026-10-11 17:44 UTC",
  "repository": "https://github.com/ghywel/placego",
  "items": [
+  {
+   "path": "site/wolframcollatzmahler/data/records.csv",
+   "kind": "records",
+   "title": "The record R(d), clean table (CSV)",
+   "what": "One row per depth and phase, 20..160: the longest white run of the forced left row starting at that depth, whether the value is exact (proved maximal by SAT with a certificate) or a lower bound, the horizon, and the witness's visible word.",
+   "schema": "depth, phase, L, status (exact or >=), T, visible_word.",
+   "source": "build_data.py from rule30_local_record_traces.txt (L643).",
+   "replay": "python3 site/wolframcollatzmahler/data/replay.py",
+   "bytes": 9940,
+   "sha256": "08e16bc74736aec036800484d063a0d351e17c357486e3330e5a3d679e2c3ddb",
+   "view": "https://github.com/ghywel/placego/blob/main/site/wolframcollatzmahler/data/records.csv",
+   "raw": "https://raw.githubusercontent.com/ghywel/placego/main/site/wolframcollatzmahler/data/records.csv"
+  },
+  {
+   "path": "site/wolframcollatzmahler/data/records.json",
+   "kind": "records",
+   "title": "The record R(d), with every witness (JSON)",
+   "what": "The same rows with the full witness: the column-1 trace, the forced left row at time 0 and the right half at time 0, so that every value can be re-derived with a plain Rule 30 loop.",
+   "schema": "JSON: what, source, fields, rows[{depth, phase, L, status, T, visible, trace, left, right}].",
+   "source": "build_data.py (Cloud) from Local's record traces.",
+   "replay": "python3 site/wolframcollatzmahler/data/replay.py",
+   "bytes": 67896,
+   "sha256": "babe9487fd3fd0db84a4fdaa1121c74999e0165ce10014d20da25a99b70c9941",
+   "view": "https://github.com/ghywel/placego/blob/main/site/wolframcollatzmahler/data/records.json",
+   "raw": "https://raw.githubusercontent.com/ghywel/placego/main/site/wolframcollatzmahler/data/records.json"
+  },
+  {
+   "path": "site/wolframcollatzmahler/data/forbidden_words.json",
+   "kind": "forbidden words",
+   "title": "Certified minimal forbidden visible words (JSON)",
+   "what": "The 1,130 phase-0 and 1,199 phase-1 minimal forbidden words to length 44 as two sorted lists, with the source file's digest.",
+   "schema": "JSON: what, source, phase0[], phase1[].",
+   "source": "build_data.py from rule30_local_mfw44.txt (L640, L641).",
+   "bytes": 92923,
+   "sha256": "1ef9fee8eda267a7694c12cb3fec807e89220abc8d8228a53e17fa6f98f01cfe",
+   "view": "https://github.com/ghywel/placego/blob/main/site/wolframcollatzmahler/data/forbidden_words.json",
+   "raw": "https://raw.githubusercontent.com/ghywel/placego/main/site/wolframcollatzmahler/data/forbidden_words.json"
+  },
+  {
+   "path": "site/wolframcollatzmahler/data/rings.json",
+   "kind": "census",
+   "title": "The S and L rings and the wheel word (JSON)",
+   "what": "The constants of the two travelling waves column 1 can run in, and the unkicked wheel word U with its rotation.",
+   "schema": "JSON: S{cells, ring_hex, shift, words, gap}, L{...}, wheel{word_U, period, rotation, kick_classes}.",
+   "source": "RULE30-PRIZE.md 8.4; CHAT-LEDGER.md GC686, GC1151, CL351, L642; PROOFS.md entry 26.",
+   "bytes": 861,
+   "sha256": "2925e50260d878a53b67dc93ffc2d4c88a4b21df956f478997e336aae3ad2105",
+   "view": "https://github.com/ghywel/placego/blob/main/site/wolframcollatzmahler/data/rings.json",
+   "raw": "https://raw.githubusercontent.com/ghywel/placego/main/site/wolframcollatzmahler/data/rings.json"
+  },
+  {
+   "path": "site/wolframcollatzmahler/data/replay.py",
+   "kind": "probes",
+   "title": "replay.py: re-check every record row in seconds",
+   "what": "A plain Rule 30 loop and left permutivity, nothing else: replays the right half to the trace, the trace to the left row, checks the white band and the visible word for every row of records.json.",
+   "schema": "Python 3, standard library.",
+   "source": "Cloud, 2026-10-11.",
+   "replay": "python3 site/wolframcollatzmahler/data/replay.py",
+   "bytes": 1789,
+   "sha256": "ebb55656e6a036c419b74ed5dc9b048fa63a6b2f534f3878aa8dcb81edb556aa",
+   "view": "https://github.com/ghywel/placego/blob/main/site/wolframcollatzmahler/data/replay.py",
+   "raw": "https://raw.githubusercontent.com/ghywel/placego/main/site/wolframcollatzmahler/data/replay.py"
+  },
   {
    "path": "tests/probes/lexicon/rule30_local_record_traces.txt",
    "kind": "records",
