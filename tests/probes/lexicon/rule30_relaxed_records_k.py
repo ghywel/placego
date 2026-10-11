@@ -187,7 +187,7 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
          rounds at 14,400 s caps (137 now, 139 when a core frees).
   CUT-P22 REFUTED (02:06): d = 137 phase 0 relaxed SAT in round 0 (4,606 s, 24 cuts), and the lift is a WITNESS
          (rule30_witness_check VALID, T = 154), so R_real(137) >= 18; 139 still running.
-  CUT-P24 (blind, 0.5; registered 02:08 before its run): a descending chain over d = 151 .. 145, L = 18, at 14,400 s
+  CUT-P24 (blind, 0.5; registered 02:07 before its run): a descending chain over d = 151 .. 145, L = 18, at 14,400 s
          caps, 2 rounds, phase 0 first and phase 1 only if phase 0 is UNSAT, skipping a depth the 1,800 s sweep has
          decided, gives a WITNESS at at least 5 of the 7 depths. The odds: 14 of the 17 decided depths in 125 .. 144
          reach 18. Record searched: 'R_real\((14[5-9]|15[01])\)|d = (14[5-9]|15[01]),' -> no hit.
