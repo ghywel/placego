@@ -149,7 +149,7 @@ PART: as on the board.
 
 
 
-- Check-free plan/records — mixed — STRATEGY-PLAN.md; odd-period GC1092 PROVED CL268; second-image GC1093 PROVED CL269; third-image constants GC1094 sketch; periodic forced-only argument owed.
+- Check-free: STRATEGY-PLAN.md; GC1092..94 odd-period bridges PROVED CL268..270 (third image constants); periodic forced-only argument owed.
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
@@ -321,6 +321,7 @@ PART: as on the board.
 
 
 ## Routes closed (do not reopen without new evidence)
+- Static third-image white-parity carrier not forward closed: recurrent1000 births forbidden0010 — REFUTED — GC1095.
 - Uncorrected three-depth zero-prefix drift fails on an actual seven-ring at unbounded depths — REFUTED — GC1016.
 - Length-3 factor widening pumps a spurious zero trap; every allowance fails for K10 — PROOF-SKETCH / COMPUTED — GC976.
 - Boundary-only temporal widening admits arbitrary white runs — PROOF-SKETCH / COMPUTED controls — GC974; internal-factor widening remains open.

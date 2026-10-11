@@ -152,8 +152,8 @@ def main():
                graph_edges=64, recurrent_edges=10, maximum_exit=6,
                seven_edge_paths=paths, finite_fixtures=fixtures,
                rejected_premises=rejected, even_q_counterexample='PASS',
-               third_intersection='ZERO AND ONE PROOF-SKETCH',
-               finite_odd_q_bridge='ALL q PROOF-SKETCH',
+               third_intersection='ZERO AND ONE PROVED CL270',
+               finite_odd_q_bridge='ALL q PROVED CL270',
                all_time_iteration='OPEN', prize_bound='OPEN'))
 
 

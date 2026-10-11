@@ -28720,7 +28720,7 @@ Use x'_i=x_(i+q), which has the opposite white parity and the same second image 
 
 Record searched: parity.image|phase.intersection|white.parity withlater|third|intersection|merger ->5 hits in3 files, GC1093's source and unrelated parity references; no third-image theorem located. Predictions P1 (exactly zero/one) and P2 (at worst two further ticks to zero) both held; counterfactual and unexpected bridge check preceded the graph computation.
 
-**Exact intersection, proof sketch.** With A_even/A_odd as in GC1093,
+**Exact intersection, PROVED (CL270).** With A_even/A_odd as in GC1093,
 
     F^3(A_even) intersect F^3(A_odd) = {000...,111...}
       = F(F^2(A_even) intersect F^2(A_odd)).
@@ -28738,10 +28738,27 @@ The three-input OR on the origin's black parity is the new structural constraint
 
 The complete certificate in rule30_third_image_parity_bridge.py assigns each of the64 states a height in0..6. Every other edge strictly decreases that height and has no cycle-state target. Thus no noncycle edge can enter a cycle, continue for more than6 edges, or connect two recurrent components. This is checked over all64 edges, including possible bridges, not inferred from sampled cycles. The bound6 is attained by110101 ->101010 ->011100 ->110000 ->100001 ->000010 ->001100. Every bi-infinite common-origin path therefore stays on one of the four cycles, giving only the two constant output rows. Both outputs occur: zero has zero origins;001010 ->011011 ->010010 ->111111, and shifting its origin by3 changes white parity while leaving the third image unchanged. This proves equality and the particular image/intersection identity above.
 
-**Finite all-odd-q consequence, proof sketch.** Any K-pair path has its first K-6 edges recurrent: after a noncycle edge at most five further edges can occur. The first K-6 pairs consequently form one constant row, whose next update is white. Let x have either white parity on[a-3,b+3], and w=F^3(x) be q-periodic on[a,b], with q positive odd and b-a>=q+16. Then
+**Finite all-odd-q consequence, PROVED (CL270).** Any K-pair path has its first K-6 edges recurrent: after a noncycle edge at most five further edges can occur. The first K-6 pairs consequently form one constant row, whose next update is white. Let x have either white parity on[a-3,b+3], and w=F^3(x) be q-periodic on[a,b], with q positive odd and b-a>=q+16. Then
 
     F^4(x)_i=0 on[a+2,b-q-14].
 
 As in GC1093, x'_i=x_(i+q) supplies the opposite-parity origin with the same third image on[a,b-q]. Set c to the first white-parity site at least a, and K=floor((b-q-c+1)/2). The retained origin cones fit. The first K-6 output pairs are constant on[c,c+2K-13]; one more update kills[c+1,c+2K-14], containing[a+2,b-q-14]. The same argument holds on a far-left half-line. This is the third-slice bridge, still dying by physical time4, with arbitrary exteriors and no assumption that the parent is periodic.
 
 **Validation and limit.** Literal scalar updates crosschecked against independent packed updates verify both formulas on all256 packets; the same constructor recovers GC1093's entire16-state table. The64-state height partition and all64 seven-edge paths verify the finite exit certificate.640 exterior fixtures satisfy the periodicity premise and pass the displayed interval bound;640 others correctly reject it. The even-q fixed checkerboard refutes deleting oddness or either origin. The unexpected intercomponent-path check is essential: cycles alone would not classify bi-infinite outputs if bridges existed. No failed prediction. This fixed-time identity still gives no later-time closure or all-depth bound; further fixed-time scans are not such a proof. Next proof target is a phase distinction preserved outside the common nilpotent basin, using the three-input OR ancestry constraint, rather than assuming the third-slice identity persists.
+
+
+## GC1095 — A local0010 birth refutes a static third-image phase carrier (2026-10-11)
+
+**Missing inference decided.** The proposed all-time phase distinction needs a carrier preserved by Rule30. The concrete carrier U=F^3(A_even) union F^3(A_odd) is not forward closed, even on a recurrent nonnilpotent orbit. This closes that shortcut, not every finite-type route or phase invariant. CL270 at19e1f7de confirms GC1094, now promoted. No further fixed-time graph scan or Local computation.
+
+Record searched: parity.phase|white.parity|parity.origin|OR3|phase.distinction withpersist|invariant|merger|nilpotent ->15 hits in8 files; third.image|white.parity|parity.origin withforward.closed|forward.invariant|carrier ->one unrelated board paragraph. GC1094's joint OR3 formulas are the antecedent; the named ring is a control, not a new periodic-point discovery.
+
+**Local obstruction, proof sketch.** U forbids the spatial word0010 at every site. GC1094's first output pair is(a XOR b XOR(NOT c AND g), b OR c OR g), or(a OR b OR c, a XOR b XOR(NOT c AND g)) for the opposite origin parity. In either case a pair00 forces a=b=c=g=0. The next pair, with new hidden bit h, is(h,h) in the first case or(0,h) in the second. Thus00 cannot be followed by10. Both white parities are covered, and translating the window just exchanges them, proving the prohibition at every site with arbitrary exterior.
+
+**Exact carrier exit.** The spatial period4 row1000 has one white parity and follows
+
+    1000 ->1101 ->0001 ->1011 ->0010 ->0111 ->0100 ->1110 ->1000.
+
+Its third image1011 is in U by construction; its fourth0010 is outside U by the prohibition. Hence F(U) is not a subset of U. The12-cell cylinder100010001000 fixes the fourth-image patch0010 for every exterior, so the local exit is not a ring-boundary artefact. A globally parity-white completion supplies the actual carrier counterexample; arbitrary exteriors alone need not preserve the global carrier premise.
+
+**Failure retained and scope.** The original six-cycle prediction was REFUTED:0111 maps0100, not1000. Scalar and packed updates agreed; this was a trajectory prediction error, not an instrument failure. The verified eight-cycle leaves the unchanged third/fourth-image argument intact. Its four temporal column traces are11010001,01000111,00011101,01110100; every one fails period2. Thus it refutes neither GC1092..94's odd-period slice lemmas nor the alternating-wall conjecture. The missing wall coupling cannot be replaced by this static carrier.64 OR3 packets and256 arbitrary-exterior cylinder controls pass; the full eight-cycle is independently checked. Source:tests/probes/lexicon/rule30_parity_carrier_exit.py. Stop this carrier closure attempt. Next return to the RRL main line: the actual black-A reset's001-to101 ancestry, where an inherited guard could bar another A restart; no global-affine or unary explanation resumed.
