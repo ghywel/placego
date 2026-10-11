@@ -1,4 +1,4 @@
-"""GC1126: can a111 H-low escape reset the typed A budget via D101?
+"""GC1126: can a 111 H-low escape reset the typed A budget via D101?
 
 Missing inference: the cut-closed direct A-return graph omits H-low
 exits. Decide whether one such exit can reach a black11 A again
@@ -6,21 +6,21 @@ through D101-H and arbitrary white SS, retaining its original A
 ancestry. A no-return certificate would close this specific detour;
 a retained return must be explained before claiming admission.
 Record searched: H.low|high.LL with reentr|admission|third|budget
-->20 hits12files; H.low|111.low|low.exit with white.SS|A.return|
-A.reentry|D101 ->12 hits8files. GC1087/1104/1105 sources read;
+-> 20 hits in 12 files; H.low|111.low|low.exit with white.SS|A.return|
+A.reentry|D101 -> 12 hits in 8 files. GC1087/1104/1105 sources read;
 the reviewed two-high-low bound is reused, not reproved.
 P1 BEFORE run: no original A-S-D111-H-low-D101-H history reaches
 a black11 AP13 endpoint after any positive number of white SS.
 Counterfactual: an omitted low detour replenishes the A budget;
 retain a complete original-origin/end pair rather than just fresh
-low packets. Use the existing20-cell relaxation, no widening.
+low packets. Use the existing 20-cell relaxation, no widening.
 Controls: independently scalar-replay a selected full origin flow;
-GC1105's first H-low set remains107 packets; GC1100's actual direct
+GC1105's first H-low set remains 107 packets; GC1100's actual direct
 white-SS A return must remain a positive control.
 Unexpected check: first H-low branches might have no D101-H-whiteSS
 entrance, making no-reset vacuous. Count the entrance separately.
 Finite visited-set closure certifies all SS counts, not a time bound.
-No CUT, membership, solver, relaxed-record or Local111-word run.
+No CUT, membership, solver, relaxed-record or Local 111-word run.
 P1 REFUTED: 22 nonvacuous white SS entrances reach 51 black A
 endpoints with 1,530 original-origin/end pairs; first SS returns no A.
 P2 BEFORE structural certificate: these 62 inner white SS packets
@@ -41,7 +41,7 @@ a specific missing transition/cut target, not global admission or
 actual realizability. No new vertex rank is fitted; GC1102's rank
 is checked on every inner edge of this different entrance set.
 REFUTED-BY: retained original A packet 11101000111011100000 returns
-to 11101000111001100000 via N in the sound20-cell relation.
+to 11101000111001100000 via N in the sound 20-cell relation.
 """
 import rule30_black_A_111_diversion as p
 import rule30_delayed_A_SS_star_rank as r
