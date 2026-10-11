@@ -34,7 +34,7 @@ FIRST = ['RECORD-MAP.md', 'PERIOD-TWO.md', 'STATE-OF-THE-PROOF.md', 'RULE30-PRIZ
          'CO-DISCOVERED-PROOFS.md', 'RULE30-GPT.md', 'PRIZE-PROBLEMS.md', 'COLLATZ-PRIZE.md', 'PRIOR-ART.md',
          'CONSTELLATION.md', 'SPARKS.md']
 LEDGERS = ('CHAT-LEDGER', 'CLOUD-LOCAL', 'CASUAL-LEDGER')
-IDS = re.compile(r'\b(?:GC\d+|G\d+|CL\d+|L\d+|SC\d+|SP\d+)\b|\bentr(?:y|ies) \d+|§ ?\d+(?:\.\d+)*|\b8\.\d+\b')
+IDS = re.compile(r'\b(?:GC\d+|G\d+|CL\d+|L\d+|SC\d+|SP\d+|IN\d{3,})\b|\bentr(?:y|ies) \d+|§ ?\d+(?:\.\d+)*|\b8\.\d+\b')
 
 
 def ledger_key(path):

@@ -160,6 +160,27 @@ ADDENDUM (2026-10-11 04:36 BST): the depth-first tail of X_4 to depth 122 and th
          builder is byte-identical to the first one at widths 8 and 12 and gives the record's state counts at 16, 20.
   Exact tables, witnesses and death counts for every run: rule30_intel_forced_only.txt. Logs outside git. The DFS
          tail (X_4) is the only part that costs hours; it is CPU-bound and threads well; no shader work was needed.
+
+OUTCOME of FO-P8 (2026-10-11 08:22 BST): X_40, the exact visible language to length 40, both phases, merged throughout
+  (27,365 and 25,947 states at the top level), 0.1 s each on 16 threads. All COMPUTED.
+  Exact records over the real language: R^F_L(d) is exact for d = 1..55 (phase 0) and 1..56 (phase 1), where every
+         record run ends inside the first 40 visible bits. Phase 0, d = 1..55: 2 15 14 13 12 11 10 9 8 29 28 27 26 25
+         24 23 22 21 20 19 18 17 16 15 14 17 16 21 20 19 18 17 16 17 16 17 16 23 22 21 20 25 24 23 22 21 20 25 24 23
+         22 21 20 21 20. Phase 1, d = 1..56: 9 8 7 6 5 4 7 6 7 6 13 12 11 10 9 8 25 24 23 22 21 20 23 22 21 20 19 18
+         17 16 15 14 19 18 19 18 31 30 29 28 27 26 25 24 23 22 23 22 31 30 29 28 27 26 25 24.
+  (a) HELD: R^F(X_40) <= R^F(X_4) at every depth; where exact, the larger phase's R^F_L is at least R_real at all 55
+         depths, equal only at d = 9 (8). Over d = 20..55 it is 2.5 times R_real on average (1.4 to 3.9), 13.8 cells
+         more: dropping the checks keeps about 2.5 times the real run at these depths.
+  (b) HELD: no orbit reached the cap. (c) HELD: exact horizons 55 and 56.
+  (d) HELD: slopes over 40..122 (121) are 0.152 (ratio 0.85 of h/(1 - h) = 0.1776) and 0.137 (0.78 of 0.1743). Over
+         the exact range only (20..55) the slope of the two-phase maximum is 0.25, too short a range to read.
+  (e) HELD: R^F(X_40) <= R^F(width 20) at 122 of 122 depths (phase 0) and 119 of 121 (phase 1, above at 101, 102).
+  Unexpected check: the death split is 31.4 / 14.7 / 53.9% (11, 00000, longer; phase 1 31.4 / 14.4 / 54.2), the width-20
+         layer's to within 0.6 points. More: in phase 0 the two records are EQUAL at 120 of 122 depths (below at 104
+         and 105), and in phase 1 at 97 of 121. The minimal forbidden words of length 21..40 change the forced-only
+         record almost nowhere that the width-20 layer has not already reached: the forced-only door has converged at
+         this level, and what it leaves is the checks' factor of about 2.5 and the words beyond length 40.
+  Tables, witnesses and death counts: rule30_intel_forced_only.txt, sections X_40.
 """
 import os, subprocess, sys, time
 
@@ -183,20 +204,24 @@ def run(lang, phase, maxm, maxstates='30000000', nodedup=0, threads=None, tag=No
     os.makedirs(SCRATCH, exist_ok=True)
     env = dict(os.environ)
     if threads: env['OMP_NUM_THREADS'] = str(threads)
-    tag = tag or f"{lang.replace('dfa=', '').replace('/', '_')}_p{phase}_m{maxm}" + ('_nodedup' if nodedup else '') + (f'_dfs{dfsmax}' if dfsmax else '')
+    tag = tag or (f"{lang.replace('dfa=', '').replace('/', '_')}_p{phase}_m{maxm}" + ('_nodedup' if nodedup else '')
+                  + (f'_dfs{dfsmax}' if dfsmax else ''))
     log = os.path.join(SCRATCH, tag + '.log')
     t0 = time.time()
     with open(log, 'w') as fh:
-        subprocess.run([BIN, str(phase), lang, str(maxm), str(maxstates), str(nodedup), str(dfsmax)], stdout=fh, check=True, env=env)
+        subprocess.run([BIN, str(phase), lang, str(maxm), str(maxstates), str(nodedup), str(dfsmax)], stdout=fh,
+                       check=True, env=env)
     R, cens, wit, levels, kinds = {}, {}, {}, [], []
     for line in open(log):
         p = line.split()
         if not p: continue
-        if p[0] == 'D': R[int(p[1])] = int(p[2]); cens[int(p[1])] = int(p[3]); wit[int(p[1])] = p[4] if len(p) > 4 else ''
+        if p[0] == 'D':
+            R[int(p[1])] = int(p[2]); cens[int(p[1])] = int(p[3]); wit[int(p[1])] = p[4] if len(p) > 4 else ''
         elif p[0] == 'L': levels.append((int(p[1]), int(p[2]), int(p[3]), float(p[4])))
         elif p[0] == 'K': kinds.append(tuple(int(x) for x in p[1:]))
     exact = [d for d in R if not cens.get(d, 0)]
-    print(f'{tag}: {time.time() - t0:.0f} s; exact to depth {max(exact) if exact else 0}; censored depths {sum(cens.values())}; log {log}')
+    print(f'{tag}: {time.time() - t0:.0f} s; exact to depth {max(exact) if exact else 0}; '
+          f'censored depths {sum(cens.values())}; log {log}')
     return R, cens, wit, levels, kinds
 
 
@@ -205,7 +230,8 @@ def calib():
     for phase in (0, 1):
         R, cens, _, _, _ = run('x4', phase, 21 if phase == 0 else 20, threads=8)
         got = [R.get(d, 0) for d in range(1, len(EXPECT[phase]) + 1)]
-        print(f'phase {phase} R^F(1..{len(got)}) = {got}  expected {EXPECT[phase]}  ->', 'MATCH' if got == EXPECT[phase] else 'MISMATCH')
+        print(f'phase {phase} R^F(1..{len(got)}) = {got}  expected {EXPECT[phase]}  ->',
+              'MATCH' if got == EXPECT[phase] else 'MISMATCH')
         ok &= got == EXPECT[phase]
         R2, _, _, _, _ = run('x4', phase, 41, threads=8)
         R3, _, _, _, _ = run('x4', phase, 41, nodedup=1, threads=8)
@@ -228,6 +254,6 @@ if __name__ == '__main__':
         R, cens, wit, levels, kinds = run(lang, phase, maxm, maxstates, dfsmax=dfsmax)
         print('levels (m, states, children, s):', levels[-3:])
         print('R^F(d):', ' '.join(f"{d}:{R[d]}{'*' if cens[d] else ''}" for d in sorted(R)))
-        print('deaths (m, at 11, at other, capped):', kinds[-1] if kinds else None)
+        print('deaths (m, at 11, at 00000, at a longer word, capped):', kinds[-1] if kinds else None)
     else:
         print(__doc__)

@@ -1,0 +1,66 @@
+# SX: exactness thresholds L(W) of the strip form, full traces (KIMI-QUESTIONS-4, Q1). Intel, 2026-10-11.
+# Engine rule30_intel_strip_trace.c; see rule30_intel_strip_threshold.py. Traces are written y_0 first.
+
+## phase 0 (wall x_t(0) = (t + 0) mod 2), traces to length 32
+|T(l)|, l = 1..32: 2 3 4 5 7 8 10 12 15 18 22 26 32 36 44 49 59 64 78 86 102 112 133 144 172 184 217 231 270 287 337 358
+W = 1: L(W) = 3; containment PASS
+    extra at l = 4: 0000 (minimal); w(f) = 2, ceil(l/2) = 2 TIGHT
+    extra at l = 4: 0101 (minimal); w(f) = 2, ceil(l/2) = 2 TIGHT
+W = 2: L(W) = 6; containment PASS
+    extra at l = 7: 0001000 (minimal); w(f) = 4, ceil(l/2) = 4 TIGHT
+W = 3: L(W) = 6; containment PASS
+    extra at l = 7: 0001000 (minimal); w(f) = 4, ceil(l/2) = 4 TIGHT
+W = 4: L(W) = 10; containment PASS
+    extra at l = 11: 11001101001 (minimal); w(f) = 6, ceil(l/2) = 6 TIGHT
+W = 5: L(W) = 10; containment PASS
+    extra at l = 11: 11001101001 (minimal); w(f) = 6, ceil(l/2) = 6 TIGHT
+W = 6: L(W) = 17; containment PASS
+    extra at l = 18: 001100110001001100 (minimal); w(f) = 7, ceil(l/2) = 9
+    extra at l = 18: 110100110001001101 (minimal); w(f) = 7, ceil(l/2) = 9
+W = 7: L(W) = 20; containment PASS
+    extra at l = 21: 000100110100010011000 (minimal); w(f) = 10, ceil(l/2) = 11
+    extra at l = 21: 110100110100010011000 (minimal); w(f) = 10, ceil(l/2) = 11
+W = 8: L(W) = 20; containment PASS
+    extra at l = 21: 000100110100010011000 (minimal); w(f) = 10, ceil(l/2) = 11
+    extra at l = 21: 110100110100010011000 (minimal); w(f) = 10, ceil(l/2) = 11
+W = 9: L(W) = 20; containment PASS
+    extra at l = 21: 000100110100010011000 (minimal); w(f) = 10, ceil(l/2) = 11
+    extra at l = 21: 110100110100010011000 (minimal); w(f) = 10, ceil(l/2) = 11
+W = 10: L(W) = 26; containment PASS
+    extra at l = 27: 110001001101000100110011000 (minimal); w(f) = 11, ceil(l/2) = 14
+W = 11: L(W) = 30; containment PASS
+    extra at l = 31: 0011010001001100110100010011000 (minimal); w(f) = 12, ceil(l/2) = 16
+W = 12: L(W) = >=32; containment PASS
+W = 13: L(W) = >=32; containment PASS
+W = 14: L(W) = >=32; containment PASS
+
+## phase 1 (wall x_t(0) = (t + 1) mod 2), traces to length 32
+|T(l)|, l = 1..32: 2 3 4 5 6 9 10 12 15 19 22 27 32 40 43 52 58 72 78 91 101 122 133 156 168 200 214 253 268 311 331 385
+W = 1: L(W) = 2; containment PASS
+    extra at l = 3: 000 (minimal); w(f) = 2, ceil(l/2) = 2 TIGHT
+W = 2: L(W) = 7; containment PASS
+    extra at l = 8: 10001000 (minimal); w(f) = 4, ceil(l/2) = 4 TIGHT
+W = 3: L(W) = 7; containment PASS
+    extra at l = 8: 10001000 (minimal); w(f) = 4, ceil(l/2) = 4 TIGHT
+W = 4: L(W) = 11; containment PASS
+    extra at l = 12: 011001101001 (minimal); w(f) = 6, ceil(l/2) = 6 TIGHT
+W = 5: L(W) = 11; containment PASS
+    extra at l = 12: 011001101001 (minimal); w(f) = 6, ceil(l/2) = 6 TIGHT
+W = 6: L(W) = 14; containment PASS
+    extra at l = 15: 011010011001101 (minimal); w(f) = 8, ceil(l/2) = 8 TIGHT
+W = 7: L(W) = 14; containment PASS
+    extra at l = 15: 011010011001101 (minimal); w(f) = 8, ceil(l/2) = 8 TIGHT
+W = 8: L(W) = 19; containment PASS
+    extra at l = 20: 10100110100010011000 (minimal); w(f) = 10, ceil(l/2) = 10 TIGHT
+W = 9: L(W) = 19; containment PASS
+    extra at l = 20: 10100110100010011000 (minimal); w(f) = 10, ceil(l/2) = 10 TIGHT
+W = 10: L(W) = 23; containment PASS
+    extra at l = 24: 001000100110001001101000 (minimal); w(f) = 13, ceil(l/2) = 12
+W = 11: L(W) = 23; containment PASS
+    extra at l = 24: 001000100110001001101000 (minimal); w(f) = 13, ceil(l/2) = 12
+W = 12: L(W) = 23; containment PASS
+    extra at l = 24: 001000100110001001101000 (minimal); w(f) = 13, ceil(l/2) = 12
+W = 13: L(W) = 29; containment PASS
+    extra at l = 30: 011001100010011001100110011000 (minimal); w(f) = 16, ceil(l/2) = 15
+W = 14: L(W) = 29; containment PASS
+    extra at l = 30: 011001100010011001100110011000 (minimal); w(f) = 16, ceil(l/2) = 15
