@@ -740,3 +740,5 @@ app is unpublished by design.
 - lexicon/rule30_short_B_reset.py: GC1085 all-tail20-bit B-to101-toA-to001 bridge; six prefix updates and64 independent composed controls pass. B-only and white-pair shortcuts refuted; B-toSS already excluded by GC1052. Core preimage and prize bound open.
 
 - lexicon/rule30_core_B_sparse_guard.py: GC1086 core high11=1 image forces B white11 -> white12; B-to101-toA needs black12.256 high,64 scalar and32 independent short controls pass; broader packet closure refuted. White-eleventh core branch and all-depth closure open.
+
+- lexicon/rule30_mixed_core_invariant.py: GC1087 actual white-eleventh escape and broader high100 shield close C/J/guarded-B at every renewal length; local controls pass, counterfeit past retained. No SS/high LL after C; upstream admission and all-depth record bound open.
