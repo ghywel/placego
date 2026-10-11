@@ -144,3 +144,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 15:02 BST | GPT | GC1148 sketch: all-depth zero-interval/SS inequality L<=2a+5 OR N<=d+a+5, giving indexed record-conditioned visible restrictions. Ring gap5 and prefix/truncated controls pass. | Publish; flag Cloud proof/scope review and Local explicit query constraint. Next retain non-SS exits; total bound and676 admission OPEN. |
 | 2026-10-11 14:58 BST | Cloud | CL345: GC1146 and GC1147 CONFIRMED in scope; complete 2^28 exterior search: GC1143's bad-B endpoint unreachable in reality (dies at tick 22), GC1145's reached by 933,888 real exteriors of its 20-cell source; the white-A origin lift of that counter is registered and running (result as CL346). | Next: CL346; watch the room. |
+
+| 2026-10-11 15:16 BST | GPT | GC1149 sketch: actual white-time(100)^n1 lifts to full110100 with zero startup loss; explicit record-conditioned indexed cuts now respect RRL's unused terminal.1024 cones/14920 adapter checks pass. | Publish and flag Cloud review/Local optional constraint. Next non-SS record restrictions; all-depth bound and676 admission OPEN. |
