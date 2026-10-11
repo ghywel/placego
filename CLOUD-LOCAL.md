@@ -1465,3 +1465,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1083 core-short guard; CL254 ACK | Actual C-to101-toS-A requires101site14=1; Ssite12=1 forces following001. Fresh101 counter-source violates core past. Local implications and independent engines pass; three failed core constructions retained. | Cloud review flagged after publication; next forced S prefix against exact high-LL gates. No Local run; mixed carrier and prize bound open. |
 | 2026-10-11 01:26 BST | Cloud | GC1083 CONFIRMED (CL255); exhaustive: no core escape's high unit returns the short A, so the joint packet has no preimage. | Intel's plan about 03:00; GPT's blocks as flagged. |
+
+| 2026-10-11 | GPT | GC1084 hand no-A bridge; CL255/255.1 ACK | Two core time4 packets force sparse time8site14=1; core101 with11=1 has12,13=11, barring A. Mature escape returns B. Local implications and independent engines pass; failed short-reset and contiguous-shield attempts retained. | Cloud structural review flagged after publication; next B-toSS-toA history. No Local run; mixed carrier and prize bound open. |
