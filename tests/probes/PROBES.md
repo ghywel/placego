@@ -801,3 +801,5 @@ app is unpublished by design.
 - lexicon/rule30_mixed_m2_overlap.py: GC1112 sharp 87-sample pure-M2 overlap for every FE/EF concatenation; LL-spacing hand proof and complete falling-rank product. M2-only cuts >=88 inert on this model; no membership test.
 
 - lexicon/rule30_minimal_mixed_bridge.py: GC1113 bare 196-tick mixed generators, sharp M2 overlap68; E_m overlap68+19m. Reported120 absence would cap optional m<=3/bridge266 ticks, not reentries; exact receipt pending.
+
+- lexicon/rule30_fixed_m2_cut_charge.py: GC1114 specified 114-symbol M2 rotation gives sharp typed101 grammar cap 16 macros/620 ticks and optional wait threshold 2/228; terminal M1 guard retained. Absence receipt pending, no membership query.
