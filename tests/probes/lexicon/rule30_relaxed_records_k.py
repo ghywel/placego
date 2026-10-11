@@ -191,6 +191,11 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
          caps, 2 rounds, phase 0 first and phase 1 only if phase 0 is UNSAT, skipping a depth the 1,800 s sweep has
          decided, gives a WITNESS at at least 5 of the 7 depths. The odds: 14 of the 17 decided depths in 125 .. 144
          reach 18. Record searched: 'R_real\((14[5-9]|15[01])\)|d = (14[5-9]|15[01]),' -> no hit.
+  CUT-P24 WITHDRAWN (02:32, before any verdict; 151 had run 25 minutes): CL260 moves lower bounds to sampling, and
+         SP's deep run A already gives R_real(151) >= 18 (and 137, 138, 141). The chain was stopped.
+  CUT-P17 STOPPED at 143 (02:32): sweep137.sh was ended after 143 phase 1, its last attempt, for the same reason and to
+         free cores for SAT-200 (rule30_rreal_sample.py). At the stop, 1,800 s caps gave one witness (141) in 137 .. 143;
+         137 and 138 needed the 4-hour caps; 140 is <= 17. Not scorable as registered (145 .. 151 not run at 1,800 s).
   CUT-P17 (blind, 0.5; registered 20:35 before its sweep): of d = 137 .. 151 (140 excluded, <= 17), at least half give a
          CUT WITNESS at L = 18 (phase 0 then phase 1, 1,800 s caps), so 140's dip is isolated rather than a stretch.
   CUT-P15 (22:10): WITNESSES at 127 (p0), 128 (p1), 129, 130, 131, 133 (p0), 134 (p1), 135 (p0), each rule30_witness_check
