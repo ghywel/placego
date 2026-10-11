@@ -81,7 +81,8 @@ for name,source,mac in CASES:
         if not ok: fails+=1; ff.add(t)
     print(name,'| H paths to the macro endpoint:',len(hp),'| right pairs at ticks 3,4,5:',sorted(pairs),
         '| failing the two-time check:',fails,'of',len(hp),'first failing tick',sorted(ff),flush=True)
-    segs=[len(paths(macs[i],macs[i+1],SS,10+6*i)) for i in range(3)]; print('    SS paths between macro states:',segs,flush=True)
+    segs=[len(paths(macs[i],macs[i+1],SS,
+        10+6*i)) for i in range(3)]; print('    SS paths between macro states:',segs,flush=True)
     cps={10:macs[0],16:macs[1],22:macs[2],28:macs[3]}
     tot=real_counts(src,cps)
     print('    real exteriors (all 2^28 of cells 21..48) with the track at every tick reaching, cumulatively: tick 10',tot[10],'| 16',tot[16],'| 22',tot[22],'| 28 (bad B)',tot[28],'| %.0fs'%(time.time()-t0),flush=True)
