@@ -33,6 +33,18 @@ PREDICTIONS, registered 2026-10-11 02:20 BST before the control run (2^28 sample
       curve is not flat a hundredfold past the smoke).
   Record searched: 'sampl' 'R_real' -> no prior sampling instrument in the record (STRATEGY-PLAN.md is the source).
 REFUTED-BY: SP0 or SP1 failing (the instrument); SP2 to SP4 as stated.
+
+OUTCOME, 2026-10-11 02:20 BST (control, 2^28 samples a phase, T = 180, 14 s a phase at two threads):
+  SP0 PASS: no excess anywhere; at the certified depths the sampled bounds are 121:15 122:14 123:14 124:15 132:16
+      140:15 144:16, all <= 17.
+  SP1 PASS: every witness (both phases, depths 20 .. 160) passes rule30_witness_check.check.
+  SP2 HELD: 97 of 101 depths equal the exact R_real; short by sampling at 86, 105, 107, 115.
+  SP3 REFUTED: R_real(133) >= 18 only (the bound reached 18 at 131,072 samples and never rose); Intel's >= 23 is not
+      reproduced, so its witness is wanted for re-simulation (CL260 asked Intel to publish the nine).
+  SP4 HELD: 24 of 40 depths in 121 .. 160 rose from 2^22 to 2^28.
+  Bounds 121 .. 160: 15 14 14 15 21 20 19 18 19 18 17 16 18 18 19 18 17 16 15 15 18 17 17 16 16 15 17 17 17 16 18
+      17 16 17 16 15 15 20 19 18. New beyond SAT: R_real(125) >= 21 (so 126 >= 20, 127 >= 19 by the plateau law),
+      129 >= 19, 135 >= 19, 158 >= 20.
 """
 import os
 import re
