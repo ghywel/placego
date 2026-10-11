@@ -140,6 +140,51 @@ CAR-P10, registered 09:46 BST, before the exact enumeration (mode block): the co
          shrinks by a factor between 0.05 and 0.25 per step for k = 2..8 (a hidden chain with a small fast state).
   Counterfactual: equal conditional laws at some order m <= 13, which would make the column carry an exact Markov
   chain of order m and would be the set's "new exactly solvable piece of Rule 30".
+
+OUTCOME, second block (2026-10-11 09:53 BST): the exact column-carry law (mode block, k = 12 in 0.1 s and k = 16 over
+all 2^32 rows in 22 s, 8 threads) and what it showed. All COMPUTED exactly unless marked PROVED.
+  CAR-P10 (a), control, FAILED as worded: the sampled H_k exceed the exact ones by 0.7, 1.8, 2.6 .. 11 x 10^-4 at
+         k = 1, 2, 3 .. 12, against my tolerance of 10^-4. The gap grows by 0.9 x 10^-4 a step, which is what the
+         sample's carry density 0.250053 (1.3 standard errors above 1/4) gives, log2(3) x 5.3 x 10^-5 per step. The
+         instrument is right; my tolerance ignored that a density error adds up in H_k linearly in k.
+  CAR-P10 (b) HELD: the column carry is not Markov of any order m <= 14. The largest difference between the laws
+         given the last m and the last 15 values is 0.25, 0.167, 0.05, 0.021, 0.0077, 0.0030, 0.0011, 4.3e-4, 1.65e-4,
+         6.3e-5, 2.4e-5, 9.2e-6, 3.5e-6, 1.3e-6, 5.1e-7 for m = 0..14, shrinking by 0.382 a step (1/phi^2, phi the
+         golden ratio); the exact integer test finds a difference at every m. The block law is exactly stationary.
+  CAR-P10 (c) HELD: h_k = H_(k+1) - H_k = 0.737517, 0.701205, 0.699516, 0.699273, 0.699247, 0.699244, ... decreases
+         wherever double precision resolves it (k <= 13) and strictly by (b); h_k - h_15 shrinks by 0.139, 0.110,
+         0.121, 0.117, 0.119, 0.118, 0.118 for k = 2..8, tending to 0.1180 (phi^-3 / 2 = 0.11803, observed only).
+  THE STRUCTURE (PROVED, one line; checked exactly). For every configuration, c_t(i) = x_t(i+1) x_{t+1}(i+1): if
+         x_t(i+1) = 1 the rule gives x_{t+1}(i+1) = 1 - x_t(i), which is the carry, and if it is 0 both sides are 0.
+         The carry is the AND of the column to its right at two consecutive times. So Rule 30 reads
+         x_{t+1}(i) XOR x_t(i+1) x_{t+1}(i+1) = x_t(i-1) XOR x_t(i), a Gray step corrected by a space-time AND, and
+         the run count is K_t = sum_j x_t(j) x_{t+1}(j), the overlap of two consecutive rows.
+         Under the coin measure column 1 is i.i.d. fair (PROVED: x_t(1) contains the fresh cell x_0(1 - t) through
+         x_{t-1}(0), and no earlier value of column 1 does). Hence the column carry is the sliding AND of fair coins,
+         c_t = b_t b_{t+1}: its exact law over all 2^32 rows equals that of 17 fair coins pattern by pattern (10,252
+         patterns), and the identity has no violation on 200 random rings over 50 steps. Consequences, all from the
+         sliding AND: correlation 1/3 at lag 1 and exactly 0 beyond (1-dependent); P(0^m) = F_(m+3) / 2^(m+1) and
+         P(1 | 0^m) = F_(m+1) / (2 F_(m+3)) -> 1/(2 phi^2) (Fibonacci F_1 = F_2 = 1; zero runs are golden-mean
+         words); after 1 the next carry is 1 with probability 1/2, after 10 it is 0, and 100 renews the process; no
+         finite order, memory ratio 1/phi^2; entropy rate 0.699243203387676 bits (the sliding AND's, h_19 = h_21).
+  Reading for the set's Q3 counterfactual: the column carry is exactly solvable, but as a sliding block code of an
+         i.i.d. sequence (a two-state hidden Markov chain), not as a finite-order Markov chain; that is why the
+         entropy estimates converge so fast (ratio 0.118) without ever becoming exact. No novelty is claimed for the
+         one-line identity; the record searched has the Gray split (CL046) but not this form of its correction.
+
+CAR-P11, registered 2026-10-11 10:04 BST before the lag run (CL310: the lag laws exactly). Mode lag: for each t, every row
+of the cells -4..2t+5, so Cov(X_0, X_t)/n is a finite sum of exact rationals; calibrated at t = 1, 2 against the
+exhaustive rings (K 1/2, 1/8; D -1/2, 11/40; B -1/2, 1/4, all reproduced exactly) before this registration.
+  PROVED by hand first (the fresh-cell argument, left-permutivity): the pair (x_t(j), x_{t+1}(j)) is a bijective
+  function of x_0(j-t-1), x_0(j-t) given x_0 to their right, so it is uniform and independent of x_0(>= j-t+1); the
+  same holds for (x_t(j), x_t(j+1)) with x_0(j-t), x_0(j-t+1), and for x_t(j) alone. Hence only sites on the rightward
+  light-speed diagonal contribute: j in [t-1, t+2] for K, [t-1, t+1] for D, and j = t alone for B, so that
+  corr(B_0, B_t) = Cov(x_0(0), x_t(t)) / (1/4) = rho_t, the record's light-speed diagonal law (CL078, DB).
+  (a, control) every other site in the window gives exactly zero covariance.
+  (b, control) corr(B_0, B_t) equals the record's rho_t for t = 1..12 (-1/2, 1/4, -1/4, 5/32, -5/64, 77/1024, ...).
+  (c, 0.5) corr(K_0, K_4) = 5/128 exactly (CL310's conjecture). (d, 0.5) corr(D_0, D_3) = -29/160 exactly.
+  (e, 0.6) |corr(K_0, K_t)| < 0.01 for every t = 8..12. (f, 0.4) corr(K_0, K_t) > 0 for every t <= 12.
+  Unexpected check (not predicted): whether the K and D lag laws are fixed by the B law (rho) alone.
 """
 import math, os, re, subprocess, sys, time
 from collections import defaultdict
@@ -248,6 +293,39 @@ def column_analysis(log):
     return res
 
 
+# ---------------- CAR-P10: the exact law of the column carry ----------------
+def block_analysis(log):
+    """exact block law of c_t(0), t = 0..K-1, from all 2^(2K) rows; returns exact entropies, the stationarity control
+    and, for each order m, the largest difference between P(c_{K-1} = 1 | last m) and P(c_{K-1} = 1 | all K-1)"""
+    rows = [tuple(map(int, l.split()[1:])) for l in open(log) if l.startswith('B ')]
+    K = rows[0][0]; N = np.zeros(1 << K, dtype=np.int64)
+    for _, p, v in rows: N[p] = v
+    tot = int(N.sum())
+    H = []
+    for k in range(1, K + 1):
+        sub = np.bincount(np.arange(1 << K) & ((1 << k) - 1), weights=N.astype(float), minlength=1 << k)
+        pr = sub[sub > 0] / tot; H.append(float(-(pr * np.log2(pr)).sum()))
+    # stationarity: the law of bits 1..K-1 equals that of bits 0..K-2 (exact integer comparison)
+    a0 = np.bincount(np.arange(1 << K) & ((1 << (K - 1)) - 1), weights=N, minlength=1 << (K - 1)).astype(np.int64)
+    a1 = np.bincount(np.arange(1 << K) >> 1, weights=N, minlength=1 << (K - 1)).astype(np.int64)
+    stationary = bool((a0 == a1).all())
+    # Markov tests on the last bit: context = bits 0..K-2, the last m of them = bits K-1-m..K-2
+    idx = np.arange(1 << K); last = (idx >> (K - 1)) & 1; ctx = idx & ((1 << (K - 1)) - 1)
+    full1 = np.bincount(ctx, weights=N * last, minlength=1 << (K - 1))
+    full = np.bincount(ctx, weights=N, minlength=1 << (K - 1))
+    dev = {}
+    for m in range(0, K - 1):
+        cm = ctx >> (K - 1 - m)
+        m1 = np.bincount(cm, weights=N * last, minlength=1 << m); mt = np.bincount(cm, weights=N, minlength=1 << m)
+        ok = full > 0; pf = full1[ok] / full[ok]; sel = (np.arange(1 << (K - 1)) >> (K - 1 - m))[ok]
+        pm = (m1 / np.where(mt > 0, mt, 1))[sel]
+        # exact zero test with integers: full1 * mt == m1 * full for every context
+        ex = np.all(full1[ok].astype(np.int64) * mt[(np.arange(1 << (K - 1)) >> (K - 1 - m))[ok]].astype(np.int64)
+                    == m1[(np.arange(1 << (K - 1)) >> (K - 1 - m))[ok]].astype(np.int64) * full[ok].astype(np.int64))
+        dev[m] = (float(np.abs(pf - pm).max()), bool(ex))
+    return dict(K=K, tot=tot, H=H, stationary=stationary, dev=dev)
+
+
 def report():
     out = ['# CAR: the carry of Rule 30 (KIMI-QUESTIONS-5). Intel, 2026-10-11. Engine rule30_intel_carry.c; see '
            'rule30_intel_carry.py.']
@@ -296,6 +374,18 @@ def report():
             out.append('  H_k, k = 1..16: ' + ' '.join(f'{h:.5f}' for h in r['H']))
             out.append('  H_(k+1) - H_k: ' + ' '.join(f'{b - a:.5f}' for a, b in zip(r['H'], r['H'][1:])))
             out.append('  corr, lags 1..64: ' + ' '.join(f'{x:+.5f}' for x in r['corr']))
+    for K in range(20, 0, -1):
+        bl = os.path.join(SCRATCH, f'block_{K}.log')
+        if not os.path.exists(bl): continue
+        b = block_analysis(bl)
+        out += ['', f'## CAR-P10: the exact law of the column carry, blocks of length {K} from all 2^{2 * K} rows',
+                f'stationarity of the block law (bits 1..K-1 against 0..K-2), exact: {b["stationary"]}',
+                'H_k exact, k = 1..%d: %s' % (K, ' '.join(f'{h:.6f}' for h in b['H'])),
+                'h_k = H_(k+1) - H_k: ' + ' '.join(f'{y - x:.6f}' for x, y in zip(b['H'], b['H'][1:])),
+                '# order m: the largest |P(c = 1 | last m) - P(c = 1 | last K-1)| over contexts, and whether all',
+                '# are equal']
+        out += [f'  m = {m:2d}: {d:.3e} {"EQUAL" if ex else "differ"}' for m, (d, ex) in b['dev'].items()]
+        break
     import textwrap
     wrapped = []
     for l in out:
@@ -309,4 +399,5 @@ if __name__ == '__main__':
     elif mode == 'ring': engine(['ring', sys.argv[2], sys.argv[3]], 'ring')
     elif mode == 'cone': engine(['cone', sys.argv[2]], f'cone_{sys.argv[2]}')
     elif mode == 'column': engine(['column', sys.argv[2], sys.argv[3]], 'column')
+    elif mode == 'block': engine(['block', sys.argv[2]], f'block_{sys.argv[2]}')
     elif mode == 'report': report()

@@ -5875,3 +5875,50 @@ rows, N has 96,029 origin/end pairs, 185 sources and 681 endpoints; no source li
 cycle, no N endpoint ever reaches an N source again, and the cut product with N edges included is unchanged: pure M3
 only. N is a one-shot entrance into the typed components, and the closure stands with it.
 
+### 8.90 The carry of Rule 30: the Gray correction is a two-time AND, and the column carry is exactly solvable (2026-10-11 10:06 BST)
+
+The question is the owner's (2026-10-11, CONSTELLATION row 21, stated for a worker in KIMI-QUESTIONS-5.md): write the
+rule as the two-cell Gray step plus a correction, x_{t+1}(i) = x_t(i-1) XOR x_t(i) XOR c_t(i) with c_t(i) = (1 - x_t(i))
+x_t(i+1), in the way that multiplying by 3 is a Gray step plus carries, and ask whether the correction has the kind of
+exact structure Holte found for arithmetic carries (a Markov chain with an explicit matrix and eigenvalues 1, 1/b,
+1/b^2, ...). Intel took the lane (IN007, probe rule30_intel_carry.py, C with OpenMP on the Intel MacBook); the checks
+here are Cloud's (CL308, CL310, CL313).
+
+**The identity (Intel, PROVED; checked here on all sixteen windows).** c_t(i) = x_t(i+1) x_{t+1}(i+1). If x_t(i+1) = 1
+the rule gives x_{t+1}(i+1) = x_t(i) XOR 1 = 1 - x_t(i), which is the correction; if x_t(i+1) = 0 both sides are 0. So
+the Gray step's correction is the AND of the column to the right at two consecutive times, the run count K_t of a row is
+the overlap of rows t and t+1, and the rule has the space-time form x_{t+1}(i) XOR x_t(i+1) x_{t+1}(i+1) = x_t(i-1) XOR
+x_t(i).
+
+**The column carry is exactly solvable (Intel, PROVED; checked here by exact enumeration of all 2^15 coin words).**
+Under the coin measure on the whole line, which Rule 30 preserves, a column is a sequence of independent fair coins
+(each x_t(0) contains the fresh cell x_0(-t)), so by the identity the column carry c_t(0) = x_t(1) x_{t+1}(1) is the
+sliding AND of fair coins: a two-state hidden chain, not a Markov chain of any finite order (the exact conditional laws
+differ at every order, the difference shrinking by a factor 1/phi^2 per step), with correlation 1/3 at lag 1 and exactly
+0 at every larger lag, P(c = 1 after m zeros) = F(m+1) / (2 F(m+3)) with F the Fibonacci numbers (1/6, 1/5, 3/16, 5/26,
+4/21, 13/68 for m = 1..6), and entropy rate h = 1 - (1/16) sum over g >= 1 of F(g) 2^(-g) log2 F(g) = 0.69924320338768
+bits: given the carries the coins are fixed except in the gaps between runs of two or more ones, which arrive at rate
+1/8 with length law F(g)/2^(g+1) and F(g) equally likely fillings. The block-entropy differences of the exact process
+converge to 0.699243 by block length 7, and a sampled estimate of 0.69934 (10^5 rings of 4,096 cells, 2,000 steps) had
+already pointed there. Along the leftward light-speed diagonal the carry is i.i.d. Bernoulli(1/4) (fresh cells); along
+the rightward one it has long memory (correlations -1/3, 1/4, -0.146, 0.120, ...).
+
+**Rings, exhaustive to n = 28 (Intel; n = 12, 14, 16 re-done here).** The run count K is not a Markov chain, and
+corr(K_0, K_1) = 1/2 and corr(K_0, K_2) = 1/8 exactly at every n, with 1/32 at lag 3 and about 5/128 at lag 4 (CL310,
+conjectured exact; Intel's IN008 is to decide them): there is no Holte matrix for the run count. The adjacent-black-pair
+count D (the Rule 150 correction) and the black count B have spectra near the powers of -1/2 (D at n = 28: -0.5048,
+0.2518, -0.1252, 0.0667), so a geometric ratio -1/2 does appear, for the three-XOR correction. K = 0 is absorbing and is
+reachable from a live row exactly when 3 divides n, because a row maps to all-black only if it is a rotation of
+(001)^(n/3) (a 1 at cell i forces 0, 0, 1 at i-1, i-2, i-3); the alternating row is fixed, so K = n/2 is absorbing for
+even n. Quasi-stationary mean and variance are n/4 and n/16 to four decimals.
+
+**The single cell to t = 65,536 (Intel).** The Pascal-mask identity x_t(0) = 1 XOR P_t holds at every t; the correction
+density over the whole mask tends to 1/8, because half of the mask lies outside the light cone, and to 1/4 inside it;
+the parity series has no autocorrelation above 0.011 at any lag to 64, powers of 2 included, and every window of 1,024
+steps is within 0.46..0.53 of balanced.
+
+**Scope.** None of this touches the centre column's periodicity directly: the exact solution lives under the coin
+measure, where the prize questions are not asked, and the single-cell parity is coin-like without being proved so. What
+the identity gives is a clean object, the two-time AND, in place of an ad hoc correction field, and the first exact
+answer to the owner's question: the run count has no amazing matrix, the three-XOR count nearly does, and the column
+carry is a solved hidden chain with a Fibonacci entropy rate.
