@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""rule30_cloud_solid_rows.py: the owner's question (2026-10-11 17:40 BST): can a Rule 30 pattern ever die, its bottom row
-becoming one solid colour? The proof is three lines (CL363); this file is the brute-force companion for rings and for
+"""rule30_cloud_solid_rows.py: the owner's question (2026-10-11 17:40 BST): can a Rule 30 pattern ever die, its bottom
+row becoming one solid colour? The proof is three lines (CL363); this file is the brute-force companion for rings and for
 finite patterns.
 
 RUN-ON:     cpu (Python 3 standard library; seconds)
