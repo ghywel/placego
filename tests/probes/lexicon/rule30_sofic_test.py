@@ -87,6 +87,12 @@ those of lengths 41 .. 44 are new cuts, to be certified by cake_lpr (MFC) afterw
   SOFX-P1 (blind, 0.6): |L_44| in phase 0 lies in 20,500 .. 22,500.
   SOFX-P2 (blind, 0.6): each new length 41 .. 44 has 60 .. 120 minimal forbidden words, in each phase.
   SOFX-P3 (blind, 0.5): every new minimal forbidden word passes cake_lpr (none is a solver artefact).
+  OUTCOME (2026-10-11 15:33 BST; phase 0 14:15 .. 15:08, phase 1 14:15 .. 15:30, beside the other jobs):
+    |L_n| for n = 41 .. 44, phase 0: 15,384  17,196  19,197  21,389; phase 1: 13,886  15,522  17,324  19,304.
+    New minimal forbidden words, phase 0: 84  71  95  109 (359); phase 1: 81  80  93  113 (367). Lists mfw44.txt and
+    mfw44p1.txt beside the others; MFC certified all 726 (mfw44 359 of 359, mfw44p1 367 of 367 VERIFIED-UNSAT).
+    SOFX-C1 PASS (both phases prefix- and factor-closed; phase 1 inside phase 0 at every n = 40 .. 44).
+    SOFX-P1 HELD (21,389). SOFX-P2 HELD (every count in 71 .. 113). SOFX-P3 HELD (726 of 726).
 """
 import os
 import sys

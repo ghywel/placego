@@ -45,7 +45,7 @@ sys.argv = _argv
 DIR = rlk.DIR
 CAKE = os.path.expanduser('~/np-build/cake_lpr/cake_lpr')
 KISSAT = os.environ.get('KISSAT', 'kissat')
-PHASE = {'mfw40': 0, 'mfw40p1': 1, 'cuts40_p0': 0, 'cuts40_p1': 1, 'cuts40_sl': 0}
+PHASE = {'mfw40': 0, 'mfw40p1': 1, 'cuts40_p0': 0, 'cuts40_p1': 1, 'cuts40_sl': 0, 'mfw44': 0, 'mfw44p1': 1}   # mfw44*: SOFX's lengths 41..44
 
 
 def cnf(w, phase):

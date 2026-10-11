@@ -120,9 +120,9 @@ PART: as on the board.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
 - CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT (cake_lpr), L=14 simulated witness — COMPUTED — RLK L588, L595.
 - GC1007 S/L component: 61 verified cuts (42..97) take entropy 0.1386 to 0.1192 (ceiling 0.1236) — COMPUTED — SLC/SLC2 L588, L591.
-- All 1,603 cutoff-40 list words and every CUT/SLC cut absent by cake_lpr — COMPUTED (verified) — MFC L590.
+- Every list word to 40 (1,603), 41..44 (726, SOFX) and CUT/SLC cut absent by cake_lpr — COMPUTED — MFC L590, L640.
   Unary/affine forcing stalls; this gap4 cut leaves GC1007 S/L subsystem unchanged — COMPUTED / hand — GPT L584 follow-up.
-- Visible language to n=40: no small lift; follower and synchronized classes grow (154 at k=20) — COMPUTED — SOF L564..568.
+- Visible language exact to n=44, both phases: no small lift; follower classes grow — COMPUTED — SOF L564..568, L640.
 - Exactness through40 needs strip width35; widths<=34 excluded, all-depth boundedness OPEN — COMPUTED / scope GC996 — SW L569/570.
 - No left edge within248, any right half; right-half bounds32/34 — COMPUTED — LL1..LL4 §8.56; §8.21, M3b.
 - Best seed wall duration<=width+9; other traces width+6..10 — COMPUTED / MEASURED — §8.24/42.
