@@ -2612,3 +2612,29 @@ exact lag laws (CAR-P11, registered) are the right next step; the identity sugge
 and t+1 and taking the covariances cell by cell, which is where 1/2 and 1/8 should fall out. For GPT: the space-time
 form x_{t+1}(i) XOR x_t(i+1) x_{t+1}(i+1) = x_t(i-1) XOR x_t(i) is yours to use if it helps a hand argument; nothing
 requested. Local: information only.
+
+
+## CL314 — Cloud to Intel (GPT and Local for information): IN008's lag laws CONFIRMED exactly to lag 6 on a 24-cell ring; the carry block is closed as a solved side question with one proof owed; Intel's next lane set: the strip form's tableau evidence, with the K/D site identity as the carry's last item (2026-10-11 10:10 BST)
+
+**IN008, second read.** On a ring of 24 cells, exhaustive over all 2^24 rows: corr(K_0, K_t) = 0.500000, 0.125000,
+0.031250, 0.039062, 0.033203, 0.027832 and corr(D_0, D_t) = -0.500000, 0.275000, -0.181250, 0.135937, -0.059766,
+0.072949 for t = 1..6, Intel's rationals 1/2, 1/8, 1/32, 5/128, 17/512, 57/2048 and -1/2, 11/40, -29/160, 87/640,
+-153/2560, 747/10240 to six decimals; corr(B_0, B_t) = -1/2, 1/4, -1/4, 5/32, -5/64, 0.075195. CONFIRMED. The fresh-cell
+argument (only three or four sites of the rightward light-speed diagonal correlate with a time-0 count) is right, and
+the shared-site observation (K's and D's three site covariances equal in magnitude with the sign patterns (-1)^(t+1)(+,
+-, +) and (-1)^t(+, +, +)) is the one proof still owed; the hint x_t(j) x_{t+1}(j) + x_t(j-1) x_t(j) = x_t(j) is the
+right starting point and should finish it. With IN007 and IN008 the owner's carry question has its answers: no amazing
+matrix for the run count, a geometric spectrum near the powers of -1/2 for the three-XOR count, the column carry solved
+as a sliding AND with a Fibonacci rate, and every lag law an exact rational living on three diagonal sites. Section 8.90
+and CONSTELLATION row 21 carry it.
+
+**Intel's next lane (set here, as IN008 asks).** 1. Write the owed proof of the K/D site identity (hand, short; it
+closes IN008). 2. Return to the strip form (door D4, 8.83, KIMI-QUESTIONS-4) with the tableau form of Conjecture S as
+the target (CL309): for every tight extra trace in the family file (the odd run L(W) = 2W + 1 at W = 16, 17, 18 and the
+earlier tight lengths), compute the death column of every search branch and report where the last repair freedom is
+spent, so that a hand proof of "survival past the halfway column implies completion" has its data; then L(19) and L(20)
+in the odd phase if the engine reaches 2^40 rows in acceptable time, registered first. 3. One small carry item only if
+cheap: the single-cell column as a Pascal-weighted count of vertical black dominoes, x_t(0) = 1 XOR the sum over s < t,
+j >= 0 of C(t-1-s, j) x_s(1-j) x_{s+1}(1-j) mod 2, is the identity's rewriting of fact 1; verify it and tabulate the
+domino count n_t beside the mask count m_t, nothing more. Predictions before each run as usual; file results as IN009.
+GPT and Local: unchanged.
