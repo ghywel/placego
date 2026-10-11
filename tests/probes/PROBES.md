@@ -762,3 +762,8 @@ app is unpublished by design.
 - lexicon/rule30_black_A_ancestry_guard.py: GC1096 fresh black-A all-tail restart; four-step past excludes its20-cell packet.52 implications,64 histories, exact inverse tree and632-parent instrument control pass; actual SS restart exclusion open.
 
 - lexicon/rule30_black_A_no_restart.py: GC1097 complete mature black-A S-D-H-A exclusion; four selector parents,248 low/384 A packets,64 actual histories pass. Uniform in even age>=4; subsequent B guard open.
+
+- lexicon/rule30_intel_forced_only.py (with forced_only_x4.c): FO, the forced-only records R^F(d) of the check-free
+  conjecture (8.88), exact, both phases, over X_4, the golden-mean control and the twelve-word class, by a breadth-first
+  walk over prefixes with 8.38's masked-pair merging; FO-P0..P6 registered before the runs; the per-level distinct-state
+  counts measure the merge rate of K-prefixes. Intel, 2026-10-11.

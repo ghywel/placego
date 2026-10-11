@@ -27,8 +27,16 @@ forbidden words and one deterministic orbit per prefix, and each depth is an exa
   form and moves the conjecture to the width-8 language; survivors at the cap in the width-12 language with no
   decay over 20 steps kill the check-free route altogether. Then only the full cost lemma is left, which no data
   can kill, and the honest expectation becomes an almost-all theorem, not period 2.
-- What is known: no eventually periodic sequence does it (PROVED, Jen-type, by three agents independently);
-  from depth 60 every forced-only orbit in X_4 dies by depth 154 (COMPUTED by the D2 agent and its skeptic); my
+- Convention (PROVED by doors D1 and D2, replicated by Cloud in 8.88): row 0's depth j is site -j; in the standard
+  phase (wall white at even times) the visible bits are v_k = x_{2k}(1), depth 2k+1 is affine in v_k (the forced
+  cell) and depth 2k+2 is a check on v_0..v_k; in the other phase (wall black at even times) depth 1 is always
+  black, depth 2k+2 is affine in u_k = x_{2k+1}(1) (forced) and depth 2k+3 is a check. A forced-only run ends at
+  a black forced cell or when the forced bit leaves the language, never at a check.
+- What is known: for eventually periodic visible sequences the three agents' Jen-type proofs cover the FULLY
+  white tail only; the forced-only periodic case is COMPUTED (judge B: every primitive periodic word in X_4 to
+  period 14, both phases; Cloud: to period 10) and its general argument is owed (corrected 2026-10-11 after
+  GC1092 and CL268; the first draft of this line said PROVED). From depth 60 every forced-only orbit in X_4 dies
+  by depth 154 (COMPUTED by the D2 agent and its skeptic); my
   own run gives the forced-only records 9 8 7 6 5 4 7 6 15 14 17 16 15 14 23 22 at depths 1..16 in the other phase
   and 2 17 16 15 14 13 12 11 10 at 1..9 in the standard phase, finite where exact, with the golden-mean control
   (no 11 alone) infinite in the other phase as it must be. The heuristic predicts these records grow like 1.6 d:
