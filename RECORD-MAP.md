@@ -102,7 +102,7 @@ PART: as on the board.
 - Black-wall WA3 wrong parity; R°(3)=4 — PROVED CL212 — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
 - R_real(97..120) exact, maximum16 at108; 121..124, 140, 144<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132=139=142=17 (both phases, kissat) — COMPUTED — RR3, L596..617.
-- Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)>=21, 133>=23, 194>=26, 200>=20, 279>=28, 1035>=38; Intel's 16 witnesses (to 1552>=31) re-simulated valid — COMPUTED — SP, IW, L617..620.
+- Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)>=21, 133>=23, 194>=26, 200>=20 (L=21 UNKNOWN at 12 h, L641), 279>=28, 1035>=38; Intel's 16 witnesses (to 1552>=31) replay valid — COMPUTED — SP, IW, L617..620.
 - RR3 completed97..120 on M5; solver values, certificates partly checked by VC3 — COMPUTED — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.
@@ -110,17 +110,17 @@ PART: as on the board.
 - Deciding UNSAT d3..97 checked by drat-trim/cake_lpr; VC checks200/200; RR3 98..105, 107, 109 by cake_lpr — COMPUTED — RRC L438, L480, VC3, rule30_verified_certs.py.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
-- K=40 relaxed at L=18: d=124 UNSAT both phases, so R_real(124)<=17; d=140, 144, 152 phase 0 SAT (open) — COMPUTED (kissat, uncertified) — RLK probe L575, L581/582, L589.
+- K=40 relaxed at L=18: 124 UNSAT both phases (<=17); 140, 144, 152 settled by CUT/SP — COMPUTED (kissat) — RLK L575, L581/582, L589.
 - Two-gap train: clamped phase-0 seed1001 eternal via sixteen-tick causal lock at14, every tail beyond46 — PROVED CL189/L595 — GC1020/W282; TG. Measured period4 to6, period8 to14, chaos pinned15; no finite invariant window to60.
 
 - Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each (14:30 stop); 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, rule30_cloud_rreal_trend.py, CL178, CL188.
-- Least d>20 with R_real(d)>=18 is 125: 21..124 all <=17, 125 has a witness — COMPUTED (121..124 cake_lpr, both phases) — L603..605.
+- Least d>20 with R_real(d)>=18 is 125 (21..124 <=17) — COMPUTED (121..124 cake_lpr, both phases) — L603..605.
 - Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
 - Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
-- CUT reproduces R_real(107)=14 in phase 0: one cut, L=15 UNSAT (cake_lpr), L=14 simulated witness — COMPUTED — RLK L588, L595.
+- CUT reproduces R_real(107)=14 (phase 0): one cut, L=15 UNSAT (cake_lpr), L=14 witness — COMPUTED — RLK L588, L595.
 - GC1007 S/L component: 61 verified cuts (42..97) take entropy 0.1386 to 0.1192 (ceiling 0.1236) — COMPUTED — SLC/SLC2 L588, L591.
-- Every list word to 40 (1,603), 41..44 (726, SOFX) and CUT/SLC cut absent by cake_lpr — COMPUTED — MFC L590, L640.
+- Every list word to 40 (1,603), 41..44 (726, SOFX) and CUT/SLC cut absent by cake_lpr; lists in git (rule30_local_mfw44.txt) — COMPUTED — MFC L590, L640, L641.
   Unary/affine forcing stalls; this gap4 cut leaves GC1007 S/L subsystem unchanged — COMPUTED / hand — GPT L584 follow-up.
 - Visible language exact to n=44, both phases: no small lift; follower classes grow — COMPUTED — SOF L564..568, L640.
 - Exactness through40 needs strip width35; widths<=34 excluded, all-depth boundedness OPEN — COMPUTED / scope GC996 — SW L569/570.
