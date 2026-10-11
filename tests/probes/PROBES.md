@@ -763,10 +763,12 @@ app is unpublished by design.
 
 - lexicon/rule30_black_A_no_restart.py: GC1097 complete mature black-A S-D-H-A exclusion; four selector parents,248 low/384 A packets,64 actual histories pass. Uniform in even age>=4; subsequent B guard open.
 
-- lexicon/rule30_intel_forced_only.py (with forced_only_x4.c): FO, the forced-only records R^F(d) of the check-free
-  conjecture (8.88), exact, both phases, over X_4, the golden-mean control and the twelve-word class, by a breadth-first
-  walk over prefixes with 8.38's masked-pair merging; FO-P0..P6 registered before the runs; the per-level distinct-state
-  counts measure the merge rate of K-prefixes. Intel, 2026-10-11.
+- lexicon/rule30_intel_forced_only.py (with forced_only_x4.c and rule30_intel_layer_dfa.py): FO, the forced-only records
+  R^F(d) of the check-free conjecture (8.88), exact, both phases, over X_4, the golden-mean control, the twelve-word
+  class and the layer languages of width 8, 12, 16 and 20 (own automata, the record's state counts), by a breadth-first
+  walk over prefixes with 8.38's masked-pair merging and a depth-first tail; FO-P0..P7 registered before the runs; the
+  per-level distinct-state counts measure the merge rate of K-prefixes; every death named by its word (11, 00000, a
+  longer one). Intel, 2026-10-11.
 
 - lexicon/rule30_black_A_B_admission.py: GC1098 first-B sparse admission and white H101 marker;112 high/108 low/240 short parents, then empty S4;76 implications/128 independent histories pass. Incorrect D shields corrected; later SS block open.
 

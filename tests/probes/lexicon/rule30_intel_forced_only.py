@@ -99,7 +99,46 @@ OUTCOME, first block (2026-10-11 03:28 BST): the merged stage of X_4 and the ful
          longer absent words, not the two of X_4, do most of the killing. The record prefixes at the top depths begin
          with alternating runs (0101.. or 1010.., the wheel's two-gap train) followed by sparse 1s.
 
-ADDENDUM: (the depth-first tail of X_4 to 121 and the width-8 and width-12 layers, with their verdicts)
+ADDENDUM (2026-10-11 04:36 BST): the depth-first tail of X_4 to depth 122 and the layer languages of width 8, 12, 16 and
+  20, both phases; FO-P7's verdicts. All COMPUTED and exact; no forced-only orbit of any prefix in any language
+  reached the cap of 3m + 300 steps, so the conjecture's kill did not fire to these depths (FO-P4 HELD throughout).
+  X_4 phase 0: merged to level 97 (51.7 million states), depth-first to 121 with path inheritance (1924 s on 16
+         threads, 15.81 x 10^9 paths): exact to depth 122; R^F(100, 110, 112, 120, 122) = 143, 157, 159, 155, 165;
+         slope 1.388 over d = 40..122 (1.486 over 40..112). Phase 1: merged to 98 (61.8 million), tail to 120
+         (1507 s, 12.36 x 10^9 paths): exact to 121; R^F(100, 110, 111, 120, 121) = 126, 156, 155, 158, 163; slope
+         1.340 over 40..121 (1.334 over 40..111). Deaths over the evaluated paths: 13,629,433,404 at 11 against
+         2,182,738,215 at 00000 (phase 0, 86%); 10,653,847,573 against 1,708,604,937 (phase 1).
+  Layer languages (automata by rule30_intel_layer_dfa.py; widths 8, 12, 16, 20 with 56, 402, 2260, 12749 states in
+         phase 0 and 60, 407, 2307, 13009 in phase 1; growth h = 0.3562, 0.2578, 0.2116, 0.1519; X_4 is width 4 with
+         h = 0.6174), merged throughout, exact to 122 (phase 0) and 121 (phase 1) in 4 to 11 s on 4 threads each:
+         width    h    h/(1-h)   slope p0 (ratio)   slope p1 (ratio)   R^F(120) p0/p1   deaths % 11 / 00000 / longer
+            4   0.617   1.614    1.388 (0.86)       1.340 (0.83)        155 / 158        86.2 / 13.8 / 0
+            8   0.356   0.553    0.475 (0.86)       0.391 (0.71)         59 / 58         43.8 / 13.3 / 42.9
+           12   0.258   0.347    0.357 (1.03)       0.256 (0.74)         45 / 38         35.8 / 14.4 / 49.8
+           16   0.212   0.268    0.319 (1.19)       0.216 (0.81)         45 / 36         33.2 / 14.8 / 52.0
+           20   0.152   0.179    0.154 (0.86)       0.164 (0.92)         35 / 36         31.2 / 15.3 / 53.5
+         (slopes by least squares over d = 40..top; ratio = slope / (h/(1-h)); the death split is over evaluated
+         paths in phase 0, phase 1 within 0.5 of it; the twelve-word class: 0.660 and 0.346, deaths 47.9/12.9/39.2.)
+  Nesting (a check of the automata and the engine): R^F(X_4) >= R^F(8) >= R^F(12) >= R^F(16) >= R^F(20) at every
+         exact depth in both phases, strict at 103, 62, 48, 59 of the depths (phase 0). R^F(122) = 61 at widths 8, 12
+         and 16 in phase 0: one orbit is the record at 122 in all three.
+  FO-P3 at the final depths: phase 0 1.388 over 40..122 (in 1.3..1.9, HELD; 1.451 at 92, 1.486 at 112), phase 1
+         1.340 over 40..121 (HELD; 1.215 at 93, 1.334 at 111). The other first-block verdicts are unchanged.
+  FO-P7 (a) HELD at width 20 (0.154 in 0.13..0.19), REFUTED at width 16 (0.319 above 0.28); (b) HELD at both widths
+         (0.216 in 0.16..0.26, 0.164 in 0.11..0.17); (c) HELD; (d) REFUTED at both widths and both phases: the most
+         frequent death kind at widths 12, 16 and 20 is a word longer than 00000 (50 to 54%), 11 second (31 to 36%).
+  Reading (MEASURED, these depths). The forced-only slope falls with the width: 1.39, 0.48, 0.36, 0.32, 0.15 (phase 0)
+         and 1.34, 0.39, 0.26, 0.22, 0.16 (phase 1), tracking h/(1-h) within a factor 0.71..1.19 at every width; the
+         scatter is the record's own (R^F moves by 10 to 20 between neighbouring depths; a slope over 80 depths is
+         good to about 0.05). If the same law holds for the real language, h_top <= 0.1236 puts its forced-only
+         slope at or below 0.14 against the real record's 0.08: the forced cells alone, over the true language,
+         would still leave about a factor 1.75 in slope for the checks to remove. As the language tightens the kill
+         moves from 11 (86% in X_4, 44% at width 8, 31% at width 20) to the longer forbidden words (0, 43%, 54%).
+  Controls: the revised engine reproduces every earlier table (X_4 to 42 both phases, the widths 8 and 12 and the
+         twelve-word class to 122/121, level counts equal); the width-4 automaton reproduces X_4 to depth 62; the
+         builder is byte-identical to the first one at widths 8 and 12 and gives the record's state counts at 16, 20.
+  Exact tables, witnesses and death counts for every run: rule30_intel_forced_only.txt. Logs outside git. The DFS
+         tail (X_4) is the only part that costs hours; it is CPU-bound and threads well; no shader work was needed.
 """
 import os, subprocess, sys, time
 
