@@ -103,7 +103,7 @@ PART: as on the board.
 - Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
 - Black-wall WA3 wrong parity; R°(3)=4 — PROVED CL212 — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..120) exact, maximum16 at108; 121..124<=17 cake_lpr (both phases); 125..131,133..136,138,141,152>=18 witnesses; 132, 140, 144<=17 (both phases, kissat; 140 p0 cake_lpr) — COMPUTED — RR3, L596..615.
+- R_real(97..120) exact, maximum16 at108; 121..124<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132, 140, 144<=17 (both phases, kissat; 140 p0 cake_lpr) — COMPUTED — RR3, L596..616.
 - RR3 completed97..120 on M5; solver values, certificates partly checked by VC3 — COMPUTED — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.
@@ -200,7 +200,7 @@ PART: as on the board.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
-- S/L counter/B guard PROVED CL254..258; all-length mixed core sketch GC1087 — GC1055/56/1074..87.
+- Mixed core absorbing PROVED CL259; upstream B reset reaches SS PROOF-SKETCH — GC1087/88; earlier guards GC1055..86.
 - Cut45 reset merges59; delayed NOT8/pair guard; cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
 - Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.
