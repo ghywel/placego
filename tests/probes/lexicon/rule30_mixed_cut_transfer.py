@@ -35,6 +35,17 @@ all-m prefix and all-length absence follow from the hand arguments,
 not extrapolation from these controls. No actual membership tested.
 """
 
+# ADDENDUM BEFORE the L630 receipt control: E0 is reported absent via
+# f69 below. Predict length69 and its unique occurrence at offset2
+# inside E0; the all-m prefix identity then transfers that exact cut
+# to every optional-wait bridge. Counterfactual: E0 is merely a
+# terminal macro coincidence not shared by E1. Must fail by P1.
+# Independently verify literal physical h evens against the exact bits.
+# OUTCOME: HELD. f69 has length69, uniquely at E0 offset2; all four
+# prefix controls retain it at2 and physical samples4..140 (even).
+# No absence replay or new membership query; provenance is Local L630
+# at e68b8356, reporting cake_lpr verification of the69-bit SLC cut.
+
 from pathlib import Path
 import re
 
@@ -108,6 +119,12 @@ def main():
     ks_ef=(1,2,2,2,3,3)
     stored=read_words()
     assert stored['E']==e0
+    f69='010000100001001001000010000100100100100001000010010010010000100001001'
+    assert len(f69)==69
+    assert [i for i in range(len(e0)-68) if e0[i:i+69]==f69]==[2]
+    for m in (0,1,2,19):
+        assert visible(ew(m))[2:71]==f69
+        assert physical(ew(m))[4:142:2]==f69
     for name,ks,start in (('FE',ks_fe,41),('EF',ks_ef,19)):
         w=visible(ks)
         assert w==stored[name]==physical(ks)[::2]
