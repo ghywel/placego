@@ -238,6 +238,18 @@ ADDENDUM K = 40 (registered 2026-10-10 09:15 BST, before any K = 40 run; L573). 
   RLK40-P2 (blind, 0.55): over d = 120 .. 170, relax40's maximum over phases exceeds 17 at some depth. If it stays at
            or below 17 there, R_real(d) <= 17 is certified at those depths, against TR-P4.
   RLK40-P3 (the unexpected check, 0.5): relax40's first excess over the actual R_real lies beyond d = 119.
+ADDENDUM K = 44 (registered 2026-10-11 15:54 BST, before any K = 44 run; L641). The base list can now be every certified
+  minimal forbidden word to length 44 (1,130 in phase 0, 1,199 in phase 1; rule30_local_mfw44.txt, from L640), tags
+  44all and 44allp1 (mfw44all.txt = mfw40 + mfw44 in the data folder), with cuts44_p0/p1.txt started as copies of the
+  verified cuts40 lists (13 of the 27 are now implied by the lists; each cut of length <= 44 contains a list word, as
+  completeness requires). CUT44, a paired timing test before any rerun at depth 200 (SAT-200b ended UNKNOWN, L641):
+  d = 132, L = 18, phase 0 (UNSAT with relax40 in 5,078 s at 21 cuts), relax40 and relax44 with the same 26 verified
+  cuts, started together on the same load, `cut TAG 132 18 0 1 14400`, wall and CPU (time -p) recorded.
+  CUT44-C1 (control): both end UNSAT (relax44's clauses contain relax40's, and relax40 is UNSAT here).
+  CUT44-P1 (blind, 0.5): relax44 is faster than relax40 in both wall and CPU time.
+  CUT44-P2 (blind, 0.25): relax44 is at least twice as fast (wall). If so, a K = 44 (then 48) rerun at 200 is the next
+  step; if not, the rerun at 200 waits for a different lever.
+  Record searched: '44all|relax44|K = 44' -> no hit.
 """
 import os
 import re

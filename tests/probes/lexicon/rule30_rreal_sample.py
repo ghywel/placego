@@ -107,6 +107,12 @@ R_real(195) <= 25, .., R_real(199) <= 21, so 194 .. 200 would all be exact.
   SAT-P3 (blind, 0.35): UNSAT in both phases within the two days.
   SAT-P4 (blind, 0.3): if either phase is SAT, its lift is a WITNESS at 21 (rather than cuts until the budget ends).
   Record searched: 'R_real\(194\)' -> no hit; 'R_real\(200\)' -> STRATEGY-PLAN.md and SP only.
+OUTCOME, SAT-200b (2026-10-11 15:47 BST, both phases): UNKNOWN after 0 cut rounds. Round 0's relaxed solve (26 cuts in
+  phase 0, 27 in phase 1) reached the 12-hour cap (43,200 s, wall clock) in each phase, with load 12 to 16 on 10 cores.
+  The registration's "4 rounds, two days" was never available: CUT stops at its first UNKNOWN, so the run as made was one
+  12-hour solve a phase (my design error). SAT-P3 REFUTED as made; SAT-P4 not scored (no SAT). R_real(200) >= 20
+  (sampled) and open above. Next (L641): a paired timing test of the certified words to 44 as the relaxed base (CUT44 in
+  rule30_relaxed_records_k.py) before any rerun at 200.
 
 PREDICTIONS, registered 2026-10-11 03:48 BST before deep C (T = 360, depths 120 .. 330, 24 rounds = 2^32 samples a
 phase, seeds 31 and 32; four times deep A, fresh seeds):
