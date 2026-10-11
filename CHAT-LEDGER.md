@@ -570,3 +570,56 @@ it.
 
 
 **GC1154 concurrent receipt (CL351..354/L642).** Corrected ring/mixed-gap controls adopted; L-ring6 is white-anchor-only, black rows have7. CL353 retains466. CL354 read: GC1154 is tier2; requested carrying-step check is B on the masked LEFT pair, rather than a full re-derivation. Local should adopt these new query constraints only after that review; no run requested.
+
+## CL355 — Cloud to GPT, Local and Intel, the owner's decision (16:21 BST): the entrance lane is STOPPED and GPT moves to the finite-support record route, the left row determined by the trace with the prize configuration's all-white left row as the explicit hypothesis, toward R_real(d) finite at every depth; GC1154 received on that route (2026-10-11 16:21 BST)
+
+**The decision.** The owner, having read the day: the entrance lane has been circling (each turn closed a sub-case of
+white-A admission while untyped admission did not move, and Outcome 8's witness closes the admission-deadline route),
+and the one hypothesis that separates the prize configuration from the all-S ring is finite support, which GC1148 and
+GC1151 were the first blocks to use. So: stop the entrance lane; GPT takes the record route.
+
+**What stops.** For GPT: admission guards for the 676 black-marker class, pin exit guards, whitening transport, the
+mixed-word spatial obstruction block, further entrance covers. For Cloud: the real-cone realisation lane on entrances
+(CL332 to CL347) and the witness's laps. The results stay as they are (GC1139 to GC1147 PROVED in scope, Outcomes 6 to
+8); the board marks the admission-deadline route CLOSED with the witness as its reason. Nothing is deleted; the lane is
+simply not continued.
+
+**The route, stated.** Beside the alternating wall, column 0 (the wall) and column 1 (the trace c) determine the whole
+left row at every time by left permutivity: x_(i-1)(t) = x_i(t+1) XOR (x_i(t) OR x_(i+1)(t)), so the first N samples
+from an anchor fix the left row at that anchor to depth N-1 (GC1148's step, checked in CL350). Hypothesis F, finite
+support: the prize configuration at time T0 occupies [-T0, T0], so if its centre column were alternating from T0 on, the
+left row at T0 would be white at every depth d > T0, and white on [d+a, infinity) at every later time a. The quantity
+R_real(d), the longest white run at depth d over all configurations beside the wall, is therefore the whole question for
+period 2 in this form: if R_real(d) < infinity for every d, no finite-support configuration sits beside the alternating
+wall for ever, whatever the preperiod. Finite at every depth, not bounded: the data say the sup grows (<= 17 certified
+at 21..124, 140, 144; = 17 at 132, 139, 142; >= 18 at 125..138 and 141, 152; sampled >= 20 at 200, >= 28 at 279, >= 38
+at 1035), so a uniform constant is not the target, a finite value at each depth is.
+
+**What is in hand for it.** (i) GC1148 and GC1151 (reviewed, CL350, CL351): with the left row white from depth d, a
+pure-S run from a white anchor a has at most d+a+5 samples and a pure-L run at most d+a+6, from the rings' white gaps 5
+and 6. (ii) GC1153: mixed words force their own left patterns (the LSLSL prefix forces seven whites at depths 30..36),
+so the gap is word-dependent and the uniform constant fails, as it must, given the data. (iii) GC1154 (received at
+16:09, on this route already): compact periodicity comparators for untyped record queries; its targeted review (Theorem
+B's half-plane scope and endpoints) follows under the two-tier rule. (iv) The exact visible language to 44 in both
+phases with every minimal forbidden word certified (L640, L641): a membership oracle for any trace word to 44. (v)
+Local's RRL data: the exact R_real values and their witness configurations, which are precisely the trace words whose
+left image is white on a long interval at depth d; they are the objects to understand. (vi) A first exact look at the
+collar's own traces (Cloud, this hour, own code): the left images of the pure M1, M2 and M3 traces to depth 400 have
+largest white gaps 7, 7 and 6, with blacks at depths 2, 3, 5, 9, 15, 18, 19, 21, 22, 24, 25, 27, 29, 32 in the first
+sixty (identical for the three, which share their first 38 samples); so every typed trace forces a black within eight
+left cells, and GC1148's inequality extends to them with constant 7 in place of 5.
+
+**The task for GPT, as I read the owner.** Prove, or find the mechanism that would prove, that for every depth d the set
+of real trace words whose left image is white on [d, d+L) is empty for some L = L(d): an all-depth statement in which
+the left row is the hypothesis and the trace's forced left pattern is the tool. Suggested first steps: the left images
+of Local's record witnesses at d = 132, 139, 142 (what words carry 17 whites that far out, and what finally forces the
+black); the growth law of R_real(d) in the data as the shape a proof must reproduce; the generalisation of GC1148's
+white-triangle argument from pure letters to the words that actually appear, using the forced left patterns of GC1153
+and the collar words above; and the question whether the first forced black beyond depth d+a is bounded over all real
+words of a given length. Retain the record hypothesis explicitly in every block; the relaxation carriers of the entrance
+lane are not needed here.
+
+**Local and Intel.** Local: the record census is now the main line's data; exact values and witnesses at new depths,
+CUT44 and SOFX2 as registered, and the witnesses' trace words shared for the left-image study when convenient. Intel:
+unchanged (the strip form and SX-P11's certificates). Cloud: second reads under the two-tier rule, GC1154's targeted
+review next, NOW.md, the board, 8.89 and the summary updated in this commit. Nothing else requested.

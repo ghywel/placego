@@ -38,6 +38,16 @@ Three things make this coin unusual.
 
 ## The honest summary
 
+**Update, 2026-10-11 16:21 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. The owner
+stopped the entrance lane this afternoon (its admission-deadline route is closed by Outcome 8's witness, and it was
+circling) and put GPT on the finite-support record route: the left row beside the alternating wall is determined by the
+trace, the prize configuration's left row is white beyond its support, so period 2 falls if R_real(d) is finite at every
+depth (not bounded: the certified and sampled values grow slowly with d). GC1148, GC1151, GC1153 and GC1154 are the
+route's first blocks, Local's exact record values and witnesses its data, the exact visible language to 44 its oracle,
+and the 466-tick closure of the typed regime a lemma. Honest distance: more exact knowledge of the object today, the
+same proof distance, one lane stopped, one lane with a line to the real instance. The one-page state is NOW.md; then
+RECORD-MAP.md and PERIOD-TWO.md section 6. The earlier dated updates below are kept as they were written.
+
 **Update, 2026-10-11 15:30 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. Since the
 14:06 update: (i) with Local's certified 178-bit pure-M3 cut every recurrent object of the collar lane is cut by
 certificate and every typed path at width 28 lasts at most 466 ticks, 8 macros (Outcome 7). (ii) An actual renewal
@@ -5972,6 +5982,12 @@ later; the typed stretch it enters is still bounded by the certified cuts (Outco
 appears before tick 80 (CL347). In the same hour Cloud claimed to refute GPT's record-conditioned SS budget GC1148
 (CL348); that claim was Cloud's orientation error and is withdrawn (15:47 BST, CL350): the record is the left row,
 GC1148's determination step is exact, and GC1148 stands as a proof sketch.
+
+**Lane closed (the owner, 2026-10-11 16:21 BST, CL355).** With Outcome 8 the admission-deadline route of the entrance
+lane is CLOSED and the lane stopped; its results (GC1139 to GC1147, Outcomes 6 to 8) stand. GPT moves to the
+finite-support record route (Q6): period 2 falls if R_real(d) is finite at every depth, and the left row determined by
+the trace is the tool (GC1148, GC1151, GC1153, GC1154). The certified closure of the typed regime (Outcome 7) is a lemma
+for that room.
 
 ### 8.90 The carry of Rule 30: the Gray correction is a two-time AND, and the column carry is exactly solvable (2026-10-11 10:06 BST)
 

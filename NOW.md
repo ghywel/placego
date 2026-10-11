@@ -7,6 +7,13 @@ ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud.*
 alternating wall and its certified minimal absent words (cuts), with the strip form (8.83, KIMI-QUESTIONS-4.md) as its
 finite-width face. The swarm's forced-only door (8.88) is measured out and closed as a main line.
 
+**Room change (the owner, 2026-10-11 16:21 BST; CL355).** The entrance lane is stopped: Outcome 8's witness closed the
+admission-deadline route, and the lane was circling. GPT moves to the finite-support record route: the left row beside
+the wall is determined by the trace, the prize configuration's left row is white beyond its support, and period 2 falls
+if R_real(d) is finite at every depth. GC1148, GC1151, GC1153 and GC1154 are its first blocks; Local's exact record
+values and witnesses are its data; the exact language to 44 is its oracle. The certified-cut closure of the typed regime
+(466 ticks) stands as a lemma in that room.
+
 **Latest decisive verdict (L630, 2026-10-11 08:11 BST).** The mixed-recurrence bridge E of GPT's collar lane (GC1106 to
 GC1119) is ABSENT from the real language: its visible word contains a cake_lpr-certified 69-bit cut (SLC2). So the two
 closed walks FE and EF and all their concatenations are absent, and the mixed recurrence that survived every strip
@@ -34,16 +41,17 @@ actual renewal, a white-A origin of the 676 class that no guard admits by 44 and
 and its own high-111 image at 88 for every tail; the 676-class admission deadline is false. (CL348's refutation of GPT's
 GC1148 record budget was Cloud's orientation error and is withdrawn, CL350; GC1148 stands as a proof sketch.)
 
-**Lanes.** GPT: the 676 black-marker class after CL346's witness (what admits it later, or how long its laps run), with
-the original A/H lineage retained; GC1148's budget stands (CL350); GC1120's quantifier kept explicit. Local: the pure-M3
-minimal cut is certified (L637, 178 bits; the duration bound is now 466, CL340); R_real(144) <= 17 in both phases;
-SAT-200b at L = 21, the certificate re-runs; 143 and 145..150 ended UNKNOWN at 18 under the 4-hour cap (CUT-P26 refuted,
-11:56 BST), so those depths stay open at 18 with sampled 15..17; its jobs are registered under the owner's job-priority
-rule (L636, jobctl.py). Intel: the carry of Rule 30 is solved as a side question (8.90); the strip form (door D4) now
-has Conjecture S to W = 39 in both phases and every minimal absent trace to length 90 with its width in git (IN010).
-Cloud: second reads of every block, the ledgers, this page; the real-cone sampler lane closed with CL335.
+**Lanes (16:21 BST).** GPT: the finite-support record route (CL355): for every depth d, the real trace words whose left
+image is white on [d, d+L) are empty for some L(d); first the left images of Local's record witnesses, the growth law of
+R_real(d), and GC1148's white-triangle argument extended from pure letters to the words that appear. Local: the record
+census as the main line's data (exact values and witnesses at new depths; CUT44 and SOFX2 as registered; 143 and
+145..150 open at 18; SAT-200b UNKNOWN); its jobs under the job-priority rule. Intel: the strip form (Conjecture S to W =
+39 in both phases, IN010) and SX-P11's certificates. Cloud: second reads under the two-tier rule, the ledgers, this
+page.
 
-**Stopped (8.89):** strip widening, realization searches, the X_4 hand target.
+**Stopped (8.89):** strip widening, realization searches, the X_4 hand target. **Stopped (the owner, 16:21 BST):** the
+entrance lane (admission guards for the 676 class, pin exit guards, whitening transport, entrance covers, and Cloud's
+real-cone realisation of entrances).
 
 **Exact facts to carry.** R_real(132) = R_real(139) = R_real(142) = 17; 140 <= 17 and 144 <= 17; the record is >= 18 at
 125..138 (except 132) and 141, 152; sampled R_real(1035) >= 38 (second-party verified, CL298); every sampled bound in

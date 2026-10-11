@@ -143,12 +143,13 @@ PART: as on the board.
   beside a periodic wall; barrier lemma — COMPUTED (third-party), PROVED (hand parts) — §8.84
 - 1100 wall: R'(1..100) exact, max 18 at 99; lock lemma, structure
   theorem; all-d finiteness OPEN — COMPUTED (lane q4), PROVED (locks) — §8.85
-- Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
-  32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
+- Right-half language: DFA >= 291 states; h <= 0.2536 certified; death criterion PROVED; deaths at 32, 34, 43 —
+  COMPUTED, CONJECTURED (not sofic) — §8.86
 - Swarm round: hand proofs held — §8.87
 - Check-free: records exact to 122, no survivor — §8.88
 - Room switch to cuts; E absent (L630); cuts leave pure M3 (CL303); typed paths <= 466 (CL340); white-A entrances
-  certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347) — §8.89
+  certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347); lane CLOSED
+  by the owner, GPT to the record route (CL355) — §8.89
 - Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
 
 
