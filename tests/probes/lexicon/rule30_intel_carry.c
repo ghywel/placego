@@ -11,6 +11,8 @@
  * column R STEPS   R rings of 4096 cells from splitmix64 rows (seed = ring index); the carry at the middle cell m and
  *                  along the diagonals m + t and m - t for t < STEPS: counts of every 16-bit window (overlapping) and
  *                  the sums for correlations at lags 0..64. Output "W q pattern count" and "S q lag sum_xy sum_x n".
+ * block K          every row of the 2K cells at sites -(K-1)..K: exact counts of the column-carry blocks c_t(0),
+ *                  t = 0..K-1 (bit t of the pattern). Output "B K pattern count" (rows per pattern; 2^(2K) rows in all).
  * Compile with the OpenMP flags of COMMON rule 3 (Apple clang needs libomp).
  */
 #include <stdio.h>
@@ -173,11 +175,51 @@ static void column(long long R, int STEPS) {
     fprintf(stderr, "column R = %lld, STEPS = %d: %.1f s\n", R, STEPS, omp_get_wtime() - t0);
 }
 
+/* ---------------- block ---------------- */
+/* the column carry c_t(0), t = 0..K-1, from every row of the 2K cells at sites -(K-1)..K (its light cone): exact counts
+ * of every K-bit block (bit t = c_t(0)), 64 rows at a time, bit-sliced */
+static void transpose64b(u64 a[64]) {
+    u64 m = 0x00000000FFFFFFFFULL;
+    for (int j = 32; j; j >>= 1, m ^= m << j)
+        for (int k = 0; k < 64; k = ((k | j) + 1) & ~j) { u64 t = ((a[k] >> j) ^ a[k | j]) & m; a[k] ^= t << j; a[k | j] ^= t; }
+}
+static void block(int K) {
+    static const u64 LANE[6] = {0xAAAAAAAAAAAAAAAAULL, 0xCCCCCCCCCCCCCCCCULL, 0xF0F0F0F0F0F0F0F0ULL,
+                                0xFF00FF00FF00FF00ULL, 0xFFFF0000FFFF0000ULL, 0xFFFFFFFF00000000ULL};
+    int C = 2 * K, nth = omp_get_max_threads(); long long nblocks = 1LL << (C - 6);
+    u64 *H = calloc((size_t)nth << K, 8); double t0 = omp_get_wtime();
+    #pragma omp parallel
+    {
+        u64 *h = H + ((size_t)omp_get_thread_num() << K);
+        #pragma omp for schedule(dynamic, 4096)
+        for (long long B = 0; B < nblocks; B++) {
+            u64 x[72], y[64];
+            for (int u = 0; u < C; u++) x[u] = (u < 6) ? LANE[u] : (((B >> (u - 6)) & 1) ? ~0ULL : 0);
+            x[C] = 0;
+            for (int t = 0; t < 64; t++) y[t] = 0;
+            for (int t = 0; t < K; t++) {
+                y[t] = ~x[K - 1] & x[K];                         /* c_t(0): site 0 white, site 1 black */
+                u64 left = 0;
+                for (int u = 0; u < C; u++) { u64 old = x[u]; x[u] = left ^ (old | x[u + 1]); left = old; }
+            }
+            transpose64b(y);
+            for (int ln = 0; ln < 64; ln++) h[y[ln] & ((1ULL << K) - 1)]++;
+        }
+    }
+    for (u64 p = 0; p < (1ULL << K); p++) {
+        u64 v = 0; for (int t = 0; t < nth; t++) v += H[((size_t)t << K) + p];
+        if (v) printf("B %d %llu %llu\n", K, (unsigned long long)p, (unsigned long long)v);
+    }
+    fprintf(stderr, "block K = %d: 2^%d rows, %.1f s\n", K, C, omp_get_wtime() - t0);
+    free(H);
+}
+
 int main(int argc, char **argv) {
-    if (argc < 3) { fprintf(stderr, "usage: %s ring NMIN NMAX | cone T | column R STEPS\n", argv[0]); return 1; }
+    if (argc < 3) { fprintf(stderr, "usage: %s ring NMIN NMAX | cone T | column R STEPS | block K\n", argv[0]); return 1; }
     if (!strcmp(argv[1], "ring")) { for (int n = atoi(argv[2]); n <= atoi(argv[3]); n++) ring(n); }
     else if (!strcmp(argv[1], "cone")) cone(atoi(argv[2]));
     else if (!strcmp(argv[1], "column")) column(atoll(argv[2]), atoi(argv[3]));
+    else if (!strcmp(argv[1], "block")) block(atoi(argv[2]));
     else { fprintf(stderr, "unknown mode\n"); return 1; }
     return 0;
 }

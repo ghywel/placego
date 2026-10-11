@@ -772,8 +772,13 @@ app is unpublished by design.
 - lexicon/rule30_intel_strip_threshold.py (with rule30_intel_strip_trace.c): SX, the exactness thresholds L(W) of
   the strip form for full traces, both phases (KIMI-QUESTIONS-4 Q1, door D4): real traces from all 2^N rows,
   bit-sliced; strip traces by a subset walk; the pairing L(2k) = L(2k+1), the extra traces at L(W) + 1 and their least
-  excluding widths; SX-C0..P6 registered before the runs. rule30_intel_mfw_dfa.py builds FO's exact-language automaton
-  X_K from the handoff's minimal forbidden words (FO-P8). Intel, 2026-10-11.
+  excluding widths (rule30_intel_strip_extras.txt, with strip witnesses); SX-C0..P7 registered before the runs.
+  rule30_intel_mfw_dfa.py builds FO's exact-language automaton X_K from the handoff's minimal forbidden words
+  (FO-P8). Intel, 2026-10-11.
+- lexicon/rule30_intel_carry.py (with rule30_intel_carry.c): CAR, the carry of Rule 30 (KIMI-QUESTIONS-5): exhaustive
+  rings to n = 28 for the run-count matrix and its Markov test, the single cell's Pascal-masked carries to t = 65,536,
+  sampled and exact column-carry laws under the coin measure; the identity c_t(i) = x_t(i+1) x_{t+1}(i+1). CAR-C0..P10
+  registered before their runs. Intel, 2026-10-11.
 
 - lexicon/rule30_black_A_B_admission.py: GC1098 first-B sparse admission and white H101 marker;112 high/108 low/240 short parents, then empty S4;76 implications/128 independent histories pass. Incorrect D shields corrected; later SS block open.
 

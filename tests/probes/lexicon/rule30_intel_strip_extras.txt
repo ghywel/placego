@@ -1,0 +1,100 @@
+# SX extras: the traces of T^W(L(W)+1) outside T(L(W)+1), both phases (KIMI-QUESTIONS-4 Q1, CL302 (b)).
+# Intel, 2026-10-11, rule30_intel_strip_threshold.py. Traces are written y_0 first (column 1 at every
+# time t >= 0); the wall is x_t(0) = (t + phase) mod 2. Per threshold: the widths W sharing it, L, the
+# trace, its least excluding width w(f) against ceil(l/2), and "minimal" when the trace without its first
+# two symbols is real. The partner is a threshold extra of the other phase equal to the trace without its
+# first symbol, or one whose own first-symbol drop is the trace. The witness, at width w(f) - 1, is the
+# initial strip (sites 1..w(f)-1, site 1 first) and the inputs e_0 .. e_(l-2) fed at site w(f); every
+# witness is re-simulated to the trace.
+
+## phase 0, traces to length 38; thresholds L(W): 1:3 2:6 3:6 4:10 5:10 6:17 7:20 8:20 9:20 10:26 11:30 12:32 13:34
+      14:34 15:34 16:34 17:34 18:>=38 19:>=38 20:>=38
+W = 1..1: L = 3
+  0000  (l = 4) w(f) = 2, ceil(l/2) = 2 TIGHT, minimal; partner in phase 1: 000
+    witness at width 1: strip 0, inputs 010
+  0101  (l = 4) w(f) = 2, ceil(l/2) = 2 TIGHT, minimal; partner in phase 1: none
+    witness at width 1: strip 0, inputs 101
+W = 2..3: L = 6
+  0001000  (l = 7) w(f) = 4, ceil(l/2) = 4 TIGHT, minimal; partner in phase 1: 10001000
+    witness at width 3: strip 001, inputs 001000
+W = 4..5: L = 10
+  11001101001  (l = 11) w(f) = 6, ceil(l/2) = 6 TIGHT, minimal; partner in phase 1: 011001101001
+    witness at width 5: strip 10001, inputs 0010000100
+W = 6..6: L = 17
+  001100110001001100  (l = 18) w(f) = 7, ceil(l/2) = 9, minimal; partner in phase 1: none
+    witness at width 6: strip 000001, inputs 00100010000001001
+  110100110001001101  (l = 18) w(f) = 7, ceil(l/2) = 9, minimal; partner in phase 1: none
+    witness at width 6: strip 111110, inputs 00010001000010010
+W = 7..9: L = 20
+  000100110100010011000  (l = 21) w(f) = 10, ceil(l/2) = 11, minimal; partner in phase 1: none
+    witness at width 9: strip 001001000, inputs 10001000100000100000
+  110100110100010011000  (l = 21) w(f) = 10, ceil(l/2) = 11, minimal; partner in phase 1: 10100110100010011000
+    witness at width 9: strip 111111111, inputs 01001000100000100000
+W = 10..10: L = 26
+  110001001101000100110011000  (l = 27) w(f) = 11, ceil(l/2) = 14, minimal; partner in phase 1: none
+    witness at width 10: strip 1011011110, inputs 00010000001000010010000000
+W = 11..11: L = 30
+  0011010001001100110100010011000  (l = 31) w(f) = 12, ceil(l/2) = 16, minimal; partner in phase 1: none
+    witness at width 11: strip 00010010010, inputs 001001000100000000000010100100
+W = 12..12: L = 32
+  001100110100010011000100110011000  (l = 33) w(f) = 13, ceil(l/2) = 17, minimal; partner in phase 1: none
+    witness at width 12: strip 000000100111, inputs 01000001010000001000000001101000
+  010011000100110001001100110011000  (l = 33) w(f) = 13, ceil(l/2) = 17, minimal; partner in phase 1: none
+    witness at width 12: strip 010010010010, inputs 00010010000001010010000000010010
+W = 13..13: L = 34
+  00010011010001001101000100110011000  (l = 35) w(f) = 18, ceil(l/2) = 18 TIGHT, minimal; partner in phase 1:
+      100010011010001001101000100110011000
+    witness at width 17: strip 00111111110111000, inputs 0000011010001000000011000001000000
+  00110001001100010011000100110011001  (l = 35) w(f) = 17, ceil(l/2) = 18, minimal; partner in phase 1:
+      0110001001100010011000100110011001
+    witness at width 16: strip 0000000000100111, inputs 0100000101000000100000100001001001
+  01001101000100110001001100110011000  (l = 35) w(f) = 14, ceil(l/2) = 18, minimal; partner in phase 1: none
+    witness at width 13: strip 0110011011110, inputs 0001000011001000001000100100000100
+W = 14..16: L = 34
+  00010011010001001101000100110011000  (l = 35) w(f) = 18, ceil(l/2) = 18 TIGHT, minimal; partner in phase 1:
+      100010011010001001101000100110011000
+    witness at width 17: strip 00111111110111000, inputs 0000011010001000000011000001000000
+  00110001001100010011000100110011001  (l = 35) w(f) = 17, ceil(l/2) = 18, minimal; partner in phase 1:
+      0110001001100010011000100110011001
+    witness at width 16: strip 0000000000100111, inputs 0100000101000000100000100001001001
+W = 17..17: L = 34
+  00010011010001001101000100110011000  (l = 35) w(f) = 18, ceil(l/2) = 18 TIGHT, minimal; partner in phase 1:
+      100010011010001001101000100110011000
+    witness at width 17: strip 00111111110111000, inputs 0000011010001000000011000001000000
+
+## phase 1, traces to length 38; thresholds L(W): 1:2 2:7 3:7 4:11 5:11 6:14 7:14 8:19 9:19 10:23 11:23 12:23 13:29
+      14:29 15:29 16:33 17:35 18:37 19:>=38 20:>=38
+W = 1..1: L = 2
+  000  (l = 3) w(f) = 2, ceil(l/2) = 2 TIGHT, minimal; partner in phase 0: 0000
+    witness at width 1: strip 0, inputs 10
+W = 2..3: L = 7
+  10001000  (l = 8) w(f) = 4, ceil(l/2) = 4 TIGHT, minimal; partner in phase 0: 0001000
+    witness at width 3: strip 110, inputs 0001000
+W = 4..5: L = 11
+  011001101001  (l = 12) w(f) = 6, ceil(l/2) = 6 TIGHT, minimal; partner in phase 0: 11001101001
+    witness at width 5: strip 00000, inputs 10010000100
+W = 6..7: L = 14
+  011010011001101  (l = 15) w(f) = 8, ceil(l/2) = 8 TIGHT, minimal; partner in phase 0: none
+    witness at width 7: strip 0010001, inputs 00100000000100
+W = 8..9: L = 19
+  10100110100010011000  (l = 20) w(f) = 10, ceil(l/2) = 10 TIGHT, minimal; partner in phase 0: 110100110100010011000
+    witness at width 9: strip 100000000, inputs 1001000100000100000
+W = 10..12: L = 23
+  001000100110001001101000  (l = 24) w(f) = 13, ceil(l/2) = 12 ABOVE, minimal; partner in phase 0: none
+    witness at width 12: strip 010010010001, inputs 00100000000101000000010
+W = 13..15: L = 29
+  011001100010011001100110011000  (l = 30) w(f) = 16, ceil(l/2) = 15 ABOVE, minimal; partner in phase 0: none
+    witness at width 15: strip 000010011011110, inputs 00010000100000100010000010010
+W = 16..16: L = 33
+  0110001001100010011000100110011001  (l = 34) w(f) = 17, ceil(l/2) = 17 TIGHT, minimal; partner in phase 0:
+      00110001001100010011000100110011001
+    witness at width 16: strip 0000000001111010, inputs 000000101000000100000100001001001
+W = 17..17: L = 35
+  100010011010001001101000100110011000  (l = 36) w(f) = 18, ceil(l/2) = 18 TIGHT, minimal; partner in phase 0:
+      00010011010001001101000100110011000
+    witness at width 17: strip 10100100100010000, inputs 00000011010001000000011000001000000
+  101001100010011001101000100110011000  (l = 36) w(f) = 18, ceil(l/2) = 18 TIGHT, minimal; partner in phase 0: none
+    witness at width 17: strip 10000010110111000, inputs 01010010001000001000000000000110000
+W = 18..18: L = 37
+  01100110001001100010011001100110011001  (l = 38) w(f) = 19, ceil(l/2) = 19 TIGHT, minimal; partner in phase 0: none
+    witness at width 18: strip 000010001010001000, inputs 0000100100000010000000001000100000000
