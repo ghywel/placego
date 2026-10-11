@@ -824,3 +824,5 @@ app is unpublished by design.
 - lexicon/rule30_f69_macro_guard.py: GC1123 f69 exactly forbids continued122 for all k>=1; four-state finite guard retains terminal122 and endpoint1.341 independent cones; M3 survives, no actual membership test.
 
 - lexicon/rule30_111_cut_markers.py: GC1124 certified54/56/65 give continued31/121/312 and exact finite endpoint guards for all k>=1;65 redundant beside54 here.3906 controls; short mixed cycles cut, full splice coverage open.
+
+- lexicon/rule30_macro_successor_gate.py: GC1125 complete32-state joint21 endpoint restrictions1->2 and no3->2 for all branches at k1..3; cut normal form gives actual J+640 in the restricted core.29524 controls; all-k/admission open.
