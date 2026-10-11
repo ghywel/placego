@@ -773,7 +773,9 @@ app is unpublished by design.
   the strip form for full traces, both phases (KIMI-QUESTIONS-4 Q1, door D4): real traces from all 2^N rows,
   bit-sliced; strip traces by a subset walk; the pairing L(2k) = L(2k+1), the extra traces at L(W) + 1 and their least
   excluding widths (rule30_intel_strip_extras.txt, with strip witnesses), and the column-tableau death profile of the
-  tight extras (rule30_intel_strip_tableau.txt); SX-C0..P9 registered before the runs.
+  tight extras (rule30_intel_strip_tableau.txt); SX-C0..P10 registered before the runs. rule30_intel_trace_grow.py
+  grows the real traces by SAT (pysat, CaDiCaL) and gives every minimal absent trace its w(f), so L(W) to W = 39
+  (rule30_intel_minimal_absent_traces.txt).
   rule30_intel_mfw_dfa.py builds FO's exact-language automaton X_K from the handoff's minimal forbidden words
   (FO-P8). Intel, 2026-10-11.
 - lexicon/rule30_intel_carry.py (with rule30_intel_carry.c): CAR, the carry of Rule 30 (KIMI-QUESTIONS-5): exhaustive
