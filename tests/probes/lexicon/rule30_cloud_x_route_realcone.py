@@ -29,8 +29,14 @@ check: whether every real X cone shows 100011001 or 100011011 at tick 46, as eve
 ADDED AFTER THE FIRST RUN (CL332, registered before the family run). Mode 'family' (COMMAND ... 24 family) keeps the
 masks of the pin at 66, the SS entrances at 94 and 100 and the white-eleventh A at 106 and counts their joint cones
 (Q2), and histograms sites 14..25 of the white-A origin rows at tick 106 over the 4,096 patterns, counting those in
-GC1136's 28-pattern family and in the 12 positive cylinders (Q1); predictions and the counterfactual in CL332.
-"""
+GC1136's 28-pattern family and in the 12 positive cylinders (Q1); predictions and the counterfactual in CL332. The
+'distinct patterns' TOTAL line sums the per-cylinder counts (a sum, not a union); the per-cylinder lists are exact.
+
+ADDED AFTER THE FAMILY RUN (CL333, registered before the chain run). Mode 'chain' (COMMAND ... 24 chain) runs to tick
+212, 238 cells wide, lists every 12-bit pattern of the origin rows at 106 and the first thirteen cells at 112, 122 and
+132 of those cones (GC1141's dispatch ticks), and asks whether the return renews: the pin 1110011110100 at 172, white SS
+entrances at 200 and 206 and the origin row at 212 among the cones with the origin at 106, plus their origin and black
+AP13 row-ticks over the even ticks 108..212. Predictions Q3..Q6 and the counterfactual in CL333."""
 import itertools, sys, time
 import numpy as np
 B=lambda s: tuple(int(c) for c in s)
@@ -53,8 +59,8 @@ for s in src:
     if (rows[6][17],rows[6][18])==(0,1): pos.append(s)
 assert len(pos)==12
 LOG2N=int(sys.argv[1]); N=1<<LOG2N; M=N//64; MODE=sys.argv[2] if len(sys.argv)>2 else ''
-SMOKE=MODE=='smoke'; FAMILY=MODE=='family'
-TMAX=46 if SMOKE else 106
+SMOKE=MODE=='smoke'; CHAIN=MODE=='chain'; FAMILY=MODE in ('family','chain')
+TMAX=212 if CHAIN else (46 if SMOKE else 106)
 WIDTH=(25 if FAMILY else 13)+TMAX+1     # family mode needs sites 14..25 exact at tick 106
 ONES=np.uint64(0xFFFFFFFFFFFFFFFF)
 def pc(m):
@@ -109,18 +115,43 @@ for ci,s in enumerate(pos):
                     h=np.bincount(pat,minlength=4096)
                     fam=sum(int(h[p]) for p in range(4096) if family(tuple((p>>k)&1 for k in range(12))))
                     posn=sum(int(h[p]) for p in range(4096) if tuple((p>>k)&1 for k in range(12)) in pos)
+                    keep['o106']=o; keep['e106']=e
                     cnt['origin106 rows']=len(sel); cnt['origin106 distinct patterns']=int((h>0).sum())
                     cnt['origin106 in GC1136 family']=fam; cnt['origin106 in the 12 positive']=posn
-                    top=sorted(range(4096),key=lambda p:-h[p])[:5]
+                    top=[p for p in sorted(range(4096),key=lambda p:-h[p]) if h[p]>0][:16]
                     cnt['origin106 top patterns']=' '.join(
                         '%s:%d'%(''.join(str((p>>k)&1) for k in range(12)),h[p]) for p in top)
+            if CHAIN and t in (112,122,132):
+                sel=np.flatnonzero(np.unpackbits(keep['o106'].view(np.uint8),bitorder='little'))
+                pat=np.zeros(len(sel),dtype=np.int64)
+                for k in range(13):
+                    pat|=np.unpackbits(cells[k].view(np.uint8),bitorder='little')[sel].astype(np.int64)<<k
+                h=np.bincount(pat,minlength=8192); top=[p for p in sorted(range(8192),key=lambda p:-h[p]) if h[p]>0][:8]
+                cnt['%d first13 of origin106 cones (%d patterns)'%(t,int((h>0).sum()))]=' '.join(
+                    '%s:%d'%(''.join(str((p>>k)&1) for k in range(13)),h[p]) for p in top)
+            if CHAIN and t==172:
+                cnt['172 pin in origin106 cones']=pc(match(cells,B('1110011110100'),keep['o106']))
+                cnt['172 pin in eleventhA106 cones']=pc(match(cells,B('1110011110100'),keep['e106']))
+                cnt['172 pin in X cones']=pc(match(cells,B('1110011110100'),xmask))
+            if CHAIN and t in (200,206,212):
+                v=np.zeros(M,dtype=np.uint64)
+                for w in VALID: v|=match(cells,w,keep['o106'])
+                cnt['%d white SS entrance in origin106 cones'%t]=pc(v)
+                cnt['%d white-A origin in origin106 cones'%t]=pc(match(cells,B('1110100011011'),keep['o106']))
+            if CHAIN and t%2==0 and 108<=t<=212:
+                KO='white-A origin at even ticks 108..212 in origin106 cones (row-ticks)'
+                cnt[KO]=cnt.get(KO,0)+pc(match(cells,B('1110100011011'),keep['o106']))
+                a=np.zeros(M,dtype=np.uint64)
+                for w in TYPES: a|=match(cells,w,keep['o106'])
+                KB='black AP13 at even ticks 108..212 in origin106 cones (row-ticks)'
+                cnt[KB]=cnt.get(KB,0)+pc(a)
             if t%2==0 and t>=48:
                 a=np.zeros(M,dtype=np.uint64)
                 for w in TYPES: a|=match(cells,w,xmask)
                 n=pc(a)
-                KA='black AP13 at even ticks 48..106 (X cones, row-ticks)'
+                KA='black AP13 at even ticks 48..%d (X cones, row-ticks)'%TMAX
                 if n: cnt[KA]=cnt.get(KA,0)+n
-                KW='white-A origin at even ticks 48..106 (row-ticks)'
+                KW='white-A origin at even ticks 48..%d (row-ticks)'%TMAX
                 cnt[KW]=cnt.get(KW,0)+pc(match(cells,B('1110100011011'),xmask))
         if t==TMAX: break
         wall=np.full(M,ONES if t%2 else 0,dtype=np.uint64)
