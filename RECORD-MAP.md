@@ -141,8 +141,8 @@ PART: as on the board.
   beside a periodic wall; barrier lemma — COMPUTED (third-party), PROVED (hand parts) — §8.84
 - 1100 wall: R'(1..100) exact, max 18 at 99 (no left-finite configuration within 99 sites keeps 1100); lock lemma, structure
   theorem; all-d finiteness OPEN — COMPUTED (lane q4), PROVED (locks) — §8.85
-- Right-half language: DFA >= 291 states, follower sets growing, no bounded suffix; h <= 0.2536 certified; death criterion
-  PROVED; deaths at 32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
+- Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
+  32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
 - Swarm round: every hand proof held, six skeptic corrections, two sharp targets — SUMMARY — §8.87
 - Check-free conjecture: no X_4 (no 11, no 00000) sequence keeps the forced row-0 cells white for ever; R^F replicated to
   depth 9/16; X_4 = width-4 layer; periodic case computed to period 10, argument owed — CONJECTURED, COMPUTED — §8.88
