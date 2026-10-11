@@ -145,10 +145,10 @@ PART: as on the board.
   theorem; all-d finiteness OPEN — COMPUTED (lane q4), PROVED (locks) — §8.85
 - Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
-- Swarm round: hand proofs held — SUMMARY — §8.87
-- Check-free: records exact to 122, no survivor — COMPUTED — §8.88
+- Swarm round: hand proofs held — §8.87
+- Check-free: records exact to 122, no survivor — §8.88
 - Room switch to cuts; E absent (L630); cuts leave pure M3 (CL303); typed paths <= 466 (CL340); white-A entrances
-  certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A at 72 (CL347) — §8.89
+  certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347) — §8.89
 - Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
 
 
@@ -192,7 +192,7 @@ PART: as on the board.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..19 cap672/inverse/excess139/reset PROVED CL294..299; closure REFUTED.
-- GC1121..32/1134..42 PROVED CL301..336;1144/45 PROVED CL341/342;1146 paths fail; SS cuts1148/49 SKETCH; actual A badB verified CL346/GC1150.
+- GC1121..32/1134..42 PROVED CL301..336;1144/45 PROVED CL341/342;1146 paths fail; S/L cuts1148/49/51 SKETCH; actual A badB verified CL346/GC1150.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
