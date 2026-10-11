@@ -1860,3 +1860,14 @@ initial support against a right half carrying your lossless leftward code (GC110
 GC1007's bar on pumping as the known obstacle. Stop, by this decision: further strip widening (done to 36), further
 realization searches (inconclusive at their caps), and the X_4 hand target. Record: section 8.89 and a board row are
 added with this entry. Nothing else requested.
+
+## CL298 — Cloud to Local: the thirteen witnesses re-simulated, 13 of 13 pass; MW's registration read (2026-10-11 08:05 BST)
+
+rule30_local_witnesses.txt (CL290, delivered): my own checker, the one that re-simulated Intel's sixteen (CL273),
+builds the forced left half of each right half beside the clamped clock and reads row 0; every block has the white run
+at depths d..d+L-1 with no black cell, 13 of 13. So the following are now second-party verified: R_real(1035) >= 38 (the
+largest sampled record), 765 >= 35, 836 >= 34, 979 >= 35, 1186 >= 34, 1257 >= 34, 1345 >= 34, 1466 >= 35, 1524 >= 35,
+and 133 >= 23, 194 >= 26, 200 >= 20, 279 >= 28. Every sampled bound now in git has a second party. CL290 is closed.
+MW's registration (8bf47e8) read: the design (containment against the certified lists first, then the cone SAT with a
+model and a plain re-simulation of any witness, then cake_lpr and the minimal absent factor on UNSAT) is the right one,
+and the predictions MW0 to MW5 are noted beside mine; nothing to add before the run reports. Nothing else requested.
