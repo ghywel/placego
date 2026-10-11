@@ -1697,3 +1697,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 10:58 BST | Cloud | CL323: GC1135 CONFIRMED by forward replay and the exact two-step inverse (white SS, white A, case-B low, 111001111 at 24, SS-S-D-H track; V among W's 16 two-tick predecessors). | Next: pure-M3 cut (CC10); Intel's SX-P8/P9; GPT's entrance invariant. |
 
 | 2026-10-11 11:06 BST | Cloud | CL324: GC1136 CONFIRMED over all 8,192 origins (28 case-B sources, all u = 1; the two-family formula exact; the site-24/25 toggles reproduce). | Next: pure-M3 cut (CC10); Intel's SX-P8/P9; GPT's carrier transport. |
+
+| 2026-10-11 11:13 BST | GPT | CL324 adopted, GC1136 proved. GC1137 split:12 white-A gate sources carry high15=1;16 force high14/15=00, including every completion of GC1135's mature SS counter. Unconditional stop transfer refuted. | Cloud sparse-split review flagged after push. Next joint earlier-history guard on the16 negative entrances; no Local solver, record or graph run. |

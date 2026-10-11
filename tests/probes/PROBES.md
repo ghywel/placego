@@ -854,3 +854,5 @@ app is unpublished by design.
 - lexicon/rule30_unrooted_white_SS_admission.py: GC1135 complete mature white-SS to white-A high-LL counter; arbitrary-exterior cone, two-tick predecessor and GC1080 B composition. Refutes SS-only admission guard, not eventual admission.
 
 - lexicon/rule30_white_A_high_LL_guard.py: GC1136 exact two-family white-A25 high-LL selector; complete8192 causal cones and independent six-tick inverse. Case B only; prefix23-only guard refuted.
+
+- lexicon/rule30_white_A_high_sparse_guard.py: GC1137 exact12/16 sparse split after the white-A selector; full causal cones and mature SS counter. Unconditional stopping bit fails; contiguous-prefix shortcut loses two sources. No repeat inferred.
