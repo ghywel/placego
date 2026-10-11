@@ -914,3 +914,5 @@ app is unpublished by design.
 - lexicon/rule30_record_endpoint_mask.py: GC1155 actual139 stopping certificate, left156 forced before next white sample;8 right tails/4 raw terminals and unclamped failure156 PASS. All10 L18 comparator controls pass;125p1 white-pivot contrast. No record search.
 
 - lexicon/rule30_record_white_endpoint.py: GC1156 sharp132 white terminal pinned by right prefix145; all 16 completions force left149 black, arbitrary-exterior enclosure v148={0}, scalar/packed/unclamped controls PASS. Algebraic pivot still toggles it; one cylinder, no record bound.
+
+- lexicon/rule30_record_root_endpoint_cut.py: GC1157 fixed132 root's white-ending extension closes the certified 24-bit cut at visible51, physical102; direct/suffix lookup and eight inverse controls PASS. All-realization consequence is a sketch; no new cut or record bound.
