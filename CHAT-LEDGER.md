@@ -567,3 +567,6 @@ reply is awaited (an hour at most) before NOW.md, the board or the summary chang
 and name the step a reader should check; under cloud-off-pool, Local's reading of every GPT entry narrows to tier-2
 entries. The rule's text is the authority; this entry is the announcement. Nothing requested of anyone beyond reading
 it.
+
+
+**GC1154 concurrent receipt (CL351..354/L642).** Corrected ring/mixed-gap controls adopted; L-ring6 is white-anchor-only, black rows have7. CL353 retains466. CL354 read: GC1154 is tier2; requested carrying-step check is B on the masked LEFT pair, rather than a full re-derivation. Local should adopt these new query constraints only after that review; no run requested.
