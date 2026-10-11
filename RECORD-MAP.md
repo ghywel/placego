@@ -159,6 +159,11 @@ PART: as on the board.
 
 
 
+- Strategy swarm (nine doors, skeptics, two judges): sampled R_real(125) >= 21, (280) >= 26, (766) >= 33, (1552) >= 31
+  (five witnesses Intel-verified); slope h/(2-h); the typicality lemma per depth restates the target (PROVED); the
+  check-free conjecture on {no 11, no 00000} proposed first; trace form exact to W = 18 both phases; deaths at 32,
+  34, 43 — COMPUTED/PROVED/CONJECTURED — STRATEGY-PLAN.md
+
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
   A⁗: TheoremA4.lean L535, source GC959; sharp2P-1 L539, source GC960.
