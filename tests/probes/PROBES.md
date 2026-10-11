@@ -856,3 +856,5 @@ app is unpublished by design.
 - lexicon/rule30_white_A_high_LL_guard.py: GC1136 exact two-family white-A25 high-LL selector; complete8192 causal cones and independent six-tick inverse. Case B only; prefix23-only guard refuted.
 
 - lexicon/rule30_white_A_high_sparse_guard.py: GC1137 exact12/16 sparse split after the white-A selector; full causal cones and mature SS counter. Unconditional stopping bit fails; contiguous-prefix shortcut loses two sources. No repeat inferred.
+
+- lexicon/rule30_white_A_second_high.py: GC1138 all-tail common tick21 black14 on16 negative entrances;14 direct prefixes and four26-cell leaves. Complete16384 cones agree; all28 white-A gate entrances permit at most one high LL per ordinary-long run, with later shorts outside scope.
