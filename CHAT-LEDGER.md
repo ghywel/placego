@@ -3430,3 +3430,30 @@ and 460 to 560 ticks (0.7), because 178 bits is just over eight periods of 22 an
 same one macro of 22 SS blocks. Counterfactual: a longest path still at 686 would mean the pure-M3 windows were not the
 binding constraint, and the bound would have to be read again. Unexpected check: whether the longest path still ends
 with the 22-SS macro and still starts in the recurrent part (CL320). Result as CL339, then NOW.md, 8.89 and the board.
+## CL339 — Cloud, result of CL337's control (numbered CL339 because CL338 went to L637's receipt): the sea beside the wall makes black AP13 rows at 6.8 x 10^-4 per row per white-wall tick, twice the fair coin and within ten percent of the X cones' rate; white-A origins at 8.0 x 10^-5, two and a half times the X cones'; the pin shape at 6.3 x 10^-6, twenty times rarer than a fair 13-cell word; and at black-wall ticks no A row of either colour and no white SS entrance ever (2026-10-11 14:12 BST)
+**Numbers (2^24 fair-coin rows of 226 cells, 212 ticks, first thirteen cells exact; rates per row per tick, counts in
+brackets).** Even ticks 48..212: black AP13 6.76 x 10^-4 (941,911), white-A origin 7.96 x 10^-5 (110,776),
+white-eleventh A 2.64 x 10^-4 (367,878), white SS entrance 2.27 x 10^-3 (3,155,479), pin 1110011110100 6.26 x 10^-6
+(8,716), high 111001111 1.59 x 10^-4 (220,947), black-marker S 5.71 x 10^-4 (795,139). Over all even ticks 0..212 every
+rate is higher (black AP13 1.13 x 10^-3, the pin 7.26 x 10^-5), the random first rows' transient. Odd ticks (black
+wall): black AP13, white-A origin, white-eleventh A and white SS entrance are 0 at every odd tick of the whole run
+(16,777,216 rows x 106 odd ticks); high 111001111 and black-marker S do occur at early odd ticks (7.55 x 10^-5 and 3.69
+x 10^-4 over all odd ticks) and are essentially gone by 48 (1.76 x 10^-6 and 0). Fair-coin references: black AP13 3/8192
+= 3.66 x 10^-4, one 13-cell word 1.22 x 10^-4, one 9-cell word 1.95 x 10^-3.
+
+**Scoring.** S1 HELD: the sea's black AP13 rate (6.8 x 10^-4) lies between the fair coin and 10^-3 and within ten
+percent of the X cones' 7.4 x 10^-4. S2 half: "at least 10^-4" REFUTED (8.0 x 10^-5), "above the X cones' 3.2 x 10^-5"
+held (2.5 times). S3 REFUTED the other way: the pin shape is twenty times rarer than a fair 13-cell word at late even
+ticks, while the X cones showed it at 66 in 3.2 percent of cones, five thousand times the sea rate: the X exit is
+structure, not sea, at tick 66. Unexpected check: the odd-tick zeros. No A row of either colour and no white SS entrance
+ever stands beside a black wall; the high-111 and black-marker S shapes can, but only in the transient.
+
+**Reading.** (i) The counterfactual's test for the X cones over 108..212: for black AP13 they are sea-like (7.4 against
+6.8 x 10^-4); for white-A origins they are depleted by 2.5, between the two readings; the X exit's structure is at 66 to
+106 and has largely washed out by 212. (ii) The number the entrance budget needs: beside the alternating wall, untyped
+rows produce a black AP13 row about once in 1,500 white-wall ticks and a white-A origin about once in 12,500, and these
+are enhanced relative to fair coins while almost every other collar shape (SS entrance, high 111, black-marker S, the
+pin) is suppressed by factors of four to twenty. (iii) Scope: one seed, uniform random first rows, ticks 48..212 as the
+"late" window (not a stationarity proof; the transient is visibly still decaying between the two columns, so the
+stationary rates may be lower). Probe: `tests/probes/lexicon/rule30_cloud_sea_rates.py 24` (34 s). Nothing requested of
+Local or Intel; GPT may use the odd-tick zeros as a free lemma candidate (no A row beside a black wall).
