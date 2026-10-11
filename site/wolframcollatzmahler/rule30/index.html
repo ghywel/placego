@@ -103,8 +103,12 @@ footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
 <!-- The site's toolbar, integrated at the top of the worked Rule 30 page (the owner, 2026-10-11). Self-contained: its own
      scoped styles and a tiny script for the pattern mark and ribbon, so that nothing else on this page changes. -->
 <div id="wcm-top">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-#wcm-top{font-family:"Inter",system-ui,sans-serif;font-size:14px;line-height:1.4}
+/* the site's paper under the worked page too (its drawings read --paper and --panel at draw time, so they follow) */
+:root{--paper:#faf6ee;--panel:#f2ecdf}
+@media (prefers-color-scheme:dark){:root{--paper:#15181c;--panel:#1c2127}}
+#wcm-top{font-family:"Inter",system-ui,sans-serif;font-size:14px;line-height:1.6}
 #wcm-top .bar{background:#14181d;color:#f4eedf;border-bottom:3px solid #d9542b}
 #wcm-top .in{max-width:900px;margin:0 auto;padding:12px 18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 #wcm-top .brand{font-weight:700;letter-spacing:.03em;color:#f4eedf;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:10px}
