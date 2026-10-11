@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rule 30: One Black Cell</title>
+<meta name="description" content="Rule 30, Stephen Wolfram's favourite simple program, explained from scratch with live visuals, and where five days of work on his first prize question stands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: one reading column for the story, with each visual breaking out to the full width at the point where the
+   text needs it. The palette and faces are those of the Vitruvian plate, the page's centrepiece. */
+:root {
+  --paper: #ECEFEA;
+  --panel: #F5F6F2;
+  --ink: #1E1F1C;
+  --ink-soft: #5B6157;
+  --rule: #C8CDC2;
+  --tri: #9B2C52;
+  --sq: #1E5A86;
+  --circ: #A87306;
+  --prize: #2D7A57;
+  --font-display: "IM Fell English", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #131517; --panel: #1A1D20; --ink: #E3E1D9; --ink-soft: #9BA196; --rule: #2E3236;
+    --tri: #E0688F; --sq: #62A6DA; --circ: #E2B444; --prize: #5CC496; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 1.06rem;
+  line-height: 1.62; }
+a { color: var(--sq); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--sq); outline-offset: 2px; }
+.page { max-width: 1240px; margin: 0 auto; padding-inline: 20px; padding-block: 0 64px; }
+.col { max-width: 68ch; margin-inline: auto; }
+header.hero { padding-block: 44px 10px; display: grid; gap: 14px; }
+.eyebrow { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-soft); margin: 0; }
+h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 7vw, 4.6rem); line-height: 1.02;
+  margin: 0; text-wrap: balance; letter-spacing: -0.005em; }
+h1 em { color: var(--prize); }
+.lede { font-size: 1.22rem; margin: 0; max-width: 60ch; text-wrap: pretty; }
+h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem, 3.6vw, 2.35rem); line-height: 1.12;
+  margin: 0 0 14px; text-wrap: balance; }
+h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.35rem; line-height: 1.2; margin: 26px 0 8px;
+  text-wrap: balance; }
+section { padding-block: 44px 8px; }
+section p { margin: 0 0 16px; text-wrap: pretty; }
+.chapter { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-soft); margin: 0 0 8px; }
+figure { margin: 24px 0 26px; }
+figcaption { font-size: 0.92rem; color: var(--ink-soft); margin-top: 10px; max-width: 78ch; margin-inline: auto; }
+.wide canvas { display: block; margin-inline: auto; max-width: none; }
+.frame { border: 1px solid var(--rule); background: var(--paper); }
+.frame iframe { display: block; width: 100%; height: min(90vh, 920px); border: 0; background: var(--paper); }
+.open { font-family: var(--font-mono); font-size: 0.82rem; display: block; text-align: right; margin-top: 6px; }
+.quote { font-family: var(--font-display); font-size: 1.45rem; line-height: 1.35; margin: 22px 0; padding-left: 18px;
+  border-left: 3px solid var(--prize); }
+.quote cite { display: block; font-family: var(--font-body); font-style: normal; font-size: 0.88rem; color: var(--ink-soft);
+  margin-top: 6px; }
+.qs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 20px 0 8px; }
+.q { background: var(--panel); border: 1px solid var(--rule); padding: 14px 16px; display: grid; gap: 6px; align-content: start;
+  min-width: 0; }
+.q .n { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--prize); }
+.q .ask { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.25; }
+.q .coin { font-size: 0.9rem; color: var(--ink-soft); }
+.q .state { font-family: var(--font-mono); font-size: 0.78rem; }
+ul.facts { padding-left: 1.1em; margin: 0 0 16px; display: grid; gap: 9px; }
+ul.facts li { padding-left: 2px; }
+.must { background: var(--panel); border: 1px solid var(--rule); padding: 16px 20px; margin: 18px 0; }
+.must ul { margin: 6px 0 0; padding-left: 1.1em; display: grid; gap: 6px; }
+.tally { font-family: var(--font-mono); font-size: 0.86rem; font-variant-numeric: tabular-nums; color: var(--ink-soft);
+  text-align: center; margin-top: 8px; }
+.tally b { color: var(--ink); font-weight: 500; }
+.ctrl { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+.ctrl button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.ctrl button { font: 500 0.84rem var(--font-body); color: var(--ink); background: var(--panel); border: 1px solid var(--ink-soft);
+  border-radius: 2px; padding: 5px 12px; cursor: pointer; }
+.more { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 18px; }
+.more a { display: grid; gap: 4px; padding: 14px 16px; border: 1px solid var(--rule); background: var(--panel); text-decoration: none;
+  color: var(--ink); }
+.more a b { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; color: var(--sq); }
+.more a span { font-size: 0.9rem; color: var(--ink-soft); }
+footer { border-top: 1px solid var(--rule); margin-top: 48px; padding-top: 18px; font-size: 0.9rem; color: var(--ink-soft); }
+footer p { margin: 0 0 10px; }
+footer ul { margin: 0 0 10px; padding-left: 1.1em; display: grid; gap: 4px; }
+@media (max-width: 760px) {
+  .page { padding-inline: 16px; }
+  .qs { grid-template-columns: minmax(0, 1fr); }
+  body { font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero col">
+    <p class="eyebrow">A simple program, a forty-year question</p>
+    <h1>Rule 30: <em>one black cell</em></h1>
+    <p class="lede">Start with a single black square. Apply one tiny rule, row after row. What grows is part orderly,
+      part wild, and nobody can yet prove whether the column running straight down its middle ever repeats.</p>
+  </header>
+
+  <figure class="wide">
+    <canvas id="hero" role="img" aria-label="Rule 30 growing from a single black cell, row by row, with its centre column picked out in green and copied into a strip on the right as it is read."></canvas>
+    <p class="tally" id="tally"></p>
+    <figcaption>Rule 30 growing from one black cell. The green column down the middle is the one Stephen Wolfram's
+      prizes ask about. As each row appears, its middle cell is read off into the strip on the right: so far it looks
+      exactly like the tosses of a fair coin.</figcaption>
+  </figure>
+
+  <section class="col" id="rule">
+    <p class="chapter">1 · The rule</p>
+    <h2>A rule you could run with a pencil</h2>
+    <p>Picture a row of squares, each black or white. To make the next row, every square looks at three squares
+      above it: the one directly above, and that one's left and right neighbours. Those three colours can come in eight
+      combinations, and the rule simply says, for each combination, what colour the new square is.</p>
+    <p>Write the eight answers as a binary number and you get 00011110, which is 30. That is the whole of Rule 30.
+      Below, the rule is applied one square at a time: the three boxed squares decide the new one, and the matching
+      entry of the rule lights up.</p>
+  </section>
+  <figure class="wide">
+    <canvas id="explain" role="img" aria-label="The eight cases of Rule 30 above a small grid. A cursor moves along each new row; the three cells above it are boxed and a dotted line joins the matching case of the rule to the new cell."></canvas>
+    <div class="ctrl"><button id="explain-play" type="button">Pause</button><button id="explain-step" type="button">Step</button></div>
+    <figcaption>In words: the new square is black when the square above-left differs from "the square above or the
+      one above-right is black". One line of logic, the same everywhere, applied for ever.</figcaption>
+  </figure>
+
+  <section class="col" id="why">
+    <p class="chapter">2 · Why it matters</p>
+    <h2>Randomness from nothing</h2>
+    <p>In the early 1980s Stephen Wolfram set out to look systematically at the simplest possible programs of this
+      kind. There are only 256 of them. Most do something dull: they die out, repeat, or make neat nested patterns.
+      Rule 30 does not. Its left side settles into regular stripes, but its right side never settles at all, and its
+      centre column passes the standard tests of randomness.</p>
+    <p>That observation, that a very simple rule can produce behaviour which looks random, became a cornerstone of
+      Wolfram's <em>A New Kind of Science</em> (2002). For many years Rule 30 generated
+      Mathematica's random integers. Its pattern clads the walls of Cambridge North railway station. And it was the subject of a
+      challenge.</p>
+    <blockquote class="quote">It's been nearly 40 years since I first saw rule 30—but it still amazes me.
+      <cite>Stephen Wolfram, announcing the Rule 30 Prizes, 1 October 2019</cite></blockquote>
+    <p>On that day Wolfram offered $30,000 in prizes, $10,000 for each of three questions about the centre column.
+      Seven years on, all three are open. Read the column as a coin, black for heads and white for tails:</p>
+    <div class="qs">
+      <div class="q"><span class="n">Problem 1</span><span class="ask">Does the centre column always remain non-periodic?</span>
+        <span class="coin">Does the coin ever fall into a pattern that repeats for ever?</span><span class="state">Open</span></div>
+      <div class="q"><span class="n">Problem 2</span><span class="ask">Does each colour occur on average equally often in it?</span>
+        <span class="coin">Is the coin fair in the long run?</span><span class="state">Open</span></div>
+      <div class="q"><span class="n">Problem 3</span><span class="ask">Does computing its nth cell take at least n steps of effort?</span>
+        <span class="coin">Is there a shortcut to the nth toss?</span><span class="state">Open</span></div>
+    </div>
+    <p>The coin is not random: every toss is fixed by the rule. So each answer is simply yes or no, and only a proof
+      can settle it. Wolfram's team has computed a billion cells of the column. They look perfectly random, and that
+      proves nothing.</p>
+  </section>
+
+  <section class="col" id="edges">
+    <p class="chapter">3 · Order at the edges</p>
+    <h2>Where the order is, and where it ends</h2>
+    <p>Look again at the pyramid. Its left side is striped and its right side is wild, but neither is quite what it
+      seems. Both edges carry order with an exact shape, and both shapes were found on 9 October 2026 by looking hard
+      at the picture.</p>
+    <h3>The stripes on the left end along a ragged line</h3>
+    <p>Read the pyramid in lines parallel to its left edge, its diagonals. The first few diagonals settle into short
+      repeating patterns, and once a run of them repeats, it repeats for ever, because those diagonals depend only on
+      one another. So at every row there is an exact count of diagonals that have reached their eternal stripes. Below,
+      they are shaded, and the magenta line is the edge of the shaded band: the exact place where order ends.</p>
+    <p>It does not run down the side of the pyramid. It starts near the centre at the very top and leans out at about
+      a quarter of the speed of the pyramid's own edge, 0.244 squares per row on average. That is close to the speed, about
+      0.246, at which a change made on the right spreads leftwards through a random row; whether the two are exactly
+      equal is not known. The chart follows the edge to row 524,288: about that straight line it wanders like a random
+      walk.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="bricks.html?embed&amp;v=20261009e#front" title="The left front, live" loading="lazy"></iframe></div>
+    <a class="open" href="bricks.html#front">Open the left front on its own page →</a>
+    <figcaption>Live: Rule 30 from one black cell to row 512, with the ordered band shaded and its exact edge in
+      magenta; the dashed line is a quarter of light speed. <b>Sound</b>, off until pressed, turns the chart's curve
+      into one gliding tone, its pitch the curve's height between the two dashed guides. The edge's definition is
+      exact, and the ordered band never shrinks. Its average speed and its random-walk wander are measurements, not proofs. The chart's time axis
+      doubles at each tick, so its last stretch holds half of all the rows: the late climb is an ordinary swing of
+      the walk, not a sudden change.</figcaption>
+  </figure>
+
+  <section class="col" id="ruler">
+    <h3>Even the wild side has a ruler at its edge</h3>
+    <p>Gareth noticed this by eye: along the wild right edge, the white triangles that touch it arrive at
+      perfectly even spacing, and only their sizes differ. It is exactly true. At every second row a white triangle
+      starts one square inside the edge, and its width depends only on how many times 2 divides the row number, like
+      the marks on a ruler. Rows 2, 6, 10, 14 and so on (twice an odd number) get the smallest triangle, rows 4, 12,
+      20 the next size up, rows 8, 24, 40 the next, and so on.</p>
+    <p>The reason is that every diagonal parallel to the right edge repeats with a period that is a power of 2. At a
+      row that is a multiple of a diagonal's period, the diagonal is white, as it was at the start; the triangle ends at
+      the first diagonal whose period does not divide the row. This is proved for all time.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="bricks.html?embed&amp;v=20261009e#ruler" title="The edge ruler, live" loading="lazy"></iframe></div>
+    <a class="open" href="bricks.html#ruler">Open the edge ruler on its own page →</a>
+    <figcaption>Live: the pyramid grows row by row. Each even row's edge triangle is shaded as it is born, and its
+      width is repeated as a teal tick to the right of the edge, so the ticks draw the ruler. The magenta tracer joins
+      the newest triangle's corner to its tick and leaves a trail: inside the edge the trail is the right side's own
+      front, the place where its visible order ends, deepest at each power of 2. <b>Sound</b>, off until pressed,
+      plays each triangle as a note, an octave lower for each doubling, and keeps its own time: it plays on down the
+      ruler past the end of the picture until you pause it.</figcaption>
+  </figure>
+
+  <section class="col">
+    <p>Neither kind of order reaches the prize column. At row t the centre column sits on the t-th diagonal from
+      either edge, ever deeper, where the periods have grown too long to see: the 54th diagonal from the right edge
+      repeats only after 4,194,304 rows. Order at the edges says nothing yet about the middle, and that is why the
+      problems are hard.</p>
+  </section>
+
+  <section class="col" id="plate">
+    <p class="chapter">4 · The whole picture</p>
+    <h2>A triangle, a square and a circle</h2>
+    <p>Now to the prize column itself. Problem 1 asks whether it can ever repeat. So assume it does, in the
+      simplest way it could: white, black, white, black, for ever. Hold the centre to that beat, like a wall, and run
+      Rule 30 on the squares to its right from a random start. The column right next to the wall does something
+      remarkable. It falls into a fixed loop of 56 steps, a wheel, and stays on it until something from further right
+      knocks it off, after which it settles back at a new position on the wheel.</p>
+    <p>The plate below puts the pieces together, after Leonardo's <em>Vitruvian Man</em>. At the top is the triangle
+      Rule 30 draws from one cell, with the prize column down its middle and the off-centre region where the chaos
+      lives. It is the top half of a square standing on its corner. Below is the wheel, which is really two clocks at
+      once, of 8 and of 7 positions. Beside it runs the wall experiment that drives it. The dotted lines follow the
+      wheel's current position to both clocks and to the cell it stands for.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="vitruvian.html?embed&amp;v=20261009e" title="Vitruvian Rule 30, live" loading="lazy"></iframe></div>
+    <a class="open" href="vitruvian.html">Open the plate on its own page →</a>
+    <figcaption>Live: the triangle, its square, the prize column, the off-centre core, and the 56-point wheel with its
+      8-point and 7-point clocks. Each kick, when column 1 is knocked to a new place on the wheel, is counted in the
+      readout.</figcaption>
+  </figure>
+
+  <section class="col" id="beat">
+    <p class="chapter">5 · Assume the opposite</p>
+    <h2>What a repeating centre would demand</h2>
+    <p>Rule 30 has a useful property: if you know the centre column and the column beside it, every square to the left
+      is forced, one after another. So a repeating centre forces the whole left side. The prize asks about one black
+      square; we ask the same of every finite start, a pattern with only finitely many black squares, which includes it.
+      For any of those the forced left side would have to turn white for good beyond some depth. A counterexample to
+      Problem 1 is exactly that: a white edge that never breaks.</p>
+    <h3>Make the centre say anything, and watch a finite start run out</h3>
+    <p>The same property works the other way round. Choose anything for the centre to say, the primes, the Fibonacci
+      numbers, the digits of &pi; in binary, your own name, and build the start one square at a time, leftwards: the
+      square t places left of the centre decides the centre at step t outright, without disturbing the steps before.
+      So every sequence can be made. The catch is that the start never ends; each step needs one more square. Cut it
+      to a finite start and the sequence breaks, just as the first square it lacks reaches the centre. Even the best
+      of every start of 18 squares follows the primes for only 18 steps, and &pi; for 19. A finite start buys about one
+      step per square, whatever it is asked to say, unless the sequence is one Rule 30 makes by itself. Problem 1 asks
+      whether any repeating pattern is one of those.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="centre.html?embed&amp;v=20261010a" title="Make the Centre Say Anything, live" loading="lazy"></iframe></div>
+    <a class="open" href="centre.html">Open Make the Centre Say Anything on its own page →</a>
+    <figcaption>Interactive: pick what the centre should say and how many squares the start may use, or press <b>Grow
+      the start</b>. The two strips beside the picture compare what was wanted with what the centre does; the red
+      dashed line follows the first missing square on its way to the centre, and the chart in the empty corner plots
+      steps against squares, with the best of every finite start up to 18 squares in ochre. That every sequence can
+      be built from an infinite start is exact; the one step per square is a measurement on small starts, not a
+      theorem.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h3>Flip one bit, and watch the change spread</h3>
+    <p>A start word can also be animated. Flip one of its bits and the picture below changes, but only inside a cone
+      that opens from the flipped square, and the change arrives one step at a time, so it sweeps down the page.
+      Its right edge is a straight line, exactly one square per step, for the same reason the start could be built
+      square by square. Its left edge moves only when the colours let it through: about a quarter of a square per
+      step across the random-looking inside, a full square once it reaches the white outside. A flip left of the
+      centre reaches the centre column after exactly as many steps as it is squares away. Flip the bits in Gray-code
+      order and the frames walk through every possible start, each one flip from the last.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="flip.html?embed&amp;v=20261010b" title="Flip One Bit, live" loading="lazy"></iframe></div>
+    <a class="open" href="flip.html">Open Flip One Bit on its own page →</a>
+    <figcaption>Live: each frame flips one bit of a 24-square start and sweeps the new picture down from the top; the
+      changed squares are tinted, the cone's edges are drawn in red, and the step where the centre first changes is
+      marked. <b>Change only</b> shows just the squares that changed. The right edge's exact speed is proved; the
+      quarter is the record's measurement on random rows, and the readout measures each flip as it happens.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h3>If the column beside the centre repeats too, the left side crystallises</h3>
+    <p>Try it. Below, the centre is held to its beat (teal) and the column beside it (amber) is given a repeating
+      pattern; pick one from the menu or ask for a random one. Rule 30 then fixes the columns to the left one at a
+      time, so the picture grows leftwards from the centre. Whatever the pattern, after a short stretch (the dashed
+      line) the left side freezes into a crystal: a wall built from one brick, repeating across as well as down. The
+      brick is never blank, so the left side can never turn white. That is Jen's theorem of 1990. Across every pattern
+      of even length up to 20, 1,398,100 of them, only 20 different bricks ever appear.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="bricks.html?embed&amp;v=20261009e#crystals" title="Crystals beside the wall, live" loading="lazy"></iframe></div>
+    <a class="open" href="bricks.html#crystals">Open the crystals on its own page →</a>
+    <figcaption>Live: time runs down, depth to the left of the centre runs left. The amber outline is one brick of the
+      crystal and the grey ones are its copies; the dotted tracer follows one black square from brick to brick. That
+      the left side becomes one brick, never blank, is proved; the census of 20 bricks is a computation whose
+      predictions were written down first.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h3>When it never repeats</h3>
+    <p>So a counterexample's second column can never repeat, and its left side has no crystal to settle into. The
+      picture below shows how that left side is built. It is turned on its side: time runs left to right, the top row
+      is the centre's beat, the next is the column beside it, driven by a random right side, and each row below is the
+      next column to the left. Built this way, each row records where the row above it changes, plus scattered dots,
+      the edge events, which the pattern makes for itself.</p>
+    <p>That makes the left side a pile of <em>Sierpinski triangles</em>. Start with one black square, and fill each
+      row below it by a far simpler rule than Rule 30: a square is black when exactly one of the two squares above it,
+      straight up and up-right, is black (this comparison is the Gray code, which chapter 7 comes back to). The single dot grows into a triangle made of three half-size copies of
+      itself, each made of three smaller copies, and so on for ever: the Sierpinski triangle, which is also the
+      pattern of the odd numbers in Pascal's triangle. Give the same rule several dots and each grows its own
+      triangle, but where two triangles overlap they cancel, so a square ends up black exactly when an odd number of
+      triangles cover it.</p>
+  </section>
+  <figure class="wide">
+    <canvas id="sier" role="img" aria-label="Left: one black square grows, row by row, into a Sierpinski triangle under the rule 'black when exactly one of the two squares above is black'. Right: three dots grow three tinted triangles at once; a square is black where an odd number of triangles cover it."></canvas>
+    <figcaption>Left, one dot grows a Sierpinski triangle: every row is the row above compared with itself shifted by
+      one square. Right, three dots grow three triangles, tinted, and where triangles overlap they cancel in pairs. Run
+      sideways, Rule 30 is exactly this rule plus the dots it makes for itself, so every black square of its forced
+      left side is an odd overlap of Sierpinski triangles, one hanging from each dot.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h3>Sierpinski triangles on both sides</h3>
+    <p>This is not special to the left side, nor to running sideways. Read the ordinary way, down the page, Rule 30
+      is the same kind of rule: do what Rule 60 does, black when the square up-left and the square above differ, then
+      flip the square under every <em>kick</em>, a white square with a black one to its right. Rule 60 alone grows
+      one black square into a Sierpinski triangle, and each kick starts another, so every square of the whole pyramid,
+      the striped side and the wild side alike, is an odd overlap of Sierpinski triangles. About a quarter of all
+      squares are kicks on both sides; what differs is only how they are arranged, in regular stripes on the left and
+      scattered on the right. All the triangles lean the same way, down and to the right, because Rule 30 uses its
+      left neighbour exactly and its right neighbour only through the kick, which is also why only the left side can
+      be built sideways.</p>
+  </section>
+  <section class="col">
+    <p>The demonstration below shows both readings of that one equation. <b>Down the page</b> is the familiar
+      pyramid: point at any square, on either side, to see the triangle of kicks that decides it. <b>Sideways, beside
+      the wall</b> is the left half built outwards from a centre held to the beat, the picture this chapter has been
+      describing. There, click or drag on the green line, time 0, to ask what a counterexample would need: if its
+      white edge started at that depth, everything in the shaded wedge below would have to stay white, one depth deeper
+      at every step. The darker squares are where this random start is black instead. With every row shown, the wedge
+      closes into a whole triangle where the picture itself ends; in a real counterexample it would go on for ever.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="sierpinski.html?embed&amp;v=20261010c" title="Sierpinski Everywhere, live" loading="lazy"></iframe></div>
+    <a class="open" href="sierpinski.html">Open Sierpinski Everywhere on its own page →</a>
+    <figcaption>Interactive, in two views. In both, point at a square to see the triangle of kicks (dots) that decides
+      it and their count, odd for black and even for white, and click a kick to draw the triangle it spreads. Down the
+      page, <b>Kicks removed</b> shows the single Sierpinski triangle Rule 30 would draw without them. Sideways, the
+      green line sets the counterexample's wedge, <b>Random photons</b> scatters the dots at random, and <b>Build
+      sideways</b> grows the picture row by row. Each view rebuilds its squares from the triangles alone and checks
+      them against Rule 30. The rewriting is exact algebra; the quarter of squares that are kicks is a
+      measurement.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h3>What the white edge would cost</h3>
+    <p>We looked at what such an edge would cost. It drags a disturbance along with it, and that disturbance pulls on
+      the squares that must stay white with a beat: odd, odd, even, odd, odd, even, the pattern of the Fibonacci numbers
+      1, 1, 2, 3, 5, 8, 13. Something inside has to answer that beat for ever. The four short animations below show the
+      beat, the one pattern that could pay it and why Rule 30 forbids it, why the payment always needs older and older
+      events, and how real Rule 30 keeps trying regardless.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="heartbeat.html?embed&amp;v=20261010a" title="Frontier Heartbeat, live" loading="lazy"></iframe></div>
+    <a class="open" href="heartbeat.html">Open the four acts on their own page →</a>
+    <figcaption>Live: start with act 0, which shows how this frame is the familiar pyramid turned on its side: time runs
+      across, depth into the left side runs down. The line under the buttons gives the whole argument in one sentence
+      and marks the act you are on. In acts 1 and 2 the red dots are the edge's disturbance; each one that lands in the
+      target's triangle is numbered and traced to the target, the target's label gives the count, odd or even, and
+      the bars beside the rows show the beat that must be paid.</figcaption>
+  </figure>
+
+  <section class="col" id="found">
+    <p class="chapter">6 · What we found</p>
+    <h2>Where Problem 1 stands</h2>
+    <p>We have not solved any of the three problems. Here is what has been settled along the way, in plain terms.
+      Every proof below was checked by a second reader inside the project; none has yet been reviewed outside it.
+      Computations were announced with their expected outcomes before they were run, and the few exploratory ones are
+      marked as such in the record.</p>
+    <h3>The case we attacked</h3>
+    <ul class="facts">
+      <li>A centre that eventually stays one colour for ever is impossible for any finite start with a black square.
+        Condrey proved this in September 2026. He named the next case, white, black, white, black, as the next
+        unresolved one, and it is the case this work is about.</li>
+      <li>No such counterexample exists close to the centre. Its white edge would have to begin more than 248 squares
+        to the left. No right side of up to 32 squares works with a left side of up to 108; that is 4.3 billion cases,
+        all checked.</li>
+      <li>The same question for a close sibling of Rule 30, Rule 210, is now settled: no finite start keeps its
+        centre ticking white, black, white, black.</li>
+    </ul>
+    <div class="must">
+      <b>If a counterexample exists, it must look like this</b>
+      <ul>
+        <li>its column beside the centre never settles into a repeating pattern, so the wheel above slips for ever;</li>
+        <li>the slips cannot become rarer and rarer faster than a fixed ratio;</li>
+        <li>read every other step, which is all the left side ever sees of it, that column carries less than an eighth of
+          a bit per reading, whatever lies to its right;</li>
+        <li>it cannot be the famous Fibonacci word or any sequence of that kind, nor, for almost every turning speed,
+          a reading of a turning circle through windows; the Thue–Morse sequence is ruled out at least for left edges up to 15,868
+          squares.</li>
+      </ul>
+    </div>
+    <p>Apart from the first point, which is Jen's theorem of 1990, none of this was in our record on 4 October, and a
+      limited search did not find it in print. Together it makes a counterexample implausible, but it is not a proof.
+      Everything comes down to one statement nobody has a method for. Holding the centre to its beat has to cost real
+      information: the number of starting patterns that keep the beat should fall off exponentially with time. We can
+      measure that fall-off, and it is close to one bit per step. The part of the cost paid by the start's left side
+      is proved. The part paid by its right side is the open problem.</p>
+    <h3>The centre column itself</h3>
+    <ul class="facts">
+      <li>It is as unpredictable as a coin to every linear test: over its first 4,194,304 cells, no linear recurrence
+        shorter than half that length generates it, exactly what a fair coin gives.</li>
+      <li>Its colours stay balanced like a fair coin's, and no word of up to 16 cells recurs more than chance allows,
+        even when we looked for words that stayed favoured from one half of the sample to the other.</li>
+      <li>Read as a code, the column cannot say where it came from. Infinitely many other finite starts, 11, 101, 1011,
+        10101 and so on, produce exactly the same centre column. Searches of every start with up to 20 squares on the
+        right and 1,000 on the left, or up to 28 on the right and 200 on the left, found no others.</li>
+    </ul>
+    <h3>A ring that keeps the clock for ever</h3>
+    <p>One construction shows how close the edge of possibility is. A row of 84 squares, repeated end to end for ever,
+      comes back to itself every six steps. Its centre ticks white, black, white, black for good, and the column beside
+      it plays the short loop over and over. It is no counterexample, because it has infinitely many black squares, but
+      it is a real Rule 30 pattern doing exactly what a counterexample would have to do.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="necklace.html?embed&amp;v=20261009e" title="The All-S Necklace, live" loading="lazy"></iframe></div>
+    <a class="open" href="necklace.html">Open the necklace on its own page →</a>
+    <figcaption>Live: the 84-square ring, its history unrolled inside it, and four squares traced to the cells that hold
+      their present colour. The page recomputes the ring from its 84-bit certificate when it loads. <b>Sound</b>, off
+      until pressed, plays the ring as a music box: each step turns it by 14 beads past a comb of 14, so the whole ring
+      is read once every six steps, and its infinite history is one bar of six beats.</figcaption>
+  </figure>
+
+  <section class="col" id="ring">
+    <h3>The ring turns, and its history is a wall of bricks</h3>
+    <p>Watched as it runs, the ring is simpler than it looks. Each step of Rule 30 turns the whole ring by 14 of its 84
+      squares, one sixth of a turn, which is why it comes back every six steps. Press <b>Turning with the ring</b> to
+      redraw it as if the paper turned too: every column becomes a single colour for ever. Its whole infinite history
+      is one brick, 14 squares wide and 6 rows tall with 43 black squares, laid like bricks in a wall, each column of
+      bricks one row lower than the one before. It is one of the 20 crystals above.</p>
+    <p>Behind it is a general fact we proved. Rule 30 can be cut into eight jigsaw pieces, one for each case of the
+      rule, and its histories are exactly the ways of fitting them together. A row that comes back moved further than
+      a change could have travelled in the time, as this ring does, must repeat across as well, so its history is a
+      wall of one brick. The same pieces make walls like this one, so Problem 1 is not a question about the pieces:
+      it asks whether the one picture grown from a single black piece can ever repeat down its middle.</p>
+  </section>
+  <figure>
+    <div class="frame"><iframe src="bricks.html?embed&amp;v=20261009e#ring" title="The turning ring, live" loading="lazy"></iframe></div>
+    <a class="open" href="bricks.html#ring">Open the turning ring on its own page →</a>
+    <figcaption>Live: 48 steps of the ring, one row per step. The amber outline is one brick and the faint ones are its
+      copies; the three dotted tracers follow three values as they ride round the ring, slanted as it runs and
+      straight down when the frame turns with it. The page checks the turn against the rule as it loads.</figcaption>
+  </figure>
+
+  <section class="col" id="collatz">
+    <p class="chapter">7 · A twin in arithmetic</p>
+    <h2>The same question, asked of numbers: Collatz</h2>
+    <p>Take any whole number. If it is even, halve it; if it is odd, triple it, add one and halve it. Repeat. Lothar
+      Collatz asked in 1937 whether every start eventually falls to 1. Computers have checked every start below
+      2<sup>71</sup>, about 2.4 &times; 10<sup>21</sup>; nobody can prove it; and a prize of &yen;120 million
+      (Bakuage, 2021) waits for a proof or a counterexample.</p>
+    <p>It looks like another world, but in binary it is the same machine as Rule 30. A number written in binary is a
+      row of black and white squares, and multiplying it by 3/2, the heart of Collatz's odd step (which is 3n/2 plus a
+      half), works on that row much as Rule 30 does. Both start from one simple step, the <em>Gray code</em>, and add a
+      correction.</p>
+    <p>The Gray code is a way of counting in binary in which each number differs from the one before in a single
+      digit: 000, 001, 011, 010, 110, 111, 101, 100. It is named after Frank Gray of Bell Labs, and it is used wherever
+      a reading must never jump, as in a rotary encoder. Its recipe is one comparison: write the number in binary and
+      compare each digit with the one on its left, black where they differ. Repeat that step row after row from a
+      single black square and the Sierpinski triangle of chapter 5 appears. Counting in Gray code changes digit number
+      0, 1, 0, 2, 0, 1, 0, 3, ... at steps 1, 2, 3, 4, ...: the digit is how many times 2 divides the step, which is
+      the edge ruler of chapter 3 again, so the ruler's rhythm, and its sound, is the Gray code counting. Below, one
+      number goes through three rules side by side.</p>
+  </section>
+  <figure class="wide">
+    <canvas id="gray" role="img" aria-label="One number in binary as a row of squares, then its Gray code, then Rule 30 applied to the same row, then the number multiplied by 3/2. Squares where Rule 30 or the multiplication differ from the Gray code are ringed in red."></canvas>
+    <div class="ctrl"><button id="gray-22" type="button">22</button><button id="gray-new" type="button">Another number</button></div>
+    <p class="tally" id="gray-tally"></p>
+    <figcaption>Rule 30 is the Gray code plus a correction wherever a square is white and its right-hand neighbour
+      black, so its corrections are single squares and never two side by side. Multiplying by 3/2 is the number plus
+      half of itself, which is the Gray code plus the carries of that addition, and a carry runs on until it meets a
+      0. Same step, two ways of correcting it.</figcaption>
+  </figure>
+
+  <section class="col">
+    <p>So the two problems are two ways of getting the same simple rule slightly wrong, and both unroll into
+      overlapping Sierpinski triangles, one hanging from each correction. Here both run from a single black square:
+      Rule 30, and the powers of 3, which are what repeated multiplication by 3/2 does to a single 1 (the halving
+      only shifts the row).</p>
+  </section>
+  <figure class="wide">
+    <canvas id="twin" role="img" aria-label="Side by side, row by row: Rule 30 from one black square, and the powers of 3 written in binary with the last digit on the right edge. Marked in red are the squares where each departs from the shared Sierpinski step; or, in the second view, the white runs just inside each black right edge."></canvas>
+    <div class="ctrl"><button id="twin-corr" type="button" aria-pressed="true">The corrections</button><button id="twin-ruler" type="button" aria-pressed="false">The edge rulers</button></div>
+    <p class="tally" id="twin-tally"></p>
+    <figcaption>Row t of the right-hand picture is 3<sup>t</sup> in binary, its last digit (always 1) on the right edge,
+      so the edge moves one square per row as Rule 30's does. <b>The corrections</b> marks every square where the
+      next row departs from the Sierpinski step: in Rule 30 they are single squares, in multiplication they are
+      carries, which run in strings. <b>The edge rulers</b> marks the white run just inside each edge on every second
+      row.</figcaption>
+  </figure>
+
+  <section class="col">
+    <p>The likeness reaches the edges too. Every second row of the powers of 3 has a run of white squares just inside
+      its black edge, and its length depends only on how many times 2 divides the row number: the same kind of ruler
+      that Gareth spotted on Rule 30's edge. For the powers of 3 it is a classical theorem, the "lifting the exponent"
+      lemma, and the ruler is perfectly regular, one square longer for each doubling. Rule 30's grows by about two
+      and a half squares for each doubling, irregularly; that rate is measured, not proved. In both pictures every diagonal parallel to the right edge
+      repeats with a period that is a power of 2, and in both the middle is where nobody can prove anything.</p>
+    <p>The questions are the same shape as well. In both, a finite start, a number's finitely many digits or a row's
+      finitely many black squares, is fed to a rule that can be run backwards, and the question is whether what
+      comes out beyond the part the start controls behaves like coin tosses. One exact statement holds word for word
+      in both: a stretch of the output can repeat only if it is no longer than the current state is large, counted in
+      digits or in squares (on the Collatz side this was already known). And the method that settles the easy cases
+      stops at the same place in both, and in a third famous problem, Mahler's 3/2 problem of 1968. It shows that no
+      counterexample exists when the constrained part can behave in only finitely many ways, and says nothing once
+      it can behave in infinitely many, which is exactly where Rule 30's white-black case and Mahler's question
+      sit.</p>
+    <p>So each side holds a tool the other lacks. Collatz has arithmetic: remainders modulo powers of 3, and linear
+      forms in logarithms, which bound how close a power of 3 can come to a power of 2. Rule 30 has locality: its
+      corrections are single squares, which is what made the exact rules about edge events possible. A proof on
+      either side would show what a proof on the other has to replace. Neither side has one yet. The details, with
+      every claim's source, are in the Collatz part of the record.</p>
+  </section>
+
+  <section class="col" id="how">
+    <p class="chapter">8 · How this was done</p>
+    <h2>Five days, three collaborators, everything in the open</h2>
+    <p>This work was done between 4 and 9 October 2026 by Gareth, working with AI collaborators: Claude,
+      by Anthropic, in two roles, and GPT, by OpenAI. Each proof was proposed by one party and checked by another
+      before it was filed as proved. Predictions were written down before experiments, and every prediction that failed
+      was kept. The full record, with its proofs, refutations and computations, is public.</p>
+    <div class="more">
+      <a href="https://github.com/ghywel/placego/blob/main/STATE-OF-THE-PROOF.md"><b>The state of the proof</b><span>Where the
+        three problems stand, with sources for every claim.</span></a>
+      <a href="https://github.com/ghywel/placego/blob/main/PROOFS.md"><b>The proofs</b><span>Every proved statement, each with
+        its second reader.</span></a>
+      <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md"><b>The research record</b><span>The full working
+        notes, measurements and refutations.</span></a>
+      <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md"><b>The Collatz twin</b><span>What the
+        Rule 30 method gives Collatz, what it shares with Mahler's problem, and what each side lacks.</span></a>
+      <a href="bricks.html"><b>Bricks, rulers and fronts</b><span>Four of the page's visuals together, each with its notes
+        and its standing in the record.</span></a>
+    </div>
+  </section>
+
+  <footer class="col">
+    <p>Sources: Stephen Wolfram, <a href="https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/">"Announcing
+      the Rule 30 Prizes"</a> (2019) and <a href="https://writings.stephenwolfram.com/2017/06/oh-my-gosh-its-covered-in-rule-30s/">"Oh
+      My Gosh, It's Covered in Rule 30s!"</a> (2017); <a href="https://www.wolframscience.com/nks/"><em>A New Kind of
+      Science</em></a> (2002); Condrey, <a href="https://arxiv.org/abs/2609.09431">"Finite Configurations Cannot Generate
+      a Constant Trace in Rule 30"</a> (2026); Jen, on the periodicity of adjacent columns (1990); Meier and Staffelbach,
+      on recovering Rule 30's left side from its centre (1991).</p>
+    <p>The visuals on this page compute everything they show, live, in your browser. Page dated 9 October 2026.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+  function rule30(a) {
+    var b = new Uint8Array(a.length);
+    for (var i = 1; i < a.length - 1; i++) b[i] = a[i - 1] ^ (a[i] | a[i + 1]);
+    return b;
+  }
+  function fit(c, w, h) {
+    var d = Math.min(window.devicePixelRatio || 1, 2);
+    c.width = Math.round(w * d); c.height = Math.round(h * d);
+    c.style.width = w + "px"; c.style.height = h + "px";
+    var g = c.getContext("2d"); g.setTransform(d, 0, 0, d, 0, 0); return g;
+  }
+  function availWidth(el) {
+    var pg = document.querySelector(".page"), ps = getComputedStyle(pg);
+    return pg.clientWidth - parseFloat(ps.paddingLeft) - parseFloat(ps.paddingRight);
+  }
+
+  /* ---- the hero: the pyramid grows; its centre column is read into a strip ---- */
+  var hero = document.getElementById("hero"), tallyEl = document.getElementById("tally");
+  var H = { g: null, W: 0, Hh: 0, s: 3, R: 160, rows: [], shown: 0, hold: 0 };
+  function heroLayout() {
+    var w = Math.min(availWidth(), 1180), h = Math.round(Math.min(window.innerHeight * 0.6, 560, w * 0.62));
+    H.s = Math.max(1.4, Math.min(4, w / 420));
+    H.R = Math.max(40, Math.floor(Math.min(h / H.s - 2, ((w * 0.94 - 40) / H.s - 9) / 2)));
+    H.W = w; H.Hh = Math.round((H.R + 2) * H.s);
+    H.g = fit(hero, w, H.Hh);
+    var n = 2 * H.R + 5, row = new Uint8Array(n); row[H.R + 2] = 1; H.rows = [row];
+    for (var t = 1; t <= H.R; t++) H.rows.push(rule30(H.rows[t - 1]));
+    H.shown = reduce ? H.R : Math.min(H.shown, H.R);     // a smaller window has fewer rows: clamp, or heroDraw reads past them
+    heroDraw();
+  }
+  function heroDraw() {
+    var g = H.g, s = H.s, R = H.R, W = H.W, n = 2 * R + 5;
+    var sw = Math.max(6, s * 3), gap = Math.max(18, s * 8), px = (W - (n * s + gap + sw)) / 2, sx = px + n * s + gap;
+    var ink = css("--ink"), prize = css("--prize"), rule = css("--rule"), muted = css("--ink-soft");
+    g.clearRect(0, 0, W, H.Hh);
+    var black = 0, white = 0;
+    for (var t = 0; t <= H.shown; t++) {
+      var row = H.rows[t];
+      for (var i = 0; i < n; i++) if (row[i]) {
+        g.fillStyle = i === R + 2 ? prize : ink;
+        g.fillRect(px + i * s, t * s, s + 0.3, s + 0.3);
+      }
+      var v = row[R + 2]; if (v) black++; else white++;
+      g.fillStyle = v ? prize : rule; g.globalAlpha = v ? 1 : 0.5;
+      g.fillRect(sx, t * s, sw, s + 0.3); g.globalAlpha = 1;
+    }
+    if (!reduce && H.shown < R) {                    // the tracer: this row's middle cell into the strip
+      var y = H.shown * s + s / 2, x0 = px + (R + 2.5) * s;
+      g.setLineDash([4, 3]); g.strokeStyle = css("--paper"); g.lineWidth = 3.6;
+      g.beginPath(); g.moveTo(x0 + s, y); g.lineTo(sx - 2, y); g.stroke();
+      g.strokeStyle = prize; g.lineWidth = 1.4;
+      g.beginPath(); g.moveTo(x0 + s, y); g.lineTo(sx - 2, y); g.stroke(); g.setLineDash([]);
+      g.strokeStyle = prize; g.lineWidth = 1.5; g.strokeRect(sx - 1.5, H.shown * s - 1.5, sw + 3, s + 3);
+    }
+    g.fillStyle = muted; g.font = "500 11px " + css("--font-mono"); g.textAlign = "left"; g.textBaseline = "bottom";
+    tallyEl.innerHTML = "centre column, first " + (H.shown + 1) + " cells: <b>" + black + "</b> black, <b>" + white +
+      "</b> white";
+  }
+  var heroLast = 0, heroAcc = 0, heroRunning = false;
+  function heroFrame(ts) {
+    if (!seen(hero)) { heroRunning = false; return; }          // off screen: stop; heroWake restarts it
+    if (!heroLast) heroLast = ts;
+    var dt = Math.min(100, ts - heroLast); heroLast = ts;
+    if (H.shown < H.R) {
+      heroAcc += dt;
+      while (heroAcc > 28 && H.shown < H.R) { heroAcc -= 28; H.shown++; }
+      heroDraw();
+    } else {
+      H.hold += dt;
+      if (H.hold > 6000) { H.hold = 0; H.shown = 0; heroAcc = 0; heroDraw(); }
+    }
+    requestAnimationFrame(heroFrame);
+  }
+  function heroWake() {
+    if (reduce || heroRunning || !seen(hero)) return;
+    heroRunning = true; heroLast = 0; requestAnimationFrame(heroFrame);
+  }
+
+  /* ---- the explainer: the eight cases above a small grid, one new cell at a time ---- */
+  var ex = document.getElementById("explain");
+  var E = { g: null, W: 0, Hh: 0, cols: 31, rows: 13, grid: [], r: 1, c: 14, playing: !reduce, cs: 18, hold: 0 };
+  var CASES = [[1, 1, 1], [1, 1, 0], [1, 0, 1], [1, 0, 0], [0, 1, 1], [0, 1, 0], [0, 0, 1], [0, 0, 0]];
+  function out(l, c, r) { return l ^ (c | r); }
+  function exLayout() {
+    var w = Math.min(availWidth(), 900);
+    E.cs = Math.max(8, Math.min(22, Math.floor((w - 20) / E.cols)));
+    var caseH = Math.max(44, E.cs * 3.2);
+    E.W = w; E.Hh = Math.round(caseH + 26 + E.rows * E.cs + 6);
+    E.caseH = caseH;
+    E.g = fit(ex, w, E.Hh);
+    var row = new Uint8Array(E.cols + 2); row[(E.cols + 1) >> 1] = 1; E.grid = [row];
+    for (var t = 1; t < E.rows; t++) E.grid.push(rule30(E.grid[t - 1]));
+    if (reduce) { E.r = E.rows; }
+    exDraw();
+  }
+  function exDraw() {
+    var g = E.g, W = E.W, cs = E.cs, ink = css("--ink"), rule = css("--rule"), tri = css("--tri"), muted = css("--ink-soft");
+    var paper = css("--paper"), panel = css("--panel");
+    g.clearRect(0, 0, W, E.Hh);
+    // the eight cases
+    var k = Math.min(16, Math.floor((W - 20) / 8 / 3.6)), gap = (W - 8 * 3 * k) / 9, active = -1;
+    var gx = (W - E.cols * cs) / 2, gy = E.caseH + 26;
+    if (E.r < E.rows) {
+      var a = E.grid[E.r - 1], i = E.c + 1;
+      var L = a[i - 1], C = a[i], Rr = a[i + 1];
+      active = CASES.findIndex(function (q) { return q[0] === L && q[1] === C && q[2] === Rr; });
+    }
+    var caseCentres = [];
+    CASES.forEach(function (q, n) {
+      var x = gap + n * (3 * k + gap), y = 6;
+      g.fillStyle = n === active ? panel : "transparent";
+      if (n === active) { g.fillStyle = tri; g.globalAlpha = 0.12; g.fillRect(x - 5, y - 4, 3 * k + 10, 2 * k + 22); g.globalAlpha = 1; }
+      for (var j = 0; j < 3; j++) {
+        g.fillStyle = q[j] ? ink : paper; g.fillRect(x + j * k, y, k, k);
+        g.strokeStyle = rule; g.lineWidth = 1; g.strokeRect(x + j * k + 0.5, y + 0.5, k - 1, k - 1);
+      }
+      var o = out(q[0], q[1], q[2]);
+      g.fillStyle = o ? ink : paper; g.fillRect(x + k, y + k + 2, k, k);
+      g.strokeStyle = n === active ? tri : rule; g.lineWidth = n === active ? 2 : 1;
+      g.strokeRect(x + k + 0.5, y + k + 2.5, k - 1, k - 1);
+      g.fillStyle = muted; g.font = "500 " + Math.max(9, k * 0.75) + "px " + css("--font-mono");
+      g.textAlign = "center"; g.textBaseline = "top"; g.fillText(String(o), x + 1.5 * k, y + 2 * k + 6);
+      caseCentres.push([x + 1.5 * k, y + 1.5 * k + 2]);
+    });
+    // the grid, computed up to the cursor
+    for (var t = 0; t < E.rows; t++) {
+      for (var c = 0; c < E.cols; c++) {
+        var done = t < E.r || (t === E.r && (c < E.c || c > rowEnd(t)));
+        var x0 = gx + c * cs, y0 = gy + t * cs;
+        g.strokeStyle = rule; g.lineWidth = 1; g.strokeRect(x0 + 0.5, y0 + 0.5, cs - 1, cs - 1);
+        if (done && E.grid[t][c + 1]) { g.fillStyle = ink; g.fillRect(x0 + 1, y0 + 1, cs - 2, cs - 2); }
+      }
+    }
+    if (E.r < E.rows) {
+      var py = gy + (E.r - 1) * cs, px0 = gx + (E.c - 1) * cs;
+      g.strokeStyle = tri; g.lineWidth = 2;
+      g.strokeRect(px0 + 1, py + 1, 3 * cs - 2, cs - 2);              // the three parents
+      var cx = gx + E.c * cs, cy = gy + E.r * cs;
+      g.strokeRect(cx + 1, cy + 1, cs - 2, cs - 2);                   // the new cell
+      var tc = caseCentres[active];                                   // tracer: the matching case -> the new cell
+      g.setLineDash([4, 3]); g.strokeStyle = paper; g.lineWidth = 3.6;
+      g.beginPath(); g.moveTo(tc[0], tc[1] + k); g.lineTo(cx + cs / 2, cy + cs / 2); g.stroke();
+      g.strokeStyle = tri; g.lineWidth = 1.5;
+      g.beginPath(); g.moveTo(tc[0], tc[1] + k); g.lineTo(cx + cs / 2, cy + cs / 2); g.stroke(); g.setLineDash([]);
+    }
+    g.fillStyle = muted; g.font = "500 11px " + css("--font-mono"); g.textAlign = "center"; g.textBaseline = "bottom";
+    g.fillText("left · centre · right  →  new cell     00011110 = 30", W / 2, gy - 6);
+  }
+  var MID = 15;                                       // the seed's column in the 31-column grid
+  function rowStart(r) { return Math.max(0, MID - r); }
+  function rowEnd(r) { return Math.min(E.cols - 1, MID + r); }
+  function exStep() {
+    if (E.r >= E.rows) { E.r = 1; E.c = rowStart(1); exDraw(); return; }
+    E.c++;
+    if (E.c > rowEnd(E.r)) { E.r++; E.c = rowStart(E.r); }
+    exDraw();
+  }
+  var exTimer = null;
+  function exSchedule() {
+    clearInterval(exTimer);
+    if (E.playing) exTimer = setInterval(function () {
+      if (!seen(ex)) return;                                  // off screen: hold the cursor where it is
+      if (E.r >= E.rows) { if (++E.hold < 30) return; E.hold = 0; E.r = 1; E.c = rowStart(1); exDraw(); } else exStep();
+    }, 150);
+    document.getElementById("explain-play").textContent = E.playing ? "Pause" : "Play";
+  }
+  document.getElementById("explain-play").addEventListener("click", function () { E.playing = !E.playing; exSchedule(); });
+  document.getElementById("explain-step").addEventListener("click", function () { E.playing = false; exSchedule(); exStep(); });
+
+  /* ---- the Sierpinski figure: one dot, then three dots whose triangles overlap and cancel in pairs ---- */
+  var sier = document.getElementById("sier");
+  var SP = { g: null, W: 0, Hh: 0, s: 6, R: 32, C: 40, shown: 0, hold: 0, side: true, one: [], three: [] };
+  var DOT1 = [[0, 38]], DOT3 = [[0, 33], [5, 24], [11, 38]], TINT = ["--tri", "--sq", "--circ"];
+  function grow(dots) {        // the sieve's step without its own dots: cell(k, t) = cell(k-1, t) XOR cell(k-1, t+1)
+    var out = [], prev = new Uint8Array(SP.C + 1);
+    for (var k = 0; k < SP.R; k++) {
+      var row = new Uint8Array(SP.C + 1);
+      if (k) for (var t = 0; t < SP.C; t++) row[t] = prev[t] ^ prev[t + 1];
+      dots.forEach(function (d) { if (d[0] === k) row[d[1]] ^= 1; });
+      out.push(row); prev = row;
+    }
+    return out;
+  }
+  function sierLayout() {
+    var w = Math.min(availWidth(), 980);
+    SP.side = w >= 620;
+    var pw = SP.side ? (w - 40) / 2 : w - 8;
+    SP.s = Math.max(4, Math.min(11, Math.floor(pw / SP.C)));
+    var ph = SP.R * SP.s + 22;
+    SP.W = w; SP.Hh = SP.side ? ph + 4 : 2 * ph + 18;
+    SP.g = fit(sier, w, SP.Hh);
+    SP.one = grow(DOT1); SP.three = grow(DOT3);
+    if (reduce) SP.shown = SP.R;
+    sierDraw();
+  }
+  function sierPanel(x0, y0, rows, dots, label, tinted) {
+    var g = SP.g, s = SP.s, ink = css("--ink"), panel = css("--panel"), rule = css("--rule");
+    g.fillStyle = css("--ink-soft"); g.font = "500 11px " + css("--font-mono"); g.textAlign = "left"; g.textBaseline = "top";
+    g.fillText(label, x0, y0);
+    var top = y0 + 18, n = Math.min(SP.shown, SP.R);
+    g.fillStyle = panel; g.fillRect(x0, top, SP.C * s, SP.R * s);
+    g.strokeStyle = rule; g.lineWidth = 1; g.strokeRect(x0 + 0.5, top + 0.5, SP.C * s - 1, SP.R * s - 1);
+    g.save(); g.beginPath(); g.rect(x0, top, SP.C * s, SP.R * s); g.clip();
+    dots.forEach(function (d, i) {           // each dot's triangle, tinted, down to the rows shown so far
+      if (!tinted || n <= d[0]) return;
+      var depth = n - d[0];
+      g.fillStyle = css(TINT[i % 3]); g.globalAlpha = 0.16;
+      g.beginPath(); g.moveTo(x0 + (d[1] + 1) * s, top + d[0] * s); g.lineTo(x0 + (d[1] + 1) * s, top + n * s);
+      g.lineTo(x0 + (d[1] + 1 - depth) * s, top + n * s); g.lineTo(x0 + d[1] * s, top + d[0] * s); g.closePath(); g.fill();
+      g.globalAlpha = 1;
+    });
+    g.fillStyle = ink;
+    for (var k = 0; k < n; k++) for (var t = 0; t < SP.C; t++) if (rows[k][t]) g.fillRect(x0 + t * s + 0.5, top + k * s + 0.5, s - 1, s - 1);
+    g.restore();
+    dots.forEach(function (d, i) {           // the seeds, ringed
+      if (n <= d[0]) return;
+      g.strokeStyle = tinted ? css(TINT[i % 3]) : css("--tri"); g.lineWidth = 2;
+      g.beginPath(); g.arc(x0 + (d[1] + 0.5) * s, top + (d[0] + 0.5) * s, s * 0.95, 0, 7); g.stroke();
+    });
+  }
+  function sierDraw() {
+    var g = SP.g, pw = SP.C * SP.s;
+    g.clearRect(0, 0, SP.W, SP.Hh);
+    if (SP.side) {
+      var gap = SP.W - 2 * pw, x1 = gap / 3, x2 = x1 * 2 + pw;
+      sierPanel(x1, 0, SP.one, DOT1, "one dot: a Sierpinski triangle", false);
+      sierPanel(x2, 0, SP.three, DOT3, "three dots: black where an odd number overlap", true);
+    } else {
+      var x = (SP.W - pw) / 2, ph = SP.R * SP.s + 22;
+      sierPanel(x, 0, SP.one, DOT1, "one dot: a Sierpinski triangle", false);
+      sierPanel(x, ph + 14, SP.three, DOT3, "three dots: black where odd overlap", true);
+    }
+  }
+  setInterval(function () {                  // one row every 90 ms while on screen, then a pause, then again
+    if (reduce || !seen(sier)) return;
+    if (SP.shown < SP.R) { SP.shown++; sierDraw(); }
+    else if (++SP.hold > 40) { SP.hold = 0; SP.shown = 0; sierDraw(); }
+  }, 90);
+
+  /* ---- the twin: Rule 30 and the powers of 3, one Gray step with two kinds of correction ---- */
+  var twin = document.getElementById("twin"), twinTally = document.getElementById("twin-tally");
+  var TW = { g: null, W: 0, Hh: 0, s: 4, R: 48, shown: 0, hold: 0, mode: "corr", side: true,
+    a: [], ac: [], b: [], bc: [], runA: [], runB: [], lo: 0, maxCarry: 0 };
+  function twinBuild() {
+    var R = TW.R, n = 2 * R + 1, off = R;                // index x + R, x from -R to R
+    var row = new Uint8Array(n); row[off] = 1; TW.a = [row]; TW.ac = [new Uint8Array(n)];
+    for (var t = 1; t < R; t++) {
+      var old = TW.a[t - 1], nw = new Uint8Array(n), c = new Uint8Array(n);
+      for (var i = 1; i < n - 1; i++) { nw[i] = old[i - 1] ^ (old[i] | old[i + 1]); c[i] = old[i + 1] & (1 - old[i]); }
+      TW.a.push(nw); TW.ac.push(c);
+    }
+    TW.b = []; TW.bc = []; TW.maxCarry = 0; TW.lo = 0;
+    var p = 1n;
+    for (var t2 = 0; t2 < R; t2++) {
+      var r2 = new Uint8Array(n), c2 = new Uint8Array(n), prev = t2 ? p / 3n : 0n;
+      var cor = t2 ? (p ^ prev ^ (prev << 1n)) : 0n, run = 0;
+      for (var k = 0; k <= t2 + R && k < 2 * R + 40; k++) {
+        var x = t2 - k;
+        if (x < -R) break;
+        var bit = Number((p >> BigInt(k)) & 1n), cb = Number((cor >> BigInt(k)) & 1n);
+        r2[x + off] = bit; c2[x + off] = cb;
+        if (bit) TW.lo = Math.min(TW.lo, x);
+        run = cb ? run + 1 : 0; TW.maxCarry = Math.max(TW.maxCarry, run);
+      }
+      TW.b.push(r2); TW.bc.push(c2); p *= 3n;
+    }
+    function edgeRuns(rows) {                          // the white run just inside the edge x = t, on even rows
+      return rows.map(function (r, t) {
+        if (t % 2 || !t) return 0;
+        var L = 0; while (t - 1 - L >= -t && !r[t - 1 - L + off]) L++; return L;
+      });
+    }
+    TW.runA = edgeRuns(TW.a); TW.runB = edgeRuns(TW.b);
+  }
+  function twinLayout() {
+    var w = Math.min(availWidth(), 1100), R = TW.R;
+    var wa = 2 * R - 1, wb = R - TW.lo;                 // cells: Rule 30 spans -(R-1) .. R-1, the powers of 3 lo .. R-1
+    TW.side = w >= 700;
+    TW.s = Math.max(2, Math.min(7, Math.floor(TW.side ? (w - 60) / (wa + wb + 6) : (w - 8) / (wa + 4))));
+    var ph = R * TW.s + 24;
+    TW.W = w; TW.Hh = TW.side ? ph + 4 : 2 * ph + 16;
+    TW.g = fit(twin, w, TW.Hh);
+    if (reduce) TW.shown = R;
+    twinDraw();
+  }
+  function twinPanel(x0, y0, rows, corr, runs, xmin, label) {
+    var g = TW.g, s = TW.s, R = TW.R, off = R, n = Math.min(TW.shown, R);
+    var ink = css("--ink"), tri = css("--tri"), circ = css("--circ"), muted = css("--ink-soft");
+    g.fillStyle = muted; g.font = "500 11px " + css("--font-mono"); g.textAlign = "left"; g.textBaseline = "top";
+    g.fillText(label, x0, y0);
+    var top = y0 + 20, X = function (x) { return x0 + (x - xmin) * s; };
+    g.fillStyle = css("--panel");
+    g.beginPath(); g.moveTo(X(0), top); g.lineTo(X(R), top + R * s); g.lineTo(X(xmin), top + R * s); g.closePath();
+    g.fill();
+    for (var t = 0; t < n; t++) {
+      var r = rows[t], c = corr[t];
+      for (var x = xmin; x <= t; x++) {
+        var i = x + off;
+        if (r[i]) { g.fillStyle = ink; g.fillRect(X(x), top + t * s, s + 0.2, s + 0.2); }
+        if (TW.mode === "corr" && c[i]) {
+          g.globalAlpha = 0.7; g.fillStyle = tri; g.fillRect(X(x) + 0.5, top + t * s + 0.5, s - 1, s - 1); g.globalAlpha = 1;
+        }
+      }
+      if (TW.mode === "ruler" && runs[t]) {
+        g.globalAlpha = 0.6; g.fillStyle = circ;
+        g.fillRect(X(t - runs[t]), top + t * s, runs[t] * s, s);                       // the run inside the edge
+        g.fillRect(X(t + 2), top + t * s + s * 0.2, runs[t] * s, s * 0.6);             // and its tick outside
+        g.globalAlpha = 1;
+      }
+    }
+  }
+  function twinDraw() {
+    var g = TW.g, R = TW.R, s = TW.s, wa = 2 * R - 1, wb = R - TW.lo;
+    g.clearRect(0, 0, TW.W, TW.Hh);
+    var la = "Rule 30, from one black square", lb = "the powers of 3 in binary, last digit on the right";
+    if (TW.side) {
+      var gap = (TW.W - (wa + wb + 6) * s) / 3;
+      twinPanel(gap, 0, TW.a, TW.ac, TW.runA, -(R - 1), la);
+      twinPanel(2 * gap + (wa + 3) * s, 0, TW.b, TW.bc, TW.runB, TW.lo, lb);
+    } else {
+      var ph = R * s + 24;
+      twinPanel((TW.W - (wa + 3) * s) / 2, 0, TW.a, TW.ac, TW.runA, -(R - 1), la);
+      twinPanel((TW.W - (wb + 3) * s) / 2, ph + 12, TW.b, TW.bc, TW.runB, TW.lo, "the powers of 3 in binary");
+    }
+    var ev = function (runs) { return [2, 4, 8, 16, 32].map(function (t) { return runs[t]; }).join(", "); };
+    twinTally.innerHTML = TW.mode === "corr" ?
+      "longest string of corrections in one row: Rule 30 <b>1</b> (never two side by side) &middot; powers of 3 <b>" +
+      TW.maxCarry + "</b> (carries ripple)" :
+      "white run inside the edge at rows 2, 4, 8, 16, 32: Rule 30 <b>" + ev(TW.runA) + "</b> &middot; powers of 3 <b>" +
+      ev(TW.runB) + "</b>";
+  }
+  function twinMode(m) {
+    TW.mode = m;
+    document.getElementById("twin-corr").setAttribute("aria-pressed", String(m === "corr"));
+    document.getElementById("twin-ruler").setAttribute("aria-pressed", String(m === "ruler"));
+    twinDraw();
+  }
+  document.getElementById("twin-corr").addEventListener("click", function () { twinMode("corr"); });
+  document.getElementById("twin-ruler").addEventListener("click", function () { twinMode("ruler"); });
+  twinBuild();
+  setInterval(function () {                  // one row every 80 ms while on screen, a pause, then again
+    if (reduce || !seen(twin)) return;
+    if (TW.shown < TW.R) { TW.shown++; twinDraw(); }
+    else if (++TW.hold > 50) { TW.hold = 0; TW.shown = 0; twinDraw(); }
+  }, 80);
+
+  /* ---- the Gray code, by example: a row, its Gray code, Rule 30 and 3/2 of it, with the corrections ringed ---- */
+  var grayCv = document.getElementById("gray"), grayTally = document.getElementById("gray-tally");
+  var GR = { g: null, W: 0, Hh: 0, s: 24, n: 22 };
+  function grayRows(n) {
+    var N = BigInt(n), w = N.toString(2).length + 1, rows = { row: [], gc: [], r30: [], h: [] };
+    var dig = function (v, k) { return k < 0 ? 0 : Number((v >> BigInt(k)) & 1n); };
+    var G = N ^ (N >> 1n), H = N + (N >> 1n);
+    for (var k = w - 1; k >= 0; k--) {
+      rows.row.push(dig(N, k)); rows.gc.push(dig(G, k)); rows.h.push(dig(H, k));
+      rows.r30.push(dig(N, k + 1) ^ (dig(N, k) | dig(N, k - 1)));
+    }
+    rows.w = w; rows.G = G; rows.H = H;
+    return rows;
+  }
+  function grayLayout() {
+    var w = Math.min(availWidth(), 760);
+    GR.s = Math.max(16, Math.min(28, Math.floor((w - 20) / 14)));
+    GR.W = w; GR.Hh = 4 * (GR.s + 36) + 6;
+    GR.g = fit(grayCv, w, GR.Hh);
+    grayDraw();
+  }
+  function grayDraw() {
+    var g = GR.g, s = GR.s, n = GR.n, R = grayRows(n), x0 = (GR.W - R.w * s) / 2;
+    var ink = css("--ink"), paper = css("--paper"), rule = css("--rule"), tri = css("--tri"), muted = css("--ink-soft");
+    g.clearRect(0, 0, GR.W, GR.Hh);
+    var wide = GR.W >= 600, lines = [
+      [R.row, null, n + " in binary"],
+      [R.gc, null, wide ? "its Gray code, each square against its left neighbour: " + Number(R.G) : "its Gray code: " + Number(R.G)],
+      [R.r30, R.gc, wide ? "Rule 30 on the same row: where it differs from the Gray code, ringed" : "Rule 30: corrections ringed"],
+      [R.h, R.gc, n + " \u00d7 3/2 = " + Number(R.H) + (wide ? ": where it differs from the Gray code, ringed" : ": the carry ringed")]];
+    var c30 = 0, ch = 0, run = 0, best = 0;
+    lines.forEach(function (L, j) {
+      var y = j * (s + 36) + 22;
+      g.fillStyle = muted; g.font = "500 12px " + css("--font-mono"); g.textAlign = "center"; g.textBaseline = "bottom";
+      g.fillText(L[2], GR.W / 2, y - 3);
+      for (var i = 0; i < R.w; i++) {
+        var x = x0 + i * s;
+        g.fillStyle = L[0][i] ? ink : paper; g.fillRect(x + 1, y + 1, s - 2, s - 2);
+        g.strokeStyle = rule; g.lineWidth = 1; g.strokeRect(x + 1.5, y + 1.5, s - 3, s - 3);
+        if (L[1] && L[0][i] !== L[1][i]) {
+          g.strokeStyle = tri; g.lineWidth = 2.5; g.beginPath(); g.arc(x + s / 2, y + s / 2, s * 0.56, 0, 7); g.stroke();
+        }
+      }
+    });
+    for (var i = 0; i < R.w; i++) {
+      if (R.r30[i] !== R.gc[i]) c30++;
+      if (R.h[i] !== R.gc[i]) { ch++; run++; best = Math.max(best, run); } else run = 0;
+    }
+    grayTally.innerHTML = "Rule 30 differs from the Gray code at <b>" + c30 + "</b> single squares &middot; " +
+      (ch ? "3/2 at <b>" + ch + "</b>, in runs of up to <b>" + best + "</b> (carries)" :
+        "3/2 nowhere: no two 1s sit side by side, so nothing carries");
+  }
+  document.getElementById("gray-22").addEventListener("click", function () { GR.n = 22; grayDraw(); });
+  document.getElementById("gray-new").addEventListener("click", function () {
+    GR.n = 2 * (64 + Math.floor(Math.random() * 1984)); grayDraw();       // an even number of 8 to 12 digits
+  });
+
+  function layoutAll() { heroLayout(); exLayout(); sierLayout(); grayLayout(); twinLayout(); }
+  var rz; window.addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(layoutAll, 150); });
+  if (window.matchMedia) {
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mq.addEventListener) mq.addEventListener("change", function () { heroDraw(); exDraw(); sierDraw(); grayDraw(); twinDraw(); });
+  }
+  /* ---- run each visual only while it is on screen ----
+     The hero, the explainer, the Sierpinski figure and the twin check seen() before they move (the Gray-code
+     example is still until clicked). Each embedded frame is told as it scrolls in and out
+     of view, and when it asks as it starts (the snippet in each embedded page holds its animation while it is out).
+     A hidden tab counts as off screen. Without IntersectionObserver everything runs, as before. */
+  var onScreen = new WeakMap(), frames = Array.prototype.slice.call(document.querySelectorAll(".frame iframe"));
+  function seen(el) { return !document.hidden && onScreen.get(el) !== false; }
+  function tell(f) {
+    try { if (f.contentWindow) f.contentWindow.postMessage({ r30: "visibility", visible: seen(f) }, "*"); } catch (e) {}
+  }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        onScreen.set(en.target, en.isIntersecting);
+        if (en.target === hero) heroWake(); else if (en.target.tagName === "IFRAME") tell(en.target);
+      });
+    }, { threshold: 0 });
+    io.observe(hero); io.observe(ex); io.observe(sier); io.observe(twin);
+    frames.forEach(function (f) { io.observe(f); f.addEventListener("load", function () { tell(f); }); });
+  }
+  window.addEventListener("message", function (e) {
+    if (!e.data || e.data.r30 !== "ask") return;
+    frames.forEach(function (f) { if (f.contentWindow === e.source) tell(f); });
+  });
+  document.addEventListener("visibilitychange", function () { frames.forEach(tell); heroWake(); });
+
+  layoutAll(); exSchedule();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { heroDraw(); exDraw(); sierDraw(); grayDraw(); twinDraw(); });
+  heroWake();
+})();
+</script>
+</body>
+</html>

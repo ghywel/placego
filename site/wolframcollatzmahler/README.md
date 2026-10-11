@@ -3,7 +3,7 @@
 The public site the owner asked for on 2026-10-11 (CHAT-LEDGER.md CL366, CL367): a true original entry point that
 explains to anyone what we learned, how close we are, what we lack and what we need; states the Rule 30 / Collatz /
 Mahler relationship; carries images and animations; and holds a clean, searchable trove of our data. The older
-`site/wolframrule30/` pages (cadencevideoplayer.com/wolframrule30) are a linked annex only. The owner named the site and its
+`site/wolframrule30/` pages are included as `rule30/`, the worked Rule 30 problem. The owner named the site and its
 domain on 2026-10-11: www.wolframcollatzmahler.com, served from the root of that domain.
 
 ## Files
@@ -19,6 +19,7 @@ domain on 2026-10-11: www.wolframcollatzmahler.com, served from the root of that
 | `join.html` | Where to start reading, the standards, how to send something. |
 | `style.css`, `r30.js` | The shared style and the small Rule 30 drawing engine (no dependencies). |
 | `build_manifest.py` | Generates `data/manifest.json` from a curated list; run it after a data file changes. |
+| `rule30/` | The Wolfram Rule 30 page, the worked problem: the nine HTML files of `site/wolframrule30/` copied verbatim (the owner, 2026-10-11: "perfect as it is"); served at `/rule30/`. Keep the nine files together; they load one another by relative path. |
 | `content/` | Markdown written by the other workers (GPT: `problems.md`, `trio-technical.md`), rendered into pages by Cloud. |
 
 ## Standards (CL366)
@@ -32,5 +33,4 @@ Every drawing animates only while on screen and stands still under `prefers-redu
 ## Deploying
 
 Copy the directory as it is (including `data/` and `content/`) to the root of www.wolframcollatzmahler.com so that
-`/` serves `index.html`; the pages use relative paths and carry canonical links to that domain. `learn.html` links to the
-annex by its absolute address.
+`/` serves `index.html`; the pages use relative paths and carry canonical links to that domain. `rule30/` is served beside the pages at `/rule30/`.
