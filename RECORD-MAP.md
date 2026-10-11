@@ -148,8 +148,8 @@ PART: as on the board.
 - Swarm round: hand proofs held — §8.87
 - Check-free: records exact to 122, no survivor — §8.88
 - Room switch to cuts; E absent (L630); cuts leave pure M3 (CL303); typed paths <= 466 (CL340); white-A entrances
-  certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347); lane CLOSED,
-  GPT to the record route (CL355) — §8.89
+  certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347); lane CLOSED
+  (CL355) — §8.89
 - Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
 
 
