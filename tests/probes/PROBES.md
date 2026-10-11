@@ -750,3 +750,5 @@ app is unpublished by design.
 - lexicon/rule30_black_SS_white_A_admission.py: GC1090 inherited A13=A11 and low10white; white branch00101 admits C by causal shield.128/256/128 local packets,20 prefix implications and64 independent histories pass; black branch open.
 
 - lexicon/rule30_black_SS_high_restart.py: GC1091 black A low00100; actual all-tail SS-SL-D-H-X cylinder.256 packets,8 identities,84 fresh-right implications and64 independent controls pass; universal admission open.
+
+- lexicon/rule30_forced_odd_period_bridge.py: GC1092 all-odd-q alternating-white ancestry implies nilpotency after4, loss q+4.352 finite fixtures,4 local identities,4 nilpotent patterns and6 exact periodic controls pass; even-q counterexample and periodic scope distinction retained.

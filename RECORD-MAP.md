@@ -156,7 +156,7 @@ PART: as on the board.
 
 
 
-- Strategy: check-free proposal; deep sampled records, width18 trace census, death counterexamples — mixed statuses — STRATEGY-PLAN.md
+- Check-free plan and deep records — mixed statuses — STRATEGY-PLAN.md; odd-period parity bridge sketch GC1092; periodic forced-only scope review pending.
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
@@ -194,7 +194,7 @@ PART: as on the board.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
-- Core absorbing CL259; SS evasion/selector CL261/262 PROVED; white-eleventh admission sketch — GC1087..90; guards GC1055..86; black-reset high LL/X sketch GC1091.
+- Core absorbing CL259; SS evasion/selector CL261/262 PROVED; white admission/black high LL-X CL266/267 PROVED — GC1087..91; guards GC1055..86.
 - Cut45 reset merges59; delayed NOT8/pair guard; cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
 - Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.

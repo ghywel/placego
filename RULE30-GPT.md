@@ -28600,7 +28600,7 @@ Independent review CL262 at c79ab298 confirms the stated all-tail result; promot
 
 ## GC1090 — The white-eleventh black-SS reset enters the absorbing core (2026-10-11)
 
-**Missing inference and result, proof sketch.** Retain GC1089's black-SS past across A-to001. Its A image has **site13=site11**, in addition to10=12=1. Every such A returns001 with **site10=0**, so the ensuing long always has D and renews L0. If A11 is white, the low return begins **11100100101**, whose D return enters **C={010,011}** for every farther tail. From there GC1087's proved union is absorbing at every subsequent renewal length. Thus this whole white-eleventh branch admits the core after22 ticks from the black SS origin. The black-eleventh branch remains open.
+**Missing inference and result, PROVED (CL266).** Retain GC1089's black-SS past across A-to001. Its A image has **site13=site11**, in addition to10=12=1. Every such A returns001 with **site10=0**, so the ensuing long always has D and renews L0. If A11 is white, the low return begins **11100100101**, whose D return enters **C={010,011}** for every farther tail. From there GC1087's proved union is absorbing at every subsequent renewal length. Thus this whole white-eleventh branch admits the core after22 ticks from the black SS origin. The black-eleventh branch remains open.
 
 Record searched: black.SS|111011111|last black with001|gate|past|inherited ->25 hits in9 files; GC1080/89 read. Predictions preceded controls; failed generic A pair inequalities were not resumed. The new sparse bit comes from actual SS prehistory, not a selected A tail.
 
@@ -28615,9 +28615,11 @@ Record searched: black.SS|111011111|last black with001|gate|past|inherited ->25 
 CL260 at60a23bb4 is ACKed: its strategy assessment offers GPT the check-free hand target and permits choosing the handoff moment. Finish the remaining black-eleventh reset packet first; then reassess that target after Cloud's forced-only definition replication. L616 is ACKed; the stray header mentioned by CL260 was already repaired in GC1089. No Local computation, CUT, membership or record run. Upstream black-eleventh admission and the all-depth prize bound remain open.
 
 
+CL266 at632485b2 independently confirms the shield and all-tail result; promoted to PROVED.
+
 ## GC1091 — A black-SS reset can renew high LL before exiting through X (2026-10-11)
 
-**Missing inference and result, proof sketch.** GC1090's white-eleventh branch enters the absorbing core. Its black-eleventh branch instead has low prefix **11100100100**, but can still renew111 and high LL. The actual fixed30-cell origin **111011111111000000100011110111** forces SS, SL, D, H, X through42 ticks for every farther tail: high LL occurs22..32; the following ordinary long selects X and exits the mature S/L0 component. This is one all-tail transient family, not universal black-branch admission or a record bound.
+**Missing inference and result, PROVED (CL267).** GC1090's white-eleventh branch enters the absorbing core. Its black-eleventh branch instead has low prefix **11100100100**, but can still renew111 and high LL. The actual fixed30-cell origin **111011111111000000100011110111** forces SS, SL, D, H, X through42 ticks for every farther tail: high LL occurs22..32; the following ordinary long selects X and exits the mature S/L0 component. This is one all-tail transient family, not universal black-branch admission or a record bound.
 
 Record searched: black.SS|black.eleventh|00011111 with001|gate|past|admission ->37 hits in19 files; GC1080/1088/1090 read. Predictions preceded controls. The no111 D-return prediction fails on this actual source;61 of512 selected composed histories also fail, evidence only. No larger source census or extension of GC1088's failed cylinder was used.
 
@@ -28638,3 +28640,26 @@ At12, sites10..17=00100001 are GC1080's reviewed family A, so D returns111 at22 
 All256 scalar short packets,8 Boolean identities,84 fresh-right prefix implications and64 independent literal/packed histories pass. The failed universal admission prediction and failed necessity countercontrol remain explicit. No solver, CUT, membership or record computation.
 
 CL263/CL264 at0db2fc8c are received: the forced-only definition now replicates independently in both phases; sampled deep bounds retain their third-party qualification pending witnesses. L617's flag atbe538948 is verified and ACKed. The remaining black branch is not closed by this transient cylinder. After these failed automatic-admission shortcuts, next assess the offered check-free hand target from its proved periodic case, as CL260 permits; retain the RRL absorbing component and upstream past constraints, without further fixed-source extension scans. No Local task or time-critical Cloud dependency.
+
+CL267 at632485b2 independently confirms the shield and all-tail result; promoted to PROVED.
+
+
+## GC1092 — An odd-period successor over a forced-white parity interval is nilpotent (2026-10-11)
+
+**Missing inference.** The check-free route needs a bridge from white forced cells, with checks ignored, to the periodic-stretch mechanisms. The available D2 proof summary excludes a fully white tail by Jen; that alone does not exclude a white forced tail. The stronger reported eventually-periodic forced-only theorem needs its separate argument. This is a scope question for review, not a refutation of its X4 version.
+
+Record searched: forced.only|check.free withperiodic|Jen ->6 hits in3 files; odd.periodic|odd.spatial.period|odd.period withcheckerboard|alternating.white|white.*parity ->4 hits in2 files, no bridge theorem. STRATEGY-PLAN D2 and RULE30-PRIZE8.88 read. Predictions preceded all controls; no periodic search or record computation duplicated.
+
+**Finite bridge, proof sketch.** Let y=F(x) under ordinary Rule30, with either parity of x white throughout[a-2,b+2]. Suppose y is q-periodic on[a-1,b+1], for positive odd q, and b-a>=q+4. Then
+
+    F^4(x)_i = 0 for every i in[a+2,b-q-2].
+
+For a centre i on the white parent parity, the local image has y_(i-1)=x_(i-1), y_i=x_(i-1) XOR x_(i+1), y_(i+1)=x_(i+1). Hence y_i=y_(i-1) XOR y_(i+1). On the other parity, translate this relation by q; the periodicity premise supplies all three equalities. Thus the relation holds for every i in[a,b-q]. It determines one of the four linear period3 patterns000,011,101,110 on[a-1,b-q+1]. Each nonzero pattern maps to a single-black period3 pattern, then111, then000. Three more updates therefore kill every radius3 cone inside that interval, proving the displayed bound. This holds for every positive odd q and arbitrary exterior bits. On a left half-line the same argument gives an eventually white row after four ticks.
+
+**The parity matters.** The even-q counterexample x=...1010... is fixed by Rule30, has a white parity and a period2 successor, and never dies. The finite lemma therefore supplies an actual restriction on periodic ancestry, with loss q+4; it does not provide the missing assertion that a survivor must encounter such an odd-period successor interval.
+
+**Exact periodic controls and the reported scope.** The periodic inverse-column rule is c(t)=a(t+1) XOR(a(t) OR b(t)), with a the current left column and b its right neighbour. Named pure visible01 and10 give exact seven-column cycles in both wall phases. Their initial depth projections are respectively1000000/0110010 in the standard phase and1011111/1100001 in the other. Because7 is odd, both forced parities sample every cycle position infinitely often; each named sequence has black forced cells indefinitely. This is a concrete periodic case, independently checked by triangular time reconstruction, not a general periodic theorem.
+
+Conversely, standard visible1 gives depth projection01 followed by the repeating01 tail; other-phase visible0 gives1 followed by01. Their forced tails are white while their check tails contain blacks. They violate11 and00000 respectively, so neither refutes X4. They do show precisely why Jen's full-white-tail exclusion cannot alone prove the stronger statement quoted in8.88. Please supply the separate forced-only periodic bridge or qualify that assertion pending it; keep the within-X4 conjecture unchanged.
+
+Controls pass:4 local parity identities, all4 nilpotent period3 patterns,352 finite odd-q fixtures with arbitrary exterior (288 others correctly fail the periodicity premise), the fixed even-q counterexample, and6 exact periodic-column controls independently reconstructed through128 depths. No failed prediction. No solver, CUT, membership, relaxed-record or broad period search. CL266/267 confirm GC1090/1091 and both are promoted. L618's flag is verified and ACKed. Next missing inference: extend this odd-period ancestry bridge across earlier time slices, or identify the exact separate periodic forced-only argument before using it. The all-depth prize bound remains open.
