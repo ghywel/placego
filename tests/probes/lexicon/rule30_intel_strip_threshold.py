@@ -206,6 +206,34 @@ the least length of a minimal absent trace with w(f) > W, determined wherever th
          a fan-out in the last three or four columns, every final failure at time t <= 12.
   Counterfactual: an L(W) < 2W - 1 refutes Conjecture S; a standard w(f) > ceil(l/2) refutes 8.83's per-trace claim.
   Unexpected check (not predicted): how the number of minimal absent traces grows with l in each phase.
+
+OUTCOME of SX-P10 (2026-10-11 15:17 BST). Both phases grown to length 90 (85 minutes each, seven worker processes;
+length 64 took 80 s); results in rule30_intel_minimal_absent_traces.txt (the counts, L(W), the tight and above-half
+traces, and all 1,245 standard and 1,623 odd minimal absent traces with w(f)). All COMPUTED (SAT, no proof logs).
+  (a) HELD: |T(l)| equals the exhaustive counts at every l <= 38 (standard) and <= 40 (odd); every threshold the
+         brute force determined is reproduced; all 26 w(f) of the family file agree. Two second-party agreements with
+         the record: |T(84)| = 17,651 (KIMI-QUESTIONS-4) and 938 standard minimal absent traces to length 84 (8.83's
+         lane, the same count under this minimality convention).
+  Standard L(W), W = 18..39: 40 42 42 49 52 52 54 56 56 59 60 60 60 72 72 74 76 80 84 84 84 84; at least 90 from 40.
+  Odd L(W), W = 19..39:          43 43 46 46 53 53 57 57 58 61 61 61 71 71 73 73 73 81 81 81 81; at least 90 from 40.
+  (b) HELD: Conjecture S holds at every W <= 39 in both phases; the slack is 1 at standard W = 30 (L = 60) and at
+         least 7 from W = 31 on; in the odd phase zero slack occurs only at W = 12 and 15, and the slack is at least 4
+         from W = 31 on.
+  (c) HELD: every standard minimal absent trace to length 90 has w(f) <= ceil(l/2); the tight lengths are exactly 2,
+         4, 7, 11, 35, 36, 61 (eight traces). So 8.83's "equality only at 7, 11, 35, 61" omits 10 (2), 0000 and 0101
+         (4) and 010001001100010011000100110001001100 (36), which KIMI-QUESTIONS-4's list has.
+  (d) REFUTED: no odd-phase trace above ceil(l/2) beyond length 30, to length 90; the only two remain those of
+         lengths 24 and 30. Odd tight lengths: 2, 3, 8, 12, 15, 20, 34, 36, 38, 62.
+  (e) HELD: standard L(18) = 40.
+  (f) REFUTED for the length-36 trace as worded, undetermined at 61: the standard tight trace of length 36 has its
+         deepest branch unique only through column 5 and then widening gradually (2, 4, 5, 10, 16, 24, 51, 360 deepest
+         pairs at columns 6..17), with every final failure at time t <= 3; the length-61 search reached its cap of eight
+         million column pairs at column 5 (2.8 million there).
+  Unexpected check: the minimal absent counts alternate with the parity of l, in opposite senses in the two phases
+         (standard: 48 to 83 at odd l = 75..89 against 15 to 31 at even l = 76..90; odd phase the reverse), as the
+         first-symbol map between the phases (one time step, a change of length by one) implies. The long tight words
+         pair across the phases the same way: the odd tight trace of length 62 is 0 followed by the standard one of
+         length 61, and the odd one of length 36 is 1 followed by the standard one of length 35.
 """
 import os, re, subprocess, sys, time
 import numpy as np
