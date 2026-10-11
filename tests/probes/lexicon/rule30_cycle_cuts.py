@@ -1,0 +1,105 @@
+#!/usr/bin/env python3
+"""rule30_cycle_cuts.py: certified minimal cuts of the 111 branch's periodic visible words (CL300) (CC).
+
+RUN-ON:     cpu (Python 3; kissat, drat-trim, cake_lpr through rule30_mfw_certify.certify)
+COMMAND:    python3 tests/probes/lexicon/rule30_cycle_cuts.py [NAME ...]
+
+Why (CL300, after L630's verdict). The collar lane's other recurrent objects are the 111 diversion's: GC1105's named
+M3 self-return S-D111-H-SS^3 (column-1 word h(SLLSSS), visible word M3, present by MW) and the mixed M2/M3 recurrent
+component (CL284). M3 itself is present; the question is whether its repetitions, alone or mixed with M2, can occur
+for ever beside the wall. M2C answered it for M2: (LLSSS)^6 (114 bits) and (SSSLL)^6 S (117 bits) exclude it.
+
+How, as M2C, for each periodic visible word P (M3 from rule30_mixed_generator_words.txt, M2 likewise; phase-0 spelling)
+and each phase: (1) the certified absent words (mfw40, cuts40_p0, cuts40_sl, M2C's two cuts, MW's minimal cuts; plus
+mfw40p1, cuts40_p1 in phase 1) that occur in P repeated; (2) the least n such that some factor of length n of P's
+bi-infinite repetition is absent (monotone in n), by binary search up to CAP = 300, and every absent factor of that
+length that is minimal (both its length-(n - 1) factors present); each through rule30_mfw_certify.certify (cone CNF,
+kissat, DRAT, drat-trim -L, cake_lpr). Receipts in cc.ck. "Present to 300" if nothing is absent up to the cap.
+
+PREDICTIONS, registered 2026-10-11 08:18 BST before the run:
+  CC0 (control, must hold): M2's periodic word returns M2C's least length 114 and the cut (LLSSS)^6 in phase 0.
+  CC1 (blind, 0.6): M3's periodic word (period 22) has an absent factor of length <= 150 in phase 0.
+  CC2 (blind, 0.5): every mixed word ((M2 M3), (M2 M2 M3), (M2 M3 M3), repeated) has an absent factor of length <= 150
+      in phase 0.
+  CC3 (blind, 0.5): at least one of the four words already contains a cut certified before today's run (a list word, an
+      M2C cut or an MW cut).
+  Record searched: 'SLLSSS' -> GC1105 (RULE30-GPT.md) and rule30_black_A_111_diversion.py only (no membership test).
+REFUTED-BY: CC0 failing (the instrument); CC1 .. CC3 as stated.
+"""
+import os
+import re
+import sys
+import time
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+_argv, sys.argv = sys.argv, sys.argv[:1]
+import rule30_mfw_certify as mfc                               # noqa: E402  (certify, DIR)
+import rule30_mixed_words as mw                                # noqa: E402  (words, M2C_CUTS)
+sys.argv = _argv
+
+CK = os.path.join(mfc.DIR, 'cc.ck')
+CAP = 300
+G = dict(mw.words())
+CYCLES = [('M2', G['M2']), ('M3', G['M3']), ('M2M3', G['M2'] + G['M3']), ('M2M2M3', G['M2'] * 2 + G['M3']),
+          ('M2M3M3', G['M2'] + G['M3'] * 2)]
+
+
+def fac(c, r, n):
+    return (c * (n // len(c) + 3))[r:r + n]
+
+
+def absent(w, ph, tag):
+    t0 = time.time()
+    v = mfc.certify(w, ph)
+    with open(CK, 'a') as f:
+        f.write('%s %d %d %s %s %.1f\n' % (tag, ph, len(w), w, v, time.time() - t0))
+    assert v in ('SAT', 'VERIFIED-UNSAT'), (tag, w, ph, v)
+    return v == 'VERIFIED-UNSAT'
+
+
+def absent_rot(c, n, ph, tag):
+    return {r for r in range(len(c)) if absent(fac(c, r, n), ph, tag)}
+
+
+def run(name, c, ph):
+    cuts = mw.certified(ph)
+    rep = c * (300 // len(c) + 3)
+    inside = sorted({len(x) for x in cuts if x in rep})
+    print('%s phase %d: period %d; certified cuts inside its repetition: %s' % (name, ph, len(c), inside or 'none'),
+          flush=True)
+    if not absent_rot(c, CAP, ph, name):
+        print('%s phase %d: PRESENT to %d (every factor of length %d is in the language)' % (name, ph, CAP, CAP), flush=True)
+        return None
+    lo, hi = 2, CAP
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if absent_rot(c, mid, ph, name):
+            hi = mid
+        else:
+            lo = mid + 1
+    a, b = absent_rot(c, lo, ph, name), absent_rot(c, lo - 1, ph, name)
+    mins = sorted({fac(c, r, lo) for r in a if r not in b and (r + 1) % len(c) not in b})
+    print('%s phase %d: least absent length %d; minimal cuts (cake_lpr VERIFIED): %s' % (name, ph, lo, mins), flush=True)
+    return lo, mins
+
+
+def main():
+    sel = sys.argv[1:]
+    res = {}
+    for ph in (0, 1):
+        for name, c in CYCLES:
+            if sel and name not in sel:
+                continue
+            res[(name, ph)] = run(name, c, ph)
+    m2 = res.get(('M2', 0))
+    if m2:
+        ok = m2[0] == 114 and mw.M2C_CUTS[0] in m2[1]
+        print('CC0 %s  (M2 phase 0: least %d; (LLSSS)^6 among the minimal cuts: %s)' % (
+            'PASS' if ok else 'FAIL', m2[0], mw.M2C_CUTS[0] in m2[1]))
+    print('results: ' + ' '.join('%s/p%d=%s' % (n, ph, 'present>%d' % CAP if v is None else v[0])
+                                 for (n, ph), v in sorted(res.items())))
+
+
+if __name__ == '__main__':
+    main()

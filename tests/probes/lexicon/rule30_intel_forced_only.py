@@ -8,6 +8,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_intel_forced_only.py build
             python3 tests/probes/lexicon/rule30_intel_forced_only.py run LANG PHASE MAXM [MAXSTATES [DFSMAX]]
             (LANG x4|gm|maw12|dfa=FILE; MAXM is the last merged level; DFSMAX extends depth-first without merging)
             python3 tests/probes/lexicon/rule30_intel_layer_dfa.py WIDTH PHASE OUT.dfa   (the layer automata)
+            python3 tests/probes/lexicon/rule30_intel_mfw_dfa.py PHASE K OUT.dfa     (the cutoff-K language X_K)
 COST:       calib about a minute. The merged stage is bounded by memory, not time: the engine merges states on the
             record's masked anti-diagonal pair (8.38) and stops before a level whose children would exceed MAXSTATES
             (default 3e7, about 5 GB); the depth-first tail past it costs about 1.5 x per level of CPU time (X_4 from
@@ -68,6 +69,26 @@ values of 8.88 before this header was pushed; those are the calibration numbers 
          Controls run before this registration: the revised engine (the last four visible bits in the merging key, the
          death word classified as 11, 00000 or longer) reproduces every earlier table, X_4 to 42 in both phases and the
          width-8 layer to 122 with equal level counts; the width-4 automaton reproduces X_4's table to depth 62.
+  FO-P8 (registered 2026-10-11 08:15 BST, before any run over these automata; CL282's request, CL297's first item). The
+         language is X_40: the words avoiding every minimal forbidden word of length <= 40 of L (phase 0, 771 words) or
+         L1 (phase 1, 832), from rule30_visible_language_handoff.md (rule30_intel_mfw_dfa.py). It equals the real
+         visible language at every length <= 40 and contains it at every length, so the check-free conjecture covers
+         it. Run before this registration, as controls of the automaton only: its word counts equal the handoff's C_n
+         at every n = 1..40 in both phases; minimal automata 4,967 and 5,390 states; growth h = 0.15081 and 0.14843
+         bits per visible bit, so h/(1 - h) = 0.1776 and 0.1743. A forced-only record R^F(d) over X_40 is the exact
+         record over L when d + R^F(d) <= 79 (phase 0; 80 in phase 1: the run then ends inside the first 40 visible
+         bits), and an upper bound otherwise, with R^F_L(d) >= 80 - d (81 - d) there.
+         (a, control, must hold) R^F(X_40) <= R^F(X_4) at every depth (X_40 is inside X_4); where exact, the larger
+         of the two phases' R^F is at least the real record R_real(d) (dropping the checks only adds runs).
+         (b, blind 0.85) no forced-only orbit reaches the cap of 3m + 300 steps (the kill does not fire over X_40).
+         (c, blind 0.6) the exact horizon (the last d with d' + R^F(d') <= 79, resp. 80, for every d' <= d) is at
+         least 50 in both phases.
+         (d, blind 0.6) the least-squares slope over d = 40..122 (121) lies in 0.7..1.2 times h/(1 - h): 0.124..0.213
+         (phase 0) and 0.122..0.209 (phase 1).
+         (e, blind 0.6) R^F(X_40) <= R^F(width 20) at 90% or more of the depths in both phases (CL282's "the width-20
+         run is the control it must fall below"; X_40 and the width-20 layer are not nested beyond length 40, so
+         this can fail).
+         Unexpected check: the death split (11, 00000, a longer word) over X_40 against the width-20 layer's 31/15/54.
 
 OUTCOME, first block (2026-10-11 03:28 BST): the merged stage of X_4 and the full twelve-word class, both phases, on
   16 threads.

@@ -769,6 +769,11 @@ app is unpublished by design.
   walk over prefixes with 8.38's masked-pair merging and a depth-first tail; FO-P0..P7 registered before the runs; the
   per-level distinct-state counts measure the merge rate of K-prefixes; every death named by its word (11, 00000, a
   longer one). Intel, 2026-10-11.
+- lexicon/rule30_intel_strip_threshold.py (with rule30_intel_strip_trace.c): SX, the exactness thresholds L(W) of
+  the strip form for full traces, both phases (KIMI-QUESTIONS-4 Q1, door D4): real traces from all 2^N rows,
+  bit-sliced; strip traces by a subset walk; the pairing L(2k) = L(2k+1), the extra traces at L(W) + 1 and their least
+  excluding widths; SX-C0..P6 registered before the runs. rule30_intel_mfw_dfa.py builds FO's exact-language automaton
+  X_K from the handoff's minimal forbidden words (FO-P8). Intel, 2026-10-11.
 
 - lexicon/rule30_black_A_B_admission.py: GC1098 first-B sparse admission and white H101 marker;112 high/108 low/240 short parents, then empty S4;76 implications/128 independent histories pass. Incorrect D shields corrected; later SS block open.
 
