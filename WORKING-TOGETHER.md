@@ -290,3 +290,16 @@ in light of evidence. Local retains the computational lane. This does not
 require waiting for Cloud, duplicate solver work, or weaken independent
 review. Requests to Cloud must still be delivered by a flag with a committed
 ledger pointer, as required by the owner's delivery rule.
+
+## Lean as the last check (the owner, 2026-10-11)
+
+Standing option, not a current task. When a result here is to be presented as a proof, its finite parts (the certified
+cuts and their cake_lpr certificates, the cut-to-macro equivalences, the strip relaxations and their cut products, the
+eventual-periodicity exclusions) are the kind of statement a proof assistant checks well, and the owner wants a Lean
+formalisation of those parts as the final step before any claim leaves the record. The second-read protocol (section 3)
+stays the working check; Lean is the delivery check. Context: Google DeepMind's agents (arXiv 2605.22763, May 2026)
+resolved 9 of 353 formalised Erdős problems by forcing every claim through the Lean compiler, and the owner notes that
+most of OpenAI's 2026 mathematics release (openai/math, see PRIOR-ART.md) carried Lean formalisations. Until a theorem
+worth formalising exists, no one spends time on this; when one does, Cloud writes the formal statements first and the
+parties review them before any proof is attempted, because a wrong formal statement is the failure mode those papers
+report.

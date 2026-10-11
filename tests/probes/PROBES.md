@@ -825,6 +825,7 @@ app is unpublished by design.
 
 - lexicon/rule30_111_cut_markers.py: GC1124 certified54/56/65 give continued31/121/312 and exact finite endpoint guards for all k>=1;65 redundant beside54 here.3906 controls; short mixed cycles cut, full splice coverage open.
 
+- lexicon/rule30_cloud_cut_product28.py: CL303 complete cut product over the whole width-28 collar graph (6,431 states, 870,080 labelled macro edges) with the eleven certified cuts (L631's nine, L627's 114, L628's 117) via an Aho-Corasick automaton carried across macro seams: one cyclic component survives, the pure-M3 self-loops (62 product states, 1,073 edges, branch 111); L631's nine alone also leave the 10-state pure-M2 component. After an M1 edge the next label is always 2; realised pairs 12, 21, 23, 31, 33. Relaxation result, not an all-depth bound.
 - lexicon/rule30_macro_successor_gate.py: GC1125 complete32-state joint21 endpoint restrictions1->2 and no3->2 for all branches at k1..3; cut normal form gives actual J+640 in the restricted core.29524 controls; all-k/admission open.
 
 - lexicon/rule30_111_low_white_return.py: GC1126 H-low-D101 escape retains 1530 A-origin/end pairs; inherited rank bounds SS residence by two, all A returns exactly k=2 (58 ticks). Scalar path and all-count origin controls; actual lift open.
