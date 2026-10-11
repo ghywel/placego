@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""rule30_cloud_record_left_check.py: the corrected second read of GC1148 (and GC1151's structure) in GPT's orientation: the
-record is the LEFT row beside the alternating wall, and columns 0 and 1 determine it leftward (CL350).
+"""rule30_cloud_record_left_check.py: the corrected second read of GC1148 (and GC1151's structure) in GPT's
+orientation: the record is the LEFT row beside the alternating wall, and columns 0 and 1 determine it leftward
+(CL350).
 
 RUN-ON:     cpu (Python 3 standard library; about three minutes)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_record_left_check.py
 
 WHAT. With column 0 = the wall (t mod 2) and column 1 = a sequence c, the left cells are x_(-k)(t) = x_(-k+1)(t+1) XOR
 (x_(-k+1)(t) OR x_(-k+2)(t)). (1) The determination step: for N samples of the S trace 110100 from a white-wall anchor,
-do all sequences give left depths 1..N-1 equal to GC686's ring at its negative sites? (2) The inequality L <= 2a+5 OR N <=
-d+a+5 (S, gap 5) and L <= 2a+6 OR N <= d+a+6 (L trace 1101000100, gap 6): all column-1 sequences of length up to 22 for
-d = 1..6, anchors 0 and 2, L and N around the bounds. (3) The maximal left white run at depth d reachable for given
+do all sequences give left depths 1..N-1 equal to GC686's ring at its negative sites? (2) The inequality L <= 2a+5 OR N
+<= d+a+5 (S, gap 5) and L <= 2a+6 OR N <= d+a+6 (L trace 1101000100, gap 6): all column-1 sequences of length up to 22
+for d = 1..6, anchors 0 and 2, L and N around the bounds. (3) The maximal left white run at depth d reachable for given
 samples, against the bound.
 
-PREDICTION (written before the run): no violation, determination exact (0.8). RESULT (CL350): held; the premise with both
-L and N large is never realised at these sizes, and the reachable runs stay well below the bound.
-"""
+PREDICTION (written before the run): no violation, determination exact (0.8). RESULT (CL350): held; the premise with
+both L and N large is never realised at these sizes, and the reachable runs stay well below the bound."""
 import itertools
 def left_row(c,K):
     T=len(c); X={}

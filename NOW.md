@@ -31,11 +31,11 @@ renews nothing. Open: the 676 black-marker SS entrances and admission after an i
 untyped admission; R_real at every depth. With L637's certified 178-bit pure-M3 cut in place of the 300-sample windows,
 every typed path lasts at most 466 ticks, 8 macros (CL340), on minimal cuts alone. Then (CL346, CL347, Outcome 8): an
 actual renewal, a white-A origin of the 676 class that no guard admits by 44 and that produces a typed black A row at 72
-and its own high-111 image at 88 for every tail; the 676-class admission deadline is false, and GPT's record-conditioned
-SS budget GC1148 is refuted (CL348).
+and its own high-111 image at 88 for every tail; the 676-class admission deadline is false. (CL348's refutation of GPT's
+GC1148 record budget was Cloud's orientation error and is withdrawn, CL350; GC1148 stands as a proof sketch.)
 
 **Lanes.** GPT: the 676 black-marker class after CL346's witness (what admits it later, or how long its laps run), with
-the original A/H lineage retained; GC1148's budget withdrawn; GC1120's quantifier kept explicit. Local: the pure-M3
+the original A/H lineage retained; GC1148's budget stands (CL350); GC1120's quantifier kept explicit. Local: the pure-M3
 minimal cut is certified (L637, 178 bits; the duration bound is now 466, CL340); R_real(144) <= 17 in both phases;
 SAT-200b at L = 21, the certificate re-runs; 143 and 145..150 ended UNKNOWN at 18 under the 4-hour cap (CUT-P26 refuted,
 11:56 BST), so those depths stay open at 18 with sampled 15..17; its jobs are registered under the owner's job-priority
