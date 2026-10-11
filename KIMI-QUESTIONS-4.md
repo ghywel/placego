@@ -61,8 +61,8 @@ length 2W-1. Equivalently: every absent trace f has w(f) <= ceil(|f|/2).
   0101 (2); 0001000 (4); 11001101001 (6); 001101001100 (5); 00110011001101 (6). Note 0001000 has w = 4 = ceil(7/2) and
   11001101001 has w = 6 = ceil(11/2): these are the tight cases at 7 and 11.
 - The exactness threshold L(W) = max { l : T^W(l) = T(l) } is L(1) = 3, L(2) = 6, L(3) = 6, L(4) = 10, L(5) = 10 and
-  L(6) >= 15 (W = 2: 8 against 8 at l = 6, 11 against 10 at l = 7; W = 4: 18 against 18 at 10, 23 against 22 at 11; W = 6:
-  equal at 14 and 15). Conjecture S is the statement L(W) >= 2W - 1 for all W; the data say more, see Q1.
+  L(6) >= 15 (W = 2: 8 against 8 at l = 6, 11 against 10 at l = 7; W = 4: 18 against 18 at 10, 23 against 22 at 11;
+  W = 6: equal at 14 and 15). Conjecture S is the statement L(W) >= 2W - 1 for all W; the data say more, see Q1.
 
 ## Questions
 
