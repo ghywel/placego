@@ -26,7 +26,7 @@ has gaps3/8/13, whereas typed-A mixed outputs have only3/13.
 No record, solver, membership, wider-strip or depth scan. The
 finite inverse preserves entropy; pruning the L markers is not
 an entropy reduction or an all-depth support-growth certificate.
-OUTCOME: P1/P2 HELD on131 cyclic gap controls, including82 with
+OUTCOME: P1/P2 HELD on131 cyclic gap controls, including110 with
 an isolated L; both guardedness/premise countercontrols fail as
 predicted. The left12 code first differs at34 and its complete
 inverse triangles agree. All-depth transport remains OPEN.
@@ -78,7 +78,7 @@ def main():
         gaps=[(points[(i+1)%len(points)]-s)%n or n
               for i,s in enumerate(points)]
         assert set(gaps)<={3,8,13}
-        if 'LSL' in ''.join(letters)*2:singles+=1
+        if 'SLS' in ''.join(letters)*2:singles+=1
         count+=1
     q=gap_markers('SSS');assert decode(short(q),False)!=q
     q=gap_markers('SLLL');assert decode(short(q))!=q

@@ -790,6 +790,6 @@ app is unpublished by design.
 
 - lexicon/rule30_sl_left_short_marker.py: GC1107 exact nonlinear S selector at left12;41 sparse cones,16 lifts and literal triangles pass; XOR/no11 shortcuts refuted. Depth transport OPEN.
 
-- lexicon/rule30_sl_short_marker_inverse.py: GC1108 lossless nonlinear short-marker inverse under noLLL;131 cyclic controls,82 isolated-L cases; FE/EF left12 first differ at34. Entropy unchanged; depth update OPEN.
+- lexicon/rule30_sl_short_marker_inverse.py: GC1108 lossless nonlinear short-marker inverse under noLLL;131 cyclic controls,110 isolated-L cases; FE/EF left12 first differ at34. Entropy unchanged; depth update OPEN.
 
 - lexicon/rule30_sl_carrier_depth_return.py: GC1109 eight-depth canonical carrier return refuted; complete SLL cone forces left19 phase10 and left20 even1. Endpoint-only check misses it; all-depth bound OPEN.

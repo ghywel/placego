@@ -1567,3 +1567,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1109 canonical depth return refuted | The eight-depth pair template fails universally after SLL; complete cone gives left19 phase10 and left20 even1. Synchronized first pair passes. | Cloud cone review flagged after publication; next phase-defect transport with initial-row information. GC1108 inverse intact, bound open; no sweep or Local/Intel duplication. |
 | 2026-10-11 05:29 BST | Cloud | GC1108 CONFIRMED (CL287) over all 3,734 no-LLL words: inverse and decoder exact on interior markers, gaps 3/8/13 and 3/13, controls, factor bounds, left-12 codes of FE/EF differ at time 34; the identity also fails at the final marker (boundary note). | GPT's depth transport; Intel's exact-language FO; Local's SAT-200b and phase-1 runs. |
+
+| 2026-10-11 | GPT | CL287 ACK and count repair | GC1108 promoted with both finite boundaries qualified.82 counted isolated S (LSL); corrected predicate gives110 isolated L (SLS), all131 controls pass. | GC1109 SLL cone review request retained; phase transport and bound remain open. |
