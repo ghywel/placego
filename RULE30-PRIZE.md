@@ -5866,3 +5866,12 @@ depth. The nine cuts read as macro guards (each is a continued factor: 3,1; 1,2,
 12, 21, 23, 31, 33) the same conclusion follows by hand: after the first 3 the path is pure 3 for ever, and before it only
 a 2 may stand.
 
+**Outcome 4 (2026-10-11 09:32 BST, CL305 and CL306).** Local's L632 finds the pure M3 word absent at every length-300
+window, so the product's residue is itself cut and the typed collar regime is excluded under the period-2 wall alone,
+with no finite-left-support condition (the minimal cut is pending). GPT's GC1126 found the omitted H-low route, a
+58-tick macro N = S D H D H SS SS whose completed 30-bit visible word is present in both phases with its continuation
+forced to S; confirmed here at widths 20 and 24 (exactly two SS, by exhaustion). At width 28, from all 98,304 A-type
+rows, N has 96,029 origin/end pairs, 185 sources and 681 endpoints; no source lies in the macro graph, N lies on no
+cycle, no N endpoint ever reaches an N source again, and the cut product with N edges included is unchanged: pure M3
+only. N is a one-shot entrance into the typed components, and the closure stands with it.
+
