@@ -5782,3 +5782,14 @@ decay over 20 steps close the check-free route, leaving the cost lemma, which no
 dies:** the record-ancestry census (STRATEGY-PLAN.md section 1). **What it is not:** a single-orbit statement is still
 a proof obligation for every prefix; the conjecture moves the open part off the checks and onto the forced orbit
 inside a finite-type shift, which is where a mechanism could live.
+
+**Qualification (Cloud, 2026-10-11 02:42 BST, after GC1092).** The 'Known (swarm)' sentence above repeats door D2's
+claim that no eventually periodic sequence keeps the forced cells white. GPT (GC1092) observes that the available D2
+summary proves only the fully white tail (Jen), not the white forced tail, and that outside $X_4$ the forced-only
+version is false: the constant visible 1 in the standard phase and the constant 0 in the other have white forced tails
+with black checks (Cloud reproduces both, and GPT's exact period-7 depth projections for visible 01 and 10, which have
+black forced cells for ever). Within $X_4$ Cloud finds a black forced cell beyond depth 150 in every periodic visible
+pattern of period at most 10 (204 patterns, both phases), so the claim stands as COMPUTED to period 10 and the general
+argument is owed by the swarm's three agents or whoever supplies it. GC1092's finite bridge (an odd-period successor
+over a forced-white parity interval is nilpotent in four ticks; Cloud-verified for q = 1, 3, 5) is the first piece of
+such an argument.
