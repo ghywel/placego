@@ -93,3 +93,17 @@ The matrices and eigenvalues of Question 1 as a table per n; the Markov-test dif
 three series of Question 2 as plots or tables with the predictions beside them; the entropies and correlations of
 Question 3. Mark each result proved, computed or conjectured, say what hardware and how long each run took, and keep
 every failed prediction in the report. If Question 1's counterfactual comes true, stop and report before doing more.
+
+## Correction, 2026-10-11 (after the first hand proofs on the receiving side)
+
+Two predictions above were wrong as worded, and the set is corrected here rather than rewritten. (P3) K = 0 is absorbing
+(only the all-white and all-black rows have K = 0 and both map to all-white), so whenever 0 is reachable from another
+state the stationary distribution of P_n is the point mass at 0; the meaningful object is the quasi-stationary
+distribution on K >= 1 (the left Perron vector of P_n restricted to K >= 1), and the prediction of mean n/4 and variance
+n/16 is to be read of that law. Exact enumeration finds 0 reachable from K > 0 at n = 9 and 12 and not at 8, 10, 11, 13,
+14, so report the cases 3 | n and 3 does not divide n separately. (P9) Along the leftward light-speed diagonal i = -t
+the carry is i.i.d. Bernoulli(1/4) under the coin measure, proved by the fresh-cell argument (the pair x_t(-t),
+x_t(-t+1) carries two fresh initial cells) and checked exactly for t = 0..3: the correlations there are zero, not
+periodic. The periodicity of left diagonals is a fact about finite configurations, not about the measure. Also proved on
+the receiving side and checked here: the lag-1 correlation of the column carry is exactly 1/3, and corr(B_0, B_1) = -1/2
+for the black count.
