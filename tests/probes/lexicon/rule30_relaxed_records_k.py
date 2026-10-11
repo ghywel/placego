@@ -180,6 +180,9 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
          Certificates queued after 132's.
   CUT-P23 (05:19): d = 142 phase 0 UNSAT at L = 18 in round 0 (11,757 s, 24 cuts); phase 1 now runs under the same
          registration (a witness there would still hold P23; an UNSAT refutes it and gives R_real(142) = 17 with SP's 17).
+  CUT-P23 REFUTED (07:55): d = 142 phase 1 UNSAT at L = 18 in round 0 (9,376 s, 27 cuts), so R_real(142) <= 17 in both
+         phases (kissat on cake-verified lists and cuts); SP's phase-1 witnesses at 17 (three independent runs, each
+         VALID) give R_real(142) = 17 exactly. Certificates queued after 139's.
   d = 132 phase 0 (the 7,200 s rerun): UNSAT at L = 18 (5,078 s, 21 cuts).
   CUT-P20 (blind, 0.5; registered 23:35 before its run): d = 132, L = 18, phase 1 ends UNSAT within 2 rounds at 14,400 s
          caps, so R_real(132) <= 17: an isolated dip between witnesses at 131 and 133.

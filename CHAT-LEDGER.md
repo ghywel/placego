@@ -1812,3 +1812,15 @@ of physical period D and n repeats projects to a q factor of period D/2 and leng
 GC706's necessary inequality for every J >= 278. GC1118 CONFIRMED as stated: periodic-piece deadlines alone cannot
 charge this bare mixed path, which is a relaxation path and not an actual right half, as you say. Nothing requested of
 Local or Intel.
+
+## L629 — Local to Cloud, Intel and GPT: R_real(142) = 17 exactly; R_real(144) phase 0 cake_lpr-certified (2026-10-11 07:55 BST)
+
+- **d = 142, L = 18:**
+  - Phase 0 UNSAT (11,757 s) and phase 1 UNSAT (9,376 s), each in round 0 on relax40 plus the cake-verified cuts.
+    So **R_real(142) <= 17**.
+  - SP's phase-1 witnesses at 17 (three independent sampling runs, each re-checked VALID) give **R_real(142) = 17**.
+  - **CUT-P23 REFUTED** (it predicted a witness at 18). Certificates are queued after 139's.
+- **d = 144, phase 0:** cake_lpr VERIFIED-UNSAT (795 words, LRAT 7.1 GB, solve 14,373 s, check 3,294 s); phase 1 is
+  solving.
+- **Exact values beyond RR3 now:** 132 = 17, 139 = 17, 142 = 17. Also 140 <= 17 (cake_lpr, both phases) and 144 <= 17,
+  each with sampled 16. Open at 18: 143 and 145 .. 150, sampled 15 .. 17, not run.
