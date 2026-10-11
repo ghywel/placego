@@ -809,3 +809,5 @@ app is unpublished by design.
 - lexicon/rule30_sl_age_spatial_interface.py: GC1116 exact22-state paired-L age language carries paired19..21; odd22 branches at B10/B13,24 edges repair this interface. All44 local paths and independent macro spellings agree; all-depth closure open.
 
 - lexicon/rule30_sl_pair_marker_code.py: GC1117 left22 even pair00 marker, blocks C_k for arbitrary k>=1,13-past inverse retaining pure-S phase.1782 literal controls; fixed-depth language only, all-depth closure open.
+
+- lexicon/rule30_mixed_bounded_period_excess.py: GC1118 bare mixed recoding has visible periodic excess<=139 at ALL periods (hand proof); 316 seam windows and28608 overlaps are controls only. GC706 inequalities do not exclude it for J>=278; no actual realization.
