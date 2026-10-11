@@ -908,3 +908,5 @@ app is unpublished by design.
 - lexicon/rule30_cloud_gc1148_check.py: CORRECTION (CL350): this probe tested the RIGHT row (whites at positive sites, comparison with the ring at positive sites); GC1148's record is the LEFT row, which columns 0 and 1 determine leftward. Its ring facts stand; its refutation verdict is withdrawn. The corrected test is rule30_cloud_record_left_check.py.
 
 - lexicon/rule30_cloud_record_left_check.py: CL350 corrected check of GC1148 and GC1151 in GPT's orientation: the leftward determination step holds exactly (N = 6, 10, 14), no violation of either inequality over all column-1 sequences to length 22 at small d, a, and the maximal left white run reachable for given samples stays below the bound. GC1148 confirmed as a proof sketch; the L ring's gap 6 not reproduced here.
+
+- lexicon/rule30_record_period_comparators.py: GC1154 compact indexed repeat restrictions on untyped white-time words under zero-record hypotheses;1080 inverse controls/17160 specifications/24 large-integer endpoints PASS. Theorem B reused; closure OPEN.
