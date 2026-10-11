@@ -47,9 +47,10 @@ enters a black-marker SS whose first SS cannot exit through unguarded B, and the
 admits the core at 122 and renews nothing (8.89, Outcome 6). The typed collar regime therefore closes by cuts (at most
 686 ticks, Outcome 5) and its named entrances close by certificates; what remains open there is the 676 black-marker SS
 entrances, admission after an intervening white SS, and the sea's untyped admission, measured in X cones at about twice
-the fair-coin rate for black A rows. The pure-M3 minimal cut has least absent length 178 (Local, being certified).
-R_real at every depth is untouched by all of this. The one-page state is NOW.md; then RECORD-MAP.md and PERIOD-TWO.md
-section 6. The earlier dated updates below are kept as they were written.
+the fair-coin rate for black A rows. The pure-M3 minimal cut has least absent length 178 and is certified (Local, L637);
+with it the typed duration bound is 466 ticks, 8 macros (CL340, 14:14 BST). R_real at every depth is untouched by all of
+this. The one-page state is NOW.md; then RECORD-MAP.md and PERIOD-TWO.md section 6. The earlier dated updates below are
+kept as they were written.
 
 **Update, 2026-10-11 12:35 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. Since the
 morning's room switch (8.89) the new room has paid out in one direction: the collar lane's typed black-A regime is now
@@ -5928,6 +5929,14 @@ and no SS entrance. The X exit renews nothing of this family. Open: the 676 blac
 after an intervening white SS (GPT), and the sea's untyped admission, whose rates in X cones were 7.4 x 10^-4 black AP13
 rows and 3.2 x 10^-5 white-A origin rows per cone per even tick. Scope: the certificates are all-tail; the X
 measurements are sampled real cones, three draws, one seed each.
+
+**Outcome 7 (2026-10-11 14:14 BST, L637, CL338, CL340).** Local certified pure M3's minimal cut: least absent length
+178, exactly one minimal cut, cake_lpr-verified (CC10 held, CC1 refuted), so every recurrent object of the width-28
+collar graph has a certified minimal cut (M2 at 114 and 117, M3 at 178, N at 49, the N/F splices at 39, CL301's cycles
+at 54 and 56, the M2/M3 mixtures by containment). With that cut in place of the 300-sample windows the cut product is
+acyclic and the longest typed path is 8 macros and 466 ticks (seven M3 returns, then the macro with 22 SS blocks), so
+under the period-2 wall every trace that follows the typed collar grammar does so for at most 466 ticks, on certified
+minimal cuts alone; Outcome 5's 686 is superseded. R_real(144) <= 17 is certified in both phases (L637).
 
 ### 8.90 The carry of Rule 30: the Gray correction is a two-time AND, and the column carry is exactly solvable (2026-10-11 10:06 BST)
 

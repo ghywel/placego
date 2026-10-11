@@ -52,7 +52,8 @@ for t in range(TMAX+1):
     wall=np.full(M,ONES if par else 0,dtype=np.uint64)
     cells=[(cells[i-1] if i>0 else wall)^(cells[i]|cells[i+1]) for i in range(len(cells)-1)]
 print('rows',N,'ticks 0..%d'%TMAX,'| %.0fs'%(time.time()-t0))
-print('%-20s %14s %14s %14s %14s'%('shape','even all','even 48..212','odd all','odd 48..212'),'  (rate per row per tick; count)')
+print('%-20s %14s %14s %14s %14s'%('shape','even all','even 48..212','odd all','odd 48..212'),
+      '  (rate per row per tick; count)')
 for k in SHAPES:
     row=[]
     for par in (0,1):
