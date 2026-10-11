@@ -6,27 +6,26 @@ machinery and the exit dispatch checked directly on real completions (CL341).
 RUN-ON:     cpu (Python 3 standard library; about a minute)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_gc1144_check.py
 
-WHAT. The 20-cell strip with cell 21 free (every actual projection is included): the 128 packets extending the pin, the H
-flow (site-5 track 0101101010) to its endpoints, the SS entrants (first nine cells a white SS entrance or a black-marker
-S), the least fixed point of the SS flow (site-5 track 111010) with its states, edges and sha256 digest, the terminals by
-class (black-eleventh A, guarded or bad B, white-A with white or black 13th cell, white-A whose sites 14..19 are GC1141
-high words), topological elimination, the minimal SS depth of each exit class, GPT's shortest black-A counter path and
-the four actual 70-cell projection controls. Beyond GPT: every white-A terminal is run 16 ticks over all 2^5 completions
-of its 20 cells and every B terminal 6 ticks over all 2^6, so the exit dispatch is checked without GC1141, GC1090 or
-GC1087 as premises; and the real chain of CL335 (white SS entrances 1110100001100 / 1110100000110 at 94, 1110100001111
-at 100, A rows 1110100011011 / 1110100011010 at 106) is looked for in the exact-depth layers.
+WHAT. The 20-cell strip with cell 21 free (every actual projection is included): the 128 packets extending the pin, the
+H flow (site-5 track 0101101010) to its endpoints, the SS entrants (first nine cells a white SS entrance or a
+black-marker S), the least fixed point of the SS flow (site-5 track 111010) with its states, edges and sha256 digest,
+the terminals by class (black-eleventh A, guarded or bad B, white-A with white or black 13th cell, white-A whose sites
+14..19 are GC1141 high words), topological elimination, the minimal SS depth of each exit class, GPT's shortest black-A
+counter path and the four actual 70-cell projection controls. Beyond GPT: every white-A terminal is run 16 ticks over
+all 2^5 completions of its 20 cells and every B terminal 6 ticks over all 2^6, so the exit dispatch is checked without
+GC1141, GC1090 or GC1087 as premises; and the real chain of CL335 (white SS entrances 1110100001100 / 1110100000110 at
+94, 1110100001111 at 100, A rows 1110100011011 / 1110100011010 at 106) is looked for in the exact-depth layers.
 
-PREDICTIONS (written before the run, in Cloud's scratch): (1) the counts reproduce (128, 161 = 87 + 74, 519 states, 1530
-edges, 267 = 66 + 172 + 29, GPT's digest 09e5e649...) (0.8); (2) every white-A terminal gives a C core at +16 for all
-completions (0.8) and every B terminal is mixed-admitted at +6 for all completions (0.6); (3) the real chain's rows are in
-the carrier at SS depth 5 (0.7); (4) 214 vertices survive elimination (0.7). Counterfactual: a white-A terminal in the
-high words or a bad B refutes GC1144. Unexpected check: the SS depth at which each exit class first appears.
+PREDICTIONS (written before the run, in Cloud's scratch): (1) the counts reproduce (128, 161 = 87 + 74, 519 states,
+1530 edges, 267 = 66 + 172 + 29, GPT's digest 09e5e649...) (0.8); (2) every white-A terminal gives a C core at +16 for
+all completions (0.8) and every B terminal is mixed-admitted at +6 for all completions (0.6); (3) the real chain's rows
+are in the carrier at SS depth 5 (0.7); (4) 214 vertices survive elimination (0.7). Counterfactual: a white-A terminal
+in the high words or a bad B refutes GC1144. Unexpected check: the SS depth at which each exit class first appears.
 
-RESULT (CL341): all four held. White-A terminals: 22 give C010 and 7 give C100 at +16 for every completion; B terminals:
-all 172 (105 with a white tenth cell, 67 black) are mixed-admitted at +6 for every completion. First exits: black A after
-2 SS, guarded B after 3, white A after 4; the real chain's prefixes sit at exact depths 3, 4 and 5 (the relaxation also
-admits the A rows at depths 4 and 6, which the real cones of CL332 do not realise at tick 100).
-"""
+RESULT (CL341): all four held. White-A terminals: 22 give C010 and 7 give C100 at +16 for every completion; B
+terminals: all 172 (105 with a white tenth cell, 67 black) are mixed-admitted at +6 for every completion. First exits:
+black A after 2 SS, guarded B after 3, white A after 4; the real chain's prefixes sit at exact depths 3, 4 and 5 (the
+relaxation also admits the A rows at depths 4 and 6, which the real cones of CL332 do not realise at tick 100)."""
 import itertools, hashlib
 from collections import Counter, deque
 B=lambda s: tuple(int(c) for c in s)
