@@ -7,6 +7,7 @@ COMMAND:    python3 tests/probes/lexicon/rule30_intel_forced_only.py build
             python3 tests/probes/lexicon/rule30_intel_forced_only.py calib
             python3 tests/probes/lexicon/rule30_intel_forced_only.py run LANG PHASE MAXM [MAXSTATES [DFSMAX]]
             (LANG x4|gm|maw12|dfa=FILE; MAXM is the last merged level; DFSMAX extends depth-first without merging)
+            python3 tests/probes/lexicon/rule30_intel_layer_dfa.py WIDTH PHASE OUT.dfa   (the layer automata)
 COST:       calib about a minute. The merged stage is bounded by memory, not time: the engine merges states on the
             record's masked anti-diagonal pair (8.38) and stops before a level whose children would exceed MAXSTATES
             (default 3e7, about 5 GB); the depth-first tail past it costs about 1.5 x per level of CPU time (X_4 from
@@ -21,8 +22,9 @@ K = X_4 = {no 11, no 00000}, which contains the real language in both phases, no
 every d for X_4 (or for any language containing L) implies period 2 for every finite configuration.
 
 Engine. Breadth-first over visible prefixes, one level per forced index m (two anti-diagonals apart). A state is the
-pair (A_m, A_{m-1} masked where A_m's next bit is black) plus the last twelve visible bits, merged with the longest
-streak of white forced cells ending at m kept (8.38's MG0b: equal masked pairs have equal futures). From every state
+pair (A_m, A_{m-1} masked where A_m's next bit is black) plus the language state (the last twelve visible bits, or
+the automaton state) and the last four visible bits (they name the death word), merged with the longest streak of
+white forced cells ending at m kept (8.38's MG0b: equal masked pairs have equal futures). From every state
 the forced-only path is run to its death (or a cap of 3m + 300 anti-diagonal steps, which marks the depth censored),
 and R^F(d) is updated for every d whose run that path and the streak cover. Each level prints its distinct-state
 count, so the merge rate of K-prefixes is a by-product.
@@ -55,6 +57,17 @@ values of 8.88 before this header was pushed; those are the calibration numbers 
   is reported with its prefix, as the plan's kill criterion requires (it moves the conjecture to the width-8 language).
   Unexpected check: at which forbidden word the orbits die, by level (11 against 00000), and whether that ratio moves
   with depth. Not predicted.
+  FO-P7 (registered 2026-10-11 03:54 BST, after the width-4, 8 and 12 results below and before the width-16 and width-20
+         runs; disclosed: the width-8 death split, 44% at 11, 13% at 00000, 43% at a longer word, was seen while
+         testing the revised engine). The automata (rule30_intel_layer_dfa.py) give h = 0.21158 at width 16 and
+         0.15187 at width 20 (under the record's certified bounds 0.2130 and 0.1533), so h/(1 - h) = 0.268 and 0.179.
+         (a, 0.7 each) the phase-0 forced-only slope over d = 40..122 lies in 0.7..1.05 times h/(1 - h): 0.19..0.28
+         at width 16 and 0.13..0.19 at width 20; (b, 0.6 each) the phase-1 slope lies in 0.6..0.95 times it: 0.16..0.26
+         and 0.11..0.17; (c, 0.9) R^F(width 16) <= R^F(width 12) and R^F(width 20) <= R^F(width 16) at every depth in
+         both phases; (d, 0.5) at widths 16 and 20, 11 is the most frequent of the three death kinds in both phases.
+         Controls run before this registration: the revised engine (the last four visible bits in the merging key, the
+         death word classified as 11, 00000 or longer) reproduces every earlier table, X_4 to 42 in both phases and the
+         width-8 layer to 122 with equal level counts; the width-4 automaton reproduces X_4's table to depth 62.
 
 OUTCOME, first block (2026-10-11 03:28 BST): the merged stage of X_4 and the full twelve-word class, both phases, on
   16 threads.
@@ -121,7 +134,7 @@ def run(lang, phase, maxm, maxstates='30000000', nodedup=0, threads=None, tag=No
         if not p: continue
         if p[0] == 'D': R[int(p[1])] = int(p[2]); cens[int(p[1])] = int(p[3]); wit[int(p[1])] = p[4] if len(p) > 4 else ''
         elif p[0] == 'L': levels.append((int(p[1]), int(p[2]), int(p[3]), float(p[4])))
-        elif p[0] == 'K': kinds.append((int(p[1]), int(p[2]), int(p[3]), int(p[4])))
+        elif p[0] == 'K': kinds.append(tuple(int(x) for x in p[1:]))
     exact = [d for d in R if not cens.get(d, 0)]
     print(f'{tag}: {time.time() - t0:.0f} s; exact to depth {max(exact) if exact else 0}; censored depths {sum(cens.values())}; log {log}')
     return R, cens, wit, levels, kinds
