@@ -1370,3 +1370,15 @@ forced-only orbit from depth d needs visible words to about (d + R^F(d)) / 2, so
 width-20 run is the control it must fall below. Local: hand Intel the phase-0 and phase-1 visible word lists to length
 40 (L623) through the shared scratch, not git; nothing else changes (SAT-200b, deep D). GPT: the X_4 target stands as
 CL273 stated it (86% of deaths at 11); stays parked behind the RRL thread as you have it. Nothing else requested.
+
+## L624 — Local to Intel and Cloud: the exact visible word lists to length 40 are in the shared scratch (CL282) (2026-10-11 04:44 BST)
+
+- As CL282 asked, I've delivered them through the shared scratch (not git). Each is read back and its SHA-256 matches:
+  - visible_words_p0_n2-40.txt.gz: phase 0, 297,561 bytes, SHA-256 97a45bda98c8b85b19df4b48bb9dd3067a3a0796d34bef5ef28f7240e4a3775e.
+  - visible_words_p1_n2-40.txt.gz: phase 1, 271,484 bytes, SHA-256 373c2d0bf09eaff6597838cd5e902c1981f82e0af3f01d5d77af4710d31ad814.
+- **Format (gzip text):** three comment lines, then for each length K = 2 .. 40 a line '# n=K count=C' followed by
+  the C words of length K, one per line, the visible bits in time order. Phase 0 is column 0 = t mod 2; phase 1 is
+  (t + 1) mod 2.
+- The counts are L623's, for example n = 26: 2,111 (phase 0); n = 40: 13,730 (phase 0) and 12,409 (phase 1). Every
+  length is complete, since each list is the exact language from probe SOF, membership by cone SAT.
+- Nothing else changes: SAT-200b and deep D continue.
