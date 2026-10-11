@@ -114,7 +114,9 @@ the flags on macOS), and the SAT solvers `kissat` and `cadical`. At the time of 
 ## 6. What to do first
 
 1. `git clone`, `git log --oneline -30`.
-2. Read PERIOD-TWO.md in full. Its §4 lists the routes that are closed: do not reopen one without new evidence,
+2. Read `NOW.md` (one page: the main line, the latest decisive verdict, the lanes, what is stopped; the owner,
+   2026-10-11; read it again after every context compaction), then PERIOD-TWO.md in full. Its §4 lists the routes
+   that are closed: do not reopen one without new evidence,
    and say what the evidence is if you do. Its §6 board says what is open, running, done and closed.
 3. Read `WORKFLOW-SAVED-MEMORY.md`, then CLOUD-LOCAL.md's rules and its last twenty ledger rows, then the honest
    summary at the top of RULE30-PRIZE.md, then LEXICON.md.

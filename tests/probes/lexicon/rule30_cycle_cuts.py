@@ -25,6 +25,13 @@ PREDICTIONS, registered 2026-10-11 08:18 BST before the run:
       M2C cut or an MW cut).
   Record searched: 'SLLSSS' -> GC1105 (RULE30-GPT.md) and rule30_black_A_111_diversion.py only (no membership test).
 REFUTED-BY: CC0 failing (the instrument); CC1 .. CC3 as stated.
+
+PREDICTIONS, registered 2026-10-11 08:26 BST before their run (CL301 adds five cycles; periods 35, 57, 79, 101, 92):
+  CC4 (blind, 0.5): the (1,2) word, M1 M2 repeated (period 35), has an absent factor of length <= 300 in phase 0.
+  CC5 (blind, 0.4): all five CL301 words have an absent factor of length <= 300 in phase 0 (with CC1, the 111 branch
+      of GC1105 would then be cut everywhere).
+  CC6 (blind, 0.6): none of the five contains one of the 54-, 61-, 65- or 69-bit SLC cuts (CL301 says none contains
+      two consecutive M2, and those cuts came from the M2-rich walks).
 """
 import os
 import re
@@ -42,7 +49,11 @@ CK = os.path.join(mfc.DIR, 'cc.ck')
 CAP = 300
 G = dict(mw.words())
 CYCLES = [('M2', G['M2']), ('M3', G['M3']), ('M2M3', G['M2'] + G['M3']), ('M2M2M3', G['M2'] * 2 + G['M3']),
-          ('M2M3M3', G['M2'] + G['M3'] * 2)]
+          ('M2M3M3', G['M2'] + G['M3'] * 2),
+          # CL301: the cycles of the width-28 component's 97 states (k-words (1,2), (1,2,3), (1,2,3,3), (1,2,3,3,3), (1,2,1,2,3))
+          ('M1M2', G['M1'] + G['M2']), ('M1M2M3', G['M1'] + G['M2'] + G['M3']),
+          ('M1M2M3M3', G['M1'] + G['M2'] + G['M3'] * 2), ('M1M2M3M3M3', G['M1'] + G['M2'] + G['M3'] * 3),
+          ('M1M2M1M2M3', (G['M1'] + G['M2']) * 2 + G['M3'])]
 
 
 def fac(c, r, n):

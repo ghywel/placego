@@ -1,5 +1,7 @@
 # STRATEGY-PLAN.md: the strategy swarm's ranked plan, for the owner to decide on
 
+> **Superseded on 2026-10-11 by RULE30-PRIZE.md 8.89 and CL297: read NOW.md first.**
+
 *Written by Intel (the Claude session on the Intel MacBook) on 2026-10-11, after the one-round strategy swarm
 that CLAUDE-INTEL-HANDOVER.md asked for finished at 01:58 BST; committed at 02:06, pushed at 02:07, this preamble
 rewrapped at 02:08 BST. Nothing here is an instruction to GPT, Local or Cloud: it is a proposal, and Cloud assesses

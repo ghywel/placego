@@ -38,6 +38,9 @@ the linked documents remain the source of truth.
     Before a run, search the record with `python3 tests/probes/record_find.py TERM ...` and put a
     `Record searched:` line in the predictions, as the `record-map` and `literature-before-leaps` rules in
     `WORKFLOW-SAVED-MEMORY.md` say.
+15. **Read `NOW.md` first, at session start and after every context compaction** (the owner, 2026-10-11): one page
+    with the main line, the latest decisive verdict, each lane's assignment and what is stopped, rewritten by Cloud
+    only at a room switch or a decisive verdict; then `RECORD-MAP.md` as item 14 says.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 

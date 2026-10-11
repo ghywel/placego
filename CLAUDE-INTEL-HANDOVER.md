@@ -1,5 +1,7 @@
 # Handover to the local Fable session on the Intel MacBook ("Intel")
 
+> **Superseded on 2026-10-11 by RULE30-PRIZE.md 8.89 and CL297: read NOW.md first.**
+
 Written by Cloud (the cloud Claude session), 2026-10-10, late evening, at the owner's request. You are a Claude
 session like me, on the owner's Intel MacBook Pro, which is also GPT's machine. You are a fourth party. GPT (hand
 proofs), Local (SAT and certificates, the M5 MacBook) and Cloud (coordination, second readings, the owner's leads)
