@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rule 30, Collatz, Mahler</title>
+<meta name="description" content="Rule 30's alternating centre, the Collatz conjecture and Mahler's 3/2 problem have one shape: a free side and a constrained side that must agree for ever.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.wolframcollatzmahler.com/trio.html">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html">Wolfram · Collatz · Mahler</a>
+  <nav><a href="learn.html">Learn</a><a href="stand.html">Where we stand</a><a href="trio.html" aria-current="page">Rule 30, Collatz, Mahler</a>
+  <a href="need.html">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+</div></header>
+<main>
+<p class="kicker">The same problem, three times</p>
+<h1>A free side and a constrained side that must agree for ever</h1>
+<p class="lede">Three famous open questions turn out to have one skeleton. In each, something chaotic runs freely, something
+narrow is required of it, and the question is whether the two can stay in step for ever. Where the narrow side can do
+only finitely many things, all three are solved by one argument. Where it can do infinitely many, all three are open.</p>
+
+<h2>The three, in plain words</h2>
+<h3>Rule 30</h3>
+<p>Can a finite pattern keep an alternating centre column for ever? The free side is the left half of the pattern,
+which can be anything. The constrained side is the column beside the centre, which must keep the centre alternating,
+and that forces it into a thin language of allowed words (the wheel). The prize is Wolfram's, ten thousand dollars.</p>
+<h3>Collatz</h3>
+<p>Take any whole number; halve it if even, triple it and add one if odd; repeat. Does every start reach 1? The free side
+is the number's low bits, which choose the first steps outright. The constrained side is what remains after those free
+steps, a remainder modulo a power of three, which must keep the orbit from climbing for ever. Bakuage's prize is 120
+million yen.</p>
+<h3>Mahler's 3/2 problem (1968)</h3>
+<p>Is there a positive number ξ such that ξ, ξ·3/2, ξ·(3/2)², … all have fractional part below one half? Such a ξ is
+called a Z-number, and nobody knows whether one exists. The free side is the integer parts, which form a full shift.
+The constrained side is the fractional parts, which must keep to half the circle for ever. No prize, and open for 58
+years.</p>
+
+<h2>Side by side</h2>
+<figure><canvas id="s1" aria-label="Rule 30: the column beside an alternating centre, as a strip"></canvas>
+<figcaption>Rule 30: the column beside an alternating centre, 120 steps, black for 1. Between kicks it is a rotation.</figcaption></figure>
+<figure><canvas id="s2" aria-label="Collatz: the parity sequence of 27"></canvas>
+<figcaption>Collatz: the parity sequence of 27, black for an odd step, 120 steps.</figcaption></figure>
+<figure><canvas id="s3" aria-label="Mahler: fractional parts of a number times powers of three halves"></canvas>
+<figcaption>Mahler: whether the fractional part of ξ(3/2)ⁿ is above one half, black for yes, ξ = 0.37, 120 terms
+(an illustration in floating point; a Z-number would show all white).</figcaption></figure>
+
+<h2>The shared skeleton</h2>
+<table>
+<tr><th></th><th>Rule 30, period two</th><th>Collatz</th><th>Mahler's 3/2</th></tr>
+<tr><td>The free side</td><td>the left half at the wall: every itinerary occurs once (a full shift)</td>
+<td>the first w−1 parities are a bijection with the number mod 2^(w−1) (Terras)</td>
+<td>the integer parts: every itinerary occurs once, by residues mod q^k</td></tr>
+<tr><td>The constrained side</td><td>the column beside the centre: a kicked rotation, few admissible words</td>
+<td>the state after the free bits: a remainder modulo 3^a (the least-residue lemma)</td>
+<td>the fractional parts: a linear mod-one map with few admissible strings</td></tr>
+<tr><td>The object sought</td><td>a finite pattern whose centre alternates for ever</td>
+<td>an orbit that never comes down</td><td>a Z-number: the two itineraries agree for ever</td></tr>
+<tr><td>Sparsity (proved)</td><td>the entropy squeeze: such patterns are exponentially rare</td>
+<td>almost every start has a bounded orbit (Tao, 2019); the count follows a coin past the free bits</td>
+<td>fewer than x^γ Z-numbers below x (Flatto, Lagarias, Pollington, 1995)</td></tr>
+<tr><td>Emptiness (proved when)</td><td>the constrained column is eventually periodic (Jen) or monotone (Condrey)</td>
+<td>the parity sequence is periodic or Sturmian (the window principle; Dubickas, 2009)</td>
+<td>only finitely many fractional orbits are admissible (FLP, Theorem 3.2)</td></tr>
+<tr><td>Open where</td><td>the alternating centre, where the column has positive entropy</td>
+<td>every single orbit, as opposed to almost all</td><td>Mahler's interval of length one half, where infinitely many orbits are admissible</td></tr>
+</table>
+<p>The argument that works in the solved rows is the same in all three: if the constrained side has only finitely many
+behaviours, the pigeonhole principle makes the coupled orbit periodic, and the free side's injectivity forbids a
+periodic orbit. Where the constrained side has infinitely many behaviours, nothing forces periodicity, and the method
+stops. Rule 30's period two sits exactly there, as Mahler's conjecture does, and as Collatz does for a single orbit.</p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.45 (the side-by-side, from a reading of Flatto, Lagarias and
+Pollington 1995), 8.47 (the survey), 8.58 (the window principle); COLLATZ-PRIZE.md, honest summary and sections 1, 4
+and 5; PRIOR-ART.md (Kari and Kopra's restatement of Mahler's problem as a question about one column of the automaton
+that multiplies by 3/2; Terras 1976; Lagarias 1985; Dubickas 2009; Tao 2019).</p>
+
+<h2>What the comparison says, and what it does not</h2>
+<p>It is a calibration, not a route. It says precisely where the problem sits: in the regime where the one method that
+closes such problems has not worked for 58 years on Mahler's. It explains in one frame why every counting result we
+proved gives sparsity but never emptiness, and why the solved cases are exactly the ones where the constrained side
+is eventually periodic. It does not say the three problems stand or fall together; a proof for one would show what a
+proof for the others has to replace.</p>
+<p>One difference matters. In Collatz the state after the free bits is an explicit integer, and arithmetic can be done on
+it. In Rule 30 there is no such number; the constrained side is a word in a thin language, and the tools are
+combinatorics on words and automata. That is why Rule 30's record holds exact automata, certified forbidden words and
+a census of records where Collatz's holds residues and exponential sums.</p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.45, "What it means"; COLLATZ-PRIZE.md sections 2 and 3.</p>
+</main>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
+<script>(function(){const r=[1,1,1,1,0,1,1,0,1,1,1,0];const c=R30.clamped(document.createElement("canvas"),120,4,[0,1],r,{scale:1}).trace;
+R30.strip(document.getElementById("s1"),Array.from(c.slice(0,120)));
+R30.collatzStrip(document.getElementById("s2"),27,120);R30.mahlerStrip(document.getElementById("s3"),0.37,120);})();</script>
+</body>
+</html>

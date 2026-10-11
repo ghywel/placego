@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where we stand</title>
+<meta name="description" content="Honest state of the Rule 30 prize work: no proof; what is proved, what is measured, which routes are closed, and the one missing statement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.wolframcollatzmahler.com/stand.html">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html">Wolfram · Collatz · Mahler</a>
+  <nav><a href="learn.html">Learn</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a>
+  <a href="need.html">What we need</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+</div></header>
+<main>
+<p class="kicker">Where we stand</p>
+<h1>No proof. A map of the problem, and one missing sentence.</h1>
+<p class="lede">This page says what is proved, what is measured, what is closed, and what is missing, with the same words
+the record uses. Three labels appear throughout. <span class="status ok">Proved</span> means a written proof with a second
+reader inside the project and no outside review yet. <span class="status meas">Measured</span> means an exact computation
+with its code and data in the trove. <span class="status">Open</span> means open.</p>
+
+<h2>The case we work on</h2>
+<p>Problem 1 asks whether the centre column ever repeats for ever. Period one, a constant centre, is closed for every
+finite start (Condrey, 2026). Period two, a centre that alternates, is the first open case, and the work treats it for
+every finite starting pattern, which is more than the prize asks. A finite pattern with an alternating centre, kept for
+ever, is the thing we are trying to show cannot exist.</p>
+<figure><canvas id="clamp" aria-label="A clamped alternating centre with the right half running free and the left half forced"></canvas>
+<figcaption>Suppose the centre (tinted) alternates for ever. Then the column next to it (blue) is forced to behave in a
+very particular way, and everything to the left is determined by those two columns. A counterexample would have to make
+the left side empty beyond some point. The picture is read down the page; the right half is a random start.</figcaption></figure>
+
+<h2>Proved <span class="status ok">Proved</span></h2>
+<ul>
+<li><b>Two adjacent columns are never both eventually periodic</b> in a finite pattern (Jen, 1990; prior art). So beside
+an alternating centre, the next column can never settle into a repeating word.</li>
+<li><b>Theorem A, Jen with a clock.</b> Two adjacent columns can agree with a periodic pattern only over a bounded window,
+so the "kicks" that keep the next column from repeating cannot thin out faster than geometrically.</li>
+<li><b>Theorem B.</b> Beside two periodic columns, the white runs of the left side are bounded by twice the period.
+This is the engine behind every solved case.</li>
+<li><b>Theorem E.</b> The column beside an alternating centre cannot be a Sturmian word (a coding of a circle
+rotation). With Jen's theorem, every rotation coding, rational or irrational, is excluded as that column.</li>
+<li><b>The channel bound.</b> Beside an alternating centre, the next column carries at most 0.1236 bits of information
+per visible cell, whatever the rest of the pattern does. Certified exactly in integer arithmetic.</li>
+<li><b>The window principle.</b> A block of the next column can recur only if it is short compared with the time that
+has passed. The same statement holds, word for word, for the Collatz conjecture.</li>
+<li><b>No finite pattern ever dies.</b> The only row that maps to all white is all black, and the only rows that map to
+all black are the three phases of 100100…; none is finite, so no finite pattern ever reaches a solid row.</li>
+</ul>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.13 (Jen), 8.54 (Theorems A and B), 8.57 (Theorem E), 8.20 and
+8.33 (the channel bound), 8.58 (the window principle); CHAT-LEDGER.md CL363 (solid rows). The written proofs are in
+PROOFS.md and the proofs directory.</p>
+
+<h2>Measured exactly <span class="status meas">Measured</span></h2>
+<ul>
+<li><b>Nothing close to the centre.</b> No period-two counterexample has its left edge within 248 cells of the centre,
+whatever its right half. No right half of at most 32 cells works with a left half of at most 108 cells: 4.3 billion
+cases.</li>
+<li><b>The wheel.</b> Beside an alternating centre, the next column is, between kicks, an exact coding of a rotation by
+17/56 of a turn per step. The kicks are what keep it from repeating. No other column of the real pattern carries any
+such wheel.</li>
+<li><b>The record of white runs.</b> How long can the forced left side stay white at a given depth? The exact answer is
+known at every depth to 120 and at depths 132, 139 and 142, with the configuration that achieves it. It is 17 cells at
+those three depths and at least 18 at the depths between. If this number is finite at every depth, period two is
+impossible for every finite pattern.</li>
+<li><b>The forbidden words.</b> Every word of length up to 44 that the next column can never produce is listed, 1,130 in
+one phase and 1,199 in the other, each with a machine-checked certificate of impossibility.</li>
+<li><b>The counting form.</b> The number of starting patterns on w cells whose centre alternates for T steps falls like
+2 to the power (w − αT), with α measured close to 1. Half of that cost, the half paid by the left part of the start, is
+proved. The other half is the open part.</li>
+</ul>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.56 and 8.21 (searches), 8.4 and 8.13 (the wheel), 8.51 (counting);
+CHAT-LEDGER.md L643, L640, L641 and CL357 (records, forbidden words, other columns). Data in <a href="trove.html">the trove</a>.</p>
+
+<h2>Closed routes</h2>
+<p>More than a dozen approaches have been tried to the end and closed, each with the reason it fails written down:
+entropy and counting arguments (they bound sets of patterns, never the single one), Fourier and spectral methods, the
+"admission deadline" for the wheel's kicks (closed on 2026-10-11 by an explicit witness that renews the pattern after
+every guard), periodicity comparators as a solver lever (sound, but they bite on nothing real), and others listed on the
+board. Keeping them on record is what stops the next person from walking the same circle.</p>
+<p class="source"><b>Sources.</b> PERIOD-TWO.md sections 4 and 6 (the board); RULE30-PRIZE.md section 8.89 and CHAT-LEDGER.md CL355
+(the entrance lane); L644 (comparators).</p>
+
+<h2>The one missing statement <span class="status">Open</span></h2>
+<div class="level"><p class="kicker">Plain words</p>
+<p>Keeping the centre alternating for ever must cost the pattern real information, one bit per step or thereabouts, and
+a finite pattern only has finitely many bits to spend. The delivery side of that sentence is a theorem (the channel
+bound). The cost side is proved only next to a constant centre, which is Condrey's case. Next to an alternating centre
+it is measured, as a coin model, and not proved.</p></div>
+<div class="level"><p class="kicker">Exact words, the route we hold today</p>
+<p>Let R(d) be the longest white run the forced left side can show at depth d, over all real traces beside the
+alternating centre. Prove that R(d) is finite at every depth d. (Finite, not bounded: the data say it grows.) A finite
+pattern with an alternating centre would be white beyond its support, an infinite run, so this single statement
+refutes period two for every finite pattern. What is known: Theorem B proves it when the trace is periodic; it is
+proved for the pure "rings" the next column can run in; and at two depths the mechanism that ends the record is
+understood exactly, a short forbidden word that the white extension would force. What is missing is the argument that
+such a word must appear for every long run at every depth.</p></div>
+<p class="source"><b>Sources.</b> PERIOD-TWO.md section 5 (the one sentence); CHAT-LEDGER.md CL355 (the record route), GC1148,
+GC1151, GC1153 (rings), GC1155 to GC1157 and CL356, CL359 (the endpoint mechanism).</p>
+
+<h2>Why we believe it, and why belief is not enough</h2>
+<p>Everything measured agrees with a fair coin, at every width and depth we can reach, and the structure beside the
+centre is now known in detail. That is why the project believes period two is impossible. It is also exactly why a
+proof is hard: a theorem that holds for a random centre word as well as for the alternating one cannot be the proof,
+because the alternating case is the only one that is true for a reason. The proof must use what is special about the
+alternating centre, as Jen's and Condrey's do. The one such structure found is the wheel.</p>
+<p class="source"><b>Sources.</b> PERIOD-TWO.md section 5; RULE30-PRIZE.md sections 8.42, 8.45 and 8.47.</p>
+</main>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
+<script>(function(){const r=[];for(let i=0;i<12;i++)r.push(Math.random()<.5?1:0);
+R30.clamped(document.getElementById("clamp"),120,110,[0,1],r,{markColumn1:true,scale:4});})();</script>
+</body>
+</html>
