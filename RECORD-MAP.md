@@ -138,16 +138,17 @@ PART: as on the board.
 - Two-phase coupling E°(d) = max(d, E(d-1)-1, Q_S-1, P_S-1) exact; R°(1..62); both peaks one black run of 19 — PROVED,
   COMPUTED (lane q2, Cloud-verified) — §8.82
 - 1,612 minimal absent words to 48 have w_min <= |f| (tight at 101001 and one word of 31); width-ceil(l/2) strip exact
-  for traces to l = 84, tight at 2, 4, 7, 11, 35, 36, 61; zero lanes to 28 — COMPUTED (lane q3), PROVED (2|f|-2) — §8.83
+  for traces to l = 84, tight at seven lengths; zero lanes to 28 — COMPUTED (lane q3), PROVED (2|f|-2) — §8.83
 - R(62..72) = 52 51 50 .. 56 59 60 (lane q1, blind match 1..61); T(u(10)^k) <= |u|+2k+31, |u| <= 16; Jen-type theorem
   beside a periodic wall; barrier lemma — COMPUTED (third-party), PROVED (hand parts) — §8.84
-- 1100 wall: R'(1..100) exact, max 18 at 99 (no left-finite configuration within 99 sites keeps 1100); lock lemma, structure
+- 1100 wall: R'(1..100) exact, max 18 at 99; lock lemma, structure
   theorem; all-d finiteness OPEN — COMPUTED (lane q4), PROVED (locks) — §8.85
 - Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
-- Swarm round: hand proofs held, two sharp targets — SUMMARY — §8.87
-- Check-free: forced-only records exact to 122, no survivor, slope falls with width — COMPUTED — §8.88
+- Swarm round: hand proofs held — SUMMARY — §8.87
+- Check-free: records exact to 122, no survivor — COMPUTED — §8.88
 - Room switch to cuts; E absent (L630); W = 28 cut product leaves pure M3 (CL303) — DECIDED — §8.89
+- Carry of Rule 30: Gray correction = AND of the right column at two times; column carry solved — PROVED — §8.90
 
 
 
