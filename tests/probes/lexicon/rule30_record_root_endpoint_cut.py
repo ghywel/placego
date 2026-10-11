@@ -13,7 +13,7 @@ rebase must still be white in phase0. Do not import phase1-only cuts.
 Record searched: root|visible|record|R_real with prefix.*determ|
 determ.*prefix|cylinder|right.*state|preimage ->258 hits94 files.
 Read G25, GC1155/56, L643 and the certified44 fixture; certificates
-adopted, not replayed. Only one saved root and two terminal extensions.
+adopted, not replayed. Initially one saved root and two terminal extensions.
 No language census, exact membership solver, CUT solve, S/L extraction,
 RTU, relaxed-record computation, prefix-length or depth scan.
 OUTCOME: q has length74. Exactly one phase0 cut occurs in q+1:
@@ -28,6 +28,12 @@ Finite controls COMPUTED; Implication for every realization, tier2 carrying step
 the certified phase0 cut applies after rebase at physical102.
 Input digests: RT dea50d7a8c9b0437491ced1b035daeb3df6d0693c605f2e315a589e90bd2413e;
 MFW44 80eee0a74712632a4339f7cd0a7776f23dd2a45fea8e934b79e6f0aba390d378.
+Concurrent addendum BEFORE new controls: Local's RTU-P1 at69edbb97
+reports an actual second root differing only at bit0. Predict that
+this root has the same cut context and endpoint response1-q74.
+Countercontrol: do not infer unchanged deep cells merely from a
+changed shallow bit. OUTCOME: its17 whites and endpoint[1,0] agree.
+No new realization or uniqueness solver; Local's RTU2 remains separate.
 """
 from hashlib import sha256
 from pathlib import Path
@@ -65,19 +71,21 @@ def main():
         suffix = [(f, len(word)-len(f)) for f in words if word.endswith(f)]
         assert hits == suffix
         assert hits == ([] if bit == '0' else [(CUT, 51)])
-    rows = []
-    for bit in (0, 1):
-        same = []
-        for odd, terminal in ((0, 0), (0, 1), (1, 0), (1, 1)):
-            v = tuple(int(q[t//2]) if t % 2 == 0 else odd for t in range(148))
-            left, _ = decode(v+(bit, terminal), 0)
-            assert left[132:149] == [0]*17 and left[149] == 1-bit
-            same.append(left)
-        assert all(left == same[0] for left in same)
-        rows.append(same[0])
-    assert rows[0][:149] == rows[1][:149]
+    for root in (q, '0'+q[1:]):
+        assert root[51:] == CUT[:-1]
+        rows = []
+        for bit in (0, 1):
+            same = []
+            for odd, terminal in ((0, 0), (0, 1), (1, 0), (1, 1)):
+                v = tuple(int(root[t//2]) if t % 2 == 0 else odd for t in range(148))
+                left, _ = decode(v+(bit, terminal), 0)
+                assert left[132:149] == [0]*17 and left[149] == 1-bit
+                same.append(left)
+            assert all(left == same[0] for left in same)
+            rows.append(same[0])
+        assert rows[0][:149] == rows[1][:149]
     print('q+1: one certified24 cut at visible51, physical102; q+0: no cut PASS')
-    print('Eight inverse controls: left149=1-q74, earlier prefix unchanged PASS')
+    print('Sixteen inverse controls, both known roots: left149=1-q74 PASS')
     print('Phase0 physical rebase102 is white despite odd visible index51 PASS')
 
 
