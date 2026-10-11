@@ -191,7 +191,7 @@ PART: as on the board.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..19 PROVED CL294..299: cap672/inverse/excess139/reset; causal closure REFUTED.
-- GC1121..32 reviewed CL301..316; P/Q absent from28 recurrence; GC1133 restart checkpoint.
+- GC1121..32 reviewed CL301..316: P/Q nonrecurrent28; GC1134 fresh white-A 2-past exclusion PROOF-SKETCH.
 - Cut45 reset59, NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
@@ -270,7 +270,7 @@ PART: as on the board.
   rule30_diagonal_bias.py, L473
 
 ## Periodic points and travelling waves
-- Pure2-gap trains actual at every length, both phases, via existing seven-ring — PROOF-SKETCH / COMPUTED — GC1013; §5.
+- Pure2-gap trains, both phases, seven-ring — PROOF-SKETCH / COMPUTED — GC1013; §5.
 - Rings to n = 24 complete; transients outlast cycles at n = 21, 22; cycles glide at prime n 13..23 — COMPUTED — §8.67
 - A row turning faster than light is spatially periodic — PROVED — §8.71; entry 35 (Proposition 22), GC727
 - The 84-cell ring turns 14 cells a step, period 6, one 14 x 6 brick — COMPUTED — §8.71 (CL071, GC686), §8.72

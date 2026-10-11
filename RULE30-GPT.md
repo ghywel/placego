@@ -29493,3 +29493,27 @@ P1's no-recurrent-origin and P2's only-old-P predictions are refuted; the two-pr
 **Restart checkpoint, GC1133 (owner-requested pause, 2026-10-11).** CL315 at ae25cdf4 independently confirms GC1131's counter and reports that no white-A-interruption origin belongs to the width-28 macro graph. CL316 at 944ac801 checks Q against both retained recurrent components; neither P nor Q occurs, closing GC1132's remaining pure-M2 question. L634 at bba7c363 reports the completed 32-bit word present in both phases, with L or S next, and certified pure-N/NF cuts at 49/39. These receipts are adopted; no GPT solver or membership run. The named recurrent-departure branch is closed, while untyped entrances and total transient duration remain open.
 
 Before these receipts arrived, tests/probes/lexicon/rule30_white_A_restart_return.py completed one original-labelled joint-21 return block: H72 has 152 short and 81 low packets; the SS fixed point has 1,388 packets, 115 AP13 endpoints, 22 old-core endpoints and 44 origin/core pairs. A scalar-replayed Q-to-core return uses three SS and 90 ticks; no Q self-return exists on this branch, but P is an endpoint. This is retained only as a sound-relaxation receipt, not a new active obstruction: both productive origins are now excluded from width-28 recurrence. Do not pursue its joint-21 cycles or widen it. Research stopped at the owner's request; heartbeat paused and no research scripts left running. On resumption, start from current shared main, check flags, then select one specific non-A entrance or a bound on total transient residence. No unfinished solver run or pending prize candidate is carried across the restart.
+
+
+## GC1134 — The retained fresh white-A counter is excluded by two clamped past ticks (2026-10-11)
+
+**PROOF-SKETCH, finite exclusion; serves Q10's untyped entrance gap.** CL318/319 are received from e6e3379c: Cloud computes a 686-tick total bound for paths staying in the width-28 typed grammar. No product run is repeated. The remaining question is entrance from outside that grammar. GC1090's fresh white-A counter cannot itself supply a mature entrance: its first 20 cells
+
+    W = 11101000110110100010
+
+have no two-tick past beside the alternating wall at any even age at least 2. This removes that particular diagnostic from the mature obstruction list; it does not prove that every white-A entrance admits C or J.
+
+**Complete finite proof.** At the preceding black wall tick, choose the last two cells of a predecessor of W. Rule 30's left permutivity uniquely reconstructs all earlier cells by a_(j-1) = W_j XOR (a_j OR a_(j+1)); check the first equation against wall 1. The four choices give exactly these 21-cell predecessors:
+
+    001011101000101110101
+    001011101000101110110
+    001011101000101110111
+    001011101000101111000
+
+Each begins 0010. Such an output has no parent against wall 0: its successive equations force a1=a2=a3=0, then a4=1, then a4 OR a5=0, a contradiction. This accounts for every predecessor and every exterior. Time translation by an even amount gives the all-age exclusion. No scan over ages or extrapolation from a cutoff is used.
+
+**Prediction and scope controls.** Record searched: 11101000110110100010|fresh.white.A with SS|parent|counter -> 5 hits in 3 files; GC1090/1104/1131 read. The initial prediction concerned a white-SS antecedent of W padded with eight whites. Its inverse counts are 4,0,0,0,0,0, so the SS test is vacuous: the obstruction arrives before the track filter. Releasing all incidental padding gives the same counts for W itself. The predicted surviving unpadded white-SS escape is REFUTED. No causal forward extensions were tested because there were no parents. The common-parent-prefix check passes; the hand proof reduces it to the four-cell 0010 contradiction above.
+
+All inverse edges are checked forward by scalar Rule 30. All 32 five-cell white-wall inputs independently avoid output 0010; literal and packed controls agree. The contrasting white-A packet 11101000110110110111 from GC1131 has 12 two-tick predecessors, every one replayed. This identified unexpected control prevents promoting W's exclusion to all mature white-A states. The narrower GC1090 black-SS admission controls retain 22 positive cases. Source: tests/probes/lexicon/rule30_fresh_white_A_SS_past.py.
+
+**Restart checks and next intention.** The first startup invocations used an incorrect directory and failed; corrected rule30_wall.py prints ALL CHECKS PASS. Corrected rule30_merge.py passes its core controls through depth 45 and witness checks through 61, but the full check was stopped when its missing cached deep witnesses triggered a new depth-65 record enumeration. This is a PARTIAL check, not a full pass; the identified parent and record child were terminated. No solver, CUT, membership, strip widening, record result or infinite exterior search is claimed. Stop the fixed-counter ancestry route. Next derive a correlated guard for the surviving mature white-A packet or an entrance relation that retains its full prehistory, rather than padding variants, bare-age scans or the settled typed duration.
