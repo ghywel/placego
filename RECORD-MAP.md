@@ -146,8 +146,8 @@ PART: as on the board.
 - Right-half language: DFA >= 291 states, follower sets growing; h <= 0.2536 certified; death criterion PROVED; deaths at
   32, 34, 43 — COMPUTED, CONJECTURED (not sofic) — §8.86
 - Swarm round: hand proofs held, two sharp targets — SUMMARY — §8.87
-- Check-free: forced-only records exact to 122, no survivor, slope falls with width; door spent — COMPUTED — §8.88
-- Room switch to the visible language's cuts; first test: absent (L630) — DECIDED — §8.89
+- Check-free: forced-only records exact to 122, no survivor, slope falls with width — COMPUTED — §8.88
+- Room switch to cuts; E absent (L630); W = 28 cut product leaves pure M3 (CL303) — DECIDED — §8.89
 
 
 
@@ -190,7 +190,7 @@ PART: as on the board.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..19 PROVED CL294..299: cap672, left22 inverse, excess139, reset; causal closure REFUTED.
-- GC1121/22 PROVED CL301; GC1123..25 SKETCH: cut guards yield restricted-core J+640.
+- GC1121..24 PROVED CL301/303: cut guards. GC1125 SKETCH: restricted-core J+640.
 - Cut45 reset59, NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.

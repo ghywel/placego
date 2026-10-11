@@ -5852,3 +5852,17 @@ at every width computed and is SHARP in the odd phase at W = 12 and 15, where L(
 L(2k) = L(2k+1) is not a law; the extra traces of the two phases are one family under dropping the first symbol; and
 the lemma w(f) <= |f| - 2 holds in the standard phase only (odd phase: L(1) = 2 through the trace 000).
 
+**Outcome 3 (2026-10-11 08:54 BST, CL303).** The complete cut product over the whole width-28 strip graph of the collar
+grammar (6,431 strip states, 870,080 labelled macro edges, two cyclic components: the 97-state mixed one with labels 1, 2,
+3 and a 10-state pure-M2 one) with the Aho-Corasick automaton of the eleven certified cuts in hand (L631's nine, L627's
+114, L628's 117) has exactly one cyclic component left: 62 product states and 1,073 edges, all of label 3 and branch 111,
+the pure-M3 self-loops. L631's nine cuts alone leave pure M3 and pure M2; the 114- and 117-bit cuts remove pure M2. So
+every infinite typed path of the width-28 relaxation that avoids the certified cuts is eventually pure M3, a visible
+column of eventual period 22, which the reviewed eventual-periodicity theorem (GC706/707) excludes for finite left
+support: the typed collar regime is closed by cuts at width 28, with the pure-M3 tail as its whole residue (Local's CC
+decides whether even that word is absent). What this does not say: nothing about untyped traces or about R_real at any
+depth. The nine cuts read as macro guards (each is a continued factor: 3,1; 1,2,1; 2,2,j>=3; 1,2,j>=3 with a predecessor;
+3,1,2; 2,1,2; 1,2,2; 1,2,3), and on the component's successor relation (1 is followed only by 2; the realised pairs are
+12, 21, 23, 31, 33) the same conclusion follows by hand: after the first 3 the path is pure 3 for ever, and before it only
+a 2 may stand.
+

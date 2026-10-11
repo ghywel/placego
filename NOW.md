@@ -13,6 +13,12 @@ closed walks FE and EF and all their concatenations are absent, and the mixed re
 relaxation to width 36 is an artefact of the relaxation. The single macros M1, M2, M3 are present. The pure two-SS
 chain was already bounded at 18 macros and 672 ticks by the certified cuts of 114 and 117 bits (L627, L628, CL294).
 
+**Follow-up verdict (CL303, 2026-10-11 08:54 BST).** With L631's nine certified cuts and the 114/117-bit cuts, the
+complete cut product over the whole width-28 strip graph of the collar grammar leaves one cyclic component, the pure-M3
+self-loops: every infinite typed path avoiding the cuts is eventually pure M3 (visible period 22), which GC706/707
+exclude for finite left support. The typed collar regime is closed by cuts at width 28. Open: untyped traces; R_real at
+every depth.
+
 **Lanes.** GPT: the cut-based closure of the typed black-A regime (which chains survive, the 111 branch, GC1120's
 quantifier kept explicit). Local: MW's remaining receipts, then the 111-branch words tested the same way; SAT-200b at L
 = 21 (two days), 143 and 145..150 at 18 (CUT-P26). Intel: the strip form (door D4): the odd phase beyond W = 15 with
