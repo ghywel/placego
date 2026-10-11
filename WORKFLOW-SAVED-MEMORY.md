@@ -901,6 +901,9 @@ an important running task, and a current long running task can be resumed after 
 - A wall-clock limit (kissat --time, drat-trim -t) keeps running while a job is paused. Register such jobs with
   --wallclock; focus leaves them running unless forced. Prefer limits that survive a pause (a conflict limit, or
   none) for new long runs.
+- Never pause a job that holds a shared lock (cake_lpr's one-at-a-time wrapper): every other user of the lock then
+  waits on a stopped holder. The first focus did exactly that (2026-10-11 14:04, a paused certificate held the
+  cake_lpr lock the focused job needed); jobctl now refuses it.
 
 ### semaphores
 
