@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""rule30_cloud_gc1146_check.py: Cloud's second read of GPT's GC1146 (CL345): the two-time boundary contradiction on EVERY
-width-20 H path from each named source to its macro endpoint, and a complete bit-sliced enumeration of all 2^28 real
-exteriors (cells 21..48 at tick 0) asking which reach the four macro rows of each named 28-tick path with the site-5
-track at every tick.
+"""rule30_cloud_gc1146_check.py: Cloud's second read of GPT's GC1146 (CL345): the two-time boundary contradiction
+on EVERY width-20 H path from each named source to its macro endpoint, and a complete bit-sliced enumeration of
+all 2^28 real exteriors (cells 21..48 at tick 0) asking which reach the four macro rows of each named 28-tick
+path with the site-5 track at every tick.
 
 RUN-ON:     cpu (Python 3 standard library plus numpy; about a minute)
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_gc1146_check.py
@@ -54,8 +54,9 @@ def real_counts(src,cps,T=28,nfree=28):
     for hi in range(4):
         cells=[np.full(M,ONES if b else 0,dtype=np.uint64) for b in src]
         for k in range(NB):
-            if k<6: cells.append(np.tile(np.array([ (1 if (j>>k)&1 else 0) for j in range(64)],dtype=np.uint64),
-                1).__class__ and np.frombuffer(np.packbits([(j>>k)&1 for j in range(64)][::-1]).tobytes(),dtype='>u8').astype(np.uint64).repeat(M))
+            if k<6:
+                word=np.frombuffer(np.packbits([(j>>k)&1 for j in range(64)][::-1]).tobytes(),dtype='>u8')
+                cells.append(word.astype(np.uint64).repeat(M))
             else: cells.append(np.where(((idx>>np.uint64(k-6))&np.uint64(1)).astype(bool),ONES,np.uint64(0)))
         cells.append(np.full(M,ONES if hi&1 else 0,dtype=np.uint64)); cells.append(np.full(M,
             ONES if hi&2 else 0,dtype=np.uint64))
@@ -70,7 +71,8 @@ def real_counts(src,cps,T=28,nfree=28):
             wall=np.full(M,ONES if t%2 else 0,dtype=np.uint64)
             cells=[(cells[i-1] if i>0 else wall)^(cells[i]|cells[i+1]) for i in range(len(cells)-1)]
     return tot
-# sanity of the bit layout: the 64 bits of a word carry cells 21..26, the word index cells 27..46, the chunk cells 47, 48
+# sanity of the bit layout: the 64 bits of a word carry cells 21..26, the word index cells 27..46, the chunk cells
+# 47, 48
 t0=time.time()
 for name,source,mac in CASES:
     src=B(source); macs=[B(m) for m in mac]
@@ -85,4 +87,5 @@ for name,source,mac in CASES:
         10+6*i)) for i in range(3)]; print('    SS paths between macro states:',segs,flush=True)
     cps={10:macs[0],16:macs[1],22:macs[2],28:macs[3]}
     tot=real_counts(src,cps)
-    print('    real exteriors (all 2^28 of cells 21..48) with the track at every tick reaching, cumulatively: tick 10',tot[10],'| 16',tot[16],'| 22',tot[22],'| 28 (bad B)',tot[28],'| %.0fs'%(time.time()-t0),flush=True)
+    print('    real exteriors (all 2^28 of cells 21..48) with the track at every tick reaching, cumulatively: tick 10',tot[10],
+          '| 16',tot[16],'| 22',tot[22],'| 28 (bad B)',tot[28],'| %.0fs'%(time.time()-t0),flush=True)
