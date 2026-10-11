@@ -187,10 +187,11 @@ PART: as on the board.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
-- GC1114..17 PROVED CL294/295; left22 pair00/past inverse; GC1118 mixed path excess<=139 at ALL periods, sketch.
-- Cut45 reset merges59; delayed NOT8/pair guard; cone d+L — hand/COMPUTED — GC1030..1035.
-- Cut45 exit needs0110000 after7; three origins; unary/pair stalls, joint succeeds — hand / COMPUTED — GC1028/1029/1039.
-- Train exits4,5 by penultimate gate/packet; entrance3 startup-only — hand / COMPUTED — GC1023/1026/1027/W283.
+- GC1114..18 PROVED CL294..296; exact cut672, left22 inverse, mixed all-period excess139.
+- GC1119: new lookahead pays even black reset; 15-state quotient loses guard — sketch; past-only closure REFUTED.
+- Cut45 reset59, NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
+- Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
+- Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
 - Shifted escape through100, hidden update failure, conditioned follower separation — evidence — GC1021/1022/1024/1025.
 - Clamped seed1001 eternal two-gap train via fourteen-site causal P8 lock — PROVED CL189/L595 — GC1020/G282.
 - Two-gap six-column slab: three failing interface prefixes; failure arrives eight ticks later — PROOF-SKETCH / COMPUTED — GC1017..1019.

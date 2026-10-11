@@ -811,3 +811,5 @@ app is unpublished by design.
 - lexicon/rule30_sl_pair_marker_code.py: GC1117 left22 even pair00 marker, blocks C_k for arbitrary k>=1,13-past inverse retaining pure-S phase.1782 literal controls; fixed-depth language only, all-depth closure open.
 
 - lexicon/rule30_mixed_bounded_period_excess.py: GC1118 bare mixed recoding has visible periodic excess<=139 at ALL periods (hand proof); 316 seam windows and28608 overlaps are controls only. GC706 inequalities do not exclude it for J>=278; no actual realization.
+
+- lexicon/rule30_pair_code_joint_phase.py: GC1119 paired22 odd observes reset; exact18-state new lookahead at24 pays even BLACK counter reset.15-state quotient adds an unpaid k=0 branch; exact bare walks refute full past-only closure. One interface/phase, no all-depth certificate.
