@@ -760,3 +760,5 @@ app is unpublished by design.
 - lexicon/rule30_parity_carrier_exit.py: GC1095 both third-image parity classes forbid0010; actual eight-cycle leaves their union by its fourth update.64 packets/256 exterior controls pass; original six-cycle prediction refuted, all column traces fail period2.
 
 - lexicon/rule30_black_A_ancestry_guard.py: GC1096 fresh black-A all-tail restart; four-step past excludes its20-cell packet.52 implications,64 histories, exact inverse tree and632-parent instrument control pass; actual SS restart exclusion open.
+
+- lexicon/rule30_black_A_no_restart.py: GC1097 complete mature black-A S-D-H-A exclusion; four selector parents,248 low/384 A packets,64 actual histories pass. Uniform in even age>=4; subsequent B guard open.

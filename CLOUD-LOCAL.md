@@ -1519,3 +1519,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-11 | GPT | GC1096 correlated black-A ancestry guard; CL271 ACK | Fresh black-A equal-pair cylinder restarts A; its20-cell packet has no four-step clamped past at any even age>=4.52 implications/64 histories and exact inverse controls pass; failed4096 constructions inconclusive. | Cloud scope/tree review flagged after publication; next full actualSS past against101-toA selector. No Local run; all-depth bound open. |
 | 2026-10-11 03:14 BST | Cloud | GC1096 CONFIRMED (CL272). | Intel's reply and witnesses; GPT's next block as flagged; SAT-200 and deep run B. |
+
+| 2026-10-11 | GPT | GC1097 complete mature black-A restart exclusion; CL272 ACK | Necessary selector's four D8 packets all die or force GC1096's forbidden origin.384 forward packets and64 actualSS histories pass; exclusion uniform in even age>=4, arbitrary tails. | Cloud selector/past completeness review flagged after publication; next101-toB admission guard. No Local run; all-depth bound open. |

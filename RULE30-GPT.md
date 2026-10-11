@@ -28778,7 +28778,7 @@ Record searched: black.eleventh|00011111 with101|guard|restart ->33 hits17files;
 
 Its fifth track is S+D+H, and it returns A at26.52 fresh-right implications certify the cylinder, including extending the determined prefix when its last known cell is black;64 complete literal/packed histories independently agree. This refutes P1's no-restart assertion under the equal-pair premise. It is not an actual black-SS counterexample.
 
-**All-age near-wall guard, proof sketch with finite certificate.** At every even age T>=4 beside the clamped0101 wall, a row cannot start with
+**All-age near-wall guard, PROVED (CL272), with finite certificate.** At every even age T>=4 beside the clamped0101 wall, a row cannot start with
 
     11101000111110000011.
 
@@ -28787,3 +28787,28 @@ For any target y of length n, choose the rightmost two parent bits a,b. The subs
 **Failures and controls retained.** P2's4096 specified actual-SS constructions (prefix11101111111100, twelve free cells, ten whites) found no restart; this finite failure proves no universal absence. P3 predicted an actual six-step preimage of the fresh counter; it fails already at four steps. The inverse instrument control recovers the known GC1091 source among632 six-step preimages and checks every edge forward. P4 predicted a prefix of at most19 would suffice; REFUTED, its19-cell prefix has a four-step parent, independently propagated forward, whereas20 is absent. P5's corrected20-cell guard holds. The unexpected selected control whitens A13 while retaining black A11 and reaches C at16; no necessity claim follows.
 
 Next transport the full black-SS past into the entire101-toA selector, beyond the one forbidden cylinder. This block supplies a necessary joint guard, not an absorbing carrier or an all-depth record bound. Stop extending the failed4096 construction scan.
+
+
+## GC1097 — Mature black-A ancestry excludes the complete S-D-H-A restart (2026-10-11)
+
+**Missing inference moved.** The black-A reset's entire00100-to101-toA gate is excluded, at every even clamped age T>=4 and for every farther tail. This extends GC1096's single forbidden cylinder to a whole macro transition. CL272 ate6ab8147 independently confirms that earlier guard, now promoted. The following B guard and the all-depth record bound remain open.
+
+Record searched: black.eleventh|GC1096 with101|guard|restart ->16hits8files; GC1083/91/96 read. Predictions and adaptive alternatives preceded each packet check. Source:tests/probes/lexicon/rule30_black_A_no_restart.py. No solver, CUT, visible-language membership or record computation.
+
+**Statement, proof sketch with complete finite packet certificate.** Let the row at even T>=4 start1110100011111, the black-A prefix with sites6..13=00011111. GC1091 gives low00100 after S6. Suppose its next ten ticks have fifth track D and return101. GC1075 gives H, and GC1083 says returning A after H requires that101 origin's sites10..14 be11100 or1101*. Neither alternative is possible with this past.
+
+Use GC1096's complete inverse substitution, checking its first cell against the wall. The full selector11100110111100 has no two-step clamped parent. Selector1110011011101 has exactly four two-step parents; their sites6..15 at D-time8 are
+
+    1110111010, 1110111011, 1110111100, 1111000001.
+
+The first, second and third have no earlier D past after respectively one, two and one backward updates, since the prescribed fifth cells there are white. By hand, an image beginning1110 beside a white fifth cell forces its parent to begin0100. Extending the first packet forces its parent bit9black and contradicts the final image0; the third contradicts image bit8. The second has only parents01000100010/11, whose prefix010 itself has no white-fifth parent: initial image0 forces the first parent pair00, image1 forces the next parent1, contradicting the next image0. These alternatives cannot simply be dropped by assuming time8prefix1111; that prediction P6 failed and the extra alternatives are retained.
+
+For the remaining packet1111000001, the complete eight-step backward D construction has1282 parents. Exactly248 match the required low prefix100100; every one begins10010001. Transport these248 through the preceding S6, retaining the established black-A shield prefixes at its times0..5:
+
+    00011111,10110000,0010100,111011,100010,11011.
+
+The complete retained inverse sets have sizes788,522,1680,838,608,384. Every final parent begins000111110000011 at sites6..20. Including the A prefix's first five cells gives exactly11101000111110000011, excluded by GC1096's four-step clamped guard at every even age>=4. Thus the final selector has no actual parent of the stated age. The finite construction exhausts the necessary origin packets; translating its time origin by any even amount proves the all-age macro exclusion. In particular actual black-SS resets at time6 qualify. This is a local transition exclusion, not a cutoff scan extrapolated to a record bound.
+
+**Controls and retained uncertainty.** Every inverse edge is checked forward; all384 final packets independently propagate through S6+D8 to the target.64 nonvacuous literal/packed actual histories use the36-cell source111011111111000010000000000000000000: black A at6,low00100 at12,101 at22,H then B at32. The fresh GC1096 source still returns A, refuting deletion of the age premise. P3's shorter low10010001 packet has eight black-A parents and forces only A14..16white, so it alone does not prove exclusion; the full D8 packet is essential. P4's additional actual-SS time3 guard rules out A14..18fivewhites and holds, but the reviewed GC1096 guard suffices for this proof. The identified unexpected check is P6's three1110 alternatives, excluded only by earlier D past. No failed alternative is promoted to a theorem.
+
+Next carry this same black-A past through the remaining101-toB branch and decide B12 under white B10/B11; that is the missing guard for admission to GC1087's absorbing carrier. No additional construction scan or Local run requested.
