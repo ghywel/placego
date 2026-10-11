@@ -33,9 +33,22 @@ OUTCOME, RTU-P1 (2026-10-11 16:53 BST, about 12 minutes): REFUTED. 132 phase 0 i
 RTU2 (registered 2026-10-11 16:54 BST, before its run): the same test blocking only bits K .. end (a new word must
   differ at some bit >= K); its lifts are saved (rtu_w_d<d>_p<ph>_K<K>.txt) and replayed by rule30_witness_check.
   RTU2-P1 (blind, 0.5): 132 phase 0 at K = 1 is UNSAT: the record word at 132 is unique apart from its first bit.
+OUTCOME, the rest of RTU (17:34 BST): RTU-C1 PASS: 142 phase 1 with its first word blocked is SAT, and the word lifts
+  (glued simulation VALID): 0010100001000101010101010101010101000100001010101010101010100010000101000010100, a THIRD
+  phase-1 word at 142, differing from the first at bits 8 and 9 only. RTU-P2 REFUTED as worded: 139 phase 0 with the
+  block is relaxed SAT within a minute, but its word (below) has no right half (absent from L beyond length 44), so
+  uniqueness at 139 is open. RTU-P3 REFUTED: no solve reached the cap (12 minutes, 52 minutes, 1 minute).
+    010000100100001000010100001010101000100001010000100100001000010100001000010000
+RTU3 (registered 2026-10-11 17:35 BST, before its run): 139 phase 0, the full block, iterating as CUT does: an unlifted
+  word gives its shortest absent factors (length >= 45) as cuts (rtu_cuts_p0.txt, to be certified by MFC before any
+  verdict rests on them), up to 40 rounds at 4-hour caps.
+  RTU3-P1 (blind, 0.3): it ends UNSAT (with the cuts certified, 139's record word is unique in phase 0).
+  RTU3-P2 (blind, 0.55): it ends with a lifted second word, differing from the published one only within its first
+  ten bits (as at 132 and 142).
 """
 import os
 import sys
+import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -55,17 +68,27 @@ def main():
     d, ph = int(sys.argv[1]), int(sys.argv[2])
     cap = int(sys.argv[3]) if len(sys.argv) > 3 else 14400
     K = int(sys.argv[4]) if len(sys.argv) > 4 else 0
+    maxit = int(sys.argv[5]) if len(sys.argv) > 5 else 1             # RTU3: > 1 iterates with language cuts
     L = 17
     vis = published(d, ph)
-    forb = rlk.load_forbidden('44all' if ph == 0 else '44allp1') + rlk.load_cuts(ph, 40)     # certified only
-    inst = rlk.Relaxed(d, L, ph, forb)
-    assert len(inst.vis) == len(vis), (len(inst.vis), len(vis))
-    inst.cl.append([(-v if b == '1' else v) for v, b in list(zip(inst.vis, vis))[K:]])   # differs at a bit >= K
-    print('RTU d=%d L=%d phase %d: %d words, block on bits %d .. %d of a %d-bit visible word' % (
-        d, L, ph, len(forb), K, len(vis) - 1, len(vis)), flush=True)
-    v = inst.solve(cap, forb)
-    print('RTU d=%d: relaxed %s' % (d, v), flush=True)
-    if v == 'SAT':
+    base = rlk.load_forbidden('44all' if ph == 0 else '44allp1') + rlk.load_cuts(ph, 40)     # certified only
+    cutfile = os.path.join(rlk.DIR, 'rtu_cuts_p%d.txt' % ph)
+    extra = []                                          # RTU's own cuts: absent words, certified afterwards (MFC)
+    for p in ((0,) if ph == 0 else (0, 1)):
+        f = os.path.join(rlk.DIR, 'rtu_cuts_p%d.txt' % p)
+        if os.path.exists(f):
+            extra += [line.split()[0] for line in open(f) if line.strip()]
+    for it in range(maxit):
+        forb = base + extra
+        inst = rlk.Relaxed(d, L, ph, forb)
+        assert len(inst.vis) == len(vis), (len(inst.vis), len(vis))
+        inst.cl.append([(-v if b == '1' else v) for v, b in list(zip(inst.vis, vis))[K:]])   # differs at a bit >= K
+        print('RTU d=%d L=%d phase %d it %d: %d words (%d RTU cuts), block on bits %d .. %d of a %d-bit visible word'
+              % (d, L, ph, it, len(forb), len(extra), K, len(vis) - 1, len(vis)), flush=True)
+        v = inst.solve(cap, forb)
+        print('RTU d=%d: relaxed %s' % (d, v), flush=True)
+        if v != 'SAT':
+            break
         code = inst.code
         assert code[K:] != vis[K:]
         diff = [i for i in range(len(vis)) if code[i] != vis[i]]
@@ -81,8 +104,17 @@ def main():
             open(out, 'w').write('W %d %d %d %s %s\n' % (d, L, ph, cells, rgt))
             print('RTU d=%d: a second word %s (differs at bits %s); lift %s, rule30_witness_check %s; saved %s' % (
                 d, code, diff, 'VALID' if ok else 'FAILED %s' % why, 'VALID' if ok2 else 'NOT VALID', out))
-        else:
-            print('RTU d=%d: a second word %s in the language to 44, no lift (open)' % (d, code))
+            break
+        print('RTU d=%d: a second word %s in the language to 44, no lift' % (d, code), flush=True)
+        if it + 1 == maxit:
+            print('RTU d=%d: open (MAXIT)' % d)
+            break
+        new = rlk.shortest_absent(code, ph, 45)
+        assert new and not set(new) & set(forb), new
+        with open(cutfile, 'a') as f:
+            f.writelines('%s d=%d it=%d %s\n' % (w, d, it, time.strftime('%H:%M')) for w in new)
+        extra += new
+        print('  %d cut(s), length %d: %s' % (len(new), len(new[0]), ' '.join(new)), flush=True)
     print('RTU d=%d: done' % d)
 
 
