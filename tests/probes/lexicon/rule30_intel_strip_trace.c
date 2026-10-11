@@ -2,7 +2,7 @@
  * L(W) = max { l : T^W(l) = T(l) } of the width-W strip for the full trace (column 1 at every time), both phases.
  *
  * Real traces: every row of sites 1..N is enumerated (2^N rows, 64 at a time, bit-sliced), the light cone is run for
- * N steps (a trace of length l depends only on sites 1..l), and the set of traces of length N is kept as a bitmap;
+ * N steps (a trace of length l depends only on sites 1..l), and the set of traces of length N is kept in hash sets;
  * T(l) for l < N is its set of length-l prefixes. Strip traces: the width-W strip (sites 1..W, the wall on the left,
  * a free input at site W+1 at every step) is walked depth-first over trace bits with its set of possible strip rows
  * as the state (a bitset over 2^W rows); only real prefixes are extended, so the walk counts at every length the real
@@ -23,7 +23,6 @@
 #include <omp.h>
 typedef uint64_t u64;
 static int PHASE, N;
-static u64 *BM;                         /* bitmap of the real traces of length N */
 
 static void transpose64(u64 a[64]) {   /* a[i] bit j <-> a[j] bit i */
     u64 m = 0x00000000FFFFFFFFULL;
@@ -34,15 +33,36 @@ static void transpose64(u64 a[64]) {   /* a[i] bit j <-> a[j] bit i */
         }
 }
 
+/* the real traces of length N, kept in one open-addressing hash set per thread (there are only thousands of them, so
+ * memory does not grow with 2^N), merged and sorted at the end */
+typedef struct { u64 *t; size_t cap, n; } hset;
+static const u64 EMPTY = ~0ULL;
+static inline u64 hmix(u64 x) { x ^= x >> 31; x *= 0x9E3779B97F4A7C15ULL; x ^= x >> 29; return x; }
+static void hinit(hset *h, size_t cap) {
+    h->cap = cap; h->n = 0; h->t = malloc(cap * 8); for (size_t i = 0; i < cap; i++) h->t[i] = EMPTY;
+}
+static void hput(hset *h, u64 v);
+static void hgrow(hset *h) {
+    hset g; hinit(&g, h->cap * 2);
+    for (size_t i = 0; i < h->cap; i++) if (h->t[i] != EMPTY) hput(&g, h->t[i]);
+    free(h->t); *h = g;
+}
+static void hput(hset *h, u64 v) {
+    size_t m = h->cap - 1, i = hmix(v) & m;
+    while (h->t[i] != EMPTY) { if (h->t[i] == v) return; i = (i + 1) & m; }
+    h->t[i] = v; if (++h->n * 2 > h->cap) hgrow(h);
+}
+static u64 *TR; static size_t NTR;      /* sorted list of real traces of length N */
 static void real_traces(void) {
-    size_t words = ((size_t)1 << N) / 64 + 1;
-    BM = calloc(words, 8); if (!BM) { fprintf(stderr, "out of memory\n"); exit(2); }
     static const u64 LANE[6] = {0xAAAAAAAAAAAAAAAAULL, 0xCCCCCCCCCCCCCCCCULL, 0xF0F0F0F0F0F0F0F0ULL,
                                 0xFF00FF00FF00FF00ULL, 0xFFFF0000FFFF0000ULL, 0xFFFFFFFF00000000ULL};
-    long long nblocks = (N > 6) ? (1LL << (N - 6)) : 1;
+    long long nblocks = (N > 6) ? (1LL << (N - 6)) : 1, done = 0, step = nblocks / 16 + 1;
+    int nth = omp_get_max_threads(); hset *H = malloc(nth * sizeof(hset));
+    for (int i = 0; i < nth; i++) hinit(&H[i], 1 << 14);
+    double t0 = omp_get_wtime();
     #pragma omp parallel for schedule(dynamic, 4096)
     for (long long B = 0; B < nblocks; B++) {
-        u64 x[72], y[64];
+        u64 x[72], y[64]; hset *h = &H[omp_get_thread_num()];
         x[0] = 0;
         for (int i = 1; i <= N; i++) x[i] = (i <= 6) ? LANE[i - 1] : (((B >> (i - 7)) & 1) ? ~0ULL : 0);
         x[N + 1] = 0;
@@ -54,19 +74,24 @@ static void real_traces(void) {
             for (int i = 1; i <= top; i++) { u64 old = x[i]; x[i] = left ^ (old | x[i + 1]); left = old; }
         }
         transpose64(y);                                          /* y[lane] = trace bits, bit t = y_t */
-        int lanes = (N >= 6) ? 64 : (1 << N);
         u64 mask = (N >= 64) ? ~0ULL : ((1ULL << N) - 1);
-        for (int ln = 0; ln < lanes; ln++) {
-            u64 tr = y[ln] & mask; u64 bit = 1ULL << (tr & 63); u64 *w = &BM[tr >> 6];
-            if (!(*w & bit)) {
-                #pragma omp atomic
-                *w |= bit;
-            }
-        }
+        for (int ln = 0; ln < 64; ln++) hput(h, y[ln] & mask);
+        long long dn;
+        #pragma omp atomic capture
+        dn = ++done;
+        if (dn % step == 0)
+            fprintf(stderr, "  real traces: %lld/%lld blocks, %.0f s\n", dn, nblocks, omp_get_wtime() - t0);
     }
+    hset all; hinit(&all, 1 << 14);
+    for (int i = 0; i < nth; i++) {
+        for (size_t j = 0; j < H[i].cap; j++) if (H[i].t[j] != EMPTY) hput(&all, H[i].t[j]);
+        free(H[i].t);
+    }
+    TR = malloc(all.n * 8); NTR = 0;
+    for (size_t j = 0; j < all.cap; j++) if (all.t[j] != EMPTY) TR[NTR++] = all.t[j];
+    free(all.t); free(H);
 }
 
-static u64 *TR; static size_t NTR;      /* sorted list of real traces of length N */
 static u64 **TL; static size_t *NTL;    /* sorted lists of real traces of each length l */
 static int cmpu(const void *a, const void *b) {
     u64 x = *(const u64 *)a, y = *(const u64 *)b; return x < y ? -1 : x > y;
@@ -77,9 +102,6 @@ static int is_real(u64 tr, int l) {
     return lo < NTL[l] && TL[l][lo] == tr;
 }
 static void lists(void) {
-    size_t words = ((size_t)1 << N) / 64 + 1, cap = 1024; TR = malloc(cap * 8); NTR = 0;
-    for (size_t w = 0; w < words; w++) { u64 v = BM[w]; while (v) { int b = __builtin_ctzll(v); v &= v - 1;
-        if (NTR == cap) { cap *= 2; TR = realloc(TR, cap * 8); } TR[NTR++] = ((u64)w << 6) | b; } }
     TL = calloc(N + 1, sizeof(u64 *)); NTL = calloc(N + 1, sizeof(size_t));
     for (int l = 1; l <= N; l++) {
         u64 mask = (l >= 64) ? ~0ULL : ((1ULL << l) - 1); TL[l] = malloc(NTR * 8);

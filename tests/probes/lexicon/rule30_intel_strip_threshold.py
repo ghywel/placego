@@ -98,6 +98,21 @@ traces and their least excluding widths: rule30_intel_strip_threshold.txt beside
          phase to a threshold extra of the other at four pairs: 0000 and 000, 0001000 and 10001000, 11001101001 and
          011001101001, 110100110100010011000 and 10100110100010011000. Six of the nine extra traces of length 18 or
          more end in 10011000.
+
+SX-P7, registered 2026-10-11 09:30 BST before the extension runs (CL302 (a): push the odd phase beyond W = 15). The engine
+now keeps the real traces in per-thread hash sets instead of a 2^N bitmap (output identical at N = 32 in both
+phases), so N is bounded by time only: N = 38 (2^38 rows), odd phase first, then the standard phase, W = 1..20.
+Disclosed third-party claims (the swarm's door D4, SAT with DRAT-checked UNSATs, unverified by Intel beyond W = 15):
+in the odd phase T^W(2W-1) = T(2W-1) for W <= 18 and T^W(2W) = T(2W) except at W = 12, 15; that is, L(W) >= 2W at
+W = 16, 17, 18.
+  (a, blind 0.85) Conjecture S holds at every odd-phase width whose L(W) the run determines (L(W) >= 2W - 1).
+  (b, blind 0.7) no zero slack at W = 16, 17, 18 in the odd phase (it rests on the door's claims).
+  (c, blind 0.5) odd L(16) >= 33 (slack at least 2).
+  (d, blind 0.5) standard L(12) >= 34.
+  (e, blind 0.4) every new threshold extra trace is minimal absent and has a partner under first-symbol dropping
+         among the other phase's threshold extras, as four of the earlier ones do.
+  Counterfactual: an L(W) < 2W - 1 refutes Conjecture S in that phase; it would be reported with a strip witness and
+  re-checked by SAT on the light cone before any claim.
 """
 import os, re, subprocess, sys, time
 import numpy as np
