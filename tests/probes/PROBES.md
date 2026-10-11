@@ -795,3 +795,5 @@ app is unpublished by design.
 - lexicon/rule30_sl_carrier_depth_return.py: GC1109 eight-depth canonical carrier return refuted; complete SLL cone forces left19 phase10 and left20 even1. Endpoint-only check misses it; all-depth bound OPEN.
 
 - lexicon/rule30_sl_phase_collision.py: GC1110 exact sparse phase polynomial; S/L reduces left20 even trace to a positive renewal code with no00. Cubic SS term essential;88 sparse and640 S/L phase controls pass. Fixed-depth shield, not a record bound.
+
+- lexicon/rule30_m2_reported_cut_cap.py: GC1111 eight M2 returns cover all 19 cyclic 120 factors at positive age; seven miss 5. Typed101 cap23 returns/886 ticks derived from L591 report, exact absence receipt pending; no membership query.
