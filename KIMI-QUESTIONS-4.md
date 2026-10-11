@@ -55,8 +55,8 @@ length 2W-1. Equivalently: every absent trace f has w(f) <= ceil(|f|/2).
 
 - |T(l)| for l = 1 .. 16: 2, 3, 4, 5, 7, 8, 10, 12, 15, 18, 22, 26, 32, 36, 44, 49.
 - Exactness of the strip: |T^W(l)| against |T(l)| at the first lengths where they can differ.
-  W = 1: equal to l = 3. W = 2: equal to l = 5. W = 3: equal to l = 6, and 11 against 10 at l = 7. W = 4: equal to
-  l = 9. W = 5: equal to l = 10, and 23 against 22 at l = 11. W = 6: equal to l = 13.
+  W = 1: equal to l = 3. W = 2 and 3: equal to l = 6, and 11 against 10 at l = 7. W = 4 and 5: equal to l = 10, and
+  23 against 22 at l = 11. W = 6: equal to l = 17 (corrected 2026-10-11; an earlier draft said 5, 9 and 13 here).
 - The minimal absent traces of length at most 14 with their least excluding widths: 10 (1); 011 (1); 111 (1); 0000 (2);
   0101 (2); 0001000 (4); 11001101001 (6); 001101001100 (5); 00110011001101 (6). Note 0001000 has w = 4 = ceil(7/2) and
   11001101001 has w = 6 = ceil(11/2): these are the tight cases at 7 and 11.
@@ -121,3 +121,26 @@ numpy enumeration to length 24 agreeing:
 Q1 is therefore answered to W = 11 and 15; Q2 to Q5 stand, and the other phase at W = 12 is the smallest case where
 the bound 2W - 1 is attained.
 
+## Second addendum (2026-10-11, after the first two answer rounds; optional to hand over)
+
+Confirmed on this side by independent computation, all exact: |T(l)| for l = 17..24 is 59, 64, 78, 86, 102, 112, 133,
+144 (and 172, 184 at 25, 26 are consistent with the engine that produced them); the extra traces at the exactness
+thresholds are exactly as reported, in this wall phase 0000 and 0101 (W = 1), 0001000 (W = 2, 3), 11001101001 (W = 4,
+5), 001100110001001100 and 110100110001001101 (W = 6, l = 18), 000100110100010011000 and 110100110100010011000 (W = 7,
+8, 9, l = 21), and in the other phase 011010011001101 (W = 6, 7, l = 15) and 10100110100010011000 (W = 8, 9, l = 20).
+The calibration line above had three stale numbers (5, 9, 13); it now reads 6, 10, 17, which is what every engine finds.
+
+Two of the derivations are worth keeping as proved facts. (1) The anti-diagonal pair automaton never merges: from the
+pair (D_t, D_{t+1}) the earlier diagonal is recovered cell by cell, D_{t-1}[j-1] = D_{t+1}[j] XOR (D_t[j] OR
+D_{t+1}[j+1]) (XOR is invertible), so every earlier diagonal and hence every initial cell x_0(i) = D_{i-1}[i] is
+determined by the pair at any later step: the state map from initial prefixes is injective, and all compression of the
+trace language lies in the output map. (2) The column-tableau correspondence: f is in T^W(l) exactly when a consistent
+tableau of W columns exists with column 1 equal to f, so the least excluding width w(f) is the largest death column over
+the search branches, and Conjecture S is equivalent to: every word of length l that admits a tableau through column
+ceil(l/2) admits a complete one. That is the form in which a proof of S should be attempted: a failed check beyond the
+halfway column must be repairable by changing free choices before it.
+
+What to do next, in order: Q2 in the tableau form (a proof or a counterexample to the halfway statement; the tight
+minimal absent traces of Q3 are where the last repair freedom is exhausted); Q4 to length 42 and beyond (the parity
+observation, lanes at odd t only, should be proved or refuted on the way); Q3's list of tight words. Q1 and Q5 are
+answered; do not spend time on them.
