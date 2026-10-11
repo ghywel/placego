@@ -175,6 +175,8 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
   CUT-P25 (blind, 0.6; registered 03:29 before its run): d = 139, L = 18, phase 1 (40p1 plus the verified cuts) ends UNSAT
          within 2 rounds at 14,400 s caps, so R_real(139) <= 17; with the plateau law from 133 >= 23 (SP), R_real(139) = 17.
          Record searched: 'R_real\(139\)' -> no hit.
+  CUT-P23 (05:19): d = 142 phase 0 UNSAT at L = 18 in round 0 (11,757 s, 24 cuts); phase 1 now runs under the same
+         registration (a witness there would still hold P23; an UNSAT refutes it and gives R_real(142) = 17 with SP's 17).
   d = 132 phase 0 (the 7,200 s rerun): UNSAT at L = 18 (5,078 s, 21 cuts).
   CUT-P20 (blind, 0.5; registered 23:35 before its run): d = 132, L = 18, phase 1 ends UNSAT within 2 rounds at 14,400 s
          caps, so R_real(132) <= 17: an isolated dip between witnesses at 131 and 133.
