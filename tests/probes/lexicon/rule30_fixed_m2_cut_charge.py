@@ -1,4 +1,4 @@
-"""GC1114: the exact M2 rotation can pay more than rotation-free cover.
+"""GC1114 (corrected GC1116): the exact M2 rotation can pay more than rotation-free cover.
 
 Specific missing inference: the candidate (LLSSS)^6 has length 114,
 whereas GC1111/13 used an unspecified 120 rotation. Derive a sharp
@@ -37,17 +37,35 @@ avoids the cut. E_3 contains it at 19; E_2 avoids it. Six M2
 macros alone miss it, as does terminal 2^5,1; appending the next
 macro restores the latter charge. Absence receipt remains unread
 and unverified here; no actual membership or record claim.
+CORRECTION GC1116: the preceding outcome was for marker-start h
+blocks. L627's certified cut uses gap-ending blocks and is shifted
+one sample. The correction prediction620/16 FAILED: exact ranks
+are672/18 on43 states, attained by2^5,1,2^5,1,2^6. Five M2 before
+M1 plus a successor now avoids the cut. E3 alone avoids it; E3 plus
+its fixed A endpoint1 contains it at20, so actual bridge m<=2 still
+holds. All literal transition controls pass for the corrected cut.
+The executed pattern below is exactly Local's114 bits. No membership
+query or blanket rotation absence is claimed.
 """
 from functools import lru_cache
 import rule30_mixed_m2_overlap as old
+
+# GC1116 correction, BEFORE rechecking: Local's gap blocks end in1;
+# h's even blocks begin at the marker. The L627 cut is shifted ONE
+# sample. Predict sharp620/16 survives; E3 alone avoids the cut, but
+# E3 plus its fixed A endpoint marker contains it. Counterfactual:
+# dropping this endpoint still detects E3. It must fail. Independent
+# literal transitions remain the control; no CA-membership rerun.
 
 
 def pattern():
     h={'S':'110100','L':'1101000100'}
     physical=''.join(h[a] for a in 'LLSSS'*6)
     f=physical[::2]
+    f=f[1:]+f[:1]
     q=old.spell((2,))
-    assert f==(q[3:]+q[:3])*6 and len(f)==114
+    assert f==('00001'*2+'001'*3)*6
+    assert f==(q[4:]+q[:4])*6 and len(f)==114
     return f
 
 
@@ -89,7 +107,7 @@ def main():
         value=max((ticks+rank(y) for y,k,ticks in edges[x]),default=0)
         active.remove(x)
         return value
-    assert rank((0,0))==620
+    assert rank((0,0))==672
     assert all(rank(x)>=ticks+rank(y) for x,es in edges.items()
                for y,k,ticks in es)
     # Independent literal suffix control checks every transition, including
@@ -104,26 +122,30 @@ def main():
     @lru_cache(None)
     def count_rank(x):
         return max((1+count_rank(y) for y,k,t in edges[x]),default=0)
-    assert count_rank((0,0))==16
-    witness=(2,)*4+(3,)+(2,)*4+(3,)+(2,)*6
+    assert count_rank((0,0))==18
+    witness=(2,)*5+(1,)+(2,)*5+(1,)+(2,)*6
     literal=old.spell(witness)
-    assert f not in literal and 2*len(literal)==620
+    assert f not in literal and 2*len(literal)==672
     assert f not in old.spell((2,)*6)
     assert f in old.spell((2,)*7)
-    assert f in old.spell((2,)*5+(3,))
+    assert f not in old.spell((2,)*5+(3,))
+    assert f in old.spell((2,)*5+(3,1))
     assert f not in old.spell((2,)*5+(1,))
-    assert f in old.spell((2,)*5+(1,3))
+    assert f not in old.spell((2,)*5+(1,3))
+    assert f in old.spell((2,)*6+(1,))
     e2=old.spell((1,)+(2,)*4+(3,))
     e3=old.spell((1,)+(2,)*5+(3,))
-    assert f not in e2 and e3.find(f)==19
+    assert f not in e2+'1' and f not in e3
+    assert (e3+'1').find(f)==20
     bare=[old.spell((3,1,2,2,3)),old.spell((1,2,2,3,3))]
     rr=old.rank_certificate(old.pair_graph(bare,old.spell((2,))))
     assert max(rr.values())==68
-    print(dict(P1='HELD',P2='HELD',reachable_states=len(edges),
-               typed_returns=16,typed_ticks=620,optional_waits=2,
-               bridge_ticks=228,first_cut_sample=19,
-               terminal_k1_exception='retained',falling_rank='PASS',
-               absence_verified=False,flag_receipt='pending git object'))
+    print(dict(original_P1_P2='former rotation only',correction_prediction='REFUTED',controls='PASS',reachable_states=len(edges),
+               typed_returns=18,typed_ticks=672,optional_waits=2,
+               bridge_ticks=228,first_cut_sample=20,
+               terminal_k1_k3_exception='retained',falling_rank='PASS',
+               absence_verified='L627 both phases, received',
+               pattern_shift=1,bridge_endpoint_marker=1))
 
 
 if __name__=='__main__': main()

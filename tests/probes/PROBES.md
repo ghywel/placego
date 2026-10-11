@@ -802,6 +802,8 @@ app is unpublished by design.
 
 - lexicon/rule30_minimal_mixed_bridge.py: GC1113 bare 196-tick mixed generators, sharp M2 overlap68; E_m overlap68+19m. Reported120 absence would cap optional m<=3/bridge266 ticks, not reentries; exact receipt pending.
 
-- lexicon/rule30_fixed_m2_cut_charge.py: GC1114 specified 114-symbol M2 rotation gives sharp typed101 grammar cap 16 macros/620 ticks and optional wait threshold 2/228; terminal M1 guard retained. Absence receipt pending, no membership query.
+- lexicon/rule30_fixed_m2_cut_charge.py: GC1114 corrected exact114 cut gives18 macros/672 ticks (43-state certificate); optional2/228 uses fixed endpoint1. Original620/16 used wrong rotation; L627 absence read, charge review pending.
 
 - lexicon/rule30_sl_positive_code_inverse.py: GC1115 nonlinear L detector and 22-even-sample causal inverse of dense left20 code under no S^5; isolated-L/four-S controls. Unbounded-S inverse and plain image reuse fail; depth closure open.
+
+- lexicon/rule30_sl_age_spatial_interface.py: GC1116 exact22-state paired-L age language carries paired19..21; odd22 branches at B10/B13,24 edges repair this interface. All44 local paths and independent macro spellings agree; all-depth closure open.
