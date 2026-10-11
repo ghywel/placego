@@ -781,3 +781,5 @@ app is unpublished by design.
 - lexicon/rule30_delayed_A_SS_star_rank.py: GC1102 all-k fixed point,137 SS packets/244 strictly decreasing inner edges, SS blocks<=3 after typed A-S-D-H (sketch). Reset rank fails:742 A edges, two-SS self-loop. One loop path violates boundary evolution; actual lift OPEN.
 
 - lexicon/rule30_delayed_A_boundary_memory.py: GC1103 named loop survives joint boundary; existing20-cell graph has one output-periodic SCC. Fixed potential bounds exceptional SS counts by2; typed finite-left deadline7J+796 (sketch). Scalar controls pass.
+
+- lexicon/rule30_delayed_A_exit_admission.py: GC1104 all-length delayed SS terminal image has101 black A/38 white A, no B. White exits force S-D and C within16 ticks; prefix15 plus complementary OR shield, scalar and complete-cone controls pass (sketch).
