@@ -797,3 +797,5 @@ app is unpublished by design.
 - lexicon/rule30_sl_phase_collision.py: GC1110 exact sparse phase polynomial; S/L reduces left20 even trace to a positive renewal code with no00. Cubic SS term essential;88 sparse and640 S/L phase controls pass. Fixed-depth shield, not a record bound.
 
 - lexicon/rule30_m2_reported_cut_cap.py: GC1111 eight M2 returns cover all 19 cyclic 120 factors at positive age; seven miss 5. Typed101 cap23 returns/886 ticks derived from L591 report, exact absence receipt pending; no membership query.
+
+- lexicon/rule30_mixed_m2_overlap.py: GC1112 sharp 87-sample pure-M2 overlap for every FE/EF concatenation; LL-spacing hand proof and complete falling-rank product. M2-only cuts >=88 inert on this model; no membership test.
