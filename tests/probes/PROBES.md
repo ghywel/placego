@@ -754,3 +754,5 @@ app is unpublished by design.
 - lexicon/rule30_forced_odd_period_bridge.py: GC1092 all-odd-q alternating-white ancestry implies nilpotency after4, loss q+4.352 finite fixtures,4 local identities,4 nilpotent patterns and6 exact periodic controls pass; even-q counterexample and periodic scope distinction retained.
 
 - lexicon/rule30_two_step_parity_bridge.py: GC1093 exact16-state two-parity second-image intersection is zero/singleton-period3. All-odd-q second-slice extinction by4, loss q+14;64 packet/352 exterior controls pass. XOR-linear prediction refuted; later-image mergers open.
+
+- lexicon/rule30_third_image_parity_bridge.py: GC1094 exact third-image parity intersection is zero/one;64-state height certificate,256 literal packets and640 exterior fixtures pass. Odd-period third slice dies by4; all-time phase persistence open.

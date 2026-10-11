@@ -163,7 +163,7 @@ def main():
                maximum_exit_length=4, named_ancestry_starts=ancestry,
                finite_fixtures=fixtures, rejected_premises=rejected,
                linear_P3='REFUTED and retained',
-               second_slice_bridge='ALL odd q PROOF-SKETCH',
+               second_slice_bridge='ALL odd q PROVED CL269',
                arbitrary_earlier_slices='OPEN', prize_bound='OPEN'))
 
 

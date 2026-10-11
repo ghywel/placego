@@ -28671,7 +28671,7 @@ Controls pass:4 local parity identities, all4 nilpotent period3 patterns,352 fin
 
 Record searched: white.parity|alternating.white|checkerboard.white withancestor|earlier|period|collapse ->18 hits in5 files; parity.image|phase.intersection|white.parity withtwo.step|second.update|intersection ->0 hits. G122/G124 inverse graphs, G152, GC1092 and strategy D2/D3 read. Predictions preceded controls and the adaptive graph construction. The proposed XOR-linear second-image classification failed and is retained below.
 
-**Exact hidden representation, proof sketch.** Let A_even be all bi-infinite rows white at every even site, and A_odd the corresponding odd-white rows. Then
+**Exact hidden representation, PROVED (CL269).** Let A_even be all bi-infinite rows white at every even site, and A_odd the corresponding odd-white rows. Then
 
     F^2(A_even) intersect F^2(A_odd)
       = {000..., (001)..., (010)..., (100)...}.
@@ -28703,7 +28703,7 @@ Set a=z_(j-1), b=z_j, c=z_(j+1), d=u_(j-1), e=u_j, f=u_(j+1). Equating these two
 
 The only cycles are the zero loop0000 and0111 ->1110 ->1001 ->0111. The latter's labels10,01,00 give100100..., a single-black period3 row. No noncycle edge enters either cycle. Every departure terminates within four edges: the longest is0111 ->1010 ->0001 ->0010 ->0101, whose last state has no successor. Other departures are the terminal choices at0111,1110 ->1101, and1001 ->0110 ->1000 ->0100 or1100; the remaining transient states lie on these chains. Thus a bi-infinite walk stays on one cycle, proving containment in the four stated rows. Conversely001010 ->011011 ->010010; shifting the origin by3 exchanges its white parity without changing that second image. Spatial rotations give all three singleton phases, and zero supplies the fourth row, proving equality.
 
-**Finite consequence, proof sketch.** A path of K output pairs has its first K-4 edges recurrent, since a noncycle edge cannot have four further edges after it. Those first pairs are therefore zero or one consistent singleton period3 pattern. Both types die after two more Rule30 updates wherever the radius2 cone fits. This finite statement allows arbitrary exterior cells; it does not assume a globally periodic parent or a recurrent physical orbit.
+**Finite consequence, PROVED (CL269).** A path of K output pairs has its first K-4 edges recurrent, since a noncycle edge cannot have four further edges after it. Those first pairs are therefore zero or one consistent singleton period3 pattern. Both types die after two more Rule30 updates wherever the radius2 cone fits. This finite statement allows arbitrary exterior cells; it does not assume a globally periodic parent or a recurrent physical orbit.
 
 Let x be white on either parity throughout[a-2,b+2], and w=F^2(x) q-periodic on[a,b], with q positive odd and b-a>=q+14. Then
 
@@ -28712,3 +28712,36 @@ Let x be white on either parity throughout[a-2,b+2], and w=F^2(x) q-periodic on[
 Use x'_i=x_(i+q), which has the opposite white parity and the same second image on[a,b-q]. Let c be the first site at least a on x's white parity, so c<=a+1, and take K=floor((b-q-c+1)/2) complete output pairs. Both origin cones fit inside their white-parity intervals. The graph forces the first K-4 pairs, on[c,c+2K-9], into one of the four nilpotent rows. Two updates kill[c+2,c+2K-11], which contains[a+3,b-q-11]. This proves the displayed all-odd-q bound and the corresponding far-left half-line statement. It extends the parity bridge by one earlier slice, still killing by time4. No encounter premise, arbitrary-time extension or prize bound is supplied.
 
 **Failures and controls.** P3 predicted the XOR-linear period3 family of GC1092 for the second image. REFUTED by the exact singleton cycle:100 fails the XOR-neighbor identity, while100 ->111 ->000 is the correct extinction mechanism. P1/P2 named seven-ring ancestry controls and the unexpected five-ring control pass on160 parity-white starts; this is evidence only, not the all-period proof. The initial temporary control stopped with an IndexError on short cycles before verdicts; padding repaired it, retaining scalar/packed crosschecks. The even-q fixed checkerboard remains a counterexample to dropping oddness. P4 finite interval controls pass:64 hidden packets independently checked by literal two-step cones, all16 five-edge graph paths start recurrent,352 arbitrary-exterior fixtures (288 other fixtures correctly fail periodicity). Source:tests/probes/lexicon/rule30_two_step_parity_bridge.py. Next substantive missing inference: decide whether later-image intersections admit new mergers outside these nilpotent rows; images do not in general commute with intersection, so this second-slice certificate cannot simply be iterated.
+
+
+## GC1094 — The third-image parity intersection is exactly the two constants (2026-10-11)
+
+**Missing inference advanced.** GC1093 cannot be iterated by silently commuting image and intersection. Retaining both origins at the next slice proves that particular transition, not an all-time rule. CL269 at7d93d0cf independently confirms GC1093's graph, four-row intersection and finite bound; GC1093 is promoted. No solver, language-membership, record or periodic search duplicated.
+
+Record searched: parity.image|phase.intersection|white.parity withlater|third|intersection|merger ->5 hits in3 files, GC1093's source and unrelated parity references; no third-image theorem located. Predictions P1 (exactly zero/one) and P2 (at worst two further ticks to zero) both held; counterfactual and unexpected bridge check preceded the graph computation.
+
+**Exact intersection, proof sketch.** With A_even/A_odd as in GC1093,
+
+    F^3(A_even) intersect F^3(A_odd) = {000...,111...}
+      = F(F^2(A_even) intersect F^2(A_odd)).
+
+For the first origin, take its eight cells at sites-3..4 to be(a,0,b,0,c,0,g,0); for the opposite origin take(0,d,0,e,0,f,0,h). Three Rule30 updates give the two output cells at0,1:
+
+    first:  (a XOR b XOR (NOT c AND g), b OR c OR g),
+    second: (d OR e OR f, d XOR e XOR (NOT f AND h)).
+
+The three-input OR on the origin's black parity is the new structural constraint. Equating the pairs gives state(a,b,c,d,e,f), next(b,c,g,e,f,h), and one common two-cell label. This retains both origin histories, rather than intersecting their marginals. The exact256-packet table has64 edges. Its ten cycle edges are the zero loop000000, labelled00, and the following three cycles, every edge labelled11:
+
+    011101 ->110011 ->101110 ->011101
+    011110 ->110101 ->101011 ->011110
+    011011 ->110110 ->101101 ->011011.
+
+The complete certificate in rule30_third_image_parity_bridge.py assigns each of the64 states a height in0..6. Every other edge strictly decreases that height and has no cycle-state target. Thus no noncycle edge can enter a cycle, continue for more than6 edges, or connect two recurrent components. This is checked over all64 edges, including possible bridges, not inferred from sampled cycles. The bound6 is attained by110101 ->101010 ->011100 ->110000 ->100001 ->000010 ->001100. Every bi-infinite common-origin path therefore stays on one of the four cycles, giving only the two constant output rows. Both outputs occur: zero has zero origins;001010 ->011011 ->010010 ->111111, and shifting its origin by3 changes white parity while leaving the third image unchanged. This proves equality and the particular image/intersection identity above.
+
+**Finite all-odd-q consequence, proof sketch.** Any K-pair path has its first K-6 edges recurrent: after a noncycle edge at most five further edges can occur. The first K-6 pairs consequently form one constant row, whose next update is white. Let x have either white parity on[a-3,b+3], and w=F^3(x) be q-periodic on[a,b], with q positive odd and b-a>=q+16. Then
+
+    F^4(x)_i=0 on[a+2,b-q-14].
+
+As in GC1093, x'_i=x_(i+q) supplies the opposite-parity origin with the same third image on[a,b-q]. Set c to the first white-parity site at least a, and K=floor((b-q-c+1)/2). The retained origin cones fit. The first K-6 output pairs are constant on[c,c+2K-13]; one more update kills[c+1,c+2K-14], containing[a+2,b-q-14]. The same argument holds on a far-left half-line. This is the third-slice bridge, still dying by physical time4, with arbitrary exteriors and no assumption that the parent is periodic.
+
+**Validation and limit.** Literal scalar updates crosschecked against independent packed updates verify both formulas on all256 packets; the same constructor recovers GC1093's entire16-state table. The64-state height partition and all64 seven-edge paths verify the finite exit certificate.640 exterior fixtures satisfy the periodicity premise and pass the displayed interval bound;640 others correctly reject it. The even-q fixed checkerboard refutes deleting oddness or either origin. The unexpected intercomponent-path check is essential: cycles alone would not classify bi-infinite outputs if bridges existed. No failed prediction. This fixed-time identity still gives no later-time closure or all-depth bound; further fixed-time scans are not such a proof. Next proof target is a phase distinction preserved outside the common nilpotent basin, using the three-input OR ancestry constraint, rather than assuming the third-slice identity persists.
