@@ -6,12 +6,13 @@ RUN-ON:     cpu (Python 3 standard library plus numpy; about two minutes at LOG2
 COMMAND:    python3 tests/probes/lexicon/rule30_cloud_x_route_realcone.py 24      (add 'smoke' to stop at tick 46)
 
 WHAT. Rule 30 beside the alternating wall x_t(0) = t mod 2. For each of the twelve positive white-A cylinders of CL329
-(first thirteen cells 1110100011011, GC1136's family on sites 14..25, low pair 01 after S), 2^LOG2N random exteriors
-120 cells wide, so that the first thirteen cells are exact to tick 106 (information moves left one cell per tick), run
-bit-sliced in uint64 words with a fixed seed. The X branch is the half with site 14 = 0 at tick 16. Recorded: the
-forced rows at 26 and 36, the site-5 track 0000111100 over 36..45 and the two tick-46 prefixes; the high pin shape
-1110011110100 at 66 (and any 111001111); white SS entrances, B prefix, white-eleventh A and the white-A origin row at
-94, 100, 106; black AP13 rows and white-A origin rows at every even tick 48..106 (row-ticks, X cones only).
+(first thirteen cells 1110100011011, GC1136's family on sites 14..25, low pair 01 after S), 2^LOG2N random exteriors 120
+cells wide (132 in mode 'family'), so that the first thirteen (or 25) cells are exact to tick 106 (information moves
+left one cell per tick), run bit-sliced in uint64 words with a fixed seed. The X branch is the half with site 14 = 0 at
+tick 16. Recorded: the forced rows at 26 and 36, the site-5 track 0000111100 over 36..45 and the two tick-46 prefixes;
+the high pin shape 1110011110100 at 66 (and any 111001111); white SS entrances, B prefix, white-eleventh A and the
+white-A origin row at 94, 100, 106; black AP13 rows and white-A origin rows at every even tick 48..106 (row-ticks, X
+cones only).
 
 WHY. At width 28 with cell 29 free (CL331) the X route's rows reach 1110011110100 at tick 66, white SS entrances at 94
 and 100, B-prefix and white-A origin rows at 106: a return to the white collar vocabulary that the relaxation allows.
@@ -24,6 +25,11 @@ white-A origin row at 106 is realised (0.6). P3: black AP13 rows appear at some 
 below 10^-3 per X cone per even tick (0.7). Counterfactual: no real X cone reaching 1110011110100 at 66 would make the
 re-entry chain the free cell's artefact, and CL330's reading of X as an exit would stand at this horizon. Unexpected
 check: whether every real X cone shows 100011001 or 100011011 at tick 46, as every relaxed row does.
+
+ADDED AFTER THE FIRST RUN (CL332, registered before the family run). Mode 'family' (COMMAND ... 24 family) keeps the
+masks of the pin at 66, the SS entrances at 94 and 100 and the white-eleventh A at 106 and counts their joint cones
+(Q2), and histograms sites 14..25 of the white-A origin rows at tick 106 over the 4,096 patterns, counting those in
+GC1136's 28-pattern family and in the 12 positive cylinders (Q1); predictions and the counterfactual in CL332.
 """
 import itertools, sys, time
 import numpy as np
@@ -46,9 +52,10 @@ for s in src:
     for t in range(6): rows.append(fwd(rows[-1],t%2))
     if (rows[6][17],rows[6][18])==(0,1): pos.append(s)
 assert len(pos)==12
-LOG2N=int(sys.argv[1]); N=1<<LOG2N; M=N//64; SMOKE=len(sys.argv)>2
+LOG2N=int(sys.argv[1]); N=1<<LOG2N; M=N//64; MODE=sys.argv[2] if len(sys.argv)>2 else ''
+SMOKE=MODE=='smoke'; FAMILY=MODE=='family'
 TMAX=46 if SMOKE else 106
-WIDTH=13+TMAX+1
+WIDTH=(25 if FAMILY else 13)+TMAX+1     # family mode needs sites 14..25 exact at tick 106
 ONES=np.uint64(0xFFFFFFFFFFFFFFFF)
 def pc(m):
     if hasattr(np,'bitwise_count'): return int(np.bitwise_count(m).sum())
@@ -67,7 +74,7 @@ for ci,s in enumerate(pos):
     fixed=base+list(s)
     cells=[np.full(M,ONES if b else 0,dtype=np.uint64) for b in fixed]
     cells+=[rng.integers(0,2**64,size=M,dtype=np.uint64,endpoint=False) for _ in range(WIDTH-len(fixed))]
-    xmask=None; track=None; site5=[]
+    xmask=None; track=None; site5=[]; keep={}
     cnt={}
     for t in range(TMAX+1):
         if t==16:
@@ -83,15 +90,30 @@ for ci,s in enumerate(pos):
             cnt['46 100011001|100011011']=pc(match(cells,B('1000110'),xmask)&cells[8])
         if not SMOKE:
             if t==66:
-                cnt['66 high 1110011110100']=pc(match(cells,B('1110011110100'),xmask))
+                keep[66]=match(cells,B('1110011110100'),xmask); cnt['66 high 1110011110100']=pc(keep[66])
                 cnt['66 any high 111 (111001111)']=pc(match(cells,B('111001111'),xmask))
             if t in (94,100,106):
                 v=np.zeros(M,dtype=np.uint64)
                 for w in VALID: v|=match(cells,w,xmask)
-                cnt['%d white SS entrance'%t]=pc(v)
+                keep[t]=v; cnt['%d white SS entrance'%t]=pc(v)
                 cnt['%d B prefix 111010011'%t]=pc(match(cells,B('111010011'),xmask))
-                cnt['%d white-eleventh A'%t]=pc(match(cells,B('11101000110'),xmask))
-                cnt['%d white-A origin 1110100011011'%t]=pc(match(cells,B('1110100011011'),xmask))
+                e=match(cells,B('11101000110'),xmask); cnt['%d white-eleventh A'%t]=pc(e)
+                o=match(cells,B('1110100011011'),xmask); cnt['%d white-A origin 1110100011011'%t]=pc(o)
+                if FAMILY and t==106:
+                    cnt['joint pin66 SS94 SS100 eleventhA106']=pc(keep[66]&keep[94]&keep[100]&e)
+                    cnt['joint SS94 SS100 eleventhA106']=pc(keep[94]&keep[100]&e)
+                    sel=np.flatnonzero(np.unpackbits(o.view(np.uint8),bitorder='little'))
+                    pat=np.zeros(len(sel),dtype=np.int64)
+                    for k in range(12):
+                        pat|=np.unpackbits(cells[13+k].view(np.uint8),bitorder='little')[sel].astype(np.int64)<<k
+                    h=np.bincount(pat,minlength=4096)
+                    fam=sum(int(h[p]) for p in range(4096) if family(tuple((p>>k)&1 for k in range(12))))
+                    posn=sum(int(h[p]) for p in range(4096) if tuple((p>>k)&1 for k in range(12)) in pos)
+                    cnt['origin106 rows']=len(sel); cnt['origin106 distinct patterns']=int((h>0).sum())
+                    cnt['origin106 in GC1136 family']=fam; cnt['origin106 in the 12 positive']=posn
+                    top=sorted(range(4096),key=lambda p:-h[p])[:5]
+                    cnt['origin106 top patterns']=' '.join(
+                        '%s:%d'%(''.join(str((p>>k)&1) for k in range(12)),h[p]) for p in top)
             if t%2==0 and t>=48:
                 a=np.zeros(M,dtype=np.uint64)
                 for w in TYPES: a|=match(cells,w,xmask)
@@ -107,8 +129,9 @@ for ci,s in enumerate(pos):
             left=cells[i-1] if i>0 else wall
             new.append(left^(cells[i]|cells[i+1]))
         cells=new
-    for k,v in cnt.items(): add(k,v)
-    print('cylinder',ci,''.join(map(str,s)),'N',N,'|',' | '.join('%s %d'%(k,v) for k,v in cnt.items()),
+    for k,v in cnt.items():
+        if isinstance(v,int): add(k,v)
+    print('cylinder',ci,''.join(map(str,s)),'N',N,'|',' | '.join('%s %s'%(k,v) for k,v in cnt.items()),
           '| %.0fs'%(time.time()-t0),flush=True)
 print('TOTAL over 12 cylinders x',N,':')
 for k,v in tot.items(): print('  ',k,v)
