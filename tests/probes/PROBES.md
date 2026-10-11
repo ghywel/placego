@@ -773,3 +773,5 @@ app is unpublished by design.
 - lexicon/rule30_white_SS_exit_guard.py: GC1099 D-H-SS bad B requires1101001, which has no four-white-fifth past; one-SS sparse B guard sketch.140 causal implications/320 independent histories pass. Fresh low forces two white SS; capped actual-black-SS ancestry UNKNOWN, arbitrary-block admission OPEN.
 
 - lexicon/rule30_black_A_white_SS_entrance.py: GC1100 actual41-cell SS origin forces black A6, white SS32, black A38;88 implications/64 histories pass. Independently confirms CL275 full-strip B guard; no-entrance refuted, reset budget OPEN.
+
+- lexicon/rule30_delayed_A_strip_rank.py: GC1101 joint20-cell macro relation,384 typed states/273 edges, explicit rank<=2; consecutive one-white-SS black11 A resets bounded by2 (sketch).5120 selector cones/eight scalar set flows pass; extra A types retained, variable SS lengths OPEN.

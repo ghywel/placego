@@ -43,6 +43,8 @@ closes no-SS entrance, not eventual admission or the all-depth bound.
 The capped complete frontier is retained only as a failure receipt;
 default run replays the fixed counter and packet controls. Optional
 construct replays the bounded streaming witness derivation.
+Second read CL278: CONFIRMED by all16384 causal exteriors and
+three-valued simulation; the delayed-reset certificate is PROVED.
 """
 from rule30_black_A_ancestry_guard import inverse
 from rule30_sl_no_refork import bits, run
