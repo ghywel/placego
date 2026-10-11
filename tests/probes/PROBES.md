@@ -912,3 +912,5 @@ app is unpublished by design.
 - lexicon/rule30_record_period_comparators.py: GC1154 compact indexed repeat restrictions on untyped white-time words under zero-record hypotheses;1080 inverse controls/17160 specifications/24 large-integer endpoints PASS. Theorem B reused; closure OPEN.
 
 - lexicon/rule30_record_endpoint_mask.py: GC1155 actual139 stopping certificate, left156 forced before next white sample;8 right tails/4 raw terminals and unclamped failure156 PASS. All10 L18 comparator controls pass;125p1 white-pivot contrast. No record search.
+
+- lexicon/rule30_record_white_endpoint.py: GC1156 sharp132 white terminal pinned by right prefix145; all 16 completions force left149 black, arbitrary-exterior enclosure v148={0}, scalar/packed/unclamped controls PASS. Algebraic pivot still toggles it; one cylinder, no record bound.
