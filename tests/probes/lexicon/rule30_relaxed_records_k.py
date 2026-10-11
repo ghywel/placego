@@ -177,6 +177,8 @@ CUT (registered 2026-10-10 12:27 BST, before any run; L585). `cut TAG d L ph [MA
          between witnesses at 131 and 133.
   CUT-P21 (blind, 0.55; registered 00:29 before its run): d = 138, L = 18, phase 0 (UNKNOWN at 1,800 s in the sweep)
          ends UNSAT within 2 rounds at 14,400 s caps, like 140 and 144.
+  CUT-P21 REFUTED (02:01): d = 138 phase 0 relaxed SAT in round 0 (5,523 s, 24 cuts), and the lift is a WITNESS
+         (rule30_witness_check VALID, T = 155), so R_real(138) >= 18.
   CUT-P22 (blind, 0.5; registered 00:49 before either run): d = 137 and d = 139, L = 18, phase 0 each end UNSAT within 2
          rounds at 14,400 s caps (137 now, 139 when a core frees).
   CUT-P17 (blind, 0.5; registered 20:35 before its sweep): of d = 137 .. 151 (140 excluded, <= 17), at least half give a
