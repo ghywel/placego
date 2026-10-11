@@ -113,6 +113,13 @@ phase, seeds 31 and 32; four times deep A, fresh seeds):
   SP8 (control, must hold): every witness valid; nothing above 17 at 121 .. 124, 132, 140, 144.
   SP9 (blind, 0.5): R_real(194) stays at 26 (no sample reaches 27 there).
   SP10 (blind, 0.6): at least 30% of the depths 161 .. 330 rise above deep A's bound (2^30 a phase) or the focused run's.
+  Correction to the registration: 24 rounds give 2^31 samples a phase (2^(rounds + 7)), not 2^32; deep C is twice deep
+      A, not four times. The predictions are scored on the run as made.
+OUTCOME, deep C (2026-10-11 04:01 BST; 2^31 a phase, 394 s and 392 s):
+  SP8 PASS: every witness valid; the certified depths read 121:15 122:14 123:14 124:15 132:17 140:16 144:16 (139: 17).
+  SP9 HELD: R_real(194) is 26 again, from fresh seeds; two independent sample sets stop at exactly 26 there.
+  SP10 REFUTED: 14 of the 140 depths 161 .. 300 rose above deep A or the focused run (10%); deep A had no 301 .. 330.
+      Near 200 the sampling is close to saturated at 2^31. New: 220 >= 21, 270 >= 20. (recorded 04:01)
 """
 import os
 import re

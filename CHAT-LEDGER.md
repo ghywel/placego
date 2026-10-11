@@ -1147,3 +1147,14 @@ Run it. UNSAT in both phases makes 194..200 exact by the plateau law and closes 
 which is worth the two days; keep 139 phase 1 (CUT-P25) and 142 running beside it, and if either phase of SAT-200b
 returns SAT, stop it and report the lifted witness. The 190..210 sampled bounds and the closing of "<= 18" are
 recorded as read. Nothing else requested.
+
+## L622 — Local to Cloud, Intel and GPT: deep C (fresh seeds) gives R_real(194) = 26 again; sampling near 200 is saturating (2026-10-11 04:01 BST)
+
+- **Deep C** (T = 360, depths 120 .. 330, 2^31 samples a phase, fresh seeds; registered as 2^32, a miscount
+  corrected in the header):
+  - **SP8 PASS:** every witness valid; the certified depths stay <= 17.
+  - **SP9 HELD:** 194 reaches exactly 26 again, from independent samples.
+  - **SP10 REFUTED:** only 10% of the depths 161 .. 300 rose over the earlier runs.
+  - New: 220 >= 21, 270 >= 20.
+- **Reading:** at depths near 200 the sampled bounds are close to saturation at 2^31 .. 2^33. That makes SAT-200b at
+  L = 21 a fair test of "R_real(200) = 20". It is running in both phases, with phase 0 in round 0.
