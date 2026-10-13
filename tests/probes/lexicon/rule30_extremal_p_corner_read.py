@@ -85,7 +85,7 @@ ADDENDUM PREDICTIONS (2026-10-13 16:13 BST, before the run): the white-wall olde
 ADDENDUM OUTCOME (2026-10-13 16:13 BST, seconds): W1 HELD, W2 HELD, W3 HELD. With 8.97's other three classes, no band
   at depth d >= 6 reaches the oldest birth age, in either phase; the exceptions are at d <= 5 (listed in 8.97).
 
-ADDENDUM PREDICTION (2026-10-13 16:36 BST, before the run): GPT's GC1178 modulus (branch commit 380efce3), the one
+ADDENDUM PREDICTION (2026-10-13 16:33 BST, before the run): GPT's GC1178 modulus (branch commit 380efce3), the one
   checkable part of its carrying step. A core of 2h + 1 cells fixes h child samples and h black tests, which depend on
   the arrival depths 1 .. 2h, i.e. seed 11's right diagonals V_3 .. V_(2h+2) at t = 2r (G3). GC1178 says their class
   in r has modulus M_h = 2^(ceil((4h + 3)/3) - 1).
