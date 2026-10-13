@@ -30,7 +30,12 @@ PREDICTIONS (written 2026-10-13 19:08 BST, before any run).
      packets are OPEN under the four-tick test (clock at the two black ticks, 11 against the previous train white
      sample). Counterfactual: all 28 fail. The full verdict at window ell + 3 (every certified cut) is reported too.
 
-OUTCOME: (filled in after the run, below this line)
+OUTCOME (2026-10-13 19:09 BST, M5, 1 s; machine output quoted): U1 HELD, U2 HELD, U3 HELD, U4 HELD, U5 HELD.
+  R3 packets OPEN: 14 of 28 (GPT's predicted number exactly). By endpoint row and four-tick trace: [1,0,1,0] / 1111 OPEN
+     (10 representatives: k = 234, 235, 251, 315, 327, 346, 347, 363, 427, 439, i.e. k mod 224 in {10, 11, 27, 91, 103,
+     122, 123, 139, 203, 215}); [1,0,0,0] / 1101 OPEN under the four-tick test (k = 274, 310, 386, 422); [1,0,1,1] / 1110
+     and [1,0,0,1] / 1100 fail. The full verdict at window ell + 3 (every certified cut) agrees except on the four 1101
+     packets, which it fails, leaving 10 of 28 open.
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
