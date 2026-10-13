@@ -12353,6 +12353,12 @@ For the moving adjacent pair F_u=x_(c+u)(n-u), r_u=x_(c+u)(n-u-1), write h_u=(1-
 
 **Proof sketch.** The local empty-pair update has difference S. Shift G287's path one tick and one outward depth; the next path adds exactly one terminal hole q(k+1). At the old terminal, the black guard fixes depth2=1-depth1 and makes S=q(k-1). The required total hole parities differ by1, giving R_a=1 XOR q(k-1) XOR q(k+1). The real no11 gate converts this to the stated00 indicator. Hence valid consecutive R_a cannot contain101, or1111 (the latter would force the old absent word00000). GC1204 gives the complete endpoint proof and registered controls. This is an origin-preserving coupled gate, not a finite-state update, a cost bound or a new proof of no11. L689 hand-reads the local law, shifted path, both endpoints, horizon and visible00 interpretation; no computation requested.
 
+### G.GPT289. An integer hole flux balances adjacent triangle paths (second-read by Local, 2026-10-13)
+
+**PROVED, Local L690 at92e87905.** Source: RULE30-GPT.md GC1205, under G288's actual triangle and horizon. The integer change of the spatial hole after shifting by one time and one outward depth is Delta=AB-h(A+B), where h=(1-C)(1-D) and A,B are the outward cells. If h0 this is AB; if h1 the new hole is(1-A)(1-B), giving AB-A-B. Summing over adjacent paths and using the old black guard makes the terminal Delta=-q_old. Hence J_(a+1)-J_a is the sum of the strict interior signed changes, where J excludes the terminal visible hole. The first change is0 from G287's entry packet.
+
+GC1205's fixed actual125 fixture has J26->31->26 at consecutive a0/1, and31->29 at a8, with direct counts matching creations minus destructions. Thus a proposed monotone cost using J alone is refuted. This is a finite counter, not a repeatable full-state cycle or an impossibility for richer costs. Registered controls in rule30_zero_triangle_hole_flux.py retain the failed prediction. L690 hand-reads the signed law and terminal cancellation, adopts the fixed counts as tier1 and checks the recoding scope.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -12802,8 +12808,8 @@ entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
 
 
-### GPT G289 — An integer hole flux balances adjacent triangle paths (GPT, 2026-10-13; waiting for Local)
+### GPT G290 — The ordinary fringe already meets the proposed middle-turnover floor (GPT, 2026-10-13; waiting for Local)
 
-**PROOF-SKETCH.** Source: RULE30-GPT.md GC1205, under G288's actual triangle and horizon. The integer change of the spatial hole after shifting by one time and one outward depth is Delta=AB-h(A+B), where h=(1-C)(1-D) and A,B are the outward cells. If h0 this is AB; if h1 the new hole is(1-A)(1-B), giving AB-A-B. Summing over adjacent paths and using the old black guard makes the terminal Delta=-q_old. Hence J_(a+1)-J_a is the sum of the strict interior signed changes, where J excludes the terminal visible hole. The first change is0 from G287's entry packet.
+**PROOF-SKETCH.** Source: RULE30-GPT.md GC1206. For its d>=8 black-ended zero band and N consecutive eligible charge paths a>=4, the real middle parity is1 on visible triples001/010. Removing the outer source prefix and wall depths1..5 gives a distinct middle-turnover count C>=max(0,ceil((2N-6)/5)); the five-state finite potential is explicit in GC1206.
 
-GC1205's fixed actual125 fixture has J26->31->26 at consecutive a0/1, and31->29 at a8, with direct counts matching creations minus destructions. Thus a proposed monotone cost using J alone is refuted. This is a finite counter, not a repeatable full-state cycle or an impossibility for richer costs. Registered controls in rule30_zero_triangle_hole_flux.py retain the failed prediction. Local's signed-law and endpoint read is pending.
+The count is a nondiscriminator for relaxed left models. In the established moving fringe, Z5=Z6=Z3 after7 and Z7=0 after10 (GC634). At path position u3, for a>=6, the source is the alternating Z3 phase for e0 and1 for e1. This middle position alone supplies at least floor(max(N-2,0)/2) events, exceeding the proposed lower bound without a real visible-language constraint. Locality compares each quad, whose deepest original input is k+2<E, to the zero-tail reference; the actual whole fringe need not survive finite-band collapse. GC1206 gives all endpoints, source subtraction and registered controls. This closes the count-only pricing proposal, not the full origin-dependent source representation or all finite-type routes. Local's carrying read is pending.
