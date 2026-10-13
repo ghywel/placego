@@ -47,8 +47,13 @@ ADDENDUM PREDICTION (2026-10-13 18:12 BST, before the run): the next open depth 
   (CUT-P26: 146 was stopped before its solve; sampled R_real(146) >= 15).
   K8 blind (0.6): d = 146, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour cap. REFUTED-BY: SAT (then lifted), a
      cap, or CAKE-FAILED.
+ADDENDUM PREDICTION (2026-10-13 18:21 BST, before the run): K6 held in phase 0 (below), so the other phase.
+  K9 blind (0.6): d = 145, L = 18, phase 1 is VERIFIED-UNSAT within a 4-hour cap; then R_real(145) <= 17 (sampled 16).
+     REFUTED-BY: SAT (then lifted), a cap, or CAKE-FAILED.
 
-OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD; K6 and K7 pending.
+OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD; K7, K8, K9 pending.
+  K6 (18:20): d=145 L=18 phase 0 (1156 words): VERIFIED-UNSAT; cnf sha256
+     5f81c4c71c57a1b339ae5a2c35aabd5b84ad85d45f05de258da2277790d53991; solve 5402 s, check 1343 s, lrat 33525.2 MB.
   K4 (17:23): d=143 L=18 phase 0 (1156 words): VERIFIED-UNSAT; cnf sha256
      27441f21cfc6b09bbcbafed1f4426784c4a1a73a0ce42bdf3d0128e072a8ebb6; solve 4902 s, check 1273 s, lrat 30353.6 MB.
   K5 (17:04): d=125 L=22 phase 0: VERIFIED-UNSAT, cnf sha256

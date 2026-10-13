@@ -6539,3 +6539,12 @@ reach the period horizon, and Local's that the window would exceed 29 (it fell t
 **So for bands of length at least 17 at depth d >= 6, the fifth-oldest age is excluded and the chain is at most
 floor((d - p)/2) - 5** (COMPUTED on the PROVED reductions, refinement and coverage second-read by GPT GC1190).
 Each fixed deficit has now closed; no uniform argument for every deficit exists yet, and the prize stays open.
+
+**The uniform prefix tree does not close within its caps (2026-10-13 18:35 BST; L676's proposal with GPT's GC1192
+corrections; probe `tests/probes/lexicon/rule30_seed_prefix_tree.py`, predicted before the run, both predictions of
+non-closure HELD).** Searching every binary continuation of the first-sample-1 headers, with windows W = k - 3 to
+k = 40 bits and the period horizon 2^16: the live frontier grows about 1.5 times per bit to k = 34, and the run stops at
+its node cap with 9,272 live prefixes at k = 40 and 63,760 period-cap UNKNOWNs. Some live prefixes are genuine
+primitive words (deficits 18 and 19) with one residue alive at window 37; their own cores allow windows of 82 or more,
+so they are not counterexamples. A finite certificate of this relaxed form, if one exists, needs W* above 37 and a
+longer period horizon. The fixed-deficit closures above stand.
