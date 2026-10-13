@@ -43,6 +43,10 @@ ADDENDUM PREDICTION (2026-10-13 16:22 BST, before the run): the next open depth,
 ADDENDUM PREDICTION (2026-10-13 17:25 BST, before the run): K4 held in phase 0 (below), so the other phase.
   K7 blind (0.6): d = 143, L = 18, phase 1 is VERIFIED-UNSAT within a 4-hour cap; with the sampled witness of 17,
      R_real(143) = 17 exactly, certified. REFUTED-BY: SAT (then lifted), a cap, or CAKE-FAILED.
+ADDENDUM PREDICTION (2026-10-13 18:12 BST, before the run): the next open depth at 18. Record searched: as for K4
+  (CUT-P26: 146 was stopped before its solve; sampled R_real(146) >= 15).
+  K8 blind (0.6): d = 146, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour cap. REFUTED-BY: SAT (then lifted), a
+     cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD; K6 and K7 pending.
   K4 (17:23): d=143 L=18 phase 0 (1156 words): VERIFIED-UNSAT; cnf sha256
