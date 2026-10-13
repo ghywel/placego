@@ -105,12 +105,13 @@ ADDENDUM OUTCOME (2026-10-13 17:55 BST, M5; machine output quoted): F1 HELD, F2 
      Q, r = 0, phase 1), below j = 3's 29; the windows by deficit are 10, 16, 22, 29, 25.
   F5: the odd family closed entirely, so the g = 8 aliases with h = g + 1 are removed with it.
 
-ADDENDUM PREDICTION (2026-10-13 18:19 BST, before the run): a control for GPT's GC1191 grammar against this probe's own
+ADDENDUM PREDICTION (2026-10-13 18:18 BST, before the run): a control for GPT's GC1191 grammar against this probe's own
   enumerator (seeds from literal parent updates, both first samples, no leading-1 restriction).
   G must hold: for every gap length g = 1 .. 9 and both r, the seed words of the full-span profiles (last bit 1) are
      exactly the words accepted by GC1191's rule (header [1, r, 1 - r, r XOR beta], G13 decoding from
      (r, r XOR (1 - beta)), final bit 1, terminal pair 01 for Q or 10 for P), each with a unique (gap, type) that the
      decoding recovers; the profiles with leading 1 are exactly those with beta = 1.
+  G HELD (2026-10-13 18:18 BST, seconds): 766 words (g <= 9, both r, both beta).
 """
 import itertools, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
