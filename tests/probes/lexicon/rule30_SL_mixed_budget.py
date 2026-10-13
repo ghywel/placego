@@ -56,6 +56,10 @@ ADDENDUM PREDICTION (2026-10-14 00:03 BST, before the run; the second fixture of
      N = 60 to N = 150, and the restricted count still grows. Counterfactual: a plateau of at most 8, a candidate
      constant budget for real S/L residences. The visible word from a white anchor is a phase-0 word of the
      configuration at that time, so the restriction removes no real residence.
+  M5 HELD (2026-10-14 00:03 BST, seconds): cut-avoiding lifts 139, 613, 2809, 12186 at N = 60, 90, 120, 150, longest
+     white runs 9, 10, 13, 15 (log2 W = 7.1, 9.3, 11.5, 13.6). Still the coin law, at 0.146 bits per visible bit.
+     Scope: the 44-bit list and cuts40 only. CL340's typed-path bound (466 ticks, with the 114-, 117- and 178-bit cuts)
+     is beyond this N; whether S/L lifts are typed paths there is put to GPT (L700).
 """
 import os, sys
 import numpy as np

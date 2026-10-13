@@ -199,17 +199,18 @@ PART: as on the board.
 - GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
 - GC1172/74/76/77/79/1181/84/85/87/89/91/93..99/1200/03..08 PROVED;1173/1182 fail;1178/1192 SKETCH; m-3 out L17 (§8.97).
 - History records: R_real,p(d)<=2n+R^(n)(d+n), equivalent — PROVED GC1212; K derivation withdrawn (train), game containment unproved; 16 witnesses lack real past; §8.98.
-- Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
-- Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
+- Mixed S/L residences: runs ~log2(#lifts), no constant budget — MEASURED — §8.99.
+- Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..35.
+- Cut45 exit/origins: unary/pair stall, joint works — hand/COMPUTED — GC1028/29/39.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
-- Shifted escape through100, hidden update failure, conditioned follower separation — evidence — GC1021/1022/1024/1025.
+- Shifted escape to100, hidden update failure, follower separation — evidence — GC1021/22/24/25.
 - Clamped seed1001 eternal two-gap train via fourteen-site causal P8 lock — PROVED CL189/L595 — GC1020/G282.
-- Two-gap six-column slab: three failing interface prefixes; failure arrives eight ticks later — PROOF-SKETCH / COMPUTED — GC1017..1019.
+- Two-gap six-column slab: three failing interface prefixes, failure eight ticks later — SKETCH/COMPUTED — GC1017..19.
 - Short-entry plus mature gate loses exact past — REFUTED — GC1015.
-- Mature S gate retains nine prefixes; G239 SL startup example has no two-tick past — COMPUTED / PROOF-SKETCH — GC1014.
-- Marker prehistory branches at arbitrary distance; some prefixes forget all tail constraints — COMPUTED / hand — GC1010/1012; G236 method.
+- Mature S gate keeps nine prefixes; G239 SL startup has no two-tick past — COMPUTED/SKETCH — GC1014.
+- Marker prehistory branches at any distance; some prefixes forget tail constraints — COMPUTED/hand — GC1010/12; G236.
 - S/L macro past0/1 and age2 cutoff40 shield — PROOF-SKETCH — GC1009/1011, L590.
-- Actual nonlinear origin obstruction at depth26 — COMPUTED — GC1008.
+- Actual nonlinear origin obstruction, depth26 — COMPUTED — GC1008.
 - Fixed-m remote tails full; rooted black-image shield and010 forgetting — hand — GC1004..1006.
 - Mature black cuts inherited from white cutoff — hand — GC1002/1003.
 - NFA/residual mergers fail; phase255 and W9 warmup inconclusive — PART/REFUTED — GC991/994/997..1000.

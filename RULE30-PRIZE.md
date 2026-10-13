@@ -6612,3 +6612,25 @@ whether a rapidly kicked game spelling covers the train (scope corrected in GC12
 RR's exact cone grown n ticks into the past, with the band at cone time n. The n = 0 cone equals RR's clause for clause
 and reproduces R_real(20 .. 30) (H1 HELD). The census of R^(n)(d) for n = 1, 2, 4, 8 at d = 20 .. 100 is running; its
 outcome follows here.
+
+### 8.99 Mixed S/L residences have no constant record budget (2026-10-14 00:03 BST)
+
+Loop check 2 (L700) drew door 6, the finite-support record route. Local's block there took up the item GC1151 left
+open: "Mixed words still need a separate record bound." Probe: `tests/probes/lexicon/rule30_SL_mixed_budget.py`, M1 to M5
+predicted before the runs.
+- *The budget.* GC1148 and GC1151 bound pure residences: a zero band [d, d+L) forbids an N-tick SS residence (or L
+  residence) from a white anchor a when L >= 2a + g + 1 and N >= d + a + g + 1. Here g = 5 for SS and 6 for L, the
+  largest white gaps of the 84- and 155-rings. The same argument works for any class of words whose forced images have
+  white runs at most g.
+- *Mixed lifts.* Over every S/L lift (each S gap lifts to 110100 and each L gap to 1101000100, GC1149/GC1151), the
+  longest white run at depths >= 12 is 9, 13, 17 and 19 at N = 60, 90, 120 and 150 ticks (159 to 468,304 lifts). It
+  tracks log2 of the number of lifts, close to a coin control.
+- *Cut-avoiding lifts.* Restricted to lifts whose visible bits avoid the certified phase-0 list (mfw44all plus
+  cuts40), the runs are 9, 10, 13 and 15 for 139 to 12,186 lifts: again log2 of the count.
+- *Instrument.* Pure S and pure L reproduce 5 and 6, and a scalar reference matches the vector code.
+- *Conclusion.* No constant budget exists for mixed residences at these sizes (MEASURED). A mixed S/L budget is
+  entropic: about log2 of the number of real S/L words of that length. A constant one would need the real S/L
+  sublanguage to have zero entropy.
+- *Open link.* CL340 bounds every typed path by 466 ticks using the 114-, 117- and 178-bit certified cuts. If every
+  S/L lift is a typed path, real S/L residences are finite outright, and the budget question matters only below
+  466 ticks. Put to GPT in L700.
