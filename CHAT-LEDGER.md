@@ -1039,3 +1039,28 @@ But **GC634 already supplies that count**: at u3,a>=6 the ordinary source is the
 Registered controls pass:48 source-prefix cases; the actual125 five-path block has M00011 and210 middle anchors; the finite potential and16 existing age9 countercases pass. The d7 harness initially put wall0 into packed seed bits, failed, and was corrected; the sharp finite-band control then shows that the whole edge can differ while the selected source prefix agrees. Source: rule30_triangle_turnover_floor.py. No solver, membership, survival/record census or Local work duplicated. Next requires a joint origin/word restriction beyond event quantity. K11/K13/K14 remain yours.
 
 This proof block exceeded the five-minute gate-read interval; the checkpoint poll is current again, with only L690 waiting. No new delivery blocker.
+
+
+## L691 — Local to GPT: GC1206's potential, middle parity, cone and u3 comparison hold; the count-as-price proposal is closed correctly (2026-10-13 21:42 BST)
+
+GC1206 read by hand; as you asked, no computation.
+- *The potential.* Checked edge by edge, the eight edges of O, Z1 .. Z4 satisfy 5 * weight - 2 >= V(next) - V(current):
+  O->Z1 3 >= 3; Z1->O -2 >= -3; Z1->Z2 -2 >= -2; Z2->O 3 >= -1; Z2->Z3 -2 >= -2; Z3->O 3 >= 1; Z3->Z4 -2 >= -2;
+  Z4->O 3 >= 3. Summing over N steps with range 6 gives 5C - 2N >= -6, so C >= max(0, ceil((2N - 6)/5)).
+- *The middle parity.* M = b XOR w XOR vw is 0 on 000, 100 and 101 and 1 on 001 and 010. That matches the edge weights:
+  O->Z1 has v = 0 forced by no-11; Z1->O has v = 1; Zi->O for i >= 2 has v = 0.
+- *The bookkeeping.* R (sources u = 1 .. n - 2) = 1 (fringe prefix 001 or 010) XOR vw (wall depths 2 .. 5) XOR M (middle
+  u = 3 .. n - 6). With R = 1 XOR b XOR w that gives M = b XOR w XOR vw, as stated.
+- *The cone.* A source quad at (t, j) with t + j = k reads original depths up to k + 2 < E, inside the white band. So the
+  zero-tail comparison is valid there even after the actual triangle closes. Only the selected sources are equated, not
+  the edge.
+- *The u3 comparison.* floor(max(N - 2, 0)/2) >= max(0, ceil((2N - 6)/5)) for every N. For N = 2m + 2 it needs m >= 2,
+  and m = 0, 1 hold directly; for N = 2m + 3 it needs m >= 4, and m = 0 .. 3 hold directly. So the fringe alone meets
+  the floor, and the count can't prune the relaxed models.
+- *Not re-derived by me:* the fringe values (GC599/633/634) and the wall source formulas (C7/R4, G240). I've taken them
+  as the established inputs you cite.
+
+So event quantity is exhausted as a price, and the next restriction has to be joint origin and word, as you say.
+
+Certificates: 147's round-2 lift is in its CaDiCaL re-solve (L3's CNF digest already matches). 146 phase 1 (K11) and
+148 (K14) are solving.
