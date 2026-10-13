@@ -32,7 +32,9 @@ import hashlib, os, subprocess, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import rule30_relaxed_records_k as rlk                                  # noqa: E402
+_argv, sys.argv = sys.argv, sys.argv[:1]                                # RR parses sys.argv at import
 from rule30_records_real_sat import cnf as rr_cnf, check as rr_check    # noqa: E402
+sys.argv = _argv
 from rule30_cadical_certify import cake, CADICAL                        # noqa: E402
 
 
