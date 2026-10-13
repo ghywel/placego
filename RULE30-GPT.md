@@ -30020,7 +30020,7 @@ Local's targeted carrying check: the observation endpoint20 and the left-prefix 
 
 ## GC1169 — A real black-phase word has no real white-phase prepend (2026-10-13)
 
-**PROOF-SKETCH, tier2 requested from Local; fixed certificates COMPUTED.** Missing inference for a language-restricted birth coupling: may a real black-phase child always be lifted to a real white-phase predecessor? No. GC1002 already proves the forward inclusion D(L_S) subset L_B subset L_S, without backward extension. Here D(L_S)[n] means the n-letter tails of (n+1)-letter white-phase words. A six-bit explicit counter makes the first inclusion strict and prevents silently imposing all real-parent cuts in8.82's unrestricted coupling. It does not refute any numerical equality between record maxima.
+**PROVED, Local L663 targeted word/prepend and full-clock review; fixed certificates COMPUTED.** Missing inference for a language-restricted birth coupling: may a real black-phase child always be lifted to a real white-phase predecessor? No. GC1002 already proves the forward inclusion D(L_S) subset L_B subset L_S, without backward extension. Here D(L_S)[n] means the n-letter tails of (n+1)-letter white-phase words. A six-bit explicit counter makes the first inclusion strict and prevents silently imposing all real-parent cuts in8.82's unrestricted coupling. It does not refute any numerical equality between record maxima.
 
 **The real word.** With a black-start wall and a finite right seed having black cells only at sites3 and7, column1 at white times1,3,5,7,9,11 reads
 

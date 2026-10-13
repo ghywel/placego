@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """GC1169: a real black-phase word has no real white-phase prepend.
 
+All GC1169 left-prefix strings are depth1 outward; GC1167 seed strings
+use deepest-cell first. Visible words always use earliest sample first.
 RUN-ON: CPU, standard library; no solver, CUT or language census.
 COMMAND: python3 tests/probes/lexicon/rule30_phase_prepend_guard.py
 

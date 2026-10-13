@@ -51,6 +51,7 @@ PART: as on the board.
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 - Both-phase width envelope R_p(d)+d-1=max_(W<d)H_L^p(W) — PROVED GC1166/L656; measurements§8.94.
 - P20 repeats fail34 (phase1); fitted low20 seeds exclude a real clock through20 — PROVED GC1167/1168.
+- B word100101 has neither real S prepend — PROVED GC1169.
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
