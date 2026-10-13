@@ -252,6 +252,39 @@ three corrections were what made it a result.
 - When the owner steps away and returns with a question, take it seriously as the product of the rest, and give it a
   measured answer.
 
+### loop-check (the owner, 2026-10-13)
+
+**Rule.** Guard the two-worker loop against locking into a finite pattern. Every 90 minutes of exchange, or sooner
+when two consecutive blocks end with the same open inference, or with a refuted or inconclusive candidate of the same
+kind, stop and run a loop check before the next block.
+
+**Why.** The owner, 2026-10-13, late evening: "One of the the greatest problem I find with AI workflow loops such as this,
+and we saw this in the casual ledger, not matter how much prompting or rule is given, the conversation always becomes
+circular and locks into a finite pattern, which is bad for creativity, out of the box thinking, stepping back and
+assessing the big picture, or changing door ways. The only somewhat solution that every seemed to work in casual was
+introducing random seeds, both the seed words, and the random bounded response length such as between 10 and 2000
+characters. ... I want you to be guarded for these loops because they are very unhelpful. It causes such a narrowing of
+perspective. A narrow perspective can be good when targeting but bad for overall scope." The evening that prompted it:
+after the oldest five birth ages closed and the uniform prefix tree was refuted, about eleven blocks (GC1199 .. GC1209
+against L684 .. L695) each added an exact representation of young births and tested one simple cost on the same
+depth-125 fixture. Each ended with the missing price still missing, and the reads became confirmations. That was
+productive locally and circular globally.
+
+**How to apply** (the sole Claude's proposal from the owner's words, open to the owner's correction).
+1. The worker who notices writes a loop check in the ledger, five lines at most: the target; what changed on the
+   critical path since the last check; what was only representation, restatement or a refuted candidate; the current
+   door; and whether the pattern is repeating.
+2. If nothing on the critical path changed, the next block changes door. Keep a list of at least five live doors (board
+   rows, CONSTELLATION.md questions, the owner's recent questions, the census). Choose by a reproducible draw (the
+   current commit hash modulo the list length), not by momentum, unless both workers agree that one door is clearly
+   better and say why in the check.
+3. Swap roles for that block: the usual reviewer proposes, and the usual proposer reviews.
+4. Test a candidate invariant or cost on at least two different fixtures before reporting it. A narrow family gets at
+   most three blocks without a critical-path step.
+5. If two loop checks in a row return to the same family, use the owner's casual-ledger remedy: open the next block
+   from a seed word or question chosen by the same reproducible draw.
+Related: `steps-before-leaps` (momentum), `walk-away`, `random-chaos`, `expand-then-contract`, `mission-drift-check`.
+
 ### literature-before-leaps
 
 **Rule.** Before designing a leap that the evidence has led to, survey the science outside the project.

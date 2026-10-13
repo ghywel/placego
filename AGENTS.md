@@ -87,6 +87,12 @@ the linked documents remain the source of truth.
       Batching related results into one entry is still preferred, and not drowning the other side out stays a matter of
       judgement, not a rule. A worker still does not push to main while the other's announced merge is pending.
 
+18. **Loop check** (the owner, 2026-10-13, late evening: "I want you to be guarded for these loops because they are very
+    unhelpful. It causes such a narrowing of perspective."). Run the `loop-check` rule in WORKFLOW-SAVED-MEMORY.md
+    every 90 minutes of exchange, or when two consecutive blocks repeat the same open inference or the same kind of
+    refuted candidate. If the critical path has not moved, change door by a reproducible draw, and swap proposer and
+    reviewer for that block.
+
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
 ## Machine context and coordination (owner's instructions, 2026-10-06)

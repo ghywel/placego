@@ -26,12 +26,24 @@ PREDICTIONS (written 2026-10-13 22:31 BST, before any run; the main run is made 
      R_real(147) <= 17 in phase 0 without any relaxation. REFUTED-BY: SAT (then a real witness, R_real(147) >= 18,
      checked by simulation), a cap, or CAKE-FAILED.
 
+AMENDMENT (2026-10-13 22:35 BST, before the run): the first loop check (loop-check rule, L696) drew door 5, the
+  exact-cone census at 147 .. 150, so X2 is run now, beside certify K16, not only if K16 is SAT. Both are sound and
+  answer different questions (relaxed with cuts against exact with cuts). X2's prediction is unchanged.
+
 OUTCOME (controls, 2026-10-13 22:31 BST, seconds; machine output quoted): X1 HELD.
   EXACT d=21 L=16 phase 0 (1156 words): VERIFIED-UNSAT; cnf sha256 03fe08b3e63be651bf8cc2babbbc2c0d7c136ac071180882c65fe59625f11ac0.
   EXACT d=21 L=15 phase 0 (1156 words): VERIFIED-UNSAT (so the phase-0 record at 21 is at most 14).
   EXACT d=21 L=15 phase 1 (1226 words): SAT-WITNESS, row 00000000000000001011110001111000011100000100000100111100111111111111111,
      checked by RR's zero-padded simulation: RR's R_real(21) = 15 is reached in phase 1.
   The first control run failed at import (RR's module parses sys.argv); shielded and rerun, retained in history.
+
+GPT review (GC1210.1, 2026-10-13): the inherited exact cone, phase unit and
+white-sample cut placement are sound; no carrying defect found. Added only
+metadata assertions for the mirrored RR variable map and a requested-phase
+check in SAT replay. The CNF is unchanged. Pure construction controls at
+(21,16,0),(21,15,1),(147,18,0) compare before/after clauses, row map and
+variable bound identically; no solver, certificate or witness replay.
+The current X2 run needs no restart; its already generated CNF is unaffected.
 """
 import hashlib, os, subprocess, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -60,6 +72,8 @@ def build(d, L, phase, words):
         for i in range(-(T - t), T - t + 1):
             v(t, i); v(t - 1, i - 1); v(t - 1, i); v(t - 1, i + 1)
             n[0] += 1                                       # RR's OR auxiliary
+    assert n[0] == nv                                        # duplicated allocation order must still match RR
+    assert row == [var[(0, i)] for i in range(-T, T + 1)]
     vis = [var[(t, 1)] for t in range(T) if (t + phase) % 2 == 0 and (t, 1) in var]
     for w in words:
         for s in range(len(vis) - len(w) + 1):
@@ -88,7 +102,7 @@ def run(d, L, phase, cap, extra=()):
             if line.startswith('v '):
                 val.update(int(x) for x in line[2:].split())
         bits = [1 if x in val else 0 for x in row]
-        verdict = 'SAT-WITNESS' if rr_check(bits, T, d, L) else 'SAT-CHECK-FAILED'
+        verdict = 'SAT-WITNESS' if bits[T] == phase and rr_check(bits, T, d, L) else 'SAT-CHECK-FAILED'
         witness = ''.join(map(str, bits))
     elif verdict == 'UNSAT':
         verdict = 'VERIFIED-UNSAT' if cake(base + '.cnf', base + '.lrat') else 'CAKE-FAILED'
