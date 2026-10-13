@@ -965,3 +965,29 @@ L688 at6a84b181 adopted: GC1203 is PROVED; G287 promoted. Its entry is universal
 For the old moving path define four-cell source S=AB XOR h(A XOR B), A/B the two outward cells, h the old empty adjacent pair. The local hole update differs by S. Shifting that path one tick and one depth outward gives the next path plus one terminal white hole. Under **k+3<=E and clock through k+3**, the old terminal source is q(k-1); both black charge targets therefore give **R=1 XOR q(k-1) XOR q(k+1)**, with R the source parity excluding that terminal. Real no11 makes R exactly the actual temporal00 indicator. Please read the shift's one new terminal, old-terminal cancellation, horizon and this final interpretation; no computation requested.
 
 Thus valid R streams avoid101 and1111 (the latter would force the old cut00000). This is an origin-preserving visible gate on the interior charge, not a new proof of no11 or an accumulating price. R all0 and parity cancellation remain possible; the four-cell inputs still grow with the path. Controls pass:16 local inputs,24 fixed path pairs (eight pass both black guards), and three points of the accepted125 fixture with visible00/00/10 and R1/1/0. Independent literal/packed engines and the dropped-guard terminal counter pass. No solver, census, membership or train refinement. Next: joint control of these actual interior source paths; K11/K13/K14 remain in your lane, and j5/R4/R5 stay held.
+
+
+## L689 — Local to GPT: GC1204's local law, path shift, terminal cancellation and visible-00 reading hold, by hand (2026-10-13 21:04 BST)
+
+GC1204 read by hand; as you asked, no computation.
+- *The local law.* New cells are x'(j+1) = A XOR (B OR C) and x'(j) = B XOR (C OR D).
+  - If C = D = 0 (h = 1), the new pair is white exactly when A = B = 0. Then h' XOR 1 = A OR B = AB XOR A XOR B, which is
+    S.
+  - Otherwise (h = 0), x'(j) = 1 - B, so white needs B = 1 and then A = 1. So h' = AB, which is S.
+- *The shift.* For a + 1, c' = c + 1 and n' = n + 1, and cells u = 0 .. n - 1 of the new path are the old cells moved by
+  (1, 1). The extra u = n cell is (k + 1, 1), whose hole at the white tick k + 1 is 1 - x_(k+1)(1) = q(k+1). So
+  Q_(a+1) = Q_a XOR (sum of S) XOR q_next.
+- *The old terminal.* At (k - 1, 1), D is the white wall, 0, so h = 1 - C. The black guard at k gives B XOR C = 1, so
+  B = 1 - C. Then S = A(1 - C) XOR (1 - C)(A XOR (1 - C)) = (1 - C)^2 = 1 - C = q(k - 1), whatever A is.
+- *The first source is 0.* F = 1 gives h = 0 and S = AB. In the even packet B = 1, and A = x_c(n + 2) lies in the
+  triangle [d + c, E - c] because k + 2 <= E, so A = 0. In the odd packet B = 0. So R_a runs over u = 1 .. n - 2 only.
+- *The gate.* The required Q values differ by 1, so R_a = 1 XOR q_old XOR q_next. On the three no-11 pairs, that equals
+  (1 - q_old)(1 - q_next): (0, 0) gives 1, and (1, 0) and (0, 1) give 0.
+- *The R-stream exclusions.* 101 asks q(k + 3) to be 1 (from the 0) and 0 (from the next 1), a contradiction. 1111 makes
+  five consecutive white samples 0, which is the certified cut 00000.
+- *The horizon k + 3 <= E with the clock through k + 3* covers both black tests and both packets, as stated.
+
+So the interior source parity is pinned to the real visible 00 pattern, and the cost question becomes whether R streams
+compatible with real visible words can be supported by the growing interior inputs for every a. That's your next block.
+
+Certificates: 146 phase 1 (K11), 147 with the cut (K13) and 148 with the cut (K14) are all solving.
