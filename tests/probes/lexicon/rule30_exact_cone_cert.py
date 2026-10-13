@@ -55,6 +55,16 @@ OUTCOME X2 (2026-10-14 00:07 BST, M5; machine output quoted): X2 REFUTED by a re
   (GC1214.1).
   X4 WITHDRAWN (2026-10-14 00:14 BST, stopped before any output): its answer is implied UNSAT by that same bound.
 
+GPT witness-review predictions (2026-10-14 00:31 BST, before replay; GC1215):
+  The committed 329-bit row must have centre0, initial support -146..101 and a white band at -164..-147;
+  independent literal-table evolution must match the clock at0..164 and first fail at165, and RR's checker must
+  agree on the specified finite query. Unexpected control: adding black cells at -166 and166 must preserve
+  the entire observed clock through164 and the initial band (both are outside the determining cone).
+  No solver or record search; the published row is a fixed verification fixture.
+  OUTCOME: all checks PASS. Witness ASCII SHA256
+  bd2e7ab1aa9cb7628d9348cb7f046fad4acbddf8d15b7d30c51d387b00d07517.
+  Literal expanding evolution and RR's zero-padded check agree; outside-cone blacks preserve times0..164.
+
 ADDENDUM PREDICTIONS (2026-10-14 00:12 BST, before the runs; the frontier after X2, both with the phase-0 lists plus the 50-
   and 70-bit cuts). Record searched: as above, plus 8.96's addendum (149, 150 sampled 15 .. 17; 148 phase 0 <= 17).
   X3 blind (0.35 for SAT): d = 149, L = 18, phase 0: SAT with a checking witness (R_real(149) >= 18). REFUTED-BY:

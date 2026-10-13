@@ -83,6 +83,13 @@ ADDENDUM PREDICTIONS (2026-10-14 00:17 BST, before the run): enumerate the real 
      between S and L), at most 4 times from N = 90 to N = 150. Counterfactual: exponential growth like M5's.
   M8 blind (0.5): the longest image white run over real S/L lifts at N = 150 (depths >= 12) is at most 8, close to
      the pure rings' 5 and 6. Counterfactual: 12 or more, so realness does not bring the runs near the rings.
+
+GPT cap-review controls (2026-10-14 00:32 BST, before stubbed checks; GC1215): two reduced call budgets (8 and32)
+  with accepting membership stubs must leave the incomplete census M7/M8 UNSCORED. Unexpected complete-search
+  control: a rejecting stub exhausts the tree and may score the registered finite criteria. No real membership
+  queries or enumeration replay. A capped longest observed run is a lower bound, not an upper bound.
+  OUTCOME: both capped-stub controls and the complete-search control PASS. Existing running processes retain
+  the older reporter, so CAP output must be interpreted as incomplete before scoring; no restart requested.
 """
 import os, sys
 import numpy as np
@@ -251,7 +258,7 @@ def m78():
             calls[0] += 1
             cache[v] = bool(rlk.in_language_phase(v, 0))
         return cache[v]
-    res = {}
+    res, complete = {}, {}
     for N in (60, 90, 120, 150):
         out, stack = set(), [('', '')]
         while stack and calls[0] < 20000:
@@ -264,12 +271,16 @@ def m78():
                 if real(v2):
                     stack.append((w + b, v2))
         ws = sorted(out)
+        complete[N] = not stack and calls[0] < 20000
         run = int(longest_white(images(ws)).max()) if ws else 0
         sw = max((sum(1 for i in range(1, len(x)) if x[i] != x[i - 1]) for x in
                   [[c for c in w.replace(L, 'L').replace(S, 'S') if c in 'SL'] for w in ws]), default=0)
         res[N] = (len(ws), run)
         print('real S/L lifts N=%3d: %6d lifts, longest white run %2d, membership calls so far %d%s' % (
-            N, len(ws), run, calls[0], ' (CAP)' if calls[0] >= 20000 else ''), flush=True)
+            N, len(ws), run, calls[0], ' (CAP; incomplete lower bounds)' if not complete[N] else ''), flush=True)
+    if not all(complete.values()):
+        print('M7 and M8 UNSCORED: membership-call cap left an incomplete census; observed runs are lower bounds')
+        return
     print('M7 count grows at most 4x from N=90 to 150:', 'HELD' if res[150][0] <= 4 * res[90][0] else 'REFUTED')
     print('M8 longest real run at N=150 <= 8:', 'HELD' if res[150][1] <= 8 else 'REFUTED')
 
