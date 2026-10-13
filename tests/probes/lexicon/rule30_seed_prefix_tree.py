@@ -64,6 +64,19 @@ ADDENDUM PREDICTIONS (2026-10-13 18:39 BST, before the run): Local's second read
      (state 10) gives a word that GC1191's decoder accepts, ending in 1 with terminal 01 or 10.
   R1 .. R4 HELD (2026-10-13 18:40 BST, seconds); along the ray the period passes the 2^16 horizon at W = 36, so R3 is
      checked through W = 35 there.
+
+ADDENDUM PREDICTIONS (2026-10-13 18:53 BST, before the run): Local's second read of GPT's GC1194 (the mod-56 repair
+  gate at r = 0, p = 0, N = 2, T = 1), by direct simulation with this probe's own code.
+  M1 must hold (the reference rows): the clamped phase-0 evolution of (0110010)^infinity has A_t(j) = R_(t mod 4)
+     [(-j) mod 7] with R = (0100110, 1111101, 0000001, 1000011), j = 0 the wall, for t <= 100 on the determined cells.
+  M2 must hold (the charge flip): C(ell) = (ell mod 2) XOR XOR_(t < ell) A_t(ell - t - 1), computed from the simulated
+     rows, satisfies C(ell + 28) = 1 XOR C(ell) for ell = 1 .. 150.
+  M3 must hold (the terminal guard): every prefix of S = 1011 (0000111)^infinity that ends in 1 and is accepted by
+     GC1191's decoder (terminal 01 or 10) is followed in S by a 1, so a seed equal to such a prefix has q = h + 1.
+  M4 must hold (the seven classes): for the minimal completions v(k) of S's first k bits (k = 4 .. 4 + 7 * 24), the
+     first discrepancy q from S, and the two gates read off the actual child (first arrival at tick q - 3 passes the
+     clock and no 11; the black tick q - 2 passes), the k that pass both gates are exactly those with k mod 56 in
+     {10, 11, 27, 30, 35, 47, 50}; the full verdict at window q - 1 (clock and every certified cut) is reported for them.
 """
 import os, random, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -304,6 +317,68 @@ def train_read(acs):
         r4 &= (c0, c1) in ((0, 1), (1, 0))
     ok['R4'] = r4
     print('GC1193 read:', {k: ('HELD' if v else 'FAILED') for k, v in ok.items()}, note)
+    return ok
+
+
+def gate_read(acs):
+    ok = {}
+    A = [0, 1, 1, 0, 0, 1, 0]
+    Rr = ['0100110', '1111101', '0000001', '1000011']
+    n0 = 700
+    row = [None] + [A[(j - 1) % 7] for j in range(1, n0)]
+    rows_t = []
+    for t in range(201):
+        rows_t.append([t % 2] + row[1:])
+        x = [t % 2] + row[1:]
+        row = [None] + [x[j + 1] ^ (x[j] | x[j - 1]) for j in range(1, len(x) - 1)]
+    m1 = True
+    for t in range(101):
+        for j in range(0, n0 - 2 * t - 4):
+            m1 &= rows_t[t][j] == int(Rr[t % 4][(-j) % 7])
+    ok['M1'] = m1
+    Aat = lambda t, j: int(Rr[t % 4][(-j) % 7])
+    C = lambda ell: (ell % 2) ^ (sum(Aat(t, ell - t - 1) for t in range(ell)) % 2)
+    ok['M2'] = all(C(ell + 28) == 1 ^ C(ell) for ell in range(1, 151))
+    S = [1, 0, 1, 1] + [0, 0, 0, 0, 1, 1, 1] * 40
+
+    def decode(bits):
+        b0, b1 = 0, 1 - (bits[3] ^ bits[1])
+        for u in bits[4:]:
+            b0, b1 = b1, u ^ (b0 | b1)
+        return (b0, b1)
+    m3 = True
+    for h in range(4, 200):
+        if S[h] == 1 and decode(S[:h + 1]) in ((0, 1), (1, 0)):
+            m3 &= S[h + 1] == 1
+    ok['M3'] = m3
+    two_gate, full = set(), {}
+    for k in range(4, 4 + 7 * 24 + 1):
+        pre = S[:k]
+        st = decode(pre)
+        v = pre + ([1, 1] if st == (1, 0) else [1])
+        q = next(i for i in range(len(S)) if (v[i] if i < len(v) else 0) != S[i])
+        W = q - 1
+        vv = v + [0] * (W + 8)
+        x = {-i: b for i, b in enumerate(vv) if b}
+        x1 = {i: x.get(i - 1, 0) ^ (x.get(i, 0) | x.get(i + 1, 0)) for i in range(-len(vv) - 2, 3)}
+        R = [x1.get(-kk - 1, 0) for kk in range(1, W + 1)]               # child depth kk = V_(kk+2)(1)
+        rows = [0] + R + [0]
+        trace = []
+        for t in range(W):
+            trace.append(rows[1])
+            xx = [t % 2] + rows[1:]
+            rows = [0] + [xx[j + 1] ^ (xx[j] | xx[j - 1]) for j in range(1, len(xx) - 1)] + [0]
+        train = [0, 1, 1, 1] * (W // 4 + 2)
+        first = next((t for t in range(W) if trace[t] != train[t]), None)
+        a = q - 3
+        g1 = first == a and a % 2 == 0 and not (a % 4 == 2)
+        g2 = g1 and trace[q - 2] == 1
+        if g2:
+            two_gate.add(k % 56)
+            full[k % 56] = bool(child_alive(np.array([R], dtype=np.uint8), 0, acs[0])[0])
+    ok['M4'] = two_gate == {10, 11, 27, 30, 35, 47, 50}
+    print('GC1194 read:', {kk: ('HELD' if vv_ else 'FAILED') for kk, vv_ in ok.items()},
+          '| two-gate classes', sorted(two_gate), '| full verdict at q-1 for them', dict(sorted(full.items())))
     return ok
 
 
