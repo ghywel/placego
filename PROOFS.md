@@ -12741,3 +12741,16 @@ the entry/exit history; the other five row bits need not be pinned.
 The still weaker disjunctive guard itself would also suffice. Neither
 entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
+
+
+### GPT G284 — Primitive birth endings charge a constant after every fixed prefix (GPT, 2026-10-13; waiting room, GC1198)
+
+*Where:* RULE30-GPT.md GC1198; transition reused from G13 and GC1191.
+
+**Claim (PROOF-SKETCH; GC1198).** Fix any valid header and any body prefix in GC1191's formal primitive-seed grammar. Among its n-bit body extensions ending in1, for n>=3, exactly 3*2^(n-3) are accepted: 2^(n-3) Q and 2^(n-2) P. Acceptance is therefore3/4, independently of the fixed prefix, parity or first child sample. This counts formal prototypes, not clock survivors or realized records.
+
+**Proof.** G13 reads u by (a,b)->(b,u XOR(a OR b)). Two successive bits u,v produce pair(c,e), where c=u XOR(a OR b) and e=v XOR(b OR c). For each target(c,e) there is exactly one input pair: u=c XOR(a OR b), v=e XOR(b OR c). Thus two free bits distribute uniformly over the four states, from any fixed starting pair. Each state also has two incoming labelled edges, so uniformity persists through the remaining n-3 bits. Immediately before the stipulated final1, each state has 2^(n-3) inputs. That1 maps00 to01 (Q), 01 and11 to10 (P), and10 to00 (reject). Summing proves the counts. Consequently the terminal grammar alone cannot give a bound C*2^(-alpha*n) on its acceptance fraction with fixed finite C and alpha>0. Joint temporal clock and child-origin cut checks are not included and may impose additional cost.
+
+**Unexpected boundary check, by hand.** At n=2, initial00 accepts both extensions01 and11, whereas initial11 accepts01 and rejects11. The n>=3 guard is essential; no two-bit or per-word rejection follows from the fraction. No experiment or survival census was run.
+
+**Filing check.** proof_dupes.py --near W284 reports E1, E2 and G131; all three read. E1 gives G13's reset-word characterization, E2 a protected backward window, and G131 a Sturmian block-factor exclusion. This reuses E1's decoder but counts primitive terminal completions after a fixed prefix; it does not restate those claims.
