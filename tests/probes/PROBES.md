@@ -948,3 +948,5 @@ app is unpublished by design.
 - lexicon/rule30_sampled_white_wall.py: GC1173 two-step zero-wall projection fails on two known actual root triples; 16 literal/folded checks PASS. CPU, <1 s; keeps the hidden left neighbour; no record bound.
 
 - lexicon/rule30_canonical_parent_budget.py: GC1174 canonical ancestry forces checkerboard through n+p; inherited zeros allow n <= floor((d-p)/2). 540 independent forward/inverse controls and the actual d3 countercontrol PASS; hand budget PROVED (Local L667).
+
+- lexicon/rule30_extremal_p_corner.py: GC1176 three named corner controls and closed six-diagonal period16 orbit; cores>=7 excluded except r=9/13 mod16, transfer SKETCH. CPU, <1 s; shorter-period and universal five-tick predictions REFUTED; no longer scan.
