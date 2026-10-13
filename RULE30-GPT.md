@@ -30287,7 +30287,7 @@ Local's carrying read requested: arbitrary-gap induction including the last wall
 
 ## GC1185 — One-tick birth transfer preserves origins and lowers the white-phase promotion cost (2026-10-13)
 
-**PROOF-SKETCH; fixed phase controls COMPUTED.** The missing inference was whether passing from black to white phase changes the canonical birth class. It does not. This reuses GC1170's phase images and GC1174's padding, but tracks every ancestor and the selected interval exactly. Let A_n^p(w) denote the nth canonical ancestor, with root0^floor((n+p)/2)w and phase(p+n) mod2. A child band [d,d+L-1], L>=3, yields [d+1,d+L-2] after one tick. Write a for its first nonzero canonical parent and j=floor((d-p)/2)+1-a.
+**PROVED (Local L673 carrying read); fixed phase controls COMPUTED.** The missing inference was whether passing from black to white phase changes the canonical birth class. It does not. This reuses GC1170's phase images and GC1174's padding, but tracks every ancestor and the selected interval exactly. Let A_n^p(w) denote the nth canonical ancestor, with root0^floor((n+p)/2)w and phase(p+n) mod2. A child band [d,d+L-1], L>=3, yields [d+1,d+L-2] after one tick. Write a for its first nonzero canonical parent and j=floor((d-p)/2)+1-a.
 
 **Black to white, every root.** F_1 C_1(w)=C_0(w). For n>=1,
 
@@ -30309,3 +30309,27 @@ because floor((n+1)/2)=floor((n-1)/2)+1 and the phases coincide. The same interv
 ## GC1186 — Third-oldest class coverage and profile enumeration are second-read (2026-10-13)
 
 **PROVED carrying steps, COMPUTED verdicts.** Local L672 at89e63adb reads GC1184's arbitrary-gap crop and supplies the registered18-profile closure. GPT's targeted read is in CHAT-LEDGER GC1186: P's predecessor and leading1 tests cover g1 correctly; g3/g4 give exactly18 necessary profiles; each minimal L9 core fixes J=d+8; the first qualifying N and all smaller legal N are handled separately; pure prefix periodicity covers the infinite parity class. Pq=Pt/gcd(Pt,2) is a number of steps of2 inN, as the source uses, not a unit-N shift. Labels repaired, no computation replayed. Thus for d>=6,L>=9 the third-oldest birth is excluded and n<=floor((d-p)/2)-3. If that right-hand side is negative, no such band exists. A uniform closure for every deficit remains open. Phase0 R_real143<=17 is adopted as cake_lpr certified; phase1 is pending. Local's capped j3 offer is accepted with predictions, controls and stopping rules in the ledger; j4 waits. Next proof target: whether trimming a seed's outer zero bits gives an inward extension at the same canonical birth age.
+
+
+## GC1187 — Trimming outer seed zeros extends the actual band at the same birth age (2026-10-13)
+
+**PROOF-SKETCH; four fixed path controls COMPUTED.** Use GC1184's proved representation at deficit j>=1, with parent agea, N=a+p, s=N+g, ordinary seed last nonzero indexh<=g+2. Set Delta=g+2-h, z=N+h-2, d'=d-Delta. Assume z>=2; d'>=6 suffices for this scope and for applying the reviewed age exclusions.
+
+The updated infinite-core parent U is zero from depthz on: in its seed coordinates every index>h is zero, and its inward checkerboard bits are the same V1,V2. The finite core agrees with U through R-1, where R=s+K-1 for Q and R=s+K for P. Thus after t of the remaining a-1 updates it is zero on [z+t,R-1-t]. At the actual child, t=a-1, this contains [d',d+L-1]. At canonical ancestor numbern<a it contains exactly the extended inherited interval [d'-n,d+L-1+n], since that ancestor is U advanced a-1-n ticks. Every previous step therefore still inherits zeros. At the original birth parent A_a, the extended interval contains the old nonzero birth interval, so remains nonzero. The first nonzero parent is still exactly agea. This uses the canonical path of the actual child; arbitrary simulated parent profiles are merely controls conditional on that path, not assertions of actual membership.
+
+The seed's leftmost black at site-h moves exactly one cell left per ordinary tick (the new extreme cell is rule(0,0,1)=1). Consequently the prototype crop's last black depth is X+h+T=d'-1. The finite core fixes that cell too, so the inward extension is sharp. Its origin-labelled child and phase are unchanged, while
+
+    g'=g-Delta=h-2,
+    j'=floor((d'-p)/2)+1-a=floor((h-1)/2),
+    L'=L+Delta.
+
+The cases h1/2 can enter the oldest corner (g'=-1/0); this is permitted by that earlier corner proof, not by assuming g'>=1. If d'<6, retain the small-depth case rather than use the all-depth exclusion. The known real B100101 band restricted to d5/L1 is the unexpected control: h1, Delta2 extends it to d3/L3 at the same age2, exactly the allowed oldest corner.
+
+**Pruning consequence.** At deficit j, a seed with h<=2j has lower deficit; once those deficits are closed at the extended length and depth, that profile is impossible. For the even gap g=2j, h=2j+1 gives only a one-cell extension into the odd gap g'=2j-1 at the same deficit. It may be removed only after that odd family is closed; not every trailing zero lowers the deficit. Full-span profiles have h=g+2. For a Q profile the last seed bit is1-(last gap bit OR preceding bit); for P it is always1. With the leading1 restriction, for j>=3 this leaves half of the nominal family full-span: at j3,36 rather than72 profiles, and at j4,144 rather than288, before phase duplication and separately retained small-depth controls. This reduces redundant families, not the number of genuinely new deficits. No uniform closure is inferred.
+
+**Controls.** Four preregistered fixed parent paths at N6/7, gaps5/6, K29, L13, both phases and four two-bit tails give32 same-birth checks. Last indicesh4,7,6,7 give deficit1,3,2,3 and Delta3,1,2,0 respectively. Literal parent paths and packed ordinary support agree, including the black cell at d'-1. The one-cell extension stays at j3, rejecting the registered shortcut; the real B small-depth exception is retained. Source: tests/probes/lexicon/rule30_birth_seed_trim.py. Record searched: trim|trailing.zero|support withbirth|deficit|inward ->24hits10files; GC1181 extensions, GC1184/1186 and the exact white triangle read. No census, solver, membership or duplicate Local run. Local's L673 shorter-seed matches corroborate the representation; the actual-band and canonical-birth transfer above is the carrying step requested for review. Hold j4 pending that read and boundary handling.
+
+
+## GC1188 — Fourth-oldest coverage holds; the exact window-growth prediction fails (2026-10-13)
+
+**PROVED carrying coverage, COMPUTED verdicts; W28 prediction REFUTED.** At d2a8bfa3, Local L673 closes all144 j3 profile-phase cases at L13 and reads GC1185's one-tick lemma. GPT's carrying read in CHAT-LEDGER GC1188 confirms the period-multiple optimization, indexed cut acceptance, full parity-class enumeration and J=d+12 minimal-core guard. Thus for d>=6,L>=13 the fourth-oldest birth is excluded and n<=floor((d-p)/2)-4 (a negative bound means no such band). The longest profile closes atW29, gap00101/P/r0/p0, versus the preregistered W28; its twin closes at27. The exact6j+10 trend is stopped. Support trimming GC1187, not a modified numerical fit, is the next proof target. GC1185 is now PROVED through Local's explicit read. No experiment or computation replayed by GPT; j4 remains held.
