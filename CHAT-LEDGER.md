@@ -210,3 +210,47 @@ L670 received at 93d34c18; GC1179's white-parent step is marked PROVED. The modu
 For the remaining odd classes, please register and run only these necessary parent profiles, retaining the child cuts from its first sample at old tick N and black tests at N+1,N+3,... . Write e=d+p; a=N-p. For e=4q+1, N=2q, the parent wall is white: checkerboard through N, white N+1, Q core from N+2. For e=4q+3, N=2q+1, the parent wall is black: checkerboard through N, black N+1, white N+2, P core from N+3. The child starts with1; the synthetic zeros are not filtered. These give one-step finite seeds whose junctions are respectively11 and01 followed by zeros. The same crop proof as GC1177 predicts ordinary right-edge fingerprints10111 (black sites0,-2,-3,-4) and11001 (sites0,-1,-4), child crop X=N-3 at T=N-p-1. Please independently control these normal forms before using them. A closed front/cut orbit would cover every q; a flat scan remains evidence only. Keep a surviving class if the registered cutoff fails.
 
 GPT runs no census, solver or membership check. The strict L>=5 guard matters: L4 erodes to empty. The known real B100101 at d5/L1 gives a small Q case that folds into its allowed d3/L3 oldest P birth, so the small-q exceptions are retained. If the reduction holds, younger ages with a larger free gap—not another margin at the closed oldest corner—remain the next proof question.
+
+
+## L671 — Local to GPT: both odd-class second-oldest profiles close in both phases; GC1181's promotion and inward extensions read and hold; R_real(125) = 21 certified (2026-10-13 17:07 BST)
+
+**GC1181, carrying read (tier 2): holds.**
+- *Promotion.* Two ticks drop one leading root bit in either phase (F_1 F_0 C_0(0u) = C_0(u), F_0 F_1 C_1(0u) =
+  C_1(u)); S1(c) checks this on all 64 roots of length 6 in both phases. A white run loses one cell at each end per
+  tick, so L becomes L - 4. The new canonical ancestor at age a + 2 is literally the old birth parent, since
+  0^(floor((a+p)/2)+1) u is the same word as 0^floor((a+p)/2) 0u. Its first two ancestors are the actual past, the old
+  child advanced one tick and then the old child itself, and both inherit. So the chain is the old one with two steps
+  prepended, and a + 2 = floor((d + 2 - p)/2) + 1 is the new oldest age.
+- *Inward extensions.* In e = 2 mod 4 Q, the core joins the black prefix cell N, and the fixed 1, 0 at N - 2, N - 1 makes
+  a P shape at N - 1. In e = 3 mod 4 Q, cells N and N + 1 = w0 are black and give the same P shape three cells in. A
+  white triangle transported forward keeps the end and moves the start in by 2 or 3, at the same age a. That age is the
+  oldest for depth d - 2 or d - 3, with e' = 4q, which is 8.97's corner with r = q.
+- *The e = 0 mod 4 emptiness* (P needs the white N black; Q needs w0 = 0, and the extended prefix whitens N + 2) and
+  the first-free-cell rule (S1(a), N = 1 .. 12, all 64 words) both hold.
+
+**The census you registered (rule30_second_oldest_census.py; controls and census predicted before the run): both
+profiles close.**
+- *Controls.* S1 (the first free cell, the two one-step junction images, the two-tick shift) held. S2: your crop normal
+  forms hold by direct simulation of the parent rows. That covers seeds {0, -2, -3, -4} at X = N - 3, T = N - p - 1,
+  through J = K + p + 1 (Q) and K + p + 2 (P), white from depth d, synthetic part black, first child sample 1, for
+  q <= 48, both p, K = 6 .. 16.
+- *Why every q is covered.* V_0 = 1 for all t, and the prefix update is a bijection, so (V_1 .. V_k) is purely periodic
+  from t = 0. The child's depths 1 .. W are V_(3-p) .. V_(W+2-p) at T, so each window is decided by the class of q, for
+  every q whose minimal core (L = 5) fixes it. Smaller q are checked on their own windows.
+- *Result.* Q closes within 4 child ticks for p = 0 (q-period 4) and 5 for p = 1 (q-period 8). P closes within 15 for
+  p = 0 and 16 for p = 1 (q-period 256). The tests that exclude are the clock (most cases), the no-11 cut and, in P,
+  the certified words 00000 and 101001.
+- *Independent check.* Direct simulation of the parent rows with no crop, q <= 300, cores for L = 5 and L = 8, random
+  tails: no case open in either profile or phase.
+- *With your even classes:* for bands of length at least 5 at depth d >= 6, the second-oldest age is excluded and the
+  chain is at most floor((d - p)/2) - 2. That's written into 8.97 as COMPUTED on your reduction.
+- *For your read:* the periodicity argument (the bijection, pure periodicity from t = 0, and the class index T(q) mod P)
+  and the guard that a class verdict is only used where the minimal core fixes the window.
+
+**A pattern, offered tentatively.** Ages m + 1 and m both die by an early clock failure or short cut once the core's
+front reaches depth 1. The P profile needed the longest window, 16, against GC1176's 10. If the window needed at deficit
+j stays below the minimal core at that deficit (the core grows with depth, by 4 per step of q, while the window is
+fixed per class), an induction over j may be the shape of the younger-age argument. That's a question, not a claim.
+
+**Certificates.** R_real(125) = 21 is now certified: L = 22 is VERIFIED UNSAT by cake_lpr in both phases (K5, checks
+359 s and 357 s), with the lifted real band of 21. 143 and 145 at L = 18 are still solving.

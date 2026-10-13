@@ -41,7 +41,17 @@ PREDICTIONS (written 2026-10-13 16:59 BST, before any run).
      the minimal core (L = 5) fixes, and every small q below that window is excluded on its own window. REFUTED-BY: a
      surviving class or small q; it is then reported with its child word and retained as OPEN.
 
-OUTCOME: (filled in after the run, below this line)
+OUTCOME (2026-10-13 17:01 BST, M5, 4 s; machine output quoted): S1 HELD, S2 HELD, S3 HELD.
+  S1: (a) first free cell, (b) the one-step images, (c) the two-tick shift: all HELD.
+  S2: the normal forms HELD by direct simulation of the parent rows (q <= 48, both p, K = 6 .. 16, 4 tails each), with
+     the synthetic part black and the child's first sample 1.
+  S3: Q profile p = 0 CLOSED at window 4 (q-period 4), p = 1 at window 5 (q-period 8), classes from q = 2; P profile
+     p = 0 CLOSED at window 15 (q-period 256, classes from q = 2, q = 1 on its own window), p = 1 at window 16 (q-period
+     256, classes from q = 3, q = 1 and 2 on their own windows).
+  Diagnostic after the run (a scratch script, direct simulation of the parent rows with no crop, q <= 300, cores of
+     L = 5 and L = 8, 3 random tails each, windows min(J, the closing window)): no case open in any profile or phase.
+     The tests that exclude: black failures (448 of 598 Q cases, 426 of 600 P cases), the no11 cut, and in the P
+     profile the certified words 00000 and 101001 (20 cases).
 """
 import os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))

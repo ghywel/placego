@@ -41,7 +41,11 @@ ADDENDUM PREDICTION (2026-10-13 16:22 BST, before the run): the next open depth,
   K6 blind (0.45): d = 145, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour cap. REFUTED-BY: SAT (then lifted), a
      cap, or CAKE-FAILED.
 
-OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD; K4 pending.
+OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD; K4 and K6 pending.
+  K5 (17:04): d=125 L=22 phase 0: VERIFIED-UNSAT, cnf sha256
+     cce48cd7ebaef27bbb879832fbf287f498cb07bd0040b4c5f4cc7a579a7acf08, solve 1116 s, check 359 s, lrat 9791.4 MB;
+     phase 1: VERIFIED-UNSAT, cnf sha256 41859aa2069b24da68ecb66108b24908926be1168b6547988f5de1e32b6e5722, solve 1121 s,
+     check 357 s, lrat 9741.1 MB. With the lifted band of 21, R_real(125) = 21 is certified.
   K1, K2: the control proof is VERIFIED UNSAT, and the copy with one hint removed is rejected.
   K3: all four VERIFIED-UNSAT (CaDiCaL 3.0.1 LRAT, cake_lpr through the lock wrapper; proofs deleted after the check,
      CNFs kept with their digests):
