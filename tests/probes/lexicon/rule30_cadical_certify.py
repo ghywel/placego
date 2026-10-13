@@ -69,6 +69,11 @@ ADDENDUM PREDICTION (2026-10-13 20:48 BST, before the run): the next open depth 
   under load; sampled R_real(148) >= 17).
   K14 blind (0.5): d = 148, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour cap. REFUTED-BY: SAT (then lifted), a
      cap, or CAKE-FAILED.
+ADDENDUM PREDICTIONS (2026-10-13 22:10 BST, before the runs): the third and last registered cut round at 147.
+  K15 blind (0.8): the 70-bit word 0100010001010101000100001001001000010000100100100001000010000100001001 (round 2's
+     absent prefix) is VERIFIED absent from the phase-0 language by cake_lpr, and its two 69-bit factors are present.
+  K16 blind (0.4): with both cuts (50 and 70 bits) added, d = 147, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour
+     cap. REFUTED-BY: SAT (then the rounds stop and 147 is reported open under this relaxation), a cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
   K9 HELD, K10 REFUTED, K12 HELD, K13 REFUTED; K11, K14 pending.

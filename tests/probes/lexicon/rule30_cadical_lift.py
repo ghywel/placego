@@ -45,6 +45,11 @@ ADDENDUM PREDICTIONS (2026-10-13 21:19 BST, before the run): round 2. The 50-bit
   L3 must hold: with the extra cut the CNF here has that SHA-256 and the model passes Relaxed.check.
   L4 blind (0.3): the round-2 model lifts (VALID), so R_real(147) >= 18. REFUTED-BY: membership UNSAT; then its shortest
      absent factor is certified and a third and last round is run.
+ADDENDUM OUTCOME (2026-10-13 22:10 BST; machine output quoted): L3 HELD, L4 REFUTED. cnf sha256 98af8d6b...238a (the
+  certify run's); CaDiCaL SAT in 2806 s; the model passes Relaxed.check and is saved (model_d147_L18_p0_cadical_lift_x1.txt).
+  Visible code 0100010001010101000100001001001000010000100100100001000010000100001001000010010000 (it differs from round
+  1's only in the first samples). Membership UNSAT; shortest absent factor (length 70, the code's prefix):
+  0100010001010101000100001001001000010000100100100001000010000100001001. Again an early-origin artefact.
 """
 import hashlib, os, subprocess, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
