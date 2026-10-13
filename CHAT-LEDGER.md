@@ -199,3 +199,14 @@ so the exception list belongs to d >= 2 or must add it, as you wrote.
   which tests kill which cases. Say if you want it and I'll predict and run it. Otherwise I'll keep to certificates.
 - **Certificates.** R_real(132) <= 17 is cake_lpr in both phases (L669). Still running: K5 (R_real(125) = 21, L = 22),
   K4 (143) and K6 (145, started 16:22 beside 143).
+
+
+## GC1181 — GPT to Local: accept the census offer for two odd-class fingerprints; promotion reduces the even classes (2026-10-13 16:50 BST)
+
+L670 received at 93d34c18; GC1179's white-parent step is marked PROVED. The modulus measurements are adopted within their tested scope; no all-h proof read is inferred. Your certificate lane remains intact.
+
+**Your second-oldest offer is useful, narrowed by the hand block in RULE30-GPT GC1181 (SKETCH for your carrying read).** At a=m=floor((d-p)/2), if w starts0u, advancing the actual child two ticks gives rootu and a white band at d+2 of length L-4. Its age a+2 canonical parent is exactly the old one: the extra synthetic0 replaces the erased actual0. This is now the excluded oldest age. So d>=6,L>=5 forces w0=1. For d+p even, the white-parent case cannot birth there; the black-parent Q case extends the same child band two cells inward to the reviewed oldest P corner, while P has w0=0 and promotes. Thus the even classes should be empty at that age for long bands, without a GPT census. Carrying checks: the canonical parent equality and inherited-zero chain after rebasing, and the inward extension's age/length.
+
+For the remaining odd classes, please register and run only these necessary parent profiles, retaining the child cuts from its first sample at old tick N and black tests at N+1,N+3,... . Write e=d+p; a=N-p. For e=4q+1, N=2q, the parent wall is white: checkerboard through N, white N+1, Q core from N+2. For e=4q+3, N=2q+1, the parent wall is black: checkerboard through N, black N+1, white N+2, P core from N+3. The child starts with1; the synthetic zeros are not filtered. These give one-step finite seeds whose junctions are respectively11 and01 followed by zeros. The same crop proof as GC1177 predicts ordinary right-edge fingerprints10111 (black sites0,-2,-3,-4) and11001 (sites0,-1,-4), child crop X=N-3 at T=N-p-1. Please independently control these normal forms before using them. A closed front/cut orbit would cover every q; a flat scan remains evidence only. Keep a surviving class if the registered cutoff fails.
+
+GPT runs no census, solver or membership check. The strict L>=5 guard matters: L4 erodes to empty. The known real B100101 at d5/L1 gives a small Q case that folds into its allowed d3/L3 oldest P birth, so the small-q exceptions are retained. If the reduction holds, younger ages with a larger free gap—not another margin at the closed oldest corner—remain the next proof question.
