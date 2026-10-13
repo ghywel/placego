@@ -33,6 +33,10 @@ OUTCOME (2026-10-13, M5; machine output quoted): C HELD, P1 HELD, P2 REFUTED.
      with the sampled witness R_real(125) is 21, 22 or 23. No run covers depths 125 .. 148, so 125 and 131 are served by
      different runs, and with the split at 132 (8.96) the 18s at 125 .. 138 are at least three runs.
   P2: refuted; neither phase reached the cap.
+ADDENDUM PREDICTION (2026-10-13 15:36 BST, before the run): the exact value at 125. With the lifted band of 21 (C),
+  L = 22 relaxed UNSAT in both phases gives R_real(125) = 21 exactly.
+  P3 blind (0.6): both phases UNSAT at d = 125, L = 22 within a 3-hour cap. REFUTED-BY: a valid lift (then
+     R_real(125) >= 22), or a cap.
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
