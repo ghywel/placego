@@ -43,6 +43,19 @@ OUTCOME (2026-10-13 17:24 BST, M5, 13 s; machine output quoted): D1 HELD, D2 HEL
   Diagnostic after the run (a scratch script, direct simulation of the parent rows with no crop, N <= 120, L = 9 and
      12, 2 random tails, windows min(J, the closing window)): 4,278 cases, none open; the clock excludes 3,112, no11
      1,138 and other certified cuts 28.
+
+ADDENDUM PREDICTIONS (2026-10-13 17:35 BST, before the run): j = 3 as GPT registered it in GC1186, nothing wider.
+  Fixed: window cap W <= 48, prefix-period horizon 2^16, L = 13 (the leading-1 threshold at j = 3: a leading 0 gives a
+  third-oldest band of length L - 4 >= 9), both phases, d >= 6; neither cutoff is raised. Two speed changes, semantics
+  unchanged: the period for W + 2 coordinates is searched among multiples of the period for W + 1, and cuts are
+  matched by length-keyed sets.
+  E1 must hold (the control): the j = 2 rerun closes all 36 cases with maximum window 22, as in D3.
+  E2 must hold (the enumeration): j = 3 has 72 profiles (g = 5: 8 Q + 4 P per r; g = 6: 16 Q + 8 P per r).
+  E3 blind (0.4, GPT's GC1186 prediction): every j = 3 case closes within W <= 28. REFUTED-BY: a case closing at
+     29 .. 48 (then E3 fails but the case is closed) or a survivor at W = 48 (kept OPEN); a missing prefix period at
+     the horizon is UNKNOWN, a computational limit, not a counterexample.
+  E4 (the unexpected check, reported, no prediction): the last nonzero right-edge index of each seed, against the
+     nominal g + 2.
 """
 import itertools, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -131,21 +144,59 @@ def d1(jmax=3, nmax=21):
     return ok and sharp
 
 
+def make_index(forb):
+    idx = {}
+    for f in forb:
+        idx.setdefault(len(f), set()).add(f)
+    return sorted(idx.items())
+
+
+def verdict_fast(row1, p, W, index):
+    """verdict() with cuts matched by length-keyed sets: the same first violation, the same word."""
+    x = depth1_column([None] + row1[:W] + [0], p, W - 1)
+    word = ''
+    for t in range(W):
+        if (t + p) % 2 == 0:
+            word += str(1 ^ x[t])
+            for n, ws in index:
+                if n <= len(word) and word[-n:] in ws:
+                    return 'cut ' + word[-n:], word
+        elif x[t] != 1:
+            return 'black failure at child tick %d' % t, word
+    return 'OPEN', word
+
+
+def period_from(S, k, base):
+    """Least period of (V_1 .. V_k), searched among multiples of the period of a shorter prefix."""
+    sh, m = S.k - k, (1 << k) - 1
+    s0 = (S.e[0] >> sh) & m
+    t = base
+    while t < len(S.e):
+        if (S.e[t] >> sh) & m == s0:
+            return t
+        t += base
+    return None
+
+
 def census(j, wmax, lists):
     Lmin = 4 * j + 1
     held, report = True, []
+    index = {p: make_index(lists[p]) for p in (0, 1)}
     for g in (2 * j - 1, 2 * j):
         for r in (0, 1):
             for bits, typ in profiles(g, r, True):
                 sb = seed_bits(r + 2, bits, typ)
                 S = Edge(sites_of(sb), 1 << 16, wmax + 2)
+                last = max(i for i, b in enumerate(sb) if b)
                 for p in (0, 1):
                     Ns = [N for N in range(r if r else 2, 400, 2) if N - p >= 1 and 2 * N + g - p - 1 >= 6]
-                    closed = None
+                    closed, base, unknown = None, 1, False
                     for W in range(3, wmax + 1):
-                        Pt = S.period(W + 2)
+                        Pt = period_from(S, W + 2, base)
                         if Pt is None:
+                            unknown = True
                             break
+                        base = Pt
                         Pq = Pt // 2 if Pt % 2 == 0 else Pt
                         big = [N for N in Ns if jlen(typ, kmin(typ, N, p, Lmin), g, p) >= W]
                         n0 = big[0]
@@ -153,22 +204,26 @@ def census(j, wmax, lists):
                         for N in range(n0, n0 + 2 * Pq, 2):
                             T = N - p - 1
                             row1 = [S.V(i + 2 - p, T % Pt) for i in range(1, W + 1)]
-                            v, w = verdict(row1, p, W, lists[p])
+                            v, w = verdict_fast(row1, p, W, index[p])
                             if v == 'OPEN':
                                 surv.append((N, w))
                         small = []
                         for N in [N for N in Ns if N < n0]:
                             K = kmin(typ, N, p, Lmin)
                             kid = child_row(N, bits, typ, p, K, [0] * 8)
-                            v, w = verdict(kid[1:], p, jlen(typ, K, g, p), lists[p])
+                            v, w = verdict_fast(kid[1:], p, jlen(typ, K, g, p), index[p])
                             if v == 'OPEN':
                                 small.append((N, w))
                         if not surv and not small:
                             closed = (W, Pq, n0)
                             break
-                    tag = 'g=%d r=%d gap=%s %s p=%d' % (g, r, ''.join(map(str, bits)) or '-', typ, p)
+                    tag = 'g=%d r=%d gap=%s %s p=%d last-nonzero %d/%d' % (g, r, ''.join(map(str, bits)) or '-', typ,
+                                                                           p, last, g + 2)
                     if closed:
                         report.append('%s: CLOSED at W=%d (N-parity-step period %d, classes from N=%d)' % (tag, *closed))
+                    elif unknown:
+                        held = False
+                        report.append('%s: UNKNOWN at W=%d (prefix period beyond the 2^16 horizon)' % (tag, W))
                     else:
                         held = False
                         report.append('%s: OPEN at W=%d; classes %s; small N %s' % (tag, W, surv[:4], small[:4]))
@@ -181,8 +236,9 @@ def main():
     import rule30_relaxed_records_k as rlk
     lists = {0: rlk.load_forbidden('44all') + rlk.load_cuts(0, 40),
              1: rlk.load_forbidden('44allp1') + rlk.load_cuts(1, 40)}
-    d1()
-    for jj in sorted({1, j}):
+    if j <= 2:
+        d1()
+    for jj in (sorted({1, j}) if j <= 2 else [j - 1, j]):
         held, report = census(jj, wmax, lists)
         print('\n'.join(report))
         print('census j=%d (L >= %d): %s, %d profile-phase cases' % (jj, 4 * jj + 1, 'ALL CLOSED' if held else 'SURVIVORS',
