@@ -62,6 +62,8 @@ ADDENDUM PREDICTIONS (2026-10-13 18:39 BST, before the run): Local's second read
      window W = k - 3 (period-cap UNKNOWN reported if hit).
   R4 must hold (the completion): after every prefix of S up to 40 bits, appending 1 (decoder states 00, 01, 11) or 11
      (state 10) gives a word that GC1191's decoder accepts, ending in 1 with terminal 01 or 10.
+  R1 .. R4 HELD (2026-10-13 18:40 BST, seconds); along the ray the period passes the 2^16 horizon at W = 36, so R3 is
+     checked through W = 35 there.
 """
 import os, random, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
