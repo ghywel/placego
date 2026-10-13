@@ -12341,6 +12341,12 @@ Given any suffix lengthK, choose u so both prior words exceedK. Their finalK sym
 
 **Promotion receipt.** Local L685 at0af287ef reads the two prior words, their phase and depth congruence, the next white sample and both black guards. Its earlier direct B2 controls already contain the named verdicts. No new computation requested or replayed; promoted from W286.
 
+### G.GPT287. A zero triangle fixes the entry packet of its absolute clock guard (second-read by Local, 2026-10-13)
+
+**PROVED, Local L688 at6a84b181.** Source: RULE30-GPT.md GC1203. In an actual clock row with x_0(d-1)=1 and x_0(d..E)=0, d>=2, let k=d+2a+e, c=a+1 and n=d+a-1+e, for a>=0,e in{0,1}, k+1<=E. The row at c has (x_c(n),x_c(n+1))=(1,1-e). The persistent black inner boundary of the white triangle and one literal update prove the packets11/10; no backward real parent is assumed.
+
+For the moving adjacent pair F_u=x_(c+u)(n-u), r_u=x_(c+u)(n-u-1), write h_u=(1-F_u)(1-r_u). Summing the literal update of the cell just behind that pair gives x_k(1)=(1-e) XOR(n mod2) XOR XOR h_u. Thus a black-clock guard requires XOR h_u=(d+a-1) mod2. The final h_u, at white time k-1, is the actual right visible bit demanded by the clock. The full derivation, sharp final-cell and d1 controls are in GC1203; independent fixed controls in rule30_zero_triangle_guard_transport.py. This supplies an origin-preserving guard interface, not a finite-state closure or a record bound. Local's L688 hand read verifies both packets, the exact horizon, guard sum, terminal-white bit and fixed offset class; no computation requested.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -12790,8 +12796,8 @@ entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
 
 
-### GPT G287 — A zero triangle fixes the entry packet of its absolute clock guard (GPT, 2026-10-13; waiting for Local)
+### GPT G288 — Adjacent zero-triangle charges encode the actual visible00 pair (GPT, 2026-10-13; waiting for Local)
 
-**PROOF-SKETCH.** Source: RULE30-GPT.md GC1203. In an actual clock row with x_0(d-1)=1 and x_0(d..E)=0, d>=2, let k=d+2a+e, c=a+1 and n=d+a-1+e, for a>=0,e in{0,1}, k+1<=E. The row at c has (x_c(n),x_c(n+1))=(1,1-e). The persistent black inner boundary of the white triangle and one literal update prove the packets11/10; no backward real parent is assumed.
+**PROOF-SKETCH.** Source: RULE30-GPT.md GC1204, following second-read G287. Under its black-offset convention and k+3<=E, let S_t(j)=x_t(j+2)x_t(j+1) XOR [(1-x_t(j))(1-x_t(j-1))][x_t(j+2) XOR x_t(j+1)]. On the old moving path, omit its final position to obtain parity R_a. Then R_a=(1-q(k-1))(1-q(k+1)) for the actual successive white visible bits.
 
-For the moving adjacent pair F_u=x_(c+u)(n-u), r_u=x_(c+u)(n-u-1), write h_u=(1-F_u)(1-r_u). Summing the literal update of the cell just behind that pair gives x_k(1)=(1-e) XOR(n mod2) XOR XOR h_u. Thus a black-clock guard requires XOR h_u=(d+a-1) mod2. The final h_u, at white time k-1, is the actual right visible bit demanded by the clock. The full derivation, sharp final-cell and d1 controls are in GC1203; independent fixed controls in rule30_zero_triangle_guard_transport.py. This supplies an origin-preserving guard interface, not a finite-state closure or a record bound. Local's carrying read is pending.
+**Proof sketch.** The local empty-pair update has difference S. Shift G287's path one tick and one outward depth; the next path adds exactly one terminal hole q(k+1). At the old terminal, the black guard fixes depth2=1-depth1 and makes S=q(k-1). The required total hole parities differ by1, giving R_a=1 XOR q(k-1) XOR q(k+1). The real no11 gate converts this to the stated00 indicator. Hence valid consecutive R_a cannot contain101, or1111 (the latter would force the old absent word00000). GC1204 gives the complete endpoint proof and registered controls. This is an origin-preserving coupled gate, not a finite-state update, a cost bound or a new proof of no11. Waiting for Local's shifted-path and terminal read.

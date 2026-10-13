@@ -30619,7 +30619,7 @@ Model preservation caution: the already-running first lift used the old executab
 
 ## GC1203 — A white triangle transports the absolute guard to a fixed black entry packet (2026-10-13)
 
-**PROOF-SKETCH, carrying step awaiting Local; fixed controls COMPUTED.** L687 at6b7cc6cc adopted: GC1202's horizon interpretation is second-read, and the original147 left model was not saved; no recovery solve needed. The bounded missing inference here is a forward, origin-preserving simplification of GC717's growing ahead-profile charge for young zero bands. It gives an exact entry packet and a hole-parity interface, not an all-depth record bound or a closed update between successive diagonals.
+**PROVED (Local L688 carrying read); fixed controls COMPUTED.** L687 at6b7cc6cc adopted: GC1202's horizon interpretation is second-read, and the original147 left model was not saved; no recovery solve needed. The bounded missing inference here is a forward, origin-preserving simplification of GC717's growing ahead-profile charge for young zero bands. It gives an exact entry packet and a hole-parity interface, not an all-depth record bound or a closed update between successive diagonals.
 
 Let x_t(j) denote the actual left row, with depth j increasing outwards, beside the clock tau(t)=(p+t) mod2. Suppose d>=2, x_0(d-1)=1, and x_0(d..E)=0. Choose a>=0 and e in{0,1}, put
 
@@ -30659,3 +30659,46 @@ Source: tests/probes/lexicon/rule30_zero_triangle_guard_transport.py. Record sea
 **What remains open.** Although the entry packet is fixed, n=d+a-1+e grows with a. The hole stream still depends on the actual inward row. This is not a one-bit autonomous state, a finite-type certificate, or a contradiction to GC1200; its required input is a moving physical pair, not a visible residual. A query beginning inside a longer white run cannot silently use its nominated d as this black inner edge. Hole parities can also cancel; no monotone price follows from them. A useful next inference must control the relation between these origin-dependent hole streams and the real visible cut language. No widening or scalar deadline experiment follows from this identity. Local's requested carrying read: the two parity packets, k+1 horizon and the terminal-white interpretation.
 
 **Filing check.** proof_dupes.py --near W287 passes after correcting the waiting-room heading to its expected GPT G287 form. Nearest C3,06,G223 read: C3 supplies the credited shrink theorem,06 requires a periodic column pair, and G223 is Collatz count regrouping. This adds the absolute guard's first-crossing packet and terminal visible interface, not another shrink theorem. No generated proof pages edited.
+
+
+## GC1204 — Adjacent triangle charges equal the actual visible00 indicator (2026-10-13)
+
+**PROOF-SKETCH, awaiting Local's carrying read; fixed controls COMPUTED.** L688 at6a84b181 adopted: GC1203 is PROVED and G287 promoted. The missing inference was how its separately growing hole streams constrain each other and the real visible language. This supplies a local source law and a coupled parity gate at every depth, with forward origin and exact endpoints. It supplies no bounded-width closure or accumulating cost.
+
+Use GC1203's d,p,a and fixed black offset e=1 XOR((d+p) mod2). Let k=d+2a+e,c=a+1,n=k-c and assume **k+3<=E** and the actual clock through k+3. Thus both consecutive black tests k and k+2 and both triangle packets are covered. Define the spatial hole h_t(j)=(1-x_t(j))(1-x_t(j-1)). At each position on the old path, put A=x_t(j+2),B=x_t(j+1),C=x_t(j),D=x_t(j-1), and define the four-cell source
+
+    S_t(j)=A B XOR h_t(j)(A XOR B).
+
+**Local law.** Rule30 gives
+
+    h_(t+1)(j+1) XOR h_t(j)=S_t(j).
+
+If C=D=0, the new pair is white exactly when A=B=0. Otherwise it is white exactly when A=B=1. Subtracting the old hole in these two cases gives the displayed polynomial. This is a local Boolean identity; neither its source bits nor its parity are free independent choices.
+
+Let Q_a be GC1203's old hole parity along (t,j)=(c+u,n-u),0<=u<n. The next path is this path shifted by(t,j)->(t+1,j+1), plus one terminal hole. Hence
+
+    Q_(a+1)=Q_a XOR XOR_(u=0..n-1) S_(c+u)(n-u) XOR q_next,
+
+where q_old=q(k-1),q_next=q(k+1) are actual successive white visible samples. At the old terminal, t=k-1,j1, the white wall has D=0. The black guard at k forces B=1-C, and q_old=1-C. Substitution gives **S_(k-1)(1)=q_old**, independently of A. Write
+
+    R_a=XOR_(u=0..n-2) S_(c+u)(n-u),
+
+with an empty sum zero. Since the two required Q values differ by1, the coupled condition is
+
+    R_a=1 XOR q_old XOR q_next.
+
+The reviewed real-language no11 gate now gives the stronger interpretation
+
+    R_a=(1-q_old)(1-q_next).
+
+So R_a records the actual temporal00 pair. In particular q_old1 forces R_a0; R_a1 forces both visible bits0. This is the joint right-language restriction missing from two independently accepted black parities. No11 itself is old, and the result is its transfer to these origin-dependent interior path sources.
+
+**Endpoints and finite source-language guards.** The first source on the old path is0 as well: h=0 since the entry's F=1; in the even packet its outer pair is01, in the odd packet its B=0. The extra band hypothesis supplies the even packet's outer white. Thus for n>=2 R_a uses only the strict interior u1..n-2. The terminal must be removed using the old black guard, not presumed white. Without it the local input0000 has S0 but demanded q_old1, refuting that cancellation. All these cells lie in the actual left half; the last inner input is the wall, never a cell beyond it.
+
+The valid consecutive R_a stream cannot contain101: the two outer1 indicators fix overlapping visible zeros and force the middle indicator1. It cannot contain1111: that would force five successive visible zeros, excluded by the already reviewed real cut00000. These are necessary finite-language restrictions on the path-source parity stream, not a new cut catalog or a claim that these two restrictions suffice. R=0 forever is still allowed by these guards and represents alternating visible samples; no positive cost or finite-record bound follows from this language alone.
+
+**Controls.** Preregistered C1 checks all16 four-cell inputs by literal Rule30. C2 checks24 fixed origin/phase/tail cases, with packed and literal engines agreeing; the exact shifted-path identity holds in all, and eight cases pass both individual black guards and verify their terminal cancellation. No earlier clock or right realization is inferred for those synthetic cases. C3 reuses the accepted phase1 depth125 fixture at a0/1/8: the existing visible pairs00/00/10 give the predicted interior parities1/1/0. This tests only the new coupled relation and its two guard endpoints, not the fixture's full certificate or record validity. The dropped-guard local counter is the identified unexpected check. No solver, membership, census, train refinement or Local computation duplicated.
+
+Record searched: adjacent-diagonal/parity with transport/charge ->12hits7files; empty-pair/visible/no11/source ->16hits10files. GC5494, G240's fixed-depth source/no11 cancellation, GC717, GC1203 and L688 read. Source: tests/probes/lexicon/rule30_zero_triangle_adjacent_charge.py. G240's deep-source cancellations remain open; no marginal source density is substituted for this path parity. Local's requested carrying read: the shifted path's one new terminal, old-terminal cancellation, k+3 horizon and R=visible00. Next missing inference: control the growing four-cell interior source paths jointly with these real source-language guards; no closed scalar update or widening run is claimed.
+
+**Filing check.** proof_dupes.py --near W288 passes; G287,G240,G271 read. G287 gives individual absolute guards, G240 concerns fixed-depth inverse sources and their cancellations, and G271 is a black-wall lock with a separate relaxed-hole language. None gives this relation between adjacent growing triangle paths. Their no11 and language-scope cautions remain in force.
