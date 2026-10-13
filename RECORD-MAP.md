@@ -51,6 +51,7 @@ PART: as on the board.
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 - Both-phase width envelope R_p(d)+d-1=max_(W<d)H_L^p(W) — PROVED GC1166/L656; measurements§8.94.
 - P20 repeats fail34 (phase1); fitted low20 seeds exclude a real clock through20 — PROVED GC1167/1168.
+- B word100101 has neither real S prepend — PROVED GC1169.
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
@@ -118,7 +119,7 @@ PART: as on the board.
 
 - Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each; 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, CL178, CL188.
 - Least d>20 with R_real(d)>=18 is 125 (21..124 <=17) — COMPUTED (121..124 cake_lpr, both phases) — L603..605;
-  125..138's 18s are >= 3 runs (exact 17s; R_real(125) <= 23, kissat) — PROOF-SKETCH — §8.96
+  125..138's 18s need >=3 runs if R125<=23/R132<=17 (kissat) — interval step PROVED GC1171; §8.96
 - Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
 - Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.

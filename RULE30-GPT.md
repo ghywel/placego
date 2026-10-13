@@ -30020,7 +30020,7 @@ Local's targeted carrying check: the observation endpoint20 and the left-prefix 
 
 ## GC1169 — A real black-phase word has no real white-phase prepend (2026-10-13)
 
-**PROOF-SKETCH, tier2 requested from Local; fixed certificates COMPUTED.** Missing inference for a language-restricted birth coupling: may a real black-phase child always be lifted to a real white-phase predecessor? No. GC1002 already proves the forward inclusion D(L_S) subset L_B subset L_S, without backward extension. Here D(L_S)[n] means the n-letter tails of (n+1)-letter white-phase words. A six-bit explicit counter makes the first inclusion strict and prevents silently imposing all real-parent cuts in8.82's unrestricted coupling. It does not refute any numerical equality between record maxima.
+**PROVED, Local L663 targeted word/prepend and full-clock review; fixed certificates COMPUTED.** Missing inference for a language-restricted birth coupling: may a real black-phase child always be lifted to a real white-phase predecessor? No. GC1002 already proves the forward inclusion D(L_S) subset L_B subset L_S, without backward extension. Here D(L_S)[n] means the n-letter tails of (n+1)-letter white-phase words. A six-bit explicit counter makes the first inclusion strict and prevents silently imposing all real-parent cuts in8.82's unrestricted coupling. It does not refute any numerical equality between record maxima.
 
 **The real word.** With a black-start wall and a finite right seed having black cells only at sites3 and7, column1 at white times1,3,5,7,9,11 reads
 
@@ -30041,3 +30041,30 @@ This is why the actual version of a birth representation needs an explicit origi
 The cut fixture SHA256 is80eee0a74712632a4339f7cd0a7776f23dd2a45fea8e934b79e6f0aba390d378.2047 finite-word tests compare a two-origin residual-subset guard with direct substring exclusion. The right witness, two formal parent images and ordinary full-seed centre check all pass. The unexpected terminal control is w without its last sample: prepend0 has no listed cut; the last1 creates0100101. Source: `rule30_phase_prepend_guard.py`; predictions and observed-versus-blind stages are retained there. No CUT, membership solver, birth census or existing black-language obstruction replay.
 
 Record searched: prepend/origin/phase-cut ->40 hits13files; two-origin/left-extension-pair with phase/black/cut ->85 hits27files; exact100101 with phase/prehistory ->7 hits5files, unrelated spatial suffixes. GC1002..5, GC971/978, GC1159, G25 and8.82/8.83 read. Local's targeted carrying check: the one-visible-bit time-shift relation and the conclusion that both parent origins are absent while the child is real. This closes that lifting inference, not finite visible-language routes in general. Next: retain origin scope when restricting black-run birth records, or use the directly realized R_real route without silently claiming real prehistory.
+
+
+## GC1170 — A finite birth-parent language carries the child's cuts (2026-10-13)
+
+**PROOF-SKETCH, tier2 requested from Local; finite controls COMPUTED.** Missing inference after GC1169: a sound finite root-language filter for a real child's formal birth parent, without assuming genuine prehistory. The construction below covers every real child at every depth. It corrects the phase/origin filter; it does not bound records.
+
+Let F_S,F_B be any sound finite visible cut lists for the white/black child phases, and K_S,K_B their infinite avoiding languages. C_p(A) is the collection of forced initial left rows for wall phase p and effective visible roots in A. F_p below is one forward left-half update with the wall colour p. The reviewed8.82 time-shift and G25 coding give the **exact formal images**
+
+    F_0(C_0(0 K_B)) = C_1(K_B),
+    F_1(C_1(K_S))   = C_0(K_S).
+
+In the first line the leading0 is a canonical choice of the white parent's otherwise free initial visible bit; its later visible samples are precisely the black child's root. Every child has that formal parent. In the second line the black formal parent's visible root is the white child's root without a prepend. Both statements are about forced left rows, not real right states. Since actual child roots lie in the corresponding K, the images cover every actual child.
+
+**The finite automaton and its origin.** For a white child, the parent wall is black, but its root automaton uses F_S from the outset. For a black child, the parent wall is white; a startup state requires one synthetic0 and then enters the empty residual of the F_B automaton. The synthetic bit is not a sample of the child and must not be consumed by its filter. Thus the parent languages are K_S and0 K_B respectively; do not replace them by the parent's ordinary real-phase language. Standard proper-prefix/suffix cut residuals supply s_S and s_B states, and the second type adds one startup state. With the committed44-bit catalog these nonminimal bounds are12845 and13660. For infinite words, every finite cut check must pass; finite accepted prefixes alone are not asserted to have infinite continuations.
+
+**All-depth record accounting.** Write E_(p,A)(d) for the largest zero-run end in C_p(A), Q_(p,A)(d) for the longest black-run end and P_(p,A)(d) for the1,0,1* end, with the same first-depth-after convention as8.82. Its already reviewed three-shape lemma applied to the two exact images gives, for every d>=2,
+
+    E_(1,K_B)(d) = max(d, E_(0,0K_B)(d-1)-1,
+                         Q_(0,0K_B)(d)-1, P_(0,0K_B)(d)-1),
+    E_(0,K_S)(d) = max(d, E_(1,K_S)(d-1)-1,
+                         Q_(1,K_S)(d)-1, P_(1,K_S)(d)-1).
+
+A missing nonempty pattern may be assigned minus infinity; the floor d represents an empty white band. Suprema and infinity are permitted. Real-record ends are bounded above by the respective left sides. This is an exact accounting for the specified finite-cut relaxation, not a closed recurrence between the two actual phases: the parent families differ. A bound for those parent birth and inherited-zero functions is still required. The root machines can feed GC1158's seeded inverse decoder, retaining the child label and joint seed/residual origin. Its inverse window still grows with depth; no common finite state space or all-depth numerical bound follows here.
+
+**Countercontrols and independent checks.** The real B word100101 from GC1169 has canonical S parent0100101. The new startup-plus-child-B machine accepts it, although ordinary S cuts reject it. Even using the B catalog wrongly on the entire parent root rejects it: the synthetic0 must be outside the child filter. Conversely the real S word101010000 of GC1004 has a formal B parent with that same root; the child-S filter accepts it while ordinary B cuts reject it. Their real-word evidence is adopted, not recomputed.
+
+`rule30_birth_parent_language.py` compares typed prefix machines with direct substring predicates on4094 cases and compares truth-table inversion with independent forward updates on252 short formal shifts. All pass; the synthetic-bit error is the identified unexpected negative. Predictions preceded execution. Record searched: parent-language/birth-automaton/child-phase with cut/coupling/root/prepend ->48 hits13files; G25,8.82, GC1002/3, GC1158/59 and GC1169 read. No solver, CUT, membership, record or Q/P census. Local's targeted carrying check is the first image's canonical0 and the second image's child-S filter. The exact images and filter carry actual children at every depth; a prize bound remains open.
