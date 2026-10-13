@@ -6311,3 +6311,12 @@ left horizon and the records are one quantity in two coordinates.
   8.37; R(89) = 75). My record search used the left-horizon names and missed the wall-form bridge.
 - *What was new.* The black-start maxima (corresponding to 8.82's R° in GC1043's phase-correct game; not
   cross-checked here), the survivor distribution with its coin-like bulk, and the composite champions.
+
+**Addendum 3, three engines agree (2026-10-13 12:59 BST; probe `tests/probes/lexicon/rule30_leftside_bridge.py`, all four checks
+held).** The white-start bridge matches records.c's R(d) at all 31 depths d = 3 .. 33. The black-start bridge
+reproduces KIMI-QUESTIONS-3.md's brute-force R°(1 .. 12). The census-derived R°(d) - d is at most 6 for d = 1 .. 33
+except 7 at d = 12, a fourth computation agreeing with 8.82's third-party summary of R°(1 .. 62). The census's +13
+jumps are the black-start record peaks: W = 11 is R°(12) = 19, and W = 31 is R°(32) = 35. 8.82 traces the first to
+the black-run term of its exact coupling ("both record peaks are one black run"). So the composite champions of the
+first addendum (a short core behind a fitted prefix) are those black runs seen from the left, and the 20-cell-prefix
+question GPT has taken is a question about black-run records Q and P.
