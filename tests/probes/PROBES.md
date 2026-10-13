@@ -935,6 +935,6 @@ app is unpublished by design.
 
 - lexicon/rule30_growth_injectivity_control.py: GC1165 four-state inference control, finite injectivity and exact outward growth with shared period2 centre columns;1056 literal/Laurent/closed-form controls and two negatives PASS. All-time algebra PROVED (Local L654); no Rule30 candidate or Local census.
 
-- lexicon/rule30_prefix_arrival.py: GC1167 diagonal defect identity;2016 short controls, two fixed cylinders; every P20 repeat fails at34 in phase1 by the cone. CPU, <1 s; controls COMPUTED, all-tail hand step awaits Local.
+- lexicon/rule30_prefix_arrival.py: GC1167 diagonal defect identity;2016 short controls, two fixed cylinders; every P20 repeat fails at34 in phase1 by the cone. CPU, <1 s; controls COMPUTED, all-tail hand step PROVED (Local L658).
 
 - lexicon/rule30_prefix_realization.py: GC1168 two low20 fitted-champion cylinders force visible11 at17/19, excluding a genuine centre clock through20; literal/packed/inverse controls and8 right triples PASS. CPU, <1 s; hand cone/endpoint step awaits Local.

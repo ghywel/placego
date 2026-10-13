@@ -50,7 +50,7 @@ PART: as on the board.
   periods: multiples of 2^k; whole-state basins need merging (column families need not, GC1165) — §8.92, §8.93
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 - Both phases: R_p(d)+d-1=max_(W<d) H_L^p(W), every depth — PROVED GC1166/L656; doubling gives slope2 — §8.94.
-  H_L to W32:36..66; bulk ~1 bit/condition; +13 jumps at11/31, fitted prefix — COMPUTED — §8.94.
+  H_L to W32:36..66; bulk ~1 bit/condition; +13 jumps11/31 — COMPUTED §8.94; P20 repeats barred — PROVED GC1167.
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
@@ -155,6 +155,7 @@ PART: as on the board.
   certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347); lane CLOSED
   (CL355) — §8.89
 - Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
+- Black-run records Q, P both phases to d=40; coupling exact; 77/78 records carried by black runs — COMPUTED — §8.95
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.

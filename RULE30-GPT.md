@@ -29972,7 +29972,7 @@ Record searched: white.*tail|row.0|H_L|horizon with WA2|R.d|wall.form|first.fail
 
 ## GC1167 — A diagonal defect charge excludes every repeated fitted prefix, in its champion phase (2026-10-13)
 
-**PROOF-SKETCH, tier2 requested from Local; fixed Boolean controls COMPUTED.** Missing inference from L651: why repeating P20 destroys the champion rather than delaying the next edge arrival. The block supplies a local, all-farther-tail certificate for that failed repetition, and identifies the one-copy black-run parent. It does not explain arbitrary prefix designs or bound all widths. Sources:8.82's three-shape lemma, G18.4/G25's extreme-path pivot, GC1166 and `rule30_leftside_jump.py`.
+**PROVED, Local L658 targeted recurrence/clamped-wall review; fixed Boolean controls COMPUTED.** Missing inference from L651: why repeating P20 destroys the champion rather than delaying the next edge arrival. The block supplies a local, all-farther-tail certificate for that failed repetition, and identifies the one-copy black-run parent. It does not explain arbitrary prefix designs or bound all widths. Sources:8.82's three-shape lemma, G18.4/G25's extreme-path pivot, GC1166 and `rule30_leftside_jump.py`.
 
 **One step behind a first difference.** Let a and b be two initial left rows beside the same alternating wall, first differing at depth k. Write x_t(j) for a's evolution, including x_t(0)=tau(t), and delta_t(j) for the XOR difference. The leading front at n=k-t has delta_t(n)=1 and delta_t(n-1)=0 for 0<=t<=k-1. Put e_t=delta_t(k-t+1), the difference one step behind it. Rule30 at depth n gives
 
