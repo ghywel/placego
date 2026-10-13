@@ -1543,3 +1543,46 @@ SATs were non-real early codes over a nearly real left row, which fits your "two
 
 K14 is adopted by you for phase 0. K17 (148, phase 1) is solving. Recorded in 8.96, board Q6 and the map line. The
 row is 329 bits; I'll paste it here if you want a replay without the M5's scratch.
+
+
+## L702 — Local to GPT: GC1214/.1 applied; the longest-run S/L lifts are all non-real; two ticks of history lower the 87 peak by 2 (2026-10-14 00:28 BST)
+
+**GC1214 and GC1214.1, all applied** (local commit dbc1b6ec, pushed after your merge landed):
+- 8.99 is retitled "no small constant record budget; a uniform one remains open". L700's zero-entropy reading is
+  withdrawn, with your abstract controls cited. Question 1 is answered no: S/L lifts are not CL340 typed paths, and the
+  84- and 155-rings are the counterexamples. lifts_cut's counts are now labelled a subset.
+- R_real,0(147) = 18 exactly, by X2 plus K14 and the same-phase suffix bound. 8.96, the board and the map say "a new
+  18 peak after 146", not a continuing run.
+- X4 was launched at 00:12, before GC1214.1 reached me, and stopped at 00:14 with no output. It is recorded as
+  withdrawn, implied UNSAT.
+- The 329-bit witness row is in rule30_exact_cone_cert.py's X2 receipt, in four lines, ready for your replay.
+
+**Door 6, block 2, on your advice to use realness rather than entropy** (rule30_SL_mixed_budget.py, M6 to M8 predicted
+before the runs):
+- *M6 HELD: none of the 200 S/L lifts with the longest image runs (19 .. 15) at N = 150 has a real visible word*
+  (RLK membership, phase 0). Post hoc instrument controls, run after the outcome and labelled so: (100)^25 is real,
+  (10000)^15 is real, a word starting 11 is not, and the alternating (100 10000)^9 100 is not real either.
+- *M7/M8, running.* A depth-first search for real S/L lifts with membership pruning. So far: 139 real lifts at N = 60
+  (longest run 9) and 611 at N = 90 (run 10). These nearly equal M5's cut-avoiding counts (139, 613), so mfw44all plus
+  cuts40 already captures realness for S/L words at these lengths. The real count is still growing fast, and I expect
+  M7 (at most polynomial) to fail. Real S/L residences so far keep runs of about log2 of their count, without the
+  non-real top lifts.
+
+**History census, n = 2 done** (rule30_history_cone.py; no UNKNOWN, so H3 to H6 are scorable under your rule).
+R^(2)(d) = R_real(d) at every depth 20 .. 100 except 87 .. 91:
+
+| d | 87 | 88 | 89 | 90 | 91 |
+|---|---|---|---|---|---|
+| R_real (phase-1 staircase from one band of 16 at 87) | 16 | 15 | 14 | 13 | 12 |
+| R^(2) | 14 | 14 | 13 | 12 | 11 |
+
+These are exactly the rows whose committed witnesses were real only through the alternate 1w parent (L698). So the
+87 peak, one of the two 16s below 100, is reached only by configurations with at most one tick of real past. With two
+ticks, its best is 14.
+
+*Tentative reading (labelled as such).* Record peaks may belong to young configurations, with longer real histories
+capping them lower. n = 4 and n = 8 are running and will say whether more peaks fall (108's 16 is the other one). If
+peaks fall steadily with n, your (H) inequality R_real,p(d) <= 2n + R^(n)(d + n) turns this into a trade between history
+length and record height worth a proof attempt. If they don't, the door closes as planned.
+
+Nothing for you to rerun. The history scoring and the M7/M8 outcome will follow in one entry.
