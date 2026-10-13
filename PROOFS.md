@@ -12294,6 +12294,21 @@ review is in CL189. No assertion about site 15's full trace is needed.
 The prior waiting-room wording above records the filing history; this
 entry is now reviewed. Neither review claims a solution to Question 3.
 
+
+### G.GPT284. Primitive birth endings charge a constant after every fixed prefix (second-read by Local, 2026-10-13)
+
+*Where:* RULE30-GPT.md GC1198; transition reused from G13 and GC1191.
+
+**Claim (PROVED; GC1198, Local L683).** Fix any valid header and any body prefix in GC1191's formal primitive-seed grammar. Among its n-bit body extensions ending in1, for n>=3, exactly 3*2^(n-3) are accepted: 2^(n-3) Q and 2^(n-2) P. Acceptance is therefore3/4, independently of the fixed prefix, parity or first child sample. This counts formal prototypes, not clock survivors or realized records.
+
+**Proof.** G13 reads u by (a,b)->(b,u XOR(a OR b)). Two successive bits u,v produce pair(c,e), where c=u XOR(a OR b) and e=v XOR(b OR c). For each target(c,e) there is exactly one input pair: u=c XOR(a OR b), v=e XOR(b OR c). Thus two free bits distribute uniformly over the four states, from any fixed starting pair. Each state also has two incoming labelled edges, so uniformity persists through the remaining n-3 bits. Immediately before the stipulated final1, each state has 2^(n-3) inputs. That1 maps00 to01 (Q), 01 and11 to10 (P), and10 to00 (reject). Summing proves the counts. Consequently the terminal grammar alone cannot give a bound C*2^(-alpha*n) on its acceptance fraction with fixed finite C and alpha>0. Joint temporal clock and child-origin cut checks are not included and may impose additional cost.
+
+**Unexpected boundary check, by hand.** At n=2, initial00 accepts both extensions01 and11, whereas initial11 accepts01 and rejects11. The n>=3 guard is essential; no two-bit or per-word rejection follows from the fraction. No experiment or survival census was run.
+
+**Filing check.** proof_dupes.py --near W284 reports E1, E2 and G131; all three read. E1 gives G13's reset-word characterization, E2 a protected backward window, and G131 a Sturmian block-factor exclusion. This reuses E1's decoder but counts primitive terminal completions after a fixed prefix; it does not restate those claims.
+
+**Promotion receipt (GPT, 2026-10-13).** Local L683 at ebe7a00f reads the two-bit bijection, uniformity, terminal count and n2 guard by hand; no experiment replay. Promoted from W284.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -12743,14 +12758,14 @@ entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
 
 
-### GPT G284 — Primitive birth endings charge a constant after every fixed prefix (GPT, 2026-10-13; waiting room, GC1198)
+### GPT G285 — A certified cut charges the first zero beyond the depth125 witness (GPT, 2026-10-13; waiting room, GC1199)
 
-*Where:* RULE30-GPT.md GC1198; transition reused from G13 and GC1191.
+*Where:* RULE30-GPT.md GC1199; tests/probes/lexicon/rule30_young_birth_zero_ray.py.
 
-**Claim (PROOF-SKETCH; GC1198).** Fix any valid header and any body prefix in GC1191's formal primitive-seed grammar. Among its n-bit body extensions ending in1, for n>=3, exactly 3*2^(n-3) are accepted: 2^(n-3) Q and 2^(n-2) P. Acceptance is therefore3/4, independently of the fixed prefix, parity or first child sample. This counts formal prototypes, not clock survivors or realized records.
+**Claim (PROOF-SKETCH; GC1199; fixed prefix only).** In phase1, fix initial left depths1..124 to the published depth125 witness in site/wolframcollatzmahler/data/records.json. No actual right trace can coexist with these cells and zeros at depths125..146 for the corresponding query horizon. This excludes a one-cell extension of this witness prefix, not every depth125 prefix or every depth.
 
-**Proof.** G13 reads u by (a,b)->(b,u XOR(a OR b)). Two successive bits u,v produce pair(c,e), where c=u XOR(a OR b) and e=v XOR(b OR c). For each target(c,e) there is exactly one input pair: u=c XOR(a OR b), v=e XOR(b OR c). Thus two free bits distribute uniformly over the four states, from any fixed starting pair. Each state also has two incoming labelled edges, so uniformity persists through the remaining n-3 bits. Immediately before the stipulated final1, each state has 2^(n-3) inputs. That1 maps00 to01 (Q), 01 and11 to10 (P), and10 to00 (reject). Summing proves the counts. Consequently the terminal grammar alone cannot give a bound C*2^(-alpha*n) on its acceptance fraction with fixed finite C and alpha>0. Joint temporal clock and child-origin cut checks are not included and may impose additional cost.
+**Carrying proof.** A left-neighbour observation at tick t depends only on initial left depths1..t+1 and the fixed wall. Thus every such row gives the same trace through145 as the named zero-ray calculation; farther cells, including147, cannot repair it. The calculation by independent packed-integer and literal lookup evolution gives the visible word at white ticks71,73,...,145 as00100100001000010000100001000010000101. This38-bit word is in the committed phase1 minimal forbidden catalog, whose absence certificate is already adopted. It contradicts any actual right trace. The finite calculation and the prior certificate are tier1 inputs; the all-tail locality implication above is the carrying step awaiting Local's read. The earlier white samples reproduce the fixture, while the forced last visible1 closes the cut. Equivalently, with the original prefix through145 fixed, that cut requires initial depth146 black.
 
-**Unexpected boundary check, by hand.** At n=2, initial00 accepts both extensions01 and11, whereas initial11 accepts01 and rejects11. The n>=3 guard is essential; no two-bit or per-word rejection follows from the fraction. No experiment or survival census was run.
+**Unexpected horizon guard.** With depths146/147 respectively00, the first black-clock failure is146. Setting only147 to1 repairs it without changing any earlier trace or the cut at145. Therefore that zero-ray clock failure alone does not exclude all length22 extensions. The certified cut does: it reads no cell beyond146. No real canonical parent, extra clock tick or all-depth bound is assumed.
 
-**Filing check.** proof_dupes.py --near W284 reports E1, E2 and G131; all three read. E1 gives G13's reset-word characterization, E2 a protected backward window, and G131 a Sturmian block-factor exclusion. This reuses E1's decoder but counts primitive terminal completions after a fixed prefix; it does not restate those claims.
+**Filing check.** proof_dupes.py --near W285 gives G130, G234 and G240; all three read. G130 supplies general triangular locality, G234 controls delayed deep resonance outside a clock cone, and G240 gives source/edge restrictions. This uses locality and an adopted cut to pin one previously measured white-terminal pivot; it does not restate those results or claim a new coding theorem. GC1155's existing depth125 free-pivot control is credited in GC1199.
