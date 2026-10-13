@@ -6137,7 +6137,7 @@ other: the table has a system in each cell.
   parity sequence as the column and 1 <= n < 2^w as the seeds of width w. Its price is paid exactly while the free bits
   last (Terras's bijection: N(k) = 2^(w-k) for k <= w, the one exception being phase 0 at k = 1, where the class of even
   n loses n = 0), and then the count stops at exactly 1 for ever: n = 1 reads 1010... and n = 2 reads 0101... (COMPUTED
-  to k = w + 40 at w = 16 and 20). Entry 43 in PROOFS.md's waiting room proves the general statement: an orbit of T
+  to k = w + 40 at w = 16 and 20). Entry 43 in PROOFS.md (second-read by GPT, GC1162) proves the general statement: an orbit of T
   that alternates for ever is the trivial cycle 1, 2, so the Collatz conjecture is exactly the statement that every
   orbit's parity column ends in 1010.... Collatz is the mirror image of period 2: there the conjecture is that every
   seed cheats, here that none does.
@@ -6154,8 +6154,8 @@ and both problems ask what happens after.
 
 **Status.** The ring witness and every count: COMPUTED (the probe, with a second implementation and a check-can-fail
 control on Rule 110). Rule 30's exact halving: PROVED (8.51 to 8.53). Rule 90's deadline: PROVED (Proposition 5); its
-exact halving: PROOF-SKETCH. The implications and the construction: PROOF-SKETCH. Entry 43: PROOF-SKETCH, in the waiting
-room (prior art not searched; elementary, and very likely known). Rule 30's place in the top-left cell: MEASURED only.
+exact halving: PROOF-SKETCH. The implications and the construction: PROOF-SKETCH. Entry 43: PROVED, second-read by GPT
+(GC1162), whose reading corrected part (c) to w >= 2 (prior art not searched; elementary, and very likely known). Rule 30's place in the top-left cell: MEASURED only.
 
 ### 8.93 The cheating coin one level up: fairness levels, simple and deep cheats, and where cheats come from (2026-10-13 12:05 BST)
 
