@@ -51,7 +51,7 @@ PART: as on the board.
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 - Phase envelopes R_p(d)+d-1=max_(W<d)H_L^p(W) — PROVED GC1166; §8.94.
 - P20 repeats fail34 (phase1); low20 excludes real clock through20 — PROVED GC1167/68.
-- Real B100101: no real S prepend — PROVED GC1169.
+- B100101: no real S prepend — PROVED GC1169.
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
@@ -105,7 +105,7 @@ PART: as on the board.
 - Phase0 R(d)<=d+4 to89; R89=75 — COMPUTED — §8.36/37, RK93.
 - Black-wall WA3 wrong parity; R°(3)=4 — PROVED CL212 — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..120) exact, max16 at108; 121..124,140,144,145,146<=17 cake_lpr (both phases); 125..131,133..138,141,147,152>=18 seen; 132=139=142=17 (132 cake), 143=17 cake; 148p0<=17 — COMPUTED — RR3, L596..617, §8.96.
+- R_real(97..120) exact, max16 at108; 121..124,140,144,145,146<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 seen; 147p0=18; 132=139=142=17 (132 cake), 143=17 cake; 148p0<=17 — COMPUTED — RR3, L596..617, §8.96.
 - Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)=21 (cake), 133>=23, 194>=26, 200>=20 (L21 UNKNOWN 12 h), 279>=28, 1035>=38; Intel's 16 witnesses (to 1552>=31) replay — COMPUTED — SP, IW, L617..620.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - RR/RR3 cone CNF equals finite query — PROVED GC937/CL154; phase/horizon lift audit GC1201; replay separate.
@@ -199,7 +199,7 @@ PART: as on the board.
 - GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
 - GC1172/74/76/77/79/1181/84/85/87/89/91/93..99/1200/03..08 PROVED;1173/1182 fail;1178/1192 SKETCH; m-3 out L17 (§8.97).
 - History records: R_real,p(d)<=2n+R^(n)(d+n), equivalent — PROVED GC1212; K derivation withdrawn (train), game containment unproved; 16 witnesses lack real past; §8.98.
-- Mixed S/L residences: runs ~log2(#lifts), no constant budget — MEASURED — §8.99.
+- Mixed S/L residences: runs grow to N=150; uniform budget OPEN — MEASURED — §8.99.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..35.
 - Cut45 exit/origins: unary/pair stall, joint works — hand/COMPUTED — GC1028/29/39.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.

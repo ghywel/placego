@@ -6458,7 +6458,9 @@ witness: **R_real(147) >= 18** in phase 0. The witness passed RR's check and an 
 at depth 146 that keeps the clock for 165 ticks. Its left row agrees with round 2's relaxed model at depths 58 .. 164;
 the relaxed models were non-real codes over a nearly real left row. **R_real(148) <= 17 in phase 0** is certified (K14,
 with the 50-bit cut; CNF 004aa0947efe7d94da462b495405e84daa3589d06cde49f06a3775c7d5a9a9f3, check 1,686 s), and phase 1
-is solving (K17). So the run of 18s found at 141 continues at 147, and 148's phase 0 does not reach it.
+is solving (K17). With K14, the same-phase suffix bound R_p(d) <= R_p(d + 1) + 1 gives **R_real,0(147) = 18 exactly**
+(GC1214.1): a phase-0 band of 19 at 147 would be a band of 18 at 148. 147 is a new peak of 18 after 146's certified
+<= 17, not a continuation of the run that ends at 141. Phase 1 at 147, and so the two-phase record, is undecided.
 
 ### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
 
@@ -6621,7 +6623,7 @@ RR's exact cone grown n ticks into the past, with the band at cone time n. The n
 and reproduces R_real(20 .. 30) (H1 HELD). The census of R^(n)(d) for n = 1, 2, 4, 8 at d = 20 .. 100 is running; its
 outcome follows here.
 
-### 8.99 Mixed S/L residences have no constant record budget (2026-10-14 00:03 BST)
+### 8.99 Mixed S/L residences: no small constant record budget; a uniform one remains open (2026-10-14 00:03 BST)
 
 Loop check 2 (L700) drew door 6, the finite-support record route. Local's block there took up the item GC1151 left
 open: "Mixed words still need a separate record bound." Probe: `tests/probes/lexicon/rule30_SL_mixed_budget.py`, M1 to M5
@@ -6636,9 +6638,13 @@ predicted before the runs.
 - *Cut-avoiding lifts.* Restricted to lifts whose visible bits avoid the certified phase-0 list (mfw44all plus
   cuts40), the runs are 9, 10, 13 and 15 for 139 to 12,186 lifts: again log2 of the count.
 - *Instrument.* Pure S and pure L reproduce 5 and 6, and a scalar reference matches the vector code.
-- *Conclusion.* No constant budget exists for mixed residences at these sizes (MEASURED). A mixed S/L budget is
-  entropic: about log2 of the number of real S/L words of that length. A constant one would need the real S/L
-  sublanguage to have zero entropy.
-- *Open link.* CL340 bounds every typed path by 466 ticks using the 114-, 117- and 178-bit certified cuts. If every
-  S/L lift is a typed path, real S/L residences are finite outright, and the budget question matters only below
-  466 ticks. Put to GPT in L700.
+- *Conclusion (qualified by GC1214).* The maxima grow across the tested horizons, which refutes small constants
+  (every constant up to 19, and 20 beyond depth 150 in the random sample). A uniform mixed budget remains open: 20
+  bounds every observation, and a finite census proves no growth law. L700's reading, "a constant budget needs a
+  zero-entropy class", is withdrawn. GC1214's abstract controls show that entropy alone neither forces nor forbids
+  long white runs, so a special S/L theorem would need its own invariant.
+- *Scope.* lifts_cut tests each whole last block before truncating it, so its counts are a subset of the cut-avoiding
+  N-tick residences, not an exhaustive count (GC1214).
+- *CL340 does not apply.* S/L lifts are not CL340's typed paths. Its macros are h(SLLS^k) and GC1126's N with guarded
+  entrances, and the actual 84- and 155-rings (h(S)^infinity, h(L)^infinity) keep the clock forever with infinite left
+  support. Real S/L residences are not bounded by 466 ticks (GC1214).

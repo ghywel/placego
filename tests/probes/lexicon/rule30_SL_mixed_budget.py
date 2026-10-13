@@ -60,6 +60,18 @@ ADDENDUM PREDICTION (2026-10-14 00:03 BST, before the run; the second fixture of
      white runs 9, 10, 13, 15 (log2 W = 7.1, 9.3, 11.5, 13.6). Still the coin law, at 0.146 bits per visible bit.
      Scope: the 44-bit list and cuts40 only. CL340's typed-path bound (466 ticks, with the 114-, 117- and 178-bit cuts)
      is beyond this N; whether S/L lifts are typed paths there is put to GPT (L700).
+  GPT's GC1214 read: S/L lifts are not CL340 typed paths (the 84- and 155-rings are eternal S and L words). M2, M4 and
+     M5 refute small constants only, and 20 bounds every observation, so a uniform mixed budget remains open. The
+     zero-entropy reading in L700 is withdrawn. lifts_cut's counts are a subset (whole last blocks are tested before
+     truncation), not an exhaustive count of cut-avoiding residences.
+
+ADDENDUM PREDICTION (2026-10-14 00:15 BST, before the run; the second door-6 block, on GC1214's advice to keep realness
+  rather than entropy). The visible word from a white anchor (the lift's even samples, 75 of them at N = 150) must lie
+  in the phase-0 visible language for the residence to occur in any real configuration at any time. RLK's membership
+  query (in_language_phase, kissat) decides that for each word.
+  M6 blind (0.55): among the 200 S/L lifts with the longest image white runs at N = 150 (runs from 19 down), fewer than
+     half have a real visible word, and the longest run among the real ones is below 19. Counterfactual: the run-19
+     lifts are real, so real S/L residences already show runs of 19 within depth 150.
 """
 import os, sys
 import numpy as np
@@ -197,8 +209,29 @@ def m5():
     print('M5 cut-avoiding lifts: run grows by >= 3 and the count grows:', 'HELD' if grow else 'REFUTED')
 
 
+def m6():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import rule30_relaxed_records_k as rlk
+    ws = lifts(150)
+    runs = longest_white(images(ws))
+    order = np.argsort(-runs, kind='stable')[:200]
+    real = []
+    for i in order:
+        vis = ws[i][0::2]
+        ok = bool(rlk.in_language_phase(vis, 0))
+        real.append((int(runs[i]), ok))
+    nreal = sum(1 for r, ok in real if ok)
+    best_real = max([r for r, ok in real if ok], default=0)
+    print('top-200 runs %d .. %d; real visible words: %d of 200; longest real run %d; run-%d lifts real: %d of %d' % (
+        real[0][0], real[-1][0], nreal, best_real, real[0][0], sum(1 for r, ok in real if ok and r == real[0][0]),
+        sum(1 for r, ok in real if r == real[0][0])))
+    print('M6 fewer than half real and longest real run below 19:', 'HELD' if nreal < 100 and best_real < 19 else 'REFUTED')
+
+
 if __name__ == '__main__':
-    if len(sys.argv) > 1 and sys.argv[1] == 'm5':
+    if len(sys.argv) > 1 and sys.argv[1] == 'm6':
+        m6()
+    elif len(sys.argv) > 1 and sys.argv[1] == 'm5':
         m5()
     else:
         main()

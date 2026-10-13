@@ -46,6 +46,14 @@ OUTCOME X2 (2026-10-14 00:07 BST, M5; machine output quoted): X2 REFUTED by a re
   keeps the clock for 165 ticks (it fails at 165, past the cone). So R_real(147) >= 18 (phase 0). Its left row agrees
   with round 2's relaxed model (rule30_cadical_lift.py) on depths 164 .. 58; the two first differ at depth 57. The
   relaxed artefacts carried non-real codes over a left row that is nearly real.
+  The witness row, cells -164 .. 164 at time 0 (329 bits, for replay; GC1214.1):
+     0000000000000000001111011101101101110011000111001011111111100101001110000111000110000010001111111101
+     1110001011011001011100000011101000111111100110001100001100100101001001010001101100011100110010100110
+     0100011001010010001110001101000110011111000001000000100101011011010000000000000000000000000000000000
+     00000000000000000000000000000
+  With K14 (148 phase 0 <= 17) and the same-phase bound R_p(d) <= R_p(d + 1) + 1, R_real,0(147) = 18 exactly
+  (GC1214.1).
+  X4 WITHDRAWN (2026-10-14 00:14 BST, stopped before any output): its answer is implied UNSAT by that same bound.
 
 ADDENDUM PREDICTIONS (2026-10-14 00:12 BST, before the runs; the frontier after X2, both with the phase-0 lists plus the 50-
   and 70-bit cuts). Record searched: as above, plus 8.96's addendum (149, 150 sampled 15 .. 17; 148 phase 0 <= 17).
