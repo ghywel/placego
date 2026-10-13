@@ -49,7 +49,8 @@ PART: as on the board.
 - Fair-coin question: density can't see 0101; pair/price table fills 4 cells (Collatz cheats, entry 43); k-fair
   periods: multiples of 2^k; basins need merging, none on the line — COMPUTED, PROOF-SKETCH — §8.92, §8.93
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
-- H_L to W = 32: 36..66, neither W+19 nor 2W-6; bulk pays ~1 bit/condition, champions jump +13 at 11, 31 — COMPUTED — §8.94
+- H_L to W = 32: 36..66, neither W+19 nor 2W-6; bulk pays ~1 bit/condition, champions jump +13 at 11, 31 (W=31 = W=11 champion behind a
+  20-cell prefix, not repeatable) — COMPUTED — §8.94
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches

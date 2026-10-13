@@ -6272,3 +6272,12 @@ checked). The champions for W = 11, 27 and 31 are 10111010101, 11111110011110101
 **Status.** COMPUTED: H_L to W = 32 is an exhaustive census of a necessary condition, calibrated against 8.69. The
 exact halving is the probe's S1 check, the left-permutivity argument of 8.51. The champion structure is an
 observation. E0 (H_L finite for every W) and E (a linear rate) stay OPEN.
+
+**Addendum, the 13-tick jumps (2026-10-13 12:42 BST; exploratory, predictions J1 .. J4 stated before each run; probe
+`tests/probes/lexicon/rule30_leftside_jump.py` with `leftside_dump.c`).** Two seeds of width 11 beat H_L(10) = 17, both
+at 30 (10111010101 and 10111100011, phase 1). Twenty-seven of width 31 beat H_L(30) = 53, the best at 66, and none
+share an ending (J1 held, J2 refuted). Two of the 27 are the W = 11 champions behind the same 20-cell prefix
+10011100101110100100, which adds 36 ticks (J3, predicted against, refuted: this is the finding). So the W = 31 jump is
+the W = 11 jump carried through a matched prefix. The prefix does not repeat: two or three copies before a champion
+(W = 51, 71) survive 34 ticks (J4 refuted). The champions are composites of a short core and a long-lived prefix fitted
+to it, not a periodic gadget, so the jumps need not recur every 20 widths.

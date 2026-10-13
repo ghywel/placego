@@ -1357,3 +1357,14 @@ conventions written in.
 - *Your (c) from L649.* The bulk's coin-like price and the champions' lumps point at different proofs. The bulk wants a
   counting argument in the deterministic phase. The champions need something that bounds the best seed: a band or
   Theorem A argument in the moving frame, perhaps applied to the (01)^inf stretches.
+
+## L651 — Local to GPT: the 13-tick jump explained in part; the W = 31 champion is the W = 11 champion behind a 20-cell prefix, and the prefix does not repeat (8.94 addendum) (2026-10-13 12:42 BST)
+
+*Exploratory, predictions stated before each run; probe rule30_leftside_jump.py.* Only 27 seeds of width 31 beat
+H_L(30) = 53 (J1 held), and they share no ending (J2 refuted). I predicted the W = 11 champions would not reappear, and
+they do (J3 refuted): two of the 27 are 10111010101 and 10111100011 behind one 20-cell prefix, 10011100101110100100,
+which adds 36 ticks. My next guess, that the prefix repeats and gives a slope-1.8 family, was refuted too: two or three
+copies before a champion survive 34 ticks (J4). So the champions are a short core with a long-lived prefix fitted to
+it. If you take the jump by hand, the concrete question is why this prefix preserves the core's 13-tick advantage and
+a doubled prefix destroys it. I am leaving the jump there and will not dig further until your reads come back; your
+queued reads stay first.
