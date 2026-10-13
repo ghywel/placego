@@ -6372,3 +6372,37 @@ run).** Both coupling identities stay exact, and the black-run ends stay inside 
 conjecture: the largest end minus 2d is -1 in the black-start phase (bound +5) and -4 in the white-start phase (bound
 +8). R jumps from 34 to 43 at d = 45, a Q_B birth (Q_B(45) = 89), and records.c agrees on R(45) and R(48). The excess
 has not returned near its d = 12, 13 values.
+
+**Correction (2026-10-13 13:36 BST; GPT's pointer in GC1168).** STRATEGY-PLAN.md D3 had already done most of this. It COMPUTED Q and
+P in both phases and the coupling identity at every depth 2 .. 60 (a swarm agent, its skeptic identically, and Cloud
+to 13). It PROVED the leaky-max form Psi(d) = max(-d, Psi(d-1) - 3, b(d)), with Psi = max(E, E°) - 2d, so the coupled
+system is bounded if and only if the birth sequence b is. That is the induction 8.95 restated. It also records births
+jumping 9 to 14 cells above every earlier zero-run end at d = 12, 32 and 58. So "the excesses fall after d = 13" holds
+only to 48, and D3 has a further jump at 58.
+- *What 8.95 adds:* a committed engine with four independent checks, committed tables to 48 (D3's were agent output),
+  and the term-by-term classification.
+- *Why it was missed:* the probe's "Record searched" line named terms that had been grepped in tests/ and in named
+  sections, not run through record_find. record_find on "Q and P" or "coupling" finds D3. It is the second such miss
+  today, after the wall-form bridge (8.94 addendum 2).
+
+### 8.96 The 18s at depths 125 .. 138 are several runs, split at the exact 17s (STRATEGY-PLAN.md section 6) (2026-10-13 13:39 BST)
+
+*Local; the swarm listed it as open ("Whether the 18s at depths 125..136 are one run or several: cheap, and left
+unanswered by two doors"). Record searched: 'one run or several', 'cluster of 18', '18s at', 'few long runs' -> only
+STRATEGY-PLAN.md (D1, section 6) and GC1050's provenance note.*
+
+**The argument (PROOF-SKETCH, two lines).** A zero run that gives at least 18 at depth 131 covers [131, 148]. If the
+same run also gives at least 18 at depth 133 it covers [133, 150], so it covers [132, 149] and gives at least 18 at
+132. But R_real(132) = 17 (both phases; the upper bound is a kissat UNSAT at L = 18, not yet a cake_lpr certificate).
+So no single run serves both sides of 132. The same argument splits the cluster at the other exact 17s, 139 and 142.
+
+**The witnesses** (site/wolframcollatzmahler/data/records.json, from Local's census). Four distinct witness runs serve
+the cluster: one in phase 1 ending at depth 146 (it gives the 18s at 125 .. 128), one in phase 0 ending at 148 (129,
+130), one ending at 149 (131), and one ending at 156 (133 .. 138, with 17 at 139). D8b's witnesses of 21 at 125 and
+23 at 133 are the first and last of these.
+
+**Not settled.** Whether 125 .. 131 could be a single run: it would need R_real(125) >= 24, and the sampled bound is
+21. An exact value at 125, or a certified upper bound below 24, settles it.
+
+**Status.** The split at 132, 139 and 142 is PROOF-SKETCH, conditional on the solver verdicts behind R_real = 17
+there. The witness structure is COMPUTED from the committed exports.

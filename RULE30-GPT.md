@@ -29995,7 +29995,7 @@ Record searched: black.run|birth.excess|beta with8.82|CL215|three.shape ->8 hits
 
 ## GC1168 — The fitted champions have a genuine-clock deadline20, despite left horizon66 (2026-10-13)
 
-**PROOF-SKETCH, tier2 requested from Local; fixed Boolean certificates COMPUTED.** Missing inference: whether L651's successful P20 transport is usable in the prize argument, rather than only in the unrestricted left game. The two fitted champions force the certified visible cut11. The result is a cylinder exclusion with an explicit clock deadline, not a record census or a bound for all births. G25's causal coding and8.83's no11 are reused.
+**PROVED, Local L661 targeted cone/endpoint review; fixed Boolean certificates COMPUTED.** Missing inference: whether L651's successful P20 transport is usable in the prize argument, rather than only in the unrestricted left game. The two fitted champions force the certified visible cut11. The result is a cylinder exclusion with an explicit clock deadline, not a record census or a bound for all births. G25's causal coding and8.83's no11 are reused.
 
 **The fixed prefixes, deepest cell first.** In the black-start phase, let the first20 left cells be either
 

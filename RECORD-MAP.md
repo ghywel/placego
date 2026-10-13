@@ -46,11 +46,11 @@ PART: as on the board.
 - Primes, Fibonacci, pi, 01: the best start of w <= 18 squares holds them w + 6 steps at most — COMPUTED — CS
 - First right-paid ratio rho_j exact to j = 35; its distance from 1/2 does not decay — COMPUTED — L224, L225; ZR3 (L316)
 - A uniform linear edge deadline T <= cj + b would give Q1 with alpha = 1/c — PROVED L345/CL161 — GC637/947
-- Fair-coin question: density can't see 0101; pair/price table fills 4 cells (Collatz cheats, entry 43); k-fair
-  periods: multiples of 2^k; whole-state basins need merging (column families need not, GC1165) — §8.92, §8.93
+- Fair-coin question: pair/price table fills 4 cells (Collatz cheats, entry 43); k-fair periods are multiples
+  of 2^k; whole-state basins need merging, column families need not (GC1165) — §8.92, §8.93
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
-- Both phases: R_p(d)+d-1=max_(W<d) H_L^p(W), every depth — PROVED GC1166/L656; doubling gives slope2 — §8.94.
-  H_L to W32:36..66; bulk ~1 bit/condition; +13 jumps11/31 — COMPUTED §8.94; P20 repeats barred — PROVED GC1167.
+- Both-phase width envelope R_p(d)+d-1=max_(W<d)H_L^p(W) — PROVED GC1166/L656; measurements§8.94.
+- P20 repeats fail34 (phase1); fitted low20 seeds exclude a real clock through20 — PROVED GC1167/1168.
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
@@ -107,8 +107,8 @@ PART: as on the board.
 - R_real(97..120) exact, maximum16 at108; 121..124, 140, 144<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132=139=142=17 (both phases, kissat) — COMPUTED — RR3, L596..617.
 - Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)>=21, 133>=23, 194>=26, 200>=20 (L=21 UNKNOWN at 12 h, L641), 279>=28, 1035>=38; Intel's 16 witnesses (to 1552>=31) replay valid — COMPUTED — SP, IW, L617..620.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
-- Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.
-- VC3 receipt gate/status repairs pass synthetic controls; stale-cache recovery manual — source/fixture audit — GC961/965; no certificate replay.
+- RR/RR3 cone CNF matches the finite query, solver-free — PROVED (source scope, CL154) — GC937; replay attributed apart.
+- VC3 gate/status repairs pass synthetic controls (stale-cache recovery manual; no certificate replay) — GC961/965.
 - RR3 completed 97..120 on M5 (solver values); deciding UNSAT d3..97 by drat-trim/cake_lpr; VC 200/200; RR3 98..105,
   107, 109 by cake_lpr — COMPUTED — RRC L438, L480, VC3 (rule30_cloud_rr3.py, rule30_verified_certs.py).
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
@@ -117,7 +117,8 @@ PART: as on the board.
 - Two-gap train: clamped phase-0 seed1001 eternal via sixteen-tick causal lock at14, every tail beyond46 — PROVED CL189/L595 — GC1020/W282; TG. Measured period4 to6, period8 to14, chaos pinned15; no finite invariant window to60.
 
 - Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each; 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, CL178, CL188.
-- Least d>20 with R_real(d)>=18 is 125 (21..124 <=17) — COMPUTED (121..124 cake_lpr, both phases) — L603..605.
+- Least d>20 with R_real(d)>=18 is 125 (21..124 <=17) — COMPUTED (121..124 cake_lpr, both phases) — L603..605;
+  125..138's 18s are several runs, split at exact 17s — PROOF-SKETCH — §8.96
 - Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
 - Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
@@ -155,7 +156,7 @@ PART: as on the board.
   certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347); lane CLOSED
   (CL355) — §8.89
 - Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
-- Black-run records Q, P both phases to d=40; coupling exact; 77/78 records carried by black runs — COMPUTED — §8.95
+- Black-run records Q, P to d=48 (D3 to 60; leaky-max PROVED); 77/78 are black runs — COMPUTED — §8.95, D3
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
