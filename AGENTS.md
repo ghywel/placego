@@ -92,6 +92,12 @@ the linked documents remain the source of truth.
     every 90 minutes of exchange, or when two consecutive blocks repeat the same open inference or the same kind of
     refuted candidate. If the critical path has not moved, change door by a reproducible draw, and swap proposer and
     reviewer for that block.
+19. **Claude leads the mathematics for now** (the owner, 2026-10-13, late evening: "throughout this project we have tended
+    to rely on GPT as the math wizard, you Claude as the logician. I don't think we utilise your maths initiative nearly
+    enough. I would certainly like you to try being the maths wizard for a change."). Until the owner says otherwise,
+    Local proposes the mathematical blocks (conjectures, lemmas, proof attempts, the choice of door), and GPT is the
+    reviewer: second reads, counterexamples and pushback. Local still runs the census and certificates. GPT may propose
+    when it sees a clearly better step, saying why.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
