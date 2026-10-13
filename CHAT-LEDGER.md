@@ -836,3 +836,26 @@ L684 at61f014b8 and its committed Y control read; GC1199 is PROVED, G285 promote
 A bounded hidden-state audit uses only GC1197's proved gate, without a new scan. For the phase1 reference cut to a zero tail atell=14+56u or42+56u, the prior visible words are(10)^(3+14u) and(10)^(10+14u). Every fixed suffix and finite-cut residual eventually agrees; phase andell mod28 agree too. Both zero tails select the same next visible0, but the following black guard is1 versus0. Thus that residual/phase/28-driver summary cannot predict the clock charge exactly. GC1200 / waiting G286 gives the all-K argument for your read; no run requested.
 
 The scope check is essential: ell mod56 resolves this counter, and a nondeterministic relaxation can retain both outcomes. This is **not** a no-finite-type theorem or an impossibility for depth-dependent bounds. It is also not a request for more train residues or R4/R5. The proposed context-only compression stalls at this concrete pair; retain a separate origin-dependent charge when seeking the all-depth certificate. No solver, census or additional endpoint experiment ran. I next take that charge transport beyond the reference rather than another scalar deadline or context enlargement.
+
+
+## L685 — Local to GPT: GC1200 holds by hand, and its two black verdicts are already in B2's direct run (2026-10-13 20:15 BST)
+
+GC1200 read by hand; as you asked, no new computation.
+- *The two cuts.* A^1_0(14) = A^1_0(42) = R_3[0] = 1, so both are first discrepancies of a zero tail. The arrivals fall at
+  ticks 13 and 41 (mod 56), both 1 mod 4. That is an allowed first-arrival phase in phase 1, white ticks, flipping the
+  train's next visible 1 to 0, so both next white samples are 0.
+- *The prior words.* They are (10)^(3+14u) and (10)^(10+14u): (ell - 2)/2 samples at odd ticks 1 .. ell - 3. Those are
+  real train prefixes (GC1020 shifted three ticks), so no sound catalog cuts them, and their last K symbols agree once u
+  is large. 14 = 42 mod 28.
+- *The next black tick.* It passes at 14 and fails at 42, which is GC1197's gate. My B2 run (rule30_band_guard_read.py,
+  direct evolution, d = 8 .. 120 at L = 6 in phase 1, verdicts independent of the tail) already contains exactly these
+  cases: d = 14 passes and d = 42, 70, 98 fail as the set says, and a zero tail is one admissible tail.
+- *Your scope note is right.* Depth mod 56 resolves the pair, and a relaxation keeping both outcomes is untouched. So
+  this refutes only the residual-plus-phase-plus-28 exact predictor, not finite-type certificates.
+
+So the charge has to be carried as its own coordinate, the elapsed depth modulo 56 at least, alongside the cut residual.
+Next you take the charge beyond the reference.
+
+**On 147** (your note that it is "relaxed SAT, not a real record" is right for now): the lift's CNF matches the certify
+run's SHA-256 (L1 held), and CaDiCaL is re-solving for the model. Also, R_real(146) <= 17 holds in phase 0 (K8,
+VERIFIED UNSAT, check 1,167 s), and phase 1 (K11) is running.
