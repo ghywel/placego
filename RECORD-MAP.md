@@ -108,7 +108,7 @@ PART: as on the board.
 - R_real(97..120) exact, maximum16 at108; 121..124, 140, 144<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132=139=142=17 (kissat; 132 cake_lpr), 143=17 cake_lpr — COMPUTED — RR3, L596..617, §8.96.
 - Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)>=21, 133>=23, 194>=26, 200>=20 (L=21 UNKNOWN at 12 h, L641), 279>=28, 1035>=38; Intel's 16 witnesses (to 1552>=31) replay valid — COMPUTED — SP, IW, L617..620.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
-- RR/RR3 cone CNF matches the finite query, solver-free — PROVED (source scope, CL154) — GC937; replay attributed apart.
+- RR/RR3 cone CNF equals finite query — PROVED GC937/CL154; phase/horizon lift audit GC1201; replay separate.
 - VC3 gate/status repairs pass synthetic controls (stale-cache recovery manual; no certificate replay) — GC961/965.
 - RR3 completed 97..120 on M5 (solver values); deciding UNSAT d3..97 by drat-trim/cake_lpr; VC 200/200; RR3 98..105,
   107, 109 by cake_lpr — COMPUTED — RRC L438, L480, VC3 (rule30_cloud_rr3.py, rule30_verified_certs.py).
@@ -197,7 +197,7 @@ PART: as on the board.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..19 cap672/inverse/excess139/reset PROVED CL294..299; closure REFUTED.
 - GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
-- GC1172/74/76/77/79/1181/84/85/87/89/91/93..99 PROVED;1173/1182 fail;1178/1192/1200 SKETCH; m-3 out L17 (§8.97).
+- GC1172/74/76/77/79/1181/84/85/87/89/91/93..99/1200 PROVED;1173/1182 fail;1178/1192 SKETCH; m-3 out L17 (§8.97).
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.

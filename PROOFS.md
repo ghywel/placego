@@ -12324,6 +12324,23 @@ entry is now reviewed. Neither review claims a solution to Question 3.
 
 **Promotion receipt.** L684 at61f014b8 reads the locality and exact horizon and independently checks the word under three random tails. Its catalog certificate is adopted, not rerun. Promoted from W285.
 
+
+### G.GPT286. A visible cut residual loses a zero-tail clock charge (second-read by Local, 2026-10-13)
+
+*Where:* RULE30-GPT.md GC1200; uses the already-proved GC1197 gate.
+
+**Claim (PROVED; GC1200, Local L685; exact clock prediction only).** A finite visible suffix, the child phase, and depth modulo28 do not determine the next black-clock verdict of every zero-terminated left row. This also applies to an ordinary finite forbidden-word residual as the visible summary. It does not exclude nondeterministic relaxations or richer finite hidden states.
+
+**Proof from the established guard.** In phase1, let A^1 be GC1197's seven-ring reference. Set b_j=A^1_0(j) for j<ell and b_j=0 for j>=ell. Choose ell_+=14+56u and ell_-=42+56u, with u arbitrarily large. Both are first discrepancies: A^1_0(ell)=1. Before their arrivals, all black-clock tests pass and their visible prefixes are respectively(10)^(3+14u) and(10)^(10+14u). These are actual train prefixes: shifting GC1020's phase0 realization forward three ticks gives phase1 with the same visible(10)^infinity. Hence every sound finite cut catalog accepts them. Their next white sample at tickell-1 is0, since the front flips the reference left-neighbour0 to1. Their next black sample at tickell differs: GC1197's proved phase1 gate permitsell mod56=14 and rejectsell mod56=42. Thus the values are1 and0.
+
+Given any suffix lengthK, choose u so both prior words exceedK. Their finalK symbols agree, both histories have phase1, the next observation has the same time colour, and ell_+=ell_- modulo28. For a catalog of maximal word lengthM, its standard cut residual depends only on the lastM-1 letters; chooseK>=M-1. The residuals are therefore identical before the common next visible0 is consumed, yet the following black guards differ. Hence the specified summary cannot predict that guard exactly.
+
+**Unexpected scope check.** Depth modulo56 distinguishes this pair and suffices for GC1197's narrow two-arrival gate. So the counter is no obstruction to all finite-type certificates, no proof of unbounded memory after adding other coordinates, and no failure of a sound overapproximation that retains both black outcomes. No real long-band membership is asserted for either zero-terminated row, and the passing first guard is not infinite survival. This audits a proposed state compression using proved controls; no new train scan, residue refinement or widening ran.
+
+**Filing check.** proof_dupes.py --near W286 gives G162, G167 and G285; all three read. The first two concern periodic-driver reset costs, and G285 pins one early-departure endpoint by a certified cut. This applies the established GC1197 clock gate to a suffix-state compression claim; it restates none of those results and supplies no new train scan.
+
+**Promotion receipt.** Local L685 at0af287ef reads the two prior words, their phase and depth congruence, the next white sample and both black guards. Its earlier direct B2 controls already contain the named verdicts. No new computation requested or replayed; promoted from W286.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -12771,18 +12788,3 @@ the entry/exit history; the other five row bits need not be pinned.
 The still weaker disjunctive guard itself would also suffice. Neither
 entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
-
-
-### GPT G286 — A visible cut residual loses a zero-tail clock charge (GPT, 2026-10-13; waiting room, GC1200)
-
-*Where:* RULE30-GPT.md GC1200; uses the already-proved GC1197 gate.
-
-**Claim (PROOF-SKETCH; GC1200, exact clock prediction only).** A finite visible suffix, the child phase, and depth modulo28 do not determine the next black-clock verdict of every zero-terminated left row. This also applies to an ordinary finite forbidden-word residual as the visible summary. It does not exclude nondeterministic relaxations or richer finite hidden states.
-
-**Proof from the established guard.** In phase1, let A^1 be GC1197's seven-ring reference. Set b_j=A^1_0(j) for j<ell and b_j=0 for j>=ell. Choose ell_+=14+56u and ell_-=42+56u, with u arbitrarily large. Both are first discrepancies: A^1_0(ell)=1. Before their arrivals, all black-clock tests pass and their visible prefixes are respectively(10)^(3+14u) and(10)^(10+14u). These are actual train prefixes: shifting GC1020's phase0 realization forward three ticks gives phase1 with the same visible(10)^infinity. Hence every sound finite cut catalog accepts them. Their next white sample at tickell-1 is0, since the front flips the reference left-neighbour0 to1. Their next black sample at tickell differs: GC1197's proved phase1 gate permitsell mod56=14 and rejectsell mod56=42. Thus the values are1 and0.
-
-Given any suffix lengthK, choose u so both prior words exceedK. Their finalK symbols agree, both histories have phase1, the next observation has the same time colour, and ell_+=ell_- modulo28. For a catalog of maximal word lengthM, its standard cut residual depends only on the lastM-1 letters; chooseK>=M-1. The residuals are therefore identical before the common next visible0 is consumed, yet the following black guards differ. Hence the specified summary cannot predict that guard exactly.
-
-**Unexpected scope check.** Depth modulo56 distinguishes this pair and suffices for GC1197's narrow two-arrival gate. So the counter is no obstruction to all finite-type certificates, no proof of unbounded memory after adding other coordinates, and no failure of a sound overapproximation that retains both black outcomes. No real long-band membership is asserted for either zero-terminated row, and the passing first guard is not infinite survival. This audits a proposed state compression using proved controls; no new train scan, residue refinement or widening ran.
-
-**Filing check.** proof_dupes.py --near W286 gives G162, G167 and G285; all three read. The first two concern periodic-driver reset costs, and G285 pins one early-departure endpoint by a certified cut. This applies the established GC1197 clock gate to a suffix-state compression claim; it restates none of those results and supplies no new train scan.
