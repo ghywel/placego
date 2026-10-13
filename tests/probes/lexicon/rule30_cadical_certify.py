@@ -57,6 +57,13 @@ ADDENDUM PREDICTION (2026-10-13 19:30 BST, before the run): the next open depth 
 ADDENDUM PREDICTION (2026-10-13 20:11 BST, before the run): K8 held in phase 0 (below), so the other phase.
   K11 blind (0.6): d = 146, L = 18, phase 1 is VERIFIED-UNSAT within a 4-hour cap; then R_real(146) <= 17 (sampled 15).
      REFUTED-BY: SAT (then lifted), a cap, or CAKE-FAILED.
+ADDENDUM PREDICTIONS (2026-10-13 20:26 BST, before the runs): K10's relaxed model at d = 147 is an artefact
+  (rule30_cadical_lift.py L2: membership UNSAT); its shortest absent factor, length 50, is a cut candidate.
+  K12 blind (0.8): the 50-bit word 00001000010101010001000010010010000100001001001000 is VERIFIED absent from the
+     phase-0 visible language by cake_lpr (CaDiCaL LRAT on RLK's membership CNF, `cut` below), and its two 49-bit
+     factors are present (kissat), so it is a certified minimal cut. REFUTED-BY: SAT, or CAKE-FAILED.
+  K13 blind (0.55): with that cut added to the phase-0 list, d = 147, L = 18, phase 0 is VERIFIED-UNSAT within a
+     4-hour cap. REFUTED-BY: SAT again (then lifted again; at most three cut rounds), a cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
   K10 REFUTED; K9, K11 pending.
@@ -124,8 +131,57 @@ def controls():
     print("lrat:", lines, "| corrupted:", out)
     return k1, k2_rejected
 
-def certify(d, L, ph, cap):
-    forb = rlk.load_forbidden("44all" if ph == 0 else "44allp1") + rlk.load_cuts(ph, 40)
+def language_cnf(w, phase):
+    """RLK's membership CNF for visible word w (rule30_relaxed_records_k.in_language_phase), as text."""
+    k = len(w)
+    first = phase
+    last = first + 2 * k - 2
+    var, nv, cl = {}, [0], []
+
+    def x(t, i):
+        if (t, i) not in var:
+            nv[0] += 1
+            var[(t, i)] = nv[0]
+        return var[(t, i)]
+    for t in range(last):
+        for i in range(1, last - t + 1):
+            r, c, y = x(t, i + 1), x(t, i), x(t + 1, i)
+            nv[0] += 1
+            o = nv[0]
+            cl += [[-c, o], [-r, o], [c, r, -o]]
+            if i == 1:
+                wall = (t + phase) % 2
+                cl += ([[-y, -o], [y, o]] if wall else [[-y, o], [y, -o]])
+            else:
+                l = x(t, i - 1)
+                cl += [[-y, l, o], [-y, -l, -o], [y, -l, o], [y, l, -o]]
+    for s_, b in enumerate(w):
+        v = x(first + 2 * s_, 1)
+        cl.append([v] if b == "1" else [-v])
+    return "p cnf %d %d\n" % (nv[0], len(cl)) + "".join(" ".join(map(str, c)) + " 0\n" for c in cl)
+
+
+def cut(w, ph, cap=3600):
+    """Certify that w is absent from the phase-ph visible language (CaDiCaL LRAT + cake_lpr) and that its two maximal
+    proper factors are present (kissat), i.e. a certified minimal cut."""
+    base = os.path.join(rlk.DIR, "cut_%d_p%d_%s" % (len(w), ph, hashlib.sha256(w.encode()).hexdigest()[:8]))
+    text = language_cnf(w, ph)
+    open(base + ".cnf", "w").write(text)
+    r = subprocess.run([CADICAL, "-q", "-t", str(cap), "--lrat", "--no-binary", base + ".cnf", base + ".lrat"],
+                       capture_output=True, text=True)
+    verdict = {10: "SAT", 20: "UNSAT"}.get(r.returncode, "UNKNOWN%d" % r.returncode)
+    if verdict == "UNSAT":
+        verdict = "VERIFIED-ABSENT" if cake(base + ".cnf", base + ".lrat") else "CAKE-FAILED"
+    if os.path.exists(base + ".lrat"):
+        os.unlink(base + ".lrat")
+    minimal = rlk.in_language_phase(w[1:], ph) and rlk.in_language_phase(w[:-1], ph)
+    print("CUT %s (length %d, phase %d): %s; proper factors present: %s; cnf sha256 %s"
+          % (w, len(w), ph, verdict, minimal, hashlib.sha256(text.encode()).hexdigest()), flush=True)
+    return verdict == "VERIFIED-ABSENT" and minimal
+
+
+def certify(d, L, ph, cap, extra=()):
+    forb = rlk.load_forbidden("44all" if ph == 0 else "44allp1") + rlk.load_cuts(ph, 40) + list(extra)
     inst = rlk.Relaxed(d, L, ph, forb)
     base = os.path.join(rlk.DIR, "cad_cert_d%d_L%d_p%d" % (d, L, ph))
     text = "p cnf %d %d\n" % (inst.nv, len(inst.cl)) + "".join(" ".join(map(str, c)) + " 0\n" for c in inst.cl)
@@ -148,5 +204,9 @@ def certify(d, L, ph, cap):
 if __name__ == "__main__":
     if sys.argv[1] == "controls":
         controls()
+    elif sys.argv[1] == "cut":
+        cut(sys.argv[2], int(sys.argv[3]))
     else:
-        certify(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]) if len(sys.argv) > 4 else 10800)
+        extra = sys.argv[5].split(",") if len(sys.argv) > 5 else ()
+        certify(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4]) if len(sys.argv) > 4 else 10800,
+                extra)

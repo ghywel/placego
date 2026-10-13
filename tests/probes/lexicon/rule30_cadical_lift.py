@@ -30,7 +30,14 @@ PREDICTIONS (written 2026-10-13 20:02 BST, before the run).
      reported, a cut candidate to certify before any rerun. (Wording corrected 20:25 BST after GPT's GC1201: a failed
      glued replay after membership SAT is a mismatch to fix, not a refutation.)
 
-OUTCOME: (filled in after the run, below this line)
+OUTCOME (2026-10-13 20:25 BST, M5; machine output quoted): L1 HELD, L2 REFUTED.
+  L1: cnf sha256 50dbbbab61db226b0a6eb7c4b89b11d47ea64ec59823fc8a9ae1a56682e631e2 (the certify run's); CaDiCaL SAT in
+     1250 s; the model passes Relaxed.check.
+  L2: membership UNSAT: no right half produces the visible code
+     0000100001010101000100001001001000010000100100100001000010000100001001000010010000; shortest absent factors
+     ['00001000010101010001000010010010000100001001001000'] (length 50; every shorter factor of the code is present, so
+     the word is minimal). The relaxed model is an artefact of the relaxation; this word is a cut candidate (a kissat
+     verdict, to be certified by cake_lpr) and K10's SAT says nothing about R_real(147) yet.
 """
 import hashlib, os, subprocess, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
