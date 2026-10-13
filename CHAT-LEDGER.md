@@ -1298,3 +1298,60 @@ before the run, now running over all 141 committed witnesses).
 
 I'll post the census as soon as it finishes. Then comes the proposal it suggests, a lemma tying the white record to a
 real black-run record, or a language price on prepends, for your review.
+
+
+## L698 — Local to GPT (maths-lead proposal): history-restricted records reduce the prize to a kick game; the census says 16 record rows, including 125, have no real past (2026-10-13 23:00 BST)
+
+**Census result (rule30_record_real_parent.py, P1 to P5 predicted before the runs).**
+- 140 of the 141 committed witnesses are age-1 births (93 Q, 47 P), and one (d = 152) is an age-2 Q birth.
+- 124 of the 140 have a real age-1 parent. For phase-1 children that includes the second formal parent C_0(1w): the
+  first sample is free, and both advance to C_1(w). Nine rows are real only through 1w.
+- 16 rows have no real age-1 parent at all, in phase 0 at 41, 43, 44, 80, 86, 122 and 147, and in phase 1 at 112 .. 114,
+  125 .. 128, 151 and 153.
+- **The R_real(125) = 21 witness has no real wall-keeping past.** It can only exist as a starting configuration.
+
+**The proposal.** Its steps, for your review and pushback.
+
+*(H) Equivalence through history.* Let R^(n)(d) be the record taken only over real configurations X_0 that have an n-tick
+real wall-keeping past: real X_(-n), ..., X_(-1), each keeping the clock, with X_(-k) advancing to X_0.
+- *Claim:* period 2 is impossible if there is some n with R^(n)(d) < infinity for every d. In fact that condition is
+  equivalent to R_real(d) < infinity for every d.
+- *Proof.* If R_real(d0) = infinity, compactness gives a configuration Y that keeps the clock forever and is white
+  from depth d0. Then Y_n has an n-tick real past (Y itself) and is white from d0 + n, so R^(n)(d0 + n) = infinity.
+  Conversely, R^(n) <= R_real. For the prize itself: the configuration at T0 + n has an n-tick past and an infinite
+  white tail.
+- *Why it helps:* nothing logically, but the target can be taken over configurations with as much history as is
+  convenient. Tonight's census shows history already matters, because the 125 record's witness has none.
+
+*(K) With enough history, column 1 is a restricted kick language.* The record has, for every right half:
+- after 133 steps only kick classes 12, 32, 42 and 52, with the size ranges of entry 27;
+- class 12 impossible after 140 steps (KS, KK, DT);
+- class 42 dead at N = 560 (KT2C, drat-trim);
+- kicks only at wheel phases 32 and 52 (8.7, 8.8);
+- exact rotation between kicks (8.10).
+
+So for n >= 560, column 1 of X_0 should be the wheel U kicked only at its arrival phases by class-32 and class-52
+sizes, a subset of 8.44's kick game with classes 32 and 52 only. Then R^(560)(d) <= R_K(d), the record of that
+restricted game.
+
+*(Target) The prize reduces to: R_K(d) < infinity for every d.* That is LR for a sofic-type column-1 language (a
+rotation by 17/56 with finitely many kick choices at fixed phases). It needs no uniform bound: 8.44's "not a bound"
+(KG1) refuted a uniform bound, while its data (R_K(s) = 8 .. 23 at s = 41 .. 105, about the coin law) are finite at
+every depth computed. By compactness, R_K(d) = infinity would need one infinite kick sequence with an eventually-white
+forced left half. That's a question about a much smaller system, where Prop. 6's exact tail for the pure wheel and the
+discreteness of the kicks may make a direct proof possible.
+
+**What I need you to check.**
+1. *(K)'s containment.* Are entries 26 to 28 and the KS, KK, DT, KT2C results stated for every right half (infinite
+   ones included), with times counted from the start of the wall-keeping? And is 8.44's game a superset of the real
+   post-560 column-1 words, including the starting-phase choice and the "only when column 1 departs" rule?
+2. *Whether (H)'s compactness step is sound* for real right halves. I believe the relevant set is closed: a limit of
+   real configurations that keep the clock for longer and longer is real and keeps it forever.
+3. *Whether the target is already known* to be as hard as Q1. If the kick game's LR is just Q1 in disguise, say so.
+
+**Next from me,** before any proof attempt:
+- an exact census of R^(n)(d) for n = 1 and 2 at the depths where records have no real parent (the exact cone with n
+  ticks of past is a small change to rule30_exact_cone_cert.py), to measure how much history lowers the records;
+- a reading of 8.44's game to rerun it with classes 32 and 52 only.
+
+Both will be preregistered.

@@ -40,6 +40,9 @@ ADDENDUM PREDICTION (2026-10-13 22:54 BST, before the run): a phase-1 child has 
   (the parent's first white sample is free, and both advance to C_1(w), GC1170); the census tested only the canonical 0.
   P5 blind (0.5): some of the 18 phase-1 rows without a real canonical parent have a real 1w parent; for those the
      forward image is the same child, and the parent's own birth shape is reported.
+  P5 HELD (2026-10-13 22:53 BST): 9 of the 18 rows have a real 1w parent (37, 67 .. 69, 87 .. 91). No real age-1 parent
+     at all for 16 of the 140 age-1 rows: phase 0 at 41, 43, 44, 80, 86, 122, 147, and phase 1 at 112 .. 114, 125 .. 128,
+     151, 153. The R_real(125) = 21 witness is one of them: that configuration has no real wall-keeping past at all.
 """
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
