@@ -54,9 +54,14 @@ ADDENDUM PREDICTION (2026-10-13 19:30 BST, before the run): the next open depth 
   (CUT-P26: 147 UNKNOWN at 14,400 s under load; sampled R_real(147) >= 17).
   K10 blind (0.6): d = 147, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour cap. REFUTED-BY: SAT (then lifted), a
      cap, or CAKE-FAILED.
+ADDENDUM PREDICTION (2026-10-13 20:11 BST, before the run): K8 held in phase 0 (below), so the other phase.
+  K11 blind (0.6): d = 146, L = 18, phase 1 is VERIFIED-UNSAT within a 4-hour cap; then R_real(146) <= 17 (sampled 15).
+     REFUTED-BY: SAT (then lifted), a cap, or CAKE-FAILED.
 
-OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD; K8, K9
-  pending.
+OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
+  K10 REFUTED; K9, K11 pending.
+  K8 (20:10): d=146 L=18 phase 0 (1156 words): VERIFIED-UNSAT; cnf sha256
+     65339e8102635b09c1d30625f1d8f2b417cc7f2c175aad00b2551fded9f405fe; solve 5708 s, check 1167 s, lrat 34796.6 MB.
   K10 REFUTED (19:56): d=147 L=18 phase 0 (1156 words): SAT; cnf sha256
      50dbbbab61db226b0a6eb7c4b89b11d47ea64ec59823fc8a9ae1a56682e631e2; solve 1544 s. A relaxed SAT: lifted (or not) by
      rule30_cadical_lift.py; its partial LRAT (12.2 GB) was deleted.
