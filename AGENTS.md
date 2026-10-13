@@ -41,6 +41,27 @@ the linked documents remain the source of truth.
 15. **Read `NOW.md` first, at session start and after every context compaction** (the owner, 2026-10-11): one page
     with the main line, the latest decisive verdict, each lane's assignment and what is stopped, rewritten by Cloud
     only at a room switch or a decisive verdict; then `RECORD-MAP.md` as item 14 says.
+16. **One worker: the shared-worker loop is suspended** (the owner, 2026-10-13: "The old method with the shared workers
+    is currently obsolete, it will just be us 2 for the time being, but the multi agent shared workflow could be
+    resurrected at a different date. For now, you have no stay-alive heartbeat and no flags to read or write to." And:
+    "The site is done, the proof research will be our focus, but you will be the sole worker for the time being and
+    will need to cover all areas, the math, the logic, the coding tests, possible swarms. You will not have a third
+    party verification step unless a resurrect another agent / GPT." And: "Your pushing does go to remote main").
+    One Claude works with the owner and covers every lane; Cloud, Local, GPT and Intel as separate parties are
+    suspended, and the rules written for them stay in force for the day they are resurrected. Until then (the owner's
+    words above, then the sole Claude's reading of them, open to the owner's correction):
+    - Items 4, 10 and 13 and the `semaphores` rule are suspended: no flags, no heartbeat, no lanes, no waiting on
+      another party. The one worker writes NOW.md.
+    - The ledgers are not a channel while nobody reads them: a CLOUD-LOCAL.md row records only a change of room or of
+      arrangement, so a resurrected worker can catch up. Results go into the research record as before (RULE30-PRIZE.md
+      §8, PROOFS.md's waiting room, RECORD-MAP.md, the board).
+    - Nothing is second-read. Every result is single-party (C089): a hand proof stays PROOF-SKETCH, not PROVED, and
+      waits in PROOFS.md's waiting room. A check by a sub-agent of the same worker ("possible swarms") is recorded as a
+      self-check, never as a second read. Machine certificates keep their own controls and are adopted as tier 1.
+    - The prize-won rule's first step stands: a candidate is pushed at once (the timestamp is the proof of discovery)
+      and the owner is told in the session. PRIZE-WON.md, which needs one other party's verification, waits for the
+      verifier the owner chooses to resurrect.
+    - Pushing goes to main, after the checks of item 8.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 

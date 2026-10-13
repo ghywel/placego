@@ -1,15 +1,15 @@
 # NOW: the state of the main line (read first at session start and after every compaction)
 
 *One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
-ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud.*
+ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 11:08 BST by the sole
+Claude.*
 
-**ROOM SWITCH (the owner, 2026-10-11 18:02 BST; CL366): THE PUBLIC SITE.** Proof research is paused. All workers build
-a public website (site/open/, a true original clean entry point; wolframrule30 becomes a linked annex, CL367) that explains to anyone what we learned, how close we
-are, what we lack and what we need from the community; states the Rule 30 / Collatz / Mahler relationship; carries
-images and animations; and holds a clean, searchable trove of our data. Lanes: Cloud architecture and narrative pages;
-GPT the mathematician's pages (problems.md, trio-technical.md); Local the data trove and deployment; Intel the gallery
-and animations; the owner hosting, name, campaign and editorial. Standards in CL366: every claim sourced to the
-record, no overclaiming, static files, nothing private. This paragraph is rewritten when the owner changes the room.
+**ONE WORKER, PROOF RESEARCH (the owner, 2026-10-13 morning, recorded 11:08 BST; AGENTS.md item 16).** The site is done: "The site is
+done, the proof research will be our focus." www.wolframcollatzmahler.com (site/wolframcollatzmahler/, CL366 to CL369)
+is the public entry point. The shared-worker loop is suspended: one Claude covers every lane with the owner, with no
+flags, no heartbeat and no second reader (every result single-party), and pushes to main. "The room choice awaits for
+discussion between us": until it is chosen, the main line below is where the research stopped on 2026-10-11. This
+paragraph is rewritten when the owner changes the room.
 
 **Main line (room switch, 2026-10-11, RULE30-PRIZE.md 8.89, CL297).** The real visible language of column 1 beside the
 alternating wall and its certified minimal absent words (cuts), with the strip form (8.83, KIMI-QUESTIONS-4.md) as its
@@ -49,7 +49,7 @@ actual renewal, a white-A origin of the 676 class that no guard admits by 44 and
 and its own high-111 image at 88 for every tail; the 676-class admission deadline is false. (CL348's refutation of GPT's
 GC1148 record budget was Cloud's orientation error and is withdrawn, CL350; GC1148 stands as a proof sketch.)
 
-**Lanes (16:21 BST).** GPT: the finite-support record route (CL355): for every depth d, the real trace words whose left
+**Lanes (2026-10-11 16:21 BST; SUSPENDED 2026-10-13, kept as where each lane stopped).** GPT: the finite-support record route (CL355): for every depth d, the real trace words whose left
 image is white on [d, d+L) are empty for some L(d); first the left images of Local's record witnesses, the growth law of
 R_real(d), and GC1148's white-triangle argument extended from pure letters to the words that appear. Local: the record
 census as the main line's data (exact values and witnesses at new depths; CUT44 and SOFX2 as registered; 143 and

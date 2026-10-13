@@ -5,6 +5,9 @@ make (ChatGPT) joining as fresh eyes on the Rule 30 work. It is written for any 
 repository for the first time. Read it, then [PERIOD-TWO.md](PERIOD-TWO.md), then the files that one names, in
 order. Nothing here overrides the owner; where this file and the owner differ, the owner is right.*
 
+*Since 2026-10-13 one Claude works alone with the owner, and the four-party arrangement this file describes is
+suspended until the owner resurrects it: see the last section and AGENTS.md item 16.*
+
 ## 1. What this is, and who is here
 
 The repository holds the public record of an attempt at Wolfram's Rule 30 Prize, Problem 1, in its period-2 case,
@@ -320,3 +323,12 @@ verdicts and prize-level claims get a full second read. A refutation is announce
 the record beyond the ledger is changed. The rule, with its reasons and the day that prompted it, is `two-tier-review`
 in WORKFLOW-SAVED-MEMORY.md; it narrows section 3's second-read protocol, and leaves PROOFS.md's second-reader
 requirement and the prize-won rule as they are.
+
+## One worker (the owner, 2026-10-13)
+
+The owner resumed the work with one Claude: "The old method with the shared workers is currently obsolete, it will
+just be us 2 for the time being, but the multi agent shared workflow could be resurrected at a different date." The
+four parties of section 1 are suspended, not retired, and everything in this file stays written for the day they
+return. Until then one Claude covers every lane, with no flags, no heartbeat and no second reader, and pushes to main;
+the details, with the owner's words in full, are AGENTS.md item 16. Section 3's method is unchanged: predictions before
+runs, controls, counterfactuals, failures kept. What changes is only that every result is single-party.
