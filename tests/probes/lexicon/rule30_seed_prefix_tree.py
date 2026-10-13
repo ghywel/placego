@@ -51,6 +51,17 @@ OUTCOME (2026-10-13 18:35 BST, M5, 101 s; machine output quoted): C0 HELD, C1 HE
      deficits 18 and 19, each with one time residue alive in one or both phases at W = 37. Their own cores make windows
      of at least d + L - 1 >= 82 available, so these are not counterexamples, only branches the capped relaxation
      cannot close.
+
+ADDENDUM PREDICTIONS (2026-10-13 18:39 BST, before the run): Local's second read of GPT's GC1193 obstruction (the train
+  ray), by this probe's own machinery; no tree is rerun.
+  R1 must hold (the T1 lift): the ordinary seed S = 1011 (0000111)^m, advanced one tick, has child depths
+     k = V_(k+2)(1) equal to (0110010)^infinity for k = 1 .. 7m - 1 (m = 8).
+  R2 must hold (the train): the row (0110010)^infinity (420 cells) clamped in phase 0 keeps the clock and shows the
+     visible code (10)^n for 200 ticks, avoiding every certified cut.
+  R3 must hold (the ray in the tree): along S's prefixes, k = 4 .. 40, the phase-0 residue tau = 1 stays alive at every
+     window W = k - 3 (period-cap UNKNOWN reported if hit).
+  R4 must hold (the completion): after every prefix of S up to 40 bits, appending 1 (decoder states 00, 01, 11) or 11
+     (state 10) gives a word that GC1191's decoder accepts, ending in 1 with terminal 01 or 10.
 """
 import os, random, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -245,6 +256,53 @@ def search(kcap, nodecap, minutes, acs):
             for b in (1, 0):
                 stack.append((bits + [b], cols + [extend(cols, b)], new, Pt))
     return stats, stopped, time.time() - t0
+
+
+def train_read(acs):
+    ok = {}
+    m = 8
+    S = [1, 0, 1, 1] + [0, 0, 0, 0, 1, 1, 1] * m
+    A = [0, 1, 1, 0, 0, 1, 0]
+    x = {-i: b for i, b in enumerate(S) if b}
+    x1 = {i: x.get(i - 1, 0) ^ (x.get(i, 0) | x.get(i + 1, 0)) for i in range(-len(S) - 2, 3)}
+    kids = [x1.get(1 - (k + 2), 0) for k in range(1, 7 * m)]                 # V_(k+2)(1) = x_1(1 - (k+2))
+    ok['R1'] = kids == [A[(k - 1) % 7] for k in range(1, 7 * m)]
+    row = np.array([[A[i % 7] for i in range(420)]], dtype=np.uint8)
+    R = row[:, :200]
+    ok['R2'] = bool(child_alive(R, 0, acs[0])[0])
+    rows = np.zeros((1, 202), dtype=np.uint8); rows[:, 1:201] = R; code = ''
+    for t in range(200):
+        if t % 2 == 0:
+            code += str(1 - int(rows[0, 1]))
+        rows[:, 0] = t % 2
+        new = rows.copy(); new[:, 1:201] = rows[:, 2:202] ^ (rows[:, 1:201] | rows[:, 0:200]); rows = new
+    ok['R2'] = ok['R2'] and code == '10' * 50
+    seq = [1, 0, 1, 1] + [0, 0, 0, 0, 1, 1, 1] * 6
+    cols = path_cols(seq[:4]); alive, mod, r3, note = {0: None, 1: None}, 1, True, ''
+    for k in range(4, 41):
+        if k > 4:
+            cols = cols + [extend(cols, seq[k - 1])]
+        new, Pt, W = node_eval(cols, 0, alive, mod, acs)
+        if new is None:
+            note = 'period-cap UNKNOWN at W=%d' % W
+            break
+        r3 &= 1 in set(new[0].tolist())
+        alive, mod = new, Pt
+    ok['R3'] = r3
+    r4 = True
+    for n in range(4, 41):
+        pre = seq[:n]
+        b0, b1 = 0, 0 ^ (1 - (pre[3] ^ pre[1]))
+        for u in pre[4:]:
+            b0, b1 = b1, u ^ (b0 | b1)
+        suffix = [1, 1] if (b0, b1) == (1, 0) else [1]
+        c0, c1 = b0, b1
+        for u in suffix:
+            c0, c1 = c1, u ^ (c0 | c1)
+        r4 &= (c0, c1) in ((0, 1), (1, 0))
+    ok['R4'] = r4
+    print('GC1193 read:', {k: ('HELD' if v else 'FAILED') for k, v in ok.items()}, note)
+    return ok
 
 
 def main():
