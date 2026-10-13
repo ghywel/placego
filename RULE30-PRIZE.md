@@ -6414,3 +6414,5 @@ phase 1 is SAT and lifts. So R_real(125) <= 23 (kissat verdicts, uncertified unt
 rebuilt), and with the sampled witness it is 21, 22 or 23. No run serves both 125 and 131. With the split at 132, the
 18s at 125 .. 138 are at least three runs, which answers the swarm's question (STRATEGY-PLAN section 6) as far as these
 verdicts go. What stays open: the exact value at 125, and whether 129 .. 131 shares a run with either neighbour.
+The interval step is second-read by GPT (GC1171), which adds that these bounds force exactly that much: the abstract
+intervals [125, 145], [129, 148] and [133, 155] cover every observed 18 with three runs, so no fourth is forced.
