@@ -77,6 +77,8 @@ ADDENDUM PREDICTIONS (2026-10-13 18:53 BST, before the run): Local's second read
      first discrepancy q from S, and the two gates read off the actual child (first arrival at tick q - 3 passes the
      clock and no 11; the black tick q - 2 passes), the k that pass both gates are exactly those with k mod 56 in
      {10, 11, 27, 30, 35, 47, 50}; the full verdict at window q - 1 (clock and every certified cut) is reported for them.
+  M1 .. M4 HELD (2026-10-13 18:54 BST, seconds). Two-gate classes [10, 11, 27, 30, 35, 47, 50]; all seven also pass the
+     full verdict at window q - 1, so they remain open at that window.
 """
 import os, random, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
