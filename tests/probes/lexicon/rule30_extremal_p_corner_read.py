@@ -84,6 +84,13 @@ ADDENDUM PREDICTIONS (2026-10-13 16:13 BST, before the run): the white-wall olde
      checkerboard through 2q + 2, and depth 1 is black at tick 2q + 1.
 ADDENDUM OUTCOME (2026-10-13 16:13 BST, seconds): W1 HELD, W2 HELD, W3 HELD. With 8.97's other three classes, no band
   at depth d >= 6 reaches the oldest birth age, in either phase; the exceptions are at d <= 5 (listed in 8.97).
+
+ADDENDUM PREDICTION (2026-10-13 16:36 BST, before the run): GPT's GC1178 modulus (branch commit 380efce3), the one
+  checkable part of its carrying step. A core of 2h + 1 cells fixes h child samples and h black tests, which depend on
+  the arrival depths 1 .. 2h, i.e. seed 11's right diagonals V_3 .. V_(2h+2) at t = 2r (G3). GC1178 says their class
+  in r has modulus M_h = 2^(ceil((4h + 3)/3) - 1).
+  M1 blind (0.75): for h = 3 .. 8 the least period in r of (V_3 .. V_(2h+2))(2r) divides M_h. REFUTED-BY: a period
+     that does not divide M_h (then GC1178's indexing of G249 is off by one).
 """
 import os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -342,6 +349,23 @@ def white_corner():
         ok3 &= x1[2 * q + 1] == 1
     print('W2 core of two fails the black test at tick 2q+1 (q <= 256):', 'HELD' if ok2 else 'REFUTED')
     print('W3 core of exactly one passes it:', 'HELD' if ok3 else 'FAILED')
+
+
+def gc1178_modulus(hmax=8):
+    """Seed 11 as a Python integer (bit O + site), V_j(t) = bit O + t - j."""
+    import math
+    for h in range(3, hmax + 1):
+        M = 2 ** (math.ceil((4 * h + 3) / 3) - 1)
+        R = 4 * M + 8
+        T = 2 * R
+        O = T + 4
+        x, seq = (1 << O) | (1 << (O - 1)), []
+        for t in range(T + 1):
+            if t % 2 == 0:
+                seq.append(tuple((x >> (O + t - j)) & 1 for j in range(3, 2 * h + 3)))
+            x = (x << 1) ^ (x | (x >> 1))
+        per = next(q for q in range(1, len(seq) // 2) if all(seq[i] == seq[i + q] for i in range(len(seq) - q)))
+        print('M1 h=%d: period in r %d, GC1178 M_h %d: %s' % (h, per, M, 'divides' if M % per == 0 else 'DOES NOT DIVIDE'))
 
 
 if __name__ == '__main__':
