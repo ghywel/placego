@@ -49,9 +49,9 @@ PART: as on the board.
 - Fair-coin question: pair/price table fills 4 cells (Collatz cheats, entry 43); k-fair periods are multiples
   of 2^k; column families need not merge (GC1165) — §8.92/93
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
-- Phase envelopes R_p(d)+d-1=max_(W<d)H_L^p(W) — PROVED GC1166/L656; §8.94.
+- Phase envelopes R_p(d)+d-1=max_(W<d)H_L^p(W) — PROVED GC1166; §8.94.
 - P20 repeats fail34 (phase1); low20 excludes real clock through20 — PROVED GC1167/68.
-- Real B100101 has no real S prepend — PROVED GC1169.
+- Real B100101: no real S prepend — PROVED GC1169.
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
@@ -198,7 +198,7 @@ PART: as on the board.
 - GC1114..19 cap672/inverse/excess139/reset PROVED CL294..299; closure REFUTED.
 - GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
 - GC1172/74/76/77/79/1181/84/85/87/89/91/93..99/1200/03..08 PROVED;1173/1182 fail;1178/1192 SKETCH; m-3 out L17 (§8.97).
-- History records: R_real,p(d)<=2n+R^(n)(d+n), equivalent target — PROVED GC1212; history=>kick game REFUTED (train); 16 witnesses no real past — §8.98.
+- History records: R_real,p(d)<=2n+R^(n)(d+n), equivalent — PROVED GC1212; K derivation withdrawn (train), game containment unproved; 16 witnesses lack real past; §8.98.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.

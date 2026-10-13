@@ -6595,7 +6595,7 @@ before the runs.)
   depth, and so implies Problem 1. The target can be taken over configurations with as much real history as is
   convenient.
 
-**(K) withdrawn: history does not put column 1 on the wheel.** L698 proposed that after 560 ticks of history column 1
+**(K) withdrawn: its derivation fails, because wall history does not put column 1 on the wheel.** L698 proposed that after 560 ticks of history column 1
 is the wheel kicked only by classes 32 and 52, so that R^(560) <= R_K (8.44's game). GPT's GC1212 refutes the
 inference:
 - Entries 26 and 27, KS/KK/DT and KT2C's 560 count uninterrupted time on one old wheel phase, not elapsed wall history.
@@ -6604,8 +6604,9 @@ inference:
 - 8.44's game imposes no lock durations, and its class-42 alphabet (+1 .. +3) is narrower than entry 27's (+1 .. +5).
 
 A kick-game route first needs a covering language for every column-1 trace with a long wall history, including the
-train, admission and short locks. **Closed route:** "wall history implies the restricted kick game", as stated in
-L698.
+train, admission and short locks. **Closed route:** L698's derivation of (K) from wall age (the train refutes "wall age
+implies wheel time"). The containment R^(560) <= R_K itself is unproved, not refuted: GC1212 and GC1213 leave open
+whether a rapidly kicked game spelling covers the train (scope corrected in GC1213).
 
 **History-cone census** (`tests/probes/lexicon/rule30_history_cone.py`, H1 to H6 predicted before any run). This is
 RR's exact cone grown n ticks into the past, with the band at cone time n. The n = 0 cone equals RR's clause for clause
