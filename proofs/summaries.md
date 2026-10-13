@@ -3191,6 +3191,15 @@ drummers play, each new drummer settles into a beat at most twice as long as the
 
 **Checked by machine.** A proof assistant (Lean) has checked the argument and its consequences for the gaps.
 
+
+## 43
+In the Collatz game a number that goes odd, even, odd, even for ever can only be the little loop 1, 2, 1, 2, so the Collatz conjecture says that every starting number's odd and even record ends in that alternation.
+
+**What it says.** On an alternating stretch each odd number is followed, two steps later, by a smaller odd number, so the stretch must reach 1. And among the numbers of w binary digits, only 1 and 2 can alternate for more than w steps.
+
+**Why it matters.** It is the mirror image of the Rule 30 question at period 2: there the hope is that no finite seed's column ends in the alternating pattern, here the conjecture is that every number's record does. It fills one cell of the pair and price table (RULE30-PRIZE.md 8.92).
+
+**An everyday picture.** A ball bouncing down a staircase two steps at a time can keep its rhythm only until it reaches the bottom, where it settles into the same small bounce for ever.
 ## G259
 Two neighbouring columns that repeat on unrelated odd and coprime cycles cannot both be alive in Rule 30's right half: one goes blank and the other freezes.
 

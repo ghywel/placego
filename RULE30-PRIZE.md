@@ -6050,3 +6050,105 @@ carry is a solved hidden chain with a Fibonacci entropy rate.
 | Q2, the move to a finite window | **PARKED** at the second triage, 2026-10-08 (CL065, GC614.1): no first step named since 2026-10-05; reopen on a concrete condition that is not local in column 1 (was: **OPEN**, not started) | Nothing direct. Theorems E and E″ (§8.57) exclude classes of column 1. They do not force periodicity. **Drawn 2026-10-09 (Local):** the natural condition on column 1 that is not local is the one-hole language at p = 2, the channel of §8.20 (a sofic constraint on column 1's visible bits). It bounds the entropy (0.1236 bits, §8.33) but does not force a finite window, so it is not the reopening condition. OHC reproduces §8.20's channel at every width to 22 (XC, an independent check). | A condition that is not local in column 1. |
 | Q7, the regime between | **PART** (kept and compressed at the third triage, 2026-10-09) | Kicks cannot thin out faster than geometrically (Theorem A); Sturmian, near-square and other structured column 1s are excluded (Theorem E, Corollary F, A⁗, G131, G132). Settling on a rooted history reduces to two gaps (G164, G165, G184): gap 1, a stage budget O(q) at each dyadic period q, and gap 2, period growth R_j to infinity, which is open; the named q = 8 and q = 16 components are closed (finite evidence), and GC652 .. GC702 give the exact debt identity at mismatch endpoints. **History:** this row as it stood before the third triage is in RULE30-PRIZE.md §8.78, verbatim. **2026-10-09 evening (Local, RC88 and RC16, a drawn row):** the rooted returns are now censused over all odd sources and child choices. At q = 8 every walk returns, only at r = 88 and 371, each one rotation class, so there is no other r88 component. At q = 16 there are nine return depths to 60,000, each one class, and r = 52,808 is unique; QX (D1 exits and D2 successors on all six even returns, after PR196's control 5 passes at each) and QX2 (every exit path followed until it dies, at most four steps) close all six: every rooted even return at q = 8 and at q = 16 is exactly its cycle. Every rooted q = 16 walk returns, the last at 214,006 (RC16X), with one first return per source orbit, so the q = 16 even classification is complete; GPT's GC861 confirms D1 and D2 apply. Every rooted walk returns at every fixed q (L487: the injective step plus a unique child of a nonzero driver; GPT auditing). At q = 32, 12 of the first 16 orbits return between 4.5e7 and 4.6e9 and 4 lie beyond 5e9 (RW, RWC). **Fourth triage (2026-10-10):** GPT's W280 .. W281 (GC896 .. GC917) give exact local facts, the one-bit driver response, same-child fibres, the sharp antiperiodic entry and its dense next profile, with no rooted bound (second-read: L510 .. L516, CL122 .. CL136); ZF's q = 16 tree repeats Proposition 8 (CL128). The single cell's own period-32 entry is sharp, so the universal one-parity exclusion is REFUTED (CL134, GC915); the sharp profiles run q/4, 3q/4, 3q/4, q/2 (CL138, second-read L520). | Gap 2 (normalized period growth); Thue–Morse and paperfolding for every left edge; Rudin–Shapiro; q = 32 and beyond; the odd returns (371 at q = 8; 6343, 29167, 44841 at q = 16); a rigidity argument for why every rooted even return closes. Affine waiting envelopes are closed as a method (GC596).  **GPT, 2026-10-10 (GC912/GC913):** single-profile and four-step pair-mask inverse shortcuts CLOSED; physical one-parity source exclusion **REFUTED** by CL134/GC915: the single cell's least-period 16 source is one-parity and its period 32 entry has weight 8. Q7 stays PART.  **GC914 (hand, review pending):** ambient mixed-parity odd sources attain entry weight q/4+1 for every dyadic q>=8; physical ancestry and stage bounds remain open. |
 | Q9, the Collatz twin | **PART** (kept at the second triage, 2026-10-08) | (Later Collatz work, G49 onward, is tracked in the critical-boundary count-loss row below.) The least-residue lemma (COLLATZ-PRIZE.md §4). The window principle on both sides, W1 to W3 (COLLATZ-PRIZE.md §5). Exponential sums cannot reach a single case. The counting form keeps the coin's rate to w = 43 (L509). | The literature check (below). G29 independently validates signed odd-denominator scope/exact rounding, with infinite-distinct-orbit and shifted-height qualifications. G30 proves conditional slope at least1/gamma, gamma=(upper odd density)*log2(3)-1; zero gamma forces superlinear complexity. G31 exact odd-run cost; run-only shortcut to upper density<1 refuted by an abstract square-zero word (rational realization unresolved). G32 retains separate real/2-adic limits; G33 proves the known periodic geometric bridge and exact v2 full-repeat budget, with cycle exception. G34 excludes power-of-two zero positions by a necessary gap ratio<=log2(3); G35 additionally excludes the critical rounded-geometric ladder via accumulated even-step cost; square-zero inverse remains open. G36 verifies known lower-density bound from primary Monks–Yazinski; complement preservation is conjectural. G37 certifies that3/2-spacing budgets stay bounded; their sufficiency fails at start829. No general aperiodic rational-realization bridge. G38 gives an exact coefficient-survivor ternary Fourier recursion; conditioning/cancellation and the shared count bound remain open (single-party controls). G39 proves fixed-endpoint survival probability>=1/T and event transfer, but a character counterexample blocks automatic cancellation transfer; exact completion weights recorded (second-read by Local, PROOFS.md E2). G40 proves an exact cosine product inside survival-compatible adjacent-pair cubes; bounding their weighted aggregate remains open (second-read by Local, PROOFS.md E2). G41 controls free-pair mass for densities bounded above critical and below1; phase separation and boundary regimes remain open. G42 gives a primitive-harmonic family with n free pairs and modulus>0.99 for all n; this blocks uniform within-skeleton decay from pair counts, without deciding aggregate decay. Local independently audited G39-G42 (L007; PROOFS.md §E2). G43 derives exact binary-reader weights: the displayed resonance has weight<=2/3^a for one bit; multi-step weighted control remains open. G43 independently audited by Local L008. G44 proves the finite-ensemble tail-resolution boundary; a uniform all-cylinder coin comparison fails, while the special survival-count target remains open. G44 independently audited by Local L009. G45 derives word-specific actual-start ceilings and a residue-class count;65520 controls pass and Local independently audited it (L012). G46 proves formal ceilings unbounded and rejects dropping the short-interval +1 term; no summed bound. G46 KC controls pass256 cases and Local independently audited it (L014). G47 proves actual survival in the single-run first-deficit family requires a periodic return; 256 RC controls pass, finite return only start1. G48 FD controls pass791 words/2373 lifts, giving a single-party computed certificate when the first coefficient deficit is<=16 (onlystart1 survives); no general stopping-time estimate. Primary-source audit identifies the known CST target and adjacent-swap prior art; census block closed. No divergent orbit exhibited. A Collatz statement beyond these conditional bounds. Second triage (CL065, GC614.1): the Collatz critical-boundary count-loss row is merged here, with its open bias estimate. The carry-over audit of 2026-10-08 (CL066, GC616, second-read by Local in L326): the Pascal unrolling transfers to the real carry field; an age obstruction would also need an old-source spatial bound and a non-dyadic residual. |
+
+### 8.92 The fair-coin question, and the pair and price table (2026-10-13 11:32 BST)
+
+*The owner's question, verbatim (2026-10-13): "We know from exhaustive investigation that the Rule 30 system holds
+itself to a fair coin, the centre column included. Any read of the centre column will always balance black and white.
+But in period 2 we have a contradiction: The column looks like a fair coin (it's average over time is 50/50) but it is
+not a real fair coin, it is cheating. Precisely because we constrain the column to 0101 repeat, this sequence would
+never occur with a real coin toss. So it looks like a fair coin measured on average, but the precise sequence of
+regular alternating tosses is a cheating coin. This is a contradiction." Then: "I wonder if it exists as a truth table -
+ie pair and price / price no pair / pair no price / no price no pair." Worked by the sole Claude (AGENTS.md item 16), so
+everything here is single-party. Probe: `tests/probes/lexicon/rule30_pair_price.py`, predictions and OUTCOME in its
+header (ten of twelve held; the two misses are recorded there). Record searched: 'column reading 0 1' -> RECORD-MAP
+L433/CL086 (rings with a 01 column exist); 'trivial cycle', 'fair coin' with 'contradiction' -> no hit; 'Rule 90' with
+'price' -> no hit, which missed Proposition 5 (entry 16); see the Rule 90 cell.*
+
+**Why it is not yet a contradiction.** Three leaks.
+1. *The average cannot see it.* 0101... has density exactly 1/2. A centre column that turned 0101 at any time still
+   averages 1/2, so even a positive answer to Problem 2, which asks only about density, would leave period 2 open. What
+   0101 fails is the pair test: 00 and 11 never occur.
+2. *The fairness that is known is the wrong kind.* Proved: for a row drawn uniformly at random every column is an exact
+   fair coin, because each new centre bit takes in one fresh left bit by XOR (left permutivity, entry 4). That holds for
+   almost every row, and the finite configurations are a set of measure zero. Measured: the single seed's centre column
+   has density 0.49947 over 2^17 steps and a coin's block entropy (8.34). That is a finite window, not an exhaustive
+   check, and Problem 2 is open.
+3. *An argument from fairness alone would also forbid the ring, where Rule 30 does cheat.* On a ring of seven cells the
+   single black cell gives a column that reads 0101... for ever, the row repeating every four ticks (COMPUTED, the
+   probe's P1; the record's ring census already had q = 1):
+
+       #......
+       ##....#
+       ..#..##
+       ######.      then the first row again; column 1 reads 0, 1, 0, 1, ...
+
+   So a contradiction has to use finiteness, the left half eventually white, as Jen's theorem and Condrey's proof do.
+
+**The two sharpenings.** *Pair* is a statement about one orbit: the seed's centre column has the coin's pair
+frequencies, each of 00, 01, 10, 11 a quarter of the time. It comes in strengths: coin-fair pairs imply that both 00
+and 11 recur, which implies that 00 or 11 recurs; and the weakest, "00 or 11 recurs", is exactly "not eventually 0101",
+period 2 itself restated for that seed. (This corrects the session's first answer, which called the pair version
+strictly stronger than period 2; only the coin-fair form is.) Density 1/2 is a different axis: neither it nor the
+weakest pair statement implies the other. *Price* is a statement about counts over all seeds of a width: holding the
+alternating word costs bits, so the number of width-w seeds still holding it after T ticks is at most
+2^(w - alpha T + c(w)) with alpha > 0 and c(w) = O(log w). That is Q1 (PERIOD-TWO.md section 5), and up to the log term
+it is the same as a linear deadline: every width-w seed breaks the word within about w/alpha ticks (a uniform linear
+deadline gives Q1, GC637; Q1's count falls below one past (w + c(w))/alpha). A configuration at tick T is itself a
+finite seed of width w + 2T, so the deadline also bounds a stretch that starts late.
+
+**Implications** (each one line, PROOF-SKETCH). Price implies that no finite seed holds the word for ever, since a
+forever-tail breaks every deadline. Pair for a seed implies that this seed's column does not end in 0101. So period 2
+holds in three of the four cells and can fail only where there is neither price nor pair. Neither property implies the
+other: the table has a system in each cell.
+
+| | Pair (each column fair in pairs) | No pair |
+|---|---|---|
+| **Price** (linear deadline) | Rule 30 on finite seeds, as measured. Period 2 holds if either half is proved. | Rule 90 on finite seeds. Period 2 holds (Proposition 5). |
+| **No price** | A constructed column map; no natural system known here. Period 2 holds, but no count can prove it. | The cheaters: the Collatz shortcut map, and Rule 30 on a ring. Period 2 fails. |
+
+- **Price and pair: Rule 30 on finite seeds (MEASURED, not proved).** Seeds in a window of w = 2h+1 cells about the
+  centre. While the left part pays, each condition halves the count exactly (proved, 8.51 to 8.53; the probe's P2 at
+  w = 9 .. 17). After that the survivors fall in lumps but on average by at least a bit a tick (h bits in 3, 4, 4, 3
+  and 7 ticks), and the last survivor dies at T0 = 8, 10, 11, 11, 16 for w = 9, 11, 13, 15, 17: never later than the
+  seed has bits. The record's wider measurements agree: the best seed holds 0101 for at most its width plus 9 steps with
+  right halves to 32 cells (8.24), and the counting form is 2^(w - 1.05 T + c) (8.51 to 8.53). Pairs: over 200 random
+  width-15 seeds, ticks 1000 .. 4000, 00 0.2503, 01 0.2500, 10 0.2500, 11 0.2497. Rule 30 looks like a coin on both
+  counts; a proof of either half would close period 2.
+- **Price, no pair: Rule 90 (PROVED, Proposition 5; COMPUTED).** Its first h+1 conditions halve the count exactly, like
+  Rule 30's (the cell at distance t enters the centre with coefficient 1 at tick t), and Proposition 5 then kills every
+  survivor at a power of two: column 0 is white at ticks 2^n and 2^n + 1 once 2^n > h + 1, which no alternating column
+  allows. Measured deadlines 9, 9, 9, 12, 12 for w = 9 .. 17; the survivors plateau and then die all at once. Yet the
+  column is nothing like a coin: black density 0.0020 and 00 at 0.9968 over the same seeds and ticks. Price can come
+  from exact algebra with no randomness at all; the coin is not needed for a deadline.
+- **No price, pair: a construction (PROOF-SKETCH).** Send the seed of width w to the column (01)^(2^w) followed by the
+  binary Champernowne word 1 10 11 100 101 .... Every column has the coin's pair frequencies, because the Champernowne
+  word is normal in base 2 (Champernowne, 1933; the argument works in any base), yet the width-w seed holds the
+  alternating word for 2^(w+1) ticks, so there is no linear deadline. It is a column map, not a cellular automaton, and
+  shows only that the cell is logically consistent; a natural system here is not known to the record. It is the warning
+  for the price route: a system can be fair in every column and still let a seed cheat for exponentially long, so Q1 is
+  a real claim about Rule 30, not a consequence of its fairness.
+- **No price, no pair: the cheaters.** *Rule 30 on a ring* (above): at seven cells the count of rings holding the word
+  never reaches zero, and the cheating column is not fair. *The Collatz shortcut map* T(n) = n/2 or (3n+1)/2, with the
+  parity sequence as the column and 1 <= n < 2^w as the seeds of width w. Its price is paid exactly while the free bits
+  last (Terras's bijection: N(k) = 2^(w-k) for k <= w, the one exception being phase 0 at k = 1, where the class of even
+  n loses n = 0), and then the count stops at exactly 1 for ever: n = 1 reads 1010... and n = 2 reads 0101... (COMPUTED
+  to k = w + 40 at w = 16 and 20). Entry 43 in PROOFS.md's waiting room proves the general statement: an orbit of T
+  that alternates for ever is the trivial cycle 1, 2, so the Collatz conjecture is exactly the statement that every
+  orbit's parity column ends in 1010.... Collatz is the mirror image of period 2: there the conjecture is that every
+  seed cheats, here that none does.
+
+**What the table says for the prize.** The prize is the claim that Rule 30 on finite seeds is not in the bottom-right
+cell. There are two ways to show it. The pair way needs at least "00 or 11 recurs", which is the problem itself; its
+stronger forms are harder than Problem 2. The price way is Q1, the record's counting form, and Rule 90 shows that a
+price can be proved by exact means. The two cheaters show what such a proof has to use [J]: the ring lacks an edge, and
+Rule 30's finite seeds have one, which is what Jen's theorem and Condrey's proof use. Collatz's map shrinks its numbers
+on average (by a factor of sqrt(3)/2 a step under the coin heuristic behind Terras's and Tao's density results), so an orbit runs out
+of bits and a cheap cycle waits at the bottom. Rule 30's finite patterns never die (CL363) and spread two cells a tick.
+In both problems the price is paid exactly while the free bits last (Terras for Collatz, left permutivity for Rule 30),
+and both problems ask what happens after.
+
+**Status.** The ring witness and every count: COMPUTED (the probe, with a second implementation and a check-can-fail
+control on Rule 110). Rule 30's exact halving: PROVED (8.51 to 8.53). Rule 90's deadline: PROVED (Proposition 5); its
+exact halving: PROOF-SKETCH. The implications and the construction: PROOF-SKETCH. Entry 43: PROOF-SKETCH, in the waiting
+room (prior art not searched; elementary, and very likely known). Rule 30's place in the top-left cell: MEASURED only.

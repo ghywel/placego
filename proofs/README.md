@@ -774,6 +774,9 @@ the prize. Each entry names its spark, who proved what, and who has second-read 
 
 *The pages:*
 
+- [Proposition 24 (proved by hand; waiting room, second reader wanted): under the Collatz shortcut map an orbit that alternates for ever is the trivial cycle, so the conjecture says every parity column ends in 1010...](43-proposition-24-proved-by-hand-waiting-room-second.md):
+  In the Collatz game a number that goes odd, even, odd, even for ever can only be the little loop 1, 2, 1, 2, so
+  the Collatz conjecture says that every starting number's odd and even record ends in that alternation.
 - [A failed train gate forces a twenty-two-tick exit packet](W283-a-failed-train-gate-forces-a-twenty-two.md): Once
   the prepared train slab encounters a black cell at its critical boundary phase, its next twelve white-time
   readings are fixed. A small seven-cell transition table forces the exit gaps4 then5, even with arbitrary inputs

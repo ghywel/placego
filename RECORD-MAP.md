@@ -46,6 +46,8 @@ PART: as on the board.
 - Primes, Fibonacci, pi, 01: the best start of w <= 18 squares holds them w + 6 steps at most — COMPUTED — CS
 - First right-paid ratio rho_j exact to j = 35; its distance from 1/2 does not decay — COMPUTED — L224, L225; ZR3 (L316)
 - A uniform linear edge deadline T <= cj + b would give Q1 with alpha = 1/c — PROVED L345/CL161 — GC637/947
+- Fair-coin question: density cannot see 0101; a 7-ring cheats; pair/price table fills all four cells (Collatz
+  cheats, entry 43) — COMPUTED, PROOF-SKETCH — §8.92
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
@@ -67,10 +69,9 @@ PART: as on the board.
 - A kick's phase and charge readings differ by 14 x (sum of odd gaps) mod 28 — PROVED — G248 with GC582
 - The wheel is the edge of a block that turns together: columns 1..4 locked, the lock fading over ~10 columns —
   MEASURED (VW) — rule30_cloud_velocimetry.py, CL095; the forcing itself is G205, G208, LK above
-- SL re-derived the forced block by SAT, a repeat of G205/G208 (the miss that started this map) — COMPUTED —
-  rule30_cloud_wheel_slab.py, CL098, CL101, GC855, GC860
+- SL re-derived G205/G208 by SAT (the miss that started this map) — COMPUTED — CL098, CL101, GC855, GC860
 - §8.11 N1's "60% against 8%" compared two measures: on N1's own, real halves 69.8%, wide random 70.9%, coins
-  60.2%; coins at column 13 sit inside the partial lock — MEASURED — rule30_cloud_wheel_slab.py, CL098
+  60.2%; coins at column 13 sit inside the partial lock — MEASURED — CL098
 
 ## Kicks (alphabet, classes 12/32/42/52, rates, the kick game)
 - Size set by the interior; timing and alphabet rigid; no memory; about 3.5 bits a kick — MEASURED — §8.43, §8.11
@@ -113,7 +114,7 @@ PART: as on the board.
 - K=40 relaxed at L=18: 124 UNSAT both phases (<=17); 140, 144, 152 settled by CUT/SP — COMPUTED (kissat) — RLK L575, L581/582, L589.
 - Two-gap train: clamped phase-0 seed1001 eternal via sixteen-tick causal lock at14, every tail beyond46 — PROVED CL189/L595 — GC1020/W282; TG. Measured period4 to6, period8 to14, chaos pinned15; no finite invariant window to60.
 
-- Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each (14:30 stop); 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, rule30_cloud_rreal_trend.py, CL178, CL188.
+- Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each; 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, CL178, CL188.
 - Least d>20 with R_real(d)>=18 is 125 (21..124 <=17) — COMPUTED (121..124 cake_lpr, both phases) — L603..605.
 - Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
 - Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
@@ -146,15 +147,12 @@ PART: as on the board.
 - Right-half language: DFA >= 291 states; h <= 0.2536 certified; death criterion PROVED; deaths at 32, 34, 43 —
   COMPUTED, CONJECTURED (not sofic) — §8.86
 - Swarm round: hand proofs held — §8.87
-- Check-free: records exact to 122, no survivor — §8.88
+- Check-free: records exact to 122, no survivor; parity bridges PROVED GC1092..94/CL268..270; forced-only periodic
+  case OPEN — §8.88, STRATEGY-PLAN.md
 - Room switch to cuts; E absent (L630); cuts leave pure M3 (CL303); typed paths <= 466 (CL340); white-A entrances
   certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347); lane CLOSED
   (CL355) — §8.89
 - Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
-
-
-
-- Check-free: STRATEGY-PLAN.md; parity bridges PROVED GC1092..94/CL268..270; forced-only periodic case OPEN.
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.
