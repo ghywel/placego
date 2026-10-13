@@ -37,8 +37,7 @@ of length 3 mod 4. In particular E is odd when every white run has length 1 mod 
 3. With O homogeneous of coefficient k, the r ends of coefficient 1 xor k are all in M. Let t be the number of
    k-ends that are also in M. Then C = (r + t) mod 2, and the compulsory weighted sum is $(1 \oplus k)r \oplus kt$.
 4. GC824's parity is
-   $1 \oplus \frac{w}{2} \oplus (1 \oplus k)r \oplus kt \oplus k(r+t) = 1 \oplus \frac{w}{2} \oplus r
-   = 1 \oplus \frac{w-h}{2}$.
+   $1 \oplus \frac{w}{2} \oplus (1 \oplus k)r \oplus kt \oplus k(r+t) = 1 \oplus \frac{w}{2} \oplus r = 1 \oplus \frac{w-h}{2}$.
 5. Each $(\ell_i - 1)/2$ is odd exactly when $\ell_i \equiv 3 \pmod 4$. ∎
 
 *Scope (GC826).*

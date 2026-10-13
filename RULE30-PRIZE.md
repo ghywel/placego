@@ -5470,8 +5470,10 @@ pushed before the run; a side question (CONSTELLATION.md F).*
 $A(L)$ cells, $A(2m-1) = m^2$ and $A(2m) = m(m+1)$, and every white cell lies in exactly one triangle. Under the
 uniform measure the tops of width $L$ have density $3 \cdot 2^{-(L+4)}$ per cell (§8.68). With
 $\sum_{m \ge 1} m 4^{-m} = 4/9$ and $\sum_{m \ge 1} m^2 4^{-m} = 20/27$,
-$$\sum_{L \ge 1} 3 \cdot 2^{-(L+4)} A(L) = \tfrac{3}{16}\Big(3 \cdot \tfrac{20}{27} + \tfrac{4}{9}\Big)
-= \tfrac{3}{16} \cdot \tfrac{72}{27} = \tfrac12 ,$$
+```math
+\sum_{L \ge 1} 3 \cdot 2^{-(L+4)} A(L) = \tfrac{3}{16}\Big(3 \cdot \tfrac{20}{27} + \tfrac{4}{9}\Big)
+= \tfrac{3}{16} \cdot \tfrac{72}{27} = \tfrac12 ,
+```
 the measure's white density. The triangle law and the half-density are one fact seen twice; so the summed area of a
 side says nothing, and the content is the share by width: $3/32$ of all cells for each of $L = 1, 2, 3$, then halving,
 with widths 8 and up holding about 3.6% of the cells (7% of the white).
@@ -5518,8 +5520,10 @@ own skeptic is still queued. Code and raw outputs are outside git. Nothing here 
 - *The exact coupling.* Write $E = d + R$, $E^{\circ} = d + R^{\circ}$ for the end depths, $Q_P(d)$ for the end of the
   longest run of ones from depth $d$ in phase $P$, and $P_P(d)$ for the end of the longest 1, 0, 1, 1, … pattern begun
   at depth $d-1$. Then for $d \ge 2$
-  $$E^{\circ}(d) = \max\big(d,\; E(d-1) - 1,\; Q_S(d) - 1,\; P_S(d) - 1\big), \qquad
-    E(d) = \max\big(d,\; E^{\circ}(d-1) - 1,\; Q_B(d) - 1,\; P_B(d) - 1\big).$$
+  ```math
+  E^{\circ}(d) = \max\big(d,\; E(d-1) - 1,\; Q_S(d) - 1,\; P_S(d) - 1\big), \qquad
+  E(d) = \max\big(d,\; E^{\circ}(d-1) - 1,\; Q_B(d) - 1,\; P_B(d) - 1\big).
+  ```
   So each phase's zero records are the other phase's zero records and **black-run** records, shifted by one. Cloud:
   both identities by brute force for $d = 2$ to 8 in both phases; the lane checked them to 52.
 - *The constants are tied.* With $\beta_P$ the largest excess of a black-run birth over $2d$, the lane derives
@@ -5561,8 +5565,8 @@ graded 23:16 BST. Code and raw outputs outside git.*
 **Proved by the lane and verified by Cloud.** The one-sided reduction (any right half beside the wall extends to a
 configuration on $\mathbb Z$, so $L$ is the right halves' visible language; §8.39's mirror). The **000 rule**: at even
 $t$, $x_{t+2}(1) = 1$ exactly when $x_t(1..3) = 000$, so a visible 1 is always followed by a visible 0 and 11 is
-absent with $w_{\min} = 1$ (Cloud: all 1,024 rows of width 10). The strip languages are nested, $L \subseteq L^{W+1}
-\subseteq L^W$, and the width-$(2m-2)$ strip is exact for words of length $m$, one better than the cone, so
+absent with $w_{\min} = 1$ (Cloud: all 1,024 rows of width 10). The strip languages are nested,
+$L \subseteq L^{W+1} \subseteq L^W$, and the width-$(2m-2)$ strip is exact for words of length $m$, one better than the cone, so
 $w_{\min}(f) \le 2|f| - 2$. If $g$ occurs in $f$ then $w_{\min}(f) \le w_{\min}(g)$, so any linear bound need only be
 proved for minimal absent words; the same reduction holds for full column-1 traces (all times, not only even ones).
 The **front lemma**: two histories that first differ at site $\ell$ differ at site $\ell - 1$ a step later only if
@@ -5709,8 +5713,8 @@ depth 100 quoted in the lane's argument (13, 13, 12, 17) are not what its own fi
 useful direction: the transition block after $(0100)^K$ is 0101 only for $K \le 1$, 1011 only for $K \le 2$, and
 always 0001 for $K = 3$ to 6 (Cloud recomputed this from the lane's trace file), a sharper structure than the theorem
 states and a candidate for a hand proof. Gaps: 'no linear-algebra shortcut', 'the locks do not bound the runs',
-'positive entropy' and 'not of finite type' are heuristics from at most ten data points, not theorems; the bound $K
-\le (d+1)/4$ shifts by up to 3 for rotations other than 0; one lane script prints wrong zero-run maxima for the
+'positive entropy' and 'not of finite type' are heuristics from at most ten data points, not theorems; the bound
+$K \le (d+1)/4$ shifts by up to 3 for rotations other than 0; one lane script prints wrong zero-run maxima for the
 periodic left halves through a period-concatenation bug while the report quotes the right values. The values at depths
 30 to 98, other than the spot checks, rest on the lane's solver alone.
 
@@ -5758,8 +5762,8 @@ lane's own deaths file lists exactly these), and every later death the lane foun
 10001001 at 16 and 00001000100 at 14. The 'recurring' absent family $0(1000)^2(10)^r100$ is a window $r = 4, 5, 6$
 only: its $r = 7$ member, of length 26 and inside the data, is in $L$ (Cloud re-simulated the witness; 200 random
 tails all read the word). The DFA lower bound was capped at horizon 8: with horizon 10 the same method gives at least
-291 states at $N = 26$, so part of the 'no plateau' growth is the cap, and inconsistency of horizon-$K$ classes for $K
-\le 10$ is expected even for a regular language with hundreds of states, so that evidence is weak. Strengthened: the
+291 states at $N = 26$, so part of the 'no plateau' growth is the cap, and inconsistency of horizon-$K$ classes for
+$K \le 10$ is expected even for a regular language with hundreds of states, so that evidence is weak. Strengthened: the
 late-time stabilisation is now proved by witnesses, $|L^{(j)}_8| = 32$ for $j = 17$ to 21, $|L^{(j)}_9| = 43$ for 17
 to 20, then 56, 73, 93 at lengths 10, 11, 12; suffix-properness holds for every $n \ge 7$, not only to 26; the ring
 search extends to period 20 with the same answer. The verdict on the main claim is unchanged: open, with the evidence
@@ -5792,8 +5796,8 @@ replays them.
 
 **What fell.** No headline fell; six details did, each caught by a skeptic and confirmed by Cloud. The five-black-cell
 bound 121 is really 39, exact (§8.84). The 393 unresolved $u(10)^k v$ families genuinely exceed 32 ($T - |w| = 37$ at
-$k = 235{,}649$), so they were rightly excluded, not lost (§8.84). The trace form is tight at even lengths too, $l =
-2, 4, 36$ (§8.83). The 1100 lane misquoted its depth-100 rotation values and its structure theorem is looser than the
+$k = 235{,}649$), so they were rightly excluded, not lost (§8.84). The trace form is tight at even lengths too,
+$l = 2, 4, 36$ (§8.83). The 1100 lane misquoted its depth-100 rotation values and its structure theorem is looser than the
 data: the transition block after $(0100)^K$ is always 0001 for $K \ge 3$ (§8.85). The soficity lane listed a death
 time 15 that does not exist and an absent-word family that breaks at $r = 7$, and its DFA lower bound was a horizon
 cap, 291 with horizon 10 (§8.86). Several conclusions worded as theorems were heuristics: positive entropy of the
@@ -5830,7 +5834,7 @@ $x_0(-d)$. The newest visible bit $v_k$ decides two new depths: in the standard 
 **forced** cell, affine in $v_k$) and depth $2k+2$ in about half the prefixes (the **check**, a function of the
 earlier bits once $v_k$ is chosen); in the other phase the parities swap and depth 1 is black (Cloud, 200 random
 prefixes per phase). The **forced-only orbit** of a visible prefix chooses each next bit to whiten the next forced
-cell, ignores the checks, and dies when that choice leaves $X_4 = \{$no 11, no 00000$\}$, which is exactly the width-4
+cell, ignores the checks, and dies when that choice leaves $X_4 = \{\text{no 11, no 00000}\}$, which is exactly the width-4
 layer language (Cloud: equal to the width-4 free-exterior strip's visible words at length 8 in both phases, 43 words
 each) and contains $L$ in both phases. **The check-free conjecture** (CONJECTURED, the swarm's door D2 and judge B):
 no sequence in $X_4$ keeps every forced cell of row 0 white from some depth on. It implies period 2 for every finite
@@ -5838,8 +5842,8 @@ configuration in two lines (a counterexample's row 0 is white from its leftmost 
 cells are white there, and its visible sequence lies in $L \subseteq X_4$).
 
 **The forced-only records (COMPUTED, Intel; Cloud-replicated exactly).** $R^F(d)$, the longest run of depths from $d$
-on along which every forced cell is white, over all $X_4$ sequences: standard phase $R^F(1..9) = 2, 17, 16, 15, 14,
-13, 12, 11, 10$; other phase $R^F(1..16) = 9, 8, 7, 6, 5, 4, 7, 6, 15, 14, 17, 16, 15, 14, 23, 22$. Cloud's engine
+on along which every forced cell is white, over all $X_4$ sequences: standard phase
+$R^F(1..9) = 2, 17, 16, 15, 14, 13, 12, 11, 10$; other phase $R^F(1..16) = 9, 8, 7, 6, 5, 4, 7, 6, 15, 14, 17, 16, 15, 14, 23, 22$. Cloud's engine
 (written from the wall form, not Intel's code) gives the same sixteen and nine values; a first version that stopped a
 run at a black check cell gave 1, 6, 5, 4, 3, 3, 3, 2, 9 instead, which is the one definitional trap. Known (swarm):
 no eventually periodic sequence keeps the forced cells white (Jen-type, three agents); from depth 60 every forced-only

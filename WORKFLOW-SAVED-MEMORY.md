@@ -225,6 +225,33 @@ from momentum: "thinking about purple elephants, so the next step is green eleph
 continues the thread just worked on, check whether it is momentum. Write the obstacle's state down well enough to
 resume it, then step sideways.
 
+### walk-away (the owner, 2026-10-13)
+
+**Rule.** When a line has stalled, or has run long, set it down for a while and do something genuinely different.
+Come back, and write down the question that arrives before doing anything else with it.
+
+**Why.** The owner, 2026-10-13: "once again as always, walking away from the problem and doing something else, at
+least for a time, crystallises the question that moves progress and science forward. It is a rule so fundamental
+knowable and yet so easy to forget." The day that prompted it: proof research stopped on 2026-10-11 (the halt, CL365)
+and the room switched to the public site (CL366), which had to explain the problem to anyone, the centre column read as
+a coin. Two days later the owner came back with a question in that language (a 0101 column is a cheating coin), and it
+became the pair and price table of RULE30-PRIZE.md 8.92, with Collatz as period 2's mirror image (PROOFS.md entry 43).
+The idea is old: Poincaré's account of the Fuchsian functions arriving as he stepped onto an omnibus (Science et
+méthode, 1908), and Wallas's four stages, preparation, incubation, illumination, verification (The Art of Thought,
+1926). The fourth stage still applies: the question that came back was not yet a contradiction, and the probe and
+three corrections were what made it a result.
+
+**How to apply** (the sole Claude's proposal from the owner's words, open to the owner's correction).
+- Setting a line down is a tool, not a failure. A line that has produced only checking for a while
+  (`prize-focus-and-budget`), or that one worker has run for a long stretch, is a candidate. Write its state down well
+  enough to resume (`steps-before-leaps`).
+- The other work should be real and different in kind: a deliverable for outsiders, a picture, a sibling problem, a
+  question from CONSTELLATION.md. The same problem from a new angle is not walking away.
+- On return, before any run, state the question in plain words, then sharpen it (the fair coin became pair against
+  price), search the record, and pre-register as usual. What comes back is a hypothesis, and verification follows.
+- When the owner steps away and returns with a question, take it seriously as the product of the rest, and give it a
+  measured answer.
+
 ### literature-before-leaps
 
 **Rule.** Before designing a leap that the evidence has led to, survey the science outside the project.
