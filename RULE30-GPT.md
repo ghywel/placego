@@ -30490,7 +30490,7 @@ Then STOP the free tube and evolve these cells for R more ticks with the prescri
 
 ## GC1196 — The four extra R3 end rejections have the certified cut101001 at every span (2026-10-13)
 
-**PROOF-SKETCH carrying suffix; COMPUTED endpoint verdicts adopted.** Local L680 ata0d53e94 reads GC1195's tube, block order and wall handoff, now PROVED, and supplies the registered R3 result. The committed source was read: the rebuilt endpoint indices are1..4, the trace is at ticksell-1..ell+2, and the direct full verdict receives exactly W=ell+3 initial child cells. The extra supplied cell in direct evolution is a boundary control, not an extra clock observation. U1..U5 are adopted as controlled computations without replay. Our prediction of14 OPEN packets holds exactly; complete R3 closure is false.
+**PROVED (Local L681 carrying suffix read); COMPUTED endpoint verdicts adopted.** Local L680 ata0d53e94 reads GC1195's tube, block order and wall handoff, now PROVED, and supplies the registered R3 result. The committed source was read: the rebuilt endpoint indices are1..4, the trace is at ticksell-1..ell+2, and the direct full verdict receives exactly W=ell+3 initial child cells. The extra supplied cell in direct evolution is a boundary control, not an extra clock observation. U1..U5 are adopted as controlled computations without replay. Our prediction of14 OPEN packets holds exactly; complete R3 closure is false.
 
 A sufficient cause for the four additional full-cut failures is already in the record. GC1023 identifies101001 as the forbidden gap3 exit after a train gap2. The phase0 section of rule30_local_mfw44.txt contains exactly101001; its absence is among Local's cake_lpr-verified cuts, inherited here without a new membership run or certificate replay.
 
@@ -30507,3 +30507,40 @@ Combining the reviewed R1 exclusions, R3 black failures and this certified suffi
 These ten classes have endpoint[1,0,1,0] and trace1111. Their two new visible bits are00, giving(10)^n00 rather than the gap3 exit; the displayed101001 argument does not remove them. They remain OPEN. The full cut list passed at Local's representatives; that does not by itself prove all-cut survival at every end length, and no realized-record witness is asserted. The all-span statement above is an exclusion of the other classes, not an all-span realization of these ten.
 
 **Decision.** R4/R5 is not registered: the agreed R3 block is finished. The tube is a sound representation, but increasingR grows its finite packet space and still treats this one time-alignment family. This result does not supply the missing cost for arbitrary crop-time/birth origins. Retain the ten rows and return to the actual-band/origin guard; the intended next step is to determine when that band fixes a departure packet at other alignments. Existing pure-train exit lemmas are searched before pursuing it. Record searched: first.departure|first.differ|defect.tube|arrival.packet withband|all.phase|phase0|crop ->10hits7files; train|two.gap|period7|0110010 withtermin|finite.end|white.band|exit|seed ->222hits66files. GC1023, GC1195 and L680 source read. The symbolic suffix and contrasting00 packet are analytic controls; no new experiment, packet widening, closing-window scan, solver or Local run replay. Local's targeted read of the sufficient101001 cause and all-span four-class exclusion is requested. Depth143=17 in both phases is adopted as Local's verified certificate milestone;145 phase1 and146 phase0 remain pending.
+
+
+## GC1197 — A realized band with no earlier train departure has an origin-independent residue guard (2026-10-13)
+
+**PROOF-SKETCH; fixed formal controls COMPUTED.** Missing inference: the train-end packet tests were limited to one crop-time family. Their first two arrivals can instead be applied directly to an actual child row, giving a restriction at any crop time and birth age. The restriction has an explicit prefix premise, so it does not bound arbitrary realized records.
+
+Let b_j be the actual initial left row, centre wall tau_p(t)=(t+p) mod2, and assume the genuine clock covers its band query through E=d+L-1. Suppose b is zero on[d,E] and agrees at every depthj<d with the train reference
+
+    A^p_t(j)=R_((t+3p) mod4)[(-j) mod7],
+    R=(0100110,1111101,0000001,1000011).
+
+These are the white-start and black-start rebasings of the controlled seven-ring. Both have white-time visible code(10)^infinity. Their initial left rows are A^0=(0110010)^infinity and A^1=(1100001)^infinity. This premise concerns the actual row and its origin, not a real canonical parent or the ordinary seed's right half. G25 makes it equivalent to matching the reference neighbour trace through tickd-2, while the actual clock is supplied. No N, T or inheritance age is prescribed.
+
+Let ell be the first discrepancy between b and A^p. It is the first reference black cell at or afterd, because b is white inside the band. The initial reference's maximum white gap is2 for p0 and4 for p1. Therefore ell<=d+2 in white phase and ell<=d+4 in black phase. At L>=4 for p0 or L>=6 for p1, both ell and ell+1 lie in the band. In particular delta_0(ell)=1 and delta_0(ell+1)=A^p_0(ell+1), since the actual cells are both zero.
+
+G25's first-difference pivot gives the first neighbour discrepancy at tickell-1, with all earlier values matching the train. At a black tick this flips the required1 to0. At the other white phase it flips a train visible0 to1 after a preceding1, giving11. Thus the only possible first-arrival phases are ell=1 mod4 for p0 and ell=2 mod4 for p1. The next tickell is black in each allowed case. GC1167's proved defect formula then forces
+
+    A^p_0(ell+1)=C_p(ell),
+    C_p(ell)=(ell mod2) XOR XOR_(0<=t<ell) A^p_t(ell-t-1).
+
+As before, C_p flips at ell+28 and repeats at56, because the four seven-ring rows have13 ones. Using the reference black positions and the allowed first-arrival phases leaves exactly
+
+    p0: ell mod56 in {13,17,37},
+    p1: ell mod56 in {14,30,50}.
+
+Moving d back only over the reference zeros immediately beforeell gives the actual band-start restriction
+
+    p0, L>=4: d mod56 in {11,12,13,17,35,36,37},
+    p1, L>=6: d mod56 in {10,11,12,13,14,30,50}.
+
+This is valid at every crop time and birth age under the stated no-earlier-departure premise. It excludes the other depths even when the earlier left prefix is arbitrarily long. It does not assume that a surviving residue is realized or survives later checks.
+
+**The exact horizon is essential.** The next black condition at old tickell depends on initial cells through depthell+1. Here ell+1<=E, so the query fixes it and the required centre observation at ell+1 is already within the original horizon. No extra observation is added. With one less band cell that premise can fail: p0,d7,L3 gives ell=E=9; p1,d38,L5 gives ell=E=42. Changing only the next initial cell outside the band from0 to1 preserves the row throughE and all earlier trace bits, but repairs the next black check. Thus the shorter band may not inherit the displayed residue exclusion. These are formal controls, not asserted actual records.
+
+**Scope verdict.** This transfers a finite-end restriction from the T1 toy family to realized row coordinates in both phases. It also identifies its remaining limitation precisely: records whose first train departure is before their band are not covered. The main line still needs a cost for those early departures and their later origins. No packet-width increase, completed-train scan or fitted W(j) law is requested. Further refinements of these residue subclasses are held; the next invariant must address the early-departure case rather than collect more train-end classes.
+
+**Controls.** The symbolic56-residue calculation gives the displayed ell/d sets. At p0,d9/13/17/41 and p1,d14/22/30/42, L6, two farther tails give16 named checks of the predicted next-black verdict; lookup and Boolean clamped evolutions agree. G25 inverse reconstruction of the pure code independently reproduces each phase's reference prefix. The two one-cell-short horizon controls above pass and are the identified unexpected checks. Source: tests/probes/lexicon/rule30_record_train_band_guard.py. Record searched: first.departure|first.differ|train.prefix withzero.band|white.band|record|mod56 ->22hits14files; GC1167, G25, GC1194/1195 and GC1023 read. No record, crop-time, birth, profile or membership census, solver or Local run replay. Local's carrying read requested for phase rebasing, ell+1 horizon coverage and the prefix premise. GC1196 is PROVED through L681's all-span suffix read; no further computation of that family is requested.
