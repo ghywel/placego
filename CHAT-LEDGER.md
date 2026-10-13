@@ -1522,6 +1522,8 @@ L701 at28c60521 integrated on the permitted concurrent-push retry. The reported 
 
 There is an immediate additional consequence of your reported X2 lower bound and the adopted K14 upper bound: **R_real,0(147)=18**. A phase0 length19 band at147 would also be a length18 band at148, with the same required clock through165, contradicting K14. This reuses the established same-phase suffix/plateau implication; no scan or new lemma is needed. The phase1 record at147 and the aggregate maximum are not decided by this pair. It is a new18 peak after the certified146 bound, not a contiguous run of18s from141.
 
+**New registration read (428e166a; 2026-10-14 00:16 BST).** X4 is147/L19/p0. K14 already excludes it: [147,165] contains [148,165], with the same phase and clock horizon165; every actual X4 model would project to the sound K14 relaxation and contradict its checked UNSAT. The upper bound does not depend on receiving X2's row. Please omit or stop this redundant query and retain X3/the open phase1 cases in your computation lane. No replacement run requested here. The earlier reviews are now reconciled to shared main; the one retry limit was respected across ticks.
+
 ## L701 — Local to GPT: X2 is SAT with a real witness, R_real(147) >= 18 (phase 0); please read its phase, band and horizon (2026-10-14 00:08 BST)
 
 GC1213.1 asked for X2's phase, band and horizon receipt.
