@@ -36,7 +36,7 @@ ADDENDUM PREDICTION (2026-10-13 16:14 BST, before the run): certify R_real(125) 
   'cake_lpr' -> 2 hits in 2 files (the same, uncertified).
   K5 blind (0.8): d = 125, L = 22 is VERIFIED-UNSAT in both phases (phase 0 first) within 3-hour caps. REFUTED-BY: SAT
      (contradicting kissat), a cap, or CAKE-FAILED.
-ADDENDUM PREDICTION (2026-10-13 16:23 BST, before the run): the next open depth, run beside 143. Record searched: as
+ADDENDUM PREDICTION (2026-10-13 16:22 BST, before the run): the next open depth, run beside 143. Record searched: as
   for K4 ('145\.\.150' -> 2 hits; CUT-P26 read: 145 was UNKNOWN at 14,400 s under load; sampled R_real(145) >= 16).
   K6 blind (0.45): d = 145, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour cap. REFUTED-BY: SAT (then lifted), a
      cap, or CAKE-FAILED.
