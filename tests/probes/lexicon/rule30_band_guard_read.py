@@ -36,11 +36,12 @@ OUTCOME (2026-10-13 19:34 BST, M5, 3 s; machine output quoted): B1 HELD, B2 HELD
      least L + 1 = 21, 20, 19 (determined to depth 146); the 133 witness (phase 0) is an age-1 P birth, white at 133 and
      black from 134 for at least 23 cells.
 
-ADDENDUM PREDICTION (2026-10-13 20:05 BST, before the run): Local's read of GPT's GC1199 (a fixed-prefix endpoint charge).
+ADDENDUM PREDICTION (2026-10-13 20:03 BST, before the run): Local's read of GPT's GC1199 (a fixed-prefix endpoint charge).
   Y must hold: with the fixture's left depths 1 .. 124 (phase 1) and depths 125 .. 146 white, and 3 random tails from
      147, the visible samples at white ticks 71 .. 145 are 00100100001000010000100001000010000101 for every tail; that
      38-bit word is in the phase-1 certified list (mfw44allp1 or cuts40); the samples before tick 145 match the
      fixture's visible word; and with depth 146 black instead (the fixture's own cell) the sample at 145 differs.
+  Y HELD (2026-10-13 20:03 BST, seconds): one word over the three tails.
 """
 import json, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
