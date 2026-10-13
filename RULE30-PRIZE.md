@@ -6287,3 +6287,20 @@ share an ending (J1 held, J2 refuted). Two of the 27 are the W = 11 champions be
 the W = 11 jump carried through a matched prefix. The prefix does not repeat: two or three copies before a champion
 (W = 51, 71) survive 34 ticks (J4 refuted). The champions are composites of a short core and a long-lived prefix fitted
 to it, not a periodic gadget, so the jumps need not recur every 20 widths.
+
+**Addendum 2, the bridge to the records (2026-10-13 12:49 BST; GPT's pointer in GC1164 to 8.39).** In 8.39's wall form, R(d) is
+(first failing odd time) + 1 - d, maximised over rows white from depth d on, and those rows are exactly the left seeds
+of width at most d - 1 in the white-start phase. So R(d) + d - 1 = max over W <= d - 1 of the white-start H_L(W): the
+left horizon and the records are one quantity in two coordinates.
+- *Checked.* An exact match at all 25 depths d = 3 .. 27 between records.c's R(d) (via rule30_wall.py) and the
+  census's white-start maxima, two independently written engines (predicted to hold; held). White-start H_L(0 .. 26)
+  is 1, 7, 3, 5, 5, 9, 9, 9, 17, 15, 17, 15, 29, 23, 27, 31, 25, 31, 33, 29, 37, 35, 41, 43, 41, 41, 43. Black-start
+  is 0, 2, 6, 4, 6, 8, 10, 12, 10, 18, 14, 30, 16, 28, 32, 26, 30, 30, 30, 38, 30, 36, 40, 40, 42, 44, 44.
+- *The doubling conjecture* R(d) <= d + 4 is therefore exactly a linear edge deadline in the white-start phase,
+  survival at most 2d + 3, slope 2. By GC637 it gives Q1 for that phase.
+- *The slope was known.* The record's coin optimum R(d) of about 0.826 d + 0.8 (8.38) predicts H_L of about 1.83 W,
+  which is the slope the census found between its jumps. Both 8.94 laws were refutable from the record before the run.
+- *What was not new.* The white-start maxima to W = 32 are implied by R(d), which is known exactly far deeper (8.36,
+  8.37; R(89) = 75). My record search used the left-horizon names and missed the wall-form bridge.
+- *What was new.* The black-start maxima (corresponding to 8.82's R° in GC1043's phase-correct game; not
+  cross-checked here), the survivor distribution with its coin-like bulk, and the composite champions.
