@@ -67,6 +67,14 @@ ADDENDUM OUTCOME (2026-10-13 17:36 BST, M5, under a minute; machine output quote
      every trailing-zero seed is a seed of a shorter gap, either a lower deficit's or, for g = 6, the full-span seed of
      g = 5 at the same deficit (j = 2: 6 of 6 and 3 of 3; j = 3: 24 of 24 and 12 of 12). The last-nonzero-1 seeds are
      seed 11 (the all-black Q gaps, r = 1), closing at 9/10 with period 32, GC1176's own numbers.
+
+ADDENDUM PREDICTION (2026-10-13 17:44 BST, before the run): a direct check of GPT's GC1187 trimming transfer (no census,
+  no larger j; GC1188 holds j = 4).
+  T1 must hold: for j = 1 .. 3, every leading-1 profile whose seed's last nonzero index h is below g + 2, N in its
+     parity class with z = N + h - 2 >= 2 and N <= 25, both p, L = 4j + 1, cores of the minimal length plus 2, 2 random
+     tails: with Delta = g + 2 - h and d' = d - Delta, (a) the child row is white on [d', d + L - 1] and black at d' - 1;
+     (b) every canonical ancestor A_n, n = 1 .. a - 1 (the updated parent advanced a - 1 - n ticks), is white on
+     [d' - n, d + L - 1 + n]; (c) floor((d' - p)/2) + 1 - a = floor((h - 1)/2).
 """
 import itertools, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -239,6 +247,44 @@ def census(j, wmax, lists):
                         held = False
                         report.append('%s: OPEN at W=%d; classes %s; small N %s' % (tag, W, surv[:4], small[:4]))
     return held, report
+
+
+def trim_check(jmax=3, nmax=25):
+    rng = random.Random(1187)
+    ok, n = True, 0
+    for j in range(1, jmax + 1):
+        L = 4 * j + 1
+        for g in (2 * j - 1, 2 * j):
+            for r in (0, 1):
+                for bits, typ in profiles(g, r, True):
+                    sb = seed_bits(r + 2, bits, typ)
+                    h = max(i for i, b in enumerate(sb) if b)
+                    if h >= g + 2:
+                        continue
+                    for N in range(r if r else 2, nmax + 1, 2):
+                        z = N + h - 2
+                        for p in (0, 1):
+                            a, d = N - p, 2 * N + g - p - 1
+                            if a < 1 or d < 6 or z < 2:
+                                continue
+                            dp = d - (g + 2 - h)
+                            K = kmin(typ, N, p, L) + 2
+                            for _ in range(2):
+                                row = parent_row(N, bits, typ, K, [rng.randrange(2) for _ in range(6)])
+                                U = step(row, N % 2)                      # the canonical ancestor A_(a-1)
+                                anc = {a - 1: U}
+                                for t in range(a - 1):
+                                    U = step(U, (t + 1 + N) % 2)
+                                    anc[a - 2 - t] = U
+                                kid = anc[0]
+                                ok &= all(kid[i] == 0 for i in range(dp, d + L)) and kid[dp - 1] == 1
+                                for m in range(1, a):
+                                    ok &= all(anc[m][i] == 0 for i in range(dp - m, d + L + m))
+                                ok &= (dp - p) // 2 + 1 - a == (h - 1) // 2
+                                n += 1
+    print('T1 GC1187 transfer (j <= %d, trailing-zero profiles, N <= %d): %s over %d paths'
+          % (jmax, nmax, 'HELD' if ok else 'FAILED', n))
+    return ok
 
 
 def main():
