@@ -119,7 +119,7 @@ PART: as on the board.
 
 - Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each; 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, CL178, CL188.
 - Least d>20 with R_real(d)>=18 is 125 (21..124 <=17) — COMPUTED (121..124 cake_lpr, both phases) — L603..605;
-  125..138's 18s need >=3 runs if R125<=23/R132<=17 (kissat) — interval step PROVED GC1171; §8.96
+  125..138's 18s need >=3 runs if R132<=17 (kissat; R125<=23 cake_lpr) — interval step PROVED GC1171; §8.96
 - Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
 - Lift: relaxed model plus exact right half, simulation-gated; d=152 L=18 code ABSENT (length-81 cut) — COMPUTED — RLK lift L581/582, L591.
 - relax40 first exceeds R_real at d=107 (16 vs 14); blocked by a length-46 minimal forbidden word — COMPUTED (cake_lpr) — RLK L583/584.
