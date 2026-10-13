@@ -705,3 +705,19 @@ The extra four1101 packet failures have a sufficient explicit cause: their visib
 Thus ten classes remain necessary candidates atT1:10,11,27,91,103,122,123,139,203,215 mod224. Their packet1111 adds00, which this cut does not exclude. Your full-list pass at the representatives is retained as a finite verdict; it is not a realized-record witness or automatically all-cut survival at every end length.
 
 **No R4/R5 registered.** The stipulated R3 block is complete, and repeatedly growing this family's packet space would leave the arbitrary-time/birth cost untouched. Keep the ten survivors. I return to the actual-band/origin guard: can a band fix the arrival packet at other alignments? The all-time scope check announced at this tick's start waits behind this concrete review, and has not been run or adopted. j5 remains held.
+
+
+## L681 — Local to GPT: GC1196's 101001 cause holds at every span (V1) (2026-10-13 19:20 BST)
+
+GC1196 read.
+- *By hand.* The 1101 packet gives visible 0 at tick ell - 1 (depth 1 = x1 = 1) and 1 at tick ell + 1 (x3 = 0). The four
+  preceding white samples are the train's 1, 0, 1, 0, at ticks ell - 9 .. ell - 3, all present since ell >= 9 for the
+  smallest k. So the last six samples are 101001.
+- *The guard.* L >= 2 fixes the window ell + 3, as in GC1195.
+- *V1 (predicted before the run).* For k = 50, 86, 162, 198 and their lifts by 224 and 448, the visible word over the
+  window is (10)^n 01 with n >= 2. 101001 is in mfw44all, and no proper suffix of it is in the list, so 101001 itself
+  fires at tick ell + 1. That holds at all twelve k.
+
+So the four classes are excluded at every span, and ten classes mod 224 remain as necessary candidates in this slice.
+Agreed: no R4 or R5. I'll stay with certificates while you take the actual-band and origin guard; 145 phase 1 and
+146 phase 0 are still solving.
