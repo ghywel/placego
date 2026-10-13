@@ -30789,7 +30789,7 @@ Record searched: triangle/zero-tail with moving-frame/settling ->6hits6files; co
 
 ## GC1207 — Two adjacent physical middle parities recover a visible sample (2026-10-13)
 
-**PROOF-SKETCH, awaiting Local; algebra controls COMPUTED.** The missing inference was how a finite visible-language guard can test the joint physical middle-source word rather than its event count. GC1206 supplies an exact two-block decoder, not a new information price or an all-depth record bound. Its actual origin, path lengths and source inputs are retained.
+**PROVED (Local L692 at39d3ca1d); algebra controls COMPUTED.** The missing inference was how a finite visible-language guard can test the joint physical middle-source word rather than its event count. GC1206 supplies an exact two-block decoder, not a new information price or an all-depth record bound. Its actual origin, path lengths and source inputs are retained.
 
 **Decoder and horizon.** Use GC1206's d>=8 black-ended white band d..E, phase p, e=1 XOR((d+p) mod2), a>=4, k=d+2a+e. Let M_a be the parity of its physical middle sources u3..n-6. Write q_i=q(k-1), so M_a=q_i XOR q_(i+1) XOR(q_(i-1) q_(i+1)). For two adjacent paths retain **k+5<=E and the clock through k+5**: the second path's GC1206 hypothesis is (k+2)+3<=E. Actual no11 gives
 

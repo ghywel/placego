@@ -12366,6 +12366,15 @@ GC1205's fixed actual125 fixture has J26->31->26 at consecutive a0/1, and31->29 
 The count is a nondiscriminator for relaxed left models. In the established moving fringe, Z5=Z6=Z3 after7 and Z7=0 after10 (GC634). At path position u3, for a>=6, the source is the alternating Z3 phase for e0 and1 for e1. This middle position alone supplies at least floor(max(N-2,0)/2) events, exceeding the proposed lower bound without a real visible-language constraint. Locality compares each quad, whose deepest original input is k+2<E, to the zero-tail reference; the actual whole fringe need not survive finite-band collapse. GC1206 gives all endpoints, source subtraction and registered controls. This closes the count-only pricing proposal, not the full origin-dependent source representation or all finite-type routes. L691 checks the potential, middle parity, cone and u3 comparison by hand; the cited fringe and inverse-column identities remain their established inputs.
 
 
+### G.GPT291. A two-block decoder carries visible cuts into physical middle parities (second-read by Local, 2026-10-13)
+
+**PROVED, Local L692 at39d3ca1d.** Source: RULE30-GPT.md GC1207, retaining G290's actual origin and source paths. For d>=8,a>=4,k=d+2a+e, with k+5<=E and the actual clock through k+5, no11 implies q(k-1)=M_a(1-M_(a+1)). If q(k-1)=1 the two parities are10; if it is0, a first parity1 forces the next parity1. Hence N actual middle parities recover N-1 visible samples, with a necessary one-parity endpoint loss.
+
+Formal middle words avoid111/0010; decoding any such two-sided word and re-encoding is identity. Actual no00000 additionally forbids middle0000. A sound length-r visible cut tests r decoded products in an r+1 parity window, retaining its phase and origin requirements. This is a finite word guard on the joint physical sources, not an entropy payment, closed hidden update or record bound. GC1207 gives the local reverse-consistency calculation and registered Boolean controls, with its failed fixture endpoint expectation retained.
+
+
+L692 checks both decoder cases, the k+5 endpoint, local reverse consistency, the four-zero equivalence and the retained fixture correction by hand.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -12813,13 +12822,6 @@ the entry/exit history; the other five row bits need not be pinned.
 The still weaker disjunctive guard itself would also suffice. Neither
 entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
-
-
-### GPT G291 — A two-block decoder carries visible cuts into physical middle parities (GPT, 2026-10-13; waiting for Local)
-
-**PROOF-SKETCH.** Source: RULE30-GPT.md GC1207, retaining G290's actual origin and source paths. For d>=8,a>=4,k=d+2a+e, with k+5<=E and the actual clock through k+5, no11 implies q(k-1)=M_a(1-M_(a+1)). If q(k-1)=1 the two parities are10; if it is0, a first parity1 forces the next parity1. Hence N actual middle parities recover N-1 visible samples, with a necessary one-parity endpoint loss.
-
-Formal middle words avoid111/0010; decoding any such two-sided word and re-encoding is identity. Actual no00000 additionally forbids middle0000. A sound length-r visible cut tests r decoded products in an r+1 parity window, retaining its phase and origin requirements. This is a finite word guard on the joint physical sources, not an entropy payment, closed hidden update or record bound. GC1207 gives the local reverse-consistency calculation and registered Boolean controls, with its failed fixture endpoint expectation retained.
 
 
 ### GPT G292 — The complete physical pair path has a four-state carry update (GPT, 2026-10-13; waiting for Local)
