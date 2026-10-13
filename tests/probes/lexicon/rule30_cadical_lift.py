@@ -15,7 +15,7 @@ save_model) right after Relaxed.check and before membership, so an interruption 
 the first run started, which was already in its solve).
 
 RUN-ON:     cpu; one CaDiCaL solve plus kissat for the right half.
-COMMAND:    KISSAT=kissat python3 tests/probes/lexicon/rule30_cadical_lift.py D L PHASE [CAP=7200]
+COMMAND:    KISSAT=kissat python3 tests/probes/lexicon/rule30_cadical_lift.py D L PHASE [CAP=7200] [EXTRA_CUTS,comma-separated]
 
 Record searched (record_find, 2026-10-13 20:02 BST): 'R_real\\(147\\)' -> 3 hits in 2 files (K10 in rule30_cadical_certify.py and
 this file);
@@ -38,6 +38,13 @@ OUTCOME (2026-10-13 20:25 BST, M5; machine output quoted): L1 HELD, L2 REFUTED.
      ['00001000010101010001000010010010000100001001001000'] (length 50; every shorter factor of the code is present, so
      the word is minimal). The relaxed model is an artefact of the relaxation; this word is a cut candidate (a kissat
      verdict, to be certified by cake_lpr) and K10's SAT says nothing about R_real(147) yet.
+
+ADDENDUM PREDICTIONS (2026-10-13 21:19 BST, before the run): round 2. The 50-bit cut was certified (certify K12) and
+  added; the certify run is SAT again (K13 refuted: d = 147, L = 18, phase 0, 1157 words, cnf sha256
+  98af8d6b35c491016a3ae34f183e8a5892cefdad99cc93574251e5b6d3fb238a, solve 2861 s).
+  L3 must hold: with the extra cut the CNF here has that SHA-256 and the model passes Relaxed.check.
+  L4 blind (0.3): the round-2 model lifts (VALID), so R_real(147) >= 18. REFUTED-BY: membership UNSAT; then its shortest
+     absent factor is certified and a third and last round is run.
 """
 import hashlib, os, subprocess, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -48,11 +55,12 @@ import rule30_relaxed_records_k as rlk                                 # noqa: E
 def main():
     d, L, ph = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3])
     cap = int(sys.argv[4]) if len(sys.argv) > 4 else 7200
-    forb = rlk.load_forbidden('44all' if ph == 0 else '44allp1') + rlk.load_cuts(ph, 40)
+    extra = sys.argv[5].split(',') if len(sys.argv) > 5 else []
+    forb = rlk.load_forbidden('44all' if ph == 0 else '44allp1') + rlk.load_cuts(ph, 40) + extra
     inst = rlk.Relaxed(d, L, ph, forb)
     text = 'p cnf %d %d\n' % (inst.nv, len(inst.cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in inst.cl)
     sha = hashlib.sha256(text.encode()).hexdigest()
-    name = os.path.join(rlk.DIR, 'lift_d%d_L%d_p%d.cnf' % (d, L, ph))
+    name = os.path.join(rlk.DIR, 'lift_d%d_L%d_p%d_x%d.cnf' % (d, L, ph, len(extra)))
     open(name, 'w').write(text)
     print('LIFT d=%d L=%d phase %d: cnf sha256 %s' % (d, L, ph, sha), flush=True)
     t0 = time.time()
@@ -67,7 +75,7 @@ def main():
             m.update(int(z) for z in line.split()[1:] if int(z) > 0)
     inst.check(m, forb)                                               # raises if the model is not a relaxed model
     code = inst.code
-    saved = rlk.save_model(inst, d, L, ph, 'cadical_lift')            # before membership (GC1201)
+    saved = rlk.save_model(inst, d, L, ph, 'cadical_lift_x%d' % len(extra))   # before membership (GC1201)
     print('LIFT relaxed model checked; visible code %s; saved %s' % (code, os.path.basename(saved)), flush=True)
     right = rlk.right_half_for(code, ph)
     if right is None:

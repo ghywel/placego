@@ -71,7 +71,10 @@ ADDENDUM PREDICTION (2026-10-13 20:48 BST, before the run): the next open depth 
      cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
-  K9 HELD, K10 REFUTED, K12 HELD; K11, K13 pending.
+  K9 HELD, K10 REFUTED, K12 HELD, K13 REFUTED; K11, K14 pending.
+  K13 REFUTED (21:16): d=147 L=18 phase 0 (1157 words, with the 50-bit cut): SAT; cnf sha256
+     98af8d6b35c491016a3ae34f183e8a5892cefdad99cc93574251e5b6d3fb238a; solve 2861 s; partial LRAT (20.7 GB) deleted.
+     Round 2 of the lift follows (rule30_cadical_lift.py L3, L4).
   K9 (20:26): d=145 L=18 phase 1 (1226 words): VERIFIED-UNSAT; cnf sha256
      0e6c98bc83f03a5af1df4c7a849987265f287da85924d1c5eb13a0149fb1fdc2; solve 5728 s, check 1812 s, lrat 33561.5 MB. With
      K6, R_real(145) <= 17 in both phases (sampled 16, so 16 or 17).
