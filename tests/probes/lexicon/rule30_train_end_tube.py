@@ -36,6 +36,11 @@ OUTCOME (2026-10-13 19:09 BST, M5, 1 s; machine output quoted): U1 HELD, U2 HELD
      122, 123, 139, 203, 215}); [1,0,0,0] / 1101 OPEN under the four-tick test (k = 274, 310, 386, 422); [1,0,1,1] / 1110
      and [1,0,0,1] / 1100 fail. The full verdict at window ell + 3 (every certified cut) agrees except on the four 1101
      packets, which it fails, leaving 10 of 28 open.
+
+ADDENDUM PREDICTION (2026-10-13 19:19 BST, before the run): GPT's GC1196 cause for the four extra rejections.
+  V1 must hold: for k = 50, 86, 162, 198 and their lifts k + 224, k + 448, the child's visible word over the window
+     ell + 3 is (10)^n 0 1 with n >= 2, its last six symbols are 101001, that word is in the phase-0 certified list
+     (mfw44all), and no proper suffix of 101001 is in the list (so 101001 is the cut that fires at tick ell + 1).
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -189,6 +194,21 @@ def main():
     print('GC1195 read:', {kk: ('HELD' if vv else 'FAILED') for kk, vv in ok.items()}, '| R3 packets OPEN: %d of %d' % (opens, len(reps)))
     for r in rows:
         print('  k=%d (mod 56 = %d): endpoint row %s, trace %s, %s, %s' % r)
+
+
+def suffix_check():
+    import rule30_relaxed_records_k as rlk
+    L0 = set(rlk.load_forbidden('44all') + rlk.load_cuts(0, 40))
+    ok = '101001' in L0 and not any('101001'[i:] in L0 for i in range(1, 6))
+    for k0 in (50, 86, 162, 198):
+        for k in (k0, k0 + 224, k0 + 448):
+            P = packet(k)
+            rows = clamped(P['row0'], P['W'] - 1)
+            vis = ''.join(str(1 - int(rows[t][1])) for t in range(0, P['W'], 2))
+            n = (len(vis) - 2) // 2
+            ok &= vis == '10' * n + '01' and n >= 2 and vis.endswith('101001')
+    print('V1 GC1196 suffix 101001 at k = 50, 86, 162, 198 and lifts:', 'HELD' if ok else 'FAILED')
+    return ok
 
 
 if __name__ == '__main__':
