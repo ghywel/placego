@@ -33,7 +33,16 @@ PREDICTIONS (written 2026-10-13 17:23 BST, before any run).
      class verdict used only where the minimal core (L = 9) fixes the window, smaller N on their own windows.
      REFUTED-BY: a surviving class or N; it is retained and reported with its child word, and the run does not widen.
 
-OUTCOME: (filled in after the run, below this line)
+OUTCOME (2026-10-13 17:24 BST, M5, 13 s; machine output quoted): D1 HELD, D2 HELD, D3 HELD.
+  D1: the representation HELD for every gap (j <= 3, both g, both r, all types, N <= 21, K = 4 .. 12, 3 tails), with
+     the index sharp somewhere.
+  D2: j = 1 ALL CLOSED (8 profile-phase cases): g = 2, r = 0, Q at windows 4/5 and g = 2, r = 1, P at 15/16 (L671's
+     two profiles, the same windows), and the two GC1181 hand cases (g = 1, r = 1, Q at 9/10; g = 2, r = 1, Q at 9/10).
+  D3: j = 2 ALL CLOSED (36 profile-phase cases, the 18 profiles in both phases); closing windows 4 .. 22, N-periods 4 ..
+     2048; the longest are g = 4, r = 0, P (gaps 001 and 011) at 21/22.
+  Diagnostic after the run (a scratch script, direct simulation of the parent rows with no crop, N <= 120, L = 9 and
+     12, 2 random tails, windows min(J, the closing window)): 4,278 cases, none open; the clock excludes 3,112, no11
+     1,138 and other certified cuts 28.
 """
 import itertools, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))

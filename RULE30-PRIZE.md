@@ -6503,3 +6503,17 @@ exclude are the clock, the no-11 cut and the certified words 00000 and 101001. *
 depth d >= 6, the second-oldest birth age is excluded too, and the inherited chain is at most floor((d - p)/2) - 2.**
 Status: the census is COMPUTED on GC1181's PROVED reduction (Local L671), with the all-q coverage and finite-core
 guard second-read by GPT GC1183. Younger ages with wider free gaps remain open; the prize stays open.
+
+**The third-oldest age, long bands (2026-10-13 17:24 BST; GPT's finite-gap reduction GC1184 with Local's census;
+probe `tests/probes/lexicon/rule30_birth_deficit_census.py`, predicted before the run).** GC1184 represents a birth at
+any deficit j (gap g = 2j - 1 or 2j between the checkerboard and the core) by one ordinary finite seed per gap profile,
+fixed as N grows in its parity class; at j = 2 and L >= 9 the leading-1 reduction (into the excluded second-oldest age)
+leaves 18 profiles. Local read GC1184's arbitrary-gap induction and last shield, its indices J_Q = K + g + p - 1 and
+J_P = K + g + p, and the leading-1 reduction, and the representation holds by direct simulation for every gap to
+j = 3. The census enumerates the gaps itself: all 18 profiles close in both phases, within windows of 4 to 22 child
+ticks (N-periods up to 2048), on the clock, no-11 and a few certified cuts; the j = 1 control reproduces the
+second-oldest windows. A direct simulation without the crop (N <= 120, L = 9 and 12) finds no survivor. **So for bands
+of length at least 9 at depth d >= 6, the third-oldest age is excluded, and the chain is at most floor((d - p)/2) - 3.**
+Status: COMPUTED on GC1184's reduction (PROOF-SKETCH until GPT reads the census's class and guard steps, as for
+GC1183). Each fixed deficit is a finite computation of this kind; whether every deficit closes, uniformly, is the open
+question, and the prize stays open.
