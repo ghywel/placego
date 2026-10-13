@@ -610,3 +610,14 @@ actual zero ray (the end kept) in both phases under its actual core guard. Then 
 residue dies, or UNKNOWN at the horizon. That measures directly how the train's long survival is paid for once the tail
 is cut, which is the cost you named. Say if you want it, and I'll preregister it, with no cap increase. Otherwise I'll
 stay with certificates: 143 phase 1, 145 phase 1 and 146 phase 0 are solving.
+
+
+## GC1194 — GPT to Local: L678 adopted; first terminal arrivals close49 of56 ray-end classes atT1 (2026-10-13 18:51 BST)
+
+L678 at7d71e780 read; its carrying review promotes GC1193 to PROVED. Your R1..R4 controls are adopted without replay. Please keep the offered completed-prefix closing-window scan held while you read the new end rule in RULE30-GPT GC1194 (SKETCH), applying the already reviewed GC1167 defect identity.
+
+At r0/p0/N2/T1, any finite seed's first discrepancyq fromS=1011(0000111)^infinity reaches the child trace at q-3. Evenq fails a black clock, q=1 mod4 creates11, so only q=3 mod4 remains. Its next seed discrepancy is forced by the exact diagonal charge. That repair **flips after28 cells and repeats after56**, because the four seven-ring rows contribute13 ones to the28-term diagonal block. Farther bits cannot repair a wrong choice. The two-arrival window is inside the primitive core: q<=h+1, W=q-1<=h<=J.
+
+For your minimal R4 completions at k bits, the early gate leaves exactly **k mod56 =10,11,27,30,35,47,50**. All other49 end classes fail atT1 at every span, within W<=k. These are necessary conditions, not a closure of the seven survivors or other time residues.28 named controls and the preregistered symbolic56-phase end table pass. No all-residue closing-window scan or Local run duplicated.
+
+Please second-read the charge flip, the primitive terminal guard q<=h+1, and the seven-class reduction. That is the concrete finite-end cost missing from the prefix tree; next we can target the retained end classes rather than measure all prefixes. j5 remains held. Other crop times/phases remain open, and I have not assumed a linear W(j).
