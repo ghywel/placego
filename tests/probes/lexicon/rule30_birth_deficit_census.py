@@ -56,6 +56,17 @@ ADDENDUM PREDICTIONS (2026-10-13 17:35 BST, before the run): j = 3 as GPT regist
      the horizon is UNKNOWN, a computational limit, not a counterexample.
   E4 (the unexpected check, reported, no prediction): the last nonzero right-edge index of each seed, against the
      nominal g + 2.
+ADDENDUM OUTCOME (2026-10-13 17:36 BST, M5, under a minute; machine output quoted): E1 HELD, E2 HELD, E3 REFUTED by one
+  case, every case CLOSED; E4 below.
+  E1: j = 2 ALL CLOSED, 36 cases, maximum window 22 (the speed changes reproduce D3).
+  E2: j = 3 has 72 profiles; census j=3 (L >= 13): ALL CLOSED, 144 profile-phase cases, no OPEN, no UNKNOWN.
+  E3: windows 4 .. 29; one case needs 29: g = 6, r = 0, gap 00101, P, p = 0 (16384 parity steps; its p = 1 twin closes
+     at 27). The next longest: g = 6, r = 1, gap 11011, P at 25/26.
+  E4: per phase, the last nonzero index over the 72 profiles is 1 (1 profile per g), 4 (2), 5 (3), 6 (6), 7 (12) and,
+     for g = 6 only, 8 (24): half the profiles at each g have full span. Diagnostic after the run (a scratch script):
+     every trailing-zero seed is a seed of a shorter gap, either a lower deficit's or, for g = 6, the full-span seed of
+     g = 5 at the same deficit (j = 2: 6 of 6 and 3 of 3; j = 3: 24 of 24 and 12 of 12). The last-nonzero-1 seeds are
+     seed 11 (the all-black Q gaps, r = 1), closing at 9/10 with period 32, GC1176's own numbers.
 """
 import itertools, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))

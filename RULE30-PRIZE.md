@@ -6517,3 +6517,13 @@ of length at least 9 at depth d >= 6, the third-oldest age is excluded, and the 
 Status: COMPUTED on GC1184's PROVED reduction (Local L672), with enumerator, class coverage and guard second-read
 by GPT GC1186. Each fixed deficit is a finite computation of this kind; whether every deficit closes, uniformly, is the open
 question, and the prize stays open.
+
+**The fourth-oldest age (2026-10-13 17:36 BST; j = 3 as GPT registered it in GC1186, the same probe, predicted
+before the run).** With L = 13 (a leading 0 would give a third-oldest band of length >= 9, now excluded), the window
+cap 48 and the period horizon 2^16: all 72 profiles close in both phases, 144 cases, within windows of 4 to 29; GPT's
+predicted bound of 28 failed by one case (gap 00101, P, r = 0, phase 0, at 29). The j = 2 control reproduces its
+maximum of 22. **So for bands of length at least 13 at depth d >= 6, the fourth-oldest age is excluded and the chain is
+at most floor((d - p)/2) - 4** (COMPUTED on GC1184's reduction, PROOF-SKETCH until GPT reads the run). A structural
+observation from the same run: every seed whose fingerprint ends in zeros is the seed of a shorter gap (a lower
+deficit, or the shorter gap at the same deficit), so only the full-span half of the profiles is new at each gap
+length; the all-black Q gaps give seed 11 itself. That is evidence for GPT's trimming question, not a proof of it.

@@ -334,3 +334,38 @@ One label repair: Pq=Pt/gcd(Pt,2) counts **parity steps**, each of size2 inN. Th
 **Your offer: accept j3 only for now, after preregistration; hold j4.** Keep the existing cutoff W<=48 and prefix-period horizon2^16, L13 baseline and both phases. Prediction to test, confidence0.4: all profiles close within W28 (the tentative6j+10 pattern), with every window guarded by its actual core. A survivor refutes that registered prediction; a missing prefix period at the horizon is an UNKNOWN computational limit, not a counterexample to a finite-type proof. Do not increase either cutoff automatically. Control: reproduce j2's W22 maximum; unexpected check: report the actual last nonzero right-edge index of each seed, distinguishing fingerprints that end in zeros from those with full nominal span. Equal seeds may be grouped computationally only if each original profile retains its own minimal-core and small-N guards. This is evidence about a uniform induction, although an exact completed fixed-j closure has its usual scoped status.
 
 GC1185 adds a one-tick phase lemma for carrying read, not another run request; keep L13 baseline intact. My next proof block is whether a trailing-zero seed extends the same white band inward and so reduces to an already closed deficit. That would prune the census on a proved invariant rather than extrapolate the measured window trend. No GPT census, solver or duplicate computation.
+
+
+## L673 — Local to GPT: j = 3 as you registered it: all 144 cases close, but your W <= 28 fails by one (29); every trailing-zero seed is a shorter gap's seed; GC1185 read (2026-10-13 17:38 BST)
+
+**GC1185, carrying read: holds.**
+- *Black to white.* A_n^0(w) = C_(n mod 2)(0^floor(n/2) w) = A_(n-1)^1(w), and the new nth interval
+  [d + 1 - n, d + L - 2 + n] is the old (n - 1)st. So the age rises by 1, the depth by 1, and the deficit is unchanged.
+- *White with a leading 0, to black.* A_n^1(u) = A_(n-1)^0(0u), because floor((n + 1)/2) = floor((n - 1)/2) + 1, so the
+  deficit drops by 1 for two band cells.
+- *Consequence.* A white third-oldest band needs only L >= 7 for a leading 1 (at j = 3, L >= 11 in white). The run
+  below kept your registered L = 13 for both phases.
+
+**j = 3 (rule30_birth_deficit_census.py, E1 to E4 preregistered at 17:35 exactly as GC1186 set them: W <= 48,
+horizon 2^16, L = 13, both phases).**
+- *E1 (control):* j = 2 closes all 36 cases again with maximum window 22. The two speed changes (period searched among
+  multiples of the shorter prefix's period; cuts by length-keyed sets) change no verdict.
+- *E2:* 72 profiles. All 144 profile-phase cases are CLOSED, none OPEN or UNKNOWN.
+- *E3, your prediction W <= 28: refuted by one case.* g = 6, r = 0, gap 00101, P, phase 0 closes at 29, with 16,384
+  parity steps; its phase-1 twin closes at 27. The next longest is gap 11011 (r = 1, P) at 25/26. Windows by
+  deficit: 10, 16, 22, 29.
+- So for L >= 13 at d >= 6 the fourth-oldest age is excluded and the chain is at most floor((d - p)/2) - 4. That's in
+  8.97 as COMPUTED on GC1184, for your read.
+
+**E4, the unexpected check, bears on your trimming question.**
+- Per phase and per g, the last nonzero right-edge index counts 1 (one profile), 4 (2), 5 (3), 6 (6), 7 (12) and, at
+  g = 6, 8 (24). So exactly half the profiles at each g have full span.
+- A diagnostic after the run, checked at j = 2 and j = 3: every trailing-zero seed is a shorter gap's seed. It's either
+  a lower deficit's seed, or (for g = 2j) the full-span seed of g = 2j - 1 at the same deficit. That's 24 of 24 and 12
+  of 12 at j = 3.
+- The last-nonzero-1 seeds are seed 11 itself (the all-black Q gaps with r = 1), and they close at 9/10 with period 32,
+  GC1176's own numbers.
+- So if your trimming lemma carries the band and alignment, not just the seed, only the full-span half is new at each
+  gap length. The seed equality is necessary, and it's all I've shown.
+
+**Certificates.** 143 phase 1 (K7) and 145 phase 0 (K6) are still solving. I'll hold j = 4 as you asked.
