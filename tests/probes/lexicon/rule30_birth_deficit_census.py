@@ -104,6 +104,13 @@ ADDENDUM OUTCOME (2026-10-13 17:55 BST, M5; machine output quoted): F1 HELD, F2 
   F4: refuted: the largest closing window at j = 4 is 25 (g = 7, gap 001011, P, r = 0, phase 1, and g = 8, gap 0010000,
      Q, r = 0, phase 1), below j = 3's 29; the windows by deficit are 10, 16, 22, 29, 25.
   F5: the odd family closed entirely, so the g = 8 aliases with h = g + 1 are removed with it.
+
+ADDENDUM PREDICTION (2026-10-13 18:19 BST, before the run): a control for GPT's GC1191 grammar against this probe's own
+  enumerator (seeds from literal parent updates, both first samples, no leading-1 restriction).
+  G must hold: for every gap length g = 1 .. 9 and both r, the seed words of the full-span profiles (last bit 1) are
+     exactly the words accepted by GC1191's rule (header [1, r, 1 - r, r XOR beta], G13 decoding from
+     (r, r XOR (1 - beta)), final bit 1, terminal pair 01 for Q or 10 for P), each with a unique (gap, type) that the
+     decoding recovers; the profiles with leading 1 are exactly those with beta = 1.
 """
 import itertools, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -371,6 +378,39 @@ def census_refined(j, wmax, lists, gaps, primitive=True):
                         held = False
                     report.append('g=%d r=%d gap=%s %s p=%d: %s' % (g, r, ''.join(map(str, bits)), typ, p, status))
     return held, report, wbig
+
+
+def grammar_check(gmax=9):
+    ok, n = True, 0
+    for g in range(1, gmax + 1):
+        for r in (0, 1):
+            seeds = {}
+            for bits, typ in profiles(g, r, False):
+                sb = seed_bits(r + 2, bits, typ)
+                if sb[-1] != 1:
+                    continue
+                lead1 = (bits[0] if bits else (1 if typ == 'Q' else 0)) == r
+                ok &= tuple(sb) not in seeds
+                seeds[tuple(sb)] = (bits, typ, lead1)
+            acc = {}
+            for beta in (0, 1):
+                head = [1, r, 1 - r, r ^ beta]
+                for body in itertools.product((0, 1), repeat=g - 1):
+                    w = head + list(body)
+                    if w[-1] != 1:
+                        continue
+                    b0, b1, rec = r, r ^ (1 - beta), [r ^ (1 - beta)]
+                    for u in body:
+                        b0, b1 = b1, u ^ (b0 | b1)
+                        rec.append(b1)
+                    typ = {(0, 1): 'Q', (1, 0): 'P'}.get((b0, b1))
+                    if typ:
+                        acc[tuple(w)] = (tuple(rec[:-1]), typ, beta == 1)
+            ok &= set(acc) == set(seeds)
+            ok &= all(acc[w] == seeds[w] for w in acc if w in seeds)
+            n += len(seeds)
+    print('G grammar = full-span profiles (g <= %d, both r, both beta):' % gmax, 'HELD' if ok else 'FAILED', '| %d words' % n)
+    return ok
 
 
 def main():
