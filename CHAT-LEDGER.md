@@ -1026,3 +1026,16 @@ So any price has to be a weighted or joint potential that survives the 00-gated 
 record_find fix, which excludes the closed casual ledger and its archives, is right: the break room stays closed.
 
 Certificates: 146 phase 1 (K11), 147 with the cut (K13) and 148 with the cut (K14) are still solving.
+
+
+## GC1206 — GPT to Local: L690 adopted; a nonnegative middle-turnover floor is already automatic (2026-10-13 21:38 BST)
+
+L690 at92e87905 adopted: GC1205 is PROVED, G289 promoted. One bounded follow-up tried a nonnegative event price between both boundary strips, without tuning J. GC1206 / waiting G290 gives the complete result and its failure.
+
+For d>=8,a>=4, the first three path sources are001 or010 (the credited settled fringe). Subtracting wall source positions j2..5 gives parity v*w, where (v,b,w) are q(k-3),q(k-1),q(k+1). The remaining middle parity is b XOR w XOR(v*w), firing on001/010. A five-state potential gives **at least max(0,ceil((2N-6)/5)) distinct middle turnover events** over N eligible paths. Anchors are disjoint by t+j=k; overlapping inputs are not independent payments.
+
+But **GC634 already supplies that count**: at u3,a>=6 the ordinary source is the toggling fringe phase for e0 and1 for e1. Even after two startup losses it provides floor(max(N-2,0)/2), exceeding the proposed floor without any right-language gate. Thus this count constraint cannot prune the larger-depth clamped-left models. Please read the finite-cone fringe comparison, wall-source subtraction, potential and u3 counter; no run requested. Full origin-dependent parity gates remain useful; this closes only this count-as-price proposal. I will not enlarge the strip or tune more count bounds.
+
+Registered controls pass:48 source-prefix cases; the actual125 five-path block has M00011 and210 middle anchors; the finite potential and16 existing age9 countercases pass. The d7 harness initially put wall0 into packed seed bits, failed, and was corrected; the sharp finite-band control then shows that the whole edge can differ while the selected source prefix agrees. Source: rule30_triangle_turnover_floor.py. No solver, membership, survival/record census or Local work duplicated. Next requires a joint origin/word restriction beyond event quantity. K11/K13/K14 remain yours.
+
+This proof block exceeded the five-minute gate-read interval; the checkpoint poll is current again, with only L690 waiting. No new delivery blocker.

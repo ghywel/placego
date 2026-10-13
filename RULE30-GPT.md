@@ -30706,7 +30706,7 @@ Record searched: adjacent-diagonal/parity with transport/charge ->12hits7files; 
 
 ## GC1205 — The integer hole balance has both signs on one actual young record (2026-10-13)
 
-**Integer balance PROOF-SKETCH, awaiting Local; fixed counts COMPUTED; proposed monotone J cost REFUTED.** L689 atf7e087e2 adopted: GC1204 is PROVED and G288 promoted. The specific missing inference was whether its local source could supply a monotone price, after coupling the parities to the actual visible language. The exact integer balance and one fixed real witness reject the most direct hole-count candidate; no variants are tuned.
+**Integer balance PROVED (Local L690); fixed counts COMPUTED; proposed monotone J cost REFUTED.** L689 atf7e087e2 adopted: GC1204 is PROVED and G288 promoted. The specific missing inference was whether its local source could supply a monotone price, after coupling the parities to the actual visible language. The exact integer balance and one fixed real witness reject the most direct hole-count candidate; no variants are tuned.
 
 Use GC1204's actual triangle and clock horizon. Write h=(1-C)(1-D) for the old spatial hole and A,B for the two outward cells. Its integer change after the(t,j)->(t+1,j+1) shift is
 
@@ -30734,3 +30734,54 @@ Thus J is neither nondecreasing nor nonincreasing even over two consecutive step
 **Controls and disposition.** F1 verifies all16 local signed changes, including both signs, by literal Rule30. F2's24 fixed path controls pass,12 with the old black guard needed for terminal removal. F3 fails as displayed on only the three preregistered fixture points. The local0000 counter has Delta0 rather than-q_old=-1 when the old black guard is dropped; this is the identified unexpected endpoint check. No solver, membership, new witness validation, census, train refinement or Local computation replay. Source: tests/probes/lexicon/rule30_zero_triangle_hole_flux.py. Record searched: hole-count/population/internal-hole/empty-pair with integer/flux/monotonic/creation/destruction ->one unrelated old single-hole count warning; visible00/recoding/fibre search ->no prior formula. GC1203/1204, L689, G140 and GC1108 read; the latter already cautions that a lossless code supplies no entropy gain. Local's carrying read requested for the signed law and old-terminal removal; the fixed counter is retained, with no run requested. Next: a joint constraint on physical creation/destruction paths that cannot be discharged by these actual cancellations; no new scalar or deadline claim is made.
 
 **Filing check.** proof_dupes.py --near W289 passes; G288,G271,E6 read. G288 is the credited parity law, G271 concerns long black-wall locking, and E6 is the free hole language of odd-wall width4 relaxations. This integer lift and actual signed counter duplicate none of their cost conclusions. No generated pages edited.
+
+
+## GC1206 — A middle-turnover floor is already supplied by the ordinary fringe (2026-10-13)
+
+**PROOF-SKETCH, awaiting Local; fixed controls COMPUTED; proposed turnover-count discriminator CLOSED.** L690 at92e87905 adopted: GC1205's signed balance is PROVED, G289 promoted, and its finite negative is retained. The bounded next question was whether a nonnegative turnover count could pay where net hole flux cancels. It gives a genuine lower event bound but no additional restriction on the relaxed left models: the settled fringe already meets it without a real right-language gate. No further strip enlargement or count tuning follows.
+
+**Query and paths.** Let d>=8, initial depth d-1 black and d..E white, E=d+L-1, with phase p. Set e=1 XOR((d+p) mod2), and for a>=4 let k=d+2a+e,c=a+1,n=k-c. Retain k+3<=E and the clock through k+3. For any consecutive N eligible a values, count middle turnover events on
+
+    (t,j)=(c+u,n-u),   3<=u<=n-6.
+
+Here the four-cell source S of GC1204 is the absolute signed change |Delta| of GC1205. The region omits the first three fringe sources and wall depths1..5. Each anchor belongs to only one a, since t+j=k; linked holes or shared input cells do not make these events independent paid bits.
+
+**Credited fringe and its finite-cone use.** Compare each selected source to the clamped zero-tail row with the same initial depths1..d-1. Its inward moving coordinates are Z_m(t)=x_t(d+t-1-m). The established GC599/633/634 recurrence is
+
+    Z_m(t+1)=Z_(m-2)(t) XOR(Z_(m-1)(t) OR Z_m(t)).
+
+With Z_0=1 and Z_-1=Z_-2=0, the known reset calculation gives Z1=1 after1,Z2=0 after2, Z3 toggling after2,Z4=1 after4,Z5=Z6=Z3 after7,Z7=0 after10. d>=8 keeps the needed coordinates in the autonomous left half, including a possible initial wall coordinate. These are credited old fringe facts, not a new settling theorem. A source quad on the selected path needs original left depths at most t+j+2=k+2<E. Thus comparison to the zero-tail reference is valid even after the actual finite triangle collapses; the entire actual moving edge is not asserted equal to it.
+
+On a path the frame index is m=1-e+2u. Substitution at u0/1/2, with a>=4, gives source prefix **001 for e0,010 for e1**. Both have parity1, independent of the fringe phase. This is an absolute source packet, not a real backward parent.
+
+**Subtract the wall strip too.** Put (v,b,w)=(q(k-3),q(k-1),q(k+1)), actual successive visible samples. The established inverse-column formulas (C7/R4, G240), extended by their literal recurrence, give the path sources at j2,3,4,5 as
+
+    w, 0, v XOR b XOR w, v XOR b XOR(v w),
+
+so their parity is v w. These formulas use only the retained actual clock and no11. After removing the fringe's1 and this wall contribution from GC1204's R=1 XOR b XOR w, the middle parity is
+
+    M_a=b XOR w XOR(v w).
+
+On the five no11 triples this is1 precisely for001 and010. Thus every M_a1 requires at least one middle turnover event.
+
+**Finite lower bound.** States O and Z1..Z4 record a visible1 or the length of its following zero run. No11 gives O->Z1; no00000 bars a fifth zero. The transition weights for M are1 on O->Z1 and Zi->O for i>=2; they are0 on Z1->O and all zero-run extensions. With potentials
+
+    V(O)=0,V(Z1)=3,V(Z2)=1,V(Z3)=-1,V(Z4)=-3,
+
+all eight edges satisfy5*weight-2 >= V(next)-V(current). The range is6, hence the middle turnover count C obeys
+
+    C >= number of M_a1 >= max(0,ceil((2N-6)/5)).
+
+This is a nonnegative count of distinct changes between the two strips. For the whole block beginning a4, N=max(0,floor((L-e-4)/2)-3). The early visible history needed for the zero-run state exists in this query, and the certified five-zero cut bounds it. The stronger claim of two payments in every five-letter window fails on the formal basic-cut word10100001, whose weights include01000; real membership of that formal counterword is not claimed.
+
+**Why this floor pays no new price.** GC634's already proved Z5=Z6=Z3 and Z7=0 show at u3, time a+4, for a>=6:
+
+    S_u3=Z3(a+4) for e0,     S_u3=1 for e1.
+
+For e0 the outer inputs coincide and the inner first bit is0, so S is their common toggling value irrespective of Z8. For e1 the inputs are(1,Z3,Z3,0), giving S1. This source lies in the middle region. Across N consecutive a>=4, the at-most-two startup losses leave at least floor(max(N-2,0)/2) such ordinary turnovers in either phase. This alone is at least the displayed bound (check even/odd N); no real visible restriction was used. Consequently this count floor cannot prune the clamped left model in the d>=8 class. The full middle parity word remains a joint constraint; no impossibility of richer potentials or finite-type certificates is inferred.
+
+**Fixed controls and failure retained.** T1's48 fixed origins/phases/ages/tails verify the first source packets with independent literal/packed engines. T2/T3 reuse only the accepted125 fixture's a4..8 block: R11100, M00011,216 tail-turnover anchors and210 middle anchors, all distinct. The eight finite-potential edges and formal boundary counter pass. T4 tests only the16 existing age9 cases; u3 has the stated automatic value. The initial d7 horizon harness included wall depth0 in packed seed bits and failed with a negative shift; corrected to positive seed depths, retaining the prescribed wall. Its sharp control then passes: flipping E+2 changes the actual moving edge at time7 but not source prefix001. This is the identified unexpected guard against global fringe comparison. No solver, membership, record/survival census, J-potential tuning or Local computation replay.
+
+Record searched: triangle/zero-tail with moving-frame/settling ->6hits6files; compensation/mandatory-source with density/disjoint/turnover ->17hits4files. GC599/630..634, C7/R4, G240, GC1203..1205 and L690 read. Source: tests/probes/lexicon/rule30_triangle_turnover_floor.py. Local's requested carrying read: finite-cone fringe comparison, the four wall-source values, the event-floor potential and the automatic u3 counter. Next requires a joint origin/word constraint beyond event quantity; ordinary restart activity and independent-bit pricing remain distinct (GC634, GC412).
+
+**Filing check.** proof_dupes.py --near W290 passes. G240,G285,34 were read: they concern fixed-depth/age-filtered sources, one early-origin cut, and first-difference pivots. The fringe is credited to GC633/634, and this entry records the discriminator's failure rather than a new settling or count-to-information theorem.
