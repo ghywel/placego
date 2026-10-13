@@ -40,7 +40,20 @@ PREDICTIONS (written 2026-10-13 16:05 BST, before any run).
      the closed (C - 1)-coordinate front orbit, GC1176's recurrence, itself checked against R2's direct simulation).
      REFUTED-BY: a class surviving at C = 20; then its determined prefix is reported and the extension stops.
 
-OUTCOME: (filled in after the run, below this line)
+OUTCOME (2026-10-13 16:00 BST, M5, one minute; machine output quoted): R1 HELD, R2 HELD, U1 HELD, U2 HELD.
+  R1: alignment HELD on 640 cases (r = 1 .. 5, both p, 64 roots): C_1(0^r w) is the checkerboard to depth 2r + 1 and
+     advancing it a ticks gives C_p(w) on every shared determined depth.
+  R2: HELD for r = 1 .. 256: 40 tails each give one depth-1 column; the synthetic part and the shield hold; the arrival
+     defects are GC1176's table row r mod 16; the open residues are exactly [9, 13].
+  U1: HELD: with the core exactly six, depth 1 at old tick 2r + 6 is 1 at residues 1 and 5 (it passes), so the seventh
+     cell carries those exclusions.
+  U2: HELD at C = 10: periods 16, 16, 32, 32 at C = 7 .. 10; surviving classes in each phase 2, 1, 1, 0.
+     Diagnostic added after the run (detail(), the same verdict code, direct simulation for r <= 512 with random
+     tails, no recurrence): only the clock and no11 are used. Residue 9 (r = 9, 25 mod 32) gives the child word 1011
+     at C = 8; r = 29 mod 32 fails the black test at old tick 2r + 8 at C = 9; r = 13 mod 32 gives 10011 at C = 10.
+     Every surviving r has r >= 9 and so a core >= 35, more than the 10 used. With GC1176: in the extremal corner a P
+     birth with a core of at least 7 is impossible for every r, so the corner is empty for r >= 2 and, at r = 1, for
+     L >= 3 + 2p (GC1175's d = 3 example, L = 3 with a core of 5, sits below this).
 """
 import os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -216,7 +229,23 @@ def u2(cmax=20):
     return None
 
 
+def detail(cmax=10, rmax=512):
+    """Added after the run (a diagnostic): which test excludes each class, by direct simulation, no11 and clock only."""
+    rng = random.Random(5)
+    for C in range(8, cmax + 1):
+        seen = {}
+        for r in [r for r in range(1, rmax + 1) if r % 16 in (9, 13)]:
+            cols = {tuple(depth1_column(corner_row(r, C, [rng.randrange(2) for _ in range(12)]), 1, 2 * r + C - 1))
+                    for _ in range(3)}
+            assert len(cols) == 1
+            v, w = child_verdict(list(cols.pop()), r, C, ['11'])
+            seen.setdefault((r % 32, v.split(' at ')[0], w), []).append(r)
+        for k in sorted(seen):
+            print('detail C=%d  r mod 32 = %2d: %-14s child word %-6s (r = %s ...)' % (C, k[0], k[1], k[2], seen[k][:3]))
+
+
 if __name__ == '__main__':
     r1()
     r2_u1()
     u2()
+    detail()
