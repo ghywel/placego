@@ -36,7 +36,8 @@ OUTCOME (2026-10-13 22:52 BST, M5; machine output quoted): P1 HELD, P2 HELD, P3 
      largest record (133, L = 23, a P birth with a black run of at least 23 from 134), has a real one.
   P4: every age-1 parent run is exactly at least L + 1 (Q) or L (P), the minimum, determined to the horizon.
 
-ADDENDUM PREDICTION (2026-10-13 22:54 BST, before the run): a phase-1 child has two formal parents, C_0(0w) and C_0(1w)
+ADDENDUM PREDICTION (2026-10-13 22:52 BST, committed in 4ecf6e34 at 22:52:52 before the run, which ended 22:53:07; first
+  labelled 22:54, ahead of the clock, corrected after GC1212): a phase-1 child has two formal parents, C_0(0w) and C_0(1w)
   (the parent's first white sample is free, and both advance to C_1(w), GC1170); the census tested only the canonical 0.
   P5 blind (0.5): some of the 18 phase-1 rows without a real canonical parent have a real 1w parent; for those the
      forward image is the same child, and the parent's own birth shape is reported.

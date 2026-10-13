@@ -105,8 +105,8 @@ PART: as on the board.
 - Phase0 R(d)<=d+4 to89; R89=75 — COMPUTED — §8.36/37, RK93.
 - Black-wall WA3 wrong parity; R°(3)=4 — PROVED CL212 — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..120) exact, maximum16 at108; 121..124, 140, 144<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132=139=142=17 (kissat; 132 cake_lpr), 143=17, 145/146<=17 cake_lpr — COMPUTED — RR3, L596..617, §8.96.
-- Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)>=21, 133>=23, 194>=26, 200>=20 (L=21 UNKNOWN at 12 h, L641), 279>=28, 1035>=38; Intel's 16 witnesses (to 1552>=31) replay valid — COMPUTED — SP, IW, L617..620.
+- R_real(97..120) exact, max16 at108; 121..124,140,144,145,146<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 seen; 132=139=142=17 (132 cake), 143=17 cake; 147 open L18 — COMPUTED — RR3, L596..617, §8.96.
+- Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)=21 (cake), 133>=23, 194>=26, 200>=20 (L21 UNKNOWN 12 h), 279>=28, 1035>=38; Intel's 16 witnesses (to 1552>=31) replay — COMPUTED — SP, IW, L617..620.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - RR/RR3 cone CNF equals finite query — PROVED GC937/CL154; phase/horizon lift audit GC1201; replay separate.
 - VC3 gate/status repairs pass synthetic controls (stale-cache recovery manual; no certificate replay) — GC961/965.
@@ -115,9 +115,9 @@ PART: as on the board.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
 - K=40 relaxed at L=18: 124 UNSAT both phases (<=17); 140, 144, 152 settled by CUT/SP — COMPUTED (kissat) — RLK L575, L581/582, L589.
-- Two-gap train: clamped phase-0 seed1001 eternal via sixteen-tick causal lock at14, every tail beyond46 — PROVED CL189/L595 — GC1020/W282; TG. Measured period4 to6, period8 to14, chaos pinned15; no finite invariant window to60.
+- Two-gap train: phase-0 seed1001 eternal (16-tick causal lock at14, tails beyond46) — PROVED CL189/L595 — GC1020/W282; TG. Measured periods 4 to6, 8 to14, chaos pinned15; no invariant window to60.
 
-- Decided R_real climbs about 0.085 a depth over d = 30 .. 116 (no shuffle of 2,000 reaches it); exact L = 18 at d = 140, 148, 156, 164 UNKNOWN after 13,321 s each; 144 .. 168 UNKNOWN at 3,600 s — COMPUTED — TR, CL178, CL188.
+- R_real climbs ~0.085/depth over 30..116 (no 2,000-shuffle reaches it); L18 at 140/148/156/164 UNKNOWN at 13,321 s, 144..168 at 3,600 s — COMPUTED — TR, CL178, CL188.
 - Least d>20 with R_real(d)>=18 is 125 (21..124 <=17) — COMPUTED (121..124 cake_lpr, both phases) — L603..605;
   R125=21, R132<=17 cake_lpr: 18s split at 129 and 132, >=3 runs — GC1171; §8.96
 - Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
@@ -198,6 +198,7 @@ PART: as on the board.
 - GC1114..19 cap672/inverse/excess139/reset PROVED CL294..299; closure REFUTED.
 - GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
 - GC1172/74/76/77/79/1181/84/85/87/89/91/93..99/1200/03..08 PROVED;1173/1182 fail;1178/1192 SKETCH; m-3 out L17 (§8.97).
+- History records: R_real,p(d)<=2n+R^(n)(d+n), equivalent target — PROVED GC1212; history=>kick game REFUTED (train); 16 witnesses no real past — §8.98.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
@@ -240,8 +241,8 @@ PART: as on the board.
   PART (GC883..885, GC887, GC891), witness recipe PROVED (GC888, CL118, L507), positivity guard GC942/944 (CL158)
 
 ## The left front, triangles and the right edge
-- Left diagonals eventually periodic, power-of-2 periods (Jen 1986, Rowland §5) — PROVED — JenPow2.lean L541: band k<=j+2 period2^j; settled gcd run bound L543; source GC962; §8.27/30.
-- Lemma B1 (white, then black; Lean LemmaB1.lean L529; source GC955), B2 (unbounded periods; LemmaB2.lean L545/550, source GC963; infinite white/black JenPow2.lean L548, source GC964), B3 (no white run over twice the
+- Left diagonals eventually periodic, power-of-2 periods (Jen 1986, Rowland §5) — PROVED — JenPow2.lean L541: band k<=j+2 period2^j; settled gcd run bound L543; GC962; §8.27/30.
+- Lemma B1 (white, then black; LemmaB1.lean L529; GC955), B2 (unbounded periods; LemmaB2.lean L545/550, GC963; infinite white/black JenPow2.lean L548, GC964), B3 (no white run over twice the
   band's period; Lean LemmaB3.lean, L534; source GC958; sharp 2P-1, tight at P=1,2, L539; GC960) — PROVED —
   §8.59; B2 for the single seed is in print (Nersissian Theorem 13)
 - Rowland's question answered both ways: >= 4 certified left sides; 60 generic rows share one — COMPUTED — §8.31

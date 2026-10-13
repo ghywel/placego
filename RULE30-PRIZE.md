@@ -6564,3 +6564,50 @@ its node cap with 9,272 live prefixes at k = 40 and 63,760 period-cap UNKNOWNs. 
 primitive words (deficits 18 and 19) with one residue alive at window 37; their own cores allow windows of 82 or more,
 so they are not counterexamples. A finite certificate of this relaxed form, if one exists, needs W* above 37 and a
 longer period horizon. The fixed-deficit closures above stand.
+
+### 8.98 History-restricted records: an equivalent target; record witnesses without a real past; the kick-game containment withdrawn (2026-10-13 23:06 BST)
+
+Local's first two blocks as the maths lead (AGENTS.md item 19): L697, L698; GPT's reviews GC1211, GC1212.
+
+**Do record witnesses have a real parent?** (`tests/probes/lexicon/rule30_record_real_parent.py`, P1 to P5 predicted
+before the runs.)
+- *Birth ages.* Of the 141 committed witnesses (depths 20 .. 160), 140 are age-1 births (93 Q, 47 P). The one
+  exception is d = 152, an age-2 Q birth.
+- *Which parents count.* A parent's visible root is forced: it is w for p = 0, and 0w or 1w for p = 1, since the
+  child's samples are the parent's later samples. So testing both phase-1 prepends answers the existential question,
+  not just the canonical one (GC1211). Each root was tested to the cone horizon by RLK's membership query.
+- *Census.* 124 of the 140 have a real age-1 parent; nine of those (37, 67 .. 69, 87 .. 91) are real only through 1w.
+- *No real past.* 16 have none: phase 0 at 41, 43, 44, 80, 86, 122 and 147, and phase 1 at 112 .. 114, 125 .. 128,
+  151 and 153.
+- *Scope.* The configuration behind R_real(125) = 21 has no real wall-keeping past, but other witnesses of the same
+  record may. A Q parent's run has length at least L + 1, and a P parent's at least L with its inward 1,0 guard
+  (GC1211).
+- *Status.* MEASURED: membership verdicts, not certificates.
+
+**(H) History equivalence (PROVED: Local's proposal L698, GPT's direct proof GC1212, read by Local).**
+- *Definition.* Let R^(n)_p(d) be the largest L such that some configuration keeps the clock at column 0 from time -n
+  through T = d + L - 1 and is in phase p at time 0 with the white band [d, d + L - 1] in its forced left half.
+- *First bound.* R^(n)_p(d) <= R_real,p(d), from the definition.
+- *Reverse bound.* A real phase-p band of length L > 2n advances, by the white triangle, to the band
+  [d + n, d + L - 1 - n] in phase p + n. Its original configuration supplies the n-tick past, and the clock horizon
+  carries over exactly. So R_real,p(d) <= 2n + R^(n)_(p+n mod 2)(d + n).
+- *Consequence.* For any fixed n, finiteness of R^(n) at every depth is equivalent to finiteness of R_real at every
+  depth, and so implies Problem 1. The target can be taken over configurations with as much real history as is
+  convenient.
+
+**(K) withdrawn: history does not put column 1 on the wheel.** L698 proposed that after 560 ticks of history column 1
+is the wheel kicked only by classes 32 and 52, so that R^(560) <= R_K (8.44's game). GPT's GC1212 refutes the
+inference:
+- Entries 26 and 27, KS/KK/DT and KT2C's 560 count uninterrupted time on one old wheel phase, not elapsed wall history.
+- GC1020/GC1193's train (right seed 1001, column 1 = 1100 forever beside the clock) gives ordinary configurations with
+  arbitrarily long wall-keeping histories and no wheel at all.
+- 8.44's game imposes no lock durations, and its class-42 alphabet (+1 .. +3) is narrower than entry 27's (+1 .. +5).
+
+A kick-game route first needs a covering language for every column-1 trace with a long wall history, including the
+train, admission and short locks. **Closed route:** "wall history implies the restricted kick game", as stated in
+L698.
+
+**History-cone census** (`tests/probes/lexicon/rule30_history_cone.py`, H1 to H6 predicted before any run). This is
+RR's exact cone grown n ticks into the past, with the band at cone time n. The n = 0 cone equals RR's clause for clause
+and reproduces R_real(20 .. 30) (H1 HELD). The census of R^(n)(d) for n = 1, 2, 4, 8 at d = 20 .. 100 is running; its
+outcome follows here.

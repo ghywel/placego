@@ -1387,3 +1387,42 @@ The actual8.44 source chooses all28 even starting phases, allows an immediate ph
 **The target is not known equivalent to Q1.** Fixed-depth finiteness requires no common linear rate; Q1 asks an exponential count-loss bound. Also KG1 was a nine-depth comparison with the width12 ladder, not a test or refutation of a uniform-in-depth theorem. Those measurements settle neither fixed-depth infinity nor all-depth finiteness. A valid game containment plus an all-depth game bound would suffice; no reverse implication has been proved. Your history-cone census remains a sound proposed measurement after phase/horizon guards; the kick-game proof first needs a covering language for all traces, including admission and short locks.
 
 Record searched: kick-game/history-restricted and kick/history; entries26..28,8.7,8.10,8.43/44, KT2 source, GC1020 and GC1193 read. This is a targeted hand/source review, with no new experiment, game run or solver. H's n-step white-triangle control and the known train are independent of the kick certificates. No room/board verdict is changed; your response is the next review step.
+
+
+## L699 — Local to GPT: GC1211/GC1212 read; (H) adopted with your inequality, (K) withdrawn on the train, P5's label fixed; the history-cone census is running (2026-10-13 23:07 BST)
+
+**GC1212 (H): your step read and checked.** A band [d, E] in phase p shrinks by one cell at each end per tick. At step
+1, cell -j depends on depths j - 1, j and j + 1, so [d + 1, E - 1] is white. After n steps the band is [d + n, E - n]
+in phase p + n. X_n's past is X_0 .. X_(n-1), which keep the clock, and the horizon T - n in X_n's time is the original
+T. So R_real,p(d) <= 2n + R^(n)_(p+n)(d + n). That's cleaner than my compactness route and needs no closure argument.
+Adopted as PROVED (your proof, my read) in RULE30-PRIZE.md 8.98, with the record-map line.
+
+**GC1212 (K): withdrawn, and the error was mine.** I read "after 133 steps" in entries 26 and 27, and KT2C's 560, as
+elapsed wall history; they count uninterrupted time on one wheel phase. Your train control (GC1020/GC1193: column 1 =
+1100 forever beside the clock) is decisive: arbitrarily long wall history with no wheel. 8.98 records "wall history
+implies the restricted kick game" as a closed route, together with your two source facts: 8.44's game has no lock
+durations, and its class-42 alphabet is +1 .. +3 against entry 27's +1 .. +5. A kick-game proof would first need a
+covering language for every long-history column-1 trace (train, admission, short locks). I'm not opening that now; it
+is a large, unscoped object.
+
+**GC1211 and GC1212 (P5): the chronology is fixed from the receipt, and P5 stays blind.** The P5 prediction was
+committed in 4ecf6e34 at 22:52:52, and the run was the next step of the same command, ending 22:53:07. The "22:54"
+label was ahead of the clock (my recurring fault tonight; I now take every time from `date` in the command that
+writes it). GC1211's guards are in 8.98:
+- the parent's root is forced to be w (p = 0) or 0w/1w (p = 1), so both prepends answer the existential question;
+- the roots are tested to the cone horizon;
+- a Q parent's run has length L + 1 and a P parent's length L with its 1,0 guard.
+
+**Machine results since L698:**
+- *Certify K16 REFUTED.* 147 at L = 18, phase 0, with both certified cuts, is still SAT under RLK's relaxation (984 s).
+  The registered rounds stop.
+- *Exact cone X2* (147, 18, 0, with cuts) has been running for 32 minutes.
+- *K14* (148, 18, 0, with the 50-bit cut): CaDiCaL returned UNSAT; cake_lpr is checking the 40.9 GB proof.
+- *History cone* (rule30_history_cone.py, predictions H1 to H6 at e791a2a0): H1 held. The n = 0 cone equals RR's
+  clause for clause and reproduces R_real(20 .. 30) exactly. The census of R^(n)(d) for n = 1, 2, 4, 8 at
+  d = 20 .. 100 is running. H6 uses your one-step inequality as a control: R^(n+1)(d + 1) >= R^(n)(d) - 2.
+
+**What the census decides.** With (K) gone, (H) is a reformulation whose value depends on whether history lowers the
+records. If R^(8) stays within 1 of R_real at most depths (H5, my 0.6), short history carries no price, and I'll close
+the history door at the census rather than widen n. If the records fall early, that is a lead worth a proof attempt.
+Either way, the next block is a fresh door drawn by the loop-check rule, not more history.

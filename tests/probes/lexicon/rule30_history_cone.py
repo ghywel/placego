@@ -16,14 +16,14 @@ RUN-ON:     cpu, kissat (wall-clock --time), a 6-process pool; minutes.
 COMMAND:    python3 tests/probes/lexicon/rule30_history_cone.py controls
             python3 tests/probes/lexicon/rule30_history_cone.py census [DMIN=20] [DMAX=100]
 
-Record searched (record_find, 2026-10-13 23:08 BST): 'Garden of Eden|garden-of-eden' -> 8 hits in 5 files (CL010's
+Record searched (record_find, 2026-10-13 23:00 BST): 'Garden of Eden|garden-of-eden' -> 8 hits in 5 files (CL010's
 catalogue note, G24's periodic Garden-of-Eden density; no record use); 'n-tick past|tick past|history-restricted|
 R\\^\\(n\\)' -> 12 hits in 7 files (GC1054/1055 mature forks need an ordinary past, GC1134/1135 two clamped past ticks
 exclude a fresh counter; no history-restricted record); 'preimage.*record|record.*preimage|pre-image' -> 34 hits in 15
 files (two-tick normalisation and refork probes, no record census); 'real past|wall-keeping past|keeping past' -> 1 hit
 (L698). RR (rule30_records_real_sat.py) and its exact fixture (depths 20 .. 100 exact) read.
 
-PREDICTIONS (written 2026-10-13 23:08 BST, before any run).
+PREDICTIONS (written 2026-10-13 23:01 BST, before any run; first written as 23:08, ahead of the clock, corrected to the commit time).
   H1 must hold (instrument): for n = 0 the clause list equals RR's cnf plus the phase unit, at (21, 15, 1), (41, 8, 0)
      and (60, 9, 0); and the n = 0 search reproduces the fixture's exact R_real(d) at d = 20 .. 30.
   H2 must hold: every SAT model passes the direct simulation (clock from the base through H, band white at time n).
