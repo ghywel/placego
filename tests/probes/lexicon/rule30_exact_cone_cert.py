@@ -47,6 +47,13 @@ OUTCOME X2 (2026-10-14 00:07 BST, M5; machine output quoted): X2 REFUTED by a re
   with round 2's relaxed model (rule30_cadical_lift.py) on depths 164 .. 58; the two first differ at depth 57. The
   relaxed artefacts carried non-real codes over a left row that is nearly real.
 
+ADDENDUM PREDICTIONS (2026-10-14 00:12 BST, before the runs; the frontier after X2, both with the phase-0 lists plus the 50-
+  and 70-bit cuts). Record searched: as above, plus 8.96's addendum (149, 150 sampled 15 .. 17; 148 phase 0 <= 17).
+  X3 blind (0.35 for SAT): d = 149, L = 18, phase 0: SAT with a checking witness (R_real(149) >= 18). REFUTED-BY:
+     VERIFIED-UNSAT (then phase 0 <= 17 at 149), a cap, or CAKE-FAILED.
+  X4 blind (0.25 for SAT): d = 147, L = 19, phase 0: SAT with a checking witness (R_real(147) >= 19, a new high for the
+     run). REFUTED-BY: VERIFIED-UNSAT (phase 0 at 147 is then exactly 18), a cap, or CAKE-FAILED.
+
 GPT review (GC1210.1, 2026-10-13): the inherited exact cone, phase unit and
 white-sample cut placement are sound; no carrying defect found. Added only
 metadata assertions for the mirrored RR variable map and a requested-phase
