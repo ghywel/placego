@@ -91,6 +91,10 @@ ADDENDUM PREDICTION (2026-10-13 16:33 BST, before the run): GPT's GC1178 modulus
   in r has modulus M_h = 2^(ceil((4h + 3)/3) - 1).
   M1 blind (0.75): for h = 3 .. 8 the least period in r of (V_3 .. V_(2h+2))(2r) divides M_h. REFUTED-BY: a period
      that does not divide M_h (then GC1178's indexing of G249 is off by one).
+  M1 HELD (2026-10-13 16:34 BST, under a second): periods in r 16, 32, 32, 32, 64, 128 for h = 3 .. 8, each dividing M_h
+     (16, 64, 128, 256, 1024, 2048). Diagnostic after the run (a scratch script, power-of-two search on seed 11 to
+     t = 2^17): the period stays below M_h but still grows exponentially, 2^9 .. 2^14 at h = 12 .. 18 against M_h's
+     2^16 .. 2^24, and exceeds 2^14 from h = 19.
 """
 import os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
