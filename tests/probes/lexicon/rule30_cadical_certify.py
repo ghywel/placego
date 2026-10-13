@@ -74,9 +74,14 @@ ADDENDUM PREDICTIONS (2026-10-13 22:10 BST, before the runs): the third and last
      absent prefix) is VERIFIED absent from the phase-0 language by cake_lpr, and its two 69-bit factors are present.
   K16 blind (0.4): with both cuts (50 and 70 bits) added, d = 147, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour
      cap. REFUTED-BY: SAT (then the rounds stop and 147 is reported open under this relaxation), a cap, or CAKE-FAILED.
+ADDENDUM PREDICTION (2026-10-13 23:13 BST, before the run): the other phase at 148 after K14.
+  K17 blind (0.6): d = 148, L = 18, phase 1 (1226 words, no extra cut) is VERIFIED-UNSAT within a 4-hour cap; with K14,
+     R_real(148) <= 17 in both phases. REFUTED-BY: SAT (then lifted), a cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
-  K9 HELD, K10 REFUTED, K11 HELD, K12 HELD, K13 REFUTED, K15 HELD, K16 REFUTED; K14 pending.
+  K9 HELD, K10 REFUTED, K11 HELD, K12 HELD, K13 REFUTED, K14 HELD, K15 HELD, K16 REFUTED; K17 pending.
+  K14 HELD (23:13): d=148 L=18 phase 0 (1157 words, with the 50-bit cut): VERIFIED-UNSAT; cnf sha256
+     004aa0947efe7d94da462b495405e84daa3589d06cde49f06a3775c7d5a9a9f3; solve 6868 s, check 1686 s, lrat 40863.3 MB.
   K16 REFUTED (22:36): d=147 L=18 phase 0 (1158 words, with both cuts): SAT; cnf sha256
      e9159d113732299212204ca8e7fb8db798bcb0bc10cdbcd8d294f2ffe6a496a5; solve 984 s; partial LRAT (9.9 GB) deleted. The
      registered rounds stop: 147 at L = 18, phase 0, is open under RLK's relaxation with three cut rounds. The exact cone
