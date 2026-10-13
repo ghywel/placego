@@ -76,6 +76,25 @@ ADDENDUM PREDICTION (2026-10-13 17:44 BST, before the run): a direct check of GP
      (b) every canonical ancestor A_n, n = 1 .. a - 1 (the updated parent advanced a - 1 - n ticks), is white on
      [d' - n, d + L - 1 + n]; (c) floor((d' - p)/2) + 1 - a = floor((h - 1)/2).
   T1 HELD (2026-10-13 17:45 BST, seconds): over 2,284 parent paths.
+
+ADDENDUM PREDICTIONS (2026-10-13 17:53 BST, before the run): primitive j = 4 as GPT registered it in GC1189 (odd gap
+  g = 7 first, then g = 8; full-span seeds only, h = g + 2; L = 17, both phases, W <= 48, prefix-period horizon 2^16,
+  neither raised). Trimmed profiles reduce by GC1187/GC1189 (both PROVED or read): lower supports to closed deficits,
+  even-gap h = g + 1 aliases to the odd family at the same deficit, and only if that family closes. Record searched:
+  'ZR2' -> 31 hits in 12 files (R_real(1..5) = 1, 6, 5, 4, 3, the ZR2 outcome in rule30_zero_runs.py, read);
+  'primitive' -> 383 hits (the generic word); 'full.span|full-span' -> 6 hits in 5 files (GC1187, GC1189, other
+  objects). A speed change, semantics unchanged: a time residue excluded at window W stays excluded at W + 1 (the
+  window is a prefix, and the first W ticks depend only on the residue modulo the shorter period), so each new window
+  tests only the residues refining a survivor.
+  F1 must hold (the control and a check of the refinement): primitive j = 3 closes every case, maximum window 29 (gap
+     00101, P, r = 0, phase 0).
+  F2 must hold: j = 4 has 48 full-span profiles at g = 7 and 96 at g = 8.
+  F3 blind (0.6, GPT's): at least one full-span P profile reaches the period horizon before closing; it is reported
+     UNKNOWN with its gap, phase, last passing window and period, not as a counterexample. Counterfactual: every
+     primitive closes within the caps (a scoped fixed-j result, no uniform law).
+  F4 blind (0.5, mine): the largest closing window at j = 4 exceeds 29.
+  F5 (the unexpected control, a rule): the even-gap aliases are counted as removed only if every odd (g = 7) case
+     closes; otherwise they are retained and named.
 """
 import itertools, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -288,12 +307,76 @@ def trim_check(jmax=3, nmax=25):
     return ok
 
 
+def census_refined(j, wmax, lists, gaps, primitive=True):
+    """census() with residue refinement; returns (all_closed, report, max_window)."""
+    Lmin = 4 * j + 1
+    index = {p: make_index(lists[p]) for p in (0, 1)}
+    held, report, wbig = True, [], 0
+    for g in gaps:
+        for r in (0, 1):
+            for bits, typ in profiles(g, r, True):
+                sb = seed_bits(r + 2, bits, typ)
+                last = max(i for i, b in enumerate(sb) if b)
+                if primitive and last != g + 2:
+                    continue
+                S = Edge(sites_of(sb), 1 << 16, wmax + 2)
+                for p in (0, 1):
+                    Ns = [N for N in range(r if r else 2, 400, 2) if N - p >= 1 and 2 * N + g - p - 1 >= 6]
+                    small_cache, surv, Pold, base, status = {}, None, 1, 1, None
+                    for W in range(3, wmax + 1):
+                        Pt = period_from(S, W + 2, base)
+                        if Pt is None:
+                            status = 'UNKNOWN at W=%d (period beyond 2^16; %d residues open at W=%d, period %d)' % (
+                                W, len(surv), W - 1, Pold)
+                            break
+                        base = Pt
+                        par = (r - p - 1) % 2
+                        res = range(par, Pt, 2) if Pt % 2 == 0 else range(Pt)
+                        new = set()
+                        for tau in res:
+                            if surv is not None and tau % Pold not in surv:
+                                continue
+                            row1 = [S.V(i + 2 - p, tau) for i in range(1, W + 1)]
+                            if verdict_fast(row1, p, W, index[p])[0] == 'OPEN':
+                                new.add(tau)
+                        surv, Pold = new, Pt
+                        n0 = next(N for N in Ns if jlen(typ, kmin(typ, N, p, Lmin), g, p) >= W)
+                        small_open = []
+                        for N in [N for N in Ns if N < n0]:
+                            if N not in small_cache:
+                                K = kmin(typ, N, p, Lmin)
+                                kid = child_row(N, bits, typ, p, K, [0] * 8)
+                                small_cache[N] = verdict_fast(kid[1:], p, jlen(typ, K, g, p), index[p])
+                            if small_cache[N][0] == 'OPEN':
+                                small_open.append((N, small_cache[N][1]))
+                        if small_open:
+                            status = 'OPEN: small N %s' % small_open[:3]
+                            break
+                        if not surv:
+                            status = 'CLOSED at W=%d (period %d)' % (W, Pt)
+                            wbig = max(wbig, W)
+                            break
+                    if status is None:
+                        status = 'OPEN at W=%d: %d residues of %d' % (wmax, len(surv), Pold)
+                    if not status.startswith('CLOSED'):
+                        held = False
+                    report.append('g=%d r=%d gap=%s %s p=%d: %s' % (g, r, ''.join(map(str, bits)), typ, p, status))
+    return held, report, wbig
+
+
 def main():
     j = int(sys.argv[1]) if len(sys.argv) > 1 else 2
     wmax = int(sys.argv[2]) if len(sys.argv) > 2 else 48
     import rule30_relaxed_records_k as rlk
     lists = {0: rlk.load_forbidden('44all') + rlk.load_cuts(0, 40),
              1: rlk.load_forbidden('44allp1') + rlk.load_cuts(1, 40)}
+    if len(sys.argv) > 3 and sys.argv[3] == 'primitive':
+        for jj, gaps in ((j - 1, (2 * j - 3, 2 * j - 2)), (j, (2 * j - 1,)), (j, (2 * j,))):
+            held, report, wbig = census_refined(jj, wmax, lists, gaps)
+            print('\n'.join(report))
+            print('primitive j=%d g=%s (L >= %d): %s, %d cases, largest closing window %d'
+                  % (jj, gaps, 4 * jj + 1, 'ALL CLOSED' if held else 'NOT ALL CLOSED', len(report), wbig), flush=True)
+        return
     if j <= 2:
         d1()
     for jj in (sorted({1, j}) if j <= 2 else [j - 1, j]):
