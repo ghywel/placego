@@ -27,7 +27,19 @@ PREDICTIONS (written 2026-10-13 22:50 BST, before the run).
   P3 blind (0.5): every witness at depth >= 100 is an age-1 birth.
   P4 (reported, no prediction): the parent black run's length against L + 1, and the real-parent fraction by depth.
 
-OUTCOME: (filled in after the run, below this line)
+OUTCOME (2026-10-13 22:52 BST, M5; machine output quoted): P1 HELD, P2 HELD, P3 REFUTED.
+  P1: forced rows reproduce the fixture and births are found for all 141 rows.
+  Birth ages: 140 rows at age 1 (93 Q, 47 P) and one at age 2 (d = 152, p = 0, L = 18, Q). So P3 is refuted, narrowly.
+  P2: phase 0: 73 age-1 births, 66 with a real parent, 7 without; phase 1: 67, 49 real, 18 without. By depth:
+     20 .. 59: 36 real, 4 not; 60 .. 99: 30 and 10; 100 .. 160: 49 and 11. The rows come in runs served by one
+     configuration: 125 .. 128 (the R_real(125) = 21 witness) has no real canonical parent; 129 .. 139, including the
+     largest record (133, L = 23, a P birth with a black run of at least 23 from 134), has a real one.
+  P4: every age-1 parent run is exactly at least L + 1 (Q) or L (P), the minimum, determined to the horizon.
+
+ADDENDUM PREDICTION (2026-10-13 22:54 BST, before the run): a phase-1 child has two formal parents, C_0(0w) and C_0(1w)
+  (the parent's first white sample is free, and both advance to C_1(w), GC1170); the census tested only the canonical 0.
+  P5 blind (0.5): some of the 18 phase-1 rows without a real canonical parent have a real 1w parent; for those the
+     forward image is the same child, and the parent's own birth shape is reported.
 """
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -81,5 +93,29 @@ def main():
           '| ages there:', sorted({s[3] for s in deep}))
 
 
+def p5():
+    rows = json.load(open(os.path.join(HERE, '..', '..', '..', 'site', 'wolframcollatzmahler', 'data', 'records.json')))['rows']
+    found = 0
+    for r in rows:
+        if r['phase'] != 1:
+            continue
+        p, d, L = 1, r['depth'], r['L']
+        if rlk.in_language_phase('0' + r['visible'], 0):
+            continue
+        real1 = rlk.in_language_phase('1' + r['visible'], 0)
+        A = forced_row([1] + [int(c) for c in r['visible']], 0)
+        run = 0
+        while d - 1 + run < len(A) and A[d - 1 + run] == 1:
+            run += 1
+        white = all(A[j] == 0 for j in range(d - 1, d + L + 1))
+        found += real1
+        print('d=%3d p=1 L=%2d: 0w not real; 1w %s; 1w-parent cells from d-1: %s' % (
+            d, L, 'REAL' if real1 else 'not real', 'white band (inherits)' if white else 'black run %d' % run), flush=True)
+    print('P5 some phase-1 row has a real 1w parent:', 'HELD' if found else 'REFUTED', '(%d rows)' % found)
+
+
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == 'p5':
+        p5()
+    else:
+        main()
