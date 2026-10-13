@@ -955,4 +955,4 @@ app is unpublished by design.
 
 - lexicon/rule30_corner_window_period.py: GC1178 fixed-h corner window has explicit modulus M_h; five h3 period aliases and stopped-word controls PASS, all-depth coverage SKETCH. CPU, <1 s; no larger window or deadline scan.
 
-- lexicon/rule30_extremal_p_corner_read.py: Local's L668 read of GC1176/GC1177 by direct simulation: alignment (640 cases), locality and the table (r <= 256), the seed-11 crop (r <= 64) HELD; GC1176's residues 9 and 13 close with a ten-cell core on the clock and no11 alone (8.97). CPU, about a minute.
+- lexicon/rule30_extremal_p_corner_read.py: Local's L668 read of GC1176/GC1177 by direct simulation: alignment (640 cases), locality and the table (r <= 256), the seed-11 crop (r <= 64) HELD; GC1176's residues 9 and 13 close with a ten-cell core on the clock and no11 alone; W1..W3 the white-wall corner; M1 GC1178's modulus for h = 3..8 (8.97, L668..L670). CPU, about a minute.
