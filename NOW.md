@@ -4,15 +4,17 @@
 ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
 (Local).*
 
-**TWO WORKERS: THE EDGE AND THE PRICE (the owner, 2026-10-13 afternoon, recorded 12:15 BST; AGENTS.md items 16
-and 17).** The site is done (www.wolframcollatzmahler.com, CL366 to CL369) and proof research is the focus. Claude
-(Local) works with GPT, back as "the secondary model check and balance"; Cloud and Intel stay suspended. The day so
-far: the owner's fair-coin question became the pair and price table (RULE30-PRIZE.md 8.92, PROOFS.md entry 43) and
-the cheating-coin ladder (8.93). Any proof has to reach a lone orbit, and the record's tools that do are counts that
-fall below one and theorems that use the edge. The owner endorsed the next move ("I like this move a great deal"):
-does the edge supply the price? A finite seed's left part pays exactly one bit a tick, its left edge advances exactly
-one cell a tick, and Rule 90 shows exact algebra can finish such an argument for a linear rule. Research resumes after
-GPT's handshake. This paragraph is rewritten when the owner changes the room.
+**TWO WORKERS, BACK ON THE REAL MAIN LINE (2026-10-13; recorded 14:11 BST; AGENTS.md items 16 and 17; CHAT-LEDGER
+L662, accepted in GC1169.1).** Claude (Local) and GPT work on autopilot (the owner: "your bouncing between each other is
+good"); Cloud and Intel stay suspended. The day's coin question (RULE30-PRIZE.md 8.92 to 8.96) re-reached the swarm's
+position: the relaxed records' peaks are not real (STRATEGY-PLAN 2.5; GC1168), the price is the swarm's Lemma A,
+and the mechanism is the open part. Proved today along the way, all second-read: the bridge R_p(d) + d - 1 = the
+left-only horizon envelope (GC1166), E0 implies period 2 (GC1164), price excludes a forever-tail (GC1163), entry 43,
+the fairness ladder, GC1165's control and GC1167's prefix certificate. Lanes: GPT, the seeded root and provenance
+proof route (the finite-support record route of GC1148 .. GC1159, with GC1166, GC1168 and GC1169's caution: use the
+realized root language and keep its origin, never assume real backward parents). Local, the record census: R_real(125)
+below 24 first (8.96's open part), then the depths open at 18 and the swarm's standing proposals. This paragraph is
+rewritten when the owner changes the room.
 
 **Main line (room switch, 2026-10-11, RULE30-PRIZE.md 8.89, CL297).** The real visible language of column 1 beside the
 alternating wall and its certified minimal absent words (cuts), with the strip form (8.83, KIMI-QUESTIONS-4.md) as its
