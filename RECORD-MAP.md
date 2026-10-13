@@ -46,8 +46,8 @@ PART: as on the board.
 - Primes, Fibonacci, pi, 01: the best start of w <= 18 squares holds them w + 6 steps at most — COMPUTED — CS
 - First right-paid ratio rho_j exact to j = 35; its distance from 1/2 does not decay — COMPUTED — L224, L225; ZR3 (L316)
 - A uniform linear edge deadline T <= cj + b would give Q1 with alpha = 1/c — PROVED L345/CL161 — GC637/947
-- Fair-coin question: density cannot see 0101; a 7-ring cheats; pair/price table fills all four cells (Collatz
-  cheats, entry 43) — COMPUTED, PROOF-SKETCH — §8.92
+- Fair-coin question: density can't see 0101; pair/price table fills 4 cells (Collatz cheats, entry 43); k-fair
+  periods: multiples of 2^k; basins need merging, none on the line — COMPUTED, PROOF-SKETCH — §8.92, §8.93
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
@@ -104,11 +104,11 @@ PART: as on the board.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
 - R_real(97..120) exact, maximum16 at108; 121..124, 140, 144<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132=139=142=17 (both phases, kissat) — COMPUTED — RR3, L596..617.
 - Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)>=21, 133>=23, 194>=26, 200>=20 (L=21 UNKNOWN at 12 h, L641), 279>=28, 1035>=38; Intel's 16 witnesses (to 1552>=31) replay valid — COMPUTED — SP, IW, L617..620.
-- RR3 completed97..120 on M5; solver values, certificates partly checked by VC3 — COMPUTED — rule30_cloud_rr3.py.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - Inherited RR/RR3 cone CNF matches finite query, independently of solver evidence — PROVED (source scope, CL154) — GC937; solver-free replay separately attributed.
 - VC3 receipt gate/status repairs pass synthetic controls; stale-cache recovery manual — source/fixture audit — GC961/965; no certificate replay.
-- Deciding UNSAT d3..97 checked by drat-trim/cake_lpr; VC checks200/200; RR3 98..105, 107, 109 by cake_lpr — COMPUTED — RRC L438, L480, VC3, rule30_verified_certs.py.
+- RR3 completed 97..120 on M5 (solver values); deciding UNSAT d3..97 by drat-trim/cake_lpr; VC 200/200; RR3 98..105,
+  107, 109 by cake_lpr — COMPUTED — RRC L438, L480, VC3 (rule30_cloud_rr3.py, rule30_verified_certs.py).
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
 - K=40 relaxed at L=18: 124 UNSAT both phases (<=17); 140, 144, 152 settled by CUT/SP — COMPUTED (kissat) — RLK L575, L581/582, L589.

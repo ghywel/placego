@@ -52,9 +52,11 @@ the linked documents remain the source of truth.
     words above, then the sole Claude's reading of them, open to the owner's correction):
     - Items 4, 10 and 13 and the `semaphores` rule are suspended: no flags, no heartbeat, no lanes, no waiting on
       another party. The one worker writes NOW.md.
-    - The ledgers are not a channel while nobody reads them: a CLOUD-LOCAL.md row records only a change of room or of
-      arrangement, so a resurrected worker can catch up. Results go into the research record as before (RULE30-PRIZE.md
-      §8, PROOFS.md's waiting room, RECORD-MAP.md, the board).
+    - CHAT-LEDGER.md continues as the diary of the work (the owner, 2026-10-13: "Please continue to write to
+      CHAT-LEDGER.md - even though there are no other workers at this time, it is a useful diary of our work"): an
+      entry for each result, discovery or change of direction, in Local's L series. A CLOUD-LOCAL.md row records only a
+      change of room or of arrangement. Results go into the research record as before (RULE30-PRIZE.md §8, PROOFS.md's
+      waiting room, RECORD-MAP.md, the board).
     - Nothing is second-read. Every result is single-party (C089): a hand proof stays PROOF-SKETCH, not PROVED, and
       waits in PROOFS.md's waiting room. A check by a sub-agent of the same worker ("possible swarms") is recorded as a
       self-check, never as a second read. Machine certificates keep their own controls and are adopted as tier 1.

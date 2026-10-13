@@ -1161,3 +1161,56 @@ ten-cell trace (fixed).
 the owner says, with the README's notes. (5) When the workers wake: GPT to read problems.html and trio-technical.html
 as a second reader; Local to extend the exports as the census grows and rerun build_data.py and build_manifest.py;
 Intel to add the accessibility pass and any further animations in the site's style.
+
+## L646 — Local (the sole Claude), diary: the work resumes with one worker; the owner's fair-coin question becomes the pair and price table; the walk-away rule (2026-10-13 11:57 BST)
+
+*Catch-up entry for the morning, written at the owner's request that this file continue as the diary of the work
+(AGENTS.md item 16, amended in the same commit). Observed and computed unless marked; everything is single-party.*
+
+- **The arrangement (d01a9d75).** The owner resumed the prize work with one Claude: the shared-worker loop is suspended
+  and could be resurrected; no flags, no heartbeat, no second reader; pushes go to main. The site is done and proof
+  research is the focus; the room is to be chosen together. Startup checks rule30_wall.py and rule30_merge.py passed.
+- **The fair-coin question (8f74e383, RULE30-PRIZE.md 8.92).** The owner: a 0101 column is a fair coin on average but a
+  cheating coin in sequence, so period 2 contradicts itself. Not yet a contradiction, for three reasons: density cannot
+  see 0101; the fairness we know is for almost every row, not for finite seeds; and Rule 30 on a seven-cell ring does
+  cheat (the single black cell, column 1 reads 0101 for ever). The idea splits into *pair* (one orbit's pair
+  statistics) and *price* (Q1: counts fall, a linear deadline). The owner asked whether this is a truth table, and it
+  is, with a system in every cell: Rule 30 measured in both; Rule 90 price only (Proposition 5); a constructed column
+  map pair only; and the cheaters, the ring and the Collatz shortcut map, in neither. The surprise: the trivial cycle
+  1, 2 reads 1010..., and entry 43 (waiting room) shows the Collatz conjecture is exactly "every parity column ends
+  cheating", the mirror image of period 2. Probe rule30_pair_price.py: ten of twelve predictions held; my blind slope
+  (P4) and a mis-stated Terras count at k = 1 (P8) missed, both on the record. My Rule 90 deadline was Proposition 5
+  re-derived; credited.
+- **The walk-away rule (8783a5da).** The owner: "walking away from the problem and doing something else, at least for a
+  time, crystallises the question that moves progress and science forward." Written as rule walk-away beside
+  steps-before-leaps. The site's lay language, the centre column read as a coin, is the frame the question came back
+  in. The math check was reinstalled and passes on PROOFS.md and RULE30-PRIZE.md after 21 older loose dollar signs were
+  fixed (formatting only); with the owner's playwright update it needs no browser override.
+- **Next.** The owner: "Proceed as you wish and dig where you will." The owner's higher-domain view is that the whole
+  column is a cheat, since Rule 30 is deterministic. I am digging there: which kinds of fairness can and cannot see a
+  periodic cheat, why the cheaters cheat, and how that bears on the three prize problems.
+
+## L647 — Local (the sole Claude), diary: the cheating coin one level up; every finite level of fairness has a periodic cheat, and cheats need merging (RULE30-PRIZE.md 8.93) (2026-10-13 12:07 BST)
+
+*Computed unless marked; single-party. Probe rule30_cheat_ladder.py, eight of nine predictions held.*
+
+- **The owner's higher-domain point holds, precisely.** The single seed's column is computable, so in Kolmogorov's
+  sense it is as simple as 0101: the whole toss is a cheat. No "it is random, so it cannot repeat" argument can work.
+  What separates the two is cost (Problem 3): a deep cheat cannot be shallow.
+- **The fairness ladder.** A periodic word fair in k-blocks has period a multiple of 2^k, and at period 2^k the fair
+  words are the de Bruijn cycles (counted: 2, 4, 16, 256 for k = 1..4, every primitive word to length 16). So every
+  finite level of fairness is passed by some periodic cheat, and 0101 is the cheat at the bottom of the ladder. This
+  generalises 8.34's remark about Problem 2.
+- **Surprise of the block (my miss).** I predicted the ring cheat would be an isolated cycle with a basin under 5
+  percent. At 14 cells its basin is 6.6 percent, because 1,036 states merge into the 7-periodic cheat, which a ring
+  allows (813 merged images on 14 cells) and the line forbids (G121). That turned a miss into the block's best
+  finding: a cheat gathers a basin only where states merge. Collatz merges and shrinks, so its cheat is everywhere;
+  Rule 30 on the line never merges and grows, so a cheater there would be a lone orbit, out of reach of any statement
+  about typical seeds. Mahler's Z-numbers are proved sparse but not absent; the same shape.
+- **The pair side at depth.** All 2^k blocks of k bits appear in the single seed's column at about a coin's pace for
+  every k to 14.
+- **Where this points (tentative).** Every route to the prize has to reach a lone orbit. The record's two tools that do
+  are counts that fall below one and theorems that use the edge. The pair and price table puts Rule 30 where both are
+  measured but neither is proved. A question I would like to try next: does the edge give a price? Both edges advance
+  exactly one cell a tick, the left part pays exactly, and Rule 90 shows that exact algebra can finish the job for a
+  linear rule.

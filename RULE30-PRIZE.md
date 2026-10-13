@@ -6156,3 +6156,68 @@ and both problems ask what happens after.
 control on Rule 110). Rule 30's exact halving: PROVED (8.51 to 8.53). Rule 90's deadline: PROVED (Proposition 5); its
 exact halving: PROOF-SKETCH. The implications and the construction: PROOF-SKETCH. Entry 43: PROOF-SKETCH, in the waiting
 room (prior art not searched; elementary, and very likely known). Rule 30's place in the top-left cell: MEASURED only.
+
+### 8.93 The cheating coin one level up: fairness levels, simple and deep cheats, and where cheats come from (2026-10-13 12:05 BST)
+
+*The owner (2026-10-13), after 8.92: "I could also extract it to the higher domain over the fundamental problem itself -
+the coin appears fair on measure, but is not fair given rule 30 is a logical predictable repeatable pattern - so the
+very toss of the entire problem is cheating." Single-party (AGENTS.md item 16). Probe:
+`tests/probes/lexicon/rule30_cheat_ladder.py` (eight of nine predictions held; B1 missed, recorded in its OUTCOME).
+Record searched: 'Problem 3' -> 8.34 (Problem 3 implies Problem 1, as Wolfram notes) and GC481; 'odd period' -> 8.34
+(density rules out odd periods and lopsided blocks); 'de Bruijn' -> used for counting (8.77, 8.86, G127), no fairness
+ladder; 'injective' with 'finite config' -> G121; 'column reading 0 1' -> L433; 'Kolmogorov', 'logical depth' -> no hit.*
+
+**1. Every finite level of fairness is passed by a periodic cheat.** Call a periodic word *k-fair* when every block of
+k bits occurs equally often around its cycle. Then (elementary): a k-fair word's least period is a multiple of 2^k,
+because each of the 2^k blocks occurs p/2^k times; and at period exactly 2^k the k-fair words are the de Bruijn
+cycles, which hold every k-block once. 8.34's remark is the case k = 1: density 1/2 rules out every odd period and
+every lopsided block, and 01, the de Bruijn cycle of order 1, passes. Fairness in pairs rules out every period not
+divisible by 4 and is passed by 0011; fairness in triples is passed by 00010111; and so on up. Computed over every
+primitive word to length 16: k-fair words occur only at multiples of 2^k, at every such multiple, and number exactly 2,
+4, 16 and 256 at period 2^k for k = 1 .. 4 (the de Bruijn count 2^(2^(k-1)) with rotations). So fairness at any finite
+level cannot exclude every periodic cheat; only fairness at every level, normality, does, and normality is far beyond
+Problem 2. Period 2 is the cheat at the bottom of the ladder, the first period the average cannot see.
+
+**2. The whole toss is a cheat, in a precise sense.** The single seed's centre column is computable: a short program
+(run Rule 30 for n ticks) prints its first n bits, so their Kolmogorov complexity is of order log n, the same order as
+0101's. In the algorithmic sense the column is not random at all, which is the owner's point: it is a cheating coin
+that passes the statistical tests (density 0.49947 over 2^17 ticks and a coin's block entropy, 8.34; the check below).
+So no argument of the form "the column is random, so it cannot be periodic" can work, because by description length
+the fair-looking column and the periodic cheat are equally simple. What tells them apart is cost: the n-th bit of
+0101 costs order log n to compute, and Problem 3 asks whether the n-th bit of Rule 30's column costs order n. In this
+language the three prizes ask one question three ways [J]: is the cheat shallow (Problem 1), is it balanced (Problem 2),
+is it deep (Problem 3)? A deep cheat cannot be shallow, which is 8.34's "Problem 3 implies Problem 1".
+
+*The block's unexpected check: the pair side at depth.* The column shows all 2^k blocks of k bits by ticks within a
+factor 0.68 .. 1.76 of the mean over 16 coin sequences, for every k = 1 .. 14 (all 16,384 blocks of 14 bits by tick
+143,603, against a coin mean of 164,283). The controls fail as they must: 0101... never shows 00, and Rule 90's
+single-seed centre column never shows 01.
+
+**3. Where cheats come from: a finite state space, or merging.**
+- *Rings.* On a ring every column is eventually periodic, because the ring has finitely many states. The 0101 cheat
+  appears only on rings of 7, 14 and 21 cells up to 21 (L433, replicated), and it is one rigid object: every cheating
+  cycle is the seven-cell cheat repeated, with temporal period 4, and exactly 4 states alternate in column 0 from tick
+  0 at every size (4 of 128, of 16,384 and of 2,097,152), as Collatz's plateau is exactly one start per phase (8.92).
+- *Basins.* The states that eventually fall into the cheat number 49 of 128 at seven cells, 1,085 of 16,384 (6.6
+  percent) at fourteen, and 49 of 2,097,152 at twenty-one. The blind prediction that the basin would stay under 5
+  percent at 14 and 21 cells was refuted at 14. The reason, found after the run: 1,036 of the 1,085 are non-repeating
+  states whose orbit becomes 7-periodic after 1 to 41 ticks. That needs two states, x and its shift by 7, to share an
+  image; the fourteen-cell ring has 813 images with two or more preimages. A basin is built by merging.
+- *Collatz* merges (T(1) = T(4) = 2) and shrinks its numbers on average, so its cheat is the end of every orbit tested.
+- *Rule 30 on the line* does neither. It is injective on finite configurations (G121), and both edges of a finite
+  pattern advance one cell every tick (the cells just outside see 001 and 100, which make black, and those beyond see
+  000), so no two finite orbits ever merge and none revisits a state. A cheater on the line, if one exists, has no
+  basin: no other orbit flows into it. It is an isolated orbit, invisible to every statement about typical seeds, and
+  only a statement about every single seed can reach it: a count that falls below one (8.92's price), or a theorem
+  that uses the edge, as Jen's and Condrey's do.
+- *Mahler's problem* sits on Rule 30's side: its map expands, and its cheats (Z-numbers) are proved sparse, at most
+  x^gamma below x with gamma < 1 (Flatto, Lagarias and Pollington; PRIOR-ART.md), but not proved absent.
+- [J] The direction of each conjecture follows the dynamics. Where states merge and shrink (Collatz), the conjecture
+  is that every seed cheats; where they never merge and the state grows (Rule 30, and Mahler's expanding map), it is
+  that no seed does.
+
+**Status.** Part 1: elementary (PROOF-SKETCH; the second half is the definition of a de Bruijn cycle, the count the
+BEST theorem's) and COMPUTED to length 16. Part 2: the complexity remark is standard; the reading of the three prizes
+is an interpretation [J]; the depth check COMPUTED. Part 3: the ring results COMPUTED, R1 replicating L433; injectivity
+PROVED (G121); the edge fact PROOF-SKETCH (one line); the merging account of the fourteen-cell basin COMPUTED after the
+run; the principle about directions [J].
