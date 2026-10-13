@@ -950,3 +950,5 @@ app is unpublished by design.
 - lexicon/rule30_canonical_parent_budget.py: GC1174 canonical ancestry forces checkerboard through n+p; inherited zeros allow n <= floor((d-p)/2). 540 independent forward/inverse controls and the actual d3 countercontrol PASS; hand budget PROVED (Local L667).
 
 - lexicon/rule30_extremal_p_corner.py: GC1176 three named corner controls and closed six-diagonal period16 orbit; cores>=7 excluded except r=9/13 mod16, transfer SKETCH. CPU, <1 s; shorter-period and universal five-tick predictions REFUTED; no longer scan.
+
+- lexicon/rule30_corner_two_cell.py: GC1177 extremal P child prefix is a crop of ordinary seed11 at T=2r-p; 80 literal/clamped prefix controls PASS, all-depth induction SKETCH. CPU, <1 s; black-child centre and actual B100101 exterior guards retained.
