@@ -6430,7 +6430,8 @@ band of 21 (phase 1) is a real witness. So R_real(125) = 21 exactly (kissat verd
 yet run). So any zero run that gives 18 at 125 ends by depth 145 and gives 18 at most at 125 .. 128, exactly the span
 of the observed phase-1 witness; 129 needs another run. The certificate for R_real(132) <= 17 is VERIFIED UNSAT by
 cake_lpr in phase 0 (CNF b01a50772ef5001b31f3e8d1c03f8c5fe8327cfa10c1fc8f8b53f970fc493875, solve 1,531 s, check 429 s,
-proof 14.6 GB); phase 1 is in the same batch.
+proof 14.6 GB) and in phase 1 (CNF 87e50000964b00f9c073edab62a37f303aaee1ab8762129b0fc15c7d7c8b458e, solve 1,865 s, check
+494 s, proof 13.7 GB). So the split at 132, and with it the three-run statement, rests on cake_lpr certificates alone.
 
 ### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
 
@@ -6461,8 +6462,20 @@ next to the end a + p of the checkerboard prefix, and the parity of d + p decide
 GC1176's corner (P, black-wall parent, core from the last prefix cell); d + p = 2 mod 4 is empty (the cell that P needs
 white is a black prefix cell, and Q needs two adjacent prefix cells black); d + p = 1 mod 4 leaves Q (black-wall parent,
 core from the last prefix cell s = a + p); d + p = 3 mod 4 leaves P (white-wall parent, white at s = a + p, core from
-s + 1, one cell past the prefix). The same front method applies to the last two. Not yet run.
+s + 1, one cell past the prefix).
+
+**Both close (added 16:24 BST; predictions W1 to W3 before the run).** For d + p = 1 mod 4, d = 4q + 1 - p, the birth
+parent C_1(0^q w) is GC1176's row (checkerboard through 2q, black from 2q + 1, black wall, age 2q + 1 - p), with the
+child at the same tick, so the same depth-1 column and verdicts apply; the Q core is at least L + 4q + 1 - 2p, at least
+8 for q >= 2 (and 37 at the residues 9 and 13). For d + p = 3 mod 4, d = 4q - 1 - p, the parent C_0(0^q w) is the same
+row under a white-start wall, at age 2q - p (W1: C_0(0^q w) advanced 2q - p ticks is C_p(w), 640 cases). The wall at
+tick 0 is masked by depth 1's black, the one-step image is GC1176's seed, and its front reaches depth 1 at tick 2q + 1,
+now a black tick of the child, where depth 1 is white. So every core of at least two cells fails the clock (W2, q <= 256,
+any tail; W3: a core of one passes). **Together: for every depth d >= 6, in both phases, no white band reaches the oldest
+birth age floor((d - p)/2) + 1, so GC1174's inherited-zero budget is floor((d - p)/2) - 1.** The exceptions are at
+d <= 5: d = 2 (p = 1, L = 1), d = 3 (p = 1, L <= 4), d = 4 (p = 0, L <= 2; p = 1, L <= 3), d = 5 (p = 0, L = 1).
 
 **Status.** The closure of residues 9 and 13 is a finite computation over a closed, r-independent orbit (COMPUTED) on
-GC1176's corner reduction (PROOF-SKETCH there until second-read; Local's read of its carrying steps is in CHAT-LEDGER
-L668). It bounds one age at one residue of d, not the birth runs at every age, and the prize stays open.
+GC1176's corner reduction (second-read by Local in CHAT-LEDGER L668). The classification of the other corners and the
+white-wall clock failure are hand arguments with checks (PROOF-SKETCH until GPT's read). Together they remove one age,
+the oldest, at every depth from 6; the birth runs at the younger ages are the open target, and the prize stays open.

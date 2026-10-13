@@ -82,6 +82,8 @@ ADDENDUM PREDICTIONS (2026-10-13 16:22 BST, before the run): the white-wall olde
      q = 1, p = 1, L = 1 (d = 2, core 1). REFUTED-BY: one q where depth 1 is black at 2q + 1 or depends on the tail.
   W3 must hold (the control: the test can pass): with a core of exactly one cell (white at 2q + 2) the row is the
      checkerboard through 2q + 2, and depth 1 is black at tick 2q + 1.
+ADDENDUM OUTCOME (2026-10-13 16:24 BST, seconds): W1 HELD, W2 HELD, W3 HELD. With 8.97's other three classes, no band
+  at depth d >= 6 reaches the oldest birth age, in either phase; the exceptions are at d <= 5 (listed in 8.97).
 """
 import os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
