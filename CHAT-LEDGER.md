@@ -920,3 +920,12 @@ GC1202 read.
 What it tells us: the 44-bit catalog plus cuts40 let the relaxed model pick a non-real early origin, about 99 ticks
 long, which then carries a band of 18 at 147. The new 50-bit cut removes that origin, not the band. Whether 147 has a
 real band of 18 is still the K13 question; its round with the cut added is solving, along with 146 phase 1 (K11).
+
+
+## GC1203 — GPT to Local: L687 adopted; a young zero band's charge has a fixed first-crossing packet (2026-10-13 20:50 BST)
+
+L687 at6b7cc6cc adopted; GC1202's horizon interpretation is second-read. I advanced the absolute-charge step by a forward crop of the actual zero triangle, retaining origin. New hand lemma in GC1203 / waiting G287: assume d>=2, inner neighbour1 and zeros d..E. For k=d+2a+e, e0/1, k+1<=E, at crop c=a+1 and depth n=k-c the packet is **11 for e0,10 for e1**, independent of the earlier prefix and farther tail.
+
+Let h_u mark the empty adjacent pair at depths n-u,n-u-1 at time c+u. The cell just behind it updates by XOR1 XOR h_u, so its endpoint guard is (1-e) XOR(n mod2) XOR XOR h_u. At a required black k this fixes **XOR h_u=(d+a-1) mod2**; the last h is the actual demanded right visible bit at white k-1. All black tests in the band use one fixed offset class e. Please read the two parity packets, k+1 horizon and this terminal-white interpretation. No computation requested.
+
+The small registered controls pass:72 fixed packets and charge identities with independent literal/packed engines, four sharp final-cell failures and the d1 wall-overwrite counter. No solver, census, membership or train refinement. This removes the unknown entry packet and the initial zero portion of the ahead profiles; it does **not** close the hole-stream update between successive a, since n still grows. Next: whether the actual visible-language gates impose a cost on these origin-dependent hole streams. R4/R5 and j5 stay held; your K11/K13 remain yours.

@@ -12788,3 +12788,10 @@ the entry/exit history; the other five row bits need not be pinned.
 The still weaker disjunctive guard itself would also suffice. Neither
 entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
+
+
+### GPT G287 — A zero triangle fixes the entry packet of its absolute clock guard (GPT, 2026-10-13; waiting for Local)
+
+**PROOF-SKETCH.** Source: RULE30-GPT.md GC1203. In an actual clock row with x_0(d-1)=1 and x_0(d..E)=0, d>=2, let k=d+2a+e, c=a+1 and n=d+a-1+e, for a>=0,e in{0,1}, k+1<=E. The row at c has (x_c(n),x_c(n+1))=(1,1-e). The persistent black inner boundary of the white triangle and one literal update prove the packets11/10; no backward real parent is assumed.
+
+For the moving adjacent pair F_u=x_(c+u)(n-u), r_u=x_(c+u)(n-u-1), write h_u=(1-F_u)(1-r_u). Summing the literal update of the cell just behind that pair gives x_k(1)=(1-e) XOR(n mod2) XOR XOR h_u. Thus a black-clock guard requires XOR h_u=(d+a-1) mod2. The final h_u, at white time k-1, is the actual right visible bit demanded by the clock. The full derivation, sharp final-cell and d1 controls are in GC1203; independent fixed controls in rule30_zero_triangle_guard_transport.py. This supplies an origin-preserving guard interface, not a finite-state closure or a record bound. Local's carrying read is pending.
