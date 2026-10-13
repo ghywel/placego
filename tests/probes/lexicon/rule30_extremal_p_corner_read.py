@@ -54,6 +54,17 @@ OUTCOME (2026-10-13 16:00 BST, M5, one minute; machine output quoted): R1 HELD, 
      Every surviving r has r >= 9 and so a core >= 35, more than the 10 used. With GC1176: in the extremal corner a P
      birth with a core of at least 7 is impossible for every r, so the corner is empty for r >= 2 and, at r = 1, for
      L >= 3 + 2p (GC1175's d = 3 example, L = 3 with a core of 5, sits below this).
+
+ADDENDUM PREDICTIONS (2026-10-13 16:24 BST, before the run): GPT's GC1177 (75c296db), its three carrying steps, with
+  a full-line Rule 30 written here (not GPT's rule30_corner_two_cell.py). Record searched: as above, plus GC1177's own
+  terms 'right.edge|two.cell' and G249 read.
+  G1 must hold (crop identity, cone length): for r = 1 .. 64, p in {0, 1}, cores K = 7 .. 14 and 4 random tails, the
+     child row (corner_row advanced a ticks under the black-start wall) equals x_T(2r - 2 - j) of the seed-11 orbit at
+     T = 2r - p for every depth j <= K + p - 1, and is white at depths d .. K + p - 1.
+  G2 blind (0.7): the cone length is sharp: at depth K + p the child depends on the tail for some r, p, K.
+  G3 must hold (the unexpected check, a third route to GC1176's table): the seed-11 right diagonals V_j(t) = x_t(t - j)
+     at t = 2r give GC1176's arrival defects as D_k = V_(k+3)(2r) XOR ((k + 1) mod 2) for k = 0 .. 5 and r <= 256; and
+     V_3 .. V_11 at t = 2r have period 32 in r, U2's period for C = 10.
 """
 import os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -244,8 +255,49 @@ def detail(cmax=10, rmax=512):
             print('detail C=%d  r mod 32 = %2d: %-14s child word %-6s (r = %s ...)' % (C, k[0], k[1], k[2], seen[k][:3]))
 
 
+def seed11(T):
+    """Full-line Rule 30 from black cells at -1 and 0; returns rows as dicts site -> bit, t = 0 .. T."""
+    rows = [{-1: 1, 0: 1}]
+    for t in range(T):
+        x = rows[-1]
+        rows.append({i: x.get(i - 1, 0) ^ (x.get(i, 0) | x.get(i + 1, 0)) for i in range(-t - 3, t + 3)})
+    return rows
+
+
+def gc1177():
+    rng = random.Random(1177)
+    g1, g2_dep = True, False
+    rows = seed11(2 * 64 + 2)
+    for r in range(1, 65):
+        for p in (0, 1):
+            a, T, X, d = 2 * r + 1 - p, 2 * r - p, 2 * r - 2, 4 * r - p
+            for K in range(7, 15):
+                kids = []
+                for _ in range(4):
+                    row = corner_row(r, K, [rng.randrange(2) for _ in range(10)])
+                    for t in range(a):
+                        row = step(row, (t + 1) % 2)
+                    kids.append(row)
+                J = K + p - 1
+                for kid in kids:
+                    g1 &= all(kid[j] == rows[T].get(X - j, 0) for j in range(1, J + 1))
+                    g1 &= all(kid[j] == 0 for j in range(d, J + 1))
+                if len({kid[J + 1] for kid in kids}) > 1:
+                    g2_dep = True
+    print('G1 crop identity and white band through K+p-1 (r <= 64, both p, K = 7..14):', 'HELD' if g1 else 'FAILED')
+    print('G2 depth K+p depends on the tail somewhere:', 'HELD' if g2_dep else 'REFUTED')
+    rows = seed11(2 * 256 + 2)
+    V = lambda j, t: rows[t].get(t - j, 0)
+    g3 = all(''.join(str(V(k + 3, 2 * r) ^ ((k + 1) % 2)) for k in range(6)) == GC1176_TABLE[r % 16]
+             for r in range(1, 257))
+    seq = [tuple(V(j, 2 * r) for j in range(3, 12)) for r in range(256)]
+    per = next(q for q in range(1, 129) if all(seq[i] == seq[i + q] for i in range(256 - q)))
+    print('G3 seed-11 right diagonals give GC1176 table:', 'HELD' if g3 else 'FAILED', '| period of V_3..V_11 at t = 2r:', per)
+
+
 if __name__ == '__main__':
     r1()
     r2_u1()
     u2()
     detail()
+    gc1177()
