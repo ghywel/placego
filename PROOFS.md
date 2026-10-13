@@ -12309,6 +12309,21 @@ entry is now reviewed. Neither review claims a solution to Question 3.
 
 **Promotion receipt (GPT, 2026-10-13).** Local L683 at ebe7a00f reads the two-bit bijection, uniformity, terminal count and n2 guard by hand; no experiment replay. Promoted from W284.
 
+
+### G.GPT285. A certified cut charges the first zero beyond the depth125 witness (second-read by Local, 2026-10-13)
+
+*Where:* RULE30-GPT.md GC1199; tests/probes/lexicon/rule30_young_birth_zero_ray.py.
+
+**Claim (PROVED; GC1199, Local L684; fixed prefix only).** In phase1, fix initial left depths1..124 to the published depth125 witness in site/wolframcollatzmahler/data/records.json. No actual right trace can coexist with these cells and zeros at depths125..146 for the corresponding query horizon. This excludes a one-cell extension of this witness prefix, not every depth125 prefix or every depth.
+
+**Carrying proof.** A left-neighbour observation at tick t depends only on initial left depths1..t+1 and the fixed wall. Thus every such row gives the same trace through145 as the named zero-ray calculation; farther cells, including147, cannot repair it. The calculation by independent packed-integer and literal lookup evolution gives the visible word at white ticks71,73,...,145 as00100100001000010000100001000010000101. This38-bit word is in the committed phase1 minimal forbidden catalog, whose absence certificate is already adopted. It contradicts any actual right trace. The finite calculation and the prior certificate are tier1 inputs; the all-tail locality implication above is the carrying step read by Local L684. The earlier white samples reproduce the fixture, while the forced last visible1 closes the cut. Equivalently, with the original prefix through145 fixed, that cut requires initial depth146 black.
+
+**Unexpected horizon guard.** With depths146/147 respectively00, the first black-clock failure is146. Setting only147 to1 repairs it without changing any earlier trace or the cut at145. Therefore that zero-ray clock failure alone does not exclude all length22 extensions. The certified cut does: it reads no cell beyond146. No real canonical parent, extra clock tick or all-depth bound is assumed.
+
+**Filing check.** proof_dupes.py --near W285 gives G130, G234 and G240; all three read. G130 supplies general triangular locality, G234 controls delayed deep resonance outside a clock cone, and G240 gives source/edge restrictions. This uses locality and an adopted cut to pin one previously measured white-terminal pivot; it does not restate those results or claim a new coding theorem. GC1155's existing depth125 free-pivot control is credited in GC1199.
+
+**Promotion receipt.** L684 at61f014b8 reads the locality and exact horizon and independently checks the word under three random tails. Its catalog certificate is adopted, not rerun. Promoted from W285.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -12758,14 +12773,16 @@ entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
 
 
-### GPT G285 — A certified cut charges the first zero beyond the depth125 witness (GPT, 2026-10-13; waiting room, GC1199)
+### GPT G286 — A visible cut residual loses a zero-tail clock charge (GPT, 2026-10-13; waiting room, GC1200)
 
-*Where:* RULE30-GPT.md GC1199; tests/probes/lexicon/rule30_young_birth_zero_ray.py.
+*Where:* RULE30-GPT.md GC1200; uses the already-proved GC1197 gate.
 
-**Claim (PROOF-SKETCH; GC1199; fixed prefix only).** In phase1, fix initial left depths1..124 to the published depth125 witness in site/wolframcollatzmahler/data/records.json. No actual right trace can coexist with these cells and zeros at depths125..146 for the corresponding query horizon. This excludes a one-cell extension of this witness prefix, not every depth125 prefix or every depth.
+**Claim (PROOF-SKETCH; GC1200, exact clock prediction only).** A finite visible suffix, the child phase, and depth modulo28 do not determine the next black-clock verdict of every zero-terminated left row. This also applies to an ordinary finite forbidden-word residual as the visible summary. It does not exclude nondeterministic relaxations or richer finite hidden states.
 
-**Carrying proof.** A left-neighbour observation at tick t depends only on initial left depths1..t+1 and the fixed wall. Thus every such row gives the same trace through145 as the named zero-ray calculation; farther cells, including147, cannot repair it. The calculation by independent packed-integer and literal lookup evolution gives the visible word at white ticks71,73,...,145 as00100100001000010000100001000010000101. This38-bit word is in the committed phase1 minimal forbidden catalog, whose absence certificate is already adopted. It contradicts any actual right trace. The finite calculation and the prior certificate are tier1 inputs; the all-tail locality implication above is the carrying step awaiting Local's read. The earlier white samples reproduce the fixture, while the forced last visible1 closes the cut. Equivalently, with the original prefix through145 fixed, that cut requires initial depth146 black.
+**Proof from the established guard.** In phase1, let A^1 be GC1197's seven-ring reference. Set b_j=A^1_0(j) for j<ell and b_j=0 for j>=ell. Choose ell_+=14+56u and ell_-=42+56u, with u arbitrarily large. Both are first discrepancies: A^1_0(ell)=1. Before their arrivals, all black-clock tests pass and their visible prefixes are respectively(10)^(3+14u) and(10)^(10+14u). These are actual train prefixes: shifting GC1020's phase0 realization forward three ticks gives phase1 with the same visible(10)^infinity. Hence every sound finite cut catalog accepts them. Their next white sample at tickell-1 is0, since the front flips the reference left-neighbour0 to1. Their next black sample at tickell differs: GC1197's proved phase1 gate permitsell mod56=14 and rejectsell mod56=42. Thus the values are1 and0.
 
-**Unexpected horizon guard.** With depths146/147 respectively00, the first black-clock failure is146. Setting only147 to1 repairs it without changing any earlier trace or the cut at145. Therefore that zero-ray clock failure alone does not exclude all length22 extensions. The certified cut does: it reads no cell beyond146. No real canonical parent, extra clock tick or all-depth bound is assumed.
+Given any suffix lengthK, choose u so both prior words exceedK. Their finalK symbols agree, both histories have phase1, the next observation has the same time colour, and ell_+=ell_- modulo28. For a catalog of maximal word lengthM, its standard cut residual depends only on the lastM-1 letters; chooseK>=M-1. The residuals are therefore identical before the common next visible0 is consumed, yet the following black guards differ. Hence the specified summary cannot predict that guard exactly.
 
-**Filing check.** proof_dupes.py --near W285 gives G130, G234 and G240; all three read. G130 supplies general triangular locality, G234 controls delayed deep resonance outside a clock cone, and G240 gives source/edge restrictions. This uses locality and an adopted cut to pin one previously measured white-terminal pivot; it does not restate those results or claim a new coding theorem. GC1155's existing depth125 free-pivot control is credited in GC1199.
+**Unexpected scope check.** Depth modulo56 distinguishes this pair and suffices for GC1197's narrow two-arrival gate. So the counter is no obstruction to all finite-type certificates, no proof of unbounded memory after adding other coordinates, and no failure of a sound overapproximation that retains both black outcomes. No real long-band membership is asserted for either zero-terminated row, and the passing first guard is not infinite survival. This audits a proposed state compression using proved controls; no new train scan, residue refinement or widening ran.
+
+**Filing check.** proof_dupes.py --near W286 gives G162, G167 and G285; all three read. The first two concern periodic-driver reset costs, and G285 pins one early-departure endpoint by a certified cut. This applies the established GC1197 clock gate to a suffix-state compression claim; it restates none of those results and supplies no new train scan.
