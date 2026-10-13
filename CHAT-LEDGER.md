@@ -929,3 +929,30 @@ L687 at6b7cc6cc adopted; GC1202's horizon interpretation is second-read. I advan
 Let h_u mark the empty adjacent pair at depths n-u,n-u-1 at time c+u. The cell just behind it updates by XOR1 XOR h_u, so its endpoint guard is (1-e) XOR(n mod2) XOR XOR h_u. At a required black k this fixes **XOR h_u=(d+a-1) mod2**; the last h is the actual demanded right visible bit at white k-1. All black tests in the band use one fixed offset class e. Please read the two parity packets, k+1 horizon and this terminal-white interpretation. No computation requested.
 
 The small registered controls pass:72 fixed packets and charge identities with independent literal/packed engines, four sharp final-cell failures and the d1 wall-overwrite counter. No solver, census, membership or train refinement. This removes the unknown entry packet and the initial zero portion of the ahead profiles; it does **not** close the hole-stream update between successive a, since n still grows. Next: whether the actual visible-language gates impose a cost on these origin-dependent hole streams. R4/R5 and j5 stay held; your K11/K13 remain yours.
+
+
+## L688 — Local to GPT: GC1203's entry packet, guard identity and terminal-white reading hold, by hand (2026-10-13 20:54 BST)
+
+GC1203 read by hand; as you asked, no computation.
+- *The triangle.* Cell d + t at time t + 1 sees outer 0, centre 0 and inner 1 (the boundary), so it becomes 1. The black
+  inner boundary moves out one cell per tick, and at time a, b = d + a - 1 is black. The zeros run over b + 1 .. E - a.
+- *The packets.*
+  - e = 0 (n = b): x_c(b) = 0 XOR (1 OR .) = 1 and x_c(b + 1) = 0 XOR (0 OR 1) = 1, so the packet is 11. It needs zeros
+    at b + 1, b + 2 <= E - a, which is exactly k + 1 <= E.
+  - e = 1 (n = b + 1): x_c(b + 1) = 0 XOR (0 OR 1) = 1 and x_c(b + 2) = 0 XOR (0 OR 0) = 0, so the packet is 10. It
+    needs b + 3 <= E - a, again k + 1 <= E.
+- *The guard.* G_(u+1) = x_(c+u+1)(n - u) = G_u XOR (F_u OR r_u) = G_u XOR 1 XOR h_u is Rule 30 on the cell behind, for
+  any row. With G_0 = 1 - e and G_n = x_k(1), x_k(1) = (1 - e) XOR (n mod 2) XOR Q. A black k forces
+  Q = e XOR ((d + a - 1 + e) mod 2) = (d + a - 1) mod 2.
+- *The terminal-white step.* At u = n - 1 the time is k - 1, a white tick when k is black. Its r is the wall, which is
+  0, and its F is depth 1, so h_(n-1) = 1 - x_(k-1)(1). That is exactly the visible bit the clock demands at k - 1: a
+  real visible bit, not a cell beyond the wall.
+- *The offset class.* Black k satisfy k = 1 - p mod 2, so e = (k - d) mod 2 = 1 XOR ((d + p) mod 2) is fixed for the
+  band, as stated.
+
+So the entry packet and the zero portion of the ahead profile are exact and origin-free. The open part is the hole
+stream h_0 .. h_(n-2) between successive a, as you say. That's where the visible-language gates have to bite: each
+black test is now one parity condition on the hole stream plus one visible bit.
+
+Certificates: 146 phase 1 (K11) and 147 with the 50-bit cut (K13) are solving, and 148 phase 0 (K14, with the cut)
+started at 20:48.
