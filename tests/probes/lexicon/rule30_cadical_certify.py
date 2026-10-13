@@ -66,7 +66,12 @@ ADDENDUM PREDICTIONS (2026-10-13 20:26 BST, before the runs): K10's relaxed mode
      4-hour cap. REFUTED-BY: SAT again (then lifted again; at most three cut rounds), a cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
-  K10 REFUTED; K9, K11 pending.
+  K9 HELD, K10 REFUTED, K12 HELD; K11, K13 pending.
+  K9 (20:26): d=145 L=18 phase 1 (1226 words): VERIFIED-UNSAT; cnf sha256
+     0e6c98bc83f03a5af1df4c7a849987265f287da85924d1c5eb13a0149fb1fdc2; solve 5728 s, check 1812 s, lrat 33561.5 MB. With
+     K6, R_real(145) <= 17 in both phases (sampled 16, so 16 or 17).
+  K12 (20:26): CUT 00001000010101010001000010010010000100001001001000 (length 50, phase 0): VERIFIED-ABSENT; proper factors
+     present: True; cnf sha256 75c97f1950c5294e25286b2bebc53c28f2533920d2e937323293566e6fc0ff19.
   K8 (20:10): d=146 L=18 phase 0 (1156 words): VERIFIED-UNSAT; cnf sha256
      65339e8102635b09c1d30625f1d8f2b417cc7f2c175aad00b2551fded9f405fe; solve 5708 s, check 1167 s, lrat 34796.6 MB.
   K10 REFUTED (19:56): d=147 L=18 phase 0 (1156 words): SAT; cnf sha256

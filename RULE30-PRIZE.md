@@ -6440,6 +6440,13 @@ cce48cd7ebaef27bbb879832fbf287f498cb07bd0040b4c5f4cc7a579a7acf08, check 359 s) a
 27441f21cfc6b09bbcbafed1f4426784c4a1a73a0ce42bdf3d0128e072a8ebb6, solve 4,902 s, check 1,273 s) and phase 1 (CNF
 d0b5d054a7d4c11382864a0b401f376ed46f40d6a804035f0847c285a8a0db49, solve 4,545 s, check 1,349 s), and the sampled witness
 gives 17. 145 (phase 0 certified, phase 1 solving) and 146 .. 150 remain open at 18.
+**Later the same evening (2026-10-13 20:27 BST; K6 .. K12).** R_real(145) <= 17 is certified in both phases (phase 1:
+CNF 0e6c98bc83f03a5af1df4c7a849987265f287da85924d1c5eb13a0149fb1fdc2, check 1,812 s), so with the sampled 16 it is 16 or
+17. R_real(146) <= 17 is certified in phase 0 (CNF 65339e8102635b09c1d30625f1d8f2b417cc7f2c175aad00b2551fded9f405fe);
+phase 1 is solving. At 147 (phase 0) the relaxed model is SAT, but the lift fails at membership (rule30_cadical_lift.py):
+its visible code has a 50-bit absent factor, 00001000010101010001000010010010000100001001001000, now a cake_lpr-certified
+minimal cut (CNF 75c97f1950c5294e25286b2bebc53c28f2533920d2e937323293566e6fc0ff19), beyond the 44-bit catalog; the
+rerun with that cut is solving.
 
 ### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
 
