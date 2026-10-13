@@ -6423,3 +6423,46 @@ L = 24 are VERIFIED UNSAT by cake_lpr from CaDiCaL 3.0.1's LRAT proofs, without 
 c45d3ae480eee84403314562ad4d41816e528357e5aef956a9f37257506a0e6c, solve 851 s, check 262 s, proof 9.4 GB. The pipeline's
 controls hold (a toy proof verifies; one removed hint is rejected). So R_real(125) <= 23 is certified. The three-run
 statement still leans on R_real(132) <= 17, whose certificates (L = 18, both phases) are running in the same batch.
+
+**Exact value, R_real(125) = 21 (2026-10-13 16:05 BST; the same probe, addendum P3, predicted before the run).** At L = 22
+RLK's relaxed model is UNSAT in phase 0 (about 27 minutes) and phase 1 (about 31 minutes), and the control's lifted
+band of 21 (phase 1) is a real witness. So R_real(125) = 21 exactly (kissat verdicts; the L = 22 certificates are not
+yet run). So any zero run that gives 18 at 125 ends by depth 145 and gives 18 at most at 125 .. 128, exactly the span
+of the observed phase-1 witness; 129 needs another run. The certificate for R_real(132) <= 17 is VERIFIED UNSAT by
+cake_lpr in phase 0 (CNF b01a50772ef5001b31f3e8d1c03f8c5fe8327cfa10c1fc8f8b53f970fc493875, solve 1,531 s, check 429 s,
+proof 14.6 GB); phase 1 is in the same batch.
+
+### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
+
+*Local, while second-reading GPT's GC1176 and GC1177 (probe `tests/probes/lexicon/rule30_extremal_p_corner_read.py`,
+predictions R1, R2, U1, U2 and G1 to G3 committed before each run). Record searched: 'extremal' (68 hits in 18 files,
+other objects), 'P corner' (2, GC1176), 'oldest age' (0), 'six.diagonal|moving front' (9 in 6 files; GC840 is another
+object), 'defect front' (1, GC602).*
+
+**The corner** (GC1176): a child of wall phase p with a white band [d, d + L - 1], d = 4r - p, whose canonical ancestry
+(GC1174) reaches the oldest birth age a = 2r + 1 - p. The birth parent is C_1(0^r w): the checkerboard at depths
+1 .. 2r + 1, and (Q being impossible there) a P core of at least L + 4r - 2p black cells from N = 2r + 1. GC1176 shows
+that a core of at least 7 forces a failed black test or a visible 11 in the child's first three samples, unless r = 9 or
+13 mod 16.
+
+**The closure (PROOF-SKETCH; single-party until GPT's read).** For those residues every core is long: r >= 9, so the
+core has at least 1 + 36 - 2 = 35 cells. Ten suffice. With nine front coordinates GC1176's closed recurrence has period
+32 in r, and the child's first five samples and four black tests are fixed. They fail in every class, using only the
+clock and the no-11 cut (no 44-bit word): r = 9 and 25 mod 32 give the child word 1011; r = 29 mod 32 fails the black
+test at GC1176's tick 2r + 7; r = 13 mod 32 gives 10011. Direct simulation without the recurrence (r <= 512, random
+tails) and the seed-11 right diagonals (GC1177's crop; a third route, period 32) agree. With GC1176: a P birth in the
+corner with a core of at least 7 is impossible for every r. The core is at least 7 whenever r >= 2, and at r = 1 when
+L >= 3 + 2p. So for d = 4r - p with r >= 2 no band reaches the oldest age, and the inherited-zero budget there is
+floor((d - p)/2) - 1, one less than GC1174's. GC1175's verified d = 3 example (r = 1, L = 3, a core of 5) sits below the
+threshold, as it must.
+
+**The other oldest-age corners (hand, for GPT's read).** At the oldest age the zero interval begins at s = d - a + 1,
+next to the end a + p of the checkerboard prefix, and the parity of d + p decides the type: d + p = 0 mod 4 is
+GC1176's corner (P, black-wall parent, core from the last prefix cell); d + p = 2 mod 4 is empty (the cell that P needs
+white is a black prefix cell, and Q needs two adjacent prefix cells black); d + p = 1 mod 4 leaves Q (black-wall parent,
+core from the last prefix cell s = a + p); d + p = 3 mod 4 leaves P (white-wall parent, white at s = a + p, core from
+s + 1, one cell past the prefix). The same front method applies to the last two. Not yet run.
+
+**Status.** The closure of residues 9 and 13 is a finite computation over a closed, r-independent orbit (COMPUTED) on
+GC1176's corner reduction (PROOF-SKETCH there until second-read; Local's read of its carrying steps is in CHAT-LEDGER
+L668). It bounds one age at one residue of d, not the birth runs at every age, and the prize stays open.

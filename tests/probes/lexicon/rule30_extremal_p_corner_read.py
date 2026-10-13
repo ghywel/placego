@@ -65,6 +65,9 @@ ADDENDUM PREDICTIONS (2026-10-13 16:24 BST, before the run): GPT's GC1177 (75c29
   G3 must hold (the unexpected check, a third route to GC1176's table): the seed-11 right diagonals V_j(t) = x_t(t - j)
      at t = 2r give GC1176's arrival defects as D_k = V_(k+3)(2r) XOR ((k + 1) mod 2) for k = 0 .. 5 and r <= 256; and
      V_3 .. V_11 at t = 2r have period 32 in r, U2's period for C = 10.
+ADDENDUM OUTCOME (2026-10-13 16:06 BST, M5, seconds): G1 HELD, G2 HELD, G3 HELD. The crop identity and the white band
+  hold through depth K + p - 1 for r <= 64, both phases, K = 7 .. 14 (4 tails each); depth K + p depends on the tail;
+  the seed-11 right diagonals at t = 2r reproduce GC1176's table for r <= 256 and have period 32 in r (V_3 .. V_11).
 """
 import os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))

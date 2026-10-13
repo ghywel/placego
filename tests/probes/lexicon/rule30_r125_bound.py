@@ -37,6 +37,9 @@ ADDENDUM PREDICTION (2026-10-13 15:36 BST, before the run): the exact value at 1
   L = 22 relaxed UNSAT in both phases gives R_real(125) = 21 exactly.
   P3 blind (0.6): both phases UNSAT at d = 125, L = 22 within a 3-hour cap. REFUTED-BY: a valid lift (then
      R_real(125) >= 22), or a cap.
+  P3 HELD (2026-10-13 16:05 BST; machine output quoted): d = 125, L = 22: relaxed UNSAT in phase 0 (about 27 minutes)
+     and in phase 1 (about 31 minutes), 1156 and 1226 certified words. With C's lifted band of 21, R_real(125) = 21
+     exactly (kissat verdicts; cake_lpr certificates not yet run for L = 22).
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
