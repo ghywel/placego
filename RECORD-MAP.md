@@ -102,7 +102,7 @@ PART: as on the board.
 - FullK18 bounds4422 occurrences by1 at every word length — PROVED by finite potential, independent L561 review — GC986.
 - Gap4 trains of length>=4 start only near the initial boundary; cannot restart — hand inference — GC987.
 - Actual suffix from13 forbids4422/4444; age12 retains4444; relaxation still branches — hand / COMPUTED — GC988/989, L563.
-- Phase-0 R(d)<=d+4 through depth89; R89=75, R93 running — COMPUTED / OPEN — §8.36/37, RK93.
+- Phase0 R(d)<=d+4 to89; R89=75 — COMPUTED — §8.36/37, RK93.
 - Black-wall WA3 wrong parity; R°(3)=4 — PROVED CL212 — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
 - R_real(97..120) exact, maximum16 at108; 121..124, 140, 144<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132=139=142=17 (both phases, kissat) — COMPUTED — RR3, L596..617.
@@ -197,7 +197,7 @@ PART: as on the board.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..19 cap672/inverse/excess139/reset PROVED CL294..299; closure REFUTED.
 - GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
-- GC1172/74/76/77/79+8.97 PROVED;1173 fails;1178 modulus/1181 younger-birth SKETCH.
+- GC1172/74/76/77/79+8.97 PROVED;1173 fails;1178/1181 SKETCH;1182 normalization-promotion fails.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
