@@ -37,6 +37,16 @@ OUTCOME (controls, 2026-10-13 22:31 BST, seconds; machine output quoted): X1 HEL
      checked by RR's zero-padded simulation: RR's R_real(21) = 15 is reached in phase 1.
   The first control run failed at import (RR's module parses sys.argv); shielded and rerun, retained in history.
 
+OUTCOME X2 (2026-10-14 00:07 BST, M5; machine output quoted): X2 REFUTED by a real witness.
+  EXACT d=147 L=18 phase 0 (1158 words): SAT-WITNESS; cnf sha256
+     1f156ffca7e47c500ba4afe4ff9c75c897ffaf00584200f123cd4f404777476c; solve 5338 s; partial LRAT (29.9 GB) deleted.
+  The witness row (cells -164 .. 164) passes RR's zero-padded check (band and clock) and the phase gate. An independent
+  replay on an expanding zero background (L700 follow-up) confirms the band at depths 147 .. 164 and the clock for
+  t = 0 .. 164 in phase 0. The support is -146 .. 101: a finite configuration whose left half is white beyond depth 146
+  keeps the clock for 165 ticks (it fails at 165, past the cone). So R_real(147) >= 18 (phase 0). Its left row agrees
+  with round 2's relaxed model (rule30_cadical_lift.py) on depths 164 .. 58; the two first differ at depth 57. The
+  relaxed artefacts carried non-real codes over a left row that is nearly real.
+
 GPT review (GC1210.1, 2026-10-13): the inherited exact cone, phase unit and
 white-sample cut placement are sound; no carrying defect found. Added only
 metadata assertions for the mirrored RR variable map and a requested-phase
