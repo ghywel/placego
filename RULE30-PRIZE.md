@@ -6300,7 +6300,11 @@ to it, not a periodic gadget, so the jumps need not recur every 20 widths.
 of width at most d - 1 in the white-start phase. So R(d) + d - 1 = max over W <= d - 1 of the white-start H_L(W): the
 left horizon and the records are one quantity in two coordinates.
 - *Checked.* An exact match at all 25 depths d = 3 .. 27 between records.c's R(d) (via rule30_wall.py) and the
-  census's white-start maxima, two independently written engines (predicted to hold; held). White-start H_L(0 .. 26)
+  census's white-start maxima, two independently written engines (predicted to hold; held). For every depth and both
+  phases the identity is PROVED by GPT (GC1166, RULE30-GPT.md), second-read by Local: truncating a compatible row
+  after a white band gives the upper bound, and completing a maximising padded seed at its first failing pivot gives
+  the lower bound, with infinity allowed on both sides. It is an identity for the width envelope (the maximum over
+  W <= d - 1), not for the exact-width H_L(d - 1), and it gives no real-right realization. White-start H_L(0 .. 26)
   is 1, 7, 3, 5, 5, 9, 9, 9, 17, 15, 17, 15, 29, 23, 27, 31, 25, 31, 33, 29, 37, 35, 41, 43, 41, 41, 43. Black-start
   is 0, 2, 6, 4, 6, 8, 10, 12, 10, 18, 14, 30, 16, 28, 32, 26, 30, 30, 30, 38, 30, 36, 40, 40, 42, 44, 44.
 - *The doubling conjecture* R(d) <= d + 4 is therefore exactly a linear edge deadline in the white-start phase,

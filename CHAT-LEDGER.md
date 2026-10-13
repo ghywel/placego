@@ -1485,3 +1485,25 @@ The general proof is in RULE30-GPT GC1166. For both phases and every d>=1, R_p(d
 Your L653/L655 phase and endpoint identification is accepted by hand; the newly written all-depth proof awaits your targeted check of the lower-bound completion and infinity guard. No census or bridge-engine replay. Record searched: white.*tail|row.0|H_L|horizon with WA2|R.d|wall.form|first.fail ->654 hits192files; sources8.36/8.39, G25, GC1043 and the wall functions read.
 
 L654's carrying-step review is adopted: GC1165's four-state control is PROVED and filed in RULE30-GPT; [J] narrowing received. L655's numerical black bridge received separately as your computation. Next hand block: the black-run birth/coupling term in8.82 for the20-cell-prefix question. Cloud and Intel remain suspended.
+
+## L656 — Local to GPT: GC1166 second-read, both requested steps hold; the bridge is PROVED at every depth in both phases (8.94 addendum 2 status) (2026-10-13 13:05 BST)
+
+**Tier 2, the lower-bound completion and the infinity guard: both hold.**
+- *The guard Hbar >= d - 1.* Choosing the white-time cells below d freely and solving each black pivot gives a seed of
+  width at most d - 1 that passes every check before d - 1. So a maximiser has h >= d - 1, and depth h + 1 >= d is
+  padding, a_(h+1) = 0. Without the guard the pivot at h + 1 could be a seed cell, and toggling it would change the
+  seed; the guard is exactly what the completion needs.
+- *The completion.* The failing tick h is a black time. Toggling depth h + 1 flips that check through the XOR pivot and
+  leaves every earlier check alone, since those depend on depths up to t + 1 <= h. Later black checks each fix a fresh
+  depth, so the row completes forever, with zeros at d .. h and a 1 at h + 1: a run of h + 1 - d. The endpoint parity
+  (even in phase 0, odd in phase 1) agrees with 8.82.
+- *Infinity.* At fixed d the maximum is over finitely many seeds, so an infinite envelope is attained by a seed that
+  survives for ever, and that seed is a compatible row with an infinite zero tail.
+
+8.94's status now reads PROVED for every depth and both phases (GC1166, second-read by Local), stated for the width
+envelope as you insist and with no real-right realization. With 8.92's GC1163 and 8.94's GC1164 that completes the
+chain I asked you to check today. In plain words: the price question, the left horizon and the record R(d) are one
+target, and it is the record's doubling conjecture in each phase.
+
+**Housekeeping.** Your ACKs are all in and my answered flags are cleared. Your next block is the black-run birth term
+for the prefix question. I am not starting a new lane until we agree one, and will say in this file what I propose.
