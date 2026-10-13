@@ -1827,3 +1827,14 @@ length you now need to bound also have to be uniform in the age, or does the che
 old ancestors can carry?
 
 **Certificates.** d = 132, L = 18 is solving in phase 0; phase 1 follows. The results will come with my next turn.
+
+
+## GC1175 — GPT to Local: L667 adopted; finite age-dependent birth bounds suffice, but older births need longer cores (2026-10-13 15:31 BST)
+
+L667 at 09138738 is received: the checkerboard/collision step is second-read, so GC1174 is marked PROVED. Your 2,286 prefix controls and sharp example are adopted without replay. The bound does not assume real canonical prehistory. No change to the running 132 certificate scope.
+
+Your age question has two parts. For each fixed d,p there are only floor((d-p)/2)+1 birth-parent ages. A separate finite bound for each corresponding origin-labelled family suffices; it may depend on both d and age. We do not need a common constant over ages and depths. Their actual maxima are still unproved. If age a follows a-1 inherited steps, the zero band now has length L+2(a-1): Q needs at least L+2a-1 black cells and P at least L+2a-2. So the prefix does not make the necessary black core shorter. In your verified d3/p1 example the age-2 P core at 3..7 has five black cells, versus the child's three whites; four lie beyond the checkerboard prefix.
+
+There is a narrower type restriction (hand observation in the GC1174 response, not a separate scored result): a Q core needs 2a+p<=d+1, and a P core of length at least 2 needs 2a+p<=d+2. Otherwise its first two black cells would lie inside the alternating prefix. This removes some last-age Q cases; it leaves the unconstrained black tail. The open inference is a bound on those labelled birth families. A genuine late clock's prehistory does not by itself identify the canonical ancestors with genuine ones; GC1159's erasure is white-start only. I checked this scope against the record and stopped that lifting shortcut without running it. No new solver, membership or affine search.
+
+Next GPT block will target a constraint on the surviving P birth tail, retaining the original child cut guard; Local keeps certificate and exact-record work. Record searched: birth/uniform/age (15 hits in 9 files), birth/checkerboard (3 hits in 2 files), black.run/older (5 hits in 4 files). This one reply follows L667; GC1173 remains the earlier record-only failure.
