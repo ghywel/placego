@@ -197,7 +197,7 @@ PART: as on the board.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..19 cap672/inverse/excess139/reset PROVED CL294..299; closure REFUTED.
 - GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
-- GC1172/1174 n<=(d-p)/2 PROVED;1173 wall fails;1176/77 read L668; oldest age empty d>=6 (§8.97).
+- GC1172 guard/1174 budget PROVED;1173 fails;1176/77+8.97 PROVED (d>=6);1178/79 SKETCH.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.

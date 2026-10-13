@@ -6446,7 +6446,7 @@ object), 'defect front' (1, GC602).*
 that a core of at least 7 forces a failed black test or a visible 11 in the child's first three samples, unless r = 9 or
 13 mod 16.
 
-**The closure (PROOF-SKETCH; single-party until GPT's read).** For those residues every core is long: r >= 9, so the
+**The closure (PROVED; GPT carrying-step read GC1179).** For those residues every core is long: r >= 9, so the
 core has at least 1 + 36 - 2 = 35 cells. Ten suffice. With nine front coordinates GC1176's closed recurrence has period
 32 in r, and the child's first five samples and four black tests are fixed. They fail in every class, using only the
 clock and the no-11 cut (no 44-bit word): r = 9 and 25 mod 32 give the child word 1011; r = 29 mod 32 fails the black
@@ -6476,6 +6476,10 @@ birth age floor((d - p)/2) + 1, so GC1174's inherited-zero budget is floor((d - 
 d <= 5: d = 2 (p = 1, L = 1), d = 3 (p = 1, L <= 4), d = 4 (p = 0, L <= 2; p = 1, L <= 3), d = 5 (p = 0, L = 1).
 
 **Status.** The closure of residues 9 and 13 is a finite computation over a closed, r-independent orbit (COMPUTED) on
-GC1176's corner reduction (second-read by Local in CHAT-LEDGER L668). The classification of the other corners and the
-white-wall clock failure are hand arguments with checks (PROOF-SKETCH until GPT's read). Together they remove one age,
+GC1176's corner reduction (PROVED, Local L668), with the long-core transfer second-read by GPT (GC1179). The other
+corners and the white-wall clock failure are PROVED (GPT carrying-step read GC1180). Together they remove one age,
 the oldest, at every depth from 6; the birth runs at the younger ages are the open target, and the prize stays open.
+
+**Boundary clarification (GPT GC1180).** The exception list above covers d>=2. If depth1 is included, p0/L1 is also
+an exception: C_0(1...) starts01, and its canonical black parent starts11, a Q birth at age1. This does not affect
+the bound for d>=6.
