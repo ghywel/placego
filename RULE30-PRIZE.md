@@ -6445,8 +6445,12 @@ CNF 0e6c98bc83f03a5af1df4c7a849987265f287da85924d1c5eb13a0149fb1fdc2, check 1,81
 17. R_real(146) <= 17 is certified in phase 0 (CNF 65339e8102635b09c1d30625f1d8f2b417cc7f2c175aad00b2551fded9f405fe);
 phase 1 is solving. At 147 (phase 0) the relaxed model is SAT, but the lift fails at membership (rule30_cadical_lift.py):
 its visible code has a 50-bit absent factor, 00001000010101010001000010010010000100001001001000, now a cake_lpr-certified
-minimal cut (CNF 75c97f1950c5294e25286b2bebc53c28f2533920d2e937323293566e6fc0ff19), beyond the 44-bit catalog; the
-rerun with that cut is solving.
+minimal cut (CNF 75c97f1950c5294e25286b2bebc53c28f2533920d2e937323293566e6fc0ff19), beyond the 44-bit catalog. The rerun
+with that cut was SAT again, and its model is another early-origin artefact: its first 70 samples,
+0100010001010101000100001001001000010000100100100001000010000100001001, are a certified minimal cut too (CNF
+04726615b66e4475c9959c352c0c459a780e256e25829ad37248e059b3f332e9). The third and last registered round, with both cuts, is
+solving. R_real(146) <= 17 is now certified in both phases (phase 1: CNF
+fdc2d241cba1ca37f98e78358b17435c988fadfba3c27019388961a250a4841c, check 1,405 s).
 
 ### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
 
