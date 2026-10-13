@@ -36,7 +36,21 @@ PREDICTIONS (written 2026-10-13 18:33 BST, before any run).
      branch closes at some W* <= 37, which then goes to GPT for the carrying read before anything is claimed.
   Q2 blind (0.65, mine): not closed, with live prefixes at the cap (not only period-cap UNKNOWNs).
 
-OUTCOME: (filled in after the run, below this line)
+OUTCOME (2026-10-13 18:35 BST, M5, 101 s; machine output quoted): C0 HELD, C1 HELD, C2 HELD, C3 reported, Q1 HELD,
+  Q2 HELD: the tree does NOT close within the caps.
+  C0: the vectorized evaluator agrees with verdict_fast on 2,000 rows per phase. C1: the j = 3 exceptional seed
+     101101101's zero ray closes at {0: 29, 1: 27}. C2: traces ['01111', '01110'], GPT's exact numbers. C3: 10111's zero
+     ray closes at {0: 4, 1: 5}.
+  The search stopped at the node cap (300,000 nodes, all within header 1011; header 1100 was not reached), with the
+     largest closing window 37. Live nodes per prefix length: 1 at each k = 4 .. 11, then 2, 1, 2, 4, 8, 15, 15, 22, 35,
+     57, 113, 183, 338, 520, 792, 1300, 1927, 2914, 4317, 7327, 8835, 14627, 19562 at k = 12 .. 34 (about 1.5 per bit),
+     then 14331 .. 9272 at k = 35 .. 40 as period-cap UNKNOWNs (63,760, from W = 32) cut branches. Live at k = 40:
+     9,272.
+  Diagnostic after the run (GC1191's decoder on the first six live prefixes at the cap): one is a zero ray that the
+     grammar rejects (terminal 00, a relaxation artefact); the other five are accepted primitive words, Q and P at
+     deficits 18 and 19, each with one time residue alive in one or both phases at W = 37. Their own cores make windows
+     of at least d + L - 1 >= 82 available, so these are not counterexamples, only branches the capped relaxation
+     cannot close.
 """
 import os, random, sys, time
 HERE = os.path.dirname(os.path.abspath(__file__))
