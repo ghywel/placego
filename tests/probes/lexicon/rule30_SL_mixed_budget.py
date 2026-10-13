@@ -72,6 +72,17 @@ ADDENDUM PREDICTION (2026-10-14 00:15 BST, before the run; the second door-6 blo
   M6 blind (0.55): among the 200 S/L lifts with the longest image white runs at N = 150 (runs from 19 down), fewer than
      half have a real visible word, and the longest run among the real ones is below 19. Counterfactual: the run-19
      lifts are real, so real S/L residences already show runs of 19 within depth 150.
+  M6 HELD (2026-10-14 00:16 BST, about a minute): runs 19 .. 15 in the top 200; real visible words 0 of 200 (the seven
+     run-19 lifts included). Post hoc instrument controls, run after the outcome: (100)^25 real True, (10000)^15 real
+     True, the alternating (100 10000)^9 100 real False, a word starting 11 False.
+
+ADDENDUM PREDICTIONS (2026-10-14 00:17 BST, before the run): enumerate the real S/L lifts directly. A depth-first search
+  adds S or L blocks and keeps a prefix only if its visible word is in the phase-0 language (membership is
+  prefix-closed). N = 60, 90, 120, 150; cap of 20,000 membership calls.
+  M7 blind (0.5): the number of real S/L lifts grows at most polynomially in N (bounded or slowly growing switching
+     between S and L), at most 4 times from N = 90 to N = 150. Counterfactual: exponential growth like M5's.
+  M8 blind (0.5): the longest image white run over real S/L lifts at N = 150 (depths >= 12) is at most 8, close to
+     the pure rings' 5 and 6. Counterfactual: 12 or more, so realness does not bring the runs near the rings.
 """
 import os, sys
 import numpy as np
@@ -228,8 +239,45 @@ def m6():
     print('M6 fewer than half real and longest real run below 19:', 'HELD' if nreal < 100 and best_real < 19 else 'REFUTED')
 
 
+def m78():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import rule30_relaxed_records_k as rlk
+    vis = {S: '100', L: '10000'}
+    calls = [0]
+    cache = {}
+
+    def real(v):
+        if v not in cache:
+            calls[0] += 1
+            cache[v] = bool(rlk.in_language_phase(v, 0))
+        return cache[v]
+    res = {}
+    for N in (60, 90, 120, 150):
+        out, stack = set(), [('', '')]
+        while stack and calls[0] < 20000:
+            w, v = stack.pop()
+            if len(w) >= N:
+                out.add(w[:N])
+                continue
+            for b in (S, L):
+                v2 = v + vis[b]
+                if real(v2):
+                    stack.append((w + b, v2))
+        ws = sorted(out)
+        run = int(longest_white(images(ws)).max()) if ws else 0
+        sw = max((sum(1 for i in range(1, len(x)) if x[i] != x[i - 1]) for x in
+                  [[c for c in w.replace(L, 'L').replace(S, 'S') if c in 'SL'] for w in ws]), default=0)
+        res[N] = (len(ws), run)
+        print('real S/L lifts N=%3d: %6d lifts, longest white run %2d, membership calls so far %d%s' % (
+            N, len(ws), run, calls[0], ' (CAP)' if calls[0] >= 20000 else ''), flush=True)
+    print('M7 count grows at most 4x from N=90 to 150:', 'HELD' if res[150][0] <= 4 * res[90][0] else 'REFUTED')
+    print('M8 longest real run at N=150 <= 8:', 'HELD' if res[150][1] <= 8 else 'REFUTED')
+
+
 if __name__ == '__main__':
-    if len(sys.argv) > 1 and sys.argv[1] == 'm6':
+    if len(sys.argv) > 1 and sys.argv[1] == 'm78':
+        m78()
+    elif len(sys.argv) > 1 and sys.argv[1] == 'm6':
         m6()
     elif len(sys.argv) > 1 and sys.argv[1] == 'm5':
         m5()
