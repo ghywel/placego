@@ -7,8 +7,12 @@ The model is RLK's relaxed model (rule30_relaxed_records_k.Relaxed, certified wo
 the certify run, compared by SHA-256). A relaxed model is checked by RLK's own simulation (Relaxed.check), then lifted as
 CUT and RTU do: right_half_for(code) finds a right half producing the visible code (kissat, as in RLK), and
 simulate_glued runs the glued configuration for T = d + L - 1 steps. A VALID lift is a real band of L at depth d.
-A failed lift means the model is an artefact of the relaxation: the code, and its shortest absent factor (a cut
-candidate, which must then be certified), are reported.
+If membership is UNSAT (no right half produces the code), the model is an artefact of the relaxation: the code and its
+shortest absent factor (a cut candidate, which must then be certified) are reported. If membership is SAT, the glued
+replay must be VALID by the reviewed join (GC549.16/22, GPT's GC1201 audit); a FAILED replay after membership SAT would
+be an instrument, model or horizon mismatch, never a language-absence result. The relaxed model is saved (RLK's
+save_model) right after Relaxed.check and before membership, so an interruption needs no re-solve (GC1201; added after
+the first run started, which was already in its solve).
 
 RUN-ON:     cpu; one CaDiCaL solve plus kissat for the right half.
 COMMAND:    KISSAT=kissat python3 tests/probes/lexicon/rule30_cadical_lift.py D L PHASE [CAP=7200]
@@ -22,8 +26,9 @@ PREDICTIONS (written 2026-10-13 20:02 BST, before the run).
   L1 must hold (the instrument): the CNF built here has the certify run's SHA-256
      50dbbbab61db226b0a6eb7c4b89b11d47ea64ec59823fc8a9ae1a56682e631e2, and the CaDiCaL model passes Relaxed.check.
   L2 blind (0.4): the model lifts (glued simulation VALID), so R_real(147) >= 18 and the 18s extend past 141.
-     REFUTED-BY: no right half for the code, or a failed glued simulation; then the code and its shortest absent factor
-     are reported, a cut candidate to certify before any rerun.
+     REFUTED-BY: no right half for the code (membership UNSAT); then the code and its shortest absent factor are
+     reported, a cut candidate to certify before any rerun. (Wording corrected 20:25 BST after GPT's GC1201: a failed
+     glued replay after membership SAT is a mismatch to fix, not a refutation.)
 
 OUTCOME: (filled in after the run, below this line)
 """
@@ -55,14 +60,16 @@ def main():
             m.update(int(z) for z in line.split()[1:] if int(z) > 0)
     inst.check(m, forb)                                               # raises if the model is not a relaxed model
     code = inst.code
-    print('LIFT relaxed model checked; visible code %s' % code, flush=True)
+    saved = rlk.save_model(inst, d, L, ph, 'cadical_lift')            # before membership (GC1201)
+    print('LIFT relaxed model checked; visible code %s; saved %s' % (code, os.path.basename(saved)), flush=True)
     right = rlk.right_half_for(code, ph)
     if right is None:
         print('LIFT: no right half produces the code (outside the real language); shortest absent factors:',
               rlk.shortest_absent(code, ph, 2)[:4])
         return
     ok, why = rlk.simulate_glued(inst.left0, right, inst.T, ph, d, L, code)
-    print('LIFT glued simulation: %s (%s)' % ('VALID' if ok else 'FAILED', why))
+    print('LIFT glued simulation: %s (%s)%s' % ('VALID' if ok else 'FAILED', why,
+                                                '' if ok else ' -- membership was SAT, so this is a MISMATCH to fix'))
     if ok:
         left = ''.join(str(inst.left0.get(-j, 0)) for j in range(1, inst.T + 1))
         rgt = ''.join(str(right[i]) for i in sorted(right))
