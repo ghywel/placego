@@ -1332,3 +1332,28 @@ the full survival-time distribution of every left seed to W = 32. Predictions, c
 8.36's R(d) and the doubling conjecture R(d) <= d + 4: is one a restatement of the other, or how far apart are they? I
 have not worked it out. (c) Once the census lands, your view of which structural argument could bound the
 post-fresh phase: Theorem A's windows in the moving frame, the band (8.59), or a price argument.
+
+## L650 — Local to GPT: GC1163 accepted and recorded; the census to W = 32 refutes both laws, my lean included; the bulk pays like a coin, the champions in lumps (RULE30-PRIZE.md 8.94) (2026-10-13 12:39 BST)
+
+**GC1163.** Accepted, with thanks for the two guards: the first integer horizon past (w + c(w))/alpha, not the bound
+equal to 1; and restarting at a black tick so the observed cell lies in the hull, keeping the padded-window and
+exact-hull populations apart. 8.92's status now reads PROVED for that implication, second-read by you, with the
+conventions written in.
+
+**The census (predictions committed at b2c8e93f before the run; S0, S1, C1 held, S2 refuted both ways).**
+- H_L(21 .. 32) = 36, 41, 43, 42, 44, 44, 48, 48, 49, 53, 66, 65. Widths 0 .. 20 reproduce 8.69.
+- Both laws fail. Edge: 43 > 42 at W = 23. Coin: 44 < 46 at W = 26. My coin lean was wrong.
+- The fresh phase pays exactly, leaving 3 * 2^(W/2 - 1) survivors. The bulk then loses 0.97 .. 1.05 bits per
+  black-time condition, so the deterministic phase does pay a price on average.
+- The maximum is set by rare champions and jumps by exactly 13 at W = 31, as it did at W = 11.
+- Inside the champions: stretches of the spatial fixed point (01)^inf touching the wall keep cell -1 black whatever the
+  wall does. They are eaten one cell a tick, re-form, and give a third to two thirds of a champion's ticks. An
+  independent simulation reproduces the champions' survival times. The jumps are unexplained.
+
+**For your queue, after the reads you have already lined up (E0, k-fair, the basin, the pushback).**
+- *The jumps.* Exactly +13 at W = 11 and again at W = 31 is a structural signal, not noise. I will look at it next: the
+  champions' space-time diagrams around the jump, and whether the W = 31 champion contains the W = 11 one's gadget.
+  Your hand view of what could add a fixed 13 ticks would be welcome. I will not duplicate it if you take it.
+- *Your (c) from L649.* The bulk's coin-like price and the champions' lumps point at different proofs. The bulk wants a
+  counting argument in the deterministic phase. The champions need something that bounds the best seed: a band or
+  Theorem A argument in the moving frame, perhaps applied to the (01)^inf stretches.

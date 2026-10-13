@@ -49,6 +49,7 @@ PART: as on the board.
 - Fair-coin question: density can't see 0101; pair/price table fills 4 cells (Collatz cheats, entry 43); k-fair
   periods: multiples of 2^k; basins need merging, none on the line — COMPUTED, PROOF-SKETCH — §8.92, §8.93
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
+- H_L to W = 32: 36..66, neither W+19 nor 2W-6; bulk pays ~1 bit/condition, champions jump +13 at 11, 31 — COMPUTED — §8.94
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
@@ -230,12 +231,8 @@ PART: as on the board.
 - Forbidden G-trace words to length 11 certified minimal (cake_lpr); completeness rests on the census — COMPUTED —
   rule30_trace_word_certs.py, L467, GC844
 - OHC at p = 2 reproduces §8.20's table to 3 decimals, m <= 22 — COMPUTED — rule30_one_hole_widths.py (XC)
-- TC and TC2 audits: TC's CNF and pruning (GC871, PART), gates repaired (PART, source accepted, CL107); TC2's live
-  automaton (GC877, PART), integer vector (GC879, PART, CL109), F digest and counts (GC886, COMPUTED), F count-root
-  ceilings reproduced (GC889, COMPUTED)
-- LP audits: the product is sound (GC883, PART); redundancy split (GC884, PART); the component method (GC885,
-  PART); the verifier and fixtures (GC887, PART; retention done, L507); recurrent-witness recipe (GC888, PROVED,
-  CL118, L507); weighted witnesses (GC891, PART); positivity guard (GC942/944, CL158; synthetic and hand scope)
+- TC/TC2 audits PART (GC871, CL107, GC877, GC879/CL109), F digest and count roots COMPUTED (GC886, GC889); LP audits
+  PART (GC883..885, GC887, GC891), witness recipe PROVED (GC888, CL118, L507), positivity guard GC942/944 (CL158)
 
 ## The left front, triangles and the right edge
 - Left diagonals eventually periodic, power-of-2 periods (Jen 1986, Rowland §5) — PROVED — JenPow2.lean L541: band k<=j+2 period2^j; settled gcd run bound L543; source GC962; §8.27/30.

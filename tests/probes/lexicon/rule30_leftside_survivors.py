@@ -43,7 +43,23 @@ PREDICTIONS (written 2026-10-13 before the run; announced in CHAT-LEDGER L649 be
      at least 16 seeds survive, pooled over phases, by width.
   C1 cap alarm: no seed reaches T (a maximum equal to the cap would make the census a lower bound only).
 
-OUTCOME: (filled in after the run, below this line)
+OUTCOME (2026-10-13, M5, under a minute; machine output quoted; S0, S1, C1 held, S2 refuted both ways):
+  H_L(21 .. 32) = 36, 41, 43, 42, 44, 44, 48, 48, 49, 53, 66, 65 (W = 0 .. 20 as 8.69: S0 HELD). C1 HELD (max 66 < 90).
+  S1 HELD: exact halving at every black time t <= W - 2; survivors after the fresh phase, phases pooled, are exactly
+     3 * 2^(W/2 - 1) at even W (1536 at W = 20, 98304 at W = 32).
+  S2: the edge law is REFUTED (43 > 42 at W = 23; 48 > 46 at 27; 66 > 50 at 31), and so is the coin law (44 < 46 at
+     W = 26; 48 < 50 at 28; 49 < 52 at 29; 53 < 54 at 30). My lean was wrong: neither law describes the maximum.
+  S3: after the fresh phase the bulk decays at 0.97 .. 1.05 bits per black-time condition for W = 18 .. 32 (1.36,
+     0.82, 1.11 at W = 12, 14, 16 on few points): the deterministic phase pays like a coin on average.
+  Post hoc, not predictions. The coin extrapolation for the last survivor, W - 1 + 2 log2(3 * 2^(W/2 - 1)), is about
+  2W; the maximum sits 6 to 9 below it for W = 24 .. 30 and then jumps by exactly 13 at W = 31 (53 to 66), as it did at
+  W = 11 (17 to 30). Champions (leftside_horizon.c, the frozen tool, rerun to W = 32): 10111010101 (W = 11, phase 1),
+  111111100111101010101010101 (27, phase 1), 1001101001101001110001010101011 (31, phase 1), cells -W .. -1. An
+  independent Python simulation of six champions (W = 11, 22, 27, 30, 31, 32) reproduces every survival time exactly.
+  In them, stretches of the spatial fixed point (01)^inf touching the wall (cell -1 black, -2 white, ...) keep cell -1
+  black whatever the wall does, are eaten from the left one cell a tick (W = 27: 15, 11, 7, 3 at four-tick intervals),
+  re-form, and cover between a third and two thirds of each champion's ticks; the W = 30 .. 32 champions start without
+  one. The 13-tick jumps are not explained.
 """
 import math, pathlib, subprocess, sys, tempfile
 

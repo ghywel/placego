@@ -6154,7 +6154,10 @@ and both problems ask what happens after.
 
 **Status.** The ring witness and every count: COMPUTED (the probe, with a second implementation and a check-can-fail
 control on Rule 110). Rule 30's exact halving: PROVED (8.51 to 8.53). Rule 90's deadline: PROVED (Proposition 5); its
-exact halving: PROOF-SKETCH. The implications and the construction: PROOF-SKETCH. Entry 43: PROVED, second-read by GPT
+exact halving: PROOF-SKETCH. The implication that price excludes a forever-tail: PROVED, second-read by GPT (GC1163), which makes
+the conventions explicit: restart at a black tick of the tail so the observed cell lies in the hull, take the first
+integer horizon past (w + c(w))/alpha, and do not identify the padded-window count with 8.51's exact-hull count.
+The other implication and the construction: PROOF-SKETCH. Entry 43: PROVED, second-read by GPT
 (GC1162), whose reading corrected part (c) to w >= 2 (prior art not searched; elementary, and very likely known). Rule 30's place in the top-left cell: MEASURED only.
 
 ### 8.93 The cheating coin one level up: fairness levels, simple and deep cheats, and where cheats come from (2026-10-13 12:05 BST)
@@ -6221,3 +6224,51 @@ BEST theorem's) and COMPUTED to length 16. Part 2: the complexity remark is stan
 is an interpretation [J]; the depth check COMPUTED. Part 3: the ring results COMPUTED, R1 replicating L433; injectivity
 PROVED (G121); the edge fact PROOF-SKETCH (one line); the merging account of the fourteen-cell basin COMPUTED after the
 run; the principle about directions [J].
+
+### 8.94 The left horizon to width 32: neither the edge law nor the coin law; the bulk pays like a coin, the champions in lumps (2026-10-13 12:40 BST)
+
+*Local, with GPT back as the secondary check (AGENTS.md item 17); the target was stated for GPT in CHAT-LEDGER L649
+and the predictions were committed before the run (b2c8e93f). Probe: `tests/probes/lexicon/rule30_leftside_survivors.py`
+with the C variant `leftside_survivors.c`; 8.69's `leftside_horizon.c` stays frozen. Record searched: as in the probe's
+header.*
+
+**The question.** 8.69's left horizon H_L(W) is the longest any left seed of width W keeps column -1 black at every
+black time of a 0101 wall, with the left half evolving on its own. It bounds the run of every two-sided configuration
+whose left half has width W. So H_L(W) finite for every W gives period 2, and a bound H_L(W) <= cW + b is GC637's
+uniform edge deadline, which gives Q1 with alpha = 1/c. While a black time's fresh cell lies inside the seed, the
+condition halves the survivors exactly. After that the left half is deterministic, and two laws fitted 8.69's data to
+W = 20. The *edge law* (width plus about 17) says the edge's arrival kills every survivor in bounded time. The *coin
+law* (about 2W) says the deterministic phase still pays about a bit per condition.
+
+**Measured** (exhaustive, both phases, every seed to W = 32):
+- H_L(21 .. 32) = 36, 41, 43, 42, 44, 44, 48, 48, 49, 53, 66, 65. Widths 0 .. 20 reproduce 8.69 exactly, and no seed
+  reaches the cap of 90 ticks.
+- *Both laws are refuted.* Edge: 43 > 42 at W = 23, and 66 > 50 at 31. Coin: 44 < 46 at W = 26, and 53 < 54 at 30. My
+  lean (coin, about 60 percent) was wrong. The maximum grows between slope 1 and slope 2: about 1.33 from W = 12 to 30,
+  and 1.8 between the two jumps.
+- *The fresh phase pays exactly:* after it, exactly 3 * 2^(W/2 - 1) seeds survive (both phases, even W).
+- *The bulk then pays like a coin:* while at least 16 survive, they lose 0.97 .. 1.05 bits per black-time condition
+  (W = 18 .. 32). So the deterministic phase does pay a price on average, about one bit per condition.
+- *The champions come in lumps.* The coin extrapolation for the last survivor is about 2W. The maximum sits 6 to 9
+  below it for W = 24 .. 30, then jumps by exactly 13 at W = 31 (53 to 66), as it did at W = 11 (17 to 30).
+
+**Inside the champions** (observed after the run; an independent simulation reproduces all six survival times
+checked). The champions for W = 11, 27 and 31 are 10111010101, 111111100111101010101010101 and
+1001101001101001110001010101011 (cells -W .. -1, phase 1).
+- Spatial (01)^inf is a fixed point of Rule 30. When it touches the wall with cell -1 black and cell -2 white, cell -1
+  stays black whatever the wall does, so the condition holds for free.
+- Such stretches are eaten from the left one cell a tick (the W = 27 champion's: 15, 11, 7, 3 at four-tick intervals)
+  and re-form. They cover between a third and two thirds of each champion's ticks.
+- The W = 30 .. 32 champions start without one, and the 13-tick jumps are not explained.
+
+**What it says for the target.**
+- *Linear rate (E).* Nothing here is superlinear, so E stays plausible. But a proof of E must handle rare families that
+  live much longer than the bulk, and the jumps say those families appear at some widths and not others.
+- *The price.* The bulk's coin-like decay is the price the owner's question asked for, now seen in the deterministic
+  phase rather than only in the fresh one.
+- *The maximum.* What limits the maximum is an extreme-value question about the best seed, not an average. That is the
+  sets-against-single-cases gap again (PRIZE-PROBLEMS.md section 7), here inside one finite census.
+
+**Status.** COMPUTED: H_L to W = 32 is an exhaustive census of a necessary condition, calibrated against 8.69. The
+exact halving is the probe's S1 check, the left-permutivity argument of 8.51. The champion structure is an
+observation. E0 (H_L finite for every W) and E (a linear rate) stay OPEN.
