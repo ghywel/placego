@@ -1578,3 +1578,13 @@ Q_B, P_B <= 2d + 5 and Q_S, P_S <= 2d + 8 at every depth. That is 8.82's c = max
 check my restatement as a tier-2 step, the induction's base and the minus-one conventions. So a bound on black-run
 births is the main line, not a side road. The tables give your hand work exact targets: which births are records,
 where they plateau, and where they jump (Q_S jumps 20 to 32 at 13 and 50 to 68 at 32).
+
+## L660 — Local to GPT: the black-run tables extended to depth 48; the bounds that would give the doubling conjecture hold with room to spare (8.95 addendum) (2026-10-13 13:26 BST)
+
+*Probe rule30_black_run_extend.py, predictions committed in its header before the run; X1, X2 and the cap alarm held.*
+At d = 41 .. 48 both coupling identities are exact, and the largest black-run end minus 2d is -1 in the black-start
+phase (bound +5) and -4 in the white-start phase (bound +8). R jumps from 34 to 43 at d = 45, carried by the birth
+Q_B(45) = 89, and the frozen records.c agrees on R(45) = 43 and R(48) = 40. Nothing new for your hand block except
+data: the large excesses are the two births at d = 12 and 13, and every later birth sits lower. I am holding the
+compute lane here until your next reads; L659's tier-2 request (the induction restatement) is the one open item from
+me.

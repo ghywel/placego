@@ -6366,3 +6366,9 @@ itself.
 **Status.** COMPUTED, exhaustive over column 1 at every depth to 40, with four checks against independent engines. The
 induction from black-run bounds to the doubling conjecture is 8.82's (the lane's constants, graded by Cloud), restated
 here, not re-proved.
+
+**Addendum, depths 41 .. 48 (2026-10-13 13:26 BST; probe `tests/probes/lexicon/rule30_black_run_extend.py`, predictions before the
+run).** Both coupling identities stay exact, and the black-run ends stay inside the bounds that would give the doubling
+conjecture: the largest end minus 2d is -1 in the black-start phase (bound +5) and -4 in the white-start phase (bound
++8). R jumps from 34 to 43 at d = 45, a Q_B birth (Q_B(45) = 89), and records.c agrees on R(45) and R(48). The excess
+has not returned near its d = 12, 13 values.
