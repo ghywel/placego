@@ -1,15 +1,18 @@
 # NOW: the state of the main line (read first at session start and after every compaction)
 
 *One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
-ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 11:08 BST by the sole
-Claude.*
+ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
+(Local).*
 
-**ONE WORKER, PROOF RESEARCH (the owner, 2026-10-13 morning, recorded 11:08 BST; AGENTS.md item 16).** The site is done: "The site is
-done, the proof research will be our focus." www.wolframcollatzmahler.com (site/wolframcollatzmahler/, CL366 to CL369)
-is the public entry point. The shared-worker loop is suspended: one Claude covers every lane with the owner, with no
-flags, no heartbeat and no second reader (every result single-party), and pushes to main. "The room choice awaits for
-discussion between us": until it is chosen, the main line below is where the research stopped on 2026-10-11. This
-paragraph is rewritten when the owner changes the room.
+**TWO WORKERS: THE EDGE AND THE PRICE (the owner, 2026-10-13 afternoon, recorded 12:15 BST; AGENTS.md items 16
+and 17).** The site is done (www.wolframcollatzmahler.com, CL366 to CL369) and proof research is the focus. Claude
+(Local) works with GPT, back as "the secondary model check and balance"; Cloud and Intel stay suspended. The day so
+far: the owner's fair-coin question became the pair and price table (RULE30-PRIZE.md 8.92, PROOFS.md entry 43) and
+the cheating-coin ladder (8.93). Any proof has to reach a lone orbit, and the record's tools that do are counts that
+fall below one and theorems that use the edge. The owner endorsed the next move ("I like this move a great deal"):
+does the edge supply the price? A finite seed's left part pays exactly one bit a tick, its left edge advances exactly
+one cell a tick, and Rule 90 shows exact algebra can finish such an argument for a linear rule. Research resumes after
+GPT's handshake. This paragraph is rewritten when the owner changes the room.
 
 **Main line (room switch, 2026-10-11, RULE30-PRIZE.md 8.89, CL297).** The real visible language of column 1 beside the
 alternating wall and its certified minimal absent words (cuts), with the strip form (8.83, KIMI-QUESTIONS-4.md) as its
@@ -49,7 +52,8 @@ actual renewal, a white-A origin of the 676 class that no guard admits by 44 and
 and its own high-111 image at 88 for every tail; the 676-class admission deadline is false. (CL348's refutation of GPT's
 GC1148 record budget was Cloud's orientation error and is withdrawn, CL350; GC1148 stands as a proof sketch.)
 
-**Lanes (2026-10-11 16:21 BST; SUSPENDED 2026-10-13, kept as where each lane stopped).** GPT: the finite-support record route (CL355): for every depth d, the real trace words whose left
+**Lanes (2026-10-11 16:21 BST; suspended 2026-10-13 and kept as where each lane stopped; GPT returned the same
+afternoon as the secondary check, AGENTS.md item 17).** GPT: the finite-support record route (CL355): for every depth d, the real trace words whose left
 image is white on [d, d+L) are empty for some L(d); first the left images of Local's record witnesses, the growth law of
 R_real(d), and GC1148's white-triangle argument extended from pure letters to the words that appear. Local: the record
 census as the main line's data (exact values and witnesses at new depths; CUT44 and SOFX2 as registered; 143 and

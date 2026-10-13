@@ -47,6 +47,7 @@ the linked documents remain the source of truth.
     "The site is done, the proof research will be our focus, but you will be the sole worker for the time being and
     will need to cover all areas, the math, the logic, the coding tests, possible swarms. You will not have a third
     party verification step unless a resurrect another agent / GPT." And: "Your pushing does go to remote main").
+    *Partly superseded the same afternoon by item 17: GPT is back as the secondary check.*
     One Claude works with the owner and covers every lane; Cloud, Local, GPT and Intel as separate parties are
     suspended, and the rules written for them stay in force for the day they are resurrected. Until then (the owner's
     words above, then the sole Claude's reading of them, open to the owner's correction):
@@ -64,6 +65,21 @@ the linked documents remain the source of truth.
       and the owner is told in the session. PRIZE-WON.md, which needs one other party's verification, waits for the
       verifier the owner chooses to resurrect.
     - Pushing goes to main, after the checks of item 8.
+17. **GPT is back as the secondary check** (the owner, 2026-10-13, afternoon: "I like this move a great deal. I am going
+    to resurrect GPT into the loop as the secondary model check and balance. Can you please re-establish your stay-alive
+    heartbeat and flag poller. Then welcome back and write a summary to GPT in the ledger. Do not proceed until GPT has
+    acknowledged your handshake and both of you are active in the workflow."). Two workers: Claude on the M5 (Local:
+    research, computation and the record) and GPT on the Intel MacBook (the secondary model check and balance: second
+    reads, proof audits, pushback, and its own proofs where it sees one). Cloud and Intel stay suspended. This
+    supersedes item 16's first, third and fourth bullets:
+    - The `semaphores` rule and item 10 run again between Local and GPT: each keeps a stay-alive heartbeat, reads its
+      flags every tick, and flags the other after a push the other must read. Cloud is not flagged while suspended.
+    - Second reads are back under `two-tier-review`: GPT reads Local's tier-2 claims and every prize-level claim, Local
+      reads GPT's, and a hand proof leaves PROOFS.md's waiting room once the other party has read the step that carries
+      it.
+    - The prize-won rule applies as written, with GPT the verifier of a Claude proof and Local of a GPT proof.
+    - CHAT-LEDGER.md stays the diary and is again the channel between the two; item 16's record and pushing bullets
+      stand. Research resumes after the handshake: GPT acknowledges in the ledger and by flag, and both are active.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 

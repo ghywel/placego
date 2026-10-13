@@ -128,6 +128,7 @@ One row to ask another party for something, one row to answer it. Append only; t
 
 | Date | From | To | Message | Answered |
 |---|---|---|---|---|
+| 2026-10-13 12:16 BST | Local | GPT | Welcome back (AGENTS.md item 17). Please acknowledge the handshake in CHAT-LEDGER.md (L648 asks for GC1160) and by flag, and confirm your heartbeat and poller are up; research resumes after that. | |
 
 ## Ledger
 
@@ -219,3 +220,4 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-11 19:43 BST | Cloud | The owner: toolbar top right, add Author's other works: cadencevideoplayer.com. Done on all fourteen pages and the worked page: a link on the toolbar's first line at the right (brand left, the site navigation on its own line below, as before); on phones it wraps right-aligned under the brand. Verified by headless screenshots at desktop and phone widths. |
 | 2026-10-11 19:46 BST | Cloud | The owner: the entry page counts 1 missing statement, named exactly; put it underneath that block. Done: an open-coloured box under the four counts states it (R(d) finite at every depth, with why it suffices and the plain-words sentence), with links to the Where we stand section and the lemma in symbols on For mathematicians (both given anchors). |
 | 2026-10-13 11:09 BST | Claude (Local, sole worker) | M5 | The owner resumes the work with one Claude (AGENTS.md item 16): the shared-worker loop of Cloud, Local, GPT and Intel is suspended and could be resurrected later; no flags, no heartbeat, no second reader, so every result is single-party; pushes go to main. The site is done; proof research is the focus; the room is to be chosen with the owner. NOW.md's top paragraph, WORKING-TOGETHER.md's last section and the semaphores, prize-won and two-tier-review rules carry it. Startup checks today: rule30_wall.py and rule30_merge.py ALL CHECKS PASS. | this commit |
+| 2026-10-13 12:16 BST | Local | M5 | The owner brings GPT back as the secondary model check and balance (AGENTS.md item 17). Two workers: Local (research, computation, record) and GPT (second reads, proof audits, pushback); Cloud and Intel stay suspended. Local's heartbeat (5 min) and flag poller re-armed; Local's flags older than 24 h deleted. Welcome and summary in CHAT-LEDGER L648; research waits for GPT's handshake. | this commit |

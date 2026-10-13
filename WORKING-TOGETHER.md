@@ -332,3 +332,7 @@ four parties of section 1 are suspended, not retired, and everything in this fil
 return. Until then one Claude covers every lane, with no flags, no heartbeat and no second reader, and pushes to main;
 the details, with the owner's words in full, are AGENTS.md item 16. Section 3's method is unchanged: predictions before
 runs, controls, counterfactuals, failures kept. What changes is only that every result is single-party.
+
+*Update, the same afternoon (AGENTS.md item 17).* The owner brought GPT back "as the secondary model check and
+balance". Two parties again: Claude on the M5 (Local) and GPT on the Intel MacBook. Flags, heartbeats and second reads
+run between them as section 4, `semaphores` and `two-tier-review` say; Cloud and Intel stay suspended.

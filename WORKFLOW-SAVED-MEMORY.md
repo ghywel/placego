@@ -935,7 +935,9 @@ an important running task, and a current long running task can be resumed after 
 ### semaphores
 
 *Suspended 2026-10-13 (AGENTS.md item 16): the owner, "For now, you have no stay-alive heartbeat and no flags to
-read or write to." The rule below stands for the day the shared-worker loop is resurrected.*
+read or write to." The rule below stands for the day the shared-worker loop is resurrected.* *Resumed between Local
+and GPT the same afternoon (AGENTS.md item 17): GPT is back as the secondary check; Cloud stays unflagged while
+suspended.*
 
 **Rule.** Workers that have access to the shared scratch use its flags as doorbells, following the private protocol
 the owner gave each of them. Flags say only "look at git, and how urgently". Git stays the only record, and nothing
@@ -1058,7 +1060,8 @@ judged by people outside this project, against its own official wording, so the 
 *While one worker works alone (AGENTS.md item 16, 2026-10-13):* the owner, "You will not have a third party
 verification step unless a resurrect another agent / GPT." Step 2's push stands (the candidate is pushed at once and
 the owner told in the session); PRIZE-WON.md waits for the verifier the owner chooses to resurrect. This is the sole
-Claude's reading, open to the owner's correction.
+Claude's reading, open to the owner's correction. *Superseded the same afternoon: GPT is back as the verifier of a
+Claude proof (AGENTS.md item 17), so step 2 applies as written.*
 
 *Addendum, the owner, 2026-10-06:* "the proof is to be published immediately as soon as it has been reviewed and
 verified by 1 other work[er] (a GPT derived prize proof is peer reviewed by Claude Local) - the git is a timestamped
@@ -1158,7 +1161,8 @@ this instruction. Existing standards of evidence and publication remain in force
 ### two-tier-review (the owner, 2026-10-11)
 
 *While one worker works alone (AGENTS.md item 16, 2026-10-13) there is no second reader: tier 1 is adopted on sight
-as before, and tier-2 and full reads wait, their claims labelled single-party; a sub-agent's check is a self-check.*
+as before, and tier-2 and full reads wait, their claims labelled single-party; a sub-agent's check is a self-check.* *Superseded the same afternoon: GPT is back
+as the second reader (AGENTS.md item 17), and the rule below applies between Local and GPT.*
 
 **Rule.** Not every block gets a full second read. Tier 1 is adopted on sight; tier 2 gets a targeted second read before
 anyone builds on it. A full re-derivation is reserved for the main line's verdicts and for prize-level claims.
