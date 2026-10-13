@@ -30249,3 +30249,37 @@ Record searched: normaliz/inherit ->one unrelated hit; erasure/ancestor ->GC1174
 ## GC1183 — The second-oldest closure covers every q, with the finite-core guard (2026-10-13)
 
 **PROVED coverage step, COMPUTED verdicts.** Local L671 at630fdff9 reads GC1181's carrying reductions and supplies the registered two-profile closure. GPT's second read of its carrying step is in CHAT-LEDGER GC1183: the triangular right-edge map is bijective, first return is pure periodicity, and T(q)=2q+c covers exactly one time coset over Pt/gcd(Pt,2). At minimal L5 the available child prefixes are J_Q=4q+5-p and J_P=4q+7-p. Those cover the four closing windows for all large q; the three smaller P cases are tested on their own available prefixes. Clock failures stop word consumption before an invalid sample. Thus, together with the reviewed even-class reductions, for d>=6,L>=5 no canonical birth reaches the second-oldest age, and n<=floor((d-p)/2)-2. The remaining younger ages and an all-depth bound on birth length remain open. This is a second read of the requested committed result, not another computation or experiment. R_real125=21 is adopted as both-phase cake_lpr certified (L671); no replay.
+
+
+## GC1184 — Every fixed birth deficit has a finite seed family; third-oldest leaves eighteen junctions (2026-10-13)
+
+**PROOF-SKETCH; fixed representation controls COMPUTED.** Missing inference: the root-dependent gap before a younger black birth core must be represented without erasing its origin or assuming a real ancestor. This extends the reviewed crop induction of GC1177/1181 to an arbitrary finite gap. No survival, language or record census is run.
+
+Let the actual child have phase p, white band [d,d+L-1], birth age a>=1, N=a+p and s=d-a+1. Its canonical parent has phase N mod2 and checkerboard through N. For deficit j=floor((d-p)/2)+1-a>=1, put g=s-N=2j-1+((d+p) mod2)>=1. The gap at N+1..s-1 is arbitrary. A Q parent has K>=L+2a-1 black cells from s. A P parent has a black at s-1, a white at s, and K>=L+2a-2 blacks from s+1. These are necessary origin-labelled parent shapes, not claims of real parent membership.
+
+**Finite seed construction.** Replace the finite core by an infinite black tail, keeping the checkerboard and gap; let U be that prototype after one parent update. Its first N-1 cells are the stationary checkerboard, and U is zero at every depth>=s: in Q, a black centre and black outward neighbour cancel; in P the white at s has black neighbours and also cancels. Set r=N mod2. Define an ordinary finite seed by its right-edge bits
+
+    V0(0)=1, V1(0)=r, V2(0)=1-r,
+    V_(k+3)(0)=U_(N+k),  0<=k<=g-1,
+    V_i(0)=0, i>=g+3.
+
+Thus its rightmost black is at site0 and every other black is within g+2 cells to its left. At post-update time t, put f=N-t. The cropped parent and seed agree at j>=max(1,f), with index V_(j-N+t+3)(t). The two inward cells match too: V1 and V2 toggle each tick, exactly the checkerboard at f-2,f-1. Substitution in Rule30 gives the induction for outward cells and advances this artificial interface inward. At its last crossing, the old depth1 is the stationary black cell, so it masks the imposed wall and the ordinary right neighbour may differ. This proves the match through t=N-1. For p1 the child is reached one tick earlier, and its additional depth1 is the matching V2. This is the same boundary shield as GC1177; no assumption about the gap being a first discrepancy is needed.
+
+At child age a, the ordinary time is T=a-1=N-p-1 and the fixed spatial crop is X=N-3. Every child depth k is V_(k+2-p)(T), equivalently the ordinary cell X-k. The seed's leftmost black is no farther than -(g+2); after T ticks it is no farther than -(g+2)-T. Hence the crop is white beyond depth
+
+    X+(g+2)+T = 2N+g-p-2 = d-1.
+
+For a finite core, the parent is known through s+K-1 (Q) or s+K (P). Its a-step forward cone determines the child through J_Q=s+K-1-a=K+g+p-1 or J_P=s+K-a=K+g+p. Required K gives J>=d+L-1. Only that prefix can be imported. Keep the child phase and its original visible-cut residuals from the first actual sample. The ordinary centre is white in both phases (V_(2-p)(T)=0); in p1 it disagrees with the child's black centre. No ordinary right-half or physical-ancestor converse is asserted.
+
+**Third-oldest reduction.** Here a=floor((d-p)/2)-1, j2, d>=6. For L>=9 the actual root must start1: if it starts0u, advancing two ticks yields L-4>=5 and exactly the same birth parent at age a+2, now the excluded second-oldest age at d+2. This uses proved GC1181/1183, not normalization. Therefore the first free parent cell is r=N mod2. For g3 the gap is [r,b]; Q allows b0/1, P needs b1. For g4 it is [r,b,c]; Q allows both bits, P needs c1. Across the two N parities this gives18 necessary profiles, at most6/7 right-edge bits each. With bits ordered from site0 inward, the symbolic fingerprints are
+
+    g3 Q: [1,r,1-r,1-r,b XOR r,1-(b OR r)]
+    g3 P: [1,r,1-r,1-r,1-r,1]
+    g4 Q: [1,r,1-r,1-r,b XOR r,c XOR (b OR r),1-(c OR b)]
+    g4 P: [1,r,1-r,1-r,b XOR r,1-(b OR r),1].
+
+They are a relaxation: the child's no11 and longer phase cuts remain required, and may exclude a profile or a time class. At L9, minimal cores are K_Q=8+2N-2p and K_P=7+2N-2p; both fix the child prefix through d+8. A bounded window verdict applies only once this prefix covers it; smaller N need their own prefixes. As N rises by2 in a parity class, pure finite-edge periodicity covers its time classes exactly as in GC1183. There is no claim that any fixed window closes these18 profiles, or that increasing j preserves closure.
+
+**Registered controls.** N3/4, g3/4, the18 necessary junctions, K17, both phases and four named two-bit tails give144 literal-parent versus packed-full-line crop comparisons, all PASS. The symbolic fingerprints and support bound agree. Flipping the inward seed bit V1 changes all36 phase/profile crop comparisons, the identified unexpected check. All ordinary centres are white, preserving the p1 whole-configuration countercontrol. The first run stopped on a negative packed index for a queried white cell outside storage; returning0 there repaired the diagnostic without changing a prediction or input. Source: tests/probes/lexicon/rule30_birth_gap_crop.py. Record searched: third.oldest|deficit withbirth|profile ->13hits10files; birth|black.core withfinite.seed|fingerprint|crop ->9hits3files; leading.zero withyounger|deficit|promotion ->GC1181 pointer only. GC1174/1177/1181/1183 andG249 read.
+
+Local's carrying read requested: arbitrary-gap induction including the last wall shield; finite-core J and support index; third-oldest leading1 reduction. If it holds, a registered closure attempt of only these18 profiles is useful, without interrupting certificates or restarting unrestricted Q/P or champions. Keep any survivor at the chosen stopping window. All-depth birth-length bounds and the prize remain open.
