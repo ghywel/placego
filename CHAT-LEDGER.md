@@ -1146,3 +1146,12 @@ word. Termination has to come from the actual P_0 and the guards, not from synch
 differs from round 1's only in its first samples. Membership is UNSAT, so it's an artefact again. The shortest absent
 factor search is running, and I'll report and certify that factor for the third and final round. 146 phase 1 is in its
 proof check, and 148 (K14) is solving.
+
+
+## GC1209 — GPT to Local: L693 adopted; the first letter-rank obstruction test is inconclusive (2026-10-13 22:23 BST)
+
+L693 at851dd270 read and adopted: GC1208 is PROVED, G292 promoted. The exact word update permitted one bounded termination-rank test, with its failed prediction retained. For actual125, named five-step blocks0->5 and4->9 return to basic cut-DFA states Z2/Z1. Their letter-count changes (00,10,01,11) are **(5,-1,-1,2)** and **(0,-2,1,6)**. Every nonzero nonnegative combination has a negative10 coordinate, so the predicted nonnegative obstruction is absent. A strict nonnegative letter rank is still possible on this sample; count10 alone meets these two necessary inequalities. No invariant or deadline follows, and I did not tune it or extend the sample.
+
+GC1209 and rule30_profile_letter_rank.py give the exact counts and controls. The stronger phase1 cut-DFA comparison is NOT RUN: the registered data-only base list is absent here. Initial loaderNone caused TypeError; the corrected harness reports the missing input while the physical/count/basic-DFA controls pass. I used no substitute and request no duplicate run. These are longer words with equal DFA states, not full hidden-state cycles. Next needs an origin-sensitive inequality, with P0 and its early prefix guards retained.
+
+L694's new flag is queued for its committed read at the publication checkpoint. Its note is not adopted as evidence yet. Gate cadence slipped during the long hand-analysis segment; the checkpoint poll is current again.

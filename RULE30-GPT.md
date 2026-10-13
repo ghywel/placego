@@ -30819,7 +30819,7 @@ Record searched: middle.parity|M_a|b XOR w with decod|recover|two.block|anticip 
 
 ## GC1208 — A four-state carry updates the whole origin-labelled pair path (2026-10-13)
 
-**PROOF-SKETCH, awaiting Local; fixed controls COMPUTED.** Missing inference: an exact update for the full growing physical profile, rather than a scalar hole count or parity. It has a closed word update with four carry states and one new letter per step. The persistent word is unbounded; this is not a four-state generator of an infinite trace. The local Rule30 rule, GC1203's fixed head and GC1204/05's sources are credited. GC717's two-ahead single-guard formula, GC971's shrinking inverse-column transducer and G236's spatial two-tick transducer are distinct predecessors, not this profile update.
+**PROVED (Local L693 at851dd270); fixed controls COMPUTED.** Missing inference: an exact update for the full growing physical profile, rather than a scalar hole count or parity. It has a closed word update with four carry states and one new letter per step. The persistent word is unbounded; this is not a four-state generator of an infinite trace. The local Rule30 rule, GC1203's fixed head and GC1204/05's sources are credited. GC717's two-ahead single-guard formula, GC971's shrinking inverse-column transducer and G236's spatial two-tick transducer are distinct predecessors, not this profile update.
 
 **Actual pair word.** Let d>=2, initial depth d-1 black, d..E white, wall phase p; choose e=1 XOR((d+p) mod2). For a>=0 put k=d+2a+e,c=a+1,n=k-c. Define
 
@@ -30853,3 +30853,19 @@ Record searched: path/diagonal/profile with word-transducer/four-state/sequentia
 
 
 **Filing check.** proof_dupes.py --near W292 passes. G149's periodic spatial predecessor tails are a different orientation; G289 supplies the credited hole law; G281 calibrates cyclic driver perturbations. None updates this complete physical pair path. The carrying group is local only, with the full origin-labelled word retained.
+
+
+## GC1209 — Two actual word cycles do not obstruct an additive letter rank (2026-10-13)
+
+**COMPUTED; the registered obstruction prediction is REFUTED; this rank class remains OPEN.** L693 at851dd270 adopted: GC1208 is PROVED, G292 promoted. The new exact word update made a bounded termination-rank test possible. It is not another turnover price: a nonnegative letter-weight rank would start finite at the actual P0, and a strict decrease would bound accepted iteration. A bounded potential of the visible-cut DFA may be added.
+
+On the existing125/phase1 fixture, two preregistered five-step blocks have letter counts in the order00,10,01,11:
+
+    a0->5: (23,39,35,29)->(28,38,34,31), Delta=(5,-1,-1,2);
+    a4->9: (33,36,33,28)->(33,34,34,34), Delta=(0,-2,1,6).
+
+They return to the basic no11/no00000 DFA states Z2 andZ1 respectively. A strict rank with weights w>=0 and an arbitrary potential on those five states therefore needs **w1+w2>5w0+2w3** and **2w1>w2+6w3**. These are compatible, for instance with w1=1 and the other weights0. The predicted componentwise nonnegative combination of the two Delta vectors does not exist: its10 component is-c0-2c1<0 for every nonzero c0,c1>=0, not just the registered integer range0..3. Thus this sample does not refute the rank class. The displayed weight is only a sample control, not an invariant or a fitted deadline. No larger block, sample, coefficient search or weight tuning followed.
+
+The stronger registered comparison against RLK's exact phase1 cut collection is **NOT RUN**: its data-only base list is absent on this host. The initial harness raised TypeError after the loader returnedNone; corrected to report the missing input and finish the unaffected checks, using no substitute cut set. A1's independent full-path/transducer and count controls pass. The two words are five letters longer, so these are DFA cycles, not hidden-state cycles. Source: rule30_profile_letter_rank.py; its predictions, failure and partial outcome are retained. No solver, membership, record census or Local computation repeated.
+
+Record searched: additive/letter/symbol/termination rank with profile/word/origin/pair ->no hit including active ledgers; potential/rank with dihedral/growing-word/carry-permutation ->two old inverse-transducer hits. GC1205/06 andGC1208 read. Next: obtain a genuine origin-sensitive inequality under the exact growing-word map; anonymous pair-word grammar or a finite sample cannot replace the actual initialized word.

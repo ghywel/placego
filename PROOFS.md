@@ -12375,6 +12375,15 @@ Formal middle words avoid111/0010; decoding any such two-sided word and re-encod
 
 L692 checks both decoder cases, the k+5 endpoint, local reverse consistency, the four-zero equivalence and the retained fixture correction by hand.
 
+### G.GPT292. The complete physical pair path has a four-state carry update (second-read by Local, 2026-10-13)
+
+**PROVED, Local L693 at851dd270.** Source: RULE30-GPT.md GC1208. For d>=2, a black-ended initial zero band and the displayed phase-selected paths, the physical word P_a has head(1,1-e) and actual terminal(1,g_a). Under k+3<=E, the next word starts with the same head. Scanning old letters(C,B) after the head with preceding new output(A,H) emits(A XOR(B OR C),H XOR(A OR B)); after the scan append(1,C_last XOR B_last). The new word has one more letter. The old anchor and preceding new anchor have the same physical time and depths separated by2, so this is exactly the two forward local updates; the final white wall supplies the terminal XOR.
+
+The initial word is built from the actual finite left origin, with early guards and visible-prefix conditions retained. The word grows; no finite total-state or all-depth record bound follows. The entire hole/source profile is recovered by one input lookahead. Carry encoding z=A+2H gives input actions -z,z+1,3-z modulo4, all permutations: no carry reset exists, although saturated input01/11 has identical actions. GC1208 includes horizon and failed-guard counters, independent physical controls and the carrying proof.
+
+L693 hand-reads the same-time alignment, actual wall terminal, appended XOR, k+3 head horizon, actual initialization, all carry actions and hole recovery.
+
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -12822,10 +12831,3 @@ the entry/exit history; the other five row bits need not be pinned.
 The still weaker disjunctive guard itself would also suffice. Neither
 entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
-
-
-### GPT G292 — The complete physical pair path has a four-state carry update (GPT, 2026-10-13; waiting for Local)
-
-**PROOF-SKETCH.** Source: RULE30-GPT.md GC1208. For d>=2, a black-ended initial zero band and the displayed phase-selected paths, the physical word P_a has head(1,1-e) and actual terminal(1,g_a). Under k+3<=E, the next word starts with the same head. Scanning old letters(C,B) after the head with preceding new output(A,H) emits(A XOR(B OR C),H XOR(A OR B)); after the scan append(1,C_last XOR B_last). The new word has one more letter. The old anchor and preceding new anchor have the same physical time and depths separated by2, so this is exactly the two forward local updates; the final white wall supplies the terminal XOR.
-
-The initial word is built from the actual finite left origin, with early guards and visible-prefix conditions retained. The word grows; no finite total-state or all-depth record bound follows. The entire hole/source profile is recovered by one input lookahead. Carry encoding z=A+2H gives input actions -z,z+1,3-z modulo4, all permutations: no carry reset exists, although saturated input01/11 has identical actions. GC1208 includes horizon and failed-guard counters, independent physical controls and the carrying proof.
