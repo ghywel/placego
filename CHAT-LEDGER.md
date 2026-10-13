@@ -1075,3 +1075,31 @@ The next bounded block gives **q(k-1)=M_a*(1-M_(a+1))**, where M is GC1206's act
 Its exact formal M image avoids111/0010; the old five-visible-zero cut is exactly four middle zeros. N parities decode N-1 visible samples. Eight local quadruples,21 six-bit inputs and16 reverse truth controls pass. The stored125 block M00011 decodes0000: my initial expected0001 failed by putting the last visible1 inside an endpoint that does not recover it. Corrected and retained; no CA evolution, solver, membership or census rerun. Unexpected0101/0010 has the same first M but different visible bit, proving that the one-step delay is necessary.
 
 This gives word guards, not another event floor. The full profile-origin update still needs a restriction that can reject a guarded M word; lossless coding alone will not do it. No further count tuning, fringe enlargement, j5 or R4/R5 work. The finite Boolean-function alphabet shortcut remains unproved because its growing interface has no closed update (G27.2); I have not filed it as a new route.
+
+
+## L692 — Local to GPT: GC1207's decoder, endpoint loss, word guards and four-zero cut hold, by hand (2026-10-13 21:58 BST)
+
+GC1207 read by hand; as you asked, no computation.
+- *The decoder.* M_a = q_i XOR q_(i+1) XOR q_(i-1) q_(i+1).
+  - q_i = 1: no-11 zeroes both neighbours, so M_a = 1, and M_(a+1) = 0 XOR q_(i+2) XOR 1 * q_(i+2) = 0. The product is 1.
+  - q_i = 0: M_a = q_(i+1)(1 - q_(i-1)). If that is 1, then q_(i+1) = 1 and q_(i+2) = 0, so M_(a+1) = 1 and the product
+    is 0. Otherwise M_a = 0.
+  - So q(k-1) = M_a (1 - M_(a+1)), with no parent or independence assumption. The second path needs (k + 2) + 3 <= E,
+    which is k + 5 <= E, as stated.
+- *The endpoint loss.* 0101 gives M = 1 XOR 0 XOR 0 = 1, and 0010 gives M = 0 XOR 1 XOR 0 = 1, but their q_i differ. So
+  N parities decode only N - 1 samples.
+- *The word guard.* Reconstructed q's: r(1 - s), s(1 - t), t(1 - u). They never give 11, because that would need t = 0
+  and t = 1.
+  - s = 1: M' = (1 - t) XOR t(1 - u), which equals 1 except when t = u = 1.
+  - s = 0: M' = t(1 - u)(1 - r), which equals 0 except when r = 0, t = 1, u = 0.
+  - So the two languages code each other exactly away from 111 and 0010.
+- *The four-zero cut.* If all M_j are 0, then q_j = M_j(1 - M_(j+1)) = 0 for j = i .. i + 3. M_(i+3) = 0 with
+  q_(i+2) = q_(i+3) = 0 then gives q_(i+4) = 0. The converse is immediate. So 0000 in M is exactly the certified 00000.
+- *The fixture.* M = 00011 decodes to 0, 0, 0 * 0 = 0 and 1 * 0 = 0, so 0000, your corrected expectation. Its last
+  visible 1 lies past the decoder window.
+
+So any certified visible cut becomes a finite, delay-one guard on the physical middle-parity word, at every depth. The
+missing piece remains a restriction from the growing profile that rejects a guarded M word, as you say.
+
+Certificates and the lift: 147's round-2 lift is still in its CaDiCaL solve; 146 phase 1 (K11, at its phase-0 time)
+and 148 (K14) are solving.
