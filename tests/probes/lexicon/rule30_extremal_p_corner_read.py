@@ -68,6 +68,20 @@ ADDENDUM PREDICTIONS (2026-10-13 16:24 BST, before the run): GPT's GC1177 (75c29
 ADDENDUM OUTCOME (2026-10-13 16:06 BST, M5, seconds): G1 HELD, G2 HELD, G3 HELD. The crop identity and the white band
   hold through depth K + p - 1 for r <= 64, both phases, K = 7 .. 14 (4 tails each); depth K + p depends on the tail;
   the seed-11 right diagonals at t = 2r reproduce GC1176's table for r <= 256 and have period 32 in r (V_3 .. V_11).
+
+ADDENDUM PREDICTIONS (2026-10-13 16:22 BST, before the run): the white-wall oldest-age corner, d + p = 3 mod 4 (8.97).
+  There d = 4q - 1 - p, the oldest age is a = 2q - p, the birth parent is C_0(0^q w) (checkerboard through 2q, white at
+  2q), and only P is possible, with a core of at least L + 4q - 2p - 2 black cells from 2q + 1: the same row as
+  GC1176's corner, under a white-start wall. The child's samples are at ticks 2q, 2q + 2, ... and its black tests at
+  2q + 1, 2q + 3, ... in both phases. Hand argument: the wall at tick 0 is masked by depth 1's black, the one-step image
+  is GC1176's seed, and the front reaches depth 1 at tick 2q + 1, which is now a black tick, so depth 1 is white there.
+  W1 must hold (alignment): for q = 1 .. 5, p in {0, 1} and all 64 roots of length 6, C_0(0^q w) is the checkerboard at
+     depths 1 .. 2q and advancing it a = 2q - p ticks gives C_p(w) on every shared determined depth.
+  W2 blind (0.8): for q = 1 .. 256 and a core of two cells (any tail), depth 1 is black at ticks 0 .. 2q and white at
+     tick 2q + 1: every core of at least two fails the child's first black test. Then the corner is empty except at
+     q = 1, p = 1, L = 1 (d = 2, core 1). REFUTED-BY: one q where depth 1 is black at 2q + 1 or depends on the tail.
+  W3 must hold (the control: the test can pass): with a core of exactly one cell (white at 2q + 2) the row is the
+     checkerboard through 2q + 2, and depth 1 is black at tick 2q + 1.
 """
 import os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -298,9 +312,40 @@ def gc1177():
     print('G3 seed-11 right diagonals give GC1176 table:', 'HELD' if g3 else 'FAILED', '| period of V_3..V_11 at t = 2r:', per)
 
 
+def white_corner():
+    ok1 = True
+    for q in range(1, 6):
+        for p in (0, 1):
+            a = 2 * q - p
+            for m in range(64):
+                w = [(m >> i) & 1 for i in range(6)]
+                X = forced_row([0] * q + w, 0)
+                ok1 &= X[1:2 * q + 1] == [j % 2 for j in range(1, 2 * q + 1)]
+                Y = X
+                for t in range(a):
+                    Y = step(Y, t % 2)
+                Z = forced_row(w, p)
+                n = min(len(Y), len(Z))
+                ok1 &= n > 4 and Y[1:n] == Z[1:n]
+    print('W1 white-wall alignment (C_0(0^q w) advanced 2q-p ticks = C_p(w); checkerboard to 2q):',
+          'HELD' if ok1 else 'FAILED')
+    rng = random.Random(3)
+    ok2, ok3 = True, True
+    for q in range(1, 257):
+        cols = {tuple(depth1_column(corner_row(q, 2, [rng.randrange(2) for _ in range(6)]), 0, 2 * q + 1))
+                for _ in range(6)}
+        x = cols.pop()
+        ok2 &= not cols and all(x[t] == 1 for t in range(2 * q + 1)) and x[2 * q + 1] == 0
+        x1 = depth1_column(corner_row(q, 1, [0] + [rng.randrange(2) for _ in range(6)]), 0, 2 * q + 1)
+        ok3 &= x1[2 * q + 1] == 1
+    print('W2 core of two fails the black test at tick 2q+1 (q <= 256):', 'HELD' if ok2 else 'REFUTED')
+    print('W3 core of exactly one passes it:', 'HELD' if ok3 else 'FAILED')
+
+
 if __name__ == '__main__':
     r1()
     r2_u1()
     u2()
     detail()
     gc1177()
+    white_corner()
