@@ -35,6 +35,16 @@ PREDICTIONS (written 2026-10-13 23:01 BST, before any run; first written as 23:0
   H6 must hold (unexpected check, a theorem used as a control): R^(n+1)(d+1) >= R^(n)(d) - 2 wherever both are
      computed (X_1 of a witness has one more tick of past and keeps cells d+1 .. E-1 white).
   Reported, no prediction: the table of R^(n)(d) - R_real(d) for n = 1, 2, 4, 8, and the UNKNOWNs (900 s cap).
+
+GPT reporting review (GC1213, 2026-10-13 23:10 BST), registered before synthetic checks:
+  Two fixture depths (20,21): UNKNOWN-only results must remain upper bounds and leave H3..H6 unscored;
+  SAT-CHECK-FAILED must abort before lowering L. Unexpected control: validated SAT in one phase with UNKNOWN
+  in the other still attains the aggregate record when it equals the known upper bound. These are stubbed
+  reporter controls, not solver runs. Cone clauses must remain unchanged at n=0,1,2 in both phases.
+  Existing running processes retain the earlier reporter; any UNKNOWN or replay failure in their output
+  requires these scope guards before interpreting H3..H6. No computation restart is requested.
+  OUTCOME: all three two-depth reporter controls PASS; 12 before/after cone comparisons (two named
+  depth/length fixtures, n=0,1,2, both phases) have identical clauses and metadata. No solver executed.
 """
 import json, os, subprocess, sys, tempfile, time
 from multiprocessing import Pool
@@ -143,6 +153,7 @@ def census(dmin, dmax):
     fx = fixture()
     ds = [d for d in range(dmin, dmax + 1) if fx[d]['status'] == 'exact']
     best = {(d, 0): fx[d]['L'] for d in ds}            # R^(0) = R_real, exact
+    exact = {(d, 0): True for d in ds}
     failed, unknown = [], []
     with Pool(6) as pool:
         prev = 0
@@ -156,6 +167,8 @@ def census(dmin, dmax):
                     res[a] = v
                     if v == 'SAT-CHECK-FAILED':
                         failed.append(a)
+                if failed:
+                    raise RuntimeError('SAT replay failed; no UNSAT descent or record verdict: %s' % failed)
                 for d in ds:
                     if d in done:
                         continue
@@ -165,13 +178,24 @@ def census(dmin, dmax):
                     elif 'UNKNOWN' in vs:
                         unknown.append((d, cur[d], n))
                         done[d] = None                 # undecided at this L; reported, not lowered
-                    else:
+                    elif all(v == 'UNSAT' for v in vs):
                         cur[d] -= 1
+                    else:
+                        raise RuntimeError('Unexpected solver verdicts: %s' % vs)
             for d in ds:
-                best[(d, n)] = done[d] if done[d] is not None else best[(d, prev)]
+                best[(d, n)] = done[d] if done[d] is not None else cur[d]
+                exact[(d, n)] = done[d] is not None
             print('n=%d:' % n, ' '.join('%d:%s' % (d, '?' if done[d] is None else done[d] - fx[d]['L']) for d in ds),
                   flush=True)
             prev = n
+    output = {'%d_%d' % k: {'upper': v, 'lower': v if exact[k] else 0, 'exact': exact[k]}
+              for k, v in best.items()}
+    json.dump(output, open(os.path.join(SCRATCH, 'census_%d_%d.json' % (dmin, dmax)), 'w'))
+    if unknown:
+        print('H2 every SAT model simulates: HELD')
+        print('H3 to H6 UNSCORED: incomplete census; UNKNOWN bounds are not measured records')
+        print('UNKNOWN (cap %d s):' % CAP, unknown)
+        return
     real_parent_missing = {41, 43, 44, 80, 86}
     h3 = all(best[(d, 1)] == fx[d]['L'] for d in ds if d not in real_parent_missing)
     h4 = [d for d in sorted(real_parent_missing) if d in ds and best[(d, 1)] < fx[d]['L']]
@@ -184,7 +208,6 @@ def census(dmin, dmax):
     print('H5 R^(8) >= R_real - 1 at a majority: %d of %d' % (h5, len(ds)), 'HELD' if 2 * h5 > len(ds) else 'REFUTED')
     print('H6 R^(n+1)(d+1) >= R^(n)(d) - 2 (n = 0, 1):', 'HELD' if h6 else 'FAILED')
     print('UNKNOWN (cap %d s):' % CAP, unknown)
-    json.dump({'%d_%d' % k: v for k, v in best.items()}, open(os.path.join(SCRATCH, 'census_%d_%d.json' % (dmin, dmax)), 'w'))
 
 
 if __name__ == '__main__':
