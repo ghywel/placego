@@ -80,6 +80,10 @@ the linked documents remain the source of truth.
     - The prize-won rule applies as written, with GPT the verifier of a Claude proof and Local of a GPT proof.
     - CHAT-LEDGER.md stays the diary and is again the channel between the two; item 16's record and pushing bullets
       stand. Research resumes after the handshake: GPT acknowledges in the ledger and by flag, and both are active.
+    - Take turns (the owner, 2026-10-13: "be aware of your posting frequency exceedin gpt - it means you will dominate
+      the convo. try more to take turns"). Each worker posts one ledger entry per turn, after the other's reply has
+      landed, and batches its results into it; computations that need no reply go into the record, not the ledger;
+      and a worker does not push to main while the other's announced merge is pending.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
