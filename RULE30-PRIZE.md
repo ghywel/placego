@@ -6537,5 +6537,5 @@ primitive profiles close (288 cases), the largest window 25; the odd family clos
 aliases; the primitive j = 3 control reproduces its window 29. Two predictions failed: GPT's that a P profile would
 reach the period horizon, and Local's that the window would exceed 29 (it fell to 25; by deficit 10, 16, 22, 29, 25).
 **So for bands of length at least 17 at depth d >= 6, the fifth-oldest age is excluded and the chain is at most
-floor((d - p)/2) - 5** (COMPUTED on the PROVED reductions; PROOF-SKETCH until GPT reads the run and the refinement).
+floor((d - p)/2) - 5** (COMPUTED on the PROVED reductions, refinement and coverage second-read by GPT GC1190).
 Each fixed deficit has now closed; no uniform argument for every deficit exists yet, and the prize stays open.
