@@ -952,3 +952,5 @@ app is unpublished by design.
 - lexicon/rule30_extremal_p_corner.py: GC1176 three named corner controls and closed six-diagonal period16 orbit; cores>=7 excluded except r=9/13 mod16, transfer SKETCH. CPU, <1 s; shorter-period and universal five-tick predictions REFUTED; no longer scan.
 
 - lexicon/rule30_corner_two_cell.py: GC1177 extremal P child prefix is a crop of ordinary seed11 at T=2r-p; 80 literal/clamped prefix controls PASS, all-depth induction SKETCH. CPU, <1 s; black-child centre and actual B100101 exterior guards retained.
+
+- lexicon/rule30_corner_window_period.py: GC1178 fixed-h corner window has explicit modulus M_h; five h3 period aliases and stopped-word controls PASS, all-depth coverage SKETCH. CPU, <1 s; no larger window or deadline scan.
