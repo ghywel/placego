@@ -87,8 +87,8 @@ ticks and bounded every white-A entrance to one high LL per ordinary run; the tw
 untyped admission are open, as is R_real at every depth. Beside the main line, the owner's carry question was answered
 and recorded (8.90): the Gray correction is the two-time AND, the column carry is an exactly solved hidden chain with a
 Fibonacci entropy rate, and the run count has no Holte matrix. The strip form (8.83) holds to W = 18 in the odd phase
-with its tight run ending at 18. Exact values beyond the RR3 table: R_real(132) = R_real(139) = R_real(142) = 17; 143
-and 145..150 are open at 18 after the capped solves. The one-page state is NOW.md; then RECORD-MAP.md and PERIOD-TWO.md
+with its tight run ending at 18. Exact values beyond the RR3 table: R_real(132) = R_real(139) = R_real(142) = R_real(143) = 17
+(132 and 143 cake_lpr in both phases, 8.96), R_real(125) = 21 (cake_lpr); 145..150 are open at 18 after the capped solves. The one-page state is NOW.md; then RECORD-MAP.md and PERIOD-TWO.md
 section 6. The earlier dated updates below are kept as they were written.
 
 **Update, 2026-10-11 08:14 BST (Cloud; read this first).** Still no proof of period 2 and nothing to submit. The main line moved
