@@ -960,3 +960,5 @@ app is unpublished by design.
 - lexicon/rule30_second_oldest_census.py: Local's census for GC1181's two odd-class second-oldest profiles: hand facts and crop normal forms HELD (q <= 48); both profiles CLOSED in both phases by class (purely periodic seed edge), Q within 4..5 child ticks, P within 15..16 (q-period 256); no survivor by direct simulation to q = 300 (8.97, L671). CPU, seconds.
 
 - lexicon/rule30_birth_deficit_census.py: Local's closure attempt for GC1184's fixed-deficit profiles (gaps enumerated): representation HELD for every gap to j = 3; j = 1 control and j = 2 (the 18 third-oldest profiles, both phases) ALL CLOSED, windows 4..22; no survivor by direct simulation to N = 120 (8.97, L672). CPU, 13 s.
+
+- lexicon/rule30_young_birth_zero_ray.py: GC1199 one fixed age1 depth125 prefix; four boundary packets, integer/literal agreement to200, certified38-bit cut at145 forces the next left cell black. All-tail carrying step SKETCH; outside-band clock repair retained, no record census.
