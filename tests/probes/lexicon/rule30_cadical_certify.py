@@ -64,6 +64,11 @@ ADDENDUM PREDICTIONS (2026-10-13 20:26 BST, before the runs): K10's relaxed mode
      factors are present (kissat), so it is a certified minimal cut. REFUTED-BY: SAT, or CAKE-FAILED.
   K13 blind (0.55): with that cut added to the phase-0 list, d = 147, L = 18, phase 0 is VERIFIED-UNSAT within a
      4-hour cap. REFUTED-BY: SAT again (then lifted again; at most three cut rounds), a cap, or CAKE-FAILED.
+ADDENDUM PREDICTION (2026-10-13 20:48 BST, before the run): the next open depth at 18, with the 50-bit cut of K12 added
+  (it is certified, so it only removes non-real models). Record searched: as for K4 (CUT-P26: 148 UNKNOWN at 14,400 s
+  under load; sampled R_real(148) >= 17).
+  K14 blind (0.5): d = 148, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour cap. REFUTED-BY: SAT (then lifted), a
+     cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
   K9 HELD, K10 REFUTED, K12 HELD; K11, K13 pending.
