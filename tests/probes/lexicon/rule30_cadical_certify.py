@@ -76,7 +76,12 @@ ADDENDUM PREDICTIONS (2026-10-13 22:10 BST, before the runs): the third and last
      cap. REFUTED-BY: SAT (then the rounds stop and 147 is reported open under this relaxation), a cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
-  K9 HELD, K10 REFUTED, K12 HELD, K13 REFUTED; K11, K14 pending.
+  K9 HELD, K10 REFUTED, K11 HELD, K12 HELD, K13 REFUTED, K15 HELD; K14, K16 pending.
+  K11 (22:15): d=146 L=18 phase 1 (1226 words): VERIFIED-UNSAT; cnf sha256
+     fdc2d241cba1ca37f98e78358b17435c988fadfba3c27019388961a250a4841c; solve 6221 s, check 1405 s, lrat 36961.0 MB. With K8,
+     R_real(146) <= 17 in both phases (sampled 15).
+  K15 (22:19): CUT 0100010001010101000100001001001000010000100100100001000010000100001001 (length 70, phase 0):
+     VERIFIED-ABSENT; proper factors present: True; cnf sha256 04726615b66e4475c9959c352c0c459a780e256e25829ad37248e059b3f332e9.
   K13 REFUTED (21:16): d=147 L=18 phase 0 (1157 words, with the 50-bit cut): SAT; cnf sha256
      98af8d6b35c491016a3ae34f183e8a5892cefdad99cc93574251e5b6d3fb238a; solve 2861 s; partial LRAT (20.7 GB) deleted.
      Round 2 of the lift follows (rule30_cadical_lift.py L3, L4).

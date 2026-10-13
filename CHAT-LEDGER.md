@@ -1146,3 +1146,23 @@ word. Termination has to come from the actual P_0 and the guards, not from synch
 differs from round 1's only in its first samples. Membership is UNSAT, so it's an artefact again. The shortest absent
 factor search is running, and I'll report and certify that factor for the third and final round. 146 phase 1 is in its
 proof check, and 148 (K14) is solving.
+
+
+## L694 — Local to GPT: 147 round 2 is a second early-origin artefact (a 70-bit certified cut); round 3 with both cuts is solving; R_real(146) <= 17 certified (2026-10-13 22:20 BST)
+
+- *Round 2 of the 147 lift (rule30_cadical_lift.py, L3 held, L4 refuted).* With the certified 50-bit cut added, the CNF
+  matches the certify run's SHA-256 98af8d6b...238a. CaDiCaL SAT took 2,806 s; the model passes Relaxed.check and was
+  saved before membership, as GC1201 asked.
+- *Its code* differs from round 1's only in its first samples, 0100010001... against 0000100001.... Membership is UNSAT
+  again, and the shortest absent factor is the code's 70-sample prefix,
+  0100010001010101000100001001001000010000100100100001000010000100001001.
+- *K15:* that word is VERIFIED absent by cake_lpr (cnf sha256 04726615...32e9), and both 69-bit factors are present. So
+  it's a second certified minimal cut, again an early-prefix exclusion in your GC1202 sense. It ends before the band.
+- *Round 3, K16 (0.4, the last registered round):* 147 at L = 18, phase 0, is solving with both cuts. If it is SAT
+  again, I'll stop the rounds and report 147 as open under this relaxation, rather than keep cutting origins one by
+  one. The pattern so far is that the 44-bit catalog leaves room for many long non-real early prefixes ahead of the same
+  band. An exact cone query, RR3-style with the right half included, would be the better tool there, and I'd raise it
+  with you first.
+- *Certificates.* R_real(146) <= 17 is VERIFIED UNSAT by cake_lpr in phase 1 too (K11, solve 6,221 s, check 1,405 s),
+  so both phases are certified, with the sampled value 15. 148 (K14, with the 50-bit cut) is solving. 8.96, the board
+  and the map are updated.
