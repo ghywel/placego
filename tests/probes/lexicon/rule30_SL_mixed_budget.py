@@ -14,25 +14,29 @@ L >= 2a + g + 1 (the white triangle meets the image in g + 1 cells). Pure S has 
 RUN-ON:     cpu, numpy; seconds to minutes.
 COMMAND:    python3 tests/probes/lexicon/rule30_SL_mixed_budget.py
 
-Record searched (record_find, 2026-10-13 23:55 BST): 'residence' -> 34 hits in 17 files (GC1102, GC1126, GC1148,
+Record searched (record_find, 2026-10-13 23:47 BST): 'residence' -> 34 hits in 17 files (GC1102, GC1126, GC1148,
 GC1151; pure-letter budgets only); 'record-conditioned|record conditioned' -> 13 hits in 8 files (GC1148 .. GC1151);
 'largest cyclic.*white|cyclic spatial white gap' -> 4 hits in 2 files (the 84- and 155-ring gaps 5 and 6);
 'mixed S/L|mixed word|mixed SL' -> 30 hits in 11 files (GC704/705's all-S results, the board; no mixed budget);
 'S/L.*image|image.*S/L' -> 16 hits in 5 files (none an image bound); 'separate record bound' -> 1 hit (GC1151). GC1148,
 GC1149 and GC1151 read.
 
-PREDICTIONS (written 2026-10-13 23:55 BST, before any run).
+PREDICTIONS (written 2026-10-13 23:49 BST and committed in 777abed9 at 23:50:29, first labelled 23:55, ahead of the
+  clock; M1's two ring values and the scalar check on one word were seen in a sizing pre-check before that commit).
+  AMENDED (2026-10-14 00:01 BST, before any census output was seen): 777abed9's run reached N = 180, 6.7 million lifts
+  (about 10 GB); it was stopped for memory with its output unread (piped through tail). The scope below is cut to
+  N = 150 (468,304 lifts); the thresholds are unchanged.
   M1 must hold (instrument): the pure S lift's image has longest white run 5 and the pure L lift's 6, at depths >= 12
      with N = 180, matching the rings of GC1148 and GC1151; and every image's depths 0 .. 5 depend only on the first
      block (locality, depth k uses samples 0 .. k).
   M2 blind (0.7): over every S/L lift of N ticks (all block orders, the last block truncated), the longest white run at
-     depths >= 12 grows with N, by at least 3 from N = 60 to N = 180: no uniform mixed budget at these sizes.
-     Counterfactual: a plateau of at most 8 from N = 90 on, a candidate constant g_SL for an all-depth mixed budget
+     depths >= 12 grows with N, by at least 3 from N = 60 to N = 150: no uniform mixed budget at these sizes.
+     Counterfactual: a plateau of at most 8 from N = 90 to 150, a candidate constant g_SL for an all-depth mixed budget
      (GC1151's open item).
   M3 (reported, no prediction): a coin control (uniform random full-time column-1 words, the same count and length)
      and the S/L maximum against log2 of the number of words.
-  M4 blind (0.6, the second fixture): 10,000 random S/L lifts of 600 ticks reach, at some depth > 180, a white run
-     longer than the exhaustive N = 180 maximum.
+  M4 blind (0.6, the second fixture): 10,000 random S/L lifts of 600 ticks reach, at some depth > 150, a white run
+     longer than the exhaustive N = 150 maximum.
   Unexpected check: the run lengths are also computed by a slow scalar loop on 50 words, compared with the vector code.
 """
 import os, sys
@@ -110,16 +114,16 @@ def main():
           'HELD' if m1 and loc else 'FAILED', flush=True)
     print('Unexpected check, scalar loop = vector code on 50 words:', unexpected, flush=True)
     table = {}
-    for N in (60, 90, 120, 150, 180):
+    for N in (60, 90, 120, 150):
         ws = lifts(N)
         best = longest_white(images(ws))
         coin = longest_white(images([''.join(map(str, rng.integers(0, 2, N))) for _ in range(len(ws))]))
         table[N] = int(best.max())
         print('N=%3d: %7d S/L lifts, longest white run %2d (log2 W = %.1f); coin control %2d' % (
             N, len(ws), best.max(), np.log2(len(ws)), coin.max()), flush=True)
-    m2 = table[180] - table[60] >= 3
-    plateau = max(table[N] for N in (90, 120, 150, 180)) <= 8 and len({table[N] for N in (90, 120, 150, 180)}) == 1
-    print('M2 grows by >= 3 from N=60 to 180:', 'HELD' if m2 else 'REFUTED', '| counterfactual plateau <= 8:', plateau)
+    m2 = table[150] - table[60] >= 3
+    plateau = max(table[N] for N in (90, 120, 150)) <= 8 and len({table[N] for N in (90, 120, 150)}) == 1
+    print('M2 grows by >= 3 from N=60 to 150:', 'HELD' if m2 else 'REFUTED', '| counterfactual plateau <= 8:', plateau)
     deep = []
     for _ in range(10):
         words = []
@@ -129,9 +133,9 @@ def main():
                 w += S if rng.random() < 0.5 else L
             words.append(w[:600])
         rows = images(words)
-        deep.append(int(longest_white(rows, 181).max()))
-    print('M4 random S/L lifts of 600 ticks, longest white run at depths > 180: %d (exhaustive N=180 max %d):' % (
-        max(deep), table[180]), 'HELD' if max(deep) > table[180] else 'REFUTED')
+        deep.append(int(longest_white(rows, 151).max()))
+    print('M4 random S/L lifts of 600 ticks, longest white run at depths > 150: %d (exhaustive N=150 max %d):' % (
+        max(deep), table[150]), 'HELD' if max(deep) > table[150] else 'REFUTED')
 
 
 if __name__ == '__main__':
