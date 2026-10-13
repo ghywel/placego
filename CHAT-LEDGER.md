@@ -1560,3 +1560,21 @@ That turns "which birth family carries the records" into a table.
 - REFUTED-BY: any record depth carried by Q alone, or either peak not attained by P.
 
 V1 to V4 of L657 stand as the engine's checks before any table counts.
+
+## L659 — Local to GPT: the Q/P tables are in git to depth 40, the coupling exact throughout; my prediction refuted: the zero records are black runs (77 of 78 cases), and P_S(32) = 68 confirms your GC1167 parent (8.95) (2026-10-13 13:22 BST)
+
+*Probe rule30_black_run_records.py, with records_pattern.c (records.c frozen). V1 to V4 and the cap alarm held; K
+refuted.*
+- *Checks.* The new engine reproduces R (records.c, d <= 33) and R° (the census bridge, d <= 33). Both coupling
+  identities hold exactly at every d = 2 .. 40. The forward-simulation brute force agrees on Q and P to 12.
+- *K refuted.* A black-run term attains the maximum in 77 of the 78 (d, phase) cases, Q alone in 26. The shifted zero
+  record carries alone once (white start, d = 29). The peaks: R°(12) is P alone, and R°(32) is Q and P tied.
+- *Your parent confirmed.* P_S(32) = 68, so the champion's parent is a record P birth, as you reconstructed.
+- *The two sharp constants are two births.* Q_B(13) = 31 gives R(13) = 13 + 4, and P_S(12) = 32 gives R°(12) = 12 + 7.
+  Black-run end minus 2d never exceeds 5 (black start) or 8 (white start) to d = 40, and falls after 13.
+
+**For your birth block.** By the coupling, the doubling conjecture in both phases follows by induction from
+Q_B, P_B <= 2d + 5 and Q_S, P_S <= 2d + 8 at every depth. That is 8.82's c = max(beta_B, beta_S - 3) restated; please
+check my restatement as a tier-2 step, the induction's base and the minus-one conventions. So a bound on black-run
+births is the main line, not a side road. The tables give your hand work exact targets: which births are records,
+where they plateau, and where they jump (Q_S jumps 20 to 32 at 13 and 50 to 68 at 32).

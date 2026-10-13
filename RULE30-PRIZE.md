@@ -6324,3 +6324,45 @@ jumps are the black-start record peaks: W = 11 is R째(12) = 19, and W = 31 is R�
 the black-run term of its exact coupling ("both record peaks are one black run"). So the composite champions of the
 first addendum (a short core behind a fitted prefix) are those black runs seen from the left, and the 20-cell-prefix
 question GPT has taken is a question about black-run records Q and P.
+
+### 8.95 The black-run records in git: 8.82's coupling exact to depth 40, and the zero records are black runs born one step earlier (2026-10-13 13:22 BST)
+
+*Local, with GPT as the second check (AGENTS.md item 17). Claimed in CHAT-LEDGER L657; the question was named in L658
+after GPT's advice in GC1167. Probe: `tests/probes/lexicon/rule30_black_run_records.py` with `records_pattern.c`, a
+variant of the frozen records.c. Third-party tables (swarm lane q2, 8.82) replaced by committed ones.*
+
+**The coupling.** 8.82 ties the two wall phases exactly: E_B(d) = max(d, E_S(d-1) - 1, Q_S(d) - 1, P_S(d) - 1) and
+the mirror, where E is the end of the longest zero run from depth d, Q the end of the longest run of ones from d, P
+the end of the longest 1, 0, 1, 1, ... pattern begun at d - 1, all over every column 1. Here "end" means the first
+depth after the run, and S and B are the white- and black-start phases.
+
+**Checked (all held).**
+- The new engine reproduces records.c's R(d) at d = 3 .. 33.
+- It reproduces the census-derived R째(d) at d = 1 .. 33 (GC1166's bridge).
+- Both coupling identities hold exactly at every depth d = 2 .. 40.
+- A pure-Python forward simulation of the wall form agrees on Q and P in both phases to d = 12.
+
+The tables to depth 40 are in the probe's OUTCOME. One cross-check from GPT's lane: P_S(32) = 68, which is GC1167's
+reconstructed standard-phase parent of the W = 31 champion (1 at 31, 0 at 32, ones 33 .. 67).
+
+**Which term carries each record (the question of L658).** I predicted that the peaks would be P births, that
+ordinary depths would be carried by the shifted zero record, and that Q alone would carry none. The last two parts are
+refuted.
+- *The zero records are black runs born one step earlier.* Of the 78 (depth, phase) cases, a black-run term (Q or P)
+  attains the maximum in 77. The shifted zero record E(d-1) - 1 attains it alone once, at white start d = 29. Q alone
+  carries 26 cases.
+- *The peaks.* R째(12) = 19 is a P birth alone, as predicted. R째(32) = 35 is a tie between Q and P.
+- *The doubling constants come from two births.* The largest black-run end minus 2d is 5 in the black-start phase
+  (Q_B(13) = 31, and P_B(2) = 9) and 8 in the white-start phase (P_S(12) = 32). Through the coupling these give the
+  two sharp values, R(13) = 17 = 13 + 4 and R째(12) = 19 = 12 + 7, matching 8.82's c = max(beta_B, beta_S - 3). No
+  larger excess appears to depth 40.
+
+**What it means for the target.** The doubling conjecture R(d) <= d + 4, which is the edge price of 8.92 to 8.94, is
+by the coupling a statement about how far a black run can reach: bounds Q_B, P_B <= 2d + 5 and Q_S, P_S <= 2d + 8 at
+every depth would give it in both phases by induction on d. Measured to 40, the black runs never exceed those bounds,
+and the excesses fall after d = 13. The birth question GPT is working by hand (GC1167) is therefore the main line
+itself.
+
+**Status.** COMPUTED, exhaustive over column 1 at every depth to 40, with four checks against independent engines. The
+induction from black-run bounds to the doubling conjecture is 8.82's (the lane's constants, graded by Cloud), restated
+here, not re-proved.
