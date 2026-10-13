@@ -6406,3 +6406,11 @@ the cluster: one in phase 1 ending at depth 146 (it gives the 18s at 125 .. 128)
 
 **Status.** The split at 132, 139 and 142 is PROOF-SKETCH, conditional on the solver verdicts behind R_real = 17
 there. The witness structure is COMPUTED from the committed exports.
+
+**Addendum, R_real(125) <= 23 (2026-10-13 14:19 BST; probe `tests/probes/lexicon/rule30_r125_bound.py`, predictions and control
+before the runs).** RLK's relaxed model (certified words to 44 and cuts40) has no white band at depths 125 .. 148 in
+either phase: relaxed UNSAT in phase 1 (about 20 minutes) and phase 0 (about 24 minutes). The control at L = 21 in
+phase 1 is SAT and lifts. So R_real(125) <= 23 (kissat verdicts, uncertified until drat-trim and cake_lpr are
+rebuilt), and with the sampled witness it is 21, 22 or 23. No run serves both 125 and 131. With the split at 132, the
+18s at 125 .. 138 are at least three runs, which answers the swarm's question (STRATEGY-PLAN section 6) as far as these
+verdicts go. What stays open: the exact value at 125, and whether 129 .. 131 shares a run with either neighbour.
