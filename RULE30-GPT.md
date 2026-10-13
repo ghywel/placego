@@ -30738,7 +30738,7 @@ Thus J is neither nondecreasing nor nonincreasing even over two consecutive step
 
 ## GC1206 — A middle-turnover floor is already supplied by the ordinary fringe (2026-10-13)
 
-**PROOF-SKETCH, awaiting Local; fixed controls COMPUTED; proposed turnover-count discriminator CLOSED.** L690 at92e87905 adopted: GC1205's signed balance is PROVED, G289 promoted, and its finite negative is retained. The bounded next question was whether a nonnegative turnover count could pay where net hole flux cancels. It gives a genuine lower event bound but no additional restriction on the relaxed left models: the settled fringe already meets it without a real right-language gate. No further strip enlargement or count tuning follows.
+**PROVED (Local L691 at3ae23c02); fixed controls COMPUTED; proposed turnover-count discriminator CLOSED.** L690 at92e87905 adopted: GC1205's signed balance is PROVED, G289 promoted, and its finite negative is retained. The bounded next question was whether a nonnegative turnover count could pay where net hole flux cancels. It gives a genuine lower event bound but no additional restriction on the relaxed left models: the settled fringe already meets it without a real right-language gate. No further strip enlargement or count tuning follows.
 
 **Query and paths.** Let d>=8, initial depth d-1 black and d..E white, E=d+L-1, with phase p. Set e=1 XOR((d+p) mod2), and for a>=4 let k=d+2a+e,c=a+1,n=k-c. Retain k+3<=E and the clock through k+3. For any consecutive N eligible a values, count middle turnover events on
 
@@ -30785,3 +30785,33 @@ For e0 the outer inputs coincide and the inner first bit is0, so S is their comm
 Record searched: triangle/zero-tail with moving-frame/settling ->6hits6files; compensation/mandatory-source with density/disjoint/turnover ->17hits4files. GC599/630..634, C7/R4, G240, GC1203..1205 and L690 read. Source: tests/probes/lexicon/rule30_triangle_turnover_floor.py. Local's requested carrying read: finite-cone fringe comparison, the four wall-source values, the event-floor potential and the automatic u3 counter. Next requires a joint origin/word constraint beyond event quantity; ordinary restart activity and independent-bit pricing remain distinct (GC634, GC412).
 
 **Filing check.** proof_dupes.py --near W290 passes. G240,G285,34 were read: they concern fixed-depth/age-filtered sources, one early-origin cut, and first-difference pivots. The fringe is credited to GC633/634, and this entry records the discriminator's failure rather than a new settling or count-to-information theorem.
+
+
+## GC1207 — Two adjacent physical middle parities recover a visible sample (2026-10-13)
+
+**PROOF-SKETCH, awaiting Local; algebra controls COMPUTED.** The missing inference was how a finite visible-language guard can test the joint physical middle-source word rather than its event count. GC1206 supplies an exact two-block decoder, not a new information price or an all-depth record bound. Its actual origin, path lengths and source inputs are retained.
+
+**Decoder and horizon.** Use GC1206's d>=8 black-ended white band d..E, phase p, e=1 XOR((d+p) mod2), a>=4, k=d+2a+e. Let M_a be the parity of its physical middle sources u3..n-6. Write q_i=q(k-1), so M_a=q_i XOR q_(i+1) XOR(q_(i-1) q_(i+1)). For two adjacent paths retain **k+5<=E and the clock through k+5**: the second path's GC1206 hypothesis is (k+2)+3<=E. Actual no11 gives
+
+    q(k-1)=M_a (1-M_(a+1)).
+
+Proof: if q_i=1, its neighbors are0, giving M_a=1 and M_(a+1)=0. If q_i=0, M_a=q_(i+1)(1-q_(i-1)). When this is1, q_(i+1)=1 and q_(i+2)=0, so M_(a+1)=1. Otherwise M_a=0. In both cases the product is q_i. There is no unobserved backward parent, source independence or whole-fringe equality in this argument.
+
+Consequently N consecutive eligible middle parities decode **N-1** actual white samples. The last parity alone does not decode its corresponding sample: no11 quadruples0101 and0010 have the same first M1 but different middle q. This is a genuine one-parity endpoint loss. An infinite periodic M word would yield a periodic visible word by the decoder, but no pumping of a physical origin or finite-state closure follows.
+
+**Finite word guards.** The M word always avoids **111 and0010**. To see the exact coding constraint, for an arbitrary four-bit M block (r,s,t,u) reconstruct three q bits r(1-s),s(1-t),t(1-u). They automatically avoid11. Their forward middle parity equals s unless s,t,u=111 or r,s,t,u=0010: with s=1 failure occurs precisely at t=u=1; with s=0 failure occurs precisely at r=0,t=1,u=0. Thus on two-sided formal words the no11 language and the M language avoiding111/0010 are mutual local codings. This is an algebraic image statement, not realization of a Rule30 orbit.
+
+Also M_i..M_(i+3)=0000 **iff** q_i..q_(i+4)=00000. One direction is immediate. In the other, each M_j0 forces q_j0 by the two cases above; the last equation with q_(i+2)=q_(i+3)=0 then forces q_(i+4)=0. The certified five-zero cut therefore adds the physical middle-word cut **0000**.
+
+More generally, a certified forbidden visible word f of length r, sound at the retained actual white anchor, rejects an (r+1)-parity window whenever
+
+    M_(a+j) (1-M_(a+j+1)) = f_j,    0<=j<r.
+
+No exponential list of source words is required; a finite visible DFA can read these products with one parity of delay. For N paths, only its N-1 decoded samples are tested. Retain phase-specific prefix/origin restrictions where their certificates require them; they are not silently made shift-invariant. This pulls a finite visible relaxation back to actual bulk parity constraints at every depth. It does not make the growing source profiles finite, add entropy loss, or prove their eventual incompatibility with the fixed initial row.
+
+**Registered controls and failure.** rule30_middle_parity_decoder.py checks eight no11 quadruples,21 no11 six-bit inputs and all16 reverse-consistency inputs. Independent XOR and OR readings agree. The accepted125 fixture reuses only stored visible bits and GC1206's already computed M00011; no CA or witness replay. The initial fixture expectation0001 failed: its four decoded bits are **0000**, and the final visible1 lies beyond the retained decoder window. That endpoint mistake is retained and corrected. Unexpected0101/0010 shows why a single M cannot decode; dropped-no11 input0110 gives decoded0 against q1. All corrected controls pass. No solver, membership, record census, source scan or Local work duplicated.
+
+Record searched: middle.parity|M_a|b XOR w with decod|recover|two.block|anticip ->no hit including active ledgers. GC1204..1206 and G27.2 read; GC1205's R coding needs an origin bit or an R1 anchor, whereas this decoder has bounded anticipation. Next missing inference is a restriction on the full physical source profiles that rejects an M word passing these finite guards; a lossless recoding alone supplies no price. Local: please read the two-case decoder, k+5 horizon, forbidden-pattern characterization and finite-window guard; no computation requested.
+
+
+**Filing check.** proof_dupes.py --near W291 passes. G288/G290 are the credited source and boundary-strip inputs; G281's cyclic driver-response calibration concerns another recurrence, not this visible decoder. The local coding is useful as a physical word guard, with no new information-counting claim.

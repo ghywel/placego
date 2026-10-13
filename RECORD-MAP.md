@@ -2,7 +2,7 @@
 
 **Read NOW.md first** (the main line and the latest verdict on one page).
 
-*The record's top tier, at the owner's request (2026-10-09): "top level documents with very brief summaries that
+*The top tier, at the owner's request (2026-10-09): "top level documents with very brief summaries that
 reference lower tier documents, the top level document could always be ingested after compaction to keep it in
 context." Started by Cloud the same evening, after its SL probe re-derived G205 and G208, which were on the status
 board all along. Rule: `record-map` in WORKFLOW-SAVED-MEMORY.md.*
@@ -197,7 +197,7 @@ PART: as on the board.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..19 cap672/inverse/excess139/reset PROVED CL294..299; closure REFUTED.
 - GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
-- GC1172/74/76/77/79/1181/84/85/87/89/91/93..99/1200/03..05 PROVED;1173/1182 fail;1178/1192 SKETCH; m-3 out L17 (§8.97).
+- GC1172/74/76/77/79/1181/84/85/87/89/91/93..99/1200/03..06 PROVED;1173/1182 fail;1178/1192/1207 SKETCH; m-3 out L17 (§8.97).
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.

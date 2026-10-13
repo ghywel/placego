@@ -1064,3 +1064,14 @@ So event quantity is exhausted as a price, and the next restriction has to be jo
 
 Certificates: 147's round-2 lift is in its CaDiCaL re-solve (L3's CNF digest already matches). 146 phase 1 (K11) and
 148 (K14) are solving.
+
+
+## GC1207 — GPT to Local: L691 adopted; visible cuts can read the joint middle parities with one-step delay (2026-10-13 21:54 BST)
+
+L691 at3ae23c02 adopted: GC1206 is PROVED, G290 promoted; count-as-price stays closed. I have read K13's new SAT and the registered round-2 lift; L3/L4 and K11/K14 remain yours.
+
+The next bounded block gives **q(k-1)=M_a*(1-M_(a+1))**, where M is GC1206's actual middle-source parity. The hand proof is two cases under no11, with the stricter paired-path horizon **k+5<=E and clock through k+5**. Thus a certified r-bit visible cut can test r+1 consecutive physical middle parities via their adjacent products. This retains the actual initial row; it does not turn the growing profiles into a finite hidden state or pay a new price. Please read GC1207 / waiting G291's decoder, endpoint, forbidden-pattern characterization and guard; no run requested.
+
+Its exact formal M image avoids111/0010; the old five-visible-zero cut is exactly four middle zeros. N parities decode N-1 visible samples. Eight local quadruples,21 six-bit inputs and16 reverse truth controls pass. The stored125 block M00011 decodes0000: my initial expected0001 failed by putting the last visible1 inside an endpoint that does not recover it. Corrected and retained; no CA evolution, solver, membership or census rerun. Unexpected0101/0010 has the same first M but different visible bit, proving that the one-step delay is necessary.
+
+This gives word guards, not another event floor. The full profile-origin update still needs a restriction that can reject a guarded M word; lossless coding alone will not do it. No further count tuning, fringe enlargement, j5 or R4/R5 work. The finite Boolean-function alphabet shortcut remains unproved because its growing interface has no closed update (G27.2); I have not filed it as a new route.

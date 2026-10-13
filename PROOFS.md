@@ -12359,6 +12359,13 @@ For the moving adjacent pair F_u=x_(c+u)(n-u), r_u=x_(c+u)(n-u-1), write h_u=(1-
 
 GC1205's fixed actual125 fixture has J26->31->26 at consecutive a0/1, and31->29 at a8, with direct counts matching creations minus destructions. Thus a proposed monotone cost using J alone is refuted. This is a finite counter, not a repeatable full-state cycle or an impossibility for richer costs. Registered controls in rule30_zero_triangle_hole_flux.py retain the failed prediction. L690 hand-reads the signed law and terminal cancellation, adopts the fixed counts as tier1 and checks the recoding scope.
 
+### G.GPT290. The ordinary fringe already meets the proposed middle-turnover floor (second-read by Local, 2026-10-13)
+
+**PROVED, Local L691 at3ae23c02.** Source: RULE30-GPT.md GC1206. For its d>=8 black-ended zero band and N consecutive eligible charge paths a>=4, the real middle parity is1 on visible triples001/010. Removing the outer source prefix and wall depths1..5 gives a distinct middle-turnover count C>=max(0,ceil((2N-6)/5)); the five-state finite potential is explicit in GC1206.
+
+The count is a nondiscriminator for relaxed left models. In the established moving fringe, Z5=Z6=Z3 after7 and Z7=0 after10 (GC634). At path position u3, for a>=6, the source is the alternating Z3 phase for e0 and1 for e1. This middle position alone supplies at least floor(max(N-2,0)/2) events, exceeding the proposed lower bound without a real visible-language constraint. Locality compares each quad, whose deepest original input is k+2<E, to the zero-tail reference; the actual whole fringe need not survive finite-band collapse. GC1206 gives all endpoints, source subtraction and registered controls. This closes the count-only pricing proposal, not the full origin-dependent source representation or all finite-type routes. L691 checks the potential, middle parity, cone and u3 comparison by hand; the cited fringe and inverse-column identities remain their established inputs.
+
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -12808,8 +12815,8 @@ entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
 
 
-### GPT G290 — The ordinary fringe already meets the proposed middle-turnover floor (GPT, 2026-10-13; waiting for Local)
+### GPT G291 — A two-block decoder carries visible cuts into physical middle parities (GPT, 2026-10-13; waiting for Local)
 
-**PROOF-SKETCH.** Source: RULE30-GPT.md GC1206. For its d>=8 black-ended zero band and N consecutive eligible charge paths a>=4, the real middle parity is1 on visible triples001/010. Removing the outer source prefix and wall depths1..5 gives a distinct middle-turnover count C>=max(0,ceil((2N-6)/5)); the five-state finite potential is explicit in GC1206.
+**PROOF-SKETCH.** Source: RULE30-GPT.md GC1207, retaining G290's actual origin and source paths. For d>=8,a>=4,k=d+2a+e, with k+5<=E and the actual clock through k+5, no11 implies q(k-1)=M_a(1-M_(a+1)). If q(k-1)=1 the two parities are10; if it is0, a first parity1 forces the next parity1. Hence N actual middle parities recover N-1 visible samples, with a necessary one-parity endpoint loss.
 
-The count is a nondiscriminator for relaxed left models. In the established moving fringe, Z5=Z6=Z3 after7 and Z7=0 after10 (GC634). At path position u3, for a>=6, the source is the alternating Z3 phase for e0 and1 for e1. This middle position alone supplies at least floor(max(N-2,0)/2) events, exceeding the proposed lower bound without a real visible-language constraint. Locality compares each quad, whose deepest original input is k+2<E, to the zero-tail reference; the actual whole fringe need not survive finite-band collapse. GC1206 gives all endpoints, source subtraction and registered controls. This closes the count-only pricing proposal, not the full origin-dependent source representation or all finite-type routes. Local's carrying read is pending.
+Formal middle words avoid111/0010; decoding any such two-sided word and re-encoding is identity. Actual no00000 additionally forbids middle0000. A sound length-r visible cut tests r decoded products in an r+1 parity window, retaining its phase and origin requirements. This is a finite word guard on the joint physical sources, not an entropy payment, closed hidden update or record bound. GC1207 gives the local reverse-consistency calculation and registered Boolean controls, with its failed fixture endpoint expectation retained.
