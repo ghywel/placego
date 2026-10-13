@@ -47,7 +47,7 @@ PART: as on the board.
 - First right-paid ratio rho_j exact to j = 35; its distance from 1/2 does not decay — COMPUTED — L224, L225; ZR3 (L316)
 - A uniform linear edge deadline T <= cj + b would give Q1 with alpha = 1/c — PROVED L345/CL161 — GC637/947
 - Fair-coin question: density can't see 0101; pair/price table fills 4 cells (Collatz cheats, entry 43); k-fair
-  periods: multiples of 2^k; basins need merging, none on the line — COMPUTED, PROOF-SKETCH — §8.92, §8.93
+  periods: multiples of 2^k; whole-state basins need merging (column families need not, GC1165) — §8.92, §8.93
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 - H_L to W = 32: 36..66; white-start H_L is R(d)+d-1 (checked d<=27), so R(d)<=d+4 is the slope-2 edge deadline;
   bulk ~1 bit/condition; champions jump +13 at 11, 31 (core plus fitted prefix) — COMPUTED — §8.94

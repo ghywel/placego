@@ -6210,20 +6210,27 @@ single-seed centre column never shows 01.
 - *Rule 30 on the line* does neither. It is injective on finite configurations (G121), and both edges of a finite
   pattern advance one cell every tick (the cells just outside see 001 and 100, which make black, and those beyond see
   000), so no two finite orbits ever merge and none revisits a state. A cheater on the line, if one exists, has no
-  basin: no other orbit flows into it. It is an isolated orbit, invisible to every statement about typical seeds, and
-  only a statement about every single seed can reach it: a count that falls below one (8.92's price), or a theorem
-  that uses the edge, as Jen's and Condrey's do.
+  whole-state basin: no other orbit flows into its orbit. That does not make cheaters few. GPT's four-state control
+  (GC1165: two tracks, Rule 150 coupled, injective on finite rows, growing one cell a tick at each end) has
+  infinitely many disjoint finite orbits that all share an exactly period-2 centre column. A shared column tail is
+  not a whole-state basin. What stays true is the reach: only a statement about every single seed can exclude a
+  cheater, a count that falls below one (8.92's price) or a theorem that uses the edge, as Jen's and Condrey's do.
 - *Mahler's problem* sits on Rule 30's side: its map expands, and its cheats (Z-numbers) are proved sparse, at most
   x^gamma below x with gamma < 1 (Flatto, Lagarias and Pollington; PRIOR-ART.md), but not proved absent.
-- [J] The direction of each conjecture follows the dynamics. Where states merge and shrink (Collatz), the conjecture
-  is that every seed cheats; where they never merge and the state grows (Rule 30, and Mahler's expanding map), it is
-  that no seed does.
+- [J], an interpretation only, and REFUTED as a general inference by GC1165. In the three problems the direction of
+  each conjecture matches the dynamics: where states merge and shrink (Collatz) the conjecture is that every seed
+  cheats, and where they never merge and the state grows (Rule 30, Mahler's expanding map) it is that none does. GPT's
+  control shows injectivity and growth together do not prevent cheating, so this is a pattern in these three problems,
+  not a premise any argument may carry.
 
-**Status.** Part 1: elementary (PROOF-SKETCH; the second half is the definition of a de Bruijn cycle, the count the
-BEST theorem's) and COMPUTED to length 16. Part 2: the complexity remark is standard; the reading of the three prizes
+**Status.** Part 1: PROVED, second-read by GPT (GC1165: p cyclic starts with every block count m gives p = 2^k m; at
+p = 2^k each block once is the de Bruijn definition); the count is the BEST theorem's; COMPUTED to length 16. Part 2: the complexity remark is standard; the reading of the three prizes
 is an interpretation [J]; the depth check COMPUTED. Part 3: the ring results COMPUTED, R1 replicating L433; injectivity
 PROVED (G121); the edge fact PROOF-SKETCH (one line); the merging account of the fourteen-cell basin COMPUTED after the
-run; the principle about directions [J].
+run, and its whole-row step PROVED, second-read by GPT (GC1165: if x is not 7-shift invariant but its first image
+that is comes at step r, then F^(r-1)(x) and its shift merge in one step); the principle about directions [J],
+refuted as an inference by GC1165's control, which Local second-read (the constant coefficient of A^t is 1 and the
+triangular formula for v_t, checked by hand and by replaying rule30_growth_injectivity_control.py).
 
 ### 8.94 The left horizon to width 32: neither the edge law nor the coin law; the bulk pays like a coin, the champions in lumps (2026-10-13 12:40 BST)
 
