@@ -155,7 +155,7 @@ PART: as on the board.
   certified GC1139..1145; X return admits the core (CL335); a 676-class origin renews black A (CL347); lane CLOSED
   (CL355) — §8.89
 - Carry of Rule 30: Gray correction = two-time AND; column carry solved — PROVED — §8.90
-- Black-run records Q, P both phases to d=40; coupling exact; 77/78 records carried by black runs — COMPUTED — §8.95
+- Black-run records Q, P to d=48 (D3: to 60, leaky-max PROVED); 77/78 records are black runs — COMPUTED — §8.95, STRATEGY-PLAN D3
 
 ## The regime between, finite left halves, supports (Q7)
 - Geometric kick floor, Sturmian/arc/near-square exclusions and TM/paperfolding for left edges <=15,868 cells — PROVED — §8.54/57/59; G131..136.

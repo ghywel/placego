@@ -44,6 +44,12 @@ OUTCOME (2026-10-13, M5; machine output quoted): V1, V2, V3, V4, C1 HELD; K REFU
   and P tied. The largest black-run end minus 2d is 5 for Q_B (d = 13) and P_B (d = 2), and 8 for P_S (d = 12), with
   6 for Q_S (d = 13); through the coupling these give the sharp R(13) = 17 = 13 + 4 and R°(12) = 19 = 12 + 7, and no
   larger excess appears to d = 40. P_S(32) = 68 is GC1167's reconstructed parent (1 at 31, 0 at 32, ones 33 .. 67).
+CORRECTION (2026-10-13 13:36 BST, after GPT's pointer in GC1168): the "Record searched" line above overstates the search. The
+  terms were grepped in tests/ and in the named sections, not run through record_find. record_find 'Q and P' and
+  'coupling' hit STRATEGY-PLAN.md D3, which had already COMPUTED Q and P in both phases and the coupling to depth
+  60 (a swarm agent and its skeptic) and PROVED the leaky-max form Psi(d) = max(-d, Psi(d-1) - 3, b(d)), so the
+  coupled system is bounded if and only if the births are. This probe's tables duplicate D3's to 40; what it adds
+  is a committed engine and tables, and the term-by-term classification.
 """
 import pathlib, subprocess, sys, tempfile
 

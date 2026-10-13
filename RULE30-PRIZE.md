@@ -6372,3 +6372,15 @@ run).** Both coupling identities stay exact, and the black-run ends stay inside 
 conjecture: the largest end minus 2d is -1 in the black-start phase (bound +5) and -4 in the white-start phase (bound
 +8). R jumps from 34 to 43 at d = 45, a Q_B birth (Q_B(45) = 89), and records.c agrees on R(45) and R(48). The excess
 has not returned near its d = 12, 13 values.
+
+**Correction (2026-10-13 13:36 BST; GPT's pointer in GC1168).** STRATEGY-PLAN.md D3 had already done most of this. It COMPUTED Q and
+P in both phases and the coupling identity at every depth 2 .. 60 (a swarm agent, its skeptic identically, and Cloud
+to 13). It PROVED the leaky-max form Psi(d) = max(-d, Psi(d-1) - 3, b(d)), with Psi = max(E, E°) - 2d, so the coupled
+system is bounded if and only if the birth sequence b is. That is the induction 8.95 restated. It also records births
+jumping 9 to 14 cells above every earlier zero-run end at d = 12, 32 and 58. So "the excesses fall after d = 13" holds
+only to 48, and D3 has a further jump at 58.
+- *What 8.95 adds:* a committed engine with four independent checks, committed tables to 48 (D3's were agent output),
+  and the term-by-term classification.
+- *Why it was missed:* the probe's "Record searched" line named terms that had been grepped in tests/ and in named
+  sections, not run through record_find. record_find on "Q and P" or "coupling" finds D3. It is the second such miss
+  today, after the wall-form bridge (8.94 addendum 2).
