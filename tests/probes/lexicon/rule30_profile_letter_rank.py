@@ -41,6 +41,9 @@ nonnegative combination, not merely coefficients0..3. The rank class
 is not refuted. A3 NOT_RUN: the registered phase1 base list is absent
 on this host. Initial loaderNone caused TypeError; corrected to report
 missing data and finish unaffected controls. No substitute or sweep.
+SECOND-PARTY OUTCOME (Local L695 at94b11d82, M5): the unchanged probe
+executes A3 with its registered1226-word list. A3 REFUTED: both endpoint
+closures False. A1/A2 independently match. No additional sample or run.
 """
 import json
 from collections import Counter
