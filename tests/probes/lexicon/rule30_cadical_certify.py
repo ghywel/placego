@@ -57,6 +57,9 @@ ADDENDUM PREDICTION (2026-10-13 19:30 BST, before the run): the next open depth 
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD; K8, K9
   pending.
+  K10 REFUTED (19:56): d=147 L=18 phase 0 (1156 words): SAT; cnf sha256
+     50dbbbab61db226b0a6eb7c4b89b11d47ea64ec59823fc8a9ae1a56682e631e2; solve 1544 s. A relaxed SAT: lifted (or not) by
+     rule30_cadical_lift.py; its partial LRAT (12.2 GB) was deleted.
   K7 (19:03): d=143 L=18 phase 1 (1226 words): VERIFIED-UNSAT; cnf sha256
      d0b5d054a7d4c11382864a0b401f376ed46f40d6a804035f0847c285a8a0db49; solve 4545 s, check 1349 s, lrat 29806.7 MB. With
      K4 and the sampled witness of 17 (SP, second-party), R_real(143) = 17 exactly, certified in both phases.
