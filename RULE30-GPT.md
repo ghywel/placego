@@ -30615,3 +30615,47 @@ Before any adapter calculation: A1 predicts the new language_cnf(f,0) reproduces
 Model preservation caution: the already-running first lift used the old executable, whose UNSAT branch returned without saving left0. A clean membership exit preserves the reported code, but does not by itself establish that the left prefix was saved. No re-solve is requested to recover it. Future rounds use the corrected save_model call. The concrete all-depth missing inference remains a termination charge for every young origin; this newly certified cut prunes an early origin but supplies no growing price yet.
 
 **Adapter outcome.** A1 held: constructing only the committed language_cnf function reproduced K12's full digest,9801 variables and33811 clauses. Exhaustive OR, interior XOR and fixed-wall truth controls passed. Instrumenting its local variable map confirmed50 observation units at0..98 only and no cells at99/100. No solver, exact-language computation or certificate checker was called. The horizon interpretation above awaits Local's targeted read; K12 remains a tier1 certificate, and no new proof entry is filed for this locality application.
+
+
+## GC1203 — A white triangle transports the absolute guard to a fixed black entry packet (2026-10-13)
+
+**PROOF-SKETCH, carrying step awaiting Local; fixed controls COMPUTED.** L687 at6b7cc6cc adopted: GC1202's horizon interpretation is second-read, and the original147 left model was not saved; no recovery solve needed. The bounded missing inference here is a forward, origin-preserving simplification of GC717's growing ahead-profile charge for young zero bands. It gives an exact entry packet and a hole-parity interface, not an all-depth record bound or a closed update between successive diagonals.
+
+Let x_t(j) denote the actual left row, with depth j increasing outwards, beside the clock tau(t)=(p+t) mod2. Suppose d>=2, x_0(d-1)=1, and x_0(d..E)=0. Choose a>=0 and e in{0,1}, put
+
+    k=d+2a+e, c=a+1, n=k-c=d+a-1+e,
+
+and require **k+1<=E** and the actual clock through k+1. Then the forward-cropped row has the fixed entry packet
+
+    (x_c(n),x_c(n+1))=(1,1-e).
+
+Thus the even-offset packet is11 and the odd-offset packet10, independent of the earlier prefix and farther exterior. This keeps the real forward origin; it invokes no canonical backward parent.
+
+**Packet proof.** The established white triangle supplies zeros d+t..E-t. Its black inner boundary at d+t-1 persists: the next cell d+t sees outer0, centre0, inner1. At time a the boundary cell b=d+a-1 is1. The even-offset hypothesis supplies zeros at b+1,b+2; one step gives1 at b (centre1 masks its inner neighbour) and1 at b+1. The odd-offset hypothesis supplies also b+3=0; one step gives1 at b+1 and0 at b+2. These are the stated packets. The sharper interval lengths are respectively2a+2 and2a+3. The triangle/frontier identities are old (GC549 checkpoint25); the new step is their all-offset absolute-guard entry, with the remaining wall endpoint retained.
+
+**The guard after this entry.** For0<=u<n define
+
+    F_u=x_(c+u)(n-u), r_u=x_(c+u)(n-u-1),
+    h_u=(1-F_u)(1-r_u), Q=XOR_(u=0..n-1) h_u.
+
+The last r is the actual wall, never a cell beyond it. If G_u=x_(c+u)(n-u+1), Rule30 gives G_(u+1)=G_u XOR(F_u OR r_u)=G_u XOR1 XOR h_u. Since G_0=1-e and G_n=x_k(1),
+
+    x_k(1)=(1-e) XOR(n mod2) XOR Q.
+
+At a required black tick k, x_k(1)=1, so necessarily
+
+    Q=(d+a-1) mod2.
+
+The last h is at white time k-1: its r is0 and its F is depth1. Hence h_(n-1) is exactly the demanded actual right visible bit q(k-1)=1 XOR x_(k-1)(1). Equivalently,
+
+    q(k-1)=((d+a-1) mod2) XOR XOR_(u=0..n-2) h_u.
+
+For fixed d,p, every black k in d..E-1 has the same offset class e=1 XOR((d+p) mod2). The packet type is therefore fixed throughout those tests. This is an absolute, origin-dependent interface to a visible cut filter. It does not assume earlier arbitrary clamped prefixes have actual right realizations.
+
+**Sharp scope and controls.** Dropping the final initial zero at k+1 lets that bit flip the packet partner and the final guard, while leaving the entry's first bit unchanged. At d1 the even entry can land on the clamped wall: p1,a0 gives01, not11; d>=2 is essential. The registered probe tests72 fixed cases at d2/5/8,a0/1/3, both phases, both offsets and two exterior tails. Literal Rule30 and packed Boolean evolution agree; packets, the GC717 guard and the hole identity all match. Four final-cell controls and the wall-overwrite counter pass. Z3 was registered after Z1/Z2, before its own hole calculation, on the same cases. No clock-survival claim, solver, census, exact membership, train refinement or Local run replay.
+
+Source: tests/probes/lexicon/rule30_zero_triangle_guard_transport.py. Record searched: zero.band/triangle with guard/charge/boundary/diagonal ->40hits13files; packet/triangle/guard search gives no earlier first-crossing packet; empty-pair/diagonal/guard search ->23hits12files. GC54925, GC585/586/592, GC717/718, GC1167 and GC1199/1200 read. The ordinary moving-edge and source identities are credited rather than rediscovered as a cost theorem.
+
+**What remains open.** Although the entry packet is fixed, n=d+a-1+e grows with a. The hole stream still depends on the actual inward row. This is not a one-bit autonomous state, a finite-type certificate, or a contradiction to GC1200; its required input is a moving physical pair, not a visible residual. A query beginning inside a longer white run cannot silently use its nominated d as this black inner edge. Hole parities can also cancel; no monotone price follows from them. A useful next inference must control the relation between these origin-dependent hole streams and the real visible cut language. No widening or scalar deadline experiment follows from this identity. Local's requested carrying read: the two parity packets, k+1 horizon and the terminal-white interpretation.
+
+**Filing check.** proof_dupes.py --near W287 passes after correcting the waiting-room heading to its expected GPT G287 form. Nearest C3,06,G223 read: C3 supplies the credited shrink theorem,06 requires a periodic column pair, and G223 is Collatz count regrouping. This adds the absolute guard's first-crossing packet and terminal visible interface, not another shrink theorem. No generated proof pages edited.
