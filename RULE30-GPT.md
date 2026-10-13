@@ -30815,3 +30815,41 @@ Record searched: middle.parity|M_a|b XOR w with decod|recover|two.block|anticip 
 
 
 **Filing check.** proof_dupes.py --near W291 passes. G288/G290 are the credited source and boundary-strip inputs; G281's cyclic driver-response calibration concerns another recurrence, not this visible decoder. The local coding is useful as a physical word guard, with no new information-counting claim.
+
+
+## GC1208 — A four-state carry updates the whole origin-labelled pair path (2026-10-13)
+
+**PROOF-SKETCH, awaiting Local; fixed controls COMPUTED.** Missing inference: an exact update for the full growing physical profile, rather than a scalar hole count or parity. It has a closed word update with four carry states and one new letter per step. The persistent word is unbounded; this is not a four-state generator of an infinite trace. The local Rule30 rule, GC1203's fixed head and GC1204/05's sources are credited. GC717's two-ahead single-guard formula, GC971's shrinking inverse-column transducer and G236's spatial two-tick transducer are distinct predecessors, not this profile update.
+
+**Actual pair word.** Let d>=2, initial depth d-1 black, d..E white, wall phase p; choose e=1 XOR((d+p) mod2). For a>=0 put k=d+2a+e,c=a+1,n=k-c. Define
+
+    P_a[u]=(x_(c+u)(n-u), x_(c+u)(n-u+1)),  0<=u<=n.
+
+The n+1 letters include the actual clamped wall at u=n. Under k+1<=E the head is (1,1-e), by GC1203. The last letter is (1,g_a), g_a=x_k(1), the actual black guard; it is not automatically11. The penultimate first coordinate is x_(k-1)(1), so the demanded white visible bit is q_a=1-P_a[n-1].first. Failed guards are retained, not silently repaired.
+
+**Closed forward update.** To obtain P_(a+1), retain **k+3<=E** and evolve the clamped row through k+2. Start output Q[0]=(1,1-e). For u=1..n scan old letter P_a[u]=(C,B), with preceding output Q[u-1]=(A,H), and emit
+
+    Q[u]=T((C,B),(A,H))=(A XOR(B OR C), H XOR(A OR B)).
+
+Then append Q[n+1]=(1,Q[n].first XOR Q[n].second). This is exactly P_(a+1), of length n+2.
+
+For the carrying step, the old anchor is (t,j)=(c+u,n-u). The preceding new anchor (a+1,u-1) is at the SAME time t and depth j+2, so (A,H) are the actual outward cells x_t(j+2),x_t(j+3). The emitted pair is at (t+1,j+1). Its two coordinates are precisely the two forward Rule30 updates. This remains true at u=n, where (C,B)=(1,g_a) is the actual black wall and adjacent cell, and both output sites have positive depth. At the final white-time depth1 pair, the white wall is0; the next depth1 value is therefore the XOR of that pair. The next wall value is prescribed1. No outside-right cell or backward parent is used, and no real-clock premise is needed for the clamped update itself. The next fixed head needs k+3 inside the initial white band; it is not supplied by the old word alone if that horizon is dropped.
+
+For an infinite zero tail, this iterates at every a from the **actual P_0**, length d+e, determined by initial depths1..d-1 and the prescribed wall. Earlier black guards and visible-prefix conditions are checked in that same origin when initializing. An arbitrary four-letter word of length d+e is not an admissible substitute. A finite-band query uses the update only while its displayed horizon holds. This supplies a sound origin-preserving word representation; termination of every guarded iteration remains open.
+
+**The source word is available too.** For u<n write (C,B)=P_a[u] and V=P_a[u+1].second. Since V=x_(t+1)(j)=B XOR(C OR D), with D=x_t(j-1), the old hole is
+
+    h_u=(1-C)(1-(B XOR V)).
+
+This is correct also when C=1, where the prefactor is0. For u>=1 the carry's A is x_t(j+2), so the exact source is A B XOR h_u(A XOR B). The first source is0 from the established black head. Hence both the complete hole word and GC1206's middle parity can be computed from the scanned words, with one-letter input lookahead and a bounded delay for the omitted last five sources. The visible DFA can instead read the penultimate coordinate directly; neither output adds independent information. GC1207's decoder remains a cross-check and a bulk-word guard under its stronger real-clock horizons.
+
+**Finite carry actions, with a useful nonreset.** Encode carry(A,H) as z=A+2H modulo4. Input00 acts by z->-z, input10 by z->z+1, and input01/11 by z->3-z. Rotation and reflection generate the eight-element dihedral group; each input action is a permutation. Thus **no input word synchronizes two different initial carry states**. This is a local, exact nonreset statement, not a global affine explanation or a claim that the entire word map is invertible: input01 and11 have identical actions. The fixed head is a genuine boundary condition, while the increasing input word remains persistent data.
+
+**Registered controls.** rule30_triangle_profile_transducer.py checks16 local truth-table inputs and all four carry permutations, then36 fixed d2/5/8,a0/1/4,phase/tail cases against independent literal/packed physical paths. Twenty cases have a failed old black guard, all retained correctly. The word-only holes and sources match literal quads. Five new-word comparisons in the existing125 fixture at a4..8 pass and recover the already computed M00011; this is a check of the new map, not another witness or membership validation. The preregistered dihedral coordinate addendum passes on the same16 inputs.
+
+The unexpected horizon control at d5,p0,a1,k7 flips initial depth k+3=10. It leaves the entire old word unchanged but flips the next head's partner; the fixed-head transducer correctly fails as a model of that shortened white band. Formal carry00 also gives different results from old terminal10 and11, rejecting automatic repair of a failed guard (no physical realization claimed for that formal control). No failures in the registered controls. No solver, record/survival census, strip enlargement or Local computation duplicated.
+
+Record searched: path/diagonal/profile with word-transducer/four-state/sequential/carry-state/scan-pair ->11hits8files; transducer with origin/zero-tail/finite-support ->5hits5files; pair/transducer with forward/two-step/growing ->17hits7files. The relevant prior transducers and GC1203..1207 read. Next is a restriction on reachable, origin-labelled words under this explicit length-growing update that forces a failed guard or a certified visible cut; carry cycling alone does not give a bound. Local: please read the anchor alignment, actual terminal, sharp head horizon, initialization and permutation nonreset. No computation requested.
+
+
+**Filing check.** proof_dupes.py --near W292 passes. G149's periodic spatial predecessor tails are a different orientation; G289 supplies the credited hole law; G281 calibrates cyclic driver perturbations. None updates this complete physical pair path. The carrying group is local only, with the full origin-labelled word retained.
