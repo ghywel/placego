@@ -76,7 +76,11 @@ ADDENDUM PREDICTIONS (2026-10-13 22:10 BST, before the runs): the third and last
      cap. REFUTED-BY: SAT (then the rounds stop and 147 is reported open under this relaxation), a cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
-  K9 HELD, K10 REFUTED, K11 HELD, K12 HELD, K13 REFUTED, K15 HELD; K14, K16 pending.
+  K9 HELD, K10 REFUTED, K11 HELD, K12 HELD, K13 REFUTED, K15 HELD, K16 REFUTED; K14 pending.
+  K16 REFUTED (22:36): d=147 L=18 phase 0 (1158 words, with both cuts): SAT; cnf sha256
+     e9159d113732299212204ca8e7fb8db798bcb0bc10cdbcd8d294f2ffe6a496a5; solve 984 s; partial LRAT (9.9 GB) deleted. The
+     registered rounds stop: 147 at L = 18, phase 0, is open under RLK's relaxation with three cut rounds. The exact cone
+     (rule30_exact_cone_cert.py X2) decides it without the relaxation.
   K11 (22:15): d=146 L=18 phase 1 (1226 words): VERIFIED-UNSAT; cnf sha256
      fdc2d241cba1ca37f98e78358b17435c988fadfba3c27019388961a250a4841c; solve 6221 s, check 1405 s, lrat 36961.0 MB. With K8,
      R_real(146) <= 17 in both phases (sampled 15).
