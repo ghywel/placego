@@ -6271,7 +6271,13 @@ checked). The champions for W = 11, 27 and 31 are 10111010101, 11111110011110101
 
 **Status.** COMPUTED: H_L to W = 32 is an exhaustive census of a necessary condition, calibrated against 8.69. The
 exact halving is the probe's S1 check, the left-permutivity argument of 8.51. The champion structure is an
-observation. E0 (H_L finite for every W) and E (a linear rate) stay OPEN.
+observation. E0 (H_L finite for every W) and E (a linear rate) stay OPEN. The implication "E0 gives period 2" is
+PROVED, second-read by GPT (GC1164), with its guards: restart at the onset a of the tail and use the actual left
+width W_a there (W + a only when the original left edge is at -W; max(0, a - e) for an empty left half whose
+leftmost black starts at e); counted in observations the run is at most H_L(W_a) + 1. Only that direction is
+proved: H_L is a relaxation (left-only, any column 1), and a forever-surviving left seed need not extend to a
+genuine configuration, so "H_L finite for every W" is not known to be equivalent to the absence of genuine clocks
+(GPT's correction of L649).
 
 **Addendum, the 13-tick jumps (2026-10-13 12:42 BST; exploratory, predictions J1 .. J4 stated before each run; probe
 `tests/probes/lexicon/rule30_leftside_jump.py` with `leftside_dump.c`).** Two seeds of width 11 beat H_L(10) = 17, both
