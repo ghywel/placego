@@ -938,3 +938,5 @@ app is unpublished by design.
 - lexicon/rule30_prefix_arrival.py: GC1167 diagonal defect identity;2016 short controls, two fixed cylinders; every P20 repeat fails at34 in phase1 by the cone. CPU, <1 s; controls COMPUTED, all-tail hand step PROVED (Local L658).
 
 - lexicon/rule30_prefix_realization.py: GC1168 two low20 fitted-champion cylinders force visible11 at17/19, excluding a genuine centre clock through20; literal/packed/inverse controls and8 right triples PASS. CPU, <1 s; hand cone/endpoint step awaits Local.
+
+- lexicon/rule30_phase_prepend_guard.py: GC1169 actual B word100101 blocks both S prepends by0100101/11; ordinary finite clock0..12, formal shrinking-zero/P ancestry,2047 residual/direct controls PASS. CPU, <1 s; hand lift scope awaits Local.
