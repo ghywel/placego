@@ -6451,6 +6451,14 @@ with that cut was SAT again, and its model is another early-origin artefact: its
 04726615b66e4475c9959c352c0c459a780e256e25829ad37248e059b3f332e9). The third and last registered round, with both cuts, is
 solving. R_real(146) <= 17 is now certified in both phases (phase 1: CNF
 fdc2d241cba1ca37f98e78358b17435c988fadfba3c27019388961a250a4841c, check 1,405 s).
+**147 and 148 (2026-10-14 00:07 BST; K14, K16, X2).** The third relaxed round at 147 was SAT again (K16), so the rounds
+stopped. The exact cone, with the certified cuts and no relaxation (`rule30_exact_cone_cert.py` X2), then found a real
+witness: **R_real(147) >= 18** in phase 0. The witness passed RR's check and an independent replay (CNF
+1f156ffca7e47c500ba4afe4ff9c75c897ffaf00584200f123cd4f404777476c, 5,338 s). It is a finite configuration with left edge
+at depth 146 that keeps the clock for 165 ticks. Its left row agrees with round 2's relaxed model at depths 58 .. 164;
+the relaxed models were non-real codes over a nearly real left row. **R_real(148) <= 17 in phase 0** is certified (K14,
+with the 50-bit cut; CNF 004aa0947efe7d94da462b495405e84daa3589d06cde49f06a3775c7d5a9a9f3, check 1,686 s), and phase 1
+is solving (K17). So the run of 18s found at 141 continues at 147, and 148's phase 0 does not reach it.
 
 ### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
 
