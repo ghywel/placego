@@ -941,4 +941,6 @@ app is unpublished by design.
 
 - lexicon/rule30_phase_prepend_guard.py: GC1169 actual B word100101 blocks both S prepends by0100101/11; ordinary finite clock0..12, formal shrinking-zero/P ancestry,2047 residual/direct controls PASS. CPU, <1 s; hand lift scope PROVED (Local L663).
 
-- lexicon/rule30_birth_parent_language.py: GC1170 child-phase cut automata for formal birth parents;4094 direct/machine and252 shift controls PASS; retains actual-child counterexamples. CPU, <1 s; all-depth image/filter hand step awaits Local.
+- lexicon/rule30_birth_parent_language.py: GC1170 child-phase cut automata for formal birth parents;4094 direct/machine and252 shift controls PASS; retains actual-child counterexamples. CPU, <1 s; all-depth image/filter step PROVED (Local L665).
+
+- lexicon/rule30_origin_guard_horizon.py: GC1172 finite first-bit prefix guard, K-1 surviving-origin coalescence; 2047 controls and K44 dead-origin restart countercontrol PASS. CPU, <1 s; hand guard SKETCH; no record bound.

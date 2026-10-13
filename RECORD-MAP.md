@@ -47,11 +47,11 @@ PART: as on the board.
 - First right-paid ratio rho_j exact to j = 35; its distance from 1/2 does not decay — COMPUTED — L224, L225; ZR3 (L316)
 - A uniform linear edge deadline T <= cj + b would give Q1 with alpha = 1/c — PROVED L345/CL161 — GC637/947
 - Fair-coin question: pair/price table fills 4 cells (Collatz cheats, entry 43); k-fair periods are multiples
-  of 2^k; whole-state basins need merging, column families need not (GC1165) — §8.92, §8.93
+  of 2^k; column families need not merge (GC1165) — §8.92/93
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 - Both-phase width envelope R_p(d)+d-1=max_(W<d)H_L^p(W) — PROVED GC1166/L656; measurements§8.94.
-- P20 repeats fail34 (phase1); fitted low20 seeds exclude a real clock through20 — PROVED GC1167/1168.
-- B word100101 has neither real S prepend — PROVED GC1169.
+- P20 repeats fail34 (phase1); low20 excludes real clock through20 — PROVED GC1167/68.
+- Real B100101 has no real S prepend — PROVED GC1169.
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
@@ -196,7 +196,8 @@ PART: as on the board.
 - Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
 - GC1114..19 cap672/inverse/excess139/reset PROVED CL294..299; closure REFUTED.
-- GC1121..32/1134..42/1144/45/1154..58 PROVED;1146 fails;1148/49/51/1159 SKETCH (seeded images/origins);badB1150;mixedgap6 REFUTED1153.
+- GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
+- Cut origins merge by K-1 shared bits; dead origins stay dead — SKETCH GC1172.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..1035.
 - Cut45 exit/origins: unary/pair stalls, joint succeeds — hand/COMPUTED — GC1028/1029/1039.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
