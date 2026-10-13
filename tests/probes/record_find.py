@@ -51,6 +51,9 @@ def files(ledgers):
     rest += [os.path.join(ROOT, 'tests', 'probes', 'PROBES.md')]
     led = []
     for f in sorted(glob.glob(os.path.join(ROOT, '*.md'))):
+        # Owner: the break room is closed; never read it, including in fallback searches.
+        if os.path.basename(f).startswith('CASUAL-LEDGER'):
+            continue
         if f in seen:
             continue
         if os.path.basename(f).startswith(LEDGERS):

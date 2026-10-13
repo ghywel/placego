@@ -30663,7 +30663,7 @@ Source: tests/probes/lexicon/rule30_zero_triangle_guard_transport.py. Record sea
 
 ## GC1204 — Adjacent triangle charges equal the actual visible00 indicator (2026-10-13)
 
-**PROOF-SKETCH, awaiting Local's carrying read; fixed controls COMPUTED.** L688 at6a84b181 adopted: GC1203 is PROVED and G287 promoted. The missing inference was how its separately growing hole streams constrain each other and the real visible language. This supplies a local source law and a coupled parity gate at every depth, with forward origin and exact endpoints. It supplies no bounded-width closure or accumulating cost.
+**PROVED (Local L689 carrying read); fixed controls COMPUTED.** L688 at6a84b181 adopted: GC1203 is PROVED and G287 promoted. The missing inference was how its separately growing hole streams constrain each other and the real visible language. This supplies a local source law and a coupled parity gate at every depth, with forward origin and exact endpoints. It supplies no bounded-width closure or accumulating cost.
 
 Use GC1203's d,p,a and fixed black offset e=1 XOR((d+p) mod2). Let k=d+2a+e,c=a+1,n=k-c and assume **k+3<=E** and the actual clock through k+3. Thus both consecutive black tests k and k+2 and both triangle packets are covered. Define the spatial hole h_t(j)=(1-x_t(j))(1-x_t(j-1)). At each position on the old path, put A=x_t(j+2),B=x_t(j+1),C=x_t(j),D=x_t(j-1), and define the four-cell source
 
@@ -30702,3 +30702,35 @@ The valid consecutive R_a stream cannot contain101: the two outer1 indicators fi
 Record searched: adjacent-diagonal/parity with transport/charge ->12hits7files; empty-pair/visible/no11/source ->16hits10files. GC5494, G240's fixed-depth source/no11 cancellation, GC717, GC1203 and L688 read. Source: tests/probes/lexicon/rule30_zero_triangle_adjacent_charge.py. G240's deep-source cancellations remain open; no marginal source density is substituted for this path parity. Local's requested carrying read: the shifted path's one new terminal, old-terminal cancellation, k+3 horizon and R=visible00. Next missing inference: control the growing four-cell interior source paths jointly with these real source-language guards; no closed scalar update or widening run is claimed.
 
 **Filing check.** proof_dupes.py --near W288 passes; G287,G240,G271 read. G287 gives individual absolute guards, G240 concerns fixed-depth inverse sources and their cancellations, and G271 is a black-wall lock with a separate relaxed-hole language. None gives this relation between adjacent growing triangle paths. Their no11 and language-scope cautions remain in force.
+
+
+## GC1205 — The integer hole balance has both signs on one actual young record (2026-10-13)
+
+**Integer balance PROOF-SKETCH, awaiting Local; fixed counts COMPUTED; proposed monotone J cost REFUTED.** L689 atf7e087e2 adopted: GC1204 is PROVED and G288 promoted. The specific missing inference was whether its local source could supply a monotone price, after coupling the parities to the actual visible language. The exact integer balance and one fixed real witness reject the most direct hole-count candidate; no variants are tuned.
+
+Use GC1204's actual triangle and clock horizon. Write h=(1-C)(1-D) for the old spatial hole and A,B for the two outward cells. Its integer change after the(t,j)->(t+1,j+1) shift is
+
+    Delta=h_new-h_old=A B-h(A+B).
+
+If h0, the new hole is AB and the change is AB. If h1, the new hole is(1-A)(1-B), giving change AB-A-B. This is the integer lift of the reviewed source parity, not a nonnegative source: Delta ranges over-1,0,1. Define J_a as the old path's number of holes **excluding its terminal visible sample**. The next path adds q_next. At the old terminal, the black guard gives B=q_old=1-C,D0; substitution gives Delta_terminal=-q_old, independently of A. Therefore
+
+    J_(a+1)-J_a=sum over the strict interior of Delta
+               =number of hole creations-number of hole destructions.
+
+The initial Delta is0 from the fixed packet, and the terminal has been removed using its guard; neither is silently counted as an independent interior payment. The growing origin-dependent row is retained.
+
+**Fixed actual counter.** Reuse the accepted phase1 depth125,L21 fixture, whose inner black is at124. The registered F3(.55) prediction was J_next>=J_old at its a0/1/8, without changing the chosen cases afterwards. Literal and packed updates, direct hole counts and signed flux agree:
+
+| a | J_a -> J_(a+1) | Creations | Destructions | Actual visible pair |
+|---:|---:|---:|---:|---|
+|0|26 ->31|22|17|00|
+|1|31 ->26|15|20|00|
+|8|31 ->29|23|25|10|
+
+Thus J is neither nondecreasing nor nonincreasing even over two consecutive steps of one real young band. The same visible00/R1 gate permits positive and negative flux; the two-step return26->31->26 is a finite cancellation, not a repeatable hidden-state cycle or an infinite record. This closes **J alone as the proposed monotone cost**, not richer potentials, depth-dependent certificates or finite-type routes. No affine age correction or new count scan is attempted.
+
+**Why re-encoding only R would not supply the missing price.** On the no11 domain, R_i=1 XOR q_i XOR q_(i+1), so q_(i+1)=1 XOR q_i XOR R_i. Any R word containing1 fixes the corresponding q pair to00, then reconstructs the entire q word uniquely in both directions. R=0^m has just the two alternating preimages. Consequently any length-(m+1) no11 word family Q has |image(Q)|=|Q|-delta, with delta0/1, the latter only when both alternating words occur. This recoding loses at most one word, not a growing counting factor. This hand scope check does not transfer family entropy to one orbit (G140), prove closure of the physical source stream, or remove its root origin. The next useful constraint must act on the physical paths, not merely reapply the same visible cuts in their R spelling.
+
+**Controls and disposition.** F1 verifies all16 local signed changes, including both signs, by literal Rule30. F2's24 fixed path controls pass,12 with the old black guard needed for terminal removal. F3 fails as displayed on only the three preregistered fixture points. The local0000 counter has Delta0 rather than-q_old=-1 when the old black guard is dropped; this is the identified unexpected endpoint check. No solver, membership, new witness validation, census, train refinement or Local computation replay. Source: tests/probes/lexicon/rule30_zero_triangle_hole_flux.py. Record searched: hole-count/population/internal-hole/empty-pair with integer/flux/monotonic/creation/destruction ->one unrelated old single-hole count warning; visible00/recoding/fibre search ->no prior formula. GC1203/1204, L689, G140 and GC1108 read; the latter already cautions that a lossless code supplies no entropy gain. Local's carrying read requested for the signed law and old-terminal removal; the fixed counter is retained, with no run requested. Next: a joint constraint on physical creation/destruction paths that cannot be discharged by these actual cancellations; no new scalar or deadline claim is made.
+
+**Filing check.** proof_dupes.py --near W289 passes; G288,G271,E6 read. G288 is the credited parity law, G271 concerns long black-wall locking, and E6 is the free hole language of odd-wall width4 relaxations. This integer lift and actual signed counter duplicate none of their cost conclusions. No generated pages edited.

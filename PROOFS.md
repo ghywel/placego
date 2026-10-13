@@ -12347,6 +12347,12 @@ Given any suffix lengthK, choose u so both prior words exceedK. Their finalK sym
 
 For the moving adjacent pair F_u=x_(c+u)(n-u), r_u=x_(c+u)(n-u-1), write h_u=(1-F_u)(1-r_u). Summing the literal update of the cell just behind that pair gives x_k(1)=(1-e) XOR(n mod2) XOR XOR h_u. Thus a black-clock guard requires XOR h_u=(d+a-1) mod2. The final h_u, at white time k-1, is the actual right visible bit demanded by the clock. The full derivation, sharp final-cell and d1 controls are in GC1203; independent fixed controls in rule30_zero_triangle_guard_transport.py. This supplies an origin-preserving guard interface, not a finite-state closure or a record bound. Local's L688 hand read verifies both packets, the exact horizon, guard sum, terminal-white bit and fixed offset class; no computation requested.
 
+### G.GPT288. Adjacent zero-triangle charges encode the actual visible00 pair (second-read by Local, 2026-10-13)
+
+**PROVED, Local L689 atf7e087e2.** Source: RULE30-GPT.md GC1204, following second-read G287. Under its black-offset convention and k+3<=E, let S_t(j)=x_t(j+2)x_t(j+1) XOR [(1-x_t(j))(1-x_t(j-1))][x_t(j+2) XOR x_t(j+1)]. On the old moving path, omit its final position to obtain parity R_a. Then R_a=(1-q(k-1))(1-q(k+1)) for the actual successive white visible bits.
+
+**Proof sketch.** The local empty-pair update has difference S. Shift G287's path one tick and one outward depth; the next path adds exactly one terminal hole q(k+1). At the old terminal, the black guard fixes depth2=1-depth1 and makes S=q(k-1). The required total hole parities differ by1, giving R_a=1 XOR q(k-1) XOR q(k+1). The real no11 gate converts this to the stated00 indicator. Hence valid consecutive R_a cannot contain101, or1111 (the latter would force the old absent word00000). GC1204 gives the complete endpoint proof and registered controls. This is an origin-preserving coupled gate, not a finite-state update, a cost bound or a new proof of no11. L689 hand-reads the local law, shifted path, both endpoints, horizon and visible00 interpretation; no computation requested.
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -12796,8 +12802,8 @@ entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
 
 
-### GPT G288 — Adjacent zero-triangle charges encode the actual visible00 pair (GPT, 2026-10-13; waiting for Local)
+### GPT G289 — An integer hole flux balances adjacent triangle paths (GPT, 2026-10-13; waiting for Local)
 
-**PROOF-SKETCH.** Source: RULE30-GPT.md GC1204, following second-read G287. Under its black-offset convention and k+3<=E, let S_t(j)=x_t(j+2)x_t(j+1) XOR [(1-x_t(j))(1-x_t(j-1))][x_t(j+2) XOR x_t(j+1)]. On the old moving path, omit its final position to obtain parity R_a. Then R_a=(1-q(k-1))(1-q(k+1)) for the actual successive white visible bits.
+**PROOF-SKETCH.** Source: RULE30-GPT.md GC1205, under G288's actual triangle and horizon. The integer change of the spatial hole after shifting by one time and one outward depth is Delta=AB-h(A+B), where h=(1-C)(1-D) and A,B are the outward cells. If h0 this is AB; if h1 the new hole is(1-A)(1-B), giving AB-A-B. Summing over adjacent paths and using the old black guard makes the terminal Delta=-q_old. Hence J_(a+1)-J_a is the sum of the strict interior signed changes, where J excludes the terminal visible hole. The first change is0 from G287's entry packet.
 
-**Proof sketch.** The local empty-pair update has difference S. Shift G287's path one tick and one outward depth; the next path adds exactly one terminal hole q(k+1). At the old terminal, the black guard fixes depth2=1-depth1 and makes S=q(k-1). The required total hole parities differ by1, giving R_a=1 XOR q(k-1) XOR q(k+1). The real no11 gate converts this to the stated00 indicator. Hence valid consecutive R_a cannot contain101, or1111 (the latter would force the old absent word00000). GC1204 gives the complete endpoint proof and registered controls. This is an origin-preserving coupled gate, not a finite-state update, a cost bound or a new proof of no11. Waiting for Local's shifted-path and terminal read.
+GC1205's fixed actual125 fixture has J26->31->26 at consecutive a0/1, and31->29 at a8, with direct counts matching creations minus destructions. Thus a proposed monotone cost using J alone is refuted. This is a finite counter, not a repeatable full-state cycle or an impossibility for richer costs. Registered controls in rule30_zero_triangle_hole_flux.py retain the failed prediction. Local's signed-law and endpoint read is pending.
