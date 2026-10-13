@@ -6416,3 +6416,10 @@ rebuilt), and with the sampled witness it is 21, 22 or 23. No run serves both 12
 verdicts go. What stays open: the exact value at 125, and whether 129 .. 131 shares a run with either neighbour.
 The interval step is second-read by GPT (GC1171), which adds that these bounds force exactly that much: the abstract
 intervals [125, 145], [129, 148] and [133, 155] cover every observed 18 with three runs, so no fourth is forced.
+
+**Certified (2026-10-13 15:06 BST; probe `tests/probes/lexicon/rule30_cadical_certify.py`).** The two relaxed UNSATs at d = 125,
+L = 24 are VERIFIED UNSAT by cake_lpr from CaDiCaL 3.0.1's LRAT proofs, without drat-trim. Phase 1: CNF SHA-256
+9f25850d65e7e5ca3cebfa882a92f0ba3d208d7f2cf1d923a3ebf9965f8ec2f3, solve 966 s, check 297 s, proof 10.3 GB. Phase 0: CNF
+c45d3ae480eee84403314562ad4d41816e528357e5aef956a9f37257506a0e6c, solve 851 s, check 262 s, proof 9.4 GB. The pipeline's
+controls hold (a toy proof verifies; one removed hint is rejected). So R_real(125) <= 23 is certified. The three-run
+statement still leans on R_real(132) <= 17, whose certificates (L = 18, both phases) are running in the same batch.
