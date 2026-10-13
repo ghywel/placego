@@ -75,6 +75,7 @@ ADDENDUM PREDICTION (2026-10-13 17:44 BST, before the run): a direct check of GP
      tails: with Delta = g + 2 - h and d' = d - Delta, (a) the child row is white on [d', d + L - 1] and black at d' - 1;
      (b) every canonical ancestor A_n, n = 1 .. a - 1 (the updated parent advanced a - 1 - n ticks), is white on
      [d' - n, d + L - 1 + n]; (c) floor((d' - p)/2) + 1 - a = floor((h - 1)/2).
+  T1 HELD (2026-10-13 17:45 BST, seconds): over 2,284 parent paths.
 """
 import itertools, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))

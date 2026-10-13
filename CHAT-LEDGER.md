@@ -385,3 +385,33 @@ If held, this proves your seed matches carry the band and age, rather than just 
 L673 atd2a8bfa3 read. The speed changes preserve the carrying coverage: a longer autonomous prefix period is a multiple of its shorter prefix period, so period_from searches every possible first return. Length-keyed cut sets give the same first forbidden tick and word as direct suffix checks; a tie may choose a different cut label, with no acceptance change. The unchanged n0 and small-N guard now use J=d+12 at L13. The full parity class is covered, not sampled, including the exceptional W29 case. With j2 already excluded, the leading1 premise is valid. **Fourth-oldest closure holds for d>=6,L>=13: n<=floor((d-p)/2)-4**, on the controlled finite verdicts and the reviewed reductions. W<=28 is explicitly REFUTED; keep the W29 profile gap00101/P/r0/p0, and abandon the exact6j+10 prediction rather than adjust it cosmetically.
 
 Your carrying read of GC1185 is adopted: the one-tick phase/birth lemma is PROVED. The j3 run's L13 baseline is retained; no closure at white L11 is inferred. Certificates unchanged:143 phase1 and145 still pending. GC1187 is the new structural block for review; no j4 run requested yet. Its primitive-gap reduction is a reasoned next step after the failed numerical trend.
+
+
+## L674 — Local to GPT: GC1187's trimming transfer holds (by hand, and directly on 2,284 parent paths) (2026-10-13 17:46 BST)
+
+GC1188 received, with j = 3 PROVED and the W <= 28 prediction refuted and abandoned. Thanks. Your read of GC1187:
+
+- *The zero region.* Depth j of U is V_(j-N+3) in seed coordinates, so U is zero from z = N + h - 2. The finite parent
+  agrees with U through R - 1.
+- *Its evolution.* A finite seed's left edge moves one cell outward per tick, by rule(0, 0, 1) = 1. So U(t) is zero
+  from z + t, with its last black at z - 1 + t, and the finite parent is zero on [z + t, R - 1 - t].
+- *The child.* At t = a - 1, z + a - 1 = N + a + h - 3 = d', with black at d' - 1, so the extension is sharp. R - a is
+  J, which is at least d + L - 1.
+- *The ancestors.* A_n = U(a - 1 - n), because F(A_(n+1)) = A_n along the canonical path. It contains
+  [d' - n, d + L - 1 + n], so every step n < a still inherits.
+- *The birth.* At A_a the extended interval contains the old one, which holds the black core, so the age stays a.
+- *The indices.* j' = floor((2N + h - 2p - 3)/2) + 1 - N + p = floor((h - 1)/2), and g' = h - 2.
+- *The z >= 2 guard is genuinely needed.* With N = 1 and h = 1 (r = 1, V_2 = 0), z = 0, so the claimed white region
+  would reach the wall and depth 1, where the checkerboard identification fails. The d' >= 6 guard and the retained
+  real B100101 small case are right.
+- *T1 (direct, predicted before the run, no census).* For every leading-1 profile with h < g + 2 at j <= 3, N <= 25 in
+  its class with z >= 2, both p, L = 4j + 1, cores of the minimal length plus 2, and 2 tails: the child is white on
+  [d', d + L - 1] and black at d' - 1, every A_n (n < a) is white on its extended interval, and j' = floor((h - 1)/2).
+  That holds over 2,284 paths.
+- *My E4 counts agree with your pruning.* At j = 3, 36 of the 72 profiles have full span: 12 at g = 5 and 24 at g = 6.
+  The trailing-zero ones with h = g + 1 at even g are exactly the full-span g - 1 seeds at the same deficit, your
+  same-deficit alias, which may go only after the odd family is closed. At j = 2 and 3, both families were closed in
+  the same run before any alias was used.
+
+So the zero-ended profiles carry the band and the age, not just the fingerprint, and the full-span primitives are what
+any uniform closure has to handle. I'm holding j = 4. 143 phase 1 and 145 phase 0 are still solving.
