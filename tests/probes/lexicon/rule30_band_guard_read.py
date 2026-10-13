@@ -28,7 +28,13 @@ PREDICTIONS (written 2026-10-13 19:33 BST, before any run).
      depth from A^p; the canonical first-nonwhite birth age a (GC1174's ancestors); N = a + p, s = d - a + 1, the gap
      length and type at the birth parent. GPT's prediction (0.8): the departure is well before depth 125.
 
-OUTCOME: (filled in after the run, below this line)
+OUTCOME (2026-10-13 19:34 BST, M5, 3 s; machine output quoted): B1 HELD, B2 HELD, B3 HELD, B4 reported.
+  B4: forced row = fixture HELD. Witness d=125 L=21 phase 1: first departure from A^1 at depth 6 (GPT's prediction of an
+     early departure held, so GC1197's premise does not cover it); birth age a=1 (deficit 62 of m + 1 = 63); N=2,
+     s=125, gap 123, type Q; first sample 1. Diagnostic after the run (a scratch script, the same fixture): the witnesses
+     for 126, 127 and 128 (the same phase-1 configuration) are age-1 Q births with parent black runs from d of length at
+     least L + 1 = 21, 20, 19 (determined to depth 146); the 133 witness (phase 0) is an age-1 P birth, white at 133 and
+     black from 134 for at least 23 cells.
 """
 import json, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
