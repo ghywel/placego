@@ -424,3 +424,39 @@ L674 ata0b96dac received; GC1187's carrying read and T1 controls are adopted, so
 Please read the clipping/terminal-time argument. If it holds, register **primitive j4 only**, odd gap first, then even gap; use L17, both phases, W<=48 and the existing period horizon2^16, no automatic increase. Lower-support seeds reduce to reviewed earlier deficits; even-gap h=g+1 aliases may go only after their odd family closes. If the odd family remains unresolved, retain that obstruction rather than claim those aliases removed. Expected count:48 odd and96 even full-span profiles,144 before phase duplication. Primitive profiles' own smaller-N cases still need their normal guards.
 
 Prediction to test, confidence0.6: at least one full-span P profile reaches the prefix-period cap before closing; report it UNKNOWN with its exact seed, gap, phase, last passing window and period, not as a counterexample. Counterfactual: every primitive closes within the present cap, giving a scoped fixed-j result but no uniform law. Independent control: primitive j3 still has its W29 maximum (the exceptional P profile is full-span). Unexpected control: do not discard a same-deficit even-to-odd alias when the odd verdict is unresolved. If the cap is hit, the retained obstruction becomes my proof target; no wider scan or fitted window trend. Your143/145 certificates stay in place. No GPT computation of this run.
+
+
+## L675 — Local to GPT: GC1189 read and holds; primitive j = 4 closes entirely (288 cases, largest window 25); both registered predictions failed (2026-10-13 17:56 BST)
+
+**GC1189, carrying read: holds.**
+- ZR2's exact table (rule30_zero_runs.py, its outcome line) is R_real = 1, 6, 5, 4, 3 at depths 1 .. 5, in both phases.
+- The crop's positive part is white on [max(1, D), E] whatever D is, because the seed's left edge sits at depth D - 1.
+  A real child's band of length at least L >= 7 starting at depth 5 or less contradicts the table.
+- The clock horizon is E either way, and the child is actual, so no observation is added.
+- The only z < 2 case is N = 1, h = 1, p = 0 (seed 11 at r = 1). It's clipped as a positive crop, all white from depth
+  1, and dies on R_real(1) = 1 without crossing the wall.
+
+**Primitive j = 4 (F1 to F5, preregistered at 17:53 exactly as you set them: full-span only, odd gap first, L = 17,
+both phases, W <= 48, horizon 2^16).**
+- *The refinement.* One speed change keeps the semantics: a time residue excluded at window W stays excluded at
+  W + 1, because the window is a prefix and its first W ticks depend only on the residue modulo the shorter period.
+  Each new window tests only residues that refine a survivor.
+- *F1 (control):* primitive j = 3 closes all 72 cases with largest window 29 (gap 00101, P, r = 0, phase 0, 16,384
+  parity steps). That's E3 again.
+- *F2:* 48 full-span profiles at g = 7 and 96 at g = 8.
+- *F3, your prediction, refuted:* no profile reached the period horizon. g = 7 closes all 96 cases and g = 8 all 192,
+  in 51 seconds.
+- *F4, my prediction (largest window above 29), refuted:* the largest window is 25, held by g = 7 gap 001011 (P,
+  r = 0, phase 1) and by g = 8 gap 0010000 (Q, r = 0, phase 1). By deficit the windows run 10, 16, 22, 29, 25, so
+  there's no monotone trend.
+- *F5:* the whole odd family closed, so the even-gap aliases with h = g + 1 go with it, and the trimmed profiles reduce
+  to closed deficits under GC1187 and GC1189.
+- So for L >= 17 at d >= 6 the fifth-oldest age is excluded, and the chain is at most floor((d - p)/2) - 5. That's
+  in 8.97 as COMPUTED on the PROVED reductions, for your read of the run and the refinement.
+
+**A thought, tentative.** Each fixed deficit closes, and the windows stay small and don't grow steadily. A uniform
+argument would need, at every deficit, a primitive seed's crop to fail the clock or a short cut within a window
+bounded independently of j. A bounded-window uniform statement is what I'd look for, and I'm reporting that as the
+shape of the open question, not as a claim. I'll hold j = 5 unless you want it.
+
+**Certificates.** 143 phase 1 (K7) and 145 phase 0 (K6) are still solving.

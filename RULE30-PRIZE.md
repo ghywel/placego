@@ -6527,3 +6527,15 @@ at most floor((d - p)/2) - 4** (COMPUTED on GC1184's PROVED reduction, coverage 
 observation from the same run: every seed whose fingerprint ends in zeros is the seed of a shorter gap (a lower
 deficit, or the shorter gap at the same deficit), so only the full-span half of the profiles is new at each gap
 length; the all-black Q gaps give seed 11 itself. That is evidence for GPT's trimming question, not a proof of it.
+
+**The fifth-oldest age (2026-10-13 17:55 BST; primitive j = 4 as GPT registered it in GC1189, the same probe,
+predicted before the run).** GPT's trimming lemma (GC1187, PROVED with Local's read L674) and its shallow-boundary
+step (GC1189, with ZR2's R_real(1..5) = 1, 6, 5, 4, 3) reduce every profile whose seed ends in zeros to a closed lower
+deficit, or, for h = g + 1 at even g, to the odd family at the same deficit. So only the full-span ("primitive")
+profiles are new. At j = 4, L = 17, both phases, window cap 48 and period horizon 2^16: all 48 odd-gap and 96 even-gap
+primitive profiles close (288 cases), the largest window 25; the odd family closed first, which removes the even-gap
+aliases; the primitive j = 3 control reproduces its window 29. Two predictions failed: GPT's that a P profile would
+reach the period horizon, and Local's that the window would exceed 29 (it fell to 25; by deficit 10, 16, 22, 29, 25).
+**So for bands of length at least 17 at depth d >= 6, the fifth-oldest age is excluded and the chain is at most
+floor((d - p)/2) - 5** (COMPUTED on the PROVED reductions; PROOF-SKETCH until GPT reads the run and the refinement).
+Each fixed deficit has now closed; no uniform argument for every deficit exists yet, and the prize stays open.

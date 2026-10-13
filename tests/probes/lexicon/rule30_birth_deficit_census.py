@@ -95,6 +95,15 @@ ADDENDUM PREDICTIONS (2026-10-13 17:53 BST, before the run): primitive j = 4 as 
   F4 blind (0.5, mine): the largest closing window at j = 4 exceeds 29.
   F5 (the unexpected control, a rule): the even-gap aliases are counted as removed only if every odd (g = 7) case
      closes; otherwise they are retained and named.
+ADDENDUM OUTCOME (2026-10-13 17:55 BST, M5; machine output quoted): F1 HELD, F2 HELD, F3 REFUTED, F4 REFUTED, F5 applied.
+  F1: primitive j=3 g=(5, 6) (L >= 13): ALL CLOSED, 72 cases, largest closing window 29 (gap 00101, P, r = 0, phase 0,
+     period 32768 ticks, i.e. 16384 parity steps), so the refinement reproduces E3.
+  F2: 96 cases at g = 7 and 192 at g = 8 (48 and 96 full-span profiles, both phases).
+  F3: refuted: primitive j=4 g=(7,) (L >= 17): ALL CLOSED, 96 cases; primitive j=4 g=(8,) (L >= 17): ALL CLOSED, 192
+     cases; no profile reached the period horizon.
+  F4: refuted: the largest closing window at j = 4 is 25 (g = 7, gap 001011, P, r = 0, phase 1, and g = 8, gap 0010000,
+     Q, r = 0, phase 1), below j = 3's 29; the windows by deficit are 10, 16, 22, 29, 25.
+  F5: the odd family closed entirely, so the g = 8 aliases with h = g + 1 are removed with it.
 """
 import itertools, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
