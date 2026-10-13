@@ -41,6 +41,7 @@ ADDENDUM PREDICTION (2026-10-13 19:19 BST, before the run): GPT's GC1196 cause f
   V1 must hold: for k = 50, 86, 162, 198 and their lifts k + 224, k + 448, the child's visible word over the window
      ell + 3 is (10)^n 0 1 with n >= 2, its last six symbols are 101001, that word is in the phase-0 certified list
      (mfw44all), and no proper suffix of 101001 is in the list (so 101001 is the cut that fires at tick ell + 1).
+  V1 HELD (2026-10-13 19:19 BST, seconds), at all twelve k.
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
