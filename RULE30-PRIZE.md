@@ -6435,6 +6435,11 @@ proof 14.6 GB) and in phase 1 (CNF 87e50000964b00f9c073edab62a37f303aaee1ab87621
 The L = 22 certificates followed at 17:04 (rule30_cadical_certify.py K5): VERIFIED UNSAT in phase 0 (CNF
 cce48cd7ebaef27bbb879832fbf287f498cb07bd0040b4c5f4cc7a579a7acf08, check 359 s) and phase 1 (CNF
 41859aa2069b24da68ecb66108b24908926be1168b6547988f5de1e32b6e5722, check 357 s). **R_real(125) = 21 is certified.**
+**R_real(143) = 17 (2026-10-13 19:03 BST; rule30_cadical_certify.py K4 and K7).** The first depth left open at 18
+(CUT-P26's 4-hour caps under load) is decided: L = 18 is VERIFIED UNSAT by cake_lpr in phase 0 (CNF
+27441f21cfc6b09bbcbafed1f4426784c4a1a73a0ce42bdf3d0128e072a8ebb6, solve 4,902 s, check 1,273 s) and phase 1 (CNF
+d0b5d054a7d4c11382864a0b401f376ed46f40d6a804035f0847c285a8a0db49, solve 4,545 s, check 1,349 s), and the sampled witness
+gives 17. 145 (phase 0 certified, phase 1 solving) and 146 .. 150 remain open at 18.
 
 ### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
 

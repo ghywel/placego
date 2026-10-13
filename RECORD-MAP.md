@@ -105,7 +105,7 @@ PART: as on the board.
 - Phase0 R(d)<=d+4 to89; R89=75 — COMPUTED — §8.36/37, RK93.
 - Black-wall WA3 wrong parity; R°(3)=4 — PROVED CL212 — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
-- R_real(97..120) exact, maximum16 at108; 121..124, 140, 144<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132=139=142=17 (both phases, kissat) — COMPUTED — RR3, L596..617.
+- R_real(97..120) exact, maximum16 at108; 121..124, 140, 144<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 witnesses; 132=139=142=17 (kissat; 132 cake_lpr), 143=17 cake_lpr — COMPUTED — RR3, L596..617, §8.96.
 - Sampling 2^28..2^30/phase: 97/101 exact; R_real(125)>=21, 133>=23, 194>=26, 200>=20 (L=21 UNKNOWN at 12 h, L641), 279>=28, 1035>=38; Intel's 16 witnesses (to 1552>=31) replay valid — COMPUTED — SP, IW, L617..620.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - RR/RR3 cone CNF matches the finite query, solver-free — PROVED (source scope, CL154) — GC937; replay attributed apart.

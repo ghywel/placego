@@ -51,7 +51,11 @@ ADDENDUM PREDICTION (2026-10-13 18:21 BST, before the run): K6 held in phase 0 (
   K9 blind (0.6): d = 145, L = 18, phase 1 is VERIFIED-UNSAT within a 4-hour cap; then R_real(145) <= 17 (sampled 16).
      REFUTED-BY: SAT (then lifted), a cap, or CAKE-FAILED.
 
-OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD; K7, K8, K9 pending.
+OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD; K8, K9
+  pending.
+  K7 (19:03): d=143 L=18 phase 1 (1226 words): VERIFIED-UNSAT; cnf sha256
+     d0b5d054a7d4c11382864a0b401f376ed46f40d6a804035f0847c285a8a0db49; solve 4545 s, check 1349 s, lrat 29806.7 MB. With
+     K4 and the sampled witness of 17 (SP, second-party), R_real(143) = 17 exactly, certified in both phases.
   K6 (18:20): d=145 L=18 phase 0 (1156 words): VERIFIED-UNSAT; cnf sha256
      5f81c4c71c57a1b339ae5a2c35aabd5b84ad85d45f05de258da2277790d53991; solve 5402 s, check 1343 s, lrat 33525.2 MB.
   K4 (17:23): d=143 L=18 phase 0 (1156 words): VERIFIED-UNSAT; cnf sha256
