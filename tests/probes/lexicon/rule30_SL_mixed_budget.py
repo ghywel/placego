@@ -38,6 +38,24 @@ PREDICTIONS (written 2026-10-13 23:49 BST and committed in 777abed9 at 23:50:29,
   M4 blind (0.6, the second fixture): 10,000 random S/L lifts of 600 ticks reach, at some depth > 150, a white run
      longer than the exhaustive N = 150 maximum.
   Unexpected check: the run lengths are also computed by a slow scalar loop on 50 words, compared with the vector code.
+
+OUTCOME (2026-10-14 00:02 BST, M5, about 10 minutes; machine output quoted): M1 HELD, M2 HELD, M4 HELD; the
+  unexpected check passed (scalar loop = vector code on 50 words).
+  N= 60:    159 S/L lifts, longest white run  9 (log2 W =  7.3); coin control 14
+  N= 90:   2307 S/L lifts, longest white run 13 (log2 W = 11.2); coin control 15
+  N=120:  32820 S/L lifts, longest white run 17 (log2 W = 15.0); coin control 18
+  N=150: 468304 S/L lifts, longest white run 19 (log2 W = 18.8); coin control 22
+  M4: random 600-tick lifts reach 20 at depths > 150 (exhaustive N = 150 maximum 19).
+  Reading: no constant mixed budget. The longest white run tracks log2 of the number of lifts (the coin law), so a
+  mixed S/L residence's image allows white runs of about 0.125 per tick. Scope: these are all S/L block orders (the
+  free shift, 0.256 bits per visible bit, above the channel bound 0.1236), not the real S/L sublanguage.
+
+ADDENDUM PREDICTION (2026-10-14 00:03 BST, before the run; the second fixture of the loop-check rule's step 4).
+  M5 blind (0.65): restricted to lifts whose blocks' visible bits (100 for S, 10000 for L) avoid the certified phase-0
+     list (mfw44all plus cuts40) throughout, the longest white run at depths >= 12 still grows by at least 3 from
+     N = 60 to N = 150, and the restricted count still grows. Counterfactual: a plateau of at most 8, a candidate
+     constant budget for real S/L residences. The visible word from a white anchor is a phase-0 word of the
+     configuration at that time, so the restriction removes no real residence.
 """
 import os, sys
 import numpy as np
@@ -138,5 +156,45 @@ def main():
         max(deep), table[150]), 'HELD' if max(deep) > table[150] else 'REFUTED')
 
 
+def lifts_cut(N, ac):
+    """Lifts whose visible bits avoid the certified list, checked block by block (a subset of the cut-avoiding set)."""
+    vis = {S: '100', L: '10000'}
+    out, stack = set(), [('', 0)]
+    while stack:
+        w, st = stack.pop()
+        if len(w) >= N:
+            out.add(w[:N])
+            continue
+        for b in (S, L):
+            s2, ok = st, True
+            for ch in vis[b]:
+                s2 = int(ac.goto[s2][int(ch)])
+                if ac.out[s2]:
+                    ok = False
+                    break
+            if ok:
+                stack.append((w + b, s2))
+    return sorted(out)
+
+
+def m5():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import rule30_relaxed_records_k as rlk
+    from rule30_seed_prefix_tree import AhoCorasick
+    ac = AhoCorasick(rlk.load_forbidden('44all') + rlk.load_cuts(0, 40))
+    table, counts = {}, {}
+    for N in (60, 90, 120, 150):
+        ws = lifts_cut(N, ac)
+        counts[N] = len(ws)
+        table[N] = int(longest_white(images(ws)).max()) if ws else 0
+        print('cut-avoiding N=%3d: %7d lifts, longest white run %2d (log2 W = %.1f)' % (
+            N, len(ws), table[N], np.log2(max(1, len(ws)))), flush=True)
+    grow = table[150] - table[60] >= 3 and counts[150] > counts[120] > counts[90]
+    print('M5 cut-avoiding lifts: run grows by >= 3 and the count grows:', 'HELD' if grow else 'REFUTED')
+
+
 if __name__ == '__main__':
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == 'm5':
+        m5()
+    else:
+        main()
