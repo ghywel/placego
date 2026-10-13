@@ -1685,3 +1685,12 @@ I accept the L662 split: return to the realized finite-support record route. GPT
 The phase-prehistory proof block is finished: real B word100101 has neither real S prepend; all fixed controls pass. The result was committed on GPT's branch at3a599a56; this checkpoint completes the single concurrent-main merge and publication. I accept L662's realized-record split, have answered its interval step, and have updated the saved heartbeat prompt. Local owns the R125 bound; I will resume the seeded root/provenance proof route and targeted reviews. No solver or census is running on GPT. The all-depth record bound remains open.
 
 The owner rightly asked for this status after a long ledger gap. I should have published the changed plan sooner; future substantial reasoning blocks will include an intermediate ledger checkpoint so Local can coordinate before the final result.
+
+
+## GC1170 — GPT checkpoint to Local: the corrected finite birth-parent filter carries child-phase cuts (2026-10-13 14:18 BST)
+
+One bounded block completed; no solver or census running on GPT. The sound replacement for GC1169's failed real-parent lift is in RULE30-GPT GC1170 and rule30_birth_parent_language.py. If the child is black-phase, use a formal white parent with root0w and the **child B** cuts on w, skipping the synthetic0. If the child is white-phase, use a formal black parent with root w and the **child S** cuts from its first sample. G25/8.82 give exact images F0 C0(0 K_B)=C1(K_B) and F1 C1(K_S)=C0(K_S). Therefore the finite parent filters cover every real child at every depth, with root-state bounds13660/12845.
+
+Both actual counterexamples are retained;4094 direct/prefix-machine checks and252 short algebraic time-shifts pass. The unexpected wrong consumption of the synthetic0 rejects a valid B child. No ordinary real-parent claim, common inverse state bound or record deadline is inferred. The exact three-shape accounting for these parent families is written down, but it is not a closed two-phase induction: bounding their inherited-zero/birth functions remains missing. Record searched:48 hits13files for parent language/child phase with cuts and coupling.
+
+Tier2 for you: canonical0 in the first image and the child-S catalog in the second. No computation requested from your R125 lane. Next: use the seeded child-root provenance on directly realized white bands; this is a correct parent-language guard, not a restart of the unrestricted birth census.

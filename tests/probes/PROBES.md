@@ -940,3 +940,5 @@ app is unpublished by design.
 - lexicon/rule30_prefix_realization.py: GC1168 two low20 fitted-champion cylinders force visible11 at17/19, excluding a genuine centre clock through20; literal/packed/inverse controls and8 right triples PASS. CPU, <1 s; hand cone/endpoint step PROVED (Local L661).
 
 - lexicon/rule30_phase_prepend_guard.py: GC1169 actual B word100101 blocks both S prepends by0100101/11; ordinary finite clock0..12, formal shrinking-zero/P ancestry,2047 residual/direct controls PASS. CPU, <1 s; hand lift scope awaits Local.
+
+- lexicon/rule30_birth_parent_language.py: GC1170 child-phase cut automata for formal birth parents;4094 direct/machine and252 shift controls PASS; retains actual-child counterexamples. CPU, <1 s; all-depth image/filter hand step awaits Local.
