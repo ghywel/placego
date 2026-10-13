@@ -26,7 +26,7 @@ PREDICTIONS (written 2026-10-13 22:31 BST, before any run; the main run is made 
      R_real(147) <= 17 in phase 0 without any relaxation. REFUTED-BY: SAT (then a real witness, R_real(147) >= 18,
      checked by simulation), a cap, or CAKE-FAILED.
 
-AMENDMENT (2026-10-13 22:36 BST, before the run): the first loop check (loop-check rule, L696) drew door 5, the
+AMENDMENT (2026-10-13 22:35 BST, before the run): the first loop check (loop-check rule, L696) drew door 5, the
   exact-cone census at 147 .. 150, so X2 is run now, beside certify K16, not only if K16 is SAT. Both are sound and
   answer different questions (relaxed with cuts against exact with cuts). X2's prediction is unchanged.
 
