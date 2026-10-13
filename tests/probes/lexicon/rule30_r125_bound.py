@@ -25,7 +25,14 @@ PREDICTIONS (written 2026-10-13 13:47 BST, before either run).
   C  control (must hold): at L = 21, phase 1, the same model is SAT and the model lifts (the published 125 witness has
      a band of 21 in phase 1), so the encoding can say yes. Run with L = 21 before the main runs.
 
-OUTCOME: (filled in after the runs, below this line)
+OUTCOME (2026-10-13, M5; machine output quoted): C HELD, P1 HELD, P2 REFUTED.
+  C: d = 125, L = 21, phase 1: relaxed SAT, and the model lifts (glued simulation VALID), visible word
+     010100001010101010100010000100001000010010000100001000010000100001000010 (another band of 21, not the published one).
+  P1: d = 125, L = 24: relaxed UNSAT in phase 1 (about 20 minutes) and in phase 0 (about 24 minutes), 1226 and 1156
+     certified words. So R_real(125) <= 23 (kissat verdicts; drat-trim and cake_lpr not installed, so uncertified), and
+     with the sampled witness R_real(125) is 21, 22 or 23. No run covers depths 125 .. 148, so 125 and 131 are served by
+     different runs, and with the split at 132 (8.96) the 18s at 125 .. 138 are at least three runs.
+  P2: refuted; neither phase reached the cap.
 """
 import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
