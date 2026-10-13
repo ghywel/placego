@@ -23,7 +23,7 @@ PREDICTIONS (written 2026-10-13 14:27 BST, before any run).
   K2 must fail (the check can say no): the same proof with one hint list corrupted is rejected by cake_lpr.
   K3 blind (0.6): d = 125, L = 24 in both phases and d = 132, L = 18 in both phases are each VERIFIED UNSAT within the
      cap. REFUTED-BY: a SAT (that would contradict a kissat UNSAT and mean an encoding difference), CAKE-FAILED, or a cap.
-ADDENDUM PREDICTION (2026-10-13 15:42 BST, before the run): the pipeline as a decider at the open depths. 143 and
+ADDENDUM PREDICTION (2026-10-13 15:40 BST, before the run): the pipeline as a decider at the open depths. 143 and
   145 .. 150 are open at 18: kissat with CUT rounds ended UNKNOWN at 14,400 s on a machine carrying 10 to 13 solvers
   (rule30_relaxed_records_k.py CUT-P26). CaDiCaL settled d = 132, L = 18, phase 0 here in 1,531 s, where kissat had taken
   5,078 s under load. Record searched (record_find): 'R_real\(143\)' -> 0 hits; '143' 'open at 18' -> 4 hits in 4 files
@@ -31,7 +31,7 @@ ADDENDUM PREDICTION (2026-10-13 15:42 BST, before the run): the pipeline as a de
   K4 blind (0.5): d = 143, L = 18, phase 0 is VERIFIED-UNSAT within a 4-hour cap (sampled R_real(143) >= 17, so with
      phase 1 it would be exact at 17). REFUTED-BY: SAT (then lifted with rule30_r125_bound.py), a cap, or CAKE-FAILED.
      Counterfactual: a cap here, on a machine carrying four solvers, says the instance is hard, not the old load.
-ADDENDUM PREDICTION (2026-10-13 16:30 BST, before the run): certify R_real(125) = 21 (8.96's kissat value). Record
+ADDENDUM PREDICTION (2026-10-13 16:14 BST, before the run): certify R_real(125) = 21 (8.96's kissat value). Record
   searched (record_find): 'R_real\(125\) = 21' -> 2 hits in 2 files (8.96 and rule30_r125_bound.py P3); 'L = 22' with
   'cake_lpr' -> 2 hits in 2 files (the same, uncertified).
   K5 blind (0.8): d = 125, L = 22 is VERIFIED-UNSAT in both phases (phase 0 first) within 3-hour caps. REFUTED-BY: SAT

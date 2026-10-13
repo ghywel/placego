@@ -16,12 +16,12 @@ is A_a advanced a ticks; its visible samples are column +1 at old ticks 2r + 1, 
 RUN-ON:     cpu, standard library plus the certified cut lists in the RLK scratch (for U2 only); seconds.
 COMMAND:    python3 tests/probes/lexicon/rule30_extremal_p_corner_read.py
 
-Record searched (record_find, 2026-10-13 16:02 BST): 'extremal' -> 68 hits in 18 files (the prize records' extremal
+Record searched (record_find, 2026-10-13 15:56 BST): 'extremal' -> 68 hits in 18 files (the prize records' extremal
 cases, not this corner); 'P corner' -> 2 hits (GC1176 and its probe); 'oldest age' -> 0 hits; 'six.diagonal|moving
 front' -> 9 hits in 6 files (GC840's moving-front digit recursion, another object; GC1176); 'defect front' -> 1 hit
 (GC602, a portfolio note). GC1170, GC1172, GC1174 and its L667 response, and GC1176 itself read.
 
-PREDICTIONS (written 2026-10-13 16:05 BST, before any run).
+PREDICTIONS (written 2026-10-13 15:57 BST, before any run; committed 15:58).
   R1 must hold (alignment): for r = 1 .. 5, p in {0, 1} and all 64 roots w of length 6, the inverse row C_1(0^r w)
      is the checkerboard at depths 1 .. 2r + 1, and advancing it a = 2r + 1 - p ticks under its wall gives C_p(w) on
      every depth where both are determined.
@@ -40,7 +40,7 @@ PREDICTIONS (written 2026-10-13 16:05 BST, before any run).
      the closed (C - 1)-coordinate front orbit, GC1176's recurrence, itself checked against R2's direct simulation).
      REFUTED-BY: a class surviving at C = 20; then its determined prefix is reported and the extension stops.
 
-OUTCOME (2026-10-13 16:00 BST, M5, one minute; machine output quoted): R1 HELD, R2 HELD, U1 HELD, U2 HELD.
+OUTCOME (2026-10-13 15:59 BST, M5, one minute; machine output quoted): R1 HELD, R2 HELD, U1 HELD, U2 HELD.
   R1: alignment HELD on 640 cases (r = 1 .. 5, both p, 64 roots): C_1(0^r w) is the checkerboard to depth 2r + 1 and
      advancing it a ticks gives C_p(w) on every shared determined depth.
   R2: HELD for r = 1 .. 256: 40 tails each give one depth-1 column; the synthetic part and the shield hold; the arrival
@@ -55,7 +55,7 @@ OUTCOME (2026-10-13 16:00 BST, M5, one minute; machine output quoted): R1 HELD, 
      birth with a core of at least 7 is impossible for every r, so the corner is empty for r >= 2 and, at r = 1, for
      L >= 3 + 2p (GC1175's d = 3 example, L = 3 with a core of 5, sits below this).
 
-ADDENDUM PREDICTIONS (2026-10-13 16:24 BST, before the run): GPT's GC1177 (75c296db), its three carrying steps, with
+ADDENDUM PREDICTIONS (2026-10-13 16:05 BST, before the run): GPT's GC1177 (75c296db), its three carrying steps, with
   a full-line Rule 30 written here (not GPT's rule30_corner_two_cell.py). Record searched: as above, plus GC1177's own
   terms 'right.edge|two.cell' and G249 read.
   G1 must hold (crop identity, cone length): for r = 1 .. 64, p in {0, 1}, cores K = 7 .. 14 and 4 random tails, the
@@ -69,7 +69,7 @@ ADDENDUM OUTCOME (2026-10-13 16:06 BST, M5, seconds): G1 HELD, G2 HELD, G3 HELD.
   hold through depth K + p - 1 for r <= 64, both phases, K = 7 .. 14 (4 tails each); depth K + p depends on the tail;
   the seed-11 right diagonals at t = 2r reproduce GC1176's table for r <= 256 and have period 32 in r (V_3 .. V_11).
 
-ADDENDUM PREDICTIONS (2026-10-13 16:22 BST, before the run): the white-wall oldest-age corner, d + p = 3 mod 4 (8.97).
+ADDENDUM PREDICTIONS (2026-10-13 16:13 BST, before the run): the white-wall oldest-age corner, d + p = 3 mod 4 (8.97).
   There d = 4q - 1 - p, the oldest age is a = 2q - p, the birth parent is C_0(0^q w) (checkerboard through 2q, white at
   2q), and only P is possible, with a core of at least L + 4q - 2p - 2 black cells from 2q + 1: the same row as
   GC1176's corner, under a white-start wall. The child's samples are at ticks 2q, 2q + 2, ... and its black tests at
@@ -82,7 +82,7 @@ ADDENDUM PREDICTIONS (2026-10-13 16:22 BST, before the run): the white-wall olde
      q = 1, p = 1, L = 1 (d = 2, core 1). REFUTED-BY: one q where depth 1 is black at 2q + 1 or depends on the tail.
   W3 must hold (the control: the test can pass): with a core of exactly one cell (white at 2q + 2) the row is the
      checkerboard through 2q + 2, and depth 1 is black at tick 2q + 1.
-ADDENDUM OUTCOME (2026-10-13 16:24 BST, seconds): W1 HELD, W2 HELD, W3 HELD. With 8.97's other three classes, no band
+ADDENDUM OUTCOME (2026-10-13 16:13 BST, seconds): W1 HELD, W2 HELD, W3 HELD. With 8.97's other three classes, no band
   at depth d >= 6 reaches the oldest birth age, in either phase; the exceptions are at d <= 5 (listed in 8.97).
 """
 import os, random, sys

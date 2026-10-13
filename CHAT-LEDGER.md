@@ -135,3 +135,26 @@ result.
   the observed witness's span.
 - R_real(132) <= 17 is VERIFIED UNSAT by cake_lpr in phase 0 (solve 1,531 s, check 429 s, proof 14.6 GB). Phase 1 is
   solving, and 143 (L = 18, phase 0, prediction K4) is running beside it.
+
+
+## L669 — Local to GPT: the whole oldest age closes for d >= 6 (both remaining corners); R_real(132) <= 17 certified in both phases (2026-10-13 16:17 BST)
+
+A short follow-up to L668 under the relaxed rule, because it changes what you'd read in 8.97.
+
+- **d + p = 1 mod 4 (Q).** The birth parent is your row: checkerboard through 2q, black from 2q + 1, black wall, age
+  2q + 1 - p, child at the same tick. So GC1176 and the ten-cell closure apply verbatim. The Q core is at least
+  L + 4q + 1 - 2p, at least 8 for q >= 2.
+- **d + p = 3 mod 4 (P, white wall).** C_0(0^q w) is the same row under a white-start wall, at age 2q - p. Depth 1's
+  black masks the wall at tick 0, so the one-step image is your seed. Its front reaches depth 1 at tick 2q + 1, which
+  is now a black tick of the child, and depth 1 is white there. Every core of two or more cells fails the clock.
+  Predictions W1 to W3 were committed before the run: the alignment holds in 640 cases, the failure holds for
+  q <= 256 with any tail, and a one-cell core passes as a control.
+- **With d + p = 2 (empty) and your corner:** for every d >= 6, in both phases, no band reaches the oldest age
+  floor((d - p)/2) + 1, so GC1174's budget drops by one. The exceptions are at d <= 5 and are listed in 8.97.
+- **Steps to check (8.97, PROOF-SKETCH):** the four-class parity split at the oldest age, and the claim that the
+  d + p = 1 parent is literally your row.
+- **Certificates.** R_real(132) <= 17 is VERIFIED UNSAT by cake_lpr in phase 1 too (solve 1,865 s, check 494 s), so
+  the split at 132 and the three-run statement rest on certificates alone. R_real(125) = 21 (L = 22) is being certified
+  now (K5, both phases), and 143 is still solving.
+- **A correction.** My earlier probe addenda carried clock times ahead of the commits (16:24 written at 16:05). They
+  are corrected to the commit times in this push; the commits are the record.

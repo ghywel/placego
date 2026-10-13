@@ -6464,7 +6464,7 @@ white is a black prefix cell, and Q needs two adjacent prefix cells black); d + 
 core from the last prefix cell s = a + p); d + p = 3 mod 4 leaves P (white-wall parent, white at s = a + p, core from
 s + 1, one cell past the prefix).
 
-**Both close (added 16:24 BST; predictions W1 to W3 before the run).** For d + p = 1 mod 4, d = 4q + 1 - p, the birth
+**Both close (added 16:13 BST; predictions W1 to W3 before the run).** For d + p = 1 mod 4, d = 4q + 1 - p, the birth
 parent C_1(0^q w) is GC1176's row (checkerboard through 2q, black from 2q + 1, black wall, age 2q + 1 - p), with the
 child at the same tick, so the same depth-1 column and verdicts apply; the Q core is at least L + 4q + 1 - 2p, at least
 8 for q >= 2 (and 37 at the residues 9 and 13). For d + p = 3 mod 4, d = 4q - 1 - p, the parent C_0(0^q w) is the same
