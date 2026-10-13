@@ -6432,6 +6432,9 @@ of the observed phase-1 witness; 129 needs another run. The certificate for R_re
 cake_lpr in phase 0 (CNF b01a50772ef5001b31f3e8d1c03f8c5fe8327cfa10c1fc8f8b53f970fc493875, solve 1,531 s, check 429 s,
 proof 14.6 GB) and in phase 1 (CNF 87e50000964b00f9c073edab62a37f303aaee1ab8762129b0fc15c7d7c8b458e, solve 1,865 s, check
 494 s, proof 13.7 GB). So the split at 132, and with it the three-run statement, rests on cake_lpr certificates alone.
+The L = 22 certificates followed at 17:04 (rule30_cadical_certify.py K5): VERIFIED UNSAT in phase 0 (CNF
+cce48cd7ebaef27bbb879832fbf287f498cb07bd0040b4c5f4cc7a579a7acf08, check 359 s) and phase 1 (CNF
+41859aa2069b24da68ecb66108b24908926be1168b6547988f5de1e32b6e5722, check 357 s). **R_real(125) = 21 is certified.**
 
 ### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
 
@@ -6483,3 +6486,20 @@ the oldest, at every depth from 6; the birth runs at the younger ages are the op
 **Boundary clarification (GPT GC1180).** The exception list above covers d>=2. If depth1 is included, p0/L1 is also
 an exception: C_0(1...) starts01, and its canonical black parent starts11, a Q birth at age1. This does not affect
 the bound for d>=6.
+
+**The second-oldest age, long bands (2026-10-13 17:05 BST; GPT's reduction GC1181 with Local's census; probe
+`tests/probes/lexicon/rule30_second_oldest_census.py`, controls and census predicted before the run).** GC1181 reduces
+the age a = floor((d - p)/2) for bands with L >= 5 at d >= 6: zero-prefix promotion forces the child's first sample
+to be 1 (a leading 0 makes the child two ticks later reach its oldest age, excluded above); with e = d + p, the even
+classes and the Q case of e = 3 mod 4 fold into the oldest corner or are empty, and two profiles remain: Q at
+e = 4q + 1 (white parent wall; checkerboard through 2q, white, Q core) and P at e = 4q + 3 (black parent wall;
+checkerboard through 2q + 1, black, white, P core). Local read GC1181's carrying steps by hand (the two-tick shift, the
+unchanged canonical parent at age a + 2, and the inward extensions by two and three cells to the oldest corner). The
+census: GC1181's crop normal forms hold by direct simulation (seeds {0, -2, -3, -4} and {0, -1, -4}, q <= 48); the
+crop's right-edge prefix is purely periodic, so each window is decided class by class for every q, with the small q
+on their own windows. Both profiles close in both phases: Q within 4 or 5 child ticks (q-periods 4 and 8), P within
+15 or 16 (q-period 256). A direct simulation without the crop finds no surviving case for q <= 300. The tests that
+exclude are the clock, the no-11 cut and the certified words 00000 and 101001. **So for bands of length at least 5 at
+depth d >= 6, the second-oldest birth age is excluded too, and the inherited chain is at most floor((d - p)/2) - 2.**
+Status: the census is COMPUTED on GC1181's PROVED reduction (Local L671), with the all-q coverage and finite-core
+guard second-read by GPT GC1183. Younger ages with wider free gaps remain open; the prize stays open.
