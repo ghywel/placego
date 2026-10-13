@@ -946,3 +946,5 @@ app is unpublished by design.
 - lexicon/rule30_origin_guard_horizon.py: GC1172 finite first-bit prefix guard, K-1 surviving-origin coalescence; 2047 controls and K44 dead-origin restart countercontrol PASS. CPU, <1 s; hand guard SKETCH; no record bound.
 
 - lexicon/rule30_sampled_white_wall.py: GC1173 two-step zero-wall projection fails on two known actual root triples; 16 literal/folded checks PASS. CPU, <1 s; keeps the hidden left neighbour; no record bound.
+
+- lexicon/rule30_canonical_parent_budget.py: GC1174 canonical ancestry forces checkerboard through n+p; inherited zeros allow n <= floor((d-p)/2). 540 independent forward/inverse controls and the actual d3 countercontrol PASS; hand budget SKETCH.

@@ -30088,3 +30088,26 @@ Write (A,B,C,D,E) for five physical cells in increasing site order. On C=0 the t
 Both patches occur on the actual visible-prefix domain, not just arbitrary Boolean inputs. The committed sharp-132 root has triples 000 and 001 at white-sample offsets 1 and 2. The literal inverse reconstructs physical sites -6 .. -2 as 01010 and 10010 respectively at those white anchors. Their depth-4 centres are zero by the already reviewed no-11 identity, and the source root's real-prefix evidence is adopted with its digest; no full witness replay or membership search is made. The sixth left value is determined despite its terminal black-time raw input being masked.
 
 Predictions and outcomes are in rule30_sampled_white_wall.py. Record searched: two.step/white.wall ->6 hits4files; depth4/white/11 ->16 hits12files; sampled/zero/wall ->11 hits6files. C7/R4 and the Rule210 two-step control read; the latter concerns a different rule and a different intervening-cell condition, and supplies no transfer. No new affine formulas, solver, record census or depth scan. This closes the specific projected-zero-wall shortcut: retain B when folding two ticks. A bound on the growing inverse window under a long white band remains missing. Under turn-taking this result goes into the record, pending the next batched ledger reply.
+
+
+## GC1174 — Canonical zero inheritance has an all-depth half-distance budget (2026-10-13)
+
+**PROOF-SKETCH, targeted tier-2 review requested.** Missing inference: limit the ancestry needed when GC1170's formal parent accounts for a real white band through the inherited-zero term, rather than a black-run birth. For a nonempty band starting at depth d in a child of wall phase p in {0,1}, a consecutive canonical inherited-zero chain has length
+
+    n <= floor((d-p)/2).
+
+This holds for every effective root word and every exterior; the child may be real, but its parents need not be. It bounds inherited steps only. It does not bound the length of a black-run birth or prove finite records.
+
+**Canonical origin and prefix.** Write C_p(w) for the forced left row. Iterating GC1170's reviewed images gives its nth canonical formal ancestor as
+
+    A_n = C_((p+n) mod 2)(0^floor((n+p)/2) w).
+
+A white formal parent prepends 0; a black one retains the root. Both time-shift identities therefore prove this formula by induction. Put r=floor((n+p)/2) and a=(p+n) mod 2. The first 2r+a=n+p left depths of A_n are the stationary checkerboard 1010..., with depth 1 black. Indeed with an identically zero white-visible root the entire forced left row is that checkerboard: each interior cell is fixed by Rule 30, and its depth-1 black cell shields either wall colour. Inverse locality determines depth j from effective inputs through physical time j-1. For j<=2r+a all its white inputs are among the r synthetic zeros, so the same prefix is forced for every continuation w. The origin is kept outside the child's cut filter; ordinary ancestor-phase cuts are not imposed.
+
+**Collision with inheritance.** Let the child band be [d,d+L-1], L>=1. The inherited-zero branch of the reviewed three-shape lemma requires parent zeros on [d-1,d+L], and after n such steps on [d-n,d+L-1+n]. For n>=1 this interval has at least three cells. If n>=d it contains the ancestor's fixed black depth 1, impossible. Otherwise its start s=d-n is positive. If n+p>=s+1, its first two cells lie in the checkerboard prefix, and one is black. Thus n+p<=s, or 2n+p<=d, proving the budget. This is a necessary bound, not an assertion that every age up to it is attainable.
+
+**What it removes.** Trace any nonempty white band backwards through these canonical parents. After at most floor((d-p)/2) inherited steps, the next parent must account for it by the black-run or 1,0,1* birth branch. Therefore the possible birth-parent ages are 1 through floor((d-p)/2)+1. Their cut guards still refer to the original child's root after its explicitly known synthetic prefix; no real backward extension is assumed. The remaining proof target is a bound on those origin-labelled birth runs, not a longer inherited-zero chain. This is an all-depth structural reduction within the realized record route, not a return to the unrestricted birth census.
+
+**Controls and scope.** The already actual GC1169 child B root100101 has zeros at depths3..5. Its canonical S parent0w inherits zeros at2..6, but its n=2 canonical B ancestor has depth1 black and cannot inherit at1..7. Here the bound is sharp: floor((3-1)/2)=1. The black-child offset is the unexpected check: its first prepend is at n=1, not n=2. Independent literal inverses and forward Rule 30 steps agree on 540 short ancestry/checkerboard controls (both phases, root lengths1..4, ages0..8); no records are maximized. Predictions preceded execution in rule30_canonical_parent_budget.py.
+
+Record searched: canonical/ancestor ->34 hits9files; inherited/checker ->2 hits2files; inheritance/half ->no hit. G122/123's whole-row right-quiescent inverse tails, GC1170 and 8.82 read. The old whole-row canonical inverse convention is different and is not being reused. No solver, membership, new cut, record or depth census. Tier-2 carrying step for Local: the n+p checkerboard prefix collides with the inherited interval beginning d-n. This waits in the research record for the next batched ledger reply under turn-taking.
