@@ -35,6 +35,12 @@ OUTCOME (2026-10-13 19:34 BST, M5, 3 s; machine output quoted): B1 HELD, B2 HELD
      for 126, 127 and 128 (the same phase-1 configuration) are age-1 Q births with parent black runs from d of length at
      least L + 1 = 21, 20, 19 (determined to depth 146); the 133 witness (phase 0) is an age-1 P birth, white at 133 and
      black from 134 for at least 23 cells.
+
+ADDENDUM PREDICTION (2026-10-13 20:05 BST, before the run): Local's read of GPT's GC1199 (a fixed-prefix endpoint charge).
+  Y must hold: with the fixture's left depths 1 .. 124 (phase 1) and depths 125 .. 146 white, and 3 random tails from
+     147, the visible samples at white ticks 71 .. 145 are 00100100001000010000100001000010000101 for every tail; that
+     38-bit word is in the phase-1 certified list (mfw44allp1 or cuts40); the samples before tick 145 match the
+     fixture's visible word; and with depth 146 black instead (the fixture's own cell) the sample at 145 differs.
 """
 import json, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -122,6 +128,32 @@ def main():
           ' N=%d, s=%d, gap g=%d, type %s; first sample beta=%d'
           % (d, L, p, p, dep, a, m + 1 - a, m + 1, N, s, s - N, typ, vis[0]))
     print('   parent row depths 1..%d: %s' % (s + 3, ''.join(map(str, par[1:s + 4]))))
+
+
+def gc1199_check():
+    import random as _r
+    import rule30_relaxed_records_k as rlk
+    data = json.load(open(os.path.join(HERE, '..', '..', '..', 'site', 'wolframcollatzmahler', 'data', 'records.json')))
+    w = [r for r in data['rows'] if r['depth'] == 125][0]
+    left = [int(c) for c in w['left']]
+    word = '00100100001000010000100001000010000101'
+    lists = set(rlk.load_forbidden('44allp1') + rlk.load_cuts(1, 40))
+    rng = _r.Random(1199)
+    ok = word in lists
+    seen = set()
+    for _ in range(3):
+        row = [None] + left[:124] + [0] * 22 + [rng.randrange(2) for _ in range(60)]
+        x = depth1_column(row, 1, 145)
+        vis = ''.join(str(1 - x[t]) for t in range(71, 146, 2))
+        seen.add(vis)
+        ok &= vis == word
+    full = ''.join(str(1 - x[t]) for t in range(1, 146, 2))
+    ok &= full[:-1] == w['visible'][:len(full) - 1]
+    row = [None] + left[:124] + [0] * 21 + [1] + [0] * 60
+    x2 = depth1_column(row, 1, 145)
+    ok &= (1 - x2[145]) != int(word[-1])
+    print('Y GC1199 endpoint word and locality:', 'HELD' if ok else 'FAILED', '| tails gave', len(seen), 'word(s)')
+    return ok
 
 
 if __name__ == '__main__':
