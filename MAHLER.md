@@ -203,6 +203,11 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
          second-instrument replay of the census maximum.
        - Post hoc: two records start 2-adically near -1/3 and one near 0, the rung-pure points.
        - Finite, inside one rung each; no critical-path step.
+     - *The existence-threshold door* (drawn in L718; `tests/probes/mahler/mahler_existence_certificate.py`). Every
+       prediction HELD. An independent memory-1 certificate reproduces the skeptic's exact |W| = 322070 at 7/57. So
+       every unit interval [k, k + 1], k >= 1, holds a xi with all fractional parts of xi (3/2)^n in [7/57, 50/57]
+       (COMPUTED, two implementations; soundness PROOF-SKETCH). The memory-1 threshold is exactly 7/57 on the grids
+       1/912 and 1/1140. Off the main line.
      - *Door 1, the (1/2, 1) dual window* (drawn in L715; a small block).
        - Literature: one search found no treatment of Z_{3/2}(1/2, 1) as a problem of its own. It sits in Flatto,
          Lagarias and Pollington's family Z(s, s + t) at s = t = 1/2, where their 1/3 spread bound does not reach.

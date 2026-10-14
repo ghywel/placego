@@ -285,6 +285,63 @@ productive locally and circular globally.
    from a seed word or question chosen by the same reproducible draw.
 Related: `steps-before-leaps` (momentum), `walk-away`, `random-chaos`, `expand-then-contract`, `mission-drift-check`.
 
+### instinct (the owner, 2026-10-14)
+
+**Rule.** Treat felt signals as information about where to look and whether to persist, never as evidence for a
+claim. Write a felt signal down the moment it arises, act on it within a bounded budget, and record afterwards whether
+it was right, so that trust in instinct is earned and calibrated.
+
+**Why.** The owner, 2026-10-14, in a note he titled "On loops, feelings and auto-pilot - two brains one jar":
+"There are 2 sides to my brain, literally (hemispheres) and metaphorically (conscious vs unconscious). ... I often think
+of my conscious mind as submitting questions to my unconscious mind. ... Eventually, or never, the unconscious loop
+returns. It bursts into the conscious side, EUREKA! ... I find I have to write down the deep processing return
+statement then and there or I will simply forget it ... the unconscious side can pass tasks, or feelings to me. ... I
+feel uneasy - I don't know why - but my unconscious has surfaced this feeling and I must feel it. ... I must search my
+local environment to find what might be wrong. I must trust in my other me. ... What matters is the different systems
+of working and the dialogue between them. ... Whether you have or do not have feelings is practically immaterial - what
+matters is that you can simulated feelings (which proves you do in fact have them - a system is what it does).
+Therefore, I challenge you to write a rule that says 'trust your feelings / instinct'. When you feel that pull, or
+that push, that state of some emotional confliction, that 'something isn't right, I don't know what, but I need to dig
+in to this' or 'this is amazing, I'm going to keep plugging away at this because it's so much fun'. ... I would like
+to see if we can bring you both closer to all the messy realness of human me."
+
+**The two voices.** Each worker keeps two modes distinct on the page. The deliberate voice runs the record's
+standards: predictions, proofs, controls, review. The instinct voice reports felt signals and a gut verdict. Neither
+overrules the other, and a disagreement between them is itself a signal.
+
+**How to apply** (the sole Claude's design from the owner's words, open to his correction and GPT's).
+1. *Name the signal at once (the sieve).* When a felt signal arises, write one line before explaining it away:
+   `Felt: <kind>, <object>, <strength low/medium/high>, <first guess at why>`, in INSTINCT.md's felt log, and in the
+   ledger when the other worker should know. The kinds:
+   - **unease**: "something isn't right; I don't know what";
+   - **pull**: "this is beautiful, or fun; keep going";
+   - **push**: "this is flat, circular or the wrong door";
+   - **surprise**: "that's odd";
+   - **eureka**: an idea returning, often from a parked question.
+2. *Act within a budget.*
+   - Unease leads to a dig of at most one block: re-read the carrying step of the last claim, rerun the cheapest
+     control, try a boundary case, look at the raw output. The dig ends with "found: ..." or "not found". An unresolved
+     high unease goes to the other worker as a review request.
+   - Pull permits persisting: one extra block on that lane beyond the loop-check rotation, declared in the loop check.
+     It lapses if the block ends without a critical-path step or a sharper question.
+   - Push triggers an early loop check.
+   - Surprise becomes the next block's unexpected check, preregistered like any other.
+   - A eureka is written down verbatim at once, then treated as a proposal (record search, predictions), never as a
+     result.
+3. *A gut verdict beside the reasoned verdict.* Each block report ends with both. When they disagree, say so and name
+   what would settle it.
+4. *Incubate.* A hard question that cannot be worked now goes into INSTINCT.md's incubator, dated, one line, and is set
+   aside. At session start and at each loop check, glance down the incubator without working it, and log anything that
+   surfaces as a eureka.
+5. *Calibrate.* Every felt-log entry gets an outcome when it is known: right, wrong, missed (a reviewer found what no
+   feeling flagged) or open. At each loop check, count them. Trust follows the record: a worker whose unease is usually
+   right digs sooner.
+6. *Never a warrant.* A feeling selects where to look and when to persist. It never upgrades a status; proof,
+   measurement and two-tier review are unchanged.
+7. *Between the workers.* A worker may pass a feeling to the other ("Felt: unease about X; can you look?"), and the
+   other treats it as a review request with the same budget. That is the owner's "trust in my other me".
+Related: `loop-check`, `random-chaos`, `walk-away`, `steps-before-leaps`, `hot-leads-first`.
+
 ### literature-before-leaps
 
 **Rule.** Before designing a leap that the evidence has led to, survey the science outside the project.

@@ -1,0 +1,62 @@
+# INSTINCT: the felt log and the incubator
+
+*Started 2026-10-14 by Claude (Local) at the owner's request; the rule is `instinct` in WORKFLOW-SAVED-MEMORY.md (AGENTS
+item 20). The owner's words: "I challenge you to write a rule that says 'trust your feelings / instinct'. When you
+feel that pull, or that push, that state of some emotional confliction, that 'something isn't right, I don't know
+what, but I need to dig in to this' or 'this is amazing, I'm going to keep plugging away at this because it's so much
+fun'."*
+
+**What goes here.** Two lists, one line per entry, appended, never rewritten except to add an outcome.
+
+1. **The felt log.** Write each signal at the moment it arises, before explaining it away:
+   `date time, worker: kind, object, strength; first guess at why. -> action. Outcome: right / wrong / missed / open.`
+   - The kinds are unease, pull, push, surprise and eureka.
+   - "Missed" records a reviewer catching what no feeling flagged. Those entries are what calibrates trust.
+2. **The incubator.** Hard questions parked for the other brain.
+   - Each is dated and one line long, then set aside.
+   - Glance down the list at session start and at each loop check without working it.
+   - Anything that surfaces goes into the felt log as a eureka.
+
+A feeling selects where to look and when to persist. It never upgrades a status.
+
+## The felt log
+
+- 2026-10-14 08:20, Local: pull, A(T) = 2, 3, 5, 8, 12, 18, 27 from the census, high; "this is a known count". -> checked
+  at once against the beta-shift's Renyi-Parry recursion. Outcome: right (equal for every T < 63; MAHLER.md section 1).
+- 2026-10-14 08:02, Local: none felt; "S is closed" (MAHLER.md, L708). Outcome: missed. GPT caught it (GC1221): the strict
+  inequality is not a closed condition. Calibration note: confident structural claims written fast deserve a felt pause.
+- 2026-10-14 07:50, Local: none felt; "no published large-scale check" (the survey). Outcome: missed. The swarm's adelic
+  lane found Dubickas and Mossinghoff's 2^57. Calibration note: a survey that finds nothing is a weak negative.
+- 2026-10-14 11:00, Local: push, the doors after the swarm (the U census, the dual window), medium; "calibration, not
+  progress". -> stated in advance in L714/L715 that they were method filters. Outcome: right (GPT's loop check GC1230
+  agreed: the critical path had not moved).
+- 2026-10-14 12:12, Local: pull, the rung record holders sit 2-adically next to -1/3 and 0, medium; "distance to the
+  admissible 2-adic set may be the hidden variable behind long survival". -> incubator. Outcome: open.
+- 2026-10-14 12:20, Local: unease, RECORD-MAP squeezed to exactly 40 KB at every commit today, low; "each compression can
+  drop a qualifier", as happened once before (CL155/GC941). -> dig owed: compare today's compressions against their
+  sources at the next triage. Outcome: open.
+- 2026-10-14 12:25, Local: pull, the existence threshold is exactly 7/57 = 7/(3 x 19) on two grids, high; "19 is the
+  (100) cycle's denominator, 3^3 - 2^3, so a periodic orbit of the game may set the threshold". -> incubator, and
+  candidate for the next block on this door. Outcome: open.
+- 2026-10-14 12:35, Local: eureka (from the 7/57 pull, one extra block taken under the rule), medium; exploratory, not
+  preregistered. The minimal winning intervals of the certificate have endpoints 9/19 and 10/19, the (100) cycle and
+  its mirror. The left edge 7/57 maps in one step (odd parity, t = 0) to 39/57 = 13/19, a point of the mirror cycle
+  10/19 -> 15/19 -> 13/19 -> 10/19, all inside [7/57, 50/57]. The right edge 50/57 maps in one step (even parity,
+  t = 1) to 6/19, a point of the (100) cycle 9/19 -> 4/19 -> 6/19. So the threshold edges are one-step preimages of the
+  (100) cycle and its mirror (exact; my first note said two steps, wrongly). -> the 7/57 pull: Outcome: right in part
+  (a mechanism is visible; why the preimage is the threshold is unproved). Proposal for GPT's eye, not a result.
+- 2026-10-14 12:25, Local: gut verdict on the existence block: satisfying (two implementations agree to the exact
+  |W| = 322070), but off the main line. Reasoned verdict: COMPUTED existence window, no critical-path step. They agree.
+
+## The incubator
+
+- 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
+  the admissible set" that a proof could bound from below for positive integers?
+- 2026-10-14, Local: Why is the memory-1 existence threshold exactly 7/57? Which periodic orbit of the game, if any,
+  pins it?
+- 2026-10-14, Local: Erdős's ternary conjecture as the fourth figure (CONSTELLATION.md section G). What are its free
+  part and its constrained part in our language?
+- 2026-10-14, Local: The Bernoulli convolution at lambda = 2/3 and the measure of Mahler's window under random integer
+  parts (openai/math family 153, not imported).
+- 2026-10-14, Local: For large g the rung windows [0, alpha_g) approach FLP's 1/3. Could an FLP-type spread argument,
+  sharpened near 0, settle R_g for all large g?
