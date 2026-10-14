@@ -171,6 +171,16 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   class": the statement was written before the check. (These three entries were first written as 18:55 while the clock read 18:51,
   which makes the point again.)
 
+- 2026-10-14 18:40 BST, Intel: unease, the comb's skeptics refuted only 3 of 65 findings, low; first guess: told to
+  refute, they may still have leaned on the readers' quotes. -> my own read of every survivor against its source.
+  Outcome: wrong. My reading upheld 47 of the 49 page findings and 13 of the 14 map findings; the agreement was real.
+- 2026-10-14 18:51 BST, Intel: surprise, BlackEnd38L.lean ran 1.8 times slower than on the M5 where JenRoute ran 3.7
+  times slower, medium; first guess: the literal-stage checks are lighter on memory than JenRoute's kernel decides.
+  -> set aside as INSTINCT-INTEL S3; my 26-minute estimate was wrong (821 s). Outcome: open.
+- 2026-10-14 19:10 BST, Intel: gut verdict on the comb (lanes A, D, E): sobering and satisfying; the proofs and numbers
+  stand, and the summaries had drifted much further than I predicted. Reasoned verdict: 17 of 18 Lean files compile
+  clean; 52 derived-layer corrections; no primary computed number wrong. They agree.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

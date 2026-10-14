@@ -111,6 +111,7 @@ PART: as on the board.
 - RR3 decided 97..120 (solver values); deciding UNSATs d3..97 by drat-trim/cake_lpr; VC 200/200; RR3 98..111, 113,
   114 by cake_lpr, 112 and 115..120 kissat only (VC3 halted; comb §8.108) — COMPUTED — RRC L438, L480, VC3.
 - Comb B: stored 42 LRAT, 170 DRAT verify; kept cert CNFs match receipts (34/34); regenerations reproduce — COMPUTED — §8.108.
+- Comb A,C-E: 17/18 Lean clean; 15 replays reproduce; 52 derived-layer fixes — COMPUTED (single-party) — §8.106.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
 - K=40 relaxed at L=18: 124 UNSAT both phases (<=17); 140, 144, 152 settled by CUT/SP — COMPUTED (kissat) — RLK L575, L581/582, L589.

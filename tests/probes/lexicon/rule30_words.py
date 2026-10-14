@@ -56,6 +56,8 @@ OUTCOME, 2026-10-05 (the first run, about 25 minutes; then the white0 addendum a
   WD1 HELD: lambda per free bit = 1.771 (01), 1.734 (001), 1.797 (011), 1.716 (0001), 1.764 (0011), 1.785 (0111).
   WD2 REFUTED by 001 alone (+4.45, from one long run ending at depth 88 that serves the depths from 25 to 36). The
      other mean residuals: 01 -0.80, 011 +0.43, 0001 +2.12, 0011 -0.74, 0111 +1.37.
+     Comb note (2026-10-14, RULE30-PRIZE.md 8.106, lane C): the default replay prints census 001's R_w(d) = 63, 62, ..,
+     51 for d = 24 .. 36, so d + R(d) = 87: the run serves depths 24 to 36, not 25 to 36 ending at 88. The +4.45 stands.
   WD3 REFUTED (3 of 6). At the largest common s, (T_B, T_W, T_BW) = 01 (17, 40, 16) at 11; 001 (29, 24, 16) at 12;
      011 (16, 45, 16) at 10; 0001 (47, 26, 19) at 13; 0011 (22, 29, 15) at 11; 0111 (11, 56, 11) at 9. Both binds
      strictly where white alone is the tighter game or close to it (001, 0001, 0011). Where black alone is the

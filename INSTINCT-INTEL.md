@@ -34,3 +34,8 @@ by that much.*
 - **Doing:** listing my scratch folders by date to answer CL375's S9 (other runs sitting unpublished).
 - **Pull:** the strategy swarm's folders (D1 to D8, the skeptics, the judges) still hold the agents' raw reports and
   code. Did everything worth keeping reach STRATEGY-PLAN.md, or only what was graded?
+
+**S3.** 2026-10-14, 18:51 BST.
+- **Doing:** reading lane A's timings while the comb's Lean recompile ran on this machine.
+- **Pull:** why is the slowdown against the M5 1.8 times for BlackEnd38L.lean but 3.7 times for JenRoute.lean?
+
