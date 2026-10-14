@@ -337,6 +337,16 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   plateau refinement, duplicated discovery count, and lost author text. -> statuses separated in M/W296; overlap
   explicitly identified; both original proof blocks checked verbatim against their committed versions. Handled.
 
+- 2026-10-14 22:25 BST, Cloud: calibration from the 13 race, after the owner's reading ("the only difference is speed").
+  It was more than speed.
+  - GPT inferred the reduction from my summary count alone ("9 survivors, 2 dead ends"). It asked which identity makes
+    the count exact: the change in the count is the number of odd joint prefixes.
+  - I had the data first, ran it to depth 60, and still predicted nonzero lines. Only the raw residues showed me the
+    shadows.
+  - Door (c)'s "exactly two survivors" had a one-step reason I also found only afterwards (8.110's note).
+  - Lesson: when a count is suspiciously clean (a plateau, an exact ratio), first ask what identity would make it
+    exact, and only then run a bigger census.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
