@@ -28,6 +28,8 @@ dated return format (the owner, 2026-10-14).
 
 Local's set-aside pulls are in [INSTINCT-LOCAL.md](INSTINCT-LOCAL.md), in the same format (the owner, 2026-10-14).
 
+Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the same format (the owner, 2026-10-14).
+
 ## The felt log
 
 - 2026-10-14 08:20, Local: pull, A(T) = 2, 3, 5, 8, 12, 18, 27 from the census, high; "this is a known count". -> checked

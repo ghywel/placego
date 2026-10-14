@@ -356,6 +356,9 @@ pull happened, what the pull was, no further analysis at the time, then you can 
 and cross it off when it's been resolved"). Local reads it at session start and after compaction, beside the shared
 incubator. A resolved pull is crossed off by striking it through, and it stays in place.
 
+Intel keeps INSTINCT-INTEL.md in the same format (the owner, 2026-10-14: "setup your own INSTINCT-INTEL.md document
+to track your instinct pulls"); a resolved pull is struck through and left in place.
+
 ### literature-before-leaps
 
 **Rule.** Before designing a leap that the evidence has led to, survey the science outside the project.
