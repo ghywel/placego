@@ -95,11 +95,16 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   cells. They come from class-split rigidity and local forbidden patterns. Two exact local facts came out of it; they
   are S8.
 
-**S8.** 2026-10-14, about 17:23 BST.
+~~**S8.** 2026-10-14, about 17:23 BST.~~ *(closed: 8.106, certified)*
 - **Doing:** reading the cells behind 8.105's two exact parities.
 - **Pull:** four rows before every kick, sites 3..5 read 110 (class 52) or 011 (the others). Ten rows before a class-52
   kick, sites 6..8 read 110 and sites 9..11 avoid 010, 011 and 110. They look like lemmas a finite search over the
   kick's cone could certify, the way entries 26 and 27 were.
+
+- **Return** 2026-10-14 18:03 BST: investigated and closed, RULE30-PRIZE.md 8.106. Certified by SAT over the kick's
+  cone, with drat-trim-verified proofs. Four rows back the pattern is forced by class: 011 at 2, 12, 22, 32 and 42;
+  000 at 19, 39 and 49; 110 at 52 (after 56 steps). After 140 steps the class-52 facts ten rows back hold too. The
+  measured "011 at every other class" was a sample artefact.
 
 **S9.** 2026-10-14, about 17:15 BST.
 - **Doing:** answering the owner about Intel's unease over SX-P11, a run that finished two minutes after a halt and sat

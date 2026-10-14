@@ -37,6 +37,32 @@ PREDICTIONS, written 2026-10-14 before any run and pushed before it.
   U, the unexpected check (0.4): the smallest K at which class 52's r - 4 pattern is forced is at most 24.
   Counterfactual. A possible departure with another r - 4 pattern refutes F1 as a lemma. Its model is a witness to
   record, and it would mean the 1,138 measured kicks were a biased sample of the possible ones.
+
+OUTCOME, 2026-10-14 18:02 BST (predictions pushed in f096977 at 18:00 BST; python-sat with CaDiCaL 1.5.3 and Glucose
+4; drat-trim built in scratch from the upstream source; 50 s for K = 56 and 140, 34 s to certify K = 140).
+  C1 PASS: 265 real kicks satisfy the encoding at K = 56, with no violated clause.
+  C2 PASS: at K = 16, brute force over 2^17 rows gives the same classes and pattern sets as SAT.
+  C3 PASS: CaDiCaL and Glucose agree on every class and every pattern set.
+  K = 16: not yet forced. Class 52 allows 110 and 111; classes 9, 19, 29, 39 and 49 allow 000, 001 and 011; classes
+    2, 12, 22, 32 and 42 force 011.
+  U REFUTED by one step: K = 25 is the first horizon at which class 52's r - 4 pattern is forced (110).
+  K = 56 (P4 HELD): departures are possible at classes 2, 12, 19, 22, 32, 39, 42, 49 and 52, each with one forced r - 4
+    pattern. It is 011 at 2, 12, 22, 32 and 42; 000 at 19, 39 and 49; and 110 at 52. So 8.105's measured "011 at every
+    other class" is false after 56 steps: classes 19, 39 and 49 force 000, and none of them was among the 1,138 sampled
+    kicks. At class 52, sites 6..8 of row r - 10 are 011 or 110, so they are not yet forced.
+  K = 140 (P1, P2 and P3 HELD): departures are possible at exactly classes 32, 42 and 52, forcing 011, 011 and 110 at
+    r - 4. Class 52 forces 110 at sites 6..8 of row r - 10, and sites 9..11 there take exactly 000, 001, 100, 101 and
+    111.
+  CERTIFIED (certify mode; Glucose 4 DRUP proofs, every one VERIFIED by drat-trim).
+    - All 56 classes at K = 140 (53 with no departure; 32, 42 and 52 complete), and all 56 at K = 56 (47 with no
+      departure; nine complete).
+    - Negative control: a proof cut in half fails both times.
+    - The class-52 facts at row r - 10, K = 140: sites 6..8 differ from 110, UNSAT, 12,528 proof lines, cnf sha256
+      218e9b7ba7c88701...; sites 9..11 outside the five patterns, UNSAT, 25,981 lines, cnf cc099190d87cca16....
+    - K = 140 completeness cnfs: class 32 75fa4bf12f83272d..., 42 172f4690dc80c25b..., 52 108eb51819b0bf90....
+    - The CNFs are deterministic, so certify mode rebuilds them and regenerates the proofs. The files themselves were
+      kept in the session's scratch only.
+  A departure after K' >= K steps on the wheel is also one after K steps, so each result covers every longer settling.
 """
 import random
 import sys
@@ -160,7 +186,50 @@ def real_kicks_check(K, seeds=4, N=3072, LO=1024):
     return total, bad
 
 
+def certify(K, outdir, drat_trim):
+    """Post hoc (added after the predictions, before any certify run): DRUP proofs for every UNSAT claim at K.
+    For each class: if no departure is possible, the cone itself is UNSAT. Otherwise the cone plus blocking clauses for
+    every pattern SAT found at r - 4 (sites 3..5) is UNSAT, which proves that set complete. Glucose 4 writes the proof
+    and drat-trim checks it. Negative control: the first proof with its last half cut off must fail."""
+    import hashlib, os, subprocess
+    os.makedirs(outdir, exist_ok=True)
+    verified = failed = 0
+    neg_done = False
+    for a in range(56):
+        cone = Cone(K, a)
+        found = patterns(Cadical153, cone, K - 4, (3, 4, 5))
+        clauses = cone.clauses + [[-v if b else v for v, b in zip(cone.cells(K - 4, (3, 4, 5)), p)] for p in found]
+        with Glucose4(bootstrap_with=clauses, with_proof=True) as g:
+            assert not g.solve()
+            proof = g.get_proof() or []
+        cnf = os.path.join(outdir, 'k%d_c%02d.cnf' % (K, a))
+        prf = cnf[:-4] + '.drup'
+        with open(cnf, 'w') as f:
+            f.write('p cnf %d %d\n' % (cone.n, len(clauses)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in clauses))
+        with open(prf, 'w') as f:
+            f.write('\n'.join(proof) + '\n')
+        out = subprocess.run([drat_trim, cnf, prf], capture_output=True, text=True).stdout
+        ok = '\ns VERIFIED' in '\n' + out
+        verified += ok
+        failed += not ok
+        digest = hashlib.sha256(open(cnf, 'rb').read()).hexdigest()[:16]
+        print('  class %2d: %s, patterns %s, cnf %s, proof lines %d: %s'
+              % (a, 'departure possible' if found else 'no departure', fmt(found), digest, len(proof),
+                 'VERIFIED' if ok else 'NOT VERIFIED'))
+        if not neg_done and len(proof) > 10:
+            bad = prf + '.cut'
+            with open(bad, 'w') as f:
+                f.write('\n'.join(proof[:len(proof) // 2]) + '\n')
+            out = subprocess.run([drat_trim, cnf, bad], capture_output=True, text=True).stdout
+            print('  negative control (half proof, class %d): %s' % (a, 'FAILS as it should' if '\ns VERIFIED' not in '\n' + out else 'VERIFIED (control broken)'))
+            neg_done = True
+    print('certify K = %d: %d verified, %d not verified' % (K, verified, failed))
+
+
 def main():
+    if sys.argv[1:2] == ['certify']:
+        certify(int(sys.argv[2]), sys.argv[3], sys.argv[4])
+        return
     Ks = [int(x) for x in sys.argv[1:]] or [16, 56, 140]
     total, bad = real_kicks_check(56)
     print('C1: real kicks checked at K = 56: %d, violating the encoding: %d' % (total, bad))

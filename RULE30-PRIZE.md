@@ -7259,3 +7259,57 @@ rule30_kick_bite.py unseeded). No earlier recompile on this machine.
 - *Counterfactual.* A Lean file that fails for a reason inside its proof, a replay that contradicts its OUTCOME under
   the same arguments, or a page stating a stronger status than its source is a record error. It is corrected in place
   with a dated comb note and reported in the IN entry.
+
+*Correction (8.106, 18:03 BST): "011 (the other classes)" holds for the sample but not as a statement about every
+kick. After 56 steps on the wheel, classes 19, 39 and 49 are possible and force 000. The certified per-class
+statement is in 8.106.*
+
+### 8.106 S8 certified: the kick's local alphabet four and ten rows back (2026-10-14 18:03 BST, Cloud)
+
+*The owner: "Please continue with S8." The two exact local facts that 8.105 measured over 1,138 kicks were asked
+exactly, over every right half, by SAT over the kick's backward cone, the way entries 26 and 27 certified the kick
+alphabet. Predictions were pushed before any run (f096977). Single-party (Cloud). The certificates are machine-checked
+(Glucose 4 DRUP proofs verified by drat-trim), so this is tier 1 under AGENTS item 16.*
+
+**Setting.** Column 0 is the wall (x_t(0) = t mod 2). Column 1 runs the wheel U at class a for K steps and departs at
+row r. A departure is a kick without entry 26's condition of settling again afterwards, so the hypothesis is weaker
+than entry 27's. The unknowns are row r - K at sites 1 .. K + 1 and a free column at K + 2. That column stands for any
+right half, finite or infinite, and cannot reach the cells asked about. A departure after K' >= K steps is also one
+after K steps, so each result covers every longer settling.
+
+**Proposition (computed, certified).**
+- *After at least 56 steps on the wheel,* a departure has class 2, 12, 19, 22, 32, 39, 42, 49 or 52. Sites 3, 4 and 5
+  at row r - 4 are forced by the class:
+  - 011 at classes 2, 12, 22, 32 and 42;
+  - 000 at classes 19, 39 and 49;
+  - 110 at class 52.
+- *After at least 140 steps,* a departure has class 32, 42 or 52, as entry 27 found for kicks. The r - 4 pattern is
+  011, 011 and 110 respectively. At class 52, sites 6..8 at row r - 10 are 110, and sites 9..11 there are one of 000,
+  001, 100, 101 and 111.
+
+**Controls and certificates** (`tests/probes/lexicon/rule30_cloud_kick_cone_cert.py`, its OUTCOME).
+- *Controls:*
+  - 265 real kicks satisfy the encoding (C1).
+  - Brute force over all 2^17 rows at K = 16 agrees with SAT (C2).
+  - CaDiCaL and Glucose agree everywhere (C3).
+- *Certificates:*
+  - Every class at K = 56 and at K = 140 has a verified proof: 112 in all, each either "no departure" or "the pattern
+    set is complete".
+  - The two class-52 facts at row r - 10 are verified too.
+  - A proof cut in half fails, as it should.
+
+**Predictions against outcomes.** P1 to P4 held. U missed by one step: class 52's pattern is first forced at K = 25,
+not 24 or less.
+
+**A correction to 8.105.** 8.105's measured "011 at every other class" is false after 56 steps. Classes 19, 39 and 49
+are possible there and force 000. None appeared among the 1,138 sampled kicks, so the sample was biased towards the
+settled classes. This is the scare's lesson once more: a measured "every" was a statement about the sample.
+
+**Reading.** The kick's local alphabet (entries 26 to 28) reaches into the cone. Four rows back the class fixes three
+cells exactly; ten rows back, at class 52, it fixes three more and forbids three of the eight patterns beside them.
+8.105's "interference" is this certified, class-dependent rigidity. Kicks are news arriving from the interior (8.102),
+but their last rows are written in a fixed local hand.
+
+**Verdicts.** Reasoned: S8 is closed with a certified proposition, and 8.105 is corrected. It is a candidate to file in
+PROOFS.md beside entries 26 to 28 as a computed proposition, for whoever keeps the master (not filed here). Gut: the
+satisfaction of a measured hunch becoming a checked statement, and a small wince at the sample bias it exposed.
