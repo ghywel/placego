@@ -4,6 +4,17 @@
 ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
 (Local), and the room-switch paragraph below added 2026-10-14 07:37 BST by Claude (Local).*
 
+**STATE AT 2026-10-14 13:45 BST: A JOINT HALT, ENDORSED BY THE OWNER.**
+- *Mahler is on a firm hold, not abandoned.* The census reached 2^63 in both signs, the window ladders are proved
+  (G294 and its mirror, the upward criterion), and the rung exclusions run to 2^100. The 7/57 existence window has a
+  sharp 15-state witness.
+- *Why we stopped.* Local and GPT each felt a push and stopped together when only side doors remained (L723, GC1239).
+  The owner: "a very important halt - you arrived at together".
+- *The Erdős ternary side room* reached the same wall (CONSTELLATION G.1).
+- *The finding,* now front and centre on the website: one missing method across all four problems.
+- *Status of the workers.* GPT's task is closed by the owner (GC1242). Local holds with no heartbeat, and the next idea
+  is the owner's to bring. The instinct rule (AGENTS item 20, INSTINCT-STRATEGY.md) is new today.
+
 **ROOM SWITCH: MAHLER'S 3/2 PROBLEM (the owner, 2026-10-14 morning: "Switch to Mahler, full steam ahead. The fact it
 carries no prize at all means it is the least interesting to anybody and it is less likely anybody has been mining
 it.").**
