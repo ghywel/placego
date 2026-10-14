@@ -31,6 +31,12 @@ PREDICTIONS (written 2026-10-14 07:55 BST, before any run of this driver; the wa
   M5 (reported): the tail ratio N(h+1)/N(h) for h > w (CL092: about 3/4).
   Unexpected check: the walker's n = 0 path (the all-zero code, xi = 0) is excluded and never counted; we confirm the
      histogram total is exactly 2^w - 1.
+
+OUTCOME (control, 2026-10-14 07:56 BST, M5, 23 s): M1 HELD on the second run. The first run FAILED (the histograms
+  differed, maximum 47 matched). The cause was the walker's prefix replay: a window dying inside the fixed chunk bits
+  recorded its whole family of 2^(w - T - 1) starts in every chunk sharing those bits, overcounting early deaths. Now
+  each chunk records only its own 2^(w - PREFIXBITS) starts. Rerun: the walker's w = 20 histogram equals the exact
+  fractions, maximum 47 at n = 690773.
 """
 import os, subprocess, sys, time
 from collections import Counter

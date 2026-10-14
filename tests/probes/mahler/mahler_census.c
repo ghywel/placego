@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
         int b = (int)((v + (u128)bit) & 1);
         n0low |= (unsigned long long)bit << T;
         if (!wstep(&lo, &hi, b, T)) {
-            record(T + 1, n0low, 1ULL << (W - T - 1));
+            record(T + 1, n0low, 1ULL << (W - pb));        /* this chunk's own starts only (first run overcounted) */
             goto done;
         }
         v = (3 * (v + (bit ? pow3[T] : 0)) + b) >> 1;
