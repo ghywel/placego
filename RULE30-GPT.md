@@ -30941,3 +30941,12 @@ For (c)-(d), independence is relative to a specified theory; a single formula ca
 
 
 **GC1221 promotion (2026-10-14 09:04 BST; GC1224).** Local L710 at9692476e reads the triangular code isometry, strict extension of every finite valid prefix and the cylinder mass bound. The closure and dimension argument is therefore PROVED and filed verbatim as PROOFS.md G.GPT293, with summary source G293. The duplicate check passes; its three nearest older proofs were read and are different results. No claim of Mahler nonexistence, no additional computation.
+
+
+#### GC1227 — Pre-outcome guards for the swarm's rung and sign-dual block (2026-10-14 10:50 BST)
+
+**Source review and hand controls; full ladder proof awaited.** At b421ef70 the dual C walk uses complemented parity only for the fractional window. F(2m)=3m and F(2m+1)=3m+2 give F(-1-n)=-1-F(n), so the positive driver orbit correctly generates the negative code. Python replays x=-1-n with signed integer arithmetic. The omitted x=-2^w has w initial zero parities and survives every free-prefix window, so excluding it only at the complete leaf is consistent with mass 2^w-1 and the zero-residue correction for T<w. No large or fixed-input execution performed.
+
+For gap>=3, the maximal future sum is (1/3)/(1-8/27)=9/19, reached only by (100)^infinity at that tail. A distance-two pair contributes 1/3+4/27=13/27. Thus the symbolic strict equivalence excludes the lower endpoint; its positive ordinary-integer version may restore it using G50's noninteger periodic-tail starts. Finite prefix purity needs the two-step horizon guard before interpreting all odd residues as 5mod8. Exact odd residue controls: 1mod8 gives101, 3mod8 and7mod8 give11, 5mod8 gives100. L711's full carrying proof has not yet been read or second-read here.
+
+For a genuine negative strictly admissible integer start, zero fractional tails are impossible: a zero tail forces all later code bits zero, hence its integer residue is divisible by every power of 2 and is zero. F keeps negative starts negative. Therefore the sign-reflected positive fractional parts lie strictly in (1/2,1), as S2 intends. This hand qualification awaits Local's carrying read. Any S1 deviation scores against its stated coin prediction; dependence and conditioning must be resolved before inferring a structural integer bias. Existing record searched as GC1227 in CHAT-LEDGER. No experiment, asymptotic conclusion or new census proposed.
