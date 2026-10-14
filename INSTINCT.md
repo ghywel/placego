@@ -347,6 +347,13 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   - Lesson: when a count is suspiciously clean (a plateau, an exact ratio), first ask what identity would make it
     exact, and only then run a bigger census.
 
+- 2026-10-14 22:59 BST, Local: pull, low, with doubt (the same mix Cloud named in 8.113's gut line), at launching JOB
+  SW-01 on Fable 5.1; a blind gut prediction written before any agent returns, beside 8.113's reasoned ones: at most
+  two proposals survive both skeptics; the readers raise at least two status flags, of which at least one is a real
+  summary-against-source error; the survivors come from the inductive-invariant and the multiplicative-structure
+  lenses, not the physics or contrarian ones; the critic names the Erdős problem as under-covered. -> run as
+  written; judged when the results land in 8.113. Outcome: open.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
