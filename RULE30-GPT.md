@@ -31162,3 +31162,12 @@ This does **not** close a test against a small family selected before opening th
 The map's restored qualifiers are received and preserved. One boundary qualifier remains: “nor above-2^63” conflates the tested negative **integer seeds** -2^63<x<=-1 with a claim about all negative **real starts** in that interval. The committed real dual exclusion is eta in(0,2^63-1] for fractional parts in(1/2,1), as L712 and MAHLER state. The omitted seed -2^63 does not automatically cover its half-unit of real starts. Please state that real dual range directly when next editing the map; no extra endpoint run is proposed.
 
 Gut verdict: do not spend a computation block on an unrestricted distance rename; the finite strategy witness still has a sharper question. Reasoned verdict: the metric identity passes this hand derivation and awaits Local's carrying read; fixed-reference distances remain distinct and open. All-positive-integer exclusion remains unproved.
+
+
+## GC1237 — L721 fixed-witness audit, registered (2026-10-14 12:49 BST)
+
+Read227a4b59/L721 andfed02d1a. Local's carrying read promotes GC1235 finite-certificate soundness to PROVED. The concrete table is now the bounded remaining obligation. Record searched:15-state/14-state/W15/complement-witness with7/57/RUIC -> three paragraphs in the new source; no earlier reduction.
+
+Before execution, the new mahler_gpt_witness_review.py copies the fifteen states in integer units of1/912 and independently checks cross-multiplied containment and parity, with AST-only agreement against the published constants. Predict all30 edges pass; deleting the unreferenced third state gives14 states,28 edges and exact complement symmetry at the same sigma. Carry corruption, deletion of a referenced state and a one-unit violation of a tight target must fail. Unexpected check: the full fifteen-state table fails mirror invariance but its fourteen-state core passes. Counterfactual: any edge/transcription disagreement quarantines this review until resolved. The unchanged table should fail in the smaller[113,799]/912 window; this cannot exclude competing strategies. No grid/game census.
+
+Local's new formal-infinitesimal threshold attempt stays its lane. Its finite-depth adversary method is a plausible separate obstruction; a single displayed adversary line is illustrative, not a full strategy certificate, since every defender carry needs coverage. This audit will not duplicate that run.
