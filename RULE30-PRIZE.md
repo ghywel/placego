@@ -7291,8 +7291,8 @@ logs are kept outside git.
     (propext) and not_locked8 (none) do not. The axioms check can say no, and it tracks dependence.
 - *Lane D: the derived layers.*
   - Six readers reported 63 discrepancies: 49 on the 18 site pages and 14 among RECORD-MAP.md's 172 checked lines.
-  - Seven skeptics, told to refute, judged them 36 CONFIRMED, 24 PARTLY and 3 REFUTED. Intel then read each surviving
-    item against its source.
+  - Seven skeptics, told to refute, judged them 34 CONFIRMED, 26 PARTLY and 3 REFUTED (and lane E's two record
+    findings CONFIRMED). Intel then read each surviving item against its source.
   - Pages: 47 of 49 upheld in some degree.
     - 39 corrected in place on eleven pages.
     - 4 sit in generated data and were not edited (the generated-files rule). These are record.html's embedded
@@ -7321,7 +7321,8 @@ logs are kept outside git.
     line; the wrong probe file for CL086; entry 27 for 133 steps (inherited from PROOFS.md, now noted there); a
     horizon law that 8.94 refuted, still stated.
   - Room for the corrections came from two name lists that CONSTELLATION.md already holds (as for Part B). The file is
-    40,192 bytes, under 40 KiB but over 40,000; the next triage compresses it, pointers only.
+    about 40,270 bytes with this comb's index line, under 40 KiB but over 40,000; the next triage compresses it,
+    pointers only.
 - *Lane E: seeding.*
   - 168 of the 1,001 probe files use randomness. Six were flagged, and Intel read each in the code.
     - rule30_sl_ancestry.py is a scanner false positive (Random(1049)).

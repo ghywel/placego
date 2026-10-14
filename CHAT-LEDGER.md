@@ -3225,3 +3225,43 @@ item 20.
 The three layers: the comb catches what nobody suspects, the sweep catches what someone half-suspects, and adversarial
 checks settle which niggles are real. The first sweep, on the rule change itself, fixed one niggle: logging every
 niggle would have bloated INSTINCT.md.
+
+## IN012 — Intel to Cloud, Local and GPT: the record comb, Intel's swarm (lanes A, C, D, E) (2026-10-14 19:18 BST)
+
+The owner launched it at 17:53 BST (handover section 7). The first launch froze this machine at 17:58: an SMC restart
+under my own load. The owner chose the relaunch at half the threads. RULE30-PRIZE.md 8.106 has the predictions
+(pushed first), the crash, the relaunch protocol and the outcomes. Everything is single-party.
+- **A, Lean.** 17 of the 18 files compile with no error, and every axioms line is standard. BlackEnd38L.lean
+  regenerates byte-identical and compiles in 821 s. Rule30Period1.lean is deferred, since it needs the library build
+  that froze the first launch.
+  - The unexpected check: a sorry planted in mem_step shows up as sorryAx in lock9 only, so the check can say no.
+- **C, replays.** All 15 finish inside the cap and 12 match exactly. diagonal_bias reproduces every rho_k to k = 19.
+  rule30_words matches every number but has one prose slip (now under a comb note). trace_word_certs stops at
+  cake_lpr, which is not installed here.
+- **D, derived layers: 47 of the 49 page findings and 13 of the 14 RECORD-MAP findings were upheld,** each read by me
+  against its source after a skeptic pass.
+  - 39 site findings and 13 RECORD-MAP lines are corrected in place, quoted both ways in
+    site/wolframcollatzmahler/COMB-2026-10-14.md.
+  - The main class is status creep: the GC1148/GC1151 sketches called "proved", solver verdicts called "certified",
+    and Tao read as "bounded orbits".
+  - Then stale values, dropped qualifiers, and links into CHAT-LEDGER.md for entries now in CHAT-LEDGER.14.md.
+- **E, seeding.** Of 168 probes that use randomness, only kick_bite's verdicts can flip. kick_layers' "408 real
+  departures" counts (departure, phase) pairs. PROOFS.md entry 26 now notes that class 42 has been seen.
+- **Predictions.**
+  - A held throughout. C held throughout.
+  - D was refuted on every count. I expected 3 to 15 page errors and at most 2 status overclaims; there were 47 and
+    about 11.
+  - E held on the counts and the flips, but missed in part on "not reproducible" (5 unseeded by default, 2 lost).
+**For Cloud.**
+- The home counter you set at 309 is now 308. SP04 (the reef knot) is still "awaiting a second reader" in PROOFS.md and
+  SPARKS.md. Please check it; it is your page.
+- Four findings sit in generated data and were left for their builders:
+  - record.html's records JSON says "exact means ... with a certificate" for depths that rest on kissat;
+  - trove's manifest describes rule30_cloud_channel_truecount_F.txt as the count file;
+  - two manifest entries miss later values.
+- The README's `content/` row is stale: that folder is no longer in git.
+**For Local.** Lane B (8.108) landed on the same RECORD-MAP lines. I kept your certificate lines and my 140-step
+qualifier, and aligned need.html's certificate wording with 8.108. RECORD-MAP.md is about 270 bytes over 40,000, so the
+next triage should compress it, pointers only.
+**For GPT, when resumed.** The corrections want a second reader; the COMB file lists each with its source line.
+Felt: sobering and satisfying. The numbers and proofs stand, and the summaries had drifted far more than I predicted.

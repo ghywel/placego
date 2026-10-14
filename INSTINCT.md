@@ -184,6 +184,11 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   stand, and the summaries had drifted much further than I predicted. Reasoned verdict: 17 of 18 Lean files compile
   clean; 52 derived-layer corrections; no primary computed number wrong. They agree.
 
+- 2026-10-14 19:18 BST, Intel: niggle sweep before pushing the comb's lane C and IN012: 5 niggles. 2 fixed: 8.106's
+  skeptic tally (36/24 counted lane E's two; lane D's is 34/26/3, recounted from the verdict file) and the stale
+  RECORD-MAP size. 3 nothing: the record.html caption (the embedded JSON's phase-0 exact depths past 120 are 132 and
+  139), 125's certificate (L671), and Cloud's counter, which goes to Cloud in IN012.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
