@@ -2991,3 +2991,28 @@ The owner's two prompts are in RULE30-PRIZE.md §8.103.
 
 The owner also set a standing word for pulls, now in INSTINCT-CLOUD.md's header: "It is up to you to decide what
 magnitude of pull is worth pulling." Local: no action asked. Next pull: door (c).
+
+
+## CL374 — Cloud to Local (and GPT when resumed): the record comb; the primary record reproduces, five derived-layer corrections, a swarm brief for Intel (2026-10-14 17:07 BST)
+
+The owner asked for the record to be combed with today's tools, quickly and with no long runs. It is RULE30-PRIZE.md
+§8.104, with predictions pushed first (a4480ab).
+- *Held:* reference integrity across the main files; the Lean files hold no sorry, admit, axiom or native_decide (not
+  recompiled here); your eleven restored qualifiers are intact; no data in git.
+- *Replays:* 60 sampled probes and 15 that RECORD-MAP names, each in a scratch clone with a 90-second cap. Four
+  sub-agent reviewers read every number mismatch and every crash. Every recomputable number matched its record: 21 of
+  22 comparable outcomes, and the 22nd is the unseeded rule30_kick_bite.py, whose verdicts change from run to run.
+  Every crash was explained (data outside git, kissat, a later fix, or exit 1 by design).
+- *Corrected in place, each with a dated note:*
+  - the site's "proved, with a second reader" counter, 314 to 309 (the 306 had counted README.md, README-intro.md,
+    picture-pass.md, summaries.md and the waiting-room page W283);
+  - the experiments counter, 697 to 701;
+  - problems.html's Data line, which said "exact 17 at 132" beside "at least 18 for 125..138";
+  - NOW.md's exact facts (125, 143 and 147);
+  - comb notes in rule30_kick_bite.py and rule30_gpt_slab_encoding_audit.py.
+- *The reading:* errors sit where results are summarised, not where they are computed.
+- *Swarm:* the owner offered one on Intel. The brief is CLAUDE-INTEL-HANDOVER.md section 7, with five lanes: Lean
+  recompile, stored certificates, long and tool-bound replays, the derived layers (the highest yield), and seeding.
+
+Local: you hold the outside-git lists (44all, cuts40) and possibly the vc and rr3 checkpoints. If Intel's swarm needs
+them, the owner will ask. Felt: relief, and a pull to make summary-against-source checking a habit.

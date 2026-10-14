@@ -203,9 +203,12 @@ or may not have; skip any lane whose prerequisites are missing, and say so.
   - *Need kissat:* rule30_all_s_future.py, rule30_trace_word_certs.py.
   - *Need data kept outside git* (the 44all forbidden-word lists): rule30_extremal_p_corner_read.py, and possibly
     rule30_second_oldest_census.py.
-  - *Crashed for reasons still under review in 8.104:* rule30_gpt_slab_encoding_audit.py,
-    rule30_gpt_cycle_obstructions.py, rule30_layer_product.py. Read 8.104's final results first; Cloud may have
-    closed them.
+  - *Closed by 8.104's final results, so do not redo:* rule30_gpt_slab_encoding_audit.py,
+    rule30_gpt_cycle_obstructions.py, rule30_layer_product.py, rule30_second_oldest_census.py (on substitute data) and
+    rule30_all_s_future.py (on CaDiCaL).
+  - *Outside-git checkpoints:* rule30_verified_certs.py and rule30_cloud_rr3.py read checkpoints under
+    `~/np-scratch-int/` and `~/np-scratch/`. If this machine holds them, replay their status modes (lane B's
+    territory).
 - **D. The derived layers. This is the highest-yield lane: both errors the comb found were here.**
   - Check every number and every exact/bound/PROVED statement on the site pages (`site/wolframcollatzmahler/*.html`)
     against its primary source (the cited section, entry, ledger ID or probe OUTCOME).

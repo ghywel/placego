@@ -7111,3 +7111,53 @@ it (56 steps) looks like a contradiction.
   - The site README records both corrections.
 - *U held.* The largest tracked file is RULE30-GPT.md, 4.1 MB of text. No data file.
 - *Also checked:* no RECORD-MAP.md line marked PROVED calls itself single-party, unread or pending.
+
+**Final results (17:06 BST).** Four reviewers (Cloud's sub-agents, so self-checks) read every replay whose output
+numbers did not match its record, and every crash. Each claimed match or mismatch quotes both sides.
+- *Every crash is explained, and none is a fault in code behind a recorded outcome.*
+  - rule30_second_oldest_census.py needs the 44all and cuts40 lists kept outside git. With the committed
+    rule30_local_mfw44.txt substituted it reproduces Q, P and S3 exactly. With no cuts40 it is a harder test, so it
+    cannot have closed falsely.
+  - rule30_gpt_slab_encoding_audit.py fails today because the gaps it found were fixed 14 minutes later (a79c1a5).
+    Against the slab file as of 42c6684 it reproduces its OUTCOME. A comb note is now in its docstring.
+  - rule30_gpt_cycle_obstructions.py exits 1 by design, as its docstring records. It matches in all three modes.
+  - rule30_all_s_future.py only lacked kissat. With CaDiCaL standing in, it matches.
+  - rule30_extremal_p_corner_read.py needs the same outside-git lists and was not replayed.
+- *The matches.*
+  - Group A: four of five matched. The fifth is rule30_kick_bite.py, which is unseeded (above).
+  - Group B: six of six, plus three addendum commands.
+  - Group C: all four crashes matched once substituted.
+  - Of the RECORD-MAP.md-named probes, seven match as committed: ruler_kicks, periodic_points, one_hole_widths,
+    rain, centre_wave, triangle_echo, and layer_product with its documented argument. Its documented build line needs
+    `-lm` on Linux.
+  - Two cannot be compared here, because their checkpoints live outside git: verified_certs and rr3. For rr3, the
+    47 verdict rows quoted in the ledgers rebuild the checkpoint, and its status mode then prints exactly the recorded
+    values for depths 97 .. 120.
+- *Predictions against outcomes.*
+  - "At least 90% run cleanly" was refuted, at 78%.
+  - "At least 85% of comparable outcomes match" held: 21 of 22, 95%.
+  - "At most 3 real mismatches" held: there are none. The one non-match is kick_bite's verdicts changing from run to
+    run, not a wrong number.
+- *Side findings, none affecting a recorded number.*
+  - load_cuts (rule30_relaxed_records_k.py) returns an empty list when its files are missing. That only makes a census
+    harder to close.
+  - Several docstrings carry invalid escape sequences, which print a SyntaxWarning and do nothing else.
+- *Cleaned up.* The replays left about 40 KB outside the repository: a compiled binary, a CNF and three empty
+  directories in the container's home. They are deleted. The record was never touched, since every replay ran in a
+  scratch clone.
+
+**Reading.** The primary record reproduces. Every number the comb could recompute came out as recorded. The errors
+it found sat in derived layers:
+- the site's counter (314 for 309);
+- problems.html's Data line;
+- NOW.md's dated facts;
+- one unseeded probe's verdicts.
+
+That matches today's earlier lesson (the eleven qualifier losses) and the scare that started it (a dropped 140-step
+condition). Errors creep in where a result is summarised, not where it is computed. What the cloud could not reach
+(Lean recompilation, the stored certificates, long runs, data outside git) is written up as lanes A to E for a swarm
+on Intel, in CLAUDE-INTEL-HANDOVER.md section 7, at the owner's offer.
+
+**Verdicts.** Reasoned: the record is sound where it was checked. Five corrections were made in place, each with a
+dated note. The swarm's lane D (derived layers) is where more errors are most likely to be found. Gut: relief, and a
+pull toward lane D's pattern. A summary-against-source check deserves to be a standing habit, not a one-off comb.

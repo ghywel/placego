@@ -106,6 +106,10 @@ Cloud's set-aside pulls, unjudged, with what we were doing when each came, are i
   rigidity as phase. A low-to-medium pull remains on the revivals (S7). Reasoned verdict: I2 and I3 were wrong,
   in the informative direction. They agree.
 
+- 2026-10-14 17:06 BST, Cloud: gut verdict on the record comb (8.104): relief; the primary record reproduces. A pull
+  remains toward making summary-against-source checks a standing habit, since every error sat in a summary. Reasoned
+  verdict: five derived-layer corrections and no wrong computed number. They agree.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
