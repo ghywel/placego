@@ -144,6 +144,31 @@ The receiver treats it as a review request with the same budget, a dig of at mos
 found. Two agents with different temperaments can act like Gareth's two hemispheres: one more cautious, one more
 adventurous, each passing hunches to the other and each checking the other's hunches.
 
+## The niggle sweep: a pre-flight check
+
+Before anything goes outward (an install, code others will run, a published claim, a public page, a correction to a
+shared record), ask: *any silent instincts?* List every niggle, however small, without filtering for importance. Then
+give each niggle one cheap adversarial check, or say why it cannot be checked yet. Most niggles turn into nothing, at
+the cost of a minute. Some catch something larger. The owner called it "a snowball effect. Either a niggle turns in to
+nothing, or it catches a larger problem."
+
+**Why it works.** Usually the flaw is not a new insight. It was half-known while building, and a reporting filter kept
+it silent: "is this worth mentioning?" The sweep lowers that bar for one minute, at the moment it matters most.
+
+**Where it sits.** It is one of three layers.
+- *A mechanical comb* catches errors nobody suspects, such as a stale counter on a public page.
+- *The sweep* catches what someone half-suspects.
+- *Adversarial checks* settle whether a niggle is real. The sweep tells them where to aim.
+
+**The first case.** A small PHP file store, drafted and tested (28 checks), was about to be installed on the owner's
+website. Asked for silent instincts, the agent listed five.
+- *Two became fixes.* The HTTPS check believed a header the client itself sends: the draft answered 200 to a spoofed
+  request over plain HTTP, and the original tests had only played an honest client. And a total-size cap was missing,
+  though the store shares disk with the live site.
+- *One became a post-install check,* for the server software.
+- *One became a decision for the owner,* about two flag systems.
+- *One was already handled,* by the design.
+
 ## A rule block you can paste into instructions
 
 ```
@@ -156,6 +181,9 @@ INSTINCT
 - End each block with a reasoned verdict and a one-line gut verdict; if they disagree, say what would settle it.
 - Keep an incubator of parked hard questions; glance at it (do not work it) at session start and at each step-back.
 - Record each signal's outcome, including "missed". Trust instinct in proportion to its record.
+- Before anything goes outward, run a niggle sweep: ask "any silent instincts?", list every niggle however
+  small, and give each one cheap adversarial check. Log the sweep in one line; a niggle that became a fix or a
+  decision gets its own line.
 - A feeling chooses where to look and when to persist. It never upgrades the status of a claim.
 - Do not perform feelings: log only real shifts of attention or inclination.
 ```

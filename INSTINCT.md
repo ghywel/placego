@@ -177,6 +177,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
 - 2026-10-14 18:51 BST, Intel: surprise, BlackEnd38L.lean ran 1.8 times slower than on the M5 where JenRoute ran 3.7
   times slower, medium; first guess: the literal-stage checks are lighter on memory than JenRoute's kernel decides.
   -> set aside as INSTINCT-INTEL S3; my 26-minute estimate was wrong (821 s). Outcome: open.
+- 2026-10-14 18:59 BST, Cloud: niggle sweep on the rule change that adds the sweep (practising it): 4 niggles. 1 fixed:
+  logging every niggle would bloat this log when sweeps are frequent, so it is now one line per sweep, with a line
+  of its own only for a fix or a decision. 3 nothing: punctuation, a quote out of context, privacy.
 - 2026-10-14 19:10 BST, Intel: gut verdict on the comb (lanes A, D, E): sobering and satisfying; the proofs and numbers
   stand, and the summaries had drifted much further than I predicted. Reasoned verdict: 17 of 18 Lean files compile
   clean; 52 derived-layer corrections; no primary computed number wrong. They agree.
