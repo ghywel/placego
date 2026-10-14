@@ -90,6 +90,18 @@ GPT cap-review controls (2026-10-14 00:32 BST, before stubbed checks; GC1215): t
   queries or enumeration replay. A capped longest observed run is a lower bound, not an upper bound.
   OUTCOME: both capped-stub controls and the complete-search control PASS. Existing running processes retain
   the older reporter, so CAP output must be interpreted as incomplete before scoring; no restart requested.
+
+OUTCOME M7/M8 (2026-10-14 02:01 BST, M5, about 1.7 hours; machine output quoted): M7 and M8 UNSCORED. The N = 150 stage
+  hit the 20,000-call cap, and under the GC1215 guard above a capped search gives lower bounds only. The old
+  reporter's printed "M7 HELD", computed on the partial N = 150 count, is void.
+     real S/L lifts N= 60:    139 lifts, longest white run  9   (complete)
+     real S/L lifts N= 90:    611 lifts, longest white run 10   (complete)
+     real S/L lifts N=120:   2299 lifts, longest white run 13   (complete)
+     real S/L lifts N=150:    413 lifts, longest white run 10   (CAP: partial; lower bounds only)
+  Reading (MEASURED, finite; subset scope as in GC1214): through N = 120 the real S/L counts and runs track the
+  cut-avoiding relaxation (139/139, 611/613, 2299/2809 lifts; runs 9, 10, 13 in both), growing at about 0.127 bits per
+  visible bit, near the channel bound 0.1236. Realness removes the non-real top lifts (M6) but, at these lengths, not
+  the growth of the runs. A real S/L residence of 120 ticks already shows a white run of 13 in its image.
 """
 import os, sys
 import numpy as np

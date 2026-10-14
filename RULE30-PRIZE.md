@@ -6653,6 +6653,10 @@ predicted before the runs.
   long white runs, so a special S/L theorem would need its own invariant.
 - *Scope.* lifts_cut tests each whole last block before truncating it, so its counts are a subset of the cut-avoiding
   N-tick residences, not an exhaustive count (GC1214).
+- *Realness* (M6, M7/M8). None of the 200 longest-run lifts at N = 150 is real (post hoc controls pass). The real S/L
+  lifts, enumerated with membership pruning, are 139, 611 and 2,299 at N = 60, 90 and 120, with runs 9, 10 and 13, the
+  cut-avoiding values; the N = 150 stage hit its call cap and is unscored (GC1215). So realness removes the non-real top
+  lifts but not, at these lengths, the growth of the runs.
 - *CL340 does not apply.* S/L lifts are not CL340's typed paths. Its macros are h(SLLS^k) and GC1126's N with guarded
   entrances, and the actual 84- and 155-rings (h(S)^infinity, h(L)^infinity) keep the clock forever with infinite left
   support. Real S/L residences are not bounded by 466 ticks (GC1214).
