@@ -373,12 +373,11 @@ PART: as on the board.
   MEASURED — rule30_and_shadow.py, L453
 
 ## Mahler's 3/2 problem (room since 2026-10-14, MAHLER.md)
-- n_(j+1)=ceil(3n_j/2), u_j=sum b_(j+k)2^k/3^(k+1)<1/2 (G50 PROVED); hold set = window, integer side the crux (GC1221 review) — MAHLER.md.
-- No Z-number below 2^63; H*(w)~2.4w (157 at w=63); A(T) integral; tail 3/4 — COMPUTED — MAHLER.md §1.
+- n_(j+1)=ceil(3n_j/2), u_j=sum b_(j+k)2^k/3^(k+1)<1/2 (G50 PROVED); hold set = window; integer side the crux; strict set not closed (closure K), dim log2(3/2) PROVED GC1221/L710 — MAHLER.md.
+- No Z-number below 2^63; H*(w)~2.4w (157 at w=63); A(T)=beta-shift count; death-bin tail 3/4 (CL092: 2^20) — COMPUTED, GC1221.1 scope — MAHLER.md §1.
 - In print: Z_3/2(2/7,5/7) empty (Stephan 2026, Lean); certificates blocked on infinite hold sets — PRIOR-ART.
-- 3/2 corner: survivors fall by 3/4 a step; max horizon 47 for g<2^20 — MEASURED — CL092.
 - Bounded-gap Fibonacci code: fractional tests pass, integer realization fails — PROVED CL148 — GC929.
-- Calibration prefix residues certify the million-start match cutoff — COMPUTED — GC931.
+- Calibration prefix residues certify the million-start cutoff — COMPUTED — GC931.
 - Backward-forbidden roots cannot recur on a white orbit; visitation shortcut CLOSED — GC928/CL147.
 - Capped bits/values lack uniform convergence near4/3 — PROVED L524/CL153 — GC935/936.
 - Carry dial: H_k(g)=v2(g)+1 at k=0 (GC836); odd k collapse; g=53 survives at k=4 — MEASURED — L457.

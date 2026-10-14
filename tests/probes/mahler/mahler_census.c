@@ -2,8 +2,11 @@
  * depth-first walk over the low bits of n. See mahler_census.py for the method, predictions and outcome.
  *
  * State at depth T (T low bits of n chosen, n0low < 2^T):
- *   v  = T^T(n0low) mod 2^128, the T-th iterate of the truncated start under T(x) = ceil(3x/2); the true n_T is
- *        v + 3^T (n >> T), so the parity b_T of n_T is (v + bit_T(n)) mod 2.
+ *   v  = T^T(n0low), the T-th iterate of the truncated start under T(x) = ceil(3x/2); the true n_T is
+ *        v + 3^T (n >> T), so the parity b_T of n_T is (v + bit_T(n)) mod 2. v is exact in the free phase for w <= 63
+ *        (3^63 < 2^100). After overflow in the forced tail only its low bits stay valid: each wrapped step keeps
+ *        agreement mod 2^(r-1) from mod 2^r, so at most 124 - w forced steps leave enough bits for the parity
+ *        (GC1221). Other widths or horizons need their own guard.
  *   lo, hi = numerators over 2^(T+1) of the exact half-open window [lo, hi) of the current fractional part u_T.
  * Step with parity b: lo' = max(0, 3 lo - b 2^(T+1)), hi' = min(2^(T+1), 3 hi - b 2^(T+1)) over 2^(T+2); alive iff
  * lo' < hi'.  v' = (3 (v + 3^T bit) + b) / 2.

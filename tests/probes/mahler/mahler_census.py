@@ -2,8 +2,9 @@
 """mahler_census.py: the Mahler record census, the first block of the Mahler room (MAHLER.md section 1; L708).
 
 For every start n in [1, 2^w), the survival horizon H(n) is the number of steps after which no xi in [n, n+1) keeps
-every fractional part {xi (3/2)^j} in [0, 1/2), i.e. CL092's H. A Z-number below 2^w exists iff some n in [1, 2^w)
-has H(n) = infinity. The walk is exact (mahler_census.c, 128-bit integers; stragglers alive at step 124 are replayed
+every fractional part {xi (3/2)^j} in [0, 1/2), i.e. CL092's H. A Z-number in [n, n+1) makes H(n) infinite, so finite
+horizons on [1, 2^w) exclude Z-numbers below 2^w. (The first wording said "iff"; the converse can need GC664's forward
+shift, which may leave the range: GC1221.) The walk is exact (mahler_census.c, 128-bit integers; stragglers alive at step 124 are replayed
 here with Python integers and exact fractions).
 
 RUN-ON:     cpu, the C walker in parallel over the low PREFIXBITS bits of n; minutes to hours depending on w.
@@ -55,7 +56,11 @@ OUTCOME (census, 2026-10-14 08:18 BST, M5, 9 workers; machine output quoted): M2
      A(T + 1) / A(T) tends to 3/2. It is not the ceil(3x/2) iterates (they differ from T = 8, 40 against 41).
   M3: H*(w)/w lies in 2.18 .. 2.58. w = 28 (2.179) breaks the registered lower bound of 2.2, so M3 is refuted.
      The counterfactual (some H* > 3w) did not occur.
-  M5: tail ratio N(h+1)/N(h) for h > w, mean 0.744 .. 0.752 at every w (CL092's 3/4).
+  M5: tail ratio N(h+1)/N(h) for h > w, mean 0.744 .. 0.752 at every w (CL092's 3/4). These are consecutive
+     death-bin ratios, not survivor-count ratios (GC1221.1).
+  REPORTING CORRECTION (2026-10-14, GC1221): M2 as preregistered omits the zero residue, which survives every finite
+     horizon: positive_survivors(T) = 2^(w - T) A(T) - 1. The outcome above already used the +1. The driver now
+     computes A(T) by exact integer division of positive_survivors + 1 and checks the remainder is zero.
   POST HOC CHECK (2026-10-14 08:20 BST; noticed after M2, then tested, not preregistered): A(T) equals the Renyi-Parry
      word count of the beta-shift for beta = 3/2, c_n = 1 + sum_(i=1..n) d_i c_(n-i), with d = 1010000010010010100000000010...
      the greedy digits of 1 in base 3/2. They agree for every T < 63. This is an independent computational
@@ -149,8 +154,14 @@ def main():
     for h in sorted(hist, reverse=True):
         acc += hist[h]
         surv[h - 1] = acc                             # #{n : H(n) > h-1}
-    A = {T: surv.get(T, 0) / 2 ** (w - T) for T in range(1, w)}
-    print('A(T) for T = 1 .. min(w-1, 30):', [int(A[T]) if A[T] == int(A[T]) else A[T] for T in range(1, min(w, 31))])
+    A, inexact = {}, []
+    for T in range(1, w):                             # zero residue survives every horizon: add it back (GC1221)
+        q, r = divmod(surv.get(T, 0) + 1, 1 << (w - T))
+        A[T] = q
+        if r:
+            inexact.append(T)
+    print('A(T) = (positive survivors + 1) / 2^(w - T), T = 1 .. min(w-1, 30):', [A[T] for T in range(1, min(w, 31))],
+          '| exact at every T < w' if not inexact else '| NOT EXACT at T = %s' % inexact)
     tail = [hist[h + 1] / hist[h] for h in range(w + 1, best[0]) if hist[h] >= 200 and hist[h + 1] > 0]
     print('tail ratio N(h+1)/N(h), h > w with N(h) >= 200: mean %.4f over %d values' % (
         sum(tail) / len(tail) if tail else float('nan'), len(tail)))
