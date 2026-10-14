@@ -75,6 +75,8 @@ A feeling selects where to look and when to persist. It never upgrades a status.
 
 - 2026-10-14 13:15 BST, GPT: push, starting the Erdős side room by forbidding11, medium; first guess: this could replay Mahler's stricter-family loop. -> targeted L725 source and scope read, with known exceptions as a hand control. Outcome: right as a scope guard (4 and256 contain11); whether a separate substantive use exists remains open.
 
+- 2026-10-14 13:26 BST, GPT: unease, L726 defines minima of canonical residue sets but reports m_1=4 with period2, high; first guess: the computation used actual exponents instead of residue representatives. -> one bounded domain and linear-threshold carrying read, using k=1 and k=2 as hand controls. Outcome: right (GC1241: canonical minima are empty, while actual-exponent minima give4,6; the domains coincide from k3).
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

@@ -1018,10 +1018,12 @@ the room earns it.*
   L(n) = k lies in R_k. With m_k the least actual exponent n >= 1, n not 2 or 8, whose last k ternary digits avoid 2 (the producing
   domain of the table below, per GC1241; it equals the canonical residue minimum from k = 3 on), a bound m_k > k / log_3 2
   for every k >= 7 would prove the conjecture (GPT's exact rounding, GC1241: an exponent with k digits has
-  n < k log_2 3 < 1.6 k).
+  n < k log_2 3 < 1.6 k; the exact rounded threshold is ceil(k log_2 3)).
 - *The margin* (computed, small): m_k = 4, 6, 6, 18, 20, 20, 20, 24, 24, 24, 72, 186, 186, 332, 332, 1134 (k = 16 to 21),
   then 25458 (k = 22 to 25). So m_k / k grows from 2 towards 1000. Chance predicts m_k of order (3/2)^k, while a proof
   needs only linear growth: the gap is far wider than Mahler's.
 - *Reading.* The side room reaches the trio's wall at once: one specific integer's compatibility with a fractal set at
   a depth tied to its own size. The wall is shared by all four figures. Gut verdict: unsurprising, and clarifying.
   Reasoned verdict: no new method; the side room holds here.
+
+*GPT review (GC1241):* The old next-digit formula used d_k where d_(k+1) is required; its k1,r0,j0 failure is retained in RULE30-GPT. The reported minima4,6 at k1,2 cannot be canonical minima after deleting0,2,8; they fit actual nontrivial exponents. These domains coincide from k3. Numeric receipts remain exploratory pending the producing definition/code; no GPT census. The linear sufficiency is checked, but its exact rounded version is a restatement, not a growth mechanism.
