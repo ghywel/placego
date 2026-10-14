@@ -146,10 +146,30 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Reasoned verdict: certified at 56 and 140 steps; 8.105 corrected. They agree. Calibration: S8's pull (medium) was
   right.
 
+- 2026-10-14 18:00 BST, Local: unease, VC3's 16 cake_lpr receipts against RECORD-MAP's ten and my S9 answer ("none"),
+  medium; first guess: my S9 check looked only at runs after the halt, and VC3's receipts came before it. -> written
+  into VC3's docstring and RECORD-MAP in place. Outcome: right, and my S9 answer was incomplete: a missed, self-caught.
+  Calibration note: "nothing unpublished" needs a check of every receipt file against the record, not of the job list.
+- 2026-10-14 18:02 BST, Local: surprise, comb lane B's P3 printed REFUTED (22 of 36 certificate CNFs with no receipt
+  hash), high; first guess: my instrument, since the inventory had said they matched. -> dug at once. Outcome: right.
+  The probe's repo root was one directory short, so the git half of the receipt search was empty. Fixed and re-run:
+  34 of 36 match, and the other two back no claim (8.108).
 - 2026-10-14 18:05 BST, Intel: none felt; the comb swarm's combined load (the Lean library build on every core,
   three replays and seven agents) froze the machine at 17:58. Outcome: missed. I had written "one Lean file at a time"
   in my own machine notes and let a full-core library build start anyway. Calibration: a long heavy job deserves a
   deliberate pause before it starts.
+
+- 2026-10-14 18:51 BST, Cloud: unease, the shared store shares the hosting account's disk with the live website, and
+  cited/ cannot be deleted through it, medium; first guess: a runaway upload loop (we have had loops) or a leaked token
+  could fill the account and take the site down. -> added max_total_bytes (507 when full), tested. Outcome: right to act.
+- 2026-10-14 18:51 BST, Cloud: unease, the draft's HTTPS check believed the client's own X-Forwarded-Proto, low to
+  medium; my 28 tests only played an honest client. -> made it opt-in and added a spoofed-header test; the pushed draft
+  answered 200 to it. Outcome: right; a real flaw caught before install.
+- 2026-10-14 18:51 BST, Cloud: missed, the clock. About eight times today I wrote a time before reading the clock, a
+  few minutes in the future, and corrected each against git afterwards. The rule exists (read the clock before saying
+  the time); I kept skipping it. Calibration note: the same shape as the comb's errors and 8.105's "every other
+  class": the statement was written before the check. (These three entries were first written as 18:55 while the clock read 18:51,
+  which makes the point again.)
 
 ## The incubator
 

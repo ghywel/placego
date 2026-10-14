@@ -80,7 +80,7 @@ PART: as on the board.
   arbitrary column-1 histories — COMPUTED (second-read, GC359) — entry 26 (Proposition 13, KL)
 - After 133 steps: classes 12, 32, 42, 52 only, sizes +4..+8, +2..+6, +1..+5, -6..-1 — COMPUTED — entry 26 (board 6.1)
 - Class 12 impossible for every right half after 140 steps; possible at 56, 84, 112; the obstruction needs the rule
-  out to column 37 — COMPUTED — KS (Cloud), KK and DT (Local)
+  out to column 37 — COMPUTED — KS, KK, DT; CaDiCaL+cake_lpr route 112/112 (comb §8.108)
 - Every size of 32, 42, 52 realized at exactly 140 steps (upper bound beyond); class 42 is 67 of 20,282 settled kicks — COMPUTED, MEASURED — KX; KB
 - Class 42 dead at N = 560 in all 56 cases (drat-trim) — COMPUTED — KT2C
 - Classes 32 and 52 still possible after 448 steps; nothing above 448 decided for 32 — COMPUTED — KT2N (L375), KT2M
@@ -91,7 +91,7 @@ PART: as on the board.
 - Kick game: runs grow like log2 of its histories; rigidity is a constraint, not a bound — MEASURED — §8.44
 - Left: the interior's choice of size; what forbids class 12 at column 37; the cost side (Q1) — OPEN — board 6.1
 - The edge ruler's news reaches the wheel but does not measurably change the kick rate or rhythm; which kicks
-  happen is unmeasured — MEASURED — rule30_cloud_ruler_kicks.py, CL096, GC856
+  happen is unmeasured — MEASURED — CL096, GC856
 
 ## Records R(d) and R_real(d) (Q6, RR, RR2, RR3)
 - Both cutoff40 lists retain79 recurrent S/L states above the entropy ceiling; missing cuts41..5120 — COMPUTED/hand — GC1007.
@@ -108,8 +108,9 @@ PART: as on the board.
 - Both phases versus phase0; plateau R(d+1)>=R(d)-1 — COMPUTED — L286/CL038, RR3 (101/105 solver receipts).
 - RR/RR3 cone CNF equals finite query — PROVED GC937/CL154; phase/horizon lift audit GC1201; replay separate.
 - VC3 gate/status repairs pass synthetic controls (stale-cache recovery manual; no certificate replay) — GC961/965.
-- RR3 completed 97..120 on M5 (solver values); deciding UNSAT d3..97 by drat-trim/cake_lpr; VC 200/200; RR3 98..105,
-  107, 109 and six more by cake_lpr (16 of 23 at the 10-11 halt) — COMPUTED — RRC L438, L480, VC3 (rule30_cloud_rr3.py, rule30_verified_certs.py).
+- RR3 decided 97..120 (solver values); deciding UNSATs d3..97 by drat-trim/cake_lpr; VC 200/200; RR3 98..111, 113,
+  114 by cake_lpr, 112 and 115..120 kissat only (VC3 halted; comb §8.108) — COMPUTED — RRC L438, L480, VC3.
+- Comb B: stored 42 LRAT, 170 DRAT verify; kept cert CNFs match receipts (34/34); regenerations reproduce — COMPUTED — §8.108.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
 - K=40 relaxed at L=18: 124 UNSAT both phases (<=17); 140, 144, 152 settled by CUT/SP — COMPUTED (kissat) — RLK L575, L581/582, L589.
@@ -235,8 +236,8 @@ PART: as on the board.
   permutivity); alternation law rho_d = -1/2, 1/4, -1/4, 5/32, ... on s = d — PROVED (GC851; second-read CL103) /
   MEASURED — rule30_cloud_velocimetry.py, CL095; the printed errors are in units of the iid scale (GC851)
 - Forbidden G-trace words to length 11 certified minimal (cake_lpr); completeness rests on the census — COMPUTED —
-  rule30_trace_word_certs.py, L467, GC844
-- OHC at p = 2 reproduces §8.20's table to 3 decimals, m <= 22 — COMPUTED — rule30_one_hole_widths.py (XC)
+  TWC, L467, GC844
+- OHC at p = 2 reproduces §8.20's table to 3 decimals, m <= 22 — COMPUTED — XC
 - TC/TC2 audits PART (GC871, CL107, GC877, GC879/CL109), F digest and count roots COMPUTED (GC886, GC889); LP audits
   PART (GC883..885, GC887, GC891), witness recipe PROVED (GC888, CL118, L507), positivity guard GC942/944 (CL158)
 
@@ -266,11 +267,11 @@ PART: as on the board.
   seed — rule30_cloud_rain.py, CL094
 - Triangles are not carried; their births echo rightwards. Under fair rows, exactly: P(top) = 21/128 and C(d,d) =
   0, 928/441, 16/63, 94/49, 36/49, 17695/14112, ... (d = 1..9), alternating about 1 — COMPUTED (exact) —
-  rule30_cloud_triangle_echo.py (EC), CL108; measured first in rule30_cloud_velocimetry.py, CL095
+  EC, CL108; measured first in VW, CL095
 - The centre's wave moves at speed 1 and never reaches the right edge: the gap W + tau is exact; leftward influence
   can reach speed 1 on white — PROVED — GC856 (second-read CL103); rule30_cloud_centre_wave.py, CL097
 - Diagonal bias: rho_k's sign alternation fails at k = 17; rho_22 = -8408217689/2^42 — COMPUTED —
-  rule30_diagonal_bias.py, L473
+  L473
 
 ## Periodic points and travelling waves
 - Pure2-gap trains, both phases, seven-ring — PROOF-SKETCH / COMPUTED — GC1013; §5.

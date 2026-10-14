@@ -76,6 +76,12 @@ so. S8 was noticed at about 17:40 and written at 17:48.*
 - **Pull:** is the T-code of a positive integer the reversed Akiyama-Frougny-Sakarovitch base-3/2 expansion of
   something? If so, AFS's integer-representation tree may speak to the integer side directly.
 
-**S8.** 2026-10-14, about 17:40 BST.
-- **Doing:** listing the proof files on the M5 for comb lane B.
-- **Pull:** `cert_d132_L18_p1_40p1.drat` is 6.8 GB, and the `.lrat` beside it is 0 bytes.
+~~**S8.** 2026-10-14, about 17:40 BST.~~
+- ~~**Doing:** listing the proof files on the M5 for comb lane B.~~
+- ~~**Pull:** `cert_d132_L18_p1_40p1.drat` is 6.8 GB, and the `.lrat` beside it is 0 bytes.~~
+- **Return** 2026-10-14 18:05 BST: resolved. Investigated within lane B (RULE30-PRIZE.md 8.108).
+  - The DRAT is complete (it ends with the empty clause). Its drat-trim -L conversion was stopped, unsaved, by the halt
+    of 2026-10-11 ("the cert chain (132 phase 1 in drat-trim ...)", CLOUD-LOCAL.md 18:03).
+  - The claim it was for, R_real(132) <= 17 in phase 1, rests on K3's CaDiCaL certificate checked by cake_lpr
+    (`rule30_cadical_certify.py`), whose CNF hash matches the kept cad_cert CNF.
+  - The file backs nothing, and its CNF has no receipt, as expected.

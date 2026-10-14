@@ -66,6 +66,20 @@ with, so its closing status line is superseded by a fresh `status rr3`):
   - Only RR3 lines with ok = True are selected.
   - status rebuilds each received rr3 CNF and compares its hash with the receipt, printing the builder file's hash.
   - GC962: a hash DIFF withholds completion (no P1 or COMPLETE line).
+VC3 OUTCOME (comb note, 2026-10-14, Local; record comb lane B, RULE30-PRIZE.md 8.108). The run was halted unfinished
+by the owner's halt of 2026-10-11 17:54 (CL365; CLOUD-LOCAL.md 18:03 recorded "VC3 (16 of 23 done)" without naming
+them), and this block was not written then. From rule30-vc/vc.ck, outside git:
+  - 16 of RR3's 23 deciding UNSATs at d >= 98 are VERIFIED-UNSAT by cake_lpr: (98, 15), (99, 14), (100, 16),
+    (101, 16), (102, 15), (103, 15), (104, 14), (105, 14), (106, 13), (107, 15), (108, 17), (109, 16), (110, 15),
+    (111, 16), (113, 15), (114, 14). Before this note the record named ten (RECORD-MAP.md: "RR3 98..105, 107, 109").
+  - Not attempted: (112, 16), in progress at the halt (its DRAT, 9.7 GiB and truncated, backs nothing), and (115, 15),
+    (116, 16), (117, 15), (118, 16), (119, 15), (120, 14). Those depths rest on kissat's verdicts alone.
+  - VC3-C1 PASS. VC3-P1 HELD for the 16 attempted, none failed; the 7 not attempted are unscored.
+  - VC3-P2 HELD: the largest LRAT is 4.84 GB, at (110, 15).
+  - VC3-P3 HELD: the Spearman rank correlation of LRAT bytes against RR3's solve time is 0.81 over the 16.
+  - Comb replay: `status rr3` in a sandbox (HOME pointed at copies of vc.ck and rr3.ck) prints "16 of 23
+    VERIFIED-UNSAT by cake_lpr; not verified none; hash DIFF none; missing 7", so the 16 CNFs rebuild to their
+    recorded hashes.
 """
 import hashlib
 import os
