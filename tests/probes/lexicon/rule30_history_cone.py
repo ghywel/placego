@@ -36,6 +36,18 @@ PREDICTIONS (written 2026-10-13 23:01 BST, before any run; first written as 23:0
      computed (X_1 of a witness has one more tick of past and keeps cells d+1 .. E-1 white).
   Reported, no prediction: the table of R^(n)(d) - R_real(d) for n = 1, 2, 4, 8, and the UNKNOWNs (900 s cap).
 
+OUTCOME (census, 2026-10-14 01:31 BST, M5, about 2.5 hours; machine output quoted, no UNKNOWN and no replay failure,
+  so GC1213's guard leaves the scoring valid): H1 HELD, H2 HELD, H3 HELD, H4 REFUTED, H5 HELD (75 of 81), H6 HELD.
+  Depths 20 .. 100 where R^(n)(d) < R_real(d) (difference shown); every other depth equals R_real:
+     n = 1: none
+     n = 2: 87:-2 88:-1 89:-1 90:-1 91:-1
+     n = 4: 43:-1 44:-1 48:-2 87:-2 88:-1 89:-1 90:-1 91:-1
+     n = 8: 43:-1 44:-1 48:-2 67:-5 68:-4 69:-1 87:-2 88:-2 89:-2 90:-1 91:-1
+  So the peaks at 87 (16) and 67 (14) are reached only by configurations with at most one and at most seven ticks of
+  real past, and 48's 11 by at most three. Most records, including 108's 16, survive eight ticks unchanged. The drops
+  fall on depths whose committed witnesses were real only through 1w (67 .. 69, 87 .. 91) or had no canonical parent
+  (43, 44), plus 48.
+
 GPT reporting review (GC1213, 2026-10-13 23:10 BST), registered before synthetic checks:
   Two fixture depths (20,21): UNKNOWN-only results must remain upper bounds and leave H3..H6 unscored;
   SAT-CHECK-FAILED must abort before lowering L. Unexpected control: validated SAT in one phase with UNKNOWN

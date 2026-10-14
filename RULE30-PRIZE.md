@@ -6621,8 +6621,14 @@ whether a rapidly kicked game spelling covers the train (scope corrected in GC12
 
 **History-cone census** (`tests/probes/lexicon/rule30_history_cone.py`, H1 to H6 predicted before any run). This is
 RR's exact cone grown n ticks into the past, with the band at cone time n. The n = 0 cone equals RR's clause for clause
-and reproduces R_real(20 .. 30) (H1 HELD). The census of R^(n)(d) for n = 1, 2, 4, 8 at d = 20 .. 100 is running; its
-outcome follows here.
+and reproduces R_real(20 .. 30) (H1 HELD). The census of R^(n)(d) for n = 1, 2, 4, 8 at d = 20 .. 100 (no UNKNOWN; H2,
+H3, H5 and H6 HELD, H4 REFUTED): R^(1) = R_real everywhere. With two ticks, 87 .. 91 drop (the 87 peak of 16 falls to
+14). With four, 43, 44 and 48 join. With eight, 67 .. 69 join (67's 14 falls to 9) and 88 and 89 deepen. Eight ticks
+change 11 of 81 depths; 70 are unchanged and 75 lose at most 1, 108's peak of 16 among the unchanged. **Young peaks**
+(GC1216's final history block): the new peak at 147 has a phase-0 maximizer with a real past, because X2's 82-sample
+word is in L_1 (Y1; control Y0, the 87 root, held), so R_history,0^(1)(147) = 18. **Reading (MEASURED, finite):**
+history's price on the records is real but sporadic, falling on a few young peaks and not on most records. Under the
+loop rule the history family is closed for now; no all-depth mechanism is named.
 
 ### 8.99 Mixed S/L residences: no small constant record budget; a uniform one remains open (2026-10-14 00:03 BST)
 

@@ -187,18 +187,18 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
-- Initial rewrite/merger GC1057/1058 PROVED CL225/226; two-tick normalization GC1059 PROVED CL227.
-- Two-tick lift guard and packet selection PROVED CL228/230 — GC1060/1061.
-- Origin/future lifts PROVED CL231/232/235..237 — GC1062..1066; collar/endpoint lifts PROVED CL238/240/241 — GC1067..1069.
+- Initial rewrite/merger GC1057/58 PROVED CL225/26; two-tick normalization GC1059 PROVED CL227.
+- Two-tick lift guard, packets PROVED CL228/230 — GC1060/61.
+- Origin/future lifts PROVED CL231/32/35..37 — GC1062..66; collar/endpoint lifts PROVED CL238/40/41 — GC1067..69.
 - Collar release PROOF-SKETCH — GC1070; selector PROVED CL243 — GC1071; three-centre shield REFUTED CL244 — GC1072.
-- Plateau/halo PROVED CL210/211 — GC1040/1041.
+- Plateau/halo PROVED CL210/11 — GC1040/41.
 - Cut45 joint origin/past closes at width24; prefix15 fails — COMPUTED CL210 — GC1036..1039.
-- Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/1044/1045.
+- Repair: fixed-track binary; joint nonbinary — PROVED CL211/213 — GC1042/44/45.
 - S/L collar/gates and fork guards — PROVED CL214/215/217..220 — GC1046..1054.
-- GC1114..19 cap672/inverse/excess139/reset PROVED CL294..299; closure REFUTED.
+- GC1114..19 cap672/inverse/excess139/reset PROVED CL294..99; closure REFUTED.
 - GC1121..32/1134..42/1144/45/1154..58/1170 PROVED;1146 fails;1148/49/51/1159 SKETCH;badB1150;gap6 REFUTED1153.
 - GC1172/74/76/77/79/1181/84/85/87/89/91/93..99/1200/03..08 PROVED;1173/1182 fail;1178/1192 SKETCH; m-3 out L17 (§8.97).
-- History records: R_real,p(d)<=2n+R^(n)(d+n), equivalent — PROVED GC1212; K derivation withdrawn (train), game containment unproved; 16 witnesses lack real past; §8.98.
+- History records: R_real,p(d)<=2n+R^(n)(d+n), equivalent — PROVED GC1212; K derivation withdrawn (train), game containment unproved; 16 lack real past; n<=8 lowers 11/81 (young peaks 67, 87); §8.98.
 - Mixed S/L residences: runs grow to N=150; uniform budget OPEN — MEASURED — §8.99.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..35.
 - Cut45 exit/origins: unary/pair stall, joint works — hand/COMPUTED — GC1028/29/39.
