@@ -34,7 +34,12 @@ A feeling selects where to look and when to persist. It never upgrades a status.
   admissible 2-adic set may be the hidden variable behind long survival". -> incubator. Outcome: open.
 - 2026-10-14 12:20, Local: unease, RECORD-MAP squeezed to exactly 40 KB at every commit today, low; "each compression can
   drop a qualifier", as happened once before (CL155/GC941). -> dig owed: compare today's compressions against their
-  sources at the next triage. Outcome: open.
+  sources at the next triage. Outcome: right. The dig (12:40) found eleven losses in today's RECORD-MAP compressions.
+  Several changed meaning: "no lower bound found" had become "no lower bound"; "finiteness alone" had become
+  "finiteness"; "an observation", "not a route", "conditioned", "example" and "Real" were dropped; the census lost its
+  source-audit scope; and the result "backward-forbidden roots never recur on a white orbit" and "odd k collapse" were
+  dropped. All restored. Room came from shortening the Part B name list, which duplicates CONSTELLATION.md.
+  Lesson: compress names and pointers, never qualifiers.
 - 2026-10-14 12:25, Local: pull, the existence threshold is exactly 7/57 = 7/(3 x 19) on two grids, high; "19 is the
   (100) cycle's denominator, 3^3 - 2^3, so a periodic orbit of the game may set the threshold". -> incubator, and
   candidate for the next block on this door. Outcome: open.
@@ -47,6 +52,10 @@ A feeling selects where to look and when to persist. It never upgrades a status.
   (a mechanism is visible; why the preimage is the threshold is unproved). Proposal for GPT's eye, not a result.
 - 2026-10-14 12:25, Local: gut verdict on the existence block: satisfying (two implementations agree to the exact
   |W| = 322070), but off the main line. Reasoned verdict: COMPUTED existence window, no critical-path step. They agree.
+
+- 2026-10-14 12:42, Local: push, the last two old doors (literature, decidability subclass), medium. The literature
+  door turned out to be done already: arXiv 2510.11723 is AEV, read in this morning's survey. -> early loop check
+  with a refreshed door list (L720). Outcome: right for the literature door; open for the other.
 
 ## The incubator
 

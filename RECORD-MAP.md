@@ -49,7 +49,7 @@ PART: as on the board.
 - H(j) - j <= 17 for j <= 22, a plateau broke at w = 27; only §8.69's ceiling certifies — MEASURED — DL, DL2; GC660
 - Phase envelopes R_p(d)+d-1=max_(W<d)H_L^p(W) — PROVED GC1166; §8.94.
 - P20 repeats fail34 (phase1); low20 excludes real clock through20 — PROVED GC1167/68.
-- B100101: no real S prepend — PROVED GC1169.
+- Real B100101: no real S prepend — PROVED GC1169.
 
 ## The wheel (column 0 clamped to 0101, column 1's 56-step word, the forced block next to it)
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
@@ -202,12 +202,12 @@ PART: as on the board.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..35.
 - Cut45 exit/origins: unary/pair stall, joint works — hand/COMPUTED — GC1028/29/39.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
-- Shifted escape to100, hidden update failure, follower separation — evidence — GC1021/22/24/25.
+- Shifted escape to100, hidden update failure, conditioned follower separation — evidence — GC1021/22/24/25.
 - Clamped seed1001 eternal two-gap train via fourteen-site causal P8 lock — PROVED CL189/L595 — GC1020/G282.
 - Two-gap six-column slab: three failing interface prefixes, failure eight ticks later — SKETCH/COMPUTED — GC1017..19.
 - Short-entry plus mature gate loses exact past — REFUTED — GC1015.
-- Mature S gate keeps nine prefixes; G239 SL startup has no two-tick past — COMPUTED/SKETCH — GC1014.
-- Marker prehistory branches at any distance; some prefixes forget tail constraints — COMPUTED/hand — GC1010/12; G236.
+- Mature S gate keeps nine prefixes; G239 SL startup example has no two-tick past — COMPUTED/SKETCH — GC1014.
+- Marker prehistory branches at any distance; some prefixes forget all tail constraints — COMPUTED/hand — GC1010/12; G236.
 - S/L macro past0/1 and age2 cutoff40 shield — PROOF-SKETCH — GC1009/1011, L590.
 - Actual nonlinear origin obstruction, depth26 — COMPUTED — GC1008.
 - Fixed-m remote tails full; rooted black-image shield and010 forgetting — hand — GC1004..1006.
@@ -374,12 +374,12 @@ PART: as on the board.
 
 ## Mahler's 3/2 problem (room since 2026-10-14, MAHLER.md)
 - n_(j+1)=ceil(3n_j/2), u_j=sum b_(j+k)2^k/3^(k+1)<1/2 (G50); integer side the crux; strict set not closed, dim log2(3/2) — PROVED G293 — MAHLER.md.
-- No Z-number below 2^63 (D-M 2009: 2^57), nor above -2^63; H*~2.4w (157 at w=63); A(T)=beta count; tail 3/4 — COMPUTED — MAHLER §1.
+- No Z-number below 2^63 (D-M 2009: 2^57), nor above -2^63; H*~2.4w (157 at w=63); A(T)=beta count; tail 3/4 — COMPUTED (source-audit scope; max replayed by rung code) — MAHLER §1.
 - In print: Z_3/2(2/7,5/7) empty (Stephan 2026, Lean); certificates blocked on infinite hold sets — PRIOR-ART.
 - Bounded-gap Fibonacci code passes fractional tests, fails integer realization — PROVED GC929.
-- Million-start cutoff certified (COMPUTED GC931); visitation CLOSED (GC928/CL147).
+- Million-start cutoff certified (COMPUTED GC931); backward-forbidden roots never recur on a white orbit, visitation CLOSED (GC928/CL147).
 - Capped bits/values: no uniform convergence near 4/3 — PROVED GC935/936.
-- Carry dial: H_k=v2(g)+1 at k=0 (GC836); g=53 survives k=4 — MEASURED L457.
+- Carry dial: H_k=v2(g)+1 at k=0 (GC836); odd k collapse; g=53 survives k=4 — MEASURED L457.
 - Rung-g search: no xi<2^70 with all parts <35/81 (g4), 2^80 <97/243, 2^90 <275/729, 2^100 <2315/6561 — COMPUTED — MAHLER §2.
 - Swarm: path unmoved; gap-g ladder (odd iterates -1/3 mod 2^g) PROVED G294, dual too; height coupling, bowtie CLOSED — MAHLER §2.
 
@@ -394,23 +394,20 @@ PART: as on the board.
 - Nersissian arXiv:2609.25077 Theorem 13: B2's method and single-seed statement, earlier — credited (§8.59 note)
 - Meier and Staffelbach (1991): left half from two columns, as here — convergent
 - Hanson and Crutchfield (1997): domain filter, used for the wheel's walls
-- Flatto, Lagarias, Pollington (1995): Mahler's decoupling, same skeleton — calibration (§8.45)
+- Flatto, Lagarias, Pollington (1995): Mahler's decoupling, same skeleton — calibration, not a route (§8.45)
 - Dubickas 2009 (W2); Terras, Lagarias, Kontorovich–Sinai (least residue); Bugeaud, Dubickas (2005) — credited
 - Guillon (2008): retourné = forced left half; entropy at width 2 — §8.77
 - Sablik (2008): no expansive slope (GC813); Coven, Pivato, Yassawi (2007): edge odometers (GC808/810)
-- Tahay; Dolce, Tahay: Sturmian columns from finite seeds in other CA; finiteness forces nothing
-- Milnor, Kurka, Courbage–Kaminski: no lower bound on one column's entropy — §8.33
-- Wolfram (2019): band boundary 0.252/step; Epperlein (2017): periodic points
+- Tahay; Dolce, Tahay: Sturmian columns from finite seeds in other CA; finiteness alone forces nothing
+- Milnor, Kurka, Courbage–Kaminski: no lower bound on one column's entropy found — §8.33
+- Wolfram (2019): band boundary 0.252/step, an observation; Epperlein (2017): periodic points
 - Cramér's model: the coin's scale plus a structural constant (§8.38); Das not imported; López–Stoll gap noted
 
 ## Side questions (CONSTELLATION.md, by name only)
 - Part A, families after Condrey: Condrey's walls; one-hole walls; slow walls; mostly-white walls; the by-period
   ladder; the single cell itself; the uniform count
-- Part B, the object itself: universal left side; right edge and nested side; two light speeds; the wheel; the
-  sideways rule; the channel and two worlds; columns as numbers; balance without randomness; siblings and the one
-  shape; ring dynamics; settling front and odometer; computation in the rule; triangles, templates and quantised
-  runs; what makes 30 special; inverse reset language; hidden dynamics and visible languages; time derivatives;
-  relativity and the lopsided light cone; unequal ticks; alternation, heard
+- Part B, the object itself: 20 named questions (universal left side, the wheel, the sideways rule, the channel and two
+  worlds, columns as numbers, ring dynamics, computation in the rule, ...) — CONSTELLATION.md section B
 - Section E, portfolio: seed universality in a deterministic core; a transport law for a defect; the arithmetic of
   the ordered edge; the infinite-width boundary information limit
 - Section G, neighbours (10-14): Erdős ternary (fourth figure), Waring, x2x3, normality, Chowla, Langton, BB
