@@ -105,12 +105,39 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
      - g = 3: the windows [9/19, 13/27] and odd iterates 5 mod 8. g = 4: [27/65, 35/81] and 5 mod 16. g = 5:
        [81/211, 97/243] and 21 mod 32.
      - For these windows the fractional side is a shift of finite type, so the real number drops out. What is left
-       is residue avoidance by positive integer orbits alone.
+       is residue avoidance by positive integer orbits alone. (At a = alpha_g the strict fractional set omits the
+       critical periodic tail, so "shift of finite type" holds there only for actual integer orbits, which never
+       realize that tail: GC1227.1.)
      - The windows lie just above Flatto-Lagarias-Pollington's 1/3, and each has an uncountable hold set, so
        Stephan's certificate format cannot reach them. Their emptiness is open (conjecture R_g). Mahler implies
        R_3, which implies R_4, and so on.
-     - The ladder does not converge to Mahler. The union of all window rungs covers exactly the Z-numbers with
-       sup u_j < 1/2, and a Z-number whose fractional parts approach 1/2 lies on no rung.
+     - *Carrying proof of the gap-g rung* (Local, written for GPT's tier-2 read; F(c) = sum c_k 2^k/3^(k+1)).
+       - Lemma 1 (gap). For odd n, T(n) = (3n + 1)/2, and from an even m, T(m) = 3m/2 lowers v_2 by one. So the next
+         1 after an odd n_j comes v_2((3 n_j + 1)/2) + 1 steps later. That gap is >= g iff 2^g divides 3 n_j + 1,
+         iff n_j = -1/3 mod 2^g. A positive integer's code has infinitely many 1s.
+       - Lemma 2 (the cap inside the class). Let M be the supremum of F over codes with every gap >= g. A code that
+         begins 0 has F = (2/3) F(shift) < M. A code that begins with 1 continues with k >= g - 1 zeros, then a tail
+         c' that begins with 1 or is all zeros, so F <= 1/3 + (2/3)^g M. Hence M <= (1/3)/(1 - (2/3)^g) = alpha_g.
+         Equality forces every gap to be exactly g with no leading 0, i.e. the code (1 0^(g-1))^infinity.
+       - Lemma 3 (a short gap costs). Two 1s at distance d <= g - 1 give F at the first of them
+         >= 1/3 + (2/3)^d / 3 >= beta_g.
+       - Forward. If xi > 0 keeps every {xi (3/2)^j} in [0, a) with a <= beta_g < 1/2, then G50 gives
+         xi = n + u_0(n) with n >= 1 (n = 0 gives xi = 0) and u_j = F(shift^j c(n)) < a. Lemma 3 then rules out
+         every gap below g.
+       - Backward. If n >= 1 has every gap >= g, Lemma 2 gives every tail <= alpha_g. Equality at time j would make
+         T^j(n)'s code periodic, and a periodic code sums to one rational in R and Z_2, forcing T^j(n) = -alpha_g,
+         which is not an integer (G50's baseline). So every tail is < alpha_g <= a, and xi = n + u_0(n) is the
+         reconstructed real, a Z-number with every fractional part below a.
+       - The interval is nonempty for g >= 3: alpha_3 = 9/19 < beta_3 = 13/27 < 1/2. The lower endpoint is included
+         only through integer realization (the backward step), as GC1227 asked.
+     - *Two ladders, not one* (corrected per GC1227.1; my first wording merged them).
+       - This gap-g ladder runs downward. Its windows shrink toward 1/3, and the union of its rungs is only the
+         gap >= 3 class. The formal code (101000000)^infinity has every tail below 1/2 (maximum 9477/19171), yet a
+         gap of 2, so it lies on no gap-g rung.
+       - The upward ladder comes from the annulus form. The windows [0, a_M), with a_M the value of the M-bit prefix
+         of d(1), rise to 1/2. Each is a finite residue condition mod 2^M on the odd iterates (the annulus classes
+         with m < M). Their union is exactly the Z-numbers with sup u_j < 1/2.
+       - Neither ladder reaches Mahler. A Z-number whose fractional parts approach 1/2 lies on no rung of either.
      - Novelty is unchecked against Dubickas-Mossinghoff 2009 (its "allowed residues" search), Flatto 1992 and FLP
        1995. The forward half (gaps >= 3 give tails <= 9/19) is GC667's.
    - *The annulus form* (PROOF-SKETCH; classical Parry theory carried through the G51 isometry). Let D be the 2-adic
