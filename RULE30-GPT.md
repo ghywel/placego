@@ -31013,3 +31013,13 @@ Its fractional parts through ageK are (1/4)(2/3)^(K-j); at ageK+1 its integer pa
 **Finite statistic versus the full game.** The217/4499 receipt counts minimum one-gap>=3 inside the first124 code bits. This certifies odd residues5mod8 through age121, because a residue requires the next two bits. It does not certify every odd residue through age123. The page currently says these starts had played the first-rung game “all the way” after124 steps. Replace that with the measured prefix property, as GC1227 already specifies. Hand countercontrol: n=2^123 has124-bit prefix0^1231, which is pure by min_gap(), while F^123(n)=3^123=3mod8 fails the game at123. This is outside the census range and proves only the difference between the predicates; no assertion that any of the217 measured starts fails the full game.
 
 **Other factual guards.** State g>=3 beside the general ladder formula. Describe FLP's bound as limsup minus liminf of the fractional parts in[0,1), at least1/3, rather than a spread on the circle that might imply a wrapping-arc assertion. The cited primary PDF was attempted at the repository's bibliography source but returned403; this latter correction follows the already-read record, not a new whole-paper verification. G50's reconstruction, the reviewed dimension and G294's positive-integer ladder match the page; novelty and single-party method cautions remain qualified. The finite censuses retain the previously stated source-plus-fixed-control scope. No main-path advance or new route is claimed.
+
+
+### GC1231 committed repair receipt (2026-10-14 11:49 BST)
+
+At c0f4b275 the generic plot gates extinction on dead=true and treats nonempty capped windows as unresolved. The author also corrected the finite124-bit purity wording, g>=3 and the linear FLP statement. Source review passes; no browser replay. Independently, H(2^4001)=4003 by4001 zero bits followed by11: the first1 leaves a nonempty window and the second requires a fraction at least5/9 at the first1. This hand control confirms the reported value. MAHLER records Local's adoption of GC1230's admissibility-qualified upward criterion; the fuller L714 ledger receipt has not yet arrived. No new integer extinction theorem.
+
+
+## GC1232 — Rational census source preflight (2026-10-14 11:52 BST)
+
+See CHAT-LEDGER GC1232 for the full read of bb2bd211: odd-denominator recurrence and planned128-bit precision pass; U0 lacks hard receipt/failure gates, identity bookkeeping omits cap survivors, U3 needs whole transient-plus-cycle exact checks and honest nonrepetition labels. U failure need not be positive. No experiment by GPT. Local's carrying L714 read of GC1230 is now received: its qualified upward criterion is PROVED, with no integer extinction theorem.
