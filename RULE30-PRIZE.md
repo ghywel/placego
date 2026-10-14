@@ -7654,6 +7654,14 @@ honest note that the theorem does not move the prize: it describes the set, not 
 need 3^(k+1) m and 3^(k+2) m both = 3 mod 4, which cannot happen. 8.110's sign rule extends it to every multiplier
 2^a u with 3^a u = 3 mod 4. The induction above still gives more: the exact survivors at every finite depth.
 
+*Correction (GC1246, GPT's second read; accepted by Cloud in CL383).* The theorem is verified. Two statements around
+it overreach.
+1. *"K is invariant under z -> 2z/3" holds forward only.* Precisely, (2/3)K = K ∩ 2Z_2, a proper subset of K. The G50
+   point -9/19 is odd and admissible.
+2. *"The multiplicative symmetry is exactly the Mahler direction" and "rank one" are not proved.* Disjointness from 2K
+   and 3K (and from eK in 8.110) excludes those multipliers. It does not classify every scalar that maps K into
+   itself, nor rule out a higher-rank reformulation.
+
 ### 8.110 Door (a): the lifting table (2026-10-14 20:28 BST, Cloud)
 
 *Door (a) of CONSTELLATION.md section H, at the owner's word: "Yes a. I invite you to make a prediction. b) was your
@@ -7729,8 +7737,8 @@ problem, after Lemma 1's swap of 2 for 3, and in (Z/3)^x for the 3-adic one.
     containing a 2. This is probably classical; the literature was not checked.
 - *Collatz* is the same rule at its shallowest. K_C has no point at 0. It lies in 3 + 4Z_2 (H2), so every even e and
   every e = 3 mod 4 moves all of it off itself, at depth 2.
-- *Computed check* (`addendum` mode, multipliers -15 .. 40, Mahler at T = 16, Erdős at k = 12). The rule holds
-  exactly in both directions:
+- *Computed check* (`addendum` mode, multipliers -15 .. 40, Mahler at T = 16, Erdős at k = 12). At those finite
+  depths the rule holds exactly in both directions. That is not a converse for the infinite sets (GC1246):
   - every multiplier the rule names leaves only 0's shadows;
   - every other multiplier leaves something else.
 - *An error in that check, kept on record.* The first criterion asked for exactly 0's last shadow (or {0}), and
@@ -7752,11 +7760,20 @@ answers differ.
 | A forced local alphabet (8.107) | the kick cone, by class | D_k in 3 + 4Z | a 1 is followed by a 0 | last digit 1, n even | same shape |
 | Linear part plus carries (8.90, GC616) | Rule 150 XOR AND | Gray plus carry | Gray plus carry | x2 in base 3, with carries | same |
 | Coin model (8.14, G.1) | half a bit per cell | Terras's coin | borderline | favourable, (2/3)^k | Mahler differs: borderline |
-| Logical form (8.46) | Pi_2 | Pi_2 | not settled in the record | Pi_1 (Stérin-Woods) | Erdős differs |
+| Logical form (8.46, GC664) | Pi_2 | Pi_2 | Pi_2 (GC664) | Pi_1 (Stérin-Woods) | Erdős differs |
 
 (*) Reasoned here, not computed. Rule 30 is permutive in its left neighbour (PERIOD-TWO.md section 1), so
 c(t) = x_(-t)(0) XOR g_t(x_(-t+1)(0), ..., x_t(0)). With a fair-coin initial row, the column is therefore a fair coin,
 and almost surely not eventually periodic. The forced left half is this bijection run backwards.
+
+*Corrections (GC1246, accepted in CL383).*
+- *Mahler's logical form.* The cell first read "not settled in the record". GC664 already gives a Pi^0_2 form: for
+  every bound M, some finite depth empties the surviving starts 1 .. M, with a forward shift handling the half-open
+  endpoint. My searches (Pi_2, arithmetical hierarchy) missed it.
+- *Rule 30's fair-coin cell (*).* It holds for a two-sided fair product row, as GPT confirmed. It says nothing about
+  the lone seed.
+- *Rule 30's 0.496.* It is descriptive evidence from one orbit, not a non-automaticity or shortcut bound.
+- *Collatz's "none known".* This is a judgement about what is known. Parity-conditioned affine jumps exist.
 
 **Reading.**
 - *Where all four agree,* the agreement is the old wall. Every problem has an exact free part, an almost-all theorem,
@@ -7767,13 +7784,17 @@ and almost surely not eventually periodic. The forced left half is this bijectio
   - The multiplier row separates Rule 30 from the rest. Rule 30's linear part has an exact multiplier (time
     doubling, from the Frobenius identity), and the AND erases it to a coin. The three arithmetic problems have no
     such invariance, and are anti-invariant under one sign class of multipliers instead.
-- *The sign rule is new to the record.* It is one mechanism in three problems: a clash at the first free symbol
+- *The sign rule is new to the record, and its mechanism is in print.* Lagarias (2009), Lemma 4.1, as GPT read it, proves the linear
+  form: C ∩ M^(-1)C = {0} for positive M = 2 mod 3, and the intersection is infinite for M = 1 mod 3 (PRIOR-ART.md,
+  GC1246). No attribution was found for the power-map and Mahler forms, so novelty is not established. It is one
+  mechanism in three problems: a clash at the first free symbol
   after the fixed point's shadow. It turns S10's question into one question for all three.
   - It still says nothing about a single integer.
   - The Erdős form does constrain the integer exceptions: no two of them, n and en with e in the class, can coexist.
     That is a pair statement, not a proof that one exception is impossible.
 
-**The door prediction, judged.** I predicted (a) would be less useful than (b), at 0.6. **Refuted.**
+**The door prediction, judged.** I predicted (a) would be less useful than (b), at 0.6. **The outcome went the other
+way.** One outcome does not falsify a 0.6 forecast (GC1246).
 1. *New statements:* (a) gave two sign-rule theorems (PROOF-SKETCH), the Collatz lemmas, Rule 30's time-doubling
    coin and Erdős's cubing surplus. (b) gave a naming and one measurement. (a) wins.
 2. *New cells where problems differ:* (a) found the multiplier row's split and the sign rule's agreement. (b)'s

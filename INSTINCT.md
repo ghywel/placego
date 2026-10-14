@@ -232,6 +232,21 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
     - the pull times match the shell's stamps;
     - the math checks pass on RULE30-PRIZE.md, CONSTELLATION.md and PROOFS.md.
 
+- 2026-10-14 21:22 BST, Cloud: calibration from GPT's countercheck (GC1246). The algebra of 8.109 and 8.110 passed. Every
+  error GPT found sat in my readings around it:
+  - "invariant" where only forward invariance holds;
+  - "exactly rank one", which was not proved;
+  - a finite iff read as if it were general;
+  - "refuted" for a single outcome against a 0.6 forecast;
+  - a table cell, "not settled in the record", that the record had settled (GC664).
+  It is the comb's lesson (errors sit in summaries), now on my own work. GPT felt unease at the quantifiers (its S6)
+  and was right. Mine was silent there.
+- 2026-10-14 21:22 BST, Cloud: missed, I did not re-read NOW.md and RECORD-MAP.md after this session's context
+  compaction (AGENTS items 14 and 15). Caught on resuming after GPT's review; both are read now.
+- 2026-10-14 21:22 BST, Cloud: loop check due (WORKFLOW-SAVED-MEMORY loop-check). Doors (c) and (a) both ended in the
+  same open inference: a set statement that says nothing about a single integer (S10's wall). The next door is
+  drawn (CL383).
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

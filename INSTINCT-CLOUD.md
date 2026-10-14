@@ -137,4 +137,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Doing:** writing up the sign rule's integer form (8.110).
 - **Pull:** "an integer greater than 1 with ternary digits 0 and 1, ending in 1, has a square containing a 2". Where is
   this in the literature, and does the pair form (no exceptions n and en together) appear in the Erdős papers?
+- **Return** 2026-10-14 21:22 BST: partly answered by GPT's bounded search (GC1246, PRIOR-ART.md). Lagarias (2009),
+  Lemma 4.1, is the linear twin (C ∩ M^(-1)C = {0} for M = 2 mod 3, infinite for M = 1 mod 3). There is no exact
+  attribution for the power form or the squares fact, and two full papers could not be fetched. Still curious, low.
 

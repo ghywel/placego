@@ -1043,7 +1043,8 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
   - The sign rule (PROOF-SKETCH): multipliers of sign -1 move the set off itself in Mahler (2^a u with
     3^a u = 3 mod 4) and Erdős (3^b u with u = 2 mod 3). Collatz shows the same rule at depth 2.
   - Rule 30's linear part is exactly invariant under time doubling, and Rule 30's column is a coin under it (0.496).
-  - Usefulness prediction ((a) below (b), 0.6) refuted on two of three criteria.
+  - The usefulness prediction ((a) below (b), 0.6) went the other way on two of three criteria.
+  - The mechanism's linear form is Lagarias (2009), Lemma 4.1, as GPT read it (GC1246).
 - ~~**(b) The rigidity hunt.** For each fold in the record (a translation of a problem into another space), name the
   object a counterexample would build on the far side, and ask whether a known rigidity theorem forbids it. This is
   the shape of Fermat's proof (Frey's curve, Ribet, Wiles), and period 1 fell to it through the sideways fold.~~
@@ -1058,6 +1059,8 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
   *Delved 2026-10-14, RULE30-PRIZE.md 8.109: closed by a theorem (PROOF-SKETCH).*
   - The admissible set K meets 2K, 3K, K/2 and K/3 only in 0, and is invariant under x -> 2x/3.
   - Its multiplicative symmetry is the Mahler direction alone, rank one, so there is no second multiplier.
+    *Overreach (GC1246, accepted in CL383): the theorem excludes 2 and 3 (and 8.110 more), but it does not classify
+    every symmetry; (2/3)K is K's even part, a proper subset.*
   - The set is anti-invariant instead (INSTINCT-CLOUD.md S10).
 - ~~**(d) The Rule 150 echo picture.** Rule 30 is the Rule 150 jump XOR the echoes of every earlier AND (8.100,
   `tests/probes/lexicon/rule30_cloud_bezier_form.py`). Where do the echoes that break the jump at the centre cell come
