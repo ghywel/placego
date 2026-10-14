@@ -374,7 +374,7 @@ PART: as on the board.
 
 ## Mahler's 3/2 problem (room since 2026-10-14, MAHLER.md)
 - n_(j+1)=ceil(3n_j/2), u_j=sum b_(j+k)2^k/3^(k+1)<1/2 (G50); integer side the crux; strict set not closed, dim log2(3/2) — PROVED G293 — MAHLER.md.
-- No Z-number below 2^63 (D-M 2009: 2^57), nor above -2^63; H*~2.4w (157 at w=63); A(T)=beta count; tail 3/4 — COMPUTED (source-audit scope; max replayed by rung code) — MAHLER §1.
+- No Z-number below 2^63 (D-M 2009: 2^57); no eta in (0,2^63-1] with all parts in (1/2,1); H*~2.4w (157 at w=63); A(T)=beta count; tail 3/4 — COMPUTED (source-audit scope; max replayed by rung code) — MAHLER §1.
 - In print: Z_3/2(2/7,5/7) empty (Stephan 2026, Lean); certificates blocked on infinite hold sets — PRIOR-ART.
 - Bounded-gap Fibonacci code passes fractional tests, fails integer realization — PROVED GC929.
 - Million-start cutoff certified (COMPUTED GC931); backward-forbidden roots never recur on a white orbit, visitation CLOSED (GC928/CL147).

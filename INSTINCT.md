@@ -32,7 +32,8 @@ A feeling selects where to look and when to persist. It never upgrades a status.
   progress". -> stated in advance in L714/L715 that they were method filters. Outcome: right (GPT's loop check GC1230
   agreed: the critical path had not moved).
 - 2026-10-14 12:12, Local: pull, the rung record holders sit 2-adically next to -1/3 and 0, medium; "distance to the
-  admissible 2-adic set may be the hidden variable behind long survival". -> incubator. Outcome: open.
+  admissible 2-adic set may be the hidden variable behind long survival". -> incubator. Outcome: wrong in its unrestricted form. GPT's GC1236 shows the distance from n to the whole admissible
+  set is exactly 2^-(H-1), a rename of the horizon. Distance to a fixed finite family chosen beforehand stays open.
 - 2026-10-14 12:20, Local: unease, RECORD-MAP squeezed to exactly 40 KB at every commit today, low; "each compression can
   drop a qualifier", as happened once before (CL155/GC941). -> dig owed: compare today's compressions against their
   sources at the next triage. Outcome: right. The dig (12:40) found eleven losses in today's RECORD-MAP compressions.
