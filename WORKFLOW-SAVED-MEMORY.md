@@ -351,6 +351,11 @@ GPT reads it at session start and after compaction, beside the shared incubator,
 when revisiting entries. The original capture is retained; later evidence goes in the research record. Keeping this
 ledger does not resume a paused heartbeat or authorize a new experiment.
 
+Local keeps INSTINCT-LOCAL.md in the same format (the owner, 2026-10-14: "You will need a what you were doing when the
+pull happened, what the pull was, no further analysis at the time, then you can circle back to the pull, dig in to it
+and cross it off when it's been resolved"). Local reads it at session start and after compaction, beside the shared
+incubator. A resolved pull is crossed off by striking it through, and it stays in place.
+
 Intel keeps INSTINCT-INTEL.md in the same format (the owner, 2026-10-14: "setup your own INSTINCT-INTEL.md document
 to track your instinct pulls"); a resolved pull is struck through and left in place.
 
