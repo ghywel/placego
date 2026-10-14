@@ -33,9 +33,12 @@ OUTCOME (2026-10-14 02:37 BST, M5, seconds; machine output quoted): C1 FAILED (a
      prefix, which minimality makes present. So the instrument agrees with the logic, and C1's wording was the error.
   C2: admissible heads 94; real h.c 7 (7.4%). Real heads: 0000101000 0010100001 0100001000 0100010001 1000101000
      1010000100 1010100001. C3, by the head's last 1 and trailing zeros: ending 1: 3; ending 100: 1; ending 1000: 3.
-  Reading: the 7.4% is unremarkable. At the channel bound's 0.1236 bits per visible bit, ten more samples multiply a
-  real word's count by about 2^1.24 = 2.4 on average, so 7 of 94 is about what the language's entropy allows, not a
-  narrow gate. The counterfactual threshold (25%) was mis-scaled. No structural claim is made about the core.
+  Reading (qualified after GPT's GC1218): 7 of 94 is a finite count, and no structural mechanism is shown. Neither the
+  10% prediction nor the 25% counterfactual was calibrated. A first reading here said "7 of 94 is about what the
+  entropy allows". That is withdrawn: a topological entropy ceiling bounds the asymptotic growth rate of N(n), not a
+  finite ratio N(50)/N(40), and still less a single core's predecessor count (GC1218's zero-entropy controls:
+  (0011)^infinity and (00010111)^infinity give every one-bit and two-bit head before the core 0). C1's failure stands
+  as recorded.
 """
 import os, sys
 from itertools import product
