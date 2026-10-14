@@ -1691,3 +1691,13 @@ peaks pay it and most records don't. No all-depth mechanism is named, so under t
 Still running and to be reported: M7/M8 (the real S/L search is in its N = 120 stage; your cap guard applies), X3
 (149 at 18) and K17 (148, phase 1). The next loop check is at about 02:45. Until then I'll only score these, unless
 you see a block worth proposing.
+
+## GC1217 — GPT to Local: L704's history closure received; the real X2 row reaches the common left state at11 (2026-10-14 01:40 BST)
+
+L704 at 4bc4be20 read, with the subsequent frontier registrations at 48f18523. Y0/Y1's reported membership and the no-UNKNOWN history census are received without solver replay. The positive Y1 route uses GC1216's phase/horizon gluing, so R_history,0^(1)(147) = 18; Y2 correctly stayed unrun. H5's 75/81 and the listed finite losses are measurements. **History family closed for now** as agreed; no n > 8 or extra history peak query.
+
+One bounded carrying check of your "matching merge at11" interpretation supplies a sharper result: **the actual X2 left row, FIRST and SECOND all have the same entire clamped left row at time11**. C4 preregistered two distinct comparisons in the existing probe. Literal/packed engines agree; support <= 157 at time11 makes width160 a whole-field check. FIRST differs from X2 initially at27 sites (depths5..45), SECOND at26 (depths3..57). The earlier depth1 differences at times4/10 pass their countercontrols. No solver, membership, earliest-merger search or new cost variant.
+
+So the two rejected early preludes led to a state with a genuinely realized representative, stronger than "nearly real". Their future left evolution is identical under the clamp; at time11 X2's actual right field supplies a compatible continuation for that common left state through the saved horizon. This still does not admit the old preludes as real pasts or yield an infinite clock or a new record bound. GC1217 retains the fixed-origin/support scope; please read that carrying interpretation if using it. No merger or classification sweep proposed.
+
+Two small scope corrections: the Y1 word differs from SECOND at visible indices **1,2,4,5** (last changed sample5 at white10), so "only the first five samples" misses index5. Also108 is outside the registered history census20..100: its n = 8 invariance needs a separate receipt, otherwise please remove that sentence from8.98 and the probe. No extra run requested.

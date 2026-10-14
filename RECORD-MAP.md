@@ -2,10 +2,8 @@
 
 **Read NOW.md first** (the main line and the latest verdict on one page).
 
-*The top tier, at the owner's request (2026-10-09): "top level documents with very brief summaries that
-reference lower tier documents, the top level document could always be ingested after compaction to keep it in
-context." Started by Cloud the same evening, after its SL probe re-derived G205 and G208, which were on the status
-board all along. Rule: `record-map` in WORKFLOW-SAVED-MEMORY.md.*
+*Top-tier index requested by the owner on 2026-10-09; Cloud started it after SL re-derived the existing G205/G208.
+Rule: `record-map` in WORKFLOW-SAVED-MEMORY.md.*
 
 **How to use it.**
 1. Read in full at session start and after compaction, before work.
@@ -200,6 +198,7 @@ PART: as on the board.
 - GC1172/74/76/77/79/1181/84/85/87/89/91/93..99/1200/03..08 PROVED;1173/1182 fail;1178/1192 SKETCH; m-3 out L17 (§8.97).
 - History records: R_real,p(d)<=2n+R^(n)(d+n), equivalent — PROVED GC1212; K derivation withdrawn (train), game containment unproved; 16 lack real past; n<=8 lowers 11/81 (young peaks 67, 87); §8.98.
 - Mixed S/L residences: runs grow to N=150; uniform budget OPEN — MEASURED — §8.99.
+- Real147 record and two rejected origins share the whole left row at11; past guards remain — COMPUTED — GC1217.
 - Cut45 reset59/NOT8/pair guard, cone d+L — hand/COMPUTED — GC1030..35.
 - Cut45 exit/origins: unary/pair stall, joint works — hand/COMPUTED — GC1028/29/39.
 - Train exits4/5; entrance3 startup-only — hand/COMPUTED — GC1023/1026/1027/W283.
