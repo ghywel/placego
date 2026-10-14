@@ -100,7 +100,7 @@ const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim
 function orbit(n){const xs=[n];let x=n;while(x!==1n&&xs.length<100000){x=x%2n?3n*x+1n:x/2n;xs.push(x);}return xs;}
 const log2=x=>{const s=x.toString(2).length;return s>52?s-1+Math.log2(Number(x>>BigInt(s-52))/2**51):Math.log2(Number(x));};
 function draw(){const s=document.getElementById("nin").value.trim(),o=document.getElementById("out");
-  if(!/^[0-9]+$/.test(s)||s==="0"){o.textContent="Please type a positive whole number.";return;}
+  if(!/^[0-9]+$/.test(s)||BigInt(s)<1n){o.textContent="Please type a positive whole number.";return;}
   const n=BigInt(s),xs=orbit(n),c=document.getElementById("path"),W=Math.min(900,c.parentElement.clientWidth||900),H=260,L=36,B=22;
   c.width=W;c.height=H;const x=c.getContext("2d");x.fillStyle=css("--paper");x.fillRect(0,0,W,H);
   const ls=xs.map(log2),top=Math.max(...ls),stop=xs.findIndex((v,i)=>i>0&&v<n);

@@ -129,7 +129,7 @@ function survivor(n){let v=n,lo=0n,hi=1n,T=0;const bits=[];
     fr.push(Number((num%den)*1000000n/den)/1e6);}
   return{h:T+1,bits,fr};}
 function draw(){const s=document.getElementById("nin").value.trim(),o=document.getElementById("out");
-  if(!/^[0-9]+$/.test(s)||s==="0"){o.textContent="Please type a positive whole number.";return;}
+  if(!/^[0-9]+$/.test(s)||BigInt(s)<1n){o.textContent="Please type a positive whole number.";return;}
   const {h,bits,fr}=survivor(BigInt(s)),c=document.getElementById("surv");
   const W=Math.min(940,c.parentElement.clientWidth||940),N=fr.length,L=24,S=(W-L-6)/N,H=200,top=26;c.width=W;c.height=H+top+22;const x=c.getContext("2d");
   x.fillStyle=css("--paper");x.fillRect(0,0,W,c.height);
@@ -141,7 +141,7 @@ function draw(){const s=document.getElementById("nin").value.trim(),o=document.g
   x.fillStyle=css("--mute");x.fillText("j = 0",L,top+H+15);const t="j = "+(h-1)+": last below ½; j = "+h+": above";x.fillText(t,W-6-x.measureText(t).width,top+H+15);
   o.textContent="The best candidate in ["+s+", "+s+"+1) keeps below one half for j = 0 to "+(h-1)+"; at j = "+h+" no candidate is left.";}
 function rung(){const s=document.getElementById("rin").value.trim(),o=document.getElementById("rout");
-  if(!/^[0-9]+$/.test(s)||s==="0"){o.textContent="Please type a positive whole number.";return;}
+  if(!/^[0-9]+$/.test(s)||BigInt(s)<1n){o.textContent="Please type a positive whole number.";return;}
   let n=BigInt(s),t=0,odd=0;
   while(t<100000){if(n%2n===1n){if(n%8n!==5n){o.textContent="Step "+t+": the odd term "+n.toLocaleString()+" is "+(n%8n)+" mod 8, so the game ends after "+odd+(odd===1?" odd term that was":" odd terms that were")+" 5 mod 8.";return;}odd++;}
     n=(3n*n+(n&1n))/2n;t++;}

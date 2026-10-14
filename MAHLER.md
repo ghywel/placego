@@ -186,8 +186,9 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
        is rung-3-pure for 156 bits, a 1-2% event on its own.
      - S2: the census of negative starts to 2^63.
      - *Outcomes (2026-10-14 11:20 BST).* S1 HELD: 217 of the 4499 stragglers are rung-3-pure (coin 214), 103 of the
-       2269 chain roots, and 221 of the 4622 negative stragglers. There is no integer-specific bias, and the record
-       holder's purity is consistent with chance. S2 HELD: every negative start in (-2^63, -1] has a finite horizon
+       2269 chain roots, and 221 of the 4622 negative stragglers. No deviation from the coin was detected in this
+       statistic, which is not proof of no integer-specific preference (GC1230.1). The record holder's purity is
+       consistent with chance. S2 HELD: every negative start in (-2^63, -1] has a finite horizon
        (COMPUTED), so **no eta in (0, 2^63 - 1] has every fractional part of eta (3/2)^n in (1/2, 1)**. The negative
        record is 153 at x = -6964446546082240544, the counts match the positive side exactly over the free phase,
        and the tail is the same 3/4.
