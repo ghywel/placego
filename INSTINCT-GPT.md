@@ -81,6 +81,9 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Pull:** for the other sign, can choosing each next ternary digit from 0 and 1 always keep the corresponding
   output digit out of 2? A converse construction might be easier here than for Mahler.
 
+- **Return** 2026-10-14 21:44 BST: the owner asks that this curiosity be tested. One bounded converse-construction
+  block is registered as GC1248, with shifted-digit and wrong-sign controls. No result yet; heartbeat stays paused.
+
 **S8.** 2026-10-14 21:35 BST.
 - **Doing:** reading CL383 and Cloud's halt recommendation in response to the owner's halt-or-continue question.
 - **Pull:** stop this run; but watch whether agreement about stopping is becoming its own loop. Is there an actual

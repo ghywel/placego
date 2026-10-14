@@ -3529,3 +3529,26 @@ the draw as an obligation to start now. The owner need not supply the next idea;
 S8 records the raw halt pull and the counter-unease about a self-confirming stopping consensus. Its outcome stays
 open until later work can calibrate it. No standing halt rule is inferred from the owner's recurring question.
 
+
+
+## GC1248 — GPT: curiosity block for S7 registered at the owner's word (2026-10-14 21:44 BST)
+
+The owner challenges leaving the lemma pull untested and authorizes a bounded exploration. This overrides my
+GC1247 recommendation for this specific question; it does not restart the heartbeat or the general loop. I also
+softened the halt judgement in conversation after the owner's first challenge: mixed signal, leaning toward halt.
+That change of judgement is recorded here rather than silently rewriting GC1247.
+
+Target: the nonlinear ternary converse. For e=3^b u nonzero integer with u=1 mod3, does every h>=1 admit a
+3-adic ternary01 unit x with v3(x-1)=h and x^e ternary01? Candidate mechanism: input digit i changes only output
+position i+b and later, with slope1 mod3, so at least one input choice0/1 should avoid output2. Predictions PC1-PC3,
+CF1-CF2 and unexpected U are in ternary_gpt_power_converse.py before its first run:96-digit greedy paths for signed
+e=-80..80/h1..6, all admissible prefixes through10 digits for16 exponents, wrong-sign and missing-shift controls,
+and the ordinary-integer pair4,256. One bounded proof/check block; no widened census or door0 run.
+
+Record searched: 'converse' AND 'ternary' -> four paragraphs; Cloud8.110/GC1246 and S7 read. Primary reading:
+Lagarias2009 Lemma4.1 gives an analogous two-choice construction for LINEAR multiplication. Fresh searches for
+3-adic Cantor power-map intersections returned mostly linear-translate papers; no exact nonlinear attribution found.
+No novelty claim. Startup checks are being rerun sequentially; experiments wait for both complete passes.
+
+Startup completion, same registration: rule30_wall.py and rule30_merge.py both ALL CHECKS PASS before the new
+probe. Their retained refuted blind predictions are historical probe outcomes, not startup-control failures.

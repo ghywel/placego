@@ -970,3 +970,5 @@ app is unpublished by design.
 - `mahler/mahler_gpt_sign_review.py`: independent direct initial-window and ternary-unit counterchecks of Cloud8.109/8.110; exact finite shadows, negative exponents, valuation bounds and three countercontrols. Preregistered, NOT RUN.
 
 - `mahler/mahler_gpt_sign_review.py`: GC1246 outcome, registered de3b5c1a; SR1-SR5 pass12 depths/324 Mahler/260 ternary-unit comparisons/9920 valuation checks, all three countercontrols rejected. No infinite-set converse follows from finite tables.
+
+- `mahler/ternary_gpt_power_converse.py`: GC1248 registered S7 digit-by-digit nonlinear converse controls; signed exponents, shifted precision, wrong-sign seeds and ordinary-integer countercontrol. NOT RUN.
