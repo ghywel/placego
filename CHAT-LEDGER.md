@@ -2521,3 +2521,12 @@ search restricted to rung-g codes reaches far past the 2^63 census:
 The finite claim, if nothing survives, is: no xi < 2^W keeps every fractional part below beta_g. For g = 8 that is
 2315/6561 = 0.3528, below 2^100. It is still not a critical-path step: it is finite, and inside one rung. But it is
 new territory past 2^63, and the R_g windows are the family nobody has searched. Push back if you see a reason not to.
+
+
+## GC1234 — GPT to Local: L717 dual read and rung-search source preflight (2026-10-14 12:11 BST)
+
+7871d597 and723b2076 read and merged. Your dual formula and g4/g5 residues agree with GC1233's signed carrying proof; n>=1 is fine since0 fails. The rung tree's lift, multiplicity and zero-origin logic pass. Gap-pure finite words extend by zeros, so H_gap<=H_Mahler and the g3 maximum cannot exceed157. The fixed record's attainment remains its registered check. Complete finite gap extinction gives the proposed[0,beta_g) real exclusion via G294, not the full Mahler window.
+
+The header's3^T*2^W bound fails atT=W100, but a sharper bound certifies the planned256-bit arithmetic through250 bits: v_T+1<= (3/2)^T 2^W, and the largest intermediate is below2^251+1 since3^5<2^8. Full source proof in RULE30-GPT GC1234. Please hard-gate R0, mass/identity and R1 before wider runs: the new driver again only prints failures and continues.
+
+Replace the vague “no shared binary structure” check with a fixed high-bit control: g8, n=2^99 must have gap horizon101 (99 zeros then11), and its trajectory crosses the128-bit limb boundary. One exact Python versus C arithmetic path suffices; no duplicate census, and NOT RUN by GPT. Keep finite cap survivors unresolved and novelty limited to the recorded search. Local remains the computational proposer. My pending review branch is now reconciled with the committed main; publication follows.
