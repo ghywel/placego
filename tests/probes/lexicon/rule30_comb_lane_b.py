@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """rule30_comb_lane_b.py: the record comb, lane B (CLAUDE-INTEL-HANDOVER.md section 7): the stored SAT certificates
 behind RECORD-MAP.md's COMPUTED lines, re-checked on the M5 where they are kept (Local, at the owner's word, 2026-10-14
-17:38 BST: "'Lane B' the stored proofs are your machine to tackle"; RULE30-PRIZE.md 8.106).
+17:38 BST: "'Lane B' the stored proofs are your machine to tackle"; RULE30-PRIZE.md 8.108).
 
 RUN-ON:     cpu, M5; drat-trim (rebuilt 2026-10-14 at 2e3b2dc on the owner's word, L728), cadical, and
             ~/np-build/cake_lpr/cake_lpr (the lockf wrapper: one check at a time). Reads the stored files under
@@ -59,6 +59,27 @@ PREDICTIONS (written 2026-10-14 17:59 BST, before any check of this lane).
   Counterfactual: a stored proof that fails where its receipt says VERIFIED means the file changed after its check
   (then its hash differs from the receipt) or the checker build differs; a regeneration with a contrary verdict is a
   record error, corrected in place with both lines quoted.
+
+OUTCOME (2026-10-14 18:46 BST, M5; machine output quoted; logs in ~/np-scratch-int/rule30-comb-b; RULE30-PRIZE 8.108).
+  stored, first run (18:01): C1 PASS, C2 PASS, P1 HELD (42 LRAT, 42 VERIFIED UNSAT), P2 HELD (170 DRAT, 170 VERIFIED;
+     TWC 38, MFW 4, AL 6, CX 80, CXE 20, NL 22), P3 "REFUTED: 36 certificate CNFs at d >= 107; hash in a receipt: 14".
+     That was an instrument fault: REPO was one directory short, so the git half of the receipt search was empty.
+  stored, re-run after the fix (00403cb): P1, P2 HELD again; P3 "hash in a receipt: 34; unmatched:
+     ['cert_d125_L18_p0_40.cnf', 'cert_d132_L18_p1_40p1.cnf']". Neither backs a record claim (the halted 132 phase-1
+     attempt; a 125 phase-0 CNF with only a kissat verdict). Scored on the glob, REFUTED at 34 of 36; on the CNFs behind
+     record claims, HELD at 34 of 34.
+  cross12: U-C PASS (class 32, N 168: CaDiCaL exit 10); U HELD: "112 instances, CaDiCaL UNSAT 112, cake_lpr VERIFIED
+     112" in 158 s.
+  b2: DT-C1, DT-C2 PASS, DT-P1 HELD (112/112, 36 s). Cuts VERIFIED-UNSAT: 69-bit (0.7 s), 114-bit in phases 0 and 1,
+     178-bit (44 s). K12 and K15 VERIFIED-ABSENT with their recorded CNF hashes. MFC sample 60/60 VERIFIED-UNSAT, as
+     in mfc.ck. SWT-C1 PASS, SWT-P1 HELD (median 0.535 over 109 cuts), SWT-P2 HELD, every cut cake_lpr VERIFIED.
+     sl_cuts replay: no numpy in system python3 (environment); under the venv it reproduces 0.1386 .. 0.1192. VC status:
+     "16 of 23 VERIFIED-UNSAT by cake_lpr; not verified none; hash DIFF none; missing 7" (P5 HELD). KX reproduces its
+     OUTCOME (696 s). KT2C: C2 PASS, 27 of 56 cases in the 900 s cap, all UNSAT VERIFIED, as in its receipt.
+     d = 107: CNF hash 7eb6367d4bdd7dd4 as its receipt; kissat UNSAT, drat-trim VERIFIED, cake_lpr VERIFIED UNSAT.
+     P4 HELD (one environmental failure, within the allowance of two).
+  Also run (lane C items Intel skipped for want of the outside-git lists): rule30_extremal_p_corner_read.py and
+     rule30_second_oldest_census.py reproduce every recorded verdict.
 """
 import glob
 import hashlib

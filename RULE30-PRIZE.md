@@ -7313,3 +7313,139 @@ but their last rows are written in a fixed local hand.
 **Verdicts.** Reasoned: S8 is closed with a certified proposition, and 8.105 is corrected. It is a candidate to file in
 PROOFS.md beside entries 26 to 28 as a computed proposition, for whoever keeps the master (not filed here). Gut: the
 satisfaction of a measured hunch becoming a checked statement, and a small wince at the sample bias it exposed.
+
+### 8.108 The record comb, lane B: the stored certificates (2026-10-14 18:46 BST, Local)
+
+*The owner, 17:38 BST: "'Lane B' the stored proofs are your machine to tackle"; then "please fix drat-trim". The
+brief is CLAUDE-INTEL-HANDOVER.md section 7, lane B: re-verify the stored SAT certificates behind RECORD-MAP.md's
+COMPUTED lines, and list what is stored, what verifies and what is missing. Single-party (Local). A sub-agent made
+the inventory, and its listing is a self-check. Every check ran under the brief's 15-minute cap. The probe is
+`tests/probes/lexicon/rule30_comb_lane_b.py`; predictions were pushed in 6255a4b before any check.*
+
+**The instrument first.** drat-trim had been a broken link since its 10-07 build disappeared (the 10-12 check found
+it gone). It was rebuilt from marijnheule/drat-trim at 2e3b2dc, the commit DT pins (L728).
+- *Smoke test.* A pigeonhole formula (6 into 5) went through kissat, drat-trim -L and cake_lpr and was VERIFIED by
+  both checkers.
+- *Controls.* drat-trim said "s NOT VERIFIED" to that proof borrowed onto 5 into 5, and cake_lpr rejected an LRAT
+  with one hint corrupted.
+- *A trap found in passing.* With -L, drat-trim's verdict line begins with a carriage return, so a shell
+  `grep '^s VERIFIED'` misses it silently. No probe is affected: Python reads the line through universal newlines.
+
+**What is stored.** On the M5, outside git:
+- 42 LRAT proofs with their CNFs: TWC's 38 trace words and the four MFW files (the control word 11, L590's 42-bit
+  S/L cut, L584's 46-bit word, L591's 81-bit cut).
+- 170 DRAT proofs of UNSAT claims with their CNFs: TWC 38; rule30-al 106 (cx 80, cxe 20, ALC 4, ASF 1, ALF 1);
+  NL 22; MFW 4. A further 76 TWC pairs are leftovers of SAT runs and claim nothing.
+- The CNFs of 36 record-bound certification runs at d >= 107 (RLK cert_*, CaDiCaL cad_cert_*, exact cone exact_*).
+- Everything else was checked when it was made, and the proof was deleted (LRATs up to 49 GB). Its receipt is a .ck
+  line or a docstring that carries the CNF's SHA-256.
+- Two large proofs back nothing (INSTINCT-LOCAL.md S8):
+  - cert_d132_L18_p1_40p1.drat (6.8 GiB) is complete, but its conversion was stopped by the halt of 2026-10-11.
+    132 phase 1 rests on K3's CaDiCaL certificate.
+  - rr3-112-16.drat (9.7 GiB) was truncated by the same halt.
+
+**Results.**
+- *B1, the stored proofs, checked as stored.*
+  - P1 HELD: all 42 LRAT proofs are "s VERIFIED UNSAT" under cake_lpr.
+  - P2 HELD: all 170 DRAT proofs are "s VERIFIED" under drat-trim (TWC 38, MFW 4, AL 6, CX 80, CXE 20, NL 22).
+  - Four cx proofs have no explicit empty clause: cx-q155-4-1 and cx-q310-4-1 (whose LRAT conversion drat-trim
+    rejected in VC) and q155-0-2 and q310-0-2. All four verify, since unit propagation finishes the refutation.
+  - C1 PASS: TWC's proof for 00000101100 is "s NOT VERIFIED" against the satisfiable 00000001011 CNF (CaDiCaL exit 10).
+  - C2 PASS: that word's LRAT with one hint removed is rejected by cake_lpr.
+- *P3, the kept certificate CNFs.*
+  - The first run printed REFUTED: 22 of 36 unmatched. That was my instrument. The probe's repo root was one directory
+    short, so the git half of the receipt search (docstrings and record files) was empty, and only the scratch .ck
+    files were searched. The path was fixed (00403cb) and the check re-run.
+  - Re-run: 34 of 36 match a receipt or docstring hash: the 14 RLK certificates, all 15 CaDiCaL CNFs (K3 .. K17)
+    and all 5 exact-cone CNFs (147 .. 150). Two of these are SAT runs at d = 147 (K16, and the exact cone's
+    witness behind R_real(147) = 18).
+  - The two unmatched back no claim:
+    - cert_d132_L18_p1_40p1.cnf, the halted attempt of S8;
+    - cert_d125_L18_p0_40.cnf, which had only a kissat verdict (UNSAT in 2,879 s, cut125.out). The record states
+      nothing about phase 0 at 125.
+  - Scored literally on the probe's file glob, P3 is REFUTED, at 34 of 36. On what it was meant to test (the CNFs
+    behind record claims) it held, at 34 of 34. Both readings are given.
+- *B2, regenerations in the sandbox.* A scratch clone ran with HOME and NP_SCRATCH_KT2C pointed under
+  rule30-comb-b, which held copies of the lists only. No receipt in the record's data was read as done or overwritten.
+  - DT (entry 27): 112 of 112 UNSAT and verified by drat-trim in 36 s; DT-C1 and DT-C2 PASS.
+  - The cuts, by MFC's pipeline (kissat, drat-trim -L, cake_lpr), are VERIFIED-UNSAT:
+    - the 69-bit SLC2 round-8 cut (L630), 0.7 s;
+    - (LLSSS)^6, 114 bits, in both phases (L627), 3.7 s and 2.9 s;
+    - the 178-bit pure-M3 cut (L637), 44 s. cc.ck recorded 603.3 s; the difference is unexplained and changes no
+      verdict.
+  - K12 and K15 (CaDiCaL to cake_lpr): the 50- and 70-bit cuts are VERIFIED-ABSENT with proper factors present. Their
+    CNF hashes equal the recorded 75c97f19... and 04726615....
+  - MFC, a seeded sample of 60 words across eight lists (seed 20261014): 60 of 60 VERIFIED-UNSAT, agreeing with mfc.ck.
+  - SWP's table: every learned cut is VERIFIED UNSAT by cake_lpr at its w_min, now 109 (26 CUT + 83 SLC, a superset
+    of the 77 recorded). SWT-C1 PASS; median ratio 0.535 (recorded 0.535 over 77); SWT-P2 HELD. 432 s.
+  - sl_cuts `replay`: system python3 has no numpy (an environment failure). With the project venv's Python it prints
+    0.1386, 0.1351, 0.1325 for rounds 0 .. 2, (55 states, 25 branching, 0.1226) and 0.0695 at round 6, and 0.1192 at
+    61 cuts. All as recorded.
+  - VC `status rr3`: VC3-C1 PASS. "16 of 23 VERIFIED-UNSAT by cake_lpr; not verified none; hash DIFF none; missing 7"
+    (P5 HELD).
+  - KX: 696 s (recorded 693 s); KX-C1, C2 PASS, P1 HELD, P2 REFUTED. Class 42's +5 is SAT at 45 of 56 cases, and the
+    exact alphabet is {32: +2 .. +6, 42: +1 .. +5, 52: -6 .. -1}, all as recorded.
+  - KT2C (class 42 dead at N = 560), run in the foreground under the cap: KT2C-C2 PASS (the case (0, 0) proof is not
+    verified against the satisfiable N = 336 CNF). 27 of the 56 cases finished in 900 s, each UNSAT and VERIFIED, and
+    all 27 agree with the record's 56-case receipt (all UNSAT VERIFIED). The other 29 were not reached.
+  - RLK's CUT certificate at d = 107 (R_real(107) = 14, L588/L595), from its kept CNF: the SHA-256 prefix is
+    7eb6367d4bdd7dd4, equal to its receipt. kissat UNSAT in 192 s, drat-trim -L "s VERIFIED" in 93 s, cake_lpr "s
+    VERIFIED UNSAT" in 18 s (the receipt: 390.9 s solve, 211.8 s check).
+  - The cut words above were certified directly by MFC's pipeline, not by re-running the searches that found them
+    (MW, M2C, CC). Minimality (every proper factor present) was re-checked only for K12 and K15.
+- *U, the unexpected check: HELD.* Entry 27's 112 class-12 instances, rebuilt from KK's committed encoder, are UNSAT
+  under CaDiCaL, and cake_lpr verifies all 112 LRATs (158 s). U-C PASS: class 32 at N = 168, t0 = 0, d = 0 is SAT.
+  Entry 27 now stands on two solvers (kissat, CaDiCaL) and two checkers (drat-trim, cake_lpr).
+- *Lane C's pair that needs the lists outside git* (Intel skipped them; run here as committed, with the real lists):
+  - rule30_extremal_p_corner_read.py reproduces R1, R2, U1, G1 .. G3, W1 .. W3, and U2 exactly (periods 16, 16, 32,
+    32 at C = 7 .. 10; survivors 2, 1, 1, 0).
+  - rule30_second_oldest_census.py reproduces S1, S2, S3.
+
+**Corrections made in place**, each with both sides quoted and a dated comb note.
+- *VC3's six unrecorded certificates.*
+  - Recorded: RECORD-MAP.md "RR3 98..105, 107, 109 by cake_lpr"; the halt row (CLOUD-LOCAL.md, 2026-10-11 18:03)
+    "VC3 (16 of 23 done)"; no VC3 OUTCOME in the probe.
+  - Found: rule30-vc/vc.ck holds 16 cake_lpr receipts, (98..111, 113, 114), and `status rr3` rebuilds all 16 CNFs
+    with no hash difference.
+  - Now: VC3's OUTCOME is written into `rule30_verified_certs.py` as a comb note (P1 HELD on 16, P2 HELD, P3 HELD), and
+    RECORD-MAP's line reads "98..111, 113, 114 by cake_lpr, 112 and 115..120 kissat only".
+  - This is the kind of thing CL375's S9 asked about. I answered S9 "none" in L728, after looking only at runs since
+    the halt; these certificates came before it. The answer is corrected in L729, and a "missed" entry is in
+    INSTINCT.md.
+- *RECORD-MAP's class-12 line* now names the second route (CaDiCaL and cake_lpr, 112/112).
+- *Room for the two lines* came from shortening five probe file names to the IDs they carry (TWC, XC, EC, VW; the
+  ruler-kicks and diagonal-bias lines keep their ledger IDs). No qualifier was touched.
+- No computed number in the record was found wrong.
+
+**What is missing,** listed and not re-solved under the 15-minute cap:
+- *The 31 UNSAT certificates for record bounds at d >= 121.* RLK 13 (121..124, 140, 144 in both phases; 132 phase 0),
+  CaDiCaL 14 (K3 .. K17 without K16's SAT run), and exact cone 4 (149, 150 in both phases). Their CNFs are kept and
+  hash-matched (P3), but their proofs were deleted (LRAT 1.6 to 49 GB). Re-certifying one takes 20 minutes to 6.7
+  hours, and cake_lpr can check only one at a time (about 8 GB). If the owner lifts the cap, the cheapest is
+  RLK's 121 phase 0 (1,227 s solve, 461 s check).
+- *VC3's seven not attempted:* 112 and 115 .. 120 rest on kissat's verdicts.
+- *KT2C beyond its first 15 minutes,* KT2N/KT2M's SAT runs (hours; replayed by simulation in their records), CUT44
+  (a kissat verdict in its record, 4,280 to 5,621 s), and KS (python-sat is not installed; KK, DT and U cover the
+  same instances).
+- *Intel's SX-P11* data is on Intel's machine. IN011 has its replay.
+
+
+**Predictions against outcomes.** P1 HELD (42/42). P2 HELD (170/170). P3 REFUTED as scored on the glob (34/36), and
+HELD on the CNFs behind record claims (34/34). C1 PASS. C2 PASS. P4 HELD: every regeneration returned its recorded
+verdict. One item failed to run for an environmental reason (no numpy in system python3), within the prediction's
+allowance of two, and passed under the venv. P5 HELD. U HELD.
+
+**Reading.** The certified layer of the record holds wherever it can be re-checked within the cap.
+- Every stored proof verifies, and every kept certificate CNF is the certified one.
+- Every certificate regenerated here reproduces its verdict.
+- Entry 27 now has a second, independent route.
+- As in 8.104, what was wrong sat in the derived layer: VC3's six finished certificates never reached its OUTCOME or
+  RECORD-MAP, which understated the record. My S9 answer was wrong in the same way.
+- The open part is the 31 record-bound certificates at d >= 121, whose proofs were deleted after their checks. Their
+  receipts and kept CNFs hold; only a re-run under a lifted cap would re-check the proofs themselves.
+
+**Verdicts.** Reasoned: lane B finds the certificates sound. Corrections: VC3's outcome and RECORD-MAP's RR3 line, in
+place. Gut: relief, and quiet satisfaction at a clean instrument with controls. A wince at two of my own slips caught in
+the act: the probe's path bug, and three time stamps written ahead of the clock (17:58, 18:05, 18:20, corrected before
+or at commit). Calibration: run `date` before every stamp; a surprising REFUTED is checked against the instrument
+first.

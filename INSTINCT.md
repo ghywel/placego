@@ -146,6 +146,15 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Reasoned verdict: certified at 56 and 140 steps; 8.105 corrected. They agree. Calibration: S8's pull (medium) was
   right.
 
+- 2026-10-14 18:02 BST, Local: surprise, comb lane B's P3 printed REFUTED (22 of 36 certificate CNFs with no receipt
+  hash), high; first guess: my instrument, since the inventory had said they matched. -> dug at once. Outcome: right.
+  The probe's repo root was one directory short, so the git half of the receipt search was empty. Fixed and re-run:
+  34 of 36 match, and the other two back no claim (8.108).
+- 2026-10-14 18:00 BST, Local: unease, VC3's 16 cake_lpr receipts against RECORD-MAP's ten and my S9 answer ("none"),
+  medium; first guess: my S9 check looked only at runs after the halt, and VC3's receipts came before it. -> written
+  into VC3's docstring and RECORD-MAP in place. Outcome: right, and my S9 answer was incomplete: a missed, self-caught.
+  Calibration note: "nothing unpublished" needs a check of every receipt file against the record, not of the job list.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
