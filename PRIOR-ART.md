@@ -2579,3 +2579,32 @@ block certificates).**
    Thm D(ii)). The integer side is the crux, as in our Rule 30 work.
 
 No published large-scale computer check of "no Z-number below N" was found.
+
+## Turing (1936), read at the owner's request (2026-10-14 07:58 BST, Local)
+
+"On Computable Numbers, with an Application to the Entscheidungsproblem", Proc. London Math. Soc. (2) 42, pp. 230-265,
+from the owner's copy. The 1937 correction is not in that copy. The owner's challenge: "these prize problems sit square
+on Turing's On the Computability of Numbers because a coin toss is the ultimate adversarial program". The passages
+that bear on our problems:
+- *Section 3, Example I.* Turing's first machine computes 010101..., the period-2 sequence itself.
+- *Section 8.* The diagonal process shows there is no general process for deciding whether a machine is circle-free,
+  whether it ever prints a given symbol, or whether it prints 0 infinitely often. These are uniform questions about all
+  machines. The footnote on p. 254 says "prints 0 infinitely often" is "of the same character" as circle-freeness.
+  Our three problems have that shape:
+  - Rule 30: every finite configuration's column eventually departs from 0101.
+  - Mahler: every bounded range of starts dies out at a finite horizon (GC664).
+  - Collatz.
+  Each says "for every N there is a finite stage at which..." (Pi^0_2).
+- *Section 9, p. 253.* "It is (so far as we know at present) possible that any assigned number of figures of delta
+  can be calculated, but not by a uniform process. When sufficiently many figures of delta have been calculated, an
+  essentially new method is necessary in order to obtain more figures."
+- *Footnote, p. 255.* "it is often possible to show that certain classes of numbers are satisfactory".
+- *Section 11.* It distinguishes "no general decision process" (Turing) from "specific unprovable propositions"
+  (Goedel). A single prize statement has a definite truth value, so undecidability in Turing's sense applies to
+  families, and the question for one instance is provability.
+
+Our reading is in the session reply of the same date. In short:
+- *A miniature of Turing's point in Stephan's 2026 work:* block certificates decide exactly the finite-hold-set
+  windows, and provably cannot certify an infinite hold set.
+- *The concrete bridge to Turing machines* is the busy-beaver holdout Antihydra, whose halting is a statement about
+  iterating floor(3n/2), the same map family as Mahler's (G49 has its scope).
