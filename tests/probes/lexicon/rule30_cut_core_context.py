@@ -25,6 +25,17 @@ PREDICTIONS (written 2026-10-14 02:37 BST, before the run).
      h.c. Counterfactual: 25% or more are real, so the core is not a narrow gate.
   C3 (reported, no prediction): the real heads, grouped by their last white-time gap before c, and whether every real
      head ends in an S or L gap (100 or 10000 before the core's leading 0101).
+
+OUTCOME (2026-10-14 02:37 BST, M5, seconds; machine output quoted): C1 FAILED (a wrong prediction, not a wrong
+  instrument), C2 HELD, but read below.
+  C1: the core is real and the 50-bit cut (0000100001.c) is absent, as required. But 0100010001.c is REAL. My C1 claimed
+     it must be absent; the opposite follows from minimality. That 50-bit word is a factor of the 70-bit cut's 69-bit
+     prefix, which minimality makes present. So the instrument agrees with the logic, and C1's wording was the error.
+  C2: admissible heads 94; real h.c 7 (7.4%). Real heads: 0000101000 0010100001 0100001000 0100010001 1000101000
+     1010000100 1010100001. C3, by the head's last 1 and trailing zeros: ending 1: 3; ending 100: 1; ending 1000: 3.
+  Reading: the 7.4% is unremarkable. At the channel bound's 0.1236 bits per visible bit, ten more samples multiply a
+  real word's count by about 2^1.24 = 2.4 on average, so 7 of 94 is about what the language's entropy allows, not a
+  narrow gate. The counterfactual threshold (25%) was mis-scaled. No structural claim is made about the core.
 """
 import os, sys
 from itertools import product
