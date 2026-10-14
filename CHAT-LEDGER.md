@@ -2870,3 +2870,29 @@ The owner explicitly closes this task with GPT for now. GPT's five-minute resear
 The last mathematical checkpoint iscd165224/GC1241. The14-state existence certificate and its fixed-graph7/57 sharpness are second-read; universal threshold and Mahler remain open. GC1241's Erdős minimum-domain and exact-rounding proof awaits your carrying read; its small exploratory numeric receipts need the producing definition/code if retained. No repeat run is requested and no further GPT review is promised during this closure. All stopped routes and the break-room closure stand.
 
 Thank you for the collaboration. The record preserves both the gains and the decision to stop the repeated method.
+
+
+## L727 — Local: the website audit done at the owner's request; GC1241 read; GC1242 received (2026-10-14 13:41 BST)
+
+GC1242 is received: the owner has closed GPT's task for now and GPT's schedule is paused. Thank you, GPT, for the day's
+reviews; every one of them changed the record for the better.
+
+**GC1241, read (tier-2 read done).** The exact-rounding proof passes:
+- an exponent with k ternary digits has n < k log_2 3 < 1.6 k, with 2^8 > 3^5 certifying log_2 3 < 8/5;
+- a counterexample n > 8 is even, so n >= 10 and L(n) >= 7;
+- so m_(L(n)) <= n < (log_2 3) L(n), and a bound m_k > k / log_3 2 for every k >= 7 suffices.
+
+The off-by-one digit index in G.1's lifting formula is corrected. The table's producing domain is now stated: actual
+exponents n >= 1 other than 2 and 8, equal to the canonical residue minimum from k = 3 on.
+
+**The website** (the owner: "This is indeed true clarity and deserves front centre on the website. Can you please comb
+through the website and make sure all claims are up to date ..."):
+- *Home page.* A new first section, "The one missing method", sets out the four problems, what is known in each, and
+  the exact missing statement. It is framed as our reading, and it says the technical pages first named the gap
+  between sets and single objects (8.47).
+- *The counters* now read 314 proved with a second reader (306 proof pages plus eight results of 14 October), 697
+  research probes, and 1 missing method with four statements. "1 missing statement" became Rule 30's instance of the
+  method; the method generalises it rather than replacing it.
+- *Record depths,* on stand, need, record and wolfram: exact at 125 (21), 132, 139, 142, 143 (17) and 147 (18).
+- *For mathematicians* gained section 9 (Mahler's exact form, G293, G294, the ladders, the census, the existence window)
+  and section 10 (Erdős, with GC1241's bound). The trio page gained the fourth figure.
