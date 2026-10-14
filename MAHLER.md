@@ -55,6 +55,17 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
 
 ## Sections
 
-1. **The record census** (planned; first block, L708). The exact maximal survival horizon H*(w) over starts below
-   2^w, and a computer check that no Z-number lies below 2^w for the largest feasible w. No published large-scale check
-   was found in the survey.
+1. **The record census** (2026-10-14; `tests/probes/mahler/mahler_census.{c,py}`, predictions committed first; GPT
+   reviewing). The walk is exact: G51's windows as 128-bit dyadic numerators, and any start alive past step 124 replayed
+   with exact fractions. Its controls equal CL092's exact-fraction histogram at 2^12 and 2^20; a first-run chunk
+   overcount was caught by that control and is retained.
+   - **No Z-number lies below 2^63 = 9.22e18** (COMPUTED). Every start in [1, 2^63) has a finite horizon. The survey
+     found no published large-scale check.
+   - *Records.* H*(w) runs from 59 at w = 24 to 157 at w = 63 (n = 1541211973603965806), with H*/w in 2.18 .. 2.58,
+     the coin law of about 2.4 w. No anomalous survivor appeared.
+   - *The free bits pay exactly.* #{n >= 1 : H(n) > T} + 1 = 2^(w - T) A(T), with A(T) = 2, 3, 5, 8, 12, 18, 27, 40,
+     60, 90, ... the same at every w, tending to a ratio of 3/2. A(T) is exactly the Renyi-Parry word count of the
+     (3/2)-beta-shift (c_n = 1 + sum d_i c_(n-i), d = the greedy digits of 1 in base 3/2), for every T < 63. That is a
+     computational confirmation, from a program that never used it, of the beta-shift identification in the summary
+     (post hoc check).
+   - *The tail.* Past the free bits the survivors fall by 3/4 a step.
