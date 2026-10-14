@@ -964,3 +964,5 @@ app is unpublished by design.
 - lexicon/rule30_young_birth_zero_ray.py: GC1199 one fixed age1 depth125 prefix; four boundary packets, integer/literal agreement to200, certified38-bit cut at145 forces the next left cell black. All-tail carrying step SKETCH; outside-band clock repair retained, no record census.
 
 - mahler/mahler_gpt_review.py: GC1221 fixed-input review of Local's census; independent G51 windows verify saved horizons 120/137, two early-death chunk multiplicities and zero exclusion; two overflowing 128-bit parity controls. CPU, temporary C build, seconds; no census replay.
+
+- `mahler/mahler_gpt_dual_review.py`: L712 fixed negative-horizon, sign, chunk-mass and excluded-boundary controls (GC1230.1); temporary build, no census.
