@@ -4,6 +4,8 @@
 RUN-ON:     the Intel MacBook; Python 3 with numpy; the cadical 3.0.1 binary and drat-trim; a pool of workers
 COMMAND:    python3 tests/probes/lexicon/rule30_intel_trace_cert.py PHASE LMAX [WORKERS]
             (reads NP_SCRATCH_SX/grow_p{PHASE}_l{LMAX}.log and witness_p{PHASE}_l{LMAX}.txt; writes cert_p{...}.txt)
+            python3 tests/probes/lexicon/rule30_intel_trace_cert.py PHASE LMAX --negative [STEP]
+            (the replay's negative control R2, 2026-10-14; every STEP-th minimal absent trace, default 120)
 
 (1) Realness: each witness row (sites 1..LMAX at time 0) is simulated directly beside the wall and must give its trace;
 the prefix sets of the length-LMAX traces must reproduce every |T(l)| of the log (every real trace is a prefix of a
@@ -44,6 +46,46 @@ def strip_trace(row, inputs, phase, n):
         wall = (t + phase) & 1; e = int(inputs[t])
         x = [(wall if i == 0 else x[i - 1]) ^ (x[i] | (x[i + 1] if i + 1 < W else e)) for i in range(W)]
     return tr
+
+
+def cnf(f, phase, width):
+    """the light-cone CNF (strip CNF when width is set) with the trace f as unit clauses"""
+    cl, col1, var = _cone_clauses(phase, len(f), width=width)
+    units = [[col1[t] if c == '1' else -col1[t]] for t, c in enumerate(f)]
+    nv = max(abs(x) for c in cl + units for x in c)
+    return f'p cnf {nv} {len(cl) + len(units)}\n' + ''.join(' '.join(map(str, c)) + ' 0\n' for c in cl + units)
+
+
+def negative(phase, lmax, step=120):
+    """R2: f's DRAT proof must be rejected against the CNF of a real trace g of the same length (satisfiable), and
+    f's strip CNF at width w(f) - 1 must be satisfiable"""
+    sc = os.environ.get('NP_SCRATCH_SX', os.path.join(os.path.expanduser('~'), 'np-scratch', 'rule30-sx'))
+    M = {}; R = []
+    for line in open(os.path.join(sc, f'grow_p{phase}_l{lmax}.log')):
+        p = line.split()
+        if p[0] == 'M': M[p[2]] = int(p[3])
+    for line in open(os.path.join(sc, f'witness_p{phase}_l{lmax}.txt')):
+        p = line.split()
+        if p[0] == 'R': R.append(p[1])
+    picks = sorted(M)[::step]; ok = True
+    for f in picks:
+        g = R[0][:len(f)]
+        with tempfile.TemporaryDirectory() as d:
+            cf, cg, pf = (os.path.join(d, x) for x in ('f.cnf', 'g.cnf', 'f.drat'))
+            open(cf, 'w').write(cnf(f, phase, None)); open(cg, 'w').write(cnf(g, phase, None))
+            ef = subprocess.run(['cadical', '-q', '--binary=false', cf, pf], capture_output=True).returncode
+            eg = subprocess.run(['cadical', '-q', cg], capture_output=True).returncode
+            v = subprocess.run([DRAT_TRIM, cg, pf, '-t', '400000'], capture_output=True, text=True).stdout
+            borrowed = 'VERIFIED' if 's VERIFIED' in v else 'rejected'
+            ew = '-'
+            if M[f] >= 2:
+                cw = os.path.join(d, 'w.cnf'); open(cw, 'w').write(cnf(f, phase, M[f] - 1))
+                ew = subprocess.run(['cadical', '-q', cw], capture_output=True).returncode
+        good = ef == 20 and eg == 10 and borrowed == 'rejected' and ew in ('-', 10)
+        ok &= good
+        print(f'l {len(f):2d} w {M[f]:2d}  f exit {ef}  g exit {eg}  f proof on g {borrowed}  '
+              f'width w-1 exit {ew}  {"ok" if good else "FAIL"}', flush=True)
+    print(f'phase {phase}: {len(picks)} picks (every {step}th), all as predicted: {ok}')
 
 
 def refute(job):
@@ -123,4 +165,8 @@ def main(phase, lmax, workers):
 
 
 if __name__ == '__main__':
-    main(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]) if len(sys.argv) > 3 else 8)
+    if '--negative' in sys.argv:
+        k = sys.argv.index('--negative')
+        negative(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[k + 1]) if len(sys.argv) > k + 1 else 120)
+    else:
+        main(int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]) if len(sys.argv) > 3 else 8)
