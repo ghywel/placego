@@ -7266,7 +7266,7 @@ about 12,000 SMC power-limit notifications a minute just before, and no kernel p
 Intel's own: lane A first built the formal-conjectures library that Rule30Period1.lean imports on every core, while lane
 C ran three replays and the seven agents of lanes D and E worked. No agent had finished; lane C had finished one replay
 (rule30_lattice.py, exit 0 in 124 s), which is kept. The owner chose the relaunch: at most about eight threads at once.
-- *Lane A* runs alone, one file at a time with Lean's \`-j 4\`, after a load gate (one-minute load below 8 and no CPU
+- *Lane A* runs alone, one file at a time with Lean's `-j 4`, after a load gate (one-minute load below 8 and no CPU
   throttling). Rule30Period1.lean is deferred, since it needs the library build.
 - *Lane C* runs after lane A, at most two replays at a time, behind the same gate; rule30_diagonal_bias.py runs with 4
   threads instead of 8.
