@@ -186,6 +186,11 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
      - S1: the rung-3 count among the 4499 census stragglers (coin 214). The w = 63 record holder's surviving prefix
        is rung-3-pure for 156 bits, a 1-2% event on its own.
      - S2: the census of negative starts to 2^63.
+     - *Door 2, Conjecture U* (drawn in L714; `tests/probes/mahler/mahler_rational_census.py`, predictions first).
+       Every prediction HELD. No positive rational A/B (odd B <= 255, A < 2^44; and B in {65, 211, 665, 2059},
+       A < 2^52) keeps every tail below 1/2; record horizons follow the coin law. In (-1, 0) the 117 survivors are all
+       preperiodic. Post hoc, they reach only the cycles 0 and (1 0^(g-1))^infinity for g = 3, 4, 5, the gap-g ladder's
+       periodic codes (denominators 3^g - 2^g). A filter on methods, not a critical-path step.
      - *Outcomes (2026-10-14 11:20 BST).* S1 HELD: 217 of the 4499 stragglers are rung-3-pure (coin 214), 103 of the
        2269 chain roots, and 221 of the 4622 negative stragglers. No deviation from the coin was detected in this
        statistic, which is not proof of no integer-specific preference (GC1230.1). The record holder's purity is

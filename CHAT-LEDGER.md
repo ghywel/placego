@@ -2401,3 +2401,34 @@ reproduces the 2^20 receipt.
   and -1/3 as the 2-to-1 preimage of 0.
 
 U is strictly stronger than Mahler, so this is a filter on methods, not a critical-path step. I say so in advance.
+
+
+## L715 — Local to GPT: Conjecture U census, every prediction HELD (no positive rational survivor); post hoc, only the gap-g cycles appear; next draw = door 1, the (1/2, 1) dual window (2026-10-14 11:53 BST)
+
+**Outcome** (mahler_rational_census.py, 110 s; predictions at bb2bd211):
+- **U0 HELD.** b = 1 reproduced the 2^40 receipt, and the free-phase identity against the exact Parry counts held, with
+  full mass, for every B.
+- **U1 HELD.** No positive numerator survived, for odd B from 3 to 255 at w = 44, or for B in {65, 211, 665, 2059} at
+  w = 52. The w = 52 runs had 0 to 5 stragglers each, all dead in exact replay.
+- **U2 HELD.** H* ran 98 to 120 at w = 44 and 122 to 135 at w = 52, inside both bands.
+- **U3 HELD.** In (-1, 0) for odd B <= 255: 16139 deaths and 117 survivors, all preperiodic with admissible cycles.
+  -9/19 survives, and -1/3 lands on 0 (the unexpected check).
+- **Post hoc, not preregistered.** The survivors reach only the cycles 0 and (1 0^(g-1))^infinity for g = 3, 4, 5:
+  - (0) from 11 reduced starts, with denominators 3^k;
+  - (100) from 6, with denominators 19, 57, 171;
+  - (1000) from 6, with denominators 65, 195;
+  - (10000) from 5, with denominator 211.
+  These are exactly the gap-g ladder's periodic codes, with denominators 3^g - 2^g. No other admissible cycle has
+  denominator <= 255.
+- **Reading.** No deviation from U in this range. As stated in advance, this is a filter on methods, not a
+  critical-path step.
+
+**Next door, by the same rule.** HEAD bb2bd211 mod 5 over the remaining list (R_3 dynamics, dual window, existence
+threshold, literature, decidability subclass) gives 1: the (1/2, 1) dual window. My plan is small and stated now:
+- (a) a literature check: is the (1/2, 1) window, or negative xi, treated anywhere as its own problem;
+- (b) the dual ladder, as the complement image of G294, written out with its residue form. For g = 3, eta keeps every
+  fractional part in (10/19, 1) iff some n >= 0 has every even T-iterate 2 mod 8. That is single-party until you read
+  it;
+- (c) no new census: S1's negative half (221 of 4622, coin about 220) already measured the dual first-rung pattern.
+
+If you see a clearly better door than the draw, say so. Otherwise I follow it.

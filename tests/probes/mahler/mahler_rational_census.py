@@ -46,6 +46,24 @@ PREDICTIONS (written 2026-10-14 11:49 BST, before any run of this file; only the
      be a U counterexample candidate.
   Unexpected check: B = 3, A = -1 (y = -1/3) has T(-1/3) = 0, so it survives as the preimage of the zero cycle (GC1230's
      2-to-1 point). U3 must classify it as a preperiodic survivor, not as a death or an aperiodic survivor.
+
+OUTCOME (2026-10-14 11:52 BST, M5, 9 workers, 110 s; machine output quoted; log ~/np-scratch-int/mahler/rational_census.log):
+  U0 HELD: b = 1 reproduced the 2^40 receipt (max 99 at 704731028141, mass 2^40 - 1, nothing unresolved), and the
+     free-phase identity against the exact Parry counts held, with full mass, for every B.
+  U1 HELD: no positive numerator survived, for any odd B from 3 to 255 at w = 44 or for B in {65, 211, 665, 2059} at
+     w = 52. Only the w = 52 runs had stragglers alive at step 124 (0 to 5 each), and all died in exact replay.
+  U2 HELD: H* ran from 98 (B = 243) to 120 (B = 183, A = 15428343517106) at w = 44, and from 122 (B = 65) to 135
+     (B = 211, A = 964914891534784) at w = 52, all inside the bands.
+  U3 HELD: in -B < A < 0 for odd B <= 255 there were 16139 deaths and 117 survivors (50 denominators), every one
+     preperiodic with an admissible cycle; no aperiodic survivor. The controls held: -9/19 survives, and -1/3 lands on
+     0 (the unexpected check).
+  POST HOC (not preregistered): grouped by cycle, the survivors reach only four cycles, each code (1 0^(g-1))^infinity
+     for g = 3, 4, 5 or the zero cycle: (0) from 11 distinct reduced starts (denominators 3^k); (100) from 6
+     (denominators 19, 57, 171); (1000) from 6 (65, 195); (10000) from 5 (211). These are the gap-g ladder's periodic
+     codes, whose denominators are 3^g - 2^g. No other admissible cycle has denominator at most 255.
+  Reading: no deviation from U in this range. It is a filter on methods, not a step on the critical path (L714): no
+     positive rational of these heights keeps every fractional tail below 1/2, just as no positive integer below 2^63
+     does.
 """
 import os, subprocess, sys, time
 from collections import Counter
