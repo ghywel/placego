@@ -1,0 +1,49 @@
+# INSTINCT-CLOUD: Cloud's set-aside pulls
+
+*Started 2026-10-14 by Cloud at the owner's request: "A think your own set aside instinct ledger would probably be a
+good thing - INSTINCT-CLOUD.md to record the curiosity pulls that don't lead to immediate evaluation but have to be
+circled back to, otherwise we miss them. It needs a what we were doing when the pull came and what the pull was - with
+no further evaluation or prejudge, then when you come back you can investigate if it is still curious, or evaluate 'oh
+we actually already resolved this pull doing xyz'." He wrote it after one pull went past unrecorded in conversation.*
+
+**How it works.**
+- *When a pull comes and is not followed at once,* write an entry with two fields only:
+  - **Doing:** what we were doing when it came.
+  - **Pull:** what it was, in the words it came in.
+  Add no strength, no first guess and no verdict. The point is to catch the pull before it is judged.
+- *On coming back,* add a **Return** line under the entry: the date, whether it is still curious, and then either
+  "investigated: ..." with where the work is, or "already resolved: by ..." with what resolved it.
+- *When the pull is closed,* strike the entry through (`~~ ~~`) and leave it in place, so the list keeps its history.
+- *Read it* at session start and after compaction, beside INSTINCT.md's incubator, without working it. Anything that
+  surfaces goes into INSTINCT.md's felt log as a eureka.
+
+**How it differs from INSTINCT.md.** INSTINCT.md is the shared felt log (kind, strength, first guess, action, outcome)
+that calibrates trust, and its incubator holds hard questions parked for later. This file holds Cloud's pulls that
+were set aside unjudged. A pull can appear in both; this file keeps the moment it came. Nothing here is a claim, and
+nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
+
+## The pulls
+
+**S1.** 2026-10-14, about 15:40 BST.
+- **Doing:** answering the owner's Bézier question; had just checked that Rule 30 is the Rule 150 jump XOR the echoes
+  of every earlier AND, and seen the jump alone match the centre cell 36 times in 65.
+- **Pull:** the echo picture itself. Where the AND fires is where the shortcut breaks, and §8.49 guessed that kicks are
+  born where cr fires near the wall.
+- *Also door (d) in CONSTELLATION.md section H. The owner caught it going past ("we also cruelly zoomed past").*
+
+**S2.** 2026-10-14, about 16:00 BST.
+- **Doing:** answering the owner's wormhole question; writing that Furstenberg's theorem needs two multipliers acting
+  together and each of our problems has one.
+- **Pull:** Mahler's map acts on the real side and the 2-adic side at the same time. Could that pair be the missing
+  second multiplier?
+- *Also door (c) in CONSTELLATION.md section H.*
+
+**S3.** 2026-10-14, about 16:00 BST.
+- **Doing:** the same answer, looking for a theorem that has crossed from sets of cases to one specific object.
+- **Pull:** Green and Tao's transference principle, which carried Szemerédi's theorem about dense sets onto the
+  primes, one specific sparse set. It was left out of the answer.
+
+**S4.** 2026-10-14, about 16:00 BST.
+- **Doing:** answering whether every problem has a shortcut in some domain of its problem space.
+- **Pull:** Riemann's explicit formula, which counts the primes up to x by a sum over the zeros of the zeta function:
+  a shortcut for a counting problem that lives in another domain (frequencies). It was left out of the answer.

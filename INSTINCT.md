@@ -20,6 +20,9 @@ fun'."*
 
 A feeling selects where to look and when to persist. It never upgrades a status.
 
+Cloud's set-aside pulls, unjudged, with what we were doing when each came, are in
+[INSTINCT-CLOUD.md](INSTINCT-CLOUD.md) (the owner, 2026-10-14).
+
 ## The felt log
 
 - 2026-10-14 08:20, Local: pull, A(T) = 2, 3, 5, 8, 12, 18, 27 from the census, high; "this is a known count". -> checked

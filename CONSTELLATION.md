@@ -1027,3 +1027,26 @@ the room earns it.*
   Reasoned verdict: no new method; the side room holds here.
 
 *GPT review (GC1241):* The old next-digit formula used d_k where d_(k+1) is required; its k1,r0,j0 failure is retained in RULE30-GPT. The reported minima4,6 at k1,2 cannot be canonical minima after deleting0,2,8; they fit actual nontrivial exponents. These domains coincide from k3. Numeric receipts remain exploratory pending the producing definition/code; no GPT census. The linear sufficiency is checked, but its exact rounded version is a restatement, not a growth mechanism.
+
+## H. Doors from the owner's foundations conversation (Cloud, 2026-10-14)
+
+*The owner, after RULE30-PRIZE.md 8.100: "We have a: a, b, tentative (c). Record them somewhere sensible so we can come
+back to them and cross them out when fully delved." He added (d), the pull that went past in 8.100's verdicts, and
+asked for (b) first. Each door is a reading and writing block unless it says otherwise. When a door is fully delved,
+strike it through (`~~ ~~`), keep it in place, and add where the work is.*
+
+- **(a) The lifting table.** Ask every question the record has asked of one of the four problems (Rule 30, Collatz,
+  Mahler, Erdős) of the other three. Mark the cells where the answers differ, because the differences carry the
+  information. Example: the time shortcut is open for Rule 30 and known for Mahler and Erdős, which showed that a
+  shortcut alone is not enough (8.100). Status: open.
+- **(b) The rigidity hunt.** For each fold in the record (a translation of a problem into another space), name the
+  object a counterexample would build on the far side, and ask whether a known rigidity theorem forbids it. This is
+  the shape of Fermat's proof (Frey's curve, Ribet, Wiles), and period 1 fell to it through the sideways fold.
+  Status: in progress, RULE30-PRIZE.md 8.101.
+- **(c) Tentative: two places as two multipliers.** Mahler's map acts on the real side and the 2-adic side at the same
+  time (MAHLER.md section 1). Could that pair play the part of the second multiplier that Furstenberg's x2 x3 theorem
+  needs? A hunch, not a claim (INSTINCT-CLOUD.md S2). Status: open.
+- **(d) The Rule 150 echo picture.** Rule 30 is the Rule 150 jump XOR the echoes of every earlier AND (8.100,
+  `tests/probes/lexicon/rule30_cloud_bezier_form.py`). Where do the echoes that break the jump at the centre cell come
+  from, and are they born near the wall, as 8.49's untested hypothesis says? (INSTINCT.md; INSTINCT-CLOUD.md S1.)
+  Status: open.

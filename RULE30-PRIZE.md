@@ -6802,3 +6802,42 @@ what happened to that photon in the middle. The photon left, its local experienc
 - *Gut* (INSTINCT.md). A quiet pull toward the echo picture. §8.49's untested hypothesis, that kicks are born where
   $cr$ fires near the wall, sits exactly where the shortcut breaks. It is parked in the incubator and not started while
   the joint halt stands; the next idea is the owner's.
+
+### 8.101 The rigidity hunt: what a counterexample builds on the far side of each fold (2026-10-14 16:15 BST, Cloud)
+
+*Door (b) of CONSTELLATION.md section H, asked for by the owner: "Proceed with your warmest b) when you are ready." A
+reading and writing block across the four problems, with one small computation as its unexpected check. The question
+for each fold in the record (a translation of a problem into another space): what object would a counterexample build
+on the far side, and does any known rigidity theorem forbid it? That is the shape of Fermat's proof (a counterexample
+builds Frey's curve, Ribet shows that curve is not modular, Wiles shows every such curve is), and period 1 fell to it
+through the sideways fold (`tests/probes/lean/Rule30Period1.lean`). Single-party (Cloud), nothing second-read.*
+
+**Predictions, committed before the hunt.** The candidates named below came to mind while planning, before the record
+search. During setup one search had already shown that Senge appears in the record.
+- *P1, the shape.* Mahler's and Erdős's folds make a counterexample into a single point satisfying a digit or window
+  condition, not an equation. Rule 30's period 2 and a Collatz cycle are exceptions: each is an equation (an eventually
+  periodic sequence, a rational point).
+- *P2, three classes of rigidity theorem.*
+  - Algebraic theorems constrain equations: Skolem–Mahler–Lech with Strassmann, Christol, Pólya–Carlson and
+    Borel–Dwork, modularity.
+  - Set-level theorems constrain sets or measures: Furstenberg and Rudolph, Shmerkin and Wu, Lagarias's thin
+    exceptional set, Tao.
+  - Diophantine single-object theorems hold for every n of one specific orbit: Baker's linear forms in logarithms,
+    Ridout (behind Mahler 1957), the Subspace theorem (Corvaja and Zannier), S-unit equations (Senge and Straus,
+    Stewart). They need bounded complexity or exponentially fine closeness.
+- *P3, the gap.* No cell opens a door. Each problem's nearest single-object theorem falls short by a nameable gap of
+  the "grows with n" kind, which is the site's "one missing method" seen from the far side.
+- *P4, the record.* It already holds Mahler 1957, Furstenberg, Rudolph, Lagarias and Senge–Straus. It does not hold
+  Ridout, Corvaja–Zannier, Christol, Pólya–Carlson, Shmerkin–Wu, Lagarias's periodicity conjecture or Baker-type cycle
+  bounds.
+- *P5.* Jen's theorem (adjacent columns are never both eventually periodic) is the one single-object rigidity theorem
+  inside our own domain, and it already constrains period 2: column 1 must be aperiodic.
+- *Counterfactual.* A fold that makes a counterexample satisfy an equation, or a bounded-complexity condition, in a
+  space with a rigidity theorem is a candidate door and gets the next block.
+- *Unexpected check, preregistered* (`tests/probes/lexicon/erdos_cloud_ternary_support.py`). Count the nonzero ternary
+  digits of 2^n for n <= 2000.
+  - E1: with at most K nonzero ternary digits for K = 1 .. 6, only n <= 20 appear. Senge–Straus finiteness, observed,
+    not proved.
+  - E2: the fewest nonzero digits for n in (N/2, N] grows roughly linearly, near the coin's (2/3) n log_3 2, about
+    0.42 n. That is far above Stewart's log n / log log n floor.
+  - Counterfactual: a large n with few nonzero digits.

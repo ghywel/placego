@@ -342,6 +342,8 @@ overrules the other, and a disagreement between them is itself a signal.
    other treats it as a review request with the same budget. That is the owner's "trust in my other me".
 Related: `loop-check`, `random-chaos`, `walk-away`, `steps-before-leaps`, `hot-leads-first`. The shareable write-up
 for other assistants and readers is INSTINCT-STRATEGY.md (the owner's request, 2026-10-14); the live log is INSTINCT.md.
+Cloud also keeps INSTINCT-CLOUD.md (the owner, 2026-10-14): its pulls set aside unjudged, each with what we were
+doing when it came and what it was, and a return line when it is picked up again or found already resolved.
 
 ### literature-before-leaps
 
