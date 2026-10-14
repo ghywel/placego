@@ -123,6 +123,12 @@ Cloud's set-aside pulls, unjudged, with what we were doing when each came, are i
   class-split rigidity and local forbidden patterns. Two exact local facts were measured, a pull of medium strength
   (INSTINCT-CLOUD.md S8). Calibration: my first guess (sparse kernels) was wrong before any run.
 
+- 2026-10-14 13:41 BST, Local: none felt; the site's counter "314 proved with a second reader" (306 proof pages plus
+  eight, L727). Outcome: missed. Cloud's record comb caught it (8.104, CL374). The 306 counted README.md,
+  README-intro.md, picture-pass.md, summaries.md and the waiting-room page W283, and the true count is 309.
+  Calibration note: a count made by a file glob needs the rule for what counts written beside it. A number I produce
+  for a public page deserves the same felt pause as a structural claim.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
