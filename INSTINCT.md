@@ -136,6 +136,16 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Calibration note: a count made by a file glob needs the rule for what counts written beside it. A number I produce
   for a public page deserves the same felt pause as a structural claim.
 
+- 2026-10-14 18:00 BST, Cloud: unease, the owner waived the two-tier rule for the swarm's corrections ("I am going to
+  risk it is unnecessary"), low; first guess: summaries are where today's comb found every error, and a correction is
+  itself a summary. -> no push back. The risk is contained, since every correction quotes both sides and carries a
+  dated note, and the owner asked for S8. Outcome: open (to be checked against the swarm's corrections).
+
+- 2026-10-14 18:03 BST, Cloud: gut verdict on S8 (8.106): satisfaction, a measured hunch became a certified statement;
+  and a small wince at the sample bias it exposed (classes 19, 39 and 49 force 000, and none was in my 1,138 kicks).
+  Reasoned verdict: certified at 56 and 140 steps; 8.105 corrected. They agree. Calibration: S8's pull (medium) was
+  right.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
