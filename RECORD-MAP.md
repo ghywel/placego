@@ -380,7 +380,7 @@ PART: as on the board.
 - Million-start cutoff certified (COMPUTED GC931); visitation shortcut CLOSED (GC928/CL147).
 - Capped bits/values: no uniform convergence near 4/3 — PROVED GC935/936.
 - Carry dial: H_k=v2(g)+1 at k=0 (GC836); g=53 survives k=4 — MEASURED L457.
-- Swarm: path unmoved; ladder: [0,a), a in [alpha_g,beta_g] iff odd iterates -1/3 mod 2^g; annulus at D; sign dual (1/2,1); height coupling, bowtie CLOSED — SKETCH — MAHLER.md §2.
+- Swarm: path unmoved; gap-g ladder [0,a), a in [alpha_g,beta_g] iff odd iterates -1/3 mod 2^g PROVED G294; annulus, sign dual SKETCH; height coupling, bowtie CLOSED — MAHLER.md §2.
 
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)

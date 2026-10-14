@@ -97,7 +97,9 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
    changes (GC1222) were built in. Every item below is a single-party self-check under AGENTS item 16 until GPT's read.
    - **Verdict: nothing moves the critical path.** No candidate excludes a positive integer, and none uses eventually
      zero binary digits as a mechanism. The judge's words: "an honest null on the main question".
-   - *The window ladder* (PROOF-SKETCH, found independently by two lanes, re-derived by both skeptics). For g >= 3
+   - *The window ladder* (PROVED for positive ordinary integer codes: found independently by two lanes, re-derived by
+     both skeptics, Local's carrying proof below, GPT's independent argument GC1228 = PROOFS.md G.GPT294; the
+     emptiness R_g stays open). For g >= 3
      put alpha_g = 3^(g-1)/(3^g - 2^g), the value of the code (1 0^(g-1))^infinity, and
      beta_g = (1 + (2/3)^(g-1))/3. For every a in [alpha_g, beta_g], a real xi > 0 has every {xi (3/2)^j} in [0, a)
      iff xi = n + u_0(n), with n >= 1 whose T-code has every two 1s at distance >= g. Equivalently, every odd
@@ -134,7 +136,7 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
        - This gap-g ladder runs downward. Its windows shrink toward 1/3, and the union of its rungs is only the
          gap >= 3 class. The formal code (101000000)^infinity has every tail below 1/2 (maximum 9477/19171), yet a
          gap of 2, so it lies on no gap-g rung.
-       - The upward ladder comes from the annulus form. The windows [0, a_M), with a_M the value of the M-bit prefix
+       - The upward ladder comes from the annulus form (PROOF-SKETCH, not read by GPT). The windows [0, a_M), with a_M the value of the M-bit prefix
          of d(1), rise to 1/2. Each is a finite residue condition mod 2^M on the odd iterates (the annulus classes
          with m < M). Their union is exactly the Z-numbers with sup u_j < 1/2.
        - Neither ladder reaches Mahler. A Z-number whose fractional parts approach 1/2 lies on no rung of either.
@@ -144,10 +146,13 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
      start of the critical code d(1) (D = 55817 mod 2^16). Then:
      - Mahler holds iff no positive integer T-orbit avoids, forever, every class {x : v_2(x - D) = m} with d_m = 0.
        The first classes are 3 mod 4, 1 mod 16, 25 mod 32 and 41 mod 64; their Haar measure totals 0.3728.
-     - The horizon is H(x) = min over j of j + v_2(T^j x - D), taken where d at that valuation is 0. This is an
-       independent census instrument.
-     - For integers, K and S_strict differ only if D is itself a positive integer. A skeptic checked it is not one
-       of absolute value below 2^20000.
+     - The longest admissible code prefix has length L(x) = min over j of j + v_2(T^j x - D), taken where d at that
+       valuation is 0, and the census horizon is L(x) + 1: the violation sits at bit j + m_j, so the prefix of length
+       j + m_j + 1 is the first inadmissible one. (Corrected per GC1228's control x = 3: L = 1, census H(3) = 2. The
+       first wording called L the horizon.) Built carefully, this is an independent census instrument.
+     - For integers, K and S_strict differ only if D is an ordinary integer of either sign; for positive orbits,
+       only if D is a positive integer (GC1228). A skeptic checked that D is not an integer of absolute value below
+       2^20000.
    - *The sign dual* (PROOF-SKETCH; the symmetry T(-1-x) = -1-T(x) is already in G49/GC669). A negative integer lies
      in S_strict iff a positive eta has every {eta (3/2)^j} in (1/2, 1).
      - So S_strict meets Z only in {0} iff Mahler holds and that dual window problem is empty.

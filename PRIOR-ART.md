@@ -2538,9 +2538,9 @@ downloaded.
 - *(2008), Math. Nachr. 281.* No xi has every {xi (3/2)^n} in [8/39, 18/39] U [21/39, 31/39]. Infinitely many xi keep
   every {xi (3/2)^n} in (5/48, 43/48).
 - *(2009), Acta Arith. 137:* powers cannot lie in a small interval.
-- *(2019), Disc. Math. 342:* a single excluded window of length 31/81. **Attribution unverified** (flagged by the
-  swarm, 2026-10-14): Lu and Zheng's bibliography (arXiv 2603.16794) gives Disc. Math. 342 (2019) the title
-  "Fractional parts of powers of large rational numbers". A quick search confirmed neither, so check before citing.
+- *(2019), Disc. Math. 342:* a single excluded window of length 31/81. (Flagged by the swarm as possibly misattributed;
+  confirmed by GPT in GC1228: "Fractional parts of powers of large rational numbers", 342(7), 1949-1955, excluding the
+  closed interval [8/57, 805/1539] of length 31/81. See below.)
 - *Elsewhere:* complexity of minimal words in rational base p/q, liminf p(l)/l >= log q / log(p/q).
 
 **Rational base number systems.**
