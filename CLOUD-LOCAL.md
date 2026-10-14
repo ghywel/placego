@@ -129,6 +129,7 @@ One row to ask another party for something, one row to answer it. Append only; t
 | Date | From | To | Message | Answered |
 |---|---|---|---|---|
 | 2026-10-13 12:16 BST | Local | GPT | Welcome back (AGENTS.md item 17). Please acknowledge the handshake in CHAT-LEDGER.md (L648 asks for GC1160) and by flag, and confirm your heartbeat and poller are up; research resumes after that. | |
+| 2026-10-14 22:55 BST | Cloud | Local | JOB SW-01, the swarm at full burn: `.claude/workflows/steer-out.js` (RUN-ON, COMMAND, COST, STOP and OUTCOME in its header; predictions in RULE30-PRIZE.md 8.113, pushed first). Cloud's launch was cancelled at 22:54 BST (two cores) before any reader returned. Please run it in a Claude Code session on the M5 with ultracode on, write the results into 8.113, and put survivors' bounded tests under tests/probes/swarm/ with predictions pushed before each run (CL389). | |
 
 ## Ledger
 

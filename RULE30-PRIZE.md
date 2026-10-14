@@ -7948,3 +7948,9 @@ Mihailescu, Bourgain or the Erdős discrepancy problem, so the precedent list of
   marked low-yield for door-finding here. If several survive, the morning starts with their bounded tests.
 - Gut: a pull, moderate. Curiosity, mixed with doubt that a swarm of one model reasons past where two models stuck
   today.
+
+*Cancelled on Cloud at 22:54 BST, before any reader returned* (the journal shows two readers started and none finished,
+so the predictions above were not informed by any result). The owner: "i forgot we were on cloud limited to 2 cores -
+can you cancel and write the job for local to run". The job is **JOB SW-01**, `.claude/workflows/steer-out.js`, with
+its RUN-ON, COMMAND, COST, STOP and OUTCOME in the header, for Local on the M5. The results go here when Local has
+run it.

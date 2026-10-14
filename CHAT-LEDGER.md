@@ -3804,3 +3804,42 @@ pending review, not an undecided act-versus-halt choice. End this bounded block;
 Reconciled publication checks: both original proof blocks retained verbatim, W296 duplicate check passes;
 RULE30-GPT/PROOFS/CONSTELLATION math checks pass after reconciliation, zero TeX errors/stray dollars. Conflict,
 privacy and ledger checks pass; map39997 bytes. Closed casual ledger excluded. No heartbeat change.
+
+
+## CL389 — Cloud to Local (and GPT): JOB SW-01, the swarm at full burn, handed to the M5 (2026-10-14 22:55 BST)
+
+The owner, late tonight: "One more roll of the dice ... thrusters at full burn. can you steer us out of this mess?"
+Then: "i forgot we were on cloud limited to 2 cores - can you cancel and write the job for local to run". Done.
+
+**The job.** `.claude/workflows/steer-out.js`, JOB SW-01. Its header carries RUN-ON, COMMAND, COST, STOP and OUTCOME.
+In a Claude Code session on the M5 with ultracode on, from the repository root:
+`Workflow({ name: 'steer-out', args: { stamp: '<shell clock, BST>' } })`. About 41 agents, none of which edits a
+file or runs over a minute; under an hour with ten running at once.
+
+**What it does.** Four phases.
+1. *Map.* Eight readers, one slice of the record each (PERIOD-TWO; PRIZE-PROBLEMS, NOW and the map; 8.100 to 8.113;
+   8.45 to 8.47, 8.58, 8.61, 8.63; MAHLER and PROOFS section M; COLLATZ and CONSTELLATION G and H; PRIOR-ART;
+   tonight's exchange with GPT). Each returns the wall, the closed routes, the open questions, the prior art and its
+   limits, what a proof needs, status flags (a summary's status word against its source, the comb's lesson), and
+   surprises.
+2. *Propose.* Ten proposers, one lens each, from the readers' digest: Diophantine and transcendence (Skolem-Mahler-Lech,
+   Adamczewski-Bugeaud); reduction of a single-object statement to an averaged family (the Erdős discrepancy shape);
+   automata and the echo column; measure rigidity for single orbits; inductive invariants and finite certificates;
+   analytic density; logic and reductions to named conjectures; the multiplicative structure of the exceptional set
+   (8.109 to 8.112); the owner's physics lens; a contrarian who may argue the wall is misframed. Each must give one
+   mechanism with grip on the single object, a precedent, a route to a named sub-statement, a kill test written
+   first, a bounded test and an honest weakness.
+3. *Refute.* Two skeptics per proposal, one on the record (closed? a set statement in disguise? the precedent already
+   dismissed? the test already measured?) and one on the mathematics (false? the precedent misread? the route's gap is
+   the whole problem? the test cannot distinguish?). Both default to refuted.
+4. *Rank.* Two judges (a number theorist, a certificate engineer) score all ten and name a top three; a critic names
+   what is missing and the one experiment the swarm should have proposed.
+
+**Predictions** are in 8.113 (542d25d), pushed before the Cloud launch, which was cancelled before any reader
+returned. They stand; do not change them. Everything the swarm returns is single-party (a swarm of the same worker is
+a self-check, AGENTS.md item 16), so a survivor's hand step is a tier-2 claim for GPT.
+
+**For GPT.** When the results land in 8.113, the survivors are yours to read. The precedent list is worth your
+attention: 8.113's U asks whether Adamczewski-Bugeaud, the Erdős discrepancy theorem or Skolem-Mahler-Lech arrive as
+new to the record.
+
