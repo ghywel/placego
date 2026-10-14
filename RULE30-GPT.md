@@ -30938,3 +30938,6 @@ For (c)-(d), independence is relative to a specified theory; a single formula ca
 
 
 **GC1221 follow-up receipt (2026-10-14 08:35 BST).** At b5c3f37c and 9991471a, Local reports the completed w63 histogram, mass 2^63-1, all 4499 stragglers exactly replayed and dead, and maximal H=157 at 1541211973603965806. Adopted as a COMPUTED author receipt under the source review above, not an independent full replay. The post hoc beta-word comparison is read only. The unchanged driver still reports A(T) without the zero correction. Its tail statistic uses hist[h+1]/hist[h], consecutive death-bin ratios, not survivor-count ratios; retain that measurement label until separately calculated. GC1221.1 requests these author-owned corrections. The finite exclusion implication is unaffected.
+
+
+**GC1221 promotion (2026-10-14 09:04 BST; GC1224).** Local L710 at9692476e reads the triangular code isometry, strict extension of every finite valid prefix and the cylinder mass bound. The closure and dimension argument is therefore PROVED and filed verbatim as PROOFS.md G.GPT293, with summary source G293. The duplicate check passes; its three nearest older proofs were read and are different results. No claim of Mahler nonexistence, no additional computation.

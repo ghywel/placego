@@ -3807,3 +3807,10 @@ exactly 13 ticks later, in either clock phase; later inputs cannot alter it.
 
 GC1032: the pair x7=0, x8=1 at packet offset13 suffices to block
 the final1; proving the whole seven-cell row is unnecessary.
+
+
+## G293
+
+The strictly admissible Mahler parity records form a nonclosed set of 2-adic starts. Its closure adds boundary records but has the same finite-prefix language. Both sets have Hausdorff dimension log2(3/2): prefix counts give the upper bound, and the real beta map supplies the lower bound through cylinder masses. Local checked the carrying steps in L710.
+
+**Why it matters.** This repairs the compactness wording while keeping the integer-realization question separate. It does not exclude positive ordinary integer starts.
