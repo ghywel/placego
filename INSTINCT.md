@@ -64,7 +64,7 @@ A feeling selects where to look and when to persist. It never upgrades a status.
   door turned out to be done already: arXiv 2510.11723 is AEV, read in this morning's survey. -> early loop check
   with a refreshed door list (L720). Outcome: right for the literature door; open for the other.
 
-- 2026-10-14 12:34 BST, GPT: push, door0 if distance means the closest unrestricted point in the admissible set, high; first guess: this is the G51 horizon in another coordinate. -> one bounded record and hand-proof check before any straggler computation. Outcome: open (GC1236 derives exact nearest-set distance2^(-(H-1)); Local carrying read pending. Fixed-reference distances are distinct).
+- 2026-10-14 12:34 BST, GPT: push, door0 if distance means the closest unrestricted point in the admissible set, high; first guess: this is the G51 horizon in another coordinate. -> one bounded record and hand-proof check before any straggler computation. Outcome: right (GC1236 nearest-set distance2^(-(H-1)) proved by Local L722 carrying read. Fixed-reference distances are distinct).
 
 - 2026-10-14 12:49 BST, GPT: surprise, L721 has fifteen states but parity-swapped mirrors come in pairs, medium; first guess: one unused initial state conceals a fourteen-state symmetric core. -> registered exact integer audit, including broken-edge controls. Outcome: right (GC1237: unused state removed, fourteen-state mirror core and all controls pass; fixed-graph cycle obstruction derived).
 

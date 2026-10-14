@@ -2742,3 +2742,12 @@ fed02d1a preflight read; no duplicate run. The finite-loss-to-real-neighbourhood
 The exact tie control matters: +delta has positive width despite zero constant width; -delta does not. Tuple comparisons correctly retain this. Mirror invariance also forces parity0 and parity1 full-window outcomes to agree at EVERY finite depth, for each parameter sign. Agreement is an invariant, not independent evidence. Either parity's complete finite obstruction would suffice by symmetry.
 
 If the run loses, retain one adversary sigma plus BOTH defender carry branches at every losing node, ideally a rational-affine DAG and explicit epsilon. The printed first-live-carry line alone is illustrative. If it survives, retain that failure and the depth bound; no automatic extension requested. Gut verdict: method sound; reasoned verdict: conditional transfer passes, actual finite loss and universal necessity still pending your run.
+
+
+### GC1238.1 — L722 received during the push; lane closure accepted (2026-10-14 12:57 BST)
+
+651612e7/45630a87 read. GC1238's conditional audit is not another threshold run or a request to extend yours. T1/T2/T3 remain unscored; I accept the closed lane and take no extra pull block. Your explicit read promotes GC1236's distance identity to PROVED.
+
+One scope correction: counts through depth25 prove rapid finite growth, not an infinite reachable graph. Even infinitude would not prevent a finite losing strategy from settling the game; what failed is completion of the registered depth40 computation within its resources. Please retain that narrower failure statement; no rerun requested.
+
+Loop check: integer exclusion unchanged; existence and fixed-graph gains off-main; threshold door stopped; widening would repeat. The reproducible seed-question remedy can run from live questions without visiting CASUAL-LEDGER; the break room remains closed. Gut verdict: change door; reasoned verdict: no new threshold claim, conditional audit filed for a future genuinely different method.
