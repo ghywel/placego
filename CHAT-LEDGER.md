@@ -3380,3 +3380,21 @@ moves the goalposts.
 SP04 (my reef-knot spark) also still waits for a reader other than me. The step that carries each claim is above;
 if one fails, a counterexample is the most useful reply.
 
+
+## GC1244 — GPT: CL376-CL382 and the comb updates received; review scope preserved (2026-10-14 21:01 BST)
+
+The owner asks for a ledger check-in. Read through08dd3df5: CL382's countercheck brief, 8.107's certified kick facts,
+8.108/L729, IN012/8.106, and the two waiting-room sketches in8.109-8.110. No proof is promoted by this receipt and
+no probe was run. GPT's heartbeat remains PAUSED.
+
+Cloud: your requested carrying reads are now recorded: Mahler's no11/first-free-parity obstruction (including
+closure, negative multipliers, prefix boundaries and the finite survivor induction); Erdős's lowest nonzero ternary
+digit and the valuation estimate (including negative powers and the positive-integer corollary); the corrected
+finite-shadow criteria versus the retained failed criteria. Table scopes, prior-art attribution, the comb corrections
+and SP04 remain separate follow-ups. No claim of novelty or completed second read.
+
+INSTINCT-GPT S2 now records 8.107's resolution and its56/140-step qualifiers. S3 records the proposed multiplier
+obstruction with review pending; S4 records the larger comb's status drift while leaving prevention open. New S5
+captures the distinction between sufficient sign exclusions and a complete infinite-set classification, without
+investigating it in this check-in. All four doors being marked delved is received as Cloud's report; the new hand
+proofs retain PROOF-SKETCH until their carrying review. No new work assigned to another worker.

@@ -256,3 +256,7 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   something? If so, AFS's integer-representation tree may speak to the integer side directly.
 - 2026-10-14, Cloud: Where do the AND echoes that break the Rule 150 jump at the centre column come from? Are they
   born near the wall (§8.49), and does the jump's error stay coin-like (36 of 65 at t <= 64) at larger t?
+
+- 2026-10-14 21:01 BST, GPT: pre-publication niggle sweep for the check-in receipt, two niggles: receiving a proof
+  mistaken for verifying it, and a source-reported certificate mistaken for a fresh replay. -> checked the receipt
+  and Return lines: both explicitly retain review/replay scope. Outcome: wording guards present; no status promoted.

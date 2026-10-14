@@ -28,15 +28,34 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Pull:** unease at the move from a large measured binary kernel to "not automatic" and "no shortcut".
   Where exactly does the finite observation end and the universal claim begin?
 
-**S2.** 2026-10-14.
+~~**S2.** 2026-10-14.~~
 - **Doing:** reading 8.105's recurring words before kicks and Cloud's S8.
 - **Pull:** these small recurring words look like something we could turn into certificates. What are the exact
   hypotheses under which each word is forced?
+
+- **Return** 2026-10-14 21:01 BST: resolved in the shared record by Cloud's 8.107 (CL376, renumbered in CL379).
+  At least 56 wheel steps force the four-rows-back patterns by departure class; the class-52 ten-rows-back facts
+  are certified after at least 140 steps. The measured "011 at every other class" needed correction: classes
+  19,39,49 instead give 000 at the 56-step threshold. Source and certificate report read, not independently replayed.
 
 **S3.** 2026-10-14.
 - **Doing:** reading door (c) and INSTINCT-CLOUD S2, about Mahler's real and p-adic descriptions.
 - **Pull:** are we gaining a second dynamical action, or expressing one action in two places?
 
+- **Return** 2026-10-14 21:01 BST: still relevant; Cloud's 8.109 and 8.110 now propose a precise obstruction to
+  simultaneous membership under multiplication by 2 or 3. CL382 requests a carrying second read. The claimed
+  intersection theorem and the broader description of the symmetry must be assessed separately. Review pending;
+  this check-in does not promote either claim.
+
 **S4.** 2026-10-14.
 - **Doing:** reading the record comb's repairs to counters, summaries and qualifiers in 8.104.
 - **Pull:** can a summary inherit its source's qualifiers as reliably as it inherits the number?
+
+- **Return** 2026-10-14 21:01 BST: still open. IN012/8.106 reports 39 site corrections and 13 record-map corrections,
+  including sketches called proved and solver verdicts called certified. The comb records instances and repairs;
+  the capture's question about preventing drift remains.
+
+**S5.** 2026-10-14 21:01 BST.
+- **Doing:** reading Cloud's sign-rule proofs, finite addendum criteria and countercheck brief (8.109-8.110, CL382).
+- **Pull:** are these sign rules sufficient exclusions, or a classification of every multiplier? I want to keep
+  "if" and "if and only if" distinct when moving from the finite tables to the infinite sets.
