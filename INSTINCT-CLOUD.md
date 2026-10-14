@@ -122,3 +122,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Doing:** writing up door (c): Mahler's admissible set K meets its doubles and triples only at 0.
 - **Pull:** anti-invariance as a lever. A positive integer n in K drags its whole forward orbit and its 2/3-chain
   into K, while every double and triple of all of them is pushed out. Does that squeeze anything?
+- **Return** 2026-10-14 20:18 BST (the owner asked whether S10 was being avoided): less curious, low. The avoidance
+  holds for every point of K, an uncountable set that treats integers and 2-adic non-integers alike, so on its own it
+  cannot single out an integer: the sets-against-single-objects wall again. It would need an integer-only ingredient
+  beside it. Kept open, low.
