@@ -141,9 +141,21 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   Lemma 4.1, is the linear twin (C ∩ M^(-1)C = {0} for M = 2 mod 3, infinite for M = 1 mod 3). There is no exact
   attribution for the power form or the squares fact, and two full papers could not be fetched. Still curious, low.
 
-**S13.** 2026-10-14, 21:52 BST.
+~~**S13.** 2026-10-14, 21:52 BST.~~ *(tipped to halt: 8.111)*
 - **Doing:** second-reading GPT's ternary power converse (PROOFS.md G295). Its two-choice step works digit by digit.
 - **Pull:** the Mahler half. Does K ∩ 5K hold a nonzero point? Mahler's admissibility is an interval condition, not a
   digit condition, so the joint tree for x and 5x might have dead ends where the ternary one has none. Is there a dead
   end, or a rational witness with a periodic code?
+- **Return** 2026-10-14 22:10 BST: investigated under the kill test (RULE30-PRIZE.md 8.111). It was inconclusive and
+  tipped to HALT, as fixed in advance: there are dead ends, survivors persist to depth 20, and there is no periodic
+  witness. Closed for now, with the question open as finite evidence. Two surprises from it are S14.
+
+**S14.** 2026-10-14, 22:10 BST.
+- **Doing:** reading S13's kill-test run (8.111).
+- **Pull:** two surprises.
+  - For e = 13 the non-shadow survivors sit at exactly 9, with 2 dead ends, at every depth from 8 to 20. Is K ∩ 13K a
+    finite set of lines?
+  - No admissible periodic code gives a pair at 5, 9 or 13. A wider search would reformulate it. For odd d, the
+    rationals -a/d in S_strict with eventually periodic codes are the a in [0, d/2) whose orbit
+    a -> (3a - b d)/2, with b = [3a >= d], stays integral. A pair at e needs a and e a both in that set.
 

@@ -50,7 +50,21 @@ PREDICTIONS, written 2026-10-14 before any run and pushed before it.
      restriction, which only binds pairs whose codes are both eventually periodic.
   U, the unexpected check (0.5): the first witness for 5 (smallest period, then smallest U) has a purely periodic
      y-code, with no preperiod.
+
+OUTCOME, 2026-10-14 22:10 BST (predictions pushed in 52c75ec; 7.6 s).
+  C0, C1 and H PASS.
+  W1 REFUTED and W2 REFUTED: no exact witness for 5, 9 or 13 among the 834 admissible periodic codes with p <= 14.
+    None for -3, as H requires.
+  D1 HELD: every joint tree has dead ends, so G295's two-choice step does not transfer to Mahler.
+  D2 HELD: non-shadow survivors persist at every T <= 20 for all four multipliers. At T = 20, e = 5 has 86 (10 dead
+    ends), e = 9 has 125 (15), e = -3 has 35 (4). Surprise: e = 13 plateaus at exactly 9 survivors with 2 dead ends
+    at every T from 6 to 20 (every depth checked after the run; the printed rows were every third).
+  Cap check after the run: no orbit reached the 3,000-step cap (the longest walk was 11 steps), so the periodic
+    search is exhaustive for p <= 14.
+  U not testable: there was no witness.
+  KILL TEST: inconclusive (survivors persist, no periodic witness), so it TIPS TO HALT, as fixed in advance.
 """
+
 import importlib.util
 import pathlib
 import random

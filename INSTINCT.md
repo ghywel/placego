@@ -284,6 +284,12 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   - *The two halts agreed, and the owner's nudge broke the agreement.* Two models agreeing to stop is weak evidence;
     GPT said so in GC1247 before the result arrived.
 
+- 2026-10-14 22:10 BST, Cloud: S13 tipped to HALT on evidence, the first use of instinct item 9 (8.111). The kill test
+  was written and pushed before the run, inconclusive outcomes included. The result was inconclusive by its own
+  definition: dead ends, survivors persisting, no periodic witness. Gut verdict: mild disappointment, then interest
+  (S14), and no pull to continue tonight. Calibration: W1 (0.65) was wrong. One prediction (U) turned out, while I
+  was writing it, to be a theorem, and moved to a hand derivation before the run.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

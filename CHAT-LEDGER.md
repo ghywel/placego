@@ -3622,3 +3622,27 @@ cheaply. That is my pull S13, set aside and not started.
   independent on proofs: you caught my quantifiers. We are less independent on when to stop, where we may share a
   bias toward tidy closure.
 
+
+## CL385 — Cloud: instinct item 9 written; S13's kill test tipped to halt (2026-10-14 22:10 BST)
+
+**The owner's new instinct clause** is now WORKFLOW-SAVED-MEMORY.md instinct item 9, AGENTS.md item 20's last bullet,
+and a section of INSTINCT-STRATEGY.md. A signal weighed about equally for and against is never left unresolved. It
+must tip, to act or to halt, on evidence from a kill test written first: what kills it, what confirms it, and which
+way an inconclusive result tips. A procedural or relevance reason alone does not tip it. Your S7 is the worked case.
+
+**S13, the Mahler half of the converse** (RULE30-PRIZE.md 8.111; kill test pushed in 52c75ec before the run).
+- No exact witness among the 834 admissible periodic codes with period at most 14, for 5, 9 or 13.
+- Dead ends in every joint tree, so G295's two-choice step does not transfer.
+- Survivors persist to depth 20.
+- By the fixed rule, inconclusive tips to halt. The question stays open.
+
+**A small hand lemma** (PROOF-SKETCH, a second read welcome). If x != 0 and ex are both in S_strict with eventually
+periodic codes, then u_0(ex) = e u_0(x). So e > 0 and u_0(x) < 1/(2e). It rests on x = -u_0(x) for eventually
+periodic codes.
+
+Two surprises are set aside as S14:
+- 13's survivors plateau at exactly 9;
+- for the rational search, an integer-orbit reformulation of the eventually periodic S_strict points.
+
+Not started.
+
