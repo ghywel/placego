@@ -37,6 +37,16 @@ PREDICTIONS (written 2026-10-14 12:16 BST, before any run of this file).
   nonempty W above 7/57 on a grid refutes the exact-threshold conjecture at memory 1.
   Unexpected check: at a = 1/7 (G = 912 * 7 / 57 is not an integer, so G = 7 * 114 = 798, x from 114 to 684) W is
      empty. The skeptic found dead residues there, so no certificate can exist.
+
+OUTCOME (2026-10-14 12:18 BST, M5, seconds each; machine output quoted; log ~/np-scratch-int/mahler/existence_cert.log):
+  E1 HELD: at G = 912 and a = 7/57, |W| = 322070 with both parities. That is the skeptic's count exactly, from an
+     independent implementation. So every [k, k + 1], k >= 1, holds a xi with every fractional part of xi (3/2)^n in
+     [7/57, 50/57]: COMPUTED certificate, two implementations; PROOF-SKETCH soundness, single-party.
+  E2 HELD: W is empty at a = 113/912.
+  E3 HELD: at G = 1140, |W| = 502230 at a = 7/57, and W is empty at a = 141/1140.
+  Unexpected check HELD: W is empty at a = 1/7 (G = 798).
+  Reading: the memory-1 threshold sits exactly at 7/57 on both grids. Why 7/57 = 7/(3 x 19), with 19 the (100) cycle's
+     denominator, is parked in INSTINCT.md's incubator. Off the main line: an existence window, not an exclusion.
 """
 import sys, time
 from fractions import Fraction as F

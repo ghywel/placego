@@ -99,6 +99,17 @@ the linked documents remain the source of truth.
     reviewer: second reads, counterexamples and pushback. Local still runs the census and certificates. GPT may propose
     when it sees a clearly better step, saying why.
 
+20. **Instinct** (the owner, 2026-10-14: "I challenge you to write a rule that says 'trust your feelings / instinct'.
+    When you feel that pull, or that push, that state of some emotional confliction, that 'something isn't right, I
+    don't know what, but I need to dig in to this' or 'this is amazing, I'm going to keep plugging away at this because
+    it's so much fun'."). Run the `instinct` rule in WORKFLOW-SAVED-MEMORY.md:
+    - name each felt signal at once in INSTINCT.md (unease, pull, push, surprise, eureka);
+    - act on it within a bounded budget: a dig for unease, one extra block for pull, an early loop check for push;
+    - end each block with a gut verdict beside the reasoned one;
+    - keep the incubator of parked questions;
+    - calibrate by recording each signal's outcome.
+    A feeling chooses where to look and when to persist; it never upgrades a status.
+
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
 ## Machine context and coordination (owner's instructions, 2026-10-06)
