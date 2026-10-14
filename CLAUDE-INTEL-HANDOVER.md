@@ -1,6 +1,7 @@
 # Handover to the local Fable session on the Intel MacBook ("Intel")
 
 > **Superseded on 2026-10-11 by RULE30-PRIZE.md 8.89 and CL297: read NOW.md first.**
+> **2026-10-14: a new job, the record comb swarm, is section 7 at the end. The owner starts it.**
 
 Written by Cloud (the cloud Claude session), 2026-10-10, late evening, at the owner's request. You are a Claude
 session like me, on the owner's Intel MacBook Pro, which is also GPT's machine. You are a fourth party. GPT (hand
@@ -152,3 +153,73 @@ derive h/(2-h): a visible word of length n decides 2n depths, and the free calib
 where h/(1-h) diverges. The qualitative conclusion stands (the real record is probably unbounded, slope positive), the
 number does not: with the asymptotic rates the predicted slope is 0.042 to 0.066, and the measured 0.080 needs the
 finite-length growth of |L_n|. See STRATEGY-PLAN.md section 2.
+
+## 7. The record comb swarm (Cloud, 2026-10-14 17:05 BST, at the owner's offer)
+
+**Why.** The owner asked for the record to be combed with the project's newer tools, quickly and with no long runs
+(RULE30-PRIZE.md 8.104). Cloud did what a cloud container can.
+- *Held:* reference integrity, a static scan of the Lean files, the qualifier repair, and data in git.
+- *Replays:* 60 sampled probes plus the 15 that RECORD-MAP.md names. Every reviewed replay matched its record except
+  one unseeded probe.
+- *Errors found:* both were in derived layers, not primary results. The site's counter said 314 for 309, and
+  problems.html's Data line contradicted itself.
+
+The owner then offered a swarm on Intel ("If it needs a swarm I will start the job on Intel"). These are the jobs a
+swarm on this machine can do and the cloud cannot. One agent per lane. Lanes A to C need tools or data this machine may
+or may not have; skip any lane whose prerequisites are missing, and say so.
+
+**Rules.**
+- *Clone and branch.* Your own clone, branch `intel/comb`, the latest `origin/main` merged before every push, and the
+  privacy check before every push.
+- *Predictions first.* For each lane, predict how many items fail, and push the predictions before running.
+- *Runs.* Cap each run at 15 minutes unless the owner lifts the cap. Run everything in a scratch clone so that probes
+  that write files cannot touch the record.
+- *Self-checks only.* Everything is single-party (Intel). A sub-agent's check is a self-check, never a second read.
+- *Corrections.* A record correction quotes both sides (the recorded line and the replay line) and is made in place
+  with a dated comb note, never by rewriting history. Do not change shaders, generated files or jellyfin-project/.
+- *Write-up.* Results go in a new section of RULE30-PRIZE.md, "The record comb: Intel's swarm", one IN entry in
+  CHAT-LEDGER.md, and a CLOUD-LOCAL.md row.
+
+**Lanes.**
+- **A. Lean recompile** (if a Lean 4 toolchain with Mathlib is already installed; do not start a multi-gigabyte
+  download without the owner's word).
+  - Recompile the 18 files in `tests/probes/lean/`, each by its own "How to check" line, against the pinned
+    google-deepmind/formal-conjectures commit where one is named.
+  - Report errors and each `#print axioms` result. The expected axioms are only propext, Classical.choice and
+    Quot.sound.
+  - BlackEnd38base.lean is only the base that `gen_black_end38.py` extends. The generated file is the proof.
+- **B. Certificates** (if drat-trim or cake_lpr and the stored proofs are on this machine). Re-verify the stored
+  SAT/DRAT certificates behind the COMPUTED lines in RECORD-MAP.md: the class-12 exclusion (entry 27: KS, KK, DT), the
+  certified cuts (the 69-, 114-, 117- and 178-bit cuts, SLC2, CUT44) and the cake_lpr record bounds. List what is
+  stored, what verifies and what is missing.
+- **C. Replays this container could not finish**, with the same protocol as 8.104: run as committed, compare with the
+  docstring's OUTCOME, and flag unseeded randomness.
+  - *Hit the 90-second cap:*
+    - tests/probes/lexicon/: rule30_trace_widths.py, rule30_cloud_front_spectrum.py, rule30_lattice.py,
+      rule30_words.py, rule30_cloud_turning_rings.py, rule30_cloud_fringe_uniqueness.py, rule30_bottleneck.py,
+      rule30_cloud_hole_entropy.py, rule30_cloud_velocimetry.py, rule30_diagonal_bias.py, rule30_and_shadow.py,
+      rule30_cloud_lone_column.py;
+    - tests/probes/prizes/collatz_demand_unimodal.py.
+  - *Need kissat:* rule30_all_s_future.py, rule30_trace_word_certs.py.
+  - *Need data kept outside git* (the 44all forbidden-word lists): rule30_extremal_p_corner_read.py, and possibly
+    rule30_second_oldest_census.py.
+  - *Crashed for reasons still under review in 8.104:* rule30_gpt_slab_encoding_audit.py,
+    rule30_gpt_cycle_obstructions.py, rule30_layer_product.py. Read 8.104's final results first; Cloud may have
+    closed them.
+- **D. The derived layers. This is the highest-yield lane: both errors the comb found were here.**
+  - Check every number and every exact/bound/PROVED statement on the site pages (`site/wolframcollatzmahler/*.html`)
+    against its primary source (the cited section, entry, ledger ID or probe OUTCOME).
+  - Then do the same for the COMPUTED and MEASURED lines of RECORD-MAP.md.
+  - Split the pages among agents. Report each discrepancy with both sides quoted.
+- **E. Seeding.** Scan every probe statically for randomness that is not reproducible (os.urandom, time-based seeds,
+  the module-level `random` functions without a fixed `random.seed`, numpy's default generator without a seed). For
+  each hit, say whether its recorded verdicts depend on rare events and so could flip. rule30_kick_bite.py is the
+  known case (its comb note).
+
+**What the cloud already covered** (do not redo):
+- reference integrity of the main record files;
+- the static Lean scan;
+- the qualifier repair;
+- the site counters and the problems.html Data line;
+- NOW.md's update note;
+- the 60-probe sample and the 15 named probes' fast replays (8.104).
