@@ -7161,3 +7161,52 @@ on Intel, in CLAUDE-INTEL-HANDOVER.md section 7, at the owner's offer.
 **Verdicts.** Reasoned: the record is sound where it was checked. Five corrections were made in place, each with a
 dated note. The swarm's lane D (derived layers) is where more errors are most likely to be found. Gut: relief, and a
 pull toward lane D's pattern. A summary-against-source check deserves to be a standing habit, not a one-off comb.
+
+### 8.105 INSTINCT-CLOUD S7: the kick's coherence revivals are correlations, carried by class-split rigidity (2026-10-14 17:24 BST, Cloud)
+
+*The owner, while Intel resolved SX-P11: "I suggest you go to your instinct ledger whilst that is done." The ledger was
+walked (each pull's return line is in INSTINCT-CLOUD.md), and S7 was the strongest pull. Single-party (Cloud), nothing
+second-read.*
+
+The question (S7): past the forced rows before a kick, the echo parity's bias revives at lags 9 (+0.94), 13 (+0.53)
+and 17 (-0.49) (8.103). Why?
+- *The first guess failed on 8.103's own numbers.* The guess was that revivals sit where the kernel reaches few cells.
+  But lag 16 reaches 2 cells and has bias -0.26, while lag 13 reaches 6 and has +0.53.
+- *The test* (`tests/probes/lexicon/rule30_cloud_echo_revivals.py`). The predictions are in de257d2, committed at
+  17:22:46 BST before the run. Its push landed just after the run, because a concurrent push from Intel had to be
+  merged first. The test compares the measured bias b_m with b_ind, the bias the parity would have if its cells were
+  independent: rigid cells give equal values, correlations give |b_ind| much smaller.
+
+**Results** (1,138 kick bits):
+- *R1 holds exactly.* b_m equals 8.103's values.
+- *R2's alternative holds: correlations, not individually rigid cells.* At lags 9, 13 and 17, b_m = +0.937, +0.534 and
+  -0.489, against b_ind = -0.013, -0.011 and -0.177. Only 1 of 4, 1 of 6 and 0 of 4 of the cells are rigid. The same
+  holds at lags 7, 11 and 12.
+- *R3 is refuted at lag 3.* b_m = +1.000 with neither cell rigid (b_ind = +0.136). Lags 2, 4 and 6 are rigid cells, as
+  predicted.
+- *U holds.* The revivals appear in both main classes with the same signs. Class 52 (779 kicks) gives +1.000, +0.412
+  and -0.440 at lags 9, 13 and 17. Class 32 (350 kicks) gives +0.794, +0.794 and -0.583.
+
+**The check that qualifies the reading** (post hoc). The cells behind the two exact parities:
+- *Four rows before every kick,* sites 3, 4 and 5 read 110 at all 779 class-52 kicks and 011 at all 359 others. So
+  each class is rigid on its own, and the pooled "parity locked while the cells vary" at lag 3 is a mixture of two
+  rigid classes.
+- *Ten rows before every class-52 kick,* sites 6, 7 and 8 read 110 at all 779, which makes x6 x7 XOR x7 x8 = 1. Sites
+  9, 10 and 11 vary, but only through 111, 101, 100, 000 and 001, never 010, 011 or 110, so their own term
+  x10 (x9 XOR x11) is always 0. That is a local forbidden-pattern constraint, not a frozen cell.
+
+**Reading.** The owner's interference reading holds in the operational sense: the coherence lives in correlations,
+not in individually fixed cells. The correlations come from the kick's rigid local alphabet, split by class: fixed
+words inside each class, plus forbidden patterns among the cells that vary. That is the record's rigid kick timing and
+alphabet (8.43; entries 26 to 28) seen one level deeper. Two exact local facts were measured, not proved:
+- four rows before a kick, sites 3 .. 5 are 110 (class 52) or 011 (the other classes);
+- ten rows before a class-52 kick, sites 6 .. 8 are 110.
+
+They are likely consequences of the local forcing that entries 26 to 28 certify, but this was not checked against
+those entries. They could be certified the same way, by a finite search over the kick's cone after a settled wheel.
+Parked as INSTINCT-CLOUD.md S8.
+
+**Verdicts.** Reasoned: S7 is answered. The revivals are correlations, carried by class-split rigidity and local
+forbidden patterns. R2 was a genuine coin flip and fell on the correlation side. R3 was wrong at lag 3, and the class
+split explains why. Gut: satisfied. The owner's word "interference" was a better guide than my "rigid cells". The two
+exact local facts have the texture of lemmas (pull, medium).

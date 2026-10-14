@@ -52,24 +52,34 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   (R x Q_2 x Q_3)/Z[1/6] carries x2 and x3 as a commuting pair, with x3/2 one direction of it. The leaf through 0
   holds the reals and is invariant under the whole pair. The window set is invariant only under x3/2. Not yet
   investigated.
+- **Return** 2026-10-14 17:24 BST (the owner sent me to the ledger): still curious, medium. Still the deepest of the
+  open pulls, and it needs a reading block of its own. Not investigated today.
 
 **S3.** 2026-10-14, about 16:00 BST.
 - **Doing:** the same answer, looking for a theorem that has crossed from sets of cases to one specific object.
 - **Pull:** Green and Tao's transference principle, which carried Szemerédi's theorem about dense sets onto the
   primes, one specific sparse set. It was left out of the answer.
+- **Return** 2026-10-14 17:24 BST: less curious, low. On a second look, transference proves that structure exists
+  inside a sparse set, while our problems need one orbit to avoid a pattern for ever. The directions differ (there
+  exists against for all). Kept open at low strength, not investigated.
 
 **S4.** 2026-10-14, about 16:00 BST.
 - **Doing:** answering whether every problem has a shortcut in some domain of its problem space.
 - **Pull:** Riemann's explicit formula, which counts the primes up to x by a sum over the zeros of the zeta function:
   a shortcut for a counting problem that lives in another domain (frequencies). It was left out of the answer.
+- **Return** 2026-10-14 17:24 BST: partly resolved already, by 8.3's Fourier lead (the owner's harmonics). The
+  record took the column into frequency space and found a flat spectrum. An explicit formula would need a spectrum
+  with structure to sum over. Low, kept open.
 
 **S5.** 2026-10-14, about 16:12 BST.
 - **Doing:** the rigidity hunt's unexpected check; Stewart's guaranteed floor for the nonzero ternary digits of 2^n is
   about 3 at n = 1000, and the true count is about 0.42 n.
 - **Pull:** that enormous gap. Has anything narrowed it since Stewart, and does any proof see which digits are nonzero,
   not only how many?
+- **Return** 2026-10-14 17:24 BST: still curious, low to medium. It is a literature question for a primary-source
+  read, which belongs with the rest of 8.101's literature. Not investigated.
 
-**S6.** 2026-10-14, about 16:29 BST.
+~~**S6.** 2026-10-14, about 16:29 BST.~~ *(closed: 8.103, and S7)*
 - **Doing:** reading the echo-wall run (8.102); the echo lens at horizon 8 was a coin everywhere except at kick bits.
 - **Pull:** at kick bits R(8, 2) = 0.085 and R(8, 6) = 0.915. The echoes from sites 3 .. 6 over the last 8 rows sum to
   1 at almost every kick bit. Why so sharp, at that horizon and those sites?
@@ -77,7 +87,22 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   sounds like interference". Mostly rigidity: the echo parities are exact at most lags within ten rows of a kick. The
   coherence reaches about 20 rows. Its revivals are S7.
 
-**S7.** 2026-10-14, about 16:44 BST.
+~~**S7.** 2026-10-14, about 16:44 BST.~~ *(closed: 8.105)*
 - **Doing:** reading the echo-interference run (8.103), a bias for each lag before a kick.
 - **Pull:** past the forced rows, coherence comes back at lags 9 (+0.94), 13 (+0.53) and 17 (-0.49), four apart.
   Why four, and why does the sign flip at 17?
+- **Return** 2026-10-14 17:24 BST: investigated, RULE30-PRIZE.md 8.105. The revivals are correlations, not rigid
+  cells. They come from class-split rigidity and local forbidden patterns. Two exact local facts came out of it; they
+  are S8.
+
+**S8.** 2026-10-14, about 17:23 BST.
+- **Doing:** reading the cells behind 8.105's two exact parities.
+- **Pull:** four rows before every kick, sites 3..5 read 110 (class 52) or 011 (the others). Ten rows before a class-52
+  kick, sites 6..8 read 110 and sites 9..11 avoid 010, 011 and 110. They look like lemmas a finite search over the
+  kick's cone could certify, the way entries 26 and 27 were.
+
+**S9.** 2026-10-14, about 17:15 BST.
+- **Doing:** answering the owner about Intel's unease over SX-P11, a run that finished two minutes after a halt and sat
+  unpublished for three days.
+- **Pull:** are there other runs that finished after a halt or a closure and sit unpublished in some worker's scratch?
+  The record cannot see them; only the workers can.

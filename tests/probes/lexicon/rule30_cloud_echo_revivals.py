@@ -26,6 +26,19 @@ PREDICTIONS, written 2026-10-14 before any run and pushed before it.
      kick (52 or 32), |b_m| >= 0.3 at lag 9 in each class, with the same sign.
   Counterfactual. R2's alternative (interference) would make the owner's reading literal: the cells conspire by their
   correlations, not one by one.
+
+OUTCOME, 2026-10-14 17:23 BST (predictions committed in de257d2 at 17:22:46 BST; the push landed after the run because
+a concurrent push from Intel had to be merged first).
+  R1 PASS: +0.937, +0.534, -0.489 as in 8.103.
+  R2 REFUTED, so its alternative holds: correlations. At lags 9, 13 and 17, b_ind is -0.013, -0.011 and -0.177 against
+     b_m of +0.937, +0.534 and -0.489. Only 1 of 4, 1 of 6 and 0 of 4 cells are rigid.
+  R3 REFUTED at lag 3: b_m = +1.000, with neither cell rigid. Lags 2, 4 and 6 are rigid, as predicted.
+  U HELD. Class 52 gives +1.000, +0.412 and -0.440; class 32 gives +0.794, +0.794 and -0.583.
+  Post hoc, the cells (8.105):
+  - Four rows before every kick, sites 3..5 read 110 (all 779 class-52 kicks) or 011 (all 359 others), so lag 3 mixes
+    two rigid classes.
+  - Ten rows before a class-52 kick, sites 6..8 read 110, and sites 9..11 avoid 010, 011 and 110.
+  The correlations are class-split rigidity plus local forbidden patterns.
 """
 import random
 import sys
