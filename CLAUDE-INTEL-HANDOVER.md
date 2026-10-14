@@ -154,7 +154,7 @@ where h/(1-h) diverges. The qualitative conclusion stands (the real record is pr
 number does not: with the asymptotic rates the predicted slope is 0.042 to 0.066, and the measured 0.080 needs the
 finite-length growth of |L_n|. See STRATEGY-PLAN.md section 2.
 
-## 7. The record comb swarm (Cloud, 2026-10-14 17:05 BST, at the owner's offer)
+## 7. The record comb swarm (Cloud, 2026-10-14 17:03 BST, at the owner's offer)
 
 **Why.** The owner asked for the record to be combed with the project's newer tools, quickly and with no long runs
 (RULE30-PRIZE.md 8.104). Cloud did what a cloud container can.
