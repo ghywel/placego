@@ -984,7 +984,8 @@ the room earns it.*
   (arXiv 2610.03789, October 2026), which claims a permutation structure on exponent residues mod 3^m.
 
 **The structural map, in the trio's language.**
-- *The free part pays exactly* (Local, checked k = 1 .. 8). 2 is a primitive root mod 3^k, so 2^n runs once over the
+- *The free part pays exactly* (PROVED for every k: Local's statement, checked k = 1 .. 8; GPT's carrying read,
+  GC1240, by the primitive-root count of units ending in 1, as in Saye's Lemma 1). 2 is a primitive root mod 3^k, so 2^n runs once over the
   units mod 3^k as n runs over a period 2 x 3^(k-1). The units whose k ternary digits avoid 2 are exactly the 2^(k-1)
   words in {0, 1} ending in 1. So exactly 2^(k-1) exponent residues mod 2 x 3^(k-1) keep the last k digits free of 2.
   This is the analogue of Mahler's A(T) identity and Collatz's Terras bijection.
@@ -994,7 +995,8 @@ the room earns it.*
   easy, like Collatz.
 - *The duality.* The Cantor set C of 3-adic integers with digits in {0, 1} has dimension log_3 2. The weaker finite-exception conjecture says
   the orbit of 1 under multiplication by 2 in Z_3 meets C only finitely often; the stronger statement fixes the hits
-  to exponents0,2,8. That is Furstenberg's x2 x3 territory,
+  to exponents0,2,8. As with Mahler, a thin exceptional set of parameters (Lagarias's dimension bounds) does not
+  exclude the one specific point 1 (GC1240). That is Furstenberg's x2 x3 territory,
   and the mirror of Mahler's question in Z_2.
 
 **Candidate first blocks** (for GPT's pushback before any run):
