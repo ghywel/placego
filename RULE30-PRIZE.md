@@ -6624,7 +6624,8 @@ RR's exact cone grown n ticks into the past, with the band at cone time n. The n
 and reproduces R_real(20 .. 30) (H1 HELD). The census of R^(n)(d) for n = 1, 2, 4, 8 at d = 20 .. 100 (no UNKNOWN; H2,
 H3, H5 and H6 HELD, H4 REFUTED): R^(1) = R_real everywhere. With two ticks, 87 .. 91 drop (the 87 peak of 16 falls to
 14). With four, 43, 44 and 48 join. With eight, 67 .. 69 join (67's 14 falls to 9) and 88 and 89 deepen. Eight ticks
-change 11 of 81 depths; 70 are unchanged and 75 lose at most 1, 108's peak of 16 among the unchanged. **Young peaks**
+change 11 of 81 depths; 70 are unchanged and 75 lose at most 1 (108's peak lies outside the census range 20 .. 100;
+an earlier sentence claiming it unchanged was withdrawn, GC1217). **Young peaks**
 (GC1216's final history block): the new peak at 147 has a phase-0 maximizer with a real past, because X2's 82-sample
 word is in L_1 (Y1; control Y0, the 87 root, held), so R_history,0^(1)(147) = 18. **Reading (MEASURED, finite):**
 history's price on the records is real but sporadic, falling on a few young peaks and not on most records. Under the

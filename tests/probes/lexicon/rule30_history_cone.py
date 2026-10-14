@@ -44,7 +44,8 @@ OUTCOME (census, 2026-10-14 01:31 BST, M5, about 2.5 hours; machine output quote
      n = 4: 43:-1 44:-1 48:-2 87:-2 88:-1 89:-1 90:-1 91:-1
      n = 8: 43:-1 44:-1 48:-2 67:-5 68:-4 69:-1 87:-2 88:-2 89:-2 90:-1 91:-1
   So the peaks at 87 (16) and 67 (14) are reached only by configurations with at most one and at most seven ticks of
-  real past, and 48's 11 by at most three. Most records, including 108's 16, survive eight ticks unchanged. The drops
+  real past, and 48's 11 by at most three. Most records in 20 .. 100 survive eight ticks unchanged (108 is outside the
+  census range; GC1217 corrected a first draft that included it). The drops
   fall on depths whose committed witnesses were real only through 1w (67 .. 69, 87 .. 91) or had no canonical parent
   (43, 44), plus 48.
 
@@ -76,8 +77,9 @@ ADDENDUM PREDICTIONS (2026-10-14 01:30 BST, before the run; the third and final 
      X2 visible word (82 samples): 0010100001010101000100001001001000010000100100100001000010000100001001000010010000,
      in L_1. So R_history,0^(1)(147) = 18 (GC1216's gluing: w's real right realization on C_1(w) gives a child with
      X2's forced left row through depth 164). The new 147 peak has a phase-0 maximizer with a real past; it is not
-     young in the n = 1 sense. The word differs from the round-2 relaxed model's code only in its first five samples
-     (00101 against 01000), matching GC1210.1's "two 147 left origins merge at 11".
+     young in the n = 1 sense. The word differs from the round-2 relaxed model's code at visible indices 1, 2, 4 and 5
+     only (the last change at sample 5, white time 10; corrected per GC1217). GPT's GC1217 adds: X2 and both rejected
+     relaxed origins share the entire clamped left row at time 11.
 """
 import json, os, subprocess, sys, tempfile, time
 from multiprocessing import Pool
