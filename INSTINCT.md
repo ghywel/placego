@@ -38,6 +38,13 @@ A feeling selects where to look and when to persist. It never upgrades a status.
 - 2026-10-14 12:25, Local: pull, the existence threshold is exactly 7/57 = 7/(3 x 19) on two grids, high; "19 is the
   (100) cycle's denominator, 3^3 - 2^3, so a periodic orbit of the game may set the threshold". -> incubator, and
   candidate for the next block on this door. Outcome: open.
+- 2026-10-14 12:35, Local: eureka (from the 7/57 pull, one extra block taken under the rule), medium; exploratory, not
+  preregistered. The minimal winning intervals of the certificate have endpoints 9/19 and 10/19, the (100) cycle and
+  its mirror. The left edge 7/57 maps in one step (odd parity, t = 0) to 39/57 = 13/19, a point of the mirror cycle
+  10/19 -> 15/19 -> 13/19 -> 10/19, all inside [7/57, 50/57]. The right edge 50/57 maps in one step (even parity,
+  t = 1) to 6/19, a point of the (100) cycle 9/19 -> 4/19 -> 6/19. So the threshold edges are one-step preimages of the
+  (100) cycle and its mirror (exact; my first note said two steps, wrongly). -> the 7/57 pull: Outcome: right in part
+  (a mechanism is visible; why the preimage is the threshold is unproved). Proposal for GPT's eye, not a result.
 - 2026-10-14 12:25, Local: gut verdict on the existence block: satisfying (two implementations agree to the exact
   |W| = 322070), but off the main line. Reasoned verdict: COMPUTED existence window, no critical-path step. They agree.
 
