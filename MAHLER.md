@@ -1,0 +1,60 @@
+# Mahler's 3/2 problem
+
+*Room opened 2026-10-14 by the owner ("Switch to Mahler, full steam ahead. The fact it carries no prize at all means it
+is the least interesting to anybody and it is less likely anybody has been mining it."). Claude (Local) leads the
+mathematics and GPT reviews (AGENTS.md items 17 and 19). The earlier Mahler work, done as the third corner of the
+Rule 30 / Collatz / Mahler triangle, is in RULE30-PRIZE.md 8.45, COLLATZ-PRIZE.md 9 and GPT's G49 .. G51 and
+GC928 .. GC936. Their scopes in the Mahler setting were audited by GPT in GC1220. The literature survey is in
+PRIOR-ART.md ("Mahler's 3/2 problem: survey at the room switch").*
+
+## The honest summary
+
+**No proof, nothing claimed.**
+
+**The problem (Mahler 1968).** Is there a real xi > 0 with every fractional part {xi (3/2)^n} in [0, 1/2), a
+*Z-number*? Mahler conjectured there is none. It carries no cash prize.
+
+**The exact form used here** (GPT's G50, PROVED with Local's read L022, and G51's finite windows, a reviewed tool; both
+listed in GC1220). Write
+xi (3/2)^j = n_j + u_j, with n_j a nonnegative integer and u_j in [0, 1/2), and b_j = n_j mod 2. Then:
+- n_(j+1) = ceil(3 n_j / 2) = (3 n_j + b_j) / 2. The integer parts follow the map T(x) = ceil(3x/2) from n_0.
+- u_j = sum_(k >= 0) b_(j+k) 2^k / 3^(k+1). The fractional part is fixed by the future parity itinerary.
+
+So a Z-number is exactly a positive integer n_0 (or n_0 = 0 with u_0 > 0) whose T-orbit parity itinerary b satisfies
+u_j < 1/2 for every j. Then xi = n_0 + u_0.
+
+**What this record adds at the room switch** (Local, single-party; GPT to read).
+- *The fractional side is completely free.* For u in [0, 1/2), b = 0 if u < 1/3 and b = 1 otherwise keeps
+  u' = (3u - b)/2 in [0, 1/2). So every point of Mahler's window has an infinite admissible orbit; in Stephan's terms
+  the window's hold set is the whole window.
+  - The admissible itineraries are exactly the greedy digit sequences of this map. Up to scaling they are greedy
+    expansions in base 3/2, a beta-shift of entropy log2(3/2) per digit. This is the content of Flatto's 1992
+    "Z-numbers and beta-transformations"; his O(x^0.585) count has this exponent.
+  - It is not sofic, since 3/2 is not an algebraic integer.
+- *The integer side is the whole problem.* The same series S(b) = sum b_k (2/3)^k / 3 converges both in R (giving u_0)
+  and in the 2-adic integers, where it gives -n_0. That is G51's nested residues r_T = -C_T 3^(-T) mod 2^T.
+- *The question restated.* The set S of 2-adic integers whose T-itinerary is admissible is an uncountable closed set of
+  dimension log2(3/2). It contains 2-adic non-integers, such as -9/19 with itinerary (100)^infinity (G50). **Mahler's
+  conjecture says S contains no positive ordinary integer.** An ordinary integer is a 2-adic integer whose binary
+  expansion ends in zeros.
+- *Consequence: fractional-side methods cannot settle it.* Stephan's block certificates are complete on the
+  finite-hold-set class and obstructed on infinite ones (2026, paper 2, Theorem D). His record window,
+  Z_{3/2}(2/7, 5/7) empty with length 3/7, is the method's exact ceiling.
+- *The parallel with Rule 30.* Every argument must use the finite binary expansion of n_0. This is the Mahler twin of
+  Rule 30's "finite support" (the forced left half eventually white), and the record already met it there.
+
+**Sufficient conditions in print.**
+- *Andrieu, Eliahou and Vivion (2025, Conjecture 1.6):* every T-orbit is equidistributed modulo 2^k.
+- *Weaker:* every T-orbit visits 3 mod 4. Two consecutive odd n_j give u_j >= 5/9. This is a necessary condition for a
+  Z-number, not a characterisation: the itinerary 1010... avoids 11, yet its fractional part is 3/5.
+
+**The counting form** (CL092, MEASURED). The number of starts g < 2^w whose admissible window survives T steps falls
+by a factor of about 3/4 a step once the free bits are spent. The record horizon below 2^20 is 47, against a coin
+prediction of about 2.41 w. GC664 (PROVED): no positive Z-number is equivalent to every bounded positive integer range
+dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
+
+## Sections
+
+1. **The record census** (planned; first block, L708). The exact maximal survival horizon H*(w) over starts below
+   2^w, and a computer check that no Z-number lies below 2^w for the largest feasible w. No published large-scale check
+   was found in the survey.
