@@ -79,7 +79,10 @@ ADDENDUM PREDICTION (2026-10-13 23:13 BST, before the run): the other phase at 1
      R_real(148) <= 17 in both phases. REFUTED-BY: SAT (then lifted), a cap, or CAKE-FAILED.
 
 OUTCOME (2026-10-13, M5; machine output quoted): K1 HELD, K2 HELD, K3 HELD, K5 HELD, K4 HELD, K6 HELD, K7 HELD, K8 HELD,
-  K9 HELD, K10 REFUTED, K11 HELD, K12 HELD, K13 REFUTED, K14 HELD, K15 HELD, K16 REFUTED; K17 pending.
+  K9 HELD, K10 REFUTED, K11 HELD, K12 HELD, K13 REFUTED, K14 HELD, K15 HELD, K16 REFUTED, K17 HELD.
+  K17 HELD (02:35): d=148 L=18 phase 1 (1226 words): VERIFIED-UNSAT; cnf sha256
+     9078b39e4d9e603df3e2e715d61997a56dec296ff8c84267152a901c086f5cae; solve 9792 s, check 1975 s, lrat 41721.1 MB. With K14,
+     R_real(148) <= 17 in both phases.
   K14 HELD (23:13): d=148 L=18 phase 0 (1157 words, with the 50-bit cut): VERIFIED-UNSAT; cnf sha256
      004aa0947efe7d94da462b495405e84daa3589d06cde49f06a3775c7d5a9a9f3; solve 6868 s, check 1686 s, lrat 40863.3 MB.
   K16 REFUTED (22:36): d=147 L=18 phase 0 (1158 words, with both cuts): SAT; cnf sha256

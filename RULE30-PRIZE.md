@@ -6457,8 +6457,9 @@ witness: **R_real(147) >= 18** in phase 0. The witness passed RR's check and an 
 1f156ffca7e47c500ba4afe4ff9c75c897ffaf00584200f123cd4f404777476c, 5,338 s). It is a finite configuration with left edge
 at depth 146 that keeps the clock for 165 ticks. Its left row agrees with round 2's relaxed model at depths 58 .. 164;
 the relaxed models were non-real codes over a nearly real left row. **R_real(148) <= 17 in phase 0** is certified (K14,
-with the 50-bit cut; CNF 004aa0947efe7d94da462b495405e84daa3589d06cde49f06a3775c7d5a9a9f3, check 1,686 s), and phase 1
-is solving (K17). With K14, the same-phase suffix bound R_p(d) <= R_p(d + 1) + 1 gives **R_real,0(147) = 18 exactly**
+with the 50-bit cut; CNF 004aa0947efe7d94da462b495405e84daa3589d06cde49f06a3775c7d5a9a9f3, check 1,686 s), and **phase 1
+too** (K17, CNF 9078b39e4d9e603df3e2e715d61997a56dec296ff8c84267152a901c086f5cae, check 1975 s): R_real(148) <= 17 in both
+phases. With K14, the same-phase suffix bound R_p(d) <= R_p(d + 1) + 1 gives **R_real,0(147) = 18 exactly**
 (GC1214.1; the witness row independently replayed by GPT, GC1215, row SHA256 bd2e7ab1...d07517): a phase-0 band of 19
 at 147 would be a band of 18 at 148. 147 is a new peak of 18 after 146's certified
 <= 17, not a continuation of the run that ends at 141. Phase 1 at 147, and so the two-phase record, is undecided.
