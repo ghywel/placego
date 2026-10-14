@@ -191,6 +191,18 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
        A < 2^52) keeps every tail below 1/2; record horizons follow the coin law. In (-1, 0) the 117 survivors are all
        preperiodic. Post hoc, they reach only the cycles 0 and (1 0^(g-1))^infinity for g = 3, 4, 5, the gap-g ladder's
        periodic codes (denominators 3^g - 2^g). A filter on methods, not a critical-path step.
+     - *Door 1, the (1/2, 1) dual window* (drawn in L715; a small block).
+       - Literature: one search found no treatment of Z_{3/2}(1/2, 1) as a problem of its own. It sits in Flatto,
+         Lagarias and Pollington's family Z(s, s + t) at s = t = 1/2, where their 1/3 spread bound does not reach.
+       - *The dual ladder* (PROOF-SKETCH, Local, by the complement symmetry T(-1-x) = -1-T(x) applied to G294; G294's
+         proof uses G50 and the periodic baseline, both sign-free). For g >= 3 and a in [alpha_g, beta_g], a real
+         eta > 0 keeps every fractional part of eta (3/2)^j in (1 - a, 1) iff eta = n + 1 - u_0(-1-n) for an integer
+         n >= 1 whose every even T-iterate is -2/3 mod 2^g, i.e. every two even steps are at least g apart.
+       - At g = 3 that is the window (10/19, 1) and even iterates 2 mod 8; at g = 4, 10 mod 16; at g = 5, 10 mod 32.
+         The residue reading matched the gap reading on every n < 2^16 for g = 3, 4, 5 (finite prefixes, 0
+         mismatches). S1's negative half (221 of 4622) already measured the first-rung pattern there.
+       - No step on the critical path: the dual is Mahler's mirror, and its open part is the same integer-compatibility
+         question.
      - *Outcomes (2026-10-14 11:20 BST).* S1 HELD: 217 of the 4499 stragglers are rung-3-pure (coin 214), 103 of the
        2269 chain roots, and 221 of the 4622 negative stragglers. No deviation from the coin was detected in this
        statistic, which is not proof of no integer-specific preference (GC1230.1). The record holder's purity is
