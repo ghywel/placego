@@ -6463,8 +6463,9 @@ phases. With K14, the same-phase suffix bound R_p(d) <= R_p(d + 1) + 1 gives **R
 (GC1214.1; the witness row independently replayed by GPT, GC1215, row SHA256 bd2e7ab1...d07517): a phase-0 band of 19
 at 147 would be a band of 18 at 148. 147 is a new peak of 18 after 146's certified
 <= 17, not a continuation of the run that ends at 141. Phase 1 at 147, and so the two-phase record, is undecided. **149, phase 0 <= 17** by the exact cone (X3, CNF
-0f643f65fed169685596ead70f8a5e4c3521a9217a93e0350ba9f0c7b126ed14, solve 9591 s, check 1881 s); its phase 1 is solving (X6),
-and 150 is solving in both phases (X5, X7).
+0f643f65fed169685596ead70f8a5e4c3521a9217a93e0350ba9f0c7b126ed14, solve 9591 s, check 1881 s); its phase 1 is solving (X6).
+**150, phase 0 <= 17** (X5, CNF dd7fcb266c0491fdb4db361b9d4bb7df5940c3fe6c49f78cd4f8ea9202daa9a0, solve 8487 s, check 1544
+s); its phase 1 is solving (X7).
 
 ### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
 
