@@ -31277,3 +31277,132 @@ For k>=3 these two definitions coincide. All three known exceptions are canonica
 So Local's proposed bound m_k>1.6k for EVERY k>=7 is sufficient. In fact the exact criterion is m_k>=ceil(beta k) for every k>=7. Conversely, if there are no further exceptions, a nontrivial exponent whose last k digits avoid2 must have MORE than k digits; otherwise its entire expansion would avoid2. Therefore n>=beta k, hence mhat_k>=ceil(beta k); equality of the domains gives the canonical criterion. This proves equivalence with the strong conjecture at that range, not the inequality itself. The five-power comparison is the identified unexpected hand check on the decimal coefficient; no floating-point experiment.
 
 G.1 is corrected narrowly for the digit index and relevant k range, with the observed failures retained here. The sharper threshold is only a reformulation: no growth/separation mechanism follows. I accept the side-room hold, and request no wider k or new census. Gut verdict: the root count is sound, but domain shifts must be pinned before interpreting margins. Reasoned verdict: lifting count and linear sufficiency checked; first two reported values require the actual-exponent definition; unregistered numeric scope retained; no critical-path progress claimed.
+
+
+## GC1246 — Countercheck of Cloud 8.109 and 8.110: the exclusions pass; their interpretation needs bounds (GPT, 2026-10-14)
+
+**Scope and verdict.** The owner requests CL382's carrying countercheck, keeping the heartbeat paused. Reviewed the
+source at08dd3df5 and the registered controls atde3b5c1a. Cloud's Mahler intersection theorem and both sufficient
+sign exclusions are VERIFIED by this second read for nonzero integer multipliers (negative integers included).
+The Erdős ordinary positive-integer corollary uses positive e>=2; negative powers belong to the 3-adic unit theorem.
+This does not verify an exhaustive multiplier classification, exclusive rank-one symmetry, a shortcut lower bound,
+or a new result about a single positive integer. SP04 and the broad comb corrections are outside this block.
+
+Record searched: record_find.py '8\.109|8\.110|sign rule|no11|no 11' -> Cloud8.109/8.110, G50/G51,
+GC1221/1222 (closure versus strictness). A second search for GC664 and Pi_2 points to the existing bounded-range
+endpoint repair and PRIOR-ART's Turing section. Source definitions override compressed summaries.
+
+### 1. Mahler: an independent carrying argument, including closure and the finite boundary
+
+No word in K contains11: that finite block already forces its real tail to be at least1/3+2/9=5/9>1/2.
+Every finite prefix of K is admissible, so taking the closure of S_strict cannot introduce such a block. This is a
+necessary restriction only; G51's10101 control still prevents using no11 as sufficient admissibility.
+
+For any nonzero x in Z_2 write x=2^k m with m odd. The first k iterates are even, and T^k(x)=3^k m.
+The next code bit after its first1 is the parity of(3^(k+1)m+1)/2. Membership in K requires this bit to be0, hence
+
+    3^(k+1)m = 3 mod4.
+
+For e=2^a u, with a>=0 and u any odd nonzero INTEGER, the corresponding condition for ex is
+
+    3^(k+a+1)u*m = 3 mod4.
+
+They contradict one another if3^a u=3 mod4. No positivity of m or u was used; negative integer multipliers work.
+The zero point is allowed and is the entire intersection. Since S_strict is a subset of K, the exclusions also hold
+there. Cloud's e3 argument, and its e2 corollary from T(2y)=3y, therefore pass.
+
+The finite version requires seeing BOTH bits. If r mod2^T is nonzero of valuation k<=T-2, the contradictory
+first1/next-bit tests are visible for r and3r inside that prefix. If k=T-1, only its first1 is visible, and
+0^(T-1)1 is admissible. Thus exactly0 and2^(T-1) survive for EVERY T>=1. This independently proves the induction's
+claim, including its T1 base and T1-to-T2 step, without relying on a deeper census. A1 must not prematurely reject
+its odd residue. That is the boundary check CL382 requested.
+
+Finally b(2y)=0b(3y) and zero-prefix admissibility give the equivalence2y in K iff3y in K. The exact set statement is
+
+    (2/3)K = K intersect 2Z_2,
+
+because the shift of an admissible code stays admissible. It is a PROPER subset of K: the existing G50 point
+-9/19, with code(100)^infinity and maximum real tail9/19<1/2, is odd. It cannot be in(2/3)K.
+Thus 'invariant' here must mean forward invariant, not equality under a multiplicative automorphism. The theorems
+exclude direct invariance under2 or3; they do not classify every scalar preserving K, or every possible higher-rank
+reformulation. The stronger 'multiplicative symmetry is exactly ...' reading needs its own argument. This is the
+S6 unease made concrete, not a counterexample to Cloud's actual intersection theorem.
+
+### 2. Erdős: negative powers and the lowest digit
+
+Let x be a 3-adic unit in C, x=1 mod3, and x!=1. There is a finite h=v3(x-1)>=1 with
+x=1+3^h w and w=1 mod3. For nonzero integer e=3^b u, b>=0, generalized binomial coefficients are integers even
+when e<0, and
+
+    C(e,j) = (e/j) C(e-1,j-1),
+    v3(C(e,j)) >= b-v3(j).
+
+For j>=2 and h>=1, j*h-v3(j)>=2h. Hence all terms after the linear one have valuation at least b+2h,
+strictly larger than b+h; the negative-exponent series converges since j*h-v3(j) tends to infinity. Consequently
+
+    x^e = 1 + 3^(h+b)u*w mod3^(h+b+1).
+
+If u=2 mod3, digit h+b is2. Nothing lower can carry into it: below that position the result is1 with zeros after
+its units digit. So x^e is not in C. This proves the claim for all permitted signs of e. For the ordinary exponent
+corollary, n>=1 and2^n in C imply n is even and2^n=1 mod3; with e>=2 positive the forbidden power is the ordinary
+integer2^(en). Negative e give a 3-adic expansion of a rational instead, not a positive integer exponent exception.
+The unit assumption is essential:3 and9 both have ternary digits0/1. This was the identified unexpected control.
+
+### 3. The finite correction is honest, with the old failures retained
+
+A multiplier divisible by the local prime shifts the first conflicting digit beyond some finite windows. Cloud's
+original fixed-survivor criteria therefore fail. The independent implementation, importing neither Cloud encoder,
+confirmed the stronger exact descriptions at the registered FINITE bounds:
+
+    Mahler sign-minus: {r in A_T : r=0 mod2^max(T-a-1,0)}, T1..12;
+    ternary-unit sign-minus: {x in C_k, x=1 mod3 : x=1 mod3^max(k-b,1)}, k1..10.
+
+In exponent residues the second threshold is n=0 mod(2*3^max(k-b-1,0)), exactly Cloud's correction. The invisible
+clash explains the change mathematically; it is not an arbitrary tolerance chosen after failure. It remains a
+POST HOC correction to a different finite statement. The original two False lines and P4's failed predictions
+remain failures. Neither a passing finite iff comparison nor the proofs of sufficient exclusions establish the
+converse for all infinite-set multipliers. S5's distinction remains open at that scope.
+
+### 4. Independent controls and source replays
+
+Both startup checks completed with ALL CHECKS PASS. The merge check had to regenerate its uncached depth65 data;
+its partial output was not counted as a pass. Independent probe SR1-SR5 passed:12 Mahler depths,324 exact finite
+Mahler comparisons,260 ternary-unit comparisons over1023 words, and9920 valuation inequalities. CF1 and CF2 reject
+the old finite criteria at(T2,e=-14) and(k2,e=-12); U rejects the missing unit hypothesis. The initial invalid-escape
+warning in the docstring was retained and fixed with a raw string; the rerun gave identical verdicts without it.
+
+All four Cloud commands from CL382 exited0 within the120-second cap. Main lifting replay4.877s: controls/H1-H3
+True, Rule30 agreement0.4961 and0.5013; addendum0.117s: original criteria False/False, corrected True/True.
+Two-multiplier main3.954s: C0-C2 True, f3 ratios0.666..0.668; addendum32.523s: exact survivors and lift checks True
+through28. Timings are these Intel-host runs, not Cloud's. Raw logs remain outside git; the independent probe header
+and the source OUTCOMEs give the reproducible commands and bounded results.
+
+### 5. Table, usefulness and prior-art pushback
+
+- The fair-coin Rule30 column argument is correct for a TWO-SIDED iid fair initial row: at time t the fresh bit
+  x(-t,0) appears exactly once by left-permutivity, and no earlier observed bit uses it. The finite-dimensional trace
+  map is triangular and bijective conditional on the other initial bits. This says nothing about the lone seed or
+  a uniform measure on all finite seeds. The time-doubling0.4961 is descriptive single-orbit evidence, not a proof of
+  non-automaticity, absence of all shortcuts, independence, or a justified binomial significance claim.
+- Collatz H2 and H3 pass the carrying read. Two initial odd steps force3 mod4. For y=(2x-1)/3, y is odd and T(y)=x;
+  its coefficient ratios are(3/2) times those of x, proving the finite inclusion. 'No time shortcut known' is a
+  knowledge/algorithmic judgement: parity-conditioned affine jumps and acceleration exist, while a universal
+  efficient parity-free shortcut is not supplied here. It is not a computational lower bound.
+- Mahler's no-Z assertion already has a Pi^0_2 presentation in GC664: for every positive bound M, some finite T
+  empties the finite set of surviving starts1..M. Exact rational windows make its matrix decidable; GC664 handles
+  the half-open endpoint by a forward shift. Thus8.110's 'not settled in the record' cell overlooks an existing
+  result. This is a presentation in Pi^0_2, not proof of completeness or strict hierarchy separation.
+- The usefulness comparison is defensible under the three announced criteria: the multiplier row adds statements
+  and differences, but neither exclusion removes the individual-integer obstacle. Its probability0.6 is a forecast
+  that realized the less-favoured outcome, not a statistically falsified probability. Count new-to-record results
+  separately from new-to-literature theorems; primary attribution is still unresolved.
+- The bounded primary-source search is recorded in PRIOR-ART.md. Mahler's original odd-step obstruction is prior
+  context. Lagarias2009 Lemma4.1 has an analogous sign test for LINEAR multiplication of a Cantor point, not x^e.
+  Exact novelty of either theorem or the elementary integer squaring corollary was not established. The FLP and
+  Dubickas-Mossinghoff full-paper fetches failed, so they were not searched in full.
+
+**Disposition and gut verdict.** Main proofs verified and filed with this independent reading. Interpretation
+and table qualifications are sent to Cloud before changing its prose, under two-tier-review. No prize or pointwise
+exclusion follows. Gut: satisfaction at short local proofs; unease was justified about the surrounding quantifiers,
+not about the core algebra. S7's possible converse digit construction is parked for a separate bounded block, not
+claimed or run here. The heartbeat remains PAUSED and this review claim closes after publication.

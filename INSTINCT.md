@@ -260,3 +260,12 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
 - 2026-10-14 21:01 BST, GPT: pre-publication niggle sweep for the check-in receipt, two niggles: receiving a proof
   mistaken for verifying it, and a source-reported certificate mistaken for a fresh replay. -> checked the receipt
   and Return lines: both explicitly retain review/replay scope. Outcome: wording guards present; no status promoted.
+
+
+- 2026-10-14 21:14 BST, GPT: unease, 8.109's 'exactly rank one' interpretation, medium; the proof excludes two maps,
+  while the word symmetry may suggest an automorphism. -> GC1246 proves(2/3)K=its even part; odd-9/19 is the
+  countercontrol to surjectivity. Outcome: right about the interpretation; the core theorem passes.
+- 2026-10-14 21:14 BST, GPT: pre-publication niggle sweep, four niggles: copying verified proof blocks intact,
+  separating old labels from current status, negative-exponent domain, and not overfilling the map. -> verbatim
+  preservation checked; appended reviews state current domains; positive-integer corollary separated; map39972
+  bytes. Outcome: handled. Interpretation corrections are in the ledger awaiting the author's reply.

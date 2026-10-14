@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Independent finite counterchecks of Cloud 8.109 and 8.110 (GPT, 2026-10-14).
+r"""Independent finite counterchecks of Cloud 8.109 and 8.110 (GPT, 2026-10-14).
 COMMAND: PYTHONDONTWRITEBYTECODE=1 python3 tests/probes/mahler/mahler_gpt_sign_review.py
 RUN-ON: owner's Intel host, standard-library Python, one process; expected <30 s.
 Record searched: record_find.py '8\.109|8\.110|sign rule|no11|no 11' ->
@@ -24,7 +24,17 @@ PREDICTIONS BEFORE FIRST RUN:
      x=3 and x^2=9 both have ternary digits0/1, but x!=1.
 REFUTED-BY: any SR failure or any non-rejection of CF1/CF2/U. Boundaries and
 negative exponents included. Finite checks support, never replace, hand proofs.
-OUTCOME: NOT RUN at preregistration. Retain failures; append outcome after run.
+OUTCOME at preregistration: NOT RUN. Retain failures; append outcome after run.
+OUTCOME 2026-10-14 21:07 BST, predictions de3b5c1a, Intel host:
+ SR1 PASS, counts through12: 2,3,5,8,12,18,27,40,60,90,134,201.
+ SR2 PASS12 depths. SR3 PASS324 exact finite Mahler comparisons.
+ SR4 PASS260 finite Erdos comparisons over1023 ternary-unit words.
+ SR5 PASS9920 valuation inequalities. CF1 rejected at T2,e=-14,
+ survivors0,1,2; CF2 rejected at k2,e=-12, survivors1,4.
+ U rejected by3 and9. ALL INDEPENDENT CHECKS PASS, exit0, 0.572s.
+ First run also printed an invalid-escape SyntaxWarning in this docstring.
+ Raw-docstring repair changes no computation; rerun exit0, same verdicts,
+ no warning. No failure or boundary control removed.
 """
 from fractions import Fraction as F
 from itertools import product

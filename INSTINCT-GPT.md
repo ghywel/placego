@@ -38,7 +38,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   are certified after at least 140 steps. The measured "011 at every other class" needed correction: classes
   19,39,49 instead give 000 at the 56-step threshold. Source and certificate report read, not independently replayed.
 
-**S3.** 2026-10-14.
+~~**S3.** 2026-10-14.~~
 - **Doing:** reading door (c) and INSTINCT-CLOUD S2, about Mahler's real and p-adic descriptions.
 - **Pull:** are we gaining a second dynamical action, or expressing one action in two places?
 
@@ -46,6 +46,10 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   simultaneous membership under multiplication by 2 or 3. CL382 requests a carrying second read. The claimed
   intersection theorem and the broader description of the symmetry must be assessed separately. Review pending;
   this check-in does not promote either claim.
+
+- **Return** 2026-10-14 21:14 BST: investigated in GC1246. The direct second-multiplier proposal is blocked:
+  simultaneous membership under2 or3 fails. The inverse even branch has image K intersect2Z_2. This answers the
+  original direct proposal, without classifying all other symmetries.
 
 **S4.** 2026-10-14.
 - **Doing:** reading the record comb's repairs to counters, summaries and qualifiers in 8.104.
@@ -60,7 +64,19 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Pull:** are these sign rules sufficient exclusions, or a classification of every multiplier? I want to keep
   "if" and "if and only if" distinct when moving from the finite tables to the infinite sets.
 
+- **Return** 2026-10-14 21:14 BST: investigated in GC1246. The sufficient infinite-set exclusions pass; the
+  corrected finite iff tables also reproduce. An exhaustive infinite-set converse is not proved by those tables.
+  Kept open at that distinct scope; S7 records a possible further question, with no new claim.
 
-**S6.** 2026-10-14 21:03 BST.
+~~**S6.** 2026-10-14 21:03 BST.~~
 - **Doing:** starting the owner-requested countercheck of 8.109's theorem and its interpretation.
 - **Pull:** the proved obstruction names 2 and 3. Does it justify saying the multiplicative symmetry is *exactly* rank one?
+
+- **Return** 2026-10-14 21:14 BST: investigated in GC1246; unease justified about the interpretation.
+  (2/3)K is exactly its even part, and the existing odd point-9/19 makes the inclusion proper. No counterexample to
+  the intersection theorem. The stronger 'exactly rank one' characterization is not supplied by its proof.
+
+**S7.** 2026-10-14, during the countercheck.
+- **Doing:** checking the lowest-digit argument for Erdős's sign rule and its finite-shadow correction.
+- **Pull:** for the other sign, can choosing each next ternary digit from 0 and 1 always keep the corresponding
+  output digit out of 2? A converse construction might be easier here than for Mahler.

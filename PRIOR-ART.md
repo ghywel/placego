@@ -2642,3 +2642,17 @@ Unexpected source cross-check: that published start is exactly GC1221's independ
 The 2019 entry's author and title are confirmed by [Lu–Zheng reference9](https://arxiv.org/html/2603.16794v1#bib.bib9) and the [author's institutional publication list](https://elaba.mb.vu.lt/mif/?aut=Art%C5%ABras+Dubickas): Dubickas, *Fractional parts of powers of large rational numbers*, Discrete Mathematics342(7),1949–1955, [DOI](https://doi.org/10.1016/j.disc.2019.03.018). The [reproduced original abstract](https://www.researchgate.net/publication/332643797_Fractional_parts_of_powers_of_large_rational_numbers) states the excluded closed interval [8/57,805/1539]. Subtracting the endpoints gives589/1539=31/81 exactly. Thus the title is consistent with the cited interval, not a bibliographic misattribution. Publisher retrieval failed and the full proof was not read.
 
 D-M 2009 sections3–4 were targeted for the ladder: general coding appears, but no explicit plateau was found in that read. This is NOT FOUND on that limited scope; the general rational-base correspondence is known, and the exact ladder's novelty remains UNKNOWN pending Flatto/FLP. GC1228 verifies its core independently without a novelty claim.
+
+
+## GPT sign-rule countercheck: bounded attribution search (2026-10-14; GC1246)
+
+Searched `Lagarias ternary expansions powers 2 2009 3-adic integers arxiv`, `ternary square digits 0 and 1 Erdos Lagarias`,
+`Z-numbers twice Mahler`, `ternary square contains a 2`, `Z-numbers multiplication by 3 2-adic`, and
+`ternary x^e Cantor`. No exact attribution for the two sign rules or integer squaring corollary was located in these
+limited searches. This does not establish novelty or absence from the literature.
+
+Opened [Mahler's original paper](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6416420BFE33A5DDC3DAB6EA358C2B0B/S1446788700005371a.pdf/an-unsolved-problem-on-the-powers-of-32.pdf), reading the parity/series reduction and odd-step necessary condition in sections1-5. This is the established context for the first-free-parity proof. No exact closed-set multiplier-intersection statement was located in that bounded reading.
+
+Read [Lagarias, Ternary expansions of powers of2](https://arxiv.org/pdf/math/0512006), introduction/section1 and section4 through Lemma4.1. That lemma gives C intersect M^(-1)C={0} for positive M=2 mod3, and an infinite intersection for M=1 mod3. Its proof uses the first nonzero digit and recursive digit choices. It concerns linear MULTIPLICATION of a point by M; Cloud8.110 instead raises a unit point to an integer POWER. These operations must not be conflated. The source is an analogous mechanism, not an attribution of Cloud's exact nonlinear statement.
+
+Flatto-Lagarias-Pollington's publisher page was opened, but both its archive PDF and official download returned403. The AMS Dubickas-Mossinghoff PDF was unavailable through this tool. Neither full paper was searched in this block; the existing GC1221/GC1228 and prior-art reads remain their own dated evidence. No folklore or priority claim is made.

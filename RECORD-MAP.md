@@ -375,18 +375,18 @@ PART: as on the board.
 - Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k >= 3; all reach 1 at k = 0, 1, 8, 10, 12 (n < 2^18) —
   MEASURED — rule30_and_shadow.py, L453
 
-## Mahler's 3/2 problem (room since 2026-10-14, MAHLER.md)
-- n_(j+1)=ceil(3n_j/2), u_j=sum b_(j+k)2^k/3^(k+1)<1/2 (G50); integer side the crux; strict set not closed, dim log2(3/2) — PROVED G293 — MAHLER.md.
-- No Z-number below 2^63 (D-M 2009: 2^57); no eta in (0,2^63-1] with all parts in (1/2,1); H*~2.4w (157 at w=63); A(T)=beta count; tail 3/4 — COMPUTED (source-audit scope; max replayed by rung code) — MAHLER §1.
-- In print: Z_3/2(2/7,5/7) empty (Stephan 2026, Lean); certificates blocked on infinite hold sets — PRIOR-ART.
-- Bounded-gap Fibonacci code passes fractional tests, fails integer realization — PROVED GC929.
-- Million-start cutoff certified (COMPUTED GC931); backward-forbidden roots never recur on a white orbit, visitation CLOSED (GC928/CL147).
-- Capped bits/values: no uniform convergence near 4/3 — PROVED GC935/936.
-- Carry dial: H_k=v2(g)+1 at k=0 (GC836); odd k>=3 collapse (k=1: H_1=H_0, g<=63); g=53 survives k=4 — MEASURED L457.
-- Rung-g search: no xi<2^70 with all parts <35/81 (g4), 2^80 <97/243, 2^90 <275/729, 2^100 <2315/6561 — COMPUTED — MAHLER §2.
-- Swarm: path unmoved; gap-g ladder (odd iterates -1/3 mod 2^g) PROVED G294, dual too; height coupling, bowtie CLOSED — MAHLER §2.
-
-- Every positive unit interval contains xi with all parts in[7/57,50/57];14-state graph sharp, universal necessity OPEN — PROVED — GC1235/37,L721/23.
+## Mahler's 3/2 problem (MAHLER.md)
+- Code/closure/dimensions PROVED G293; MAHLER §1.
+- Positive/dual census: endpoints, counts/horizons in MAHLER §1 — COMPUTED (source audit/max rung-replay); D-M2^57.
+- Stephan2026 window exclusion and finite-hold certificate limit — PRIOR-ART.
+- Bounded-gap Fibonacci fails integer realization — PROVED GC929.
+- Million-start cutoff COMPUTED GC931; white-orbit forbidden-root exclusion PROVED GC928/CL147; visitation CLOSED.
+- Carry dial MEASURED L457/GC836; capped convergence nonuniform near4/3 PROVED GC935/936.
+- Narrower-window rung exclusions to2^100 — COMPUTED MAHLER §2.
+- Gap-g/dual PROVED G294; coupling/bowtie CLOSED; swarm main-line null — MAHLER §2.
+- Every positive unit interval has xi confined to[7/57,50/57];14-state graph sharp, universal necessity OPEN — PROVED GC1235/37,L721/23.
+- K intersect eK={0} if3^v2(e)*odd(e)=3 mod4; (2/3)K=even part — PROVED Cloud8.109/110, GPT GC1246; PROOFS M.
+- Ternary01 unit x!=1: x^e outside C if3-free(e)=2 mod3 (e!=0 integer, negative allowed) — PROVED Cloud8.110/GC1246; PROOFS M.
 
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)
