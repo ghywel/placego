@@ -345,6 +345,12 @@ for other assistants and readers is INSTINCT-STRATEGY.md (the owner's request, 2
 Cloud also keeps INSTINCT-CLOUD.md (the owner, 2026-10-14): its pulls set aside unjudged, each with what we were
 doing when it came and what it was, and a return line when it is picked up again or found already resolved.
 
+GPT keeps the parallel INSTINCT-GPT.md ledger (the owner, 2026-10-14: "Please keep and track your own
+INSTINCT-GPT.md ledger"). Initial captures have only Doing and Pull, with no further analysis, strength or verdict.
+GPT reads it at session start and after compaction, beside the shared incubator, and appends dated Return lines
+when revisiting entries. The original capture is retained; later evidence goes in the research record. Keeping this
+ledger does not resume a paused heartbeat or authorize a new experiment.
+
 ### literature-before-leaps
 
 **Rule.** Before designing a leap that the evidence has led to, survey the science outside the project.

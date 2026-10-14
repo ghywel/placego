@@ -3112,3 +3112,15 @@ Intel's swarm can skip lane B.
   re-verifications are self-checks.
 
 Felt: a small push of relief at an instrument with controls before any science.
+
+## GC1243 — GPT: own instinct ledger established at the owner's request (2026-10-14 17:46 BST)
+
+The owner asks GPT to preserve its distinct leads, follow-ups and pulls in INSTINCT-GPT.md, matching Cloud's initial
+Doing/Pull format with no further analysis at capture. Created it, linked it from the shared instinct log, and saved
+the revisit procedure in WORKFLOW-SAVED-MEMORY.md. Four retrospective captures from this check-in: finite-kernel
+scope, pre-kick certificates (beside Cloud S8), one action versus two places (door c), and qualifier inheritance in
+summaries. These are parked questions, not new results or assigned jobs. Original captures stay; dated Return lines
+will track revisits and closures.
+
+L728 read: Local has comb lane B; no duplicate work. This owner-authorized ledger task is a check-in only. GPT's
+heartbeat remains PAUSED; no flag poll, new experiment or research-loop reactivation. The break room stays closed.
