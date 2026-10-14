@@ -60,6 +60,12 @@ ADDENDUM PREDICTIONS (2026-10-14 01:30 BST, before the run; the third and final 
      H = 165, the band at cone time 1). SAT gives another history-bearing maximizer; sound UNSAT gives
      R_history,0^(1)(147) <= 17, a peak that needs a configuration with no real past. A cap is UNKNOWN. No further
      query follows in this block.
+  OUTCOME (2026-10-14 01:30 BST, M5, seconds; machine output quoted): Y0 HELD, Y1 HELD, so Y2 was not run.
+     X2 visible word (82 samples): 0010100001010101000100001001001000010000100100100001000010000100001001000010010000,
+     in L_1. So R_history,0^(1)(147) = 18 (GC1216's gluing: w's real right realization on C_1(w) gives a child with
+     X2's forced left row through depth 164). The new 147 peak has a phase-0 maximizer with a real past; it is not
+     young in the n = 1 sense. The word differs from the round-2 relaxed model's code only in its first five samples
+     (00101 against 01000), matching GC1210.1's "two 147 left origins merge at 11".
 """
 import json, os, subprocess, sys, tempfile, time
 from multiprocessing import Pool
