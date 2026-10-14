@@ -29,6 +29,7 @@ domain on 2026-10-11: www.wolframcollatzmahler.com, served from the root of that
 | `data/build_data.py`, `data/replay.py` | Build the clean exports (records, forbidden words, rings) and embed the records in `record.html`; replay every record row in seconds. |
 | `rule30/` | The Wolfram Rule 30 page, the worked problem: the nine HTML files of `site/wolframrule30/` copied verbatim (the owner, 2026-10-11: "perfect as it is"); served at `/rule30/`. Keep the nine files together; they load one another by relative path. |
 | `content/` | Markdown written by the other workers (GPT: `problems.md`, `trio-technical.md`), rendered into pages by Cloud. |
+| `COMB-2026-10-14.md` | Intel's record comb (RULE30-PRIZE.md 8.106): 41 corrections on eleven pages, quoted from both sides; four findings in generated data (records JSON, trove manifest) left for their builders; and a note that `content/` is no longer in git, so `problems.html` and `trio-technical.html` are now edited directly. |
 
 ## Standards (CL366)
 

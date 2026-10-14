@@ -55,7 +55,7 @@ PART: as on the board.
 - Column 1 beside 0101 is the wheel U, an exact coding of the rotation by 17/56, kicked by domain walls in notches
   of 1/28 turn; no other trace tried turns one — MEASURED — §8.4 to §8.11; PERIOD-TWO.md §3, §5
 - Even-time word sigma(2s) = floor((17s + 6)/28) - floor(17s/28); 56 steps are 17 turns — COMPUTED — §8.32
-- Slips are domain walls moving half a cell a step, arriving only at wheel phases 32 and 52 — MEASURED — §8.7, §8.8
+- Slips are domain walls moving half a cell a step, arriving at wheel phases 32 and 52 (98.1%; 42 rare) — MEASURED — §8.7, §8.8
 - Exact rotation between kicks; not chaotic, its randomness is the interior's — MEASURED — §8.10, §8.11
 - Proposition 6: the pure wheel's left half has an exact tail and period in depth — COMPUTED — §8.6
 - Column 1 is never eventually periodic, so the wheel slips for ever; an unkicked wheel never works, at any rotation
@@ -78,10 +78,10 @@ PART: as on the board.
 - Size set by the interior; timing and alphabet rigid; no memory; about 3.5 bits a kick — MEASURED — §8.43, §8.11
 - The alphabet is local: after 133 steps, four classes and at most log2 6 bits a kick; not a classification of
   arbitrary column-1 histories — COMPUTED (second-read, GC359) — entry 26 (Proposition 13, KL)
-- After 133 steps: classes 12, 32, 42, 52 only, sizes +4..+8, +2..+6, +1..+5, -6..-1 — COMPUTED — entry 27 (board 6.1)
+- After 133 steps: classes 12, 32, 42, 52 only, sizes +4..+8, +2..+6, +1..+5, -6..-1 — COMPUTED — entry 26 (board 6.1)
 - Class 12 impossible for every right half after 140 steps; possible at 56, 84, 112; the obstruction needs the rule
   out to column 37 — COMPUTED — KS (Cloud), KK and DT (Local)
-- Every size of 32, 42, 52 realized; class 42 is 67 of 20,282 settled kicks — COMPUTED, MEASURED — KX; KB
+- Every size of 32, 42, 52 realized at exactly 140 steps (upper bound beyond); class 42 is 67 of 20,282 settled kicks — COMPUTED, MEASURED — KX; KB
 - Class 42 dead at N = 560 in all 56 cases (drat-trim) — COMPUTED — KT2C
 - Classes 32 and 52 still possible after 448 steps; nothing above 448 decided for 32 — COMPUTED — KT2N (L375), KT2M
 - At 56 observations class 19 (kicks -8..-4) is admitted, unused by RB's kicks — COMPUTED (single-party) — OLD1 (GC588)
@@ -100,7 +100,7 @@ PART: as on the board.
 - FullK18 bounds4422 occurrences by1 at every word length — PROVED by finite potential, independent L561 review — GC986.
 - Gap4 trains of length>=4 start only near the initial boundary; cannot restart — hand inference — GC987.
 - Actual suffix from13 forbids4422/4444; age12 retains4444; relaxation still branches — hand / COMPUTED — GC988/989, L563.
-- Phase0 R(d)<=d+4 to89; R89=75 — COMPUTED — §8.36/37, RK93.
+- Phase0 R(d)<=d+4 to89; R89=75 — COMPUTED — §8.36/37 (RK93, R(93), unfinished).
 - Black-wall WA3 wrong parity; R°(3)=4 — PROVED CL212 — GC1043.
 - Both-phase R_real exact through19, then21..97<=17 — COMPUTED — ZR/ZR2 L236, RR L247, RR2 L399; RRX/RRP replay.
 - R_real(97..120) exact, max16 at108; 121..124,140,144..146,148..150<=17 cake_lpr (both phases); 125..131,133..138,141,152>=18 seen; 147=18; 132=139=142=17 (132 cake), 143=17 cake — COMPUTED — RR3, L596..617, §8.96.
@@ -109,13 +109,13 @@ PART: as on the board.
 - RR/RR3 cone CNF equals finite query — PROVED GC937/CL154; phase/horizon lift audit GC1201; replay separate.
 - VC3 gate/status repairs pass synthetic controls (stale-cache recovery manual; no certificate replay) — GC961/965.
 - RR3 completed 97..120 on M5 (solver values); deciding UNSAT d3..97 by drat-trim/cake_lpr; VC 200/200; RR3 98..105,
-  107, 109 by cake_lpr — COMPUTED — RRC L438, L480, VC3 (rule30_cloud_rr3.py, rule30_verified_certs.py).
+  107, 109 and six more by cake_lpr (16 of 23 at the 10-11 halt) — COMPUTED — RRC L438, L480, VC3 (rule30_cloud_rr3.py, rule30_verified_certs.py).
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
 - K=40 relaxed at L=18: 124 UNSAT both phases (<=17); 140, 144, 152 settled by CUT/SP — COMPUTED (kissat) — RLK L575, L581/582, L589.
 - Two-gap train: phase-0 seed1001 eternal (16-tick causal lock at14, tails beyond46) — PROVED CL189/L595 — GC1020/W282; TG. Measured periods 4 to6, 8 to14, chaos pinned15; no invariant window to60.
 
-- R_real climbs ~0.085/depth over 30..116 (no 2,000-shuffle reaches it); L18 at 140/148/156/164 UNKNOWN at 13,321 s, 144..168 at 3,600 s — COMPUTED — TR, CL178, CL188.
+- R_real climbs ~0.085/depth over 30..116 (no 2,000-shuffle reaches it); L18 at 140/148/156/164 UNKNOWN at 13,321 s, 144..168 at 3,600 s — MEASURED (trend; capped calls undecided) — TR, CL178, CL188.
 - Least d>20 with R_real(d)>=18 is 125 (21..124 <=17) — COMPUTED (121..124 cake_lpr, both phases) — L603..605;
   R125=21, R132<=17 cake_lpr: 18s split at 129 and 132, >=3 runs — GC1171; §8.96
 - Cut45 needs width24 (23 admits), 18 pins from19; all77 learned cuts verified, widths13..54 — COMPUTED — SWP L605/606.
@@ -128,7 +128,7 @@ PART: as on the board.
 - Visible language exact to n=44, both phases: no small lift; follower classes grow — COMPUTED — SOF L564..568, L640.
 - Exactness through40 needs strip width35; widths<=34 excluded, all-depth boundedness OPEN — COMPUTED / scope GC996 — SW L569/570.
 - No left edge within248, any right half; right-half bounds32/34 — COMPUTED — LL1..LL4 §8.56; §8.21, M3b.
-- Best seed wall duration<=width+9; other traces width+6..10 — COMPUTED / MEASURED — §8.24/42.
+- Best seed wall duration<=width+9 (halves<=32 cells, cuts to depth 126); other traces width+6..10, growing like log depth — COMPUTED / MEASURED — §8.24/42.
 - Finite left edge forces frontier events, increasingly old/restarting Fibonacci-parity compensation — PROVED — GC585/586/597..600; local rules CL055/GC595.
 - Fixed sources silent, near-silent sources never harden — COMPUTED — SS/GC589, SO/GC591.
 - Finite left support excludes all-S and eventually periodic S/L renewal tails — PROVED L372/CL160 — GC686/704/706/707, §8.78.
@@ -138,11 +138,11 @@ PART: as on the board.
 - Phase-mask, same-reference-orbit pumping and quotient guards — PROVED — GC846/848/849, G269/270/272; L474/493.
 - Last-defect and zero-lag parity shortcuts CLOSED; ParityMask ingredients accepted, assembly unformalized — CLOSED / PART — GC874..876, CL112.
 - Remaining Q6: inter-run compatibility with unbounded reach — OPEN (PART) — GC845, PERIOD-TWO §6.
-- Two-phase coupling E°(d) = max(d, E(d-1)-1, Q_S-1, P_S-1) exact; R°(1..62); both peaks one black run of 19 — PROVED,
-  COMPUTED (lane q2, Cloud-verified) — §8.82
+- Two-phase coupling E°(d) = max(d, E(d-1)-1, Q_S-1, P_S-1) exact; R°(1..62); both peaks one black run of 19 — PROVED (coupling,
+  Cloud-verified), COMPUTED (R° third-party, lane q2; Cloud to 14, engines to 33) — §8.82, §8.95
 - 1,612 minimal absent words to 48 have w_min <= |f|; strip exact to l = 84; S to W = 39 both phases (IN010) —
   COMPUTED, PROVED (2|f|-2) — §8.83
-- R(62..72) = 52 51 50 .. 56 59 60 (lane q1, blind match 1..61); T(u(10)^k) <= |u|+2k+31, |u| <= 16; Jen-type theorem
+- R(62..72) = 52 51 50 .. 56 59 60 (lane q1, given 1..61; blind match 65, 69, 73); T(u(10)^k) <= |u|+2k+31, |u| <= 16; Jen-type theorem
   beside a periodic wall; barrier lemma — COMPUTED (third-party), PROVED (hand parts) — §8.84
 - 1100 wall: R'(1..100) exact, max 18 at 99; lock lemma, structure
   theorem; all-d finiteness OPEN — COMPUTED (lane q4), PROVED (locks) — §8.85
@@ -252,7 +252,7 @@ PART: as on the board.
 - Chain reading: orderly chain autonomous (lag-2⌊√p⌋ recurrence), random chain driven one way, xz 0.077 vs 1.000;
   triangle identity Σ 3·2^-(L+4) A(L) = 1/2, 2–9% birth deficit near B(t) — PROVED (recurrence, identity),
   MEASURED — §8.80, §8.81
-- Left-only horizon next to 0101 is W + 17; slow walls stop every width-16 seed within a period — COMPUTED — §8.69
+- Left-only horizon next to 0101 ~W+17 for W 11..20 (§8.69), law refuted to 32 (§8.94); no width-16 seed outlives two black stretches of 0^8 1^8, 0^16 1^16 — COMPUTED — §8.69, §8.94
 - Every white triangle is exact (shrinks two cells a step); every climb on black reaches the origin in t moves —
   PROVED — §8.18, §8.29; ShortC.lean L533, source GC957
 - Backwards: a single 1 has no finite past, and exactly two parents — PROVED — §8.19
@@ -284,7 +284,7 @@ PART: as on the board.
   period 2 — COMPUTED — same probe
 - The 84 points of least period 6 are one orbit, GC686's 84-cell all-S ring — COMPUTED — same probe, CL088
 - Rings with a column reading 0 1^q exist for q = 1, 2, 3, 4, 6; none for 5, 7, 8 to 22 cells (board; L433), nor
-  to 30 cells in Cloud's ring search (CL086, rule30_cloud_ring_template.c) — COMPUTED
+  to 30 cells in Cloud's ring search (CL086, rule30_cloud_ring_walls.c) — COMPUTED
 
 ## Theorems for every seed (Q5: Theorems A, B, A')
 - Theorem A, Jen with a clock: two adjacent columns P-periodic on [a, b] need b <= 2a + L + 2P - 1 — PROVED — §8.54
@@ -370,7 +370,7 @@ PART: as on the board.
   identity) — PRIZE-PROBLEMS.md; COLLATZ-PRIZE.md §8; carry audit CL066, GC616 (L326)
 - "XOR plus AND": the linear-shadow claim was wrong; carry-free Collatz keeps the parity AND; the product-free
   shadow has two basins — REFUTED (CL090) — GC832, GC833, CL091
-- Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k; all reach 1 at k = 0, 8, 10, 12 (n < 2^18) —
+- Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k >= 3; all reach 1 at k = 0, 1, 8, 10, 12 (n < 2^18) —
   MEASURED — rule30_and_shadow.py, L453
 
 ## Mahler's 3/2 problem (room since 2026-10-14, MAHLER.md)
@@ -380,7 +380,7 @@ PART: as on the board.
 - Bounded-gap Fibonacci code passes fractional tests, fails integer realization — PROVED GC929.
 - Million-start cutoff certified (COMPUTED GC931); backward-forbidden roots never recur on a white orbit, visitation CLOSED (GC928/CL147).
 - Capped bits/values: no uniform convergence near 4/3 — PROVED GC935/936.
-- Carry dial: H_k=v2(g)+1 at k=0 (GC836); odd k collapse; g=53 survives k=4 — MEASURED L457.
+- Carry dial: H_k=v2(g)+1 at k=0 (GC836); odd k>=3 collapse (k=1: H_1=H_0, g<=63); g=53 survives k=4 — MEASURED L457.
 - Rung-g search: no xi<2^70 with all parts <35/81 (g4), 2^80 <97/243, 2^90 <275/729, 2^100 <2315/6561 — COMPUTED — MAHLER §2.
 - Swarm: path unmoved; gap-g ladder (odd iterates -1/3 mod 2^g) PROVED G294, dual too; height coupling, bowtie CLOSED — MAHLER §2.
 
@@ -407,9 +407,7 @@ PART: as on the board.
 - Cramér's model: the coin's scale plus a structural constant (§8.38); Das not imported; López–Stoll gap noted
 
 ## Side questions (CONSTELLATION.md, by name only)
-- Part A, families after Condrey: Condrey's walls; one-hole walls; slow walls; mostly-white walls; the by-period
-  ladder; the single cell itself; the uniform count
+- Part A: families after Condrey; names in CONSTELLATION.md section A.
 - Part B:20 object questions; names in CONSTELLATION.md section B.
-- Section E, portfolio: seed universality in a deterministic core; a transport law for a defect; the arithmetic of
-  the ordered edge; the infinite-width boundary information limit
+- Section E: portfolio questions; names in CONSTELLATION.md section E (portfolio).
 - Section G, neighbours (10-14): Erdős ternary (fourth figure), Waring, x2x3, normality, Chowla, Langton, BB

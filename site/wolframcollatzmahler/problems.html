@@ -65,7 +65,7 @@ at depth $k$ depends on $c(t)$ for even $t\le k-1$ only.</p>
 <p>A trace is <em>real</em> if some configuration beside the wall produces it; the real visible words form a factorial
 language $L$ (one per phase). Its minimal forbidden words are the <em>cuts</em>: every cut of length at most 44 is known
 and certified (1,130 in phase 0, 1,199 in phase 1).</p>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL356 (the masking identity, checked); L640, L641 (the language and its certified cuts).</p>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.14.md">CHAT-LEDGER.14.md</a> CL356 (the masking identity, checked); L640, L641 (the language and its certified cuts).</p>
 
 <h2 data-glyph="cones">3. The record route, and the missing lemma</h2>
 <p>Suppose a finite configuration kept the wall for ever. Its left half at time 0 is white beyond its support, so its real
@@ -76,10 +76,10 @@ $$R(d)<\infty\quad\text{for every } d\ge 1 .$$
 <p>Finiteness at each depth, not a uniform bound: the data grow with $d$. This single statement refutes period two for
 every finite configuration.</p></div>
 <div class="level"><p class="kicker">Theorem B (proved), the engine of every solved case</p>
-<p>If columns 0 and 1 are both $P$-periodic, every white run in every left column has length at most $2P-2$. Corollary
+<p>If columns 0 and 1 are both $P$-periodic, every white run in row 0 of the forced left half has length at most $2P-2$. Corollary
 (checked exhaustively for $m\le 5$, tight at $m=2$): a visible word periodic with period $m$ over a window fixes the left
 cells the window determines, and their white gaps are at most $4m-2$.</p></div>
-<div class="level"><p class="kicker">The rings (proved for the pure traces)</p>
+<div class="level"><p class="kicker">The rings (proof sketches for the pure traces)</p>
 <p>Column 1 can run in two travelling waves, the S ring (84 cells, column-1 word $110100$, largest white gap 5) and the L
 ring (155 cells, word $1101000100$, gap 6). For a white interval $[d,\,d+L-1]$ at a white anchor $a$ with $N$ samples of
 the S trace,</p>
@@ -97,7 +97,7 @@ pattern looks like in two real cases; the general argument is open.</p></div>
 <p><b>Data.</b> $R(d)$ is exact at every depth $20\le d\le 120$, at $d=125$ (21), at $d=132,139,142,143$ (17 at
 each) and at $d=147$ (18); at most 17 at $121\le d\le 124$, $d=140$, $144\le d\le 146$ and $148\le d\le 150$; at
 least 18 at the other depths $126\le d\le 141$ (at least 23 at $d=133$); by sampling at least 20 at $d=200$, 28 at 279, 38 at 1{,}035. Every witness is in the
-trove. <a href="record.html">Drawn depth by depth.</a></p>
+trove, except the one for 18 at depth 147, which is in rule30_exact_cone_cert.py. <a href="record.html">Drawn depth by depth.</a></p>
 <p class="source"><b>Sources.</b> PERIOD-TWO.md section 2 and row Q6; CHAT-LEDGER.md CL355, GC1148, GC1151, GC1153, GC1154 with CL356, GC1155 to GC1157 with CL356 and CL359; L643 (the census).</p>
 
 <h2 data-glyph="wheel">4. What is known about column 1 beside the wall</h2>
@@ -108,8 +108,9 @@ finite configuration is never eventually periodic.</p></div>
 <p>Columns 0 and 1 of a finite configuration can agree with a periodic pair only over a bounded window; the kicks that
 break column 1's periodicity cannot thin out faster than geometrically.</p></div>
 <div class="level"><p class="kicker">Theorem E, proved</p>
-<p>Column 1 cannot be a Sturmian word (the coding of an irrational rotation by a half-circle arc). With Jen's theorem,
-no rotation coding, rational or irrational, is column 1. Corollary F, Theorems E″ and A⁗ extend this to near-squares at
+<p>Column 1 cannot be a Sturmian word (the coding of an irrational rotation by an arc whose length is the rotation angle).
+With Jen's theorem, no Sturmian coding of a rotation, rational or irrational, is column 1; codings by other arcs are
+excluded only for almost every angle (Theorem E″). Corollary F, Theorems E″ and A⁗ extend this to near-squares at
 unbounded periods, block codes of Sturmian words, resets that come further apart than geometrically, and to Thue–Morse
 and paperfolding for every left edge up to 15,868 cells.</p></div>
 <div class="level"><p class="kicker">The channel bound, proved (certified in exact arithmetic)</p>
@@ -117,7 +118,8 @@ $$\limsup_{n\to\infty}\frac{\log_2 \#\{\text{real visible words of length } n\}}
 <div class="level"><p class="kicker">The wheel, measured</p>
 <p>Between kicks, column 1 is the two-arc coding of the rotation $t\mapsto 17t \bmod 56$, the word</p>
 $$U=\underbrace{0001001101}_{10}\ \underbrace{0001001101}_{10}\ \underbrace{0001001101}_{10}\ \underbrace{0001001101}_{10}\ \underbrace{0001001101}_{10}\ \underbrace{001101}_{6},$$
-<p>seventeen turns in 56 steps. Kicks occur at four classes with short size ranges (Proposition 13). No other column of the
+<p>seventeen turns in 56 steps. After a settled wheel, kicks can occur at only four classes with short size ranges, and at three after 140 steps
+(Propositions 13 and 14). No other column of the
 single-seed pattern, $-40\le i\le 40$, shows any such structure (exploratory).</p></div>
 <div class="level open"><p class="kicker">Conjecture LR (open for the real column)</p>
 <p>No column 1 beside the wall makes the left half eventually white. Proved for eventually periodic column 1 (Jen) and for

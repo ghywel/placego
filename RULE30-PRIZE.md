@@ -7273,6 +7273,77 @@ C ran three replays and the seven agents of lanes D and E worked. No agent had f
 - *Lanes D and E* (agents, little CPU) run alongside lane A.
 - The predictions above stand unchanged. Rule30Period1.lean now counts as not compiled for an environmental reason.
 
+**Outcome, lanes A, D and E (18:53 BST; lane C still running).** All single-party (Intel). Reports, skeptic verdicts and
+logs are kept outside git.
+- *Lane A: 17 of the 18 files compile with no error* (Lean v4.33.1, formal-conjectures at b3f2641, `-j 4`, one at a
+  time). Rule30Period1.lean was deferred (it needs the library build that froze the first launch).
+  - Every `#print axioms` line lists propext, Classical.choice and Quot.sound or a subset. TheoremA, TheoremAprime and
+    TheoremB use only propext and Quot.sound. BlackLock.not_locked8 uses none. None lists sorryAx or
+    Lean.ofReduceBool.
+  - BlackEnd38base.lean compiles alone, 89 s, with no axioms printout, as its role says.
+  - gen_black_end38.py writes BlackEnd38L.lean byte-identical to the one that compiled (1,277,984 bytes, SHA-256
+    8a07be2115811fc3...). It compiles in 821 s (456 s on the M5), and `black_end_two_sided` uses the three
+    standard axioms.
+  - Times: 31 .. 53 s for most files, nearly all of it system time spent mapping Mathlib (about 26 s); JenRoute 563 s
+    (509 s of kernel checking, about 150 s on the M5); WhiteEnd 129 s; peak memory 3.1 to 4.7 GB.
+  - Verdicts: 16 to 18 compile, HELD (17). Axioms, HELD. Byte-identical, HELD. Within the cap (0.6), HELD.
+  - The unexpected check HELD: with `mem_step`'s proof replaced by sorry, lock9 lists sorryAx, while lock_persists
+    (propext) and not_locked8 (none) do not. The axioms check can say no, and it tracks dependence.
+- *Lane D: the derived layers.*
+  - Six readers reported 63 discrepancies: 49 on the 18 site pages and 14 among RECORD-MAP.md's 172 checked lines.
+  - Seven skeptics, told to refute, judged them 36 CONFIRMED, 24 PARTLY and 3 REFUTED. Intel then read each surviving
+    item against its source.
+  - Pages: 47 of 49 upheld in some degree.
+    - 39 corrected in place on eleven pages.
+    - 4 sit in generated data and were not edited (the generated-files rule). These are record.html's embedded
+      records JSON and three entries of trove.html's manifest. They say "exact means proved maximal by SAT with a
+      certificate", which is too strong past depth 97; they describe the channel-bound file wrongly; and they omit
+      later values. Fix them at build_data.py and build_manifest.py and rebuild.
+    - 4 were left: a moving counter that was right when dated (701 probes), two uncertain pointer details, and the
+      status of CL363's proposition (its value was corrected).
+  - RECORD-MAP.md: 13 of 14 upheld and corrected. One was refuted (it followed its source's own wording).
+  - Both sides of every edit are quoted in site/wolframcollatzmahler/COMB-2026-10-14.md.
+  - The patterns, in order of weight:
+    1. Status inflation. GC1148 and GC1151, proof sketches, are called "proved" for the pure rings on four pages.
+       "Exact ... with machine-checked certificates" is said of values that rest on kissat verdicts (139, 142, and
+       RR3 past its certified depths). Tao's theorem is read as "bounded orbits" or "proved for almost all starts".
+       The entropy squeeze is read as "patterns are exponentially rare", which is the measured counting form.
+    2. Stale values. The records beyond 120. Collatz's coin excess "never above 3.7 bits", which became at most 7.4 to
+       43 bits. "A Lean formalisation of Theorems A or B would be the first", when both are in Lean. The counter 309
+       is now 308, since SP04 still awaits its second reader.
+    3. Dropped qualifiers. "Every rotation coding" for every Sturmian one. "Every word ... forbidden" for every
+       minimal word. "Every white run in every left column" for row 0 of the forced left half. Classes "only" at 32
+       and 52 for 98.1%.
+    4. Links into the ledger after its rotation. CL355, GC1148 .. GC1157, CL363 and L640 .. L643 are in
+       CHAT-LEDGER.14.md, not CHAT-LEDGER.md.
+  - In RECORD-MAP.md: a blind match placed at 1..61 (it was at 65, 69 and 73); k = 1 dropped from the Collatz carry
+    line; the wrong probe file for CL086; entry 27 for 133 steps (inherited from PROOFS.md, now noted there); a
+    horizon law that 8.94 refuted, still stated.
+  - Room for the corrections came from two name lists that CONSTELLATION.md already holds (as for Part B). The file is
+    40,192 bytes, under 40 KiB but over 40,000; the next triage compresses it, pointers only.
+- *Lane E: seeding.*
+  - 168 of the 1,001 probe files use randomness. Six were flagged, and Intel read each in the code.
+    - rule30_sl_ancestry.py is a scanner false positive (Random(1049)).
+    - rule30_cloud_visible_gaps.py and rule30_kick_candles.py draw from os.urandom only when no SEED is given; their
+      OUTCOMEs name the seeds (808; 101, 202, 303), and seed 808 replays its record exactly.
+    - rule30_factorial.py's SystemRandom is the deliberate GEN=os control.
+    - rule30_kick_bite.py (known, comb note) and rule30_kick_layers.py have draws that are truly lost.
+  - Only kick_bite's verdicts could flip.
+  - KL-C1's "408 real departures" counts (departure, new phase) pairs. PROOFS.md entry 26 (both places) and the probe
+    now carry dated comb notes.
+  - Entry 26's "classes 12 and 42 have never been seen" now carries a note: class 42 has been seen (KB), and class 12
+    is impossible after 140 steps (entry 27).
+  - The proofs/ pages are generated from PROOFS.md and will take the notes at the next build.
+- *Predictions against outcomes.*
+  - D: 3 to 15 page discrepancies, REFUTED (47 upheld). At most 2 status overclaims, REFUTED (about 11).
+    RECORD-MAP.md 1 to 6, REFUTED (13).
+  - E: 60 to 250 probes use randomness, HELD (168). 5 to 40 not reproducible: 5 draw from unseeded sources by
+    default but only 2 are lost, so it HELD at its edge on the first reading and was REFUTED on the second. At most 5
+    with flippable verdicts, HELD (1).
+- *Reading.* Cloud's lesson holds, and more strongly: the summaries drift, and the computations do not. No primary
+  computed number was found wrong. The largest class is status. A sketch becomes "proved" and a solver verdict
+  becomes "certified" as a result moves outward from its section.
+
 *Correction (8.106, 18:03 BST): "011 (the other classes)" holds for the sample but not as a statement about every
 kick. After 56 steps on the wheel, classes 19, 39 and 49 are possible and force 000. The certified per-class
 statement is in 8.106.*

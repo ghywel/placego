@@ -46,11 +46,11 @@ the white run of the left row at time 0 starting at depth d. Prove R(d) < ∞ fo
 <p><b>What we have.</b> R(d) exactly to depth 120 and at 125, 132, 139, 142, 143 and 147, with the configurations
 achieving it; the values grow (21 at 125; 17 at 132, 139, 142 and 143; 18 at 147; at least 23 at 133; at least 38 at
 depth 1,035 by sampling; <a href="record.html">drawn depth by depth</a>). Theorem B proves finiteness
-when column 1 is periodic over the relevant window, and GC1148 and GC1151 prove it for the two pure "rings" column 1
+when column 1 is periodic over the relevant window, and GC1148 and GC1151, proof sketches not yet second-read, bound it for the two pure "rings" column 1
 can run in, with gaps 5 and 6. At depths 132 and 139 the exact mechanism that ends the record is known: the white
 extension would force a certified forbidden word of length 24 into column 1, or is read off the masked samples. <b>What
 you would need:</b> combinatorics on words, automata, and the certified forbidden-word lists in the trove.</p>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 2 and row Q6; <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL355, GC1148, GC1151, GC1153, GC1155 to
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 2 and row Q6; <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.14.md">CHAT-LEDGER.14.md</a> CL355, GC1148, GC1151, GC1153, GC1155 to
 GC1157, CL356, CL359; L643 (the census).</p>
 
 <h2 data-glyph="wheel">2. Conjecture LR for the kicked wheel <span class="status">Open</span></h2>
@@ -59,8 +59,8 @@ kicks. Show that no such column, kicked however it may be, lets the left side be
 <div class="level open"><p class="kicker">Exactly</p><p>Conjecture LR: no column 1 beside the alternating wall makes the left
 half eventually white. Proved when column 1 is eventually periodic (Jen) and when it is Sturmian (Theorem E, section
 8.57), and for near-squares, block codes of Sturmian words and resets that come further apart than geometrically
-(Corollary F, Theorems E″, A⁗). Open for the real column, whose kicks occur at four classes with short size ranges
-(Proposition 13).</p></div>
+(Corollary F, Theorems E″, A⁗). Open for the real column, whose kicks after a settled wheel fall in at most four classes with short size ranges, and in three
+after 140 steps (Propositions 13 and 14).</p></div>
 <p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.13, 8.54, 8.57; <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> row Q7; <a href="https://github.com/ghywel/placego/blob/main/PROOFS.md">PROOFS.md</a> entry 26.</p>
 
 <h2 data-glyph="coin">3. The counting form <span class="status">Open</span></h2>
@@ -70,7 +70,7 @@ alternating for T steps, and show the count shrinks by a fixed fraction with eve
 reads 0101… for T steps. Prove N(w, T) ≤ 2^(w − αT + c) for some α > 0. Measured: α close to 1 at w = 24. Proved: the
 part paid by the seed's left part (section 8.51). Open: the right part. The same statement for Collatz, with the free
 bits in place of the left part, is in <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a> section 1.</p></div>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> section 8.51; <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 2, question 1; <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a> section 1.</p>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> section 8.51; <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 7, question 1; <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a> section 1.</p>
 
 <h2 data-glyph="map">4. Read our proofs</h2>
 <p>309 statements have a written proof and a second reader inside the project: the 301 second-read proof pages, and eight
@@ -79,19 +79,21 @@ ones that carry weight are Theorems A, B, E and the channel bound (<a href="http
 If you find an error, we want to know; if you confirm one, say so and we will record it with your name or handle.</p>
 
 <h2 data-glyph="trove">5. Go deeper with a machine</h2>
-<p>The record census is exact to depth 120 and at six depths beyond, by SAT with machine-checked certificates. Deeper
+<p>The record census is exact to depth 120 and at six depths beyond, by SAT; machine-checked certificates back it to depth 97
+and at some depths beyond (125, 132 and 143 among them), and the others, 139 and 142 among them, are solver verdicts. Deeper
 exact values, and the exact values between 126 and 141 where only lower bounds of 18 are known, would tell the lemma
-hunters what the mechanism looks like at scale. The certified forbidden-word lists stop at 44 (48 in one phase, in
-progress). The code is in the repository under <a href="https://github.com/ghywel/placego/tree/main/tests/probes">tests/probes</a>; the formats are in the trove.</p>
+hunters what the mechanism looks like at scale. The certified forbidden-word lists in git stop at 44 (one phase reached 48 on 11 October;
+that list is not yet in git). The code is in the repository under <a href="https://github.com/ghywel/placego/tree/main/tests/probes">tests/probes</a>; the formats are in the trove.</p>
 
 <h2 data-glyph="join">6. Formalise</h2>
-<p>Theorems A, B and E and the solid-row proposition are short and elementary. A Lean formalisation of any of them
-would make the first outside-checked piece of this record.</p>
+<p>Theorems A and B are already machine-checked in Lean (tests/probes/lean), by us. Theorem E and the solid-row
+proposition are short and elementary and are not. A Lean formalisation of either, or an outside review of our Lean
+files, would make the first outside-checked piece of this record.</p>
 
 <h2 data-glyph="ring">7. Tell us what we missed</h2>
 <p><a href="https://github.com/ghywel/placego/blob/main/PRIOR-ART.md">PRIOR-ART.md</a> lists what we found: Jen, Condrey, Kopra, Kari and Kopra, Flatto, Lagarias and Pollington, Terras,
-Lagarias, Dubickas, Tao, Yolcu, Aaronson and Heule, and more. Two of our "new" results turned out to be known
-(the window principle's complexity bound is Dubickas 2009). If a paper settles or sharpens anything above, send it.</p>
+Lagarias, Dubickas, Tao, Yolcu, Aaronson and Heule, and more. Several of our "new" results turned out to be known
+(for example, the window principle's complexity bound is Dubickas 2009). If a paper settles or sharpens anything above, send it.</p>
 
 <h2 data-glyph="map">How we check a contribution</h2>
 <ul>

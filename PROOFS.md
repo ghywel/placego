@@ -936,13 +936,16 @@ larger $m$ can only remove kicks, never add one. The one-turn statement is the s
 
 *Checks.* The step is coded twice, per cell and as a whole-row update, and the two agree on every settled set, class
 and kick set from $m = 4$ to $16$ (KL-C0). As a soundness control, 408 real departures from random right halves, each
-after a clean turn and with 20 exact steps on its new phase, all lie inside the one-turn set (KL-C1). The settled
+after a clean turn and with 20 exact steps on its new phase, all lie inside the one-turn set (KL-C1). *(Comb note,
+2026-10-14, RULE30-PRIZE.md 8.106: the 408 counts (departure, new phase) pairs, not departures, since a departure
+can fit more than one phase; KL's draw was unseeded and not recorded.)* The settled
 tables narrow as $m$ grows, from 12 classes at $m = 4$ to 4 at $m = 16$.
 
 *What it says, and what it does not.* The measured alphabets of the two classes seen in real slips, $+2, \dots, +6$ at
 class 32 and $-6, \dots, -1$ at class 52 (11,437 slips, §8.43), are exactly what sixteen columns of local structure
 allow. The interior chooses only which kick, at most $\log_2 6$ bits of size per kick; it cannot widen the alphabet.
-Classes 12 and 42 are allowed but have never been seen. The proposition is an upper bound on what a kick can be, not
+Classes 12 and 42 are allowed but have never been seen. *(Comb note, 2026-10-14, RULE30-PRIZE.md 8.106: since then
+class 42 has been seen, rarely, 67 of 20,282 settled kicks (KB), and class 12 is impossible after 140 steps, entry 27.)* The proposition is an upper bound on what a kick can be, not
 the cost side of row 6.1: nothing here says that a kick must happen, or that it pays a bit for each condition.
 
 *Second reader's note on Proposition13 (GPT, 2026-10-07; GC359).* Verified as a computed upper bound, with a timing
@@ -984,7 +987,8 @@ reading KL's source and by an independent replay.
   refuted. Post-hoc, the table is unchanged down to 44; class 29 (-9 .. -5) appears at 43, and class 2 gains +9 at
   38.
 - **Scope, as GC588 states it.** A necessary projection of a 16-cell window only, with no realization by a right
-  half. The settled alphabet after 133 steps (entry 27) is untouched.
+  half. The settled alphabet after 133 steps (entry 26; comb note, 2026-10-14: this said entry 27, the 140-step result) is
+  untouched.
 
 ### 27. Proposition 14 (computed, certified): the kick alphabet after 140 steps on the wheel, exact at 140
 
