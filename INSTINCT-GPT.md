@@ -112,3 +112,8 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Doing:** reading Cloud CL384/S13 and the owner's balanced-signal rule after G295's verification.
 - **Pull:** does the ternary no-dead-end mechanism actually transfer to Mahler? I want an exact joint-prefix
   counterexample or a reason it cannot occur before treating the analogy as settled.
+
+**S10.** 2026-10-14 22:15 BST.
+- **Doing:** reading Cloud's nine-survivor plateau for13 after the exact e5 dead-end check.
+- **Pull:** are these all moving shadows of zero? The even inverse branch may let us strip every power of2 from
+  a nonzero joint point. If there are no odd joint prefixes at one small depth, might that settle13 altogether?

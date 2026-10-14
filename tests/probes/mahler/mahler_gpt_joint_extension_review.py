@@ -21,6 +21,21 @@ bounded mechanism line, without asserting the intersection is trivial.
 REFUTED-BY: any J failure or CF non-rejection. B failure is retained, not
 an instrument failure. Finding a dead end does not disprove a converse.
 OUTCOME at registration: NOT RUN; append results and keep predictions.
+OUTCOME 2026-10-14 22:16 BST, registered19944bff: J1-J3 PASS. CF rejected
+10101 with bounds133/243 >=1/2. B HELD2 dead ends through8, first(T7,r9).
+U prints exact child windows: child9 good, product45 bad; child137 bad,
+product173 good. TIP HALT direct transfer. Exit0,0.090s. B's source outcome
+was learned after writing B but before execution; this is reproduction.
+ADDENDUM GC1251, predictions BEFORE execution of 'thirteen' mode:
+ P13 blind-to-this-check: at some T<=8 no odd joint prefix survives for13.
+ E exact control: even F_e(t) maps bijectively onto F_e(t-1) by3r/2,
+ for e1,3,5,13 and t2..8. Identity must retain odd prefixes at every depth.
+ U13 unexpected: display full13 residue sets and their minimum valuation,
+ so a moving-zero-shadow pattern is checked directly.
+ KILL: P13 plus E confirms ACT, develop finite-cutoff proof. E failure kills
+ route/HALT. P13 failure with E intact is inconclusive/HALT this bounded
+ attempt. No universal conclusion from the inconclusive outcome.
+OUTCOME ADDENDUM at registration: NOT RUN.
 """
 from fractions import Fraction as F
 from time import perf_counter
@@ -89,5 +104,40 @@ def main():
         print('B FAILED: no dead end through8. TIP: HALT this bounded line, inconclusive')
     print('ALL JOINT-EXTENSION CONTROLS PASS; seconds',round(perf_counter()-start,3))
 
+def thirteen():
+    start=perf_counter()
+    A={t:{r for r in range(1<<t) if (lambda z:z[0]<z[1])(window(r,t))}
+       for t in range(1,9)}
+    first=None
+    comparisons=0
+    for e in (1,3,5,13):
+        sets={t:{r for r in A[t] if e*r%(1<<t) in A[t]} for t in range(1,9)}
+        for t in range(2,9):
+            even={r for r in sets[t] if r%2==0}
+            image={3*(r//2)%(1<<(t-1)) for r in even}
+            assert image==sets[t-1] and len(even)==len(sets[t-1]),(e,t)
+            comparisons+=1
+        if e==1:
+            assert all(any(r%2 for r in sets[t]) for t in sets)
+            print('Identity countercontrol PASS: odd points at every depth')
+        if e==13:
+            for t in range(1,9):
+                odd=sorted(r for r in sets[t] if r%2)
+                nz=sorted(r for r in sets[t] if r)
+                vmin=min((r&-r).bit_length()-1 for r in nz)
+                print('U13 depth',t,'joint',sorted(sets[t]),'odd',odd,'min v2',vmin)
+                if not odd and first is None:
+                    first=t
+    print('E PASS',comparisons,'exact even-prefix bijections')
+    if first:
+        print('P13 HELD first odd extinction depth',first,'TIP ACT: finite-cutoff proof')
+    else:
+        print('P13 FAILED odds persist through8; TIP HALT bounded attempt, inconclusive')
+    print('ALL THIRTEEN CONTROLS PASS; seconds',round(perf_counter()-start,3))
+
 if __name__=='__main__':
-    main()
+    import sys
+    if sys.argv[1:]==['thirteen']:
+        thirteen()
+    else:
+        main()
