@@ -111,7 +111,7 @@ integer arithmetic and reports the step at which no ξ in [n, n+1) is left below
 <div class="tools"><label>n <input id="nin" size="22" value="1541211973603965806" inputmode="numeric" aria-label="Integer part n"></label>
 <button id="go">Check</button>
 <button class="pre" data-n="1541211973603965806">157</button><button class="pre" data-n="9850069454682037">137</button>
-<button class="pre" data-n="119619616250377">120</button><button class="pre" data-n="4">4</button></div>
+<button class="pre" data-n="119619616250377">120</button><button class="pre" data-n="4">12 (n = 4)</button></div>
 <p class="pill" id="out" aria-live="polite"></p>
 <p class="note">The start 4 is the small case worth watching: some ξ in [4, 4½) keeps below one half for j = 0 to 11, a
 horizon of 12. Starts 1, 2, 3 and 5 have horizons 4, 3, 2 and 6.</p>
@@ -185,7 +185,7 @@ function records(){const pts=[[12,29],[16,39],[20,47],[24,59],[28,61],[32,76],[3
   x.fillStyle=css("--teal-text");x.fillText("coin law 2.41 w",X(44),Y(2.41*44)+22);
   x.fillStyle=css("--ember");pts.forEach(([w,h])=>{x.beginPath();x.arc(X(w),Y(h),4,0,7);x.fill();});}
 function check(){const s=document.getElementById("nin").value.trim(),o=document.getElementById("out");
-  if(!/^[0-9]+$/.test(s)||s==="0"){o.textContent="Please type a positive whole number.";return;}
+  if(!/^[0-9]+$/.test(s)||BigInt(s)<1n){o.textContent="Please type a positive whole number.";return;}
   const t0=performance.now(),{h}=walk(BigInt(s),false),ms=(performance.now()-t0).toFixed(1);
   o.textContent=h===null?"Still alive after 4000 steps: a Z-number candidate. Please tell us at once.":"Some ξ in ["+s+", "+s+"½) keeps below one half for j = 0 to "+(h-1)+"; at j = "+h+" none is left. Horizon "+h+" ("+ms+" ms).";}
 document.getElementById("go").onclick=check;
