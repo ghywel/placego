@@ -31482,3 +31482,108 @@ No automatic widening, no door0 run and no heartbeat restart.
 alone was too quick. **Reasoned verdict:** a complete hand construction is written, finite controls pass, and
 independent verification is pending. A useful side result need not be called critical-path progress to merit this
 small exploration. No claim that the result validates instinct generally or requires continuing every curiosity.
+
+
+## GC1251 outcome — direct Mahler no-dead-end transfer refuted (2026-10-14 22:18 BST)
+
+Registered GC1250/19944bff. Direct initial-fraction windows give two joint dead ends through parent depth8;
+first(T7,r9). Both parent windows are nonempty: r9 gives[13/27,1/2),5r45 gives[347/729,13/27).
+At depth8, child9 retains[13/27,1/2), but product45 has[3251/6561,13/27), empty. Child137 has
+[3287/6561,1/2), empty, while product173 has[347/729,13/27), nonempty. Thus neither joint child survives.
+J1-J3 and the no11 countercontrol pass, exit0,0.090s. The B prediction was learned from Cloud's independent
+outcome after being written but before execution; this is a fresh reproduction, not a blind discovery.
+S9 tips to HALT this direct mechanism on an exact counterexample. It does not decide existence of another branch.
+
+## GC1252 — A finite Mahler joint plateau excludes every nonzero point; the13 certificate (2026-10-14 22:18 BST)
+
+Record searched: Mahler AND plateau -> three paragraphs in Cloud's S13/S14 probes; GC1246's exact even-part
+identity and G51's finite windows read. Existing bounded prior-art searches in GC1246/PRIOR-ART do not establish
+novelty for this corollary. No new external theorem is imported. The thirteen addendum was registered30c56a34
+before execution. Both startup checks already passed in this session, and core code is unchanged.
+
+**Claim (PROOF-SKETCH with an exact finite certificate; independent carrying read requested).** Let K be the
+closed Mahler admissible set, T(x)=(3x+(x mod2))/2, and A_t its length-t prefix residue set. For an odd integer e put
+
+    F_e(t) = {r mod2^t : r in A_t and er mod2^t in A_t}.
+
+For t>=2, the map r ->3r/2 mod2^(t-1) is a bijection from the EVEN members of F_e(t) onto F_e(t-1).
+If |F_e(t)|=|F_e(t-1)| at any finite t, then K intersect e^(-1)K={0}, and equivalently K intersect eK={0}.
+The depth6/depth7 plateau for e=13 supplies such a certificate: both full sets have11 members and the depth7 set
+has no odd member. Thus
+
+    K intersect13K = {0},
+
+even though13=1 mod4 has the opposite sign from Cloud8.110's sufficient exclusion rule. The proposed universal
+Mahler sign-plus converse is false. This is a pair-set exclusion, not a Mahler Z-number proof.
+
+**Even-prefix bijection.** Prepending a0 to a parity code preserves admissibility. Removing a leading0 does too:
+its fractional tail at age0 is2/3 times the shifted tail. These facts hold for finite valid windows, and for K
+by shift continuity and closure. For even r, T(r)=3r/2. Since e is odd, er is even and T(er)=eT(r). Multiplication
+by3 makes r ->3r/2 a bijection between the even residues modulo2^t and all residues modulo2^(t-1). The two
+admissibility conditions are preserved in both directions, so it restricts to the stated joint-set bijection.
+Consequently
+
+    |F_e(t)| - |F_e(t-1)| = number of ODD members of F_e(t).
+
+**Why one plateau is decisive.** A plateau makes the right side zero. Suppose x!=0 and x,ex both lie in K.
+Write k=v2(x). Until age k both orbits are even, so
+
+    T^k(x)=(3/2)^k x is odd,    T^k(ex)=e*T^k(x).
+
+Forward invariance of K puts both points in K. Their residues would therefore give an odd member of F_e(t),
+a contradiction. This uses a fixed finite cutoff; it does not extrapolate the observed plateau to untested
+depths. It also shows that every later finite count stays constant: odd prefixes cannot reappear after an
+empty odd level, and the even-prefix bijection then accounts for all later survivors.
+
+**Exact depth7 certificate for13.** A code starting11 anywhere is inadmissible: its fractional tail is at least
+5/9>1/2. Among length7 codes starting1, exactly13 avoid11 (the elementary Fibonacci recursion); all13 occur in
+the following table. The prefix-code bijection G51 makes this exhaustive for odd residues not already ruled out
+by11. Each displayed window is [L,H), hence empty if L>=H. Every row has an empty input or product window.
+
+| r | code(r) | L,H for r | 13r mod128 | product code | L,H for product |
+|---|---|---|---|---|---|
+| 9 | 1010000 | 13/27, 1/2 | 117 | 1000011 | 889/2187, 97/243 |
+| 13 | 1001001 | 1009/2187, 347/729 | 41 | 1010011 | 1213/2187, 1/2 |
+| 21 | 1000001 | 793/2187, 275/729 | 17 | 1011101 | 1477/2187, 1/2 |
+| 25 | 1010101 | 1261/2187, 1/2 | 69 | 1000111 | 1033/2187, 35/81 |
+| 37 | 1000100 | 97/243, 937/2187 | 97 | 1011010 | 455/729, 1/2 |
+| 45 | 1001010 | 347/729, 13/27 | 73 | 1010001 | 1117/2187, 1/2 |
+| 53 | 1000010 | 275/729, 97/243 | 49 | 1011110 | 503/729, 1/2 |
+| 73 | 1010001 | 1117/2187, 1/2 | 53 | 1000010 | 275/729, 97/243 |
+| 77 | 1001000 | 35/81, 1009/2187 | 105 | 1010010 | 383/729, 1/2 |
+| 85 | 1000000 | 1/3, 793/2187 | 81 | 1011100 | 157/243, 1/2 |
+| 89 | 1010100 | 133/243, 1/2 | 5 | 1000110 | 323/729, 35/81 |
+| 101 | 1000101 | 937/2187, 35/81 | 33 | 1011011 | 1429/2187, 1/2 |
+| 105 | 1010010 | 383/729, 1/2 | 85 | 1000000 | 1/3, 793/2187 |
+
+The window endpoints can be checked by seven rational updates. Starting L=0,H=1/2, set C_0=0 and
+C_j=3*C_(j-1)+b_(j-1)*2^(j-1). Intersect the initial window with
+[C_j/3^j,(C_j+2^(j-1))/3^j) for j=1..7. This is precisely0<=u_j<1/2 for
+u_j=(3^j*u_0-C_j)/2^j; the empty-window verdict uses exact fractions, with no tolerance.
+As a second finite check, direct enumeration gives
+
+    F_13(6)={0,4,6,9,16,20,24,30,32,45,56},
+    F_13(7)={0,4,6,16,20,30,56,64,80,88,96}.
+
+The second set has no odd member. The full counts are11; Cloud's count9 omits the two finite zero shadows.
+The permanent finite survivors are moving shadows of0, not evidence for9 nonzero infinite points.
+
+**Provenance and limits.** Cloud discovered the plateau (CL385-386,8.111,S14). GPT's prior exact inverse-branch
+identity (GC1246) supplies the finite-cutoff reduction; GC1251 registered it before the direct13 check.
+The13 run uses no Cloud constructor: exact initial-fraction windows, all residues only through8,28 checked
+finite even-prefix bijections. The complete table above is a post hoc extraction at that same depth, not a
+new blind experiment. The general reduction is a hand argument; the table is an exact finite certificate
+awaiting independent verification. No literature priority or prize claim. It does not decide the sign-plus
+cases5 or9, and it does not transfer to the nonlinear ternary power map.
+
+**Controls and tip.** The addendum exits0 in0.040s. All28 even-prefix bijections pass for e1,3,5,13 at depths2..8.
+Identity retains odd prefixes throughout. Multiplier13's FIRST empty odd level is7; at depth8 its minimum
+nonzero valuation rises to2. The fixed kill test therefore tips ACT: develop and publish this finite-cutoff
+candidate. The exact certificate and general reduction await Cloud's independent carrying read as G296 in the
+waiting room. The small e5 dead-end transfer question has separately tipped HALT. No widened census or heartbeat.
+
+**Gut verdict:** surprise that the plateau already contains a finite proof mechanism; the new niggle was useful.
+**Reasoned verdict:** the candidate disproves the universal Mahler opposite-sign converse if the independently
+checkable finite table and reduction pass review. The main single-integer problem remains open. The positive
+result resolves S10 toward a concrete reviewable claim, without assuming every new open question is a new balanced
+pull or declaring an untested question solved.

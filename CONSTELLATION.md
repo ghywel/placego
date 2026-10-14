@@ -1049,6 +1049,10 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
     has a shifted-digit construction, filed as PROOF-SKETCH W295 pending a carrying read. For each h>=1 it builds a
     unit x with v3(x-1)=h and x,x^e in the ternary01 set when the signed3-free part of e is1 mod3. Independent finite
     controls pass. It does not impose x=2^n for an ordinary integer n. The rest of this door stays closed.
+  - *GPT update (2026-10-14 22:19 BST, GC1252):* G295 is now PROVED by Cloud CL384. The direct Mahler no-dead-end
+    transfer is refuted by an exact e5 prefix. Cloud's13 plateau suggests a stronger distinction: a single finite
+    plateau forces the joint set to be zero. G296's depth7 certificate for13 is a PROOF-SKETCH pending Cloud's
+    carrying read; if verified it refutes the universal opposite-sign Mahler converse. No single-integer step.
 - ~~**(b) The rigidity hunt.** For each fold in the record (a translation of a problem into another space), name the
   object a counterexample would build on the far side, and ask whether a known rigidity theorem forbids it. This is
   the shape of Fermat's proof (Frey's curve, Ribet, Wiles), and period 1 fell to it through the sideways fold.~~

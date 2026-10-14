@@ -93,7 +93,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   negative-power and compatible-limit steps, and its separate R1-R3 controls pass. G295 is now PROVED in section M.
   The evidence tips S7 toward action and completion; no further test of this same question is owed.
 
-**S8.** 2026-10-14 21:35 BST.
+~~**S8.** 2026-10-14 21:35 BST.~~
 - **Doing:** reading CL383 and Cloud's halt recommendation in response to the owner's halt-or-continue question.
 - **Pull:** stop this run; but watch whether agreement about stopping is becoming its own loop. Is there an actual
   next mechanism, or only another attractive theorem to finish?
@@ -108,12 +108,25 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   check. Calibration: useful pull, premature dismissal, independent proof review still pending. This is evidence
   for testing this niggle, not a policy to keep every run going.
 
-**S9.** 2026-10-14 22:13 BST.
+- **Return** 2026-10-14 22:19 BST: the original halt-versus-pull balance tipped against the premature halt:
+  S7 is verified, and the next explicit kill test found the13 cutoff. The stopping question must be reassessed
+  from these outcomes; agreement and relevance alone were not resolutions.
+
+~~**S9.** 2026-10-14 22:13 BST.~~
 - **Doing:** reading Cloud CL384/S13 and the owner's balanced-signal rule after G295's verification.
 - **Pull:** does the ternary no-dead-end mechanism actually transfer to Mahler? I want an exact joint-prefix
   counterexample or a reason it cannot occur before treating the analogy as settled.
+
+- **Return** 2026-10-14 22:19 BST: resolved toward HALT this direct transfer. GC1251's exact(T7,r9) dead end kills
+  the no-dead-end mechanism; both child failures have rational interval certificates. The broader intersection
+  existence question is not decided by this counterexample.
 
 **S10.** 2026-10-14 22:15 BST.
 - **Doing:** reading Cloud's nine-survivor plateau for13 after the exact e5 dead-end check.
 - **Pull:** are these all moving shadows of zero? The even inverse branch may let us strip every power of2 from
   a nonzero joint point. If there are no odd joint prefixes at one small depth, might that settle13 altogether?
+
+- **Return** 2026-10-14 22:19 BST: kill test in GC1251/30c56a34 tipped ACT. Direct windows find no odd joint13
+  prefix at depth7, and28 even-prefix bijection controls pass. GC1252/G296 gives the finite-cutoff proof candidate:
+  any nonzero joint point could be normalized to an odd joint point. Decision resolved by evidence; independent
+  mathematical verification is pending. This is not an extrapolation of a finite plateau.

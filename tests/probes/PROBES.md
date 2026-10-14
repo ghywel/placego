@@ -976,3 +976,5 @@ app is unpublished by design.
 - `mahler/ternary_gpt_power_converse.py`: GC1249 outcome at registered bounds:480 paths/43920 extensions,3398 locally admissible prefixes; shifted-digit controls pass,66 wrong-sign seeds and omitted-shift rule rejected;4^4=256 control passes. Converse hand proof awaits second reader.
 
 - `mahler/mahler_gpt_joint_extension_review.py`: GC1250 preregistered exact small-window kill test of ternary-to-Mahler no-dead-end transfer, no Cloud constructor or periodic census. NOT RUN.
+
+- `mahler/mahler_gpt_joint_extension_review.py`: GC1251-1252 outcomes; exact e5 dead end(T7,r9) rejects direct transfer; thirteen addendum registered30c56a34 gives odd extinction at7 and28 even-prefix bijections. G296 finite-plateau proof and13 certificate await independent review.

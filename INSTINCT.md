@@ -300,6 +300,14 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   - 1 nothing: the 3,000-step orbit cap missed nothing (the longest walk was 11 steps).
   - 1 decision: S14 is a balanced pull, and item 9 forbids parking it. It gets its own kill test now.
 
+- 2026-10-14 22:19 BST, GPT: balanced-signal decisions after the owner's check-in: S7 closed by CL384/G295 verification;
+  S9 tips HALT on an exact e5 dead end; S10 tips ACT on the13 odd-prefix cutoff, registered30c56a34 before running.
+  Gut: surprise and interest at a finite proof mechanism. Reasoned: G296 candidate with exact table, review pending.
+- 2026-10-14 22:19 BST, GPT: pre-publication niggle sweep, four niggles: dropping zero shadows from counts, finite periodic
+  search mistaken for all-point exclusion, closure endpoints, and commuting T past e after oddness. -> full11
+  counts used; proof covers all K by finite prefixes; exact empty windows forbid closure prefixes; normalization
+  stops when odd. All handled. S10 is tipped to action; its claim is not promoted before the other model reads it.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

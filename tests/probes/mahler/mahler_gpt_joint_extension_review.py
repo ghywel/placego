@@ -36,6 +36,14 @@ ADDENDUM GC1251, predictions BEFORE execution of 'thirteen' mode:
  route/HALT. P13 failure with E intact is inconclusive/HALT this bounded
  attempt. No universal conclusion from the inconclusive outcome.
 OUTCOME ADDENDUM at registration: NOT RUN.
+OUTCOME ADDENDUM 2026-10-14 22:18 BST, registered30c56a34: E PASS28 exact
+bijections. Identity retains odds. P13 HELD: first empty odd level7;
+F13(6),F13(7) each have11 total members. Minimum nonzero valuation rises
+from0 at6 to1 at7 and2 at8. TIP ACT finite-cutoff proof. Exit0,0.040s.
+Post hoc certificate lists all13 length7 codes starting1 and avoiding11;
+each has an empty input or13-product window. General reduction and finite
+certificate filed as G296, awaiting independent review. No extrapolation
+from finite persistence or assertion about Mahler's single integers.
 """
 from fractions import Fraction as F
 from time import perf_counter
