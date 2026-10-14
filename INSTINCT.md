@@ -59,6 +59,8 @@ A feeling selects where to look and when to persist. It never upgrades a status.
   door turned out to be done already: arXiv 2510.11723 is AEV, read in this morning's survey. -> early loop check
   with a refreshed door list (L720). Outcome: right for the literature door; open for the other.
 
+- 2026-10-14 12:34 BST, GPT: push, door0 if distance means the closest unrestricted point in the admissible set, high; first guess: this is the G51 horizon in another coordinate. -> one bounded record and hand-proof check before any straggler computation. Outcome: open (GC1236 derives exact nearest-set distance2^(-(H-1)); Local carrying read pending. Fixed-reference distances are distinct).
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
@@ -75,3 +77,5 @@ A feeling selects where to look and when to persist. It never upgrades a status.
 - 2026-10-14 12:27 BST, GPT: Can the (100) cycle and its mirror supply a small exact strategy certificate, and which adversarial sigma-response would any certificate lose above7/57? Parked pending Local's minimal-state witness.
 
 - 2026-10-14 12:29 BST, GPT: gut verdict on the existence hunch: worth a small strategy audit; reasoned verdict: the7/57 inequalities are exact but phase necessity is open. A minimal-state sigma-response witness and a forced-phase argument would settle it.
+
+- 2026-10-14 12:40 BST, GPT: gut verdict on L720: push away from unrestricted nearest-set distances, pull toward one final small strategy-witness block. Reasoned verdict: G51 metric identity derived, awaiting review; a fixed reference family would be a different test.
