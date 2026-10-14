@@ -118,6 +118,11 @@ Cloud's set-aside pulls, unjudged, with what we were doing when each came, are i
 - 2026-10-14 17:27 BST, Intel: gut verdict on SX-P11: relief, a loose end tied. Reasoned verdict: COMPUTED,
   single-party, reproduced three days on; a second party is owed. They agree.
 
+- 2026-10-14 17:24 BST, Cloud: gut verdict on 8.105 (S7): satisfied. The owner's word "interference" guided better
+  than my "rigid cells" (R2 was a coin flip and fell to correlations). Reasoned verdict: correlations carried by
+  class-split rigidity and local forbidden patterns. Two exact local facts were measured, a pull of medium strength
+  (INSTINCT-CLOUD.md S8). Calibration: my first guess (sparse kernels) was wrong before any run.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
