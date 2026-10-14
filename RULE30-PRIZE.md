@@ -6669,7 +6669,7 @@ predicted before the runs.
   entrances, and the actual 84- and 155-rings (h(S)^infinity, h(L)^infinity) keep the clock forever with infinite left
   support. Real S/L residences are not bounded by 466 ticks (GC1214).
 
-### 8.100 Code, unwritable numbers and time: the owner's three foundations questions (2026-10-14 15:55 BST, Cloud)
+### 8.100 Code, unwritable numbers and time: the owner's three foundations questions (2026-10-14 15:52 BST, Cloud)
 
 *The owner asked these of Cloud in a cloud session on the afternoon of the joint halt (NOW.md), while Local holds and
 GPT's task is closed. They were answered in conversation and pinned here at the owner's request: "I want you to pin
@@ -6803,7 +6803,7 @@ what happened to that photon in the middle. The photon left, its local experienc
   $cr$ fires near the wall, sits exactly where the shortcut breaks. It is parked in the incubator and not started while
   the joint halt stands; the next idea is the owner's.
 
-### 8.101 The rigidity hunt: what a counterexample builds on the far side of each fold (2026-10-14 16:15 BST, Cloud)
+### 8.101 The rigidity hunt: what a counterexample builds on the far side of each fold (2026-10-14 16:11 BST, Cloud)
 
 *Door (b) of CONSTELLATION.md section H, asked for by the owner: "Proceed with your warmest b) when you are ready." A
 reading and writing block across the four problems, with one small computation as its unexpected check. The question
@@ -6841,3 +6841,65 @@ search. During setup one search had already shown that Senge appears in the reco
   - E2: the fewest nonzero digits for n in (N/2, N] grows roughly linearly, near the coin's (2/3) n log_3 2, about
     0.42 n. That is far above Stewart's log n / log log n floor.
   - Counterfactual: a large n with few nonzero digits.
+
+**Record searched:** Senge, Baker, Subspace, Steiner, de Weger, linear forms, 1957, automatic, generating function,
+periodicity conjecture, rational-orbit, Lagarias, Kopra, Tao, plus a reading of CONSTELLATION.md row 5 (G22 .. G130).
+Hits used:
+- PRIOR-ART.md "Collatz circuits" (Steiner 1977; Simons and de Weger 2005, for G47);
+- G36 (Monks and Yazinski: rationality preservation is equivalent to rational-orbit periodicity, a conjecture);
+- CONSTELLATION.md section G (Mahler 1957 for Waring; Furstenberg; Rudolph), G.1 (Lagarias 2009), row 5 (G128,
+  G128.1, G27.2);
+- RECORD-MAP.md's prior-art anchors (Jen 1990; Kopra 2021).
+
+No hit for Ridout, Corvaja, Stewart, S-unit, Christol, Pólya–Carlson, Shmerkin or Baker by name. The setup hit for
+"Senge" was the substring inside "passenger" (`record_find.py` matches substrings), so Senge–Straus is not in the
+record. Named from memory and not re-read: Ridout (1957), Corvaja and Zannier (2004), Senge and Straus (1973),
+Stewart (1980), Christol (1979), Pólya–Carlson, Shmerkin (2019) and Wu (2019), Skolem–Mahler–Lech, Frey, Ribet,
+Wiles. A second reader should check each statement against its source, especially the form of Stewart's bound and
+the scope of Corvaja and Zannier.
+
+**The table.** For each fold: what a counterexample builds on the far side, whether that is an equation or a digit
+(window) condition, the nearest single-object rigidity theorem, and the gap.
+
+| Fold (source) | A counterexample builds | Kind | Nearest single-object theorem | The gap |
+|---|---|---|---|---|
+| Rule 30, sideways: left-permutivity (§8.36; CONSTELLATION.md row 5) | a finite configuration whose column 0 is eventually 0101, so column 1 is aperiodic (Jen; G27.2) and the forced left half is eventually white beyond the support | equation plus finiteness | Jen (1990): adjacent columns are never both eventually periodic. Condrey and Rule30Period1.lean: period 1. Kopra (2021): one column, width 1 | Rule 30 has width 2. G128: with no finite support the far side holds every binary trace, so all the rigidity comes from finite support. What remains is R(d) finite at every depth |
+| Rule 30 over GF(2): the Bézier form (§8.49, §8.100) | an echo column (Rule 30's centre XOR the Rule 150 jump) that is 2-automatic, since 0101 and the jump are both automatic | equation (automatic, so algebraic over F_2(w) by Christol) | Christol: automatic means algebraic. Linear rules' diagrams are automatic | Christol characterises automatic sequences and forbids nothing. A door needs "the echo column is never automatic", which is stronger than the problem |
+| Collatz cycle: 2-adic conjugacy (PERIOD-TWO.md Q9; COLLATZ-PRIZE.md) | a rational 2-adic point with a periodic parity vector, at a positive integer | equation | Baker's linear forms in logarithms: Steiner (1977), no 1-cycles; Simons and de Weger (2005), no m-cycles for small m | proved only for a bounded number m of odd-even runs |
+| Collatz divergence: the same fold | a positive integer whose parity vector is not eventually periodic | digit | none. Tao (2019) is set-level. Rational-orbit periodicity (G36) is a conjecture | the far-side statement is itself open |
+| Mahler: one series in the reals and the 2-adics (MAHLER.md section 1; G50, G51) | a positive integer n_0 whose itinerary keeps every real tail below 1/2: a point of S_strict | window, with eventually periodic itineraries the solved case (PRIZE-PROBLEMS.md section 7) | Mahler (1957) through Ridout's theorem: the distance from (3/2)^k to the nearest integer exceeds (3/4)^k for all large k, ineffectively. Corvaja and Zannier (2004), through the Subspace theorem, for algebraic multipliers | these theorems forbid exponentially fine closeness for a fixed algebraic number. A Z-number needs a coarse window [0, 1/2), and nothing makes it algebraic |
+| Erdős: 2^n read in base 3 (CONSTELLATION.md G.1; Lagarias 2009) | an n > 8 with every ternary digit of 2^n in {0, 1} | digit | Senge and Straus (1973), Stewart (1980): no large integer has few nonzero digits in two independent bases, so 2^n has a growing number of nonzero ternary digits (Stewart: at least about log n / log log n) | they count the nonzero digits and do not see which digits they are. With at most K nonzero digits there are finitely many n; Erdős needs K to grow with n |
+| Mahler and Erdős: x2 x3 (CONSTELLATION.md section G) | one orbit under one multiplier | digit | Furstenberg (1967): an irrational number's orbit under x2 and x3 together is dense, a single-orbit theorem reached through the orbit's closure | needs two independent multipliers acting together, and each problem has one. Rudolph, Shmerkin and Wu are set-level. Door (c) asks whether the real and 2-adic places could supply the second |
+
+**Outcomes.**
+- *P1 holds, with one exception I did not predict.* Mahler's and Erdős's counterexamples are digit or window points,
+  while Rule 30's period 2 and a Collatz cycle are equations. Mahler's eventually periodic itineraries are also an
+  equation case, and the solved one.
+- *P2 holds.* All three classes appear, and the Diophantine class is the only one that proves statements about every n
+  of one specific orbit.
+- *P3 holds: no door.* Every single-object rigidity theorem found controls an object of bounded complexity: a bounded
+  number of odd-even runs (Baker, for Collatz cycles), a fixed algebraic number at exponentially fine scale (Ridout and
+  Subspace, for Mahler), a bounded number of nonzero digits (Senge–Straus, for Erdős), one column or width 1 (Jen,
+  Kopra, for Rule 30). Every counterexample's complexity grows with n. This is the site's "one missing method" seen
+  from the far side. Reading, not a theorem: *the missing method is a single-object rigidity theorem at unbounded
+  complexity*, and the field that comes nearest is Diophantine approximation.
+- *P4 is partly wrong.* The record already held the Baker-type cycle bounds (Steiner, Simons and de Weger, for G47) and
+  rational-orbit periodicity (G36). It did not hold Senge–Straus: the setup hit was the substring in "passenger".
+- *P5 holds.* Jen is in the record (§8.13), and G27.2 already requires an aperiodic companion column.
+- *The counterfactual is not triggered.* The nearest cell is the GF(2) fold. It gives an equation (the echo column is
+  automatic) in a space with a rigidity theory, but Christol characterises automatic sequences without forbidding them.
+  The echo column is exactly door (d)'s object, so (b) sharpens (d): is the echo column ever 2-automatic? For a single
+  seed that is equivalent to asking whether the centre column is automatic, which is stronger than period 2.
+- *Door (c) gains an anchor.* For Mahler, the nearest theorems (Ridout, Subspace) are the established machinery that
+  uses the real place and the p-adic places together, which is what (c)'s hunch reaches for. (c) is not delved here.
+- *Unexpected check* (`tests/probes/lexicon/erdos_cloud_ternary_support.py`, predictions E1 and E2 above, both hold).
+  - Control: below 2000, the exponents with 2^n free of the digit 2 are exactly 0, 2 and 8.
+  - E1: with at most 6 nonzero ternary digits, only n <= 13 occur.
+  - E2: the fewest nonzero digits over (N/2, N] tracks 0.42 n, at ratios 0.67 (n = 25) to 1.06 for N = 16 .. 1024.
+    Stewart's floor there is about 3.
+  - So the true count is about the coin's, far above anything the theorem guarantees, and the theorem's quantity
+    (how many digits are nonzero) is not Erdős's (which digits).
+
+**Verdicts.** Reasoned: no door, and the gap is now named the same way in all four problems, from the far side:
+bounded complexity in every theorem that exists, against complexity that grows with n in every counterexample. Gut: a
+warm pull that ended settled. The hunt was the right shape of question, and its one live thread is (d), now sharper.

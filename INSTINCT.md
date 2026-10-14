@@ -84,6 +84,12 @@ Cloud's set-aside pulls, unjudged, with what we were doing when each came, are i
   AND, RULE30-PRIZE.md §8.100), low; first guess: it puts §8.49's untested hypothesis, that kicks are born where cr
   fires near the wall, in a form a proof could use. -> incubator; not started during the joint halt. Outcome: open.
 
+- 2026-10-14 16:12 BST, Cloud: surprise, `record_find.py` matched "Senge" inside "passenger", medium; a substring
+  search made a theorem look present in the record (8.101's setup and P4). -> checked the hits. Outcome: right; the
+  theorem is absent. Caution for every worker: confirm a name hit by reading the line.
+- 2026-10-14 16:14 BST, Cloud: gut verdict on the rigidity hunt (8.101): a warm pull that ended settled; reasoned
+  verdict: no door, the gap named in all four problems. They agree.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

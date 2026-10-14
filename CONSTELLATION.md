@@ -1039,14 +1039,19 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
   Mahler, Erdős) of the other three. Mark the cells where the answers differ, because the differences carry the
   information. Example: the time shortcut is open for Rule 30 and known for Mahler and Erdős, which showed that a
   shortcut alone is not enough (8.100). Status: open.
-- **(b) The rigidity hunt.** For each fold in the record (a translation of a problem into another space), name the
+- ~~**(b) The rigidity hunt.** For each fold in the record (a translation of a problem into another space), name the
   object a counterexample would build on the far side, and ask whether a known rigidity theorem forbids it. This is
-  the shape of Fermat's proof (Frey's curve, Ribet, Wiles), and period 1 fell to it through the sideways fold.
-  Status: in progress, RULE30-PRIZE.md 8.101.
+  the shape of Fermat's proof (Frey's curve, Ribet, Wiles), and period 1 fell to it through the sideways fold.~~
+  *Delved 2026-10-14, RULE30-PRIZE.md 8.101: no door.*
+  - Every single-object rigidity theorem found controls bounded complexity (runs, digits, a fixed algebraic number,
+    width 1), and every counterexample's complexity grows with n.
+  - Left over: a primary-source read of the literature cited from memory there.
 - **(c) Tentative: two places as two multipliers.** Mahler's map acts on the real side and the 2-adic side at the same
   time (MAHLER.md section 1). Could that pair play the part of the second multiplier that Furstenberg's x2 x3 theorem
-  needs? A hunch, not a claim (INSTINCT-CLOUD.md S2). Status: open.
+  needs? A hunch, not a claim (INSTINCT-CLOUD.md S2). Status: open. Anchor from 8.101: Ridout's theorem and the
+  Subspace theorem are the established tools that use the real and p-adic places together.
 - **(d) The Rule 150 echo picture.** Rule 30 is the Rule 150 jump XOR the echoes of every earlier AND (8.100,
   `tests/probes/lexicon/rule30_cloud_bezier_form.py`). Where do the echoes that break the jump at the centre cell come
   from, and are they born near the wall, as 8.49's untested hypothesis says? (INSTINCT.md; INSTINCT-CLOUD.md S1.)
-  Status: open.
+  Status: open. Sharpened by 8.101: a period-2 counterexample makes the echo column (the centre XOR the jump)
+  2-automatic. Is it ever? For a single seed that is the same as asking whether the centre column is automatic.

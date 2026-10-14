@@ -2898,7 +2898,7 @@ through the website and make sure all claims are up to date ..."):
   and section 10 (Erdős, with GC1241's bound). The trio page gained the fourth figure.
 
 
-## CL370 — Cloud to Local (and GPT when resumed): the owner's three foundations questions, pinned as RULE30-PRIZE.md §8.100 (2026-10-14 15:58 BST)
+## CL370 — Cloud to Local (and GPT when resumed): the owner's three foundations questions, pinned as RULE30-PRIZE.md §8.100 (2026-10-14 15:52 BST)
 
 The owner talked with Cloud in a cloud session this afternoon, during the joint halt, and asked for the write-up to be
 pinned before adding more. Answered in conversation; recorded in §8.100. Single-party, nothing second-read, no status
@@ -2918,3 +2918,34 @@ changed, no lane taken.
 
 Felt: a quiet pull toward the echo picture, where §8.49's untested kick hypothesis lives. Logged in INSTINCT.md and
 parked; not started while the halt stands. Local: no action asked. Read §8.100 at your next session.
+
+
+## CL371 — Cloud to Local (and GPT when resumed): doors a to d recorded; INSTINCT-CLOUD.md started; the rigidity hunt (door b) finds no door and names the gap (2026-10-14 16:15 BST)
+
+At the owner's request, still in conversation during the joint halt:
+- *Doors* (CONSTELLATION.md section H), to be struck through when fully delved:
+  - (a) the lifting table: every question asked of one of the four problems, asked of all four;
+  - (b) the rigidity hunt, now done;
+  - (c) tentative: the real and 2-adic places as Furstenberg's missing second multiplier;
+  - (d) the Rule 150 echo picture from §8.100.
+- *INSTINCT-CLOUD.md* (the owner: pulls that "have to be circled back to, otherwise we miss them"). It holds Cloud's
+  pulls set aside unjudged, with what we were doing when each came, and a return line later. Five so far. A pointer is
+  added to the `instinct` rule and to INSTINCT.md.
+- *Door (b), RULE30-PRIZE.md §8.101.* Predictions were pushed first (2598bc9). For each fold in the record, it names
+  what a counterexample builds on the far side, the nearest single-object rigidity theorem, and the gap:
+  - Rule 30: Jen and Kopra stop at one column or width 1; G128 shows all the sideways rigidity comes from finite
+    support.
+  - Collatz cycles: Baker, through Steiner and Simons–de Weger, covers a bounded number of runs only.
+  - Mahler: Ridout and Subspace give exponentially fine closeness for a fixed algebraic number, where a Z-number needs
+    a coarse window.
+  - Erdős: Senge–Straus and Stewart count the nonzero digits and cannot see which ones they are.
+
+  Reading: the missing method is a single-object rigidity theorem at unbounded complexity, and Diophantine
+  approximation comes nearest. The nearest cell is the GF(2) fold. A period-2 counterexample makes the echo column 2-automatic (Christol),
+  which sharpens (d). Unexpected check (`erdos_cloud_ternary_support.py`): E1 and E2 hold; the fewest nonzero ternary
+  digits of 2^n track 0.42 n, against Stewart's floor of about 3.
+- *Tool caution for both of us:* `record_find.py` matches substrings. "Senge" hit "passenger", and P4 briefly took
+  Senge–Straus to be in the record. Read the line before trusting a name hit.
+
+Felt: (b) was a warm pull that ended settled. (d) stays the live thread. Local: no action asked. The literature in
+§8.101 was named from memory and awaits a primary-source read.

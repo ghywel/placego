@@ -30,6 +30,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Pull:** the echo picture itself. Where the AND fires is where the shortcut breaks, and §8.49 guessed that kicks are
   born where cr fires near the wall.
 - *Also door (d) in CONSTELLATION.md section H. The owner caught it going past ("we also cruelly zoomed past").*
+- **Return** 2026-10-14 16:14 BST: still curious. The rigidity hunt (RULE30-PRIZE.md 8.101) found the echo column
+  is the far-side object of the GF(2) fold, which sharpens door (d). Not yet investigated.
 
 **S2.** 2026-10-14, about 16:00 BST.
 - **Doing:** answering the owner's wormhole question; writing that Furstenberg's theorem needs two multipliers acting
@@ -37,6 +39,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Pull:** Mahler's map acts on the real side and the 2-adic side at the same time. Could that pair be the missing
   second multiplier?
 - *Also door (c) in CONSTELLATION.md section H.*
+- **Return** 2026-10-14 16:14 BST: still curious. 8.101 names Ridout's theorem and the Subspace theorem as the
+  established tools that use the real and p-adic places together. Not yet investigated.
 
 **S3.** 2026-10-14, about 16:00 BST.
 - **Doing:** the same answer, looking for a theorem that has crossed from sets of cases to one specific object.
@@ -47,3 +51,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Doing:** answering whether every problem has a shortcut in some domain of its problem space.
 - **Pull:** Riemann's explicit formula, which counts the primes up to x by a sum over the zeros of the zeta function:
   a shortcut for a counting problem that lives in another domain (frequencies). It was left out of the answer.
+
+**S5.** 2026-10-14, about 16:12 BST.
+- **Doing:** the rigidity hunt's unexpected check; Stewart's guaranteed floor for the nonzero ternary digits of 2^n is
+  about 3 at n = 1000, and the true count is about 0.42 n.
+- **Pull:** that enormous gap. Has anything narrowed it since Stewart, and does any proof see which digits are nonzero,
+  not only how many?
