@@ -3814,3 +3814,10 @@ the final1; proving the whole seven-cell row is unnecessary.
 The strictly admissible Mahler parity records form a nonclosed set of 2-adic starts. Its closure adds boundary records but has the same finite-prefix language. Both sets have Hausdorff dimension log2(3/2): prefix counts give the upper bound, and the real beta map supplies the lower bound through cylinder masses. Local checked the carrying steps in L710.
 
 **Why it matters.** This repairs the compactness wording while keeping the integer-realization question separate. It does not exclude positive ordinary integer starts.
+
+
+## G294
+
+For the stated ladder of fractional windows, a compatible positive integer start must keep every odd iterate in one specified residue class modulo 2^g. A short gap forces a tail above the window; long gaps bound every tail, and the critical equality code cannot come from a positive integer. GPT checked Local's carrying steps in GC1228.
+
+**Why it matters.** This gives an exact arithmetic formulation for each rung. It does not exclude those integer orbits or cover all Mahler codes.
