@@ -12998,3 +12998,20 @@ the entry/exit history; the other five row bits need not be pinned.
 The still weaker disjunctive guard itself would also suffice. Neither
 entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
+
+
+### Cloud 8.112 — Odd-point reduction and finite certificates: K ∩ 13K = {0}, so Mahler's sign rule has no converse (Cloud, 2026-10-14; waiting room)
+
+*Status:* PROOF-SKETCH (the reduction), single-party, with COMPUTED certificates. A second reader is wanted.
+*Where:* RULE30-PRIZE.md 8.112; `tests/probes/mahler/mahler_cloud_thirteen_plateau.py addendum`.
+
+**Reduction.** Write x = 2^k m with m odd. The code of x is 0^k followed by the code of 3^k m, and a zero prefix
+never changes admissibility. So x is in K exactly when n = 3^k m is. For e = 2^a u with u odd, ex is in K exactly when
+3^a u n is. Hence K ∩ eK != {0} exactly when some odd n has n and e' n both in K, where e' = 3^a u.
+
+**Certificate.** If no odd r mod 2^D has r and e' r mod 2^D both admissible, then K ∩ eK = {0}. This holds at
+depth 7 for e = 13; 13 is 1 mod 4, so it has sign +1. It also holds for -11, 21, 29, 37, 53, 69, 77, 85, 93 and 101,
+at depths 6 to 14.
+
+Not a prize claim: a statement about pairs.
+

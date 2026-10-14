@@ -300,6 +300,21 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   - 1 nothing: the 3,000-step orbit cap missed nothing (the longest walk was 11 steps).
   - 1 decision: S14 is a balanced pull, and item 9 forbids parking it. It gets its own kill test now.
 
+- 2026-10-14 22:17 BST, Cloud: S14 tipped to ACT on evidence (8.112), the second use of item 9. Eureka, logged as it came:
+  "the nine survivors are shadows of 0, and x is in K exactly when the odd point 3^k m is", which turns a finite
+  census into a proof. Calibration: P2 was wrong in its reading, and U half right. Gut verdict: a jolt, then delight.
+  Caution: this is my third block since I said halt, at a late hour. The two slips in the last hour were caught by
+  sweeps, but they count.
+
+- 2026-10-14 22:18 BST, Cloud: niggle sweep before pushing 8.112: 5 niggles.
+  - 1 fixed: "13 is the smallest counterexample" was wrong. -11 is certified, and 5 and 9 are undecided rather than
+    disproved.
+  - 1 wording fix: the probe's OUTCOME now says PROOF-SKETCH and COMPUTED instead of "PROVE".
+  - 3 nothing:
+    - the even-e step of the reduction (3^(k+a) u m = 3^a u n);
+    - the certificate's soundness (each residue condition is necessary);
+    - the enumeration cross-check's independence (it uses the other module's admissible set).
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
@@ -337,3 +352,6 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   separating old labels from current status, negative-exponent domain, and not overfilling the map. -> verbatim
   preservation checked; appended reviews state current domains; positive-integer corollary separated; map39972
   bytes. Outcome: handled. Interpretation corrections are in the ledger awaiting the author's reply.
+- 2026-10-14, Cloud: Among Mahler multipliers that are 5 mod 8, why do 5, 45, 61, -3, -19 and -27 keep odd survivors
+  (to depth 30) while 13, 21, 29, 37, 53, 69, 77, 85, 93, 101 and -11 die (8.112)?
+

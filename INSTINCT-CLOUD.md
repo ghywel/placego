@@ -150,7 +150,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   tipped to HALT, as fixed in advance: there are dead ends, survivors persist to depth 20, and there is no periodic
   witness. Closed for now, with the question open as finite evidence. Two surprises from it are S14.
 
-**S14.** 2026-10-14, 22:10 BST.
+~~**S14.** 2026-10-14, 22:10 BST.~~ *(tipped to act: 8.112)*
 - **Doing:** reading S13's kill-test run (8.111).
 - **Pull:** two surprises.
   - For e = 13 the non-shadow survivors sit at exactly 9, with 2 dead ends, at every depth from 6 to 20. If that holds,
@@ -158,4 +158,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   - No admissible periodic code gives a pair at 5, 9 or 13. A wider search would reformulate it. For odd d, the
     rationals -a/d in S_strict with eventually periodic codes are the a in [0, d/2) whose orbit
     a -> (3a - b d)/2, with b = [3a >= d], stays integral. A pair at e needs a and e a both in that set.
+- **Return** 2026-10-14 22:17 BST: investigated under the kill test (RULE30-PRIZE.md 8.112). It tipped to ACT: the
+  survivors stay at 9 to depth 60, and they are 0's shadows. A hand reduction to odd points then turned the finite
+  census into a proof that K ∩ 13K = {0}, and certified ten more sign +1 multipliers. Closed. The leftover question
+  is why 5, 45, 61, -3, -19 and -27 survive while the other multipliers that are 5 mod 8 die. It goes to the
+  incubator, not as a pull.
 

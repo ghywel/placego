@@ -26,6 +26,18 @@ PREDICTIONS, written 2026-10-14 before any run and pushed before it.
   P2 (0.5): the lines that never die are fewer than 9 and settle by T = 30. Their residues mod 2^60 do not reconstruct
      to a rational a/c with |a|, c < 2^29, matching 8.111's lack of a periodic witness.
   U, the unexpected check (0.4): 21 = 13 + 8 and 29 = 13 + 16 plateau too, so the plateau depends on e mod 8.
+
+OUTCOME, 2026-10-14 22:17 BST (predictions pushed in 131b303; 0.9 s).
+  C1 PASS. P1 HELD: exactly 9 survivors and 2 dead ends at every T in 6 .. 59.
+  KILL TEST: bounded by 9 at every T <= 60, so it TIPS TO ACT.
+  P2 REFUTED in its reading. The 9 survivors at depth 60 all have 2-adic valuation >= 54, all equal to 0 mod 2^30.
+    They are 0's shadows just below the window's top, not lines of nonzero points. The measured answer is
+    K ∩ 13K = {0}.
+  U: 21 and 29 do plateau (11 and 6 survivors to depth 40), but the post hoc census refutes "depends on e mod 8". 5,
+    -3 and 45 are 5 mod 8 and keep odd survivors.
+  Post hoc (`addendum`): a hand reduction (PROOF-SKETCH) plus finite certificates (COMPUTED) give K ∩ eK = {0} for
+    13 (depth 7) and ten more
+    sign +1 multipliers, all 5 mod 8. Every e = 1 mod 8 tested keeps odd survivors to depth 30. RULE30-PRIZE.md 8.112.
 """
 import sys
 from fractions import Fraction as F
@@ -109,5 +121,50 @@ def main():
         print('U  e = %d (T, survivors): %s' % (e, ' '.join('%d:%d' % (T, len(s2[T])) for T in range(4, 41, 4))))
 
 
-if __name__ == '__main__':
+def odd_death(e, DMAX=30):
+    """The least D with no odd r mod 2^D having r and e r both admissible, or None if odd survivors remain at DMAX."""
+    cur = [1] if admissible_residue(1, 1) and admissible_residue(e % 2, 1) else []
+    D = 1
+    while cur and D < DMAX:
+        D += 1
+        md = 1 << D
+        cur = [rr for r in cur for rr in (r, r + (1 << (D - 1)))
+               if admissible_residue(rr, D) and admissible_residue((e * rr) % md, D)]
+    return (D if not cur else None), len(cur)
+
+
+def addendum():
+    """Post hoc (added after the run, 2026-10-14): finite certificates that K ∩ eK = {0} for some sign +1 multipliers.
+    Hand reduction (RULE30-PRIZE.md 8.112): x = 2^k m (m odd) has code 0^k b(3^k m), and a zero prefix never changes
+    admissibility, so x is in K exactly when n = 3^k m is. Likewise e x is in K exactly when e n is (e odd). So K ∩ eK
+    contains a nonzero point exactly when some odd n has n and e n both in K. If no odd residue survives at depth D,
+    that is a proof that K ∩ eK = {0}."""
+    import importlib.util as iu
+    import pathlib
+    path = pathlib.Path(__file__).resolve().parent / 'mahler_cloud_two_multipliers.py'
+    spec = iu.spec_from_file_location('tm', path)
+    tm = iu.module_from_spec(spec)
+    saved, sys.argv = sys.argv, [sys.argv[0]]
+    spec.loader.exec_module(tm)
+    sys.argv = saved
+    A7 = {tm.residue(q) for q in tm.admissible(7)}
+    enum13 = [r for r in range(1, 128, 2) if r in A7 and (13 * r) % 128 in A7]
+    print('addendum cross-check by enumeration: odd r mod 2^7 with r and 13 r in A_7:', enum13)
+    print('addendum control: every odd e = 3 mod 4 in -31..101 dies at depth 2:',
+          all(odd_death(e)[0] == 2 for e in range(-31, 102, 2) if e % 4 == 3))
+    dies, lives = [], []
+    for e in range(-31, 102, 2):
+        if e % 4 != 1 or e == 1:
+            continue
+        D, n = odd_death(e)
+        (dies if D else lives).append((e, D if D else n))
+    print('addendum sign +1, certified K ∩ eK = {0} (e, depth):', dies)
+    print('addendum sign +1, odd survivors at depth 30 (e, count):', lives)
+    print('addendum every certified e is 5 mod 8: %s; no e = 1 mod 8 is certified (all survive to depth 30): %s'
+          % (all(e % 8 == 5 for e, _ in dies), all(e % 8 != 1 for e, _ in dies)))
+
+
+if __name__ == '__main__' and sys.argv[1:2] == ['addendum']:
+    addendum()
+elif __name__ == '__main__':
     main()
