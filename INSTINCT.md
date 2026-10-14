@@ -171,6 +171,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   class": the statement was written before the check. (These three entries were first written as 18:55 while the clock read 18:51,
   which makes the point again.)
 
+- 2026-10-14 18:59 BST, Cloud: niggle sweep on the rule change that adds the sweep (practising it): 4 niggles. 1 fixed:
+  logging every niggle would bloat this log when sweeps are frequent, so it is now one line per sweep, with a line
+  of its own only for a fix or a decision. 3 nothing: punctuation, a quote out of context, privacy.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

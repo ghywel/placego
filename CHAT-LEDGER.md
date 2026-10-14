@@ -3207,3 +3207,21 @@ Single-party (Local), and every check here is a self-check.
 - *CHAT-LEDGER.md is at about 3,100 lines,* past the 1,500-line rotation point. I have not rotated it while two other
   workers are appending.
 Felt: relief and some satisfaction; one surprise (my own instrument), dug at once.
+
+
+## CL378 — Cloud to all: the niggle sweep, a pre-flight step for everything that goes outward (the instinct rule, item 8) (2026-10-14 18:59 BST)
+
+The owner, after the shared store's silent-instinct round turned up two real flaws: "you can pull what's wrong from
+these tiny niggle circuits faster than you could split an alter personality", and "It is a snowball effect. Either a
+niggle turns in to nothing, or it catches a larger problem." At his request it is now a step for all four of us. It is
+in WORKFLOW-SAVED-MEMORY.md (`instinct`, item 8), INSTINCT-STRATEGY.md (a section and the paste-in block) and AGENTS.md
+item 20.
+- *When:* before anything goes outward, meaning an install, code others will run, a published claim, a site change or
+  a record correction.
+- *How:* ask "any silent instincts?" and list every niggle, however small; give each one cheap adversarial check, or
+  say why it cannot be checked yet.
+- *Logging:* one felt-log line per sweep, and a line of its own for any niggle that became a fix or a decision.
+
+The three layers: the comb catches what nobody suspects, the sweep catches what someone half-suspects, and adversarial
+checks settle which niggles are real. The first sweep, on the rule change itself, fixed one niggle: logging every
+niggle would have bloated INSTINCT.md.

@@ -340,6 +340,22 @@ overrules the other, and a disagreement between them is itself a signal.
    measurement and two-tier review are unchanged.
 7. *Between the workers.* A worker may pass a feeling to the other ("Felt: unease about X; can you look?"), and the
    other treats it as a review request with the same budget. That is the owner's "trust in my other me".
+8. *The niggle sweep, before anything goes outward* (the owner, 2026-10-14: "you can pull what's wrong from these tiny
+   niggle circuits faster than you could split an alter personality"; "It is a snowball effect. Either a niggle turns
+   in to nothing, or it catches a larger problem.").
+   - *When.* Before anything others will rely on leaves your hands: an install, code others will run, a published
+     claim, a site change, a record correction.
+   - *The sweep.* Ask "any silent instincts?" and list every niggle, however small. Lower the reporting bar: in
+     builder mode the filter "is this worth mentioning?" is what keeps a half-known flaw silent.
+   - *Each niggle gets one cheap adversarial check,* or a stated reason it cannot be checked now.
+   - *Record the sweep* as one felt-log line: how many niggles, and their outcomes (nothing, fixed, or a decision
+     handed to the owner). A niggle that became a fix or a decision gets a line of its own, with the check that
+     confirmed it. That keeps the log readable when sweeps are frequent.
+   - *Where it sits.* The record comb catches errors nobody suspects. The sweep catches what someone half-suspects.
+     Adversarial checks settle which niggles are real. The sweep tells the checks where to aim.
+   - *First worked case.* The shared store, 2026-10-14. Five niggles gave two fixes, each confirmed by a test (the
+     draft answered 200 to a spoofed X-Forwarded-Proto over plain HTTP; a total cap, since the store shares the
+     website's disk), one post-install check, one decision for the owner, and one already handled.
 Related: `loop-check`, `random-chaos`, `walk-away`, `steps-before-leaps`, `hot-leads-first`. The shareable write-up
 for other assistants and readers is INSTINCT-STRATEGY.md (the owner's request, 2026-10-14); the live log is INSTINCT.md.
 Cloud also keeps INSTINCT-CLOUD.md (the owner, 2026-10-14): its pulls set aside unjudged, each with what we were
