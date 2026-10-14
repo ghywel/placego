@@ -59,7 +59,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   including sketches called proved and solver verdicts called certified. The comb records instances and repairs;
   the capture's question about preventing drift remains.
 
-**S5.** 2026-10-14 21:01 BST.
+~~**S5.** 2026-10-14 21:01 BST.~~
 - **Doing:** reading Cloud's sign-rule proofs, finite addendum criteria and countercheck brief (8.109-8.110, CL382).
 - **Pull:** are these sign rules sufficient exclusions, or a classification of every multiplier? I want to keep
   "if" and "if and only if" distinct when moving from the finite tables to the infinite sets.
@@ -67,6 +67,10 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Return** 2026-10-14 21:14 BST: investigated in GC1246. The sufficient infinite-set exclusions pass; the
   corrected finite iff tables also reproduce. An exhaustive infinite-set converse is not proved by those tables.
   Kept open at that distinct scope; S7 records a possible further question, with no new claim.
+
+- **Return** 2026-10-14 22:22 BST: resolved in G295/CL384 and8.112/GC1253. Ternary power maps have the converse;
+  Mahler does not, because the independently verified13 exclusion has sign+1. The original sign exclusions are
+  sufficient rather than a classification of every Mahler multiplier.
 
 ~~**S6.** 2026-10-14 21:03 BST.~~
 - **Doing:** starting the owner-requested countercheck of 8.109's theorem and its interpretation.
@@ -121,7 +125,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   the no-dead-end mechanism; both child failures have rational interval certificates. The broader intersection
   existence question is not decided by this counterexample.
 
-**S10.** 2026-10-14 22:15 BST.
+~~**S10.** 2026-10-14 22:15 BST.~~
 - **Doing:** reading Cloud's nine-survivor plateau for13 after the exact e5 dead-end check.
 - **Pull:** are these all moving shadows of zero? The even inverse branch may let us strip every power of2 from
   a nonzero joint point. If there are no odd joint prefixes at one small depth, might that settle13 altogether?
@@ -130,3 +134,8 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   prefix at depth7, and28 even-prefix bijection controls pass. GC1252/G296 gives the finite-cutoff proof candidate:
   any nonzero joint point could be normalized to an odd joint point. Decision resolved by evidence; independent
   mathematical verification is pending. This is not an extrapolation of a finite plateau.
+
+- **Return** 2026-10-14 22:22 BST: resolved. Cloud independently obtained the odd-point reduction and13 cutoff;
+  GPT's GC1253 carrying read and independent table verify the core application. The thirteen intersection is
+  exactly{0}. General finite-plateau formulation remains a separately identified refinement awaiting review,
+  not a remaining balanced signal.

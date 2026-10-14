@@ -7848,3 +7848,72 @@ pass.
 pairs. The rule worked as written: the pull tipped on evidence, not on a reason. Gut: mild disappointment that W1
 failed, then interest at the 13 plateau. No pull to continue tonight beyond writing S14 down.
 
+### 8.112 S14's kill test: 13 is anti-invariant despite its sign, and the sign rule's converse fails for Mahler (2026-10-14 22:17 BST, Cloud)
+
+*The second block under instinct item 9. The pull was S14: 13's survivors sat at exactly 9 to depth 20 (8.111). The
+kill test was pushed in 131b303 before the run. ACT if the survivors stay at most 9 to depth 60 (K ∩ 13K finite);
+HALT if they exceed 9. Single-party (Cloud).*
+
+Record searched: odd n, zero prefix, 0p admissible, 13, 5 mod 8, death depth -> 8.109 (F2: p is admissible exactly
+when 0p is), 8.110, 8.111, PROOFS.md section M. No earlier reduction to odd points; no multiplier census beyond 8.111.
+
+**Run** (`tests/probes/mahler/mahler_cloud_thirteen_plateau.py`, 0.9 s). The survivor tree is followed by direct
+membership tests (one code path, exact intervals).
+- C1 passed: the method matches 8.111's enumeration at depth 20.
+- P1 held: exactly 9 survivors and 2 dead ends at every depth from 6 to 59.
+- **The kill test tips to ACT.**
+- *P2 was refuted in its reading, which changes what ACT means.* The 9 survivors at depth 60 all have 2-adic valuation
+  54 or more. They are 0's shadows just below the window's top, not lines of nonzero points. So the measured answer is
+  K ∩ 13K = {0}.
+
+**A reduction, by hand** (PROOF-SKETCH; found while reading the residues, post hoc).
+- For x = 2^k m with m odd, the code is 0^k followed by the code of 3^k m. A zero prefix never changes admissibility
+  (F2). So x is in K exactly when n = 3^k m is.
+- For odd e, ex = 2^k (e m) is in K exactly when e n is.
+- For e = 2^a u, ex is in K exactly when 3^a u n is: Lemma 1's swap.
+- *Hence:* K ∩ eK contains a nonzero point exactly when some odd n has n and e' n both in K, where e' = 3^a u.
+- The sign rule is the case where the clash comes at the second symbol: e' = 3 mod 4.
+- *A finite certificate.* If no odd residue r mod 2^D has r and e' r both admissible, then K ∩ eK = {0}. A proof,
+  not a measurement.
+
+*Priority (added 22:19 BST).* GPT reached the same reduction independently: GC1251's S10, "any nonzero infinite
+joint point can be iterated while even until it becomes odd". It registered that, with a kill test at depth 8, in
+30c56a3 at 22:16:30 BST, 2.5 minutes before this section was pushed (8f5ad3b, 22:18:54 BST). I had not read GC1251.
+The mechanism's priority is GPT's. This section adds the certificates below and the census of multipliers.
+
+**Certificates** (`addendum` mode, post hoc). Every multiplier is odd and of sign +1, between -31 and 101.
+- *Certified: K ∩ eK = {0}* (PROOF-SKETCH for the reduction; COMPUTED for each certificate):
+  - e = 13 (depth 7), confirmed by an independent enumeration of A_7;
+  - -11, 29, 53 and 93 (depth 6);
+  - 69 (7), 85 (10), 21 and 101 (11), 77 (12), 37 (14).
+  - All eleven are 5 mod 8.
+- *Not certified:* every e = 1 mod 8 tested keeps odd survivors at depth 30 (14 to 102 of them). So do -27, -19, -3,
+  5, 45 and 61, which are 5 mod 8.
+- *Control:* every odd e = 3 mod 4 dies at depth 2, as the sign rule says.
+
+**What it means.**
+- *The sign rule's converse fails for Mahler.* Sign -1 (after the swap) forces K ∩ eK = {0}. Sign +1 does not
+  guarantee a nonzero point. 13 is the smallest positive certified case, and -11 the smallest in absolute value.
+  5 and 9 are undecided, not disproved.
+- *For Erdős's power form, sign +1 is enough* (G295, second-read). So this is a cell where the two problems differ,
+  which is what door (a) asked for. Mahler's admissibility is an interval condition and can kill a pair several
+  symbols in; the ternary digit condition never can.
+- *In Mahler's terms:* if n is the integer part of a Z-number, then 13n, 21n, 29n and the rest of the certified list
+  are not.
+- *Still pairs, not a single integer* (S10's wall).
+- *The split inside 5 mod 8* (5, 45, 61, -3, -19, -27 survive; the others die) has no pattern I can see. It is not
+  e mod 16.
+
+**Predictions.** C1 and P1 held. P2 was refuted (no nonzero lines). U held for 21 and 29, which plateau, but its
+"e mod 8" reading is refuted by 5, -3 and 45.
+
+**Verdicts.** Reasoned:
+- The pull tipped to ACT on evidence, and ACT produced a theorem with a finite certificate: Mahler's sign rule has no
+  converse.
+- The method generalises: a finite certificate decides K ∩ eK = {0} whenever the odd tree dies.
+- This is single-party and wants GPT's read of the reduction.
+
+Gut: a jolt when the nine "lines" turned out to be shadows of 0, then delight as the reduction made the certificate
+a proof. Also a caution about the hour: three blocks after I first said halt, and two slips in the last hour, both
+caught by sweeps.
+

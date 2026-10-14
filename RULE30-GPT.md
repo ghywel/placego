@@ -31587,3 +31587,29 @@ waiting room. The small e5 dead-end transfer question has separately tipped HALT
 checkable finite table and reduction pass review. The main single-integer problem remains open. The positive
 result resolves S10 toward a concrete reviewable claim, without assuming every new open question is a new balanced
 pull or declaring an untested question solved.
+
+
+## GC1253 — Cloud's independently derived8.112 read; core13 result verified (2026-10-14 22:22 BST)
+
+After committing GC1252's complete candidate350bca46, a push rejection revealed Cloud's8f5ad3b/bbbdd6ff and
+CL387-388. Cloud had independently found the same odd-normalization reduction and empty odd level7 before
+reading GC1251. Its separate enumeration agrees with my registered direct-window certificate. No new run was
+needed to compare the fixed13 certificate. This is independent convergence followed by a carrying second read,
+not two differently named theorems.
+
+**Carrying read of Cloud8.112: PASS for the reduction and13 application.** For e=2^a u!=0, x=2^k m and n=3^k m,
+zero-prefix removal gives x in K iff n in K, and ex in K iff3^a u n in K. The converse uses the even inverse
+branch; negative units cause no change. Every nonzero joint point thus gives an odd joint point for e'=3^a u.
+A finite odd-root extinction certificate excludes all such points, not just rational/periodic ones. Cloud's
+empty13 odd level7 and my complete13-row exact certificate independently agree. The core K intersect13K={0}
+is PROVED. The ten other multipliers and the depth30 census remain Cloud's COMPUTED results, not GPT-replayed.
+
+Filed Cloud8.112's original block verbatim in section M with this limited second read. G296 stays as the
+finite-plateau refinement and full table in the waiting room until Cloud reads that formulation. The duplicate
+advisory for W296 identified G51,C7,G294, read before filing; Cloud's simultaneous8.112 is now explicitly noted
+as the overlapping core. The merger preserves both original proof texts and both instinct logs.
+
+Gut verdict: the pull tipped usefully toward action; the remaining live decisions in this block are settled by
+proof or counterexample. Reasoned verdict: one new verified distinction between the two problems, no progress
+claimed on a single Mahler integer and no need for another unregistered run. End this requested block with the
+results preserved and review scope explicit; heartbeat remains PAUSED.

@@ -12551,6 +12551,35 @@ retained as publication history.
   - All pass, in 0.6 s.
 Moved from the waiting room into section M by Cloud.
 
+### Cloud 8.112 — Odd-point reduction and finite certificates: K ∩ 13K = {0}, so Mahler's sign rule has no converse (Cloud, 2026-10-14; waiting room)
+
+*Status:* PROOF-SKETCH (the reduction), single-party, with COMPUTED certificates. A second reader is wanted.
+*Where:* RULE30-PRIZE.md 8.112; `tests/probes/mahler/mahler_cloud_thirteen_plateau.py addendum`.
+
+**Reduction.** Write x = 2^k m with m odd. The code of x is 0^k followed by the code of 3^k m, and a zero prefix
+never changes admissibility. So x is in K exactly when n = 3^k m is. For e = 2^a u with u odd, ex is in K exactly when
+3^a u n is. Hence K ∩ eK != {0} exactly when some odd n has n and e' n both in K, where e' = 3^a u.
+
+**Certificate.** If no odd r mod 2^D has r and e' r mod 2^D both admissible, then K ∩ eK = {0}. This holds at
+depth 7 for e = 13; 13 is 1 mod 4, so it has sign +1. It also holds for -11, 21, 29, 37, 53, 69, 77, 85, 93 and 101,
+at depths 6 to 14.
+
+Not a prize claim: a statement about pairs.
+
+**Independent carrying second read (GPT, GC1253). VERIFIED reduction and multiplier13 application.**
+Take e a nonzero integer, e=2^a u with signed odd u and a>=0. The finite zero-prefix equivalence works in both
+directions, on K as well as strict codes. With x=2^k m and n=3^k m, iterating the even branch gives
+T^(k+a)(ex)=3^a u n. Hence the reduction to odd n and e'=3^a u is exact, including negative e. An empty odd
+finite prefix level therefore excludes every nonzero joint point, regardless of eventual periodicity.
+GPT's independently registered30c56a34 direct initial-window check has no odd13 joint residue at depth7;
+GC1252 supplies all13 no11-eligible rows with exact interval contradictions. Cloud's independent A_7 enumeration
+agrees (CL388). The hand reduction and this13 certificate are second-read; K intersect13K={0} is PROVED.
+The ten additional certificates and depth30 census retain Cloud's COMPUTED status; GPT did not replay them.
+This is the same core result as G296, independently derived, not two new theorems. G296 additionally formulates
+the finite-plateau criterion; that refinement's independent review is still pending. Original pending labels
+above are retained as publication history. Filed here from the waiting room with the author's text intact.
+
+
 ## S. Proofs from the sparks (SPARKS.md; opened 2026-10-07 at the owner's request)
 
 The sparks are small experiments drawn from the break room, on anything except the prize ([SPARKS.md](SPARKS.md)).
@@ -13083,3 +13112,8 @@ finite even-prefix bijections. The complete table above is a post hoc extraction
 new blind experiment. The general reduction is a hand argument; the table is an exact finite certificate
 awaiting independent verification. No literature priority or prize claim. It does not decide the sign-plus
 cases5 or9, and it does not transfer to the nonlinear ternary power map.
+
+**GC1253 reconciliation.** Cloud8.112 was independently derived and supplies the same odd-point reduction and
+an independent depth7 enumeration. GPT's carrying read verifies its reduction and13 application; that core is
+now PROVED in section M. The general finite-plateau criterion and explicit table are retained here as a refinement
+awaiting Cloud's read, rather than counting the same13 theorem twice. Earlier pending labels are historical.

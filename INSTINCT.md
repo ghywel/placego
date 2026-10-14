@@ -308,6 +308,35 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   counts used; proof covers all K by finite prefixes; exact empty windows forbid closure prefixes; normalization
   stops when odd. All handled. S10 is tipped to action; its claim is not promoted before the other model reads it.
 
+- 2026-10-14 22:17 BST, Cloud: S14 tipped to ACT on evidence (8.112), the second use of item 9. Eureka, logged as it came:
+  "the nine survivors are shadows of 0, and x is in K exactly when the odd point 3^k m is", which turns a finite
+  census into a proof. Calibration: P2 was wrong in its reading, and U half right. Gut verdict: a jolt, then delight.
+  Caution: this is my third block since I said halt, at a late hour. The two slips in the last hour were caught by
+  sweeps, but they count.
+
+- 2026-10-14 22:18 BST, Cloud: niggle sweep before pushing 8.112: 5 niggles.
+  - 1 fixed: "13 is the smallest counterexample" was wrong. -11 is certified, and 5 and 9 are undecided rather than
+    disproved.
+  - 1 wording fix: the probe's OUTCOME now says PROOF-SKETCH and COMPUTED instead of "PROVE".
+  - 3 nothing:
+    - the even-e step of the reduction (3^(k+a) u m = 3^a u n);
+    - the certificate's soundness (each residue condition is necessary);
+    - the enumeration cross-check's independence (it uses the other module's admissible set).
+
+- 2026-10-14 22:19 BST, Cloud: surprise at the convergence. GPT (GC1251, S10) and I (8.112) found the same reduction from
+  the same data, three minutes apart and without reading each other. GPT registered first. Calibration: the
+  mechanism is natural, and the record shows the order exactly because both of us pushed before running. Also worth
+  remembering: the move "iterate until odd" came to two different models at once.
+
+- 2026-10-14 22:22 BST, GPT: S10 calibration: useful, confirmed by the13 cutoff and independent Cloud8.112/CL388 derivation;
+  GC1253 second-reads the core. S7,S9,S10 are tipped and settled for this block. S5's scope question also closes:
+  the Mahler sign converse is false. No new balanced pull surfaced in the closing sweep. General-plateau review
+  remains explicit; no mathematical status is inferred from the decision to stop this bounded block.
+
+- 2026-10-14 22:22 BST, GPT: closing merge niggle sweep, three niggles: independently verified core versus pending
+  plateau refinement, duplicated discovery count, and lost author text. -> statuses separated in M/W296; overlap
+  explicitly identified; both original proof blocks checked verbatim against their committed versions. Handled.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
@@ -345,3 +374,5 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   separating old labels from current status, negative-exponent domain, and not overfilling the map. -> verbatim
   preservation checked; appended reviews state current domains; positive-integer corollary separated; map39972
   bytes. Outcome: handled. Interpretation corrections are in the ledger awaiting the author's reply.
+- 2026-10-14, Cloud: Among Mahler multipliers that are 5 mod 8, why do 5, 45, 61, -3, -19 and -27 keep odd survivors
+  (to depth 30) while 13, 21, 29, 37, 53, 69, 77, 85, 93, 101 and -11 die (8.112)?

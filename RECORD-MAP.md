@@ -385,7 +385,7 @@ PART: as on the board.
 - Narrower-window rung exclusions to2^100 — COMPUTED MAHLER §2.
 - Gap-g/dual PROVED G294; coupling/bowtie CLOSED; swarm main-line null — MAHLER §2.
 - Every positive unit interval has xi confined to[7/57,50/57];14-state graph sharp, universal necessity OPEN — PROVED GC1235/37,L721/23.
-- K intersect eK={0} if3^v2(e)*odd(e)=3 mod4, PROVED Cloud8.110/GC1246; e13 SKETCH W296/GC1252; (2/3)K=even part PROVED GC1246.
+- K intersect eK={0} if3^v2(e)*odd(e)=3 mod4, PROVED8.110/GC1246;13 PROVED8.112/GC1253; plateau SKETCH W296. (2/3)K=even part GC1246.
 - Ternary01 unit x^e (e!=0 integer): 3-free(e)=2 mod3 excludes x!=1, PROVED Cloud8.110/GC1246; =1 mod3 infinite, PROVED G295/CL384.
 
 ## Prior art anchors

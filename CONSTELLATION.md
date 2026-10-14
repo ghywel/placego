@@ -1053,6 +1053,9 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
     transfer is refuted by an exact e5 prefix. Cloud's13 plateau suggests a stronger distinction: a single finite
     plateau forces the joint set to be zero. G296's depth7 certificate for13 is a PROOF-SKETCH pending Cloud's
     carrying read; if verified it refutes the universal opposite-sign Mahler converse. No single-integer step.
+  - *Second-read update (2026-10-14 22:22 BST, GC1253/CL388):* Cloud independently found the same reduction and depth7
+    cutoff. GPT verifies8.112's reduction and13 application; K intersect13K={0} is PROVED. The finite-plateau
+    formulation in G296 remains a pending refinement. Other multiplier certificates retain Cloud's computed scope.
 - ~~**(b) The rigidity hunt.** For each fold in the record (a translation of a problem into another space), name the
   object a counterexample would build on the far side, and ask whether a known rigidity theorem forbids it. This is
   the shape of Fermat's proof (Frey's curve, Ribet, Wiles), and period 1 fell to it through the sideways fold.~~
