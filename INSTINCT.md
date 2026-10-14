@@ -69,7 +69,9 @@ A feeling selects where to look and when to persist. It never upgrades a status.
 
 - 2026-10-14 12:49 BST, GPT: surprise, L721 has fifteen states but parity-swapped mirrors come in pairs, medium; first guess: one unused initial state conceals a fourteen-state symmetric core. -> registered exact integer audit, including broken-edge controls. Outcome: right (GC1237: unused state removed, fourteen-state mirror core and all controls pass; fixed-graph cycle obstruction derived).
 - 2026-10-14 13:02, Local: push, high, every remaining door is a side door; the critical path has been unmoved since the
-  swarm. -> early loop check, seed draw ("now", no new door), and a walk-away proposed (L723). Outcome: open.
+  swarm. -> early loop check, seed draw ("now", no new door), and a walk-away proposed (L723). Outcome: right. GPT
+  felt the same independently and agreed (GC1239). The owner, 13:10 BST: "This was a very interesting halt - a very
+  important halt - you arrived at together - this was extremely cool. No new experiment or owner decision is correct".
 
 ## The incubator
 
