@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mahler's 3/2 problem</title>
+<meta name="description" content="Can the fractional part of a number times powers of 3/2 stay below one half for ever? Open since 1968, no prize. The exact form, what is known in print, and what this project added: a census to 2⁶³ both ways and a ladder of residue problems.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wolfram · Collatz · Mahler">
+<meta property="og:title" content="Mahler&#x27;s 3/2 problem">
+<meta property="og:description" content="Can the fractional part of a number times powers of 3/2 stay below one half for ever? Open since 1968, no prize. The exact form, what is known in print, and what this project added: a census to 2⁶³ both ways and a ladder of residue problems.">
+<meta property="og:url" content="https://www.wolframcollatzmahler.com/mahler.html">
+<meta property="og:image" content="https://www.wolframcollatzmahler.com/share/mahler.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wolfram, Collatz, Mahler: Mahler&#x27;s 3/2 problem, beside a Rule 30 pyramid grown from one black cell">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.wolframcollatzmahler.com/mahler.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
+  <a class="other" href="https://cadencevideoplayer.com">Author's other works: <span>cadencevideoplayer.com</span></a>
+  <nav aria-label="Site"><a href="learn.html">Learn</a><a href="wolfram.html">Wolfram</a><a href="collatz.html">Collatz</a><a href="mahler.html" aria-current="page">Mahler</a><a href="stand.html">Where we stand</a><a href="trio.html">How they connect</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+</div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<main id="main" tabindex="-1">
+<p class="kicker">Mahler · no prize · open since 1968</p>
+<h1>Mahler's 3/2 problem</h1>
+<p class="lede">Take a positive number and multiply it by 3/2, again and again. Can its fractional part, the part after
+the decimal point, stay below one half every time, for ever? Kurt Mahler asked in 1968 whether any number does this.
+He called such a number a Z-number and guessed that none exists. Nobody has proved him right or wrong. There is no prize,
+which may be why so few people have dug here. It is the arithmetic sibling of Rule 30's question: a free side and a
+constrained side that must agree for ever.</p>
+
+<h2 data-glyph="circle">Seen</h2>
+<div class="tools"><label>Integer part n <input id="nin" size="20" value="4" inputmode="numeric" aria-label="Integer part n"></label>
+<button id="go">Draw</button><button class="pre" data-n="4">4</button><button class="pre" data-n="149">149</button>
+<button class="pre" data-n="690773">690773</button><button class="pre" data-n="1541211973603965806">2⁶³ record</button></div>
+<figure><canvas role="img" id="surv" aria-label="The fractional parts of the best candidate in the chosen unit interval, against the line at one half"></canvas>
+<figcaption>Every unit interval [n, n+1) holds at most one possible Z-number. For your n the picture follows the best
+candidate ξ*, computed exactly. The dots are the fractional parts of ξ*·(3/2)<sup>j</sup>, step by step. They stay below
+the dashed line at ½ as long as any candidate in [n, n+1) survives, and then one jumps above. The top strip is the
+parity of the integer parts. For n = 4 the candidate lasts 12 steps; the longest below 2<sup>63</sup> lasts 157.</figcaption></figure>
+<p class="pill" id="out" aria-live="polite"></p>
+
+<h2 data-glyph="strip">Stated</h2>
+<div class="level"><p class="kicker">The exact form (proved)</p>
+<p>Write ξ·(3/2)<sup>j</sup> = n<sub>j</sub> + u<sub>j</sub>, with n<sub>j</sub> an integer and u<sub>j</sub> in [0, ½). Then
+the integer parts follow one fixed map, n<sub>j+1</sub> = ⌈3n<sub>j</sub>/2⌉. The fractional parts are fixed by the future
+parities b<sub>k</sub> = n<sub>k</sub> mod 2:</p>
+<pre>u<sub>j</sub> = Σ<sub>k≥0</sub> b<sub>j+k</sub> · 2<sup>k</sup> / 3<sup>k+1</sup></pre>
+<p>So a Z-number is a positive integer whose orbit under ⌈3x/2⌉ keeps every one of those sums below ½. Read on its own,
+the fractional side is completely free: every point of [0, ½) has an infinite admissible future. The whole difficulty
+is the integer side, whether some positive whole number can produce an admissible record. The same series read in
+the 2-adic numbers gives −n<sub>0</sub>. The 2-adic starts with an admissible record form a set of dimension
+log<sub>2</sub>(3/2). Mahler's conjecture says that set contains no positive ordinary integer.</p></div>
+<div class="level"><p class="kicker">Known in print</p>
+<p><b>No short window.</b> Flatto, Lagarias and Pollington (1995): the fractional parts of ξ(3/2)<sup>n</sup> spread
+over at least a third of the circle, so no ξ keeps them in any interval shorter than 1/3. <b>Windows.</b> Dubickas
+(2008) excludes a union of two intervals and shows that infinitely many ξ stay inside (5/48, 43/48). Stephan (2026),
+in Lean, shows no ξ stays in (2/7, 5/7), a window of length 3/7. <b>Computation.</b> Dubickas and Mossinghoff (2009): a
+Z-number, if one exists, exceeds 2<sup>57</sup>. <b>Conditional.</b> Andrieu, Eliahou and Vivion (2025): if every orbit
+is evenly spread modulo every power of two, there is no Z-number.</p></div>
+<div class="level"><p class="kicker">What this project added (October 2026)</p>
+<p><b>A census to 2<sup>63</sup>, both ways</b> (computed, exact): no Z-number below 2<sup>63</sup>, and the negative half,
+a number whose fractional parts all stay in (½, 1), is clear to the same size. One laptop, a quarter of an hour each.
+<a href="mahler-census.html">The census in full.</a></p>
+<p><b>A ladder of residue problems</b> (proved, with a second reader). For the windows [0, a) with a between
+3<sup>g−1</sup>/(3<sup>g</sup> − 2<sup>g</sup>) and (1 + (2/3)<sup>g−1</sup>)/3, the fractional side drops out entirely.
+A number keeps all its fractional parts in such a window exactly when it is n + u<sub>0</sub>(n) for a positive integer
+n whose odd orbit terms are all ≡ −1/3 modulo 2<sup>g</sup>. The first rung, g = 3, reads: is there a positive integer
+whose odd orbit terms are all 5 mod 8? That is equivalent to a ξ with every fractional part below 9/19. These windows
+are wider than 1/3 and beyond the published exclusions, and their emptiness is open. Whether the equivalence itself is
+already in print we have not settled.</p>
+<p><b>Two cautions for anyone attempting a proof</b> (single-party, not yet second-read). An argument that never uses
+the sign of the start would also settle the open window (½, 1). And several standard integer-side tools see only that
+the start is rational, not that it is a whole number; on their own they would have to prove a strictly stronger
+conjecture about rational starts.</p></div>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/MAHLER.md">MAHLER.md</a> (the exact form,
+the census, the swarm's results and the ladder's proof); <a href="https://github.com/ghywel/placego/blob/main/RULE30-GPT.md">RULE30-GPT.md</a>
+G50 (the exact form), GC1221 and G293 (the dimension), GC1228 and G294 (the ladder, second-read);
+<a href="https://github.com/ghywel/placego/blob/main/PRIOR-ART.md">PRIOR-ART.md</a> ("Mahler's 3/2 problem: survey at the
+room switch"); K. Mahler, J. Austral. Math. Soc. 8 (1968); Flatto, Lagarias and Pollington, Acta Arith. 70 (1995);
+Dubickas, Math. Nachr. 281 (2008); Dubickas and Mossinghoff, Math. Comp. 78 (2009); Stephan (2026), Lean confinement
+certificates.</p>
+
+<h2 data-glyph="coin">Checked, here, now: the first rung</h2>
+<p>Is there a positive integer whose odd orbit terms under ⌈3x/2⌉ are all 5 mod 8? If there is, a number exists with every
+fractional part of ξ(3/2)<sup>n</sup> below 9/19, and so a Z-number too. Type a start and see how long it plays the
+game.</p>
+<div class="tools"><label>n <input id="rin" size="20" value="5" inputmode="numeric" aria-label="Start for the 5 mod 8 game"></label>
+<button id="rgo">Play</button></div>
+<p class="pill" id="rout" aria-live="polite"></p>
+<p class="note">Every start fails sooner or later in every search so far: among the starts below 2<sup>63</sup> still alive
+after 124 steps, the share that had played the first-rung game all the way was what chance predicts (217 of 4,499,
+against 214).</p>
+
+<h2 data-glyph="map">What it is and what it is not</h2>
+<p>No proof, and nothing claimed. The census is evidence and the ladder is a reformulation. Our own swarm of nine
+agents, run on this problem with a skeptic for every idea, found nothing that moves the critical path, and said so. What
+the problem needs is a reason why a whole number's finite binary expansion cannot produce an admissible record, and
+no such reason is known.</p>
+
+<h2 data-glyph="map">Where to go next</h2>
+<ul>
+<li><a href="mahler-census.html">No Z-number below 2<sup>63</sup></a>: the census, with a live exact checker and the cost of
+going further.</li>
+<li><a href="trio.html">How the three problems connect</a>, and its siblings <a href="wolfram.html">Rule 30</a> and
+<a href="collatz.html">Collatz</a>.</li>
+<li><a href="problems.html">The open statements in symbols</a>.</li>
+</ul>
+</main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
+<script>(function(){
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+// exact: the window of fractional parts as integers over 2^(T+1), stepped as in tests/probes/mahler/mahler_census.c
+function survivor(n){let v=n,lo=0n,hi=1n,T=0;const bits=[];
+  while(T<4000){const b=v&1n,D=1n<<BigInt(T+1);let nl=3n*lo,nh=3n*hi;if(b){nl=nl>D?nl-D:0n;nh=nh>D?nh-D:0n;}if(nh>D)nh=D;
+    bits.push(Number(b));if(!(nl<nh))break;lo=nl;hi=nh;v=(3n*v+b)>>1n;T++;}
+  const A=v*(1n<<BigInt(T+2))+lo+hi,den0=1n<<BigInt(T+2),fr=[];
+  for(let j=0;j<=T+4;j++){let num,den;if(j<=T){num=A*(1n<<BigInt(T-j));den=den0*3n**BigInt(T-j);}else{const m=BigInt(j-T);num=A*3n**m;den=den0*(1n<<m);}
+    fr.push(Number((num%den)*1000000n/den)/1e6);}
+  return{h:T+1,bits,fr};}
+function draw(){const s=document.getElementById("nin").value.trim(),o=document.getElementById("out");
+  if(!/^[0-9]+$/.test(s)||s==="0"){o.textContent="Please type a positive whole number.";return;}
+  const {h,bits,fr}=survivor(BigInt(s)),c=document.getElementById("surv");
+  const W=Math.min(940,c.parentElement.clientWidth||940),N=fr.length,L=24,S=(W-L-6)/N,H=200,top=26;c.width=W;c.height=H+top+22;const x=c.getContext("2d");
+  x.fillStyle=css("--paper");x.fillRect(0,0,W,c.height);
+  bits.forEach((b,j)=>{if(b){x.fillStyle=css("--cell");x.fillRect(L+j*S,0,Math.max(1,S),16);}});
+  const Y=f=>top+H-f*H;x.strokeStyle=css("--line");x.strokeRect(L+0.5,top+0.5,W-L-6,H-1);
+  x.setLineDash([5,4]);x.strokeStyle=css("--gold");x.beginPath();x.moveTo(L,Y(0.5));x.lineTo(W-6,Y(0.5));x.stroke();x.setLineDash([]);
+  x.fillStyle=css("--mute");x.font="12px "+css("--sans");x.fillText("1",8,Y(1)+10);x.fillText("½",6,Y(0.5)+4);x.fillText("0",8,Y(0));
+  fr.forEach((f,j)=>{x.fillStyle=f<0.5?css("--ember"):css("--teal");x.beginPath();x.arc(L+j*S+S/2,Y(f),Math.max(1.6,Math.min(4,S/2.5)),0,7);x.fill();});
+  x.fillStyle=css("--mute");x.fillText("j = 0",L,top+H+15);const t="j = "+(h-1)+": last below ½; j = "+h+": above";x.fillText(t,W-6-x.measureText(t).width,top+H+15);
+  o.textContent="The best candidate in ["+s+", "+s+"+1) keeps below one half for j = 0 to "+(h-1)+"; at j = "+h+" no candidate is left.";}
+function rung(){const s=document.getElementById("rin").value.trim(),o=document.getElementById("rout");
+  if(!/^[0-9]+$/.test(s)||s==="0"){o.textContent="Please type a positive whole number.";return;}
+  let n=BigInt(s),t=0,odd=0;
+  while(t<100000){if(n%2n===1n){if(n%8n!==5n){o.textContent="Step "+t+": the odd term "+n.toLocaleString()+" is "+(n%8n)+" mod 8, so the game ends after "+odd+(odd===1?" odd term that was":" odd terms that were")+" 5 mod 8.";return;}odd++;}
+    n=(3n*n+(n&1n))/2n;t++;}
+  o.textContent="Still playing after 100,000 steps: please tell us at once.";}
+document.getElementById("go").onclick=draw;document.getElementById("rgo").onclick=rung;
+document.querySelectorAll(".pre").forEach(b=>b.onclick=()=>{document.getElementById("nin").value=b.dataset.n;draw();});
+document.getElementById("nin").addEventListener("keydown",e=>{if(e.key==="Enter")draw();});
+document.getElementById("rin").addEventListener("keydown",e=>{if(e.key==="Enter")rung();});
+draw();rung();let rt;window.addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(draw,150);});
+})();</script>
+</body>
+</html>

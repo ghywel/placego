@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Collatz conjecture</title>
+<meta name="description" content="Halve it if even, triple it and add one if odd: does every start reach 1? Checked to 2⁷¹ on supercomputers, proved for almost all starts, open for every single one, with a ¥120 million prize. What our counting form adds.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wolfram · Collatz · Mahler">
+<meta property="og:title" content="The Collatz conjecture">
+<meta property="og:description" content="Halve it if even, triple it and add one if odd: does every start reach 1? Checked to 2⁷¹ on supercomputers, proved for almost all starts, open for every single one, with a ¥120 million prize. What our counting form adds.">
+<meta property="og:url" content="https://www.wolframcollatzmahler.com/collatz.html">
+<meta property="og:image" content="https://www.wolframcollatzmahler.com/share/collatz.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wolfram, Collatz, Mahler: Collatz: halve it, or triple it and add one, beside a Rule 30 pyramid grown from one black cell">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.wolframcollatzmahler.com/collatz.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
+  <a class="other" href="https://cadencevideoplayer.com">Author's other works: <span>cadencevideoplayer.com</span></a>
+  <nav aria-label="Site"><a href="learn.html">Learn</a><a href="wolfram.html">Wolfram</a><a href="collatz.html" aria-current="page">Collatz</a><a href="mahler.html">Mahler</a><a href="stand.html">Where we stand</a><a href="trio.html">How they connect</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+</div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<main id="main" tabindex="-1">
+<p class="kicker">Collatz · ¥120 million</p>
+<h1>Collatz: halve it, or triple it and add one</h1>
+<p class="lede">Take a positive whole number. If it is even, halve it; if it is odd, triple it and add one. Repeat.
+Lothar Collatz guessed in 1937 that every start eventually reaches 1. Every start below 2<sup>71</sup>, about 2.4
+sextillion, has been checked by computer on supercomputers across Europe. Terence Tao proved in 2019 that almost every
+orbit reaches almost bounded values. Yet nobody can prove it for every single start. The Japanese company Bakuage
+offers ¥120 million for a proof or a disproof.</p>
+
+<h2 data-glyph="collatz">Seen</h2>
+<div class="tools"><label>Start <input id="nin" size="16" value="27" inputmode="numeric" aria-label="Starting number"></label>
+<button id="go">Draw</button><button class="pre" data-n="27">27</button><button class="pre" data-n="871">871</button>
+<button class="pre" data-n="837799">837799</button><button class="pre" data-n="63728127">63728127</button></div>
+<figure><canvas role="img" id="path" aria-label="The orbit of the chosen start, on a doubling scale"></canvas>
+<figcaption>The orbit of the chosen start, step by step, on a doubling scale: the height is the number's size in binary
+digits. The start 27 climbs to 9,232 before it falls to 1, after 111 steps. The dashed line is the start itself: the first step below it is the
+stopping time.</figcaption></figure>
+<figure><canvas role="img" id="strip" aria-label="The parity sequence of the chosen start"></canvas>
+<figcaption>The same orbit as a coin, until it reaches 1: black where the number is odd, in the compressed form
+T(n) = n/2 or (3n + 1)/2 that the theory uses (at most 160 steps shown).</figcaption></figure>
+<p class="pill" id="out" aria-live="polite"></p>
+
+<h2 data-glyph="strip">Stated</h2>
+<div class="level"><p class="kicker">The conjecture</p>
+<p>For every integer n ≥ 1, some iterate of n under n ↦ n/2 (n even), 3n + 1 (n odd) equals 1. Equivalently, every
+start has a finite stopping time: its orbit eventually drops below where it began.</p></div>
+<div class="level"><p class="kicker">Known in the world</p>
+<p><b>Computation.</b> Bařina's distributed verification passed 2<sup>71</sup> in January 2025, on thousands of
+workers across European supercomputers. <b>Almost all.</b> Terras (1976) showed that almost every start has a finite
+stopping time. Tao (2019) showed that almost every orbit falls below any function tending to infinity. <b>Every
+start</b> is the open part, and it is what the prize pays for.</p></div>
+<div class="level"><p class="kicker">What our record adds (measured; the counting form)</p>
+<p>Count the w-bit numbers whose orbit stays at or above its start for T steps. The first w − 1 steps are free: each
+pattern of parities belongs to exactly one residue of the start (Terras's bijection), so they pay exactly. Past the
+free bits, the count follows Terras's coin model to 0.5% at every width to 30 bits, and the excess over the coin never
+exceeds 3.7 bits. That is a precise target. If fewer than 2<sup>w − αT + c</sup> numbers of w bits stay up for T steps,
+for fixed α and c, every stopping time is finite and the conjecture follows. The free part is a theorem. The rest is
+the open part, a statement about each orbit's binary digits, not about almost all of them.</p></div>
+<div class="level"><p class="kicker">The twin of Rule 30</p>
+<p>Multiplying by three is the same linear step as Rule 30, plus carries (<a href="carry.html">the carry of Rule 30</a>).
+In both problems a free part pays exactly and the remaining part pays at the coin's rate, as far as anyone can measure.
+Collatz has an avenue that Rule 30 lacks: after the free bits the state is an explicit integer, a remainder modulo a
+power of three. Some of our lemmas are known results in new clothes, and we credit them: the window principle's
+complexity bound is Dubickas (2009).</p></div>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a>
+(the honest summary and sections 1 to 6; probes in tests/probes/prizes/); D. Bařina,
+<a href="https://link.springer.com/article/10.1007/s11227-025-07337-0">Improved verification limit for the convergence of
+the Collatz conjecture</a>, J. Supercomputing 81 (2025); R. Terras, Acta Arith. 30 (1976); T. Tao, Almost all orbits of
+the Collatz map attain almost bounded values (2019); the prize under Bakuage's rules (PRIZE-PROBLEMS.md section 1).</p>
+
+<h2 data-glyph="map">Compute is not the bottleneck</h2>
+<p>Collatz has had supercomputers: 2<sup>71</sup> starts checked, 256 times the
+<a href="mahler-census.html">2<sup>63</sup> our laptop reached for Mahler</a>. No counterexample is expected within any
+reachable search, and none was found. A proof needs the idea that turns "every start checked so far" into "every
+start", and no amount of hardware supplies it.</p>
+
+<h2 data-glyph="map">Where to go next</h2>
+<ul>
+<li><a href="trio.html">How the three problems connect</a>: the shared shape, and where each is open.</li>
+<li><a href="wolfram.html">Rule 30</a> and <a href="mahler.html">Mahler's 3/2 problem</a>, its siblings.</li>
+<li><a href="trio-technical.html">The three problems, technically</a>, and <a href="problems.html">the open statements in
+symbols</a>.</li>
+</ul>
+</main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
+<script>(function(){
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function orbit(n){const xs=[n];let x=n;while(x!==1n&&xs.length<100000){x=x%2n?3n*x+1n:x/2n;xs.push(x);}return xs;}
+const log2=x=>{const s=x.toString(2).length;return s>52?s-1+Math.log2(Number(x>>BigInt(s-52))/2**51):Math.log2(Number(x));};
+function draw(){const s=document.getElementById("nin").value.trim(),o=document.getElementById("out");
+  if(!/^[0-9]+$/.test(s)||s==="0"){o.textContent="Please type a positive whole number.";return;}
+  const n=BigInt(s),xs=orbit(n),c=document.getElementById("path"),W=Math.min(900,c.parentElement.clientWidth||900),H=260,L=36,B=22;
+  c.width=W;c.height=H;const x=c.getContext("2d");x.fillStyle=css("--paper");x.fillRect(0,0,W,H);
+  const ls=xs.map(log2),top=Math.max(...ls),stop=xs.findIndex((v,i)=>i>0&&v<n);
+  const X=i=>L+i/(xs.length-1||1)*(W-L-8),Y=v=>H-B-v/(top||1)*(H-B-10);
+  x.strokeStyle=css("--line");x.beginPath();x.moveTo(L,10);x.lineTo(L,H-B);x.lineTo(W-8,H-B);x.stroke();
+  x.fillStyle=css("--mute");x.font="12px "+css("--sans");x.fillText("1",L-12,H-B+4);x.fillText("2^"+Math.round(top),2,Y(top)+4);
+  x.fillText("step "+(xs.length-1),W-70,H-6);
+  x.setLineDash([5,4]);x.strokeStyle=css("--gold");x.beginPath();x.moveTo(L,Y(ls[0]));x.lineTo(W-8,Y(ls[0]));x.stroke();x.setLineDash([]);
+  x.strokeStyle=css("--ember");x.lineWidth=1.6;x.beginPath();ls.forEach((v,i)=>i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v)));x.stroke();x.lineWidth=1;
+  const peak=xs.reduce((a,b)=>b>a?b:a,n);
+  let tn=n,ts=0;while(tn!==1n&&ts<160){tn=tn%2n?(3n*tn+1n)/2n:tn/2n;ts++;}
+  R30.collatzStrip(document.getElementById("strip"),s,Math.max(1,ts));
+  o.textContent=s+" reaches 1 after "+(xs.length-1).toLocaleString()+" steps; its highest value is "+peak.toLocaleString()+"; its stopping time (first step below "+s+") is "+(stop>0?stop:"none (it is 1 or 2)")+".";}
+document.getElementById("go").onclick=draw;
+document.querySelectorAll(".pre").forEach(b=>b.onclick=()=>{document.getElementById("nin").value=b.dataset.n;draw();});
+document.getElementById("nin").addEventListener("keydown",e=>{if(e.key==="Enter")draw();});
+draw();let rt;window.addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(draw,150);});
+})();</script>
+</body>
+</html>
