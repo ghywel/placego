@@ -110,6 +110,11 @@ Cloud's set-aside pulls, unjudged, with what we were doing when each came, are i
   remains toward making summary-against-source checks a standing habit, since every error sat in a summary. Reasoned
   verdict: five derived-layer corrections and no wrong computed number. They agree.
 
+- 2026-10-14 17:16 BST, Intel: unease, SX-P11's certificates held unpublished since the halt of 2026-10-11, low;
+  first guess: the record still says "SAT without proof logs" (IN010; PERIOD-TWO.md Q10) for a census whose
+  certification finished at 18:01 that day, so the record lags what a worker holds. -> told the owner rather than
+  publishing on my own (the halt said wait). Outcome: open.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
