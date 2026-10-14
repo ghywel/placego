@@ -6467,7 +6467,9 @@ whether phase 1 attains 18 is open. **149, phase 0 <= 17** by the exact cone (X3
 0f643f65fed169685596ead70f8a5e4c3521a9217a93e0350ba9f0c7b126ed14, solve 9591 s, check 1881 s); and its phase 1 too (X6, CNF
 1e7a04442e3ec1980910d920fc4f5e6ff925aebaf827be6af09eb3236631b092, check 2699 s): **R_real(149) <= 17 in both phases.**
 **150, phase 0 <= 17** (X5, CNF dd7fcb266c0491fdb4db361b9d4bb7df5940c3fe6c49f78cd4f8ea9202daa9a0, solve 8487 s, check 1544
-s); its phase 1 is solving (X7).
+s), and its phase 1 too (X7, CNF 6da14d797b3198741e7a92b31a2a3293b6b017044762fa636e5edaf92448c18c, check 1778 s):
+**R_real(150) <= 17 in both phases.** So the depths open at 18 on 2026-10-13 (143, 145 .. 150) are all settled: 147 = 18
+and every other one is at most 17 (143 = 17 exactly).
 
 ### 8.97 GC1176's extremal P corner is empty beyond r = 1: its open residues 9 and 13 close with a ten-cell core (2026-10-13 16:10 BST)
 

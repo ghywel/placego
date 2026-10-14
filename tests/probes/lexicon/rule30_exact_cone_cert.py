@@ -63,6 +63,10 @@ OUTCOME X5 (2026-10-14 04:23 BST, M5): X5 REFUTED (UNSAT, predicted SAT at 0.35)
 OUTCOME X6 (2026-10-14 04:49 BST, M5): X6 REFUTED (UNSAT, predicted SAT at 0.35). EXACT d=149 L=18 phase 1 (1226
   words): VERIFIED-UNSAT; cnf sha256 1e7a04442e3ec1980910d920fc4f5e6ff925aebaf827be6af09eb3236631b092; solve 8809 s,
   check 2699 s, lrat 44389.5 MB, deleted. With X3, R_real(149) <= 17 in both phases.
+OUTCOME X7 (2026-10-14 05:15 BST, M5): X7 REFUTED (UNSAT, predicted SAT at 0.35). EXACT d=150 L=18 phase 1 (1226
+  words): VERIFIED-UNSAT; cnf sha256 6da14d797b3198741e7a92b31a2a3293b6b017044762fa636e5edaf92448c18c; solve 9376 s,
+  check 1778 s, lrat 48861.0 MB, deleted. With X5, R_real(150) <= 17 in both phases. The registered frontier 143 .. 150 at 18
+  is settled: 147 = 18, every other depth <= 17.
 
 GPT witness-review predictions (2026-10-14 00:31 BST, before replay; GC1215):
   The committed 329-bit row must have centre0, initial support -146..101 and a white band at -164..-147;
