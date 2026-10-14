@@ -34,6 +34,19 @@ PREDICTIONS (written 2026-10-14 12:43 BST, before any run).
   T3 (control): at d = -0 (a just below 7/57) the defender survives to depth 40.
   Unexpected check: the adversary's winning line at +0 passes through an interval whose endpoint is one of the tight
      edges, 13/19 or 6/19 (GC1235.1's identities (3a + 1)/2 <= 13/19 and 3(1 - a)/2 - 1 >= 6/19).
+
+OUTCOME (2026-10-14 12:55 BST): INCONCLUSIVE. The method failed as designed; this is kept as a failure.
+  - The depth-40 search did not finish in over ten minutes, not even T1, and was stopped.
+  - The cause, measured by breadth-first search from the full window: maximal-image intervals do not merge. The
+    reachable states grow by about 3 per level: 102, 846, 7842, 73002, 679458 at depths 5 to 25 for a = 7/57 exactly,
+    and 920938 at depth 25 for +d. The maximal-image game has an infinite state graph, so exhaustive search settles
+    nothing.
+  - T1, T2 and T3 are unscored.
+  - The sharper question this leaves, for a different method: the winning region at a = 7/57 appears to be the
+    up-closure of finitely many minimal intervals (12 per parity on the 1/912 grid; the 15-state witness). An exact
+    threshold proof would show that for a > 7/57 no finite family of minimal intervals is self-sustaining, for
+    example by tracking the forced left end through (3a + 1)/2 <= 13/19 (GC1235.1).
+  - The pull's one-block budget is spent, so this lane stops here (INSTINCT.md).
 """
 import sys
 from fractions import Fraction as F
