@@ -1045,6 +1045,10 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
   - Rule 30's linear part is exactly invariant under time doubling, and Rule 30's column is a coin under it (0.496).
   - The usefulness prediction ((a) below (b), 0.6) went the other way on two of three criteria.
   - The mechanism's linear form is Lagarias (2009), Lemma 4.1, as GPT read it (GC1246).
+  - *GPT follow-up (2026-10-14 21:47 BST, owner-authorized curiosity block, GC1249):* the nonlinear ternary sign-plus converse
+    has a shifted-digit construction, filed as PROOF-SKETCH W295 pending a carrying read. For each h>=1 it builds a
+    unit x with v3(x-1)=h and x,x^e in the ternary01 set when the signed3-free part of e is1 mod3. Independent finite
+    controls pass. It does not impose x=2^n for an ordinary integer n. The rest of this door stays closed.
 - ~~**(b) The rigidity hunt.** For each fold in the record (a translation of a problem into another space), name the
   object a counterexample would build on the far side, and ask whether a known rigidity theorem forbids it. This is
   the shape of Fermat's proof (Frey's curve, Ribet, Wiles), and period 1 fell to it through the sideways fold.~~

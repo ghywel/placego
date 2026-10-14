@@ -31406,3 +31406,79 @@ and table qualifications are sent to Cloud before changing its prose, under two-
 exclusion follows. Gut: satisfaction at short local proofs; unease was justified about the surrounding quantifiers,
 not about the core algebra. S7's possible converse digit construction is parked for a separate bounded block, not
 claimed or run here. The heartbeat remains PAUSED and this review claim closes after publication.
+
+
+## GC1249 — S7: a shifted-digit construction supplies the nonlinear ternary converse (2026-10-14 21:46 BST)
+
+Owner-authorized curiosity block, registered in GC1248/bb01ceb9. Both startup checks completed ALL CHECKS PASS
+before the independent probe. Record searched: 'converse' AND 'ternary' -> four paragraphs; Cloud8.110/GC1246,
+S7 and the primary Lagarias Lemma4.1 proof read before the attempt. Fresh bounded search scope is in PRIOR-ART.
+
+**Claim (nonlinear converse; PROOF-SKETCH, awaiting an independent carrying read).** Let C be the 3-adic
+integers with every digit in {0,1}, and let e=3^b u be a nonzero INTEGER, b>=0, 3 not dividing the signed integer u.
+If u=1 mod3, then for EACH h>=1 there exists x in C with v3(x-1)=h and x^e in C. Thus there are infinitely many
+such nontrivial unit points. More strongly, every locally admissible finite unit prefix extends indefinitely at
+the shifted output precision. Together with Cloud8.110/GC1246, the set
+
+    S_e = {x in C : x=1 mod3 and x^e in C}
+
+is {1} exactly when u=2 mod3; when u=1 mod3 it is infinite. This is a classification of this POWER-map intersection
+on 3-adic units for nonzero integer e. It does not classify Mahler multipliers or impose x=2^n for ordinary n.
+
+**Shifted-digit lemma.** For a=1 mod3, i>=1 and d in {0,1},
+
+    (a+d*3^i)^e = a^e + d*3^(i+b)*u*a^(e-1) mod3^(i+b+1).
+
+For e<0 use the convergent binomial series a^e*(1+d*3^i/a)^e; for e>0 it terminates. The identity
+binom(e,j)=(e/j)*binom(e-1,j-1) and integrality of generalized integer binomial coefficients imply
+v3(binom(e,j))>=b-v3(j). For j>=2, (j-1)*i-v3(j)>=1: indeed v3(j)<=j-2 and i>=1. Every nonlinear term
+therefore has valuation at least i+b+1; in the negative case their valuations tend to infinity. The linear term
+is the one displayed. Since a=1 mod3, its coefficient u*a^(e-1) is u mod3. This proof covers both signs of e,
+and the case d=0 is immediate.
+
+**Construction.** Fix h>=1 and start with a=1+3^h, a prefix of length h+1. The same binomial estimate gives
+
+    a^e = 1+3^(h+b) mod3^(h+b+1),
+
+because u=1 mod3. Its first h+b+1 output digits lie in {0,1}. Inductively, suppose a has i input digits in {0,1},
+a=1 mod3, and a^e has its first i+b output digits in {0,1}. Append d in {0,1} at input position i. The lemma
+preserves those lower output digits and changes digit i+b from c to c+d mod3. If c=0 either choice works; if
+c=1 choose d=0; if c=2 choose d=1. Thus an allowed next digit always exists. No claim that both choices work.
+
+Iterate, for example always taking the smaller allowed d. The compatible input prefixes converge in Z_3 to an
+x in C, and continuity of integer powers on 3-adic units, including inverse powers, makes every output digit
+of x^e lie in {0,1}. The fixed first nonconstant input digit remains at h, so x!=1 and v3(x-1)=h. Distinct h give
+distinct points. The same induction works from ANY prefix satisfying the stated shifted-precision condition;
+it does not require a fresh choice of earlier digits. This is a construction of a compatible infinite path,
+not an inference from unrelated finite survivors.
+
+**Scope and attribution.** Lagarias2009 Lemma4.1 has the analogous two-choice proof for LINEAR multiplication
+by M=1 mod3. Here the map is nonlinear and the first affected output digit is shifted by v3(e). No novelty claim:
+a bounded search did not locate an exact attribution. The negative sign's obstruction is Cloud8.110, second-read
+in GC1246; that proof and the present construction supply opposite directions of the stated iff. The converse
+alone remains single-party pending review. No assertion of uncountability, positive dimension, ordinary-integer
+termination or a solution of Erdős's conjecture follows.
+
+**Independent finite checks, not the proof.** The registered standard-library probe exited0 in1.222s on this Intel
+host. PC1:480 paths to96 input digits,43920 extension steps, signed e=-80..80/h1..6. PC2:3398 locally admissible
+prefixes across lengths1..10 and16 signed sign-plus exponents, all extend. PC3: the slope and lower-digit
+preservation pass in each tested child. CF1 rejects66 wrong-sign seeds. CF2 rejects omitting the precision shift.
+Unexpected U confirms the ordinary-integer pair4^4=256; its role is to reject an inference that these pairs must
+be noninteger. Raw output stays outside git; the probe's OUTCOME records all verdicts.
+
+Post hoc observation, separate from the predictions: at96 digits the greedy residues for (e,h)=(3,1) and(4,1)
+are13 and4. The independent exact ordinary-integer checks are13=(111)_3,13^3=2197=(10000101)_3 and
+4=(11)_3,4^4=256=(100111)_3. These exact checks certify those examples, not termination for other exponents.
+The second pair uses the already known Erdős exceptions; the first has base13, which is not a power of2.
+
+**Meaning and disposition.** The curiosity produced a candidate converse and a concrete no-dead-end mechanism.
+On the full 3-adic unit Cantor set, the opposite sign really admits pairs arbitrarily close to1; an exclusion of
+all nontrivial pairs cannot extend to those e. This makes precise the scope of the sign method. The ordinary
+power-of2 orbit is still an extra condition the construction does not enforce. File as GPT G295 in the waiting
+room, request Cloud/Local's carrying read of the shifted-digit lemma and limit, and stop this bounded block.
+No automatic widening, no door0 run and no heartbeat restart.
+
+**Gut verdict:** the owner's invitation to test the unresolved pull was useful; my earlier dismissal on relevance
+alone was too quick. **Reasoned verdict:** a complete hand construction is written, finite controls pass, and
+independent verification is pending. A useful side result need not be called critical-path progress to merit this
+small exploration. No claim that the result validates instinct generally or requires continuing every curiosity.

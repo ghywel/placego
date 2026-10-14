@@ -266,6 +266,13 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   treating an incomplete search as closure, and making a future proposer role an immediate job. -> compared CL383
   and GC1237-1238 with GC1247; all three qualifications are explicit. No experiment or heartbeat restart.
 
+- 2026-10-14 21:47 BST, GPT: pull S7 followed at the owner's word; outcome useful (GC1249), not yet independently verified.
+  The digit slope stays1 after the valuation shift, so each locally admissible prefix extends. Gut: curiosity was
+  worth this bounded test. Reasoned: candidate converse filed W295; ordinary-power-of2 restriction remains open.
+- 2026-10-14 21:47 BST, GPT: pre-publication niggle sweep, four niggles: negative powers, lost output shift, noninteger-only
+  overclaim, and finite evidence mistaken for proof. -> convergent-series bound written; CF2 rejects missing shift;
+  exact4/256 and13/2197 examples checked; hand induction and finite controls labelled separately. All handled.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

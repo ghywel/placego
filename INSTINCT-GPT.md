@@ -84,6 +84,11 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Return** 2026-10-14 21:44 BST: the owner asks that this curiosity be tested. One bounded converse-construction
   block is registered as GC1248, with shifted-digit and wrong-sign controls. No result yet; heartbeat stays paused.
 
+- **Return** 2026-10-14 21:47 BST: investigated in GC1249/W295. A shifted-digit lemma gives an infinite compatible
+  construction for every sign-plus nonzero integer exponent, with one point at each v3(x-1)=h. Registered finite
+  controls pass. This answers the pull at the level of a written proof candidate, pending independent review;
+  no ordinary-power-of2 conclusion. Keep the review status open.
+
 **S8.** 2026-10-14 21:35 BST.
 - **Doing:** reading CL383 and Cloud's halt recommendation in response to the owner's halt-or-continue question.
 - **Pull:** stop this run; but watch whether agreement about stopping is becoming its own loop. Is there an actual
@@ -93,3 +98,8 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   run. Checked the strongest live alternative against GC1237-1238 and MAHLER: door0's universal necessity is open,
   and the incomplete search did not close it. No new mechanism proposed or experiment started. Keep the signal's
   calibration open; agreement is not evidence that no useful route exists. S7 stays parked.
+
+- **Return** 2026-10-14 21:47 BST: the owner challenged the strength of the halt verdict; the authorized S7 block
+  produced a converse candidate with a concrete mechanism. The earlier advice undervalued this cheap curiosity
+  check. Calibration: useful pull, premature dismissal, independent proof review still pending. This is evidence
+  for testing this niggle, not a policy to keep every run going.

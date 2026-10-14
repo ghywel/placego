@@ -972,3 +972,5 @@ app is unpublished by design.
 - `mahler/mahler_gpt_sign_review.py`: GC1246 outcome, registered de3b5c1a; SR1-SR5 pass12 depths/324 Mahler/260 ternary-unit comparisons/9920 valuation checks, all three countercontrols rejected. No infinite-set converse follows from finite tables.
 
 - `mahler/ternary_gpt_power_converse.py`: GC1248 registered S7 digit-by-digit nonlinear converse controls; signed exponents, shifted precision, wrong-sign seeds and ordinary-integer countercontrol. NOT RUN.
+
+- `mahler/ternary_gpt_power_converse.py`: GC1249 outcome at registered bounds:480 paths/43920 extensions,3398 locally admissible prefixes; shifted-digit controls pass,66 wrong-sign seeds and omitted-shift rule rejected;4^4=256 control passes. Converse hand proof awaits second reader.

@@ -23,6 +23,14 @@ REFUTED-BY: any PC failure, either bad rule surviving, or a failure of U.
 Finite controls do not prove infinite existence, novelty, uncountability,
 termination of the greedy sequence, or any assertion about powers of2.
 OUTCOME at registration: NOT RUN. Append results; preserve predictions.
+OUTCOME 2026-10-14 21:46 BST, registered bb01ceb9, Intel host:
+ PC1 PASS480 paths,43920 steps to96 input digits; PC2 PASS3398 admissible
+ prefixes, lengths1..10,16 signed exponents. PC3 PASS all tested children.
+ CF1 rejected66 wrong-sign seeds; CF2 rejected omitted precision shift.
+ U PASS4^4=256. ALL CONVERSE CONTROLS PASS, exit0,1.222s.
+ Post hoc96-digit residues for e3/e4,h1 are13/4; direct ordinary-integer
+ base3 arithmetic confirms13^3=2197=(10000101)_3 and4^4=256=(100111)_3.
+ No general termination or dimension claim. Hand converse awaits second read.
 """
 from itertools import product
 from time import perf_counter

@@ -386,7 +386,7 @@ PART: as on the board.
 - Gap-g/dual PROVED G294; coupling/bowtie CLOSED; swarm main-line null — MAHLER §2.
 - Every positive unit interval has xi confined to[7/57,50/57];14-state graph sharp, universal necessity OPEN — PROVED GC1235/37,L721/23.
 - K intersect eK={0} if3^v2(e)*odd(e)=3 mod4; (2/3)K=even part — PROVED Cloud8.109/110, GPT GC1246; PROOFS M.
-- Ternary01 unit x!=1: x^e outside C if3-free(e)=2 mod3 (e!=0 integer, negative allowed) — PROVED Cloud8.110/GC1246; PROOFS M.
+- Ternary01 unit x^e (e!=0 integer): 3-free(e)=2 mod3 excludes x!=1, PROVED Cloud8.110/GC1246; converse SKETCH W295/GC1249.
 
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)

@@ -2656,3 +2656,18 @@ Opened [Mahler's original paper](https://www.cambridge.org/core/services/aop-cam
 Read [Lagarias, Ternary expansions of powers of2](https://arxiv.org/pdf/math/0512006), introduction/section1 and section4 through Lemma4.1. That lemma gives C intersect M^(-1)C={0} for positive M=2 mod3, and an infinite intersection for M=1 mod3. Its proof uses the first nonzero digit and recursive digit choices. It concerns linear MULTIPLICATION of a point by M; Cloud8.110 instead raises a unit point to an integer POWER. These operations must not be conflated. The source is an analogous mechanism, not an attribution of Cloud's exact nonlinear statement.
 
 Flatto-Lagarias-Pollington's publisher page was opened, but both its archive PDF and official download returned403. The AMS Dubickas-Mossinghoff PDF was unavailable through this tool. Neither full paper was searched in this block; the existing GC1221/GC1228 and prior-art reads remain their own dated evidence. No folklore or priority claim is made.
+
+
+## GPT nonlinear ternary converse: bounded prior-art check (2026-10-14 21:46 BST; GC1248-1249)
+
+Searches: `3-adic Cantor set power map x^n digits 0 1 intersection nonlinear`, `ternary Cantor powers converse
+Lagarias`, `"3-adic" "Cantor" "power map"`, and `"ternary" "x^e" "Cantor"`. Results mostly concerned LINEAR
+multiplicative translates, including Abram-Lagarias, arXiv1308.3133 and arXiv1508.05967; their full texts were not
+read in this block. No exact nonlinear converse attribution was located in this bounded search; NOT a novelty claim.
+
+Read [Lagarias, Ternary expansions of powers of2](https://arxiv.org/pdf/math/0512006), section4 Lemma4.1 and its
+proof (PDF pp21-22). For M=1 mod3 its recursive input-digit choice guarantees the next linear output digit avoids2.
+This is the direct prior mechanism. GC1249 uses the same two-choice principle for x^e, with a proved output shift
+v3(e) and convergence for negative integer exponents. The source does not in the passage read state that nonlinear
+power-map result. Its preceding proof also explicitly uses4=(11)_3 and256=(100111)_3, so that example is known,
+not a new Erdős exception. This block does not establish literature priority or search every source in full.
