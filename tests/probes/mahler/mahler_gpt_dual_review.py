@@ -7,6 +7,10 @@ Counterfactual: wrong sign conversion, integer-bit complementation or chunk mass
 Unexpected control: omitted x=-256 emits no receipt, while x=-1 is included.
 No full census or saved-straggler analysis. One temporary C build, four fixed inputs.
 Run: python3 tests/probes/mahler/mahler_gpt_dual_review.py
+
+OUTCOME (2026-10-14 11:39 BST): all preregistered fixed controls PASS. Independent
+original-fraction horizons153 and2; matching dual C straggler representation,
+chunk mass16 at2, and omitted outside-boundary control. No census replay.
 """
 from pathlib import Path
 import subprocess
