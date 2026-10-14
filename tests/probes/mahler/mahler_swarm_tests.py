@@ -46,6 +46,21 @@ PREDICTIONS (written 2026-10-14 10:45 BST, before either w = 63 run and before a
      (d) unexpected check: the dual stragglers' count is within 15% of the positive 4499 (the coin is sign-blind).
          A large asymmetry would mean the forced phase sees the sign statistically.
 """
+OUTCOME (2026-10-14 11:20 BST, M5, 9 workers; machine output quoted; run log ~/np-scratch-int/mahler/swarm_block1.log):
+  S0 HELD (recorded above). S1 HELD. S2 HELD in (a), (b), (c) and (d).
+  S1: the positive rerun reproduced the receipt exactly (4499 stragglers, H* = 157 at 1541211973603965806, mass
+     2^63 - 1, RECEIPT OK; 1053 s). Rung-3-pure stragglers: 217 of 4499 (0.0482), inside [150, 280] and beside the
+     coin's 214. Over chain roots: 103 of 2269 (0.0454). Negative side: 221 of 4622 (0.0478). Minimum gaps over the
+     first 124 bits: {2: 4282, 3: 216, 4: 1} (positive), {2: 4401, 3: 221} (negative). Reading (MEASURED): no
+     integer-specific preference for odd terms 5 mod 8 in the forced phase. The record holder's 156-bit rung-3 purity
+     is consistent with chance, under GC1227's caution that a single selected start is not a sample.
+  S2: (a) the dual total is exactly 2^63 - 1, and A(T) equals the positive A(T) at every T < 63. (b) Every negative
+     start -2^63 < x <= -1 has a finite horizon, and all 4622 stragglers died in exact replay (COMPUTED): no eta in
+     (0, 2^63 - 1] has every {eta (3/2)^n} in (1/2, 1). (c) H*_neg(63) = 153 at x = -6964446546082240544 (2.429 w),
+     inside [140, 175]; the death-bin tail mean is 0.7494. (d) 4622 dual stragglers against 4499, a difference of
+     2.7%. Reading: on the negative side the census follows the same coin law as on the positive side; no sign
+     effect was seen.
+"""
 import os, sys
 from collections import Counter
 

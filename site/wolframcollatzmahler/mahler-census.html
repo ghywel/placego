@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>No Mahler Z-number below 2^63</title>
+<meta name="description" content="Every positive number below 2⁶³, about 9.2 quintillion, fails Mahler's 3/2 test. An exact census on one laptop in about a quarter of an hour extends the 2009 bound of 2⁵⁷; the code is open, and the only limit is compute.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wolfram · Collatz · Mahler">
+<meta property="og:title" content="No Mahler Z-number below 2^63">
+<meta property="og:description" content="Every positive number below 2⁶³, about 9.2 quintillion, fails Mahler&#x27;s 3/2 test. An exact census on one laptop in about a quarter of an hour extends the 2009 bound of 2⁵⁷; the code is open, and the only limit is compute.">
+<meta property="og:url" content="https://www.wolframcollatzmahler.com/mahler-census.html">
+<meta property="og:image" content="https://www.wolframcollatzmahler.com/share/mahler-census.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Wolfram, Collatz, Mahler: No Mahler Z‑number below 2⁶³, beside a Rule 30 pyramid grown from one black cell">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 7 4%27%3E%3Crect width=%277%27 height=%274%27 fill=%27%23fffdf8%27/%3E%3Cpath fill=%27%231a1a1a%27 d=%27M3 0h1v1H3zM2 1h3v1H2zM1 2h2v1H1zM4 2h2v1H4zM0 3h2v1H0zM3 3h1v1H3zM5 3h2v1H5z%27/%3E%3C/svg%3E">
+<link rel="canonical" href="https://www.wolframcollatzmahler.com/mahler-census.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="in">
+  <a class="brand" href="index.html"><canvas class="brand-mark" aria-hidden="true"></canvas>Wolfram · Collatz · Mahler</a>
+  <a class="other" href="https://cadencevideoplayer.com">Author's other works: <span>cadencevideoplayer.com</span></a>
+  <nav aria-label="Site"><a href="learn.html">Learn</a><a href="rule30/index.html">Rule 30, worked</a><a href="stand.html" aria-current="page">Where we stand</a><a href="trio.html">Rule 30, Collatz, Mahler</a><a href="need.html">What we need</a><a href="problems.html">For mathematicians</a><a href="trove.html">The trove</a><a href="join.html">Join</a></nav>
+</div></header>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<main id="main" tabindex="-1">
+<p class="kicker">A computation, on one laptop</p>
+<h1>No Mahler Z‑number below 2⁶³</h1>
+<p class="lede">In 1968 Kurt Mahler asked whether some positive number ξ keeps the fractional part of ξ, ξ·3/2,
+ξ·(3/2)², ξ·(3/2)³, … below one half, for ever. Such a number is called a Z-number. Nobody knows whether one exists,
+and Mahler guessed that none does. We checked every positive number below 2<sup>63</sup>, about 9.2 quintillion.
+None of them passes. In 2009 Dubickas and Mossinghoff showed by computer that a Z-number, if there is one, must exceed
+2<sup>57</sup>. The census on this page moves that floor 64 times higher, and it took a quarter of an hour on a laptop.</p>
+
+<h2 data-glyph="pyramid">Seen</h2>
+<figure><canvas role="img" id="tunnel" aria-label="The last surviving candidate below 2^63: its fractional parts stay below one half for j = 0 to 156 and cross above at j = 157"></canvas>
+<figcaption>The longest survivor below 2<sup>63</sup>, the integer part n = 1541211973603965806. The top strip is its
+parity, black where the integer part of ξ·(3/2)<sup>j</sup> is odd. The dots are the fractional parts of one exact
+candidate ξ* in [n, n+1), the last one left: every one sits below the dashed line at ½ for j = 0 to 156, and at
+j = 157 it jumps above, as every other candidate in [n, n+1) already had. Computed exactly in your browser.</figcaption></figure>
+<figure><canvas role="img" id="records" aria-label="The longest survival below 2^w against w, with the coin law 2.41 w"></canvas>
+<figcaption>The record horizon among all starts below 2<sup>w</sup>, for w from 12 to 63 bits (dots), against the coin
+law of about 2.41·w steps (line). The records follow chance closely: nothing below 2<sup>63</sup> lasts anomalously
+long.</figcaption></figure>
+
+<h2 data-glyph="strip">Stated</h2>
+<div class="level"><p class="kicker">The result (computed, exact)</p>
+<p>For every integer n with 1 ≤ n &lt; 2<sup>63</sup>, no real ξ in [n, n+1) has the fractional part of ξ·(3/2)<sup>j</sup>
+below ½ for every j ≥ 0. Call the horizon of n the first j at which no ξ in [n, n+1) is left below one half: every
+start below 2<sup>63</sup> has a finite horizon, at most 157. A number in (0, 1) fails too: its multiples ξ·(3/2)<sup>j</sup> grow
+by half each step, so one of them lands between ½ and 1. So there is no Z-number in (0, 2<sup>63</sup>).</p></div>
+<div class="level"><p class="kicker">Why there is one candidate per integer (Mahler 1968; proved)</p>
+<p>Write ξ·(3/2)<sup>j</sup> = n<sub>j</sub> + u<sub>j</sub>, with n<sub>j</sub> an integer and u<sub>j</sub> in [0, ½). Then
+the integer parts follow one fixed map, n<sub>j+1</sub> = ⌈3n<sub>j</sub>/2⌉. The fractional part is fixed by the future
+parities b<sub>k</sub> = n<sub>k</sub> mod 2 alone:</p>
+<pre>u<sub>j</sub> = Σ<sub>k≥0</sub> b<sub>j+k</sub> · 2<sup>k</sup> / 3<sup>k+1</sup></pre>
+<p>So the integer part n<sub>0</sub> decides everything. Each unit interval [n, n+1) holds at most one Z-number, and
+the question becomes whether the orbit of some positive integer under ⌈3x/2⌉ keeps every one of those sums below ½.</p></div>
+<div class="level"><p class="kicker">How 9.2 quintillion candidates are checked in minutes</p>
+<p>The first T parities of an orbit depend only on n mod 2<sup>T</sup>, its lowest T binary digits. So every start that shares
+those digits shares its early life. The census walks the tree of low digits. Along each branch it keeps the exact
+interval of fractional parts still alive, as integers over a power of two. When an interval empties, every start below
+that branch dies at once, sometimes trillions together. A start that survives all 63 digits runs on alone until it fails.
+The 4,499 starts still alive after 124 steps were replayed in exact rational arithmetic; the longest horizon was 157.
+The total is checked: exactly 2<sup>63</sup> − 1 starts, each with a finite horizon.</p></div>
+<div class="level"><p class="kicker">How it was checked</p>
+<p>Before the full run, the census matched an independent exact-fraction computation on every start below 2<sup>20</sup>.
+The full run was repeated, with the same 4,499 stragglers and the same record. Our reviewing model, GPT, audited
+the source and recomputed fixed cases independently. Dubickas and Mossinghoff's 2009 table lists one of our record
+starts, 9850069454682037, which fails at step 137, so the two searches use the same definitions. One more cross-check
+came out of the counts: the number of surviving digit patterns of each length equals, exactly, the word count of the
+base-3/2 digit system (the greedy beta-shift), at every length below 63.</p></div>
+<table>
+<tr><th scope="col">Starts below</th><th scope="col">Record horizon</th><th scope="col">Its integer part</th></tr>
+<tr><td>2<sup>20</sup></td><td>47</td><td>690773</td></tr>
+<tr><td>2<sup>32</sup></td><td>76</td><td>3097089134</td></tr>
+<tr><td>2<sup>40</sup></td><td>99</td><td>704731028141</td></tr>
+<tr><td>2<sup>48</sup></td><td>120</td><td>119619616250377</td></tr>
+<tr><td>2<sup>56</sup></td><td>137</td><td>9850069454682037</td></tr>
+<tr><td>2<sup>60</sup></td><td>143</td><td>439797727552450048</td></tr>
+<tr><td>2<sup>63</sup></td><td>157</td><td>1541211973603965806</td></tr>
+</table>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/MAHLER.md">MAHLER.md</a> section 1 (the
+census and its receipts); <a href="https://github.com/ghywel/placego/blob/main/tests/probes/mahler/mahler_census.c">mahler_census.c</a>
+and <a href="https://github.com/ghywel/placego/blob/main/tests/probes/mahler/mahler_census.py">mahler_census.py</a> (the walker,
+its predictions, controls and outcome); <a href="https://github.com/ghywel/placego/blob/main/RULE30-GPT.md">RULE30-GPT.md</a>
+GC1221 and GC1225 (GPT's audit and the published-table cross-check); A. Dubickas and M. J. Mossinghoff,
+<a href="https://www.ams.org/mcom/2009-78-267/S0025-5718-09-02211-X/">Lower bounds for Z-numbers</a>, Math. Comp. 78 (2009)
+1837–1851; K. Mahler, An unsolved problem on the powers of 3/2, J. Austral. Math. Soc. 8 (1968) 313–321.</p>
+
+<h2 data-glyph="circle">The other half</h2>
+<p id="neg">Mahler's question is usually asked for positive ξ. For a negative ξ the same question is equivalent to asking
+for a positive η whose fractional parts all stay in the upper half (½, 1), because the map n ↦ −1 − n turns one problem
+into the other: it commutes with ⌈3x/2⌉ and swaps every parity. Akiyama, Frougny and Sakarovitch state the question for
+every nonzero ξ, and we found no published treatment of this half on its own.</p>
+<div class="level" id="negbox"><p class="kicker">The negative starts (computed, exact)</p>
+<p>The same census run on every negative integer part x with −2<sup>63</sup> &lt; x ≤ −1: every one has a finite horizon,
+the longest 153, at x = −6964446546082240544. So no positive η up to 2<sup>63</sup> − 1 keeps every fractional part of
+η·(3/2)<sup>n</sup> in (½, 1). As the symmetry requires, the counts over the first 63 steps match the positive side
+exactly. The records and the tail follow the same chance law: 4,622 starts alive at step 124, against 4,499 on the
+positive side.</p></div>
+
+<h2 data-glyph="coin">Checked, here, now</h2>
+<p>Type any positive integer n, or press one of the record starts. Your browser follows its orbit under ⌈3x/2⌉ with exact
+integer arithmetic and reports the step at which no ξ in [n, n+1) is left below one half.</p>
+<div class="tools"><label>n <input id="nin" size="22" value="1541211973603965806" inputmode="numeric" aria-label="Integer part n"></label>
+<button id="go">Check</button>
+<button class="pre" data-n="1541211973603965806">157</button><button class="pre" data-n="9850069454682037">137</button>
+<button class="pre" data-n="119619616250377">120</button><button class="pre" data-n="4">4</button></div>
+<p class="pill" id="out" aria-live="polite"></p>
+<p class="note">The start 4 is the small case worth watching: some ξ in [4, 4½) keeps below one half for j = 0 to 11, a
+horizon of 12. Starts 1, 2, 3 and 5 have horizons 4, 3, 2 and 6.</p>
+
+<h2 data-glyph="map">Compute is the only limit</h2>
+<p>This ran on a single Apple M5 MacBook Pro, in about a quarter of an hour (798 seconds on 9 cores). The work grows by
+about half again for each extra binary digit: 2<sup>60</sup> took 237 seconds and 2<sup>63</sup> took 798, a ratio of
+3.37 against (3/2)³ = 3.375. Extrapolating:</p>
+<table>
+<tr><th scope="col">Bound</th><th scope="col">One laptop (estimate)</th><th scope="col">A thousand cores (estimate)</th></tr>
+<tr><td>2<sup>63</sup> (done)</td><td>13 minutes</td><td>seconds</td></tr>
+<tr><td>2<sup>70</sup></td><td>about 4 hours</td><td>about 2 minutes</td></tr>
+<tr><td>2<sup>80</sup></td><td>about 9 days</td><td>about 2 hours</td></tr>
+<tr><td>2<sup>90</sup></td><td>about 1.5 years</td><td>about 5 days</td></tr>
+</table>
+<p>The walk splits by the lowest digits into independent pieces, so it spreads over any number of machines with no
+communication. Going beyond 2<sup>63</sup> needs wider integers: start values past 64 bits, and past about 2<sup>80</sup>
+wider intermediate values in the walker too. If you have the machines,
+take the code, run it, and send us the receipt: the histogram, the record and the stragglers. We will replay it.
+Details on the <a href="join.html">join page</a>.</p>
+
+<h2 data-glyph="map">What it is and what it is not</h2>
+<p>It is an exact finite verification, and it extends a published bound by a factor of 64. It is also good evidence of
+a mild kind: the record survivors grow like chance, about 2.4 steps per binary digit, and nothing below 2<sup>63</sup>
+behaves strangely. It is not a proof. Any finite range can be checked, but "for ever" cannot be reached this way:
+Turing's 1936 point, that finitely many checks never settle a question about all numbers without an essentially new
+argument. A Z-number could still exist far above any bound a computer will ever reach. We are not calling 2<sup>63</sup> the
+current record either: a brief search found no improvement on 2<sup>57</sup> since 2009, but we have not combed the later
+literature. The census is one party's computation, audited at the source by a second, not yet replayed in full by
+anyone else.</p>
+<p class="source"><b>Sources.</b> MAHLER.md section 1 and PRIOR-ART.md ("Mahler's 3/2 problem: survey at the room switch",
+with its correction crediting Dubickas and Mossinghoff).</p>
+</main>
+<canvas class="ribbon" aria-hidden="true"></canvas>
+<footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
+<script src="r30.js"></script>
+<script>(function(){
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+// exact horizon: the window [lo, hi) of fractional parts, as integers over 2^(T+1), stepped as in mahler_census.c
+function walk(n,keep){let v=n,lo=0n,hi=1n,T=0;const path=[];
+  while(T<4000){const b=v&1n,D=1n<<BigInt(T+1);
+    if(keep)path.push({b:Number(b),lo:Number(lo)/Number(D),hi:Number(hi)/Number(D)});
+    let nl=3n*lo,nh=3n*hi;if(b){nl=nl>D?nl-D:0n;nh=nh>D?nh-D:0n;}if(nh>D)nh=D;
+    if(!(nl<nh))return{h:T+1,path};lo=nl;hi=nh;v=(3n*v+b)>>1n;T++;}
+  return{h:null,path};}
+function survivor(n){let v=n,lo=0n,hi=1n,T=0;const bits=[];
+  while(T<4000){const b=v&1n,D=1n<<BigInt(T+1);let nl=3n*lo,nh=3n*hi;if(b){nl=nl>D?nl-D:0n;nh=nh>D?nh-D:0n;}if(nh>D)nh=D;
+    bits.push(Number(b));if(!(nl<nh))break;lo=nl;hi=nh;v=(3n*v+b)>>1n;T++;}
+  // the midpoint of the last nonempty window is one surviving candidate xi*: n_T + u*, with u* = (lo+hi)/2^(T+2)
+  const A=v*(1n<<BigInt(T+2))+lo+hi,den0=1n<<BigInt(T+2),fr=[];
+  for(let j=0;j<=T+4;j++){let num,den;if(j<=T){num=A*(1n<<BigInt(T-j));den=den0*3n**BigInt(T-j);}else{const m=BigInt(j-T);num=A*3n**m;den=den0*(1n<<m);}
+    fr.push(Number((num%den)*1000000n/den)/1e6);}
+  return{h:T+1,bits,fr};}
+function tunnel(){const n=1541211973603965806n,{h,bits,fr}=survivor(n),c=document.getElementById("tunnel");
+  const W=Math.min(940,c.parentElement.clientWidth||940),N=fr.length,S=(W-30)/N,H=200,top=26,L=24;c.width=W;c.height=H+top+22;const x=c.getContext("2d");
+  x.fillStyle=css("--paper");x.fillRect(0,0,W,c.height);
+  bits.forEach((b,j)=>{if(b){x.fillStyle=css("--cell");x.fillRect(L+j*S,0,Math.max(1,S),16);}});
+  const Y=f=>top+H-f*H;x.strokeStyle=css("--line");x.strokeRect(L+0.5,top+0.5,W-L-6,H-1);
+  x.setLineDash([5,4]);x.strokeStyle=css("--gold");x.beginPath();x.moveTo(L,Y(0.5));x.lineTo(W-6,Y(0.5));x.stroke();x.setLineDash([]);
+  x.fillStyle=css("--mute");x.font="12px "+css("--sans");x.fillText("1",8,Y(1)+10);x.fillText("½",6,Y(0.5)+4);x.fillText("0",8,Y(0));
+  fr.forEach((f,j)=>{x.fillStyle=f<0.5?css("--ember"):css("--teal");x.beginPath();x.arc(L+j*S+S/2,Y(f),Math.max(1.6,Math.min(3,S/2)),0,7);x.fill();});
+  x.fillStyle=css("--mute");x.fillText("j = 0",L,top+H+15);const t="j = "+(h-1)+": last below ½; j = "+h+": above";x.fillText(t,W-6-x.measureText(t).width,top+H+15);}
+function records(){const pts=[[12,29],[16,39],[20,47],[24,59],[28,61],[32,76],[36,93],[40,99],[44,106],[48,120],[52,130],[56,137],[60,143],[63,157]];
+  const c=document.getElementById("records"),W=Math.min(640,c.parentElement.clientWidth||640),H=300,L=58,B=34;c.width=W;c.height=H;const x=c.getContext("2d");
+  x.fillStyle=css("--paper");x.fillRect(0,0,W,H);const X=w=>L+(w-8)/(66-8)*(W-L-10),Y=h=>H-B-(h/170)*(H-B-10);
+  x.strokeStyle=css("--line");x.beginPath();x.moveTo(L,10);x.lineTo(L,H-B);x.lineTo(W-10,H-B);x.stroke();
+  x.fillStyle=css("--mute");x.font="12px "+css("--sans");
+  [16,24,32,40,48,56,63].forEach(w=>x.fillText(w,X(w)-7,H-B+16));[0,50,100,150].forEach(h=>x.fillText(h,L-26,Y(h)+4));
+  x.fillText("bits w",W-60,H-6);x.save();x.translate(12,H/2+40);x.rotate(-Math.PI/2);x.fillText("record horizon",0,0);x.restore();
+  x.strokeStyle=css("--teal");x.lineWidth=2;x.beginPath();x.moveTo(X(8),Y(2.41*8));x.lineTo(X(66),Y(2.41*66));x.stroke();
+  x.fillStyle=css("--teal-text");x.fillText("coin law 2.41 w",X(44),Y(2.41*44)+22);
+  x.fillStyle=css("--ember");pts.forEach(([w,h])=>{x.beginPath();x.arc(X(w),Y(h),4,0,7);x.fill();});}
+function check(){const s=document.getElementById("nin").value.trim(),o=document.getElementById("out");
+  if(!/^[0-9]+$/.test(s)||s==="0"){o.textContent="Please type a positive whole number.";return;}
+  const t0=performance.now(),{h}=walk(BigInt(s),false),ms=(performance.now()-t0).toFixed(1);
+  o.textContent=h===null?"Still alive after 4000 steps: a Z-number candidate. Please tell us at once.":"Some ξ in ["+s+", "+s+"½) keeps below one half for j = 0 to "+(h-1)+"; at j = "+h+" none is left. Horizon "+h+" ("+ms+" ms).";}
+document.getElementById("go").onclick=check;
+document.querySelectorAll(".pre").forEach(b=>b.onclick=()=>{document.getElementById("nin").value=b.dataset.n;check();});
+document.getElementById("nin").addEventListener("keydown",e=>{if(e.key==="Enter")check();});
+tunnel();records();check();
+let rt;window.addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{tunnel();records();},150);});
+})();</script>
+</body>
+</html>

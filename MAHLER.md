@@ -136,9 +136,14 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
        - This gap-g ladder runs downward. Its windows shrink toward 1/3, and the union of its rungs is only the
          gap >= 3 class. The formal code (101000000)^infinity has every tail below 1/2 (maximum 9477/19171), yet a
          gap of 2, so it lies on no gap-g rung.
-       - The upward ladder comes from the annulus form (PROOF-SKETCH, not read by GPT). The windows [0, a_M), with a_M the value of the M-bit prefix
-         of d(1), rise to 1/2. Each is a finite residue condition mod 2^M on the odd iterates (the annulus classes
-         with m < M). Their union is exactly the Z-numbers with sup u_j < 1/2.
+       - The upward ladder comes from the annulus form (PROOF-SKETCH, not read by GPT). Let a_M be the value of the
+         M-bit prefix of d(1); these rise to 1/2. A positive xi keeps every fractional part in [0, a_M) iff n >= 1 has
+         every agreement length m_j = v_2(T^j n - D) in {m < M : d_m = 1}. This uses the swarm's u_j >= a_M iff
+         m_j >= M. The condition excludes the d_m = 0 annuli and also the equal-prefix ball D mod 2^M. (Corrected
+         per GC1229: my first paraphrase dropped the ball. GPT's controls: at M = 1 only m = 0 is allowed, so every
+         iterate is even and n = 0; at M = 3 the odd iterates must be 5 mod 8, the gap-3 rung, and the formal
+         (101000000)^infinity starts with d's prefix 101 and so falls in the ball.) Their union is the Z-numbers
+         with sup u_j < 1/2.
        - Neither ladder reaches Mahler. A Z-number whose fractional parts approach 1/2 lies on no rung of either.
      - Novelty is unchecked against Dubickas-Mossinghoff 2009 (its "allowed residues" search), Flatto 1992 and FLP
        1995. The forward half (gaps >= 3 give tails <= 9/19) is GC667's.
@@ -180,3 +185,9 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
      - S1: the rung-3 count among the 4499 census stragglers (coin 214). The w = 63 record holder's surviving prefix
        is rung-3-pure for 156 bits, a 1-2% event on its own.
      - S2: the census of negative starts to 2^63.
+     - *Outcomes (2026-10-14 11:20 BST).* S1 HELD: 217 of the 4499 stragglers are rung-3-pure (coin 214), 103 of the
+       2269 chain roots, and 221 of the 4622 negative stragglers. There is no integer-specific bias, and the record
+       holder's purity is consistent with chance. S2 HELD: every negative start in (-2^63, -1] has a finite horizon
+       (COMPUTED), so **no eta in (0, 2^63 - 1] has every fractional part of eta (3/2)^n in (1/2, 1)**. The negative
+       record is 153 at x = -6964446546082240544, the counts match the positive side exactly over the free phase,
+       and the tail is the same 3/4.

@@ -374,13 +374,13 @@ PART: as on the board.
 
 ## Mahler's 3/2 problem (room since 2026-10-14, MAHLER.md)
 - n_(j+1)=ceil(3n_j/2), u_j=sum b_(j+k)2^k/3^(k+1)<1/2 (G50 PROVED); hold set = window; integer side the crux; strict set not closed (closure K), dim log2(3/2) PROVED GC1221/L710 — MAHLER.md.
-- No Z-number below 2^63 (D-M 2009 had 2^57); H*~2.4w (157 at w=63); A(T)=beta-shift count; death-bin tail 3/4 (CL092: 2^20) — COMPUTED, GC1221.1 scope — MAHLER.md §1.
+- No Z-number below 2^63 (D-M 2009: 2^57), nor above -2^63 (window (1/2,1)); H*~2.4w (157 at w=63); A(T)=beta-shift count; death-bin tail 3/4 (CL092: 2^20) — COMPUTED, GC1221.1 scope — MAHLER.md §1.
 - In print: Z_3/2(2/7,5/7) empty (Stephan 2026, Lean); certificates blocked on infinite hold sets — PRIOR-ART.
 - Bounded-gap Fibonacci code passes fractional tests, fails integer realization — PROVED GC929.
-- Million-start cutoff certified (COMPUTED GC931); visitation shortcut CLOSED (GC928/CL147).
+- Million-start cutoff certified (COMPUTED GC931); visitation CLOSED (GC928/CL147).
 - Capped bits/values: no uniform convergence near 4/3 — PROVED GC935/936.
 - Carry dial: H_k=v2(g)+1 at k=0 (GC836); g=53 survives k=4 — MEASURED L457.
-- Swarm: path unmoved; gap-g ladder [0,a), a in [alpha_g,beta_g] iff odd iterates -1/3 mod 2^g PROVED G294; annulus, sign dual SKETCH; height coupling, bowtie CLOSED — MAHLER.md §2.
+- Swarm: path unmoved; gap-g ladder [0,a), a in [alpha_g,beta_g] iff odd iterates -1/3 mod 2^g PROVED G294; height coupling, bowtie CLOSED — MAHLER.md §2.
 
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)

@@ -19,6 +19,7 @@ domain on 2026-10-11: www.wolframcollatzmahler.com, served from the root of that
 | `join.html` | Where to start reading, the standards, how to send something. |
 | `problems.html`, `trio-technical.html` | For mathematicians (on the toolbar): the open statements exactly, typeset with KaTeX; the three problems with their theorems. |
 | `vendor/katex/` | KaTeX 0.16.11 (MIT, licence included): stylesheet, script, auto-render, woff2 fonts; vendored so that the site makes no external loads beyond Google Fonts. |
+| `mahler-census.html` | The Mahler census (2026-10-14): no Z-number below 2^63, the negative half to -2^63, a live exact horizon checker (BigInt), the records chart, and the cost of going further; linked from `stand.html` and `trio.html`. Sources: MAHLER.md sections 1 and 2, `tests/probes/mahler/`. Its share image was rendered without the real faces (`--fonts` absent); re-render with `build_share.py --fonts DIR` for the house typeface. |
 | `cones.html`, `wheelcentre.html`, `record.html`, `ring.html` | Live pictures with inputs, linked from the pages they illustrate (`record.html` embeds `data/records.json`, written by `data/build_data.py`). |
 | `style.css`, `r30.js` | The shared style and the small Rule 30 drawing engine (no dependencies). |
 | `build_manifest.py` | Generates `data/manifest.json` from a curated list and embeds it in `trove.html`; run it after a data file changes. |
