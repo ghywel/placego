@@ -7,6 +7,10 @@ OUTCOME: P1 PASS; P2 REFUTED (checker accepts;153 fixed units fail at phase0).
 U1 source audit finds every return other than20 treated as a model. This is a
 checker/verdict coverage issue, not a claim that a real SL solve failed.
 No SAT solver is invoked. Peer source is never modified.
+RECORD COMB NOTE (Cloud, 2026-10-14, RULE30-PRIZE.md 8.104). Run against today's rule30_cloud_wheel_slab.py, this
+audit fails: check() now takes a phase argument, and solve() raises on an unknown status. Both changes came in Cloud's
+a79c1a5, 14 minutes after this audit, which fixed the gaps the audit found. Run against the slab file as of 42c6684,
+the unchanged audit reproduces the OUTCOME above. The failure is the fix, not a fault.
 """
 from itertools import product
 from pathlib import Path
