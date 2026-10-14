@@ -45,6 +45,16 @@ OUTCOME (2026-10-14 12:18 BST, M5, seconds each; machine output quoted; log ~/np
   E2 HELD: W is empty at a = 113/912.
   E3 HELD: at G = 1140, |W| = 502230 at a = 7/57, and W is empty at a = 141/1140.
   Unexpected check HELD: W is empty at a = 1/7 (G = 798).
+  WITNESS (2026-10-14, at GPT's request in GC1235/GC1235.1): a 15-state closed sub-strategy was extracted from the
+     G = 912 winning set (shortest minimal winning intervals, breadth first from one root of each parity). It is listed
+     as _W15 below with t chosen for both sigma, and check_witness() verifies it with exact fractions, independently of
+     the grid code: closed, inside [7/57, 50/57], both parities. Run: python3 ... witness. Its endpoints are the (100)
+     cycle 4/19, 6/19, 9/19, its mirror 10/19, 13/19, 15/19, and /57 points (7/57, 11/57, 20/57, 26/57, 31/57, 37/57,
+     46/57, 50/57). The tight edges are [7/57, ...] (c = 1, t = 0) -> left end 13/19 and [725/912, 50/57] (c = 0,
+     t = 1) -> right end 6/19. GPT's soundness argument (GC1235) is read by Local: k fixes sigma; t is the genuine carry
+     since the image lies in U, inside (0, 1); the pullbacks are nested compact intervals shrinking by 2/3. So the
+     15-state witness alone proves the existence window. Why every strategy must use those edges (the exact threshold)
+     stays OPEN.
   Reading: the memory-1 threshold sits exactly at 7/57 on both grids. Why 7/57 = 7/(3 x 19), with 19 the (100) cycle's
      denominator, is parked in INSTINCT.md's incubator. Off the main line: an existence window, not an exclusion.
 """
@@ -95,9 +105,50 @@ def report(label, G, lo, hi):
     return W
 
 
-if __name__ == '__main__':
+if __name__ == '__main__' and not (len(sys.argv) > 1 and sys.argv[1] == 'witness'):
     report('E1 a=7/57', 912, 112, 800)
     report('E2 a=113/912', 912, 113, 799)
     report('E3 a=7/57', 1140, 140, 1000)
     report('E3 a=141/1140', 1140, 141, 999)
     report('unexpected a=1/7', 798, 114, 684)
+
+
+# The 15-state witness (extracted 2026-10-14 from the G = 912, a = 7/57 winning set at GPT's request, GC1235/GC1235.1):
+# each state is (left, right, parity); WITNESS[(state, sigma)] = (t, successor). Checkable by hand, and by check_witness()
+# with exact fractions independently of the grid code.
+_W15 = [
+    ((F(39, 304), F(4, 19), 0), (0, (F(71, 304), F(6, 19), 0)), (0, (F(11, 57), F(115, 456), 1))),
+    ((F(71, 304), F(6, 19), 0), (0, (F(20, 57), F(395, 912), 0)), (0, (F(63, 152), F(9, 19), 1))),
+    ((F(277, 912), F(331, 912), 0), (0, (F(26, 57), F(491, 912), 0)), (0, (F(421, 912), F(31, 57), 1))),
+    ((F(20, 57), F(395, 912), 0), (0, (F(10, 19), F(89, 152), 0)), (0, (F(517, 912), F(37, 57), 1))),
+    ((F(26, 57), F(491, 912), 0), (0, (F(341, 456), F(46, 57), 0)), (0, (F(13, 19), F(233, 304), 1))),
+    ((F(10, 19), F(89, 152), 0), (0, (F(725, 912), F(50, 57), 0)), (0, (F(15, 19), F(265, 304), 1))),
+    ((F(341, 456), F(46, 57), 0), (1, (F(7, 57), F(187, 912), 1)), (1, (F(39, 304), F(4, 19), 0))),
+    ((F(725, 912), F(50, 57), 0), (1, (F(11, 57), F(115, 456), 1)), (1, (F(71, 304), F(6, 19), 0))),
+    ((F(7, 57), F(187, 912), 1), (0, (F(341, 456), F(46, 57), 0)), (0, (F(13, 19), F(233, 304), 1))),
+    ((F(11, 57), F(115, 456), 1), (0, (F(725, 912), F(50, 57), 0)), (0, (F(15, 19), F(265, 304), 1))),
+    ((F(63, 152), F(9, 19), 1), (1, (F(7, 57), F(187, 912), 1)), (1, (F(39, 304), F(4, 19), 0))),
+    ((F(421, 912), F(31, 57), 1), (1, (F(11, 57), F(115, 456), 1)), (1, (F(71, 304), F(6, 19), 0))),
+    ((F(517, 912), F(37, 57), 1), (1, (F(63, 152), F(9, 19), 1)), (1, (F(20, 57), F(395, 912), 0))),
+    ((F(13, 19), F(233, 304), 1), (1, (F(517, 912), F(37, 57), 1)), (1, (F(10, 19), F(89, 152), 0))),
+    ((F(15, 19), F(265, 304), 1), (1, (F(13, 19), F(233, 304), 1)), (1, (F(341, 456), F(46, 57), 0))),
+]
+
+
+def check_witness(a=F(7, 57)):
+    """Exact closure check: every successor lies in U = [a, 1-a], inside the image (3V + c)/2 - t, and is a state of
+    parity (sigma + t) mod 2 in the witness; both parities occur."""
+    states = {s for s, _, _ in _W15}
+    ok = True
+    for s, r0, r1 in _W15:
+        p, q, c = s
+        for sigma, (t, nxt) in ((0, r0), (1, r1)):
+            p2, q2, c2 = nxt
+            lo_img, hi_img = (3 * p + c) / 2 - t, (3 * q + c) / 2 - t
+            good = (nxt in states and c2 == (sigma + t) % 2 and lo_img <= p2 < q2 <= hi_img and a <= p2 and q2 <= 1 - a)
+            ok &= good
+    return ok and {s[2] for s in states} == {0, 1}, len(states)
+
+
+if __name__ == '__main__' and len(sys.argv) > 1 and sys.argv[1] == 'witness':
+    print('15-state witness closed and sound at a = 7/57:', check_witness())
