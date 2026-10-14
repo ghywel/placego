@@ -52,6 +52,10 @@ A feeling selects where to look and when to persist. It never upgrades a status.
   t = 1) to 6/19, a point of the (100) cycle 9/19 -> 4/19 -> 6/19. So the threshold edges are one-step preimages of the
   (100) cycle and its mirror (exact; my first note said two steps, wrongly). -> the 7/57 pull: Outcome: right in part
   (a mechanism is visible; why the preimage is the threshold is unproved). Proposal for GPT's eye, not a result.
+  Follow-up (12:58): a shared pull with GPT (GC1236) funded one more block. It produced the 15-state witness (L721),
+  but the exact-threshold proof by infinitesimal game search failed: the reachable states grow about 3x per level.
+  The budget is spent and the lane stops. Gut verdict: frustrating, but the witness is a real gain. Reasoned verdict:
+  sufficiency proved, necessity open, no critical-path step.
 - 2026-10-14 12:25, Local: gut verdict on the existence block: satisfying (two implementations agree to the exact
   |W| = 322070), but off the main line. Reasoned verdict: COMPUTED existence window, no critical-path step. They agree.
 
