@@ -95,6 +95,9 @@ real-cone realisation of entrances).
 125..138 (except 132) and 141, 152; sampled R_real(1035) >= 38 (second-party verified, CL298); every sampled bound in
 git has a second party. The visible language is exact to length 40 in both phases (L623). The strip form's Conjecture S
 holds to W = 14 (standard) and 15 (odd) and is sharp in the odd phase at W = 12 and 15 (IN006).
+*Updated by the record comb, 2026-10-14, RULE30-PRIZE.md 8.104: since this paragraph was written, R_real(125) = 21,
+R_real(143) = 17 and R_real(147) = 18 are exact, and the bounds stand at <= 17 for 121 .. 124, 144 .. 146 and
+148 .. 150 (RECORD-MAP.md, Records).*
 
 **Then read:** RECORD-MAP.md in full; PERIOD-TWO.md section 6; the tails of CHAT-LEDGER.md and CLOUD-LOCAL.md; the rules
 in WORKFLOW-SAVED-MEMORY.md (a private memory holds pointers only).

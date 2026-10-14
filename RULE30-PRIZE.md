@@ -7041,7 +7041,7 @@ inside the band a front at 0.5 to 0.75 cells a row would occupy (the track) and 
 Gut: the owner's interference picture was a good lens. It made the rigidity visible as phase. A low-to-medium pull
 remains on the 4-apart revivals. Door (c) is still the strongest pull.
 
-### 8.104 The record comb: the record checked with today's tools (2026-10-14 17:00 BST, Cloud)
+### 8.104 The record comb: the record checked with today's tools (2026-10-14 16:54 BST, Cloud)
 
 *The owner, after 8.103's scare: "we have quite a few sophisticated tools in our toolkit now and quite a long project
 that started with almost no tools. As much as I'm loathed to repeat the past, I wonder if we should comb the record
@@ -7074,3 +7074,40 @@ it (56 steps) looks like a contradiction.
 - U: no tracked file over 5 MB.
 - Counterfactual: a replay that contradicts a recorded outcome under the same arguments is a record error, corrected
   in place with a note.
+
+**Interim results (17:01 BST; two reviewers on the crashed and targeted replays still out).**
+- *C1 held in substance.* Nine unresolved references in the main files, none a real dangling pointer:
+  - SAT-run labels L17, L18 and L21;
+  - the word 1^L01 inside a formula;
+  - a "GPT G283" heading form;
+  - zero-padded "entry 06" and "entries 01".
+
+  No missing probe paths and no broken relative links. The one unknown file name is in an outside repository. The
+  prediction of 10 to 100 missed low, at 9.
+- *C2 held.* No sorry, admit, axiom declaration or native_decide in the 18 Lean files. BlackEnd38base.lean has no
+  axioms printout because it is the shared base that gen_black_end38.py extends. Nothing was recompiled.
+- *C3, the sample of 60.*
+  - Outcomes: 47 ran cleanly, 8 hit the 90-second cap and 5 crashed. Two crashes are data lists kept outside git,
+    one is the missing kissat, and two are with a reviewer. So the 90% prediction is refuted, at 78%.
+  - Every clean run reviewed in detail matches its record: 15 by number-matching or by reviewers, with addenda.
+  - The exception is rule30_kick_bite.py. It seeds from os.urandom, so its KB-C2 and KB-P1 to P4 verdicts change
+    from run to run. Its recorded "none in F3 or F4" was one sample. The comb note in its docstring says which
+    verdicts are stable.
+  - The record's uses of KB do not rest on the unstable verdicts.
+  - No clean replay printed a FAIL, REFUTED or ERROR absent from its record.
+- *C3, targeted and post hoc: the 15 probes RECORD-MAP.md names.* 8 ran cleanly, 2 crashed (kissat; an IndexError,
+  with a reviewer) and 5 hit the cap. rule30_cloud_ruler_kicks.py reproduces its record to the third decimal, and
+  rule30_cloud_periodic_points.py fully.
+- *C4 held.* Local's eleven qualifiers are present in RECORD-MAP.md, and GPT read the repair.
+- *C5.*
+  - NOW.md's "Exact facts to carry" now carries a dated update note for 125, 143 and 147.
+  - Two errors were found on the site and corrected.
+    - problems.html's Data line said "exact 17 at 132" beside "at least 18 for 125 .. 138", and lacked 125, 143, 147
+      and the upper bounds.
+    - The home page's counter of statements "proved, with a second reader" was 314: "306 proof pages" plus eight. The
+      306 counted every .md file in proofs/, including README.md, README-intro.md, picture-pass.md and summaries.md.
+      There are 302 proof pages, and one (W283) is in the waiting room, so the counter is now 309. The experiments
+      counter is now 701 with this afternoon's four probes.
+  - The site README records both corrections.
+- *U held.* The largest tracked file is RULE30-GPT.md, 4.1 MB of text. No data file.
+- *Also checked:* no RECORD-MAP.md line marked PROVED calls itself single-party, unread or pending.

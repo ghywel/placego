@@ -55,6 +55,16 @@ OUTCOME, run 1, 2026-10-07 20:54 BST (container CPU, 25 s, 400 trials per family
         is rare, not forbidden: half of the bite was a sampling gap.
   KB-P2 HELD (no class 12 or 42 in F2). KB-P3 and KB-P4 REFUTED (none in F3 or F4).
   No class-12 event in any family (about 650 settled events in all).
+  RECORD COMB NOTE (Cloud, 2026-10-14, RULE30-PRIZE.md 8.104). The sampler seeds from os.urandom (main and hunt), so the
+  verdicts above that rest on class-42 events, rare at about 1 in 300, change from run to run. Four replays as
+  committed:
+    - F3 (periodic) showed class-42 events in 3 replays and F4 (density) in 2, so "KB-P3 and KB-P4 REFUTED (none in F3
+      or F4)" was one sample, and the reverse is as likely.
+    - KB-C2 and KB-P2 also flipped.
+    - Stable in every replay: KB-C0 FAIL, KB-C1 PASS, no class-12 event in any family, and class-42 departures from the
+      recorded seeds 47231 and 63761.
+  The record's uses of KB (class 42 occurs, 67 of 20,282 in the hunt; 8.91) do not rest on the F3 and F4 verdicts and
+  stand. The hunt was not replayed: it takes about 9 minutes.
 
 POST-HOC (written before the hunt mode first ran, 2026-10-07 20:56 BST; not part of the preregistered test):
   HUNT: --hunt N runs N trials of finite random right halves at widths 16 to 64, and of infinite random ones, and
