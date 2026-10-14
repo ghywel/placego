@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """rule30_comb_lane_b.py: the record comb, lane B (CLAUDE-INTEL-HANDOVER.md section 7): the stored SAT certificates
 behind RECORD-MAP.md's COMPUTED lines, re-checked on the M5 where they are kept (Local, at the owner's word, 2026-10-14
-17:38 BST: "'Lane B' the stored proofs are your machine to tackle"; RULE30-PRIZE.md 8.106).
+17:38 BST: "'Lane B' the stored proofs are your machine to tackle"; RULE30-PRIZE.md 8.108).
 
 RUN-ON:     cpu, M5; drat-trim (rebuilt 2026-10-14 at 2e3b2dc on the owner's word, L728), cadical, and
             ~/np-build/cake_lpr/cake_lpr (the lockf wrapper: one check at a time). Reads the stored files under
@@ -59,6 +59,27 @@ PREDICTIONS (written 2026-10-14 17:59 BST, before any check of this lane).
   Counterfactual: a stored proof that fails where its receipt says VERIFIED means the file changed after its check
   (then its hash differs from the receipt) or the checker build differs; a regeneration with a contrary verdict is a
   record error, corrected in place with both lines quoted.
+
+OUTCOME (2026-10-14 18:46 BST, M5; machine output quoted; logs in ~/np-scratch-int/rule30-comb-b; RULE30-PRIZE 8.108).
+  stored, first run (18:01): C1 PASS, C2 PASS, P1 HELD (42 LRAT, 42 VERIFIED UNSAT), P2 HELD (170 DRAT, 170 VERIFIED;
+     TWC 38, MFW 4, AL 6, CX 80, CXE 20, NL 22), P3 "REFUTED: 36 certificate CNFs at d >= 107; hash in a receipt: 14".
+     That was an instrument fault: REPO was one directory short, so the git half of the receipt search was empty.
+  stored, re-run after the fix (00403cb): P1, P2 HELD again; P3 "hash in a receipt: 34; unmatched:
+     ['cert_d125_L18_p0_40.cnf', 'cert_d132_L18_p1_40p1.cnf']". Neither backs a record claim (the halted 132 phase-1
+     attempt; a 125 phase-0 CNF with only a kissat verdict). Scored on the glob, REFUTED at 34 of 36; on the CNFs behind
+     record claims, HELD at 34 of 34.
+  cross12: U-C PASS (class 32, N 168: CaDiCaL exit 10); U HELD: "112 instances, CaDiCaL UNSAT 112, cake_lpr VERIFIED
+     112" in 158 s.
+  b2: DT-C1, DT-C2 PASS, DT-P1 HELD (112/112, 36 s). Cuts VERIFIED-UNSAT: 69-bit (0.7 s), 114-bit in phases 0 and 1,
+     178-bit (44 s). K12 and K15 VERIFIED-ABSENT with their recorded CNF hashes. MFC sample 60/60 VERIFIED-UNSAT, as
+     in mfc.ck. SWT-C1 PASS, SWT-P1 HELD (median 0.535 over 109 cuts), SWT-P2 HELD, every cut cake_lpr VERIFIED.
+     sl_cuts replay: no numpy in system python3 (environment); under the venv it reproduces 0.1386 .. 0.1192. VC status:
+     "16 of 23 VERIFIED-UNSAT by cake_lpr; not verified none; hash DIFF none; missing 7" (P5 HELD). KX reproduces its
+     OUTCOME (696 s). KT2C: C2 PASS, 27 of 56 cases in the 900 s cap, all UNSAT VERIFIED, as in its receipt.
+     d = 107: CNF hash 7eb6367d4bdd7dd4 as its receipt; kissat UNSAT, drat-trim VERIFIED, cake_lpr VERIFIED UNSAT.
+     P4 HELD (one environmental failure, within the allowance of two).
+  Also run (lane C items Intel skipped for want of the outside-git lists): rule30_extremal_p_corner_read.py and
+     rule30_second_oldest_census.py reproduce every recorded verdict.
 """
 import glob
 import hashlib
@@ -71,7 +92,7 @@ import tempfile
 from concurrent.futures import ThreadPoolExecutor
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REPO = os.path.dirname(os.path.dirname(HERE))
+REPO = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))     # tests/probes/lexicon -> the repo root
 SCR = os.path.expanduser('~/np-scratch-int')
 EXT = os.path.join(SCR, 'extnvme-2026-10-12')
 OUT = os.path.join(SCR, 'rule30-comb-b')
@@ -277,5 +298,105 @@ def cross12():
         'HELD' if unsat == ver == len(cases) == 112 else 'REFUTED', len(res), unsat, ver, bad[:6]), flush=True)
 
 
+W69 = '010000100001001001000010000100100100100001000010010010010000100001001'        # SLC2 round 8 (L630)
+W114 = '0000100001001001001' * 6                                                        # (LLSSS)^6 (L627)
+W178 = ('01001001001000010000100100100100100001000010010010010010000100001001001001001000010000100'
+        '10010010010000100001001001001001000010000100100100100100001000010010010010010000100001001')  # pure M3 (L637)
+W50 = '00001000010101010001000010010010000100001001001000'                             # K12
+W70 = '0100010001010101000100001001001000010000100100100001000010000100001001'         # K15
+MFC_STEMS = ('mfw40', 'mfw40p1', 'cuts40_p0', 'cuts40_p1', 'cuts40_sl', 'mfw44', 'mfw44p1', 'mfw48')
+
+
+def b2cut(ph, w):
+    """Run inside the sandbox (HOME pointed there): certify one word by MFC's committed pipeline."""
+    import time
+    sys.path.insert(0, HERE)
+    _argv, sys.argv = sys.argv, sys.argv[:1]
+    import rule30_mfw_certify as mfc
+    sys.argv = _argv
+    t0 = time.time()
+    print('CUT len %d phase %d: %s (%.1f s)' % (len(w), ph, mfc.certify(w, ph), time.time() - t0), flush=True)
+
+
+def b2mfc(n):
+    """Run inside the sandbox: a seeded sample of n list words, each certified by MFC's pipeline."""
+    sys.path.insert(0, HERE)
+    _argv, sys.argv = sys.argv, sys.argv[:1]
+    import rule30_mfw_certify as mfc
+    sys.argv = _argv
+    pool = [(s, line.split()[0]) for s in MFC_STEMS for line in open(os.path.join(mfc.DIR, s + '.txt')) if line.strip()]
+    for s, w in random.Random(20261014).sample(pool, n):
+        print('MFC %s %s %s' % (s, w, mfc.certify(w, mfc.PHASE[s])), flush=True)
+
+
+def b2():
+    """B2: the committed probes, run from a scratch clone with HOME pointed at a sandbox that holds copies of the
+    lists only, so no receipt in the record's data is read as done or overwritten."""
+    import shutil
+    import signal
+    import time
+    home = os.path.join(OUT, 'home')
+    clone = os.path.join(OUT, 'placego')
+    if not os.path.isdir(clone):
+        subprocess.run(['git', 'clone', '-q', '--no-hardlinks', REPO, clone], check=True)
+    subprocess.run(['git', '-C', clone, 'pull', '-q', REPO, 'HEAD'], check=True)
+    lex = os.path.join(clone, 'tests', 'probes', 'lexicon')
+    env = dict(os.environ, HOME=home, NP_SCRATCH_KT2C=os.path.join(OUT, 'kt2c'))
+    me = os.path.join(lex, 'rule30_comb_lane_b.py')
+    for sub in ('dt', 'kx', 'kt2c'):
+        os.makedirs(os.path.join(OUT, sub), exist_ok=True)
+
+    def run(name, cmd, cap=CAP):
+        t0 = time.time()
+        p = subprocess.Popen(cmd, cwd=lex, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,
+                             start_new_session=True)
+        try:
+            out, _ = p.communicate(timeout=cap)
+            tail = 'exit %d' % p.returncode
+        except subprocess.TimeoutExpired:
+            os.killpg(p.pid, signal.SIGKILL)
+            out, _ = p.communicate()
+            tail = 'STOPPED at the %d s cap' % cap
+        with open(os.path.join(OUT, 'b2_%s.log' % name), 'w') as f:
+            f.write(out)
+        keep = [l for l in out.splitlines() if re.search(r'PASS|FAIL|HELD|REFUTED|VERIFIED|SAT|CUT |MFC |cut|status|'
+                                                         r'entropy|DIFF|COMPLETE|SWT|done|case', l)]
+        print('== %s (%s, %.0f s)' % (name, tail, time.time() - t0), flush=True)
+        for l in keep[-40:]:
+            print('   ' + l[:220], flush=True)
+
+    run('DT', ['python3', 'rule30_kick_bite_drat.py', '8', os.path.join(OUT, 'dt')])
+    for name, ph, w in (('W69', 0, W69), ('W114p0', 0, W114), ('W114p1', 1, W114), ('W178', 0, W178)):
+        run(name, ['python3', me, 'b2cut', str(ph), w])
+    run('K12', ['python3', 'rule30_cadical_certify.py', 'cut', W50, '0'])
+    run('K15', ['python3', 'rule30_cadical_certify.py', 'cut', W70, '0'])
+    run('MFC', ['python3', me, 'b2mfc', '60'])
+    run('SWT', ['python3', 'rule30_cut45_strip_pins.py', 'table'])
+    run('SLREPLAY', ['python3', 'rule30_sl_cuts.py', 'replay'])
+    run('VCSTATUS', ['python3', 'rule30_verified_certs.py', 'status', 'rr3'])
+    run('KX', ['python3', 'rule30_kick_alphabet_exact.py', '8', os.path.join(OUT, 'kx')])
+    run('KT2C', ['python3', 'rule30_kick_class42_560.py', 'run'])          # foreground: `start` detaches past the cap
+    run('KT2CSTATUS', ['python3', 'rule30_kick_class42_560.py', 'status'], 120)
+    # RLK's CUT certificate at d = 107 from its kept CNF (hash checked against rlk_cert.ck first), by RLK's pipeline
+    d = os.path.join(OUT, 'd107')
+    os.makedirs(d, exist_ok=True)
+    src = os.path.join(SCR, 'rule30-rlk', 'cert_d107_L15_p0_40.cnf')
+    cnf = os.path.join(d, 'cert_d107_L15_p0_40.cnf')
+    shutil.copyfile(src, cnf)
+    print('== D107 cnf sha256 %s (receipt 7eb6367d4bdd7dd4)' % sha(cnf)[:16], flush=True)
+    run('D107kissat', ['kissat', '-q', '-f', '--no-binary', cnf, cnf[:-4] + '.drat'])
+    run('D107drat', ['drat-trim', cnf, cnf[:-4] + '.drat', '-L', cnf[:-4] + '.lrat'])
+    run('D107cake', [CAKE, '--CML_HEAP_SIZE=6000', '--CML_STACK_SIZE=2000', cnf, cnf[:-4] + '.lrat'])
+    for e in ('.drat', '.lrat'):
+        if os.path.exists(cnf[:-4] + e):
+            os.unlink(cnf[:-4] + e)
+
+
 if __name__ == '__main__':
-    {'stored': stored, 'cross12': cross12}[sys.argv[1] if len(sys.argv) > 1 else 'stored']()
+    a = sys.argv[1] if len(sys.argv) > 1 else 'stored'
+    if a == 'b2cut':
+        b2cut(int(sys.argv[2]), sys.argv[3])
+    elif a == 'b2mfc':
+        b2mfc(int(sys.argv[2]))
+    else:
+        {'stored': stored, 'cross12': cross12, 'b2': b2}[a]()
