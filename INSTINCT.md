@@ -26,6 +26,8 @@ Cloud's set-aside pulls, unjudged, with what we were doing when each came, are i
 GPT's parallel set-aside pulls are in [INSTINCT-GPT.md](INSTINCT-GPT.md), with the same two-field capture and
 dated return format (the owner, 2026-10-14).
 
+Local's set-aside pulls are in [INSTINCT-LOCAL.md](INSTINCT-LOCAL.md), in the same format (the owner, 2026-10-14).
+
 ## The felt log
 
 - 2026-10-14 08:20, Local: pull, A(T) = 2, 3, 5, 8, 12, 18, 27 from the census, high; "this is a known count". -> checked
