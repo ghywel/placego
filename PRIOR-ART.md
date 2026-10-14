@@ -2501,3 +2501,18 @@ eventual-periodicity exclusions) are the kind of statement Lean handles well. He
 WORKING-TOGETHER.md ("Lean as the last check"), which updates item 3 of the periodic-interior import list above ("Lean,
 as Condrey did. Not yet"): still not yet, but now the agreed final step. Companion: the openai/math note of 2026-10-07
 above, most of whose manuscripts carry Lean formalisations.
+
+## Re-survey for door 3, the number view (2026-10-14 01:19 BST, Local; loop check 3, L703)
+
+Two web searches ("Rule 30 center column periodic proof arXiv 2026", extended; "Rule 30 cellular automaton column
+eventually periodic two-adic irrational 2026", standard) and direct reads of two pages:
+- Nothing new on the period-2 question or on columns as numbers. Condrey (arXiv:2609.09431), Nersissian
+  (arXiv:2609.25077), Chan-Lopez and Martin-Ruiz (arXiv:2604.00165) and Das (arXiv:2207.13237) are all already here.
+- The public period-two tracker, woahwhattheheck/commons issue 15314 (read 2026-10-04, above), returns "Page not found"
+  on 2026-10-14. That is a dated negative; its earlier summary stands as read.
+- beedbyte/rule30-research (GitHub, new to this file) is a specification and two finite evolvers with cross-checks for
+  the single-cell centre column. It states that eventual nonperiodicity is open there and makes no claim.
+- The internal record already covers the number view: 8.22 to 8.29 (columns as numbers, the complementary pair, the
+  kinds of irrationality proof), 8.77 (the 2-adic frame) and 8.90 (the carry). Its main-line form, "period 2 means the
+  centre column's 2-adic value is rational with denominator 3 * 2^n", restates the prize. No external method was
+  found that this record lacks.
