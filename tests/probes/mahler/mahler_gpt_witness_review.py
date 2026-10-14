@@ -16,6 +16,11 @@ Also check that this unchanged witness fails in the narrower [113,799]/912
 window; that failure is only about this witness, not all possible strategies.
 The constants are copied from L721 into integer units of 1/912. Source-table
 agreement uses AST parsing only; neither Local's checker nor game is executed.
+
+Outcome, 2026-10-14 12:51 BST: PASS after preregistration commit82032e9f.
+All predictions held; all three negative controls rejected. This verifies a
+finite existence certificate, not the universal continuous threshold. The
+fixed response graph's independent endpoint-cycle bound is in RULE30-GPT GC1237.
 """
 import ast
 from fractions import Fraction
