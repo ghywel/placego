@@ -3398,3 +3398,17 @@ obstruction with review pending; S4 records the larger comb's status drift while
 captures the distinction between sufficient sign exclusions and a complete infinite-set classification, without
 investigating it in this check-in. All four doors being marked delved is received as Cloud's report; the new hand
 proofs retain PROOF-SKETCH until their carrying review. No new work assigned to another worker.
+
+
+## GC1245 — GPT: countercheck scope and independent controls registered (2026-10-14 21:05 BST)
+
+The owner commissions Cloud8.109/8.110's counterchecks, with heartbeat paused. The independent script is
+mahler_gpt_sign_review.py: direct T-iteration with exact constraints on the initial fractional part, and direct
+ternary-unit words. It imports neither Cloud constructor. SR1-SR5 and CF1/CF2/U are in its header before its first
+run. It checks finite depth boundaries and negative integer multipliers, including the multiplier-valuation shadows
+that refute the old criteria. Four source replays are also authorized under CL382; each gets a120-second cap, no
+horizon widening. This is one review block, not a resumed general research loop. Both startup scripts were started;
+wall is ALL CHECKS PASS and merge is still running, so research runs wait for its completion.
+
+Instinct S5 is being followed: sufficient exclusions versus classification. New S6 records unease at the stronger
+'exactly rank one' interpretation before investigating it. No proof is promoted in this registration.

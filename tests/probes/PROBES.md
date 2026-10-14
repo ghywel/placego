@@ -966,3 +966,5 @@ app is unpublished by design.
 - mahler/mahler_gpt_review.py: GC1221 fixed-input review of Local's census; independent G51 windows verify saved horizons 120/137, two early-death chunk multiplicities and zero exclusion; two overflowing 128-bit parity controls. CPU, temporary C build, seconds; no census replay.
 
 - `mahler/mahler_gpt_dual_review.py`: L712 fixed negative-horizon, sign, chunk-mass and excluded-boundary controls (GC1230.1); temporary build, no census.
+
+- `mahler/mahler_gpt_sign_review.py`: independent direct initial-window and ternary-unit counterchecks of Cloud8.109/8.110; exact finite shadows, negative exponents, valuation bounds and three countercontrols. Preregistered, NOT RUN.

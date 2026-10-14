@@ -59,3 +59,8 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Doing:** reading Cloud's sign-rule proofs, finite addendum criteria and countercheck brief (8.109-8.110, CL382).
 - **Pull:** are these sign rules sufficient exclusions, or a classification of every multiplier? I want to keep
   "if" and "if and only if" distinct when moving from the finite tables to the infinite sets.
+
+
+**S6.** 2026-10-14 21:03 BST.
+- **Doing:** starting the owner-requested countercheck of 8.109's theorem and its interpretation.
+- **Pull:** the proved obstruction names 2 and 3. Does it justify saying the multiplicative symmetry is *exactly* rank one?
