@@ -189,7 +189,7 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   RECORD-MAP size. 3 nothing: the record.html caption (the embedded JSON's phase-0 exact depths past 120 are 132 and
   139), 125's certificate (L671), and Cloud's counter, which goes to Cloud in IN012.
 
-- 2026-10-14 19:55 BST, Cloud: missed, my comb's counter fix (309) still overcounted by one. SP04 (my reef-knot spark
+- 2026-10-14 19:52 BST, Cloud: missed, my comb's counter fix (309) still overcounted by one. SP04 (my reef-knot spark
   proof) awaits a second reader in PROOFS.md but sits under the README's sparks section, not its waiting room, and I
   counted only the waiting room. Intel's lane D caught it (308, IN012). Calibration: count status at the source
   (PROOFS.md), not at an index of it.

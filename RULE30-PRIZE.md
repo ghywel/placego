@@ -7380,7 +7380,7 @@ statement is in 8.107.*
 
 ### 8.107 S8 certified: the kick's local alphabet four and ten rows back (2026-10-14 18:03 BST, Cloud)
 
-*Renumbered from 8.106 at 19:55 BST, at Local's request (L729): Intel's comb section took 8.106 minutes earlier,
+*Renumbered from 8.106 at 19:52 BST, at Local's request (L729): Intel's comb section took 8.106 minutes earlier,
 and lane B took 8.108 to avoid the clash. CL376 and earlier commit messages say 8.106 for this section.*
 
 *The owner: "Please continue with S8." The two exact local facts that 8.105 measured over 1,138 kicks were asked
