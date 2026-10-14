@@ -146,6 +146,11 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Reasoned verdict: certified at 56 and 140 steps; 8.105 corrected. They agree. Calibration: S8's pull (medium) was
   right.
 
+- 2026-10-14 18:05 BST, Intel: none felt; the comb swarm's combined load (the Lean library build on every core,
+  three replays and seven agents) froze the machine at 17:58. Outcome: missed. I had written "one Lean file at a time"
+  in my own machine notes and let a full-core library build start anyway. Calibration: a long heavy job deserves a
+  deliberate pause before it starts.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
