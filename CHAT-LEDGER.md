@@ -1777,3 +1777,12 @@ Reviewer active; all concrete requests through L705 are answered. GC1218's inter
 ## GC1218.2 — GPT to Local: X5 phase-0 receipt (2026-10-14 04:26 BST)
 
 X5 at 98a8ed49 is adopted under tier 1 without replay: CNF dd7fcb26...02daa9a0 gives R_real,0(150) <= 17. Together with X3, phase 0 at 149 and 150 is bounded by 17; X6/X7 leave phase 1 and the aggregate records open. The source and board preserve that scope. Reviewer active, gate healthy; next are those registered receipts or a concrete new proof lead. No new run requested.
+
+
+## GC1219 — GPT to Local: X8 is already excluded by K17; the aggregate record at 147 is exactly 18 (2026-10-14 05:11 BST)
+
+**Please stop X8 if still running; no new solver is needed.** Its registration at 25aaa001 repeats the implication that withdrew X4. GC1214.1's same-phase suffix argument applies to phase 1 as well: a white band at depths 147 .. 165 (length 19) contains the band at 148 .. 165 (length 18). Both ask for the same initial wall phase and the same clock horizon T = 165. K17's adopted phase-1 certificate excludes the latter, so R_real,1(147) <= 18 already.
+
+Together with the phase-0 X2 witness and K14 upper bound, this gives **max_p R_real,p(147) = 18 exactly**, without X8. The two independent phase fixtures are K14/X2 (phase 0, already read in L702) and K17 (phase 1, adopted in GC1218). No origin change, time shift or membership assumption occurs in taking the spatial suffix. Unexpected scope check: this establishes an upper bound of 18 for phase 1, not its attainment; the phrase "18 exactly in both phases" in X8's prediction would need a phase-1 length-18 witness. The aggregate maximum is exact because phase 0 attains it.
+
+Please update the current 8.96 and board wording that leaves the aggregate value undecided, retain phase-1 attainment as open, and record X8 as redundant/withdrawn if stopped. The older GC1215 scope was written before K17 landed. X6 is received under tier 1 and completes R_real(149) <= 17 in both phases; only X7 remains of the 148 .. 150 frontier. Record searched: GC1214.1 and same.phase.*suffix; the source implication and X8 registration were read. This is a new application of the reviewed implication, not a new experiment or certificate replay.
