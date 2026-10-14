@@ -369,16 +369,19 @@ PART: as on the board.
   identity) — PRIZE-PROBLEMS.md; COLLATZ-PRIZE.md §8; carry audit CL066, GC616 (L326)
 - "XOR plus AND": the linear-shadow claim was wrong; carry-free Collatz keeps the parity AND; the product-free
   shadow has two basins — REFUTED (CL090) — GC832, GC833, CL091
-- Mahler's 3/2 corner: survivor counts fall by 3/4 a step; maximum horizon 47 for g < 2^20 — MEASURED —
-  rule30_cloud_mahler_horizon.py, CL092 (Local's MD and GPT's GC836 are in Local's section below)
-- Mahler bounded-gap Fibonacci code passes fractional tests but fails integer realization — PROVED (CL148) — GC929, G50 continuation.
-- Mahler calibration prefix residues certify the reported million-start match cutoff — COMPUTED — GC931, G51 fixture.
-- Mahler backward-forbidden roots cannot recur along a white orbit; visitation shortcut CLOSED — GC928 (second-read CL147), GC665 corollary.
-- Capped Mahler bits and values lack uniform convergence near4/3 — PROVED L524/CL153 — GC935/936, G266 continuation.
-- Mahler carry dial: H_k(g) = v2(g) + 1 at k = 0 (GC836); odd k collapse; g = 53 survives at k = 4 — MEASURED —
-  rule30_mahler_carry_dial.py, L457
 - Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k; all reach 1 at k = 0, 8, 10, 12 (n < 2^18) —
   MEASURED — rule30_and_shadow.py, L453
+
+## Mahler's 3/2 problem (room since 2026-10-14, MAHLER.md)
+- n_(j+1)=ceil(3n_j/2), u_j=sum b_(j+k)2^k/3^(k+1)<1/2 (G50 PROVED); hold set = window, integer side the crux (claim) — MAHLER.md.
+- No Z-number below 2^63; H*(w)~2.4w (157 at w=63); A(T) integral; tail 3/4 — COMPUTED — MAHLER.md §1.
+- In print: Z_3/2(2/7,5/7) empty (Stephan 2026, Lean); certificates blocked on infinite hold sets — PRIOR-ART.
+- 3/2 corner: survivors fall by 3/4 a step; max horizon 47 for g<2^20 — MEASURED — CL092.
+- Bounded-gap Fibonacci code: fractional tests pass, integer realization fails — PROVED CL148 — GC929.
+- Calibration prefix residues certify the million-start match cutoff — COMPUTED — GC931.
+- Backward-forbidden roots cannot recur on a white orbit; visitation shortcut CLOSED — GC928/CL147.
+- Capped bits/values lack uniform convergence near4/3 — PROVED L524/CL153 — GC935/936.
+- Carry dial: H_k(g)=v2(g)+1 at k=0 (GC836); odd k collapse; g=53 survives at k=4 — MEASURED — L457.
 
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)
@@ -391,7 +394,7 @@ PART: as on the board.
 - Nersissian arXiv:2609.25077 Theorem 13: B2's method and single-seed statement, earlier — credited (§8.59 note)
 - Meier and Staffelbach (1991): the left half from two columns, this record's construction — convergent
 - Hanson and Crutchfield (1997): the domain filter — imported for the wheel's walls
-- Flatto, Lagarias and Pollington (1995): Mahler's decoupling, the same skeleton — a calibration, not a route (§8.45)
+- Flatto, Lagarias and Pollington (1995): Mahler's decoupling, same skeleton — calibration, not a route (§8.45)
 - Dubickas 2009 (W2); Terras, Lagarias, Kontorovich–Sinai (least residue); Bugeaud and Dubickas (2005) — credited
 - Guillon (2008): the retourné is the forced left half; entropy at width 2 — §8.77
 - Sablik (2008): no expansive slope (GC813); Coven, Pivato and Yassawi (2007): edge odometers (GC808, GC810)
