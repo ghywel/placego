@@ -31,6 +31,26 @@ PREDICTIONS, written 2026-10-14 before any run, pushed before it (N = 3072, 16 s
      kicks. Any third phase lies 10 from one of them (entry 27's class 42) and holds at most 2%.
   Counterfactual. |b_m| >= 0.3 at lags of 12 or more would make the kick's coherence long-range. Off-track parities as
   biased as the track's would mean S6 is not a front arriving.
+
+OUTCOME of the registered run, 2026-10-14 16:44 BST (predictions pushed in 57ceb60; 1,138 kick bits; 0.1 s).
+  I1 PASS: 0.915, equal to 1 - R(8, 2) of 8.102.
+  I2 REFUTED: the coherence is not short.
+    - Lags 0 and 1 have no echo terms at sites >= 3 (b = -1 trivially).
+    - At lags 2, 3, 4 and 6 the parity is fixed at every kick (|b| = 1), but lag 5 has only +0.19.
+    - Beyond lag 12 the bias persists: +0.53 at lag 13 and -0.49 at lag 17. It stays within 0.1 only from lag 20 (20 .. 23).
+    - Lag 9 has +0.94.
+  I3 REFUTED: the track band's parity is exact (|b| = 1) at lags 2 .. 4, 6 .. 8 and 10. But the off-track parity is
+     also exact at lag 6 and 0.36 at lag 7, above the registered 0.2.
+  U PART: the two main phases are 52 (68.5%) and 32 (30.8%), 20 apart and 99.3% together, against L1's 98.1% at 32 and
+     52. The instrument's phase is entry 26's class exactly. Phase 42 holds 0.7% (8 kicks), 10 from both. But one kick
+     has phase 12, which breaks the clause on third phases.
+     - Unease dig, post hoc: that wheel had run only 56 steps before departing. Entry 27 excludes class 12 only after
+       140 steps, and entry 26 allows it at 56, 84 and 112, so there is no contradiction.
+     - The class-42 kicks came after exactly 86 steps on the wheel in 7 of 8 cases, and after 198 in the other.
+  Reading. S6's "conspiracy" is rigidity more than statistical interference. In the ten rows before a kick most echo
+  parities are forced exactly, as the record's rigid kick alphabet and timing suggest (8.43; entries 26 .. 28).
+  In the owner's terms: fully coherent next to the kick, partly coherent out to lag 17 with revivals at lags 9, 13 and
+  17 (4 apart, post hoc), and decohered from lag 20.
 """
 import random
 import sys

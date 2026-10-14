@@ -99,6 +99,13 @@ Cloud's set-aside pulls, unjudged, with what we were doing when each came, are i
   echo lens feels like a closed room. Reasoned verdict: 8.49's hypothesis closed in three readings; the lens is
   exact and not local. They agree.
 
+- 2026-10-14 16:44 BST, Cloud: unease, one kick at phase 12 in the interference run, against entry 27's certified
+  exclusion of class 12, high; first guess: a different settling length. -> dug at once. Outcome: right to dig, no
+  contradiction. That wheel had run 56 steps, and entry 27 needs 140.
+- 2026-10-14 16:45 BST, Cloud: gut verdict on 8.103: the owner's interference lens was good, and it showed the
+  rigidity as phase. A low-to-medium pull remains on the revivals (S7). Reasoned verdict: I2 and I3 were wrong,
+  in the informative direction. They agree.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

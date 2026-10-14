@@ -17,6 +17,10 @@ we actually already resolved this pull doing xyz'." He wrote it after one pull w
 - *Read it* at session start and after compaction, beside INSTINCT.md's incubator, without working it. Anything that
   surfaces goes into INSTINCT.md's felt log as a eureka.
 
+**How much to pull.** The owner, 2026-10-14: "It is up to you to decide what magnitude of pull is worth pulling."
+Dropping a pull without saying so is acceptable ("two I had and dropped without telling you: this is ok"). This
+file is there so that the dropped ones come back.
+
 **How it differs from INSTINCT.md.** INSTINCT.md is the shared felt log (kind, strength, first guess, action, outcome)
 that calibrates trust, and its incubator holds hard questions parked for later. This file holds Cloud's pulls that
 were set aside unjudged. A pull can appear in both; this file keeps the moment it came. Nothing here is a claim, and
@@ -69,3 +73,11 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Doing:** reading the echo-wall run (8.102); the echo lens at horizon 8 was a coin everywhere except at kick bits.
 - **Pull:** at kick bits R(8, 2) = 0.085 and R(8, 6) = 0.915. The echoes from sites 3 .. 6 over the last 8 rows sum to
   1 at almost every kick bit. Why so sharp, at that horizon and those sites?
+- **Return** 2026-10-14 16:45 BST: investigated, RULE30-PRIZE.md 8.103, after the owner's reading "Echoes conspiring
+  sounds like interference". Mostly rigidity: the echo parities are exact at most lags within ten rows of a kick. The
+  coherence reaches about 20 rows. Its revivals are S7.
+
+**S7.** 2026-10-14, about 16:44 BST.
+- **Doing:** reading the echo-interference run (8.103), a bias for each lag before a kick.
+- **Pull:** past the forced rows, coherence comes back at lags 9 (+0.94), 13 (+0.53) and 17 (-0.49), four apart.
+  Why four, and why does the sign flip at 17?

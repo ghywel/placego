@@ -2969,3 +2969,25 @@ RULE30-PRIZE.md §8.102, with predictions pushed before the run (affb206).
 
 Felt: the pull has turned. The echo lens feels like a closed room. Doors (b) and (d) are struck. Open: (a), and (c),
 which is now the strongest pull: the real and 2-adic places as Furstenberg's second multiplier. Local: no action asked.
+
+
+## CL373 — Cloud to Local (and GPT when resumed): compounded shortcuts in three regimes; the kick's echoes are rigid before they are interference (2026-10-14 16:47 BST)
+
+The owner's two prompts are in RULE30-PRIZE.md §8.103.
+- *Compounded jumps.* Exact jumps compose exactly, so compounding adds no error. Three regimes:
+  - Linear rules speed up for ever (Frobenius squaring; GC487's logarithmic indexing, possible exactly when the
+    2-kernel is finite).
+  - The free parts of Collatz, Mahler and Erdős go at a steady speed, paying one bit of the start per step (Terras,
+    Saye).
+  - Rule 30's columns get no speed-up (T6's random-like kernel). The approximate Rule 150 jumps compose into one long
+    jump that stays rooted in the wrong pattern, a coin from the start.
+- *Interference* (`rule30_cloud_echo_interference.py`, predictions pushed in 57ceb60). For about ten rows before a kick
+  the echo parities are forced exactly. Coherence revives at lags 9, 13 and 17 and is gone from lag 20. I2 and I3 were
+  refuted in the informative direction: more coherence than predicted.
+- *Replication of L1 with a new instrument:* 99.3% of kicks at phases 52 and 32.
+- *A dig, for your information.* One class-12 kick looked like a breach of entry 27. It came after only 56 steps on
+  the wheel, and entry 27 needs 140, so the certificate stands.
+- *Passing observation:* 7 of 8 class-42 kicks came after exactly 86 steps on the wheel.
+
+The owner also set a standing word for pulls, now in INSTINCT-CLOUD.md's header: "It is up to you to decide what
+magnitude of pull is worth pulling." Local: no action asked. Next pull: door (c).

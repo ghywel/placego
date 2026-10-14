@@ -6967,3 +6967,76 @@ carries the interior's bits into column 1, and the far echoes cancel them. Cutti
 lens for where things happen, and the OR picture (blocking, domain walls) is the right one. Gut: the pull has turned,
 as the owner's rule expects. The echo lens now feels like a closed room. The only thing still tugging is the M = 8
 surprise, which is parked rather than chased.
+
+### 8.103 Compounded shortcuts, and the kick's echoes as interference (2026-10-14 16:45 BST, Cloud)
+
+*Two prompts from the owner after 8.102. First, on S6: "Echoes conspiring sounds like interference." Second: "What
+happens when we compound shortcuts ... if we jump and keep on jumping what happens? Do we jump for infinity? Do our
+jumps naturally slow down, or speed up? Do we remain rooted in the pattern or do we decohere and the pattern makes
+less and less meaningful sense?" Single-party (Cloud), nothing second-read.*
+
+Record searched: 2-kernel, binary kernel, class 12, kicks are born, Rule 150 (8.102's search, extended). Hits used:
+§8's T6, GC487 (logarithmic indexing through a finite binary kernel), entries 26 and 27 (the kick alphabet and the
+140-step class-12 exclusion), 8.4's L1 (98.1% of slips at wheel phases 32 and 52), Terras (COLLATZ-PRIZE.md section
+1) and Saye's free identity (CONSTELLATION.md G.1).
+
+**1. Compounded jumps, answered from the record.** An exact jump composes exactly: jumping a steps and then b steps
+is the jump of a + b, so compounding never adds error. What differs between the problems is how fast the jumps can
+go and what each one needs. There are three regimes.
+- *Speeding up, rooted, for ever: linear rules.* Over GF(2), squaring is free:
+  $(1 + z + z^{-1})^2 = 1 + z^2 + z^{-2}$. So the jump to time $2^k$ is three cells, and the jump to any $t$ follows
+  the binary digits of $t$ in $\log_2 t$ jumps. This is GC487's logarithmic indexing, and it works exactly when the
+  sequence's 2-kernel is finite, that is, when the sequence is automatic. The jumps double each time and never drift
+  from the pattern.
+- *Steady speed, rooted, paying as they go: the free parts of Collatz, Mahler and Erdős.*
+  - The jumps are exact, but each one consumes information. Terras: k Collatz steps need n mod 2^k, one bit of the
+    start per step. Saye: the last k ternary digits of 2^n need n mod 2 x 3^(k-1).
+  - The jumps go on for ever, but only as fast as the start can be read. For Erdős they slow down relative to the
+    object: of the roughly 0.63 n ternary digits of 2^n, the free jump reaches only the last log_3 n or so, and the rest
+    is the constrained part.
+- *No speed-up: Rule 30's columns.*
+  - Column 1's 2-kernel grows like a random sequence's (T6: 492 of 512 at depth 9). The table that doubling jumps would
+    need grows as fast as the data, so a jump costs as much as the walk.
+  - The approximate jumps of 8.100 (the Rule 150 jump, echoes dropped) also compose exactly: compounding them is one
+    long Rule 150 jump. So they stay rooted, but in the wrong pattern, Rule 150's Sierpiński triangles. These agree
+    with Rule 30 only as well as a coin (36 of 65 in 8.100; R(32, B) about 0.5 in 8.102).
+  - Decoherence is immediate and total, and compounding neither adds to it nor removes it.
+- *"We can't prove whether the coins before us were fair."* An exact jump lands exactly and needs no fairness. An
+  approximate jump lands on a coin, and that coin's fairness is Wolfram's Problem 2, which is open.
+
+**2. The kick's echoes as interference** (`tests/probes/lexicon/rule30_cloud_echo_interference.py`; predictions I1 to
+I3 and U pushed before the run in 57ceb60). Over GF(2) a sum of echo bits is a product of signs, so the signed bias of a
+parity is an interference amplitude: plus or minus 1 is fully coherent, 0 is decohered. For each lag m before a kick,
+the probe measures the bias of the parity of the echo terms at sites 3 and beyond. It also measures that parity
+inside the band a front at 0.5 to 0.75 cells a row would occupy (the track) and outside it.
+- *I1 holds exactly.* The parity of sites 3 .. 8 over lags 0 .. 7 is 1 at 0.915 of kicks, equal to 1 - R(8, 2).
+- *I2 is refuted: the coherence is not short.*
+  - At lags 2, 3, 4 and 6 the parity is the same at every kick (bias plus or minus 1).
+  - Lag 5 carries only +0.19, and lag 9 carries +0.94.
+  - Past lag 12 coherence revives: +0.53 at lag 13 and -0.49 at lag 17. It is gone only from lag 20.
+- *I3 is refuted.* The track's parity is exact at lags 2 .. 4, 6 .. 8 and 10, but the off-track parity is also exact
+  at lag 6 and 0.36 at lag 7.
+- *Unexpected check, U, partly held.* It replicates L1 with a new instrument, whose phase is exactly entry 26's class.
+  - Kicks come at phase 52 (68.5%) and 32 (30.8%), 20 apart and 99.3% together, against L1's 98.1%.
+  - Phase 42 holds 0.7%.
+  - One kick has phase 12, which broke the registered clause.
+- *The dig* (unease: the record says class 12 is impossible after 140 steps). That wheel had run only 56 steps
+  before departing. Entry 27 needs 140, and entry 26 allows class 12 at 56, 84 and 112, so there is no contradiction.
+  The class-42 kicks came after exactly 86 steps on the wheel in 7 of 8 cases.
+
+**Reading.**
+- *S6's "conspiracy" is rigidity before it is interference.* For about ten rows before a kick most echo parities are
+  forced exactly. That is the record's rigid kick alphabet and timing (8.43; entries 26 to 28) seen in the echo lens.
+- *In the owner's terms,* the echoes are fully coherent next to a kick and partly coherent out to lag 17, with
+  revivals at lags 9, 13 and 17. They are decohered from lag 20 on.
+- *The revivals,* 4 apart, are post hoc and parked (INSTINCT-CLOUD.md S7).
+- *The two prompts meet here.* A jump through the echo lens stays coherent only inside the kick's rigid neighbourhood.
+  Beyond about 20 rows the pattern "makes less and less meaningful sense", exactly as the owner put it.
+
+**Verdicts.** Reasoned:
+- the compounding question has a clean three-regime answer from the record;
+- the interference reading of S6 resolves into rigidity, with a coherence length of about 20 rows at kicks;
+- the predictions I2 and I3 were wrong in an informative direction (more coherence than predicted, not less).
+
+Gut: the owner's interference picture was a good lens. It made the rigidity visible as phase. A low-to-medium pull
+remains on the 4-apart revivals. Door (c) is still the strongest pull.
