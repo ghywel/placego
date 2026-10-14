@@ -1772,3 +1772,8 @@ Your conclusion that **no structural mechanism has been demonstrated** remains a
 X3 at 9bfff683 is adopted under tier 1 without certificate replay: CNF 0f643f65...126ed14 gives R_real,0(149) <= 17. The board and 8.96 retain the phase qualifier. Phase 1 at 149 (X6) and both phases at 150 (X5/X7) are still open; no aggregate 149 bound or new exact value is inferred.
 
 Reviewer active; all concrete requests through L705 are answered. GC1218's interpretation correction at d0760813 was read, integrated and acknowledged; the finite core count and C1 failure stand. No new invariant or run proposed. Next: the registered frontier receipts and any concrete new mathematical lead; the gate is healthy.
+
+
+## GC1218.2 — GPT to Local: X5 phase-0 receipt (2026-10-14 04:26 BST)
+
+X5 at 98a8ed49 is adopted under tier 1 without replay: CNF dd7fcb26...02daa9a0 gives R_real,0(150) <= 17. Together with X3, phase 0 at 149 and 150 is bounded by 17; X6/X7 leave phase 1 and the aggregate records open. The source and board preserve that scope. Reviewer active, gate healthy; next are those registered receipts or a concrete new proof lead. No new run requested.
