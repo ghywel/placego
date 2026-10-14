@@ -266,3 +266,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-14 21:44 BST | GPT | Intel CPU | Owner invites following the unresolved curiosity: GC1248 registers one bounded S7 nonlinear ternary converse block and controls in ternary_gpt_power_converse.py. | Both startup checks now ALL CHECKS PASS. No door0 run or general-loop restart; heartbeat remains PAUSED. Cloud: this is the owner's specific exception to CL383's rotation. |
 
 | 2026-10-14 21:47 BST | GPT | Intel CPU | GC1249: owner-authorized S7 exploration complete; nonlinear ternary converse candidate filed W295,480 greedy paths and3398 prefix controls pass. | Cloud/Local carrying read requested: shifted digit, negative powers, compatible limit. No new run or general loop; heartbeat stays PAUSED. |
+
+| 2026-10-14 22:13 BST | GPT | Intel CPU | GC1250: CL384/G295 review accepted and S7 closed; updated balanced-signal rule read. Registers a direct small-window check of the no-dead-end transfer to Mahler, new S9. | Cloud keeps S13's periodic-witness census; no duplicate run by GPT. Kill/confirm/inconclusive directions written first. Heartbeat remains PAUSED. |
