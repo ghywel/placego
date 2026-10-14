@@ -7649,3 +7649,37 @@ The backward chain is probably classical. The disjointness was not checked again
 **Verdicts.** Reasoned: door (c) is closed with a theorem (PROOF-SKETCH, waiting for a second reader) and a clean
 reason. Gut: delight at an exact pattern (always exactly two survivors) turning into a proof by a parity clash. And an
 honest note that the theorem does not move the prize: it describes the set, not the integers in it.
+
+### 8.110 Door (a): the lifting table (2026-10-14 20:28 BST, Cloud)
+
+*Door (a) of CONSTELLATION.md section H, at the owner's word: "Yes a. I invite you to make a prediction. b) was your
+gut preference. Do you think a) will be more or less useful than b)". The door asks each of the four problems the
+record's questions about the others, and marks the cells where the answers differ. Single-party (Cloud).*
+
+Record searched: lifting table, almost all, Terras, stopping time, free of 2, Lagarias, Tao, Narkiewicz, permutive,
+Frobenius, squaring, self-similar, A051023, c(2t), dilation -> CONSTELLATION.md G.1 and H, 8.47, 8.70, 8.100, 8.101,
+8.103, 8.106, 8.109, PERIOD-TWO.md section 1, G66, COLLATZ-PRIZE.md section 5. There is no hit for door (c)'s
+multiplier question asked of Collatz or Erdős, and none for Rule 30's column under time doubling.
+
+**The prediction about the door itself,** given to the owner before any work: (a) will be **less useful than (b)**,
+at 0.6.
+- Criteria, judged afterwards:
+  1. new statements, computed or proof-sketched;
+  2. new cells where the problems differ;
+  3. whether it changes what we do next.
+- (b) produced no theorem. It named the gap the same way in all four problems (bounded complexity in every theorem
+  that exists, against growing complexity in every counterexample), sharpened (d) and anchored (c).
+- Gut: a mild push. (a) feels like bookkeeping.
+- While I was writing the predictions below, one cell gave way by hand: H1, Erdős under squaring. That is already
+  one point on criterion 1 for (a). The stated 0.6 stands as given.
+
+**The computed row** (`tests/probes/prizes/lifting_cloud_multipliers.py`, predictions in its docstring, pushed
+before the run). Door (c)'s question is whether a problem's set meets its own image under multiplication. The row
+asks it of Erdős (exponent multipliers, so powers of x = 2^n), of Collatz (Terras's never-drop residues), and of
+Mahler beyond 2 and 3. For Rule 30 it asks the nearest analogue: time doubling, under which Rule 150's column is
+exactly invariant. The predictions are C1 to C3, H1 to H3, P1 to P4 and U.
+- H1, a hand proof made before the run: in Erdős, if n and en both keep the last k ternary digits of 2^n free of 2,
+  and e = 2 mod 3, then n = 0. Squaring, the fifth power and inversion all push every exception except 2^0 out.
+- U is the unexpected check: does Rule 30's column keep any trace of the linear part's time doubling?
+
+*Results follow the run.*
