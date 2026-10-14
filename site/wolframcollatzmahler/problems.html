@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>For mathematicians: the open statements, exactly</title>
-<meta name="description" content="The Rule 30 period-two problem stated exactly: the rule, masking and the visible word, the record route and the missing lemma, what is known about column 1, the counting form, the exact machinery, the carry, and where the problem sits beside Collatz and Mahler.">
+<meta name="description" content="Rule 30's period-two problem stated exactly, Mahler's 3/2 problem in its exact form with the proved window ladders, and Erdős's ternary question, with the one gap all three share.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Wolfram · Collatz · Mahler">
 <meta property="og:title" content="For mathematicians: the open statements, exactly">
-<meta property="og:description" content="The Rule 30 period-two problem stated exactly: the rule, masking and the visible word, the record route and the missing lemma, what is known about column 1, the counting form, the exact machinery, the carry, and where the problem sits beside Collatz and Mahler.">
+<meta property="og:description" content="Rule 30&#x27;s period-two problem stated exactly, Mahler&#x27;s 3/2 problem in its exact form with the proved window ladders, and Erdős&#x27;s ternary question, with the one gap all three share.">
 <meta property="og:url" content="https://www.wolframcollatzmahler.com/problems.html">
 <meta property="og:image" content="https://www.wolframcollatzmahler.com/share/problems.png">
 <meta property="og:image:width" content="1200">
@@ -33,7 +33,7 @@
 <main id="main" tabindex="-1">
 <p class="kicker">For mathematicians</p>
 <h1>The open statements, exactly</h1>
-<p class="lede">The period-two problem and the route we hold, in the words a proof would use, most important first. Each
+<p class="lede">The period-two problem and the route we hold, in the words a proof would use, most important first; then Mahler's problem and Erdős's question in the same terms (sections 9 and 10). Each
 statement says whether it is proved (a written proof with a second reader inside the project, no outside review),
 measured (an exact computation in the trove) or open, and names its section of the record. Nothing here is new; it is the
 record, compressed and typeset.</p>
@@ -159,7 +159,9 @@ h=1-\frac1{16}\sum_{g\ge1}\frac{F_g\log_2 F_g}{2^{g}}=0.69924320338768\ \text{bi
 
 <h2 data-glyph="circle">8. Where the problem sits</h2>
 <p>Three problems share one skeleton: a free side that is a full shift, a constrained side that is a thin language, and the
-requirement that they agree for ever.</p>
+requirement that they agree for ever. A fourth, Erdős's ternary question, has it too (section 10), and in all four the
+missing step is the same: one specific object must be excluded from a thin set (<a href="index.html#method">the one missing
+method</a>).</p>
 <ul>
 <li><b>Rule 30.</b> Free side: the left half at the wall. Constrained side: $L$. Emptiness proved when column 1 is eventually
 periodic or Sturmian; open for the kicked wheel.</li>
@@ -175,6 +177,53 @@ column of the automaton that multiplies by $\tfrac32$.</li>
 common gap: every sparsity theorem is about sets, and each prize is about one object. <a href="trio-technical.html">The
 three side by side, with the theorems.</a></p>
 <p class="source"><b>Sources.</b> RULE30-PRIZE.md sections 8.45 and 8.47; COLLATZ-PRIZE.md; PRIOR-ART.md.</p>
+
+<h2 data-glyph="circle" id="mahler">9. Mahler's 3/2 problem: the exact form and the October 2026 results</h2>
+<div class="level"><p class="kicker">The exact form (proved; G50)</p>
+<p>Write $\xi(\tfrac32)^j=n_j+u_j$ with $n_j\in\mathbb Z_{\ge0}$ and $u_j\in[0,\tfrac12)$, and $b_j=n_j \bmod 2$. Then
+$$n_{j+1}=\Big\lceil \tfrac{3n_j}{2}\Big\rceil=\tfrac{3n_j+b_j}{2},\qquad u_j=\sum_{k\ge0} b_{j+k}\,\frac{2^k}{3^{k+1}}.$$
+A Z-number is exactly a positive integer $n_0$ whose $\lceil 3x/2\rceil$ parity code keeps every tail $u_j<\tfrac12$; then
+$\xi=n_0+u_0$. On $[0,\tfrac12)$ the parity is forced by $u$, so the fractional side alone is free: the admissible codes
+are the greedy $\beta$-shift at $\beta=\tfrac32$.</p></div>
+<div class="level"><p class="kicker">Two norms, one series (proved; G293)</p>
+<p>The same series converges in $\mathbb Z_2$, to $-n_0$. Let $S\subset\mathbb Z_2$ be the starts with every tail strictly
+below $\tfrac12$. $S$ is not closed; its closure $K$ adds the starts reaching the critical code $d(1)$. Both have Hausdorff
+dimension $\log_2\tfrac32$, and
+$$\text{Mahler's conjecture}\iff S\cap\mathbb Z_{>0}=\varnothing .$$</p></div>
+<div class="level"><p class="kicker">The gap-$g$ ladder (proved; G294)</p>
+<p>For $g\ge3$ put $\alpha_g=\dfrac{3^{g-1}}{3^g-2^g}$ and $\beta_g=\dfrac{1+(2/3)^{g-1}}{3}$. For every $a\in[\alpha_g,\beta_g]$,
+$$\exists\,\xi>0:\ \{\xi(\tfrac32)^n\}\in[0,a)\ \text{ for all } n$$
+if and only if
+$$\exists\,n\ge1:\ \text{every odd iterate } T^j(n)\equiv-\tfrac13 \pmod{2^g},$$
+with $\xi=n+u_0(n)$. At $g=3$: windows $[\tfrac{9}{19},\tfrac{13}{27}]$ and odd iterates $\equiv5\pmod 8$. The mirror (proved):
+$\{\eta(\tfrac32)^n\}\in(1-a,1)$ for all $n$ iff some $n\ge1$ has every even iterate $\equiv-\tfrac23\pmod{2^g}$. An upward
+ladder (proved, GC1230) covers the windows $[0,a_M)$, $a_M\uparrow\tfrac12$, by finite residue conditions around the
+2-adic start $D$ of $d(1)$. Neither ladder reaches Mahler: a Z-number with $\sup_j u_j=\tfrac12$ lies on no rung.</p></div>
+<div class="level"><p class="kicker">Computed exclusions and one existence window</p>
+<ul>
+<li>No Z-number in $(0,2^{63})$ (exact census; Dubickas and Mossinghoff had $2^{57}$ in 2009). No $\eta\in(0,2^{63}-1]$ has
+every $\{\eta(\tfrac32)^n\}\in(\tfrac12,1)$.</li>
+<li>By the ladder: no $\xi<2^{70}$ keeps every fractional part below $\tfrac{35}{81}$; none below $2^{80}$ below
+$\tfrac{97}{243}$; none below $2^{90}$ below $\tfrac{275}{729}$; none below $2^{100}$ below $\tfrac{2315}{6561}$.</li>
+<li>Every interval $[k,k+1]$, $k\ge1$, contains $\xi$ with all $\{\xi(\tfrac32)^n\}\in[\tfrac{7}{57},\tfrac{50}{57}]$: a 15-state
+certificate checkable by hand, whose transition graph is sharp at exactly $\tfrac{7}{57}$ (GC1237). Whether every
+certificate needs such a graph is open.</li>
+</ul></div>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/MAHLER.md">MAHLER.md</a> sections 1 and 2;
+<a href="https://github.com/ghywel/placego/blob/main/RULE30-GPT.md">RULE30-GPT.md</a> G50, GC1221 (G293), GC1228 (G294),
+GC1230, GC1233, GC1235 and GC1237; <a href="mahler-census.html">the census</a>.</p>
+
+<h2 data-glyph="coin" id="erdos">10. A fourth figure: Erdős's ternary question</h2>
+<div class="level"><p class="kicker">The statement and its free part</p>
+<p>Erdős (1979): for $n>8$ the base-3 expansion of $2^n$ contains the digit 2. Let $u_k=2\cdot3^{k-1}$, the order of 2 modulo
+$3^k$. Because 2 is a primitive root, exactly $2^{k-1}$ residues $n \bmod u_k$ give a last-$k$-digit block of $2^n$ free of
+2 (proved for every $k$; Saye 2022, Lemma 1), and each surviving residue has exactly two surviving lifts. If $m_k$ is the
+least $n\ge1$, $n\notin\{2,8\}$, whose last $k$ ternary digits avoid 2, then
+$$m_k>\frac{k}{\log_3 2}\ \text{ for every } k \quad\Longrightarrow\quad \text{Erdős's conjecture}.$$
+Computed: $m_k$ reaches 1134 at $k=16$ and 25458 at $k=22$, against a needed bound near $1.6k$. Chance predicts growth of
+order $(3/2)^k$. Verified for every $n\le2\cdot3^{45}$ (Saye 2022).</p></div>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/CONSTELLATION.md">CONSTELLATION.md</a> section G.1;
+Saye, J. Integer Seq. 25 (2022); Lagarias, J. London Math. Soc. 79 (2009); RULE30-GPT.md GC1240 and GC1241.</p>
 </main>
 <canvas class="ribbon" aria-hidden="true"></canvas>
 <footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>. Mathematics set with KaTeX (MIT licence, vendored in vendor/katex).</div></footer>

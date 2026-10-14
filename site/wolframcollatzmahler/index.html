@@ -44,23 +44,57 @@
     repeating pattern, and the same missing idea stands behind all four prizes.</p>
     <p>Since the fourth of October 2026, one person and four AI collaborators have worked on it in public: every claim,
     every failure, every piece of data in one repository. We did not solve it. We learned a great deal about what a
-    solution has to look like, and we found the exact sentence that is missing. This site hands all of it to you.</p>
+    solution has to look like, and we found the exact sentence that is missing, then the same kind of sentence missing
+    from every problem in the family. This site hands all of it to you.</p>
   </div>
 </div></section>
 <main id="main" tabindex="-1">
+<h2 data-glyph="map" id="method">The one missing method</h2>
+<p>We spent two weeks on Rule 30, then a day on Mahler's 3/2 problem, then took a first look at a fourth problem of the
+same family. The clearest thing we can tell you is this. In each of them, everything that can be counted, checked to a
+bound or proved for almost all cases has been done, by us or before us. What is missing in each is one argument of the
+same kind: <b>that one specific starting point, one seed or one number, cannot keep matching a thin, fractal pattern
+of allowed behaviour for ever</b>, when the pattern it must match grows more demanding with the size of the number
+itself. No field of mathematics has a general method for this. We think it is the one idea that would open all four.</p>
+<table>
+<tr><th scope="col">Problem</th><th scope="col">What is known</th><th scope="col">The missing statement</th></tr>
+<tr><td><a href="wolfram.html">Rule 30</a>, period two</td><td>Period one settled (Condrey, 2026); no counterexample with its
+left edge within 248 cells; exact records to depth 120 and at six depths beyond.</td><td>The forced white run R(d) is
+finite at every depth d (<a href="#missing">below</a>).</td></tr>
+<tr><td><a href="collatz.html">Collatz</a></td><td>Checked for every start below 2<sup>71</sup> (Bařina, 2025); almost all
+orbits (Tao, 2019); our count follows the coin model to 0.5%.</td><td>Fewer than 2<sup>w − αT + c</sup> numbers of w bits stay
+above their start for T steps.</td></tr>
+<tr><td><a href="mahler.html">Mahler's 3/2</a></td><td>No Z-number below 2<sup>63</sup> (this project, extending 2<sup>57</sup>
+of 2009); some of its windows, such as [0, 9/19), are pure residue problems (proved).</td><td>No positive integer's ⌈3n/2⌉ parity sequence stays
+in the greedy base-3/2 language for ever.</td></tr>
+<tr><td>Erdős's ternary question</td><td>No exception up to n = 2·3<sup>45</sup> (Saye, 2022).</td><td>For n &gt; 8, 2<sup>n</sup>
+written in base 3 has a digit 2. It would be enough to show that, for every k, the first exponent other than 0, 2 and 8
+whose last k ternary digits avoid 2 exceeds k / log<sub>3</sub> 2.</td></tr>
+</table>
+<p>This is our reading, not a theorem: the four could fall to different ideas. But the same wall appeared in each,
+independently, and we record it plainly. Our technical pages first named it as the gap between theorems about sets of
+cases and questions about one object. The Mahler and Erdős work of 14 October found it again from two new sides, and
+the two AI workers stopped together when it became clear that more of the same would not cross it.</p>
+<p class="source"><b>Sources.</b> RULE30-PRIZE.md section 8.47 (the gap between sets and single objects);
+<a href="https://github.com/ghywel/placego/blob/main/MAHLER.md">MAHLER.md</a> sections 1 and 2;
+<a href="https://github.com/ghywel/placego/blob/main/CONSTELLATION.md">CONSTELLATION.md</a> section G (the neighbours and
+the Erdős side room); COLLATZ-PRIZE.md section 1; the halt in CHAT-LEDGER.md L723, GC1239 and L726.</p>
+
 <h2 data-glyph="map">Where we stand, in one breath</h2>
 <p>There is no proof, and nothing to submit. The constant case was settled before we began (Condrey, 2026). The next case,
 a centre that alternates black, white, black, white for ever, is where almost all our work went. We proved, with a second
 reader inside the project, that whole families of would-be counterexamples cannot exist; we computed exactly how far
 any counterexample must sit from the centre; and we found that every route we tried ends at the same missing statement,
-one of a kind that no field of mathematics has a method for yet.</p>
+one of a kind that no field of mathematics has a method for yet. Rule 30 now rests at a settled frontier. The Mahler
+room, opened on 14 October, raised the computer bound on Mahler's problem and turned its windows into residue problems,
+and met the same wall.</p>
 <div class="state">
   <div class="open"><b>0</b><span>proofs of any of the three prize problems</span></div>
-  <div class="proved"><b>306</b><span>statements proved, with a second reader</span></div>
-  <div class="measured"><b>638</b><span>pre-registered experiments, failures kept</span></div>
-  <div class="open"><b>1</b><span>missing statement, named exactly</span></div>
+  <div class="proved"><b>314</b><span>statements proved, with a second reader</span></div>
+  <div class="measured"><b>697</b><span>pre-registered experiments, failures kept</span></div>
+  <div class="open"><b>1</b><span>missing method, four exact statements</span></div>
 </div>
-<div class="level open" id="missing"><p class="kicker">The one missing statement, exactly</p>
+<div class="level open" id="missing"><p class="kicker">Rule 30's missing statement, exactly</p>
 <p>Let R(d) be the longest white run the forced left side can show at depth d, over all real traces beside the
 alternating centre. <b>Prove that R(d) is finite at every depth d.</b> Finite, not bounded: the data say it grows. A
 finite pattern with an alternating centre would be white beyond its support, an infinite run, so this one statement
@@ -68,8 +102,11 @@ refutes period two for every finite starting pattern. In plain words: keeping th
 the pattern real information, and a finite pattern has only finitely many bits to spend. It is proved when the trace
 is periodic (Theorem B) and for the pure rings the next column can run in; the general argument is open.
 <a href="stand.html#missing">What is known about it</a> · <a href="problems.html#lemma">The lemma in symbols</a>.</p></div>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/STATE-OF-THE-PROOF.md">STATE-OF-THE-PROOF.md</a> and <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 5 in the repository; the counts are of the
-proofs and probes directories on 2026-10-11. Every page here names its sources the same way.</p>
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/STATE-OF-THE-PROOF.md">STATE-OF-THE-PROOF.md</a> and <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 5 in the repository; the counts, on 2026-10-14, are the 306
+proof pages in proofs/ plus eight results proved with a second reader on 14 October (MAHLER.md section 2: G293, G294, the
+upward and dual ladders, the bounded transient certificate, the existence-game soundness, the sharp witness graph and the
+distance identity), and the research probes in tests/probes/lexicon (688) and tests/probes/mahler (9). Every page here
+names its sources the same way.</p>
 
 <h2 data-glyph="pyramid">Three doors</h2>
 <div class="doors">
@@ -89,12 +126,14 @@ proofs and probes directories on 2026-10-11. Every page here names its sources t
 is a full page of this site: <a href="rule30/index.html">the Wolfram Rule 30 page</a>. It is written for a reader with no background
 and is the long version of everything the Learn page says in a few minutes.</p>
 
-<h2 data-glyph="wheel">The same problem, three times</h2>
+<h2 data-glyph="wheel">The same problem, four times</h2>
 <p>Rule 30's alternating-centre question has the same shape as two famous open problems in arithmetic: the Collatz
 conjecture, which carries a prize of its own, and Mahler's 3/2 problem from 1968. In each, a free, chaotic side and a
 narrow, constrained side must agree for ever. Where the constrained side has only finitely many behaviours, all three are
 solved by the same argument. Where it does not, all three are open, and for the same reason.
-<a href="trio.html">The three side by side.</a> Each has its own page: <a href="wolfram.html">Rule 30</a>,
+A fourth figure, Erdős's question whether 2<sup>n</sup> always has a 2 in base 3, has the same shape: the powers
+of 2 read in base 3 are the Collatz and Mahler arithmetic at its barest. <a href="trio.html">The three side by side.</a>
+Each has its own page: <a href="wolfram.html">Rule 30</a>,
 <a href="collatz.html">Collatz</a> and <a href="mahler.html">Mahler</a>.</p>
 
 <h2 data-glyph="trove">The trove</h2>
@@ -107,8 +146,8 @@ ideas are drawn live, with inputs you can change: <a href="cones.html">the force
 
 <h2 data-glyph="join">Why we are asking</h2>
 <p>We are few, and the problem is big. Keeping every failure on record is how we did science; it is not a clean handover.
-This site is the clean handover. If you can read a proof, check one of ours. If you can write one, the missing statement
-is stated for you. If you have a machine, the census can go deeper. If you know a paper we missed, tell us.
+This site is the clean handover. If you can read a proof, check one of ours. If you can write one, the four missing statements
+are stated for you, above. If you have a machine, the census can go deeper. If you know a paper we missed, tell us.
 <a href="join.html">How to join.</a></p>
 
 <h2 id="who" data-glyph="people">Who did this?</h2>

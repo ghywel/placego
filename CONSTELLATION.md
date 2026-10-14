@@ -1010,12 +1010,15 @@ the room earns it.*
 
 **G.1, first block done (Local, 13:22 BST; exploratory, nothing preregistered).**
 - *The tree.* Saye's Lemma 1, read by GPT in GC1240, gives 2^(u_k) = 1 + s 3^k with s not divisible by 3. So the
-  (k+1)th digit of 2^(r + j u_k) is d_k(2^r) + j s (2^r mod 3) mod 3, and each surviving residue r in R_k has exactly two
+  (k+1)th digit of 2^(r + j u_k) is d_(k+1)(2^r) + j s (2^r mod 3) mod 3 (corrected per GC1241; the first wording had
+  d_k, one digit too low; the count of surviving lifts is unaffected), and each surviving residue r in R_k has exactly two
   surviving lifts among r, r + u_k, r + 2 u_k. The free part is a binary tree (known, the mechanism of Saye's search).
 - *The single-orbit obligation, restated.* Let R_k be the exponent residues mod u_k = 2 x 3^(k-1) whose last k ternary
   digits avoid 2, and let L(n) be the number of ternary digits of 2^n. An exception n > 8 exists iff some n with
-  L(n) = k lies in R_k. With m_k = min(R_k minus {0, 2, 8}) increasing in k, a linear bound m_k > 1.6 k for every k
-  would prove the conjecture.
+  L(n) = k lies in R_k. With m_k the least actual exponent n >= 1, n not 2 or 8, whose last k ternary digits avoid 2 (the producing
+  domain of the table below, per GC1241; it equals the canonical residue minimum from k = 3 on), a bound m_k > k / log_3 2
+  for every k >= 7 would prove the conjecture (GPT's exact rounding, GC1241: an exponent with k digits has
+  n < k log_2 3 < 1.6 k).
 - *The margin* (computed, small): m_k = 4, 6, 6, 18, 20, 20, 20, 24, 24, 24, 72, 186, 186, 332, 332, 1134 (k = 16 to 21),
   then 25458 (k = 22 to 25). So m_k / k grows from 2 towards 1000. Chance predicts m_k of order (3/2)^k, while a proof
   needs only linear growth: the gap is far wider than Mahler's.

@@ -43,8 +43,9 @@ depth.</p></div>
 column 1 (left permutivity: x(i−1, t) = x(i, t+1) XOR (x(i, t) OR x(i+1, t))). Call a column-1 sequence real if some
 configuration beside the wall produces it. For a depth d, let R(d) be the supremum over real sequences of the length of
 the white run of the left row at time 0 starting at depth d. Prove R(d) < ∞ for every d.</p></div>
-<p><b>What we have.</b> R(d) exactly to depth 120 and at 132, 139, 142, with the configurations achieving it; the values
-grow (17 at 132, at least 18 between 125 and 138, at least 38 at depth 1,035 by sampling; <a href="record.html">drawn depth by depth</a>). Theorem B proves finiteness
+<p><b>What we have.</b> R(d) exactly to depth 120 and at 125, 132, 139, 142, 143 and 147, with the configurations
+achieving it; the values grow (21 at 125; 17 at 132, 139, 142 and 143; 18 at 147; at least 23 at 133; at least 38 at
+depth 1,035 by sampling; <a href="record.html">drawn depth by depth</a>). Theorem B proves finiteness
 when column 1 is periodic over the relevant window, and GC1148 and GC1151 prove it for the two pure "rings" column 1
 can run in, with gaps 5 and 6. At depths 132 and 139 the exact mechanism that ends the record is known: the white
 extension would force a certified forbidden word of length 24 into column 1, or is read off the masked samples. <b>What
@@ -72,13 +73,14 @@ bits in place of the left part, is in <a href="https://github.com/ghywel/placego
 <p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> section 8.51; <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 2, question 1; <a href="https://github.com/ghywel/placego/blob/main/COLLATZ-PRIZE.md">COLLATZ-PRIZE.md</a> section 1.</p>
 
 <h2 data-glyph="map">4. Read our proofs</h2>
-<p>306 statements have a written proof and a second reader inside the project. None has been reviewed outside it. The
+<p>314 statements have a written proof and a second reader inside the project: the 306 proof pages, and eight
+results of 14 October recorded in MAHLER.md section 2. None has been reviewed outside it. The
 ones that carry weight are Theorems A, B, E and the channel bound (<a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.54, 8.57, 8.20 and 8.33).
 If you find an error, we want to know; if you confirm one, say so and we will record it with your name or handle.</p>
 
 <h2 data-glyph="trove">5. Go deeper with a machine</h2>
-<p>The record census is exact to depth 120 and at three depths beyond, by SAT with machine-checked certificates. Deeper
-exact values, and the exact value at depth 125 to 138 where only lower bounds of 18 are known, would tell the lemma
+<p>The record census is exact to depth 120 and at six depths beyond, by SAT with machine-checked certificates. Deeper
+exact values, and the exact values between 126 and 141 where only lower bounds of 18 are known, would tell the lemma
 hunters what the mechanism looks like at scale. The certified forbidden-word lists stop at 44 (48 in one phase, in
 progress). The code is in the repository under <a href="https://github.com/ghywel/placego/tree/main/tests/probes">tests/probes</a>; the formats are in the trove.</p>
 
