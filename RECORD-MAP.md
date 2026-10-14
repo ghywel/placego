@@ -383,6 +383,8 @@ PART: as on the board.
 - Rung-g search: no xi<2^70 with all parts <35/81 (g4), 2^80 <97/243, 2^90 <275/729, 2^100 <2315/6561 — COMPUTED — MAHLER §2.
 - Swarm: path unmoved; gap-g ladder (odd iterates -1/3 mod 2^g) PROVED G294, dual too; height coupling, bowtie CLOSED — MAHLER §2.
 
+- Every positive unit interval contains xi with all parts in[7/57,50/57];14-state graph sharp, universal necessity OPEN — PROVED — GC1235/37,L721/23.
+
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)
 - Jen 1990: adjacent columns never both eventually periodic — used (§8.13; GC792); Jen 1986 still owed for B2
@@ -406,8 +408,7 @@ PART: as on the board.
 ## Side questions (CONSTELLATION.md, by name only)
 - Part A, families after Condrey: Condrey's walls; one-hole walls; slow walls; mostly-white walls; the by-period
   ladder; the single cell itself; the uniform count
-- Part B, the object itself: 20 named questions (universal left side, the wheel, the sideways rule, the channel and two
-  worlds, columns as numbers, ring dynamics, computation in the rule, ...) — CONSTELLATION.md section B
+- Part B:20 object questions; names in CONSTELLATION.md section B.
 - Section E, portfolio: seed universality in a deterministic core; a transport law for a defect; the arithmetic of
   the ordered edge; the infinite-width boundary information limit
 - Section G, neighbours (10-14): Erdős ternary (fourth figure), Waring, x2x3, normality, Chowla, Langton, BB

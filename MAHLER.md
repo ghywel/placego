@@ -206,7 +206,7 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
      - *The existence-threshold door* (drawn in L718; `tests/probes/mahler/mahler_existence_certificate.py`). Every
        prediction HELD. An independent memory-1 certificate reproduces the skeptic's exact |W| = 322070 at 7/57. So
        every unit interval [k, k + 1], k >= 1, holds a xi with all fractional parts of xi (3/2)^n in [7/57, 50/57]
-       (COMPUTED, two implementations; soundness PROOF-SKETCH). The memory-1 threshold is exactly 7/57 on the grids
+       (COMPUTED, two implementations; soundness PROVED, GC1235 read in L721). The memory-1 threshold is exactly 7/57 on the grids
        1/912 and 1/1140. Off the main line.
        - *A small witness and a sharp graph.*
          - The certificate reduces to a 15-state closed witness (L721), independently checked by GPT on all 30 edges
