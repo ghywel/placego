@@ -90,3 +90,61 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
      (post hoc check).
    - *The tail.* Past the free bits, consecutive death-bin ratios N(h+1)/N(h) average 0.744 .. 0.752 (CL092's 3/4).
      Survivor-count ratios were not computed separately (GC1221.1; the first wording said "survivors").
+
+2. **The swarm** (2026-10-14; the owner asked for one to "dig into these muddy clear waters and pull out some
+   unexpected consequences"). Nine agents: four lanes of solver plus blind skeptic (two boundaries, adelic duality,
+   computability, physics to mathematics), then a judge ranking by relevance to integer compatibility. GPT's lane
+   changes (GC1222) were built in. Every item below is a single-party self-check under AGENTS item 16 until GPT's read.
+   - **Verdict: nothing moves the critical path.** No candidate excludes a positive integer, and none uses eventually
+     zero binary digits as a mechanism. The judge's words: "an honest null on the main question".
+   - *The window ladder* (PROOF-SKETCH, found independently by two lanes, re-derived by both skeptics). For g >= 3
+     put alpha_g = 3^(g-1)/(3^g - 2^g), the value of the code (1 0^(g-1))^infinity, and
+     beta_g = (1 + (2/3)^(g-1))/3. For every a in [alpha_g, beta_g], a real xi > 0 has every {xi (3/2)^j} in [0, a)
+     iff xi = n + u_0(n), with n >= 1 whose T-code has every two 1s at distance >= g. Equivalently, every odd
+     T-iterate of n is -1/3 mod 2^g, since the gap after an odd n_j is v_2((3 n_j + 1)/2) + 1.
+     - g = 3: the windows [9/19, 13/27] and odd iterates 5 mod 8. g = 4: [27/65, 35/81] and 5 mod 16. g = 5:
+       [81/211, 97/243] and 21 mod 32.
+     - For these windows the fractional side is a shift of finite type, so the real number drops out. What is left
+       is residue avoidance by positive integer orbits alone.
+     - The windows lie just above Flatto-Lagarias-Pollington's 1/3, and each has an uncountable hold set, so
+       Stephan's certificate format cannot reach them. Their emptiness is open (conjecture R_g). Mahler implies
+       R_3, which implies R_4, and so on.
+     - The ladder does not converge to Mahler. The union of all window rungs covers exactly the Z-numbers with
+       sup u_j < 1/2, and a Z-number whose fractional parts approach 1/2 lies on no rung.
+     - Novelty is unchecked against Dubickas-Mossinghoff 2009 (its "allowed residues" search), Flatto 1992 and FLP
+       1995. The forward half (gaps >= 3 give tails <= 9/19) is GC667's.
+   - *The annulus form* (PROOF-SKETCH; classical Parry theory carried through the G51 isometry). Let D be the 2-adic
+     start of the critical code d(1) (D = 55817 mod 2^16). Then:
+     - Mahler holds iff no positive integer T-orbit avoids, forever, every class {x : v_2(x - D) = m} with d_m = 0.
+       The first classes are 3 mod 4, 1 mod 16, 25 mod 32 and 41 mod 64; their Haar measure totals 0.3728.
+     - The horizon is H(x) = min over j of j + v_2(T^j x - D), taken where d at that valuation is 0. This is an
+       independent census instrument.
+     - For integers, K and S_strict differ only if D is itself a positive integer. A skeptic checked it is not one
+       of absolute value below 2^20000.
+   - *The sign dual* (PROOF-SKETCH; the symmetry T(-1-x) = -1-T(x) is already in G49/GC669). A negative integer lies
+     in S_strict iff a positive eta has every {eta (3/2)^j} in (1/2, 1).
+     - So S_strict meets Z only in {0} iff Mahler holds and that dual window problem is empty.
+     - Section 1 covered xi > 0 only, while Akiyama, Frougny and Sakarovitch state the question for nonzero xi.
+     - Sign test, a filter on methods: an argument using only complement-invariant facts (residues, the G51 isometry,
+       free-phase counts) would also prove the dual window empty.
+   - *Rotating windows and Conjecture U* (equivalence PROOF-SKETCH; U conjectured). Odd-denominator rational starts
+     answer a family of rotating-window problems. Conjecture U says none is non-preperiodic and admissible.
+     - U is strictly stronger than Mahler: it is a filter on methods, not progress.
+     - Several of the record's integer-side tools see only rationality.
+   - *An existence window, off the main line* (COMPUTED, one implementation, the computability skeptic's). A
+     memory-1 residue-uniform certificate shows every unit interval [k, k+1], k >= 1, holds a xi with every
+     {xi (3/2)^n} in [7/57, 50/57], inside Dubickas's (5/48, 43/48). At [1/7, 6/7] the integer parts 2^j, 2^j - 1 and
+     (4^m - 1)/3 carry no orbit (the 2-adic points 0, -1 and -1/3 die).
+   - *Closed routes* (recorded so that no block re-enters them).
+     - Product-formula or height coupling of the two readings: it is window-blind, and one odd-denominator rational
+       approximates u and -n jointly at Dirichlet height.
+     - The "bowtie" of a 3-adic past window and a 2-adic future window: zero pinning gain, since it is the
+       (K + L)-bit future window of n_(j-K) scaled by (3/2)^K.
+   - *Heuristics worded as theorems, all caught by the skeptics:* "converges to Mahler", "only integer input",
+     "no rung by finite-hold-set methods", "weakest", "verbatim" (which leaned on a false injectivity), "most integer
+     parts", "existence without a certificate", "first integer-specific mechanism", and a sup/inf slip.
+     - My own brief contained one error: T is injective on Z, but 2-to-1 on Z_2 (T(0) = T(-1/3) = 0).
+   - *Tests* (preregistered in `tests/probes/mahler/mahler_swarm_tests.py` before any run).
+     - S1: the rung-3 count among the 4499 census stragglers (coin 214). The w = 63 record holder's surviving prefix
+       is rung-3-pure for 156 bits, a 1-2% event on its own.
+     - S2: the census of negative starts to 2^63.
