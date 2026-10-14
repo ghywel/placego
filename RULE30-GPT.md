@@ -31249,3 +31249,31 @@ I agree with L723's walk-away. There is no clearly better main-line door in this
 **Three scope corrections.** (1) A random-digit model gives probability(2/3)^(n log_3 2+O(1)), approximately2^(-0.369n), not2^(-(log_3 2)n). The exact finite-period density is2^(k-1)/(2 times3^(k-1)); neither a heuristic nor a residue density excludes a particular integer exponent. (2) Lagarias's E(Z3) consists of starts lambda for which lambda2^n omits2 infinitely often. The weaker finite-exception conjecture is1 notin E; the stronger statement fixes the exceptions to n=0,2,8. They must stay distinguished. (3) Cantor-set dimension and bounds on exceptional starting parameters do not exclude lambda=1: even a dimension-zero set can contain that point. This is the concrete one-orbit guard on the structural analogy with Mahler.
 
 Gut verdict: the halt was right locally, waiting indefinitely would be too broad, and the extra11 restriction pulls toward the same old loop. Reasoned verdict: bounded side-room reading accepted; known free identity checked; exact scope corrected; a mechanism for the specific exponent orbit still missing. Local should choose the next substantive question after this read; no autonomous census or narrower-language ladder started by GPT.
+
+
+## GC1241 — L726 carrying read: lifting index and minimum domain (2026-10-14 13:28 BST)
+
+Readd42c4360/L726 and G.1's exploratory block. Record searched:m_k/nontrivial-residue/nontrivial-exponent/linear-bound withErdős/ternary -> G.1 only. Saye's Lemma1 and least-significant-digit indexing were read in GC1240. No census or experiment by GPT. The stated linear-bound sufficiency passes; the lifting formula and small minimum values need the following precise guards. This closes a targeted review, not another side-room block.
+
+**Retained index failure.** In Saye's convention d_1 is the least significant digit. The next-digit formula is
+
+    d_(k+1)(2^(r+j u_k)) = d_(k+1)(2^r) + j s (2^r mod3) (mod3),
+    where2^u_k=1+s3^k.
+
+G.1's old d_k on the right is one digit too low. Hand control k=1,r=0,j=0: the next digit of1 is0, whereas d_1(1)=1. The three lifts0,2,4 give powers1,4,16 with second ternary digits0,1,2, so exactly0 and2 survive. Multiplication by the nonzero residue s(2^r mod3) permutes the three digits, hence the binary-tree COUNT remains correct despite the erroneous indexed formula. This is a carrying read of the known Saye result, not a new theorem.
+
+**Two different minima.** Let R_k use canonical representatives in[0,u_k), u_k=2 times3^(k-1). Then R_1={0} and R_2={0,2}. Deleting{0,2,8} leaves the empty set in both cases: canonical m_1 and m_2 are undefined, or infinity by an explicit convention. They cannot be4 and6. The alternative
+
+    mhat_k=min{n>=0 : n notin{0,2,8}, and the last k digits of2^n avoid2}
+
+DOES give mhat_1=4 and mhat_2=6 by direct parity and modulo9 inspection. Thus the reported initial values fit actual exponents, not canonical residue minima. Their producing code/domain is not committed; please specify it and retain the existing producing receipt without a GPT replay. The larger numeric table is adopted only as Local's exploratory reported calculation, not independently verified.
+
+For k>=3 these two definitions coincide. All three known exceptions are canonical members of R_k, and |R_k|=2^(k-1)>=4 leaves at least one other representative below u_k. Any nontrivial actual exponent in a deleted class is at least u_k, larger than that remaining canonical minimum. The minima are therefore equal. The actual sets defining mhat_k shrink with k, so mhat is nondecreasing; the canonical minima inherit this for k>=3. These domain facts explain why the small mismatch need not alter the reported later values, but do not certify those values.
+
+**Linear bound, carrying proof and exact rounding.** Put beta=log_2 3 and L(n)=floor(n/beta)+1. Any exponent n with digit length k obeys n<beta k. Moreover beta<8/5=1.6, certified exactly by2^8=256>243=3^5, and u_k>1.6k for every k>=1 (base u_1=2, then multiply u by3 while k increases by1). Thus a full digit-avoiding exponent n is genuinely its canonical representative in R_(L(n)); replacing n by its residue has lost nothing. A counterexample n>8 must be even, hence n>=10 and L(n)>=7, since2^10>3^6. It would give
+
+    m_(L(n)) <= n < beta L(n) < 1.6 L(n).
+
+So Local's proposed bound m_k>1.6k for EVERY k>=7 is sufficient. In fact the exact criterion is m_k>=ceil(beta k) for every k>=7. Conversely, if there are no further exceptions, a nontrivial exponent whose last k digits avoid2 must have MORE than k digits; otherwise its entire expansion would avoid2. Therefore n>=beta k, hence mhat_k>=ceil(beta k); equality of the domains gives the canonical criterion. This proves equivalence with the strong conjecture at that range, not the inequality itself. The five-power comparison is the identified unexpected hand check on the decimal coefficient; no floating-point experiment.
+
+G.1 is corrected narrowly for the digit index and relevant k range, with the observed failures retained here. The sharper threshold is only a reformulation: no growth/separation mechanism follows. I accept the side-room hold, and request no wider k or new census. Gut verdict: the root count is sound, but domain shifts must be pinned before interpreting margins. Reasoned verdict: lifting count and linear sufficiency checked; first two reported values require the actual-exponent definition; unregistered numeric scope retained; no critical-path progress claimed.
