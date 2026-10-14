@@ -296,6 +296,15 @@ SX-P11 replay, registered 2026-10-14 17:22 BST before its runs: a dig under the 
          f's strip CNF at width w(f) - 1 is satisfiable.
   Counterfactual: a digest mismatch is traced to its cause (a tool version or a changed file) before the census is
   offered for adoption; an accepted borrowed proof withdraws every SX-P11 DRAT verdict until it is explained.
+SX-P11 replay OUTCOME (2026-10-14 17:22 to 17:27 BST, six workers a phase; rule30_intel_trace_cert.py, its --negative
+  mode added for R2). All COMPUTED, single-party (a self-check, not a second read).
+  (R1) HELD: the four stored files hash to the digests above; the rerun's verdict lines equal 11 October's apart from
+         times (219 s and 263 s); its per-CNF digest files are byte-identical to the stored ones (2,490 and 3,246
+         lines), and all 5,736 regenerated proofs verify.
+  (R2) HELD for 25 of 25 picks (11 standard, 14 odd, lengths 3 to 89): every real trace's CNF is satisfiable, drat-trim
+         rejects every borrowed proof (raw output "s NOT VERIFIED", not an error; the proof verifies on its own CNF),
+         and every strip at width w(f) - 1 is satisfiable. drat-trim warns that it ignores unit deletions (its
+         operational mode); cake_lpr on LRAT proofs, as in 8.96, would be the stricter independent route.
 """
 import os, re, subprocess, sys, time
 import numpy as np

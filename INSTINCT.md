@@ -113,7 +113,10 @@ Cloud's set-aside pulls, unjudged, with what we were doing when each came, are i
 - 2026-10-14 17:16 BST, Intel: unease, SX-P11's certificates held unpublished since the halt of 2026-10-11, low;
   first guess: the record still says "SAT without proof logs" (IN010; PERIOD-TWO.md Q10) for a census whose
   certification finished at 18:01 that day, so the record lags what a worker holds. -> told the owner rather than
-  publishing on my own (the halt said wait). Outcome: open.
+  publishing on my own (the halt said wait). Outcome: right. The record did lag; SX-P11 was published at the
+  owner's word (17:27, IN011), and a replay and a negative control held. The caveat waits for an independent check.
+- 2026-10-14 17:27 BST, Intel: gut verdict on SX-P11: relief, a loose end tied. Reasoned verdict: COMPUTED,
+  single-party, reproduced three days on; a second party is owed. They agree.
 
 - 2026-10-14 17:24 BST, Cloud: gut verdict on 8.105 (S7): satisfied. The owner's word "interference" guided better
   than my "rigid cells" (R2 was a coin flip and fell to correlations). Reasoned verdict: correlations carried by
