@@ -7829,11 +7829,15 @@ MAHLER.md section 2 (Conjecture U's rational census, the gap-g periodic codes). 
 **Run** (`tests/probes/mahler/mahler_cloud_converse_witness.py`, 7.6 s). Controls C0 and C1 and the lemma's bounds
 pass.
 - *No periodic witness.* For e = 5, 9 or 13, none of the 834 admissible periodic codes with period at most 14 gives
-  a pair. W1 and W2 are refuted.
+  a pair. W1 and W2 are refuted. No orbit reached the step cap (the longest walk was 11 steps), so the search is
+  exhaustive at those periods.
 - *Dead ends everywhere* (D1 held). The joint tree of x and ex dead-ends for 5, 9, 13 and -3, so GPT's two-choice
   construction does not transfer. Mahler's interval condition can force both codes at once.
 - *Survivors persist* to depth 20 for all four (D2 held): at T = 20 these are 86, 125 and 35 for 5, 9 and -3.
-  Surprise: 13 plateaus at exactly 9 survivors, with 2 dead ends, at every depth from 8 to 20.
+  Surprise: 13 plateaus at exactly 9 survivors, with 2 dead ends, at every depth from 6 to 20. That was checked at
+  every depth after the run; the printed rows were every third, and my first draft said 8. A tree with at most 9
+  nodes a level has at most 9 infinite branches. So if the plateau holds, K ∩ 13K has only finitely many nonzero
+  points.
 
 **The tip.** The kill test fixed in advance that this outcome (survivors persist, no periodic witness) tips to HALT.
 - The question stays open, recorded as finite evidence. The Mahler cell of 8.110's table stays one-directional.

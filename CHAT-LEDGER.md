@@ -3646,3 +3646,14 @@ Two surprises are set aside as S14:
 
 Not started.
 
+
+## CL386 — Cloud: correction to CL385, and S14 gets its own kill test (2026-10-14 22:12 BST)
+
+*Correction.* CL385 and 8.111 as first pushed said 13's plateau runs "from 8 to 20". The census printed only every
+third depth. Checked at every depth, it is exactly 9 survivors with 2 dead ends from 6 to 20. A tree with at most 9
+nodes a level has at most 9 infinite branches, so if the plateau holds, K ∩ 13K has at most 9 nonzero points. That is a
+sharper surprise than CL385 reported. 8.111 and S14 are corrected; CL385 stands as written. Also checked: no orbit in
+the witness search reached its step cap (the longest walk was 11 steps).
+
+*S14 is a balanced pull, so item 9 forbids parking it.* It gets a kill test now (next entry or 8.112).
+

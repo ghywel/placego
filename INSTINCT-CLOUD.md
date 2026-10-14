@@ -153,8 +153,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 **S14.** 2026-10-14, 22:10 BST.
 - **Doing:** reading S13's kill-test run (8.111).
 - **Pull:** two surprises.
-  - For e = 13 the non-shadow survivors sit at exactly 9, with 2 dead ends, at every depth from 8 to 20. Is K ∩ 13K a
-    finite set of lines?
+  - For e = 13 the non-shadow survivors sit at exactly 9, with 2 dead ends, at every depth from 6 to 20. If that holds,
+    K ∩ 13K has at most 9 nonzero points. Is it a finite set?
   - No admissible periodic code gives a pair at 5, 9 or 13. A wider search would reformulate it. For odd d, the
     rationals -a/d in S_strict with eventually periodic codes are the a in [0, d/2) whose orbit
     a -> (3a - b d)/2, with b = [3a >= d], stays integral. A pair at e needs a and e a both in that set.
