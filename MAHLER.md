@@ -189,13 +189,26 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
      - *Door 2, Conjecture U* (drawn in L714; `tests/probes/mahler/mahler_rational_census.py`, predictions first).
        Every prediction HELD. No positive rational A/B (odd B <= 255, A < 2^44; and B in {65, 211, 665, 2059},
        A < 2^52) keeps every tail below 1/2; record horizons follow the coin law. In (-1, 0) the 117 survivors are all
-       preperiodic. Post hoc, they reach only the cycles 0 and (1 0^(g-1))^infinity for g = 3, 4, 5, the gap-g ladder's
-       periodic codes (denominators 3^g - 2^g). A filter on methods, not a critical-path step.
+       preperiodic, with exact certificates (117 of 117; and GPT's bounded proof GC1233, read by Local in L718, shows
+       the 4000-bit window already checks every transient when B is odd and at most 255). Post hoc, they reach only the
+       cycles 0 and (1 0^(g-1))^infinity for g = 3, 4, 5, the gap-g ladder's periodic codes (denominators
+       3^g - 2^g). A filter on methods, not a critical-path step.
+     - *Door 0, the rung-g search past 2^63* (drawn in L717; `tests/probes/mahler/mahler_rung_search.{c,py}`,
+       predictions first). Every prediction HELD.
+       - No rung survivor: g = 4 below 2^70, g = 5 below 2^80, g = 6 below 2^90, g = 8 below 2^100. So, by G294
+         (COMPUTED): no xi in (0, 2^70) keeps every fractional part below 35/81; none in (0, 2^80) below 97/243; none
+         in (0, 2^90) below 275/729; none in (0, 2^100) below 2315/6561.
+       - Record rung horizons were 137, 138, 147 and 147, each within 5% of the coin law W / (1 - log2 lambda_g).
+       - The g = 3 run at 2^63 reproduced the census record (157 at 1541211973603965806) from independent code: a
+         second-instrument replay of the census maximum.
+       - Post hoc: two records start 2-adically near -1/3 and one near 0, the rung-pure points.
+       - Finite, inside one rung each; no critical-path step.
      - *Door 1, the (1/2, 1) dual window* (drawn in L715; a small block).
        - Literature: one search found no treatment of Z_{3/2}(1/2, 1) as a problem of its own. It sits in Flatto,
          Lagarias and Pollington's family Z(s, s + t) at s = t = 1/2, where their 1/3 spread bound does not reach.
-       - *The dual ladder* (PROOF-SKETCH, Local, by the complement symmetry T(-1-x) = -1-T(x) applied to G294; G294's
-         proof uses G50 and the periodic baseline, both sign-free). For g >= 3 and a in [alpha_g, beta_g], a real
+       - *The dual ladder* (PROVED: Local's statement by the complement symmetry T(-1-x) = -1-T(x) applied to G294;
+         GPT's carrying review GC1233, with the signed lower-endpoint guard and the nonzero-tail step, read by Local in
+         L718. Equivalently eta = n + u_0(n), with u_0 the tail sum of n's own code). For g >= 3 and a in [alpha_g, beta_g], a real
          eta > 0 keeps every fractional part of eta (3/2)^j in (1 - a, 1) iff eta = n + 1 - u_0(-1-n) for an integer
          n >= 1 whose every even T-iterate is -2/3 mod 2^g, i.e. every two even steps are at least g apart.
        - At g = 3 that is the window (10/19, 1) and even iterates 2 mod 8; at g = 4, 10 mod 16; at g = 5, 10 mod 32.

@@ -41,6 +41,30 @@ PREDICTIONS (written 2026-10-14 12:05 BST, before any search; only the W = 20 co
   R0 RECORDED (run first, 12:05 BST): for every g from 3 to 8 at W = 20, the walker equals the exact computation and the
      identity holds. The maxima were 47 at 690773 for g = 3, 4 (the census record), 32 at 110464 for g = 5, 6, and 32
      at 340600 for g = 7, 8.
+
+OUTCOME (2026-10-14 12:12 BST, M5, 9 workers, 358 s; machine output quoted; log ~/np-scratch-int/mahler/rung_search.log):
+  R0 and R0b HELD: mass 2^W - 1 and the Y_g identity at every T < W, in every run.
+  R1 HELD: g = 3 at W = 63 gives maximum rung horizon 157 at 1541211973603965806, the census record, from independent
+     code (no windows; the gap condition only). Since rung-pure prefixes never empty the census window, this is a
+     second-instrument replay of the census maximum.
+  R2 HELD: no survivor and no straggler at step 250, in any run:
+     g = 4 below 2^70: max 137 at 888784713284933952853 (43 s);
+     g = 5 below 2^80: max 138 at 928708411130383264535893 (50 s);
+     g = 6 below 2^90: max 147 at 244479157956375357271529614 (75 s);
+     g = 8 below 2^100: max 147 at 882798358751616658686651027328 (18 s).
+     So (COMPUTED, by G294): no xi in (0, 2^70) has every fractional part of xi (3/2)^n below 35/81; none in
+     (0, 2^80) below 97/243; none in (0, 2^90) below 275/729; none in (0, 2^100) below 2315/6561.
+  R3 HELD: ratios to the coin law W / (1 - log2 lambda_g) of 1.047, 1.025, 1.042 and 1.027 (and 1.118 at g = 3).
+  Unexpected check HELD as registered: the g = 6 and g = 8 holders share no low-bit structure (low bytes 10001110 and
+     10000000).
+  POST HOC (not preregistered): the g = 4 and g = 5 holders both end in 01010101, n = 85 = -1/3 mod 256, so their first
+     odd step is followed by seven even steps. The g = 8 holder ends in seven zeros. Both are 2-adic head starts near
+     -1/3 and 0, the zero cycle and its 2-to-1 preimage (GC1230), which are rung-pure for ever. The g = 3 and g = 6
+     holders show no such proximity.
+  AMENDMENT (per GC1234, after the run; it changes no outcome): R0 and R1 are now hard gates; a failed range is
+     quarantined; GPT's fixed control (rung horizon of 2^99 at g = 8 is 101) is checked before any search, and it
+     gives 101.
+  Reading: finite exclusions inside one rung each, past the 2^63 census, at the coin law; no step on the critical path.
 """
 import math, os, subprocess, sys, time
 from collections import Counter
@@ -146,12 +170,17 @@ def control():
         for g in range(3, 9):
             hist, best, ns, alive = search(pool, g, 20, 6)
             exact = Counter(rung_horizon(n, g) for n in range(1, 1 << 20))
+            ok = hist == exact and identity_ok(hist, 20, g)
             print('R0 g=%d W=20: walker equals exact: %s | max %s | identity %s' % (
                 g, hist == exact, best, identity_ok(hist, 20, g)), flush=True)
+            if not ok:
+                sys.exit('R0 FAILED at g=%d: the instrument gate failed (GC1234)' % g)
 
 
 def run():
     build()
+    if rung_horizon(2 ** 99, 8) != 101:                 # GPT's fixed control (GC1234)
+        sys.exit('fixed control failed: rung horizon of 2^99 at g = 8 should be 101')
     t0 = time.time()
     plan = [(3, 63), (4, 70), (5, 80), (6, 90), (8, 100)]
     with Pool(9) as pool:
@@ -164,8 +193,13 @@ def run():
             print('g=%d W=%d: mass %s, identity %s, max rung horizon %d at n = %d (%.3f W; coin %.1f, ratio %.3f), '
                   'stragglers %d, survivors %s, %.0f s' % (g, w, total == (1 << w) - 1, ok, best[0], best[1],
                   best[0] / w, coin, best[0] / coin, ns, alive if alive else 'none', time.time() - t1), flush=True)
+            if not ok:
+                print('   QUARANTINED: mass or identity failed at g=%d; no R2 claim for this range' % g, flush=True)
             if g == 3:
-                print('   R1: rung horizon of 1541211973603965806 =', rung_horizon(1541211973603965806, 3), flush=True)
+                r1 = best[0] == 157 and rung_horizon(1541211973603965806, 3) == 157
+                print('   R1: max 157 and rung horizon of 1541211973603965806 = 157:', r1, flush=True)
+                if not r1:
+                    sys.exit('R1 FAILED: the cross-instrument gate failed, so no larger search is examined (GC1234)')
             print('   HIST', ' '.join('%d:%d' % (h, hist[h]) for h in sorted(hist)), flush=True)
     print('total %.0f s' % (time.time() - t0))
 

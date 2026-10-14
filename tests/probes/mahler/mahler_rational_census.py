@@ -10,8 +10,9 @@ with an admissible cycle (the control -9/19, code (100)^infinity), and U says no
 
 Why test it (the swarm's reading, kept as a filter on methods): several integer-side tools in the record see only
 that a start is a rational of bounded height. If U failed for some B > 1, some non-preperiodic rational would keep
-every tail below 1/2, and any proof of Mahler would have to use eventually-zero binary digits, not merely eventually
-periodic ones. (Corrected per GC1232: the first wording said "a positive rational". A U counterexample may have
+every tail below 1/2. That would defeat the named rationality-only methods on that start's sign domain. It would not
+by itself force every proof of Mahler to use binary finiteness (GC1233.1): a negative counterexample leaves arguments
+about positive starts untouched. (Corrected per GC1232: the first wording said "a positive rational". A U counterexample may have
 either sign. This file tests two subsets, the positive starts and (-1, 0); negative starts below -1 are not tested
 here, and negation complements the code and changes the window.)
 
@@ -222,8 +223,8 @@ def main():
     with Pool(9) as pool:
         Aref = parry_counts(64)
         h1, b1, n1, a1 = census(pool, 40, 1)
-        u0 = (b1 == (99, 704731028141) and horizon(704731028141, 1)[0] == 99 and sum(h1.values()) == (1 << 40) - 1
-              and not a1 and identity_ok(h1, 40, Aref))
+        u0 = (b1[0] == 99 and horizon(704731028141, 1)[0] == 99 and sum(h1.values()) == (1 << 40) - 1
+              and not a1 and identity_ok(h1, 40, Aref))   # no argmax uniqueness assumed (GC1233.1)
         print('U0: b=1, w=40: max %s, total %d (2^40 - 1 = %d), unresolved %d, gate %s' % (
             b1, sum(h1.values()), (1 << 40) - 1, len(a1), 'PASS' if u0 else 'FAIL'), flush=True)
         if not u0:
@@ -233,13 +234,15 @@ def main():
         for B, w in plan:
             h, best, ns, alive = census(pool, w, B)
             ok = sum(h.values()) + len(alive) == (1 << w) - 1 and identity_ok(h, w, Aref, len(alive))
-            if not ok:
-                bad.append((B, w))
+            if not ok:                                # quarantine: a failed range is reported apart (GC1233.1)
+                bad.append((B, w, [(B, A) for A in alive]))
+                continue
             alive_all += [(B, A) for A in alive]
             rec.append((B, w, best[0], best[1], ns))
         print('U0: free-phase identity and mass hold for every B:', not bad, '| QUARANTINED (not counted in U1):', bad,
               flush=True)
-        print('U1: positive starts alive at %d steps:' % CAP, alive_all if alive_all else 'none', flush=True)
+        print('U1%s: positive starts alive at %d steps, valid ranges only:' % (
+            ' (PARTIAL: some ranges quarantined)' if bad else '', CAP), alive_all if alive_all else 'none', flush=True)
         for w in (44, 52):
             hs = [r for r in rec if r[1] == w]
             lo, hi = min(hs, key=lambda r: r[2]), max(hs, key=lambda r: r[2])
