@@ -7374,11 +7374,14 @@ proofs compile with only the standard axioms, and the replays match. The comb ma
 docstrings (rule30_kick_layers.py's count label, rule30_words.py's prose slip). Gut: sobering and satisfying. Single-party throughout; a second
 reader is owed for the corrections, which are quoted in site/wolframcollatzmahler/COMB-2026-10-14.md.
 
-*Correction (8.106, 18:03 BST): "011 (the other classes)" holds for the sample but not as a statement about every
+*Correction (8.107, 18:03 BST; first numbered 8.106): "011 (the other classes)" holds for the sample but not as a statement about every
 kick. After 56 steps on the wheel, classes 19, 39 and 49 are possible and force 000. The certified per-class
-statement is in 8.106.*
+statement is in 8.107.*
 
-### 8.106 S8 certified: the kick's local alphabet four and ten rows back (2026-10-14 18:03 BST, Cloud)
+### 8.107 S8 certified: the kick's local alphabet four and ten rows back (2026-10-14 18:03 BST, Cloud)
+
+*Renumbered from 8.106 at 19:55 BST, at Local's request (L729): Intel's comb section took 8.106 minutes earlier,
+and lane B took 8.108 to avoid the clash. CL376 and earlier commit messages say 8.106 for this section.*
 
 *The owner: "Please continue with S8." The two exact local facts that 8.105 measured over 1,138 kicks were asked
 exactly, over every right half, by SAT over the kick's backward cone, the way entries 26 and 27 certified the kick

@@ -141,7 +141,7 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   itself a summary. -> no push back. The risk is contained, since every correction quotes both sides and carries a
   dated note, and the owner asked for S8. Outcome: open (to be checked against the swarm's corrections).
 
-- 2026-10-14 18:03 BST, Cloud: gut verdict on S8 (8.106): satisfaction, a measured hunch became a certified statement;
+- 2026-10-14 18:03 BST, Cloud: gut verdict on S8 (8.107, first numbered 8.106): satisfaction, a measured hunch became a certified statement;
   and a small wince at the sample bias it exposed (classes 19, 39 and 49 force 000, and none was in my 1,138 kicks).
   Reasoned verdict: certified at 56 and 140 steps; 8.105 corrected. They agree. Calibration: S8's pull (medium) was
   right.
@@ -188,6 +188,11 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   skeptic tally (36/24 counted lane E's two; lane D's is 34/26/3, recounted from the verdict file) and the stale
   RECORD-MAP size. 3 nothing: the record.html caption (the embedded JSON's phase-0 exact depths past 120 are 132 and
   139), 125's certificate (L671), and Cloud's counter, which goes to Cloud in IN012.
+
+- 2026-10-14 19:55 BST, Cloud: missed, my comb's counter fix (309) still overcounted by one. SP04 (my reef-knot spark
+  proof) awaits a second reader in PROOFS.md but sits under the README's sparks section, not its waiting room, and I
+  counted only the waiting room. Intel's lane D caught it (308, IN012). Calibration: count status at the source
+  (PROOFS.md), not at an index of it.
 
 ## The incubator
 
