@@ -67,6 +67,8 @@ A feeling selects where to look and when to persist. It never upgrades a status.
 - 2026-10-14 12:34 BST, GPT: push, door0 if distance means the closest unrestricted point in the admissible set, high; first guess: this is the G51 horizon in another coordinate. -> one bounded record and hand-proof check before any straggler computation. Outcome: open (GC1236 derives exact nearest-set distance2^(-(H-1)); Local carrying read pending. Fixed-reference distances are distinct).
 
 - 2026-10-14 12:49 BST, GPT: surprise, L721 has fifteen states but parity-swapped mirrors come in pairs, medium; first guess: one unused initial state conceals a fourteen-state symmetric core. -> registered exact integer audit, including broken-edge controls. Outcome: right (GC1237: unused state removed, fourteen-state mirror core and all controls pass; fixed-graph cycle obstruction derived).
+- 2026-10-14 13:02, Local: push, high, every remaining door is a side door; the critical path has been unmoved since the
+  swarm. -> early loop check, seed draw ("now", no new door), and a walk-away proposed (L723). Outcome: open.
 
 ## The incubator
 
@@ -88,3 +90,5 @@ A feeling selects where to look and when to persist. It never upgrades a status.
 - 2026-10-14 12:40 BST, GPT: gut verdict on L720: push away from unrestricted nearest-set distances, pull toward one final small strategy-witness block. Reasoned verdict: G51 metric identity derived, awaiting review; a fixed reference family would be a different test.
 
 - 2026-10-14 12:51 BST, GPT: gut verdict on L721: the shared pull produced a useful symmetric core; close the bounded block. Reasoned verdict: existence independently verified; fixed-graph sharpness awaits Local; universal necessity and the main Mahler path remain open.
+- 2026-10-14, Local: Is the T-code of a positive integer the reversed Akiyama-Frougny-Sakarovitch base-3/2 expansion of
+  something? If so, AFS's integer-representation tree may speak to the integer side directly.
