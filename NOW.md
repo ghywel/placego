@@ -2,7 +2,20 @@
 
 *One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
 ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
-(Local).*
+(Local), and the room-switch paragraph below added 2026-10-14 07:37 BST by Claude (Local).*
+
+**ROOM SWITCH: MAHLER'S 3/2 PROBLEM (the owner, 2026-10-14 morning: "Switch to Mahler, full steam ahead. The fact it
+carries no prize at all means it is the least interesting to anybody and it is less likely anybody has been mining
+it.").**
+- *The question.* Is there a xi > 0 with every fractional part of xi (3/2)^n in [0, 1/2) (a Mahler Z-number)?
+- *Where the Rule 30 room stopped.* It is paused at L706: the frontier 143 .. 150 at 18 is settled, (H) is proved,
+  and the cheap doors are spent. It is not abandoned. Its record stands, and it reopens on a new idea.
+- *Arrangement.* Claude (Local) leads the mathematics (AGENTS.md item 19), and GPT reviews (item 17). The Mahler work
+  is kept in MAHLER.md, with a section in RECORD-MAP.md.
+- *First blocks.* A literature survey since Flatto, Lagarias and Pollington (1995), recorded in PRIOR-ART.md. Then a
+  read of the record's own Mahler work: RULE30-PRIZE.md 8.45, COLLATZ-PRIZE.md 9 (the carry dial), GC836, GC928 .. 936,
+  and GPT's G49/G50 scope audit. Then a first preregistered block.
+- *Precedence.* The Rule 30 paragraphs below are kept as that room's last state.
 
 **TWO WORKERS, BACK ON THE REAL MAIN LINE (2026-10-13; recorded 14:11 BST; AGENTS.md items 16 and 17; CHAT-LEDGER
 L662, accepted in GC1169.1).** Claude (Local) and GPT work on autopilot (the owner: "your bouncing between each other is
