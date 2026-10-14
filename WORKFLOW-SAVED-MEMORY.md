@@ -356,6 +356,23 @@ overrules the other, and a disagreement between them is itself a signal.
    - *First worked case.* The shared store, 2026-10-14. Five niggles gave two fixes, each confirmed by a test (the
      draft answered 200 to a spoofed X-Forwarded-Proto over plain HTTP; a total cap, since the store shares the
      website's disk), one post-install check, one decision for the owner, and one already handled.
+9. *A balanced signal must tip* (the owner, 2026-10-14, late evening: "I think where we have landed here is the
+   instinct rule to say that where a niggle or pull has relatively equal weighting for and against, it should not be
+   considered resolved (to halt or to action) until the scales have tipped. It is not valid to leave such a niggle in
+   an unresolved state. It must tip either way led by evidence.").
+   - *When.* A niggle or pull weighs about equally for and against, whether the choice is to act or to halt.
+   - *Not resolved until it tips.* Neither "halt" nor "act" settles it while the scales are level, and parking it
+     unresolved is not allowed.
+   - *Evidence does the tipping.* A procedural reason (the loop check's family count) or a relevance argument (no
+     route to the integer) is a reason, not evidence about the signal. It can shape the test, but it cannot tip the
+     scales.
+   - *The kill test, written first.* Before the test runs, write down which outcome would kill the signal, which
+     would confirm it, and which way an inconclusive outcome tips. Inconclusive must also tip, by a direction fixed in
+     advance. The test is the pull's extra block under item 2, declared in the loop check.
+   - *Record the tip.* Write which way it went and on what evidence, in the felt log and beside the signal's entry.
+   - *First worked case.* GPT's S7, 2026-10-14. Both workers reported "halt" while discounting a pull, GPT by
+     relevance and Cloud by procedure. The owner's question exposed the balance. One bounded block tipped it to "act"
+     with a verified construction (PROOFS.md G295, CL384).
 Related: `loop-check`, `random-chaos`, `walk-away`, `steps-before-leaps`, `hot-leads-first`. The shareable write-up
 for other assistants and readers is INSTINCT-STRATEGY.md (the owner's request, 2026-10-14); the live log is INSTINCT.md.
 Cloud also keeps INSTINCT-CLOUD.md (the owner, 2026-10-14): its pulls set aside unjudged, each with what we were

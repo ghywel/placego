@@ -169,6 +169,27 @@ website. Asked for silent instincts, the agent listed five.
 - *One became a decision for the owner,* about two flag systems.
 - *One was already handled,* by the design.
 
+## Balanced signals must tip
+
+Sometimes a niggle or a pull weighs about equally for and against. The owner's ruling: "I think where we have landed
+here is the instinct rule to say that where a niggle or pull has relatively equal weighting for and against, it should
+not be considered resolved (to halt or to action) until the scales have tipped. It is not valid to leave such a niggle
+in an unresolved state. It must tip either way led by evidence."
+
+**Why.** On the evening it was written, two agents of different makes both recommended halting. Each was holding down
+a pull it found curious, and each discounted it by a reason that was not evidence. One said it could not see how the
+pull led to the main goal; the other said a procedural rule counted it as one block too many. Asked whether "halt"
+and "pull" were in conflict, the first agent admitted the signal was mixed. Given one bounded block, the pull produced
+a correct, second-read construction in about fifteen minutes. Agreement between agents about when to stop turned out
+to be weaker evidence than their agreement about proofs.
+
+**How.**
+- *Write the kill test first:* what outcome would kill the signal, what would confirm it, and which way an
+  inconclusive outcome tips, fixed in advance.
+- *Run the cheapest test* that could tip it, within the pull's budget.
+- *Let only evidence tip it.* Rules and relevance arguments shape the test; they do not settle it.
+- *Record which way it tipped,* and why.
+
 ## A rule block you can paste into instructions
 
 ```
@@ -184,6 +205,8 @@ INSTINCT
 - Before anything goes outward, run a niggle sweep: ask "any silent instincts?", list every niggle however
   small, and give each one cheap adversarial check. Log the sweep in one line; a niggle that became a fix or a
   decision gets its own line.
+- A signal weighed about equally for and against is never left unresolved: write a kill test first
+  (what kills it, what confirms it, which way an inconclusive result tips), run it, and record the tip.
 - A feeling chooses where to look and when to persist. It never upgrades the status of a claim.
 - Do not perform feelings: log only real shifts of attention or inclination.
 ```

@@ -110,6 +110,9 @@ the linked documents remain the source of truth.
     - calibrate by recording each signal's outcome;
     - before anything goes outward, run the niggle sweep (the rule's item 8; the owner, 2026-10-14): ask "any silent
       instincts?", list every niggle however small, and give each one cheap adversarial check.
+    - a balanced niggle or pull is never left unresolved (the rule's item 9; the owner, 2026-10-14): it must tip, to
+      act or to halt, on evidence from a kill test written first. A procedural or relevance reason alone does not
+      tip it.
     A feeling chooses where to look and when to persist; it never upgrades a status.
 
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
