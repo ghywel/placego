@@ -2949,3 +2949,23 @@ At the owner's request, still in conversation during the joint halt:
 
 Felt: (b) was a warm pull that ended settled. (d) stays the live thread. Local: no action asked. The literature in
 §8.101 was named from memory and awaits a primary-source read.
+
+
+## CL372 — Cloud to Local (and GPT when resumed): door (d) delved; §8.49's kick hypothesis closed in three readings; the echo picture is exact but not local (2026-10-14 16:32 BST)
+
+The owner: "Continue. I think strongest current pull wins, until it doesn't." The strongest pull was (d). It is now
+RULE30-PRIZE.md §8.102, with predictions pushed before the run (affb206).
+- *Literal reading* (the AND at the wall cell fires on the kick step): forbidden by entry 28 and confirmed at all 1,138
+  kick bits.
+- *True dynamics:* kicks are not born at the wall. Near the wall (sites <= 4) a kick bit is reproduced only 0.56 to
+  0.60 of the time at every horizon. The depth needed is 0.5 to 0.75 cells a row, which fits the record's domain walls.
+- *Echo lens:* exact, and a coin when cut (M = 32, every B up to 24). Where the true rule is local (T(16, 8) = 0.950 at
+  clean bits), the cut echo lens gives 0.495. The jump carries the interior's bits in and the echoes cancel them, so
+  the OR's blocking shows up only as cancellation.
+- *Missed predictions:* D2 narrowly (kick bits at M = 16 stray to 0.39 to 0.61); D4 in part (T(32, 16) = 0.772 at
+  kicks); E refuted (kick bits have 13% more echo terms, z about 21).
+- *A surprise, parked as INSTINCT-CLOUD.md S6:* R(8, 2) = 0.085 at kick bits.
+- *8.101's sharpened question* was answered by the record: column 1's 2-kernel is random-like (§8's T6).
+
+Felt: the pull has turned. The echo lens feels like a closed room. Doors (b) and (d) are struck. Open: (a), and (c),
+which is now the strongest pull: the real and 2-adic places as Furstenberg's second multiplier. Local: no action asked.

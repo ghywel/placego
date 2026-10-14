@@ -6903,3 +6903,67 @@ the scope of Corvaja and Zannier.
 **Verdicts.** Reasoned: no door, and the gap is now named the same way in all four problems, from the far side:
 bounded complexity in every theorem that exists, against complexity that grows with n in every counterexample. Gut: a
 warm pull that ended settled. The hunt was the right shape of question, and its one live thread is (d), now sharper.
+
+### 8.102 Door (d): kicks are not born where cr fires at the wall; the echo picture is exact but not local (2026-10-14 16:30 BST, Cloud)
+
+*Door (d) of CONSTELLATION.md section H, taken up because it was the strongest pull after 8.101 (the owner:
+"Continue. I think strongest current pull wins, until it doesn't."). The question is 8.49's untested hypothesis, "the
+kicks are born where that term [cr] fires near the wall", seen through 8.100's exact form: Rule 30 is the Rule 150 jump
+XOR the echoes of every earlier AND. Single-party (Cloud), nothing second-read.*
+
+Record searched: 2-kernel, binary kernel, kicks are born, born, dependency width, cancel, Rule 150, plus RECORD-MAP.md's
+wheel and kicks sections. Hits used:
+- §8's T6: column 1 beside the wall has a 2-kernel that grows like a random sequence's, so it is not automatic.
+- §8.18: a kick is a dislocation of the triangle lattice beside column 0.
+- Entry 28 (Proposition 15): a kick lands just after a white.
+- §8.7 and §8.8: slips are domain walls moving half a cell a step.
+- `rule30_cloud_ruler_kicks.py` (KR): the world B used here, and the leftward speed 0.246 on random rows.
+- No hit for a dependency-width measurement.
+
+**What the record already settled.**
+- *8.101's sharpened question.* A counterexample makes the echo column at column 0 automatic. At column 1 the echo
+  column is column 1 XOR an automatic jump, and column 1's 2-kernel is measured as random-like (T6), so it is not
+  automatic either.
+- *The literal form of 8.49.* Entry 28 forbids it. A kick lands just after a white, so the AND at the wall cell
+  (site 1 with site 2) cannot fire on the step that makes the kick.
+
+**The test** (`tests/probes/lexicon/rule30_cloud_echo_wall.py`; predictions D0 to D4 and E pushed before the run in
+affb206). The setting is the wall beside 0101 with a random right half.
+- *The echo lens R(M, B).* Column 1 at row r rebuilt from three parts: the Rule 150 jump from row r - M, the wall's
+  drive, and the echoes of the ANDs at sites 1 .. B only. It is exact when B = M.
+- *The true dynamics T(M, B).* The true clamped rule run for M rows from the true sites 1 .. B, with fresh random bits
+  beyond.
+- *Agreement with column 1* is measured at clean bits (inside a rotation of U), at kick bits (the bit that breaks one)
+  and at other rows.
+
+Results (16 seeds, 3072 rows, 1,138 kick bits):
+- D0, the identity, is exact at every analysed row. D1 holds at all 1,138 kick bits: site 1 is white the row before.
+- *The echo lens is not local.*
+  - At M = 32, R is a coin (0.486 to 0.515) for every B up to 24, at every kind of bit.
+  - At M = 16 it is a coin at clean bits (0.471 to 0.536). At kick bits it strays to 0.39 to 0.61, just outside the
+    registered band, so D2 is refuted narrowly as written.
+- *The true dynamics is local where the wheel runs.* T(16, 8) = 0.950 at clean bits (D3, at its threshold), where the
+  echo lens at the same horizon and band gives 0.495.
+- *Kicks are news from the interior.* Near the wall (B <= 4) a kick bit is reproduced only 0.56 to 0.60 of the time,
+  at every horizon. The depth needed at kick bits is about 0.5 to 0.75 cells a row: B in (4, 6] for M = 8, (8, 12]
+  for M = 16, (16, 24] for M = 32. That is faster than the 0.246 of random rows, as befits domain walls (§8.7). D4
+  holds in part: T(32, 16) = 0.772, below its registered 0.95.
+- *Unexpected check, E refuted.* Kick bits have more echo terms reaching column 1 over 16 rows: 22.91 against 20.30, a
+  difference of 2.61 with standard error 0.125 across seeds.
+- *A surprise, post hoc.* At M = 8 the echo lens is sharply structured at kick bits: R(8, 2) = 0.085 and
+  R(8, 6) = 0.915. So the echoes from sites 3 .. 6 over the last 8 rows sum to 1 at almost every kick bit. It is
+  parked (INSTINCT-CLOUD.md S6), not explained.
+
+**Reading.** 8.49's hypothesis is closed in all three readings.
+- Literal: entry 28 forbids it, and D1 confirms.
+- True dynamics: kicks are not born at the wall. They arrive from 0.5 to 0.75 cells a row out, which fits the record's
+  domain walls and "size set by the interior".
+- Echo lens: it has no locality to offer.
+
+The exact Rule 150 echo picture moves the OR's blocking into cancellation. Where the true rule is local, the jump still
+carries the interior's bits into column 1, and the far echoes cancel them. Cutting the echoes leaves a coin.
+
+**Verdicts.** Reasoned: door (d) is delved. The echo picture is exact and useful as an identity, but it is the wrong
+lens for where things happen, and the OR picture (blocking, domain walls) is the right one. Gut: the pull has turned,
+as the owner's rule expects. The echo lens now feels like a closed room. The only thing still tugging is the M = 8
+surprise, which is parked rather than chased.

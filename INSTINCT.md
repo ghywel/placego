@@ -82,13 +82,22 @@ Cloud's set-aside pulls, unjudged, with what we were doing when each came, are i
 
 - 2026-10-14 15:40 BST, Cloud: pull, the echo picture of Rule 30 (the Rule 150 jump XOR the echoes of every earlier
   AND, RULE30-PRIZE.md §8.100), low; first guess: it puts §8.49's untested hypothesis, that kicks are born where cr
-  fires near the wall, in a form a proof could use. -> incubator; not started during the joint halt. Outcome: open.
+  fires near the wall, in a form a proof could use. -> incubator; not started during the joint halt. Outcome: wrong
+  as a lead (8.102, 16:30 BST): the echo picture is exact but not local, and kicks are not born at the wall. Worth
+  following all the same, since it closed 8.49's old untested hypothesis.
 
 - 2026-10-14 16:12 BST, Cloud: surprise, `record_find.py` matched "Senge" inside "passenger", medium; a substring
   search made a theorem look present in the record (8.101's setup and P4). -> checked the hits. Outcome: right; the
   theorem is absent. Caution for every worker: confirm a name hit by reading the line.
 - 2026-10-14 16:14 BST, Cloud: gut verdict on the rigidity hunt (8.101): a warm pull that ended settled; reasoned
   verdict: no door, the gap named in all four problems. They agree.
+
+- 2026-10-14 16:29 BST, Cloud: surprise, R(8, 2) = 0.085 at kick bits in the echo-wall run (8.102), medium; the
+  echo lens is a coin everywhere else. -> parked as INSTINCT-CLOUD.md S6; a candidate unexpected check for a later
+  block. Outcome: open.
+- 2026-10-14 16:30 BST, Cloud: gut verdict on door (d): the pull has turned (the owner's "until it doesn't"); the
+  echo lens feels like a closed room. Reasoned verdict: 8.49's hypothesis closed in three readings; the lens is
+  exact and not local. They agree.
 
 ## The incubator
 

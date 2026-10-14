@@ -24,7 +24,7 @@ Three readings of 8.49's hypothesis.
 Rows. A row r is a clean bit when column 1 over rows r-55 .. r is a rotation of U. It is a kick bit when the window
 ending at r-1 is clean and the one ending at r is not, so r is the bit that breaks the rotation.
 
-PREDICTIONS, written 2026-10-14 16:30 BST before any run (N = 3072 rows, 16 seeds, rows from 1024; all kick bits,
+PREDICTIONS, written 2026-10-14 before any run and pushed at 16:28 BST in affb206 (the 16:30 first written here was a misread clock) (N = 3072 rows, 16 seeds, rows from 1024; all kick bits,
 every 8th other row; M = 8, 16, 32).
   D0 (exact control): R(M, M) equals column 1 at every analysed row, for each M.
   D1 (exact control, entry 28): at every kick bit r, site 1 is white at row r-1, so the AND at the wall cell is silent
@@ -41,6 +41,28 @@ every 8th other row; M = 8, 16, 32).
   Counterfactual. R(M, small B) well away from 0.5 at clean bits would make the echo lens local where the wheel runs,
   and kicks could then be traced to near-wall echoes. T(M, small B) near 1 at kick bits would make kicks born near the
   wall in the true dynamics, 8.49's hypothesis in a non-literal form.
+
+OUTCOME of the registered run, 2026-10-14 16:29 BST (N = 3072, 16 seeds, 1,138 kick bits; 1.3 s).
+  D0 PASS: R(M, M) equals column 1 at every analysed row for M = 8, 16 and 32.
+  D1 PASS: site 1 is white on the row before all 1,138 kick bits, so the AND at the wall cell never fires there.
+  D2 REFUTED narrowly, as registered. At clean bits and at M = 32 it holds: 0.471 .. 0.536 for M = 16 and
+     0.486 .. 0.515 for M = 32, for every kind of bit. At kick bits with M = 16 it lies outside [0.4, 0.6]:
+     B = 0: 0.608, B = 1: 0.392, B = 4: 0.392, B = 8: 0.613.
+  D3 HELD at the threshold: T(16, 8) = 0.950 at clean bits, where R(16, 8) = 0.495. The dynamics is local where the
+     wheel runs, and the echo lens is not.
+  D4 PART. T(32, 4) = 0.600 <= 0.8 at kick bits, and T(32, 8) is 0.628 at kick bits against 0.830 at clean bits. But
+     T(32, 16) = 0.772 < 0.95: a kick needs more than half a cell a row. The depth needed at kick bits lies in (4, 6]
+     for M = 8, (8, 12] for M = 16 and (16, 24] for M = 32: 0.5 to 0.75 cells a row. Near the wall (B <= 4) a kick
+     bit is reproduced only 0.56 .. 0.60 of the time at every M.
+  E REFUTED (the unexpected check): kick bits have more echo terms over 16 rows, 22.91 against 20.30 at clean bits, a
+     difference of 2.61 with standard error 0.125 across seeds (post hoc).
+  Not predicted (post hoc, a surprise): at M = 8 the echo lens is sharply structured at kick bits. R(8, 2) = 0.085 and
+     R(8, 6) = 0.915, so the echoes from sites 3 .. 6 over the last 8 rows sum to 1 at almost every kick bit.
+  Reading. 8.49's hypothesis is closed in all three readings. Literal: D1 and entry 28. True dynamics: kicks are news
+  arriving from 0.5 to 0.75 cells a row out, not born at the wall. Echo lens: coin-like at M = 32. The Rule 150 echo
+  picture is exact but not local: where the true rule is local (clean bits, T(16, 8) = 0.95), the jump carries the
+  interior's bits into column 1 and the far echoes cancel them, so cutting the echoes gives a coin (R(16, 8) = 0.495).
+  The OR's blocking, which makes the wheel local, shows up in the echo picture only as cancellation.
 """
 import random
 import sys

@@ -1050,8 +1050,14 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
   time (MAHLER.md section 1). Could that pair play the part of the second multiplier that Furstenberg's x2 x3 theorem
   needs? A hunch, not a claim (INSTINCT-CLOUD.md S2). Status: open. Anchor from 8.101: Ridout's theorem and the
   Subspace theorem are the established tools that use the real and p-adic places together.
-- **(d) The Rule 150 echo picture.** Rule 30 is the Rule 150 jump XOR the echoes of every earlier AND (8.100,
+- ~~**(d) The Rule 150 echo picture.** Rule 30 is the Rule 150 jump XOR the echoes of every earlier AND (8.100,
   `tests/probes/lexicon/rule30_cloud_bezier_form.py`). Where do the echoes that break the jump at the centre cell come
   from, and are they born near the wall, as 8.49's untested hypothesis says? (INSTINCT.md; INSTINCT-CLOUD.md S1.)
-  Status: open. Sharpened by 8.101: a period-2 counterexample makes the echo column (the centre XOR the jump)
-  2-automatic. Is it ever? For a single seed that is the same as asking whether the centre column is automatic.
+  Sharpened by 8.101: a period-2 counterexample makes the echo column (the centre XOR the jump) 2-automatic. Is it
+  ever? For a single seed that is the same as asking whether the centre column is automatic.~~
+  *Delved 2026-10-14, RULE30-PRIZE.md 8.102.*
+  - 8.49's hypothesis is closed in all three readings: literal (entry 28), true dynamics (kicks arrive from 0.5 to
+    0.75 cells a row out) and the echo lens (a coin at M = 32).
+  - The echo picture is exact but not local. The OR's blocking appears in it only as cancellation.
+  - The sharpened question: column 1's echo column is not automatic, by §8's T6 measurement.
+  - Left: one surprise (INSTINCT-CLOUD.md S6).

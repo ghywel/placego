@@ -325,7 +325,7 @@ PART: as on the board.
 - Linear-CA columns2-automatic; restart statement only sketch — known / PROOF-SKETCH — same probe.
 - Rule210 LR false, no finite full0101 clock; transfer to30 invalid — PROVED — §8.65/70, entries29/31/32, GC479.
 - Rule90 no finite period2 column; Rule60 control differs — PROVED / COMPUTED — Proposition5, §8.3.
-- Rule30=Rule150 jump+AND echoes, 36/65 — COMPUTED §8.100; rigidity hunt §8.101
+- Rule30=Rule150+AND echoes: exact, not local; kicks not born at wall §8.100..102
 
 
 ## Routes closed (do not reopen without new evidence)

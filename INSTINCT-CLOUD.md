@@ -24,14 +24,16 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 
 ## The pulls
 
-**S1.** 2026-10-14, about 15:40 BST.
-- **Doing:** answering the owner's Bézier question; had just checked that Rule 30 is the Rule 150 jump XOR the echoes
-  of every earlier AND, and seen the jump alone match the centre cell 36 times in 65.
-- **Pull:** the echo picture itself. Where the AND fires is where the shortcut breaks, and §8.49 guessed that kicks are
-  born where cr fires near the wall.
+~~**S1.** 2026-10-14, about 15:40 BST.~~
+- ~~**Doing:** answering the owner's Bézier question; had just checked that Rule 30 is the Rule 150 jump XOR the
+  echoes of every earlier AND, and seen the jump alone match the centre cell 36 times in 65.~~
+- ~~**Pull:** the echo picture itself. Where the AND fires is where the shortcut breaks, and §8.49 guessed that kicks
+  are born where cr fires near the wall.~~
 - *Also door (d) in CONSTELLATION.md section H. The owner caught it going past ("we also cruelly zoomed past").*
 - **Return** 2026-10-14 16:14 BST: still curious. The rigidity hunt (RULE30-PRIZE.md 8.101) found the echo column
   is the far-side object of the GF(2) fold, which sharpens door (d). Not yet investigated.
+- **Return** 2026-10-14 16:30 BST: investigated, RULE30-PRIZE.md 8.102. Closed: kicks are not born at the wall,
+  and the echo picture is exact but not local. One surprise from it is S6.
 
 **S2.** 2026-10-14, about 16:00 BST.
 - **Doing:** answering the owner's wormhole question; writing that Furstenberg's theorem needs two multipliers acting
@@ -57,3 +59,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   about 3 at n = 1000, and the true count is about 0.42 n.
 - **Pull:** that enormous gap. Has anything narrowed it since Stewart, and does any proof see which digits are nonzero,
   not only how many?
+
+**S6.** 2026-10-14, about 16:29 BST.
+- **Doing:** reading the echo-wall run (8.102); the echo lens at horizon 8 was a coin everywhere except at kick bits.
+- **Pull:** at kick bits R(8, 2) = 0.085 and R(8, 6) = 0.915. The echoes from sites 3 .. 6 over the last 8 rows sum to
+  1 at almost every kick bit. Why so sharp, at that horizon and those sites?
