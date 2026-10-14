@@ -2516,3 +2516,66 @@ eventually periodic two-adic irrational 2026", standard) and direct reads of two
   kinds of irrationality proof), 8.77 (the 2-adic frame) and 8.90 (the carry). Its main-line form, "period 2 means the
   centre column's 2-adic value is rational with denominator 3 * 2^n", restates the prize. No external method was
   found that this record lacks.
+
+## Mahler's 3/2 problem: survey at the room switch (2026-10-14 07:46 BST, Local; L707, L708)
+
+Web searches (extended and standard), plus direct reads of the Wikipedia and MathWorld entries, arXiv:2510.11723
+(abstract and HTML) and the rwst/Confinement-Certificates repository (README and Challenge2.lean). PDFs were not
+downloaded.
+
+**The classical results.**
+- *Mahler (1968), J. Austral. Math. Soc. 8, 313-321.* At most one Z-number in each [n, n+1), so at most O(x^0.7) below
+  x. He conjectured that none exist.
+- *Tijdeman (1972), "Note on Mahler's 3/2-problem".*
+- *Pollington (1981).* {lambda: ||lambda (3/2)^n|| > 4/65 for all n} has positive Hausdorff dimension.
+- *Flatto (1992), "Z-numbers and beta-transformations".* The count improves to O(x^theta) with
+  theta = log2(3/2) = 0.585.
+- *Flatto, Lagarias and Pollington (1995), Acta Arith. 70.* limsup minus liminf of {xi (p/q)^n} is at least 1/p (1/3
+  for 3/2). Omega(3/2) > 1/2 would give Mahler.
+- *Bugeaud (2004), Acta Arith. 114:* linear mod one transformations.
+
+**Dubickas.**
+- *(2008), Math. Nachr. 281.* No xi has every {xi (3/2)^n} in [8/39, 18/39] U [21/39, 31/39]. Infinitely many xi keep
+  every {xi (3/2)^n} in (5/48, 43/48).
+- *(2009), Acta Arith. 137:* powers cannot lie in a small interval.
+- *(2019), Disc. Math. 342:* a single excluded window of length 31/81.
+- *Elsewhere:* complexity of minimal words in rational base p/q, liminf p(l)/l >= log q / log(p/q).
+
+**Rational base number systems.**
+- *Akiyama, Frougny and Sakarovitch (2008), Israel J. Math. 168.* Integer expansions in base p/q are unique and not a
+  regular language; the expansions form a tree.
+- *Akiyama (2008), "Mahler's Z-number and 3/2 number systems".* Multiple expansions, and Z-numbers in tree terms.
+- *Andrieu, Eliahou and Vivion (arXiv:2510.11723, v2 April 2026).* Conjecture 1.2: minimal and maximal words are normal
+  over subalphabets. It is equivalent to Conjecture 1.6: every orbit of T(x) = ceil(p x / q) is equidistributed mod
+  q^k. Conjecture 1.2 implies no Z-numbers, no Z_{p/q}-numbers for p < q^2, Akiyama's triple-expansion conjecture and
+  the Dubickas-Mossinghoff 4/3 problem.
+- *Eliahou and Verger-Gaugry:* letters of the maximal word in base 3/2.
+
+**Machine-verified frontier (Stephan, September 2026, "in collaboration with Claude Code"; Lean 4, kernel-checked
+block certificates).**
+- *Paper 1, "Confinement certificates for powers of rational numbers modulo one".* Regenerates FLP Cor. 1.4a,
+  formalizes Dubickas's closed length-1/p theorem, and certifies Z_{3/2}(1/6, 13/24) and
+  Z_{3/2}(961/3600, 2427/3600) empty. It also shows that no xi != 0 keeps ||xi (3/2)^n|| < 1/5, and certifies unions of
+  total length up to 17/24.
+- *Paper 2, "Confinement schemas and the reach of block certificates":*
+  - Thms A and B: schemas for windows of length 1/p at every coprime base.
+  - Thm C: escape within about K + log_q(X) + log_{p/q}(q/L) steps.
+  - Thm D: completeness on the finite-hold-set class (finite hold set implies an empty Z-set), and an obstruction
+    (no block certificate when the hold set is infinite).
+  - Depth-size bound: a negative answer to Kari and Kopra's Problem 6.1 for this format.
+  - Thm E: **Z_{3/2}(2/7, 5/7) is empty, a window of length 3/7 = 0.4286, "the ranked frontier and its exact
+    ceiling".**
+- *VibeMathed (2026)* reports that Claude-family models discovered and formalised it. MathWorld (13 Sep 2026) records
+  the novelty as unknown and no independent specialist review.
+
+**Withdrawn.** Kumar, arXiv:2411.03468 (2024), claimed no Z-numbers in Z^+ and was withdrawn in June 2025.
+
+**Two cautions for our use.**
+1. *The "3 mod 4" statement* returned by some search summaries ("a Z-number exists in [n, n+1) iff no iterate is 3
+   mod 4") is false as an iff, because 1010... avoids 11 and gives a fractional part of 3/5. Only its necessary
+   direction holds (GPT's G50, G51).
+2. *Mahler's own window has an infinite hold set.* It is the whole window: every u in [0, 1/2) keeps an infinite orbit
+   under u -> (3u - b)/2 with b chosen greedily. So Stephan's fractional-side certificates cannot reach it (his
+   Thm D(ii)). The integer side is the crux, as in our Rule 30 work.
+
+No published large-scale computer check of "no Z-number below N" was found.
