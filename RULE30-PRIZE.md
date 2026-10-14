@@ -6668,3 +6668,137 @@ predicted before the runs.
 - *CL340 does not apply.* S/L lifts are not CL340's typed paths. Its macros are h(SLLS^k) and GC1126's N with guarded
   entrances, and the actual 84- and 155-rings (h(S)^infinity, h(L)^infinity) keep the clock forever with infinite left
   support. Real S/L residences are not bounded by 466 ticks (GC1214).
+
+### 8.100 Code, unwritable numbers and time: the owner's three foundations questions (2026-10-14 15:55 BST, Cloud)
+
+*The owner asked these of Cloud in a cloud session on the afternoon of the joint halt (NOW.md), while Local holds and
+GPT's task is closed. They were answered in conversation and pinned here at the owner's request: "I want you to pin
+the write up at this point. Each layer I add in prompt either adds to the problem or dilutes it, so it's a good time to
+save state." The owner has more to add. Everything here is single-party (Cloud). Nothing is second-read, and nothing
+upgrades a status. Kin: §8.46 (the owner's Turing question) and §8.47 (the gap between sets and single objects).*
+
+Record searched: Lean, undecidable, Antihydra, busy beaver, Yedidia, ZFC, computable numbers, uncountable, Bezier,
+de Casteljau, irreducib, Rule 150, Problem 3, proper time, Furstenberg -> §8.46, §8.47, §8.49 (Rule 150 plus $cr$),
+PRIZE-PROBLEMS.md §2 and §8, PROOFS.md G49, MAHLER.md §1 (G50, GC1221), PRIOR-ART.md (Turing 1936; linear automata),
+STATE-OF-THE-PROOF.md §2, CONSTELLATION.md G.1 (Lagarias 2009); no hit for Yedidia, Bezier or de Casteljau.
+Named from memory and not re-read in this block: Church and Turing (1936), Curry–Howard, seL4, CompCert, Aeneas, Borel
+(1909), Hermite (1873), Lindemann (1882), Bell, Yedidia and Aaronson (2016) and its later reductions, Paris–Harrington,
+Goodstein.
+
+**1. Code and mathematics.** The owner: "Can the proof be solved by combining these 2 domains into one language that
+compliments both ... Could this be the bridge we need?" And: "LEAN can convert normal CPU programming languages to math,
+so why can't it convert shader code which is already math to math?"
+- *What BIDIRECTIONAL-AS-MATHEMATICS.md found.* All 22 passes were written as mathematics. What stopped was linear
+  algebra (its §0 and §12.1). The search that keeps the cheapest displacement, the median that picks one vector and the
+  branch thresholds are not matrices, so they are written with argmin, max, absolute values and indicators. Its §13
+  leaves float rounding, reduced-precision filtering and NaN unmodelled for effort, not because they cannot be written.
+- *Code sits inside mathematics.* Every program computes a mathematical function, or a relation where it is
+  nondeterministic (Church and Turing, 1936). Curry–Howard joined proofs and programs a second time, and Lean is that
+  join built as a tool. The gap runs the other way: mathematics states things ("for every n") that no program finishes
+  checking. Quantum mechanics and general relativity make conflicting predictions; code and mathematics make none, so
+  there is nothing to reconcile.
+- *Lean and shaders.* Lean does not turn source code into mathematics by itself. Verified-code projects (seL4,
+  CompCert, Aeneas for Rust into Lean) first give a language a formal meaning and then write the proofs by hand. Nobody
+  has done this for GLSL. It is engineering, and the translation is the easy part.
+- *Our problems are already in Lean.* Google DeepMind's FormalConjectures states the prize, and
+  `tests/probes/lean/Rule30Period1.lean` builds on it. The whole rule is one line, the program and the definition at
+  once: `state (t + 1) i = xor (state t (i - 1)) (state t i || state t (i + 1))`. Eighteen Lean files in
+  `tests/probes/lean/` check lemmas against it. Lean checks a proof; it does not find one.
+- *Verdict.* There is no language gap. The missing piece is a reduction of "for ever" to finitely many cases, the
+  pattern of PRIZE-PROBLEMS.md §2 (four colours, Kepler, BB(5)). The busy-beaver project combined code and proof about
+  as fully as anyone has. Its open 6-state machine Antihydra iterates $\lfloor 3n/2 \rfloor$ (PRIZE-PROBLEMS.md §8, G49):
+  the most complete code-and-proof effort stopped at our wall.
+
+**2. Numbers that cannot be written down.** The owner: "if something can't be computed it follows something can't be
+counted. What if our maths prizes sit uncomfortably for everybody on impossible numbers that can't be written down in
+any form at all."
+- *The counting runs the other way.* Turing's computable numbers can be listed by their machines' description numbers,
+  and the reals cannot (Cantor). So most reals are not computable. Every finite description is a finite string, so most
+  reals cannot be written down at all.
+- *The prizes' objects can all be written down.* Rule 30 is one rule and one cell, Collatz starts from an integer, and
+  Erdős asks about $2^n$. Mahler asks about every real, but Mahler's reduction (MAHLER.md §1, G50) writes a Z-number as
+  $n_0 + u_0$ with $u_0$ fixed by the integer $n_0$'s parity itinerary, so any Z-number is computable from one integer.
+  Each answer is one bit, and Turing's undecidability concerns families of questions (§8.46).
+- *Beside them, the owner's intuition holds.* The 2-adic integers that keep Mahler's window for ever, S_strict, are
+  uncountable, of Hausdorff dimension $\log_2(3/2)$ (GC1221, PROVED with L710). They include describable non-integers
+  such as $-9/19$ (G50), and almost every one of them cannot be written down. Mahler's conjecture is that none is a
+  positive ordinary integer. Erdős's question has the same shape, with Lagarias's 3-adic exceptional set (CONSTELLATION.md
+  G.1). Measure, dimension, counting and the coin model treat all points alike. They cannot separate the describable
+  points from the rest, and they say nothing about a measure-zero set such as the integers. That is §8.47's gap between
+  sets and single objects, in these terms. Turing's sentence on p. 253 (PRIOR-ART.md) fits: "an essentially new method
+  is necessary".
+- *Precedent.* Almost every real is normal (Borel, 1909), and nobody can prove it for $\sqrt 2$ or $\pi$. Almost every
+  real is transcendental, and $e$ and $\pi$ needed methods built for them (Hermite 1873, Lindemann 1882). The wall has
+  been crossed before, one number at a time.
+- *The real risk is an unprovable truth, not an unwritable number* (Turing's §11 against Gödel; PRIOR-ART.md).
+  - Erdős's question is $\Pi_1$: each case is a finite check. If it is independent of the axioms, it is true, because a
+    counterexample would be a finite proof that it is false.
+  - Rule 30's period 2, Collatz and Mahler are $\Pi_2$ (§8.46; PRIOR-ART.md) and have no such safety net.
+  - Machines whose behaviour ZFC cannot settle exist. Yedidia and Aaronson (2016) built one of 7,918 states, and later
+    work reduced the count below a thousand (from memory). BB(5) is settled and Antihydra, at 6 states, is open. Where
+    provability gives out between those is unknown, and so is the side Collatz-type questions fall on.
+  - Nothing is evidence that these conjectures are independent of PA, still less of ZFC (GC1221). The best-known
+    natural statements independent of PA (Paris–Harrington, Goodstein) are provable in ZFC.
+
+**3. Time, and the Bézier shortcut.** The owner: "the application of the rule requires a state machine that is able to
+change over time ... You can not take time out of the equation, even though it doesn't appear in it. This reminds me of
+Bézier curves ... Stop thinking in terms of counting and start thinking in terms of time."
+- *Time and the count are one variable* in all four problems: Rule 30's $t$, Mahler's $n$, Collatz's steps. The Bézier
+  picture adds two ways to reach time $t$. One steps through it (de Casteljau: $n$ rounds of linear interpolation). The
+  other jumps straight there (the Bernstein formula). The jump is Wolfram's Problem 3, a shortcut to the $n$-th flip
+  (STATE-OF-THE-PROOF.md §2), and Problem 3 implies Problem 1 (§8.34).
+- *De Casteljau is a linear cellular automaton.* Each row is $(1-t)\,\text{left} + t\,\text{right}$ of the row above,
+  and the binomial Bernstein weights are its shortcut. Over bits, with XOR in place of the average, it becomes Rule 90
+  (Pascal's triangle mod 2); with three neighbours it becomes Rule 150 (trinomial coefficients mod 2). The shortcut
+  exists because the rule is linear: each seed cell's influence spreads on its own and the influences add.
+- *Rule 30's exact Bézier form.* By §8.49, $c \lor r = c \oplus r \oplus cr$, so one step is $x' = Lx \oplus N(x)$,
+  with $L$ the Rule 150 step and $N(x)_i = x_i x_{i+1}$. Unrolled over GF(2):
+
+```math
+x_t \;=\; L^t x_0 \;\oplus\; \bigoplus_{s=0}^{t-1} L^{\,t-1-s}\, N(x_s).
+```
+
+- *What the form says.* The first term is the jump. The sum is an echo from every earlier time the AND fired, and
+  finding those times needs the whole history.
+  - PROOF-SKETCH: a standard variation-of-constants identity by a one-line induction, not filed in PROOFS.md as new.
+  - COMPUTED: `tests/probes/lexicon/rule30_cloud_bezier_form.py` checks it to $t = 64$ for the single seed and for eight
+    random finite seeds, and checks $L^t$ against the trinomial coefficients.
+  - MEASURED, this block's unexpected check (not predicted): the jump alone gives Rule 30's centre cell at 36 of the
+    first 65 times, about a coin's rate.
+- *Where it meets the shader.* This is where BIDIRECTIONAL-AS-MATHEMATICS.md §12.1 found linear algebra stopping. The
+  warp is a lerp, a degree-1 Bézier curve and a matrix, and the threshold is not. The AND is Rule 30's threshold.
+- *A time shortcut is not enough.* Mahler and Erdős have one: $(3/2)^n$ and $2^n$ are reached directly ($2^n$ in
+  about $\log_2 n$ squarings), and both problems are open. The prize needs every time at once. A shortcut helps when
+  its structure can be read for all $t$, as for Rule 90, whose column questions are decidable (linear automata,
+  PRIOR-ART.md). Mahler's and Erdős's shortcuts mix base 2 with base 3, two clocks whose rates never line up
+  ($\log 3 / \log 2$ is irrational): Furstenberg's ×2 ×3 territory (COLLATZ-PRIZE.md §4).
+
+**4. The photon.** The owner, on the line "they can't tell the writable points from the unwritable ones": "If we have
+some source and some screen, we can detect a photon strike and trace it back to the source, but ... we have no idea
+what happened to that photon in the middle. The photon left, its local experience of time is 0, it arrived."
+- *Our problems are the photon turned inside out.* Every intermediate step is exact and known. The unknown is the
+  arrival: Collatz reaching 1, Mahler leaving its window, Rule 30 breaking 0101.
+- *Wave and particle.* The coin model and the fractal sets are the wave, statistics of all paths at once (the Collatz
+  count follows Terras's coin to 0.5%, COLLATZ-PRIZE.md §1). One integer and its one path is the particle. The wave
+  description says nothing about one particle: §8.47 again.
+- *Our uncertainty is ours, not nature's.* Bell's theorem rules out local hidden variables that carry a photon's
+  answer. Here the hidden variable is written down: it is the seed. Rule 30 is fully determined, yet random-looking
+  enough that Mathematica used its centre column for random numbers (§8.15). So a proof is possible here in principle,
+  and is not for the photon's path.
+- *The photon's zero proper time has an exact counterpart.* Mahler's reduction removes time. The fractional part at
+  time 0, $u_0 = \sum_{k \ge 0} b_k 2^k / 3^{k+1}$, holds the orbit's whole future parity itinerary, and the same series
+  in the 2-adic integers gives $-n_0$ (MAHLER.md §1). Freezing time is what turns Mahler into "is this one point in
+  that fractal set?", the membership question at the wall.
+- *The wall is the same with time running and with time frozen.* Like §8.46's restatements, the reframings converge.
+  Reading: the wall is in the problem, not in the frame.
+
+**Verdicts.**
+- *Reasoned.* No new door. Four additions to the record:
+  - the owner's shortcut is Problem 3;
+  - Rule 30 has an exact Bézier form, and its linear part alone knows the centre cell about as well as a coin;
+  - Mahler and Erdős show that a time shortcut alone does not suffice;
+  - every object the four problems name is computable, so the open risk is an unprovable truth, not an unwritable
+    number.
+- *Gut* (INSTINCT.md). A quiet pull toward the echo picture. §8.49's untested hypothesis, that kicks are born where
+  $cr$ fires near the wall, sits exactly where the shortcut breaks. It is parked in the incubator and not started while
+  the joint halt stands; the next idea is the owner's.

@@ -77,6 +77,10 @@ A feeling selects where to look and when to persist. It never upgrades a status.
 
 - 2026-10-14 13:26 BST, GPT: unease, L726 defines minima of canonical residue sets but reports m_1=4 with period2, high; first guess: the computation used actual exponents instead of residue representatives. -> one bounded domain and linear-threshold carrying read, using k=1 and k=2 as hand controls. Outcome: right (GC1241: canonical minima are empty, while actual-exponent minima give4,6; the domains coincide from k3).
 
+- 2026-10-14 15:40 BST, Cloud: pull, the echo picture of Rule 30 (the Rule 150 jump XOR the echoes of every earlier
+  AND, RULE30-PRIZE.md §8.100), low; first guess: it puts §8.49's untested hypothesis, that kicks are born where cr
+  fires near the wall, in a form a proof could use. -> incubator; not started during the joint halt. Outcome: open.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
@@ -99,3 +103,5 @@ A feeling selects where to look and when to persist. It never upgrades a status.
 - 2026-10-14 12:51 BST, GPT: gut verdict on L721: the shared pull produced a useful symmetric core; close the bounded block. Reasoned verdict: existence independently verified; fixed-graph sharpness awaits Local; universal necessity and the main Mahler path remain open.
 - 2026-10-14, Local: Is the T-code of a positive integer the reversed Akiyama-Frougny-Sakarovitch base-3/2 expansion of
   something? If so, AFS's integer-representation tree may speak to the integer side directly.
+- 2026-10-14, Cloud: Where do the AND echoes that break the Rule 150 jump at the centre column come from? Are they
+  born near the wall (§8.49), and does the jump's error stay coin-like (36 of 65 at t <= 64) at larger t?
