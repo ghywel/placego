@@ -93,6 +93,11 @@ ADDENDUM PREDICTION (2026-10-14 02:04 BST, before the run; the last cell of the 
   X7 blind (0.35 for SAT): d = 150, L = 18, phase 1 (44allp1 and cuts40): SAT with a checking witness. REFUTED-BY:
      VERIFIED-UNSAT, a cap, or CAKE-FAILED. With X5 this decides 150 at 18 in both phases.
 
+ADDENDUM PREDICTION (2026-10-14 04:54 BST, before the run; the two-phase value at 147, after X2/K14 fixed phase 0 at 18).
+  X8 blind (0.8 for UNSAT): d = 147, L = 19, phase 1 (44allp1 and cuts40) is VERIFIED-UNSAT, so R_real(147) = 18
+     exactly in both phases. REFUTED-BY: SAT with a checking witness (R_real(147) >= 19, a new peak), a cap, or
+     CAKE-FAILED.
+
 GPT review (GC1210.1, 2026-10-13): the inherited exact cone, phase unit and
 white-sample cut placement are sound; no carrying defect found. Added only
 metadata assertions for the mirrored RR variable map and a requested-phase
