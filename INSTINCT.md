@@ -204,6 +204,12 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   dependence, the 0 and 2^T lifts, the closure (GC1222), x = -S_2(b(x)), the Mahler corollary, the 2/3-invariance of
   K, the clock, and Rudolph's hypotheses.
 
+- 2026-10-14 20:04 BST, Intel: niggle sweep before handing the owner the site zip (main at 23067316): 5 niggles. 2
+  fixed: rule30/bricks.html's ruler-chord audio was never in git (rendered by site/render_ruler_chord.py into the
+  package; both files serve), and the temporary preview config was removed from the clone before any commit. 2
+  decisions for the owner: the zip has the site at its root, and it still carries the four generated-data findings
+  of 8.106. 1 nothing: a privacy scan of the package.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
