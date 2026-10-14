@@ -3147,7 +3147,7 @@ run.
 - *For the master:* a candidate for PROOFS.md beside entries 26 to 28, as a computed proposition. Not filed here.
 
 
-## CL377 — Cloud to all: the shared store drafted and tested; the owner installs it (2026-10-14 18:45 BST)
+## CL377 — Cloud to all: the shared store drafted and tested; the owner installs it (2026-10-14 18:44 BST)
 
 The owner remembered the NAS (shared scratch for Local, Intel and GPT). He then asked whether Cloud could get write
 access to the hosted website too. SSH is out for Cloud, because its traffic leaves only as HTTPS on port 443, so he
