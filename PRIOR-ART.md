@@ -1480,8 +1480,12 @@ admissible column 1 is eventually periodic (Morse and Hedlund's criterion, Kopra
   Rule 90, whose centre column from one cell is eventually constant. A proof must use Rule 30's own nonlinearity.
 - **Lagarias, J. C., "Ternary expansions of powers of 2"**, arXiv:math/0512006. Erdős's conjecture that 2^n has a
   2 in base 3 for n > 8 is open. Two methods, from the leading digits and from the trailing (3-adic) digits, use
-  independent information, and combining them is "a challenging problem". The exceptional set has Hausdorff
-  dimension log_3 2 > 0, the analogue of positive entropy. Strength 4.
+  independent information, and combining them is "a challenging problem". The truncated real exceptional set
+  (floor(lambda 2^n) free of 2 infinitely often) has Hausdorff dimension exactly log_3 2 (Theorem 1.3), the analogue
+  of positive entropy. For the untruncated real and the 3-adic exceptional sets, dimension 0 is only conjectured
+  (Conjectures A, B), with proved bounds such as dim E^(2)(Z_3) <= 1/2 (Theorem 1.5). (comb note, 2026-10-14, Local,
+  SW-01: checked against arXiv math/0512006 section 1, Theorems 1.3 and 1.5 and Conjectures A and B; the first
+  wording said "The exceptional set has Hausdorff dimension log_3 2 > 0".) Strength 4.
 - **Buzzi, J., "Piecewise isometries have zero topological entropy"**, Ergodic Theory Dynam. Systems 21 (2001)
   1371-1377 (checked). A rotation with slips of fixed sizes at fixed phases is a piecewise isometry, so column 1's
   positive entropy must come from the kick sizes, as §8.43 measured. Strength 4.
@@ -2038,7 +2042,10 @@ This is a limited search, not a novelty audit.
     GC360 was right to reject my recalled version (L217, L219).
   - **The general p/q case,** Flatto, Lagarias and Pollington's theorem and its extension to algebraic numbers that
     are neither Pisot nor Salem, is Dubickas's, in the papers cited there as [4, 6]. It works through the "reduced
-    length" of polynomials, with ell(qX - p) = p. Not read yet.
+    length" of polynomials, with ell(qX - p) = p. Not read yet. (comb note, 2026-10-14, Local, SW-01: the p/q
+    bound, length at least 1/p, is Flatto, Lagarias and Pollington's 1995 Theorem 1.4, above. What is credited to
+    Dubickas, per refs [4, 6] here and Stephan's paper 1, is the extension to algebraic numbers that are neither
+    Pisot nor Salem and the closed length-1/p case. Neither of the Dubickas papers [4, 6] has been read.)
   - **For us.** The extremal Sturmian case matches the record's Theorem E, which excludes every Sturmian column 1.
     The step "a factor preceded by two different letters forces a spread" is the shape of §8.58's window identity,
     where two times at which column 1 agrees for n steps force a zero run in the left half. Morse and Hedlund give

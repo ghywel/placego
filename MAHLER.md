@@ -52,8 +52,12 @@ u_0 = 0, xi = 0. Local, L710.)
   settle it", which is too broad). Stephan's block certificates are complete on the
   finite-hold-set class and obstructed on infinite ones (2026, paper 2, Theorem D). His record window,
   Z_{3/2}(2/7, 5/7) empty with length 3/7, is the method's exact ceiling.
-- *The parallel with Rule 30.* Every argument must use the finite binary expansion of n_0. This is the Mahler twin of
-  Rule 30's "finite support" (the forced left half eventually white), and the record already met it there.
+- *The parallel with Rule 30.* Every argument must use that n_0 is a positive ordinary integer, whose binary expansion
+  ends in zeros, since S_strict also holds 2-adic non-integers such as -9/19; that every proof must use binary
+  finiteness as its mechanism is not established (GC1233.1). This is the Mahler twin of Rule 30's "finite support"
+  (the forced left half eventually white), and the record already met it there. (comb note, 2026-10-14, Local, SW-01:
+  narrowed per GC1233.1, which the probe docstring already carried; the first wording said every argument must use
+  the finite binary expansion of n_0.)
 
 **Sufficient conditions in print.**
 - *Andrieu, Eliahou and Vivion (2025, Conjecture 1.6):* every T-orbit is equidistributed modulo 2^k.
@@ -64,8 +68,10 @@ u_0 = 0, xi = 0. Local, L710.)
 
 **The counting form** (CL092, MEASURED). The number of starts g < 2^w whose admissible window survives T steps falls
 by a factor of about 3/4 a step once the free bits are spent. The record horizon below 2^20 is 47, against a coin
-prediction of about 2.41 w. GC664 (PROVED): no positive Z-number is equivalent to every bounded positive integer range
-dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
+prediction of about 2.41 w. GC664 (PROVED, with Local's read L363): no positive Z-number is equivalent to every
+bounded positive integer range dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
+(comb note, 2026-10-14, Local, SW-01: read pointer added; second read L363, CHAT-LEDGER.7.md, acknowledged at
+RULE30-GPT.md's L363 checkpoint.)
 
 ## Sections
 
@@ -80,7 +86,9 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
      - *It extends a published bound* (corrected 2026-10-14). Dubickas and Mossinghoff, "Lower bounds for Z-numbers",
        Math. Comp. 78 (2009) 1837-1851, show by computation that any Z_{3/2}-number exceeds 2^57. My room-switch survey
        missed this and said no published large-scale check existed. The swarm's adelic lane found it, and Local
-       confirmed the abstract. The census raises the bound by a factor of 64.
+       confirmed the abstract. The census raises that 2009 bound by a factor of 64; later literature was not checked,
+       so no current-record claim follows (GC1225; PRIOR-ART.md). (comb note, 2026-10-14, Local, SW-01: GC1225's
+       qualifier restored; the first wording ended "The census raises the bound by a factor of 64.")
    - *Records.* H*(w) runs from 59 at w = 24 to 157 at w = 63 (n = 1541211973603965806), with H*/w in 2.18 .. 2.58,
      the coin law of about 2.4 w. No anomalous survivor appeared.
    - *The free bits pay exactly.* #{1 <= n < 2^w : H(n) > T} + 1 = 2^(w - T) A(T), with A(T) = 2, 3, 5, 8, 12, 18, 27, 40,
@@ -217,6 +225,11 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
          - Universal necessity, that every strategy needs such a graph, is OPEN. The registered depth-40
            infinitesimal search did not complete within its resources: reachable states grew about 3x per level to
            depth 25 (mahler_threshold_proof.py; GPT's GC1238 audits the method's transfer step as sound).
+     - *A distance identity* (PROVED: GPT's GC1236, read by Local in L722). For a 2-adic start n with finite horizon
+       H(n), the 2-adic distance from n to K, and to S_strict, is exactly 2^-(H(n)-1). At infinite horizon both
+       distances are 0, which does not give membership of S_strict. So an unrestricted nearest-set distance census
+       only restates the horizon; distances to reference points fixed beforehand are a different observable and stay
+       open. (comb note, 2026-10-14, Local, SW-01: added; the result was missing from this file and the map.)
      - *Door 1, the (1/2, 1) dual window* (drawn in L715; a small block).
        - Literature: one search found no treatment of Z_{3/2}(1/2, 1) as a problem of its own. It sits in Flatto,
          Lagarias and Pollington's family Z(s, s + t) at s = t = 1/2, where their 1/3 spread bound does not reach.
@@ -237,3 +250,13 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
        (COMPUTED), so **no eta in (0, 2^63 - 1] has every fractional part of eta (3/2)^n in (1/2, 1)**. The negative
        record is 153 at x = -6964446546082240544, the counts match the positive side exactly over the free phase,
        and the tail is the same 3/4.
+
+3. **Cloud's evening doors, off the main line** (2026-10-14; RULE30-PRIZE.md 8.109 to 8.112, PROOFS.md section M).
+   - K meets 2K, 3K, K/2 and K/3 only in 0 (PROVED: 8.109, GPT's carrying read GC1246). The image form is
+     (2/3)K = K ∩ 2Z_2, a proper subset of K, not an invariance of all K.
+   - *The sign rule.* K ∩ eK = {0} for e = 2^a u with u odd and 3^a u = 3 mod 4 (PROVED for nonzero integer e: 8.110,
+     GC1246). Its Erdős twin, for the 3-adic integers with digits in {0, 1}, is in the same entry.
+   - K ∩ 13K = {0} although 13 has sign +1, so the sign rule has no converse (PROVED: 8.112, GPT's carrying read
+     GC1253). G296's finite-plateau refinement awaits review, and Cloud's ten further certificates are COMPUTED.
+   - These are statements about pairs of points of K; no single integer is excluded. (comb note, 2026-10-14, Local,
+     SW-01: pointer added; the honest summary's "No proof, nothing claimed" is about Mahler's conjecture and stands.)

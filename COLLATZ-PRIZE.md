@@ -7,16 +7,20 @@ working rules are [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md) and [WORK
 
 ## The honest summary
 
-**No proof, and nothing to submit.** The prize is Bakuage's, ¥120M (2021), for a proof or a disproof of the Collatz
-conjecture under the company's rules (PRIZE-PROBLEMS.md §1 has the link). The conjecture has been verified by
-computer for every start below $2^{71}$; no counterexample lies within any reachable search, and a proof is what the
-prize pays for.
+**No proof, and nothing to submit.** The prizes are Bakuage's, ¥120M (2021), for a proof or a disproof of the Collatz
+conjecture under the company's rules (PRIZE-PROBLEMS.md §1 has the link), and Erdős Problem #1135's $500
+(erdosproblems.com; PRIZE-PROBLEMS.md §8.1), which is the same conjecture (comb note, 2026-10-14, Local, SW-01:
+second prize recorded in PRIZE-PROBLEMS.md §8.1 after this summary was written; was "The prize is Bakuage's"). The
+conjecture has been verified by computer for every start below $2^{71}$; no counterexample lies within any reachable
+search, and a proof is what the prize pays for.
 
-**What this record holds** (all from 2026-10-05, with pre-registered probes in `tests/probes/prizes/`):
+**What this record holds** (from 2026-10-05, with later rows in §6, §8 and §9; pre-registered probes in
+`tests/probes/prizes/`; comb note, 2026-10-14, Local, SW-01: was "all from 2026-10-05"):
 - *The counting form, measured* (§1): the number of $w$-bit starts whose orbit stays at or above its start for $T$
-  steps follows Terras's coin to 0.5% past the free bits, to $w = 30$, with an excess below 3.7 bits. This is the
-  Collatz twin of Rule 30's question 1: the left part (the first $w - 1$ parities, a bijection with $n \bmod 2^{w-1}$)
-  pays exactly; what the rest pays is the open part.
+  steps follows Terras's coin to 0.5% past the free bits, to $w = 30$, with an excess below 3.7 bits (extended to
+  $w = 43$ on 2026-10-06 and 2026-10-09: the coin's slope, largest excess 7.36 bits at $w = 34$, not growing; §6;
+  comb note, 2026-10-14, Local, SW-01). This is the Collatz twin of Rule 30's question 1: the left part (the first
+  $w - 1$ parities, a bijection with $n \bmod 2^{w-1}$) pays exactly; what the rest pays is the open part.
 - *The avenue Collatz has and Rule 30 lacks* (§2, §3): after the free bits the state is an explicit integer,
   $3^a + T^{w-1}(r)$, and the question becomes one about its binary digits; its Fourier structure fades with width.
 - *The least-residue lemma* (§4): $T^k(2^k m + r) = 3^a m + T^k(r)$ with $0 \le T^k(r) < 3^a$: the state after the
@@ -25,7 +29,9 @@ prize pays for.
 - *The window principle* (§5): a block of the parity sequence can repeat only if it is no longer than the state is
   large (Terras's bijection). It gives W1 (equal futures are congruent presents), W2 (an infinite orbit's parity
   sequence has complexity at least $1.71\,n$) and W3 (no rational has a Sturmian parity sequence). **Not new**: W2 is
-  Dubickas, Glasgow Math. J. 51 (2009), Theorem 5; W1 and W3 are in three unrefereed 2026 notes (§5, PRIOR-ART.md).
+  Dubickas, Glasgow Math. J. 51 (2009), Theorem 5; W1 is Terras's bijection on rationals (Terras 1976); W1 (one
+  direction) and W3 also appear in three unrefereed 2026 notes (§5, PRIOR-ART.md; comb note, 2026-10-14, Local,
+  SW-01: was "W1 and W3 are in three unrefereed 2026 notes", against §5's "W1 is Terras's theorem").
   What is ours is the pairing with Rule 30's Theorem A′ and the conclusion that exponential sums cannot reach a
   single case on either side.
 
@@ -146,7 +152,9 @@ negative integers. So $T^k(r) - 3^a < 0$. $\square$
 **Checked** for every $r < 2^k$, $k \le 18$ (CR0, CR1). I had predicted the weaker "least residue, or that plus
 $3^a$, the second case rare" (CR2). The second case never occurs, and the proof above came after the run. The
 counterfactual modulus $3^{a+1}$ fails for two numbers in three, as it must. The lemma is elementary and is probably
-in the Collatz literature; it was not looked up.
+in the Collatz literature; it was not looked up. (comb note, 2026-10-14, Local, SW-01: it was looked up the same
+night, §5: the identity is Terras 1976 and Lagarias 1985, Theorem B; the bound is Kontorovich and Sinai's
+Theorem 5.2; PRIOR-ART.md.)
 
 **What it adds to §2 and §3.**
 - **The Collatz twin is a statement about one number written in two bases.** The next parities of an orbit are the
@@ -205,6 +213,10 @@ sentence with rows for residues (RULE30-PRIZE.md §8.58).
 p(n) \;\ge\; \frac{n - 1 - \log_2(\lvert N \rvert + D)}{\log_2 (3/2)} \;\approx\; 1.71\,n .
 ```
 
+*(comb note, 2026-10-14, Local, SW-01: per G29, RULE30-GPT.md, "infinite" means infinitely many distinct states,
+and the $3/2$ growth holds for the shifted height $\lvert N_i \rvert + D$, not $\lvert N_i \rvert$ ($N = D = 1$ maps
+1 to 2); the displayed bound already uses $\lvert N \rvert + D$.)*
+
 - **W3, no rational has a Sturmian parity sequence.** A Sturmian sequence has $p(n) = n + 1$, which is below
   $1.71\,n$. This holds for every slope, the critical slope $\ln 2/\ln 3$ included, and every intercept. More
   generally, the 2-adic number with parity sequence $v$ is irrational whenever $v$ is aperiodic and
@@ -248,9 +260,10 @@ search on the night of 2026-10-05 (by a search agent of Local's; pages and abstr
   of the same series as one number. A series of rationals can have different limits in the two metrics. The same
   objection, with counterexamples, stands unanswered in a public issue (2026-09-30) of a repository that works on
   the question. I do not rely on the claim.
-So W1 to W3 are recorded here as known results with proofs written out, credited to Dubickas (2009) for W2 and
-to the 2026 notes for W1 and W3. What stays ours is the pairing with Rule 30 (Theorem A′) and the conclusion that
-exponential sums cannot reach a single case on either side.
+So W1 to W3 are recorded here as known results with proofs written out, credited to Dubickas (2009) for W2, to
+Terras (1976) for W1's content and to the 2026 notes for the statements of W1 and W3 (comb note, 2026-10-14, Local,
+SW-01: was "and to the 2026 notes for W1 and W3"; the notes hold only one direction of W1). What stays ours is the
+pairing with Rule 30 (Theorem A′) and the conclusion that exponential sums cannot reach a single case on either side.
 
 **Checked** (`collatz_window.py`, two runs):
 
@@ -323,13 +336,15 @@ columns affine (RULE30-PRIZE.md §8.58), and no more.
 
 ## 6. Leads and their status
 
-**The status board** (started 2026-10-06 06:57; the time is from the shell). The tags are those of PERIOD-TWO.md §6: OPEN,
-PART, RUNNING, DONE, CLOSED, BLOCKED, with the section that settles each. When a lead moves, its row changes in the
-same commit as the result.
+**The status board** (started 2026-10-06 06:57; the time is from the shell). The tags are those of PERIOD-TWO.md §6
+(OPEN, PART, RUNNING, DONE, CLOSED, BLOCKED, PARKED, MERGED), plus NOTED (an outside claim recorded but not ours to
+settle), with the section that settles each (comb note, 2026-10-14, Local, SW-01: PARKED and MERGED were added to
+PERIOD-TWO.md §6 after this board began; NOTED is defined here). When a lead moves, its row changes in the same
+commit as the result.
 
 | Lead | Status | What has been done | What is left |
 |---|---|---|---|
-| The counting form (§1): fewer than $2^{w - \alpha T + c}$ survivors | **OPEN** | Replicated by Local on 2026-10-06 from the committed script (`collatz_count.py 32`, 25 s, at 894fc71: slope $-0.0610$ against the coin's $-0.0618$, $e_{32} = 2.66$, $H_{32} = 447$, CZ2 refuted at 21.18 per bit, all as recorded). Measured to $w = 40$ by Local on 2026-10-06 (`collatz_count.py 40`, parallel engine): slope past the free bits $-0.0596$ against the coin's $-0.0597$, excess $e_w \le 7.4$ with no upward trend ($e_{40} = 0.87$), $S_w = C_w$ at every $T$. Extended to $w = 43$ by Local on 2026-10-09 (`collatz_count.py 43`, CZ12 to CZ16): slope $-0.0591$ against the coin's $-0.0591$, $e_{41..43} = 3.18, 1.38, 0.42$, $H_{43} = 592$, $S_w = C_w$ at every $T$. Measured to $w = 30$: the coin to 0.5%, excess below 3.7 bits. | The proof. The same gap as Rule 30's question 1. |
+| The counting form (§1): fewer than $2^{w - \alpha T + c}$ survivors | **OPEN** | Replicated by Local on 2026-10-06 from the committed script (`collatz_count.py 32`, 25 s, at 894fc71: slope $-0.0610$ against the coin's $-0.0618$, $e_{32} = 2.66$, $H_{32} = 447$, CZ2 refuted at 21.18 per bit, all as recorded). Measured to $w = 40$ by Local on 2026-10-06 (`collatz_count.py 40`, parallel engine): slope past the free bits $-0.0596$ against the coin's $-0.0597$, excess $e_w \le 7.4$ with no upward trend ($e_{40} = 0.87$); CZ9 (predicted $e_w \le 4$) refuted by $e_{34} = 7.36$ and $e_{35} = 5.19$, and CZ11 refuted narrowly ($H_{40} = 550$, below its bracket) (comb note, 2026-10-14, Local, SW-01: refutations carried from `collatz_count.py`'s OUTCOME); $S_w = C_w$ at every $T$. Extended to $w = 43$ by Local on 2026-10-09 (`collatz_count.py 43`, CZ12 to CZ16): slope $-0.0591$ against the coin's $-0.0591$, $e_{41..43} = 3.18, 1.38, 0.42$, $H_{43} = 592$, $S_w = C_w$ at every $T$. Measured to $w = 30$: the coin to 0.5%, excess below 3.7 bits. | The proof. The same gap as Rule 30's question 1. |
 | The state after the free bits as an integer (§2, §4) | **DONE** as a lemma | The least-residue lemma, checked to $k = 18$; known (Terras, Lagarias, Kontorovich–Sinai). | Use it: a statement about the binary digits of a remainder modulo $3^a$, for one orbit. |
 | The Fourier structure of the survivors' state (§3) | **DONE** as a measurement | The largest odd coefficient fades with width. | Nothing: it says exponential sums will not reach single cases. |
 | Exponential sums as a route to single cases | **CLOSED** (§5) | Their error is at least the square root of the population. | Nothing. |
@@ -337,7 +352,8 @@ same commit as the result.
 | A statement beyond complexity $1.71\,n$ for one orbit | **OPEN** | Dubickas conjectures the maximum, $P(X, n) = 2^n$, for the 3/2 orbit of 1 (§5). | The Collatz twin of Rule 30's "cost side as a count" (RULE30-PRIZE.md §8.58): the same unproved shape on both sides. |
 | Dubickas's conjecture $P(X, n) = 2^n$ for the 3/2 map, measured (§5) | **DONE** as a measurement | Every residue class modulo $2^n$ visited for $n \le 18$ over four million terms; 0.97809 of the classes at $n = 20$ against a coin's 0.97796 (`collatz_threehalves.py`). | Nothing a computer can add; a proof would be the 3/2 problem's. |
 | The 2021 preprint's claim (density exactly $\ln 2 / \ln 3$) | **NOTED** | Its equations 15 and 16 take a real limit for a 2-adic one; the objection stands unanswered in public. | Not ours to repair. |
-| The carry dial (§9): carries cut to $k$ places, on Collatz and Mahler's 3/2 map | **DONE** as a measurement (2026-10-09, AS and MD) | Cycles at even $k = 2, 4, 6$; collapse at odd $k$; all of $n < 2^{18}$ reach 1 from $k = 12$; $H_0(g) = v_2(g) + 1$ (GC836) | Why even $k$ grows cycles; whether any finite $k$ already behaves like the true map for all $n$ |
+| The carry dial (§9): carries cut to $k$ places, on Collatz and Mahler's 3/2 map | **DONE** as a measurement (2026-10-09, AS and MD) | Cycles at even $k = 2, 4, 6$; collapse at odd $k \ge 3$ ($k = 1$ reaches 1); all of $n < 2^{18}$ reach 1 at $k = 0, 1, 8, 10, 12$ and $\infty$ (tested $k \le 12$ and $\infty$) (comb note, 2026-10-14, Local, SW-01: the board row matched to section 9, as D6-3 did for the map; was "collapse at odd $k$; all of $n < 2^{18}$ reach 1 from $k = 12$"); $H_0(g) = v_2(g) + 1$ (GC836) | Why even $k$ grows cycles; whether any finite $k$ already behaves like the true map for all $n$ |
+| Eventually alternating orbits, and the never-drop residues $D_k$ under multipliers (results after PERIOD-TWO.md Q9's fifth triage) | **DONE** as lemmas (2026-10-13 and 2026-10-14) | Proposition 24 (PROOFS.md entry 43, RULE30-PRIZE.md §8.92, second-read by GPT in GC1162): an orbit whose parity column alternates for ever is the trivial cycle, so the conjecture holds if and only if every positive orbit's parity column is eventually 1010.... Cloud's hand lemmas H2 and H3 of RULE30-PRIZE.md §8.110 (single-party; checked by computation to depth 24): Terras's never-drop residues $D_k$ lie in $3 + 4\mathbb{Z}$ for $k \ge 2$, and $y = (2x - 1)/3$ maps $D_k$ into $D_{k+1}$. *(comb note, 2026-10-14, Local, SW-01: row added to match PERIOD-TWO.md Q9's note.)* | Neither is a statement beyond the conditional bounds; Q9 stays PARKED. |
 
 ## 7. How to reproduce
 
@@ -464,6 +480,8 @@ chat L453) and `tests/probes/lexicon/rule30_mahler_carry_dial.py` (MD, L457).
   $\xi \in [g, g + 1)$ keeps the first fractional binary digit of $\xi (3/2)^n$ at 0.
   - $H_0(g) = v_2(g) + 1$ for every $g \ge 1$. GPT proved it in GC836: with carries deleted, the half-digit is an
     XOR of binomial terms whose first nonzero one is $j = v_2(g) + 1$. $H_1$ agrees for $g \le 63$, measured.
+    (comb note, 2026-10-14, Local, SW-01: $H_1(g) = v_2(g) + 1$ is proved for every $g \ge 1$, PROOFS.md G.GPT266,
+    GC837, second-read by Local in L461.)
   - Odd $k = 3, 5, 7$: the survivors' integer parts collapse to 0, as on the Collatz side. $k = 1$ again does not; there $H_1 = H_0$ for $g \le 63$.
   - $g = 53$, the true map's longest survivor up to 63, also survives at $k = 4$, for 30 steps against the true 25.
   - The true map ($k = \infty$, exact fractions) has no survivor past 29 steps for $g \le 4096$. Cloud's

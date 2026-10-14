@@ -57,6 +57,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Return** 2026-10-14 20:02 BST: investigated and closed, RULE30-PRIZE.md 8.109. No second multiplier: K meets
   2K, 3K, K/2 and K/3 only in 0 (an induction carried by a parity clash), and it is invariant under 2/3 alone. Rank
   one; the set is anti-invariant. That remainder is S10.
+  *(comb note, 2026-10-15, Local, SW-01: GC1246, accepted in CL383, withdrew 'rank one' as unproved and made the
+  invariance forward only, (2/3)K = K ∩ 2Z_2, a proper subset; see RULE30-PRIZE.md 8.109's correction.)*
 
 **S3.** 2026-10-14, about 16:00 BST.
 - **Doing:** the same answer, looking for a theorem that has crossed from sets of cases to one specific object.

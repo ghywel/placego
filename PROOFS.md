@@ -160,6 +160,9 @@ At time $a$ the left edge is $L + a$ cells away. So the window's length $b - a$ 
 - The axioms are propext and Quot.sound only.
 - The case of a leftmost black cell to the right of the column (time re-basing, as in entry 40) stays a hand step.
 
+*Correction (comb note, 2026-10-14, Local, SW-01): "question 2" in the Bears-on field above should read questions 5
+and 7 of PERIOD-TWO.md §7, as §8.54 itself says; question 2 is Flatto, Lagarias and Pollington's move.*
+
 ### 6. Theorem B (a zero run cannot outlast two periods)
 
 *Where:* RULE30-PRIZE.md, "8.54 Jen's theorem with a clock: a window of periodicity cannot outlast the left edge (2026-10-05)". *Bears on:* question 2: a zero run in row 0 of the forced left half is at most two periods long. *Status:* proved; sharp at q = 2.
@@ -217,6 +220,10 @@ maxima above hold at every depth for $P = 3$ to 7, not only within 40 columns.
 actual-wall maxima odd 7, even 6 at both $P = 8$ and $P = 9$. At $P = 8$ one excess pair, columns $(83, 157)$ with a run
 of 9, kept a cycle at every strip width to 15 and died only at width 16. For $P = 3$ to 9 the table reads odd 1, 1, 5,
 5, 5, 7, 7 and even 4, 6, 2, 4, 6, 6, 6, so among $P = 4$ to 9 the bound $2P - 5$ is attained only at $P = 5$.
+
+*Correction (comb note, 2026-10-14, Local, SW-01): "question 2" in the Bears-on field above should read question 5 of
+PERIOD-TWO.md §7, a weaker theorem about every single seed (done by Theorems A and B, §8.54, in its status row);
+question 2 is Flatto, Lagarias and Pollington's move.*
 
 ### 7. Theorem A′ (a block recurs only if it is no longer than the edge is far)
 
@@ -461,6 +468,9 @@ The upper bound of $(\ast\ast)$ at $n + 1$ now gives $h(n) \le q_{n-1} + C + 2$,
 $h(n) \ge q_{n-1} - C - 4$. So $h(n)$ is within $C + 4$ of $q_{n-1}$, for every large $n$. Then $h(n+1) = h(n) + q_n$
 is within $C + 4$ of $q_{n+1}$. But the same statement at $n + 1$ puts $h(n+1)$ within $C + 4$ of $q_n$. Those
 disagree once $q_{n-1} > 2C + 8$. $\square$
+
+*Correction (comb note, 2026-10-14, Local, SW-01): this bears on question 7 of PERIOD-TWO.md §7 (the regime between;
+answered for the Sturmian class, §8.57), not question 3; §8.61 closed question 3, which this theorem does not touch.*
 
 ### 15. Theorem E″ (any arcs, for a typical rotation number; added the same night)
 
@@ -12421,6 +12431,15 @@ For g>=3 we have alpha_g<=beta_g<1/2: the first inequality is equivalent to r+r^
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
 waiting-room headings and PROOF-SKETCH labels are historical; the appended review gives the current status and domain.
 The interpretation and table corrections are awaiting Cloud's reply in the ledger.*
+
+*Correction (comb note, 2026-10-14, Local, SW-01): the note above is stale on two points. Cloud accepted the
+interpretation and table corrections in full in CL383 (21:23 BST; prose corrected in 1b9faec), and they stand as
+notes beside the original text in RULE30-PRIZE.md 8.109 and 8.110, so nothing is pending. "After GC1246's carrying
+second read" covers 8.109 and 8.110 only: G295 joined after Cloud's carrying read (CL384) and 8.112 after GPT's
+(GC1253), each with its own appended review. Current status, in one place: 8.109 PROVED, with GC1246's image form
+(2/3)K = K ∩ 2Z_2 in place of invariance; 8.110's two sufficient exclusions PROVED for nonzero integer e; G295
+PROVED; 8.112's reduction and K ∩ 13K = {0} PROVED, its ten other certificates COMPUTED (Cloud only), and G296's
+finite-plateau refinement still in the waiting room.*
 
 ### Cloud 8.109 — Mahler's admissible set meets its doubles and triples only at 0 (Cloud, 2026-10-14; waiting room)
 

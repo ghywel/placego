@@ -34,7 +34,7 @@ do, so a "next step" is a family of walls over which a theorem can be proved.
 |---|---|---|---|---|---|---|
 | Condrey's walls $0^\infty$, $1^\infty$ | 0 or 1 | 0 | B (the white wall needs the right half) | Proved (Condrey 2026, two mechanisms) | none | done |
 | One-hole walls $0\,1^{p-1}$ | $1/p$ | $2/p$ | LR | Records to 32 free bits, $R \approx 0.8\,d/(p-1)$ (§8.62); the checkerboard survives a hole as a prefix, exact reset mechanisms (GPT, §G11 to §G13); chaos past the hole | A cost for the second defect after the protected window (GPT's current target) | GPT reasoning, Local measuring |
-| Slow walls $0^a 1^b$, $a, b$ large | $a/(a+b)$ | $2/(a+b)$ | B (a real right half injects one latch integer per white stretch) | At fixed $f = 1/2$, LR's law does not change with $s$ (0.81, 0.81, 0.67, 0.79 against 0.83; §8.63) From the left (§8.69): the left half's own conditions stop every seed narrower than about the wall's period $a + b$ before two consecutive black stretches (passing widths 13, 17, 23 next to $0^a 1^8$ for $a = 4, 8, 16$); next to 0101 the left-only horizon is $W + 17$. | The two switch events as finite certified maps (asked of GPT, CHAT-LEDGER C032); then the bounded-debt count with a one-integer debt. GPT update (2026-10-06): G18 certifies the finite prefix and long-black protected band; complete tail-state closure is still missing. G19 excludes initial left support<=6 for0^5 1^5 via the latch, with an interior minimizer. The fixed-f measurements above do not prove independence from switch density (C033). | GPT + Local |
+| Slow walls $0^a 1^b$, $a, b$ large | $a/(a+b)$ | $2/(a+b)$ | B (a real right half injects one latch integer per white stretch) | At fixed $f = 1/2$, no fall of LR's law of the predicted size with $s$ at depth 48 (SW2 refuted); a switch-density effect stays unresolved (0.81, 0.81, 0.67, 0.79 against 0.83; §8.63) (comb note, 2026-10-14, Local, SW-01: aligned with §8.63's corrected wording, C033; was "LR's law does not change with $s$".) From the left (§8.69): the left half's own conditions stop every seed narrower than about the wall's period $a + b$ before two consecutive black stretches (passing widths 13, 17, 23 next to $0^a 1^8$ for $a = 4, 8, 16$); next to 0101 the left-only horizon is $W + 17$. | The two switch events as finite certified maps (asked of GPT, CHAT-LEDGER C032); then the bounded-debt count with a one-integer debt. GPT update (2026-10-06): G18 certifies the finite prefix and long-black protected band; complete tail-state closure is still missing. G19 excludes initial left support<=6 for0^5 1^5 via the latch, with an interior minimizer. The fixed-f measurements above do not prove independence from switch density (C033). | GPT + Local |
 | Mostly-white walls $0^{p-1}1$ | $(p-1)/p$ | $2/p$ | B (LR is false at $0^\infty$) | Records 2.1 d, 2.4 d (§8.60); the latch lemma, too weak alone (§8.62) | A latch-aware count of column 1's shapes against the conditions | open |
 | The by-period ladder, $p = 2, 3, 4, \ldots$ | mixed | $\approx 1$ | B for each wall | Period 2 is the record (the wheel, the channel, the count); periods 3 to 6 only measured (§8.42) | none until a mechanism carries | the reference, not the route (§8.63) |
 | The single cell itself | — | — | the prize | Its two bands are provably far from the core (§8.30) | none known | open |
@@ -891,8 +891,12 @@ plan. Nothing here is adopted as a room; the owner chooses rooms.*
 **Closest: the same 2-against-3 arithmetic.**
 - *Erdős's ternary conjecture (Erdős, 1979).* For every n > 8, 2^n written in base 3 contains a digit 2.
   - It is powers of 2 read in base 3, the Collatz and Mahler arithmetic at its barest.
-  - Lagarias (2009) studied a 3-adic generalisation and showed the exceptional set is vanishingly thin, the "almost
-    all" half. Every single n is open.
+  - Lagarias (2009) studied a 3-adic generalisation: the exceptional set E(Z_3) of starting parameters λ (those for
+    which λ2^n omits the digit 2 infinitely often) has Hausdorff-dimension bounds (at most 1/2; dimension 0 is his
+    conjecture), a statement about sets of starts. The one start λ = 1, Erdős's conjecture for every n > 8, is open.
+    (comb note, 2026-10-14, Local, SW-01: GC1240's corrections (2), (3) carried from G.1, and the bound checked
+    against arXiv math/0512006 section 1, Theorems 1.3 and 1.5 and Conjectures A and B; was 'showed the exceptional
+    set is vanishingly thin, the "almost all" half. Every single n is open.')
   - The record's tools transfer almost unchanged: residues mod 2^T and their 3-adic mirror (G51, COLLATZ-PRIZE.md
     section 4), a free phase that pays exactly, and censuses with exact receipts.
   - The record met it only in passing (RULE30-PRIZE.md 8.47; PRIZE-PROBLEMS.md sections 7 and 8.1). **The owner's
@@ -1019,9 +1023,11 @@ the room earns it.*
   domain of the table below, per GC1241; it equals the canonical residue minimum from k = 3 on), a bound m_k > k / log_3 2
   for every k >= 7 would prove the conjecture (GPT's exact rounding, GC1241: an exponent with k digits has
   n < k log_2 3 < 1.6 k; the exact rounded threshold is ceil(k log_2 3)).
-- *The margin* (computed, small): m_k = 4, 6, 6, 18, 20, 20, 20, 24, 24, 24, 72, 186, 186, 332, 332, 1134 (k = 16 to 21),
-  then 25458 (k = 22 to 25). So m_k / k grows from 2 towards 1000. Chance predicts m_k of order (3/2)^k, while a proof
-  needs only linear growth: the gap is far wider than Mahler's.
+- *The margin* (computed, exploratory; the producing code is not in git, GC1241) (comb note, 2026-10-14, Local, SW-01:
+  no receipt committed; commit the producer or keep the table exploratory; was "computed, small"):
+  m_k = 4, 6, 6, 18, 20, 20, 20, 24, 24, 24, 72, 186, 186, 332, 332, 1134 (k = 16 to 21), then 25458 (k = 22 to 25).
+  So m_k / k grows from 2 towards 1000. Chance predicts m_k of order (3/2)^k, while a proof needs only linear growth:
+  the gap is far wider than Mahler's.
 - *Reading.* The side room reaches the trio's wall at once: one specific integer's compatibility with a fractal set at
   a depth tied to its own size. The wall is shared by all four figures. Gut verdict: unsurprising, and clarifying.
   Reasoned verdict: no new method; the side room holds here.
@@ -1040,8 +1046,11 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
   information. Example: the time shortcut is open for Rule 30 and known for Mahler and Erdős, which showed that a
   shortcut alone is not enough (8.100). Status: open.~~
   *Delved 2026-10-14, RULE30-PRIZE.md 8.110: a ten-row table, one productive row.*
-  - The sign rule (PROOF-SKETCH): multipliers of sign -1 move the set off itself in Mahler (2^a u with
-    3^a u = 3 mod 4) and Erdős (3^b u with u = 2 mod 3). Collatz shows the same rule at depth 2.
+  - The sign rule (PROOF-SKETCH when written; its two sufficient exclusions PROVED for nonzero integer multipliers
+    after GPT's second read, GC1246, PROOFS.md section M; the converse not included): multipliers of sign -1 move the
+    set off itself in Mahler (2^a u with 3^a u = 3 mod 4) and Erdős (3^b u with u = 2 mod 3). Collatz shows the same
+    rule at depth 2. (comb note, 2026-10-14, Local, SW-01: status brought up to GC1246's second read; the original
+    label kept.)
   - Rule 30's linear part is exactly invariant under time doubling, and Rule 30's column is a coin under it (0.496).
   - The usefulness prediction ((a) below (b), 0.6) went the other way on two of three criteria.
   - The mechanism's linear form is Lagarias (2009), Lemma 4.1, as GPT read it (GC1246).
@@ -1059,15 +1068,20 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
 - ~~**(b) The rigidity hunt.** For each fold in the record (a translation of a problem into another space), name the
   object a counterexample would build on the far side, and ask whether a known rigidity theorem forbids it. This is
   the shape of Fermat's proof (Frey's curve, Ribet, Wiles), and period 1 fell to it through the sideways fold.~~
-  *Delved 2026-10-14, RULE30-PRIZE.md 8.101: no door.*
-  - Every single-object rigidity theorem found controls bounded complexity (runs, digits, a fixed algebraic number,
-    width 1), and every counterexample's complexity grows with n.
+  *Delved 2026-10-14 except the primary-source read, RULE30-PRIZE.md 8.101: no door.*
+  - Every single-object rigidity theorem found (named from memory and not re-read, 8.101; a reading, not a theorem)
+    controls bounded complexity (runs, digits, a fixed algebraic number, width 1), and every counterexample's
+    complexity grows with n. (comb note, 2026-10-14, Local, SW-01: 8.101's qualifiers restored and the door's status
+    words scoped; the primary-source read below is still to do.)
   - Left over: a primary-source read of the literature cited from memory there.
 - ~~**(c) Tentative: two places as two multipliers.** Mahler's map acts on the real side and the 2-adic side at the same
   time (MAHLER.md section 1). Could that pair play the part of the second multiplier that Furstenberg's x2 x3 theorem
   needs? A hunch, not a claim (INSTINCT-CLOUD.md S2). Status: open. Anchor from 8.101: Ridout's theorem and the
   Subspace theorem are the established tools that use the real and p-adic places together.~~
-  *Delved 2026-10-14, RULE30-PRIZE.md 8.109: closed by a theorem (PROOF-SKETCH).*
+  *Delved 2026-10-14, RULE30-PRIZE.md 8.109: closed by a theorem (PROOF-SKETCH when written; PROVED after GPT's
+  second read, GC1246, PROOFS.md section M: K meets 2K, 3K, K/2, K/3 only in 0; no classification of all symmetries,
+  see below).* (comb note, 2026-10-14, Local, SW-01: status per 8.109's GC1246 correction and PROOFS.md section M;
+  the original label kept.)
   - The admissible set K meets 2K, 3K, K/2 and K/3 only in 0, and is invariant under x -> 2x/3.
   - Its multiplicative symmetry is the Mahler direction alone, rank one, so there is no second multiplier.
     *Overreach (GC1246, accepted in CL383): the theorem excludes 2 and 3 (and 8.110 more), but it does not classify

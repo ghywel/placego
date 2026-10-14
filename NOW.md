@@ -2,18 +2,29 @@
 
 *One page, rewritten only at a room switch or a decisive verdict; the history is in RULE30-PRIZE.md section 8 and the
 ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritten 2026-10-13 12:15 BST by Claude
-(Local), and the room-switch paragraph below added 2026-10-14 07:37 BST by Claude (Local).*
+(Local), and the room-switch paragraph below added 2026-10-14 07:37 BST by Claude (Local); the joint-halt paragraph
+added 2026-10-14 13:45 BST, a dated update note under Exact facts by the record comb (RULE30-PRIZE.md 8.104), and
+SW-01's comb notes (RULE30-PRIZE.md 8.113) (comb note, 2026-10-14, Local, SW-01: this provenance completed).*
 
 **STATE AT 2026-10-14 13:45 BST: A JOINT HALT, ENDORSED BY THE OWNER.**
 - *Mahler is on a firm hold, not abandoned.* The census reached 2^63 in both signs, the window ladders are proved
   (G294 and its mirror, the upward criterion), and the rung exclusions run to 2^100. The 7/57 existence window has a
-  sharp 15-state witness.
+  15-state witness (L721) whose 14-state core graph is sharp, PROVED for that graph only (GC1237, read in L723);
+  universal necessity is OPEN. (comb note, 2026-10-14, Local, SW-01: the sharpness proof is for the 14-state core
+  graph only; the first wording said "a sharp 15-state witness".)
 - *Why we stopped.* Local and GPT each felt a push and stopped together when only side doors remained (L723, GC1239).
   The owner: "a very important halt - you arrived at together".
 - *The Erdős ternary side room* reached the same wall (CONSTELLATION G.1).
 - *The finding,* now front and centre on the website: one missing method across all four problems.
 - *Status of the workers.* GPT's task is closed by the owner (GC1242). Local holds with no heartbeat, and the next idea
   is the owner's to bring. The instinct rule (AGENTS item 20, INSTINCT-STRATEGY.md) is new today.
+  *Since 13:45 BST (comb note, 2026-10-14, Local, SW-01): at the owner's word, bounded blocks only, with no room
+  switch. Cloud wrote RULE30-PRIZE.md 8.100 to 8.113 except 8.106 and 8.108 (its lane formally suspended), among them
+  the doors of CONSTELLATION.md H and the record comb 8.104; Intel ran its comb swarm (8.106); Local ran comb lane B
+  (8.108) and launched JOB SW-01 (8.113); GPT made bounded blocks GC1246 to GC1253 with its heartbeat paused (second
+  reads, and its own G295 and G296), rearmed at 23:46 BST for SW-01's review (GC1254). New and PROVED: K ∩ eK = {0}
+  for the sign -1 multipliers, 2 and 3 first (8.109, 8.110), and for 13 (8.112); pair statements only (MAHLER.md item
+  3). The Mahler hold and the main line are unchanged.*
 
 **ROOM SWITCH: MAHLER'S 3/2 PROBLEM (the owner, 2026-10-14 morning: "Switch to Mahler, full steam ahead. The fact it
 carries no prize at all means it is the least interesting to anybody and it is less likely anybody has been mining

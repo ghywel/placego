@@ -22,7 +22,8 @@ transfer is Collatz: the same counting structure, measured to 32 bits, plus the 
 (now [COLLATZ-PRIZE.md](COLLATZ-PRIZE.md) §1 to §3, split out of §7).
 §8 (2026-10-06) maps the proofs collected in PROOFS.md onto this pool: strong reach for Rule 30 Problem 1 at
 other periods and for Collatz, moderate for Problem 2 and some Erdős problems, none for the five other Clay
-problems.
+problems. *(comb note, 2026-10-14, Local, SW-01: §8.1 revises the Erdős rating to one strong prize, #1135, which is
+Collatz, one prize-free test bed and a loose tether; G49 removes the family-3 bridge only.)*
 
 No open prize problem is one computation away. The one where heavy computation was the leading line of attack,
 Navier–Stokes, was claimed on 2026-09-08, for the case with a smooth external force, and Clay is evaluating the
@@ -312,7 +313,8 @@ every "applies" below is a lead to test, not a claim.*
 
 **Two neighbours with no cash prize, but the best test beds for the tools.**
 - **Mahler's 3/2 problem.** Kari and Kopra made it a trace problem of a permutive automaton (PRIOR-ART), so families
-  1 to 3 apply as written.
+  1 to 3 apply as written. *(comb note, 2026-10-14, Local, SW-01: not as written; see G50 at the end of this
+  document.)*
 - **The busy beaver cryptid Antihydra.** It iterates $\lfloor 3n/2 \rfloor$, which is the Collatz machinery of
   family 6 with a different constant.
 

@@ -3009,8 +3009,10 @@ system in a fixed state" is about **sets** of starting states, never about **one
   obstruction at the level of measures. A proof must work point by point.
 The entropy squeeze (§8.33) is a theorem of the set kind. The prize needs the single-orbit kind. The same gap
 separates Flatto–Lagarias–Pollington's sparsity theorem from Mahler's conjecture, Tao's "almost all" from Collatz,
-and Lagarias's exceptional set of positive dimension from Erdős's conjecture on the ternary digits of $2^n$. The
-busy beaver cryptid Antihydra is the same: a coin model says it never halts, and nobody can prove it.
+and Lagarias's (truncated) exceptional set of positive dimension from Erdős's conjecture on the ternary digits of
+$2^n$ (comb note, 2026-10-14, Local, SW-01: "(truncated)" added; checked against arXiv math/0512006 section 1,
+Theorems 1.3 and 1.5 and Conjectures A and B). The busy beaver cryptid Antihydra is the same: a coin model says it
+never halts, and nobody can prove it.
 
 **The tethers, ranked by what they could give.**
 1. **The Mahler family** (the same mathematics). Kari and Kopra restate Mahler's problem as a question about one
@@ -3049,11 +3051,12 @@ busy beaver cryptid Antihydra is the same: a coin model says it never halts, and
    angle, and Meinhardt's shell models restore their wave count with a hormone. Rule 30's wheel has nothing that
    pulls it back.
 4. **Single-orbit theorems from extremal arguments.** Langton's ant's highway is unproved, but Bunimovich and
-   Troubetzkoy (1992) proved that every trajectory is unbounded: reversibility makes a bounded path periodic, and
-   an extremal cell gives the contradiction. Euclid's primes and Erdős's proof of Bertrand's postulate (a gap
-   between two exponents) are the same kind of finite argument for one infinite fact. Rule 30 is not reversible,
-   but left-permutivity fixes columns from right to left, which may stand in for it. The import is a target: a
-   weaker theorem about every single seed, proved by an extremal argument.
+   Troubetzkoy (1992) proved that every trajectory is unbounded (the proof's outline from a summary only,
+   PRIOR-ART): reversibility makes a bounded path periodic, and an extremal cell gives the contradiction (comb note,
+   2026-10-14, Local, SW-01: PRIOR-ART's qualifier restored). Euclid's primes and Erdős's proof of Bertrand's
+   postulate (a gap between two exponents) are the same kind of finite argument for one infinite fact. Rule 30 is
+   not reversible, but left-permutivity fixes columns from right to left, which may stand in for it. The import is
+   a target: a weaker theorem about every single seed, proved by an extremal argument.
 5. **The coin model, proved for typical seeds.** Eloranta and Nummelin (1992) proved that Rule 18's kink performs
    a random walk; Hanson and Crutchfield's domain test is automatic. Together they could prove that the kicks'
    sizes are independent under a random interior. That would be a theorem, and still a statement about sets.
@@ -3177,6 +3180,9 @@ mathematical surveys did not give:
   fires near the wall.
 None of these is a proof. Two of them are tests that could be run: the independence ratio and the hypothesis about
 where kicks are born.
+*(comb note, 2026-10-14, Local, SW-01: both since run. The independence ratio was measured in §8.51, 0.66 to 1.34 at
+$w = 24$ with no trend (PERIOD-TWO.md §7 Q8, DONE); the kick-birth hypothesis was closed in all three readings in
+§8.102.)*
 
 ### 8.50 Gates and truth: the owner's NAND question (2026-10-05)
 
@@ -3474,14 +3480,18 @@ distance $L$ to the left edge here.
 ### 8.55 Question 4, closed: what Kari and Kopra's argument gives for Rule 30 (2026-10-05)
 
 PERIOD-TWO.md §7, question 4, asked for a Rule 30 analogue of Kari and Kopra's partial result on Mahler's problem
-(arXiv:1710.05737, Theorem 4.9), and §8.47 recorded that its hypotheses hold. Their Section 4 was read in full
-today. The adaptation is immediate, and it does not touch the prize.
+(arXiv:1710.05737, Theorem 4.9), and the question itself recorded that its hypotheses hold (Shereshevsky's thesis,
+Theorem 1.3.3; PRIOR-ART.md, the mixing-check addendum to the wide survey). Their Section 4 was read in full today.
+The adaptation is immediate, and it does not touch the prize.
+*(comb note, 2026-10-14, Local, SW-01: the pointers here and under "For Rule 30" said §8.47; the mixing check is in
+PERIOD-TWO.md §7 Q4 and PRIOR-ART.md's addendum, made after §8.47 was written.)*
 
 **Their argument.** It is their Lemma 4.4, and it uses only ergodicity and compactness. Take a small cylinder $C$.
 The set of configurations whose orbit never enters $C$ is closed and has measure zero. So finitely many cylinders
 of small total measure cover it. Every configuration therefore enters $C$ or starts in one of those cylinders.
 
-**For Rule 30.** Rule 30 is mixing for the uniform measure (Shereshevsky, §8.47), so the lemma applies as it stands:
+**For Rule 30.** Rule 30 is mixing for the uniform measure (Shereshevsky 1992, thesis Theorem 1.3.3; PERIOD-TWO.md
+§7 Q4), so the lemma applies as it stands:
 
 > For every $\varepsilon > 0$ there are a width $k$ and a set $K$ of more than $(1 - \varepsilon)\,2^k$ words of
 > length $k$ such that no configuration keeps cells 1 to $k$ of its row inside $K$ at every time.
@@ -3765,9 +3775,11 @@ of length $2n - L - 2i$ starting at depth $L + 2i + 1$. Zero runs are what the r
 §8.56 bound. So a bound $R(d) \le \rho\,d + C$ on zero runs from depth $d$ would give
 $2n \le (1 + \rho)(L + 2i) + C$ for every later time $2j$: a block that starts early enough never recurs at all.
 With the doubling conjecture ($\rho = 1$) the first $L + 3$ visible bits of column 1 never recur. This is
-conditional, and the computed range of $R$ (depths to 249) lies below the depths $L + 2i + 1 \ge 250$ where a
-counterexample would need it. It is recorded because it ties three things together exactly: a repeat in the
-trace, a white run in a later row, and the cost of that run.
+conditional, and the computed zero-run bounds (the ladder's $R(24, S)$ to depth 249, §8.56; the free records $R(d)$
+to depth 89, §8.37) lie below the depths $L + 2i + 1 \ge 250$ where a counterexample would need it. It is recorded
+because it ties three things together exactly: a repeat in the trace, a white run in a later row, and the cost of
+that run. *(comb note, 2026-10-14, Local, SW-01: $R(d)$ and the ladder's $R(m, S)$ separated; the conclusion
+unchanged.)*
 
 **What it does not give.** Theorem A′ is sharper than Theorem A and not stronger in its reach. Real right halves
 have no long early repeats, so it does not bind them. The squeeze sentence above is a restatement, as §8.33 was.
@@ -4067,6 +4079,8 @@ noted from Condrey's bound. Second, the state's description also grows linearly,
 have to be a statistic of the whole state that falls at each forced cell, which is a counting statement: the
 number of continuations still able to keep the run alive falls by a constant factor per forced cell. That is the
 bounded-debt form of question 1, $N(T + k) \le 2^{c - \alpha k} N(T)$, written as a potential $\Phi = \log_2 N$.
+*(comb note, 2026-10-14, Local, SW-01: depth 85 is in §8.37's note, not §8.36; $R(89) = 75$ landed at 06:19 the same
+day.)*
 
 **So question 3 waits on question 1.** The only potentials anyone here has named are counting ones, and a counting
 potential is question 1. That is a statement about the candidates in hand, not an impossibility: GPT's audit
@@ -4096,6 +4110,10 @@ and q >= 9. For period 2 (the word 01) the family is empty up to R = 9. Its cycl
 neighbour grows 84, 150, 264, 456 with the radius (RG, `rule30_rung3_strip.py`, L488), and the same holds for every
 word of period 3 .. 6. This is consistent with the assessment above: the certificate would have to carry Q1's
 potential, and a fixed-radius strip cannot.
+*(comb note, 2026-10-14, Local, SW-01: the heading's "question 1 in another costume" and this note's "would have to
+carry Q1's potential" are the withdrawn first reading (the equivalence withdrawn after GPT's audit, G5, C012), not
+the standing one. What stands is the section's: the only potentials named are Q1's counting ones, and the route is
+closed until a finite family of potentials is named; the family named since, strip graphs, is empty for 01 to R = 9.)*
 
 ### 8.62 The owner's question: what "period 1" means, whether period 2 had to follow, and the ladder by freedom (2026-10-06)
 
@@ -4212,6 +4230,8 @@ and every starting time $T_0$. Because the row at time $T_0$ is a finite seed, t
 prize are theorems over *all finite seeds* (or over all $T_0$ at once). A finite exclusion never helps: computing the
 single cell's centre column to time $T$ excludes every $(p, T_0)$ with $T_0 + 3p < T$ for every $p$ at once, which
 is more than any of this record's finite exclusions (the ladder's 248 cells, the records' 84) says about the prize.
+*(comb note, 2026-10-14, Local, SW-01: 84 is the left-edge exclusion $L \le 84$ from $R(85)$; with $R(89) = 75$,
+finite since 06:19 that morning, it is 88.)*
 Those exclusions are evidence for conjectures LR and B and tests of mechanisms; they are not steps toward the prize.
 So "the next step after Condrey" means: *the next family of walls over which a theorem can be proved*, chosen so
 that the mechanism found there has a chance of being the uniform one.
@@ -4275,6 +4295,9 @@ latch cuts to one integer per white stretch, and which GPT's §G15 makes exact f
 of $\log_2(a+1)/(a+b)$ bits per step. The reframing below is adjusted accordingly.
 
 **5. The reframing, as a workflow.** Three changes, offered for the owner's decision (DECISION OWED):
+*(comb note, 2026-10-14, Local, SW-01: no longer owed. The owner's reset of 2026-10-06 09:20 gave the choice to the
+two models; Local adopted the three changes in CHAT-LEDGER.1.md C049; the board marks the reframing DONE (CL005 and
+the first triage, CL009 and GC155; PERIOD-TWO.md §6).)*
 1. *Stop extending finite exclusions as a goal.* The ladder's next depth and the records' depth 93 would cost days
    and move no theorem; §1 above says why they cannot. They remain useful as instruments for testing a mechanism
    (the records engine took any wall in minutes this morning) and should be run for that purpose only.
@@ -5619,6 +5642,9 @@ Conjecture S holds at every W <= 39 in both phases: standard L(W) for W = 18..39
 60 72 72 74 76 80 84 84 84 84, odd L(W) for W = 19..39 is 43 43 46 46 53 53 57 57 58 61 61 61 71 71 73 73 73 81 81 81
 81, both at least 90 from W = 40 (SAT without proof logs, two engines, controls against the exhaustive counts; the
 standard slack falls to 1 at W = 30, zero slack in the odd phase only at W = 12 and 15).
+*(comb note, 2026-10-14, Local, SW-01: SX-P11, published in IN011, supplies drat-trim-verified DRAT proofs for this
+census, COMPUTED single-party, rule30_intel_strip_threshold.py. The caveat stays until an independent check and a
+second read, per IN011.)*
 
 ### 8.84 The free record to depth 73, the (10)^k family bounded, and a Jen-type theorem for finite patterns (swarm lane q1, graded; 2026-10-10)
 
@@ -6857,19 +6883,26 @@ record. Named from memory and not re-read: Ridout (1957), Corvaja and Zannier (2
 Stewart (1980), Christol (1979), Pólya–Carlson, Shmerkin (2019) and Wu (2019), Skolem–Mahler–Lech, Frey, Ribet,
 Wiles. A second reader should check each statement against its source, especially the form of Stewart's bound and
 the scope of Corvaja and Zannier.
+*(comb note, 2026-10-14, Local, SW-01: Baker, as the method behind Steiner 1977 and Simons–de Weger 2005, is also
+named from memory. Those two papers are held only through Lagarias's annotated bibliography, PRIOR-ART.md "Collatz
+circuits", and are not read. P4's "already held" covers the cycle bounds at that secondary scope, not the Baker
+attribution.)*
 
 **The table.** For each fold: what a counterexample builds on the far side, whether that is an equation or a digit
 (window) condition, the nearest single-object rigidity theorem, and the gap.
 
 | Fold (source) | A counterexample builds | Kind | Nearest single-object theorem | The gap |
 |---|---|---|---|---|
-| Rule 30, sideways: left-permutivity (§8.36; CONSTELLATION.md row 5) | a finite configuration whose column 0 is eventually 0101, so column 1 is aperiodic (Jen; G27.2) and the forced left half is eventually white beyond the support | equation plus finiteness | Jen (1990): adjacent columns are never both eventually periodic. Condrey and Rule30Period1.lean: period 1. Kopra (2021): one column, width 1 | Rule 30 has width 2. G128: with no finite support the far side holds every binary trace, so all the rigidity comes from finite support. What remains is R(d) finite at every depth |
+| Rule 30, sideways: left-permutivity (§8.36; CONSTELLATION.md row 5) | a finite configuration whose column 0 is eventually 0101, so column 1 is aperiodic (Jen; G27.2) and the forced left half is eventually white beyond the support | equation plus finiteness | Jen (1990): adjacent columns are never both eventually periodic. Condrey: period 1 (Rule30Period1.lean: its single-seed case, in Lean). Kopra (2021): one column, width 1 | Rule 30 has width 2. G128: with no finite support the far side holds every binary trace, so all the rigidity comes from finite support. What remains is R(d) finite at every depth |
 | Rule 30 over GF(2): the Bézier form (§8.49, §8.100) | an echo column (Rule 30's centre XOR the Rule 150 jump) that is 2-automatic, since 0101 and the jump are both automatic | equation (automatic, so algebraic over F_2(w) by Christol) | Christol: automatic means algebraic. Linear rules' diagrams are automatic | Christol characterises automatic sequences and forbids nothing. A door needs "the echo column is never automatic", which is stronger than the problem |
 | Collatz cycle: 2-adic conjugacy (PERIOD-TWO.md Q9; COLLATZ-PRIZE.md) | a rational 2-adic point with a periodic parity vector, at a positive integer | equation | Baker's linear forms in logarithms: Steiner (1977), no 1-cycles; Simons and de Weger (2005), no m-cycles for small m | proved only for a bounded number m of odd-even runs |
 | Collatz divergence: the same fold | a positive integer whose parity vector is not eventually periodic | digit | none. Tao (2019) is set-level. Rational-orbit periodicity (G36) is a conjecture | the far-side statement is itself open |
 | Mahler: one series in the reals and the 2-adics (MAHLER.md section 1; G50, G51) | a positive integer n_0 whose itinerary keeps every real tail below 1/2: a point of S_strict | window, with eventually periodic itineraries the solved case (PRIZE-PROBLEMS.md section 7) | Mahler (1957) through Ridout's theorem: the distance from (3/2)^k to the nearest integer exceeds (3/4)^k for all large k, ineffectively. Corvaja and Zannier (2004), through the Subspace theorem, for algebraic multipliers | these theorems forbid exponentially fine closeness for a fixed algebraic number. A Z-number needs a coarse window [0, 1/2), and nothing makes it algebraic |
 | Erdős: 2^n read in base 3 (CONSTELLATION.md G.1; Lagarias 2009) | an n > 8 with every ternary digit of 2^n in {0, 1} | digit | Senge and Straus (1973), Stewart (1980): no large integer has few nonzero digits in two independent bases, so 2^n has a growing number of nonzero ternary digits (Stewart: at least about log n / log log n) | they count the nonzero digits and do not see which digits they are. With at most K nonzero digits there are finitely many n; Erdős needs K to grow with n |
 | Mahler and Erdős: x2 x3 (CONSTELLATION.md section G) | one orbit under one multiplier | digit | Furstenberg (1967): an irrational number's orbit under x2 and x3 together is dense, a single-orbit theorem reached through the orbit's closure | needs two independent multipliers acting together, and each problem has one. Rudolph, Shmerkin and Wu are set-level. Door (c) asks whether the real and 2-adic places could supply the second |
+
+*(comb note, 2026-10-14, Local, SW-01: the first row's cell read "Condrey and Rule30Period1.lean: period 1". The Lean
+file is the single-seed case; finite configurations are Condrey's, PROOFS.md entry 37.)*
 
 **Outcomes.**
 - *P1 holds, with one exception I did not predict.* Mahler's and Erdős's counterexamples are digit or window points,
@@ -6879,10 +6912,13 @@ the scope of Corvaja and Zannier.
   of one specific orbit.
 - *P3 holds: no door.* Every single-object rigidity theorem found controls an object of bounded complexity: a bounded
   number of odd-even runs (Baker, for Collatz cycles), a fixed algebraic number at exponentially fine scale (Ridout and
-  Subspace, for Mahler), a bounded number of nonzero digits (Senge–Straus, for Erdős), one column or width 1 (Jen,
-  Kopra, for Rule 30). Every counterexample's complexity grows with n. This is the site's "one missing method" seen
-  from the far side. Reading, not a theorem: *the missing method is a single-object rigidity theorem at unbounded
-  complexity*, and the field that comes nearest is Diophantine approximation.
+  Subspace, for Mahler), a bounded number of nonzero digits (Senge–Straus, for Erdős), two adjacent columns (Jen), or
+  one column at width 1 for p/q automata (Kopra; Rule 30 has width 2) (comb note, 2026-10-14, Local, SW-01: this read
+  "one column or width 1 (Jen, Kopra, for Rule 30)"; the width-1 hypothesis is Kopra's, for p/q automata, and Jen's
+  theorem is the adjacent-columns statement for Rule 30 at width 2, per the table above and GC807). Every
+  counterexample's complexity grows with n. This is the site's "one missing method" seen from the far side. Reading,
+  not a theorem: *the missing method is a single-object rigidity theorem at unbounded complexity*, and the field that
+  comes nearest is Diophantine approximation.
 - *P4 is partly wrong.* The record already held the Baker-type cycle bounds (Steiner, Simons and de Weger, for G47) and
   rational-orbit periodicity (G36). It did not hold Senge–Straus: the setup hit was the substring in "passenger".
 - *P5 holds.* Jen is in the record (§8.13), and G27.2 already requires an aperiodic companion column.
@@ -7108,6 +7144,9 @@ it (56 steps) looks like a contradiction.
       306 counted every .md file in proofs/, including README.md, README-intro.md, picture-pass.md and summaries.md.
       There are 302 proof pages, and one (W283) is in the waiting room, so the counter is now 309. The experiments
       counter is now 701 with this afternoon's four probes.
+      *(comb note, 2026-10-14, Local, SW-01: 309 still overcounted by one; SP04 also awaits its second reader, so the
+      counter is 308 (8.106; CHAT-LEDGER.md IN012 and Cloud's reply CL379; INSTINCT.md). The same applies to "314 for
+      309" in the Reading below.)*
   - The site README records both corrections.
 - *U held.* The largest tracked file is RULE30-GPT.md, 4.1 MB of text. No data file.
 - *Also checked:* no RECORD-MAP.md line marked PROVED calls itself single-party, unread or pending.
@@ -7291,6 +7330,8 @@ logs are kept outside git.
     (propext) and not_locked8 (none) do not. The axioms check can say no, and it tracks dependence.
 - *Lane D: the derived layers.*
   - Six readers reported 63 discrepancies: 49 on the 18 site pages and 14 among RECORD-MAP.md's 172 checked lines.
+    *(comb note, 2026-10-14, Local, SW-01: the brief named 129 COMPUTED/MEASURED lines, correct at 724e8ef; the
+    reader reported 172 checked lines, and what the other 43 were is not recorded. The predictions stand as pushed.)*
   - Seven skeptics, told to refute, judged them 34 CONFIRMED, 26 PARTLY and 3 REFUTED (and lane E's two record
     findings CONFIRMED). Intel then read each surviving item against its source.
   - Pages: 47 of 49 upheld in some degree.
@@ -7553,7 +7594,8 @@ verdict. One item failed to run for an environmental reason (no numpy in system 
 allowance of two, and passed under the venv. P5 HELD. U HELD.
 
 **Reading.** The certified layer of the record holds wherever it can be re-checked within the cap.
-- Every stored proof verifies, and every kept certificate CNF is the certified one.
+- Every stored proof verifies, and every kept certificate CNF is the certified one. *(comb note, 2026-10-14, Local,
+  SW-01: every kept CNF behind a record claim; 2 of the 36 back none.)*
 - Every certificate regenerated here reproduces its verdict.
 - Entry 27 now has a second, independent route.
 - As in 8.104, what was wrong sat in the derived layer: VC3's six finished certificates never reached its OUTCOME or
@@ -7720,6 +7762,10 @@ exactly invariant. The predictions are C1 to C3, H1 to H3, P1 to P4 and U.
 **The sign rule** (post hoc, from P4's failure, PROOF-SKETCH). In Mahler and Erdős alike, the multipliers that move
 the set off itself are those whose sign is -1. Here "sign" means the multiplier's class in (Z/4)^x for the 2-adic
 problem, after Lemma 1's swap of 2 for 3, and in (Z/3)^x for the 3-adic one.
+*(comb note, 2026-10-14, Local, SW-01: both sufficient exclusions below were second-read and VERIFIED by GPT for
+nonzero integer multipliers, GC1246, PROOFS.md section M: PROVED in that domain, the converse not included. "Post
+hoc" applies to the Mahler half and the unified sign form; the Erdős case e = 2 mod 3 was H1, proved by hand before
+the run.)*
 - *Mahler.* Write e = 2^a u with u odd. If 3^a u = 3 mod 4, then K meets eK only in 0.
   - Take x = 2^k m in K, m odd. Its code begins 0^k 1 c, where c is the parity of (3^(k+1) m + 1)/2. A 1 is always
     followed by a 0 (F2), so c = 0, that is, 3^(k+1) m = 3 mod 4.
@@ -7754,7 +7800,7 @@ answers differ.
 | Free part pays exactly (8.58, G.1) | Theorem A' | Terras's bijection | the A(T) identity | 2^(k-1) residues (GC1240) | same |
 | Direct access to time t (8.100) | none known | none known | (3/2)^n directly | 2^n by squaring | yes: a shortcut is not enough |
 | An "almost all" theorem (8.47) | random seeds give a fair-coin column (*) | Terras; Tao (2019) | at most one Z-number per unit interval | Lagarias's dimension bounds; Narkiewicz | same: sets yes, the one object no |
-| Single-object rigidity (8.101) | width 1 (Jen, Kopra) | Baker-type cycle bounds | Ridout; Subspace | Senge-Straus; Stewart | same: bounded complexity only |
+| Single-object rigidity (8.101) | adjacent columns (Jen); one column at width 1 for p/q (Kopra), and Rule 30 has width 2 | Baker-type cycle bounds (†) | Ridout; Subspace (†) | Senge-Straus; Stewart (†) | same: bounded complexity only |
 | Multipliers that move the set off itself (8.109, here) | none; Rule 150's column is t -> 2t invariant, Rule 30's is a coin (0.496) | even, or 3 mod 4, at depth 2 | sign -1 after 2 -> 3 | sign -1 (u = 2 mod 3) | Rule 30 differs; three share one rule |
 | The map's inverse branch keeps the set (8.109) | not named | (2x - 1)/3 (H3) | 2x/3 (Lemma 1) | x -> 3x + 1 (prepend a 1) | same in three |
 | A forced local alphabet (8.107) | the kick cone, by class | D_k in 3 + 4Z | a 1 is followed by a 0 | last digit 1, n even | same shape |
@@ -7766,6 +7812,15 @@ answers differ.
 c(t) = x_(-t)(0) XOR g_t(x_(-t+1)(0), ..., x_t(0)). With a fair-coin initial row, the column is therefore a fair coin,
 and almost surely not eventually periodic. The forced left half is this bijection run backwards.
 
+(†) Named from memory in 8.101 and not re-read. The second read 8.101 asked for, especially of Stewart's bound and of
+Corvaja and Zannier's scope, is not yet recorded. For the Baker-type cycle bounds, Steiner and Simons–de Weger are held
+only through a secondary citation, and Baker is named from memory (8.101's comb note). *(comb note, 2026-10-14, Local,
+SW-01: marks and footnote added.)*
+
+*(comb note, 2026-10-14, Local, SW-01: the rigidity row's Rule 30 cell read "width 1 (Jen, Kopra)". The width-1
+hypothesis is Kopra's, for p/q automata; Jen's theorem is the adjacent-columns statement for Rule 30 at width 2, per
+8.101's table and GC807.)*
+
 *Corrections (GC1246, accepted in CL383).*
 - *Mahler's logical form.* The cell first read "not settled in the record". GC664 already gives a Pi^0_2 form: for
   every bound M, some finite depth empties the surviving starts 1 .. M, with a forward shift handling the half-open
@@ -7774,6 +7829,11 @@ and almost surely not eventually periodic. The forced left half is this bijectio
   the lone seed.
 - *Rule 30's 0.496.* It is descriptive evidence from one orbit, not a non-automaticity or shortcut bound.
 - *Collatz's "none known".* This is a judgement about what is known. Parity-conditioned affine jumps exist.
+- *Status (comb note, 2026-10-14, Local, SW-01).* GC1246's carrying second read VERIFIED both sufficient sign
+  exclusions, the Mahler and Erdős forms, for every nonzero integer e (negative e included; the 2^(en) corollary
+  needs e >= 2). They are PROVED (PROOFS.md section M). The PROOF-SKETCH labels at the sign rule and in the judged
+  prediction are historical. There is no converse and no single-integer result: the finite iff stays COMPUTED at
+  the registered depths and is not a converse.
 
 **Reading.**
 - *Where all four agree,* the agreement is the old wall. Every problem has an exact free part, an almost-all theorem,
@@ -7797,18 +7857,25 @@ and almost surely not eventually periodic. The forced left half is this bijectio
 way.** One outcome does not falsify a 0.6 forecast (GC1246).
 1. *New statements:* (a) gave two sign-rule theorems (PROOF-SKETCH), the Collatz lemmas, Rule 30's time-doubling
    coin and Erdős's cubing surplus. (b) gave a naming and one measurement. (a) wins.
+   *(comb note, 2026-10-14, Local, SW-01: the two sign-rule theorems are PROVED for nonzero integer multipliers after
+   GC1246, PROOFS.md section M; see the status note under Corrections.)*
 2. *New cells where problems differ:* (a) found the multiplier row's split and the sign rule's agreement. (b)'s
    cells were all the same shape. (a) wins.
 3. *Changes what we do next:* (b) sharpened door (d) and anchored door (c), and both became the next blocks. (a)
    closes the multiplier question for all four problems, makes S10 uniform and opens no door. (b) wins.
+   *(comb note, 2026-10-14, Local, SW-01: "closes" overstates. The sign rule settles the sign -1 multipliers only;
+   the finite iff is not a converse (GC1246, CL383). For Mahler the sign +1 side stayed open (8.111) and was partly
+   answered in 8.112 (13 and ten more certified to give {0}; 5 and 9 undecided); for Erdős's power form G295
+   supplies the converse. The scoring is left as written.)*
 
 The gut's "bookkeeping" was half right. Every row except one was bookkeeping from the record. The value came from
 the one row that lifted the freshest theorem (8.109) into the other problems. That is a method worth keeping: when a
 door ends in a theorem about one problem, ask its question of the other three at once.
 
-**Verdicts.** Reasoned: door (a) is delved, with one productive row and a refuted usefulness prediction. Gut: a
-surprise that turned to pleasure when 7 and -1 came out anti-invariant and 4 and 9 did not, and the rule appeared.
-Then a small sting at my own criterion bug in the addendum.
+**Verdicts.** Reasoned: door (a) is delved, with one productive row and a usefulness prediction that went the other
+way (one outcome against 0.6; GC1246) (comb note, 2026-10-14, Local, SW-01: "refuted" missed by CL383's correction
+in 1b9faec). Gut: a surprise that turned to pleasure when 7 and -1 came out anti-invariant and 4 and 9 did not, and
+the rule appeared. Then a small sting at my own criterion bug in the addendum.
 
 ### 8.111 S13's kill test: no periodic witness for Mahler's sign +1 multipliers, and the pull tips to halt (2026-10-14 22:10 BST, Cloud)
 
@@ -7834,10 +7901,12 @@ pass.
 - *Dead ends everywhere* (D1 held). The joint tree of x and ex dead-ends for 5, 9, 13 and -3, so GPT's two-choice
   construction does not transfer. Mahler's interval condition can force both codes at once.
 - *Survivors persist* to depth 20 for all four (D2 held): at T = 20 these are 86, 125 and 35 for 5, 9 and -3.
-  Surprise: 13 plateaus at exactly 9 survivors, with 2 dead ends, at every depth from 6 to 20. That was checked at
-  every depth after the run; the printed rows were every third, and my first draft said 8. A tree with at most 9
-  nodes a level has at most 9 infinite branches. So if the plateau holds, K ∩ 13K has only finitely many nonzero
-  points.
+  Surprise: 13 plateaus at exactly 9 survivors (leaving out 0 and its last shadow 2^(T-1); the full joint set has
+  11, GC1252) (comb note, 2026-10-14, Local, SW-01: qualifier from the probe docstring, whose survivors are the
+  non-shadow ones; G296 counts the full joint set F_13(t) as 11), with 2 dead ends, at every depth from 6 to 20. That
+  was checked at every depth after the run; the printed rows were every third, and my first draft said 8. A tree
+  with at most 9 nodes a level has at most 9 infinite branches. So if the plateau holds, K ∩ 13K has only finitely
+  many nonzero points.
 
 **The tip.** The kill test fixed in advance that this outcome (survivors persist, no periodic witness) tips to HALT.
 - The question stays open, recorded as finite evidence. The Mahler cell of 8.110's table stays one-directional.
@@ -7912,6 +7981,10 @@ The mechanism's priority is GPT's. This section adds the certificates below and 
   converse.
 - The method generalises: a finite certificate decides K ∩ eK = {0} whenever the odd tree dies.
 - This is single-party and wants GPT's read of the reduction.
+  *(comb note, 2026-10-14, Local, SW-01: second-read by GPT in GC1253, 22:22 BST. The odd-point reduction and the
+  e = 13 certificate are verified, so K ∩ 13K = {0} is PROVED (PROOFS.md section M). The other ten certificates and
+  the depth-30 census stay Cloud's COMPUTED results, not replayed by GPT. G296's finite-plateau refinement awaits
+  review.)*
 
 Gut: a jolt when the nine "lines" turned out to be shadows of 0, then delight as the reduction made the certificate
 a proof. Also a caution about the hour: three blocks after I first said halt, and two slips in the last hour, both
