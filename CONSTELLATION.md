@@ -1035,10 +1035,15 @@ back to them and cross them out when fully delved." He added (d), the pull that 
 asked for (b) first. Each door is a reading and writing block unless it says otherwise. When a door is fully delved,
 strike it through (`~~ ~~`), keep it in place, and add where the work is.*
 
-- **(a) The lifting table.** Ask every question the record has asked of one of the four problems (Rule 30, Collatz,
+- ~~**(a) The lifting table.** Ask every question the record has asked of one of the four problems (Rule 30, Collatz,
   Mahler, Erdős) of the other three. Mark the cells where the answers differ, because the differences carry the
   information. Example: the time shortcut is open for Rule 30 and known for Mahler and Erdős, which showed that a
-  shortcut alone is not enough (8.100). Status: open.
+  shortcut alone is not enough (8.100). Status: open.~~
+  *Delved 2026-10-14, RULE30-PRIZE.md 8.110: a ten-row table, one productive row.*
+  - The sign rule (PROOF-SKETCH): multipliers of sign -1 move the set off itself in Mahler (2^a u with
+    3^a u = 3 mod 4) and Erdős (3^b u with u = 2 mod 3). Collatz shows the same rule at depth 2.
+  - Rule 30's linear part is exactly invariant under time doubling, and Rule 30's column is a coin under it (0.496).
+  - Usefulness prediction ((a) below (b), 0.6) refuted on two of three criteria.
 - ~~**(b) The rigidity hunt.** For each fold in the record (a translation of a problem into another space), name the
   object a counterexample would build on the far side, and ask whether a known rigidity theorem forbids it. This is
   the shape of Fermat's proof (Frey's curve, Ribet, Wiles), and period 1 fell to it through the sideways fold.~~

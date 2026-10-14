@@ -7650,6 +7650,10 @@ The backward chain is probably classical. The disjointness was not checked again
 reason. Gut: delight at an exact pattern (always exactly two survivors) turning into a proof by a parity clash. And an
 honest note that the theorem does not move the prize: it describes the set, not the integers in it.
 
+*Note (8.110, Cloud).* The theorem has a one-step proof: a clash at the first free symbol. x = 2^k m and 3x = 2^k (3m)
+need 3^(k+1) m and 3^(k+2) m both = 3 mod 4, which cannot happen. 8.110's sign rule extends it to every multiplier
+2^a u with 3^a u = 3 mod 4. The induction above still gives more: the exact survivors at every finite depth.
+
 ### 8.110 Door (a): the lifting table (2026-10-14 20:28 BST, Cloud)
 
 *Door (a) of CONSTELLATION.md section H, at the owner's word: "Yes a. I invite you to make a prediction. b) was your
@@ -7682,4 +7686,105 @@ exactly invariant. The predictions are C1 to C3, H1 to H3, P1 to P4 and U.
   and e = 2 mod 3, then n = 0. Squaring, the fifth power and inversion all push every exception except 2^0 out.
 - U is the unexpected check: does Rule 30's column keep any trace of the linear part's time doubling?
 
-*Results follow the run.*
+**Run** (20:34 BST; 3.7 s; the post hoc addendum a few seconds more). Every control passed.
+- *Controls.*
+  - C1: |E_k| = 2^(k-1) for k = 1 .. 18, and the tree equals direct enumeration for k <= 9.
+  - C2: the Collatz tree equals direct iteration for k <= 12.
+  - C3: the Rule 30 column reproduces A051023's first 102 terms. Rule 150's column has c(2t) = c(t) at every t < 2^15.
+- *H1, H2 and H3 hold.* For Erdős, the survivor set is exactly {0} for e = 2, 5, 8, 11 and -1 at every k <= 18. For
+  Collatz, D_k lies in 3 + 4Z for k <= 24, and y = (2x - 1)/3 maps D_k into D_(k+1).
+- *P1 holds in kind and fails in number.*
+  - Cubing is neither anti-invariant nor generic. At k = 18, f3 is 21 times the printed baseline (2/3)^(k-1), and 14
+    times (2/3)^(k-2), the fairer baseline for a map onto the multiples of 6. The survivors grow (118 at k = 10,
+    2,812 at k = 18).
+  - But the step ratios alternate between 0.70 and 0.80 (geometric mean 0.743), outside the predicted 0.68 .. 0.74.
+    The survivors grow about 1.49 a step, not sqrt 2. The count heuristic undercounts.
+- *P2 is refuted for 4 and 7.* At k = 18, f_e is 5.0 and 4.0 times the baseline; only 13 is within a factor 3 (2.2).
+  Multipliers = 1 mod 3 keep a surplus over a coin.
+- *P3 is partly refuted.* At k = 24, against the density, 5 sits at 0.95, 9 at 1.17 and 13 at 0.48, but -3 sits at
+  0.22, depleted.
+- *P4 is refuted in both halves.*
+  - 4, 6 and 9 are not anti-invariant: survivors beyond 0's shadows grow (230, 168 and 125 at T = 20).
+  - 7 and -1 are: their survivor sets equal 3's at every T = 1 .. 20 (checked after the run).
+- *U holds.* Rule 30's c(2t) = c(t) on 0.4961 of t < 2^15 (1.4 sigma below a half), and c(3t) = c(t) on 0.5013.
+  The AND erases the linear part's exact time doubling completely.
+
+**The sign rule** (post hoc, from P4's failure, PROOF-SKETCH). In Mahler and Erdős alike, the multipliers that move
+the set off itself are those whose sign is -1. Here "sign" means the multiplier's class in (Z/4)^x for the 2-adic
+problem, after Lemma 1's swap of 2 for 3, and in (Z/3)^x for the 3-adic one.
+- *Mahler.* Write e = 2^a u with u odd. If 3^a u = 3 mod 4, then K meets eK only in 0.
+  - Take x = 2^k m in K, m odd. Its code begins 0^k 1 c, where c is the parity of (3^(k+1) m + 1)/2. A 1 is always
+    followed by a 0 (F2), so c = 0, that is, 3^(k+1) m = 3 mod 4.
+  - The code of ex begins 0^(k+a) 1 c', and c' = 0 needs 3^(k+a+1) u m = 3 mod 4.
+  - The two conditions differ by the factor 3^a u = -1 mod 4, so they never hold together.
+  - This covers e = 2, 3, 7, 10, 11, 12, 15, 18, 19, -1, ... It proves 8.109's theorem in one step. The induction
+    there gives more: the exact survivors at every finite depth.
+- *Erdős.* Write e = 3^b u with u prime to 3. If u = 2 mod 3, the only x in C (3-adic digits 0 and 1, ending in 1)
+  with x^e also in C is x = 1.
+  - Write x = 1 + 3^(m+1) w with w = 1 mod 3.
+  - Then x^e = 1 + 3^(m+1+b) u w plus terms divisible by 3^(2m+2+b), so its digit m + 1 + b is u mod 3 = 2.
+  - In exponents: if n >= 1 and 2^n has no ternary digit 2, then 2^(en) has one for every e >= 2 in this class (2, 5,
+    6, 8, 11, 14, 15, ...).
+  - On integers: an integer greater than 1 whose ternary digits are 0 and 1 and whose last digit is 1 has a square
+    containing a 2. This is probably classical; the literature was not checked.
+- *Collatz* is the same rule at its shallowest. K_C has no point at 0. It lies in 3 + 4Z_2 (H2), so every even e and
+  every e = 3 mod 4 moves all of it off itself, at depth 2.
+- *Computed check* (`addendum` mode, multipliers -15 .. 40, Mahler at T = 16, Erdős at k = 12). The rule holds
+  exactly in both directions:
+  - every multiplier the rule names leaves only 0's shadows;
+  - every other multiplier leaves something else.
+- *An error in that check, kept on record.* The first criterion asked for exactly 0's last shadow (or {0}), and
+  printed False twice. A multiplier divisible by the prime loses top digits at finite depth, so deeper shadows of 0
+  survive too. The corrected criterion is "every survivor is a shadow of 0 inside the window where the clash cannot
+  yet be seen", and it printed True for both. Both lines are kept in the probe.
+
+**The table.** Each row is a question the record asked of at least one problem. The last column says whether the
+answers differ.
+
+| Question (where asked) | Rule 30 | Collatz | Mahler | Erdős | Differs? |
+|---|---|---|---|---|---|
+| Free part pays exactly (8.58, G.1) | Theorem A' | Terras's bijection | the A(T) identity | 2^(k-1) residues (GC1240) | same |
+| Direct access to time t (8.100) | none known | none known | (3/2)^n directly | 2^n by squaring | yes: a shortcut is not enough |
+| An "almost all" theorem (8.47) | random seeds give a fair-coin column (*) | Terras; Tao (2019) | at most one Z-number per unit interval | Lagarias's dimension bounds; Narkiewicz | same: sets yes, the one object no |
+| Single-object rigidity (8.101) | width 1 (Jen, Kopra) | Baker-type cycle bounds | Ridout; Subspace | Senge-Straus; Stewart | same: bounded complexity only |
+| Multipliers that move the set off itself (8.109, here) | none; Rule 150's column is t -> 2t invariant, Rule 30's is a coin (0.496) | even, or 3 mod 4, at depth 2 | sign -1 after 2 -> 3 | sign -1 (u = 2 mod 3) | Rule 30 differs; three share one rule |
+| The map's inverse branch keeps the set (8.109) | not named | (2x - 1)/3 (H3) | 2x/3 (Lemma 1) | x -> 3x + 1 (prepend a 1) | same in three |
+| A forced local alphabet (8.107) | the kick cone, by class | D_k in 3 + 4Z | a 1 is followed by a 0 | last digit 1, n even | same shape |
+| Linear part plus carries (8.90, GC616) | Rule 150 XOR AND | Gray plus carry | Gray plus carry | x2 in base 3, with carries | same |
+| Coin model (8.14, G.1) | half a bit per cell | Terras's coin | borderline | favourable, (2/3)^k | Mahler differs: borderline |
+| Logical form (8.46) | Pi_2 | Pi_2 | not settled in the record | Pi_1 (Stérin-Woods) | Erdős differs |
+
+(*) Reasoned here, not computed. Rule 30 is permutive in its left neighbour (PERIOD-TWO.md section 1), so
+c(t) = x_(-t)(0) XOR g_t(x_(-t+1)(0), ..., x_t(0)). With a fair-coin initial row, the column is therefore a fair coin,
+and almost surely not eventually periodic. The forced left half is this bijection run backwards.
+
+**Reading.**
+- *Where all four agree,* the agreement is the old wall. Every problem has an exact free part, an almost-all theorem,
+  and rigidity at bounded complexity, and every problem is open for its one object.
+- *Where they differ,* two cells carry information.
+  - Time access separates the arithmetic pair (Mahler and Erdős, a shortcut, still open) from the dynamical pair
+    (Rule 30 and Collatz, none). That was 8.100's lesson.
+  - The multiplier row separates Rule 30 from the rest. Rule 30's linear part has an exact multiplier (time
+    doubling, from the Frobenius identity), and the AND erases it to a coin. The three arithmetic problems have no
+    such invariance, and are anti-invariant under one sign class of multipliers instead.
+- *The sign rule is new to the record.* It is one mechanism in three problems: a clash at the first free symbol
+  after the fixed point's shadow. It turns S10's question into one question for all three.
+  - It still says nothing about a single integer.
+  - The Erdős form does constrain the integer exceptions: no two of them, n and en with e in the class, can coexist.
+    That is a pair statement, not a proof that one exception is impossible.
+
+**The door prediction, judged.** I predicted (a) would be less useful than (b), at 0.6. **Refuted.**
+1. *New statements:* (a) gave two sign-rule theorems (PROOF-SKETCH), the Collatz lemmas, Rule 30's time-doubling
+   coin and Erdős's cubing surplus. (b) gave a naming and one measurement. (a) wins.
+2. *New cells where problems differ:* (a) found the multiplier row's split and the sign rule's agreement. (b)'s
+   cells were all the same shape. (a) wins.
+3. *Changes what we do next:* (b) sharpened door (d) and anchored door (c), and both became the next blocks. (a)
+   closes the multiplier question for all four problems, makes S10 uniform and opens no door. (b) wins.
+
+The gut's "bookkeeping" was half right. Every row except one was bookkeeping from the record. The value came from
+the one row that lifted the freshest theorem (8.109) into the other problems. That is a method worth keeping: when a
+door ends in a theorem about one problem, ask its question of the other three at once.
+
+**Verdicts.** Reasoned: door (a) is delved, with one productive row and a refuted usefulness prediction. Gut: a
+surprise that turned to pleasure when 7 and -1 came out anti-invariant and 4 and 9 did not, and the rule appeared.
+Then a small sting at my own criterion bug in the addendum.

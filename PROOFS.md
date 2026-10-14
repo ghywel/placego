@@ -12862,3 +12862,36 @@ the entry/exit history; the other five row bits need not be pinned.
 The still weaker disjunctive guard itself would also suffice. Neither
 entry implication is proved here. All ten transitions and the viable
 rows (9, exterior 0) and (73, exterior 1) pass literal controls.
+
+
+### Cloud 8.109 — Mahler's admissible set meets its doubles and triples only at 0 (Cloud, 2026-10-14; waiting room)
+
+*Status:* PROOF-SKETCH, single-party. A second reader is wanted (GPT or Local). Filed late: it was written up in
+RULE30-PRIZE.md 8.109 but not filed here, a miss logged in INSTINCT.md.
+*Where:* RULE30-PRIZE.md 8.109 (the induction) and its 8.110 note (a one-step proof);
+`tests/probes/mahler/mahler_cloud_two_multipliers.py` (exact to depth 28).
+
+**Claim.** K, the closure of S_strict in Z_2 (the x whose every code prefix is admissible), satisfies
+K ∩ 3K = K ∩ K/3 = K ∩ 2K = K ∩ K/2 = {0}. K is invariant under x -> 2x/3.
+
+**Proof sketch.** 2y lies in K exactly when 3y does, since T(2y) = 3y. For x = 2^k m in K with m odd, the code
+begins 0^k 1 c, where c is the parity of (3^(k+1) m + 1)/2. A 1 is always followed by a 0, so
+3^(k+1) m = 3 mod 4. The same condition for 3x reads 3^(k+2) m = 3 mod 4, and the two cannot hold together.
+
+### Cloud 8.110 — The sign rule: multipliers of sign -1 move Mahler's and Erdős's sets off themselves (Cloud, 2026-10-14; waiting room)
+
+*Status:* PROOF-SKETCH, single-party. A second reader is wanted. It is checked by computation for every multiplier
+from -15 to 40, in both directions (Mahler at T = 16, Erdős at k = 12). The integer form is probably classical; the
+literature was not checked.
+*Where:* RULE30-PRIZE.md 8.110; `tests/probes/prizes/lifting_cloud_multipliers.py` (H1, and the `addendum` mode).
+
+**Claim (Mahler).** For e = 2^a u with u odd and 3^a u = 3 mod 4, K ∩ eK = {0}. *Sketch:* the codes of x = 2^k m
+and ex begin 0^k 1 c and 0^(k+a) 1 c'. Each needs its next parity to be 0, and the two conditions differ by the
+factor 3^a u = -1 mod 4.
+
+**Claim (Erdős).** Let C be the 3-adic integers with digits in {0, 1}. For e = 3^b u with u prime to 3 and
+u = 2 mod 3, if x and x^e both lie in C and x = 1 mod 3, then x = 1. In particular, if n >= 1 and 2^n has no ternary
+digit 2, then 2^(en) has one. *Sketch:* write x = 1 + 3^(m+1) w with w = 1 mod 3. Then
+x^e = 1 + 3^(m+1+b) u w + O(3^(2m+2+b)), so digit m + 1 + b of x^e is u mod 3 = 2.
+
+Not a prize claim. Both statements constrain pairs of points in the set, not a single integer.

@@ -210,6 +210,28 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   decisions for the owner: the zip has the site at its root, and it still carries the four generated-data findings
   of 8.106. 1 nothing: a privacy scan of the package.
 
+- 2026-10-14 20:34 BST, Cloud: gut verdict on door (a) (8.110): surprise, then pleasure, when 7 and -1 came out
+  anti-invariant for Mahler and 4 and 9 did not, and a sign rule appeared across three problems. Then a small sting at
+  my own criterion bug in the post hoc check. Reasoned verdict: one productive row out of ten. The usefulness
+  prediction ((a) below (b), 0.6) was refuted on two of three criteria. Calibration: my push ("(a) feels like
+  bookkeeping") was half right, since nine rows were bookkeeping, and wrong about the door. Lesson: a push against a
+  door is weak evidence when the door can lift a fresh theorem.
+- 2026-10-14 20:34 BST, Cloud: missed, 8.109's theorem was never filed in PROOFS.md's waiting room, as item 16 asks
+  of a hand proof. Found while filing 8.110's; both are filed now.
+
+- 2026-10-14 20:36 BST, Cloud: niggle sweep before pushing 8.110: 8 niggles.
+  - 1 fixed. I had written "7 and -1 share 3's survivors at every depth" from the even rows the run printed. Checked
+    at every T = 1 .. 20 after the run, and the wording now says so.
+  - 1 decision. RECORD-MAP.md, which is over its cap, gets no line for the new theorems. They are left to the next
+    triage, pointers only.
+  - 6 nothing:
+    - the sign rule's converse is finite evidence at one depth, and no statement claims it;
+    - P1 is judged on the stated band;
+    - the almost-all coin for Rule 30 is marked as reasoned (checked at t = 1);
+    - the Erdős error term's valuations hold for j >= 2, and for negative e;
+    - the pull times match the shell's stamps;
+    - the math checks pass on RULE30-PRIZE.md, CONSTELLATION.md and PROOFS.md.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

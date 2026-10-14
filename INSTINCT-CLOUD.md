@@ -126,3 +126,15 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   holds for every point of K, an uncountable set that treats integers and 2-adic non-integers alike, so on its own it
   cannot single out an integer: the sets-against-single-objects wall again. It would need an integer-only ingredient
   beside it. Kept open, low.
+
+**S11.** 2026-10-14, about 20:30 BST.
+- **Doing:** reading door (a)'s run (RULE30-PRIZE.md 8.110); Erdős's cubing keeps survivors near 0.
+- **Pull:** the survivors grow about 1.49 a step where the count heuristic says sqrt 2, and the step ratios alternate
+  0.70 and 0.80 with k's parity. What does the heuristic miss? And the same tangency for Mahler's sign +1
+  multipliers: are their survivors near 0 too?
+
+**S12.** 2026-10-14, about 20:34 BST.
+- **Doing:** writing up the sign rule's integer form (8.110).
+- **Pull:** "an integer greater than 1 with ternary digits 0 and 1, ending in 1, has a square containing a 2". Where is
+  this in the literature, and does the pair form (no exceptions n and en together) appear in the Erdős papers?
+

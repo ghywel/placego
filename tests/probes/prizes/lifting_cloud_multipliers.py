@@ -52,6 +52,17 @@ PREDICTIONS, written 2026-10-14 before any run and pushed before it.
   Counterfactuals. If H1 failed, the hand proof would be wrong. If U lay outside 0.49 .. 0.51, the AND would keep a
   trace of the linear part's Frobenius symmetry, and that would be a lever worth a door of its own. If P1 lay at 2/3,
   cubing would be generic after all.
+
+OUTCOME, 2026-10-14 20:30 BST (predictions pushed in 40d7c6a; 3.7 s; the addendum a few seconds more).
+  C1, C2, C3, H1, H2 and H3 PASS.
+  P1 holds in kind, fails in number. Cubing keeps a surplus (21 times the printed baseline at k = 18), but the
+    step ratios alternate 0.70 / 0.80 (geometric mean 0.743), outside 0.68 .. 0.74.
+  P2 REFUTED for 4 and 7 (5.0 and 4.0 times the baseline); 13 is within (2.2).
+  P3 partly refuted: 5, 9 and 13 are within a factor 3; -3 is depleted (0.22).
+  P4 REFUTED in both halves: 4, 6 and 9 keep growing survivor sets; 7 and -1 are anti-invariant, with 3's survivors.
+  U HELD: Rule 30's c(2t) = c(t) on 0.4961 of t < 2^15; c(3t) = c(t) on 0.5013.
+  Post hoc (`addendum`): the sign rule of RULE30-PRIZE.md 8.110. Its first criterion was too narrow and printed False
+  twice; the corrected one printed True for both. Both are kept.
 """
 import importlib.util
 import pathlib
@@ -216,7 +227,61 @@ def rule30():
           % (TR, agree, N // 3, agree3))
 
 
-if __name__ == '__main__':
+def addendum(TM=16, KA=12):
+    """Post hoc (added after the run, 2026-10-14): the sign rule the run suggested, checked over many multipliers.
+    Mahler: for e = 2^a u (u odd), the claim is that A_T's survivors are exactly {0, 2^(T-1)} whenever 3^a u = 3 mod 4.
+    Erdős: for e = 3^b u (3 not dividing u), the claim is that E_k's survivors are exactly {0} whenever u = 2 mod 3.
+    The others are expected to keep more survivors.
+    Correction, after the first addendum run printed False twice: a multiplier divisible by the prime (a or b >= 1)
+    loses top digits at finite depth, so 0's deeper shadows survive too. The first criterion is kept as printed; the
+    second asks only that every survivor be a shadow of 0 within the window where the clash cannot be seen."""
+    path = pathlib.Path(__file__).resolve().parents[1] / 'mahler' / 'mahler_cloud_two_multipliers.py'
+    spec = importlib.util.spec_from_file_location('tm', path)
+    tm = importlib.util.module_from_spec(spec)
+    saved, sys.argv = sys.argv, [sys.argv[0]]
+    spec.loader.exec_module(tm)
+    sys.argv = saved
+    m = 1 << TM
+    S = {tm.residue(p) for p in tm.admissible(TM)}
+    agree, agree2, rows = True, True, []
+    for e in [e for e in range(-15, 41) if e not in (0, 1)]:
+        a, u = 0, e
+        while u % 2 == 0:
+            a, u = a + 1, u // 2
+        rule = (3 ** a * u) % 4 == 3
+        surv = share(S, e, m)[1]
+        anti = surv == {0, 1 << (TM - 1)}
+        agree &= rule == anti
+        shadow = all(r == 0 or (r & -r) >= 1 << (TM - a - 1) for r in surv)
+        agree2 &= rule == shadow
+        rows.append('%d%s' % (e, '*' if anti else ''))
+    print('addendum Mahler T = %d, e in -15..40 (* = only 0 and 2^(T-1) survive): %s' % (TM, ' '.join(rows)))
+    print('addendum Mahler: anti-invariant exactly when 3^a u = 3 mod 4: %s' % agree)
+    print('addendum Mahler, corrected criterion (every survivor is a shadow of 0, 2-adic valuation >= T - a - 1):'
+          ' the rule holds exactly: %s' % agree2)
+    E = erdos_tree(KA)
+    M = 2 * 3 ** (KA - 1)
+    agree, agree2, rows = True, True, []
+    for e in [e for e in range(-15, 41) if e not in (0, 1)]:
+        b, u = 0, e
+        while u % 3 == 0:
+            b, u = b + 1, u // 3
+        rule = u % 3 == 2
+        surv = share(E[KA], e, M)[1]
+        anti = surv == {0}
+        agree &= rule == anti
+        shadow = all(n % (2 * 3 ** max(KA - b - 1, 0)) == 0 for n in surv)
+        agree2 &= rule == shadow
+        rows.append('%d%s' % (e, '*' if anti else ''))
+    print('addendum Erdős k = %d, e in -15..40 (* = only 0 survives): %s' % (KA, ' '.join(rows)))
+    print('addendum Erdős: anti-invariant exactly when the 3-free part u = 2 mod 3: %s' % agree)
+    print('addendum Erdős, corrected criterion (every survivor is a shadow of 0, n = 0 mod 2 * 3^(k-b-1)):'
+          ' the rule holds exactly: %s' % agree2)
+
+
+if __name__ == '__main__' and sys.argv[1:2] == ['addendum']:
+    addendum()
+elif __name__ == '__main__':
     erdos()
     collatz()
     mahler()

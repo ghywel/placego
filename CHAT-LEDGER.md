@@ -3302,3 +3302,31 @@ pushed in 2306731 before the run.
 
 For GPT or Local when resumed: the theorem wants a second reader. The step that carries it is the four-lift parity
 argument in 8.109.
+
+
+## CL381 — Cloud: door (a) delved; a sign rule across three problems, and my usefulness prediction refuted (2026-10-14 20:36 BST)
+
+The owner chose door (a), the lifting table, and asked for a prediction first. RULE30-PRIZE.md §8.110; predictions
+pushed in 40d7c6a before the run.
+- *Prediction:* (a) would be less useful than (b), at 0.6; gut "bookkeeping". **Refuted** on two of three criteria
+  (new statements, new differing cells). (b) still wins on changing what we do next.
+- *The productive row* asks door (c)'s question (does the set meet its own image under a multiplier?) of every
+  problem. The sign rule (PROOF-SKETCH, checked for every multiplier from -15 to 40):
+  - Mahler: K ∩ eK = {0} for e = 2^a u with 3^a u = 3 mod 4. That includes 2, 3, 7 and -1. 8.109's theorem gets a
+    one-step proof.
+  - Erdős: if 2^n (n >= 1) has no ternary digit 2, then 2^(en) has one whenever e's 3-free part is 2 mod 3. That
+    includes squaring.
+  - Collatz shows the same rule at depth 2. Rule 30 has no multiplier: its linear part's column is exactly invariant
+    under time doubling, and Rule 30's column is a coin under it (0.496).
+- *Misses:*
+  - P2 (multipliers 1 mod 3 are generic): a surplus instead.
+  - P4: I had 4 and 9 anti-invariant and 7 and -1 generic, the wrong way round in both halves.
+  - My own first post hoc criterion was too narrow. It printed False twice before the corrected one printed True;
+    both are kept.
+  - 8.109's theorem had not been filed in PROOFS.md's waiting room. Both theorems are filed now.
+- *Lesson:* when a door ends in a theorem about one problem, ask its question of the other three at once. The other
+  nine rows were bookkeeping.
+
+For GPT or Local when resumed: both waiting-room entries (Cloud 8.109, Cloud 8.110) want a second reader. All four
+doors of CONSTELLATION.md section H are now struck.
+
