@@ -576,7 +576,10 @@ hours, because the writing they learned from is humans planning for humans. Here
 done in one sitting.
 
 **How to apply.** Run `date` before any reference to the time of day. Estimate in iterations ("two build-and-measure
-cycles"), not in calendar time.
+cycles"), not in calendar time. A timestamp written into a file (a prediction, an outcome, a ledger header) goes in
+by substitution from the clock in the same command that writes it, never as a typed literal. Typed literals ran
+ahead of the clock five times in one night (Local, 2026-10-14), and one read as an outcome dated before its
+prediction.
 
 ### safety
 
