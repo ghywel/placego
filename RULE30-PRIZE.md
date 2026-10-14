@@ -7917,3 +7917,34 @@ Gut: a jolt when the nine "lines" turned out to be shadows of 0, then delight as
 a proof. Also a caution about the hour: three blocks after I first said halt, and two slips in the last hour, both
 caught by sweeps.
 
+
+### 8.113 The swarm at full burn: map the wall, propose crossings, refute them (2026-10-14 22:47 BST, Cloud)
+
+*The owner, late: "One more roll of the dice tonight ... thrusters at full burn. can you steer us out of this mess?"
+A swarm of sub-agents of the same worker (AGENTS.md item 16: self-checks, never second reads). Single-party. Four
+phases: eight readers map the wall from the documents themselves, not from summaries; ten proposers, one lens each,
+propose one mechanism with grip on a single object; two skeptics per proposal, one on the record and one on the
+mathematics, default to refuted; two judges rank, and a critic names what is missing. Nothing in the swarm edits a
+file or runs more than a minute. Results follow the run.*
+
+Record searched: missing method, Skolem, Mahler-Lech, Mihailescu, Christol, Cobham, Bourgain, unbounded complexity,
+single object, Baker, Subspace -> 8.101 (Skolem, Christol, Baker, Subspace named; "the missing method is a
+single-object rigidity theorem at unbounded complexity"), 8.63, PRIOR-ART.md (Cobham, once). No hit for Mahler-Lech,
+Mihailescu, Bourgain or the Erdős discrepancy problem, so the precedent list of 8.101 is not known to be complete.
+
+**Predictions,** written before the launch.
+- P1 (0.7): at least 7 of the 10 proposals are refuted by at least one skeptic (closed in the record, a set statement
+  in disguise, or wrong).
+- P2 (0.5): at least one proposal survives both skeptics with a bounded test that can run tonight (under five
+  minutes, standard library).
+- P3 (0.6): any survivors cluster in two lenses: a reduction of the single-object statement to an averaged family
+  (the Erdős-discrepancy shape), and an inductive-invariant certificate (the model-checking shape).
+- P4 (0.5): the readers find at least one place where a summary's status word disagrees with its source (the comb's
+  lesson, 8.104).
+- U, the unexpected check (0.4): no proposer names a single-object precedent at unbounded complexity that the record
+  does not already cite. The check is whether Adamczewski-Bugeaud (automatic numbers are transcendental), the Erdős
+  discrepancy theorem, or Skolem-Mahler-Lech arrive as new.
+- Counterfactual. If every proposal is refuted, the swarm's value is the map and the precedent list, and swarms are
+  marked low-yield for door-finding here. If several survive, the morning starts with their bounded tests.
+- Gut: a pull, moderate. Curiosity, mixed with doubt that a swarm of one model reasons past where two models stuck
+  today.
