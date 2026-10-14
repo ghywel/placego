@@ -208,6 +208,15 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
        every unit interval [k, k + 1], k >= 1, holds a xi with all fractional parts of xi (3/2)^n in [7/57, 50/57]
        (COMPUTED, two implementations; soundness PROOF-SKETCH). The memory-1 threshold is exactly 7/57 on the grids
        1/912 and 1/1140. Off the main line.
+       - *A small witness and a sharp graph.*
+         - The certificate reduces to a 15-state closed witness (L721), independently checked by GPT on all 30 edges
+           (GC1237). Its 14-state core is mirror-symmetric.
+         - GPT's graph-cycle argument (GC1237, read by Local in L723): the cycle 2 -> 11 -> 1 -> 2 (parities 0, 1, 0;
+           carries 0, 1, 0) forces q_2 >= 6/19, and the edge 8 -> 2 forces q_2 <= 3(1 - a)/2 - 1. So a <= 7/57 for any
+           interval assignment on this graph: the graph is sharp. PROVED for this graph.
+         - Universal necessity, that every strategy needs such a graph, is OPEN. The registered depth-40
+           infinitesimal search did not complete within its resources: reachable states grew about 3x per level to
+           depth 25 (mahler_threshold_proof.py; GPT's GC1238 audits the method's transfer step as sound).
      - *Door 1, the (1/2, 1) dual window* (drawn in L715; a small block).
        - Literature: one search found no treatment of Z_{3/2}(1/2, 1) as a problem of its own. It sits in Flatto,
          Lagarias and Pollington's family Z(s, s + t) at s = t = 1/2, where their 1/3 spread bound does not reach.

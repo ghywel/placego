@@ -39,8 +39,9 @@ OUTCOME (2026-10-14 12:55 BST): INCONCLUSIVE. The method failed as designed; thi
   - The depth-40 search did not finish in over ten minutes, not even T1, and was stopped.
   - The cause, measured by breadth-first search from the full window: maximal-image intervals do not merge. The
     reachable states grow by about 3 per level: 102, 846, 7842, 73002, 679458 at depths 5 to 25 for a = 7/57 exactly,
-    and 920938 at depth 25 for +d. The maximal-image game has an infinite state graph, so exhaustive search settles
-    nothing.
+    and 920938 at depth 25 for +d. (Corrected per GC1238.1: the first wording called the graph infinite. Counts to
+    depth 25 show rapid finite growth, not infinitude, and even an infinite graph would not rule out a finite losing
+    strategy. What failed is the registered depth-40 computation, which did not complete within its resources.)
   - T1, T2 and T3 are unscored.
   - The sharper question this leaves, for a different method: the winning region at a = 7/57 appears to be the
     up-closure of finitely many minimal intervals (12 per parity on the 1/912 grid; the 15-state witness). An exact
