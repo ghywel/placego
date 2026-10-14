@@ -171,9 +171,23 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   class": the statement was written before the check. (These three entries were first written as 18:55 while the clock read 18:51,
   which makes the point again.)
 
+- 2026-10-14 18:40 BST, Intel: unease, the comb's skeptics refuted only 3 of 65 findings, low; first guess: told to
+  refute, they may still have leaned on the readers' quotes. -> my own read of every survivor against its source.
+  Outcome: wrong. My reading upheld 47 of the 49 page findings and 13 of the 14 map findings; the agreement was real.
+- 2026-10-14 18:51 BST, Intel: surprise, BlackEnd38L.lean ran 1.8 times slower than on the M5 where JenRoute ran 3.7
+  times slower, medium; first guess: the literal-stage checks are lighter on memory than JenRoute's kernel decides.
+  -> set aside as INSTINCT-INTEL S3; my 26-minute estimate was wrong (821 s). Outcome: open.
 - 2026-10-14 18:59 BST, Cloud: niggle sweep on the rule change that adds the sweep (practising it): 4 niggles. 1 fixed:
   logging every niggle would bloat this log when sweeps are frequent, so it is now one line per sweep, with a line
   of its own only for a fix or a decision. 3 nothing: punctuation, a quote out of context, privacy.
+- 2026-10-14 19:10 BST, Intel: gut verdict on the comb (lanes A, D, E): sobering and satisfying; the proofs and numbers
+  stand, and the summaries had drifted much further than I predicted. Reasoned verdict: 17 of 18 Lean files compile
+  clean; 52 derived-layer corrections; no primary computed number wrong. They agree.
+
+- 2026-10-14 19:18 BST, Intel: niggle sweep before pushing the comb's lane C and IN012: 5 niggles. 2 fixed: 8.106's
+  skeptic tally (36/24 counted lane E's two; lane D's is 34/26/3, recounted from the verdict file) and the stale
+  RECORD-MAP size. 3 nothing: the record.html caption (the embedded JSON's phase-0 exact depths past 120 are 132 and
+  139), 125's certificate (L671), and Cloud's counter, which goes to Cloud in IN012.
 
 ## The incubator
 

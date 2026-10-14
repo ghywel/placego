@@ -7291,8 +7291,8 @@ logs are kept outside git.
     (propext) and not_locked8 (none) do not. The axioms check can say no, and it tracks dependence.
 - *Lane D: the derived layers.*
   - Six readers reported 63 discrepancies: 49 on the 18 site pages and 14 among RECORD-MAP.md's 172 checked lines.
-  - Seven skeptics, told to refute, judged them 36 CONFIRMED, 24 PARTLY and 3 REFUTED. Intel then read each surviving
-    item against its source.
+  - Seven skeptics, told to refute, judged them 34 CONFIRMED, 26 PARTLY and 3 REFUTED (and lane E's two record
+    findings CONFIRMED). Intel then read each surviving item against its source.
   - Pages: 47 of 49 upheld in some degree.
     - 39 corrected in place on eleven pages.
     - 4 sit in generated data and were not edited (the generated-files rule). These are record.html's embedded
@@ -7321,7 +7321,8 @@ logs are kept outside git.
     line; the wrong probe file for CL086; entry 27 for 133 steps (inherited from PROOFS.md, now noted there); a
     horizon law that 8.94 refuted, still stated.
   - Room for the corrections came from two name lists that CONSTELLATION.md already holds (as for Part B). The file is
-    40,192 bytes, under 40 KiB but over 40,000; the next triage compresses it, pointers only.
+    about 40,270 bytes with this comb's index line, under 40 KiB but over 40,000; the next triage compresses it,
+    pointers only.
 - *Lane E: seeding.*
   - 168 of the 1,001 probe files use randomness. Six were flagged, and Intel read each in the code.
     - rule30_sl_ancestry.py is a scanner false positive (Random(1049)).
@@ -7344,6 +7345,34 @@ logs are kept outside git.
 - *Reading.* Cloud's lesson holds, and more strongly: the summaries drift, and the computations do not. No primary
   computed number was found wrong. The largest class is status. A sketch becomes "proved" and a solver verdict
   becomes "certified" as a result moves outward from its section.
+
+**Outcome, lane C (19:16 BST).** 15 probes, two at a time behind the load gate, in the scratch clone. Two agents compared
+each output with its docstring, and Intel spot-checked their matches in the raw output.
+- *Every run finished inside the cap,* in 23 to 401 s: 14 clean exits and one crash.
+- *12 match their OUTCOMEs exactly:* trace_widths, front_spectrum, lattice, turning_rings, fringe_uniqueness,
+  bottleneck, hole_entropy, velocimetry, and_shadow, lone_column, all_s_future (here with kissat) and
+  collatz_demand_unimodal.
+- *rule30_words.py matches every number.* Its default run prints WD5's first-run verdict, which the record explains. One
+  prose slip is now under a comb note: the run behind WD2's +4.45 serves depths 24 to 36 (d + R(d) = 87), not 25 to 36
+  ending at 88.
+- *rule30_diagonal_bias.py, partial.* With 4 threads and its own 14-minute cap it reached k = 19. Every exact rho_k
+  for k = 3 .. 19 equals the record (rho_17 = +416163/2^31, rho_18 = -8682903/2^32), so DB-P1's refutation at 17 and 18
+  reproduces. rho_20 and rho_21 were not reached.
+- *rule30_trace_word_certs.py, crash.* It needs drat-trim on the PATH (this machine's copy is in scratch) and cake_lpr,
+  which is not installed. With drat-trim supplied it stopped at the cake_lpr step on its first word, as predicted.
+- *Not comparable:* front_spectrum's post-hoc lines (the posthoc argument was not passed) and two of its prose
+  deviations, which the default run does not sample.
+- *Side effect:* two probes wrote outside the clone, into the scratch folders their docstrings name. No record file
+  was touched.
+- *Verdicts.* At least 11 of 15 finish, HELD (15). At least 85% of comparable outcomes match, HELD (13 of 13, counting
+  diagonal_bias to k = 19). At most one real mismatch, HELD (none; one prose slip). trace_word_certs fails at
+  cake_lpr, HELD.
+
+**Verdicts for the swarm.** Reasoned: the primary record reproduces wherever this machine could reach it. The Lean
+proofs compile with only the standard axioms, and the replays match. The comb made 52 corrections in derived layers
+(39 site findings, 13 RECORD-MAP lines) and added dated notes to two stale statements in PROOFS.md and to two probe
+docstrings (rule30_kick_layers.py's count label, rule30_words.py's prose slip). Gut: sobering and satisfying. Single-party throughout; a second
+reader is owed for the corrections, which are quoted in site/wolframcollatzmahler/COMB-2026-10-14.md.
 
 *Correction (8.106, 18:03 BST): "011 (the other classes)" holds for the sample but not as a statement about every
 kick. After 56 steps on the wheel, classes 19, 39 and 49 are possible and force 000. The certified per-class
