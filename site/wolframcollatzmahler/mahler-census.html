@@ -151,12 +151,12 @@ with its correction crediting Dubickas and Mossinghoff).</p>
 <script>(function(){
 const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 // exact horizon: the window [lo, hi) of fractional parts, as integers over 2^(T+1), stepped as in mahler_census.c
-function walk(n,keep){let v=n,lo=0n,hi=1n,T=0;const path=[];
-  while(T<4000){const b=v&1n,D=1n<<BigInt(T+1);
+function walk(n,keep){const cap=200+4*n.toString(2).length;let v=n,lo=0n,hi=1n,T=0;const path=[];
+  while(T<cap){const b=v&1n,D=1n<<BigInt(T+1);
     if(keep)path.push({b:Number(b),lo:Number(lo)/Number(D),hi:Number(hi)/Number(D)});
     let nl=3n*lo,nh=3n*hi;if(b){nl=nl>D?nl-D:0n;nh=nh>D?nh-D:0n;}if(nh>D)nh=D;
     if(!(nl<nh))return{h:T+1,path};lo=nl;hi=nh;v=(3n*v+b)>>1n;T++;}
-  return{h:null,path};}
+  return{h:null,path,cap};}
 function survivor(n){let v=n,lo=0n,hi=1n,T=0;const bits=[];
   while(T<4000){const b=v&1n,D=1n<<BigInt(T+1);let nl=3n*lo,nh=3n*hi;if(b){nl=nl>D?nl-D:0n;nh=nh>D?nh-D:0n;}if(nh>D)nh=D;
     bits.push(Number(b));if(!(nl<nh))break;lo=nl;hi=nh;v=(3n*v+b)>>1n;T++;}
@@ -186,8 +186,8 @@ function records(){const pts=[[12,29],[16,39],[20,47],[24,59],[28,61],[32,76],[3
   x.fillStyle=css("--ember");pts.forEach(([w,h])=>{x.beginPath();x.arc(X(w),Y(h),4,0,7);x.fill();});}
 function check(){const s=document.getElementById("nin").value.trim(),o=document.getElementById("out");
   if(!/^[0-9]+$/.test(s)||BigInt(s)<1n){o.textContent="Please type a positive whole number.";return;}
-  const t0=performance.now(),{h}=walk(BigInt(s),false),ms=(performance.now()-t0).toFixed(1);
-  o.textContent=h===null?"Still alive after 4000 steps: a Z-number candidate. Please tell us at once.":"Some ξ in ["+s+", "+s+"½) keeps below one half for j = 0 to "+(h-1)+"; at j = "+h+" none is left. Horizon "+h+" ("+ms+" ms).";}
+  const t0=performance.now(),{h,cap}=walk(BigInt(s),false),ms=(performance.now()-t0).toFixed(1);
+  o.textContent=h===null?"Still alive after "+cap+" steps, so this check makes no claim. A start with a long run of zero binary digits stays alive while it halves; the census below 2⁶³ is exact.":"Some ξ in ["+s+", "+s+"½) keeps below one half for j = 0 to "+(h-1)+"; at j = "+h+" none is left. Horizon "+h+" ("+ms+" ms).";}
 document.getElementById("go").onclick=check;
 document.querySelectorAll(".pre").forEach(b=>b.onclick=()=>{document.getElementById("nin").value=b.dataset.n;check();});
 document.getElementById("nin").addEventListener("keydown",e=>{if(e.key==="Enter")check();});

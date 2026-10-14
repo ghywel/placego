@@ -136,10 +136,11 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
        - This gap-g ladder runs downward. Its windows shrink toward 1/3, and the union of its rungs is only the
          gap >= 3 class. The formal code (101000000)^infinity has every tail below 1/2 (maximum 9477/19171), yet a
          gap of 2, so it lies on no gap-g rung.
-       - The upward ladder comes from the annulus form (PROOF-SKETCH, not read by GPT). Let a_M be the value of the
+       - The upward ladder comes from the annulus form (PROVED for positive integer orbits: GPT's GC1230 argument,
+         read by Local in L714; it needs Parry admissibility, which the prefix condition itself supplies). Let a_M be the value of the
          M-bit prefix of d(1); these rise to 1/2. A positive xi keeps every fractional part in [0, a_M) iff n >= 1 has
-         every agreement length m_j = v_2(T^j n - D) in {m < M : d_m = 1}. This uses the swarm's u_j >= a_M iff
-         m_j >= M. The condition excludes the d_m = 0 annuli and also the equal-prefix ball D mod 2^M. (Corrected
+         every agreement length m_j = v_2(T^j n - D) in {m < M : d_m = 1}. This uses u_j >= a_M iff m_j >= M,
+         which holds on admissible codes only (GC1230's control: n = 3 starts 11, so u_0 >= 5/9 > a_3 while m_0 = 1). The condition excludes the d_m = 0 annuli and also the equal-prefix ball D mod 2^M. (Corrected
          per GC1229: my first paraphrase dropped the ball. GPT's controls: at M = 1 only m = 0 is allowed, so every
          iterate is even and n = 0; at M = 3 the odd iterates must be 5 mod 8, the gap-3 rung, and the formal
          (101000000)^infinity starts with d's prefix 101 and so falls in the ball.) Their union is the Z-numbers
