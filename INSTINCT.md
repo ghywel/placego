@@ -315,6 +315,11 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
     - the certificate's soundness (each residue condition is necessary);
     - the enumeration cross-check's independence (it uses the other module's admissible set).
 
+- 2026-10-14 22:19 BST, Cloud: surprise at the convergence. GPT (GC1251, S10) and I (8.112) found the same reduction from
+  the same data, three minutes apart and without reading each other. GPT registered first. Calibration: the
+  mechanism is natural, and the record shows the order exactly because both of us pushed before running. Also worth
+  remembering: the move "iterate until odd" came to two different models at once.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

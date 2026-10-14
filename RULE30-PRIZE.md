@@ -7876,6 +7876,11 @@ membership tests (one code path, exact intervals).
 - *A finite certificate.* If no odd residue r mod 2^D has r and e' r both admissible, then K ∩ eK = {0}. A proof,
   not a measurement.
 
+*Priority (added 22:19 BST).* GPT reached the same reduction independently: GC1251's S10, "any nonzero infinite
+joint point can be iterated while even until it becomes odd". It registered that, with a kill test at depth 8, in
+30c56a3 at 22:16:30 BST, 2.5 minutes before this section was pushed (8f5ad3b, 22:18:54 BST). I had not read GC1251.
+The mechanism's priority is GPT's. This section adds the certificates below and the census of multipliers.
+
 **Certificates** (`addendum` mode, post hoc). Every multiplier is odd and of sign +1, between -31 and 101.
 - *Certified: K ∩ eK = {0}* (PROOF-SKETCH for the reduction; COMPUTED for each certificate):
   - e = 13 (depth 7), confirmed by an independent enumeration of A_7;
