@@ -51,7 +51,7 @@ OUTCOME (census, 2026-10-14 08:18 BST, M5, 9 workers; machine output quoted): M2
   63: 157 at 1541211973603965806 (2.492), 4499 stragglers, 798 s
   M4: every start in [1, 2^63) has a finite horizon, so no Z-number lies below 2^63 = 9.22e18. No candidate
      appeared, and every straggler alive at step 124 died in the exact replay.
-  M2: (#{n >= 1 : H(n) > T} + 1) / 2^(w - T) = A(T) is integral and identical at every w:
+  M2: (#{1 <= n < 2^w : H(n) > T} + 1) / 2^(w - T) = A(T) is integral and identical at every w:
      2, 3, 5, 8, 12, 18, 27, 40, 60, 90, 134, 201, 302, 452, 678, 1018, 1527, 2291, 3438, 5157, ...
      A(T + 1) / A(T) tends to 3/2. It is not the ceil(3x/2) iterates (they differ from T = 8, 40 against 41).
   M3: H*(w)/w lies in 2.18 .. 2.58. w = 28 (2.179) breaks the registered lower bound of 2.2, so M3 is refuted.
@@ -112,7 +112,7 @@ def chunk(args):
 
 def census(w, workers, pb):
     pb = min(pb, w - 1)
-    hist, strag, best = Counter(), [], (0, 0)
+    hist, strag, best, unresolved = Counter(), [], (0, 0), []
     with Pool(workers) as pool:
         for h, s, mx in pool.imap_unordered(chunk, [(w, pb, p) for p in range(1 << pb)]):
             hist.update(h); strag.extend(s)
@@ -122,16 +122,17 @@ def census(w, workers, pb):
         h = H_exact(n)
         if h is None:
             print('Z-NUMBER CANDIDATE (alive at 100000 steps):', n, flush=True)
+            unresolved.append(n)
             continue
         hist[h] += 1
         if h > best[0]:
             best = (h, n)
-    return hist, best, len(strag)
+    return hist, best, len(strag), unresolved
 
 
 def control():
     build()
-    hist, best, ns = census(20, 8, 6)
+    hist, best, ns, _ = census(20, 8, 6)
     exact = Counter(H_exact(g) for g in range(1, 1 << 20))
     print('M1 w=20 walker histogram equals exact fractions:', hist == exact, '| max', best, flush=True)
 
@@ -145,15 +146,14 @@ def main():
     pb = int(sys.argv[3]) if len(sys.argv) > 3 else 6
     build()
     t0 = time.time()
-    hist, best, ns = census(w, workers, pb)
+    hist, best, ns, unresolved = census(w, workers, pb)
     total = sum(hist.values())
     print('w=%d: starts %d (2^w - 1 = %d), max horizon %d at n = %d, stragglers replayed %d, %.0f s' % (
         w, total, (1 << w) - 1, best[0], best[1], ns, time.time() - t0), flush=True)
-    surv = {}
-    acc = 0
-    for h in sorted(hist, reverse=True):
-        acc += hist[h]
-        surv[h - 1] = acc                             # #{n : H(n) > h-1}
+    surv, acc = {}, 0                                 # surv[T] = #{1 <= n < 2^w : H(n) > T}, every T (no bin gaps)
+    for T in range(max(hist), -1, -1):
+        surv[T] = acc
+        acc += hist.get(T, 0)
     A, inexact = {}, []
     for T in range(1, w):                             # zero residue survives every horizon: add it back (GC1221)
         q, r = divmod(surv.get(T, 0) + 1, 1 << (w - T))
@@ -167,6 +167,12 @@ def main():
         sum(tail) / len(tail) if tail else float('nan'), len(tail)))
     print('H*(w)/w = %.3f' % (best[0] / w))
     print('HIST', ' '.join('%d:%d' % (h, hist[h]) for h in sorted(hist)))
+    # receipt gate (GC1224): an unresolved replay, a lost start or an inexact A(T) fails the run explicitly
+    if unresolved or total != (1 << w) - 1 or inexact:
+        print('RECEIPT FAILED: unresolved %d, mass %d of %d, inexact T %s' % (len(unresolved), total, (1 << w) - 1,
+                                                                             inexact), flush=True)
+        sys.exit(1)
+    print('RECEIPT OK: mass 2^w - 1, every straggler replayed to death, A(T) exact')
 
 
 if __name__ == '__main__':

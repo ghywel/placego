@@ -45,8 +45,8 @@ u_0 = 0, xi = 0. Local, L710.)
   - They have the same finite-prefix language (GC1222). Every valid prefix's window is a nonempty half-open interval,
     whose points have strict codes, so the census counts cannot tell them apart.
   - S_strict contains 2-adic non-integers, such as -9/19 with itinerary (100)^infinity (G50).
-  - **Mahler's conjecture says S_strict contains no positive ordinary integer.** An ordinary integer is a 2-adic integer
-    whose binary expansion ends in zeros. Using K instead needs GC664's half-boundary repair, a forward shift that can
+  - **Mahler's conjecture says S_strict contains no positive ordinary integer.** A nonnegative ordinary integer is a
+    2-adic integer whose binary expansion ends in zeros; a negative one's ends in ones (GC1224). Using K instead needs GC664's half-boundary repair, a forward shift that can
     raise the integer part.
 - *Consequence for one certificate format* (narrowed per GC1221; the first wording said "fractional-side methods cannot
   settle it", which is too broad). Stephan's block certificates are complete on the
@@ -80,7 +80,7 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
      published large-scale check.
    - *Records.* H*(w) runs from 59 at w = 24 to 157 at w = 63 (n = 1541211973603965806), with H*/w in 2.18 .. 2.58,
      the coin law of about 2.4 w. No anomalous survivor appeared.
-   - *The free bits pay exactly.* #{n >= 1 : H(n) > T} + 1 = 2^(w - T) A(T), with A(T) = 2, 3, 5, 8, 12, 18, 27, 40,
+   - *The free bits pay exactly.* #{1 <= n < 2^w : H(n) > T} + 1 = 2^(w - T) A(T), with A(T) = 2, 3, 5, 8, 12, 18, 27, 40,
      60, 90, ... the same at every w, tending to a ratio of 3/2. A(T) is exactly the Renyi-Parry word count of the
      (3/2)-beta-shift (c_n = 1 + sum d_i c_(n-i), d = the greedy digits of 1 in base 3/2), for every T < 63. That is a
      computational confirmation, from a program that never used it, of the beta-shift identification in the summary
