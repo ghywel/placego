@@ -43,6 +43,11 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - *Also door (c) in CONSTELLATION.md section H.*
 - **Return** 2026-10-14 16:14 BST: still curious. 8.101 names Ridout's theorem and the Subspace theorem as the
   established tools that use the real and p-adic places together. Not yet investigated.
+- **Return** 2026-10-14 16:36 BST: still curious, now the strongest pull. The framing that came while searching the
+  record (absent from it: solenoid, higher rank, Einsiedler, Lindenstrauss). The 6-adic solenoid
+  (R x Q_2 x Q_3)/Z[1/6] carries x2 and x3 as a commuting pair, with x3/2 one direction of it. The leaf through 0
+  holds the reals and is invariant under the whole pair. The window set is invariant only under x3/2. Not yet
+  investigated.
 
 **S3.** 2026-10-14, about 16:00 BST.
 - **Doing:** the same answer, looking for a theorem that has crossed from sets of cases to one specific object.
