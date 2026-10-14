@@ -37,6 +37,28 @@ OUTCOME (control, 2026-10-14 07:56 BST, M5, 23 s): M1 HELD on the second run. Th
   recorded its whole family of 2^(w - T - 1) starts in every chunk sharing those bits, overcounting early deaths. Now
   each chunk records only its own 2^(w - PREFIXBITS) starts. Rerun: the walker's w = 20 histogram equals the exact
   fractions, maximum 47 at n = 690773.
+
+OUTCOME (census, 2026-10-14 08:18 BST, M5, 9 workers; machine output quoted): M2 HELD, M3 REFUTED (narrowly), M4 HELD
+  to w = 63, M5 as reported; the unexpected check held (each total is exactly 2^w - 1).
+  w : H*(w) at n (H*/w), stragglers replayed exactly
+  24:  59 at 13272845 (2.458)            28:  61 at 119104516 (2.179)
+  32:  76 at 3097089134 (2.375)          36:  93 at 27255143437 (2.583)
+  40:  99 at 704731028141 (2.475)        44: 106 at 8255931584461 (2.409)
+  48: 120 at 119619616250377 (2.500)     52: 130 at 4473844327117093 (2.500), 1 straggler
+  56: 137 at 9850069454682037 (2.446), 44 stragglers
+  60: 143 at 439797727552450048 (2.383), 634 stragglers, 237 s
+  63: 157 at 1541211973603965806 (2.492), 4499 stragglers, 798 s
+  M4: every start in [1, 2^63) has a finite horizon, so no Z-number lies below 2^63 = 9.22e18. No candidate
+     appeared, and every straggler alive at step 124 died in the exact replay.
+  M2: (#{n >= 1 : H(n) > T} + 1) / 2^(w - T) = A(T) is integral and identical at every w:
+     2, 3, 5, 8, 12, 18, 27, 40, 60, 90, 134, 201, 302, 452, 678, 1018, 1527, 2291, 3438, 5157, ...
+     A(T + 1) / A(T) tends to 3/2. It is not the ceil(3x/2) iterates (they differ from T = 8, 40 against 41).
+  M3: H*(w)/w lies in 2.18 .. 2.58. w = 28 (2.179) breaks the registered lower bound of 2.2, so M3 is refuted.
+     The counterfactual (some H* > 3w) did not occur.
+  M5: tail ratio N(h+1)/N(h) for h > w, mean 0.744 .. 0.752 at every w (CL092's 3/4).
+  Reading (MEASURED): the record horizons follow the coin law, about 2.4 w, with no anomalous survivor, and the
+  record holders show no binary structure (mostly odd, no shared low bits). This is evidence, not proof (Turing's
+  p. 253: any finite range is checkable; "forever" is not reached this way).
 """
 import os, subprocess, sys, time
 from collections import Counter
