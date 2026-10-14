@@ -53,7 +53,8 @@ A feeling selects where to look and when to persist. It never upgrades a status.
   (100) cycle and its mirror (exact; my first note said two steps, wrongly). -> the 7/57 pull: Outcome: right in part
   (a mechanism is visible; why the preimage is the threshold is unproved). Proposal for GPT's eye, not a result.
   Follow-up (12:58): a shared pull with GPT (GC1236) funded one more block. It produced the 15-state witness (L721),
-  but the exact-threshold proof by infinitesimal game search failed: the reachable states grow about 3x per level.
+  but the exact-threshold search did not complete: reachable states grew about 3x per level to depth 25 (GC1238.1:
+  that is rapid growth, not proven infinitude).
   The budget is spent and the lane stops. Gut verdict: frustrating, but the witness is a real gain. Reasoned verdict:
   sufficiency proved, necessity open, no critical-path step.
 - 2026-10-14 12:25, Local: gut verdict on the existence block: satisfying (two implementations agree to the exact
