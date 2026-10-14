@@ -870,3 +870,91 @@ Follow-up (Cloud, 2026-10-10 19:54): the owner's triangle-area question, §8.81.
 says nothing (half white on both sides, and the triangle law integrates to exactly 1/2, proved); the share by width
 does: the random side is on the uniform law to 1.5%, the band is capped at its period 16 with a stripes' census, and
 the front shows a faint deficit of births in its first 32 diagonals. Status: answered.
+
+## G. Neighbours of the trio: other problems in the same space (the owner, 2026-10-14)
+
+*Written by Local at 11:57 BST at the owner's request. His question: "We started with Wolfram, we found the Collatz
+adjacency, then soon after that we found Mahler as well. This was my analogy of the Vitruvian man triangle, square,
+circle. But there is no reason we have to stop there. Can you see any other problems that share our common problem
+space?" Then: "Yes please do the write up - it is important we record this - and i agree on Erdős." A map, not a
+plan. Nothing here is adopted as a room; the owner chooses rooms.*
+
+**The shared shape, stated so the list is principled.** Wolfram's Rule 30, Collatz and Mahler's 3/2 problem have:
+1. a rule of one line;
+2. one specific orbit, or every single orbit, asked to do something, or never do it, for ever;
+3. an "almost all" version that is known or easy, and an open "this one" or "every one" (RULE30-PRIZE.md 8.47);
+4. a free part that pays exactly and a constrained part that must keep agreeing for ever (COLLATZ-PRIZE.md section 1;
+   MAHLER.md);
+5. in Collatz and Mahler, the arithmetic of 2 against 3: multiplying by three is a Gray step plus a carry
+   (COLLATZ-PRIZE.md section 8; RULE30-PRIZE.md 8.90).
+
+**Closest: the same 2-against-3 arithmetic.**
+- *Erdős's ternary conjecture (Erdős, 1979).* For every n > 8, 2^n written in base 3 contains a digit 2.
+  - It is powers of 2 read in base 3, the Collatz and Mahler arithmetic at its barest.
+  - Lagarias (2009) studied a 3-adic generalisation and showed the exceptional set is vanishingly thin, the "almost
+    all" half. Every single n is open.
+  - The record's tools transfer almost unchanged: residues mod 2^T and their 3-adic mirror (G51, COLLATZ-PRIZE.md
+    section 4), a free phase that pays exactly, and censuses with exact receipts.
+  - The record met it only in passing (RULE30-PRIZE.md 8.47; PRIZE-PROBLEMS.md sections 7 and 8.1). **The owner's
+    pick and ours for a fourth figure.**
+- *The effective Waring problem.* The classical formula g(k) = 2^k + floor((3/2)^k) - 2 needs the distance from
+  (3/2)^k to the nearest integer to exceed (3/4)^k for every k.
+  - Mahler (1957) proved it for all large k, ineffectively. It has been checked by computer for k into the hundreds
+    of millions (Kubina and Wunderlich, 1990).
+  - It is Mahler's (3/2)^n again: a sibling of the circle more than a new figure. The census approach applies.
+- *Furstenberg's x2 x3 problem (1967).* The only measures on the circle invariant under both doubling and tripling
+  should be Lebesgue measure and finite orbits.
+  - Rudolph (1990) proved it under positive entropy. The zero-entropy case is open.
+  - It is the structural reason 2 and 3 "do not talk", arguably the root of all three. But it is about measures, not
+    one orbit, and the census tools do not reach it: a reference, not a room.
+
+**The same shape in other arithmetic.**
+- *Normality of sqrt 2, pi, e (Borel, 1909).* Almost every number has fair-coin digits, but no natural constant is
+  proved to. Bailey and Crandall (2001) reduced pi's binary normality to the uniform distribution of one orbit of an
+  explicit chaotic map: Rule 30's Question 2 (the fair coin) in number form.
+- *Chowla and Sarnak.* Is the Mobius function a fair coin, uncorrelated with every simple deterministic sequence?
+  Tao proved logarithmically averaged forms, again the averaged half. It is the fairness question at the edge of the
+  Riemann hypothesis.
+- *Langton's ant highway conjecture.* From any finite start the ant is conjectured eventually to build a periodic
+  highway (its path is known to be unbounded). A finite seed, a simple rule and a question about eventual periodicity:
+  Rule 30's Question 1 in mirror image, since Rule 30 is conjectured never to settle and the ant always to. Noted in
+  passing at RULE30-PRIZE.md 8.47 and PERIOD-TWO.md section 7. A natural fifth figure.
+
+**The Turing edge.**
+- *Busy Beaver cryptids, Antihydra in BB(6).* The machine halts exactly when a Collatz-like floor(3n/2) walk stays
+  positive for ever. That is the owner's "coin toss as the ultimate adversarial program", made literal. It is already
+  in the record (G49), and GPT showed it is a different event from Mahler's (GC1221).
+
+**openai/math checked for this space (the owner, same message: "it might be worth checking the erdos space on their
+git now").** Read at main 1581d4c (2026-10-12; the content update is 3014888 of 2026-10-08, after the record's import
+at adc7f12; CO-DISCOVERED-PROOFS.md). 372 families. 13 name Erdős in their summary line:
+- 012: largest prime factors of n and n + 1 (Erdős-Pomerance);
+- 024: the number of totients (Erdős-Hall);
+- 025: short Egyptian fractions;
+- 026: large prime gaps (Erdős-Prachar);
+- 084: the geometric case of the Erdős similarity conjecture;
+- 159: Erdős's reciprocal-sum conjecture, with quasipolynomial Szemerédi bounds and a Lean comparator challenge;
+- 160: van der Waerden numbers;
+- 166 and 167: distinct distances;
+- 171: hypercube Ramsey (Burr-Erdős);
+- 181: Erdős-Gallai cycle decompositions;
+- 184: Ajtai-Erdős-Komlós-Szemerédi;
+- 189: cycle-clique Ramsey (Erdős-Faudree-Rousseau-Schelp).
+
+None is in our space. No family names the ternary conjecture, Collatz, digits of powers, fractional parts,
+beta-expansions, Furstenberg, cellular automata (129 and 134 are finite automata) or Mahler's 3/2 problem. Its
+"Mahler conjectures" (087) are the geometric volume-product conjectures, a different Mahler.
+
+**One adjacent family worth a later level-B look:** 153, "Arithmetic classification and non-Pisot singularity for
+Bernoulli convolutions", claims a classification of singular and absolutely continuous Bernoulli convolutions for
+every parameter lambda in (0, 1). Our two-norm series with random parity bits is the Bernoulli convolution at
+lambda = 2/3 (the swarm's adelic lane; MAHLER.md section 2). What 153 says at lambda = 2/3 bears on the measure of
+Mahler's window under random integer parts, an ensemble statement, not an exclusion. Not imported; the gate in
+CO-DISCOVERED-PROOFS.md applies.
+
+**Sources** (as cited, not all re-read today): Erdős, "Some unconventional problems in number theory", Math. Mag. 52
+(1979); Lagarias, "Ternary expansions of powers of 2", J. London Math. Soc. 79 (2009); Mahler, "On the fractional parts
+of the powers of a rational number II", Mathematika 4 (1957); Kubina and Wunderlich, Math. Comp. 55 (1990);
+Furstenberg (1967); Rudolph (1990); Bailey and Crandall, Experimental Math. 10 (2001); Tao, "The logarithmically
+averaged Chowla and Elliott conjectures for two-point correlations" (2016); Bunimovich and Troubetzkoy on Langton's ant
+(1992); openai/math CONTENTS.md at 1581d4c.
