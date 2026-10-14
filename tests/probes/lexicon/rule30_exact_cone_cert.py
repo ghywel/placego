@@ -72,6 +72,14 @@ ADDENDUM PREDICTIONS (2026-10-14 00:12 BST, before the runs; the frontier after 
   X4 blind (0.25 for SAT): d = 147, L = 19, phase 0: SAT with a checking witness (R_real(147) >= 19, a new high for the
      run). REFUTED-BY: VERIFIED-UNSAT (phase 0 at 147 is then exactly 18), a cap, or CAKE-FAILED.
 
+ADDENDUM PREDICTIONS (2026-10-14 01:33 BST, before the runs; the frontier at 18 continued, on the cores the finished
+  history census freed). Phase 0 runs use the 44-bit list, cuts40 and the 50- and 70-bit cuts; phase 1 uses 44allp1
+  and cuts40 only (the two long cuts are phase-0 words).
+  X5 blind (0.35 for SAT): d = 150, L = 18, phase 0: SAT with a checking witness. REFUTED-BY: VERIFIED-UNSAT, a cap,
+     or CAKE-FAILED.
+  X6 blind (0.35 for SAT): d = 149, L = 18, phase 1: SAT with a checking witness. REFUTED-BY: VERIFIED-UNSAT, a cap,
+     or CAKE-FAILED. With X3 (phase 0) this decides 149 at 18 in both phases.
+
 GPT review (GC1210.1, 2026-10-13): the inherited exact cone, phase unit and
 white-sample cut placement are sound; no carrying defect found. Added only
 metadata assertions for the mirrored RR variable map and a requested-phase
