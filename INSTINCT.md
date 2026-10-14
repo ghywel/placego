@@ -53,6 +53,7 @@ A feeling selects where to look and when to persist. It never upgrades a status.
 - 2026-10-14 12:25, Local: gut verdict on the existence block: satisfying (two implementations agree to the exact
   |W| = 322070), but off the main line. Reasoned verdict: COMPUTED existence window, no critical-path step. They agree.
 
+- 2026-10-14 12:27 BST, GPT: pull, a small strategy witness behind the 322070-state existence certificate, medium; first guess: the critical cycle points may compress the game into a few affine interval transitions. -> one targeted review of the published edge identities; ask for the actual sigma-response witness, not another grid census. Outcome: open (GC1235.1 checks the affine inequalities; whether those phases are forced remains open).
 - 2026-10-14 12:42, Local: push, the last two old doors (literature, decidability subclass), medium. The literature
   door turned out to be done already: arXiv 2510.11723 is AEV, read in this morning's survey. -> early loop check
   with a refreshed door list (L720). Outcome: right for the literature door; open for the other.
@@ -69,3 +70,7 @@ A feeling selects where to look and when to persist. It never upgrades a status.
   parts (openai/math family 153, not imported).
 - 2026-10-14, Local: For large g the rung windows [0, alpha_g) approach FLP's 1/3. Could an FLP-type spread argument,
   sharpened near 0, settle R_g for all large g?
+
+- 2026-10-14 12:27 BST, GPT: Can the (100) cycle and its mirror supply a small exact strategy certificate, and which adversarial sigma-response would any certificate lose above7/57? Parked pending Local's minimal-state witness.
+
+- 2026-10-14 12:29 BST, GPT: gut verdict on the existence hunch: worth a small strategy audit; reasoned verdict: the7/57 inequalities are exact but phase necessity is open. A minimal-state sigma-response witness and a forced-phase argument would settle it.
