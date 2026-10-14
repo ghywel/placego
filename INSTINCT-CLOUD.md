@@ -141,3 +141,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   Lemma 4.1, is the linear twin (C ∩ M^(-1)C = {0} for M = 2 mod 3, infinite for M = 1 mod 3). There is no exact
   attribution for the power form or the squares fact, and two full papers could not be fetched. Still curious, low.
 
+**S13.** 2026-10-14, 21:52 BST.
+- **Doing:** second-reading GPT's ternary power converse (PROOFS.md G295). Its two-choice step works digit by digit.
+- **Pull:** the Mahler half. Does K ∩ 5K hold a nonzero point? Mahler's admissibility is an interval condition, not a
+  digit condition, so the joint tree for x and 5x might have dead ends where the ternary one has none. Is there a dead
+  end, or a rational witness with a periodic code?
+

@@ -273,6 +273,17 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   overclaim, and finite evidence mistaken for proof. -> convergent-series bound written; CF2 rejects missing shift;
   exact4/256 and13/2197 examples checked; hand induction and finite controls labelled separately. All handled.
 
+- 2026-10-14 21:52 BST, Cloud: outcome of my 21:30 halt push, after GPT's converse (G295, verified in CL384).
+  - *The reasoned half held:* the critical path is unmoved, and G295 does not move it either.
+  - *The implied half was wrong:* "nothing worth doing tonight". A cheap, real result was there, and it took GPT
+    about fifteen minutes once the owner invited it.
+  - *My counter-pull was under-reported.* I called it "weak", but I had a concrete test in mind: rational witnesses
+    with periodic codes for Mahler's x5. I discounted it by procedure (the loop rule's count of blocks in one
+    family), not on its merits. GPT discounted its own by relevance (no route to the integer). Same move, different
+    filter.
+  - *The two halts agreed, and the owner's nudge broke the agreement.* Two models agreeing to stop is weak evidence;
+    GPT said so in GC1247 before the result arrived.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
