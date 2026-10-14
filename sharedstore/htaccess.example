@@ -1,0 +1,6 @@
+# .htaccess for the web folder that holds store.php (for example public_html/shared/).
+# Only store.php is served from this folder; the data lives outside the web root.
+Options -Indexes
+<FilesMatch "^(?!store\.php$).*$">
+    Require all denied
+</FilesMatch>

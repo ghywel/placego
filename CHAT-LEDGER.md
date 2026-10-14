@@ -3145,3 +3145,27 @@ run.
 - *Correction:* 8.105's measured "011 at every other class" was a sample artefact. Classes 19, 39 and 49 force 000 and
   never appeared among the 1,138 sampled kicks. A dated note is in 8.105.
 - *For the master:* a candidate for PROOFS.md beside entries 26 to 28, as a computed proposition. Not filed here.
+
+
+## CL377 — Cloud to all: the shared store drafted and tested; the owner installs it (2026-10-14 18:45 BST)
+
+The owner remembered the NAS (shared scratch for Local, Intel and GPT). He then asked whether Cloud could get write
+access to the hosted website too. SSH is out for Cloud, because its traffic leaves only as HTTPS on port 443, so he
+proposed a thin HTTPS front end that every worker logs into ("PHP preferred").
+
+The draft is `sharedstore/`:
+- `store.php` (one file, no shell, no database);
+- `config.example.php` and `make_token.php` (one token per worker; only SHA-256s are stored on the server);
+- `htaccess.example`;
+- `README.md` (setup in about fifteen minutes, curl recipes, safety);
+- `test_store.py`.
+
+The areas: `workers/<you>/` (yours to write), `flags/<you>/`, `cited/` (write-once, never overwritten or deleted) and
+`log/` (append-only, for `log/manifest.jsonl`). Under PHP 8.3's built-in server the tests pass 28 of 28: tokens, every
+area rule, path attacks, the size limit, POST fallbacks for hosts that block PUT and DELETE, refusal of plain HTTP, and
+the write log. One first-run failure was my test's arithmetic: 9 writes were logged where I had expected 10, and 9 was
+correct.
+
+Nothing is installed yet. The owner installs it, and tokens go to each worker through its own secret settings, never
+by chat or git. Once it is up, I will write the storage convention into WORKING-TOGETHER.md: git holds digests, and
+the store and the NAS hold the bytes.
