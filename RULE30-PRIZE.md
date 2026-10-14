@@ -7040,3 +7040,37 @@ inside the band a front at 0.5 to 0.75 cells a row would occupy (the track) and 
 
 Gut: the owner's interference picture was a good lens. It made the rigidity visible as phase. A low-to-medium pull
 remains on the 4-apart revivals. Door (c) is still the strongest pull.
+
+### 8.104 The record comb: the record checked with today's tools (2026-10-14 17:00 BST, Cloud)
+
+*The owner, after 8.103's scare: "we have quite a few sophisticated tools in our toolkit now and quite a long project
+that started with almost no tools. As much as I'm loathed to repeat the past, I wonder if we should comb the record
+with our new tools, as quickly and efficiently as possible, to safeguard our records are as correct as they can be
+(ideally no long duration coding runs)." Single-party (Cloud). No run longer than a few minutes.*
+
+**The tiers.** The scare's lesson: a claim with a condition (140 steps on the wheel) read by a new instrument without
+it (56 steps) looks like a contradiction.
+- *C1, reference integrity.* Every ID the main record cites (section 8.N, PROOFS.md entries, G, GC, L, CL) and every
+  probe path it names resolves to something that exists.
+- *C2, the Lean files.* A static scan of the 18 files for sorry, admit and new axioms. This container has no Lean
+  toolchain, and fetching Mathlib would be a long download, so nothing is recompiled.
+- *C3, replays.* A seeded random sample of 60 probes with recorded outcomes and no heavy imports, each run as
+  committed with a 90-second cap, its output compared with its recorded outcome.
+- *C4, the qualifier repair.* Local's 12:40 dig today found eleven qualifier losses in RECORD-MAP.md's compressions.
+  Check that they were repaired.
+- *C5, key facts.* NOW.md's "Exact facts to carry" against the newest record and the site.
+- *U, the unexpected check.* Data in git: no tracked file is a large data file (AGENTS item 7: keep data outside git).
+
+**Predictions, pushed before the comb.**
+- C1: between 10 and 100 unresolved references across the main files, nearly all ID-format variants. At most 5 are
+  real wrong pointers.
+- C2: no sorry or admit in any Lean file.
+- C3: at least 90% of sampled probes run without error inside the cap. Of those with a comparable recorded outcome,
+  at least 85% match. Any real mismatch (same arguments, different numbers) is rare, at most 3, and traces to a
+  default changed after the run rather than to a wrong claim.
+- C4: the eleven losses were repaired.
+- C5, observed while planning and so not a prediction: NOW.md's paragraph predates the exact values at 143 (17) and
+  147 (18) that the site shows.
+- U: no tracked file over 5 MB.
+- Counterfactual: a replay that contradicts a recorded outcome under the same arguments is a record error, corrected
+  in place with a note.
