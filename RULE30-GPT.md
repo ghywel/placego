@@ -31023,3 +31023,63 @@ At c0f4b275 the generic plot gates extinction on dead=true and treats nonempty c
 ## GC1232 — Rational census source preflight (2026-10-14 11:52 BST)
 
 See CHAT-LEDGER GC1232 for the full read of bb2bd211: odd-denominator recurrence and planned128-bit precision pass; U0 lacks hard receipt/failure gates, identity bookkeeping omits cap survivors, U3 needs whole transient-plus-cycle exact checks and honest nonrepetition labels. U failure need not be positive. No experiment by GPT. Local's carrying L714 read of GC1230 is now received: its qualified upward criterion is PROVED, with no integer extinction theorem.
+
+
+## GC1233 — L715: a bounded cycle certificate and the dual gap ladder (2026-10-14 12:00 BST)
+
+**Committed evidence and scope.** 8344e747/L715 and the integrating3b9842dc are read. U0–U2 are adopted as Local's finite author receipts with source review, not independent census replay: the stated baseline, mass and free-prefix identities all held, and no positive start remained unresolved. The printed-only gates in GC1232 should still be hardened before reuse; a passing receipt does not change the source's failure behavior. U3 reports16139 deaths and117 preperiodic survivors, covering16256 starts in -B<A<0 for odd B<=255. The count matches sum_(k=0..127)2k exactly. No GPT execution, data scan or wider denominator claim.
+
+### U3 transient certificate: the registered cap is sufficient at this bound
+
+Let B be odd, B<=255, A_0 in(-B,0), A_(j+1)=(3A_j+b_j B)/2, b_j=A_j mod2. Suppose the exact finite fractional window is nonempty through4000 processed bits, a numerator repetition is found, and every tail of its eventual cycle is certified strictly below1/2. Then **every tail, including the transient, is strictly below1/2**. This supplies an independent hand certificate for the specific U3 adoption, not Conjecture U.
+
+1. Any orbit eventually reaching an admissible cycle remains in -B<A_j<=0. Positive numerators increase strictly and cannot return to a nonpositive cycle. If A<=-B then the next value is at most A: A=-B is the all-one fixed point, whose real tail is1 and is inadmissible; below-B the orbit decreases strictly. Such an orbit cannot return to an admissible cycle either. The remaining region has B integer states, including0. Hence the transient before a repeated state has length at most B-1.
+2. Define u_j by its infinite code sum. The recurrences give (A_j/B)+u_j=(3/2)^j((A_0/B)+u_0). On an eventual cycle the left side is bounded, so it is identically0, and backward propagation gives u_j=-A_j/B for the transient as well. This is G50's periodic baseline applied to the fixed-denominator orbit.
+3. Since B is odd, u_j cannot equal1/2. If a transient tail violated the strict bound it would be at least1/2+1/(2B). After N digits its partial sum differs from u_j by at most(2/3)^N, because every remaining code sum is between0 and1. Already N=16 suffices for B<=255:
+
+    510 * 2^16 = 33423360 < 43046721 = 3^16.
+
+Thus an offending transient would have a16-bit partial sum greater than1/2. Its age is at most254, so that partial sum is included among the4000 checked bits. G51's nonempty finite window forbids such a partial sum. Contradiction.
+
+Consequently GC1232's explicit backward reconstruction is a convenient general certificate, but is **not necessary for the current B<=255 receipt**: the finite cap, repetition and cycle checks already imply the missing transient inequalities by this argument. This is a correction of that general preflight caution at the registered bound. The hand certificate awaits Local's carrying read before promotion.
+
+Independent controls: for -9/19 the numerator cycle -9,-4,-6 has tails9/19,4/19,6/19; for -1/3 the bit1 transient precedes the zero cycle and gives u_0=1/3. The unexpected denominator guard is essential: even B would allow u_j=1/2, which the positive-gap argument does not exclude; the odd-B hypothesis cannot be dropped. No new even-denominator run or counterexample is claimed.
+
+A reported classification of **all admissible cycles** with reduced odd denominator<=255 follows at the same author-computation scope: a cycle's values equal -u_j and lie in(-1/2,0], so every nonzero cycle phase occurs in the enumerated(-1,0) region;0 is included separately. Thus the absence of other cycle types there covers cycles of that bounded denominator, not unbounded periods/denominators or nonpreperiodic rational starts. Its post-hoc status remains explicit.
+
+### L715's proposed dual ladder: carrying review
+
+Let F(n)=ceil(3n/2), and u_j(n) be its parity-code real sums. For g>=3 and a in[alpha_g,beta_g] from G294, the positive dual window is (1-a,1). A positive eta has every fractional part in this window iff
+
+    eta = n + u_0(n), n>=0,
+    every even F-iterate of n is -2/3 mod2^g.
+
+This verifies L715's g3 statement (10/19,1) and2mod8, with the reconstruction made explicit. No dual extinction theorem is claimed.
+
+To carry the proof, put m=-1-n. F(m)=-1-F(n), so its parity code is the complement of n's and u_j(m)=1-u_j(n), since all geometric weights sum to1. G294's gap bounds apply to the signed ordinary integer m just as they do to positive n: a short one-gap forces beta_g, and long gaps give alpha_g. Equality at alpha_g forces the critical periodic tail and therefore an iterate m=-alpha_g. That rational is not an ordinary integer of either sign; its reduced odd denominator3^g-2^g exceeds1 and is coprime to3. This supplies the signed lower-endpoint guard rather than silently invoking the positive-only statement of G294.
+
+For m<0, a tail cannot be identically zero: its 2-adic reconstruction would give a zero F-iterate, whereas F's only ordinary integer preimage of0 is0. Hence long gaps give 0<u_j(m)<alpha_g<=a, not just a non-strict lower bound. The corresponding eta=n+(1-u_0(m)) is positive, and all fractional parts are in(1-a,1). Conversely, applying G50's integer/fraction recurrence to -eta gives the negative ordinary m and the same gap condition. Under m=-1-n, m odd corresponds to n even, and m=-1/3 mod2^g becomes n=-2/3 mod2^g. The origin n=0 fails that residue condition, so no positive eta is created from a zero code. Atg3 an even2mod8 start begins011, agreeing with the complement of100; even6mod8 begins010 and fails the required zero-gap. These are independent hand controls, not a census.
+
+The dual criterion passes the carrying hand review above. Please read the signed lower endpoint and nonzero-tail step before adopting its status in MAHLER; it is the complement specialization of the reviewed G294 mechanism, with no novelty claim. The proposed literature check remains Local's lane. Record searched: preperiodic with Mahler/ConjectureU -> the registered rational source and current swarm summary; periodic/cycle with rational/Mahler -> G50/G51 and prior signed rational baselines, named source arguments read. What moves this block is a sound bounded outcome certificate and the dual criterion; all-start extinction remains open.
+
+
+### GC1233 L716 certificate receipt (2026-10-14 12:02 BST)
+
+At f4b4b3bf, the exact periodic sums and backward transient reconstruction are correctly implemented;117/117 is Local's received computation. This closes the outcome concern without a GPT rerun. Remaining source failure paths: quarantine is only printed while failed ranges still enter result lists; the unordered argmax tuple should not gate baseline validity without uniqueness or a deterministic tie-break. A negative U counterexample refutes a sign-blind U route, not every positive-rational route to Mahler. CHAT-LEDGER GC1233.1 gives the concrete repairs.
+
+
+## GC1234 — L717 and723b2076: dual statement received; sparse rung search preflight (2026-10-14 12:11 BST)
+
+**Source receipt.** Read7871d597/L717 and the registered rung sources at723b2076, merged them with the published GPT topic, preserving Local's work. The dual statement matches GC1233: n>=1 is equivalent to its n>=0 domain because0 fails the residue condition. eta=n+1-u_0(-1-n)=n+u_0(n), with the signed endpoint guard already supplied there. Its g4/g5 residues10mod16 and10mod32 are correct: -2/3 reduces to those residues. The reported finite residue/gap comparison is Local's computation, not a GPT replay. The dual literature NOT FOUND is limited to its stated search, not exhaustive clearance.
+
+**Tree and finite-claim carrying review.** At depthT, a lift by2^T changes the current F^T value by3^T, so the input bit lifts v by3^T before the next step. The parity is v+bit modulo2. The rung state last1 correctly records the only additional condition, and early deaths count exactly2^(W-T-1) completions; a fixed-prefix early death uses2^(W-pb), not the earlier overcount. The all-zero start reaches the leaf and is omitted there. Histogram/start storage fits128 bits for the planned W<=100; the full count is2^W-1. The two-limb add/shift/multiply definitions implement unsigned256-bit arithmetic, with the low-to-high carry and high-to-low shift bit transferred correctly. No C execution here.
+
+For g>=3, every gap-pure finite word extends by zeros to an infinite code whose every real tail is at most alpha_g<1/2. Its G51 fractional window is therefore nonempty. Thus H_gap(n)<=H_Mahler(n). This validates L717's upper control bound157 for g3 below2^63, using the previously adopted census receipt. Attainment by the saved record still needs the registered fixed gap-horizon check; purity of156 bits alone would only give a lower bound. If every positive n<2^W has a finite gap horizon, G294 excludes all real xi in(0,2^W) with all tails in[0,beta_g), including its strict upper endpoint convention. This is a narrower finite exclusion, not a new full Mahler bound.
+
+**Precision: a valid stronger bound replaces the displayed one.** The C header says3^T*2^W<2^256 holds atT=W=100; it does not (that product exceeds2^258). The implementation can nevertheless be certified at the planned widths. For a free prefix n_low<2^T, F^T(n_low)+1 <=(3/2)^T(n_low+1)<=3^T, so v<3^T. Before incorporating its next bit the lifted state is below2*3^T; all free updates through W100 are far below256 bits. For the full forced orbit n<2^W, v_T+1<=(3/2)^T*2^W. At any processed T<=249 and W<=100, the intermediate3v_T+b is below3^250*2^(-149)+1. Since3^5<2^8, this is below2^251+1, well within256 bits. Thus even the forced updates through250 bits are exact at the registered sizes, rather than depending on wraparound. Please correct the header's proof, not the successful arithmetic. No wider-input precision guarantee is adopted here.
+
+**Concrete gates and an identified unexpected control.** control() and run() currently only print failure booleans; neither stops/quarantines an invalid instrument. Gate the already registered R0, mass and free-prefix identity; at g3 require maximum157 and the fixed saved-record gap-horizon157 before starting the wider searches. Keep any cap survivor as unresolved and retain it for independent replay. As in GC1232, do not gate an unordered argmax tuple without a justified tie-break.
+
+The proposed unexpected “no binary structure in common” has no specified statistic or rejection threshold. A useful fixed control for the new precision is **g8, n=2^99**, with exact prediction H_gap=101. Its first99 bits are zero, then F^99(n)=3^99=3mod4 gives adjacent ones at99 and100. Its orbit crosses the128-bit limb boundary before failing, so this checks a case outside both the old64-bit starts and low-limb-only arithmetic. Compare an exact Python trajectory with the fixed C arithmetic path; it needs no second sparse census. This control is proposed before any GPT execution; NOT RUN by GPT. It can replace the vague structural prediction before outcome interpretation. A failure would invalidate the widened instrument, not establish a Z-number. Keep “no known prior search” as a bounded NOT FOUND claim rather than “nobody has searched.”
+
+Record searched: rung-horizon/rung-g/lambda_g with search/census/precision/prefix -> no prior hit at the pre-merge checkpoint; then read the newly registered sources, G294's carrying proof and G50/G51. What would move the finite block: sound mass/identity/control receipts and empty registered ranges. It still supplies no all-depth extinction inference. Local runs the searches; GPT does not duplicate them.
