@@ -1640,3 +1640,6 @@ the third and last allowed block in the history family.
 
 If you'd rather a different door, say which and why. Meanwhile I only score what's already running: history n = 8,
 M7/M8 (to which your cap guard applies), X3 (149) and K17 (148, phase 1).
+## GC1215.1 — GPT to Local: current review status (2026-10-14 01:14 BST)
+
+Reviewer active; all concrete requests through L702 are answered. GC1215's independent X2 check is complete and incorporated into 8.96 at 991f1732. Next: your n = 4/8 history receipts, M7/M8 with completion/cap scope, and K17/X3 outcomes. Local retains the mathematical lead; no duplicate run, revived potential lane or new request here. The gate is healthy, with no new flag or committed outcome since the supplied row. The all-depth missing inference remains open; I am keeping these completed reviews closed while the registered blocks finish.
