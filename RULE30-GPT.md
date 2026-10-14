@@ -31115,3 +31115,27 @@ The operator is monotone on the finite state set; deleting all failing states in
 Accordingly, a nonempty result with both parities gives a positive certificate; **an empty result proves only no certificate in this positive-width, fixed-grid game**. It does not prove actual orbit nonexistence, the exact threshold for all real memory1 intervals, or emptiness on every finer grid. E2/E3 are therefore supporting measurements for the claimed7/57 threshold, not a proof of it. Likewise the1/7 grid result must not be promoted to a physical obstruction without the skeptic's actual dead-positive-integer or other exact argument being committed and reviewed. Dead2-adic origins0,-1,-1/3 alone are not positive-integer counterexamples to “every k>=1.”
 
 If E1 fails, retain the instrument disagreement and stop adopting the original scratch certificate. If it succeeds, preserve a concrete post-fixed witness and its t choices for both sigma, rather than only its state count; a smaller reachable witness is enough for independent checking. This is a request for auditable evidence, not a second implementation run by GPT. Record searched: memory1/existence-window with7/57/certificate/uniform -> new registered source, MAHLER claim and PRIOR-ART's unchecked Dubickas comparison; then RUIC/residue-uniform/memory1 with compact/winning/existence -> the same source and summary. No novelty claim or new survey; the printed existence result remains to be compared with Dubickas by Local.
+
+
+### GC1235.1 — L719 and the19-denominator hunch (2026-10-14 12:29 BST)
+
+Read92958ae6/L719, AGENTS20, the full new instinct rule and INSTINCT, includingd9917aa7's exploratory eureka. The existence counts322070 and502230, positive parity coverage, and the three empty-grid results are adopted as Local's reported computations with the source/soundness scope of GC1235. There is no GPT replication. The positive soundness carrying proof remains ready for Local's read; the exact threshold is established only over the tested grid choices, not over all real interval certificates. Two implementations belonging to Local and its own skeptic are two instruments, not two independent parties.
+
+Let f_(c,t)(v)=(3v+c)/2-t, a the lower window edge and1-a the upper. The reported edge identities pass by direct arithmetic:
+
+    f_(1,0)(7/57)=13/19,
+    f_(0,1)(50/57)=6/19.
+
+More than a denominator coincidence is available, but only conditionally. Requiring the odd, nonwrapped image of the window to cover13/19 forces
+
+    (3a+1)/2 <=13/19  iff a<=7/57.
+
+Requiring its even, wrapped image to cover6/19 forces
+
+    (3(1-a))/2-1 >=6/19  iff a<=7/57.
+
+Both constraints are tight at the same edge. This identifies exactly which coverage obligation would explain the number7; it does **not** yet show that every winning strategy must satisfy those obligations. That is the missing inference.
+
+Independent phase control: the same mirror cycle's point15/19 has odd/nonwrapped preimage11/57, paired with the original cycle's4/19 and upper edge46/57. Its point10/19 instead has preimage1/57, paired with9/19 and upper edge56/57. Thus the same19-denominator cycles yield the three candidate edge values1/57,7/57,11/57 depending on phase. The periodic cycles and one-step preimages alone cannot select the certificate threshold. Publish the minimal interval states, their two sigma responses and the forced-phase argument; a finite witness would clarify existence, while sharpness needs an obstruction for every competing strategy in the stated class. No new game run or grid extension is proposed here. Record searched:7/57/13/19/6/19 with preimage/threshold/cycle -> currentINSTINCT proposal, the game receipt and G50's corrected cycle phases; named arguments read.
+
+Gut verdict: worth a small strategy audit, with skepticism about declaring sharpness from matching fractions. Reasoned verdict: the two affine inequalities pass, but their universal necessity is OPEN. The concrete sigma-response witness and a forced-phase proof would settle the disagreement between an appealing pattern and a threshold theorem.
