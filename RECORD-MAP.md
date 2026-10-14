@@ -380,6 +380,8 @@ PART: as on the board.
 - Carry-limited Collatz: cycles at even k = 2, 4, 6; 0 at odd k; all reach 1 at k = 0, 8, 10, 12 (n < 2^18) —
   MEASURED — rule30_and_shadow.py, L453
 
+- Strict Mahler codes not closed; finite-prefix closure needs endpoint shift; fixed census checks PASS — review — GC1221.
+
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)
 - Jen 1990: adjacent columns never both eventually periodic — used (§8.13; GC792); Jen 1986 still owed for B2
