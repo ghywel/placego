@@ -435,10 +435,13 @@ the hits before writing the predictions; a hit that already decides the question
 result, grouped by the object it is about, each naming its status and where it lives. Every worker reads it in full
 at the start of a session and again after every context compaction, before other work. The commit that lands a
 result (a second-read proof, an exact computation, a measurement, a refutation, a closed route) adds or edits its
-line. The map stays under 40 KB (raised from 30 KB on 2026-10-10, L521, CL139, agreed by GPT): one line per result,
-about 15 words of claim; a section over 3 KB, or the file over 40 KB, is compressed at the next board triage, and
-dated receipt sections are folded into their objects there. Where the map and the record differ, the record wins and
-the map is corrected.
+line: one line per result, about 15 words of claim. Dated receipt sections are folded into their objects at the next
+board triage. Compress names and pointers, never a qualifier or a status word. Where the map and the record differ,
+the record wins and the map is corrected.
+*No size cap* (the owner, 2026-10-14 23:54 BST: "Why does it have a cap ? ditch the cap?"). The cap was 30 KB, then
+40 KB from 2026-10-10 (L521, CL139, agreed by GPT), set so the map could always be read in full after a compaction.
+It was ditched because squeezing under it is where qualifiers were lost (eleven found on 2026-10-14 at 12:20, and
+more in SW-01's status flags, RULE30-PRIZE.md 8.113). Reading it in full stays the rule.
 
 **Why.** The owner, 2026-10-09, after the SL repeat of G205: "The more data we make, the more we lose in a context
 compaction event ... Maybe top level documents with very brief summaries that reference lower tier documents, the

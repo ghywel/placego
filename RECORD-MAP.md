@@ -12,8 +12,8 @@ Rule: `record-map` in WORKFLOW-SAVED-MEMORY.md.*
 3. Read each named source before citing: the record overrides this index; correct discrepancies.
 
 **How to keep it.** Index each landed result (reviewed proof, computation, measurement, refutation, closure) under
-its object: about15 words of claim, status, source. Keep under40 KB (formerly30; L521/CL139); compress at triage
-if a section exceeds3 KB or the file40 KB, folding dated receipts into their objects.
+its object: about 15 words of claim, status, source. Fold dated receipts into their objects at triage. Compress names
+and pointers, never a qualifier or a status word. No size cap (the owner, 2026-10-14: "ditch the cap?"; it was 40 KB).
 
 **The tiers below it.**
 - PERIOD-TWO.md §6, the status board: every lead and what is left. §4 lists the closed routes.
@@ -31,12 +31,13 @@ PART: as on the board.
 - Period 1: no nonzero finite configuration has an eventually constant column — PROVED — Condrey arXiv:2609.09431;
   proved again by hand, §8.76, filed and second-read as entry 37, machine-checked in Lean (CHAT-LEDGER.8.md)
 - Period 2: can a finite configuration's centre column be 0101... from some time on? — OPEN — PERIOD-TWO.md §1
-- Chain (PERIOD-TWO.md §2), all OPEN: R(d) <= d + 4 (§8.36) ⇒ R(d) finite for every d ⇔ LR (König; §8.36) ⇒ LR_m
-  (§8.11) ⇒ B (§8, §8.11) ⇒ period 2. LR, LR_m, B: no column 1, no width-m layer input, no finite right half makes
+- Chain (PERIOD-TWO.md §2), all OPEN: R(d) <= d + 4 (§8.36) ⇒ R(d) finite for every d ⇔ LR (König; §8.76,
+  PRIOR-ART; R(d) defined §8.36) ⇒ LR_m (§8.11) ⇒ B (§8, §8.11) ⇒ period 2. LR, LR_m, B: no column 1, no width-m layer input, no finite right half makes
   the forced left half for 0101 eventually zero.
 - Exact forms: forced walk (§8.37), wall form (§8.39), black, white and both (§8.40) — COMPUTED (probe-checked)
 - Q1: keeping the wall's conditions costs real information; prove N_{w,j}(T+k) <= 2^(c(w) - αk) N_{w,j}(T) with
-  c(w) = O(log w) — OPEN ("No known method reaches it") — PERIOD-TWO.md §5; §8.51 to §8.53, §8.58; board Q1 (M1)
+  c(w) = O(log w) — OPEN, parked at the fifth triage L638 ("No known method reaches it") — PERIOD-TWO.md §5;
+  §8.51 to §8.53, §8.58; board Q1 (M1)
 - Delivery side is a theorem (the channel bound); the cost side holds exactly only beside a constant wall, and
   beside 0101 only as a coin model — PART — PERIOD-TWO.md §5; §8.41
 - The seed's left part pays exactly: it halves the count (left-permutivity) — PROVED — §8.51 to §8.53 (CJ0, DB0)
@@ -110,8 +111,8 @@ PART: as on the board.
 - VC3 gate/status repairs pass synthetic controls (stale-cache recovery manual; no certificate replay) — GC961/965.
 - RR3 decided 97..120 (solver values); deciding UNSATs d3..97 by drat-trim/cake_lpr; VC 200/200; RR3 98..111, 113,
   114 by cake_lpr, 112 and 115..120 kissat only (VC3 halted; comb §8.108) — COMPUTED — RRC L438, L480, VC3.
-- Comb B: stored 42 LRAT, 170 DRAT verify; kept cert CNFs match receipts (34/34); regenerations reproduce — COMPUTED — §8.108.
-- Comb A,C-E: 17/18 Lean clean; 15 replays reproduce; 52 derived-layer fixes — COMPUTED (single-party) — §8.106.
+- Comb B: stored 42 LRAT, 170 DRAT verify; the 34 kept cert CNFs behind record claims match receipts (36 kept; 2 back nothing); regenerations reproduce — COMPUTED — §8.108.
+- Comb A,C-E: 17/18 Lean clean (Rule30Period1.lean deferred, environmental); 15 replays reproduce; 52 derived-layer fixes — COMPUTED (single-party) — §8.106.
 - Forced-walk counts~2^(0.41d), coin optimum~0.826d+0.8 — MEASURED — §8.38; endpoint words RRX/RRL.
 - Relaxed records, exact forbidden words to K=16/18: exceed 17 first at d=65/84; moving frontier — COMPUTED — RLK L555..559.
 - K=40 relaxed at L=18: 124 UNSAT both phases (<=17); 140, 144, 152 settled by CUT/SP — COMPUTED (kissat) — RLK L575, L581/582, L589.
@@ -327,7 +328,8 @@ PART: as on the board.
 - Linear-CA columns2-automatic; restart statement only sketch — known / PROOF-SKETCH — same probe.
 - Rule210 LR false, no finite full0101 clock; transfer to30 invalid — PROVED — §8.65/70, entries29/31/32, GC479.
 - Rule90 no finite period2 column; Rule60 control differs — PROVED / COMPUTED — Proposition5, §8.3.
-- Echoes exact, not local; kick cone forced by class, certified §8.100..105,8.107
+- Rule 30 = Rule 150 jump XOR AND echoes: exact (PROOF-SKETCH identity, COMPUTED to t = 64) §8.100; not local — MEASURED
+  §8.102, 8.103, 8.105; kick cone forced by class — COMPUTED, certified §8.107
 
 
 ## Routes closed (do not reopen without new evidence)
@@ -349,7 +351,9 @@ PART: as on the board.
   compensation (GC597, GC598), bounded restarts (GC599), age-cutoff and phase-mask (GC601) — CLOSED as methods —
   CL065, GC614.1
 - Q7's affine waiting envelopes: slope below 3 only at dyadic periods up to 4 — CLOSED — GC596
-- Q3, a machine-found certificate: it is Q1's potential — CLOSED — §8.61 (G5's caveats)
+- Q3, a machine-found certificate: the only potentials named are Q1's counting ones (the first version's equivalence
+  withdrawn, G5); entry 38's strip graphs hold none for 01 to radius 9 — CLOSED until another finite family is named —
+  §8.61; board Q3
 - Q4, Kari and Kopra's partial result: true and empty for centre columns — CLOSED — §8.55
 - Minimal-counterexample descent: 3/4 of normalized words are roots — CLOSED — G121 to G124, G128
 - Sideways dynamics as a prize route — CLOSED — G128 (rest in CONSTELLATION.md row 5)
@@ -361,13 +365,13 @@ PART: as on the board.
 - Counting form: Terras's coin to 0.5% (w = 30); slope -0.0591 vs the coin's -0.0591 at w = 43, excess <= 7.4 bits,
   not growing — MEASURED — COLLATZ-PRIZE.md §6, collatz_count.py (CZ12 .. CZ16, L509)
 - Fewer than 2^(w - αT + c) survivors, the same gap as Q1 — OPEN — COLLATZ-PRIZE.md §1, §6
-- Least residue: T^k(2^k m + r) = 3^a m + T^k(r), 0 <= T^k(r) < 3^a — PROVED (known: Terras) — COLLATZ-PRIZE.md §4
+- Least residue: T^k(2^k m + r) = 3^a m + T^k(r), 0 <= T^k(r) < 3^a — PROVED (known: Terras 1976, Lagarias 1985 Thm B) — COLLATZ-PRIZE.md §4 (proof), §5 and PRIOR-ART (credit)
 - Window principle W1 to W3; W2 is Dubickas 2009 Theorem 5 — PROVED (known) — COLLATZ-PRIZE.md §5
 - Exponential sums cannot reach a single case — CLOSED — COLLATZ-PRIZE.md §5
 - Every actual demand law is unimodal; not always log-concave — PROVED, COMPUTED — entry 30 (Proposition 17); L048
 - The universal singleton route — REFUTED — G89 (L046)
 - First-deficit survivors n < t^14.3/3; endpoint certificates; offset envelope — PROVED — G69, G68, G67 (L037)
-- Conditional bounds (G30, G34, G35, G39-G42, G47, G48) — PART — board Q9; signed bias O(1/m) at T = 8m is OPEN
+- Conditional bounds (G30, G34, G35, G39-G42, G47, G48) — PART, parked at the fifth triage L638 — board Q9; signed bias O(1/m) at T = 8m is OPEN
 - Rule 30 and the 3/2 map share one linear map (the Gray code), corrected locally and by a carry — PROVED (an
   identity) — PRIZE-PROBLEMS.md; COLLATZ-PRIZE.md §8; carry audit CL066, GC616 (L326)
 - "XOR plus AND": the linear-shadow claim was wrong; carry-free Collatz keeps the parity AND; the product-free
@@ -376,21 +380,30 @@ PART: as on the board.
   MEASURED — rule30_and_shadow.py, L453
 
 ## Mahler's 3/2 problem (MAHLER.md)
-- Code/closure/dimensions PROVED G293; MAHLER §1.
-- Positive/dual census: endpoints, counts/horizons in MAHLER §1 — COMPUTED (source audit/max rung-replay); D-M2^57.
+- Code/closure/dimensions PROVED G293; MAHLER §1. Pi_2 form (every positive range dies at a finite horizon, forward-shift
+  repair) PROVED GC664, second-read L363.
+- Positive census: no Z-number below 2^63, counts/horizons (MAHLER §1); dual census: no eta in (0, 2^63 - 1] with every
+  part in (1/2, 1) (MAHLER §2, S2) — COMPUTED (source audit; max replayed by rung code); D-M 2009 had 2^57; later
+  literature not checked, so no current-record claim (GC1225).
 - Stephan2026 window exclusion and finite-hold certificate limit — PRIOR-ART.
 - Bounded-gap Fibonacci fails integer realization — PROVED GC929.
 - Million-start cutoff COMPUTED GC931; white-orbit forbidden-root exclusion PROVED GC928/CL147; visitation CLOSED.
-- Carry dial MEASURED L457/GC836; capped convergence nonuniform near4/3 PROVED GC935/936.
+- Carry dial: H_0 = H_1 = v2(g)+1 for every g >= 1 PROVED G266 (GC836/837, second-read L461); k >= 2 MEASURED L457;
+  capped convergence nonuniform near 4/3 PROVED GC935/936.
 - Narrower-window rung exclusions to2^100 — COMPUTED MAHLER §2.
-- Gap-g/dual PROVED G294; coupling/bowtie CLOSED; swarm main-line null — MAHLER §2.
-- Every positive unit interval has xi confined to[7/57,50/57];14-state graph sharp, universal necessity OPEN — PROVED GC1235/37,L721/23.
-- K intersect eK={0} if3^v2(e)*odd(e)=3 mod4, PROVED8.110/GC1246;13 PROVED8.112/GC1253; plateau SKETCH W296. (2/3)K=even part GC1246.
+- Gap-g ladder PROVED G294; dual ladder PROVED GC1233 (G294 complemented, read L718); upward annulus criterion PROVED
+  GC1230 (read L714); distance to K = 2^-(H-1) PROVED GC1236 (read L722); coupling/bowtie CLOSED; swarm main-line null
+  — MAHLER §2.
+- Every unit interval [k, k+1], k >= 1, holds a xi with every part in [7/57, 50/57]; the 14-state graph is sharp for
+  its own graph; universal necessity OPEN — PROVED GC1235/37, L721/23.
+- K intersect eK = {0} for nonzero integer e with 3^v2(e)*odd(e) = 3 mod 4 (pair statements, no single integer), PROVED
+  8.110/GC1246; 13 PROVED 8.112/GC1253 (its ten further certificates COMPUTED, Cloud only); plateau SKETCH W296. (2/3)K=even part GC1246.
 - Ternary01 unit x^e (e!=0 integer): 3-free(e)=2 mod3 excludes x!=1, PROVED Cloud8.110/GC1246; =1 mod3 infinite, PROVED G295/CL384.
 
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)
-- Jen 1990: adjacent columns never both eventually periodic — used (§8.13; GC792); Jen 1986 still owed for B2
+- Jen 1990: adjacent columns never both eventually periodic — used (§8.13; read as the 1990 report LA-UR-90-761, not compared with Physica D 45, GC792); Jen 1986 still owed
+  for B2
 - Kopra TCS 946 (2023): Rule 30 rapidly left expansive; Corollary 3.7 is Jen's theorem — used (§8.13)
 - Kopra 2021 (arXiv:2005.05112): one p/q column never eventually periodic; Theorem 3.5 at width 1; Rule 30 has width
   2, so a transfer needs a new hypothesis — GC807; PERIOD-TWO.md §5
@@ -400,6 +413,8 @@ PART: as on the board.
 - Meier and Staffelbach (1991): left half from two columns, as here — convergent
 - Hanson and Crutchfield (1997): domain filter, used for the wheel's walls
 - Flatto, Lagarias, Pollington (1995): Mahler's decoupling, same skeleton — calibration, not a route (§8.45)
+- Mahler/Erdős (2026-10-14): Mahler 1968; Dubickas-Mossinghoff 2009 (2^57); Akiyama-Frougny-Sakarovitch 2008; Lagarias
+  2009 (exceptional-set dimension bounds; log_3 2 only for the truncated real set); Stérin-Woods 2021 — PRIOR-ART
 - Dubickas 2009 (W2); Terras, Lagarias, Kontorovich–Sinai (least residue); Bugeaud, Dubickas (2005) — credited
 - Guillon (2008): retourné = forced left half; entropy at width 2 — §8.77
 - Sablik (2008): no expansive slope (GC813); Coven, Pivato, Yassawi (2007): edge odometers (GC808/810)
