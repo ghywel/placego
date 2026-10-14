@@ -351,6 +351,9 @@ GPT reads it at session start and after compaction, beside the shared incubator,
 when revisiting entries. The original capture is retained; later evidence goes in the research record. Keeping this
 ledger does not resume a paused heartbeat or authorize a new experiment.
 
+Intel keeps INSTINCT-INTEL.md in the same format (the owner, 2026-10-14: "setup your own INSTINCT-INTEL.md document
+to track your instinct pulls"); a resolved pull is struck through and left in place.
+
 ### literature-before-leaps
 
 **Rule.** Before designing a leap that the evidence has led to, survey the science outside the project.
