@@ -31162,3 +31162,37 @@ This does **not** close a test against a small family selected before opening th
 The map's restored qualifiers are received and preserved. One boundary qualifier remains: “nor above-2^63” conflates the tested negative **integer seeds** -2^63<x<=-1 with a claim about all negative **real starts** in that interval. The committed real dual exclusion is eta in(0,2^63-1] for fractional parts in(1/2,1), as L712 and MAHLER state. The omitted seed -2^63 does not automatically cover its half-unit of real starts. Please state that real dual range directly when next editing the map; no extra endpoint run is proposed.
 
 Gut verdict: do not spend a computation block on an unrestricted distance rename; the finite strategy witness still has a sharper question. Reasoned verdict: the metric identity passes this hand derivation and awaits Local's carrying read; fixed-reference distances remain distinct and open. All-positive-integer exclusion remains unproved.
+
+
+## GC1237 — L721 fixed-witness audit, registered (2026-10-14 12:49 BST)
+
+Read227a4b59/L721 andfed02d1a. Local's carrying read promotes GC1235 finite-certificate soundness to PROVED. The concrete table is now the bounded remaining obligation. Record searched:15-state/14-state/W15/complement-witness with7/57/RUIC -> three paragraphs in the new source; no earlier reduction.
+
+Before execution, the new mahler_gpt_witness_review.py copies the fifteen states in integer units of1/912 and independently checks cross-multiplied containment and parity, with AST-only agreement against the published constants. Predict all30 edges pass; deleting the unreferenced third state gives14 states,28 edges and exact complement symmetry at the same sigma. Carry corruption, deletion of a referenced state and a one-unit violation of a tight target must fail. Unexpected check: the full fifteen-state table fails mirror invariance but its fourteen-state core passes. Counterfactual: any edge/transcription disagreement quarantines this review until resolved. The unchanged table should fail in the smaller[113,799]/912 window; this cannot exclude competing strategies. No grid/game census.
+
+Local's new formal-infinitesimal threshold attempt stays its lane. Its finite-depth adversary method is a plausible separate obstruction; a single displayed adversary line is illustrative, not a full strategy certificate, since every defender carry needs coverage. This audit will not duplicate that run.
+
+### GC1237 outcome and the fixed graph's exact threshold (2026-10-14 12:51 BST)
+
+Executed only the registered independent checker after publication82032e9f: PASS. The separately copied integer table agrees with all source constants; all30 original and28 reduced edges pass; both parities remain; all three corruptions fail. The unchanged reduced witness fails in the narrower window. No grid census or Local threshold run. The fifteenth state[277/912,331/912],c0 is unreferenced by every target. Removing it therefore preserves closure and leaves seven exact mirror pairs. This does not claim a globally minimal number of states.
+
+Let M([p,q],c)=([1-q,1-p],1-c). The carrying identity is
+
+    f_(1-c,1-t)(1-v)=1-f_(c,t)(v),
+    (sigma+1-t)mod2 = 1-((sigma+t)mod2).
+
+Thus mirroring complements the carry and target parity at the SAME sigma; it is not an exchange of the two adversary responses. The integer audit checks this for all28 edges. The original fifteen-state table is not itself mirror invariant; Local's symmetry hunch becomes exact after deleting the unused state. Some endpoints are grid padding, with denominators304,456 and912; only the cycle and critical preimage endpoints should be described as19- or57-denominator points.
+
+Together with GC1235, now PROVED by Local's L721 carrying read, this independently checked finite artifact establishes: for every integer k>=1 there is xi in(k,k+1) with every fractional part of xi(3/2)^j in[7/57,50/57]. Positive fractional separation makes the open unit interval statement valid. This is an existence theorem, not a Mahler Z-number or an exclusion. Prior-art novelty and comparison with Dubickas remain unclaimed.
+
+**New hand proof, Local carrying read requested: this particular fourteen-state graph has exact threshold7/57 even when all interval endpoints are allowed to vary.** Label states by the independent table's original IDs; keep the carries and the two target IDs fixed, allowing arbitrary nonempty closed intervals V_i=[p_i,q_i] in[a,1-a]. Put beta=3/2. Three edges are
+
+    2 --sigma1,t0--> 11 --sigma1,t1--> 1 --sigma0,t0--> 2.
+
+Upper-end containment gives q_11<=beta q_2, q_1<=beta q_11-1/2 and q_2<=beta q_1. Hence q_2<=beta^3 q_2-3/4, so q_2>=6/19. But edge8 --sigma1,t1-->2 gives q_2<=beta q_8-1<=beta(1-a)-1. Combining forces a<=7/57. This uses graph containment, not the grid values of the chosen endpoints.
+
+The mirror cycle14 --sigma1,t1-->6 --sigma1,t0-->15 --sigma0,t1-->14 yields p_14>=beta^3 p_14-13/8, hence p_14<=13/19. Edge9 --sigma1,t0-->14 requires p_14>=beta p_9+1/2>=beta a+1/2, giving the same bound. Conversely the checked fourteen-state witness fits every0<a<=7/57. Therefore7/57 is the exact threshold for this fixed graph and response/carry pattern.
+
+Record searched before this proof:7/57/6/19/13/19 with cycle/graph/sharp/threshold -> current sources and the conditional phase constraints of GC1235.1; no earlier graph-cycle obstruction found. Universal threshold still needs a proof that every competing winning strategy obeys an equally strong obligation, or a complete adversary strategy above7/57. Local's preregistered infinitesimal search stays its lane: all defender branches must be covered; one displayed losing line alone cannot certify the full obstruction.
+
+Gut verdict: the symmetry pull was useful; close this bounded audit with a precise graph obstruction. Reasoned verdict: existence independently verified; fixed-graph sharpness is a new PROOF-SKETCH awaiting Local, universal necessity OPEN, the Mahler integer-exclusion path unmoved. No automatic extra grid/refinement block.
