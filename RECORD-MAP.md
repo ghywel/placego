@@ -376,11 +376,11 @@ PART: as on the board.
 - n_(j+1)=ceil(3n_j/2), u_j=sum b_(j+k)2^k/3^(k+1)<1/2 (G50 PROVED); hold set = window; integer side the crux; strict set not closed (closure K), dim log2(3/2) PROVED GC1221/L710 — MAHLER.md.
 - No Z-number below 2^63 (D-M 2009 had 2^57); H*~2.4w (157 at w=63); A(T)=beta-shift count; death-bin tail 3/4 (CL092: 2^20) — COMPUTED, GC1221.1 scope — MAHLER.md §1.
 - In print: Z_3/2(2/7,5/7) empty (Stephan 2026, Lean); certificates blocked on infinite hold sets — PRIOR-ART.
-- Bounded-gap Fibonacci code: fractional tests pass, integer realization fails — PROVED CL148 — GC929.
-- Calibration prefix residues certify the million-start cutoff — COMPUTED — GC931.
-- Backward-forbidden roots never recur on a white orbit; visitation CLOSED — GC928/CL147.
-- Capped bits/values lack uniform convergence near4/3 — PROVED L524/CL153 — GC935/936.
-- Carry dial: H_k(g)=v2(g)+1 at k=0 (GC836); odd k collapse; g=53 survives at k=4 — MEASURED — L457.
+- Bounded-gap Fibonacci code passes fractional tests, fails integer realization — PROVED GC929.
+- Million-start cutoff certified (COMPUTED GC931); visitation shortcut CLOSED (GC928/CL147).
+- Capped bits/values: no uniform convergence near 4/3 — PROVED GC935/936.
+- Carry dial: H_k=v2(g)+1 at k=0 (GC836); g=53 survives k=4 — MEASURED L457.
+- Swarm: path unmoved; ladder: [0,a), a in [alpha_g,beta_g] iff odd iterates -1/3 mod 2^g; annulus at D; sign dual (1/2,1); height coupling, bowtie CLOSED — SKETCH — MAHLER.md §2.
 
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)
@@ -391,16 +391,16 @@ PART: as on the board.
 - Kari and Kopra (arXiv:1710.05737): true and empty for centre columns — §8.55; GC670
 - Rowland 2006 §5: left-side period doubling; his one-left-side question answered here — §8.31
 - Nersissian arXiv:2609.25077 Theorem 13: B2's method and single-seed statement, earlier — credited (§8.59 note)
-- Meier and Staffelbach (1991): the left half from two columns, this record's construction — convergent
+- Meier and Staffelbach (1991): left half from two columns, as here — convergent
 - Hanson and Crutchfield (1997): the domain filter — imported for the wheel's walls
 - Flatto, Lagarias and Pollington (1995): Mahler's decoupling, same skeleton — calibration, not a route (§8.45)
 - Dubickas 2009 (W2); Terras, Lagarias, Kontorovich–Sinai (least residue); Bugeaud and Dubickas (2005) — credited
 - Guillon (2008): the retourné is the forced left half; entropy at width 2 — §8.77
 - Sablik (2008): no expansive slope (GC813); Coven, Pivato and Yassawi (2007): edge odometers (GC808, GC810)
-- Tahay; Dolce and Tahay: Sturmian columns from finite seeds in other CA, so finiteness alone forces nothing
-- Milnor, Kurka, Courbage–Kaminski: about systems; no lower bound on one column's entropy found — §8.33
-- Wolfram (2019): the band's boundary at 0.252 a step, an observation; Epperlein (2017): periodic-point table
-- Cramér's model: the coin's scale, with a structural constant (§8.38); Das: not imported; López–Stoll: a gap noted
+- Tahay; Dolce and Tahay: Sturmian columns from finite seeds in other CA; finiteness alone forces nothing
+- Milnor, Kurka, Courbage–Kaminski: systems; no lower bound on one column's entropy — §8.33
+- Wolfram (2019): band boundary 0.252 a step, observed; Epperlein (2017): periodic-point table
+- Cramér's model: the coin's scale plus a structural constant (§8.38); Das not imported; López–Stoll gap noted
 
 ## Side questions (CONSTELLATION.md, by name only)
 - Part A, families after Condrey: Condrey's walls; one-hole walls; slow walls; mostly-white walls; the by-period

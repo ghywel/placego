@@ -2538,7 +2538,9 @@ downloaded.
 - *(2008), Math. Nachr. 281.* No xi has every {xi (3/2)^n} in [8/39, 18/39] U [21/39, 31/39]. Infinitely many xi keep
   every {xi (3/2)^n} in (5/48, 43/48).
 - *(2009), Acta Arith. 137:* powers cannot lie in a small interval.
-- *(2019), Disc. Math. 342:* a single excluded window of length 31/81.
+- *(2019), Disc. Math. 342:* a single excluded window of length 31/81. **Attribution unverified** (flagged by the
+  swarm, 2026-10-14): Lu and Zheng's bibliography (arXiv 2603.16794) gives Disc. Math. 342 (2019) the title
+  "Fractional parts of powers of large rational numbers". A quick search confirmed neither, so check before citing.
 - *Elsewhere:* complexity of minimal words in rational base p/q, liminf p(l)/l >= log q / log(p/q).
 
 **Rational base number systems.**
@@ -2583,6 +2585,20 @@ swarm's adelic lane, abstract confirmed by Local):** Dubickas and Mossinghoff, "
 Comp. 78 (2009) 1837-1851, develop search algorithms and show that any Z_{3/2}-number exceeds 2^57, with bounds for
 other p/q and links to 3x+1 stopping times. This survey had named Mossinghoff only through the 4/3 problem. The census
 to 2^63 (MAHLER.md section 1) extends their bound.
+
+**Swarm prior-art notes (2026-10-14; self-checks by sub-agents, credited for a second reader).**
+- *Parry (1960), Renyi (1957):* the strict admissibility criterion behind the swarm's annulus form (MAHLER.md
+  section 2), carried through G51's isometry.
+- *Furstenberg (1967):* the dimension of a shift of finite type in the 2^-n metric, which gives the window
+  ladder's dimensions log2(lambda_g).
+- *Boyland, de Carvalho and Hall (2016):* maximal digit frequencies of beta-shifts. The swarm's "at most one third
+  of a Z-number's integer parts are odd" is a special case.
+- *Dubickas (2008):* the existence window (5/48, 43/48). The swarm's [7/57, 50/57] certificate lies inside it, and
+  whether his construction already gives one xi per unit interval was not checked.
+- *Akiyama, Frougny and Sakarovitch (2008):* state Mahler's question for nonzero xi. The negative half is the
+  (1/2, 1) window problem; no separate treatment was found.
+- *Window-to-residue equivalence (the ladder):* not found in the record or in one web search. Dubickas and
+  Mossinghoff's "allowed residues" algorithm is the first place to look.
 
 ## Turing (1936), read at the owner's request (2026-10-14 07:58 BST, Local)
 
