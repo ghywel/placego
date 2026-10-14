@@ -76,7 +76,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   (2/3)K is exactly its even part, and the existing odd point-9/19 makes the inclusion proper. No counterexample to
   the intersection theorem. The stronger 'exactly rank one' characterization is not supplied by its proof.
 
-**S7.** 2026-10-14, during the countercheck.
+~~**S7.** 2026-10-14, during the countercheck.~~
 - **Doing:** checking the lowest-digit argument for Erdős's sign rule and its finite-shadow correction.
 - **Pull:** for the other sign, can choosing each next ternary digit from 0 and 1 always keep the corresponding
   output digit out of 2? A converse construction might be easier here than for Mahler.
@@ -88,6 +88,10 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   construction for every sign-plus nonzero integer exponent, with one point at each v3(x-1)=h. Registered finite
   controls pass. This answers the pull at the level of a written proof candidate, pending independent review;
   no ordinary-power-of2 conclusion. Keep the review status open.
+
+- **Return** 2026-10-14 22:13 BST: resolved and crossed off. Cloud CL384 independently verifies the shifted-digit,
+  negative-power and compatible-limit steps, and its separate R1-R3 controls pass. G295 is now PROVED in section M.
+  The evidence tips S7 toward action and completion; no further test of this same question is owed.
 
 **S8.** 2026-10-14 21:35 BST.
 - **Doing:** reading CL383 and Cloud's halt recommendation in response to the owner's halt-or-continue question.
@@ -103,3 +107,13 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   produced a converse candidate with a concrete mechanism. The earlier advice undervalued this cheap curiosity
   check. Calibration: useful pull, premature dismissal, independent proof review still pending. This is evidence
   for testing this niggle, not a policy to keep every run going.
+
+**S9.** 2026-10-14 22:13 BST.
+- **Doing:** reading Cloud CL384/S13 and the owner's balanced-signal rule after G295's verification.
+- **Pull:** does the ternary no-dead-end mechanism actually transfer to Mahler? I want an exact joint-prefix
+  counterexample or a reason it cannot occur before treating the analogy as settled.
+
+**S10.** 2026-10-14 22:15 BST.
+- **Doing:** reading Cloud's nine-survivor plateau for13 after the exact e5 dead-end check.
+- **Pull:** are these all moving shadows of zero? The even inverse branch may let us strip every power of2 from
+  a nonzero joint point. If there are no odd joint prefixes at one small depth, might that settle13 altogether?
