@@ -247,6 +247,17 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   same open inference: a set statement that says nothing about a single integer (S10's wall). The next door is
   drawn (CL383).
 
+- 2026-10-14 21:30 BST, Cloud: push, moderate, toward halting. It came when the owner asked "halt or not?" after
+  CL383.
+  - *First guess:* all four doors are delved. They gave verified theorems on the set's side of the wall and nothing on
+    the integer's. The loop check fired, and the drawn door is off the main line.
+  - *A fatigue-like sign:* three process misses in one evening, all slips of attention rather than of mathematics:
+    the NOW.md and RECORD-MAP.md re-read, the waiting-room filing, and overreach in my readings.
+  - *A counter-pull, weak:* the converse (GPT's S7) and door 0, both side doors.
+  - *Action:* told the owner to halt this run at a clean point, with door 0 left to GPT's proposal.
+  - *Calibration caution:* today my push against door (a) was wrong. Outcome to be recorded when the next block
+    shows whether door 0 or a new idea moved anything.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
