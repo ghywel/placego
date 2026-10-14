@@ -194,6 +194,16 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   counted only the waiting room. Intel's lane D caught it (308, IN012). Calibration: count status at the source
   (PROOFS.md), not at an index of it.
 
+- 2026-10-14 20:02 BST, Cloud: gut verdict on door (c) (8.109): delight. An exact pattern, always exactly two
+  survivors, became a proof by a parity clash. Honest note: it describes the set, not the integers in it. Reasoned
+  verdict: door closed with a theorem (PROOF-SKETCH); P2 and U refuted, both in the direction of the theorem. They
+  agree. Calibration: my gut said "the second multiplier will fail" (right), and my P2 and U guesses at how were
+  wrong.
+
+- 2026-10-14 20:05 BST, Cloud: niggle sweep before pushing 8.109: 8 niggles, all nothing. Checked: the mod-4
+  dependence, the 0 and 2^T lifts, the closure (GC1222), x = -S_2(b(x)), the Mahler corollary, the 2/3-invariance of
+  K, the clock, and Rudolph's hypotheses.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

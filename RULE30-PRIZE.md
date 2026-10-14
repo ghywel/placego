@@ -7566,3 +7566,86 @@ place. Gut: relief, and quiet satisfaction at a clean instrument with controls. 
 the act: the probe's path bug, and three time stamps written ahead of the clock (17:58, 18:05, 18:20, corrected before
 or at commit). Calibration: run `date` before every stamp; a surprising REFUTED is checked against the instrument
 first.
+
+### 8.109 Door (c): Mahler's admissible set meets its doubles and triples only at 0 (2026-10-14 20:02 BST, Cloud)
+
+*Door (c) of CONSTELLATION.md section H (INSTINCT-CLOUD.md S2), at the owner's word: "c please". The hunch was that
+Mahler's map acts on the real and 2-adic sides at once, so the pair of places might supply the second multiplier that
+Furstenberg's x2 x3 theorem needs. Predictions were pushed before the run (2306731). Single-party (Cloud). The
+theorem below is a hand proof, so PROOF-SKETCH, with every step checked by exact computation to depth 28.*
+
+Record searched: S_strict, times 3, 2/3, invariant under, admissible, Renyi, solenoid -> MAHLER.md section 1 (G50, G51,
+GC1221, GC1222, GC1224, the census A(T)), 8.100, 8.101; no hit for a multiplicative symmetry of the admissible set.
+
+**Setting** (MAHLER.md section 1). T(x) = (3x + (x mod 2))/2 on the 2-adic integers Z_2. The code b(x) is the sequence
+of parities of T^j(x), and u_j = sum_k b_(j+k) 2^k / 3^(k+1).
+- S_strict is the set of x with every u_j < 1/2, and K is its closure: the x whose every finite prefix of b(x) is
+  admissible (GC1222).
+- For every x, x = -S_2(b(x)): the code's series summed 2-adically. So for a positive integer n, n is the 2-adic point
+  itself, and a Z-number with integer part n exists exactly when n lies in S_strict (G50).
+- Two facts carry everything:
+  - (F1) the length-T prefix of b(x) depends only on x mod 2^T, bijectively;
+  - (F2) admissible prefixes are closed under taking prefixes, p is admissible exactly when 0p is, a 1 is always
+    followed by a 0, and 0^k 1 is admissible for every k.
+
+**Lemma 1** (PROOF-SKETCH). For every y in Z_2, 2y lies in K exactly when 3y does, and likewise for S_strict.
+- 2y is even and T(2y) = 3y, so b(2y) = 0 b(3y), and (F2) gives the claim for K.
+- For S_strict, u_0(2y) = (2/3) u_0(3y) < 1/3 whenever 3y qualifies.
+- Taking y = z/3 shows K is invariant under z -> 2z/3, the inverse branch of T on the even numbers. That is the
+  Mahler direction itself.
+
+**Theorem** (PROOF-SKETCH). If x and 3x both lie in K, then x = 0. Hence K meets 3K, K/3, 2K and K/2 only in 0, and so
+does S_strict.
+
+*Proof.* Let A_T be the residues mod 2^T whose length-T prefix is admissible, and let
+s(T) = {r in A_T : 3r mod 2^T in A_T}. The claim is that s(T) = {0, 2^(T-1)} for every T >= 1.
+- *Base.* At T = 1 both prefixes are admissible and 3 = 1 mod 2, so s(1) = {0, 1}.
+- *Step: the candidates.* Reduction mod 2^T maps s(T+1) into s(T), by (F1) and (F2). So s(T+1) lies among the lifts
+  0, 2^T, 2^(T-1) and 3 * 2^(T-1).
+- *How a code starts.* A residue 2^k m with m odd and k <= T has code 0^k 1 c, where c is the parity of
+  (3^(k+1) m + 1)/2. That parity depends only on m mod 4, and by (F2) the prefix is admissible exactly when c = 0.
+- *The four lifts.*
+  - 0 and 2^T stay. Their codes are all zeros, or 0^T 1, for the residue and its triple alike.
+  - For r = 2^(T-1), c = 0 exactly when 3^T = 3 mod 4, that is, when T is odd. For its triple, with m = 3 mod 4,
+    c = 0 exactly when T is even. The two conditions never hold together, so r drops out.
+  - For r = 3 * 2^(T-1), admissibility needs T even, and its triple, which lies in the class of 2^(T-1), needs T odd.
+    So it drops out too.
+- *So* s(T+1) = {0, 2^T}.
+
+If x and 3x lie in K, then x mod 2^T lies in s(T) for every T, so 2^(T-1) divides x for every T, and x = 0. The other
+three intersections follow from Lemma 1: if 2x and x lie in K, then 3x does too. QED.
+
+**Computation** (`tests/probes/mahler/mahler_cloud_two_multipliers.py`).
+- *Controls.*
+  - C0: the prefix-to-residue formula agrees with direct iteration.
+  - C1: |A_T| = 2, 3, 5, 8, 12, 18, 27, 40, 60, 90, exactly MAHLER.md section 1's A(T).
+  - C2: Lemma 1's finite form holds at every depth to 24.
+- *The post hoc addendum.* s(T) = {0, 2^(T-1)} at every T <= 28, and the four lifts behave as the step says at every
+  T = 2 .. 28.
+- *Predictions.*
+  - P1 held: the fraction f3 of A_T kept by x3 falls to 0.0001 at T = 24, and the same holds for x2.
+  - P2 was refuted. f3 falls by exactly 2/3 a step (0.666 to 0.668), not by 0.7 to 0.95, because exactly two residues
+    survive while |A_T| grows like (3/2)^T.
+  - U was refuted: 3 is special. The unit 5, which has nothing to do with the map, keeps a density-like fraction
+    falling about 3/4 a step (0.0053 at T = 24, fifty times f3).
+
+**In Mahler's terms.**
+- If n is the integer part of a Z-number, then 2n and 3n are not, and neither are n/2 and n/3 when they are integers.
+- 2n/3 is the integer part of a Z-number whenever 3 divides n. On the real side, (2/3)xi is then a Z-number: its first
+  fractional part is (2/3)u_0 < 1/3, and the rest are xi's.
+
+The backward chain is probably classical. The disjointness was not checked against the literature.
+
+**Reading.** Door (c) closes, and more sharply than "no second multiplier".
+- The admissible set's multiplicative symmetry is exactly the Mahler direction: 2/3 everywhere, and 3/2 on the even
+  numbers.
+- Multiplying by 2 or by 3 alone moves every nonzero admissible point out of the set.
+- In the 6-adic solenoid, the two places merge into the one diagonal map x3/2, a rank-one symmetry.
+- Furstenberg's, Rudolph's and Einsiedler and Lindenstrauss's rigidity needs invariance under two independent
+  multipliers, so it has nothing to hold here.
+- Instead, the set is anti-invariant. Whether disjointness from its own images can be a lever is parked
+  (INSTINCT-CLOUD.md S10).
+
+**Verdicts.** Reasoned: door (c) is closed with a theorem (PROOF-SKETCH, waiting for a second reader) and a clean
+reason. Gut: delight at an exact pattern (always exactly two survivors) turning into a proof by a parity clash. And an
+honest note that the theorem does not move the prize: it describes the set, not the integers in it.

@@ -40,12 +40,22 @@ PREDICTIONS, written 2026-10-14 before any run and pushed before it.
      is within a factor 2 of f3(T) at T = 24.
   Counterfactual. f3(T) staying near 1 at large T would make A nearly x3-invariant at every finite depth. That would
   contradict L2's dimension argument, or my reading of GC1221, and reopen door (c).
+
+OUTCOME, 2026-10-14 20:00 BST (predictions pushed in 2306731; 2.5 s; the addendum 25 s).
+  C0, C1 and C2 PASS. |A_T| equals the record's A(T) exactly, and L1's finite form holds to T = 24.
+  P1 HELD: f3 falls to 0.0001 at T = 24 and is never 1 after T = 1; the same for f2.
+  P2 REFUTED: f3 falls by exactly 2/3 a step (0.666 to 0.668). Exactly two residues survive at every depth, 0 and
+    2^(T-1), the depth-T shadow of 0, while |A_T| grows like (3/2)^T.
+  U REFUTED: 3 is special. f5 decays like a density (about 3/4 a step; 0.0053 at T = 24, fifty times f3).
+  Post hoc (`addendum`): s(T) = {0, 2^(T-1)} for every T <= 28, and the four lifts behave as the induction says. That
+  led to the theorem of RULE30-PRIZE.md 8.109: K meets 3K, K/3, 2K and K/2 only in 0. It is stronger than L2, which
+  it replaces.
 """
 import random
 import sys
 from fractions import Fraction as F
 
-TMAX = int(sys.argv[1]) if len(sys.argv) > 1 else 24
+TMAX = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 24
 REF = [2, 3, 5, 8, 12, 18, 27, 40, 60, 90]
 
 
@@ -110,5 +120,29 @@ def main():
     print('\nf3 step ratios over T = 12..%d: min %.3f, max %.3f' % (TMAX, min(ratios), max(ratios)))
 
 
+def addendum(TMAX2=28):
+    """Post hoc (added after the run, 2026-10-14 20:01 BST): the exact survivor sets behind f3, and the parity facts that
+    carry the induction in RULE30-PRIZE.md 8.109. s(T) = {r in A_T : 3r mod 2^T in A_T} is claimed to be {0, 2^(T-1)}."""
+    ok_s, ok_par = True, True
+    for T in range(1, TMAX2 + 1):
+        m = 1 << T
+        S = {residue(q) for q in admissible(T)}
+        s = {r for r in S if (3 * r) % m in S}
+        ok_s &= s == {0, 1 << (T - 1)}
+        if T >= 2:
+            m1 = 1 << (T + 1)
+            S1 = {residue(q) for q in admissible(T + 1)}
+            r = 1 << (T - 1)
+            ok_par &= ((r in S1) == (T % 2 == 1)) and (((3 * r) % m1 in S1) == (T % 2 == 0))
+            r2 = 3 << (T - 1)
+            ok_par &= ((r2 in S1) == (T % 2 == 0)) and (((3 * r2) % m1 in S1) == (T % 2 == 1))
+            ok_par &= (1 << T) in S1 and (3 << T) % m1 in S1
+    print('addendum: s(T) = {0, 2^(T-1)} for every T <= %d: %s' % (TMAX2, ok_s))
+    print('addendum: the four lifts behave as the induction says (T = 2..%d): %s' % (TMAX2, ok_par))
+
+
 if __name__ == '__main__':
-    main()
+    if sys.argv[1:2] == ['addendum']:
+        addendum()
+    else:
+        main()

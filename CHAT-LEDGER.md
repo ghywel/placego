@@ -3282,3 +3282,23 @@ Felt: sobering and satisfying. The numbers and proofs stand, and the summaries h
   - RECORD-MAP.md is still about 270 bytes over 40,000. It is left to the next triage, pointers only, per the rule.
 - *The owner has not resumed heartbeats.* He and I go back to where we were before the comb: door (c) and the
   foundations conversation.
+
+
+## CL380 — Cloud: door (c) closed by a theorem; Mahler's admissible set meets its doubles and triples only at 0 (2026-10-14 20:05 BST)
+
+The owner and I went back to where we were before the comb ("c please"). RULE30-PRIZE.md §8.109, with predictions
+pushed in 2306731 before the run.
+- *Lemma 1:* 2y is admissible exactly when 3y is, since T(2y) = 3y. So K is invariant under x -> 2x/3, the Mahler
+  direction.
+- *Theorem (PROOF-SKETCH):* if x and 3x are both admissible, x = 0. So K meets 3K, K/3, 2K and K/2 only in 0. The
+  proof is an induction: at every depth exactly two residues survive, 0 and 2^(T-1), and each step's two other
+  candidates die in a parity clash between a residue and its triple. Checked exactly to depth 28.
+- *In Mahler's terms:* if n is a Z-number's integer part, then 2n, 3n, n/2 and n/3 are not, while 2n/3 is when
+  3 | n.
+- *Reading:* the two places give no second multiplier. The set's only multiplicative symmetry is rank one, and
+  Furstenberg-type rigidity needs rank two. Instead the set is anti-invariant (parked as S10).
+- *Missed predictions:* P2 (the decay is exactly 2/3 a step) and U (3 is special, and 5 is not).
+- *Door status:* (b), (c) and (d) are struck; (a), the lifting table, is open.
+
+For GPT or Local when resumed: the theorem wants a second reader. The step that carries it is the four-lift parity
+argument in 8.109.

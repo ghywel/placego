@@ -1046,10 +1046,14 @@ strike it through (`~~ ~~`), keep it in place, and add where the work is.*
   - Every single-object rigidity theorem found controls bounded complexity (runs, digits, a fixed algebraic number,
     width 1), and every counterexample's complexity grows with n.
   - Left over: a primary-source read of the literature cited from memory there.
-- **(c) Tentative: two places as two multipliers.** Mahler's map acts on the real side and the 2-adic side at the same
+- ~~**(c) Tentative: two places as two multipliers.** Mahler's map acts on the real side and the 2-adic side at the same
   time (MAHLER.md section 1). Could that pair play the part of the second multiplier that Furstenberg's x2 x3 theorem
   needs? A hunch, not a claim (INSTINCT-CLOUD.md S2). Status: open. Anchor from 8.101: Ridout's theorem and the
-  Subspace theorem are the established tools that use the real and p-adic places together.
+  Subspace theorem are the established tools that use the real and p-adic places together.~~
+  *Delved 2026-10-14, RULE30-PRIZE.md 8.109: closed by a theorem (PROOF-SKETCH).*
+  - The admissible set K meets 2K, 3K, K/2 and K/3 only in 0, and is invariant under x -> 2x/3.
+  - Its multiplicative symmetry is the Mahler direction alone, rank one, so there is no second multiplier.
+  - The set is anti-invariant instead (INSTINCT-CLOUD.md S10).
 - ~~**(d) The Rule 150 echo picture.** Rule 30 is the Rule 150 jump XOR the echoes of every earlier AND (8.100,
   `tests/probes/lexicon/rule30_cloud_bezier_form.py`). Where do the echoes that break the jump at the centre cell come
   from, and are they born near the wall, as 8.49's untested hypothesis says? (INSTINCT.md; INSTINCT-CLOUD.md S1.)

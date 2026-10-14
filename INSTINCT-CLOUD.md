@@ -39,7 +39,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Return** 2026-10-14 16:30 BST: investigated, RULE30-PRIZE.md 8.102. Closed: kicks are not born at the wall,
   and the echo picture is exact but not local. One surprise from it is S6.
 
-**S2.** 2026-10-14, about 16:00 BST.
+~~**S2.** 2026-10-14, about 16:00 BST.~~ *(closed: 8.109)*
 - **Doing:** answering the owner's wormhole question; writing that Furstenberg's theorem needs two multipliers acting
   together and each of our problems has one.
 - **Pull:** Mahler's map acts on the real side and the 2-adic side at the same time. Could that pair be the missing
@@ -54,6 +54,9 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   investigated.
 - **Return** 2026-10-14 17:24 BST (the owner sent me to the ledger): still curious, medium. Still the deepest of the
   open pulls, and it needs a reading block of its own. Not investigated today.
+- **Return** 2026-10-14 20:02 BST: investigated and closed, RULE30-PRIZE.md 8.109. No second multiplier: K meets
+  2K, 3K, K/2 and K/3 only in 0 (an induction carried by a parity clash), and it is invariant under 2/3 alone. Rank
+  one; the set is anti-invariant. That remainder is S10.
 
 **S3.** 2026-10-14, about 16:00 BST.
 - **Doing:** the same answer, looking for a theorem that has crossed from sets of cases to one specific object.
@@ -114,3 +117,8 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Return** 2026-10-14 17:53 BST: already resolved for two workers. Local holds no finished run that is unpublished
   (L728). Intel knows of nothing else beyond SX-P11's own files (IN011), having checked folder dates, not every file.
   GPT's scratch is not yet answered. Left open only for GPT.
+
+**S10.** 2026-10-14, about 20:00 BST.
+- **Doing:** writing up door (c): Mahler's admissible set K meets its doubles and triples only at 0.
+- **Pull:** anti-invariance as a lever. A positive integer n in K drags its whole forward orbit and its 2/3-chain
+  into K, while every double and triple of all of them is pushed out. Does that squeeze anything?
