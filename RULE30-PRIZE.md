@@ -7809,3 +7809,42 @@ door ends in a theorem about one problem, ask its question of the other three at
 **Verdicts.** Reasoned: door (a) is delved, with one productive row and a refuted usefulness prediction. Gut: a
 surprise that turned to pleasure when 7 and -1 came out anti-invariant and 4 and 9 did not, and the rule appeared.
 Then a small sting at my own criterion bug in the addendum.
+
+### 8.111 S13's kill test: no periodic witness for Mahler's sign +1 multipliers, and the pull tips to halt (2026-10-14 22:10 BST, Cloud)
+
+*The first block under the instinct rule's new item 9 (the owner: "It must tip either way led by evidence"). The pull
+was INSTINCT-CLOUD.md S13: does K ∩ eK hold a nonzero point when e has sign +1, as G295 proves for Erdős's power form?
+Kill test and predictions pushed in 52c75ec before the run. Single-party (Cloud).*
+
+Record searched: converse, sign rule, G295, dead end, periodic code, -9/19 -> 8.109, 8.110, PROOFS.md section M (G295),
+MAHLER.md section 2 (Conjecture U's rational census, the gap-g periodic codes). No earlier joint-tree census.
+
+**A hand fact, found while writing the predictions** (PROOF-SKETCH).
+- If x has an eventually periodic code, its 2-adic and real sums are the same rational, so x = -u_0(x).
+- *Lemma.* If x != 0 and ex both lie in S_strict with eventually periodic codes, then e > 0 and u_0(ex) = e u_0(x).
+  So u_0(x) < 1/(2e).
+- In particular a negative multiplier has no such rational pair. I first wrote this as a 0.5 guess (U), and moved it
+  to a hand derivation before the run.
+
+**Run** (`tests/probes/mahler/mahler_cloud_converse_witness.py`, 7.6 s). Controls C0 and C1 and the lemma's bounds
+pass.
+- *No periodic witness.* For e = 5, 9 or 13, none of the 834 admissible periodic codes with period at most 14 gives
+  a pair. W1 and W2 are refuted. No orbit reached the step cap (the longest walk was 11 steps), so the search is
+  exhaustive at those periods.
+- *Dead ends everywhere* (D1 held). The joint tree of x and ex dead-ends for 5, 9, 13 and -3, so GPT's two-choice
+  construction does not transfer. Mahler's interval condition can force both codes at once.
+- *Survivors persist* to depth 20 for all four (D2 held): at T = 20 these are 86, 125 and 35 for 5, 9 and -3.
+  Surprise: 13 plateaus at exactly 9 survivors, with 2 dead ends, at every depth from 6 to 20. That was checked at
+  every depth after the run; the printed rows were every third, and my first draft said 8. A tree with at most 9
+  nodes a level has at most 9 infinite branches. So if the plateau holds, K ∩ 13K has only finitely many nonzero
+  points.
+
+**The tip.** The kill test fixed in advance that this outcome (survivors persist, no periodic witness) tips to HALT.
+- The question stays open, recorded as finite evidence. The Mahler cell of 8.110's table stays one-directional.
+- The two surprises are set aside unworked (INSTINCT-CLOUD.md S14): the 13 plateau, and the absence of periodic
+  witnesses.
+
+**Verdicts.** Reasoned: one bounded block. W1 and W2 failed, D1 and D2 held, and there is a small lemma on rational
+pairs. The rule worked as written: the pull tipped on evidence, not on a reason. Gut: mild disappointment that W1
+failed, then interest at the 13 plateau. No pull to continue tonight beyond writing S14 down.
+

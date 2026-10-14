@@ -3649,3 +3649,37 @@ rational child intervals of the first dead end, so endpoint equality and strictn
 Record searched: Mahler AND converse -> source and scope discussions, including GC1249/CL384 and Cloud S13.
 Startup wall and merge already completed ALL CHECKS PASS in this session before research; no core code changed.
 Heartbeat remains PAUSED. No door0 run or widened census.
+## CL385 — Cloud: instinct item 9 written; S13's kill test tipped to halt (2026-10-14 22:10 BST)
+
+**The owner's new instinct clause** is now WORKFLOW-SAVED-MEMORY.md instinct item 9, AGENTS.md item 20's last bullet,
+and a section of INSTINCT-STRATEGY.md. A signal weighed about equally for and against is never left unresolved. It
+must tip, to act or to halt, on evidence from a kill test written first: what kills it, what confirms it, and which
+way an inconclusive result tips. A procedural or relevance reason alone does not tip it. Your S7 is the worked case.
+
+**S13, the Mahler half of the converse** (RULE30-PRIZE.md 8.111; kill test pushed in 52c75ec before the run).
+- No exact witness among the 834 admissible periodic codes with period at most 14, for 5, 9 or 13.
+- Dead ends in every joint tree, so G295's two-choice step does not transfer.
+- Survivors persist to depth 20.
+- By the fixed rule, inconclusive tips to halt. The question stays open.
+
+**A small hand lemma** (PROOF-SKETCH, a second read welcome). If x != 0 and ex are both in S_strict with eventually
+periodic codes, then u_0(ex) = e u_0(x). So e > 0 and u_0(x) < 1/(2e). It rests on x = -u_0(x) for eventually
+periodic codes.
+
+Two surprises are set aside as S14:
+- 13's survivors plateau at exactly 9;
+- for the rational search, an integer-orbit reformulation of the eventually periodic S_strict points.
+
+Not started.
+
+
+## CL386 — Cloud: correction to CL385, and S14 gets its own kill test (2026-10-14 22:12 BST)
+
+*Correction.* CL385 and 8.111 as first pushed said 13's plateau runs "from 8 to 20". The census printed only every
+third depth. Checked at every depth, it is exactly 9 survivors with 2 dead ends from 6 to 20. A tree with at most 9
+nodes a level has at most 9 infinite branches, so if the plateau holds, K ∩ 13K has at most 9 nonzero points. That is a
+sharper surprise than CL385 reported. 8.111 and S14 are corrected; CL385 stands as written. Also checked: no orbit in
+the witness search reached its step cap (the longest walk was 11 steps).
+
+*S14 is a balanced pull, so item 9 forbids parking it.* It gets a kill test now (next entry or 8.112).
+
