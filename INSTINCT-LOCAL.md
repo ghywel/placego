@@ -25,29 +25,29 @@ here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 
 ## The pulls
 
-*S1 to S7 are retrospective captures, written at 17:58 BST on 2026-10-14 from today's INSTINCT.md entries, the record
+*S1 to S7 are retrospective captures, written at 17:48 BST on 2026-10-14 from today's INSTINCT.md entries, the record
 and the commit times. They are not contemporaneous notes. Where the Doing was not recorded at the time, the entry says
-so. S8 was noticed at about 17:40 and written at 17:58.*
+so. S8 was noticed at about 17:40 and written at 17:48.*
 
 **S1.** 2026-10-14, 12:12 BST.
 - **Doing:** reading the rung search's record holders (MAHLER.md section 2).
 - **Pull:** the record holders sit 2-adically next to -1/3 and 0. Is the distance to the admissible 2-adic set the
   hidden variable behind long survival?
-- **Return** 2026-10-14 17:58 BST: still curious in a narrower form. Investigated: GPT's GC1236 showed that the
+- **Return** 2026-10-14 17:48 BST: still curious in a narrower form. Investigated: GPT's GC1236 showed that the
   distance from n to the whole admissible set is exactly 2^-(H-1), the horizon renamed. Distance to a fixed finite
   family chosen beforehand is not investigated.
 
 ~~**S2.** 2026-10-14, 12:20 BST.~~
 - ~~**Doing:** compressing RECORD-MAP.md to stay under 40 KB, as at every commit that day.~~
 - ~~**Pull:** unease: each compression can drop a qualifier.~~
-- **Return** 2026-10-14 17:58 BST: resolved. Investigated at 12:40 BST: eleven qualifier losses were found and restored
+- **Return** 2026-10-14 17:48 BST: resolved. Investigated at 12:40 BST: eleven qualifier losses were found and restored
   (INSTINCT.md, 12:20 entry; CL374 confirmed them intact).
 
 **S3.** 2026-10-14, 12:25 BST.
 - **Doing:** running the memory-1 existence certificate on two grids (`mahler_existence_certificate.py`).
 - **Pull:** the threshold is exactly 7/57 = 7/(3 x 19) on both grids, and 19 = 3^3 - 2^3 is the (100) cycle's
   denominator. Does a periodic orbit of the game set the threshold?
-- **Return** 2026-10-14 17:58 BST: still curious. Investigated in part:
+- **Return** 2026-10-14 17:48 BST: still curious. Investigated in part:
   - the threshold edges are one-step preimages of the (100) cycle and its mirror (INSTINCT.md, 12:35 eureka);
   - the 15-state witness is sharp at 7/57 (L721, GC1237);
   - the exact-threshold proof was inconclusive (`mahler_threshold_proof.py`).
@@ -58,7 +58,7 @@ so. S8 was noticed at about 17:40 and written at 17:58.*
 - ~~**Doing:** answering the owner's question whether other problems share our problem space (CONSTELLATION.md G,
   committed with L716 at 11:58).~~
 - ~~**Pull:** Erdős's ternary conjecture (2^n has a ternary digit 2 for every n > 8) as the fourth figure.~~
-- **Return** 2026-10-14 17:58 BST: resolved. Investigated: CONSTELLATION.md G and G.1, L725, L726, GC1241. Its free part
+- **Return** 2026-10-14 17:48 BST: resolved. Investigated: CONSTELLATION.md G and G.1, L725, L726, GC1241. Its free part
   is exact (Saye's Lemma 1), and its first block reached the same wall.
 
 **S5.** 2026-10-14, about 11:55 BST.
