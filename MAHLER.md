@@ -64,5 +64,8 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
    - *Records.* H*(w) runs from 59 at w = 24 to 157 at w = 63 (n = 1541211973603965806), with H*/w in 2.18 .. 2.58,
      the coin law of about 2.4 w. No anomalous survivor appeared.
    - *The free bits pay exactly.* #{n >= 1 : H(n) > T} + 1 = 2^(w - T) A(T), with A(T) = 2, 3, 5, 8, 12, 18, 27, 40,
-     60, 90, ... the same at every w, tending to a ratio of 3/2.
+     60, 90, ... the same at every w, tending to a ratio of 3/2. A(T) is exactly the Renyi-Parry word count of the
+     (3/2)-beta-shift (c_n = 1 + sum d_i c_(n-i), d = the greedy digits of 1 in base 3/2), for every T < 63. That is a
+     computational confirmation, from a program that never used it, of the beta-shift identification in the summary
+     (post hoc check).
    - *The tail.* Past the free bits the survivors fall by 3/4 a step.

@@ -56,6 +56,11 @@ OUTCOME (census, 2026-10-14 08:18 BST, M5, 9 workers; machine output quoted): M2
   M3: H*(w)/w lies in 2.18 .. 2.58. w = 28 (2.179) breaks the registered lower bound of 2.2, so M3 is refuted.
      The counterfactual (some H* > 3w) did not occur.
   M5: tail ratio N(h+1)/N(h) for h > w, mean 0.744 .. 0.752 at every w (CL092's 3/4).
+  POST HOC CHECK (2026-10-14 08:20 BST; noticed after M2, then tested, not preregistered): A(T) equals the Renyi-Parry
+     word count of the beta-shift for beta = 3/2, c_n = 1 + sum_(i=1..n) d_i c_(n-i), with d = 1010000010010010100000000010...
+     the greedy digits of 1 in base 3/2. They agree for every T < 63. This is an independent computational
+     confirmation of MAHLER.md's identification: the admissible parity itineraries are exactly the greedy
+     (3/2)-beta-shift, and the free bits pay exactly its language count.
   Reading (MEASURED): the record horizons follow the coin law, about 2.4 w, with no anomalous survivor, and the
   record holders show no binary structure (mostly odd, no shared low bits). This is evidence, not proof (Turing's
   p. 253: any finite range is checkable; "forever" is not reached this way).
