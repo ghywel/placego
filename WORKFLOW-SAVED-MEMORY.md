@@ -340,7 +340,8 @@ overrules the other, and a disagreement between them is itself a signal.
    measurement and two-tier review are unchanged.
 7. *Between the workers.* A worker may pass a feeling to the other ("Felt: unease about X; can you look?"), and the
    other treats it as a review request with the same budget. That is the owner's "trust in my other me".
-Related: `loop-check`, `random-chaos`, `walk-away`, `steps-before-leaps`, `hot-leads-first`.
+Related: `loop-check`, `random-chaos`, `walk-away`, `steps-before-leaps`, `hot-leads-first`. The shareable write-up
+for other assistants and readers is INSTINCT-STRATEGY.md (the owner's request, 2026-10-14); the live log is INSTINCT.md.
 
 ### literature-before-leaps
 

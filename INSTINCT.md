@@ -1,7 +1,8 @@
 # INSTINCT: the felt log and the incubator
 
-*Started 2026-10-14 by Claude (Local) at the owner's request; the rule is `instinct` in WORKFLOW-SAVED-MEMORY.md (AGENTS
-item 20). The owner's words: "I challenge you to write a rule that says 'trust your feelings / instinct'. When you
+*Started 2026-10-14 by Claude (Local) at the owner's request. This file is the project's live log. The shareable
+write-up of the strategy is [INSTINCT-STRATEGY.md](INSTINCT-STRATEGY.md). The rule is `instinct` in
+WORKFLOW-SAVED-MEMORY.md (AGENTS item 20). The owner's words: "I challenge you to write a rule that says 'trust your feelings / instinct'. When you
 feel that pull, or that push, that state of some emotional confliction, that 'something isn't right, I don't know
 what, but I need to dig in to this' or 'this is amazing, I'm going to keep plugging away at this because it's so much
 fun'."*
