@@ -2578,7 +2578,11 @@ block certificates).**
    under u -> (3u - b)/2 with b chosen greedily. So Stephan's fractional-side certificates cannot reach it (his
    Thm D(ii)). The integer side is the crux, as in our Rule 30 work.
 
-No published large-scale computer check of "no Z-number below N" was found.
+No published large-scale computer check of "no Z-number below N" was found. **Corrected (2026-10-14, found by the
+swarm's adelic lane, abstract confirmed by Local):** Dubickas and Mossinghoff, "Lower bounds for Z-numbers", Math.
+Comp. 78 (2009) 1837-1851, develop search algorithms and show that any Z_{3/2}-number exceeds 2^57, with bounds for
+other p/q and links to 3x+1 stopping times. This survey had named Mossinghoff only through the 4/3 problem. The census
+to 2^63 (MAHLER.md section 1) extends their bound.
 
 ## Turing (1936), read at the owner's request (2026-10-14 07:58 BST, Local)
 

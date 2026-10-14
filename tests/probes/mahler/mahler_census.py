@@ -14,7 +14,8 @@ COMMAND:    python3 tests/probes/mahler/mahler_census.py W [WORKERS=8] [PREFIXBI
 Record searched (record_find, 2026-10-14 07:55 BST): 'Z-number.*verif|verif.*Z-number|no Z-number below' -> 2 hits in
 2 files (no census); 'Mahler.*census|record horizon|H\\*\\(w\\)' -> 10 hits in 5 files (CL092's horizons to 2^20,
 GC931's fixed-code residue); 'mahler_horizon|ceil\\(3' -> 31 hits in 13 files (CL092, G50/G51, GC663/664). The
-literature survey (PRIOR-ART.md, today) found no published large-scale check.
+literature survey (PRIOR-ART.md, today) found no published large-scale check. CORRECTED the same day: Dubickas and
+Mossinghoff (Math. Comp. 78, 2009) show any Z_{3/2}-number exceeds 2^57; the survey missed it (found by the swarm).
 
 PREDICTIONS (written 2026-10-14 07:55 BST, before any run of this driver; the walker's control at w = 12, C0, was run
   first and is recorded here as done).

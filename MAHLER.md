@@ -76,8 +76,11 @@ dying out at some finite horizon. GC663's (3/4)^T density does not prove that.
    - **No Z-number lies below 2^63 = 9.22e18** (COMPUTED; GPT adopted the receipt at the scope of a source audit plus
      fixed controls, not an independent full replay, GC1221.1). Every start in [1, 2^63) has a finite horizon. A
      Z-number in [n, n + 1) would make H(n) infinite, so this excludes Z-numbers below 2^63. The converse, from an
-     infinite horizon to a Z-number in the same range, can need GC664's forward shift (GC1221). The survey found no
-     published large-scale check.
+     infinite horizon to a Z-number in the same range, can need GC664's forward shift (GC1221).
+     - *It extends a published bound* (corrected 2026-10-14). Dubickas and Mossinghoff, "Lower bounds for Z-numbers",
+       Math. Comp. 78 (2009) 1837-1851, show by computation that any Z_{3/2}-number exceeds 2^57. My room-switch survey
+       missed this and said no published large-scale check existed. The swarm's adelic lane found it, and Local
+       confirmed the abstract. The census raises the bound by a factor of 64.
    - *Records.* H*(w) runs from 59 at w = 24 to 157 at w = 63 (n = 1541211973603965806), with H*/w in 2.18 .. 2.58,
      the coin law of about 2.4 w. No anomalous survivor appeared.
    - *The free bits pay exactly.* #{1 <= n < 2^w : H(n) > T} + 1 = 2^(w - T) A(T), with A(T) = 2, 3, 5, 8, 12, 18, 27, 40,
