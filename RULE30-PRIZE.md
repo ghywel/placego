@@ -7260,6 +7260,19 @@ rule30_kick_bite.py unseeded). No earlier recompile on this machine.
   the same arguments, or a page stating a stronger status than its source is a record error. It is corrected in place
   with a dated comb note and reported in the IN entry.
 
+**The 17:58 crash and the relaunch (18:15 BST, before any lane reruns).** The first launch (17:56) froze the machine at
+about 17:58; it restarted at 18:00 with SMC shutdown cause -63 (undocumented). The system log shows thermal pressure and
+about 12,000 SMC power-limit notifications a minute just before, and no kernel panic or memory kill. The load was
+Intel's own: lane A first built the formal-conjectures library that Rule30Period1.lean imports on every core, while lane
+C ran three replays and the seven agents of lanes D and E worked. No agent had finished; lane C had finished one replay
+(rule30_lattice.py, exit 0 in 124 s), which is kept. The owner chose the relaunch: at most about eight threads at once.
+- *Lane A* runs alone, one file at a time with Lean's \`-j 4\`, after a load gate (one-minute load below 8 and no CPU
+  throttling). Rule30Period1.lean is deferred, since it needs the library build.
+- *Lane C* runs after lane A, at most two replays at a time, behind the same gate; rule30_diagonal_bias.py runs with 4
+  threads instead of 8.
+- *Lanes D and E* (agents, little CPU) run alongside lane A.
+- The predictions above stand unchanged. Rule30Period1.lean now counts as not compiled for an environmental reason.
+
 *Correction (8.106, 18:03 BST): "011 (the other classes)" holds for the sample but not as a statement about every
 kick. After 56 steps on the wheel, classes 19, 39 and 49 are possible and force 000. The certified per-class
 statement is in 8.106.*
