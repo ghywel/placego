@@ -13,7 +13,9 @@
  * At T = w the start is complete and the orbit is forced (b = v mod 2) until the window empties.  128-bit numerators
  * are exact while T + 2 <= 127; a start still alive at T = TMAX is printed as a straggler for exact Python replay.
  *
- * Usage: mahler_census W PREFIXBITS PREFIX [dual]  (walks the starts whose low PREFIXBITS bits equal PREFIX)
+ * Usage: mahler_census W PREFIXBITS PREFIX [dual] [b=B]  (walks the starts whose low PREFIXBITS bits equal PREFIX)
+ * b=B (2026-10-14, Conjecture U, mahler_rational_census.py): the start is the 2-adic rational n/B, B odd; the numerator
+ *   follows v' = (3v + par B)/2 and the window is unchanged. B = 1 is the original census.
  * dual (2026-10-14, the swarm's sign-dual test): the start is x = -1 - n for n in [0, 2^w), x in [-2^w, -1]. Its T-code
  *   is the complement of n's (T(-1-x) = -1-T(x)), so the window step uses parity b ^ 1 while v follows n's own orbit.
  *   The excluded start is then n = 2^w - 1 (x = -2^w, low bits those of 0), and the range is -2^w < x <= -1.
@@ -26,6 +28,7 @@ typedef unsigned __int128 u128;
 #define TMAX 124
 #define HMAX 512
 static int W, DUAL = 0;
+static u128 BDEN = 1;
 static u128 pow3[130];
 static unsigned long long hist[HMAX];
 static int maxh = 0;
@@ -55,7 +58,7 @@ static void forced(unsigned long long n, u128 v, u128 lo, u128 hi, int T) {
     while (T < TMAX) {
         int b = (int)(v & 1);
         if (!wstep(&lo, &hi, b ^ DUAL, T)) { record(T + 1, n, 1); return; }
-        v = (3 * v + b) >> 1;
+        v = (3 * v + (u128)b * BDEN) >> 1;
         T++;
     }
     printf("S %llu\n", n);                          /* alive at TMAX: exact replay in Python */
@@ -72,7 +75,7 @@ static void dfs(int T, unsigned long long n0low, u128 v, u128 lo, u128 hi) {
             record(T + 1, nn, mult);
             continue;
         }
-        u128 nv = (3 * (v + (bit ? pow3[T] : 0)) + b) >> 1;
+        u128 nv = (3 * (v + (bit ? pow3[T] : 0)) + (u128)b * BDEN) >> 1;
         dfs(T + 1, nn, nv, nlo, nhi);
     }
 }
@@ -82,7 +85,10 @@ int main(int argc, char **argv) {
     W = atoi(argv[1]);
     int pb = atoi(argv[2]);
     unsigned long long prefix = strtoull(argv[3], 0, 10);
-    DUAL = (argc > 4 && argv[4][0] == 'd');
+    for (int a = 4; a < argc; a++) {
+        if (argv[a][0] == 'd') DUAL = 1;
+        if (argv[a][0] == 'b' && argv[a][1] == '=') BDEN = (u128)strtoull(argv[a] + 2, 0, 10);
+    }
     pow3[0] = 1;
     for (int i = 1; i < 130; i++) pow3[i] = pow3[i - 1] * 3;
     /* replay the fixed prefix bits */
@@ -97,7 +103,7 @@ int main(int argc, char **argv) {
             record(T + 1, n0low, 1ULL << (W - pb));        /* this chunk's own starts only (first run overcounted) */
             goto done;
         }
-        v = (3 * (v + (bit ? pow3[T] : 0)) + b) >> 1;
+        v = (3 * (v + (bit ? pow3[T] : 0)) + (u128)b * BDEN) >> 1;
     }
     dfs(T, n0low, v, lo, hi);
 done:
