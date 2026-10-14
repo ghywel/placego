@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Collatz conjecture</title>
-<meta name="description" content="Halve it if even, triple it and add one if odd: does every start reach 1? Checked to 2⁷¹ on supercomputers, proved for almost all starts, open for every single one, with a ¥120 million prize. What our counting form adds.">
+<meta name="description" content="Halve it if even, triple it and add one if odd: does every start reach 1? Checked to 2⁷¹ on supercomputers, nearly settled for almost all starts (almost bounded values, Tao 2019), open for every single one, with a ¥120 million prize. What our counting form adds.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Wolfram · Collatz · Mahler">
 <meta property="og:title" content="The Collatz conjecture">
-<meta property="og:description" content="Halve it if even, triple it and add one if odd: does every start reach 1? Checked to 2⁷¹ on supercomputers, proved for almost all starts, open for every single one, with a ¥120 million prize. What our counting form adds.">
+<meta property="og:description" content="Halve it if even, triple it and add one if odd: does every start reach 1? Checked to 2⁷¹ on supercomputers, nearly settled for almost all starts (almost bounded values, Tao 2019), open for every single one, with a ¥120 million prize. What our counting form adds.">
 <meta property="og:url" content="https://www.wolframcollatzmahler.com/collatz.html">
 <meta property="og:image" content="https://www.wolframcollatzmahler.com/share/collatz.png">
 <meta property="og:image:width" content="1200">
@@ -62,8 +62,8 @@ start</b> is the open part, and it is what the prize pays for.</p></div>
 <div class="level"><p class="kicker">What our record adds (measured; the counting form)</p>
 <p>Count the w-bit numbers whose orbit stays at or above its start for T steps. The first w − 1 steps are free: each
 pattern of parities belongs to exactly one residue of the start (Terras's bijection), so they pay exactly. Past the
-free bits, the count follows Terras's coin model to 0.5% at every width to 30 bits, and the excess over the coin never
-exceeds 3.7 bits. That is a precise target. If fewer than 2<sup>w − αT + c</sup> numbers of w bits stay up for T steps,
+free bits, the count follows Terras's coin model to 0.5% at every width to 30 bits, and keeps the coin's rate at every width
+measured, to 43 bits, with a bounded excess over the coin (at most 7.4 bits, with no upward trend). That is a precise target. If fewer than 2<sup>w − αT + c</sup> numbers of w bits stay up for T steps,
 for fixed α and c, every stopping time is finite and the conjecture follows. The free part is a theorem. The rest is
 the open part, a statement about each orbit's binary digits, not about almost all of them.</p></div>
 <div class="level"><p class="kicker">The twin of Rule 30</p>

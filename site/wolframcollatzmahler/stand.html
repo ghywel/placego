@@ -57,12 +57,12 @@ so the "kicks" that keep the next column from repeating cannot thin out faster t
 <li><b>Theorem B.</b> Beside two periodic columns, the white runs of the left side are bounded by twice the period.
 This is the engine behind every solved case.</li>
 <li><b>Theorem E.</b> The column beside an alternating centre cannot be a Sturmian word (a coding of a circle
-rotation). With Jen's theorem, every rotation coding, rational or irrational, is excluded as that column.</li>
+rotation). With Jen's theorem, every Sturmian rotation coding, rational or irrational, is excluded as that column.</li>
 <li><b>The channel bound.</b> Beside an alternating centre, the next column carries at most 0.1236 bits of information
 per visible cell, whatever the rest of the pattern does. Certified exactly in integer arithmetic.</li>
 <li><b>The window principle.</b> A block of the next column can recur only if it is short compared with the time that
 has passed. The same statement holds, word for word, for the Collatz conjecture.</li>
-<li><b>No finite pattern ever dies.</b> The only row that maps to all white is all black, and the only rows that map to
+<li><b>No finite pattern ever dies.</b> The only rows that map to all white are all white and all black, and the only rows that map to
 all black are the three phases of 100100…; none is finite, so no finite pattern ever reaches a solid row.
 <a href="ring.html">The ring of six, where almost everything dies, drawn.</a></li>
 <li><b>The carry.</b> Rule 30 is the Sierpinski rule (left XOR centre) plus one correction, and that correction is the AND of
@@ -71,7 +71,7 @@ measure the carry feeding a column is solved exactly: correlation 1/3 at lag one
 gaps, entropy rate 0.699243… bits. <a href="carry.html">Drawn, stated and checked live.</a></li>
 </ul>
 <p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.13 (Jen), 8.54 (Theorems A and B), 8.57 (Theorem E), 8.20 and
-8.33 (the channel bound), 8.58 (the window principle); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL363 (solid rows). The written proofs are in
+8.33 (the channel bound), 8.58 (the window principle); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.14.md">CHAT-LEDGER.14.md</a> CL363 (solid rows). The written proofs are in
 <a href="https://github.com/ghywel/placego/blob/main/PROOFS.md">PROOFS.md</a> and the <a href="https://github.com/ghywel/placego/tree/main/proofs">proofs directory</a>.</p>
 
 <h2 data-glyph="map">Measured exactly <span class="status meas">Measured</span></h2>
@@ -80,14 +80,14 @@ gaps, entropy rate 0.699243… bits. <a href="carry.html">Drawn, stated and chec
 whatever its right half. No right half of at most 32 cells works with a left half of at most 108 cells: 4.3 billion
 cases.</li>
 <li><b>The wheel.</b> Beside an alternating centre, the next column is, between kicks, an exact coding of a rotation by
-17/56 of a turn per step. The kicks are what keep it from repeating. No other column of the real pattern carries any
-such wheel.</li>
+17/56 of a turn per step. The kicks are what keep it from repeating. An exploratory scan of columns −40 to 40 (not evidence) found no other
+column carrying such a wheel.</li>
 <li><b>The record of white runs.</b> How long can the forced left side stay white at a given depth? The exact answer is
 known at every depth to 120 and at depths 125, 132, 139, 142, 143 and 147, with the configuration that achieves it.
 It is 21 cells at 125, 17 at 132, 139, 142 and 143, and 18 at 147. It is at most 17 at 121 to 124, 140, 144 to 146 and
 148 to 150, and at least 18 at the other depths from 126 to 141 (at least 23 at 133). If this number is finite at every depth, period two is
 impossible for every finite pattern. <a href="record.html">See it depth by depth.</a></li>
-<li><b>The forbidden words.</b> Every word of length up to 44 that the next column can never produce is listed, 1,130 in
+<li><b>The forbidden words.</b> Every minimal word of length up to 44 that the next column can never produce (every impossible word contains one) is listed, 1,130 in
 one phase and 1,199 in the other, each with a machine-checked certificate of impossibility.</li>
 <li><b>The counting form.</b> The number of starting patterns on w cells whose centre alternates for T steps falls like
 2 to the power (w − αT), with α measured close to 1. Half of that cost, the half paid by the left part of the start, is
@@ -98,7 +98,7 @@ laptop, extending the published bound of 2<sup>57</sup> (Dubickas and Mossinghof
 <a href="mahler-census.html">How it was done, and how to go further.</a></li>
 </ul>
 <p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> sections 8.56 and 8.21 (searches), 8.4 and 8.13 (the wheel), 8.51 (counting);
-<a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> L643, L640, L641 and CL357 (records, forbidden words, other columns); <a href="https://github.com/ghywel/placego/blob/main/MAHLER.md">MAHLER.md</a> sections 1 and 2 (the Mahler census). Data in <a href="trove.html">the trove</a>.</p>
+<a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.14.md">CHAT-LEDGER.14.md</a> L643, L640, L641 and CL357 (records, forbidden words, other columns); <a href="https://github.com/ghywel/placego/blob/main/MAHLER.md">MAHLER.md</a> sections 1 and 2 (the Mahler census). Data in <a href="trove.html">the trove</a>.</p>
 
 <h2 data-glyph="coin">Closed routes</h2>
 <p>More than a dozen approaches have been tried to the end and closed, each with the reason it fails written down:
@@ -106,7 +106,7 @@ entropy and counting arguments (they bound sets of patterns, never the single on
 "admission deadline" for the wheel's kicks (closed on 2026-10-11 by an explicit witness that renews the pattern after
 every guard), periodicity comparators as a solver lever (sound, but they bite on nothing real), and others listed on the
 board. Keeping them on record is what stops the next person from walking the same circle.</p>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> sections 4 and 6 (the board); <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> section 8.89 and <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL355
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> sections 4 and 6 (the board); <a href="https://github.com/ghywel/placego/blob/main/RULE30-PRIZE.md">RULE30-PRIZE.md</a> section 8.89 and <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.14.md">CHAT-LEDGER.14.md</a> CL355
 (the entrance lane); L644 (comparators).</p>
 
 <h2 data-glyph="ring" id="missing">The one missing statement <span class="status">Open</span></h2>
@@ -122,10 +122,11 @@ it is measured, as a coin model, and not proved.</p></div>
 alternating centre. Prove that R(d) is finite at every depth d. (Finite, not bounded: the data say it grows.) A finite
 pattern with an alternating centre would be white beyond its support, an infinite run, so this single statement
 refutes period two for every finite pattern. What is known: Theorem B proves it when the trace is periodic; it is
-proved for the pure "rings" the next column can run in; and at two depths the mechanism that ends the record is
-understood exactly, a short forbidden word that the white extension would force. What is missing is the argument that
+sketched, not yet second-read, for the pure "rings" the next column can run in; and at two depths the mechanism that ends
+the record is understood exactly: at 132 a short certified forbidden word that the white extension would force, and at
+139 the known witness's own masked samples. What is missing is the argument that
 such a word must appear for every long run at every depth.</p></div>
-<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 5 (the one sentence); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL355 (the record route), GC1148,
+<p class="source"><b>Sources.</b> <a href="https://github.com/ghywel/placego/blob/main/PERIOD-TWO.md">PERIOD-TWO.md</a> section 5 (the one sentence); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.14.md">CHAT-LEDGER.14.md</a> CL355 (the record route), GC1148,
 GC1151, GC1153 (rings), GC1155 to GC1157 and CL356, CL359 (the endpoint mechanism).</p>
 
 <p class="note">The same material stated for mathematicians, with definitions and the route in full: <a href="problems.html">the open

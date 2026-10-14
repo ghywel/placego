@@ -50,6 +50,9 @@ turn before, the classes are 2, 12, 22, 32, 39, 42, 49 and 52, and class 32 may 
 narrow with m: the classes go from 12 at m = 4 to 4 at m = 16, and +7 leaves class 32 at m = 16. So, for every right
 side, after a settled wheel: departures only at four classes, each with an alphabet of at most six kicks, two of them
 exactly the measured ones. The interior chooses among them; the alphabets themselves are local.
+Comb note (2026-10-14, RULE30-PRIZE.md 8.106, lane E): KL-C1's 408 counts (departure, new phase) pairs, not departures
+(the loop below counts every phase that fits the 21 observations), and the draw is seeded from os.urandom and was not
+recorded, so the 408 cannot be replayed. The other verdicts do not use the draw.
 """
 import os
 import random

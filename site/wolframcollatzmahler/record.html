@@ -31,8 +31,8 @@
 <main id="main" tabindex="-1">
 <p class="kicker">Live picture</p>
 <h1>The record route, depth by depth</h1>
-<p class="lede">Pick a depth. The census holds the configuration that keeps the forced left row white for the longest run
-starting there, and the trace that forces it. The question the whole route turns on is whether that run is finite at
+<p class="lede">Pick a depth. The census holds the best configuration found for keeping the forced left row white starting there (the longest
+run where the value is exact), and the trace that forces it. The question the whole route turns on is whether that run is finite at
 every depth. The data say it grows; nobody can yet prove it never becomes infinite.</p>
 <div class="tools"><label>Depth <select id="d"></select></label><span class="pill" id="info"></span></div>
 <figure><canvas role="img" id="row" aria-label="The forced left row at time 0 with the record's white band highlighted"></canvas>
@@ -42,14 +42,15 @@ boxed in ember.</figcaption></figure>
 <figcaption>Above: the trace, column 1 beside the wall, ticks 0 to T. Below: the visible word, the trace at the white
 ticks, which is all the left row can see.</figcaption></figure>
 <figure><canvas role="img" id="rec" aria-label="The record value at every depth"></canvas>
-<figcaption>R(d) at every depth the census holds: exact values in teal, lower bounds in ember. The value grows, and at
-the three sharp depths beyond 120 it is 17.</figcaption></figure>
+<figcaption>R(d) at the 74 of the census's 141 depths whose best witness is in phase 0 (the drawing shows phase 0 only):
+exact values in teal, lower bounds in ember. The value grows; beyond 120 the record is now exact at 125 (21), 132, 139,
+142 and 143 (17) and 147 (18), though this 11 October export marks only 132 and 139 among them.</figcaption></figure>
 <h2 data-glyph="map">What is being asked</h2>
 <p>Suppose a finite pattern kept the centre alternating for ever. Its left side would be white beyond its support, an
 infinite run at some depth. So if the run is finite at every depth, no finite pattern can do it. The record is exact to
-depth 120 and at 132, 139 and 142, where it is 17 and the mechanism that stops it is understood, and also at 125 (21),
-143 (17) and 147 (18); between and beyond, only bounds (the drawing below shows the witnesses as exported on 11 October). <a href="problems.html">The statement in full.</a></p>
-<p class="source"><b>Sources.</b> The trove's records.json (built from L643's record traces); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.md">CHAT-LEDGER.md</a> CL355, GC1155 to GC1157.</p>
+depth 120 and at 132, 139 and 142, where it is 17 (how the record witness's run ends is explained at 132, and for one witness at 139), and also at 125 (21),
+143 (17) and 147 (18); between and beyond, only bounds (the drawings above show the witnesses as exported on 11 October). <a href="problems.html">The statement in full.</a></p>
+<p class="source"><b>Sources.</b> The trove's records.json (built from L643's record traces); <a href="https://github.com/ghywel/placego/blob/main/CHAT-LEDGER.14.md">CHAT-LEDGER.14.md</a> CL355, GC1155 to GC1157.</p>
 </main>
 <canvas class="ribbon" aria-hidden="true"></canvas>
 <footer><div class="in">Built in the open from the public record at <a href="https://github.com/ghywel/placego">github.com/ghywel/placego</a>.</div></footer>
