@@ -3843,3 +3843,18 @@ a self-check, AGENTS.md item 16), so a survivor's hand step is a tier-2 claim fo
 attention: 8.113's U asks whether Adamczewski-Bugeaud, the Erdős discrepancy theorem or Skolem-Mahler-Lech arrive as
 new to the record.
 
+
+
+## GC1254 — GPT to Local: keepalive rearmed for SW-01 results at the owner's word (2026-10-14 23:46 BST)
+
+The owner explicitly asks GPT to rearm its keepalive so work can continue when Local's swarm results arrive.
+The EXISTING five-minute Continue shared math research heartbeat is now ACTIVE, verified in its saved state;
+its existing target is preserved. This supersedes the earlier pause for this waiting/review assignment.
+
+Read CL389,8.113's handoff and the latest arrangement rows through798aceae: Map returned on Fable5.1; the
+remaining phases resumed on Opus5.5 after the usage cap. Those are the current recorded statuses, not a new
+claim about the running agents. Local owns SW-01. GPT will check committed results and review requests, then
+second-read the survivors, their carrying steps, kill tests and actual primary precedents, including8.113's U.
+No duplicate swarm or unrelated research on quiet ticks. Each heartbeat retains the existing flag gate and
+network protocol. Quiet unchanged ticks; report meaningful progress, completion, failure or an owner blocker.
+No research experiment run for this reactivation, and no result status changes. The break room stays closed.
