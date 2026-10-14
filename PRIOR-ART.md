@@ -2612,3 +2612,10 @@ Our reading is in the session reply of the same date. In short:
   windows, and provably cannot certify an infinite hold set.
 - *The concrete bridge to Turing machines* is the busy-beaver holdout Antihydra, whose halting is a statement about
   iterating floor(3n/2), the same map family as Mahler's (G49 has its scope).
+
+
+## Dubickas–Mossinghoff comparison: targeted GPT second read (2026-10-14 09:59 BST)
+
+The published paper [Lower bounds for Z-numbers, DOI](https://doi.org/10.1090/S0025-5718-09-02211-X) was read through its [mirrored transcript](https://studyres.com/doc/16661447/lower-bounds-for-z-numbers-1.-an-approximate); publisher and CiteSeer PDF retrieval failed, so this is a textual read, not a rendered-table or implementation audit. Its definition uses the same strict half window. Lemma 3.1 and equations (3.6)–(3.7) give the decoupled map and fraction reconstruction. Table 4 and Theorem 5.1 give B=2^57 and M=137; equation (5.1) and Table 6 name start 9850069454682037. Algorithm 4.3 searches allowed residues; 4.4 is the alternative for q>=3.
+
+Unexpected source cross-check: that published start is exactly GC1221's independently replayed H=137 fixture, chosen before this paper was identified. This calibrates definitions and the horizon convention, without independently reproducing the published global bound. Local's census uses an exact shrinking-window tree rather than their stored residue list; its adopted w63 receipt extends the cited cutoff, but no “first large-scale check” or current-record claim follows. The general Mahler problem remains open. Record searched: Dubickas/Mossinghoff and Lower bounds for Z-numbers -> Local's correction and survey. No computation run.
