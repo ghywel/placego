@@ -41,11 +41,12 @@ constrained side that must agree for ever.</p>
 <div class="tools"><label>Integer part n <input id="nin" size="20" value="4" inputmode="numeric" aria-label="Integer part n"></label>
 <button id="go">Draw</button><button class="pre" data-n="4">4</button><button class="pre" data-n="149">149</button>
 <button class="pre" data-n="690773">690773</button><button class="pre" data-n="1541211973603965806">2⁶³ record</button></div>
-<figure><canvas role="img" id="surv" aria-label="The fractional parts of the best candidate in the chosen unit interval, against the line at one half"></canvas>
-<figcaption>Every unit interval [n, n+1) holds at most one possible Z-number. For your n the picture follows the best
-candidate ξ*, computed exactly. The dots are the fractional parts of ξ*·(3/2)<sup>j</sup>, step by step. They stay below
-the dashed line at ½ as long as any candidate in [n, n+1) survives, and then one jumps above. The top strip is the
-parity of the integer parts. For n = 4 the candidate lasts 12 steps; the longest below 2<sup>63</sup> lasts 157.</figcaption></figure>
+<figure><canvas role="img" id="surv" aria-label="The fractional parts of a candidate from the last window of survivors in the chosen unit interval, against the line at one half"></canvas>
+<figcaption>Every unit interval [n, n+1) holds at most one possible Z-number. For your n the picture follows a
+candidate ξ* chosen exactly from the last window of survivors (the middle of it). The dots are the fractional parts of
+ξ*·(3/2)<sup>j</sup>, step by step. They stay below the dashed line at ½ as long as any candidate in [n, n+1) survives,
+and then one jumps above. The top strip is the parity of the integer parts. For n = 4 survivors last through j = 11; the
+longest below 2<sup>63</sup> last through j = 156.</figcaption></figure>
 <p class="pill" id="out" aria-live="polite"></p>
 
 <h2 data-glyph="strip">Stated</h2>
@@ -139,7 +140,7 @@ function draw(){const s=document.getElementById("nin").value.trim(),o=document.g
   x.fillStyle=css("--mute");x.font="12px "+css("--sans");x.fillText("1",8,Y(1)+10);x.fillText("½",6,Y(0.5)+4);x.fillText("0",8,Y(0));
   fr.forEach((f,j)=>{x.fillStyle=f<0.5?css("--ember"):css("--teal");x.beginPath();x.arc(L+j*S+S/2,Y(f),Math.max(1.6,Math.min(4,S/2.5)),0,7);x.fill();});
   x.fillStyle=css("--mute");x.fillText("j = 0",L,top+H+15);const t="j = "+(h-1)+": last below ½; j = "+h+": above";x.fillText(t,W-6-x.measureText(t).width,top+H+15);
-  o.textContent="The best candidate in ["+s+", "+s+"+1) keeps below one half for j = 0 to "+(h-1)+"; at j = "+h+" no candidate is left.";}
+  o.textContent="Some candidate in ["+s+", "+s+"+1) keeps below one half for j = 0 to "+(h-1)+"; at j = "+h+" none is left.";}
 function rung(){const s=document.getElementById("rin").value.trim(),o=document.getElementById("rout");
   if(!/^[0-9]+$/.test(s)||BigInt(s)<1n){o.textContent="Please type a positive whole number.";return;}
   let n=BigInt(s),t=0,odd=0;
