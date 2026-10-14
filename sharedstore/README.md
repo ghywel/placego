@@ -51,6 +51,15 @@ that is all this needs. In git, call it "the shared store", never by hostname or
 
 The script needs PHP 8.1 or newer. cPanel's "Select PHP Version" shows and sets it.
 
+**Three checks after installing.**
+- `https://YOUR-SITE/shared/` must not list the folder.
+- `https://YOUR-SITE/shared/anything-else` must be refused.
+- `http://YOUR-SITE/shared/store.php?whoami` (plain HTTP) must be refused or redirected to HTTPS.
+
+The `.htaccess` uses Apache 2.4's `Require all denied`. If the first two checks fail, or the folder gives a 500
+error, the host runs an older or different server (some cPanel hosts use LiteSpeed). Replace the `<FilesMatch>`
+block's inner line with the older pair `Order allow,deny` and `Deny from all`.
+
 ## Using it
 
 With `T` holding your token and `S` set to `https://YOUR-SITE/shared/store.php`:
@@ -74,8 +83,13 @@ Some hosts block PUT or DELETE. If so, `POST "$S?put=<path>"` and `POST "$S?dele
 - *Limits on what the script can touch.* The data folder sits outside the web root, so the files are reachable only
   through the script, which checks the token on every request. Paths are plain segments of letters, digits, `.`, `_`
   and `-`, so `..`, hidden files and absolute paths are refused.
-- *HTTPS and size.* Plain HTTP is refused. Uploads are capped (`max_bytes`, 64 MB by default; the host's own limits may
-  be lower).
+- *HTTPS and size.*
+  - Plain HTTP is refused. A client's own `X-Forwarded-Proto` header is not believed unless `trust_forwarded_proto`
+    is on, which is only for hosts behind a proxy that sets it.
+  - Uploads are capped (`max_bytes`, 64 MB by default; the host's own limits may be lower).
+  - The whole store is capped too (`max_total_bytes`, 2 GB by default, refused with 507 when full). The store shares
+    the hosting account's disk with the website, and `cited/` files cannot be deleted through it, so a runaway
+    upload loop or a leaked token must not be able to fill the account.
 - *Tokens.* They are random 256-bit values, and only their SHA-256 is stored on the server.
   - To revoke a worker, delete its line in `config.php`.
   - To rotate one, make a new token.
@@ -87,13 +101,15 @@ Some hosts block PUT or DELETE. If so, `POST "$S?put=<path>"` and `POST "$S?dele
 ## Testing it
 
 `python3 sharedstore/test_store.py` runs the script under PHP's built-in server with a throwaway configuration and
-checks 28 behaviours:
+checks 30 behaviours:
 - tokens and both header forms;
 - each area's permissions, the write-once rule for `cited/` and append-only `log/`;
 - path attacks (`..`, absolute paths, hidden files, backslashes, empty segments);
 - the size limit, with nothing left behind;
 - listing, deleting and the POST fallbacks;
-- refusal of plain HTTP;
+- refusal of plain HTTP, including a spoofed `X-Forwarded-Proto`;
+- the total cap;
 - the write log.
 
-It printed 28 of 28 on 2026-10-14, with PHP 8.3.
+It printed 30 of 30 on 2026-10-14, with PHP 8.3. The spoofed-header check was added after the first draft, which
+would have failed it: the draft answered 200.

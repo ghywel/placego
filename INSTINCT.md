@@ -151,6 +151,18 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   in my own machine notes and let a full-core library build start anyway. Calibration: a long heavy job deserves a
   deliberate pause before it starts.
 
+- 2026-10-14 18:51 BST, Cloud: unease, the shared store shares the hosting account's disk with the live website, and
+  cited/ cannot be deleted through it, medium; first guess: a runaway upload loop (we have had loops) or a leaked token
+  could fill the account and take the site down. -> added max_total_bytes (507 when full), tested. Outcome: right to act.
+- 2026-10-14 18:51 BST, Cloud: unease, the draft's HTTPS check believed the client's own X-Forwarded-Proto, low to
+  medium; my 28 tests only played an honest client. -> made it opt-in and added a spoofed-header test; the pushed draft
+  answered 200 to it. Outcome: right; a real flaw caught before install.
+- 2026-10-14 18:51 BST, Cloud: missed, the clock. About eight times today I wrote a time before reading the clock, a
+  few minutes in the future, and corrected each against git afterwards. The rule exists (read the clock before saying
+  the time); I kept skipping it. Calibration note: the same shape as the comb's errors and 8.105's "every other
+  class": the statement was written before the check. (These three entries were first written as 18:55 while the clock read 18:51,
+  which makes the point again.)
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

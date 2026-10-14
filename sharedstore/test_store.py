@@ -42,9 +42,9 @@ def start(root, cfg_path, port):
     raise RuntimeError('php server did not start')
 
 
-def call(port, method, query, token=None, body=None, header='X-Store-Token'):
+def call(port, method, query, token=None, body=None, header='X-Store-Token', extra=None):
     c = http.client.HTTPConnection('127.0.0.1', port, timeout=10)
-    headers = {}
+    headers = dict(extra or {})
     if token:
         headers[header] = token if header == 'X-Store-Token' else 'Bearer ' + token
     c.request(method, '/store.php?' + query, body=body, headers=headers)
@@ -53,11 +53,11 @@ def call(port, method, query, token=None, body=None, header='X-Store-Token'):
     return r.status, data
 
 
-def write_config(path, data_dir, log_file, https, tokens):
+def write_config(path, data_dir, log_file, https, tokens, cap=0):
     workers = ''.join("        '%s' => '%s',\n" % (n, hashlib.sha256(t.encode()).hexdigest()) for n, t in tokens.items())
     path.write_text("<?php\nreturn [\n    'data_dir' => '%s',\n    'log_file' => '%s',\n    'require_https' => %s,\n"
-                    "    'max_bytes' => 1000,\n    'workers' => [\n%s    ],\n];\n"
-                    % (data_dir, log_file, 'true' if https else 'false', workers))
+                    "    'max_bytes' => 1000,\n    'max_total_bytes' => %d,\n    'workers' => [\n%s    ],\n];\n"
+                    % (data_dir, log_file, 'true' if https else 'false', cap, workers))
 
 
 def main():
@@ -77,6 +77,10 @@ def main():
     A, B = tokens['alice'], tokens['bob']
     p1 = start(web, tmp / 'config.php', 8771)
     p2 = start(web, tmp / 'config_https.php', 8772)
+    qdata = tmp / 'qdata'
+    qdata.mkdir()
+    write_config(tmp / 'config_quota.php', qdata, tmp / 'q.log', False, tokens, cap=2500)
+    p3 = start(web, tmp / 'config_quota.php', 8773)
     P = 8771
     try:
         s, _ = call(P, 'GET', 'whoami')
@@ -162,16 +166,25 @@ def main():
 
         s, d = call(8772, 'GET', 'whoami', A)
         check('with require_https on, plain HTTP is refused (403)', s == 403, '%s %s' % (s, d))
+        s, d = call(8772, 'GET', 'whoami', A, extra={'X-Forwarded-Proto': 'https'})
+        check('a spoofed X-Forwarded-Proto over plain HTTP is refused too (403)', s == 403, '%s %s' % (s, d))
+
+        r = [call(8773, 'PUT', 'path=workers/alice/q%d.bin' % i, A, b'q' * 900)[0] for i in range(2)]
+        s, d = call(8773, 'PUT', 'path=cited/q.bin', A, b'q' * 900)
+        s2, _ = call(8773, 'POST', 'append=log/q.log', A, b'q' * 900)
+        left = [f for f in qdata.rglob('.tmp-*')]
+        check('the total cap: two writes fit, the third and an append are refused (507), nothing left behind',
+              r == [200, 200] and s == 507 and s2 == 507 and not left and not (qdata / 'cited/q.bin').exists(),
+              str((r, s, s2, len(left))))
 
         lines = [json.loads(l) for l in log.read_text().splitlines()]
         ops = [(l['worker'], l['op']) for l in lines]
         check('every successful write (9) is logged with the worker', len(lines) == 9 and ('alice', 'put') in ops
               and ('bob', 'append') in ops and ('alice', 'delete') in ops, str(ops))
     finally:
-        p1.terminate()
-        p2.terminate()
-        p1.wait()
-        p2.wait()
+        for p in (p1, p2, p3):
+            p.terminate()
+            p.wait()
         shutil.rmtree(tmp)
     print('\n%d of %d checks pass' % (sum(RESULTS), len(RESULTS)))
     return 0 if all(RESULTS) else 1

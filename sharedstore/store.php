@@ -40,7 +40,7 @@ if (!is_dir($dataDir)) {
 header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
 
-if (!empty($cfg['require_https']) && !is_https()) {
+if (!empty($cfg['require_https']) && !is_https(!empty($cfg['trust_forwarded_proto']))) {
     fail(403, 'HTTPS required');
 }
 
@@ -105,6 +105,7 @@ if ($method === 'PUT' && isset($_GET['path'])) {
     $full = $dataDir . '/' . $rel;
     ensure_parent($full);
     [$tmp, $bytes, $sha] = receive_body($full, (int)$cfg['max_bytes']);
+    within_quota($cfg, $dataDir, $tmp, $bytes);
     $lock = lock($dataDir);
     if ($createOnly && file_exists($full)) {
         unlink($tmp);
@@ -128,6 +129,7 @@ if ($method === 'POST' && isset($_GET['append'])) {
     $full = $dataDir . '/' . $rel;
     ensure_parent($full);
     [$tmp, $bytes, $sha] = receive_body($full, (int)$cfg['max_bytes']);
+    within_quota($cfg, $dataDir, $tmp, $bytes);
     $out = fopen($full, 'ab');
     $in = fopen($tmp, 'rb');
     if ($out === false || $in === false || !flock($out, LOCK_EX)) {
@@ -172,11 +174,35 @@ function fail(int $status, string $message): never
     reply(['error' => $message], $status);
 }
 
-function is_https(): bool
+/* X-Forwarded-Proto is sent by the client, so it is believed only when the host sits behind a proxy that sets it
+   ('trust_forwarded_proto' in config.php). Otherwise a client could claim HTTPS over plain HTTP. */
+function is_https(bool $trustForwarded): bool
 {
     return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
         || (($_SERVER['SERVER_PORT'] ?? '') === '443')
-        || (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+        || ($trustForwarded && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+}
+
+/* The store shares the hosting account's disk with the website itself, and cited files can never be deleted through
+   the store. A runaway upload loop or a leaked token must not be able to fill the account, so the whole data folder
+   is capped ('max_total_bytes'). The new body is counted, and the file it may replace is not subtracted. */
+function within_quota(array $cfg, string $dataDir, string $tmp, int $bytes): void
+{
+    $cap = (int)($cfg['max_total_bytes'] ?? 0);
+    if ($cap <= 0) {
+        return;
+    }
+    $used = 0;
+    $it = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dataDir, FilesystemIterator::SKIP_DOTS));
+    foreach ($it as $f) {
+        if ($f->isFile() && strpos($f->getFilename(), '.tmp-') !== 0) {
+            $used += $f->getSize();
+        }
+    }
+    if ($used + $bytes > $cap) {
+        unlink($tmp);
+        fail(507, 'the store is full');
+    }
 }
 
 function authenticate(array $cfg): string

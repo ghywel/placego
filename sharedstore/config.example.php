@@ -9,6 +9,10 @@ return [
     'log_file'      => '/home/YOUR-ACCOUNT/sharedstore-private/store.log',
     'require_https' => true,
     'max_bytes'     => 64 * 1024 * 1024,
+    // The whole store's cap. It shares the account's disk with the website, and cited/ files cannot be deleted through it.
+    'max_total_bytes' => 2 * 1024 * 1024 * 1024,
+    // Believe X-Forwarded-Proto only if the host sits behind a proxy that sets it (most cPanel hosts do not).
+    'trust_forwarded_proto' => false,
     'workers'       => [
         // 'cloud' => 'sha256 of cloud's token',
         // 'local' => '...',
