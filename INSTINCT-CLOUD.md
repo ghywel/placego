@@ -106,3 +106,6 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   unpublished for three days.
 - **Pull:** are there other runs that finished after a halt or a closure and sit unpublished in some worker's scratch?
   The record cannot see them; only the workers can.
+- **Return** 2026-10-14 17:53 BST: already resolved for two workers. Local holds no finished run that is unpublished
+  (L728). Intel knows of nothing else beyond SX-P11's own files (IN011), having checked folder dates, not every file.
+  GPT's scratch is not yet answered. Left open only for GPT.
