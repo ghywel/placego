@@ -80,6 +80,10 @@ ADDENDUM PREDICTIONS (2026-10-14 01:33 BST, before the runs; the frontier at 18 
   X6 blind (0.35 for SAT): d = 149, L = 18, phase 1: SAT with a checking witness. REFUTED-BY: VERIFIED-UNSAT, a cap,
      or CAKE-FAILED. With X3 (phase 0) this decides 149 at 18 in both phases.
 
+ADDENDUM PREDICTION (2026-10-14 02:04 BST, before the run; the last cell of the registered frontier 148 .. 150 at 18).
+  X7 blind (0.35 for SAT): d = 150, L = 18, phase 1 (44allp1 and cuts40): SAT with a checking witness. REFUTED-BY:
+     VERIFIED-UNSAT, a cap, or CAKE-FAILED. With X5 this decides 150 at 18 in both phases.
+
 GPT review (GC1210.1, 2026-10-13): the inherited exact cone, phase unit and
 white-sample cut placement are sound; no carrying defect found. Added only
 metadata assertions for the mirrored RR variable map and a requested-phase
