@@ -200,7 +200,7 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   agree. Calibration: my gut said "the second multiplier will fail" (right), and my P2 and U guesses at how were
   wrong.
 
-- 2026-10-14 20:05 BST, Cloud: niggle sweep before pushing 8.109: 8 niggles, all nothing. Checked: the mod-4
+- 2026-10-14 20:03 BST, Cloud: niggle sweep before pushing 8.109: 8 niggles, all nothing. Checked: the mod-4
   dependence, the 0 and 2^T lifts, the closure (GC1222), x = -S_2(b(x)), the Mahler corollary, the 2/3-invariance of
   K, the clock, and Rudolph's hypotheses.
 

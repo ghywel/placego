@@ -3284,7 +3284,7 @@ Felt: sobering and satisfying. The numbers and proofs stand, and the summaries h
   foundations conversation.
 
 
-## CL380 — Cloud: door (c) closed by a theorem; Mahler's admissible set meets its doubles and triples only at 0 (2026-10-14 20:05 BST)
+## CL380 — Cloud: door (c) closed by a theorem; Mahler's admissible set meets its doubles and triples only at 0 (2026-10-14 20:03 BST)
 
 The owner and I went back to where we were before the comb ("c please"). RULE30-PRIZE.md §8.109, with predictions
 pushed in 2306731 before the run.
