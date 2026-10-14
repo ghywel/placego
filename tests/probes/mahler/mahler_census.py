@@ -97,8 +97,9 @@ def build():
 
 
 def chunk(args):
-    w, pb, prefix = args
-    out = subprocess.run([BIN, str(w), str(pb), str(prefix)], capture_output=True, text=True, check=True).stdout
+    w, pb, prefix, dual = args
+    out = subprocess.run([BIN, str(w), str(pb), str(prefix)] + (['dual'] if dual else []), capture_output=True,
+                         text=True, check=True).stdout
     hist, strag, mx = Counter(), [], (0, 0)
     for line in out.splitlines():
         f = line.split()
@@ -111,16 +112,23 @@ def chunk(args):
     return hist, strag, mx
 
 
-def census(w, workers, pb):
+def census(w, workers, pb, dual=False, save=None):
+    """dual: the negative starts x = -1 - n, -2^w < x <= -1 (the swarm's sign dual); n is reported as x."""
     pb = min(pb, w - 1)
     hist, strag, best, unresolved = Counter(), [], (0, 0), []
     with Pool(workers) as pool:
-        for h, s, mx in pool.imap_unordered(chunk, [(w, pb, p) for p in range(1 << pb)]):
+        for h, s, mx in pool.imap_unordered(chunk, [(w, pb, p, dual) for p in range(1 << pb)]):
             hist.update(h); strag.extend(s)
             if mx[0] > best[0]:
                 best = mx
+    if dual:
+        strag = [-1 - n for n in strag]
+        best = (best[0], -1 - best[1])
+    if save:
+        with open(save, 'w') as f:
+            f.write('\n'.join(map(str, strag)) + '\n')
     for n in strag:                                   # exact replay of the starts alive at step 124
-        h = H_exact(n)
+        h = H_exact(n)                                # (floor division makes it exact for negative starts too)
         if h is None:
             print('Z-NUMBER CANDIDATE (alive at 100000 steps):', n, flush=True)
             unresolved.append(n)
@@ -138,16 +146,33 @@ def control():
     print('M1 w=20 walker histogram equals exact fractions:', hist == exact, '| max', best, flush=True)
 
 
+def control_dual(w=16):
+    """S0: the dual walker against exact fractions on every negative start -2^w < x <= -1."""
+    build()
+    hist, best, ns, _ = census(w, 8, 6, dual=True)
+    exact = Counter(H_exact(x) for x in range(-(1 << w) + 1, 0))
+    print('S0 w=%d dual walker histogram equals exact fractions on (-2^w, -1]:' % w, hist == exact, '| max', best,
+          '| positive and negative totals', sum(hist.values()), sum(exact.values()), flush=True)
+
+
 def main():
     if sys.argv[1] == 'control':
         control()
         return
-    w = int(sys.argv[1])
-    workers = int(sys.argv[2]) if len(sys.argv) > 2 else 8
-    pb = int(sys.argv[3]) if len(sys.argv) > 3 else 6
+    if sys.argv[1] == 'control_dual':
+        control_dual()
+        return
+    args = [a for a in sys.argv[1:] if a != 'dual' and not a.startswith('save=')]
+    dual = 'dual' in sys.argv[1:]
+    save = next((a[5:] for a in sys.argv[1:] if a.startswith('save=')), None)
+    w = int(args[0])
+    workers = int(args[1]) if len(args) > 1 else 8
+    pb = int(args[2]) if len(args) > 2 else 6
     build()
     t0 = time.time()
-    hist, best, ns, unresolved = census(w, workers, pb)
+    hist, best, ns, unresolved = census(w, workers, pb, dual=dual, save=save)
+    if dual:
+        print('DUAL: negative starts -2^w < x <= -1; "n" below is x', flush=True)
     total = sum(hist.values())
     print('w=%d: starts %d (2^w - 1 = %d), max horizon %d at n = %d, stragglers replayed %d, %.0f s' % (
         w, total, (1 << w) - 1, best[0], best[1], ns, time.time() - t0), flush=True)

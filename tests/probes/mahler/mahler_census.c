@@ -13,7 +13,10 @@
  * At T = w the start is complete and the orbit is forced (b = v mod 2) until the window empties.  128-bit numerators
  * are exact while T + 2 <= 127; a start still alive at T = TMAX is printed as a straggler for exact Python replay.
  *
- * Usage: mahler_census W PREFIXBITS PREFIX  (walks the starts whose low PREFIXBITS bits equal PREFIX)
+ * Usage: mahler_census W PREFIXBITS PREFIX [dual]  (walks the starts whose low PREFIXBITS bits equal PREFIX)
+ * dual (2026-10-14, the swarm's sign-dual test): the start is x = -1 - n for n in [0, 2^w), x in [-2^w, -1]. Its T-code
+ *   is the complement of n's (T(-1-x) = -1-T(x)), so the window step uses parity b ^ 1 while v follows n's own orbit.
+ *   The excluded start is then n = 2^w - 1 (x = -2^w, low bits those of 0), and the range is -2^w < x <= -1.
  * Output: "H h count" lines (count of starts with horizon exactly h), "S n" straggler lines, "MAX h n". */
 #include <stdio.h>
 #include <stdlib.h>
@@ -22,7 +25,7 @@
 typedef unsigned __int128 u128;
 #define TMAX 124
 #define HMAX 512
-static int W;
+static int W, DUAL = 0;
 static u128 pow3[130];
 static unsigned long long hist[HMAX];
 static int maxh = 0;
@@ -48,10 +51,10 @@ static inline int wstep(u128 *lo, u128 *hi, int b, int T) {
 }
 
 static void forced(unsigned long long n, u128 v, u128 lo, u128 hi, int T) {
-    if (n == 0) return;                              /* the excluded origin xi = 0 */
+    if (DUAL ? n == (1ULL << W) - 1 : n == 0) return; /* the excluded origin xi = 0 (dual: x = -2^w, outside) */
     while (T < TMAX) {
         int b = (int)(v & 1);
-        if (!wstep(&lo, &hi, b, T)) { record(T + 1, n, 1); return; }
+        if (!wstep(&lo, &hi, b ^ DUAL, T)) { record(T + 1, n, 1); return; }
         v = (3 * v + b) >> 1;
         T++;
     }
@@ -64,7 +67,7 @@ static void dfs(int T, unsigned long long n0low, u128 v, u128 lo, u128 hi) {
         int b = (int)((v + (u128)bit) & 1);
         u128 nlo = lo, nhi = hi;
         unsigned long long nn = n0low | ((unsigned long long)bit << T);
-        if (!wstep(&nlo, &nhi, b, T)) {             /* every start with these T+1 low bits dies at step T+1 */
+        if (!wstep(&nlo, &nhi, b ^ DUAL, T)) {      /* every start with these T+1 low bits dies at step T+1 */
             unsigned long long mult = 1ULL << (W - T - 1);
             record(T + 1, nn, mult);
             continue;
@@ -79,6 +82,7 @@ int main(int argc, char **argv) {
     W = atoi(argv[1]);
     int pb = atoi(argv[2]);
     unsigned long long prefix = strtoull(argv[3], 0, 10);
+    DUAL = (argc > 4 && argv[4][0] == 'd');
     pow3[0] = 1;
     for (int i = 1; i < 130; i++) pow3[i] = pow3[i - 1] * 3;
     /* replay the fixed prefix bits */
@@ -89,7 +93,7 @@ int main(int argc, char **argv) {
         int bit = (int)((prefix >> T) & 1);
         int b = (int)((v + (u128)bit) & 1);
         n0low |= (unsigned long long)bit << T;
-        if (!wstep(&lo, &hi, b, T)) {
+        if (!wstep(&lo, &hi, b ^ DUAL, T)) {
             record(T + 1, n0low, 1ULL << (W - pb));        /* this chunk's own starts only (first run overcounted) */
             goto done;
         }
