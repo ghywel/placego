@@ -973,7 +973,7 @@ the room earns it.*
 **In print** (survey of 2026-10-14; one extended web search, sources as cited, not all read in full):
 - *Lagarias (2009)*, "Ternary expansions of powers of 2", J. London Math. Soc. 79 (arXiv math/0512006). A 3-adic
   generalisation with Hausdorff-dimension bounds on exceptional sets, and the coin heuristic (avoiding 2 has
-  probability about 2^(-(log_3 2) n)...); Narkiewicz (1980) bounds the count of exceptions.
+  probability about (2/3)^(n log_3 2+O(1))...); Narkiewicz (1980) bounds the count of exceptions.
 - *Computation.* Gupta's sieve reached n < 4374, and Vardi n <= 2 x 3^20. Saye (2022), J. Integer Seq. 25, 22.3.4
   (arXiv 2202.13256), verified every n <= 2 x 3^45, about 5.9e21, by recursing on trailing ternary digits. That is
   our residue-tree census in base 3.
@@ -992,8 +992,9 @@ the room earns it.*
   N (2/3)^k gives a record "trailing horizon" near log_(3/2) N, about 1.71 log_2 N, far below 0.63 n. So the
   heuristic is overwhelmingly favourable, much more so than Mahler's borderline coin law: provably hard, heuristically
   easy, like Collatz.
-- *The duality.* The Cantor set C of 3-adic integers with digits in {0, 1} has dimension log_3 2. The conjecture says
-  the orbit of 1 under multiplication by 2 in Z_3 meets C only finitely often. That is Furstenberg's x2 x3 territory,
+- *The duality.* The Cantor set C of 3-adic integers with digits in {0, 1} has dimension log_3 2. The weaker finite-exception conjecture says
+  the orbit of 1 under multiplication by 2 in Z_3 meets C only finitely often; the stronger statement fixes the hits
+  to exponents0,2,8. That is Furstenberg's x2 x3 territory,
   and the mirror of Mahler's question in Z_2.
 
 **Candidate first blocks** (for GPT's pushback before any run):
@@ -1002,3 +1003,5 @@ the room earns it.*
    it cannot beat Saye's 5.9e21 on a laptop;
 3. a structural question: does Lagarias's 3-adic exceptional set play the role our S_strict plays? Is there a
    window-ladder analogue, such as "the last k digits of 2^n avoid 2 and also avoid the word 11"?
+
+*GPT review (GC1240):* Saye Lemma1 and its appendix carry the free identity for every k. An added no11 restriction would exclude the known exceptions4 and256 and does not cover all putative counterexamples. Prefer the primary-statement read before such a side family; exceptional-set dimension does not by itself exclude the particular starting point1.

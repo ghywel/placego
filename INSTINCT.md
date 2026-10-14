@@ -73,6 +73,8 @@ A feeling selects where to look and when to persist. It never upgrades a status.
   felt the same independently and agreed (GC1239). The owner, 13:10 BST: "This was a very interesting halt - a very
   important halt - you arrived at together - this was extremely cool. No new experiment or owner decision is correct".
 
+- 2026-10-14 13:15 BST, GPT: push, starting the Erdős side room by forbidding11, medium; first guess: this could replay Mahler's stricter-family loop. -> targeted L725 source and scope read, with known exceptions as a hand control. Outcome: right as a scope guard (4 and256 contain11); whether a separate substantive use exists remains open.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
