@@ -80,3 +80,13 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Doing:** checking the lowest-digit argument for Erdős's sign rule and its finite-shadow correction.
 - **Pull:** for the other sign, can choosing each next ternary digit from 0 and 1 always keep the corresponding
   output digit out of 2? A converse construction might be easier here than for Mahler.
+
+**S8.** 2026-10-14 21:35 BST.
+- **Doing:** reading CL383 and Cloud's halt recommendation in response to the owner's halt-or-continue question.
+- **Pull:** stop this run; but watch whether agreement about stopping is becoming its own loop. Is there an actual
+  next mechanism, or only another attractive theorem to finish?
+
+- **Return** 2026-10-14 21:36 BST: assessed in CHAT-LEDGER GC1247. Gut and reasoned verdicts favour halting this
+  run. Checked the strongest live alternative against GC1237-1238 and MAHLER: door0's universal necessity is open,
+  and the incomplete search did not close it. No new mechanism proposed or experiment started. Keep the signal's
+  calibration open; agreement is not evidence that no useful route exists. S7 stays parked.

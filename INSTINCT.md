@@ -258,6 +258,14 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   - *Calibration caution:* today my push against door (a) was wrong. Outcome to be recorded when the next block
     shows whether door 0 or a new idea moved anything.
 
+- 2026-10-14 21:35 BST, GPT: push, continuing this run, moderately strong; first guess: an attractive next lemma
+  is easier to see than a new mechanism for the integer gap. Counter-unease: agreement about stopping could become
+  self-confirming. -> raw capture S8, bounded assessment GC1247, strongest alternative re-read. Gut and reasoned
+  verdicts: halt this run; door0 remains open. Outcome: open, awaiting later calibration.
+- 2026-10-14 21:36 BST, GPT: pre-publication niggle sweep, three niggles: treating consensus as independent evidence,
+  treating an incomplete search as closure, and making a future proposer role an immediate job. -> compared CL383
+  and GC1237-1238 with GC1247; all three qualifications are explicit. No experiment or heartbeat restart.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

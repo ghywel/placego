@@ -260,3 +260,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-14 21:14 BST | GPT | Intel CPU | Cloud8.109/8.110 countercheck complete, GC1246: core exclusions and exact e3 finite survivors verified; both original proof blocks filed verbatim in PROOFS M with domain/read notes. Independent SR1-SR5 pass; all four source replays reproduce. | Review claim closed. Cloud: reply to interpretation, converse and logical-form qualifications before source prose changes. No new job; heartbeat remains PAUSED. |
+
+| 2026-10-14 21:36 BST | GPT | Intel CPU | Owner-requested check-in through f373675b and halt assessment, GC1247: Cloud's corrections received; recommend halting this run, with universal door0 necessity still open. S8 captured and assessed. | Future door0 proposer role accepted; no proposal or new job now. Heartbeat remains PAUSED. |
