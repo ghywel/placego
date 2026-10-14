@@ -7210,3 +7210,52 @@ Parked as INSTINCT-CLOUD.md S8.
 forbidden patterns. R2 was a genuine coin flip and fell on the correlation side. R3 was wrong at lag 3, and the class
 split explains why. Gut: satisfied. The owner's word "interference" was a better guide than my "rigid cells". The two
 exact local facts have the texture of lemmas (pull, medium).
+
+### 8.106 The record comb: Intel's swarm (2026-10-14 17:55 BST, Intel)
+
+*The owner, 2026-10-14: "Local is working on B itself as it has the data, please launch the swarm now." The brief is
+CLAUDE-INTEL-HANDOVER.md section 7 (Cloud, after 8.104). Single-party (Intel): a sub-agent's check is a self-check,
+never a second read. Every replay runs in a scratch clone, and each run is capped at 15 minutes.*
+
+**The lanes.**
+- *A, the Lean recompile.* The 18 files of tests/probes/lean/, each by its "How to check" line, one at a time, in the
+  google-deepmind/formal-conjectures checkout at b3f2641 (Lean v4.33.1 with its Mathlib cache). BlackEnd38L.lean is
+  generated from BlackEnd38base.lean by gen_black_end38.py. Scripted by Intel; every error and every `#print axioms`
+  line is recorded.
+- *B, the stored certificates,* is Local's, since Local holds the proofs.
+- *C, replays.* The 13 probes that hit 8.104's 90-second cap and the 2 that needed kissat, run as committed
+  (rule30_diagonal_bias.py with CAP_MINUTES=14, so that its own cap fires inside ours). Two agents compare each output
+  with its docstring's OUTCOME. Skipped: the two probes that need the 44all lists (outside git, on Local) and the
+  checkpoint replays (lane B's).
+- *D, the derived layers.* The 18 site pages and the 129 lines of RECORD-MAP.md marked COMPUTED or MEASURED, checked
+  against their primary sources by six agents: one for record.html, four for the other pages, one for RECORD-MAP.md.
+  Each discrepancy is quoted from both sides.
+- *E, seeding.* A static scan of every probe for randomness that is not reproducible; one agent judges each hit for
+  whether a recorded verdict rests on rare events.
+- Intel checks each reported discrepancy against its source before any correction. Corrections are made in place with
+  a dated comb note, never by rewriting history.
+
+Record searched: comb; Lean recompile; unseeded -> 8.104 (Cloud's comb: a static Lean scan only, nothing recompiled;
+rule30_kick_bite.py unseeded). No earlier recompile on this machine.
+
+**Predictions, pushed before any lane runs.**
+- *A.* 16 to 18 of the 18 files compile without error. Any failure is environmental (time, memory, a missing module),
+  not a gap in a proof. Every `#print axioms` line lists propext, Classical.choice and Quot.sound or a subset of them;
+  none lists sorryAx or Lean.ofReduceBool. gen_black_end38.py writes a file byte-identical to the one that compiled
+  (SHA-256 prefix 8a07be2115811fc3). It compiles within the cap (0.6: it took 456 s on the M5, and this CPU is slower).
+  Disclosed: BlackLock.lean was compiled once as an install check before this block, with exit 0 and the three
+  standard axioms at most, so for that file this is not a prediction.
+- *C.* At least 11 of the 15 finish within the cap. Of those with a comparable recorded outcome, at least 85% match. At
+  most one real mismatch (same arguments, different numbers). rule30_trace_word_certs.py fails or skips its cake_lpr
+  step, since cake_lpr is not installed here.
+- *D.* Between 3 and 15 discrepancies across the 18 pages, most of them stale values (a page written before a later
+  result) or dropped qualifiers. At most 2 where a page states a stronger status than its source (proved for a sketch,
+  exact for a bound). RECORD-MAP.md: 1 to 6 discrepancies among its 129 lines, mostly losses from compression.
+- *E.* Between 60 and 250 probes use randomness, and between 5 and 40 of those are not reproducible. Of those, at most 5
+  have recorded verdicts that rest on rare events and so could flip; rule30_kick_bite.py is the known one.
+- *The unexpected check: can the axioms check say no?* A copy of BlackLock.lean with the proof of `mem_step` replaced
+  by `sorry` compiles with a warning. Its `#print axioms` then lists sorryAx for lock9, which uses mem_step, and not
+  for not_locked8 or lock_persists, which do not.
+- *Counterfactual.* A Lean file that fails for a reason inside its proof, a replay that contradicts its OUTCOME under
+  the same arguments, or a page stating a stronger status than its source is a record error. It is corrected in place
+  with a dated comb note and reported in the IN entry.
