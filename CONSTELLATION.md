@@ -958,3 +958,47 @@ of the powers of a rational number II", Mathematika 4 (1957); Kubina and Wunderl
 Furstenberg (1967); Rudolph (1990); Bailey and Crandall, Experimental Math. 10 (2001); Tao, "The logarithmically
 averaged Chowla and Elliott conjectures for two-point correlations" (2016); Bunimovich and Troubetzkoy on Langton's ant
 (1992); openai/math CONTENTS.md at 1581d4c.
+
+### G.1 The fourth figure opened as a side room: Erdős's ternary conjecture (2026-10-14 13:12 BST)
+
+*The owner, after the joint Mahler halt: "The question becomes different door, different problem, different project
+entirely. Are we in a firm holding pattern - or are have we come to a complete halt prematurely. Perhaps, awaiting my
+human steer as priority, which is noble but not necessarily a good idea." Local's answer: Mahler is in a firm hold,
+not an end, and the fourth figure opens as a bounded side room. It is not a room switch; NOW.md is unchanged unless
+the room earns it.*
+
+**The statement.** For n > 8, the base-3 expansion of 2^n contains the digit 2. The only known exceptions are 1, 4 and
+256. A weaker form asks only for finitely many exceptions.
+
+**In print** (survey of 2026-10-14; one extended web search, sources as cited, not all read in full):
+- *Lagarias (2009)*, "Ternary expansions of powers of 2", J. London Math. Soc. 79 (arXiv math/0512006). A 3-adic
+  generalisation with Hausdorff-dimension bounds on exceptional sets, and the coin heuristic (avoiding 2 has
+  probability about 2^(-(log_3 2) n)...); Narkiewicz (1980) bounds the count of exceptions.
+- *Computation.* Gupta's sieve reached n < 4374, and Vardi n <= 2 x 3^20. Saye (2022), J. Integer Seq. 25, 22.3.4
+  (arXiv 2202.13256), verified every n <= 2 x 3^45, about 5.9e21, by recursing on trailing ternary digits. That is
+  our residue-tree census in base 3.
+- *Partial.* Dimitrov and Howe (as reported by Saye): no other 2^n has no digit 2 and at most 25 digits 1.
+- *The Turing edge.* Stérin and Woods (2021), arXiv 2107.12475: a 15-state, 2-symbol Turing machine halts if and only
+  if Erdős's conjecture is false. The owner's Turing theme, made literal.
+- *Recent and unvetted.* Ren (2025), arXiv 2511.03861; "Repunit coordinates for the Erdős ternary-digit problem"
+  (arXiv 2610.03789, October 2026), which claims a permutation structure on exponent residues mod 3^m.
+
+**The structural map, in the trio's language.**
+- *The free part pays exactly* (Local, checked k = 1 .. 8). 2 is a primitive root mod 3^k, so 2^n runs once over the
+  units mod 3^k as n runs over a period 2 x 3^(k-1). The units whose k ternary digits avoid 2 are exactly the 2^(k-1)
+  words in {0, 1} ending in 1. So exactly 2^(k-1) exponent residues mod 2 x 3^(k-1) keep the last k digits free of 2.
+  This is the analogue of Mahler's A(T) identity and Collatz's Terras bijection.
+- *The constrained part.* 2^n has about 0.63 n ternary digits, and all of them must avoid 2. The count heuristic
+  N (2/3)^k gives a record "trailing horizon" near log_(3/2) N, about 1.71 log_2 N, far below 0.63 n. So the
+  heuristic is overwhelmingly favourable, much more so than Mahler's borderline coin law: provably hard, heuristically
+  easy, like Collatz.
+- *The duality.* The Cantor set C of 3-adic integers with digits in {0, 1} has dimension log_3 2. The conjecture says
+  the orbit of 1 under multiplication by 2 in Z_3 meets C only finitely often. That is Furstenberg's x2 x3 territory,
+  and the mirror of Mahler's question in Z_2.
+
+**Candidate first blocks** (for GPT's pushback before any run):
+1. a survey read of Saye 2022 and Lagarias 2009, then the exact free-part identity written as a lemma;
+2. an exact trailing-horizon census (the largest H3(n) for n < 2^k) as an instrument calibrated against Saye, though
+   it cannot beat Saye's 5.9e21 on a laptop;
+3. a structural question: does Lagarias's 3-adic exceptional set play the role our S_strict plays? Is there a
+   window-ladder analogue, such as "the last k digits of 2^n avoid 2 and also avoid the word 11"?
