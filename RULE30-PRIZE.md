@@ -6462,7 +6462,8 @@ too** (K17, CNF 9078b39e4d9e603df3e2e715d61997a56dec296ff8c84267152a901c086f5cae
 phases. With K14, the same-phase suffix bound R_p(d) <= R_p(d + 1) + 1 gives **R_real,0(147) = 18 exactly**
 (GC1214.1; the witness row independently replayed by GPT, GC1215, row SHA256 bd2e7ab1...d07517): a phase-0 band of 19
 at 147 would be a band of 18 at 148. 147 is a new peak of 18 after 146's certified
-<= 17, not a continuation of the run that ends at 141. Phase 1 at 147, and so the two-phase record, is undecided. **149, phase 0 <= 17** by the exact cone (X3, CNF
+<= 17, not a continuation of the run that ends at 141. Phase 1 at 147 is at most 18 by K17 and the same suffix bound (GC1219), so **the two-phase record R_real(147) = 18 exactly**;
+whether phase 1 attains 18 is open. **149, phase 0 <= 17** by the exact cone (X3, CNF
 0f643f65fed169685596ead70f8a5e4c3521a9217a93e0350ba9f0c7b126ed14, solve 9591 s, check 1881 s); and its phase 1 too (X6, CNF
 1e7a04442e3ec1980910d920fc4f5e6ff925aebaf827be6af09eb3236631b092, check 2699 s): **R_real(149) <= 17 in both phases.**
 **150, phase 0 <= 17** (X5, CNF dd7fcb266c0491fdb4db361b9d4bb7df5940c3fe6c49f78cd4f8ea9202daa9a0, solve 8487 s, check 1544

@@ -97,6 +97,10 @@ ADDENDUM PREDICTION (2026-10-14 04:54 BST, before the run; the two-phase value a
   X8 blind (0.8 for UNSAT): d = 147, L = 19, phase 1 (44allp1 and cuts40) is VERIFIED-UNSAT, so R_real(147) = 18
      exactly in both phases. REFUTED-BY: SAT with a checking witness (R_real(147) >= 19, a new peak), a cap, or
      CAKE-FAILED.
+  X8 WITHDRAWN (2026-10-14 05:13 BST, stopped before any output; GC1219): K17 already excludes it. A phase-1 band of 19
+     at 147 contains a phase-1 band of 18 at 148 with the same horizon. So R_real,1(147) <= 18 and, with X2 and K14,
+     max_p R_real,p(147) = 18 exactly; phase-1 attainment stays open. This repeats X4's error. Rule for this probe from
+     now on: before registering (d, L, p), check whether (d + 1, L - 1, p) is already certified UNSAT.
 
 GPT review (GC1210.1, 2026-10-13): the inherited exact cone, phase unit and
 white-sample cut placement are sound; no carrying defect found. Added only
