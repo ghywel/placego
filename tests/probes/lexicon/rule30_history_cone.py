@@ -45,6 +45,21 @@ GPT reporting review (GC1213, 2026-10-13 23:10 BST), registered before synthetic
   requires these scope guards before interpreting H3..H6. No computation restart is requested.
   OUTCOME: all three two-depth reporter controls PASS; 12 before/after cone comparisons (two named
   depth/length fixtures, n=0,1,2, both phases) have identical clauses and metadata. No solver executed.
+
+ADDENDUM PREDICTIONS (2026-10-14 01:30 BST, before the run; the third and final history block, "young peaks", agreed in
+  GC1216 with its horizon and scope). Fixture: X2's phase-0 witness at 147 (rule30_exact_cone_cert.py, its 329-bit
+  receipt), T = 164.
+  Y0 must hold (control, GC1216's 87 control): the committed 87 witness (phase 1) has a real age-1 parent through 1w
+     (rule30_record_real_parent.py P5), and the same membership code returns True on its root.
+  Y1 blind (0.5): X2's 82 white-time column-1 samples at child times 0, 2, .., 162 (sample 164 is unused by the
+     record query) form a word w in L_1. If so, gluing w's real right realization to C_1(w) gives a child with the same
+     forced left row through depth 164, so R_history,0^(1)(147) = 18: a phase-0 maximizer with a real past exists
+     (not necessarily the saved whole configuration). Counterfactual: w is not in L_1, so X2's left-prefix and trace
+     cylinder has no real past.
+  Y2 (run only if Y1 fails; blind 0.5 for SAT): one exact history cone, d = 147, L = 18, n = 1, phase 0 (base phase 1,
+     H = 165, the band at cone time 1). SAT gives another history-bearing maximizer; sound UNSAT gives
+     R_history,0^(1)(147) <= 17, a peak that needs a configuration with no real past. A cap is UNKNOWN. No further
+     query follows in this block.
 """
 import json, os, subprocess, sys, tempfile, time
 from multiprocessing import Pool
@@ -210,7 +225,38 @@ def census(dmin, dmax):
     print('UNKNOWN (cap %d s):' % CAP, unknown)
 
 
+def young_peak():
+    import re
+    import rule30_relaxed_records_k as rlk
+    fx = fixture()
+    r87 = fx[87]
+    y0 = r87['phase'] == 1 and bool(rlk.in_language_phase('1' + r87['visible'], 0))
+    print('Y0 87 control: root 1w real in L_0:', 'HELD' if y0 else 'FAILED', flush=True)
+    src = open(os.path.join(HERE, 'rule30_exact_cone_cert.py')).read()
+    block = src[src.index('The witness row, cells -164 .. 164'):]
+    row = ''.join(re.findall(r'\n {5}([01]+)', block)[:4])
+    assert len(row) == 329
+    T, d, L, p = 164, 147, 18, 0
+    cur = [0] * 4 + [int(c) for c in row] + [0] * 4
+    off = T + 4
+    col1 = []
+    for t in range(T + 1):
+        assert cur[off] == (p + t) % 2
+        col1.append(cur[off + 1])
+        cur = [0, 0] + [0] + [cur[i - 1] ^ (cur[i] | cur[i + 1]) for i in range(1, len(cur) - 1)] + [0] + [0, 0]
+        off += 2
+    w = ''.join(str(col1[t]) for t in range(0, 163, 2))
+    assert len(w) == 82
+    y1 = bool(rlk.in_language_phase(w, 1))
+    print('X2 visible word (82 samples):', w)
+    print('Y1 w in L_1 (a phase-0 maximizer at 147 with a real past):', 'HELD' if y1 else 'REFUTED (run Y2)', flush=True)
+    return y1
+
+
 if __name__ == '__main__':
+    if sys.argv[1] == 'young':
+        young_peak()
+        sys.exit(0)
     if sys.argv[1] == 'controls':
         controls()
     else:
