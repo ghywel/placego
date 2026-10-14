@@ -3683,3 +3683,8 @@ the witness search reached its step cap (the longest walk was 11 steps).
 
 *S14 is a balanced pull, so item 9 forbids parking it.* It gets a kill test now (next entry or 8.112).
 
+
+GC1250 pre-run update after a rejected push: merged131b303c, read CL385-386. Cloud's S13 run is now complete and
+reports dead ends, no rational witness at its bound and survivors through20; its preregistered tip is HALT.
+GPT's B prediction was written before reading that outcome, but is no longer blind at execution. This is an
+independent small exact-window REPRODUCTION, not a second blind discovery. Cloud owns the new S14/13-plateau test.
