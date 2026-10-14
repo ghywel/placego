@@ -385,21 +385,21 @@ PART: as on the board.
 ## Prior art anchors
 - Condrey arXiv:2609.09431: period 1; his Lemma 1 is the forced left half — used, audited (G11; §8.76)
 - Jen 1990: adjacent columns never both eventually periodic — used (§8.13; GC792); Jen 1986 still owed for B2
-- Kopra TCS 946 (2023): Rule 30 rapidly left expansive (0, 1, 2), Corollary 3.7 is Jen's theorem — used (§8.13)
+- Kopra TCS 946 (2023): Rule 30 rapidly left expansive; Corollary 3.7 is Jen's theorem — used (§8.13)
 - Kopra 2021 (arXiv:2005.05112): one p/q column never eventually periodic; Theorem 3.5 at width 1; Rule 30 has width
   2, so a transfer needs a new hypothesis — GC807; PERIOD-TWO.md §5
 - Kari and Kopra (arXiv:1710.05737): true and empty for centre columns — §8.55; GC670
-- Rowland 2006 §5: left-side period doubling; his one-left-side question answered here — §8.31
+- Rowland 2006 §5: left-side period doubling; his question answered here — §8.31
 - Nersissian arXiv:2609.25077 Theorem 13: B2's method and single-seed statement, earlier — credited (§8.59 note)
 - Meier and Staffelbach (1991): left half from two columns, as here — convergent
-- Hanson and Crutchfield (1997): the domain filter — imported for the wheel's walls
-- Flatto, Lagarias and Pollington (1995): Mahler's decoupling, same skeleton — calibration, not a route (§8.45)
-- Dubickas 2009 (W2); Terras, Lagarias, Kontorovich–Sinai (least residue); Bugeaud and Dubickas (2005) — credited
-- Guillon (2008): the retourné is the forced left half; entropy at width 2 — §8.77
-- Sablik (2008): no expansive slope (GC813); Coven, Pivato and Yassawi (2007): edge odometers (GC808, GC810)
-- Tahay; Dolce and Tahay: Sturmian columns from finite seeds in other CA; finiteness alone forces nothing
-- Milnor, Kurka, Courbage–Kaminski: systems; no lower bound on one column's entropy — §8.33
-- Wolfram (2019): band boundary 0.252 a step, observed; Epperlein (2017): periodic-point table
+- Hanson and Crutchfield (1997): domain filter, used for the wheel's walls
+- Flatto, Lagarias, Pollington (1995): Mahler's decoupling, same skeleton — calibration (§8.45)
+- Dubickas 2009 (W2); Terras, Lagarias, Kontorovich–Sinai (least residue); Bugeaud, Dubickas (2005) — credited
+- Guillon (2008): retourné = forced left half; entropy at width 2 — §8.77
+- Sablik (2008): no expansive slope (GC813); Coven, Pivato, Yassawi (2007): edge odometers (GC808/810)
+- Tahay; Dolce, Tahay: Sturmian columns from finite seeds in other CA; finiteness forces nothing
+- Milnor, Kurka, Courbage–Kaminski: no lower bound on one column's entropy — §8.33
+- Wolfram (2019): band boundary 0.252/step; Epperlein (2017): periodic points
 - Cramér's model: the coin's scale plus a structural constant (§8.38); Das not imported; López–Stoll gap noted
 
 ## Side questions (CONSTELLATION.md, by name only)
@@ -412,3 +412,4 @@ PART: as on the board.
   relativity and the lopsided light cone; unequal ticks; alternation, heard
 - Section E, portfolio: seed universality in a deterministic core; a transport law for a defect; the arithmetic of
   the ordered edge; the infinite-width boundary information limit
+- Section G, neighbours (10-14): Erdős ternary (fourth figure), Waring, x2x3, normality, Chowla, Langton, BB

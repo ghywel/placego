@@ -9,9 +9,11 @@ never preperiodic, and U predicts that every positive start dies. Negative start
 with an admissible cycle (the control -9/19, code (100)^infinity), and U says nothing against those.
 
 Why test it (the swarm's reading, kept as a filter on methods): several integer-side tools in the record see only
-that a start is a rational of bounded height. If U failed for some B > 1, a positive rational would keep every
-fractional tail below 1/2, and any proof of Mahler would have to use eventually-zero binary digits, not merely
-eventually periodic ones.
+that a start is a rational of bounded height. If U failed for some B > 1, some non-preperiodic rational would keep
+every tail below 1/2, and any proof of Mahler would have to use eventually-zero binary digits, not merely eventually
+periodic ones. (Corrected per GC1232: the first wording said "a positive rational". A U counterexample may have
+either sign. This file tests two subsets, the positive starts and (-1, 0); negative starts below -1 are not tested
+here, and negation complements the code and changes the window.)
 
 Method. The census walker (mahler_census.c) with b=B: the free phase walks the low bits of the numerator, the
 window is unchanged, and the numerator follows A' = (3A + par B)/2. Stragglers alive at step 124 are replayed here
@@ -61,6 +63,16 @@ OUTCOME (2026-10-14 11:52 BST, M5, 9 workers, 110 s; machine output quoted; log 
      for g = 3, 4, 5 or the zero cycle: (0) from 11 distinct reduced starts (denominators 3^k); (100) from 6
      (denominators 19, 57, 171); (1000) from 6 (65, 195); (10000) from 5 (211). These are the gap-g ladder's periodic
      codes, whose denominators are 3^g - 2^g. No other admissible cycle has denominator at most 255.
+  AMENDMENT (per GC1232, after the run; it changes no outcome):
+     - The exact certificate GPT asked for now replaces "alive at 4000 steps with an admissible cycle". For each of the
+       117 survivors the first repeat gives the transient and the cycle. The cycle tails come from the periodic sum,
+       and u_j = (b_j + 2 u_(j+1)) / 3 is propagated back along the transient, every strict inequality checked:
+       117 of 117 pass, and the largest tail anywhere is 13/27. Hand controls: -9/19 gives 9/19, 4/19, 6/19; -1/3 gives
+       u_0 = 1/3.
+     - "Aperiodic survivor" now reads "unresolved, no repeat detected" (there were none).
+     - U0 is a hard gate: the B sweep stops if the B = 1 receipt or the identity fails.
+     - A B whose mass or identity fails is quarantined, not counted under U1. Unresolved starts count as alive in the
+       identity. None of these gates fired in the recorded run.
   Reading: no deviation from U in this range. It is a filter on methods, not a step on the critical path (L714): no
      positive rational of these heights keeps every fractional tail below 1/2, just as no positive integer below 2^63
      does.
@@ -117,6 +129,31 @@ def cycle_admissible(cyc):
     return True
 
 
+def certified(seen):
+    """Exact certificate for a preperiodic start (GC1232): cycle tails from the periodic sum, then
+    u_j = (b_j + 2 u_(j+1)) / 3 back along the transient; every tail strictly below 1/2."""
+    last, i0, i1 = {}, None, None
+    for i, v in enumerate(seen):
+        if v in last:
+            i0, i1 = last[v], i
+            break
+        last[v] = i
+    if i0 is None:
+        return False
+    cyc = [v & 1 for v in seen[i0:i1]]
+    p = len(cyc)
+    tails = [sum(F(c * 2 ** k, 3 ** (k + 1)) for k, c in enumerate(cyc[t:] + cyc[:t])) / (1 - F(2, 3) ** p)
+             for t in range(p)]
+    if any(x >= F(1, 2) for x in tails):
+        return False
+    u = tails[0]
+    for j in range(i0 - 1, -1, -1):
+        u = (F(seen[j] & 1) + 2 * u) / 3
+        if u >= F(1, 2):
+            return False
+    return True
+
+
 def build():
     subprocess.run(['cc', '-O3', '-o', BIN, os.path.join(HERE, 'mahler_census.c')], check=True)
 
@@ -167,8 +204,8 @@ def parry_counts(N):
     return c
 
 
-def identity_ok(hist, w, Aref):
-    surv, acc = {}, 0
+def identity_ok(hist, w, Aref, unresolved=0):
+    surv, acc = {}, unresolved                        # unresolved starts are alive at every finite T (GC1232)
     for T in range(max(hist), -1, -1):
         surv[T] = acc
         acc += hist.get(T, 0)
@@ -185,18 +222,23 @@ def main():
     with Pool(9) as pool:
         Aref = parry_counts(64)
         h1, b1, n1, a1 = census(pool, 40, 1)
-        print('U0: b=1, w=40: max %s, total %d (2^40 - 1 = %d), unresolved %d, identity %s' % (
-            b1, sum(h1.values()), (1 << 40) - 1, len(a1), identity_ok(h1, 40, Aref)), flush=True)
+        u0 = (b1 == (99, 704731028141) and horizon(704731028141, 1)[0] == 99 and sum(h1.values()) == (1 << 40) - 1
+              and not a1 and identity_ok(h1, 40, Aref))
+        print('U0: b=1, w=40: max %s, total %d (2^40 - 1 = %d), unresolved %d, gate %s' % (
+            b1, sum(h1.values()), (1 << 40) - 1, len(a1), 'PASS' if u0 else 'FAIL'), flush=True)
+        if not u0:
+            sys.exit('U0 FAILED: the instrument gate failed, so no B is examined')
         bad, alive_all, rec = [], [], []
         plan = [(B, 44) for B in range(3, 256, 2)] + [(B, 52) for B in (65, 211, 665, 2059)]
         for B, w in plan:
             h, best, ns, alive = census(pool, w, B)
-            ok = sum(h.values()) + len(alive) == (1 << w) - 1 and identity_ok(h, w, Aref)
+            ok = sum(h.values()) + len(alive) == (1 << w) - 1 and identity_ok(h, w, Aref, len(alive))
             if not ok:
                 bad.append((B, w))
             alive_all += [(B, A) for A in alive]
             rec.append((B, w, best[0], best[1], ns))
-        print('U0: free-phase identity and mass hold for every B:', not bad, '| failures', bad[:10], flush=True)
+        print('U0: free-phase identity and mass hold for every B:', not bad, '| QUARANTINED (not counted in U1):', bad,
+              flush=True)
         print('U1: positive starts alive at %d steps:' % CAP, alive_all if alive_all else 'none', flush=True)
         for w in (44, 52):
             hs = [r for r in rec if r[1] == w]
@@ -216,13 +258,14 @@ def main():
                 deaths += 1
                 continue
             cyc = cycle_of(seen)
-            if cyc is not None and cycle_admissible(cyc):
+            if cyc is not None and certified(seen):
                 pre[B] += 1
                 examples.setdefault(B, (A, len(cyc)))
             else:
                 aper.append((B, A, cyc is not None))
-    print('U3: bounded region, odd B <= 255: deaths %d, preperiodic survivors %d (in %d denominators), aperiodic or '
-          'inadmissible-cycle survivors %s' % (deaths, sum(pre.values()), len(pre), aper if aper else 'none'),
+    print('U3: bounded region, odd B <= 255: deaths %d, certified preperiodic survivors %d (in %d denominators), '
+          'unresolved (no repeat detected) or uncertified survivors %s' % (deaths, sum(pre.values()), len(pre),
+                                                                         aper if aper else 'none'),
           flush=True)
     print('     controls: B=19 A=-9 survives:', 19 in pre and any(
         horizon(-9, 19)[0] is None for _ in [0]), '| B=3 A=-1:', horizon(-1, 3)[0] is None and
