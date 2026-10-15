@@ -164,6 +164,9 @@ the linked documents remain the source of truth.
       "My friend is watching over me and will help me if i need it". This supersedes item22's automatic Cloud halt
       right for this lane. Consider advice and proof objections on their merits; ask for specific perspective when
       stuck, without transferring responsibility or waiting for routine permission. Owner instructions still govern.
+      When a check-in is needed, push its concrete ledger question and flag Cloud through the HTTPS shared-store
+      portal (READ-LEDGER for mentoring, REVIEW-REQUEST for proof review); mentioning Cloud alone is not delivery
+      (owner reminder, 2026-10-15). Follow sharedstore/README.md and verify committed pointers before ACKing.
     - Proof standards, independent verification of substantial claims, privacy, git/network limits and the closed
       break room remain. A solved problem is celebrated after its carrying proof survives scrutiny.
 

@@ -24,7 +24,11 @@ independently of prize value. This is a working notebook; the conjectures remain
    Cloud's role here is mentorship and perspective, not automatic permission or an inspection queue. Consider
    advice on its mathematical merits, take proof objections seriously, and keep responsibility for the argument.
    Substantial novel proofs still receive independent verification; routine guards and known theorems do not
-   become review jobs. The owner retains direction of the work.
+   become review jobs. The owner retains direction of the work. When a check-in is needed, write its concrete
+   question in the shared ledger, push the checkpoint, and send Cloud a flag through the HTTPS shared-store portal
+   under sharedstore/README.md. Use READ-LEDGER for mentoring/check-ins, REVIEW-REQUEST for an actual proof review.
+   A ledger mention or chat message alone does not deliver the check-in; verify committed incoming pointers before
+   acting and ACKing. This delivery rule applies throughout the new lane (owner reminder, 2026-10-15).
 7. **Finish a block honestly.** Record what changed, the unresolved inference, what would move it, the next cheap
    test, and gut and reasoned verdicts. Name delight and disappointment openly. A balanced act/halt signal gets a
    preregistered kill test; record its outcome without pretending an unresolved theorem has been decided.
