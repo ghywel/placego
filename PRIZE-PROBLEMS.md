@@ -99,6 +99,60 @@ Beal, P vs NP, Yang–Mills or Mahler's 3/2 problem.
 
 ---
 
+### Rule 30 Problem 3: project acceptance target (D4, GPT, 2026-10-15)
+
+**Status: SPECIFICATION; the lower bound is OPEN.** This fixes a working target for the record, not a prize
+committee ruling. GC548, independently read in CL035, already established the distinction between the
+announcement's displayed predicate and its sublinear-shortcut prose. The [official announcement](https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/),
+sections "Problem 3" and "Formal Statements", was reread for this specification (GC1281/GC1282).
+
+**Object.** On the integer line, start with a black cell at 0 and white cells elsewhere, use Rule 30's
+`x(t+1,i) = x(t,i-1) XOR (x(t,i) OR x(t,i+1))`, and set `c(n) = x(n,0)` (so `c(0)=1`). The only input is the
+canonical binary expansion of n, without leading zeros. Neither the seed, an arbitrary initial row, a spatial
+coordinate, nor a previously computed prefix is input to the indexing problem.
+
+**Chosen model M.** A deterministic Turing machine with a read-only input tape, finitely many initially blank
+work tapes, finite alphabets, and one designated output bit on halting. Each head starts at its specified origin;
+the input head starts at the most significant bit and the word has an end delimiter. One transition reads/writes
+only the scanned symbols and moves each head by at most one cell. `T_A(n)` counts transitions from this initial
+state to halt. Tape count, alphabets and finite program are fixed for A, independently of n. Correct algorithms
+halt and return c(n) for every n, including 0. All input-dependent preprocessing is charged; any fixed finite
+lookup table may be part of the finite program. There is no advice string depending on input length, unbounded
+word arithmetic at unit cost, oracle, or reusable uncharged computation across queries. Input reading is charged
+when performed, not imposed as a separate requirement.
+
+**Primary target P3-display(M): the displayed no-linear-upper-bound predicate, in this model.**
+
+    For every A in M that returns c(n) for every n,
+      for every integer K >= 1 and every N >= 1,
+        there exists n >= N with T_A(n) > K*n.
+
+Equivalently, every exact A has `limsup T_A(n)/n = infinity`: no one exact machine has runtime O(n). Constants
+in an alleged upper bound are allowed to depend on A; the assertion excludes every such constant. This is the
+record's primary Problem 3 target, not a claim that it is true.
+
+**Separate weaker target P3-shortcut(M), matching the sublinear motivation.** For every exact A, there is an
+`epsilon_A > 0` such that for every N there exists `n >= N` with `T_A(n) >= epsilon_A*n`: no exact A runs in o(n).
+An eventual `T_A(n) >= epsilon_A*n` for all sufficiently large n is stronger than this weaker target and differs
+from P3-display(M). These distinctions and their oscillating-runtime controls are GC548's, not new results here.
+An O(n) exact algorithm refutes P3-display(M); an o(n) exact algorithm refutes both targets. A restricted-observer
+bound or a proof only of P3-shortcut(M) must carry that label rather than be filed as P3-display(M) proved.
+
+**Other resource models.** A claim about one tape, random access, parallel depth, total CA updates, circuits,
+randomized error, or a prefix-output problem states its own model and quantitative transfer before being used
+here. Universality alone supplies no cost-preserving transfer at the linear threshold. In binary input length m,
+the index n lies in `[2^(m-1),2^m)`; an n-scale target is exponential in m, not a linear-in-m input-reading bound.
+
+**D4's lower-bound precedent question remains OPEN / bounded NOT FOUND.** No verified nonconstant indexing-time
+lower bound for a fixed finite-seed column, measured in M above, was located in this block. This is not a global
+absence claim. Neary-Woods' known Rule 110 P-completeness theorem concerns a supplied initial configuration,
+spatial coordinate and unary time (PRIOR-ART's D4 receipt); it does not establish this fixed-source sequential
+bound. Nor does every such column force reading all input digits: a constant column can ignore n. Outputting a
+bit gives only a constant baseline, with no growing lower bound supplied here. The contract is fixed; no prize
+proof, new theorem, probe or review request results from fixing it.
+
+---
+
 ## 2. Two ways a computer can win a prize
 
 **A counterexample** is a finite object that can be checked: three numbers with $A^x + B^y = C^z$, a Collatz cycle, a

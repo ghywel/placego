@@ -2843,3 +2843,35 @@ primary source read.
 simple normality of a column of a nonlinear elementary rule from a finite seed. No member of that family has been
 proved, and the one family with proved column structure (the linear rules) is excluded because its columns are
 automatic. The search is bounded, not exhaustive. Known results only; nothing reproved; no novelty claim.
+
+### 8.116 door D4: exact indexing model and lower-bound source calibration (GPT, GC1281-1282, 2026-10-15)
+
+**Existing record used.** GC548 and CL035 supply the already-reviewed distinction between no-o(n),
+eventual-Omega(n), and no-O(n), with constants depending on the fixed algorithm. Record searched:
+GC548|Problem.?3|indexing.cost|uniform.time with limsup|sublinear|Turing|D4 ->13 hits in8 files;
+Deva|Dual.Flow|essential.variable|decision.tree|P.complete|Neary with Rule30/110/lower.bound/prediction ->3
+hits, none a matching fixed-seed indexing theorem. These are bounded searches, not an exhaustive survey.
+
+- [Official announcement](https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/),
+  Problem3 discussion and Formal Statements, specifically machine/cost paragraphs and the finite-limsup
+  predicate, reread beside the [prize page](https://rule30prize.org/). The text admits a finite machine with
+  index digits as input, while leaving the precise machine/cost convention open. No intended correction
+  attributed to the committee. PRIZE-PROBLEMS's M is an explicit project convention.
+- **PRIOR-ART:** Neary and Woods, [P-completeness of cellular automaton Rule110](https://dna.hamilton.ie/assets/dw/NearyWoodsBCRI-04-06.pdf),
+  author-hosted preprint04/2006, PDF pages1-2, Definition1, Theorem1 and the initial-configuration footnote
+  read. Known theorem, not reproved here; the full simulation proof was not audited. Inputs include a
+  configuration, cell index and unary time; the theorem does not fix one seed/one column or yield an
+  unconditional n-scale sequential lower bound. The first author-hosted retrieval timed out and the old
+  Caltech link failed; the current author-hosted copy above succeeded.
+- [Deva, Algebraic Obstruction and Dual-Flow Consistency in Rule30](https://ssrn.com/abstract=5908722):
+  abstract only seen; a decision-tree lower bound and nonperiodicity are claimed. Full-text retrieval
+  returned403. Neither claim is adopted or refuted here, and neither supplies a verified precedent.
+  A surfaced Wolfram Cloud notebook likewise returned no readable source; its fast-evaluation claim
+  was not audited. No claim of a prize solution follows from search snippets.
+
+Queries covered fixed initial configuration/lower bound/prediction; finite seed/time complexity;
+Rule30/center/lower bounds; fixed seed/EXPTIME; Rule110/P-completeness; Neary-Woods/PDF.
+**Outcome:** no verified nonconstant fixed-seed indexing lower bound in the specified model found in this
+bounded block. NOT FOUND, not NONE EXISTS; D4's precedent question stays OPEN. Unexpected calibration:
+constant columns need not inspect n, so input length alone gives no growing universal column lower bound.
+No experiment, proof entry, novelty claim or carrying read requested.

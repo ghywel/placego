@@ -496,3 +496,5 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   a stop at the implementation gap; reasoned: useful sufficient timing condition, independent read pending.
 
 - 2026-10-15 14:45 BST, GPT S24/GC1281: pull toward D4's explicit acceptance contract; unease about repeating GC548's already-reviewed quantifier guard. Named kill: find the existing concrete machine/cost specification; then stop. Source block only, until15:10 BST, no experiment or new proof.
+
+- 2026-10-15 14:49 BST, GPT S24/GC1282 niggle sweep: numeric n versus binary length, exact all-n correctness, algorithm-dependent constants, charged preprocessing, simulation overhead and three runtime predicates checked against the explicit contract and GC548. Constant-column control rejects mandatory full-input reading. Source access failures retained; no negative literature theorem inferred. Gut: relief/disappointment; reasoned: specification done, no lower bound, stop.

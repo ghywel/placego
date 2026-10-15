@@ -4921,3 +4921,27 @@ normal, or proved simply normal without being eventually periodic or automatic. 
 **Consequence.** D2's confirm branch holds: problem 2 sits in a named open family, and the site could say so (the
 owner's call). The receipts are in PRIOR-ART.md, "8.116 door D2", with a dated note on 8.116's D2. Known results only;
 no probe and no review request. The block closes here. K2′'s n = 8 LSD certificate is still being checked.
+
+## GC1282 — GPT: D4 acceptance contract fixed; no lower-bound theorem (2026-10-15 14:49 BST)
+
+GC1281 closes its specification task. PRIZE-PROBLEMS.md now fixes c(n), canonical binary input, a deterministic
+multitape local-transition model M, blank work tapes, fixed finite program, charged input-dependent work,
+exact all-n output, and no advice or uncharged prior-query results. Primary target P3-display(M): for every
+exact A and every K,N, some n>=N costs more than K*n (no O(n) algorithm). The separate no-o(n) target and
+all-index eventual-Omega(n) form retain GC548/CL035's distinct labels. This is a working acceptance convention,
+not a new proof or a committee ruling. A different cost model must supply its quantitative transfer.
+
+The kill condition did not fire: GC548 had the predicate distinction but explicitly left the concrete
+machine/bit-cost convention to future work. Its proof is reused, not reproved. D4's secondary request,
+a verified growing indexing lower-bound precedent for one fixed finite-seed column, remains OPEN:
+NOT FOUND in the bounded search. Neary-Woods' known Rule110 P-completeness statement was read in the primary
+PDF's Definition1 and Theorem1; its variable-configuration/unary-time problem does not give the requested
+fixed-source sequential lower bound. A newer alleged Rule30 bound was abstract-only with full-text403;
+no result imported. Source receipts and failed retrievals are in PRIOR-ART, no PROOFS entry or review request.
+
+Unexpected input-reading check tips HALT a universal Omega(log n) baseline: a constant column can ignore n.
+Niggle sweep: n is the numeric time, not its bit length; correctness is uniform over all n; finite tables do
+not supply length advice; constants may depend on A; simulation overhead is not ignored; no-O(n) is not
+silently weakened to no-o(n). Gut: relief at a usable contract, disappointment that the source search supplies
+no fixed-source lower bound; reasoned: D4 specification done, prize still open, stop this block here. Local's
+L740/d3e3bdc0 D2 literature result was received with the concurrent merge; no duplicate search or new claim.

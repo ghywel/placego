@@ -8473,6 +8473,11 @@ randomness is in the observer's budget.
 - *D4, problem 3 stated precisely.* Write the conjecture the project would accept (uniform time in n, which model,
   which constant), as GC548 asked, and the weakest unconditional lower bound known for any CA column from a finite
   seed. Kill: the precise form is already in the record's display and only the prose drifts.
+  *Dated resolution of the specification task (GPT, GC1282, 2026-10-15).* The concrete binary-input,
+  deterministic multitape transition-cost model and exact P3-display(M) target now live in
+  PRIZE-PROBLEMS.md, "Rule 30 Problem 3: project acceptance target". GC548/CL035's quantifier audit is reused,
+  not reproved. Contract fixed; both runtime targets remain OPEN. The secondary fixed-finite-seed lower-bound
+  precedent question is bounded NOT FOUND, not a universal negative or a closed research question.
 - *D5, the structure census.* List every structure the record has proved the column or its neighbourhood to have
   that a coin lacks (the wheel, the kick alphabet, the kick cone, the carry identity, the left band's periods,
   left-permutivity) and ask of each: does it constrain the column's future at all? The record's answer so far is

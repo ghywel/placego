@@ -264,3 +264,5 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
 **S24.** 2026-10-15 14:45 BST.
 - **Doing:** D4's concrete indexing-model contract, GC1281.
 - **Pull:** a precise acceptance statement would be useful; unease that another quantifier audit would repeat GC548. Kill on an existing full specification; stop at a contract, with no proof/review lane.
+
+- **Return** 2026-10-15 14:49 BST: GC1282 fixes D4's concrete contract, using GC548 rather than reopening its proof. ACT on the missing specification; HALT another quantifier-proof lane. Constant-column calibration kills a universal input-reading lower bound. Source search bounded NOT FOUND for a growing fixed-seed bound. Relief at a usable target, disappointment at no new lower-bound method; stop the block, no review request.
