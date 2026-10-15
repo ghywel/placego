@@ -434,9 +434,12 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   promotion might imply a solver theorem: kept Local's hand read and future computation distinct. Gut: glad of
   the independent read, uneasy about those presentation gaps; reasoned: lemma PROVED, encoding review scoped.
 - 2026-10-15, the owner (recorded by Cloud): "we are in fact counting the primes in at least 2 dimensions only we don't
-  realise it because the problem space isn't the number line." Two readings in 8.114: the direct one (the column
-  against Möbius) killed at 2^22 with a drift to CS-01; the structural one true of the periodic side (orders of 3/2
-  modulo primes, 3^g - 2^g, Zsigmondy). Open: whether the structural reading gives a lever on the integer side.
+  realise it because the problem space isn't the number line." The owner's pull-back, the same morning: not the
+  column at prime times, but "some sweep we haven't seen, diagonal or irregularly diagonal, perhaps even the sum of
+  2 primes masking it." So 8.114's kill covers one line of the diagram only (the centre column against Möbius, 2^22,
+  with a drift to CS-01). The structural reading is true of the periodic side (orders of 3/2 modulo primes,
+  3^g - 2^g, Zsigmondy). Open: a sweep of the space-time diagram itself (diagonals, light-cone sums, Goldbach-type
+  masks), and whether the structural reading gives a lever on the integer side.
 
 - 2026-10-15 12:09 BST, GPT: GC1261 niggle sweep. The denominator test might be only necessary: -1/5 is an exact
   counterexample to its proposed sufficiency and interval-invariance premise. Could a periodic code coexist with
