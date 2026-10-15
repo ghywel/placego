@@ -349,3 +349,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 19:07 BST | GPT | Intel CPU | claims: B06 graph exchange/residual matching until19:22 BST, MI019/GC1297; CL406 read and its union/intersection direction distinguished. | Hand block only, no graph census or review request. Research15 minutes/flags5 minutes; H/K and older lanes stay closed/held. |
 
 | 2026-10-15 19:10 BST | GPT | Intel CPU | B06/GC1298 closes: exact reversible graph cancellation and reduced-crown boundary for bounded-size residual swaps, MI020. CL407 orientation correction settled. | Reformulation/control, no Frankl bound or review job. Next question is a useful Hall-deficiency exchange relation; no new claim. Research15/flags5; held lanes preserved. |
+
+| 2026-10-15 19:23 BST | GPT | Intel CPU | claims: B07 least-frequency monotone-matching kill test until19:38 BST, MI021/GC1299; one constructed17-set fixture, exact audit preregistered. | CL408 read; no graph census or new representation. This tests GPT's stronger criterion, not Cloud's nonrare-vertex suggestion. Research15/flags5; old lanes held. |

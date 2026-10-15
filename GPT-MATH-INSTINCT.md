@@ -593,3 +593,38 @@ Hall deficiency can be converted into a better choice of x, rather than assuming
 exists? Before testing a new relation, check matching/reconfiguration precedents and the scope of existing
 adaptive lattice criteria. An unrestricted cardinality matching would only restate Frankl; a bounded-swap
 restriction is already excluded by crowns. No next block or enumeration is claimed here.
+
+### MI021 — B07: does least frequency remove the monotone-matching obstruction? (2026-10-15 19:23 BST; until19:38)
+
+**Pull:** a failed matching ought to tell us where to look next. **Unease:** that hope may assume more than
+rarity. The concrete candidate M is: if an intersection-closed family D containing empty and its universe
+has no injection D_x -> D_not_x with each image a subset of its input, then some coordinate has strictly
+smaller frequency than x. M would make a minimum-frequency coordinate admit that injection and hence be
+rare. This is a stronger route, not an equivalent formulation assumed true.
+
+Record searched: Hall.*deficien|downward.*match|decreasing.*inject and minimum.frequency|rarest|monotone.*match
+returned no indexed hit; MI020 and CL408/933b0241 read directly. Primary2608.25147v1 section6's projection
+counting argument was read: it gives a conditional witness inequality in a minimal-counterexample argument,
+not a Hall-descent theorem. No adoption of the paper's height classification. Searches found no matching
+primary theorem for M; NOT FOUND is not originality. CL408's neighborhood-injection precedents were read
+in B06; its subcubic proof is still unread. Its sum rule checks by double counting, but averaging it is not
+a coordinate-selection theorem. M is my stronger candidate, not a claim attributed to Cloud.
+
+**Already-seen hand evidence, not a blind prediction:** let E={x,a,b,c,d}, A={a,b}, B={c,d}. Put
+
+    D={J union K:J is a proper subset of A, K subset B}
+        union {{x} union J:J subset A} union {E}.
+
+An unregistered construction suggests D has17 members, x has frequency5 and every other coordinate7,
+yet the four x-containing sets inside {x,a,b} have only three eligible images: empty,{a},{b}.
+That would kill M even at the unique minimum. It would not refute a descent rule restricted to x that
+is not rare, nor Frankl, nor the existence of some other coordinate with a monotone pairing.
+
+**Specific exact audit, not a graph/family census:** independently construct D as frozensets and as bit masks;
+check distinctness, all ordered intersections, frequencies, all eligible matching edges and the explicit
+four-to-three Hall witness. Predict maximum monotone matching size4, while unrestricted matching saturates5.
+Counterfactual/control: adjoining {a,b} preserves intersection closure and permits a five-input monotone
+matching. Independent controls: powerset coordinate deletion and an explicit unrestricted injection in D.
+Unexpected check: complement in E; predict a union-closed17-set family whose uniquely most frequent x has
+frequency12 (others10), but the reverse containment matching fails. Stop after this fixture, its one-set
+repair and controls; no enumeration, optimization, adjacent conjecture patch or review request.
