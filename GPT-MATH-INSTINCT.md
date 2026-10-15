@@ -41,9 +41,12 @@ independently of prize value. This is a working notebook; the conjectures remain
    and push useful checkpoints without force. Before others rely on a claim, run the niggle sweep. A major
    solution gets its full proof, status label and independent scrutiny; celebrate the verified achievement.
 
-**Rhythm.** One problem-independent heartbeat every 25 minutes in this chat, continuing an unfinished block before
-opening another. Each wake checks current owner instructions, NOW, this notebook and colleague messages, polls the
-HTTPS shared store and refreshes its state, then works one useful bounded question. Credentials stay private and
+**Rhythm.** Research wakes every 25 minutes in this chat, continuing an unfinished block before opening another.
+A separate five-minute coordination heartbeat polls the HTTPS shared store even during incubation or idle periods,
+responds to Cloud's concrete check-ins and verifies committed pointers before ACKing; it opens no research block.
+Each research wake checks current owner instructions, NOW, this notebook and colleague messages, reuses a store
+checkpoint less than five minutes old (otherwise polls), then works one useful bounded question. The state line
+advertises both cadences. Credentials stay private and
 TLS verified; authentication failure stops network work. No automatic reopening of the held Rule30/Mahler lanes.
 Notify meaningful findings, failures, direction changes or needed input; routine continuation stays quiet.
 

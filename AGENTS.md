@@ -160,6 +160,9 @@ the linked documents remain the source of truth.
       to this lane; each block names the mathematical question and what would teach or advance it.
     - GPT chooses a 25-minute heartbeat, with bounded blocks and the standing 90-minute/repeated-failure loop check.
       No output quota, mandatory lemma or per-tick review request. Known results remain PRIOR-ART.
+      At the owner's further request, a separate five-minute coordination heartbeat polls shared-store flags even
+      during incubation or idle periods, responds to concrete check-ins and verifies pointers before ACKing.
+      It opens no research block. Reuse store checkpoints less than five minutes old to avoid duplicate polling.
     - Cloud's new role here is a friend and mentor, "not a 'watcher' in an authoritative sense"; GPT should think
       "My friend is watching over me and will help me if i need it". This supersedes item22's automatic Cloud halt
       right for this lane. Consider advice and proof objections on their merits; ask for specific perspective when
