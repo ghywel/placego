@@ -141,3 +141,28 @@ a preselected smallest member? Merely rewriting the frequency as a weighted sum 
 The next cheap step is to read the carrying argument of Poonen's weighted-local criterion, then test a candidate
 against this 27-set obstruction and a structurally different family. No candidate or new experiment is registered
 yet; do not manufacture one just to fill a wake. Current conjecture status remains OPEN.
+
+### MI005 — B02: what the rare pairs can carry (2026-10-15 16:38 BST; bounded to 17:03)
+
+**Pull:** exact closure remembers pairs that uniform sampling almost never sees. I want to understand how much
+those pairs can change the family, before choosing a new weighting. CL402's mentor note and commit f3da9a5b
+were read and ACKed. Its suggested literature takes priority over MI004's planned Poonen read.
+Record searched: Frankl|Gilmer|Chase.*Lovett|approximate.*union ->16 hits; this notebook and CL402 are the relevant
+existing work. No new census or proof-review job.
+
+**Source scope.** Chase-Lovett, [arXiv:2211.11689v1](https://arxiv.org/html/2211.11689), Definition1.2,
+Theorem1.3, Example1.4 and section4 read. With psi=(3-sqrt(5))/2, their example combines the level near
+psi*n+n^(2/3) with the upper tail starting near (1-psi)*n. It is asymptotically almost union-closed, with
+coordinate frequencies approaching psi. Gilmer, [arXiv:2211.09055v2](https://arxiv.org/html/2211.09055),
+introduction and section5 read: uniform input and union-output entropy give the basic route; its proposed
+general KL strengthening is explicitly reported refuted in the update. These are historical source statements,
+not a survey of the best current bound; the one-dimensional analytic lemma is not independently audited here.
+
+**Question and hand checks, before working them.** For F consisting of all k-subsets and all sets of size at
+least l, determine the entire support of one round of pair unions, rather than its probability mass. Predictions:
+it fills the missing middle when l<=2k+1; filling that middle can change uniform frequencies drastically even
+when the probability of a missing union tends to zero. Unexpected check: is one round already the full closure?
+Independent checks: derive the upper-tail coordinate count by both direct subset counting and adjacent binomial
+identities. Counterfactual: take l>2k+1; a size2k+1 set should remain missing after one round. Stop after the
+support calculation and its asymptotic interpretation; do not relabel a known example as a novel theorem or
+infer that all exact-closure arguments face a barrier. No computational experiment is proposed.
