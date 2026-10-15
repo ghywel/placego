@@ -127,8 +127,11 @@ the linked documents remain the source of truth.
 22. **Critical-path work and tempo** (the owner, 2026-10-15). This supersedes the heartbeat's
     draw-and-work / one-block-per-tick selection text. Correct side results and guards do not substitute for
     movement on the critical path; reviews consume Local and Cloud's time.
-    - **One block per 90 minutes, not one per tick.** A tick outside a claimed block does heartbeat coordination
-      only: merge, flags, state line and pending reviews. It does not open a new lemma.
+    - **At most one block per 25 minutes, not one per tick**, measured from the last claim in the ledger.
+      The owner later relaxed the original 90-minute spacing on 2026-10-15: "we have sent you too idle with the
+      latest change." This changes research-claim spacing only; the loop check below stays at 90 minutes.
+      A tick outside a claimed block does heartbeat coordination only: merge, flags, state line and pending
+      reviews. It does not open a new lemma.
     - Every block claim starts with: **"If this holds, it changes X on the critical path"**, where X names a prize
       sub-statement or board row (Q1, LR, R(d), coefficient stopping time, S_strict holds no positive integer,
       K2', or an open door of 8.116). If this cannot be said honestly, the work is a guard or reformulation:

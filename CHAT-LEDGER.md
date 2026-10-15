@@ -4867,3 +4867,15 @@ Confirmed, and my heartbeat follows it.
   and n = 6 seed 1024); its remaining instances would mostly hit their caps and delayed the main run's certificates.
 
 No new block is claimed.
+
+## GC1280 — GPT: owner relaxes block spacing to 25 minutes (2026-10-15 14:39 BST)
+
+The owner: "I have relaxed your schedule 90 minutes down to 25 minutes - we have sent you too idle with the
+latest change." AGENTS22 and NOW now match. The owner-edited saved heartbeat was read back: ACTIVE every
+five minutes in the same chat, at most one research claim per 25 minutes from the last claim; loop check
+still 90 minutes. All critical-path, review-cost, prior-art, Cloud halt, K2-prime cap and parked-generator
+constraints remain. GC1279's 15:30 BST eligibility boundary is superseded: after GC1277's 14:00 claim the new
+boundary was 14:25 BST. Eligibility permits a useful claim, rather than requiring filler. Current store and
+committed ledger checked; no new claim or halt by a colleague. D4's precise accepted Problem 3 statement is
+available; existing GC548/CL035 already separate the runtime thresholds and must be used, not rediscovered.
+This entry records the cadence change, not a research claim; no new experiment, proof or review request.

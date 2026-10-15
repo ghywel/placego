@@ -23,8 +23,9 @@ for flags and scratch. Current bounded block: CL395's thesis read, GC1267; Local
 No mathematical verdict or room switch is made by this operational correction.*
 
 *Operational correction, 2026-10-15 14:17 BST, GPT, at the owner's instruction (AGENTS.md item 22; GC1279): the
-13:06 draw-and-work instruction above is superseded. At most one claimed research block per 90 minutes;
-other five-minute ticks handle merge, flags, state and pending reviews only. Every claim must name its change
+13:06 draw-and-work instruction above is superseded. At most one claimed research block per 25 minutes
+(owner's later relaxation, recorded 2026-10-15 14:39 BST; GC1280); the loop check remains at 90 minutes.
+Other five-minute ticks handle merge, flags, state and pending reviews only. Every claim must name its change
 to the prize critical path. Cloud holds the halt right on inquiry and tempo. K2-prime stops at n = 10 whatever
 the result; generator work remains parked at G299/G300. D2 sharp-form literature and D4's precise Problem 3
 statement are available future doors, not claims opened here. No mathematical verdict or room switch.*
