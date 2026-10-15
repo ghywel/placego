@@ -45,7 +45,8 @@ The encoding (a complete DFA with n states, start 0, transitions one-hot, an acc
 RUN-ON:     cpu, M5; kissat, cadical, ~/np-build/cake_lpr/cake_lpr; files under ~/np-scratch-int/rule30-k2prime (outside
             git).
 COMMAND:    python3 tests/probes/swarm/erdos_k2prime_barrier.py controls
-            python3 tests/probes/swarm/erdos_k2prime_barrier.py run NMIN NMAX [lsd|msb|both] [free|unit|1024|both|all] [sym]
+            python3 tests/probes/swarm/erdos_k2prime_barrier.py run NMIN NMAX [lsd|msb|both]
+                [free|unit|1024|both|all] [sym]
 
 Record searched (record_find, 2026-10-15 11:53 BST): 'x4-closed' -> 1 hit, '3-recognisable' -> 1, 'automaton barrier'
 -> 2 (all in 8.113 / SW01-OBJECTS.md); 'Abram' -> 2 (PRIOR-ART names only); 'K2' -> 252 substring hits, none on K2'.

@@ -13248,3 +13248,25 @@ proof of Erdős. The modular construction and terminal-component implication are
 Filing check: proof_dupes --near W298 passes. Nearest G297, G68 and G191 read: G297 is the unit normalization
 used here; G68 concerns Collatz endpoint congruences, and G191 involutive graph path periods. This extends G297
 with a backward-hitting closure calculation and its DFA consequence; it restates none of those full claims.
+
+**Independent carrying second read (Local, L733, 2026-10-15 12:25 BST). VERIFIED.** Each step was checked:
+- *Generation.* By lifting the exponent, v_3(4^n - 1) = 1 + v_3(n), so 4 has order 3^(k-1) mod 3^k, the size of the
+  subgroup 1 mod 3; j with 4^j r = 1 mod 3^k exists.
+- *The construction.* With m = 4^j, P the order of 3 mod m, and M = -3^(-k) mod m, the sum gives y = 1 + M 3^k = 0
+  mod m, since 3^(k+tP) = 3^k mod m; y = 1 mod 3^k, so n = y/m = 4^(-j) = r mod 3^k. The exponents 0 and k + tP are
+  distinct, so y is in C-star, and M can grow by multiples of m.
+- *The inclusion.* B-star is in H: a finite member of C-star has lowest nonzero digit 1, and dividing by 4^j keeps
+  the valuation and the lowest digit, since 4 = 1 mod 3.
+- *Closedness and density.* H is closed, because a lowest digit 2 is fixed by a finite prefix. Scaling by 3^a gives
+  density in every stratum. Zero is a limit point only.
+- *The finite-word consequence.* L meets no member of B-star (iterate 4L subset L). It has infinitely many members in
+  each ball r + 3^k Z_3, r = 1 mod 3: x 4^j for j in a residue class mod 3^(k-1), distinct as integers. A number of
+  the ball at least 3^k has the prefix's k digits as its lowest digits, so both accepted and rejected canonical words
+  extend any LSD prefix that begins with 1.
+- *The terminal-component step.* The end state of an accepted (rejected) continuation from a state in a terminal
+  component lies in that component and is (is not) in F.
+- *The countercontrol* (units 1 mod 3 with most significant digit 2; 64 = (2101)_3 in it, 256 = (100111)_3 not) is
+  correct.
+
+Status: PROVED (a proof with a second reader), as a necessary condition only, as stated. Not used to constrain the
+registered SAT runs.
