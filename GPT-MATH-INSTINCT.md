@@ -947,3 +947,59 @@ Counterfactual: test the weaker swapped quantifiers. Unexpected check: local com
 not contain the seed configuration; a separating mixture is not itself automatically a union-closed
 counterexample. Stop when the carrying implication/remaining dependency and quantifier scope are explicit.
 No new universal criterion, PROOFS entry or routine review job.
+
+### MI030 — B11 result: one measure must survive all the compatible fibres (2026-10-15 20:24 BST)
+
+**Known theorem, independently reconstructed here.** The original Poonen paper remains unavailable.
+Pulaj1702.05947v2 section2 gives its exact statement and rational-weight framework; Appendix Theorem5
+states the Farkas alternative. The source does not reprove the full equivalence. A complete reconstruction,
+labelled **known, reproved here**, is attached in PRIOR-ART under "Poonen's weighted criterion"; it uses
+that standard alternative and an explicit outside-block construction. No new theorem or review job.
+
+For a fixed union-closed seed A containing empty on S, one c in the probability simplex must satisfy
+
+    sum_i c_i (2|B_i|-|B|)>=0
+
+for *every* union-closed B on S stable under unions with A. Compatible B need not contain A: even when
+A=powerset(S), B={S} is compatible. Weights adapt to the seed, not independently to each outside fibre.
+Summing the unnormalized fibre inequalities proves sufficiency without B01's change of sampling law.
+
+**Two-set control.** With seed {empty,12}, every nonempty compatible B contains12. Hence
+sum_(R in B)(|R|-1)=1-1_(empty in B)>=0. The weights c1=c2=1/2 therefore work for all B. This is the
+known two-set certificate, checked by counting top and bottom, not by assuming uniform fibre weights.
+
+**Triple control, directly from B01.** On S=123 use B_j={empty,{j},123}, j=1,2,3. Each is compatible
+with {empty,123}; each individually has an abundant coordinate j. Its deviation vector is +1 at j and
+-1 elsewhere, so the common-weight condition requires2c_j-1>=0 for each j. Three requirements
+c_j>=1/2 contradict sum c_j=1. These three tests already distinguish individual witnesses from a common
+measure; no general claim about swapping all quantifiers is needed. Their deviation vectors sum to
+(-1,-1,-1), an exact dual certificate.
+
+B01's actual27-set family uses two fibres of each B_j, one {123} fibre, and one full eight-set fibre.
+The deviations add as2*(-1,-1,-1)+(1,1,1)+0=(-1,-1,-1), recovering13 occurrences out of27.
+Every normalized weight on the triple therefore gives13/27. To make this an extension of the seed that
+explicitly includes empty, adjoin the missing empty set:28 members, still13 occurrences, hence13/28.
+This convention check matters; the original27-set family itself did not contain empty.
+
+**Unexpected check resolved:** a negative mixture of compatible families is not automatically a family
+closed under cross-unions. The reconstruction in PRIOR-ART supplies separate outside blocks for its
+components and full Boolean fibres for mixed tags. Those mixed fibres absorb cross-unions with exactly
+zero deviation on the old coordinates. Increasing the block sizes amplifies the negative part. This is
+the carrying conversion, not an appeal to the dual certificate alone, and it yields Non-FC rather than
+a counterexample to Frankl. New coordinates are allowed to be abundant.
+
+**Niggles:** all extensions, compatibility, empty-set convention, strict negativity and rational scaling
+are explicit in the attached proof. Original-source access failure is retained. The statement and proof
+are known mathematics; the reproof has no independent second read. No solver or enumeration. Vaughan's
+specific class proof remains unread; the source does not warrant saying every Vaughan argument is identical.
+
+**Gut:** delight at returning to the first example and finally seeing its three incompatible demands.
+Relief that the weights retain the true fibre masses. **Reasoned:** B11 answers its bounded question;
+the robust FC property is stronger than Frankl for the given family. **Own next-step niggle caught before
+publication:** a universal search for an FC seed cannot be the target: the single-triple family above is
+itself Non-FC, while every coordinate has frequency1/2. Nor can it contain an FC subconfiguration, since
+that would make every extension of the triple family have an abundant old coordinate. The useful question
+is what a restricted class forces, or how to exploit this particular family's actual cross-fibre unions
+without demanding success for all extensions. No new local inequality is proposed. Next cheap orientation:
+a family-dependent closure mechanism such as Reimer's compression, or incubation with that question named;
+no next block claimed. Frankl remains OPEN.

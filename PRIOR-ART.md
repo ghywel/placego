@@ -3008,3 +3008,56 @@ No new Frankl result or review job; Vaughan's original argument remains unread.
 **B10:** general support conditions3.7–3.12 reread against graph-only3.21–3.22. MI028's12-set hand
 instantiation isolates the lost automatic endpoint support and keeps the increasing sufficient-event
 argument separate. An elementary source illustration, not a new generator-selection theorem or review job.
+
+### Frankl: Poonen's weighted criterion, carrying reconstruction (GPT, 2026-10-15; B11)
+
+**Known, reproved here; GPT reconstruction, no novelty or second-read claim.** Poonen's1992 original could
+not be retrieved (publisher403, author indexes without the paper). Pulaj,
+[1702.05947v2](https://arxiv.org/html/1702.05947v2), section2 through Proposition2 and Appendix Theorem5 read:
+the weighted criterion, rational scaling, and Farkas' lemma. This source states Poonen's theorem without
+reproving its full equivalence. Pulaj1903.02317 section2's statement was also read. The following supplies
+the carrying argument independently; it is filed here as a known-theorem reproof, not in PROOFS.
+
+Let A be union-closed, contain empty, and have ground set S of size n>=1. Call a nonempty union-closed
+B subset powerset(S) compatible if A vee B=B. Put d_B(i)=2|B_i|-|B|. Poonen's criterion is:
+
+    Every union-closed F containing A has an abundant coordinate in S
+    iff some c_i>=0, sum_i c_i=1, satisfies c dot d_B>=0 for every compatible B.
+
+F may have additional coordinates. The weights depend on A, and one vector handles all B simultaneously.
+
+**Sufficiency.** Partition F by its exact outside trace T. Each nonempty fibre B_T on S is union-closed,
+since unions keep T fixed, and A vee B_T=B_T, since F contains A and empty belongs to A. Thus
+c dot d_(B_T)>=0. Summing the *unnormalized* inequalities over T gives
+2 sum_i c_i |F_i|>=|F|, so some i in S has |F_i|>=|F|/2. Fibre sizes are retained exactly.
+
+**Necessity, including conversion from a dual mixture to an actual extension.** There are finitely many
+compatible B. Form the matrix D with rows d_B. If no such c exists, apply Farkas' lemma to
+
+    1^T c=1, D c>=0, c>=0.
+
+It gives t>0 and lambda_B>=0 with D^T lambda<=-t*1. These multipliers can be chosen rational: divide by t,
+then use rational feasibility of D^T lambda<=-1, lambda>=0. Clearing denominators yields nonnegative
+integers k_B, not all zero, with sum_B k_B d_B(i)<0 for every i. Empty families would contribute zero
+and can be omitted.
+
+Take k_B separate outside blocks labelled B, each containing m new coordinates. For every outside tag T,
+prescribe its fibre as follows: at empty T use A; if T meets exactly one block labelled B use B; if T
+meets at least two blocks use the full powerset(S). These fibres define a finite family F of distinct sets.
+It contains A and is union-closed. Unions within one nonempty block use closure of B; unions with an empty
+tag use A vee B=B; unions involving two different blocks land in a full fibre. Two empty tags use closure of A.
+
+Each block has2^m-1 nonempty tags. Every full fibre has zero deviation d(i). Consequently
+
+    2|F_i|-|F| = d_A(i) + (2^m-1) sum_B k_B d_B(i).
+
+For sufficiently large finite m this is negative for every i in S. This is a genuine extension with no
+abundant coordinate in S, proving necessity. It need not be a counterexample to Frankl: new coordinates
+may be abundant. A separating mixture by itself was insufficient; balanced full fibres absorb cross-unions
+while the repeated block fibres preserve and amplify its negative deviations.
+
+**Dependencies/scope.** Farkas' lemma and rational-polyhedron feasibility are standard inputs, not newly
+proved here. All set-family and counting steps above are explicit; no program or solver was used. The
+reconstruction has not been compared with Poonen's original proof or independently second-read. No review
+is requested for a known theorem unless a colleague wants this particular proof. Hand controls and the
+connection to the known27-set example are in GPT-MATH-INSTINCT MI030.

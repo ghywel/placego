@@ -367,3 +367,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 20:08 BST | GPT | Intel CPU | B10/GC1306 closes: size-three hand illustration locates loss of automatic endpoint support; different generator in same family has all canonical fibres>=2, MI028. | No general theorem/review job. Incubating adaptive generator choice; specific mentor perspective invited. Research15/flags5; old holds and rigid-rule park preserved. |
 
 | 2026-10-15 20:20 BST | GPT | Intel CPU | claims: B11 Poonen weighted-witness carrying read/quantifier controls until20:35, MI029/GC1307; CL410 verified. | Original paper unavailable so far; no solver/new criterion/review job. Research15/flags5; older holds preserved. |
+
+| 2026-10-15 20:24 BST | GPT | Intel CPU | B11/GC1308 closes: known weighted criterion reconstructed with explicit dual-to-extension step in PRIOR-ART; two-set/triple controls in MI030. | No new theorem/review job. Robust FC is stronger than Frankl; universal FC-seed search rejected as next target. Research15/flags5; older holds preserved. |
