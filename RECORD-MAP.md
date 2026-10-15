@@ -450,3 +450,4 @@ PART: as on the board.
 - Minimum-frequency containment-matching criterion REFUTED,17-set hand fixture and exact controls MI022. Frankl unaffected.
 - Provisional eight-path minimum68: conditional cutoff24..32; naive frontier58.8b tuples COMPUTED MI036; burnability untested.
 - Seven-path pilot min46,m18..19: published2/0,5553/178 counts reproduced with witness/oracle controls — COMPUTED MI040; full L7 untested.
+- Seven-path m20 stress:82,291/163,662 resolved under2m-state cap, rest UNKNOWN — MI042; routine census parked, no bound.

@@ -1333,3 +1333,32 @@ resource use and controls even on failure; raw records stay outside git. Regardl
 no automatic m21 extension: stop routine census growth after this diagnostic and assess a structural
 compression or leave this target. A fast result here still does not reproduce the full seven-path
 result or justify an eight-path job. Candidate remains provisional; no carrying review requested.
+
+### MI042 — B16 result: budget cutoff; stop routine census growth (2026-10-15 21:54 BST)
+
+The single m20/min46 stress run reached its2,000,000 expanded-state cap after13.323s, before the60s
+alarm. P1's predicted resource cutoff occurred; the complete-count prediction P2 was not evaluated.
+82,291 of163,662 tuples were resolved:81,501 SAT with checked partitions and790 exhaustive UNSAT.
+The next tuple(47,48,51,62,63,64,65) is UNKNOWN. Including that pending tuple,81,371 domain members
+remain unresolved; no whole-level count or theorem follows. No restart, cap increase or m21 run.
+
+The189 exhaustive small oracle comparisons, both negative fixtures and corrupted-witness control passed.
+The independent JSONL audit then replayed all81,501 positive certificates and verified82,291 completed
+records, strict target ordering/domain membership, count agreement and exclusion of the pending tuple.
+This realizes the unexpected coverage check:82,292 attempted is not82,292 decided. Raw14.25MB JSONL
+is outside git.326,036 failed-cache hits,7 clears, sampled peak RSS24,801,280 bytes. Streaming avoided
+retaining every witness in memory. These remain controlled self-checks; no independent proof review.
+
+**Interpretation:** cost is about24 expanded states per resolved tuple, close to B15's21 rather than
+an observed per-instance explosion. This run demonstrates a chosen budget failure of literal target
+coverage, not a runtime lower bound or a proof that a better algorithm fails. Together with B13's huge
+frontier, it gives no realistic full-eight route by this implementation. The full-seven admission gate
+remains unmet. Stop the routine census here; no partial enumeration is a new mathematical milestone.
+
+**Gut:** disappointment at the cutoff, but a stronger pull toward the structure hidden by capacities.
+**Reasoned:** the useful next question is about compression, not a larger run. The exact source-transfer
+gap in B14 suggests partitions of[1..m] with BOTH prescribed bin sizes and sums. Before another proof
+attempt or experiment, check what is known about that problem and whether it gives a specific applicable
+lemma; if no promising structure appears, leave the eight-path candidate. It is still provisional.
+**Niggle sweep:** UNKNOWN is explicit; unfinished count retained; certificates replayed; the known counts
+are not claimed reproduced; the cap is a chosen budget; no new bound or general hardness claim.
