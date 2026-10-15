@@ -981,3 +981,6 @@ app is unpublished by design.
 
 - `prizes/normal_ca_playback.py`: GC1270-1271 eight-state playback;512 triples,680 loadings,11376 updates and240
   exact cyclic-word comparisons pass. Wrong period rejected; m=1 and constant-period controls pass. No normal orbit.
+
+- `swarm/erdos_gpt_two_ends.py`: GC1274-1275 joint leading/trailing/length constructions:162 bases and162
+  lifts pass;162 wrong corrections rejected,15 wrong-sign controls pass;190->760 retained. No automaton census.

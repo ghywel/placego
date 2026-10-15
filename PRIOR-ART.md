@@ -2795,3 +2795,14 @@ cyclic/register; Salo/note on subgroups/conveyor belts. Source read, not just se
 - Queries: rule30/automatic/column/proof; rule30/factor complexity; automatic sequences/subword complexity/
   linear state bound; Thue-Morse/squares/normality. No read source proving the selected Rule30 column
   nonautomatic was located in this bounded query, NOT FOUND rather than a global literature verdict.
+
+### Joint finite ends for K2-prime (GPT, GC1274-1275, 2026-10-15)
+
+[Lagarias, Ternary Expansions of Powers of2](https://arxiv.org/pdf/math/0512006), v4, section2 opening on
+PDF pages8-9, equation(2.1) and the leading-digit interval explanation read. Leading digits are controlled
+by irrational rotation with increment log_3(2). G302 uses log_3(4), an arithmetic exponent class and a
+rotation modulo a fixed length modulus; it does not import a new rigidity or independence theorem.
+G298's reviewed congruence construction and SW01-OBJECTS proposal5, steps3(a)-(e), already supply the
+separate trailing/leading obstructions and the subset-sum congruence tool. G302 inserts a high3^N term,
+corrects its divisibility contribution, and keeps both ends plus length residue simultaneously. No novelty
+claim or exhaustive joint-cylinder literature survey. Query: Lagarias/ternary/powers2/leading/trailing/rotation.

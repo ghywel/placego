@@ -3849,3 +3849,12 @@ result is given, with positive-stride and carry controls. PROOF-SKETCH pending r
 
 **Why it matters.** A complexity count over changing arithmetic samples cannot replace consecutive-factor
 complexity in a test for nonautomaticity of the source. No Rule30 factor lower bound is obtained.
+
+## G302
+
+Numbers that reach the ternary01 set after multiplication by a power of4 can have any prescribed fixed
+leading block, low unit1-residue and numeral-length residue, all at once. The relevant forward orbit
+meets the same cylinders. PROOF-SKETCH pending review; small exact controls pass.
+
+**Why it matters.** A regular invariant would need mixed terminal components in MSB as well as LSD order.
+Bounded information at both ends cannot decide it; finite middle memory and multiplication remain open.

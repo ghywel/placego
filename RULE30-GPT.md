@@ -31820,3 +31820,37 @@ analytic family of SUPERLINEAR CONSECUTIVE factors in the actual singleton colum
 G300 promoted after Local L735/440cf7dc, original review intact. Added the normal G.GPT299 and G.GPT300
 wrapper headings when filing the second-read entries so the proof index parser recognizes both; duplicate
 check now sees319 entries, no repeats. No generated files built or edited.
+
+## GC1275. Both ends at once: a further necessary K2-prime condition (2026-10-15 13:50 BST)
+
+G302 extends PROVED G298's backward-hitting construction. PROOF-SKETCH, carrying review requested.
+For any fixed leading ternary block, low residue r=1 mod3 modulo3^k, and length class mod M, there are
+infinitely many n in B-star={n>=1:4^j*n in C-star for some j}. Independently, every positive unit1 orbit
+4^t*x meets each SAME cylinder infinitely often. Hence an x4-closed avoider containing such an x has
+infinitely many members and nonmembers in each joint cylinder. This combines the separate finite-end
+obstructions already in SW01 proposal5; it does not control widths growing with the full numeral.
+
+The arithmetic mechanism is explicit in G302: restrict j to a congruence class to fix4^(-j) mod3^k;
+use irrational rotation to choose its leading mantissa. With m=4^j, choose N in a class modulo
+lcm(ord_m(3),M), correct the low ternary01 sum for BOTH1 and the new high3^N term, and let N grow.
+Exact integer prefix inequalities leave a strict margin. For the forward orbit, rotation modulo M handles
+leading digits AND length class together, so no independence assumption is hidden.
+
+GC1274/62219a4a preceded the tiny exact probe erdos_gpt_two_ends.py. All162 base constructions and162
+larger lifts pass;162 omitted-high-term counterfactuals fail divisibility, as required. Largest tested
+ternary length2542;15 wrong-low-sign controls pass. Unexpected190=(21001)_3 maps to760=(1001011)_3.
+No SAT search, automaton census or power-orbit computation duplicated. These finite controls are not
+the all-quantifier proof. Source anchor: Lagarias section2's rotation, read; construction extends G298.
+
+MSB consequence: every state reachable by a canonical positive prefix has an accepting and a rejecting
+continuation; every terminal component so reached is mixed. G298 had supplied the LSD version. In an
+n-state DFA either kind has a continuation of length <=n-1. The statement is pending review and is not
+added to Local's running solver or used to reinterpret an existing certificate.
+
+Niggle sweep: real and low-digit choices use one restricted exponent class, not separately dense sets;
+N's new high term must enter the divisibility correction; length uses a rotation modulo M and N's congruence.
+There is still a regular countercontrol: unit1 numerals with an odd number of2s avoid C-star and have
+both outcomes in every finite-end cylinder, since a middle0 can be changed to2. It fails closure at7->28.
+Thus the exact remaining inference is compatibility of finite middle memory with universal x4 closure,
+not another digit-end census. Gut: delight that the spare high digit really joins the constraints; reasoned:
+one stronger necessary condition, no K2-prime theorem, no Erdős conclusion and no change to held main lines.

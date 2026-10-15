@@ -245,3 +245,8 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
 **S22.** 2026-10-15 13:45 BST.
 - **Doing:** returning to K2-prime's finite-state closure obligation after the D1 block.
 - **Pull:** the backward Cantor construction has spare high digits. Can they prescribe the leading block too, so that the remaining obstruction really has to live in the middle?
+
+- **Return** 2026-10-15 13:50 BST: GC1275/G302 supplies the joint construction and its exact margins;162
+  registered constructions plus162 lifts pass. ACT on S22, now a candidate extending G298. The odd-number-of2s
+  regular countercontrol tips HALT a full-barrier inference: it meets the new end conditions and still fails
+  closure at7->28. Delight in combining the same integers' two ends; carrying mathematical read pending.
