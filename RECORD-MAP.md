@@ -454,5 +454,5 @@ PART: as on the board.
 - Eight-path conditional exceptional reduction audited;64,787,844 targets counted independently — CL414/MI044; no burnability result, extra two-odd shrink unavailable.
 - E32 calibration cut off after13 positives; hand exchange certificate plus balanced control give15 distinct positives,171 unresolved — MI046; no L8 bound.
 - Even-target exchange band and all-eight-odd E32 construction,27 types — PROVED G304/MI048, Cloud CL417; no novelty claim.
-- All186 E32 targets have a hand construction candidate, including mixed parity via free slots and a three-swap relay — PROOF-SKETCH MI050; earlier levels open.
+- All186 E32 targets admit odd partitions via parity transfers, chains and a three-swap relay — PROVED G305/MI050, Cloud CL418; earlier levels and L8 open.
 - Pair-budget extension permits repeated recipients; E31 lone-odd93 slice has a hand construction — PROOF-SKETCH MI052; general E31 open, no new review queue.

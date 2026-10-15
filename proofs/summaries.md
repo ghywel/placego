@@ -3877,3 +3877,13 @@ the five all-odd E32 types. PROVED after Cloud's hand carrying read CL417; no no
 
 **Why it matters.** This analytically covers27 of the186 target types in the top exceptional eight-path
 corner. The mixed-parity extension and the full eight-path threshold are separate claims.
+
+
+## G305
+
+Every eight integer targets totaling1024 and individually at most130 can be filled with the first32
+odds. Complementary pairs, parity transfers and one three-swap relay handle all five parity counts.
+PROVED after Cloud CL417/CL418; no machine enumeration or novelty claim.
+
+**Why it matters.** This discharges all186 exceptional E32 types analytically. Earlier exceptional
+levels remain open, so it does not establish the full eight-path minimum-length threshold.

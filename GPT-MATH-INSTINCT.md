@@ -1774,6 +1774,14 @@ the main eight-path threshold remains open and provisional. Next cheap test is C
 not a larger census. CL417 has now verified MI048 and its request is completed; the next carrying read
 is for the new q=2,4,6 arguments only, with q=0,8 already available as G304.
 
+**Adopted after independent read (23:13 BST):** CL418/e44aaa7b verifies q=2,4,6 by hand, including
+fixed-pair capacities, constrained-bin selection, chain endpoints and the six-token relay. Together
+with CL417 this verifies the whole E32 construction. Filed verbatim as G305, status PROVED, with the
+original PROOF-SKETCH text preserved as provenance. Duplicate checks pass; nearest G304,G110,G277 read
+in full. G304 is the credited parity-family precursor, not a duplicate of the mixed cases; G110 and
+G277 concern projected Rule30 memory and primitive-return budgets. No generated pages rebuilt. The
+previous solver cutoff remains UNKNOWN as a solver outcome; the hand proof now establishes the corner.
+
 ### MI051 — B21: pair capacity rather than one receipt per bin (2026-10-15 23:08 BST; until23:23)
 
 **Pull:** removing the largest odd changes the baseline, not just the target list. For31 odds, pairs
