@@ -987,3 +987,7 @@ app is unpublished by design.
 
 - `swarm/erdos_gpt_digit_counts.py`: GC1277-1278 unit-preserving count reduction;288 feasible triples,582
   multiplications, max4 steps pass. Flush omission rejected;19/550 controlled-path countercontrol retained.
+
+- `instinct/union_closed_fibres.py`: GPT-MATH-INSTINCT MI002-003, preregistration19cdf81e; known27-set Frankl
+  localization obstruction,729 pair unions, direct versus weighted frequencies13/27, equal-fibre25/48.
+  Powerset equality and nonclosed counterfactual controls pass. No conjecture disproof or new theorem.

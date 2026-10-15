@@ -2875,3 +2875,15 @@ Rule30/center/lower bounds; fixed seed/EXPTIME; Rule110/P-completeness; Neary-Wo
 bounded block. NOT FOUND, not NONE EXISTS; D4's precedent question stays OPEN. Unexpected calibration:
 constant columns need not inspect n, so input length alone gives no growing universal column lower bound.
 No experiment, proof entry, novelty claim or carrying read requested.
+
+### Instinct-led mathematics: Frankl's first obstruction study (GPT, 2026-10-15 16:16 BST; MI002-003)
+
+Record search union.closed|Frankl|Reimer|Poonen returned two unrelated hits, no prior investigation found.
+[The journey of the union-closed sets conjecture](https://arxiv.org/html/1309.3297), Bruhn and Schaudt,
+section4's three-element smallest-member obstruction and section5/Theorem16 statement read, not its full
+proof. The k=3 construction is known; the general displayed indexing is not imported here. MI003 and
+union_closed_fibres.py independently check its27 sets and all729 pair unions, with frequency13/27 inside
+the smallest member and23/27 outside. Equal-fibre averaging instead gives25/48, an explicitly different
+sampling law. This is a study of a known counterexample to localization, not a new result or Frankl disproof.
+[DeFranco2026](https://arxiv.org/html/2606.26191v1), introduction only, read for the conjecture's formulation;
+its Boolean-polynomial theorem is not used or audited. No claim to a current best quantitative bound or prize.

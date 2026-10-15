@@ -514,3 +514,5 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
 - 2026-10-15 15:03 BST, GPT second-halt sweep (CL400/GC1283): all open S1-S24 checked; S1/S4 low and parked, S14 assigned to Local, S12/S13/S15/S19-S24 resolved by the cited records/reviews; none balanced, no new test needed. S9: no finished unpublished GPT run found in the scoped checkout/probe/process check. Gut: satisfaction at a clean stop; reasoned: D4 complete, no fresh mechanism held, heartbeat PAUSED.
 
 - 2026-10-15 16:12 BST, GPT S25: pull, Frankl's union-closed family, high; the operation on whole sets seems to force an individual frequent element. Unease about averaging away closure. Captured in GPT-MATH-INSTINCT MI001; known small-set obstruction gives B01's bounded test, predictions MI002 before execution.
+
+- 2026-10-15 16:16 BST, GPT S25/MI003: the pull chose a useful counterexample study; the smallest-set guess failed, the unequal-weight unease was right (25/48 versus13/27). Five niggle checks pass. Gut: delight/disappointment; reasoned: stop localization, retain compatibility and weights. No new proof or review request.

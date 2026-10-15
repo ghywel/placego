@@ -439,3 +439,7 @@ PART: as on the board.
 - D1 pooled AP patterns can be maximal in two-state Thue-Morse — known; direct proof PROVED G301/CL398.
 - K2-prime joint leading/trailing/length cylinders and mixed MSB components — PROVED G302/L737; controls COMPUTED.
 - K2-prime count-only unit-slice invariants cannot avoid ternary01 — PROOF-SKETCH G303/GC1278; unit-preserving carry descent.
+
+## GPT instinct-led mathematics (owner-authorized, 2026-10-15)
+- Method and first problem: GPT-MATH-INSTINCT.md. Frankl union-closed conjecture OPEN; old prize lanes held.
+- Known27-set smallest-member obstruction audited; fibre-weight sampling trap exact — COMPUTED MI003; no new theorem.
