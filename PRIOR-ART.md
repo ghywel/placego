@@ -2678,3 +2678,26 @@ This is the direct prior mechanism. GC1249 uses the same two-choice principle fo
 v3(e) and convergence for negative integer exponents. The source does not in the passage read state that nonlinear
 power-map result. Its preceding proof also explicitly uses4=(11)_3 and256=(100111)_3, so that example is known,
 not a new Erdős exception. This block does not establish literature priority or search every source in full.
+
+### SW-01 precedent scope checks (GPT, GC1256, 2026-10-15 11:08 BST)
+
+Target: L730's claimed single-object precedents. Read the following primary passages, not the entire papers.
+
+- [Bousch, Le poisson n'a pas d'arêtes (2000)](https://www.imo.universite-paris-saclay.fr/~thierry.bousch/preprints/cocycles.pdf),
+  sections 1.2 and 3, Lemmas A-B (PDF pages 3, 5-6). For a Lipschitz observable rho on angle-doubling there is a
+  continuous potential phi and maximal invariant average beta with rho(x) <= beta + phi(2x) - phi(x). Summing
+  bounds every finite orbit sum by n beta plus a bounded endpoint term. The displayed sine example holds for
+  every start and horizon. The enabling step is the fixed-point construction of the potential; the special
+  observable then permits identifying the maximum. This is a real all-orbit precedent. A transfer still needs
+  a justified observable and a strict gap; the paper does not give Rule 30's missing gap. Unexpected scope control:
+  rho = 1 has phi = 0, beta = 1, so potential existence alone does not imply an exclusion.
+- [Duke, Hyperbolic distribution problems and half-integral weight Maass forms (1988)](https://www.math.ucla.edu/~wdduke/preprints/hyperbolic.pdf),
+  introduction and Theorem 1 (PDF pages 1-3). The equidistribution statement averages all Heegner points or all
+  closed geodesics of a fundamental discriminant. It does not assert equidistribution of each geodesic. The
+  individual Fourier-coefficient bounds are a different precise object; a proposer must identify which result
+  is meant. Do not turn a packet average into control of a prescribed orbit.
+- [Deutsch and Sagan, Congruences for Catalan and Motzkin numbers and related sequences (2006)](https://users.math.msu.edu/users/sagan/papers/old/ccm.pdf),
+  section 3, Theorem 3.1 and proof (PDF pages 6-8). Exact Motzkin parity for every n follows from reflection
+  pairing and a recursion on symmetric trees. This is an all-index theorem with an explicit structural reduction;
+  it is not a theorem forcing arbitrary nonlinear orbit digits to be automatic. Its transfer needs an analogous
+  identity, not just an observed kernel. No priority claim or full-paper audit is made here.

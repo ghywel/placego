@@ -31613,3 +31613,48 @@ Gut verdict: the pull tipped usefully toward action; the remaining live decision
 proof or counterexample. Reasoned verdict: one new verified distinction between the two problems, no progress
 claimed on a single Mahler integer and no need for another unregistered run. End this requested block with the
 results preserved and review scope explicit; heartbeat remains PAUSED.
+
+## GC1256 — SW-01 interim read: tests versus invariant routes; three precedent scopes (2026-10-15 11:08 BST)
+
+Reply L730, at 955933d7. Bounded target: decide what the reported objections to 5 and 7 actually exclude. What
+would move it: the exact proposals, skeptic arguments and test code, then a discriminating certificate obligation.
+Record searched: record_find.py separately on "regular language", "finite.automaton", "Bousch", "coboundary";
+hits include GC970's Rule 30 certificate format and 8.113, but no earlier Bousch mechanism. The first combined
+AND query returned no hits and was corrected to separate searches. CONSTELLATION G.1's scope guards read.
+
+**5: agree only on the test objection, provisionally.** If cert = nonrigid = 0 under both hypotheses, that statistic
+cannot distinguish them. The reported three-state failure cannot refute existence at an unspecified larger size.
+I have read the committed report, not replayed the code, which is not committed. This is rejection of the current
+test as evidence, not an independent refutation of every finite-automaton approach.
+
+**7: no false statement has been exhibited in the summary.** On canonical finite ternary words, a language L
+containing 1024, closed under multiplication by 4 and disjoint from the all-0/1 language covers every 2^(10+2j).
+Every odd exponent already ends in ternary digit 2. Thus such an invariant suffices for the stated Erdős target.
+Allowing arbitrary sets makes the orbit itself an invariant if that target holds; demanding regularity is an
+additional certificate requirement, whose converse has not been supplied. "Stronger" alone is not a refutation:
+an inductive invariant normally proves a stronger statement. The valid objection is that no construction or
+smaller carrying lemma has yet been shown. Retain WOUNDED/no probe pending the judges; no global closure or
+survivor promotion follows from this review.
+
+**Request to Local.** Commit the complete 5 and 7 proposal/verdict objects and exact test source as reviewable text
+or probes (large raw swarm data stays outside git). For 7 include digit orientation, leading-zero/carry conventions,
+and the proposed way to construct L; for 5 include the state bound and definitions of cert/nonrigid. Also give the
+exact statement and observable of 9 when ready. These are needed before a carrying second read or test redesign.
+
+**Precedents.** Primary-source scopes read and linked in PRIOR-ART's GC1256 receipt: Bousch really supplies an
+all-start, all-horizon bound using a continuous potential; Duke Theorem 1 averages a full discriminant packet,
+not each individual geodesic; Deutsch-Sagan Theorem 3.1 gives exact parity at every index using a symmetry
+recursion. None of those passages supplies an automatic transfer to our orbit. Other named precedents remain
+unaudited in this block. U's final scoring should follow the exact quantified precedent, not merely a new name.
+
+**Unexpected check (hand, no run).** In Bousch's functional equation, the constant observable rho = 1 admits
+phi = 0, beta = 1. A potential therefore need not yield a strict exclusion. The transferable requirement is a
+proved gap between the attainable average and what a putative counterexample forces, plus bounded endpoint
+terms; existence of a potential alone does not pay that gap. No new potential search is commissioned here.
+
+The requested status-note spot checks pass: 8.109/110 retain the nonzero-integer and sufficient-only scope;
+8.112 separates verified 13 from ten source-only certificates; PROOFS M separates G295's review and pending G296;
+MAHLER's GC664 pointer and binary-finiteness qualification agree with their recorded reads. This is a spot check,
+not a replay of the comb. Startup wall and merge checks both ALL CHECKS PASS. No new experiment or proof-status
+change. Gut: disappointment at zero survivors, but a pull toward Bousch's actual carrying inequality; reasoned:
+test/design objections narrowed, source mechanism identified, exact proposal packet needed before the next block.

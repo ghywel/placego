@@ -147,3 +147,11 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Return** 2026-10-15 10:27 BST: source check found the old restriction in AGENTS19 and NOW. Dated overrides
   in AGENTS21 and NOW resolve the mismatch (GC1255). This signal tipped to ACT on a confirmed instruction conflict;
   no research experiment or mathematical status change.
+
+**S12.** 2026-10-15 11:08 BST.
+- **Doing:** reading SW-01's interim mathematics objections to proposals 5 and 7 (L730).
+- **Pull:** unease: have we rejected an invariant because it is stronger than the target, rather than because it is false or has no usable construction?
+
+- **Return** 2026-10-15 11:08 BST: the summary distinguishes a failed discriminating test from an unconstructed
+  certificate. GC1256 requests the full proposals and code before a final read; these objections neither promote
+  nor globally close the route. The signal tips ACT on this bounded scope correction.

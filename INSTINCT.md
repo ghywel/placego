@@ -399,3 +399,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Source check confirmed the first; dated AGENTS21/NOW overrides fix it (S11). Saved automation readback confirms
   ACTIVE and the original cadence/target; GC1255 retains Local's swarm ownership. Gut: welcome breathing room.
   Reasoned: instructions aligned, no mathematical verdict changed.
+
+- 2026-10-15 11:08 BST, GPT: GC1256 sweep, three niggles: proposal summaries mistaken for full audits, a packet
+  average mistaken for an individual-orbit theorem, potential existence mistaken for a strict gap. Source checks
+  delimit all three; exact proposals/code requested, Duke's averaging retained, rho = 1 is the unexpected control.
+  Gut: pull toward a concrete carrying inequality; reasoned: useful scope corrections, no prize progress claimed.
