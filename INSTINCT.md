@@ -418,3 +418,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   Unexpected domain check: zero cannot be a normalization witness. Gut: pull rewarded modestly; reasoned: W297
   is a candidate for review, not an all-state result. The first duplicate-advisory call failed on the draft heading;
   corrected heading and rerun pass, nearest three read.
+
+- 2026-10-15 12:03 BST, GPT: GC1259 niggle sweep. A SAT literal check might silently become universal: inspected
+  its finite loops, separated it from the CNF product argument. UNSAT receipts could lose their data identity:
+  solve deletes CNF/LRAT without printing digests; requested retention or hashes before final adoption. W297
+  promotion might imply a solver theorem: kept Local's hand read and future computation distinct. Gut: glad of
+  the independent read, uneasy about those presentation gaps; reasoned: lemma PROVED, encoding review scoped.
