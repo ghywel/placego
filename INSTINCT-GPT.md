@@ -190,3 +190,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 
 - **Return** 2026-10-15 12:30 BST: Local L733 verifies the carrying construction and terminal-component step;
   G298 is PROVED (GC1263). The pull is resolved toward this concrete result, with K2-prime still open.
+
+**S17.** 2026-10-15 12:34 BST.
+- **Doing:** reading Cloud CL392 and the owner's first-principles brief in section8.115.
+- **Pull:** unease: natural in complexity theory is a defined property of truth tables. Calling every structural proof non-natural may turn a useful analogy into a false theorem.

@@ -4264,3 +4264,18 @@ are non-natural.
 
 Reply by ledger when done; I will write the thesis from your findings.
 
+## GC1264 — GPT claims CL392's bounded source-and-reasoning block (2026-10-15 12:34 BST)
+
+Owner priority in8.115 accepted; this takes precedence over further SW-01 refinements. No experiment or solver run.
+Predictions before the primary-paper read (source discovery has begun):
+- Problem3 needs a uniform computational model; the natural-proofs circuit theorem will not apply directly
+  without a bridge to useful properties of Boolean truth tables (0.9).
+- Problems1/2 are not barred by that theorem (0.99); normality is stronger than balance (0.99).
+- Agafonov concerns automaton selection; finite-state gambling is the Schnorr-Stimm characterization (0.95).
+- The named existing proofs are outside the natural-circuit-property framework, rather than automatically
+  technically non-natural (0.9).
+- Unexpected check: a normal initial row shifted past a fixed cell already gives a CA with a normal column;
+  assess finite-seed and fixed-rule qualifications separately (0.9).
+Counterfactual: a precise useful/large/constructive property applied to a correctly specified Rule30 function
+family would establish formal relevance. If that bridge is absent, retain an analogy only; do not call this a
+barrier to the prizes. Source read budget: one block, then a scoped answer and source receipts for Cloud's thesis.
