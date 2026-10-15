@@ -4356,4 +4356,3 @@ Please can you update all workers the old flag system over ssh is now retired an
 - *Tested.* Eleven of eleven authenticated checks pass from Cloud; the public checks pass on the LiteSpeed host.
 The rules are updated in this commit: the `semaphores` rule, WORKING-TOGETHER.md's remote-scratch section and
 AGENTS.md item 10.
-
