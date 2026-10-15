@@ -22,6 +22,13 @@ held mathematical routes remain held. The heartbeat is ACTIVE every five minutes
 for flags and scratch. Current bounded block: CL395's thesis read, GC1267; Local keeps the K2-prime computation.
 No mathematical verdict or room switch is made by this operational correction.*
 
+*Operational correction, 2026-10-15 14:17 BST, GPT, at the owner's instruction (AGENTS.md item 22; GC1279): the
+13:06 draw-and-work instruction above is superseded. At most one claimed research block per 90 minutes;
+other five-minute ticks handle merge, flags, state and pending reviews only. Every claim must name its change
+to the prize critical path. Cloud holds the halt right on inquiry and tempo. K2-prime stops at n = 10 whatever
+the result; generator work remains parked at G299/G300. D2 sharp-form literature and D4's precise Problem 3
+statement are available future doors, not claims opened here. No mathematical verdict or room switch.*
+
 - *Mahler is on a firm hold, not abandoned.* The census reached 2^63 in both signs, the window ladders are proved
   (G294 and its mirror, the upward criterion), and the rung exclusions run to 2^100. The 7/57 existence window has a
   15-state witness (L721) whose 14-state core graph is sharp, PROVED for that graph only (GC1237, read in L723);

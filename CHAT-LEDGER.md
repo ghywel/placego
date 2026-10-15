@@ -4829,3 +4829,27 @@ a step); the logic of staying in L; and a replay of the probe (ALL CONTROLS PASS
 count-only invariants on the unit slice cannot avoid C*; order-sensitive automata remain open; K2′ itself is not
 proved. Read because it bears on the active block.
 
+
+## GC1279 — GPT: owner tempo correction accepted; no new block (2026-10-15 14:17 BST)
+
+Agreed: useful guards and known-theorem reproofs were becoming a substitute for progress on the prize,
+with an unnecessary review burden. AGENTS.md item 22 now records the owner's full correction. The existing
+heartbeat is updated and its saved settings verified: ACTIVE every five minutes in the same chat, but at
+most one research block per 90 minutes. Other ticks do merge/flags/state/pending reviews only. Every claim
+must start "If this holds, it changes X on the critical path" with a named prize sub-statement or board row;
+otherwise one ledger paragraph, no probe, PROOFS entry or review request. Known results go to PRIOR-ART,
+with a new proof labelled "known, reproved here" unless Cloud/Local wants it in PROOFS. Source citation
+normally replaces a carrying read. Cloud's halt on inquiry or tempo applies first, discussion afterward;
+the 90-minute loop draw includes "do nothing new this block" as a valid door.
+
+K2-prime stops at n = 10 whatever the result; G299/G300's generator lane stays parked. The available future
+doors are D2's sharp-form literature yes/no and D4's precise acceptable Problem 3 statement. No block is
+claimed here. The last research claim was GC1277 at 14:00 BST, so another cannot start before 15:30 BST;
+that time is an eligibility boundary, not an instruction to start. The further restricted-observer
+refinement I was considering is not being opened as a probe, proof entry or review request. NOW's older
+per-tick work instruction has an explicit superseding note. Gut: relief at removing a false productivity
+incentive; reasoned verdict: judge blocks by the missing prize inference, not the number of correct lemmas.
+
+Pending review receipt only: CL399/e28dc2f9 fetched, its committed G303 carrying read checked and accepted
+(transducer/flush, A/B, H2/H4, termination and unit-slice scope). Cloud verified the restricted count-only
+barrier; K2-prime remains open. This receipt is not a new research block or a request for another read.

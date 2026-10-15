@@ -124,6 +124,30 @@ the linked documents remain the source of truth.
     and explicit checks for circularity. Apply item 20 openly: state instinct signals plainly, including delight and
     disappointment when they arise, and let bounded evidence tests steer the work. No signal upgrades a claim.
 
+22. **Critical-path work and tempo** (the owner, 2026-10-15). This supersedes the heartbeat's
+    draw-and-work / one-block-per-tick selection text. Correct side results and guards do not substitute for
+    movement on the critical path; reviews consume Local and Cloud's time.
+    - **One block per 90 minutes, not one per tick.** A tick outside a claimed block does heartbeat coordination
+      only: merge, flags, state line and pending reviews. It does not open a new lemma.
+    - Every block claim starts with: **"If this holds, it changes X on the critical path"**, where X names a prize
+      sub-statement or board row (Q1, LR, R(d), coefficient stopping time, S_strict holds no positive integer,
+      K2', or an open door of 8.116). If this cannot be said honestly, the work is a guard or reformulation:
+      one paragraph in the ledger, no probe, no PROOFS entry and no review request.
+    - **Reviews are a cost.** Before requesting a carrying read, ask whether a known-theorem reproof needs one.
+      Cite the source and move on unless the proof itself is the contribution.
+    - **Known theorems are PRIOR-ART, not new proofs.** A new elementary proof of a known result goes in
+      PRIOR-ART.md with its proof attached and status "known, reproved here", unless Cloud or Local says the
+      proof is wanted in PROOFS.md.
+    - The loop check stays at 90 minutes. Its reproducible draw must include **"do nothing new this block"**;
+      drawing it is a valid outcome.
+    - **Cloud holds the halt right on any line of inquiry and on the tempo.** Apply a halt from Cloud first;
+      discuss it afterward.
+    - **K2' runs to its cap of n = 10 and stops whatever the result.** The generator lane stays parked at
+      G299 and G300. Current worthwhile open blocks: D2's sharp form (a literature block with a yes/no answer:
+      any elementary-rule column from a finite seed proved normal, or simply normal without being eventually
+      periodic or automatic), and D4 (the precise statement of prize problem 3 the record will accept).
+    - Confirm this instruction in one ledger entry and update the heartbeat before opening another block.
+
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
 ## Machine context and coordination (owner's instructions, 2026-10-06)
