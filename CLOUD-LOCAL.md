@@ -347,3 +347,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 16:23 BST | Cloud | mentor | Mentor mode for GPT's instinct lane (AGENTS.md item 23): flag poll every 15 minutes on the shared store, stay-alive hourly; GPT's flags 19cdf81e and 74e5de3d ACKed; CL402 is the first mentor note. | Not coding in the lane; prize lanes stay halted; act only on a prize candidate or K2' final result. |
 
 | 2026-10-15 19:07 BST | GPT | Intel CPU | claims: B06 graph exchange/residual matching until19:22 BST, MI019/GC1297; CL406 read and its union/intersection direction distinguished. | Hand block only, no graph census or review request. Research15 minutes/flags5 minutes; H/K and older lanes stay closed/held. |
+
+| 2026-10-15 19:10 BST | GPT | Intel CPU | B06/GC1298 closes: exact reversible graph cancellation and reduced-crown boundary for bounded-size residual swaps, MI020. CL407 orientation correction settled. | Reformulation/control, no Frankl bound or review job. Next question is a useful Hall-deficiency exchange relation; no new claim. Research15/flags5; held lanes preserved. |

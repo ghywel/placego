@@ -522,3 +522,74 @@ whether its completion rule survives a second boundary case. Controls: one edge 
 omit bipartiteness, where P may have internal edges. Unexpected check: retain isolated vertices and distinguish
 maximal from maximum independent sets. Stop on a precise obstruction or a justified next question; no claim
 that an equivalent residual inequality by itself advances Frankl, and no adjacent repair to H or K.
+
+### MI020 — B06 result: reversible cancellation and the unbounded exchange left over (2026-10-15 19:10 BST)
+
+**Status:** elementary hand derivation and known graph fixtures, no novelty or Frankl result claimed.
+Write M for the maximal independent sets of a finite bipartite graph with parts X,Y; fix x in X.
+For S in M containing x, put P_x(S)={y in N(x):N(y) intersect S={x}}. These are external private neighbors;
+x itself is not counted. If P_x(S) is nonempty, define
+
+    phi_x(S)=(S minus {x}) union P_x(S).
+
+This is independent: the added vertices all lie in Y and have no neighbor in S minus x. It dominates every
+vertex: x has a newly added neighbor; a vertex formerly dominated only by x is in P and has been added;
+every other vertex outside the new set retains an old neighbor. Thus it is maximal. Moreover
+phi_x(S) intersect N(x)=P_x(S), so its inverse on the image is
+
+    R_x(T)=(T minus N(x)) union {x}.
+
+For any T in M avoiding x, R_x(T) is independent, but need not be maximal. If it is maximal, its external
+private neighbors at x are exactly T intersect N(x), a nonempty set: vertices in that intersection had no
+neighbor in T intersect X, whereas any other neighbor of x has such a neighbor by maximality of T.
+Consequently phi is a bijection between the containing-x states with nonempty P and the avoiding-x
+states whose R is maximal. This proves the exact scope, not merely injectivity in one direction.
+
+Define A_x={S in M:x in S, P_x(S)=empty} and B_x={T in M:x not in T, R_x(T) is not maximal}. Cancelling
+the paired states gives
+
+    |M_x|-|M_not_x|=|A_x|-|B_x|;       x is rare iff |A_x|<=|B_x|.
+
+The right side is still an equivalent counting problem. No inequality between it has been proved.
+There is a useful explicit description of its second term: T belongs to B_x exactly when there is a
+u in X minus (T union {x}) with nonempty N(u) intersect T contained in N(x). These are precisely the
+vertices that lose their last dominating neighbor when N(x) is removed. Vertices in Y are either added
+to the dominating neighborhood of x or keep a neighbor in T intersect X, so there is no omitted Y obstruction.
+
+**Six-cycle, all states checked.** Use X={x1,x2,x3}, Y={y1,y2,y3}, with edges xi-yj when i!=j.
+The complete list M is X,Y and the three pairs Ci={xi,yi}. A mixed independent set is contained in
+one Ci; a one-sided maximal set must be the whole side, proving completeness. For x=x1, phi sends C1 to Y;
+X has no external private neighbor at x1. The residual inputs and outputs are A_x={X}, B_x={C2,C3}:
+R_x(Cj)={x1,xj}, which is not maximal. Sending X to C2 completes the injection. Thus the count is2 versus3,
+with one canonical cancellation and an adaptive residual choice. Both a maximum set X and a nonmaximum
+maximal set Ci are essential to the calculation; counting maximum sets alone would erase the issue.
+
+**Second boundary case: the whole crown family, with a reducedness check.** The same definition on n>=3
+indices gives exactly n+2 maximal independent sets: X,Y,C1,...,Cn. For x=xi, phi still pairs Ci with Y;
+A_x={X}, B_x={Cj:j!=i}. Any residual image of X avoiding xi is either a Cj with j!=i, removing n-1
+vertices of X, or Y, removing n; Y is already used by phi. Thus a residual completion exists, but cannot
+use a uniformly bounded number of vertex removals. This is not just an artifact of duplicate neighborhoods:
+the neighborhoods are all distinct, and a union of two distinct same-side neighborhoods is the entire
+opposite side, never another vertex's neighborhood. A nonempty opposite-side neighborhood lies in the
+wrong side to contribute to such a union. Hence these graphs are reduced in the sense of the primary
+paper's Lemma13. No general reconfiguration theorem is being inferred from this fixture. The initial
+crown reasoning was unregistered; no numerical experiment or blind prediction is claimed.
+
+**Other controls and niggles:** on one edge phi is a bijection. For a star, phi at the center pairs its two
+maximal sets; at a leaf with at least two leaves, A and B each have size1 instead. An isolated vertex lies
+in every maximal independent set and has P empty, B empty; adjoining an isolated vertex elsewhere leaves
+the exchange and counts for x unchanged. In a triangle S={x} has two adjacent private neighbors, so phi
+does not even give an independent set: bipartiteness was used, not decorative. Empty P, isolated vertices,
+maximal versus maximum, both parts, image characterization and count direction were checked explicitly.
+
+**Gut:** delight that part of the pairing really is reversible; unease about calling the residual identity
+a breakthrough. The crown family makes the remaining flexibility tangible. **Reasoned:** B06 closes with
+an exact description of what this exchange cancels and a boundary against bounded-size repairs. Frankl
+remains OPEN. No PROOFS entry or carrying-read request. Primary graph equivalence and local injections
+are filed in PRIOR-ART, not attributed to this notebook.
+
+**Unresolved step and next cheap question:** is there a useful relation between A_x and B_x for which a
+Hall deficiency can be converted into a better choice of x, rather than assuming that a rare x already
+exists? Before testing a new relation, check matching/reconfiguration precedents and the scope of existing
+adaptive lattice criteria. An unrestricted cardinality matching would only restate Frankl; a bounded-swap
+restriction is already excluded by crowns. No next block or enumeration is claimed here.

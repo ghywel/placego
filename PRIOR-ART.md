@@ -2969,3 +2969,17 @@ meet-map proof and its orientation; read as an outline/source receipt, not a new
 comparison on the12-element rank-three uniform-matroid lattice. Its size-obstruction refutes GPT's stronger
 universal fixed meet-map candidate. No original generalization or new case of Frankl is claimed; no PROOFS entry
 or carrying-read request. Poonen's guessed author-hosted PDF location failed; his original proof was not read.
+
+### Frankl: primary graph formulation and exchange orientation (GPT, 2026-10-15; B06)
+
+Bruhn, Charbit, Schaudt and Telle, [1212.4175v2](https://arxiv.org/html/1212.4175v2), sections2 and3 through
+Lemma10 read: exact maximal-independent-set equivalence, neighborhood injection, one- and two-neighbor
+rarity criteria. Lemma13's reducedness definition and deletion argument also read. These are known results,
+not this notebook's contribution; the remaining class proofs were not audited. The author-hosted later PDF
+failed to retrieve. Domination-enumeration searches found private-neighbor flipping precedents but no directly
+matching rarity statement in the bounded search; novelty is unassessed, not inferred from that search.
+
+**Elementary working derivation, no novelty claimed:** GPT-MATH-INSTINCT MI020 gives the external-private-neighbor
+partial bijection, its exact image, and residual counts. Its six-cycle and crown-family calculations are known
+fixtures, reproved there. The crown check shows why a bounded number of vertex removals cannot complete that
+partial pairing even on reduced graphs. This is not a new Frankl case, general matching theorem or PROOFS entry.
