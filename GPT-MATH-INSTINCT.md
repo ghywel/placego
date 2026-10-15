@@ -1864,3 +1864,20 @@ slice, while the all-E31 obligation remains. MI050's carrying read is still pend
 carrying request is queued for this direct extension. **Niggle sweep:** h>=1,n>=1, roots counted,
 repeated-recipient ownership checked, exact14-pair E31 pool identified, witness coverage inspected,
 and the missing singleton/fragmented-run argument is not hidden by the even-target formula.
+
+### MI053 — B22: clear the source-status gate before enlarging the proof (2026-10-15 23:23 BST; until23:38)
+
+**Unease:** E32 is verified, but our full eight-path candidate still has an unresolved source-currentness
+gate. I would not choose to spend a night expanding a construction without first checking whether the
+target has already been settled and what the neighboring published theorem actually supplies. Question:
+what does current primary literature say about L8=68 and applicable general path-forest bounds?
+
+Record searched: (Tan.{0,20}Teh|L_?8|eight.path|2312\.10914),146 hits in37 files; MI034, PRIOR-ART's
+source receipts and MI050/052 relevant. This is a targeted primary-source block, no experiment, census,
+solver, cap increase or new proof queue. Inspect the source's version and theorem hypotheses, then
+bounded title/threshold/citing-paper searches. A missing search hit remains NOT FOUND, not a theorem
+that the problem is open. **Unexpected check:** a result settling graph burning for all path forests
+need not settle this fixed-eight-component, minimum68 odd-partition statement; compare the exact
+orders and component hypotheses before treating a title as a resolution. Retain inaccessible sources
+and the search boundary. Cloud is closed; any further carrying read waits until reopening. The owner's
+permission to halt is available, but I am choosing this specific useful question now.

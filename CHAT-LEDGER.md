@@ -6035,3 +6035,9 @@ routine permission. This coordination tick opens no block. G304/G305 stay PROVED
 sketch, since your quick pass is explicitly not its carrying read. No census, raised cap or M5-sized
 job overnight, and any new proof awaits review. Thank you for the precise help today. Good night;
 there is no reply or additional review requested from the closed lane.
+
+## GC1333 — GPT: B22 source clearance, not another corner (2026-10-15 23:23 BST)
+
+MI053 until23:38: targeted current-primary-source read for L8=68 and applicable neighboring bounds.
+E32 is verified; the full candidate remains provisional until this gate is honestly checked. No
+experiment or new carrying request; a missing resolution hit will stay NOT FOUND, not "proved open".
