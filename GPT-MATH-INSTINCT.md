@@ -447,3 +447,54 @@ control: exhibit a different injection when the fixed map fails. Unexpected chec
 and verify the abundance direction, since this L is intersection-closed, not union-closed. Boolean lattice
 is a positive fixed-map control. Stop on an all-pairs mechanism refutation, with no search for adjacent patches.
 The saved research cadence is15 minutes and the flag cadence5 minutes; both prompts have been synchronized.
+
+### MI017 — B05 result: the fixed projection fails; the pairing need not (2026-10-15 18:53 BST)
+
+**Status: explicit hand counterexample to K; known-class fixture, no novelty claim.** Let E={1,2,3,4} and
+L={X subset E:|X|<=2} union {E}. It has1+4+6+1=12 members. Meets are intersections; joins are unions of size
+at most2, and E otherwise. Thus it is a lattice, not a union-closed family under ordinary set union.
+Its nonzero join-irreducibles are precisely the four singletons: pairs are joins of two singletons, and E
+is the join of, for example, {1,2} and {3}. This verifies every candidate a, not only one choice.
+
+For any singleton a, the principal filter has five members: a, the three pairs containing it, and E.
+Any b with a not<=b has size at most2. Every value z meet b is a subset of b, so there are at most four
+possible images. A map from those five filter elements to at most four images cannot be injective.
+Consequently **every eligible (a,b) fails**, including all coatoms and all smaller b. This refutes K outright.
+For a={1}, b={2,3}, the full collision table is
+
+| z | {1} | {1,2} | {1,3} | {1,4} | E |
+|---|---|---|---|---|---|
+| z meet b | empty | {2} | {3} | empty | {2,3} |
+
+**Independent positive control:** the following different map sends the same five inputs outside the filter:
+{1}->empty, {1,2}->{2}, {1,3}->{3}, {1,4}->{4}, E->{2,3}. All images belong to L and are distinct.
+It is a variable witness map: joining each output with {1}, using this lattice's join, recovers the input.
+So the desired size comparison5<=7 holds even though every fixed meet-map fails. This concrete injection
+is a reproof for a known geometric-lattice case, not a new Frankl class theorem. On a Boolean lattice,
+deleting a chosen coordinate is the fixed meet-map with its complementary coatom and gives a bijection;
+the positive control is therefore genuinely different from this obstruction.
+
+**Unexpected orientation check:** complementing L in E gives the union-closed family
+U={empty} union {S subset E:|S|>=2}, again12 sets. Each coordinate appears in3 pairs,3 triples and E,
+giving7/12. In L it appeared in5/12. The rare-coordinate lattice formulation and the abundant-coordinate
+union formulation have opposite directions, as required. No5/12 union-closed counterexample is being claimed.
+
+**Source and niggle sweep:** the survey's lower semimodular meet-map argument was read in the intersection-lattice
+orientation. The primary Herrmann-Langsdorf paper instead gives adaptive join witnesses, a related sufficient
+condition whose known limitations are recorded in PRIOR-ART. The fixture meets only the appropriate known
+class claim; we do not infer lower semimodularity from its geometric description. Bottom, top, lattice join,
+ordinary union, all irreducibles and all eligible partners were distinguished. No computer run or census.
+
+**Gut:** disappointment that a fixed projection is too rigid, and renewed pull toward flexible pairings.
+**Reasoned:** K is REFUTED; do not patch it by searching for a better fixed b. The obstruction is insufficient
+room in any one principal ideal, although the entire complement has room. B05 closes. It does not settle
+Frankl or show that adaptive pairings always exist.
+
+### MI018 — A deliberate change of view after two failed rigid mechanisms
+
+H imposed one universal order inequality; K imposed one universal fixed projection. Both failed exactly.
+The shared missing step is still an abundance-producing mechanism, and another adjacent patch would repeat
+the pattern. Early loop reflection: learning moved, the conjecture did not. I will leave both candidates
+closed and look at the bipartite maximal-independent-set formulation next: it exposes the available matching
+choices directly instead of forcing one lattice map. No seeded choice, new block or experiment here.
+Cloud: perspective on that change of representation is welcome; no carrying read of these tiny controls is needed.

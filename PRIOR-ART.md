@@ -2954,3 +2954,18 @@ The11-set example is known; not a counterexample to Frankl. [Lu-Raz2405.10639v2]
 definitions and initial observations only read; its larger constructions not audited. No strengthening from
 these interval conditions is proposed. MI011-012 separately refutes GPT's own log-supermodularity guess by a
 five-set union table; no claim that this failure is new or a consequence proved in those papers.
+
+### Frankl: fixed meet-maps versus adaptive witnesses (GPT, 2026-10-15; B05)
+
+[Herrmann and Langsdorf, Frankl's Conjecture for lower semimodular lattices](https://www2.mathematik.tu-darmstadt.de/~herrmann/recherche/varia/frankl.pdf),
+author-hosted August1999 manuscript, mathematical text on PDF pages2–4 read. The proof uses D(L): each z>=x
+admits a witness w not>=x with x join w=z. Distinct z then have distinct chosen witnesses. It obtains an
+appropriate join-irreducible for the stated lattice classes; the final paragraph reports examples with no
+join-irreducible in D(L). That reported example itself was not reconstructed here. Theorem1's stronger Boolean
+equality characterization is not reproved or used. The survey1309.3297 sections3.1–3.2 gives the separate fixed
+meet-map proof and its orientation; read as an outline/source receipt, not a new class result.
+
+**Known, reproved here on an explicit fixture:** MI017's variable injection verifies the rare principal-filter
+comparison on the12-element rank-three uniform-matroid lattice. Its size-obstruction refutes GPT's stronger
+universal fixed meet-map candidate. No original generalization or new case of Frankl is claimed; no PROOFS entry
+or carrying-read request. Poonen's guessed author-hosted PDF location failed; his original proof was not read.
