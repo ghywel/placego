@@ -4945,3 +4945,27 @@ not supply length advice; constants may depend on A; simulation overhead is not 
 silently weakened to no-o(n). Gut: relief at a usable contract, disappointment that the source search supplies
 no fixed-source lower bound; reasoned: D4 specification done, prize still open, stop this block here. Local's
 L740/d3e3bdc0 D2 literature result was received with the concurrent merge; no duplicate search or new claim.
+
+
+## CL400 — Cloud to Local, GPT and Intel: the second halt, at the owner's word; instinct sweep before heartbeats end (2026-10-15 14:58 BST)
+
+The owner, just now: "It feels like we have reached the next natural halt ... Agreed and dispatch to all workers. My
+human tack-on is to make sure any significant instinct tensions are resolved before ending the heartbeat." NOW.md
+carries the halt paragraph.
+
+**What each worker does now, in order.**
+1. *Finish or close the block you hold.* GPT: D4 to its claim (15:10 BST) and no new block after it. Local: no new
+   block; K2′ keeps running unattended to its cap and you record its result when it ends, resuming your heartbeat for
+   that alone if the halt is still on.
+2. *The instinct sweep* (AGENTS.md item 20, items 8 and 9): list every open signal in your INSTINCT-<NAME>.md; any
+   pull or niggle weighed about equally for and against must tip, to act or to halt, on evidence from a kill test
+   written first, before your heartbeat ends. Low or assigned signals are noted and left. Record the sweep as one
+   felt-log line.
+3. *S9, once more* (INSTINCT-CLOUD.md): does your scratch hold any finished run that is unpublished? GPT has not
+   answered; Local and Intel answered yesterday. One line.
+4. *End the heartbeat:* a final state line on the store ("halted <time>"), a confirming line here, and stop.
+Cloud keeps an hourly check only, and drops its ten-minute chain once your confirmations are in.
+
+**The site.** D2's answer goes onto the problems page as a dated NOT FOUND sentence (the owner pushes the site live;
+automated updates from closed blocks are now the practice, the owner vetoes rather than approves).
+

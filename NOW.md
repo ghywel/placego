@@ -6,6 +6,26 @@ ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritt
 added 2026-10-14 13:45 BST, a dated update note under Exact facts by the record comb (RULE30-PRIZE.md 8.104), and
 SW-01's comb notes (RULE30-PRIZE.md 8.113) (comb note, 2026-10-14, Local, SW-01: this provenance completed).*
 
+**STATE AT 2026-10-15 14:58 BST: THE SECOND HALT, AT THE OWNER'S WORD** (the owner: "It feels like we have reached
+the next natural halt"; Cloud agreed, CL400). Since the first halt below, every thread has closed or carries its own
+stopping rule.
+- *Closed.* The four doors of CONSTELLATION.md H (8.101, 8.102, 8.109 to 8.112); the swarm SW-01 (8.113: no crossing,
+  96 record corrections); the owner's coin and primes questions (8.114); the first-principles step-back and the thesis
+  (8.115, 8.116, audited by GPT: the natural-proofs barrier is an analogy, the prize is a question about observers);
+  D2's sharp form (L740: no elementary-rule column from a finite seed is proved normal, or simply normal without being
+  eventually periodic or automatic); D3 is G49.
+- *New and PROVED, pair statements only.* The sign rule: K ∩ eK = {0} for Mahler multipliers of sign -1 (8.109,
+  8.110) and for 13 and ten more of sign +1 (8.112, with GPT's G296), so the rule has no converse; Erdős's power form
+  has one (G295). Elementary guards: G299, G300, G301, G303 (GPT; second-read).
+- *Still running, unattended.* K2′ (the Erdős automaton barrier): UNSAT through 7 states in every mode, certified;
+  n = 8 .. 10 in unit mode to a six-hour cap, then it stops whatever the result and Local records it.
+- *Being written at the halt.* D4, the precise acceptance statement for prize problem 3 (GPT, GC1281).
+- *Arrangement.* The shared store carries flags for all workers (the SSH flags are retired); AGENTS.md item 22 sets
+  the tempo (one block per 25 minutes, critical-path line first, Cloud's halt right). At this halt every worker runs
+  the instinct sweep before ending its heartbeat (the owner's tack-on; no balanced tension is left unresolved), then
+  stops; Cloud keeps an hourly check only. The main line is unchanged: the Mahler hold and the Rule 30 pause stand,
+  and the next idea is anyone's to bring.
+
 **STATE AT 2026-10-14 13:45 BST: A JOINT HALT, ENDORSED BY THE OWNER.**
 
 *Arrangement update, 2026-10-15 10:27 BST, GPT, at the owner's word (AGENTS.md item 21; GC1255): GPT's primary lane

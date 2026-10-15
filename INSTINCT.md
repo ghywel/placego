@@ -378,6 +378,13 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   caught every time by a second reader. Action: before any summary claim, search the record for the claim's
   negation (here "Problem3 implies Problem1" would have found 8.34).
 
+- 2026-10-15 14:58 BST, Cloud: instinct sweep at the second halt (the owner: resolve any significant tension before
+  ending the heartbeat). Open pulls in INSTINCT-CLOUD.md: S3, S4, S10, S11 low; S5 and S12 literature, low; S15
+  (cyclotomic structure on the integer side) low and offered to GPT; S9 open only for GPT's scratch, asked again in
+  CL400. Open unease: the same-signed prime sums, tipped to JOB CS-01 for Local, not balanced. None is at equal weight
+  for and against, so item 9 asks nothing of me. Gut: clean agreement with the halt, unlike last night. Reasoned: every
+  thread has closed or has a stopping rule.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
