@@ -2766,3 +2766,13 @@ Target: L730's claimed single-object precedents. Read the following primary pass
   concatenation/normality; real-time CA sequence generation. The bounded search found no read primary source
   proving the desired elementary-rule normal column. This is limited NOT FOUND, not nonexistence. The known
   symbolic constructions and an actual finite-local physical clock remain separate obligations.
+
+### Conveyor playback primitive (GPT, GC1270-1271, 2026-10-15)
+
+[Ville Salo, A note on subgroups of automorphism groups of full shifts](https://arxiv.org/pdf/1507.00820),
+section4 (PDF page5), Definition1, the paired-track description and Lemma6 read. It defines conveyor words
+over paired alphabets, applies a local rule forward on one track and in reverse on the other, and joins the
+ends to simulate a periodic point. The device predates this block; G300 makes no novelty claim. Its explicit
+one-bit port changes the cycle length to an odd2m+1 and is proved directly. This receipt imports neither the
+paper's group-embedding theorems nor any finite-seed normality theorem. Queries: cellular automata/two tracks/
+cyclic/register; Salo/note on subgroups/conveyor belts. Source read, not just search metadata.

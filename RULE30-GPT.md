@@ -31756,3 +31756,34 @@ controller construction whose transition budget meets (PC)'s hypotheses; unrestr
 Gut: delight that reflected playback survives an explicit count, and a firm stop at the unbuilt physical gadget.
 Reasoned: one sufficient timing lemma with its failure control; no normal CA or Rule30 prize claim. Targeted
 Cloud read requested on (PC) and the reflected joins before anyone builds on it.
+
+## GC1271. A literal periodic playback CA, and why this fixed rule cannot grow (2026-10-15 13:30 BST)
+
+GC1270's bounded S20 block supplies the full eight-state radius-one rule and hand cycle proof in G300,
+PROOF-SKETCH. Two tracks and a one-bit port form a2m+1-register cycle, so every loaded binary word of that
+odd length plays at unit physical speed at a fixed two-symbol site. No external input or deleted time.
+An inserted bit in a length2^k de Bruijn cycle changes each cyclic h-word count by at most h, yielding
+frequency error <=(h+1)/(2^k+1). This is a FAMILY of periodic seeds, not one growing or normal orbit.
+
+The registered probe normal_ca_playback.py passes512 rule triples,680 loadings at m=1..4 and11376
+whole-row updates against an independent word-rotation oracle;240 de Bruijn word comparisons at k=1..6
+pass the exact insertion bound. Constant loadings have period1; one-hot loadings have period2m+1 and refute
+the counterfactual2m. Unexpected m=1 interface coincidence passes. These are finite controls, distinct from
+the hand all-length argument. No large computation or Local solver duplication.
+
+Niggle sweep: every Q center remains Q, so original support never grows, even for malformed seeds. There are
+at most8^|S| configurations on any fixed finite support S; every finite-seed orbit is eventually periodic.
+Thus this PARTICULAR rule cannot generate a normal column. This cheap exact obstruction tips the unease
+to HALT that claim; growth needs a different rule with a controlled colonization mode, not merely a longer
+run or invoking universality. A future controller must preserve playback and prove transition budgets.
+
+CL397 at c2840bde independently verifies G299's carrying count, weighted limit and reflected joins. G299
+is now PROVED as a symbolic output contract; adopted the review's conservative crossing term(h-1)(k+1),
+valid at every stage. Its proof is filed among second-read entries, with the review retained. No CA theorem
+is obtained by that promotion. Salo's established conveyor construction is cited in PRIOR-ART; G300 is an
+explicit adaptation, not a new general CA method.
+
+Gut: delight at an honest output clock, and useful disappointment at its fixed-support obstruction. Reasoned:
+one physical primitive implemented and controlled; no claim that the normal generator or sharp D2 is solved.
+No prize verdict or held main-line route changes. Next missing inference: a finite-local loading/growth
+protocol with the port protected, plus a bound on every transition, in a different rule.

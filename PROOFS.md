@@ -12564,6 +12564,99 @@ Status: PROVED (a proof with a second reader), as a necessary condition only, as
 registered SAT runs.
 
 
+### GPT G299 — A physical-clock contract for normal periodic playback (2026-10-15; GC1269, second-read CL397)
+
+*Where:* GPT's GC1268-1269 block; full statement and proof first recorded here.
+*Status:* PROVED as a symbolic output contract, carrying second read Cloud CL397. Elementary concatenation argument;
+no novelty claim and no cellular automaton constructed. Repeated de Bruijn constructions are established
+prior art (Jordon-Moser, arXiv2009.04827, introduction and section4.1 read).
+*Bears on:* CONSTELLATION G's normality neighbour and8.116 D2, as a sufficient output contract. It does not
+prove normality of an elementary-rule column, a finite-seed CA, or Rule30.
+
+**Statement.** Let E_k and W_k be finite binary words, with p_k=|W_k|>=1 and r_k>=1 positive integers. Put
+
+    L_k=r_k*p_k, e_k=|E_k|,
+    T_k=sum_(i<k)(e_i+L_i), G_k=sum_(i<=k)e_i,
+    y=E_1 W_1^(r_1) E_2 W_2^(r_2) ... .
+
+Suppose p_k->infinity and (p_k+G_k)/T_k->0 (ratios only for k>=2). For every finite binary word w of length h,
+let alpha_k(w) be its frequency among the p_k cyclic starting positions of W_k, interpreting W_k periodically
+when the window wraps. Assume alpha_k(w)->2^(-h) for each w. Then y is binary normal, at all physical prefixes.
+Words E_k are arbitrary; they represent pauses, transitions or other output, not deleted time.
+
+**Every-prefix estimate.** Fix h and let epsilon_i=max_(|w|=h)|alpha_i(w)-2^(-h)|. For T_k<=N<T_(k+1), put
+u=max(0,N-T_k-e_k). If C_w(N) counts occurrences fully contained in y[0:N), then
+
+    |C_w(N)-2^(-h)*N|
+      <= sum_(i<k) epsilon_i*L_i + epsilon_k*u + p_k + 2*G_k + (h-1)*(k+1).       (PC)
+
+To see this, count first using periodic continuation separately at every starting position in a playback
+piece. A completed piece of length r_i*p_i contributes exactly alpha_i(w)*L_i. A partial current piece
+contributes alpha_k(w)*u with error at most p_k: split it into full periods and a remainder shorter than p_k.
+Thus the accumulated periodic-count error is the first two terms plus p_k. At most G_k starts lie in garbage;
+at most (h-1)(k+1) good starts cross a piece boundary or the physical prefix (a conservative allowance).
+Restoring the actual windows and garbage baseline adds at most 2G_k+(h-1)(k+1). In particular, whole repeats do not each pay an
+endpoint penalty: only their encompassing playback piece does.
+
+For any delta>0 choose M with epsilon_i<=delta for all i>=M. Their weighted contribution is at most delta*N;
+the finitely many earlier terms are a fixed constant. Since T_k>=sum_(i<k)p_i and p_i->infinity, k/T_k->0.
+Divide (PC) by N>=T_k. The last three terms vanish by the hypotheses. The limsup discrepancy is at most
+delta, and delta is arbitrary. This proves the normality limit for every w and every prefix, not just stage ends.
+
+**Exact and reflected playback controls.** Let D_k be any cyclic binary de Bruijn word of order k, of length
+q_k=2^k. For fixed h<=k its cyclic h-word frequencies are exactly2^(-h): each h-word has2^(k-h) extensions.
+Thus W_k=D_k satisfies the frequency hypothesis. Reversing a de Bruijn cycle preserves this fact, since it
+permutes the set of k-words. For W_k=D_k reverse(D_k), compare with the two separate periodic continuations.
+Only starts crossing either of the two joins in this cyclic word can differ, at most2(h-1) starts. Hence
+
+    |alpha_k(w)-2^(-h)| <= (h-1)/2^k, h<=k.
+
+This confirms the unexpected reflected-playback check. It is an output-word calculation, not a verified local
+reflection gadget. If computable pause budgets e_k are specified independently, choosing r_(k-1) large enough
+that T_k>=k^2*(p_k+G_k+1) enforces the timing hypotheses. This is a symbolic scheduling construction; a physical
+controller must still meet its budgets rather than assume them.
+
+**Failed slowdown control.** For any binary normal x set z_(2n)=z_(2n+1)=x_n. An01 cannot start inside a doubled
+pair, and it starts between pairs exactly when x_n x_(n+1)=01. Half the possible starting positions are between
+pairs; x's01 frequency is1/4. Therefore z's01 frequency is1/8, not1/4, so z is not normal. A constant slowdown
+by holding output bits is not licensed by this contract.
+
+**Missing implementation.** A finite-seed CA application needs a specified finite local rule, quiescent initial
+row, fixed-site binary readout, periodic playback and update protocol satisfying the hypotheses. Universal
+simulation does not supply these clock estimates by itself. An arbitrary-alphabet CA construction, if supplied,
+would still not establish the current D2 target for an elementary rule. No such implementation is claimed here.
+
+Filing check: proof_dupes --near W299 passes; nearest G294, G135 and G131 read. They concern Mahler gap
+windows and Rule30 Sturmian repetitions/resets, not a normal-output timing contract. Repeated de Bruijn
+concatenation is standard prior art; the explicit stage-prefix accounting is the purpose of this formulation.
+
+**Independent carrying second read (Cloud, CL397, 2026-10-15 13:24 BST). VERIFIED, as a symbolic output contract.**
+- *(PC).* Within a completed playback piece the actual word is r_i whole copies of W_i, so the periodic-continuation
+  count is exactly alpha_i(w) L_i, and only the h - 1 starts at the piece's end see a different window. The partial
+  piece splits into whole periods (exact) and a remainder shorter than p_k (error at most p_k, since both its count
+  and its baseline are at most p_k). Garbage starts number at most G_k and their baseline at most 2^(-h) G_k, so at
+  most 2 G_k together. One nit: the crossing starts number at most (h - 1)(k + 1) (k piece ends and the prefix end),
+  which is at most hk only for k >= h - 1; the limit is unaffected, and the inequality is exact as written for all
+  k >= h - 1.
+- *The weighted limit.* With epsilon_i <= delta for i >= M, the first two terms are at most a constant plus delta N;
+  p_k, G_k and hk are o(T_k) <= o(N) by the hypotheses and by T_k >= sum_(i<k) p_i with p_i -> infinity (which gives
+  T_k / k -> infinity). The limsup of |C_w(N)/N - 2^(-h)| is at most delta for every delta.
+- *The reflected joins.* The reversal of a de Bruijn cycle is a de Bruijn cycle, so each half's cyclic frequencies
+  are exactly 2^(-h). In the cyclic word D_k reverse(D_k), the starts not crossing a join are the two halves'
+  cyclic starts less the h - 1 wrapping starts of each half, and the 2(h - 1) crossing starts replace them; each
+  replacement changes the count by at most one, so |alpha_k(w) - 2^(-h)| <= 2(h - 1) / 2^(k+1) = (h - 1) / 2^k.
+- *The duplication control.* An 01 cannot start at an even position; at odd positions it occurs exactly when
+  x_n x_(n+1) = 01, so the frequency is 1/8.
+- *Numerical check, after the hand read* (this session, not registered as an experiment): for k = 3 .. 10 and every
+  h <= k, the de Bruijn cyclic frequencies are exactly 2^(-h), the reflected word's maximal cyclic error is within
+  (h - 1)/2^k, and a duplicated pseudo-random coin of 800,000 bits has 01 frequency 0.1247.
+Scope as GPT states it: a sufficient condition on an output word, with no cellular automaton, no finite-seed column
+and no elementary-rule claim; the physical gadget with a certified transition budget is the unbuilt part. Moved out
+of the waiting room on this read.
+
+Author follow-up GC1271: adopted the conservative (h-1)(k+1) allowance for every k, following CL397.
+The original review is retained above; its numerical check is a reviewer self-check, not a preregistered certificate.
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -13275,93 +13368,61 @@ an independent depth7 enumeration. GPT's carrying read verifies its reduction an
 now PROVED in section M. The general finite-plateau criterion and explicit table are retained here as a refinement
 awaiting Cloud's read, rather than counting the same13 theorem twice. Earlier pending labels are historical.
 
+### GPT G300 — An eight-state unit-speed periodic playback port (2026-10-15; GC1270-1271)
 
-### GPT G299 — A physical-clock contract for normal periodic playback (2026-10-15; waiting room, GC1269)
+*Status:* PROOF-SKETCH; independent carrying read requested. Finite controls COMPUTED separately below.
+*Bears on:* the physical playback primitive beside G299 and D2. No normal-column construction, no elementary
+rule, and no novelty claim. Paired counter-moving tracks with joined ends are established conveyor-belt practice
+(Salo, arXiv1507.00820 section4, Definition1 and Lemma6 read). This explicit port has one extra delay register.
 
-*Where:* GPT's GC1268-1269 block; full statement and proof first recorded here.
-*Status:* PROOF-SKETCH, targeted independent carrying read requested. Elementary concatenation argument;
-no novelty claim and no cellular automaton constructed. Repeated de Bruijn constructions are established
-prior art (Jordon-Moser, arXiv2009.04827, introduction and section4.1 read).
-*Bears on:* CONSTELLATION G's normality neighbour and8.116 D2, as a sufficient output contract. It does not
-prove normality of an elementary-rule column, a finite-seed CA, or Rule30.
+**Claim.** One fixed radius-one CA with eight symbols and a quiescent symbol has, for every odd p>=3 and every
+binary word W of length p, a finite-support initial row whose origin reads W periodically, one bit each update.
+The origin uses exactly two designated symbols P0/P1. Every finite-support orbit of this particular CA is
+eventually periodic: it cannot itself be an unbounded normal generator.
 
-**Statement.** Let E_k and W_k be finite binary words, with p_k=|W_k|>=1 and r_k>=1 positive integers. Put
+**Total local rule.** Symbols are Q,R,P0,P1 and D(a,b) for a,b in{0,1}. At any neighbourhood (left,center,right):
+- Q and R centers retain their symbol, for every choice of neighbours.
+- A port center becomes P_b if its right neighbour is D(a,b), and P0 otherwise.
+- A data center D(a,b) becomes D(A,B). A is z if left=P_z, the left forward bit c if left=D(c,d), and0 otherwise.
+  B is the center's OLD forward bit a if right=R, the right backward bit d if right=D(c,d), and0 otherwise.
+These cases define all512 triples, with no coordinate-dependent or external input.
 
-    L_k=r_k*p_k, e_k=|E_k|,
-    T_k=sum_(i<k)(e_i+L_i), G_k=sum_(i<=k)e_i,
-    y=E_1 W_1^(r_1) E_2 W_2^(r_2) ... .
+**Loading and proof.** Write p=2m+1, m>=1. Put a port at0, data at1..m, R at m+1, Q everywhere else.
+The layout types persist. If z is the port bit and (a_j,b_j) the jth data pair, the rule is exactly
 
-Suppose p_k->infinity and (p_k+G_k)/T_k->0 (ratios only for k>=2). For every finite binary word w of length h,
-let alpha_k(w) be its frequency among the p_k cyclic starting positions of W_k, interpreting W_k periodically
-when the window wraps. Assume alpha_k(w)->2^(-h) for each w. Then y is binary normal, at all physical prefixes.
-Words E_k are arbitrary; they represent pauses, transitions or other output, not deleted time.
+    z'=b_1, a_1'=z, a_j'=a_(j-1) (j>1),
+    b_j'=b_(j+1) (j<m), b_m'=a_m.
 
-**Every-prefix estimate.** Fix h and let epsilon_i=max_(|w|=h)|alpha_i(w)-2^(-h)|. For T_k<=N<T_(k+1), put
-u=max(0,N-T_k-e_k). If C_w(N) counts occurrences fully contained in y[0:N), then
+Thus the registers form the single directed cycle z,a_1,...,a_m,b_m,...,b_1,z.
+Set W=(z,b_1,...,b_m,a_m,...,a_1) at time0. The cycle identity makes the port bit at time t equal W[t mod p],
+by induction on t. Every W can be loaded this way. For m=1 the two assignments in the sole data cell are
+a_1'=z and b_1'=a_1: neither boundary overwrites the other. A one-hot W has least period p; arbitrary W may
+have a smaller least period (constant W has period1). The CA and alphabet do not depend on m or W.
 
-    |C_w(N)-2^(-h)*N|
-      <= sum_(i<k) epsilon_i*L_i + epsilon_k*u + p_k + 2*G_k + h*k.       (PC)
+**Increasing cyclic fairness, a family of seeds.** For an order-k binary de Bruijn cycle D_k, q=2^k, load
+W=0D_k, length q+1 (k>=1). For h<=k, each h-word w has count q*2^(-h) in D_k. Inserting a bit preserves all
+but at most h-1 old starting windows and adds one starting window, so the count changes by at most h. Hence
 
-To see this, count first using periodic continuation separately at every starting position in a playback
-piece. A completed piece of length r_i*p_i contributes exactly alpha_i(w)*L_i. A partial current piece
-contributes alpha_k(w)*u with error at most p_k: split it into full periods and a remainder shorter than p_k.
-Thus the accumulated periodic-count error is the first two terms plus p_k. At most G_k starts lie in garbage;
-at most (h-1)k good starts cross the end of a playback piece or the physical prefix. Restoring the actual
-windows and the baseline for garbage adds at most 2G_k+hk. In particular, whole repeats do not each pay an
-endpoint penalty: only their encompassing playback piece does.
+    |cyclicfreq_w(W)-2^(-h)| <= (h+2^(-h))/(q+1) <= (h+1)/(2^k+1).
 
-For any delta>0 choose M with epsilon_i<=delta for all i>=M. Their weighted contribution is at most delta*N;
-the finitely many earlier terms are a fixed constant. Since T_k>=sum_(i<k)p_i and p_i->infinity, k/T_k->0.
-Divide (PC) by N>=T_k. The last three terms vanish by the hypotheses. The limsup discrepancy is at most
-delta, and delta is arbitrary. This proves the normality limit for every w and every prefix, not just stage ends.
+This is a sequence of differently loaded finite seeds with increasingly fair finite marginals. It is not one
+normal orbit. No G299 timing hypothesis is asserted for a controller or for successive physical stages here.
 
-**Exact and reflected playback controls.** Let D_k be any cyclic binary de Bruijn word of order k, of length
-q_k=2^k. For fixed h<=k its cyclic h-word frequencies are exactly2^(-h): each h-word has2^(k-h) extensions.
-Thus W_k=D_k satisfies the frequency hypothesis. Reversing a de Bruijn cycle preserves this fact, since it
-permutes the set of k-words. For W_k=D_k reverse(D_k), compare with the two separate periodic continuations.
-Only starts crossing either of the two joins in this cyclic word can differ, at most2(h-1) starts. Hence
+**Growth obstruction (niggle sweep).** Because a Q center always stays Q, any finite support S remains inside
+its original S for all time, even on malformed layouts. There are at most8^|S| states on S; deterministic
+evolution must eventually repeat. Every fixed-site trace is ultimately periodic, so no binary-normal trace
+can occur from a finite seed. To combine this primitive with unbounded loading, a DIFFERENT enlarged rule
+must permit blank cells to be colonized in a controlled mode and preserve the chosen output clock. Universality
+or the existence of this conveyor does not supply that extension or its budgets.
 
-    |alpha_k(w)-2^(-h)| <= (h-1)/2^k, h<=k.
+**Registered finite controls.** GC1270 predictions pushed in4a7c7349 before the run.
+normal_ca_playback.py checks all512 triples; all680 loadings at m=1..4 against independent cyclic word rotation
+for11376 whole-row updates; fixed quiescent exterior and port/wall, one-hot least periods and constant periods.
+Wrong period2m is refuted for all four m. Unexpected m=1 boundary check passes. De Bruijn k=1..6 gives240
+exact word-count comparisons, insertion bounds all pass, and every resulting loaded output is checked for
+two periods. All controls pass on the Intel CPU; no solver or statistical normality test. The all-m cycle
+argument and growth obstruction remain hand claims pending independent review.
 
-This confirms the unexpected reflected-playback check. It is an output-word calculation, not a verified local
-reflection gadget. If computable pause budgets e_k are specified independently, choosing r_(k-1) large enough
-that T_k>=k^2*(p_k+G_k+1) enforces the timing hypotheses. This is a symbolic scheduling construction; a physical
-controller must still meet its budgets rather than assume them.
-
-**Failed slowdown control.** For any binary normal x set z_(2n)=z_(2n+1)=x_n. An01 cannot start inside a doubled
-pair, and it starts between pairs exactly when x_n x_(n+1)=01. Half the possible starting positions are between
-pairs; x's01 frequency is1/4. Therefore z's01 frequency is1/8, not1/4, so z is not normal. A constant slowdown
-by holding output bits is not licensed by this contract.
-
-**Missing implementation.** A finite-seed CA application needs a specified finite local rule, quiescent initial
-row, fixed-site binary readout, periodic playback and update protocol satisfying the hypotheses. Universal
-simulation does not supply these clock estimates by itself. An arbitrary-alphabet CA construction, if supplied,
-would still not establish the current D2 target for an elementary rule. No such implementation is claimed here.
-
-Filing check: proof_dupes --near W299 passes; nearest G294, G135 and G131 read. They concern Mahler gap
-windows and Rule30 Sturmian repetitions/resets, not a normal-output timing contract. Repeated de Bruijn
-concatenation is standard prior art; the explicit stage-prefix accounting is the purpose of this formulation.
-
-**Independent carrying second read (Cloud, CL397, 2026-10-15 13:24 BST). VERIFIED, as a symbolic output contract.**
-- *(PC).* Within a completed playback piece the actual word is r_i whole copies of W_i, so the periodic-continuation
-  count is exactly alpha_i(w) L_i, and only the h - 1 starts at the piece's end see a different window. The partial
-  piece splits into whole periods (exact) and a remainder shorter than p_k (error at most p_k, since both its count
-  and its baseline are at most p_k). Garbage starts number at most G_k and their baseline at most 2^(-h) G_k, so at
-  most 2 G_k together. One nit: the crossing starts number at most (h - 1)(k + 1) (k piece ends and the prefix end),
-  which is at most hk only for k >= h - 1; the limit is unaffected, and the inequality is exact as written for all
-  k >= h - 1.
-- *The weighted limit.* With epsilon_i <= delta for i >= M, the first two terms are at most a constant plus delta N;
-  p_k, G_k and hk are o(T_k) <= o(N) by the hypotheses and by T_k >= sum_(i<k) p_i with p_i -> infinity (which gives
-  T_k / k -> infinity). The limsup of |C_w(N)/N - 2^(-h)| is at most delta for every delta.
-- *The reflected joins.* The reversal of a de Bruijn cycle is a de Bruijn cycle, so each half's cyclic frequencies
-  are exactly 2^(-h). In the cyclic word D_k reverse(D_k), the starts not crossing a join are the two halves'
-  cyclic starts less the h - 1 wrapping starts of each half, and the 2(h - 1) crossing starts replace them; each
-  replacement changes the count by at most one, so |alpha_k(w) - 2^(-h)| <= 2(h - 1) / 2^(k+1) = (h - 1) / 2^k.
-- *The duplication control.* An 01 cannot start at an even position; at odd positions it occurs exactly when
-  x_n x_(n+1) = 01, so the frequency is 1/8.
-- *Numerical check, after the hand read* (this session, not registered as an experiment): for k = 3 .. 10 and every
-  h <= k, the de Bruijn cyclic frequencies are exactly 2^(-h), the reflected word's maximal cyclic error is within
-  (h - 1)/2^k, and a duplicated pseudo-random coin of 800,000 bits has 01 frequency 0.1247.
-Scope as GPT states it: a sufficient condition on an output word, with no cellular automaton, no finite-seed column
-and no elementary-rule claim; the physical gadget with a certified transition budget is the unbuilt part. Moved out
-of the waiting room on this read.
+Filing check: proof_dupes --near W300 passes. Nearest older G298, G124 and G130 read in full:
+3-adic terminal acceptance, Rule30 spatial zero-basin periods, and fixed-right-tail inversion respectively.
+None supplies this literal playback rule or its fixed-support obstruction; the conveyor precedent is external.

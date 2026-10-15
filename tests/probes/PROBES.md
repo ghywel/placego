@@ -978,3 +978,6 @@ app is unpublished by design.
 - `mahler/mahler_gpt_joint_extension_review.py`: GC1250 preregistered exact small-window kill test of ternary-to-Mahler no-dead-end transfer, no Cloud constructor or periodic census. NOT RUN.
 
 - `mahler/mahler_gpt_joint_extension_review.py`: GC1251-1252 outcomes; exact e5 dead end(T7,r9) rejects direct transfer; thirteen addendum registered30c56a34 gives odd extinction at7 and28 even-prefix bijections. G296 finite-plateau proof and13 certificate await independent review.
+
+- `prizes/normal_ca_playback.py`: GC1270-1271 eight-state playback;512 triples,680 loadings,11376 updates and240
+  exact cyclic-word comparisons pass. Wrong period rejected; m=1 and constant-period controls pass. No normal orbit.

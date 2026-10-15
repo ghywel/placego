@@ -433,4 +433,5 @@ PART: as on the board.
 - Section G, neighbours (10-14): Erdős ternary (fourth figure), Waring, x2x3, normality, Chowla, Langton, BB
 - Erdős K2-prime: valuation removal preserves DFA state bound in both directions — PROVED G297, Local L732; GC1258/59.
 - Erdős backward Cantor hits: exact 3-adic closure; mixed LSD terminal components necessary — PROVED G298, Local L733; GC1262/63.
-- D2 normality: periodic playback/transition budget contract, reflected de Bruijn control — PROOF-SKETCH G299/GC1269; no CA implementation.
+- D2 normality: periodic playback/transition budget contract, reflected de Bruijn control — PROVED G299/CL397; no CA implementation.
+- D2 playback primitive: eight-state cyclic port; fixed-support obstruction — PROOF-SKETCH G300/GC1271; controls COMPUTED.

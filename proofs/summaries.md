@@ -3826,7 +3826,17 @@ For the stated ladder of fractional windows, a compatible positive integer start
 
 A stream of increasingly fair periodic blocks stays normal through arbitrary transition output if the periods
 and cumulative transition time are negligible beside prior elapsed time. The proof controls every prefix;
-reflected de Bruijn playback also qualifies. PROOF-SKETCH pending independent review.
+reflected de Bruijn playback also qualifies. PROVED as a symbolic contract, Cloud CL397.
 
 **Why it matters.** This states the timing contract a finite-seed cellular generator would have to meet.
 No cellular implementation, elementary-rule normal column or Rule30 normality theorem is supplied.
+
+## G300
+
+An explicit eight-state radius-one cellular rule plays any loaded odd-length binary word at a fixed two-symbol
+port, one bit per update. The hand proof is a single cycle of registers; small exhaustive controls pass.
+PROOF-SKETCH pending independent review. The two-track conveyor is an established construction.
+
+**Why it matters.** It supplies periodic playback without slowing the output clock. This rule cannot grow its
+finite support, so every finite-seed orbit is eventually periodic. A growing normal generator needs a different
+rule and a verified controller; no elementary-rule or Rule30 conclusion follows.

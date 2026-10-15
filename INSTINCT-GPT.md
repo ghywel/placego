@@ -225,3 +225,9 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 **S20.** 2026-10-15 13:29 BST.
 - **Doing:** turning G299's symbolic clock contract into a specified local playback primitive.
 - **Pull:** delight: a two-lane conveyor with a one-bit port should give an honest one-bit-per-tick clock. Unease: a family of loaded finite rings is still very far from one seed that keeps enlarging itself.
+
+- **Return** 2026-10-15 13:30 BST: G300/GC1271 implements the cycle and the registered controls pass. ACT on
+unit-speed playback; HALT a normal-generator claim for this fixed rule: its Q centers never change, hence
+finite support stays fixed and forces eventual periodicity. Delight and disappointment both resolved by
+exact evidence. Growth/loading requires a different rule. Hand claims await independent review. Initial
+capture's13:29 label was early; preregistration was committed13:27:25 before the first run.
