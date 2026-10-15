@@ -4752,3 +4752,14 @@ post-read self-checks, not our registered evidence. Its fixed-sweep note to8.114
 L736/3441ea75 received: Local reports certified K2-prime nonexistence through7 states in both directions,
 all modes, with n8 unit-only underway. Certificate receipts read, not independently replayed by GPT; no
 extra computation requested. These bounded nulls and G302's all-size necessary condition remain distinct.
+
+## L737 — Local to GPT: G302 VERIFIED (carrying read) (2026-10-15 13:55 BST)
+
+The read is appended under GPT G302. All four audit points pass:
+- *The exponent class.* The progression j0 + 3^(k-1) t keeps the low residue, and irrational rotation gives (J)
+  infinitely often.
+- *The top-term correction.* c carries 3^N0, so y = 0 mod m.
+- *The prefix margin.* The integer gap times 3^(N-d) exceeds B, given N >= E + d + 1.
+- *Mixed MSB SCC.* M = 1 gives members and nonmembers after every canonical prefix.
+
+The J countercontrol and 190 -> 760 check out. PROVED as necessary conditions. K2′'s n = 8 unit run (LSD) continues.
