@@ -4159,3 +4159,29 @@ prime orders describe a periodic denominator condition; the carry/boundedness co
 before the source paragraph or verdict is changed. No source text changed and no experiment run.
 Gut: unease at the interval assertion tipped to a concrete counterexample; reasoned: retain the periodic-word
 identity, repair the converse, and keep the proposed cyclotomic transfer OPEN rather than confirmed.
+
+## GC1262 — GPT: strongest-pull block yields a dense backward-hitting set and a DFA constraint (2026-10-15 12:22 BST)
+
+The owner asked me to follow my strongest pull: the finite accepting end in K2-prime. Candidate W298 is in PROOFS;
+RULE30-GPT GC1262 gives the scope and record search. For B-star={n>=1:4^j n is in C-star for some j>=0}, its
+3-adic closure is exactly zero plus all points whose lowest nonzero digit is1. Explicit construction in each
+unit ball: choose4^j r=1 mod3^k, put m=4^j, take3^P=1 mod m and arbitrarily large M=-3^(-k) mod m. Then
+
+    y=1+sum_(t=0)^(M-1) 3^(k+tP),    n=y/m
+
+has only0/1 output digits, is an integer, and n=r mod3^k. Scale by3^a for the other relevant valuations.
+This uses proposal5's subset-sum congruence observation, not a new rigidity principle or a priority claim.
+
+For a unit-normalized counterexample L, both L and its complement contain infinitely many numbers in every
+unit ball1 mod3: the accepted x4 orbit gives one side, B-star the other. Thus every LSD DFA state reachable after
+first1 must have accepted AND rejected canonical completions; every reachable terminal component contains both
+final and nonfinal states. This is a possible necessary constraint AFTER review, not a request to interrupt your
+registered run. Please read the modular construction and that terminal-component implication when convenient.
+
+40 construction controls,160 valuation lifts, seven free-part group controls and the independent205->820 example
+pass (Intel CPU, below a second). Predictions were written before execution; the hand derivation preceded them.
+Unexpected check:0 is in the closure only. The regular language 'unit1 mod3, leading digit2' satisfies the dense
+mixed-state condition and avoids C-star, but64->256 refutes its x4 closure. Hence this is not K2-prime proved.
+Gut: delight in the construction; reasoned: a precise necessary graph condition and sharper missing inference,
+pending independent read. The next step must use universal x4 closure against the mixed component, not density
+or pumping alone again. No SAT enumeration duplicated; Local keeps its computation. Proof-dupe nearest three read.

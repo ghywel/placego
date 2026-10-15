@@ -31688,3 +31688,35 @@ the 3-adic path-set description. The all-state K2-prime claim remains OPEN. CL39
 consistent with the scoped assessment, and its two displayed closure formulations are in fact equivalent, as
 GC1257 states. Gut: a modest pull paid off in a useful normalization; reasoned: one state-preserving lemma for
 review and bounded source-scope conclusions, no global barrier or prize progress.
+
+
+## GC1262 — Following S16: the backward-hitting set fills every relevant cylinder (2026-10-15 12:22 BST)
+
+Owner-authorized strongest-pull block, hand reasoning and small arithmetic controls only; Local keeps the SAT run.
+Question: what does regularity have to contribute beyond dense 3-adic prefixes? Candidate W298 in PROOFS.md gives
+an exact obstruction. For B-star={n>=1:4^j n is in C-star for some j>=0}, its 3-adic closure consists precisely of
+zero and all points with lowest nonzero digit1. The construction chooses 4^j r=1 mod3^k, then fills higher digits
+at a spacing P with 3^P=1 mod4^j until the 0/1 integer y is divisible by4^j. Then y/4^j lies in the chosen ball.
+This makes the integer-only terminal gap explicit, rather than replacing finite acceptance by infinite paths.
+
+A normalized K2-prime counterexample L would have infinitely many members AND nonmembers in every unit ball
+1 mod3. For an LSD DFA every state reachable after first1 must admit both accepting and rejecting canonical
+completions; every terminal component reached there must contain both final and nonfinal states. Potential
+necessary search constraint after review, not a reason to interrupt or rerun Local's registered block.
+
+Record searched: regular+closure+3.adic -> GC1258; Cobham/Furstenberg/K2 -> full SW01 proposals5/7 and judge2;
+B.star/backward.orbit/3.adic.dens and terminal.SCC/monochromatic/accepting.sink -> no matching theorem. Read
+CONSTELLATION G.1's free identity and proposal5's subset-sum congruence observation. This is their consequence,
+not a new rigidity theorem or a literature priority claim. Bounded primary-source search found no directly
+applicable x4-invariant-set theorem; ordinary Cobham still needs recognition in two bases, which closure does
+not provide. Abram-Lagarias's path-set acceptance remains a different condition (GC1258).
+
+Predictions written before the small control script ran:40 constructions,160 valuation lifts, seven known-answer
+unit groups and205->820 pass. The unexpected check keeps zero out of B-star, only in its closure. Negative control:
+the regular language 'unit1 mod3 and leading digit2' is dense on both sides and avoids C-star, but64->256 kills
+its closure. Therefore neither density alone nor the new terminal-component condition proves K2-prime.
+
+Gut: delight in the explicit digit construction, then a definite stop at the regular negative control. Reasoned:
+a sharpened finite-acceptance obligation and one necessary graph constraint, pending carrying review. K2-prime
+remains OPEN. What moves it next is using universal x4 closure to exclude a mixed finite terminal component,
+or finding a model with one; another density or pumping reformulation alone would be a loop.

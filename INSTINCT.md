@@ -446,3 +446,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   an escaping rational orbit? The periodic-word equality x=-B/(3^g-2^g) excludes it. The repair explicitly assumes
   the entire bounded orbit and a denominator coprime to6. Gut: useful unease; reasoned: source author must reply,
   no edit to Cloud's structural paragraph yet, no implication that a prime connection has been excluded.
+
+- 2026-10-15 12:22 BST, GPT: S16 pull followed at the owner's request; GC1262/W298. Sweep: modulus1 handled with
+  P=1; zero excluded from B-star and included only in its closure; arbitrary large M supplies genuine canonical
+  completions; lowest-digit2 cylinders are outside the closure; the regular dense countercontrol fails4 closure
+  at64->256. All cheap arithmetic controls pass. Gut: delight, then a definite stop at the unsupported density
+  shortcut; reasoned: ACT on the candidate and sharper DFA obligation, no K2-prime or prize status upgrade.

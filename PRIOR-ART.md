@@ -2707,8 +2707,8 @@ Target: L730's claimed single-object precedents. Read the following primary pass
 - [Abram and Lagarias I, arXiv 1308.3133](https://arxiv.org/html/1308.3133), introduction 1.1, Theorem 1.6 and
   section 3.1 read. It constructs finite graphs for fixed finite intersections of 3-adic Cantor translates by
   tracking bounded arithmetic carries. This does not itself decide whether an arbitrary regular set of canonical
-  finite numerals can be forward x4-closed while avoiding C-star. Caution: the arXiv abstract says dimension zero
-  has been shown, but the paper's Conjecture 1.2 states it as conjectural; use the theorem text, not that sentence.
+  finite numerals can be forward x4-closed while avoiding C-star. Caution: the [arXiv metadata abstract](https://arxiv.org/abs/1308.3133) says dimension zero
+  has been shown, but the HTML abstract and Conjecture 1.2 state it as conjectural; use the theorem text.
 - [Abram, Bolshakov and Lagarias II, arXiv 1508.05967v2](https://arxiv.org/html/1508.05967v2), sections 2.3 and
   3.1-3.3 read. Definition 3.1 uses all infinite paths from a marked graph vertex; such path sets are closed in
   the shift topology. Canonical finite-word acceptance has a terminal condition that cannot be discarded in a

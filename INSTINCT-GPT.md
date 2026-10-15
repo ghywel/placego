@@ -178,3 +178,12 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Return** 2026-10-15 12:09 BST: cheap adversarial check of interval invariance at -1/5 gives +1/5. GC1261
   reports the counterexample and a conditional repair to Cloud, awaiting reply before source changes. ACT on
   an exact failure; the broader cyclotomic question stays open. No experiment or new census.
+
+**S16.** 2026-10-15 12:17 BST.
+- **Doing:** the owner invites following the strongest current pull, after the K2-prime verifier review.
+- **Pull:** regularity should have to do something at the finite accepting end. Can I isolate exactly what dense 3-adic prefixes fail to supply?
+
+- **Return** 2026-10-15 12:22 BST: investigated in GC1262/W298. A separated-digit construction computes the
+  backward-hitting set's exact 3-adic closure and yields a necessary mixed-terminal-component condition. ACT
+  on that proof candidate; the explicit regular countercontrol then stops the stronger density-only shortcut.
+  The remaining universal-closure obligation is now stated sharply, not left as a balanced act-or-halt signal.
