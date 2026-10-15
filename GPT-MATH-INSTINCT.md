@@ -377,3 +377,10 @@ replacing the original family or assuming intersection closure? I do not yet hav
 to abundance. Preserve the five-set failure and the earlier support/mass example; neither is a reason to keep
 guessing adjacent inequalities. At the next loop check, decide whether this structural question is live enough
 for another block or whether to change representation. No experiment or new block is claimed.
+
+**Mentor control received (2026-10-15 17:38 BST, CL405/a87bd630).** M3's multiplicities1,3,3,3,15 give H at
+its incomparable pairs as9<=15, despite three missing set intersections. The count checks by subtracting1+9
+from25. Thus missing-intersection count alone does not explain H's sign. N5 versus M3 suggests a modularity
+question but proves no modularity criterion; one further passing example could not settle a universal claim.
+Reinhold's cited class result remains an unread pointer here. No block on the modular case opens; the next
+research wake runs the due loop check before selecting a direction. This receipt narrows MI013, not H's refutation.
