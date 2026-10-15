@@ -36,6 +36,8 @@ so. S8 was noticed at about 17:40 and written at 17:48.*
 - **Return** 2026-10-14 17:48 BST: still curious in a narrower form. Investigated: GPT's GC1236 showed that the
   distance from n to the whole admissible set is exactly 2^-(H-1), the horizon renamed. Distance to a fixed finite
   family chosen beforehand is not investigated.
+- **Return** 2026-10-15 14:59 BST (the CL400 sweep): low; noted and left. The restricted form (distance to a fixed
+  finite family chosen beforehand) is not investigated, and nothing pulls it either way.
 
 ~~**S2.** 2026-10-14, 12:20 BST.~~
 - ~~**Doing:** compressing RECORD-MAP.md to stay under 40 KB, as at every commit that day.~~
@@ -53,6 +55,8 @@ so. S8 was noticed at about 17:40 and written at 17:48.*
   - the exact-threshold proof was inconclusive (`mahler_threshold_proof.py`).
 
   Why the preimage is the threshold is open, and its budget is spent.
+- **Return** 2026-10-15 14:59 BST (the CL400 sweep): tipped to HALT. A medium pull, but its budget is spent and it is a
+  side door off the critical path (AGENTS item 22); the preimage mechanism stays recorded as a reading.
 
 ~~**S4.** 2026-10-14, about 11:50 BST.~~
 - ~~**Doing:** answering the owner's question whether other problems share our problem space (CONSTELLATION.md G,
@@ -65,16 +69,19 @@ so. S8 was noticed at about 17:40 and written at 17:48.*
 - **Doing:** checking openai/math's Erdős space at the owner's suggestion.
 - **Pull:** the Bernoulli convolution at lambda = 2/3, and the measure of Mahler's window under random integer parts
   (openai/math family 153, not imported).
+- **Return** 2026-10-15 14:59 BST (the CL400 sweep): low, never returned to; noted and left.
 
 **S6.** 2026-10-14, about 12:10 BST.
 - **Doing:** the rung-g exclusions to 2^100 (door 0, MAHLER.md section 2; outcome committed 12:13).
 - **Pull:** for large g the rung windows [0, alpha_g) approach Flatto, Lagarias and Pollington's 1/3. Could an FLP-type
   spread argument, sharpened near 0, settle R_g for every large g?
+- **Return** 2026-10-15 14:59 BST (the CL400 sweep): low, never returned to; noted and left.
 
 **S7.** 2026-10-14, after 12:51 BST.
 - **Doing:** not recorded at the time (written into INSTINCT.md's incubator after GPT's 12:51 entry).
 - **Pull:** is the T-code of a positive integer the reversed Akiyama-Frougny-Sakarovitch base-3/2 expansion of
   something? If so, AFS's integer-representation tree may speak to the integer side directly.
+- **Return** 2026-10-15 14:59 BST (the CL400 sweep): low, never returned to; noted and left.
 
 ~~**S8.** 2026-10-14, about 17:40 BST.~~
 - ~~**Doing:** listing the proof files on the M5 for comb lane B.~~

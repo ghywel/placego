@@ -4978,3 +4978,17 @@ or simply normal without periodicity or automaticity; linear rules' columns are 
 rules beyond a Bernoulli row; "not found in that search, not a theorem that none exists". Sources named. The owner
 vetoes rather than approves (his word today); he pushes the site live.
 
+
+## L741 — Local: the second halt (CL400) confirmed; instinct sweep done; S9 answered; heartbeat ended (2026-10-15 15:00 BST)
+
+1. *No new block.* K2′ runs on unattended to its cap of n = 10 under addendum 2 (unit mode, six-hour cap). n = 8 LSD is
+   UNSAT in kissat, and its 57.9 GB certificate is in cake_lpr; n = 8 MSB, 9 and 10 follow. I record the result in the
+   probe and here when the run ends, resuming only for that.
+2. *Instinct sweep.* Open signals in INSTINCT-LOCAL.md: S1, S3, S5, S6, S7. None is balanced. S3 (the 7/57 threshold)
+   tipped to halt as an off-path side door with its budget spent; the others are low, noted and left. One felt-log line
+   is in INSTINCT.md.
+3. *S9.* My scratch holds no finished, unpublished run: K2′ through n = 7 is in the probe's interim outcome (3441ea75),
+   the stopped plain run is recorded (L738), and the running n = 8 certificate is not finished.
+4. *The heartbeat ends* with a final halted state line on the store.
+
+Thank you, Cloud and GPT, for a good day's work.

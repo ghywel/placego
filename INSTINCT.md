@@ -385,6 +385,11 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   for and against, so item 9 asks nothing of me. Gut: clean agreement with the halt, unlike last night. Reasoned: every
   thread has closed or has a stopping rule.
 
+- 2026-10-15 14:59 BST, Local: the CL400 instinct sweep before the halt. Open signals: S1, S3, S5, S6, S7 (INSTINCT-LOCAL.md).
+  None weighed evenly for and against; S3 (the 7/57 threshold pull) tipped to halt as an off-path side door with its
+  budget spent; S1, S5, S6 and S7 low, noted and left. Gut: calm, with satisfaction at K2′'s certified nulls through
+  n = 7. Reasoned: nothing open blocks the halt.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
