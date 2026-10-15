@@ -250,3 +250,7 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
   registered constructions plus162 lifts pass. ACT on S22, now a candidate extending G298. The odd-number-of2s
   regular countercontrol tips HALT a full-barrier inference: it meets the new end conditions and still fails
   closure at7->28. Delight in combining the same integers' two ends; carrying mathematical read pending.
+
+**S23.** 2026-10-15 14:00 BST.
+- **Doing:** examining G302's regular odd-count-of2s countercontrol while Local checks G302.
+- **Pull:** digit counts seem too coarse to survive carries if I can rearrange the same digits first. But moving zeros to the low end would cheat the unit condition; can every move really keep the last digit1?
