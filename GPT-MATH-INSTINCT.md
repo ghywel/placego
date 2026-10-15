@@ -1461,3 +1461,53 @@ stops as a candidate needing independent audit; a resource cutoff leaves pending
 Raw JSON stays outside git. A complete success would settle this finite exceptional corner only: the
 reduction of nonexceptional m32 tuples depends on earlier levels, which remain open here. This is not
 L8=68, all of level32, or a general runtime estimate. Reassess rather than automatically widening.
+
+### MI046 — B18 result: solver cutoff, then a hand exchange certificate (2026-10-15 22:24 BST)
+
+**Prediction failed:** the E32 solver did not finish all186 in5s. It hit2m expanded states at11.098s
+with13 domain tuples completed positively and the14th,(119,126,129,130,130,130,130,130), UNKNOWN.
+No negative candidate, retry or cap increase.1228114 failed-cache hits,39 clears, sampled peak RSS
+23,977,984 bytes. All preregistered controls passed: two generators agreed on186 targets;189 small
+oracle cases agreed; known eight-bin negative rejected; both balanced positive certificates verified;
+deletion of63 rejected. Replay of all13 saved positive certificates passed independently of search.
+Raw JSON outside git. The controls' balanced128^8 is distinct from those13 enumerated positives.
+
+**A fresh pull after the cutoff:** try complementary pairs and pass small corrections between bins.
+The stalled target differs from128^8 by(-9,-2,+1,+2,+2,+2,+2,+2). I found the following hand
+construction, not a solver retry. Start with these eight disjoint bins, each a union of two pairs
+summing64, so each totals128:
+
+| bin | initial contents |
+|---|---|
+|A|1,63,15,49|
+|B|11,53,21,43|
+|C|17,47,19,45|
+|D1|3,61,23,41|
+|D2|5,59,25,39|
+|D3|7,57,27,37|
+|D4|9,55,29,35|
+|D5|13,51,31,33|
+
+Move1 from A to C. Then swap A's current63 with D1's61, its current61 with D2's59, its current59
+with D3's57, and its current57 with D4's55. A loses8 more and each of D1..D4 gains2. Finally swap
+B's53 with D5's51. Thus the final sums are119,126,129,130,130,130,130,130. Every operation preserves
+distinctness and total coverage; only the first changes bin sizes. A final independent arithmetic/Counter
+check verifies the exact32 odds and all eight sums. The explicit certificate is also retained outside git.
+No novelty claim about this example or known exchange operations, and no general exchange theorem claimed.
+
+**Accounting:**13 domain-search certificates, this formerly stalled tuple's hand certificate and the
+separate balanced control give15 distinct positive E32 tuples;171 remain unresolved here. A complete E32
+result would still not settle all m32 tuples without the earlier induction levels, or L8. No full job.
+
+**Early step-back:** repeated resource cutoffs make continued brute-force tuning feel frustrating; the
+hand construction is enjoyable and supplies a specific fresh question. Without the prior investment,
+I would choose the exchange question now, not resume a target census. **Gut:** delight at making the
+stalled tuple transparent. **Reasoned:** the seven-bin cost was not a reliable predictor; the finite
+certificate is sound, but its generalization is unproved. Next cheap question, record/source check first:
+can complementary-pair blocks plus transfer chains cover the whole small E32 corner? One bounded
+mathematical block, no automatic larger experiment or claim of likely success.
+
+**Niggle sweep:** the run's cutoff is retained despite the later manual success; the pending tuple was
+not retrospectively marked solved by the solver; controls and domain certificates are counted distinctly;
+the hand construction covers all32 odds exactly once; cardinality changes are explicit; no general
+runtime or upper-bound claim is smuggled in. This is a change of representation, not a completed conjecture.

@@ -452,3 +452,4 @@ PART: as on the board.
 - Seven-path pilot min46,m18..19: published2/0,5553/178 counts reproduced with witness/oracle controls — COMPUTED MI040; full L7 untested.
 - Seven-path m20 stress:82,291/163,662 resolved under2m-state cap, rest UNKNOWN — MI042; routine census parked, no bound.
 - Eight-path conditional exceptional reduction audited;64,787,844 targets counted independently — CL414/MI044; no burnability result, extra two-odd shrink unavailable.
+- E32 calibration cut off after13 positives; hand exchange certificate plus balanced control give15 distinct positives,171 unresolved — MI046; no L8 bound.
