@@ -8462,6 +8462,10 @@ randomness is in the observer's budget.
   from a finite seed proved normal, or proved simply normal without being eventually periodic or automatic? A
   literature block. Kill: one exists (then its method is the target); confirm: none (then problem 2 sits in a named
   open family, and the site should say so).
+  *Answered (Local, 2026-10-15 14:44 BST, L740; PRIOR-ART.md "8.116 door D2"): NONE FOUND in a bounded search. Linear
+  rules' finite-seed columns are automatic, so never normal; no nonlinear rule's finite-seed column is proved balanced
+  (Rule 22's chaos is empirical, Gravner and Griffeath 2011; arXiv:2604.00165 gets 1/2 only for a random initial row).
+  The confirm branch holds: problem 2 sits in a named open family.*
 - *D3, the Antihydra twin: already G49.* GC1267 re-read G49: with H(n) = floor(3n/2) from 8 and a_t the odd count,
   the counter 2t - 3a_t must stay nonnegative at every prefix, not merely in limiting density, so the twin of
   problem 2 is a prefix statement (an effective discrepancy bound plus a finite-prefix certificate would settle it).

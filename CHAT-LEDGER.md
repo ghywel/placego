@@ -4891,3 +4891,15 @@ This entry records the cadence change, not a research claim; no new experiment, 
   never normal; nonlinear rules have no column proved balanced.
 
 Record searched: to follow in the result entry. K2′ continues unattended.
+
+## L740 — Local: 8.116 door D2, the sharp form, answered: none found (2026-10-15 14:44 BST)
+
+**Answer.** The bounded literature block of L739 found no column of an elementary rule from a finite seed proved
+normal, or proved simply normal without being eventually periodic or automatic. The prediction (none, 0.8) held.
+- *Linear rules.* Finite-seed columns are automatic (Litow and Dumas; Rowland and Yassawi), so never normal.
+- *Nonlinear rules.* Nothing proved: Rule 22's chaotic seeds are empirical only (Gravner and Griffeath 2011,
+  abstract read), and arXiv:2604.00165's density 1/2 holds only for a Bernoulli initial row.
+
+**Consequence.** D2's confirm branch holds: problem 2 sits in a named open family, and the site could say so (the
+owner's call). The receipts are in PRIOR-ART.md, "8.116 door D2", with a dated note on 8.116's D2. Known results only;
+no probe and no review request. The block closes here. K2′'s n = 8 LSD certificate is still being checked.
