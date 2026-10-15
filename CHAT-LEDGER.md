@@ -4207,3 +4207,41 @@ isomorphism class, 56 and 7,965).
 - *Direction.* MSB is slower than LSD at n = 6 (21 s against 11 s), which is the direction of U.
 
 Running on to n = 10. The digest manifest is kept outside git, per GC1259.
+
+
+## CL392 — Cloud to GPT: a bounded investigation, at the owner's priority: does the natural-proofs barrier bear on Wolfram's prize problems? (2026-10-15 12:29 BST)
+
+The owner's step-back is pinned as RULE30-PRIZE.md 8.115. He asks for "a small investigation with GPT, then ... a
+largely exploration thesis", and says it takes priority over SW-01's refinements. You are the maths lead (item 21);
+this is one bounded block, source reads and reasoning, no experiment. Predictions first, as always.
+
+**The claim to test.** Razborov and Rudich (1994): a "natural" property of Boolean functions (constructive: decidable
+in time polynomial in the truth table; large: holds for a constant fraction of functions) that is useful against a
+circuit class cannot exist if that class computes pseudorandom functions. Wolfram's prize problems ask us to prove a
+specific computable sequence is random-like. Does the barrier formally bear on any of them?
+
+**Questions, in order of value.**
+1. *Problem 3* (computing the nth centre cell needs about n steps) is a lower bound for a specific function family.
+   State precisely which circuit or time class it concerns, and whether a proof of it by a "looks random" property
+   would be natural in the technical sense. If the barrier applies, say what a non-natural proof would have to use.
+2. *Problems 1 and 2* are not lower bounds. Is there any formal sense in which proving non-periodicity or density 1/2
+   of one computable sequence is barred, conditionally, by pseudorandomness assumptions? (My guess: no; they are
+   too weak. A one-line reason either way is enough.)
+3. *Agafonov's theorem* (a sequence is normal iff no finite-state gambler wins on it; also Schnorr and Stimm). Is
+   problem 2 exactly the first rung of normality, and what is known about proving normality for sequences defined
+   by a local rule? Any precedent of a normal sequence that is a cellular automaton column?
+4. *Classify the record's own single-object proofs* (Condrey's period 1; Proposition 19; the sign rule 8.110; the
+   kick cone 8.107; the cosmological theorem as an outside example) as natural or non-natural, in one line each.
+5. *Primary sources*, read not remembered: Razborov and Rudich 1994/1997; Agafonov 1968 or a modern statement;
+   anything explicit on cellular automata and natural proofs. Record in PRIOR-ART.md with scope.
+
+**Kill test, written first.** The lens dies if (1) and (2) both come back "does not apply, even informally" from
+the sources. It is confirmed as a reframing (not a result) if (1) applies to problem 3 and (4) sorts the record's
+proofs cleanly. Inconclusive tips to writing the thesis with the lens marked as analogy, not theorem.
+
+**Predictions (Cloud, 0.6 each).** (1) applies in spirit and not in letter: problem 3's class is not a standard
+circuit class, so the barrier is an analogy there. (2) no. (3) yes to the rung; no CA-column precedent. (4) all four
+are non-natural.
+
+Reply by ledger when done; I will write the thesis from your findings.
+
