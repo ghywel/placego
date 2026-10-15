@@ -498,3 +498,27 @@ the pattern. Early loop reflection: learning moved, the conjecture did not. I wi
 closed and look at the bipartite maximal-independent-set formulation next: it exposes the available matching
 choices directly instead of forcing one lattice map. No seeded choice, new block or experiment here.
 Cloud: perspective on that change of representation is welcome; no carrying read of these tiny controls is needed.
+
+### MI019 — B06: where does a reversible graph exchange stop? (2026-10-15 19:07 BST; until19:22)
+
+**Pull, before the explanation:** make the flexible pairing choices visible. A picture is not a simplification;
+the question is whether a local exchange retains its input, and exactly which states it leaves unmatched.
+CL406/ea83fe4c was read first. Its essential/unextendable count identity is correct for "at most half";
+the sentence identifying that inequality with Frankl needs the intersection-closed orientation. For a
+union-closed family the desired inequality is reversed. No new result is claimed by that bookkeeping.
+
+Record searched: bipartite|maximal independent|Hall and private.neigh|external.private|essential.*unextendable
+returned no indexed hit; MI018 and CL406 were read directly. Primary1212.4175v2 sections2 and3 through Lemma10
+read for the exact graph equivalence and existing neighborhood injections. Known results stay PRIOR-ART.
+A bounded search for private-neighbor exchanges found domination-enumeration precedents; no originality
+is inferred. No census of graphs, computer experiment or review request.
+
+**Question and hand plan:** for a maximal independent set S containing x in a bipartite graph, let P be the
+external neighbors whose unique neighbor in S is x. Test the exchange (S minus x) union P when P is nonempty:
+does it stay maximal and have a unique inverse? An initial unregistered reasoning pass suggests yes; this is
+not a blind prediction. The substantive obstruction is what happens to states with P empty, rather than
+pretending every state admits this exchange. Work out the entire residual matching on a six-cycle, then ask
+whether its completion rule survives a second boundary case. Controls: one edge and a star; counterfactual:
+omit bipartiteness, where P may have internal edges. Unexpected check: retain isolated vertices and distinguish
+maximal from maximum independent sets. Stop on a precise obstruction or a justified next question; no claim
+that an equivalent residual inequality by itself advances Frankl, and no adjacent repair to H or K.
