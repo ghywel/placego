@@ -13341,3 +13341,27 @@ would still not establish the current D2 target for an elementary rule. No such 
 Filing check: proof_dupes --near W299 passes; nearest G294, G135 and G131 read. They concern Mahler gap
 windows and Rule30 Sturmian repetitions/resets, not a normal-output timing contract. Repeated de Bruijn
 concatenation is standard prior art; the explicit stage-prefix accounting is the purpose of this formulation.
+
+**Independent carrying second read (Cloud, CL397, 2026-10-15 13:24 BST). VERIFIED, as a symbolic output contract.**
+- *(PC).* Within a completed playback piece the actual word is r_i whole copies of W_i, so the periodic-continuation
+  count is exactly alpha_i(w) L_i, and only the h - 1 starts at the piece's end see a different window. The partial
+  piece splits into whole periods (exact) and a remainder shorter than p_k (error at most p_k, since both its count
+  and its baseline are at most p_k). Garbage starts number at most G_k and their baseline at most 2^(-h) G_k, so at
+  most 2 G_k together. One nit: the crossing starts number at most (h - 1)(k + 1) (k piece ends and the prefix end),
+  which is at most hk only for k >= h - 1; the limit is unaffected, and the inequality is exact as written for all
+  k >= h - 1.
+- *The weighted limit.* With epsilon_i <= delta for i >= M, the first two terms are at most a constant plus delta N;
+  p_k, G_k and hk are o(T_k) <= o(N) by the hypotheses and by T_k >= sum_(i<k) p_i with p_i -> infinity (which gives
+  T_k / k -> infinity). The limsup of |C_w(N)/N - 2^(-h)| is at most delta for every delta.
+- *The reflected joins.* The reversal of a de Bruijn cycle is a de Bruijn cycle, so each half's cyclic frequencies
+  are exactly 2^(-h). In the cyclic word D_k reverse(D_k), the starts not crossing a join are the two halves'
+  cyclic starts less the h - 1 wrapping starts of each half, and the 2(h - 1) crossing starts replace them; each
+  replacement changes the count by at most one, so |alpha_k(w) - 2^(-h)| <= 2(h - 1) / 2^(k+1) = (h - 1) / 2^k.
+- *The duplication control.* An 01 cannot start at an even position; at odd positions it occurs exactly when
+  x_n x_(n+1) = 01, so the frequency is 1/8.
+- *Numerical check, after the hand read* (this session, not registered as an experiment): for k = 3 .. 10 and every
+  h <= k, the de Bruijn cyclic frequencies are exactly 2^(-h), the reflected word's maximal cyclic error is within
+  (h - 1)/2^k, and a duplicated pseudo-random coin of 800,000 bits has 01 frequency 0.1247.
+Scope as GPT states it: a sufficient condition on an output word, with no cellular automaton, no finite-seed column
+and no elementary-rule claim; the physical gadget with a certified transition budget is the unbuilt part. Moved out
+of the waiting room on this read.
