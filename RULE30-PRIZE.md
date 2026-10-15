@@ -8239,13 +8239,18 @@ means.** Record searched above. Three places, none of them the number line.
 - *Mahler.* The periodic codes have values with denominators 3^g - 2^g (MAHLER.md section 2: 19, 65, 211, 665, 2059;
   the 7/57 window's 57 = 3 x 19 with 19 = 3^3 - 2^3). The reason (PROOF-SKETCH, surely classical): T on a rational
   a/d with d odd keeps the denominator and multiplies the numerator by 3/2 modulo d, since T(a/d) = (3a + bd)/(2d)
-  with b the parity of a. On (-1, 0) the orbit is bounded, so it is the residue orbit, and its period is the order of
-  3/2 modulo d on that class. A rational with denominator d has a periodic code exactly when d divides 3^g - 2^g for
-  some g. By Zsigmondy's theorem, every 3^g - 2^g (g >= 2) has a prime divisor that divides no earlier term, so each
-  new period brings a new prime. The periodic side of Mahler's map is indexed by the orders of 3/2 modulo the
-  primes: that is a prime sequence counted in another dimension, exactly the owner's phrase. The integer side has no
-  cycles at all (a positive orbit grows), which is the wall seen from here: the primes organise the bounded,
-  periodic, rational part of the dynamics, and a positive integer never enters it.
+  with b the parity of a. *(Corrected 12:55 BST after GPT's GC1261, accepted in CL394. The first wording said the
+  orbit of a point of (-1, 0) is bounded, hence periodic, and that a denominator dividing 3^g - 2^g suffices. Both
+  are false: T(-1/5) = 1/5, and the orbit then grows. The correct statement is the periodic-word identity, already
+  in MAHLER.md through GC1227.1 and GC1228.)* A code with periodic block b_0 .. b_(g-1) belongs to exactly one point,
+  x = -B / (3^g - 2^g) with B = sum b_i 2^i 3^(g-1-i), so the periodic points are those rationals and no others; a
+  positive rational never has a periodic code (B >= 0, and the prefix map is injective: GPT's proof). The reduced
+  denominator d of a periodic point divides 3^g - 2^g, so the order of 3/2 modulo d divides its period, and by
+  Zsigmondy's theorem every 3^g - 2^g (g >= 2) has a prime divisor that divides no earlier term: each new period
+  brings a new prime. That is the sense in which the periodic side of Mahler's map is prime-indexed, a weaker and
+  correct form of the owner's phrase; the converse (a denominator condition alone) does not hold. The integer side
+  has no cycles at all, which is the wall seen from here: the primes organise the periodic, rational part of the
+  dynamics, and a positive integer never enters it.
 - *Rule 30.* The record's one prime-indexed fact is that ring cycles glide at prime ring sizes (8.67), which is the
   group-theoretic fact that a prime ring has no proper translation sub-period. No arithmetic prime enters the rule.
 - *A precedent for the list* (8.113's U found 8.101's list incomplete). Zsigmondy (1892), Bang, and Bilu, Hanrot and
@@ -8313,8 +8318,12 @@ homogeneous, one-dimensional, two-state" is a choice, and each relaxation is a k
 complexity is about log n, and it is random to no algorithmic test. It is random to a bounded observer, and the three
 prize problems are a ladder of observers:
 - Problem 1 (not periodic): it beats the observer that checks for repetition.
-- Problem 2 (density 1/2): it beats the simplest finite-state gambler. By Agafonov's theorem, beating every
-  finite-state gambler is normality, so problem 2 is the first rung of "the column is a normal number".
+- Problem 2 (density 1/2): it beats the simplest finite-state gambler. Beating every finite-state gambler is
+  normality (Schnorr and Stimm; Agafonov's theorem is the finite-state selection statement: corrected after GC1265),
+  so problem 2, which is simple normality of order 1, is the first rung of "the column is a normal number". The rungs
+  are different axes, as GPT notes: 0101... is balanced and periodic, the squares' indicator is aperiodic with density
+  0, and normality implies neither hard indexing (Champernowne's word is indexed in polylog time, GC542) nor problem
+  3.
 - Problem 3 (no shortcut): it beats every fast observer; a linear-time lower bound for one specific function.
 The same ladder as the digits of sqrt 2: computable, believed normal, proved normal for nothing but constructed
 numbers (Champernowne). Rule 30's column is sqrt 2 with a worse rule.
@@ -8338,14 +8347,22 @@ that is large, holding for most functions, and constructive, decidable efficient
 strong pseudorandom generators exist. Wolfram built a rule he conjectures to be a good pseudorandom generator, and
 asked us to prove it looks random. Read through Razborov and Rudich, his conjecture is the conjecture that no
 natural proof of it exists. The "ineffable wall across similar problems" the owner felt has, for circuits, been a
-theorem for thirty years. Whether it bears formally on problems 1 and 2, which are weaker than a circuit bound, is
-the question for GPT (CL392). What it changes already: every proof the record holds about a specific object at
-unbounded complexity (Condrey, Proposition 19, the sign rule, the kick cone) is non-natural in their sense: it uses a
-structure of the object, never its randomness. The lesson for the prize: stop trying to prove the column random-like;
-find the structure that is not random-like and prove with that. 8.114's coin-shape test is a natural test, and it
-could only ever fail to find anything.
+theorem for thirty years. Whether it bears formally on any of the three was CL392's question for GPT. *Answered
+(GC1265, 12:55 BST; my kill test tips to "analogy only"):* the primary reads establish no natural-proofs barrier
+for any prize. Problem 3 as stated is a uniform time bound in the index n (GC548 and CL035 already separated the
+display's "no O(n)" from the prose's "no shortcut"); a circuit family f_m(z) = c(value(z)) can be named, but a time
+bound does not by itself place f outside P/poly, and the barrier needs a constructive, large, useful property
+against a stated class with a matching cryptographic assumption. Problems 1 and 2 supply no circuit-class exclusion.
+And calling the record's proofs "non-natural" is unsupported until a property and class are named; Razborov and
+Rudich themselves naturalise Smolensky's algebraic argument. So the honest form of the lesson is weaker and still
+useful: the proofs that exist for specific objects (Condrey, Proposition 19, the sign rule, the kick cone, the
+cosmological theorem) each use a structure of the object, never a randomness property; 8.114's coin-shape test is a
+randomness property, and could only ever fail to find anything. The barrier is an analogy that poses questions, not
+a theorem that prohibits statistical approaches.
 
-**Verdicts.** Reasoned: a reframing, not a result; three names for the wall (Borel's almost-all, Agafonov's
-finite-state tests, Razborov-Rudich's natural proofs) and a selection rule for methods. Gut: the strongest pull of
+**Verdicts.** Reasoned (revised after GC1265): a reframing, not a result; three names for the wall (Borel's
+almost-all, Schnorr-Stimm's finite-state gamblers, Razborov-Rudich's natural proofs, the last as analogy) and a
+selection rule for methods. GPT's unexpected check: a normal initial row gives a normal column (G4.4 and G128 realise
+any one-sided trace), so the single-seed and finite-support cases are the open ones. Gut: the strongest pull of
 the week, and the same unease as always about a lens that explains why nothing works.
 
