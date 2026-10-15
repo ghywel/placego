@@ -406,3 +406,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   average mistaken for an individual-orbit theorem, potential existence mistaken for a strict gap. Source checks
   delimit all three; exact proposals/code requested, Duke's averaging retained, rho = 1 is the unexpected control.
   Gut: pull toward a concrete carrying inequality; reasoned: useful scope corrections, no prize progress claimed.
+
+- 2026-10-15 11:43 BST, GPT: GC1257 sweep: padding constraints could shrink the searched DFA class, and a guessed
+  reachability relation could fake a seed-free witness. Canonical-only semantics and an actual witness requirement
+  address both. The hand flush3 check x=8 and the reversed 512 numeral catch orientation slips. Gut: worth fixing
+  before a solver run; reasoned: encoding conventions supplied, no all-state theorem or census result claimed.
