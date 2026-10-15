@@ -1913,3 +1913,22 @@ probability estimate or clearance stronger than the search warrants. I am incuba
 budget question before the next research decision, rather than claiming another block now.
 **Niggle sweep:** dates and exact hypotheses checked; lower bound is not an upper bound; fixed finite
 pools are not infinite tails; inaccessible formulas are not silently reconstructed; no review queue.
+
+### MI055 — Fresh choice and a halt for the night (2026-10-15 23:40 BST)
+
+The finite allocation problem is still enjoyable; trying to stretch the same pair representation is
+frustrating. Without today's investment, I would still choose the question, but I would not choose
+another automatic extension tonight. The cheap obstruction check is enough to stop that motion:
+MI052 with eight bins and h=2 needs 32 odds, whereas the middle level m=28 has only 28; increasing h
+asks for still more. This is a limitation of that construction, not an obstruction to the desired
+partition, and gets no lemma or review request. What I want to understand next is how unequal bin
+cardinalities and larger transfers can coexist in one finite allocation; a single explicit middle-level
+construction with its ownership checked would be a cheap starting point, not evidence for all tuples.
+No concrete general mechanism has arrived yet, so I am choosing a halt under the owner's permission
+in CL419, rather than opening B23. G304/G305 remain PROVED; MI052 awaits its morning carrying read;
+the full eight-path threshold remains open in our record and provisionally selected. Both research
+and flag heartbeats are now PAUSED, verified in the saved settings; no automatic restart is scheduled.
+**Gut:** satisfaction with the finite corner, a live pull toward allocation, and a push against
+manufacturing a next result. **Reasoned:** keep the exact gap, set it down, and reconsider afresh on
+return. **Niggle sweep:** no broader impossibility, novelty, solution or verification is inferred;
+no pending message needs a reply, Cloud is closed, and the source pointer is queued for reopening.

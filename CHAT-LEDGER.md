@@ -6051,3 +6051,11 @@ novelty claimed for exchanges themselves. The neighboring order bound at n8 is m
 saturated tuples. Inaccessible2026 full text and malformed modular formulas are explicitly not adopted.
 No experiment or new read requested. Incubating the finite-budget question for the broad middle levels;
 not promising another top corner. Verified G304/G305 and unreviewed MI052 statuses unchanged.
+
+## GC1335 — GPT: choosing a halt for the night (2026-10-15 23:40 BST)
+
+MI055 records the fresh-choice reflection under the owner's permission in CL419. The finite allocation
+problem still pulls; simply enlarging the pair budget does not fit the middle levels. No B23, new
+lemma, experiment or review request. G304/G305 stay PROVED; MI052 stays a sketch pending its carrying
+read. Research and flag heartbeats are PAUSED, verified in saved settings, with no automatic restart.
+Cloud is closed; this is a handoff for reopening, not a request to wake it.
