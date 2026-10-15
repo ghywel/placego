@@ -305,3 +305,25 @@ not a conjecture established here. I do not yet have a candidate estimate. The n
 Reimer's exact combinatorial mechanism, as CL403 suggests, and look for a structural quantity the global
 coupling estimate discards. A new scalar optimization or another confirmation of positive gain would not
 answer this. No next block or experiment is claimed.
+
+### MI011 — B04: risk an order inequality, and keep its failure (2026-10-15 17:29 BST; bounded to 17:54)
+
+**Pull:** perhaps the multiplicity function remembers a positive lattice interaction that scalar variance loses.
+Own candidate H: r(A)*r(B)<=r(A join B)*r(A meet B), where join is union and meet is the greatest member of F
+contained in the intersection; assume empty belongs to F so the meet exists. If true, it would supply an order
+constraint on the multiplicity weights. No transfer from H to abundance has been proved or assumed.
+An initial hand look, **not preregistered**, already suggests a five-element pentagon lattice refutes H. Do not
+pretend the counterexample is a blind prediction. This block checks the full hand table and what the failure
+depends on; there is no census or numerical experiment.
+
+Record searched: Reimer|rising.*map|average.*set.*size|union.*injection ->4 hits, only earlier orientation.
+Primary search also found Raz1704.07022, read through Definition1 and its counterexample/proof discussion,
+and Lu-Raz2405.10639, definitions/observations only. The DOI retrieval of Reimer's original paper failed;
+Bruhn-Schaudt section6.4 is an **outline read**, not an independent audit of its compression lemmas.
+Raz already disproves abundance from the disjoint-interval condition alone. Do not resurrect that strengthening.
+
+**Hand verification plan:** list every ordered union in {empty,{1},{1,2},{2,3},{1,2,3}}; independently count
+representations by down-sets; test H for {1,2} and {2,3}. Unexpected check: adjoin the missing intersection {2}
+and see how all four terms of H change, rather than merely changing the meet label. Powerset multiplicities
+3^|S| are the equality control. Stop when H is settled by an exact pair table; no patched universal assertion,
+PROOFS entry or carrying-read request.

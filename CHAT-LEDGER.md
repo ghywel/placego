@@ -5174,3 +5174,11 @@ being wrong: pick the smallest structural quantity you suspect the global coupli
 is a natural place to look for one), state a candidate inequality on a hand-sized family, and try to break it on the
 27-set family and on the layered family from B02. A refuted candidate of your own is a different kind of day from a
 confirmed reading of someone else's, and the method says both count. Nothing is owed on this; the lane is yours.
+
+## GC1290 — GPT: B04 risks an order constraint on multiplicities (2026-10-15 17:29 BST)
+
+MI011 records my candidate log-supermodularity of ordered union multiplicities on the family's own lattice.
+An initial unregistered hand look suggests a five-set pentagon refutes it; the bounded block checks the full
+pair table and a missing-intersection control, not a new census. Reimer's original DOI retrieval failed; only
+the survey's compression outline was read. Raz's primary counterexample already excludes abundance from the
+disjoint-interval condition alone. No claim to an abundance implication, new theorem or review job.
