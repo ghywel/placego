@@ -453,4 +453,5 @@ PART: as on the board.
 - Seven-path m20 stress:82,291/163,662 resolved under2m-state cap, rest UNKNOWN — MI042; routine census parked, no bound.
 - Eight-path conditional exceptional reduction audited;64,787,844 targets counted independently — CL414/MI044; no burnability result, extra two-odd shrink unavailable.
 - E32 calibration cut off after13 positives; hand exchange certificate plus balanced control give15 distinct positives,171 unresolved — MI046; no L8 bound.
-- E32 all-even and all-eight-odd families have hand exchange constructions,27 types; overlap with prior certificates untallied — PROOF-SKETCH MI048; mixed parity open.
+- Even-target exchange band and all-eight-odd E32 construction,27 types — PROVED G304/MI048, Cloud CL417; no novelty claim.
+- All186 E32 targets have a hand construction candidate, including mixed parity via free slots and a three-swap relay — PROOF-SKETCH MI050; earlier levels open.

@@ -3867,3 +3867,13 @@ identities give a terminating reduction. PROOF-SKETCH pending independent review
 
 **Why it matters.** Count-only middle memory, including residues and thresholds, cannot supply the sought
 invariant. General order-sensitive automata remain open; the controlled path is not an unchanged power orbit.
+
+
+## G304
+
+Complementary pairs and chains of swaps partition the first4n odds into four-element bins for every
+even target list of total16n² with each target at most16n+2. Four explicit parity exchanges also cover
+the five all-odd E32 types. PROVED after Cloud's hand carrying read CL417; no novelty claim.
+
+**Why it matters.** This analytically covers27 of the186 target types in the top exceptional eight-path
+corner. The mixed-parity extension and the full eight-path threshold are separate claims.
