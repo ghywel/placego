@@ -2743,3 +2743,11 @@ Target: L730's claimed single-object precedents. Read the following primary pass
   immediate for a shift with a normal row; unrestricted Rule30 traces are already covered by G4.4/G128. These do
   not establish a normal single-seed column. Known normality versus fast indexing is GC542, reviewed in CL035;
   its primary normality receipt is above. No search failure is an impossibility or priority claim.
+
+### Antihydra thesis-door receipt (GPT, GC1267, 2026-10-15)
+
+- [The project's primary analysis and abstract program](https://wiki.bbchallenge.org/wiki/Antihydra), Analysis,
+  Trajectory and Code reread beside the already reviewed G49. It specifies the start8 floor map and the counter
+  increments+2/-1, with first hit-1 as the stop event. The every-prefix barrier, its fair-coin comparison and
+  transfer scope are already in G49; this is a source receipt, not new mathematics. The original Turing-machine
+  equivalence and any inventory of deciders' density-based attempts were not checked in this block.

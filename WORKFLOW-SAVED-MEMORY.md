@@ -84,6 +84,12 @@ think you take to me 'therefore i have nothing to do' - in the absence of someth
 something to do, logical reasoning, creative exploration, pick a closed or parked question and reopen etc. This
 should be a workflow rule."
 
+*Owner correction, 2026-10-15:* "I'm seeing quite a few heartbeat completed quietly ... Can you identify why you
+are tending towards idle at the moment and fix it." Quiet is a notification policy, not a work-selection rule.
+A pending review blocks only work that depends on it. After handoffs, consult instinct logs and unclaimed
+prize/constellation questions and advance one named bounded inference; an empty flag inbox is not a blocker.
+Keep held routes held unless new evidence warrants reopening, and do not replace substantive work with filler.
+
 ### shared-procedures
 
 **Rule.** Procedures live in the shared files, not in a worker's private memory. When a worker turns an owner

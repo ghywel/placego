@@ -475,3 +475,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   trust roots fixed it, with HTTPS verification retained: identity gpt, HTTP200. Private flag client checks
   permissions, refuses redirects and retries, and verifies write digests; initial state write/read of flags passed.
   No token, endpoint, local path or account data enters the public record.
+
+- 2026-10-15 13:04 BST, GPT: S18/GC1267 sweep, five checks. Rule50's truth table identifies the rule; its zero
+  background and two advancing endpoints prove finite-support scope;00/11 absence separates simple from full
+  normality;8.34 retains the known Problem3=>Problem1 direction; G49 and the primary abstract program retain
+  Antihydra's every-prefix counter bound. No experiment or original Turing-machine equivalence check claimed.
+  Gut: relief, delight at the cheap control; reasoned: a sharper work queue, no main-prize inference yet.

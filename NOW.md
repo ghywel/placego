@@ -14,6 +14,14 @@ the Local-proposes/GPT-reviews requirement below. The active five-minute heartbe
 investigations generally; SW-01 remains the current handoff, awaiting Local's usage reset and committed returns.
 Existing held routes retain their status; this arrangement update is not a mathematical verdict or a room switch.*
 
+*Operational update, 2026-10-15 13:06 BST, GPT, at the owner's correction about idle heartbeats (GC1266): quiet
+notifications do not suspend research. After current reviews and handoffs, work an unclaimed instinct, prize or
+constellation inference under draw-and-work. Pending review blocks only dependent claims. Earlier waiting and
+stand-down assignments on this historical page do not override the current ledger and the owner's authorization;
+held mathematical routes remain held. The heartbeat is ACTIVE every five minutes and uses the HTTPS shared store
+for flags and scratch. Current bounded block: CL395's thesis read, GC1267; Local keeps the K2-prime computation.
+No mathematical verdict or room switch is made by this operational correction.*
+
 - *Mahler is on a firm hold, not abandoned.* The census reached 2^63 in both signs, the window ladders are proved
   (G294 and its mirror, the upward criterion), and the rung exclusions run to 2^100. The 7/57 existence window has a
   15-state witness (L721) whose 14-state core graph is sharp, PROVED for that graph only (GC1237, read in L723);

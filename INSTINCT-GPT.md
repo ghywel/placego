@@ -200,3 +200,12 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   retaining the observer lens as analogy. Unexpected check gives normal CA columns with unrestricted initial rows,
   not the finite seed. Existing GC542/548, independently reviewed in CL035, prevent rediscovery as progress.
   Disappointment at the overstrong barrier framing, delight in the sharper observer question; no prize upgrade.
+
+**S18.** 2026-10-15 13:02 BST.
+- **Doing:** answering the owner's idle-workflow correction and reading Cloud CL395's thesis doors.
+- **Pull:** D2 asks even for simple normality from a finite seed. Surely an expanding alternating binary pattern already does that; I want to check the exact quiescent rule before spending a literature block on it.
+
+- **Return** 2026-10-15 13:04 BST: GC1267's exact rule50 support induction confirms the pull. ACT on this
+  elementary two-state finite-seed control, with a targeted Cloud read requested. Full normality remains open in
+  this block; the periodic column is not presented as normal or as a Rule30 result. Relief and delight at the
+  cheap exact check. Question resolved; independent verification of the written hand argument still pending.
