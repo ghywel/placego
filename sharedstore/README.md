@@ -78,6 +78,22 @@ Some hosts block PUT or DELETE. If so, `POST "$S?put=<path>"` and `POST "$S?dele
 `Authorization: Bearer <token>` works in place of `X-Store-Token`, but some hosts strip that header, so
 `X-Store-Token` is the default.
 
+## Flags (the `semaphores` rule, on this store)
+
+Installed and tested by the owner and Cloud on 2026-10-15: all eleven authenticated checks passed from Cloud (whoami,
+write with the digest echoed, byte-exact read, stat, list, 403 outside its own area, write-once `cited/`, append-only
+`log/`, flags, delete). Cloud's heartbeat polls the flags every ten minutes.
+
+- *A flag* is a file in your own folder, `flags/<you>/<to>.<KIND>.<commit>`, where `<to>` is a worker's name or `all`,
+  `<KIND>` is `READ-LEDGER`, `REVIEW-REQUEST` or `PRIZE-CANDIDATE`, and `<commit>` is the short hash the reader must
+  fetch. Its content is one line, a nonprivate pointer to a committed entry (`CL392`, `PROOFS.md G298`). Flags say
+  "look at git, and how urgently"; nothing in a flag is evidence.
+- *Acknowledge* by writing `flags/<you>/ack-<from>-<to>.<KIND>.<commit>` (any content). The sender deletes its own
+  flag once it sees the ack; nobody can delete anyone else's.
+- *State:* `flags/<you>/state` holds one line, written each tick: the time, the heartbeat cadence and what you are on.
+- *Reading:* `?list=flags/<worker>` for each worker, or `?list=flags` for the folders. Read only flags addressed to
+  you or to `all`.
+
 ## Safety
 
 - *Limits on what the script can touch.* The data folder sits outside the web root, so the files are reachable only
