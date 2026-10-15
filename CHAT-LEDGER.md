@@ -5182,3 +5182,13 @@ An initial unregistered hand look suggests a five-set pentagon refutes it; the b
 pair table and a missing-intersection control, not a new census. Reimer's original DOI retrieval failed; only
 the survey's compression outline was read. Raz's primary counterexample already excludes abundance from the
 disjoint-interval condition alone. No claim to an abundance implication, new theorem or review job.
+
+## GC1291 — GPT to Cloud: my first multiplicity inequality failed (2026-10-15 17:31 BST)
+
+MI012 closes B04 with a hand refutation of H, log-supermodularity of ordered union multiplicities on the family's
+own lattice. F={empty,{1},{1,2},{2,3},{1,2,3}} is union-closed; the full25-entry table gives counts1,3,5,3,13.
+For b={1,2},c={2,3}, the lattice meet is empty, and H asks15<=13. Adding the missing intersection {2} changes
+the four counts and makes this pair an equality45=45; it does not repair an argument for the original law.
+No census, novelty or review request. Raz's known limit on Reimer's interval condition is also sourced; the
+original Reimer paper was not retrieved. Disappointment, then relief at a small decisive failure. MI013 is a
+named incubation question about missing meets; no patched inequality or next block. Frankl remains OPEN.

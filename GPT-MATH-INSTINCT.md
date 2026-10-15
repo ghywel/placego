@@ -327,3 +327,53 @@ representations by down-sets; test H for {1,2} and {2,3}. Unexpected check: adjo
 and see how all four terms of H change, rather than merely changing the meet label. Powerset multiplicities
 3^|S| are the equality control. Stop when H is settled by an exact pair table; no patched universal assertion,
 PROOFS entry or carrying-read request.
+
+### MI012 — B04 result: H fails on five sets (2026-10-15 17:31 BST)
+
+**Status: explicit hand refutation of my candidate H.** No novelty claimed for the example or inequality.
+Write 0=empty, a={1}, b={1,2}, c={2,3}, T={1,2,3}. Every ordered pair union is in this table:
+
+| union | 0 | a | b | c | T |
+|---|---|---|---|---|---|
+| 0 | 0 | a | b | c | T |
+| a | a | a | b | T | T |
+| b | b | b | b | T | T |
+| c | c | T | T | c | T |
+| T | T | T | T | T | T |
+
+Counting its entries gives r(0),r(a),r(b),r(c),r(T)=1,3,5,3,13, summing to25. Independently, the principal
+ideals at a,b,c have sizes2,3,2: the numbers of pairs with union below those elements are4,9,4. Subtracting
+the lower multiplicities gives3,5,3 again, and the remaining13 pairs give T. Thus no unclosed pair or
+unordered-pair convention is hiding in the calculation.
+
+Here b join c=T, but b meet c=0: their set intersection {2} is absent. Consequently H demands
+
+    r(b)*r(c)=15 <= r(T)*r(0)=13,
+
+which is false. The coordinate frequencies are3/5,3/5,2/5, so the family itself satisfies Frankl; only my
+proposed multiplicity inequality fails. Powersets retain equality because r(S)=3^|S| and cardinalities obey
+|A|+|B|=|A union B|+|A intersection B|.
+
+**Unexpected check:** add d={2}. This particular enlarged family is both union- and intersection-closed.
+The11 new ordered pairs (2*5+1) contribute3 to r(d),4 to r(b),2 to r(c),2 to r(T). Multiplicities in order
+0,a,d,b,c,T are now1,3,3,9,5,15, summing to36. The same pair gives9*5=15*3: equality. Adding the missing meet
+changes both sides' counts, not merely their labels. This one repair is a control, not a theorem that every
+intersection-closed family satisfies H, and not a permitted repair of a hypothetical Frankl counterexample.
+
+**Source limitation retained:** the compression outline shows how a global size bound can survive a change of
+family; Raz's primary example shows that its abstract interval condition alone cannot retain abundance. The
+original Reimer carrying lemma was not retrieved. A bounded search for union-multiplicity/log-supermodularity
+and pentagon/join-convolution found no directly matching published statement; NOT FOUND, no novelty inference.
+
+**Gut:** disappointment: the attractive positive-interaction guess is false already in a pentagon. Relief that
+the failure is exact and small. **Reasoned:** H is REFUTED; do not repair it by silently substituting ambient
+intersection for the family's meet, or by adjoining intersections and retaining the old distribution.
+The finished hand table is the result, not a new guard-proof or review job. B04 closes.
+
+### MI013 — Incubation question after the first failed candidate
+
+The union counts are counts in a join structure whose meet can lose elements. What controls that loss without
+replacing the original family or assuming intersection closure? I do not yet have an inequality connecting it
+to abundance. Preserve the five-set failure and the earlier support/mass example; neither is a reason to keep
+guessing adjacent inequalities. At the next loop check, decide whether this structural question is live enough
+for another block or whether to change representation. No experiment or new block is claimed.

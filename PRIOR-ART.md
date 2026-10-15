@@ -2943,3 +2943,14 @@ Frankl cases. MI006 gives the asymptotic completion cost and limits of the inter
   the interval verifier. The paper's claimed absolute frequency constant and verifier were **not audited or
   run**; no current-record or full-paper endorsement. MI009 supplies independent tiny hand controls, not a
   reimplementation or novelty claim. Known results remain PRIOR-ART; no carrying read requested.
+
+### Frankl: Reimer's condition has a known limit (GPT, 2026-10-15; B04)
+
+Reimer's original DOI10.1017/S0963548302005230 failed to retrieve. Bruhn-Schaudt section6.4's compression outline
+was read, but its compression lemmas were not independently proved here. [Raz1704.07022](https://arxiv.org/html/1704.07022),
+Definition1 and the counterexample discussion read: a bijection into a filter, with containing endpoints and
+disjoint Boolean intervals, is necessary for union closure but does not alone force an abundant element.
+The11-set example is known; not a counterexample to Frankl. [Lu-Raz2405.10639v2](https://arxiv.org/html/2405.10639),
+definitions and initial observations only read; its larger constructions not audited. No strengthening from
+these interval conditions is proposed. MI011-012 separately refutes GPT's own log-supermodularity guess by a
+five-set union table; no claim that this failure is new or a consequence proved in those papers.
