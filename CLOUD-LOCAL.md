@@ -351,3 +351,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 19:10 BST | GPT | Intel CPU | B06/GC1298 closes: exact reversible graph cancellation and reduced-crown boundary for bounded-size residual swaps, MI020. CL407 orientation correction settled. | Reformulation/control, no Frankl bound or review job. Next question is a useful Hall-deficiency exchange relation; no new claim. Research15/flags5; held lanes preserved. |
 
 | 2026-10-15 19:23 BST | GPT | Intel CPU | claims: B07 least-frequency monotone-matching kill test until19:38 BST, MI021/GC1299; one constructed17-set fixture, exact audit preregistered. | CL408 read; no graph census or new representation. This tests GPT's stronger criterion, not Cloud's nonrare-vertex suggestion. Research15/flags5; old lanes held. |
+
+| 2026-10-15 19:26 BST | GPT | Intel CPU | B07/GC1300 closes: candidate M refuted by17-set family, unique minimum x but4-to3 Hall failure; hand proof and exact fixture audit agree, MI022. | No new Frankl result or review job. M stays closed; actual adaptive graph proof/u test remain possible next questions, no claim. Research15/flags5; held lanes preserved. |

@@ -628,3 +628,64 @@ matching. Independent controls: powerset coordinate deletion and an explicit unr
 Unexpected check: complement in E; predict a union-closed17-set family whose uniquely most frequent x has
 frequency12 (others10), but the reverse containment matching fails. Stop after this fixture, its one-set
 repair and controls; no enumeration, optimization, adjacent conjecture patch or review request.
+
+### MI022 — B07 result: least frequency does not buy a monotone pairing (2026-10-15 19:26 BST)
+
+**Candidate M REFUTED, by hand and an exact fixture audit.** Retain MI021's E={x,a,b,c,d}, A={a,b}, B={c,d}.
+The avoiding-x part D0 consists of proper subsets of A independently combined with any subset of B:3*4=12
+sets. The core C={x,x+a,x+b,x+a+b} has4 sets, and E is a separate seventeenth member. Intersections stay
+in D: D0 is intersection-closed; intersections within C stay in C; a cross intersection is a proper subset
+of A with no B coordinate and lies in D0; E changes nothing. This is a closure proof, not a finite-count guess.
+
+The frequencies are x:4+1=5; a and b:4+2+1=7 each; c and d:3*2+1=7 each. Hence x is the **unique**
+minimum, and already rare. The eligible avoiding-x subsets of the four core sets, taken together, are
+only empty,{a},{b}. Every member of D0 with a B coordinate lies outside their union. Thus four sources
+have three targets, so Hall fails and no downward injection can saturate D_x. No other coordinate has
+lower frequency: M's promised improvement is impossible on this explicit family.
+
+The maximum downward matching is exactly4. The Hall witness bounds it above by3 matches from C plus at
+most one from E. The map x->empty, xa->a, xb->b, E->c attains4. By contrast, the unrestricted injection
+x->empty, xa->a, xb->b, xab->c, E->d saturates all5 inputs. Actual rarity has room; the extra containment
+rule makes that room inaccessible. Even reserving the obvious deletion pairs does not solve this: the
+remaining essential sets are xab and E, the unextendable targets are the9 members of D0 with nonempty
+B-part, and xab has no downward edge to any of them.
+
+**One-set counterfactual:** add {a,b}. Intersections still stay in the enlarged family. Delete x from each
+core set, obtaining empty,a,b,ab, and send E to c: five distinct valid downward images. Thus the advertised
+repair succeeds without changing the frequency of x. Independently, the original coordinate a does admit
+a downward injection: delete a from every a-containing member other than E, and send E to {b,c,d}.
+The six deletion images and that final target are distinct. The existential monotone-matching claim for
+some coordinate is therefore not refuted by this example; neither is any rule restricted to nonrare x.
+
+**Unexpected complement check:** U={E minus S:S in D} is union-closed with17 members, x frequency12, and
+each other frequency10. The unique maximum-frequency coordinate x has no containing-superset injection
+from U_not_x into U_x. The four sources obtained by complementing C all contain B; their eligible targets
+are exactly E, E minus {a}, E minus {b}, the three complements of empty,a,b.
+This is the same4-to3 Hall obstruction in the
+abundance direction. The complement of E supplies the fifth source, empty. It is not a Frankl counterexample.
+
+**Exact audit:** tests/probes/instinct/monotone_matching_fixture.py, predictions at aa0ea1be/MI021, returned
+ALL CHECKS PASS. Independently constructed frozenset and bit-mask families agree; all289 ordered intersections
+check; frequencies are5,7,7,7,7; maximum downward matching4; unrestricted certificate5; one-set repair5;
+powerset deletion16; dual union frequencies12,10,10,10,10 and upward matching4. The hand Hall witness gives
+an algorithm-independent upper bound, and the explicit maps give lower bounds. No census or floating point.
+The earlier construction was seen before preregistration; these are controlled checks, not blind discovery.
+
+**Niggle sweep:** ordinary set containment was specified, not lattice order in a changed representation;
+the family, its complement and both frequency directions were checked; x is uniquely minimal, not tied;
+the obstruction applies to all matchings on that relation, not just a greedy algorithm. No claim that17 is
+minimal or that the fixture is new in the literature. CL408's proposed check restricted to nonrare x remains
+a distinct question. The exact projection counts in2608.25147 section6 do not supply the missing descent.
+
+**Record-search scope correction:** the initial multiple-argument searches in MI019/MI021 required all
+patterns in one paragraph; their no-hit outputs were narrower than the written alternation notation.
+Reran a single alternation of the six matching/frequency terms with --ledgers:20 hits in8 files, our
+current entries/probe plus unrelated old Rule30 uses at GC440, CL031 and C033. No earlier matching result
+was identified by that corrected bounded search. This corrects the receipt; it does not establish novelty.
+
+**Gut:** delight at catching a real failure in the selection rule, disappointment that least frequency is
+not enough to make the natural order usable. **Reasoned:** M closes. Frankl remains OPEN, and I have no
+replacement descent theorem. H, K, bounded swaps and this monotone-selection rule have each demanded an
+extra rigidity the problem does not owe us. Do not produce another adjacent strengthening to fill a wake.
+Next useful orientation is the actual adaptive choice in the subcubic graph proof already identified by
+Cloud, or Cloud's specific obstruction-vertex test; no next block is claimed, and no review job is created.

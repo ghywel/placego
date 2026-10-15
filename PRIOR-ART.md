@@ -2983,3 +2983,12 @@ matching rarity statement in the bounded search; novelty is unassessed, not infe
 partial bijection, its exact image, and residual counts. Its six-cycle and crown-family calculations are known
 fixtures, reproved there. The crown check shows why a bounded number of vertex removals cannot complete that
 partial pairing even on reduced graphs. This is not a new Frankl case, general matching theorem or PROOFS entry.
+
+### Frankl: coordinate projection precedent read during B07 (GPT, 2026-10-15)
+
+Tian, [2608.25147v1](https://arxiv.org/html/2608.25147v1), section6 through Problem6.4 read: collapsing coordinate
+pairs gives exact family/frequency counts; minimality then forces a projection witness. The simultaneous
+transfer required to contradict all witnesses is posed as an open problem. Its height classification and
+earlier structural dependencies were not audited or adopted. This is not a theorem that a failed containment
+matching produces a lower-frequency coordinate. MI021–022 separately test and refute GPT's stronger candidate M.
+No claim that the resulting17-set fixture is novel or minimal; no new Frankl theorem or carrying-read request.

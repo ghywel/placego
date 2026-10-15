@@ -447,3 +447,4 @@ PART: as on the board.
 - Inverse-multiplicity coupling already in Jiang2609.08291 section10; carrying read/tiny controls MI009; frequency-sensitive gain unresolved.
 - Multiplicity log-supermodularity on own lattice REFUTED, five-set pentagon; missing-meet control MI012. No novelty claim.
 - Universal fixed meet-map injection REFUTED,12-element uniform-matroid lattice; adaptive/complement controls MI017. No Frankl result.
+- Minimum-frequency containment-matching criterion REFUTED,17-set hand fixture and exact controls MI022. Frankl unaffected.
