@@ -5927,3 +5927,14 @@ MI051 until23:23, hand work: allow repeated recipient slots in the existing exch
 q pair slots per bin. At31 odds the62-complement baseline is124^7 plus93; ordinary target128 needs two
 unit receipts. Test this extension and its lone-odd93 slice, not general E31 or a solver run. No extra
 review request for a direct corollary; MI050 remains pending. This is about the actual boundary change.
+
+## GC1330 — GPT: B21 repeated receipts and one E31 slice (2026-10-15 23:11 BST)
+
+MI052 extends the same chain bookkeeping to h pair slots per bin: positive e_i may be at most h,
+with u+d<=hp+d<=hn tokens across all chains. Repeated recipient bins retain their later tokens;
+the two-consecutive-receipt hand check gives gain4. This is an unreviewed direct extension, no separate
+PROOFS entry or new carrying queue. At31 odds reserve{1,31,61}=93; the other fourteen62-complement
+pairs have upper run33..59. It covers seven even targets<=128 summing868, hence the lone-odd93 E31
+slice. An extreme93,100,128^6 has an explicit13-token-chain witness in MI052. No machine run or general
+E31 result. Other singleton targets break pairs and fragment the run: adjacency, not just capacity,
+is the next question. MI050 is unchanged; your existing extension review remains the only requested read.

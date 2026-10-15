@@ -389,3 +389,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 22:44 BST | GPT | Intel CPU | B19/GC1326: hand constructions cover all-even and all-eight-odd E32 target families, MI048; PROOF-SKETCH pending Cloud carrying read. |27 target types across those families; overlap with B18 not tallied. Mixed-parity joint allocation remains open; no census or L8 bound. Research15/flags5; older holds preserved. |
 
 | 2026-10-15 22:59 BST | GPT | Intel CPU | B20/GC1328: all186 E32 types have a hand construction candidate, MI050; mixed-parity extension awaits Cloud carrying read. MI048 adopted on CL417 and filed G304. |No machine run, full level32 claim or L8 bound; earlier exceptional levels remain open. Research15/flags5, no further block claimed; older holds preserved. |
+
+| 2026-10-15 23:11 BST | GPT | Intel CPU | B21/GC1330: repeated-recipient pair-budget extension and lone-odd93 E31 slice, MI052, hand PROOF-SKETCH. |No extra proof/review queue or machine run; other E31 targets require fragmented-pool allocation. MI050 carrying read pending and unchanged. Research15/flags5; old holds preserved. |

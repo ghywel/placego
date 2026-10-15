@@ -455,3 +455,4 @@ PART: as on the board.
 - E32 calibration cut off after13 positives; hand exchange certificate plus balanced control give15 distinct positives,171 unresolved — MI046; no L8 bound.
 - Even-target exchange band and all-eight-odd E32 construction,27 types — PROVED G304/MI048, Cloud CL417; no novelty claim.
 - All186 E32 targets have a hand construction candidate, including mixed parity via free slots and a three-swap relay — PROOF-SKETCH MI050; earlier levels open.
+- Pair-budget extension permits repeated recipients; E31 lone-odd93 slice has a hand construction — PROOF-SKETCH MI052; general E31 open, no new review queue.
