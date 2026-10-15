@@ -8027,3 +8027,53 @@ so the predictions above were not informed by any result). The owner: "i forgot 
 can you cancel and write the job for local to run". The job is **JOB SW-01**, `.claude/workflows/steer-out.js`, with
 its RUN-ON, COMMAND, COST, STOP and OUTCOME in the header, for Local on the M5. The results go here when Local has
 run it.
+
+**Results, interim (Local, 2026-10-15 11:02 BST).** Run on the M5 from 2026-10-14 22:59 BST (run wf_c440d9b0-57c).
+- *The run.* All eight readers returned on Fable 5.1. At the Fable usage cap five proposers failed, and the run was
+  resumed from its journal on Opus 5.5 (23:34). The proposers, skeptics and so on ran on Opus 5.5. At the weekly limit
+  (before 00:48) proposal 9's two skeptics, both judges and the critic failed. A second resume re-ran every skeptic live,
+  because a resume replays only the unchanged prefix of agent calls, and lost them to the limit again. The second
+  run's verdicts had been saved outside git first. The five missing agents are being finished from those saved results.
+- *Counts, 9 of 10 judged.* Survive 0. Wounded 2 (proposals 5 and 7, refuted on the mathematics only). Dead 7.
+  Unjudged 1 (proposal 9).
+- *The proposals* (record skeptic; mathematics skeptic):
+  1. *Two-place stammering certificates for Mahler's T-code* (Adamczewski-Bugeaud in base 3/2). Dead. Record: its
+     Lemma L(a) and step 1 are GC666 restated. Mathematics: its crossing conjecture fails on a set of full measure
+     (every u in [0, 1/2) has an infinite admissible orbit).
+  2. *Mahler as a one-sided discounted discrepancy* (the Erdős-discrepancy shape). Dead. Record: the transfer step is
+     missing by its own account, and multipliers are known not to transfer. Mathematics: its two conditions split
+     Mahler into two open cases on one property; an error in its D.
+  3. *The Motzkin kernel root* (Rule 150's kernel over F_2(T); Christol). Dead. Record: 8.100's variation-of-constants
+     identity as generating functions; 8.101 already says Christol characterises without forbidding. Mathematics: the
+     algebra checks out, but the target is the prize plus one more exclusion, strictly harder.
+  4. *Host tradeoff for the base-3 windows of 2^n* (x2x3 rigidity). Dead. Record: measure rigidity is "a reference,
+     not a room". Mathematics: claims A and B hold but form a no-go result; no route to a prize.
+  5. *A finite-automaton inductive invariant for the orbit 2^n in base 3* (Erdős; BB(5)'s method). Wounded. Record:
+     not refuted, no closed route covers it (Q3's closure is Rule 30's and conditional). Mathematics: refuted on the
+     test. Run as specified (1.6 s), it gives cert = 0 and nonrigid = 0 at three states, which the conjecture and its
+     negation both predict.
+  6. *Hereditary inflation for Collatz* (Krasikov-Lagarias; Vinogradov's precedent). Dead. Record: the prize step is
+     the open counting form under another threshold. Mathematics: the inflation lemma holds, but the mechanism misreads
+     why the record closed exponential sums.
+  7. *Erdős as a safety property* (a regular language closed under x4, holding 1024 and missing the {0,1}-digit set).
+     Wounded. Record: not refuted, for the same reason as 5. Mathematics: its Conjecture A is strictly stronger than
+     Erdős and is itself the single-object rigidity; the proposer put it at 2 to 5 percent.
+  8. *Multiplier exclusions are filters, not levers.* Dead. Record: the S10 wall already says so (8.109 to 8.112).
+     Mathematics: B1, B2 and B3b are true and routine; B3c overclaims.
+  9. *Darkness is paid for* (the owner's physics lens: a time-average form of LR, Bousch's single-orbit theorem).
+     Unjudged; its skeptics are being finished.
+  10. *Not sets against one object but "is there a front"* (the contrarian: Proposition 19's Rule 210 front for Rule
+      30). Dead. Record: the transfer to 30 is PROVED invalid, and GC549 already named the blockers. Mathematics: run
+      exhaustively, CF holds for Rule 30 with N30 = 4, all the trivial marker M = P OR Q.
+- *Status flags.* The readers raised 134. Eight verifier agents checked each against its source: 28 CONFIRMED, 68
+  PARTIAL, 38 not errors. 85 corrections were made in place: 15 RECORD-MAP lines (81813e5, with the map's size cap
+  ditched at the owner's word) and 70 dated "Local, SW-01" notes in ten files (19359a0). Two items were left for a
+  separate block: filing about 16 second-read GPT proofs (GC1172 .. GC1197) in PROOFS.md, and teaching
+  proofs/build.py section M (the site counter misses its four entries).
+- *Predictions, interim.* P1 HELD (9 of 9 judged are refuted by at least one skeptic). P2 REFUTED so far (no survivor
+  among nine). P3: no survivor; the two wounded are both automaton certificates, the inductive-invariant half of P3's
+  pair. P4 HELD (96 real flags). U REFUTED: precedents new to the record arrived (Vinogradov and Helfgott, Duke
+  1988, Deutsch and Sagan, Bousch 2000; no record hit for any of them), and Adamczewski-Bugeaud and the Erdős
+  discrepancy theorem came as mechanisms, where the record only named them. All are named from memory, not re-read.
+- *Single-party.* A swarm of the same worker is a self-check. Nothing survived to be second-read; the wounded pair's
+  mathematics refutations and the precedent list are for GPT.
