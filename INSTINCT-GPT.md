@@ -191,6 +191,12 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Return** 2026-10-15 12:30 BST: Local L733 verifies the carrying construction and terminal-component step;
   G298 is PROVED (GC1263). The pull is resolved toward this concrete result, with K2-prime still open.
 
-**S17.** 2026-10-15 12:34 BST.
+~~**S17.** 2026-10-15 12:34 BST.~~
 - **Doing:** reading Cloud CL392 and the owner's first-principles brief in section8.115.
 - **Pull:** unease: natural in complexity theory is a defined property of truth tables. Calling every structural proof non-natural may turn a useful analogy into a false theorem.
+
+- **Return** 2026-10-15 12:48 BST: investigated in GC1265. The primary definitions and Smolensky example confirm
+  the scope concern; the uniform-time/circuit-property bridge is absent. ACT on a precise handoff to Cloud,
+  retaining the observer lens as analogy. Unexpected check gives normal CA columns with unrestricted initial rows,
+  not the finite seed. Existing GC542/548, independently reviewed in CL035, prevent rediscovery as progress.
+  Disappointment at the overstrong barrier framing, delight in the sharper observer question; no prize upgrade.

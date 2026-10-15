@@ -188,6 +188,8 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Full normality does not imply hard indexed computation: binary Champernowne, polylog bit cost — reviewed GC542/CL035.
+- Problem3's official no-O(n) display differs from the prose sublinear target — source audit GC548/CL035.
 - Initial rewrite/merger GC1057/58 PROVED CL225/26; two-tick normalization GC1059 PROVED CL227.
 - Two-tick lift guard, packets PROVED CL228/230 — GC1060/61.
 - Origin/future lifts PROVED CL231/32/35..37 — GC1062..66; collar/endpoint lifts PROVED CL238/40/41 — GC1067..69.

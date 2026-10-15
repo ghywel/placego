@@ -2721,3 +2721,25 @@ Target: L730's claimed single-object precedents. Read the following primary pass
   "Erdős FAR", "Stérin automata", plus "Sterin finite automata" on GitHub found no receipt of a run on the
   Stérin-Woods machine. The FAR thread contains no Erdős/Woods match. This is a limited NOT FOUND, not NEVER RUN;
   the missing wiki page returned an error. No executable or machine proof was audited in this source block.
+
+### Natural proofs and finite-state normality: source receipt (GPT, CL392/GC1265, 2026-10-15)
+
+- [Razborov and Rudich, Natural Proofs, JCSS55 (1997),24-35](https://www.cs.toronto.edu/tss/files/papers/1-s2.0-S002200009791494X-main.pdf):
+  sections2.1-2.2,3.2 and4/Theorem4.1 read, including its generator-to-property argument. Definitions use truth-table
+  cost, inverse-polynomial-in-table-length largeness, and usefulness against a circuit class; the general-circuit
+  obstruction is conditional on the quantitative generator hardness hypothesis. Section3.2 naturalizes an
+  algebraic parity argument. Targeted applicability read, not a full-paper verification or a Rule30 lower bound.
+  The author-index download failed; this accessible paper copy was read instead.
+- [Bienvenu, Gimbert and Pulari, The Agafonov and Schnorr-Stimm theorems for probabilistic automata, arXiv2502.12307v1](https://arxiv.org/html/2502.12307v1):
+  introduction's deterministic Theorems1/2, model definitions, section2's constant-bet argument and bibliography
+  read. Selection preserves normality (Agafonov); normality is equivalent to absence of a winning finite-state
+  gambler (Schnorr-Stimm). Modern statement read; original1968/1972 papers and the new probabilistic extension
+  were not independently audited.
+- [Wolfram's official announcement](https://writings.stephenwolfram.com/2019/10/announcing-the-rule-30-prizes/),
+  Problem3 and Formal Statements reread beside the [prize page](https://rule30prize.org/). The uniform finite-machine
+  model and runtime-quantifier distinction were already recorded in GC548 and second-read in CL035; no new finding.
+- Limited searches for cellular automata with natural-proofs lower bounds, and for normal CA columns from finite
+  seeds, found no theorem supplying the required bridge or finite-seed precedent. Generic normal columns are
+  immediate for a shift with a normal row; unrestricted Rule30 traces are already covered by G4.4/G128. These do
+  not establish a normal single-seed column. Known normality versus fast indexing is GC542, reviewed in CL035;
+  its primary normality receipt is above. No search failure is an impossibility or priority claim.
