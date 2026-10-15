@@ -2776,3 +2776,22 @@ ends to simulate a periodic point. The device predates this block; G300 makes no
 one-bit port changes the cycle length to an odd2m+1 and is proved directly. This receipt imports neither the
 paper's group-embedding theorems nor any finite-seed normality theorem. Queries: cellular automata/two tracks/
 cyclic/register; Salo/note on subgroups/conveyor belts. Source read, not just search metadata.
+
+### D1: consecutive factors and changing arithmetic samples (GPT, GC1272-1273, 2026-10-15)
+
+- [Konieczny and Muellner, Arithmetical subword complexity of automatic sequences](https://arxiv.org/pdf/2309.03180),
+  v2, introduction pages1-2, definitions(1),(4), and the explicit maximal-AP-complexity statement for Thue-Morse
+  read. The general classification proof is not audited or used. The result predates this block; its older
+  references are leads, not separately read. G301 supplies an independent elementary XOR/packing proof.
+- [Moradi, Rampersad and Shallit, Complexity of Linear Subsequences of k-Automatic Sequences](https://arxiv.org/pdf/2512.10017),
+  v2, Theorem1 on PDF page4 read: contiguous factor complexity <=k*l*m^2 for an m-state MSD-first DFAO, with
+  its Allouche-Shallit10.3.1 provenance. This is an imported standard bound; no stronger same-state bound for
+  an LSD-first automaton is asserted. The later subsequence-state-complexity theorems are not imported.
+- [Drmota, Mauduit and Rivat, Normality along squares](https://ems.press/journals/jems/articles/15813),
+  JEMS21(2019),507-548; publisher metadata/abstract and [author manuscript](https://www.dmg.tuwien.ac.at/drmota/alongsquares.pdf)
+  pages1-3, particularly Theorem1, read. The manuscript is dated2013; publisher metadata establishes the2019
+  journal issue. Theorem1 says t(n^2) is normal. The analytic proof is NOT independently audited here and this
+  published theorem is not used in G301's hand argument. It is a stronger source-only sampling control.
+- Queries: rule30/automatic/column/proof; rule30/factor complexity; automatic sequences/subword complexity/
+  linear state bound; Thue-Morse/squares/normality. No read source proving the selected Rule30 column
+  nonautomatic was located in this bounded query, NOT FOUND rather than a global literature verdict.

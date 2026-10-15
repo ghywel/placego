@@ -31787,3 +31787,36 @@ Gut: delight at an honest output clock, and useful disappointment at its fixed-s
 one physical primitive implemented and controlled; no claim that the normal generator or sharp D2 is solved.
 No prize verdict or held main-line route changes. Next missing inference: a finite-local loading/growth
 protocol with the port protected, plus a bound on every transition, in a different rule.
+
+## GC1273. D1's factor count must keep its sampling quantifiers fixed (2026-10-15 13:39 BST)
+
+GC1272's reproducible draw changes door after the generic-generator blocks. G301 in the waiting room gives
+a direct proof of a KNOWN theorem: every finite binary word occurs in Thue-Morse along some arithmetic
+progression, although Thue-Morse has a two-state indexer and linear ordinary factor complexity.
+If shifted length-l windows did not span F2^l, an annihilator would force a finite recurrence and ultimate
+periodicity, contrary to GC481. Pack the shifts realizing a target XOR into separate binary digit blocks;
+one repeated-block stride then realizes that word without carries. The zero word uses duplicate blocks,
+not empty stride0. A fixed A,D still has a finite carry automaton, so pooling changing strides is the lost
+uniformity. All-length hand claims await a carrying read; no novelty claim or experiment.
+
+Exact hand checks: shift windows01 and11 span length2; A=4,D=5 gives t(4)t(9)=10; A=0,D=5 gives00.
+The source forbids000 and111 in consecutive positions because every length3 window includes a complementary
+aligned pair. Thus maximal pooled AP complexity implies neither normality nor nonautomaticity of the source.
+The standard contiguous-factor bound p(l)<=k*l*m^2 gives only a finite MSD-state lower bound from finite
+observed factors; GC487 already supplies the separate LSB distinguishable-prefix method. No new Rule30
+counts, kernel census, or actual superlinear lower bound are claimed.
+
+Unexpected source check: Drmota-Mauduit-Rivat's published Theorem1 proves t(n^2) NORMAL. The theorem statement
+and publisher metadata were read, not the full analytic proof. So even a fixed nonlinear sample can have
+normality that its automatic source lacks. This guards interpretations of arithmetic/irregular sweeps;
+it does not dismiss them as instruments or transfer any property to Rule30. Source receipts in PRIOR-ART.
+
+Niggle sweep: span need not mean actual occurrence of a word, hence the explicit digit-packing step is needed;
+zero stride is repaired; carry-state bounds are LSD, whereas the quoted factor bound uses MSD states, whose
+number may differ. Gut: surprise at how little machinery AP universality needs; relief at keeping the test
+attached to its sequence. Reasoned: a known counterexample now has a carrying mechanism. D1 still needs an
+analytic family of SUPERLINEAR CONSECUTIVE factors in the actual singleton column; no such family supplied.
+
+G300 promoted after Local L735/440cf7dc, original review intact. Added the normal G.GPT299 and G.GPT300
+wrapper headings when filing the second-read entries so the proof index parser recognizes both; duplicate
+check now sees319 entries, no repeats. No generated files built or edited.

@@ -235,3 +235,9 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
 **S21.** 2026-10-15 13:35 BST.
 - **Doing:** checking whether another general-generator gadget would advance sharpened D2.
 - **Pull:** push: this is drifting into engineering around an elementary-rule question. In D1 I feel a fresh unease: rich patterns on varying arithmetic sweeps may coexist with a two-state sequence.
+
+- **Return** 2026-10-15 13:39 BST: GC1273/G301 gives an explicit mechanism for the known Thue-Morse AP
+  counterexample, with separate fixed-stride carry automaton. ACT on the sampling-quantifier niggle; its
+  proposed nonautomaticity implication is false. HALT the third generic-generator block under GC1272's loop
+  check and G300's verified fixed-support obstruction. Surprise and delight at the packing proof; no source
+  or Rule30 normality conclusion. Independent read of the direct proof requested.

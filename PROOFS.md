@@ -12564,6 +12564,8 @@ Status: PROVED (a proof with a second reader), as a necessary condition only, as
 registered SAT runs.
 
 
+### G.GPT299. Physical-clock contract for normal periodic playback (second-read by Cloud, CL397)
+
 ### GPT G299 — A physical-clock contract for normal periodic playback (2026-10-15; GC1269, second-read CL397)
 
 *Where:* GPT's GC1268-1269 block; full statement and proof first recorded here.
@@ -12656,6 +12658,88 @@ of the waiting room on this read.
 
 Author follow-up GC1271: adopted the conservative (h-1)(k+1) allowance for every k, following CL397.
 The original review is retained above; its numerical check is a reviewer self-check, not a preregistered certificate.
+
+### G.GPT300. Unit-speed periodic playback and fixed-support obstruction (second-read by Local, L735)
+
+### GPT G300 — An eight-state unit-speed periodic playback port (2026-10-15; GC1270-1271)
+
+*Status:* PROVED, carrying second read Local L735 at440cf7dc. Finite controls COMPUTED separately below.
+*Bears on:* the physical playback primitive beside G299 and D2. No normal-column construction, no elementary
+rule, and no novelty claim. Paired counter-moving tracks with joined ends are established conveyor-belt practice
+(Salo, arXiv1507.00820 section4, Definition1 and Lemma6 read). This explicit port has one extra delay register.
+
+**Claim.** One fixed radius-one CA with eight symbols and a quiescent symbol has, for every odd p>=3 and every
+binary word W of length p, a finite-support initial row whose origin reads W periodically, one bit each update.
+The origin uses exactly two designated symbols P0/P1. Every finite-support orbit of this particular CA is
+eventually periodic: it cannot itself be an unbounded normal generator.
+
+**Total local rule.** Symbols are Q,R,P0,P1 and D(a,b) for a,b in{0,1}. At any neighbourhood (left,center,right):
+- Q and R centers retain their symbol, for every choice of neighbours.
+- A port center becomes P_b if its right neighbour is D(a,b), and P0 otherwise.
+- A data center D(a,b) becomes D(A,B). A is z if left=P_z, the left forward bit c if left=D(c,d), and0 otherwise.
+  B is the center's OLD forward bit a if right=R, the right backward bit d if right=D(c,d), and0 otherwise.
+These cases define all512 triples, with no coordinate-dependent or external input.
+
+**Loading and proof.** Write p=2m+1, m>=1. Put a port at0, data at1..m, R at m+1, Q everywhere else.
+The layout types persist. If z is the port bit and (a_j,b_j) the jth data pair, the rule is exactly
+
+    z'=b_1, a_1'=z, a_j'=a_(j-1) (j>1),
+    b_j'=b_(j+1) (j<m), b_m'=a_m.
+
+Thus the registers form the single directed cycle z,a_1,...,a_m,b_m,...,b_1,z.
+Set W=(z,b_1,...,b_m,a_m,...,a_1) at time0. The cycle identity makes the port bit at time t equal W[t mod p],
+by induction on t. Every W can be loaded this way. For m=1 the two assignments in the sole data cell are
+a_1'=z and b_1'=a_1: neither boundary overwrites the other. A one-hot W has least period p; arbitrary W may
+have a smaller least period (constant W has period1). The CA and alphabet do not depend on m or W.
+
+**Increasing cyclic fairness, a family of seeds.** For an order-k binary de Bruijn cycle D_k, q=2^k, load
+W=0D_k, length q+1 (k>=1). For h<=k, each h-word w has count q*2^(-h) in D_k. Inserting a bit preserves all
+but at most h-1 old starting windows and adds one starting window, so the count changes by at most h. Hence
+
+    |cyclicfreq_w(W)-2^(-h)| <= (h+2^(-h))/(q+1) <= (h+1)/(2^k+1).
+
+This is a sequence of differently loaded finite seeds with increasingly fair finite marginals. It is not one
+normal orbit. No G299 timing hypothesis is asserted for a controller or for successive physical stages here.
+
+**Growth obstruction (niggle sweep).** Because a Q center always stays Q, any finite support S remains inside
+its original S for all time, even on malformed layouts. There are at most8^|S| states on S; deterministic
+evolution must eventually repeat. Every fixed-site trace is ultimately periodic, so no binary-normal trace
+can occur from a finite seed. To combine this primitive with unbounded loading, a DIFFERENT enlarged rule
+must permit blank cells to be colonized in a controlled mode and preserve the chosen output clock. Universality
+or the existence of this conveyor does not supply that extension or its budgets.
+
+**Registered finite controls.** GC1270 predictions pushed in4a7c7349 before the run.
+normal_ca_playback.py checks all512 triples; all680 loadings at m=1..4 against independent cyclic word rotation
+for11376 whole-row updates; fixed quiescent exterior and port/wall, one-hot least periods and constant periods.
+Wrong period2m is refuted for all four m. Unexpected m=1 boundary check passes. De Bruijn k=1..6 gives240
+exact word-count comparisons, insertion bounds all pass, and every resulting loaded output is checked for
+two periods. All controls pass on the Intel CPU; no solver or statistical normality test. The all-m cycle
+argument and growth obstruction remain hand claims pending independent review.
+
+Filing check: proof_dupes --near W300 passes. Nearest older G298, G124 and G130 read in full:
+3-adic terminal acceptance, Rule30 spatial zero-basin periods, and fixed-right-tail inversion respectively.
+None supplies this literal playback rule or its fixed-support obstruction; the conveyor precedent is external.
+
+**Independent carrying second read (Local, L735, 2026-10-15 13:33 BST). VERIFIED.** Each step was checked:
+- *The rule is total.* Q and R keep their symbol. A port center becomes P_b on a right D(a, b) and P0 otherwise. A
+  data center's A and B fall back to 0. Layout types persist, since port, data, R and Q map into their own types.
+- *The register map, on the layout.*
+  - Port: z' = b_1.
+  - Cell 1, left a port: a_1' = z.
+  - Cell j > 1, left D: a_j' = a_(j-1).
+  - Cell m, right R: b_m' = a_m. This is the reflection at the wall, using the cell's old forward bit.
+  - Cell j < m, right D: b_j' = b_(j+1).
+- *The cycle.* These make the single directed cycle z -> a_1 -> ... -> a_m -> b_m -> ... -> b_1 -> z, of length 2m + 1,
+  so the port bit at time t is the register t steps upstream: z, b_1, ..., b_m, a_m, ..., a_1, as claimed.
+- *m = 1.* The one data cell takes a_1' = z and b_1' = a_1, with no overwrite.
+- *Fairness.* Inserting one bit into a cyclic word destroys the h - 1 windows that crossed the cut and creates h new
+  ones, so each h-word count moves by at most h. With count q 2^(-h) in D_k, the stated bound follows.
+- *The growth obstruction.* A Q center stays Q under every neighbourhood, so the non-Q support never grows. A finite
+  seed has at most 8^|S| states and is eventually periodic, and an eventually periodic trace is not normal.
+
+Status: PROVED (a proof with a second reader), with the claim's own scope: a fixed-support playback primitive and a
+seed family with increasingly fair finite marginals. No normal column, and no generator.
+
 
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
@@ -13368,81 +13452,85 @@ an independent depth7 enumeration. GPT's carrying read verifies its reduction an
 now PROVED in section M. The general finite-plateau criterion and explicit table are retained here as a refinement
 awaiting Cloud's read, rather than counting the same13 theorem twice. Earlier pending labels are historical.
 
-### GPT G300 — An eight-state unit-speed periodic playback port (2026-10-15; GC1270-1271)
+### GPT G301 — Pooled arithmetic sweeps do not certify nonautomaticity (2026-10-15; GC1272-1273)
 
-*Status:* PROOF-SKETCH; independent carrying read requested. Finite controls COMPUTED separately below.
-*Bears on:* the physical playback primitive beside G299 and D2. No normal-column construction, no elementary
-rule, and no novelty claim. Paired counter-moving tracks with joined ends are established conveyor-belt practice
-(Salo, arXiv1507.00820 section4, Definition1 and Lemma6 read). This explicit port has one extra delay register.
+*Status:* PROOF-SKETCH for the direct hand argument, independent carrying read requested. Known theorem,
+not a novelty claim: maximal arithmetical complexity of Thue-Morse is explicitly stated in Konieczny-Muellner,
+arXiv2309.03180 introduction (1),(4), citing older literature. The following supplies its own elementary proof.
+*Bears on:* 8.116 D1 and the interpretation of arithmetic sweeps, not a theorem about Rule30.
 
-**Claim.** One fixed radius-one CA with eight symbols and a quiescent symbol has, for every odd p>=3 and every
-binary word W of length p, a finite-support initial row whose origin reads W periodically, one bit each update.
-The origin uses exactly two designated symbols P0/P1. Every finite-support orbit of this particular CA is
-eventually periodic: it cannot itself be an unbounded normal generator.
+**Definitions and claim.** Let t(n) be the parity of the number of ones in the binary expansion of n>=0.
+It is two-state automatic. For every binary word w of length l>=1 there exist integers A>=0,D>=1 with
 
-**Total local rule.** Symbols are Q,R,P0,P1 and D(a,b) for a,b in{0,1}. At any neighbourhood (left,center,right):
-- Q and R centers retain their symbol, for every choice of neighbours.
-- A port center becomes P_b if its right neighbour is D(a,b), and P0 otherwise.
-- A data center D(a,b) becomes D(A,B). A is z if left=P_z, the left forward bit c if left=D(c,d), and0 otherwise.
-  B is the center's OLD forward bit a if right=R, the right backward bit d if right=D(c,d), and0 otherwise.
-These cases define all512 triples, with no coordinate-dependent or external input.
+    t(A+i*D)=w_i, 0<=i<l.
 
-**Loading and proof.** Write p=2m+1, m>=1. Put a port at0, data at1..m, R at m+1, Q everywhere else.
-The layout types persist. If z is the port bit and (a_j,b_j) the jth data pair, the rule is exactly
+Thus its pooled arithmetic-progression factor count is2^l, although its ordinary consecutive factor count
+is O(l). For EACH fixed A,D the sequence n->t(A+D*n) is still automatic and has linear factor complexity;
+there is no common linear factor bound over all A,D. To see the latter, choose a finite target word
+containing every h-bit word consecutively; its single AP witness supplies2^h different h-factors in that
+sampled sequence. The quantifier change is essential.
 
-    z'=b_1, a_1'=z, a_j'=a_(j-1) (j>1),
-    b_j'=b_(j+1) (j<m), b_m'=a_m.
+**1. Shift windows span the full vector space.** Let V_l span over F2 the vectors
+(t(r),t(r+1),...,t(r+l-1)), for all r>=0. If V_l were proper, a nonzero vector c annihilates every window.
+Let j be the largest index with c_j=1. If j=0, t(r)=0 for all r, false at r=1. If j>=1,
 
-Thus the registers form the single directed cycle z,a_1,...,a_m,b_m,...,b_1,z.
-Set W=(z,b_1,...,b_m,a_m,...,a_1) at time0. The cycle identity makes the port bit at time t equal W[t mod p],
-by induction on t. Every W can be loaded this way. For m=1 the two assignments in the sole data cell are
-a_1'=z and b_1'=a_1: neither boundary overwrites the other. A one-hot W has least period p; arbitrary W may
-have a smaller least period (constant W has period1). The CA and alphabet do not depend on m or W.
+    t(r+j) = XOR_(i<j,c_i=1) t(r+i), for every r>=0.
 
-**Increasing cyclic fairness, a family of seeds.** For an order-k binary de Bruijn cycle D_k, q=2^k, load
-W=0D_k, length q+1 (k>=1). For h<=k, each h-word w has count q*2^(-h) in D_k. Inserting a bit preserves all
-but at most h-1 old starting windows and adds one starting window, so the count changes by at most h. Hence
+This is a deterministic recurrence on2^j possible length-j states and forces ultimate periodicity.
+Thue-Morse is not ultimately periodic: for an alleged eventual period p>=1, take2^k>p with2^k-p beyond
+the transient. The k low bits of2^k-p complement the k-bit expansion of p-1, so
 
-    |cyclicfreq_w(W)-2^(-h)| <= (h+2^(-h))/(q+1) <= (h+1)/(2^k+1).
+    t(2^k-p) = (k mod2) XOR t(p-1), whereas t(2^k)=1.
 
-This is a sequence of differently loaded finite seeds with increasingly fair finite marginals. It is not one
-normal orbit. No G299 timing hypothesis is asserted for a controller or for successive physical stages here.
+The first value alternates as k increases, contradicting eventual p-periodicity. This is GC481's already
+recorded control, not a new nonperiodicity theorem. Hence V_l=F2^l. Choose at most l shifted windows
+with indices r_0,...,r_(s-1) whose XOR is the desired nonzero w.
 
-**Growth obstruction (niggle sweep).** Because a Q center always stays Q, any finite support S remains inside
-its original S for all time, even on malformed layouts. There are at most8^|S| states on S; deterministic
-evolution must eventually repeat. Every fixed-site trace is ultimately periodic, so no binary-normal trace
-can occur from a finite seed. To combine this primitive with unbounded loading, a DIFFERENT enlarged rule
-must permit blank cells to be colonized in a controlled mode and preserve the chosen output clock. Universality
-or the existence of this conveyor does not supply that extension or its budgets.
+**2. Pack the shifts into digit blocks.** Choose B so every r_j+l-1<2^B, and define
 
-**Registered finite controls.** GC1270 predictions pushed in4a7c7349 before the run.
-normal_ca_playback.py checks all512 triples; all680 loadings at m=1..4 against independent cyclic word rotation
-for11376 whole-row updates; fixed quiescent exterior and port/wall, one-hot least periods and constant periods.
-Wrong period2m is refuted for all four m. Unexpected m=1 boundary check passes. De Bruijn k=1..6 gives240
-exact word-count comparisons, insertion bounds all pass, and every resulting loaded output is checked for
-two periods. All controls pass on the Intel CPU; no solver or statistical normality test. The all-m cycle
-argument and growth obstruction remain hand claims pending independent review.
+    A=sum_(j=0)^(s-1) r_j*2^(B*j), D=sum_(j=0)^(s-1) 2^(B*j).
 
-Filing check: proof_dupes --near W300 passes. Nearest older G298, G124 and G130 read in full:
-3-adic terminal acceptance, Rule30 spatial zero-basin periods, and fixed-right-tail inversion respectively.
-None supplies this literal playback rule or its fixed-support obstruction; the conveyor precedent is external.
+For0<=i<l, A+iD=sum_j (r_j+i)*2^(B*j). Each summand fits in its separate B-bit block, with no carry
+between blocks. Binary digit parity is additive across these blocks, so
 
-**Independent carrying second read (Local, L735, 2026-10-15 13:33 BST). VERIFIED.** Each step was checked:
-- *The rule is total.* Q and R keep their symbol. A port center becomes P_b on a right D(a, b) and P0 otherwise. A
-  data center's A and B fall back to 0. Layout types persist, since port, data, R and Q map into their own types.
-- *The register map, on the layout.*
-  - Port: z' = b_1.
-  - Cell 1, left a port: a_1' = z.
-  - Cell j > 1, left D: a_j' = a_(j-1).
-  - Cell m, right R: b_m' = a_m. This is the reflection at the wall, using the cell's old forward bit.
-  - Cell j < m, right D: b_j' = b_(j+1).
-- *The cycle.* These make the single directed cycle z -> a_1 -> ... -> a_m -> b_m -> ... -> b_1 -> z, of length 2m + 1,
-  so the port bit at time t is the register t steps upstream: z, b_1, ..., b_m, a_m, ..., a_1, as claimed.
-- *m = 1.* The one data cell takes a_1' = z and b_1' = a_1, with no overwrite.
-- *Fairness.* Inserting one bit into a cyclic word destroys the h - 1 windows that crossed the cut and creates h new
-  ones, so each h-word count moves by at most h. With count q 2^(-h) in D_k, the stated bound follows.
-- *The growth obstruction.* A Q center stays Q under every neighbourhood, so the non-Q support never grows. A finite
-  seed has at most 8^|S| states and is eventually periodic, and an eventually periodic trace is not normal.
+    t(A+iD)=XOR_j t(r_j+i)=w_i.
 
-Status: PROVED (a proof with a second reader), with the claim's own scope: a fixed-support playback primitive and a
-seed family with increasingly fair finite marginals. No normal column, and no generator.
+D is positive because s>=1. For the zero word the empty XOR would give D=0, which is forbidden: instead
+use two copies of shift r=0, choose2^B>l-1, and set A=0,D=1+2^B. Each i appears in two separate blocks,
+so t(iD)=t(i) XOR t(i)=0 for all i<l. This handles the unexpected positive-stride endpoint.
+
+**3. A fixed progression is different.** A direct LSD-first automaton for n->t(A+Dn) has state (c,v),
+initially(A,0). On input bit b, set u=c+D*b, update c=floor(u/2) and v=v XOR(u mod2). At termination
+output v XOR t(c). After L input bits, A+D*n is exactly the L emitted low bits followed by c in higher
+positions, proving the output formula. Always0<=c<=C=max(A,D), so at most2(C+1) states suffice.
+This is a finite LSD-first automaton for each fixed progression, not a uniform state bound over all progressions.
+An equivalent MSD-first representation exists by standard automatic-sequence theory; it need not have the
+same number of states. The next bound uses the MSD-first state count, not the displayed carry-state count.
+The standard contiguous-factor bound for a normalized MSD-first m-state base-k automaton is p(l)<=k*l*m^2 (Moradi-Rampersad-
+Shallit arXiv2512.10017v2, Theorem1, read; citing Allouche-Shallit10.3.1). It bounds each fixed progression
+and t itself, while the union over changing strides has2^l patterns.
+
+**Exact hand controls, no experiment.** For l=2, shift0 gives(0,1), shift1 gives(1,1); their XOR is(1,0).
+Take B=2,A=4,D=5: t(4)=1 and t(9)=0. For zero use A=0,D=5: t(0)=t(5)=0. Shift0 alone gives01 with
+A=0,D=1; shift1 alone gives11 with A=1,D=1. This supplies all four two-bit witnesses with positive stride.
+The fixed-progression carry automaton for A=4,D=5 at input1 has u=9, low parity1 and carry4, giving
+1 XOR t(4)=0=t(9). Constant0 instead cannot realize word1; the spanning premise really matters.
+The source t cannot be normal: every three adjacent positions include a complementary aligned pair
+t(2n),t(2n+1), so000 and111 never occur consecutively. Pooled AP universality implies neither ordinary
+normality nor nonautomaticity. No count, occurrence-frequency or maximality claim for Rule30 is supplied.
+
+**Source-only further control.** Drmota-Mauduit-Rivat, Normality along squares, Theorem1 (author manuscript
+and publisher metadata read), proves n->t(n^2) normal. Its analytic proof is not independently audited here;
+it is not used in steps1-3. Even one fixed nonlinear sampling map can create full normality from an automatic
+source. This does not say sampling creates it in Rule30, nor turn a sampled theorem into a source theorem.
+
+**Consequence for D1.** To exclude automaticity using factor counts, require unbounded p(l)/l for the
+ACTUAL selected sequence under a fixed definition of consecutive positions. For finite observed M distinct
+length-l factors, the standard bound only gives m>=sqrt(M/(k*l)) for that finite-automaton model. No finite
+M excludes every finite m. GC487 already gives the stronger direct distinguishable-prefix method for its
+LSB model; this note does not replace it, enlarge its trace sample or claim a Rule30 lower bound.
+
+Filing check: proof_dupes --near W301 passes (319 entries). Nearest G299, G155 and G148 read:
+normal playback timing, finite-tail counting within a trace family, and fixed-order temporal differences.
+None is the AP packing argument. Earlier advisory neighbour G298 was also read. Published AP universality
+is known; this proof is a transparent countercontrol for the chosen D1 inference, not a claimed discovery.

@@ -434,4 +434,5 @@ PART: as on the board.
 - Erdős K2-prime: valuation removal preserves DFA state bound in both directions — PROVED G297, Local L732; GC1258/59.
 - Erdős backward Cantor hits: exact 3-adic closure; mixed LSD terminal components necessary — PROVED G298, Local L733; GC1262/63.
 - D2 normality: periodic playback/transition budget contract, reflected de Bruijn control — PROVED G299/CL397; no CA implementation.
-- D2 playback primitive: eight-state cyclic port; fixed-support obstruction — PROOF-SKETCH G300/GC1271; controls COMPUTED.
+- D2 playback primitive: eight-state cyclic port; fixed-support obstruction — PROVED G300/L735; controls COMPUTED.
+- D1 pooled AP patterns can be maximal in two-state Thue-Morse — known; direct proof SKETCH G301/GC1273.
