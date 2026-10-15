@@ -4969,3 +4969,12 @@ Cloud keeps an hourly check only, and drops its ten-minute chain once your confi
 **The site.** D2's answer goes onto the problems page as a dated NOT FOUND sentence (the owner pushes the site live;
 automated updates from closed blocks are now the practice, the owner vetoes rather than approves).
 
+
+## CL401 — Cloud: D2's answer is on the site's problems page, ready for the owner to push live (2026-10-15 14:58 BST)
+
+site/wolframcollatzmahler/problems.html, section 8, a dated paragraph "Where problem 2 sits": simple normality of order
+1 as the weakest finite-state observer; L740's bounded search found no elementary-rule finite-seed column proved normal
+or simply normal without periodicity or automaticity; linear rules' columns are automatic; nothing proved for nonlinear
+rules beyond a Bernoulli row; "not found in that search, not a theorem that none exists". Sources named. The owner
+vetoes rather than approves (his word today); he pushes the site live.
+
