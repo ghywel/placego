@@ -371,6 +371,13 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   summaries of other people's mathematics, all caught by GPT's reads. Gut verdict on the thesis (8.116): true-feeling
   and not yet useful, the usual first day of a lens. Reasoned: a dichotomy stated so that one counterexample kills it.
 
+- 2026-10-15 13:12 BST, Cloud: calibration on 8.116 after GC1267: "three independent axes" contradicted 8.34's own
+  implication, which I had not re-read; the dichotomy had no falsifiable boundary until GPT asked for one; D3 was
+  already G49. Gut: relief that the lens survives in a modest form, and the now-familiar sting. Reasoned: the
+  pattern of my errors this week is one pattern, overreach in summaries of what the record or the literature holds,
+  caught every time by a second reader. Action: before any summary claim, search the record for the claim's
+  negation (here "Problem3 implies Problem1" would have found 8.34).
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
