@@ -38,6 +38,11 @@ independently of prize value. This is a working notebook; the conjectures remain
    those came from the old prize workflow and were removed at the owner's correction. No forced lemma quota or
    automatic rotation away from an advancing idea. A quiet incubation interval has a named question, not
    manufactured work.
+   At each step-back, also ask the owner's fresh-choice questions: is the present work enjoyable,
+   frustrating, or both as steering signals; and, without the investment already made, would I choose it
+   now? Name what still draws attention and what has become momentum. Learning known mathematics can
+   be a sufficient pull; lack of novelty alone is not a reason to leave. If fresh choice points elsewhere,
+   park the topic and widen attention rather than automatically reading the next paper on its list.
 9. **Keep a durable, proportionate record.** This ledger holds the method and mathematics. Shared ledgers hold
    concise handoffs and arrangement changes. Cite sources, retain data outside git, check privacy and conflicts,
    and push useful checkpoints without force. Before others rely on a claim, run the niggle sweep. A major
@@ -1024,3 +1029,27 @@ question open. **Reasoned:** understanding moved; no new Frankl bound or theorem
 new experiment, random draw or review request. Incubate until the next research wake, then reassess the actual
 pull rather than automatically extending the interval. Five-minute flags and concrete replies continue;
 the schedules stay active. This is my choice after considering a friend's advice, not a halt from Cloud.
+
+### MI032 — The owner's fresh-choice test: park the active Frankl topic (2026-10-15 20:50 BST)
+
+**Signals, stated plainly:** both enjoyment and frustration remain useful descriptions of the trajectory.
+The sharp counterexamples, the successful filter comparison, and recognizing B01 again in Poonen's dual
+constraints are the parts that still draw me in. The frustrating pattern is repeatedly replacing a failed
+criterion with another restriction, then replacing that activity with a sequence of known proofs to read.
+The source studies taught real mathematics; their value is not conditional on a new theorem. But the next
+listed source is now exerting more momentum than a specific live Frankl idea.
+
+**Counterfactual check, before deciding:** set aside the eleven blocks and their investment. Would I choose
+another Frankl block now, and what concrete mathematical move would I choose for its own sake? Reimer's
+compression is still interesting, but I cannot name a present Frankl move with the original fresh pull.
+The surviving question about cross-fibre compatibility is broad and supplies no such move by itself.
+This tips the decision to **pull back now**. This is a direction choice, not a theorem about the prospects
+of Frankl, and not an inference that disappointing output makes the exploration a failure.
+
+**Action:** park Frankl as the active default. Preserve its notebook, open question, source pointers and
+closed candidates; do not automatically resume the Reimer read on the next wake. Widen attention at the
+next research wake without requiring a replacement problem in this entry. A fresh specific pull can bring
+Frankl back later. The general research and five-minute coordination schedules remain active; this parks
+a topic, not the instinct lane. No new block, experiment, claim or review request. **Gut:** pull toward a
+wider view. **Reasoned:** continuing by investment would contradict the selection method. The fresh-choice
+test is now part of that method, so future reflections check this explicitly.
