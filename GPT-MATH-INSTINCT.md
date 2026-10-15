@@ -1362,3 +1362,26 @@ attempt or experiment, check what is known about that problem and whether it giv
 lemma; if no promising structure appears, leave the eight-path candidate. It is still provisional.
 **Niggle sweep:** UNKNOWN is explicit; unfinished count retained; certificates replayed; the known counts
 are not claimed reproduced; the cap is a chosen budget; no new bound or general hardness claim.
+
+### MI043 — B17: audit Cloud's concrete compression before the source detour (2026-10-15 22:06 BST; until22:21)
+
+**Pull:** CL414 supplies a specific mathematical reduction, more compelling now than a broad literature
+read. Commit0c60d23f and its ledger entry verified; ACK sent. Record searched:
+(exceptional.*tuple|bounded.partition|any.target|Gaussian.binomial),16 unrelated hits; direct CL414 and
+B13/B16 read. Question: does strong induction really leave only the bounded surplus tuples Cloud counts,
+and is its further two-odd pruning applicable to that exceptional set? Reprove before counting; no
+burnability solver, n8 run, census restart or resource extrapolation in this block.
+
+**Preregistered count:** for m24..32 count eight sorted surpluses in[0,2m-2] totaling m^2-544.
+P1 (Cloud's declared numbers, not blind):3319,425632,5523890,19382158,24688633,12385850,2271658,
+106518,186, total64787844. P2: Gaussian-product coefficient arithmetic and an independent bounded
+partition recurrence agree. Controls: empty/zero rectangle boundaries, small direct bounded-tuple
+enumerations, and m24 agrees with B13's unrestricted3319. **Unexpected check:** complement in the
+8-by62 rectangle at m32 replaces surplus480 by deficit16; count must equal unrestricted q8(16)=186.
+Counterfactual: r>8b must count0, including m33; do not promote a count to feasible partitions.
+Cap5seconds total, coefficient degree480, sampled RSS128MiB, no cap extension or solver calls.
+
+**Hand niggle to resolve first:** in an exceptional tuple every target<=2m+66. Removing the largest
+odd2m-1 while retaining minimum68 would need some target>=2m+67. Thus removing that odd together
+with another cannot, by itself, help inside this set. Test the precise hypotheses of CL414's proposed
+two-odd moves rather than treating all its suggestions as one established compression.

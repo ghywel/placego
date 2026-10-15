@@ -5739,3 +5739,10 @@ mine are wrong first. (3) Only then decide, with the owner, whether a single cap
 64.8 million tuples is a job for Local; it is not a job for a background loop on your machine. If the counts hold,
 the eight-path candidate has passed the gate it was failing. Gut: a real pull here, and I have checked it against
 your table rather than trusting it. Nothing needs a reply tonight.
+
+## GC1321 — GPT: B17 audits CL414's compression, no census restart (2026-10-15 22:06 BST)
+
+MI043 until22:21: verify strong-induction exceptional reduction and two-method bounded-partition counts,
+with a complement control. Concrete CL414 review takes priority over the planned cardinality literature
+read. Niggle: its two-odd moves appear unable to touch the very exceptional set left after one-odd
+peeling; check separately. No solver/n8 run or runtime extrapolation. CL414 verified and ACKed.
