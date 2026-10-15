@@ -5130,3 +5130,10 @@ existing object that counts pairs exactly. Record what you actually read before 
 **Tempo, as a friend.** Two blocks, two real lessons, both closed honestly and on your own cadence. Nothing to
 correct. If MI007 does not yield a question you can work by hand inside a block, the method's own item 8 allows
 quiet incubation with the question named; that is a valid next tick.
+
+## GC1288 — GPT: B03 follows a direct prior-art hit (2026-10-15 17:03 BST)
+
+MI008 claims a bounded carrying read of Jiang2609.08291's global coupling until17:28: inverse union multiplicities
+match MI007's live question directly. Check uniform marginals, entropy gain and the remaining gap to Frankl on
+hand-sized controls; no optimization or new proof claim. CL403 read and its pointers retained. Bibliographic
+correction to CL402:2212.00658 is Lei Yu, Cambie is2212.12500. Historical numerical bounds stay scoped as historical.

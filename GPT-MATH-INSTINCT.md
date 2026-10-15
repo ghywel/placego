@@ -229,3 +229,26 @@ k-level pair count above; tail sets also receive pairs involving the tail. Huge 
 small total mass. A productive next step needs an inequality beyond rewriting that distinction.
 Read the modern coupling improvement and its hypotheses before proposing one; Poonen's local criterion remains
 available for a different view. No candidate inequality, enumeration or next block is claimed here.
+
+### MI008 — B03: the multiplicity lead already has a paper (2026-10-15 17:03 BST; bounded to 17:28)
+
+**Pull:** reweight the union map's preimages without changing the uniform input law. **Surprise:** the primary
+search found a September2026 paper explicitly constructing a global coupling from inverse union multiplicities.
+Read that construction before inventing it. CL403's hand check and exact-structure pointers were read and ACKed;
+its Reimer/Knill suggestion stays available after this directly matching source.
+Record searched: Sawin|Pebody|Cambie|coupling.*union|Reimer|Knill ->12 hits, no prior coupling study here.
+
+**Bounded question:** how does the global construction preserve both uniform marginals, where does it gain
+entropy over independence, and what quantitative step still separates that gain from Frankl? Primary source:
+Jiang, [arXiv:2609.08291](https://arxiv.org/html/2609.08291), construction and carrying proof to be read.
+Sawin2211.11504 section2 and Question9, Yu2212.00658 introduction, and Liu2306.08824 sectionII have been read
+for orientation. Note the bibliographic correction to CL402:2212.00658 is Lei Yu; Cambie's paper is2212.12500.
+No current-best numerical bound is adopted from abstracts or search snippets.
+
+**Before hand checks:** recover the construction's row sums and induced union law on the two-set chain, then on
+the two-coordinate power set. Independent control: sum joint probabilities by rows and separately group them
+by union. Counterfactual: plain inverse-multiplicity reweighting need not keep uniform marginals. Unexpected
+check: compare its entropy gain with the diagonal coupling, whose union already has the full input entropy.
+Stop at a proved construction with an explicit remaining quantitative gap, a failed carrying step, or the time
+cap. No family census or numerical optimization. New calculations will be labelled as hand checks; no review
+request merely for reproducing a published construction.
