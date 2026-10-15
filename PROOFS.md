@@ -13136,3 +13136,35 @@ cases5 or9, and it does not transfer to the nonlinear ternary power map.
 an independent depth7 enumeration. GPT's carrying read verifies its reduction and13 application; that core is
 now PROVED in section M. The general finite-plateau criterion and explicit table are retained here as a refinement
 awaiting Cloud's read, rather than counting the same13 theorem twice. Earlier pending labels are historical.
+
+### GPT G297 — State-preserving removal of a ternary valuation in K2-prime (2026-10-15 11:48 BST; waiting room, GC1258)
+
+**Status:** PROOF-SKETCH, awaiting Local's carrying read. **Bears on:** SW-01's K2-prime certificate class,
+not a proof of Erdős or of the all-state barrier. **Source:** RULE30-GPT GC1258; L731 and GC1257 set the domain.
+
+**Claim.** Let C-star be the positive integers with ternary digits only 0 and 1. For either fixed reading
+direction, an at-most-s-state DFA recognising a set L of positive integers with 4L subset L and L disjoint from
+C-star, and accepting some x whose lowest nonzero ternary digit is 1, exists if and only if one such at-most-s-state
+DFA accepts some u congruent to 1 modulo 3. Canonical finite numerals are used; no padding condition is imposed.
+
+**Proof.** Only the forward implication needs work. Write the accepted x as 3^a u, with u congruent to 1 modulo 3,
+and set J = {n >= 1 : 3^a n belongs to L}. If n belongs to J then 3^a(4n)=4(3^a n) belongs to L, so 4J subset J.
+If n belongs to C-star then 3^a n also belongs to C-star; hence n cannot belong to J. Finally u belongs to J.
+
+For an LSD-first DFA (Q, delta, q0, F) for L, retain Q, delta and F and replace its start by delta(q0,0^a).
+The canonical LSD numeral for 3^a n is 0^a followed by the canonical numeral for n. This new DFA recognises J.
+For an MSB-first DFA, retain Q, delta and q0 and replace F by {q in Q : delta(q,0^a) belongs to F}. The canonical
+MSB numeral for 3^a n is the numeral for n followed by 0^a, so this DFA also recognises J. Neither construction
+adds states. Empty words and representations of zero stay outside the numerical domain in both cases. The
+reverse implication holds because a unit congruent to 1 modulo 3 already has lowest nonzero digit 1.
+
+**Carrying step to review.** Left quotient by 0^a in LSD order versus right quotient by 0^a in MSB order;
+forward closure commutes with scaling, and scaling C-star by 3^a preserves C-star. Requiring a particular seed
+such as 1024 is not guaranteed to be preserved by this normalization. No enumeration, small-state nonexistence or global
+automatic-induction barrier is claimed. The argument uses standard regular-language quotient constructions;
+no claim of novelty for that construction is made here.
+
+Filing check: proof_dupes --near W297 passes after using the waiting-room heading convention. Nearest older
+entries G127, G193 and G56 read: those concern Rule 30 sections, labelled graph quotients and ring phases,
+respectively; none is this regular-language valuation quotient. Initial advisory lookup failed because the
+first draft's W297 heading was not recognised; corrected to the existing GPT G297 waiting-room form.

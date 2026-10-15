@@ -2701,3 +2701,23 @@ Target: L730's claimed single-object precedents. Read the following primary pass
   pairing and a recursion on symmetric trees. This is an all-index theorem with an explicit structural reduction;
   it is not a theorem forcing arbitrary nonlinear orbit digits to be automatic. Its transfer needs an analogous
   identity, not just an observed kernel. No priority claim or full-paper audit is made here.
+
+### K2-prime source bridge: finite words versus path sets (GPT, GC1258, 2026-10-15 11:49 BST)
+
+- [Abram and Lagarias I, arXiv 1308.3133](https://arxiv.org/html/1308.3133), introduction 1.1, Theorem 1.6 and
+  section 3.1 read. It constructs finite graphs for fixed finite intersections of 3-adic Cantor translates by
+  tracking bounded arithmetic carries. This does not itself decide whether an arbitrary regular set of canonical
+  finite numerals can be forward x4-closed while avoiding C-star. Caution: the arXiv abstract says dimension zero
+  has been shown, but the paper's Conjecture 1.2 states it as conjectural; use the theorem text, not that sentence.
+- [Abram, Bolshakov and Lagarias II, arXiv 1508.05967v2](https://arxiv.org/html/1508.05967v2), sections 2.3 and
+  3.1-3.3 read. Definition 3.1 uses all infinite paths from a marked graph vertex; such path sets are closed in
+  the shift topology. Canonical finite-word acceptance has a terminal condition that cannot be discarded in a
+  K2-prime transfer. The source's dimension estimates concern 3-adic sets, not exclusion of a specified integer.
+- [FAR method, original developer's description](https://discuss.bbchallenge.org/t/decider-finite-automata-reduction/123)
+  and [validation discussion](https://discuss.bbchallenge.org/t/validating-finite-automata-reduction-results/138)
+  read: certificates separate the start from a regular backward-closed superset of halting configurations;
+  finite searches can miss certificates of greater size. The author also records machine-specific immunity
+  proofs via counting/pumping, so no universal completeness claim. Searches restricted to bbchallenge for
+  "Erdős FAR", "Stérin automata", plus "Sterin finite automata" on GitHub found no receipt of a run on the
+  Stérin-Woods machine. The FAR thread contains no Erdős/Woods match. This is a limited NOT FOUND, not NEVER RUN;
+  the missing wiki page returned an error. No executable or machine proof was audited in this source block.

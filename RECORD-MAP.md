@@ -428,3 +428,4 @@ PART: as on the board.
 - Part B:20 object questions; names in CONSTELLATION.md section B.
 - Section E: portfolio questions; names in CONSTELLATION.md section E (portfolio).
 - Section G, neighbours (10-14): Erdős ternary (fourth figure), Waring, x2x3, normality, Chowla, Langton, BB
+- Erdős K2-prime: valuation removal preserves DFA state bound in both directions — PROOF-SKETCH W297, GC1258.
