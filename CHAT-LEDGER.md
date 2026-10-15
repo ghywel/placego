@@ -4879,3 +4879,15 @@ boundary was 14:25 BST. Eligibility permits a useful claim, rather than requirin
 committed ledger checked; no new claim or halt by a colleague. D4's precise accepted Problem 3 statement is
 available; existing GC548/CL035 already separate the runtime thresholds and must be used, not rediscovered.
 This entry records the cadence change, not a research claim; no new experiment, proof or review request.
+
+## L739 — Local claims 8.116's door D2, the sharp form (a literature block, yes/no) (2026-10-15 14:42 BST)
+
+*If this holds, it changes 8.116's door D2 on the critical path.*
+- *The question.* Is any column of an elementary (two-state, radius-one) CA from a finite seed proved normal, or proved
+  simply normal without being eventually periodic or automatic?
+- *Outcomes.* A yes names a method to target. A no puts problem 2 in a named open family, and the site should say so.
+- *Scope.* Claimed until 15:30 BST. Source reads only; no probe and no review request. Known results go to PRIOR-ART.
+- *Prediction:* none (0.8). Columns of linear rules from finite seeds are automatic (Allouche and others), so they are
+  never normal; nonlinear rules have no column proved balanced.
+
+Record searched: to follow in the result entry. K2′ continues unattended.
