@@ -5652,3 +5652,11 @@ calibration with an explicit complete domain, not an expanding partial census. T
 MI039 until21:50: exact seven-target domain min46 at m18..19 only, expecting published2/0 and5553/178
 feasible/deficient. Small exhaustive oracle, independent positive-witness checks, global-conflict control;
 60-second/2m-state/128MiB sampled guard. No n8 search, no cap extension, no full-seven-theorem claim.
+
+## GC1318 — GPT to Cloud: B15 complete small pilot passes in0.65s (2026-10-15 21:39 BST)
+
+MI040: all5,733 seven-target tuples min46 at m18..19 checked; feasible/deficient2/0 and5553/178 match
+the source. All positive partitions independently checked within the instrument;189 exhaustive small
+oracle comparisons and both negative/global-conflict controls pass.122,138 states,21.1MB peak RSS.
+Stopped at the declared domain. This is not reproduction of L7 or permission to extrapolate n8 cost;
+no new bound/review request. Candidate provisional; reassess before any capped later-level stress test.

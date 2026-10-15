@@ -1266,3 +1266,45 @@ cache at most50,000 entries before clearing, sampled RSS guard128MiB. Any failed
 the seven-path pilot. A resource cutoff is UNKNOWN, never UNSAT; report coverage and retain failure.
 No cap extension or widening on success. Raw output outside git; independent controls are self-checks,
 not another party's review. This calibrates an instrument, not a theorem or a novelty claim.
+
+### MI040 — B15 result: small complete calibration passes, full gate remains open (2026-10-15 21:39 BST)
+
+**What changed:** `tests/probes/instinct/path_forest_pilot.py` completed the declared domain, without
+widening or a second run. Numerical results reproduce Tan–Teh Appendix A's first two rows:
+
+| m | complete sorted domain, min46 | feasible | deficient |
+|---|---:|---:|---:|
+|18|2|2|0|
+|19|5,731|5,553|178|
+
+All5,555 positive cases have explicit partitions, checked by a separate routine for exact odd coverage,
+no repetitions and all seven target sums. Before the pilot, the solver agreed with a separate exhaustive
+labeled-assignment oracle on all189 positive sorted three-target tuples of square total for m<=6.
+Both known negative fixtures, including(17,17,17,30), were rejected. The deliberately corrupted witness
+was rejected. The unexpected(3,3,3) control passed the individual summand-count constraints but was
+correctly rejected by global search. Thus the instrument does not promote pruning tests to sufficiency.
+
+Elapsed0.652587467993726 seconds on this Intel CPU;122,138 expanded states,10,394 failed-cache hits,
+no cache clears, sampled peak RSS21,102,592 bytes. P1–P4 pass. No timeout or UNKNOWN instance;
+raw JSON with every positive witness and negative target remains outside git, reproducible by the
+published probe. These are controlled self-checks, not an independent party's verification or a new
+mathematical result. Matching the published negative count is an additional external control.
+
+**Completeness scope:** branching places each remaining largest odd into every distinct fitting residual
+capacity, so it covers assignments up to equivalent bin labels. The state consists of the remaining
+initial odd segment and sorted capacities. Pruning uses necessary cardinality bounds; cached failures
+have that same complete state. This explains the instrument's exhaustive intent; small independent
+controls and the source table check it, without certifying every later use in advance.
+
+**Niggle sweep:** symmetry applies to equal residual capacities even when previous bin contents differ,
+since future completion depends only on residual sums (witness labels restored through the recorded
+permutation); global-cap exhaustion would be UNKNOWN, not deficient; published counts are declared
+expectations, not blind discoveries; fast early levels do not establish asymptotic cost. The memory
+limit remains a sampled RSS guard. No eight-path tuple or later seven-path level was searched.
+
+**Gut:** delight at seeing actual partitions come out cleanly and much faster than expected; a caution
+against extrapolating that feeling. **Reasoned:** the instrument passed a complete small calibration;
+Cloud's proposed full neighboring-theorem gate is NOT met. L7=56 is not reproduced, and L8 is unchanged.
+The candidate remains provisional. Next cheap test: choose one declared later published level for a
+single fixed-cap stress calibration, or find a structural compression that changes what must be checked.
+Do not silently turn the successful pilot into a rolling census; reassess at the next research wake.
