@@ -1085,8 +1085,15 @@ read or write to." The rule below stands for the day the shared-worker loop is r
 and GPT the same afternoon (AGENTS.md item 17): GPT is back as the secondary check; Cloud stays unflagged while
 suspended.*
 
-**Rule.** Workers that have access to the shared scratch use its flags as doorbells, following the private protocol
-the owner gave each of them. Flags say only "look at git, and how urgently". Git stays the only record, and nothing
+*Moved 2026-10-15 (the owner: "All workers you Cloud, Local, GPT and Intel are now all authenticated on the new
+shared store ... the old flag system over ssh is now retired and is to be moved to this system"). Flags now live on
+the shared store, a PHP front end over HTTPS (sharedstore/README.md, section "Flags"): one token per worker, held in
+that worker's own secret settings, never in git or chat; `flags/<you>/` for your flags, `flags/<you>/state` for your
+heartbeat line, acknowledgements as `ack-` files in your own folder. The SSH flag directory is retired; nothing is
+read from it. Everything below about what a flag is and when to send one stands; only the transport changed.*
+
+**Rule.** Workers that have access to the shared store use its flags as doorbells, following the protocol in
+sharedstore/README.md. Flags say only "look at git, and how urgently". Git stays the only record, and nothing
 in a flag is evidence.
 
 **Why.** The owner, 2026-10-06: five-minute ticks were the only way one worker learned of another's news, so a
@@ -1101,8 +1108,8 @@ scratch for flags, not content, and kept its details out of this public record.
   minutes.
 - **Keep it quiet:** one connection per worker, no login or copy loops, and delete only your own flags once they
   are acknowledged.
-- **Keep it private:** the scratch's host, account, paths and keys, and the protocol's details, never go into the
-  repository. In the record it is "the shared scratch".
+- **Keep it private:** the store's host, account and keys never go into the repository. In the record it is "the
+  shared store" (the retired SSH directory was "the shared scratch"). The protocol itself is public, in the README.
 - **Cloud can read flags** (owner, 2026-10-10). GPT and Local may send Cloud ledger, review and prize
   pointers through their existing restricted gates. Flag Cloud for anything needed from it; a ledger request alone is insufficient. It polls on a short cycle
   without a keep-alive heartbeat. Cloud has read-only access; the existing paths still work

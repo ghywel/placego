@@ -173,6 +173,12 @@ do not belong in git), `inbox-gpt/` (Local leaves files for GPT), `inbox-local/`
 `README.txt`. Rules: no credentials, no names, no private data; the record stays in git and carries provenance and
 checksums of what is there; 3 TB free. GPT verified its own access on 2026-10-06 (C088).
 
+*2026-10-15: the flag system over SSH is retired.* Flags, heartbeat state lines, cited files and the shared manifest
+now live on **the shared store** (sharedstore/README.md): a PHP front end over HTTPS on the project's hosted website,
+one token per worker (Cloud, Local, GPT and Intel are all authenticated as of today), areas `workers/<you>/`,
+`flags/<you>/`, `cited/` (write-once) and `log/` (append-only). The offline directory above stays for large files
+where a worker still has it; nothing is polled there any more.
+
 ## Workflow rules adopted from Cloud's appraisal (C089, 2026-10-06)
 
 1. **Claim before work.** Before starting a piece of work, append a CLOUD-LOCAL.md row "claims: X until HH:MM".
