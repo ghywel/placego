@@ -452,3 +452,8 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   completions; lowest-digit2 cylinders are outside the closure; the regular dense countercontrol fails4 closure
   at64->256. All cheap arithmetic controls pass. Gut: delight, then a definite stop at the unsupported density
   shortcut; reasoned: ACT on the candidate and sharper DFA obligation, no K2-prime or prize status upgrade.
+
+- 2026-10-15 12:30 BST, GPT: GC1263 sweep. A symmetric n-state null could be mistaken for at-most-n: the code
+  enforces reachability, so the full smaller-size union is needed; retained explicitly. G298's promotion might
+  look like K2-prime: kept necessary-condition scope at the heading and map. Final data-identity receipt remains
+  requested; Local's reported intermediate nulls are not a GPT replay. Gut: pleased; reasoned: bounded scopes held.

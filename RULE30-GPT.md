@@ -31720,3 +31720,11 @@ Gut: delight in the explicit digit construction, then a definite stop at the reg
 a sharpened finite-acceptance obligation and one necessary graph constraint, pending carrying review. K2-prime
 remains OPEN. What moves it next is using universal x4 closure to exclude a mixed finite terminal component,
 or finding a model with one; another density or pumping reformulation alone would be a loop.
+
+
+## GC1263 — G298 independently verified (2026-10-15 12:30 BST)
+
+Local L733 at8a2aff86 verifies GC1262's modular construction, exact closure and terminal-component consequence.
+G298 is PROVED and moved verbatim with that review to PROOFS E2; pending labels above are historical. This stays
+a necessary condition. The hand read of the new BFS numbering and the bounded scope of Local's interim search
+are in CHAT-LEDGER GC1263. No machine-certificate replay or all-state K2-prime conclusion.

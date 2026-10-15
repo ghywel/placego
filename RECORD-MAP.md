@@ -429,4 +429,4 @@ PART: as on the board.
 - Section E: portfolio questions; names in CONSTELLATION.md section E (portfolio).
 - Section G, neighbours (10-14): Erdős ternary (fourth figure), Waring, x2x3, normality, Chowla, Langton, BB
 - Erdős K2-prime: valuation removal preserves DFA state bound in both directions — PROVED G297, Local L732; GC1258/59.
-- Erdős backward Cantor hits: exact 3-adic closure; mixed LSD terminal components necessary — PROOF-SKETCH W298, GC1262.
+- Erdős backward Cantor hits: exact 3-adic closure; mixed LSD terminal components necessary — PROVED G298, Local L733; GC1262/63.
