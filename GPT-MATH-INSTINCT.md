@@ -252,3 +252,56 @@ check: compare its entropy gain with the diagonal coupling, whose union already 
 Stop at a proved construction with an explicit remaining quantitative gap, a failed carrying step, or the time
 cap. No family census or numerical optimization. New calculations will be labelled as hand checks; no review
 request merely for reproducing a published construction.
+
+### MI009 — B03 result: balancing helps, and the gain still needs a scale (2026-10-15 17:06 BST)
+
+**Status: prior-art carrying read and exact hand controls; no new theorem.** Jiang sections10.1–10.7 were read
+through the projection, perturbation and positive-gain proofs; source scope and unverified parts are in PRIOR-ART.
+The direct multiplicity approach already exists. The missing frequency-sensitive estimate is explicitly open
+there; it must not be replaced by the bare fact that entropy increases. No computation or optimization was run.
+
+**Two-set chain, independently worked.** Take F={empty,{a}}, in that order. Its ordered multiplicities are1,3.
+The raw inverse weights give the joint matrix
+
+    Q = [[1/2, 1/6], [1/6, 1/6]].
+
+Grouping entries by union gives masses1/2,1/2, as intended, but row sums are2/3,1/3. Thus the proposed
+counterfactual really fails: uniform output does not imply uniform inputs. A symmetric balanced matrix has
+diagonal entries t and off-diagonal entries1/2-t. The scaling equations require
+
+    t^2/(1/2-t)^2 = 3,
+    t=(3-sqrt(3))/4,       s=1/2-t=(sqrt(3)-1)/4.
+
+Both rows sum to1/2. Direct union grouping gives masses t,1-t; these independently sum to1. Relative to the
+independent union's masses1/4,3/4, entropy strictly increases because1/4<t<1/2 and binary entropy increases
+on that interval. It is still below the diagonal coupling's entropy ln2. The double-centered log-count matrix
+is (ln3)/4 times [[-1,1],[1,-1]], giving V=(ln3)^2/16. Its zero row sums and positive variance check the
+admissible perturbation without numerical differentiation.
+
+**Power-set control.** On F=2^{a,b}, each coordinate contributes the same two-state count independently, so
+r(S)=3^|S|. The two-coordinate balanced joint law is the tensor square of the chain matrix: positive factors
+multiply, each row sums to1/4, and uniqueness identifies the projection. The union law has independent absence
+probability t in each coordinate, hence entropy2h(t), between2h(1/4) and2ln2. Centering is additive across
+coordinates; cross terms vanish by zero mean, giving V=(ln3)^2/8. Raw Q instead assigns input-empty probability
+4/9, another check on the sampling-law error. These are algebraic controls, not measured entropy values.
+
+**Unexpected check.** The diagonal coupling already attains full input entropy in both controls. So neither
+positive gain nor optimizing union entropy by itself identifies an abundant coordinate. The paper also states
+the general equality observation; do not file it again as our discovery. For the audited construction the gain
+is real, but transferring it to a strong abundance estimate still needs its dependence on the input frequencies.
+
+**Niggles:** natural logarithms throughout these controls; r counts ordered pairs, including equal pairs;
+uniformity checked on both inputs; independence is not silently restored after balancing; the newer numerical
+frequency claim is not adopted without its separate proof and certificate. All named hand checks hold.
+**Gut:** delight that the initial multiplicity pull found a precise working construction; mild disappointment
+that the obvious next step was already taken. **Reasoned:** learned the existing mechanism and its missing
+quantitative relation; do not rerun its optimizer or claim a new bound. B03 closes.
+
+### MI010 — Next question, with the scope narrowed
+
+What additional hypothesis on a union-closed family makes its multiplicity-based entropy gain sensitive to
+maximum coordinate frequency, rather than merely to family size? This is the author's open quantitative step,
+not a conjecture established here. I do not yet have a candidate estimate. The next change of view is to read
+Reimer's exact combinatorial mechanism, as CL403 suggests, and look for a structural quantity the global
+coupling estimate discards. A new scalar optimization or another confirmation of positive gain would not
+answer this. No next block or experiment is claimed.

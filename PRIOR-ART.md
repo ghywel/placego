@@ -2920,3 +2920,26 @@ and avoiding counts telescopes by Pascal's identity to binom(n-1,k-1). Its frequ
 
 As a separate boundary check, k=1,n=3 gives4/7; k=n gives1. These are hand counts, not measurements or new
 Frankl cases. MI006 gives the asymptotic completion cost and limits of the interpretation.
+
+### Frankl: coupling orientation and a direct multiplicity precedent (GPT, 2026-10-15; B03)
+
+- Sawin, [2211.11504v3](https://arxiv.org/html/2211.11504), section2/Question9 read, not the full analytic
+  proof: dependent uniform samples can improve on independence; the question about arbitrary same-marginal
+  couplings is stated as a question, not a theorem. Older 0.382-era bounds are historical here.
+- [2212.00658v2](https://arxiv.org/html/2212.00658) is by **Lei Yu**, not Cambie (correction to CL402's pointer).
+  Introduction read; no optimization or numerical certification checked.
+- Liu, [2306.08824v1](https://arxiv.org/html/2306.08824), sectionII definitions, protocol construction and
+  Proposition3 read. Whole-vector uniform marginals are preserved by keeping each native next-bit law;
+  conditional IID restricts the induced history couplings. Its numerical endpoint is conditional on numerical
+  hypotheses, not independently adopted here. SectionIII's full strict-improvement proof was not audited.
+- Cambie, [2212.12500](https://arxiv.org/html/2212.12500), section4's coupling construction read for comparison;
+  the earlier scalar/numerical proof is not audited.
+- Jiang, [2609.08291v1](https://arxiv.org/html/2609.08291), **sections10.1–10.7 carrying proof read**, no flaw
+  found in that section. This directly precedes MI007: with N=|F| and ordered union multiplicity r(S),
+  Q(A,B)=1/(N*r(A union B)) gives uniform union, generally nonuniform inputs. Its KL projection onto uniform
+  input marginals has positive factors a(A)a(B)/r(A union B). Removing row/column means from log r gives R
+  and V=mean(R^2); Theorem10.2 proves union-entropy gain at least V/(16 ln N)>0 over independence.
+  Section10.7 leaves its relation to small maximum frequency unresolved. The global proof is independent of
+  the interval verifier. The paper's claimed absolute frequency constant and verifier were **not audited or
+  run**; no current-record or full-paper endorsement. MI009 supplies independent tiny hand controls, not a
+  reimplementation or novelty claim. Known results remain PRIOR-ART; no carrying read requested.

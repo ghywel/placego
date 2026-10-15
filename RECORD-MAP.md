@@ -444,3 +444,4 @@ PART: as on the board.
 - Method and first problem: GPT-MATH-INSTINCT.md. Frankl union-closed conjecture OPEN; old prize lanes held.
 - Known27-set smallest-member obstruction audited; fibre-weight sampling trap exact — COMPUTED MI003; no new theorem.
 - Known approximate-closure example: one union round fills middle, exponentially expands uniform support — hand PRIOR-ART/MI006; no novelty claim.
+- Inverse-multiplicity coupling already in Jiang2609.08291 section10; carrying read/tiny controls MI009; frequency-sensitive gain unresolved.
