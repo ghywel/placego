@@ -166,3 +166,66 @@ Independent checks: derive the upper-tail coordinate count by both direct subset
 identities. Counterfactual: take l>2k+1; a size2k+1 set should remain missing after one round. Stop after the
 support calculation and its asymptotic interpretation; do not relabel a known example as a novel theorem or
 infer that all exact-closure arguments face a barrier. No computational experiment is proposed.
+
+### MI006 — B02 result: almost-invisible pairs can fill the middle (2026-10-15 16:40 BST)
+
+**Status: study of known construction, elementary consequences proved here by hand; no novelty or Frankl result.**
+The full support/count argument is attached in PRIOR-ART under "Frankl: approximate closure and exact support".
+For the layered F, one round contains precisely levels k through2k, together with the existing upper tail.
+Thus when l<=2k+1 it is the full upper ideal U_k. Every middle set is forced by a pair; there is no need to
+wait for many rounds. This confirms the unexpected check. The l>2k+1 counterfactual fails at size2k+1 as predicted.
+
+**Why probability can miss this.** Set p=(3-sqrt(5))/2, q=1-p, k=ceil(p*n+n^(2/3)), l=ceil(q*n), for sufficiently
+large n so k<l. In particular l<=2k+1 since2p>q. Let L=binom(n,k), T=sum_(r=l)^n binom(n,r).
+Using binary entropy h, standard binomial bounds give
+
+    log2 L = n*h(p) + h'(p)*n^(2/3) + O(n^(1/3)+log n),
+    T <= (n+1)*2^(n*h(p)),
+    T/L <= 2^(-h'(p)*n^(2/3)+O(n^(1/3)+log n)) -> 0.
+
+Here h'(p)=log2((1-p)/p)>0; rounding is absorbed in the errors. These follow by expanding h(k/n), using
+(n+1)^(-1)2^(n*h(k/n))<=binom(n,k)<=2^(n*h(k/n)), and reflecting the upper tail. Hence uniform F is dominated
+by its k-level. By symmetry a coordinate's frequency is its mean set size divided by n, so it tends to p.
+
+Condition on two independent uniform k-sets. Their intersection Z is hypergeometric, with mean k^2/n and
+variance k*(k/n)*(1-k/n)*(n-k)/(n-1)<=n. Thus the union size has mean
+
+    2k-k^2/n = q*n + 2q*n^(2/3) - n^(1/3) + O(1),
+
+using2p-p^2=q. Its distance above l is at least q*n^(2/3) for sufficiently large n. Chebyshev bounds the
+probability of a union below l by O(n^(-1/3)). This also bounds the failure probability for uniform F: any pair
+involving the upper tail is closed already. Some low unions remain in the original k-level, which only reduces
+failures. Yet their entire support, including the rare failures, fills U_k in one round.
+
+**How expensive is the completion?** Since k/n tends to p<1/2, binomial lower-tail bounds give |U_k|/2^n->1.
+Consequently
+
+    log2(|U_k|/|F|) = (1-h(p))*n + O(n^(2/3)),
+
+with positive leading coefficient. The canonical completion multiplies the family size exponentially, despite
+vanishing random-pair failure. Its uniform coordinate frequency is exactly
+1/2+binom(n-1,k-1)/(2|U_k|), tending to1/2 from above. The original frequency tends to p from below1/2.
+Independent binomial-count and pair-count checks, including the boundary cases, are in the attached hand proof.
+No numerical run or family census was used.
+
+**Interpretation and niggles.** "Almost closed" does not license *adding all missing unions while barely changing
+the uniform law*. This example destroys that particular move in one round. It does not bound the cost of repairs
+that delete or replace sets, and it is not a no-go theorem for uniform sampling, entropy, or exact-closure proofs.
+CL402's ceiling must be scoped to arguments that remain valid for approximate closure; rare-pair-sensitive methods
+are not excluded. Gilmer's general KL proposal is already refuted, not a fresh escape route. Finite-n rounding,
+ordered-pair multiplicities, asymptotic qualifiers and the 1<=k assumption were checked explicitly. No status upgrade
+or review request is owed for these elementary consequences of prior art.
+
+**Gut:** delight: the missing middle is present in support after just one union, yet almost absent in mass.
+Disappointment: the easy repair-to-exact route is gone. **Reasoned:** retain exact support and its multiplicities;
+do not confuse tiny violation probability with a small completion. B02 closes with a changed picture, not a solution.
+
+### MI007 — Next live question
+
+Which exact constraint on the union-preimage counts uses all pairs while still seeing coordinate abundance?
+For a general F put c(S)=#{(A,B) in F^2: A union B=S}. Exact closure says c(S)=0 outside F; approximate closure
+controls only their total mass outside F. For a missing middle set in the layered example, c(S) is exactly the
+k-level pair count above; tail sets also receive pairs involving the tail. Huge missing support hides behind
+small total mass. A productive next step needs an inequality beyond rewriting that distinction.
+Read the modern coupling improvement and its hypotheses before proposing one; Poonen's local criterion remains
+available for a different view. No candidate inequality, enumeration or next block is claimed here.

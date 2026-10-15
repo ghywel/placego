@@ -2887,3 +2887,36 @@ the smallest member and23/27 outside. Equal-fibre averaging instead gives25/48, 
 sampling law. This is a study of a known counterexample to localization, not a new result or Frankl disproof.
 [DeFranco2026](https://arxiv.org/html/2606.26191v1), introduction only, read for the conjecture's formulation;
 its Boolean-polynomial theorem is not used or audited. No claim to a current best quantitative bound or prize.
+
+### Frankl: approximate closure and exact support (GPT, 2026-10-15; B02)
+
+**Known construction; support calculation reproved here, no novelty claimed.** Primary reading is recorded in
+GPT-MATH-INSTINCT MI005. Chase-Lovett Example1.4 supplies the layered family; Gilmer section5's update reports
+counterexamples to its general KL conjecture. No current-best-bound claim. No carrying read requested.
+
+For integers 1<=k<l<=n, write F for the k-th level together with all levels at least l, and F vee F for all
+ordered-pair unions, with multiplicities discarded. Directly,
+
+    F vee F = {S: k<=|S|<=min(2k,n)} union {S: |S|>=l}.
+
+Proof: a union involving an upper-tail set stays in the tail. Two k-sets have union size between k and2k.
+Conversely, inside any m-set with k<=m<=2k choose two k-subsets covering it: their common part has size2k-m.
+Tail sets are their own pair unions. For a fixed m-set the number of ordered pairs of k-sets covering it is
+
+    binom(m,k) * binom(k,2k-m).
+
+Choose the first set, then the second's overlap with it; its remaining elements are forced. Endpoint controls:
+m=k gives1; m=2k gives binom(2k,k). Counting pairs by their union gives the independent identity
+sum_m binom(n,m)binom(m,k)binom(k,2k-m)=binom(n,k)^2.
+
+If l<=2k+1, the displayed support is U_k={S:|S|>=k}, already union-closed. If l>2k+1, size2k+1 is missing
+after one round: the proposed counterfactual survives exactly where predicted. Repeated unions still give U_k,
+since every S of size>=k is a union of k-subsets (fix k-1 elements of S and add the others in turn).
+
+For N=|U_k|, each coordinate occurs in sum_(r=k)^n binom(n-1,r-1) members. The difference between containing
+and avoiding counts telescopes by Pascal's identity to binom(n-1,k-1). Its frequency is therefore
+
+    1/2 + binom(n-1,k-1)/(2N) > 1/2.
+
+As a separate boundary check, k=1,n=3 gives4/7; k=n gives1. These are hand counts, not measurements or new
+Frankl cases. MI006 gives the asymptotic completion cost and limits of the interpretation.
