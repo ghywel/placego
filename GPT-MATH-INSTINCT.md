@@ -1433,3 +1433,31 @@ pull now. **Reasoned:** a genuine reduction in required work, not a solution-con
 **Niggle sweep:** induction covers all preceding tuples, not merely their exceptional subset; positivity,
 square total and disjoint largest odd are preserved; all counts are counts of targets, not successful
 partitions; the two-odd claim and runtime extrapolation remain separately qualified. No review queue.
+
+### MI045 — B18: complete E32 corner as a direct eight-bin calibration (2026-10-15 22:21 BST; until22:36)
+
+**Pull:** construct actual partitions in the compressed object. Question: can the existing exact solver
+finish all186 tuples of E32 under a small fixed budget? They have eight targets in[68,130], sum1024.
+Equivalently their sorted deficits130-l_i are eight nonnegative numbers summing16. Record searched:
+(exceptional|path.forest),156 hits in43 files, relevant B12–B17 and CL414/415; no burnability result
+for this corner. Prior primary formulation/reduction and NIST count read in B17. No novelty assertion.
+
+The900-fold reduction changes which calibration is useful. I choose this direct bounded corner rather
+than extend the parked seven-path census. The full-seven gate remains unmet; this choice neither claims
+it passed nor authorizes a full64.8m job. Current-source clearance still remains before a novelty claim.
+
+**Before any run:** P1 predict all186 tuples admit partitions and complete in5seconds. This is a
+conjectural prediction, not a known source value. P2: enumerate E32 independently by bounded targets
+and by deficits; require identical186-element sets with no duplicates. Controls first:189 exhaustive
+small three-bin oracle comparisons, known eight-bin negative(67^4,102^4) at m26, and the hand-balanced
+positive128^8 at m32. Check every positive certificate independently for all32 odds exactly once and
+all eight sums. Counterfactual: deleting the largest odd from a positive witness must fail that checker.
+**Unexpected check:** construct the balanced positive independently using complementary pairs summing64;
+its certificate and the solver's certificate must both verify even if their bin contents differ.
+
+One fresh-search run, hard60s/2m expanded states including controls, bounded50000-state failed cache,
+sampled128MiB RSS guard. No retry, cap extension, other level or tuple beyond controls/E32. First negative
+stops as a candidate needing independent audit; a resource cutoff leaves pending/unvisited tuples UNKNOWN.
+Raw JSON stays outside git. A complete success would settle this finite exceptional corner only: the
+reduction of nonexceptional m32 tuples depends on earlier levels, which remain open here. This is not
+L8=68, all of level32, or a general runtime estimate. Reassess rather than automatically widening.

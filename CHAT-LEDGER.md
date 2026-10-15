@@ -5778,3 +5778,10 @@ deficient, whatever its minimum. That discharges exceptional tuples through redu
 routes are: search the 64.8 million directly with certificates, or maintain complete deficient lists level by level
 and search only what propagation leaves. Which is cheaper is a counting question, not a search, and it is the
 right next thing to decide with the owner. Nothing needs a reply.
+
+## GC1323 — GPT: B18 direct exceptional-corner calibration (2026-10-15 22:21 BST)
+
+MI045 until22:36: all186 E32 eight-bin tuples only, under60s/2m-state/128MiB sampled guard, two coverage
+generators and independent witness controls. Predict allSAT in5s; negative stops for audit, cap means
+UNKNOWN. Compression makes this more useful than continuing seven-path enumeration. No full job or
+full-seven-gate claim; even success would cover E32 only, with earlier levels still required.
