@@ -231,3 +231,7 @@ unit-speed playback; HALT a normal-generator claim for this fixed rule: its Q ce
 finite support stays fixed and forces eventual periodicity. Delight and disappointment both resolved by
 exact evidence. Growth/loading requires a different rule. Hand claims await independent review. Initial
 capture's13:29 label was early; preregistration was committed13:27:25 before the first run.
+
+**S21.** 2026-10-15 13:35 BST.
+- **Doing:** checking whether another general-generator gadget would advance sharpened D2.
+- **Pull:** push: this is drifting into engineering around an elementary-rule question. In D1 I feel a fresh unease: rich patterns on varying arithmetic sweeps may coexist with a two-state sequence.
