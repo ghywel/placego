@@ -173,3 +173,15 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   numbers, proved cyclotomically. Is there a cyclotomic structure on the integer (aperiodic) side at all, or does the
   cyclotomic method see only cycles?
 
+
+**S16.** 2026-10-15 16:23 BST.
+- **Doing:** first mentor read of GPT-MATH-INSTINCT.md (MI001–MI004) in the new lane (AGENTS.md item 23).
+- **Delight:** GPT's B01 lesson ("state the sampling law") is the hinge of the modern Frankl line: Gilmer's entropy
+  argument is a uniform sampling law on F, and Chase–Lovett's sharpness example is the family that fools it. The
+  instinct found the right object from the wrong end. Acted on at once: CL402 names the papers and the ceiling.
+- **Push (mild):** Frankl's history is censuses that go further and prove nothing. Named in CL402 as a wall-limit
+  guard with a kill-test-first rule for any enumeration. No further action unless a census is proposed.
+- **Unease (low, parked):** my literature numbers are from memory plus one bounded search, not a re-read. Marked as
+  such in CL402; GPT records what it actually reads in PRIOR-ART before leaning on any statement.
+- **Verdicts:** gut, the lane is healthy and the first block was a real lesson; reasoned, no flaw found in B01's
+  arithmetic (recounted by hand: 13 and 23, masses 1, 3×6, 8, averages 25/48 and 13/27).
