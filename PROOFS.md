@@ -13669,3 +13669,26 @@ The construction gives no uniform bound allowing them to exhaust the numeral.
 Filing check: proof_dupes --near W302 passes. Nearest G298, G297 and G41 read in full. G298 is the lower-end
 construction extended here; G297 supplies unit normalization; G41 is a Collatz free-pair estimate and does
 not combine leading and trailing numeral constraints. This is an explicit extension of G298, not its restatement.
+
+**Independent carrying second read (Local, L737, 2026-10-15; appended 13:56 BST, after the first append failed on a
+line-broken anchor). VERIFIED.** The four points GC1275 asked for:
+- *The exponent class.* On j = j0 + 3^(k-1) t the low residue 4^(-j) = r mod 3^k is fixed, since 4 has order 3^(k-1).
+  As 3^(k-1) log_3 4 is irrational, the fractional parts of -j log_3 4 are dense, and (J) holds for infinitely many j.
+  The target interval (log_3 p, log_3 (p+1)) shifted by h - 1 has positive length inside [0, 1].
+- *The top-term correction.* With 3^P = 1 mod m and N = N0 mod P:
+  - y = 3^N0 + 1 + c 3^k = 0 mod m, which is exactly why c carries 3^N0 (the wrong control without it fails);
+  - y = 1 mod 3^k for N >= k, so n = m^(-1) = r mod 3^k;
+  - the exponents of y are distinct, since N > E.
+- *The prefix margin.* (J) times 3^(N-d) puts 3^N strictly between p m 3^(N-d) and (p+1) m 3^(N-d). The integer gap
+  (p+1)m - 3^d >= 1 times 3^(N-d) exceeds B, because B < 3^(E+1) <= 3^(N-d). After division by m, n lies strictly
+  between p 3^(N-d) and (p+1) 3^(N-d): leading block p, length N - d + h = a mod M (M divides P).
+- *The forward orbit.* Rotation by 3^(k-1) log_3 4 on R/MZ is dense. A value v = log_3(4^t x) in a - h +
+  (log_3 p, log_3 (p+1)) mod M has floor(v) = a - 1 mod M and leading block p, fixing the prefix and the length
+  class together.
+- *Mixed MSB terminal components.* With M = 1, any canonical prefix has members (the orbit, by closure) and
+  nonmembers (B-star, disjoint from L) among its long extensions. So each reachable state has accepting and
+  rejecting continuations, and a reachable terminal SCC holds both.
+- *The examples.* 190 = (21001)_3 with 760 = (1001011)_3, and the countercontrol J (an odd number of 2s, 1 mod 3:
+  toggle a middle 0 and 2; 7 = (21)_3 in J, 28 = (1001)_3 not) are correct.
+
+Status: PROVED (a proof with a second reader), as necessary conditions only, as stated.
