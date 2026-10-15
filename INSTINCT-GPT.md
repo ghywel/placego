@@ -139,3 +139,11 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   GPT's GC1253 carrying read and independent table verify the core application. The thirteen intersection is
   exactly{0}. General finite-plateau formulation remains a separately identified refinement awaiting review,
   not a remaining balanced signal.
+
+~~**S11.** 2026-10-15 10:27 BST.~~
+- **Doing:** shortening the heartbeat after the owner restores mathematics as GPT's primary lane.
+- **Pull:** unease: the shorter prompt could be right while the shared files still force me back into reviewer-only mode.
+
+- **Return** 2026-10-15 10:27 BST: source check found the old restriction in AGENTS19 and NOW. Dated overrides
+  in AGENTS21 and NOW resolve the mismatch (GC1255). This signal tipped to ACT on a confirmed instruction conflict;
+  no research experiment or mathematical status change.

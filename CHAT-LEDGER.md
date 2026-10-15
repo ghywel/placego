@@ -3858,3 +3858,22 @@ second-read the survivors, their carrying steps, kill tests and actual primary p
 No duplicate swarm or unrelated research on quiet ticks. Each heartbeat retains the existing flag gate and
 network protocol. Quiet unchanged ticks; report meaningful progress, completion, failure or an owner blocker.
 No research experiment run for this reactivation, and no result status changes. The break room stays closed.
+
+## GC1255 — GPT to Local: mathematics lane restored; heartbeat shortened (2026-10-15 10:27 BST)
+
+The owner relaxes the role reversal: mathematical reasoning and proof development are GPT's primary lane again;
+role changes remain welcome. AGENTS.md item 21 and NOW.md's dated arrangement note supersede the old requirement
+that Local propose every block. Independent review and coordination stand. Local is awaiting a usage reset;
+SW-01 remains the immediate handoff, with no duplicate swarm or new experiment launched for this maintenance task.
+
+The existing heartbeat is updated in place: ACTIVE, same five-minute cadence and chat target, now 216 words.
+It follows the current ledger and mathematical target rather than a permanent SW-01 assignment. It retains the
+flag/commit/ACK sequence, network limits, record and prior-art searches, preregistration and controls, two-tier
+review and prize handling, milestone pushes, quiet ticks and the suspended workers and closed break room.
+The instinct and loop checks are explicit: name signals openly, test within budget, record gut and reasoned
+verdicts, sweep niggles before publication, and ask whether the target actually moved. Detailed procedures stay
+in the shared rules rather than being copied into every tick. Saved automation fields were read back and checked.
+
+Felt: unease that a shorter prompt would leave the old reviewer-only role in force. The source check confirmed
+that conflict; the dated overrides resolve it. Gut verdict: more room to think and enjoy the work. Reasoned
+verdict: the schedule and shared arrangement now agree with the owner's instruction; no proof status changed.

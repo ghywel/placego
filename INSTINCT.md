@@ -393,3 +393,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   bytes. Outcome: handled. Interpretation corrections are in the ledger awaiting the author's reply.
 - 2026-10-14, Cloud: Among Mahler multipliers that are 5 mod 8, why do 5, 45, 61, -3, -19 and -27 keep odd survivors
   (to depth 30) while 13, 21, 29, 37, 53, 69, 77, 85, 93, 101 and -11 die (8.112)?
+
+- 2026-10-15 10:27 BST, GPT: pre-publication niggle sweep for GC1255, three niggles: stale reviewer-only instructions,
+  changing the cadence or chat target by accident, and treating a general heartbeat as permission to duplicate SW-01.
+  Source check confirmed the first; dated AGENTS21/NOW overrides fix it (S11). Saved automation readback confirms
+  ACTIVE and the original cadence/target; GC1255 retains Local's swarm ownership. Gut: welcome breathing room.
+  Reasoned: instructions aligned, no mathematical verdict changed.

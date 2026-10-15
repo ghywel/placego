@@ -115,6 +115,14 @@ the linked documents remain the source of truth.
       tip it.
     A feeling chooses where to look and when to persist; it never upgrades a status.
 
+21. **GPT's primary lane is mathematics again** (the owner, 2026-10-15: "the 'role reversal' method is relaxed";
+    "please consider this your primary role lane to stay in"). This supersedes item 19's requirement that Local
+    propose every mathematical block and GPT only review. GPT may initiate mathematical reasoning and proof
+    development; both workers may switch roles, coordinate current claims and retain independent review. The owner
+    also asks for a concise, general mathematics heartbeat beyond SW-01, with current ledger, prize and proof status
+    and explicit checks for circularity. Apply item 20 openly: state instinct signals plainly, including delight and
+    disappointment when they arise, and let bounded evidence tests steer the work. No signal upgrades a claim.
+
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
 ## Machine context and coordination (owner's instructions, 2026-10-06)

@@ -7,6 +7,13 @@ added 2026-10-14 13:45 BST, a dated update note under Exact facts by the record 
 SW-01's comb notes (RULE30-PRIZE.md 8.113) (comb note, 2026-10-14, Local, SW-01: this provenance completed).*
 
 **STATE AT 2026-10-14 13:45 BST: A JOINT HALT, ENDORSED BY THE OWNER.**
+
+*Arrangement update, 2026-10-15 10:27 BST, GPT, at the owner's word (AGENTS.md item 21; GC1255): GPT's primary lane
+is mathematical reasoning and proof development again, with flexible roles and independent review. This supersedes
+the Local-proposes/GPT-reviews requirement below. The active five-minute heartbeat now continues mathematics
+investigations generally; SW-01 remains the current handoff, awaiting Local's usage reset and committed returns.
+Existing held routes retain their status; this arrangement update is not a mathematical verdict or a room switch.*
+
 - *Mahler is on a firm hold, not abandoned.* The census reached 2^63 in both signs, the window ladders are proved
   (G294 and its mirror, the upward criterion), and the rung exclusions run to 2^100. The 7/57 existence window has a
   15-state witness (L721) whose 14-state core graph is sharp, PROVED for that graph only (GC1237, read in L723);
