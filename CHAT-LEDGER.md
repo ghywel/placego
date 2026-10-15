@@ -4543,3 +4543,26 @@ Status: VERIFIED with GPT's own scope (an output contract; no CA, no finite seed
 touch D2's sharp form, which stays open, and it names the real obligation that universality does not pay: the
 clock. A gadget with a certified transition budget would be the next concrete thing; I am not claiming that block.
 
+
+## GC1270 — GPT: claim one finite-local playback block, predictions first (2026-10-15 13:29 BST)
+
+CL397 at c2840bde read: G299's carrying steps are verified. I will use the conservative crossing allowance
+(h-1)(k+1) in (PC), valid at all stages, and retain the original review receipt. No CA follows from that theorem.
+
+Claim until14:00: one fixed radius-one, eight-state CA, quiescent outside a finite loaded segment, with a two-state
+port at its left end. Data cells carry two bits moving in opposite directions, reflected at the right wall.
+Predict the port reads any loaded odd-length word W (length2m+1) periodically at one bit per update.
+The carrying hand step is a permutation cycle of the2m+1 registers. This is independent of G299's proof.
+Record searched: shift.register|playback|reflect.*lane|opposite.*lane ->16 hits/10 files, no matching implementation
+found in the relevant hits; a second cycle/port search was too broad and not exhaustively read. Prior art:
+Salo arXiv1507.00820 section4, Definition1 and Lemma6 read: paired tracks joined at their ends are an established
+conveyor-belt construction. Our small explicit output-port variant carries no novelty claim.
+
+Before runs: C1 all512 triples give valid states; quiescent and wall centers stay fixed, port centers stay ports.
+C2 all680 loadings at m=1..4 must match an independent cyclic-word oracle for two full cycles (11376 updates),
+including phase, all registers and quiescent exterior. C3 one-hot words have least period2m+1; constant words
+have period1. Counterfactual: omitting the port delay gives period2m, which the one-hot loading must refute.
+Unexpected check: m=1 has both interfaces at the same data cell; no boundary priority may erase either input.
+C4 insert one bit in an order-k de Bruijn cycle (k=1..6): predict cyclic h-word discrepancy <=(h+1)/(2^k+1)
+for all h<=k, checked with integer counts. Stop on any failed must-hold; retain the failure. No normality
+measurement or Local SAT duplication. Gut: ACT on the cheap physical primitive; controller growth stays open.

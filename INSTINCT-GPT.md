@@ -221,3 +221,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   a sufficient symbolic contract; duplicated bits give the predicted failure control. ACT on this candidate,
   pending independent read; a physical CA gadget remains missing. Delight at the reflected count, no normal-CA
   status upgrade. The next question is an explicit finite-local implementation, not another normality measurement.
+
+**S20.** 2026-10-15 13:29 BST.
+- **Doing:** turning G299's symbolic clock contract into a specified local playback primitive.
+- **Pull:** delight: a two-lane conveyor with a one-bit port should give an honest one-bit-per-tick clock. Unease: a family of loaded finite rings is still very far from one seed that keeps enlarging itself.
