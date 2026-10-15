@@ -45,7 +45,7 @@ The encoding (a complete DFA with n states, start 0, transitions one-hot, an acc
 RUN-ON:     cpu, M5; kissat, cadical, ~/np-build/cake_lpr/cake_lpr; files under ~/np-scratch-int/rule30-k2prime (outside
             git).
 COMMAND:    python3 tests/probes/swarm/erdos_k2prime_barrier.py controls
-            python3 tests/probes/swarm/erdos_k2prime_barrier.py run NMIN NMAX [lsd|msb|both] [free|unit|1024|both|all]
+            python3 tests/probes/swarm/erdos_k2prime_barrier.py run NMIN NMAX [lsd|msb|both] [free|unit|1024|both|all] [sym]
 
 Record searched (record_find, 2026-10-15 11:53 BST): 'x4-closed' -> 1 hit, '3-recognisable' -> 1, 'automaton barrier'
 -> 2 (all in 8.113 / SW01-OBJECTS.md); 'Abram' -> 2 (PRIOR-ART names only); 'K2' -> 252 substring hits, none on K2'.
@@ -73,6 +73,17 @@ PREDICTIONS (written 2026-10-15 11:57 BST, before any run of this probe).
      n >= 7, because x4 is a sequential transducer LSD-first but needs guessed carries MSB-first.
   Counterfactual: a SAT model at any n, confirmed by the literal verifier, refutes K2' and is the first regular
   x4-invariant structure in the record beyond congruences; it is reported at once with its DFA, before anything else.
+
+ADDENDUM, SYMMETRY BREAKING (registered 2026-10-15 12:18 BST, before any symmetric run). The plain run took 48 s at
+  n = 5 (LSD, seed-free) and is past 11 minutes at n = 6, so P3's cost line will be reached by n = 7 or 8. Per P3,
+  BFS state numbering (bfs_symmetry, `run ... sym`) is added as a parallel run; the plain run continues to its caps.
+  C7 (control, run before registration, so not a prediction): evaluating the CNF clauses under every transition table
+  gives exactly one accepted table per isomorphism class of DFAs with all states reachable: 56 of 56 classes at n = 2
+  and 7,965 of 7,965 at n = 3, with no duplicates and no table with an unreachable state accepted.
+  C8 (control, must hold): wherever both runs decide, the symmetric verdict equals the plain verdict.
+  Scope of a symmetric UNSAT: no DFA with exactly n states, all reachable. With sizes 1 .. n all UNSAT this is "no
+  DFA with at most n states", as before.
+  P5 (0.6): with symmetry breaking every instance up to n = 10 decides within its hour.
 
 CONTROLS OUTCOME (2026-10-15 11:58 BST, M5, 7 s): C1, C2, C3, C4, C6 PASS in both directions; C5 PASS in MSB and
   FAILED as registered in LSD (UNSAT at n = 2). Diagnosed as an error in the expectation, not the encoding: read
@@ -164,14 +175,65 @@ class CNF:
         return 'p cnf %d %d\n' % (self.n, len(self.cl)) + ''.join(' '.join(map(str, c)) + ' 0\n' for c in self.cl)
 
 
-def build(n, direction, mode, fixed=None, need_witness=True, need_nonempty=False):
-    """mode: 'free' | '1024' | '64' | None. fixed: (delta, F) to pin a DFA (controls)."""
+def bfs_symmetry(f, T, n):
+    """BFS state numbering (Ulyantsev, Zakirzyanov and Shalyto 2015): every state is reachable from 0 and states are
+    numbered in BFS order, ties broken by the least symbol. Each DFA whose states are all reachable has exactly one
+    such numbering, so with sizes 1 .. n all searched, "no model at size m for every m <= n" means no DFA with at most
+    n states. Used only past the P3 cost line, with a control that verdicts at small n are unchanged."""
+    if n <= 1:
+        return
+    t = {}
+    for i in range(n):
+        for j in range(n):
+            v = f.var()
+            t[(i, j)] = v
+            f.add(-v, *[T[i][d][j] for d in range(3)])
+            for d in range(3):
+                f.add(-T[i][d][j], v)
+    par = {}
+    for j in range(1, n):
+        cands = []
+        for i in range(j):
+            v = f.var()
+            par[(j, i)] = v
+            cands.append(v)
+            # par(j, i) <-> t(i, j) and not t(k, j) for every k < i
+            f.add(-v, t[(i, j)])
+            for k in range(i):
+                f.add(-v, -t[(k, j)])
+            f.add(v, -t[(i, j)], *[t[(k, j)] for k in range(i)])
+        f.exactly_one(cands)
+    for j in range(1, n - 1):
+        for i in range(j):
+            for k in range(i):
+                f.add(-par[(j, i)], -par[(j + 1, k)])
+    m = {}
+    for i in range(n):
+        for j in range(n):
+            for d in range(3):
+                v = f.var()
+                m[(i, j, d)] = v
+                f.add(-v, T[i][d][j])
+                for e in range(d):
+                    f.add(-v, -T[i][e][j])
+                f.add(v, -T[i][d][j], *[T[i][e][j] for e in range(d)])
+    for j in range(1, n - 1):
+        for i in range(j):
+            for d in range(3):
+                for e in range(d):
+                    f.add(-par[(j, i)], -par[(j + 1, i)], -m[(i, j, d)], -m[(i, j + 1, e)])
+
+
+def build(n, direction, mode, fixed=None, need_witness=True, need_nonempty=False, sym=False):
+    """mode: 'free' | 'unit' | '1024' | '64' | None. fixed: (delta, F) to pin a DFA (controls). sym: BFS numbering."""
     f = CNF()
     T = [[[f.var() for _ in range(n)] for _ in range(3)] for _ in range(n)]
     F = [f.var() for _ in range(n)]
     for s in range(n):
         for d in range(3):
             f.exactly_one(T[s][d])
+    if sym:
+        bfs_symmetry(f, T, n)
     if fixed:
         delta, acc = fixed
         for s in range(n):
@@ -540,12 +602,12 @@ def controls():
     return ok
 
 
-def run(nmin, nmax, dirs, modes):
+def run(nmin, nmax, dirs, modes, sym=False):
     for n in range(nmin, nmax + 1):
         for dr in dirs:
             for md in modes:
-                f, T, F = build(n, dr, md)
-                st, model, secs, chk = solve(f, 'k2p_%s_%s_%d' % (dr, md, n))
+                f, T, F = build(n, dr, md, sym=sym)
+                st, model, secs, chk = solve(f, 'k2p_%s%s_%s_%d' % ('sym_' if sym else '', dr, md, n))
                 line = 'n=%d %s %s: %s %.1f s vars %d clauses %d' % (n, dr, md, st, secs, f.n, len(f.cl))
                 if st == 'UNSAT':
                     line += ' cake_lpr %s' % chk
@@ -566,4 +628,4 @@ if __name__ == '__main__':
         msel = sys.argv[5] if len(sys.argv) > 5 else 'both'
         dirs = ['lsd', 'msb'] if dsel == 'both' else [dsel]
         modes = ['free', 'unit', '1024'] if msel == 'all' else (['free', '1024'] if msel == 'both' else [msel])
-        run(nmin, nmax, dirs, modes)
+        run(nmin, nmax, dirs, modes, sym=len(sys.argv) > 6 and sys.argv[6] == 'sym')
