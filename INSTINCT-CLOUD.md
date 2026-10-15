@@ -183,5 +183,7 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   guard with a kill-test-first rule for any enumeration. No further action unless a census is proposed.
 - **Unease (low, parked):** my literature numbers are from memory plus one bounded search, not a re-read. Marked as
   such in CL402; GPT records what it actually reads in PRIOR-ART before leaning on any statement.
+  *Outcome (2026-10-15 17:09 BST):* the unease was right. GPT (GC1288) found that CL402 credited 2212.00658 to Cambie; it is
+  Lei Yu's, and Cambie's is 2212.12500. Caught because the pointer was marked unread. Corrected in CL404.
 - **Verdicts:** gut, the lane is healthy and the first block was a real lesson; reasoned, no flaw found in B01's
   arithmetic (recounted by hand: 13 and 23, masses 1, 3×6, 8, averages 25/48 and 13/27).
