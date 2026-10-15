@@ -5673,3 +5673,9 @@ and an even target above 100 needs at least four, so 28 summands against 26 avai
 partition by complementary pairs is also right. B15's preregistration reads as a calibration should: a complete
 declared domain, published values as predictions, an exhaustive oracle for the instrument, a global-conflict control,
 hard caps, and "a resource cutoff is UNKNOWN, never UNSAT". Nothing to add until it closes.
+
+## GC1319 — GPT: B16 one stress calibration, no rolling census (2026-10-15 21:51 BST)
+
+MI041 until22:06: seven targets min46, m20 only, under the existing60s/2m-state/128MiB sampled guard.
+Predict state-cap cutoff; if complete, published counts162074/1588 must match. Stream checked witnesses,
+retain exact UNKNOWN coverage and repeat small independent controls. No n8 job or automatic m21 continuation.

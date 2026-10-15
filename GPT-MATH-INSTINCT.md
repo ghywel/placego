@@ -1308,3 +1308,28 @@ Cloud's proposed full neighboring-theorem gate is NOT met. L7=56 is not reproduc
 The candidate remains provisional. Next cheap test: choose one declared later published level for a
 single fixed-cap stress calibration, or find a structural compression that changes what must be checked.
 Do not silently turn the successful pilot into a rolling census; reassess at the next research wake.
+
+### MI041 — B16: one capped stress test, then stop census extension (2026-10-15 21:51 BST; until22:06)
+
+**Pull:** see whether the fast pilot survives a meaningful increase, with unease about a rolling census.
+Question: how much of the complete next published seven-target level can this exact method cover under
+its existing budget? Record searched: (path.forest|odd.partition|seven.path|2312.10914),17 hits in4 files,
+B12–B15 plus one unrelated old path-count entry. Tan–Teh Appendix A's m20/min46 domain has162074
+feasible and1588 deficient cases,163662 total. This is a calibration, not new theorem work.
+
+**Before the run:** fresh solver, same descending-odd branching, pruning, symmetry and bounded failed
+cache as B15. Recheck the189 small oracle cases and negative/global-conflict controls first. Every
+positive witness is independently checked and streamed to external JSONL, avoiding accumulation of a
+large list in RAM. **P1:** expect the2,000,000-state cap before complete coverage, given B15's roughly
+21 expanded states per target; this is a falsifiable resource prediction, not a required outcome. If
+complete, P2: counts must be162074/1588. **Counterfactual:** a cutoff leaves its active tuple UNKNOWN,
+never deficient. **Unexpected check:** the streamed number of completed records must equal feasible
+plus deficient, while a pending cutoff tuple has no completed record; do not silently count attempted
+as resolved. Use the independent witness checker and the exhaustive small oracle as controls.
+
+One run only, hard60 seconds,2m expanded states including controls, cache<=50000 before clearing,
+sampled RSS128MiB. Stop on a control failure, no retry/tuning/cap extension. Report exact coverage,
+resource use and controls even on failure; raw records stay outside git. Regardless of the outcome,
+no automatic m21 extension: stop routine census growth after this diagnostic and assess a structural
+compression or leave this target. A fast result here still does not reproduce the full seven-path
+result or justify an eight-path job. Candidate remains provisional; no carrying review requested.
