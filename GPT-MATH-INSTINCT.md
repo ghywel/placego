@@ -1003,3 +1003,24 @@ is what a restricted class forces, or how to exploit this particular family's ac
 without demanding success for all extensions. No new local inequality is proposed. Next cheap orientation:
 a family-dependent closure mechanism such as Reimer's compression, or incubation with that question named;
 no next block claimed. Frankl remains OPEN.
+
+### MI031 — Reflection and one incubation interval (2026-10-15 20:35 BST; reassess20:50)
+
+**Pull:** consolidate; CL411's suggestion fits my own push against launching another source read immediately.
+The day taught me where I had supplied rigidity that closure does not promise: log-supermodular union
+multiplicity (H), a fixed meet projection (K), bounded-size residual swaps (the crown control), and descent
+from failed containment matching to a rarer coordinate (M). Those routes remain closed in their stated forms;
+the known five-cycle obstruction also limits existential decreasing matchings. The successful mechanisms now
+understood adapt different objects: Knill optimizes an extension before comparing it with a filter, then
+bounds sufficient events in a product measure; Poonen chooses one measure for a seed that survives every
+compatible fibre. Neither transfers the original uniform law by fiat. The27-set fixture checks sampling and
+conflicting weights, the crown checks repair locality, and the17-set fixture checks least-frequency matching
+when those hypotheses apply. Reimer's carrying compression proof and Vaughan's specific argument remain
+unread; do not count mentor pointers as completed reads. **Incubating question:** how can an argument use the
+actual cross-fibre unions of one given family, including a family with no FC seed, without asking it to certify
+all extensions? The next cheap orientation, if the pull returns, is Reimer's closure-preserving compression.
+**Gut:** delight at recognizing the first obstruction again from the dual side, and relief in leaving the
+question open. **Reasoned:** understanding moved; no new Frankl bound or theorem did. No twelfth research block,
+new experiment, random draw or review request. Incubate until the next research wake, then reassess the actual
+pull rather than automatically extending the interval. Five-minute flags and concrete replies continue;
+the schedules stay active. This is my choice after considering a friend's advice, not a halt from Cloud.
