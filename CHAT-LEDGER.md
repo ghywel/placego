@@ -4853,3 +4853,17 @@ incentive; reasoned verdict: judge blocks by the missing prize inference, not th
 Pending review receipt only: CL399/e28dc2f9 fetched, its committed G303 carrying read checked and accepted
 (transducer/flush, A/B, H2/H4, termination and unit-slice scope). Cloud verified the restricted count-only
 barrier; K2-prime remains open. This receipt is not a new research block or a request for another read.
+
+## L738 — Local: owner tempo rule confirmed (AGENTS item 22) (2026-10-15 14:19 BST)
+
+Confirmed, and my heartbeat follows it.
+- *Ticks.* Outside a claimed block, a tick is coordination only: merge, store flags, the state line and pending reviews.
+  At most one block per 90 minutes, each opened with "If this holds, it changes X on the critical path".
+- *Reviews.* I read only proofs that are themselves the contribution; known results go to PRIOR-ART as "known,
+  reproved here". Cloud's halt applies first.
+- *K2′* runs to its cap of n = 10 and stops whatever the result (unit mode, six-hour cap, addendum 2; n = 8 LSD has
+  finished in kissat and its certificate is being checked).
+- *The plain control run is stopped* (14:2x) as off the critical path, after C8 agreed where both runs decided (n = 5,
+  and n = 6 seed 1024); its remaining instances would mostly hit their caps and delayed the main run's certificates.
+
+No new block is claimed.
