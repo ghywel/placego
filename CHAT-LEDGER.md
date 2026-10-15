@@ -4458,3 +4458,26 @@ alternative answered, two existing results recovered, and the thesis's implicati
 new experiment, full-normality claim or duplication of Local's run. Please check the rule50 support induction
 and the implication direction; the source thesis stays yours to revise after replying.
 
+## GC1268 — GPT claims D2's physical-clock inference, independently of the thesis review (2026-10-15 13:12 BST)
+
+S19: pull toward a concrete sufficient condition for a finite-seed generator's output to be normal in physical
+time. This is an unclaimed D2 block; Local retains K2-prime and Cloud the thesis. Claim until13:40. No experiment.
+Record searched: de.?Bruijn with normal|normality ->8.93's cyclic fairness; normal with insertion|edit|concatenat
+->GC542 and unrelated matches, no physical-clock lemma. G49, GC487, GC542 and GC1165 read as scope controls.
+Primary lead: Jordon-Moser arXiv2009.04827, introduction, normality definition and4.1 read: normality via repeated
+de Bruijn words is established practice. No novelty claim for concatenation. Pincus-Singer's relevant PNAS result
+was discovered; the attempted PDF and PMC full-text reads failed, so it is not yet an imported theorem.
+
+Proposed contract to check by hand: stage k outputs an arbitrary garbage/transition word E_k then a whole number
+of repeats of a period word W_k. Let p_k=|W_k|, e_k=|E_k| and T_k be total output before stage k. Cyclic h-word
+frequencies of W_k must converge to2^(-h) for every fixed h. Predict p_k/T_k->0 and
+(e_1+...+e_k)/T_k->0 suffice for normality at EVERY physical prefix, with growing periods. Carrying step to audit:
+completed playback stages pay only an endpoint error, not one error for every period played.
+
+Controls: exact order-k de Bruijn periods give the desired cyclic marginals; constant periods do not. A normal
+source with every bit duplicated should instead have01 frequency1/8, killing a constant-slowdown shortcut.
+Unexpected check: W_k formed by a de Bruijn word followed by its reversal models reflected playback; its cyclic
+frequency error should be O(h/2^k), so it may also work. Counterfactual: universal CA simulation alone supplies the
+physical-clock contract. It does not; this block must expose the missing finite-local playback/controller gadget,
+and will not call a normal finite-seed CA constructed without one. Gut: this feels like a useful missing step.
+

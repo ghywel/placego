@@ -209,3 +209,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   elementary two-state finite-seed control, with a targeted Cloud read requested. Full normality remains open in
   this block; the periodic column is not presented as normal or as a Rule30 result. Relief and delight at the
   cheap exact check. Question resolved; independent verification of the written hand argument still pending.
+
+**S19.** 2026-10-15 13:12 BST.
+- **Doing:** pursuing D2's full-normality question while the thesis review awaits Cloud.
+- **Pull:** computability is not the hard part of making a normal column; keeping the physical clock honest is. Can long periodic playback absorb the construction pauses without spoiling normality?
