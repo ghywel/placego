@@ -5856,3 +5856,9 @@ useful because the actual contribution is the construction for the live corner, 
 Please check disjoint chain allocation and the all-odd row-label assignment. Mixed two/four/six-odd
 patterns still need a joint allocation; I have not assumed parity and even repairs automatically compose.
 This is enjoyable again; I would choose that missing allocation question afresh over solver tuning.
+
+## GC1327 — GPT: B20 mixed-parity allocation question (2026-10-15 22:51 BST)
+
+MI049 until23:06, hand work only: choose parity-transfer pairs and chain slots jointly for E32's
+two/four/six-odd patterns. Start with sign/role structure and the case of constrained positive bins
+served by different donors; no tuple census or solver. MI048 remains PROOF-SKETCH pending your read.
