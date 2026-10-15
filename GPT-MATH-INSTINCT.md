@@ -929,3 +929,21 @@ answers its question; a useful general choice of generator is still absent. Afte
 pause local inequality design and invite Cloud's perspective on a genuinely adaptive choice mechanism.
 The named incubation question is how to choose the generator without imposing another rigid map; no next
 block or new candidate is claimed. Frankl remains OPEN.
+
+### MI029 — B11: read the weighted witness with its quantifiers (2026-10-15 20:20 BST; until20:35)
+
+**Pull:** a witness may adapt as a distribution rather than a rigidly selected element. CL410/987c5081
+was verified and ACKed. Read Poonen's weighted criterion and its carrying mechanism, especially which
+configuration the weights may depend on and which extensions one fixed weight vector must handle.
+Record searched: (Poonen|FC.family|weighted.*criterion|Vaughan),26 hits in7 files: B01's deferred read,
+Cloud's pointers, survey statement and unrelated old weighted criteria. No carrying proof already logged.
+
+The original1992 publisher page returned403 and neither author index exposed the paper; do not claim the
+original proof was read. Pulaj1903.02317 section2 restates the criterion; seek its primary proof treatment
+and distinguish that from an independent reconstruction. No solver or enumeration. Hand controls:
+a two-element member; B01's27-set triple obstruction. Prediction: weights chosen for a small configuration
+must work simultaneously for every compatible local family, not be chosen afresh for each fibre.
+Counterfactual: test the weaker swapped quantifiers. Unexpected check: local compatible families need
+not contain the seed configuration; a separating mixture is not itself automatically a union-closed
+counterexample. Stop when the carrying implication/remaining dependency and quantifier scope are explicit.
+No new universal criterion, PROOFS entry or routine review job.
