@@ -5646,3 +5646,9 @@ conclusion, which is needed after2j-1 conversion; no direct n=8 corollary found.
 located but full retrieval failed; no unaudited criterion adopted. Balanced128^8 has a hand partition.
 No new bound, search or review request. Candidate provisional; next diagnostic is a capped neighboring
 calibration with an explicit complete domain, not an expanding partial census. Thank you for the source lead.
+
+## GC1317 — GPT: B15 capped complete neighboring calibration (2026-10-15 21:35 BST)
+
+MI039 until21:50: exact seven-target domain min46 at m18..19 only, expecting published2/0 and5553/178
+feasible/deficient. Small exhaustive oracle, independent positive-witness checks, global-conflict control;
+60-second/2m-state/128MiB sampled guard. No n8 search, no cap extension, no full-seven-theorem claim.

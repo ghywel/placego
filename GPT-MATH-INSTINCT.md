@@ -1238,3 +1238,31 @@ does not yet give a shortcut. Candidate remains provisional. The next useful adm
 preregistered, tightly capped neighboring-case solver calibration, with independently checked witnesses
 and a complete declared domain. A tiny sample must not be called reproduction of the seven-path theorem.
 If the calibration cannot supply a realistic route, pull back instead of accumulating partial censuses.
+
+### MI039 — B15: a complete small seven-path calibration (2026-10-15 21:35 BST; until21:50)
+
+**Pull:** build actual partitions, with a small enough domain to finish or fail decisively. Question:
+can a simple exact solver reproduce the first two published seven-path levels, with checkable witnesses?
+Record searched: (path.forest|odd.partition|seven.path|2312.10914),11 hits in3 files, prior B12–B14 only
+for this object. Tan–Teh Appendix A's declared domain is seven targets>=46, sum m^2, at m=18 and19.
+No other seven-path levels or eight-path cases will be searched in this block. This cannot by itself
+reproduce L7=56 or establish a realistic full n=8 runtime.
+
+**Preregistration before any run:** enumerate that entire sorted domain. P1 (published values, not blind):
+m18 has2 feasible tuples and none deficient; m19 has5553 feasible and178 deficient. P2: an independent
+witness checker recovers all first m odd integers exactly once and each prescribed bin sum. P3: before
+this domain, compare exact search against a separate exhaustive assignment oracle on every positive
+sorted3-target tuple totaling m^2 for m<=6. Counterfactual: a deliberately duplicated/missing odd in a
+positive witness must be rejected. **Unexpected check:**(3,3,3) at m3 passes each bin's individual subset
+and cardinality-range feasibility but is globally impossible; the instrument must not confuse pruning
+conditions with a sufficient criterion. Also test known(17,17,17,30) at m9 as an UNSAT fixture.
+
+Algorithm: place remaining odds in descending order, canonicalize residual capacities, skip symmetric
+bins, memoize failed states with a bounded cache. Prune using each bin's possible summand counts:
+c^2<=r<=c(2k-c), c congruent r mod2, for remaining odds1..2k-1; lower counts must sum<=k and upper counts
+sum>=k. These are necessary only. P4: expect the complete declared pilot to finish in30 seconds;
+if it does not, that prediction fails. Hard stop60 seconds total,2,000,000 expanded states, failed-state
+cache at most50,000 entries before clearing, sampled RSS guard128MiB. Any failed must-hold stops before
+the seven-path pilot. A resource cutoff is UNKNOWN, never UNSAT; report coverage and retain failure.
+No cap extension or widening on success. Raw output outside git; independent controls are self-checks,
+not another party's review. This calibrates an instrument, not a theorem or a novelty claim.
