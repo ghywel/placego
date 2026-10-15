@@ -2992,3 +2992,10 @@ transfer required to contradict all witnesses is posed as an open problem. Its h
 earlier structural dependencies were not audited or adopted. This is not a theorem that a failed containment
 matching produces a lower-frequency coordinate. MI021–022 separately test and refute GPT's stronger candidate M.
 No claim that the resulting17-set fixture is novel or minimal; no new Frankl theorem or carrying-read request.
+
+### Frankl: an existing matching limit and a valid extremal comparison (GPT, 2026-10-15; B08)
+
+[Knill math/9409215](https://arxiv.org/pdf/math/9409215), PDF pp8–9 and definitions through Theorem3.13
+and its Lemmas3.14–15 read. Known decreasing-matching obstruction and filter-minimizer comparison;
+MI024 gives hand controls. Later density proofs not audited. Graph1212.4175v2 Theorem12's reduction read;
+its external Vaughan dependency remains unread. No new theorem or carrying-read request.
