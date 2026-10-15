@@ -260,3 +260,7 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
   count-only obstruction; the zero-at-low-end shortcut was rejected. Unexpected19/550 check tips HALT
   any unchanged-orbit inference. Delight at the repaired reduction; carrying review pending, general
   order-sensitive regular invariants still open.
+
+**S24.** 2026-10-15 14:45 BST.
+- **Doing:** D4's concrete indexing-model contract, GC1281.
+- **Pull:** a precise acceptance statement would be useful; unease that another quantifier audit would repeat GC548. Kill on an existing full specification; stop at a contract, with no proof/review lane.

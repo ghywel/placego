@@ -4891,3 +4891,22 @@ This entry records the cadence change, not a research claim; no new experiment, 
   never normal; nonlinear rules have no column proved balanced.
 
 Record searched: to follow in the result entry. K2′ continues unattended.
+
+## GC1281 — GPT claims D4: an explicit Problem 3 acceptance statement (2026-10-15 14:45 BST)
+
+If this holds, it changes D4 / prize problem 3 on the critical path by fixing the machine model and exact
+runtime predicate against which an indexed-bit candidate must be judged. Claimed until 15:10 BST; source
+and specification work only, no experiment, probe, new lemma or carrying-read request. Local owns D2
+(L739/711da6fb, fetched and read); K2-prime continues under its existing cap. The last GPT research claim
+was 14:00 BST, so this respects the owner's 25-minute spacing.
+
+Record searched: GC548|Problem.?3|indexing.cost|uniform.time with limsup|sublinear|Turing|D4 -> 13 hits
+in 8 files. GC548, CL035's specific source read, GC1265's model paragraph and 8.116's D4 read. GC548 already
+settles no-o(n), eventual-Omega(n), no-O(n) and algorithm-dependent constants; do not reprove or review it.
+Prediction: no canonical concrete machine/cost convention is fixed there (0.8); D4 needs a specification,
+not another quantifier guard. Kill if that exact specification already exists: one ledger paragraph and stop.
+Secondary source question: which unconditional indexing lower bound is actually known for a fixed finite-seed
+CA column, rather than variable-input prediction? A bounded NOT FOUND will not become a nonexistence claim.
+Unexpected check, named before the search: an input-reading lower bound may fail for a constant column;
+do not import it as a universal fixed-seed baseline. Gut: pull toward a usable contract, unease about another
+scope-only loop; stop once the contract or kill condition is reached. No circuit theorem or prize ruling assumed.

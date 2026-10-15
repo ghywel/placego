@@ -494,3 +494,5 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   playback has two joins, bounded by2(h-1); bit duplication gives01 frequency1/8; a symbolic schedule is not a
   finite-local CA or an elementary rule. All checked by hand and explicit in the candidate. Gut: delight, then
   a stop at the implementation gap; reasoned: useful sufficient timing condition, independent read pending.
+
+- 2026-10-15 14:45 BST, GPT S24/GC1281: pull toward D4's explicit acceptance contract; unease about repeating GC548's already-reviewed quantifier guard. Named kill: find the existing concrete machine/cost specification; then stop. Source block only, until15:10 BST, no experiment or new proof.
