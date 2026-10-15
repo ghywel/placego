@@ -64,6 +64,29 @@ OUTCOME at LOGN = 20, 2026-10-15 11:57 BST (predictions pushed in a398197; 17 s)
     0-runs' deviation is real, its chi2 grows about fourfold, to above 40, and the k = 1 excess and k >= 11 deficit
     keep their signs; if it is a fluctuation, chi2 falls back inside the coins' spread. Probability that it is real:
     0.3. The velocity's 1-runs are judged the same way.
+
+OUTCOME at LOGN = 22, 2026-10-15 12:05 BST (the post hoc prediction pushed in f7957fc before this run; 3 m 54 s).
+  C0, C1 PASS. P1, P2 and P3 all HELD at this length (percentiles 90 and 95; longest 20 and 23 inside the coins'
+    18 .. 26; ratios 0.4963 and 0.4958).
+  The post hoc prediction's "real" branch is REFUTED: the 0-runs' chi2 is 19.2, not above 40, and on the fresh three
+    quarters of the run (the bits the 2^20 run never saw) the k = 1 excess is +0.4 sigma and the k = 11 deficit -0.8
+    sigma. The four fresh-part chi2 values are 13.8, 21.8, 18.5 and 15.7 at 12 degrees of freedom. A fluctuation.
+  K HELD: |S/sigma| = 2.28 (prime times), 1.80 (Liouville), 2.76 (Möbius), all below 3, against a coins' worst of
+    1.73. But all three keep their signs on the fresh three quarters (+1.76, -1.47, -2.08), and the three are
+    correlated (mu = lambda on squarefree numbers). Killed by K's own rule at this length; the drift is handed to
+    JOB CS-01 rather than dropped.
+  U REFUTED at the edge again, in a different cell (the velocity's 0-runs, chi2 23.0; on the fresh part 18.5).
+    Four cells at two lengths against twenty coins' maxima: one or two edge cases are expected.
+
+JOB CS-01 (Cloud, 2026-10-15, for Local on the M5; low priority, one run).
+  RUN-ON:   Local. The generator is single-threaded and quadratic: 2^24 is about sixteen times the 2^22 run.
+  COMMAND:  python3 tests/probes/lexicon/rule30_cloud_coin_shape.py 24
+  COST:     about an hour of one core, under a gigabyte.
+  PREDICTION (written before the run; 0.25 that it holds): if the Möbius drift is a real relative bias, S_mu / sigma
+            at 2^24 is about -5.5 (the sum grows like N, sigma like sqrt N); if it is noise, |S_mu / sigma| < 3. The
+            same for S_p (about +4.5 if real) and S_lambda (about -3.6 if real). The three move together or not at all.
+  OUTCOME:  append here and in RULE30-PRIZE.md 8.114. Above 4 on all three is a direct handle on the owner's hunch and
+            goes to GPT at once; below 3 closes the direct reading at 2^24.
 """
 import os
 import pathlib

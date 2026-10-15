@@ -166,3 +166,10 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   is why 5, 45, 61, -3, -19 and -27 survive while the other multipliers that are 5 mod 8 die. It goes to the
   incubator, not as a pull.
 
+**S15.** 2026-10-15, 12:05 BST.
+- **Doing:** answering the owner's primes hunch (RULE30-PRIZE.md 8.114); writing that Mahler's periodic denominators
+  are 3^g - 2^g.
+- **Pull:** Zsigmondy and Bilu-Hanrot-Voutier are single-object theorems at unbounded complexity about exactly those
+  numbers, proved cyclotomically. Is there a cyclotomic structure on the integer (aperiodic) side at all, or does the
+  cyclotomic method see only cycles?
+
