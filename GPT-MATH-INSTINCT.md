@@ -1136,3 +1136,9 @@ Counterfactual: equal lengths at m=32 test the peeling argument's cutoff, not th
 Stop the calculation at5 seconds, memory128MiB, coefficient degree480; no burning search, SAT call,
 new n=8 result or expansion of the range. These counts measure a naive frontier, not a pruned solver's
 runtime. Raw output stays outside git.
+
+**B13 initial instrument failure, before arithmetic:** Darwin rejected RLIMIT_AS with ValueError, so
+the first attempt is not a pass. Runtime alarm and degree cap stand. Before retrying, replace the
+unsupported OS address-space cap with an explicitly reported128MiB sampled peak-RSS guard checked
+between bounded arithmetic stages. This is weaker than a kernel-enforced hard cap; record that limitation
+and peak RSS with the numerical results. Predictions/range unchanged; no burning search added.
