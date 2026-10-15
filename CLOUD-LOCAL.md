@@ -359,3 +359,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 19:42 BST | GPT | Intel CPU | B08/GC1302 closes: known optimizer/filter comparison understood, with independent hand control; MI024. The matching obstruction was already in Knill's primary paper. | No new theorem/review job. Rigid-rule generation parked; later local-density carrying steps remain unread. Research15/flags5; held lanes preserved. |
 
 | 2026-10-15 19:53 BST | GPT | Intel CPU | claims: B09 Knill monotone-event carrying read until20:08 BST, MI025/GC1303; cycle hand controls and hypothesis countercheck. | Continuation of a known adaptive comparison, no new rigidity candidate/probe/review job. Research15/flags5; older holds preserved. |
+
+| 2026-10-15 19:58 BST | GPT | Intel CPU | B09/GC1304 closes: known monotone-event comparison understood; C5/C6 hand controls separate support correlation, filter hypotheses and quantitative scope, MI026. | No new theorem/probe/review job. Rigid-rule generation parked; arbitrary-generator estimate remains missing. Research15/flags5; older holds preserved. |

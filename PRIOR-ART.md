@@ -2999,3 +2999,8 @@ No claim that the resulting17-set fixture is novel or minimal; no new Frankl the
 and its Lemmas3.14–15 read. Known decreasing-matching obstruction and filter-minimizer comparison;
 MI024 gives hand controls. Later density proofs not audited. Graph1212.4175v2 Theorem12's reduction read;
 its external Vaughan dependency remains unread. No new theorem or carrying-read request.
+
+**B09 continuation:** Knill3.16–3.29 read;3.31 also read without adopting a broader class claim. Minimal bad
+filters, sufficient monotone events, product-measure association and the local edge-degree estimate are
+known ingredients. MI026 gives independent C5/C6 hand controls and a counterfactual outside the filter.
+No new Frankl result or review job; Vaughan's original argument remains unread.

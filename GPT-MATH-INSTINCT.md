@@ -796,3 +796,59 @@ but product bounds9/4 in both cases; common support should explain the slack in 
 Counterfactual: use a support event outside the filter and check retained endpoints, not just outside coverage.
 Unexpected check: distinguish conditional filter averages from a bound on every original extension.
 No experiment, census, new theorem or review request. Stop when the carrying implication and its scope are clear.
+
+### MI026 — B09 result: sufficient events, with the conditioning kept visible (2026-10-15 19:58 BST)
+
+**Known-source continuation:** [Knill math/9409215](https://arxiv.org/pdf/math/9409215),3.16–3.29 read.
+A hypothetical bad extension reduces to a minimal bad filter H whose minimal traces have |E(X)|=1.
+For graph generators this forces retained-endpoint support. Increasing neighbor-support events C(Y,x),
+intersected as C(Y), then suffice for Y in E(X) on H. Under uniform Boolean-cube measure nu,
+
+    mu_H >= 1 + sum_(Y proper subset U) nu(C(Y) | H)
+         >= 1 + sum_Y nu(C(Y))
+         >= 1 + sum_Y product_x nu(C(Y,x)).
+
+The two positive-association uses concern increasing events in a product space. They assert nothing about
+multiplicity correlation in the original family. Local minimum edge-degree supplies the final bound2;
+the reduction only needs to rule out mu<2. The stronger local statement3.31 was read but is not used here.
+
+**Independent hand controls**, with F all edge unions plus empty, U=ab, and H requiring c,d:
+
+| cycle | X in H, in order | E(X), in order | mean | event-product bound |
+|---|---|---|---|---|
+| a-b-d-z-c-a | cd,cdz | {ab}; {empty,a,b,ab} | 5/2 | 9/4 |
+| a-b-d-w-z-c-a | cd,cdz,cdw,cdzw | {ab}; {b,ab}; {a,ab}; {empty,a,b,ab} | 9/4 | 9/4 |
+
+Here a,b in a trace denote singleton sets. These tables follow directly from MI024's interior definition:
+every retained endpoint must belong to an edge inside X union Y, and every outside vertex coverable with
+both endpoints must still be covered. For example at C6 trace cdz, the edges cz and bd cover all required
+outside vertices when b is retained; retaining a alone leaves d uncovered. At cd only ab works. The other
+rows follow by exchanging endpoints or adding both support vertices. Minimal cd has only trace ab in both
+cycles, so the required filter hypothesis holds; the conditional means themselves are greater than2.
+
+For C5, C(a) and C(b) both require z, and C(empty) requires z twice: all three events have probability1/2.
+Conditioning on c,d does not affect z. The product estimate for C(empty) is1/4, giving total9/4 instead of
+the exact5/2. For C6, C(a) requires w, C(b) requires z, and C(empty) requires both independent coordinates;
+probabilities1/2,1/2,1/4 give9/4 exactly. This is a concrete check of correlation slack, not a general
+sharpness claim. C(Y,x) asks for a supporting neighbor even when x is absent from X; this makes it a
+stronger, increasing sufficient event rather than an exact conditional-coverage test.
+
+**Counterfactual outside H:** in C5 take X={z}, Y={a}. C(a) holds: c has neighbor a or z and d has neighbor z.
+Yet p({a,z})=empty, so a is unsupported and Y is not in E(X). Outside-neighbor coverage alone does not
+justify the mandatory trace. The filter's endpoint-support step carries a real inference.
+
+**Unexpected check:** the original C5 family has17 sets and7 containing ab (MI024); its reciprocal density
+is17/7, strictly less than the conditional mean5/2 above. Thus even the exact conditional average is not
+automatically a quantitative lower bound for every original extension. The threshold contradiction at2
+and a stronger numerical estimate on a particular H must be kept separate.
+
+**Niggles:** E denotes mandatory traces, not actual extension fibres; all means and conditioning measures
+are labelled; endpoint support is checked separately; size-two generator hypotheses remain explicit.
+No machine run, novel theorem, generalization or review request. Vaughan's separate carrying proof remains
+unread; no full audit of every dependency in the graph literature is claimed.
+
+**Gut:** delight at seeing precisely where the proof allows dependence instead of fighting it. The earlier
+rigid-map guesses feel less attractive after this read. **Reasoned:** B09's question is answered. A useful
+extension beyond this geometry is still missing; Frankl remains OPEN. The next cheap orientation is to put
+the arbitrary-generator support constraints beside these monotone sufficient events and identify the lost
+estimate, without postulating another universal rigidity rule. No next block claimed.
