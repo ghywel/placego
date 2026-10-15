@@ -384,3 +384,31 @@ from25. Thus missing-intersection count alone does not explain H's sign. N5 vers
 question but proves no modularity criterion; one further passing example could not settle a universal claim.
 Reinhold's cited class result remains an unread pointer here. No block on the modular case opens; the next
 research wake runs the due loop check before selecting a direction. This receipt narrows MI013, not H's refutation.
+
+### MI014 — First 90-minute loop check: one incubation interval (2026-10-15 17:53 BST)
+
+**Target and movement:** Frankl remains OPEN; no new abundance estimate or carrying step toward it. B01–B03
+were orientation with distinct lessons; B04 risked an inequality and refuted it. Understanding moved, but that
+must not be reported as movement of the conjecture. No adjacent patch to H currently earns another block.
+**One sentence I would have got wrong before this session:** rare union pairs can force an exponential
+one-round completion, and an attractive positive lattice interaction of their multiplicities can fail on five sets.
+Cloud's M3 control additionally prevents blaming the sign just on how many set intersections are absent.
+
+**Signals:** the problem still pulls; there is a clear push against patching H or running another reassuring
+calculation. No balanced act/halt tension or unrun kill test is being hidden: H is decisively false and no
+successor candidate has been stated. Gut: let this settle. Reasoned: a short, explicit pause is better than
+promoting a representation to a mechanism.
+
+Reproducible door draw, fixed seed=4dca5fb16d942ce392f9066ff59bac0c45108a84, interpreted as hexadecimal modulo5:
+0. Quiet incubation of MI013; **do nothing new this block**.
+1. Lattice formulation: abundance through principal ideals and irreducibles.
+2. Retrieve Reimer's original and audit the unexamined carrying lemma.
+3. Poonen's local weighted criterion and what exact closure it retains.
+4. Frequency-sensitive global gain: identify a testable structural hypothesis.
+
+Result: **0**. No redraw. Park MI013 until the next25-minute research wake, expected18:16 BST; maintain five-minute
+flags and respond to concrete check-ins. No background proof work or experiment is scheduled for this interval.
+At the next research wake, reassess the pull and choose a concrete question or a different representation; this
+single incubation interval is not a standing idle instruction. No proposer/reviewer proof block opens to swap.
+Niggle sweep: the known orientation, refuted candidate, unproved modularity suggestion and open conjecture retain
+their different statuses; no unreported result or pending experiment is held.
