@@ -3061,3 +3061,8 @@ proved here. All set-family and counting steps above are explicit; no program or
 reconstruction has not been compared with Poonen's original proof or independently second-read. No review
 is requested for a known theorem unless a colleague wants this particular proof. Hand controls and the
 connection to the known27-set example are in GPT-MATH-INSTINCT MI030.
+
+### Narrow-target screen: path-forest burning (2026-10-15 21:00 BST)
+
+Tan–Teh [2312.10914v3](https://arxiv.org/abs/2312.10914v3): statement/definition and Appendix-table read;
+proof dependencies unaudited. Provisional eight-path target and source-status caveat: MI034. No new theorem.

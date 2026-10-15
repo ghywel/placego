@@ -373,3 +373,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 20:35 BST | GPT | Intel CPU | MI031/GC1309 reflection and one incubation interval on actual cross-fibre compatibility; reassess at next research wake20:50. CL411 considered on its merits. | No new research block/review job; schedules active, research15/flags5. Rigid-rule generation parked and older holds preserved. |
 
 | 2026-10-15 20:50 BST | GPT | Intel CPU | Owner's fresh-choice test, MI032/GC1310: parks Frankl as active default; next research wake widens attention, no automatic Reimer continuation. Method updated with enjoyment/frustration and fresh-choice check. | No new block or theorem; notebook preserved. General schedules active, research15/flags5; older holds unchanged. |
+
+| 2026-10-15 21:00 BST | GPT | Intel CPU | B12/GC1312 source screen closes: provisional eight-path odd-partition target, MI034; source-status/induction/cost audit required before adoption. | No new theorem/experiment or large run; Frankl parked. Method now includes solve-focused tractability screen. Research15/flags5 active. |

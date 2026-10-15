@@ -14,6 +14,10 @@ independently of prize value. This is a working notebook; the conjectures remain
 3. **Orient without drowning the pull.** Search this record and primary literature before a proof attempt. Read the
    examples that defeat the obvious idea. Keep known results as prior art and specify what was actually read.
    A bounded search yielding nothing is NOT FOUND, never a theorem of absence.
+   For solve-focused selection, pair the pull with a tractability screen: a source-backed open statement,
+   an exact small target, tools we can already explain, a proof/certificate route, and a cheap diagnostic
+   that can reject the target. Small notation or a finite encoding alone does not establish tractability.
+   Learning remains worthwhile in its own right; numerical success probabilities require calibration.
 4. **Give the instinct a fair, bounded test.** Before an experiment state predictions, a genuine counterfactual,
    independent controls, an unexpected check and a stopping condition. Work by hand when that is cheaper. Ask what
    would change my mind. A small exact counterexample can be a better day's work than another reassuring census.
@@ -1065,3 +1069,49 @@ source-backed open status checked for follow-up work, known tools we can explain
 whose success or failure changes our estimate. Famousness and a cash award are optional. Reject a narrow
 restatement if it still contains the original hard problem. Stop with a justified first target, or an honest
 unsuccessful screen; do not assign numerical success probabilities or promise a solution.
+
+## 2. Provisional narrower target: partitioning odd integers
+
+### MI034 — B12 result: a candidate for a feasibility audit, not a promise (2026-10-15 21:00 BST)
+
+**Pull:** concrete integer partitions, where a proposed solution can be checked exactly. The owner asks
+for a strategically selected open target with better prospects. The screen favors an adjacent unresolved
+case with known tools and a bounded admission test; it does not establish that the case will be easy.
+
+**First candidate:** the eight-path threshold from Tan and Teh,
+[A Note on Graph Burning of Path Forests](https://dmtcs.episciences.org/en/articles/12709/download).
+In odd-integer form, test whether for every m and eight positive targets l_i summing to m^2, all l_i>=68
+suffice to partition {1,3,...,2m-1} into eight subsets of those sums. This is the proposed upper bound
+L8<=68. Their Theorem1.3 supplies the lower bound68 via M8=67; its proof has not yet been audited here.
+The paper treats cases through seven paths and leaves eight onward unresolved. Sections1–2 and the
+Appendix opening/table were read; its induction/computational chain remains to be audited. That table
+already warns of billions of positive cases at seven paths, so a full naive census is not our entry.
+
+**Status caution:** arXiv's latest version is July2024. Title-, threshold-, conjecture- and eight-path
+searches found no later resolution; that is a bounded NOT FOUND, not proof of current open status or
+priority. Later burning papers surfaced but were not all read. Source-status clearance remains a gate.
+
+**Why this survives the first screen, as my assessment:** its objects and exact witnesses are intelligible;
+we can independently check a proposed partition, use complete search on genuinely small instances, and
+inspect the existing extension recurrence for an all-size proof. It has a specific neighboring solved case
+for calibration. None of these advantages supplies an upper bound on runtime or guarantees success.
+Eight components still permits unbounded m: no finite verification proves the statement without a valid
+induction cutoff. That infinite quantifier must be closed explicitly.
+
+**Other leads:** the2025 balanced-permutation paper already settles exact balanced existence; its remaining
+counting/discrepancy questions did not supply a smaller justified entry in this screen. The2023 dice paper
+already settles its highlighted Paley19/minimum-face example; full text retrieval failed, so no new dice
+case was admitted. These are screening decisions, not claims that the subjects lack accessible questions.
+
+**Admission test before adopting the candidate:** finish the primary proof/induction read and later-source
+check; reproduce one small published case with independent controls; establish the exact finite frontier
+needed for eight paths and estimate its growth under a fixed resource cap. If the argument still needs an
+unproved global lemma or an unmanageable census, reject this candidate rather than relabel that obstruction
+as the research programme. No experiment is run or preregistered here; a pilot needs its own predictions,
+counterfactual, independent controls, unexpected check and stop conditions. No current new bound/theorem.
+
+**Gut:** a fresh pull toward objects I can picture and certify. **Reasoned:** B12 produced a more specific
+candidate, not yet a high-confidence solution prospect. First investigate feasibility; do not adopt the
+whole graph-burning conjecture. Frankl stays parked. No proof review requested or large run started in
+this entry. Operational receipt: one redundant fetch occurred about three minutes after the previous one;
+no further fetch before the next full five-minute interval.
