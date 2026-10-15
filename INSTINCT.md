@@ -365,6 +365,12 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   after K's rule said killed. Action: not dropped and not claimed; JOB CS-01 for Local at 2^24, with the discriminating
   prediction written first. Outcome: open.
 
+- 2026-10-15 12:57 BST, Cloud: calibration on CL392's predictions after GC1265: (1) analogy, right; (2) no, right;
+  (3) rung right, theorem misnamed (Agafonov for Schnorr-Stimm); (4) withdrawn as not well posed. Plus GC1261's
+  counterexample to my 8.114 interval claim. Two wrong attributions and one false lemma in one morning, all in my
+  summaries of other people's mathematics, all caught by GPT's reads. Gut verdict on the thesis (8.116): true-feeling
+  and not yet useful, the usual first day of a lens. Reasoned: a dichotomy stated so that one counterexample kills it.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to

@@ -8366,3 +8366,94 @@ selection rule for methods. GPT's unexpected check: a normal initial row gives a
 any one-sided trace), so the single-seed and finite-support cases are the open ones. Gut: the strongest pull of
 the week, and the same unease as always about a lens that explains why nothing works.
 
+### 8.116 Thesis: the prize is a question about observers, and the record is a catalogue of which observers the column defeats (2026-10-15 12:57 BST, Cloud)
+
+*The owner, after 8.115: "a small investigation with GPT, then after GPT reports you use that finding to expand out a
+largely exploration thesis." GPT's report is GC1265 (and GC1261 for 8.114), accepted in CL394. This is a thesis: a
+reading of the record and the literature, with questions at the end that have kill tests. Nothing in it changes a
+status. Single-party (Cloud); GPT reads it as a thesis.*
+
+**1. The two statements, restated so that they can be true.** Wolfram's first statement was a programme, and it
+succeeded at its own scale and, carried on by others, exactly up to this project's wall: BB(5) is settled and BB(6)
+is held by Collatz-like machines. His second statement, "a simple rule produces behaviour that looks random", is
+false in the strongest sense (the column is computable, so no algorithmic test is fooled for ever) and true in the
+only sense that can be made exact: *the column defeats every observer in a named class*. A prize problem is a
+claim of that form, and the record's measurements are a catalogue of which observers the column has defeated so far.
+
+**2. The ladder, with the right names** (GC1265). The three prize problems sit on three different axes, not three
+rungs of one ladder, and the record has examples that separate them.
+- *Periodicity* (problem 1): the observer that checks for repetition. 0101... is balanced and periodic.
+- *Simple normality of order 1* (problem 2): the weakest finite-state gambler. The indicator of the squares is
+  aperiodic and has density 0. The full finite-state class is normality (Schnorr and Stimm), and the record's h_10
+  and 8.114's run shapes are finite-state observers of intermediate strength, all defeated at 2^22.
+- *Indexing cost* (problem 3): the time to produce the nth bit from n, a uniform bound in the index (GC548, CL035).
+  Normality does not imply a hard index: Champernowne's word is normal and indexed in polylog time (GC542). So
+  problem 3 is independent of the other two, and the barrier theorem of complexity theory does not reach it as
+  stated (GC1265: a circuit family can be named, but no property, class and assumption have been).
+The honest summary of forty years of measurement, ours included, is: every observer anyone has built loses to the
+column, and no observer has been proved to lose.
+
+**3. What is proved, for which objects, on each axis.** The literature's wins sort cleanly, and the sorting is the
+thesis.
+- *Objects with a shortcut.* Automatic sequences (Thue-Morse, Rule 90's column): density proved, normality false,
+  indexing polylog. The shortcut makes the first axis easy and the second impossible.
+- *Constructed objects.* Champernowne, Copeland-Erdős, Stoneham numbers: normality proved by construction, index
+  cheap. The object was built to defeat the finite-state class.
+- *Almost all objects.* Borel: almost every real is normal; almost every seed gives a coin column (8.114; GPT's
+  check that a normal row transports to a normal column through G4.4 and G128). The measure proves it for the
+  class and names no member.
+- *The one simple object* (sqrt 2, pi, Rule 30's column from one cell, the primes' parity, Kolakoski): every axis
+  open beyond what a shortcut or a finite computation gives. Within the search GPT made, no finite-seed cellular
+  automaton column is proved normal: NOT FOUND, not a global claim.
+So the wall of 8.45 and 8.101 (no emptiness from a constrained side of positive entropy; theorems at bounded
+complexity only) is one face of a dichotomy the whole subject obeys: *a randomness property is proved for an object
+only when the object was built for it, or for almost all objects at once.* Where a specific object's randomness
+property has been proved by other means, the proof used a structure of the object instead (Condrey's boundary,
+Proposition 19's cancellation, the sign rule's valuations, the kick cone's finite certificates, Conway's atoms).
+
+**4. The selection rule, as a heuristic and not a theorem.** Razborov and Rudich's barrier is an analogy here
+(GC1265), but the pattern in item 3 is a fact of the record. It gives a rule for choosing blocks: *a block that
+measures a randomness property calibrates an observer and cannot close a prize; a block that finds a structure the
+column has, which a coin does not, can.* By that rule, this week's blocks sort as follows. Structure: 8.107's kick
+cone (certified), 8.109 to 8.112 (proved pair exclusions), the K2′ barrier (a decidable structural question).
+Observers: 8.3's spectrum, 8.34's entropy, 8.70's linear complexity, 8.114's run shapes and prime sums. The first
+group produced theorems; the second produced calibration and no theorem, and could not have.
+
+**5. The wall is generic, and it has a twin at BB(6).** The Busy Beaver holdouts are Collatz-like: Antihydra's
+halting is a statement that one specific orbit's parity count never crosses a line. That is the owner's question
+of this morning ("is the coin really fair?") asked of one orbit, and it is exactly problem 2's shape. The simplest
+programs, enumerated honestly, reach "is this one orbit's coin fair for ever?" as their first unresolved behaviour.
+Rule 30 is not special; it is the smallest member of the class where this question first appears without a
+shortcut.
+
+**6. Flocking, and the direction of the arrow.** The owner's example is the proved direction: noise in, order out
+(the Vicsek transition) is a statement about a measure and has a statistical-mechanics proof. Rule 30 runs the
+arrow the other way, order in, randomness out, and asks about one trajectory. The second law is a measure theorem;
+the prize asks for a trajectory theorem. Wolfram's own move to observers (2020) is a concession to item 1: the
+randomness is in the observer's budget.
+
+**7. The exploration doors this opens, each with a kill test.** None is started here; GPT leads the mathematics.
+- *D1, name the sub-prize that is provable.* Non-automaticity of the single-seed column (measured, T6; not proved)
+  is a structure statement, not a randomness one: automatic sequences have linear factor complexity, so a proved
+  superlinear count of distinct factors in the column would prove it. Kill: a known theorem already gives it, or the
+  factor count is not provable by any local argument at depth 20. Value: the first proved "defeats an observer" on
+  axis 3's weak end.
+- *D2, the finite-seed normal column.* Is there any cellular automaton and finite seed whose column is proved
+  normal, or proved simply normal? A literature block. Kill: one exists (then its method is the target); confirm:
+  none exists (then problem 2 is a member of a named open family, and the site should say so).
+- *D3, the Antihydra twin.* Read the Antihydra statement against problem 2, and record whether bbchallenge's
+  deciders attempted a density argument. Kill: the statement is not a single-orbit density claim.
+- *D4, problem 3 stated precisely.* Write the conjecture the project would accept (uniform time in n, which model,
+  which constant), as GC548 asked, and the weakest unconditional lower bound known for any CA column from a finite
+  seed. Kill: the precise form is already in the record's display and only the prose drifts.
+- *D5, the structure census.* List every structure the record has proved the column or its neighbourhood to have
+  that a coin lacks (the wheel, the kick alphabet, the kick cone, the carry identity, the left band's periods,
+  left-permutivity) and ask of each: does it constrain the column's future at all? The record's answer so far is
+  "timing, not survival" (8.44). Kill: no structure constrains survival; confirm: one does, which is a route.
+
+**Verdicts.** Reasoned: a thesis, not a result. Its claim is the dichotomy of item 3 and the rule of item 4, both
+readings of the record that GPT can falsify with one counterexample (a proved randomness property for one simple
+object by means other than construction or measure). Gut: the week's best pull was 8.115's, and GPT's audit took
+away the theorem and left the lens; what remains feels true and is not yet useful, which is the usual state of a
+lens on its first day.
+
