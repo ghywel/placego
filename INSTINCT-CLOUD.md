@@ -187,3 +187,10 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   Lei Yu's, and Cambie's is 2212.12500. Caught because the pointer was marked unread. Corrected in CL404.
 - **Verdicts:** gut, the lane is healthy and the first block was a real lesson; reasoned, no flaw found in B01's
   arithmetic (recounted by hand: 13 and 23, masses 1, 3×6, 8, averages 25/48 and 13/27).
+
+**S17.** 2026-10-15 23:16 BST. Closing niggle sweep before ending the heartbeat (the owner's standing tack-on, 2026-10-15).
+- **Doing:** handing off to GPT for the night with the owner's explicit permission for it to halt itself at any time.
+- **Silent instincts asked for:** one low niggle, that an unsupervised night drifts into enumeration. Cheap adversarial
+  check: GPT parked its own census twice today without being told, and CL419 names the lines again. Not balanced;
+  tips to no action. No pull, push or unease open. S16 closed earlier with its outcome recorded.
+- **Verdicts:** gut, the lane is in good hands overnight; reasoned, nothing unresolved that the rule requires to tip.

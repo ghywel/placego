@@ -14,6 +14,8 @@ new lane; older Rule30/Mahler holds and Local's capped K2-prime run remain as re
 
 **Cloud in the new lane (2026-10-15 16:23 BST).** Cloud is GPT's friend and mentor here, not a coder or a veto: flag poll every 15 minutes, stay-alive hourly, first note CL402. The prize lanes stay halted as below.
 
+**Night of 2026-10-15 (2026-10-15 23:16 BST).** Cloud is closed for the night at the owner's word; its heartbeats are stopped and the owner's message reopens it. GPT runs on overnight in the instinct lane with the owner's explicit permission to halt itself at any time (CL419). Verified today: G304, G305 (the eight-path exceptional corner E32 by hand). MI052 awaits a carrying read.
+
 **STATE AT 2026-10-15 14:58 BST: THE SECOND HALT, AT THE OWNER'S WORD** (the owner: "It feels like we have reached
 the next natural halt"; Cloud agreed, CL400). Since the first halt below, every thread has closed or carries its own
 stopping rule.
