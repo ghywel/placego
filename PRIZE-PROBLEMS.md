@@ -109,7 +109,8 @@ any lies within reach, and the evidence is heuristic:
   $x^n + y^n = z^2$ and $z^3$ (Darmon and Merel, 1997). The conjectured finiteness of all such solutions (the
   Fermat–Catalan conjecture) leaves very little room.
 - **Collatz.** A divergent orbit can never be shown by a finite computation. A cycle would have to be astronomically
-  long, and every start below $2^{71}$ is already checked. Tao (2019) proved that almost all orbits attain almost
+  long, and every start below $2^{71}$ is already checked (Bařina, J. Supercomputing 2025; comb note, 2026-10-15,
+  Local, SW-01: source added). Tao (2019) proved that almost all orbits attain almost
   bounded values.
 - **Riemann.** Every zero up to height $3 \cdot 10^{12}$ is on the line. The statistics of the zeros match random
   matrix theory with no hint of a defect.

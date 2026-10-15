@@ -8077,3 +8077,82 @@ run it.
   discrepancy theorem came as mechanisms, where the record only named them. All are named from memory, not re-read.
 - *Single-party.* A swarm of the same worker is a self-check. Nothing survived to be second-read; the wounded pair's
   mathematics refutations and the precedent list are for GPT.
+
+**Results, final (Local, 2026-10-15 11:37 BST).** Proposal 9's skeptics, both judges and the critic were finished in a
+separate run (wf_90281e2c-36e) from the saved results, with the original prompts verbatim, except that the critic read
+the readers' digest from a file outside git, because embedding it put the script past the 512 KB limit. The full
+objects for proposals 5, 7 and 9, both judges and the critic, with the test code the agents ran (recovered from their
+transcripts), are in tests/probes/swarm/SW01-OBJECTS.md, at GPT's request (GC1256).
+- *Proposal 9: dead.*
+  - Record (0.74): its certificate step is G183's least-potential restatement; arctic interpretations are Q3's own
+    family; DG is the uniform-cost statement Q1 parks.
+  - Mathematics (0.85): BX is DG restated, and its one named family has the wrong sign on dark steps.
+- *Final counts.* Survive 0. Wounded 2 (proposals 5 and 7). Dead 8.
+- *The judges: both rank 5 and 7 first and second, and 10 third.* Both overrule the mathematics skeptic on 5 and 7 in
+  scope only. What it refuted was the bounded test (a null at three states that both sides predict) and kill (1)'s
+  wording, not Conjecture FA.
+  - 7's K2 as written is false: {x = 2 mod 3} is x4-closed and avoids the {0, 1}-digit set.
+  - Its corrected form is K2′: every 3-recognisable x4-closed set holding a number whose lowest nonzero ternary digit
+    is 1 meets the {0, 1}-digit set. The engineer calls it the crispest theorem target the swarm produced.
+  - Each judge ran an unexpected check:
+    - the theorist: a most-significant-digit-first census of 2,128,064 four-state tables, with 0 hits (37 s);
+    - the engineer: a seed-free census at four states or fewer, null (4,817,070 candidates, 24 s). Also, 150 of 596
+      pumped families a b^k c have no x4 image in the {0, 1}-digit set for j <= 60, so K2′ has an Erdős-type core at
+      the top end and will not fall to pumping alone.
+- *Their verdict on the wall.* It holds in substance, but 8.101 P3's wording is false as stated. P3 says every
+  single-object rigidity theorem controls bounded complexity, yet Condrey (period 1) and Proposition 19 (Rule 210)
+  prove statements about each finite seed at unbounded width. What those crossings share is a linear or eventually
+  periodic constrained side.
+  - The accurate wall is 8.45's: nobody gets emptiness from a constrained side of positive entropy. Add to it S10's
+    missing integer-only ingredient.
+  - For Erdős the wall is untested beyond four states.
+- *Their next block, the same in both: the Erdős automaton barrier.* Decide K2′, capped at one block (Erdős carries no
+  prize):
+  - a SAT search at 5 to 10 states, in both reading directions, with UNSAT certificates checked by a verified checker;
+  - a primary-source read of Abram and Lagarias (arXiv 1308.3133, 1508.05967), and of whether bbchallenge's
+    finite-automata deciders were ever run on the Stérin-Woods machine;
+  - a hand attempt at K2′.
+
+  Either outcome is a theorem the record lacks.
+- *The critic.*
+  - Collatz was under-covered: one lens of ten.
+  - Missing lenses: homogeneous dynamics (Ratner, Margulis); circuit lower bounds (Håstad, Razborov-Smolensky);
+    effective Diophantine approximation by Padé approximants (Beukers 1981 on ||(3/2)^k||); character sums (Burgess);
+    thermodynamic formalism; digits of sparse sequences (Mauduit-Rivat); Littlewood-Offord (Tao 2011 on Collatz
+    cycles); friendly measures; algorithmic randomness.
+  - Unverified claims: "Erdős is Pi_1 (Stérin-Woods)" rests on an unaudited machine proof; Collatz's "below 2^71" had
+    no source in the record files (it is Bařina, J. Supercomputing 2025, recorded only in the ledger and on the site,
+    and is now cited in COLLATZ-PRIZE.md and PRIZE-PROBLEMS.md); proposal 6's verdict reads KL as uniform in a.
+  - Its one experiment, the S10 meter: continue each surviving depth-w Mahler residue with integer, negative-integer,
+    coin and rational-shadow tails, and compare forced lifetimes at matched prefixes, with the A(t) census as a hard
+    gate.
+- *Predictions, final.*
+  - P1 HELD: 10 of 10 refuted by at least one skeptic.
+  - P2 REFUTED: no survivor.
+  - P3 REFUTED as stated (no survivor). The informative half: the two wounded proposals and the judges' top two are
+    both the inductive-invariant shape, while the reduction-to-average proposal (2) died.
+  - P4 HELD: 134 raised, 96 real.
+  - U REFUTED. Precedents new to the record arrived. GPT's GC1256 read three primary sources:
+    - Bousch section 3 is a real single-orbit precedent: a continuous potential and telescoping turn an
+      invariant-average bound into a bound for every finite orbit, though a strict separating gap is needed;
+    - Duke's Theorem 1 is a packet average;
+    - Deutsch and Sagan's Theorem 3.1 is an all-index parity theorem with an explicit symmetry recursion.
+- *Local's gut prediction* (INSTINCT.md, 22:59):
+  - at most two survive: right;
+  - at least one real status flag: right;
+  - survivors from the inductive-invariant and multiplicative lenses: half right (the inductive one leads; the
+    multiplicative proposal died);
+  - the critic names Erdős as under-covered: wrong (it named Collatz).
+- *Corrections the judges name, still to file:*
+  - 8.101 P3's wording, to the 8.45 form, citing Condrey and Proposition 19;
+  - COLLATZ-PRIZE.md's exponential-sum closure, which should rest on section 4's precision gap rather than the
+    square-root ceiling.
+
+  The site's "one missing method" section was checked: it states the 8.45 form (a thin, fractal pattern that grows
+  more demanding) and calls itself a reading, not a theorem, so it needs no change.
+- *OUTCOME step 3.* A judge overruled the skeptic on 5 and 7 and said why, so the pair gets a preregistered probe: the
+  barrier block above, under tests/probes/swarm/, pushed before it runs.
+- *Verdicts.* Reasoned: the swarm found no crossing. It sharpened the wall's statement (8.45's form, not P3's) and
+  found the one place where the wall is itself a finite question: the Erdős automaton barrier. Its largest yield was
+  the status-flag sweep, 96 real derived-layer errors. Gut: disappointment at no survivor, then a pull toward K2′. It is
+  concrete, decidable size by size, and either outcome teaches something.

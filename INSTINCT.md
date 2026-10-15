@@ -352,7 +352,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   two proposals survive both skeptics; the readers raise at least two status flags, of which at least one is a real
   summary-against-source error; the survivors come from the inductive-invariant and the multiplicative-structure
   lenses, not the physics or contrarian ones; the critic names the Erdős problem as under-covered. -> run as
-  written; judged when the results land in 8.113. Outcome: open.
+  written; judged when the results land in 8.113. Outcome (2026-10-15, 8.113 final): two of four right (at most two
+  survive: none did; a real status flag: 96), one half right (the inductive-invariant lens leads, the multiplicative
+  one died), one wrong (the critic named Collatz, not Erdős).
 
 ## The incubator
 

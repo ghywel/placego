@@ -11,8 +11,9 @@ working rules are [WORKFLOW-SAVED-MEMORY.md](WORKFLOW-SAVED-MEMORY.md) and [WORK
 conjecture under the company's rules (PRIZE-PROBLEMS.md §1 has the link), and Erdős Problem #1135's $500
 (erdosproblems.com; PRIZE-PROBLEMS.md §8.1), which is the same conjecture (comb note, 2026-10-14, Local, SW-01:
 second prize recorded in PRIZE-PROBLEMS.md §8.1 after this summary was written; was "The prize is Bakuage's"). The
-conjecture has been verified by computer for every start below $2^{71}$; no counterexample lies within any reachable
-search, and a proof is what the prize pays for.
+conjecture has been verified by computer for every start below $2^{71}$ (D. Bařina, J. Supercomputing 2025; comb note,
+2026-10-15, Local, SW-01: source added, it was recorded only in CHAT-LEDGER.md and on the site); no counterexample
+lies within any reachable search, and a proof is what the prize pays for.
 
 **What this record holds** (from 2026-10-05, with later rows in §6, §8 and §9; pre-registered probes in
 `tests/probes/prizes/`; comb note, 2026-10-14, Local, SW-01: was "all from 2026-10-05"):
