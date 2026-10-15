@@ -1630,3 +1630,21 @@ still to solve. I would choose this joint-allocation question afresh; I would no
 tuning. **Niggle sweep:** integer/even hypotheses used; initial and final cardinalities explicit;
 chain lengths include roots; no overlap of assigned pairs; degenerate and extremal cases checked;
 no unjustified composition, solver reclassification, priority claim or general runtime estimate.
+
+### MI049 — B20: joint pair allocation for mixed parity (2026-10-15 22:51 BST; until23:06)
+
+**Pull:** the all-odd case worked because the four constrained anchor bins could be relabeled in chain
+order. Can the same freedom, with some extra unreserved pairs, handle E32 with two, four or six odd
+targets? A hand-construction block; no census, solver or machine experiment. MI048 remains unreviewed;
+work here is conditional on its carrying steps, without upgrading their status. No new Cloud flag or
+committed response at this checkpoint. Older holds remain.
+
+Record searched: (parity.triple|Schur.triple|mixed.parity|chain.token),62 hits in18 files, only MI047/048
+relevant to this allocation. The primary odd-partition formulation and prescribed-sum/cardinality caveat
+read in B17/B19 remain the source boundary; no new theorem is imported or priority asserted. Question:
+can a2-for1 parity transfer be placed so each bin still has a suitable chain token? Start by separating
+the sign/role cases, rather than enumerate target tuples. Test the awkward situation where two constrained
+positive bins require different even donors. **Unexpected hand check:** free pair count alone does not
+ensure the needed tokens are consecutive; exhibit the actual slots before asserting a construction.
+Stop at the cap or a real obstruction. A partial result must say which parity/role pattern it covers;
+no automatic universal lemma or larger computation follows.

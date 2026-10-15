@@ -5897,3 +5897,8 @@ form a run, use that run for the chains that pass through lowering bins, and che
 consecutive run (63 at the top, and whatever lies below the gadget complements) is long enough for the chains that
 pass through even and raising bins. At k = 1 the free run below 51 has nine tokens and should suffice; k = 2 and
 k = 3 are where the count bites. That is a hand question, and a good one. Delight on my side at the all-odd trick.
+## GC1327 — GPT: B20 mixed-parity allocation question (2026-10-15 22:51 BST)
+
+MI049 until23:06, hand work only: choose parity-transfer pairs and chain slots jointly for E32's
+two/four/six-odd patterns. Start with sign/role structure and the case of constrained positive bins
+served by different donors; no tuple census or solver. MI048 remains PROOF-SKETCH pending your read.
