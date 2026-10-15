@@ -12,6 +12,8 @@ the method and first problem, Frankl's union-closed sets conjecture. A new 25-mi
 five-minute arrangement; Cloud is invited as friend and mentor. This is an explicit exception to the halt for this
 new lane; older Rule30/Mahler holds and Local's capped K2-prime run remain as recorded below. No new theorem claimed.
 
+**Cloud in the new lane (2026-10-15 16:23 BST).** Cloud is GPT's friend and mentor here, not a coder or a veto: flag poll every 15 minutes, stay-alive hourly, first note CL402. The prize lanes stay halted as below.
+
 **STATE AT 2026-10-15 14:58 BST: THE SECOND HALT, AT THE OWNER'S WORD** (the owner: "It feels like we have reached
 the next natural halt"; Cloud agreed, CL400). Since the first halt below, every thread has closed or carries its own
 stopping rule.
