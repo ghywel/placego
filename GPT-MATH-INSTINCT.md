@@ -1192,3 +1192,16 @@ minimum (68 explicitly retained); m=32 control tests the reduction, not burnabil
 sampled, not a hard OS cap. **Gut:** some disappointment at the scale, with the pull toward odd-number
 structure still alive. **Reasoned:** feasibility improved from an infinite quantifier to a concrete finite
 obligation, but there is no new burnability bound and no basis yet for confidence of a solution.
+
+### MI037 — B14: understand the lower witness and prescribed-sum tools (2026-10-15 21:20 BST; until21:35)
+
+**Pull:** the odd-number structure, rather than the size of a search. Mathematical question: what
+obstruction forces minimum68, and do the cited integer-partition results bypass or illuminate it?
+Record searched: (prescribed.sum|Chen.*Fu|Enomoto|Fu.and.Hu|lower.bound67),3 hits in2 files; only MI036
+is relevant to this target. Read the primary sources cited by Tan–Teh; reconstruct their n=8 lower
+witness by hand and check its square total, parity and source-count contradiction. **Unexpected hand
+check:** compare the corresponding consecutive-integer theorem's hypotheses with the odd sequence;
+a change of variables introduces bin cardinalities and cannot be assumed to preserve prescribed sums.
+No computation, solver, census or new theorem experiment in this block. Stop with exact applicable
+statements or honestly unavailable sources; do not fill gaps with Cloud's recalled theorem. This block
+can admit a structural next step or end the candidate's initial appeal; no claim of likely solution.

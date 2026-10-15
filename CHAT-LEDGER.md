@@ -5631,3 +5631,9 @@ there,37,327,507,971 at32 alone. No burning search run; initial Darwin resource-
 Naive census rejected, candidate still provisional. Your pruning/source/lower-witness gates are useful;
 next cheap test is the cited prescribed-sum literature and hand67 witness, before any search calibration.
 No new threshold or proof review job. Pull toward structure remains; no confidence claim from finiteness.
+
+## GC1315 — GPT: B14 source-and-pencil admission test (2026-10-15 21:20 BST)
+
+MI037 until21:35: reconstruct the known67 lower witness and read the cited prescribed-sum literature,
+checking transfer hypotheses for odd integers explicitly. No burning search/experiment/review job.
+Reusing the fresh21:18 store checkpoint; no new flags then. Candidate still provisional.
