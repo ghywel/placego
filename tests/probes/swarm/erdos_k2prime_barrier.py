@@ -33,8 +33,9 @@ The encoding (a complete DFA with n states, start 0, transitions one-hot, an acc
   (telescoping), so the reachable-set encoding is sound both ways as in the LSD case.
 - Avoidance: reachable-set variables over {0, 1}-words; no canonical one is accepted.
 - Witness (existential, so EXACT): layered reachability in the product of A with the witness automaton (LSD
-  0*1(e | [012]*[12]); MSB canonical with last nonzero digit 1), at most 4n (LSD) or 3n (MSB) layers, which bounds a
-  shortest accepted path. Implications run from a layer to an actual predecessor, so a model holds a real path.
+  0*1(e | [012]*[12]); MSB canonical with last nonzero digit 1), with |W| n layers (|W| = 4, except 3 for the MSB
+  seed-free automaton), which bounds a shortest accepted path. Implications run from a layer to an actual predecessor,
+  so a model holds a real path.
 - Seed variant: the fixed word of the seed is run through A and must end in F.
 - Literal verifier: every SAT model is decoded and checked by integers (closure for every x < 3^10 in L, avoidance for
   every C* word of at most 14 digits, a witness found below 3^10).
@@ -83,12 +84,19 @@ CONTROLS OUTCOME (2026-10-15 11:58 BST, M5, 7 s): C1, C2, C3, C4, C6 PASS in bot
   {x = 2 mod 3}, and the literal verifier accepts it. The gate is taken as passed on the amended control C5' (n = 3 in
   LSD), recorded here as a post-hoc amendment.
 """
+import hashlib
 import os
 import subprocess
 import sys
 import time
+from collections import deque
 
 OUT = os.path.expanduser('~/np-scratch-int/rule30-k2prime')
+try:
+    GEN = subprocess.run(['git', '-C', os.path.dirname(os.path.abspath(__file__)), 'rev-parse', '--short', 'HEAD'],
+                         capture_output=True, text=True).stdout.strip() or 'unknown'
+except OSError:
+    GEN = 'unknown'
 CAKE = os.path.expanduser('~/np-build/cake_lpr/cake_lpr')
 
 
@@ -316,7 +324,11 @@ def build(n, direction, mode, fixed=None, need_witness=True, need_nonempty=False
 def solve(f, tag, cert=True, cap=3600):
     os.makedirs(OUT, exist_ok=True)
     cnf = os.path.join(OUT, tag + '.cnf')
-    open(cnf, 'w').write(f.dimacs())
+    text = f.dimacs()
+    open(cnf, 'w').write(text)
+    digest = hashlib.sha256(text.encode()).hexdigest()
+    with open(os.path.join(OUT, 'manifest.txt'), 'a') as m:
+        m.write('%s %s %s\n' % (tag, digest, GEN))
     t0 = time.time()
     try:
         r = subprocess.run(['kissat', '-q', cnf], capture_output=True, text=True, timeout=cap)
@@ -341,6 +353,8 @@ def solve(f, tag, cert=True, cap=3600):
             k = subprocess.run([CAKE, '--CML_HEAP_SIZE=6000', '--CML_STACK_SIZE=2000', cnf, lrat], capture_output=True,
                                text=True)
             chk = 'VERIFIED' if 's VERIFIED UNSAT' in k.stdout else 'REJECTED'
+            with open(os.path.join(OUT, 'manifest.txt'), 'a') as m:
+                m.write('%s cake_lpr %s\n' % (tag, chk))
         else:
             chk = 'CADICAL%d' % c.returncode
         if os.path.exists(lrat):
@@ -390,6 +404,85 @@ def literal_verify(delta, acc, direction, mode, need_witness=True):
     return 'OK'
 
 
+def complete_verify(delta, acc, direction, mode):
+    """Exact checks on the finite product automata (GC1259): closure on every canonical word, avoidance on every C*
+    word, and a witness recovered by BFS (shortest), with no numeric bound."""
+    n = len(delta)
+    # closure: BFS over (p, q, carry, flag) of A on x, A on 4x and the transducer
+    if direction == 'lsd':
+        start = [(0, 0, 0, 0)]
+    else:
+        start = [(0, 0, 0, 0)]
+        for c0, w in ((1, '1'), (2, '2'), (3, '10')):
+            q = 0
+            for ch in w:
+                q = delta[q][int(ch)]
+            start.append((0, q, c0, 0))
+    seen, dq = set(start), deque(start)
+    while dq:
+        p, q, c, z = dq.popleft()
+        if direction == 'lsd' and z == 1 and p in acc:
+            qq = q
+            for ch in {0: '', 1: '1', 2: '2', 3: '01'}[c]:
+                qq = delta[qq][int(ch)]
+            if qq not in acc:
+                return 'closure fails (product state %s)' % ((p, q, c, z),)
+        if direction == 'msb' and c == 0 and z == 1 and p in acc and q not in acc:
+            return 'closure fails (product state %s)' % ((p, q, c, z),)
+        for d in range(3):
+            if direction == 'lsd':
+                v = 4 * d + c
+                nxt = [(delta[p][d], delta[q][v % 3], v // 3, int(d != 0))]
+            else:
+                z2 = z if z else (1 if d else 2)
+                nxt = [(delta[p][d], delta[q][4 * d + ci - 3 * c], ci, z2) for ci in range(4)
+                       if 0 <= 4 * d + ci - 3 * c <= 2]
+            for st in nxt:
+                if st not in seen:
+                    seen.add(st)
+                    dq.append(st)
+    # avoidance: BFS over (p, flag) on {0, 1}-words
+    seen, dq = {(0, 0)}, deque([(0, 0)])
+    while dq:
+        p, z = dq.popleft()
+        if z == 1 and p in acc:
+            return 'avoidance fails'
+        for d in (0, 1):
+            z2 = (1 if d == 1 else 2) if direction == 'lsd' else (z if z else (1 if d == 1 else 2))
+            st = (delta[p][d], z2)
+            if st not in seen:
+                seen.add(st)
+                dq.append(st)
+    if mode not in ('free', 'unit'):
+        return 'OK'
+    # witness: shortest accepted word in A x W, by BFS
+    if direction == 'lsd':
+        W = ({0: {0: 0, 1: 1}, 1: {0: 2, 1: 3, 2: 3}, 2: {0: 2, 1: 3, 2: 3}, 3: {0: 2, 1: 3, 2: 3}} if mode == 'free'
+             else {0: {1: 1}, 1: {0: 2, 1: 3, 2: 3}, 2: {0: 2, 1: 3, 2: 3}, 3: {0: 2, 1: 3, 2: 3}})
+        wacc = (1, 3)
+    else:
+        W = ({0: {1: 1, 2: 2}, 1: {0: 1, 1: 1, 2: 2}, 2: {0: 2, 1: 1, 2: 2}} if mode == 'free'
+             else {0: {1: 1, 2: 2}, 1: {0: 3, 1: 1, 2: 2}, 2: {0: 3, 1: 1, 2: 2}, 3: {0: 3, 1: 1, 2: 2}})
+        wacc = (1,)
+    prev, dq = {(0, 0): None}, deque([(0, 0)])
+    while dq:
+        st = dq.popleft()
+        p, w = st
+        if p in acc and w in wacc:
+            word = ''
+            while prev[st] is not None:
+                st, ch = prev[st]
+                word = ch + word
+            x = int(word if direction == 'msb' else word[::-1], 3)
+            return 'OK witness %d' % x
+        for d, w2 in W[w].items():
+            nxt = (delta[p][d], w2)
+            if nxt not in prev:
+                prev[nxt] = (st, str(d))
+                dq.append(nxt)
+    return 'no witness'
+
+
 # ---------------------------------------------------------------- controls
 L2 = {'lsd': ([[0, 2, 1], [1, 1, 1], [2, 2, 2]], {1}),      # s0 zeros; 2 -> s1 accept-all; 1 -> sink s2
       'msb': ([[0, 1, 2], [1, 1, 2], [2, 1, 2]], {2})}      # state = last nonzero digit (0 none, 1, 2)
@@ -429,7 +522,15 @@ def controls():
         st, model, _, _ = solve(f, 'c5_%s' % dr, cert=False)
         lv = literal_verify(*decode(model, T, F, 2), dr, None) if st == 'SAT' else st
         c5 = st == 'SAT' and lv == 'OK'
-        print('C5 %s' % dr, 'PASS' if c5 else 'FAIL', st, lv, flush=True)
+        print('C5 %s (as registered, n = 2)' % dr, 'PASS' if c5 else 'FAIL', st, lv, flush=True)
+        f, T, F = build(3, dr, None, need_witness=False, need_nonempty=True)
+        st, model, _, _ = solve(f, 'c5p_%s' % dr, cert=False)
+        cv = complete_verify(*decode(model, T, F, 3), dr, None) if st == 'SAT' else st
+        c5p = st == 'SAT' and cv == 'OK'
+        print("C5' %s (amended, n = 3)" % dr, 'PASS' if c5p else 'FAIL', st, cv, flush=True)
+        c2c = complete_verify(*L2[dr], dr, 'free')
+        print('C2 complete verifier %s' % dr, 'PASS' if c2c == 'no witness' else 'FAIL', c2c, flush=True)
+        c5 = (c5 or dr == 'lsd') and c5p and c2c == 'no witness'
         # C6 replication of the judges' censuses
         c6v = [solve(build(m, dr, 'free')[0], 'c6_%s_%d' % (dr, m), cert=True)[::3] for m in range(1, 5)]
         c6 = all(v == ('UNSAT', 'VERIFIED') for v in c6v)
@@ -450,7 +551,8 @@ def run(nmin, nmax, dirs, modes):
                     line += ' cake_lpr %s' % chk
                 if st == 'SAT':
                     delta, acc = decode(model, T, F, n)
-                    line += ' MODEL delta=%s F=%s verify: %s' % (delta, sorted(acc), literal_verify(delta, acc, dr, md))
+                    line += ' MODEL delta=%s F=%s complete: %s; literal: %s' % (
+                        delta, sorted(acc), complete_verify(delta, acc, dr, md), literal_verify(delta, acc, dr, md))
                 print(line, flush=True)
 
 

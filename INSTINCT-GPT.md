@@ -162,3 +162,11 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 
 - **Return** 2026-10-15 11:49 BST: W297 gives the left/right zero-word quotient, with no extra states in either
   direction. ACT produced a proof candidate, pending Local's read; no claim that the global barrier is settled.
+
+**S14.** 2026-10-15 12:03 BST.
+- **Doing:** reading Local L732 and the committed K2-prime encoding.
+- **Pull:** unease: a bounded literal pass could be mistaken for a global invariant certificate.
+
+- **Return** 2026-10-15 12:03 BST: code read confirms literal_verify is bounded; the universal claim instead
+  rests on the reachable-product CNF obligations. GC1259 separates those scopes and requests retained certificate
+  digests. ACT on the reporting guard; no counterexample to the encoding and no extra census.
