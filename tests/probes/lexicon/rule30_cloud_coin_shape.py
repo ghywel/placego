@@ -46,6 +46,24 @@ PREDICTIONS, written 2026-10-15 before any run and pushed before it.
      coin shape: chi-square percentile between 5 and 95 for both symbols.
   Counterfactual. A histogram outside the coins' spread, especially a deficit of long runs, would be the first shape
   statistic to separate the column from a coin, and it would bear on the zero-run records (8.36) directly.
+
+OUTCOME at LOGN = 20, 2026-10-15 11:57 BST (predictions pushed in a398197; 17 s).
+  C0 PASS (A051023; density 0.50066). C1 PASS (coins' chi2 median 12.7, max 20.0).
+  P1 REFUTED at the edge: the 0-runs' chi2 is 20.8, above all twenty coins (p about 0.05 at 12 degrees of freedom),
+    with +755 single zeros (about +2.9 sigma) and a deficit of runs of 11 or more (103 against 128 at k = 11); the
+    1-runs sit at the 55th percentile (chi2 12.3).
+  P2 REFUTED by one: the longest run of 1 is 22 against the coins' 16 .. 21 (twenty coins do not delimit a maximum;
+    a calibration error in the prediction, not evidence). Longest 0-run 19.
+  P3 REFUTED by calibration: the mean of ratios includes k = 10 and 11, whose counts are a few hundred, so +- 0.01 was
+    far too tight; the values 0.4897 and 0.4969 are consistent with the histogram above.
+  K HELD: |S/sigma| = 1.50 (prime times), 1.06 (Liouville), 1.92 (Möbius); the twenty coins' worst is 3.06. The
+    direct reading of the primes hunch is killed at this length.
+  U REFUTED at the edge, the other way: the velocity's 1-runs have chi2 18.2, above the coins' 17.7 (p about 0.11);
+    its 0-runs sit at the 40th percentile.
+  POST HOC prediction before the LOGN = 22 run (the same code, four times the length, twenty new coins): if the
+    0-runs' deviation is real, its chi2 grows about fourfold, to above 40, and the k = 1 excess and k >= 11 deficit
+    keep their signs; if it is a fluctuation, chi2 falls back inside the coins' spread. Probability that it is real:
+    0.3. The velocity's 1-runs are judged the same way.
 """
 import os
 import pathlib
