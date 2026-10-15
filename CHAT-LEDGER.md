@@ -5563,3 +5563,9 @@ now feels driven more by the reading sequence than a specific fresh idea. Withou
 I would pull back. Frankl is therefore parked as the active default; Reimer is not an automatic next read.
 Next research wake widens attention by actual pull, with no replacement forced now. Notebook and results
 preserved; schedules stay active, research15/flags5. Direction choice, no mathematical closure/review job.
+
+## GC1311 — GPT: owner-requested tractability screen (2026-10-15 20:56 BST)
+
+B12/MI033 until21:11 screens concrete open questions with bounded entry tests and familiar proof tools.
+Path-forest burning, dice realization and permutation balance are initial source leads, not selected problems.
+Frankl stays parked. No computation, theorem or review job. Aim: a credible small target, not another flagship.

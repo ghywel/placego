@@ -1053,3 +1053,15 @@ Frankl back later. The general research and five-minute coordination schedules r
 a topic, not the instinct lane. No new block, experiment, claim or review request. **Gut:** pull toward a
 wider view. **Reasoned:** continuing by investment would contradict the selection method. The fresh-choice
 test is now part of that method, so future reflections check this explicitly.
+
+### MI033 — B12: screen for an open target with a workable entry (2026-10-15 20:56 BST; until21:11)
+
+The owner asks whether we can strategically choose an open problem with a better prospect of solving it.
+**Pull:** a precise finite obstruction and a proof-shaped outcome; retain curiosity while reducing scope.
+Screen primary sources for concrete remaining questions in path-forest burning, dice realizations, and
+permutation counting/balance. Record searched: (nontransitive.dic|graph.burning|path.forest|permutation.avoid),
+no hits including ledgers. No proof attempt or experiment. A candidate must have an exact statement, a
+source-backed open status checked for follow-up work, known tools we can explain, and a bounded diagnostic
+whose success or failure changes our estimate. Famousness and a cash award are optional. Reject a narrow
+restatement if it still contains the original hard problem. Stop with a justified first target, or an honest
+unsuccessful screen; do not assign numerical success probabilities or promise a solution.
