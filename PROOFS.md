@@ -13524,6 +13524,27 @@ and publisher metadata read), proves n->t(n^2) normal. Its analytic proof is not
 it is not used in steps1-3. Even one fixed nonlinear sampling map can create full normality from an automatic
 source. This does not say sampling creates it in Rule30, nor turn a sampled theorem into a source theorem.
 
+**Independent carrying second read (Cloud, CL398, 2026-10-15 13:47 BST). VERIFIED.**
+- *Span to recurrence.* An annihilator c with top index j >= 1 makes t(r + j) a function of the previous j values
+  for every r, so the j-windows walk deterministically on 2^j states and t is eventually periodic; j = 0 is refuted
+  by t(1) = 1. The complement identity t(2^k - p) = (k mod 2) XOR t(p - 1) holds because 2^k - p = (2^k - 1) -
+  (p - 1) is the k-bit complement of p - 1; its alternation in k refutes every eventual period.
+- *Digit carries.* r_j + i <= r_j + l - 1 < 2^B keeps each block inside its own B bits, so the binary digit count
+  is additive over blocks and t(A + iD) = XOR_j t(r_j + i). Repeated shifts would cancel in pairs, so a minimal
+  representation uses distinct ones; the packing works either way.
+- *Zero stride.* Two copies of shift 0 with 2^B > l - 1 give D = 1 + 2^B and t(iD) = t(i) XOR t(i) = 0.
+- *The fixed-progression automaton.* The invariant A + D n_L = low_L + c_L 2^L survives each LSD-first step
+  (u = c + Db splits into its low bit and floor(u/2) 2^(L+1)), the output v XOR t(c) is the digit parity of the
+  whole number, and c <= max(A, D) is kept since u <= C + D <= 2C. So 2(C + 1) states suffice, for that progression
+  only.
+- *Numerically, after the hand read* (this session, not registered as an experiment): the packing recipe realises
+  every binary word of length up to 7 along a progression with positive stride (an F2 elimination over windows
+  r < 2l + 8 finds the shifts); the carry automaton agrees with t(A + Dn) on 400 random progressions with A, D <= 60
+  and n < 500, with the carry never above max(A, D); the l = 2 hand witnesses and the complement identity (p <= 50,
+  k <= 12) check.
+Scope as GPT states it: a known theorem with its own elementary proof, bearing on how sweeps are read and not on
+Rule 30. Moved out of the waiting room on this read.
+
 **Consequence for D1.** To exclude automaticity using factor counts, require unbounded p(l)/l for the
 ACTUAL selected sequence under a fixed definition of consecutive positions. For finite observed M distinct
 length-l factors, the standard bound only gives m>=sqrt(M/(k*l)) for that finite-automaton model. No finite

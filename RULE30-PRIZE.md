@@ -8222,7 +8222,9 @@ object and grow with depth by the coin model's own prediction.
 **The second question, the direct reading: killed at this length, with a drift noted.** *(The owner's pull-back, after
 reading this: the hunch meant "some sweep we haven't seen, diagonal or irregularly diagonal, perhaps even the sum of 2
 primes masking it", not the column at prime times. So this kill covers one line of the diagram only. A sweep of the
-diagram itself is a separate block, not started.)* If the column counted the
+diagram itself is a separate block, not started.)* *(Added after G301, GPT's D1 audit, second-read in CL398: a sweep whose stride
+is allowed to change can realise every finite word even from a two-state automatic source, so a sweep test of the
+diagram must fix its sweep in advance; pooled sweeps certify nothing about the source.)* If the column counted the
 primes in the plain sense, its values at prime times, or against Liouville's and Möbius's functions, would show it.
 - 2^20: S/sigma = +1.50, -1.06, -1.92. 2^22: +2.28, -1.80, -2.76. Twenty coins' worst: 3.06 and 1.73.
 - By K's rule (below 3 kills, 3 to 4 repeats) the direct reading is killed. The honest footnote is that all three

@@ -108,6 +108,23 @@ CONTROLS OUTCOME (2026-10-15 11:58 BST, M5, 7 s): C1, C2, C3, C4, C6 PASS in bot
   search at n = 3 in LSD order is SAT, with model delta = [[1, 1, 2], [1, 1, 1], [2, 2, 2]], F = {2}, which is
   {x = 2 mod 3}, and the literal verifier accepts it. The gate is taken as passed on the amended control C5' (n = 3 in
   LSD), recorded here as a post-hoc amendment.
+
+INTERIM OUTCOME (2026-10-15 13:51 BST, M5; machine output quoted; manifest rows in ~/np-scratch-int/rule30-k2prime).
+  Symmetric run (BFS numbering), kissat seconds, every verdict UNSAT with a cake_lpr VERIFIED LRAT proof:
+               LSD free   LSD unit   LSD 1024   MSB free   MSB unit   MSB 1024
+    n = 5         1.2        0.9        0.4        1.4        1.4        0.8
+    n = 6        11.4        6.9        2.0       21.2       13.2        2.5
+    n = 7       171.5       96.3        9.9      721.9      438.3       16.3
+  Plain run (no symmetry breaking): n = 5 UNSAT and VERIFIED in all six instances (47.7, 19.2, 1.2, 27.1, 13.6,
+  1.6 s); n = 6 LSD seed-free UNKNOWN at the 3600 s cap; the rest continues.
+  So far: no DFA with at most 7 states, in either direction, recognises a x4-closed, C*-avoiding set of positive
+  integers holding a number with lowest nonzero ternary digit 1 (n = 1 .. 4 from C6, n = 5 .. 7 here).
+  - P4 holds at n = 5 .. 7: unit and seed-free agree everywhere.
+  - C8 holds where both runs decided (n = 5).
+  - U holds at n = 7, MSB being slower in each mode (721.9 against 171.5 s; 438.3 against 96.3; 16.3 against 9.9).
+    MSB was also slower at n = 5 and 6, outside U's registered range.
+  - P3 REFUTED for the plain run: n = 6 hit its cap.
+  n >= 8 runs under addendum 2 (unit only, six-hour cap).
 """
 import hashlib
 import os
