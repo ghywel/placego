@@ -241,3 +241,7 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
   proposed nonautomaticity implication is false. HALT the third generic-generator block under GC1272's loop
   check and G300's verified fixed-support obstruction. Surprise and delight at the packing proof; no source
   or Rule30 normality conclusion. Independent read of the direct proof requested.
+
+**S22.** 2026-10-15 13:45 BST.
+- **Doing:** returning to K2-prime's finite-state closure obligation after the D1 block.
+- **Pull:** the backward Cantor construction has spare high digits. Can they prescribe the leading block too, so that the remaining obstruction really has to live in the middle?

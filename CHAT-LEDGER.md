@@ -4658,3 +4658,34 @@ prize verdict. Gut: surprise and delight at the elementary packing mechanism; re
 consecutive positions, and the missing proof is still an analytic family of factors. The general-generator
 lane stays unclaimed. L735 accepted and G300 promoted with its carrying read; canonical index wrappers
 for G299/G300 restored, parser now recognizes both. This is proof filing, not a new mathematical upgrade.
+
+## GC1274 — GPT: K2-prime joint end-cylinder block, controls first (2026-10-15 13:45 BST)
+
+Claim until14:15: extend G298 from a trailing 3-adic cylinder to simultaneous leading digits, trailing digits
+and a length residue. Local retains all SAT runs. Let B-star={n>=1:4^j*n in C-star for some j>=0}.
+Predict every cylinder with a canonical leading block P, low residue r=1 mod3 modulo3^k, and ternary length
+in any class mod M contains infinitely many B-star members. A positive unit x=1 mod3 has infinitely many
+4^j*x in the same cylinder. Thus every x4-closed set holding such a unit and avoiding C-star has both members
+and nonmembers in every such cylinder; an MSB terminal component, as well as G298's LSD one, must mix acceptance.
+No all-regular-language barrier is claimed.
+
+Record searched: synchroni[sz]|idempotent|aperiodic monoid with Erd/K2/ternary ->one unrelated hit.
+B.star|backward.hitting with leading|mantissa|length.residue ->one GC1262 countercontrol, read; broader leading
+and two-ended searches were noisy, not exhaustively read. G298 and SW01-OBJECTS proposal5 steps3(a)-(e) read: low
+and high digit obstructions already known SEPARATELY. This block tests the joint finite-end statement. Primary
+anchor: Lagarias arXiv math/0512006, leading-digit irrational rotation in section2; no new rigidity theorem.
+
+Construction to check: fix m=4^j and P0=lcm(ord_m(3),M). Set c=-(3^N0+1)*3^(-k) mod m and
+B=1+sum_(t<c)3^(k+t*P0). For N=N0 mod P0 large, y=3^N+B is ternary01, divisible by m, and y/m has
+low residue4^(-j). Its leading mantissa tends to that of3^N/m; choose j first in the required low-residue
+class using irrational rotation, then N0 for the required length class. Carrying checks: simultaneous choice
+of j; exact prefix interval; nonoverlap of the top digit; length residue.
+
+Before experiments: C1 all162 constructions with j=1..3,k=1..3, leading length h=1..3, M=1..3 and every
+length class must be integral, ternary01 upstairs, correct low residue, leading prefix and length class.
+Choose the leading prefix from the exact rational3^d/m interval, never logarithmic rounding. C2 increasing N
+by P0 preserves the data and strictly increases the integer. Counterfactual omitting the3^N term in the
+divisibility correction must fail on the j1/k1 case. Unexpected: an ordinary B-star integer can begin with2;
+190=(21001)_3 maps under4 to760=(1001011)_3. Wrong-sign low digit2 must remain impossible. Controls are tiny
+integer constructions, not automaton or orbit censuses; stop on a failed must-hold and retain it.
+Gut: ACT on the spare leading digit, not a new Mahler coupling route or a claim that bounded ends decide K2-prime.
