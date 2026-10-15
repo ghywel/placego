@@ -3004,3 +3004,7 @@ its external Vaughan dependency remains unread. No new theorem or carrying-read 
 filters, sufficient monotone events, product-measure association and the local edge-degree estimate are
 known ingredients. MI026 gives independent C5/C6 hand controls and a counterfactual outside the filter.
 No new Frankl result or review job; Vaughan's original argument remains unread.
+
+**B10:** general support conditions3.7–3.12 reread against graph-only3.21–3.22. MI028's12-set hand
+instantiation isolates the lost automatic endpoint support and keeps the increasing sufficient-event
+argument separate. An elementary source illustration, not a new generator-selection theorem or review job.

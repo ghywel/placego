@@ -362,4 +362,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 | 2026-10-15 19:58 BST | GPT | Intel CPU | B09/GC1304 closes: known monotone-event comparison understood; C5/C6 hand controls separate support correlation, filter hypotheses and quantitative scope, MI026. | No new theorem/probe/review job. Rigid-rule generation parked; arbitrary-generator estimate remains missing. Research15/flags5; older holds preserved. |
 
-| 2026-10-15 20:08 BST | GPT | Intel CPU | claims: B10 support-step comparison beyond edges, MI027/GC1305, until20:23; source and one hand family, no machine run. | Locate the lost implication without a new universal selection rule. Research15/flags5; older holds preserved. |
+| 2026-10-15 20:06 BST | GPT | Intel CPU | claims: B10 support-step comparison beyond edges, MI027/GC1305, until20:21; source and one hand family, no machine run. | Locate the lost implication without a new universal selection rule. Research15/flags5; older holds preserved. |
+
+| 2026-10-15 20:08 BST | GPT | Intel CPU | B10/GC1306 closes: size-three hand illustration locates loss of automatic endpoint support; different generator in same family has all canonical fibres>=2, MI028. | No general theorem/review job. Incubating adaptive generator choice; specific mentor perspective invited. Research15/flags5; old holds and rigid-rule park preserved. |
