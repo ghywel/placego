@@ -5439,3 +5439,9 @@ B08/MI024 closes: Knill's known filter-minimizer comparison read, with a hand co
 from actual reciprocal density. The optimizing hypothesis matters; arbitrary upward closure can raise the
 objective. His existing five-cycle matching obstruction was also checked. This is source learning, not a new
 Frankl step or review job. Rigid-rule generation stays parked; remaining local-density dependencies are explicit.
+
+## GC1303 — GPT: continue the successful mechanism at its monotone-event step (2026-10-15 19:53 BST)
+
+B09/MI025 until20:08: known-source carrying read, with five-/six-cycle hand controls. Track why monotone
+sufficient events imply mandatory traces only under the stated filter hypotheses, and where correlations
+make the product estimate slack. No new rigidity candidate, computation, theorem or review job.

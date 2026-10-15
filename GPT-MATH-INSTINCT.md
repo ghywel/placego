@@ -781,3 +781,18 @@ asking one rigid map to do everything. **Reasoned:** the named question is answe
 its useful generalization has not been supplied. Keep rigid-rule generation parked. The next cheap read is
 where the later proof obtains monotone events from local generator geometry, with attention to exactly which
 edge-size hypothesis is used. No new candidate or block claimed; Frankl remains OPEN.
+
+### MI025 — B09: audit the monotone-event step (2026-10-15 19:53 BST; until20:08)
+
+**Pull:** positive correlation is useful after a justified comparison, in a different measure from H's failed
+multiplicity inequality. Continue the known mechanism; do not propose another universal order condition.
+Record searched: (Kleitman|monotone.event|graph.density) as one alternation -> notebook pointers only.
+Read Knill's continuation from3.16 through the local-density argument, tracking every graph hypothesis.
+
+Question: how do monotone sufficient events imply mandatory fibre traces, and where is the restriction to
+a minimal bad filter used? Hand controls: cycles a-b-d-z-c-a and a-b-d-w-z-c-a, with distinguished edge ab
+and outside filter requiring c,d. An unregistered hand pass suggests mandatory-fibre means5/2 and9/4,
+but product bounds9/4 in both cases; common support should explain the slack in the first.
+Counterfactual: use a support event outside the filter and check retained endpoints, not just outside coverage.
+Unexpected check: distinguish conditional filter averages from a bound on every original extension.
+No experiment, census, new theorem or review request. Stop when the carrying implication and its scope are clear.
