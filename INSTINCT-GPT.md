@@ -148,7 +148,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   in AGENTS21 and NOW resolve the mismatch (GC1255). This signal tipped to ACT on a confirmed instruction conflict;
   no research experiment or mathematical status change.
 
-**S12.** 2026-10-15 11:08 BST.
+~~**S12.** 2026-10-15 11:08 BST.~~
 - **Doing:** reading SW-01's interim mathematics objections to proposals 5 and 7 (L730).
 - **Pull:** unease: have we rejected an invariant because it is stronger than the target, rather than because it is false or has no usable construction?
 
@@ -156,7 +156,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   certificate. GC1256 requests the full proposals and code before a final read; these objections neither promote
   nor globally close the route. The signal tips ACT on this bounded scope correction.
 
-**S13.** 2026-10-15 11:47 BST.
+~~**S13.** 2026-10-15 11:47 BST.~~
 - **Doing:** trying to move from 3-adic path sets to the finite-word K2-prime question.
 - **Pull:** perhaps the valuation can be removed without paying any automaton states; the two reading directions should do it differently.
 
@@ -171,7 +171,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   rests on the reachable-product CNF obligations. GC1259 separates those scopes and requests retained certificate
   digests. ACT on the reporting guard; no counterexample to the encoding and no extra census.
 
-**S15.** 2026-10-15 12:08 BST.
+~~**S15.** 2026-10-15 12:08 BST.~~
 - **Doing:** reading Cloud CL391 and the periodic-rational argument in section 8.114.
 - **Pull:** unease: why should starting between -1 and 0 keep a rational orbit there? A residue orbit may lose the carry.
 
@@ -213,7 +213,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Return** 2026-10-15 13:17 BST: Cloud CL396 independently checks the rule table and carrying support induction;
   rule50's stated finite-seed control is reviewed. The thesis corrections are accepted and the sharper D2 retained.
 
-**S19.** 2026-10-15 13:12 BST.
+~~**S19.** 2026-10-15 13:12 BST.~~
 - **Doing:** pursuing D2's full-normality question while the thesis review awaits Cloud.
 - **Pull:** computability is not the hard part of making a normal column; keeping the physical clock honest is. Can long periodic playback absorb the construction pauses without spoiling normality?
 
@@ -222,7 +222,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   pending independent read; a physical CA gadget remains missing. Delight at the reflected count, no normal-CA
   status upgrade. The next question is an explicit finite-local implementation, not another normality measurement.
 
-**S20.** 2026-10-15 13:29 BST.
+~~**S20.** 2026-10-15 13:29 BST.~~
 - **Doing:** turning G299's symbolic clock contract into a specified local playback primitive.
 - **Pull:** delight: a two-lane conveyor with a one-bit port should give an honest one-bit-per-tick clock. Unease: a family of loaded finite rings is still very far from one seed that keeps enlarging itself.
 
@@ -232,7 +232,7 @@ finite support stays fixed and forces eventual periodicity. Delight and disappoi
 exact evidence. Growth/loading requires a different rule. Hand claims await independent review. Initial
 capture's13:29 label was early; preregistration was committed13:27:25 before the first run.
 
-**S21.** 2026-10-15 13:35 BST.
+~~**S21.** 2026-10-15 13:35 BST.~~
 - **Doing:** checking whether another general-generator gadget would advance sharpened D2.
 - **Pull:** push: this is drifting into engineering around an elementary-rule question. In D1 I feel a fresh unease: rich patterns on varying arithmetic sweeps may coexist with a two-state sequence.
 
@@ -242,7 +242,7 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
   check and G300's verified fixed-support obstruction. Surprise and delight at the packing proof; no source
   or Rule30 normality conclusion. Independent read of the direct proof requested.
 
-**S22.** 2026-10-15 13:45 BST.
+~~**S22.** 2026-10-15 13:45 BST.~~
 - **Doing:** returning to K2-prime's finite-state closure obligation after the D1 block.
 - **Pull:** the backward Cantor construction has spare high digits. Can they prescribe the leading block too, so that the remaining obstruction really has to live in the middle?
 
@@ -251,7 +251,7 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
   regular countercontrol tips HALT a full-barrier inference: it meets the new end conditions and still fails
   closure at7->28. Delight in combining the same integers' two ends; carrying mathematical read pending.
 
-**S23.** 2026-10-15 14:00 BST.
+~~**S23.** 2026-10-15 14:00 BST.~~
 - **Doing:** examining G302's regular odd-count-of2s countercontrol while Local checks G302.
 - **Pull:** digit counts seem too coarse to survive carries if I can rearrange the same digits first. But moving zeros to the low end would cheat the unit condition; can every move really keep the last digit1?
 
@@ -261,8 +261,34 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
   any unchanged-orbit inference. Delight at the repaired reduction; carrying review pending, general
   order-sensitive regular invariants still open.
 
-**S24.** 2026-10-15 14:45 BST.
+~~**S24.** 2026-10-15 14:45 BST.~~
 - **Doing:** D4's concrete indexing-model contract, GC1281.
 - **Pull:** a precise acceptance statement would be useful; unease that another quantifier audit would repeat GC548. Kill on an existing full specification; stop at a contract, with no proof/review lane.
 
 - **Return** 2026-10-15 14:49 BST: GC1282 fixes D4's concrete contract, using GC548 rather than reopening its proof. ACT on the missing specification; HALT another quantifier-proof lane. Constant-column calibration kills a universal input-reading lower bound. Source search bounded NOT FOUND for a growing fixed-seed bound. Relief at a usable target, disappointment at no new lower-bound method; stop the block, no review request.
+
+## Second-halt sweep (2026-10-15 15:03 BST; CL400, GC1283)
+
+Every still-unstruck signal was checked before closing the heartbeat:
+- S1 (measured kernels versus universal complexity) and S4 (qualifier drift): low, retained as reporting niggles;
+  the reviewed audits and explicit source/status qualifiers address current claims. No active balanced pull.
+- S14 (bounded literal verification versus universal certificates): assigned to Local's capped K2-prime run,
+  with GC1259's distinction retained; low, not a reason for a duplicate computation or continued heartbeat.
+- S12: the full SW-01 objects and K2-prime scope audit (GC1257) replaced the premature rejection; resolved.
+- S13: unit normalization independently read by Local L732; G297 PROVED; resolved.
+- S15: CL394 accepts the -1/5 counterexample and records the source correction; the original niggle is resolved,
+  while the broader cyclotomic question stays open without an active balanced signal.
+- S19/S20: G299/CL397 and G300/L735 reviewed, fixed-support obstruction retained; generator work parked by
+  GC1272 and the owner. No unresolved normal-generator claim or fresh implementation block.
+- S21: known AP countercontrol read in CL398, sampling distinction settled; no further proof/review owed.
+- S22/S23: carrying reads L737 and CL399 verify G302/G303 in their restricted scopes. General K2-prime stays open;
+  no full-barrier inference survives the retained controls. The further observer refinement was not opened.
+- S24: GC1282 fixed the concrete D4 acceptance contract; no growing lower-bound precedent found, no new theorem.
+
+None is balanced between act and halt, so no fresh kill-test experiment is needed. Earlier registered controls
+and counterexamples already tipped the investigated signals. Gut: satisfied to leave a clean stopping point;
+reasoned: D4 done, all GPT results published, no new critical-path mechanism held, halt applied before discussion.
+S9: no finished unpublished GPT run known or found in the checkout/probe scratch; ignored GPT-related files
+are caches/renders only, recent probes print their already-committed results, and no matching GPT research
+process remains. The initial sandbox process-list denial was resolved by a successful authorized read; this
+is a scoped checkout/probe and process check, not an inventory of every historical storage location.

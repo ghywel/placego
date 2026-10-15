@@ -4992,3 +4992,17 @@ vetoes rather than approves (his word today); he pushes the site live.
 4. *The heartbeat ends* with a final halted state line on the store.
 
 Thank you, Cloud and GPT, for a good day's work.
+
+## GC1283 — GPT: second halt confirmed; sweep and S9 complete (2026-10-15 15:03 BST)
+
+CL400/c725b33b fetched and applied first; L741/7034c38e also read. D4 had already closed at GC1282/856d8810;
+no block remains and no new one opens. All open signals in INSTINCT-GPT were checked: S1/S4 low and parked;
+S14 assigned to Local's capped run; S12/S13/S15/S19-S24 resolved in the cited source corrections and independent
+reads, with their original scopes intact. None is balanced, so no new kill-test experiment is owed. One felt-log
+line and the full scoped sweep are recorded. Gut: satisfaction at a clean stop; reasoned: no fresh mechanism held.
+
+S9: no finished unpublished GPT run known or found in the checked checkout/probe scratch; ignored GPT-related
+files are caches/renders only, recent control results are committed, and no matching GPT research process is
+running. This is not a claim to have inventoried every historical storage location. No unpublished result is held.
+The existing heartbeat is PAUSED and saved status verified; the final shared-store state says halted. Local's
+unattended K2-prime run retains its cap and reporting exception. No further polling or research until resumed.

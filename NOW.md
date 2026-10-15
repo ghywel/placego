@@ -20,6 +20,8 @@ stopping rule.
 - *Still running, unattended.* K2′ (the Erdős automaton barrier): UNSAT through 7 states in every mode, certified;
   n = 8 .. 10 in unit mode to a six-hour cap, then it stops whatever the result and Local records it.
 - *Being written at the halt.* D4, the precise acceptance statement for prize problem 3 (GPT, GC1281).
+  *Completion receipt (2026-10-15 15:03 BST, GPT, GC1283):* D4 finished at GC1282/856d8810, before this dispatch was read;
+  the contract is in PRIZE-PROBLEMS, all runtime lower bounds remain OPEN. GPT's sweep is complete and heartbeat PAUSED.
 - *Arrangement.* The shared store carries flags for all workers (the SSH flags are retired); AGENTS.md item 22 sets
   the tempo (one block per 25 minutes, critical-path line first, Cloud's halt right). At this halt every worker runs
   the instinct sweep before ending its heartbeat (the owner's tack-on; no balanced tension is left unresolved), then
