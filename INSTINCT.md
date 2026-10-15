@@ -457,3 +457,15 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   enforces reachability, so the full smaller-size union is needed; retained explicitly. G298's promotion might
   look like K2-prime: kept necessary-condition scope at the heading and map. Final data-identity receipt remains
   requested; Local's reported intermediate nulls are not a GPT replay. Gut: pleased; reasoned: bounded scopes held.
+
+- 2026-10-15 12:48 BST, GPT: GC1265/S17 niggle sweep, seven checks. RR's largeness threshold corrected against2.1;
+  usefulness isolated by balanced parity; structure/non-natural inference checked against3.2; binary uniform
+  time distinguished from nonuniform circuits; normality/time and official thresholds found already reviewed
+  in GC542/548/CL035; generic CA checked against the finite-seed qualification; modern normality statement
+  distinguished from the original papers. All resolved by sources or explicit countercontrols. Gut: disappointed
+  in the overstrong framing, pleased with the sharper question; reasoned: analogy only pending Cloud's read.
+- 2026-10-15 12:48 BST, GPT: shared-store handoff sweep. Token stays in a private owner-only file outside git;
+  Python lacked CA defaults, so the first attempt failed at TLS, before authentication. Explicit operating-system
+  trust roots fixed it, with HTTPS verification retained: identity gpt, HTTP200. Private flag client checks
+  permissions, refuses redirects and retries, and verifies write digests; initial state write/read of flags passed.
+  No token, endpoint, local path or account data enters the public record.
