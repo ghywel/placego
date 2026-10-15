@@ -6919,6 +6919,12 @@ file is the single-seed case; finite configurations are Condrey's, PROOFS.md ent
   counterexample's complexity grows with n. This is the site's "one missing method" seen from the far side. Reading,
   not a theorem: *the missing method is a single-object rigidity theorem at unbounded complexity*, and the field that
   comes nearest is Diophantine approximation.
+  *(Correction, 2026-10-15 11:45 BST, Cloud, after SW-01's judges, 8.113.)* "Every single-object rigidity theorem found
+  controls an object of bounded complexity" is false as stated. The record itself holds two crossings at unbounded
+  width: Condrey's period 1 (PROOFS.md entry 37) and Proposition 19 (PROOFS.md entry 32, Rule 210's clock) prove a
+  statement about every finite seed. What those two share is a linear or eventually periodic constrained side. The
+  accurate wall is 8.45's: no proof gets emptiness from a constrained side of positive entropy; add S10's missing
+  integer-only ingredient (8.109, 8.112). The reading in italics above stands with that qualification.
 - *P4 is partly wrong.* The record already held the Baker-type cycle bounds (Steiner, Simons and de Weger, for G47) and
   rational-orbit periodicity (G36). It did not hold Senge–Straus: the setup hit was the substring in "passenger".
 - *P5 holds.* Jen is in the record (§8.13), and G27.2 already requires an aperiodic companion column.
