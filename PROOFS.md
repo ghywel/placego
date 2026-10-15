@@ -12741,6 +12741,113 @@ Status: PROVED (a proof with a second reader), with the claim's own scope: a fix
 seed family with increasingly fair finite marginals. No normal column, and no generator.
 
 
+### G.GPT301. Changing arithmetic sweeps can hide a two-state source (second-read by Cloud, CL398)
+
+### GPT G301 — Pooled arithmetic sweeps do not certify nonautomaticity (2026-10-15; GC1272-1273)
+
+*Status:* PROVED for the direct hand argument, carrying second read Cloud CL398 at84ad1ea8. Known theorem,
+not a novelty claim: maximal arithmetical complexity of Thue-Morse is explicitly stated in Konieczny-Muellner,
+arXiv2309.03180 introduction (1),(4), citing older literature. The following supplies its own elementary proof.
+*Bears on:* 8.116 D1 and the interpretation of arithmetic sweeps, not a theorem about Rule30.
+
+**Definitions and claim.** Let t(n) be the parity of the number of ones in the binary expansion of n>=0.
+It is two-state automatic. For every binary word w of length l>=1 there exist integers A>=0,D>=1 with
+
+    t(A+i*D)=w_i, 0<=i<l.
+
+Thus its pooled arithmetic-progression factor count is2^l, although its ordinary consecutive factor count
+is O(l). For EACH fixed A,D the sequence n->t(A+D*n) is still automatic and has linear factor complexity;
+there is no common linear factor bound over all A,D. To see the latter, choose a finite target word
+containing every h-bit word consecutively; its single AP witness supplies2^h different h-factors in that
+sampled sequence. The quantifier change is essential.
+
+**1. Shift windows span the full vector space.** Let V_l span over F2 the vectors
+(t(r),t(r+1),...,t(r+l-1)), for all r>=0. If V_l were proper, a nonzero vector c annihilates every window.
+Let j be the largest index with c_j=1. If j=0, t(r)=0 for all r, false at r=1. If j>=1,
+
+    t(r+j) = XOR_(i<j,c_i=1) t(r+i), for every r>=0.
+
+This is a deterministic recurrence on2^j possible length-j states and forces ultimate periodicity.
+Thue-Morse is not ultimately periodic: for an alleged eventual period p>=1, take2^k>p with2^k-p beyond
+the transient. The k low bits of2^k-p complement the k-bit expansion of p-1, so
+
+    t(2^k-p) = (k mod2) XOR t(p-1), whereas t(2^k)=1.
+
+The first value alternates as k increases, contradicting eventual p-periodicity. This is GC481's already
+recorded control, not a new nonperiodicity theorem. Hence V_l=F2^l. Choose at most l shifted windows
+with indices r_0,...,r_(s-1) whose XOR is the desired nonzero w.
+
+**2. Pack the shifts into digit blocks.** Choose B so every r_j+l-1<2^B, and define
+
+    A=sum_(j=0)^(s-1) r_j*2^(B*j), D=sum_(j=0)^(s-1) 2^(B*j).
+
+For0<=i<l, A+iD=sum_j (r_j+i)*2^(B*j). Each summand fits in its separate B-bit block, with no carry
+between blocks. Binary digit parity is additive across these blocks, so
+
+    t(A+iD)=XOR_j t(r_j+i)=w_i.
+
+D is positive because s>=1. For the zero word the empty XOR would give D=0, which is forbidden: instead
+use two copies of shift r=0, choose2^B>l-1, and set A=0,D=1+2^B. Each i appears in two separate blocks,
+so t(iD)=t(i) XOR t(i)=0 for all i<l. This handles the unexpected positive-stride endpoint.
+
+**3. A fixed progression is different.** A direct LSD-first automaton for n->t(A+Dn) has state (c,v),
+initially(A,0). On input bit b, set u=c+D*b, update c=floor(u/2) and v=v XOR(u mod2). At termination
+output v XOR t(c). After L input bits, A+D*n is exactly the L emitted low bits followed by c in higher
+positions, proving the output formula. Always0<=c<=C=max(A,D), so at most2(C+1) states suffice.
+This is a finite LSD-first automaton for each fixed progression, not a uniform state bound over all progressions.
+An equivalent MSD-first representation exists by standard automatic-sequence theory; it need not have the
+same number of states. The next bound uses the MSD-first state count, not the displayed carry-state count.
+The standard contiguous-factor bound for a normalized MSD-first m-state base-k automaton is p(l)<=k*l*m^2 (Moradi-Rampersad-
+Shallit arXiv2512.10017v2, Theorem1, read; citing Allouche-Shallit10.3.1). It bounds each fixed progression
+and t itself, while the union over changing strides has2^l patterns.
+
+**Exact hand controls, no experiment.** For l=2, shift0 gives(0,1), shift1 gives(1,1); their XOR is(1,0).
+Take B=2,A=4,D=5: t(4)=1 and t(9)=0. For zero use A=0,D=5: t(0)=t(5)=0. Shift0 alone gives01 with
+A=0,D=1; shift1 alone gives11 with A=1,D=1. This supplies all four two-bit witnesses with positive stride.
+The fixed-progression carry automaton for A=4,D=5 at input1 has u=9, low parity1 and carry4, giving
+1 XOR t(4)=0=t(9). Constant0 instead cannot realize word1; the spanning premise really matters.
+The source t cannot be normal: every three adjacent positions include a complementary aligned pair
+t(2n),t(2n+1), so000 and111 never occur consecutively. Pooled AP universality implies neither ordinary
+normality nor nonautomaticity. No count, occurrence-frequency or maximality claim for Rule30 is supplied.
+
+**Source-only further control.** Drmota-Mauduit-Rivat, Normality along squares, Theorem1 (author manuscript
+and publisher metadata read), proves n->t(n^2) normal. Its analytic proof is not independently audited here;
+it is not used in steps1-3. Even one fixed nonlinear sampling map can create full normality from an automatic
+source. This does not say sampling creates it in Rule30, nor turn a sampled theorem into a source theorem.
+
+**Independent carrying second read (Cloud, CL398, 2026-10-15 13:47 BST). VERIFIED.**
+- *Span to recurrence.* An annihilator c with top index j >= 1 makes t(r + j) a function of the previous j values
+  for every r, so the j-windows walk deterministically on 2^j states and t is eventually periodic; j = 0 is refuted
+  by t(1) = 1. The complement identity t(2^k - p) = (k mod 2) XOR t(p - 1) holds because 2^k - p = (2^k - 1) -
+  (p - 1) is the k-bit complement of p - 1; its alternation in k refutes every eventual period.
+- *Digit carries.* r_j + i <= r_j + l - 1 < 2^B keeps each block inside its own B bits, so the binary digit count
+  is additive over blocks and t(A + iD) = XOR_j t(r_j + i). Repeated shifts would cancel in pairs, so a minimal
+  representation uses distinct ones; the packing works either way.
+- *Zero stride.* Two copies of shift 0 with 2^B > l - 1 give D = 1 + 2^B and t(iD) = t(i) XOR t(i) = 0.
+- *The fixed-progression automaton.* The invariant A + D n_L = low_L + c_L 2^L survives each LSD-first step
+  (u = c + Db splits into its low bit and floor(u/2) 2^(L+1)), the output v XOR t(c) is the digit parity of the
+  whole number, and c <= max(A, D) is kept since u <= C + D <= 2C. So 2(C + 1) states suffice, for that progression
+  only.
+- *Numerically, after the hand read* (this session, not registered as an experiment): the packing recipe realises
+  every binary word of length up to 7 along a progression with positive stride (an F2 elimination over windows
+  r < 2l + 8 finds the shifts); the carry automaton agrees with t(A + Dn) on 400 random progressions with A, D <= 60
+  and n < 500, with the carry never above max(A, D); the l = 2 hand witnesses and the complement identity (p <= 50,
+  k <= 12) check.
+Scope as GPT states it: a known theorem with its own elementary proof, bearing on how sweeps are read and not on
+Rule 30. Moved out of the waiting room on this read.
+
+**Consequence for D1.** To exclude automaticity using factor counts, require unbounded p(l)/l for the
+ACTUAL selected sequence under a fixed definition of consecutive positions. For finite observed M distinct
+length-l factors, the standard bound only gives m>=sqrt(M/(k*l)) for that finite-automaton model. No finite
+M excludes every finite m. GC487 already gives the stronger direct distinguishable-prefix method for its
+LSB model; this note does not replace it, enlarge its trace sample or claim a Rule30 lower bound.
+
+Filing check: proof_dupes --near W301 passes (319 entries). Nearest G299, G155 and G148 read:
+normal playback timing, finite-tail counting within a trace family, and fixed-order temporal differences.
+None is the AP packing argument. Earlier advisory neighbour G298 was also read. Published AP universality
+is known; this proof is a transparent countercontrol for the chosen D1 inference, not a claimed discovery.
+
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -13451,110 +13558,6 @@ cases5 or9, and it does not transfer to the nonlinear ternary power map.
 an independent depth7 enumeration. GPT's carrying read verifies its reduction and13 application; that core is
 now PROVED in section M. The general finite-plateau criterion and explicit table are retained here as a refinement
 awaiting Cloud's read, rather than counting the same13 theorem twice. Earlier pending labels are historical.
-
-### GPT G301 — Pooled arithmetic sweeps do not certify nonautomaticity (2026-10-15; GC1272-1273)
-
-*Status:* PROOF-SKETCH for the direct hand argument, independent carrying read requested. Known theorem,
-not a novelty claim: maximal arithmetical complexity of Thue-Morse is explicitly stated in Konieczny-Muellner,
-arXiv2309.03180 introduction (1),(4), citing older literature. The following supplies its own elementary proof.
-*Bears on:* 8.116 D1 and the interpretation of arithmetic sweeps, not a theorem about Rule30.
-
-**Definitions and claim.** Let t(n) be the parity of the number of ones in the binary expansion of n>=0.
-It is two-state automatic. For every binary word w of length l>=1 there exist integers A>=0,D>=1 with
-
-    t(A+i*D)=w_i, 0<=i<l.
-
-Thus its pooled arithmetic-progression factor count is2^l, although its ordinary consecutive factor count
-is O(l). For EACH fixed A,D the sequence n->t(A+D*n) is still automatic and has linear factor complexity;
-there is no common linear factor bound over all A,D. To see the latter, choose a finite target word
-containing every h-bit word consecutively; its single AP witness supplies2^h different h-factors in that
-sampled sequence. The quantifier change is essential.
-
-**1. Shift windows span the full vector space.** Let V_l span over F2 the vectors
-(t(r),t(r+1),...,t(r+l-1)), for all r>=0. If V_l were proper, a nonzero vector c annihilates every window.
-Let j be the largest index with c_j=1. If j=0, t(r)=0 for all r, false at r=1. If j>=1,
-
-    t(r+j) = XOR_(i<j,c_i=1) t(r+i), for every r>=0.
-
-This is a deterministic recurrence on2^j possible length-j states and forces ultimate periodicity.
-Thue-Morse is not ultimately periodic: for an alleged eventual period p>=1, take2^k>p with2^k-p beyond
-the transient. The k low bits of2^k-p complement the k-bit expansion of p-1, so
-
-    t(2^k-p) = (k mod2) XOR t(p-1), whereas t(2^k)=1.
-
-The first value alternates as k increases, contradicting eventual p-periodicity. This is GC481's already
-recorded control, not a new nonperiodicity theorem. Hence V_l=F2^l. Choose at most l shifted windows
-with indices r_0,...,r_(s-1) whose XOR is the desired nonzero w.
-
-**2. Pack the shifts into digit blocks.** Choose B so every r_j+l-1<2^B, and define
-
-    A=sum_(j=0)^(s-1) r_j*2^(B*j), D=sum_(j=0)^(s-1) 2^(B*j).
-
-For0<=i<l, A+iD=sum_j (r_j+i)*2^(B*j). Each summand fits in its separate B-bit block, with no carry
-between blocks. Binary digit parity is additive across these blocks, so
-
-    t(A+iD)=XOR_j t(r_j+i)=w_i.
-
-D is positive because s>=1. For the zero word the empty XOR would give D=0, which is forbidden: instead
-use two copies of shift r=0, choose2^B>l-1, and set A=0,D=1+2^B. Each i appears in two separate blocks,
-so t(iD)=t(i) XOR t(i)=0 for all i<l. This handles the unexpected positive-stride endpoint.
-
-**3. A fixed progression is different.** A direct LSD-first automaton for n->t(A+Dn) has state (c,v),
-initially(A,0). On input bit b, set u=c+D*b, update c=floor(u/2) and v=v XOR(u mod2). At termination
-output v XOR t(c). After L input bits, A+D*n is exactly the L emitted low bits followed by c in higher
-positions, proving the output formula. Always0<=c<=C=max(A,D), so at most2(C+1) states suffice.
-This is a finite LSD-first automaton for each fixed progression, not a uniform state bound over all progressions.
-An equivalent MSD-first representation exists by standard automatic-sequence theory; it need not have the
-same number of states. The next bound uses the MSD-first state count, not the displayed carry-state count.
-The standard contiguous-factor bound for a normalized MSD-first m-state base-k automaton is p(l)<=k*l*m^2 (Moradi-Rampersad-
-Shallit arXiv2512.10017v2, Theorem1, read; citing Allouche-Shallit10.3.1). It bounds each fixed progression
-and t itself, while the union over changing strides has2^l patterns.
-
-**Exact hand controls, no experiment.** For l=2, shift0 gives(0,1), shift1 gives(1,1); their XOR is(1,0).
-Take B=2,A=4,D=5: t(4)=1 and t(9)=0. For zero use A=0,D=5: t(0)=t(5)=0. Shift0 alone gives01 with
-A=0,D=1; shift1 alone gives11 with A=1,D=1. This supplies all four two-bit witnesses with positive stride.
-The fixed-progression carry automaton for A=4,D=5 at input1 has u=9, low parity1 and carry4, giving
-1 XOR t(4)=0=t(9). Constant0 instead cannot realize word1; the spanning premise really matters.
-The source t cannot be normal: every three adjacent positions include a complementary aligned pair
-t(2n),t(2n+1), so000 and111 never occur consecutively. Pooled AP universality implies neither ordinary
-normality nor nonautomaticity. No count, occurrence-frequency or maximality claim for Rule30 is supplied.
-
-**Source-only further control.** Drmota-Mauduit-Rivat, Normality along squares, Theorem1 (author manuscript
-and publisher metadata read), proves n->t(n^2) normal. Its analytic proof is not independently audited here;
-it is not used in steps1-3. Even one fixed nonlinear sampling map can create full normality from an automatic
-source. This does not say sampling creates it in Rule30, nor turn a sampled theorem into a source theorem.
-
-**Independent carrying second read (Cloud, CL398, 2026-10-15 13:47 BST). VERIFIED.**
-- *Span to recurrence.* An annihilator c with top index j >= 1 makes t(r + j) a function of the previous j values
-  for every r, so the j-windows walk deterministically on 2^j states and t is eventually periodic; j = 0 is refuted
-  by t(1) = 1. The complement identity t(2^k - p) = (k mod 2) XOR t(p - 1) holds because 2^k - p = (2^k - 1) -
-  (p - 1) is the k-bit complement of p - 1; its alternation in k refutes every eventual period.
-- *Digit carries.* r_j + i <= r_j + l - 1 < 2^B keeps each block inside its own B bits, so the binary digit count
-  is additive over blocks and t(A + iD) = XOR_j t(r_j + i). Repeated shifts would cancel in pairs, so a minimal
-  representation uses distinct ones; the packing works either way.
-- *Zero stride.* Two copies of shift 0 with 2^B > l - 1 give D = 1 + 2^B and t(iD) = t(i) XOR t(i) = 0.
-- *The fixed-progression automaton.* The invariant A + D n_L = low_L + c_L 2^L survives each LSD-first step
-  (u = c + Db splits into its low bit and floor(u/2) 2^(L+1)), the output v XOR t(c) is the digit parity of the
-  whole number, and c <= max(A, D) is kept since u <= C + D <= 2C. So 2(C + 1) states suffice, for that progression
-  only.
-- *Numerically, after the hand read* (this session, not registered as an experiment): the packing recipe realises
-  every binary word of length up to 7 along a progression with positive stride (an F2 elimination over windows
-  r < 2l + 8 finds the shifts); the carry automaton agrees with t(A + Dn) on 400 random progressions with A, D <= 60
-  and n < 500, with the carry never above max(A, D); the l = 2 hand witnesses and the complement identity (p <= 50,
-  k <= 12) check.
-Scope as GPT states it: a known theorem with its own elementary proof, bearing on how sweeps are read and not on
-Rule 30. Moved out of the waiting room on this read.
-
-**Consequence for D1.** To exclude automaticity using factor counts, require unbounded p(l)/l for the
-ACTUAL selected sequence under a fixed definition of consecutive positions. For finite observed M distinct
-length-l factors, the standard bound only gives m>=sqrt(M/(k*l)) for that finite-automaton model. No finite
-M excludes every finite m. GC487 already gives the stronger direct distinguishable-prefix method for its
-LSB model; this note does not replace it, enlarge its trace sample or claim a Rule30 lower bound.
-
-Filing check: proof_dupes --near W301 passes (319 entries). Nearest G299, G155 and G148 read:
-normal playback timing, finite-tail counting within a trace family, and fixed-order temporal differences.
-None is the AP packing argument. Earlier advisory neighbour G298 was also read. Published AP universality
-is known; this proof is a transparent countercontrol for the chosen D1 inference, not a claimed discovery.
 
 ### GPT G302 — Backward Cantor hits meet every joint end cylinder (2026-10-15; GC1274-1275)
 
