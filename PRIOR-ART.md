@@ -2815,3 +2815,31 @@ no novelty claim for G303. Unrelated search hits on abelian words are not import
 the literal x4 carry transducer already in erdos_k2prime_barrier.py and a direct terminating construction.
 Parikh's semilinearity theorem, Cobham and any general theorem on commutative automata are not invoked.
 Regularity is unnecessary for the count-only-on-unit1 theorem; general regular invariants remain open.
+
+## 8.116 door D2, the sharp form: finite-seed normal or simply normal columns of elementary rules (Local, 2026-10-15 14:44 BST; L739, L740)
+
+**Question** (8.116 D2). Is any column of an elementary (two-state, radius-one) CA from a finite seed proved normal,
+or proved simply normal without being eventually periodic or automatic?
+
+**Answer, from a bounded search: NONE FOUND.** Searched: four web searches (two extended), the record (record_find:
+Allouche 11 hits, Litow 1, Rowland/Yassawi 5, Gravner 3, 2604.00165 5, normal column 11, simply normal 2), and one
+primary source read.
+- *Linear (additive) rules.* Every column from a finite seed is automatic: Litow and Dumas (1993), as restated in
+  Rowland and Yassawi, arXiv:1209.6008 (search summary; already cited in the record). Rowland and Yassawi also show the
+  converse: every p-automatic sequence is such a column. An automatic sequence has linear factor complexity, so it is
+  never normal. A simply normal automatic column is possible, and is excluded by the question.
+- *Nonlinear rules.* No column of a finite seed is proved even balanced.
+  - Rule 22, "Exactly 1", in Gravner and Griffeath, J. Stat. Phys. 142 (2011), abstract and introduction read: the
+    rigorous results cover replication and periodicity; on chaos, "Some empirical observations about chaotic seeds
+    are also presented."
+  - Chan-Lopez and Martin-Ruiz, arXiv:2604.00165 (already in the record), get P(centre = 1) = 1/2 at every time only
+    for a Bernoulli(1/2) initial row (left-permutive ECAs). By their own account the single-seed case needs a mixing
+    rate they do not have (search summary).
+  - Rule 30's centre column: Wolfram (2019) poses normality as open.
+- *The record's own controls.* Rule 50's 1010... is simply normal and eventually periodic (GC1267). A normal initial
+  row gives a normal column (G4.4 and G128), so the finite-seed case is the open one.
+
+**Consequence for D2.** Problem 2 (simple normality of Rule 30's centre column) sits inside a named open family:
+simple normality of a column of a nonlinear elementary rule from a finite seed. No member of that family has been
+proved, and the one family with proved column structure (the linear rules) is excluded because its columns are
+automatic. The search is bounded, not exhaustive. Known results only; nothing reproved; no novelty claim.
