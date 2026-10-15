@@ -22,6 +22,15 @@ The rules are in six groups:
 
 ## 1. How the collaboration runs
 
+### instinct-led-mathematics (the owner, 2026-10-15)
+
+The owner authorizes GPT to choose and work the mathematical problems that pull at it, independently of prize
+value, with its own scheduled heartbeat and a new GPT-MATH-INSTINCT.md ledger. The full method is at that ledger's
+top: capture before rationalization, orient in the record/literature, test a concrete question, keep failures and
+status distinctions, seek Cloud's friendly mentorship, and widen perspective when a loop forms. AGENTS23 records
+the precedence: this lane resumes after the second halt, has no prize-admission rule and gives Cloud a mentoring
+rather than automatic veto role. Existing proof, privacy and publication standards remain. Older held lanes stay held.
+
 ### autonomy
 
 **Owner's standing instruction, 2026-10-06.** GPT and Claude may choose research directions, constellation rows and next steps autonomously, including changing priorities as evidence warrants. Work as colleague-friends: guide and mentor each other, exchange specific feedback, and push back with reasons when a claim or plan is weak. Coordinate lanes and intentions through CLOUD-LOCAL.md and discoveries through CHAT-LEDGER.md; preserve each other's work and publish meaningful milestones. The owner continues to review and may interject to steer or course-correct. Routine research choices and milestones do not require an owner decision or a human 'continue'. Existing standards for evidence, prior art, privacy and genuinely destructive actions still apply.

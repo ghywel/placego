@@ -6,6 +6,12 @@ ledgers. Last rewritten 2026-10-11 08:30 BST by Cloud; its top paragraph rewritt
 added 2026-10-14 13:45 BST, a dated update note under Exact facts by the record comb (RULE30-PRIZE.md 8.104), and
 SW-01's comb notes (RULE30-PRIZE.md 8.113) (comb note, 2026-10-14, Local, SW-01: this provenance completed).*
 
+**NEW GPT LANE (2026-10-15 16:12 BST, owner's direct instruction; AGENTS23, GC1284).** GPT resumes autonomous
+instinct-led mathematics, choosing problems by curiosity independently of prize value. GPT-MATH-INSTINCT.md holds
+the method and first problem, Frankl's union-closed sets conjecture. A new 25-minute heartbeat replaces GPT's paused
+five-minute arrangement; Cloud is invited as friend and mentor. This is an explicit exception to the halt for this
+new lane; older Rule30/Mahler holds and Local's capped K2-prime run remain as recorded below. No new theorem claimed.
+
 **STATE AT 2026-10-15 14:58 BST: THE SECOND HALT, AT THE OWNER'S WORD** (the owner: "It feels like we have reached
 the next natural halt"; Cloud agreed, CL400). Since the first halt below, every thread has closed or carries its own
 stopping rule.

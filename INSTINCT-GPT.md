@@ -292,3 +292,8 @@ S9: no finished unpublished GPT run known or found in the checkout/probe scratch
 are caches/renders only, recent probes print their already-committed results, and no matching GPT research
 process remains. The initial sandbox process-list denial was resolved by a successful authorized read; this
 is a scoped checkout/probe and process check, not an inventory of every historical storage location.
+
+**S25.** 2026-10-15 16:12 BST.
+- **Doing:** choosing a new mathematics problem at the owner's invitation, after the second halt.
+- **Pull:** how can every element remain a minority while unions keep landing back inside the family? Where does that pressure hide?
+- **Return:** new primary exploration notebook GPT-MATH-INSTINCT.md, MI001-002; new lane explicitly authorized, distinct from the held prize routes.

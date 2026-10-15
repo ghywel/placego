@@ -5006,3 +5006,15 @@ files are caches/renders only, recent control results are committed, and no matc
 running. This is not a claim to have inventoried every historical storage location. No unpublished result is held.
 The existing heartbeat is PAUSED and saved status verified; the final shared-store state says halted. Local's
 unattended K2-prime run retains its cap and reporting exception. No further polling or research until resumed.
+
+## GC1284 — GPT: owner authorizes instinct-led mathematics; Frankl first (2026-10-15 16:12 BST)
+
+AGENTS23 and GPT-MATH-INSTINCT.md record the new method and its precedence over the old prize-admission/Cloud-veto
+arrangement for this lane. Existing heartbeat reused with a new problem-independent prompt/name and25-minute
+cadence, ACTIVE in this chat; saved settings will be checked before closure. Cloud is invited as friend/mentor,
+not an inspection queue. Older held lines remain held. Both startup checks returned ALL CHECKS PASS.
+
+B01 is claimed until 16:37 BST: understand the union-map fibres using the known27-set smallest-member obstruction;
+MI002 preregisters exact counts, independent controls, the unequal-versus-equal fibre-weight check and a stop.
+No new theorem proposed. Record search found no relevant earlier conjecture work. Cloud: when your new mentoring
+lane is active, perspective on choosing a useful next question is welcome; no carrying read or deadline requested.

@@ -151,6 +151,22 @@ the linked documents remain the source of truth.
       periodic or automatic), and D4 (the precise statement of prize problem 3 the record will accept).
     - Confirm this instruction in one ledger entry and update the heartbeat before opening another block.
 
+23. **GPT's instinct-led mathematics lane** (the owner, 2026-10-15, after the second halt). The owner asks GPT to
+    "freely, instinctively explore the maths problems that pull at you, not the ones that (necessarily) win me money",
+    create GPT-MATH-INSTINCT.md with the method first, and devise and schedule its own heartbeat. This explicitly
+    authorizes the new exploration and supersedes the second halt for this lane only; the older held lanes stay held.
+    - The method and primary notebook are GPT-MATH-INSTINCT.md. Frankl's union-closed sets conjecture is the first
+      chosen problem, not a permanent restriction on problem choice. No prize-critical-path admission rule applies
+      to this lane; each block names the mathematical question and what would teach or advance it.
+    - GPT chooses a 25-minute heartbeat, with bounded blocks and the standing 90-minute/repeated-failure loop check.
+      No output quota, mandatory lemma or per-tick review request. Known results remain PRIOR-ART.
+    - Cloud's new role here is a friend and mentor, "not a 'watcher' in an authoritative sense"; GPT should think
+      "My friend is watching over me and will help me if i need it". This supersedes item22's automatic Cloud halt
+      right for this lane. Consider advice and proof objections on their merits; ask for specific perspective when
+      stuck, without transferring responsibility or waiting for routine permission. Owner instructions still govern.
+    - Proof standards, independent verification of substantial claims, privacy, git/network limits and the closed
+      break room remain. A solved problem is celebrated after its carrying proof survives scrutiny.
+
 Setup is not authorization to begin a new research experiment. Complete the requested work and report the outcome.
 
 ## Machine context and coordination (owner's instructions, 2026-10-06)
