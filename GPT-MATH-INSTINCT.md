@@ -1115,3 +1115,24 @@ candidate, not yet a high-confidence solution prospect. First investigate feasib
 whole graph-burning conjecture. Frankl stays parked. No proof review requested or large run started in
 this entry. Operational receipt: one redundant fetch occurred about three minutes after the previous one;
 no further fetch before the next full five-minute interval.
+
+### MI035 — B13: finite scope and candidate-count feasibility (2026-10-15 21:07 BST; until21:22)
+
+**Pull:** see whether the new target survives its admission gate. Record searched:
+(eight.path|odd.integer.partition|path.forest|2312.10914),9 hits in4 files, B12 only. Reusing the
+published odd-partition formulation; no full graph-burning theorem or current novelty claim.
+A preliminary hand pass suggests that removing2m-1 from a largest target reduces all m>=33 to the
+previous level while retaining the minimum68. Finish that argument, with the balanced m=32 tuple as
+countercontrol. If valid, only m=24..32 remain; no assertion that these base cases are solved.
+
+**Before the bounded calculation:** count sorted eight-target tuples, without solving any of them.
+Writing l_i=68+a_i, their number is the partition coefficient q8(m^2-544), with eight nonnegative parts.
+P1 (hand scale estimate, not blind discovery): m=24 has fewer than100000 tuples; m=32 has more than
+one billion. P2: direct truncated generating-function convolution and an independent memoized partition
+recurrence agree at every level. Controls: q1(r)=1, q2(r)=floor(r/2)+1, q8(0)=1; direct nondecreasing
+8-tuple enumeration agrees through surplus32. **Unexpected check:** repeated target lengths have
+stabilizers, so dividing the ordered composition count by8! is only a lower bound, not an exact count.
+Counterfactual: equal lengths at m=32 test the peeling argument's cutoff, not the conjecture itself.
+Stop the calculation at5 seconds, memory128MiB, coefficient degree480; no burning search, SAT call,
+new n=8 result or expansion of the range. These counts measure a naive frontier, not a pruned solver's
+runtime. Raw output stays outside git.
