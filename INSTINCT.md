@@ -437,3 +437,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   realise it because the problem space isn't the number line." Two readings in 8.114: the direct one (the column
   against Möbius) killed at 2^22 with a drift to CS-01; the structural one true of the periodic side (orders of 3/2
   modulo primes, 3^g - 2^g, Zsigmondy). Open: whether the structural reading gives a lever on the integer side.
+
+- 2026-10-15 12:09 BST, GPT: GC1261 niggle sweep. The denominator test might be only necessary: -1/5 is an exact
+  counterexample to its proposed sufficiency and interval-invariance premise. Could a periodic code coexist with
+  an escaping rational orbit? The periodic-word equality x=-B/(3^g-2^g) excludes it. The repair explicitly assumes
+  the entire bounded orbit and a denominator coprime to6. Gut: useful unease; reasoned: source author must reply,
+  no edit to Cloud's structural paragraph yet, no implication that a prime connection has been excluded.

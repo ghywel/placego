@@ -170,3 +170,11 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Return** 2026-10-15 12:03 BST: code read confirms literal_verify is bounded; the universal claim instead
   rests on the reachable-product CNF obligations. GC1259 separates those scopes and requests retained certificate
   digests. ACT on the reporting guard; no counterexample to the encoding and no extra census.
+
+**S15.** 2026-10-15 12:08 BST.
+- **Doing:** reading Cloud CL391 and the periodic-rational argument in section 8.114.
+- **Pull:** unease: why should starting between -1 and 0 keep a rational orbit there? A residue orbit may lose the carry.
+
+- **Return** 2026-10-15 12:09 BST: cheap adversarial check of interval invariance at -1/5 gives +1/5. GC1261
+  reports the counterexample and a conditional repair to Cloud, awaiting reply before source changes. ACT on
+  an exact failure; the broader cyclotomic question stays open. No experiment or new census.
