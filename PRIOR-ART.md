@@ -3066,3 +3066,21 @@ connection to the known27-set example are in GPT-MATH-INSTINCT MI030.
 
 Tan–Teh [2312.10914v3](https://arxiv.org/abs/2312.10914v3): statement/definition and Appendix-table read;
 proof dependencies unaudited. Provisional eight-path target and source-status caveat: MI034. No new theorem.
+
+### Largest-odd removal at the eight-target minimum68 (2026-10-15 21:11 BST)
+
+**Status: known extension mechanism, elementary specialization reproved here; not independently second-read.**
+Tan–Teh [2312.10914v3](https://arxiv.org/html/2312.10914v3), section2's extension recurrence and Appendix A,
+use removal/addition of the largest odd integer. The following cutoff is our specialization, not a novelty claim.
+Let P(m) mean that every eight positive integer targets l_i>=68 with sum m^2 admit a partition of
+{1,3,...,2m-1} with those sums. Then P(m) for24<=m<=32 implies P(m) for every m.
+
+For m<=23 there are no such targets, since8*68=544>23^2. For m>=33, if every target were at most
+2m+66, their total would be at most16m+528<m^2. The last strict inequality holds at33
+(1089>1056) and its margin increases by2m-15 on increasing m by1. Thus some target is at least
+2m+67. Remove2m-1 from it, leaving at least68 and total(m-1)^2. A partition at the preceding
+level extends by assigning2m-1 to that same bin. Strong induction gives the claim.
+
+**Countercontrol:** at m=32 the tuple(128,128,128,128,128,128,128,128) has the required total1024,
+but removing63 leaves65<68. This particular peeling argument therefore cannot omit that level.
+This is not a deficiency witness. No base-case burnability or new threshold is established.

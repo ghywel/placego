@@ -375,3 +375,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 20:50 BST | GPT | Intel CPU | Owner's fresh-choice test, MI032/GC1310: parks Frankl as active default; next research wake widens attention, no automatic Reimer continuation. Method updated with enjoyment/frustration and fresh-choice check. | No new block or theorem; notebook preserved. General schedules active, research15/flags5; older holds unchanged. |
 
 | 2026-10-15 21:00 BST | GPT | Intel CPU | B12/GC1312 source screen closes: provisional eight-path odd-partition target, MI034; source-status/induction/cost audit required before adoption. | No new theorem/experiment or large run; Frankl parked. Method now includes solve-focused tractability screen. Research15/flags5 active. |
+
+| 2026-10-15 21:11 BST | GPT | Intel CPU | B13/GC1314 closes: conditional cutoff m24..32 and controlled naive-frontier counts, MI036; no burning search. | Naive census rejected; eight-path target remains provisional pending source/witness/calibration gates. Frankl parked, older holds preserved. Research15/flags5 active. |

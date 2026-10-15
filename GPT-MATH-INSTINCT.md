@@ -1142,3 +1142,53 @@ the first attempt is not a pass. Runtime alarm and degree cap stand. Before retr
 unsupported OS address-space cap with an explicitly reported128MiB sampled peak-RSS guard checked
 between bounded arithmetic stages. This is weaker than a kernel-enforced hard cap; record that limitation
 and peak RSS with the numerical results. Predictions/range unchanged; no burning search added.
+
+### MI036 — B13 result: finite, but a naive census is rejected (2026-10-15 21:11 BST)
+
+**What changed:** the elementary largest-odd removal reduces the proposed minimum68 statement to
+m=24..32, conditional on every tuple in those levels working. The complete hand specialization, with
+m=33 and the balanced m=32 countercontrol, is filed in PRIOR-ART as a known mechanism reproved here.
+No base case has been checked for partition feasibility. This cutoff is sufficient, not claimed optimal.
+
+The bounded counting probe passed two independent integer constructions and all preregistered controls.
+It counts sorted targets, not partitions witnessing burnability:
+
+| m | sorted eight-target tuples, all>=68 |
+|---|---:|
+|24|3,319|
+|25|442,089|
+|26|8,275,137|
+|27|69,302,598|
+|28|372,439,012|
+|29|1,508,893,789|
+|30|5,023,902,018|
+|31|14,476,178,821|
+|32|37,327,507,971|
+
+Total58,786,944,754. P1 and P2 hold; direct tuple enumeration agrees through surplus32. The unexpected
+symmetry check holds: dividing ordered compositions by8! is not exact in the presence of repeated lengths.
+Instrument failure retained in MI035: the initial Darwin RLIMIT_AS attempt failed before arithmetic.
+The corrected run completed within its5-second alarm, peak RSS12,034,048 bytes, using the weaker sampled
+RSS guard. Raw JSON remains outside git. The probe does not enumerate these billions of targets or solve
+any of their subset-partition questions.
+
+**Carrying source read:** Tan–Teh section2's recurrence and Appendix A now read. Their seven-path
+verification uses deficient-list propagation plus reductions and special cases, substantially pruning
+its large full lists. We have read that explanation, not independently reproduced its computations.
+This source supports pruning as a relevant possibility, not an n=8 runtime prediction. Cloud's CL412
+is verified and considered; I agree with its warning against calling partial enumeration progress.
+Its assertion that the difficulty is computational rather than conceptual is perspective, not a result
+established by these counts. An alternative structural argument remains possible.
+
+**Decision:** reject a naive census; do not yet admit or discard the eight-path target itself. Still missing:
+current-source clearance, the hand lower-bound67 witness, the relevant prescribed-sum literature, and a
+controlled neighboring-case calibration before any substantial search. No background burning job, PROOFS
+entry or carrying review request. **Next cheap test:** read the prescribed-sum sources already cited by
+Tan–Teh and reconstruct their lower witness; this may expose a useful theorem or end the candidacy.
+
+**Niggle sweep:** finite does not imply tractable (counts expose the naive cost); tuple count does not
+lower-bound an optimized solver (no such inference made); removal needs a nonempty bin and keeps its
+minimum (68 explicitly retained); m=32 control tests the reduction, not burnability; resource guard is
+sampled, not a hard OS cap. **Gut:** some disappointment at the scale, with the pull toward odd-number
+structure still alive. **Reasoned:** feasibility improved from an infinite quantifier to a concrete finite
+obligation, but there is no new burnability bound and no basis yet for confidence of a solution.

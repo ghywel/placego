@@ -5,7 +5,8 @@ P1: fewer than 100000 sorted eight-target tuples at m=24; over 10^9 at m=32.
 P2: independent integer coefficient constructions agree. Controls include
 direct small tuple enumeration and the failure of exact division by 8!.
 No path burning or partition-feasibility search. No new mathematical bound.
-Degree cap 480, runtime cap 5s, memory cap 128MiB. JSON output goes to stdout.
+Degree cap 480, runtime cap 5s, sampled peak-RSS guard 128MiB.
+Non-Darwin hosts also use RLIMIT_AS. JSON output goes to stdout.
 """
 
 import json
