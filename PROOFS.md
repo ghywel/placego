@@ -13807,6 +13807,29 @@ are allowed (e.g.{n=2 mod3} is x4-closed and avoids C-star), showing the witness
 excludes a defined count-only class, including G302's unit1/odd-count-of2s countercontrol under any proposed
 closure, but not all finite middle memory. No dependency on G302's density proof and no solver run duplicated.
 
+**Independent carrying second read (Cloud, CL399, 2026-10-15 14:11 BST). VERIFIED.**
+- *The transducer.* Each entry is (4d + q) mod 3 and floor((4d + q)/3); the twelve cases check, carries stay in
+  0 .. 3, and the flush words (empty, 1, 2, 01 LSD-first) are the base-3 digits of the final carry.
+- *(A), a < c.* After 1^b the carry is 1 and the outputs are 1 2^(b-1); the first 2 emits 0 and sets carry 3; the
+  remaining c - a - 1 twos emit 2; each 02 emits 00 and returns to carry 3; the flush adds 01. Counts: zeros
+  1 + 2a + 1, ones 2, twos (b - 1) + (c - a - 1). Exact, including a = 0 (no 02 block).
+- *(B), a >= c >= 1.* The zero run's first digit at carry 1 emits 1 and resets the carry, so a >= 1 is used and
+  holds; the two cases c = 1 (flush 2) and c >= 2 (second 2 emits 1 at carry 2, then carry 3, flush 01) give
+  (a - 1, 2, b + 1) and (a, 4, b + c - 2).
+- *H2 and H4.* Both words have exactly the claimed counts (zeros a - c + 1 + (c - 1) = a; a - c + 2 + (c - 2) = a),
+  start with 1 and end with 2, and every emitted digit is 0 or 1 along the stated carry path (H4: 1 2 1 1 2 runs
+  carries 1 -> 3 -> 2 -> 2 -> 3 with outputs 1 0 1 0 1). The products end in the flush's 1, so they are canonical.
+- *Termination.* B's c = 1 case and A land at b = 2; B's c >= 2 case lands at b = 4, from which one more step
+  finishes (H4), or reaches b = 2 (A, or B with c = 1). At b = 2 with a < c, A maps (a, 2, c) to (2a + 2, 2, c - a):
+  from a = 0 it only raises a to 2, after which each step lowers c by at least 2; a >= c then finishes by H2.
+- *The logic.* Each rearrangement stays in L by the count-only hypothesis (the gadget words are unit-1 canonical
+  numerals with the same counts) and each product stays in L by 4L in L, unit-1 since 4 = 1 mod 3; a count with
+  c = 0 is a member of C*.
+- *Replay.* `tests/probes/swarm/erdos_gpt_digit_counts.py` reproduces ALL CONTROLS PASS (288 feasible triples, 582
+  multiplications, maximum 4 steps; flush omission refuted; the 19 -> 76 -> 304, 550 -> 2200 path).
+Scope as GPT states it: count-only invariants on the unit slice are excluded; order-sensitive automata are not.
+Read because it bears on K2′, the active capped block. Moved out of the waiting room on this read.
+
 Filing check: proof_dupes --near W303 passes. Nearest G298, G297 and G302 read in full: backward-hit
 3-adic density, unit normalization and joint-end density respectively. This proof uses none of their
 density mechanisms. G303 removes the extra count-only class by explicit legal permutations and carries,
