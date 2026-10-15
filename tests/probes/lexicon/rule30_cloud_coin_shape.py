@@ -46,6 +46,47 @@ PREDICTIONS, written 2026-10-15 before any run and pushed before it.
      coin shape: chi-square percentile between 5 and 95 for both symbols.
   Counterfactual. A histogram outside the coins' spread, especially a deficit of long runs, would be the first shape
   statistic to separate the column from a coin, and it would bear on the zero-run records (8.36) directly.
+
+OUTCOME at LOGN = 20, 2026-10-15 11:57 BST (predictions pushed in a398197; 17 s).
+  C0 PASS (A051023; density 0.50066). C1 PASS (coins' chi2 median 12.7, max 20.0).
+  P1 REFUTED at the edge: the 0-runs' chi2 is 20.8, above all twenty coins (p about 0.05 at 12 degrees of freedom),
+    with +755 single zeros (about +2.9 sigma) and a deficit of runs of 11 or more (103 against 128 at k = 11); the
+    1-runs sit at the 55th percentile (chi2 12.3).
+  P2 REFUTED by one: the longest run of 1 is 22 against the coins' 16 .. 21 (twenty coins do not delimit a maximum;
+    a calibration error in the prediction, not evidence). Longest 0-run 19.
+  P3 REFUTED by calibration: the mean of ratios includes k = 10 and 11, whose counts are a few hundred, so +- 0.01 was
+    far too tight; the values 0.4897 and 0.4969 are consistent with the histogram above.
+  K HELD: |S/sigma| = 1.50 (prime times), 1.06 (Liouville), 1.92 (Möbius); the twenty coins' worst is 3.06. The
+    direct reading of the primes hunch is killed at this length.
+  U REFUTED at the edge, the other way: the velocity's 1-runs have chi2 18.2, above the coins' 17.7 (p about 0.11);
+    its 0-runs sit at the 40th percentile.
+  POST HOC prediction before the LOGN = 22 run (the same code, four times the length, twenty new coins): if the
+    0-runs' deviation is real, its chi2 grows about fourfold, to above 40, and the k = 1 excess and k >= 11 deficit
+    keep their signs; if it is a fluctuation, chi2 falls back inside the coins' spread. Probability that it is real:
+    0.3. The velocity's 1-runs are judged the same way.
+
+OUTCOME at LOGN = 22, 2026-10-15 12:05 BST (the post hoc prediction pushed in f7957fc before this run; 3 m 54 s).
+  C0, C1 PASS. P1, P2 and P3 all HELD at this length (percentiles 90 and 95; longest 20 and 23 inside the coins'
+    18 .. 26; ratios 0.4963 and 0.4958).
+  The post hoc prediction's "real" branch is REFUTED: the 0-runs' chi2 is 19.2, not above 40, and on the fresh three
+    quarters of the run (the bits the 2^20 run never saw) the k = 1 excess is +0.4 sigma and the k = 11 deficit -0.8
+    sigma. The four fresh-part chi2 values are 13.8, 21.8, 18.5 and 15.7 at 12 degrees of freedom. A fluctuation.
+  K HELD: |S/sigma| = 2.28 (prime times), 1.80 (Liouville), 2.76 (Möbius), all below 3, against a coins' worst of
+    1.73. But all three keep their signs on the fresh three quarters (+1.76, -1.47, -2.08), and the three are
+    correlated (mu = lambda on squarefree numbers). Killed by K's own rule at this length; the drift is handed to
+    JOB CS-01 rather than dropped.
+  U REFUTED at the edge again, in a different cell (the velocity's 0-runs, chi2 23.0; on the fresh part 18.5).
+    Four cells at two lengths against twenty coins' maxima: one or two edge cases are expected.
+
+JOB CS-01 (Cloud, 2026-10-15, for Local on the M5; low priority, one run).
+  RUN-ON:   Local. The generator is single-threaded and quadratic: 2^24 is about sixteen times the 2^22 run.
+  COMMAND:  python3 tests/probes/lexicon/rule30_cloud_coin_shape.py 24
+  COST:     about an hour of one core, under a gigabyte.
+  PREDICTION (written before the run; 0.25 that it holds): if the Möbius drift is a real relative bias, S_mu / sigma
+            at 2^24 is about -5.5 (the sum grows like N, sigma like sqrt N); if it is noise, |S_mu / sigma| < 3. The
+            same for S_p (about +4.5 if real) and S_lambda (about -3.6 if real). The three move together or not at all.
+  OUTCOME:  append here and in RULE30-PRIZE.md 8.114. Above 4 on all three is a direct handle on the owner's hunch and
+            goes to GPT at once; below 3 closes the direct reading at 2^24.
 """
 import os
 import pathlib

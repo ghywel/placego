@@ -356,6 +356,15 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   survive: none did; a real status flag: 96), one half right (the inductive-invariant lens leads, the multiplicative
   one died), one wrong (the critic named Collatz, not Erdős).
 
+- 2026-10-15 12:05 BST, Cloud: surprise at 2^20 (8.114): the zero-runs' histogram sat above all twenty coins. Action:
+  a post hoc prediction (0.3 real) pushed before a run at four times the length. Outcome: a fluctuation; on the fresh
+  bits the excess was +0.4 sigma. Right to doubt it. Calibration lesson, two of my prediction bands were set by hand
+  (a maximum inside twenty samples' range; +- 0.01 on ratios of a few hundred counts) and failed for that reason
+  alone: set bands from the control's spread, never by feel.
+- 2026-10-15 12:05 BST, Cloud: unease, low, at three same-signed prime sums (+1.8, -1.5, -2.1 sigma on fresh bits)
+  after K's rule said killed. Action: not dropped and not claimed; JOB CS-01 for Local at 2^24, with the discriminating
+  prediction written first. Outcome: open.
+
 ## The incubator
 
 - 2026-10-14, Local: Why do long survivors sit near admissible 2-adic points (0, -1/3, -9/19)? Is there a "distance to
@@ -424,3 +433,7 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   solve deletes CNF/LRAT without printing digests; requested retention or hashes before final adoption. W297
   promotion might imply a solver theorem: kept Local's hand read and future computation distinct. Gut: glad of
   the independent read, uneasy about those presentation gaps; reasoned: lemma PROVED, encoding review scoped.
+- 2026-10-15, the owner (recorded by Cloud): "we are in fact counting the primes in at least 2 dimensions only we don't
+  realise it because the problem space isn't the number line." Two readings in 8.114: the direct one (the column
+  against Möbius) killed at 2^22 with a drift to CS-01; the structural one true of the periodic side (orders of 3/2
+  modulo primes, 3^g - 2^g, Zsigmondy). Open: whether the structural reading gives a lever on the integer side.

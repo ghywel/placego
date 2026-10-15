@@ -8195,4 +8195,69 @@ reading, the column's correlation with the primes (its sum at prime times, and a
 functions), with the same sums over the twenty coins as the reference. Predictions C0, C1, P1, P2, P3, K and U are in
 the docstring. K is the kill test for the direct reading only.
 
-*Results follow the run.*
+**Results** (2^20 in 17 s; 2^22 in 3 m 54 s; the post hoc prediction for the second run was pushed before it).
+- *Controls.* The generator reproduces A051023. The twenty coins' chi-square values have median 11 to 13 at 12
+  degrees of freedom, maximum 20.
+- *At 2^20, one cell sat at the edge.* The zero-runs' chi-square was 20.8, above all twenty coins (p about 0.05):
+  +755 single zeros (+2.9 sigma) and a deficit of runs of 11 or more. I predicted post hoc (0.3) that it was real.
+- *At 2^22 it was a fluctuation.* The zero-runs' chi-square is 19.2, not the fourfold 40 a real bias gives, and on
+  the fresh three quarters of the run the single-zero excess is +0.4 sigma and the k = 11 deficit -0.8 sigma. The
+  four fresh-part chi-squares (column 0 and 1, velocity 0 and 1) are 13.8, 21.8, 18.5 and 15.7.
+- *The shape at 2^22.* Both symbols' run histograms sit inside the coins' spread (percentiles 90 and 95), the
+  longest runs are 20 zeros and 23 ones (the coins give 18 .. 26), and the geometric ratios are 0.4963 and 0.4958.
+  The share of runs of length k is 2^-k to within the noise out to k = 12, where the counts are a few hundred.
+- *The velocity column* (Rule 210's) has the same shape, with its own edge cell at each length (chi-square 18.2 then
+  23.0, in different cells); four cells at two lengths against twenty maxima are expected to produce one or two.
+- *Calibration misses, mine.* P2 asked the longest run to lie inside twenty coins' minimum and maximum, which does
+  not delimit a maximum; P3's +- 0.01 band ignored that the ratios at k = 10 and 11 rest on a few hundred counts.
+  Both predictions held at 2^22 by luck of the draw, not by better calibration.
+
+**Answer to the first question.** The record's coin test measured fairness (density) and, through the length-10
+block entropy, the shape up to runs of 8. This probe measures the shape directly to runs of about 20 and the longest
+run: at four million steps, the centre column's run-length distribution is a fair coin's, 2^-k, in both symbols and
+in its derivative, and its longest runs follow the fair coin's law (about log2 N - 1). What "coin-like" never says:
+anything about the one orbit's future, or about the forced left half's zero runs (8.36), which are a different
+object and grow with depth by the coin model's own prediction.
+
+**The second question, the direct reading: killed at this length, with a drift noted.** If the column counted the
+primes in the plain sense, its values at prime times, or against Liouville's and Möbius's functions, would show it.
+- 2^20: S/sigma = +1.50, -1.06, -1.92. 2^22: +2.28, -1.80, -2.76. Twenty coins' worst: 3.06 and 1.73.
+- By K's rule (below 3 kills, 3 to 4 repeats) the direct reading is killed. The honest footnote is that all three
+  sums keep their signs on the fresh three quarters (+1.76, -1.47, -2.08), and they are correlated statistics. That
+  is what a 2-sigma look-elsewhere drift looks like, and also what the first quarter of a real 5-sigma effect looks
+  like. JOB CS-01 (the probe's header) settles it at 2^24: a real bias gives about -5.5 sigma on the Möbius sum,
+  noise stays below 3. It is Local's when it has an idle hour.
+
+**The second question, the structural reading: the primes are already in the record, in the dimension the owner
+means.** Record searched above. Three places, none of them the number line.
+- *Erdős.* "The free part pays exactly" (CONSTELLATION.md G.1) is the statement that 2 is a primitive root modulo
+  3^k: the exponent runs once round the units mod 3^k in 2 x 3^(k-1) steps. The problem's exact part is a
+  multiplicative-order fact.
+- *Mahler.* The periodic codes have values with denominators 3^g - 2^g (MAHLER.md section 2: 19, 65, 211, 665, 2059;
+  the 7/57 window's 57 = 3 x 19 with 19 = 3^3 - 2^3). The reason (PROOF-SKETCH, surely classical): T on a rational
+  a/d with d odd keeps the denominator and multiplies the numerator by 3/2 modulo d, since T(a/d) = (3a + bd)/(2d)
+  with b the parity of a. On (-1, 0) the orbit is bounded, so it is the residue orbit, and its period is the order of
+  3/2 modulo d on that class. A rational with denominator d has a periodic code exactly when d divides 3^g - 2^g for
+  some g. By Zsigmondy's theorem, every 3^g - 2^g (g >= 2) has a prime divisor that divides no earlier term, so each
+  new period brings a new prime. The periodic side of Mahler's map is indexed by the orders of 3/2 modulo the
+  primes: that is a prime sequence counted in another dimension, exactly the owner's phrase. The integer side has no
+  cycles at all (a positive orbit grows), which is the wall seen from here: the primes organise the bounded,
+  periodic, rational part of the dynamics, and a positive integer never enters it.
+- *Rule 30.* The record's one prime-indexed fact is that ring cycles glide at prime ring sizes (8.67), which is the
+  group-theoretic fact that a prime ring has no proper translation sub-period. No arithmetic prime enters the rule.
+- *A precedent for the list* (8.113's U found 8.101's list incomplete). Zsigmondy (1892), Bang, and Bilu, Hanrot and
+  Voutier (2001, primitive divisors of every Lucas sequence term beyond 30) are single-object theorems at unbounded
+  complexity about exactly the sequences 3^g - 2^g that govern Mahler's periodic denominators. Their method is
+  cyclotomic (the primitive part of x^g - y^g is a value of a cyclotomic polynomial), which is the kind of structure
+  the record's three arithmetic problems share and the integer orbit lacks.
+- *The precedent for the hunch itself.* The Erdős discrepancy problem (every +-1 sequence) turned out to be about the
+  primes in disguise: Tao's 2015 proof reduced it to correlations of multiplicative functions. So "a combinatorial
+  wall that is secretly the primes" has happened once. Whether it is happening here is open; the direct test above
+  says the centre column does not see the primes at four million steps.
+
+**Verdicts.** Reasoned: question 1 is answered (a fair coin in shape, to runs of about 20, at 2^22; the record's
+test covered runs to 8); question 2's direct reading is killed at this length with a 2-sigma drift handed to Local;
+the structural reading is confirmed as a true description of the record's periodic side (orders of 3/2 modulo the
+primes), and it names the wall again from a new side: the primes govern the cycles, and the integer orbit has none.
+Gut: a jolt at the 2^20 edge, then the fresh-part check settling it; unease at the three same-signed sums, which is
+why CS-01 exists; and a pull toward Zsigmondy, parked (INSTINCT-CLOUD.md S15).
