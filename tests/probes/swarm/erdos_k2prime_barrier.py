@@ -86,6 +86,19 @@ ADDENDUM, SYMMETRY BREAKING (registered 2026-10-15 12:18 BST, before any symmetr
   DFA with at most n states", as before.
   P5 (0.6): with symmetry breaking every instance up to n = 10 decides within its hour.
 
+ADDENDUM 2, FROM n = 8 (registered 2026-10-15 13:29 BST, before any n = 8 instance). Symmetric kissat times for
+  seed-free so far: n = 5: 1.2 s (LSD) and 1.4 s (MSB); n = 6: 11.4 s and 21.2 s; n = 7: 171.5 s and 721.9 s, about
+  x15 (LSD) and x34 (MSB) per state, so the one-hour cap would leave n >= 8 MSB UNKNOWN. Two facts let one mode decide
+  the registered question:
+  - G297 is PROVED (PROOFS.md E2, GPT's proof with Local's carrying read): at the same state bound and direction, the
+    seed-free search has a model iff the unit-witness search does.
+  - Seed 1024 implies the seed-free witness.
+  So from n = 8 the run is unit mode only, both directions, with the kissat cap raised to six hours per instance
+  (K2P_CAP = 21600); certificates as before. The n = 5 .. 7 instances, which ran all three modes, are the check that
+  the modes agree (P4).
+  P6 (0.7): n = 8 decides in both directions within the six-hour cap, UNSAT with verified certificates.
+  P7 (0.35): n = 9 decides in both directions within the cap.
+
 CONTROLS OUTCOME (2026-10-15 11:58 BST, M5, 7 s): C1, C2, C3, C4, C6 PASS in both directions; C5 PASS in MSB and
   FAILED as registered in LSD (UNSAT at n = 2). Diagnosed as an error in the expectation, not the encoding: read
   least-significant digit first, {x = 2 mod 3} needs three states (start, accept-all after a first digit 2, and a
@@ -384,7 +397,7 @@ def build(n, direction, mode, fixed=None, need_witness=True, need_nonempty=False
 
 
 # ---------------------------------------------------------------- solving, decoding, verifying
-def solve(f, tag, cert=True, cap=3600):
+def solve(f, tag, cert=True, cap=int(os.environ.get('K2P_CAP', '3600'))):
     os.makedirs(OUT, exist_ok=True)
     cnf = os.path.join(OUT, tag + '.cnf')
     text = f.dimacs()
