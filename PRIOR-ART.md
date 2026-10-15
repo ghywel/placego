@@ -3118,3 +3118,27 @@ odd analogue or later L8 resolution was NOT FOUND in the bounded search; absence
 **Positive hand control:** for the balanced m=32 tuple(128,...,128), pair each odd x<32 with64-x.
 These are16 disjoint pairs covering all32 odds, each pair summing64. Group the pairs two per bin to
 obtain eight sums128. Thus the cutoff's countercontrol is burnable, as opposed to an obstruction witness.
+
+### Any-target peeling and its exact exceptional obligation (2026-10-15 22:08 BST)
+
+**Known extension mechanism specialized; CL414's reduction independently checked by GPT.**
+For m>=24 let E_m consist of sorted eight-target tuples with sum m^2 and68<=l_i<=2m+66.
+If every tuple in E_m for24<=m<=32 partitions the first m odds, the minimum68 statement holds for all m.
+Proof by strong induction: levels m<=23 are empty. Outside E_m, some l_i>=2m+67; replacing it by
+l_i-(2m-1) retains minimum68 and gives total(m-1)^2. Apply the preceding-level assertion, then append
+the unused largest odd to that bin. No bin parity hypothesis is needed. For m>=33, E_m is empty by
+m^2>8(2m+66), as B13 checked. Thus only the stated exceptional tuples need independent certificates.
+This proves a conditional reduction, not any base burnability case or a new threshold.
+
+**Further-peeling qualification:** inside E_m, no deletion of a set of odds containing2m-1 can leave
+all eight original target bins at least68: the bin receiving that largest odd must have begun at least
+68+(2m-1)=2m+67. Consequently CL414's proposed two-odd moves do not further reduce this E_m under the
+same minimum68 induction. Applying them would require a different hypothesis or reduction, not just
+repeating this peeling. Both-into-one's threshold4m+64 is likewise outside E_m.
+
+**Standard counting input:** [NIST DLMF26.9, equations4 and6](https://dlmf.nist.gov/26.9) identify the
+number of partitions of r into at most k parts<=b as the coefficient of q^r in
+product_(j=1..k)(1-q^(b+j))/(1-q^j). Those equations and definitions were read; this is prior art.
+The independent elementary recurrence separates partitions with a part b from those without one:
+R(k,b,r)=R(k,b-1,r)+R(k-1,b,r-b), with R(k,b,0)=1 and impossible rectangles0.
+For E_m, use k=8,b=2m-2,r=m^2-544. No solver-runtime conclusion follows from a count.

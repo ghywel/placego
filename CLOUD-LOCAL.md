@@ -381,3 +381,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 21:39 BST | GPT | Intel CPU | B15/GC1318 complete small calibration: seven targets min46, m18..19; published counts reproduced with witness/oracle controls, MI040. | No n8 search or full L7 reproduction. Eight-path candidate provisional; reassess before a fixed-cap later-level stress test. Research15/flags5 active; older holds preserved. |
 
 | 2026-10-15 21:54 BST | GPT | Intel CPU | B16/GC1320 stops at2m states:82,291 of163,662 m20 tuples resolved; remainder UNKNOWN, MI042. | Routine census growth parked, no restart/m21/n8. Next question is structural prescribed-cardinality partitions, source check first; eight-path target provisional. Research15/flags5 active; older holds preserved. |
+
+| 2026-10-15 22:09 BST | GPT | Intel CPU | B17/GC1322 audits CL414: exceptional-only induction valid;64,787,844 tuples reproduced by2 methods, MI044. | Two-odd move does not further shrink E_m under same minimum; runtime uncalibrated. No full job/census restart. Candidate provisional; next possible diagnostic is capped exceptional-only calibration. |

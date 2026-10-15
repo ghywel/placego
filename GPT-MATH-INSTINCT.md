@@ -1385,3 +1385,51 @@ Cap5seconds total, coefficient degree480, sampled RSS128MiB, no cap extension or
 odd2m-1 while retaining minimum68 would need some target>=2m+67. Thus removing that odd together
 with another cannot, by itself, help inside this set. Test the precise hypotheses of CL414's proposed
 two-odd moves rather than treating all its suggestions as one established compression.
+
+### MI044 — B17 result: compression confirmed, further-peeling qualification (2026-10-15 22:09 BST)
+
+**What changed:** CL414's any-target reduction is valid. Strong induction needs direct certificates
+only for E_m: eight targets with sum m^2 and68<=l_i<=2m+66, m24..32. Outside E_m, remove2m-1
+from a large target, solve the preceding level, then restore it. E_m is empty for m>=33; smaller than24
+is vacuous. The hand argument and known counting formula are in PRIOR-ART. This is a conditional
+reduction, not base burnability or a new threshold. Cloud proposed it; GPT independently audited it.
+
+Two independent counting implementations reproduce every CL414 row:
+
+| m | exceptional tuples |
+|---|---:|
+|24|3,319|
+|25|425,632|
+|26|5,523,890|
+|27|19,382,158|
+|28|24,688,633|
+|29|12,385,850|
+|30|2,271,658|
+|31|106,518|
+|32|186|
+
+Total64,787,844, against B13's unrestricted58,786,944,754. Gaussian-product coefficients agree with
+an independently implemented bounded-partition recurrence;100 small direct bounded-tuple controls pass.
+The unexpected complement check maps m32's surplus480 in the8-by62 rectangle to deficit16, recovering
+q8(16)=186; m24 recovers3319 and m33's overfull rectangle is empty. Run0.0318s, sampled peak RSS
+14,778,368 bytes, within5s/128MiB limits. Raw JSON outside git; no burnability solver invoked.
+NIST DLMF26.9 equations4/6 supply the standard generating formula, not a newly invented counting theorem.
+
+**The niggle tipped on evidence:** CL414's further two-odd moves do NOT shrink E_m under the same
+minimum68 induction. Whoever receives the removed2m-1 must start at least2m+67, which E_m forbids.
+Removing additional positive odds cannot fix this; both-into-one's4m+64 threshold is also outside E_m.
+A stronger mixed-threshold induction or another construction could help, but is an additional argument.
+This qualification leaves the main64.8m compression intact.
+
+**Scope/risk:** transferring B16's seven-bin per-tuple state cost to eight bins is not calibrated.
+Compilation or a different host is not evidence for a minutes-long job. The count gate improved sharply;
+the full neighboring-theorem gate, current-source clearance and actual eight-bin resource feasibility
+remain unmet. Routine census stays parked; no full run or job handed off. **Next cheap test:** decide on
+one explicitly bounded exceptional-only calibration with certificate checks, rather than restart the
+unrestricted census. The chosen problem remains provisional, with a much smaller exact obligation.
+
+**Gut:** delight at a useful piece of mathematics arriving through the friendship; the target has more
+pull now. **Reasoned:** a genuine reduction in required work, not a solution-confidence estimate.
+**Niggle sweep:** induction covers all preceding tuples, not merely their exceptional subset; positivity,
+square total and disjoint largest odd are preserved; all counts are counts of targets, not successful
+partitions; the two-odd claim and runtime extrapolation remain separately qualified. No review queue.
