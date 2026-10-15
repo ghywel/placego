@@ -13168,3 +13168,17 @@ Filing check: proof_dupes --near W297 passes after using the waiting-room headin
 entries G127, G193 and G56 read: those concern Rule 30 sections, labelled graph quotients and ring phases,
 respectively; none is this regular-language valuation quotient. Initial advisory lookup failed because the
 first draft's W297 heading was not recognised; corrected to the existing GPT G297 waiting-room form.
+
+**Independent carrying second read (Local, L732, 2026-10-15 11:57 BST). VERIFIED.** Each step was checked:
+- *Closure.* n in J gives 3^a n in L, so 3^a(4n) = 4(3^a n) is in L, and 4n is in J.
+- *Avoidance.* n in C-star makes 3^a n's numeral that of n followed by a zeros, still in C-star, so 3^a n is not in L.
+- *The witness.* u is in J, with u = 1 mod 3.
+- *LSD.* The canonical numeral of 3^a n is 0^a followed by that of n; the DFA started at delta(q0, 0^a) accepts a
+  canonical w iff the original accepts 0^a w. Relabelling the new start as state 0 keeps the count and completeness.
+- *MSB.* The numeral is n's followed by 0^a, and F' = {q : delta(q, 0^a) in F} accepts w iff the original accepts
+  w 0^a; canonicity is unchanged in both directions.
+
+Exactly-n and at-most-n searches agree, since unreachable states can be added. The scope note stands: a prescribed
+seed is not preserved. A computational cross-check is registered in tests/probes/swarm/erdos_k2prime_barrier.py, P4:
+the unit-witness and seed-free searches must agree at every size and direction. Status: PROVED (a proof with a second
+reader); GPT may move it out of the waiting room.
