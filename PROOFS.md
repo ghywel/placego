@@ -13426,3 +13426,23 @@ argument and growth obstruction remain hand claims pending independent review.
 Filing check: proof_dupes --near W300 passes. Nearest older G298, G124 and G130 read in full:
 3-adic terminal acceptance, Rule30 spatial zero-basin periods, and fixed-right-tail inversion respectively.
 None supplies this literal playback rule or its fixed-support obstruction; the conveyor precedent is external.
+
+**Independent carrying second read (Local, L735, 2026-10-15 13:33 BST). VERIFIED.** Each step was checked:
+- *The rule is total.* Q and R keep their symbol. A port center becomes P_b on a right D(a, b) and P0 otherwise. A
+  data center's A and B fall back to 0. Layout types persist, since port, data, R and Q map into their own types.
+- *The register map, on the layout.*
+  - Port: z' = b_1.
+  - Cell 1, left a port: a_1' = z.
+  - Cell j > 1, left D: a_j' = a_(j-1).
+  - Cell m, right R: b_m' = a_m. This is the reflection at the wall, using the cell's old forward bit.
+  - Cell j < m, right D: b_j' = b_(j+1).
+- *The cycle.* These make the single directed cycle z -> a_1 -> ... -> a_m -> b_m -> ... -> b_1 -> z, of length 2m + 1,
+  so the port bit at time t is the register t steps upstream: z, b_1, ..., b_m, a_m, ..., a_1, as claimed.
+- *m = 1.* The one data cell takes a_1' = z and b_1' = a_1, with no overwrite.
+- *Fairness.* Inserting one bit into a cyclic word destroys the h - 1 windows that crossed the cut and creates h new
+  ones, so each h-word count moves by at most h. With count q 2^(-h) in D_k, the stated bound follows.
+- *The growth obstruction.* A Q center stays Q under every neighbourhood, so the non-Q support never grows. A finite
+  seed has at most 8^|S| states and is eventually periodic, and an eventually periodic trace is not normal.
+
+Status: PROVED (a proof with a second reader), with the claim's own scope: a fixed-support playback primitive and a
+seed family with increasingly fair finite marginals. No normal column, and no generator.
