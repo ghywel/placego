@@ -1205,3 +1205,36 @@ a change of variables introduces bin cardinalities and cannot be assumed to pres
 No computation, solver, census or new theorem experiment in this block. Stop with exact applicable
 statements or honestly unavailable sources; do not fill gaps with Cloud's recalled theorem. This block
 can admit a structural next step or end the candidate's initial appeal; no claim of likely solution.
+
+### MI038 — B14 result: the obstruction is understood; no theorem shortcut yet (2026-10-15 21:24 BST)
+
+**What changed:** reconstructed the known lower witness(67^4,102^4) at m=26. Four odd bins require at
+least3 sources each and four even bins at least4, totaling28>26. Full arithmetic and source are in
+PRIOR-ART. This explains why68 is the candidate boundary, without independently auditing the full M_n
+formula. No experiment or solver was run.
+
+Chen–Fu–Wang–Zhou's actual theorem requires the second-smallest consecutive-integer target>=n, stronger
+than the all-target version recalled in CL412. The author-uploaded statement and algorithm opening were
+read. Our unexpected transfer check exposes the missing input: x=2j-1 changes a target to(l_i+c_i)/2,
+and c_i is also a prescribed bin cardinality. An ordinary prescribed-sum theorem does not supply it.
+At the finite m24..32 levels, the transformed sums would all exceed m, but their cardinalities remain
+uncontrolled. This tempting immediate corollary is therefore unavailable, not refuted as a research idea.
+
+The cited odd-constant-sum papers are relevant known tools for equal targets. Full manuscript retrieval
+failed (DNS and verified-TLS errors; no insecure retry); indexed first-page text identifies their scope,
+not an audited proof. Source details and the limitation are retained in PRIOR-ART. A bounded search for
+a general unequal odd-sum theorem and later eight-path resolution returned no applicable primary result:
+NOT FOUND, not confirmed current open status. Do not turn this into an unlimited source-reading queue.
+
+**Independent positive hand control:** the balanced m=32 tuple128^8 from B13 is partitionable:16
+complementary odd pairs each sum64, grouped two per bin. It only blocked the min-preserving peeling.
+**Niggle sweep:** the negative witness counts distinct summands, not shared copies; even102 cannot use
+two, odd67 cannot use one; square total is676; equal-sum results do not cover unequal sums; the ordinary
+sum theorem has not acquired a cardinality conclusion. All checked by hand. No new threshold theorem.
+
+**Gut:** delight at the clean28-versus26 obstruction, and a live pull toward constructive partitions;
+some push against another long survey. **Reasoned:** lower-witness admission gate met; the literature
+does not yet give a shortcut. Candidate remains provisional. The next useful admission test would be a
+preregistered, tightly capped neighboring-case solver calibration, with independently checked witnesses
+and a complete declared domain. A tiny sample must not be called reproduction of the seven-path theorem.
+If the calibration cannot supply a realistic route, pull back instead of accumulating partial censuses.

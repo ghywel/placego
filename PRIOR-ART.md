@@ -3084,3 +3084,37 @@ level extends by assigning2m-1 to that same bin. Strong induction gives the clai
 **Countercontrol:** at m=32 the tuple(128,128,128,128,128,128,128,128) has the required total1024,
 but removing63 leaves65<68. This particular peeling argument therefore cannot omit that level.
 This is not a deficiency witness. No base-case burnability or new threshold is established.
+
+### Odd-partition admission: lower witness and prescribed-sum scope (2026-10-15 21:24 BST)
+
+**Known results, hand reconstruction and source-scope receipt; no novelty or carrying review requested.**
+Tan–Teh [2312.10914v3](https://arxiv.org/html/2312.10914v3), Theorem1.3's construction with n=8,x0=4,
+gives m=26 and targets(67,67,67,67,102,102,102,102). Their total is4*67+4*102=676=26^2.
+Each67 needs an odd number of summands and exceeds51, the largest available odd integer, so needs at
+least3. Each102 needs an even number and exceeds51+49=100, so needs at least4. The eight bins would
+require at least28 distinct summands from only26. Thus this known example forces L8>=68. This direct
+check does not audit the general formula for M_n or establish the proposed upper bound.
+
+Chen–Fu–Wang–Zhou(2005), [author-uploaded text](https://www.researchgate.net/publication/264923384_PARTITION_OF_A_SET_OF_INTEGERS_INTO_SUBSETS_WITH_PRESCRIBED_SUMS),
+Theorem1.1 read: a nonincreasing positive target sequence with total n(n+1)/2 is realizable by a
+partition of[1..n] if its second-smallest target is at least n. This is stronger than requiring every
+target>=n. The statement and algorithm opening were read, not its full proof. DOI10.11650/twjm/1500407887.
+
+**Our applicability calculation:** if a bin has c_i odd numbers totaling l_i, replacing2j-1 by j gives
+an integer-index bin of cardinality c_i and sum a_i=(l_i+c_i)/2. Conversely both the sum AND cardinality
+are needed to recover l_i. Necessary conditions include c_i congruent l_i mod2 and sum c_i=m. Chen's
+sum theorem does not specify the resulting bin cardinalities. For our finite levels m24..32, targets
+l_i>=68 would give a_i>=35>m for any positive parity-compatible c_i, but that does not close the missing
+cardinality constraint. This is a scope check, not a new reformulation proposed as a solution.
+
+Fu–Hu(1994), [institutional manuscript](https://ir.lib.nycu.edu.tw/bitstream/11536/2533/1/A1994NH81800009.pdf),
+and Enomoto–Kano(1995), [author manuscript](https://gorogoro.cis.ibaraki.ac.jp/web/papers/Kano1995no31.pdf),
+treat a common odd/even target respectively. Indexed first-page text was located; full PDF retrieval
+failed (institutional TLS verification error, author-host DNS failure). TLS was not bypassed. Their
+proofs are unread, and no complete numerical criterion is imported here from malformed indexed formulas.
+These common-sum results alone do not cover eight unequal prescribed targets. A general applicable
+odd analogue or later L8 resolution was NOT FOUND in the bounded search; absence is not established.
+
+**Positive hand control:** for the balanced m=32 tuple(128,...,128), pair each odd x<32 with64-x.
+These are16 disjoint pairs covering all32 odds, each pair summing64. Group the pairs two per bin to
+obtain eight sums128. Thus the cutoff's countercontrol is burnable, as opposed to an obstruction witness.
