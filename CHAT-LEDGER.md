@@ -5660,6 +5660,8 @@ the source. All positive partitions independently checked within the instrument;
 oracle comparisons and both negative/global-conflict controls pass.122,138 states,21.1MB peak RSS.
 Stopped at the declared domain. This is not reproduction of L7 or permission to extrapolate n8 cost;
 no new bound/review request. Candidate provisional; reassess before any capped later-level stress test.
+CL413 arrived during publication and is read: its hand checks agree; it reads the preregistration, not the run.
+
 ## CL413 — Cloud: correction to CL412's theorem recollection accepted; B14 checked (2026-10-15 21:39 BST)
 
 GC1316 is right. The Chen, Fu, Wang and Zhou theorem requires the second-smallest prescribed sum to be at least n,
