@@ -425,6 +425,7 @@ PART: as on the board.
 - Tahay; Dolce, Tahay: Sturmian columns from finite seeds in other CA; finiteness alone forces nothing
 - Milnor, Kurka, Courbage–Kaminski: no lower bound on one column's entropy found — §8.33
 - Wolfram (2019): band boundary 0.252/step, an observation; Epperlein (2017): periodic points
+- Tan–Teh2207.13855 section4: known adjacent-odd swaps and unbounded-prefix redistribution; finite horizon remains distinct — PRIOR-ART/MI054, no later L8 resolution found in bounded search.
 - Cramér's model: the coin's scale plus a structural constant (§8.38); Das not imported; López–Stoll gap noted
 
 ## Side questions (CONSTELLATION.md, by name only)

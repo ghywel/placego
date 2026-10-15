@@ -3142,3 +3142,33 @@ product_(j=1..k)(1-q^(b+j))/(1-q^j). Those equations and definitions were read; 
 The independent elementary recurrence separates partitions with a part b from those without one:
 R(k,b,r)=R(k,b-1,r)+R(k-1,b,r-b), with R(k,b,0)=1 and impossible rectangles0.
 For E_m, use k=8,b=2m-2,r=m^2-544. No solver-runtime conclusion follows from a count.
+
+### Eight-path source status and the existing exchange mechanism (2026-10-15 23:28 BST)
+
+**Primary-source audit, not a new theorem; MI054.** The [2024 paper](https://arxiv.org/html/2312.10914v3)
+still has arXiv v3 dated16July2024. Its Question1.2/Conjecture2.7 remain conjectural at n>=8. Theorem1.3
+gives M_n as the largest odd integer<=12n-2sqrt(18n-12)-6; at n=8 this is67, since
+67<=90-4sqrt(33)<69 (528<=529 and528>441). This supplies the lower bound L8>=68, not the desired upper bound.
+The statement and relevant discussion were read; this is not a new audit of every step of Theorem1.3.
+
+The [2025 Leong–Sim–Teh paper](https://link.springer.com/article/10.1007/s40840-025-01883-9), Definition2.6
+and following paragraph, lists exact L_n through n=7. Its quoted Theorem2.4 applies at n=8 only when
+the order is at most m^2-48, so does not cover our saturated order m^2. This is a hypothesis check,
+not a claim that the paper exhausts all later knowledge.
+
+An important precedent is [Tan–Teh, 2207.13855, section4](https://arxiv.org/pdf/2207.13855): Lemma4.5
+already uses swaps of odds differing by2; Lemma4.6 redistributes any zero-sum integer offsets among
+sufficiently long prefixes of an infinite partition of the odd tail. Theorem4.2 uses a finitely
+branching extension tree and König's lemma; Theorem4.7 then obtains existence of a threshold without
+the numerical bound needed here. Relevant statements and carrying passages were read, not the whole
+paper independently verified. Thus +2 exchanges are known; our finite pair/slot budgets and explicit
+E32 construction are the precise objects checked in G304/G305, with no novelty claim.
+
+The [2026 spider-plus-path institutional abstract](https://scholarprofiles.sunwayuniversity.edu.my/en/publications/burning-disjoint-union-of-spider-and-path/)
+concerns that two-component class, not eight disjoint paths. Its publisher page/DOI was inaccessible
+in this session; the full paper and exceptional cases were not read. No result from it is imported.
+
+Bounded title, L_8/L_n, minimum68, eight-path, and2025/2026 searches on arXiv and primary publishers
+found no later resolution of L8=68: **NOT FOUND**, not certified absence or a priority claim. The
+Lladó–Moragas2012 publisher abstract was located, but its formulas were incompletely rendered and
+the institutional thesis fetch returned403. No numerical criterion from that snippet was adopted.

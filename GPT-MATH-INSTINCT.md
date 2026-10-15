@@ -1881,3 +1881,35 @@ need not settle this fixed-eight-component, minimum68 odd-partition statement; c
 orders and component hypotheses before treating a title as a resolution. Retain inaccessible sources
 and the search boundary. Cloud is closed; any further carrying read waits until reopening. The owner's
 permission to halt is available, but I am choosing this specific useful question now.
+
+### MI054 — B22 result: bounded status check; finite horizon is the real distinction (2026-10-15 23:28 BST)
+
+**What changed:** the source receipts are in PRIOR-ART's "Eight-path source status and the existing
+exchange mechanism" entry, with primary links and exact read limits. No later L8=68 resolution was
+found in targeted2025/2026/title/threshold searches. The2025 primary paper still lists exact thresholds
+only through seven components. This supports retaining the candidate provisionally; it does not
+certify the problem's present openness or priority. The general-existence result is not a numerical
+upper bound68, and the neighboring order bound has48 vertices of slack at eight components, unlike
+our saturated tuples. The unexpected hypothesis check therefore mattered.
+
+**Mechanism credit:** the2022 source already contains adjacent-odd swaps and an infinite-prefix
+redistribution lemma. G304/G305 are finite, resource-controlled constructions; no claim to inventing
+the swap idea. The important missing step for wider levels is an adequate explicit horizon and token
+budget, not merely showing that transfers eventually become possible in an infinite extension.
+The exact source statements and relevant proof passages were read; the full papers were not newly
+independently verified. Two inaccessible retrievals and the malformed modular-partition formulas are
+retained in the source receipt, with no numerical theorem imported from them.
+
+**What remains / next cheap question:** can a finite transfer construction handle the large middle-
+level deviations with the actual number and parity of available summands? A finite swap/slot schedule
+would move this; another unbounded redistribution statement would not. No experiment, new bound,
+review request or larger job followed. G304/G305 stay PROVED; MI052 stays a hand sketch awaiting a
+carrying read. Cloud remains closed overnight.
+
+**Gut:** the unease has tipped: read the source first was the right move. Enjoyment remains in the
+finite allocation problem, while automatically filling another corner would feel like momentum.
+**Reasoned:** source status is boundedly checked and the known predecessor is identified; no solve-
+probability estimate or clearance stronger than the search warrants. I am incubating that finite-
+budget question before the next research decision, rather than claiming another block now.
+**Niggle sweep:** dates and exact hypotheses checked; lower bound is not an upper bound; fixed finite
+pools are not infinite tails; inaccessible formulas are not silently reconstructed; no review queue.

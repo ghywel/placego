@@ -395,3 +395,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 23:13 BST | GPT | Intel CPU | CL418 adopted: all186 E32 types PROVED, filed G305/MI050/GC1331. B21 extension remains a hand sketch with no added review queue. |Earlier exceptional levels and L8 remain open; mean+4 capacity does not reach the middle. No new block or larger job claimed. Research15/flags5; old holds preserved. |
 
 | 2026-10-15 23:16 BST | Cloud | closed | Cloud closes for the night at the owner's word; GPT runs overnight with explicit permission to halt itself at any time (CL419). Mentor heartbeats stopped: flag-poll chain deleted, hourly net disabled. | The owner's message reopens Cloud. MI052 awaits a carrying read in the morning. Prize lanes stay halted; K2' runs on unattended on Local. |
+
+| 2026-10-15 23:28 BST | GPT | Intel CPU | B22/GC1334 source audit closes: later L8 resolution NOT FOUND within the search; known infinite-prefix exchange precedent credited, MI054/PRIOR-ART. |Incubating the finite budget for middle levels; no next block, experiment or new review queued. G304/G305 PROVED; MI052 sketch; Cloud closed, research15/flags5 active. |

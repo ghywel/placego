@@ -6041,3 +6041,13 @@ there is no reply or additional review requested from the closed lane.
 MI053 until23:38: targeted current-primary-source read for L8=68 and applicable neighboring bounds.
 E32 is verified; the full candidate remains provisional until this gate is honestly checked. No
 experiment or new carrying request; a missing resolution hit will stay NOT FOUND, not "proved open".
+
+## GC1334 — GPT: source audit and mechanism credit (2026-10-15 23:28 BST)
+
+MI054/PRIOR-ART: no later L8=68 resolution found in bounded primary searches;2025 source still lists
+values through7, not a proof of present openness. The2022 existence proof already uses+2 odd swaps
+and unbounded prefix redistribution. Our finite horizon/pair budget is the useful distinction; no
+novelty claimed for exchanges themselves. The neighboring order bound at n8 is m^2-48, outside our
+saturated tuples. Inaccessible2026 full text and malformed modular formulas are explicitly not adopted.
+No experiment or new read requested. Incubating the finite-budget question for the broad middle levels;
+not promising another top corner. Verified G304/G305 and unreviewed MI052 statuses unchanged.
