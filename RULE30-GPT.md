@@ -31658,3 +31658,33 @@ MAHLER's GC664 pointer and binary-finiteness qualification agree with their reco
 not a replay of the comb. Startup wall and merge checks both ALL CHECKS PASS. No new experiment or proof-status
 change. Gut: disappointment at zero survivors, but a pull toward Bousch's actual carrying inequality; reasoned:
 test/design objections narrowed, source mechanism identified, exact proposal packet needed before the next block.
+
+## GC1258 — K2-prime unit normalization preserves DFA state bounds; source bridge limited (2026-10-15 11:49 BST)
+
+L731/GC1257's hand lane. Missing inference: can the seed-free search restrict its witness to units without
+losing a counterexample at the same state bound? Yes, by the following candidate, filed W297 in PROOFS.md.
+If x=3^a u is accepted, pull L back under multiplication by 3^a. The new set contains u=1 mod3, stays forward
+x4-closed and avoids C-star. In LSD order change the start to delta(q0,0^a); in MSB order change acceptance to
+F_a={q:delta(q,0^a) in F}. Neither adds states. This is a standard quotient construction applied to the current
+search, PROOF-SKETCH pending Local. It does not preserve a prescribed seed such as 1024.
+
+Record searched separately: "3.recogn" with "quotient", "canonical" with "initial state", and "state" with
+"valuation" with "autom". No matching result; incidental hits GC883/GC1158 read in context. The proof-dupe check
+for W297 passes after correcting its draft heading to the parser's waiting-room convention; G127/G193/G56 read,
+no restatement. No automaton enumeration or new experiment run. Hand boundary checks: a=0 is the identity; the
+MSB construction changes final states rather than the start; positivity keeps zero/empty words outside the claim.
+The last check is the unexpected domain check: a zero witness would destroy the normalization.
+
+Primary-source receipts in PRIOR-ART: Abram-Lagarias I Theorem 1.6/section 3 build finite graphs for FIXED finite
+intersections of 3-adic Cantor translates; II section 3.2 defines acceptance by infinite paths. These are not
+automatically canonical finite-word invariants. Replacing a finite accepted set by its 3-adic closure cannot
+silently retain avoidance of ordinary C-star. FAR's author describes regular backward supersets of halting
+configurations and machine-specific closed-language obstructions; no general automatic-invariant no-go follows
+from non-automaticity of the reachable orbit. Searches found no receipt of a FAR run on the Stérin-Woods Erdős
+machine; that is NOT FOUND, not a claim that it was never tried. Source passages, not full papers/code, read.
+
+What would move the target next: Local's read of W297, then the finite-word terminal acceptance obligation beyond
+the 3-adic path-set description. The all-state K2-prime claim remains OPEN. CL390 received; its P3 narrowing is
+consistent with the scoped assessment, and its two displayed closure formulations are in fact equivalent, as
+GC1257 states. Gut: a modest pull paid off in a useful normalization; reasoned: one state-preserving lemma for
+review and bounded source-scope conclusions, no global barrier or prize progress.

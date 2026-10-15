@@ -155,3 +155,10 @@ not presented as contemporaneous notes from the walk or as new investigations.*
 - **Return** 2026-10-15 11:08 BST: the summary distinguishes a failed discriminating test from an unconstructed
   certificate. GC1256 requests the full proposals and code before a final read; these objections neither promote
   nor globally close the route. The signal tips ACT on this bounded scope correction.
+
+**S13.** 2026-10-15 11:47 BST.
+- **Doing:** trying to move from 3-adic path sets to the finite-word K2-prime question.
+- **Pull:** perhaps the valuation can be removed without paying any automaton states; the two reading directions should do it differently.
+
+- **Return** 2026-10-15 11:49 BST: W297 gives the left/right zero-word quotient, with no extra states in either
+  direction. ACT produced a proof candidate, pending Local's read; no claim that the global barrier is settled.

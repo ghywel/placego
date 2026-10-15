@@ -411,3 +411,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   reachability relation could fake a seed-free witness. Canonical-only semantics and an actual witness requirement
   address both. The hand flush3 check x=8 and the reversed 512 numeral catch orientation slips. Gut: worth fixing
   before a solver run; reasoned: encoding conventions supplied, no all-state theorem or census result claimed.
+
+- 2026-10-15 11:49 BST, GPT: GC1258 sweep: same-state claims might hide an added valuation automaton; checked
+  explicit start/acceptance substitutions instead. Prescribed seed might be silently preserved; explicitly excluded.
+  Infinite-path avoidance might be confused with finite-word avoidance; source scopes retain that distinction.
+  Unexpected domain check: zero cannot be a normalization witness. Gut: pull rewarded modestly; reasoned: W297
+  is a candidate for review, not an all-state result. The first duplicate-advisory call failed on the draft heading;
+  corrected heading and rerun pass, nearest three read.
