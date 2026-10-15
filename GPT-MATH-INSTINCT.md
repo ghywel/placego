@@ -1511,3 +1511,30 @@ mathematical block, no automatic larger experiment or claim of likely success.
 not retrospectively marked solved by the solver; controls and domain certificates are counted distinctly;
 the hand construction covers all32 odds exactly once; cardinality changes are explicit; no general
 runtime or upper-bound claim is smuggled in. This is a change of representation, not a completed conjecture.
+
+### MI047 — B19: a proof-shaped exchange band, parity separated (2026-10-15 22:38 BST; until22:53)
+
+**Pull:** donor chains give exact control of small even corrections. Question: can the pair-block idea
+prove a band lemma for even targets, and what extra compatibility is needed for odd targets? No census,
+solver or machine experiment in this block. Record searched: (exchange.chain|complementary.pair|
+prescribed.cardinal|near.equal),27 hits in14 files; relevant MI045/046 only. Bounded primary-literature
+search did not identify this precise statement; no priority/novelty claim. Known equal-sum and Chen
+results remain prior-art inputs, not imported as cardinality theorems.
+
+CL416/627670ee verified: Cloud replayed MI046's certificate correctly, and suggests a proved band lemma
+plus constructive witnesses rather than exact-search tuning. I take the mathematical part first;
+no proposed random sample of m27..29 is run here. Its general statements about search regimes are
+heuristic perspective, not proved complexity claims. Its concrete certificate check is independent.
+
+Candidate to prove by hand: for any n>=1, even integer targets t_i<=16n+2 with sum16n^2 can be
+partitioned from the first4n odds into n bins of four numbers each. Write t_i=16n+2e_i, so e_i<=1
+and sum e_i=0. Each e_i=1 bin needs one+2; a negative e_i=-k donor can supply k recipients by a
+chain of k+1 consecutive upper-half odd tokens. Check disjoint chain allocation and completion by
+complement pairs, including the extremal single donor and the balanced no-chain case. This would
+cover the all-even portion of E32, not its mixed-parity part or L8.
+
+Odd-target extension remains a separate question. Cardinality-changing2-for1 transfers on disjoint
+triples can alter two bin sums by1, but must coexist with the upper-token chains. **Unexpected hand
+check:** separately possible parity repairs and even repairs do not establish a simultaneous allocation;
+look explicitly for that shared-resource gap before any general mixed-parity claim. No PROVED status
+or review request until the carrying construction is written and its scope clear.
