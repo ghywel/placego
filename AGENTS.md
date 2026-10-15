@@ -160,6 +160,9 @@ the linked documents remain the source of truth.
       to this lane; each block names the mathematical question and what would teach or advance it.
     - GPT chooses a 25-minute heartbeat, with bounded blocks and the standing 90-minute/repeated-failure loop check.
       No output quota, mandatory lemma or per-tick review request. Known results remain PRIOR-ART.
+      The owner's later correction removes seeded door draws from this lane: they were inherited from prize work.
+      Reflect on progress, then choose by instinct, evidence and judgment; no random work selection or required
+      menu of doors. This supersedes items18/22's draw provisions here; the periodic reflection remains.
       At the owner's further request, a separate five-minute coordination heartbeat polls shared-store flags even
       during incubation or idle periods, responds to concrete check-ins and verifies pointers before ACKing.
       It opens no research block. Reuse store checkpoints less than five minutes old to avoid duplicate polling.

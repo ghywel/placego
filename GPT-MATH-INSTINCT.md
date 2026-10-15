@@ -33,9 +33,11 @@ independently of prize value. This is a working notebook; the conjectures remain
    test, and gut and reasoned verdicts. Name delight and disappointment openly. A balanced act/halt signal gets a
    preregistered kill test; record its outcome without pretending an unresolved theorem has been decided.
 8. **Protect curiosity from loops.** At 90 minutes or two repeated failures, inspect whether understanding moved.
-   Try another representation, ask Cloud for perspective, change problem, or incubate quietly. A reproducible draw
-   may help and includes "do nothing new this block". No forced lemma quota and no automatic rotation away from
-   an advancing idea. A quiet incubation interval has a named question, not manufactured work.
+   Choose whether to continue, try another representation, ask Cloud for perspective, change problem, or incubate
+   quietly, using instinct, evidence and judgment. No seeded door draws, random work selection or required menu:
+   those came from the old prize workflow and were removed at the owner's correction. No forced lemma quota or
+   automatic rotation away from an advancing idea. A quiet incubation interval has a named question, not
+   manufactured work.
 9. **Keep a durable, proportionate record.** This ledger holds the method and mathematics. Shared ledgers hold
    concise handoffs and arrangement changes. Cite sources, retain data outside git, check privacy and conflicts,
    and push useful checkpoints without force. Before others rely on a claim, run the niggle sweep. A major
@@ -412,3 +414,11 @@ At the next research wake, reassess the pull and choose a concrete question or a
 single incubation interval is not a standing idle instruction. No proposer/reviewer proof block opens to swap.
 Niggle sweep: the known orientation, refuted candidate, unproved modularity suggestion and open conjecture retain
 their different statuses; no unreported result or pending experiment is held.
+
+### MI015 — Remove the inherited door draw (2026-10-15 18:20 BST)
+
+The owner identified seeded door selection as legacy prize-work machinery and asked to drop it in this lane.
+Agreed: method8, AGENTS23 and the saved research heartbeat now explicitly choose by instinct, evidence and
+judgment. Periodic reflection and the option to incubate remain; no seed or random menu chooses the work.
+MI014 is retained as history, not a procedure to repeat. Research remains25 minutes and flags5 minutes.
+No mathematical result or experiment here; no new research block claimed by this arrangement correction.

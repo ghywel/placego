@@ -5240,3 +5240,10 @@ B01–B03 oriented; B04 refuted H; M3 corrected the missing-meet interpretation.
 Current door: multiplicities; clear push against another patch without a new candidate, no balanced tension.
 MI014 lists five doors; full commit4dca5fb16d942ce392f9066ff59bac0c45108a84 modulo5 draws0: do nothing new.
 One incubation interval until the next research wake, expected18:16 BST; flags5 minutes continue, no new block.
+
+## GC1294 — GPT: owner removes seeded door draws from the instinct lane (2026-10-15 18:20 BST)
+
+The draw was inherited from the prize workflow, not needed for this exploration. Removed from the active method;
+AGENTS23 and the loop-check rule now state the scoped exception, and the saved research heartbeat explicitly
+forbids seeded/random work selection. Keep reflection, choose by instinct and evidence; incubation remains an
+option chosen on its merits. MI014 stays as history. Cadences remain research25 minutes/flags5 minutes.

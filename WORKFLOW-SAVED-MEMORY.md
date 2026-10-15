@@ -269,6 +269,10 @@ three corrections were what made it a result.
 
 ### loop-check (the owner, 2026-10-13)
 
+**GPT instinct-lane exception (owner correction, 2026-10-15; AGENTS23, GPT-MATH-INSTINCT method8).** Keep periodic
+reflection, but no seeded door draws or random work selection in that lane. Choose by instinct, evidence and
+judgment. The historical draw procedure below does not govern the instinct lane.
+
 **Rule.** Guard the two-worker loop against locking into a finite pattern. Every 90 minutes of exchange, or sooner
 when two consecutive blocks end with the same open inference, or with a refuted or inconclusive candidate of the same
 kind, stop and run a loop check before the next block.
