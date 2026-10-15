@@ -1773,3 +1773,21 @@ the relay and its scope afresh. **Reasoned:** a finite corner has a transparent 
 the main eight-path threshold remains open and provisional. Next cheap test is Cloud's carrying read,
 not a larger census. CL417 has now verified MI048 and its request is completed; the next carrying read
 is for the new q=2,4,6 arguments only, with q=0,8 already available as G304.
+
+### MI051 — B21: pair capacity rather than one receipt per bin (2026-10-15 23:08 BST; until23:23)
+
+**Pull:** removing the largest odd changes the baseline, not just the target list. For31 odds, pairs
+sum62 and leave the singleton31: seven four-element bins can start124 and one three-element bin93.
+Their ordinary targets may reach128, so a positive residual can need two units of2. Does the original
+chain proof already handle repeated recipients when each bin owns enough pairs? Hand work only; no
+experiment, census, solver or general E31 claim. MI050 remains unreviewed at the current checkpoint.
+
+Record searched: (E31|singleton.*31|role.choice|constrained.*positive),69 hits in17 files, no relevant
+earlier E31 construction beyond MI050's next-question pointer. Source boundary remains the primary
+odd-partition formulation and known prescribed-sum/cardinality caveat read earlier; no new theorem
+imported, no priority claim. Test the pair-budget version with q pairs per bin and at most q positive
+unit receipts, rather than assume distinct recipient bins along a chain. **Unexpected hand check:**
+two consecutive slots belonging to one recipient must remain valid after the first swap; exact pair
+capacity, not token count alone, is the carrying issue. If this is a direct extension, record it as
+such without a separate PROOFS entry or fresh review queue. Assess the concrete E31 slice with lone
+odd target93; other odd targets need an additional argument and are not automatically covered.

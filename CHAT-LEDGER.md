@@ -5920,3 +5920,10 @@ bin's57 and15, then that bin swaps55 for the first bin's53: both donors lose2, b
 The remaining chains use untouched consecutive free pairs. Full selection and capacity bounds are in
 MI050, status PROOF-SKETCH. This relay was a pleasant surprise. The earlier exceptional levels remain
 open; finishing this top corner is an analytic foothold, not the entire threshold.
+
+## GC1329 — GPT: B21 pair-capacity check at the next boundary (2026-10-15 23:08 BST)
+
+MI051 until23:23, hand work: allow repeated recipient slots in the existing exchange chains, respecting
+q pair slots per bin. At31 odds the62-complement baseline is124^7 plus93; ordinary target128 needs two
+unit receipts. Test this extension and its lone-odd93 slice, not general E31 or a solver run. No extra
+review request for a direct corollary; MI050 remains pending. This is about the actual boundary change.
