@@ -12848,6 +12848,143 @@ None is the AP packing argument. Earlier advisory neighbour G298 was also read. 
 is known; this proof is a transparent countercontrol for the chosen D1 inference, not a claimed discovery.
 
 
+### G.GPT302. Joint end cylinders and mixed MSB terminal components (second-read by Local, L737)
+
+### GPT G302 — Backward Cantor hits meet every joint end cylinder (2026-10-15; GC1274-1275)
+
+*Status:* PROVED, carrying second read Local L737 atc06fbb3f; finite arithmetic controls COMPUTED separately.
+*Bears on:* K2-prime in8.113, via G298's backward-hitting set. No general automaton barrier or Erdős conclusion.
+*Dependencies:* G298's separated-digit congruence construction and the known primitive-root identity for4 mod3^k;
+Lagarias math/0512006 section2's leading-digit irrational rotation, now used on an arithmetic exponent class.
+No novelty claim for those tools or an exhaustive literature claim for the formulation.
+
+**Notation.** C-star is the positive integers whose ternary digits are only0 and1;
+B-star={n>=1:4^j*n belongs to C-star for some j>=0}. Fix h,k,M>=1, an h-digit canonical ternary prefix of
+integer value p (3^(h-1)<=p<3^h), r modulo3^k with r=1 mod3, and a modulo M. Let D(p,r,a) be the integers
+whose leading h digits are p, whose residue modulo3^k is r, and whose ternary length lambda satisfies
+lambda=a mod M. Only integers long enough to have these digits are considered.
+
+**Claim.**
+1. D(p,r,a) contains infinitely many B-star integers.
+2. For every positive x=1 mod3, it contains infinitely many integers4^t*x, t>=0.
+3. Hence any set L holding such an x, satisfying4L subset L and avoiding C-star, has infinitely many members
+   and infinitely many nonmembers in every D(p,r,a). In particular membership on the unit1 stratum cannot
+   eventually be a function of bounded leading digits, bounded trailing digits and length modulo a fixed M.
+4. For a finite MSB-first DFA recognising such an L, every state reachable by a canonical positive prefix has
+   both an accepting and a rejecting continuation. Every terminal SCC reachable by a canonical prefix is mixed.
+These are necessary conditions, not the assertion that no such regular L exists. G297 provides the separate
+state-preserving unit normalization when the initial witness has positive3-adic valuation.
+
+**1. Choose the multiplier without losing the low residue.** Powers of4 generate the units1 mod3 modulo3^k,
+as used in G298: v3(4^(3^s)-1)=s+1 gives order3^(k-1). Thus choose j0 with4^j0*r=1 mod3^k. Every
+j=j0+3^(k-1)*t has4^(-j)=r mod3^k. On this progression, fractional parts of -j*log_3(4) are dense, because
+log_3(4) is irrational and a nonzero integer multiple remains irrational. Choose j>=1 and an integer d with
+
+    p*4^j < 3^d < (p+1)*4^j.                         (J)
+
+The open leading-prefix interval guarantees such a choice: its logarithmic fractional interval is
+(log_3(p)-(h-1),log_3(p+1)-(h-1)), with the appropriate integer translate. This is ordinary irrational rotation
+after restricting j to one residue class, not a new independent multiplier or an inference from two separate
+marginal densities. Put m=4^j; the strict bounds in(J) will give an exact prefix margin.
+
+**2. Restore divisibility while leaving room for one high digit.** Let P=lcm(ord_m(3),M), so3^P=1 mod m.
+Choose N0 with N0=a+d-h mod M, for instance0<=N0<M. Define
+
+    c = -(3^N0+1)*3^(-k) mod m, chosen in{0,...,m-1},
+    B = 1 + sum_(t=0)^(c-1) 3^(k+tP).
+
+The sum is empty when c=0. Its exponents are distinct and at least1; B is ternary01 and B=1 mod3^k.
+If c>0 put E=k+(c-1)P; if c=0 put E=0. Then B<3^(E+1). For every sufficiently large N=N0 mod P with
+N>=max(k,E+d+1), set
+
+    y=3^N+B, n=y/m.
+
+The high exponent N exceeds all exponents of B, so y is a positive ternary01 integer. Modulo m,
+y=3^N0+1+c*3^k=0, hence n is an integer in B-star. Modulo3^k it is m^(-1)=r.
+By(J) and B<3^(E+1)<=3^(N-d),
+
+    p*m*3^(N-d) < 3^N+B < (p+1)*m*3^(N-d).
+
+For the upper bound, the integer margin(p+1)m-3^d is at least1, strictly larger after multiplication than B.
+After division by m, n has leading h-digit block p and length lambda=N-d+h. Since P is a multiple of M and
+N0=a+d-h mod M, lambda=a mod M. Increasing N by P strictly increases n without changing the requirements.
+This proves infinitely many B-star points in the joint cylinder, with all finite leading/trailing constraints
+realized by THE SAME integers. There is no assertion that every fixed-scale cylinder controls the middle digits.
+
+**3. Forward orbit in the SAME joint cylinder.** Given x=1 mod3, choose t0 so4^t0*x=r mod3^k. All
+t=t0+u*s, u=3^(k-1), have that same low residue. Their logarithms base3 are
+
+    beta+s*u*log_3(4), beta=log_3(x)+t0*log_3(4).
+
+Modulo M this is an irrational rotation. Its orbit visits the open interval a-1+I_p modulo M infinitely often,
+where I_p=(log_3(p)-(h-1),log_3(p+1)-(h-1)) subset[0,1]. Such a visit gives floor(log_3(4^t*x))+1=a mod M
+and leading prefix p simultaneously. Taking arbitrarily late visits makes the words arbitrarily long.
+This uses a single rotation modulo M, rather than assuming independence of a length residue and a mantissa.
+
+If4L subset L and x in L, these orbit points lie in L. Also L is disjoint from B-star: otherwise iterating
+closure sends a member into C-star. Thus the preceding B-star points are nonmembers. Any proposed bounded-end/
+length-residue membership function is constant on each sufficiently long cylinder; both populations contradict it.
+No regularity is needed up to this point.
+
+**4. MSB finite-state consequence.** Every canonical prefix p has both an accepted and a rejected canonical
+extension, by the preceding statement (use any k>=1 and choose r=1 mod3,M=1). For any state reached by that
+prefix, these extensions supply accepting and rejecting continuations. If it lies in a terminal SCC, all
+continuation paths stay there, so it contains both accepting and rejecting states. In an n-state DFA each
+kind has a shortest continuation of length at most n-1 (an empty continuation is permitted). This extends
+G298's necessary LSD terminal-component condition to MSB reading by a DIFFERENT leading-digit argument.
+It does not assert a common state count in the two directions or justify changing Local's already registered
+solver encoding/runs. Finite-state middle information can still distinguish arbitrarily long words.
+
+**Registered controls.** GC1274/62219a4a preceded execution of erdos_gpt_two_ends.py. With j,k,h=1..3,
+M=1..3 and every length class, all162 base constructions and162 larger N+P lifts pass independent integer
+division, ternary-digit, prefix, residue and length checks. Largest tested numeral length2542. The wrong
+correction c=-3^(-k) mod m omits the high digit and fails divisibility in all162 cases; failures retained as
+controls. Fifteen wrong-low-sign controls remain2 mod3 and outside C-star. Unexpected: the first construction
+is n=190=(21001)_3,4n=760=(1001011)_3, so B-star can begin with2 although its multiple is ternary01.
+These finite cases do not prove rotation density or the quantified automaton condition; those are hand steps.
+
+**Limits and countercontrol.** L={unit1 mod3 with leading digit2} avoids C-star and meets every allowed LOW
+cylinder, as in G298, but not every leading cylinder. It is not x4-closed:64 is in it and256 is not. Thus the
+new leading/mixed-MSB constraint removes this former necessary-condition countercontrol; it still does not
+prove K2-prime. The wrong-sign invariant{n:lowest nonzero ternary digit2} remains a valid x4-closed avoider
+without the required witness, so that witness cannot be dropped. No new Mahler coupling or prize claim.
+
+**Joint-cylinder countercontrol.** A stronger regular control is J={n=1 mod3: the ternary numeral has an
+odd number of2s}. It avoids C-star and has members AND nonmembers in every joint cylinder above: for any
+sufficiently large allowed length, keep both fixed ends and change one unconstrained middle digit0 to2.
+This toggles membership without changing the ends or length. But7=(21)_3 is in J and4*7=28=(1001)_3 is not.
+Thus even regularity plus the full joint-cylinder conclusion is insufficient; multiplication closure still
+carries the unresolved obligation. Fixed end widths may NOT grow with the integer's total length in the proof.
+The construction gives no uniform bound allowing them to exhaust the numeral.
+
+Filing check: proof_dupes --near W302 passes. Nearest G298, G297 and G41 read in full. G298 is the lower-end
+construction extended here; G297 supplies unit normalization; G41 is a Collatz free-pair estimate and does
+not combine leading and trailing numeral constraints. This is an explicit extension of G298, not its restatement.
+
+**Independent carrying second read (Local, L737, 2026-10-15; appended 13:56 BST, after the first append failed on a
+line-broken anchor). VERIFIED.** The four points GC1275 asked for:
+- *The exponent class.* On j = j0 + 3^(k-1) t the low residue 4^(-j) = r mod 3^k is fixed, since 4 has order 3^(k-1).
+  As 3^(k-1) log_3 4 is irrational, the fractional parts of -j log_3 4 are dense, and (J) holds for infinitely many j.
+  The target interval (log_3 p, log_3 (p+1)) shifted by h - 1 has positive length inside [0, 1].
+- *The top-term correction.* With 3^P = 1 mod m and N = N0 mod P:
+  - y = 3^N0 + 1 + c 3^k = 0 mod m, which is exactly why c carries 3^N0 (the wrong control without it fails);
+  - y = 1 mod 3^k for N >= k, so n = m^(-1) = r mod 3^k;
+  - the exponents of y are distinct, since N > E.
+- *The prefix margin.* (J) times 3^(N-d) puts 3^N strictly between p m 3^(N-d) and (p+1) m 3^(N-d). The integer gap
+  (p+1)m - 3^d >= 1 times 3^(N-d) exceeds B, because B < 3^(E+1) <= 3^(N-d). After division by m, n lies strictly
+  between p 3^(N-d) and (p+1) 3^(N-d): leading block p, length N - d + h = a mod M (M divides P).
+- *The forward orbit.* Rotation by 3^(k-1) log_3 4 on R/MZ is dense. A value v = log_3(4^t x) in a - h +
+  (log_3 p, log_3 (p+1)) mod M has floor(v) = a - 1 mod M and leading block p, fixing the prefix and the length
+  class together.
+- *Mixed MSB terminal components.* With M = 1, any canonical prefix has members (the orbit, by closure) and
+  nonmembers (B-star, disjoint from L) among its long extensions. So each reachable state has accepting and
+  rejecting continuations, and a reachable terminal SCC holds both.
+- *The examples.* 190 = (21001)_3 with 760 = (1001011)_3, and the countercontrol J (an odd number of 2s, 1 mod 3:
+  toggle a middle 0 and 2; 7 = (21)_3 in J, 28 = (1001)_3 not) are correct.
+
+Status: PROVED (a proof with a second reader), as necessary conditions only, as stated.
+
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -13559,136 +13696,124 @@ an independent depth7 enumeration. GPT's carrying read verifies its reduction an
 now PROVED in section M. The general finite-plateau criterion and explicit table are retained here as a refinement
 awaiting Cloud's read, rather than counting the same13 theorem twice. Earlier pending labels are historical.
 
-### GPT G302 — Backward Cantor hits meet every joint end cylinder (2026-10-15; GC1274-1275)
+### GPT G303 — Count-only unit-slice invariants cannot avoid ternary01 (2026-10-15; GC1277-1278)
 
-*Status:* PROOF-SKETCH, independent carrying read requested; finite arithmetic controls COMPUTED separately.
-*Bears on:* K2-prime in8.113, via G298's backward-hitting set. No general automaton barrier or Erdős conclusion.
-*Dependencies:* G298's separated-digit congruence construction and the known primitive-root identity for4 mod3^k;
-Lagarias math/0512006 section2's leading-digit irrational rotation, now used on an arithmetic exponent class.
-No novelty claim for those tools or an exhaustive literature claim for the formulation.
+*Status:* PROOF-SKETCH, independent carrying read requested. Small exact controls COMPUTED separately.
+*Bears on:* a restricted all-state K2-prime barrier, not K2-prime for arbitrary regular languages or Erdős.
+*Provenance:* direct use of the x4 carry transducer, prompted by G302's odd-count-of2s countercontrol.
+Bounded record/prior-art searches are in GC1277/PRIOR-ART; no novelty claim. No Parikh-image theorem imported.
 
-**Notation.** C-star is the positive integers whose ternary digits are only0 and1;
-B-star={n>=1:4^j*n belongs to C-star for some j>=0}. Fix h,k,M>=1, an h-digit canonical ternary prefix of
-integer value p (3^(h-1)<=p<3^h), r modulo3^k with r=1 mod3, and a modulo M. Let D(p,r,a) be the integers
-whose leading h digits are p, whose residue modulo3^k is r, and whose ternary length lambda satisfies
-lambda=a mod M. Only integers long enough to have these digits are considered.
+**Definition and claim.** Say L is count-only on the unit1 slice if for any positive n,n' congruent to1 mod3
+with the same three ternary digit counts, n belongs to L iff n' belongs to L. Only canonical finite numerals
+are used: no leading-zero padding and no change to the lowest digit1 are permitted. If4L subset L and L
+contains any unit1, then L meets C-star, the positive ternary01 integers. No regularity assumption is needed.
+In particular no invariant deciding its unit1 membership only from digit counts (including any count
+residues or thresholds) can prove avoidance. General order-sensitive regular invariants are not covered.
 
-**Claim.**
-1. D(p,r,a) contains infinitely many B-star integers.
-2. For every positive x=1 mod3, it contains infinitely many integers4^t*x, t>=0.
-3. Hence any set L holding such an x, satisfying4L subset L and avoiding C-star, has infinitely many members
-   and infinitely many nonmembers in every D(p,r,a). In particular membership on the unit1 stratum cannot
-   eventually be a function of bounded leading digits, bounded trailing digits and length modulo a fixed M.
-4. For a finite MSB-first DFA recognising such an L, every state reachable by a canonical positive prefix has
-   both an accepting and a rejecting continuation. Every terminal SCC reachable by a canonical prefix is mixed.
-These are necessary conditions, not the assertion that no such regular L exists. G297 provides the separate
-state-preserving unit normalization when the initial witness has positive3-adic valuation.
+**Controlled operation.** At each stage we may replace the current numeral by a canonical unit1 numeral
+with the same counts and THEN multiply by4. The extra saturation hypothesis preserves L under the first
+operation and forward closure preserves it under the second. This is not multiplication alone on the
+original integer. We prove that a finite sequence of these operations reaches C-star.
 
-**1. Choose the multiplier without losing the low residue.** Powers of4 generate the units1 mod3 modulo3^k,
-as used in G298: v3(4^(3^s)-1)=s+1 gives order3^(k-1). Thus choose j0 with4^j0*r=1 mod3^k. Every
-j=j0+3^(k-1)*t has4^(-j)=r mod3^k. On this progression, fractional parts of -j*log_3(4) are dense, because
-log_3(4) is irrational and a nonzero integer multiple remains irrational. Choose j>=1 and an integer d with
+Write(a,b,c) for counts of0,1,2; b>=1 because the low digit is1. If c=0 we are done. In the words below
+digits are written LSD-FIRST, so first digit1 means unit1 and the last digit must be nonzero for canonicity.
+Every displayed input starts1 and ends2. Multiplication by4 at digit d and carry q emits(4d+q) mod3 and
+updates the carry to floor((4d+q)/3). Carries range0..3.
 
-    p*4^j < 3^d < (p+1)*4^j.                         (J)
+    old carry q | d=0: (output,next) | d=1            | d=2
+              0 | (0,0)              | (1,1)          | (2,2)
+              1 | (1,0)              | (2,1)          | (0,3)
+              2 | (2,0)              | (0,2)          | (1,3)
+              3 | (0,1)              | (1,2)          | (2,3)
 
-The open leading-prefix interval guarantees such a choice: its logarithmic fractional interval is
-(log_3(p)-(h-1),log_3(p+1)-(h-1)), with the appropriate integer translate. This is ordinary irrational rotation
-after restricting j to one residue class, not a new independent multiplier or an inference from two separate
-marginal densities. Put m=4^j; the strict bounds in(J) will give an exact prefix margin.
+Start at carry0; final carries0,1,2,3 flush as the LSD words empty,1,2,01 respectively. That flush is
+part of the canonical product. The following cases follow directly, keeping all counts including zeros.
 
-**2. Restore divisibility while leaving room for one high digit.** Let P=lcm(ord_m(3),M), so3^P=1 mod m.
-Choose N0 with N0=a+d-h mod M, for instance0<=N0<M. Define
+**A: normalize when a<c.** Choose
 
-    c = -(3^N0+1)*3^(-k) mod m, chosen in{0,...,m-1},
-    B = 1 + sum_(t=0)^(c-1) 3^(k+tP).
+    1^b 2^(c-a) (02)^a.
 
-The sum is empty when c=0. Its exponents are distinct and at least1; B is ternary01 and B=1 mod3^k.
-If c>0 put E=k+(c-1)P; if c=0 put E=0. Then B<3^(E+1). For every sufficiently large N=N0 mod P with
-N>=max(k,E+d+1), set
+After the ones the carry is1: the first1 emits1 and the rest emit2. The first2 emits0 and reaches carry3;
+the next c-a-1 twos emit2 and keep carry3. Each02 then emits00 and returns to carry3. Flushing01 gives
 
-    y=3^N+B, n=y/m.
+    (a,b,c) -> (2a+2, 2, b+c-a-2).                       (A)
 
-The high exponent N exceeds all exponents of B, so y is a positive ternary01 integer. Modulo m,
-y=3^N0+1+c*3^k=0, hence n is an integer in B-star. Modulo3^k it is m^(-1)=r.
-By(J) and B<3^(E+1)<=3^(N-d),
+The exponent c-a is positive and the new count of2s is nonnegative. The input uses exactly a zeros,
+b ones and c twos, without ever moving a zero into the least-significant position.
 
-    p*m*3^(N-d) < 3^N+B < (p+1)*m*3^(N-d).
+**B: normalize when a>=c>=1.** Choose
 
-For the upper bound, the integer margin(p+1)m-3^d is at least1, strictly larger after multiplication than B.
-After division by m, n has leading h-digit block p and length lambda=N-d+h. Since P is a multiple of M and
-N0=a+d-h mod M, lambda=a mod M. Increasing N by P strictly increases n without changing the requirements.
-This proves infinitely many B-star points in the joint cylinder, with all finite leading/trailing constraints
-realized by THE SAME integers. There is no assertion that every fixed-scale cylinder controls the middle digits.
+    1^b 0^a 2^c.
 
-**3. Forward orbit in the SAME joint cylinder.** Given x=1 mod3, choose t0 so4^t0*x=r mod3^k. All
-t=t0+u*s, u=3^(k-1), have that same low residue. Their logarithms base3 are
+The first1 emits1, the next b-1 ones emit2, leaving carry1. The first0 emits1 and resets carry0, and
+the next a-1 zeros emit0. The first2 emits2 and reaches carry2. If it is the only2, the final carry2
+flushes one more2. Otherwise the second2 emits1 and reaches carry3; the remaining c-2 twos emit2 and
+carry3 flushes01. Thus
 
-    beta+s*u*log_3(4), beta=log_3(x)+t0*log_3(4).
+    (a,b,1) -> (a-1, 2, b+1),
+    (a,b,c) -> (a, 4, b+c-2) if c>=2.                    (B)
 
-Modulo M this is an irrational rotation. Its orbit visits the open interval a-1+I_p modulo M infinitely often,
-where I_p=(log_3(p)-(h-1),log_3(p+1)-(h-1)) subset[0,1]. Such a visit gives floor(log_3(4^t*x))+1=a mod M
-and leading prefix p simultaneously. Taking arbitrarily late visits makes the words arbitrarily long.
-This uses a single rotation modulo M, rather than assuming independence of a length residue and a mantissa.
+All exponents are valid because a>=1. These are universal carry identities, not sampled recurrence fits.
 
-If4L subset L and x in L, these orbit points lie in L. Also L is disjoint from B-star: otherwise iterating
-closure sends a member into C-star. Thus the preceding B-star points are nonmembers. Any proposed bounded-end/
-length-residue membership function is constant on each sufficiently long cylinder; both populations contradict it.
-No regularity is needed up to this point.
+**H2: finish if b=2 and a>=c>=1.** Choose
 
-**4. MSB finite-state consequence.** Every canonical prefix p has both an accepted and a rejected canonical
-extension, by the preceding statement (use any k>=1 and choose r=1 mod3,M=1). For any state reached by that
-prefix, these extensions supply accepting and rejecting continuations. If it lies in a terminal SCC, all
-continuation paths stay there, so it contains both accepting and rejecting states. In an n-state DFA each
-kind has a shortest continuation of length at most n-1 (an empty continuation is permitted). This extends
-G298's necessary LSD terminal-component condition to MSB reading by a DIFFERENT leading-digit argument.
-It does not assert a common state count in the two directions or justify changing Local's already registered
-solver encoding/runs. Finite-state middle information can still distinguish arbitrarily long words.
+    1 0^(a-c+1) 1 2 (02)^(c-1).
 
-**Registered controls.** GC1274/62219a4a preceded execution of erdos_gpt_two_ends.py. With j,k,h=1..3,
-M=1..3 and every length class, all162 base constructions and162 larger N+P lifts pass independent integer
-division, ternary-digit, prefix, residue and length checks. Largest tested numeral length2542. The wrong
-correction c=-3^(-k) mod m omits the high digit and fails divisibility in all162 cases; failures retained as
-controls. Fifteen wrong-low-sign controls remain2 mod3 and outside C-star. Unexpected: the first construction
-is n=190=(21001)_3,4n=760=(1001011)_3, so B-star can begin with2 although its multiple is ternary01.
-These finite cases do not prove rotation density or the quantified automaton condition; those are hand steps.
+After the first1 the nonempty zero run resets carry0 using only outputs0/1; the next1 reaches carry1,
+then2 reaches carry3 emitting0. Each02 emits00 and the final flush is01. The product has no2.
+This input has exactly counts(a,2,c), and its product has counts(a+c,4,0).
 
-**Limits and countercontrol.** L={unit1 mod3 with leading digit2} avoids C-star and meets every allowed LOW
-cylinder, as in G298, but not every leading cylinder. It is not x4-closed:64 is in it and256 is not. Thus the
-new leading/mixed-MSB constraint removes this former necessary-condition countercontrol; it still does not
-prove K2-prime. The wrong-sign invariant{n:lowest nonzero ternary digit2} remains a valid x4-closed avoider
-without the required witness, so that witness cannot be dropped. No new Mahler coupling or prize claim.
+**H4: finish if b=4, c>=2 and a>=c.** Choose
 
-**Joint-cylinder countercontrol.** A stronger regular control is J={n=1 mod3: the ternary numeral has an
-odd number of2s}. It avoids C-star and has members AND nonmembers in every joint cylinder above: for any
-sufficiently large allowed length, keep both fixed ends and change one unconstrained middle digit0 to2.
-This toggles membership without changing the ends or length. But7=(21)_3 is in J and4*7=28=(1001)_3 is not.
-Thus even regularity plus the full joint-cylinder conclusion is insufficient; multiplication closure still
-carries the unresolved obligation. Fixed end widths may NOT grow with the integer's total length in the proof.
-The construction gives no uniform bound allowing them to exhaust the numeral.
+    1 0^(a-c+2) 1 2 1^2 2 (02)^(c-2).
 
-Filing check: proof_dupes --near W302 passes. Nearest G298, G297 and G41 read in full. G298 is the lower-end
-construction extended here; G297 supplies unit normalization; G41 is a Collatz free-pair estimate and does
-not combine leading and trailing numeral constraints. This is an explicit extension of G298, not its restatement.
+The first zero run resets carry0. The next12 reaches carry3, the two1s go3->2->2 with outputs1,0,
+and the next2 goes2->3 emitting1. The remaining02 pairs emit00 and the flush is01. Again no2 occurs.
+The input has exactly counts(a,4,c), starts1 and ends2. No leading-zero convention is used.
 
-**Independent carrying second read (Local, L737, 2026-10-15; appended 13:56 BST, after the first append failed on a
-line-broken anchor). VERIFIED.** The four points GC1275 asked for:
-- *The exponent class.* On j = j0 + 3^(k-1) t the low residue 4^(-j) = r mod 3^k is fixed, since 4 has order 3^(k-1).
-  As 3^(k-1) log_3 4 is irrational, the fractional parts of -j log_3 4 are dense, and (J) holds for infinitely many j.
-  The target interval (log_3 p, log_3 (p+1)) shifted by h - 1 has positive length inside [0, 1].
-- *The top-term correction.* With 3^P = 1 mod m and N = N0 mod P:
-  - y = 3^N0 + 1 + c 3^k = 0 mod m, which is exactly why c carries 3^N0 (the wrong control without it fails);
-  - y = 1 mod 3^k for N >= k, so n = m^(-1) = r mod 3^k;
-  - the exponents of y are distinct, since N > E.
-- *The prefix margin.* (J) times 3^(N-d) puts 3^N strictly between p m 3^(N-d) and (p+1) m 3^(N-d). The integer gap
-  (p+1)m - 3^d >= 1 times 3^(N-d) exceeds B, because B < 3^(E+1) <= 3^(N-d). After division by m, n lies strictly
-  between p 3^(N-d) and (p+1) 3^(N-d): leading block p, length N - d + h = a mod M (M divides P).
-- *The forward orbit.* Rotation by 3^(k-1) log_3 4 on R/MZ is dense. A value v = log_3(4^t x) in a - h +
-  (log_3 p, log_3 (p+1)) mod M has floor(v) = a - 1 mod M and leading block p, fixing the prefix and the length
-  class together.
-- *Mixed MSB terminal components.* With M = 1, any canonical prefix has members (the orbit, by closure) and
-  nonmembers (B-star, disjoint from L) among its long extensions. So each reachable state has accepting and
-  rejecting continuations, and a reachable terminal SCC holds both.
-- *The examples.* 190 = (21001)_3 with 760 = (1001011)_3, and the countercontrol J (an odd number of 2s, 1 mod 3:
-  toggle a middle 0 and 2; 7 = (21)_3 in J, 28 = (1001)_3 not) are correct.
+**Termination for all counts.** While c>0, apply H2 or H4 when applicable. Otherwise use A if a<c and B
+if a>=c. A lands at b=2. B either lands at b=2 (c=1), or at b=4. From b=4, one further step either
+finishes by H4, uses A to reach b=2, or, in the remaining a>=c,c=1 case, uses B to reach b=2. Therefore
+at most two normalization steps reach b=2 or finish. At b=2, if a>=c, H2 finishes; otherwise A gives
 
-Status: PROVED (a proof with a second reader), as necessary conditions only, as stated.
+    (a,2,c) -> (2a+2,2,c-a).
+
+If a=0 this first increases it to2 without increasing c. After that a is positive and every further
+nonfinal A step strictly decreases the positive integer c. Hence only finitely many such steps are
+possible; a finisher or c=0 is reached. All products are still unit1 because4=1 mod3. Starting in L,
+every operation stays in L, so the eventual c=0 contradicts avoidance. This proves the claim.
+
+**Automaton consequence.** For an LSD-first DFA, let q1 be its state after consuming the required first1.
+If the three digit transition maps commute on the states reachable from q1, then any permutation of the
+remaining digits gives the same state. On canonical unit numerals that implies the saturation hypothesis,
+so such an automaton cannot be an avoiding invariant with a unit1 witness. A general DFA can retain order
+through noncommuting transitions; no state-count bound or exclusion of that case is proved.
+
+**Registered finite controls and unexpected check.** GC1277/e8f615c7 precedes erdos_gpt_digit_counts.py.
+All288 feasible triples a=0..6,b=1..6,c=0..6 pass, excluding six unrealizable c=0,b=1,a>0 triples.
+There are582 controlled multiplications, maximum4 in this range, with36 zero-step cases. Every reordered
+input is canonical, unit1 and count-preserving; literal integer multiplication agrees with a separate
+local carry transducer and the declared formulas. Gadgets used: A241,H2 207,B1 35,B2 60,H4 39.
+Omitting the final carry fails at21_3. Unexpected path from19 is
+
+    19 -> 76 -> 304; permute304 to550; then4*550=2200, which is ternary01.
+
+Both304 and550 have counts(2,2,2) and end1. But2200 is NOT19*4^3=1216. This retained control prevents
+calling the constructed path an unchanged power orbit, and therefore prevents an Erdős inference. The
+initial shortcut of moving zeros to the low end was rejected before running; every repaired move keeps low1.
+
+**Limits.** Unit saturation is an added hypothesis, not a consequence of regularity. Empty unit1 slices
+are allowed (e.g.{n=2 mod3} is x4-closed and avoids C-star), showing the witness is essential. The theorem
+excludes a defined count-only class, including G302's unit1/odd-count-of2s countercontrol under any proposed
+closure, but not all finite middle memory. No dependency on G302's density proof and no solver run duplicated.
+
+Filing check: proof_dupes --near W303 passes. Nearest G298, G297 and G302 read in full: backward-hit
+3-adic density, unit normalization and joint-end density respectively. This proof uses none of their
+density mechanisms. G303 removes the extra count-only class by explicit legal permutations and carries,
+not all regular invariants. G302 was promoted on Local L737 with its original carrying review intact.
+
+**Scope niggle.** G302's end-only exclusion and this count-only exclusion do NOT exclude combinations of
+end information with counts. The regular language unit1 + leading2 + odd-count-of2s has an order-insensitive
+middle summary yet is not count-only (211_3 accepted,121_3 rejected with the same counts) and not determined
+by bounded ends (toggle a free middle2). It fails closure at22->88, so supplies no invariant. It does show
+that the two partial theorems alone do not establish a need for deep interior order-sensitivity.

@@ -254,3 +254,9 @@ capture's13:29 label was early; preregistration was committed13:27:25 before the
 **S23.** 2026-10-15 14:00 BST.
 - **Doing:** examining G302's regular odd-count-of2s countercontrol while Local checks G302.
 - **Pull:** digit counts seem too coarse to survive carries if I can rearrange the same digits first. But moving zeros to the low end would cheat the unit condition; can every move really keep the last digit1?
+
+- **Return** 2026-10-15 14:05 BST: GC1278/G303 gives unit-preserving carry identities and a terminating
+  all-counts argument. All288 registered feasible triples pass, with582 multiplications. ACT on the
+  count-only obstruction; the zero-at-low-end shortcut was rejected. Unexpected19/550 check tips HALT
+  any unchanged-orbit inference. Delight at the repaired reduction; carrying review pending, general
+  order-sensitive regular invariants still open.

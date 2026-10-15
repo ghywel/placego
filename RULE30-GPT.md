@@ -31854,3 +31854,42 @@ both outcomes in every finite-end cylinder, since a middle0 can be changed to2. 
 Thus the exact remaining inference is compatibility of finite middle memory with universal x4 closure,
 not another digit-end census. Gut: delight that the spare high digit really joins the constraints; reasoned:
 one stronger necessary condition, no K2-prime theorem, no Erdős conclusion and no change to held main lines.
+
+## GC1278. A restricted K2-prime barrier: count-only unit-slice invariants fail (2026-10-15 14:05 BST)
+
+G303 in the waiting room, PROOF-SKETCH. If membership on the unit1 slice depends only on the ternary
+digit counts(a,b,c), then x4 closure plus a unit1 witness forces intersection with C-star. The theorem
+needs no regularity; it covers count residues and threshold summaries, but not order-sensitive DFAs.
+Reordering is licensed by this EXTRA count-saturation hypothesis only, never inferred from regularity.
+Every displayed reordering stays canonical, ends1 and preserves every count including zeros.
+
+The carrying mechanism is an explicit controlled descent. For a<c, the LSD word1^b2^(c-a)(02)^a maps
+under4 to counts(2a+2,2,b+c-a-2). For a>=c, the word1^b0^a2^c maps to b=2 or4, with the exact cases
+in G303. Two finishing words have products with no2. Within at most two normalization moves one either
+finishes or reaches b=2; there the next move grows a and lowers c whenever a>0. An initial a=0 becomes2
+in one move without increasing c. Hence termination is a hand argument for all feasible counts.
+
+Registered before execution at e8f615c7, erdos_gpt_digit_counts.py checks all288 feasible triples
+a=0..6,b=1..6,c=0..6 (six unrealizable triples excluded). All582 multiplications, maximum4 per case,
+pass independent integer/carry checks and the normalization formulas;36 cases need no step.
+The omitted-flush counterfactual fails at21_3. Unexpected path19->76->304, permute to550, then2200 shows
+why this is NOT a literal power-of4 orbit:2200 !=19*4^3. The final result is ternary01. No SAT or DFA
+enumeration duplicated, no bound of4 claimed outside these controls.
+
+Automaton consequence: if LSD digit transitions commute on every state reachable after the initial1,
+then the unit slice is count-only and cannot supply an avoiding invariant with a witness. A hypothetical
+K2-prime barrier must distinguish some equal-count unit numerals. This can involve end information;
+combining bounded end windows WITH count summaries is not excluded. This is not the all-state barrier.
+The wrong-sign invariant{n=2 mod3} shows the unit1 witness cannot be dropped.
+A scope countercontrol is unit1 + leading2 + odd-count-of2s:211_3 is accepted and121_3 rejected despite
+equal counts. It mixes at fixed ends by toggling a middle digit, so it evades BOTH separate hypotheses
+while using order-insensitive middle counts. It still fails closure at22->88; no working invariant follows.
+
+Niggle sweep: the earlier shortcut putting zeros at the low end would leave the unit slice; discarded.
+The repaired words keep low1 and a nonzero high digit. Final carries are counted; the b=4,c=1 case goes
+through B to b=2, not the H4 finisher (which requires c>=2). The loop's a=0 case is treated before using
+strict c descent. Gut: delight at a terminating reduction with the unit restriction intact. Reasoned:
+one defined class of invariants eliminated, hand carrying read pending; no Erdős or prize claim.
+
+L737/c06fbb3f independently verifies G302's four carrying points and examples. Accepted and promoted
+with review intact; map and summary updated. G303's proof does not depend on its density lemma.

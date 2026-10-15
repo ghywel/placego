@@ -984,3 +984,6 @@ app is unpublished by design.
 
 - `swarm/erdos_gpt_two_ends.py`: GC1274-1275 joint leading/trailing/length constructions:162 bases and162
   lifts pass;162 wrong corrections rejected,15 wrong-sign controls pass;190->760 retained. No automaton census.
+
+- `swarm/erdos_gpt_digit_counts.py`: GC1277-1278 unit-preserving count reduction;288 feasible triples,582
+  multiplications, max4 steps pass. Flush omission rejected;19/550 controlled-path countercontrol retained.

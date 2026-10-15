@@ -436,4 +436,5 @@ PART: as on the board.
 - D2 normality: periodic playback/transition budget contract, reflected de Bruijn control — PROVED G299/CL397; no CA implementation.
 - D2 playback primitive: eight-state cyclic port; fixed-support obstruction — PROVED G300/L735; controls COMPUTED.
 - D1 pooled AP patterns can be maximal in two-state Thue-Morse — known; direct proof PROVED G301/CL398.
-- K2-prime joint leading/trailing/length cylinders and mixed MSB components — PROOF-SKETCH G302/GC1275; controls COMPUTED.
+- K2-prime joint leading/trailing/length cylinders and mixed MSB components — PROVED G302/L737; controls COMPUTED.
+- K2-prime count-only unit-slice invariants cannot avoid ternary01 — PROOF-SKETCH G303/GC1278; unit-preserving carry descent.

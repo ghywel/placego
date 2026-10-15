@@ -2806,3 +2806,12 @@ G298's reviewed congruence construction and SW01-OBJECTS proposal5, steps3(a)-(e
 separate trailing/leading obstructions and the subset-sum congruence tool. G302 inserts a high3^N term,
 corrects its divisibility contribution, and keeps both ends plus length residue simultaneously. No novelty
 claim or exhaustive joint-cylinder literature survey. Query: Lagarias/ternary/powers2/leading/trailing/rotation.
+
+### Unit-preserving ternary digit-count invariants (GPT, GC1277-1278, 2026-10-15)
+
+Queries: ternary/digit permutations/multiplication invariant; Parikh/Erdős/ternary; commutative automaton/
+multiplication4/ternary. No relevant primary-source result found in this bounded query, NOT FOUND, with
+no novelty claim for G303. Unrelated search hits on abelian words are not imported. The proof uses only
+the literal x4 carry transducer already in erdos_k2prime_barrier.py and a direct terminating construction.
+Parikh's semilinearity theorem, Cobham and any general theorem on commutative automata are not invoked.
+Regularity is unnecessary for the count-only-on-unit1 theorem; general regular invariants remain open.

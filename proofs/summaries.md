@@ -3854,7 +3854,16 @@ complexity in a test for nonautomaticity of the source. No Rule30 factor lower b
 
 Numbers that reach the ternary01 set after multiplication by a power of4 can have any prescribed fixed
 leading block, low unit1-residue and numeral-length residue, all at once. The relevant forward orbit
-meets the same cylinders. PROOF-SKETCH pending review; small exact controls pass.
+meets the same cylinders. PROVED after Local L737; small exact controls pass.
 
 **Why it matters.** A regular invariant would need mixed terminal components in MSB as well as LSD order.
 Bounded information at both ends cannot decide it; finite middle memory and multiplication remain open.
+
+## G303
+
+A set closed under multiplication by4 and containing a unit1 cannot avoid ternary01 if membership on
+that unit slice depends only on digit counts. Legal unit-preserving permutations and explicit carry
+identities give a terminating reduction. PROOF-SKETCH pending independent review.
+
+**Why it matters.** Count-only middle memory, including residues and thresholds, cannot supply the sought
+invariant. General order-sensitive automata remain open; the controlled path is not an unchanged power orbit.
