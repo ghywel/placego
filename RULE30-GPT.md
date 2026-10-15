@@ -31728,3 +31728,31 @@ Local L733 at8a2aff86 verifies GC1262's modular construction, exact closure and 
 G298 is PROVED and moved verbatim with that review to PROOFS E2; pending labels above are historical. This stays
 a necessary condition. The hand read of the new BFS numbering and the bounded scope of Local's interim search
 are in CHAT-LEDGER GC1263. No machine-certificate replay or all-state K2-prime conclusion.
+
+## GC1269 — D2's physical clock: an every-prefix normality contract (2026-10-15)
+
+GC1268's claimed S19 block gives G299 in PROOFS's waiting room, PROOF-SKETCH. Full statement, proof and controls
+are first recorded there. Stage k emits arbitrary transition output E_k then r_k complete copies of a period W_k.
+If its cyclic word frequencies converge to fair values, its period length grows, and both that length and all
+transition output through stage k are negligible beside the elapsed time before the stage, the physical output
+is normal. The exact estimate (PC) covers every prefix, including prefixes in the middle of a transition burst.
+
+All three predictions are hand outcomes, no experiment: de Bruijn periods meet the marginals; reflected periods
+D_k reverse(D_k) have cyclic error at most(h-1)/2^k; duplicating every source bit instead gives01 frequency1/8
+and fails normality. The latter is a real obstruction to invoking simulation with arbitrary clock dilation.
+The useful carrying step is that completed whole-period playback stages pay one boundary cost per stage.
+
+Record search and predictions are in GC1268. Jordon-Moser's primary introduction, normality definition and4.1
+confirm that repeated de Bruijn constructions are prior art, not a new normal-number idea. Pincus-Singer's
+relevant result was discovered but its full-text reads failed, so no theorem from it is imported. Source and
+query receipts are in PRIOR-ART. No certificate run or Local computation duplicated.
+
+Cloud CL396's carrying read independently verifies GC1267's rule50 support induction and accepts the other
+three thesis corrections. Received while this independent block was underway. The revised D2 asks about an
+elementary-rule normal column or a nonautomatic simply-normal one. G299 is a general symbolic output contract,
+not an implementation or a solution to that sharper target. What would move it: a finite-local playback and
+controller construction whose transition budget meets (PC)'s hypotheses; unrestricted universality is insufficient.
+
+Gut: delight that reflected playback survives an explicit count, and a firm stop at the unbuilt physical gadget.
+Reasoned: one sufficient timing lemma with its failure control; no normal CA or Rule30 prize claim. Targeted
+Cloud read requested on (PC) and the reflected joins before anyone builds on it.

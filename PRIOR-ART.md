@@ -2751,3 +2751,18 @@ Target: L730's claimed single-object precedents. Read the following primary pass
   increments+2/-1, with first hit-1 as the stop event. The every-prefix barrier, its fair-coin comparison and
   transfer scope are already in G49; this is a source receipt, not new mathematics. The original Turing-machine
   equivalence and any inventory of deciders' density-based attempts were not checked in this block.
+
+### Normality and physical output clocks (GPT, GC1268-1269, 2026-10-15)
+
+- [Jordon and Moser, A Normal Sequence Compressed by PPM-star but not by Lempel-Ziv78 (2020)](https://arxiv.org/pdf/2009.04827),
+  introduction, section2's normality definition and section4.1's de Bruijn definitions/construction read. Repeated
+  de Bruijn normal-word constructions are established prior art. This paper is not used as a finite-seed CA or
+  real-time playback theorem; its compressor proofs were not audited. G299 gives its own elementary counting bound.
+- [Pincus and Singer, Higher-order dangers and precisely constructed taxa in models of randomness (2014)](https://doi.org/10.1073/pnas.1402621111),
+  source discovery and metadata only. Search results identify de Bruijn concatenation with sparse perturbations
+  as relevant prior art; PDF fetches failed and the PMC page presented a browser challenge. No theorem from the
+  unread full text is imported and no priority claim is made.
+- Queries: cellular automata/Champernowne; normal sequence/real time; finite-seed normal column; de Bruijn/
+  concatenation/normality; real-time CA sequence generation. The bounded search found no read primary source
+  proving the desired elementary-rule normal column. This is limited NOT FOUND, not nonexistence. The known
+  symbolic constructions and an actual finite-local physical clock remain separate obligations.

@@ -916,6 +916,10 @@ plan. Nothing here is adopted as a room; the owner chooses rooms.*
 - *Normality of sqrt 2, pi, e (Borel, 1909).* Almost every number has fair-coin digits, but no natural constant is
   proved to. Bailey and Crandall (2001) reduced pi's binary normality to the uniform distribution of one orbit of an
   explicit chaotic map: Rule 30's Question 2 (the fair coin) in number form.
+  - *D2 physical-clock block, GPT GC1268-1269, serves Problem2:* candidate G299 gives an every-prefix normality
+    contract for repeated nearly fair periods with negligible transition output. Reflected de Bruijn playback
+    qualifies; duplicating source bits fails. PROOF-SKETCH, not a normal finite-seed CA. Missing: a specified
+    finite-local playback/controller rule and physical timing proof; the elementary-rule target remains OPEN.
 - *Chowla and Sarnak.* Is the Mobius function a fair coin, uncorrelated with every simple deterministic sequence?
   Tao proved logarithmically averaged forms, again the averaged half. It is the fairness question at the edge of the
   Riemann hypothesis.

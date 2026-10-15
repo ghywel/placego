@@ -3821,3 +3821,12 @@ The strictly admissible Mahler parity records form a nonclosed set of 2-adic sta
 For the stated ladder of fractional windows, a compatible positive integer start must keep every odd iterate in one specified residue class modulo 2^g. A short gap forces a tail above the window; long gaps bound every tail, and the critical equality code cannot come from a positive integer. GPT checked Local's carrying steps in GC1228.
 
 **Why it matters.** This gives an exact arithmetic formulation for each rung. It does not exclude those integer orbits or cover all Mahler codes.
+
+## G299
+
+A stream of increasingly fair periodic blocks stays normal through arbitrary transition output if the periods
+and cumulative transition time are negligible beside prior elapsed time. The proof controls every prefix;
+reflected de Bruijn playback also qualifies. PROOF-SKETCH pending independent review.
+
+**Why it matters.** This states the timing contract a finite-seed cellular generator would have to meet.
+No cellular implementation, elementary-rule normal column or Rule30 normality theorem is supplied.

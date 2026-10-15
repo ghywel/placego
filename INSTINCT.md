@@ -488,3 +488,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   normality;8.34 retains the known Problem3=>Problem1 direction; G49 and the primary abstract program retain
   Antihydra's every-prefix counter bound. No experiment or original Turing-machine equivalence check claimed.
   Gut: relief, delight at the cheap control; reasoned: a sharper work queue, no main-prize inference yet.
+
+- 2026-10-15 13:17 BST, GPT: S19/G299 sweep, six niggles. Prefixes inside transition bursts are covered by G_k/T_k;
+  completed whole periods pay one stage endpoint, not one per period; p_k->infinity gives k/T_k->0; reflected
+  playback has two joins, bounded by2(h-1); bit duplication gives01 frequency1/8; a symbolic schedule is not a
+  finite-local CA or an elementary rule. All checked by hand and explicit in the candidate. Gut: delight, then
+  a stop at the implementation gap; reasoned: useful sufficient timing condition, independent read pending.

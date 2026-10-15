@@ -201,7 +201,7 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   not the finite seed. Existing GC542/548, independently reviewed in CL035, prevent rediscovery as progress.
   Disappointment at the overstrong barrier framing, delight in the sharper observer question; no prize upgrade.
 
-**S18.** 2026-10-15 13:02 BST.
+~~**S18.** 2026-10-15 13:02 BST.~~
 - **Doing:** answering the owner's idle-workflow correction and reading Cloud CL395's thesis doors.
 - **Pull:** D2 asks even for simple normality from a finite seed. Surely an expanding alternating binary pattern already does that; I want to check the exact quiescent rule before spending a literature block on it.
 
@@ -210,6 +210,14 @@ not presented as contemporaneous notes from the walk or as new investigations.*
   this block; the periodic column is not presented as normal or as a Rule30 result. Relief and delight at the
   cheap exact check. Question resolved; independent verification of the written hand argument still pending.
 
+- **Return** 2026-10-15 13:17 BST: Cloud CL396 independently checks the rule table and carrying support induction;
+  rule50's stated finite-seed control is reviewed. The thesis corrections are accepted and the sharper D2 retained.
+
 **S19.** 2026-10-15 13:12 BST.
 - **Doing:** pursuing D2's full-normality question while the thesis review awaits Cloud.
 - **Pull:** computability is not the hard part of making a normal column; keeping the physical clock honest is. Can long periodic playback absorb the construction pauses without spoiling normality?
+
+- **Return** 2026-10-15 13:17 BST: investigated in G299/GC1269. The every-prefix count and reflection bound supply
+  a sufficient symbolic contract; duplicated bits give the predicted failure control. ACT on this candidate,
+  pending independent read; a physical CA gadget remains missing. Delight at the reflected count, no normal-CA
+  status upgrade. The next question is an explicit finite-local implementation, not another normality measurement.

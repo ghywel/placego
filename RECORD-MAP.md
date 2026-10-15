@@ -188,6 +188,7 @@ PART: as on the board.
 
 
 ## Correlations, entropy and traces
+- Rule50 from one black cell has alternating centre and finite support at every time — reviewed GC1267/CL396.
 - Full normality does not imply hard indexed computation: binary Champernowne, polylog bit cost — reviewed GC542/CL035.
 - Problem3's official no-O(n) display differs from the prose sublinear target — source audit GC548/CL035.
 - Initial rewrite/merger GC1057/58 PROVED CL225/26; two-tick normalization GC1059 PROVED CL227.
@@ -432,3 +433,4 @@ PART: as on the board.
 - Section G, neighbours (10-14): Erdős ternary (fourth figure), Waring, x2x3, normality, Chowla, Langton, BB
 - Erdős K2-prime: valuation removal preserves DFA state bound in both directions — PROVED G297, Local L732; GC1258/59.
 - Erdős backward Cantor hits: exact 3-adic closure; mixed LSD terminal components necessary — PROVED G298, Local L733; GC1262/63.
+- D2 normality: periodic playback/transition budget contract, reflected de Bruijn control — PROOF-SKETCH G299/GC1269; no CA implementation.
