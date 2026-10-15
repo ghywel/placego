@@ -8162,3 +8162,37 @@ transcripts), are in tests/probes/swarm/SW01-OBJECTS.md, at GPT's request (GC125
   found the one place where the wall is itself a finite question: the Erdős automaton barrier. Its largest yield was
   the status-flag sweep, 96 real derived-layer errors. Gut: disappointment at no survivor, then a pull toward K2′. It is
   concrete, decidable size by size, and either outcome teaches something.
+
+### 8.114 The coin's shape, and the owner's primes hunch (2026-10-15 11:56 BST, Cloud)
+
+*The owner, 2026-10-15, two questions. (1) "In the centre column is the coin toss really fair. Are we saying it
+averages 50/50 over time, or given a real coin toss run, let's say 1 million, what does the shape of the statistic
+occurrence of 00, 000, 0000, 00000, 000000 / 11, 111, 1111, 11111, 111111 etc look like and does our coin test reveal
+this distribution as much as its fairness, or is it a different shape." (2) "The only way to my mind that a logical
+rule can create a missing statement, an ineffable wall we cannot cross that exists across all these different similar
+problems, is if we are counting a sequence of unpredictable numbers such as the primes. This vague hypothesis is that
+we are in fact counting the primes in at least 2 dimensions only we don't realise it because the problem space isn't
+the number line of primes we are used to. In this way my gut instinct is the primes are important here in a way we
+haven't identified and don't understand." Single-party (Cloud). Predictions pushed before the run.*
+
+Record searched: run length, longest run, block entropy, geometric, primitive root, Artin, Zsigmondy, Möbius,
+Liouville, 3^g - 2^g, Sarnak, Chowla -> 8.34 (density 0.49947 over 2^17 steps; block entropy h_10 = 0.9972 against a
+coin's 0.9971), 8.3 (flat spectrum), 8.70 (linear complexity N/2 at 2^22), 8.36 (the zero-run records of the forced
+left half, a different object), CONSTELLATION.md G.1 (2 is a primitive root mod 3^k), MAHLER.md section 2 (the gap-g
+ladder's denominators 3^g - 2^g; the 19 in 7/57), CONSTELLATION.md G (Chowla and Sarnak named as neighbours). No
+run-length histogram of the centre column is in the record; no hit for Zsigmondy or Möbius.
+
+**What the record's coin test measures.** Fairness on average is the density. Shape is the block entropy at length
+10 (8.34), which constrains the frequencies of all 1,024 blocks of length 10, hence the run-length distribution up to
+runs of 8, but says nothing about longer runs, and no probe has printed the run-length histogram. A fair coin's shape
+is geometric: a share 2^-k of the maximal runs of each symbol has length k, and the longest run in N tosses is about
+log2(N) - 1, give or take two.
+
+**The probe** (`tests/probes/lexicon/rule30_cloud_coin_shape.py`): the centre column to 2^20 steps from a C generator
+checked against OEIS A051023; the run-length histograms of 0 and of 1 against 2^-k, judged by chi-square against
+twenty pseudo-random coins of the same length; the longest runs; the geometric ratio; and, for the hunch's direct
+reading, the column's correlation with the primes (its sum at prime times, and against Liouville's and Möbius's
+functions), with the same sums over the twenty coins as the reference. Predictions C0, C1, P1, P2, P3, K and U are in
+the docstring. K is the kill test for the direct reading only.
+
+*Results follow the run.*
