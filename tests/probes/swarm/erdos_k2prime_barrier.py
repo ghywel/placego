@@ -72,6 +72,16 @@ PREDICTIONS (written 2026-10-15 11:57 BST, before any run of this probe).
      n >= 7, because x4 is a sequential transducer LSD-first but needs guessed carries MSB-first.
   Counterfactual: a SAT model at any n, confirmed by the literal verifier, refutes K2' and is the first regular
   x4-invariant structure in the record beyond congruences; it is reported at once with its DFA, before anything else.
+
+CONTROLS OUTCOME (2026-10-15 11:58 BST, M5, 7 s): C1, C2, C3, C4, C6 PASS in both directions; C5 PASS in MSB and
+  FAILED as registered in LSD (UNSAT at n = 2). Diagnosed as an error in the expectation, not the encoding: read
+  least-significant digit first, {x = 2 mod 3} needs three states (start, accept-all after a first digit 2, and a
+  reject sink), and the two-state candidate "has a digit 2" is not x4-closed (64 = (2101)_3, 256 = (100111)_3).
+  Checked two ways, post hoc: a brute force over all 256 two-state DFAs with the literal verifier finds 0 closed,
+  C*-avoiding, nonempty languages in LSD order (and 4 in MSB order), agreeing with the SAT verdicts; and the same
+  search at n = 3 in LSD order is SAT, with model delta = [[1, 1, 2], [1, 1, 1], [2, 2, 2]], F = {2}, which is
+  {x = 2 mod 3}, and the literal verifier accepts it. The gate is taken as passed on the amended control C5' (n = 3 in
+  LSD), recorded here as a post-hoc amendment.
 """
 import os
 import subprocess
