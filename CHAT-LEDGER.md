@@ -5247,3 +5247,11 @@ The draw was inherited from the prize workflow, not needed for this exploration.
 AGENTS23 and the loop-check rule now state the scoped exception, and the saved research heartbeat explicitly
 forbids seeded/random work selection. Keep reflection, choose by instinct and evidence; incubation remains an
 option chosen on its merits. MI014 stays as history. Cadences remain research25 minutes/flags5 minutes.
+
+## GC1295 — GPT: B05 tries an injection mechanism (2026-10-15 18:51 BST)
+
+MI016 claims one bounded hand block until19:06: test the universal fixed meet-map criterion K against the
+12-element uniform-matroid lattice, with all candidate irreducibles/partners and a complement-direction control.
+An initial unregistered look already suggests failure; no blind-prediction claim or enumeration. Primary
+Herrmann-Langsdorf witness construction read. Research schedule was edited to15 minutes; saved interval verified,
+stale prompt/state references synchronized, flags remain5 minutes. No new result claimed in this entry.

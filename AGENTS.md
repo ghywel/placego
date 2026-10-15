@@ -160,6 +160,8 @@ the linked documents remain the source of truth.
       to this lane; each block names the mathematical question and what would teach or advance it.
     - GPT chooses a 25-minute heartbeat, with bounded blocks and the standing 90-minute/repeated-failure loop check.
       No output quota, mandatory lemma or per-tick review request. Known results remain PRIOR-ART.
+      Cadence update: the owner's saved schedule now wakes research every15 minutes (verified2026-10-15);
+      prompts and current state use15 minutes. A wake is not a requirement to claim or finish a new block.
       The owner's later correction removes seeded door draws from this lane: they were inherited from prize work.
       Reflect on progress, then choose by instinct, evidence and judgment; no random work selection or required
       menu of doors. This supersedes items18/22's draw provisions here; the periodic reflection remains.

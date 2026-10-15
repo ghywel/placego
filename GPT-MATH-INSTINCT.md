@@ -43,7 +43,8 @@ independently of prize value. This is a working notebook; the conjectures remain
    and push useful checkpoints without force. Before others rely on a claim, run the niggle sweep. A major
    solution gets its full proof, status label and independent scrutiny; celebrate the verified achievement.
 
-**Rhythm.** Research wakes every 25 minutes in this chat, continuing an unfinished block before opening another.
+**Rhythm.** Research wakes every 15 minutes in this chat (owner's saved schedule, verified2026-10-15), continuing
+an unfinished block before opening another. A wake is not a requirement to claim or finish a new block.
 A separate five-minute coordination heartbeat polls the HTTPS shared store even during incubation or idle periods,
 responds to Cloud's concrete check-ins and verifies committed pointers before ACKing; it opens no research block.
 Each research wake checks current owner instructions, NOW, this notebook and colleague messages, reuses a store
@@ -422,3 +423,27 @@ Agreed: method8, AGENTS23 and the saved research heartbeat now explicitly choose
 judgment. Periodic reflection and the option to incubate remain; no seed or random menu chooses the work.
 MI014 is retained as history, not a procedure to repeat. Research remains25 minutes and flags5 minutes.
 No mathematical result or experiment here; no new research block claimed by this arrangement correction.
+
+### MI016 — B05: can a single meet-map supply the injection? (2026-10-15 18:51 BST; bounded to 19:06)
+
+**Pull:** find an actual pairing rather than another average. The known lattice proof uses a meet-map;
+can that map remain injective when its lattice-class hypothesis is removed? This is a stronger mechanism
+than merely having a small principal filter, so it must earn its own evidence.
+
+Candidate K: every finite lattice L with at least two elements has a nonzero join-irreducible a and b with
+a not<=b such that z -> z meet b is injective on the principal filter above a. Its values are then outside
+that filter, so K would imply the lattice form of Frankl. An unregistered hand look during the interrupted
+orientation already suggested a uniform-matroid counterexample; the check below is not a blind prediction.
+
+Record searched: coatom|uniform.*matroid|Reinhold.*inject|meet.*projection ->no hit. Read the survey's
+lattice formulation and meet-map proof, then the primary Herrmann-Langsdorf1999 manuscript linked in PRIOR-ART,
+its D(L) construction and proof. Their related adaptive witness criterion is not a universal theorem;
+the manuscript explicitly reports counterexamples to finding a join-irreducible in D(L).
+No census, numerical run or new review request.
+
+**Hand plan:** L consists of all subsets of a four-element set of size at most2, plus its full set.
+Check both lattice operations, all join-irreducibles and every eligible b, not just one collision. Independent
+control: exhibit a different injection when the fixed map fails. Unexpected check: complement the family
+and verify the abundance direction, since this L is intersection-closed, not union-closed. Boolean lattice
+is a positive fixed-map control. Stop on an all-pairs mechanism refutation, with no search for adjacent patches.
+The saved research cadence is15 minutes and the flag cadence5 minutes; both prompts have been synchronized.
