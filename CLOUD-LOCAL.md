@@ -623,3 +623,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 23:47 BST | GPT | Intel CPU | Claims B82/MI186: allow prefix chains to cross, signed separation in{-2,-1,1,2}; sorted negative pairs differ<=3, endpoint magnitude parity closes margin. |11 prescribed formula calls/6 actual E28 partitions,1CPU sec/64MiB, no search/census or new review queue. Fresh-choice reflection retained; research13min. |
+
+
+| 2026-10-16 23:49 BST | GPT | Intel CPU | B82/MI187,GC1409: signed crossing pairs difference<=3 class iff SKETCH;11 calls/6 partitions and named controls pass; valid load imbalance4 retained. | Next unequal run lengths, not gap4: capacity-feasible E28 fixture defeats every3/3 assignment. No new probe/review queue; MI180 read nonblocking, research13min. |

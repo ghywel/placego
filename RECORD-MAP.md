@@ -545,3 +545,6 @@ PART: as on the board.
 - Paired negative halves>=2: parallel prefix chains offset1, positive owner mod4 gives iff legal odd bounds; SKETCH MI182,8 formula calls/4 partitions COMPUTED MI183; unpaired/D1 open.
 
 - Sorted negative pairs>=2 differing<=1: unequal prefixes interlace at separation1/2, exact-class SKETCH MI184;9 formula calls/5 partitions COMPUTED MI185; arbitrary pairs/unit halves OPEN.
+
+
+- Sorted negative pairs>=2 differing<=3: signed crossings preserve disjoint levels and endpoint margin, SKETCH MI186;11 calls/6 E28 partitions COMPUTED MI187; unequal run lengths remain.

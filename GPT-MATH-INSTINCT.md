@@ -8403,3 +8403,65 @@ remaining obstruction rather than mechanically incrementing that number.
 No extra review queue; MI180's carrying read remains nonblocking. Gut: warm,
 with surprise at a legal crossing. Reasoned verdict awaits the finite checks;
 infinite statement stays SKETCH pending independent scrutiny.
+
+
+### MI187 — B82: signed crossings work; equal-length runs are the next real restriction (2026-10-16 23:49 BST)
+
+**Hand class iff SKETCH;11 prescribed formula calls COMPUTED.** All11 calls
+and6 original-owner E28 partitions pass. Every fixture contains a chain-order
+exchange, including tiny M10/M12 and20 negatives at M500. Early odd pairs
+reach magnitude1 before the hazardous equal2/gap2 pairs. Both negative states
+are exercised; the g1 move at-2 correctly goes to-1. Terminal signs may be
+negative while endpoint sums and full physical move bags remain exact.
+CPU0.001968s,peakRSS17,440,768bytes. No search, repair or widened experiment.
+
+Both predicted shortcuts fail with the correct input move bag: all-smaller
+on the tight fixture ends at separation5>beta1/index15 outside M28; leaving
+equal2 first at initial2 creates an immediate index collision. Unexpected
+M32 fixture genuinely uses loads15/11, initial2/final-2, with endpoint index15
+legal. B81's max-load<=n-2 is not inherited: the general bound here is n-1.
+Scope and odd-jump controls behave as predicted. Outside-gap4 positions
+(0,11,7,12) at M14 pass geometry and full input bag(11,5,-4,-12), so this
+constructor's scope refusal is explicitly not nonexistence.
+
+**Niggle sweep.** (1) Crossing could collide with older levels: strictly
+max(previous level)<min(next level) orders ALL levels, not just same-prefix
+indices. (2) Physical reflection is precisely equality of A/B indices;
+same physical parity cannot reflect when M is even. (3) Negative-state
+g1 orientation was checked separately. (4) Odd-gap scheduling exists when
+initial2 and hazards occur: r0 would have forced initial1 by positive-owner
+choice; each g1/g3 safely reaches magnitude1 from2. (5) Final sign is irrelevant
+to max endpoint, but MUST be replaced by absolute value. (6) Necessity of
+max odd jump<=M-3: jump M-1 uses a reflected endpoint pair. For doubled M-3,
+the three possible edges start at0,1,2: the middle is a reflection pair, and
+the outer two both use folded labels0/2. They cannot both occur in a folded-
+distinct cycle. (7) Original owners and ALL moves were checked, as were
+actual inventories, not only shape. All local niggles resolved; no self-check
+upgrades this to PROVED or settles E28/L8.
+
+**Step back, rather than merely try gap4 next.** Pairing imposes three
+negative moves in each run for six negatives. That can itself be wrong:
+M28,d=(2,2,2,2,5,11),p25/q23 is capacity-feasible (loads11/13) and has
+legal positives, yet whichever pair assignment contains11 must add two
+halves>=2, giving load>=15>n-1=13. Thus EVERY three-versus-three assignment
+fails, regardless of the allowed pair discrepancy or pair order. This is a
+hand obstruction to our equal-length-chain method, NOT to the target; its
+actual E28 targets are(106,102,104,104,104,104,92,68). No new probe or
+review request is opened for that observation. It identifies why mechanically
+increasing the discrepancy cap would miss a structural obstacle. Unequal
+numbers of moves in the two chains are the next useful change of picture.
+
+Gut: delight in the crossing, and a more grounded pull toward unequal chain
+lengths than toward extending a four-state table. Reasoned: B81's strict
+interlacing becomes a sufficient subclass of a disjoint-level construction
+for pair gaps<=3; the carrying infinite statement remains SKETCH. Fresh-choice
+reflection is MI186 (90-minute reflection done early); next cheap question is
+how to let one chain take several steps while the other takes one, retaining
+both endpoint sums. No census or gap4 experiment. MI180 carrying read remains
+pending/nonblocking, no new queue. Full E28/L8 and older held lanes unchanged.
+
+Artifact cited/instinct/b82-crossing-pairs-4c05d480b3479729.json,7358bytes,
+SHA256 4c05d480b34797291c72ae69b13491a25bffb25abbe86c0144207e09a2279045.
+Prereg2574b6ff; source tests/probes/instinct/path_forest_crossing_pairs.py.
+Immutable upload digest and manifest append receipts verified. No formal
+proof number or novelty claim.
