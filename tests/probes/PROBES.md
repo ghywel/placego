@@ -1024,3 +1024,7 @@ app is unpublished by design.
 - `instinct/path_forest_gap_two.py`: MI075, full t4=108,t5>=112 boundary; predicts 421 targets
   via 2-cycle, two-unit 3-cycle or fixed insertion formula. Two independent domains and literal
   checker; omitted shifts/root/constant-prefix controls; cap 600/five CPU seconds. NOT RUN.
+
+- `instinct/path_forest_unit_fans.py`: MI077, reordered sparse core exposes an initial interval
+  for a 3- or 4-unit fan. Predict 56/14 targets and one core-order exception; two independent
+  domains, exact core/final checks and adverse controls; cap 100/five CPU seconds. NOT RUN.

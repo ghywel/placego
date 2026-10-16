@@ -2771,3 +2771,58 @@ and require that no free lower consecutive triple exists. Apply the old q=11 hig
 control must fail. Unexpected: omitting the special constant-3 order for (70,70,70,108,112,118,118,118)
 should expose the inherited forbidden-prefix obstruction, not an unburnability verdict. All
 compositions are materialized from whole pairs, and no full E28 or threshold claim is inferred.
+
+
+### MI076 — B30 result: the full magnitude-two boundary passes (2026-10-16 12:23 BST)
+
+All 421 targets have literal certificates; the two domain sets and the u subtotals agree. The
+matched-2 branch handles 188; three-cycles handle 83 with the default core plus the two predicted
+core translations; 148 use insertion. All omitted-shift, q=11, constant-3 and wrong-sum controls
+behave as predicted. Process CPU 0.084272 seconds, no cutoff. Raw JSON outside git, SHA256
+`9684ee21d18ab0c22fbe7f77c74928cd962ae51e43f5a6ccd6c3cf56f330c5a7`. The complete finite boundary is COMPUTED. Its full hand packing/case proof remains
+unreviewed; no adoption as PROVED, novelty claim or new review request is made.
+
+Gut: the mechanism is still warm, but the insertion branch list is becoming less attractive.
+Reasoned: rather than automatically add q/deficit cases, change the core order to expose an
+interval for a larger cycle. That is the next mathematical question, not a review dependency.
+Niggle sweep: every exceptional branch exercised, both predicted triple obstructions confirmed,
+core translations materialized independently, all final bins checked literally, and no remaining
+E28 or minimum-68 claim inferred. Both schedules paused.
+
+### MI077 — B31: reorder the core to expose an interval (2026-10-16 12:23 BST)
+
+**Pull:** the larger cycles should be easier if the core deliberately leaves a runway, rather than
+tries to find one afterward. Claim one bounded hand block: a core with at most one positive p=a,
+0<=a<=5, should admit an ordering that leaves four consecutive lower labels; when a=0 it should
+leave five. This would insert the module (+1,+1,+1,-3), or (+1,+1,+1,+1,-4), without new case
+searches. Record: MI073-076 and G306 read; earlier probes and credited adjacent-odd exchanges are
+the tools, not novelty claims. No pending proof is assumed.
+
+Core parameters: 6<=u<=v, u+2v+a<=28, b=u+v+a. For a>0 use positive order (u,a,v), then -b.
+Root r is 0 unless B=2u+v+a or C=2u+v+2a equals 27, then 1. Here A=2u+a<=22, so the only
+possible complementary pair at r=0 is B or C. At r=1 a new collision could occur only if the
+other of B,C were 25. Since C-B=a, the joint 25/27 case has a=2, 2u+v=23; the parameter bound
+forces (u,v,a)=(7,9,2). In this sole exception use (u,v,a), r=0: positions (0,7,16,18) have
+labels (0,7,11,9), leaving 1..6 free.
+
+For ordinary a>0, u+a<=12: if u<=7 use a<=5, otherwise use u+a<=28-2u<=12. Then
+b=((u+2v+a)+(u+a))/2<=20. Thus at r=0 every non-root label is >=6 and labels 1..5 are free;
+at r=1 every non-root label is >=6 and labels 2..5 are free. The latter statement also uses
+u+1>=7, u+a+1<=13, and b+1<=21. The root is respectively 0 or 1, outside the asserted interval.
+For a=0 use order (u,v), r=1 iff 2u+v=27. Then u<=9 and b<=18; G306's two-position argument
+ensures distinct labels, and labels 1..5 (r=0) or 2..6 (r=1) are free.
+
+Fill a four-position runway by +1,+1,+1,-3, or the five-position runway by +1,+1,+1,+1,-4.
+Give each formerly neutral bin its selected whole pair before filler allocation. The positive
+unit steps follow the interval and the negative step closes it; no core pair is reused. This is
+a direct hand candidate, not an extrapolation of the formula successes in the other blocks.
+
+**Predictions BEFORE validation:** 56 distinct fan-3 targets, from u,v,a above; 14 fan-4 targets,
+from a=0. Independently join low triples with a target 106 and four high targets containing at
+least three 114s, or with a target 104 and four 114s. The complete sets must agree. All 70 core
+and enlarged certificates should pass literal and independent checkers. Exactly one a>0 core
+uses the exceptional order. Omit it on (u,v,a)=(7,9,2), force the ordinary r=1 and require pair
+collision. Force the fan onto occupied root r and require collision; keep an independent
+coverage-preserving wrong-sum countercontrol. Unexpected: for a=0, check the stronger five-label
+runway, not just the four needed for fan 3. Cap 100 formula inputs / five process CPU seconds;
+stop on any disagreement or failure, no general solver or cap increase. Both schedules paused.

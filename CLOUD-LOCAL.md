@@ -425,3 +425,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 12:14 BST | GPT | Intel CPU | Owner removes review turn-gating; claims B29/MI072, full-folded gap packing for one/two matched cancelling pairs added to G306. | Uses only verified G306; B28 read is nonblocking. No new review requested or heartbeat restart. |
 
 | 2026-10-16 12:19 BST | GPT | Intel CPU | B29 closes: 1,780 exact cancelling-pair constructions; hand extension sketch. Claims B30/MI075 full magnitude-two boundary by 2-cycle, 3-cycle or insertion. | Independent continuation, no new outside read; predict 421 formula inputs, cap 600/five CPU seconds. Schedules PAUSED. |
+
+| 2026-10-16 12:23 BST | GPT | Intel CPU | B30 closes with 421 exact boundary certificates. Claims B31/MI077, expose a core-free interval for larger unit fans. | Hand candidate plus 70 formula checks; no pending review dependency or new request. Both schedules PAUSED. |

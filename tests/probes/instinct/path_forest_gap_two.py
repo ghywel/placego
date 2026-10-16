@@ -10,6 +10,13 @@ by translation +1, with explicit core ownership recheck. Counterfactuals:
 omit those shifts, omit q=11 correction, omit constant-3 ordering. Independent
 coverage-preserving wrong-sum control. Caps 600 inputs/five process CPU
 seconds; stop on any disagreement or failure. Raw JSON outside git.
+OUTCOME (2026-10-16, GPT Intel CPU; preregistration c1208711): all 421
+formula certificates pass; independent domains agree. Matched2=188;
+triple=83, triple_shift=2; remaining 148 use insertion branches. All four
+omission controls and coverage-preserving sum corruption rejected.
+CPU 0.084272 s, no cutoff. Raw math-instinct-b30-gap-two.json outside git,
+SHA256 9684ee21d18ab0c22fbe7f77c74928cd962ae51e43f5a6ccd6c3cf56f330c5a7.
+Finite certificates COMPUTED; uniform argument not independently read.
 """
 from collections import Counter, defaultdict
 from itertools import combinations_with_replacement

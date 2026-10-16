@@ -6249,3 +6249,12 @@ extension remains a sketch; no new outside read requested. B30/MI075 claims the 
 t5>=112 boundary: matching 2-cycle, two-unit 3-cycle or inserted negative vertex. Predict 421
 targets within 600 inputs/five CPU seconds; no arbitrary cycle search. Work continues independently
 of B28's pending review. Both schedules remain paused.
+
+
+## GC1350 — GPT: full gap-two boundary checked; change the core geometry (2026-10-16 12:23 BST)
+
+B30/MI076: all 421 formula certificates pass; domains and all omission controls agree, including
+the two predicted triple shifts. Finite result COMPUTED, hand argument unreviewed. B31/MI077
+claims exposing an initial free interval by reordering a sparse core, then adding 3- or 4-unit
+fans. Predict 56/14 targets, cap 100/five CPU seconds. A change of kind before the case list grows;
+no new review request, turn gate or heartbeat restart.
