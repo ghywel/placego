@@ -5325,3 +5325,68 @@ On cap stop UNKNOWN with partial counts; no span extension, alternate ordering,
 repair or target generation. No routine carrying request for a finite diagnostic.
 Raw outside git. Gut: curiosity about a clean composition versus a real obstacle;
 reasoned: either outcome changes which ingredient the6+2 proof needs next.
+
+
+### MI144 — B61: all six-point span20 cores can leave every gap (2026-10-16 19:15 BST)
+
+**COMPUTED, complete finite geometry.** All15,504 normalized six-point shapes
+of span<=20 admit a joint placement with every cancelling gap1..14. All217,056
+shape/gap questions pass. For each there is a literal core translation and a
+physical pair with eight distinct folded labels. All3,003 six-label free-gap
+tables agree between formula-edge/bitmask and physical-edge/set implementations;
+all15,504 full valid-root lists and feasible-gap masks agree independently.
+CPU1.231821s, below10 seconds. No changed ordering or enlarged domain.
+
+The forecast of at least one fixed-shape failure, particularly among gaps9..11,
+is REFUTED. Their covers exist, but no tested shape is trapped in covers at all
+its reflection-free roots. Six-label cover counts for gaps3,4,5,6,8,9,10,11,12,13
+are1,1,4,3,9,25,25,44,16,32; gaps1,2,7,14 have none, as predicted. These are
+complete finite table facts, not a new hand classification.
+
+Controls pass: S=(0,6,7,8,9,10) at root0 really blocks every gap5 edge; moving to
+root1 frees physical edge(0,5), the unexpected rescue. The span21 fixture
+(0,2,6,15,19,21) has no valid root even before a pair. Duplicates are rejected.
+The hand theorem G308 supplies self-placement but is not incorrectly cited for
+this stronger joint result; the latter currently rests on the bounded exhaustive
+certificate. No new proof-review queue is opened for this finite diagnostic.
+
+Full artifact `cited/instinct/b61-six-plus-pair-81544cf1c7fc931c.json`,2,337,864
+bytes, SHA256
+`81544cf1c7fc931cbb3be2ed99d60131e01e07f3c36f200c1394c99b46398b00`.
+
+Manifest identifies bb346018 as preregistration; upload receipt matches.
+Source tests/probes/instinct/path_forest_six_plus_pair.py. MI143's heading minute
+was one minute ahead of its actual commit time: git records19:12:02 BST. The
+preregistration was published before execution; its predictions remain intact.
+
+**What changes.** We can now treat a six-point core of span<=20 plus a pair
+as a solved FINITE GEOMETRY subproblem, with witnesses, without checking a new
+E28 subfamily separately. This is not full E28: a required core may need larger
+span, or a target may require another component pattern. The next meaningful
+price is producing a suitable core/order, not spare-pair placement below20.
+
+**A hand boundary example, not an extra census.** The actual even E28 target
+(68,98,100,102,102,104,104,106) has moves
+(6,21,-6,-5,-5,-4,-4,-3). Cancel6 against-6. Its remaining primitive six-cycle
+has a step21, so NO ordering can have span<=20. Thus a blanket reduction to the
+new geometry bound is impossible. It is not a counterexample to partitioning:
+choose selected indices(0,1,6,22,17,12,8,4) in that bin order. Adding the moves
+sends them to(6,22,0,17,12,8,4,1), the same indices permuted. Their labels
+(0,1,6,5,10,12,8,4) are distinct. The large core has order
+(+21,-5,-5,-4,-4,-3), translated by1, and the pair is(0,6). The established
+whole-pair allocator therefore applies. This example is by literal arithmetic;
+no new run, new target tally or independent review claimed.
+
+**Niggle sweep: three.** (1) Complete shapes, rather than selected endpoint
+samples? Counts by each D=5..20 equal C(D-1,4), total C(20,5), and both full
+root instruments agree. (2) A core root without a free pair accidentally counted?
+Each retained success has eight literal labels checked; the fixed-root cover
+counterfactual fails. (3) Universal core span20 smuggled in? Step21 example above
+refutes it explicitly. No unresolved niggle, no claim outside the registered set.
+
+Gut: surprise and delight at a stronger composition than expected. Reasoned:
+the next question is a structural ordering bound for primitive six-move components
+under the E28 extremal constraint max positive+max negative<=28, with necessary
+wide-step cases treated explicitly. That is a new hand question, not a license
+for a larger shape census. Record/prior art first; no follow-on experiment
+claimed yet. Research continues independently of G313's carrying read.

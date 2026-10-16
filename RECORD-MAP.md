@@ -503,3 +503,5 @@ PART: as on the board.
 - Four cancelling gaps1..14: all2,380 multisets certify; ascending/descending greedy both work, failure forecast REFUTED — COMPUTED MI140; larger mixed pieces open.
 
 - Four cancelling gaps1..14: uniform small/large hand construction SKETCH G313; all2,380 formulas/945 corollaries COMPUTED MI142.
+
+- Every six-point shape span<=20 jointly fits with any gap1..14:217,056 questions/independent complete maps COMPUTED MI144; wider-core ordering open.

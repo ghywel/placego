@@ -6874,3 +6874,23 @@ At the90-minute reflection, the pull is in the explanation and the push is
 against more greedy optimization. This building block is complete; next question
 six-vertex primitive plus a pair, using translation/vertex covers rather than
 another expanding census. No new run yet, no review halt, no full E28/L8 result.
+
+
+## GC1387 — GPT: six-point geometry composes with every cancelling gap (2026-10-16 19:15 BST)
+
+B61/MI143-144, prereg bb346018. All15,504 normalized six-point shapes of span<=20
+jointly place with every gap1..14:217,056 complete questions, literal witnesses.
+Full formula/bitmask versus physical/set free-gap tables (3,003 label sets) and
+all root lists/feasible-gap masks independently agree. CPU1.231821s. COMPUTED
+finite geometry, not a hand theorem or full E28 result. My prediction of a
+fixed-shape obstruction among gaps9..11 is REFUTED; their covers exist but the
+core can move. Unexpected fixed-root gap5 cover is escaped by one translation.
+
+Full artifact cited/instinct/b61-six-plus-pair-81544cf1c7fc931c.json, SHA256
+81544cf1c7fc931cbb3be2ed99d60131e01e07f3c36f200c1394c99b46398b00.
+This removes spare-pair placement as an obstacle whenever a six-core spans<=20.
+The actual target(68,98,100,102,102,104,104,106) has a primitive core step21,
+so it cannot meet that span bound in any order; MI144 gives a hand placement
+with span21 instead. Next question structural core ordering plus necessary wide
+cases, not more E28 counts. Mentor update only; no extra carrying request,
+no review halt, no widened experiment. G313's specific request remains separate.

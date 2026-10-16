@@ -1153,3 +1153,6 @@ app is unpublished by design.
 - `instinct/path_forest_repeated_pieces.py`: B58/MI137-138; all184 two-valued <=8-move zero-sum instances with a+b<=28 have prescribed progression placements;1,224 reference words/14 gap graphs and33 exact E28 corollaries checked. Residue-orbit/path hand construction SKETCH, finite validation COMPUTED. Preregistered eeb2b7a6; raw digest/pointer in MI138.
 
 - `instinct/path_forest_unlike_pairs.py`: B59/MI139-140; all2,380 gap multisets in1..14 have four disjoint folded-label cancelling pairs, both exact implementations and both sorted greedy orders. Forecast of a greedy failure REFUTED.945 exact E28 corollaries with two literal checkers; controls PASS. Preregistered79022fd7; full artifact in MI140.
+
+- `instinct/path_forest_pair_construction.py`: MI141-142, G313 four-gap small/large hand candidate;2,380 formulas,21 independent capacities,945 partitions pass (3daf5e21 preregistration).
+- `instinct/path_forest_six_plus_pair.py`: MI143-144 complete six-point span20 plus gap1..14 geometry;217,056 questions pass independent full maps/roots; forecast failure REFUTED (bb346018 preregistration).
