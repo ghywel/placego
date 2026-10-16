@@ -6793,3 +6793,83 @@ Artifact `cited/instinct/b71-odd-bridge-a54b18648fcc5bd1.json`,3279bytes,
 SHA256 `a54b18648fcc5bd1f11fc213191457f9bab09719ddbe2087646b6c0fe20b9a94`.
 Prereg256dd748, source tests/probes/instinct/path_forest_odd_bridge.py;
 immutable receipt/manifest verified. Old2000-sample result remains unchanged.
+
+### MI165 — B72: allocate the parity bridge uniformly, not one target at a time (2026-10-16 21:39 BST)
+
+**Question/pull.** Can MI163's whole-path construction be coupled to anchors
+and slots for an explicit mixed-parity family? The pull is warm because the
+missing allocation now has a short argument, rather than because the recent
+samples succeeded. This advances a named subset of E28; full E28 remains OPEN.
+Record searched: `77,79,81,87,89,91|sum.?9.*122|capacity.?4|two.*122.*six`
+->1 unrelated GC683 hit; MI153's actual allocator and MI163 read. This is an
+internal construction, no new literature-status or novelty claim. Earlier prior
+art anchors (Tan-Teh swaps, Plagne-Tringali ordering) remain as recorded.
+
+**Hand statement, PROOF-SKETCH.** Set b=(77,79,81,87,89,91). For ANY six
+nonnegative integers c_i with sum9, the eight LABELLED targets
+(b_0+4c_0,...,b_5+4c_5,122,122) partition the odd integers1..55.
+Targets need not be sorted and may exceed122; their sum is always784.
+Restricting each of the six odd targets to<=121 and then sorting gives a
+subset of E28. Labelled parameter counts must not be called distinct targets.
+
+**Allocation.** Reserve labels R={10,11,12}; their tokens are exactly
+21,23,25,31,33,35, allocated in that order as six odd-bin anchors. Give the
+two122 bins h=2 each. Choose j the FIRST index maximizing c_j=m. Give odd
+bin j h_j=2 and every other odd bin h_i=1. Since sum c=9, m>=2. These h
+sum11, the required(28-6)/2. The moves are e_i=2c_i for i!=j among the odd
+bins, e_j=2m-28=-D, and e_6=e_7=5. All sum0; D=28-2m is positive.
+
+**The carrying allocation step.** Partition the FIVE remaining c entries
+into A and B with each sum<=4, by this formula (smallest indices break ties):
+- m>=5: put all remaining entries in A, B empty; total9-m<=4.
+- m=4: total5, each<=4; put the first positive entry alone in A, the rest B.
+  A is1..4 and B=5-A is1..4.
+- m=3: total6. If another3 occurs, put that one in A. Otherwise all remaining
+  entries<=2, and five entries sum6, so some2 occurs; put the first2 in A.
+  B has sum3 or4 respectively.
+- m=2: total7 with five entries<=2, so at least two2's occur. Put the first
+  two2's in A (sum4); B has sum3.
+This is an exhaustive hand case split on the maximum, not a subset search.
+
+Let s=sum A,t=sum B, omit zero entries from the actual move lists and order
+within each group by index. Start x=8-2s, follow the moves2c_i in A, then5,5,
+then2c_i in B, and close by-D. Here0<=x<=8 is even; the first outer run ends
+at8<10; the sole odd point is13 in the free central corridor[13,14]; the
+second bridge ends at18>=28-10; the last point is18+2t<=26. Its difference
+from x is10+2(s+t)=10+2(9-m)=28-2m=D. Thus MI163 applies to ALL selected
+positions. Alternatively check directly: every outer point is even and outside
+[10,17]; their complements are odd; the sole odd point13 has complement14,
+which is central and unselected. No selected folded label repeats or is reserved.
+The split-anchor allocator then fills remaining pairs and transfers selected
+tokens along this cycle, giving the exact eight labelled sums and cardinalities.
+Zero residual bins have no selected token, only filler pairs plus their anchor.
+There are at most8 active bins and11 available unreserved pairs, so the usual
+one selected pair per active bin and nonnegative filler counts hold.
+
+**Predictions BEFORE code/run.** Exactly2002 labelled compositions (9 into6)
+will all produce formula certificates. Independent enumeration: five stars/bar
+positions among14, compared as complete parameter sets; also a coefficient DP
+will check total and bounded counts. Restricting c_i<=floor((121-b_i)/4)
+=(11,10,10,8,8,7) excludes exactly8 (one c_3=9, one c_4=9, six c_5>=8),
+leaving1994 labelled E28 assignments. Predict ALL2002 pass two literal partition
+validators and direct all-pairs reflection checks. Distinct sorted E28 count
+will be reported as a measurement, not predicted or added to overlapping old
+samples. A separate32-subset reference checks the five-entry group feasibility,
+without steering the formula. Sorted outputs must permute target/bin/h ownership
+together. No order/slot search, random sample or expanded census.
+
+Counterfactual: at c=(2,2,2,1,1,1), assigning every residual to A would give
+s=7,x=-6; the geometry must reject. The prescribed grouping must work.
+Unexpected check: all SIX cases with one c_i=9 have no positive outer parts;
+only5,5,-10 remain active, yet all eight bins must still fill correctly,
+including the labelled cases outside E28. Retain them rather than filter them
+out to improve a pass count. Corrupt one valid partition by a duplicate token
+and by an inventory-preserving cross-bin swap; both validators must reject.
+Caps2002 parameter assignments,10CPU sec/128MiB; no fallback, raised cap or
+restart on mathematical failure. Source path_forest_odd_bridge_family.py;
+full raw JSON outside git, then immutable cited artifact. Independent tools
+are self-checks; a substantial combined bridge/allocation carrying read is
+appropriate once this uniform statement has survived its checks, not a halt
+or routine per-lemma queue. Gut: delight at closing the allocation step for a
+whole family. Reasoned: limited but constructive scope, with the maximum
+case split and zero-move handling the carrying points to attack.
