@@ -2168,3 +2168,39 @@ of favorable fixtures as a substitute for a general argument. **Niggle sweep:** 
 against actual ownership, neutral donors filled with two pairs, endpoint correction derived, first
 failure retained, original blind prediction still marked refuted, all target parities and scope
 stated, known swap precedent credited, and no independent review or threshold conclusion implied.
+
+### MI061 — B25: exchange permutations instead of fixed chain roles (2026-10-16 11:14 BST; until 11:34)
+
+**Pull:** the previous role obstruction may have been a three-donors-per-chain restriction. Allow
+selected tokens to move in disjoint cycles, including cycles containing both small bins or neither.
+Keep the two smallest target bins small throughout this diagnostic. Both heartbeats stay PAUSED.
+
+Record searched: role.choice|pair.disjoint|root.*collision|MI060|signed.*walk -> 22 hits; Skolem|
+displacement.pattern|token.permutation|cycle.cover -> 9 hits, no relevant displacement result in the
+record. Primary orientation: Nordh, Perfect Skolem sets, section 4.1 Definition 14, Theorem 15 and
+Corollary 17 read; prior-art receipt below. This is a constrained permutation-displacement problem,
+not an invented general mechanism or an application of a sufficient theorem from that source.
+
+Number the odds by j=0,...,27, so token v=2j+1 and its complementary partner has index 27-j. Put
+h_i=1 at the two smallest targets and h_i=2 at the other six. A bin initially owns h_i pairs of sum
+56. If its selected index x_i is replaced by x_i+e_i, where e_i=(t_i-56*h_i)/2, its sum becomes t_i.
+The new selected indices must permute the old ones; all selected pair labels min(x_i,27-x_i) must
+be distinct. Zero-deviation bins can retain their pairs without selecting a token. This gives a
+finite allocation if admissible cycles exist; existence for arbitrary targets is the unresolved part.
+
+**Hand candidate before checking:** for (68,68,68,92,122,122,122,122), e=(6,6,-22,-10,5,5,5,5).
+A five-bin cycle has indices 0->6->11->17->22->0, assigned to bins (0,4,1,5,2). A three-bin cycle
+has indices 2->7->12->2, assigned to bins (6,7,3). The eight pair labels are distinct. This would
+solve the fixture while retaining small roles (68,68), a choice B24's restricted chains could not use.
+
+**Predictions and budget:** check this fixed candidate literally. Then test the same nine B24
+fixtures only, with a depth-first cycle builder, two smallest roles fixed, at most 50,000 nodes per
+fixture or five process CPU seconds overall. No new fixture list, role search, census or cap increase.
+All nine are expected to return witnesses within that budget; a cutoff is UNKNOWN. Literal whole-pair
+allocation, simultaneous selected-token transfers and the independent full certificate checker must
+agree. **Counterfactuals:** a repeated complementary pair must be rejected before filling, and a
+sum-corrupted but coverage-preserving witness must fail the certificate checker. **Unexpected:**
+forcing a single cycle must fail on the known balanced target 98^8: its nonzero index steps are
+21 twice and -7 six times, so one cycle lies in one residue class modulo 7, containing at most four
+available indices, whereas eight active bins need distinct selected indices. Disjoint cycles should
+succeed. Retain failures and distinguish these construction classes from the original problem.

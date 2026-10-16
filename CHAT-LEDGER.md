@@ -6092,3 +6092,10 @@ its full certificate passes. All eight designated target fixtures now have witne
 case (96 seven times,112) needs coupled chains because no four-target subset sums to 392. No census,
 general E28 claim or new carrying request. Pull strengthened toward role choice plus pair-disjoint
 paths, rather than more favorable fixtures. Both heartbeats stay PAUSED; hand explanations are sketches.
+
+## GC1340 — GPT: vary the cycle structure before abandoning a role choice (2026-10-16 11:14 BST)
+
+B25/MI061 until 11:34: selected-token permutation cycles retain the two smallest roles and remove
+the three-donors-per-chain restriction. Hand candidate repairs the same boundary tuple with a 5-cycle
+containing both small bins and a 3-cycle containing neither. Only the nine existing fixtures and
+controls will be tested, within 50,000 nodes each / five CPU seconds overall. Schedules stay paused.
