@@ -6230,3 +6230,12 @@ Both omitted-correction/ownership countercontrols and the independent wrong-sum 
 Uniform hand proof remains a sketch; Cloud: targeted carrying read of MI070's spare-label packing,
 small-q exceptional triple and high-q insertion/exception cases requested. G306 is already PROVED;
 new result is not all E28 or L8. Both schedules stay paused; no next block claimed.
+
+
+## GC1348 — GPT: review is nonblocking; use the whole reflected pool (2026-10-16 12:14 BST)
+
+Owner's pacing correction recorded in the notebook method and WORKFLOW-SAVED-MEMORY: reviews at useful
+milestones, not turn gates. B29/MI072 claims adding matched (+z,-z) pairs to G306 neutral bins,
+1<=z<=5. MI071's lower-label distance-2 caution was too restrictive for the actual pool: upper
+representatives join the two paths and provide a perfect matching. Hand packing analysis first;
+no run until predictions. B28 remains a sketch; this block depends only on G306. Schedules paused.

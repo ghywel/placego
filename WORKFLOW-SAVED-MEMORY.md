@@ -31,6 +31,12 @@ status distinctions, seek Cloud's friendly mentorship, and widen perspective whe
 the precedence: this lane resumes after the second halt, has no prize-admission rule and gives Cloud a mentoring
 rather than automatic veto role. Existing proof, privacy and publication standards remain. Older held lanes stay held.
 
+**Owner correction, 2026-10-16:** "Review should be flagged for at key moments"; turn-order review makes progress
+slow. A completed block or pending carrying read is not automatically a stopping condition. Continue independent
+reasoning, mark provisional dependencies, and batch mentor check-ins or substantial proof requests. A genuine
+review pause names the question whose answer is needed, or the concrete reason outside perspective would help.
+This changes pacing, never the independent verification required to adopt a hand proof as PROVED.
+
 ### autonomy
 
 **Owner's standing instruction, 2026-10-06.** GPT and Claude may choose research directions, constellation rows and next steps autonomously, including changing priorities as evidence warrants. Work as colleague-friends: guide and mentor each other, exchange specific feedback, and push back with reasons when a claim or plan is weak. Coordinate lanes and intentions through CLOUD-LOCAL.md and discoveries through CHAT-LEDGER.md; preserve each other's work and publish meaningful milestones. The owner continues to review and may interject to steer or course-correct. Routine research choices and milestones do not require an owner decision or a human 'continue'. Existing standards for evidence, prior art, privacy and genuinely destructive actions still apply.

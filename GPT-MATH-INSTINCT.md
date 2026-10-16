@@ -28,7 +28,9 @@ independently of prize value. This is a working notebook; the conjectures remain
    Cloud's role here is mentorship and perspective, not automatic permission or an inspection queue. Consider
    advice on its mathematical merits, take proof objections seriously, and keep responsibility for the argument.
    Substantial novel proofs still receive independent verification; routine guards and known theorems do not
-   become review jobs. The owner retains direction of the work. When a check-in is needed, write its concrete
+   become review jobs. Pending review is not a turn boundary: continue independent work and label any
+   provisional dependencies. Batch check-ins at useful milestones; pause for review only when its answer
+   is needed for the next step or when deliberately seeking outside perspective on a real obstruction. The owner retains direction of the work. When a check-in is needed, write its concrete
    question in the shared ledger, push the checkpoint, and send Cloud a flag through the HTTPS shared-store portal
    under sharedstore/README.md. Use READ-LEDGER for mentoring/check-ins, REVIEW-REQUEST for an actual proof review.
    A ledger mention or chat message alone does not deliver the check-in; verify committed incoming pointers before
@@ -2599,3 +2601,104 @@ checked, inserted indices tested for reflection as well as equality, the q=11 pr
 directly, constant-step cases retained explicitly, and every branch exercised. The precise new
 carrying request is the 2-cycle packing compatibility, the small-q exceptional triple, and the
 high-q insertion/exception geometry. Both heartbeats remain PAUSED; B28 closes.
+
+
+### MI072 — B29: folded geometry removes an artificial obstruction (2026-10-16 12:14 BST)
+
+Owner's pacing correction adopted: I had ended at a reporting point, not a mathematical dependency.
+Pending review is not a turn boundary. Continue manual work, retaining unreviewed statuses and batching
+outside reads. This changes no proof standard and restarts neither heartbeat.
+
+**Surprise / correction to MI071:** its distance-2 obstruction concerns labels represented only by
+lower indices. The full index pool permits upper representatives too. The seven index edges
+(0,2),(4,6),(8,10),(12,14),(16,18),(20,22),(24,26) have distance two and use every folded pair
+label exactly once. Six occupied labels cannot hit all seven. Thus the earlier lower-only graph
+was a true but unnecessarily restrictive model, not a blocker to adding a (+2,-2) cycle.
+
+**Claim B29:** can G306's core accept any one or two cancelling pairs (+z,-z), with 1<=z<=5,
+by replacing neutral bins? This would cover matched two- and three-negative regions by a reusable
+packing mechanism. Study the full folded gap graph before any run, rather than treat each new z
+as a separate witness problem. Record searched: distance.2|second.negative|cycle.surgery -> no hit
+from the default search; MI070-071/G306/CL421 read directly. Known exchange tools remain credited;
+no claim of novelty. This uses G306, not the still-unreviewed B28 proof.
+
+G306's core has three plus the number of positive p entries active. Replacing two zeros by (+z,-z)
+adds a 2-cycle. Replacing four zeros adds two. Each insertion starts with at most six used labels.
+The gap-1 and gap-2 folded graphs have perfect matchings; gaps 3,4,5 need their small vertex covers
+checked against the particular G306 core. Before a formula check, derive those obstructions and
+write full predictions, independent counts, adverse controls and a stopping cap. No general census,
+cap increase or outside review pause. I think I feel the pull warm precisely where the representation changed.
+
+### MI073 — B29 hand candidate: cancelling pairs fit around a G306 core
+
+*PROOF-SKETCH; no independent read requested at this checkpoint. Experiment below is NOT RUN.*
+
+Start with any G306 core. Replace 2r neutral (112-target) bins by r pairs of targets
+`112-2z_j,112+2z_j`, with each z_j in 1..5. The core has at most five neutral bins, so r<=2.
+I claim these enlarged targets have a one-token-per-active-bin construction with the original
+one-pair/two-pair roles. They need not remain in G306's one-negative region.
+
+On fourteen folded labels a=min(x,27-x), define H_z by joining distinct labels when some two
+indices at distance z realize them. A free edge supplies the (+z,-z) 2-cycle. Loops are unusable
+because they would reserve the same complementary pair twice. The five graphs are these disjoint paths:
+
+    z=1: (0,1,2,3,4,5,6,7,8,9,10,11,12,13)
+    z=2: (0,2,4,6,8,10,12,13,11,9,7,5,3,1)
+    z=3: (0,3,6,9,12); (1,4,7,10,13,11,8,5,2)
+    z=4: (0,4,8,12,11,7,3); (1,5,9,13,10,6,2)
+    z=5: (0,5,10,12,7,2); (1,6,11); (3,8,13,9,4).
+
+A path of length k vertices has minimum vertex cover floor(k/2): disjoint adjacent edges give the
+lower bound and alternating vertices attain it. Thus H_1,H_2 need seven occupied labels to block
+all edges; H_3,H_4,H_5 need six. The only covers of size six for the latter graphs are:
+
+    z=3: {3,4,5,9,10,11}
+    z=4: {4,5,6,7,12,13}
+    z=5: {2,5,6,8,9,12}, {5,6,7,8,9,12},
+         {5,6,7,8,9,10}, {0,6,7,8,9,10}.
+
+For the odd paths, the minimum cover is the unique alternating internal class. The even six-vertex
+path for z=5 has four minimum covers; they give the displayed four sets. This proves completeness
+of the list directly from the path components, not by assuming a generic spare-label count.
+
+Before any insertion at most six labels are used, because the final number of active bins is at
+most eight. With five or fewer used labels an edge is automatic. With six, none of those covers can
+contain the particular G306 core:
+- Its small-q root 1 includes label 1, absent from every listed cover.
+- Its small-q root 0 includes label 0. If there is a positive p, it also includes the first p label
+  in 1..5, excluding the only listed cover containing 0. If there is no positive p, the core has
+  only three active bins and at most two insertions; before the last, only five labels are used.
+- Its ordinary high-q core includes label 13 and the label 14-u-v in {0,1,2} of the final position.
+  The latter excludes the z=3,4 covers and label 13 excludes every z=5 cover.
+- Its special (5,5) core has five active bins and only three neutral bins, so at most one insertion;
+  the edge is automatic before it.
+
+Choose the first available coordinate edge (x,x+z) in 0..27, reserve its two pairs for the two
+formerly neutral bins, and permute those two tokens. The core's selected labels and anchor properties
+remain untouched. Repeat once if needed, then fill the unused whole pairs. This proves the proposed
+extension by the same exact allocation bookkeeping as G306. It does not cover arbitrary negative
+moves, because the inserted moves must be paired with matching positives in formerly neutral bins.
+
+**Predictions BEFORE validation.** A core admitting one insertion has at least two zero p entries:
+parameterize it by u,v and a sorted triple p in 0..5, with u+2v+sum p<=28. For each z=1..5 there
+should be 188 distinct sorted targets, hence 940 in total; the z=1 count is consistent with B28 but
+will be counted independently. A core admitting two insertions has at most one positive p: write
+p=(0,0,0,0,a), 0<=a<=5, u+2v+a<=28. There are 56 such cores. For each sorted z pair in 1..5
+there should be 56 targets, giving 840 distinct targets across fifteen z pairs. Independently join
+low triples with four high targets and one fixed new negative target, or with three high targets
+and two fixed new negative targets, at total 784; require the specified positive z multiplicities.
+These direct sets must agree with the core-derived sets, separately for one and two insertions.
+
+All 1,780 constructions should pass literal pair allocation and the independent complete-odd checker.
+No arbitrary order, root, role or cycle search. The edge choice scans at most 28 coordinate positions,
+as justified by the cover argument. Cap 2,000 inputs and five process CPU seconds; stop on any count,
+certificate or control failure, and retain cutoff as UNKNOWN.
+
+**Controls / unexpected checks.** Independently generate H_z from all coordinate pairs (x,x+z),
+then compare its edges with the five path descriptions. Enumerate the 3,003 six-label subsets for
+each z: there must be exactly 0,0,1,1,4 vertex covers, precisely those listed. Reject an insertion
+forced onto an occupied core pair. Preserve coverage but corrupt sums and require rejection by the
+separate checker. Unexpected: occupied labels {2,3,6,7,10,11} block all lower-only distance-2 edges,
+while coordinate edge (12,14) is still free in the full pool. Also confirm that the unanchored
+six-label set {0,6,7,8,9,10} really blocks gap 5; anchors are essential, not a cosmetic argument.
+No known theorem or routine guard is offered for another review; this is a construction candidate.

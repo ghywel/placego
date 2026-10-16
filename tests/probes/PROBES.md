@@ -1016,3 +1016,7 @@ app is unpublished by design.
   t4=110,t5>=112; predicts 320 targets, two independent domains and exact certificates.
   Separate 2-cycle or inserted negative vertex; fixed analytic exceptions. All 320 certificates and
   controls pass (4f22d5d0 preregistration); uniform hand proof awaits review.
+
+- `instinct/path_forest_cancelling_pairs.py`: MI072-073, G306 core plus one/two matched cancelling
+  pairs of magnitudes 1..5; predicts 940/840 targets and exact folded-gap cover classification.
+  Independent direct-domain and literal certificate checks, adverse controls, fixed cap. NOT RUN.
