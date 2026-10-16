@@ -7679,3 +7679,79 @@ Artifact `cited/instinct/b77-divisor-runs-1d660fd7cecfda6e.json`,198288bytes,
 SHA256 `1d660fd7cecfda6ef66353bc7277ee3d5ec05bd6285dc50d951d913edf1a59f9`.
 Preregde4d6970, source tests/probes/instinct/path_forest_divisor_runs.py.
 Immutable receipt/manifest verified. No formal proof number or novelty claim.
+
+### MI177 — B78: swapping two exceptional residues removes the margin cost (2026-10-16 22:57 BST)
+
+**Pull/question.** A coprime negative list may become divisible after merging
+just two entries. I first thought three roots would be needed; then noticed
+that swapping those two entries changes the exceptional residue. Delight at
+that extra freedom: can it keep B77's TWO-root margin while crossing into gcd1?
+This is the live run-selection question, not another shifted instance table.
+Record searched: two.run|sumset|long.edge|role.change ->70 hits/24 files;
+complementary.residue|exceptional.pair|two.exceptions|orientation.*residue
+->11 hits/7 files, none on this construction. MI174-176 and the existing
+MI117/MI126 prefix/reordering tools read; no new imported theorem, literature
+status or novelty claim. Elementary residue argument below supplies the step.
+
+**Sufficient construction, PROOF-SKETCH.** Let M=2n even, p,q positive odd,
+p+q=2 sum d_i. All d_i>0. Suppose a modulus g>=3 divides all but TWO entries
+a,b, with a+b=0 mod g and a!=0 mod g. If max(p,q)<=M-3 and the ATOMIC list
+(a+b, all other d_i) fits into two bins of half-load<=n-1, then the original
+moves(p,q,-2d_1,...,-2d_N) have a folded-distinct cycle in0..M-1.
+This includes genuine gcd1 lists, e.g. g3,a1,b2. It is SUFFICIENT only:
+requiring a,b in the same run can reject a constructible original list.
+No anchors, other components or general E28 claim.
+
+Place the a+b atom in run A; expand it to a,b, with other entries in any
+order in A/B. They need not be adjacent: multiples of g may intervene. Let
+s=sum A,t=sum B,w=p-2s. The word is p,negatives A,q,negatives B. The fitting
+root interval is L=max(0,-w),R=min(M-1-p,M-1-2t). Independently of B77's
+unreviewed status, its elementary bounds follow again: if w>=0, the two
+upper bounds are>=2 and>=1 above L0; if w<0 their differences above L are
+M-1-2s>=1 and M-1-q>=2. Thus L,L+1 both fit.
+
+Let P_A be FORWARD prefixes of A, V_B prefixes of REVERSED B, including
+endpoints, and H=(M-1-p)/2. Vertices are h+p-2P_A and h+2V_B. Reflection
+requires V_B-P_A=H-h. If a precedes b, P_A residues are contained in{0,r},
+r=a mod g, and V_B in{0}. Thus avoiding h-H in{0,r} suffices. Swapping only
+a/b changes r to -r, without altering s,t or the fitting interval.
+
+There is always a choice among these TWO roots and TWO orientations. If
+2r!=0 mod g, first choose h among L,L+1 with h-H!=0. At most one of r,-r
+equals h-H, so choose the other orientation. If 2r=0 mod g, then g is even
+and r=g/2>=2: the forbidden classes0,r cannot cover two consecutive integers.
+Choose the unblocked root; either orientation works. Each parity run is
+monotone/distinct; opposite parities cannot coincide physically; all cross-
+reflection is excluded. This proves sufficiency. No hidden vertex capacity:
+K>=g(N-1)>=3(N-1), K<=2n-3, n>=4, so N<=floor(2n/3)<=n-2.
+
+**Prediction BEFORE code/run.** Formula-only tight family: g3..11,
+a1..g-1,b=g-a, four other halves all g; M=6g+2, positives(4g+1,6g-1) and
+its reversal; A has a,b and two g's, B the other two g's. Test adjacent and
+interleaved a,g,b,g layouts. Exactly216 geometries, root interval EXACTLY
+two integers. Predict all pass,108 use the second root,36 need a/b swap
+under the lexicographic root/orientation selector. All four-step choices
+are residue checks, never a geometric root/order search. Independently
+calculate full cross-parity sums and literal folded labels, rather than
+reusing the modular predicate as the geometry oracle.
+
+Three actual M28 fixtures: d=(1,2,3,3,6,9), A indices0,1,5, B2,3,4,
+p/q25/23 and23/25; plus d=(1,2,3,3,6,6), A0,1,2,4,B3,5,p=q21.
+All are gcd1 eight-vertex cases beyond the common-divisor theorem. Materialize
+all three odd partitions with slots(1,1,2,2,2,2,2,2); literal and independent
+inventory validators must agree. No growing profile census or fallback.
+
+Counterfactual g2: M14,p9,q11,d=(1,1,2,2,2,2), same3g/2g loads; all four
+prescribed root/orientation combinations must fail literal geometry. Indeed
+8 vertices exceed7 labels, showing the g>=3 omission can make the theorem
+false. The residue selector must refuse g2. Unexpected outside-scope positive:
+M16,p7,q13,same d/run,root7 gives(7,14,12,10,6,2,15,11), all labels distinct,
+although the two residue classes cover every root. Thus the modular condition
+is sufficient, not necessary. Finally g3,d=(2,4,9,9),p23/q25: the atomic list
+(6,9,9) has no13/13 split, while original halves split11/13. Record only an
+atomic-admission refusal, never component/target impossibility.
+Caps216 family geometries+3 partitions+named controls,2CPU sec/64MiB.
+Stop on first mismatch or cap; no repair, alternate search or widened grid.
+Gut: ACT; the orientation choice is the fresh bit, and it eliminates an
+extra-margin hypothesis rather than adding one. Pending MI175 review is
+independent and does not block this argument or its bounded checks.
