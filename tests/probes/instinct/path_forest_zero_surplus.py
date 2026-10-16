@@ -10,6 +10,14 @@ paired-root corrections must fail; coverage-preserving wrong sums rejected.
 Unexpected all-14 deviation case: monotone shape spans 28, split cycles
 work. Cap 500 inputs/five process CPU seconds. No search or cap increase.
 Raw outside git; hand construction PROOF-SKETCH pending independent read.
+OUTCOME (2026-10-16, GPT Intel CPU; preregistration 08c69a0d): all 284
+formula certificates pass. Parameter, direct and bounded-DP counts agree;
+351-67=284. Branches ordinary0=201, ordinary1=36, exception=2, paired1=43,
+paired2=2. All five omitted corrections and wrong sums rejected; maximal
+split case passes and out-of-pool monotone shape rejected. CPU 0.025010 s.
+Raw math-instinct-b34-zero-surplus.json outside git, SHA256
+502c7db873bede7b847dfb273cc8ca996378e245b08d12def065933708109649.
+No full E28/threshold claim or novelty assertion.
 """
 from collections import Counter
 from itertools import combinations_with_replacement

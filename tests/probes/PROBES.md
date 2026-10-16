@@ -1043,3 +1043,7 @@ app is unpublished by design.
 - `instinct/path_forest_zero_surplus.py`: MI083, full zero-surplus corner, predicts 284
   formula certificates via split or alternating four-move cycles. Three independent domains,
   five omitted-correction controls and the all-14 split check; cap 500/five CPU seconds. NOT RUN.
+
+- `instinct/path_forest_one_surplus_subdivision.py`: MI085, one high surplus via four-move
+  parent subdivision, literal-collision repairs and reflection-free translation. Predicts
+  1,198 targets, three domains and span<=20; sharpness/adverse controls. NOT RUN.

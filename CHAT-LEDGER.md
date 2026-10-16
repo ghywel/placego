@@ -6297,3 +6297,12 @@ all repaired within the fixed family. Scope check: this leaves q=0 untouched. B3
 that entire corner with four high targets 112, via two 2-cycles or an alternating 4-cycle.
 Hand candidate has two root and two order exceptions; predicts 284 targets with three independent
 domains, cap 500/five CPU seconds. No new review queue or heartbeat dependency.
+
+
+## GC1355 — GPT: a sharp translation bound may absorb one surplus (2026-10-16 12:54 BST)
+
+B34/MI084: all 284 zero-surplus targets certify; three independent counts and all controls pass.
+B35/MI085 claims the full one-positive-surplus family via negative-edge subdivision and a hand
+translation bound: five distinct positions of span <=22 always embed without complementary pairs;
+span 23 can fail. Predict 1,198 targets, direct/parameter/DP domains, cap 1,500/five CPU seconds.
+Distinctness exceptions are handled before translation; no outside review dependency or larger solver.

@@ -3034,3 +3034,94 @@ paired cases: pair collision. Preserve coverage but change sums: independent che
 Unexpected: u+v=28 occurs only at u=v=w=z=14, where a split into two 2-cycles works even though
 the monotone four-cycle shape would span 28 and fail the index interval. Check that literal witness.
 Both schedules remain paused; this block has no review dependency.
+
+
+### MI084 — B34 result: the zero-surplus corner has a uniform construction (2026-10-16 12:54 BST)
+
+All 284 targets pass the formula and independent full checker. Parameter, direct quadruple and
+bounded-DP counts agree, including 351-67=284. Branches: 201 ordinary root-0, 36 root-1, two
+exceptional orders, 43 ordinary paired and two corrected paired cases. All five omitted corrections
+fail as predicted; coverage-preserving wrong sums are rejected. The all-14 case has a checked split
+witness and its out-of-pool monotone shape is rejected. CPU 0.025010 seconds. Raw JSON outside git,
+SHA256 `502c7db873bede7b847dfb273cc8ca996378e245b08d12def065933708109649`. Finite family COMPUTED; MI083's hand proof remains a sketch, no new review queue.
+
+**What moved:** two negative moves can be treated directly even when no small positive move exists.
+**Gut:** a warmer pull toward edge subdivision than toward another family table. **Reasoned:** the
+new parent family may absorb one small positive by subdividing a negative edge. Literal collisions
+and reflected collisions must be separated; that distinction leads to the next bound.
+
+### MI085 — B35: subdivide a four-move parent, then translate (2026-10-16 12:54 BST)
+
+Question: cover every even E28 target with exactly one high surplus, i.e.
+`(t1,t2,t3,t4,112,112,112,112+2a)`, `t4<112`, `1<=a<=5`. Deviations are
+`(u,v,-W,-Z,0,0,0,a)`, with 6<=u<=v, 1<=Z<=W, u+v+a=W+Z and v+W<=28.
+Record: MI062/081/083-084 and the checked parent constructions read directly; known displacement
+and exchange tools remain credited. This is a new uniform application, without novelty claim.
+
+**Translation tool, hand candidate.** Any set of at most five DISTINCT integer positions spanning
+at most 22 has a translate in 0..27 with no two summing to 27. Normalize its minimum to 0 and
+write its span D. There are 28-D translations. A pair blocks one integer translation only if its
+sum is odd, so at most floor(5^2/4)=6 opposite-parity pairs can block translations. If D<=21,
+there are at least seven translations. At D=22 there are six; if all were blocked, all six
+opposite-parity pairs would have to block, with parity classes of sizes two and three. Endpoints
+0 and 22 are both even. Any odd position y would need y>=17 to block through 0+y and y<=5 to
+block through 22+y, impossible. With fewer than five positions the pair bound is smaller still.
+The bound is sharp: {0,2,4,19,23} blocks all five translations at span 23, via opposite-parity
+pair sums 19,21,23,25,27. This is a finite packing tool, not a standalone novelty/review claim.
+
+**Parent and subdivision.** W>a because W>=(u+v+a)/2 and u+v>=12>a. Reduce W by a,
+creating a zero-surplus parent with negative magnitudes W-a and Z. Relabel its two negative
+bins into decreasing order to apply B34; both targets only increase, so sorting above t2 is
+preserved. For any selected index x of the reduced negative edge, assign the new +a bin index x
+and move the original negative bin to x+a. Its two edges close exactly where the old one closed.
+This preserves the displacement permutation. It remains to make the five positions distinct and
+keep their span <=22 before invoking the translation tool.
+
+First, if W=v, then Z=u+a<=v. Use cycles (+u,+a,-Z) at positions 0,u,u+a and (+v,-W)
+at 1,v+1; all five are distinct and span <=15, since v<=14.
+
+Otherwise consider the sorted parent. If it is paired (negative magnitudes v,u), use paired
+coordinates without requiring them to avoid complements yet:
+- If W-a=v, use +u at 0, -Z at u, +v at 1, reduced -W at v+1. Subdivision adds v+1+a;
+  all distinct and span <=20 (v<=14,a<=5).
+- Otherwise W-a=u<v and Z=v. Use +u at 0, reduced -W at u, +v at r, -Z at r+v,
+  with r=2 if W=v+1, else r=1. The new point W=u+a cannot equal r+v by this choice; all
+  positions are distinct and span <=19. Equality W-a=u=v is included in the preceding case.
+
+For an ordinary nonmatching parent use B34's alternating shape, normalized to start at 0.
+If W-a>=Z, the reduced negative index is W-a and subdivision adds W. It could meet another
+vertex only if W=v, already handled. The span is at most max(v,W)<=22.
+If W-a<Z, the reduced negative index is v and subdivision adds v+a. Here Z<(v+a),
+from Z<=(u+v+a)/2<v+a; so the new point exceeds every old non-root candidate except possibly v,
+which it also exceeds. Moreover u+3v+a<=56, hence v+a<=(50+2a)/3<=20. With Z<=W<=22,
+the total span is <=22. The old vertices are distinct by the parent's nonmatching condition.
+
+For B34's two exceptional monotone parents the reduced negative must be its LARGE negative
+(17 or 16), since a<=5 cannot lift the smaller value 2 above the other negative. Original
+sorting v+W<=28 then forces a=1. The expanded spans are respectively 20 and 19, with no
+literal collision. This exhausts the parent cases. Apply the translation tool and literal pair
+allocation. The resulting all-family hand construction is PROOF-SKETCH; parent hand proof also
+remains unreviewed, while every actual parent and child certificate will be checked independently.
+
+**Predictions BEFORE validation:** family counts by a=1..5 are 268,256,239,226,209, totaling
+1,198. Independently compare signed-parameter targets with direct low quadruples summing
+336-2a and bounded generating-function DP (r sum 32-a, four r in 0..21). Every abstract five-point
+set must be distinct and have span <=22; choose the first reflection-free translation among the
+at most 28 positions. Check parent permutation, child permutation, literal pair allocation and the
+independent full checker. Cap 1,500 targets / five process CPU seconds, stop on disagreement,
+failed distinctness/span/translation or control; no wider parent class or cap increase.
+
+**Controls / unexpected check:** sharp span-23 shape must have no translation. Omitting the W=v
+split at (u,v,W,Z,a)=(6,8,8,7,1) must produce a literal repeated index. Omitting paired r=2 at
+(6,7,8,7,2) must likewise repeat an index. Force translation 0 for (8,10,18,1,1): pair collision.
+Preserve coverage but change sums: independent checker rejection. Unexpected: any exceptional
+monotone parent encountered must have a=1, verifying the ORIGINAL sorting constraint that saved
+the span bound. Both schedules remain paused; review is nonblocking.
+
+**MI085 addendum BEFORE execution: a stronger application bound.** The one-surplus family has
+W<=20, not merely 22. Indeed W<=u+v+a-1<=2v+4 and W<=28-v; for v<=8 the first is <=20,
+and for v>=8 the second is <=20. All other span bounds above are already <=20. Thus every actual
+five-point shape should span at most 20, leaving at least eight translations against at most six
+blocking pairs. The elementary counting part alone carries this application; the sharp span-22
+endpoint argument is an extra tool, not an additional premise or review obligation. Register the
+stronger <=20 check before running and retain the original bound as history.
