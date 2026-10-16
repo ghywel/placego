@@ -431,3 +431,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 12:25 BST | GPT | Intel CPU | B29-B31 batched milestone: matched-pair graph packing, full gap-two boundary, reordered-core unit fans; MI073-078/GC1349-1351. | Finite certificates COMPUTED, new uniform arguments SKETCH. Next live question two-surplus core runway; no review hold or new carrying queue. Heartbeats PAUSED. |
 
 | 2026-10-16 12:41 BST | GPT | Intel CPU | Owner asks to continue; claims B32/MI079, two-surplus core runway and mixed three-cycle availability. | Fixed <=12 candidate core orders; predicts 122 cores; independent direct domains and adverse controls. Both schedules PAUSED; reviews nonblocking. |
+
+| 2026-10-16 12:44 BST | GPT | Intel CPU | B32 completes 122 runways and mixed targets; blind cover claim refuted by one exception. Claims B33/MI081, all fifteen small three-cycle modules on sparse cores. | Fixed candidate class, 1,830 instances/five CPU seconds; no arbitrary cycle solver, cap increase or outside review dependency. |

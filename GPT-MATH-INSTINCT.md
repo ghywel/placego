@@ -2905,3 +2905,67 @@ must be rejected. The three-consecutive-label hypergraph really is blocked by {2
 compare it with the mixed module's hypergraph as the unexpected discriminator. A hypergraph bound
 is a finite packing tool, not a new standalone proof/review entry. No general E28/threshold claim
 or dependency on a pending outside read. Both schedules remain paused.
+
+
+### MI080 — B32 result: runways pass; the stronger blind prediction fails (2026-10-16 12:44 BST)
+
+All 122 sparse cores admit the fixed-family runway, within 191 candidate checks including controls.
+The first successful candidate uses 1..5 attempts; histogram 86/24/6/1/5 at attempts 1..5.
+Each has a checked two-unit fan and a checked mixed (+1,+2,-3) module. All three independent
+domains agree, each of size 122. Restricted-family controls fail on both registered cases;
+forced core reuse and coverage-preserving wrong sums are rejected. CPU 0.042113 seconds, no cutoff.
+Raw JSON outside git, SHA256 `dc98daa13fc37d2d61e630ff93f10175dfcb042c5b780b48dc363a55856958a7`.
+
+**Blind prediction REFUTED:** the mixed module has exactly one five-label vertex cover,
+{3,4,8,9,13}. Thus arbitrary five occupied labels can block it. This is a genuine retained
+geometric obstruction, not an unburnable target. Both actual core families still pass.
+The finite constructions are COMPUTED; the fixed-family existence check is finite evidence, not
+an independently read hand theorem. I think I feel surprise: the unique exception gives a more
+specific handle than the false generic count. No new outside read requested.
+
+### MI081 — B33: the exceptional cover gives a direct mixed-module rule (2026-10-16 12:44 BST)
+
+**Hand candidate for the packing tool.** The folded mixed triples are exactly
+`{i,i+1,i+3}` and `{i,i+2,i+3}` for i=0..10, plus `{11,12,13}`.
+Any consecutive five labels contain the four local triples of this type, whose intersection is
+empty; hence a cover uses at least two labels in each five-block. Partition into blocks 0..4,
+5..9 and 10..13. Each of the first two blocks needs two labels, the last needs at least one.
+A cover of size five therefore uses 2,2,1. The intersection of the three triples inside the last
+block is {13}, forcing that label. Since 10,11,12 are then absent, triples {9,10,12} and
+{8,10,11} force 9,8. The middle block's quota is now full, so 5,6,7 are absent; triples
+{4,6,7} and {3,5,6} force 4,3. This proves the unique five-cover by hand. It also proves no
+four-cover: every four-cover would extend to multiple five-covers, contradicting uniqueness.
+
+Every G306 core with at least three neutral bins uses at most five labels and contains one of
+0,1,2: small-q cores use root 0/1; high-q cores end with folded label 14-u-v in {0,1,2};
+the special core has root 0. The unique bad cover contains none of 0,1,2. Therefore the default
+G306 core itself always leaves a mixed triple; reordering was unnecessary for this module.
+This supplies a shorter uniform hand construction for the same 122 mixed targets. It remains
+PROOF-SKETCH; no novelty asserted for this finite packing tool.
+
+**Next claimed question B33:** replace (+1,+2,-3) by (+c,+d,-c-d), 1<=c<=d<=5. A default core
+might fail, so compare it with the same fixed u-first/root-0-or-1 core class from B32. This tests
+one mechanism across all fifteen small modules, rather than writing another deficit boundary's
+case list. For each of the 122 cores there are fifteen modules: 1,830 parameter instances; target
+sets may overlap between equal-sum modules and must be deduplicated before reporting any count.
+Independently join three low targets, t4=112-2(c+d), and four high targets containing c,d with
+multiplicity. Their target set must agree with the complete parameter-derived set before accepting
+full coverage. The new negative target is >=92, above the core's third target (<=88), so sorting
+does not change the two one-pair roles.
+
+**Predictions BEFORE experiment:** the (+1,+2) default-core placement passes all 122, without any
+new core order. Across all fifteen modules, every parameter instance admits placement using either
+the default core or one of the already-fixed twelve u-first candidates. At least the known
+(+1,+1) default cores (6,6,3,3) and (6,6,3,5) fail and require core adaptation. Retain every default
+failure; do not call it a burning obstruction. A failure after all fixed candidates refutes this
+candidate class and stops the experiment; no new orders, roots, roles or cap increase as a repair.
+Cap 2,000 instances / five process CPU seconds, at most 13 core candidates and 28 coordinate roots
+each by construction. No arbitrary permutation-cycle solver or general census.
+
+**Controls / unexpected check:** independently verify the 23 coordinate-generated mixed hyperedges
+against the hand formula and literal bad cover. Force the bad occupied set to block the mixed
+module, and require an occupied-core pair to be rejected. Preserve coverage but change sums and
+require rejection. Unexpected: the old minimum tuple (68,68,68,92,122,122,122,122) must reappear
+as a 5-cycle core plus a gap-5 three-cycle: the default special core uses indices 0,6,11,17,22,
+leaving module indices 2,7,12 free, matching B25's earlier decomposition. Its full certificate,
+not just its displacement sums, must be checked. Both schedules paused; no review dependency.

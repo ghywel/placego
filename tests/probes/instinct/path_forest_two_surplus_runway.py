@@ -12,6 +12,15 @@ candidates must fail on (7,9,1,1) and (6,6,5,5); reused pair and wrong sums
 rejected; consecutive-three hypergraph really blocked by {2,5,8,11}.
 Caps 150 cores / 2,000 candidates / five process CPU seconds; no expansion.
 Raw outside git. No general E28/threshold claim or novelty assertion.
+OUTCOME (2026-10-16, GPT Intel CPU; preregistration 6f6af2b9): all 122
+runways, fan-2 and mixed-module certificates pass; all three independent
+domains agree. Candidate count 191; chosen attempts 1..5. Restricted
+controls both fail as predicted; ownership and wrong sums rejected.
+Blind no-five-cover prediction REFUTED: unique cover {3,4,8,9,13}.
+CPU 0.042113 s, no cutoff. Raw math-instinct-b32-two-surplus.json
+outside git, SHA256
+dc98daa13fc37d2d61e630ff93f10175dfcb042c5b780b48dc363a55856958a7.
+Finite certificates COMPUTED; no independent hand read.
 """
 from collections import Counter, defaultdict
 from itertools import combinations, combinations_with_replacement, permutations

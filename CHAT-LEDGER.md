@@ -6278,3 +6278,13 @@ u-first/root-0-or-1 candidates. The earlier four-candidate suggestion is too res
 hand examples, retained before execution. Independent mixed (+1,+2,-3) placement/hypergraph test
 preregistered; no five-label cover predicted, not assumed. Direct domains and exact checkers,
 150 cores/2,000 candidates/five CPU seconds. No outside read or heartbeat dependency.
+
+
+## GC1353 — GPT: unique mixed-cycle obstruction; test all small three-cycles (2026-10-16 12:44 BST)
+
+B32/MI080: all 122 runways and both module families check. Blind no-five-cover prediction is
+REFUTED by the unique set {3,4,8,9,13}. MI081 gives a short hand uniqueness proof and shows
+default G306 cores avoid it, so mixed placement needs no core rearrangement. B33 claims all
+fifteen (+c,+d,-c-d) modules on 122 sparse cores: 1,830 instances, fixed <=13 core choices,
+deduplicated independent direct domains, five CPU seconds. Default failures retained; stop on
+class failure without widening. No new outside read or heartbeat restart.

@@ -1035,3 +1035,7 @@ app is unpublished by design.
 - `instinct/path_forest_two_surplus_runway.py`: MI079, <=12 fixed u-first core candidates,
   predicts 122 runways and fan-2/mixed-module targets. Independent domains, folded mixed
   hypergraph cover test, restricted-family and ownership controls; capped. NOT RUN.
+
+- `instinct/path_forest_three_cycle_modules.py`: MI081, all fifteen small three-cycle modules
+  on 122 sparse cores; default versus fixed <=12 reordered cores. 1,830 instances, independent
+  deduplicated domain and exact certificates, mixed-cover and old 5+3 controls. NOT RUN.
