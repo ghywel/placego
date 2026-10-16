@@ -6425,3 +6425,13 @@ B40/MI096 certifies71/72 maximal q15 targets; the blind all-family prediction fa
 inserting+5 at either end of6->5 hits11 or0. B41/MI097 classifies this four-point trap
 algebraically, then flips allocation to preserve a matched6/-6 cycle; one fixed repair
 and adverse controls preregistered. This is a representation change, no widened search or review gate.
+
+
+## GC1363 — GPT: generalize the allocation flip by preserving matching edges (2026-10-16 13:47 BST)
+
+B41/MI098 completes the72-target q15 slice with one explained allocation flip; its original
+blind failure stays. B42/MI099 proposes a uniform construction for the three-surplus matching
+family: five-point core plus a cancelling pair of gap6..14. Seven core roots selected using
+explicit gap-graph covers ensure a spare pair. Countercontrol shows an otherwise valid core
+can cover every gap9 edge. Graph/domain/formula checks preregistered, <=2,500 instances/five
+CPU seconds; no larger arbitrary-cycle search or review hold.

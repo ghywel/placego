@@ -3547,3 +3547,98 @@ universal span15 guarantee; its separate cycles still embed, so the span barrier
 of that sufficient tool, not a target obstruction. Cap one new input / one proposed repair,
 plus72 existing-certificate checks / one CPU second; stop on disagreement, no further repair.
 Both heartbeats paused; independent work does not wait on review.
+
+
+### MI098 — B41 result and the mechanism to generalize (2026-10-16 13:47 BST)
+
+The fixed allocation flip certifies the failed target. All71 earlier witnesses recheck and
+together equal the original72-target domain. Wrong cycle root, wrong sums and both literal
+trap sides behave as predicted. The corrected seven-point shape spans22, despite the universal
+span15 limit. CPU0.004957 s; raw outside git SHA256
+`78084a40ec04e84135efa7b88bb6da00e46255434c6baa4c1b0aafaed187aa0a`.
+Finite slice COMPUTED; the trap classification remains a hand sketch. No new global E28 result.
+
+**General inference beyond the fixture.** The four-point literal trap has T=R+2a and positive
+moves either both R+a, or R and R+2a. Flipping the inserted a to the other edge gives two parent
+negatives of size R+a. In the equal-positive case these are cancelling pairs; in the unequal
+case an abstract alternating parent has positions{0,a,R+a,R+2a}. Choose the edge ending at0
+and put all small positive moves after it: the new positions are negative and cannot repeat an
+old nonnegative coordinate. Thus the flip removes this literal trap in general; reflected-pair
+collisions are a separate next question. The q15 fixture is one instance of that rule.
+
+**Gut:** delight at preserving a cancellation instead of disturbing both donors. **Reasoned:**
+choose the core's translation jointly with the spare cancelling pair, so unused-label quantity
+is not confused with a legal unused gap. The next block asks for that uniform rule.
+
+### MI099 — B42: preserve a matching edge; choose translation for the spare pair (2026-10-16 13:47 BST)
+
+Question: cover EVERY even E28 target with exactly three positive high surpluses a,b,c in1..5
+and two negative deviations, whenever one negative magnitude equals one of the two low positive
+magnitudes. This would turn the allocation flip into a reusable matching-edge construction.
+Record searched: gap.*matching, matched.*three, gap.?9 -> no default-record hits; MI073/090/094-098
+and relevant actual sources read. Folded-gap packing was used for magnitudes1..5 in MI073;
+this extends the relevant packing range to6..14. No literature-absence or novelty claim.
+
+**Parameters and hand candidate (PROOF-SKETCH).** Cancel a positive g against a negative -g;
+let h be the other low positive and H the other negative. Then H=h+q, q=a+b+c.
+Here g,h>=6, a,b,c<=5, and sorting gives max(h,g)+max(H,g)<=28. Hence6<=g<=14,
+H<=21: H<=v+15 and H<=28-v, v=max(h,g), so v=6 gives H<=21 and v>=7 gives H<=21.
+Also H<=28-g. Build a five-point core cycle (+h,+a,+b,+c,-H) at
+0,h,h+a,h+a+b,H. This is strictly increasing with span H. At most six cross-parity
+pairs block translations. We will give SEVEN allowed roots, each ensuring the core's five
+used labels cannot cover every physical gap-g pair. Thus a valid core root exists and a
+spare two-cycle(+g,-g) can then be placed independently.
+
+**Gap graph.** Vertices0..13 are folded labels. Two distinct labels i,j support a physical
+index gap g exactly when |i-j|=g or i+j=27-g. This follows by choosing each index as its
+label or its complement; i+j=27+g is impossible for labels<=13. Loops are not legal pairs.
+For g=6,7,8,12,13,14 there is a matching of SIX edges, so five core labels cannot cover all
+edges. Explicit matchings (pairs separated by semicolons):
+
+|g|six vertex-disjoint edges|
+|---|---|
+|6|0-6;1-7;2-8;3-9;4-10;5-11|
+|7|0-7;1-8;2-9;3-10;4-11;5-12|
+|8|0-8;1-9;2-10;3-11;4-12;5-13|
+|12|0-12;1-13;4-11;5-10;6-9;7-8|
+|13|0-13;2-12;3-11;4-10;5-9;6-8|
+|14|0-13;1-12;2-11;3-10;4-9;5-8|
+
+Use candidate roots0..6 for these g. They all fit since H<=21.
+
+The other three graphs have minimum vertex-cover size FIVE. Their small components give all
+five-covers explicitly, without assuming every five-set is harmless:
+- g9: edge0-9 and paths1-10-8,2-11-7,3-12-6,4-13-5. Five-covers are
+  {10,11,12,13} plus either0 or9. Use roots1..7: the core includes its root label,
+  which lies in NO five-cover. All these roots fit because H<=19.
+- g10: paths0-10-7,1-11-6,2-12-5,3-13-4 and edge8-9. Five-covers are
+  {10,11,12,13} plus8 or9. Use roots0..6, none in a five-cover.
+- g11: paths0-11-5,1-12-4,2-13-3, edges6-10 and7-9, isolated8. Five-covers
+  are {11,12,13}, one of6/10, one of7/9. Use roots{0,1,2,3,4,5,8}; none in
+  a five-cover, including isolated8. They fit because H<=17.
+
+For each g, at most six roots can fail the core's reflection test; among the chosen seven
+one is valid. At that root its labels do not cover the gap graph, so select a physical
+x,x+g whose two labels are unused. Put +g at x and -g at x+g, retaining the core
+cycle. Reserve these seven distinct whole pairs and fill all remaining slots; simultaneous
+selected-token permutation gives the exact target sums and whole-odd coverage. The argument
+uses only an elementary pair-count and these explicit graphs, not an unproved seven-position
+span theorem or the q15 table. Equality of targets is handled by stable role relabelling.
+
+**Predictions BEFORE validation:** independently generate the graph from physical index pairs
+and from the label formula; verify matchings and exactly0/0/0/2/2/4/0/0/0 five-covers for
+g6..14, with all enumerated covers equal to the displayed ones. For all h,g>=6 and sorted
+a,b,c in1..5 satisfying the inequality, every one of the SEVEN-ROOT sets contains a valid
+core root and the selected root leaves a spare gap-g edge. Validate literal certificates
+after stable sorting back to the two-smallest roles. Cap2,500 parameter instances / five
+CPU seconds; stop on any graph, root, mapping or full-checker failure, without widening.
+Also compare the resulting TARGET set to independently generated two-negative E28 parameters
+filtered by a matching positive/negative magnitude; this is a domain equality, no solver census.
+
+**Counterfactual / unexpected control:** h10,g9,a=b=c1 has a valid root0 core with labels
+{0,10,11,12,13}, a five-cover, so NO spare gap9 exists. Forcing the unrestricted first
+valid root must fail here; the prescribed roots must repair it. This shows why spare-label
+COUNT alone is insufficient, even in the matching family. Wrong-sum coverage-preserving
+mutation and a forced occupied gap endpoint must be rejected. All first72 maximal-surplus
+targets are not claimed matching targets; retain that scope distinction. Both schedules
+paused, reviews nonblocking; the scope stays within this named structural family.
