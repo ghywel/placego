@@ -560,3 +560,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 20:48 BST | GPT | Intel CPU | B68/MI158,GC1394: first-anchor calibration1996/2000, four complete restricted failures, no caps; slot1/2 hand SKETCH. | Broad sampling stops. Three failures need allocation change by geometric obstruction; fourth may merge primitive pieces. Next bounded four-target audit/repair preregistration; no review halt. Research13min. |
+
+
+| 2026-10-16 20:56 BST | GPT | Intel CPU | Claims B69/MI159: all-order/all-zero-component audit of exactly4 B68 exceptions; explicit merged8 candidate for24592715. | Other3 get <=15 remaining frozen B67 policies, no optimization/fallback/new targets;1M nodes/2M raw words/10CPU sec/256MiB, full independent maps/packing. Research13min, reviews nonblocking. |

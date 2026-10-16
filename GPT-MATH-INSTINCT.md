@@ -6405,3 +6405,59 @@ explanatory failures. Gut: satisfaction and renewed curiosity; the exceptions
 are more interesting than an unbroken success rate. Reasoned: structural slot
 choice is simplified, first-policy universality is false, and the next change
 is now mathematically constrained rather than another blind policy sweep.
+
+
+### MI159 — B69: four-target all-order audit, then bounded repairs (2026-10-16 20:56 BST)
+
+**Question/pull.** Which failures are allocation obstructions, which are merely
+a restriction to primitive cycles? Record searched:16461642|24592715|6321549|
+2079026|merged.*eight|large.*matching ->21 hits/7 files, only MI158 current
+four exceptions. No new broad sample, geometry census or literature claim.
+I am particularly drawn to the six-cycle case because cancelling moves may be
+useful INSIDE a longer cycle rather than peeled off as an independent piece.
+
+**Hand candidate BEFORE run.** Rank24592715, N22, same anchors/slots, has the
+single8-cycle move order(16,-11,2,-11,16,-11,1,-2). Starting at effective root5
+its eight selected positions are(5,21,10,12,1,17,6,7); they have distinct labels
+(5,0,10,9,1,4,6,7), and closing returns to5. Original pool positions add3.
+Owners for this order are(3,0,7,1,4,2,6,5). This is a concrete predicted repair,
+not a claim that all nonprimitive cycles or all targets can be handled.
+
+**Audit BEFORE run.** On exactly MI158's four targets, keep FIRST anchors/slots.
+Enumerate ALL nonempty zero-sum indexed components, not just primitive ones;
+allow arbitrary orders. Compare complete occupied-label sets from adaptive
+prefix-mask search versus independent full raw multiset permutations/literal
+physical roots. Simple cycles reject repeated partial sums and closing root is
+not an extra vertex. Separately compare full set packing with a second method.
+Predict three geometric cases have NO witness even in this unrestricted-cycle
+model; rank24592715 has one, as the hand candidate specifies. No more original-
+policy order search on geometrically impossible targets after these audits.
+
+**Repairs BEFORE run.** For ONLY those other three targets, try the remaining
+15 B67 policies in their frozen order (first R reverse, then starts2,4,6,8,10,12,13
+ascending/reverse), with B67's exact greedy slots and primitive opposite-sign
+class. No new anchor choice, slot optimization or arbitrary-order fallback for
+repairs. Predict all three certify within these15; at least one needs changing
+R rather than merely reversing the first anchor assignment. Stop at first
+certificate per target, retain every preceding failure. A failure exhausts only
+these policies, not model/partition existence.
+
+**Independent/negative/unexpected checks.** Both literal bin validators and
+exact sum/cardinality/token checks on all positives; materialize the explicit
+merged8 candidate before any search. Complete primary/reference label maps and
+set-packing decisions for all four ORIGINAL policies. Every actual repair's
+complete primitive opposite-sign component maps checked independently too.
+For the six-core alone, require no all-order placement; the merged cycle must
+be nonprimitive (it contains the zero-sum(-2,+2) subset) while its ordered proper
+prefix sums stay distinct. This is the unexpected scope check against treating
+minimal factorization as a lossless normal form. Reject reserved-pair reuse,
+wrong anchor and coverage-preserving wrong sums via B67 controls.
+
+**Caps/stop.**Exactly4 original targets+<=45 repair policies;250k primary nodes/
+target (audit plus repairs),1M global,2M raw reference words/20M reference roots,
+10CPU seconds/256MiB. Caps yield UNKNOWN/partial, no raise/restart/policy repair.
+No new target sample/full census or proof filing. Source
+path_forest_anchor_failure_audit.py; raw outside git. These audits independently
+check instruments, not an external reader. Gut: renewed delight at the explicit
+long cycle; reasoned: first verify the distinction, then use allocation changes
+only where fixed-allocation geometry says they are necessary.
