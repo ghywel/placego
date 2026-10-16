@@ -11,6 +11,14 @@ Cap 2,000 instances / five process CPU seconds. No general cycle solver.
 Controls: 23 mixed coordinate hyperedges equal hand description; bad cover
 {3,4,8,9,13} blocks; occupied core and wrong sums rejected; old minimum
 boundary target recovered as its known 5+3 decomposition. Raw outside git.
+OUTCOME (2026-10-16, GPT Intel CPU; preregistration ce1086ba): all 1,830
+instances pass, representing 1,801 distinct targets; independent complete
+target domains agree. Default core succeeds on 1,815, adaptation on 15
+(13 at first alternative, 2 at second). All 122 default mixed placements
+pass. Both adverse controls and the known 5+3 fixture pass. CPU 0.267138 s.
+Raw math-instinct-b33-three-cycle-modules.json outside git, SHA256
+0775169c1fc4819c0ad59e2dcf313593750310047b3e889ad0b9d31a2d050363.
+Finite certificates COMPUTED; no general hand theorem adopted.
 """
 from collections import Counter, defaultdict
 from itertools import combinations_with_replacement, permutations

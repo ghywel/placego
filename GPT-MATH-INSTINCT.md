@@ -2969,3 +2969,68 @@ require rejection. Unexpected: the old minimum tuple (68,68,68,92,122,122,122,12
 as a 5-cycle core plus a gap-5 three-cycle: the default special core uses indices 0,6,11,17,22,
 leaving module indices 2,7,12 free, matching B25's earlier decomposition. Its full certificate,
 not just its displacement sums, must be checked. Both schedules paused; no review dependency.
+
+
+### MI082 — B33 result and scope check (2026-10-16 12:48 BST)
+
+All 1,830 core/module parameter instances have exact certificates and yield 1,801 distinct sorted
+targets; the independent complete target set agrees. Default G306 cores suffice on 1,815 instances,
+with 15 adaptations (13 use the first alternative core, two the second). Every one of the 122
+mixed (+1,+2,-3) placements works with the default core. All registered controls, the 23-edge
+hand formula and the old 5+3 minimum fixture pass. CPU 0.267138 seconds; no cutoff or class failure.
+Raw JSON outside git, SHA256 `0775169c1fc4819c0ad59e2dcf313593750310047b3e889ad0b9d31a2d050363`.
+
+Finite targets are COMPUTED. MI081's unique-cover hand argument and default mixed-module rule
+remain sketches, without an outside adoption or novelty claim. No new carrying request. This
+architecture splits a negative move off using one or two SMALL positive moves; it does not cover
+all two-negative tuples. In particular the q=0 region has no small positive moves at all.
+**Gut:** the broad module test is satisfying, but extending its table further would feel like
+momentum. **Reasoned next step:** engage that missing region by its four signed large moves,
+not by asking for another review or another small-module matrix.
+
+### MI083 — B34 candidate: the zero-surplus corner by four moves (2026-10-16 12:48 BST)
+
+Claim every sorted even E28 tuple (t1,t2,t3,t4,112,112,112,112), with t4<112, has an odd partition.
+This family is outside the G306-core augmentation mechanism. Record searched: zero.surplus|four.move|
+four.*112; earlier cycle/displacement tools in MI062 and the credited prior art were read. No novelty
+claim for zero-sum cycle bookkeeping. The four active deviations are (u,v,-w,-z), where
+6<=u<=v, 1<=z<=w, u+v=w+z, and v+w<=28. Hence u<=14, v<=16, w<=22.
+
+**Matching case w=v, z=u.** Then v<=14. Use two 2-cycles: assign selected indices
+`x0=0,x3=u,x1=r,x2=r+v`, where r=1 except r=2 for (u,v)=(13,13) or (12,14).
+For v<=12 the labels are 0,u,1,v+1, distinct since u<=v. For v=13, r=1 fails only when u=13;
+for v=14 it fails only when u=12; the displayed r=2 fixes each. All indices stay in 0..27.
+
+**Nonmatching case.** Put A=w-u=v-z. Here A>0 and v!=w; otherwise the case is matching.
+Order the cycle (+v,-z,+u,-w), with selected indices
+`x1=r, x3=r+v, x0=r+A, x2=r+w`.
+Before translation the set is {0,A,v,w}. We have A+v=v+w-u<=22, v+w<=28 and
+A+w=v+w-z<=27. Thus only the last two sums could be 27. Choose r=0 if neither is 27;
+otherwise choose r=1. A new collision at r=1 can occur only if one of those sums was 25,
+while the other was 27. Their difference is z, so this requires z=2 and v+w=27.
+Solving u+v=w+2 with 6<=u<=v gives just (u,v,w,z)=(9,10,17,2) or (7,11,16,2).
+For these use the other order (+u,+v,-w,-z), root 0:
+`x0=0,x1=u,x2=u+v,x3=z`. Their label sets are {0,9,8,2} and {0,7,9,2}, distinct.
+
+For ordinary r=1 the other sums A+v+2<=24 and each root/other sum <=24; every coordinate is
+at most max(v,w)+1<=23. So the only possible new collision was exactly the pair of 25/27 sums
+already isolated. These explicit cycles therefore give valid pair-disjoint token permutations.
+Give bins 0,1 one pair each and bins 2..7 two pairs each, reserve the four selected pairs and fill
+all remaining slots. Permuting the four selected tokens changes sums by twice the four deviations;
+all odds are covered once. This is a uniform hand candidate, PROOF-SKETCH, not yet adopted as PROVED.
+
+**Predictions BEFORE validation.** There should be 284 sorted targets: write t_i=68+2r_i for the
+four lower targets. Sorted r in 0..21 sum to 32. The unrestricted four-part generating coefficient
+is 351; subtract the 67 partitions with largest part >=22 (remaining total 0..10, at most three
+parts), giving 284. Check this arithmetic via an independent bounded generating-function DP,
+then compare direct low quadruples with the signed-parameter domain. Predict 45 matching cases,
+two exceptional nonmatching cases and 237 ordinary cases, all with literal certificates.
+Cap 500 inputs / five process CPU seconds; stop on disagreement or construction/control failure.
+No broader boundary, candidate search or cap increase.
+
+**Controls / unexpected check:** omit the root correction at (u,v,w,z)=(8,10,17,1): pair collision.
+Use the ordinary alternating r=1 in both z=2 exceptions: pair collision. Omit r=2 in the two
+paired cases: pair collision. Preserve coverage but change sums: independent checker rejection.
+Unexpected: u+v=28 occurs only at u=v=w=z=14, where a split into two 2-cycles works even though
+the monotone four-cycle shape would span 28 and fail the index interval. Check that literal witness.
+Both schedules remain paused; this block has no review dependency.

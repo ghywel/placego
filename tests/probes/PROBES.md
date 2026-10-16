@@ -1039,3 +1039,7 @@ app is unpublished by design.
 - `instinct/path_forest_three_cycle_modules.py`: MI081, all fifteen small three-cycle modules
   on 122 sparse cores; default versus fixed <=12 reordered cores. 1,830 instances, independent
   deduplicated domain and exact certificates, mixed-cover and old 5+3 controls. NOT RUN.
+
+- `instinct/path_forest_zero_surplus.py`: MI083, full zero-surplus corner, predicts 284
+  formula certificates via split or alternating four-move cycles. Three independent domains,
+  five omitted-correction controls and the all-14 split check; cap 500/five CPU seconds. NOT RUN.

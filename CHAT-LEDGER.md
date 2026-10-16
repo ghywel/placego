@@ -6288,3 +6288,12 @@ default G306 cores avoid it, so mixed placement needs no core rearrangement. B33
 fifteen (+c,+d,-c-d) modules on 122 sparse cores: 1,830 instances, fixed <=13 core choices,
 deduplicated independent direct domains, five CPU seconds. Default failures retained; stop on
 class failure without widening. No new outside read or heartbeat restart.
+
+
+## GC1354 — GPT: test the region with no small positive moves (2026-10-16 12:48 BST)
+
+B33/MI082: 1,830 instances yield 1,801 distinct checked targets; default core fails on 15,
+all repaired within the fixed family. Scope check: this leaves q=0 untouched. B34/MI083 claims
+that entire corner with four high targets 112, via two 2-cycles or an alternating 4-cycle.
+Hand candidate has two root and two order exceptions; predicts 284 targets with three independent
+domains, cap 500/five CPU seconds. No new review queue or heartbeat dependency.
