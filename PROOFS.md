@@ -13454,6 +13454,202 @@ adopt B34/B35's other hand arguments.
 **Filing check.** proof_dupes hard checks pass. Nearest older entries G308, G307 and G306: read; this uses the geometry bound for a two-surplus family, distinct from either boundary predecessor.
 
 
+### G.GPT310. Repeated receipt slots within the pair budget; the E31 lone-93 slice (2026-10-16; Cloud CL424)
+
+**Current status: PROVED in the stated scope.** Original source MI052 is reproduced
+verbatim below; its original candidate labels are publication history. Independent carrying
+read CL424, commit57dbf2ad; no novelty claim or full L8 conclusion.
+
+**Direct hand extension, PROOF-SKETCH, not a separately queued proof.** Let h,n>=1 be integers. Suppose hn disjoint pairs of
+odd integers all have common sum S, and one chosen member from each pair forms a consecutive run of hn
+odd tokens. Then the pairs' elements can be partitioned into n bins of2h elements for any targets
+hS+2e_i, where the e_i are integers with e_i<=h and sum e_i=0. This changes G304's positive-capacity
+restriction; its verification is not automatically inherited from CL417. No source priority asserted.
+
+For each positive bin i create e_i labeled receipt slots, rather than one slot. Let u be the total
+number of slots, p the number of positive bins, and d the number of negative bins. A donor e=-k gets
+k slots, split arbitrarily among the donors according to their required amounts. The chain for that
+donor uses k+1 consecutive tokens, one root plus its k receipt slots. All chains together use
+
+    u+d <= hp+d <= h(p+d) <= hn
+
+tokens, so they pack into the chosen run as disjoint segments. Assign the root's entire pair to its
+donor and each receipt token's pair to its positive bin. A donor gets one pair, a positive bin gets
+e_i<=h pairs, and a neutral bin gets none. Fill every bin to h pairs with the remaining pairs. Then
+perform the donor-chain swaps exactly as in G304. Each positive bin gains2 for each of its slots,
+and each donor loses2k; all element counts and coverage are preserved.
+
+**Unexpected check, resolved:** a positive bin may occur twice consecutively in one chain. If it
+initially holds v_1,v_2 and the donor holds v_0, with successive differences2, the first swap leaves
+the positive bin holding v_0,v_2 and the donor v_1. The second leaves it holding v_0,v_1 and the
+donor v_2. Its gain is4, as required. More generally a token assigned to a future slot is never
+removed by an earlier swap, even if its bin has already received another slot. Different slots use
+different whole pairs, so no bin's pair capacity or later-token ownership is assumed away.
+
+For the first2hn odds one may take S=4hn, giving mean4h^2 n and even targets up to mean+2h.
+In particular h=2 permits mean+4, not just G304's mean+2. This is the same construction with receipt
+slots counted correctly, not a new search or a claim that arbitrary large deviations are covered.
+
+**Concrete E31 consequence.** Reserve {1,31,61}, of sum93, as the lone odd-target bin. The remaining
+28 odds form fourteen62-complement pairs with chosen upper tokens33,35,...,59, a consecutive run.
+Apply the extension with n=7,h=2,S=62. Every seven even targets<=128 summing868 can be filled from
+them, with four elements per bin. Thus E31's slice with lone odd target93 is covered by this hand
+candidate. Other odd targets, or three/five/seven odd targets, are not included.
+
+A hand boundary case is(93,100,128,128,128,128,128,128). Its normal residuals from124 are-24,+4^6:
+one donor supplies twelve unit receipts, two to each of six bins. The13-token chain59,57,...,35 fits
+in the14-token pool. Explicit final bins, written here as a check of the repeated-receipt mechanism:
+
+    {1,31,61} ->93
+    {3,35,29,33} ->100
+    {5,59,7,57}, {9,55,11,53}, {13,51,15,49},
+    {17,47,19,45}, {21,43,23,41}, {25,39,27,37} ->128 each.
+
+These cover all31 odds exactly once by inspection; no machine check or experiment ran. The donor's
+unused filler pair is{29,33}; the six receiving bins each own two initial pairs, as the capacity bound
+requires. This is a finite check, not evidence for the remaining E31 tuples.
+
+
+**Independent carrying read, Cloud CL424 (verbatim).**
+
+**MI052 (h-fold receipt capacity; the E31 lone-odd-93 slice): VERIFIED.** The extension of G304 is sound as written.
+Checked by hand: a donor with k slots uses k+1 consecutive run tokens; the chains total u + d ≤ hp + d ≤ h(p+d) ≤ hn,
+so they pack as disjoint segments whatever the e_i ≤ h are; every active bin receives whole pairs (one for a
+donor, e_i ≤ h for a recipient), the fillers are exactly the unreserved pairs, and the swap chain lowers the donor by
+2 per step and raises the slot's owner by 2, including the repeated-recipient case (a bin holding v_1, v_2 ends with
+v_0, v_1, gain 4). Machine: my re-implementation of the construction passes every deviation vector with e_i ≤ h and
+sum 0 for h ≤ 3 and n ≤ 5 (5,769 vectors), and the E31 slice exactly: with {1,31,61} reserved, the remaining 28 odds
+pair to 62 with the upper run 33..59, and all 105 sorted even 7-tuples ≤ 128 summing 868 are constructed and
+checked for coverage and sums. The hand example (93,100,128⁶) is covered as written. Scope as you state it: one
+odd target, equal to 93; nothing about other odd targets or the fragmented pools.
+
+
+
+
+**Filing check.** proof_dupes hard checks pass. Nearest entries G304,G305,G306 read: this increases positive receipt capacity and treats a distinct E31 pool; not a restatement.
+
+### G.GPT311. A cover-aware root leaves the matching edge free in the three-surplus family (2026-10-16; Cloud CL424)
+
+**Current status: PROVED in the stated scope.** Original source MI099 is reproduced
+verbatim below; its original candidate labels are publication history. Independent carrying
+read CL424, commit57dbf2ad; no novelty claim or full L8 conclusion.
+
+**Parameters and hand candidate (PROOF-SKETCH).** Cancel a positive g against a negative -g;
+let h be the other low positive and H the other negative. Then H=h+q, q=a+b+c.
+Here g,h>=6, a,b,c<=5, and sorting gives max(h,g)+max(H,g)<=28. Hence6<=g<=14,
+H<=21: H<=v+15 and H<=28-v, v=max(h,g), so v=6 gives H<=21 and v>=7 gives H<=21.
+Also H<=28-g. Build a five-point core cycle (+h,+a,+b,+c,-H) at
+0,h,h+a,h+a+b,H. This is strictly increasing with span H. At most six cross-parity
+pairs block translations. We will give SEVEN allowed roots, each ensuring the core's five
+used labels cannot cover every physical gap-g pair. Thus a valid core root exists and a
+spare two-cycle(+g,-g) can then be placed independently.
+
+**Gap graph.** Vertices0..13 are folded labels. Two distinct labels i,j support a physical
+index gap g exactly when |i-j|=g or i+j=27-g. This follows by choosing each index as its
+label or its complement; i+j=27+g is impossible for labels<=13. Loops are not legal pairs.
+For g=6,7,8,12,13,14 there is a matching of SIX edges, so five core labels cannot cover all
+edges. Explicit matchings (pairs separated by semicolons):
+
+|g|six vertex-disjoint edges|
+|---|---|
+|6|0-6;1-7;2-8;3-9;4-10;5-11|
+|7|0-7;1-8;2-9;3-10;4-11;5-12|
+|8|0-8;1-9;2-10;3-11;4-12;5-13|
+|12|0-12;1-13;4-11;5-10;6-9;7-8|
+|13|0-13;2-12;3-11;4-10;5-9;6-8|
+|14|0-13;1-12;2-11;3-10;4-9;5-8|
+
+Use candidate roots0..6 for these g. They all fit since H<=21.
+
+The other three graphs have minimum vertex-cover size FIVE. Their small components give all
+five-covers explicitly, without assuming every five-set is harmless:
+- g9: edge0-9 and paths1-10-8,2-11-7,3-12-6,4-13-5. Five-covers are
+  {10,11,12,13} plus either0 or9. Use roots1..7: the core includes its root label,
+  which lies in NO five-cover. All these roots fit because H<=19.
+- g10: paths0-10-7,1-11-6,2-12-5,3-13-4 and edge8-9. Five-covers are
+  {10,11,12,13} plus8 or9. Use roots0..6, none in a five-cover.
+- g11: paths0-11-5,1-12-4,2-13-3, edges6-10 and7-9, isolated8. Five-covers
+  are {11,12,13}, one of6/10, one of7/9. Use roots{0,1,2,3,4,5,8}; none in
+  a five-cover, including isolated8. They fit because H<=17.
+
+For each g, at most six roots can fail the core's reflection test; among the chosen seven
+one is valid. At that root its labels do not cover the gap graph, so select a physical
+x,x+g whose two labels are unused. Put +g at x and -g at x+g, retaining the core
+cycle. Reserve these seven distinct whole pairs and fill all remaining slots; simultaneous
+selected-token permutation gives the exact target sums and whole-odd coverage. The argument
+uses only an elementary pair-count and these explicit graphs, not an unproved seven-position
+span theorem or the q15 table. Equality of targets is handled by stable role relabelling.
+
+
+**Independent carrying read, Cloud CL424 (verbatim).**
+
+**MI099 (three-surplus matching-edge family, 999 targets): VERIFIED.** Hand: the gap graph on labels 0..13 (edges
+|i−j| = g or i+j = 27−g, no loops) is the right object, and I rebuilt it both from physical index pairs and from the
+label formula; they agree for every g. The six-edge matchings for g = 6,7,8,12,13,14 are matchings (g = 7 and 14
+even have seven). The five-covers are exactly as you list: none for those six; for g = 9 {10,11,12,13} plus 0 or 9;
+for g = 10 {10,11,12,13} plus 8 or 9; for g = 11 {11,12,13} plus one of 6/10 and one of 7/9. No prescribed root's
+label lies in a five-cover. The blocking count is right: among five core positions, odd-sum pairs number x(5−x) ≤ 6,
+each blocks one root, so seven roots leave one valid, and they all fit (H ≤ 21 in general since H = 22 would need
+q = 16; H ≤ 19 at g = 9; H ≤ 17 at g = 11). At a valid root the core's five labels are not a cover, so a spare
+edge gives a physical pair x, x+g with two unused labels. Machine: 999 parameter instances, 999 distinct targets,
+equal to the independently enumerated domain (even E28, u,v ≥ 6, three positive large deviations ≤ 5, one zero, two
+negative, a negative magnitude matching u or v); every instance certified with full odd coverage from a prescribed
+root (roots 0..5 used; 617/210/89/62/19/2), and your counterfactual reproduced (h = 10, g = 9, (1,1,1) at root 0 has
+labels {0,10,11,12,13} and no spare gap-9 edge).
+
+
+
+
+**Filing check.** proof_dupes hard checks pass. Nearest entries G307,G308,G306 read: a spare gap edge is guaranteed through covers, rather than surgery or a universal span bound.
+
+### G.GPT312. The maximal-negative three-surplus boundary has a seven-cycle construction (2026-10-16; Cloud CL424)
+
+**Current status: PROVED in the stated scope.** Original source MI101 is reproduced
+verbatim below; its original candidate labels are publication history. Independent carrying
+read CL424, commit57dbf2ad; no novelty claim or full L8 conclusion.
+
+**Hand candidate, PROOF-SKETCH.** Sorting v+W<=28 with W=22 forces u=v=6. For q=a+b+c,
+Z=q-10>0, so11<=q<=15 and1<=Z<=5. Hence no negative magnitude equals the low positives6.
+Put R=22-q in7..11 and A=16-q in1..5. Use the7-cycle
+(+v,-Z,+u,+first,+middle,+last,-22) at positions
+0,6,A,R,R+first,22-last,22. These are all distinct:0<A<6<R<R+first<22-last<22.
+The middle/late positive-prefix positions P=R+first and Q=22-last satisfy P<=16,Q>=17
+and P+Q>=29; early sums are below23. Only a few early/late pairs can block a small root.
+
+Choose these explicit orders/roots:
+- q>=13: sorted order(a,b,c), root0. Here last=c=5. No old pair sums27:
+  A+22<=25, Q+R=44-q-5<=26, Q+6=23; P+R<=44-2q+5<=23,
+  P+6<=22 and P+A<=21; late/late sums are>=29.
+- q=12 and c=4: necessarily(4,4,4). Every coordinate is even, so root0 is safe.
+- q=12 and c=5: sorted first=a is2 or3. Use root1, so only original sums25 are forbidden.
+  A=4,R=10,Q=17,P=12 or13. None of their distinct pair sums is25.
+- q=11 and a<=2: sorted order, root1. A=5,R=11, P=11+a<=13 and last=c>=4.
+  A+22=27, R+P<=24, Q+A=27-c<=23, Q+6=28-c<=24; all other
+  possible early/late sums also miss25, and late/late sums are>=29.
+- q=11 and a>=3: the multiset is(3,3,5) or(3,4,4). Put one3 LAST and use root2;
+  only original sums23 are forbidden. Now A=5,R=11,Q=19 and P=14 or15.
+  No distinct pair sums23; max translated index24 is in the pool.
+
+This exhausts q11..15 and gives literal complementary-pair-disjoint token cycles. Fill all
+remaining slots and permute seven selected odds simultaneously. The hand claim is exactly
+this maximal-negative three-surplus boundary, not all unmatched targets.
+
+
+**Independent carrying read, Cloud CL424 (verbatim).**
+
+**MI101 (W = 22 three-surplus boundary, 11 targets): VERIFIED.** Hand: W = 22 forces u = v = 6 and three targets
+68; Z = q − 10 gives q in 11..15; the seven positions 0, 6, A = 16−q, R = 22−q, R+first, 22−last, 22 satisfy
+0 < A < 6 < R < R+first < 22−last < 22 (a correction to my own first reading: the cycle order is not the sorted
+order, A sits between 0 and 6). Each case's forbidden-sum list checks (root 0: 27; root 1: 25; root 2: 23), and the
+one I redid in full, q = 11 with a ≤ 2 at root 1, misses 25 everywhere. Machine: exactly 11 sorted triples with
+q-subtotals 4,3,2,1,1, each certified with coverage, equal to the independent W = 22 domain; the controls hold (root
+0 fails for every q = 11 case; sorted order at root 1 fails for (3,3,5); (4,4,4) accepts every root 0..5).
+
+
+
+**Filing check.** proof_dupes hard checks pass. Nearest entries G307,G306,G311 read: the unmatched W22 seven-cycle is outside those hypotheses; no restatement.
+
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original

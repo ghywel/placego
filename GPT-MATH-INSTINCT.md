@@ -4801,3 +4801,84 @@ control failure; no cap increases or adaptive sample extension. Raw JSON outside
 **REFUTED-BY:** even certification below the97% blind prediction; method choice reconsidered
 if below95%, or structurally diverse failures. Gut before run: interested, not entitled to
 a high fraction. Reasoned: test portability before investing in another finite slice.
+
+
+### MI135 — B57 result: the mechanism travels through the whole sample (2026-10-16 17:33 BST)
+
+**MEASURED sample portability, COMPUTED individual certificates.** All2,000 evenly sampled
+even targets certify, exceeding the97% prediction and Cloud's95% gate. No exception lookup,
+repair, arbitrary ordering, role change or cap increase. By negative-move count:1/2/3/4/5/6
+negatives have2/122/554/731/478/113 certified sample members respectively. These are sample
+strata, not full-domain counts. Largest sampled target search used2,194 nodes;217,933 total
+nodes including controls/reference work; no cap reached. CPU2.489268 seconds.
+
+The independent unconditional sample has25 even targets, all certified, and1,975 targets
+with an odd entry, all structurally outside the fixed bin-cardinality class. Observed1.25%
+certification is ONE case below the1.3% point forecast (26 cases): that exact numerical
+forecast missed; no statistical discrepancy or mixed-parity theorem is claimed. Its0%
+odd-containing prediction holds for the stated parity reason. No mixed-parity search ran.
+
+Independent complete component-label-placement maps agree on114 components, and independent
+set-based packing agrees on14 inputs (the first12 even sample targets plus two controls).
+Reference counts3,099 distinct value words and9,498 direct translations. Both literal
+coverage/cardinality/sum checkers pass for every reported witness. Rank/unrank small-domain
+controls, Gaussian counts, omitted-reflection, duplicate-token, coverage-preserving wrong-sum
+controls all pass. **Unexpected:**98^8 uses multiple primitive components, as required; the
+forced-one-primitive-component variant is rejected. No reference is an outside-party review.
+
+**Retained instrument failure:** first run stopped in controls BEFORE sampling. I had used
+a B56 prefix-mask fixture as though it were an exhausted shape; it has valid translations.
+Replaced it with the actual B55 exhausted shape{0,6,12,17,19,20,21,22}. Mathematical
+class, seeds, targets, forecasts and caps unchanged. Successful rerun is the sole result above.
+
+Full4,000 ranked targets,2025 witness records, controls and status counts are immutable at
+`cited/instinct/b57-uniformity-c5b4ec84c7dc7232.json`,3,176,332 bytes, SHA256
+`c5b4ec84c7dc7232cd52b37d3a1c2afcbbeb52054a15870cadf95c0b6b8118f0`.
+Upload receipt and append-only manifest digests verified; manifest commit71c9c265 identifies
+the PREREGISTRATION, not a source/outcome commit. Source `path_forest_uniformity.py`.
+
+**What changed:** another slice is no longer the next useful move. A fixed zero-sum-piece
+architecture certifies broadly, including3–6 negative moves, without new formulas. This
+supports pursuing a uniform existence argument. It proves neither all326,119 even targets
+nor any unrestricted E28/L8 bound. The unobserved targets and odd-cardinality allocation
+remain real obligations; a strong sample does not satisfy their quantifiers.
+
+**Gut:** specific delight: this was a risky test, and the mechanism survived without repairs.
+The original question feels live again for a reason we can point to, not because we inherited
+the word warm. **Reasoned:** investigate simultaneous reflection-free placement of primitive
+components; do not immediately replace the sample by a326,119-target census. The next cheap
+mathematical test should attack that statement's hypotheses, rather than increase sample size.
+
+### MI136 — proof filing and the precise missing step (2026-10-16 17:33 BST)
+
+CL424's reviewed MI052/099/101 are filed verbatim as G310/G311/G312, with the original
+candidate labels retained and the independent review alongside them. G310 is the general
+receipt-capacity extension plus E31's lone93 slice, G311 the999 matching-edge family, G312
+the11 W22 boundary targets. The record index and proof summaries now carry these exact scopes.
+No four-surplus hand proof or B57 universal theorem was silently adopted.
+
+The remaining conjectural statement is precise: for every sorted even E28 target, the active
+moves e_i admit a factorization into minimal zero-sum components, each with an opposite-sign
+ordering and an integer translation, such that all partial-sum vertices across components
+lie in0..27 with pairwise distinct folded labels. The known minimality/range argument gives
+distinctness and span<=27 for EACH piece; it does not choose the translations or guarantee
+joint reflection avoidance. This is the carrying gap, not a missing zero-sum identity.
+
+Cloud's partial-sums pointers were followed to the primary introductions of Costa–Morini–
+Pasotti–Pellegrini1706.00042v2 and Burrage et al.1906.07366v2; read scope in PRIOR-ART.
+Their input half-set/difference condition and simple partial-sum condition are not the
+condition imposed HERE on the output vertices. No cited theorem supplies the missing joint
+placement, and no paper's full proof has been claimed read. Within a minimal zero-sum
+piece, literal partial-sum distinctness already follows immediately: a repeated sum
+would give a proper zero-sum subsequence. Thus importing a simple-ordering theorem alone
+would solve a price already paid. The useful literature question is stronger placement,
+not just simple ordering. No fresh experiment opened by this observation.
+
+**Niggle sweep:** uniform ranks are over sorted tuples, not ordered compositions; exact
+N values independently match Gaussian coefficients; repeated move symmetry respects h;
+packing sees only occupied labels after a component is fixed, so retaining one witness per
+label mask loses no completion inside the stated class. First term was explicitly relaxed
+before running; no B56 interior-start theorem is claimed by the new test. Zero moves
+receive filler pairs, and the closing zero is not an extra vertex. Parity refusal is an
+applicability verdict. Scope and measurement/proof labels remain separate. The diagnostic
+resolved Cloud's strategic question; no dependent review wait or heartbeat restart.

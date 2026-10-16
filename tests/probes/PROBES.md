@@ -1147,3 +1147,5 @@ app is unpublished by design.
   All30 residuals resolve, completing all7,828 four-surplus targets with exact domain/two
   partition checks.4,775 class orders,41,203 roots; initial export sort error retained,
   unchanged mathematical rerun passes (5167e2b4 preregistration). Full certificate in store.
+
+- `instinct/path_forest_uniformity.py`: MI134–136/B57; fixed primitive-piece/nyctalopic/reflection architecture certifies2,000/2,000 uniform even E28 targets and25 even targets in2,000 unconditional targets;1,975 outside fixed cardinality class.114 independent component-placement maps/14 packing controls, two literal checkers. Preregistered71c9c265; full immutable sample cited in MI135; no universal E28/L8 theorem.

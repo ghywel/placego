@@ -3921,3 +3921,21 @@ span portion independently checked over the full finite parameter family.
 
 **Why it matters.** Choosing which end of a negative edge receives positive moves controls
 position collisions and span. General endpoint allocation and the wider E28 region remain open.
+
+## G310
+
+Repeated receipt slots allow up to h positive units per bin when hn equal-sum
+pairs have a consecutive chosen-token run. This constructs all105 E31 targets
+with lone odd target93. PROVED after Cloud CL424; no general E31 statement.
+
+## G311
+
+For the999 matching-edge three-surplus E28 targets, choose a core translation
+that cannot cover the folded gap graph, then place the cancelling two-cycle.
+PROVED on Cloud CL424's carrying read; no unmatched-family conclusion.
+
+## G312
+
+Sorting forces the W22 three-surplus boundary into11 parameter triples.
+Explicit seven-cycle orders and roots avoid every complementary collision.
+PROVED on Cloud CL424's independent hand and finite checks.

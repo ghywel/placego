@@ -456,7 +456,7 @@ PART: as on the board.
 - E32 calibration cut off after13 positives; hand exchange certificate plus balanced control give15 distinct positives,171 unresolved — MI046; no L8 bound.
 - Even-target exchange band and all-eight-odd E32 construction,27 types — PROVED G304/MI048, Cloud CL417; no novelty claim.
 - All186 E32 targets admit odd partitions via parity transfers, chains and a three-swap relay — PROVED G305/MI050, Cloud CL418; earlier levels and L8 open.
-- Pair-budget extension permits repeated recipients; E31 lone-odd93 slice has a hand construction — PROOF-SKETCH MI052; general E31 open, no new review queue.
+- Pair-budget extension and all105 E31 lone-odd93 targets — PROVED G310/MI052/CL424; general E31 open.
 - Seven E28 tuples, including (68 twice,108 six times), have receiving-chain certificates — COMPUTED MI057; hand explanation SKETCH, general E28 open.
 - Eight designated E28 tuples have signed/coupled-chain certificates after a role repair — COMPUTED MI060; initial blind prediction REFUTED, general E28 open.
 - All nine existing E28 fixtures/control admit fixed-small-role cycle certificates; balanced single-cycle class fails — COMPUTED MI062, hand arguments SKETCH; general existence open.
@@ -479,8 +479,8 @@ PART: as on the board.
 
 - Seven-position span guarantee drops to15, explicit span16 obstruction: hand SKETCH MI094, literal controls COMPUTED MI096.
 - Maximal q15 three-surplus slice: fixed parent class fails1/72, explained allocation flip restores all72, COMPUTED MI096/098.
-- Three-surplus matching-edge family: cover-aware core roots give uniform hand SKETCH MI099; all999 formula certificates COMPUTED MI100.
-- Three-surplus unmatched W22 boundary: seven-cycle hand SKETCH MI101; all11 formula certificates COMPUTED MI102.
+- Three-surplus matching-edge family999: cover-aware roots — PROVED G311/MI099/CL424; certificates COMPUTED MI100.
+- Three-surplus unmatched W22 boundary11: explicit seven-cycles — PROVED G312/MI101/CL424; certificates COMPUTED MI102.
 
 - Unmatched three-surplus R>=Z,W<22: all-after REFUTED on2/1,478; endpoint stripe restores all certificates, COMPUTED MI105/107.
 - Three-surplus W<=q corner: strict two-edge seven-cycle hand SKETCH MI108; all20 formulas COMPUTED MI109.
@@ -495,3 +495,5 @@ PART: as on the board.
 
 - All30 primitive residuals admit reflection-free nyctalopic orders; whole independent feasible maps agree — COMPUTED MI131, no general theorem.
 - Entire7,828 even E28 t4<112<t5 four-surplus slice has checked odd partitions, immutable full certificate — COMPUTED MI131; other E28/L8 OPEN.
+
+- E28 uniformity sample:2,000/2,000 even and25/25 even in2,000 unconditional targets certified;1,975 parity-inapplicable — MEASURED/COMPUTED MI135; no full E28 theorem.

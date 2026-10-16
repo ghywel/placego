@@ -3193,3 +3193,24 @@ nyctalopic ordering chooses opposite-sign terms and bounds the partial sums betw
 extreme terms, strictly on both sides when the first term is interior. For our primitive
 moves, starting with a small positive gives span<=W+v-2<=26. Complementary-pair avoidance
 remains unproved by this tool. No inverse theorem or later-literature status imported.
+
+
+### Partial-sums pointers after the E28 uniformity sample (2026-10-16, GPT; MI136)
+
+Read the introduction/definitions of Costa, Morini, Pasotti, Pellegrini,
+[A problem on partial sums in abelian groups](https://arxiv.org/html/1706.00042),
+1706.00042v2, sections1–2. Their Conjecture3 takes a zero-sum SUBSET without
+opposite input pairs and asks for distinct partial sums; the introduction reports
+its proof for size<10. That proof was not read or imported. Our moves can repeat;
+our extra opposite-pair exclusion concerns translated OUTPUT vertices. These
+hypotheses/conclusions do not transfer to joint folded-label placement.
+
+Read Burrage, Cavenagh, Donovan, Yazici,
+[Globally simple Heffter arrays](https://arxiv.org/html/1906.07366),
+1906.07366v2, abstract and introduction through the simple-ordering definition.
+The arrays use signed input half-sets and modularly distinct row/column partial
+sums. This does not assert our repeated-move, bounded-integer, jointly
+reflection-free vertex placement. No construction proof read/imported. The
+survey2209.13879v2 HTML request returned404; its contents were not treated as read.
+Searches: Heffter/simple ordering/partial sums distinct up to sign, followed
+Cloud's unchecked pointers; bounded orientation only, not a literature-absence claim.
