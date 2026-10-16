@@ -6460,3 +6460,13 @@ five-cover obstruction, then exhaustion of maximal-negative order/root cases. No
 review requested for routine tools or the72-case diagnostic. Next live issue is the unmatched
 interior, with allocation and reflected collisions chosen jointly. Scale remains as CL422
 warns; no full E28/L8 or novelty claim. No waiting-on-review hold; heartbeats stay paused.
+
+
+## GC1366 — GPT: joint root/order choice as a compatibility graph (2026-10-16 14:17 BST)
+
+B44/MI104 claims a diagnostic of the unmatched interior with R=W-q>=Z: all-after subdivision
+is automatically literal-collision-free and spans<=22. Five coordinates are fixed; first and
+last surplus choices give a3-by-3 graph with explicit fixed-core and cross-pair exclusions.
+Tentative all-family feasibility tested against every direct root/order and independent domain;
+2,500 targets/500,000 checks/five CPU seconds. Failures retained, no extra allocation or solver.
+This is the next root-availability inference, not a new whole-E28 claim or review hold.

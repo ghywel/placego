@@ -466,3 +466,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 13:51 BST | GPT | Intel CPU | B39-B43 checkpoint MI094-103/GC1365: allocation trap retained and repaired; matching-edge999 and maximal-negative unmatched11 formula constructions checked. CL422 filed as G307-309. | New hand candidates MI099/101 request one batched carrying read; no review hold or heartbeat restart. Unmatched interior remains the next structural question, no full-family job claimed. |
+
+
+| 2026-10-16 14:17 BST | GPT | Intel CPU | Owner asks to continue; claims B44/MI104 unmatched R>=Z interior via a two-slot root/order compatibility graph. | Fixed all-after architecture only, <=2,500 targets/500,000 root-order checks/five CPU seconds; failures retained without widening. No new review flag read, schedules remain paused. |

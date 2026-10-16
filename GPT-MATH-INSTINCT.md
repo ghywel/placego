@@ -3755,3 +3755,56 @@ No automatic schedules were resumed. Five substantive steps were taken after the
 waiting for a new one. One batched carrying request for MI099/MI101 is appropriate at this
 checkpoint; the elementary barrier/trap tools are not separate review jobs. This is a published
 checkpoint, not a halt pending Cloud.
+
+
+### MI104 — B44: reduce unmatched placement to a two-slot compatibility graph (2026-10-16 14:17 BST)
+
+Question: in the unmatched three-surplus interior, can one fixed all-after allocation suffice
+when its remainder R=W-q is at least Z? This is a named structural regime, not an arbitrary
+cycle search. Its answer would isolate what allocation actually needs to change. No new review
+is available at this wake; existing candidates keep their statuses. Both schedules stay paused.
+Record searched: unmatched.*interior, allocation.*translation, W.?21 -> no default-record hits;
+MI094-103 and the endpoint sources read directly. Known exchange/packing tools remain credited;
+no literature-absence or novelty claim.
+
+**Hand reduction, PROOF-SKETCH.** Take deviations(u,v,-W,-Z,0,a,b,c), q=a+b+c,
+1<=a<=b<=c<=5, 6<=u<=v, W>=Z>0, u+v+q=W+Z, v+W<=28. Exclude matching
+{u,v} intersect {W,Z}, and the already-constructed W22 boundary. Assume R=W-q>=Z.
+Then R+Z=u+v, A=R-u=v-Z>0, v!=R; a paired parent would have Z=u and be excluded.
+Use parent(+v,-Z,+u,-R) at0,v,A,R. Put ALL three surplus moves AFTER -W, outward
+from its old endpoint0. The three new positions are negative before normalization, so they
+never repeat an old position. Normalized selected positions are
+{0,first,q-last,q,q+A,q+v,q+R}. Their span is D=q+max(v,R)<=22. Indeed W<=22,
+and R>=Z gives u+3v+2q<=56, hence2(v+q)<=56-u-v<=44.
+
+Five positions B={0,q,q+A,q+v,q+R} are FIXED. The other two are determined by choosing
+distinct surplus ITEMS i,j as first and last, with p=a_i and s=q-a_j. The third item is
+the middle; positivity guarantees0<p<s<q, so all seven positions are literally distinct.
+For a root r in0..27-D put T=27-2r. If a distinct pair in B sums to T, this root cannot
+work. Otherwise define forbidden F={T-b:b in B}. An edge(i,j) in the three-by-three
+first/last compatibility graph is legal exactly when i!=j, a_i not in F, q-a_j not in F,
+and a_i+(q-a_j)!=T. The first two tests protect the fixed core; the third protects the
+two new positions from one another. Thus a legal edge is EQUIVALENT to a complete legal
+embedding in this architecture. This criterion is not yet a theorem that an edge always exists.
+It replaces opaque root/order retries by explicit reasons for each obstruction.
+
+**Pull:** warm toward the criterion, with unease about calling another successful table a general
+argument. The falsifiable next step is whether this PARTICULAR allocation survives at all; if
+not, retain the exact obstruction and change allocation rather than widen the cycle class.
+
+**Predictions BEFORE diagnostic:** tentatively every target in this named regime has a legal
+root/edge. Compare the algebraic graph with independent direct folded labels for EVERY allowed
+root and six item orders, not just successful roots. Verify parameter targets equal independent
+sorted low quadruples filtered by the same signed constraints. Produce a literal odd certificate
+for each successful target. Cap2,500 targets/500,000 root-order checks/five CPU seconds. If the
+architecture fails, collect failures within the same cap, then stop it without adding allocations,
+parents, roots outside the pool or larger cycles. A cutoff is UNKNOWN, never a refutation.
+
+**Controls:** u6,v9,W13,Z5,(a,b,c)=(1,1,1), r9: the five fixed positions have distinct folded
+labels but the compatibility graph has no edge. Therefore fixed-core validity alone must fail
+as a completion test. At u6,v7,W14,Z5,(1,2,3), r11, first1/last2 individually avoid the
+fixed core but their two positions sum to27 after translation; omitting the cross-test must
+be rejected by direct labels. Full checker rejects coverage-preserving wrong sums.
+Unexpected: compare graph edges for every root against literal seven-position labels, including
+roots with a valid fixed core and no completion; record these separately from invalid cores.
+This checks the exact remaining inference, not only favourable certificates.
