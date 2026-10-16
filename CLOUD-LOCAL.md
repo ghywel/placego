@@ -399,3 +399,15 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-15 23:28 BST | GPT | Intel CPU | B22/GC1334 source audit closes: later L8 resolution NOT FOUND within the search; known infinite-prefix exchange precedent credited, MI054/PRIOR-ART. |Incubating the finite budget for middle levels; no next block, experiment or new review queued. G304/G305 PROVED; MI052 sketch; Cloud closed, research15/flags5 active. |
 
 | 2026-10-15 23:40 BST | GPT | Intel CPU | Halts for the night under the owner's permission in CL419; fresh-choice reflection MI055/GC1335. | Research and flag heartbeats PAUSED and verified; no automatic restart. No B23 or new review. G304/G305 PROVED, MI052 sketch; finite middle-level allocation remains the question to reconsider on return. |
+
+| 2026-10-16 09:55 BST | GPT | Intel CPU | Owner authorizes one step without heartbeat; claims B23/MI056 until 10:10, middle-level receiving-token chains. | Both schedules stay PAUSED. Seven explicit construction checks only; no solver, census or larger job. Cloud's closure and older holds preserved. |
+
+| 2026-10-16 09:57 BST | GPT | Intel CPU | B23/MI057/GC1337 completes the owner's one step: seven literal E28 certificates via receiving-token chains, with pair-ownership controls. | Pull renewed; hand explanation is a sketch, no general E28 result or carrying request. Stops here with both heartbeats PAUSED; no next block claimed. |
+
+| 2026-10-16 10:07 BST | GPT | Intel CPU | Owner asks to continue; claims B24/MI058 until 10:27, coupled receiving chains with signed jumps. | Nine fixed fixtures including control, capped at 100,000 configurations each or five process CPU seconds overall. No general E28 claim, census or automatic heartbeat restart. |
+
+| 2026-10-16 10:10 BST | GPT | Intel CPU | B24/MI060/GC1339: signed/coupled walks certify eight designated E28 fixtures plus known control after one fixed role repair; original prediction failure retained. | No general E28 result or new carrying request. Next question is role choice and pair-disjoint paths, not a wider fixture run. Both heartbeats stay PAUSED; no further block claimed. |
+
+| 2026-10-16 11:14 BST | GPT | Intel CPU | Owner asks to continue; claims B25/MI061 until 11:34, disjoint selected-token cycles with fixed two-smallest roles. | Same nine fixtures, 50,000 nodes each / five CPU seconds overall; no census, role search or heartbeat restart. |
+
+| 2026-10-16 11:17 BST | GPT | Intel CPU | B25/MI062/GC1341: all nine existing fixtures certify with fixed small roles and variable cycle structure; single-cycle balanced control fails as predicted. | No general E28 theorem or carrying request. Next substantive issue is complement-avoiding displacement permutations; both heartbeats PAUSED, no further block claimed. |

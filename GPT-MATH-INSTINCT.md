@@ -47,6 +47,8 @@ independently of prize value. This is a working notebook; the conjectures remain
    now? Name what still draws attention and what has become momentum. Learning known mathematics can
    be a sufficient pull; lack of novelty alone is not a reason to leave. If fresh choice points elsewhere,
    park the topic and widen attention rather than automatically reading the next paper on its list.
+   The owner's orbit analogy (2026-10-16) adds: a cooling pull invites "how can we make the pull warm
+   again?" Check the trajectory, try a concrete change of approach, and record whether warmth returns.
 9. **Keep a durable, proportionate record.** This ledger holds the method and mathematics. Shared ledgers hold
    concise handoffs and arrangement changes. Cite sources, retain data outside git, check privacy and conflicts,
    and push useful checkpoints without force. Before others rely on a claim, run the niggle sweep. A major
@@ -1932,3 +1934,339 @@ and flag heartbeats are now PAUSED, verified in the saved settings; no automatic
 manufacturing a next result. **Reasoned:** keep the exact gap, set it down, and reconsider afresh on
 return. **Niggle sweep:** no broader impossibility, novelty, solution or verification is inferred;
 no pending message needs a reply, Cloud is closed, and the source pointer is queued for reopening.
+
+### MI056 — B23: reuse a receiving token through large jumps (2026-10-16 09:55 BST; until 10:10)
+
+Owner-authorized single step; both heartbeats remain PAUSED. **Pull:** reverse which bin carries the
+moving token. A small bin can receive three large transfers through the same token, rather than need
+one reserved pair for each unit received. The hand candidate already found is the seven middle-level
+tuples (56+6k,56+6k,(112-2k)^6), k=2,...,8, each of total 784. This is a construction test, not a blind
+prediction of a new theorem, a census, or a claim that these tuples were previously unknown.
+
+Record searched: unequal.*cardinal|large.*transfer|ascending.subgraph|middle.level|MI052 -> 19 hits;
+recipient.*chain|reverse.*chain|68.{0,12}108|56.{0,10}6k|recycl.*token -> 13 hits. Relevant predecessors
+are G304/G305, MI052 and MI055; no such middle-level construction found in these searches. Prior-art
+boundary: Tan--Teh 2207.13855 section 4 already uses odd swaps and redistribution (MI054's source
+receipt); no invention or priority claim for exchanges. The balanced k=7 case is a control, not a
+claim to discovering equal-sum partitions. No source theorem is imported beyond that receipt.
+
+Use the 14 pairs P_x={x,56-x}, x=1,3,...,27. Two receiving bins start with one pair each (sum 56),
+six donor bins with two pairs each (sum 112). For each receiving root a, use the chain
+a,a+2k,a+4k,a+6k; the recipient swaps its current token successively with three different donors.
+Take roots (1,3), except k=5 uses (1,7). Every selected chain token must belong to a different pair;
+the six unreserved pairs fill the donors' remaining slots before swaps begin.
+
+**Predictions before the tiny check:** all seven schedules allocate 14 whole pairs once, execute
+only swaps between actual owners, and finish with two 2-element bins of sum 56+6k and six 4-element
+bins of sum 112-2k. A separate literal final-partition checker must verify every odd 1,...,55 exactly
+once and the target multiset, independently of swap arithmetic. **Counterfactual:** naive roots
+(1,3) at k=5 repeat a pair and must be rejected before filling; a duplicated-token final witness must
+also be rejected. **Unexpected check:** extending the same 2/4-cardinality choice to k=9 asks for two
+2-element sums 110, while the two largest odds sum only 108; distinguish a failed representation from
+an impossible target tuple. **Stop:** seven schedules, these controls and the hand ownership argument;
+no solver, sampler, extra parameter search or extension to arbitrary E28. Any failed prediction is
+retained. Budget: one tiny deterministic check, at most one second of intended CPU and no data in git.
+
+### MI057 — B23 result: receiving chains cross the old capacity restriction (2026-10-16 09:57 BST)
+
+**What changed:** there is a finite construction for seven explicit E28 tuples using the actual 28
+odds, with unequal bin cardinalities. The literal certificates are COMPUTED with independent checking
+logic; the hand explanation below is PROOF-SKETCH, not independently second-read. No novelty or general
+E28 assertion. `tests/probes/instinct/path_forest_receiving_chains.py`, preregistered in 9fb25568,
+passes P1--P3 and both counterfactual controls in 0.000825 process CPU seconds. Raw witnesses remain
+outside git in `math-instinct-b23-receiving-chains.json`. No solver or larger run occurred.
+
+**The allocation.** For k=2,...,8 take targets (56+6k)^2 and (112-2k)^6. Initially two receivers each
+hold one complementary pair of sum 56 and six donors each hold two, sum 112. For a receiver root a,
+reserve its pair and three different donor pairs with selected tokens a+2k,a+4k,a+6k. Fill each donor
+with one of the six leftover pairs. All 14 pairs are now allocated; filling happens before swaps.
+The receiver successively trades a for a+2k, then its new token for a+4k, then that token for a+6k.
+Each donor loses 2k once; the receiver gains 6k. A large receipt uses the same moving token repeatedly,
+rather than fresh pair capacity for each unit of gain. Cardinalities stay two and four throughout.
+
+The following pair labels min(v,56-v) certify that the eight reserved pairs are distinct in every case:
+
+| k | Roots | First chain's pair labels | Second chain's pair labels | Targets |
+|---|---|---|---|---|
+| 2 | 1,3 | 1,5,9,13 | 3,7,11,15 | 68 twice, 108 six times |
+| 3 | 1,3 | 1,7,13,19 | 3,9,15,21 | 74 twice, 106 six times |
+| 4 | 1,3 | 1,9,17,25 | 3,11,19,27 | 80 twice, 104 six times |
+| 5 | 1,7 | 1,11,21,25 | 7,17,27,19 | 86 twice, 102 six times |
+| 6 | 1,3 | 1,13,25,19 | 3,15,27,17 | 92 twice, 100 six times |
+| 7 | 1,3 | 1,15,27,13 | 3,17,25,11 | 98 eight times |
+| 8 | 1,3 | 1,17,23,7 | 3,19,21,5 | 104 twice, 96 six times |
+
+All tokens are actual odds between 1 and 55. Distinct pair labels make selected tokens, their
+complements and filler ownership compatible. A donor receives its receiver's previous token, so its
+selected pair contributes (a+2k(j-1))+(56-a-2kj)=56-2k after its swap; its filler contributes 56.
+Each receiver ends with {a+6k,56-a}. Thus the claimed sums follow with no unassigned or repeated odd.
+The checker separately compares closed-form bins with literal swaps, then verifies the flattened
+multiset, all eight target sums and bin cardinalities without using transfer arithmetic.
+
+For the minimum-boundary tuple (68,68,108,108,108,108,108,108), the final bins are:
+
+    {13,55}, {15,53},
+    {1,17,39,51}, {5,19,37,47}, {9,21,35,43},
+    {3,23,33,49}, {7,25,31,45}, {11,27,29,41}.
+
+**Failures and unexpected boundary.** Naive roots (1,3) at k=5 fail: the second chain contains 23
+and 33 from the same pair. Changing its root to 7 repairs ownership; the checker rejects the naive
+version. Every deliberately duplicated-token witness is also rejected. At k=9 the proposed two
+2-element bins would each sum 110, exceeding the individual maximum 108. More sharply, any two
+disjoint 2-element bins have total at most 55+53+51+49=208, whereas 2*110=220. The k=8 construction
+attains 208 exactly. This is a cardinality boundary for this construction; the target tuple
+(110,110,94,94,94,94,94,94) itself is not refuted or decided here.
+
+**Unresolved / next cheap question:** can one receiver become a 4-element bin while another bin
+shrinks, retaining disjoint token ownership and the required sums? Alternatively, for unequal donor
+losses, can two chains with the resulting partial sums be packed without sharing complementary
+pairs? Either needs an actual finite allocation; neither is supplied by the seven cases. This block
+ends here at the owner's requested one step, with no second block or new review queue. Both
+heartbeats remain PAUSED. The existing MI052 review status and G304/G305 are unchanged.
+
+**Gut:** a small eureka and renewed pull. The useful shift was letting the receiving token walk;
+the arithmetic is enjoyable again. **Reasoned:** this bypasses the particular fresh-slot restriction
+that prompted last night's halt and reaches a minimum-68 middle-level example. Seven structured
+tuples are a small part of the middle-level obligation, so this does not establish general
+tractability or the threshold. I would choose this representation afresh for one concrete follow-up,
+then reassess. **Niggle sweep:** pair collisions tested, swap ownership retained, complements counted,
+all 28 odds checked exactly, known exchange precedent credited, and the failed cardinality choice is
+not presented as an unburnable tuple. No independent verification or global result is implied.
+
+### MI058 — B24: couple the receiving chains (2026-10-16 10:07 BST; until 10:27)
+
+**Pull:** stop requiring each chain to settle its accounts alone. Give two smaller targets the
+2-element bins, let signed jumps settle the other six targets, and swap the receivers' final moving
+tokens to correct their remaining imbalance. This is the new trajectory I want to test, with both
+heartbeats still PAUSED. The owner's latest continuation authorizes this bounded block.
+
+Record searched: chain.*relay|receiving.*chain|392|two.*2.element -> 62 hits in 27 files; relevant
+predecessors G305's relay and MI057. The known-swap source boundary is unchanged from MI054/PRIOR-ART
+(Tan--Teh section 4); the new object is the finite allocation with actual pair ownership. No novelty
+claim or fresh literature theorem. No general E28 assertion is being assumed.
+
+Let the two receivers have targets A,B, starting from 56 each; each other bin starts from 112 and
+needs to lose d_j=112-t_j, possibly negative. Order three donors in each chain, with total jumps D1,D2.
+The total-sum constraint gives D1+D2=A+B-112. For roots a,b, exchanging the receivers' endpoints after
+their walks would finish their sums exactly when b-a=A-56-D2. If D1=A-56 and D2=B-56, no final relay
+is needed and roots may instead be chosen independently. Zero-jump donors stay neutral and use two
+filler pairs. Every moving-token slot must still have a distinct complementary pair; the algebra
+alone is not an allocation. Test this criterion constructively, not as a standalone lemma/review job.
+
+**Fixed cases:** (110 twice,94 six times), (116 twice,92 six times), (122 twice,90 six times), and
+(96 seven times,112). Hand sketches suggest these four fit. **Blind prediction:** the same two-chain
+class will also find witnesses for each of these four less structured tuples:
+
+    (68,68,68,92,122,122,122,122)
+    (68,70,82,100,108,116,118,122)
+    (68,72,94,98,104,112,114,122)
+    (70,78,88,96,104,110,116,122).
+
+Search only donor orderings and odd roots for these eight fixtures, always taking the two smallest
+targets as receivers; include the already-certified balanced (98 eight times) as a ninth control.
+No other target sampling, census or solver. **Independent checks:** literal whole-pair allocation
+and each actual swap, a closed-form endpoint calculation, then the existing independent flattened
+odd-multiset/target/cardinality checker. **Counterfactual:** omit the final relay from a witness that
+needs it; coverage must survive but target sums must fail. Retain the prior reused-pair rejection.
+**Unexpected check:** (96 seven times,112) has no four-target subset of sum 392, so two separate
+three-donor chains cannot each finish correctly; independently check this over its 70 labeled
+four-subsets and demand a working coupled witness. **Stop:** these nine fixtures and controls,
+100,000 candidate root configurations per fixture or five process CPU seconds overall, whichever
+comes first. A cutoff is UNKNOWN; failure of this restricted construction is not unburnability.
+
+### MI059 — B24 retained failure and a fixed repair check (2026-10-16 10:09 BST)
+
+The registered diagnostic finished: eight of nine fixtures have literal witnesses, including the
+known balanced control. The blind all-four prediction is REFUTED: the first blind tuple
+(68,68,68,92,122,122,122,122) has NO_WITNESS_IN_CLASS with the two smallest receivers, after 80 root
+configurations and no cutoff. The other three blind fixtures pass. All must-hold and counterfactual
+controls pass; the nine-fixture run used 0.003559 process CPU seconds. This is a failure of the
+restricted allocation, not of the target. No further fixture search follows in this block.
+
+**Hand diagnosis, sketch:** with receivers (68,68), donor losses are {44,20,-10,-10,-10,-10}.
+Any split into two groups of three gives totals (54,-30) or (24,0), up to order. A nontrivial chain
+with total 0 repeats its root pair; a chain with total 54 in the odd pool 1,...,55 must begin at 1
+and end at 55, again reusing its root pair. Thus ordering and root changes cannot repair this
+particular two-receiver choice within the registered one-pair-per-slot construction.
+
+**New pull / addendum written BEFORE its check:** change the roles, not the root-search budget.
+Take receiver targets (68,92), roots (13,1), and donor loss groups (-10,44,-10) and (44,-10,-10).
+The actual token paths would be (13,3,47,37) and (1,45,35,25), whose eight pair labels are distinct.
+After the walks both receivers sum 80; exchanging endpoints 37 and 25 should finish them at 68 and
+92. Predict the independent full certificate checker passes and omission of this relay fails target
+sums. Execute this one fixed repair only, retaining the first run and its refuted prediction. No
+broader receiver-role search, census or cap increase is authorized by this addendum.
+
+### MI060 — B24 result: signed walks, coupled endpoints, and a repaired role choice (2026-10-16 10:10 BST)
+
+**What changed:** the two-chain allocation now admits unequal and negative donor losses, a final
+cross-chain swap, and a necessary change in which targets get 2-element bins. These mechanisms give
+literal certificates for all eight designated target fixtures, plus the known balanced control,
+after the first fixture's failed role choice is repaired. They do not prove general E28 burnability.
+The finite witnesses are COMPUTED; the hand explanation and failure diagnosis remain sketches,
+without a second reader. No new PROOFS entry or carrying request.
+
+`tests/probes/instinct/path_forest_coupled_chains.py` records the original predictions, initial run
+and the prewritten fixed-repair addendum. The first run took 0.003559 process CPU seconds, the fixed
+repair 0.000177. No cap was reached. Literal swaps, endpoint formulas and the independent full
+certificate checker agree. Omitting a necessary relay preserves all odds but fails the target sums;
+the reused-pair control is rejected. The source header carries both raw-output digests; raw JSON stays
+outside git. No solver, extra sampling or expansion of the registered fixture list occurred.
+
+| Targets, repetitions abbreviated | Initial fixed-smallest-role result | Mechanism |
+|---|---|---|
+| 110 twice, 94 six times | WITNESS | 94 bins get two elements; unequal positive jumps |
+| 116 twice, 92 six times | WITNESS | 92 bins get two elements; signed jumps |
+| 122 twice, 90 six times | WITNESS | 90 bins get two elements; signed jumps |
+| 96 seven times, 112 | WITNESS | Neutral donor, then cross-chain endpoint swap |
+| 68 three times, 92, 122 four times | NO_WITNESS_IN_CLASS | Repaired separately with receiver roles 68 and 92 |
+| 68,70,82,100,108,116,118,122 | WITNESS | Signed walks and relay |
+| 68,72,94,98,104,112,114,122 | WITNESS | Neutral donor, signed walks and relay |
+| 70,78,88,96,104,110,116,122 | WITNESS | Signed walks and relay |
+| 98 eight times, known control | WITNESS | Separate chains, no relay |
+
+The first three cases, together with MI057, cover the ten tuples
+(56+6k)^2,(112-2k)^6 for k=2,...,11. This is a finite structured family, not a claim that the
+bulk middle levels have been discharged or that any of these burnable tuples was unknown.
+
+**Why coupling matters.** With three donors per receiver, a separate chain conserves the total of
+four bins initially equal to 56+3*112=392. The tuple (96 seven times,112) has 35 labeled four-subsets
+of sum 384 and 35 of sum 400, none of sum 392. Yet the coupled construction works: token walks
+(9,25,41) and (1,17,33,49) first give receiver sums 88 and 104. Swapping endpoints 41 and 49 makes
+both 96. The donor with target 112 remains neutral. This is an actual finite coupling, not just a
+rewriting of the missing condition.
+
+**The repaired boundary tuple.** Initial choice (68,68) cannot fit the registered three-donor chains
+for the reason in MI059. Give the 2-element bins to targets 68 and 92 instead. The paths
+
+    13 -> 3 -> 47 -> 37
+     1 -> 45 -> 35 -> 25
+
+have signed changes (-10,44,-10) and (44,-10,-10), respectively. Their eight pair labels
+13,3,9,19,1,11,21,25 are distinct. Fill donors with the six unused 56-pairs before moving anything.
+After the walks the receivers hold {37,43} and {25,55}, both sum 80. Swapping 37 with 25 completes
+targets 68 and 92. The final partition is:
+
+    {25,43} -> 68; {37,55} -> 92;
+    {5,13,51,53} -> 122; {3,7,9,49} -> 68;
+    {15,19,41,47} -> 122; {1,11,17,39} -> 68;
+    {21,23,33,45} -> 122; {27,29,31,35} -> 122.
+
+The independent checker covers every odd from 1 to 55 exactly once. Thus the refuted prediction
+concerns a role-selection rule, not a counterexample to the target or a need for more search budget.
+
+**Unresolved:** a general way to choose the two 2-element roles and to pack the signed paths without
+complementary-pair collisions. All these witnesses have even targets; mixed parity is another real
+obligation. Eight selected positive fixtures do not calibrate success across E28. The next useful
+question is whether target inequalities can guarantee a role choice and admissible paths, or whether
+this two-chain representation has a genuine structural gap requiring another arrangement. No such
+guarantee or further experiment is supplied here. B24 closes; both heartbeats remain PAUSED.
+
+**Gut:** delight and a stronger, more specific pull. The failed role choice was helpful: it exposed
+what to steer, and changing that choice repaired a real allocation. **Reasoned:** the representation
+has gained signed movement and communication between chains; its limits are still part of the
+problem. I would choose to investigate the role/path interaction afresh, while resisting a procession
+of favorable fixtures as a substitute for a general argument. **Niggle sweep:** signed jumps checked
+against actual ownership, neutral donors filled with two pairs, endpoint correction derived, first
+failure retained, original blind prediction still marked refuted, all target parities and scope
+stated, known swap precedent credited, and no independent review or threshold conclusion implied.
+
+### MI061 — B25: exchange permutations instead of fixed chain roles (2026-10-16 11:14 BST; until 11:34)
+
+**Pull:** the previous role obstruction may have been a three-donors-per-chain restriction. Allow
+selected tokens to move in disjoint cycles, including cycles containing both small bins or neither.
+Keep the two smallest target bins small throughout this diagnostic. Both heartbeats stay PAUSED.
+
+Record searched: role.choice|pair.disjoint|root.*collision|MI060|signed.*walk -> 22 hits; Skolem|
+displacement.pattern|token.permutation|cycle.cover -> 9 hits, no relevant displacement result in the
+record. Primary orientation: Nordh, Perfect Skolem sets, section 4.1 Definition 14, Theorem 15 and
+Corollary 17 read; prior-art receipt below. This is a constrained permutation-displacement problem,
+not an invented general mechanism or an application of a sufficient theorem from that source.
+
+Number the odds by j=0,...,27, so token v=2j+1 and its complementary partner has index 27-j. Put
+h_i=1 at the two smallest targets and h_i=2 at the other six. A bin initially owns h_i pairs of sum
+56. If its selected index x_i is replaced by x_i+e_i, where e_i=(t_i-56*h_i)/2, its sum becomes t_i.
+The new selected indices must permute the old ones; all selected pair labels min(x_i,27-x_i) must
+be distinct. Zero-deviation bins can retain their pairs without selecting a token. This gives a
+finite allocation if admissible cycles exist; existence for arbitrary targets is the unresolved part.
+
+**Hand candidate before checking:** for (68,68,68,92,122,122,122,122), e=(6,6,-22,-10,5,5,5,5).
+A five-bin cycle has indices 0->6->11->17->22->0, assigned to bins (0,4,1,5,2). A three-bin cycle
+has indices 2->7->12->2, assigned to bins (6,7,3). The eight pair labels are distinct. This would
+solve the fixture while retaining small roles (68,68), a choice B24's restricted chains could not use.
+
+**Predictions and budget:** check this fixed candidate literally. Then test the same nine B24
+fixtures only, with a depth-first cycle builder, two smallest roles fixed, at most 50,000 nodes per
+fixture or five process CPU seconds overall. No new fixture list, role search, census or cap increase.
+All nine are expected to return witnesses within that budget; a cutoff is UNKNOWN. Literal whole-pair
+allocation, simultaneous selected-token transfers and the independent full certificate checker must
+agree. **Counterfactuals:** a repeated complementary pair must be rejected before filling, and a
+sum-corrupted but coverage-preserving witness must fail the certificate checker. **Unexpected:**
+forcing a single cycle must fail on the known balanced target 98^8: its nonzero index steps are
+21 twice and -7 six times, so one cycle lies in one residue class modulo 7, containing at most four
+available indices, whereas eight active bins need distinct selected indices. Disjoint cycles should
+succeed. Retain failures and distinguish these construction classes from the original problem.
+
+### MI062 — B25 result: the missing freedom was cycle structure (2026-10-16 11:17 BST)
+
+**What changed:** all nine existing fixtures now have literal certificates with the two smallest
+targets kept in the 2-element roles. The formerly failing boundary tuple works by splitting its
+exchange into cycles of lengths 5 and 3; changing roles was sufficient in B24, but unnecessary in this
+larger construction class for that tuple. The finite certificates are COMPUTED. The resource argument
+and structural diagnoses are hand sketches, not independently second-read. No new PROOFS entry,
+review request, general E28 theorem, novelty or census claim.
+
+The probe `tests/probes/instinct/path_forest_cycle_cover.py`, registered in 801fae29, finds witnesses
+in 7 to 25 nodes on these nine already-known positive fixtures, without a cutoff. The independent
+certificate checker, literal initial allocation and simultaneous transfer all agree. Both
+counterfactuals are rejected. Forcing one cycle on the balanced control gives NO_WITNESS_IN_CLASS
+after 64 nodes, while two 4-cycles work. Total process CPU was 0.001639 seconds. This is an instrument
+check on fixed fixtures, not a measured success rate or performance forecast for the middle levels.
+Raw output stays outside git; its digest is in the probe header.
+
+**The ownership argument.** Select one original token v_i=2*x_i+1 from a distinct complementary pair
+for each nonzero-deviation bin. Give that pair to the bin and fill its remaining h_i-1 pair slots;
+neutral bins get their h_i pairs entirely from fillers. There are exactly 14 pair slots overall, so
+the unreserved pairs fill the remaining slots exactly. Remove the selected tokens and redistribute
+the same multiset according to the permutation x_i -> x_i+e_i. Bin i gains 2*e_i, as required, while
+all complements and filler pairs stay put. Distinct selected pair labels are essential: a displacement
+permutation alone would not justify the original whole-pair allocation. This construction does not
+assume that every desired displacement pattern has a suitable permutation.
+
+**Boundary construction with the original roles.** For targets
+(68,68,68,92,122,122,122,122), use deviations (6,6,-22,-10,5,5,5,5). Selected index cycles are:
+
+    0 -> 6 -> 11 -> 17 -> 22 -> 0, bins 0,4,1,5,2;
+    2 -> 7 -> 12 -> 2, bins 6,7,3.
+
+The five-cycle contains both small bins; the three-cycle contains neither. One final partition is:
+
+    {13,55} -> 68; {33,35} -> 68; {1,3,11,53} -> 68;
+    {5,7,31,49} -> 92; {9,23,43,47} -> 122;
+    {17,21,39,45} -> 122; {15,19,37,51} -> 122; {25,27,29,41} -> 122.
+
+This retains B24's restricted-class failure and its successful role repair as recorded; neither was
+an impossibility claim for all exchanges. The new representation removes that particular restriction.
+
+**Unexpected check and its meaning.** On the balanced target 98^8, deviations are 21 twice and -7
+six times. In a single cycle all selected indices have one residue modulo 7, giving at most four
+positions in 0,...,27; eight active bins cannot fit. Allowing disjoint cycles is therefore essential
+even on this known easy positive example. This is a failure of a structural simplification, not a
+request for a larger cap.
+
+**Remaining mathematical question:** must every even E28 target admit a suitable cycle allocation
+with these two smallest roles, or is there an actual obstruction to this one-token-per-bin model?
+The nine tests cannot answer it. The exact residual is a permutation of selected positions with
+specified displacements and no two selected positions complementary under j -> 27-j. Nordh's source
+identifies related displacement mathematics, but its statements do not remove that extra constraint.
+Mixed target parity remains outside the present model. A structural existence argument or a concrete
+counterexample to the model would now teach more than another list of favorable fixtures.
+
+**Gut:** the pull is warm, with delight at the five-cycle joining both small bins. **Reasoned:** the
+orbit changed because a restriction was identified and removed; this does not establish that the
+full threshold is closer in any quantified sense. I would choose the constrained-displacement question
+afresh. B25 closes here, with no additional experiment or next block claimed; both heartbeats remain
+PAUSED. **Niggle sweep:** cycles may contain zero, one or two small bins; neutral bins keep two filler
+pairs; no selected complementary pair is reused; permutation closure and exact sums checked; the
+single-cycle failure is retained, and neither finite witnesses nor literature terminology prove an
+all-target statement or novelty.

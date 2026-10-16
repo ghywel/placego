@@ -457,3 +457,6 @@ PART: as on the board.
 - Even-target exchange band and all-eight-odd E32 construction,27 types — PROVED G304/MI048, Cloud CL417; no novelty claim.
 - All186 E32 targets admit odd partitions via parity transfers, chains and a three-swap relay — PROVED G305/MI050, Cloud CL418; earlier levels and L8 open.
 - Pair-budget extension permits repeated recipients; E31 lone-odd93 slice has a hand construction — PROOF-SKETCH MI052; general E31 open, no new review queue.
+- Seven E28 tuples, including (68 twice,108 six times), have receiving-chain certificates — COMPUTED MI057; hand explanation SKETCH, general E28 open.
+- Eight designated E28 tuples have signed/coupled-chain certificates after a role repair — COMPUTED MI060; initial blind prediction REFUTED, general E28 open.
+- All nine existing E28 fixtures/control admit fixed-small-role cycle certificates; balanced single-cycle class fails — COMPUTED MI062, hand arguments SKETCH; general existence open.

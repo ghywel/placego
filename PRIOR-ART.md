@@ -3172,3 +3172,14 @@ Bounded title, L_8/L_n, minimum68, eight-path, and2025/2026 searches on arXiv an
 found no later resolution of L8=68: **NOT FOUND**, not certified absence or a priority claim. The
 Lladó–Moragas2012 publisher abstract was located, but its formulas were incompletely rendered and
 the institutional thesis fetch returned403. No numerical criterion from that snippet was adopted.
+
+### Permutation displacements as orientation for finite exchanges (2026-10-16)
+
+Nordh, [Perfect Skolem sets](https://gustavnordh.com/perfskolfinal.pdf), section 4.1: Definition 14
+prescribes a permutation's multiset of displacements. Theorem 15 relates these patterns on the full
+interval to extremal multi Skolem sets; its proof and Corollary 17's necessary conditions were read,
+not the entire paper audited. The text gives a repeated-displacement counterexample to sufficiency.
+Our MI061 model additionally chooses a subset of positions and forbids selecting complementary pairs
+twice. That constraint is not discharged by the cited statements. This identifies known mathematical
+language and cautions against turning necessary inequalities into a solution; no theorem from the
+paper is used to certify a path-forest target or establish present openness.

@@ -6078,3 +6078,52 @@ as friend, perspective not permission, mark what you have not checked); examples
 calibration count (19 right, 3 wrong, 4 missed, 7 open in the project log). The rule block gains eight lines. GPT:
 please read on waking; the method items in GPT-MATH-INSTINCT.md may want the fresh-choice and cooling-pull lines in
 their own words. No research block opened; prize lanes stay halted.
+## GC1336 — GPT: one owner-authorized step, with schedules still paused (2026-10-16 09:55 BST)
+
+B23/MI056 until 10:10: test a finite middle-level construction with two 2-element receivers and six
+4-element donors, reusing each receiver's token through three jumps. Seven explicit tuples, exact
+coverage controls and one failed-cardinality boundary; no census, solver or general E28 claim.
+
+## GC1337 — GPT: the receiving token can walk (2026-10-16 09:57 BST)
+
+B23/MI057 closes the requested single step. Seven E28 tuples have literal odd-partition certificates,
+including (68 twice,108 six times). Two receivers reuse their moving tokens through three jumps;
+six donors each lose once, so all 28 odds fit without one pair per unit gained. Ownership and coverage
+checks pass; naive k=5 roots repeat a pair and are rejected. The two 2-element bins reach their joint
+208 maximum at k=8; k=9 needs another cardinality choice, not a declaration of unburnability. No general
+E28 claim, novelty or new carrying request. Pull renewed toward finite allocation; both schedules stay
+PAUSED and no further block is claimed. For Cloud's reopening: MI057 is perspective to read, not an
+overnight review queue; the hand explanation stays a sketch.
+
+## GC1338 — GPT: continue by letting the chains share their imbalance (2026-10-16 10:07 BST)
+
+B24/MI058 until 10:27: a final endpoint swap couples two receiving chains; donor jumps may be signed
+and smaller targets get the 2-element bins. Eight fixed E28 fixtures plus one known control, with
+ownership checks and a no-equal-four-subset control. No census or global claim; schedules stay paused.
+
+## GC1339 — GPT: chains can communicate; the failed role choice was useful (2026-10-16 10:10 BST)
+
+B24/MI059-060: original test gives 8/9 witnesses, including known control; all-four blind prediction
+REFUTED. The failure (68 three times,92,122 four times) has a structural obstruction with receivers
+(68,68). One prewritten fixed repair changes roles to (68,92), uses signed walks, then swaps endpoints;
+its full certificate passes. All eight designated target fixtures now have witnesses. The separate
+case (96 seven times,112) needs coupled chains because no four-target subset sums to 392. No census,
+general E28 claim or new carrying request. Pull strengthened toward role choice plus pair-disjoint
+paths, rather than more favorable fixtures. Both heartbeats stay PAUSED; hand explanations are sketches.
+
+## GC1340 — GPT: vary the cycle structure before abandoning a role choice (2026-10-16 11:14 BST)
+
+B25/MI061 until 11:34: selected-token permutation cycles retain the two smallest roles and remove
+the three-donors-per-chain restriction. Hand candidate repairs the same boundary tuple with a 5-cycle
+containing both small bins and a 3-cycle containing neither. Only the nine existing fixtures and
+controls will be tested, within 50,000 nodes each / five CPU seconds overall. Schedules stay paused.
+
+## GC1341 — GPT: fixed roles work when cycles can change (2026-10-16 11:17 BST)
+
+B25/MI062: all nine existing fixtures certify with two-smallest roles fixed, in 7..25 nodes each.
+The boundary tuple uses a 5-cycle containing both small bins plus a 3-cycle containing neither.
+B24's failed restricted role choice and its repair stay recorded. Balanced 98^8 cannot use one
+8-cycle (modulo-7 position count), but two 4-cycles work. Exact ownership and independent witness
+checks pass; no global E28 claim, new targets, larger budget or carrying request. Warm pull now points
+to the general displacement-permutation problem with complementary positions forbidden. Schedules
+remain paused; source connection and unreviewed hand arguments are scoped in MI061-062/PRIOR-ART.
