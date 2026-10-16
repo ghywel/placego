@@ -3999,3 +3999,47 @@ augmented graph, with a preregistered literal-collision control, before choosing
 Existing MI099/101 carrying request remains pending. Send one concise READ-LEDGER update for
 this checkpoint; do not add routine proof-review jobs while that read is pending. Continue
 independent work without a review gate. Both automatic schedules stay paused.
+
+### MI111 — B47: test the remaining parent rather than assume it deserves repairs (2026-10-16 15:29 BST)
+
+**Question:** in the unmatched three-surplus interior W>q,0<R=W-q<Z,W<22,
+does the all-after parent of MI110 admit a literal/reflection-compatible first/last edge?
+This would complete this parent's coverage or exhibit its exact limits. It is a condition on
+our construction, not a necessary condition for arbitrary odd partitions or the full L8 claim.
+
+**Capture / fresh choice:** specific curiosity, with momentum attached. The owner's question
+about inherited warmth is fair: the earlier label was too unqualified. I would choose this
+bounded test afresh, but not commit in advance to repairing every exception. A broad success
+supports seeking a common explanation; many failures of one kind support changing the parent.
+Record searched: literal.*compatibility, first.*last.*graph, smaller.*remainder -> no hits
+in the default search; MI104-110 and the actual B44/B46 sources read directly. Existing
+Tan-Teh exchange precedents remain credited; this is an internal finite-construction test,
+not a new literature or novelty claim. Cloud's new0f0939c1 is an unrelated instinct entry,
+read and preserved; no new carrying review is assumed.
+
+**Exact instrument:** A=v-R=Z-u>0, m=min(0,A-q), b=A-q-m. The fixed five positions are
+C={0,A,v,Z,A-q}-m. For first item i and last item j, i!=j, the variable levels are
+p=a_i and s=q-a_j. Require no fixed-core reflected pair, p,s outside the literal set
+L={c-b:c in C}, outside F_r={27-2r-b-c:c in C}, and
+2b+p+s+2r!=27. The two variables are distinct because the remaining item is positive.
+The selected coordinates, independently rebuilt by following the cycle, are +v at0,
+-W atv, the three positive steps from A-q to A, +u atA, -Z atZ, all shifted by r-m.
+Compare every graph edge against direct folded labels, preserving item identities when equal.
+
+**Predictions before any run:** graph/direct equivalence and full certificates MUST hold;
+signed and independent sorted-target domains MUST agree. Blind expectation: some fixed
+all-after targets will fail, possibly already through literal overlap; retain a zero-failure
+outcome too. No exact family count predicted. Test at most5,000 targets/500,000 root-order
+comparisons/five CPU seconds; cap means UNKNOWN, no increase or fallback solver.
+
+**Controls / counterfactuals:** (u,v,W,Z;a,b,c)=(6,6,15,11;4,5,5), sorted first4/last5,
+reuses the old0 position; reflection-only checks should accept at root0 while literal checks
+reject. First5/last4 should give a valid certificate. The nonzero-offset control
+(6,14,12,11;1,1,1) has b=2 and should certify at root0. Matching control
+(6,10,10,9;1,1,1) has A=q and must be rejected before any fixed-set deduplication.
+Coverage-preserving wrong target sums must fail the independent checker.
+**Unexpected check:** distinguish targets with NO literal-admissible item order from those
+whose orders survive literally but lose all roots through reflection; record the maximum
+actual span separately from MI110's bound25. These distinguish a scaffolding failure from
+a translation problem. Stop after this architecture's complete capped diagnosis; no repairs
+or more general cycle search are part of B47. Both schedules remain paused.

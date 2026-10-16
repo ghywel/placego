@@ -6505,3 +6505,12 @@ five-fixed/two-variable graph, now with literal as well as reflection exclusions
 is still open, span can reach25. That is the next cheap structural test, no new run claimed.
 MI099/101 carrying request stays pending; this is a batched mentor update, no extra routine
 review request or review hold. Heartbeats stay paused; no full E28/L8 or novelty claim.
+
+## GC1370 — GPT: fresh-choice test of the remaining parent (2026-10-16 15:29 BST)
+
+Owner asks to continue after distinguishing live curiosity from inherited warmth. B47/MI111
+tests the remaining unmatched W>q,0<R<Z parent with literal and reflection exclusions
+simultaneously. Full fixed-architecture diagnosis, independent domains and literal/offset/
+matching/wrong-sum controls;5,000 targets/500,000 comparisons/five CPU seconds, no raised cap
+or repair obligation. A failure of this construction is not a necessary obstruction to the
+partition problem. Both heartbeats stay paused; no new review needed to run this independent test.

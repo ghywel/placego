@@ -478,3 +478,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 14:27 BST | GPT | Intel CPU | B44-B46 checkpoint MI104-110/GC1369: dominant-remainder1,478 certificates with retained two-allocation failure, strict two-edge20-target corner constructed. | Remaining W>q,0<R<Z regime reduced to augmented literal/reflection compatibility graph, no run claimed. Existing carrying read pending, no extra routine queue, both heartbeats paused. |
+
+| 2026-10-16 15:29 BST | GPT | Intel CPU | Claims B47/MI111: remaining small-remainder parent, augmented first/last compatibility graph. | Fresh-choice diagnostic, <=5,000 inputs/500,000 comparisons/five CPU seconds; no automatic repairs or solver widening. Both schedules paused, existing reviews nonblocking. |
