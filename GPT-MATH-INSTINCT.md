@@ -7522,3 +7522,91 @@ SHA256 `f6aa1aefe9cd343bdf26e3668bdeeb235c23b169cee907eceea5c068245fc54d`.
 Prereg6ed48def; source tests/probes/instinct/path_forest_parity_shifts.py.
 Immutable receipt/manifest verified. No formal proof number, novelty claim,
 additional routine review request or held-lane change.
+
+### MI175 — B77: a common divisor makes run capacity the exact criterion (2026-10-16 22:43 BST)
+
+**Question/pull.** Choose negative runs rather than another ordering table.
+The prefix-sum formulation exposes a useful complete case: if the negative
+HALF-sizes share a divisor g>=2, reflection excludes only one residue of roots.
+The remaining obstruction is genuinely load capacity, and it can fail. Record
+searched: common-divisor-negative/negative-half-gcd/two-bin-capacity/root-residue-
+prefix ->0 hits. MI174's exact prefix-set representation and MI169's parity
+argument read. No new literature-status or novelty claim.
+
+**Exact component statement, PROOF-SKETCH.** Let M=2n be even, p,q positive
+odd, and d_1,...,d_N positive integers with p+q=2K=2 sum d_i and
+ g=gcd(d_1,...,d_N)>=2. The primitive moves(p,q,-2d_1,...,-2d_N) admit a cyclic
+order/translate in0..M-1 with all folded labels distinct IF AND ONLY IF
+
+    max(p,q)<=M-3, and the d's split into two groups each of sum<=n-1.
+
+No anchors or additional nonzero components are included. This is an exact
+criterion within this common-divisor class, not all E28 or all k_min2. The
+load test is the ordinary subset condition K-(n-1)<=sum A<=n-1; it contains no
+cycle order, prefix-reflection or physical-root search. N is arbitrary in the
+hand statement; the checks below use N<=6 for our eight-bin application.
+
+**Necessity.** An odd move M-1 joins0 to M-1 (the same folded label), and a
+larger move leaves the window; hence each positive odd move<=M-3. Rotate any
+cycle to start at p. Its two odd edges separate exactly two parity runs, whose
+negative edges are monotone within each run. A run of negative half-load s
+has coordinate extent2s<=M-1, hence s<=n-1. This is necessary for ANY order,
+not just the constructed one. The list is primitive: a single positive odd
+cannot cancel even negatives; both positives need all negative mass.
+
+**Sufficiency and actual selection rule.** Take ANY load-feasible split A/B,
+put s=sum A,t=sum B, and order within either run arbitrarily. Word:
+p, negatives A, q, negatives B. Set w=p-2s, U=prefixes of reversed A,
+V=prefixes of reversed B, including0 and totals. Selected coordinates before
+translation are w+2U and2V. Every U/V value is a multiple of g.
+The allowable root interval is
+
+    L=max(0,-w), R=min(M-1-p,M-1-2t).
+
+It has at least TWO consecutive integers. If w>=0, L0, M-1-p>=2 and
+M-1-2t>=1. If w<0, L=2s-p and the two upper-bound differences from L are
+M-1-2s>=1 and M-1-q>=2. Thus R>=L+1 in both cases.
+For H=(M-1-w)/2, reflection would require H-h in U+V, hence H-h=0 mod g.
+Choose h=L unless L=H mod g, in which case choose h=L+1. Since g>=2, that
+second integer is not excluded. All vertices fit; same-parity vertices cannot
+reflect, cross-parity sums are now excluded by residue, and each monotone
+class is distinct. This gives the desired cycle with NO ordering or root search.
+Also no hidden label-capacity assumption: K>=2N and K<=2n-3 imply N<=n-2,
+so the N+2 vertices can fit the n folded labels.
+
+**The impossible side is real.** At M28,p23,q25,d=(8,8,8), cap13, no group
+can contain two8's; three items cannot fit into two groups. This primitive
+five-core has no folded-distinct cycle for these fixed moves despite individually
+legal jumps. Corresponding target(102,106,80,80,80,112,112,112) is NOT refuted:
+other slot/move choices remain available. A successful example in the SAME
+high-total regime is p23,q25,d=(4,4,4,4,4,4), split12/12, then the residue rule.
+
+**Predictions BEFORE code/run.** Complete SMALL M28 component-profile domain:
+N1..6; sorted d values1..11 (12375 candidates total); retain K14..25 and g>=2,
+and all odd p<=q<=25 with p+q=2K. High total only, beyond B75. Before construction,
+compute reachable subset sums by a bitset DP with a recovered witness, and compare
+its ENTIRE reachable-sum set with an independent all2^N mask enumeration.
+Predict every capacity-admitted profile/pair constructs with arbitrary input
+order and the prescribed one-of-two root; every capacity refusal is confirmed
+by both instruments. Both outcomes must occur, as the two explicit examples
+above show. All eligible E28 targets are materialized with h=(1,1,2,2,2,2,2,2)
+and6-N zero bins; old/generic literal validators must pass. Report counts as this
+component family's finite checks, not additive target coverage or a full census.
+No arbitrary permutation/role/root search or repair; admissibility is load-only.
+
+Independent/negative/unexpected controls: three non-M28 geometries
+(M6,p1,q3,d=(2));(M16,p11,q13,d=(2 repeated6));
+(M22,p17,q19,d=(3 repeated6)) must certify, testing the general window claim.
+At M28,p=q21,d=(3,3,3,4,4,4) has g1 and capacity split9/12, yet ALL4 roots
+for the fixed first-three3/last-three4 split reflect; retain this outside-scope
+failure and check the already known B74 alternative works. This prevents
+silently promoting the load criterion to gcd1. Unexpected odd divisor g3:
+p=q21,d=(3,3,3,3,3,6) admits a split and the residue root rule must work;
+the theorem is not only about divisibility by4 of half-sizes. Finally p27/q21,
+d=(4 repeated6) fits load capacity but must fail the necessary odd-jump bound.
+Caps12375 candidate profiles,<=5000 profile/pair questions,<=64 reference masks
+per profile,10CPU sec/128MiB; all eligible partitions checked. Stop on mismatch
+or cap, no expanded profile range, fallback or raised cap. Raw outside git.
+Gut: delight that the sumset obstruction contracts to an exact numerical
+criterion in a real class. Reasoned: remaining hard geometry is gcd1 and/or
+other odd-move sign structures, not hidden in this result's statement.
