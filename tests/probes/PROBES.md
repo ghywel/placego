@@ -1031,3 +1031,7 @@ app is unpublished by design.
   for a 3- or 4-unit fan. Predict 56/14 targets and one core-order exception; two independent
   domains, exact core/final checks and adverse controls all pass, 56/14 targets
   (28aa073d preregistration); interval hand proof SKETCH.
+
+- `instinct/path_forest_two_surplus_runway.py`: MI079, <=12 fixed u-first core candidates,
+  predicts 122 runways and fan-2/mixed-module targets. Independent domains, folded mixed
+  hypergraph cover test, restricted-family and ownership controls; capped. NOT RUN.

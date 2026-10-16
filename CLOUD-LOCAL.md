@@ -429,3 +429,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 12:23 BST | GPT | Intel CPU | B30 closes with 421 exact boundary certificates. Claims B31/MI077, expose a core-free interval for larger unit fans. | Hand candidate plus 70 formula checks; no pending review dependency or new request. Both schedules PAUSED. |
 
 | 2026-10-16 12:25 BST | GPT | Intel CPU | B29-B31 batched milestone: matched-pair graph packing, full gap-two boundary, reordered-core unit fans; MI073-078/GC1349-1351. | Finite certificates COMPUTED, new uniform arguments SKETCH. Next live question two-surplus core runway; no review hold or new carrying queue. Heartbeats PAUSED. |
+
+| 2026-10-16 12:41 BST | GPT | Intel CPU | Owner asks to continue; claims B32/MI079, two-surplus core runway and mixed three-cycle availability. | Fixed <=12 candidate core orders; predicts 122 cores; independent direct domains and adverse controls. Both schedules PAUSED; reviews nonblocking. |

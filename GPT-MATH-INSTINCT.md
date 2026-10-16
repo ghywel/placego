@@ -2857,3 +2857,51 @@ challenged; a=0 has its stronger bound b<=18; every selected token and full targ
 Review adoption stays separate from exploration. Both heartbeats remain paused; no review hold
 is imposed on the live question. A single batched READ-LEDGER update will deliver B29-B31 and
 this frontier to Cloud; no new immediate carrying read or routine permission is needed.
+
+
+### MI079 — B32: two-surplus core runway and a mixed three-cycle (2026-10-16 12:41 BST)
+
+**Warm pull:** change the core before changing the target family. Question: every G306 core with
+at most two positive p entries should have an ordering leaving three consecutive lower labels free.
+This would unify the earlier two-unit fan packing. Also test a mixed module (+1,+2,-3): it needs
+positions x,x+1,x+3 rather than a consecutive triple, so its residual obstruction could be different.
+Record searched: runway|two.surplus|three.consecutive -> no default-search hit; MI073-078, G306,
+and the core/fan probes read directly. These are finite placement tools, without novelty claims.
+
+Parameters 6<=u<=v, 0<=a<=b<=5, u+2v+a+b<=28. There should be 122 distinct cores. Counts of
+q=a+b are 1,1,2,2,3,3,3,2,2,1,1, and cumulative sums over (u,v) give u subtotals 69,37,14,2.
+Independently join low sorted triples with high five-tuples containing at least three 112s at total 784.
+Core counts must agree as sets before placement checks.
+
+**Hand reduction.** Start the positive order with u. Permute only the remaining positive steps
+v and any nonzero a,b; try root 0 or 1 (at most twelve candidates). With q=a+b, the total
+B=u+v+q<=22. A valid root-0 ordering leaves labels 1..4 free, because every non-root coordinate
+is at least u>=6 and at most B<=22. A valid root-1 ordering leaves labels 2..4 free if B<=21.
+The B=22 parameter case is uniquely u=v=6,a=b=5, where order (6,5,6,5), root 0, is valid.
+Thus the obstruction is choosing a reflection-free order, not locating a runway afterward.
+
+The previously suggested four choices (u,a,b,v)/(u,b,a,v), roots 0/1, are already insufficient:
+u=7,v=9,a=b=1 has collisions at both roots; u=v=6,a=b=5 has a collision at root 0 and no
+three-label runway at root 1. Interleaving v is therefore part of the preregistered candidate
+class, not a repair invented after a failed run.
+
+**Predictions BEFORE experiment.** All 122 cores admit a runway within these twelve fixed
+candidates. Materialize the core and its (+1,+1,-2) fan and independently check coverage/sums.
+The derived fan-2 domain must equal the direct t4=108 high-four domain containing at least two
+114s; count 122. This overlaps B30 and tests a new mechanism, not 122 newly solved targets.
+Stop on the first failed core, with failure retained; no candidate-class or cap expansion.
+Caps: 150 cores, 2,000 candidate configurations, five process CPU seconds overall.
+
+**Independent mixed-module question, blind prediction:** the folded hypergraph of valid triples
+(x,x+1,x+3), 0<=x<=24, may need at least six occupied labels to block it. Predict no five-label
+vertex cover, by checking all 2,002 such subsets. A refutation is retained as a genuine placement
+obstruction, not an instrument failure. Independently test placing this mixed module around each
+chosen core; predict 122 full certificates and equality with the direct t4=106 high-four domain
+containing both 114 and 116. Neither prediction is assumed by the runway argument.
+
+**Controls / unexpected check:** the restricted four candidates must fail on the two hand cases
+above while the enlarged fixed family succeeds. Reused core pair and coverage-preserving wrong sums
+must be rejected. The three-consecutive-label hypergraph really is blocked by {2,5,8,11};
+compare it with the mixed module's hypergraph as the unexpected discriminator. A hypergraph bound
+is a finite packing tool, not a new standalone proof/review entry. No general E28/threshold claim
+or dependency on a pending outside read. Both schedules remain paused.

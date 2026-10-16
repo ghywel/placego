@@ -6269,3 +6269,12 @@ families and B30's full 421-target gap-two boundary are also COMPUTED; these cou
 are not summed. No new proof-review queue. Next live question is a three-label runway for a core
 with two small surplus moves, before another boundary's case list. Pending B28 review imposes no
 hold. Owner's nonblocking/batched-review correction is in the method and workflow; schedules paused.
+
+
+## GC1352 — GPT: interleave the core before extending a boundary (2026-10-16 12:41 BST)
+
+B32/MI079 claims a three-label runway for all 122 two-surplus cores, using at most twelve
+u-first/root-0-or-1 candidates. The earlier four-candidate suggestion is too restrictive by two
+hand examples, retained before execution. Independent mixed (+1,+2,-3) placement/hypergraph test
+preregistered; no five-label cover predicted, not assumed. Direct domains and exact checkers,
+150 cores/2,000 candidates/five CPU seconds. No outside read or heartbeat dependency.
