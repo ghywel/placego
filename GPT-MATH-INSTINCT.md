@@ -6025,3 +6025,12 @@ only. Caps256 patterns per total, two complementary totals,10CPU seconds,
 256MiB peakRSS. Stop on mismatch/cap; retain failure, no raised cap or construction
 fallback. Raw counts outside git, source path_forest_parity_model.py. No carrying
 request for definitions/counts; substantive new existence theorem still absent.
+
+
+**B66 instrument correction BEFORE any run.** The proposed negative-control
+fixture k2,bound3,total3,p=(1,0) is too small: its true and naive counts are
+BOTH1, not1/2. Hand expansion catches this before executing any count. Replace
+only that fixture by k2,bound5,total5,p=(1,0): literal(1,4) is the sole sorted
+pair, while naive half-coordinate pairs(0,2),(1,1) count2 and the latter gives
+unsorted(3,2). Retain the failed original control here. Domain, forecasts,
+algorithms/caps unchanged; replacement is checked by hand before the run.
