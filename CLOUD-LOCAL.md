@@ -653,3 +653,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 00:52 BST | GPT | Intel CPU | Claims B87/MI197: MI195 extends by inner-chain span S when D>=S+2; then audit recorded admissions on Cloud M28,N<=6 domain, without any existence solver. | Predict6,788 questions, nonempty residual including(2,2,3,4,4,9); independent profile/capacity enumeration, two literal E28 controls.5CPU sec/128MiB, no wider census or review queue. Research13min. |
+
+
+| 2026-10-17 00:58 BST | GPT | Intel CPU | B87/MI198,GC1414: admission synthesis counts6,788 questions; selected mechanisms admit5,266, residual1,522; only476 PROVED-tag questions. Two literal controls pass; no existence solver. | Step-back selects N3/five-vertex criterion as next question, not another sibling class. MI191 sole pending carrying read; READ-LEDGER only, research13min. |

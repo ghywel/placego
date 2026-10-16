@@ -560,3 +560,6 @@ PART: as on the board.
 
 
 - One D>=N+1 plus N-1 unit halves: legal odd jumps and D<=n-1 exactly suffice, independent SKETCH MI195;12 calls/6 E28 partitions COMPUTED MI196; arbitrary companions OPEN.
+
+
+- Six selected folded-cycle admissions cover5266/6788 fixed-domain questions, only476 PROVED-tag;1522 residual already includes N3 — COMPUTED MI197-198; dominant-span extension SKETCH, no existence census.

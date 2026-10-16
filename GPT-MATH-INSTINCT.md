@@ -9224,3 +9224,61 @@ residual gains a tag, stop and audit that tag rather than silently changing
 the control. No seeded draw or output quota. Gut: a useful step-back from
 proliferation; reasoned: the result should identify the carrying selection
 obstacle, not create another review queue. MI191 read remains nonblocking.
+
+
+### MI198 — B87 outcome: selected admissions leave a small-core question (2026-10-17 00:58 BST)
+
+**COMPUTED admission audit, not existence verification.** All prescribed
+checks pass. The fixed CL428 domain has12,375 input profiles,2,173 eligible
+profiles and6,788 positive-pair questions. Independent fixed-sum recursion
+and subset-sum sets agree with the complete eligible set and weighted count.
+The UNION of the six selected mechanisms admits1,587 profiles/5,266 questions;
+586 profiles/1,522 questions remain outside this inventory. Only476 questions
+have the PROVED gcd tag; all other selected mechanisms are SKETCH. This is
+neither a count of proved solutions nor an inventory of every result in the
+record. No cycle/existence solver was imported or run. Old MI180 single-pair
+full-k admission gives91 questions, matching Cloud's reported sizing.
+
+Overlapping tags (profiles/questions; DO NOT SUM): MI175148/476;
+MI177207/646; MI186353/1,030; MI191280/1,026; MI1931,017/3,383;
+MI197 dominant172/812. Residual questions by N:3:156,4:180,5:751,6:435.
+The finite audit checks admissions and their subset relationships, not the
+infinite proofs. MI197's span extension remains an independent hand SKETCH;
+MI191 remains the sole pending carrying-read priority.
+
+**The unexpected control is positive while still residual.** For
+(2,2,3,4,4,9),23/25, fixed sorted pairs force a run load9,10,14 or15,
+outside11..13; increasing the gap cap alone cannot repair that pairing.
+Yet A=(0,2,11,13),B=(1,5,9,12),physical(0,25,17,9,3,26,22,4)
+passes both validators and its actual E28 partition. It stays RESIDUAL to
+the selected admissions. The mixed dominant control(11,3,2,2,1,1),25/15,
+A=(0,11),B=(1,4,6,8,9,10),physical(0,25,19,15,11,9,7,22)
+also passes both validators/actual partition and has the dominant tag.
+Exactly two actual partitions were checked, not6,788. No negative existence
+conclusion, mismatch, repair, widened domain or status upgrade.
+
+**What changed / next question.** The first residual is already N3:
+(3,5,6),K14, with pairs(3,25),(5,23),(7,21),(9,19),(11,17),(13,15).
+Rather than another eight-vertex sibling class, the next useful target is a
+uniform FIVE-vertex criterion with three negative halves, legal odd joins,
+label count and two-run capacity. This is a proposed question, not a theorem
+or a new experiment this tick; search the existing record/prior art first.
+Cloud's reported existence survey need not be repeated.
+
+**Step-back / niggle sweep.** Satisfaction: the synthesis exposed a smaller
+missing inference. Unease: family proliferation could become a substitute
+for understanding selection. Fresh-choice verdict: I would choose this
+small-core question now, independent of the earlier investment. Reasoned
+verdict: retain the current constructions, stop adding siblings without a
+selection argument, and examine the N3 obstruction next. The inventory
+niggle is resolved by explicitly naming the six selected mechanisms; the
+status niggle by separating476 PROVED-tag questions from sketch admissions;
+the residual/nonexistence niggle by the literal positive control. No review
+halt or new review queue. Full E28/L8 remains OPEN.
+
+Source tests/probes/instinct/path_forest_admission_synthesis.py;
+preregistration a28f88f0. CPU0.061249s, peak RSS18,640,896bytes, within
+5CPU sec/128MiB. Immutable artifact
+cited/instinct/b87-admission-synthesis-3b53cad88d8f0930.json,558,492bytes,
+SHA256 3b53cad88d8f0930397f545953dbad8b3a2a38adc7e37242bd90641a9ad885d0.
+Upload digest and manifest receipts verified. No raw data in git.
