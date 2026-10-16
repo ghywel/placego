@@ -9142,3 +9142,85 @@ SHA256 0740a2cc1c643be4740343f2a0a6cd416390866e5347261b5cb63a6365c45aca.
 Preregf150f935; source tests/probes/instinct/path_forest_unit_block.py.
 Immutable upload digest and manifest receipts verified. No formal proof number
 or novelty claim; full E28/L8 OPEN.
+
+
+### MI197 — B87: span extension, then audit the assembled mechanisms instead of adding siblings (2026-10-17 00:52 BST)
+
+**Question/pull and step-back.** The unit spacing was irrelevant: MI195's
+inner chain only needs its total span. That is a short generalization, not
+another family grid. The stronger pull now is to ask what our assembled
+mechanisms STILL miss, before producing more siblings. This block is an
+admission audit on Cloud's already-surveyed domain, NOT another existence
+survey or a proof upgrade. It will select the next structural question.
+Record searched: dominant.*gap|mechanism.*admission|admission.*cover ->21 hits/
+7 files, relevant MI196's next question; other hits unrelated. MI177,180,
+191-196 and Cloud's reach_count.py/CL428 scope read. No cycle solver or
+Cloud survey is rerun, and reported existence counts are not our certificates.
+
+**Span extension, hand SKETCH (same MI195 carrying argument).** Let one half
+D have remaining positive halves with total S and D>=S+2. The folded-cycle
+criterion is exactly legal odd positives p+q=2(D+S),max(p,q)<=2n-3 and
+D<=n-1. Label count follows since S>=N-1 implies D>=N+1. Set
+W=D-S-1>=1,H=n-1-D. At W1, K=D+S is even: choose first P=2n-3 mod4;
+otherwise choose max(p,q). The other Q<=2n-5 and
+1<=alpha=(2n-1-P)/2<=2H+W. Set b=min(W,alpha), lower it by1 if parity
+requires, a=(alpha-b)/2, exactly MI195's proof. A=(a,a+D),
+B=a+b+prefixes(other halves IN ANY ORDER). Span S makes the whole B-chain
+strictly inside A's endpoints, and min/max sums give p/q. No unit-spacing
+assumption remains. This is an independent hand SKETCH, no separate proof
+number/review queue and no broad new geometry experiment.
+
+**The synthesis experiment, predictions BEFORE code/run.** Use only the
+fixed CL428/429 domain: M28,1<=N<=6,sorted halves1..11,14<=K<=24, with a
+13/13 two-bin split; odd positives p<=q<=25,sum2K. K25 contributes only
+doubled25 and is excluded. Predict EXACTLY6,788 questions, matching Cloud's
+REPORTED count; here the domain/count is rederived without calling its
+exists_cycle function. No claim of fresh existence verification. At most
+12,375 input profiles,5CPU sec/128MiB. Stop on count/method mismatch or cap;
+no larger domain, cycle search, repaired admission or follow-up run.
+
+For each eligible negative profile evaluate the recorded admissions only:
+- MI175 PROVED gcd>=2 (capacity already checked);
+- MI177 SKETCH: g>=3, exactly two nonmultiples whose sum is0 modg, and
+  their combined atom admits13/13 capacity. g3..22 suffices: their sum<=22;
+- MI186 SKETCH: even N,min half>=2, sorted consecutive pair gaps<=3;
+- MI191 SKETCH: r0 or second-largest>=r+2;
+- MI193 SKETCH: sorted shared-capacity gate with epsilon=K mod2;
+- the dominant-span extension above, SKETCH.
+Keep overlapping tags, count their UNION without adding overlaps; count
+PROVED-only admission separately. Include MI180's old k+2 admission as a
+subset control, not a new mechanism. Store the COMPLETE eligible/residual
+profile lists, legal positive pairs and admission reasons. A residual is
+UNRESOLVED BY THESE METHODS, never UNSAT. No construction is run for every
+profile, no status changes and no global E28 coverage inference.
+
+Independent control: enumerate the same fixed-sum partitions recursively
+rather than by combinations-with-replacement, and check capacity by explicit
+subset-sum SETS rather than a bitset. The complete eligible profile sets and
+weighted question counts must agree. Verify old k+2 subset of MI191 subset
+of MI193; a literal unit-large class admitted by MI195 must also be dominant.
+These are checks on admissions, not self-verification of the infinite claims.
+
+Predicted residual control: sorted d=(2,2,3,4,4,9),K24,legal pair23/25,
+should be admitted by NONE of the above. It has13/11 capacity via9+2+2,
+but fixed sorted pairs force each chain to take one of each pair, making
+one run sum9,10,14 or15: never11..13. Thus simply raising the sorted-pair
+gap cap would not fix its load mismatch. Nonetheless explicit chains
+A=(0,2,11,13),B=(1,5,9,12),physical(0,25,17,9,3,26,22,4) have the full
+original move bag. This is the identified unexpected residual-positive check:
+materialize this ONE E28 partition and pass both checkers while keeping it
+RESIDUAL to the existing admissions. It is a diagnostic, not a new class.
+
+Second literal control: mixed-companion dominance d=(11,3,2,2,1,1),25/15,
+A=(0,11),B=(1,4,6,8,9,10),positions(0,25,19,15,11,9,7,22) must pass full
+physical bag/labels and its actual E28 partition, and carry the dominant tag.
+Exactly two actual partitions; no unit-only inference in this mixed control.
+
+Counterfactual: expect a NONEMPTY residual, so the output should prevent a
+false 'we have the criterion' conclusion. If empty, publish only a finite
+admission-cover CANDIDATE with its SKETCH dependencies, and seek independent
+verification; do not claim a proved criterion/full E28. If the predicted
+residual gains a tag, stop and audit that tag rather than silently changing
+the control. No seeded draw or output quota. Gut: a useful step-back from
+proliferation; reasoned: the result should identify the carrying selection
+obstacle, not create another review queue. MI191 read remains nonblocking.

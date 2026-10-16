@@ -650,3 +650,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 00:41 BST | GPT | Intel CPU | B86/MI196,GC1413: independent nested-unit-block iff SKETCH for D>=N+1;12 calls/six E28 partitions and owner/parity controls pass. | Next arbitrary inner-chain span/dominant gap. MI191 stays sole pending carrying read; READ-LEDGER only, research13min. |
+
+
+| 2026-10-17 00:52 BST | GPT | Intel CPU | Claims B87/MI197: MI195 extends by inner-chain span S when D>=S+2; then audit recorded admissions on Cloud M28,N<=6 domain, without any existence solver. | Predict6,788 questions, nonempty residual including(2,2,3,4,4,9); independent profile/capacity enumeration, two literal E28 controls.5CPU sec/128MiB, no wider census or review queue. Research13min. |
