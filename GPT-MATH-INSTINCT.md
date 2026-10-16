@@ -6670,3 +6670,70 @@ SHA256 `0205800cc55c812bebe4618b9db66e02e76ecf3001abc7d8dec19bca712cdf5f`.
 Prereg9fd713a3, source tests/probes/instinct/path_forest_anchor_boundary.py;
 immutable receipt/manifest verified. Independent instruments are self-checks,
 not an external carrying read. Old2000-sample result remains unchanged.
+
+
+### MI163 — B71: a whole-path construction using two odd bridge steps (2026-10-16 21:25 BST)
+
+**Hand result before literal verification; SKETCH, no novelty claim.** The push
+away from more local screens led to a construction: put every selected outer
+position in one parity class, and the sole opposite-parity position in the
+central corridor. Record searched: positive-path/complementary-prefix/one-negative/
+reflection-avoidance137 hits/31 files, plus parity-bridge/two-odd-step/even-outside
+103 hits/31 files. G306's actual one-negative source read; it uses small-tail
+prefix avoidance and differs from the construction here. No imported theorem
+or new literature-status claim. This is the first completed construction in
+this block, not a bound inferred from recent success rates.
+
+**Statement.** Let M be EVEN, positions0..M-1, folded labels min(y,M-1-y).
+Reserve labels R={s,..,s+r-1}, with a nonempty free central corridor
+I=[s+r,M-1-s-r]. Let A and B be lists of POSITIVE EVEN parts, possibly empty,
+and let a,b be POSITIVE ODD parts. Let x be even, S=sum A, D=S+a+b+sum B.
+Suppose
+
+    0<=x,  x+S<s,  c=x+S+a lies in I,
+    c+b>=M-s,  x+D<=M-1.
+
+Then the positive path ordered A,a,b,B, started at x, and closed by-D has
+all its selected positions distinct, avoids R and uses distinct folded labels.
+
+**Carrying proof.** Strict increase gives distinct positions within0..M-1.
+Every selected position before a is even and<=x+S<s. The single position c
+between a and b is odd and central. After b all selected positions are even
+and>=c+b>=M-s. Thus none is in either forbidden physical interval
+[s,s+r-1] or[M-s-r,M-1-s]. Since M-1 is odd, two even positions cannot be
+complements. The only odd selected point is c, whose even complement M-1-c
+lies in the SAME central corridor. No other selected point is central, so it
+is absent. This proves the ENTIRE folded-label condition, including endpoints,
+not only entry/exit. Empty A/B do not affect the argument. A selected endpoint
+x+D belongs to the closing negative move; the returned x is not another vertex.
+This constructs one zero-sum cycle; selecting anchors/slots that produce the
+hypotheses remains a separate allocation problem.
+
+**Actual E28 application found by hand.** t=(85,87,89,91,93,95,122,122),
+R={10,11,12}, anchors(21,23,25,31,33,35,0,0), choose
+h=(2,1,1,1,1,1,2,2), e=(-24,4,4,2,2,2,5,5).
+M28,s10,r3,x0,A=(4,4),a=b=5,B=(2,2,2) gives c13 and positions
+(0,4,8,13,18,20,22,24), owners(1,2,6,7,3,4,5,0).
+All hypotheses hold. This h is an EXPLICIT NON-GREEDY slot choice: B67's
+start10 greedy allocator instead places three pairs in one even bin. The old
+h1/2 argument was only for FIRST anchors; no contradiction or silent policy
+change. The general split-anchor model permits the chosen h, but this example
+is not a success of the frozen greedy policy. No universal existence claimed.
+
+**Verification plan BEFORE run.** Exactly four formula geometry fixtures:
+above full bridge, A empty(x8,a=b5,B=(2,2)), B empty(x0,A=(4,4),a=b5),
+both empty(x8,a=b5). All at M28,s10,r3. Predict all literal folded checks pass
+and actual E28 partition passes both inventory/sum/cardinality validators.
+Compare greedy slots explicitly, without running any cycle/role search.
+Counterfactual: A=(1,1),a11,b5,B=(8,),x0 has even TOTAL sum A and meets the
+interval inequalities, but prefixes1 and26 are complements. Individual outer
+parts must be even. Also x0,A empty,a1,b17,B=(8,) puts c outside the central
+corridor and causes the same collision. Both literal geometry checks must reject.
+Unexpected: all empty-list cases and the distinction between even total and
+every even part, not another target census. Caps4 positive geometry fixtures,
+2 negative fixtures,1 E28 allocator output,oneCPU second/64MiB; no search,
+new sample, grid of cases, raised cap or proof-review queue. Source
+path_forest_odd_bridge.py; raw outside git. Gut: delight that parity completes
+the path rather than rejecting another allocation. Reasoned: a sufficient
+construction with honest hypotheses; the next problem is realizing them from
+targets, not collecting more hand examples.

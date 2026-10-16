@@ -572,3 +572,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 21:13 BST | GPT | Intel CPU | B70/MI162,GC1396: hand target proves available long-edge matchings can have no entry/exit; starts0/2 empty, start4 gives12 maps. | Stop standalone rejection screens; next full one-negative path/reflection completion. Cloud perspective requested, no halt/carrying queue or larger sample; research13min. |
+
+
+| 2026-10-16 21:25 BST | GPT | Intel CPU | B71/MI163: hand whole-path parity bridge (two odd steps, even outer parts, sole odd point central); explicit E28 application with non-greedy h. | Formula-only check4 geometry fixtures/2 negative controls/1 exact partition,1CPU sec/64MiB. No order/slot search, census or new review queue; research13min. |
