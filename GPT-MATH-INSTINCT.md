@@ -6306,3 +6306,102 @@ score-sort comparison, q0 ties choose larger indices (the original last-six
 h2 roles); mixed q>0 ties choose smaller indices as preregistered. The1/2 slot
 multiset/proof is unchanged. This distinction is recorded before any run;
 compare(98 repeated8) as a tie fixture, without modifying B57's frozen roles.
+
+
+### MI158 — B68:1996/2000 certify; four real first-policy exceptions (2026-10-16 20:48 BST)
+
+**MEASURED calibration, COMPUTED certificates/restricted-search outcomes.**
+Exactly B57's2000 unconditional ranks (seed20261017) tested, FIRST policy only.
+1996 WITNESS,4 FIRST_POLICY_EXHAUSTED, no cutoff or size-bound rejection.
+By q:0->25/25;2->512/512;4->1030/1030;6->410/412;8->19/21.
+The1975 targets B57 could not address by parity now give1971 checked positives
+and4 restricted failures. These are not full-model/partition impossibility claims.
+>=99% forecast passes at99.8%; zero-caps and slot1/2 predictions pass.
+Maximum2647 nodes/target,218,066 total; CPU3.071017s, peakRSS29,478,912bytes.
+No second policy, target repair, extra search, raised cap or census.
+
+**Controls/structure.**59 full component maps and12 full packings (first12
+odd-containing targets) independently agree,48,582 raw reference words/35,280
+physical roots. All1996 partitions pass both B67 validators. Removing their
+actual anchors and shifting remaining tokens by q gives exact first N=28-q
+odd inventories, even sums T and sizes2h, with identical moves and reflection
+N-1. All2000 greedy slot vectors agree with the independent initial-score sort;
+q0 retains frozen B57 ties as clarified BEFORE execution in7f541a18. Tied even
+and mixed fixtures pass. Omitted removed-extreme-token inventory rejects.
+The hand no-repeat argument in MI157 stays a SKETCH, not promoted by controls.
+
+1,092 successful policies have extrema sum>N;16 have extrema sum>28.
+1,061 show a role-boundary target reversal after reducing the pool. First:
+t=(75,87,88,93,109,110,110,112), a=(1,3,0,53,55,0,0,0),
+h=(1,1,2,1,1,2,2,2), T=(66,76,72,32,46,94,94,96), N24.
+The largest unselected effective score belongs to bin1, but T_1=76 exceeds
+the smallest selected role's T_2=72. Importing the old sorted-role/range
+hypotheses is demonstrably invalid. No general placement theorem is asserted.
+
+**The four failures, retained in full.** R always the first q/2 labels;
+all anchor/slot arrays and every search outcome are in the raw artifact.
+
+|rank|q|target|moves|
+|---:|---:|---|---|
+|16461642|8|(77,77,83,85,107,117,119,119)|(10,9,-17,-17,1,5,5,4)|
+|24592715|6|(90,90,91,91,93,103,111,115)|(-11,-11,-11,16,16,-2,1,2)|
+|6321549|8|(71,73,77,105,107,109,121,121)|(7,7,-20,-7,1,1,6,5)|
+|2079026|6|(69,69,75,103,111,116,120,121)|(6,5,-21,-2,1,2,4,5)|
+
+Full artifact `cited/instinct/b68-first-anchor-a580dd9bea76765b.json`,
+4,865,938bytes, SHA256
+`a580dd9bea76765b479d18a9656fb17cc6d28c2ff5ee8e42a9598902e9d4cc3e`.
+Prereg11fab479, tie clarification7f541a18, source
+ tests/probes/instinct/path_forest_first_anchor_calibration.py. Immutable receipt/
+manifest verified. Independent instruments are self-checks, not an external
+review of the whole sample/failure exhaustion.
+
+**Post-run HAND diagnosis (SKETCH, no new experiment).** Three failures are
+impossible even if arbitrary cycle orders are allowed, keeping these anchors,
+slots and the one-selected-token-per-active-bin rule. In N coordinates a move
+d joins x to x+d. A displacement>N-1 has no physical edge. For
+(N-1)/2<d<=N-1, its folded endpoint labels are{x,L-x},
+L=N-1-d, x=0..L; omit the equal-label loop. These form a matching with at most
+floor((N-d)/2) nonloop edges. Two same-signed d moves cannot share a physical
+endpoint, since that would require a consecutive2d displacement outside the
+pool; distinct chosen tokens also have distinct labels. Thus repeated same-
+signed large moves need that many disjoint matching edges. This is a necessary
+constraint on the proposed certificate class, not on arbitrary partitions.
+
+- Rank16461642, N20: two-17 moves; L2 offers ONLY folded edge{0,2}; x1 is
+  the forbidden loop{1,1}. Two such moves cannot coexist. Orders/factorization
+  cannot fix this without changing anchors/slots or the one-token model.
+- Rank6321549, N20: move-20 exceeds every physical displacement19, impossible.
+- Rank2079026, N22: move-21 can only join0 and21, the SAME folded label, impossible.
+
+Rank24592715 is different. Its primitive components are uniquely the cancelling
+pair(-2,+2) and the six-list(-11,-11,-11,16,16,1), in N22. Two consecutive-11
+moves already leave0..21, so any six-cycle must alternate the three negative
+moves with its three positive moves. Up to rotation their positives(16,16,1)
+have only one cyclic order (the two16's coincide). The representative vertex
+set is{0,16,5,21,10,11}, span21; only root0 is in the pool, with complementary
+pairs0/21,5/16,10/11. Thus this primitive six-cycle has no reflection-free
+placement under ANY order. This hand argument explains the prescribed primitive
+factorization failure. It does NOT exclude an un-factored eight-cycle merging
+the cancelling pair, or a changed anchor/slot assignment. Those are distinct
+next questions. The raw primary exhaustion alone had not established this
+all-order distinction; the carrying hand reasoning is written here explicitly.
+
+**Decision after calibration.** No further broad sampling now. The next bounded
+question is these FOUR targets: independently audit full order/packing failure;
+for the second, distinguish primitive-only failure from a merged eight-cycle;
+for the other three, test an explicitly preregistered anchor/slot change after
+the proved geometric obstruction. No such repair run starts in B68. This is a
+change of representation/trajectory, not pretending a failed sufficient method
+has refuted the original target. G314 review remains nonblocking; no new routine
+proof filing/carrying request for this diagnostic.
+
+**Niggle sweep.**(1) Does first-policy exhaustion refute targets? No.(2) Can
+arbitrary order repair three? The necessary displacement/matching arguments
+exclude it under fixed anchors/slots; changing either remains open.(3) Is the
+six-cycle obstruction a full eight-cycle obstruction? Explicitly not.(4) Are
+we rewarding another success tally? We stop broad sampling and follow the four
+explanatory failures. Gut: satisfaction and renewed curiosity; the exceptions
+are more interesting than an unbroken success rate. Reasoned: structural slot
+choice is simplified, first-policy universality is false, and the next change
+is now mathematically constrained rather than another blind policy sweep.
