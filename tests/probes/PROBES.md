@@ -1141,3 +1141,9 @@ app is unpublished by design.
 - `instinct/path_forest_four_surplus_certificate.py`: MI128-129, existing7,798 partitions
   checked against full7,828-target domain with exact30 residuals; source digests/two checkers
   and controls pass (0877f361 preregistration). Full immutable certificate in shared store.
+
+- `instinct/path_forest_nyctalopic_reflection.py`: MI130-132, reflection-aware prefix-origin
+  pruning versus complete multiset permutations/direct roots, whole feasible-map equality.
+  All30 residuals resolve, completing all7,828 four-surplus targets with exact domain/two
+  partition checks.4,775 class orders,41,203 roots; initial export sort error retained,
+  unchanged mathematical rerun passes (5167e2b4 preregistration). Full certificate in store.

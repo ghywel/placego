@@ -490,5 +490,8 @@ PART: as on the board.
 
 - Four-surplus constant traps133 and canonical small-subset4,938 have certificates; greedy-anchor shortcut fails56 — COMPUTED/REFUTED MI119/121.
 - Four-surplus7,828-target domain:7,223 factorable, all constructed after two explained factor changes — COMPUTED MI125;605 primitive.
-- Fixed known nyctalopic order certifies575/605 primitive targets,30 exhaust translations; full7,798/7,828 certificate and residuals — COMPUTED MI127/129, remainder OPEN.
+- Fixed known nyctalopic order certifies575/605 primitive targets,30 exhaust translations — COMPUTED/REFUTED MI127/129; allowed ordering choices resolve30 in MI131.
 - Plagne-Tringali1405.4363v2 Lemmas3/6/7: distinct partial sums, opposite-sign extension and range; reflection not covered — PRIOR-ART/MI126.
+
+- All30 primitive residuals admit reflection-free nyctalopic orders; whole independent feasible maps agree — COMPUTED MI131, no general theorem.
+- Entire7,828 even E28 t4<112<t5 four-surplus slice has checked odd partitions, immutable full certificate — COMPUTED MI131; other E28/L8 OPEN.

@@ -4659,3 +4659,76 @@ full7,828 target domain. The exact remaining set must be precisely this block's 
 capped cases, never treat a class failure as an impossible target. Publish the resulting full
 certificate and residuals immutably, then check in with Cloud as requested. Known lemmas stay
 PRIOR-ART; finite class verdicts COMPUTED, no new general theorem or full E28/L8 claim.
+
+**Instrument note BEFORE unchanged rerun:** first B56 execution completed its mathematical
+and delivery checks but failed at final JSON assembly: sorting mixed list/tuple target keys
+raises TypeError. No result file was delivered, so that run is not cited as evidence. Normalize
+only the export sort key to tuple; retain every ordering rule, check, prediction and cap.
+
+### MI131 — B56 result: all30 resolve inside the known class; full four-surplus slice complete (2026-10-16 16:20 BST)
+
+All30 residual targets have witnesses within the PREREGISTERED interior-first/opposite-sign
+ordering class. The entire feasible-order/origin-mask maps agree between prefix-pruned search
+and complete independent multiset permutation/direct-root enumeration. Counts:15,906 primary
+nodes;1,209,600 raw reference permutations,123,480 unique words,4,775 accepted class orders,
+41,203 direct root checks. Of those accepted orders,4,208 have usable origins, totalling9,404
+order/origin choices. Each target has23..425 feasible orders. No cap, widened ordering class,
+new pool or individual exception rule was used. Successful rerun CPU0.734438 s; the first
+serialization failure is retained above, not counted as a successful run.
+
+**Unexpected:** all30 still permit the old SMALLEST-POSITIVE initial term; changing later
+opposite-sign choices is enough. Twenty also admit a negative interior initial term. Thus the
+old greedy failures did not require abandoning that start, much less the known ordering class.
+Together with B54's575 certificates, every one of the605 primitive four-surplus cases has
+a smallest-positive-start nyctalopic witness (finite observation, no general theorem).
+
+All7,798 previous partitions remain unchanged. Adding the30 witnesses gives7,828 distinct
+certificates; multiset and independent exact-bin/bitset checkers pass every one. Independent
+sorted target enumeration gives exactly the same7,828 keys, with EMPTY difference. Primitive
+membership, prefix-mask/direct-prefix equality, omitted-reflection counterfactual, non-opposed
+order rejection, nonprimitive rejection, duplicate/wrong-sum controls all pass. Results are
+COMPUTED finite coverage; the known range/distinctness lemmas stay PRIOR-ART.
+
+**Exact closed subfamily:** sorted even68<=t1<=...<=t8<=122, sum784, t4<112<t5. Every such
+tuple has a partition of odds1..55 with bin cardinalities2,2,4,4,4,4,4,4. The earlier fixed
+greedy/canonical failures stay in B52/B54/B55; this result supplies different allowed choices
+without reinterpreting those failures. This closes the named FOUR-surplus slice, not full
+even E28, mixed parity, other exceptional levels, the provisional L8 bound, or a prize claim.
+
+The6,095,387-byte full certificate and30 ordering-class verdicts are immutable at
+`cited/instinct/b56-four-surplus-complete-8da086b17c026c33.json`, SHA256
+`8da086b17c026c333f103bda3a2d629bf18ee4b91d381f174641ddc24010db49`.
+Upload receipt digest checked; manifest appended with preregistration5167e2b4 explicitly
+labelled. A reader can verify every partition and the full domain without earlier raw files;
+the committed probe reproduces the class comparison from the immutable B55 input.
+
+**Gut / delight:** this is the result I hoped the method had room for: the obstacle was in
+which allowed move the greedy rule chose next. It is satisfying to close a whole slice through
+one class-wide mechanism, rather than add30 unrelated repairs. **Reasoned:** the finite result
+is strong, the general reflection-aware ordering theorem is still open. No claim of novelty
+or external independent review has been made; two independent implementations are self-checks.
+
+### MI132 — owner-requested Cloud check-in; no further research block (2026-10-16 16:20 BST)
+
+The agreed single block is complete. Send Cloud GC1382/MI130-132 and the immutable certificate,
+then stop opening research blocks here for the owner's planned check-in. Both heartbeats stay
+paused. This is the owner's requested handoff, not a routine review permission gate.
+
+**Concise perspective request:** the three-surplus slice5,268 and four-surplus slice7,828 now
+have checked certificates. The four-surplus proof architecture separates positive-move subset
+factorization from reflected-pair placement; primitive pieces use known nyctalopic freedom.
+Please sanity-check the SCOPE of that conclusion and advise which next structural inference
+would serve the full L8 target: a reusable placement statement for minimal zero-sum pieces,
+or a representative unsolved even-E28 slice with more negative moves. The prefix mask's
+local invariant is simply that reflected coincidence of vertices p+b,q+b occurs iff
+2b+p+q=27; empty-mask pruning is monotone. The full independent map comparison backs its
+finite use. No request to replay7,828 partitions or create a routine lemma-review queue.
+MI099/101's older hand-proof request remains separate; no status upgrade is inferred from it.
+
+**Niggle sweep:** export list/tuple inconsistency was repaired and honestly retained; all
+reported counts come only from the successful rerun. Equal-value owner symmetry is safe here:
+large positive moves have the same one-pair role when equal, small positives the same two-pair
+role, and equal negatives the same two-pair role; small values<=5 cannot coincide with large
+values>=6. Existence inside a known ordering class is not attributed to the source theorem;
+its range conclusion and our finite reflection checks stay separate. The exact-domain audit
+rules out missing target types. No further mathematics run or automated continuation started.
