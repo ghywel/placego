@@ -4110,3 +4110,48 @@ If successful, the next cheap audit is set equality of the disjoint three-surplu
 using the existing checked witnesses; no larger target census is authorized by this block.
 Gut: the wall now suggests a genuine bypass. Reasoned: run one fixed two-cycle mechanism,
 and stop rather than expanding it if that mechanism fails. Both automatic schedules paused.
+
+### MI114 — B48 result: the uniform two-cycle bypass succeeds (2026-10-16 15:34 BST)
+
+All112 classified traps have certificates from the prescribed three/four-cycle split.
+Signed, direct-target and prior-failure sets agree. All25,612 mask/direct root-pair checks
+agree; shared-root, wrong-donor and wrong-sum controls pass. Unexpected: the FIRST individually
+legal four-cycle root always leaves room for a three-cycle; zero targets need joint backtracking
+of the four-cycle root. This stronger finite observation is COMPUTED, not assumed as a general
+packing theorem. CPU0.254758 s; raw outside git SHA256
+`5c0790e809234bd0df79cdc4c8ce4a580bc0233f65713bf4edd34d6142e79e7d`.
+
+The owner asked whether an obstacle should be attacked or bypassed. Here the literal wall was
+made by our seven-cycle scaffold. Factoring that scaffold into two cancelling cycles bypasses
+all its failures with one rule. The classification and cycle identity remain hand SKETCH;
+placement availability and complete finite certificates are COMPUTED. B47's failures stay.
+
+### MI115 — B49: audit the exact three-surplus subfamily (2026-10-16 15:34 BST)
+
+**Question:** do the completed constructions cover EXACTLY every sorted even E28 tuple with
+t4<112,t5=112,t6>112? No larger E28 census is claimed. These tuples have four low targets,
+one112 and three strictly positive surpluses1<=a<=b<=c<=5. The proposed partition is:
+matching magnitudes999; unmatched W22:11; unmatched W<22,W<=q:20;
+unmatched W<22,R=W-q>=Z:1,478; remaining unmatched W<22,0<R<Z:2,760.
+Predict5,268 distinct targets, no overlap between these five REGIMES. The seven-target B45
+stripe overlaps its own parent regime; select its two missing witnesses rather than add counts.
+B48 replaces the112 B47 failures without adding targets. Source provenance remains explicit.
+
+Record searched: three.surplus,5268,5,268 -> no default hits; B42-48 source domains and MI099-114
+read directly. This is a set/certificate audit, no new theory or search mechanism. Existing
+Tan-Teh credit stands. Independently enumerate sorted even low quadruples68..110 and sorted
+high triples114..122 with sum784. The resulting set must equal the assembled witness keys.
+Recheck all complete partitions with (1) the existing multiset checker, and (2) an independent
+integer-bitset checker with exact bin sums and no duplicate odd tokens. Verify source digests.
+
+**Predictions/controls BEFORE audit:**5,268 distinct complete certificates and five disjoint
+nonempty regime sets of the counts above. Removing any regime must break equality; inserting
+a duplicated odd token must reject. The valid even E28 tuple(68,68,96,100,112,112,114,114)
+is OUTSIDE the audited subfamily and must not appear. **Unexpected check:** equal-step triples
+occur in several regimes; count them by s to ensure the112 bypass targets are not mistaken
+for the whole equal-step region. Cap6,000 certificates/three CPU seconds, no certificate
+generation or fallback solver. A missing/overlap/checker failure stops with the target retained.
+
+Gut: the bypass earns a coverage audit, not another promise of warmth. Reasoned: close this
+named finite subfamily cleanly before deciding whether its mechanisms suggest a wider argument.
+Both automatic schedules remain paused; existing reviews do not gate this finite audit.

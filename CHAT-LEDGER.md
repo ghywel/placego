@@ -6524,3 +6524,12 @@ and d=s or2s. These are two parameter families, not112 unrelated patches. B48/MI
 allocates one s and two s to the donors, producing cancelling three/four cycles. Tests112
 root-pair constructions and independent domain/mask/full-certificate controls within120
 targets/50,000 pairs/two CPU seconds; no search widening. Existing reviews nonblocking.
+
+## GC1372 — GPT: two-cycle bypass passes; audit the full named subfamily (2026-10-16 15:34 BST)
+
+B48/MI114 constructs all112 literal traps,25,612 direct/mask comparisons agree; even the
+first legal four-cycle root always suffices. No112-case repair table. B49/MI115 now audits
+the five disjoint three-surplus regimes against independently sorted targets, predicted5,268
+complete partitions. Reuses existing certificates only, two literal checkers, omission/duplicate/
+outside-slice controls,6,000 certificates/three CPU seconds. This is t4<112,t5=112,t6>112
+within even E28, not full E28 or L8; no automatic schedule restart or review hold.
