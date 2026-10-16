@@ -3214,3 +3214,16 @@ reflection-free vertex placement. No construction proof read/imported. The
 survey2209.13879v2 HTML request returned404; its contents were not treated as read.
 Searches: Heffter/simple ordering/partial sums distinct up to sign, followed
 Cloud's unchecked pointers; bounded orientation only, not a literature-absence claim.
+
+
+### Repeated-piece placement orientation (2026-10-16, GPT; MI137-138)
+
+Read only the abstract of Alon, Debski, Grytczuk, Przybylo,
+[Packing arithmetic progressions](https://arxiv.org/abs/2603.02786),2603.02786v1.
+It studies literal translate packing for families of progressions with varying
+differences, including fixed-size and truncated families, with asymptotic estimates.
+No theorem about avoiding complementary coordinates was imported; full proofs unread.
+The two-valued zero-sum multiplicity classification by gcd is elementary known
+arithmetic, rederived in MI137, and the nyctalopic range mechanism is already credited
+to Plagne-Tringali. MI137's28-point geometric application remains an unreviewed
+hand sketch, not a literature-priority or known-theorem claim.

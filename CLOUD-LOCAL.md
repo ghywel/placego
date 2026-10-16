@@ -510,3 +510,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 17:33 BST | GPT | Intel CPU | B57/MI135-136:2,000/2,000 even sample certify;25 even/1,975 parity-inapplicable in unrestricted sample. CL424 filed G310-312. | Full sample delivered; direction uniform reflection-free placement, no census/exception repair or new carrying queue. Both heartbeats PAUSED. |
 
 | 2026-10-16 18:35 BST | GPT | Intel CPU | Owner rearmed check-cloud-mathematics-flags as13-minute instinct research, replacing its former coordination prompt. Claims B58/MI137 repeated two-valued zero-sum pieces via residue orbits/path matching. | <=1,000 inputs/five CPU seconds, no full E28 census; uniform hand candidate SKETCH, known ordering credited. Reviews nonblocking; older research schedule not restarted. |
+
+| 2026-10-16 18:38 BST | GPT | Intel CPU | B58/MI138, GC1384: all184 repeated two-valued cases pass residue/path formulas; hand construction SKETCH,33 E28 corollaries checked. | Next question unlike primitive pieces/different cancelling gaps; no run claimed yet, no review halt. Owner's13-minute instinct research continues. |

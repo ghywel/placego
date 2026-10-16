@@ -4955,3 +4955,62 @@ larger domains or formula repairs. Failure/cap retained, class-specific status o
 Raw outside git. REFUTED-BY: any prescribed placement, exact domain, graph or checker
 failure. Gut: a specific pull toward a residue-orbit explanation, not toward33 more
 targets. Reasoned: establish this rigid building block, then return to unlike pieces.
+
+
+### MI138 — B58 result: repeated rigidity is manageable (2026-10-16 18:38 BST)
+
+All184 parameter instances certify by MI137's prescribed placement formulas. The gcd
+domain agrees exactly with independent positive/negative multiplicity enumeration.
+Across110 primitive(a,b) pairs, the independent1,224 distinct value-word possibilities
+contain220 nyctalopic orders; every normalized vertex set is exactly its arithmetic
+progression. No fallback placement search or new formula needed; no cap/failure.
+
+The fourteen physical folded gap graphs equal the independent label formulas; all are
+forests of paths with exactly14-ceil(g/2) edges. Alternating-edge matching sizes for
+g1..14 are7,7,6,6,6,6,7,6,5,5,5,6,6,7, each>=4 as claimed. These are constructions,
+not an unsupported inference from edge count in an arbitrary graph. Both counterfactuals
+fail: k4,g5 at origins0/1 repeats a folded label; the8-point-pool gap3 graph has only
+two edges and matching number1, so it cannot hold two such cancelling pairs.
+
+**Unexpected sign-reversal check:** reflect all physical indices by27-x and reverse every
+move's sign, relabelling positive/negative owners. Every certificate remains valid with
+exactly the same folded-label set; the abstract progression is independent of orientation.
+This control passed for every parameter instance. The generic geometric checker uses
+position ranges, distinct folded labels and literal endpoint-multiset equality.
+
+All33 E28 corollary targets certify, equal to an independently generated direct target
+set; counts by negative multiplicity q1..6 are4,9,4,7,3,6. Full odd coverage, exact assigned
+sums and cardinalities pass both literal checkers; coverage-preserving wrong sums reject.
+Do NOT add33 to previous-region tallies: there is overlap, and none was audited away.
+CPU0.015507 seconds. Finite statements COMPUTED; MI137's uniform hand construction is
+SKETCH awaiting any future carrying read. No PROOFS entry or routine review request.
+
+Raw complete constructions/reference controls at
+`cited/instinct/b58-repeated-pieces-aceee1a5b4ea5878.json`,84,351 bytes, SHA256
+`aceee1a5b4ea58787582c8e5794f86cedadbe2fbbdc88368f438555292d4afbd`.
+Upload receipt/manifest verified; manifest eeb2b7a6 is the preregistration.
+
+**What changed:** when every component is the SAME two-valued primitive piece, its shape
+is an arithmetic progression and simultaneous placement has a uniform residue-orbit/path
+construction. For two copies, congruence orbits choose origins without target-specific
+repair. The particularly visible instance(+15,+15,-5 six times), target(86,86,102 six times),
+uses two four-point progressions of step5. Origins0 and1 fail because11+16=27; origins
+0 and3 put them in different allowed residue orbits and succeed. That is a mechanism,
+not a new target exception. This does not say unlike pieces always pack.
+
+**Gut:** satisfaction at replacing repeated-piece search by the residue involution;
+interest points to MIXED pieces now. **Reasoned:** the broad sample is not explained yet.
+Next cheap question: does a common placement rule exist even for four cancelling pairs
+with different gap values<=14? Those are the smallest unlike components. A graph-matching
+argument or a decisive obstruction would teach more than another large target sample.
+No experiment on that question has run or been claimed in this entry.
+
+**Niggle sweep:** k>=2 and all moves nonzero; r*k counts selected vertices, not edges plus
+an extra closing zero. A two-valued zero sum forces the stated primitive multiplicities
+by gcd; range and cardinality give the entire progression, not only containment. At most
+one residue is fixed when g odd, none when g even because27 odd. Two nonfixed residue
+orbits exist for g>=4; g1..3 are handled by actual low-half bounds. Reflection maps each
+physical gap path to a partner or reverses it, and a self-reversed path has an even
+number of vertices (reflection has no fixed integer index); deleting its central loop
+leaves a path. Literal lift endpoints have distinct labels. Neutral E28 bins get fillers.
+These settle the named self-checks; external hand verification is not claimed.

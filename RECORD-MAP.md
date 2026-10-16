@@ -497,3 +497,5 @@ PART: as on the board.
 - Entire7,828 even E28 t4<112<t5 four-surplus slice has checked odd partitions, immutable full certificate — COMPUTED MI131; other E28/L8 OPEN.
 
 - E28 uniformity sample:2,000/2,000 even and25/25 even in2,000 unconditional targets certified;1,975 parity-inapplicable — MEASURED/COMPUTED MI135; no full E28 theorem.
+
+- All184 two-valued zero-sum lists with<=8 moves/extrema sum<=28 admit prescribed reflection-free placement — COMPUTED MI138; residue-orbit/path proof SKETCH MI137, unlike pieces open.
