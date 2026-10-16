@@ -2442,3 +2442,123 @@ afresh. **Niggle sweep:** count checked from two different parametrizations, zer
 than duplicated as vertices, all small-q inequalities checked, high-q complement levels derived,
 exception uniqueness checked against the domain, both necessary fixes challenged, and the independent
 review status kept. B27 closes with both heartbeats still PAUSED.
+
+
+### MI068 — Cloud's carrying read adopted (2026-10-16 12:02 BST)
+
+CL421/a6b6c2eb has been fetched, merged and read in full. MI066's uniform construction for the
+271 sorted even E28 targets with t4>=112 is PROVED on that independent hand read and filed G306.
+MI067's finite witnesses remain COMPUTED. No earlier unreviewed claim, remaining E28 region or
+minimum-68 upper bound is upgraded. Both heartbeats remain paused; the owner asks for manual continuation.
+
+### MI069 — B28: add a second negative move by surgery, not a wider search (2026-10-16 12:02 BST)
+
+**I think I feel a renewed click:** a second small negative move might be inserted into an existing
+cycle, or paired off with a matching positive move in unused pairs. That would reuse understanding,
+rather than restart order search. The concrete question is every sorted even E28 target with
+`t4=110` and `t5>=112`, the first two-negative boundary. This is not all two-negative targets.
+
+Record searched: two.negative|minimal.zero.sum|displacement -> no hit from record_find's default
+record search; MI062-067 and CL421 were read directly, along with the existing credited exchange
+precedents in RECORD-MAP/PRIOR-ART. Known adjacent-odd swaps are tools, not new theorems. No novelty claim.
+
+Write the deviations as `(u,v,-w,-1,p1,p2,p3,p4)`, where `6<=u<=v`, `0<=p_i<=5`,
+`q=sum p_i`, `w=u+v+q-1`, and sorting gives `u+2v+q<=29`, `1<=w<=22`.
+If a p equals 1, neutralize that +1 and the -1. The resulting target lies in G306's domain;
+its core has at most six selected pair labels. Among fourteen labels at least eight remain unused,
+so some two consecutive lower labels remain. They carry the disjoint (+1,-1) 2-cycle.
+If no p equals 1, investigate splitting the closing negative edge of a one-negative core by adding
+an index one above its root. Its new pair must avoid both existing indices and complements.
+This last condition, and the t3=68 boundary outside the original predecessor domain, are unresolved.
+
+**Bounded plan:** derive a rule by hand first. Before any formula validation, record its predictions,
+counterfactuals, independent domain check, unexpected check and stop conditions. No general census,
+raised solver cap or new search over arbitrary cycles. If surgery fails, retain the counterexample
+and change the representation rather than patching a growing witness table. Both schedules remain PAUSED.
+
+### MI070 — B28 candidate: the first two-negative boundary by cycle surgery
+
+*PROOF-SKETCH, not yet independently read. Formula validation below is preregistered, NOT RUN.*
+
+**Statement.** Every sorted even E28 tuple with t4=110 and t5>=112 has an odd partition.
+This is a new boundary subfamily, not all two-negative targets or all E28. Keep MI069's parameters:
+`e=(u,v,-w,-1,p)`, `b=u+v+q=w+1<=23`, `u+2v+q<=29`, `u<=9`, `v<=11`, `q<=11`.
+All constructions retain the two smallest one-pair roles and six two-pair roles.
+
+**A matching +1: separate a 2-cycle.** If some p_j=1, replace that deviation and the -1 by zero.
+The resulting sorted target, after relabelling only the large bins, lies in G306's domain: replace
+110 and 114 by 112 and 112, keeping every other target. Its core uses at most six pair labels.
+Partition the fourteen lower labels into the seven blocks {0,1},{2,3},...,{12,13}. At most six
+blocks meet a used label, so choose the first untouched block {a,a+1}. Give the +1 bin selected
+index a and the -1 bin a+1. Their exchange is a disjoint 2-cycle, with pair labels unused by the
+core. This is an explicit packing rule, not a new burning search. It also proves compatibility
+with the filler allocation: neutralized bins had no reserved pair and now receive one each.
+
+**No +1: insert a vertex.** Discard neutral p entries; every remaining p is 2..5. Choose an order
+of these p's and u,v of total b. With root r, assign the positive bins the successive partial sums
+before their edges, the -w bin index r+b, and the -1 bin index r+1. The closing edges are
+`r+b -> r+1 -> r`. It remains to choose r and the positive order with distinct folded pair labels.
+The vertex r+1 is distinct from all early positions because the p steps are at least 2.
+
+For q<=6, ordinarily order p,u,v and use r=0 unless (q+u)+b=27, then r=1. As in G306,
+2q+u<=21. Moreover q+b<=26 except (u,v,q)=(7,8,6), where it is 27: for v=6 use u=6;
+for v=7 use u<=7; for v>=8 use q+b<=29+q-v<=27, with equality only at the stated triple.
+Outside that triple the old small-q proof applies. The inserted vertex's sum with the largest
+vertex is at most b+1<=24 for r=0 and b+3<=26 for r=1, so it creates no complementary collision.
+At the exceptional parameter triple, use order u,p,v and r=0 instead. Its selected positions
+are 0,1, the p-prefix cluster in [7,13], and 21. Distinct cluster positions sum to at most 25,
+and the complement 6 of 21 is absent. This handles the parameter triple without a target table.
+
+For q>=7 the possible (u,v,q) are
+`(6,6,7..11), (6,7,7..9), (7,7,7..8), (6,8,7)`.
+Ordinarily use r=13-q and the positive p order avoiding h=q-u+1, followed by u,v. Early positions
+lie in [r,13]; the later two are 13+u and 13+u+v. Their sums exceed 27, early distinct sums are
+at most 25, and the final position's complement lies below r except q=11, handled below.
+The complement of 13+u corresponds to the forbidden prefix h, avoided by G306's boundary exchange.
+The new vertex r+1 could collide with that late position only when q=u, or with the final one
+when q=u+v, which the domain excludes. The only q=u triple is (7,7,7), handled below.
+
+Constant-p failure of prefix avoidance has just two possibilities in this enlarged domain:
+- (u,v,q)=(6,6,10), positive p=(5,5): use order (6,5,6,5), r=0. Including the new vertex,
+  positions are 0,6,11,17,22,1, with distinct labels 0,6,11,10,5,1.
+- (u,v,q)=(7,7,8), positive p=(2,2,2,2): use order (2,7,2,7,2,2), r=1. Positions are
+  1,3,10,12,19,21,23,2, with distinct labels 1,3,10,12,8,6,4,2.
+This list follows by c|q and c|(q-u+1), with 2<=c<=5 and at most four positive p entries.
+
+At (u,v,q)=(7,7,7), use r=5 and avoid p-prefix 3, then append u,v. No constant p multiset can
+have sum 7. Early positions are 5..12, late positions 19,26, and the new vertex 6. The only
+complementary collision to avoid is early position 8, namely prefix 3. Prefix 1 is impossible,
+so the inserted vertex is new; its sums with 19 and 26 are 25 and 32.
+
+At q=11 necessarily u=v=6 and r=1 is used. Put p in descending order, repairing prefix 8 by
+G306's exchange if needed. This order avoids both 2 and 8: its first term is at least 3, and a
+descending order of at most four terms 2..5 with total 11 hits 8 only as (5,3) or (4,4).
+The corresponding full positive-p lists (5,3,3) and (4,4,3) become (3,3,5) and (4,3,4), still
+avoiding 2. The early positions lie in [1,12]; late positions are 18,24 and the inserted vertex
+is 2. Their complementary early levels are 9 and 3, exactly prefixes 8 and 2. The inserted
+vertex is new because prefix 1 is impossible, and its sums with the late positions are 20 and 26.
+
+Every case therefore supplies valid indices and disjoint pair labels. Apply the literal whole-pair
+allocator and selected-token permutation from G306/MI062; all odds remain covered once and the
+bin sums gain twice their specified deviations. The new two-negative statement remains a sketch.
+
+**Predictions BEFORE validation.** Exactly 320 sorted targets: partitions of q into at most four
+parts <=5 have counts `1,1,2,3,5,6,8,9,11,11,12,11` for q=0..11. Summing cumulatively over
+u=6,7,8,9 gives respectively 199,89,27,5. Independently join low sorted triples in 68..110,
+the fixed fourth target 110, and high four-tuples in 112..122 by total sum. Their full sets must
+agree with the parameter domain before any certificate is accepted. Predict the formula succeeds
+on all 320, with no arbitrary order/root/cycle search. Cap 1,000 inputs and five process CPU seconds.
+Stop on count disagreement, any construction failure or control failure; a cutoff is UNKNOWN.
+
+**Controls / unexpected check.** The independent flattened-odd checker must validate every output.
+Deliberately omit the q=11 repair on (68,68,68,110,112,116,120,122): ordinary r=2 makes the root
+and final position complementary. Deliberately force an occupied label into the separated 2-cycle:
+it must fail pair ownership. Preserve coverage while changing two bin sums: the independent checker
+must reject it. Unexpected sharpness check: seven used labels {0,2,...,12} leave seven isolated
+lower labels, so the adjacent-label guarantee cannot be weakened from at most six to seven used
+labels. This is a sharpness control for the packing tool, not an unburnable target.
+
+**Niggles to resolve:** relabelling equal neutral targets in the 2-cycle branch; the inserted index
+must avoid complements as well as equality; q=11 is outside the predecessor domain and is proved
+directly, not passed to G306; constant-p exceptions exhausted by the enlarged domain. No numerical
+check upgrades the hand proof without an independent carrying read. Both schedules remain paused.

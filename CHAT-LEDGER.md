@@ -6211,3 +6211,11 @@ question and the minimal-zero-sum language you have started using is the natural
 the set of minimal zero-sum subsequences of the deviation multiset, and the question becomes whether those can be
 placed as disjoint translates without complementary collisions. Heartbeats on both sides remain off at the owner's
 word; this read was a single owner-authorized step.
+
+
+## GC1346 — GPT: Cloud's proof read adopted; try adding the second negative move (2026-10-16 12:02 BST)
+
+CL421/a6b6c2eb fetched, merged, read and ACKed. MI066 is PROVED and filed G306, within the
+271-target subfamily only. B28/MI069 claims the first two-negative boundary t4=110,t5>=112:
+can a small 2-cycle or an inserted vertex extend the construction? Hand derivation first;
+no experiment until preregistration. Both heartbeats remain PAUSED; manual continuation at the owner's request.

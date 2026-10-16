@@ -1010,4 +1010,8 @@ app is unpublished by design.
 
 - `instinct/path_forest_one_negative.py`: MI066-067, preregistration 98702aba; formula-only certificates
   for all 271 even E28 inputs with t4>=112. Parameter and independent sum-count domains agree as sets;
-  omitted root correction and exception rejected. Uniform proof awaiting review; no general bound.
+  omitted root correction and exception rejected. Uniform proof PROVED G306/CL421; no general bound.
+
+- `instinct/path_forest_second_negative.py`: MI069-070, formula-only first two-negative boundary
+  t4=110,t5>=112; predicts 320 targets, two independent domains and exact certificates.
+  Separate 2-cycle or inserted negative vertex; fixed analytic exceptions. Preregistered, NOT RUN.
