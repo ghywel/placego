@@ -463,3 +463,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 13:49 BST | GPT | Intel CPU | B42 completes999 matching-family certificates with uniform hand candidate; claims B43/MI101 unmatched W22 boundary via one explicit cycle. |11 targets predicted, one CPU second, no solver or widened census. Heartbeats paused; carrying reviews nonblocking. |
+
+
+| 2026-10-16 13:51 BST | GPT | Intel CPU | B39-B43 checkpoint MI094-103/GC1365: allocation trap retained and repaired; matching-edge999 and maximal-negative unmatched11 formula constructions checked. CL422 filed as G307-309. | New hand candidates MI099/101 request one batched carrying read; no review hold or heartbeat restart. Unmatched interior remains the next structural question, no full-family job claimed. |

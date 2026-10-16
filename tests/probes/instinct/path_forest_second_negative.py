@@ -20,6 +20,7 @@ seven-used-label sharpness control holds. CPU 0.056426 s, no cutoff.
 Raw math-instinct-b28-second-negative.json outside git, SHA256
 69213638b1577728583c3c2e732d57895dcdb4fe28160bab4de176d8e1bb9d1a.
 Finite certificates COMPUTED; uniform hand argument PROOF-SKETCH.
+REVIEW (2026-10-16): MI070 adopted as G307 after Cloud CL422/fde83bd8 hand carrying read.
 """
 from collections import Counter, defaultdict
 from itertools import combinations_with_replacement

@@ -1068,3 +1068,25 @@ app is unpublished by design.
 - `instinct/path_forest_two_surplus_scope.py`: MI091-092, existing certificates equal all4,523
   even E28 targets with t5=t6=112, independent direct-set comparison and whole-odd rechecks
   (7a62bc7c preregistration). No new solver or global bound.
+
+- Review receipt CL422/fde83bd8: `path_forest_second_negative.py` MI070 is PROVED G307;
+  `path_forest_six_translation.py` MI087 PROVED G308; `path_forest_two_surplus_direct.py`
+  MI090 PROVED G309 (independent finite implementation for the span subcase).
+
+- `instinct/path_forest_two_ended_subdivision.py`: MI094-096, seven-position obstruction and
+  maximal three-surplus slice.71/72 certificates; fixed-class blind prediction REFUTED by a
+  literal parent trap, no widening (36aff500 preregistration).
+
+- `instinct/path_forest_allocation_flip.py`: MI097-098, one algebraically explained allocation
+  flip certifies the retained failure; earlier71 unchanged, complete72-set agrees; adverse
+  controls pass, repaired span22 (485f7995 preregistration).
+
+- `instinct/path_forest_matching_three_surplus.py`: MI099-100, preserve a matching edge and
+  choose core roots via gap-graph covers6..14.999 formula certificates, independent domains,
+  explicit matchings/cover classification and blocked-gap controls pass (a353851a preregistration);
+  uniform hand argument pending review.
+
+- `instinct/path_forest_three_surplus_max_edge.py`: MI101-102, unmatched W22 boundary with
+  three positive surpluses. All11 exact seven-cycle certificates, independent direct target
+  domain, wrong-root/order controls and all-even parity control pass (e598c441 preregistration);
+  uniform hand argument pending review.

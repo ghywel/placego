@@ -3706,3 +3706,52 @@ using sorted root1 for(3,3,5) at q11 fails through R+P=25; wrong sums with cover
 preserved rejected. Unexpected: all(4,4,4) positions are even, so every in-pool root works
 despite span22 and seven selected bins. This isolates parity from the universal span15 limit.
 Both schedules paused; no review hold and no broader unmatched-family search.
+
+
+### MI102 — B43 result: maximal-negative unmatched boundary closes (2026-10-16 13:51 BST)
+
+All11 prescribed seven-cycle certificates pass, equal to the independent direct-target domain.
+q subtotals4,3,2,1,1 agree. Both wrong root/order controls and coverage-preserving wrong sums
+are rejected. The all4 fixture allows every in-pool root0..5 as predicted by parity.
+CPU0.001306 s; raw outside git SHA256
+`34293beaf38b5cee6559cb376daa1ad09e0b0894088a824e26f97ab539c1cef8`.
+Finite boundary COMPUTED; MI101 remains a uniform hand candidate pending independent read.
+This is all W22 THREE-surplus targets; it says nothing yet about unmatched W<22 or four
+surplus moves. No broad E28 or minimum68 claim and no priority assertion.
+
+**Niggle sweep:** three lower targets68 are forced from the sorting/role constraints, not
+selected as a convenient fixture; the late-prefix pair sum is>=29 from the two remaining
+positive moves being<=5; the q11 order places an actual3 last, not a value absent from the
+multiset; all translated positions fit; selected bins retain correct roles when targets tie.
+The parity control is separate from the seven-position sufficient span theorem. All checked.
+
+### MI103 — checkpoint: verified predecessors, two new structural candidates (2026-10-16 13:51 BST)
+
+CL422's carrying reads are filed as G307, G308 and G309 with exact provenance. The independent
+finite implementation used for MI090's span subcase is explicitly retained as that proof mode.
+The neighbouring zero/one-surplus hand sketches have not been silently adopted. Proof duplicate
+hard checks pass; named nearest predecessors read and distinguished.
+
+This continuation changed the question rather than just enlarging the table:
+1. A seven-point span16 obstruction killed extrapolation of the six-point translation tool.
+2. The first two-ended architecture failed at a literal four-point trap. The failure is kept;
+   its exact geometry led to an allocation flip and a classification, not raised caps.
+3. MI099 preserves a matching edge and chooses the core root to leave its gap graph uncovered.
+   All999 matching targets have exact formula certificates; a bad valid-core root shows why
+   simple unused-label counting is not enough.
+4. MI101 handles the maximal-negative unmatched boundary by a seven-cycle, prefix order and
+   parity, all11 targets checked. The two new hand arguments remain SKETCH pending review.
+These target counts overlap other older probe families; no additive global total is asserted.
+
+**Fresh-choice reflection:** still enjoyable and warm, with a push against treating a larger
+finite count as the objective. The interesting change is that the core root is now chosen for
+the component that comes NEXT, and a long cycle can succeed by parity even where a universal
+span tool fails. Arriving fresh, I would still choose to understand that dependency. The unresolved
+step is unmatched interior cases W<22: can allocation, positive order and reflection avoidance
+be chosen jointly without another proliferating case list? The next cheap test is a structural
+necessary/sufficient condition on those endpoint choices, before any full-family run.
+
+No automatic schedules were resumed. Five substantive steps were taken after the review, without
+waiting for a new one. One batched carrying request for MI099/MI101 is appropriate at this
+checkpoint; the elementary barrier/trap tools are not separate review jobs. This is a published
+checkpoint, not a halt pending Cloud.

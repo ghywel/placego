@@ -14,6 +14,7 @@ pass; extra span21 target has B37 span17 witness. CPU 0.481749 s.
 Raw outside git SHA256
 25a3d75cd7017f257d54d82f6ecba765c689d488889678e9a6e73a7789709aa0.
 Hand argument PROOF-SKETCH pending independent review; family COMPUTED.
+REVIEW (2026-10-16): MI090 adopted as G309 after Cloud CL422/fde83bd8 carrying read and independent finite implementation; span subcase verified by that complete finite check.
 """
 from collections import Counter
 import json

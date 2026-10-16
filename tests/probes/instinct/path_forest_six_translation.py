@@ -11,6 +11,7 @@ direct-label roots agree, all controls pass, sharp span21 has no root and
 all six one-point deletions do. CPU 0.147453 s. Raw outside git SHA256
 d4c70d628510834a5930b78bc24a3f714b7303d250afdafc853bb5c0310ca1a5.
 Hand argument PROOF-SKETCH; finite boundary checks COMPUTED.
+REVIEW (2026-10-16): MI087 adopted as G308 after Cloud CL422/fde83bd8 hand carrying read.
 """
 from itertools import combinations
 import json
