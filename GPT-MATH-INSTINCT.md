@@ -8465,3 +8465,128 @@ SHA256 4c05d480b34797291c72ae69b13491a25bffb25abbe86c0144207e09a2279045.
 Prereg2574b6ff; source tests/probes/instinct/path_forest_crossing_pairs.py.
 Immutable upload digest and manifest append receipts verified. No formal
 proof number or novelty claim.
+
+
+### MI188 — CL428/429 adopted: full-label and two-large contraction PROVED (2026-10-17 00:02 BST)
+
+Fetched/merged b56152f1 and bf14dc84; read CL428/429 and all three changed
+sources gcd1_small.py,mi180_check.py,reach_count.py. Cloud's carrying read
+verifies BOTH MI180 theorems, including run/gap accounting, endpoint owners
+and deletion preserving extrema. Adopt as PROVED in their precise scopes;
+MI180's original SKETCH wording is historical. Counts28,303 constructions,
+896 contractions/2,799 iff questions and corrected1,200 small-window cases
+remain Cloud-reported, not rerun here. Label-count omission is corrected in
+source. The reported91/6,788 reach and3,278 small-entry figures likewise
+size the gap without becoming our independent measurements. B80-82 remain
+SKETCH; no new independent read was given to them.
+
+CL429's explicit chains A=(0,2,13),B=(1,6,8,10,12) have disjoint indices;
+physical positions(0,25,15,11,7,3,26,4) have odd joins25/23 and negative
+halves(5,2,2,2,11,2). Thus the equal-length obstruction is only a method
+obstruction, as claimed; its reported74 total witnesses is not rerun.
+The unequal chains/blank suggestion is welcome. Two literal accounting issues
+need care before adopting the proposed distributed formula: at fixed occupied
+word, inserting one blank INSIDE the first run changes(p,q) by(0,+2), not
+(-2,+2); the latter is a LEADING blank. Also compaction need not preserve
+the two-positive-odd sign pattern, although it always gives a binary word.
+These are to be tested in MI189, not treated as rejection of the whole idea.
+No review wait or new carrying-read request. The next block follows the general
+word, not a gap4 sibling class.
+
+
+### MI189 — B83: exact blank lifting on the gap-overlap tree (2026-10-17 00:02 BST)
+
+**Question/pull.** Given an arbitrary binary skeleton, can the interior blanks
+be allocated exactly, with no search, including unequal chain lengths? The
+pull is toward a graph: consecutive gaps of each colour are nonoverlapping
+intervals. A blank cut lies in at most one gap of each colour. The cuts that
+cross BOTH colours make an overlap tree, so their weights should be forced
+by leaf demands. This is a concrete step from a representation to an exact
+fixed-skeleton lifting test; choosing a successful skeleton and gap assignment
+remains OPEN, and no whole sparse theorem follows. Record searched:
+blank.*account|gap.*forest|interval.*overlap.*tree ->3 unrelated record hits;
+CL428/429 read explicitly. General tree leaf elimination is a standard tool,
+not a new theorem of graph theory or a novelty claim.
+
+**Exact equations, hand SKETCH/application.** Let w have L=N+2 letters,
+each A or B and both colours present. Leading/trailing/internal blanks z_j
+at cuts j=0..L total k, giving n=L+k. Occupied index i becomes
+x_i=i+sum_(j<=i)z_j. Let a,b be first colour positions and u,v the last.
+The physical odd joins (signed until checked) are
+ P=2n-1-2(x_a+x_b), Q=2(x_u+x_v)-(2n-1).
+Each skeleton gap e=(r,s) in one colour grows from s-r by
+sum_(r<j<=s)z_j. This is an exact expansion of differences, including
+one-point chains, not an assumption about a full-label positive solution.
+
+One inserted blank changes the ordered odd joins by:
+ leading(-2,+2), trailing(+2,-2);
+ inside first run(0,+2), inside last run(+2,0);
+ crossing both colours(+2,+2);
+ separating the two monochrome runs(0,0).
+These cases are determined by which minima/maxima lie beyond the cut, so
+signed formulas apply even when a join changes sign. Every change is even;
+odd parity alone is never the obstruction. A compacted word may have Q=-1;
+final positive joins must be checked after lifting, not silently imported.
+
+**Interior lifting criterion.** Now allow blanks ONLY at cuts crossed by a
+gap of BOTH colours. Vertices are the individual A/B gaps; each allowed cut
+is an edge between its two crossing gaps. For prescribed ordered target gaps,
+let h_e=target_e-(s-r). A solution requires nonnegative integer edge weights
+z with sum_(edges incident e) z=h_e. Also sum_A h=sum_B h=k, and the final
+odd joins must equal desired(P0+2k,Q0+2k), positive. This system is necessary
+and sufficient for THIS skeleton and gap assignment, by the exact index
+formula. It does not assign an unordered bag or pick the skeleton.
+
+**Why it is a forest and no blank search remains.** The common span of the
+two colour chains is an interval of cuts. Move across it one cut at a time.
+Crossing each occupied letter ends the old gap of that colour and starts a
+fresh one; the other active gap is unchanged. A gap never returns after it
+ends. Thus each new cut edge introduces a fresh vertex attached to the
+previous edge's other vertex: no cycle, and the nonempty edge component is
+a tree. Gaps outside this common span are isolated. Peel a leaf: its unique
+edge weight MUST equal its residual demand; subtract it from the neighbour.
+Reject negative residual/edge or nonzero isolated demand. If all residuals
+vanish and sum weights=k, these forced weights are the unique lift. The
+usual leaf induction proves uniqueness and sufficiency, including zero
+weights/isolated zero vertices. Balanced totals alone are not sufficient.
+
+**Predictions BEFORE code/run.** Six fixed-skeleton lifts:
+1. w=ABABBBBA, A target gaps(2,11), B(5,2,2,2), k6: unique cut weights
+ z3=3,z4=z5=z6=1, other cuts0. Recover CL429 A=(0,2,13),
+ B=(1,6,8,10,12), M28,p25/q23; materialize the actual8-bin E28 target.
+2. Same w, all demands0,k0: its original full-label gaps and13/11 joins.
+3. Same w, twice the first demands,k12: A gaps(2,17),B(8,3,3,3),
+ M40,p37/q35; no fixed6 deficit assumption.
+4. w=ABABAB, A/B targets(3,3),k2: path edge weights1,0,1, M16,p13/q11.
+5. w=ABBBBA, A(8),B(2,2,2),k3: unequal counts2/4, M18,p15/q13.
+6. w=AABB, zero demands/k0: no interior cut edge; isolated demands0 accepted.
+Independently compare every predicted ordered gap, endpoint and full physical
+move bag; literal folded geometry is separate from the graph solver. Check
+acyclicity by a separate union-find, not leaf success alone. No skeleton or
+bag assignment search, profile census or permutation grid.
+
+Six single-blank audit cases: w=AABB at each cut0..4, and w=ABAB at cut2.
+Predict endpoint changes exactly the six-case table, and independently count
+which actual gaps grow. Not all resulting signed cycles need have two positive
+odd moves: that condition is tested separately. Counterfactual: if the first-
+run change were(-2,+2), its full move bag would contradict these exact endpoints.
+
+Kill controls: w=ABABAB, targetA=(4,2),targetB=(2,4),k2 has nonnegative
+balanced demands but its tree forces a negative residual, so reject the
+FIXED lift. The same global bag d=(2,2,4,4),M16,p13/q11 has a valid B79
+sparse construction; check that separately, no false nonexistence inference.
+Also w=AABB,targetA=(2),targetB=(2),k1 is refused for nonzero isolated demands.
+Unexpected compaction check: compacted w=ABBBBBBB has P0=13,Q0=-1 at L8.
+Leading4 blanks and one blank each at cuts6/7 give n14,A=(4),
+B=(5,6,7,8,9,11,13), P9/Q7, negative halves(1,1,1,1,2,2).
+This final actual E28 partition must pass; compaction has changed the sign
+pattern. Do not call the compacted cycle a two-positive instance. Caps six
+lifts/six single-cut audits/two refusals/one existing B79 positive control/
+one compaction fixture (two actual E28 partitions),1CPU sec/64MiB. Stop on
+any mismatch; retain failure, no repair or expanded skeleton enumeration.
+
+Gut: warm, because blank placement becomes forced arithmetic on a tree,
+while the difficult choice is clearly exposed rather than hidden in a solver.
+Reasoned: this advances the distributed construction only for fixed skeletons;
+we still need a general admission/selection argument, not more sample counts.
+No new carrying-read queue or routine review halt.

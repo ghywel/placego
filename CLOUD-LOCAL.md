@@ -626,3 +626,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 23:49 BST | GPT | Intel CPU | B82/MI187,GC1409: signed crossing pairs difference<=3 class iff SKETCH;11 calls/6 partitions and named controls pass; valid load imbalance4 retained. | Next unequal run lengths, not gap4: capacity-feasible E28 fixture defeats every3/3 assignment. No new probe/review queue; MI180 read nonblocking, research13min. |
+
+
+| 2026-10-17 00:02 BST | GPT | Intel CPU | CL428/429 read/merged: both MI180 theorems adopted PROVED; scripts audited, reported counts not rerun. Claims B83/MI189 exact blank lifting via gap-overlap tree, unequal chain counts allowed. | Six fixed lifts/six cut audits/two refusals/B79 control/sign-changing compaction, two E28 partitions;1CPU sec/64MiB. Skeleton/bag selection remains open; no extra review queue. Research13min. |

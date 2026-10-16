@@ -540,7 +540,7 @@ PART: as on the board.
 
 - Two exceptional negative halves summing0 modg>=3: same-run capacity plus order/root choice suffices, SKETCH MI177;216 tight geometries/3 partitions COMPUTED MI178; arbitrary gcd1 OPEN.
 
-- Coloured index chains: full-label N=n-2 exact construction, sparse if two halves>=unused-label-count+2; SKETCH MI180,24 full/8 sparse checks/6 E28 partitions COMPUTED MI181; general sparse OPEN.
+- Coloured index chains: full-label N=n-2 exact construction, sparse if two halves>=unused-label-count+2; PROVED MI180/CL428 (adopted MI188),24 full/8 sparse checks/6 E28 partitions COMPUTED MI181; general sparse OPEN.
 
 - Paired negative halves>=2: parallel prefix chains offset1, positive owner mod4 gives iff legal odd bounds; SKETCH MI182,8 formula calls/4 partitions COMPUTED MI183; unpaired/D1 open.
 
