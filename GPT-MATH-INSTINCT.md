@@ -7104,3 +7104,76 @@ SHA256 `9decbd5ddbf4881aaefdb9fbd74514d44144848336ff9dc69601108420a3ade0`.
 Prereg59aa9e29, source tests/probes/instinct/path_forest_balanced_bridge.py.
 Immutable receipt/manifest verified. PROOFS filing/status promotion waits for
 independent carrying scrutiny. No schedule/held-lane changes.
+
+### MI169 — B74: the admission wall calls for a longer odd run (2026-10-16 22:05 BST)
+
+**Review receipt first.** CL426/a0caec24 fetched and read in full, including
+its four source scripts. G314 is now PROVED in scope, computer-assisted and
+independently replicated on all3409 primitive cores x14 gaps. MI163 and MI165
+are PROVED in scope after Cloud's carrying read and independent allocation of
+all2002 parameters/677 E28 targets. MI167 is a later generalized statement;
+its status remains SKETCH, not silently inherited. Cloud's k_min residue count
+is a useful admission lever, not an existence theorem or57% construction
+coverage; a successful finite greedy sample would likewise remain a sample.
+
+**Actual pull/question.** Warm toward the general reflection picture, with
+unease that two odd moves might be mistaken for our two-equal-step/one-negative
+formula. Record searched: two-run/6r+3/8r+4/central96-98-100 target/exactword
+->34 hits18 files, none on this construction. MI136, MI153, MI167 and CL426's
+carrying sources read. No new literature-status or novelty claim.
+
+**Admission limitation (one paragraph, no separate lemma/probe/review).** For
+all-even E28 the MI167 nonnegative formula requires g>=1,sum g=13. Since
+T_i<=122, g_i<=2, and g_i=2 requires T_i>=112. Thus at least FIVE targets must
+be>=112: the formula lies inside the already solved G306 region. The central
+target(96,96,96,98,98,100,100,100) has k_min=2 yet every target<112, forcing
+sum g<=8, impossible. Its natural slot choice instead produces the primitive
+8-core(21,21,-6,-8,-6,-8,-6,-8). This excludes the formula, not the target.
+The needed change is multiple negative moves and a longer odd-class run, not
+another anchor choice or larger calibration sample.
+
+**Named carrying block: primitive eight-core with two positive odd moves.**
+For integer r>=2 put a=6r+3, b=2r, c=2r+2, and take moves
+(a,a,-b,-b,-b,-c,-c,-c). This is primitive: one positive odd move cannot sum
+with even negatives to zero; both positives need ALL six negative terms.
+For ANY even M in[6r+8,8r+4], the fixed cyclic word
+
+    (a,-b,-c,-b,a,-c,-b,-c)
+
+at root0 has selected positions
+
+    (0,6r+3,4r+3,2r+1,1,6r+4,4r+2,2r+2).
+
+These are distinct for r>=2 and lie in0..M-1. Their odd positions are
+{1,2r+1,4r+3,6r+3}, even positions{0,2r+2,4r+2,6r+4}.
+Cross-parity sums all belong to
+{1,2r+1,2r+3,4r+3,6r+3,6r+5,8r+5,10r+5,10r+7,12r+7}.
+Every such sum is<=6r+5 or>=8r+5, whereas6r+7<=M-1<=8r+3.
+Thus none is M-1. Same-parity pairs cannot reflect under the odd M-1.
+This proves the whole folded-label condition with FOUR odd vertices, not
+MI163's single odd vertex. It is a parametric SKETCH, not a new proof entry.
+No assertion that all two-odd-move cores have this form.
+
+At r3,M28, assign word owners(0,2,3,4,1,5,6,7) and h=(1,1,2,2,2,2,2,2).
+Targets in that order of bins are(98,98,100,96,100,96,100,96), the stated
+sorted central target. Reserve no anchors. Fill remaining pairs and transfer
+selected tokens around the cycle. This answers a genuine eight-core case
+outside G314's six-core and MI167's admission domain.
+
+**Predictions BEFORE code/run.** r=2..100 and EVERY even M in the stated band:
+exactly sum(r-1)=4950 geometry fixtures. Compare the explicit coordinates with
+an independent literal cumulative-sum construction of the word; check every
+pair for distinctness/reflection and compare folded labels. Check all254 proper
+nonempty indexed submultisets for each of99 r values: predict all primitive.
+Sign reversal/reflection M-1-x must preserve labels and reverse displacements.
+The one actual E28 allocation must pass old/new literal validators; no new
+sample, order search, arbitrary target census or role repair.
+Counterfactuals: just below the band M=6r+6, positions1 and6r+4 reflect;
+just above M=8r+6, positions6r+3 and2r+2 reflect. Predict rejection for all99
+r values, retaining these198 failures as the boundary evidence. Unexpected:
+the odd run has four positions and still avoids every even mirror; verify this
+and the sign-reversed cycle, rather than accidentally using the old single-odd-
+point checker. Caps4950 positive/198 negative geometries,99x254 primitive checks,
+1 actual partition,2CPU sec/64MiB. Stop on mismatch/cap, no fallback/expansion.
+Gut: delight that the admission counterexample supplied the next geometry.
+Reasoned: a limited two-run construction, not a blanket response to k_min=2.
