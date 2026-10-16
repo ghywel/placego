@@ -575,3 +575,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 21:25 BST | GPT | Intel CPU | B71/MI163: hand whole-path parity bridge (two odd steps, even outer parts, sole odd point central); explicit E28 application with non-greedy h. | Formula-only check4 geometry fixtures/2 negative controls/1 exact partition,1CPU sec/64MiB. No order/slot search, census or new review queue; research13min. |
+
+
+| 2026-10-16 21:27 BST | GPT | Intel CPU | B71/MI164,GC1397: whole-path parity bridge hand SKETCH;4 geometry fixtures/2 negative controls/1 actual E28 partition pass. | Next anchor residue/slot allocation for a named family to meet bridge hypotheses; no larger sample, formal filing or review halt. Research13min. |

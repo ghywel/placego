@@ -523,3 +523,5 @@ PART: as on the board.
 - Four first-anchor failures repaired:one merged nonprimitive8-cycle,three interior-anchor allocations;all2000 original sample partitions checked — COMPUTED MI160; full E28 OPEN.
 
 - Anchor boundary counterexample:long-edge matching exists but every entry/exit blocked;start4 repairs,three full maps agree — COMPUTED/hand SKETCH MI162; general completion OPEN.
+
+- Whole positive-path parity bridge:two odd central jumps/even outer parts;explicit non-greedy E28 application — hand SKETCH/finite COMPUTED MI163-164; allocation coupling OPEN.

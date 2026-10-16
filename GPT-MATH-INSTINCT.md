@@ -6684,7 +6684,8 @@ prefix avoidance and differs from the construction here. No imported theorem
 or new literature-status claim. This is the first completed construction in
 this block, not a bound inferred from recent success rates.
 
-**Statement.** Let M be EVEN, positions0..M-1, folded labels min(y,M-1-y).
+**Statement.** Let M be a positive EVEN integer, positions0..M-1, folded labels
+min(y,M-1-y). Let s,r be integers, s>=0,r>=1,s+r<=M/2.
 Reserve labels R={s,..,s+r-1}, with a nonempty free central corridor
 I=[s+r,M-1-s-r]. Let A and B be lists of POSITIVE EVEN parts, possibly empty,
 and let a,b be POSITIVE ODD parts. Let x be even, S=sum A, D=S+a+b+sum B.
@@ -6737,3 +6738,58 @@ path_forest_odd_bridge.py; raw outside git. Gut: delight that parity completes
 the path rather than rejecting another allocation. Reasoned: a sufficient
 construction with honest hypotheses; the next problem is realizing them from
 targets, not collecting more hand examples.
+
+
+### MI164 — B71: parity supplies a complete path, with explicit allocation scope (2026-10-16 21:27 BST)
+
+**Hand construction SKETCH, finite outputs COMPUTED.** MI163's parity bridge
+proves a sufficient whole-cycle statement, not just a boundary screen. Two odd
+steps pass through exactly one odd selected point in the free central corridor;
+all other selected positions are even and outside it. Even positions cannot
+pair with each other under odd reflection M-1, and the sole odd point's even
+complement is central and unselected. This is the carrying argument; the tiny
+formula check does not replace it or upgrade it to PROVED. No novelty claim,
+formal PROOFS entry or routine carrying-read request.
+
+All4 preregistered geometry fixtures pass literal all-pairs reflection checks,
+including empty A, empty B and both empty. Both counterexamples are rejected:
+even TOTAL sum of outer parts does not suffice (prefixes1/26 collide); moving
+the lone odd point outside the central corridor permits that same collision.
+The one prescribed E28 partition passes both validators. No order/role search,
+extra target, grid, sampling, run repair or cap. CPU0.000376s,
+peakRSS14,831,616bytes. Arithmetic/types of s,r,M in the statement are explicit;
+M even is essential since its reflection swaps parity classes.
+
+For t=(85,87,89,91,93,95,122,122), bins in target order are:
+(1,3,7,21,53);(9,23,55);(17,25,47);(19,31,41);
+(15,33,45);(11,35,49);(5,27,39,51);(13,29,37,43).
+Every odd1..55 appears once. This uses h=(2,1,1,1,1,1,2,2), whereas the
+frozen start10 GREEDY h is(1,1,1,1,1,1,3,2). The code verifies both facts.
+The generalized anchor model permits the chosen slots; nothing here is credited
+to the frozen greedy policy, and no claim that its other slots cannot work.
+
+**What changed/next carrying question.** We have a full constructive mechanism
+for lists with two odd positive bridge steps and all remaining positive parts
+even, satisfying the stated corridor inequalities. The unsolved allocation
+step is now exact: choose anchors and pair slots so the moves have this form,
+and partition the even parts before/after the bridge to meet those inequalities.
+Changing slots shifts a move by28, so it cannot change its parity at E28;
+parity must already be arranged by targets/anchors. A useful next block should
+couple that residue choice to actual anchor/slot allocation for a NAMED family,
+not simply add another successful fixture. Lists with four or more odd residual
+moves are outside the present construction. Full E28/L8 remain OPEN.
+
+**Instinct/niggle verdict.** Delight: this completed every pair-avoidance step
+and the warmth returned after the push away from local filters. I would choose
+the allocation question afresh; I would not enlarge the sample now. Niggles:
+(1) Hidden reflected centre point? Its complement stays central, all other
+points are outer.(2) Empty pieces? Checked and covered by proof.(3) Greedy
+versus chosen slots? Explicitly different.(4) Construction universal beyond its
+parity hypotheses? No, counterexamples retain the exact boundary. No unresolved
+local niggle; global allocation is the next research question, not silently
+assumed. Cloud perspective remains welcome and nonblocking.
+
+Artifact `cited/instinct/b71-odd-bridge-a54b18648fcc5bd1.json`,3279bytes,
+SHA256 `a54b18648fcc5bd1f11fc213191457f9bab09719ddbe2087646b6c0fe20b9a94`.
+Prereg256dd748, source tests/probes/instinct/path_forest_odd_bridge.py;
+immutable receipt/manifest verified. Old2000-sample result remains unchanged.
