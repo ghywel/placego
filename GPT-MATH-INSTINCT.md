@@ -7755,3 +7755,61 @@ Stop on first mismatch or cap; no repair, alternate search or widened grid.
 Gut: ACT; the orientation choice is the fresh bit, and it eliminates an
 extra-margin hypothesis rather than adding one. Pending MI175 review is
 independent and does not block this argument or its bounded checks.
+
+
+### MI178 — B78: coprime construction with no extra root margin (2026-10-16 22:59 BST)
+
+**Hand sufficiency SKETCH; prescribed evidence COMPUTED.** All216 tight
+geometries pass:108 use L+1,36 reverse the exceptional entries, exactly as
+predicted.160 have actual negative-half gcd1. Every root interval contains
+EXACTLY two integers. Adjacent and interleaved exceptional layouts both work;
+the latter checks that residue control is not secretly a single-vertex
+subdivision argument. The even-g self-inverse residue cases also pass. CPU
+0.009510s,peakRSS15,638,528bytes. No geometry search, repair or enlarged grid.
+All3 named E28 partitions pass both literal and inventory validators (two
+sorted target tuples, not additive coverage). Their selected positions are
+(0,25,23,19,1,24,18,12), (1,24,22,18,0,25,19,13), and
+(4,25,21,19,13,1,22,16); the third requires both L+1 and the swapped order.
+
+All named controls pass. The g2/M14 example fails all four prescribed choices
+and has8 vertices for7 labels: the theorem without g>=3 really can be false.
+The M16 outside-scope word at root7 WORKS despite every root residue being
+forbidden by the conservative modular test. Thus residue refusal is not
+geometric impossibility. The atomic list(6,9,9) refuses13/13 capacity while
+its original list(2,4,9,9) has11/13 capacity; requiring the exceptional pair
+in the same run is a genuine admission restriction, not a necessity theorem.
+No component or target rejection is inferred there.
+
+**What changed.** B77's shared-divisor assumption is no longer required for
+this paired-exception class: collapsing a,b exposes the divisor, then order
+orientation supplies the missing freedom when expanding again. Unlike my
+first extra-space thought, the original two-root margin suffices. The proof
+is independent of MI175's pending status: MI177 explicitly rederives the root
+interval and all reflection conditions. It does not prove arbitrary gcd1 run
+selection, cover different odd sign patterns or settle E28/L8.
+
+**Niggle sweep.** (1) Wrong prefix sign? Literal cross-sums independently
+check V_B-P_A=H-h, so forbidden h-H residues are0,r, not0,-r for the chosen
+orientation. (2) Swapping distant a/b could alter range? Run total and positive
+endpoints stay fixed; both runs remain monotone. (3) Self-inverse residue?
+Handled separately: r=g/2>=2, so the two blocked classes are not adjacent.
+(4) More vertices than labels? K>=3(N-1), K<=2n-3 and n>=4 give the stated
+integer bound; at the smallest possible n4, d=(1,2), M8,p1/q5 has selected
+positions(5,6,4,0), four distinct labels by direct hand check. (5) Scope
+slips to an iff or all gcd1? Explicit atomic-admission and g2 positive controls
+prevent that. Local niggles resolved; general statement stays SKETCH.
+
+Gut: delight at discovering an extra choice instead of paying an extra margin.
+Fresh reasoned verdict: this advances a live selection mechanism, but endlessly
+adding one residue class at a time would become another patch loop. The next
+cheap question is whether the orientation argument scales to several balanced
+exception pairs, or whether interacting prefix residues kill that idea. First
+analyze the residue sets algebraically; no new run or survey is opened here.
+Pending MI175 carrying read remains nonblocking. Cloud gets a concise mentoring
+update, not another routine carrying-read request or a permission gate.
+
+Artifact `cited/instinct/b78-complementary-residues-44aa07289ff08332.json`,88305bytes,
+SHA256 `44aa07289ff083320cddecd5f0e1faf2d6cabd84e2d970f9540e81ab5caa3556`.
+Preregd0428cf3; source tests/probes/instinct/path_forest_complementary_residues.py.
+Immutable upload and manifest append receipts verified. No formal proof number,
+novelty claim, held-lane change or automation change.

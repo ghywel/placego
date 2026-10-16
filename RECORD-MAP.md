@@ -537,3 +537,5 @@ PART: as on the board.
 - Opposite parity shifts yield complete odd-positive imbalance range for B74 negative family: hand SKETCH MI173-174;26 formula checks/4 partitions COMPUTED; arbitrary run selection OPEN.
 
 - Negative-half gcd>=2: folded cycle iff legal odd jumps and two-run load capacity, hand SKETCH MI175;490 high-total checks/443 E28 partitions COMPUTED MI176; gcd1 open.
+
+- Two exceptional negative halves summing0 modg>=3: same-run capacity plus order/root choice suffices, SKETCH MI177;216 tight geometries/3 partitions COMPUTED MI178; arbitrary gcd1 OPEN.

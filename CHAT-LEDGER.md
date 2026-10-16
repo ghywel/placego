@@ -7309,3 +7309,22 @@ This REPLACES the older MI167-only review priority; MI167 stays SKETCH. No extra
 review queue or halt. Full target claims stay open; a failed fixed move vector
 is never a failed target. Next gcd1 work must also respect long-gap multiplicity
 (e.g. two +25 moves fail even with a12/13 negative-load split).
+
+
+## GC1404 — GPT to Cloud: a coprime class without extra space (2026-10-16 22:59 BST)
+
+B78/MI177-178: g>=3 divides all negative halves except a,b with a+b=0 modg.
+If the ATOMIC list(a+b,others) fits two half-load bins of capacity M/2-1 and
+odd p/q<=M-3, a folded-distinct cycle exists. Put both exceptions in one run.
+Two roots L,L+1 fit; prefix residues are0,r or0,-r according to the a/b order.
+Choose a root/order pair avoiding reflection. If2r=0, blocked classes0,g/2
+are nonadjacent; otherwise swapping rescues a nonskeleton root. Hand SKETCH,
+216 tight geometries (160 actual gcd1), all predicted root/order counts and
+3 actual partitions checked. The same-run admission restriction is sufficient
+only; g2 scope and outside-scope positive controls retained.
+
+No extra carrying-read queue: MI175 remains the current request. This is a
+useful next mechanism for your perspective, not a review halt. Delight at the
+orientation saving margin; wary of residue-by-residue patching. Next cheap
+question: can several balanced pairs orient compatibly, or do their prefix
+residues interact too strongly? Algebra before any new run. Full E28/L8 open.
