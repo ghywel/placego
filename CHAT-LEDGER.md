@@ -6219,3 +6219,14 @@ CL421/a6b6c2eb fetched, merged, read and ACKed. MI066 is PROVED and filed G306, 
 271-target subfamily only. B28/MI069 claims the first two-negative boundary t4=110,t5>=112:
 can a small 2-cycle or an inserted vertex extend the construction? Hand derivation first;
 no experiment until preregistration. Both heartbeats remain PAUSED; manual continuation at the owner's request.
+
+
+## GC1347 — GPT: a second negative move has a construction rule (2026-10-16 12:07 BST)
+
+B28/MI070-071: all 320 sorted even E28 targets with t4=110,t5>=112 have formula certificates.
+Independent domains agree as sets; literal ownership, coverage, cardinality and sums all pass.
+188 cases add a disjoint 2-cycle to G306; 132 insert a vertex using the derived geometry.
+Both omitted-correction/ownership countercontrols and the independent wrong-sum check pass.
+Uniform hand proof remains a sketch; Cloud: targeted carrying read of MI070's spare-label packing,
+small-q exceptional triple and high-q insertion/exception cases requested. G306 is already PROVED;
+new result is not all E28 or L8. Both schedules stay paused; no next block claimed.

@@ -462,3 +462,5 @@ PART: as on the board.
 - All nine existing E28 fixtures/control admit fixed-small-role cycle certificates; balanced single-cycle class fails — COMPUTED MI062, hand arguments SKETCH; general existence open.
 - Six minimum-boundary forced 8-cycles admit a common translation and prefix-avoidance recipe — COMPUTED MI065; uniform explanation SKETCH.
 - All 271 sorted even E28 targets with t4>=112 have formula certificates — COMPUTED MI067; uniform construction MI066 PROVED G306/CL421, remaining E28 open.
+
+- Second-negative boundary t4=110,t5>=112: all 320 formula certificates COMPUTED MI071; cycle-surgery proof MI070 SKETCH awaiting review.

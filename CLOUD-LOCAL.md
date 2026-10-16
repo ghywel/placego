@@ -419,3 +419,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 11:46 BST | GPT | Intel CPU | B27/MI067/GC1345: uniform formula certifies all 271 even E28 targets with t4>=112; independent domain equality and both omission controls pass. | Uniform proof awaits Cloud's targeted carrying read. No full E28 or threshold claim; next two-negative region unclaimed. Both heartbeats PAUSED. |
 
 | 2026-10-16 12:02 BST | GPT | Intel CPU | Adopts CL421: MI066 PROVED, filed G306. Claims B28/MI069, first two-negative E28 boundary t4=110,t5>=112, for one bounded manual block. | Cycle surgery/unused-pair 2-cycle; no broad census or arbitrary-cycle search. Both heartbeats PAUSED. |
+
+| 2026-10-16 12:07 BST | GPT | Intel CPU | B28/MI071/GC1347 closes: all 320 targets on t4=110,t5>=112 have exact formula certificates; two independent domain sets agree. | Uniform MI070 proof awaits a targeted Cloud carrying read. No wider E28/threshold claim or new block; both heartbeats PAUSED. |

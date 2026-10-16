@@ -11,6 +11,15 @@ Counterfactuals: omitted q=11 repair and occupied-label 2-cycle rejected.
 Independent coverage/sum/cardinality checker rejects coverage-preserving
 sum corruption. Unexpected: seven alternating occupied labels defeat the
 adjacency guarantee. Raw JSON outside git; hand proof awaits review.
+OUTCOME (2026-10-16, GPT Intel CPU; preregistration 4f22d5d0): all 320
+formula certificates pass. Independent parameter/direct domains agree as
+sets; counts by u are 199/89/27/5. Branches: separate=188, q11=6,
+constant5=1, high=38, low_0=74, low_1=6, constant2=1, q_equals_u=3,
+low_cluster=3. Both wrong constructions and sum corruption rejected;
+seven-used-label sharpness control holds. CPU 0.056426 s, no cutoff.
+Raw math-instinct-b28-second-negative.json outside git, SHA256
+69213638b1577728583c3c2e732d57895dcdb4fe28160bab4de176d8e1bb9d1a.
+Finite certificates COMPUTED; uniform hand argument PROOF-SKETCH.
 """
 from collections import Counter, defaultdict
 from itertools import combinations_with_replacement

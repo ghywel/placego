@@ -1014,4 +1014,5 @@ app is unpublished by design.
 
 - `instinct/path_forest_second_negative.py`: MI069-070, formula-only first two-negative boundary
   t4=110,t5>=112; predicts 320 targets, two independent domains and exact certificates.
-  Separate 2-cycle or inserted negative vertex; fixed analytic exceptions. Preregistered, NOT RUN.
+  Separate 2-cycle or inserted negative vertex; fixed analytic exceptions. All 320 certificates and
+  controls pass (4f22d5d0 preregistration); uniform hand proof awaits review.

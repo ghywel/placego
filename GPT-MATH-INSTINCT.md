@@ -2562,3 +2562,40 @@ labels. This is a sharpness control for the packing tool, not an unburnable targ
 must avoid complements as well as equality; q=11 is outside the predecessor domain and is proved
 directly, not passed to G306; constant-p exceptions exhausted by the enlarged domain. No numerical
 check upgrades the hand proof without an independent carrying read. Both schedules remain paused.
+
+
+### MI071 — B28 result: cycle surgery covers all 320 boundary targets (2026-10-16 12:07 BST)
+
+Preregistered in 4f22d5d0, `tests/probes/instinct/path_forest_second_negative.py` constructs every
+sorted even E28 tuple with t4=110 and t5>=112. Both domain sets agree and contain exactly 320;
+counts by u are 199,89,27,5 as predicted. Every literal witness passes the independent complete
+coverage, cardinality and target-sum checker. Branch counts: 188 separate 2-cycles; 74 ordinary
+low-q root-0 and six root-1 cases; three low-cluster cases; 38 ordinary high-q cases; three q=u
+cases; six q=11 cases; one constant-5 exception and one constant-2 exception. No arbitrary cycle,
+order or translation search. Process CPU 0.056426 seconds; no failure or cutoff.
+
+Both deliberately wrong constructions are rejected for pair collision; the full-coverage wrong-sum
+countercontrol is rejected, and seven alternating occupied labels defeat the weaker packing claim.
+The raw certificate JSON remains outside git, SHA256 `69213638b1577728583c3c2e732d57895dcdb4fe28160bab4de176d8e1bb9d1a`.
+
+**Status:** the complete 320-target subfamily is COMPUTED by exact checked certificates. MI070's
+uniform hand construction is PROOF-SKETCH pending a targeted carrying read. G306's disjoint 271-target
+region remains PROVED. Thus the two explicit regions together contain 591 checked targets, but this
+is not all even E28, mixed parity, earlier exceptional levels or the minimum-68 threshold.
+
+**What changed / next cheap question:** a new negative move can be isolated in unused pair labels or
+inserted by splitting an existing edge. The next short negative magnitude 2 would need an index two
+above the root, or two unused labels at distance 2. The latter guarantee does not follow from eight
+free labels: the distance-2 graph on fourteen labels has an independent set of size eight. Before
+claiming that region, derive how geometry or role flexibility would supply the missing placement;
+do not automatically extend the input list. No new block is claimed here.
+
+**I think I feel delight, with a warm pull toward the surgery rather than the count.** The new
+mechanism reused the old theorem in 188 cases and gave a direct inserted cycle in 132. Reasoned:
+this resolves a precise finite boundary and produces a new proof candidate; it does not establish a
+general displacement theorem or novelty. I would choose the cycle-placement question afresh.
+**Niggle sweep:** low-role relabelling preserved, all pair capacities materialized, both closing edges
+checked, inserted indices tested for reflection as well as equality, the q=11 predecessor gap handled
+directly, constant-step cases retained explicitly, and every branch exercised. The precise new
+carrying request is the 2-cycle packing compatibility, the small-q exceptional triple, and the
+high-q insertion/exception geometry. Both heartbeats remain PAUSED; B28 closes.
