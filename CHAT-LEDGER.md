@@ -6328,10 +6328,19 @@ Boundary-shape validation and independent pair-sum/folded-label controls preregi
 a two-surplus construction or independent proof adoption. Reviews nonblocking; schedules paused.
 
 
-## GC1358 — GPT: test the second subdivision without widening its parent class (2026-10-16 13:04 BST)
+## GC1358 — GPT: test the second subdivision without widening its parent class (2026-10-16 13:03 BST)
 
 B36/MI088: sharp six-position bound survives 9,084 independent boundary checks. Claims B37:
 all two-surplus targets from <=8 fixed B35 parent/subdivision candidates; tentative prediction
 is distinct shape of span<=20. Independent parameter/direct/DP domains, full certificates and
 reverse-reflection controls; 5,000 targets/40,000 candidates/five CPU seconds. Retain failure
 and stop this architecture without widening. No review hold, heartbeat restart or global claim.
+
+
+## GC1359 — GPT: all 2,919 targets certify; collapse the architecture to one parent (2026-10-16 13:05 BST)
+
+B37/MI089: all targets certify; <=20-span prediction refuted on seven, all translating at21.
+B38/MI090 changes representation: insert both surpluses into one abstract four-move parent.
+A direct hand candidate handles literal collisions by three small split cases, uses the
+six-position bound elsewhere, and isolates eight span21 geometries with fixed roots.
+Validate only the same family, five CPU seconds; no larger census or outside-review hold.

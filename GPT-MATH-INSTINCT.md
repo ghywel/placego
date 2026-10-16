@@ -3209,7 +3209,7 @@ position must be rejected before translation, and an out-of-pool root rejected s
 No census of E28 or arbitrary cycle search; both heartbeats remain paused, no review hold.
 
 
-### MI088 — B36 result; B37: subdivide a second surplus (2026-10-16 13:04 BST)
+### MI088 — B36 result; B37: subdivide a second surplus (2026-10-16 13:03 BST)
 
 B36: all 9,084 endpoint shapes pass, including all 6,936 six-point shapes at spans 19,20.
 Independent direct-label and pair-sum root sets agree. The span-21 fixture has no root;
@@ -3249,3 +3249,97 @@ Controls: reverse-reflection twice returns the original normalized parent; subdi
 sign fails displacement; coverage-preserving wrong sums rejected. Unexpected check: are all
 span-21 failures genuinely reflection obstructions, or do many still translate? Classify instead
 of treating the sufficient bound as necessary. Schedules remain paused and reviews nonblocking.
+
+
+### MI089 — B37 result: all targets certify, stronger span prediction fails (2026-10-16 13:05 BST)
+
+All 2,919 two-surplus targets certify. Parameter/direct/DP domains agree. There were 3,074
+candidate attempts, 129 literal collisions; 2,787 chosen certificates use the first parent,
+130 its reverse-reflection, two reduce the other negative. Seven targets have no <=20-span
+candidate in this class, refuting that stronger prediction; each certifies at span21. All 33
+distinct span21 candidates encountered admit a root, so the sufficient bound is not necessary.
+Controls pass, CPU 0.694618 s, no cutoff. Raw outside git SHA256
+`417726155858aa98f6202e180396d2da9c25c986a6a0fca3145f076a26e9b48b`.
+Finite family COMPUTED, no global E28 bound. The seven span exceptions all have W=21.
+
+**What changed:** existence is checked for the family, but the eight-parent description obscures
+why it works. **Gut:** delight at the reverse-reflection repair, and a push against accumulating
+129 tiny exceptions. **Reasoned:** both surpluses can instead be inserted at once into a four-move
+abstract parent. This changes the representation and may remove dependence on B35's case table.
+Next cheap test: validate a direct six-move formula on the SAME family, without broadening it.
+The state poll first hit a sandbox DNS transport failure (not authentication); no login retry
+was made. The separately permitted network call is recorded operationally, not as math evidence.
+
+### MI090 — B38: two surpluses from one abstract four-move parent (2026-10-16 13:05 BST)
+
+Question: replace the eight-parent diagnostic by a direct uniform hand construction for exactly
+the 2,919 targets of B37. This advances the same family toward an explanatory proof, rather
+than adding another target table. Record: MI083-089, the B34/B35/B37 sources and actual diagnostic
+artifacts read. Existing exchange precedents remain credited; no new novelty claim.
+
+Put q=a+b, R=W-q. Since u+v>=12>q, W>q and R>0. Then R+Z=u+v. We have W<=21
+(as MI088), v<=17 (u+3v+q<=56), and always a,b<=5. Bin indices carry
+(u,v,-W,-Z,0,0,a,b). Select exactly one token in each nonzero bin.
+
+**Split cases, all with distinct positions.**
+1. If W=v then Z=u+q<=v. Use (+u,+a,+b,-Z) at 0,u,u+a,Z and (+v,-W) at
+1,v+1. All six positions are distinct; v<=14, so span<=15.
+2. If {R,Z}={u,v}, use a 4-cycle and a 2-cycle. If R=v,Z=u, use (+u,-Z)
+at 0,u and (+v,+a,+b,-W) at 1,v+1,v+a+1,W+1. Here W<=19 and span<=20.
+Otherwise R=u,Z=v: use (+u,+a,+b,-W) at 0,u,u+a,W and (+v,-Z) at r,r+v.
+Choose the first r in {1,2,3} with r+v distinct from u+a,W. At most two r are forbidden,
+r<u, and the six positions are distinct. W<=19, v<=14, so span<=19.
+3. If W=v+d,Z=u+c with (c,d)=(a,b) or (b,a), use (+u,+c,-Z) at 0,u,u+c
+and (+v,+d,-W) at r,r+v,r+v+d. Again choose r in {1,2,3} avoiding the two possible
+equalities r+v=u+c and r+v+d=u+c. W=v+d<=16 (2v+d<=28, d<=5), span<=19.
+
+**Nonmatching ordinary parent.** If R>=Z, take the cycle (+v,-Z,+u,-R) at
+0,v,A,R, where A=R-u=v-Z>0. Its positions are distinct; R=v would have been paired.
+Subdivide -R using +c,+d,-W at R,R+c,W, with {c,d}={a,b}. The new endpoint W can
+collide only with v, already handled in case1. An intermediate collision requires R+c=v;
+choose the other order. If both orders collide, a=b and v=R+a, hence W=v+a,Z=u+a,
+which is case3. All six are distinct with span max(v,W)<=21.
+
+If R<Z, start the cycle (+v,-R,+u,-Z) at 0,v,A,Z with A=v-R=Z-u>0.
+Subdivide backward: replace -R at v by -W at v, +d at A-q and +c at A-c, where
+c+d=q. The path goes v -> A-q -> A-c -> A, the old endpoint. Thus the two new positions
+are A-c and A-q; normalize after adding them. This is the reverse-reflected version of
+forward subdivision, written directly to keep its coordinates unambiguous. Each new point
+is below A and can meet an old point only at 0. A=q would imply W=v, case1.
+Choose c from a,b with c!=A; if neither is possible, a=b=A and W=v+a,Z=u+a, case3.
+Thus this gives six distinct positions. Span D=M+max(0,q-A). If A>=q, D=M<=20:
+W=21 would force v<=7, R>=11, Z<=3, contrary to R<Z. If A<q and v>=Z then
+D=R+q=W<=20 for the same reason. If A<q and Z>v then D=u+q<=21: combine
+2R+q>=u+v>=2u with R+q+v<=28 to get 2u+q/2<=28, so u+q<=21.5.
+Equality D=21 forces q=10,u=v=11,R=6 or7. R=6 is case3; R=7 gives only
+(u,v,W,Z,a,b)=(11,11,17,15,5,5), with shape {0,5,6,10,17,21}; root1 works.
+
+**The other span-21 cases.** In R>=Z, span21 means W=21 and v<=7. Positivity
+Z=u+v+q-21 and 6<=u<=v enumerate exactly seven tuples. For the displayed forward
+shape use c=b. Literal direct folded labels for these prescribed roots will be checked:
+
+| u | v | W | Z | a | b | root |
+|---|---|---|---|---|---|---|
+|6|6|21|1|5|5|1|
+|6|7|21|2|5|5|1|
+|6|7|21|1|4|5|1|
+|7|7|21|3|5|5|4|
+|7|7|21|2|4|5|0|
+|7|7|21|1|3|5|2|
+|7|7|21|1|4|4|1|
+
+All remaining shapes span<=20, so MI087 gives a reflection-free translation. Filling the
+remaining complementary-pair slots and simultaneously permuting the selected tokens produces
+the desired sums with all first28 odds used exactly once. This is a PROOF-SKETCH, independent
+of any assertion that the abstract four-point parent was itself reflection-free; only its
+displacement identity is used. This avoids importing B34's root exceptions or B35's repairs.
+
+**Predictions BEFORE validation:** every B37 target certifies via these formulas; signed, direct
+and DP domain counts still agree; only the eight explicitly listed geometries reach span21.
+All other branches must span<=20. Controls: omit triple/paired shifts to force collisions; use
+wrong root0 on the first W21 fixture to force pair reuse; reverse the wrong edge endpoint to
+fail displacement; coverage-preserving wrong sums rejected. Unexpected check: the extra
+(11,11,17,15,5,5) span21 case did NOT require span21 under B37's different parent. Keep both
+witnesses, demonstrating that a geometric exception belongs to the construction, not the target.
+Cap the SAME 2,919 targets / five CPU seconds; stop on formula/domain/control failure without
+adding cases. No larger target region, solver, cap increase or review dependency.
