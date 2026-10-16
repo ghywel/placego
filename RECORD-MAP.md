@@ -515,3 +515,5 @@ PART: as on the board.
 - Even-level portability:2000/2000 E26 and2000/2000 E30 sampled targets certify without patches — MEASURED/COMPUTED MI152; universal/mixed-parity cases OPEN.
 
 - Odd-cardinality split-anchor model sufficient only; E28 exact128 parity-pattern counts24,688,633, outside-even24,362,514 — definition/COMPUTED MI153-154; mixed existence OPEN.
+
+- Split-anchor first-policy pilot128/128 E28 (125 odd-containing) certify;20 complete maps/four packings independently agree — MEASURED/COMPUTED MI156; universal existence OPEN.

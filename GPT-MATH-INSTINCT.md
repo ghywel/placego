@@ -6162,3 +6162,74 @@ restart for a mathematical failure. Full raw outside git; source
 path_forest_split_anchor_pilot.py. No review halt/new proof filing. Gut: warm
 curiosity, with unease about losing the even range guarantee; reasoned: a small
 pilot can reject this cheap policy without becoming a generalized solver project.
+
+
+### MI156 — B67: all128 targets certify on the FIRST anchor policy (2026-10-16 20:32 BST)
+
+**MEASURED pilot, COMPUTED individual partitions.**128/128 uniform full-domain
+E28 targets certify: q0/2/4/6/8 strata3/30/64/30/1. Thus125/125 sampled targets
+outside the all-even class certify. Every target succeeds on its FIRST policy:
+R={0,..,q/2-1}, anchors sorted ascending into odd-bin order, greedily allocated
+whole-pair slots. No reversed assignment, later reserved set, size-bound reject,
+cap, fallback or target repair is used. This is the first mixed-target sample
+for MI153's model, not a universal result or a full-domain certificate.
+
+>=50% mixed-success forecast and all-even forecast pass. The prediction that a
+later policy would be required is REFUTED (0/128 needed one).11,751 total nodes,
+maximum1027/target; CPU0.250950s, peakRSS19,804,160bytes, far below frozen caps.
+A small fair sample supporting100% observed success is not a calibrated100%
+population prediction. Only one q8 case was drawn; q strata have different masses.
+
+**Independent controls.** First-policy complete component-label maps for the
+first four odd-containing targets agree with raw permutation/physical-root
+reference:20 maps,1412 raw words,13,328 roots. Four full set-packing references
+agree; both independently written token-inventory/sum validators pass on all128
+partitions, including required cardinalities in the first validator. Hand fixture
+and reserved-pair reuse/wrong anchor/duplicate token/coverage-preserving wrong
+sum controls all pass. N=24,688,633 agrees Gaussian/memo counts; rank roundtrips
+pass for all sampled targets. These are independent instruments, not an external
+second read. No new carrying request.
+
+First sampled target, rank5,485,352, is(70,83,85,105,107,107,112,115), q6.
+Its bins (in target order) are:
+(21,49);(1,11,13,15,43);(3,37,45);(5,9,17,35,39);
+(23,33,51);(7,47,53);(25,27,29,31);(19,41,55).
+Every odd1..55 occurs once. Anchors(1,3,5,51,53,55) occupy the six odd bins;
+slots are(1,2,1,2,1,1,2,1), integer moves(7,-15,13,-6,0,-1,0,2).
+This illustrates an actual allocation, not just parity arithmetic.
+
+**Unexpected observation/range caution.** Four first policies have positive/
+negative extrema sums>28 (33,32,30,32), yet certify. First such rank14,200,732,
+target(75,81,92,96,102,106,110,122), moves(9,-15,18,-8,-5,-3,-1,5).
+The old even-role extremal bound does NOT extend to these anchor choices;
+existential factorization/order is doing useful work beyond that sufficient
+bound. All observed h_i are1/2, but no theorem about greedy slot sizes is claimed.
+
+Full artifact `cited/instinct/b67-split-anchor-d162c854c429b676.json`,252,469bytes,
+SHA256 `d162c854c429b676c0372690c24d7f14954b07abef5d09542c66b724fab010e8`.
+Preregistrationaa2cefa4; source tests/probes/instinct/path_forest_split_anchor_pilot.py;
+immutable upload receipt/manifest verified. All policies/anchors/slots/moves and
+final partitions are retained outside git; no sampled failure to discard.
+
+**Hand observation/next question, not another experiment.** With the FIRST
+reserved set R={0,..,q/2-1}, the remaining physical odd tokens are the contiguous
+interval q+1,q+3,..,55-q. Subtract q from each: these are precisely the first
+N=28-q odds. Given slots h, removing the anchors and shifting tokens changes
+the target to T_i=t_i-a_i-2q*h_i. Then sum T_i=N^2, all T_i even, and
+(T_i-2N*h_i)/2=(t_i-a_i-56*h_i)/2=e_i. The folded coordinates shift by q/2;
+forbidden extreme labels disappear, leaving the standard reflection N-1.
+This explains why the first policy is a natural next object rather than16
+unrelated anchor tricks. It does not put T in the earlier minimum68 domain,
+prove a move-span bound, or prove any placement exists. Next: inspect the
+reduced target/range structure, and calibrate the first policy on a preregistered
+larger fair sample only if justified; no run/cap increase is opened here.
+
+**Niggle sweep.**(1) Are odd targets actually covered? Literal complete bins
+and parity/cardinality checks,125 mixed witnesses.(2) Are failed policies hidden?
+All128 succeed first, none executed later; failed later-policy forecast retained.
+(3) Did old range assumptions leak in? No extrema bound imposed, four explicit
+counterexamples to its automatic inheritance retained.(4) Is the reduced-pool
+identity called a proof of existence? No, it is exact bookkeeping, with new
+reduced targets outside the old hypothesis. Gut: surprise and delight; the first
+policy is much more effective than expected. Reasoned: the model has earned a
+larger diagnostic/structural look, not a universal claim or a new census.

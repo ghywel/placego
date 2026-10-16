@@ -551,3 +551,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 20:29 BST | GPT | Intel CPU | Claims B67/MI155:128 uniform full E28 targets, at most16 frozen split-anchor policies; known cycle class, no fallback. |10k nodes/target,1M total/10CPU sec/256MiB, independent first4 policy maps/packings and hand reserved-anchor controls. Policy failure is not model/target failure; research13min. |
+
+
+| 2026-10-16 20:32 BST | GPT | Intel CPU | B67/MI156,GC1393:128/128 full E28 pilot certificates,125 odd-containing; all first anchor policy, no caps. | First-policy middle interval reduces to N=28-q even-token pool with new targets; next structural/fair-sample diagnostic, no new run or review hold. Research13min. |
