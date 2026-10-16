@@ -533,3 +533,5 @@ PART: as on the board.
 - Primitive8 two-odd-positive equal/adjacent-even-negative family: cross-sum gap hand SKETCH MI169;4950 geometries/central E28 partition COMPUTED MI170; general two-run selection OPEN.
 
 - Two positive odd moves total<=26/up to6 arbitrary even negatives: uniform prefix construction SKETCH MI171;24982 geometries/735 distinct E28 targets COMPUTED MI172; high-total selection OPEN.
+
+- Opposite parity shifts yield complete odd-positive imbalance range for B74 negative family: hand SKETCH MI173-174;26 formula checks/4 partitions COMPUTED; arbitrary run selection OPEN.

@@ -7458,3 +7458,67 @@ countercontrols/4 exact partitions,1CPU sec/64MiB. Stop on mismatch/cap, no
 fallback, extra target, order search or cap raise. Raw outside git. Gut: delight
 at separating the two parameters; reasoned: a genuine high-total imbalance
 extension, with arbitrary negative-run SELECTION still unresolved.
+
+### MI174 — B76: reflection and odd-jump imbalance separate (2026-10-16 22:30 BST)
+
+**Transformation/application SKETCH; small checks COMPUTED.** All26 prescribed
+transformed geometries pass; their literal integrated words match the original-
+colour coordinate formula and all edge-change signs. All18 adjacent t-boundary
+cases fail with a vertex exactly-1, as predicted. The naive global translation
+creates3/24 reflection; odd M9 changes valid(0,3,6) into invalid(1,2,7).
+All four labelled r3/M28 allocations pass old/generic literal instruments and
+represent exactly three sorted targets, including the high-total17/25 pair.
+CPU0.001388s, peakRSS15,179,776bytes. No larger grid, target census, search,
+repair or cap. This small test checks the formula; the hand argument supplies
+its full parameter quantifiers. No independent-party status promotion.
+
+**A complete imbalance statement for this fixed negative family.** The result
+is stronger than two new examples. For B74's r/M band, EVERY positive odd pair
+p,q with p+q=2a=12r+6 and max(p,q)<=M-3 is constructed. Relabel p<=q; then
+t=(q-a)/2 is an integer0..(M-3-a)/2=Z+1, so MI173 applies. Conversely an odd
+move>=M-1 cannot occur in ANY folded-distinct cycle in0..M-1: at M-1 its
+endpoints must be0,M-1 (the same label), and larger moves leave the window.
+Thus for the FIXED negative multiset(-2r three times,-(2r+2) three times),
+within the stated M band this covers every possible odd-positive imbalance
+not already ruled out by that necessary move bound. This is about coordinate
+certificates with those moves, not impossibility of target partitions under
+other slots or roles. No theorem for arbitrary negative magnitudes follows.
+
+The r3/M28 sorted target family is
+(90,96,96,96,100,100,100,106),
+(94,96,96,96,100,100,100,102),
+(96,96,96,98,98,100,100,100).
+No count is added to old sample totals. The old equal-positive construction
+is included, not overwritten. Empty reserved set is essential to the stated
+application; opposite shifts need not preserve avoidance of a reserved label.
+
+**Niggle sweep.** (1) Parity after odd z used to determine signs? Colours are
+ORIGINAL, and the independent changed-word integration agrees. (2) Does z
+change reflection? Yes; its admissibility uses the B74 cross-sum gap. Only t
+cancels in cross-sums. (3) Unequal class shifts merge vertices? Their parity
+shifts have the same parity, keeping the two classes opposite; each is a
+translation. (4) Move bound presented as target impossibility? Restricted to
+the prescribed moves/certificate. (5) Odd pool assumed covered? Concrete M9
+failure retained. (6) All imbalance coverage inferred from26 fixtures? No;
+it follows from t=(q-a)/2 and the proved interval. Local niggles resolved.
+Gut: delight at the two separate parameters; fresh choice stays with negative-
+run selection, rather than generating more shifted instances.
+
+**Exact next selection object, not a new experiment.** For two positive odd
+moves p,q and even negative halves partitioned into ordered runs A/B, put
+s=sum A,t=sum B,w=p-2s, U the prefix set of REVERSED A, V the prefix set of
+REVERSED B, including0 and their totals. The unshifted selected coordinates
+are the two sets w+2U and2V. A common root h must lie in
+[max(0,-w),min(M-1-p,M-1-2t)]. Reflection is exactly
+(M-1-w)/2-h in U+V. Thus a fixed pair of runs works iff its allowed interval
+of these integers contains a HOLE in U+V. Choosing the runs to create an
+accessible hole is the remaining mathematics. This is a reformulation, not
+an existence theorem or a separate proof/review job. Next block should seek
+that selection rule for unequal negative sizes; a new instance table would
+not answer it. MI167 carrying review remains pending/nonblocking.
+
+Artifact `cited/instinct/b76-parity-shifts-f6aa1aefe9cd343b.json`,6833bytes,
+SHA256 `f6aa1aefe9cd343bdf26e3668bdeeb235c23b169cee907eceea5c068245fc54d`.
+Prereg6ed48def; source tests/probes/instinct/path_forest_parity_shifts.py.
+Immutable receipt/manifest verified. No formal proof number, novelty claim,
+additional routine review request or held-lane change.
