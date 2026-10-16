@@ -8762,3 +8762,69 @@ positive-owner swap and exact core threshold carry the argument; examples
 will not replace them. This is a new composition of proved constructions,
 not another census or a general solution. A useful carrying read would target
 that selector and padding, without rereading MI180; do not halt for it.
+
+
+### MI192 — B84: partial contraction plus outer padding passes; only the true excess needs absorption (2026-10-17 00:17 BST)
+
+**General sufficient theorem SKETCH;12 prescribed calls COMPUTED.** All12
+calls and6 actual E28 partitions pass both literal/inventory validators.
+The first five actual cases fail MI180's old second-largest>=k+2 admission,
+but their smaller contraction budgets1,1,1,2,3 work, with remaining5,5,5,4,3
+blanks outside the core. The sixth is the original full r=k6 construction.
+Original owner flips occur, including first fixture15/13 starting with13,
+and N8's full-core odd-padding case17/15 starting with15. Either padding
+side can vanish; N10 uses contraction2 and outer padding16, so the argument
+is not fixed at six negative halves or a small label deficit. Unit halves
+and the two tiny K1 exceptions pass. CPU0.002820s,peakRSS15,527,936bytes.
+No core/order search, widened family, census or numerical coverage claim.
+
+The unexpected wrong-residue control remains geometrically valid but changes
+requested odd joins15/13 into17/11; exact input move-bag comparison rejects
+it. Overlong/doubled-longest controls are refused. The second-large threshold
+refusal is constructor-only: M28,d=(2,2,2,2,2,7),p19/q15 has an independently
+checked explicit unequal-chain witness outside our admission. Its existence
+is not contradicted by this construction's refusal. No cap failures/repairs.
+
+**What changed.** We need not distribute ALL k holes through small negative
+gaps. The smallest legal core needs only r=max(0,ceil((K-2N)/2)) contractions;
+the remaining k-r holes can be at the ends, with exact positive owners chosen
+by an interval/mod4 argument. The new two-large condition is r+2, not k+2;
+for r0 there is no large-half condition at all. This extends the independently
+PROVED MI180 mechanism and directly handles the K14 class that disproved the
+all-interior/one-end recipe. It does not select a skeleton for EVERY feasible
+bag: lists with fewer than two admitted large halves remain outside. Old
+B81/B82 mechanisms retain separate scopes. Full E28/L8 OPEN.
+
+**Niggle sweep.** (1) Is the intersection secretly empty? Its cross bounds
+are exactly the two GLOBAL legal odd-jump bounds, and p,q>=1 handle its
+other ends. (2) Could the residue be absent? If the intersection has two
+odd values it contains both residues. A lone wrong-residue point could
+come from neither endpoint of J (both have the right residue), forcing the
+whole intrinsic interval I to be a singleton; K>=2,K<=C-1 rule that out.
+K1 is handled separately, not rounded. (3) Does larger-first ownership
+break the target? Swap the ORIGINAL owner with the core owner as well;
+t becomes -t, so its parity and bound survive. Direct bags test this.
+(4) Are half-integer outer counts possible? t=s mod2 makes both integral;
+the deliberately rounded countercontrol changes the target. (5) Does padding
+change reflection labels? In reflected index coordinates it translates BOTH
+chains by ell, preserving disjointness, with ell+rho=s proving the window
+bound. Physical positions need not be a common translation; the positive
+joins have been recomputed explicitly. (6) Does this reuse an unreviewed
+claim? The only construction dependency is MI180 PROVED by CL428; the new
+selector/padding remains SKETCH pending its own carrying read. (7) Is r a
+universal lower bound? Only for this core/full-label-parent composition; the
+outside-admission positive is retained to prevent a global inference.
+
+Gut: delight at recovering harmless outer space instead of forcing every
+hole into a gap. Reasoned: this moves the constructive admission condition,
+with the interval proof carrying the result. Next useful obstruction is the
+one-large-half case (and more general distributed interior growth), not a
+larger family census. Request ONE focused carrying read of MI191's interval,
+owner swap and padding; no reread of MI180 and no review halt. Continue
+independent work on what the admission still misses. No new experiment here.
+
+Artifact cited/instinct/b84-partial-padding-496b51fd8b795a09.json,11230bytes,
+SHA256 496b51fd8b795a09bc6bec999efa3d6cce78973fa2d17ab1c29e11f91fb8634b.
+Preregb4fb6292; source tests/probes/instinct/path_forest_partial_padding.py.
+Immutable upload digest and manifest receipts verified. No formal proof number,
+novelty claim, broader solution or automation/held-lane change.

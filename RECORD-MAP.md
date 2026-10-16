@@ -551,3 +551,6 @@ PART: as on the board.
 
 
 - Fixed binary skeleton: interior blank weights forced by gap-overlap tree, SKETCH MI189;6 lifts/6 cut audits/2 partitions COMPUTED MI190; all-interior/one-end universal recipe REFUTED by K budget.
+
+
+- Minimal contraction r=max(0,ceil((K-2N)/2)) plus outer padding: r0 or two halves>=r+2 suffices, SKETCH MI191;12 calls/6 E28 partitions COMPUTED MI192; one-large-half cases OPEN.
