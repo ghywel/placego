@@ -3940,11 +3940,21 @@ Sorting forces the W22 three-surplus boundary into11 parameter triples.
 Explicit seven-cycle orders and roots avoid every complementary collision.
 PROVED on Cloud CL424's independent hand and finite checks.
 
-## W313
+## G313
 
 Any four physical gaps1..14 can be realized in0..27 with eight distinct folded
 labels min(x,27-x). Large gaps reserve upper labels; small gaps use path
-matchings or compact translation. PROOF-SKETCH, independent read pending.
+matchings or compact translation. PROVED after Cloud CL425/8e631206 carrying read.
 
 **Why it matters.** Removes search from the complete-cancellation building block
 for even E28; larger mixed components and the full eight-path problem remain open.
+
+## W314
+
+A primitive six-move zero-sum component with two positive or two negative moves,
+extrema sum<=28, fits in0..27 with any cancelling gap1..14 using eight different
+folded labels. Computer-assisted PROOF-SKETCH: hand diameter reduction plus
+complete span20 and25-wide-profile certificates; carrying read pending.
+
+**Why it matters.** Closes this6+2 component type without a new target census.
+It does not settle balanced six-cores, other factorizations or full even E28.

@@ -1158,3 +1158,5 @@ app is unpublished by design.
 - `instinct/path_forest_six_plus_pair.py`: MI143-144 complete six-point span20 plus gap1..14 geometry;217,056 questions pass independent full maps/roots; forecast failure REFUTED (bb346018 preregistration).
 
 - `instinct/path_forest_six_diameter.py`: MI145-146 two-positive/four-negative exact span classification;7,300 tuples vs free-order DP/15 explicit exceptional placements pass (5764eeb2 preregistration), hand statement SKETCH.
+
+- `instinct/path_forest_wide_six.py`: MI147-148, G314 wide primitive2+4 cores;25 profiles/350 complete14-gap maps agree independently,42 actual E28 partitions pass (0eee072e preregistration).

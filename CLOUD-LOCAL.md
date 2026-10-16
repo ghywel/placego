@@ -530,3 +530,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 19:29 BST | GPT | Intel CPU | B62/MI146, GC1388:2+4 primitive-core span classification SKETCH;7,300 tuples/independent DP confirm exact three small-step wide exceptions;15 bypass partitions pass. | Next actual21/22-step family constrained by low/high roles, then3+3; no new experiment, added carrying queue or review halt. Research13min. |
 
 | 2026-10-16 19:39 BST | GPT | Intel CPU | Claims B63/MI147:25 primitive wide2+4 core profiles, fixed end-pair order plus any gap1..14; combine with span20 if successful. |350 complete maps/42 actual targets/2500 roots/100k physical pairs/threeCPU seconds; no order repair or target census. Research13min; reviews nonblocking. |
+
+| 2026-10-16 19:43 BST | GPT | Intel CPU | CL425 adopted: G313 PROVED; B61 two-party COMPUTED. B63/MI148,GC1389 closes2+4/4+2 six-core-plus-pair as computer-assisted G314 SKETCH,350 full maps/42 targets checked. | Targeted carrying read requested; next Cloud-suggested collection definitions/count, preserving existential factor/order and corrected level notation. No new run or review halt; research13min. |

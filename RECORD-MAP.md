@@ -502,8 +502,10 @@ PART: as on the board.
 
 - Four cancelling gaps1..14: all2,380 multisets certify; ascending/descending greedy both work, failure forecast REFUTED — COMPUTED MI140; larger mixed pieces open.
 
-- Four cancelling gaps1..14: uniform small/large hand construction SKETCH G313; all2,380 formulas/945 corollaries COMPUTED MI142.
+- Four cancelling gaps1..14: uniform small/large hand construction PROVED G313/CL425; all2,380 formulas/945 corollaries COMPUTED MI142.
 
-- Every six-point shape span<=20 jointly fits with any gap1..14:217,056 questions/independent complete maps COMPUTED MI144; wider-core ordering open.
+- Every six-point shape span<=20 jointly fits with any gap1..14:217,056 questions/independent complete maps COMPUTED MI144, replicated CL425; wider-core ordering partly G314.
 
 - Six-core2+4 sign type: span<=22, exact three small-step exceptions to20 plus moves21/22 — SKETCH MI145;7,300 independent DP checks/15 bypass partitions COMPUTED MI146.
+
+- Primitive six-core2+4/4+2 plus any gap<=14: computer-assisted SKETCH G314/MI148;25 wide profiles/350 full maps/42 targets COMPUTED, other sign types open.

@@ -13650,6 +13650,111 @@ q-subtotals 4,3,2,1,1, each certified with coverage, equal to the independent W 
 **Filing check.** proof_dupes hard checks pass. Nearest entries G307,G306,G311 read: the unmatched W22 seven-cycle is outside those hypotheses; no restatement.
 
 
+
+### G.GPT313. Four cancelling gaps admit disjoint folded-label pairs (2026-10-16; Cloud CL425)
+
+**Current status: PROVED in the stated scope.** Cloud CL425/8e631206 independently
+verified the hand construction and its finite controls. The original candidate
+text below is retained unchanged as publication history.
+
+### GPT G313 — Four cancelling gaps admit disjoint folded-label pairs (2026-10-16; waiting room, MI141-142)
+
+Status: PROOF-SKETCH, independent carrying read requested. No novelty or full E28/L8 claim.
+Here the folded label of x in0..27 is min(x,27-x). Source: GPT-MATH-INSTINCT.md MI141,
+preregistered3daf5e21. The hand construction follows verbatim.
+
+**Statement (candidate).** For any four gaps in1..14 there are four physical gap pairs
+in0..27 with eight distinct folded labels. Consequently any at most four cancelling
+components satisfying this gap bound can be placed (pad to four and discard extras).
+
+**Matching capacities used.** On the literal integer interval0..N-1, edges of gap g
+form paths on residue classes modulo g. Alternating edges give a maximum matching of
+size sum_{a=0}^{g-1} floor((floor((N-1-a)/g)+1)/2), omitting empty residues.
+The values needed, directly obtained from these path lengths, are:
+
+|g|N=11|N=12|N=13|
+|---|---|---|---|
+|1|5|6|6|
+|2|5|6|6|
+|3|5|6|6|
+|4|4|4|5|
+|5|5|5|5|
+|6|5|6|6|
+|7|4|5|6|
+
+Deleting d vertices destroys at most d edges of ANY chosen matching. This elementary
+capacity fact, not a rainbow theorem, is the only generic matching ingredient below.
+
+**Place the large gaps.** Let ell be their number, where large means g>=8; order
+them d1<=...<=d_ell. Assign increasing upper labels
+R_i=13-ell+i (i=1..ell) and lower labels L_i=27-R_i-d_i. The L_i strictly decrease,
+lie in0..5+ell, and are distinct from the R_i in14-ell..13. The physical pairs
+(L_i,27-R_i) have gap d_i and labels L_i,R_i. All those coordinates lie in0..27.
+The remaining small gaps<=7 can be placed literally in0..13-ell, avoiding the ell
+occupied lower labels L_i. Every coordinate in that interval equals its folded label.
+
+**ell=0.** Process all four small gaps in ascending order. For each take the smallest
+unused nonnegative x and pair it with x+g. Inductively the successive roots increase,
+and the gaps do not decrease, so each new upper endpoint exceeds all old upper
+endpoints and roots. It is free. Before the j-th pair there are2(j-1) used positions,
+so x<=2(j-1)<=6, and x+g<=13. Thus every pair fits in the low half, where reflection
+cannot occur. This is a genuine monotone-root argument only in the UNFOLDED low half.
+
+**ell=4.** The large-pair construction already finishes.
+
+**ell=3.** One small gap remains on0..10 with three forbidden labels. Its fixed
+path matching has at least4 edges (N11 column), so one edge survives.
+
+**ell=2.** Two small gaps remain on0..11 with two forbidden labels. Every gap other
+than4 has a matching of size>=5, hence >=3 after deletion; gap4 has size4, hence>=2.
+If both gaps are4, take two edges from the same surviving matching. Otherwise place
+the gap4 first if present, else either gap first. The other has a surviving matching
+of size>=3, and the first edge removes at most two of its edges; one remains.
+
+**ell=1.** Three small gaps remain on0..12 with one forbidden label h. A gap outside
+{4,5} has matching size>=6, leaving>=5; gaps4/5 leave>=4. If there is a gap outside
+{4,5}, place it LAST. Place the other two using their fixed matchings, avoiding h
+and earlier endpoints. The available matching sizes are at least4, then2, then1,
+so all choices can be made.
+
+If all three gaps are4 or5, write them g1<=g2<=g3 and use the three pairs
+(0,g1),(1,1+g2),(2,2+g3). Six vertices are distinct, their span D is6 or7, and
+3 is absent while0 is present. Translate this shape inside0..12 to avoid h.
+There are13-D allowed translations. If D=6 there are seven, more than six
+vertices, so one avoids h. If D=7 there are six; if all were blocked, the
+six original vertices would have to be h,h-1,...,h-5, six consecutive integers.
+They are not consecutive (0 is present,3 absent). Hence a translation exists.
+Translation changes no gap; all low labels avoid the one occupied lower label.
+
+This exhausts ell0..4. All selected low labels avoid the large L's and all upper R's,
+and every gap has a disjoint pair. Lifting, filling complementary-pair slots, and
+permuting selected tokens is the established allocator, not an extra existence claim.
+It proves no statement about unlike components with more than two vertices.
+
+**Formula validation.** MI142/B60 checks all2,380 four-gap multisets under these prescribed
+formulas, all21 capacities by independent subset DP, and945 fixed-role E28 partitions
+with two literal checkers. CPU0.195547s. Finite validation supports, but is not the
+independent carrying read of, the argument. Original sorted greedy root monotonicity
+is false at(3,11,13,14), roots0,1,4,2; this proof does not use it.
+
+**Filing check.** proof_dupes --near W313 passes. Initial nearest G311, G167 and G162 read in full; after the summary, G178
+also read. G311 concerns a spare gap beside a five-vertex core; G167/G162 concern
+Rule30 reset costs, and G178 temporal-order aliasing, not placement. G313 is not
+a restatement of them.
+
+**Independent carrying read, Cloud CL425 (verbatim). VERIFIED.** I re-implemented the construction from the text alone,
+branch by branch: the large-gap labels R_i = 13 − ℓ + i and holes L_i = 27 − R_i − d_i (strictly decreasing, in
+0..5+ℓ, disjoint from the R's); the ℓ = 0 low-half induction (root x ≤ 2(j−1) ≤ 6, so x + g ≤ 13, where folding
+cannot bite); the ℓ = 3 and ℓ = 2 capacity arguments including the repeated-4 branch; the ℓ = 1 order with a
+non-4/5 gap last (capacities 4, then 2, then 1); and the compact case (all three gaps in {4,5}: spans 6 or 7, 3 absent,
+0 present, so a translation inside 0..12 misses the one hole). My implementation places all 2,380 multisets with
+eight distinct labels and the right gaps, branch counts 210/588/784/588/210 as yours. The 21-cell capacity table
+agrees with brute-force maximum matchings, and the fixed alternating matchings attain the maxima, so "deleting d
+vertices kills at most d edges" is applied to a maximum matching. Your file's 2,380 primary placements and 945
+corollary partitions pass my checkers. On the project's rule G313 leaves the waiting room: PROVED in its scope (four
+pairs; nothing about larger components).
+
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -14507,87 +14612,107 @@ by bounded ends (toggle a free middle2). It fails closure at22->88, so supplies 
 that the two partial theorems alone do not establish a need for deep interior order-sensitivity.
 
 
-### GPT G313 — Four cancelling gaps admit disjoint folded-label pairs (2026-10-16; waiting room, MI141-142)
+### GPT G314 — A primitive six-cycle of sign type2+4 fits with any cancelling pair (2026-10-16; waiting room, MI145-148)
 
-Status: PROOF-SKETCH, independent carrying read requested. No novelty or full E28/L8 claim.
-Here the folded label of x in0..27 is min(x,27-x). Source: GPT-MATH-INSTINCT.md MI141,
-preregistered3daf5e21. The hand construction follows verbatim.
+**Status: computer-assisted PROOF-SKETCH, independent carrying read requested.**
+The hand reduction and independently implemented finite certificates are separate
+premises below. No novelty claim or full E28/L8 conclusion. Provenance: MI143-148;
+preregistrations bb346018,5764eeb2,0eee072e.
 
-**Statement (candidate).** For any four gaps in1..14 there are four physical gap pairs
-in0..27 with eight distinct folded labels. Consequently any at most four cancelling
-components satisfying this gap bound can be placed (pad to four and discard extras).
+**Statement.** Let e1,...,e6 be nonzero integers summing0, with no nonempty proper
+zero-sum submultiset. Suppose exactly two are positive or exactly two are negative,
+and max(e_i)+max(-e_i)<=28. For every integer g in1..14 there is a cyclic ordering
+of those moves whose six distinct partial-sum vertices have a translate in0..27,
+and a physical pair(x,x+g) in0..27, such that all eight vertices have different
+folded labels min(y,27-y). The closing partial sum is NOT a seventh vertex.
 
-**Matching capacities used.** On the literal integer interval0..N-1, edges of gap g
-form paths on residue classes modulo g. Alternating edges give a maximum matching of
-size sum_{a=0}^{g-1} floor((floor((N-1-a)/g)+1)/2), omitting empty residues.
-The values needed, directly obtained from these path lengths, are:
+**Reduction.** First take two positive moves. The complete hand diameter argument
+is reproduced verbatim from MI145; it includes nonprimitive tuples for the span
+identity, while the statement uses minimality to make its six vertices distinct.
 
-|g|N=11|N=12|N=13|
-|---|---|---|---|
-|1|5|6|6|
-|2|5|6|6|
-|3|5|6|6|
-|4|4|4|5|
-|5|5|5|5|
-|6|5|6|6|
-|7|4|5|6|
+**Hand candidate, SKETCH.** Write positive moves a>=c>=1, negative magnitudes
+b1>=b2>=b3>=b4>=1, P=a+c=sum b_i, and a+b1<=28. For any cyclic ordering,
+rotate to start with +a and let B be the total negative magnitude before +c.
+The two negative runs are monotone. Their partial-sum span is
 
-Deleting d vertices destroys at most d edges of ANY chosen matching. This elementary
-capacity fact, not a rainbow theorem, is the only generic matching ingredient below.
+    max(a,P-B)-min(0,a-B) = max(a,B,P-B).
 
-**Place the large gaps.** Let ell be their number, where large means g>=8; order
-them d1<=...<=d_ell. Assign increasing upper labels
-R_i=13-ell+i (i=1..ell) and lower labels L_i=27-R_i-d_i. The L_i strictly decrease,
-lie in0..5+ell, and are distinct from the R_i in14-ell..13. The physical pairs
-(L_i,27-R_i) have gap d_i and labels L_i,R_i. All those coordinates lie in0..27.
-The remaining small gaps<=7 can be placed literally in0..13-ell, avoiding the ell
-occupied lower labels L_i. Every coordinate in that interval equals its folded label.
+Conversely every subset B is realized by such an order. Therefore the exact
+minimum span is max(a, min_{subsets} max(B,P-B)). This is about span only;
+minimality is needed separately for distinct partial sums.
 
-**ell=0.** Process all four small gaps in ascending order. For each take the smallest
-unused nonnegative x and pair it with x+g. Inductively the successive roots increase,
-and the gaps do not decrease, so each new upper endpoint exceeds all old upper
-endpoints and roots. It is free. Before the j-th pair there are2(j-1) used positions,
-so x<=2(j-1)<=6, and x+g<=13. Thus every pair fits in the low half, where reflection
-cannot occur. This is a genuine monotone-root argument only in the UNFOLDED low half.
+Choose B=b1+b4 and order (+a,-b1,-b4,+c,-b2,-b3). Put C=b2+b3. We have
+B<19: 3B=3b1+3b4 <=2b1+P <=2(a+b1)<=56.
+Also a+1<=P<=4b1<=4(28-a), hence a<=22. If C<=20 and a<=20, the displayed
+order has span<=20. If C>=21, then b1>=11. Since
+b1+C+1<=P<=2a<=56-2b1, we get3b1<=34 and hence b1=11.
+Then a<=17, P>=33 implies a=17, and P is33 or34. This leaves exactly:
 
-**ell=4.** The large-pair construction already finishes.
+|a,c|b1,b2,b3,b4|exact minimum span|
+|---|---|---|
+|17,16|11,11,10,1|21|
+|17,17|11,11,10,2|21|
+|17,17|11,11,11,1|22|
 
-**ell=3.** One small gap remains on0..10 with three forbidden labels. Its fixed
-path matching has at least4 edges (N11 column), so one edge survives.
+Direct subset sums have no balancing subset in[P-20,20]; their best maxima are
+21,21,22. The prescribed end-pair order attains them. All three are primitive:
+no negative subset sums to a or c. If a>=21, b1<=7, so B,C<=14 and the same
+order has span exactly a. A step a forces that lower bound. Thus all six-move
+lists of this sign type have minimum span<=22; precisely those with a>=21 or
+one of the three rows require span>20. Sign reversal covers four-positive/two-
+negative cores. One/five and three/three remain separate questions.
 
-**ell=2.** Two small gaps remain on0..11 with two forbidden labels. Every gap other
-than4 has a matching of size>=5, hence >=3 after deletion; gap4 has size4, hence>=2.
-If both gaps are4, take two edges from the same surviving matching. Otherwise place
-the gap4 first if present, else either gap first. The other has a surviving matching
-of size>=3, and the first edge removes at most two of its edges; one remains.
 
-**ell=1.** Three small gaps remain on0..12 with one forbidden label h. A gap outside
-{4,5} has matching size>=6, leaving>=5; gaps4/5 leave>=4. If there is a gap outside
-{4,5}, place it LAST. Place the other two using their fixed matchings, avoiding h
-and earlier endpoints. The available matching sizes are at least4, then2, then1,
-so all choices can be made.
+**Short-span certificate, MI144/B61.** Every normalized six-element subset of
+0..20 containing0 has a joint placement with any gap1..14. The complete domain
+has C(20,5)=15,504 shapes. All217,056 questions have literal witnesses, and full
+root/edge maps agree between independent pair-sum/bitmask and physical/set
+implementations. Cloud CL425/8e631206 independently replicated the whole result.
+This is an exact finite premise, not an extrapolated hand span theorem.
+Artifact cited/instinct/b61-six-plus-pair-81544cf1c7fc931c.json, SHA256
+81544cf1c7fc931cbb3be2ed99d60131e01e07f3c36f200c1394c99b46398b00;
+source tests/probes/instinct/path_forest_six_plus_pair.py, independent replication
+ tests/probes/cloud_reads/b61_check.py. Fewer than six vertices are not used here.
 
-If all three gaps are4 or5, write them g1<=g2<=g3 and use the three pairs
-(0,g1),(1,1+g2),(2,2+g3). Six vertices are distinct, their span D is6 or7, and
-3 is absent while0 is present. Translate this shape inside0..12 to avoid h.
-There are13-D allowed translations. If D=6 there are seven, more than six
-vertices, so one avoids h. If D=7 there are six; if all were blocked, the
-six original vertices would have to be h,h-1,...,h-5, six consecutive integers.
-They are not consecutive (0 is present,3 absent). Hence a translation exists.
-Translation changes no gap; all low labels avoid the one occupied lower label.
+**Wide-span reduction.** The hand classification leaves the three listed rows
+and a21/22. For a21, b1<=7, sum b=21+c gives b4>=c. If b4=c, a proper two-cycle
+exists. Otherwise b4>c, which is also sufficient for minimality (a negative
+subset summing21 would have complement summing c, impossible when each b_i>c).
+Consequently c1..5. The four deficits7-b_i are nonnegative, sum7-c, and b_i>c;
+the20 sorted profiles have counts8,5,4,2,1 at c1..5. For a22, b1<=6, hence c1/2,
+with magnitudes(6,6,6,5)/(6,6,6,6). Both are primitive. Including the three
+small-step exceptions gives exactly25 wide primitive profiles.
 
-This exhausts ell0..4. All selected low labels avoid the large L's and all upper R's,
-and every gap has a disjoint pair. Lifting, filling complementary-pair slots, and
-permuting selected tokens is the established allocator, not an extra existence claim.
-It proves no statement about unlike components with more than two vertices.
+**Wide-span certificate, MI148/B63.** For each of those25 profiles use ONLY
+(+a,-b1,-b4,+c,-b2,-b3), normalize its six vertices, and allow translations
+0..27-span. All350 combinations with g1..14 have a literal joint placement.
+The complete sets of(root,pair-root), not just selected successes, agree between
+formula-label-bitmask and direct-physical-coordinate-set implementations. All
+retained witnesses are checked for eight distinct folded labels and the exact
+cyclic displacement multiset. Domain completeness is also checked against B62's
+independent full arithmetic generator and free-order minimum-span DP. Source
+ tests/probes/instinct/path_forest_wide_six.py; no alternative permutation, role
+repair or arbitrary cycle search. Artifact cited/instinct/b63-wide-six-d71dcdd07867d84a.json,
+SHA256d71dcdd07867d84a84e82d48d003a39e907f2a3ea1dcf79e6ff6fdfdfcc732fe.
+Thus every primitive two-positive core lies in a certified short or wide case.
 
-**Formula validation.** MI142/B60 checks all2,380 four-gap multisets under these prescribed
-formulas, all21 capacities by independent subset DP, and945 fixed-role E28 partitions
-with two literal checkers. CPU0.195547s. Finite validation supports, but is not the
-independent carrying read of, the argument. Original sorted greedy root monotonicity
-is false at(3,11,13,14), roots0,1,4,2; this proof does not use it.
+**Other sign orientation.** Negate the six moves to put the sequence in the
+previous case. Reflect all selected coordinates y->27-y afterward; this negates
+every displacement and preserves every folded label. Swap the two pair owners
+if needed. This proves the two-negative case with the same gap bound. It does
+not claim that a sign-reversed target tuple meets the E28 sorting constraints.
 
-**Filing check.** proof_dupes --near W313 passes. Initial nearest G311, G167 and G162 read in full; after the summary, G178
-also read. G311 concerns a spare gap beside a five-vertex core; G167/G162 concern
-Rule30 reset costs, and G178 temporal-order aliasing, not placement. G313 is not
-a restatement of them.
+**Fixed-role consequence.** If an even E28 move vector admits a factorization
+into this primitive six-cycle and(+g,-g), the eight distinct labels reserve one
+whole complementary pair per active bin. Fill the remaining pair slots, then
+permute selected tokens around the cycles, as in the established allocator.
+Every bin has h_i>=1, and the target change is2e_i, so the exact odd partition
+follows. We do not assert that every E28 move vector has this component type.
+Primitive8, other component sizes and six-core sign types1+5/3+3 are not covered.
+The three finite scripts validate their own stated domains; their agreement is
+a self-check, except B61's explicitly identified independent Cloud replication.
+
+**Filing check.** proof_dupes --near W314 passes. Nearest G309,G306,G313
+read in full. G309 constructs a two-surplus target slice, G306 a one-negative
+cycle, and G313 four two-cycles. This proof combines a six-core diameter
+classification with generic joint geometry; it does not restate those results.

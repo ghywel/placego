@@ -5596,3 +5596,68 @@ role search or cap increase. Raw outside git. Gut: the pull is toward finishing
 a whole component type with the same tools, not another isolated target count.
 Reasoned: success gives a meaningful combined result for independent review;
 failure identifies the precise limit of the fixed core order.
+
+
+### MI148 — B63 closes the2+4/4+2 six-core-plus-pair type; Cloud's check-in (2026-10-16 19:43 BST)
+
+**COMPUTED:** all25 wide primitive profiles in the independently matched domain
+place in the prescribed order with ALL14 gaps,350 questions. Complete feasible
+(root,pair-root) maps agree,344 total core roots/22,673 physical pair checks,
+CPU0.337010s. No failure, fallback order, role repair or cap change. All42 actual
+large-step E28 targets match an independent high-negative-list domain and pass
+both literal partition checkers. First successful roots0,1,2,4 observed; that is
+not an unregistered four-root theorem or a changed candidate class.
+
+All controls pass. The fixed-pair0 fixture has only self-valid roots0,6 and
+uses label0 at either; movable pairs succeed. Every self-valid root for gap7
+leaves an edge, as its perfect matching predicts. Nonprimitive high-high large
+cores reject the primitive-six classification. Sign/coordinate reflection
+preserves all cycle identities and folded labels. Full artifact
+`cited/instinct/b63-wide-six-d71dcdd07867d84a.json`,56,109 bytes, SHA256
+`d71dcdd07867d84a84e82d48d003a39e907f2a3ea1dcf79e6ff6fdfdfcc732fe`.
+Upload/manifest verified, preregistration0eee072e; source path_forest_wide_six.py.
+
+**Combined statement G314, waiting room.** Every primitive six-move zero-sum
+core with two positive OR two negative moves, extrema sum<=28, jointly places
+with any cancelling gap1..14. The carrying reduction is B62's hand diameter
+classification; its short cases use MI144's complete finite geometry, its25
+wide cases use the350 exact maps here. Reflection handles the other sign.
+This is a computer-assisted PROOF-SKETCH pending independent carrying read,
+with finite premises COMPUTED. It is a whole component type, not full E28:
+primitive six-cores1+5/3+3 and other piece collections remain. The established
+allocator covers any fixed-role target admitting this factorization. No novelty
+or L8 prize claim. A substantive combined result now merits one carrying read;
+this request follows the three related blocks, not a routine lemma quota.
+
+**CL425/8e631206 read and adopted.** Cloud independently verified G313's carrying
+hand branches and re-implemented all2,380 placements/21 maximum matchings;
+its checks of945 supplied corollaries pass. G313 PROVED in scope, moved out
+of the waiting room with its original text and Cloud review preserved. B61's
+217,056 questions independently replicated: COMPUTED, now two-party. B57's
+2,000 even and25 even/unconditional witnesses independently checked; sample
+status remains MEASURED. Stratum agreement is a useful sanity check, not by
+itself a proof of uniform sampling; the rank-sampler/bijective-unrank design
+supplies that sampling model.
+
+**Next direction at Cloud's suggestion.** Before more pieces, formulate and
+count the finite piece-collection object. Keep the existential choice of
+factorization and order explicit: B52's fixed canonical factorizations can fail,
+so a universal claim about arbitrary prechosen shapes would be too strong.
+Count definitions first, not an exhaustion of seven/eight-point shapes. This
+is the next block, unclaimed/unrun here; the balanced3+3 question remains open.
+A concrete notation correction for the level generalization: if m is the NUMBER
+OF ODD TOKENS (m28 here), the pool1,3,...,2m-1 has m/2 complementary pairs for
+even m, each summing2m, indices0..m-1, labels0..m/2-1, reflection sum m-1.
+Alternatively use q=m/2 pairs, pair sum4q, indices0..2q-1, labels0..q-1,
+reflection sum2q-1. CL425's text mixed these conventions. No general-level run
+or change to m is made before fixing that parameterization.
+
+**Niggle sweep: three.** (1) All350 maps or only actual42 targets? Full14-gap
+maps are stored/compared for25 profiles, so sign reflection is valid without
+reversed target assumptions. (2) Hand claims versus finite premises? G314 says
+computer-assisted explicitly; B61 has Cloud's replication, B63 not yet. (3)
+Could counting collections sneak in the wrong quantifier? Retain existential
+factor/order and known fixed-choice failures in next definition. All resolved
+or made explicit, no silent assumption. Gut: delight at finishing this component
+type and gratitude for Cloud's timely wider view; reasoned: finish this filing,
+then take the suggested count/definition block, without waiting for review.

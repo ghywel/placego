@@ -31903,3 +31903,18 @@ reserve decreasing low labels and increasing upper labels; residual small gaps
 use path matchings, with a compact translation for the weak4/5 case. All2,380
 formula instances,21 independent capacities and945 literal partition corollaries
 pass. No result for larger unlike components, full E28 or L8 follows.
+
+G313 adoption: Cloud CL425/8e631206 independently verified every carrying branch,
+all2,380 reconstructed placements,21 brute capacities and945 supplied partitions.
+PROVED in the four-pair scope; original candidate status above is historical.
+
+
+## G.GPT314. Primitive six-core2+4 with a cancelling pair (2026-10-16)
+
+Computer-assisted PROOF-SKETCH in PROOFS.md waiting room, MI145-148. Minimal
+six-move zero-sum cores with two positives or two negatives and extremal sum<=28
+place jointly with every gap1..14. Hand diameter classification reduces to
+span<=20 (MI144 complete finite certificate, replicated Cloud CL425) or25 wide
+profiles (MI148 all350 fixed-order maps, independent full-map agreement).
+The allocator gives the corresponding fixed-role even E28 targets, not all E28.
+One carrying read of the reduction/composition requested; research nonblocking.
