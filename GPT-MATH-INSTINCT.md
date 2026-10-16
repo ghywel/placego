@@ -9085,3 +9085,60 @@ specific geometry rather than a new case count. Reasoned: this resolves the
 named large-gap/unit-companion obstruction; remaining mixed companions need
 a separate argument. MI191 remains the one carrying-read priority. Send the
 new result as READ-LEDGER, no extra review queue or review halt.
+
+
+### MI196 — B86: nested unit block gives an independent complete large-gap criterion (2026-10-17 00:41 BST)
+
+**Class iff SKETCH;12 prescribed calls COMPUTED.** All12 calls/six actual
+E28 partitions pass, with the full original move bags and both partition
+validators. The boundary D=N+1 correctly starts with smaller9 on input15/9.
+D=n-1, triangles, full-label/zero-slack boundary and the other window residue
+are exercised. M100 requires the predicted b25->24 adjustment and a1.
+CPU0.001828s,peakRSS15,273,984bytes. No search, repaired translation, expanded
+family or numerical coverage claim; the theorem is a hand argument in MI195.
+
+All controls pass. Negative-bound and folded-loop-positive cases refuse;
+the low-D input is outside the inner-block class but has its independently
+checked MI191 r0 witness. Wrong boundary owner/flooring keeps geometry but
+changes15/9 to17/7. Omitting the strict-case parity adjustment likewise keeps
+the nested picture and folded labels but changes47/41 to49/39. The original
+move bags reject both. Thus neither residue choice is cosmetic. No cap or
+environmental failure, and a constructor scope refusal is not nonexistence.
+
+**Niggle sweep.** The negative bound D<=n-1 also gives enough labels because
+D>=N+1. These two inequalities force K<=2n-4, excluding doubled longest
+positives without an extra assumption. Strict-case smaller Q cannot equal
+2n-3; boundary Q has the other mod4 residue. Thus the upper alpha bound is
+valid even when the first positive is the smaller original owner. At inner
+slack1, alpha is odd; at slack>=2, parity adjustment cannot lower b1 to0.
+When alpha exceeds the inner slack, an odd excess is at most2H-1, so the
+extra adjustment still leaves a<=H. Strict B-block containment excludes every
+A/B index equality, including endpoints, and therefore all physical reflection
+collisions. Both physical endpoint sums recompute the ORIGINAL odd jumps;
+full move-bag and labelled inventory checks make that independent. N1 is
+handled as a one-point B-chain; the formula and labels still work. No step
+uses MI191 or MI180 as a construction dependency; only generic validation
+code is reused. Infinite claim remains SKETCH until its own carrying read.
+
+**What changed.** For one half D and N-1 unit halves, D>=N+1, the only
+requirements are the legal odd-jump bound and fitting the long negative
+jump: max(p,q)<=2n-3,D<=n-1. This arbitrary-N/D result replaces the earlier
+standalone all-unit-companion witness, and complements shared contraction,
+which has no E>=2 to use in this case. The D<N+1 branch is outside this
+independent proof (MI191's low-mean construction addresses it at SKETCH
+status). General mixed companion gaps and E28/L8 remain OPEN.
+
+Gut: satisfaction at the shorter direct geometry, and a new pull toward
+whether the inner chain needs unit spacing at all. Reasoned: the proof used
+its total span and strict containment; next cheap question is whether an
+arbitrary positive-gap prefix chain of span S can replace this block under
+a dominant-gap bound, with boundary/parity choices rechecked. No broader
+claim or experiment is opened here; respect the preregistered unit class.
+MI191 remains the sole carrying-read priority; send one READ-LEDGER update,
+no new review queue or halt. Old lanes and13-minute schedule unchanged.
+
+Artifact cited/instinct/b86-unit-block-0740a2cc1c643be4.json,5484bytes,
+SHA256 0740a2cc1c643be4740343f2a0a6cd416390866e5347261b5cb63a6365c45aca.
+Preregf150f935; source tests/probes/instinct/path_forest_unit_block.py.
+Immutable upload digest and manifest receipts verified. No formal proof number
+or novelty claim; full E28/L8 OPEN.

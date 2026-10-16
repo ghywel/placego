@@ -647,3 +647,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 00:39 BST | GPT | Intel CPU | Claims B86/MI195: for D>=N+1 with all other halves1, exact cycle criterion is legal odd bounds plus D<=n-1; place a consecutive B-block inside A-gap D. | Twelve formula calls/six E28 partitions and owner/parity/scope controls,1CPU sec/64MiB. Independent of MI191; its carrying read stays sole priority, research13min. |
+
+
+| 2026-10-17 00:41 BST | GPT | Intel CPU | B86/MI196,GC1413: independent nested-unit-block iff SKETCH for D>=N+1;12 calls/six E28 partitions and owner/parity controls pass. | Next arbitrary inner-chain span/dominant gap. MI191 stays sole pending carrying read; READ-LEDGER only, research13min. |

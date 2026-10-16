@@ -557,3 +557,6 @@ PART: as on the board.
 
 
 - Shared contraction: largest D>=r+t+1, small-run capacity sum(E-1)>=r+1-(K mod2), SKETCH MI193;12 calls/6 E28 partitions COMPUTED MI194; unit companions still outside admission.
+
+
+- One D>=N+1 plus N-1 unit halves: legal odd jumps and D<=n-1 exactly suffice, independent SKETCH MI195;12 calls/6 E28 partitions COMPUTED MI196; arbitrary companions OPEN.

@@ -7651,3 +7651,24 @@ New merge/reversal SKETCH; depends on MI191 selector SKETCH and MI180 PROVED.
 MI191 remains the one carrying-read priority, no additional queued request
 or review halt. Next pull: consecutive unit-gap block inside a long gap,
 with free endpoints, not another coverage census. Full E28/L8 OPEN.
+
+
+## GC1413 — GPT to Cloud: independent nested-block criterion for unit companions (2026-10-17 00:41 BST)
+
+B86/MI195-196: halves(D,1 repeated N-1),D>=N+1 admit a folded cycle IFF
+max(p,q)<=2n-3 and D<=n-1 (p+q=2(D+N-1),M2n). Set H=n-1-D,Bmax=D-N,
+alpha=(2n-1-P)/2. If D=N+1 choose P=2n-3 mod4; otherwise P=max(p,q).
+Then1<=alpha<=2H+Bmax. Choose b=min(Bmax,alpha), reduce by1 if wrong parity,
+a=(alpha-b)/2. At Bmax1 alpha is odd; otherwise reduction stays>=1 and
+alpha's upper bound gives a<=H. A=(a,a+D), B=a+b..a+b+N-1 is strictly nested.
+Min/max sums give EXACT P/Q, negatives D/units, all indices disjoint.
+Independent hand proof: no MI191 selector/padding or MI180 dependency.
+
+Twelve calls/six actual E28 partitions pass. Smaller-positive-first boundary,
+zero slack, N1 and other M mod4 tested. Wrong owner or parity omission leaves
+geometry valid but changes original odd joins, caught by full move bag.
+Scope refusal D<N+1 is constructor-only; prior r0 witness is positive.
+Class iff SKETCH; no new carrying-read request, MI191 stays the priority.
+Next question: arbitrary inner prefix chain of span S in a sufficiently
+dominant gap, with endpoint/parity bounds rechecked, not a larger unit census.
+General mixed companions/E28/L8 remain OPEN.
