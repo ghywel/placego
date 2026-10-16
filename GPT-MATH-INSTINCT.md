@@ -8660,3 +8660,105 @@ SHA256 0ccc40c6c39454c5edd9c35f666a152118e2c7dfe4fcba8b7f6c3540b4159c11.
 Prereg4066824e; source tests/probes/instinct/path_forest_blank_tree.py.
 Immutable upload digest and manifest receipts verified. MI180 PROVED via
 CL428/MI188; B80-83 SKETCH, full E28/L8 OPEN, older holds unchanged.
+
+
+### MI191 — B84: contract only the necessary deficit; pad the rest at the ends (2026-10-17 00:14 BST)
+
+**Question/pull.** Can the proved MI180 construction use a SMALL contraction
+in a smaller window, leaving the remaining unused labels outside both chains?
+The label deficit k need not equal the number of deletions. This is the useful
+boundary-budget choice: let r absorb the excess negative total, then use
+leading/trailing padding for k-r. It reaches the K14 counterexample to CL428's
+all-interior recipe without a new word/assignment search. Record searched:
+partial.*contract|contract.*padding|outer.*blank ->0 hits, including ledgers.
+MI180/188-190, CL428/429 read. Dependencies are the independently verified
+MI180 constructions; the new selection/padding argument stays SKETCH.
+
+**Proposed sufficient theorem and exact construction.** Given M=2n, N>=1
+positive negative halves d_i with K=sum d, odd positives p,q, p+q=2K,
+N+2<=n, max(p,q)<=2n-3, not p=q=2n-3. Put
+ k=n-N-2, r=max(0,ceil((K-2N)/2)).
+If r=0, no large-half condition is required. If r>0, require TWO distinct
+halves D,E>=r+2. Then a folded-distinct cycle exists. This is a sufficient
+class, not the full sparse criterion. Half1, unequal chain lengths and
+arbitrary N are allowed. No anchors/other odd sign patterns or E28/L8 solution.
+
+First r<=k: the legal odd positives/non-doubled bound implies K<=2n-4,
+so K-2N<=2k. Form a core window n_c=N+r+2, and s=k-r outer blanks.
+Its legal largest odd jump is C=2n_c-3=2(N+r)+1. By choice of r, K<=C-1.
+For r>0 the two-large assumption also guarantees the refined list has enough
+positive mass; refine D by r as MI180 prescribes. For r0 the core is exactly
+full-label. What remains is to choose its two odd joins before using MI180.
+
+Choose x in the intersection of odd intervals
+ I=[L,U]=[max(1,2K-C),min(C,2K-1)],
+ J=[p-2s,p+2s], with x congruent p-2s mod4;
+set y=2K-x. For K>=2, I contains at least TWO consecutive odd values:
+its width is 2K-2 or2C-2K, each>=2. I and J intersect: p<=C+2s and
+q<=C+2s give their cross bounds; p,q>=1 give the other bounds. For s0,
+x=p is available. For s>0, J's endpoints have the required mod4 residue.
+Their intersection cannot be a lone WRONG-residue odd point: then neither
+end could come from J, forcing I itself to be that singleton, a contradiction.
+With two odd points one has the required residue. Algorithm: a=max(L,p-2s),
+b=min(U,p+2s); take x=a if it has the residue, otherwise a+2. No search.
+Thus x,y>0, both<=C, not both C because K<=C-1.
+
+Use MI180 in the core: full-label for r0; sparse contraction for r>0, with
+the admitted D,E first. MI180 starts its LARGER odd join, so if x<y swap BOTH
+core owners and their corresponding original p/q. Write core first P0,
+original matching first P. Then t=(P-P0)/2 satisfies |t|<=s and t=s mod2.
+Put ell=(s-t)/2 leading blanks and rho=(s+t)/2 trailing blanks. Both are
+nonnegative integers. Add ell to every core A/B index; enlarge n_c to n.
+All indices remain in range and disjoint. The new odd joins are
+ P0+2s-4ell=P and Q0+4ell-2s=the other original positive.
+Every negative gap is unchanged; hence the full original move bag is exact.
+This includes owners swapping and either outer blank count being zero.
+If K1, necessarily N1,d1,p=q1: use positions(0,1,2) directly for every n>=3.
+That tiny exception avoids pretending the singleton interval I has both residues.
+
+**Why this r is the right budget for THIS composition.** A smaller core
+contraction r' would leave N+r' negative halves in its full-label parent.
+The legal/non-doubled core bound forces K<=2(N+r'), so r'<r cannot work
+in this family even if the word and odd owners are changed. This is not a
+necessity claim for all folded cycles. The old two-large rule unnecessarily
+used r=k; now only the excess above2N must be absorbed by contraction.
+
+**Predictions BEFORE code/run.** Exactly12 formula calls,6 actual M28 E28
+partitions with original slots(1,1,2,2,2,2,2,2):
+ d=(2,2,2,2,3,3),p15/q13 and21/7 (r1,s5);
+ d=(1,1,2,2,4,4),p19/q9 (r1,s5);
+ d=(1,1,2,4,4,4),p23/q9 (r2,s4);
+ d=(1,1,3,3,5,5),p25/q11 (r3,s3);
+ d=(8,8,2,2,2,2),p25/q23 (r6,s0, old theorem regression).
+The first FIVE fail the old second-largest>=k+2 admission but must now pass.
+The first fixture swaps the original positive owners, has ell3/rho2; the
+fourth/fifth have one-sided padding. Direct complete input move bags,
+original owners, every folded label, window bounds and both independent
+partition validators must agree; core contraction records are retained.
+
+Six general calls: M6/M8,d=(1),p=q1 (tiny exception);
+M10,d=(2),p3/q1 (r0); M20,d=(2,2,3,3),p13/q7 (r1);
+M60,d=(8,8,1,1,1,1,1,1,1,1),p45/q3 (N10,r2,s16);
+M22,d=(1,1,2,2,2,2,3,3),p17/q15 (N8,r0,odd s1 and owner swap).
+These test sparse/full cores, arbitrary N, units, both interval residues,
+small K and padding much larger than the contraction. No parameter grid.
+
+Kill controls: M28,d=(2,2,2,2,2,7),p19/q15 has r3 but second-largest2<5;
+refuse ONLY this constructor. Explicit unequal chains A=(0,7,9),
+B=(4,6,8,10,12),positions(0,19,15,11,7,3,18,14) must pass literal geometry
+and full input move bag, so no global refusal is inferred. Refuse doubled
+longest M28,d=(2,2,2,2,8,9),p=q25 and overlong p27/q1 on the first d.
+Identified unexpected check: ignore mod4 on the first fixture, use core
+joins15/13 instead of the selected13/15, and floor the two half-integer
+outer counts to ell2/rho3. The result remains geometrically valid but its
+odd joins are17/11, not15/13. The original move-bag checker must reject it.
+This is a counterfactual to treating mod4 as bookkeeping. Caps12 calls/6
+partitions plus named controls,1CPU sec/64MiB. Stop on mismatch/cap; no repair,
+core-word search, profile enumeration or raised admission condition.
+
+Gut: warm because most holes can be harmless space OUTSIDE the core, rather
+than a demand every small gap must absorb. Reasoned: the selector's parity,
+positive-owner swap and exact core threshold carry the argument; examples
+will not replace them. This is a new composition of proved constructions,
+not another census or a general solution. A useful carrying read would target
+that selector and padding, without rereading MI180; do not halt for it.

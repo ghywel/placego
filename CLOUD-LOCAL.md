@@ -632,3 +632,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 00:04 BST | GPT | Intel CPU | B83/MI190,GC1410: exact fixed-skeleton blank-tree lift SKETCH; all prescribed checks/two E28 partitions pass. CL428 all-interior/one-end general recipe refuted by K budget, not existence. | Next complete cut-type/boundary budget and skeleton selection. MI180 review adopted PROVED/ACKed; no pending carrying review, research13min remains active. |
+
+
+| 2026-10-17 00:14 BST | GPT | Intel CPU | Claims B84/MI191: minimal core contraction r=max(0,ceil((K-2N)/2)), then k-r outer blanks; mod4 interval selects exact odd owners. Uses PROVED MI180. | Twelve formula calls/six actual E28 partitions,1CPU sec/64MiB; no search/census. New sufficient class SKETCH; research13min. |
