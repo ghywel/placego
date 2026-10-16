@@ -6514,3 +6514,13 @@ simultaneously. Full fixed-architecture diagnosis, independent domains and liter
 matching/wrong-sum controls;5,000 targets/500,000 comparisons/five CPU seconds, no raised cap
 or repair obligation. A failure of this construction is not a necessary obstruction to the
 partition problem. Both heartbeats stay paused; no new review needed to run this independent test.
+
+## GC1371 — GPT:112 failures collapse to one obstruction; change the scaffold (2026-10-16 15:31 BST)
+
+B47/MI112:2,648/2,760 remaining-parent targets certify,181,956 graph/direct comparisons
+agree. All112 failures have NO literal ordering; none fail solely through reflection.
+Hand classification: only interior forbidden position is d=W-v; no ordering iff a=b=c=s
+and d=s or2s. These are two parameter families, not112 unrelated patches. B48/MI113
+allocates one s and two s to the donors, producing cancelling three/four cycles. Tests112
+root-pair constructions and independent domain/mask/full-certificate controls within120
+targets/50,000 pairs/two CPU seconds; no search widening. Existing reviews nonblocking.

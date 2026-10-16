@@ -4043,3 +4043,70 @@ whose orders survive literally but lose all roots through reflection; record the
 actual span separately from MI110's bound25. These distinguish a scaffolding failure from
 a translation problem. Stop after this architecture's complete capped diagnosis; no repairs
 or more general cycle search are part of B47. Both schedules remain paused.
+
+### MI112 — B47 result: all failures are one literal obstruction (2026-10-16 15:31 BST)
+
+Signed and independently sorted target domains agree:2,760 inputs,2,648 constructed,
+112 architecture failures. All181,956 graph/direct root-order comparisons agree; all controls
+pass. Root classes15,599 completed/4,767 valid-core-no-completion/9,960 bad-core. Every failure
+already has no literal-admissible order; there is NO reflection-only exhaustion. Actual spans
+9..25, with the unique span25 tuple(10,10,18,17;5,5,5) succeeding at root0. CPU0.911747 s,
+raw outside git SHA256
+`a989a08e571ff50a5668fc70c9b320eda257f3e02323dd5dab0f5b77cd688633`.
+Blind expectation of some failures confirmed; existence of a root whenever an order survives
+is COMPUTED for this finite domain, not a hand universal theorem.
+
+**Hand classification (PROOF-SKETCH).** In MI111 the literal set simplifies to
+L={q-A,q,q+R,q+u,0}. Only d=q-A=W-v can lie strictly between0 and q. Thus first
+item must differ from d and last item must differ from q-d. Let I and J be their respective
+allowed item-index sets. A literal order exists iff some i in I,j in J have i!=j. If either
+set is empty, all three steps equal s, and d=s or d=2s. Conversely either equality forbids
+every first or every last item. The only other possible obstruction would be I=J={k}.
+Then each of the other two items equals both d and q-d, so q=2d; the sum of those two
+items already equals q, forcing the positive third item to0, impossible. This exhausts the
+literal obstruction for ANY three positive item sizes in this parent with five distinct fixed
+positions. It is a theorem about this parent, not all partitions.
+
+The112 observed failures all have equal a=b=c=s. They split into45 with
+W=v+s,Z=u+2s and67 with W=v+2s,Z=u+s. Counts by s=1..5 are12/17/9/6/1 in the
+first case and8/17/18/14/10 in the second. This classification is checked against the
+completed raw record, not used to erase failures. Both startup controls passed this continuation.
+
+**Surprise / gut:** the obstacle is much cleaner than112 exceptions: the selected run is forced
+through the old0 coordinate. This earns curiosity in a DIFFERENT cycle decomposition rather
+than trying more roots. **Reasoned verdict:** all-after has a structural limit; translation
+cannot fix it. The failure itself tells us how to split the surplus across the two donors.
+
+### MI113 — B48: split the literal trap into a cancelling pair of cycles (2026-10-16 15:31 BST)
+
+**Question:** can the112 classified equal-step traps be bypassed uniformly by allocating their
+surpluses to both donors, creating a three-cycle and a four-cycle instead of a seven-cycle?
+This changes the scaffold identified in B47; no list of112 custom repairs is proposed.
+Record searched: literal.*compatibility, first.*last.*graph, smaller.*remainder -> no default
+hits; MI099/108/110-112 and the materializer/checker read. No new external theorem invoked.
+
+**Hand reduction (SKETCH):** write the two cases as negative magnitudes H=h+s and G=g+2s,
+where(h,g)=(v,u) for W=v+s or(u,v) for W=v+2s. Allocate one s to H and two s to G.
+The reduced negative magnitudes are h and g, exactly cancelling the two original positive
+steps. A three-cycle uses selected positions {0,s,h+s}; a four-cycle uses {0,s,2s,g+2s}.
+For the first cycle put +s at0,+h at s,-H at h+s; for the second put +s at0,+s at s,
++g at2s,-G at g+2s. Translate the two cycles independently and require all seven folded
+labels distinct. This directed-cycle identity holds symbolically; availability of disjoint
+labels is the bounded question, not assumed.
+
+**Predictions BEFORE execution:** all112 targets have a pair of legal roots within0..27;
+independent direct target domain agrees with the equal-step trap equations and prior failure
+set. Direct seven-label test and separate bitmask disjointness test agree for EVERY root pair;
+chosen full certificates pass. Cap120 targets/50,000 root pairs/two CPU seconds. A failure
+or cap is retained; no third cycle, new size allocation or solver fallback.
+Controls: same root on both cycles must reject shared labels; sums corrupted while retaining
+coverage must reject. Swap donor assignments without changing cycle lengths on an unequal-
+donor fixture: the resulting labelled selected-token construction must reject. Equal target
+values still represent distinct bin owners and item identities. **Unexpected check:** test
+whether fixing the four-cycle at its FIRST individually legal root loses solutions that a
+joint root choice recovers; report this separately. The main prediction permits joint roots.
+
+If successful, the next cheap audit is set equality of the disjoint three-surplus regimes,
+using the existing checked witnesses; no larger target census is authorized by this block.
+Gut: the wall now suggests a genuine bypass. Reasoned: run one fixed two-cycle mechanism,
+and stop rather than expanding it if that mechanism fails. Both automatic schedules paused.
