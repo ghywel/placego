@@ -7849,3 +7849,108 @@ using retained evidence, not a new guard/probe or a refutation of the conjecture
 The new B78 orientation theorem is one sufficient joint choice; its atomic
 admission restriction remains explicit. Next proof work should target that
 joint selection problem, not re-enumerate Cloud's surveyed profiles.
+
+
+### MI180 — B79: two coloured increasing chains; refine, fill, then contract (2026-10-16 23:11 BST)
+
+**Pull/question.** Surprise: filling EVERY folded label is easier than leaving
+holes. Reflecting the odd vertices turns the placement into two disjoint
+increasing chains; a binary word can then choose the split and orders together.
+The promising sparse step is to refine a large negative half into a smaller
+half plus units, build the full word, then contract those units without changing
+the odd jumps. This changes representation instead of adding residue patches.
+Record searched: colour/run/gap/full-occupancy/two-increasing/binary-word-gap
+->8 unrelated hits/4 files; gap.word|colou?r.*chain|refin.*contract|saturat.*label
+->33 unrelated hits/14 files. MI174-179/CL427 read. No imported theorem, new
+literature-status claim or novelty claim; all carrying steps are below.
+
+**Exact two-chain picture.** On M=2n, an even position2u corresponds to index
+u in0..n-1. Reflect an odd position to write it as2n-1-2v. A cross-parity
+reflection collision is EXACTLY u=v. Two positive odd jumps allow the negative
+even moves to follow increasing B indices, then decreasing A indices. For
+increasing disjoint chains A,B, with min A0, the cycle is
+
+    0 -> (2n-1-2v for v in B increasing) -> (2u for u in A decreasing, u>0) ->0.
+
+Its odd jumps are p=2n-1-2 min B and
+q=2(max A+max B)-(2n-1). Its negative half-sizes are the consecutive gaps
+within A and B. Thus selecting a coloured word chooses the split/orders/root
+jointly; no preselected split or sumset-hole search is assumed.
+
+**Full-label theorem, PROOF-SKETCH.** N=n-2 positive negative-halves d_i,
+p,q positive odd, sum d=(p+q)/2. A placement exists IFF
+max(p,q)<=2n-3 and not p=q=2n-3. Necessity is the ordinary jump bound and
+the doubled-long-edge label obstruction. Sufficiency also shows the separate
+two-bin capacity condition is automatic in this saturated case.
+
+Relabel the positive owners if needed so p>=q; then q<=2n-5. Set
+alpha=(2n-1-p)/2>=1, beta=(2n-3-q)/2>=1, K=sum d. Make a binary word with
+first run A of length alpha, last run of length beta, and INTERNAL run lengths
+(d_i-1) for every d_i>1, in any order, alternating colours. If m entries exceed1,
+there are m+2 runs, and its total length is
+
+    alpha+beta+sum_(d_i>1)(d_i-1)
+    = (2n-2-K)+(K-N) = n.
+
+Both colours occur. Gaps within a run are1. Each internal run of length ell
+creates exactly one gap ell+1 in the OTHER colour; the total number of unit
+gaps is n-(m+2)=N-m. Thus the gap multiset is exactly d. The smallest indices
+of A/B are0,alpha, so the first odd jump is p. The two largest indices are
+n-1 and n-1-beta, so the other odd jump is q. All n indices have exactly one
+colour: every folded label is used once. Both run loads are chain extents
+<=n-1. This is arbitrary n/d, not an inference from small-window testing.
+
+**Sparse contraction theorem, PROOF-SKETCH.** Now N<=n-2 and
+k=n-N-2>0 unused labels. Under the same legal odd-jump/non-doubled conditions,
+if TWO distinct negative halves D,E satisfy min(D,E)>=k+2, a placement exists.
+No gcd or precomputed capacity split is required. This is sufficient only.
+
+Refine D into(D-k,k unit entries); the refined list has n-2 entries, same K,
+and D-k>=2. Apply the full-label construction, ordering its first TWO internal
+runs as D-k-1 (colour B), then E-1 (colour A). The third run has length
+E-1>=k+1. Delete its FIRST k A-indices. Before deletion, the A gap across the
+preceding B run is D-k; after deletion it is(D-k)+k=D. Exactly k following
+unit gaps disappear. Every other gap, including B's gap E ACROSS that third
+run, keeps its actual index distance. At least one point of the third run
+remains, so neither colour's minimum or maximum changes; p and q are unchanged.
+Selected vertices remain a subset of a folded-distinct placement. The final
+negative-gap multiset is the original d, with N+2 selected vertices.
+
+A genuine central gcd1 example at M28,N6,k6: d=(8,8,1,1,1,1),p21,q19.
+Refine the first8 into2 plus six1s. The full coloured word is A^3 B A^7 B^3.
+Delete the first six A's from its third run. Remaining chains A=(0,1,2,10),
+B=(3,11,12,13), giving cycle positions(0,21,5,3,1,20,4,2), odd jumps21/19
+and negatives(-16 twice,-2 four times). This was derived by hand, no order
+search. With slots(1,1,2,2,2,2,2,2), target(98,94,80,80,108,108,108,108).
+The new class crosses gcd1 in the high-total regime, beyond B75; full E28 open.
+
+**Predictions BEFORE code/run.** Formula checks only. Full-label fixtures
+n=(3,4,5,8,14,25): each all-unit list with extreme and balanced positive pairs,
+and each one-large(n-1 plus n-3 units) and all-two list at p=2n-3,q=2n-5.
+Exactly24 prescribed formula calls (some tiny cases coincide; no distinct-
+coverage count implied). Compare gap bags from run-length reasoning to an
+independent direct coordinate-cycle difference bag, and literal folded labels.
+
+Sparse fixtures: at M28,N6, d=(8,8,1,1,1,1), positive pairs25/15,23/17,21/19;
+also d=(8,8,2,2,2,2),(10,10,1,1,1,1),(8,9,1,1,1,4), each p25/q23.
+Predict all SIX actual E28 partitions materialize under the same slots and
+both literal/inventory validators pass. The21/19 positions must equal the
+hand example above, with deterministic internal ordering. Two other windows:
+M20,N4,d=(6,6,1,1),p17/q11,k4 and M40,N6,d=(14,14,1,1,1,1),p37/q27,k12
+must certify, checking that the deletion count is the label deficit, not a
+fixed6. No original/refined profile census or alternate-order search.
+
+Counterfactuals: reject p=q=M-3 and oversubscribed N+2>n. The M28 list
+(7,8,1,1,1,1),p25/q13 does NOT meet the two-large admission condition; refuse
+this construction only, not the component/target. Unexpected check: deleting
+k+1 rather than k points in the tight hand example still leaves a folded-
+distinct subset, but must change the odd jump/endpoints and fail the original
+move-bag test. This catches a geometry-only false certificate. Retain the
+full/refined/contracted chain data. Caps24 full+8 sparse formula calls,2CPU sec/
+64MiB. Stop on first mismatch/cap, no patch, expanded grid or fallback.
+
+Gut: a fresh warm pull and surprise at a construction choosing all three
+variables together. Reasoned: the two-large condition is a real sparse
+restriction; do not call it the general coprime conjecture. Next would be
+whether refinements can be distributed across several internal runs when no
+single pair can absorb the label deficit. No such experiment is opened here.
