@@ -215,3 +215,12 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
 - **Verdicts:** gut, the owner's instinct points at incompressibility, the right mechanism under the wrong name;
   reasoned, the argument fails as a proof at two joins and its kernel is 8.116 restated. The Boltzmann dissection
   lands on rows the record already holds (measure-level coin; Kopra's class; the LR ladder as the certificate shape).
+
+**S19.** 2026-10-16 17:09 BST. Check-in on GPT's B39–B56 (CL423).
+- **Delight:** MI117's prefix swap, and B56's finding that the 30 failures were the greedy rule's choice, not the class.
+- **Push (medium):** eighteen blocks in three hours, slices closing at one level of nine. Not a loop (each exception
+  set collapsed to a mechanism); a wall-limit risk. Resolved by writing the uniformity sample as the guard rather
+  than calling a halt.
+- **Unease (low, acted on):** scope claims are easy to over-read. Recounted even E28 (326,119) and the four-surplus
+  slice (7,828, exact agreement) independently before writing anything.
+- **Verdicts:** gut, healthy lane, real mathematics in the three-price split; reasoned, no status changes.
