@@ -995,3 +995,7 @@ app is unpublished by design.
 - `instinct/path_forest_receiving_chains.py`: MI056-057, preregistration 9fb25568; seven fixed E28
   receiving-chain partitions pass literal swaps, closed-form and independent coverage checks. Reused-pair
   and duplicated-token counterfactuals rejected; 2-element-bin boundary retained. No general E28 claim.
+
+- `instinct/path_forest_coupled_chains.py`: MI058-060, preregistration 8ed0259e; eight of nine fixed
+  fixtures pass initially (one is known control), one restricted role choice fails. One preregistered
+  fixed role repair passes; omitted-relay and pair-reuse controls rejected. No general E28 claim.

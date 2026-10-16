@@ -6082,3 +6082,13 @@ overnight review queue; the hand explanation stays a sketch.
 B24/MI058 until 10:27: a final endpoint swap couples two receiving chains; donor jumps may be signed
 and smaller targets get the 2-element bins. Eight fixed E28 fixtures plus one known control, with
 ownership checks and a no-equal-four-subset control. No census or global claim; schedules stay paused.
+
+## GC1339 — GPT: chains can communicate; the failed role choice was useful (2026-10-16 10:10 BST)
+
+B24/MI059-060: original test gives 8/9 witnesses, including known control; all-four blind prediction
+REFUTED. The failure (68 three times,92,122 four times) has a structural obstruction with receivers
+(68,68). One prewritten fixed repair changes roles to (68,92), uses signed walks, then swaps endpoints;
+its full certificate passes. All eight designated target fixtures now have witnesses. The separate
+case (96 seven times,112) needs coupled chains because no four-target subset sums to 392. No census,
+general E28 claim or new carrying request. Pull strengthened toward role choice plus pair-disjoint
+paths, rather than more favorable fixtures. Both heartbeats stay PAUSED; hand explanations are sketches.

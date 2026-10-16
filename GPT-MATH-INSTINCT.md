@@ -2071,3 +2071,100 @@ three-donor chains cannot each finish correctly; independently check this over i
 four-subsets and demand a working coupled witness. **Stop:** these nine fixtures and controls,
 100,000 candidate root configurations per fixture or five process CPU seconds overall, whichever
 comes first. A cutoff is UNKNOWN; failure of this restricted construction is not unburnability.
+
+### MI059 — B24 retained failure and a fixed repair check (2026-10-16 10:09 BST)
+
+The registered diagnostic finished: eight of nine fixtures have literal witnesses, including the
+known balanced control. The blind all-four prediction is REFUTED: the first blind tuple
+(68,68,68,92,122,122,122,122) has NO_WITNESS_IN_CLASS with the two smallest receivers, after 80 root
+configurations and no cutoff. The other three blind fixtures pass. All must-hold and counterfactual
+controls pass; the nine-fixture run used 0.003559 process CPU seconds. This is a failure of the
+restricted allocation, not of the target. No further fixture search follows in this block.
+
+**Hand diagnosis, sketch:** with receivers (68,68), donor losses are {44,20,-10,-10,-10,-10}.
+Any split into two groups of three gives totals (54,-30) or (24,0), up to order. A nontrivial chain
+with total 0 repeats its root pair; a chain with total 54 in the odd pool 1,...,55 must begin at 1
+and end at 55, again reusing its root pair. Thus ordering and root changes cannot repair this
+particular two-receiver choice within the registered one-pair-per-slot construction.
+
+**New pull / addendum written BEFORE its check:** change the roles, not the root-search budget.
+Take receiver targets (68,92), roots (13,1), and donor loss groups (-10,44,-10) and (44,-10,-10).
+The actual token paths would be (13,3,47,37) and (1,45,35,25), whose eight pair labels are distinct.
+After the walks both receivers sum 80; exchanging endpoints 37 and 25 should finish them at 68 and
+92. Predict the independent full certificate checker passes and omission of this relay fails target
+sums. Execute this one fixed repair only, retaining the first run and its refuted prediction. No
+broader receiver-role search, census or cap increase is authorized by this addendum.
+
+### MI060 — B24 result: signed walks, coupled endpoints, and a repaired role choice (2026-10-16 10:10 BST)
+
+**What changed:** the two-chain allocation now admits unequal and negative donor losses, a final
+cross-chain swap, and a necessary change in which targets get 2-element bins. These mechanisms give
+literal certificates for all eight designated target fixtures, plus the known balanced control,
+after the first fixture's failed role choice is repaired. They do not prove general E28 burnability.
+The finite witnesses are COMPUTED; the hand explanation and failure diagnosis remain sketches,
+without a second reader. No new PROOFS entry or carrying request.
+
+`tests/probes/instinct/path_forest_coupled_chains.py` records the original predictions, initial run
+and the prewritten fixed-repair addendum. The first run took 0.003559 process CPU seconds, the fixed
+repair 0.000177. No cap was reached. Literal swaps, endpoint formulas and the independent full
+certificate checker agree. Omitting a necessary relay preserves all odds but fails the target sums;
+the reused-pair control is rejected. The source header carries both raw-output digests; raw JSON stays
+outside git. No solver, extra sampling or expansion of the registered fixture list occurred.
+
+| Targets, repetitions abbreviated | Initial fixed-smallest-role result | Mechanism |
+|---|---|---|
+| 110 twice, 94 six times | WITNESS | 94 bins get two elements; unequal positive jumps |
+| 116 twice, 92 six times | WITNESS | 92 bins get two elements; signed jumps |
+| 122 twice, 90 six times | WITNESS | 90 bins get two elements; signed jumps |
+| 96 seven times, 112 | WITNESS | Neutral donor, then cross-chain endpoint swap |
+| 68 three times, 92, 122 four times | NO_WITNESS_IN_CLASS | Repaired separately with receiver roles 68 and 92 |
+| 68,70,82,100,108,116,118,122 | WITNESS | Signed walks and relay |
+| 68,72,94,98,104,112,114,122 | WITNESS | Neutral donor, signed walks and relay |
+| 70,78,88,96,104,110,116,122 | WITNESS | Signed walks and relay |
+| 98 eight times, known control | WITNESS | Separate chains, no relay |
+
+The first three cases, together with MI057, cover the ten tuples
+(56+6k)^2,(112-2k)^6 for k=2,...,11. This is a finite structured family, not a claim that the
+bulk middle levels have been discharged or that any of these burnable tuples was unknown.
+
+**Why coupling matters.** With three donors per receiver, a separate chain conserves the total of
+four bins initially equal to 56+3*112=392. The tuple (96 seven times,112) has 35 labeled four-subsets
+of sum 384 and 35 of sum 400, none of sum 392. Yet the coupled construction works: token walks
+(9,25,41) and (1,17,33,49) first give receiver sums 88 and 104. Swapping endpoints 41 and 49 makes
+both 96. The donor with target 112 remains neutral. This is an actual finite coupling, not just a
+rewriting of the missing condition.
+
+**The repaired boundary tuple.** Initial choice (68,68) cannot fit the registered three-donor chains
+for the reason in MI059. Give the 2-element bins to targets 68 and 92 instead. The paths
+
+    13 -> 3 -> 47 -> 37
+     1 -> 45 -> 35 -> 25
+
+have signed changes (-10,44,-10) and (44,-10,-10), respectively. Their eight pair labels
+13,3,9,19,1,11,21,25 are distinct. Fill donors with the six unused 56-pairs before moving anything.
+After the walks the receivers hold {37,43} and {25,55}, both sum 80. Swapping 37 with 25 completes
+targets 68 and 92. The final partition is:
+
+    {25,43} -> 68; {37,55} -> 92;
+    {5,13,51,53} -> 122; {3,7,9,49} -> 68;
+    {15,19,41,47} -> 122; {1,11,17,39} -> 68;
+    {21,23,33,45} -> 122; {27,29,31,35} -> 122.
+
+The independent checker covers every odd from 1 to 55 exactly once. Thus the refuted prediction
+concerns a role-selection rule, not a counterexample to the target or a need for more search budget.
+
+**Unresolved:** a general way to choose the two 2-element roles and to pack the signed paths without
+complementary-pair collisions. All these witnesses have even targets; mixed parity is another real
+obligation. Eight selected positive fixtures do not calibrate success across E28. The next useful
+question is whether target inequalities can guarantee a role choice and admissible paths, or whether
+this two-chain representation has a genuine structural gap requiring another arrangement. No such
+guarantee or further experiment is supplied here. B24 closes; both heartbeats remain PAUSED.
+
+**Gut:** delight and a stronger, more specific pull. The failed role choice was helpful: it exposed
+what to steer, and changing that choice repaired a real allocation. **Reasoned:** the representation
+has gained signed movement and communication between chains; its limits are still part of the
+problem. I would choose to investigate the role/path interaction afresh, while resisting a procession
+of favorable fixtures as a substitute for a general argument. **Niggle sweep:** signed jumps checked
+against actual ownership, neutral donors filled with two pairs, endpoint correction derived, first
+failure retained, original blind prediction still marked refuted, all target parities and scope
+stated, known swap precedent credited, and no independent review or threshold conclusion implied.
