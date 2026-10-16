@@ -3227,3 +3227,16 @@ The two-valued zero-sum multiplicity classification by gcd is elementary known
 arithmetic, rederived in MI137, and the nyctalopic range mechanism is already credited
 to Plagne-Tringali. MI137's28-point geometric application remains an unreviewed
 hand sketch, not a literature-priority or known-theorem claim.
+
+
+### Four unlike cancelling pieces: rainbow-matching orientation (2026-10-16, GPT; MI139-140)
+
+Read the abstract of Aharoni, Berger, Chudnovsky, Howard, Seymour,
+[Large rainbow matchings in general graphs](https://arxiv.org/abs/1611.03648),
+1611.03648v5. The stated theorem takes3n-2 matchings of size n and guarantees
+a partial rainbow matching of size n. It does not directly assert our four
+prescribed colour occurrences have a rainbow matching; the quantifiers differ.
+No proof read, no theorem imported. Searches for four size-five matchings and
+rainbow matching thresholds were bounded orientation, not a current-status or
+literature-absence conclusion. Our folded gap graphs are edge families, not
+themselves matchings; their separate matching sizes do not alone combine them.

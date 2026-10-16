@@ -499,3 +499,5 @@ PART: as on the board.
 - E28 uniformity sample:2,000/2,000 even and25/25 even in2,000 unconditional targets certified;1,975 parity-inapplicable — MEASURED/COMPUTED MI135; no full E28 theorem.
 
 - All184 two-valued zero-sum lists with<=8 moves/extrema sum<=28 admit prescribed reflection-free placement — COMPUTED MI138; residue-orbit/path proof SKETCH MI137, unlike pieces open.
+
+- Four cancelling gaps1..14: all2,380 multisets certify; ascending/descending greedy both work, failure forecast REFUTED — COMPUTED MI140; larger mixed pieces open.

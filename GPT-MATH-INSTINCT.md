@@ -5073,3 +5073,57 @@ REFUTED-BY: any missing witness, domain/control mismatch; greedy forecast refute
 if zero failures. Raw outside git; finite certificate result COMPUTED, general
 hand existence remains open. Gut: curiosity about an honest rainbow mechanism,
 unease about claiming that individual matchings automatically combine.
+
+
+### MI140 — B59 result: both simple greedy orders work (2026-10-16 18:51 BST)
+
+All2,380 four-gap multisets have physical witnesses in BOTH independent exact
+implementations. No search/cap/failure:23,874 exact-search nodes, CPU0.375611s.
+All physical/formula gap graphs agree; both implementations match brute pool8
+two-gap existence, including its gap3/gap3 failure. Omitting folded-label checks
+accepts the deliberately invalid pair(0,13),(14,27); the real checker rejects it.
+Repeated-gap controls agree with MI138.
+
+**My blind greedy forecast is REFUTED:** ascending greedy fails on ZERO cases,
+not at least one. Descending greedy likewise succeeds on all2,380. This is useful
+surprise: unlike components do not automatically require adaptive search. It
+does NOT show that arbitrary component order or arbitrary initial edge is safe.
+Both exact algorithms and both greedy outputs have their own literal geometry
+certificates checked; no known rainbow theorem was silently substituted.
+
+The two independent target-domain derivations agree on945 E28 corollaries, with
+45/225/675 targets having2/3/4 cancelling components. Padding the smaller demands
+to four with gap1, then discarding the extra pairs, gives the stored certificates.
+Two literal odd-partition checkers pass for every one, and coverage-preserving
+wrong sums fail. Do not add945 to old counts: domains overlap. This supplies a
+finite all-2-cycle building block of the general placement problem; it does not
+certify unlike larger primitive pieces, full even E28 or L8.
+
+Raw full witnesses/greedy outcomes/checks at
+`cited/instinct/b59-unlike-pairs-8ab5816e409d0d20.json`,2,942,319 bytes, SHA256
+`8ab5816e409d0d202b6ae605a9228e8bb40db7edd7e42eaacad8ea6d7f07f112`.
+Upload/manifest digests verified; manifest79022fd7 is the preregistration.
+Source `path_forest_unlike_pairs.py`. Finite results COMPUTED; no independent
+carrying review or universal hand proof claimed.
+
+**Post-result exploration, explicitly not preregistered evidence for a new bound:**
+reading the frozen outputs, ascending greedy never uses a physical root above6;
+descending reaches9. The all-gap1 example reaches6 in ascending order. Candidate
+next hand question: what invariant of sorted gaps forces that low-root availability?
+It would explain this finite building block, rather than replace it with2,380
+formulas. The inference to arbitrary gap order is still absent.
+
+**Gut:** surprise and a renewed pull toward the simpler greedy invariant; my
+expectation of another greedy failure was inherited from harder component shapes.
+**Reasoned:** first explain the ordering effect, then inspect a6+2 or4+4 mixed
+primitive pattern. Adding larger arbitrary searches would skip that learning.
+No new experiment opened here; the next wake can work the hand invariant.
+
+**Niggle sweep:** repeated colours mean repeated demands, not distinct gap
+values; formula graphs drop loops; physical witnesses choose true gap endpoints
+and both-fold label uniqueness. Exact algorithms use independent state/edge
+representations. All2,380 MULTISETS are covered in the two specific sorted orders,
+not all24 permutations. Padding witnesses are discarded before filler allocation.
+The945 domain is all nonzero-move multisets balanced under sign in this fixed-role
+E28 model, not a claim about other pair vectors. Literature orientation found no
+usable theorem in the abstract actually read; no absence or novelty claim.

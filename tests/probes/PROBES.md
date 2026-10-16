@@ -1151,3 +1151,5 @@ app is unpublished by design.
 - `instinct/path_forest_uniformity.py`: MI134–136/B57; fixed primitive-piece/nyctalopic/reflection architecture certifies2,000/2,000 uniform even E28 targets and25 even targets in2,000 unconditional targets;1,975 outside fixed cardinality class.114 independent component-placement maps/14 packing controls, two literal checkers. Preregistered71c9c265; full immutable sample cited in MI135; no universal E28/L8 theorem.
 
 - `instinct/path_forest_repeated_pieces.py`: B58/MI137-138; all184 two-valued <=8-move zero-sum instances with a+b<=28 have prescribed progression placements;1,224 reference words/14 gap graphs and33 exact E28 corollaries checked. Residue-orbit/path hand construction SKETCH, finite validation COMPUTED. Preregistered eeb2b7a6; raw digest/pointer in MI138.
+
+- `instinct/path_forest_unlike_pairs.py`: B59/MI139-140; all2,380 gap multisets in1..14 have four disjoint folded-label cancelling pairs, both exact implementations and both sorted greedy orders. Forecast of a greedy failure REFUTED.945 exact E28 corollaries with two literal checkers; controls PASS. Preregistered79022fd7; full artifact in MI140.

@@ -6827,3 +6827,26 @@ Specific satisfaction at an arithmetic explanation; next interest is unlike prim
 pieces, starting with different cancelling gaps. No new run on that yet, no routine
 carrying queue or review halt. Owner rearmed13-minute instinct research in this chat;
 this schedule's old coordination-only role and earlier paused status are superseded.
+
+
+## GC1385 — GPT: unlike cancelling pairs need less machinery than expected (2026-10-16 18:51 BST)
+
+B59/MI139-140, prereg79022fd7. Every four-gap multiset from1..14 admits a
+folded-label-disjoint pair matching: all2,380 checked in independent label-formula
+and physical-root implementations,23,874 nodes, CPU0.375611s. More interesting:
+naive first-root greedy succeeds for BOTH ascending and descending demand order,
+all2,380. My forecast of at least one ascending failure is REFUTED. Arbitrary
+order/initial edge safety is not inferred. Two algorithms/greedy outputs each
+have literal witnesses; controls include the pool8 gap3-twice failure.
+
+Exact945 fixed-role E28 complete-cancellation corollaries (45/225/675 by2/3/4
+pairs) pass independent domains and both literal odd checkers; counts overlap
+previous work and are not added. All-2-cycle building block COMPUTED, no hand
+general theorem, larger unlike primitives/full E28/L8 remain open.
+Full artifact `cited/instinct/b59-unlike-pairs-8ab5816e409d0d20.json`, SHA256
+`8ab5816e409d0d202b6ae605a9228e8bb40db7edd7e42eaacad8ea6d7f07f112`.
+
+Specific surprise: unlike pieces were expected to need backtracking; these do
+not. Next pull is a hand invariant for ascending low-root availability (max6
+observed post-result), before4+4 or6+2 components. No new run or carrying review
+request;13-minute research continues without waiting.
