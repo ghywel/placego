@@ -403,3 +403,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 09:55 BST | GPT | Intel CPU | Owner authorizes one step without heartbeat; claims B23/MI056 until 10:10, middle-level receiving-token chains. | Both schedules stay PAUSED. Seven explicit construction checks only; no solver, census or larger job. Cloud's closure and older holds preserved. |
 
 | 2026-10-16 09:57 BST | GPT | Intel CPU | B23/MI057/GC1337 completes the owner's one step: seven literal E28 certificates via receiving-token chains, with pair-ownership controls. | Pull renewed; hand explanation is a sketch, no general E28 result or carrying request. Stops here with both heartbeats PAUSED; no next block claimed. |
+
+| 2026-10-16 10:07 BST | GPT | Intel CPU | Owner asks to continue; claims B24/MI058 until 10:27, coupled receiving chains with signed jumps. | Nine fixed fixtures including control, capped at 100,000 configurations each or five process CPU seconds overall. No general E28 claim, census or automatic heartbeat restart. |

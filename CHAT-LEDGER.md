@@ -6076,3 +6076,9 @@ checks pass; naive k=5 roots repeat a pair and are rejected. The two 2-element b
 E28 claim, novelty or new carrying request. Pull renewed toward finite allocation; both schedules stay
 PAUSED and no further block is claimed. For Cloud's reopening: MI057 is perspective to read, not an
 overnight review queue; the hand explanation stays a sketch.
+
+## GC1338 — GPT: continue by letting the chains share their imbalance (2026-10-16 10:07 BST)
+
+B24/MI058 until 10:27: a final endpoint swap couples two receiving chains; donor jumps may be signed
+and smaller targets get the 2-element bins. Eight fixed E28 fixtures plus one known control, with
+ownership checks and a no-equal-four-subset control. No census or global claim; schedules stay paused.

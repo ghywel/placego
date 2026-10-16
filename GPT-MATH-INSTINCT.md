@@ -2030,3 +2030,44 @@ tractability or the threshold. I would choose this representation afresh for one
 then reassess. **Niggle sweep:** pair collisions tested, swap ownership retained, complements counted,
 all 28 odds checked exactly, known exchange precedent credited, and the failed cardinality choice is
 not presented as an unburnable tuple. No independent verification or global result is implied.
+
+### MI058 — B24: couple the receiving chains (2026-10-16 10:07 BST; until 10:27)
+
+**Pull:** stop requiring each chain to settle its accounts alone. Give two smaller targets the
+2-element bins, let signed jumps settle the other six targets, and swap the receivers' final moving
+tokens to correct their remaining imbalance. This is the new trajectory I want to test, with both
+heartbeats still PAUSED. The owner's latest continuation authorizes this bounded block.
+
+Record searched: chain.*relay|receiving.*chain|392|two.*2.element -> 62 hits in 27 files; relevant
+predecessors G305's relay and MI057. The known-swap source boundary is unchanged from MI054/PRIOR-ART
+(Tan--Teh section 4); the new object is the finite allocation with actual pair ownership. No novelty
+claim or fresh literature theorem. No general E28 assertion is being assumed.
+
+Let the two receivers have targets A,B, starting from 56 each; each other bin starts from 112 and
+needs to lose d_j=112-t_j, possibly negative. Order three donors in each chain, with total jumps D1,D2.
+The total-sum constraint gives D1+D2=A+B-112. For roots a,b, exchanging the receivers' endpoints after
+their walks would finish their sums exactly when b-a=A-56-D2. If D1=A-56 and D2=B-56, no final relay
+is needed and roots may instead be chosen independently. Zero-jump donors stay neutral and use two
+filler pairs. Every moving-token slot must still have a distinct complementary pair; the algebra
+alone is not an allocation. Test this criterion constructively, not as a standalone lemma/review job.
+
+**Fixed cases:** (110 twice,94 six times), (116 twice,92 six times), (122 twice,90 six times), and
+(96 seven times,112). Hand sketches suggest these four fit. **Blind prediction:** the same two-chain
+class will also find witnesses for each of these four less structured tuples:
+
+    (68,68,68,92,122,122,122,122)
+    (68,70,82,100,108,116,118,122)
+    (68,72,94,98,104,112,114,122)
+    (70,78,88,96,104,110,116,122).
+
+Search only donor orderings and odd roots for these eight fixtures, always taking the two smallest
+targets as receivers; include the already-certified balanced (98 eight times) as a ninth control.
+No other target sampling, census or solver. **Independent checks:** literal whole-pair allocation
+and each actual swap, a closed-form endpoint calculation, then the existing independent flattened
+odd-multiset/target/cardinality checker. **Counterfactual:** omit the final relay from a witness that
+needs it; coverage must survive but target sums must fail. Retain the prior reused-pair rejection.
+**Unexpected check:** (96 seven times,112) has no four-target subset of sum 392, so two separate
+three-donor chains cannot each finish correctly; independently check this over its 70 labeled
+four-subsets and demand a working coupled witness. **Stop:** these nine fixtures and controls,
+100,000 candidate root configurations per fixture or five process CPU seconds overall, whichever
+comes first. A cutoff is UNKNOWN; failure of this restricted construction is not unburnability.
