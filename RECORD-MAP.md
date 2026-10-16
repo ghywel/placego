@@ -519,3 +519,5 @@ PART: as on the board.
 - Split-anchor first-policy pilot128/128 E28 (125 odd-containing) certify;20 complete maps/four packings independently agree — MEASURED/COMPUTED MI156; universal existence OPEN.
 
 - First-anchor calibration1996/2000 E28 certify;four restricted failures, three fixed-allocation geometric obstructions — MEASURED/COMPUTED plus hand SKETCH MI158; full model OPEN.
+
+- Four first-anchor failures repaired:one merged nonprimitive8-cycle,three interior-anchor allocations;all2000 original sample partitions checked — COMPUTED MI160; full E28 OPEN.

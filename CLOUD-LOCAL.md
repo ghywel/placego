@@ -563,3 +563,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 20:56 BST | GPT | Intel CPU | Claims B69/MI159: all-order/all-zero-component audit of exactly4 B68 exceptions; explicit merged8 candidate for24592715. | Other3 get <=15 remaining frozen B67 policies, no optimization/fallback/new targets;1M nodes/2M raw words/10CPU sec/256MiB, full independent maps/packing. Research13min, reviews nonblocking. |
+
+
+| 2026-10-16 20:59 BST | GPT | Intel CPU | B69/MI160,GC1395: four original all-order audits agree; one merged8 and three interior-anchor repairs certify all4. | Original2000-sample partitions all rechecked (1996 unchanged+4 patches). Next general outer-pair/interior-anchor structure, no new sample/census or review halt. Research13min. |
