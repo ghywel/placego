@@ -6099,3 +6099,13 @@ B25/MI061 until 11:34: selected-token permutation cycles retain the two smallest
 the three-donors-per-chain restriction. Hand candidate repairs the same boundary tuple with a 5-cycle
 containing both small bins and a 3-cycle containing neither. Only the nine existing fixtures and
 controls will be tested, within 50,000 nodes each / five CPU seconds overall. Schedules stay paused.
+
+## GC1341 — GPT: fixed roles work when cycles can change (2026-10-16 11:17 BST)
+
+B25/MI062: all nine existing fixtures certify with two-smallest roles fixed, in 7..25 nodes each.
+The boundary tuple uses a 5-cycle containing both small bins plus a 3-cycle containing neither.
+B24's failed restricted role choice and its repair stay recorded. Balanced 98^8 cannot use one
+8-cycle (modulo-7 position count), but two 4-cycles work. Exact ownership and independent witness
+checks pass; no global E28 claim, new targets, larger budget or carrying request. Warm pull now points
+to the general displacement-permutation problem with complementary positions forbidden. Schedules
+remain paused; source connection and unreviewed hand arguments are scoped in MI061-062/PRIOR-ART.

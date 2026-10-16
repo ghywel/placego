@@ -47,6 +47,8 @@ independently of prize value. This is a working notebook; the conjectures remain
    now? Name what still draws attention and what has become momentum. Learning known mathematics can
    be a sufficient pull; lack of novelty alone is not a reason to leave. If fresh choice points elsewhere,
    park the topic and widen attention rather than automatically reading the next paper on its list.
+   The owner's orbit analogy (2026-10-16) adds: a cooling pull invites "how can we make the pull warm
+   again?" Check the trajectory, try a concrete change of approach, and record whether warmth returns.
 9. **Keep a durable, proportionate record.** This ledger holds the method and mathematics. Shared ledgers hold
    concise handoffs and arrangement changes. Cite sources, retain data outside git, check privacy and conflicts,
    and push useful checkpoints without force. Before others rely on a claim, run the niggle sweep. A major
@@ -2204,3 +2206,67 @@ forcing a single cycle must fail on the known balanced target 98^8: its nonzero 
 21 twice and -7 six times, so one cycle lies in one residue class modulo 7, containing at most four
 available indices, whereas eight active bins need distinct selected indices. Disjoint cycles should
 succeed. Retain failures and distinguish these construction classes from the original problem.
+
+### MI062 — B25 result: the missing freedom was cycle structure (2026-10-16 11:17 BST)
+
+**What changed:** all nine existing fixtures now have literal certificates with the two smallest
+targets kept in the 2-element roles. The formerly failing boundary tuple works by splitting its
+exchange into cycles of lengths 5 and 3; changing roles was sufficient in B24, but unnecessary in this
+larger construction class for that tuple. The finite certificates are COMPUTED. The resource argument
+and structural diagnoses are hand sketches, not independently second-read. No new PROOFS entry,
+review request, general E28 theorem, novelty or census claim.
+
+The probe `tests/probes/instinct/path_forest_cycle_cover.py`, registered in 801fae29, finds witnesses
+in 7 to 25 nodes on these nine already-known positive fixtures, without a cutoff. The independent
+certificate checker, literal initial allocation and simultaneous transfer all agree. Both
+counterfactuals are rejected. Forcing one cycle on the balanced control gives NO_WITNESS_IN_CLASS
+after 64 nodes, while two 4-cycles work. Total process CPU was 0.001639 seconds. This is an instrument
+check on fixed fixtures, not a measured success rate or performance forecast for the middle levels.
+Raw output stays outside git; its digest is in the probe header.
+
+**The ownership argument.** Select one original token v_i=2*x_i+1 from a distinct complementary pair
+for each nonzero-deviation bin. Give that pair to the bin and fill its remaining h_i-1 pair slots;
+neutral bins get their h_i pairs entirely from fillers. There are exactly 14 pair slots overall, so
+the unreserved pairs fill the remaining slots exactly. Remove the selected tokens and redistribute
+the same multiset according to the permutation x_i -> x_i+e_i. Bin i gains 2*e_i, as required, while
+all complements and filler pairs stay put. Distinct selected pair labels are essential: a displacement
+permutation alone would not justify the original whole-pair allocation. This construction does not
+assume that every desired displacement pattern has a suitable permutation.
+
+**Boundary construction with the original roles.** For targets
+(68,68,68,92,122,122,122,122), use deviations (6,6,-22,-10,5,5,5,5). Selected index cycles are:
+
+    0 -> 6 -> 11 -> 17 -> 22 -> 0, bins 0,4,1,5,2;
+    2 -> 7 -> 12 -> 2, bins 6,7,3.
+
+The five-cycle contains both small bins; the three-cycle contains neither. One final partition is:
+
+    {13,55} -> 68; {33,35} -> 68; {1,3,11,53} -> 68;
+    {5,7,31,49} -> 92; {9,23,43,47} -> 122;
+    {17,21,39,45} -> 122; {15,19,37,51} -> 122; {25,27,29,41} -> 122.
+
+This retains B24's restricted-class failure and its successful role repair as recorded; neither was
+an impossibility claim for all exchanges. The new representation removes that particular restriction.
+
+**Unexpected check and its meaning.** On the balanced target 98^8, deviations are 21 twice and -7
+six times. In a single cycle all selected indices have one residue modulo 7, giving at most four
+positions in 0,...,27; eight active bins cannot fit. Allowing disjoint cycles is therefore essential
+even on this known easy positive example. This is a failure of a structural simplification, not a
+request for a larger cap.
+
+**Remaining mathematical question:** must every even E28 target admit a suitable cycle allocation
+with these two smallest roles, or is there an actual obstruction to this one-token-per-bin model?
+The nine tests cannot answer it. The exact residual is a permutation of selected positions with
+specified displacements and no two selected positions complementary under j -> 27-j. Nordh's source
+identifies related displacement mathematics, but its statements do not remove that extra constraint.
+Mixed target parity remains outside the present model. A structural existence argument or a concrete
+counterexample to the model would now teach more than another list of favorable fixtures.
+
+**Gut:** the pull is warm, with delight at the five-cycle joining both small bins. **Reasoned:** the
+orbit changed because a restriction was identified and removed; this does not establish that the
+full threshold is closer in any quantified sense. I would choose the constrained-displacement question
+afresh. B25 closes here, with no additional experiment or next block claimed; both heartbeats remain
+PAUSED. **Niggle sweep:** cycles may contain zero, one or two small bins; neutral bins keep two filler
+pairs; no selected complementary pair is reused; permutation closure and exact sums checked; the
+single-cycle failure is retained, and neither finite witnesses nor literature terminology prove an
+all-target statement or novelty.

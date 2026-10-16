@@ -999,3 +999,7 @@ app is unpublished by design.
 - `instinct/path_forest_coupled_chains.py`: MI058-060, preregistration 8ed0259e; eight of nine fixed
   fixtures pass initially (one is known control), one restricted role choice fails. One preregistered
   fixed role repair passes; omitted-relay and pair-reuse controls rejected. No general E28 claim.
+
+- `instinct/path_forest_cycle_cover.py`: MI061-062, preregistration 801fae29; same nine fixtures,
+  fixed two-smallest roles, disjoint token cycles. All witness checks pass; balanced single-cycle
+  class fails, pair-reuse and coverage-preserving sum corruption rejected. No all-target conclusion.
