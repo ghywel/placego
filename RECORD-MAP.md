@@ -460,3 +460,4 @@ PART: as on the board.
 - Seven E28 tuples, including (68 twice,108 six times), have receiving-chain certificates — COMPUTED MI057; hand explanation SKETCH, general E28 open.
 - Eight designated E28 tuples have signed/coupled-chain certificates after a role repair — COMPUTED MI060; initial blind prediction REFUTED, general E28 open.
 - All nine existing E28 fixtures/control admit fixed-small-role cycle certificates; balanced single-cycle class fails — COMPUTED MI062, hand arguments SKETCH; general existence open.
+- Six minimum-boundary forced 8-cycles admit a common translation and prefix-avoidance recipe — COMPUTED MI065; uniform explanation SKETCH.

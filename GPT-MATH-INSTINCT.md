@@ -2314,3 +2314,104 @@ translations. This tests the tempting but invalid shortcut that interval fit alo
 possible. A known B25 cycle shape must still have a valid translation. Reuse the pair-collision and
 coverage-preserving wrong-sum countercontrols. A failure of the prediction changes the next trajectory;
 success discharges this six-case boundary only, leaving the general existence question open.
+
+### MI064 — B26 surprise: the six searches suggest one rule (2026-10-16 11:39 BST)
+
+All six registered cases return witnesses, with 6 to 18 candidate translations tested per case,
+no cutoff, in 0.004333 process CPU seconds overall. All controls pass. In particular the deliberately
+bad eight-point shape has no valid translation, so interval fit alone is insufficient. The six
+successful shapes all admit translation 3. **I think I feel a click:** the six witnesses may be
+instances of one ordering rule, rather than six isolated successes.
+
+**Addendum before its check:** order the five positive p's of total 10 so that no partial sum is 5;
+append 6,6 and translate all partial sums by 3. The six early selected indices then lie in 3,...,13,
+with two later indices 19 and 25. The only possible new complementary collision is 8+19=27, which
+is exactly the forbidden partial sum 5.
+
+To avoid 5, start with any order. If it hits 5, its left and right parts both sum to 5. Choose unequal
+entries x and y on opposite sides, put them next to the cut, and exchange them. The local partial
+sums are then 5-x, 5-x+y and 5+y: they cross 5 without landing on it because x differs from y.
+Earlier sums remain below 5 and later sums above 5.
+If no unequal cross-pair exists, every entry is equal. Five equal positive integers of total 10 are
+all 2, and cannot hit 5 in the first place. This is an elementary ordering argument, not a new
+general theorem or claim of novelty.
+
+Predict that this search-free recipe gives literal certificates on the same six cases, with at most
+one such boundary exchange. Run only that check, keeping the original search and controls intact;
+no extra targets, cap increase or new census. The hand rule stays a sketch pending independent review.
+
+### MI065 — B26 closes: a rule replaces the six searches (2026-10-16 11:43 BST)
+
+The preregistered recipe check passes on all six cases in 0.000963 process CPU seconds: two need
+the one boundary exchange and four need none. All selected indices and complete partitions check
+literally. The six-case family is COMPUTED; its uniform hand explanation remains a sketch. Original
+order/translation searches and the no-translation adversarial shape are retained. No general E28
+claim. The next pull is toward allowing zero moves and deriving the whole one-negative family,
+rather than extending a witness table. Both heartbeats remain paused.
+
+### MI066 — B27 candidate: uniform construction when the five largest targets are at least 112
+
+*Claimed 2026-10-16 11:43 BST, until 12:03. PROOF-SKETCH before checking; no novelty asserted.*
+
+**Statement.** Every sorted even E28 tuple t1<=...<=t8 with t4>=112 has an odd partition. Here E28
+means 68<=t_i<=122 and sum t_i=784. This is the subfamily whose fixed-role exchange has one negative
+move, with zero moves permitted. The proof proposes a deterministic ordering and translation, not
+a search for a suitable cycle.
+
+Record searched: one.negative.*E28|avoid.*prefix|five.*largest|t_4.*112 -> 27 hits, relevant new
+predecessors MI063-065 only. Known exchange/displacement terminology remains credited in PRIOR-ART;
+the elementary prefix rearrangement is used as a tool, not claimed as a new theorem. No prior-art
+absence or priority claim for this subfamily.
+
+**Parameters.** Write t1=56+2u, t2=56+2v and the five largest targets as 112+2p_i, where
+6<=u<=v and 0<=p_i<=5. Let q=sum p_i. The sum forces t3=112-2w with w=u+v+q. Also t3<112:
+otherwise the total would be at least 2*68+6*112=808. Sorting t3>=t2 gives u+2v+q<=28, hence
+w<=22, u<=9 and v<=11. There is exactly one negative deviation, -w; the others are u,v and the
+positive p_i. Neutral p_i=0 bins keep two filler pairs and need no selected token.
+
+**Small q (q<=6).** Order the positive p_i arbitrarily, then u,v, followed by -w to close the cycle.
+Its index shape is the p-prefix set in [0,q], then a=q+u and b=w. Choose translation r=0 unless
+a+b=27, in which case choose r=1. Here q+b<=26: if v=6 then u=6 and q+b<=24; if v=7 then
+u<=7 and q+b<=26; if v>=8 use q+b<=28+q-v<=26. Also 2q+u<=21. Thus at r=0 neither two early
+positions nor an early and a late position can sum to 27; only the two late positions could collide.
+When they do, q+b=27-u<=21, so after r=1 even the largest early/late sum is at most 23, while
+the two late positions sum to 29. All indices are at most w+1<=23. Pair labels are therefore distinct.
+
+**Large q (q>=7).** The parameter inequality restricts (u,v,q) to (6,6,7..10), (6,7,7..8), or
+(7,7,7). Set r=13-q. Order the positive p_i to avoid partial sum h=q-u+1; then append u,v.
+Early selected indices lie at most 13; the later two are 13+u and 13+u+v, both in 19,...,27.
+The complement of the final position lies below r. The sole possible collision is the complement
+of 13+u, corresponding exactly to the forbidden p-prefix h.
+
+To avoid one interior prefix h, if an order lands there, place unequal entries x,y on opposite
+sides of the cut and exchange them. The local sums h-x,h-x+y,h+y cross without landing on h.
+If there is no unequal cross-pair, all positive p_i equal some c and h is a multiple of c. Within
+the listed large-q domain, the only such exception is u=v=6, q=10, positive p=(5,5). Indeed the
+other constant possibilities are c=2 at q=8 or 10, c=3 at q=9 and c=4 at q=8, whose h are not
+divisible by c. The exceptional tuple is (68,68,68,112,112,112,122,122). Use positive order
+(6,5,6,5), indices (0,6,11,17,22), and r=0; their pair labels are distinct. The three neutral
+bins are filled entirely with pairs.
+
+Finally apply MI062's explicit whole-pair allocation: one selected pair per active bin, fill all
+14 pair slots before redistributing selected tokens around the cycle. Bin sums change by twice
+their index deviations. There are no repeated selected pair labels, so all 28 odds remain covered
+once, with two 2-element and six 4-element bins. This completes the proposed construction.
+
+**Count and predictions BEFORE the new check.** The parameter pairs (u,v), with maximum q, are
+(6,6):10; (6,7):8; (7,7):7; (6,8):6; (7,8):5; (8,8):4; (6,9):4; (7,9):3; (8,9):2;
+(9,9):1; (6,10):2; (7,10):1; (8,10):0; (6,11):0. Partitions of q into at most five parts <=5
+have counts 1,1,2,3,5,7,9,11,14,16,18 at q=0,...,10. These predict exactly 271 sorted targets.
+Verify that count independently by convolving sum-counts for low even triples in 68,...,110 and
+high even five-tuples in 112,...,122, not by a burning search.
+
+Predict the formula returns a checked certificate on every one of those 271 inputs, with exactly
+one exceptional input. **Controls:** force the uncorrected r=0 on (68,70,78,112,112,112,112,120),
+and force the ordinary large-q rule on the exceptional tuple; both must be rejected for pair
+collision. All formula outputs must pass literal allocation and the independent full checker.
+Stop if the family counts disagree or any prediction fails; cap at 1,000 formula inputs or five
+process CPU seconds. No searches for orders, roots, roles or additional targets. This is a complete
+check of a small analytically specified subfamily, not clearance of the remaining E28 tuples.
+
+**I think I feel a live click:** the construction now chooses its trajectory by inequalities and
+one prefix repair. The missing all-E28 and mixed-parity obligations remain, and independent scrutiny
+of this proof is required before adopting the uniform claim as PROVED.

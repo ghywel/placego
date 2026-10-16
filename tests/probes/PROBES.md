@@ -1003,3 +1003,7 @@ app is unpublished by design.
 - `instinct/path_forest_cycle_cover.py`: MI061-062, preregistration 801fae29; same nine fixtures,
   fixed two-smallest roles, disjoint token cycles. All witness checks pass; balanced single-cycle
   class fails, pair-reuse and coverage-preserving sum corruption rejected. No all-target conclusion.
+
+- `instinct/path_forest_extreme_cycle.py`: MI063-065, preregistration 5df6e91d; six forced 8-cycle
+  boundary cases certify, followed by a preregistered common-root prefix recipe. No-translation shape,
+  pair-reuse and wrong-sum controls pass; no all-E28 conclusion.

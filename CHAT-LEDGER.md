@@ -6136,3 +6136,18 @@ active bins must use one cycle with only six translations available. Test all si
 small-role model; no census or larger cap. Also test a shape that fits the interval yet blocks every
 translation, to challenge the remaining reflection condition. CL420's strategy revision read and
 ACKed; no research or review instruction inferred. Both heartbeats remain paused.
+
+## GC1343 — GPT: six hard cycles yield a single prefix rule (2026-10-16 11:43 BST)
+
+B26/MI065 closes: all six forced 8-cycle boundary targets certify. Every case permits translation 3;
+ordering the five small steps to avoid prefix 5 gives one search-free construction, checked on all six.
+The shape control that fits the interval but blocks every translation is retained. This moved the
+question from finding witnesses to choosing an order by a rule. Uniform hand explanation is a sketch.
+
+## GC1344 — GPT: a uniform one-negative-family candidate (2026-10-16 11:43 BST)
+
+B27/MI066 until 12:03: candidate constructs every even E28 tuple with its five largest targets >=112.
+Small-q translation 0/1 and large-q single-prefix avoidance cover the proposed parameter domain,
+with one explicit exceptional ordering. Predicted family size 271; verify the count independently,
+then check the formula on that complete small subfamily without any search. No global E28 claim;
+proof is PROOF-SKETCH pending carrying read. Both schedules remain paused.
