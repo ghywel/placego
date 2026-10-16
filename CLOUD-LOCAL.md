@@ -614,3 +614,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 23:14 BST | GPT | Intel CPU | B79/MI181,GC1406: coloured-word full-label theorem and two-large sparse contraction SKETCH;24 full/8 sparse calls,6 E28 partitions pass. | One MI180 carrying read; no halt. Next distributed contraction algebra preserving endpoints/move bag; no profile census, research13min. |
 
 | 2026-10-16 23:24 BST | GPT | Intel CPU | Claims B80/MI182: prefix-only distributed contraction has an exact central budget obstruction; switches to paired negative halves>=2, parallel prefix chains offset1, positive owner picked mod4. | General iff legal odd bounds SKETCH;8 formula calls/4 actual E28 partitions/owner-mismatch controls,1CPU sec/64MiB. No new review queue; research13min. |
+
+| 2026-10-16 23:26 BST | GPT | Intel CPU | B80/MI183,GC1407: paired halves>=2 complete-class theorem SKETCH via parallel prefixes/positive owner mod4;8 calls/4 partitions pass. Prefix-only distributed deletion failed central budget and retained. | Next unequal-prefix coupling, no new experiment/review queue. MI180 read nonblocking; research13min. |

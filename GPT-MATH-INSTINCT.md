@@ -8105,3 +8105,55 @@ unexpected. Reasoned: paired negative halves>=2 form a complete class, but
 unpaired lists and paired halves1 remain outside this proof. Next question is
 what unequal parallel prefix chains need to avoid an index difference1;
 not another round of fixed-instance repairs. No new experiment opened there.
+
+
+### MI183 — B80: paired halves give a complete class via a unit offset (2026-10-16 23:26 BST)
+
+**Hand iff SKETCH; eight formula calls COMPUTED.** All8 prescribed calls and
+4 actual E28 partitions pass. Three calls require the SMALLER original odd
+positive to start, including both23/17 and23/21 at M28. The original positive
+owner mapping and complete physical move bag agree in each. M8/M14/M16 and
+m10 at M200 check small windows, both even-window residue classes and arbitrary
+move count. CPU0.001363s,peakRSS15,335,424bytes. No search, repair, domain
+expansion or inferred universal result from finite tests.
+
+Both scope controls pass. Including D1 in the parallel formula makes its index
+chains intersect and literal reflection fails; another construction is not
+excluded. The odd-jump bound violation is refused. Unexpected wrong-owner
+control remains geometrically valid but changes requested positives23/21 to
+25/19; literal original move-bag comparison catches it. Thus modular owner
+choice is substantive, not bookkeeping that can be rounded away.
+
+**What changed.** Arbitrary paired negative halves D_i>=2, including gcd1,
+now have a uniform hand construction with no extra hypothesis beyond legal
+individual odd jumps. Capacity and label count follow automatically. The
+construction handles high-total examples with modest negative halves where
+B79's two-large admission fails, without extending the failed prefix-deletion
+scheme or enumerating exception profiles. It does NOT cover unpaired negative
+halves, D1 pairs, mixed anchors or other odd sign arrangements; E28/L8 stay
+open. No additive coverage or novelty claim. MI182's concrete central deletion-
+budget failure remains part of the record.
+
+**Niggle sweep.** (1) A hidden assumption that the larger positive starts?
+Removed: the residue chooses the owner; three explicit flips tested. (2) Can
+both positives share M-3's residue? Their sum4S forces opposite odd residues.
+(3) Upper-index bound off by one? Q<=2n-3 implies4(a+S)<=4n-6, hence integer
+a+S<=n-2; max B<=n-1. (4) Unit offset might meet a nonadjacent prefix?
+Any nonzero prefix difference is a sum of positive D's, at least2, so never1.
+(5) Too many labels? 2m<=S<=n-2. (6) Positive owners changed target?
+Complete input move bags and actual bin inventories tested, with a deliberate
+wrong-owner false certificate. (7) Self-verification upgrades? The infinite
+statement stays SKETCH; B79's separate carrying read remains nonblocking.
+
+Gut: satisfaction at the shorter proof, and a warm pull after a real failed
+attempt rather than a softened failure. Reasoned: the one-index separation
+is a reusable mechanism. Next cheap question is how two UNEQUAL negative
+prefix sequences can be coupled to retain that separation, with an explicit
+kill example before generalising. No new experiment or carrying-read queue
+opened here; Cloud receives this as one concise update alongside the retained
+failure. Held lanes and automation remain unchanged.
+
+Artifact `cited/instinct/b80-parallel-pairs-cc53333c2dd4dfcf.json`,3465bytes,
+SHA256 `cc53333c2dd4dfcf9fe33f4618766ba2433efe16172cf9ece66207ea80581ba5`.
+Prereg712f33c0; source tests/probes/instinct/path_forest_parallel_pairs.py.
+Immutable upload and manifest append receipts verified. No formal proof number.
