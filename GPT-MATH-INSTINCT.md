@@ -5020,3 +5020,56 @@ the first move+a, as the actual construction does. A negative-first nyctalopic w
 instead uses[-b,a-g]. Both have k grid positions and normalize to the same progression;
 the independent word check covers both. No arbitrary-first claim about the first interval
 is needed. This clarifies the range's endpoint strictness without changing any formula.
+
+
+### MI139 — B59: unlike cancelling pieces as a rainbow matching (2026-10-16 18:48 BST)
+
+**Question:** for any four gaps1<=g1<=g2<=g3<=g4<=14, can four cancelling
+(+g,-g) components occupy disjoint folded labels in0..27? There are exactly
+C(17,4)=2,380 gap multisets. This is the smallest unlike-component case of
+MI136's uniform placement gap, not another E28 slice census. It would discharge
+the all-2-cycle component type; larger primitive pieces remain a different price.
+
+Record searched: rainbow.match|different.*gap|mixed.*cancell|unlike.*piece ->43
+hits in13 files, mostly unrelated old curvature; MI137-138 and actual gap sources
+read. Primary rainbow-matching orientation is bounded: the abstract of Aharoni
+et al.1611.03648 concerns MANY matchings of a given size, a different quantifier.
+No general four-colour theorem is assumed from a search snippet. A known theorem
+would be PRIOR-ART; no new-theorem or carrying-read claim at this point.
+
+**Frozen test:** folded graph G_g has edges{i,j} supporting a physical gap g.
+Find a matching with one edge for each required gap occurrence (repeated gaps
+are distinct demands). Primary: label-formula edges |i-j|=g or i+j=27-g, exact
+four-colour DFS; secondary: independently enumerate physical x,x+g pairs and
+search reversed demand order with direct label sets. Compare existence for every
+multiset, and check each supplied physical witness by literal selected endpoints.
+No bigger primitive cycle, altered factorization or role fallback. Exhaustion
+means only this specified all-2-cycle placement class; cap means UNKNOWN.
+
+**Blind predictions:** all2,380 multisets admit a witness; the naive ascending-gap,
+first-available-physical-root greedy rule fails on at least one. Retain BOTH
+verdicts even if greedy succeeds everywhere. This diagnoses whether adaptive
+placement is necessary; no attempt to repair greedy by target exceptions.
+
+**Controls:** compare physical/formula edge sets for every g; both algorithms
+agree with a brute four-endpoint check on all two-gap multisets in pool8.
+The pool8 analogue gap3 twice must fail. Literal-disjoint physical pairs
+(0,13),(14,27) of gap13 must be rejected because folded labels repeat.
+Coverage-preserving wrong sums rejected for E28 materializations.
+**Unexpected check:** record ascending versus descending GREEDY outcome,
+separating existence from which component is placed first. Four repeated gaps
+should agree with MI138's already checked construction.
+
+**Actual-target corollary, validation only:** complete cancellation with fixed
+h=(1,1,2,2,2,2,2,2) gives two large positive moves u,v in6..14, two matching
+negatives, and0/1/2 matched small pairs in1..5. Predict45+225+675=945 DISTINCT
+E28 targets, all with literal certificates derived from the generic gap witness.
+Independent direct target generation/move-multiset balance checks must agree.
+Do not add945 to overlapping old target counts.
+
+Caps:2,400 gap instances,945 corollaries,2M primary+secondary search nodes,
+five CPU seconds; no extra gaps, larger pool, arbitrary cycles or cap raise.
+REFUTED-BY: any missing witness, domain/control mismatch; greedy forecast refuted
+if zero failures. Raw outside git; finite certificate result COMPUTED, general
+hand existence remains open. Gut: curiosity about an honest rainbow mechanism,
+unease about claiming that individual matchings automatically combine.
