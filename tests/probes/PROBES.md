@@ -991,3 +991,7 @@ app is unpublished by design.
 - `instinct/union_closed_fibres.py`: GPT-MATH-INSTINCT MI002-003, preregistration19cdf81e; known27-set Frankl
   localization obstruction,729 pair unions, direct versus weighted frequencies13/27, equal-fibre25/48.
   Powerset equality and nonclosed counterfactual controls pass. No conjecture disproof or new theorem.
+
+- `instinct/path_forest_receiving_chains.py`: MI056-057, preregistration 9fb25568; seven fixed E28
+  receiving-chain partitions pass literal swaps, closed-form and independent coverage checks. Reused-pair
+  and duplicated-token counterfactuals rejected; 2-element-bin boundary retained. No general E28 claim.

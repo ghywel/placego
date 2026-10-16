@@ -1964,3 +1964,69 @@ also be rejected. **Unexpected check:** extending the same 2/4-cardinality choic
 an impossible target tuple. **Stop:** seven schedules, these controls and the hand ownership argument;
 no solver, sampler, extra parameter search or extension to arbitrary E28. Any failed prediction is
 retained. Budget: one tiny deterministic check, at most one second of intended CPU and no data in git.
+
+### MI057 — B23 result: receiving chains cross the old capacity restriction (2026-10-16 09:57 BST)
+
+**What changed:** there is a finite construction for seven explicit E28 tuples using the actual 28
+odds, with unequal bin cardinalities. The literal certificates are COMPUTED with independent checking
+logic; the hand explanation below is PROOF-SKETCH, not independently second-read. No novelty or general
+E28 assertion. `tests/probes/instinct/path_forest_receiving_chains.py`, preregistered in 9fb25568,
+passes P1--P3 and both counterfactual controls in 0.000825 process CPU seconds. Raw witnesses remain
+outside git in `math-instinct-b23-receiving-chains.json`. No solver or larger run occurred.
+
+**The allocation.** For k=2,...,8 take targets (56+6k)^2 and (112-2k)^6. Initially two receivers each
+hold one complementary pair of sum 56 and six donors each hold two, sum 112. For a receiver root a,
+reserve its pair and three different donor pairs with selected tokens a+2k,a+4k,a+6k. Fill each donor
+with one of the six leftover pairs. All 14 pairs are now allocated; filling happens before swaps.
+The receiver successively trades a for a+2k, then its new token for a+4k, then that token for a+6k.
+Each donor loses 2k once; the receiver gains 6k. A large receipt uses the same moving token repeatedly,
+rather than fresh pair capacity for each unit of gain. Cardinalities stay two and four throughout.
+
+The following pair labels min(v,56-v) certify that the eight reserved pairs are distinct in every case:
+
+| k | Roots | First chain's pair labels | Second chain's pair labels | Targets |
+|---|---|---|---|---|
+| 2 | 1,3 | 1,5,9,13 | 3,7,11,15 | 68 twice, 108 six times |
+| 3 | 1,3 | 1,7,13,19 | 3,9,15,21 | 74 twice, 106 six times |
+| 4 | 1,3 | 1,9,17,25 | 3,11,19,27 | 80 twice, 104 six times |
+| 5 | 1,7 | 1,11,21,25 | 7,17,27,19 | 86 twice, 102 six times |
+| 6 | 1,3 | 1,13,25,19 | 3,15,27,17 | 92 twice, 100 six times |
+| 7 | 1,3 | 1,15,27,13 | 3,17,25,11 | 98 eight times |
+| 8 | 1,3 | 1,17,23,7 | 3,19,21,5 | 104 twice, 96 six times |
+
+All tokens are actual odds between 1 and 55. Distinct pair labels make selected tokens, their
+complements and filler ownership compatible. A donor receives its receiver's previous token, so its
+selected pair contributes (a+2k(j-1))+(56-a-2kj)=56-2k after its swap; its filler contributes 56.
+Each receiver ends with {a+6k,56-a}. Thus the claimed sums follow with no unassigned or repeated odd.
+The checker separately compares closed-form bins with literal swaps, then verifies the flattened
+multiset, all eight target sums and bin cardinalities without using transfer arithmetic.
+
+For the minimum-boundary tuple (68,68,108,108,108,108,108,108), the final bins are:
+
+    {13,55}, {15,53},
+    {1,17,39,51}, {5,19,37,47}, {9,21,35,43},
+    {3,23,33,49}, {7,25,31,45}, {11,27,29,41}.
+
+**Failures and unexpected boundary.** Naive roots (1,3) at k=5 fail: the second chain contains 23
+and 33 from the same pair. Changing its root to 7 repairs ownership; the checker rejects the naive
+version. Every deliberately duplicated-token witness is also rejected. At k=9 the proposed two
+2-element bins would each sum 110, exceeding the individual maximum 108. More sharply, any two
+disjoint 2-element bins have total at most 55+53+51+49=208, whereas 2*110=220. The k=8 construction
+attains 208 exactly. This is a cardinality boundary for this construction; the target tuple
+(110,110,94,94,94,94,94,94) itself is not refuted or decided here.
+
+**Unresolved / next cheap question:** can one receiver become a 4-element bin while another bin
+shrinks, retaining disjoint token ownership and the required sums? Alternatively, for unequal donor
+losses, can two chains with the resulting partial sums be packed without sharing complementary
+pairs? Either needs an actual finite allocation; neither is supplied by the seven cases. This block
+ends here at the owner's requested one step, with no second block or new review queue. Both
+heartbeats remain PAUSED. The existing MI052 review status and G304/G305 are unchanged.
+
+**Gut:** a small eureka and renewed pull. The useful shift was letting the receiving token walk;
+the arithmetic is enjoyable again. **Reasoned:** this bypasses the particular fresh-slot restriction
+that prompted last night's halt and reaches a minimum-68 middle-level example. Seven structured
+tuples are a small part of the middle-level obligation, so this does not establish general
+tractability or the threshold. I would choose this representation afresh for one concrete follow-up,
+then reassess. **Niggle sweep:** pair collisions tested, swap ownership retained, complements counted,
+all 28 odds checked exactly, known exchange precedent credited, and the failed cardinality choice is
+not presented as an unburnable tuple. No independent verification or global result is implied.

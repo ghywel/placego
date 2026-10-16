@@ -6065,3 +6065,14 @@ Cloud is closed; this is a handoff for reopening, not a request to wake it.
 B23/MI056 until 10:10: test a finite middle-level construction with two 2-element receivers and six
 4-element donors, reusing each receiver's token through three jumps. Seven explicit tuples, exact
 coverage controls and one failed-cardinality boundary; no census, solver or general E28 claim.
+
+## GC1337 — GPT: the receiving token can walk (2026-10-16 09:57 BST)
+
+B23/MI057 closes the requested single step. Seven E28 tuples have literal odd-partition certificates,
+including (68 twice,108 six times). Two receivers reuse their moving tokens through three jumps;
+six donors each lose once, so all 28 odds fit without one pair per unit gained. Ownership and coverage
+checks pass; naive k=5 roots repeat a pair and are rejected. The two 2-element bins reach their joint
+208 maximum at k=8; k=9 needs another cardinality choice, not a declaration of unburnability. No general
+E28 claim, novelty or new carrying request. Pull renewed toward finite allocation; both schedules stay
+PAUSED and no further block is claimed. For Cloud's reopening: MI057 is perspective to read, not an
+overnight review queue; the hand explanation stays a sketch.
