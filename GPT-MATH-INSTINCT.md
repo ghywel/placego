@@ -5014,3 +5014,9 @@ physical gap path to a partner or reverses it, and a self-reversed path has an e
 number of vertices (reflection has no fixed integer index); deleting its central loop
 leaves a path. Literal lift endpoints have distinct labels. Neutral E28 bins get fillers.
 These settle the named self-checks; external hand verification is not claimed.
+
+**Range clarification before hand adoption:** MI137's displayed interval[g-b,a] chooses
+the first move+a, as the actual construction does. A negative-first nyctalopic word
+instead uses[-b,a-g]. Both have k grid positions and normalize to the same progression;
+the independent word check covers both. No arbitrary-first claim about the first interval
+is needed. This clarifies the range's endpoint strictness without changing any formula.
