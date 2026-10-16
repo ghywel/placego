@@ -8157,3 +8157,96 @@ Artifact `cited/instinct/b80-parallel-pairs-cc53333c2dd4dfcf.json`,3465bytes,
 SHA256 `cc53333c2dd4dfcf9fe33f4618766ba2433efe16172cf9ece66207ea80581ba5`.
 Prereg712f33c0; source tests/probes/instinct/path_forest_parallel_pairs.py.
 Immutable upload and manifest append receipts verified. No formal proof number.
+
+
+### MI184 — B81: unequal prefixes interlace with a two-state separation (2026-10-16 23:35 BST)
+
+**Question/pull.** What survives when the two negative runs are unequal?
+The useful quantity is their current index separation delta, not a list of
+forbidden pair sums. A pair differing by1 changes delta by +/-1, so orienting
+unequal pairs can keep delta in{1,2}. Surprise: the only small-step hazard is
+an equal pair(2,2) at separation2; changing the PAIR ORDER fixes it. This is a
+joint split/order/endpoint construction, extending B80 rather than another
+instance repair. Record searched: adjacent.*pair.*prefix|interlac.*chain|
+near.pair|delta.*two.*run ->30 unrelated hits/12 files. MI180-183 and CL427
+read. No imported theorem, literature-status or novelty claim.
+
+**Class theorem, PROOF-SKETCH.** Let M=2n, d_1<=...<=d_(2m) with every d_i>=2,
+and each sorted consecutive pair(d_(2i-1),d_(2i)) differ by at most1. For odd
+p,q>0 with p+q=2K=2 sum d_i, a folded-distinct cyclic placement of
+(p,q,-2d_1,...,-2d_(2m)) exists IFF max(p,q)<=M-3 and not p=q=M-3.
+No initial capacity split or label count is needed; they follow below. B80's
+paired-halves theorem is the all-equal-pairs subcase. This does not cover half1,
+odd negative count, arbitrary unmatched pairs or anchored components.
+
+**Construction and all boundary choices.** Let r count unequal pairs.
+If r=0, choose FIRST positive P congruent M-3 mod4 as in B80; its alpha below
+is odd. If r>0, choose P=max(p,q), Q the other. In either case P<=M-3 and
+Q<=M-5: the latter is obvious for r>0 by excluding the doubled maximum, and
+for r=0 follows because the two positive residues differ. Define
+
+    alpha=(M-1-P)/2>=1, beta=(M-3-Q)/2>=1,
+    delta_0=1 if alpha is odd, else2;  a=(alpha-delta_0)/2>=0.
+
+We build A=a+prefixes(u_i), B=a+delta_0+prefixes(v_i), assigning one member
+of each d-pair to each run. Separation after a pair obeys
+ delta_(i+1)=delta_i+v_i-u_i.
+For an unequal pair(x,x+1): at delta1 choose(u,v)=(x,x+1), moving to2;
+at delta2 choose(x+1,x), moving to1. Equal pairs preserve delta.
+Equal pairs with value>=3 are safe in either state. Equal(2,2) needs delta1.
+Process all equal(2,2) pairs at state1: if delta_0=1 put them first; if
+ delta_0=2 and any such pair exists, first process ONE unequal pair down to1,
+then all the(2,2)'s. Such an unequal pair exists, since r0 forced delta_0=1.
+Then process all remaining pairs by the stated orientation rule.
+
+At every step, 0<delta_i<u_i: for equal2 this is1<2; for larger equal pairs
+it is<=2<value; for unequal pairs it is1<x or2<x+1. The next separation is
+also positive. Therefore A_i<B_i<A_(i+1)<B_(i+1): the entire index lists
+strictly interlace. No index can occur in both chains, so the physical even2A
+and odd(M-1-2B) are folded-distinct.
+
+**The terminal bound is automatic, not an assumption.** Every unequal pair
+toggles delta and every equal pair preserves it. Hence delta_m is1 or2 with
+parity alpha+r. The parity of K is r, and alpha+beta=M-2-K is even-K.
+Thus delta_m has beta's parity, and is its smallest positive representative:
+delta_m<=beta. Also min A+min B=alpha, and
+max A+max B=alpha+K=(M-1+Q)/2. As B ends above A,
+max B=[(M-1+Q)/2+delta_m]/2<=[(M-1+Q)/2+beta]/2=n-1.
+All indices fit. The two physical odd jumps are exactly P,Q, by these two
+endpoint sums; both negative runs use precisely their assigned halves.
+Loads differ by delta_m-delta_0 in{-1,0,1}, so are floor/ceil(K/2)<=n-2.
+Since K>=4m and K<=2n-4, 2m+2<=n: enough labels automatically. Necessity
+of the two odd-jump exclusions is unchanged. This proof rederives the chain
+conditions and does not depend on B79/B80's unreviewed status.
+
+**Predictions BEFORE code/run.** Exactly NINE formula calls. Five actual M28
+partitions: d=(3,3,3,4,4,4), p21/q21 and25/17;
+d=(2,2,3,3,3,4),p19/q15 (must move an unequal pair before the2/2 pair);
+d=(2,3,3,4,5,6),p25/q21 (three unequal pairs, signs must alternate);
+and d=(2,2,3,3,5,5),p23/q17 (all equal pairs, smaller positive starts).
+Materialize each with slots(1,1,2,2,2,2,2,2); both literal/inventory validators
+must pass, with original positive/negative owners retained.
+General geometry fixtures: M8,d=(2,2),p5/q3; M16,d=(2,2,3,4),p11/q11;
+M32,d=(2,3,4,5,6,7),p29/q25; M300,d=(2,3,...,21),p297/q163.
+Independently check full physical move bags, all folded labels, strict chain
+interlacing, and endpoint sums; no all-order solver or profile census.
+
+Kill/negative controls written first: on M32's three unequal pairs, always
+putting the smaller half in A gives end separation4>beta2 and max B16>n-1;
+reject by literal window bounds. On the M28 2/2 fixture, processing sorted
+pairs without the early unequal pair makes A's first new point equal B's
+start (separation2, step2); reject by literal folded labels even though the
+move bag remains correct. This is the identified unexpected ordering check.
+Reject doubled longest positives at M24,p=q21,d=(3,3,3,4,4,4), and reject
+half1 as outside scope. An OUTSIDE-pairing positive control M28,d=(2,2,2,4,4,4),
+p25/q11 has a sorted pair gap2: refuse this constructor only, but the existing
+B77-style witness(0,25,21,13,5,16,12,8) must pass literal geometry AND its
+full input move bag. Thus a failed sorted-pair test is not a failed target.
+Caps9 formula calls/5 partitions+named controls,1CPU sec/64MiB. Stop on first
+mismatch/cap; no repaired geometry search, widened range or extra sample.
+
+Gut: warm because this includes unpaired multiplicities and recovers the
+older adjacent-size geometry by a new explanation. Reasoned: the next true
+obstruction is larger pair discrepancies or unit halves, not arbitrary warm
+extrapolation from these9 tests. General E28/L8 remain open; no new experiment
+or carrying-read queue opened for those remaining cases.
