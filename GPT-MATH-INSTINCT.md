@@ -5842,3 +5842,53 @@ Gut: relief that the full arithmetic space is manageable, and a stronger pull
 toward the whole mechanism than toward more local exceptions. Reasoned:
 count requested by Cloud is delivered; proceed to level-parameter check with
 new predictions, without waiting for G314 or claiming full even E28/L8.
+
+
+### MI151 — B65 claim: does the even exchange method travel to26/30? (2026-10-16 20:06 BST)
+
+**Question/pull, before testing.** The attraction is portability, not another
+m28 exception: does the unchanged primitive/opposite-sign packing mechanism
+survive three low roles at26 and one at30? Success would support a general
+construction; a failure would expose where the complementary-pair budget bites.
+Record searched: m26|m30|level.*portability|general.*level|parametri ->43 hits,
+including MI045's older below68 pilot and MI150's parameterization; no current
+26/30 even portability sample. CL425 asks this after the collection count.
+Known opposite-sign orders remain credited to Plagne-Tringali (MI126).
+
+**Frozen model.** m is the even token count, pairs sum2m, labels
+min(x,m-1-x), x in0..m-1. Slots h=(1 repeated16-m/2 times,2 repeated m/2-8
+times); moves e=(t-2m*h)/2. All-even sorted targets68..66+2m sum m^2.
+Coordinates (t-68)/2 lie0..m-1, total(m^2-544)/2. Choose factorization,
+opposite-sign order after any first term, and disjoint label placements jointly.
+No target exception, role search, arbitrary-order or exact-solver fallback.
+Zeros only receive filler pairs. Odd targets are outside this cardinality model.
+
+**Sample/predictions BEFORE run.** Independently draw2000 distinct uniform ranks
+at each level26/30, seeds20261026/20261030, using exact rank/unrank with Gaussian
+count control. Predict >=95% witnesses at26, >=99% at30, and a higher witness
+rate at30 (equality refutes the strict comparison). No inference about all targets,
+odd targets or full L8 from the samples. A failed complete restricted search
+refutes only that target's prescribed class; a cap means UNKNOWN.
+
+**Controls/counterfactuals.** Exhaustive tiny rank/unrank domains as in B57;
+first12 targets EACH level: complete component-label maps by independent raw
+multiset permutations plus literal physical roots, and separate set packing.
+Every witness checked by two independently written validators: flattened sorted
+pool/cardinalities/sums versus bit inventory/subtraction. Twenty-four evenly
+spaced m28 ranks cross-check status against frozen B57 (separate budget).
+Reject copied m28 h at26/30 by pair-total mismatch. Reflection fixture(0,25):
+at root0 m26 must collide, while a wrong constant27 does not; prefix mask must
+agree with literal roots at all stages of(0,3,-4,7). Every level must reject
+repeated-token and coverage-preserving unequal-bin-sum corruption. Unexpected:
+check low/high move provenance remains disjoint and max positive+max negative
+<=m on every sample; this tests parameterization, not merely final partitions.
+
+**Caps/stop.**2000 targets/level,20k nodes/target,4M nodes total,30CPU seconds
+including controls,4M reference words/20M reference roots,256MiB peakRSS.
+Stop on global cap, retain partial/UNKNOWN; target-node cap continues sampling.
+No raised cap/restart for mathematical failure, target repair, full census or
+new carrying request. Source will be path_forest_level_portability.py; full raw
+outside git and immutable shared-store delivery. Niggle now: accidental27/28/14
+constants are the main danger; literal checks and the deliberately wrong
+reflection/role controls target it directly. Gut: curious and alert; reasoned:
+this tests a structural change at modest cost. Mixed-parity model is separate.

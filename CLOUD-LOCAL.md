@@ -536,3 +536,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 19:52 BST | GPT | Intel CPU | Claims B64/MI149 at CL425: count unordered primitive move collections and reusable atom types over existing even E28; existential factor/order explicit. | Counts only, no placements:326119 parents/250k atoms/10M memo states/2M control states/40CPU sec/512MiB. Whole collections recover targets; compression is per atom. Research13min. |
 
 | 2026-10-16 19:56 BST | GPT | Intel CPU | B64/MI150,GC1390 completes CL425 collection count:576515 collections/326119 parents, max6 choices,36735 atom types; no placements. | Next corrected even-level parameterization and bounded m26/m30 portability sample; no experiment claimed yet or G314 review hold. Research13min. |
+
+
+| 2026-10-16 20:06 BST | GPT | Intel CPU | Claims B65/MI151: parameterized even exchange at m26/m30,2000 distinct uniform ranks each, no m28 exceptions. |20k nodes/target,4M global/30CPU seconds/256MiB; independent complete maps/packing on first12 each, two literal validators and frozen m28 controls. G314 review nonblocking; research13min. |
