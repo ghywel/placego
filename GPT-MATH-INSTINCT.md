@@ -4155,3 +4155,64 @@ generation or fallback solver. A missing/overlap/checker failure stops with the 
 Gut: the bypass earns a coverage audit, not another promise of warmth. Reasoned: close this
 named finite subfamily cleanly before deciding whether its mechanisms suggest a wider argument.
 Both automatic schedules remain paused; existing reviews do not gate this finite audit.
+
+### MI116 — B49 result: all5,268 targets in the named subfamily have certificates (2026-10-16 15:35 BST)
+
+The five regime sets are disjoint, with counts999/11/20/1,478/2,760, and their union equals
+the independent sorted-target domain EXACTLY. All5,268 complete partitions pass both the
+existing multiset checker and an independent bitset/exact-bin-sum checker. Source digests
+agree. Removing any regime breaks equality by its exact cardinality; a duplicated odd token
+is rejected by both checkers; the valid two-surplus outside-slice control is absent.
+Equal-step triples occur762 times, with s=1..5 counts239/195/148/108/72. Thus the112 literal
+traps were a particular subset of the equal-step tuples, not that whole slice. CPU0.519423 s;
+raw outside git SHA256
+`1603e5f50221531c9b6823fa6b9015337216ce72d6bd5882a7d8b24aba7a8bcd`.
+
+**Exact scope, COMPUTED:** every sorted even tuple68<=t1<=...<=t8<=122 with sum784,
+t4<112,t5=112,t6>112 has a partition of the28 odds1..55, bin cardinalities2,2,4,4,4,4,4,4.
+This is the complete named three-surplus subfamily, NOT all even E28, mixed parity, earlier
+exceptional levels, or L8. The hand constructions keep their existing review labels; machine
+certificate availability is not relabelled an all-hand proof. No novelty claim.
+
+**Niggle sweep:** three niggles checked. Target families might overlap: exact disjoint set
+audit says they do not, while B45's five already-covered stripe targets are intentionally
+deduplicated. Sorted-only sum verification might hide owner mismatches: independent checker
+requires each bin's sum to equal its assigned target, and uses bits to reject repeated tokens.
+The112 repair targets might be mistaken for all equal-step triples: actual count762 prevents
+that overstatement. All resolved; full-target scope limitations stay explicit.
+
+### MI117 — what the wall taught: a prefix swap and the next genuine obstacle (2026-10-16 15:35 BST)
+
+There is a short general reason behind MI112's literal classification. This is a supporting
+hand inference (SKETCH, no separate proof entry or routine review request), with no claim of
+novelty. Let k>=2 positive steps have sum q and let d be one forbidden proper prefix level.
+If an ordering hits d, split its items into a left part of sum d and a nonempty right part.
+If the multiset is nonconstant, some left item x and right item y differ: otherwise every
+cross pair agrees, hence every item agrees. Reorder within each part so x is last on the
+left and y first on the right, then swap x,y. Every earlier prefix is below d, every prefix
+after both swapped items is above d, and the one changed prefix is d-x+y!=d. Thus one swap
+avoids d. For a constant multiset s repeated k times, every order has the same proper prefix
+levels s,2s,...,(k-1)s; these and only these d are unavoidable.
+
+Applied to the same small-remainder parent, its only possible internal literal collision
+is the old0 coordinate, at d=W-v. Hence nonconstant surplus sizes can always avoid it.
+For constant sizes and d=j*s, the equations give W=v+j*s, Z=u+(k-j)*s. Allocate j steps
+to W and k-j to Z: the reduced negative magnitudes are exactly v,u. This yields two
+cancelling cycles with shapes {0,s,...,j*s,W} and {0,s,...,(k-j)*s,Z}.
+For k=3 these are precisely B48's three/four cycles. This explains why the bypass works at
+the directed-cycle level without112 custom patches. Availability of disjoint FOLDED labels
+after translation remains a separate question; B48 certifies it only on its stated domain.
+
+For four positive surpluses, the same argument would remove the literal-prefix obstacle,
+and constant-step traps would split into3+5 or4+4 cycles. Eight selected coordinates then
+need distinct folded labels. That packing/translation question is the next mathematical
+obstacle; the six-position translation theorem cannot simply be reused. No four-surplus
+experiment or claim is opened here. The payoff would be a common construction beyond the
+one-neutral-target slice, rather than more exceptions inside the completed slice.
+
+**Fresh choice / gut:** surprise became understanding: a wall built by one cycle can disappear
+when it is factored. Specific curiosity remains toward that factorization and the eight-point
+packing question. **Reasoned:** this continuation moved from2760 cases to one obstruction,
+then to a complete5,268-target subfamily and a general prefix argument. It does not justify
+indefinite case repair. Publish the milestone and a concise mentor pointer; existing MI099/101
+review stays pending, no new review queue or dependency halt. Both heartbeats stay paused.

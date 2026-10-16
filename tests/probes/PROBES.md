@@ -1105,3 +1105,15 @@ app is unpublished by design.
   seven-coordinate order, default root0 and four explicit exceptions.20 formulas, independent
   domains, invalid-parent/omitted-root/wrong-sum and span16 controls pass
   (09a0a21e preregistration). Uniform hand candidate awaits independent review.
+
+- `instinct/path_forest_small_remainder.py`: MI111-112, unmatched0<W-q<Z parent;
+  all181,956 graph/direct root-order comparisons agree,2,648/2,760 certificates.112 failures
+  all lack a literal order; exact equal-step classification retained (941bb4fa preregistration).
+
+- `instinct/path_forest_cancelling_traps.py`: MI113-114, uniform three/four-cycle split for
+  all112 literal traps;25,612 direct/mask root-pair checks, full certificates and adverse
+  controls pass. First legal four-cycle root always suffices on this domain (1d161ca7).
+
+- `instinct/path_forest_three_surplus_audit.py`: MI115-116, all5,268 sorted even E28 targets
+  with t4<112,t5=112,t6>112 have checked partitions. Five disjoint construction regimes equal
+  the independent direct domain; multiset/bitset/exact-bin checks and controls pass (2066fae6).

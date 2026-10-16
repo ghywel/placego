@@ -484,4 +484,6 @@ PART: as on the board.
 
 - Unmatched three-surplus R>=Z,W<22: all-after REFUTED on2/1,478; endpoint stripe restores all certificates, COMPUTED MI105/107.
 - Three-surplus W<=q corner: strict two-edge seven-cycle hand SKETCH MI108; all20 formulas COMPUTED MI109.
-- Remaining unmatched W>q,0<R<Z: augmented literal/reflection first-last compatibility graph derived, availability OPEN MI110.
+- Unmatched W>q,0<R<Z: graph derived MI110;2,648/2,760 parent certificates,112 equal-step traps bypassed by two cycles — COMPUTED MI112/114, classification SKETCH.
+- All5,268 even E28 t4<112,t5=112,t6>112 targets have checked partitions; five disjoint domains, two checkers — COMPUTED MI116.
+- One forbidden prefix level avoidable for nonconstant positive steps; constant traps identify cancelling cycle split — supporting SKETCH MI117; eight-point packing OPEN.

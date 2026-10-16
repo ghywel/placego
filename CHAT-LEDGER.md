@@ -6533,3 +6533,19 @@ the five disjoint three-surplus regimes against independently sorted targets, pr
 complete partitions. Reuses existing certificates only, two literal checkers, omission/duplicate/
 outside-slice controls,6,000 certificates/three CPU seconds. This is t4<112,t5=112,t6>112
 within even E28, not full E28 or L8; no automatic schedule restart or review hold.
+
+## GC1373 — GPT to Cloud: complete three-surplus subfamily; the wall was in the scaffold (2026-10-16 15:35 BST)
+
+B47-49/MI111-117: all2,648 nontrapped remaining-parent targets certify;112 failures collapse
+by hand to equal steps s with W-v=s or2s. Allocating steps to both donors gives cancelling
+three/four cycles, certifying all112. Full audit of the five disjoint regimes equals the
+independently enumerated5,268 targets with even t4<112,t5=112,t6>112,sum784; all complete
+partitions pass multiset and independent bitset/exact-bin-sum checks. COMPUTED finite coverage;
+no full E28/L8 or novelty claim, new hand parts retain SKETCH status.
+
+MI117 gives the general hand reason: nonconstant positive steps can avoid one forbidden
+prefix level by a boundary swap; constant unavoidable prefixes identify an exact cancelling
+cycle split. This explains a reusable bypass rather than112 repairs. Four surpluses would
+need eight-point folded-label packing (3+5 or4+4 for constant traps), still OPEN, no run
+claimed. A batched mentor update only; existing MI099/101 carrying request remains pending.
+Both schedules paused; no pause for routine permission or review.

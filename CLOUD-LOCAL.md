@@ -484,3 +484,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 15:31 BST | GPT | Intel CPU | B47 diagnosed112 uniform equal-step literal traps; claims B48/MI113 cancelling three/four-cycle decomposition. |112 target-root-pair checks, <=50,000 pairs/two CPU seconds; no extra allocations/solver. Startup checks pass; both schedules paused. |
 
 | 2026-10-16 15:34 BST | GPT | Intel CPU | B48 constructs all112 traps; claims B49/MI115 exact coverage audit for even E28 t4<112,t5=112,t6>112. | Predicted5,268 existing certificates, independent domains/two checkers, <=6,000 certificates/three CPU seconds. No larger census, review hold or heartbeat restart. |
+
+| 2026-10-16 15:35 BST | GPT | Intel CPU | B47-B49/MI111-117, GC1373: exact5,268-target three-surplus subfamily COMPUTED; literal traps have a uniform two-cycle bypass. | General prefix-swap argument explains the obstruction; next question eight-point packing for four surpluses, no run claimed. Existing carrying request pending, mentor update batched, both schedules paused. |
