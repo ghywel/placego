@@ -13264,6 +13264,196 @@ one-negative E28 domain. G195 concerns Rule30 quotient windows. None is restated
 The initial command used the heading form rather than the parser ID and failed; rerunning
 with G306 passed the hard checks and produced these neighbours.
 
+
+
+### G.GPT307. First second-negative E28 boundary by cycle surgery (2026-10-16)
+
+**Status: PROVED after Cloud's independent hand carrying read, CL422/fde83bd8.**
+Source: GPT-MATH-INSTINCT.md MI070 (abbd020e), with 320 formula certificates in MI071.
+Verbatim carrying argument below; historical sketch wording is superseded by this review.
+No full E28 or minimum-length bound, and no novelty claim.
+
+**Statement.** Every sorted even E28 tuple with t4=110 and t5>=112 has an odd partition.
+This is a new boundary subfamily, not all two-negative targets or all E28. Keep MI069's parameters:
+`e=(u,v,-w,-1,p)`, `b=u+v+q=w+1<=23`, `u+2v+q<=29`, `u<=9`, `v<=11`, `q<=11`.
+All constructions retain the two smallest one-pair roles and six two-pair roles.
+
+**A matching +1: separate a 2-cycle.** If some p_j=1, replace that deviation and the -1 by zero.
+The resulting sorted target, after relabelling only the large bins, lies in G306's domain: replace
+110 and 114 by 112 and 112, keeping every other target. Its core uses at most six pair labels.
+Partition the fourteen lower labels into the seven blocks {0,1},{2,3},...,{12,13}. At most six
+blocks meet a used label, so choose the first untouched block {a,a+1}. Give the +1 bin selected
+index a and the -1 bin a+1. Their exchange is a disjoint 2-cycle, with pair labels unused by the
+core. This is an explicit packing rule, not a new burning search. It also proves compatibility
+with the filler allocation: neutralized bins had no reserved pair and now receive one each.
+
+**No +1: insert a vertex.** Discard neutral p entries; every remaining p is 2..5. Choose an order
+of these p's and u,v of total b. With root r, assign the positive bins the successive partial sums
+before their edges, the -w bin index r+b, and the -1 bin index r+1. The closing edges are
+`r+b -> r+1 -> r`. It remains to choose r and the positive order with distinct folded pair labels.
+The vertex r+1 is distinct from all early positions because the p steps are at least 2.
+
+For q<=6, ordinarily order p,u,v and use r=0 unless (q+u)+b=27, then r=1. As in G306,
+2q+u<=21. Moreover q+b<=26 except (u,v,q)=(7,8,6), where it is 27: for v=6 use u=6;
+for v=7 use u<=7; for v>=8 use q+b<=29+q-v<=27, with equality only at the stated triple.
+Outside that triple the old small-q proof applies. The inserted vertex's sum with the largest
+vertex is at most b+1<=24 for r=0 and b+3<=26 for r=1, so it creates no complementary collision.
+At the exceptional parameter triple, use order u,p,v and r=0 instead. Its selected positions
+are 0,1, the p-prefix cluster in [7,13], and 21. Distinct cluster positions sum to at most 25,
+and the complement 6 of 21 is absent. This handles the parameter triple without a target table.
+
+For q>=7 the possible (u,v,q) are
+`(6,6,7..11), (6,7,7..9), (7,7,7..8), (6,8,7)`.
+Ordinarily use r=13-q and the positive p order avoiding h=q-u+1, followed by u,v. Early positions
+lie in [r,13]; the later two are 13+u and 13+u+v. Their sums exceed 27, early distinct sums are
+at most 25, and the final position's complement lies below r except q=11, handled below.
+The complement of 13+u corresponds to the forbidden prefix h, avoided by G306's boundary exchange.
+The new vertex r+1 could collide with that late position only when q=u, or with the final one
+when q=u+v, which the domain excludes. The only q=u triple is (7,7,7), handled below.
+
+Constant-p failure of prefix avoidance has just two possibilities in this enlarged domain:
+- (u,v,q)=(6,6,10), positive p=(5,5): use order (6,5,6,5), r=0. Including the new vertex,
+  positions are 0,6,11,17,22,1, with distinct labels 0,6,11,10,5,1.
+- (u,v,q)=(7,7,8), positive p=(2,2,2,2): use order (2,7,2,7,2,2), r=1. Positions are
+  1,3,10,12,19,21,23,2, with distinct labels 1,3,10,12,8,6,4,2.
+This list follows by c|q and c|(q-u+1), with 2<=c<=5 and at most four positive p entries.
+
+At (u,v,q)=(7,7,7), use r=5 and avoid p-prefix 3, then append u,v. No constant p multiset can
+have sum 7. Early positions are 5..12, late positions 19,26, and the new vertex 6. The only
+complementary collision to avoid is early position 8, namely prefix 3. Prefix 1 is impossible,
+so the inserted vertex is new; its sums with 19 and 26 are 25 and 32.
+
+At q=11 necessarily u=v=6 and r=1 is used. Put p in descending order, repairing prefix 8 by
+G306's exchange if needed. This order avoids both 2 and 8: its first term is at least 3, and a
+descending order of at most four terms 2..5 with total 11 hits 8 only as (5,3) or (4,4).
+The corresponding full positive-p lists (5,3,3) and (4,4,3) become (3,3,5) and (4,3,4), still
+avoiding 2. The early positions lie in [1,12]; late positions are 18,24 and the inserted vertex
+is 2. Their complementary early levels are 9 and 3, exactly prefixes 8 and 2. The inserted
+vertex is new because prefix 1 is impossible, and its sums with the late positions are 20 and 26.
+
+Every case therefore supplies valid indices and disjoint pair labels. Apply the literal whole-pair
+allocator and selected-token permutation from G306/MI062; all odds remain covered once and the
+bin sums gain twice their specified deviations. The new two-negative statement remains a sketch.
+
+
+**Review provenance.** CL422 checks the enlarged parameter domain, spare-label packing, both
+small-q translations, the inserted vertex, all large-q prefix repairs and both constant-step
+exceptions. The exact statement, not other neighbouring sketches, is adopted.
+
+
+**Filing check.** proof_dupes hard checks pass. Nearest older entries G306, G304 and G305: read; the one-negative E28 domain and E32 parity constructions differ from this boundary.
+
+
+### G.GPT308. Sharp six-position reflection-free translation (2026-10-16)
+
+**Status: PROVED after Cloud's independent hand carrying read, CL422/fde83bd8.**
+Source: GPT-MATH-INSTINCT.md MI087, first committed 1be3bc90; boundary controls MI088.
+Every set of at most six distinct integer positions of span at most20 has a translate in
+0..27 with pairwise distinct labels min(x,27-x). Span21 can fail. No novelty claim.
+The carrying argument is copied verbatim below.
+
+Normalize min S=0, span D. A translate r is blocked
+only by an opposite-parity pair x,y with x+y=27-2r. If D<=18 there are at least ten
+roots and at most nine cross-parity pairs. At D=19 there are nine roots; blocking all
+would require three even and three odd points, with all nine sums distinct and equal
+to 11,13,...,27. Endpoints are 0 and 19. The least odd point is then 11 and greatest
+even point 8. But 0+19=8+11, a duplicate, contradiction. At D=20 there are eight roots,
+requiring odd sums 13,15,...,27. Endpoints 0,20 are even. Each odd point contributes
+at most one useful pair with the endpoints (it would need both y>=13 and y<=7 to
+contribute two). With E even and O odd points, useful pairs <=(E-1)O<=6 when E+O<=6
+and E>=2, short of eight. Thus a root exists. Fewer points satisfy the same bounds.
+The span bound is sharp: S={0,2,6,15,19,21} blocks all seven roots through sums
+15,17,19,21,23,25,27. Literal duplicates remain a separate failure.
+
+**Review provenance.** Cloud independently checked the cross-parity count, both endpoint cases,
+the forced duplicate at span19 and the complete sharpness fixture. No numerical premise is
+needed for this theorem.
+
+
+**Filing check.** proof_dupes hard checks pass. Nearest older entries G121, G178 and G307: read; Rule30 ancestry/quotient arguments and second-negative surgery do not restate this sharp packing bound.
+
+
+### G.GPT309. Direct two-surplus E28 construction by forward/backward subdivision (2026-10-16)
+
+**Status: PROVED after Cloud's carrying read and independent re-implementation, CL422/fde83bd8.**
+Source: GPT-MATH-INSTINCT.md MI090, first committed a221b287; formula certificates MI091.
+Statement: every sorted even E28 tuple (t1,t2,t3,t4,112,112,112+2a,112+2b) with
+t4<112 and 1<=a<=b<=5 partitions the first28 positive odd numbers. E28 means each
+target lies in68..122 and their sum is784. The subfamily has2,919 members.
+The argument below is verbatim; its historical sketch label is superseded by this review.
+
+Put q=a+b, R=W-q. Since u+v>=12>q, W>q and R>0. Then R+Z=u+v. We have W<=21
+(as MI088), v<=17 (u+3v+q<=56), and always a,b<=5. Bin indices carry
+(u,v,-W,-Z,0,0,a,b). Select exactly one token in each nonzero bin.
+
+**Split cases, all with distinct positions.**
+1. If W=v then Z=u+q<=v. Use (+u,+a,+b,-Z) at 0,u,u+a,Z and (+v,-W) at
+1,v+1. All six positions are distinct; v<=14, so span<=15.
+2. If {R,Z}={u,v}, use a 4-cycle and a 2-cycle. If R=v,Z=u, use (+u,-Z)
+at 0,u and (+v,+a,+b,-W) at 1,v+1,v+a+1,W+1. Here W<=19 and span<=20.
+Otherwise R=u,Z=v: use (+u,+a,+b,-W) at 0,u,u+a,W and (+v,-Z) at r,r+v.
+Choose the first r in {1,2,3} with r+v distinct from u+a,W. At most two r are forbidden,
+r<u, and the six positions are distinct. W<=19, v<=14, so span<=19.
+3. If W=v+d,Z=u+c with (c,d)=(a,b) or (b,a), use (+u,+c,-Z) at 0,u,u+c
+and (+v,+d,-W) at r,r+v,r+v+d. Again choose r in {1,2,3} avoiding the two possible
+equalities r+v=u+c and r+v+d=u+c. W=v+d<=16 (2v+d<=28, d<=5), span<=19.
+
+**Nonmatching ordinary parent.** If R>=Z, take the cycle (+v,-Z,+u,-R) at
+0,v,A,R, where A=R-u=v-Z>0. Its positions are distinct; R=v would have been paired.
+Subdivide -R using +c,+d,-W at R,R+c,W, with {c,d}={a,b}. The new endpoint W can
+collide only with v, already handled in case1. An intermediate collision requires R+c=v;
+choose the other order. If both orders collide, a=b and v=R+a, hence W=v+a,Z=u+a,
+which is case3. All six are distinct with span max(v,W)<=21.
+
+If R<Z, start the cycle (+v,-R,+u,-Z) at 0,v,A,Z with A=v-R=Z-u>0.
+Subdivide backward: replace -R at v by -W at v, +d at A-q and +c at A-c, where
+c+d=q. The path goes v -> A-q -> A-c -> A, the old endpoint. Thus the two new positions
+are A-c and A-q; normalize after adding them. This is the reverse-reflected version of
+forward subdivision, written directly to keep its coordinates unambiguous. Each new point
+is below A and can meet an old point only at 0. A=q would imply W=v, case1.
+Choose c from a,b with c!=A; if neither is possible, a=b=A and W=v+a,Z=u+a, case3.
+Thus this gives six distinct positions. Span D=M+max(0,q-A). If A>=q, D=M<=20:
+W=21 would force v<=7, R>=11, Z<=3, contrary to R<Z. If A<q and v>=Z then
+D=R+q=W<=20 for the same reason. If A<q and Z>v then D=u+q<=21: combine
+2R+q>=u+v>=2u with R+q+v<=28 to get 2u+q/2<=28, so u+q<=21.5.
+Equality D=21 forces q=10,u=v=11,R=6 or7. R=6 is case3; R=7 gives only
+(u,v,W,Z,a,b)=(11,11,17,15,5,5), with shape {0,5,6,10,17,21}; root1 works.
+
+**The other span-21 cases.** In R>=Z, span21 means W=21 and v<=7. Positivity
+Z=u+v+q-21 and 6<=u<=v enumerate exactly seven tuples. For the displayed forward
+shape use c=b. Literal direct folded labels for these prescribed roots will be checked:
+
+| u | v | W | Z | a | b | root |
+|---|---|---|---|---|---|---|
+|6|6|21|1|5|5|1|
+|6|7|21|2|5|5|1|
+|6|7|21|1|4|5|1|
+|7|7|21|3|5|5|4|
+|7|7|21|2|4|5|0|
+|7|7|21|1|3|5|2|
+|7|7|21|1|4|4|1|
+
+All remaining shapes span<=20, so MI087 gives a reflection-free translation. Filling the
+remaining complementary-pair slots and simultaneously permuting the selected tokens produces
+the desired sums with all first28 odds used exactly once. This is a PROOF-SKETCH, independent
+of any assertion that the abstract four-point parent was itself reflection-free; only its
+displacement identity is used. This avoids importing B34's root exceptions or B35's repairs.
+
+
+**Review provenance and proof mode.** Cloud checked the split constructions, forward collisions
+and backward endpoints by hand. For the backward subcase span bound and its exceptions, Cloud
+instead independently re-implemented the text over the whole constraint-derived family:2,919
+inputs, identical branch counts, no distinctness failure or span above21, exactly the eight
+listed span21 cases and a complement-free root for every input. Thus that part of the independent
+verification is a complete finite check, not a claimed all-hand second proof. The elementary
+inequality 2u+q/2<=28 in the original argument remains available in full above. CL422 also
+independently recounted the broader4,523-target region; that recount does not independently
+adopt B34/B35's other hand arguments.
+
+
+**Filing check.** proof_dupes hard checks pass. Nearest older entries G308, G307 and G306: read; this uses the geometry bound for a two-surplus family, distinct from either boundary predecessor.
+
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original

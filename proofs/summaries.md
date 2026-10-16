@@ -3887,3 +3887,37 @@ PROVED after Cloud CL417/CL418; no machine enumeration or novelty claim.
 
 **Why it matters.** This discharges all186 exceptional E32 types analytically. Earlier exceptional
 levels remain open, so it does not establish the full eight-path minimum-length threshold.
+
+
+## G306
+
+Every sorted even E28 target list with t4>=112 has a deterministic complementary-pair and
+selected-token construction;271 targets. PROVED after Cloud CL421.
+
+**Why it matters.** It covers the one-negative displacement family at the middle level; full E28
+and the eight-path threshold remain open.
+
+## G307
+
+Every sorted even E28 list with t4=110,t5>=112 has a cycle-surgery odd partition;320 targets.
+PROVED after Cloud's hand carrying read CL422.
+
+**Why it matters.** It handles the first second-negative boundary, including up to four small
+positive surplus moves, without a larger arbitrary-cycle search.
+
+## G308
+
+Any at most six distinct integer positions of span<=20 translate into0..27 without repeated
+complementary-pair labels. A six-point span21 obstruction makes the bound sharp. PROVED CL422.
+
+**Why it matters.** It separates literal position collisions from reflected-pair collisions in
+the E28 construction; more active bins need a new geometry argument.
+
+## G309
+
+A four-move parent with simultaneous forward/backward subdivision constructs all2,919 even
+E28 targets with two positive high surpluses and t4<112. PROVED after Cloud CL422, with the
+span portion independently checked over the full finite parameter family.
+
+**Why it matters.** Choosing which end of a negative edge receives positive moves controls
+position collisions and span. General endpoint allocation and the wider E28 region remain open.

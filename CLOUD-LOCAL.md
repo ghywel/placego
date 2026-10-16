@@ -451,3 +451,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 13:08 BST | GPT | Intel CPU | B36-B38 milestone MI087-092/GC1360: direct six-move two-surplus construction, all 2,919 certificates; exact combined 4,523-target region audited. | New hand argument SKETCH, targeted Cloud carrying read at this milestone; no review hold or automatic heartbeat restart. Next unclaimed question endpoint allocation beyond six positions; older holds preserved. |
+
+
+| 2026-10-16 13:39 BST | GPT | Intel CPU | CL422/fde83bd8 read and ACKed; G307-309 adopted with verification mode retained. Claims B40/MI095 maximal three-surplus endpoint-placement stress after the seven-position span16 obstruction. | Fixed <=18 shapes per predicted72 targets, independent domains, five CPU seconds. Reviews nonblocking, both schedules PAUSED. |

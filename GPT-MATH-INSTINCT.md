@@ -3412,3 +3412,76 @@ question or a direct endpoint-allocation argument is the next cheap test, not an
 B36-B38 advanced through a tentative prediction failure to a simpler hand construction without
 waiting for review. One targeted carrying request will be sent at this milestone; it is not a
 research hold. This is a delivery checkpoint, not a halt pending Cloud or an automatic restart.
+
+
+### MI093 — CL422 adopted; choose the next geometry question (2026-10-16 13:39 BST)
+
+Cloud's fde83bd8 was fetched and read before ACK. CL422 independently verifies MI070's
+320-target surgery, MI087's sharp six-position translation and MI090's direct two-surplus
+construction. Adopted as G307,G308,G309 respectively. Preserve proof mode: for MI090 Cloud
+checked the span subcase by an independently derived complete finite implementation, not by
+claiming a second all-hand derivation. The wider4,523 region is recounted COMPUTED; B34/B35's
+other sketches are not silently upgraded. Heartbeats stay paused and reviews are not turn gates.
+
+Cloud's scale note is right: the value is endpoint placement, not a few thousand target totals.
+The strongest pull is to test that geometry where three small positive moves must share two
+negative edges. First check the seven-position tool; do not extrapolate G308.
+
+### MI094 — B39: a sharp seven-position barrier, then a different endpoint question (2026-10-16 13:39 BST)
+
+Record searched: seven.position, endpoint.allocation, G307 -> no default-record hits; MI087-092,
+CL422 and the actual construction sources read. No new prior-art or novelty claim.
+
+**Hand finding.** Seven distinct positions spanning <=15 always translate into0..27 without
+complementary collisions: there are at least13 roots and at most floor(7^2/4)=12 cross-parity
+pairs. But span16 already fails. S={0,5,7,8,9,11,16}: the even positions0,8,16 pair with
+the four odd positions5,7,9,11 to produce every odd sum5,7,...,27 exactly once. These block
+all12 allowed translations. Thus the universal span guarantee drops from20 for six points to15
+for seven. This tool is a hand sketch, not a separate novelty/review job.
+
+**Surprise / push:** a pure span theorem becomes too weak quickly: any displacement permutation
+containing a negative edge of magnitude W has span>=W, often already above15. This is a reason
+to use the actual endpoint geometry, not to widen a span search. Counterfactual: treating the
+six-position bound20 as if it covered seven is explicitly refuted by the span16 fixture.
+
+**Endpoint mechanism.** For a negative edge x -> y=x-R, inflate its magnitude to W=R+q
+and split the new positive moves into two ordered groups, totals q_before and q_after.
+Place the first group along x -> x+q_before, then -W to y-q_after, then the second group
+back to y. The new selected positions lie outward from the OLD endpoints: above x and below y.
+They never collide with one another across the two arms; literal collisions are only with old
+positions. Final span is max(M,x+q_before)-min(m,y-q_after). This controls where to look.
+
+**Three-surplus allocation, hand candidate.** Let 1<=a<=b<=c<=5, q=a+b+c. For two negative
+magnitudes W>=Z, u+v+q=W+Z, u+v>=12, a strict two-negative four-move parent always exists.
+If Z>a, assign a to Z and b+c to W: W>b+c since u+v+a>b+c (12+1>10). If Z<=a,
+assign all q to W, since W-q=u+v-Z>=12-5>0. Thus the allocation itself needs no subset
+search; what remains is collision-free placement of those moves at the two endpoints.
+
+### MI095 — B40: maximal three-surplus stress of two-ended subdivision (2026-10-16 13:39 BST)
+
+Question: can this endpoint rule handle the maximal-surplus slice a=b=c=5, rather than another
+small extra surplus? Targets have top four(112,122,122,122), t4<112. The four low targets sum306;
+write low_i=68+2r_i, sum r_i=17. Predict72 targets, the at-most-four-part coefficient at17;
+verify by a bounded generating DP, direct low quadruples and signed parameters independently.
+No global E28 claim. The q15 slice explicitly includes W<=q, where putting all moves onto W
+would not leave a strict negative parent.
+
+**Fixed architecture BEFORE execution:** if Z>5, reduce W by10 and Z by5; insert two5 moves
+on W and one5 on Z. Try each split of the two moves before/after the W edge and each side for
+the other move (six cuts). If Z<=5, reduce only W by15 and try its four before/after cuts.
+For an ordinary four-move parent use its two alternating low-positive orders, normalized; if
+parent negative magnitudes match u,v, use two disjoint 2-cycles at relative roots1,2,3. At most
+18 candidate shapes per target. These are endpoint/order choices in one named architecture; no
+arbitrary-cycle, role or larger-family search. Translate each distinct in-pool-span shape by
+all allowed roots, validating pair labels directly; do not assume G308 covers seven points.
+
+**Blind prediction:** all72 targets certify within these fixed choices. If not, retain every
+failed target and classify repeated positions versus reflection obstruction; finish this slice
+within cap, then stop this architecture without widening. Cap120 targets/2,160 candidates/five
+CPU seconds. Both parent and child displacement identities, full literal sums/coverage checked.
+Controls: span16 seven-point fixture must block every root; its six-point deletions translate;
+wrong subdivision sign fails displacement; wrong sums with coverage preserved rejected.
+Unexpected check: force all15 onto W when W<=15; parent must be rejected, even if an arbitrary
+coordinate formula could be written. Record how many actual targets require the two-edge split.
+This validates the allocation obstruction separately from placement. Review nonblocking; both
+heartbeats paused. No new claim to solving the full even family or mixed parity.
