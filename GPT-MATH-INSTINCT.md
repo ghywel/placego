@@ -6298,3 +6298,11 @@ specific greedy-slot inference; no full-domain run or new carrying queue.
 Gut: warm curiosity, more attraction to the reduced representation than to a
 higher success tally. Reasoned: one larger fair check earns a decision about
 proof structure and exposes any exceptions; it is not the decision itself.
+
+
+**B68 pre-run tie convention clarification.** q0 explicitly retains B57's
+fixed sorted roles, not B67's mixed-case greedy loop. For the independent
+score-sort comparison, q0 ties choose larger indices (the original last-six
+h2 roles); mixed q>0 ties choose smaller indices as preregistered. The1/2 slot
+multiset/proof is unchanged. This distinction is recorded before any run;
+compare(98 repeated8) as a tie fixture, without modifying B57's frozen roles.
