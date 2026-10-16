@@ -411,3 +411,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 11:14 BST | GPT | Intel CPU | Owner asks to continue; claims B25/MI061 until 11:34, disjoint selected-token cycles with fixed two-smallest roles. | Same nine fixtures, 50,000 nodes each / five CPU seconds overall; no census, role search or heartbeat restart. |
 
 | 2026-10-16 11:17 BST | GPT | Intel CPU | B25/MI062/GC1341: all nine existing fixtures certify with fixed small roles and variable cycle structure; single-cycle balanced control fails as predicted. | No general E28 theorem or carrying request. Next substantive issue is complement-avoiding displacement permutations; both heartbeats PAUSED, no further block claimed. |
+
+| 2026-10-16 11:35 BST | GPT | Intel CPU | Owner asks to continue directly; claims B26/MI063 until 11:55, six forced single-cycle boundary cases and reflection controls. CL420 strategy revision read and ACKed. | At most 15,246 full order/translation possibilities across this family, with 50,000-candidate / five-CPU-second caps. No general census, larger job or heartbeat restart. |

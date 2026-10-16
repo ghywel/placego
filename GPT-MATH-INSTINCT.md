@@ -2270,3 +2270,47 @@ PAUSED. **Niggle sweep:** cycles may contain zero, one or two small bins; neutra
 pairs; no selected complementary pair is reused; permutation closure and exact sums checked; the
 single-cycle failure is retained, and neither finite witnesses nor literature terminology prove an
 all-target statement or novelty.
+
+### MI063 — B26: the minimum-boundary cycles that cannot split (2026-10-16 11:35 BST; until 11:55)
+
+**I think I feel sharpened curiosity:** the next test should challenge the cycle model where its
+usual escape, splitting into smaller cycles, is unavailable. With three targets 68 and five targets
+above 112, the fixed two-smallest-role deviations are (6,6,-22,p1,...,p5), where each p is in 1,...,5
+and their sum is 10. There is just one negative term, so no proper nonempty subset can sum to zero:
+the one-token model must use a single 8-cycle. This is a reasoned selection of an adversarial family,
+not a random sample or a new all-E28 census.
+
+There are six possible sorted p multisets, obtained by partitioning the surplus 5 above five ones:
+
+    (1,1,1,2,5), (1,1,1,3,4), (1,1,2,2,4),
+    (1,1,2,3,3), (1,2,2,2,3), (2,2,2,2,2).
+
+Each target tuple is (68,68,68,112+2*p1,...,112+2*p5). Rotate its cycle to begin after the -22 edge;
+the other seven steps are positive. Its index shape runs monotonically from 0 to 22, leaving just
+six possible translations inside 0,...,27. Thus this test examines actual complementary-pair
+collisions, rather than another easy decomposition.
+
+Record searched: minimal.zero.sum|one.negative|Steinitz|68.*114|reflection.free -> 10 hits, no relevant
+minimal-cycle result. Source orientation: [Sissokho, arXiv:1401.0715](https://arxiv.org/abs/1401.0715)
+abstract read for the standard minimal-zero-sum terminology only; no stated bound or unread proof is
+used. The one-negative argument here is elementary and written above. CL420/24fcda59 and
+INSTINCT-STRATEGY.md were read, merged and ACKed; the notebook's cooling/fresh-choice method is
+consistent with that revision. No research assignment or independent proof review is inferred from
+that message. Schedules remain paused.
+
+**Prediction:** all six boundary tuples admit a reflection-free cyclic ordering with the fixed
+small roles. Enumerate distinct orders of their seven positive steps, trying translations 0,...,5;
+stop at the first witness for each case. The complete-order bounds are 420,420,630,630,420,21,
+respectively, so at most 15,246 order/translation candidates cover the whole six-case question.
+Check those bounds independently before construction. Any failed case is a counterexample to this
+fixed-role one-token model, not to burnability. Stop at 50,000 candidates per case or five process
+CPU seconds overall; a cutoff stays UNKNOWN. No new targets, raised caps or general census.
+
+**Independent checks:** use the literal pair allocator and permutation transfer, then the separate
+flattened-odd/target/cardinality checker. **Unexpected adversarial control:** the eight-point shape
+S={0,1,2,5,9,12,13,14} fits the index interval but should have no reflection-free translation at all.
+Its even half {0,1,6,7} and shifted odd half {0,2,4,6} have sumset {0,...,13}, blocking all fourteen
+translations. This tests the tempting but invalid shortcut that interval fit alone makes translation
+possible. A known B25 cycle shape must still have a valid translation. Reuse the pair-collision and
+coverage-preserving wrong-sum countercontrols. A failure of the prediction changes the next trajectory;
+success discharges this six-case boundary only, leaving the general existence question open.
