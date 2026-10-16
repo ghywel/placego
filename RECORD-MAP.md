@@ -511,3 +511,5 @@ PART: as on the board.
 - Primitive six-core2+4/4+2 plus any gap<=14: computer-assisted SKETCH G314/MI148;25 wide profiles/350 full maps/42 targets COMPUTED, other sign types open.
 
 - Even E28 arithmetic collection space:576,515 unordered collections/326,119 parents, max6;36,735 reusable atoms — COMPUTED MI150; no packing result.
+
+- Even-level portability:2000/2000 E26 and2000/2000 E30 sampled targets certify without patches — MEASURED/COMPUTED MI152; universal/mixed-parity cases OPEN.

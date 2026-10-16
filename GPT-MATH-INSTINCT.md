@@ -5892,3 +5892,61 @@ outside git and immutable shared-store delivery. Niggle now: accidental27/28/14
 constants are the main danger; literal checks and the deliberately wrong
 reflection/role controls target it directly. Gut: curious and alert; reasoned:
 this tests a structural change at modest cost. Mixed-parity model is separate.
+
+
+### MI152 — B65: portability sample succeeds at26 and30 (2026-10-16 20:08 BST)
+
+**MEASURED success, COMPUTED individual certificates.** The frozen prescribed
+class returns WITNESS for2000/2000 distinct uniformly sampled even E26 targets
+and2000/2000 even E30 targets. No UNKNOWN, exhausted-class failure, role repair,
+exception lookup or fallback. Even-domain counts are86,952 at26 and41,881 at30,
+agreeing between memoized partition counts and Gaussian coefficients. Seeds
+20261026/20261030 and rank conventions are unchanged from MI151.
+
+Negative-move strata at26:2->11,3->386,4->1045,5->558. At30:
+1->29,2->236,3->567,4->593,5->401,6->143,7->31. All certify. This reaches
+several signs/roles rather than a single inherited boundary family. Search
+nodes243,035/294,320 by level; maxima2576/4918 per target. Total539,318 nodes
+includes controls. CPU6.265620s, peakRSS27,189,248bytes, all within caps.
+
+**Predictions.** >=95%/99% witness forecasts pass. Strictly higher observed
+success rate at30 is REFUTED by the tie; no claim that the two population rates
+are equal. The target-class portability prediction survives this sample. No
+full even E26/E30/E28 theorem or full L8 conclusion follows.
+
+**Controls.**119 full component-label placement maps and24 full packings (first12
+each level) agree with independent raw permutation/literal physical-root and
+set-packing instruments:55,890 raw words,36,900 literal roots. Every4000 final
+partition passes two different validators (sorted token inventory/cardinalities/
+sums; bit inventory with per-bin target subtraction). Tiny rank/unrank domains
+pass;24 spread m28 status checks agree with frozen B57. Copied m28 slot totals
+reject at26/30; the deliberately wrong27 reflection misses the collision(0,25)
+at m26 root0, while both correct instruments catch it. Prefix origin masks
+agree with literal roots throughout(0,3,-4,7). Each level's repeated-token and
+coverage-preserving wrong-sum mutations reject in both validators. Unexpected
+check passes on every target: low/high move provenance is disjoint and the
+positive/negative extremal sum<=m; roles have genuinely changed with the level.
+
+Full raw `cited/instinct/b65-level-portability-998c17b7602ead48.json`,
+5,487,451bytes, SHA256
+`998c17b7602ead4830197d887b1715bb0aad5972857300d77def49b202d765b2`.
+Preregistration6c776421, source tests/probes/instinct/path_forest_level_portability.py.
+Immutable upload receipt and manifest verified. This is a single-party sample
+with independent instruments/controls, not an external second full verification.
+
+**What changed/next.** Fixed-role even exchange works across three tested levels
+without m28-specific patches. That strengthens the pull toward the whole
+construction. The unresolved universal step is still joint reflection-free
+placement, not merely zero-sum order existence. Cloud's next question is more
+consequential than another local case: define the mixed/odd-cardinality model
+precisely before constructing it. Even-bin cardinalities cannot serve odd target
+sums; we must change that invariant explicitly. No mixed-parity experiment or
+full census is opened here; G314's carrying read remains nonblocking.
+
+**Niggle sweep.**(1) Accidental inherited level constants: wrong-role/reflection
+controls plus generalized literal validators pass.(2) Is equality counted as
+higher? No: the strict prediction is recorded REFUTED.(3) Is a successful sample
+being promoted to a universal proof? No, statuses/scope above retain the gap.
+No unresolved niggle. Gut: delight at portability, fresh curiosity about parity;
+reasoned: the level change succeeded cheaply, so follow the parity question
+rather than spend another turn refining an already successful sample.

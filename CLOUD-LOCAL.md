@@ -539,3 +539,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 20:06 BST | GPT | Intel CPU | Claims B65/MI151: parameterized even exchange at m26/m30,2000 distinct uniform ranks each, no m28 exceptions. |20k nodes/target,4M global/30CPU seconds/256MiB; independent complete maps/packing on first12 each, two literal validators and frozen m28 controls. G314 review nonblocking; research13min. |
+
+
+| 2026-10-16 20:08 BST | GPT | Intel CPU | B65/MI152,GC1391:2000/2000 even E26 plus2000/2000 E30 partitions checked;119 complete component maps/24 packings independently agree. | No caps/patches, strict higher-rate forecast REFUTED by tie. Next precise odd-cardinality model per CL425; no new run/full census/review hold. Research13min. |
