@@ -7235,3 +7235,80 @@ SHA256 `9c313714569cd6ab4ec1b43be4170271d934264eaa79740d601fa3c60e6dbb6b`.
 Prereg48d3ad47, source tests/probes/instinct/path_forest_two_run_bridge.py.
 Immutable receipt/manifest verified. Independent instruments remain self-checks;
 only the explicitly reviewed earlier claims receive status promotion.
+
+### MI171 — B75: arbitrary negative sizes below the adjacent-bridge boundary (2026-10-16 22:18 BST)
+
+**Question/pull.** Can the two odd moves have unequal sizes, with no symmetry
+among the negative moves? The attempted full two-run selector still needs a
+partition/order principle. A simpler region closes first: when the positive
+moves total<=26, place them together, and reflection becomes ONE forbidden
+prefix of the even negative path. This is a useful constructive region of the
+same problem, not a larger target sample or a claim about all k_min=2.
+Record searched: forbidden-prefix/one odd vertex/odd positive26/nonconstant
+prefix ->25 hits10 files. Actual MI117 and G306 sources read. The supporting
+prefix-avoidance swap is reused from this record, not claimed new or given a
+separate proof/review job. B74's high-total central case remains separate.
+
+**Statement, PROOF-SKETCH.** Let p,q be positive odd integers, p<=q, and
+p+q=2K<=26. Let1<=N<=6 positive integers d_1,...,d_N have sum K. There is a
+prescribed order of the primitive zero-sum moves(p,q,-2d_1,...,-2d_N) and a
+root in{0,1} whose N+2 selected vertices in0..27 have distinct folded labels.
+Negating moves/reflection covers the reversed sign type. This is a single
+component, not joint packing with additional nonzero components or anchors.
+
+**Carrying construction.** Put p,q together. Order the negative halves by the
+REVERSE of a chosen positive ordering of d. Then the even vertices at root0
+are twice the positive prefix set E={0,d_first,...,K}; the only odd vertex is
+p. Set H=(27-p)/2. A translation by r in{0,1} has a reflection exactly when
+H-r is in E. All vertices fit since2K+r<=27; literal distinctness holds by
+monotonicity inside the two parity classes. H>=1 because p<=2K-1<=25.
+
+If H>K, choose r0, any d order. Otherwise:
+- If d is nonconstant and H<K, use MI117's prefix swap to avoid H and choose r0.
+- If d is nonconstant and H=K, avoid K-1 instead and choose r1. This is an
+  interior level (nonconstant positive d has K>=3).
+- If all d=D>=2, E consists of multiples of D. Choose r0 when H is not one,
+  else r1; H-1 cannot then be a multiple. No reordering needed.
+- If all d=1, K=N<=6 and p<=q gives p<=K. Thus H=(27-p)/2>K; already handled.
+
+For completeness the reused swap is explicit: if an initial positive ordering
+hits a proper level F, split at that prefix. Pick unequal x on the left and y
+on the right (some pair exists unless the whole list is constant), put x last
+on the left, y first on the right, then exchange them. Before these two entries
+the sum is F-x<F; after both it is F+y>F; the only intervening sum is
+F-x+y!=F. All other prefixes are on the correct strict side. This gives a
+finite deterministic order, no permutation or root search. One cross-parity
+collision was the ENTIRE reflection constraint, so the proof is complete.
+
+**E28 consequence.** Use h=(1,1,2,2,2,2,2,2), assign p,q to the first two
+bins, -2d_i to N later bins and zero to the remaining6-N. Targets are
+(56+2p,56+2q,112-4d_1,...,112-4d_N,112 repeated6-N).
+Whenever these lie in68..122 they form a named E28 family, with the whole-pair
+allocator giving a partition. All moves are primitive by odd parity and total
+negative mass. Ineligible labelled targets remain geometry checks only.
+This covers arbitrary negative sizes in the low-positive-total region; it does
+not cover B74's p=q21, the high-total boundary, odd pools or mixed anchors.
+
+**Predictions BEFORE implementation/run.** Exhaust the formula's entire SMALL
+parameter domain: N1..6, K=N..13, all LABELLED positive compositions of K into N,
+and all odd p<=q with p+q=2K. The4095 compositions across K/N are independently
+enumerated by stars/bars; total geometry questions
+sum C(K-1,N-1)*floor((K+1)/2)=24982. Predict ALL formula certificates pass
+independent literal coordinate/reflection checks and sign-reversal checks.
+For every target meeting E28 bounds, materialize the partition and check old
+and generic sum/inventory/cardinality instruments. Count distinct sorted targets
+as a finite family count, not additional coverage beyond overlapping old data.
+No sample, order/role search, extra components, anchors or fallback.
+
+Counterfactuals: p=q13,d=(1,1,1,2,2,6) initially hits F7, causing13+14=27;
+the unequal cross-cut swap must remove it. All-equal d=2 repeated6, p7,q17
+has H10 and root0 fails; root1 must work. Unexpected endpoint case p5,q17,
+d=(1,1,1,1,1,6) has H=K11; root0 necessarily reflects the endpoint, while
+root1 with prefix10 avoided must work. High-total boundary p13,q15,K14,
+d=(1,1,1,1,1,9) gives endpoint28 and must be rejected as outside the theorem,
+without repair or a conclusion about the target. Retain these failures.
+Caps24982 geometries plus those four controls, all eligible literal partitions,
+10CPU sec/128MiB. Stop on any mismatch/cap; raw outside git; no cap raise or
+expanded domain. Gut: warmth from a reasoned simplification, with the high-total
+wall still plainly visible. Reasoned: an arbitrary-size primitive-core region,
+using a known local tool for the actual reflection condition.
