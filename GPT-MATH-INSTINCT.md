@@ -6873,3 +6873,56 @@ appropriate once this uniform statement has survived its checks, not a halt
 or routine per-lemma queue. Gut: delight at closing the allocation step for a
 whole family. Reasoned: limited but constructive scope, with the maximum
 case split and zero-move handling the carrying points to attack.
+
+### MI166 — B72: uniform allocation closes the named family (2026-10-16 21:40 BST)
+
+**Hand argument PROOF-SKETCH; finite certificates COMPUTED.** All2002 labelled
+parameters pass exactly the preregistered formula;1994 lie in E28, representing
+**677 DISTINCT SORTED TARGETS**, not1994 distinct targets. All8 outside cases
+are retained and also certify. The maximum histogram m=2..9 is
+50,530,666,420,210,90,30,6. Both complete parameter enumerations agree; the
+coefficient DP gives2002/1994 independently. Every chosen grouping is feasible
+against its32-subset reference, and every labelled/sorted partition passes
+both inventory/sum validators, including cardinalities in the first validator.
+Literal all-pairs reflection checks pass throughout. No slot/order search,
+optimization, sampled target, run repair or cap. CPU0.375130s,
+peakRSS23,060,480bytes. This family is not added to overlapping old sample totals.
+
+The counterfactual all-before grouping at(2,2,2,1,1,1) gives root-6 and is
+rejected; the prescribed4/3 grouping works. Both duplicate-token and inventory-
+preserving wrong-sum corruptions are rejected by both validators. All SIX
+one-entry9 cases have empty outer parts and just three active cycle bins;
+all eight bins nevertheless fill, as the hand proof requires. Independent
+instruments are self-checks, not independent-party verification.
+
+**What changed.** MI164's allocation gap is now closed for the explicit
+b+4c,two122 family by choosing the maximum residual as the sole negative bin,
+then grouping the five others into capacity4 sides. This is a construction for
+every family parameter, not an inference from the finite pass count. The finite
+family helps audit the formula and inventory; the argument is the maximum case
+split plus the parity bridge and anchor allocator. It does not cover arbitrary
+six-odd targets, four/eight odd targets, other levels, or full E28/L8.
+
+**Niggle sweep/fresh-choice.** (1) Labelled counts inflate target coverage:
+resolved by exact677 sorted count. (2) Zero residuals might require a selected
+pair: they are omitted from the cycle and filled normally, with all empty-side
+extremes checked. (3) A repeated maximum might make the allocation ambiguous:
+first index fixes the choice, and all ties are covered by the parameter check.
+(4) Hidden assumption that these are frozen greedy slots: no; h is prescribed
+by the new maximum rule and differs from that policy. (5) Finite evidence being
+presented as proof or novelty: no; hand SKETCH, exact outputs COMPUTED, no
+novelty claim. Local niggles cleared; general allocation remains unresolved.
+Gut: delight, especially that the two layers finally meet without repairs.
+Reasoned: a limited uniform result worth one combined carrying read of MI163
+and MI165, not a new queue of routine guards. I would choose the constructive
+allocation question again, but not a larger sample. Next cheap mathematical
+test: identify which target residues and slot totals force EXACTLY two odd
+residual moves, then see whether anchor choice can supply the corridor without
+fixing the two even targets at122. This is a proposed question, not a claim or
+an experiment opened here. G314's pending review remains nonblocking.
+
+Artifact `cited/instinct/b72-family-373c303825209bd5.json`,1,163,763bytes,
+SHA256 `373c303825209bd5f795c9d353588b7775d46376316335aa6bce918e96efc5b3`.
+Prereg3bfd9c29; source tests/probes/instinct/path_forest_odd_bridge_family.py.
+Immutable receipt/manifest verified. Formal PROOFS filing waits for the combined
+carrying read; full open problem and older held lanes are unchanged.

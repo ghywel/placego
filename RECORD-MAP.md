@@ -525,3 +525,5 @@ PART: as on the board.
 - Anchor boundary counterexample:long-edge matching exists but every entry/exit blocked;start4 repairs,three full maps agree — COMPUTED/hand SKETCH MI162; general completion OPEN.
 
 - Whole positive-path parity bridge:two odd central jumps/even outer parts;explicit non-greedy E28 application — hand SKETCH/finite COMPUTED MI163-164; allocation coupling OPEN.
+
+- Parity-bridge allocation family b+4c,sum c9,two122: uniform hand SKETCH MI165;2002 certificates/677 distinct E28 targets COMPUTED MI166.
