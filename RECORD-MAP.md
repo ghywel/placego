@@ -513,3 +513,5 @@ PART: as on the board.
 - Even E28 arithmetic collection space:576,515 unordered collections/326,119 parents, max6;36,735 reusable atoms — COMPUTED MI150; no packing result.
 
 - Even-level portability:2000/2000 E26 and2000/2000 E30 sampled targets certify without patches — MEASURED/COMPUTED MI152; universal/mixed-parity cases OPEN.
+
+- Odd-cardinality split-anchor model sufficient only; E28 exact128 parity-pattern counts24,688,633, outside-even24,362,514 — definition/COMPUTED MI153-154; mixed existence OPEN.

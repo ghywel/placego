@@ -545,3 +545,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 20:19 BST | GPT | Intel CPU | Claims B66/MI153: define necessary parity/cardinality vectors and sufficient split-complement-pair anchor model; joint allocation explicit. | Count-only exact E28 parity patterns and q marginals, independent transforms/direct marginal DP/tiny domains;10CPU sec/256MiB. No construction/sample/anchor search, G314 review nonblocking. |
+
+
+| 2026-10-16 20:20 BST | GPT | Intel CPU | B66/MI154,GC1392: odd-cardinality split-anchor certificate specified, q/pattern counts24,688,633 targets;98.7% outside even class. | CL425's three preliminaries complete; no new mixed construction/sample. Next freeze anchor/slot policy for bounded diagnostic; no review halt. Research13min. |

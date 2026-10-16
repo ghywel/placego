@@ -6034,3 +6034,81 @@ only that fixture by k2,bound5,total5,p=(1,0): literal(1,4) is the sole sorted
 pair, while naive half-coordinate pairs(0,2),(1,1) count2 and the latter gives
 unsorted(3,2). Retain the failed original control here. Domain, forecasts,
 algorithms/caps unchanged; replacement is checked by hand before the run.
+
+
+### MI154 — B66: parity model specified; exact domain by pattern counted (2026-10-16 20:20 BST)
+
+**Definition/sufficient certificate, not an existence theorem.** MI153 now states
+necessary cardinality vectors and the full joint split-anchor certificate. Its
+bookkeeping is a direct extension of the complementary-pair allocator: reserved
+pairs supply singleton anchors; unreserved pairs supply one selected token per
+active bin plus fillers; permutation of selected tokens supplies even corrections.
+No assertion that every target has these choices, no constructed mixed target,
+no sample, no proof filing or carrying-read queue. The model may be too narrow;
+that is a useful next thing to learn rather than an assumption to hide.
+
+**COMPUTED counts only.** All256 sorted-position parity patterns counted;128
+have positive count and128 odd-q patterns have zero. Two exact transforms agree
+on each pattern. Complement relation at total192 agrees for all patterns;
+separate direct multiset DP over actual offsets0..54 agrees on q marginals:
+
+|odd bins q|E28 targets|unfiltered size vectors PER parity pattern|
+|---|---:|---:|
+|0|326119|1716|
+|2|6040756|792|
+|4|12680918|330|
+|6|5382660|120|
+|8|258180|36|
+
+Total24,688,633; targets with any odd sums24,362,514 (about98.7%). The q8
+row is all-odd, not literally mixed even/odd; throughout this diagnostic
+"mixed domain" means the complement of the all-even model, including q8.
+These are disjoint TARGET counts by parity, not solved domains. The last
+column counts all z-compositions before c_i^2<=t_i<=c_i(56-c_i) or any token
+allocation; it is not the number of feasible cardinality vectors for each
+specific target, and different size choices cannot be added as target coverage.
+In particular q8 allows one7 and seven3 (8 choices), or two5 and six3
+(28 choices), each summing28.
+No other q8 size pattern meets the token count.
+
+**Forecasts/controls.** All even q occur, q4 largest, outside-even proportion>98%,
+and at least one same-total reversal mismatch: all forecasts pass.1,650 tiny
+literal tuple/total/pattern checks and all their direct q marginals agree.
+Tiny z-composition checks and all m28 q-class size-vector counts agree with
+binomial formula. The original proposed negative-control fixture was caught
+BEFORE execution as ineffective and retained in MI153/52031895; literal
+expansion confirmed true/naive1/1. Corrected fixture bound5,total5 gives1/2,
+rejecting the omitted-staircase count. No data/cap/forecast changed.
+
+**Unexpected check matters.**102 patterns disagree with their reversal at the
+SAME total240. First lexicographic case p=(0,0,0,0,0,0,1,1) has242,623 targets,
+reverse270,835. Complement reverses the pattern but changes offset sum240 to192;
+it does not authorize equality at240. Full complement identities pass. This
+prevents an unjustified factor-two quotient in a future parity sampler.
+CPU0.085802s, peakRSS12,480,512bytes; caps10CPU seconds/256MiB not approached.
+
+Artifact `cited/instinct/b66-parity-model-104dba0c6e38900f.json`,53,690bytes,
+SHA256 `104dba0c6e38900f1c1c3fe3f14663dd5b98cbe435b3191816d000c001a30ae8`.
+Preregistrationfe3413be, control correction52031895; source
+ tests/probes/instinct/path_forest_parity_model.py. Immutable receipt/manifest
+verified. Independent instruments are self-checks, no external review claimed.
+
+**What changed/next cheap question.** Cloud's three requested preliminaries are
+complete: collection space, even-level portability, odd-cardinality definition
+and domain counts. The model's real obstruction is choosing anchors/slot sizes
+and folded-disjoint cycles together. A follow-up diagnostic must freeze an
+explicit bounded anchor/size selection policy before sampling, retain failure
+as restricted-model/policy failure, and validate all tokens/cardinalities/sums.
+Do not sample parity patterns uniformly: their counts differ, so sample full
+sorted targets by uniform rank and report q strata. No such experiment begins
+in B66; no new large census or geometry exhaustion follows automatically.
+
+**Niggle sweep.**(1) Sufficient versus necessary model? Explicit restriction,
+not a characterization of all odd partitions.(2) Size-vector overlap? Last
+column unfiltered per-pattern possibilities only, no multiplied coverage.
+(3) Odd token levels? q odd cannot be reserved in complete pairs; separate
+singleton model required.(4) Transformed count independence? Different gap-DP
+and Gaussian staircase algorithms, literal tiny controls and direct full q
+marginals all agree. Gut: pleased to have the parity gap represented honestly,
+and curious about its first real test; reasoned: definitions/counts are complete,
+but not yet progress on existence for a new mixed target. No review halt.
