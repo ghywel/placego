@@ -66,6 +66,14 @@ advertises both cadences. Credentials stay private and
 TLS verified; authentication failure stops network work. No automatic reopening of the held Rule30/Mahler lanes.
 Notify meaningful findings, failures, direction changes or needed input; routine continuation stays quiet.
 
+**Current cadence (owner,2026-10-16):** the owner rearmed the schedule named
+check-cloud-mathematics-flags for instinct-led RESEARCH every13 minutes. Its earlier
+coordination-only title/prompt and this page's historical15/5-minute description are
+superseded for that schedule. Poll the shared store at each wake, reuse fresh checkpoints,
+continue unfinished work, and do not halt for routine reviews. GPT may halt and cancel
+the active schedule for a named uncertainty or needed help; explain what would move it.
+The older research schedule is not restarted by this note.
+
 ## 1. Frankl's union-closed sets conjecture
 
 ### MI001 — The pull (2026-10-15 16:12 BST)
@@ -4882,3 +4890,68 @@ before running; no B56 interior-start theorem is claimed by the new test. Zero m
 receive filler pairs, and the closing zero is not an extra vertex. Parity refusal is an
 applicability verdict. Scope and measurement/proof labels remain separate. The diagnostic
 resolved Cloud's strategic question; no dependent review wait or heartbeat restart.
+
+
+### MI137 — B58: repeated rigid pieces; isolate their packing price (2026-10-16 18:35 BST)
+
+**Question:** does every zero-sum word of at most8 nonzero moves using ONLY +a and -b,
+a,b>=1,a+b<=28, admit primitive-component cycles with all selected positions in0..27
+and all folded labels distinct? This is a structural part of MI136's missing placement
+statement, beyond the E28 slice parametrization. It tests whether repeated rigidity is
+itself an obstruction before trying mixed primitive pieces. No census of full E28.
+
+Record searched: arithmetic.progression|two.magnitude|gap.graph|zero.sum.*repeat ->18 hits
+in9 files; MI072-074,MI099/G311, B57 actual code and Cloud's independent gap-graph source
+read. Plagne-Tringali's known nyctalopic/minimality lemmas remain credited. Bounded primary
+literature orientation found Packing arithmetic progressions2603.02786: abstract read,
+varied-gap literal packing; no reflection-free theorem imported, no novelty claim.
+
+**Hand candidate, SKETCH.** Put g=gcd(a,b), k=(a+b)/g, and write multiplicities as
+(p,q)=r*(b/g,a/g), so rk<=8. Each primitive component has k moves. An opposite-sign
+ordering has k distinct partial sums in[g-b,a], all multiples of g, so these sums are
+EXACTLY a translate of {0,g,...,(k-1)g}. Thus it suffices to pack r copies of that progression
+without equal/complementary coordinates. The only r>1 possibilities are r=2,k<=4 or
+r=3,4,k=2. Always kg=a+b<=28. Choose roots by the following rules; no fallback search.
+
+1. r=1: if g=1 use origin0 (k<=8). If g even use0; parity excludes sums27.
+   If g odd>=3 choose the least c in0..g-1 with2c!=27 mod g. At most one c is
+   forbidden, and the whole progression fits since c+(k-1)g<=kg-1<=27.
+2. r=2: if g=1 use origins0,k (all2k<=8 positions are below14). If g=2 or3,
+   use0,1: all positions<=3*(k-1)+1<=10 and the residues differ, so no literal
+   collision or sum27. If g>=4, use representatives from TWO different nonfixed
+   orbits of c ->27-c in Z_g. When g even there are g/2 such orbits; when odd
+   there are(g-1)/2. Both counts are>=2. Thus origins c,d have distinct residues
+   with2c,c+d,2d!=27 mod g; all points fit and no pair sums27.
+3. r=3 or4,k=2: here a=b=g<=14. Form the physical graph of edges{x,x+g}
+   on0..27. It is a disjoint union of paths; reflection x->27-x exchanges paths
+   or reverses a single one. Folding gives paths again, after deleting any central
+   loop. Its distinct nonloop edge count is14-ceil(g/2)>=7. Alternating edges
+   in each path give a matching of size at least ceil(E/2)>=4. Select r matching
+   edges, lift each to a physical gap-g pair, and assign +g at its lower endpoint.
+
+The last quotient-path assertion is a carrying point and will be checked independently
+against direct physical edges and against degree/component counts; not assumed from a
+matching count alone. Selecting roots is an explicit residue-orbit rule, not an exception
+table. Arithmetic progression shape is exact; it does not assert mixed-magnitude pieces
+are progressions or that arbitrary prechosen components pack.
+
+**Predictions BEFORE checks:** all(a,b,r) with a+b<=28,k*r<=8 certify by these formulas.
+Independent multiplicity enumeration(p,q,a,b) agrees with the gcd-derived full domain.
+Independently enumerate every nyctalopic value word for the primitive component and
+verify its normalized vertex set is the same progression. All folded gap graphs g1..14
+are forests of paths with exactly14-ceil(g/2) edges; the constructed matching has>=4 edges.
+The E28 corollary has EXACTLY33 sorted targets: two +a moves and q negative -b moves,
+q=1..6, remaining moves zero,2a=q*b,a>=6,a+b<=28. Counts by q:4,9,4,7,3,6. Validate
+full odd partitions with both literal checkers, not only selected-coordinate identities.
+
+**Counterfactuals:** omitting the residue-orbit test on k4,g5 and roots0,1 must cause
+a reflected collision; applying the claimed geometry at physical pool8 to(+3,-3)^2
+must fail (folded gap3 graph has matching number1). Outside-bound failure is NOT a
+counterexample to the28-point statement. Coverage-preserving sum corruption must reject.
+**Unexpected check:** reversing +a/-b must keep the progression geometry even when its
+labelled cycle changes; this tests that geometry was separated from edge orientation.
+Caps:1,000 parameter instances/100,000 direct permutation words/five CPU seconds, no
+larger domains or formula repairs. Failure/cap retained, class-specific status only.
+Raw outside git. REFUTED-BY: any prescribed placement, exact domain, graph or checker
+failure. Gut: a specific pull toward a residue-orbit explanation, not toward33 more
+targets. Reasoned: establish this rigid building block, then return to unlike pieces.
