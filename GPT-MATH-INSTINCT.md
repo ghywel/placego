@@ -7379,3 +7379,82 @@ SHA256 `d639545c88683c4dd82600fc7a5821d6dba66af54490e9b07e64313dbc900e62`.
 Prereg d4f2b8e4; source tests/probes/instinct/path_forest_prefix_bridge.py.
 Immutable receipt/manifest verified. Independent instruments are self-checks;
 reviewed prior scopes and all held lanes unchanged.
+
+### MI173 — B76: spend window margin to change the odd-jump imbalance (2026-10-16 22:27 BST)
+
+**Pull/question.** Can the opposite parity shifts actually produce unequal
+HIGH-total positive jumps? Yes by hand; the task now is checking range and edge
+ownership, not expanding a census. Record searched: parity-class shift/cross-
+parity sum/opposite shift ->12 hits5 files, only MI172's proposed move and B74
+geometry relevant. MI169/170 and CL426's actual parity observation read. No
+new literature-status or novelty claim; no separate proof entry for an identity.
+
+**The transformation, with its exact scope (hand SKETCH).** For even M, split
+ANY distinct selected coordinates into ORIGINAL even E and odd O. Define
+
+    F(x)=x+z+t for x in E;  F(x)=x+z-t for x in O.
+
+Integers z,t preserve distinctness within each class; the two classes remain
+opposite in parity, because z+t and z-t have the same parity. Hence no physical
+collision appears. Same-class pairs still cannot sum to odd M-1. Cross-class
+sums become e+o+2z, INDEPENDENT of t. Thus folded-label collisions are absent
+iff the original cross-sum set omits M-1-2z, provided all images are in range.
+For z0, reflection is preserved exactly; an arbitrary GLOBAL translation is
+not automatically harmless. For nonempty E,O the exact permitted t interval is
+
+    max(-min(E)-z, max(O)+z-(M-1)) <= t
+      <= min(M-1-max(E)-z, min(O)+z).
+
+Even cycle moves stay unchanged. An odd move E->O changes by-2t; O->E changes
+by+2t; z cancels. Classify vertices BEFORE the translation, or the signs flip
+when z is odd. Individual folded labels and reserved-anchor avoidance are NOT
+preserved by this operation: any R must be checked afresh. Here R is empty.
+This separates move imbalance (t) from reflection/origin choice (z).
+
+**Uniform high-total application to B74 (SKETCH).** Keep r>=2, a=6r+3,
+b=2r,c=2r+2 and even M in[6r+8,8r+4]. B74's original coordinates have
+E extrema0,6r+4; O extrema1,6r+3. Set Z=(M-6r-8)/2>=0. Every original
+cross-sum is<=6r+5 or>=8r+5, while M-1-2Z=6r+7 lies strictly between.
+Choose z=Z and ANY integer t in[-Z,Z+1]. The exact image-range interval above
+reduces to exactly these bounds. Therefore the transformed word is
+
+    (a-2t,-b,-c,-b,a+2t,-c,-b,-c), root Z+t,
+
+with all selected labels distinct in0..M-1. Both positive odd jumps remain
+positive: the largest admissible t gives a-2t>=12r+9-M>=4r+5; the other
+endpoint is likewise positive. Even moves are unchanged; sum0 and primitivity
+remain (one odd positive cannot cancel even negatives; both need all six).
+The order is prescribed, not searched. One step outside either t endpoint
+puts the minimum of one parity class at-1, so these bounds are sharp for this
+fixed z/word, not a universal restriction on all orderings.
+
+At r3,M28, Z1 allows t=-1,0,1,2. In particular t2 changes21/21 to17/25,
+with positions(3,20,14,6,0,25,17,11) and word
+(17,-6,-8,-6,25,-8,-6,-8). Using h=(1,1,2,2,2,2,2,2), word owners
+(0,2,3,4,1,5,6,7), this gives bin targets
+(90,106,100,96,100,96,100,96), all in E28. This is above B75's total26
+limit: the two positive moves still total42. Their imbalance has changed
+without solving reflection again. t1 gives94/102, t0 the equal98/98, t-1
+swaps94/102 ownership; three distinct sorted targets, no extra coverage claim.
+
+**Predictions BEFORE implementation/run.** Keep this SMALL: r in{2,3,4,10,100},
+M only the two B74 band endpoints, deduplicated (9 base geometries). For each
+check distinct t from{-Z,0,1,Z+1}:26 transformed formula fixtures. Compare
+coordinate formula against literal integration of the changed word and exact
+original-colour edge changes; independent all-pairs reflection and inventory
+checks. All26 must pass. One t just outside each endpoint gives18 negative
+geometries, each with a vertex-1. Materialize all FOUR r3/M28 labelled cases
+with both old and generic validators; record three sorted targets only.
+No replay of the full4950 B74 grid or a larger parameter census.
+
+Counterfactual: naive uniform translation by2 of B74's r3/M28 root0 shape
+creates a reflected pair (3,24), so the z condition must be checked. Unexpected:
+odd M invalidates the parity argument: at M9, original(0,3,6) has distinct
+folded labels, but pure opposite shift t1 gives(1,2,7), whose1/7 reflect.
+Reject this as outside the theorem, retaining the concrete failure. Verify z1
+using ORIGINAL colours rather than colours after translation; compare all edge
+changes, including their signs. Caps26 positive/18 range-negative/2 assumption
+countercontrols/4 exact partitions,1CPU sec/64MiB. Stop on mismatch/cap, no
+fallback, extra target, order search or cap raise. Raw outside git. Gut: delight
+at separating the two parameters; reasoned: a genuine high-total imbalance
+extension, with arbitrary negative-run SELECTION still unresolved.
