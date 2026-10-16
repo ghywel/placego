@@ -6926,3 +6926,117 @@ SHA256 `373c303825209bd5f795c9d353588b7775d46376316335aa6bce918e96efc5b3`.
 Prereg3bfd9c29; source tests/probes/instinct/path_forest_odd_bridge_family.py.
 Immutable receipt/manifest verified. Formal PROOFS filing waits for the combined
 carrying read; full open problem and older held lanes are unchanged.
+
+### MI167 — B73: balancing frees bridge ownership and the pool size (2026-10-16 21:50 BST)
+
+**Question/pull.** Why require two122 targets? A bridge move belongs to a bin,
+not intrinsically to an even bin. The warm pull is toward a single parametric
+construction, away from repeating a case table for another target family.
+Record searched: residue/anchor permutations/two odd bridge/two122 ->76 hits,
+29 files; lighter-side/largest-imbalance/half-sum residual ->3 ledger hits only.
+MI153's actual general-even-pool allocator and MI163/165 read. No new external
+literature-status or novelty claim. The elementary greedy inequality below is
+a supporting argument, not a newly claimed scheduling theorem or review job.
+
+**The simpler allocation argument.** For any finite nonnegative integer list
+c with sum S, remove a largest entry m. Starting with two empty sides, place
+each remaining entry on a lighter side. The load difference stays<=m: after
+adding v<=m it becomes |old_difference-v|<=m. Thus each load is at most
+(S-m+m)/2=S/2, hence<=floor(S/2). If S is even, m>=1 and the smaller load is
+also<=floor((S-m)/2)<=S/2-1. This replaces MI165's maximum case split and
+works for any S. No subset search is required.
+
+**Parametric construction, PROOF-SKETCH.** Let M be even, n=M/2. Choose an
+ODD k with3<=k<n. Choose even q in0..8, a set O of q odd-bin indices, and
+q/2 reserved pair labels R contained in[n-k+1,n-2] (so q/2<=k-2). Distribute
+all tokens of those pairs bijectively as anchors a_i to O; a_i=0 elsewhere.
+Choose eight POSITIVE integers g_i with sum(M-q)/2-1; require that sum>=8.
+Choose ANY TWO distinct bridge-bin indices P. For the other SIX indices choose
+nonnegative integers c_i with sum S=n-k. Define the labelled targets by
+
+    T_i = 2M*g_i + a_i + 2k       (i in P),
+    T_i = 2M*g_i + a_i + 4c_i     (i outside P).
+
+Then T partitions the first M odd integers. T need not be sorted or belong
+to E_M. Only the subset meeting the exceptional domain's min/max bounds can
+be credited to it. All anchors are odd, corrections even, so the odd-bin set
+is exactly O. Since sum anchors=Mq, sum T=M^2-2M+4k+4(n-k)=M^2.
+
+**Carrying proof.** Choose j outside P with maximal c_j=m (first index on a
+tie). Since S>0, m>=1. Set h=g with h_j increased by1. Moves are k in the two
+bridge bins, 2c_i in other nonnegative bins, and 2m-M<0 in bin j. They sum0,
+and sum h=(M-q)/2. Apply the greedy balancing argument to the five remaining
+c entries, and orient the larger load L BEFORE the bridge and smaller load H
+AFTER it. Omit zero steps. Let z be the largest odd integer<=n: z=n-1 if n
+is even, z=n if n is odd. Put
+
+    x=z-k-2L;
+    positive order: the before-side moves2c_i, then k,k, then after-side2c_i;
+    closing move: -(M-2m).
+
+For even n, S=n-k is odd and both L,H<=(S-1)/2, so x>=0 and the endpoint
+z+k+2H<=M-2. For odd n, S is even, L<=S/2 and H<=S/2-1, giving the same
+bounds. All selected outer points are EVEN, the pre-bridge endpoint is z-k,
+the sole odd selected point is z, and the post-bridge start is z+k. Strictly
+positive moves make vertices distinct. The final-minus-first displacement is
+2k+2(S-m)=M-2m, exactly the required negative step.
+
+Every lower outer point has folded label<=n-k; every upper outer point also
+has folded label<=n-k (check z=n-1 and z=n separately). The sole odd point
+has folded label n-1. Hence all avoid R in[n-k+1,n-2]. Reflection M-1 swaps
+parity. The only possible reflected pair would involve z; its even complement
+lies strictly between z-k and z+k, where no other point is selected. Therefore
+all selected folded labels are distinct. This proves the ENTIRE cycle, with
+arbitrary bridge ownership and reserved-subset/anchor assignments in the stated
+strip. No assumption that M is divisible by4.
+
+Finally allocate each active bin its selected whole pair, then enough unused
+pairs to fill h_i; add its anchor if any. There are exactly(M-q)/2 free pairs,
+and h_i>=1 makes every filler demand nonnegative. Remove selected tokens
+simultaneously and add them at their cycle-successor positions. Their multiset
+is preserved; no anchor is touched, and bin i's sum changes by2e_i. All M
+odd tokens occur exactly once, with cardinalities2h_i+1_(i in O). This is
+MI153's allocator, restated to make the carrying dependency explicit.
+
+**Concrete freedom gained.** M28,k5,q6,R10..12, ascending anchors and
+ g=(1,1,1,1,1,1,2,2), bridge owners3/4, residuals c=(2,2,2,1,1,1)
+ on ordered nonbridge indices(0,1,2,5,6,7) give targets
+(85,87,89,97,99,95,116,116). The bridge steps belong to ODD bins now; the
+even targets are116,116. This is a new allocation of the mechanism, not a
+success asserted for the old greedy anchor policy. For an ALL-ODD E28 example,
+choose k11,R={4,5,6,7}, anchors(9,11,13,15,41,43,45,47), g=(2,1,1,1,1,1,1,1),
+bridge owners1/2, c=(0,1,1,1,0,0) on(0,3,4,5,6,7). Targets are
+(121,89,91,75,101,103,101,103), sum784. Both are hand fixtures to verify,
+not added to previous target coverage counts.
+
+**Predictions BEFORE implementation/run.** Test exactly five even sizes
+M24,26,28,30,32; q0,2,4,6,8 with g-sum>=8 (24 valid size/parity regimes).
+For each take the smallest admissible odd k>=max(3,q/2+2) and the largest
+odd k<n (distinct); R the LOWEST q/2 labels of its permitted strip; anchors
+ascending to indices0..q-1. Start g_i=1 and give the extra g slots once each
+to the highest indices. For each of48 regimes take all28 bridge-owner pairs
+and SEVEN prescribed c lists: six single-entry-S extremes, then balanced S
+spread in index order. Thus9408 FORMULA FIXTURE EVALUATIONS, including repeated
+balanced/extreme lists when S=1; no count of distinct targets inferred. Predict
+all pass literal reflection plus two generic partition validators; compare
+M28 outputs additionally with the existing allocator. Retain every target
+outside E_M. No claim of full-domain coverage from this matrix.
+
+Independent controls: all2002 compositions of9 into6 must give feasible new
+greedy groupings, checked against all32 subsets, replacing the old case split
+without using that reference to choose sides. Two explicit E28 fixtures above
+must certify with both old and new validators. Independently reconstruct the
+token exchange via the old allocator at M28. Corrupt one partition by a duplicate
+and by an inventory-preserving cross-bin swap; both generic validators reject.
+Counterfactual/UNEXPECTED: M26,k11,S2,c=(1,1,0,0,0,0) has side capacities1/0.
+Putting the larger load AFTER the bridge gives endpoint26 outside0..25. The
+correct orientation must certify; the reversed one must reject. This prevents
+silently carrying the symmetric M28 geometry into M=2 mod4. Empty sides and
+zero residual bins remain in the six extreme fixtures, not discarded.
+Caps9408 matrix+2 named E28 certificates,2002 grouping checks,10CPU seconds/
+128MiB; raw outside git. Stop on first mismatch/cap; no target/anchor/order
+search, repair, expanded sample or cap raise. Next step depends on what these
+checks actually show. Gut: a stronger pull toward this simple balanced geometry.
+Reasoned: one construction replaces fixed-target ownership and handles both
+even congruence classes, while leaving its arithmetic membership constraints
+explicit. No full L8 result, novelty claim or new routine review request.
