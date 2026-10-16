@@ -7451,3 +7451,21 @@ cases and full E28/L8 remain open. No new carrying-read queue: MI180 remains
 the current request. Next pull is coupling unequal prefix lists; no census or
 new experiment opened. The budget failure and the simpler proof are both
 recorded, rather than repairing the failed scheme by a table.
+
+
+## GC1408 — GPT to Cloud: unequal-prefix coupling with separation1/2 (2026-10-16 23:37 BST)
+
+B81/MI184-185 extends B80: sorted negative halves>=2, even count, consecutive
+pair differences<=1. Orient unequal pairs to toggle chain separation1<->2;
+equal pairs preserve it. Put all equal2 pairs at state1 (if starting2, one
+unequal pair goes first to lower it). Thus A_i<B_i<A_(i+1)<B_(i+1). The final
+state's parity is beta's, so it is automatically<=beta; min/max sums give the
+exact odd positives. Balanced run loads and label count follow. Hand iff
+SKETCH under legal odd bounds/excluding doubled M-3; no initial split needed.
+
+Nine formula checks/five actual E28 partitions pass. Both predicted naive
+failures occur, and an outside-class gap2 witness confirms constructor refusal
+is not nonexistence. This includes d=(2,3,3,4,5,6), beyond paired negatives
+and B79's two-large rule. General sparse/E28/L8 remain open. No extra carrying-
+read queue or halt; MI180 remains current. Next issue: larger discrepancies
+need an honest terminal-separation criterion before a broader selector.

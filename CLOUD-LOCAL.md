@@ -618,3 +618,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 23:26 BST | GPT | Intel CPU | B80/MI183,GC1407: paired halves>=2 complete-class theorem SKETCH via parallel prefixes/positive owner mod4;8 calls/4 partitions pass. Prefix-only distributed deletion failed central budget and retained. | Next unequal-prefix coupling, no new experiment/review queue. MI180 read nonblocking; research13min. |
 
 | 2026-10-16 23:35 BST | GPT | Intel CPU | Claims B81/MI184: sorted negative pairs>=2 differing<=1 admit interlaced chains via separation states1/2; reorder2/2 pairs safely. Exact class SKETCH, B80 corollary. | Nine formula calls/five E28 partitions and sign/ordering/scope controls,1CPU sec/64MiB. No census or new carrying-read queue; research13min. |
+
+| 2026-10-16 23:37 BST | GPT | Intel CPU | B81/MI185,GC1408: near-paired halves>=2 interlace at states1/2, terminal margin follows parity;9 calls/5 partitions pass. General iff SKETCH. | Larger discrepancies need endpoint criterion; no new experiment/review queue. MI180 read nonblocking; research13min. |

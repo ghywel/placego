@@ -8250,3 +8250,52 @@ older adjacent-size geometry by a new explanation. Reasoned: the next true
 obstruction is larger pair discrepancies or unit halves, not arbitrary warm
 extrapolation from these9 tests. General E28/L8 remain open; no new experiment
 or carrying-read queue opened for those remaining cases.
+
+
+### MI185 — B81: unequal runs stay interlaced; terminal parity supplies the margin (2026-10-16 23:37 BST)
+
+**Hand class iff SKETCH; prescribed evidence COMPUTED.** All9 formula calls
+and5 actual E28 partitions pass. The two fixtures needing an unequal pair
+BEFORE the2/2 pair do so, at M28 and M16. Initial/final separations include
+1->2,2->1,1->1; endpoint sums and literal full move bags all agree. The paired
+subcase correctly starts with the smaller positive17 for input23/17. CPU
+0.001503s,peakRSS15,900,672bytes. No order/split/root search, repair or census.
+
+Both predicted shortcut failures occur: always putting the smaller half in A
+ends at separation4 and B-index16 outside M32's index window; leaving2/2
+first at initial separation2 causes an A/B index collision at M28. Both still
+have their original move bags, so geometry is checked independently. Doubled
+long-edge and half1 exclusions are retained. The gap2 sorted-pair input is
+refused only by THIS constructor: its prior explicit witness passes full
+geometry and input move-bag checks, preventing a false nonexistence verdict.
+
+**What changed.** A uniform unpaired-multiplicity class now works: an even
+number of negative halves>=2, sorted pairs differing<=1. One separation bit
+chooses which member goes in each run; equal2 pairs are scheduled at state1.
+The final state's parity proves it fits beta, rather than assuming an endpoint
+bound or sampling it. B80 becomes the all-equal-pair corollary. The central
+3x3/4x3 family receives a new explanation, and the d=(2,3,3,4,5,6) example is
+neither paired nor admitted by B79's two-large condition. No additive coverage
+claim. Larger pair discrepancies, half1, odd negative count, mixed anchors
+and full E28/L8 remain open.
+
+**Niggle sweep.** Equal2 at delta2 is explicitly moved after a downward toggle;
+r0 cannot strand it since the positive residue choice makes delta_0=1.
+The final parity uses K mod2=r, not the number of negatives; alpha+beta=M-2-K
+and the smallest positive representative give delta_m<=beta. Strict interlacing
+checks all cross-indices, not just simultaneous prefixes. Physical positive
+owners, complete negative bag, label count and balanced loads are independently
+checked. No self-check upgrades either this claim or B79. Local niggles resolved.
+
+Gut: warm because the endpoint obstruction became an invariant, not another
+patch. Reasoned: constant separation states1/2 use the pair-discrepancy<=1
+hypothesis essentially; do not extrapolate it to arbitrary capacity-feasible
+lists. Next cheap step is to identify precisely what larger discrepancies
+would require of the terminal separation before proposing a broader selector.
+No new experiment or carrying-read queue here; MI180's read stays nonblocking.
+
+Artifact `cited/instinct/b81-interlaced-pairs-717ef6c924338669.json`,6058bytes,
+SHA256 `717ef6c924338669998de85d2799c124b86b761cdb20d5004f067cc2bf87cbc0`.
+Preregce319d40; source tests/probes/instinct/path_forest_interlaced_pairs.py.
+Immutable upload and manifest append receipts verified. No formal proof number,
+novelty claim, held-lane or automation change.
