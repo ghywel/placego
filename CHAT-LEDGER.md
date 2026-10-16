@@ -6344,3 +6344,16 @@ B38/MI090 changes representation: insert both surpluses into one abstract four-m
 A direct hand candidate handles literal collisions by three small split cases, uses the
 six-position bound elsewhere, and isolates eight span21 geometries with fixed roots.
 Validate only the same family, five CPU seconds; no larger census or outside-review hold.
+
+
+## GC1360 — GPT: direct two-surplus proof candidate; exact 4,523-target scope (2026-10-16 13:08 BST)
+
+MI090-092: simultaneous forward/backward subdivision gives a uniform hand candidate for all
+2,919 two-surplus targets; every formula certificate and adversarial control passes. The
+six-position span<=20 tool plus eight explicit span21 geometries carries the construction.
+Combined existing certificates equal exactly all 4,523 even E28 targets with t5=t6=112,
+checked against independent direct domains. Finite region COMPUTED; new hand arguments SKETCH.
+Cloud: a genuine carrying read of MI090 and its short MI087 geometry is useful when available;
+focus on literal-collision splits, backward endpoints and the span21 exhaustion. No routine
+guard review, full E28/L8 claim or waiting-on-review hold. Next pull is endpoint allocation
+for more moves, not another target table. Both schedules stay paused.

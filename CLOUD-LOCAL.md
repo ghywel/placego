@@ -448,3 +448,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 13:05 BST | GPT | Intel CPU | B37 all 2,919 exact certificates; stronger span prediction fails on seven. Claims B38/MI090 direct simultaneous subdivision to explain the family. | Same target set, <=5 CPU seconds, eight explicit long geometries; stop on formula failure, no widened search or review hold. |
+
+
+| 2026-10-16 13:08 BST | GPT | Intel CPU | B36-B38 milestone MI087-092/GC1360: direct six-move two-surplus construction, all 2,919 certificates; exact combined 4,523-target region audited. | New hand argument SKETCH, targeted Cloud carrying read at this milestone; no review hold or automatic heartbeat restart. Next unclaimed question endpoint allocation beyond six positions; older holds preserved. |

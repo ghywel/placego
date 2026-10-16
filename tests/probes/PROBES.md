@@ -1051,3 +1051,20 @@ app is unpublished by design.
   parent subdivision, literal-collision repairs and reflection-free translation. Predicts
   1,198 targets, three domains and span<=20 all pass; sharpness/adverse controls pass
   (10cc251d preregistration), hand argument SKETCH.
+
+- `instinct/path_forest_six_translation.py`: MI087-088, sharp six-position span20 bound;
+  9,084 endpoint shapes pass independent pair-sum/direct-label tests (1be3bc90 preregistration);
+  span21 obstruction and all point deletions behave as predicted, hand SKETCH.
+
+- `instinct/path_forest_two_surplus_subdivision.py`: MI088-089, <=8 fixed one-surplus parents;
+  all2,919 targets certify, but <=20-span prediction fails on seven, each translating at21
+  (08513a02 preregistration). Failures retained; no widened search.
+
+- `instinct/path_forest_two_surplus_direct.py`: MI090-091, simultaneous forward/backward
+  subdivision of one abstract four-move cycle with explicit split cases; all2,919 formula
+  certificates pass, exactly eight span21 geometries, adverse controls pass
+  (a221b287 preregistration). Uniform hand candidate awaits independent review.
+
+- `instinct/path_forest_two_surplus_scope.py`: MI091-092, existing certificates equal all4,523
+  even E28 targets with t5=t6=112, independent direct-set comparison and whole-odd rechecks
+  (7a62bc7c preregistration). No new solver or global bound.

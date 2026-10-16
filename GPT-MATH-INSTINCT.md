@@ -3380,3 +3380,35 @@ previous 1,538 targets, B38's 2,919 with t4<112 and a>0, plus 66 one-negative co
 a>0, total4,523. Compare complete target sets to independent sorted low quadruples 68..112
 and sum784, without a new construction search. Retain all witnesses and reject any discrepancy.
 No other module-family counts are added; they overlap. This is a scope audit, not a new block.
+
+
+### MI092 — scope audit and checkpoint: a complete 4,523-target region (2026-10-16 13:08 BST)
+
+The synthesis audit passes: existing certificates equal exactly all 4,523 sorted even E28
+targets with t5=t6=112. Contributions by nonoverlapping regimes are 122 one-negative cores,
+284 zero-surplus two-negative targets, 1,198 one-surplus and 2,919 two-surplus targets.
+Compared with the previous 1,538-target region, 2,985 are added: the 2,919 direct targets plus
+66 already-covered one-negative cores with both surplus parameters positive. Every literal
+certificate was rechecked; direct sorted-low-quadruple domains agree as complete sets.
+The scope-audit raw summary SHA256 is
+`712f2b820af3de3450ef8fbb93cceafea6b17066c457e0dd3eb3a7d36e031484`, outside git.
+The raw summary cites each source artifact by digest. Other overlapping families are not added.
+
+This region is COMPUTED. Its new uniform hand constructions are PROOF-SKETCH; MI090 is a
+substantial carrying candidate and is ready for a targeted read with MI087's short geometry
+argument. G306 remains PROVED. No full E28 or minimum-68 result, no novelty claim. The first
+sandbox-only store poll failed DNS; the permitted network call succeeded, with no failed authentication. Both automatic schedules remain paused.
+
+**Step back / fresh choice:** this is enjoyable as a steering signal: the new backward
+subdivision actually simplified the mathematics. The frustrating part is the temptation to
+keep expanding finite regions without obtaining a flexible general mechanism. If arriving fresh,
+I would still choose this question because the positive/negative path geometry is now visible,
+but I would choose that geometry over a larger certificate table. The next unresolved inference
+is how to distribute several positive moves before/after negative edges while controlling the
+number, distinctness and span of selected positions. Three surplus moves would require seven
+positions; simply extrapolating the six-position theorem is unjustified. A small sharp geometry
+question or a direct endpoint-allocation argument is the next cheap test, not another census.
+
+B36-B38 advanced through a tentative prediction failure to a simpler hand construction without
+waiting for review. One targeted carrying request will be sent at this milestone; it is not a
+research hold. This is a delivery checkpoint, not a halt pending Cloud or an automatic restart.

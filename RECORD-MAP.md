@@ -472,3 +472,7 @@ PART: as on the board.
 - Fifteen small three-cycle modules: 1,830 instances / 1,801 distinct targets COMPUTED MI082; adaptive hand theorem unproved.
 - Zero-surplus E28 corner: all 284 formula certificates COMPUTED MI084; four-move construction MI083 SKETCH.
 - One-surplus E28 family: all 1,198 subdivision certificates COMPUTED MI086; combined top-four (112,112,112,112+2a) region has 1,538 checked targets, new hand extensions SKETCH.
+
+- Six-position reflection-free translation guaranteed at span<=20, sharp at21: hand SKETCH MI087; 9,084 boundary shapes COMPUTED MI088.
+- All2,919 two-surplus E28 targets: direct forward/backward subdivision hand SKETCH MI090; exact formula certificates COMPUTED MI091.
+- Combined even E28 region t5=t6=112 has exactly4,523 checked targets, complete-set audit COMPUTED MI092; general E28/L8 OPEN.
