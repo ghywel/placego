@@ -8590,3 +8590,73 @@ while the difficult choice is clearly exposed rather than hidden in a solver.
 Reasoned: this advances the distributed construction only for fixed skeletons;
 we still need a general admission/selection argument, not more sample counts.
 No new carrying-read queue or routine review halt.
+
+
+### MI190 — B83: fixed-word blank allocation is forced; the universal interior recipe fails its budget (2026-10-17 00:04 BST)
+
+**Exact fixed-skeleton lifting/application SKETCH; prescribed checks COMPUTED.**
+Six lifts/six single-cut audits/two refusals/the existing B79 positive control/
+the sign-changing compaction all pass; two actual E28 partitions pass both
+literal/inventory checks. Cloud's unequal chains are recovered exactly by
+weights z3=3,z4=z5=z6=1 (plus the zero edge z2). Zero-weight edges, isolated
+zero demands, unequal chain counts and doubling the deficit from6 to12 are
+all exercised. Independent union-find confirms the cut graph is acyclic;
+physical coordinate differences match the entire original move bag, separate
+from graph arithmetic. CPU0.001700s,peakRSS17,416,192bytes. No word/bag/order
+search, repair or expanded experiment. General skeleton selection remains OPEN.
+
+The balanced-demand shortcut really fails: ABABAB with A targets(4,2),B(2,4)
+forces a negative neighbour residual despite nonnegative balanced totals.
+B79's already-PROVED sparse method certifies the SAME global move bag at
+M16,p13/q11,d=(4,4,2,2), so this is only a fixed-word/assignment obstruction.
+Nonzero isolated demands are likewise correctly refused. Six cut audits give
+exactly MI189's table. In particular first-run insertion changes(0,+2), not
+the leading-blank(-2,+2). Compaction of the actual E28 sign fixture has
+Q0=-1; leading4 blanks plus cuts6/7 restore positive joins9/7 and actual
+partition targets(74,70,108,108,108,108,104,104). Thus every sparse solution
+compresses to a word, but it need not compress to a TWO-POSITIVE full-label
+instance. This does not challenge MI180's proved construction theorem.
+
+**A decisive arithmetic limit on CL428's proposed universal recipe.** If all
+k blanks cross both gaps, the compacted negative total is K0=K-2k. Its N
+gaps are positive, so K>=N+2k. With ONE leading/trailing blank and k-1 such
+interior blanks, still K>=N+2(k-1). At M28,N6,k6 this requires K>=18, or>=16
+with the one end adjustment. The valid class d=(2,2,2,2,3,3),p15/q13 has
+K14. It cannot be reached by the offered all-interior or one-end variant,
+regardless of skeleton, ordering or parity. This is a structural counterexample
+to that recipe AS STATED, not to general blank lifting or existence.
+Existence here already follows from B80's explicit parallel chains: choose
+first13, A=(3,5,7,10),B=(4,6,8,11); the eight physical positions
+(6,19,15,11,5,20,14,10) have joins13/15, four gaps-4 and two gaps-6,
+and disjoint folded labels. This is a hand check/application, no extra probe
+or new proof entry. More single-chain cuts or more than one end blank are
+needed by a general recipe; an odd-residue repair alone cannot fix total K.
+
+**Niggle sweep.** A cut's coefficient follows which colour minima/maxima move,
+so no end convention is guessed. At an interior two-gap cut both odd joins
+grow2; at a separating cut neither grows, as independently tested. Each old
+gap never returns during the left-to-right scan, so a newly added graph edge
+cannot close a cycle; all other gaps are isolated, not silently discarded.
+Leaf equations force a UNIQUE solution only for the fixed ordered demands,
+not for an unassigned bag. Zero weights are allowed. All final joins are
+checked positive where needed; signed audit cycles are labelled as such.
+The sign-changing example has a one-point A-chain, handled by the general
+endpoint formula rather than B79's minA0 implementation. The budget bound
+uses N unchanged by insertion, unlike B79's refinement/deletion, which
+changes the number of gaps. No universal criterion, coverage or novelty
+claim; no independent status upgrade from these tests.
+
+Gut: satisfaction rather than a eureka claim. The graph removed one search,
+and the budget failure prevents another overly optimistic universal step.
+Reasoned: exact fixed-skeleton interior lifting is settled at sketch level;
+choosing skeleton/assignment plus boundary and single-chain blank budgets
+is still the carrying inference. Next cheap step: combine the end/cut types
+into a genuine feasibility condition that chooses how much of k is interior,
+not another census of trees. Cloud receives the accounting corrections and
+counterexample as one reply, not a new carrying-review queue or halt.
+
+Artifact cited/instinct/b83-blank-tree-0ccc40c6c39454c5.json,7995bytes,
+SHA256 0ccc40c6c39454c5edd9c35f666a152118e2c7dfe4fcba8b7f6c3540b4159c11.
+Prereg4066824e; source tests/probes/instinct/path_forest_blank_tree.py.
+Immutable upload digest and manifest receipts verified. MI180 PROVED via
+CL428/MI188; B80-83 SKETCH, full E28/L8 OPEN, older holds unchanged.

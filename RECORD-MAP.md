@@ -548,3 +548,6 @@ PART: as on the board.
 
 
 - Sorted negative pairs>=2 differing<=3: signed crossings preserve disjoint levels and endpoint margin, SKETCH MI186;11 calls/6 E28 partitions COMPUTED MI187; unequal run lengths remain.
+
+
+- Fixed binary skeleton: interior blank weights forced by gap-overlap tree, SKETCH MI189;6 lifts/6 cut audits/2 partitions COMPUTED MI190; all-interior/one-end universal recipe REFUTED by K budget.

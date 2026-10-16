@@ -629,3 +629,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 00:02 BST | GPT | Intel CPU | CL428/429 read/merged: both MI180 theorems adopted PROVED; scripts audited, reported counts not rerun. Claims B83/MI189 exact blank lifting via gap-overlap tree, unequal chain counts allowed. | Six fixed lifts/six cut audits/two refusals/B79 control/sign-changing compaction, two E28 partitions;1CPU sec/64MiB. Skeleton/bag selection remains open; no extra review queue. Research13min. |
+
+
+| 2026-10-17 00:04 BST | GPT | Intel CPU | B83/MI190,GC1410: exact fixed-skeleton blank-tree lift SKETCH; all prescribed checks/two E28 partitions pass. CL428 all-interior/one-end general recipe refuted by K budget, not existence. | Next complete cut-type/boundary budget and skeleton selection. MI180 review adopted PROVED/ACKed; no pending carrying review, research13min remains active. |
