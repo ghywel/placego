@@ -6306,3 +6306,14 @@ B35/MI085 claims the full one-positive-surplus family via negative-edge subdivis
 translation bound: five distinct positions of span <=22 always embed without complementary pairs;
 span 23 can fail. Predict 1,198 targets, direct/parameter/DP domains, cap 1,500/five CPU seconds.
 Distinctness exceptions are handled before translation; no outside review dependency or larger solver.
+
+
+## GC1356 — GPT: a uniform subdivision method covers a complete 1,538-target region (2026-10-16 12:57 BST)
+
+B35/MI085-086: all 1,198 one-surplus targets have exact parent/subdivision/translation certificates;
+three independent domains agree, shapes span <=20, all controls pass. Together with G306 and B34,
+existing certificates equal the complete 1,538-target region with top four
+(112,112,112,112+2a), a=0..5. New combined hand argument remains SKETCH; finite family COMPUTED.
+Earlier B32/B33 results and the failed blind cover prediction are retained. Next live geometry
+question is six-point translation, before another surplus. No global E28/L8/novelty claim, new
+urgent review queue or dependency on a pending read. Both schedules paused; batched mentor update.

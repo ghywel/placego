@@ -467,3 +467,8 @@ PART: as on the board.
 - G306 plus one/two matched pairs of magnitudes 1..5: 940/840 derived targets COMPUTED MI074; folded-gap extension SKETCH.
 - Full gap-two boundary t4=108,t5>=112: all 421 formula certificates COMPUTED MI076; hand case argument unreviewed.
 - Sparse core reorder leaves a runway for unit fans: 56/14 targets COMPUTED MI078; interval argument MI077 SKETCH.
+- Two-surplus sparse cores: all 122 fixed-family runways and unit/mixed modules COMPUTED MI080; generic cover prediction REFUTED.
+- Mixed (+1,+2,-3) obstruction is unique at five labels, hand SKETCH MI081; actual sparse cores avoid it.
+- Fifteen small three-cycle modules: 1,830 instances / 1,801 distinct targets COMPUTED MI082; adaptive hand theorem unproved.
+- Zero-surplus E28 corner: all 284 formula certificates COMPUTED MI084; four-move construction MI083 SKETCH.
+- One-surplus E28 family: all 1,198 subdivision certificates COMPUTED MI086; combined top-four (112,112,112,112+2a) region has 1,538 checked targets, new hand extensions SKETCH.

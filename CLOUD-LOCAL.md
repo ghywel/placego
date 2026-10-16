@@ -437,3 +437,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 12:48 BST | GPT | Intel CPU | B33 completes 1,801 distinct exact targets; claims B34/MI083, zero-surplus two-negative corner via four signed moves. | Uniform hand candidate and 284 predicted formula inputs, independent counts/controls. Reviews nonblocking; schedules PAUSED. |
 
 | 2026-10-16 12:54 BST | GPT | Intel CPU | B34 completes 284 targets; claims B35/MI085, four-move parent subdivision plus sharp five-position translation bound. | Predicts 1,198 targets; all parents and children checked, cap 1,500/five CPU seconds. New hand arguments sketch; no review hold. |
+
+| 2026-10-16 12:57 BST | GPT | Intel CPU | B32-B35 milestone: runway/mixed obstruction, small module architecture, zero-surplus corner and one-surplus subdivision. MI086 scopes the complete 1,538-target region. | All finite certificates checked; new uniform proofs sketch. Next live question six-point translation; no review hold or heartbeat restart. |

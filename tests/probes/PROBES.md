@@ -1034,16 +1034,20 @@ app is unpublished by design.
 
 - `instinct/path_forest_two_surplus_runway.py`: MI079, <=12 fixed u-first core candidates,
   predicts 122 runways and fan-2/mixed-module targets. Independent domains, folded mixed
-  hypergraph cover test, restricted-family and ownership controls; capped. NOT RUN.
+  hypergraph cover test, restricted-family and ownership controls pass: 122 cores;
+  blind no-five-cover prediction REFUTED by one exceptional cover (6f6af2b9 preregistration).
 
 - `instinct/path_forest_three_cycle_modules.py`: MI081, all fifteen small three-cycle modules
   on 122 sparse cores; default versus fixed <=12 reordered cores. 1,830 instances, independent
-  deduplicated domain and exact certificates, mixed-cover and old 5+3 controls. NOT RUN.
+  deduplicated domain and exact certificates, mixed-cover and old 5+3 controls pass:
+  1,830 instances / 1,801 targets, 15 default failures repaired (ce1086ba preregistration).
 
 - `instinct/path_forest_zero_surplus.py`: MI083, full zero-surplus corner, predicts 284
   formula certificates via split or alternating four-move cycles. Three independent domains,
-  five omitted-correction controls and the all-14 split check; cap 500/five CPU seconds. NOT RUN.
+  five omitted-correction controls and the all-14 split check pass: all 284 targets
+  (08c69a0d preregistration), hand argument SKETCH.
 
 - `instinct/path_forest_one_surplus_subdivision.py`: MI085, one high surplus via four-move
   parent subdivision, literal-collision repairs and reflection-free translation. Predicts
-  1,198 targets, three domains and span<=20; sharpness/adverse controls. NOT RUN.
+  1,198 targets, three domains and span<=20 all pass; sharpness/adverse controls pass
+  (10cc251d preregistration), hand argument SKETCH.

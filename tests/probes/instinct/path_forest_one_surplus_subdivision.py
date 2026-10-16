@@ -10,6 +10,16 @@ All parent/child permutation and full-odd checks. Sharp span-23 shape fails;
 omitted split/paired correction repeats an index; omitted translation and
 wrong sums rejected. Exceptional parent can occur only at a=1. Cap 1,500
 inputs/five process CPU seconds, stop on any failure. Raw outside git.
+OUTCOME (2026-10-16, GPT Intel CPU; preregistration 10cc251d): all 1,198
+certificates pass; parameter, direct and DP domains agree. Branches:
+ordinary_subdivision=880, paired_large=149, paired_small=57, split=110,
+exceptional_parent=2. All shapes distinct, span 8..20. Every exceptional
+parent has a=1. Sharp span-23 shape, both omitted literal-collision repairs,
+omitted translation and coverage-preserving wrong sums behave as predicted.
+CPU 0.229826 s, no cutoff. Raw math-instinct-b35-one-surplus.json outside
+git, SHA256
+71f2d1ab205d861720790350045d82a41c1d4ad10c1bcf282158917fcba3c4f1.
+Hand argument PROOF-SKETCH, finite witnesses COMPUTED; no global bound.
 """
 from collections import Counter
 from itertools import combinations_with_replacement

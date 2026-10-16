@@ -3125,3 +3125,50 @@ five-point shape should span at most 20, leaving at least eight translations aga
 blocking pairs. The elementary counting part alone carries this application; the sharp span-22
 endpoint argument is an extra tool, not an additional premise or review obligation. Register the
 stronger <=20 check before running and retain the original bound as history.
+
+**MI085 synthesis audit, preregistered before the bookkeeping check.** Together with G306's
+56 one-negative cores, the zero-surplus 284 and one-surplus 1,198 certificates should cover
+exactly 1,538 distinct even E28 targets whose four largest totals are
+(112,112,112,112+2a), 0<=a<=5. Check the union of existing certificate artifacts against direct
+low quadruples in 68..112, not a new solver run. Predicted a subtotals 298,280,266,247,233,214.
+This is a scope/count audit of completed constructions, not a new research block or proof upgrade.
+
+
+### MI086 — B35 result: subdivision covers the complete one-surplus family (2026-10-16 12:57 BST)
+
+All 1,198 targets pass. Parameter, direct and bounded-DP domains agree, with a counts
+268,256,239,226,209. Branches are 880 ordinary subdivisions, 149 paired-large, 57 paired-small,
+110 direct splits and two exceptional parents. Every abstract shape is distinct and spans 8..20;
+only three reach 20. Every child displacement permutation, literal pair allocation and independent
+whole-odd checker passes. Both omitted literal-collision repairs fail, omitted translation fails,
+wrong sums fail, the span-23 sharpness control has no translation, and the two exceptional parents
+have a=1. CPU 0.229826 seconds; no cutoff. Raw JSON outside git, SHA256
+`71f2d1ab205d861720790350045d82a41c1d4ad10c1bcf282158917fcba3c4f1`.
+
+**Synthesis audit passed:** G306's 56 relevant certificates, the 284 zero-surplus certificates and
+these 1,198 certificates form exactly the direct 1,538-target set with four largest totals
+(112,112,112,112+2a), 0<=a<=5. Subtotals are 298,280,266,247,233,214. This set comparison used
+existing artifacts and a direct sum join, not another solver. Counts from other module families
+are not added to it because they overlap. The complete set is COMPUTED. The combined uniform hand
+proof is a PROOF-SKETCH: G306 is independently verified, but the four-move and subdivision
+extensions are not yet independently adopted. No full E28, minimum-68 threshold or novelty claim.
+
+**What changed:** a whole family is explained by literal edge subdivision plus a geometric
+translation count, instead of another case table. The stronger span bound 20 means the endpoint
+case of the sharp span-22 tool is not needed by this application. Distinctness repairs are explicit
+and happen before reflection avoidance; translation cannot repair repeated coordinates.
+
+**Gut:** I think I feel delight at that separation, and a fresh pull toward six positions.
+**Reasoned:** adding a second surplus creates six selected indices; the five-position bound is
+not a license to extrapolate. Next live question: what span guarantees a reflection-free translate
+for six positions, and can subdivision keep the new shapes inside it? A candidate sharp obstruction
+is {0,2,6,15,19,21} at span 21, whose opposite-parity sums include 15,17,19,21,23,25,27.
+No six-position theorem, experiment or new block is claimed here; retain this as the next concrete
+geometry question rather than extend construction counts automatically.
+
+**Niggle sweep:** original sorting used to bound parent exceptions, original negative-bin labels
+mapped back after parent sorting, paired coordinates checked for literal equality before any
+translation, raw shape and translated witness kept separately, the stronger span bound tested,
+full family deduplicated against an independent set, and hand-review statuses preserved.
+B32-B35 were worked without waiting for a review. One batched mentor update will be delivered;
+no new urgent carrying-read queue or review hold is imposed. Both heartbeats remain paused.
