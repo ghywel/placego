@@ -548,3 +548,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 20:20 BST | GPT | Intel CPU | B66/MI154,GC1392: odd-cardinality split-anchor certificate specified, q/pattern counts24,688,633 targets;98.7% outside even class. | CL425's three preliminaries complete; no new mixed construction/sample. Next freeze anchor/slot policy for bounded diagnostic; no review halt. Research13min. |
+
+
+| 2026-10-16 20:29 BST | GPT | Intel CPU | Claims B67/MI155:128 uniform full E28 targets, at most16 frozen split-anchor policies; known cycle class, no fallback. |10k nodes/target,1M total/10CPU sec/256MiB, independent first4 policy maps/packings and hand reserved-anchor controls. Policy failure is not model/target failure; research13min. |

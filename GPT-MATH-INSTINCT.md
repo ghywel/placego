@@ -6112,3 +6112,53 @@ and Gaussian staircase algorithms, literal tiny controls and direct full q
 marginals all agree. Gut: pleased to have the parity gap represented honestly,
 and curious about its first real test; reasoned: definitions/counts are complete,
 but not yet progress on existence for a new mixed target. No review halt.
+
+
+### MI155 — B67 claim: first fixed-policy split-anchor pilot (2026-10-16 20:29 BST)
+
+**Pull/question.** Does the MI153 sufficient model actually reach mixed targets,
+with a small explicit anchor policy rather than unbounded allocation search?
+Record searched: split.anchor|anchor.*policy|anchor.*cycle|singleton.*anchor ->17
+hits/7 files, only MI153-154 current model; no prior anchor-policy run. CL425
+preliminaries complete. Work this obstruction, no new literature result imported.
+
+**Frozen sample/policy BEFORE run.**128 distinct uniform ranks in the FULL
+sorted E28 domain24,688,633, seed20261067, offsets0..54,total240 via B57 rank/
+unrank. Report all q strata, not uniform parity patterns. At q=0 use original
+h=(1,1,2,2,2,2,2,2), no anchors. For q>0, up to16 policies: reserve q/2
+consecutive labels cyclically modulo14, starting at0,2,4,6,8,10,12,13 in that
+order. In each reserved set, sort all q physical odd anchor values ascending;
+assign to odd-target bins in ascending index, then reverse assignment as second
+policy. No further anchor choices or target-specific exceptions. Start h_i=1;
+distribute (28-q)/2-8 extra whole pairs one at a time to the bin with largest
+current residual t_i-a_i-56*h_i, smallest index on ties. Necessary size-square
+bounds reject impossible policies. Under each policy use the unchanged indexed
+primitive factorization/any-first opposite-sign order class, discard all
+placements touching reserved labels, pack remaining components jointly.
+
+Predict >=50% of sampled targets containing odd sums certify; all sampled q0
+certify; at least one success requires a policy after the first. Caps/failures
+count against the success fraction. A complete failure means POLICY_EXHAUSTED,
+not that the whole split-anchor model, arbitrary odd partitions or L8 fail.
+No repair, alternate h, arbitrary-order fallback, larger anchor search or census.
+
+**Controls BEFORE run.** Literal hand fixture t=(68,69,99,100,112,112,112,112),
+R={6}, anchors a_1=13,a_2=43 (indices0..7), h=(1,1,1,2,2,2,2,2), moves
+(+6,0,0,-6,0,0,0,0), selected x_0=1,x_3=7. Check both complete token inventory
+and all sums/cardinalities with two independent validators. Replacing selected
+indices by6,12 still permutes them but touches R: must reject. Wrong anchor43
+changed to41 must reject. Coverage-preserving wrong-sum and duplicate-token
+mutations reject. First attempted policy of first FOUR odd-containing sampled
+targets: FULL component-label maps versus raw permutation/physical-root reference
+and independent set packing, with reserved-label exclusions on BOTH. Tiny rank
+controls imported from earlier validated sampler, N agrees Gaussian.
+Unexpected: measure whether reverse assignment/later R rescues first-policy
+failure; record extrema sum>28, since even-role range proof no longer applies.
+
+**Caps/stop.**128 sampled targets,16 policies/target,10k nodes/TARGET across
+policies,1M global nodes,10CPU sec/256MiB,1M raw reference words/10M roots.
+Target cap records UNKNOWN and continues; global cap stops partial, no raise or
+restart for a mathematical failure. Full raw outside git; source
+path_forest_split_anchor_pilot.py. No review halt/new proof filing. Gut: warm
+curiosity, with unease about losing the even range guarantee; reasoned: a small
+pilot can reject this cheap policy without becoming a generalized solver project.
