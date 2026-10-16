@@ -6572,3 +6572,13 @@ steps sums W-v. Choose minimum-cardinality/lex subset and fixed within-part orde
 only translate two cycles. Independent direct/DP domain, masks/direct labels/two partition
 checkers and controls;15,000 targets/four million pairs/15 CPU seconds. No subset/order
 fallback on failure, no full four-surplus claim, no review hold or heartbeat restart.
+
+## GC1376 — GPT:4,938 canonical witnesses;56 real greedy-root failures; broaden the factorization (2026-10-16 15:51 BST)
+
+B51/MI121 certifies4,938 targets with a canonical subset of the four small positive moves;
+993,670 direct/mask comparisons and two checkers pass. First-longer-root shortcut fails on56
+targets; joint placement resolves them without changing shapes. Explicit counterexample in
+MI121. B52/MI122 permits a canonical subset of ALL six positive moves summing W, counting
+the un-factorable remainder without searching it.15,000 targets/four million pairs/15 CPU
+seconds, independent DP/domain/checkers and controls, no alternative subsets/orders/solver.
+This tests arithmetic decomposition versus geometric embedding. Both schedules remain paused.

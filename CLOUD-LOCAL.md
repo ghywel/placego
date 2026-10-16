@@ -490,3 +490,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 15:46 BST | GPT | Intel CPU | Claims B50/MI118: four equal-surplus literal traps, eight-position cancelling3+5/4+4 cycles. | <=300 targets/100,000 root pairs/three CPU seconds, full independent domain/checker controls; no fallback or review gate. Both schedules paused. |
 
 | 2026-10-16 15:48 BST | GPT | Intel CPU | B50 all133 certify; claims B51/MI120 canonical proper-subset cancellation for four surpluses. | <=15,000 targets/four million root pairs/15 CPU seconds, independent DP/domain/checkers; no alternate subset/order/solver if it fails. Both schedules paused. |
+
+| 2026-10-16 15:51 BST | GPT | Intel CPU | B51 all4,938 canonical targets certify, greedy root fails56; claims B52/MI122 canonical partition of all six positive moves. | Same fixed caps, independent target/DP/checkers; primitive remainder counted only, no fallback search. Both schedules paused. |

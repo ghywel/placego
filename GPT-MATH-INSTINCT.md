@@ -4320,3 +4320,72 @@ Compare constant-trap133 keys with this domain as a subset, no additive counts.
 Gut: the subset identity makes the mechanism worth one broader test. Reasoned: canonical
 success would give a common constructive subfamily; failure would locate the price of the
 fixed choice. Both automatic schedules remain paused; carrying reviews are nonblocking.
+
+### MI121 — B51 result: canonical subset rule works; greedy anchoring fails (2026-10-16 15:51 BST)
+
+All4,938 target keys agree with the independent sorted/DP domain and have full certificates.
+All993,670 mask/direct root-pair comparisons agree. Subset cardinality pairs3+1,2+2,1+3
+occur1,471/2,639/828 times. All133 constant fixtures are included, not added. Both partition
+checkers and all controls pass. No individually impossible shape. CPU2.841127 s, raw outside
+git SHA256`02851403bc63388f571a9f52dfb6f4202616a2df706e4a2eb8f0e1f07174a7a1`.
+The proper-subset construction is COMPUTED on this exact domain, no general hand placement
+theorem follows. MI120's control wording was awkward: D15 with four5s is INCLUDED, D14 is
+EXCLUDED; the pre-run text and instrument both specify those actual expected outcomes.
+
+**Unexpected failure retained:**56 targets lose all completions if the longer cycle is fixed
+at its FIRST legal root. Joint translation resolves every one without changing the canonical
+subset or within-part order. Example(u,v,W,Z;steps)=(6,7,16,13;3,4,4,5), target
+(68,70,80,86,118,120,120,122): subset indices(1,3), shapes S={0,4,9,16},T={0,3,7,13}.
+At S root0 its labels are{0,4,9,11}; every T root0..14 is blocked, except7 and12 which
+already reuse a pair internally. S root2,T root0 are disjoint: labels{2,6,9,11} versus
+{0,3,7,13}. Thus the stronger greedy rule seen in B48/B50 is genuinely REFUTED here;
+joint placement matters. The headline all-target prediction survives with its original scope.
+
+**Gut:** pleased that the diagnostic found a real limit to a shortcut instead of another
+unqualified success. **Reasoned:** separate arithmetic factorability from geometry. The subset
+identity is wider than splitting only the four small steps; all six positive moves can be
+partitioned between the two negative moves.
+
+### MI122 — B52: factor the full positive move multiset before embedding it (2026-10-16 15:51 BST)
+
+**Question:** in the complete FOUR-surplus target domain (t4<112,t5>112), take positive
+moves u,v,a,b,c,d and negative moves-W,-Z. Whenever a positive subset sums W, its complement
+sums Z. Can one canonical factorization always be embedded by two independent translations?
+This is broader than B51: both large positives may belong to the same cycle, or an original
+matching magnitude may form a two-cycle. No whole E28 claim; no experiment on un-factorable
+move multisets is included.
+
+**Exact structural boundary (supporting hand SKETCH):** in this selected-token permutation
+architecture, every nontrivial cycle needs a negative move. With exactly two negative moves
+there are at most two cycles. A two-cycle-component factorization exists arithmetically iff
+a subset of the SIX positive moves sums W. If no such subset exists, the architecture needs
+one cycle containing both negative moves. This is not a necessary condition on arbitrary
+partitions or burning witnesses; fixed-role cycle covers are a sufficient construction.
+
+**Canonical rule BEFORE run:** choose a positive subset of sum W with the fewest items, then
+lexicographically smallest bin-owner tuple, where owners are0,1,4,5,6,7. Sort each part by
+(positive step size,owner). Its shape is0,successive proper sums,full part sum (the negative
+magnitude), so the corresponding cycle closes through that negative edge. Translate these
+two fixed shapes only. No alternate positive subset or within-part order on failure.
+
+Record searched: zero.sum.*component,positive.*subset.*negative,factor.*cycle -> no default
+hits; MI117-121 and B51/checker sources read. Direct finite algebra, no external theorem or
+novelty claim. **Predictions:** tentatively all arithmetic-factorable targets certify under
+this canonical rule. Independently enumerate the whole sorted-low/high domain, count its
+factorable/un-factorable parts by a positive-subset DP, and match the signed/canonical domain.
+This is a target-set count, not a search for partitions of the un-factorable remainder. B51's
+4,938 keys must be contained, without assuming the new canonical choices reuse old witnesses.
+
+Must compare all root pairs by direct labels and masks, and all chosen partitions by both
+literal checkers. Cap15,000 constructed targets/four million root pairs/15 CPU seconds; cap
+means UNKNOWN. Retain every failure, even if an old B51 witness exists; no fallback solver.
+**Controls:** target(68,68,88,100,114,114,116,116) has W12=u+v and Z6=a+b+c+d; the
+canonical subset is the two large positive owners(0,1), shapes{0,6,12} and{0,1,2,4,6},
+which should certify at roots0/3. The target(70,70,70,86,122,122,122,122) has no positive
+subset summing W21 and must be excluded. Same-root overlaps, duplicated-token and wrong-sum
+variants reject. **Unexpected:** count first-longer-root losses and individually rootless
+shapes, separately from joint packing failures; B51 has already killed the greedy conjecture.
+
+Gut: the cleaner question is what can be factored at all, followed by placement. Reasoned:
+one canonical test isolates the arithmetic boundary and the geometric price. Both schedules
+remain paused; pending hand reviews do not gate this independent finite diagnostic.
