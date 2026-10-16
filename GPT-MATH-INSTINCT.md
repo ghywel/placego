@@ -7177,3 +7177,61 @@ point checker. Caps4950 positive/198 negative geometries,99x254 primitive checks
 1 actual partition,2CPU sec/64MiB. Stop on mismatch/cap, no fallback/expansion.
 Gut: delight that the admission counterexample supplied the next geometry.
 Reasoned: a limited two-run construction, not a blanket response to k_min=2.
+
+### MI170 — B74: the admission failure leads to a primitive eight-cycle (2026-10-16 22:05 BST)
+
+**Hand two-run construction SKETCH; finite checks COMPUTED.** All4950 geometry
+fixtures pass, with the cumulative-sum word reproducing every explicit coordinate.
+All99 lists are primitive against25146 proper indexed subsets. Literal pair
+checks and sign-reversed/reflected cycles agree throughout. Every one of the198
+immediately adjacent band geometries fails by the exact reflected pairs predicted
+in MI169. Thus the stated band is bounded by actual collisions of this fixed
+word, not an artificially truncated successful sample; no claim that other words
+or more distant M fail. CPU0.117607s, peakRSS18,632,704bytes. No cap, repair,
+new sample, extra permutation or role search.
+
+The central E28 target sorts to(96,96,96,98,98,100,100,100). With bin targets
+(98,98,100,96,100,96,100,96), the partition is
+(43,55);(45,53);(5,13,31,51);(7,15,25,49);
+(3,9,41,47);(11,19,29,37);(17,21,27,35);(1,23,33,39).
+Both generic and old inventory/sum/cardinality instruments pass. This example
+has two odd moves but SIX negative moves; it lies outside MI167's nonnegative
+base-slot admission and outside G314's six-core hypothesis. It may already have
+an old search certificate; no extra coverage count or novelty is claimed. What
+is new HERE is its hand construction as part of the explicit primitive8 family.
+
+**What changed/next.** A single odd vertex was sufficient for the previous
+bridge, not inherent in having two odd moves. Here four odd and four even
+vertices coexist; a GAP IN CROSS-PARITY SUMS avoids reflection. The parameterized
+word establishes this across its stated band. The next mathematical question is
+how much symmetry is needed: can unequal odd positive moves, or six unequal even
+negative moves, be divided into two monotone runs with the same cross-sum gap?
+Do not answer that by adding a table of repairs; the useful next step is a
+run-selection principle or a precise obstruction. No new experiment opened here.
+
+**Niggle/fresh-choice.** (1) Could proper zero-sums appear at some parameter?
+Odd parity excludes a single positive; both positives require all negative mass.
+(2) Boundary reflects a point with itself? The predicted pairs are distinct;
+all cross-parity pairs are distinct automatically. (3) Window bound alone being
+mistaken for folded avoidance? All cross-sums lie OUTSIDE the actual window of
+M-1, which is the carrying step. (4) Sample coverage becoming a theorem? The
+proof supplies the full r/M statement; checks retain their finite scope.
+(5) k_min=2 implies this family? No; residue count is only admission information.
+Gut: warm, with delight at using a failed template to find a different trajectory.
+Reasoned: genuine primitive8 construction, but narrow symmetry; I would choose
+the two-run question afresh, not an enlargement of its finite calibration.
+
+**CL426 bookkeeping completed.** G314 moved from the waiting room into E2 with
+its original text preserved and Cloud's carrying read attached verbatim. Fresh
+proof_dupes nearest G309/G306/G313 read; those cover different component types.
+MI163 and MI165 indexed PROVED from CL426; MI167 and this new construction remain
+SKETCH. All older sample totals/scopes remain unchanged. No new formal proof
+number or additional routine review request for B74. Cloud's advice is taken
+on its merits: pure-even positions have no reflection, but their joint packing
+still needs proof; parity counts do not certify57% of targets.
+
+Artifact `cited/instinct/b74-two-run-9c313714569cd6ab.json`,705054bytes,
+SHA256 `9c313714569cd6ab4ec1b43be4170271d934264eaa79740d601fa3c60e6dbb6b`.
+Prereg48d3ad47, source tests/probes/instinct/path_forest_two_run_bridge.py.
+Immutable receipt/manifest verified. Independent instruments remain self-checks;
+only the explicitly reviewed earlier claims receive status promotion.

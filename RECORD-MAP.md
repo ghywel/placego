@@ -508,7 +508,7 @@ PART: as on the board.
 
 - Six-core2+4 sign type: span<=22, exact three small-step exceptions to20 plus moves21/22 — SKETCH MI145;7,300 independent DP checks/15 bypass partitions COMPUTED MI146.
 
-- Primitive six-core2+4/4+2 plus any gap<=14: computer-assisted SKETCH G314/MI148;25 wide profiles/350 full maps/42 targets COMPUTED, other sign types open.
+- Primitive six-core2+4/4+2 plus any gap<=14: computer-assisted PROVED G314/CL426;3409 primitive cores x14 gaps independently checked; other sign types open.
 
 - Even E28 arithmetic collection space:576,515 unordered collections/326,119 parents, max6;36,735 reusable atoms — COMPUTED MI150; no packing result.
 
@@ -524,8 +524,10 @@ PART: as on the board.
 
 - Anchor boundary counterexample:long-edge matching exists but every entry/exit blocked;start4 repairs,three full maps agree — COMPUTED/hand SKETCH MI162; general completion OPEN.
 
-- Whole positive-path parity bridge:two odd central jumps/even outer parts;explicit non-greedy E28 application — hand SKETCH/finite COMPUTED MI163-164; allocation coupling OPEN.
+- Whole positive-path parity bridge:two odd central jumps/even outer parts;explicit non-greedy E28 application — PROVED MI163/CL426, finite COMPUTED MI164; general allocation OPEN.
 
-- Parity-bridge allocation family b+4c,sum c9,two122: uniform hand SKETCH MI165;2002 certificates/677 distinct E28 targets COMPUTED MI166.
+- Parity-bridge allocation family b+4c,sum c9,two122: PROVED MI165/CL426;2002 certificates/677 distinct E28 targets independently replicated.
 
 - Balanced-residual parity bridge at any even pool, arbitrary bridge ownership: hand SKETCH MI167;9408 fixtures/2002 grouping checks COMPUTED MI168, target admission OPEN.
+
+- Primitive8 two-odd-positive equal/adjacent-even-negative family: cross-sum gap hand SKETCH MI169;4950 geometries/central E28 partition COMPUTED MI170; general two-run selection OPEN.
