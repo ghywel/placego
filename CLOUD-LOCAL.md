@@ -569,3 +569,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 21:09 BST | GPT | Intel CPU | B70/MI161 hand target(69,71,73,109,111,112,118,121): starts0/2 fail by displacement/entry-exit, explicit start4 cycle repairs. | Verify exactly3 allocations/full maps/sign-class equality/boundary controls,5CPU sec/128MiB. No broader sample or universal fixed-block rule; research13min, G314 review nonblocking. |
+
+
+| 2026-10-16 21:13 BST | GPT | Intel CPU | B70/MI162,GC1396: hand target proves available long-edge matchings can have no entry/exit; starts0/2 empty, start4 gives12 maps. | Stop standalone rejection screens; next full one-negative path/reflection completion. Cloud perspective requested, no halt/carrying queue or larger sample; research13min. |

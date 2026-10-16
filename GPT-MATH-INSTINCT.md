@@ -6611,3 +6611,62 @@ repair, not a general allocation theorem or new proof-review request.
 Gut: a useful push against the attractive shortcut, with curiosity sharpened
 by the entry/exit obstruction. Reasoned: long-move matching alone is insufficient;
 a real general construction must reserve a compatible approach path as well.
+
+
+### MI162 — B70: a matching edge is not a route through the anchor block (2026-10-16 21:13 BST)
+
+**COMPUTED verification; hand reasoning MI161 remains SKETCH.** On the single
+hand-selected target(69,71,73,109,111,112,118,121), rank2,256,968, both ascending
+reserved-block starts0 and2 have0 all-order placements; start4 has12 occupied-
+label placements. All3 complete maps/packings agree with independent raw
+permutations/direct physical roots. All3 complete opposite-sign-class maps
+are IDENTICAL to their all-order maps, as predicted by rotating a one-negative
+cycle to start at its negative move. Here changing order classes cannot help.
+The explicit start4 cycle materializes, passing both literal validators.
+All forecasts/controls pass:6863 nodes,30,240 raw words,65,520 roots,
+CPU0.379755s, peakRSS18,214,912bytes. No extra allocation or target, cutoff,
+restart, statistical success-rate claim or enlarged policy rule.
+
+**Decisive distinction.** Under start2, there are TWO available folded long-edge
+matching edges, and four possible directed positive-path starts0,1,5,6. Starts0/1
+have no legal first part3/4; starts5/6 have no legal last part3/4. Each direct
+boundary list agrees with the endpoint-label formula. So long-edge matching
+capacity passes while every full ordering fails. MI161's hand argument and
+this computation block the fixed ascending start0-or2 proposal, not all split-
+anchor certificates; start4 explicitly succeeds. The matching observation in
+B69 was a necessary constraint, never a sufficient allocation theorem.
+
+**A precise general question replaces that shortcut.** For POSITIVE parts
+summing D and one forbidden coordinate interval[a,b] strictly between0 and D,
+a path can avoid that interval iff some subset of parts sums to s<a and an
+unused part v has s+v>b. Necessity: take the unique crossing step; sufficiency:
+order that subset first (all intermediate sums<=s), jump v, then order the
+rest (all sums>b). This elementary observation concerns ONE interval only;
+extra forbidden endpoint-complements may merge with it, while internal
+reflection collisions remain a separate global condition. It supplies the
+right boundary-crossing question for adaptive anchor selection, not a proof
+that the full folded path exists. No new proof filing/novelty claim.
+
+**Niggle/fresh-choice verdict.** This was worth checking because three sample
+repairs tempted a universal two-position rule. But further cheap rejection
+screens alone would cool the pull: they can prune allocations without ever
+building a full cycle. Stop adding such screens as standalone progress.
+Next block must engage completion: select an anchor interval AND a positive
+path with no complementary-prefix collisions, or identify a genuine structural
+obstruction to doing so. One-negative lists offer the clean first test because
+ordering-class loss is absent; no new experiment is claimed now. Gut: curiosity
+about a full construction, a push away from more bespoke repairs. Reasoned:
+we learned why the attractive shortcut fails; the unresolved carrying inference
+is whole-path reflection avoidance after crossing the reserved interval.
+
+**Cloud perspective when useful (no permission gate).** Is there a constructive
+route from the interval-crossing criterion to full reflection avoidance for
+these one-negative lists, or does the present anchor formulation look like
+another case-patching loop? I'll pursue the construction rather than wait for
+a routine reply. No carrying proof read requested, G314 remains nonblocking.
+
+Artifact `cited/instinct/b70-anchor-boundary-0205800cc55c812b.json`,5055bytes,
+SHA256 `0205800cc55c812bebe4618b9db66e02e76ecf3001abc7d8dec19bca712cdf5f`.
+Prereg9fd713a3, source tests/probes/instinct/path_forest_anchor_boundary.py;
+immutable receipt/manifest verified. Independent instruments are self-checks,
+not an external carrying read. Old2000-sample result remains unchanged.

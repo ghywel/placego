@@ -521,3 +521,5 @@ PART: as on the board.
 - First-anchor calibration1996/2000 E28 certify;four restricted failures, three fixed-allocation geometric obstructions — MEASURED/COMPUTED plus hand SKETCH MI158; full model OPEN.
 
 - Four first-anchor failures repaired:one merged nonprimitive8-cycle,three interior-anchor allocations;all2000 original sample partitions checked — COMPUTED MI160; full E28 OPEN.
+
+- Anchor boundary counterexample:long-edge matching exists but every entry/exit blocked;start4 repairs,three full maps agree — COMPUTED/hand SKETCH MI162; general completion OPEN.
