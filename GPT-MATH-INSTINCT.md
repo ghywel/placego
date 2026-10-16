@@ -5661,3 +5661,92 @@ factor/order and known fixed-choice failures in next definition. All resolved
 or made explicit, no silent assumption. Gut: delight at finishing this component
 type and gratitude for Cloud's timely wider view; reasoned: finish this filing,
 then take the suggested count/definition block, without waiting for review.
+
+
+### MI149 — B64: define and count primitive component collections (2026-10-16 19:52 BST)
+
+**Question, following CL425.** Is the complete component-choice space small
+ enough for an exhaustive proof, and which primitive sizes account for its
+burden? Definitions/counts only: no ordering, translation, joint-placement
+search, partition solver or new target certificate in this block. Record
+searched: piece.collection|primitive.*collection|factorization.*count|
+memoised.count|memoized.count ->6 hits/4 files; MI123/148 and B57 primitive
+code read. Generic exact-cover/multiset generating-function counting is a known
+algorithmic tool, not offered as a mathematical contribution or new proof.
+
+**The finite statement, with quantifiers.** For each sorted EVEN E28 target,
+use h=(1,1,2,2,2,2,2,2) and e_i=(t_i-56h_i)/2, omitting zeros. Let A(t) be the
+signed multiset of these nonzero moves. An atom is a nonempty zero-sum signed
+submultiset with no proper nonempty zero-sum submultiset. Let C(A) be the set
+of UNORDERED multisets of atoms whose multiset union is A. Equal-valued copies
+are indistinguishable; atom order is forgotten. Every zero-sum A factors into
+atoms. Our sufficient packing statement is
+
+    for every t, there exists C in C(A(t)), and for every atom in C an
+    ordering and an origin, so that ALL selected vertices have distinct
+    folded labels in0..27.
+
+The choice of C and of all orders is joint and existential. The closing zero
+is not an extra vertex. The optional stronger version restricts the atom
+orders to the known nyctalopic class; B57 sampled that class. No quantifier over
+all prechosen shapes or all collections is justified. A failed collection/order
+can be bypassed; a target is unresolved only after all authorized choices fail.
+
+**No compression at the whole-collection level, by hand.** A(t) has exactly
+two positive moves>=6, the low-role u,v; every other move is in-22..5. The two
+large positives recover t1,t2 as56+2u,56+2v. Add8-|A| zeros to the remaining
+moves and recover the other six targets as112+2e. Thus A determines t. Taking
+the union of a component collection determines A, so collections from different
+targets cannot coincide. Counting all C across targets equals sum_t |C(A(t))|;
+choosing just one canonical collection per target would still give326,119
+objects. The potentially reusable compression is the catalog of INDIVIDUAL
+primitive move types and their placement maps, not the whole collections.
+Any atom contained in A can be completed by factoring its zero-sum complement,
+so all primitive zero-sum submultisets across the parent domain give exactly
+that reusable catalog.
+
+**Counts to obtain.** Over all326,119 existing even targets: total unordered
+collection count, histogram and maximum of |C(A)|, collection totals by sorted
+piece-size partition and numbers of parents offering each partition, active-
+vertex/negative-count strata, and distinct primitive atom types by size and
+sign counts. Store each parent's rank and count-by-size-partition, and the atom
+catalog. These are arithmetic counts, not successful placement counts. Pending
+G314 and adopted G313 are not used to label a target solved in this count.
+
+**Method.** Generate the known sorted even domain with sum-pruned recursion;
+check total against memoized partition/Gaussian counts. For each A, subset sums
+identify indexed minimal zero-sum masks; deduplicate their value multisets.
+Count inventory partitions recursively with memoization and nondecreasing atom
+type order, always consuming a smallest remaining value. This forgets both
+component order and equal-copy labels. No collection or spatial placement
+exhaustion. The size-partition coefficients are the multiset exact-cover
+inventory generating-function coefficients.
+
+**Predictions BEFORE run:** total collections<2,000,000; distinct atom types
+<100,000; primitive eight-vertex parents>1,000. Counts must sum consistently,
+every parent has a factorization, and multiset union reconstructs the exact
+parent target. The count, even if small, does not predict a successful packing
+or prove full even E28. A larger count refutes the forecast without raising any
+cap or opening a placement run.
+
+**Independent controls.** Compare FULL factorization sets from a separate
+indexed set-partition recursion, then canonicalize value multisets, against the
+memoized coefficient count: every zero-sum multiset on values{-3,-2,-1,1,2,3}
+with length2..6, plus64 evenly spaced fixed target ranks floor(j*(326119-1)/63),
+j0..63. Count primitives there by directly checking all proper submultisets,
+not the primary minimal-mask pruning. Explicit fixtures: (-1,-1,1,1) has two
+labelled matchings but one unordered value collection; (-1,-1,-1,1,2) likewise
+has one value collection despite several labelled choices/possible atom orders.
+These refute naive labelled/ordered counting. Counterfactual: counting a full
+zero-sum nonminimal mask as an atom must fail on balanced four moves.
+Unexpected: verify whole-collection projection injectivity/reconstruction while
+showing the atom(-1,1) occurs in multiple different toy parents. This separates
+reusable pieces from nonreusable whole collections.
+
+**Caps/stop:**326,119 parents,250,000 distinct atom types,10M memoized count
+states,2M independent control states,40CPU seconds,512MiB peak RSS. On cap
+record UNKNOWN/partial counts, no raise/restart or solver fallback. Full count
+record outside git; no new proof/PROOFS entry or routine carrying request.
+Gut: curiosity and a little unease about paying for the wrong quotient; the
+injectivity observation already puts the question on firmer ground. Reasoned:
+learn the size/choice structure before authorizing any larger placement work.
