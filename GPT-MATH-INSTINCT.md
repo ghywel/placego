@@ -5950,3 +5950,78 @@ being promoted to a universal proof? No, statuses/scope above retain the gap.
 No unresolved niggle. Gut: delight at portability, fresh curiosity about parity;
 reasoned: the level change succeeded cheaply, so follow the parity question
 rather than spend another turn refining an already successful sample.
+
+
+### MI153 — B66 claim/model before counting: split-pair anchors (2026-10-16 20:19 BST)
+
+**Question/pull.** CL425 step3: what does odd cardinality force, and what exact
+certificate class could replace the even pair model? The attractive picture is
+one singleton anchor in each odd bin, with whole pairs around it. Unease:
+anchors consume precisely the labels the later correction may want. I want that
+joint restriction visible before any constructive sample. Record searched:
+odd.cardinality|mixed.parity|triple.*complement|parity.*transfer ->153 hits/30
+files. MI047-050/G304-G305 read:2-for1 parity transfer explicitly changes4/4
+cardinalities to3/5; separate parity and chain constructions cannot simply be
+composed. No new literature theorem/novelty claim or new proof filing here.
+
+**Necessary sizes.** Let p_i=t_i mod2, q=sum p_i. Since the tokens are odd,
+c_i=|bin_i| has parity p_i, sum c_i=m, and q has parity m. In our range24..32,
+each target>=68 exceeds the largest single token2m-1<=63, so c_i>=2+p_i.
+Write c_i=2+p_i+2z_i, z_i>=0, sum z_i=r=(m-16-q)/2. Thus ignoring further
+arithmetic constraints there are binom(r+7,7) vectors for each labelled parity
+pattern. Also necessarily c_i^2<=t_i<=c_i(2m-c_i), by the smallest/largest c_i
+odds. These conditions do not promise a partition. A target can admit several
+size vectors; counts by p are disjoint, counts by c generally overlap.
+
+**Exact proposed split-anchor certificate, m EVEN.** Choose q/2 complementary
+pair labels R from0..m/2-1. Distribute their q individual odd tokens bijectively
+as anchors a_i to the odd bins. Put a_i=0 in even bins. Choose h_i>=1 with
+sum h_i=(m-q)/2 (equivalently h_i=1+z_i, c_i=2h_i+p_i). Each bin's baseline
+sum is s_i=2m*h_i+a_i; sum s_i=m^2 because complete reserved pairs sum qm.
+The integer moves e_i=(t_i-s_i)/2 sum0. For each active e_i choose an index
+x_i in0..m-1; require all folded labels min(x_i,m-1-x_i) distinct and outside R,
+and the multiset of x_i+e_i equal to the multiset of x_i. Allocate the whole
+pair of x_i to bin i; fill its remaining h_i pair slots with the remaining
+unreserved pairs, then simultaneously replace selected token2x_i+1 by
+2(x_i+e_i)+1. Anchors stay fixed. This produces exact target sums/cardinalities
+and full coverage IF the stated joint certificate exists. Zeros need fillers
+only; pair slots suffice since h_i>=1. This is a sufficient restricted model,
+not asserted necessary for arbitrary odd partitions or for G304's construction.
+At q=0 it reduces exactly to the even exchange model with a chosen slot vector.
+
+The2-for1 exchange and split anchors are two ways to break the even-cardinality
+invariant, not the same allocation proof. The split model's unresolved existential
+choices are R, anchor assignment, h, factorization, orders and origins TOGETHER.
+A negative result in any fixed choice/class would not refute the target.
+For odd m, q is odd and q anchors cannot be a union of complete pairs; the
+central singleton of G310 requires a separate model. Do not silently extend this
+one to odd m. Necessary size equations themselves still apply there.
+
+**Count-only experiment, BEFORE run.** Count sorted E28 targets by their exact
+8-position parity pattern p, and aggregate by q. Predict: all q=0,2,4,6,8
+occur; q=4 is largest; mixed domain>98% of24,688,633; pattern counts partition
+that known total, all-zero pattern326,119. These count membership, not solvability
+of the anchor model. No construction, sample, anchor search or target census.
+
+Primary instrument: sorted offsets y=t-68,0..54,sum240. Gap bits
+b_i=p_i xor p_(i-1), p_0=0 (indices1..8), gap_i=2u_i+b_i.
+Then count u>=0 with sum(9-i)u_i=T=(240-sum(9-i)b_i)/2,
+sum u_i<=B=floor((54-sum b_i)/2), via a two-variable coefficient DP.
+Independent instrument: y_i=2v_i+p_i; subtract from v_i the number d_i of
+preceding1-to0 descents in p. The residual is nondecreasing, between0 and
+H=floor((54-p_8)/2)-d_8, with sum S=(240-q)/2-sum d_i. Use Gaussian
+coefficients for this rectangle. Also count by q directly with a separate
+bounded-length multiset DP over all offsets0..54, without gap/parity transforms.
+Tiny literal domains (k1..4, bound0..5, all totals/patterns) must agree.
+
+**Counterfactuals/unexpected/stop.** Odd q at even m must count zero; dropping
+the1-to0 staircase must fail on k2,bound3,total3,p=(1,0): true count1, naive2.
+Unexpected: p and its reversed pattern have equal counts under y_i->54-y_(9-i),
+because8*54-240=192 differs from240: do NOT assume symmetry at the SAME total;
+check exact complement relation at total192 instead. Predict at least one
+same-total reversal mismatch. Size-vector formula checked on tiny direct
+compositions and m28 q classes; raw upper/lower sum bounds remain necessary
+only. Caps256 patterns per total, two complementary totals,10CPU seconds,
+256MiB peakRSS. Stop on mismatch/cap; retain failure, no raised cap or construction
+fallback. Raw counts outside git, source path_forest_parity_model.py. No carrying
+request for definitions/counts; substantive new existence theorem still absent.

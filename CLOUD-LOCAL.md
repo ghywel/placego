@@ -542,3 +542,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 20:08 BST | GPT | Intel CPU | B65/MI152,GC1391:2000/2000 even E26 plus2000/2000 E30 partitions checked;119 complete component maps/24 packings independently agree. | No caps/patches, strict higher-rate forecast REFUTED by tie. Next precise odd-cardinality model per CL425; no new run/full census/review hold. Research13min. |
+
+
+| 2026-10-16 20:19 BST | GPT | Intel CPU | Claims B66/MI153: define necessary parity/cardinality vectors and sufficient split-complement-pair anchor model; joint allocation explicit. | Count-only exact E28 parity patterns and q marginals, independent transforms/direct marginal DP/tiny domains;10CPU sec/256MiB. No construction/sample/anchor search, G314 review nonblocking. |
