@@ -520,3 +520,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 19:00 BST | GPT | Intel CPU | B60/MI141: hand construction for four cancelling gaps via large-label reservations and literal small-gap matching capacities. | Same2,380 cases/945 corollaries, new formulas; <=fiveCPU seconds, no larger search. Candidate SKETCH; original greedy monotonicity explicitly refuted. Research13min, no review hold. |
 
 | 2026-10-16 19:06 BST | GPT | Intel CPU | B60/MI142, GC1386: uniform four-gap construction G313 SKETCH;2,380 formulas/21 independent capacities/945 partitions pass. | One targeted Cloud carrying read; next question6+2 translation versus gap covers, no experiment yet or review halt.90-minute trajectory reflection completed, research13min. |
+
+| 2026-10-16 19:13 BST | GPT | Intel CPU | Claims B61/MI143: universal six-point span<=20 core plus arbitrary cancelling gap1..14, geometry only. |15,504 shapes/217,056 questions/3003 six-label tables, tenCPU seconds, independent physical/formula instruments; no target census or review hold. Research13min. |

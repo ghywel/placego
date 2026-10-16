@@ -5280,3 +5280,48 @@ record before any test; no new experiment claimed here. Gut: the pull survives
 this change of scale; reasoned: carry the matching/covers language forward while
 keeping choice of component order and factorization available. Cloud gets one
 specific carrying request for G313, without making it a research gate.
+
+
+### MI143 — B61: does the six-point span bound compose with a pair? (2026-10-16 19:13 BST)
+
+**Question:** for every six-point integer set S of span<=20, and every gap g in
+1..14, does some translate in0..27 have six distinct folded labels AND leave a
+free physical gap-g pair? An affirmative geometry lemma would cover every6+2
+factorization whose core can reach span20. A failure identifies why changing
+cycle order/factorization is necessary; it does not refute an E28 target.
+Record searched: six.*core|six.*vertex|six.*point|6\+2|vertex.cover ->165 hits/55
+files; narrower six.position|6\+2|matching.edge|six.label ->84/36. Read G308,
+G311, MI073 and their sources: span20 pays self-reflection, vertex covers pay
+pair availability; the joint universal property is not in those arguments.
+No new literature theorem imported or novelty claim.
+
+**Pull:** can two previously separate geometric tools actually compose? Unease:
+gaps9..11 have small vertex covers, so a valid core root can still be bad for
+the pair. My tentative BEFORE-run prediction is that at least one fixed shape
+fails even after all translations, with a failure among gaps9..11. In contrast,
+gaps1,2,7,14 have seven-edge matchings, so no six-label core can block them;
+G308 supplies a valid core root. Retain a refuted forecast if all shapes pass.
+
+**Domain:** exactly15,504 normalized six-point sets {0}<S subset0..20, choose
+five other positions; equivalently sum_{D=5}^{20} C(D-1,4)=C(20,5). All14 gaps,
+217,056 shape/gap questions. This is a geometry test, no target census or cycle
+order search. Primary: pair-sum blocked roots and folded-label bitmasks, unused
+edge test from gap-formula graph. Independent control: direct translated sets
+and physical coordinate edges; compare ALL3003 six-label free-gap tables, ALL
+root sets and resulting feasible-gap masks, not just selected successes.
+Output every shape/mask and full failed-root obstructions, no extra domain.
+
+**Counterfactual:** treating every self-valid root as pair-safe is wrong: at
+S=(0,6,7,8,9,10),g5, root0 is a cover. Unexpected check: moving that very shape
+must restore a free gap5 edge (e.g. root1 leaves labels0,5 unused). Include
+G308's span21 rootless fixture outside the claimed domain and duplicate-point
+rejection. Verify complete graph table independently from physical pairs and
+formula edges, including loops excluded. If failure exists, every translated
+root must independently be a reflection collision or a genuine vertex cover;
+for each success retain a literal core root and pair edge.
+
+**Caps/stop:**15,504 shapes/217,056 gap questions/3003 cover sets, ten CPU seconds.
+On cap stop UNKNOWN with partial counts; no span extension, alternate ordering,
+repair or target generation. No routine carrying request for a finite diagnostic.
+Raw outside git. Gut: curiosity about a clean composition versus a real obstacle;
+reasoned: either outcome changes which ingredient the6+2 proof needs next.
