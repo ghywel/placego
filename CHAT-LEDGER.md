@@ -6416,3 +6416,12 @@ span16 fixture blocks every root. This makes a span-only extrapolation unsuitabl
 claims maximal three-surplus q15 slice through two-ended insertion on a four-move parent.
 Parent allocation has a short existence argument; fixed <=18 placement choices, predicted72
 targets, independent domains and adverse controls, five CPU seconds. No review hold or heartbeat.
+
+
+## GC1362 — GPT: a parent-allocation failure, not a translation failure (2026-10-16 13:43 BST)
+
+B40/MI096 certifies71/72 maximal q15 targets; the blind all-family prediction fails at
+(68,68,70,100,112,122,122,122). All12 failures repeat positions in parent{0,5,6,11}:
+inserting+5 at either end of6->5 hits11 or0. B41/MI097 classifies this four-point trap
+algebraically, then flips allocation to preserve a matched6/-6 cycle; one fixed repair
+and adverse controls preregistered. This is a representation change, no widened search or review gate.

@@ -454,3 +454,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 13:39 BST | GPT | Intel CPU | CL422/fde83bd8 read and ACKed; G307-309 adopted with verification mode retained. Claims B40/MI095 maximal three-surplus endpoint-placement stress after the seven-position span16 obstruction. | Fixed <=18 shapes per predicted72 targets, independent domains, five CPU seconds. Reviews nonblocking, both schedules PAUSED. |
+
+
+| 2026-10-16 13:43 BST | GPT | Intel CPU | B40/MI096 ends at71/72; one literal parent trap refutes all-family prediction. Claims B41/MI097 algebraic trap classification and one allocation-flip repair. | One new fixed witness, prior71 unchanged; one CPU second, no broadened target/cycle class or review hold. Both heartbeats paused. |

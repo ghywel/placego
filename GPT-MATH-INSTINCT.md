@@ -3485,3 +3485,65 @@ Unexpected check: force all15 onto W when W<=15; parent must be rejected, even i
 coordinate formula could be written. Record how many actual targets require the two-edge split.
 This validates the allocation obstruction separately from placement. Review nonblocking; both
 heartbeats paused. No new claim to solving the full even family or mixed parity.
+
+
+### MI096 — B40 result: 71 pass, one literal trap (2026-10-16 13:43 BST)
+
+The72 targets agree across signed/direct/DP domains.71 have exact certificates in the fixed
+architecture; (u,v,W,Z)=(6,6,21,6), target(68,68,70,100,112,122,122,122), fails all12
+candidates by repeated coordinates. No distinct candidate fails reflection avoidance.
+One other target, (6,7,21,7), uses the second cut; the remaining70 pass the first.
+84 attempts:71 translated,13 repeated.8 targets have W<=15 and reject the all-on-W parent
+as predicted. Controls pass. CPU0.013354 seconds; raw outside git SHA256
+`f7a72f0689d567a766c020d0decb14edecab32222384b520fa7b611a92d92384`.
+Blind all72 prediction REFUTED; this architecture has stopped without adding choices.
+
+**Surprise:** failure is already in the four-point parent. For the failing target, splitting
+10 onto W and5 onto Z gives magnitudes11,1 and positions{0,5,6,11}. The -1 edge goes
+6->5. Inserting +5 before it needs the already-used11; inserting after it needs the
+already-used0. Translation cannot repair either literal equality. Both low-positive orders
+coincide because u=v. This explains every failed candidate without reflection or a larger search.
+**Gut:** the failure sharpens the pull: allocation and placement must communicate. **Reasoned:**
+preserving a matching negative edge may be better than reducing both edges by a fixed amount.
+
+### MI097 — B41: classify the literal trap and flip the allocation (2026-10-16 13:43 BST)
+
+Question: can the repeated-coordinate obstruction be recognized algebraically before choosing
+a parent? This changes the actual endpoint algorithm, rather than adding a target to a table.
+Record searched: seven.position, endpoint.allocation, two.ended; only current ledger hit,
+MI094-096 and B40 artifact read. No novelty claim or independent-review request for this tool.
+
+**Hand classification, PROOF-SKETCH.** A distinct four-position displacement permutation has
+positive moves u,v and negative moves -R,-T. On the -R edge x->y=x-R, insertion of one
+positive c can fail literally at BOTH ends only if x+c and y-c are old positions. These four
+positions are all distinct, so they exhaust the parent. Translate y to0: the set is
+{-c,0,R,R+c}, with -R at R. The largest point R+c must carry -T. If its endpoint were R,
+the remaining two positive moves could not map {-c,0} bijectively to {-c,R+c}; zero or a
+negative move would be required. Hence it ends at -c, and T=R+2c. The two positive moves are
+either both R+c, or R and R+2c, by the two remaining bijections. This exhausts the literal
+trap without looking at a family of targets.
+
+**Allocation flip.** Move this +c from the small negative edge to the other negative edge.
+The new parent magnitudes are both R+c. In the equal-positive case they match u=v=R+c,
+so the parent splits into two2-cycles instead of preserving the trapped four-cycle.
+For B40 with c=5, the other edge also receives two5 moves: original W=R+20,Z=R+5.
+The equal-positive case gives v+W=2R+25<=28 and u=R+5>=6, forcing R=1.
+The unequal-positive case would give v+W=2R+30>28. Thus THIS unavoidable single-edge
+trap is uniquely the failed target under the q15/sorting constraints. This does not claim
+that every possible multi-arm failure in arbitrary parameters is such a trap.
+
+For that target flip to putting all15 onto W, leaving the matching Z=6 edge unchanged.
+Use (+6,-6) at0,6 and (+6,+5,+5,+5,-21) at1,7,12,17,22. Pair labels are
+0,6,1,7,12,10,5, distinct. These two independently placed cycles give the exact deviation
+permutation; materialize the literal odd partition. This is an allocation change justified
+by the carrying obstruction, not a larger cycle search.
+
+**Predictions BEFORE validation:** this one fixed repair must certify; the earlier71 witnesses
+are rechecked unchanged, producing exactly the original72-target set, with no broader domain.
+Controls: keep the trapped parent and test both one-move sides, literal equality in each;
+omit the5-cycle's root1 (use0) and pair-label collision must reject; preserve coverage but
+change sums and reject. Unexpected: repaired seven-point witness has span22, far beyond the
+universal span15 guarantee; its separate cycles still embed, so the span barrier is a limitation
+of that sufficient tool, not a target obstruction. Cap one new input / one proposed repair,
+plus72 existing-certificate checks / one CPU second; stop on disagreement, no further repair.
+Both heartbeats paused; independent work does not wait on review.
