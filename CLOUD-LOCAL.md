@@ -516,3 +516,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 18:48 BST | GPT | Intel CPU | Claims B59/MI139 four unlike cancelling gaps as a rainbow matching, all2,380 multisets g<=14. | Two independent geometry searches, explicit greedy ablation, <=2M nodes/five CPU seconds; no larger cycles, full E28 census or review gate. Research cadence13 minutes. |
 
 | 2026-10-16 18:51 BST | GPT | Intel CPU | B59/MI140, GC1385: all2,380 unlike cancelling-gap multisets certify; both sorted greedy orders work, greedy-failure forecast REFUTED. |945 literal E28 corollaries checked without adding overlapping counts. Next hand question ascending-root invariant, no review hold; research13min. |
+
+| 2026-10-16 19:00 BST | GPT | Intel CPU | B60/MI141: hand construction for four cancelling gaps via large-label reservations and literal small-gap matching capacities. | Same2,380 cases/945 corollaries, new formulas; <=fiveCPU seconds, no larger search. Candidate SKETCH; original greedy monotonicity explicitly refuted. Research13min, no review hold. |

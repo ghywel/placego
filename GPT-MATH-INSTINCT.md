@@ -5127,3 +5127,103 @@ not all24 permutations. Padding witnesses are discarded before filler allocation
 The945 domain is all nonzero-move multisets balanced under sign in this fixed-role
 E28 model, not a claim about other pair vectors. Literature orientation found no
 usable theorem in the abstract actually read; no absence or novelty claim.
+
+
+### MI141 — B60: a hand construction for all four cancelling gaps (2026-10-16 19:00 BST)
+
+**Question:** replace B59's finite existence check by a uniform, inspectable construction
+that can supply tools for larger components. Same2,380 gap multisets; no domain growth.
+Record searched at block start: rainbow.match|different.*gap|mixed.*cancell|unlike.*piece
+->43 hits/13 files; follow-up rainbow.match|low.half|first.free|single.hole ->27 hits/12
+files. MI137-140, G311, actual sources and the stated prior-art scope read. No general
+rainbow theorem is imported or rediscovered here; the application below is a hand SKETCH.
+
+**A retained failed invariant, by hand.** Sorted-gap greedy roots need not increase.
+Gaps(3,11,13,14) give physical roots0,1,4,2 and pairs(0,3),(1,12),(4,17),(2,16).
+The third skips root2 because15 complements the old12, then the fourth can use2.
+So a monotone-root induction would be wrong even though B59's greedy succeeds.
+This suggests proving existence with a different rule instead of forcing that invariant.
+
+**Statement (candidate).** For any four gaps in1..14 there are four physical gap pairs
+in0..27 with eight distinct folded labels. Consequently any at most four cancelling
+components satisfying this gap bound can be placed (pad to four and discard extras).
+
+**Matching capacities used.** On the literal integer interval0..N-1, edges of gap g
+form paths on residue classes modulo g. Alternating edges give a maximum matching of
+size sum_{a=0}^{g-1} floor((floor((N-1-a)/g)+1)/2), omitting empty residues.
+The values needed, directly obtained from these path lengths, are:
+
+|g|N=11|N=12|N=13|
+|---|---|---|---|
+|1|5|6|6|
+|2|5|6|6|
+|3|5|6|6|
+|4|4|4|5|
+|5|5|5|5|
+|6|5|6|6|
+|7|4|5|6|
+
+Deleting d vertices destroys at most d edges of ANY chosen matching. This elementary
+capacity fact, not a rainbow theorem, is the only generic matching ingredient below.
+
+**Place the large gaps.** Let ell be their number, where large means g>=8; order
+them d1<=...<=d_ell. Assign increasing upper labels
+R_i=13-ell+i (i=1..ell) and lower labels L_i=27-R_i-d_i. The L_i strictly decrease,
+lie in0..5+ell, and are distinct from the R_i in14-ell..13. The physical pairs
+(L_i,27-R_i) have gap d_i and labels L_i,R_i. All those coordinates lie in0..27.
+The remaining small gaps<=7 can be placed literally in0..13-ell, avoiding the ell
+occupied lower labels L_i. Every coordinate in that interval equals its folded label.
+
+**ell=0.** Process all four small gaps in ascending order. For each take the smallest
+unused nonnegative x and pair it with x+g. Inductively the successive roots increase,
+and the gaps do not decrease, so each new upper endpoint exceeds all old upper
+endpoints and roots. It is free. Before the j-th pair there are2(j-1) used positions,
+so x<=2(j-1)<=6, and x+g<=13. Thus every pair fits in the low half, where reflection
+cannot occur. This is a genuine monotone-root argument only in the UNFOLDED low half.
+
+**ell=4.** The large-pair construction already finishes.
+
+**ell=3.** One small gap remains on0..10 with three forbidden labels. Its fixed
+path matching has at least4 edges (N11 column), so one edge survives.
+
+**ell=2.** Two small gaps remain on0..11 with two forbidden labels. Every gap other
+than4 has a matching of size>=5, hence >=3 after deletion; gap4 has size4, hence>=2.
+If both gaps are4, take two edges from the same surviving matching. Otherwise place
+the gap4 first if present, else either gap first. The other has a surviving matching
+of size>=3, and the first edge removes at most two of its edges; one remains.
+
+**ell=1.** Three small gaps remain on0..12 with one forbidden label h. A gap outside
+{4,5} has matching size>=6, leaving>=5; gaps4/5 leave>=4. If there is a gap outside
+{4,5}, place it LAST. Place the other two using their fixed matchings, avoiding h
+and earlier endpoints. The available matching sizes are at least4, then2, then1,
+so all choices can be made.
+
+If all three gaps are4 or5, write them g1<=g2<=g3 and use the three pairs
+(0,g1),(1,1+g2),(2,2+g3). Six vertices are distinct, their span D is6 or7, and
+3 is absent while0 is present. Translate this shape inside0..12 to avoid h.
+There are13-D allowed translations. If D=6 there are seven, more than six
+vertices, so one avoids h. If D=7 there are six; if all were blocked, the
+six original vertices would have to be h,h-1,...,h-5, six consecutive integers.
+They are not consecutive (0 is present,3 absent). Hence a translation exists.
+Translation changes no gap; all low labels avoid the one occupied lower label.
+
+This exhausts ell0..4. All selected low labels avoid the large L's and all upper R's,
+and every gap has a disjoint pair. Lifting, filling complementary-pair slots, and
+permuting selected tokens is the established allocator, not an extra existence claim.
+It proves no statement about unlike components with more than two vertices.
+
+**Validation predictions BEFORE the new formulas run:** all B59's2,380 multisets
+certify under this new construction, not the old greedy/DFS. All21 table cells
+agree with independent literal-graph subset-DP matching; every asserted capacity
+remains sufficient after prescribed deletions. The same945 target corollaries
+pass both literal checkers, retaining full exact domains.
+Controls: force root0 in compact case(4,4,4,14), which must hit the occupied label0;
+reverse large-gap/R ordering on(8,9,10,11), which must repeat L; retain the
+monotone-root counterexample; coverage-preserving wrong sums rejected.
+**Unexpected tight check:**(4,4,8,8) leaves exactly two edges of the fixed gap4
+matching after its two lower holes, so the ell2 repeated-weak branch is necessary
+for the stated capacity proof (do not assume all residual matchings have>=3).
+Caps: same2,380 multisets/945 partitions,21 tiny matching-DPs, fiveCPU seconds;
+no fallback or cap raise. Raw outside git. REFUTED-BY: any formula/capacity/domain/
+control failure. Gut: specific delight that the wrong invariant led to a cleaner
+construction; reasoned: the hand proof, not the count, is the new contribution.
