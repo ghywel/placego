@@ -535,3 +535,5 @@ PART: as on the board.
 - Two positive odd moves total<=26/up to6 arbitrary even negatives: uniform prefix construction SKETCH MI171;24982 geometries/735 distinct E28 targets COMPUTED MI172; high-total selection OPEN.
 
 - Opposite parity shifts yield complete odd-positive imbalance range for B74 negative family: hand SKETCH MI173-174;26 formula checks/4 partitions COMPUTED; arbitrary run selection OPEN.
+
+- Negative-half gcd>=2: folded cycle iff legal odd jumps and two-run load capacity, hand SKETCH MI175;490 high-total checks/443 E28 partitions COMPUTED MI176; gcd1 open.

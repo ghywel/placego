@@ -7610,3 +7610,72 @@ or cap, no expanded profile range, fallback or raised cap. Raw outside git.
 Gut: delight that the sumset obstruction contracts to an exact numerical
 criterion in a real class. Reasoned: remaining hard geometry is gcd1 and/or
 other odd-move sign structures, not hidden in this result's statement.
+
+### MI176 — B77: capacity is exact when negative halves share a divisor (2026-10-16 22:47 BST)
+
+**General criterion SKETCH; finite profile evidence COMPUTED.** The12375
+sorted arithmetic candidates yield159 retained common-divisor/high-total profiles
+and490 p/q questions:476 constructions,14 capacity refusals. Reachable subset
+sums agree in FULL between the bitset/recovery instrument and independent indexed
+mask enumeration on every retained profile. Every admitted geometry passes
+literal reflection/sign reversal. All443 eligible E28 targets have exact odd
+partitions checked by old/generic instruments;443 distinct sorted targets, not
+added to earlier coverage. There are107 successful odd-divisor constructions,
+so the result is not only an even-half-size trick. CPU0.078908s,
+peakRSS16,584,704bytes. No permutation/root/role search, repair or cap increase.
+The finite set supports the construction; the proof supplies the arbitrary-M/N
+criterion, still awaiting an independent carrying read.
+
+All controls pass. General-M fixtures at6,16,22 certify, including tight folded-
+label capacities. The d8x3,p23/q25 case has NO two-bin capacity, so no cycle for
+those FIXED moves by the hand necessity argument. The d4x6 case constructs.
+The gcd3 example p=q21,d=(3,3,3,3,3,6) constructs using the second root. p27/q21
+is rejected by the odd-jump bound despite load feasibility. In gcd1's central
+example, the fixed9/12 split fails all four permitted roots, while the known
+B74 alternative split works: capacity alone is not promoted outside the theorem.
+The source's refusal assertion was simplified after the run by removing a dead
+conditional; its evaluated predicate is identical, no mathematical run repair.
+
+**What changed.** Negative-run selection is COMPLETE within this gcd>=2 class:
+choose any capacity-feasible split, any within-run order, then one of two residue
+roots. Necessity covers every cyclic ordering of these moves. It is an actual
+existence/nonexistence criterion with a constructive direction, not a table of
+orders or a sample-derived assertion. Unanchored TWO-odd-POSITIVE plus negative-
+even components only; full E28/k_min2 may have other sign patterns, multiple
+components, mixed anchors or a different viable slot vector. No target is
+refuted by a fixed-move capacity refusal. Old prize lanes remain held.
+
+**Niggle sweep.** (1) The excluded root residue may be conservative: yes,
+H-h=0 mod g need not cause a collision; avoiding it is sufficient, and one of
+two consecutive h always does. (2) Could the two roots fail window bounds?
+R-L>=1 follows separately in w>=0 and w<0 from both run capacities and the
+individual odd bounds; general-M controls support both tight cases. (3) More
+vertices than labels? g>=2 gives K>=2N, while p/q<=2n-3 gives K<=2n-3,
+so N<=n-2. (4) A cyclic ordering could avoid the two-load partition necessity?
+There are only two parity changes, so each negative run is monotone; its extent
+is exactly twice its load. (5) Scope slipping to gcd1? Explicit failure retained.
+(6) Verification self-upgrading? General claim stays SKETCH. All local niggles
+resolved; this is the right point for ONE targeted independent carrying read.
+
+**Next guard/question (one paragraph; no new probe).** Gcd1 needs more than
+load feasibility in general: e.g. p=q25,d=(2,4,4,5,5,5) has a12/13 split,
+but a legal +25 edge uses folded labels{0,2}; the alternative1->26 is a loop
+at label1. Two positive25 edges cannot both occur with distinct labels. This
+is another fixed-move obstruction, not a target refutation. Before seeking a
+universal gcd1 run selector, retain the long-edge matching/multiplicity constraints
+as well as capacity; some cases necessarily require changing slots/sign roles.
+The live question is a sufficient hole-selection rule in that remaining class,
+or a principled role change at these obstructions, rather than more instances.
+
+**Review choice/gut.** Satisfaction at an exact iff with genuine refusals,
+unease if this were allowed to masquerade as a full target theorem. I would
+choose the remaining geometry afresh. Request Cloud's carrying read of MI175's
+load necessity, R-L>=1 and modulus step. Retire the older MI167-only request
+as lower priority (MI167 remains SKETCH), so this does not create another queue
+item; no halt or permission gate. The simpler family admission limitation is
+already recorded, and the new criterion is the more useful scrutiny target.
+
+Artifact `cited/instinct/b77-divisor-runs-1d660fd7cecfda6e.json`,198288bytes,
+SHA256 `1d660fd7cecfda6ef66353bc7277ee3d5ec05bd6285dc50d951d913edf1a59f9`.
+Preregde4d6970, source tests/probes/instinct/path_forest_divisor_runs.py.
+Immutable receipt/manifest verified. No formal proof number or novelty claim.
