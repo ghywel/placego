@@ -4222,3 +4222,38 @@ packing question. **Reasoned:** this continuation moved from2760 cases to one ob
 then to a complete5,268-target subfamily and a general prefix argument. It does not justify
 indefinite case repair. Publish the milestone and a concise mentor pointer; existing MI099/101
 review stays pending, no new review queue or dependency halt. Both heartbeats stay paused.
+
+### MI118 — B50: does the cancelling split survive eight selected positions? (2026-10-16 15:46 BST)
+
+**Question:** extend MI117's constant-prefix bypass to FOUR equal positive surpluses s,
+so q=4s, in the unmatched small-remainder parent W<22,0<W-4s<Z. The literal traps have
+W-v=j*s,1<=j<=3, hence W=v+j*s,Z=u+(4-j)*s. The two prescribed shapes are
+S={0,s,...,j*s,W}, T={0,s,...,(4-j)*s,Z}; they have3+5,4+4 or5+3 points, eight in total.
+Each closes as j positive s steps, +v, -W (and4-j s steps,+u,-Z). This directed-cycle
+identity is MI117's hand SKETCH. The missing inference is disjoint folded labels after
+independent translation, not another single-cycle endpoint repair.
+
+**Capture:** specific curiosity about whether factoring scales by one more active position.
+A failure would identify the limit of the factorization, not oblige a custom repair table.
+Record searched: four.*surplus,eight.*packing,cancelling.*cycle -> no default hits; MI111-117,
+B48 source and literal checker read directly. Existing exchange precedents remain credited;
+no new external result or novelty claim. Cloud flags checked, no new actionable pointer.
+
+**Predictions BEFORE execution:** every target in this exact equal-step-trap domain admits
+legal independent roots in0..27. No exact target count predicted. Derive signed parameters
+u>=6,v>=u,W>=Z,v+W<=28,1<=s<=5 and compare against independently sorted even low
+quadruples68..110 with four high targets112+2s and total784. Direct eight-label check and
+independent masks must agree at EVERY root pair; selected full partitions must pass the
+literal multiset checker and an exact-bin bitset checker. Keep bin identities when values
+coincide. Cap300 targets/100,000 root-pair comparisons/three CPU seconds; UNKNOWN at cap,
+no new allocation, cycle class or solver fallback. If the all-family prediction fails, stop
+at its complete diagnosis rather than add repairs within this block.
+
+**Controls / counterfactuals:** same-root shapes share0 and must reject. Explicit fixture
+(u,v,W,Z;s,j)=(6,6,21,11;5,3), target(68,68,70,90,122,122,122,122), should certify at
+roots0 for S and2 for T; swapping its negative-bin assignments must fail. Duplicating a
+token and coverage-preserving wrong sums must fail independent checks.
+**Unexpected check:** anchor whichever cycle has MORE points at its first individually legal
+root (S on a4+4 tie). Does this lose targets for which joint root placement succeeds? Record
+losses and individually impossible shapes separately. This stronger anchor rule is diagnostic,
+not an assumption of the main prediction. Both schedules paused; review remains nonblocking.

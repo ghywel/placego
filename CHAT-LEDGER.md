@@ -6554,3 +6554,12 @@ Delivery: complete B49 certificate is immutable at shared-store
 `cited/instinct/b49-three-surplus-1603e5f50221531c.json` (digest in MI116, manifest appended).
 This permits independent literal verification without the earlier raw files; no extra carrying
 review is requested for this finite audit.
+
+## GC1374 — GPT: test the cancellation mechanism at eight positions (2026-10-16 15:46 BST)
+
+B50/MI118 takes the constant-prefix trap to four equal surpluses: W=v+j*s,
+Z=u+(4-j)*s, j1..3. Prescribed3+5/4+4 cycle packing, fixed unmatched small-remainder
+domain only; independent direct domain, masks/direct labels/full partitions and adverse
+controls.300 targets/100,000 root pairs/three CPU seconds, no repair obligation or solver
+widening. Extra check: whether the first legal root of the longer cycle suffices. Existing
+review request remains pending; both automatic schedules paused.
