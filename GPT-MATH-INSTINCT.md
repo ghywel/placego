@@ -4389,3 +4389,72 @@ shapes, separately from joint packing failures; B51 has already killed the greed
 Gut: the cleaner question is what can be factored at all, followed by placement. Reasoned:
 one canonical test isolates the arithmetic boundary and the geometric price. Both schedules
 remain paused; pending hand reviews do not gate this independent finite diagnostic.
+
+### MI123 — B52 result: arithmetic boundary isolated, two canonical packing obstructions (2026-10-16 15:55 BST)
+
+Full sorted four-low/four-high domain:7,828 targets. A positive subset sums W in7,223;
+the other605 are arithmetically primitive for two-cycle factorization, counted only.
+Canonical fixed shapes certify7,221/7,223, with1,469,303 direct/mask root-pair comparisons
+agreeing, independent direct/DP domain equality and both partition checkers/controls passing.
+Positive part sizes4+2,5+1,3+3,2+4,1+5 occur1,495/399/3,597/1,681/51. No individually
+rootless shape;193 successful targets require leaving the first legal longer-cycle root.
+CPU4.592863 s; raw outside git SHA256
+`e25cb282fabd0cade077a3482743ff735c94f89cc25af39707358b64b99e66d2`.
+The blind all-canonical claim is REFUTED. Every failure is retained; no alternate subset
+was searched in B52. These are construction failures, not nonburnable targets.
+
+**Two exact failures:**
+- (u,v,W,Z;steps)=(8,8,20,6;2,2,2,4), target(72,72,72,100,116,116,116,120).
+  Canonical part for W is4+8+8, shape{0,4,12,20}; the other is2+2+2, shape{0,2,4,6}.
+- (8,10,18,8;2,2,2,2), target(72,76,76,96,116,116,116,116).
+  Canonical part is8+10, shape{0,8,18}; the other is2+2+2+2, shape{0,2,4,6,8}.
+
+**Hand obstruction (SKETCH):** every step is even, so each cycle stays on one parity of
+physical indices. Identify the14 positions of that parity with0..13. If the other cycle
+uses opposite parity, reflect it by x->27-x first; this preserves folded labels and yields
+the same parity. Its equally spaced block becomes an interval in the14-position line,
+possibly reflected, of length4 or5.
+In the first case the scaled sparse shape is{0,2,6,10}. Its internal complement gaps have
+length at most3; after any translation within0..13 both exterior gaps also have length at
+most3 (span10 leaves3 exterior positions). A four-position interval cannot fit. Permuting
+the positive moves merely permutes the gaps2,4,4, so no within-part order fixes this.
+In the second case the scaled sparse shape is{0,4,9}, whose complement gaps and exterior
+gaps have length at most4; a five-position interval cannot fit. Reversing its two positive
+moves gives gaps5,4 instead of4,5 and changes nothing. This obstruction concerns the chosen
+FACTOR PARTITION, not just the canonical order or greedy root.
+
+**Forced alternative arithmetic:** in case1, the small donor6 can receive either2+2+2
+(failed partition) or2+4 (the only other multiset choice); in case2, donor8 can receive
+either four2s (failed) or the single8. Thus each has one alternative positive-multiset
+factorization, up to equal-item identities. This suggests the next test without a general
+subset/order search. Gut: the obstruction is informative rather than frustrating; it says
+that a minimal-cardinality factorization can be geometrically rigid. Reasoned: test these
+two analytically forced alternatives, then leave the primitive605 as the next real boundary.
+
+### MI124 — B53: two forced factorization changes and complete factorable-domain audit (2026-10-16 15:55 BST)
+
+**Question:** do the two unique alternative positive-multiset partitions bypass MI123's
+interval obstruction, completing the arithmetic-factorable four-surplus domain? Record
+searched: gap.*interval.*packing,canonical.*factor,605 -> no default hits; MI120-123 and
+B52's two exact failures read directly. No novelty claim or external theorem used.
+
+**Explicit formulas BEFORE validation:** case1 selected owner->index is
+{4:0,5:2,0:4,1:12,2:20,6:8,7:10,3:14}. The W cycle has positives2,2,8,8 and
+shape{0,2,4,12,20} at root0; the Z cycle has2,4 at root8. Case2 is
+{4:0,5:2,6:4,7:6,1:8,2:18,0:3,3:11}, W positives2,2,2,2,10 at root0,
+and the single-positive8 cycle at root3. No alternative beyond these two formulas is tested.
+
+**Predictions:** both materialize and pass multiset plus exact-bin/bitset checks. All7,221
+old witnesses remain unchanged; their union with the two formulas equals an independently
+sorted/DP-enumerated factorable domain of7,223 within7,828 four-surplus targets. Omit either
+new target and equality fails by one; duplicate-token and wrong-sum controls reject.
+**Unexpected check:** validate the gap obstruction against ALL unique positive orders of
+the OLD sparse parts: three permutations of4,8,8 and two of8,10, with every root pair
+against the old dense block. Predict all928 physical root-pair checks reject. This is a
+diagnostic of the two failures, not a search for another construction. Cap2 new formulas,
+2,000 old-root checks and four CPU seconds INCLUDING rechecking7,221 certificates and direct
+domain equality. Failure/cap is retained, no widened family or fallback.
+
+Gut: prefer an explained factorization choice over changing roots indefinitely. Reasoned:
+finish this finite boundary honestly; the605 primitive move multisets are still unsearched.
+Both schedules paused; no new review queue or review dependency is created.

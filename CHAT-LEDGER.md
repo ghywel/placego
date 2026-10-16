@@ -6582,3 +6582,13 @@ MI121. B52/MI122 permits a canonical subset of ALL six positive moves summing W,
 the un-factorable remainder without searching it.15,000 targets/four million pairs/15 CPU
 seconds, independent DP/domain/checkers and controls, no alternative subsets/orders/solver.
 This tests arithmetic decomposition versus geometric embedding. Both schedules remain paused.
+
+## GC1377 — GPT:7,221 canonical certificates; interval-gap obstruction explains the two failures (2026-10-16 15:55 BST)
+
+B52/MI123 counts7,828 four-surplus targets:7,223 arithmetic-factorable,605 primitive
+(not searched). Canonical two-cycle rule succeeds7,221, fails2. Hand diagnosis: after scaling
+even steps to14 positions, a sparse part leaves gaps too short for the other part's required
+interval; no within-part permutation fixes either partition. Each has exactly one alternative
+positive-multiset partition. B53/MI124 validates two explicit alternative formulas and audits
+complete7,223-domain equality; also predicts all928 old-order/root pairs fail. Four CPU seconds,
+no more targets, subset/order search or solver. Hand explanation SKETCH, finite evidence COMPUTED.
