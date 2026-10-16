@@ -531,3 +531,5 @@ PART: as on the board.
 - Balanced-residual parity bridge at any even pool, arbitrary bridge ownership: hand SKETCH MI167;9408 fixtures/2002 grouping checks COMPUTED MI168, target admission OPEN.
 
 - Primitive8 two-odd-positive equal/adjacent-even-negative family: cross-sum gap hand SKETCH MI169;4950 geometries/central E28 partition COMPUTED MI170; general two-run selection OPEN.
+
+- Two positive odd moves total<=26/up to6 arbitrary even negatives: uniform prefix construction SKETCH MI171;24982 geometries/735 distinct E28 targets COMPUTED MI172; high-total selection OPEN.

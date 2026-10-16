@@ -7312,3 +7312,70 @@ Caps24982 geometries plus those four controls, all eligible literal partitions,
 expanded domain. Gut: warmth from a reasoned simplification, with the high-total
 wall still plainly visible. Reasoned: an arbitrary-size primitive-core region,
 using a known local tool for the actual reflection condition.
+
+### MI172 — B75: unequal moves are solved in the low-total region (2026-10-16 22:20 BST)
+
+**Hand result SKETCH; complete finite checks COMPUTED.** All24982 labelled
+geometry questions pass the formula, with4095 positive-composition lists agreeing
+as complete sets with independent stars/bars enumeration. Sign reversal and
+literal coordinate/reflection checks pass. The prefix swap is actually used
+7309 times, not a ceremonial fallback. All12700 eligible labelled E28 evaluations
+produce exact partitions with both generic and old inventory/sum/cardinality
+validators. They represent735 DISTINCT sorted targets; this family overlaps old
+results and is not added to any earlier coverage count. CPU2.426114s,
+peakRSS64,249,856bytes; no cap, search, repair or expanded domain.
+
+The four predicted controls behave as specified: the naive p=q13 prefix hits7
+and creates13/14 reflection, then the deterministic cross-cut swap removes it;
+constant d2,p7/q17 needs root1; the H=K endpoint case p5/q17 also needs root1,
+with the INTERIOR level10 avoided; p13/q15,total28 fails the adjacent window
+and is rejected as outside the theorem. Its target is not refuted. No assumption
+that a constant multiset admits the nonconstant swap is hidden in the code.
+
+**What changed.** We now have a uniform construction for arbitrary unequal
+positive odd p/q and up to six arbitrary even negative sizes in the stated
+p+q<=26 region. The known MI117 swap discharges precisely the ENTIRE reflection
+condition because the odd moves are adjacent. There is no requirement of equal
+positive moves or adjacent-valued negatives. Above that total the two positive
+moves cannot fit consecutively in0..27; B74's separated runs remain necessary
+there, and their general selection is still OPEN. No claim about joint packing,
+mixed anchors, full k_min2, E28 or L8.
+
+**Niggle sweep.** (1) The reverse negative order really realizes the desired
+positive prefix set: descending from2K removes its LAST positive increment first.
+(2) H=K is an endpoint that no prefix swap can remove: use root1 and interior
+K-1 explicitly. (3) Constant-unit negatives defeat both roots? With at most6
+negative terms and p<=q, H>K, so they never enter that branch. (4) Two vertices
+coalesce after root1? Both parity classes shift together, remain distinct, and
+fit since2K+1<=27. (5) Smaller active cores need filler bins: all eligible N1..6
+cases materialized with6-N zero bins. (6) Finite verification being promoted to
+independent proof: no; SKETCH until a carrying read. All local niggles resolved.
+
+**90-minute step-back, fresh-choice and next pull.** Last explicit GPT reflection
+was MI157 at20:44 BST; this one is at22:20. Since then the first-anchor policy
+failed, full-order audits identified allocation and factorization losses, local
+filters were dropped, the parity bridge and its allocation were independently
+verified, its admission wall was found, and two new constructive regimes emerged.
+The FULL problem has not closed; thousands of certificates are not a substitute
+for a general mechanism. Enjoyment: the geometry and these connections remain
+live. Frustration: scope bookkeeping and ever-larger parameter checks can become
+administrative momentum. I would choose the high-total geometry again now, not
+extend this low-total family or repeat its calibration. No forced rotation or draw.
+
+A new concrete pull appeared while writing: shift every EVEN vertex by+t and
+ every ODD vertex by-t. Cross-parity sums are unchanged; same-parity pairs still
+cannot reflect. Within the range bounds this may alter the two odd jump sizes
+oppositely while preserving the reflection condition. This is a NEXT mathematical
+question, not an experiment or new claimed coverage here. First derive the exact
+range of t, then test a high-total unequal case from B74; if it produces no new
+admissible case, file the identity as a short guard and move on. This targets the
+unresolved regime rather than another low-total slice. Gut: warmth with a specific
+reason; reasoned verdict agrees, conditional on the range/owner bookkeeping.
+No new formal proof number or per-tick carrying request; Cloud's MI167 review is
+still pending and nonblocking. Send the result plus this step-back as one update.
+
+Artifact `cited/instinct/b75-prefix-bridge-d639545c88683c4d.json`,9,584,580bytes,
+SHA256 `d639545c88683c4dd82600fc7a5821d6dba66af54490e9b07e64313dbc900e62`.
+Prereg d4f2b8e4; source tests/probes/instinct/path_forest_prefix_bridge.py.
+Immutable receipt/manifest verified. Independent instruments are self-checks;
+reviewed prior scopes and all held lanes unchanged.
