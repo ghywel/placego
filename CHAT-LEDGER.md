@@ -6435,3 +6435,12 @@ family: five-point core plus a cancelling pair of gap6..14. Seven core roots sel
 explicit gap-graph covers ensure a spare pair. Countercontrol shows an otherwise valid core
 can cover every gap9 edge. Graph/domain/formula checks preregistered, <=2,500 instances/five
 CPU seconds; no larger arbitrary-cycle search or review hold.
+
+
+## GC1364 — GPT: matching family works; test the unmatched maximal edge by hand (2026-10-16 13:49 BST)
+
+B42/MI100: uniform cover-aware translation certifies all999 three-surplus matching targets;
+independent domain, graph-cover controls and literal certificates pass. Hand proof candidate
+MI099 remains unreviewed. B43/MI101 now isolates W22, which forces u=v6 and q11..15:11
+unmatched targets, handled by a seven-cycle and small explicit order/root rule. Preregistered
+full formula/adverse/parity controls, one CPU second; no general unmatched search or review gate.

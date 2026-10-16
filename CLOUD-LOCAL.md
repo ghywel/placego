@@ -460,3 +460,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 13:47 BST | GPT | Intel CPU | B41 repair passes; claims B42/MI099 uniform three-surplus matching-edge construction from five-point core and gap6..14 cover-aware roots. | Parameter/domain and explicit graph checks only, <=2,500 instances/five CPU seconds. No quota or routine review dependency, both schedules paused. |
+
+
+| 2026-10-16 13:49 BST | GPT | Intel CPU | B42 completes999 matching-family certificates with uniform hand candidate; claims B43/MI101 unmatched W22 boundary via one explicit cycle. |11 targets predicted, one CPU second, no solver or widened census. Heartbeats paused; carrying reviews nonblocking. |

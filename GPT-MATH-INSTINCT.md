@@ -3642,3 +3642,67 @@ COUNT alone is insufficient, even in the matching family. Wrong-sum coverage-pre
 mutation and a forced occupied gap endpoint must be rejected. All first72 maximal-surplus
 targets are not claimed matching targets; retain that scope distinction. Both schedules
 paused, reviews nonblocking; the scope stays within this named structural family.
+
+
+### MI100 — B42 result: a matching edge can be preserved uniformly (2026-10-16 13:49 BST)
+
+All999 parameter instances give999 distinct checked targets. The set equals the independent
+two-negative target domain filtered by a matching positive/negative magnitude. Graphs from
+physical indices and from folded-label equations agree; six-edge matchings and the2/2/4
+exceptional five-cover classifications agree exactly. Every prescribed seven-root set fits;
+each selected valid core root leaves a free gap-g edge. All whole-odd certificates pass.
+The bad root0 control is a valid core that blocks every gap9 edge; restricted root4 repairs
+it. Forced occupied endpoint and coverage-preserving wrong sums are rejected. CPU0.131515 s.
+Raw outside git SHA256 `d03a0e92d5878e200535ec0c8016220a328668f1d3e16c328d341d6ede0573c8`.
+
+Finite family COMPUTED; MI099 is a uniform hand candidate pending independent verification.
+It does not use B40's72-case table or assume seven-point translation from a span bound.
+**Niggle sweep:** allowed roots have their own distinct labels<=8, including isolated8 at g11;
+seven roots fit physically, not only formally; five-cover obstruction is checked before packing
+the pair; gap graph excludes loops; large-bin equality is relabelled stably; neutral bin remains
+filler-only; selected-token permutation and literal sums are checked independently.
+**Gut:** warm pull because the root choice now protects the next component. **Reasoned:** the
+remaining nonmatching extreme is informative; take one such boundary by hand before considering
+any whole three-surplus search.
+
+### MI101 — B43: the unmatched maximal-negative boundary (2026-10-16 13:49 BST)
+
+Question: does the other extreme, W=22, admit a uniform three-surplus construction even
+though no cancelling edge exists? This tests actual unmatched geometry where the matching
+argument cannot apply. Record searched: gap.*matching, matched.*three, gap.?9 -> no earlier
+default-record hits; MI069/090/094-100 and actual sources read. No novelty claim.
+
+**Hand candidate, PROOF-SKETCH.** Sorting v+W<=28 with W=22 forces u=v=6. For q=a+b+c,
+Z=q-10>0, so11<=q<=15 and1<=Z<=5. Hence no negative magnitude equals the low positives6.
+Put R=22-q in7..11 and A=16-q in1..5. Use the7-cycle
+(+v,-Z,+u,+first,+middle,+last,-22) at positions
+0,6,A,R,R+first,22-last,22. These are all distinct:0<A<6<R<R+first<22-last<22.
+The middle/late positive-prefix positions P=R+first and Q=22-last satisfy P<=16,Q>=17
+and P+Q>=29; early sums are below23. Only a few early/late pairs can block a small root.
+
+Choose these explicit orders/roots:
+- q>=13: sorted order(a,b,c), root0. Here last=c=5. No old pair sums27:
+  A+22<=25, Q+R=44-q-5<=26, Q+6=23; P+R<=44-2q+5<=23,
+  P+6<=22 and P+A<=21; late/late sums are>=29.
+- q=12 and c=4: necessarily(4,4,4). Every coordinate is even, so root0 is safe.
+- q=12 and c=5: sorted first=a is2 or3. Use root1, so only original sums25 are forbidden.
+  A=4,R=10,Q=17,P=12 or13. None of their distinct pair sums is25.
+- q=11 and a<=2: sorted order, root1. A=5,R=11, P=11+a<=13 and last=c>=4.
+  A+22=27, R+P<=24, Q+A=27-c<=23, Q+6=28-c<=24; all other
+  possible early/late sums also miss25, and late/late sums are>=29.
+- q=11 and a>=3: the multiset is(3,3,5) or(3,4,4). Put one3 LAST and use root2;
+  only original sums23 are forbidden. Now A=5,R=11,Q=19 and P=14 or15.
+  No distinct pair sums23; max translated index24 is in the pool.
+
+This exhausts q11..15 and gives literal complementary-pair-disjoint token cycles. Fill all
+remaining slots and permute seven selected odds simultaneously. The hand claim is exactly
+this maximal-negative three-surplus boundary, not all unmatched targets.
+
+**Predictions BEFORE validation:** exactly11 sorted(a,b,c) choices, with q subtotals4,3,2,1,1
+for11..15; compare to independent sorted even target quadruples, W22 fixing three68 values
+and t4=112-2(q-10). All explicit formulas must certify. Cap20 targets/one CPU second;
+no order search or cap increase. Controls: using root0 for q11 fails through A+22=27;
+using sorted root1 for(3,3,5) at q11 fails through R+P=25; wrong sums with coverage
+preserved rejected. Unexpected: all(4,4,4) positions are even, so every in-pool root works
+despite span22 and seven selected bins. This isolates parity from the universal span15 limit.
+Both schedules paused; no review hold and no broader unmatched-family search.
