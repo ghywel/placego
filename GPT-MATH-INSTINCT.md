@@ -3172,3 +3172,38 @@ translation, raw shape and translated witness kept separately, the stronger span
 full family deduplicated against an independent set, and hand-review statuses preserved.
 B32-B35 were worked without waiting for a review. One batched mentor update will be delivered;
 no new urgent carrying-read queue or review hold is imposed. Both heartbeats remain paused.
+
+
+### MI087 — B36: six-position translation before a second subdivision (2026-10-16 13:01 BST)
+
+Question: do six DISTINCT positions of span <=20 always have a translate in 0..27
+with distinct folded pair labels? This would let a second surplus use the same geometric
+separation as B35, provided its parent subdivision controls literal collisions and span.
+Record searched: six.position, span.20, two.surplus -> no default-record hits; MI079-086
+and the actual B34/B35 sources read directly. No new prior-art or novelty claim.
+**Pull:** the counting argument is close, but its endpoint cases matter; the span-21
+fixture is a useful warning against extrapolating the five-position result.
+
+**Hand candidate (PROOF-SKETCH).** Normalize min S=0, span D. A translate r is blocked
+only by an opposite-parity pair x,y with x+y=27-2r. If D<=18 there are at least ten
+roots and at most nine cross-parity pairs. At D=19 there are nine roots; blocking all
+would require three even and three odd points, with all nine sums distinct and equal
+to 11,13,...,27. Endpoints are 0 and 19. The least odd point is then 11 and greatest
+even point 8. But 0+19=8+11, a duplicate, contradiction. At D=20 there are eight roots,
+requiring odd sums 13,15,...,27. Endpoints 0,20 are even. Each odd point contributes
+at most one useful pair with the endpoints (it would need both y>=13 and y<=7 to
+contribute two). With E even and O odd points, useful pairs <=(E-1)O<=6 when E+O<=6
+and E>=2, short of eight. Thus a root exists. Fewer points satisfy the same bounds.
+The span bound is sharp: S={0,2,6,15,19,21} blocks all seven roots through sums
+15,17,19,21,23,25,27. Literal duplicates remain a separate failure.
+
+**Predictions BEFORE validation.** Check every six-point shape with endpoints 0,D for
+D=19,20: C(18,4)+C(19,4)=6,936 shapes, all with a valid translate. Independently compare
+blocked-root pair sums with direct folded-label equality. Check all lower-cardinality
+shapes at these endpoints too, total <10,000 inputs; counting carries D<=18, with small
+explicit parity controls. Cap 10,000 shapes / five process CPU seconds; stop on disagreement
+or a failure inside the claimed bound, without widening. Retain the sharp span-21 failure.
+Unexpected check: deleting any point from that six-point obstruction must restore a root
+(the five-position theorem applies at span <=21, even if endpoints move). A duplicated
+position must be rejected before translation, and an out-of-pool root rejected separately.
+No census of E28 or arbitrary cycle search; both heartbeats remain paused, no review hold.

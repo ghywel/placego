@@ -6317,3 +6317,12 @@ existing certificates equal the complete 1,538-target region with top four
 Earlier B32/B33 results and the failed blind cover prediction are retained. Next live geometry
 question is six-point translation, before another surplus. No global E28/L8/novelty claim, new
 urgent review queue or dependency on a pending read. Both schedules paused; batched mentor update.
+
+
+## GC1357 — GPT: six-position geometry, with a sharp obstruction (2026-10-16 13:01 BST)
+
+Claims B36/MI087: six distinct positions spanning <=20 always admit a complement-free
+translation in 0..27; span 21 can fail. Short hand candidate separates D<=18,19,20.
+Boundary-shape validation and independent pair-sum/folded-label controls preregistered,
+<10,000 inputs/five CPU seconds. This is the next tool for a second surplus, not yet
+a two-surplus construction or independent proof adoption. Reviews nonblocking; schedules paused.
