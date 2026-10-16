@@ -7040,3 +7040,67 @@ checks actually show. Gut: a stronger pull toward this simple balanced geometry.
 Reasoned: one construction replaces fixed-target ownership and handles both
 even congruence classes, while leaving its arithmetic membership constraints
 explicit. No full L8 result, novelty claim or new routine review request.
+
+### MI168 — B73: one balanced construction, both even congruence classes (2026-10-16 21:53 BST)
+
+**Parametric hand result PROOF-SKETCH; prescribed checks COMPUTED.** All9408
+matrix fixture evaluations pass both generic inventory/sum validators and literal
+all-pairs reflection checks. These are48 regimes (24 valid size/parity choices,
+2 bridge lengths each),28 bridge-owner pairs and7 prescribed residual lists;
+repeated lists when S=1 remain counted as evaluations, not distinct targets.
+M24 contributes1568, each of26/28/30/32 contributes1960. Every M28 fixture
+also reproduces the OLD allocator's exact bins and passes its two validators.
+All2002 B72 residual compositions pass the simpler greedy grouping and the
+independent32-subset reference. Both named E28 targets pass, one six-odd with
+evens116/116, the other all-odd. CPU0.956523s, peakRSS41,308,160bytes.
+No search, run repair, sample expansion or raised cap. No domain-wide target
+count or empirical universal inference is attached to this fixture matrix.
+
+The required asymmetric control replays an existing M26,k11 matrix fixture:
+correct positions(0,2,13,24) certify. Forcing the larger group AFTER the bridge
+gives(2,13,24,26), rejected because26 is outside0..25. This is an essential
+geometry distinction, not a failed primary prediction. Duplicate-token and
+inventory-preserving wrong-sum controls are also rejected by both generic
+validators. All extreme/empty-side cases and targets outside exceptional bounds
+are retained. Instruments are self-checks, not independent-party review.
+
+**What changed.** The remove-largest greedy inequality eliminates MI165's
+maximum case table. Its application yields the MI167 parameterized construction
+at ANY even M with the explicit hypotheses. Bridge ownership, permitted anchor
+labels/assignment, and base pair slots are free parameters; fixed two122 targets
+and M divisible by4 are unnecessary. B72 is its M28,k5,two-even-bridge corollary.
+The NEW hand proof, rather than the matrix, supplies those quantifiers.
+The allocation-to-target converse is OPEN: an arbitrary exceptional target may
+not fit this nonnegative-residual/two-equal-odd-bridge formula for any allowed
+choice. Odd M is outside the model, as before. No full E28/L8 or novelty claim.
+
+**Niggle sweep.** (1) Greedy balance only bounds a difference, not each side?
+Their total is S-m; each<=(S-m+m)/2. Integer rounding supplies the capacity.
+(2) Even S leaves one side a unit smaller? Orient the larger load first;
+the smaller<=(S-m)/2 gives the needed bound; M26 negative control catches it.
+(3) Could the sole odd point's complement be another central vertex? Only one
+vertex lies strictly between z-k and z+k, so its even complement is absent.
+(4) Arbitrary reserve labels touched by an outer point? Their labels<=S, while
+R starts at S+1 and ends before the sole central label n-1. (5) Fillers need
+more slots than available? Sum h=(M-q)/2 and h>=1; selected pairs are distinct
+and assigned one per active bin. The remaining demands sum to the remaining
+free pairs. Zero bins need only fillers. (6) Is the all-odd example secretly
+using even anchors? Every one of its eight anchors is an actual odd token of
+R; both validators agree. No unresolved local niggle; fitting arbitrary targets
+remains the real limitation.
+
+Gut: delight at the simpler argument; the fresh-choice answer is still yes
+because the representation improved. Reasoned: this is a cleaner construction
+with honest admission conditions, worth replacing the pending B72 read by ONE
+combined carrying read of MI167. The supporting balancing inequality itself
+needs no separate review job or prior-art proof entry. Next cheap question:
+for a given target, can the formula's residue/anchor conditions be solved
+analytically, or do they omit a structurally large part of the exceptional set?
+State that obstruction directly before attempting another family expansion.
+No new experiment is opened here; G314 and this review are nonblocking.
+
+Artifact `cited/instinct/b73-balanced-bridge-9decbd5ddbf4881a.json`,3,959,628bytes,
+SHA256 `9decbd5ddbf4881aaefdb9fbd74514d44144848336ff9dc69601108420a3ade0`.
+Prereg59aa9e29, source tests/probes/instinct/path_forest_balanced_bridge.py.
+Immutable receipt/manifest verified. PROOFS filing/status promotion waits for
+independent carrying scrutiny. No schedule/held-lane changes.

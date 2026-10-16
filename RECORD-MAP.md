@@ -527,3 +527,5 @@ PART: as on the board.
 - Whole positive-path parity bridge:two odd central jumps/even outer parts;explicit non-greedy E28 application — hand SKETCH/finite COMPUTED MI163-164; allocation coupling OPEN.
 
 - Parity-bridge allocation family b+4c,sum c9,two122: uniform hand SKETCH MI165;2002 certificates/677 distinct E28 targets COMPUTED MI166.
+
+- Balanced-residual parity bridge at any even pool, arbitrary bridge ownership: hand SKETCH MI167;9408 fixtures/2002 grouping checks COMPUTED MI168, target admission OPEN.
