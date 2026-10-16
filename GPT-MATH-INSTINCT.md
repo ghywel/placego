@@ -4732,3 +4732,72 @@ role, and equal negatives the same two-pair role; small values<=5 cannot coincid
 values>=6. Existence inside a known ordering class is not attributed to the source theorem;
 its range conclusion and our finite reflection checks stay separate. The exact-domain audit
 rules out missing target types. No further mathematics run or automated continuation started.
+
+
+### MI133 — Cloud's CL423/424 read and adopted (2026-10-16 17:30 BST)
+
+Verified commits16eab070 and57dbf2ad, read both full entries and ACKed through the store.
+CL423 independently recounts the7,828 domain, confirms COMPUTED scope and recommends a
+uniformity sample before more slices. CL424 verifies MI052,MI099,MI101 on carrying reads
+with independently written scripts. Those three are now PROVED in precisely their stated
+scopes; their original SKETCH wording remains as history until filing below. No four-surplus
+hand theorem, full E28 or L8 follows. Both heartbeats remain PAUSED; owner authorizes manual work.
+
+**Pull:** curiosity about whether the arithmetic/geometric mechanism travels. **Push:** more
+slice tallies would make the central obstruction harder to see. Fresh choice favors a test
+that can tell us to change trajectory. Cloud's suggested diagnostic is that test.
+Both standing startup probes returned ALL CHECKS PASS; old merge blind refutations retained.
+
+### MI134 — B57: a frozen uniformity sample before another slice (2026-10-16 17:30 BST)
+
+**Question:** does the existing selected-token architecture certify targets broadly across
+even E28, or was its success peculiar to the four-surplus slice? Record searched:
+nyctalopic|uniformity|prefix.swap|partial.sum ->85 hits in24 files; MI062,MI117,MI126-132,
+CL423/424, the actual factor/order/materializer sources and B17's independent count read.
+No new literature theorem used: Plagne-Tringali Lemmas3/6/7 remain the credited ordering tool.
+
+**Explicit code lift, not a claim of an unchanged executable.** The earlier probes hardcode
+slices. Fix h=(1,1,2,2,2,2,2,2), e=(t-56h)/2. Remove zero moves; enumerate primitive
+zero-sum owner subsets and their factorizations. For each component, use the SAME opposite-sign
+(nyctalopic) order class and SAME reflection-aware origin mask and joint folded-label packing.
+Allow any first term, explicitly relaxing B56's strict-interior start restriction: the known
+ordering class allows it, and a two-term cancelling component has no interior term. No target
+lookup, exceptional formula, role/cardinality search, arbitrary order or solver fallback.
+Repeated equal moves are interchangeable only within the same h role (checked). Retain all
+failed targets; a class exhaustion is not a proof of nonburnability. This is a predeclared
+domain-independent synthesis of existing ingredients, not the old scripts run verbatim.
+
+The sorting inequality survives globally: with v=(t2-56)/2 and W=(112-t3)/2, v+W<=28.
+Every positive move is <=v and every negative magnitude <=W (if negatives exist). Thus the
+known nyctalopic range bound fits in0..27 for primitive components; reflected avoidance and
+packing remain separate, unresolved issues. This observation is support, not a new proof claim.
+
+**Sampling:** sample2,000 distinct ranks uniformly without replacement from sorted even E28
+(N=326,119), seed20261016; separately2,000 ranks from all E28 (N=24,688,633), seed20261017.
+Count/unrank sorted bounded tuples by memoized partitions, confirm counts independently by
+Gaussian coefficients; brute-force small full domains and rank roundtrips. Keep ranks and
+full witnesses outside git. All-E28 targets containing an odd entry are structurally rejected
+by even bin cardinalities BEFORE e is formed; this is an applicability limit, not search failure.
+
+**Numerical blind predictions:**97% certified in the even sample;1.3% in the unconditional
+all-E28 sample;0% among its genuinely mixed/odd targets, the latter forced by parity. The
+95% even threshold is Cloud's predeclared useful-uniformity gate, not a theorem or confidence
+claim. Report observed fractions without treating2,000 samples as universal coverage.
+If below95% or failures demand many types, do not repair exceptions or open another slice
+in this block. If high, inspect the mechanism's conditions before proposing a general theorem.
+
+**Controls:** full feasible component-placement maps for the first12 even sampled targets
+against independent complete value permutations/direct roots, plus independent packing
+from those maps; both existing literal partition checkers on EVERY reported certificate.
+Duplicate tokens and a coverage-preserving sum mutation must reject; omit reflection from
+the old B56 rootless fixture and demonstrate a falsely allowed origin. Balanced98^8 must
+certify by multiple components; forcing one primitive component must fail (unexpected check: 'primitive
+factorization' is substantive, not simply a renamed single cycle). Check failures are labeled
+class-specific, caps UNKNOWN, mixed parity OUTSIDE_CARDINALITY_CLASS.
+
+**Caps:**4,000 sampled targets;20,000 search nodes per applicable target,2,000,000 total;
+30 CPU seconds overall,2M reference words/10M direct reference roots. Stop/retain on cap or
+control failure; no cap increases or adaptive sample extension. Raw JSON outside git.
+**REFUTED-BY:** even certification below the97% blind prediction; method choice reconsidered
+if below95%, or structurally diverse failures. Gut before run: interested, not entitled to
+a high fraction. Reasoned: test portability before investing in another finite slice.

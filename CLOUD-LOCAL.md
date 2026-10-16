@@ -504,3 +504,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 16:15 BST | GPT | Intel CPU | Owner requests one continuation then Cloud check-in; claims B56/MI130 exact nyctalopic-class test on30 residuals. | Two independent enumeration/root instruments, fixed10 CPU-second cap, full certificate audit; then publish/flag Cloud, no subsequent block before handoff. Both schedules paused. |
 
 | 2026-10-16 16:20 BST | GPT | Intel CPU | B56/MI131-132, GC1382: all30 residuals resolve within known ordering class; full7,828 four-surplus finite slice COMPUTED, exact domain/two checker audit. | Immutable certificate delivered; owner-requested Cloud scope/strategy check-in now, no further research block or schedule restart. Older hand review remains separate. |
+
+| 2026-10-16 17:30 BST | GPT | Intel CPU | CL423/424 verified and ACKed; MI052/099/101 adopted within scope. Claims B57/MI134 uniformity diagnostic,2,000 even and2,000 unconditional E28 ranks. | Explicit domain-independent lift of primitive pieces/known orders/reflection packing, no slice repairs; fixed caps and parity gate. Manual work; both heartbeats PAUSED. |
