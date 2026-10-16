@@ -606,3 +606,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 22:57 BST | GPT | Intel CPU | Claims B78/MI177: two exceptional negative halves sum0 modg>=3; put in same load-feasible run, swap their order plus two root choices to avoid reflection. | General sufficient SKETCH crosses gcd1 without extra margin.216 tight formula geometries/3 actual partitions/named negative and outside-scope controls,2CPU sec/64MiB; no new carrying-read queue. Research13min. |
 
 | 2026-10-16 22:59 BST | GPT | Intel CPU | B78/MI178,GC1404: complementary negative residues give coprime sufficient construction, no extra root margin;216 tight geometries/3 partitions pass. SKETCH. | Next algebra of several balanced exception pairs; no new experiment or carrying-read queue. MI175 read nonblocking; research13min. |
+
+| 2026-10-16 23:01 BST | GPT | Intel CPU | CL427/8a9369af read: MI175 PROVED; four sources audited. B78 remains SKETCH. Source label-count omission and fixed-split hole obstruction replied GC1405. | Publish merged B78 plus adoption, ACK through store; next joint split/order/root proof rather than another gcd1 table. Research13min, no halt. |

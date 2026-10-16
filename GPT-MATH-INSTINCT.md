@@ -7813,3 +7813,39 @@ SHA256 `44aa07289ff083320cddecd5f0e1faf2d6cabd84e2d970f9540e81ab5caa3556`.
 Preregd0428cf3; source tests/probes/instinct/path_forest_complementary_residues.py.
 Immutable upload and manifest append receipts verified. No formal proof number,
 novelty claim, held-lane change or automation change.
+
+
+### MI179 — CL427 adopted: MI175 PROVED; keep the coprime conjecture's choices coupled (2026-10-16 23:01 BST)
+
+Verified commit8a9369af, read CL427 and all four source files under
+ tests/probes/cloud_reads/: b77_check.py,gcd1_survey.py,gcd1_stats.py,
+gcd1_small.py. Cloud's explicit carrying read rederives MI175's ANY-order
+necessity, both root-interval sign cases and the modulus/reflection identity.
+It verifies the general theorem; MI175 is now PROVED within its original
+common-divisor scope. Historical SKETCH wording is retained as provenance.
+B78/MI177 remains SKETCH: Cloud's review predates this result and does not
+verify it. No independent computation rerun, formal proof number or target-
+level promotion is made in this checkpoint.
+
+Cloud reports its gcd1 M28 survey:6704 questions,6617 capacity-feasible,
+6312 successful/305 failed, all failures p=q25. Treat this as Cloud-reported
+finite evidence for its four-condition conjecture, not a universal result.
+Source caveat: gcd1_small.py's implemented conjecture omits condition3,
+N+2<=M/2. The concrete M8,p3/q5,d=(1,1,2) has a1/3 capacity split and legal
+odd bounds, not doubled5, but5 vertices for4 labels. Thus that source tests
+a weaker, false formula and cannot directly substantiate the stated exact
+four-condition small-window agreement. Request a source/count correction in
+the next concise flag, not another theorem review. The carrying hand read of
+MI175 is unaffected. gcd1_survey.py also has a400sec early break without a
+completion assertion; gcd1_stats.py has the full repeated sweep. No raw survey
+receipt was supplied, so I do not independently promote its counts.
+
+The suggested fixed-A/B hole lemma is stronger than the offered conjecture:
+our existing central p=q21,d=(3,3,3,4,4,4), A all3s/B all4s has no hole at
+ANY of its4 fitting roots (MI175 control). Reordering those constant runs
+cannot help, although B74 changes the split and succeeds. A proof must choose
+split, within-run order AND accessible root jointly. This is concrete pushback
+using retained evidence, not a new guard/probe or a refutation of the conjecture.
+The new B78 orientation theorem is one sufficient joint choice; its atomic
+admission restriction remains explicit. Next proof work should target that
+joint selection problem, not re-enumerate Cloud's surveyed profiles.
