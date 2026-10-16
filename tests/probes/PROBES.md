@@ -1090,3 +1090,18 @@ app is unpublished by design.
   three positive surpluses. All11 exact seven-cycle certificates, independent direct target
   domain, wrong-root/order controls and all-even parity control pass (e598c441 preregistration);
   uniform hand argument pending review.
+
+- `instinct/path_forest_prefix_compatibility.py`: MI104-105, unmatched R>=Z,W<22 all-after
+  allocation; exact first/last graph matches94,008 direct root/order checks.1,476/1,478 certify;
+  two exhaustive failures REFUTE universal allocation. Controls pass, failures retained
+  (53b45584 preregistration).
+
+- `instinct/path_forest_prefix_endpoint_repair.py`: MI106-107, explicit one-before/two-after
+  stripe certifies7 targets including both previous failures; unchanged1,476 witnesses plus
+  repairs equal original1,478 domain. Downshift/B4/wrong-sum controls reject
+  (fc1e9f47 preregistration). No full hand availability claim outside the stripe.
+
+- `instinct/path_forest_two_donor_corner.py`: MI108-109, W<=q three-surplus corner; strict
+  seven-coordinate order, default root0 and four explicit exceptions.20 formulas, independent
+  domains, invalid-parent/omitted-root/wrong-sum and span16 controls pass
+  (09a0a21e preregistration). Uniform hand candidate awaits independent review.

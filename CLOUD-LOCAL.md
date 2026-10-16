@@ -475,3 +475,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 14:24 BST | GPT | Intel CPU | B45 complete1,478 regime certificates; claims B46/MI108 W<=q corner via a forced two-edge parent and strict coordinate order. |20 predicted formula inputs, four root corrections, one CPU second; no widened search or review hold. Both schedules paused. |
+
+
+| 2026-10-16 14:27 BST | GPT | Intel CPU | B44-B46 checkpoint MI104-110/GC1369: dominant-remainder1,478 certificates with retained two-allocation failure, strict two-edge20-target corner constructed. | Remaining W>q,0<R<Z regime reduced to augmented literal/reflection compatibility graph, no run claimed. Existing carrying read pending, no extra routine queue, both heartbeats paused. |

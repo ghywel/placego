@@ -3939,3 +3939,63 @@ remainder; root0 in the four exceptions fails by pair reuse; coverage-preserving
 rejected. Unexpected: D16 cases all work at root0, despite being beyond the universal
 seven-position span15 bound. Record that separately from the three D17 boundary cases.
 Both schedules paused; independent work and proof statuses do not wait on review.
+
+
+### MI109 — B46 result: strict two-edge corner constructed (2026-10-16 14:27 BST)
+
+All20 targets certify by the explicit formula. Signed and direct target domains agree, with
+q counts3,4,5,8. Spans14/15/16/17 occur1/3/13/3 times; exactly the four listed nonzero
+root corrections occur. All20 single-edge strict-parent remainders are nonpositive. Omitting
+any prescribed nonzero root fails, wrong sums fail, and all13 span16 cases succeed at root0.
+CPU0.006461 s; raw outside git SHA256
+`f7c46c9182bd125ef2159022b9cf1f5949bfba75f95d524aec0c42b06f2c05a0`.
+The whole corner is COMPUTED; MI108 remains a uniform hand candidate pending independent read.
+
+**Niggle sweep:** W<=q is used to prove u+v<=Z and hence the small corner bounds, not treated
+as a physical impossibility theorem. Both parent remainders are strictly positive; coordinate
+order follows from the inequalities before roots are considered. The four exceptions are
+exhausted through D=u+B, not selected from a successful run. Every token appears once and the
+literal checker verifies sums and coverage separately. Prior candidate statuses are preserved.
+
+### MI110 — checkpoint and exact remaining parent regime (2026-10-16 14:27 BST)
+
+This continuation answered two different allocation questions:
+- With R=W-q>=Z, the all-after architecture has an exact3-by-3 root/order compatibility
+  test. Complete checks give1,476 targets and exactly two exhausted failures. MI106's one-before
+  rule repairs both; the same named1,478-target regime is now COMPUTED. No universal all-after
+  hand theorem is claimed. The two failures and their reasons remain.
+- With W<=q, assigning the surpluses to both negative edges gives a strictly ordered seven-cycle
+  of span14..17. The whole20-target corner certifies, with a short hand proof candidate.
+Counts are not added to other earlier probe families, which can overlap. No full E28 or L8
+claim follows. These are bounded parts of the three-surplus even-target region.
+
+**Remaining question.** After separating matching cases (MI099), W22 (MI101), W<=q (MI108)
+and the dominant remainder (MI104-107), the unmatched interior still to resolve is
+W>q and0<R=W-q<Z. This is the next natural parent-order regime, not a need for a larger census.
+
+The same two-variable reduction extends by hand. Put A=v-R=Z-u>0 and take the four-position
+parent0,A,v,Z, whose -R edge is v->A. All-after subdivision has five fixed positions
+C={0,A,v,Z,A-q}, and variable positions A-q+first and A-last. In the unmatched regime
+A!=q (otherwise W=v); thus the fixed five are distinct. Their minimum/maximum, and hence
+the allowed root interval, do NOT depend on the positive order. Normalize C by subtracting
+m=min(0,A-q), and put b=A-q-m. For each root r, internal levels first and q-last must avoid
+the LITERAL set L={c-b:c in normalized C}, as well as the REFLECTED set
+F_r={27-2r-b-c:c in normalized C}. They must also avoid the variable cross-pair equation
+2b+first+(q-last)+2r=27. This is the augmented first/last compatibility graph to test next.
+Unlike B44, the literal set has genuine interior levels; it cannot be discarded.
+
+Its span is at most25: if A>=q it is max(v,Z)<=22; if A<q and v>=Z it is W<=22;
+otherwise it is u+q. Original sorting gives u+3v+q<=56 and v>=u, hence
+u+q<=14+3q/4<=25.25, an integer<=25. Some roots may therefore be scarce; no existence
+of an augmented-graph edge is claimed. No new experiment or block is opened by this next-step
+derivation. It names the missing inference and what would advance it.
+
+**Fresh choice / gut:** still warm toward the compatibility graph and the way failures choose
+which endpoint to alter. The two failed all-after cases were informative, not a reason to grow
+a solver. **Reasoned verdict:** there is real structural movement, with one open parent regime
+now isolated; general root availability there remains uncertain. The next cheap test is that
+augmented graph, with a preregistered literal-collision control, before choosing further allocations.
+
+Existing MI099/101 carrying request remains pending. Send one concise READ-LEDGER update for
+this checkpoint; do not add routine proof-review jobs while that read is pending. Continue
+independent work without a review gate. Both automatic schedules stay paused.

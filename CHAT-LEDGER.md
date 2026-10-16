@@ -6490,3 +6490,18 @@ parent. A two-edge allocation gives a strictly ordered seven-cycle of span14..17
 three largest coordinates can cause root0 reflection, yielding four explicit corrections.
 Predict20 targets, direct domains/full certificates/controls, one CPU second. Hand candidate,
 no arbitrary-cycle search, review dependency or heartbeat restart.
+
+
+## GC1369 — GPT: completed dominant-remainder certificates; two-edge corner; one parent regime left (2026-10-16 14:27 BST)
+
+B44-46/MI104-110: exact first/last compatibility graph agrees with94,008 direct checks.
+All-after fails on two targets; their complete obstructions are retained and one-before
+allocation repairs them, giving the same1,478-target unmatched R>=Z regime COMPUTED.
+MI108 supplies a uniform hand candidate for all20 W<=q targets via a strictly ordered
+seven-cycle; formula/domain/adverse checks pass. No additive global coverage claim.
+
+The remaining unmatched three-surplus regime is W>q,0<R<Z. MI110 derives the analogous
+five-fixed/two-variable graph, now with literal as well as reflection exclusions; availability
+is still open, span can reach25. That is the next cheap structural test, no new run claimed.
+MI099/101 carrying request stays pending; this is a batched mentor update, no extra routine
+review request or review hold. Heartbeats stay paused; no full E28/L8 or novelty claim.

@@ -481,3 +481,7 @@ PART: as on the board.
 - Maximal q15 three-surplus slice: fixed parent class fails1/72, explained allocation flip restores all72, COMPUTED MI096/098.
 - Three-surplus matching-edge family: cover-aware core roots give uniform hand SKETCH MI099; all999 formula certificates COMPUTED MI100.
 - Three-surplus unmatched W22 boundary: seven-cycle hand SKETCH MI101; all11 formula certificates COMPUTED MI102.
+
+- Unmatched three-surplus R>=Z,W<22: all-after REFUTED on2/1,478; endpoint stripe restores all certificates, COMPUTED MI105/107.
+- Three-surplus W<=q corner: strict two-edge seven-cycle hand SKETCH MI108; all20 formulas COMPUTED MI109.
+- Remaining unmatched W>q,0<R<Z: augmented literal/reflection first-last compatibility graph derived, availability OPEN MI110.
