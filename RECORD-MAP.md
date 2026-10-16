@@ -554,3 +554,6 @@ PART: as on the board.
 
 
 - Minimal contraction r=max(0,ceil((K-2N)/2)) plus outer padding: r0 or two halves>=r+2 suffices, SKETCH MI191;12 calls/6 E28 partitions COMPUTED MI192; one-large-half cases OPEN.
+
+
+- Shared contraction: largest D>=r+t+1, small-run capacity sum(E-1)>=r+1-(K mod2), SKETCH MI193;12 calls/6 E28 partitions COMPUTED MI194; unit companions still outside admission.

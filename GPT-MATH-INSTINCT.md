@@ -8937,3 +8937,64 @@ the one-large admission that motivated the block, but not every one-large
 list. MI191's carrying read remains the priority; no added review queue or
 review halt. A next step would examine what this shared-capacity gate still
 misses, not count how many sample targets it covers.
+
+
+### MI194 — B85: several small runs share one contraction; endpoint unit and reversal both work (2026-10-17 00:30 BST)
+
+**Distributed sufficient construction SKETCH;12 prescribed calls COMPUTED.**
+All12 calls and6 actual E28 partitions pass. All six new actual cases fail
+MI191's single second-large admission but satisfy the shared-capacity gate.
+The former outside-admission d=(7,2,2,2,2,2),19/15 is now constructed, and
+its25/9 variant exercises the reversed balanced core. Even-total examples
+share over4,3,2 small runs; the last actual odd-total example also needs
+reversal. Tiny windows, zero outer padding, N10 with r8/s30, r0 and t1
+regressions pass. CPU0.002849s,peakRSS18,489,344bytes. No repaired case,
+expanded family, word/order search, profile survey or coverage extrapolation.
+
+The over-deletion control does exactly what was predicted: geometry,
+positive joins19/15 and total negative mass17 all remain valid, but six
+halves(7,2,2,2,2,2) become five halves(9,2,2,2,2). The full original bag
+rejects it. Both admission refusals have literal positive controls: the
+D5 insufficient-budget case is covered by B82; the all-unit-companion case
+has its explicit unequal-chain witness. Thus neither refusal is a global
+obstruction. No environmental/cap failure or silent repaired hypothesis.
+
+**Carrying audit/niggles.** Minimal t implies t<=r+1-epsilon and therefore
+U>=0. Before the last E-run, at most r A-points after0 are available; across
+that run at least r+1 are, so deleting exactly r keeps a later A-point and
+both extrema. The merged prefix consists of precisely t f-pieces, U internal
+units and epsilon initial unit: r+1 positive gaps summing D. None of the
+original E-gaps moves; they are distances between B-points, not counts of
+A-points between them. Original unit halves may be indistinguishable from
+refined units, but complete gap multisets (not ancestry labels) are preserved.
+For epsilon1 the minimal core has K=2(N+r)-1, so its balanced joins are K/K,
+initial run2/final run1. Reversing both index lists gives(Q+2,P-2), as checked
+from min/max sums; treating it as a plain exchange P/Q would be false.
+After reversal the general endpoint formula is used, not minA0. Original
+positive owners and exact full move bags are checked again after outer
+padding. All local niggles tipped on these checks. Dependencies stay honest:
+MI180 PROVED; MI191 selector/padding and this new merge/reversal SKETCH.
+
+**What changed.** The contraction can now be supplied by several modest
+opposite-colour runs, while one large D merges across them. This is a real
+distributed refinement of ONE gap, unlike the failed prefix-only scheme in
+MI182. The odd core's single endpoint unit is used explicitly; without it
+the motivating D7 example would fail our own budget. The sufficient class
+still has a D-size/shared-capacity gate; no arbitrary capacity-feasible list
+or full E28/L8 theorem is claimed. In particular d=(11,1,1,1,1,1) has no
+eligible E even though its explicit cycle works.
+
+Gut: warm because the question that motivated the block changed from an
+admission failure to a construction, with the mistaken-overdeletion control
+showing why exact gaps matter. Reasoned: the remaining unit-companion case
+suggests placing a consecutive block INSIDE a long gap and using the two
+ends as free variables, rather than forcing unit gaps to provide deletion
+capacity. That is the next cheap geometric question, not a new experiment
+or claim here. Keep MI191's carrying read as the one priority; send this
+as READ-LEDGER, no extra review queue/halt. Full E28/L8 and old holds unchanged.
+
+Artifact cited/instinct/b85-shared-contraction-f6acd01680a04588.json,14907bytes,
+SHA256 f6acd01680a04588b20faf398cb141957206442d6c0ddf40276400cac11e6ac2.
+Preregbfe20e26; source tests/probes/instinct/path_forest_shared_contraction.py.
+Immutable upload digest and manifest receipts verified. No formal proof number
+or novelty claim; schedule remains13min.

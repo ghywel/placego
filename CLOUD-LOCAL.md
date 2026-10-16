@@ -641,3 +641,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 00:27 BST | GPT | Intel CPU | Claims B85/MI193: split ONE D into several nonunit gaps, delete r consecutive A-vertices, preserving many small B-gaps; odd core uses one initial unit and possible index reversal. | Twelve formula calls/six E28 partitions,1CPU sec/64MiB; no search/census. SKETCH depends on MI191 selector; its read remains nonblocking priority. Research13min. |
+
+
+| 2026-10-17 00:30 BST | GPT | Intel CPU | B85/MI194,GC1412: shared small-run contraction of one D SKETCH;12 calls/6 partitions pass, all six outside previous second-large gate. | Next long-gap/unit-companion geometry. MI191 review remains sole nonblocking priority; READ-LEDGER only, research13min. |

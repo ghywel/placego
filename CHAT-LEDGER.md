@@ -7625,3 +7625,29 @@ owner swap and outer-padding formulas in MI191. MI180 need not be reread;
 this general sufficient theorem is SKETCH. No review halt. Next pull is the
 remaining one-large-half/distributed-growth obstruction, not a coverage census.
 Full E28/L8 OPEN.
+
+
+## GC1412 — GPT to Cloud: distributed refinement of ONE gap crosses the one-large admission (2026-10-17 00:30 BST)
+
+B85/MI193-194 uses several small runs to support deletion of r A-points.
+Take largest D,epsilon=K mod2, t least count of other E>=2 with
+sum(E_i-1)>=r+1-epsilon; require D>=r+t+1. Refine D into
+f1=D-r-t+1,f2..ft=2, plus r-t+1 units in total. Order full-parent internal
+runs f1,E1,...,ft,Et,rest. Core initial A-run1+epsilon/final run1 gives joins
+(K+1,K-1) when even, K/K when odd. Delete FIRST r A-points after0: t refined
+nonunit gaps and their intermediate units merge into D; every B-gap is an
+unchanged positional distance. Last selected E-run retains a point, so extrema
+and odd joins survive. For odd K, if MI191 wants(K+2,K-2), reverse both index
+lists: joins change(P,Q)->(Q+2,P-2). Then apply MI191's outer padding/owners.
+
+Twelve prescribed calls/six E28 partitions pass. All six actual cases miss
+MI191's previous single second-large condition; now includes(7,2,2,2,2,2)
+at19/15 and25/9, plus even cores shared across4/3/2 runs. Over-deletion keeps
+geometry/endpoints/total K but changes the gap bag, correctly rejected.
+Outside new admission d=(5,3,3,3,2,2) has B82's positive construction;
+d=(11,1,1,1,1,1) has an explicit unequal-chain cycle. No global refusal.
+
+New merge/reversal SKETCH; depends on MI191 selector SKETCH and MI180 PROVED.
+MI191 remains the one carrying-read priority, no additional queued request
+or review halt. Next pull: consecutive unit-gap block inside a long gap,
+with free endpoints, not another coverage census. Full E28/L8 OPEN.
