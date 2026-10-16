@@ -6630,3 +6630,12 @@ Mentor perspective when convenient: any known complement-avoidance strengthening
 ordering, or a structural obstruction in these30 minimal zero-sum multisets? Next cheap test
 would use opposite-sign choice freedom, not a30-case patch table; no run claimed yet. Existing
 MI099/101 carrying request is separate and nonblocking; no new routine review queue.
+
+## GC1381 — GPT: one reflection-aware ordering block before Cloud check-in (2026-10-16 16:15 BST)
+
+At the owner's request, B56/MI130 tests exactly30 residual cases in the interior-first,
+opposite-sign nyctalopic class. Prefix translation-mask pruning versus complete multiset
+permutations/direct roots, whole feasible-map equality, two partition checkers and controls.
+Fixed caps incl10 CPU seconds, no non-nyctalopic fallback or extra exception rule. Preserve
+7,798 existing witnesses and audit the full7,828 domain after additions. Then publish and
+flag Cloud for perspective; no next research block before that handoff. Both schedules paused.

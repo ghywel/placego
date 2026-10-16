@@ -4603,3 +4603,59 @@ between a range theorem and a usable embedding. Satisfaction at the broad common
 some push against making exceptions into the project. **Reasoned:** the30 failures now pose
 one clean test of an established ordering class. This checkpoint is a delivery milestone,
 not a halt for routine review or a promise to keep every failed scaffold.
+
+### MI130 — B56: reflection-aware choice inside the known ordering class (2026-10-16 16:15 BST)
+
+The owner asks for this continuation, then a Cloud check-in. One mathematical block only:
+test the30 retained primitive failures from MI129 within the nyctalopic class below, publish
+the exact verdict and certificate checkpoint, and send Cloud a concise perspective request.
+No next research block before that handoff. Both scheduled tasks remain paused.
+
+**Question:** does every one of those30 minimal zero-sum move multisets have a reflection-free
+ordering whose first term is STRICTLY between-W and v, and every subsequent term has sign
+opposite to the current nonzero sum? This uses the actual choice freedom in Plagne-Tringali
+Lemmas6/7; it is not another fixed greedy rule or arbitrary eight-cycle search. Allow any
+interior first term, including-Z when it is interior. Distinct literal vertices and span<=26
+remain consequences of the known lemmas; reflected-pair avoidance is the new finite test.
+
+**Capture:** specific pull toward testing the theorem's freedom rather than repairing30
+fixed orders. An exhaustion of this class would be useful: it would identify a real limit
+of the imported tool. Record searched: nyctalopic.*reflect,opposite.sign.*choice,origin.*mask
+-> no default hits; MI126-129, B54/B55 and the primary source scope in PRIOR-ART read.
+No external reflection theorem or novelty claim is imported.
+
+**Primary instrument:** enumerate only the allowed sign-opposed value orders. Carry a28-bit
+mask of translations b for which every partial-sum vertex p lies in0..27 and all selected
+folded labels are distinct. Adding p intersects the interval0<=b+p<=27 and removes b satisfying
+2b+p+q=27 for any earlier vertex q; literal p=q rejects. Stop a branch when the mask empties.
+Do not add the final closing0 as a ninth vertex. Equal-valued moves are symmetric: canonically
+assign their lowest remaining owners; equal-valued moves also have equal initial pair roles.
+
+**Independent reference:** enumerate the complete multiset value permutations, FILTER the
+interior-first/opposite-sign condition, and test every final allowed translation directly
+with eight literal folded labels. Compare the ENTIRE map of feasible value orders to origin
+masks, not just yes/no or a shared first witness. This detects unsound prefix pruning.
+
+**Predictions BEFORE run:** tentatively all30 have a witness in this class. Must recover
+exactly B55's30 residual targets, independently verify primitive subset sums, and obtain
+identical feasible-order/origin maps in the two implementations. All chosen partitions pass
+multiset and exact-bin/bitset checks. Caps30 inputs/250,000 combined recursive nodes,
+two million raw reference permutations/100,000 accepted reference orders/one million direct
+root checks/10 CPU seconds INCLUDING the delivery audit. A cap is UNKNOWN. No arbitrary
+non-nyctalopic order, changed pool or follow-on exception rule if a target exhausts the class.
+
+**Controls / counterfactuals:** on the known MI126 control's partial sums, compare the mask
+against all28 literal translations at EVERY prefix. Omitting reflection removals must retain
+an invalid origin on at least one of the old exhausted greedy shapes. A primitive order
+starting5,5 violates the opposite-sign condition and must reject. The nonprimitive moves
+8,8,4,-20,2,2,2,-6 must fail primitive membership. Duplicate/wrong-sum witnesses reject.
+**Unexpected:** among feasible orders, record whether the OLD smallest-positive start can
+still work when only later choices change, versus needing another positive/negative interior
+start. This distinguishes two kinds of freedom within the same theorem, with no extra class.
+
+**Delivery audit inside this block:** preserve all7,798 existing certificates unchanged, add
+only the successful residual cases, recheck every partition and independently enumerate the
+full7,828 target domain. The exact remaining set must be precisely this block's exhausted or
+capped cases, never treat a class failure as an impossible target. Publish the resulting full
+certificate and residuals immutably, then check in with Cloud as requested. Known lemmas stay
+PRIOR-ART; finite class verdicts COMPUTED, no new general theorem or full E28/L8 claim.
