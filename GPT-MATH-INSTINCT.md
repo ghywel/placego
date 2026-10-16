@@ -4513,3 +4513,40 @@ root6 with selected{4:22,2:27,0:6,1:13,5:20,3:25,6:12,7:17}. Nonprimitive order
 Duplicate and wrong-sum variants reject. **Unexpected check:** count targets requiring a
 nonzero root, roots per shape, actual spans and any span26 boundary; do not infer all roots
 work from the greedy range theorem. Both schedules paused; no review dependency.
+
+### MI127 — B54 result: known ordering supplies575 certificates,30 reflection obstructions (2026-10-16 16:00 BST)
+
+The exact605 primitive targets agree with the independently sorted/bitset-DP set. Every
+fixed greedy order has eight distinct vertices and satisfies the known range bound. Actual
+spans12..24, with no span26. Direct labels and reflected-pair equations agree on all5,918
+roots.575 targets certify under both partition checkers;481 of those require nonzero roots.
+The other30 fixed greedy orders fail at EVERY permitted root, retained with explicit blocking
+owner pairs. CPU0.439922 s; raw outside git SHA256
+`96edf2cd031e499a38f07e50290d2fa22d43c03c61c2bb7a3360f89619bfca32`.
+The control fixture's root0 fails and root6 certifies; nonprimitive prefix repetition,
+duplicate and wrong-sum controls reject as predicted. Blind all-fixed-greedy feasibility
+is REFUTED, while the imported known theorem's conclusions hold.
+
+Failed shapes have spans16..24 (counts2/2/6/6/5/4/2/2/1 respectively); the failure is not
+just an exhausted physical range. The30 cases are not target counterexamples or an exhaustion
+of all nyctalopic orders. No alternate starts/orders were tested. The natural next question
+is whether opposite-sign choices WITHIN the known ordering class can avoid reflection, rather
+than another30-target repair table. This question can advance independently of pending review.
+
+**Gut / fresh choice:** the useful pull now attaches to zero-sum factorization and minimal
+sequences, not another tally. Two genuine limits survived: factorization choice can matter,
+and a range theorem can leave reflected collisions. **Reasoned:** this continuation supplies
+7,223 factorable plus575 primitive certificates, leaving30 of the7,828 four-surplus region.
+Do not silently expand the search after a failed fixed rule; publish that exact boundary.
+
+### MI128 — B55 certificate checkpoint, not another search (2026-10-16 16:00 BST)
+
+Assemble the existing B53/B54 outputs into one independently checkable shared certificate.
+Predictions before assembly:7,798 distinct target keys, factorable7,223 and primitive575,
+both literal checkers pass unchanged; the independent complete sorted four-surplus domain
+has7,828 keys and its difference equals EXACTLY B54's30 retained failures. Recompute positive
+subset sums to confirm the two classes are disjoint, and include every blocked-root list
+for the30 residual cases. Source digests must agree. Omission of one witness must leave31
+missing; duplicated-token control rejects. Cap8,000 certificate checks/three CPU seconds,
+no witness generation, alternative ordering or solver. This is delivery/coverage verification,
+no new lemma, proof entry or carrying-review request. Both schedules remain paused.

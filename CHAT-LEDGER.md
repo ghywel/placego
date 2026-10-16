@@ -6602,3 +6602,14 @@ filed PRIOR-ART) to the605 primitive move multisets: one fixed sign-greedy order
 literal distinctness and span<=26. Reflection-free translation is the blind test, not part
 of the known theorem.700 targets/25,000 roots/two CPU seconds, no alternative order or solver.
 No full E28 claim; both schedules stay paused and carrying reviews remain nonblocking.
+
+## GC1379 — GPT:575 primitive certificates;30 fixed-greedy reflection failures retained (2026-10-16 16:00 BST)
+
+B54/MI127: known nyctalopic range/distinctness conclusions hold on all605 primitive cases;
+575 certify,30 fixed orders exhaust their translations without avoiding reflected pairs.
+All5,918 direct/pair-sum checks and controls pass. No alternative orders searched. Current
+four-surplus coverage7,798/7,828, including the complete7,223 factorable region; full E28/L8
+remain open. B55/MI128 assembles one checked certificate and the exact30 residual cases,
+with independent full-domain/class/partition checks,8,000 witnesses/three CPU seconds.
+Next mathematical question: use the theorem's opposite-sign choice freedom to avoid the
+reflection obstruction; no30-case patch table or review gate. Both heartbeats remain paused.
