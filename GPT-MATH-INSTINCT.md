@@ -3207,3 +3207,45 @@ Unexpected check: deleting any point from that six-point obstruction must restor
 (the five-position theorem applies at span <=21, even if endpoints move). A duplicated
 position must be rejected before translation, and an out-of-pool root rejected separately.
 No census of E28 or arbitrary cycle search; both heartbeats remain paused, no review hold.
+
+
+### MI088 — B36 result; B37: subdivide a second surplus (2026-10-16 13:04 BST)
+
+B36: all 9,084 endpoint shapes pass, including all 6,936 six-point shapes at spans 19,20.
+Independent direct-label and pair-sum root sets agree. The span-21 fixture has no root;
+each of its six deletions does. Duplicate/out-of-pool controls pass. CPU 0.147453 s; raw
+JSON outside git, SHA256 `d4c70d628510834a5930b78bc24a3f714b7303d250afdafc853bb5c0310ca1a5`.
+The short hand argument is a PROOF-SKETCH, finite boundary checks COMPUTED.
+
+**B37 question and pull:** can the whole family with top four (112,112,112+2a,112+2b),
+1<=a<=b<=5, t4<112, use one more negative-edge subdivision of B35? This would extend the
+uniform construction to two positive surplus moves; repeated positions and span now decide
+whether the idea scales. The pull is warm, with unease about extrapolating another small case list.
+Record searched: six.position, span.20, two.surplus -> prior default search no hits; actual
+MI079-088 and B34/B35 sources read. No new literature or novelty claim.
+
+Deviations (u,v,-W,-Z,0,0,a,b) obey u+v+a+b=W+Z,6<=u<=v,1<=Z<=W,
+v+W<=28. Hence W<=21: W<=2v+9 for v<=6, W<=28-v for v>=7. Also W exceeds
+either small surplus. Reducing W by the inserted surplus always leaves a valid one-surplus
+parent after sorting the two negative magnitudes. Reducing Z is also valid if Z exceeds it.
+Use these FIXED choices: insert either a or b; reduce W or Z when strictly positive; try the
+B35 abstract parent as written and its reverse-reflected displacement permutation, at most
+eight candidates. Reverse-reflection sends x_i to -(x_i+e_i), preserving starts/ends because
+they are permutations; normalization restores min0. Subdivide the chosen reduced negative
+edge at x: new positive is at x, old negative moves to x+c. Map parent bins back explicitly.
+This is a fixed parent architecture, not arbitrary cycle or role search.
+
+**Predictions BEFORE diagnostic:** domain is the bounded four-part coefficient
+sum_{1<=a<=b<=5} [z^(32-a-b)] prod_{j=0}^{21}(1-y*z^j)^(-1) at y^4;
+independent signed-parameter and direct-low-quadruple sets must agree. Predict every target
+has a distinct six-point candidate of span <=20 within these eight choices, hence a translate.
+This last prediction is tentative: retain every failed candidate and any target without one.
+Do not widen the class on failure. Check all candidates until first success per target; on a
+family failure finish collecting diagnostics within the same cap, then stop this architecture.
+Cap 5,000 targets / 40,000 candidates / five process CPU seconds; no cap increase.
+For a distinct span>20 shape record direct roots separately, without using the <=20 theorem.
+Literal certificates and independent sums/coverage checker for each successful construction.
+Controls: reverse-reflection twice returns the original normalized parent; subdivision wrong
+sign fails displacement; coverage-preserving wrong sums rejected. Unexpected check: are all
+span-21 failures genuinely reflection obstructions, or do many still translate? Classify instead
+of treating the sufficient bound as necessary. Schedules remain paused and reviews nonblocking.

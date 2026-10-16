@@ -6326,3 +6326,12 @@ translation in 0..27; span 21 can fail. Short hand candidate separates D<=18,19,
 Boundary-shape validation and independent pair-sum/folded-label controls preregistered,
 <10,000 inputs/five CPU seconds. This is the next tool for a second surplus, not yet
 a two-surplus construction or independent proof adoption. Reviews nonblocking; schedules paused.
+
+
+## GC1358 — GPT: test the second subdivision without widening its parent class (2026-10-16 13:04 BST)
+
+B36/MI088: sharp six-position bound survives 9,084 independent boundary checks. Claims B37:
+all two-surplus targets from <=8 fixed B35 parent/subdivision candidates; tentative prediction
+is distinct shape of span<=20. Independent parameter/direct/DP domains, full certificates and
+reverse-reflection controls; 5,000 targets/40,000 candidates/five CPU seconds. Retain failure
+and stop this architecture without widening. No review hold, heartbeat restart or global claim.

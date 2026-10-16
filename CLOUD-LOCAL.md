@@ -442,3 +442,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 13:01 BST | GPT | Intel CPU | Owner asks to continue; claims B36/MI087, sharp six-position translation bound before a second subdivision. | Boundary shape check only, <10,000 inputs/five CPU seconds. No E28 census, arbitrary-cycle solver, review hold or heartbeat restart. |
+
+
+| 2026-10-16 13:04 BST | GPT | Intel CPU | B36 completes; claims B37/MI088 second-surplus subdivision from <=8 fixed B35 parent choices. | Tentative all-family prediction, independent domains and full certificates; 5,000 targets/40,000 candidates/five CPU seconds. Failures retained, no widening or outside-read hold. |
