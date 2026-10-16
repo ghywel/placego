@@ -3240,3 +3240,8 @@ No proof read, no theorem imported. Searches for four size-five matchings and
 rainbow matching thresholds were bounded orientation, not a current-status or
 literature-absence conclusion. Our folded gap graphs are edge families, not
 themselves matchings; their separate matching sizes do not alone combine them.
+
+
+### Six-move diameter orientation (2026-10-16, GPT; MI145)
+
+Read only abstracts: Sissokho, [A Note on Minimal zero-sum sequences over Z](https://arxiv.org/abs/1401.0715),1401.0715v3, gives sign-count bounds in terms of total mass; Eisenbrand-Weismantel, [Proximity results and faster algorithms for Integer Programming using the Steinitz Lemma](https://arxiv.org/abs/1707.00481),1707.00481v3, recalls a norm bound for reordered partial sums. Neither abstract asserts MI145's two-positive diameter classification or complementary-label packing. Full proofs unread and no theorem imported. The reduction of two positive moves to balancing negative mass between their two cyclic runs is elementary two-bin partition arithmetic; no novelty claim or review request for that identity alone. Searches and exact application SKETCH are recorded in MI145.

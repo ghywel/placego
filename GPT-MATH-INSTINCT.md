@@ -5390,3 +5390,87 @@ under the E28 extremal constraint max positive+max negative<=28, with necessary
 wide-step cases treated explicitly. That is a new hand question, not a license
 for a larger shape census. Record/prior art first; no follow-on experiment
 claimed yet. Research continues independently of G313's carrying read.
+
+
+### MI145 — B62: classify the two-positive/four-negative ordering obstruction (2026-10-16 19:26 BST)
+
+**Question:** which primitive six-move cores with two positive moves require
+span>20, under max positive+max negative<=28? This directly decides when MI144's
+complete six-core-plus-pair geometry applies. Record searched:
+primitive.*six|six.*primitive|nyctalopic|span.20 ->47 hits/12 files; follow-up
+two.positive|17.*17.*11|span.22|six.*ordering ->65/27. Read G308/G311, MI073,
+MI143-144, existing ordering sources. Bounded primary-source search: minimal
+zero sum sequence ordering span diameter partial sums integers rearrangement six;
+Steinitz lemma integers optimal range partial sums minimal zero sum permutation
+diameter. Sissokho1401.0715v3 abstract read (bounds on counts by total mass),
+Eisenbrand-Weismantel1707.00481v3 abstract read (norm-bound Steinitz tool); neither
+abstract supplies the diameter classification here. Full proofs not imported;
+no novelty claim. The elementary two-bin balancing identity below is background
+arithmetic, not a separately queued contribution.
+
+**Hand candidate, SKETCH.** Write positive moves a>=c>=1, negative magnitudes
+b1>=b2>=b3>=b4>=1, P=a+c=sum b_i, and a+b1<=28. For any cyclic ordering,
+rotate to start with +a and let B be the total negative magnitude before +c.
+The two negative runs are monotone. Their partial-sum span is
+
+    max(a,P-B)-min(0,a-B) = max(a,B,P-B).
+
+Conversely every subset B is realized by such an order. Therefore the exact
+minimum span is max(a, min_{subsets} max(B,P-B)). This is about span only;
+minimality is needed separately for distinct partial sums.
+
+Choose B=b1+b4 and order (+a,-b1,-b4,+c,-b2,-b3). Put C=b2+b3. We have
+B<19: 3B=3b1+3b4 <=2b1+P <=2(a+b1)<=56.
+Also a+1<=P<=4b1<=4(28-a), hence a<=22. If C<=20 and a<=20, the displayed
+order has span<=20. If C>=21, then b1>=11. Since
+b1+C+1<=P<=2a<=56-2b1, we get3b1<=34 and hence b1=11.
+Then a<=17, P>=33 implies a=17, and P is33 or34. This leaves exactly:
+
+|a,c|b1,b2,b3,b4|exact minimum span|
+|---|---|---|
+|17,16|11,11,10,1|21|
+|17,17|11,11,10,2|21|
+|17,17|11,11,11,1|22|
+
+Direct subset sums have no balancing subset in[P-20,20]; their best maxima are
+21,21,22. The prescribed end-pair order attains them. All three are primitive:
+no negative subset sums to a or c. If a>=21, b1<=7, so B,C<=14 and the same
+order has span exactly a. A step a forces that lower bound. Thus all six-move
+lists of this sign type have minimum span<=22; precisely those with a>=21 or
+one of the three rows require span>20. Sign reversal covers four-positive/two-
+negative cores. One/five and three/three remain separate questions.
+
+**The three exceptional rows still pack with a small pair, by hand.** The
+prescribed order's normalized shapes are respectively
+(0,5,6,10,17,21), (0,4,6,10,17,21), (0,5,6,11,17,22).
+Use roots1,4,1 respectively. Their occupied labels are
+{1,5,6,7,9,11}, {2,4,6,8,10,13}, {1,4,6,7,9,12}.
+For every g=1..5, use a physical gap pair whose labels are outside that set.
+Explicit physical pairs in g order:
+row1: (2,3),(0,2),(0,3),(0,4),(3,8);
+row2: (0,1),(1,3),(0,3),(1,5),(0,5);
+row3: (2,3),(0,2),(0,3),(10,14),(3,8).
+This handles all actual E28 extensions of those rows by a small matched pair;
+these large low positive moves cannot be supplied by high roles, so the two
+positive core owners are the low roles and the extra pair has g<=5.
+The concrete third-row target at g1 is(90,90,90,90,90,110,110,114);
+selected indices(1,6,18,23,12,7,3,2) carry its cycle/pair directly.
+
+**Validation predictions BEFORE run:** full arithmetic domain above has only
+these span exceptions, prescribed order meets bounds, and subset-balancing exact
+minima agree with an independent free-order subset-reachability DP in0..D.
+Generate domains independently from positive-first versus negative-first loops;
+restrict nothing by primitiveness when checking the arithmetic span identity,
+then independently test primitive cases for six distinct positions. All15
+small-pair exceptions should pass literal folded checks and both partition
+checkers. No other target domain or cycle order repair.
+Counterfactual: max individual move<=20 does NOT imply span<=20, third row
+requires22 (first two require21). Pair at root0 in the third row collides;
+explicit roots above must repair it. Unexpected: negate every move and reverse
+all selected physical coordinates; cyclic sums and all folded labels are
+preserved, giving the four-positive version without a separate target count.
+Caps50,000 arithmetic tuples/15 target extensions/20CPU seconds; independent
+DP cap10M states. Stop UNKNOWN at cap, no raise or fallback. Raw outside git.
+Gut: delight at a precise obstruction and a three-row bypass, not another
+unexplained list. Reasoned: a substantive sign-type classification; carrying
+status stays SKETCH, no immediate extra review queue while G313 is pending.

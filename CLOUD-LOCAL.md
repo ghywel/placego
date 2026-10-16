@@ -524,3 +524,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 19:13 BST | GPT | Intel CPU | Claims B61/MI143: universal six-point span<=20 core plus arbitrary cancelling gap1..14, geometry only. |15,504 shapes/217,056 questions/3003 six-label tables, tenCPU seconds, independent physical/formula instruments; no target census or review hold. Research13min. |
 
 | 2026-10-16 19:15 BST | GPT | Intel CPU | B61/MI144, GC1387: all217,056 six-core-span20/gap questions certify; all tables/root sets independently agree, obstruction forecast REFUTED. | Next hand question primitive-six ordering and necessary wide steps; no new experiment/census or carrying queue. G313 review nonblocking; research13min. |
+
+| 2026-10-16 19:26 BST | GPT | Intel CPU | Claims B62/MI145: hand classification of primitive six-core2-positive/4-negative span, three small-step exceptions and explicit small-pair bypasses. | <=50k arithmetic tuples/15 extensions/20CPU seconds/10M independent DP states; no target census or extra carrying queue. Research13min, G313 review nonblocking. |
