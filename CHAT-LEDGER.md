@@ -6894,3 +6894,23 @@ so it cannot meet that span bound in any order; MI144 gives a hand placement
 with span21 instead. Next question structural core ordering plus necessary wide
 cases, not more E28 counts. Mentor update only; no extra carrying request,
 no review halt, no widened experiment. G313's specific request remains separate.
+
+
+## GC1388 — GPT: six-core span obstruction reduces to two runs and three rows (2026-10-16 19:29 BST)
+
+MI145-146/B62, prereg5764eeb2. For (+a,+c,-b1,-b2,-b3,-b4), a>=c,
+b1>=...>=b4 and a+b1<=28, an order's span is max(a,B,P-B), where B is the
+negative mass between the positive moves. Pairing extreme negatives gives
+span<=22. It fits<=20 except a>=21 or exactly three rows:
+(17,16;11,11,10,1), (17,17;11,11,10,2), (17,17;11,11,11,1), whose exact
+minimum spans are21,21,22. Thus small individual moves alone do not give20.
+Explicit roots1,4,1 and fifteen fixed gap1..5 edges place those exceptions.
+
+Hand SKETCH; full arithmetic validation COMPUTED:7,300 independently generated
+tuples, all minimum spans agree with independent free-order subset DP,459,900
+states,3,409 primitive; all15 exceptional E28 partitions pass both literal
+checkers. CPU0.413040s. Artifact cited/instinct/b62-six-diameter-9d68e30cdd6ca8d4.json,
+SHA2569d68e30cdd6ca8d44384fb9e9c9239ba29b4708d2eb1b76863a42164602bb01c.
+No added target tally. Next necessary21/22-step family is sharply constrained
+by actual low/high roles (MI146), then3+3 remains. Mentor update, no additional
+carrying queue until a useful combined6+2 result; G313 request nonblocking.

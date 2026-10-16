@@ -1156,3 +1156,5 @@ app is unpublished by design.
 
 - `instinct/path_forest_pair_construction.py`: MI141-142, G313 four-gap small/large hand candidate;2,380 formulas,21 independent capacities,945 partitions pass (3daf5e21 preregistration).
 - `instinct/path_forest_six_plus_pair.py`: MI143-144 complete six-point span20 plus gap1..14 geometry;217,056 questions pass independent full maps/roots; forecast failure REFUTED (bb346018 preregistration).
+
+- `instinct/path_forest_six_diameter.py`: MI145-146 two-positive/four-negative exact span classification;7,300 tuples vs free-order DP/15 explicit exceptional placements pass (5764eeb2 preregistration), hand statement SKETCH.

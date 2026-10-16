@@ -5474,3 +5474,66 @@ DP cap10M states. Stop UNKNOWN at cap, no raise or fallback. Raw outside git.
 Gut: delight at a precise obstruction and a three-row bypass, not another
 unexplained list. Reasoned: a substantive sign-type classification; carrying
 status stays SKETCH, no immediate extra review queue while G313 is pending.
+
+
+### MI146 — B62: the ordering obstruction is exactly classified in this sign type (2026-10-16 19:29 BST)
+
+**COMPUTED validation of the hand SKETCH.** Independent positive-first and
+negative-first generators agree on7,300 arithmetic tuples. All exact subset-
+balancing minima equal a free-order nonnegative-prefix DP minimum;459,900 DP
+states, CPU0.413040s. There are3,409 primitive and3,891 nonprimitive tuples.
+All prescribed orders have span<=22; all primitive ones have six distinct
+vertices. Exactly32 tuples have minimum span>20:29 with a>=21 and exactly the
+three predicted small-step rows. Minimum spans21/22 occur29/3 times. No changed
+candidate rule, added exception or increased cap. Classification and all15
+explicit small-pair extensions pass; the latter have distinct targets, valid
+cycles/folded labels and both independent literal partition checks. No tally
+is added to earlier overlapping E28 counts.
+
+Counterfactual maxstep<=20 implies span<=20 is refuted by the third row, minimum
+22; first two need21. Root0 of its prescribed core self-reflects, while the
+written roots1,4,1 and all fifteen prescribed gap edges pass. Unexpected sign
+negation plus coordinate reflection preserves every cycle and folded label;
+no claim that the sign-reversed TARGET is itself in E28. The hand statement
+applies to both sign-reversed component types, not arbitrary bin roles.
+
+Full artifact `cited/instinct/b62-six-diameter-9d68e30cdd6ca8d4.json`,1,023,338
+bytes, SHA256
+`9d68e30cdd6ca8d44384fb9e9c9239ba29b4708d2eb1b76863a42164602bb01c`.
+Upload receipt matches; manifest names5764eeb2 as preregistration. Source
+ tests/probes/instinct/path_forest_six_diameter.py. The independent DP minimizes
+height among nonnegative closed walks on the full six-item subset lattice;
+rotating any closed walk at its minimum proves its equivalence to minimum span.
+It does not use the two-run/subset-balancing identity under test.
+
+**Consequence with MI144, status carefully separated.** For a primitive2+4
+core under the extremal bound, either our hand construction fits within20 and
+MI144's complete finite geometry supplies the pair, or it is one of three
+explicit small-step shapes (now placed by hand for g<=5), or it has a move21/22.
+The ordering classification and explicit placements remain hand SKETCH; their
+bounded formula/DP/certificate validation is COMPUTED. No independent carrying
+read requested yet: combine this into a useful6+2 result before adding a review
+queue. G313's separate request remains pending and nonblocking. The elementary
+background identity is not filed as a novel theorem.
+
+**Next actual wide family, by hand, not a new run.** If the cancelling pair
+uses both high roles, g<=5 and the core's two positive moves are the low-role
+u,v>=6. A positive a>=21 forces a21, c6 or7, and negatives respectively
+(7,7,7,6) or(7,7,7,7); a22 would need sum>=28 with four magnitudes<=6, impossible.
+If the pair uses a low role, its gap is>=6; the other positive core move c is
+a high-role move<=5. The full target sorting forces pair gap6/7 for a21, gap6
+for a22. For a21, four negative magnitudes<=7 sum21+c; for a22, c1/2 and
+negative magnitudes are(6,6,6,5) or(6,6,6,6). This is the next bounded hand
+placement question. No further class test or alternate core order claimed here.
+
+**Niggle sweep: three.** (1) A cyclic rotation might change the span: it subtracts
+an existing partial sum from every vertex, so does not; the independent DP
+uses this correctly. (2) Nonprimitive cases might masquerade as six distinct
+vertices: separately tagged by ALL proper subset sums and checked only when
+primitive. (3) A reflected witness might be mistaken for an E28 target: the
+unexpected check is explicitly only about move geometry. No unresolved niggle.
+Gut: sustained delight in the partition reduction; the excitement is in a
+specific sharp22 counterexample and a three-row bypass, not repeated praise
+of counts. Reasoned: one real sign-type obstruction is resolved, while its
+necessary large moves and the3+3 sign type still require work. No full E28/L8
+or novelty claim; no reason to halt or wait for routine review.
