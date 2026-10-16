@@ -8019,3 +8019,89 @@ SHA256 `7067f4f35caf051cc01497dc304e6eb0ba582dedcd4b54cbe0203875f9007cb8`.
 Preregb4de8b25; source tests/probes/instinct/path_forest_coloured_chains.py.
 Immutable upload and manifest append receipts verified. No formal proof number
 or automation change.
+
+
+### MI182 — B80: a deletion-budget failure gives way to two parallel prefix chains (2026-10-16 23:24 BST)
+
+**Initial question/pull and retained failure.** Can distributed contractions
+remove B79's two-large requirement? For a PREFIX-only extension, write r_i
+for refinements of ordered nonunit halves D_i, leaving D_i-r_i>=2, and delete
+r_i initial points of the next run. Survival imposes r_1<=D_1-2,
+r_i+r_(i+1)<=D_(i+1)-2, and r_m<=beta-1. At the known central M28,p=q21,
+D=(3,3,3,4,4,4), k6, sum(D_i-2)=9,beta2. Summing gives
+2 sum r_i-r_m<=9, so sum r_i<=5. NO ordering can remove the required6 by
+this scheme, although B74 already constructs the component. This is a concrete
+failure of the proposed scheme, not the existence conjecture; retained as this
+one paragraph, no separate probe/proof/review job. Push: do not turn that budget
+into another search engine. The chain picture itself still feels useful.
+
+**Change of representation/pull.** Adjacent selected-index gaps g_j would give
+negative halves g_(j-1)+g_j when the selected colours alternate. If halves
+come in equal pairs, the gap pattern t,D_1-t,t,D_2-t,...,t,D_m-t,t returns to
+t after every pair. I first worried t must sometimes be2 and collide with a
+half2; then noticed the two odd positives have OPPOSITE residues mod4. Swap
+which comes first and t can ALWAYS be1. Delight: choosing an owner rather
+than paying extra space. This is the mathematical contribution of this block.
+Record searched: parallel.*chain|paired.*negative|same.*prefix.*translate|
+paired.*half ->16 hits/7 files; MI085's paired FOUR-move parent read and
+separated (different sign pattern/subdivision problem). MI180-181 and CL427
+remain the current geometric context. No imported theorem or novelty claim.
+
+**Paired-negative theorem, PROOF-SKETCH.** M=2n even, m>=1, D_i>=2 integers,
+S=sum D_i. Let p,q>0 be odd and p+q=4S. Then
+
+    (p,q,-2D_1,-2D_1,...,-2D_m,-2D_m)
+
+has a folded-distinct cycle in0..M-1 IFF max(p,q)<=M-3. No common divisor,
+capacity split, initial ordering search or large-gap condition is supplied.
+This is a fixed-move theorem, not all E28, and excludes D_i=1 from its scope.
+Necessity is the existing individual odd-jump bound. The two positives cannot
+be equal: their residues mod4 are opposite since p+q=0 mod4.
+
+For sufficiency choose as FIRST positive P the unique one congruent M-3 mod4;
+let Q be the other, so the positive owners may exchange order. Set
+ a=(M-3-P)/4>=0, and C=(0,D_1,D_1+D_2,...,S).
+Take increasing index chains
+
+    A=a+C, B=a+1+C.
+
+No prefix difference in C is1, because all D_i>=2. Thus A and B are disjoint,
+with each chain individually distinct. Both fit: from Q=4S-P we have
+Q=4(a+S)-M+3<=M-3, hence a+S<=n-2 and max B<=n-1.
+Use even physical positions2A and odd positions M-1-2B. They reflect iff
+an A-index equals a B-index, already excluded. Follow B increasing physically
+downward, then A decreasing physically downward, using the two positive jumps
+to join them. The first jump is M-1-2(a+1)-2a=P, the other
+2(a+S)-[M-1-2(a+S+1)]=4(a+S)-M+3=Q.
+Each chain's negative halves are exactly D_i, one forward and one reversed.
+So every move and owner is accounted for. Label capacity is automatic:
+S>=2m, while paired positive bounds give S<=n-2, so2m+2<=n.
+Both run loads are S<=n-2. This proof does not depend on B79 being verified.
+
+**Predictions BEFORE code/run.** Only EIGHT formula calls: general geometries
+M8,D=(2),p5/q3; M14,D=(2,3),p11/q9; M16,D=(2,3),p11/q9 (which exchanges
+which positive starts); M200,D=(2,3,...,11),p197/q63. Four actual M28 cases:
+D=(2,3,5) with positives25/15 and23/17, and D=(3,3,5) with25/19 and23/21.
+For these use original negative halves d=(D_1,D_1,D_2,D_2,D_3,D_3) and
+slots(1,1,2,2,2,2,2,2). Predict both literal/inventory partition checkers pass.
+These gcd1 examples have no two halves>=8, so B79's two-large rule cannot
+supply them; some may overlap other independent mechanisms, not additive
+coverage. Check original positive OWNER mapping even when the first move is
+the smaller input. Direct physical differences must match the entire input
+move bag independently of the prefix-chain/reflection checks.
+
+Controls: max-bound failure M28,D=(3,3,5),p27/q17 is rejected (a+27 edge is
+a folded loop or outside). A D1 scope example M28,D=(1,3,7),p25/q19 makes
+the proposed A/B chains intersect; direct geometry must fail, but do not infer
+that another ordering/component is impossible. Unexpected wrong-owner control:
+for M28,D=(3,3,5),input23/21, blindly taking the larger input and FLOORING
+(25-23)/4 to0 leaves a reflection-free placement but produces positives25/19,
+not23/21. Literal original move-bag validation must reject it. This tests that
+the residue-based owner choice is doing actual work. Caps8 formula calls,
+1CPU sec/64MiB; stop on mismatch/cap, no repaired search or expanded family.
+
+Gut: warm after the honest budget failure, because the owner-order choice was
+unexpected. Reasoned: paired negative halves>=2 form a complete class, but
+unpaired lists and paired halves1 remain outside this proof. Next question is
+what unequal parallel prefix chains need to avoid an index difference1;
+not another round of fixed-instance repairs. No new experiment opened there.
