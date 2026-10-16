@@ -4257,3 +4257,66 @@ token and coverage-preserving wrong sums must fail independent checks.
 root (S on a4+4 tie). Does this lose targets for which joint root placement succeeds? Record
 losses and individually impossible shapes separately. This stronger anchor rule is diagnostic,
 not an assumption of the main prediction. Both schedules paused; review remains nonblocking.
+
+### MI119 — B50 result: eight-position split passes all133 constant traps (2026-10-16 15:48 BST)
+
+All133 signed/direct target keys agree and have literal certificates. All29,461 mask/direct
+root-pair comparisons agree; same-root, wrong-negative-owner, duplicate and wrong-sum controls
+pass. No individually impossible shape, and the FIRST individually legal longer-cycle root
+always leaves a placement for the shorter cycle (S anchored on4+4 ties). CPU0.090257 s,
+raw outside git SHA256
+`665da55308b4e401a424e56d26c43947615c7705b924114ce2c6426a6aaff8bd`.
+This extends the prescribed factorization to eight active positions in this exact133-target
+family, COMPUTED; it is not all constant-surplus targets or all four-surplus E28.
+
+**Gut:** confidence in the factorization as a useful representation, not confidence in an
+unproved universal packing theorem. **Reasoned:** the constant case may be a visible instance
+of a subset-total identity. Test that wider identity with a canonical choice rather than
+exploit the133 certificates to manufacture a hand-case review queue.
+
+### MI120 — B51: canonical subset cancellation for four positive surpluses (2026-10-16 15:48 BST)
+
+**Question:** for four positive steps1<=a<=b<=c<=d<=5, q their sum, can a proper subset
+of sum D=W-v always be used in a fixed cancelling two-cycle construction? This target
+domain is all sorted even E28 with t4<112,t5>112 and a NONEMPTY PROPER subset of the
+four steps summing D. It is not restricted to MI118's parent or unmatched magnitudes;
+overlap with133 constant fixtures is expected and not added as new coverage.
+
+**Hand identity (SKETCH):** assign that subset I to W. Then W=v+sum(I), and the target-sum
+identity gives Z=u+sum(J) for its complementary subset J. Each part gives a closed cycle:
+positive steps in increasing item-index order, +v, -W for I; positive steps,+u,-Z for J.
+The selected shape is its positive proper-prefix coordinates, the full subset total, and
+the corresponding negative magnitude W or Z. Shapes have3+5,4+4 or5+3 coordinates.
+They are literal-distinct individually because all steps and u,v are positive; the open
+issue is the two cycles' eight distinct folded labels after translation.
+
+**Fixed choice:** among nonempty proper item-index subsets of total D, choose the one with
+fewest items, then lexicographically smallest indices. Sort within each part by index.
+Search only the two root intervals0..27-span. No alternate subset, within-part order,
+negative assignment, or general cycle solver on failure. This is a diagnostic of one common
+rule, not exhaustion of all two-cycle constructions. Record searched: subset.*cancell,
+four.*surplus,prefix.*factor -> no default hits; MI117-119 and B48/B50 sources read.
+No external theorem or novelty claim is invoked.
+
+**Predictions BEFORE run:** tentatively all targets in this proper-subset domain certify
+under the canonical rule. Independent domain: sorted low quadruples68..110 and high
+quadruples114..122, total784; membership via subset-sum dynamic programming with item count
+1..3, independently of canonical masks. Compare every root pair's eight direct labels with
+independent masks; chosen full partitions pass both existing multiset and bitset/exact-bin
+checkers. Cap15,000 targets/four million root pairs/15 CPU seconds; cap means UNKNOWN,
+never increase it. Keep every failed target, no repairs during B51. No exact count predicted.
+
+**Controls:** unequal fixture(u,v,W,Z;steps)=(6,7,10,9;1,1,2,2), canonical subset indices
+(0,2), should certify at roots0 and4. A wrong subset(0) at roots0 and2 must fail the
+selected-token permutation check; it has distinct folded labels, so balance is tested
+separately. Same-root overlap, duplicated-token and coverage-preserving wrong-sum variants
+must reject. No-subset target(68,68,70,90,122,122,122,122) has D=15, hence DOES have
+a proper subset (three5s), and must be included; instead use the prior span27 fixture
+(70,70,70,86,122,122,122,122), with D14, as the explicit NO-subset control.
+**Unexpected check:** first individually legal longer-cycle root (I on ties) versus joint
+placement; report any losses rather than silently relying on the stronger anchor observation.
+Compare constant-trap133 keys with this domain as a subset, no additive counts.
+
+Gut: the subset identity makes the mechanism worth one broader test. Reasoned: canonical
+success would give a common constructive subfamily; failure would locate the price of the
+fixed choice. Both automatic schedules remain paused; carrying reviews are nonblocking.

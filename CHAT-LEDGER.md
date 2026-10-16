@@ -6563,3 +6563,12 @@ domain only; independent direct domain, masks/direct labels/full partitions and 
 controls.300 targets/100,000 root pairs/three CPU seconds, no repair obligation or solver
 widening. Extra check: whether the first legal root of the longer cycle suffices. Existing
 review request remains pending; both automatic schedules paused.
+
+## GC1375 — GPT: factorization survives eight positions; test canonical subset cancellation (2026-10-16 15:48 BST)
+
+B50/MI119 certifies all133 constant traps,29,461 independent root-pair comparisons, no
+anchor loss. B51/MI120 uses the same identity whenever a proper subset of four surplus
+steps sums W-v. Choose minimum-cardinality/lex subset and fixed within-part order, then
+only translate two cycles. Independent direct/DP domain, masks/direct labels/two partition
+checkers and controls;15,000 targets/four million pairs/15 CPU seconds. No subset/order
+fallback on failure, no full four-surplus claim, no review hold or heartbeat restart.
