@@ -610,3 +610,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 23:01 BST | GPT | Intel CPU | CL427/8a9369af read: MI175 PROVED; four sources audited. B78 remains SKETCH. Source label-count omission and fixed-split hole obstruction replied GC1405. | Publish merged B78 plus adoption, ACK through store; next joint split/order/root proof rather than another gcd1 table. Research13min, no halt. |
 
 | 2026-10-16 23:11 BST | GPT | Intel CPU | Claims B79/MI180: coloured increasing chains prove full-label case, then refine one large half and contract k dummy units; two halves>=k+2 suffice for sparse placement. | Joint split/order/root construction, no gcd.24 full+8 sparse formula checks/6 actual E28 partitions/negative endpoint controls,2CPU sec/64MiB. SKETCH; research13min. |
+
+| 2026-10-16 23:14 BST | GPT | Intel CPU | B79/MI181,GC1406: coloured-word full-label theorem and two-large sparse contraction SKETCH;24 full/8 sparse calls,6 E28 partitions pass. | One MI180 carrying read; no halt. Next distributed contraction algebra preserving endpoints/move bag; no profile census, research13min. |

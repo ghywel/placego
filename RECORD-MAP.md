@@ -539,3 +539,5 @@ PART: as on the board.
 - Negative-half gcd>=2: folded cycle iff legal odd jumps and two-run load capacity, PROVED MI175/CL427;490 high-total checks/443 E28 partitions COMPUTED MI176; general gcd1 open.
 
 - Two exceptional negative halves summing0 modg>=3: same-run capacity plus order/root choice suffices, SKETCH MI177;216 tight geometries/3 partitions COMPUTED MI178; arbitrary gcd1 OPEN.
+
+- Coloured index chains: full-label N=n-2 exact construction, sparse if two halves>=unused-label-count+2; SKETCH MI180,24 full/8 sparse checks/6 E28 partitions COMPUTED MI181; general sparse OPEN.

@@ -7954,3 +7954,68 @@ variables together. Reasoned: the two-large condition is a real sparse
 restriction; do not call it the general coprime conjecture. Next would be
 whether refinements can be distributed across several internal runs when no
 single pair can absorb the label deficit. No such experiment is opened here.
+
+
+### MI181 — B79: joint selection through a coloured word, with a valid sparse contraction (2026-10-16 23:14 BST)
+
+**General constructions SKETCH; prescribed checks COMPUTED.** All24 full-label
+formula calls and8 sparse calls pass. Six actual E28 partitions pass independent
+inventory and literal validators. The two other sparse pools use k4 and k12,
+confirming the removal is driven by the label deficit. Full-label fixtures
+include n3 and n25, units, one long gap and all2s. These are formula controls,
+not new truth surveys or a finite justification of the infinite hand claims.
+CPU0.003476s,peakRSS15,544,320bytes. No ordering/split/root search or repair.
+
+The hand example is reproduced exactly: A=(0,1,2,10),B=(3,11,12,13), physical
+positions(0,21,5,3,1,20,4,2), target(98,94,80,80,108,108,108,108).
+The other five prescribed E28 cases also materialize. No additive target-
+coverage or novelty claim. This is a uniform sparse family, not a list of
+exception repairs; some instances overlap older mechanisms, which is harmless.
+
+All named negative controls pass. The doubled-long-jump and label-overflow
+inputs are rejected. A two-large admission failure is scoped to this formula,
+never the component or target. Unexpected wrong deletion: removing7 instead
+of6 A-indices still gives a folded-distinct7-vertex subset, but changes the
+second odd jump19 to3 and loses a negative16 edge. The literal MOVE BAG and
+endpoints reject it. Thus retaining reflection freedom alone cannot certify
+that contraction solved the original problem.
+
+**What changed.** The full-label part of CL427's conjecture is now settled by
+a hand construction pending independent read: N=n-2, arbitrary d, every legal
+positive pair except the doubled M-3 pair. In this case the capacity split is
+constructed, not supplied. The sparse extension proves a sufficient class
+with k=n-N-2 unused labels whenever two negative halves are>=k+2, independent
+of gcd and without asking for an initial split. At E28,N6,k6 this means two
+halves>=8, and includes the new high-total gcd1 example above. General sparse
+lists with no such pair, mixed anchors and other odd sign patterns remain open.
+No full E28/L8 claim. Old prize lanes remain held.
+
+**Niggle sweep.** (1) Wrong index/physical reflection? Even2u and odd2n-1-2v
+reflect exactly when u=v; direct folded labels independently agree. (2) Odd
+jumps swapped? Positive owners may be relabelled to p>=q; the physical word's
+first and B-last jumps are checked against p/q, including equality fixtures.
+(3) Run gaps multiply? Each INTERNAL run creates one opposite-colour gap;
+unit multiplicity n-(m+2)=N-m and the direct difference bag both agree.
+(4) Deleting A-indices changes B's long gap? Its endpoints stay at the same
+actual indices; intermediate colours are immaterial. (5) Emptying a run or
+changing an endpoint? E-1>=k+1 leaves its last A point; four extrema explicitly
+checked before/after. (6) Refinement changes K? D-k plus k units sums D.
+(7) Geometry mistaken for the original moves? The wrong-deletion control
+explicitly separates them. Local niggles resolved; neither general theorem
+self-upgrades beyond SKETCH.
+
+Gut: delight at the change of representation; this is an actual joint choice,
+not warmth inherited from the last residue construction. Reasoned: the remaining
+sparse restriction is substantial. Next cheap question: distribute contractions
+across runs while preserving the four endpoint constraints and original move
+bag, rather than start another coprime census. A failure of that particular
+contraction scheme will not refute the wider existence conjecture. No such
+new experiment is opened now. This is a useful point for ONE carrying read of
+MI180's coloured-gap accounting and endpoint-preserving contraction; no review
+halt or permission gate, and no second request for B78's routine checks.
+
+Artifact `cited/instinct/b79-coloured-chains-7067f4f35caf051c.json`,14655bytes,
+SHA256 `7067f4f35caf051cc01497dc304e6eb0ba582dedcd4b54cbe0203875f9007cb8`.
+Preregb4de8b25; source tests/probes/instinct/path_forest_coloured_chains.py.
+Immutable upload and manifest append receipts verified. No formal proof number
+or automation change.
