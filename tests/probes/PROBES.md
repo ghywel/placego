@@ -1007,3 +1007,7 @@ app is unpublished by design.
 - `instinct/path_forest_extreme_cycle.py`: MI063-065, preregistration 5df6e91d; six forced 8-cycle
   boundary cases certify, followed by a preregistered common-root prefix recipe. No-translation shape,
   pair-reuse and wrong-sum controls pass; no all-E28 conclusion.
+
+- `instinct/path_forest_one_negative.py`: MI066-067, preregistration 98702aba; formula-only certificates
+  for all 271 even E28 inputs with t4>=112. Parameter and independent sum-count domains agree as sets;
+  omitted root correction and exception rejected. Uniform proof awaiting review; no general bound.

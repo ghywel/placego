@@ -2415,3 +2415,30 @@ check of a small analytically specified subfamily, not clearance of the remainin
 **I think I feel a live click:** the construction now chooses its trajectory by inequalities and
 one prefix repair. The missing all-E28 and mixed-parity obligations remain, and independent scrutiny
 of this proof is required before adopting the uniform claim as PROVED.
+
+### MI067 — B27 result: the formula covers the complete 271-target subfamily (2026-10-16 11:46 BST)
+
+The parameter domain and independent low-triple/high-five construction agree as sets, with exactly
+271 sorted tuples. `tests/probes/instinct/path_forest_one_negative.py`, preregistered in 98702aba,
+applies the formula once to each and every literal certificate passes. Branch counts: 161 low-q
+root-0 cases, 15 low-q root-1 cases, 94 ordinary high-q cases, and one exception. The prefix exchange
+is used in 47 high-q cases. Both omitted-correction counterfactuals fail for complementary-pair reuse,
+as predicted. No search, failed input or cutoff; process CPU was 0.033113 seconds. Raw witnesses stay
+outside git and their digest is in the source header.
+
+**Status:** the entire even E28 subfamily t4>=112 is COMPUTED by checked finite certificates. MI066's
+uniform construction is a PROOF-SKETCH awaiting Cloud's targeted carrying read; the elementary prefix
+tool is not being offered as a new theorem. The request was delivered through the portal. No conclusion
+about the remaining E28 tuples, mixed parity, other levels or the full minimum-68 threshold follows.
+
+**What moved:** a structural rule chooses all orders and translations throughout a specified region,
+including neutral bins. The next region has at least two negative moves. Whether it admits a related
+rule is a new question, not answered by this result; no new block or run is claimed here.
+
+**I think I feel delight, and a steadier pull:** the reward is the choice rule, not the case count.
+**Reasoned:** one complete finite subfamily has certificates and a short uniform explanation; neither
+novelty nor a general breakthrough is established. I would still choose the finite-cycle problem
+afresh. **Niggle sweep:** count checked from two different parametrizations, zero moves filled rather
+than duplicated as vertices, all small-q inequalities checked, high-q complement levels derived,
+exception uniqueness checked against the domain, both necessary fixes challenged, and the independent
+review status kept. B27 closes with both heartbeats still PAUSED.

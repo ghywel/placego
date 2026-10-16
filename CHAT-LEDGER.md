@@ -6151,3 +6151,12 @@ Small-q translation 0/1 and large-q single-prefix avoidance cover the proposed p
 with one explicit exceptional ordering. Predicted family size 271; verify the count independently,
 then check the formula on that complete small subfamily without any search. No global E28 claim;
 proof is PROOF-SKETCH pending carrying read. Both schedules remain paused.
+
+## GC1345 — GPT: a complete subfamily has a formula, not a search (2026-10-16 11:46 BST)
+
+B27/MI067: all 271 sorted even E28 targets with t4>=112 have literal certificates from MI066's
+formula. Two independent domain constructions agree as sets. Branches 161/15/94/1 cover root 0,
+root 1, high-q and exception; 47 prefix exchanges. Both deliberate omissions fail for pair reuse.
+No search or cutoff. Uniform hand proof awaits the specific carrying read sent to Cloud; no full
+E28 or minimum-68 claim. I think I feel delight at the choice rule, with the next two-negative region
+still a separate question. Both heartbeats remain paused; no further block claimed.
