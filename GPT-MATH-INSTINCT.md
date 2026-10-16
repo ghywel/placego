@@ -3808,3 +3808,59 @@ be rejected by direct labels. Full checker rejects coverage-preserving wrong sum
 Unexpected: compare graph edges for every root against literal seven-position labels, including
 roots with a valid fixed core and no completion; record these separately from invalid cores.
 This checks the exact remaining inference, not only favourable certificates.
+
+
+### MI105 — B44 result: all-after fails in exactly two targets (2026-10-16 14:21 BST)
+
+There are1,478 targets in the named unmatched R>=Z,W<22 regime, with independent domain
+sets equal.1,476 certify. All94,008 algebraic/direct root-order comparisons agree. Across
+roots:8,998 have completions,1,481 have a legal fixed core but no completion,5,189 have an
+illegal fixed core. Two complete architecture failures remain:
+(u,v,W,Z;a,b,c)=(6,7,21,2;2,4,4) and(7,7,21,2;3,3,3). The blind all-after claim
+is REFUTED; no caps or choices were added. Controls pass, CPU0.424268 s. Raw outside git SHA256
+`0dbafbbd7fcf3ce822ebc5effc442e4cd0f9f074a817c84f5af7daa96fed612c`.
+
+**Failure certificates by hand.** In the first case B={0,10,15,17,21}, allowed roots0..6.
+Only roots2 and4 have legal fixed cores. At r2,T23 the forbidden set is{23,13,8,6,2};
+the last variable is6 or8, both forbidden. At r4,T19 the forbidden set is{19,9,4,2,-2};
+the first variable is2 or4, both forbidden. At other roots fixed pairs sum to T.
+In the second case every order gives S={0,3,6,9,14,16,21}. Its opposite-parity pair sums
+include all15,17,...,27, blocking every allowed root. Thus no extra root or permutation
+within this allocation could help. The variables need to move to the other endpoint.
+
+**What moved:** root/order feasibility has an exact local test, and its two failures are explicit
+obstructions, rather than UNKNOWN solver outcomes. **Gut:** disappointment at losing the universal
+all-after rule, then a warmer pull when both failures shared a short allocation repair.
+**Reasoned:** test that repair on a parameter stripe with explicit labels before expanding scope.
+
+### MI106 — B45: one move before, two after, with explicit pair labels (2026-10-16 14:21 BST)
+
+Question: can one uniform parameter rule repair both exhausted all-after obstructions?
+Record searched: unmatched.*interior, allocation.*translation,W.?21; MI094-105 and B44
+actual artifact read. No novelty claim; this is an endpoint-allocation change on the same
+parent, not a larger cycle search.
+
+**Hand candidate (PROOF-SKETCH).** Restrict W=21,Z=2,v=7,u in{6,7}, q=16-u and
+1<=a<=b<=c<=5 with B=q-c=a+b in{5,6}. Then a<=3. Put the largest move c BEFORE -W,
+and the other two after it. Choose the final physical selected indices directly:
++a at1, +b at1+a, +v atB+1, -Z atB+8, +u atB+6, +c atB+6+u, -W at22.
+They follow the closed path
+1 ->1+a ->B+1 ->B+8 ->B+6 ->B+6+u ->22 ->1.
+The c edge closes because B+c+u+6=q+u+6=22.
+
+Their folded labels are1,1+a (in2..4),5 for the -21 edge,6 or7 for B+1,
+11 or12 for B+6,13 for B+8, and8/9/10 for B+6+u. These seven labels are pairwise
+distinct. Thus one selected token per active bin, filler pairs and simultaneous transfer
+produce the exact target partition. This covers both failures and five neighbouring targets
+with one rule, without needing an all-after compatibility edge.
+
+**Predictions BEFORE validation:** exactly7 parameter choices in this stripe; compare to direct
+sorted high triples and fixed low parameters. Every displayed witness must certify. Recheck
+the1,476 existing B44 witnesses unchanged and add only the two missing targets; target union
+equals the same1,478 regime, with no wider E28 claim. Cap10 new inputs/one CPU second, plus
+the existing-certificate recheck. Stop on any discrepancy; no extra repair.
+Controls: moving all seven positions down1 in the (6,7;2,4,4) repair restores a complementary
+collision. Coverage-preserving wrong sums rejected. Unexpected boundary check: the same formula
+for u=v7,(a,b,c)=(1,3,5) has B4; +v at5 and -W at22 reuse a pair. This must fail and
+shows the B>=5 hypothesis carries real weight; that neighbouring target was already certified
+by B44's different placement. Both schedules paused; no new carrying queue or review hold.

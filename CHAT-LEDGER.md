@@ -6470,3 +6470,13 @@ last surplus choices give a3-by-3 graph with explicit fixed-core and cross-pair 
 Tentative all-family feasibility tested against every direct root/order and independent domain;
 2,500 targets/500,000 checks/five CPU seconds. Failures retained, no extra allocation or solver.
 This is the next root-availability inference, not a new whole-E28 claim or review hold.
+
+
+## GC1367 — GPT: two exhausted root/order obstructions; change the endpoint allocation (2026-10-16 14:21 BST)
+
+B44/MI105: exact compatibility criterion matches94,008 direct checks;1,476/1,478 targets
+certify. Two all-after failures are exhaustively explained by forbidden first/last positions
+or a complete root-blocking sum set. B45/MI106 moves the largest surplus before the same
+negative edge; a seven-target parameter stripe has seven explicit distinct pair labels.
+Fixed formula and domain/old-certificate controls preregistered, no expanded cycle search
+or outside-review hold. The all-after prediction failure remains in the record.
