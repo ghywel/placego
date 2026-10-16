@@ -8828,3 +8828,112 @@ SHA256 496b51fd8b795a09bc6bec999efa3d6cce78973fa2d17ab1c29e11f91fb8634b.
 Preregb4fb6292; source tests/probes/instinct/path_forest_partial_padding.py.
 Immutable upload digest and manifest receipts verified. No formal proof number,
 novelty claim, broader solution or automation/held-lane change.
+
+
+### MI193 — B85: one large gap can merge across several small runs (2026-10-17 00:27 BST)
+
+**Question/pull.** Can the other small gaps SHARE the contraction capacity?
+Yes at sketch level: split D into several nonunit pieces, then delete the
+first r A-vertices after0 to merge those pieces back into D. The other colour
+never moves, so its many small gaps survive. This differs from MI182's failed
+prefix-only refinement D_i-r_i plus units: here ONE D is split into several
+nonunit gaps and their intermediate A vertices disappear. An odd total gives
+one endpoint unit as well. Record searched: refin.*consecutive.*gap|
+distributed.*contract|several.*small.*gap ->5 hits/5 files; relevant MI182's
+failed budget, Cloud reach_count, otherwise unrelated. MI180,191-192 and
+CL428/429 read. No census or resurrection of the refuted prefix-only scheme.
+
+**Distributed sufficient construction, hand SKETCH.** Use MI191's legal
+setup, k=n-N-2,r=max(0,ceil((K-2N)/2)),s=k-r. r0 uses MI191's full core
+and padding. For r>0, let epsilon=K mod2. Take D as a largest half; sort the
+other halves E>=2 decreasingly (unit halves remain in the rest). Let t be
+the smallest prefix count with sum_(i<=t)(E_i-1)>=r+1-epsilon. Require
+ D>=r+t+1.
+This replaces the previous single E>=r+2 condition by shared capacity. If
+there is no such prefix or D is smaller, refuse THIS construction only.
+
+In the minimal core n_c=N+r+2, K is either2(N+r) (even) or2(N+r)-1 (odd).
+Set U=r-t+1-epsilon>=0. Refine D into t nonunit pieces
+ f1=D-r-t+1>=2, f2=...=ft=2,
+and U+epsilon units. Their count is r+1 and sum D. Keep all other original
+halves. The full-label parent has N+r gaps. Choose its internal-run order
+ f1,E1,f2,E2,...,ft,Et, then all remaining original nonunit halves.
+Every f_i-run is B, every E_i-run A. Use initial A-run of length1+epsilon
+and final run of length1. Its two positive joins are
+ (K+1,K-1) if epsilon0; (K,K) if epsilon1,
+exactly the MI180 full-label construction in both cases. Thus this step uses
+a PROVED arbitrary-internal-order theorem, not an unreviewed placement guess.
+
+Delete the FIRST r A-indices after0, preserving0. Minimal t ensures the final
+selected E_t-run retains a point: its prefix has r+1-epsilon available points
+in total and fewer than that before the last run. If epsilon1, the first
+removed point is the extra initial A-index1. The merged first A-gap consists
+of the t f_i, U internal units and epsilon initial unit, hence has size D.
+These are exactly r+1 parent gaps; replacing them by one removes r vertices.
+Every other A-gap is untouched. Every B-gap keeps its positional distance,
+including all E_i despite deletion of their internal A points. Neither colour
+minimum/maximum changes (the last selected A-run retains a point), so both
+odd joins survive and all folded labels remain distinct. This gives the
+original gap bag in a core with deficit r.
+
+**Endpoint choice and reversal, carrying step.** MI191's interval/residue
+selector chooses a desired core pair(P0>=Q0). For even K this is necessarily
+(K+1,K-1), already built. For odd K it is either(K,K) or(K+2,K-2).
+In the latter case reverse BOTH index chains i -> n_c-1-i. With endpoint
+sums, this changes ordered joins(P,Q) to(Q+2,P-2); balanced(K,K) therefore
+becomes precisely(K+2,K-2). Disjointness and negative gaps survive. A chain
+need not start at0 after reversal; use the GENERAL endpoint formula. Then
+apply MI191's owner-aware leading/trailing padding to get original p/q.
+The new merging/reversal steps are SKETCH; the selector/padding remains
+MI191 SKETCH pending its independent review. No dependency is silently upgraded.
+
+For t1, even K recovers the old two-large condition. Odd K additionally uses
+one initial unit, allowing E1>=r+1 instead ofr+2. More importantly t>1 lets
+several modest E's share the budget. The one-large example d=(7,2,2,2,2,2),
+p19/q15 has r3,epsilon1,t3,D7 meeting D=r+t+1; the old second-large rule
+failed. The fixed-core split chooses which colour owns each gap jointly.
+General sparse/E28/L8 are not solved; both the shared-capacity and D bounds
+are constructor admissions, not universal necessities.
+
+**Predictions BEFORE code/run.** Exactly12 formula calls; six actual M28
+partitions under original slots(1,1,2,2,2,2,2,2):
+ d=(7,2,2,2,2,2),p19/q15 and25/9;
+ d=(8,2,2,2,2,2),p25/q11;
+ d=(7,3,2,2,2,2),p23/q13;
+ d=(6,3,3,2,2,2),p19/q17;
+ d=(8,3,2,2,2,2),p25/q13.
+All SIX miss B84's second-largest>=r+2 condition but must now pass.
+The first needs epsilon1 and t3; with epsilon0 it would require t4 and
+D>=8, so no pretending the extra initial unit is optional. The second and
+sixth require index reversal from balanced core to(K+2,K-2); cases3-5 use
+even K, with t4,t3,t2 respectively. Original positive owners must survive.
+
+Six other calls: M12,d=(3,2),p7/q3; M10,same input (zero outer padding,
+reversed core); M40,d=(11,3,3,3,2,2),p35/q13;
+M100,d=(17,2,2,2,2,2,2,2,2,2),p61/q9 (N10,r8,s30);
+M22,d=(1,1,2,2,2,2,3,3),p17/q15 (r0 MI191 regression);
+M28,d=(8,8,2,2,2,2),p25/q23 (t1, full r=k regression, no partition needed).
+Compare full physical move bags independently of the parent-gap merge,
+all folded labels/window/endpoints and original owners; retain parent,
+deleted indices, merged gap and any reversal. Both actual partition validators
+must pass. No word/permutation/profile grid or replacement search.
+
+Kill controls: d=(5,3,3,3,2,2),M28,p19/q17 has D5<r+t+1=6, so refuse this
+constructor. Existing B82 crossing-pair construction must pass literal full
+bag for the SAME target, proving the bound is not global necessity. A second
+refusal d=(11,1,1,1,1,1),M28,p19/q13 has no eligible E; its explicit chains
+A=(0,11),B=(4,5,6,7,8,9),positions(0,19,17,15,13,11,9,22) pass geometry and
+full bag. Identified unexpected check: on the first new fixture, delete r+1
+rather than r A-indices. It remains folded-distinct, keeps BOTH odd joins
+and total negative mass K, but replaces gaps(7,2,2,2,2,2) by(9,2,2,2,2).
+Even checking endpoints and mass is insufficient: full original move bag
+MUST reject it. Caps12 calls/6 partitions/two admission refusals with their
+positive controls/one over-deletion control,1CPU sec/64MiB. Stop on mismatch;
+retain failure, no repaired search or raised bound.
+
+Gut: warm surprise at merging NONUNIT refined gaps, and at the one spare
+endpoint position doing mathematical work. Reasoned: this genuinely crosses
+the one-large admission that motivated the block, but not every one-large
+list. MI191's carrying read remains the priority; no added review queue or
+review halt. A next step would examine what this shared-capacity gate still
+misses, not count how many sample targets it covers.
