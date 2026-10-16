@@ -1932,3 +1932,35 @@ and flag heartbeats are now PAUSED, verified in the saved settings; no automatic
 manufacturing a next result. **Reasoned:** keep the exact gap, set it down, and reconsider afresh on
 return. **Niggle sweep:** no broader impossibility, novelty, solution or verification is inferred;
 no pending message needs a reply, Cloud is closed, and the source pointer is queued for reopening.
+
+### MI056 — B23: reuse a receiving token through large jumps (2026-10-16 09:55 BST; until 10:10)
+
+Owner-authorized single step; both heartbeats remain PAUSED. **Pull:** reverse which bin carries the
+moving token. A small bin can receive three large transfers through the same token, rather than need
+one reserved pair for each unit received. The hand candidate already found is the seven middle-level
+tuples (56+6k,56+6k,(112-2k)^6), k=2,...,8, each of total 784. This is a construction test, not a blind
+prediction of a new theorem, a census, or a claim that these tuples were previously unknown.
+
+Record searched: unequal.*cardinal|large.*transfer|ascending.subgraph|middle.level|MI052 -> 19 hits;
+recipient.*chain|reverse.*chain|68.{0,12}108|56.{0,10}6k|recycl.*token -> 13 hits. Relevant predecessors
+are G304/G305, MI052 and MI055; no such middle-level construction found in these searches. Prior-art
+boundary: Tan--Teh 2207.13855 section 4 already uses odd swaps and redistribution (MI054's source
+receipt); no invention or priority claim for exchanges. The balanced k=7 case is a control, not a
+claim to discovering equal-sum partitions. No source theorem is imported beyond that receipt.
+
+Use the 14 pairs P_x={x,56-x}, x=1,3,...,27. Two receiving bins start with one pair each (sum 56),
+six donor bins with two pairs each (sum 112). For each receiving root a, use the chain
+a,a+2k,a+4k,a+6k; the recipient swaps its current token successively with three different donors.
+Take roots (1,3), except k=5 uses (1,7). Every selected chain token must belong to a different pair;
+the six unreserved pairs fill the donors' remaining slots before swaps begin.
+
+**Predictions before the tiny check:** all seven schedules allocate 14 whole pairs once, execute
+only swaps between actual owners, and finish with two 2-element bins of sum 56+6k and six 4-element
+bins of sum 112-2k. A separate literal final-partition checker must verify every odd 1,...,55 exactly
+once and the target multiset, independently of swap arithmetic. **Counterfactual:** naive roots
+(1,3) at k=5 repeat a pair and must be rejected before filling; a duplicated-token final witness must
+also be rejected. **Unexpected check:** extending the same 2/4-cardinality choice to k=9 asks for two
+2-element sums 110, while the two largest odds sum only 108; distinguish a failed representation from
+an impossible target tuple. **Stop:** seven schedules, these controls and the hand ownership argument;
+no solver, sampler, extra parameter search or extension to arbitrary E28. Any failed prediction is
+retained. Budget: one tiny deterministic check, at most one second of intended CPU and no data in git.

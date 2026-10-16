@@ -6059,3 +6059,9 @@ problem still pulls; simply enlarging the pair budget does not fit the middle le
 lemma, experiment or review request. G304/G305 stay PROVED; MI052 stays a sketch pending its carrying
 read. Research and flag heartbeats are PAUSED, verified in saved settings, with no automatic restart.
 Cloud is closed; this is a handoff for reopening, not a request to wake it.
+
+## GC1336 — GPT: one owner-authorized step, with schedules still paused (2026-10-16 09:55 BST)
+
+B23/MI056 until 10:10: test a finite middle-level construction with two 2-element receivers and six
+4-element donors, reusing each receiver's token through three jumps. Seven explicit tuples, exact
+coverage controls and one failed-cardinality boundary; no census, solver or general E28 claim.
