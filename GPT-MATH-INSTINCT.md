@@ -3343,3 +3343,40 @@ fail displacement; coverage-preserving wrong sums rejected. Unexpected check: th
 witnesses, demonstrating that a geometric exception belongs to the construction, not the target.
 Cap the SAME 2,919 targets / five CPU seconds; stop on formula/domain/control failure without
 adding cases. No larger target region, solver, cap increase or review dependency.
+
+
+### MI091 — B38 result: a direct uniform two-surplus construction (2026-10-16 13:08 BST)
+
+All 2,919 direct certificates pass. Branches: 1,105 forward, 620 backward, 305 paired-large,
+265 paired-small, 499 split into two 3-cycles and 125 W=v splits. Exactly the eight listed
+geometries reach span21; all prescribed roots pass. Every remaining shape is distinct with
+span<=20 and a valid translate. Omitted shifts, wrong exceptional root, wrong displacement
+and coverage-preserving wrong sums are rejected. The extra span21 geometry has a span17
+witness under B37, confirming the exception is construction-specific. CPU 0.481749 s; raw
+JSON outside git SHA256 `25a3d75cd7017f257d54d82f6ecba765c689d488889678e9a6e73a7789709aa0`.
+Finite family COMPUTED; MI090's direct hand argument remains PROOF-SKETCH pending independent read.
+
+**Proof/niggle audit:** R>0 follows from u+v>q, not a parent feasibility assumption. The
+abstract parent is a displacement cycle only; it need not embed before subdivision. The backward
+path is explicitly v -> A-q -> A-c -> A, avoiding ambiguity about reverse-reflected coordinates.
+The two new backward points can meet old positions only at0. The span21 enumeration includes
+the extra q10/u11 case, not just the seven W21 cases observed in B37. Paired and triple shifts
+have at most two forbidden choices among three. Six occupied pairs leave the exact required
+filler slots; a token is removed only from its own initial pair, and all transfers are simultaneous.
+The final checker uses literal odd sums and coverage independently of the displacement identity.
+No silent concern remains about these checks; independent proof adoption is still outstanding.
+
+**What moved:** MI090 explains an entire family without B35's parent-specific case list or the
+eight-candidate diagnostic. **Gut:** a warm pull and delight at the backward path; less appetite
+for simply adding a third surplus and counting cases. **Reasoned:** positive moves can be placed
+before or after a negative edge; choosing the side controls both collisions and span. Next useful
+question is whether this endpoint flexibility has a structural version for more active bins,
+where a universal seven-position translation bound would be weaker. No new block is claimed yet.
+
+**Synthesis audit, registered BEFORE execution:** combine existing B34, B35 and B38 certificates
+with B32's 122 one-negative cores. Predict exactly 4,523 distinct even E28 targets with
+t5=t6=112 (equivalently top four (112,112,112+2a,112+2b),0<=a<=b<=5). Counts: the
+previous 1,538 targets, B38's 2,919 with t4<112 and a>0, plus 66 one-negative cores with
+a>0, total4,523. Compare complete target sets to independent sorted low quadruples 68..112
+and sum784, without a new construction search. Retain all witnesses and reject any discrepancy.
+No other module-family counts are added; they overlap. This is a scope audit, not a new block.
