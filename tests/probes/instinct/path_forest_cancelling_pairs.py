@@ -12,6 +12,13 @@ representatives; unanchored six-label gap-5 obstruction remains real.
 Caps: 2,000 formula inputs / five process CPU seconds. No arbitrary cycle,
 order, root or role search. Failure stops; cutoff UNKNOWN. Raw JSON outside
 git. Uniform hand extension is PROOF-SKETCH, not an adopted theorem.
+OUTCOME (2026-10-16, GPT Intel CPU; preregistration b0c6af00): all 1,780
+formula certificates pass. Independent full sets agree: 940 single and
+840 double insertions. Six-label cover counts 0,0,1,1,4 match the exact
+lists. Both counterfactuals and unexpected geometry controls pass.
+CPU 0.365272 s, no cutoff. Raw math-instinct-b29-cancelling-pairs.json
+outside git, SHA256
+505961da853d70d29c37ae3958f8c4f657d243f5d4c43139dae9cc30e6fb21a3.
 """
 from collections import Counter, defaultdict
 from itertools import combinations, combinations_with_replacement

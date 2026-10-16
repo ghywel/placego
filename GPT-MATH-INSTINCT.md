@@ -2702,3 +2702,72 @@ separate checker. Unexpected: occupied labels {2,3,6,7,10,11} block all lower-on
 while coordinate edge (12,14) is still free in the full pool. Also confirm that the unanchored
 six-label set {0,6,7,8,9,10} really blocks gap 5; anchors are essential, not a cosmetic argument.
 No known theorem or routine guard is offered for another review; this is a construction candidate.
+
+
+### MI074 — B29 result: one packing mechanism covers 1,780 derived targets (2026-10-16 12:19 BST)
+
+All preregistered checks pass in 0.365272 process CPU seconds. Single insertion gives 940 distinct
+sorted targets and double insertion 840, independently reconstructed by direct target joins.
+Every formula partition passes the separate exact checker. Coordinate-generated gap graphs match
+the five path decompositions; all 3,003 six-label sets per graph give exactly 0,0,1,1,4 covers,
+precisely the hand lists. Forced core-pair reuse and coverage-preserving wrong sums are rejected.
+The lower-only gap-2 obstruction disappears with upper representatives, while the unanchored gap-5
+obstruction remains real. Raw JSON outside git, SHA256 `505961da853d70d29c37ae3958f8c4f657d243f5d4c43139dae9cc30e6fb21a3`.
+
+**What moved:** matched pairs can be added twice around the same core. This reaches selected
+three-negative regions without a new cycle search. The 1,780 finite certificates are COMPUTED;
+MI073's general hand extension remains PROOF-SKETCH. No new outside read is requested at this
+checkpoint. The core is G306, already verified, rather than the pending B28 statement.
+**Gut:** surprise and delight at the folded paths; I would still choose this representation.
+**Reasoned:** the marker geometry, not the spare-label count alone, carries gaps 3..5. That
+condition and the mismatch cases remain explicit. Niggle sweep: unusable loops removed, covers
+complete, inserted cycles preserve core markers, odd core size avoids the six-label corner,
+exact domain multiplicities retained, and every finite partition verified. Both schedules paused.
+
+### MI075 — B30: complete the magnitude-two boundary without waiting on reviews (2026-10-16 12:19 BST)
+
+Question: all sorted even E28 with t4=108,t5>=112. Write deviations `(u,v,-w,-2,p)` where
+`w=u+v+q-2`, `u+2v+q<=30`, `w<=22`, `u<=10`, `v<=12`, `q<=12`. The two-negative magnitude-one
+proof is not assumed. G306 and its elementary prefix exchange suffice for the construction below.
+Record searched: the default record search from MI072 plus MI070-074 read directly; no independent
+larger construction is being imported. Known exchanges remain tools, without novelty claims.
+
+**Prediction before the formula check:** exactly 421 inputs, with u=6..10 subtotals
+249,119,43,9,1. Parameter-domain and independent low-triple/high-four sum joins must agree as sets.
+All must have literal certificates under the proposed fixed rules; cap 600 inputs / five process
+CPU seconds, stop on count disagreement, construction failure or failed control. No cap increase
+or arbitrary order/root/cycle solver. A failure is retained and changes the next question.
+
+1. If p contains 2, neutralize that +2 and the -2, use G306, then add a free gap-2 edge. The seven
+   disjoint edges in MI072 prove one exists independently of MI073's still-unreviewed extension.
+2. Otherwise, if p contains at least two 1s, neutralize those two +1s and the -2, use G306, and
+   put a (+1,+1,-2) 3-cycle on three consecutive free lower labels. Predict the default core
+   fails this placement in exactly two cases: u=v=6 with remaining p=(3,3) or (3,5). For these
+   two translate its selected indices by +1 first; all pair and permutation checks must still pass.
+   This two-exception prediction is a hand-derived diagnostic, not yet a verified general packing proof.
+3. Otherwise there is no 2 and at most one 1. Positive p-prefix 2 is automatically impossible.
+   Order positives, then u,v, with the -w vertex at r+b and the -2 vertex at r+2, b=u+v+q.
+   The closing edges are r+b -> r+2 -> r.
+
+For rule 3 use the following deterministic geometry, not a search:
+- q<=6: p,u,v and r=1 iff (q+u)+b=27, otherwise r=0. Exceptional parameter triples are
+  (7,8,6),(8,8,6),(6,9,6). For the first two use u,p,v and r=0. For (6,9,6), p=(1,5) uses
+  v,p,u; p=(3,3) uses (3,u,3,v), all with r=0.
+- q=12 (necessarily u=v=6): descending p,u,v, r=1. The five allowed positive-p multisets
+  have no descending prefix 7; first p>=3 also avoids prefixes 1 and 2.
+- q=11 (u=v=6): remove a largest p, order the rest to avoid prefix 4, then append the largest,
+  u,v, r=0. The remaining total is <=7, so no prefix 10 occurs before that last p, and its
+  addition gives 11. Positive p-prefix 2 is impossible; complements correspond to prefixes 4,10.
+- Constant cases: (u,v,q)=(6,6 or 7,10), p=(5,5), use (u,5,v,5), r=0;
+  (7,7,8), p=(4,4), use (7,4,7,4), r=0;
+  (7,7,9), p=(3,3,3), use (3,7,3,7,3), r=0.
+- Other q>=7: ordinarily r=13-q and avoid prefix q-u+1 in p. If q=u+1 or (u,v,q)=(7,8,7),
+  instead r=12-q and avoid prefix q-u+3. Then append u,v. These are precisely the added-vertex
+  collision and excessive-span branches; the displayed constant exceptions are the prefix failures.
+
+**Controls:** omit the 3-cycle core translation on either of its two registered exception targets
+and require that no free lower consecutive triple exists. Apply the old q=11 high-root rule to
+(68,68,70,108,112,118,118,122) and require pair collision. Independent full-coverage wrong-sum
+control must fail. Unexpected: omitting the special constant-3 order for (70,70,70,108,112,118,118,118)
+should expose the inherited forbidden-prefix obstruction, not an unburnability verdict. All
+compositions are materialized from whole pairs, and no full E28 or threshold claim is inferred.

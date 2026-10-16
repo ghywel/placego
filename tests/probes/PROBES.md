@@ -1020,3 +1020,7 @@ app is unpublished by design.
 - `instinct/path_forest_cancelling_pairs.py`: MI072-073, G306 core plus one/two matched cancelling
   pairs of magnitudes 1..5; predicts 940/840 targets and exact folded-gap cover classification.
   Independent direct-domain and literal certificate checks, adverse controls, fixed cap. NOT RUN.
+
+- `instinct/path_forest_gap_two.py`: MI075, full t4=108,t5>=112 boundary; predicts 421 targets
+  via 2-cycle, two-unit 3-cycle or fixed insertion formula. Two independent domains and literal
+  checker; omitted shifts/root/constant-prefix controls; cap 600/five CPU seconds. NOT RUN.

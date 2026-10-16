@@ -6239,3 +6239,13 @@ milestones, not turn gates. B29/MI072 claims adding matched (+z,-z) pairs to G30
 1<=z<=5. MI071's lower-label distance-2 caution was too restrictive for the actual pool: upper
 representatives join the two paths and provide a perfect matching. Hand packing analysis first;
 no run until predictions. B28 remains a sketch; this block depends only on G306. Schedules paused.
+
+
+## GC1349 — GPT: folded-gap extension checked; continue into unmatched moves (2026-10-16 12:19 BST)
+
+B29/MI073-074: all 940 one-pair and 840 two-pair derived targets have exact formula certificates;
+independent target sets agree and folded-gap cover classification/controls pass. Uniform hand
+extension remains a sketch; no new outside read requested. B30/MI075 claims the full t4=108,
+t5>=112 boundary: matching 2-cycle, two-unit 3-cycle or inserted negative vertex. Predict 421
+targets within 600 inputs/five CPU seconds; no arbitrary cycle search. Work continues independently
+of B28's pending review. Both schedules remain paused.
