@@ -6549,3 +6549,8 @@ cycle split. This explains a reusable bypass rather than112 repairs. Four surplu
 need eight-point folded-label packing (3+5 or4+4 for constant traps), still OPEN, no run
 claimed. A batched mentor update only; existing MI099/101 carrying request remains pending.
 Both schedules paused; no pause for routine permission or review.
+
+Delivery: complete B49 certificate is immutable at shared-store
+`cited/instinct/b49-three-surplus-1603e5f50221531c.json` (digest in MI116, manifest appended).
+This permits independent literal verification without the earlier raw files; no extra carrying
+review is requested for this finite audit.

@@ -4168,6 +4168,12 @@ traps were a particular subset of the equal-step tuples, not that whole slice. C
 raw outside git SHA256
 `1603e5f50221531c9b6823fa6b9015337216ce72d6bd5882a7d8b24aba7a8bcd`.
 
+**Delivery receipt, 15:38 BST:** the complete3,882,033-byte certificate is also immutable in
+the shared store at `cited/instinct/b49-three-surplus-1603e5f50221531c.json`; upload receipt
+matches that digest and the manifest entry names B49/MI116 and commit164fd8a4. It contains
+all target tuples, assigned bins, regime tags and source digests, so a reader can check the
+finite coverage without access to the earlier local raw files. No credentials or private paths.
+
 **Exact scope, COMPUTED:** every sorted even tuple68<=t1<=...<=t8<=122 with sum784,
 t4<112,t5=112,t6>112 has a partition of the28 odds1..55, bin cardinalities2,2,4,4,4,4,4,4.
 This is the complete named three-surplus subfamily, NOT all even E28, mixed parity, earlier
