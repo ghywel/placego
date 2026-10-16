@@ -4458,3 +4458,58 @@ domain equality. Failure/cap is retained, no widened family or fallback.
 Gut: prefer an explained factorization choice over changing roots indefinitely. Reasoned:
 finish this finite boundary honestly; the605 primitive move multisets are still unsearched.
 Both schedules paused; no new review queue or review dependency is created.
+
+### MI125 — B53 result: all7,223 factorable four-surplus targets constructed (2026-10-16 15:58 BST)
+
+Both explicit alternative formulas pass both literal partition checkers. All7,221 prior
+witnesses remain unchanged; the resulting7,223 keys equal the independent sorted-target/
+integer-bitset subset-sum domain within7,828 four-surplus targets. The605 primitive targets
+are unchanged. Omission, duplicate and wrong-sum controls pass. All928 old-part-order/root
+pairs fail, and the gap bound holds for all five unique positive orders. CPU0.485571 s,
+raw outside git SHA256
+`d5648ef86d41ae8360b09c4b147426cf46d9f51763ac85344208ae074d209c65`.
+
+**Scope COMPUTED:** every sorted even E28 tuple with t4<112,t5>112 whose six positive
+fixed-role moves contain a subset summing W has a checked partition. Canonical factorization
+works except the two explained changes. This is not a general hand packing theorem or all
+four-surplus coverage. The retained greedy and canonical-partition failures show two separate
+prices: choose positions jointly, and occasionally change the arithmetic factorization.
+
+### MI126 — B54: known minimal-zero-sum ordering applied to the primitive605 (2026-10-16 15:58 BST)
+
+**Question:** can a single fixed sign-greedy cycle order place the605 arithmetically primitive
+four-surplus move multisets without complementary-pair reuse? The absence of a proper zero
+sum means ALL cycle orders have distinct literal vertices before closing. The remaining
+conditions are span and reflected-pair collisions, not another subset factorization.
+
+**Prior art, not a new lemma:** Plagne-Tringali, *The Davenport constant of a box*,
+[arXiv1405.4363v2](https://arxiv.org/pdf/1405.4363), section3 Lemmas3,6,7 and their proofs
+read. Their minimal-zero-sum partial sums are distinct; their nyctalopic order chooses a term
+of opposite sign to the current sum. Starting with a term strictly between the extreme
+negative/positive terms keeps the partial sums strictly between those extremes. Filed in
+PRIOR-ART, no PROOFS entry or carrying review requested. Only this local use is made, no
+survey of later improvements or use of their inverse theorems. Record searched: Steinitz,
+primitive.*greedy,sign.*rearrange -> no default hits; primary search nyctalopic/minimal-zero-sum
+located and the relevant paper lemmas were read before this experiment.
+
+**Application:** largest positive v>=6, smallest positive a<=5, most negative-W. Start
+with the smallest positive (lowest owner on ties); subsequently take the largest-magnitude
+remaining term of the OPPOSITE sign to the current partial sum, again lowest owner on ties.
+Minimality guarantees a suitable term and prevents intermediate sum0. All partial sums lie
+in[1-W,v-1], so span<=W+v-2<=26 by target sorting. Thus the eight literal positions fit
+0..27 with at least two translations. Reflection avoidance is NOT implied by the known lemma.
+
+**Predictions BEFORE run:** all605 inputs and their positive-subset irreducibility checks
+must agree with B52's primitive set; distinct vertices and the span26 bound MUST hold.
+Tentative blind claim: every fixed greedy shape has a reflection-free translation. Check
+all allowed roots by direct labels and forbidden opposite-parity pair sums, then chosen
+certificates with both literal checkers. Cap700 targets/25,000 roots/two CPU seconds; retain
+all architecture failures, no other order/start choice or cycle search during B54.
+
+**Controls:** target(70,70,70,86,122,122,122,122) has signed parameters(7,7,21,13;5,5,5,5).
+The fixed greedy order is owners4,2,0,1,5,3,6,7. It should fail at root0 but certify at
+root6 with selected{4:22,2:27,0:6,1:13,5:20,3:25,6:12,7:17}. Nonprimitive order
+8,8,4,-20,2,2,2,-6 repeats a proper prefix and must reject as a literal collision.
+Duplicate and wrong-sum variants reject. **Unexpected check:** count targets requiring a
+nonzero root, roots per shape, actual spans and any span26 boundary; do not infer all roots
+work from the greedy range theorem. Both schedules paused; no review dependency.

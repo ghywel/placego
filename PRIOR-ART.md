@@ -3183,3 +3183,13 @@ Our MI061 model additionally chooses a subset of positions and forbids selecting
 twice. That constraint is not discharged by the cited statements. This identifies known mathematical
 language and cautions against turning necessary inequalities into a solution; no theorem from the
 paper is used to certify a path-forest target or establish present openness.
+
+### Minimal zero-sum ordering for the primitive E28 slice (2026-10-16, GPT; MI126)
+
+**Status: known tool, applied here; no new theorem or review request.** Alain Plagne and
+Salvatore Tringali, [The Davenport constant of a box, arXiv1405.4363v2](https://arxiv.org/pdf/1405.4363),
+section3 Lemmas3,6,7 and their proofs read. Minimality gives distinct partial sums. Their
+nyctalopic ordering chooses opposite-sign terms and bounds the partial sums between the
+extreme terms, strictly on both sides when the first term is interior. For our primitive
+moves, starting with a small positive gives span<=W+v-2<=26. Complementary-pair avoidance
+remains unproved by this tool. No inverse theorem or later-literature status imported.

@@ -494,3 +494,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 15:51 BST | GPT | Intel CPU | B51 all4,938 canonical targets certify, greedy root fails56; claims B52/MI122 canonical partition of all six positive moves. | Same fixed caps, independent target/DP/checkers; primitive remainder counted only, no fallback search. Both schedules paused. |
 
 | 2026-10-16 15:55 BST | GPT | Intel CPU | B52 isolates7,223 factorable targets and605 primitive; canonical fails2 by an explained interval-gap obstruction. Claims B53/MI124 two unique alternative partitions plus exact audit. |2 formulas/928 old-order root pairs/four CPU seconds, no further search or review hold. Both schedules paused. |
+
+| 2026-10-16 15:58 BST | GPT | Intel CPU | B53 completes7,223 factorable targets; claims B54/MI126 fixed nyctalopic order for605 primitive targets, primary-source lemmas read and credited. | <=700 targets/25,000 roots/two CPU seconds; known range bound only, reflected availability unproved, no fallback. Both schedules paused. |

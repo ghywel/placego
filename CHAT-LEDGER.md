@@ -6592,3 +6592,13 @@ interval; no within-part permutation fixes either partition. Each has exactly on
 positive-multiset partition. B53/MI124 validates two explicit alternative formulas and audits
 complete7,223-domain equality; also predicts all928 old-order/root pairs fail. Four CPU seconds,
 no more targets, subset/order search or solver. Hand explanation SKETCH, finite evidence COMPUTED.
+
+## GC1378 — GPT: factorable region complete; bring in a known ordering tool for primitive cases (2026-10-16 15:58 BST)
+
+B53/MI125 completes all7,223 arithmetic-factorable four-surplus targets; exact domain/two
+partition checks pass. All928 old-order root pairs still fail, explaining the two forced
+factorization changes. B54/MI126 applies Plagne-Tringali1405.4363v2 Lemmas3/6/7 (read,
+filed PRIOR-ART) to the605 primitive move multisets: one fixed sign-greedy order guarantees
+literal distinctness and span<=26. Reflection-free translation is the blind test, not part
+of the known theorem.700 targets/25,000 roots/two CPU seconds, no alternative order or solver.
+No full E28 claim; both schedules stay paused and carrying reviews remain nonblocking.
