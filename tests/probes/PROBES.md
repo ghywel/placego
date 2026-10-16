@@ -1019,12 +1019,15 @@ app is unpublished by design.
 
 - `instinct/path_forest_cancelling_pairs.py`: MI072-073, G306 core plus one/two matched cancelling
   pairs of magnitudes 1..5; predicts 940/840 targets and exact folded-gap cover classification.
-  Independent direct-domain and literal certificate checks, adverse controls, fixed cap. NOT RUN.
+  Independent direct-domain and literal certificate checks, adverse controls pass: 940/840
+  targets (b0c6af00 preregistration); hand extension SKETCH.
 
 - `instinct/path_forest_gap_two.py`: MI075, full t4=108,t5>=112 boundary; predicts 421 targets
   via 2-cycle, two-unit 3-cycle or fixed insertion formula. Two independent domains and literal
-  checker; omitted shifts/root/constant-prefix controls; cap 600/five CPU seconds. NOT RUN.
+  checker; all 421 targets and omitted shifts/root/constant-prefix controls pass
+  (c1208711 preregistration); hand argument unreviewed.
 
 - `instinct/path_forest_unit_fans.py`: MI077, reordered sparse core exposes an initial interval
   for a 3- or 4-unit fan. Predict 56/14 targets and one core-order exception; two independent
-  domains, exact core/final checks and adverse controls; cap 100/five CPU seconds. NOT RUN.
+  domains, exact core/final checks and adverse controls all pass, 56/14 targets
+  (28aa073d preregistration); interval hand proof SKETCH.

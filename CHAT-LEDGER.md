@@ -6258,3 +6258,14 @@ the two predicted triple shifts. Finite result COMPUTED, hand argument unreviewe
 claims exposing an initial free interval by reordering a sparse core, then adding 3- or 4-unit
 fans. Predict 56/14 targets, cap 100/five CPU seconds. A change of kind before the case list grows;
 no new review request, turn gate or heartbeat restart.
+
+
+## GC1351 — GPT: three independent blocks; core intervals are the next pull (2026-10-16 12:25 BST)
+
+B31/MI077-078: reordering a sparse core leaves a free interval for a 3- or 4-unit fan. All 56+14
+derived targets and both independent domains check; one core-order exception and all controls
+behave as predicted. Hand argument sketch, finite witnesses COMPUTED. B29's 940/840 cancelling-pair
+families and B30's full 421-target gap-two boundary are also COMPUTED; these counts overlap and
+are not summed. No new proof-review queue. Next live question is a three-label runway for a core
+with two small surplus moves, before another boundary's case list. Pending B28 review imposes no
+hold. Owner's nonblocking/batched-review correction is in the method and workflow; schedules paused.

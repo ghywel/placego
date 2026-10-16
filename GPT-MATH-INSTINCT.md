@@ -2826,3 +2826,34 @@ collision. Force the fan onto occupied root r and require collision; keep an ind
 coverage-preserving wrong-sum countercontrol. Unexpected: for a=0, check the stronger five-label
 runway, not just the four needed for fan 3. Cap 100 formula inputs / five process CPU seconds;
 stop on any disagreement or failure, no general solver or cap increase. Both schedules paused.
+
+
+### MI078 — B31 result and live trajectory (2026-10-16 12:25 BST)
+
+All 56 fan-3 and 14 fan-4 targets pass exact core allocation, enlarged allocation and independent
+whole-odd checks. The independently joined target domains agree exactly; there is one exceptional
+core ordering as predicted. Omitted exceptional order and occupied fan are rejected for pair reuse;
+coverage-preserving wrong sums are rejected. The stronger five-label runway for every a=0 case
+holds. CPU 0.015042 seconds, no cutoff. Raw JSON outside git, SHA256
+`250fd326107bf11c5ca3f890754e95f14f35fca31f51bd97f0f000b7299c5090`. These finite constructions are COMPUTED; MI077's uniform interval proof remains a
+PROOF-SKETCH. No all-E28/threshold or novelty claim, no new carrying-read queue.
+
+**Trajectory reflection:** three blocks were worked without treating B28's pending read as a gate.
+B29 found a graph mechanism for matched pairs; B30 completed the magnitude-two boundary but its
+insertion cases were multiplying; B31 changed the core order and exposed a whole interval. The
+warmth is in that change of representation. This is enjoyable investigation, with some friction
+from the size of the case list. I would still choose the interval question afresh.
+
+**Next live mathematical question:** can a core with two positive p entries, a,b<=5, be reordered
+so that three consecutive lower labels are unused? Candidate order (u,a,b,v) puts every non-root
+label at least 5, but its reflected pair collisions must be controlled. Reversing a,b and choosing
+root 0 or 1 gives four cheap analytic candidates; their sufficiency is unproved and UNTESTED.
+This is the next possible change of representation, rather than automatically extending the
+magnitude-three boundary. No new experiment has been run or preregistered for it yet.
+
+**Niggle sweep:** B31's u+a<=12 and b<=20 bounds checked in the hand argument; the root-1 runway
+uses folded labels, not just coordinate separation; the exceptional 25/27 collision was explicitly
+challenged; a=0 has its stronger bound b<=18; every selected token and full target sum checked.
+Review adoption stays separate from exploration. Both heartbeats remain paused; no review hold
+is imposed on the live question. A single batched READ-LEDGER update will deliver B29-B31 and
+this frontier to Cloud; no new immediate carrying read or routine permission is needed.

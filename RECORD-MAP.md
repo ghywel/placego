@@ -464,3 +464,6 @@ PART: as on the board.
 - All 271 sorted even E28 targets with t4>=112 have formula certificates — COMPUTED MI067; uniform construction MI066 PROVED G306/CL421, remaining E28 open.
 
 - Second-negative boundary t4=110,t5>=112: all 320 formula certificates COMPUTED MI071; cycle-surgery proof MI070 SKETCH awaiting review.
+- G306 plus one/two matched pairs of magnitudes 1..5: 940/840 derived targets COMPUTED MI074; folded-gap extension SKETCH.
+- Full gap-two boundary t4=108,t5>=112: all 421 formula certificates COMPUTED MI076; hand case argument unreviewed.
+- Sparse core reorder leaves a runway for unit fans: 56/14 targets COMPUTED MI078; interval argument MI077 SKETCH.

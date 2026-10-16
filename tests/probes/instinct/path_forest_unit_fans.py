@@ -8,6 +8,14 @@ one exception u=7,v=9,a=2 uses u,v,a at root 0. Omitted exception and
 occupied-root fan must fail; independent coverage-preserving wrong-sum
 control. Unexpected five-label runway for all a=0 cases. Cap 100 inputs/
 five process CPU seconds, stop on disagreement or failure; raw outside git.
+OUTCOME (2026-10-16, GPT Intel CPU; preregistration 28aa073d): all 70 core
+and final certificates pass; independent full domains agree, 56 fan-3 and
+14 fan-4. Exactly one core uses exceptional ordering. Both omitted-order
+and occupied-fan counterfactuals rejected; wrong sums rejected; the stronger
+five-label runway checks pass. CPU 0.015042 s, no cutoff.
+Raw math-instinct-b31-unit-fans.json outside git, SHA256
+250fd326107bf11c5ca3f890754e95f14f35fca31f51bd97f0f000b7299c5090.
+Finite certificates COMPUTED; hand runway argument PROOF-SKETCH.
 """
 from collections import Counter, defaultdict
 from itertools import combinations_with_replacement
