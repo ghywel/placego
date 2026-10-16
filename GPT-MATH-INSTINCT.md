@@ -5537,3 +5537,62 @@ specific sharp22 counterexample and a three-row bypass, not repeated praise
 of counts. Reasoned: one real sign-type obstruction is resolved, while its
 necessary large moves and the3+3 sign type still require work. No full E28/L8
 or novelty claim; no reason to halt or wait for routine review.
+
+
+### MI147 — B63: close the wide part of the2+4 six-core geometry (2026-10-16 19:39 BST)
+
+**Question:** do the prescribed B62 orders for ALL primitive wide2+4 cores fit
+jointly with ANY cancelling gap1..14? If so, B62's hand classification plus
+MI144's span20 certificate close this entire six-core sign type, and coordinate
+reflection gives the4+2 type without target-role casework. This is stronger and
+cleaner than separate actual low/high-role subfamilies; no target census.
+Record searched: wide.*step|21.*22.*step|large.*core|diameter ->73 hits/26 files;
+MI145-146, the B62 source and its declared exact domain read. Known partial-sum
+sources remain credited; no new literature theorem or novelty claim.
+
+**Hand reduction.** For a21 the four negative magnitudes sum21+c and are<=7,
+so b4>=c. If b4=c, the core has a proper(+c,-c) subcycle and is not primitive.
+Conversely b4>c guarantees minimality: no negative subset sums to c, nor to21
+(the complementary negative subset would sum c). Thus c=1..5 and b4>c.
+Writing the four magnitudes as7 minus deficits, total deficit7-c, gives exactly
+20 primitive profiles (counts8,5,4,2,1 at c1..5). The c6,7 high-role-pair cases
+have a proper cancellation and are excluded from the primitive-six question.
+For a22, a+b1<=28 gives b1<=6 and P22+c<=24. Hence c1/2 and negatives
+(6,6,6,5)/(6,6,6,6); both primitive. Total22 wide-step profiles. Add the three
+small-step exceptional B62 rows:25 profiles to place, with14 gaps each.
+
+Use exactly the prescribed cyclic order (+a,-b1,-b4,+c,-b2,-b3), normalized.
+Inspect roots0..27-span and then physical pair roots0..27-g, taking the first
+valid complete placement. This is a finite geometry certificate for a fixed
+order, not a claimed hand invariant or an arbitrary-order fallback.
+Tentative prediction: all350 profile/gap questions succeed in this fixed class.
+If they fail, retain the exhausted roots; no permutation repair this block.
+
+**A failed shortcut already found by hand.** It is unsafe to fix the pair at
+(0,g) before translating. Profile(21,1;7,7,5,3) has shape(0,5,11,12,14,21).
+Its only self-valid roots are0 and6, and either uses folded label0. Nevertheless
+at root0 a gap6 pair(1,7) or gap7 pair(1,8) is free. This is a carrying reason
+to let the pair move, not an unexplained exception added after the run.
+
+**Validation predictions BEFORE run:** independent core generators (hand
+parameterization vs the B62 full arithmetic domain/minimality calculation)
+agree exactly on25 profiles. All350 fixed-order joint maps agree between
+folded-label bitmasks/formula gap edges and direct physical coordinates/sets;
+retain full root/pair maps and a literal witness per case. Every a21/22
+actual E28 extension permitted by the low/high roles should certify: predicted
+42 distinct targets, independently generated from a full high-negative list
+with a cancelling low gap versus the core/gap parameterization. The putative
+high-high large pair leaves a nonprimitive core, checked as a rejection control.
+Two literal partition checkers; do not add overlapping counts to prior work.
+
+Counterfactual fixed pair(0,g) must fail on the hand fixture for g6/7 even though
+movable pairs succeed. Unexpected: gap7's perfect matching means EVERY valid
+six-label core root leaves some gap7 pair; verify all roots, not just successes.
+Sign negation/coordinate reflection preserves all folded labels and cycle
+identities, without asserting sign-reversed E28 target roles.
+Caps25 profiles/350 maps/42 targets/2500 core roots/100000 physical pair checks/
+threeCPU seconds. Stop UNKNOWN at cap or mismatch; no added shape, permutation,
+role search or cap increase. Raw outside git. Gut: the pull is toward finishing
+a whole component type with the same tools, not another isolated target count.
+Reasoned: success gives a meaningful combined result for independent review;
+failure identifies the precise limit of the fixed core order.
