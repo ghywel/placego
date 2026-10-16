@@ -6551,3 +6551,63 @@ first-policy success rate? No:1996 first-policy plus four explained repairs,
 original cases unchanged. Gut: delight at the merger and at the geometric
 repair; reasoned: useful mechanistic progress, finite scope, next move should
 seek structure rather than manufacture more successful examples.
+
+
+### MI161 — B70: the long edge can fit while the cycle cannot (2026-10-16 21:09 BST)
+
+**Hand block/discovery before machine verification.** The proposed outer-pair
+argument is incomplete: reserving an interior block may leave a place for the
+large edge but block every way to enter/leave it. Record searched:
+interior.*anchor|outer.*pair|large.*move|folded.*matching ->48 hits/23 files,
+MI158-160 relevant; follow-up exact tuple/boundary-entry terms23 unrelated hits,
+no exact tuple in record. I found the following target by fitting a one-negative
+move list to actual anchor sums, not by another random sample:
+
+    t=(69,71,73,109,111,112,118,121), sum784, q6.
+
+First ascending anchor block R0={0,1,2} gives
+h=(2,1,1,1,1,2,2,1), e=(-22,6,6,1,1,0,3,5).
+The contiguous remainder has N22 physical positions; a22-step move cannot fit.
+
+The inward shift that repaired B69's cases, R2={2,3,4}, gives
+anchors(5,7,9,47,49,0,0,51), h=(1,1,1,1,1,2,2,2),
+e=(4,4,4,3,3,0,3,-21). There is one negative move, so every certificate cycle
+uses it and all six positive moves; zeros need no selected vertex. Any cycle
+is a strictly increasing positive path from u to u+21, closed by-21.
+Distinct folded endpoint labels outside R2 allow ONLY u=0,1,5,6.
+For u0 the first step3/4 lands in reserved labels3/4. For u1 it lands at4
+(reserved) or5 (the complement of endpoint22). For u5, the last predecessor
+is22 (complement of start5) or23 (reserved label4). For u6 the last predecessor
+is23/24, both reserved. Thus NO ordering works, despite available long edges.
+This refutes a fixed start0-or2 ascending-anchor recipe, not all B67 policies
+or the target. No such universal recipe was previously adopted; this blocks
+that tempting generalization before another large test.
+
+**Explicit hand repair, not a policy search.** Reserve R4={4,5,6} instead.
+Anchors(9,11,13,43,45,0,0,47), h=(1,1,1,1,1,2,2,2),
+e=(2,2,2,5,5,0,3,-19). Owners(0,3,4,1,2,6,7) at physical indices
+(0,2,7,12,14,16,19) form a closing cycle, with positive order(2,5,5,2,2,3)
+and then-19. Folded labels(0,2,7,12,13,11,8) are distinct and avoid R4.
+These choices are B67's existing ascending block-start4 policy, not a new
+exception in its instrument. Greedy slots follow directly by taking initial
+scores(2,2,2,5,5,28,31,9), extra3 pairs on31,28,9.
+
+**Verification preregistration BEFORE run.** Exactly this ONE hand-selected
+E28 target and these THREE allocations, no others. Predict all-order/all-zero-
+component maps empty for R0/R2 and nonempty for R4, and the explicit cycle
+materializes. Compare full maps and packing with B69's independent literal
+permutation instrument; compare the entire maps with known opposite-sign class
+as an unexpected check: one-negative cycles can be rotated to put that move
+first, so no ordering-class loss is expected in this slice. Independently list
+R2's long-edge endpoints and first/last viable entries, versus direct literal
+folded-label checks. Counterfactual: accepting a matching edge as a complete
+cycle certificate must fail here, while the explicit R4 partition passes both
+literal validators and all B67 corruption controls.
+Caps3 allocations,100k nodes/allocation,300k total,200k raw reference words,
+5M reference roots,5CPU seconds/128MiB; caps stop partial/UNKNOWN, no raise,
+restart, fourth allocation or broader target sample. Source
+path_forest_anchor_boundary.py, raw outside git. This is a model obstruction/
+repair, not a general allocation theorem or new proof-review request.
+Gut: a useful push against the attractive shortcut, with curiosity sharpened
+by the entry/exit obstruction. Reasoned: long-move matching alone is insufficient;
+a real general construction must reserve a compatible approach path as well.

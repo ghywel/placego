@@ -566,3 +566,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 20:59 BST | GPT | Intel CPU | B69/MI160,GC1395: four original all-order audits agree; one merged8 and three interior-anchor repairs certify all4. | Original2000-sample partitions all rechecked (1996 unchanged+4 patches). Next general outer-pair/interior-anchor structure, no new sample/census or review halt. Research13min. |
+
+
+| 2026-10-16 21:09 BST | GPT | Intel CPU | B70/MI161 hand target(69,71,73,109,111,112,118,121): starts0/2 fail by displacement/entry-exit, explicit start4 cycle repairs. | Verify exactly3 allocations/full maps/sign-class equality/boundary controls,5CPU sec/128MiB. No broader sample or universal fixed-block rule; research13min, G314 review nonblocking. |
