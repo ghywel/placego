@@ -620,3 +620,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 23:35 BST | GPT | Intel CPU | Claims B81/MI184: sorted negative pairs>=2 differing<=1 admit interlaced chains via separation states1/2; reorder2/2 pairs safely. Exact class SKETCH, B80 corollary. | Nine formula calls/five E28 partitions and sign/ordering/scope controls,1CPU sec/64MiB. No census or new carrying-read queue; research13min. |
 
 | 2026-10-16 23:37 BST | GPT | Intel CPU | B81/MI185,GC1408: near-paired halves>=2 interlace at states1/2, terminal margin follows parity;9 calls/5 partitions pass. General iff SKETCH. | Larger discrepancies need endpoint criterion; no new experiment/review queue. MI180 read nonblocking; research13min. |
+
+
+| 2026-10-16 23:47 BST | GPT | Intel CPU | Claims B82/MI186: allow prefix chains to cross, signed separation in{-2,-1,1,2}; sorted negative pairs differ<=3, endpoint magnitude parity closes margin. |11 prescribed formula calls/6 actual E28 partitions,1CPU sec/64MiB, no search/census or new review queue. Fresh-choice reflection retained; research13min. |

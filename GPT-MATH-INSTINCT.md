@@ -8299,3 +8299,107 @@ SHA256 `717ef6c924338669998de85d2799c124b86b761cdb20d5004f067cc2bf87cbc0`.
 Preregce319d40; source tests/probes/instinct/path_forest_interlaced_pairs.py.
 Immutable upload and manifest append receipts verified. No formal proof number,
 novelty claim, held-lane or automation change.
+
+
+### MI186 — B82: exchange the leading chain, rather than forbid crossings (2026-10-16 23:47 BST)
+
+**Question/pull.** Can unequal pairs differ by2 or3 while preserving the
+endpoint margin? The warm part is a change of picture: the two chains may
+exchange which one is ahead. Their points only need to come in disjoint
+successive two-point levels, not strictly interlace. A gap2 sends signed
+separation1 to-1; gap3 exchanges magnitudes1/2 and reverses sign. This is
+mathematical progress beyond B81's positive-separation invariant, not a
+profile repair. Record searched: crossing.*chain|signed.*separation|interlac
+->16 hits/8 files: B81 and unrelated historical passages; earlier
+broad rung search also had unrelated historical hits. MI180-185/CL427 read. No
+imported result or claim of novelty/literature completeness.
+
+**Proposed class iff, hand SKETCH.** M=2n. There are2m negative halves d>=2;
+sort and pair consecutively, each pair(x,y) has g=y-x<=3. Odd positives p,q
+satisfy p+q=2K=2 sum d. Folded-distinct placement exists IFF max(p,q)<=M-3
+and not p=q=M-3. Half1, odd negative counts, larger pair gaps, anchors and
+other odd sign patterns remain outside this claim; full E28/L8 OPEN.
+
+Let r count ODD gaps (g1 or3). If r=0, K is even; choose P congruent M-3
+mod4, so alpha=(M-1-P)/2 is odd. Otherwise choose P=max(p,q). Write Q for
+the other positive. As before Q<=M-5, alpha>=1, beta=(M-3-Q)/2>=1.
+Set delta0 to1/2 according as alpha is odd/even, a=(alpha-delta0)/2.
+A starts at a, B at a+delta0. For signed delta=B_i-A_i, choose the pair's
+orientation by the following rule (the sign is ESSENTIAL):
+
+    g0: u=v=x, preserve delta;
+    g1: at |delta|1 move OUTWARD, at |delta|2 move TOWARD zero;
+    g2: only at |delta|1, move TOWARD zero, crossing to -delta;
+    g3: move TOWARD zero, crossing to opposite sign with magnitude3-|delta|.
+
+Here moving delta by +g means(u,v)=(x,y); by-g means(y,x).
+All states stay in{-2,-1,1,2}. Hazardous pairs are g2 and equal(2,2): both
+need |delta|1. If starting at2 with any hazardous pair, put ONE odd-gap pair
+first to reach magnitude1, then all hazardous pairs, then the remaining
+pairs. Such an odd-gap pair exists: r0 forced initial1. If initial1, put
+hazardous pairs first. If no hazardous pair, no early rearrangement is needed.
+All other pairs are equal>=3 or odd-gap pairs, safe in either magnitude.
+
+**Carrying step: crossing without collision.** At a positive delta, the
+necessary level separation is u>delta; at a negative delta, v>-delta.
+For equal pairs this is precisely x>|delta|, with equal2 scheduled at1.
+For g1 outward at1, the lagging chain's step is x>=2>1; inward at2 it is
+y=x+1>=3>2. For g2 at1 it is y>=4>1; for g3 it is y>=5>|delta|.
+Thus max(A_i,B_i)<min(A_(i+1),B_(i+1)), while delta_(i+1)!=0.
+Every two-point level is disjoint from every other, even when A and B exchange
+order. All chain indices are distinct; physical even2A and odd(M-1-2B) are
+folded-distinct because a reflection collision is exactly A-index=B-index.
+
+**Terminal margin survives a sign change.** Odd gaps toggle magnitude1/2;
+g0/g2 preserve it. Hence |delta_m| is the smallest positive representative
+of alpha+r modulo2. K mod2=r and alpha+beta=M-2-K imply |delta_m| has beta's
+parity, so |delta_m|<=beta. The endpoint sum is
+A_m+B_m=alpha+K=(M-1+Q)/2, hence
+max(A_m,B_m)=[(M-1+Q)/2+|delta_m|]/2<=n-1.
+The initial sum is alpha; both indices are nonnegative. The cycle follows
+B forward in physical decreasing order and A backward, with odd joins P/Q
+from the two endpoint sums and negatives exactly-2u/-2v. Necessity is the
+usual legal odd-edge bound and impossibility of repeating the longest edge.
+K>=4m and K<=2n-4 imply2m+2<=n. Loads now may differ by4, rather than B81's
+at-most1: delta_m-delta0 determines the difference, and each load<=n-1
+follows from endpoints. Do NOT retain B81's stronger balance claim.
+
+**Predictions BEFORE experiment.** Exactly11 formula calls,6 actual E28
+partitions at M28, original slots(1,1,2,2,2,2,2,2):
+ d=(2,2,2,4,4,4),p25/q11;
+ d=(2,2,2,5,5,5),p25/q17 and23/19;
+ d=(2,4,4,4,4,6),p25/q23;
+ d=(2,2,2,4,4,5),p23/q15;
+ d=(2,2,2,5,5,6),p25/q19.
+General calls: M10,d=(2,4),p7/q5; M12,d=(2,5),p9/q5;
+M16,d=(2,5),p11/q3; M32,d=(2,3,3,6,6,6),p27/q25;
+M500,d=concatenation of pairs(2+4i,5+4i),i0..9,p497/q363.
+Independent direct physical differences must reproduce the ENTIRE original
+move bag, literal window/folded labels and both endpoint sums; all six actual
+partitions pass both inventory/literal validators. Check pair-level ordering,
+including negative states and crossings, independently of the state rule.
+
+Counterfactual/kill: a crossing might hide a nonadjacent reflection collision;
+the M10/M12 calls must pass complete folded-label comparison, not just local
+states. Stop on any mismatch, no patch/search/domain expansion. Force the
+smaller member always into A on the tight M28 d=(2,4,4,4,4,6) input: final
+separation5 exceeds beta1 and must fail window bounds, although move bag is
+unchanged. Suppressing the early odd pair on d=(2,2,2,4,4,5),p23/q15 must
+cause an immediate equal2 collision at initial2. Unexpected check: M32's
+fixture should end delta=-2 from initial2, loads15/11; it violates B81's
+max-load<=n-2 assertion but must be geometrically valid, exactly hitting n-1.
+Doubled longest M10,d=(2,5),p=q7 and too-long M10,p9/q5 are rejected.
+Half1 and gap4 are constructor scope refusals only. An outside-gap4 witness
+M14,d=(2,6),p11/q5,positions(0,11,7,12) must pass geometry AND full move bag;
+refusal of our bounded states is not nonexistence. Caps11 calls/6 partitions,
+1CPU sec/64MiB, no all-order solver or census. Raw evidence stays outside git.
+
+**Fresh-choice reflection (before the90-minute boundary).** Both enjoyable
+and a little wary of accumulating sibling classes. Without the past work I
+would still choose this question: exchanging leading chains is a useful
+change of representation, and terminal magnitude rather than sign explains
+why it can work. The block has a real limit (gap3); after it, reconsider the
+remaining obstruction rather than mechanically incrementing that number.
+No extra review queue; MI180's carrying read remains nonblocking. Gut: warm,
+with surprise at a legal crossing. Reasoned verdict awaits the finite checks;
+infinite statement stays SKETCH pending independent scrutiny.
