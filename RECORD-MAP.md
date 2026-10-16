@@ -509,3 +509,5 @@ PART: as on the board.
 - Six-core2+4 sign type: span<=22, exact three small-step exceptions to20 plus moves21/22 — SKETCH MI145;7,300 independent DP checks/15 bypass partitions COMPUTED MI146.
 
 - Primitive six-core2+4/4+2 plus any gap<=14: computer-assisted SKETCH G314/MI148;25 wide profiles/350 full maps/42 targets COMPUTED, other sign types open.
+
+- Even E28 arithmetic collection space:576,515 unordered collections/326,119 parents, max6;36,735 reusable atoms — COMPUTED MI150; no packing result.

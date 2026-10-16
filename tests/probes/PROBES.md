@@ -1160,3 +1160,5 @@ app is unpublished by design.
 - `instinct/path_forest_six_diameter.py`: MI145-146 two-positive/four-negative exact span classification;7,300 tuples vs free-order DP/15 explicit exceptional placements pass (5764eeb2 preregistration), hand statement SKETCH.
 
 - `instinct/path_forest_wide_six.py`: MI147-148, G314 wide primitive2+4 cores;25 profiles/350 complete14-gap maps agree independently,42 actual E28 partitions pass (0eee072e preregistration).
+
+- `instinct/path_forest_collection_counts.py`: MI149-150 count-only all even E28;576,515 unordered collections/max6 per parent/36,735 atoms;121 independent full-set controls, no placements (1082a510 preregistration).

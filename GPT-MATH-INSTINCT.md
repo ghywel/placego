@@ -5750,3 +5750,95 @@ record outside git; no new proof/PROOFS entry or routine carrying request.
 Gut: curiosity and a little unease about paying for the wrong quotient; the
 injectivity observation already puts the question on firmer ground. Reasoned:
 learn the size/choice structure before authorizing any larger placement work.
+
+
+### MI150 — B64: the collection space is small, and its main mass is3+5/4+4 (2026-10-16 19:56 BST)
+
+**COMPUTED arithmetic count, no placements tested.** All326,119 even E28
+parents counted. There are576,515 unordered primitive move collections and
+36,735 distinct primitive MOVE types. A parent offers at most6 collections.
+Histogram(number of collections -> number of parents):
+1->150,018;2->114,441;3->49,935;4->10,823;5->894;6->8.
+The maximum first occurs at rank7,945, target(68,70,96,102,104,110,116,118):
+three3+5 collections and three4+4 collections. This is a count of arithmetic
+choices, not of different orders, shapes or successful packings.
+
+Selected collection totals / parents OFFERING that size pattern:
+
+|piece sizes|collections|parents offering it|
+|---|---:|---:|
+|3+5|188234|144362|
+|4+4|134457|115180|
+|2+6|63442|63442|
+|3+4|50612|40800|
+|2+3+3|39509|38899|
+|2+2+4|28651|28651|
+|2+5|24185|24185|
+|8|9426|9426|
+|7|11433|11433|
+
+Parent columns OVERLAP between patterns and are never added as a solved-domain
+tally. The3+5/4+4 rows account for322,691 of576,515 COLLECTIONS; that is where
+most joint-choice mass sits. Primitive seven/eight parents total20,859; they
+have no proper zero-sum factorization. Primitive parent counts by active
+length3..8 are14,281,2,025,7,009,11,433,9,426. The reusable atom catalog can
+also contain a shorter core that cannot by itself reconstruct a valid parent;
+its counts by length2..8 are14,130,873,3,989,10,870,11,433,9,426.
+
+All three forecasts pass: collections<2M, atoms<100k, primitive-eight parents
+>1,000. CPU29.465412s, peakRSS131,452,928 bytes (about125.4MiB), under40CPU
+seconds/512MiB.1,564,841 count states. No cap, restart, placement search, witness
+construction or interpretation of a factorization as a successful packing.
+
+**Controls.**57 complete toy parent factorization sets and64 fixed spread real
+parents independently agree on ALL primitive types and count-by-size-partition;
+12,616 reference states. Labelled balanced matchings number2 while their value
+collection number1, as required. The repeated-pivot mixed-type fixture also
+counts1, avoiding an atom-order double count. Nonminimal full zero masks reject
+as atoms. Every real parent's inventory reconstructs its exact target; the
+shared toy atom(-1,1) demonstrates piece reuse across different parents.
+Domain count agrees with independent memoized/Gaussian counts326,119. This is
+a full PRIMARY count with independent complete controls on121 parents, not a
+claimed second full count or an independent external verification.
+
+Full artifact `cited/instinct/b64-collection-counts-db6d4ccfe32911fb.json`,
+6,150,301 bytes, SHA256
+`db6d4ccfe32911fba66625d71a0c2e8df2a82f6879d46caea2a4d0679713fa1e`.
+Upload/manifest verified, preregistration1082a510; source
+ tests/probes/instinct/path_forest_collection_counts.py. parent_rows are in
+increasing target rank (the B57 lexicographic convention), each containing
+(total collection count, list of [piece-size-pattern-id,coefficient]); catalog
+contains all primitive signed move multisets. Raw contains no spatial search.
+
+**What the count changes.** The full finite even-E28 problem has only6 arithmetic
+factorization choices per parent; an exhaustive EXISTENTIAL certificate looks
+plausible. It is not established by this count: the order/origin search inside
+each atom can still be expensive or fail. Whole collections cannot compress
+across targets, by MI149's injectivity argument; caching placement maps by the
+36,735 atom types is the actual reuse opportunity. The count moves the next
+choice away from another isolated six-core lemma toward a whole-method check.
+No immediate larger geometry exhaustion or full target solver is opened.
+
+**Next step, following CL425's order.** Parameterize the method by an EVEN
+number m of odd tokens in the exceptional range24..32. There are m/2 pairs summing2m. For eight bins use
+h=(1 repeated16-m/2 times,2 repeated m/2-8 times); then sum h=m/2 and moves
+(t_i-2m*h_i)/2 sum0. At m26 this is three1's/five2's; at m30 one1/seven2's,
+not the m28 role vector copied unchanged. E_m has target bounds68..66+2m and
+sum m^2; all-even rank coordinates x=(t-68)/2 have bound m-1 and total
+(m^2-544)/2. Sorting gives max positive+max negative<=m at the role boundary.
+The low-role moves start34-m and high-role positive moves end33-m, keeping
+role provenance recoverable. This is a hand parameterization, no level sample
+or new count run yet. Next block will preregister a bounded m26/m30 portability
+check before deepening m28; mixed odd-cardinality model follows separately.
+
+**Niggle sweep: three.** (1) Does canonical atom order lose collections with
+repeated smallest moves? Independent indexed partitions are deduplicated only
+after construction and agree, including the mixed-type pivot fixture. (2)
+Could low/high ownership be lost in the quotient? The two>=6 moves recover
+the low roles; each reconstructed real target matches exactly. (3) Do small
+counts imply packability/cheap orders? Explicitly no; the next test measures
+portability and the order/origin cost remains. No unresolved niggle.
+Gut: relief that the full arithmetic space is manageable, and a stronger pull
+toward the whole mechanism than toward more local exceptions. Reasoned:
+count requested by Cloud is delivered; proceed to level-parameter check with
+new predictions, without waiting for G314 or claiming full even E28/L8.
