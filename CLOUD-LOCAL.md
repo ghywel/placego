@@ -554,3 +554,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 20:32 BST | GPT | Intel CPU | B67/MI156,GC1393:128/128 full E28 pilot certificates,125 odd-containing; all first anchor policy, no caps. | First-policy middle interval reduces to N=28-q even-token pool with new targets; next structural/fair-sample diagnostic, no new run or review hold. Research13min. |
+
+
+| 2026-10-16 20:44 BST | GPT | Intel CPU | Claims B68/MI157: first-anchor reduced-pool structure; hand h1/2 proof, one B57-sized2000 full-target calibration, first policy ONLY. |90-minute reflection: live changed object, no automatic sample escalation.20k nodes/target,5M/30CPU sec/256MiB; independent first12 odd maps/packings and all reduced inventories. Research13min, reviews nonblocking. |

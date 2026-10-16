@@ -6233,3 +6233,68 @@ identity called a proof of existence? No, it is exact bookkeeping, with new
 reduced targets outside the old hypothesis. Gut: surprise and delight; the first
 policy is much more effective than expected. Reasoned: the model has earned a
 larger diagnostic/structural look, not a universal claim or a new census.
+
+
+### MI157 — B68: reduced-pool structure and calibrated first-policy sample (2026-10-16 20:44 BST)
+
+**Trajectory reflection (90-minute check due since MI142).** The work is still
+enjoyable: mixed targets now have actual certificates and a new representation,
+not just another completed local case. The frustration is the universal
+folded-packing gap. I would choose this question afresh: why does the FIRST
+anchor policy work so easily? The last blocks changed the object (collection
+counts, level roles, odd-cardinality model), not repeated a refuted candidate.
+No seeded draw. Avoid an endless sequence of larger samples: one B57-sized
+calibration now, then a structural decision, not an automatic full census.
+Record searched: water.fill|greedy.*slot|reduced.pool|contiguous.*middle|anchor.*range
+->5 hits/4 files, only MI156/current pilot relevant. No new prior-art theorem
+imported or novelty claim. Known opposite-sign lemma remains credited MI126.
+
+**Hand inference BEFORE experiment: greedy h is always1/2 at E28.** With first
+anchors, put d_i=(t_i-a_i-56)/2 and r=6-q/2. All d_i<=33; if q8, all<=32.
+A bin already given an extra pair has score at most5 (at most4 for q8). At q0/2/4,
+there are8-q>=r EVEN bins with initial scores>=6. At q6, its two even bins and
+the odd bin anchored1 give three=r distinct scores>=6. At q8, bins anchored1
+and3 have scores>=6 and>=5, two=r, both above the score<=4 after selection.
+Before r distinct selections have occurred, an unselected member of these
+sets always beats every previously selected score. Therefore no bin receives
+a second extra pair. Greedy h simply chooses the r largest initial d_i (same
+index tie-break), yielding h2 r times/h1 8-r times. This is a model-specific
+hand SKETCH, not a theorem of joint placement or new PROOFS/review entry.
+
+Thus N=28-q remaining tokens have exactly the familiar slot counts
+h1:16-N/2=2+q/2, h2:N/2-8=6-q/2. Sorting by t-a orders these roles, but
+T=t-a-2qh need not remain sorted across the role boundary. Anchor-high bins
+may have negative moves in an h1 role; the even sign/range theorem does not
+transfer. The rank/role reduction simplifies choice, not the hard assertion.
+
+**Frozen calibration BEFORE run.** Use exactly the2000 uniform distinct full E28
+ranks from B57's unconditional sample (seed20261017,N24,688,633), not a newly
+selected favorable group or uniform parity patterns. Its25 even cases have
+already certified under B57;1975 other targets were then parity-inapplicable,
+not known successes for this model. Use ONLY B67's first reserved set/ascending
+anchors/greedy h, no second policy, role repair or arbitrary-order fallback.
+Predict >=99% of all2000 certify, zero caps, and all greedy h1/2 identity checks
+pass. Any complete failure stays FIRST_POLICY_EXHAUSTED, not model/target failure.
+No implicit universal100% prediction; no experiment after this calibration
+without a new mathematical question/registration.
+
+**Independent/negative/unexpected controls.** Reuse B67's literal hand fixture
+and all four corruption checks. First12 odd-containing cases: full component
+maps via independent raw permutations/physical roots plus separate set packing.
+All final partitions pass both B67 validators; separately remove each actual
+anchor, subtract q from remaining tokens, and check inventory exactly first N
+odds, each sum T_i and length2h_i. Compare greedy h with independently sorting
+initial d, on every target including a tied-score hand input. Deliberately omit
+one removed extreme label in the effective-pool fixture: exact inventory rejects.
+Unexpected check: retain/count successful moves with extrema>N and distinguish
+from extrema>28, rather than importing either sufficient bound. Counterfactual
+T sortedness across h roles must not be assumed; record any reversals.
+
+**Caps/stop.**2000 targets,20k nodes/target,5M total,30CPU seconds/256MiB,
+2M raw reference words/20M roots. Target-node cap continues as UNKNOWN; global
+cap stops partial, no raise/restart/second policy. Full raw outside git; source
+path_forest_first_anchor_calibration.py. This is evidence calibration plus the
+specific greedy-slot inference; no full-domain run or new carrying queue.
+Gut: warm curiosity, more attraction to the reduced representation than to a
+higher success tally. Reasoned: one larger fair check earns a decision about
+proof structure and exposes any exceptions; it is not the decision itself.
