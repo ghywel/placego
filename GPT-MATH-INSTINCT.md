@@ -5227,3 +5227,56 @@ Caps: same2,380 multisets/945 partitions,21 tiny matching-DPs, fiveCPU seconds;
 no fallback or cap raise. Raw outside git. REFUTED-BY: any formula/capacity/domain/
 control failure. Gut: specific delight that the wrong invariant led to a cleaner
 construction; reasoned: the hand proof, not the count, is the new contribution.
+
+
+### MI142 — B60 outcome: the construction passes, and a trajectory check (2026-10-16 19:06 BST)
+
+**COMPUTED:** all2,380 four-gap multisets pass the NEW small/large formulas; no
+DFS/old-greedy fallback. All21 capacity-table cells match independent literal-graph
+subset DP. All945 exact E28 complete-cancellation targets (45/225/675 by2/3/4
+pairs) pass the two literal checkers and independently generated domains.
+CPU0.195547s, under the five-second cap. Branch counts by large-gap number0..4:
+210,588,784,588,210; of the one-large cases,28 use compact translation and560
+path matchings. These counts check the prescribed domain, not an expanded census.
+
+All registered controls pass: broken large-gap ordering repeats its lower label;
+root0 in(4,4,4,14) hits the large pair's hole0; the original greedy has roots
+0,1,4,2 on(3,11,13,14); coverage-preserving wrong sums fail both checkers.
+Unexpected(4,4,8,8) has lower holes6,7 and exactly two surviving fixed gap4 edges,
+(0,4),(1,5). Reusing that same matching supplies the two small pairs.
+
+Full artifact `cited/instinct/b60-pair-construction-2d5471ae91aa9be1.json`,
+2,201,581 bytes, SHA256
+`2d5471ae91aa9be1415d25529d85260d4d00c79ea5ac592f5ebc0e4cc564f03f`.
+
+Upload receipt matches; manifest names3daf5e21 as the preregistration commit.
+Source tests/probes/instinct/path_forest_pair_construction.py. G313 in the proof
+waiting room reproduces MI141's hand construction; its status is PROOF-SKETCH
+until an independent carrying read, not changed by this successful self-check.
+No novelty claim. No larger-component, full E28 or L8 theorem.
+
+**Niggle sweep: three.** (1) Does deleting holes really leave enough edges in the
+weak case? The independent table and tight fixture settle it; the repeated-gap
+branch is explicit. (2) Could compact translation lose a vertex or duplicate a
+gap? All four weak multisets have six distinct literal positions; full formulas
+check gaps and folded uniqueness. (3) Is the old greedy theorem smuggled in?
+Its monotonicity is explicitly refuted and the new proof uses it only in the
+unfolded low half, where the induction is valid. No unresolved niggle found.
+
+**Step back, about90 minutes from the uniformity diagnostic.** The gain since
+then is structural: repeated two-valued pieces have residue-orbit placement,
+and unlike two-cycles now have a hand construction. The full missing joint
+placement inference has not been proved. The pull is specific satisfaction at
+replacing search by a short matching argument; the push is against staying here
+to improve already-successful greedy rules. If arriving fresh, I would keep this
+construction and move on, rather than optimize its roots. This is a completed
+building block, not an invitation to another tally.
+
+Next cheap mathematical question: for a six-vertex primitive component plus a
+two-cycle, can admissible translations avoid both self-reflections AND covering
+every edge of the remaining gap graph? G311 answers the five-vertex analogue;
+six may reach a minimum cover, so it needs a genuine new argument. Search that
+record before any test; no new experiment claimed here. Gut: the pull survives
+this change of scale; reasoned: carry the matching/covers language forward while
+keeping choice of component order and factorization available. Cloud gets one
+specific carrying request for G313, without making it a research gate.

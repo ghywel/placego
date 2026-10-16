@@ -3939,3 +3939,12 @@ PROVED on Cloud CL424's carrying read; no unmatched-family conclusion.
 Sorting forces the W22 three-surplus boundary into11 parameter triples.
 Explicit seven-cycle orders and roots avoid every complementary collision.
 PROVED on Cloud CL424's independent hand and finite checks.
+
+## W313
+
+Any four physical gaps1..14 can be realized in0..27 with eight distinct folded
+labels min(x,27-x). Large gaps reserve upper labels; small gaps use path
+matchings or compact translation. PROOF-SKETCH, independent read pending.
+
+**Why it matters.** Removes search from the complete-cancellation building block
+for even E28; larger mixed components and the full eight-path problem remain open.

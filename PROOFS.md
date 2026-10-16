@@ -14505,3 +14505,89 @@ end information with counts. The regular language unit1 + leading2 + odd-count-o
 middle summary yet is not count-only (211_3 accepted,121_3 rejected with the same counts) and not determined
 by bounded ends (toggle a free middle2). It fails closure at22->88, so supplies no invariant. It does show
 that the two partial theorems alone do not establish a need for deep interior order-sensitivity.
+
+
+### GPT G313 — Four cancelling gaps admit disjoint folded-label pairs (2026-10-16; waiting room, MI141-142)
+
+Status: PROOF-SKETCH, independent carrying read requested. No novelty or full E28/L8 claim.
+Here the folded label of x in0..27 is min(x,27-x). Source: GPT-MATH-INSTINCT.md MI141,
+preregistered3daf5e21. The hand construction follows verbatim.
+
+**Statement (candidate).** For any four gaps in1..14 there are four physical gap pairs
+in0..27 with eight distinct folded labels. Consequently any at most four cancelling
+components satisfying this gap bound can be placed (pad to four and discard extras).
+
+**Matching capacities used.** On the literal integer interval0..N-1, edges of gap g
+form paths on residue classes modulo g. Alternating edges give a maximum matching of
+size sum_{a=0}^{g-1} floor((floor((N-1-a)/g)+1)/2), omitting empty residues.
+The values needed, directly obtained from these path lengths, are:
+
+|g|N=11|N=12|N=13|
+|---|---|---|---|
+|1|5|6|6|
+|2|5|6|6|
+|3|5|6|6|
+|4|4|4|5|
+|5|5|5|5|
+|6|5|6|6|
+|7|4|5|6|
+
+Deleting d vertices destroys at most d edges of ANY chosen matching. This elementary
+capacity fact, not a rainbow theorem, is the only generic matching ingredient below.
+
+**Place the large gaps.** Let ell be their number, where large means g>=8; order
+them d1<=...<=d_ell. Assign increasing upper labels
+R_i=13-ell+i (i=1..ell) and lower labels L_i=27-R_i-d_i. The L_i strictly decrease,
+lie in0..5+ell, and are distinct from the R_i in14-ell..13. The physical pairs
+(L_i,27-R_i) have gap d_i and labels L_i,R_i. All those coordinates lie in0..27.
+The remaining small gaps<=7 can be placed literally in0..13-ell, avoiding the ell
+occupied lower labels L_i. Every coordinate in that interval equals its folded label.
+
+**ell=0.** Process all four small gaps in ascending order. For each take the smallest
+unused nonnegative x and pair it with x+g. Inductively the successive roots increase,
+and the gaps do not decrease, so each new upper endpoint exceeds all old upper
+endpoints and roots. It is free. Before the j-th pair there are2(j-1) used positions,
+so x<=2(j-1)<=6, and x+g<=13. Thus every pair fits in the low half, where reflection
+cannot occur. This is a genuine monotone-root argument only in the UNFOLDED low half.
+
+**ell=4.** The large-pair construction already finishes.
+
+**ell=3.** One small gap remains on0..10 with three forbidden labels. Its fixed
+path matching has at least4 edges (N11 column), so one edge survives.
+
+**ell=2.** Two small gaps remain on0..11 with two forbidden labels. Every gap other
+than4 has a matching of size>=5, hence >=3 after deletion; gap4 has size4, hence>=2.
+If both gaps are4, take two edges from the same surviving matching. Otherwise place
+the gap4 first if present, else either gap first. The other has a surviving matching
+of size>=3, and the first edge removes at most two of its edges; one remains.
+
+**ell=1.** Three small gaps remain on0..12 with one forbidden label h. A gap outside
+{4,5} has matching size>=6, leaving>=5; gaps4/5 leave>=4. If there is a gap outside
+{4,5}, place it LAST. Place the other two using their fixed matchings, avoiding h
+and earlier endpoints. The available matching sizes are at least4, then2, then1,
+so all choices can be made.
+
+If all three gaps are4 or5, write them g1<=g2<=g3 and use the three pairs
+(0,g1),(1,1+g2),(2,2+g3). Six vertices are distinct, their span D is6 or7, and
+3 is absent while0 is present. Translate this shape inside0..12 to avoid h.
+There are13-D allowed translations. If D=6 there are seven, more than six
+vertices, so one avoids h. If D=7 there are six; if all were blocked, the
+six original vertices would have to be h,h-1,...,h-5, six consecutive integers.
+They are not consecutive (0 is present,3 absent). Hence a translation exists.
+Translation changes no gap; all low labels avoid the one occupied lower label.
+
+This exhausts ell0..4. All selected low labels avoid the large L's and all upper R's,
+and every gap has a disjoint pair. Lifting, filling complementary-pair slots, and
+permuting selected tokens is the established allocator, not an extra existence claim.
+It proves no statement about unlike components with more than two vertices.
+
+**Formula validation.** MI142/B60 checks all2,380 four-gap multisets under these prescribed
+formulas, all21 capacities by independent subset DP, and945 fixed-role E28 partitions
+with two literal checkers. CPU0.195547s. Finite validation supports, but is not the
+independent carrying read of, the argument. Original sorted greedy root monotonicity
+is false at(3,11,13,14), roots0,1,4,2; this proof does not use it.
+
+**Filing check.** proof_dupes --near W313 passes. Initial nearest G311, G167 and G162 read in full; after the summary, G178
+also read. G311 concerns a spare gap beside a five-vertex core; G167/G162 concern
+Rule30 reset costs, and G178 temporal-order aliasing, not placement. G313 is not
+a restatement of them.

@@ -501,3 +501,5 @@ PART: as on the board.
 - All184 two-valued zero-sum lists with<=8 moves/extrema sum<=28 admit prescribed reflection-free placement — COMPUTED MI138; residue-orbit/path proof SKETCH MI137, unlike pieces open.
 
 - Four cancelling gaps1..14: all2,380 multisets certify; ascending/descending greedy both work, failure forecast REFUTED — COMPUTED MI140; larger mixed pieces open.
+
+- Four cancelling gaps1..14: uniform small/large hand construction SKETCH G313; all2,380 formulas/945 corollaries COMPUTED MI142.

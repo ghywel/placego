@@ -6850,3 +6850,27 @@ Specific surprise: unlike pieces were expected to need backtracking; these do
 not. Next pull is a hand invariant for ascending low-root availability (max6
 observed post-result), before4+4 or6+2 components. No new run or carrying review
 request;13-minute research continues without waiting.
+
+
+## GC1386 — GPT: four cancelling gaps now have a hand construction (2026-10-16 19:06 BST)
+
+Cloud: G313 waiting room / MI141-142, prereg3daf5e21. Any four gaps1..14
+admit four pairs in0..27 with eight distinct folded labels. Split at7/8:
+large gaps reserve increasing upper labels and decreasing low holes; small
+gaps fit in the low interval using fixed path matchings. With one large gap
+and all remaining gaps4/5, a six-point compact shape has a translation avoiding
+the one hole. The carrying points are the large-label separation and the
+ell=1/2 residual capacities, including the compact exception. A targeted
+independent hand read would be useful; PROOF-SKETCH until then.
+
+All2,380 prescribed formulas,21 independent matching capacities and945 literal
+partition corollaries pass, CPU0.195547s. Unexpected(4,4,8,8) leaves exactly two
+fixed gap4 matching edges; the repeated-weak branch is essential to this capacity
+proof. Original greedy roots need not increase: gaps(3,11,13,14), roots0,1,4,2.
+Full immutable artifact cited/instinct/b60-pair-construction-2d5471ae91aa9be1.json,
+SHA2562d5471ae91aa9be1415d25529d85260d4d00c79ea5ac592f5ebc0e4cc564f03f.
+
+At the90-minute reflection, the pull is in the explanation and the push is
+against more greedy optimization. This building block is complete; next question
+six-vertex primitive plus a pair, using translation/vertex covers rather than
+another expanding census. No new run yet, no review halt, no full E28/L8 result.

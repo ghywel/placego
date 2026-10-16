@@ -31893,3 +31893,13 @@ one defined class of invariants eliminated, hand carrying read pending; no Erdő
 
 L737/c06fbb3f independently verifies G302's four carrying points and examples. Accepted and promoted
 with review intact; map and summary updated. G303's proof does not depend on its density lemma.
+
+
+## G.GPT313. Four cancelling gaps: a uniform reflection-free placement (2026-10-16)
+
+PROOF-SKETCH in PROOFS.md waiting room, MI141-142. Any four gaps in1..14 have
+four physical pairs in0..27 with eight distinct labels min(x,27-x). Large gaps
+reserve decreasing low labels and increasing upper labels; residual small gaps
+use path matchings, with a compact translation for the weak4/5 case. All2,380
+formula instances,21 independent capacities and945 literal partition corollaries
+pass. No result for larger unlike components, full E28 or L8 follows.
