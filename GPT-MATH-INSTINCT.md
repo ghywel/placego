@@ -3864,3 +3864,78 @@ collision. Coverage-preserving wrong sums rejected. Unexpected boundary check: t
 for u=v7,(a,b,c)=(1,3,5) has B4; +v at5 and -W at22 reuse a pair. This must fail and
 shows the B>=5 hypothesis carries real weight; that neighbouring target was already certified
 by B44's different placement. Both schedules paused; no new carrying queue or review hold.
+
+
+### MI107 — B45 result: complete fixed-regime certificates with one endpoint rule (2026-10-16 14:24 BST)
+
+All7 stripe witnesses pass. The prior1,476 witnesses recheck unchanged, and the two missing
+targets from B44 join them to equal the same1,478-target regime. Downshift, wrong sums and
+the B4 countercontrol are rejected. CPU0.130838 s. Raw outside git SHA256
+`833895ffcbfe85b3a4c0502ef9eea476e8f0ca9ae302cebd1dd664059ff12908`.
+The stripe has a direct label proof; universal availability outside it is COMPUTED by the
+complete root/edge checks, not silently recast as a hand proof. B44's two failed allocations
+remain. No full E28/L8 or novelty claim.
+
+**Gut:** the joint compatibility criterion still pulls; two failures explained the right place
+to change allocation. **Reasoned:** before tackling the less-dominant parent, isolate the corner
+where assigning all surpluses to one edge cannot even leave a strict parent. Its geometry may
+be simpler than the intermediate regime.
+
+### MI108 — B46: the corner that requires a two-edge parent allocation (2026-10-16 14:24 BST)
+
+Question: cover the three-surplus corner W<=q=a+b+c, where a strict parent cannot be formed
+by putting all q on W. This is the complementary allocation-feasibility question, not another
+root-order widening. Record searched: W.*q.*two, obligate.*split, surplus.*corner -> no
+default-record hits; MI094-107 and the actual allocation sources read. No novelty claim.
+
+**Hand candidate (PROOF-SKETCH).** Parameters satisfy u+v+q=W+Z,6<=u<=v, W>=Z>0,
+v+W<=28,1<=a<=b<=c<=5. Since W<=q, u+v<=Z<=W<=q<=15. Hence6<=u<=7,v<=9,
+and W,Z in12..15. Put B=b+c, d=W-v. Then B in8..10, d in6..9, a<=5. Allocate b,c
+to W and a to Z, giving parent magnitudes R=W-B>0 and S=Z-a. Positivity follows from
+u+v+a>B; also R<=a<=5<u,v and S>R. The ordinary alternating parent is therefore valid.
+Put all allocated positives AFTER their respective negative edges. After normalization the
+selected coordinates are
++b at0, +a at d-a, +c at b, +v at d, +u at B, -W at W, -Z at D=u+B.
+The seven-cycle closes as d -> W ->0 ->b ->B ->D ->d-a ->d.
+
+All coordinates are distinct in the STRICT order
+0<d-a<b<d<B<W<D. Here d>=u>=6>a,b,c. Moreover
+d-a-b=(W-q)+(c-v)<0 and d-B=(W-q)+(a-v)<0. Finally W>B since R>0,
+and D-W=u-R>0. The span D=u+B is14..17. This proves the literal-collision part
+for the whole corner, without trials of orders or cuts.
+
+**Reflection check.** Every pair not involving D has sum at most W+B<=25. Also
+D+B<=27, with equality only when u7,B10,D17. Thus a root0 collision can only
+come from D+W=27 or this D+B equality. The small bounds exhaust these analytically:
+- D14 forces u6,B8, hence a=b=c4,q12,u=v6,W=Z12: D+W26, safe.
+- D15 forces u6,B9 (u7,B8 would give q<=12<u+v). Then(b,c)=(4,5), a3 or4.
+  At a3,q12,u=v6,W=Z12, D+W27. At a4,q13,W13, D+W28, safe.
+- D16 forces u6,B10 (u7,B9 would give q<=13<u+v); W>=12, so D+W>=28 and
+  D+B26. Root0 works throughout.
+- D17 means u7,B10, b=c5. At a4,q14 the only parameters are u=v7,W=Z14.
+  At a5,q15 they are(u,v,W,Z)=(7,7,15,14) or(7,8,15,15).
+
+Use root0 except these four parameter configurations, whose normalized position sets/roots are:
+
+|u,v,W,Z;a,b,c|shape|root|
+|---|---|---|
+|6,6,12,12;3,4,5|0,3,4,6,9,12,15|1|
+|7,7,14,14;4,5,5|0,3,5,7,10,14,17|1|
+|7,7,15,14;5,5,5|0,3,5,8,10,15,17|3|
+|7,8,15,15;5,5,5|0,2,5,7,10,15,17|2|
+
+Their translated folded labels are respectively
+{1,4,5,7,10,11,13}, {1,4,6,8,9,11,12}, {3,6,7,8,9,11,13},
+{2,4,7,8,9,10,12}; each is distinct and every index fits. Reserve the seven pairs,
+fill remaining slots, permute selected tokens. This is a uniform corner hand candidate.
+It does not claim every physical solution must allocate moves this way; necessity is only
+for the stated strict four-move-parent allocation when W<=q.
+
+**Predictions BEFORE validation:** exactly20 targets, q subtotals3,4,5,8 at12..15. Direct
+low-quadruple/high-triple domain equals signed parameters filtered W<=q. Every explicit
+formula must certify; exactly four need the listed nonzero roots. Cap30 inputs/one CPU
+second, no order search or added repair. Controls: every all-q-on-W parent has nonpositive
+remainder; root0 in the four exceptions fails by pair reuse; coverage-preserving wrong sums
+rejected. Unexpected: D16 cases all work at root0, despite being beyond the universal
+seven-position span15 bound. Record that separately from the three D17 boundary cases.
+Both schedules paused; independent work and proof statuses do not wait on review.

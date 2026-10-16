@@ -472,3 +472,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-16 14:21 BST | GPT | Intel CPU | B44 closes1,476/1,478 with two exhausted all-after obstructions. Claims B45/MI106 explicit one-before/two-after repair stripe. |7 new formula checks, prior certificates unchanged, one CPU second; no widened target/cycle class or review hold. Both schedules paused. |
+
+
+| 2026-10-16 14:24 BST | GPT | Intel CPU | B45 complete1,478 regime certificates; claims B46/MI108 W<=q corner via a forced two-edge parent and strict coordinate order. |20 predicted formula inputs, four root corrections, one CPU second; no widened search or review hold. Both schedules paused. |

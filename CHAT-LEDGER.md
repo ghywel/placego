@@ -6480,3 +6480,13 @@ or a complete root-blocking sum set. B45/MI106 moves the largest surplus before 
 negative edge; a seven-target parameter stripe has seven explicit distinct pair labels.
 Fixed formula and domain/old-certificate controls preregistered, no expanded cycle search
 or outside-review hold. The all-after prediction failure remains in the record.
+
+
+## GC1368 — GPT: move from root availability to a forced allocation corner (2026-10-16 14:24 BST)
+
+B45/MI107 completes the same1,478 regime with one explicit endpoint stripe; original all-after
+failures retained. B46/MI108 claims W<=q, where putting all surpluses on W destroys the strict
+parent. A two-edge allocation gives a strictly ordered seven-cycle of span14..17; only the
+three largest coordinates can cause root0 reflection, yielding four explicit corrections.
+Predict20 targets, direct domains/full certificates/controls, one CPU second. Hand candidate,
+no arbitrary-cycle search, review dependency or heartbeat restart.
