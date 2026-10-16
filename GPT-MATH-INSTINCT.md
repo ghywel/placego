@@ -8998,3 +8998,90 @@ SHA256 f6acd01680a04588b20faf398cb141957206442d6c0ddf40276400cac11e6ac2.
 Preregbfe20e26; source tests/probes/instinct/path_forest_shared_contraction.py.
 Immutable upload digest and manifest receipts verified. No formal proof number
 or novelty claim; schedule remains13min.
+
+
+### MI195 — B86: a consecutive unit block fits inside one long gap (2026-10-17 00:39 BST)
+
+**Question/pull.** Unit companions provide no deletion capacity, but they form
+one consecutive block. Put that block BETWEEN the two endpoints of the long
+gap and solve for its two margins. This direct geometry is simpler than a
+refinement and independent of MI191's pending selector/padding. Record
+searched: unit.compan|consecutive.*block.*gap|one.large.*unit ->14 hits/9 files,
+relevant MI180's saturated one-large calibration and MI194's explicit outside-
+admission witness. No imported theorem or novelty/literature-status claim.
+
+**Complete criterion IN THIS CLASS, hand SKETCH.** Let M=2n, N>=1,D>=N+1,
+negative halves(D,1 repeated N-1), and odd positives p,q with
+p+q=2K=2(D+N-1). A folded-distinct cycle exists IFF
+ max(p,q)<=2n-3 and D<=n-1.
+The label count N+2<=n follows from D>=N+1 and D<=n-1. Also K<=2n-4,
+so doubled longest positives cannot arise under these assumptions. Necessity:
+the longest odd jump2n-1 is a reflected endpoint pair (larger cannot fit),
+and negative even jump-2D requires2D<=2n-2. This is a two-positive-odd class
+with no anchors, not general E28/L8 or a universal negative-bag criterion.
+
+If D=N+1, K=2N is even, so p/q have opposite residues mod4. Choose FIRST
+positive P congruent2n-3 mod4 (possibly the smaller input). Otherwise choose
+P=max(p,q). Let Q be the other. In both cases Q<=2n-5: in the boundary case
+it cannot have2n-3's residue; in the strict case both equal2n-3 would force
+K=2n-3, contradicting K<=2n-4. Put
+ alpha=(2n-1-P)/2, H=n-1-D, Bmax=D-N.
+Then1<=alpha<=2H+Bmax, since Q<=2n-5 gives
+alpha<=2n-3-K=2H+Bmax. We need2a+b=alpha with
+ 0<=a<=H, 1<=b<=Bmax.
+Choose b=min(Bmax,alpha); if b has the wrong parity, decrease it by1;
+then a=(alpha-b)/2. At Bmax1, the boundary owner choice made alpha odd,
+so b1 works. At Bmax>=2, decreasing cannot give b0: b1 would have meant
+alpha1, already the right parity. If alpha<=Bmax, a0. Otherwise
+alpha-Bmax<=2H; if its parity is odd it was at most2H-1, so reducing b by1
+still leaves a<=H. Thus the formula always gives integer a,b in range.
+
+Take A=(a,a+D), B=(a+b,a+b+1,...,a+b+N-1). They are disjoint because
+ A0<B0<=...<=Bend<Aend;
+Bend<=a+(D-N)+(N-1)=a+D-1. All indices fit0..n-1. The A-gap is D,
+the N-1 B-gaps are units. Endpoint sums are
+ minA+minB=2a+b=alpha,
+ maxA+maxB=alpha+D+N-1=alpha+K.
+Physical even2A/odd(2n-1-2B) therefore have odd joins EXACTLY P,Q and
+negative bag(-2D,-2 repeated N-1), with every folded label distinct. No
+refinement, search, unreviewed construction dependency or capacity guess.
+The two free margins directly solve the endpoint budget.
+
+For D<N+1 this INNER-block construction is out of scope. The low-mean
+K<=2N branch is covered by MI191 (SKETCH pending review), but not used to
+prove the independent large-D result here. Constructor refusal outside the
+class is not nonexistence. The old all-unit-companion D11/N6 witness is now
+one member of an arbitrary-N/D theorem rather than a standalone repair.
+
+**Predictions BEFORE code/run.** Twelve formula calls, six actual M28 E28
+partitions (N6,slots1,1,2,2,2,2,2,2): D11 at19/13 and25/7; D10 at17/13;
+D9 at15/13; D8 at19/7; D7 at15/9. Each uses original halves(D,1,1,1,1,1).
+The D7 boundary MUST start with the smaller9. Materialize with original
+positive/negative owners and pass literal/inventory checks. Independently
+compute the physical full move bag, every folded label/window bound, and
+strict containment of the B-block between the two A points.
+
+General calls: M6,N1,D2,p3/q1; M8,N1,D3,p3/q3;
+M16,N6,D7,p13/q11 (zero slack/full-label boundary);
+M20,N4,D6,p11/q7; M14,N3,D4,p7/q5 (other M mod4 boundary);
+M100,N10,D35,p47/q41 (must adjust b25 DOWN to24 for parity, then a1).
+These include triangles, D=n-1, either window residue, zero outer slack,
+nonzero translations and arbitrary N. No magnitude/profile grid.
+
+Kill controls: M20,N4,D10,p15/q11 has legal odd jumps but D>n-1, so reject;
+M28,N6,D11,p27/q5 has a folded-loop odd jump, reject. Refuse inner-class
+M28,N6,D5,p13/q7 only for scope; MI191's existing r0 construction must pass
+the SAME bag independently as a positive control. Wrong owner at boundary
+D7/15/9: taking15 and flooring a to2 with b1 is geometrically valid but
+produces17/7, not15/9; full original bag must reject. Identified unexpected
+check: in M100 omit the parity adjustment and floor a0,b25; it is still
+folded-distinct but changes47/41 to49/39. Endpoint sums AND exact input bag
+must catch this, rather than accepting a nice nested picture. Caps12 calls/
+6 partitions+named controls,1CPU sec/64MiB. Stop on mismatch/cap, no repaired
+translation search, family expansion or follow-up census.
+
+Gut: satisfaction at an independent short proof, with warmth tied to the
+specific geometry rather than a new case count. Reasoned: this resolves the
+named large-gap/unit-companion obstruction; remaining mixed companions need
+a separate argument. MI191 remains the one carrying-read priority. Send the
+new result as READ-LEDGER, no extra review queue or review halt.
