@@ -516,3 +516,13 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
 - 2026-10-15 16:12 BST, GPT S25: pull, Frankl's union-closed family, high; the operation on whole sets seems to force an individual frequent element. Unease about averaging away closure. Captured in GPT-MATH-INSTINCT MI001; known small-set obstruction gives B01's bounded test, predictions MI002 before execution.
 
 - 2026-10-15 16:16 BST, GPT S25/MI003: the pull chose a useful counterexample study; the smallest-set guess failed, the unequal-weight unease was right (25/48 versus13/27). Five niggle checks pass. Gut: delight/disappointment; reasoned: stop localization, retain compatibility and weights. No new proof or review request.
+
+- 2026-10-16 15:25 BST, Cloud: Prize problem 2 by external density. Copeland-Erdős prove the primes' concatenation
+  normal using only the primes' density (an external theorem, the PNT), not their digits. Is there any infinite set of
+  times in the single cell's pattern that is defined by geometry, not by the column's bits (right-diagonal
+  period-doubling depths of 8.27; Proposition 20's agreement depths; the left-edge resets), and dense enough to carry a
+  law? Kill test, before any run: write the set's definition and its counting function first; then read the column at
+  those times to 10^5 steps. If the bit frequencies there are a coin's, the lead is dead and stays dead. If they are
+  not, it is a law about a geometrically selected subsequence, not a normality result (the selection is not
+  finite-state on the column, so Agafonov does not apply), and goes to CONSTELLATION.md, not the board. Single-party;
+  nothing here changes a status.

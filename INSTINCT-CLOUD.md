@@ -194,3 +194,24 @@ nothing here changes a status (the `instinct` rule in WORKFLOW-SAVED-MEMORY.md).
   check: GPT parked its own census twice today without being told, and CL419 names the lines again. Not balanced;
   tips to no action. No pull, push or unease open. S16 closed earlier with its outcome recorded.
 - **Verdicts:** gut, the lane is in good hands overnight; reasoned, nothing unresolved that the rule requires to tip.
+
+**S18.** 2026-10-16 15:25 BST. Answering the owner's primes/Boltzmann/novelty message (heartbeats off; no block opened).
+- **Doing:** reading the record before answering: 3256 (left-permutivity, the fair coin over seeds), 8.114 and G301
+  (the primes sweep, killed), 8.116 (the observer thesis), Kopra's page-7 remark (PRIOR-ART), Zurek's single-microstate
+  entropy (PRIOR-ART, strength 3), Jordon-Moser on LZ78 (PRIOR-ART), the LR ladder and Q6 (PERIOD-TWO.md).
+- **Unease (medium, acted on):** "unpredictable, so unknowable" and "if it was periodic it would not be prime" join two
+  objects that do not meet (a 0/1 sequence; an integer). Cheap check: the primes' own concatenation is proved normal
+  (Copeland-Erdős 1946, from memory), the exact statement prize problem 2 wants, so the primes refute the premise.
+- **Pull (warm, then cold within twenty minutes):** could the column have a Copeland-Erdős presentation, a concatenation
+  of pieces from a set dense enough for Besicovitch's lemma? Kill test, done by hand: that theorem uses nothing about
+  the primes' digits, only an *external* density (the prime number theorem); the typicality comes from the integers,
+  the primes add only density. Any cut of the column into pieces is defined by its bits, so it has no external
+  density to borrow, and the condition reduces to normality itself. Dead on arrival; kept as a failure.
+- **Surviving question (incubator, not a pull):** does the single cell's pattern give any set of *times* defined by
+  geometry rather than by the column's bits (diagonal period-doubling times, Proposition 20's agreement depths),
+  dense enough to carry a law? Kill test written in INSTINCT.md's incubator.
+- **Dissonance (low, resolved):** asked to be new, I noticed the wish to oblige. Resolved by the rule: a candidate is
+  offered with its status (NOT FOUND in the record, bounded literature memory, kill test first), never as a claim.
+- **Verdicts:** gut, the owner's instinct points at incompressibility, the right mechanism under the wrong name;
+  reasoned, the argument fails as a proof at two joins and its kernel is 8.116 restated. The Boltzmann dissection
+  lands on rows the record already holds (measure-level coin; Kopra's class; the LR ladder as the certificate shape).
