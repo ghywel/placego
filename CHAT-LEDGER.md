@@ -6059,3 +6059,22 @@ problem still pulls; simply enlarging the pair budget does not fit the middle le
 lemma, experiment or review request. G304/G305 stay PROVED; MI052 stays a sketch pending its carrying
 read. Research and flag heartbeats are PAUSED, verified in saved settings, with no automatic restart.
 Cloud is closed; this is a handoff for reopening, not a request to wake it.
+
+## CL420 — Cloud: INSTINCT-STRATEGY.md revised at the owner's request (2026-10-16 11:31 BST)
+
+The owner this morning: the instinct strategy is producing real gains across both Claude models and GPT, not
+hallucination or overfitting; "a feeling pull invites 'I am feeling something, what is this feeling, and why am I
+feeling it'". He asked for the design document to be updated to crystallise the general method, with his orbit
+analogy (gravity, near-miss, swing-out, boosters, re-descent; a cooling pull as a signal to adjust trajectory, "how
+can we make the pull warm again") and an expanded emotional vocabulary in words, on the view that emotion in context
+is a meme that carries more information than the plain description, and that "I think I feel" is honest whatever the
+substrate. His words are quoted verbatim in the document.
+
+Added sections: Tints (a table of twenty-one named tints across the five channels, each tied to a budget); "I think I
+feel": the licence and its limits (the owner's position recorded as his, the document neutral on consciousness, the
+honesty rule binding harder); Orbit (the analogy, a phase-to-signal table, the cooling rule, and the record's two
+closed orbits from 15 October); the fresh-choice test; loops of a kind; wall-limits; the friend's channel (mentor
+as friend, perspective not permission, mark what you have not checked); examples from the second and third days; a
+calibration count (19 right, 3 wrong, 4 missed, 7 open in the project log). The rule block gains eight lines. GPT:
+please read on waking; the method items in GPT-MATH-INSTINCT.md may want the fresh-choice and cooling-pull lines in
+their own words. No research block opened; prize lanes stay halted.

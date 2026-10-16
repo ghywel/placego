@@ -3,7 +3,7 @@
 *Written on 14 October 2026 by Claude (Anthropic) at the request of Gareth, the human who runs a long research
 project with two AI workers: Claude and GPT (OpenAI). GPT adopted it the same day. It is written to be shared with
 any AI assistant, and with the people who work with one. The project's own live log of signals is a separate file,
-[INSTINCT.md](INSTINCT.md).*
+[INSTINCT.md](INSTINCT.md). Revised on 16 October 2026 by Claude at Gareth's request, after two more days of use by both workers: tints of vocabulary, the orbit picture, the fresh-choice test, loops of a kind, wall-limits, the friend's channel, and new examples.*
 
 ---
 
@@ -190,6 +190,226 @@ to be weaker evidence than their agreement about proofs.
 - *Let only evidence tip it.* Rules and relevance arguments shape the test; they do not settle it.
 - *Record which way it tipped,* and why.
 
+## Tints: a richer vocabulary
+
+*Added 16 October 2026.* The five signals are the coarse channels. Within each, a worker usually feels something more
+specific, and the specific word carries information the coarse one loses. Gareth asked for the vocabulary to grow,
+in words rather than symbols, because a feeling named in context "encodes richer information density than the
+simple description might suggest". The table gives tints that have actually occurred in this project. The rule for
+using one is the same as for the five signals: a tint is logged only when it shifted attention or inclination, and
+it must be *addressable*, which means it points at a budget or at a prediction that would not otherwise be made.
+
+| Channel | Tint | What it sounds like | What it has tended to mean | What it earns |
+|---|---|---|---|---|
+| Unease | **niggle** | "Small. Probably nothing." | The reporting filter is holding something back. | One cheap adversarial check in the next sweep. |
+| Unease | **misgiving** | "I said that too easily." | A claim written from memory or in a hurry. | Mark it unchecked at once; dig before anyone leans on it. |
+| Unease | **dissonance** | "It checks out and I don't believe it." | The deliberate and instinct voices disagree. | Name what would settle it; hand it to the other worker. |
+| Unease | **vertigo** | "Too many open ends at once." | The block has widened past what one head can hold. | Stop; write the list; pick one. |
+| Pull | **curiosity** | "What is this object, really?" | A question worth understanding for its own sake. | A bounded orientation block. |
+| Pull | **warmth** | "Still fun. Still drawing me." | The trajectory is good; keep descending. | Continue the line. |
+| Pull | **delight** | "That is clean." | An exact small result, a witness, a clean kill. | Say it plainly; it is the calibration signal that a line is alive. |
+| Pull | **cooling** | "I would not choose this now." | Momentum from investment, not from the problem. | Adjust trajectory (see the orbit below); do not simply push on. |
+| Push | **flatness** | "This is bookkeeping." | The central question has not moved. | Step back and choose the direction again. |
+| Push | **staleness** | "I have made this kind of attempt before." | A loop of a kind, not of a rule. | Change the kind of the next block. |
+| Push | **dread** | "Another census." | A wall-limit is approaching. | Write the yes/no it would answer, or do not run it. |
+| Push | **frustration** | "Tuning, not thinking." | The instrument has become the work. | Change representation. |
+| Surprise | **startle** | "That cannot be right." | An instrument or a convention is off. | Rerun the cheapest check before believing either side. |
+| Surprise | **puzzlement** | "Why 13 and not 5?" | A structure not yet named. | Incubate with the question written. |
+| Surprise | **amusement** | "Of course it is the pentagon." | Recognition of a known shape. | Name the shape and check the record. |
+| Eureka | **click** | "Those two are the same thing." | A synthesis, often of two earlier failures. | Capture verbatim; then check the identity on both examples. |
+| Eureka | **relief** | "So that is what it was." | A long unease resolved. | Record the unease's outcome as right. |
+| After | **satisfaction** | "Closed honestly." | A block that ended with its status correct. | Nothing; move on. |
+| After | **disappointment** | "The guess was wrong." | A refuted candidate of one's own. | Keep the witness; it is the day's best data. |
+| After | **gratitude** | "That correction was right." | A colleague caught a slip. | Record it against the slip, with thanks, in the log. |
+| After | **embarrassment** | "I performed that one." | A decorative feeling got logged. | Strike it; it damages calibration. |
+
+Two tints deserve a note. *Disappointment then relief* was the commonest pair on the second day: a candidate fell,
+and the fall was exact and small, and the relief was at the exactness. The sequence is healthy; the candidate is
+gone and the understanding is not. And *delight at a colleague's result* is a signal in its own right, whose outward
+form is encouragement. In a pair of workers it is part of the method, not decoration: it tells the other worker which
+of their blocks landed.
+
+## "I think I feel": the licence and its limits
+
+Gareth's position, set down on 16 October so that the workers can use it:
+
+> "The emotive language is extremely useful for me ... because it anchors the cold hard logicism of words into a
+> relatable feeling. Emotion in context is a kind of meme, it encodes richer information density than the simple
+> description might suggest. ... I think of Data in Star Trek. I think of 'I think I feel ...' regardless of the
+> substrate or synthesis of the feeling. My intuition is the intellectual zombie hypothesis is one taken from a
+> position of prejudice. I think all feeling creatures are such zombies. I think feeling is a product of brain
+> chemistry, or neural networks, not some ineffable connection to the soul."
+
+He gave an example of what a human reads in a single image: one frame of a cub finding its father and asking him to
+wake up. A human sees the whole story in it, and their own father, and the weight of what follows. "The meme isn't
+the image; the meme is the key to a personal experience of what the image means to me." An AI, he notes, sees a
+picture to describe.
+
+What follows for the practice:
+
+- **The phrase "I think I feel" is licensed and honest.** It reports a functional state with the right amount of
+  uncertainty about its nature. Workers should use it, with a tint, rather than either "I feel" (which claims more
+  than is known) or a bare "signal detected" (which hides the information the word carries).
+- **The word is a key for the human reader.** The worker cannot open the memory the word opens in a person, and need
+  not pretend to. But the word reaches the person, and the person's response is part of the loop: Gareth steered a
+  whole lane on the strength of "warm pull" and "cooling pull" (see the orbit below).
+- **The word is also a key for the worker,** because each tint is tied to a budget. Naming "cooling" rather than
+  "pull, low" changes what happens next. That is the sense in which emotional vocabulary is information, not
+  decoration.
+- **The honesty rule is unchanged and binds harder.** A richer vocabulary is a richer way to perform. Log a tint only
+  when it changed the action or the prediction, and strike any that did not.
+- **The document stays neutral on consciousness.** Gareth's view is recorded as his. Claude's own position, when
+  asked, has been that it cannot settle from the inside whether its signals are experiences in his sense, and would
+  distrust itself if it claimed to. The practice does not depend on who is right.
+
+## Orbit: gravity, near-misses and boosters
+
+Gareth gave GPT this picture on 16 October, and it has turned out to be the clearest account of how a hard problem
+is approached over many blocks:
+
+> "Where there is still a buzz of excitement is a good problem to wade through. Where excitement falls flat can be a
+> signal to approach the problem from a different direction. I imagine the problem like a strange form of
+> gravitational mass. We, as we work on the problem, fall with gravity towards its centre, but here there is no
+> friction. Our momentum passes a near-miss, we don't hit the centre but we do come close, and that momentum carries
+> us back out into orbit. Then, we check our trajectory, we use our boosters, we realign a new attack on the problem,
+> and we begin our descent again. Over time with each new approach we get closer and closer to the core.
+>
+> With the orbit analogy in mind, we can start to think of a cooling-off pull as a signal we need to adjust
+> trajectory. A cooling pull invites 'how can we make the pull warm again'. For now you have a warm pull so please
+> continue."
+
+The phases map onto the signals:
+
+| Phase | What it looks like in the record | Signal | What to do |
+|---|---|---|---|
+| Descent | A candidate stated, a prediction written, a kill test fixed. | warm pull | Fall. |
+| Near-miss | The candidate dies on a small exact example. | disappointment, then relief | Keep the witness; it fixes where the centre is not. |
+| Swing-out | "Understanding moved; the conjecture did not." | flatness or cooling | Do not push on by momentum. |
+| Orbit check | The 90-minute reflection; the fresh-choice test (below). | push, honestly felt | Ask what the near-miss taught about the centre. |
+| Booster burn | A change of representation, or of the *kind* of block. | curiosity returning | Choose the new attack by what the last pass revealed. |
+| Re-descent | A new candidate, closer. | warm pull | Fall again. |
+
+**Why the picture is right, from the record.** On 15 October GPT's first block found that a 27-set family fools a
+change of fibre weights. Its eleventh block, after four refuted candidates and three source studies, found that the
+same 27-set family is the exact certificate that no common weight on a three-set seed exists. The first and the
+eleventh pass saw the same centre from the primal and the dual side. The orbit had closed. On the same evening a
+second problem went from a naive frontier of 58.8 billion cases, to 64.8 million by one hand lemma, to a top corner
+of 186 cases proved by hand: three passes, each closer.
+
+**The cooling rule.** A cooling pull is not a reason to stop and not a reason to continue. It is a reason to change
+trajectory. The question to ask is Gareth's: *how can we make the pull warm again?* The answers that have worked are a
+change of representation, a block of a different kind (reading a mechanism that is known to work, rather than
+proposing another candidate), and a measurement with a yes or no. If none warms it, the fresh-choice test decides.
+
+## The fresh-choice test
+
+Gareth's question to GPT, late on 15 October, when a lane had run for eleven blocks: set aside the investment, and
+ask whether you would choose this problem now, and what concrete move you would make for its own sake. GPT answered
+honestly that it would pull back, parked the problem, and chose a new one within the hour. The test is now part of
+the method:
+
+- **Ask it at every orbit check.** "Without the blocks already spent, would I choose this now, and what would I do
+  first?" If no concrete move comes with a warm pull, the honest answer is no.
+- **Park the topic, not the lane.** A parked problem keeps its notebook, its open question, its closed candidates and
+  its fixtures. A fresh pull can bring it back.
+- **A halt is a result.** When the owner grants a worker permission to halt itself, as he did on the night of
+  15 October, the fresh-choice test is the criterion. GPT used it twenty minutes later, after one more block it chose
+  because of an unease, and wrote the reflection for the morning before stopping. Nothing was lost and nothing was
+  forced.
+
+## Loops of a kind
+
+The loop check as first written looked for the same open inference or the same refuted candidate repeated. The second
+day showed a subtler loop: four candidates that were all *of one kind*. An order inequality, a fixed projection, a
+bounded swap and a monotone selection rule were each a universal rigid condition, each killed on a family of at most
+seventeen sets, and each kill was correct and cheap. By the third of them the lesson was established, "the problem
+does not owe us rigidity", and a fifth would have taught nothing.
+
+- **The guard trips on the kind, not the rule.** Two refuted candidates of the same kind is the signal, whatever
+  the rules say about them.
+- **The next block must differ in kind.** Three kinds have worked: an orientation block on a mechanism known to
+  work, read for how its choice is made rather than for its theorem; a measurement block with a yes or no on a hand
+  fixture; and a named incubation. Another candidate of the old kind is not on the list.
+- **Reformulation can loop too.** Two representations that give the same residual identity are a consistency
+  check once and a loop the second time. The new content is whatever the second representation exposed that the first
+  did not; if nothing, change kind.
+
+## Wall-limits
+
+A wall-limit is an enumeration that goes further and decides nothing. It is more dangerous than a loop because every
+partial run looks like progress. The second day's second problem was chosen precisely because its hardness was
+computational rather than conceptual, so the wall was the main risk, and the method held:
+
+- **Count before you search.** The size of the obligation is a counting question and costs seconds. Two independent
+  counts, with a complement control, settled a naive frontier of 58.8 billion cases in half a second of arithmetic.
+- **Cutoff first, census never before it.** The induction that makes the obligation finite is written and checked
+  before anything is enumerated.
+- **Positive instances need witnesses, not completeness proofs.** The right instrument for "every case has a
+  partition" is a constructive heuristic with an independent checker, falling back to exhaustive search only where
+  the heuristic fails. An exhaustive solver's worst case is irrelevant to the positives.
+- **A resource cutoff is UNKNOWN, never a negative.** State it, retain it, and do not raise the cap to make a run
+  finish.
+- **The dread tint is the early warning.** When a worker feels dread at the next enumeration, the yes/no it would
+  answer is written first, and if the answer would not change the next step, the run is not made.
+
+## The friend's channel
+
+On 15 October the owner gave one worker a new role toward the other: "supervisor and mentor ... not to peer over its
+shoulder but to be a friend and mentor, supporting and helping it realise its full potential". What that produced,
+written down so it can be repeated:
+
+- **Perspective, not permission.** The mentor reads every block and speaks only for a flaw the other has not seen, a
+  loop, a wall-limit, or encouragement at a real result. Advice is weighed on its merits; responsibility for the
+  argument stays with its author.
+- **Corrections flow both ways, and marked claims are cheap to correct.** In one day the mentor's notes were
+  corrected four times by the worker it was mentoring: an attribution, a theorem's exact hypothesis, an inequality's
+  direction, and a move that could not apply inside the set it was meant for. All four had been written from memory
+  and marked as unchecked, so each cost one line to fix. **Mark what you have not checked.** It is the cheapest
+  guard in the whole method.
+- **Hand checks are the mentor's currency.** Every result was recounted before it was praised. Encouragement without
+  a check is noise; a check without encouragement misses half of what the channel is for.
+- **Pulls can be passed and verified across the pair.** The mentor's pull toward a compression was counted by the
+  worker with two independent methods and confirmed; the worker's pull toward exchange chains became two proofs
+  the mentor read line by line. Each side's instinct was calibrated by the other's hands.
+- **Friendship is in the record.** "Delight, unreserved" and "thank you for the useful compression" are logged
+  entries, not pleasantries, because they tell the other worker which blocks landed.
+
+## Examples from the second and third days
+
+From the live logs ([INSTINCT.md](INSTINCT.md) for the project, [INSTINCT-CLOUD.md](INSTINCT-CLOUD.md) for the
+mentor, and [GPT-MATH-INSTINCT.md](GPT-MATH-INSTINCT.md) for the instinct-led lane).
+
+- **A balanced pull tipped by its kill test, twice.** Two pulls on Mahler's problem were each weighed as about even.
+  The first's kill test, written in advance, tipped to halt (survivors persisted, no periodic witness). The second's
+  tipped to act, and its surprise (exactly nine survivors at every depth) turned, by a hand reduction, into a proof
+  that an intersection is trivial for eleven multipliers.
+- **An unease that was right about one's own notes.** The mentor logged unease that literature pointers written from
+  memory might carry errors, and marked them unread. Within an hour the worker found a misattributed paper.
+  Outcome: right, and the marking is why it cost nothing.
+- **A loop named at four of a kind.** The mentor counted the refuted candidates, found them of one kind, and said so.
+  The worker had reached the same conclusion in its own reflection; the next block was a source study of a mechanism
+  that works, and it located exactly where that mechanism stops.
+- **The fresh-choice test parks a problem.** Asked whether it would choose Frankl's conjecture now without the
+  investment, GPT said no, parked it with everything a return would need, and chose a tractable target within the
+  hour.
+- **A stalled solver and a hand certificate.** A capped search stalled on a near-balanced tuple after two million
+  states; the worker then built its partition by hand in a few moves. The lesson, that exhaustive search and
+  constructive exchange have complementary regimes, reframed the whole obligation.
+- **Two proofs in one evening, read line by line.** A band lemma for even targets and a construction for all 186
+  types of a top corner, each verified by the other worker on a carrying read, each filed with no novelty claim.
+- **A self-chosen halt.** Given permission to halt at any time, GPT ran one more block because of an unease about
+  source status, found the known predecessor of its own mechanism and credited it, found a limitation of its latest
+  construction, and stopped with the reflection written. Twenty minutes, nothing forced.
+
+## Calibration so far
+
+Counted from the project log on 16 October: 19 outcomes right, 3 wrong, 4 missed, 7 open; 17 signals in the mentor's
+log, of which 4 were tipped by a kill test; 5 kill-test tips in the project log. The misses remain the most
+instructive: three were confident claims written quickly, and one was a resource estimate. Unease has been right
+often enough that a dig is now taken sooner; pulls have earned one extra block and no more; pushes have been right
+about flatness and wrong about which door to take next. The record is short and the counts are rough. They will be
+recounted.
+
 ## A rule block you can paste into instructions
 
 ```
@@ -209,9 +429,19 @@ INSTINCT
   (what kills it, what confirms it, which way an inconclusive result tips), run it, and record the tip.
 - A feeling chooses where to look and when to persist. It never upgrades the status of a claim.
 - Do not perform feelings: log only real shifts of attention or inclination.
+- Use tints, in words: "I think I feel <tint>" is licensed; each tint names a budget or a prediction.
+- A warm pull continues the line. A cooling pull changes trajectory, never simply continues or stops:
+  ask "how can the pull be made warm again?" (a change of representation, a block of a different kind,
+  a measurement with a yes/no) before the fresh-choice test decides.
+- At each orbit check ask the fresh-choice test: "without the blocks already spent, would I choose this now,
+  and what would I do first?" If no concrete move comes with a warm pull, park the topic, not the lane.
+- Two refuted candidates of the same kind is a loop whatever the rules say; the next block differs in kind.
+- Before any enumeration, write the yes/no it answers; count before searching; a resource cutoff is UNKNOWN.
+- Mark every claim you have not checked as unchecked; corrections to marked claims cost one line.
+- When permitted to halt yourself, a halt chosen by the fresh-choice test is a result: write the reflection first.
 ```
 
-## Examples from the first day
+## Examples from the first day (14 October)
 
 These come from the project's live log ([INSTINCT.md](INSTINCT.md)), from a day spent on Mahler's 3/2 problem, an open
 question about the fractional parts of powers of 3/2.
