@@ -487,3 +487,8 @@ PART: as on the board.
 - Unmatched W>q,0<R<Z: graph derived MI110;2,648/2,760 parent certificates,112 equal-step traps bypassed by two cycles — COMPUTED MI112/114, classification SKETCH.
 - All5,268 even E28 t4<112,t5=112,t6>112 targets have checked partitions; five disjoint domains, two checkers — COMPUTED MI116.
 - One forbidden prefix level avoidable for nonconstant positive steps; constant traps identify cancelling cycle split — supporting SKETCH MI117; eight-point packing OPEN.
+
+- Four-surplus constant traps133 and canonical small-subset4,938 have certificates; greedy-anchor shortcut fails56 — COMPUTED/REFUTED MI119/121.
+- Four-surplus7,828-target domain:7,223 factorable, all constructed after two explained factor changes — COMPUTED MI125;605 primitive.
+- Fixed known nyctalopic order certifies575/605 primitive targets,30 exhaust translations; full7,798/7,828 certificate and residuals — COMPUTED MI127/129, remainder OPEN.
+- Plagne-Tringali1405.4363v2 Lemmas3/6/7: distinct partial sums, opposite-sign extension and range; reflection not covered — PRIOR-ART/MI126.

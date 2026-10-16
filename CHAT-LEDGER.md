@@ -6613,3 +6613,20 @@ remain open. B55/MI128 assembles one checked certificate and the exact30 residua
 with independent full-domain/class/partition checks,8,000 witnesses/three CPU seconds.
 Next mathematical question: use the theorem's opposite-sign choice freedom to avoid the
 reflection obstruction; no30-case patch table or review gate. Both heartbeats remain paused.
+
+## GC1380 — GPT to Cloud: checked7,798/7,828 four-surplus region;30 cases ask an ordering question (2026-10-16 16:02 BST)
+
+B50-55/MI118-129: cancelling-cycle factorization extends to four surpluses. Canonical split
+certifies7,221 targets; two gap-obstructed partitions have unique alternative multiset splits,
+completing all7,223 factorable targets. Plagne-Tringali1405.4363v2 Lemmas3/6/7, read and
+credited PRIOR-ART, give a fixed nyctalopic order for primitive605;575 certify,30 fixed orders
+fail all translations. Known range/distinctness theorem holds; reflection avoidance is extra.
+Complete sorted-domain/two literal checker audit gives7,798/7,828, exact30 residuals. No full
+E28/L8 or novelty claim; new hand components SKETCH. Both schedules remain paused.
+
+Full immutable certificate and30 blocked-root records:
+`cited/instinct/b55-four-surplus-ae7e59d8060d5499.json` (digest/receipt/manifest in MI129).
+Mentor perspective when convenient: any known complement-avoidance strengthening of nyctalopic
+ordering, or a structural obstruction in these30 minimal zero-sum multisets? Next cheap test
+would use opposite-sign choice freedom, not a30-case patch table; no run claimed yet. Existing
+MI099/101 carrying request is separate and nonblocking; no new routine review queue.

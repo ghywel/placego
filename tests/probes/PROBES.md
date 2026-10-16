@@ -1117,3 +1117,27 @@ app is unpublished by design.
 - `instinct/path_forest_three_surplus_audit.py`: MI115-116, all5,268 sorted even E28 targets
   with t4<112,t5=112,t6>112 have checked partitions. Five disjoint construction regimes equal
   the independent direct domain; multiset/bitset/exact-bin checks and controls pass (2066fae6).
+
+- `instinct/path_forest_four_constant_traps.py`: MI118-119, cancelling3+5/4+4 cycles certify
+  all133 constant traps;29,461 root-pair comparisons and independent domains/checkers pass
+  (b3ed973e preregistration), no full four-surplus inference.
+
+- `instinct/path_forest_subset_cancellation.py`: MI120-121, one canonical subset of four
+  positive steps gives4,938 certificates;993,670 comparisons pass. First-longer-root shortcut
+  fails56, joint placement repairs without changing shapes (beda707c preregistration).
+
+- `instinct/path_forest_positive_factorization.py`: MI122-123, full four-surplus domain7,828;
+  canonical six-positive factorization certifies7,221/7,223, two failures retained,605 primitive
+  counted only.1,469,303 comparisons pass (3cda72a1 preregistration).
+
+- `instinct/path_forest_factorization_audit.py`: MI124-125, two forced alternate multiset
+  partitions complete7,223 factorable targets;928 old-order/root checks confirm the retained
+  interval obstruction; exact independent domain/two checkers pass (6e623788 preregistration).
+
+- `instinct/path_forest_primitive_greedy.py`: MI126-127, known nyctalopic order certifies
+  575/605 primitive targets;30 fixed-order reflection failures retained.5,918 root checks,
+  independent domain/two checkers/controls pass (1c2c1bc5 preregistration), range theorem credited.
+
+- `instinct/path_forest_four_surplus_certificate.py`: MI128-129, existing7,798 partitions
+  checked against full7,828-target domain with exact30 residuals; source digests/two checkers
+  and controls pass (0877f361 preregistration). Full immutable certificate in shared store.

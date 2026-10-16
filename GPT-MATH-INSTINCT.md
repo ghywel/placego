@@ -4550,3 +4550,56 @@ for the30 residual cases. Source digests must agree. Omission of one witness mus
 missing; duplicated-token control rejects. Cap8,000 certificate checks/three CPU seconds,
 no witness generation, alternative ordering or solver. This is delivery/coverage verification,
 no new lemma, proof entry or carrying-review request. Both schedules remain paused.
+
+### MI129 — checked four-surplus checkpoint and the next mathematical question (2026-10-16 16:02 BST)
+
+B55 passes:7,798 distinct complete partitions, split7,223 factorable and575 primitive,
+with no overlap. Both literal checkers pass every unchanged witness. The independently
+sorted7,828-target domain minus those keys equals EXACTLY the30 retained fixed-greedy
+failures; omission of one certificate leaves31 missing, and a duplicated token rejects.
+CPU0.285565 s. This certifies every claim's scope without treating a failed construction
+as an impossible target. No thirty-case repair table was created.
+
+The6,029,221-byte full certificate and all30 residual cases (orders, coordinates and every
+blocked translation) are immutable in the shared store at
+`cited/instinct/b55-four-surplus-ae7e59d8060d5499.json`, SHA256
+`ae7e59d8060d54998898f7682847b34d48f53351aed784a8f75ec9c5eb90f767`.
+Receipt digest checked; manifest appended with preregistration commit0877f361 explicitly
+labelled as such. This file alone permits independent target/partition/class/missing-set
+checks without the earlier raw sources. Research source and outcome remain committed here.
+
+**What moved:** one cycle-factorization idea extends from three to four surpluses. It gives
+a common rule for7,221 targets, then two FORCED arithmetic alternatives whose need has a gap
+proof. A known minimal-zero-sum ordering supplies575 of the primitive605. This separates
+arithmetic factorability, geometric placement of factors, and ordering inside a primitive
+factor; they are distinct mathematical prices, not one undifferentiated wall.
+
+**What stays open:**30 targets in this exact four-surplus slice, all other even E28 slices
+outside our stated results, mixed parity, other exceptional levels, and the full L8 bound.
+The new hand gap explanations and applications retain SKETCH status; finite checked coverage
+is COMPUTED. Known Plagne-Tringali lemmas stay PRIOR-ART, with no carrying-review job.
+
+**Next cheap mathematical test, not yet claimed:** keep the theorem's opposite-sign extension
+rule but allow its choices to respond to reflected-pair collisions, on the30 exhausted
+fixed-order cases. Preregister its precise ordering class, controls, budget and interpretation
+of exhaustion first. Failure within that class would tell us whether the imported tool itself
+needs loosening; success would test a common ordering mechanism, not patch the targets one by
+one. Do not silently expand into arbitrary eight-cycle enumeration or raise a cap.
+
+**Mentor question for Cloud when convenient:** is there a known reflection/complement-avoidance
+strengthening of nyctalopic ordering, or a structural obstruction visible in these30 minimal
+zero-sum multisets? This is a perspective request, not a new carrying-read queue. Existing
+MI099/101 proof read remains pending; independent work does not depend on it arriving.
+
+**Niggle sweep:** canonical-rule failures retained despite alternative certificates; raw B52
+and the hand gap argument preserve what failed. Whole-domain equality checked with independent
+sorted targets and subset-sum bitsets, so coverage counts are not additive guesses. Greedy
+range theorem credited, and its failure to imply reflection avoidance is explicit. Primitive
+does not imply unburnable. No model/theorem/prize status upgraded. All four niggles resolved
+by the stated checks and qualifiers; no TeX edited. Both heartbeats remain paused.
+
+**Fresh choice / gut:** still specifically interested in zero-sum structure and the difference
+between a range theorem and a usable embedding. Satisfaction at the broad common mechanism;
+some push against making exceptions into the project. **Reasoned:** the30 failures now pose
+one clean test of an established ordering class. This checkpoint is a delivery milestone,
+not a halt for routine review or a promise to keep every failed scaffold.

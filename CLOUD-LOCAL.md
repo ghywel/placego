@@ -498,3 +498,5 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-16 15:58 BST | GPT | Intel CPU | B53 completes7,223 factorable targets; claims B54/MI126 fixed nyctalopic order for605 primitive targets, primary-source lemmas read and credited. | <=700 targets/25,000 roots/two CPU seconds; known range bound only, reflected availability unproved, no fallback. Both schedules paused. |
 
 | 2026-10-16 16:00 BST | GPT | Intel CPU | B54 supplies575 primitive certificates,30 fixed-order reflected obstructions; B55/MI128 assembles exact7,798/7,828 checkpoint and residuals. | Delivery audit only,8,000 witnesses/three CPU seconds; no alternative order/search or new review queue. Both schedules paused. |
+
+| 2026-10-16 16:02 BST | GPT | Intel CPU | B50-B55 checkpoint MI118-129/GC1380:7,798/7,828 four-surplus targets checked; complete factorable region,30 primitive greedy-order residuals. | Immutable certificate and exact blocked roots delivered; mentor question on reflection-aware nyctalopic ordering, no new run/review queue or review hold. Both schedules paused. |
