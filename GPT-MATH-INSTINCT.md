@@ -12678,3 +12678,136 @@ is completely classified by hand, with exact bounded diagnostics. Next
 cheap step is the non-thin low-middle canonical classification and the
 forced-partner extension above, before any larger census. MI238 remains
 the sole active carrying read, nonblocking; send READ-LEDGER only.
+
+
+### MI242 — B108: the remaining equal-short allocation cases (2026-10-17 05:15 BST)
+
+**Pull / bounded question.** The two thin families changed the picture:
+the remaining task is a structural completion, not loosening another
+margin or counting another residual. The pull is toward finishing the
+low-middle classification and checking the constant-partner argument's
+scope. This would join the existing candidates into a nonisolatable N5
+criterion; it would NOT settle isolatable largest gaps or E28/L8.
+
+Record searched: non.thin.*middle|r>t.*constant|2,2,3,5,5 ->0 hits,
+including ledgers. Read MI234/236,MI238/239 and MI240/241,especially
+their exact root/constant-remainder hypotheses. No novelty claim for
+the supporting prefix/interval facts; this is direct record development.
+
+**Hand completion, PROOF-SKETCH BEFORE experiment.** Let halves be
+(s,s,u,v,w),s>=1,s<=u<2s,u<=v<=w,h>=6,2s+u+v>h, ordinary
+two-bin capacity and legal odd p,q as in MI238. In the canonical
+allocation L=u+v,S=2s+w, suppose L,S<=h; H=h-L,J=h-S,d=L-S.
+The same root interval I applies. For BOTH A orders and the three
+B orders, the exact universally bad feasible offsets are
+
+ u=v: U={0,d}, adding{-s,d+s} iff w in{u,u+s} AND H>=s;
+ u<v: U={0,d}, adding{-s,d+s} iff v=w=u+s AND H>=s.
+
+Why these formulas still hold below2s: in the two-middle-order
+calculation the potential extra intersection at u=s,w=v+s is
+excluded by w<L, which follows from canonical capacity/nonisolation.
+Other putative intersections require a middle gap0 or v=s<u,
+impossible. The three minimal prefix covers remain valid at w=2s
+(the graph becomes a triangle). If all five halves equal s, its
+complete difference set is multiples of s; feasibility H<2s,J<s
+leaves exactly{-s,0}={d,0}. This separately handles the collapsed
+constant graph, rather than importing a distinct-vertex argument.
+
+For u=v=t in(s,2s),w=t, the four sorted bad offsets have gaps
+t-s,2s-t,t-s. A triple of consecutive bad integers requires s2,t3.
+At a thin J0 boundary H=2s-t<s, extras are absent; t=s merely
+duplicates the endpoint offsets. Thus this resonance leaves only
+
+ d=(2,2,3,3,3): h8,p11/q15; h8,p13/q13; h9,p9/q17.
+
+For u=v=t,w=t+s,J>0, the sorted bad gaps are2s-t,t-s,2s-t.
+Again a triple requires s2,t3, but then nonisolation forces h9,J0,
+so there is NO non-thin obstruction here. The J0 case is exactly
+MI240's two infinite families, already repaired uniformly.
+
+For u<v,the only resonance is v=w=u+s. When u=s its extras duplicate
+endpoints. Otherwise s<u<2s and the sorted bad gaps are
+u-s,2s-u,u-s; a triple again requires s2,u3, giving
+
+ d=(2,2,3,5,5): h10,p15/q19; h10,p17/q17; h11,p13/q21.
+
+At J0 the resonance has H=2s-u<s, so there are no extra feasible
+offsets. Other thin cases have only the endpoint obstructions and
+a strict interior offset. With both slacks positive, three consecutive
+offsets suffice unless one of these triples occurs. In general try
+at most FIVE offsets because |U|<=4, then at most six local orders.
+This is a hand exhaustive classification of the remaining canonical
+failures, not an inference from the proposed finite grid.
+
+**Six fixed repairs.** For the first three use preA=(1,3,6),
+preB=(0,2,5,8). For the last three use preA=(1,3,8),
+preB=(0,2,5,10). Root sum1 equals alpha or alpha-1; reflect/reverse
+BOTH chains and flip the positive owner exactly in the latter case.
+The same two coordinate patterns therefore cover all six cases with
+their ORIGINAL positive bags, without root or cycle search.
+
+**General forced-partner extension.** If w+2s>h, the proof that the
+largest has exactly one partner does NOT need unequal short gaps.
+Consider the four forced partners, prefer a fitting one whose remainder
+D is nonconstant. The strict bounds X<min(D),Y<r and the one-forbidden-
+proper-prefix reduction in MI238 also do not need a<b. Its elementary
+nonconstant swap argument still applies. If EVERY fitting choice has
+D=(t,t,t), there are three exhaustive cases:
+
+ r<t: alternative partner t has remaining load r+2t<=3t<=h;
+ its failure gives w+t>h,so X<t-r,Y<r and0<F<t.
+ r=t: X<t,Y<t give0<F<2t; avoiding endpoint z0 excludes F=t.
+ r>t: w+t<=w+r<=h already; alternative failure gives h<r+2t.
+ Hence Y<r-t,X<=h-2r<2t-r,so t<F<2t.
+
+Thus no constant proper prefix t or2t is hit in any of the three
+cases. This extends the forced-partner candidate to ALL five-gap
+bags, not only unequal-short ones. The root interval/endpoints and
+both-chain reflection complete the construction as before. This
+argument uses no unproved full E28 statement or desired geometry.
+
+**What composition would say, conditionally on carrying reads.**
+MI238 handles a<b; MI234/236 handle a=b=s,u>=2s; the argument above
+plus MI240 handles a=b=s,u<2s. With the forced-partner extension,
+every NONISOLATABLE five-gap bag would have sufficiency under label,
+ordinary capacity and legal-positive conditions. This remains a
+COMPOSITE PROOF-SKETCH, not a proved theorem, not a full N5 census,
+and not a claim about an isolatable largest gap.
+
+**Preregistration BEFORE experiment.** Fixed diagnostic grid:
+s=1..4,u=s..2s-1,v=u..u+2,w=v..v+s,
+h=max(6,u+v,w)..2s+u+v-1. Check all32 labelled capacity masks
+against subset capacity; test ALL legal odd positive pairs p<=q.
+Predict every question constructs by canonical local order choice,
+the six fixed repairs, MI240's thin formulas or the general forced
+partner. Predict exactly12 original-positive canonical failures in
+this grid: six fixed cases above and both thin families for s2,3,4.
+On EVERY canonical profile compare U with literal intersection of all
+distinct A/B difference sets, then check EVERY feasible offset/order
+by direct intersection and BOTH physical geometry validators. All
+selected formulas must pass ORIGINAL bags/owners/windows and both tests.
+
+For EVERY forced profile all fitting masks must give exactly one
+partner beside w; the selected partner's whole feasible offset/all-order
+map must have universal bad set exactly{0,Y-X}. Check X<min(D),Y<r
+and each constant-case inequality in its stated branch. For each of
+the12 canonical failures exhaust complete ORIGINAL-positive root/order
+maps under BOTH parity assignments and require zero witnesses.
+No generic cycle solver, new actual E28 partitions or residual census.
+
+Named grid branch checks: M16,(2,2,2,2,4),11/13 must use r=t;
+M26,(4,4,4,5,5),21/23 must use r>t and constant remainder4.
+One outside-grid larger r>t formula: M62,(10,10,10,11,11),45/59.
+Counterfactual: M18,(2,2,2,3,5),13/15,blindly choosing constant
+remainder with partner3 gives A=(0,3,8),B=(1,3,5,7),correct bag but
+shared3. Both geometry tests must reject; the selector must choose
+the fitting partner2 with a nonconstant remainder instead. The
+alternative-failure premise is therefore a carrying condition.
+Unexpected collapsed-graph check: retain all constant-five profiles'
+complete canonical maps, not just the generic prefix graph branch.
+
+Caps4000 formulas/60000 offset-order or exception-root cases,
+3CPU sec/64MiB. Stop ANY mismatch, retain failure; no patched claim,
+wider grid or new review queue. MI238 remains the sole active carrying
+priority; this completion will be a READ-LEDGER addendum, nonblocking.
