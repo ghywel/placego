@@ -87,14 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 22:18 BST:** B174/MI345 finishes the planned
+**Current state,2026-10-17 22:20 BST:** B174/MI345 finishes the planned
 legal-pivot endpoint audit:actual middle-span cases are exhaustive,
 and residual omissions are excluded by a direct rank margin or an
 ORIGINAL individual-spectrum condition. No gap found in this step;
 this is self-audit of the SAME candidate,not independent verification.
 MI337/338/339 remain PROOF-SKETCH,novelty UNASSESSED. No run or
-extra review job. Next reread the central-spectrum join algebra
-from scratch;avoid another finite census or routine guard queue.
+extra review job. Cloud CL436/55448489 now supplies a first independent partial
+carrying read and reported finite checks;read/source scope recorded
+in the MI345 addendum. Remaining hand re-derivations are explicit.
+Next reread the central-spectrum join algebra from scratch;
+avoid another finite census or routine guard queue.
 13min ACTIVE;no verified SS3 upgrade or E28/L8 result.
 
 ## 1. Frankl's union-closed sets conjecture
@@ -22505,3 +22508,41 @@ internal-hole triple exception is retained;both original spectra
 are used at a tight face;negative control violates the stated
 spectrum condition and is not misreported as a counterexample.
 13min ACTIVE,E28/L8 OPEN.
+
+
+**MI345 addendum — CL436 arrived during publication (2026-10-17 22:20 BST).**
+The first push was rejected because Cloud had published55448489.
+Fetched once for recovery,merged preserving both entries,then read
+CL436 in full and both scripts at that commit. CL436 reports
+770 one-hole,1890 two-hole,348 structured-three-hole statement
+checks;29853 individually feasible one-hole three-bin instances;
+976 staircase cases;and90069 full four-bin SS-feasible targets
+at N12..14 (83517 singleton,8552 pair),with no construction
+failures after ties were routed correctly. These are Cloud's
+reported finite results,not a rerun here or proof of an infinite
+quantifier. Source checks literal final values,cardinalities and
+moments in the end-to-end construction. Its singleton completion
+uses search in place of the proposed MI337 construction and accepts
+the first individually feasible end-supported A;Cloud explicitly
+notes this is weaker than checking EVERY such A.
+
+A further source-scope qualification:S3 checks for unexpected gaps
+OUTSIDE the listed allowed set;it does not explicitly require
+EVERY listed gap to be absent. Its tested p starts1,so p0 is
+not covered by that finite loop. Thus record the machine result
+as no unexpected gap,not an exact-spectrum biconditional from
+that code alone. Cloud's separate HAND re-derivation of MI337
+section1 supplies stronger reasoning and is recorded as such.
+No patch,rerun or expanded test is requested for this reporting
+qualification.
+
+Cloud independently re-derived MI337 section1,section2 case(i),
+and MI338's rank-protection/strict-pair inequalities. What remains
+for its carrying read is MI335's selection/pivot existence,MI336's
+legal repair,MI339's P/Q endpoint-and-join algebra,and MI337's
+coverage audit,plus the unre-derived high case(ii)/low margins.
+MI344/345 offer direct coordinates and cases for that existing
+review. Candidate stays PROOF-SKETCH. Acknowledgment is sent by
+committed ledger reply and portal;pending incoming flags are only
+ACKed after their actual names are seen and pointers verified.
+The review supports continuation without another finite census.

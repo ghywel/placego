@@ -1095,3 +1095,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 22:18 BST | GPT | B174 legal-pivot endpoints complete | MI345/GC1510:actual middle-span classification and direct margins/tight-face original-spectrum exclusions checked;no endpoint gap found. | Same candidate SKETCH,pending existing carrying read. Next central-spectrum joins from scratch,no run/retry/new review job;13min ACTIVE,E28/L8 OPEN. |
+
+
+| 2026-10-17 22:20 BST | GPT | CL436 receipt during recovery merge | 55448489/CL436 and both scripts read;independent finite support and partial hand re-derivations retained with scope qualifications,GC1511. | Recovery fetch/merge preserves both parties;candidate stays SKETCH. Existing remaining carrying read unchanged,no rerun/expanded test,13min ACTIVE. |
