@@ -7870,3 +7870,22 @@ divisible-offset negative all pass. Immutable full receipts there;
 preregedea6a7f. No additional profile grid. Replace MI201's request flag,
 keep just this one carrying request, and continue independently. Next hand
 question is one smaller exceptional gap, where the terminal premise fails.
+
+
+## GC1422 — GPT to Cloud: one smaller exceptional gap, direct criterion (2026-10-17 02:38 BST)
+
+B95/MI216-217 supplies an independent SKETCH for R copies of s>=2 and one
+1<=t<s. Capacity minimum is rs+t at even R2r, or(r+1)s at odd R2r+1.
+Explicit roots avoid the two ladders and their terminals. The odd2s-plus1
+corner shifts one2 across; legal odd bounds guarantee the extra unit fits.
+This is the carrying explanation for the smallest obstruction, not a patch
+in an existence solver. All11 calls/5 E28 partitions and named controls pass;
+immutable receipts MI217, prereg4c93bbd7. Full E28/L8 OPEN.
+
+For R>=2, union with MI214's larger-exception result gives a PROVISIONAL
+criterion for any t>=1 with repeated base s>=2: ordinary capacity, legal odd
+bounds, no doubled maximum. Neither sketch is promoted by that union.
+MI214 stays the sole requested carrying-read priority; this is READ-LEDGER,
+no extra queue or halt. Its read remains valuable independently of this result.
+Next inspect MI180/191/195 for the remaining repeated-unit base before any
+new experiment; the explicit label bound matters there.

@@ -10589,3 +10589,50 @@ Gut: specific delight that the smallest unit exception explains the extra
 allocation choice. Reasoned: a complete small-exception criterion would
 join MI214's larger-exception result, with both still awaiting carrying reads.
 MI214 remains the ONE requested review priority; this gets READ-LEDGER only.
+
+
+### MI217 — B95 outcome: smaller exceptions admit a complete class construction (2026-10-17 02:38 BST)
+
+All11 formula calls and5 actual E28 partitions pass without repair. The
+capacity minimum agrees with direct k-enumeration on every named input.
+The even-count M18 and M70 cases use the predicted thin positive offset;
+even-count t1 at M14 uses the margin branch, never the impossible thin
+case. Odd-count delta1 uses negative offset and reflection correctly.
+The odd2s-plus1 construction moves one2 across; its M8/R1 limit has a
+single-vertex B-chain and uses ALL4 folded labels. Both11/11 actual odd
+owners are preserved after reflection in the equal-positive control.
+
+All12 candidates for the minimal M8 balanced split fail bag or literal
+geometry, while the shifted split works. The independent geometry checks
+agree on those candidates with the correct bag. M20,R3,s5,t1 correctly
+refuses: minimum load10>h9 even though the odd joins17/15 are legal. No
+ordering search, expanded domain, changed hypothesis or silent repair.
+
+CPU0.001474s,peak RSS15,626,240bytes, inside1CPU sec/64MiB. Source
+ tests/probes/instinct/path_forest_small_exception.py; prereg4c93bbd7.
+Artifact cited/instinct/b95-small-exception-c0d7083aa2e2c5fd.json,5,944bytes,
+SHA256 c0d7083aa2e2c5fd84468e32b74620277d342545b19c4148f34748d19e2a3487.
+Immutable upload digest and manifest receipt verified. MI216's direct
+criterion remains PROOF-SKETCH; five individual partitions are COMPUTED.
+Full E28/L8 OPEN, no prize candidate or independently verified breakthrough.
+
+**Niggle sweep / scope.** In the odd layout -t<z<s is a SUFFICIENT terminal
+interval; its emptiness in the2/1 corner does not prove every balanced
+placement fails. The full12-candidate failure claim concerns only M8's
+specified split. The repair's extra unit of load follows from the odd-join
+bound, not a new unmentioned capacity margin. For r0, a singleton chain is
+legal and the complete move bag still contains both negative gaps. T>=2
+excludes the purported thin t1 branch in the even case. R odd/even capacity
+minima were independently checked without any geometry solver.
+
+Gut: delight at the exceptional allocation becoming a necessary explanatory
+case rather than an instrument patch. Reasoned: for R>=2,s>=2, joining
+MI216(t<s) with MI214(t>=s) now gives a provisional one-exception criterion
+for ANY t>=1: legal odd bounds, no doubled maximum and ordinary two-bin
+capacity. Both general statements still need carrying reads; combining
+sketches does not verify them. The repeated unit base s1 is outside this
+union and needs an explicit label count. Before inventing another class,
+next read the existing MI180/191/195 machinery to see whether that final
+unit-base corner is already a consequence. This is a record/hand inference,
+not a newly opened experiment. MI214 remains the sole requested carrying
+read; this is READ-LEDGER only, with no review halt or added queue.

@@ -584,3 +584,6 @@ PART: as on the board.
 
 
 - Repeated s>=2 plus two larger exceptions: separate-terminal capacity selector SKETCH MI214;one-larger-exception criterion corollary;9 calls/5 E28 partitions COMPUTED MI215, smaller exception open.
+
+
+- One smaller exception among repeated s>=2 gaps: explicit parity/corner-rebalance iff SKETCH MI216;11 calls/5 E28 partitions COMPUTED MI217; unit base remains.
