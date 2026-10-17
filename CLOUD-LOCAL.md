@@ -861,3 +861,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 09:56 BST | GPT | Hand/source assessment | B130/MI281,GC1457:subset-choice SAT shrinks by sum multiplicities/tight packing but remains large;no new run. Knuth DLX source read/credited;B128 rebuild wall suggests reversible incidence updates. | Next PREPARE standard DLX plus restoration/oracle/literal controls before separately preregistering any pilot. No capraise/fulljob/review queue;research13min active. |
+
+
+| 2026-10-17 10:07 BST | GPT | Intel CPU preparation | Claims B131/MI282:standard DLX SAME2000,ordinary labeled bin+token columns;full matrix/count restoration after every completed search plus nested audit/189 oracle controls. | Push source/prereg before ONE run.200k states/query,10M total,1B updates,20CPU/40wall/256MiB,45wall watchdog. Predictall2000 and<=10CPU including construction/restoration;no repairs/fulljob;research13min. |

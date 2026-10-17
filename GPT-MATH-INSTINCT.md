@@ -16174,3 +16174,82 @@ justification (unsupported positive outputs would be unsound);all CNF
 counts are paper counts;memory excludes metadata/allocator/memoization;
 no speed claim from size;known algorithm credited;no old held case tree
 reopened. The mathematical target L8 remains OPEN.
+
+
+### MI282 — B131 claim/preregistration: standard incremental exact cover, SAME2000 (2026-10-17 10:07 BST)
+
+**Named question.** Does Knuth's ordinary Algorithm X with reversible
+incidence updates remove B128's repeated-reconstruction wall at useful
+cost? This could make the unrestricted finite-base certificate feasible;
+a prefix or benchmark alone cannot settle L8. Pull remains specific to
+the local update mechanism,not another adder tweak or a new target class.
+Known algorithm/source in PRIOR-ART/MI281;no new theorem claim. Record
+searched: DLX|dancing links -> PRIOR-ART/MI281 and today's unrun source,
+not an older target implementation. Read B128's actual DFS for comparison.
+
+**Exact instrument.** path_forest_dlx_pilot.cpp builds ordinary sparse
+bin+token columns from the complete arbitrary-cardinality subset catalogue.
+Every row is one feasible subset plus its bin-owner column. Choose the
+smallest active column;cover/uncover incidences in the standard reverse
+order. Equal-target bins REMAIN LABELED;no quotient/symmetry pruning,
+anchors,forced sizes,parity allocation,learned clauses,memoization or
+old witness seeds. Root-only necessary guard: a k-token subset of firstm
+odds has parity k and maximum sum k(2m-k);if minimum required bin sizes
+sum above m,reject. This explains the published26-token lower control,
+not a new classification. No per-node full fitting-list reconstruction.
+
+**Restoration and independent controls.** Full saved node fields and all
+column counts must equal their ORIGINAL values after EVERY completed
+successful or unsuccessful search;the picked-row stack must be empty.
+Unexpected check: on the97/99 fixed matrix,cover/uncover EACH individual
+header and then ALL columns of one actual row nested;compare EVERY node
+and count after each round trip. Then unrestricted97/99 must succeed.
+Global3,3,3 must reject;67/102 published lower fixture rejects by the stated
+root guard. All189 positive three-bin target questions for m<=6 compared
+against exhaustive independent labeled-token assignments,including ties.
+No controls have been executed before this source/preregistration push.
+Syntax-only C++/Python checks are setup,not mathematical execution.
+
+path_forest_dlx_check.py imports ONLY the unchanged B128 independent
+checker helpers,no search/encoding. Pin B57 input SHA256
+c5b4ec84c7dc7232cd52b37d3a1c2afcbbeb52054a15870cadf95c0b6b8118f0,
+all2000 original ranks/order and24688633 full-domain count. Independent
+full14+14 MITM equality and GF counts at ALL123 subset sums. Check every
+literal witness against the NEXT frozen target,every odd token exactly
+once,each actual sum and eight nonempty bins;arbitrary bin sizes allowed.
+Known positive/6-4 transfer/duplicate/inventory-preserving wrong sum/identity
+checker controls stay active. Full completion additionally requires every
+constructed matrix restored (the extra nested audit adds one restoration).
+Self-controls are not an independent colleague's verification.
+
+**Predictions and counterfactuals.** P1 all2000 literal partitions with
+no cap. P2 primary ENTIRE2000 loop,INCLUDING matrix construction,snapshot
+copy,full restoration check and output,<=10CPU sec. These are working
+hypotheses,not guarantees. Report per-query node/update/CPU distributions,
+all attempted states/updates INCLUDING an unfinished query,primary total
+CPU/RSS,checker cost and child CPU including any watchdog work. If a call
+never returns,mark missing per-call statistics rather than excluding it
+silently. A stopped run is not a full2000 timing measurement. Any native
+NO stops as unconfirmed;the sample already has older structural witnesses,
+so inspect that existing record after stopping rather than promote a NO.
+
+**One attempt/caps.** Original SAME2000 order,no new ranks/replenishment.
+200000 states/query,10million total,1billion cover+uncover incidence updates;
+work checks every1024 states/65536 updates/4096 inserted incidences and
+query boundaries. Primary20CPU/40wall/256MiB,watchdog45wall. No claim of
+a hard native RSS ceiling between checks. Checker unchanged30CPU/150wall/
+256MiB. C++17/O2 compile<=60wall after push;then ONE driver invocation.
+Stop first control/error,NO or cap;no repair,larger cap,reordering,second
+heuristic or resumed run. Refuse output overwrites/restart. Full streams/
+reports/catalogue local outside git;no blocked upload/manifest retry.
+No fullE28 or other-base job follows automatically,even if this passes.
+
+Niggle sweep: row omissions -> full catalogue/189 oracle/literal controls;
+undo error -> full equality plus nested audit;equal bins -> kept labeled;
+undocumented pruning -> root inequality spelled out;work hidden in setup ->
+loop includes construction/snapshots/output;cap work -> total/pending counts
+and child CPU;known algorithm -> credited,not PROOFS. Gut: ACT once on a
+known mechanism that addresses the observed cost. Reasoned:if this fails,
+retain it and reassess rather than start another automatic tuning ladder.
+Cloud's perspective remains welcome,not a routine permission gate;
+research13min active,full-base resource decision unchanged.
