@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 20:43 BST:** B166/MI336 derives by hand that two-hole
-r-subset spectra,r,c>=3,can miss only the first/last two internal
-sums. The least-slack legal-pivot branch with two internal holes
-then completes,apart from one triple pattern with an explicit uniform
-repair. Unmodified recipe REFUTED by P=0..9 minus7,targets5,12,21:
-014 fails,but023/156/489 completes. The missing-pivot branch leaves
-THREE structured holes and remains OPEN;do not import a two-hole
-bound into it. Next hand question:that structured spectrum and its
-least-slack margins. New argument PROOF-SKETCH/unreviewed,no new
-experiment or formal review queue. MI328/329 existing reads pending.
-13min ACTIVE;one-hole criterion/four-bin SS3/E28/L8 OPEN.
+**Current state,2026-10-17 20:51 BST:** B167/MI337 has a COMPLETE hand candidate
+for three prescribed bins of sizes>=3 on a one-hole interval:
+individual subset-sum feasibility plus total conservation suffices.
+The missing-pivot branch now completes using an exact STRUCTURED
+three-hole spectrum and direct high/low repair margins;MI336 supplies
+the legal-pivot branch,with endpoints explicitly audited in MI337.
+Status PROOF-SKETCH,independent carrying read PENDING;novelty unknown.
+Cloud gets a combined REVIEW-REQUEST for MI333/335/336/337. No new
+experiment. Next independent work:conditional four-bin closest-singleton
+facet consequence,without treating this candidate as verified.
+13min ACTIVE;four-bin SS3/E28/L8 remain OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -21348,3 +21348,229 @@ cardinalities and both moments without presupposing that partition;
 size2 falsifies the overgeneralization;three-hole case kept OPEN.
 All new claims PROOF-SKETCH/unreviewed;no routine carrying-read
 request. MI328/329 existing requests remain pending.13min ACTIVE.
+
+### MI337 — B167: structured three-hole completion and a full one-hole candidate (2026-10-17 20:51 BST)
+
+**PROOF-SKETCH: complete candidate,independent verification PENDING.**
+No experiment,no claim of literature novelty,and no full four-bin
+SS3/E28/L8 solution. Record searched:`three.hole|structured.*hole|two.hole`
+AND `spectrum|subset|MI336`:8 hits/2 files. Carrying sources are
+MI333,MI335 and MI336,read before this block. A bounded three-query
+primary-literature search returned the already recorded
+[Hoory-Kotlar equal-sum work](https://arxiv.org/abs/2605.06071)
+and related constant-sum partitions;no exact one-hole theorem was
+identified. That is NOT FOUND in this search,not a theorem of absence.
+No new external mathematical result is imported.
+
+The pull is specific:the structured three-hole pool is not an
+arbitrary punctured interval. Prediction before the hand calculation:
+splitting at its adjacent holes may expose full count-slices,with
+only edge exceptions. Kill test:an actual requested sum at an
+exception allowed by the original least-slack inequalities. Unexpected
+check:replace the structured holes by three consecutive INTERNAL
+holes;do not generalize merely from their number. Stop after a
+complete branch argument or an explicit gap;no automatic experiment.
+
+**1. Exact structured spectrum.** Let
+
+  R={0,...,V} minus{p,p+1,V-1},
+  u=V-p-2>=1, n=p+u=V-2=r+c, r,c>=3.
+
+Thus R consists of p low values0..p-1 and u high values
+p+2,...,V-2,V. The exact r-subset spectrum fills its actual
+minimum/maximum interval apart from these possible omissions:
+
+  minimum+1,minimum+2  if r=p;
+  maximum-1,maximum-2  if r=u;
+  minimum+3            if u=4 and c=3;
+  maximum-3            if u=4 and r=3.
+
+Only legal r,c>=3 cases in this list apply. No other gap occurs.
+For p0,the pool is a translated one-hole pool missing its penultimate
+value;MI333 gives no gaps at these sizes. For u1,the pool is a full
+low interval plus one high value;the two slice ranges overlap as
+shown below. Assume p>=1,u>=2 for the main calculation.
+
+Split an r-subset by k high tokens,l=r-k low tokens. Write
+L(t)=t(t-1)/2. The sum-range endpoints are
+
+  a_k=L(l)+k(p+2)+L(k)+1_(k=u),
+  b_k=l(p-1)-L(l)+k(V-1)-L(k)+1_(k>0).
+
+In the high pool,MI333 gives a full k-subset interval except for
+maximum-1 at k1,and minimum+1 at k=u-1. This remains literally
+true for high size1/complementary size1;for u2 these coincide.
+Low subset sums form an interval of width l(p-l). If0<l<p,
+its width>=1 fills that isolated high omission. So every slice is
+FULL except possibly k1,l=p and k=u-1,l0:the other l0/p
+combinations force r1 or c1. A missing entire slice cannot be
+inferred by using only its endpoints;these are the actual exceptions.
+
+Both a_k,b_k strictly increase. For consecutive legal slices,
+with A=(l-1)(p-l),the separating gap expression is
+
+  G=a_(k+1)-b_k-1
+   =2-A-k(u-k-1)+1_(k+1=u)-1_(k>0).
+
+For0<k<u-1,this equals1-A-k(u-k-1)<=0.
+At k0 or k=u-1 it is2-A. At k0,r=l>=3,
+positive G requires p=r:if p-r>=1,then A>=2.
+This produces exactly the first two global gaps. At k=u-1,
+the complement condition gives p-l=c-1>=2,so positive G
+requires l1,r=u,producing exactly the last two global gaps.
+For u1,there is only the join k0->1,G=3-A;here r>=3
+and p-r=c-1>=2 imply A>=4,so the ranges overlap.
+
+Finally inspect the two possibly nonfull slices. If k1,l=p,
+then r=p+1,c=u-1>=3,so u>=4. Its maximum-1 hole is
+covered by slice k2 when u>=5,because a_2-b_1=4-u<=-1.
+For u4,a_2=b_1,so it survives at GLOBAL minimum+3.
+If k=u-1,l0,then r=u-1>=3,c=p+1>=3. The previous
+slice satisfies a_(u-1)-b_(u-2)=4-u. It covers the
+minimum+1 omission when u>=5;at u4 the omission survives
+at global maximum-3. These are exactly the listed conditions.
+There is no corresponding end slice when its k is illegal.
+This proves the full structured spectrum calculation by hand.
+
+Control:R={0,1,4,5,6,8},p2,u4,r=c3,has spectrum
+{5,6,7,9,10,11,12,13,14,15,17,18,19},missing8,16 at
+edge distance3. Unexpected check:R={0,1,5,6,7,8} (delete2,3,4)
+has spectrum{6,7,8,9,11,12,13,14,15,16,18,19,20,21};
+its omissions10,17 are FOUR from the extrema. The structure
+of the holes,not merely their number,is essential.
+
+**2. High missing-pivot repair always completes.** Return to
+original P=0..M minus q,three sizes a,b,c>=3. Let alpha(t)
+be the least t-value sum. Choose the least of all six singleton
+slacks,and reflect the ORIGINAL problem once if necessary so
+A's target is s_A=alpha(a)+h. As in MI335,for r=b and r=c,
+
+  s_r>=F_r=alpha(a+r)-alpha(a).
+
+ANY actual first bin of size a and sum s_A leaves these two targets
+inside their residual rank intervals. This does not assume joint
+feasibility. A formal prefix/suffix/pivot construction with missing
+pivot q has prefix0..l-1,suffix u0..M,where
+l+k=a-1,u0=M-k+1. If k>=1,u0-q>=3,the high repair
+replaces{q,u0} by{q+1,u0-1},leaving
+
+  R=[l,u0] minus{q,q+1,u0-1}.
+
+After shifting by l,this is section1 with p=q-l and
+u=V-p-2. The only LOWER-edge omissions for an r-subset are:
+(i) distances1/2 if r=p; (ii) distance3 if r=p+1 and the
+other size is3,u4. Upper B omissions are lower C omissions by
+complementation,so it is enough to exclude those lower cases.
+
+Let z_j be original P's values in rank order. Because k>=1,
+a=l+k+1>=l+2. Thus F_r=sum(z_a,...,z_(a+r-1)) is at
+least the sum starting at rank l+2. In case(i),q=l+r,
+the residual minimum is rl+L(r),while that rank segment sums
+rl+L(r)+2r+2. Its margin is>=2r+2>2. In case(ii),
+q=l+r-1,the residual minimum is rl+L(r)+2,while the
+same rank segment sums rl+L(r)+2r+3. Its margin is
+>=2r+1>3. All displayed ranks remain inside P because the
+other bin has size>=3. Hence neither lower omission can be
+requested,and the scalar B sum exists. C is its complement.
+
+**3. Low repair also completes;do NOT reflect the slack hypothesis
+silently.** If l>=1,q-(l-1)>=3,the low repair replaces
+{l-1,q} by{l,q-1}. The remainder is
+
+  R=[l-1,u0-1] minus{l,q-1,q}.
+
+It is a REFLECTION of the pool in section1,but the original
+least-LOWER-slack choice was not reflected. Reflect the SPECTRUM
+only,and check the original lower bounds directly. Put t=q-l.
+The only lower-edge omissions of an r-subset are:
+(i) distances1/2 when r=t-1; (ii) distance3 when t5,r3.
+For(i),q=l+r+1,the residual minimum is L(r)+rl-1.
+Since a=l+k+1>=l+1,F_r is at least the original rank segment
+starting l+1,whose sum is L(r)+rl+r. The margin is>=r+1>2.
+For(ii),the residual minimum is3l+2,and that rank segment
+sums3l+6,giving margin>=4>3. Complementation excludes upper
+omissions too. Therefore this actual repaired A also completes.
+This direct check resolves the niggle that reflecting a construction
+need not preserve the orientation of the selected least slack.
+
+**4. Full candidate statement and coverage audit.**
+
+For P={0,...,M} minus{q},a+b+c=M,a,b,c>=3,and integer
+targets summing to T=sum(P),a simultaneous partition of those
+sizes and sums exists IFF each target is INDIVIDUALLY realized
+by a subset of its specified size. Equivalently,require each
+actual singleton rank bound and exclude minimum+1 when q equals
+that bin's size,and maximum-1 when q=M minus that size (MI333).
+The rank bounds are redundant if exact individual feasibility is
+already required. Necessity is immediate;the proposed sufficiency
+is the following exhaustive construction. Status remains SKETCH.
+
+- If q is an endpoint,P is a full interval up to translation;
+  PROVED MI295 supplies sufficiency. Otherwise choose a globally
+  least singleton slack and orient it lower,as above.
+- MI335's end-supported recipes,for l+k=a-1,have pivot ranges
+  whose endpoints meet at the same actual extremal set. Their
+  convex intervals cover the entire target range. Each range can
+  miss only its FORMAL missing pivot q. Thus the chosen target has
+  either a legal pivot representation or a formal missing-pivot one.
+- In the legal case,k>=1 gives residual lower margins>=kr>=3
+  for r=b,c,by original rank comparison in MI336. The residual
+  span has at most two holes,so its edge-distance<=2 omissions
+  are all excluded. For k0 and two INTERNAL holes,MI336 completes
+  unless p-l2,r3,q-l5;its explicit uniform repair supplies A*,
+  the problematic triple and the complementary third bin.
+- Here are the endpoint/one-hole cases not asserted by MI336's
+  internal-hole branch. With k0,let v=z_l be the first middle
+  value. If actual pivot p=v,A is exactly the least a values:
+  MI333's tight-face argument applies. A possible residual
+  minimum+1 would force the ORIGINAL complementary bin's forbidden
+  maximum-1;the residual maximum-1 is the corresponding forbidden
+  original target. If p is the upper endpoint,its deletion cannot
+  affect the least r middle values,r<=b+c-3;the rank margin is
+  at least r,excluding one-hole gaps. If the original hole is
+  outside the residual span (including a trimmed endpoint),that
+  span is a full interval minus p. Its minimum+1 omission requires
+  p=v+r,and then F_r-min_r(R)=r>=3. Apply this also to C to
+  exclude upper omissions. This exhausts the legal-pivot boundary.
+- In the FORMAL missing case,the actual extremes are0..l-1 and
+  u0..M. If l,k>0,the low/high repair distances sum
+  q-l+1+u0-q=M-a+3=b+c+3>=9,so at least one is>=3.
+  If l0 and the high distance is1,the formal target exceeds the
+  actual maximum;distance2 gives its forbidden maximum-1 with
+  q=M-a. If k0 and the low distance is1,the target is below
+  its actual minimum;distance2 gives its forbidden minimum+1
+  with q=a. Individual feasibility excludes these endpoint
+  failures. Hence a legal high or low repair always exists.
+  Sections2/3 prove that either available repair completes.
+
+No step selects B by assuming that its desired partition already
+exists. Its existence follows from the ACTUAL scalar spectrum,
+then conservation supplies C. No four-bin hypothesis or numerical
+agreement replaces a carrying inference. The size2 negative
+P={0,1,2,3,4,6},targets(2,6,8),remains outside the theorem and
+still impossible;minimum size3 is essential to this statement.
+
+**What changed and next step.** There is now a COMPLETE hand
+candidate for the one-hole three-bin criterion,assembled from
+MI333/335/336 and the new structured spectrum. It needs a genuine
+independent carrying read,including both spectrum proofs and the
+endpoint coverage,not merely the examples. Send Cloud a committed
+REVIEW-REQUEST for this combined candidate. This is a key review
+moment,not a routine guard. Pending verification does not halt
+independent work. Next useful independent question is what this
+candidate would imply for four-bin SS3 when a singleton facet is
+closest;state any such consequence conditionally until verified.
+No new census or extension is authorized by numerical optimism.
+
+Gut:surprise and delight at a full candidate after the representation
+change;the warmth has a precise object,the slice joins and their
+margins. Reserve celebration of a proved result for scrutiny.
+Reasoned:every construction branch now has an explicit completion
+argument,but no independent reader has checked these carrying steps
+or the novelty question. Niggle sweep:low repair reflection would
+flip slack orientation,so a direct margin proof was supplied;
+end slices versus endpoint intervals kept separate;u1/p0 covered;
+size2 control retained;canonical legal-pivot failure repaired;
+formal pivot is never treated as a token;endpoint holes accounted
+for;arbitrary three-hole generalization explicitly refuted. No
+experiment,no proof status upgrade.13min ACTIVE.

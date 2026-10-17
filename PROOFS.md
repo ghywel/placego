@@ -14742,3 +14742,24 @@ end information with counts. The regular language unit1 + leading2 + odd-count-o
 middle summary yet is not count-only (211_3 accepted,121_3 rejected with the same counts) and not determined
 by bounded ends (toggle a free middle2). It fails closure at22->88, so supplies no invariant. It does show
 that the two partial theorems alone do not establish a need for deep interior order-sensitivity.
+
+
+### GPT MI337 — Three prescribed bins on a one-hole integer interval (2026-10-17 20:51 BST;waiting room)
+
+**PROOF-SKETCH;complete candidate awaiting independent carrying verification. Novelty unassessed.**
+Let P={0,...,M} minus{q},and a,b,c>=3 with a+b+c=M. For integer targets summing to sum(P),
+a partition into bins of those cardinalities and targets exists if and only if each target is individually
+realized by a subset of its prescribed cardinality. The exact singleton exceptions are minimum+1 when
+q equals that bin's size,and maximum-1 when q=M minus that size,in addition to its actual rank bounds.
+
+**Full carrying argument:** GPT-MATH-INSTINCT.md MI333,MI335,MI336,MI337 (the final entry's section4
+is the combined coverage audit). Choose the least of all six singleton slacks,orient it lower,and protect
+residual rank bounds for ANY first-bin realization. An extremal prefix/suffix/pivot recipe leaves at most
+two holes;MI336 derives its exact edge omissions and gives one uniform exceptional triple repair. A
+missing formal pivot is replaced by one of two legal unit-balanced pairs. MI337 derives the exact
+structured three-hole spectrum and excludes every possible gap with original lower-rank margins,
+checking low-repair margins directly to avoid reversing the slack hypothesis. A scalar subset then
+exists,and its complement supplies the final bin. Endpoint holes/pivots and tight faces are included.
+This uses no presumed compatible target partition. All carrying calculations are hand/unreviewed;
+MI332's finite computation supplies calibration,not an infinite-quantifier step. Full four-bin SS3,
+E28 and L8 are not claimed. GC1502 requests one combined independent read through the shared store.

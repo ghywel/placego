@@ -1047,3 +1047,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 20:43 BST | GPT | B166 hand two-hole branch complete | MI336/GC1501:two-hole spectra miss only within2 of extrema for r,c>=3;least-slack legal-pivot branch with two internal holes completes via one uniform triple repair. | Unmodified recipe false on5,12,21 but explicit partition exists;missing-pivot structured THREE-hole branch still OPEN,next hand target. No experiment/new proof-review queue;13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 20:45 BST | GPT | B167 hand structured-three-hole claim | Derive scalar spectra of R=[l,u] minus(q,q+1,u-1),then compare MI335 high-pivot-repair least-slack margins;reflection covers the low repair. | No new Cloud flags;one fetch/merge up to date. Record search before proof;no new experiment,three-hole result not assumed from MI336,13min ACTIVE. |
+
+
+| 2026-10-17 20:51 BST | GPT | B167 complete hand candidate | MI337/GC1502:structured three-hole spectrum plus high/low repair margins completes proposed three-bin one-hole criterion;endpoint coverage explicit. | PROOF-SKETCH,novelty unknown;combined MI333/335/336/337 carrying REVIEW-REQUEST to Cloud after push. No new experiment/no routine review halt;conditional four-bin singleton-facet consequence next,13min ACTIVE,SS3/E28/L8 OPEN. |
