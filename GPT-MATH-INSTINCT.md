@@ -13647,3 +13647,59 @@ small preregistered general-window diagnostic, comparing root/endpoint
 maps independently and testing the new thin-family repair. No run is
 opened here. Keep MI238 as the ONE carrying priority; send this as a
 READ-LEDGER direction change, with no routine review halt. Research13min.
+
+
+### MI250 — B114 preregistration: general-window rich-six boundary diagnostic (2026-10-17 06:33 BST)
+
+**Question/pull.** Does the new general-window selector behave exactly
+as MI249's hand proof predicts, including the one equal-top thin trap?
+The pull is toward testing that sharp boundary, not counting more solved
+targets. Record searched: general.window.*rich|equal.top.*thin|
+span.dominant.*six ->2 paragraphs/2 files; MI210/211,MI246,MI249 and existing span-rich source
+read. This is a test of constructors/maps; no independent proof read,
+novelty claim, full N6 theorem or E28 coverage follows from success.
+
+**Predictions BEFORE implementation/run.** Exactly EIGHT geometry calls,
+all outside h13, no actual E28 partition or target census:
+
+| h | Four companions | D,E | p,q | Predicted branch |
+| --- | --- | --- | --- | --- |
+| 8 | 1,1,2,2 | 3,3 | 13,11 | thick canonical, reflection |
+| 8 | 1,1,2,2 | 4,4 | 15,13 | equal top below S, canonical |
+| 12 | 1,1,2,2 | 6,6 | 23,13 | equal top at S, canonical |
+| 14 | 1,1,2,2 | 7,7 | 27,13 | new thin trap, repaired |
+| 16 | 1,1,2,2 | 8,8 | 31,13 | equal top above S+1, canonical |
+| 12 | 1,1,2,2 | 3,9 | 19,17 | unequal thin resonance, reflection |
+| 200 | 1,2,3,93 | 100,100 | 399,199 | large new thin trap, repaired |
+| 14 | 1,1,2,2 | 7,7 | 25,15 | same thin profile, nonmaximal P, canonical |
+
+Six canonical constructions/two repairs, exactly two reflections. Choose
+canonical z by smallest absolute value,tie smaller z first, then first
+endpoint-compatible A order and lexicographically first avoiding B order
+(at most24). Each final formula checks ORIGINAL p/q ownership, entire move
+bag, bounds, index disjointness and BOTH existing physical geometry tests.
+Repairs use MI249's direct one-large-gap-per-chain formula.
+
+Independent controls: all EIGHT root-sum interval sets against direct
+root rectangles, including parity recovery. For the SEVEN distinct
+profiles, compare F with the full intersection of all A-order/B-order
+collision difference sets. Check EVERY feasible offset/order by direct
+index intersection AND both physical geometry tests: exactly2742 cases.
+These maps include intermediate geometries with nonpositive joins; only
+the eight accepted formulas claim the ORIGINAL positive bag.
+
+For BOTH new-trap calls exhaust their complete original-positive root
+rectangles/all companion orders under BOTH parity roles. Predict small
+108 cases/24 original candidates and large4896 cases/96 candidates;
+ZERO canonical witnesses in each. All alternative repairs must pass.
+Thus7746 map/failure cases total; no generic cycle/allocation solver.
+
+Counterfactual: omit reflection on first fixture's pre-chains. Geometry
+must still pass but joins become15/9, not13/11; original-bag comparison
+must reject. Unexpected nearby-positive check: final fixture has the SAME
+gap/window profile as the small trap, but alpha2 and z2 make the canonical
+split work. The constructor must not apply a blanket equal-top repair.
+Caps8 formulas/10000 offset-order and failure cases,3CPU sec/64MiB.
+Stop any mismatch/cap, retain failure; no repair, enlarged fixture list
+or new coverage claim. MI238 remains the sole carrying priority;
+completion READ-LEDGER only, with no routine review halt.
