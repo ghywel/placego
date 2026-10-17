@@ -3977,11 +3977,11 @@ prescribed sums exactly when every group-union obeys the natural smallest/larges
 partitions cooperate. This settles the four-group statement;larger numbers of groups and
 the result's literature novelty remain separate questions.
 
-## W317
+## G317
 
 Three groups of sizes at least four can partition[0,V] missing1 and one other
 value whenever each prescribed sum is individually possible and totals match.
-PROOF-SKETCH,pending independent read. Choose zero's owner first,then apply G315.
+Choose zero's owner first,then apply the one-hole three-group theorem.
 
 **Why it matters.** The same claim fails at minimum size3. Two scalar-budget
 inequalities control ownership without assuming compatible partitions exist.
