@@ -617,3 +617,5 @@ PART: as on the board.
 - Two equal short gaps,2s<=u<=v<=w: unequal-middle intersection/three repairs completes selector SKETCH MI236 with MI234/230;1036 geometries/413 maps COMPUTED MI237.
 
 - All unequal-short nonisolatable five-gap bags: six-cycle/forced-partner sufficiency SKETCH MI238 without separation margin;1578 geometries/787 complete maps COMPUTED MI239; independent read requested.
+
+- Thin equal-short s<t<2s: exactly two infinite canonical obstruction families/uniform repairs SKETCH MI240;449 formulas/66 maps,198 candidates zero witnesses COMPUTED MI241.

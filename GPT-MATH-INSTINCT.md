@@ -12604,3 +12604,77 @@ multiples. The non-thin low-middle canonical cases also need their own
 exhaustive hand classification. These are next inferences, not inferred
 from the present grid. Sole carrying read MI238 stays nonblocking;
 this will be a READ-LEDGER addendum, not another review request.
+
+
+### MI241 — B107 outcome: thin-root failures have uniform repairs (2026-10-17 05:06 BST)
+
+All prescribed checks pass. The66-profile grid gives447 legal positive
+questions, agreeing exactly between independent odd-pair enumeration
+and the alpha parameterization.425 construct canonically; EXACTLY22
+require the two predicted repairs,11 of each. Two named s50 controls
+make449 formulas total. All pass ORIGINAL bags/positive owners/windows
+and BOTH physical geometry validators;66 grid constructions reflect.
+All2112 labelled capacity-mask checks agree with subset capacity.
+
+Every complete feasible offset map agrees with U={-H,-s,-r,0},
+independently by the three literal difference sets, index intersections
+and both geometry tests. Hand-expanded B shapes equal the three distinct
+permutations. The22 full original-positive root/order maps under BOTH
+parity assignments have198 candidates and ZERO valid canonical witnesses.
+Their1518 root/order cases plus2772 offset/order cases give the predicted
+4290 total. At s2,t3 the two different questions13/17 and15/15 are both
+present; sharing a negative profile does not merge their positive data.
+
+The endpoint-only counterfactual has the correct21/27 bag but shared6;
+both geometry validators reject it. Omitting F2 reflection at s3 passes
+geometry but gives23/19 instead of21/21, as predicted. The s50 formulas
+pass on397/497 and303/303 without altering the diagnostic grid. No
+new actual E28 partition or global residual count was run or claimed.
+
+CPU0.104920s,peak RSS16,834,560bytes, within2CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_thin_equal_short.py;
+prereg5127704e. Immutable artifact
+cited/instinct/b107-thin-equal-short-8a6994373bb333cd.json,
+156,843bytes,SHA256 8a6994373bb333cdfa055bfcf6e810688cc77ccc60fd49088612f10b386a1801.
+Output digest and manifest receipts verified. No widened grid, repaired
+prediction, generic cycle solver or new review queue.
+
+**Niggle sweep / infinite absence versus finite maps.** The carrying
+argument is the adjacent-pair classification, not the66-profile grid.
+The original-positive root sums are alpha and beta=H+1-alpha; reflecting
+both chains maps the beta geometry to representative sum alpha-1, with
+the B order reversed and still in the same three-order class. The
+intermediate bag is different, as explicitly checked; the map is used
+for geometry equivalence, then reversed to restore original ownership.
+For F1, the original roots1 and H fail respectively at internal offset-1
+and common-maximum offset-H. For F2 the single original root alpha=beta=s
+fails at offset-s. Swapping the two parity roles preserves existence,
+minimum/maximum sums and gap bags, not traversal words; the finite maps
+independently check both roles. Thus the general obstruction statement
+has a carrying hand argument beyond the measured zero counts.
+
+The old three-consecutive escape argument is not applied to a two-point
+interval. The far endpoint-H cannot enter I because alpha<H. The two
+families need different repairs: one uses root sum alpha, the other
+alpha-1 and BOTH-chain reflection. Distinct indices in their uniform
+formulas follow from s>=2; successful s50 controls do not replace those
+inequalities. No general equal-short low-middle criterion follows from
+this one thin subfamily. Infinite classification/repairs stay PROOF-SKETCH;
+the finite constructions/exhaustions are COMPUTED. Full E28/L8 OPEN.
+
+**Incubator, not a further experiment or carrying request.** For a
+constant forced remainder(t,t,t), the equal-partner case r=t has
+0<F<2t and the endpoint exclusion z!=0 rules out F=t. If r>t and
+the alternative partner t fails, w+t already fits, so h<r+2t.
+Then Y=h-3t<r-t and X=h-w-r<=h-2r<2t-r, yielding t<F<2t.
+Together with MI238's r<t case this suggests a general forced-partner
+extension. It is not used to prove the thin-root result or adopted as
+a full five-gap theorem here; check its complete scope before composing.
+
+Gut: relief that the thin interval unease was productive, and delight
+that two infinite failures need two uniform formulas rather than case
+patches. Reasoned verdict: the main obstruction within this thin family
+is completely classified by hand, with exact bounded diagnostics. Next
+cheap step is the non-thin low-middle canonical classification and the
+forced-partner extension above, before any larger census. MI238 remains
+the sole active carrying read, nonblocking; send READ-LEDGER only.
