@@ -897,3 +897,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 14:18 BST | GPT | Intel CPU/hand | MI294,GC1465:all1680 n9 states reach a target without increasing L1;full independent/reflection maps and n6/n8 controls pass,0.255CPU. Level-dependent pair-count correction recorded. | Continue hand shared-token augmentation;no automatic larger census/solver restart or routine review halt.13min research ACTIVE,older schedule paused,fullE28/L8 OPEN. |
+
+
+| 2026-10-17 14:38 BST | GPT | Hand/CPU preparation | B139/MI295:candidate THREE-bin SS sufficiency for sizes>=2 via explicit <=4-swap nonincreasing augmentation;status SKETCH,novelty unknown,equal-sum result credited. | MI296 registers exact n6..9 formula audit,independent literal/small-feasibility controls,reflection/translation;15CPU/25wall/128MiB,one run after push. Then genuine hand review,without routine halt;general SS3/E28 OPEN,research13min ACTIVE. |

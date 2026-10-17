@@ -17128,3 +17128,151 @@ Niggles:negative pair instance is outside SS3;reflection is not a second
 new target class;all cases/cap work included;maximum path is shortest
 among nonincreasing adjacent swaps;the m24 correction does not assert
 that the actual target is deficient. Research13min ACTIVE;no review wait.
+
+### MI295 — B139: three-bin shared-token augmentation (2026-10-17 14:38 BST)
+
+**PROOF-SKETCH,not independently verified;novelty unknown.** The pull
+is toward releasing a token used twice by a unit-flow path. Three bins
+limits a shortest path to one intermediate bin. This block asks whether
+that obstruction can be eliminated without increasing the sum error.
+It would explain a part of SS3 by a hand mechanism,not extend a census.
+
+Record searched before the argument: `neutral.*(swap|component)|adjacent.*(exchange|transfer)|SS3|augmenting.*(path|chain)`
+AND `partition|bin|sum`:32 paragraphs/15 files; then
+`three.bin|three.part|k.?=.?3|SS3` AND `prescrib|exchange|size.sum|neutral`:
+18 paragraphs/7 files. MI273's relay and MI292-294 are the predecessors;
+no earlier three-bin arbitrary-prescribed-sums proof found. Bounded
+primary-literature search found no exact match. Hoory-Kotlar2605.06071v1
+introduction credits the EQUAL-sum k3 result to earlier work:that
+conclusion is known. Arbitrary prescribed sums and the <=4-swap mechanism
+below have not been matched to an earlier theorem in this bounded search.
+
+**Candidate statement.** Let c_A,c_B,c_C>=2 sum to n. Let integer targets
+s_A,s_B,s_C total n(n-1)/2. For each bin subset J write C_J for its total
+size and S_J for its target-sum total,and require
+
+    C_J(C_J-1)/2 <= S_J <= C_J(n-1)-C_J(C_J-1)/2.           (SS)
+
+Then a labeled partition of 0..n-1 with these sizes/sums exists.
+Stronger:from ANY partition with the prescribed sizes and nonzero error
+E=sum_i|d_i|,d_i=current sum_i-s_i,at most FOUR adjacent-VALUE swaps
+decrease E by at least2,never increasing it at an intermediate step.
+Repeating gives a target partition after at most2E swaps,where E is the
+initial error. No target partition is assumed in selecting the swaps.
+
+**1. SS forces a unit-transfer path.** Orient bin edge i->j when i owns
+x+1 and j owns x. If no positive-deviation bin reaches any negative one,
+let R be the bins reachable from ALL positive bins. It has d_R>0 and no
+outgoing edge. Whenever x+1 belongs to R,x belongs to R;its tokens are
+exactly the initial C_R values. Its prescribed sum would be their
+minimum sum minus d_R,contradicting SS. This is MI292's reachability
+argument;the missing step is implementing a path with current ownership.
+
+Choose a shortest path from ANY positive bin to ANY negative bin.
+Every intermediate bin has deviation zero:otherwise its suffix or
+prefix shortens the path. With three bins the path is direct,or A->B->C
+with d_A=D>0,d_B=0,d_C=-D. A direct edge decreases E by2. In the latter
+case read the owner word from value0 to n-1. The edges are BA and CB
+patterns. If some such pair of patterns uses disjoint positions,their
+two swaps are legal:first neutral,second decreases E by2. There is no
+CA pattern,which would give a direct A->C edge.
+
+**2. Only one shared-token triple remains.** Otherwise EVERY BA pair
+intersects EVERY CB pair. Their intersection can only be the B token.
+Fixing either pair forces every pair of the other type to use that B;
+its neighbors then force both pair sets to be singletons. At positions
+p-1,p,p+1 the word is CBA,the unique CB and BA patterns. If D>=2,swap
+edges p then p-1 (edge x means values x,x+1). Deviations in A,B,C order:
+
+    (D,0,-D) -> (D-1,1,-D) -> (D-2,1,-D+1).
+
+The first swap is neutral;the second decreases E by2. Only D1 remains.
+
+**3. Unit-error reverse relays.** A BC pattern at edge q disjoint from
+the triple gives swaps p-1,p,q and deviations
+
+    (1,0,-1) -> (1,-1,0) -> (0,-1,1) -> (0,0,0).
+
+A disjoint AB at q instead gives swaps p,p-1,q:
+
+    (1,0,-1) -> (0,1,-1) -> (-1,1,0) -> (0,0,0).
+
+After the first two swaps CBA becomes BAC or ACB,respectively;the third
+edge is unchanged because it is disjoint. These are actual token swaps.
+
+**4. Exhaust the case with neither disjoint reverse edge.** Apart from
+the unique CB and BA,and the forbidden CA,every unequal adjacency goes
+forward in A<B<C. The ENTIRE word therefore has form
+
+    A^a B^b C^c B A^d B^e C^f, c,d>=1; a,b,e,f>=0,
+
+with the middle B at p=a+b+c. A disjoint AB or BC exists if a,b>0;
+b>0,c>=2;d>=2,e>0;or e,f>0. Without one,b>0 forces a0,c1,and e>0 forces
+d1,f0. B's size b+e+1>=2 forces at least one of b,e positive. Both
+positive would make A and C singletons,contrary to their size bounds.
+Exactly one is positive.
+
+For b0,e>0 the word is A^a C^c B A B^e with a>=1,c>=2,e>=1,p=a+c.
+Swap p,p-1,p,a-1. The first three swaps turn CBA into ABC;the last
+uses the original AC boundary,disjoint because c>=2:
+
+    (1,0,-1) -> (0,1,-1) -> (-1,1,0) -> (-1,0,1) -> (0,0,0).
+
+For b>0,e0 the word is B^b C B A^d C^f with b,f>=1,d>=2,p=b+1.
+Reflect all values and interchange A,C:it becomes the previous case
+and retains deviations(1,0,-1). Explicit original edges:p-1,p,p-1,p+d.
+Their deviations are
+
+    (1,0,-1) -> (1,-1,0) -> (0,-1,1) -> (-1,0,1) -> (0,0,0).
+
+Every branch decreases E in <=4 legal swaps. E is a nonnegative even
+integer,so iteration terminates. SS necessity is the minimum/maximum
+sum bound for distinct values. This completes the candidate argument,
+conditional on its correctness,not on a computation or existence oracle.
+
+**Scope/niggles.** Exactly three bins and full consecutive pool;no k>=4
+or punctured-pool conclusion. Longer paths can have multiple zero bins,
+which this argument has not lifted. Size>=2 matters:sizes(3,3,1),targets
+(14,4,3) on0..6 satisfy SS but cannot be realized:the singleton takes3,
+leaving no three distinct remaining values of sum4. No prize/fullE28
+claim. No PROOFS entry pending literature calibration;the contribution
+under review would be the exchange mechanism,not the known equal-sum
+conclusion. Source:https://arxiv.org/html/2605.06071v1,introduction.
+
+Niggle sweep:graph orientation and current ownership checked in every
+displayed relay;global word classification accounts for all six unequal
+transitions;reflection negates deviations and the label swap restores
+them;size bounds are spent precisely in the residual case;SS reachability
+does not assume the desired partition. Next audit these exact formulas
+independently,without a search fallback. Gut:surprise and warm pull at a
+finite repair of the first genuine conflict. Reasoned:complete-looking
+three-bin candidate,not an argument that the longer path is solved.
+
+### MI296 — B139 preregistration: literal <=4-swap formula audit (2026-10-17 14:38 BST)
+
+Before any invocation:source tests/probes/instinct/ss3_three_bin_exchange.py.
+For n6..9 enumerate every sorted size vector c_A<=c_B<=c_C,sizes>=2,and
+every labeled owner word with those counts. For each word use every
+permutation of deviations(D,0,-D),D1,2,3;derive target sums and retain
+only SS-feasible ones. P1:the FIXED constructor selects a MI295 branch,
+uses <=4 adjacent swaps,never increases L1,and decreases it by>=2.
+D1 ends exactly. P2:all seven branches actually occur. No BFS/solver/
+fallback,no output-chosen larger domain. Multiple-positive deviation
+states are covered by the hand direct-edge argument,not this domain.
+
+Independent control:literal checker recomputes sizes/sums after EACH
+swap,using no constructor arithmetic. Separate product enumeration gives
+COMPLETE feasible-target sets for all n6..8 size vectors;every retained
+D1 target must occur. CF:MI295's singleton example is SS-feasible but
+impossible by complete independent n7 enumeration,and MUST be rejected
+by the constructor. Unexpected:reflect EACH entire path and its sums;
+also translate the pool by-11 with target-sum shifts-11c_i. Intermediate
+errors must match exactly. This tests symmetry/offset arithmetic,not
+just success counts. Record searched/source calibration:MI295.
+
+One process,15CPU/25wall seconds/128MiB,30wall external watchdog. Stop
+first failed control/cap;no fix/retry/expanded domain. Publish candidate,
+source and this registration before ONE invocation. Raw outside git.
+Passing supports formulas on this domain,not another party's verification
+or a universal proof/novelty claim. Then send Cloud the carrying hand
+step for genuine review;continue reasoning without a routine review halt.
