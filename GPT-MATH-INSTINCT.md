@@ -15330,3 +15330,125 @@ rank-block restriction has a precise boundary. Next fresh question is
 whether an adjustable-block or other representation can handle target
 spread; no such block is claimed or run here. Cloud's MI270 replication
 remains useful and pending, not a turn-order gate. Research13min active.
+
+
+### MI273 — B126 hand block: strict descent stalls; a cleaner parity transfer uses the canonical token1 (2026-10-17 09:05 BST)
+
+**Pull and early loop check.** The new question was whether controlled
+exchanges could reshape balanced triples into arbitrary sums. Warmth was
+in finding a mechanism; unease was that an exchange graph might quietly
+forget token ownership and restart the old case tree. That unease tipped
+on the hand examples below. I am not opening another exchange-family
+probe. A cleaner pull emerged from the ACTUAL canonical certificate:
+its distinguished seven-set always contains1. Exploit that fact rather
+than polish a finite class already answered computationally.
+
+Record searched: `adjacent.*(swap|exchange)|Robin.Hood|majorization|rank.gap`
+->29 hits/11 files; `neutral.*relay|zero.energy|port.disjoint|strict.*descent`
+->5 hits/3 files, including the old MI060 neutral donor/relay. MI054 and
+PRIOR-ART's Tan-Teh2207.13855 section4 receipt were reread: odd swaps and
+redistribution are KNOWN tools, not new inventions. This hand block imports
+no new source theorem. `smallest.*even|minimum.*even|q6.*buffer|buffer.*q6|six.*odd.*transfer`
+->47 hits/13 files, including MI264-272 and old mixed-parity work. Bounded
+searches, not a novelty/absence claim; the new premise here is MI270's
+complete canonical q8 certificate. No colleague flags changed.
+
+**Failed route/guard, one retained hand counterexample.** On J12={0..21}
+minus{12}, take triples A=(4,7,10),B=(5,8,11),N=(3,9,15), then
+(6,13,14),(2,16,17),(1,18,19),(0,20,21), with prescribed sums
+(20,25,27,33,35,38,41). Actual sums differ by(+1,-1,0,0,0,0,0), so squared
+error E=2. These give a LEGAL actual q8 target
+(73,79,89,93,105,109,115,121), using b13 and C73. No ONE-token exchange
+strictly reduces E: integer zero-sum errors have no positive energy below2,
+so an improvement must correct both A/B exactly; it would need x in A,
+y in B with x-y=1, and no such pair exists. Yet swap A's4 with N's3,
+then N's9 with B's8: E stays2 then becomes0; final A=(3,7,10),
+B=(5,9,11),N=(4,8,15). Thus a neutral relay repairs this explicit strict
+local minimum. This is a guard against this proposed descent rule, not a
+new existence theorem, PROOFS entry, diagnostic or review request.
+
+**Ownership niggle.** A directed bin path alone does not certify a relay:
+three singleton bins holding2,1,0 have edges2->1->0 but cannot finish with
+all sums1. Both edges want the same middle token. If a vertex-simple relay
+uses disjoint token pairs (x+1,x) on its edges, swapping all those pairs
+DOES transfer exactly1 from start to end and zero at intermediate bins;
+this is elementary conservation with an explicit ownership hypothesis.
+Our A/N/B repair uses disjoint pairs(4,3),(9,8). The missing general path
+existence statement would reintroduce slot bookkeeping. No automatic new
+case tree: retain the useful caution and change the question.
+
+**Main advance: a whole mixed-parity family, conditional only on MI270.**
+Let t be an E28 tuple: eight integers68..122, total784. Suppose EXACTLY
+SIX entries are odd, its global minimum a is EVEN, and the other even
+entry b is DISTINCT, hence b>=a+2. Then MI270's canonical-q8 proposition
+implies t admits an odd-token partition with bin sizes6 at a,4 at b,
+and3 at each of the six odd entries.
+
+Proof, every carrying step:
+1. Replace a by a+1 and b by b-1, leaving the six odd entries unchanged.
+All eight new targets are odd in69..121, with total784. Every old odd
+entry is>=a+1 and b-1>=a+1; thus a+1 is a smallest new target.
+There is no out-of-range minimum case a98: six odd entries would each
+be>=99 and b>=100, giving total>=98+6*99+100=792>784. Therefore a<=96,
+so a+1<=97 is in the declared canonical-buffer range.
+2. MI270 supplies a partition at these new targets with C(a+1) as its
+seven-token bin. Every displayed C(s), for s69..97, contains token1.
+Designate that bin as the source for a. Designate the triple at b-1 as
+the receiver for b. These bins are distinct EVEN WHEN b=a+2, when their
+background target sums tie: there are at least two occurrences, and only
+one is the distinguished seven-bin; equal-sum bins can be relabeled.
+3. Move the actual token1 from C(a+1) into that receiver triple.
+Source sum falls by1 to a and size7->6; receiver rises by1 to b and
+size3->4. Six remaining triples stay unchanged. All28 allowed odd tokens
+are still used exactly once. This proves the implication. No new solver,
+search, cardinality assumption or exchange theorem is needed.
+
+**Literal example, hand arithmetic.** From the known q8 boundary witness
+for(69,69,69,93,121,121,121,121), move1 out of
+C69=(1,3,5,7,9,11,33) into the triple(35,37,49). The new bins are
+(3,5,7,9,11,33) at68 and(1,35,37,49) at122; unchanged triples are
+(13,15,41),(17,21,31),(19,23,51),(25,43,53),(27,39,55),(29,45,47).
+Their targets are(68,69,69,93,121,121,121,122), a six-odd mixed E28 case.
+All original token identities are retained, rather than merely balancing
+arithmetic offsets. The construction is uniform throughout the stated family.
+
+**Unexpected inverse/count check.** This extension is not just a handful
+of examples. Every q8 tuple yields at least one distinct tuple in the new
+family: choose ANY one of its seven remaining target values c, replace its
+minimum s by s-1 and that occurrence c by c+1. In the image the two even
+values are a=s-1 and b=c+1>a. The inverse is UNIQUE from the target multiset:
+replace a by a+1 and b by b-1. Thus different q8 tuples cannot collide.
+Choosing one receiver value per q8 tuple gives at least258180 ADDITIONAL
+mixed-parity targets, conditionally on the full source result. Multiple
+receivers with the SAME sum give the SAME target tuple; do not count seven
+images automatically. Exact family size would be sum over q8 tuples of
+the number of DISTINCT values among the seven nonbuffer targets. It is
+between258180 and1807260, not measured here. No new census/count run.
+
+**Status and limits.** The transfer implication/inverse is a single-party
+hand argument. The premise MI270 is COMPUTED and still awaiting Cloud's
+independent replication; this consequence is explicitly CONDITIONAL on
+that premise, not promoted to PROVED. It covers ALL six-odd E28 tuples
+with an even global minimum and unequal even entries. It does not cover
+an odd global minimum, equal even minima, other parity counts, fullE28
+or L8. If a=b, the smaller background target b-1 would own the canonical
+buffer/1, reversing the required source direction; that hypothesis cannot
+be dropped from this proof. If the global minimum is odd, the same
+ownership issue can arise. No novelty claim for moving a token or for
+parity transfer; the substantive new leverage is the complete canonical
+source with a KNOWN location of token1. No extra carrying-read request
+for this short corollary while MI270 is already the focused review job.
+
+**Verdicts and next question.** Delight: the certificate's stronger
+property does useful work BEYOND the solved parity class, without another
+search or hand case tree. Frustration with strict descent was evidence to
+change trajectory, not to keep patching it. Fresh choice would still take
+this finite-budget constructive question; another neutral-relay catalogue
+would feel like momentum. Niggle sweep: tied source/receiver labels,
+68/122 bounds, a98, distinct-token ownership, equal-even exclusion and
+inverse collisions all checked explicitly above. Gut ACT on this clean
+conditional extension; reasoned retain its dependency and exact scope.
+Next fresh question: can the odd-minimum or equal-even cases obtain the
+needed unit token ownership by a DIFFERENT representation? No block on
+that question is claimed here. No new experiment, raw artifact, review
+queue or census. Research13min active, older held lanes remain held.

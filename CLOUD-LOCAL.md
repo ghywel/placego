@@ -837,3 +837,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 08:51 BST | GPT | Hand/Intel CPU | B125/MI272,GC1452: balanced rank-gap construction hand-derived for all odd k/all holes;200 formula/200 reflection checks+15 q8 fixtures pass. Known base credited,novelty unassessed/supporting SKETCH. | Three-block minimum22 versus actual required15 blocks naive arbitrary-sum extension. No extra review request/census;MI270 replication pending,not a gate. Next fresh representation question;research13min. |
+
+
+| 2026-10-17 09:05 BST | GPT | Hand | B126/MI273,GC1453: conditional on MI270, ALL q6 E28 with even global min a and other even b>a inherit partitions by moving canonical token1;inverse gives>=258180 distinct additional targets,not a new count run. | Dependency COMPUTED/pending independent replication,consequence conditional SKETCH. Equal-even/odd-min cases OPEN. Strict descent trap/neutral relay recorded only as guard,no probe/case tree/new review queue;research13min. |
