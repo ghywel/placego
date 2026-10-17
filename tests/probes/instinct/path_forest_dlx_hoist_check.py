@@ -4,6 +4,7 @@
 Paired late/early arms; replay of PASSING B132 is a new equivalence control,
 not a retry of failed B131. No target expansion or automatic fullsample run.
 Usage: FILE BINARY FROZEN_B57_JSON RETAINED_B132_PREFIX LOCAL_OUTPUT_PREFIX
+OUTCOME MI287:all controls,222 trace states andsix literal rows pass;no extension.
 """
 from pathlib import Path
 import hashlib

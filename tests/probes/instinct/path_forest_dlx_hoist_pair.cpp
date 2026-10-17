@@ -1,6 +1,8 @@
 // B133/MI286: paired late/early evaluation of the SAME necessary token bound.
 // Full exact mathematical-state traces; rejected children counted in both modes.
 // Known DLX implementation inherited unchanged. No new heuristic or larger run.
+// OUTCOME MI287:all exact traces/witnesses agree,10/37/64 states per arm.
+// Early730288 versus late9147888 updates;only SAME first3,not fullsample.
 #define main b131_archived_entrypoint
 #include "path_forest_dlx_pilot.cpp"
 #undef main

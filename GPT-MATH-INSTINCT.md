@@ -16567,3 +16567,61 @@ parse all states;timing noise -> one paired result qualified;baseline retry
 Gut:ACT once on semantic equivalence and operation counts. Reasoned:only
 a verified equivalent improvement warrants considering a larger pilot.
 Research13min active,no routine review halt or automatic full2000 run.
+
+
+### MI287 — B133 outcome: exact traces preserved,92% fewer link updates on SAME three cases (2026-10-17 10:37 BST)
+
+Prereg b0c90f56,C++17/O2. COMPLETE_EXACT_TRACE_EQUIVALENT_FIRST3.
+All378 tiny oracle comparisons (189 per arm),paired positive/negatives,
+full individual/nested and per-search restoration checks,independent full
+123 MITM/GF maps and trace-checker positive/corruption controls pass.
+All SIX literal witnesses match retained B132 exactly. All222 logical
+trace states are checked arithmetically and compared in full ordered form.
+Each arm has10,37,64 states and1,24,55 capacity rejections;no node-count
+saving is manufactured.252 matrices/254 restorations,none unfinished.
+
+Measured late updates244680,264298,8638910,total9147888;early244402,
+255826,230060,total730288. Early uses7.9831% of late,92.0169% fewer.
+Late per-case CPU14472,10780,28233microseconds,total53485;early11099,
+13527,9901,total34527,35.4455% less in THIS single paired observation.
+The second case is slower in the early arm;do not turn the total into a
+universal per-case speedup. All three predictions pass. Native loop across
+both arms0.088855CPU,primary total0.157087,childCPU0.160908,checkerCPU
+0.124001,wall0.548423sec. NativeRSS21389312bytes,checkerRSS41148416.
+Pilot222 states,9878176 updates;no pending work or cap.
+
+Raw local receipts:catalogue945820bytes SHA256
+1da444bee0e853374ef38b5bd48cd4eb244d85789e485a5b9653e6ae6446b87a;
+input84bytes391b4a9512f907f3ccd6d58a5cb03c8de582b8aec469d24d8be06e09b54fb4f4;
+six-row literal stream837bytes6734b3b5f19cd497feff271e49272c5aa9f3e7635b791270f6451687584c2246;
+full trace4442bytes4e1263197c9db1abe1af36d67a5376531192105a13b5c19e38acd88b7fca4147;
+primary report579bytes4a3753ef5b85e373a0f62f9716dfc5acfacce8fd29e15bdfce7effb8d818e620;
+combined report1984bytesf84f17b297e98cca3f817d26b67510e5a2925a499dc6e9df217f24ce63505cd6.
+Timing reports are machine dependent. Raw remains local,no upload or
+manifest attempt. No failed B131 rerun or larger sample was executed.
+
+What changed:the program-equivalence control survived actual complete
+traces,while the avoidable update work fell sharply. Delight at a clean
+constraint-first improvement. It is an implementation result,not a new
+partition existence theorem or a colleague's carrying verification.
+The gap between92% fewer updates and35% less measured case CPU suggests
+other costs matter;their separate contribution was NOT measured,so do not
+claim a profile proving matrix construction dominates. No projection to
+all2000 or64787844 targets from these three timings.
+
+Next PREPARE a cost-assessed pilot on the ORIGINAL SAME2000 with the fixed
+early-check instrument and phase/resource reporting,not another new
+heuristic. Give it a separate explicit preregistration and resource budget;
+no automatic fullsample execution in this block and no all-base job.
+That larger pilot must test tails and total cost before the owner's full-
+base resource discussion has a measured basis. No fresh review queue is
+needed for the hoist;Cloud receives the result as a concise method update.
+Research13min remains active. FullE28/L8 remain OPEN.
+
+Niggles:all rejected nodes retained;every state/witness checked,not hashes
+alone;single paired timing qualified;one case slower admitted;fixed-cost
+attribution left unmeasured;known algorithm/ordinary bound not a proof
+claim;source after-run changes only outcome comments. Gut:delight and a
+SPECIFIC pull toward the first real tail/cost test of this instrument.
+Reasoned:the next useful evidence is a bounded full pilot,not more micro-
+optimization on the same three cases.
