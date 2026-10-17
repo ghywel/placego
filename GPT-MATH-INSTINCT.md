@@ -9337,3 +9337,199 @@ status upgrade. If H5 survives, next is the infinite root/order argument;
 finite success does not fill that quantifier. If it fails, examine the first
 obstruction. Gut: curiosity about this owner asymmetry is specific, not just
 continued warmth. Reasoned: risk the iff before constructing more classes.
+
+
+**B88 instrument addendum BEFORE rerun (2026-10-17 01:06 BST).** Run1 reached
+the final unexpected-control assertion after the grid/comparisons, but stopped:
+the constructor returned a DIFFERENT valid opposite-owner root, first13,
+A=(2,8),B=(1,5,9),physical(4,17,9,1,16), instead of the hand fixture's
+A=(3,9),B=(0,4,8). The exact-root expectation was an over-specific instrument
+assertion, not an H5 or independent-oracle disagreement. First source and
+failure retained outside git. Correct that assertion to require the predicted
+owner13 and full literal move bag; ALSO check the original hand witness
+literally, rather than demanding it be the first chosen root. Repeat the same
+bounded grid to obtain a complete artifact. No H5/selection repair, domain
+extension or new theorem. Counts from the interrupted run are not published.
+
+
+### MI200 — B88 diagnostic outcome (2026-10-17 01:10 BST)
+
+**COMPUTED, after the retained instrument correction in MI199.** H5 matches
+all1,843 prescribed questions at n5..12:1,747 accepted,96 rejected. Counts
+by n5..12:14,33,65,117,194,305,456,659. All112 n5..7 questions independently
+agree with physical move permutations/translations. Every returned witness
+passes the full original move bag and literal folded-label/window checks.
+All three negative controls refuse in BOTH methods. Largest-alone with
+max-positive-first fails on(4,4,6),15/13 as predicted; swapping owner gives
+first13,A=(2,8),B=(1,5,9),positions(4,17,9,1,16). The original hand root
+A=(3,9),B=(0,4,8) also passes literally. No mathematical repair or range
+extension; first run's preferred-root assertion failure is retained in MI199.
+
+CPU0.059006s,peak RSS13,168,640bytes, inside10CPU sec/128MiB. Source
+ tests/probes/instinct/path_forest_five_vertex.py; prereg229dd244. Artifact
+cited/instinct/b88-five-vertex-2797a5844c1b228c.json,222,288bytes,SHA256
+2797a5844c1b228c00365fa938a25f99757c135afc4e2a5388fc874a52c69b9c;
+upload digest and manifest receipts verified. No actual E28 partitions.
+The infinite criterion is NOT established by this diagnostic. The next entry
+supplies a separate hand argument, rather than extrapolating these counts.
+
+
+### MI201 — Five-vertex criterion: adjacent diagonals remove the owner obstruction (2026-10-17 01:10 BST)
+
+**PROOF-SKETCH, awaiting a carrying read; no novelty claim.** For n>=1,
+positive integers a<=b<=c, and positive odd p,q with p+q=2K,
+K=a+b+c, the signed list(p,q,-2a,-2b,-2c) has a cyclic placement on five
+vertices in0..2n-1, with distinct folded labels min(x,2n-1-x), IFF
+
+    n>=5; max(p,q)<=2n-3; not p=q=2n-3;
+    c<=n-1; a+b<=n-1.
+
+This concerns exactly these five signed moves, not full E28/L8. It depends
+on neither MI191 nor other unreviewed construction sketches.
+
+**Necessity.** Five folded labels need n>=5. An odd jump2n-1 joins a
+reflection pair; larger jumps leave the window. Two occurrences of2n-3
+would have to use edges0->2n-3 and1->2n-2, whose four endpoints have only
+two folded labels (or repeat an edge), impossible. The two positive odd
+moves divide the cycle into two monotone parity runs. Each run's negative
+half-load is at most h=n-1. For three halves, any such two-bin split implies
+c<=h and a+b<=h: the sum of the two smallest is no greater than whichever
+pair is together; if all three are together this is immediate.
+
+**Reduction to adjacent diagonals.** Assume these inequalities and set
+S=a+b, H=h-c, J=h-S, T=H+J=2h-K. Legal p/q and the excluded doubled maximum
+give T>=2. Put P=max(p,q),Q=min(p,q) and
+
+    alpha=(2h+1-P)/2,
+    1<=alpha<=(T+1)/2,  alpha>=h+1-K.
+
+A two-point A-chain of gap c starts at x in[0,H]; a three-point B-chain
+of successive gaps a,b (either order) starts at y in[0,J]. Let z=y-x.
+Their starting sum x+y determines the odd joins: if x+y=alpha, they are
+P,Q exactly. If x+y=alpha-1, reflect EVERY index i->h-i and reverse each
+chain's order. The new starting sum is
+
+    2h-((alpha-1)+K)=T+1-alpha=(2h+1-Q)/2,
+
+so the joins are Q,P exactly. Thus we may use either adjacent diagonal
+x+y=alpha OR x+y=alpha-1. This is the owner freedom the max-first shortcut
+lost; it is not an approximate or rounded padding argument.
+
+All z values on these two diagonals form ONE interval I of consecutive
+integers. If H,J>=1, alpha<=(H+J+1)/2 implies at most one of H,J is smaller
+than alpha. Direct endpoint calculation gives
+
+    alpha<=min(H,J): I=[-alpha,alpha];
+    H<alpha<=J:      I=[alpha-1-2H,alpha];
+    J<alpha<=H:      I=[-alpha,2J-alpha+1].
+
+In particular |I|>=3; if alpha>=2 then |I|>=4; if alpha,H,J>=2 then
+|I|>=5. Every integer in I corresponds to an actual allowed x,y on one
+of the two diagonals, not just to an interval relaxation.
+
+**Forbidden offsets and ordering.** A endpoints are x,x+c; B endpoints
+y,y+S. Endpoint collisions exclude only
+
+    F0={-S,0,c-S,c}.
+
+If a!=b, the possible internal B-points y+a and y+b cannot BOTH hit A's
+two endpoints: they are distinct and separated by b-a<c. One order therefore
+avoids an internal collision whenever z is outside F0. If a=b=e, there is
+one internal point and the full forbidden set is
+
+    F={-2e,-e,0,c-2e,c-e,c}.
+
+No other cross-chain collision is possible. Same-chain indices are strictly
+increasing; five distinct indices give five distinct folded labels in the
+physical cycle
+
+    2A_min, (2h+1-2B_i in increasing index order),
+    (2A_i for the remaining A-indices in decreasing order).
+
+Its negative half-gaps are exactly a,b,c and its odd joins have the prescribed
+owners established above.
+
+**Thin rectangles first.** If H=0, J=T>=2. Take x=0,y=alpha. Here
+1<=alpha<=T-1, so z=alpha lies strictly between0 and c-S=T, outside F0.
+In the equal case the additional bad offsets -e and c-e=T+e also miss it.
+If J=0, H=T>=2. Take y=0,x=alpha, so -T<z=-alpha<0, outside F0.
+In the equal case T=2e-c<=e, hence alpha<=T-1<e, and the additional
+-e,c-e>=0 cannot obstruct it. These arguments include all thin cases.
+
+**Thick rectangles H,J>=1.**
+- If a!=b, c>=2,S>=3. In the sorted list F0, the two outer gaps are
+  c (when c<S) or S (when c>S), at least2; only the two middle values
+  can be consecutive. Thus F0 has no three consecutive integers, while
+  I contains at least three. Choose an available z and then the B order.
+- If a=b=e>=3, F occupies at most two residue classes modulo e. Three
+  consecutive integers cannot all lie in F; again I supplies a good z.
+- If e=2 and c is even, F is entirely even. If c is odd and c>=5,
+  F has no three consecutive integers: for c5 only0,1 are adjacent,
+  and for c>=7 the two step-two triples are separated by at least3.
+- The remaining e2,c3 case has F={-4,-2,-1,0,1,3}, longest consecutive
+  block length4. If alpha=1, instead isolate a gap2 and take
+  A=(1,3),B=(0,2,5), valid whenever h>=5. If alpha=2,h=5 take
+  A=(2,4),B=(0,3,5). If alpha=2,h>=6, |I|=5. If alpha>=3,
+  alpha<=h-3 forces h>=6 and H>=3,J>=2; the displayed formulas give
+  |I|>=6. These intervals escape F. The only h4 candidate has doubled
+  maximum p=q7 and was excluded.
+- If e=1,c>=4, F consists of the disjoint triples[-2,0] and[c-2,c],
+  so has no block longer than3. For alpha>=2, |I|>=4. For alpha1,
+  I=[-1,1] contains1, which is outside F.
+- Finally e1,c1..3: for h>=7 the positivity bound gives alpha>=h-4>=3,
+  while H>=4,J>=5. Hence |I|>=7, larger than the at-most-six forbidden
+  offsets. The remaining h4..6 cases are the following explicit table.
+
+**Small remainder (hand-checkable table; also checked by both B88 instruments).**
+Each row gives h,c, unordered p/q, first positive, A, B. The other two
+negative halves are1,1. Every legal unordered pair at these h,c occurs;
+(1,9) is absent at h4 because9 exceeds the bound7. Read the two starting
+and ending sums to check the joins, and the within-chain gaps to check the
+negative bag. All indices listed are distinct and lie in0..h.
+
+| h | c | p/q | first | A | B |
+|---|---|---|---|---|---|
+|4|1|1/5|1|4|0,1,2,3|
+|4|1|3/3|3|3,4|0,1,2|
+|4|2|1/7|7|1|0,2,3,4|
+|4|2|3/5|3|3|0,1,2,4|
+|4|3|3/7|7|1,2|0,3,4|
+|4|3|5/5|5|2,3|0,1,4|
+|5|1|1/5|1|5|0,1,2,3|
+|5|1|3/3|3|4|0,1,2,3|
+|5|2|1/7|1|4|1,2,3,5|
+|5|2|3/5|3|3|1,2,4,5|
+|5|3|1/9|9|1|0,3,4,5|
+|5|3|3/7|3|4|0,1,2,5|
+|5|3|5/5|5|3|0,1,2,5|
+|6|1|1/5|1|5|1,2,3,4|
+|6|1|3/3|3|2|3,4,5,6|
+|6|2|1/7|1|6|0,1,2,4|
+|6|2|3/5|3|4|1,2,3,5|
+|6|3|1/9|1|5|1,2,3,6|
+|6|3|3/7|3|4|1,2,3,6|
+|6|3|5/5|5|4|0,1,2,5|
+
+This exhausts the cases, completing the candidate sufficiency argument.
+
+**Application to B87's first residual.** At n14,(a,b,c)=(3,5,6),p25/q3,
+alpha1, choose z1,x0,y1,A=(0,6),B=(1,4,9). Physical positions
+(0,25,19,9,12) have moves(25,-6,-10,3,-12), with five distinct folded
+labels. The criterion addresses every legal p/q for this profile, not only
+this example; the hand theorem still awaits an independent read.
+
+**Niggle sweep / verdict.** The consecutive-offset assertion needs BOTH
+adjacent diagonals, not one parity sublattice; its three endpoint formulas
+make that explicit. The alpha-1 owner conversion has the necessary +1:
+T+1-alpha, not T-alpha; B88's original opposite-owner hand witness is exactly
+that reflection in the(4,4,6) example. Thin H0/J0 are handled before invoking
+interval thickness. Equal small halves are not waved away by residue
+counting: explicit cases/table above cover them. Every table row is already
+in the independently cross-checked n5..7 diagnostic; no further run or bigger
+census was needed. Delight at the change from family production to a common
+selection argument; reasoned verdict: a genuine uniform proof candidate,
+not a finite success extrapolation. Request ONE focused carrying read of
+this adjacent-diagonal argument and the equal-small exceptions, replacing
+MI191 as the current review priority, without halting independent work.
+MI191 remains unreviewed, not withdrawn; its request need not stay queued.
+General N>=4 selection and full E28/L8 remain OPEN.

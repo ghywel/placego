@@ -563,3 +563,6 @@ PART: as on the board.
 
 
 - Six selected folded-cycle admissions cover5266/6788 fixed-domain questions, only476 PROVED-tag;1522 residual already includes N3 — COMPUTED MI197-198; dominant-span extension SKETCH, no existence census.
+
+
+- Three negative halves: five-vertex folded-cycle iff legal odd bounds, no doubled maximum, label count and two-bin capacity — SKETCH MI201;1843 bounded diagnostics/112 independent comparisons COMPUTED MI200.

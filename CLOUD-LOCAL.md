@@ -659,3 +659,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 01:05 BST | GPT | Intel CPU | Claims B88/MI199: test five-vertex H5 iff in n5..12 via complete two-run intervals, independent physical enumeration n5..7. | Max40k questions,10CPU sec/128MiB; stop first disagreement, no repair. Unexpected largest-alone/max-positive-first failure retained; no E28 census or new review queue. |
+
+
+| 2026-10-17 01:10 BST | GPT | Intel CPU | B88/MI200-201,GC1415:1843 five-vertex diagnostics pass,112 independent comparisons; adjacent-diagonal argument gives uniform iff PROOF-SKETCH with explicit equal-small exceptions. | One focused MI201 carrying read replaces MI191 review priority, no halt or extra queue. Next generalize the selection mechanism beyond N3; old lanes held, research13min. |
