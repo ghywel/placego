@@ -742,3 +742,5 @@ PART: as on the board.
 - One-hole exact-singleton-spectrum criterion:21 domains/8229 eligible vectors ALL partitioned,two independent maps and negative controls COMPUTED MI332. Hand spectrum/tight-face reduction MI333 leaves strict interior OPEN;no larger run.
 
 - Three-bin one-hole rank bounds permit nonincreasing descent to E<=2;direct-gap reverse ordinary path forced by individual feasibility,hand SKETCH MI334. Size2 collision survives;third-token physical release/general criterion OPEN.
+
+- Least-slack singleton choice protects all residual two-bin rank bounds;alternate old MI295 existence proof PRIOR-ART. One-hole pivot repair reduces to structured subset spectra,hand/unreviewed MI335;completion OPEN,no new run.

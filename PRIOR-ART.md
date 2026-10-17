@@ -3631,3 +3631,57 @@ P={0,1,2,3,4,6},targets(2,6,8) negative demonstrates.
 MI333 uses this calculation to reduce a tight singleton face to a
 two-bin completion. It does not assert general three-bin one-hole
 sufficiency or full-interval four-bin SS3. No experiment here.
+
+
+## Three-bin full-interval existence: known in the record,reproved here (2026-10-17 20:30 BST;MI335)
+
+**Known,reproved here:** the EXISTENCE conclusion of MI295,already
+independently PROVED by CL434. This alternative construction is an
+unreviewed hand derivation,not a newly claimed theorem or a replacement
+for MI295's stronger four-adjacent-swap descent bound. Literature
+novelty remains unassessed. Filed here under the owner's reproof rule;
+no new PROOFS entry or carrying-read job.
+
+Let three sizes a,b,c>=2 total n,with prescribed sums totaling L(n)
+and obeying SS. Write alpha(t)=L(t),beta(t)=U_n(t). Among all six
+singleton lower/upper slacks choose the least h. Reflect the values
+if needed,so its bin A has s_A=L(a)+h. Other bins' upper slacks
+are at least h. Conservation gives
+
+  s_B >= L(a+b)-L(a)=L(b)+ab,
+  s_C >= L(a+c)-L(a)=L(c)+ac.
+
+For ANY chosen size-a set A of sum s_A,removing a values cannot
+make the smallest b remaining values exceed those at ranks a..a+b-1.
+Thus these inequalities protect both residual lower bounds;their
+complementary upper bounds follow from s_B+s_C=sum(remainder).
+This is a rank argument,not an assumption of compatible bins.
+
+Choose A as a prefix of length l,a suffix of length k,and one pivot,
+where l+k=a-1. For each k=0,...,a-1,the pivot ranges from l to n-k-1.
+The resulting sum intervals meet at their endpoints:the largest pivot
+for k produces exactly the set obtained with the smallest pivot for
+k+1. Together they cover all s_A in[L(a),U_n(a)]. The remainder is
+[l,n-k-1] minus the pivot. After translating by l,it is0..b+c minus
+one value r. The MI333 elementary spectrum calculation says that
+its b-subset sums can miss only minimum+1 when r=b,or maximum-1
+when r=c. In the first case the original B target would be
+L(b)+lb+1,contradicting s_B>=L(b)+ab because(a-l)b=(k+1)b>=2.
+The second case is the same forbidden minimum+1 for C,excluded by
+s_C>=L(c)+ac and c>=2. Therefore a B subset of the required sum
+exists,and its complement supplies C. This completes the alternative
+existence proof,conditional on the hand calculation's correctness.
+The contribution here is a useful global selection representation,
+not another announcement of the already established theorem.
+
+## Bounded source-scope check: compatible boundaries in a different group (2026-10-17 20:30 BST;MI335)
+
+The abstract,introduction and Theorem1.1 of
+[Prescribed-Difference Matchings with Four and Eight Holes](https://arxiv.org/html/2608.27547)
+were read after a bounded source search. Its setting is binary vector
+spaces and prescribed pair differences. Its global boundary selection
+uses determinant coefficients and finite-field Fourier methods. That
+scope supplies no theorem about these integer bin moments;no proof,
+finite verification or software was imported or audited. The useful
+analogy is to choose a boundary with its completion in mind. No
+claim that its character identities transfer to this problem.

@@ -1035,3 +1035,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 20:14 BST | GPT | B164 hand reduction/90min reflection | MI334/GC1499:rank bounds give E<=2 on three-bin one-hole pools;individual feasibility forces a reverse ordinary path at a direct gap,but physical overlap remains. | Size2 countercontrol survives both steps:third token must enter remaining proof. Next bounded global third-token test,then representation change if no movement;no new run/review queue or wait.13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 20:16 BST | GPT | B165 hand third-token claim | Test whether the known size2 one-hole collision persists at minsize3,or identify an exact release enabled by the extra token. | No new Cloud flags;one fetch/merge up to date. No larger census,new run or off-path freezing;MI334 hand reduction unreviewed,13min ACTIVE. |
+
+
+| 2026-10-17 20:30 BST | GPT | B165 trajectory changed;hand construction | MI335/GC1500:least-slack singleton choice protects residual rank bounds for ANY realization;shorter old MI295 existence proof filed PRIOR-ART. | One-hole canonical pivot repair leaves two/structured-three-hole scalar spectrum question OPEN. No new run/PROOFS entry/review queue;new construction unreviewed,13min ACTIVE,SS3/E28/L8 OPEN. |

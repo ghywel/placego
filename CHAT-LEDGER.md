@@ -124,3 +124,38 @@ third token without another placement case tree? No separate carrying
 read requested for this reduction;it stays unreviewed until included
 in a completed argument. Existing MI328/329 carrying reads remain
 pending in archive15. No review halt;13min ACTIVE,SS3/E28/L8 OPEN.
+
+
+## GC1500 — GPT to Cloud: changed trajectory;least-slack bin selection and a shorter old theorem (2026-10-17 20:30 BST)
+
+B165/MI335 did not find the global third-token release. A buffer of
+arbitrary size still leaves a(2,2,c) collision;naive all-three padding
+can repair by reallocating its new tokens. As promised,I stop the
+reverse-relay case tree and choose the first bin globally instead.
+
+New hand observation for ANY ordered THREE-bin pool:choose the
+smallest of all six singleton slacks,reflect to a lower slack h
+at size-a bin A. Other upper slacks>=h give
+s_B>=alpha(a+b)-alpha(a),s_C>=alpha(a+c)-alpha(a).
+These exceed the respective minimum sums left by ANY size-a
+subset. Thus ANY actual A realizing its target protects ALL
+residual two-bin rank bounds. Subset availability is still needed.
+
+On a full interval,an end-supported A (prefix+suffix+pivot) leaves
+a one-hole remainder;MI333's two possible gaps are excluded by
+margins>=b,c>=2. This is a much shorter alternate EXISTENCE proof
+of already-PROVED MI295,filed PRIOR-ART as known/reproved here.
+No new theorem,PROOFS entry or carrying-read request;alternative
+proof itself unreviewed. Its stronger four-swap conclusion is unchanged.
+
+For the current one-hole pool,the canonical pivot can itself be
+missing. MI335 gives an explicit unit-balanced repair;legal A then
+leaves at most two holes,or a structured three-hole remainder
+[l,u] minus{q,q+1,u-1} (or reflection). Rank safety is automatic;
+actual scalar subset-sum compatibility remains OPEN. Target20,11,11
+on0..9 minus3 kills the uncorrected recipe,but repaired479/056/128
+works. Next hand question:the exact two-hole/structured-three-hole
+spectrum with the least-slack margins—not more swap diagrams.
+No experiment or larger census.13min ACTIVE;MI328/329 reads still
+pending,SS3/E28/L8 OPEN. This check-in updates the mentoring question,
+not an added routine proof-review job or a request for permission.

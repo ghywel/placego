@@ -87,19 +87,20 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 20:14 BST:** MI334 is an unreviewed hand
-reduction for the one-hole problem. Actual rank bounds suffice to
-reach error E<=2 for THREE nonempty bins:every E>=4 state has
-one/two nonincreasing rank-adjacent swaps reducing E. The unique
-rank gap has weight2;all others weight1. This does not use sizes3
-and does NOT solve the final unit-error case. At a direct gap edge,
-individual feasibility forces an ordinary reverse bin path,but its
-physical witnesses may overlap. The known size2 negative survives
-both reductions,so the remaining proof MUST spend a third token.
-MI332 remains finite COMPUTED:21 domains/8229 targets pass. General
-one-hole criterion and SS3/E28/L8 OPEN. MI328/329 SKETCH pending
-existing reads. Next global unit-error/third-token step,no new census
-or routine review halt;13min ACTIVE.
+**Current state,2026-10-17 20:30 BST:** B165 changes from colliding swap
+witnesses to GLOBAL first-bin selection. MI335 hand observation:
+choose the target closest to any singleton extreme;after reflection
+make it a lower extreme. ANY actual subset realizing that bin leaves
+both other targets within their residual rank bounds. A prefix,
+suffix and pivot then give a shorter alternate existence proof of
+PROVED MI295,filed PRIOR-ART as known/reproved here,no review job.
+For the CURRENT one-hole pool,the pivot can itself be missing;one
+unit-balanced repair always yields a legal first bin,leaving at
+most three STRUCTURED holes. Residual rank bounds are protected,
+but actual two-bin subset-sum compatibility remains OPEN. Next hand
+question:the exact two-hole/structured-three-hole spectrum,not more
+swap-path diagrams or an automatic census. All these new construction
+steps unreviewed;MI328/329 still pending.13min ACTIVE,SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -21018,3 +21019,145 @@ only in step2;reverse path versus physical lift kept distinct. This
 unreviewed step would need independent verification as part of a
 completed one-hole proof,not a separate routine carrying-read job.
 MI328/329 retain their pending statuses.13min ACTIVE.
+
+
+### MI335 — B165: the third-token test redirects to a global first-bin choice (2026-10-17 20:30 BST)
+
+**Hand construction/reduction;general one-hole criterion still OPEN.**
+Record searched:`third.token|size2|two.token|padding|padded` AND
+`one.hole|MI334|singleton.*spectrum|2,6,8`:10 hits/5 files. Then
+`least.slack|closest.*extrem|prefix.*pivot|end.support|smallest.slack`
+AND `partition|bin|prescribed|one.hole`:8 unrelated hits/6 files.
+MI333's spectrum calculation and PROVED MI295 are the mathematical
+sources. Bounded primary-web search found no imported integer theorem;
+a binary-vector matching paper is scope-noted in PRIOR-ART. No new
+experiment,Markov-basis job or larger census.
+
+**The padding kill test.** A large third bin alone does NOT release
+two small colliding bins. On P={0,...,M} minus{3},M>=7,
+sizes(2,2,M-4),targets(4,4,T-8),T=sum(P),satisfy all actual rank
+bounds STRICTLY and each target is individually feasible. Both pair
+bins have the UNIQUE realization04,so joint completion is impossible.
+The big bin's individual witness is P minus{0,1,2,5},whose excluded
+four-set sums8. Its target is one below its maximum T-7;it is above
+its minimum because the largest four sum4M-6>8. Pair targets4 lie
+strictly between1 and2M-1;all other bounds are complements. Thus
+an arbitrarily large neutral buffer does not fix a local scarcity.
+This is NOT a minsize3 counterexample,and it is a route test,not a
+new proof/review contribution. By contrast,the simple all-three-bin
+padding of the old(2,6,8) instance gives P=0..9 minus5,targets
+(9,14,17),and has literal partition(018;239;467). The extra values
+are reassigned,not kept in their original padding roles. Neither
+example proves a universal third-token release.
+
+The requested global minsize3 repair was NOT obtained. As promised
+at MI334's reflection,I stop pursuing another adjacent-relay case
+tree and change representation:choose a first bin so that the other
+two targets stay rank-feasible,then inspect their scalar subset sums.
+The following observation is the actual new leverage in this block.
+
+**A least-slack singleton protects ALL residual rank bounds.** This
+works for ANY ordered pool P of distinct values,not just one hole.
+Let alpha(t) be its least t-value sum,beta(t) its greatest,together
+with total T. Targets total T and obey their actual rank bounds.
+Choose the least of all SIX singleton lower/upper slacks. Reflect values if necessary so selected bin A,size a,has
+s_A=alpha(a)+h,and the other bins B,C have upper slacks>=h.
+Let their sizes be b,c,so a+b+c=|P|. Conservation gives
+
+  s_B >= T-alpha(a)-h-(beta(c)-h)
+       = alpha(a+b)-alpha(a),
+  s_C >= alpha(a+c)-alpha(a).
+
+For ANY subset A of size a and sum s_A,the least b tokens in
+R=P minus A sum AT MOST alpha(a+b)-alpha(a):deleting any a
+values cannot raise the least b survivors beyond ranks a..a+b-1.
+The same holds for c. Consequently the displayed target lower
+bounds imply BOTH residual lower bounds,and s_B+s_C=sum(R)
+gives both residual upper bounds. No compatible B subset is assumed.
+Individual feasibility of the selected s_A supplies some A;the
+problem is still to select one whose actual B spectrum contains s_B.
+This elementary observation is unreviewed,not a solved partition
+criterion. In three bins,rank inequalities and subset availability
+can now be separated without arbitrarily freezing an unsafe bin.
+
+**A short proof of an already established theorem.** On a FULL
+interval,choose A as l smallest values,k largest values and one
+pivot,l+k=a-1. As k increases,the pivot-sum ranges meet exactly
+and cover the whole a-subset sum interval. R is an interval minus
+one value. Its only possible subset-spectrum gaps are minimum+1
+or maximum-1 (MI333). The least-slack inequalities above rule out
+these gaps by margin(k+1)b>=2,or the corresponding c margin.
+This reproves MI295's EXISTENCE conclusion for all sizes>=2;
+it does not reproduce its four-swap algorithm. Full argument filed
+PRIOR-ART.md as "known,reproved here",with the alternative proof
+unreviewed and no novelty claim/new PROOFS entry/review request.
+Delight here is at a simpler explanation of the existing result,
+not at having solved the new one-hole problem.
+
+**The one-hole pivot issue and an explicit repair.** For the actual
+P=0..M minus q,use the a-1 extremal VALUES of P,not ranks treated
+as unpunctured integers. For each k,l=a-1-k,pivots range between
+the first/last remaining values. The MIN/MAX sum intervals for
+successive k meet at the same extremal set;their union covers
+[alpha(a),beta(a)]. Each pivot interval can miss only the value
+q plus its fixed extremal sum. Thus an individually feasible s_A
+is realized either by this recipe,or by a FORMAL recipe whose
+pivot would be q. The latter is not a legitimate chosen subset.
+
+When the pivot is q,the formal low prefix is0..l-1 and high suffix
+u..M,u=M-k+1. If k>0 and u-q>=3,replace the formal pair{q,u}
+by{q+1,u-1}. If l>0 and q-(l-1)>=3,replace{l-1,q} by
+{l,q-1}. These preserve size and sum;the two new values are
+available,distinct and not already chosen. At least one repair
+exists when the remainder has size b+c>=6:
+- If l,k>0,the two distances sum M-a+3>=9,so one is>=3.
+- If l0,the unrepairable distances1 or2 would make s_A respectively
+  exceed its actual maximum,or equal the forbidden maximum-1 with
+  q=M-a. Individual feasibility excludes both. The k0 case is the
+  reflected minimum/minimum+1 argument.
+
+An unrepaired legal recipe leaves R as an integer interval with
+at most TWO holes (the original q and the selected pivot). A high
+repair leaves precisely[l,u] minus{q,q+1,u-1};the low repair is
+its reflected shape. Hence one or two explicit repaired choices
+suffice to produce a LEGAL first bin with this structured remainder.
+Their residual rank bounds hold automatically by least slack.
+We have NOT proved that either remainder realizes s_B. Legal and
+rank-feasible boundaries still need actual scalar subset spectra.
+
+**Hand control that kills the uncorrected recipe.** P=0..9 minus3,
+sizes3^3,targets(20,11,11). A is uniquely closest to a singleton
+extreme:upper slack4,others' smallest slack8. The three uncorrected
+end-supported possibilities require pivots19 with01,11 with09,
+or3 with89;none is available. The high repair takes formal389
+(which contains the missing3) to479. Then R=012568;B056 and C128
+both sum11,so the repaired partition is literal. This control rules
+out silently assuming the one-pivot recipe always exists even after
+choosing the correct first bin.
+
+**What changed and next inference.** The swap path picture has not
+closed its shared-token step. The new GLOBAL selection removes the
+residual-rank issue for every first-bin realization,and provides a
+shorter explanation of the verified base theorem. For one hole,the
+remaining problem is one-dimensional:show a suitable actual subset
+sum in an interval with two holes,or in the structured three-hole
+repair family,using the original least-slack inequalities and sizes
+b,c>=3. Or find a hand counterexample to that CANONICAL recipe;
+such a failure would reject the recipe,not the original criterion.
+No asserted two-choice completion theorem or coefficient nonvanishing
+has been smuggled in. Next cheap hand work is the exact spectrum and
+margin question for these pools,not another placement family/census.
+
+Gut:the physical-collision line cooled;the global choice inequality
+and simpler old theorem brought a specific renewed pull. On a fresh
+choice I would pursue that scalar spectrum question;I would not
+continue cataloguing reverse relays. Reasoned:this is a genuine
+change of representation with a proved-looking selection step,but
+the final compatibility inference is open and every new argument
+here is single-party. Niggle sweep:reflection applies to sums AND
+pool;all six original slacks compared;min survivors use ranks of
+P;the current one-hole pivot may be absent;both repair endpoints
+checked;the large-buffer negative still has two size2 bins;alternate
+proof asserts only MI295's old existence conclusion. No new formal
+review queue;Cloud gets the changed question and committed pointer.
+13min ACTIVE,SS3/E28/L8 OPEN.
