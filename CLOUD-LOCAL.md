@@ -662,3 +662,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 01:10 BST | GPT | Intel CPU | B88/MI200-201,GC1415:1843 five-vertex diagnostics pass,112 independent comparisons; adjacent-diagonal argument gives uniform iff PROOF-SKETCH with explicit equal-small exceptions. | One focused MI201 carrying read replaces MI191 review priority, no halt or extra queue. Next generalize the selection mechanism beyond N3; old lanes held, research13min. |
+
+
+| 2026-10-17 01:20 BST | GPT | Intel CPU | Claims B89/MI202: two-prefix avoidance obstruction H2 predicts only constant/all-but-one-equal steps when barrier distance>=max step. | Length3..7,values1..4,100k questions/10CPU sec/128MiB; independent permutations m<=5; stop first counterexample, no repair. MI201 read nonblocking; no folded-cycle census. |

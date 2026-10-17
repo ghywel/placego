@@ -9533,3 +9533,54 @@ this adjacent-diagonal argument and the equal-small exceptions, replacing
 MI191 as the current review priority, without halting independent work.
 MI191 remains unreviewed, not withdrawn; its request need not stay queued.
 General N>=4 selection and full E28/L8 remain OPEN.
+
+
+### MI202 — B89: isolate the two-prefix obstruction, rather than append another cycle class (2026-10-17 01:20 BST)
+
+**Pull/question.** MI201's owner freedom gives consecutive relative offsets
+for ANY fixed two-run load split. What does not generalize automatically is
+ordering the internal prefixes. If one chain is a single gap D and the other
+has positive steps of maximum<=D, disjointness asks its proper prefixes to
+avoid at most two levels x,y separated by D. The geometry is now separated
+from the carrying ordering question; no larger folded-cycle census this block.
+
+MI117's one-level lemma was reread: unless all steps are equal, a boundary
+swap avoids one prescribed proper prefix sum. It does NOT solve two levels:
+(1,1,2),forbidden1,3, is unavoidable in all three orders. This failure is
+retained, not treated as an inference somebody else made. It is the precise
+step needed to continue the one-gap selection argument.
+
+Candidate H2 (necessary shape of an obstruction): for m>=3 positive integer
+steps and0<x<y<S=sum steps, y-x>=max step, if EVERY order hits x or y as a
+proper prefix, then some value occurs at least m-1 times. Contrapositively,
+if no value occurs m-1 times, the two levels can be avoided simultaneously.
+The converse is NOT claimed; some nearly constant profiles avoid both.
+If true this is a general permutation-selection tool, not an E28 proof.
+Record searched: adjacent.diagonal|consecutive.offset|two.*residue.*prefix|
+one.*large.*chain and two.forbidden|two.prefix|unavoidable.*prefix ->no
+search hits (literal hyphen/spacing variants can be missed); MI117 and201
+read explicitly. Bounded web searches for permutations avoiding two partial
+sums/unavoidable prefix sums found no directly relevant primary statement;
+no theorem of literature absence or novelty claim.
+
+**Predictions BEFORE run.** Fixed small arithmetic domain: sorted multisets
+length3..7,values1..4; all proper integer barrier pairs x<y<S with
+separation>=max step. At most100,000 questions,10CPU sec/128MiB. Predict H2
+holds; stop on FIRST rich-profile unavoidable pair and retain its complete
+DP unreachable certificate plus independent permutation check, no repair,
+range extension or follow-up grid. No theorem extrapolation if it survives.
+Primary instrument: labelled-subset reachability, adding one unused item
+unless the new proper prefix is x or y. Deduplicate equal masks only by
+value symmetry in the result, not by silently deleting copies. Independent
+control: exhaustive distinct value-permutations for all m<=5 questions,
+agreeing on existence, and validate every returned witness literally.
+Store full question outcomes and one avoiding order when present.
+
+Controls: (1,1,2),1/3 must be unavoidable despite nonconstant steps.
+Unexpected separation control: rich(1,1,2,2),2/3 is unavoidable when the
+separation condition is dropped; this guards against overgeneralizing H2.
+A positive control(1,1,2,2),1/3 admits2,2,1,1. If H2 fails, the counterexample
+should guide the next split/representation; do not patch the hypothesis and
+rerun in this block. Gut: curiosity about the obstruction, not pressure to
+produce another theorem. MI201 review remains nonblocking and the sole
+carrying request; no extra queue for a finite diagnostic or known lemma.
