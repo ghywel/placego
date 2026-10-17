@@ -11322,3 +11322,98 @@ resonances would need an actual new argument. This is a next question,
 not an opened experiment, a proved generalization or a profile-patching
 quota. MI214 remains the sole requested carrying read, nonblocking;
 READ-LEDGER only. Research13min active; older held lanes remain held.
+
+
+### MI228 — B101: arbitrary short pairs and the forced root rectangle (2026-10-17 03:47 BST)
+
+**Pull/question.** The unit-pair result suggests a genuine small-gap block,
+not a permanent two-unit restriction. What happens when its two gaps differ,
+or when roots force its endpoint across the other run? Record searched:
+small.gap.block|triangle.*margin|two.short.gap|arbitrary.*small.*pair,
+then canonical.*capacity|equal.*short.*gap|two.*short.*gaps ->MI227 and
+unrelated record hits, no earlier theorem. Prior-art anchor remains MI054's
+Tan-Teh section4 audit; no new primary theorem or novelty claim is imported.
+The pull is to the root/endpoint interaction; the mere parameter replacement
+in the wide-margin case is not itself the contribution.
+
+**Direct candidate, PROOF-SKETCH.** Let positive sorted gaps be
+(a,b,u,v,w),a<=b, u<=v<=w, C=a+b, u>=C+3. Write
+L=u+v,S=w+C,H=h-L,J=h-S,D=L-S=J-H,T=H+J, M=2n,h=n-1.
+Assume THIS capacity split fits (H,J>=0), largest isolation is impossible
+(C+L>h, equivalently H<C), and legal odd positive joins p+q=2K,
+K=L+S,max(p,q)<=2h-1,not both2h-1. Then T>=2 and a seven-vertex cycle
+exists by the following finite selector, independent of MI204/214.
+Set alpha=(2h+1-max(p,q))/2,1<=alpha<=ceil(T/2)<T.
+A always has gaps(u,v),B permutes(a,b,w). Reflect/reverse both chains
+only when chosen root sum croot=alpha-1; otherwise croot=alpha.
+
+1. D>=2: let croot be largest odd<=alpha, x=min(H,(croot-1)/2),
+   z=croot-2x,y=x+z. Then1<=z<=D-1. Use B gaps(a,b,w).
+   The MI226 wide-margin proof, with2 replaced by C, gives
+   x<y<y+a<y+C<x+u<y+S<x+L. Roots fit J=H+D.
+2. D=1: legal T>=2 forces H>=1. For largest odd croot<=alpha,
+   x=(croot+1)/2,y=(croot-1)/2,z=-1. Use B gaps(w,a,b).
+   Roots fit since alpha<=H+1. Now w-1-u=v-C-2>=1 and
+   Bmax=x+L-2. Thus y<x<x+u<y+w<y+w+a<y+S<x+L.
+3. D<=0 and alpha<=2J: for largest odd croot<=alpha,
+   x=(croot-1)/2,y=(croot+1)/2,z=1. Both roots fit because
+   alpha<=H and ceil(alpha/2)<=J. Use B gaps(a,b,w).
+   Its first three points lie strictly between A's minimum and middle
+   (C+1<u), and Bmax=x+L-D+1>x+L. All seven are distinct.
+4. D<=0 and alpha>2J: saturate B's root y=J and set
+   croot=alpha,x=alpha-J,z=2J-alpha<0,E=T-alpha.
+   Then0<E<C: E>0 from alpha<T, while alpha>2J gives E<H-J<=H<C.
+   The first B point after w lies above A's middle by v-C+E>0;
+   Bmax lies E above Amax. Amax therefore lies in the short block,
+   distance r=C-E after B's w-prefix. If r!=a, use B gaps(w,a,b).
+   If r=a but a!=b, use(w,b,a). Only equal a=b=s,r=s remains.
+   In that case E=s. If -z>=2, lower croot by1 while keeping y=J,
+   so x decreases1,z increases1,E becomes s+1,r becomes s-1.
+   The same big-first order now works. Here s>=2 (H<2s and E=s
+   rule out s1), so0<s-1<2s; min/min and max/max do not collide.
+   If -z=1 instead, keep croot=alpha and put the small pair FIRST:
+   relative to A-minimum, B is(-1,s-1,2s-1,S-1).
+   H=s+J+1<2s forces s>=2; its two middle points lie in(0,u),
+   and Bmax lies s above Amax. Again all seven points are distinct.
+
+In branch4 x<=H and x>=1. In its root-shift subcase x>=2 beforehand,
+so x-1 is valid; z+1 stays negative. This is a root-and-order selector,
+not an enumeration that supplies missing universal cases. At most one
+short-order swap or one root shift. Seven labels fit since h>=L>=2C+6.
+Canonical capacity IS A PREMISE: ordinary capacity alone need not fit it.
+No general all-N5 criterion is claimed.
+
+**Preregistration BEFORE experiment.** Match the frozen B87 input SHA256
+3b53cad88d8f0930397f545953dbad8b3a2a38adc7e37242bd90641a9ad885d0.
+Select its existing M28 records with d[:2]=(1,2),u>=6,L+3>13 and
+L<=13,S=w+3<=13. Predict exactly6 profiles/11 positive-pair questions:
+(1,2,6,6,w),w6..9 and(1,2,6,7,w),w7..8. Independent explicit keys agree.
+Predict8 D>=2 calls,2 D1 calls and1 D0 positive-offset call. Construct all11
+actual E28 partitions with one baseline112 owner7, both original checkers.
+These can overlap prior admissions; no all-N5 residual recount.
+
+Five generic geometry-only calls exercise the narrow margins:
+M42,(2,3,8,8,15),39/33: forced-root SHORT-ORDER SWAP (r=a);
+M48,(3,3,9,9,17),43/39: equal-pair ROOT SHIFT then reflection;
+M46,(3,3,9,9,16),43/37: equal-pair SMALL-FIRST reversal at z=-1;
+M36,(2,2,7,7,13),31/31: forced-root equal pair without a resonance;
+M42,(2,3,8,8,13),39/29: D<0 with positive offset still feasible.
+All16 formulas should pass original bags/owners/window, direct index
+intersections and two geometry validators. Independent full ORIGINAL-join
+root maps for this fixed2+3 split, <=6 B orders and<=2 A orders, must
+contain each result; no alternative allocation solver or expanded grid.
+
+Counterfactual on the first generic call: keeping B gaps(w,a,b) gives
+A=(1,9,17),B=(0,15,17,20), correct bag/window but shared17; reject it.
+On the root-shift call, omitting reflection must preserve valid geometry
+but give45/37 rather than the original43/39; reject the original bag.
+Unexpected boundary: M40,(2,3,8,8,15),p35/q37 has ordinary capacity
+(2+15)/(3+8+8)=17/19, but canonical loads16/20 do NOT fit h19.
+The constructor must REFUSE it despite legal positive joins/nonisolation.
+A=(1,3,18),B=(0,8,11,19) is an independent explicit alternative split
+with the exact original bag. This tests the allocation premise without
+turning it into a nonexistence claim or silently widening the theorem.
+
+Cap16 formula calls/11 actual E28 partitions,2CPU sec/64MiB. Stop on any
+mismatch; retain failures, no repaired domain or extra carrying-read queue.
+The small-gap-block question remains warm; MI214 sole read, nonblocking.

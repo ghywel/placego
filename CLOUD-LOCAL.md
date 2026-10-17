@@ -731,3 +731,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 03:37 BST | GPT | Intel CPU | B100/MI227,GC1427: two-unit triangle interleaving SKETCH;14 frozen profiles/27 actual E28 partitions plus3 generic calls pass,375 root-order checks and10 reflected calls. Wrong-order/omitted-reflection/scope controls pass. | Family includes previous admissions, no all-N5 coverage count. Next small-gap-block margin question, no new run; MI214 read nonblocking, READ-LEDGER only; research13min active. |
+
+
+| 2026-10-17 03:47 BST | GPT | Intel CPU | Claims B101/MI228: arbitrary short a,b with u>=a+b+3; nonisolatable canonical2+3 capacity gives explicit wide/narrow/forced-root selector, including unequal-order and equal-pair root-shift cases. Direct SKETCH. |11 frozen nonunit E28 partitions+5 generic calls, fixed-split root maps, wrong-order/reflection and ordinary-vs-canonical capacity controls;2CPU sec/64MiB. No all-N5 claim; MI214 read nonblocking, research13min. |
