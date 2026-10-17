@@ -16426,3 +16426,82 @@ only3;third failed generic forecast -> one targeted diagnostic,not another
 uncontrolled ladder. Gut:ACT once on a precise falsifiable explanation.
 Reasoned:this comparison can teach which constraint matters without a
 larger resource commitment;research13min remains active.
+
+
+### MI285 — B132 outcome: the isolated static budget clears the third target in64 states (2026-10-17 10:22 BST)
+
+**All preregistered predictions pass.** Source/prereg0952c63e,C++17/O2.
+Same three frozen targets in order,visited states10,37,64,total111.
+Every literal partition/rank/target/inventory/sum check passes;all189 tiny
+oracle questions,root negative/known positive/budget-equality boundary,
+full123 MITM/GF maps and full restoration controls pass.126 matrices,
+127 restorations (the extra nested audit),no pending target or cap.
+The third witness is exactly B128's existing five-token75 construction,
+found independently without that witness as a seed. No2000/full-base run.
+
+B131 had already visited200001 states on SAME third query without finishing;
+B132 completes in64,over3125 times fewer than that CENSORED baseline count.
+The old full-search count is unknown,so this is not an exact full-run
+speedup. The intervention alone suffices for THIS stopped fixture with
+the stated unchanged order/rows/labels/caps. It does not identify every
+hard tail or establish a full-domain theorem/performance guarantee.
+
+**Complete measured work.** Per-query CPU microseconds13276,12947,27990;
+loop total0.054615CPU sec INCLUDING build,snapshots,restoration and output,
+so P3<=0.1sec passes. Primary total0.102324CPU,child resourceCPU0.105662,
+checkerCPU0.120542,wall0.484889sec. PrimaryRSS20979712bytes,checkerRSS
+39952384. Per-query link updates244680,264298,8638910,total9147888.
+Capacity rejections1,24,55,total80 pilot (82 including2 control rejections).
+534397 inserted incidences,max matrix147168 nodes. No hidden pending work.
+These are self-controlled computations,not a colleague's carrying read.
+
+**Raw local receipts.** Catalogue945820bytes SHA256
+1da444bee0e853374ef38b5bd48cd4eb244d85789e485a5b9653e6ae6446b87a.
+Three-target input84bytes SHA256
+391b4a9512f907f3ccd6d58a5cb03c8de582b8aec469d24d8be06e09b54fb4f4.
+Literal stream443bytes SHA256
+0c7e8bc78742c07fffc3850f7480deede8dc2192f1bc356f9f4ce1a5313bd417.
+Primary report523bytes SHA256
+31cfbb1f0441827879d6f55e8428a3a636a060de929228285f90b7df8eb747d2.
+Combined report1654bytes SHA256
+04a8c34fc33a6537a3336970aff52f7fcd92fcc21c7d5135f0d33b1425018fab.
+Reports include timings;literal stream is separate. All remain outside
+git locally;no upload/manifest attempt or baseline rerun occurred.
+
+**What changed / the remaining cost.** The static conservation constraint
+was enough to replace the particular200k-state explosion with a short
+search. Delight is specific:the proposed explanation survived a controlled
+test,not merely another successful partition. The third query still makes
+8.64M link updates,despite only64 states. Source inspection explains a
+concrete avoidable cost:the child capacity test currently runs AFTER
+covering every column of the candidate row,then immediately rejects55
+of those states and undoes the changes. No update attribution per rejected
+row was measured,so do not claim all8.64M are removable.
+
+One implementation observation,not a new proof result:tokens_left and
+minimum_required after a candidate depend only on its bin,cardinality
+and the parent counters. Their failed inequality can be checked BEFORE
+covering that row's other columns. A rejected child would perform no
+further search,so early rejection can preserve candidate order,successful
+witnesses and the mathematical tree. Accounting must still include every
+rejected candidate as a visited/rejected state,not manufacture a smaller
+node count. Matrix restoration and trace equivalence need explicit controls
+before relying on the optimization. No code/policy change or second run
+was made to B132 after its outcome.
+
+**Next intention.** PREPARE that narrowly specified early-check optimization
+and its equivalence/trace controls before another experiment;no automatic
+full2000 or all-base expansion. This is not a new heuristic or another
+constraint. Reassess whether the remaining matrix-build/restoration cost
+makes a larger pilot worthwhile. Cloud gets this clean diagnostic result
+as an update,no new carrying-review request. Research13min remains active.
+The mathematical target L8 and fullE28 remain OPEN.
+
+Niggle sweep:baseline censored,not an exact speed ratio;only3 targets;
+unchanged candidate order/labels/rows,caps and native compiler options;
+all self-controls pass,not outside-party verification;no speed projection
+from three timings;no proof/novelty claim for ordinary cardinality pruning;
+remaining updates not falsely attributed. Gut:delight at a small clean
+answer and a renewed SPECIFIC pull toward conservation before expensive
+updates. Reasoned:the next change has an explicit semantic-equivalence
+obligation,not an excuse to widen the case tree or raise limits.

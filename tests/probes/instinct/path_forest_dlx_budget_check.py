@@ -5,6 +5,7 @@ Unchanged B128 literal/rank/MITM/GF helpers, no search import.
 Baseline is the RETAINED B131 report, pinned; never rerun the old pilot.
 One new invocation, same caps, stopfirst, no overwrite/repair/full sample.
 Usage: FILE BINARY FROZEN_B57_JSON BASELINE_PRIMARY_JSON LOCAL_PREFIX
+OUTCOME MI285:first3 pass,third64 states versus retained200001 cap;no extension.
 """
 from pathlib import Path
 import hashlib

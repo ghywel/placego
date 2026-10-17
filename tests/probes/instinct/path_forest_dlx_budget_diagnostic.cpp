@@ -2,6 +2,8 @@
 // Reuse archived DLX construction/cover/uncover; do not execute its old main.
 // Sole search change: reject a state with remaining tokens < remaining root minima.
 // No memoization, symmetry change, new order, altered columns or larger caps.
+// OUTCOME MI285:all controls/first3 literal rows pass;10/37/64 states.
+// Static budget alone clears B131's third-target cap;no full2000 run.
 #define main b131_archived_entrypoint
 #include "path_forest_dlx_pilot.cpp"
 #undef main

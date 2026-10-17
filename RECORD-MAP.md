@@ -665,3 +665,5 @@ PART: as on the board.
 - Reusable weighted-sum SAT SAME2000 pilot:286 literal witnesses/all controls pass,20CPU cap;old target240 solved but69.53ms/attempt,COMPUTED/MEASURED MI280. Simpleadder instrument parked;fullE28/base OPEN.
 
 - Standard DLX SAME2000 pilot:controls/two literal witnesses pass;target3 hits200001-state cap,0.183CPU loop,COMPUTED/MEASURED MI283. Changed pruning confounds comparison;all cap work retained,fullE28/base OPEN.
+
+- Isolated static token budget on SAME first3 DLX inputs:all controls/literal witnesses pass,10/37/64 states;third was capped200001,COMPUTED/MEASURED MI285. Fixture-specific effect,no2000/fullbase result.
