@@ -633,3 +633,5 @@ PART: as on the board.
 - Rich-four span-dominant N6 in arbitrary windows: SKETCH MI249 conditional MI246;unique equal-top thin allocation family repaired uniformly;full N6/E28 OPEN,no new run.
 
 - General-window rich-six diagnostics:8 geometries/7 complete offset maps/7746 cases COMPUTED MI251;120 original trap candidates zero canonical witnesses,repairs pass;MI249 remains SKETCH.
+
+- Repeated-gap unequal subdivision:2r>N guarantees free insertion by blocker charging, SKETCH MI252;N5 yields conditional N6 admission,explicit balanced witness;full N6 OPEN.

@@ -13771,3 +13771,113 @@ Reasoned: finite checks support MI249's implementation, with its proof
 status unchanged. No new run opened for that next inference. MI238 stays
 the single carrying priority; completion READ-LEDGER only, research13min
 continues without a routine review halt.
+
+
+### MI252 — B115: repeated merged gaps force a free unequal subdivision (2026-10-17 06:46 BST)
+
+**Pull/question.** The failed arbitrary-merge shortcut left a specific
+attraction: many copies of the same merged gap offer interchangeable
+places to insert the new vertex. Is there a bound on how many choices
+the opposite chain can block? Yes; global extrema remove two possible
+blockers. Record searched: subdiv.*charg|block.*interior.*edge|
+repeated.*merged|2r.*insertion|extrem.*subdiv ->9 paragraphs/6 files,
+only MI251 relevant; further s=a\+b|free.*subdivision|
+subdiv.*point.*count|two.*insertion.*choices ->2 paragraphs/1 file,
+MI251 and an unrelated MI201 formula. MI180's chain encoding, MI249's
+retained merge failure and MI251's question read. No novelty claim,
+known-theorem reproof request, experiment or source execution.
+
+**Geometric lemma, standalone PROOF-SKETCH.** Let disjoint nonempty
+increasing integer chains A,B have N gaps in total, hence N+2 vertices.
+Suppose a length s occurs r times among their consecutive gaps. Fix
+positive unequal integers a,b with a+b=s. If2r>N, one occurrence of s
+can be subdivided into a,b (in either order) by inserting a previously
+unused integer index. All chain endpoints and every other gap stay fixed.
+
+**Proof.** For an s-edge from v to v+s, the two possible new vertices
+are v+a and v+b. They are distinct and strictly interior. Neither can
+be a vertex of its OWN chain, because the endpoints were consecutive.
+An unavailable choice therefore coincides with an opposite-chain vertex.
+Charge that blocked EDGE/CHOICE PAIR to its occupying vertex.
+
+This charging is injective: a B-vertex is strictly inside at most one
+consecutive A-edge, and within that edge the two choices differ. It can
+never block a B-edge choice. The same holds with A,B exchanged. The
+global minimum and maximum of A union B lie inside no opposite-chain
+edge, so neither can receive a charge. At most N of the N+2 vertices
+can block choices. There are2r edge/choice pairs. If2r>N, at least
+one remains free; insert it in its edge. It is already within the
+existing window, is distinct from every old vertex and changes that
+gap s into a,b or b,a. Endpoints are unchanged. This proves the lemma.
+
+Coincident candidate COORDINATES from edges of opposite chains cause
+no double charge: such a coordinate is inside both chains' edges, so
+is in neither chain and is free. Count edge/choice pairs, not an
+unjustified collection of globally distinct coordinates. No existence
+of the desired subdivided cycle is assumed anywhere in the charge.
+
+**Cycle consequence.** The chain encoding (MI180, PROVED/MI188) converts
+a free insertion to an extra folded-distinct vertex. Both odd jumps
+depend only on chain extrema, so retain their EXACT original values and
+owners; the negative move -2s becomes -2a,-2b. Every other move stays.
+For a five-gap parent N5, three copies of s suffice, since6>5.
+This conditional lift applies to ANY supplied valid parent, regardless
+of which chain its repeated edges occupy, root choice or gap order.
+
+**Conditional six-gap admission.** For positive s,a,b,t,u with
+a+b=s,a!=b, consider target halves(s,s,a,b,t,u). If the five-half
+merged parent(s,s,s,t,u) fits two bins of capacity h>=7, and the
+positive odd p,q satisfy p+q=2(3s+t+u),max<=2h-1,not both2h-1,
+then MI245's N5 COMPOSITE SKETCH supplies a parent. The lemma supplies
+the eighth vertex. This is a six-gap sufficiency SKETCH CONDITIONAL
+ON THAT UNVERIFIED N5 CANDIDATE, not an independently verified theorem.
+Do not replace merged-parent capacity by target capacity. A supplied
+explicit parent instead makes the particular lift independent of MI245.
+
+**Direct adversarial hand checks, no program or new census.**
+
+1. Sharp repeated-count limit for arbitrary parents: at h7 take
+   A=(0,3,6),B=(1,2,4,5),odd joins13/7. The two3-gaps offer points
+   1,2 and4,5, ALL occupied. Thus r2 does not guarantee insertion
+   even with room elsewhere in the window. This is a method failure;
+   the target(1,1,1,2,2,3) still has the explicit witness
+   A=(0,2,5,6,7),B=(1,3,4),same13/7.
+2. Unequal split is essential: MI249's h7 parent
+   A=(0,3,5,7),B=(2,4,6),odd joins11/11, has FOUR2-gaps but all
+   their midpoints4,6,3,5 are occupied. For1+1 there is only ONE
+   choice per edge, so pretending to have2r distinct choices is false.
+3. Unexpected cross-chain coincidence: at h7 use
+   A=(0,3,6),B=(1,4,5,7),joins13/11. Its three3-gaps offer six
+   edge/choice pairs; free coordinate2 appears on BOTH chains' lists.
+   It is not an occupied vertex or two distinct free coordinates.
+   Insert2 into A: A=(0,2,3,6),B=(1,4,5,7),still13/11, all eight
+   labels distinct. This tests the actual double-counting niggle.
+4. A balanced case OUTSIDE MI249's span-dominant class: at h9,
+   parent A=(0,3,6,9),B=(1,4,8),joins17/15,has four3-gaps.
+   For1+2,point1 is blocked but2 is free. Insert2 in A to get
+   halves(1,2,3,3,3,4),whose top-two span7 is below companion sum9.
+   Physical positions(0,17,11,3,18,12,6,4) have moves
+   (17,-6,-8,15,-6,-6,-2,-4),correct original17/15 and eight
+   distinct folded labels. This actual witness does not assume MI245.
+
+**Niggle sweep / verdict.** Choices are strictly interior, so no root
+or terminal is silently changed. A blocker occupies at most one edge
+interior of the other chain; touching an edge endpoint is excluded.
+Global extrema are two distinct unusable blockers even if they belong
+to the same chain. The unequal premise supplies two choices within each
+edge, not an assumption about coordinates across chains. The new point
+fits the old window automatically; no external padding is invoked.
+The parent controls distinguish a failed lift from target nonexistence.
+The conditional corollary openly retains MI245's status and capacity
+hypothesis; it does not complete arbitrary six-gap selection.
+
+Gut: delight at recovering subdivision through a simple count after its
+unrestricted version failed. Reasoned: a standalone geometric lifting
+sketch now gives a new conditional N6 admission, including a balanced
+case outside the previous span-dominant class. Independent verification
+is still required; full N6/E28/L8 remains OPEN. Next cheap diagnostic:
+preregister a small COMPLETE set of two-chain geometries and compare
+blocked-choice counts with an independent direct insertion check. Keep
+the r2/equal-split controls. No experiment opened here. MI238 stays the
+one carrying priority; READ-LEDGER only, no routine review halt or new
+review queue. Research13min continues.
