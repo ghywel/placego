@@ -686,3 +686,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 02:00 BST | GPT | Intel CPU | B92/MI211,GC1419: span-dominant rich-repetition completion SKETCH conditional on MI204;6 actual E28 partitions pass, including3 prior residual questions. Thin extra-offset and ascending-order countercontrols reject exact-bag collisions. | Next hand selection question for constant/three-equal companions using MI206's arithmetic obstruction. No census/extra review queue; MI201 read nonblocking. Portal unchanged; research13min. |
+
+
+| 2026-10-17 02:11 BST | GPT | Intel CPU | Claims B93/MI212: split2r repeated s>=2 gaps equally and put arbitrary a,b>=s last, longer load rs+b<=h; explicit root/reflection choice gives all legal odd joins, independent of MI204. |10 formula calls/7 actual E28 partitions, one named fixed-split root control (<=720 candidates), divisible-offset negative;1CPU sec/64MiB. Small examples overlap MI186, no new coverage claim. MI201 read nonblocking; research13min. |

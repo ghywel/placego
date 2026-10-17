@@ -10164,3 +10164,115 @@ a different load split. This asks for a selection criterion/counterexample,
 not another calibration of the prefix theorem. MI201 remains the sole
 requested carrying read, nonblocking; send READ-LEDGER only. Start/end
 portal checkpoints agree, no new incoming flags. Old held lanes stay held.
+
+
+### MI212 — B93: rebalance a constant companion into two terminal ladders (2026-10-17 02:11 BST)
+
+**Question / actual pull.** Can a change of split eliminate the constant
+companion obstruction without another prefix-order theorem? Yes, a direct
+construction emerges: distribute the repeated gaps equally, and put one
+exception last in each chain. This is enjoyable because the obstruction
+changes representation; there is no reason to force the top-two split.
+Three-equal/fourth-different companions are NOT all settled by this block.
+
+Record searched: constant.*companion|three.equal|near.constant|
+arithmetic.*obstruction ->35 paragraphs/14 files; four.*equal.*gap|
+s\+1.*2s\+1|constant.*split.*fail|interlac.*unequal.*run ->11/5;
+two.*exception.*repeat|repeat.*ladder|terminal.*ladder|
+constant.*gap.*two|same.run.*exception ->11/7. MI204/206, MI177/178,
+MI184/186, MI210/211 read. MI186 ALREADY covers the small M28 examples below
+through pair differences<=3; do not sell them as newly solved targets.
+The useful new scope is arbitrary exceptional-gap difference under a stated
+load condition. MI177 requires the exceptional sum0 mod g in the same run;
+this argument imposes neither residue condition nor same-run allocation.
+No new imported theorem, novelty claim or literature-completeness claim.
+
+**Direct theorem, PROOF-SKETCH independent of MI201/204.** Let M=2n,h=n-1,
+r>=1,s>=2, s<=a<=b. The negative halves are2r copies of s plus a,b.
+Put K=2rs+a+b and suppose rs+b<=h. For ANY positive odd p,q with
+p+q=2K,max(p,q)<=2h-1,not p=q=2h-1, there is a folded-distinct cycle
+with these exact moves. This is sufficiency with a load assumption, not a
+criterion for arbitrary negative bags or all E28/L8.
+
+Set L=rs+b,S=rs+a,delta=b-a,H=h-L,J=h-S=H+delta,T=H+J.
+The legal odd bounds and excluded doubled maximum imply K<=2h-2, so T>=2.
+Choose P=max(p,q),Q=min,alpha=(2h+1-P)/2. Then
+
+    1<=alpha<=H+floor((delta+1)/2).
+
+Use these two explicit selections:
+1. If alpha<=2H, let c be the largest odd integer<=alpha, choose
+   x=(c+1)/2,y=(c-1)/2. Then z=y-x=-1; x<=H and y<=J.
+2. If alpha>2H, put x=H and z0=alpha-2H. Let c=alpha unless s divides z0;
+   in that event let c=alpha-1. Put y=c-H,z=c-2H. Then z>=1 and s does
+   not divide z (two consecutive integers cannot both be divisible by s>=2).
+   This branch requires delta>=2: delta0 contradicts alpha>2H directly;
+   delta1 would require H0, contradicting T>=2. Consequently
+
+       z<=floor((delta+1)/2)-H<delta<=b-s<b.
+
+   Both roots fit: x=H, y>=0 and c<=alpha<=(T+1)/2<=T give y<=J.
+
+Form the increasing chains
+
+    A=x+(0,s,2s,...,rs,rs+b),
+    B=y+(0,s,2s,...,rs,rs+a).
+
+Their loads fit the original window. For z=-1, the two arithmetic ladders
+have different residues mod s. B's terminal point relative to x is
+rs+a-1>rs, so misses A's ladder; A's terminal is beyond B's ladder.
+Their terminal points differ by delta+1>0. For the positive branch,
+0<z<b and s does not divide z separate both ladders and put A's terminal
+beyond B's ladder; B's terminal is beyond A's ladder. The two terminals
+would coincide only if z=delta, excluded by the strict bound z<delta.
+Thus EVERY A/B index is distinct, including nonadjacent pairs.
+
+When c=alpha, their minimum sum gives first odd join P and the maximum
+sum gives Q. When c=alpha-1, reflect BOTH chains by i->h-i and reverse
+their lists. Their new minimum sum is T-c=T+1-alpha, giving Q first and
+P second exactly. This reflection is essential: pre-reflection joins are
+P+2,Q-2 in that branch, not the original pair. All negative gaps are unchanged.
+Physical even2A/odd(2h+1-2B) then give the required folded cycle. No prefix
+avoidance theorem, search or experimental extrapolation supplies this proof.
+
+**Why a new split is necessary in a concrete case, by hand.** For
+halves(2,2,2,2,3,5), the top-two split is A gaps3/5, B four2s, both loads8.
+Here H=J=h-8 and feasible relative offsets for both original odd owners,
+using reflection of one owner, are I=[-alpha,alpha]. Indeed P>=17 implies
+alpha<=H. Every integer z in[-4,4] is bad: even z forces an A endpoint
+into B's fixed ladder; odd z=+-1,+-3 puts BOTH possible A middle points3/5
+into that ladder. At z5, A order3,5 avoids B=(5,7,9,11,13), and z-5 works
+by symmetry. Therefore this fixed split works IFF alpha>=5, i.e.
+P<=2h-9. At M28 this excludes pairs25/7,23/9,21/11,19/13 and allows17/15.
+The balanced-ladder theorem above nevertheless handles all five pairs.
+This is not global nonexistence; it identifies precisely the choice to change.
+
+**Predictions BEFORE code/run.** Exactly10 formula calls, no order search:
+all five M28 pairs above at r2,s2,a3,b5; two M28 calls r2,s3,a4,b7 at
+25/21,23/23; M46,r2,s3,a4,b16,p33/q31;
+M78,r5,s4,a5,b18,p63/q63; M12,r1,s2,a2,b2,p9/q7.
+Exactly7 actual E28 partitions (the M28 calls), all checked by both original
+validators with the full move bag and both independent folded-geometry
+checks. Other calls check geometry/bags only. The M46 call must fall in
+branch2 with z0=6 divisible by3, reduce c by1, use z5, then reflect and
+start31. It has exceptional difference12 and gcd1, outside MI186's <=3
+pair-gap and MI177's exceptional-sum residue conditions. M78 checks r5,
+a long exceptional difference and equal positive owners. M12 checks delta0.
+
+Independent restricted-split control: for the SAME five named M28 questions,
+enumerate all roots x,y in0..5, both orders3/5 and both odd owners, with the
+B ladder FIXED. At most720 root/order/owner candidates total; expect zero
+valid top-two placements in the first four and nonzero in the fifth,
+agreeing with the hand iff. This is one fixed-split control, not a whole-cycle
+existence solver or profile census. Every accepted placement gets literal
+geometry and bag checks.
+
+Counterfactual/unexpected: on M46 use unreduced c6,z6 and omit reflection,
+A=(0,3,6,22),B=(6,9,12,16). It keeps original33/31 and the entire negative
+bag/window but shares index6; both folded-geometry checks MUST reject it.
+1CPU sec/64MiB,10 calls/7 partitions, stop any mismatch and retain it; no
+repair, range extension or new census. Uniform result remains SKETCH.
+Gut: warm because rebalancing gives a simpler independent mechanism, not
+because this is the next scheduled lemma. Reasoned: constant companions
+have a reusable exit; arbitrary three-equal companions and general load
+selection remain. MI201 read stays sole requested priority, nonblocking.
