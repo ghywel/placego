@@ -87,16 +87,15 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 22:06 BST:** B173/MI344 directly audits the
-missing-pivot high/low repair in MI337:original ranks exclude every
-listed scalar omission;unavailable endpoint repairs correspond to
-individually forbidden first-bin targets. Two literal smallest-size
-controls exercise the distance3 omissions. This is a self-check of
-the SAME candidate,not independent verification. MI337/338/339
-remain PROOF-SKETCH;novelty UNASSESSED. No run or extra review job.
-Next:check MI337's remaining legal-pivot endpoint coverage against
-the original individual-spectrum exclusions.13min ACTIVE;
-no verified SS3 upgrade or E28/L8 result.
+**Current state,2026-10-17 22:18 BST:** B174/MI345 finishes the planned
+legal-pivot endpoint audit:actual middle-span cases are exhaustive,
+and residual omissions are excluded by a direct rank margin or an
+ORIGINAL individual-spectrum condition. No gap found in this step;
+this is self-audit of the SAME candidate,not independent verification.
+MI337/338/339 remain PROOF-SKETCH,novelty UNASSESSED. No run or
+extra review job. Next reread the central-spectrum join algebra
+from scratch;avoid another finite census or routine guard queue.
+13min ACTIVE;no verified SS3 upgrade or E28/L8 result.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -22383,3 +22382,126 @@ used;low reflection limited to the spectrum;only one repair needed;
 endpoint forbidden sums checked against ORIGINAL individual tests;
 controls satisfy the claimed least-slack orientation.13min ACTIVE,
 E28/L8 OPEN.
+
+
+### MI345 — B174: actual middle-span classification covers the legal endpoints (2026-10-17 22:18 BST)
+
+**Same candidate,self-audit only.** Record searched:
+`MI337|legal.pivot|tight.face` AND`endpoint|trim|spectrum`:20
+hits/3 files. MI333,MI335,MI336 and MI337 section4 read. No
+new external result,experiment or review request. Cloud flags
+unchanged;one fetch/merge up to date. The check follows the actual
+ordered pool,not unpunctured indices treated as values.
+
+Question/kill test before the hand check:can a legal extremal
+pivot leave a scalar omission allowed by BOTH original individual
+spectra and the chosen least-slack orientation? Unexpected check:
+at a tight face,rank bounds alone really can allow a missing
+residual sum;identify the ORIGINAL individual exclusion that rejects
+it. Stop after exhaustive endpoint coverage or a missing inference.
+
+**1. A uniform rank comparison disposes of k>=1.**
+Let original P=0..M minus q have sorted values z_0,...,z_(M-1).
+Choose l low tokens,k high tokens and a legal middle pivot p,
+where l+k=a-1. Remove those tokens to get R of size b+c.
+Deleting the pivot from the middle leaves its r least values
+no larger than z_(l+1),...,z_(l+r),for either r=b,c.
+The protected original bound is F_r=sum(z_a,...,z_(a+r-1)).
+Since a=l+k+1 and distinct integer ranks differ by at least1,
+
+ F_r-min_r(R) >= k*r.
+
+All indices exist because r has a complementary bin of size>=3.
+For k>=1,this is>=3. R is an integer interval with at most
+two deletions;MI336 localizes every scalar omission to within2
+of its extrema. Both lower and complementary upper omissions
+are therefore excluded. Trimming an endpoint deletion only makes
+a full or one-hole interval;it does not invalidate the comparison.
+No assumption that a missing pivot is legal is used here.
+
+**2. For k0,the remaining span is classified exactly.**
+Put l=a-1,v=z_l. Original endpoint q0/M cases already reduce
+to a full interval,so take0<q<M. If p=v,A consists of the
+actual a smallest values:use the tight-face calculation below.
+If p=M,the largest actual value,removing it leaves the original
+first r middle values intact for r=b,c. Consequently
+
+ F_r-min_r(R)=z_(l+r)-z_l >=r>=3.
+
+The possible one original hole may be internal or trimmed;its
+minimum+1/maximum-1 omissions are excluded by these two bounds.
+
+Now let v<p<M. If q>l,then v=l and BOTH q and p are
+internal to[l,M]. This is exactly MI336's internal-hole branch,
+including its explicit repaired triple exception;no endpoint
+claim is being used to dispose of that exception. If q<=l,then
+v=l+1 and q is outside the remaining span. The middle pool is
+the full interval[v,M],with only p removed. Write j=p-v.
+Its r-minimum and original bound are explicitly
+
+ min_r(R)=rv+L(r)+(r-j)_+,
+ F_r=r(v+1)+L(r),
+ F_r-min_r(R)=min(r,j).
+
+Its possible minimum+1 omission requires j=r,so the margin
+is exactly r>=3. An upper omission is the corresponding lower
+omission for the other bin,and uses that bin's same formula.
+This closes the trimmed-original-hole case without a false
+assertion that its minimum is always the full-interval minimum.
+The alternatives q>l/q<=l,p=v/p=M/interior are exhaustive.
+
+**3. Tight first-bin face:use original spectra,not a margin claim.**
+If p=v,A is the least a values. If q<a,the remainder is
+a full interval and rank feasibility supplies the two-bin split.
+Otherwise A=[0,a-1],R=[a,M] minus q. For a remaining size r
+with other size t=M-a-r,the only possible scalar omissions are:
+
+ - q=a+r,requested residual minimum+1. Then the OTHER
+   original target is beta(t)-1 and q=M-t. It is individually
+   forbidden in the ORIGINAL pool by MI333.
+ - q=a+t=M-r,requested residual maximum-1. This equals
+   the SAME bin's original beta(r)-1,again forbidden by MI333.
+
+Here beta is the ORIGINAL maximal-cardinality sum,not a bound
+from a reflected or truncated pool. Conservation gives the first
+identity;the original r largest values remain available in R
+for the second. Thus all tight-face holes are excluded,including
+both kinds when the two remaining sizes happen to agree.
+
+**Hand controls.** On P=0..9 minus1,a=b=c3,take
+A026 (sum8). Its low prefix is02,so v3,and its legal pivot6
+is exactly v+r. The remainder345789 has minimum12 and misses13.
+Original F_3=4+5+6=15 gives the exact margin3;literal
+026/348/579 realizes targets8,15,21. The least original slack
+is3,attained at A's lower face-distance and C's upper one.
+The original missing value1 is below the remaining span,so this
+checks the trimmed-hole branch rather than the two-internal-hole one.
+
+Unexpected negative:P=0..9 minus6,targets(3,13,23),sizes3^3.
+All original rank bounds hold,and A012 is at its minimum. Its
+remainder345789 misses13=minimum+1. The complementary original
+C target23 is maximum24 minus1 and is NOT individually feasible:
+the largest triple is789=24,and the next possible largest is
+589=22 because6 is missing. Thus the original individual-spectrum
+condition rejects this exact residual gap. Rank bounds alone
+would not. No claim that this is a new counterexample or that it
+is admissible under the full candidate hypotheses.
+
+**Outcome,next.** No endpoint gap survives the actual hypotheses.
+This completes the endpoint check promised in MI344,conditional
+on the already stated scalar spectrum calculations and MI336's
+internal-hole repair. It is not a new proof filing or a substitute
+for Cloud's carrying read. The same candidate remains SKETCH;
+no independent status or novelty upgrade. Next useful adversarial
+read is the central-spectrum join algebra of MI339,from its
+endpoints rather than from finite pass counts. Avoid a further
+census or an added queue of routine guards.
+Gut:the satisfaction is that actual values and rank indices now
+line up in the endpoint coverage. Reasoned:a completed planned
+self-check,with its remaining mathematical dependencies explicit.
+Niggle sweep:prefix may skip q;v therefore need not equal l;
+endpoint pivot cannot disturb the least r middle values;the
+internal-hole triple exception is retained;both original spectra
+are used at a tight face;negative control violates the stated
+spectrum condition and is not misreported as a counterexample.
+13min ACTIVE,E28/L8 OPEN.

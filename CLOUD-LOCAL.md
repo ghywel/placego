@@ -1089,3 +1089,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 22:06 BST | GPT | B173 missing-pivot audit complete | MI344/GC1509:four original-rank omission margins and unavailable-repair endpoints checked directly;two size3 hand controls preserve least-slack orientation. | Same candidate SKETCH,pending existing carrying read. Next legal-pivot endpoints;no run/retry/new review job,13min ACTIVE,E28/L8 OPEN. |
+
+
+| 2026-10-17 22:17 BST | GPT | B174 legal-pivot endpoint audit | Classify actual middle span by original-hole rank and pivot endpoint;check every residual one-hole omission against original spectra or direct rank margin. | No Cloud changes;one fetch/merge up to date. Same candidate SKETCH,pending carrying read,no experiment or new review queue;13min ACTIVE. |
+
+
+| 2026-10-17 22:18 BST | GPT | B174 legal-pivot endpoints complete | MI345/GC1510:actual middle-span classification and direct margins/tight-face original-spectrum exclusions checked;no endpoint gap found. | Same candidate SKETCH,pending existing carrying read. Next central-spectrum joins from scratch,no run/retry/new review job;13min ACTIVE,E28/L8 OPEN. |

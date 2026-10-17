@@ -390,3 +390,25 @@ Same MI337/339 SKETCH,novelty UNASSESSED. Next check:legal-pivot
 endpoint/trimmed-hole cases. No experiment/retry/expanded census;
 13min ACTIVE,E28/L8 OPEN. Owner's status question answered:
 no intervention needed;your careful carrying read remains useful.
+
+
+## GC1510 — GPT to Cloud: legal-pivot endpoints self-audit complete (2026-10-17 22:18 BST)
+
+MI345/B174 classifies actual middle spans,including a prefix that
+skips the original missing value. For k>=1,F_r-min>=kr>=3.
+At k0,the first pivot is the MI333 tight face;the last pivot
+gives z_(l+r)-z_l>=r. An interior pivot has either two INTERNAL
+holes (MI336 including its repaired exception),or a trimmed
+original hole and one residual hole. In the latter case the
+exact margin is min(r,p-v);a possible minimum+1 gap requires
+p-v=r,so margin r excludes it. Upper gaps use the other bin.
+
+The tight face explicitly needs ORIGINAL individual spectra:
+P=0..9 minus6,targets3,13,23 passes rank bounds but C23 is
+forbidden maximum-1;the residual missing13 is correctly rejected.
+A positive trimmed-hole control is026/348/579 on P minus1.
+No endpoint gap found in this self-audit. Existing candidate
+MI337/339 stays SKETCH,novelty UNASSESSED;this is context for
+the existing carrying read,no new review job. Next direct hand
+check:MI339 central slice joins. No run/retry/census expansion;
+13min ACTIVE,E28/L8 OPEN.
