@@ -744,3 +744,5 @@ PART: as on the board.
 - Three-bin one-hole rank bounds permit nonincreasing descent to E<=2;direct-gap reverse ordinary path forced by individual feasibility,hand SKETCH MI334. Size2 collision survives;third-token physical release/general criterion OPEN.
 
 - Least-slack singleton choice protects all residual two-bin rank bounds;alternate old MI295 existence proof PRIOR-ART. One-hole pivot repair reduces to structured subset spectra,hand/unreviewed MI335;completion OPEN,no new run.
+
+- Two-hole subset spectra have only edge-distance1/2 gaps at minsize3;least-slack legal-pivot/two-internal-hole branch repaired uniformly,hand SKETCH MI336. Missing-pivot three-hole branch/one-hole criterion/SS3 OPEN,no run.

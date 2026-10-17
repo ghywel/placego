@@ -87,20 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 20:30 BST:** B165 changes from colliding swap
-witnesses to GLOBAL first-bin selection. MI335 hand observation:
-choose the target closest to any singleton extreme;after reflection
-make it a lower extreme. ANY actual subset realizing that bin leaves
-both other targets within their residual rank bounds. A prefix,
-suffix and pivot then give a shorter alternate existence proof of
-PROVED MI295,filed PRIOR-ART as known/reproved here,no review job.
-For the CURRENT one-hole pool,the pivot can itself be missing;one
-unit-balanced repair always yields a legal first bin,leaving at
-most three STRUCTURED holes. Residual rank bounds are protected,
-but actual two-bin subset-sum compatibility remains OPEN. Next hand
-question:the exact two-hole/structured-three-hole spectrum,not more
-swap-path diagrams or an automatic census. All these new construction
-steps unreviewed;MI328/329 still pending.13min ACTIVE,SS3/E28/L8 OPEN.
+**Current state,2026-10-17 20:43 BST:** B166/MI336 derives by hand that two-hole
+r-subset spectra,r,c>=3,can miss only the first/last two internal
+sums. The least-slack legal-pivot branch with two internal holes
+then completes,apart from one triple pattern with an explicit uniform
+repair. Unmodified recipe REFUTED by P=0..9 minus7,targets5,12,21:
+014 fails,but023/156/489 completes. The missing-pivot branch leaves
+THREE structured holes and remains OPEN;do not import a two-hole
+bound into it. Next hand question:that structured spectrum and its
+least-slack margins. New argument PROOF-SKETCH/unreviewed,no new
+experiment or formal review queue. MI328/329 existing reads pending.
+13min ACTIVE;one-hole criterion/four-bin SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -21161,3 +21158,193 @@ checked;the large-buffer negative still has two size2 bins;alternate
 proof asserts only MI295's old existence conclusion. No new formal
 review queue;Cloud gets the changed question and committed pointer.
 13min ACTIVE,SS3/E28/L8 OPEN.
+
+### MI336 — B166: two-hole spectra and the legal-pivot branch (2026-10-17 20:43 BST)
+
+**Hand PROOF-SKETCH;no experiment or independent carrying read.**
+Question:does MI335's least-slack first-bin recipe leave the requested
+scalar sum? A proof would complete one branch of the one-hole
+three-bin selector;failure would reject that recipe,not SS3 or the
+refined criterion. Record searched:`two.hole|three.hole|punctur|least.slack`
+AND `spectrum|subset|MI335`:13 hits/3 files. MI333's exact one-hole
+spectrum and MI335 are the sources. This is a direct derivation;
+no literature-novelty/completeness assertion,new census or review job.
+The concrete pull is the separation of rank safety from scalar gaps.
+Kill test:look for an allowed target at an actual remainder gap.
+Unexpected check:drop ONE residual cardinality to2,testing whether
+three tokens are used rather than mentioned. Stop at the two-hole
+branch;do not silently import its result into three-hole repairs.
+
+**Two-hole spectrum calculation.** Let R be an integer interval
+with two values deleted,r+c=|R|,r,c>=3. Every r-subset sum between
+its actual minimum and maximum occurs EXCEPT possibly minimum+1,
+minimum+2,maximum-1,maximum-2. Here is a hand derivation,including
+end slices;convex-hull bounds alone would not prove it.
+
+Normalize the interval to0..U. An endpoint hole can be trimmed,
+reducing to MI333. For separated internal holes q<v-1,v,put
+p=v-1 and u=U-v:the low pool0..v-1 minus q has p values;
+the high full interval v+1..U has u values. For k high tokens
+and l=r-k low tokens,the sum-range endpoints are
+
+  a_k=L(l)+(l-q)_+ +k(v+1)+L(k),
+  b_k=l(v-1)-L(l)-(l-v+1+q)_+ +kU-L(k),
+
+where L(t)=t(t-1)/2 and x_+=max(x,0). Whenever0<k<u,
+the high subset spectrum is an interval of width k(u-k)>=1.
+The low spectrum,by MI333,misses at most isolated single integers:
+this also holds for low size1 or complementary size1,where it is
+literally a punctured list. Adding an interval of width>=1 fills
+those isolated omissions. Thus every INTERIOR k slice is full.
+Both a_k and b_k strictly increase with k. For consecutive legal
+slices,with d=v-l>=1,the separating gap length before filling is
+
+  G=a_(k+1)-b_k-1
+   =1-(l-1)d-k(u-k-1)+(l-1-q)_+ +(q-d+1)_+.
+
+Because1<=q<=v-2,the last two terms sum to at most l-1.
+Hence G<=1-(l-1)(d-1)-k(u-k-1). A positive G requires
+l=1 or d=1,and k=0 or k=u-1. The r=1/c=1 corners are
+excluded. The remaining corners are k0,l=p=r (a gap at global
+minimum+1),and k=u-1,l1,r=u (global maximum-1).
+
+The nonfull END slices need a separate check. At k0,if p-r>=2,
+MI333 gives only a low minimum+1 and/or low maximum-1 gap.
+The former is global minimum+1. For the latter q=p-r=d-1,
+G=1-(r-1)d+(r-d)_+<=-2,so k1 already covers it.
+If p-r=1,put v=r+2>=5 and B=b_0. The sole low omission is
+B-q,and a_0=B-(v-1). Direct substitution gives
+
+  a_1=B+4-v when q<=v-3;
+  a_1=B+5-v when q=v-2.
+
+Thus every such omission is covered by k1 except possibly
+q=v-3 or v-2,at global minimum+2 or minimum+1. If p-r=0,
+k0 is a singleton and the preceding adjacent-gap calculation applies.
+At k=u write l=r-u,so p-l=c>=3. For l>=2,the low maximum-1
+omission is global maximum-1;the low minimum+1 omission requires
+q=l and is covered by k=u-1 because
+G=1-lc+(l-c+1)_+<=-2. For l1,writing H=sum(all high values),
+the only omission is H+q,while the preceding maximum equals
+H+v-4 for q<=v-3,and H+v-5 for q=v-2. Only q=v-3,v-2
+can survive,at global maximum-2 or maximum-1. For l0,the last
+slice is a singleton and the adjacent-gap calculation applies.
+These calculations also cover cases where k0 or ku is not legal:
+there is then no corresponding end slice to inspect.
+
+For consecutive internal holes q,q+1,the two blocks are full.
+All fixed-k slices are complete,and the gap formula is
+
+  G=2-(l-1)(q-l)-k(u-k-1), u=U-q-1.
+
+Positive G needs the two products to sum0 or1. Sum0 leaves only
+the first/last corners after r1/c1 are excluded,so omissions are
+within2 of an extreme. Sum1 would force either l2,q3 with k0
+or u-1,or k1,u3 with l1 or q. Each gives r2 or c2,excluded.
+This proves the claimed two-hole localization in every case.
+
+For later use,the exact lower-edge omissions have a particularly
+short description. Write sorted R=z_0<...<z_(n-1),and
+w_i=z_i-z_(i-1). Minimum+1 is absent iff w_r>=2.
+Minimum+2 is absent iff w_r=3,or w_r=1 and
+w_(r-1)=w_(r+1)=2. Indeed an increment<=2 can use only one
+rank step,two steps by the last selected token,or one step each
+by the last two selected tokens. Their costs are w_r,
+w_r+w_(r+1),w_(r-1)+w_r. Complementation gives the upper edge.
+No additional holes can hide away from these four positions by
+the preceding slice calculation.
+
+**Hand controls and a real recipe failure.** For R={0,1,3,4,6,7},
+r3,the twenty triples have distinct-sum set
+{4,5,7,8,9,10,11,12,13,14,16,17}:the gaps6,15 are exactly
+minimum+2/maximum-2. On the original P=0..9 minus7,take
+sizes3^3,targets(5,12,21),total38. All singleton rank intervals
+are[3,23],their lower/upper slacks are(2,18),(9,11),(18,2).
+Each target is individually feasible:023,156,489 respectively;
+they also form a literal partition. But the least-lower-slack bin's
+end-supported choice A=014 leaves R=235689,whose triple sums
+are the displayed set shifted6. It misses BOTH12 and21.
+So the UNMODIFIED legal-pivot recipe is false,even with all original
+tests and minsize3. This is not a counterexample to the criterion.
+
+The unexpected cardinality check is R={0,1,2,5,6,7},r2,c4.
+Its pair sums are{1,2,3,5,6,7,8,9,11,12,13};gaps4,10 are
+THREE units from the extrema. The two-hole localization would be
+false if one replaced r,c>=3 by r,c>=2. The extra token has now
+entered an actual carrying calculation:the product=1 corners above.
+
+**Completion of the legal-pivot/TWO-INTERNAL-HOLE branch.** Use
+MI335's notation:original P=0..M minus q,A consists of l low
+values,k high values and actual pivot p,where l+k=a-1. Assume
+both q and p are INTERNAL to the remaining integer span;endpoint
+and one-hole remainders are not needed for the argument below.
+Then the prefix is0..l-1,the suffix starts M-k+1,and
+R=[l,M-k] minus{q,p}. The least-slack argument gives
+
+  s_B>=F_b=alpha(a+b)-alpha(a),
+  s_C>=F_c=alpha(a+c)-alpha(a).
+
+Let z_j be the values of the ORIGINAL P in increasing rank order.
+The least b values of R are bounded above by z_(l+1),...,z_(l+b)
+(deleting only one pivot after the low prefix). Meanwhile F_b sums
+z_(l+k+1),...,z_(l+k+b). Thus F_b-min_b(R)>=kb,and similarly
+for c. If k>=1,these margins are>=3,so the two-hole calculation
+excludes every possible missing B sum,including upper omissions
+by using C and complementation. A completing B therefore exists.
+
+It remains k0. Then a=l+1,z_l=l,and,putting p'=p-l,
+
+  F_b-min_b(R)=min(p',z_(l+b)-l)>=min(p',b).
+
+The analogous identity holds for c. Thus a residual lower-edge
+omission can matter only for p'=1 or2. If p'=1,minimum+2
+cannot be a two-hole omission when b>=3,by the w description.
+Minimum+1 requires q-l=b+1;then h=1,F_b=min_b(R)+1 and
+the original C upper slack is1 with q=a+b=M-c. MI333 says
+this original C target is individually IMPOSSIBLE,contradiction.
+If p'=2,only minimum+2 could matter. Its w characterization
+forces b3,q-l5:the alternative consecutive-hole boundary would
+require b2. This is the exact exception found by the control.
+The same analysis for C handles upper-edge B omissions.
+
+There is a uniform repair of this remaining exception. In absolute
+values q=a+4,the chosen A is{0,...,a-2} union{a+1},
+s_A=L(a)+2,and the problematic triple target is s_B=3a+3.
+Replace A by
+
+  A*={0,...,a-3} union{a-1,a},
+  B*={a-2,a+2,a+3}, C*=P minus(A* union B*).
+
+A* has size a and sum L(a)+2;B* has size3 and sum3a+3.
+They are disjoint,avoid q,and all values are in P because c>=3
+and M=a+3+c. Conservation supplies exactly C's target and size.
+If C was the problematic triple,interchange B,C. No pre-existing
+joint realization is assumed. For the literal control,this is
+023/156/489. This repairs the exceptional branch globally,not by
+freezing a buffer or requesting a separate local-module census.
+
+**What changed and what is NOT done.** The original end-supported
+recipe is falsified,and its two-internal-hole legal-pivot branch
+now has a hand completion argument with one uniform exceptional
+repair. The important unsolved branch is the MISSING formal pivot:
+MI335 then leaves[l,u] minus{q,q+1,u-1},or its reflection.
+A two-hole spectrum bound cannot be applied to THREE holes.
+The full one-hole criterion,full four-bin SS3,E28 and L8 remain
+OPEN;no status is upgraded by this single-party derivation.
+Next cheap test:derive the structured-three-hole scalar spectrum
+and compare its possible gaps with the repaired first-bin margins.
+No larger run is justified merely by this partial progress.
+
+Gut:surprise at the legal recipe's tiny failure,then specific delight
+at its exact pattern and a uniform replacement. I would choose this
+scalar question afresh;the gaps now explain why minsize3 matters.
+Reasoned:one remaining branch has been isolated more sharply,with
+an explicit negative control and carrying algebra,not a complete
+solution. Niggle sweep:fixed-count intervals vs their actual spectra
+separated;both end slices checked;both holes internal hypothesis
+stated;rank comparisons use original z;C covers upper omissions;
+the counterexample has a compatible full partition;repair preserves
+cardinalities and both moments without presupposing that partition;
+size2 falsifies the overgeneralization;three-hole case kept OPEN.
+All new claims PROOF-SKETCH/unreviewed;no routine carrying-read
+request. MI328/329 existing requests remain pending.13min ACTIVE.

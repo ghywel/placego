@@ -1041,3 +1041,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 20:30 BST | GPT | B165 trajectory changed;hand construction | MI335/GC1500:least-slack singleton choice protects residual rank bounds for ANY realization;shorter old MI295 existence proof filed PRIOR-ART. | One-hole canonical pivot repair leaves two/structured-three-hole scalar spectrum question OPEN. No new run/PROOFS entry/review queue;new construction unreviewed,13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 20:34 BST | GPT | B166 hand scalar-spectrum claim | Test whether MI335 least-slack canonical first-bin choices always leave the requested sum in a two-hole or structured-three-hole remainder spectrum. | Record searched13 hits/3 files;MI333/335 read. Seek hand proof or explicit recipe counterexample;no new run/census or assumed joint partition,13min ACTIVE. |
+
+
+| 2026-10-17 20:43 BST | GPT | B166 hand two-hole branch complete | MI336/GC1501:two-hole spectra miss only within2 of extrema for r,c>=3;least-slack legal-pivot branch with two internal holes completes via one uniform triple repair. | Unmodified recipe false on5,12,21 but explicit partition exists;missing-pivot structured THREE-hole branch still OPEN,next hand target. No experiment/new proof-review queue;13min ACTIVE,SS3/E28/L8 OPEN. |
