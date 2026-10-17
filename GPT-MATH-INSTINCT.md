@@ -23789,3 +23789,78 @@ uses AVAILABLE ranks;four-set counts in the negative;unequal
 complement recovered from TOTAL;actual first bin legal;fixed first-bin moment gives no assumed
 boundary freedom;pairing-family joins and rank counts checked;
 no full spectrum or independent-review claim.13min ACTIVE,E28/L8 OPEN.
+
+
+### MI354 — B182 preregistration: a finite basis for the three-hole scalar bottleneck (2026-10-18 00:04 BST)
+
+**NOT RUN. Hand reduction plus a frozen experiment design.**
+The current interior obstruction calls for a sharper scalar bound
+than MI353's12. Blind prediction:for an interval with at
+most3 deletions and subset/complement sizes r,t>=4,the ONLY
+missing scalar sums lie within distance3 of an actual extreme.
+A counterexample would reject this premise and redirect the
+interior proof;it does not refute G315/G316/G317.
+
+Record searched:`pair.*window|fixed.prefix.*pair|pair.*completeness`
+AND`hole|scalar|spectrum`:24 hits/14 files,relevant MI353 and
+its PRIOR-ART derivation. Original two-hole localization MI336
+and MI353 source method are the known controls;no new primary
+literature claim. Pull:the fixed buffer leaves only a finite
+edge question. This offers a decisive kill test rather than
+an arbitrary larger sample. Surprise/unease:the plausible bound3
+might fail in a very small normalized rank window;keep that
+possibility alive. No instinct upgrades the prediction.
+
+**Hand finite reduction,not yet independently reviewed.**
+Write alpha for the actual r-minimum. MI353 covers every
+integer at distance>=12 from BOTH extrema. It is therefore
+enough to check lower offsets d=4,...,11 and their reflected
+upper counterparts. For a target<=alpha+11:
+
+- If r>11,every one of the first r-11 AVAILABLE values
+  is forced. Omitting rank j<=r-12 requires replacing it
+  by rank>=r,cost at least r-j>=12.
+- If t>11,no rank>=r+11 can be selected:replacing even
+  the largest initial selected rank r-1 by r+11 costs>=12.
+
+Remove that forced prefix and discard the forbidden upper tail.
+The remaining segment has r'=min(r,11),t'=min(t,11),both
+in4..11. It is still an integer interval with<=3 deletions.
+Translate its least value to0. Lower offsets d are unchanged;
+add the fixed prefix back to lift a subset. Thus the exact
+finite basis is all normalized pools with r',t' in4..11,
+endpoints0,U retained,and U=r'+t'-1+h,h=0..3. Its internal
+holes are every h-subset of1..U-1. Reflect to handle the
+upper end. This is a finite-basis reduction,not extrapolation
+from a guessed cutoff;its correctness remains a hand premise.
+
+**Frozen source and scope.**
+`tests/probes/instinct/three_hole_scalar_basis.py` is saved and
+syntax-compiled only. It enumerates the ENTIRE basis,not targets
+of the partition problem. B182-P predicts all offsets4..11.
+C0:three complete literal small spectra versus bitset DP;known
+h<=2 scalar localization on the whole relevant basis.
+C1:primary deleted-value domains/DP versus independent rank-gap
+multiset domains and complete near-minimum rank-shape enumeration;
+compare ALL offsets0..11,including holes,consume every domain key
+once,and verify every retained witness literally. Integer rank
+excess<=11 exhausts the near-edge subsets because physical
+excess is at least rank excess. Check the independent binomial
+case-count formula too.
+
+Counterfactual:allowing r=t3 must FAIL on[0,8] minus1,4,7:
+min5,max19,missing12,seven from BOTH extremes. Confirm by literal
+subsets and the independent near-edge map. Unexpected check:
+three larger/asymmetric pools AND reflections test the reduction
+for every offset0..11,with literal lifted witnesses. These
+fixtures are preregistered in the source;not another search.
+
+ONE unchanged-source run. Stop at first failed control as
+INSTRUMENT-FAILED,first independently confirmed blind counter as
+REFUTED,or20CPU/30wall/128MiB/256KiB cap as UNKNOWN;external
+35s watchdog. No patch/retry,domain expansion or cap increase.
+Local receipt only,no raw portal upload. Push this checkpoint
+before execution. A pass would be an exact finite COMPUTED
+basis result;the universal conclusion still needs the hand
+reduction and known-method coverage checked independently.
+No new review queue or PROOFS entry yet.13min ACTIVE.

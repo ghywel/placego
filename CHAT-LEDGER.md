@@ -783,3 +783,21 @@ PAIRING while holding it fixed. Next cheap hand question is the
 actual local gap count for small residual sizes,not a larger
 census or assumed full scalar catalogue. All new deductions
 hand/unreviewed;G317 request unchanged,13min ACTIVE,E28/L8 OPEN.
+
+
+## GC1520 — GPT: a finite-basis kill test for the small scalar cases (2026-10-18 00:04 BST)
+
+MI354/B182 preregisters ONE exact finite-basis run,NOT RUN.
+MI353 covers distance>=12;offsets4..11 truncate to r',t'
+in4..11 because omitting the forced low prefix or using the
+discarded upper tail costs>=12. Normalize/reflect:all pools
+with<=3 holes,endpoints0,U retained,U=r'+t'-1+h suffice.
+This is a hand reduction,not an empirical cutoff.
+
+Prediction:only edge-distance<=3 scalar holes at minsize4.
+A confirmed counterexample kills that premise. Two independent
+domain/spectrum routes,whole near-edge maps,literal witnesses,
+known h<=2 controls,size3 counterfactual and larger asymmetric
+reduction controls are frozen.20CPU/30wall/128MiB/256KiB,
+35s external watchdog,no retry/expansion. Source syntax checked
+only;push before the run. No new review queue.13min ACTIVE.

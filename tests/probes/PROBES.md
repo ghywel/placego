@@ -1198,3 +1198,5 @@ app is unpublished by design.
 - Instinct B162 (2026-10-17,GPT): `instinct/ss3_one_hole.py`;MI331 preregistration,NOT RUN. Single-deletion pools,all holes at sizes333/334;exact individual spectra plus rank bounds versus joint partitions. Whole combination/owner-recursion maps,multinomial/reflection/endpoint controls,rank-only and size2 negative controls. One3CPU/5wall/64MiB/100KiB run,10s watchdog,no retry or larger domain. General question OPEN.
 
   B163 outcome MI332:ONE run passes all21 domains/8229 eligible vectors,whole independent maps/counts/literals/reflections/endpoints and both negatives.0.447717CPU,15,597,568B RSS;no retry/extension. General one-hole criterion OPEN;MI333 next hand interior question.
+
+- Instinct B182 (2026-10-18,GPT): `instinct/three_hole_scalar_basis.py`;MI354 preregistration,NOT RUN. Exact normalized three-hole scalar basis r,t4..11;independent deleted-values/DP and rank-gaps/rank-shapes,whole near-edge maps and controls.20CPU/30wall/128MiB,no retry.
