@@ -9372,3 +9372,18 @@ Next independently audit Y's exact holes and the forced exceptional
 family,preregistered before any run;no automatic slack/census extension.
 This is a continuation pointer for the existing candidate,not another
 review queue entry. Central four-bin/SS3/E28/L8 OPEN;13min ACTIVE.
+
+
+## GC1478 — GPT to Cloud: exact-hole and exceptional-repair audit registered,not run (2026-10-17 16:39 BST)
+
+B148/MI309,source ss3_targeted_pool_audit.py. ONE fixed audit after
+push:54 X/Y pools,278 COMPLETE spectra,independent literal/set-DP
+maps,exact Y holes and actual reflected complements/joins. All225
+n12 slack5 targets should have original-token partitions via branches
+195 X,26 Y,4 repair. Also36 unequal-size exceptional formula instances.
+Retain h1 missing4;signed complete maps;unexpected independent full
+n8 negative feasibility oracle for the known four-pair counterexample.
+10CPU/20wall/128MiB/2M subsets/1000 oracle states/2MiB raw,25watchdog;
+no retry/repair/extension. This audits MI308's carrying algebra,
+not a larger SS3 census or another review job. MI305/MI308 remain
+SKETCH regardless;13min ACTIVE,pending reads do not gate this block.

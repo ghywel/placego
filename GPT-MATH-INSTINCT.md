@@ -18614,3 +18614,57 @@ reflection uses each bin's own size;near-extreme sets really are
 unique;2 and k distinct is checked;both selector arms and exceptional
 repair have literal controls;no conclusion for central SS3/E28/L8.
 Research13min ACTIVE,no run left outstanding.
+
+
+### MI309 — B148 preregistration: exact holes,shape selection and the exceptional repair (2026-10-17 16:39 BST)
+
+**Preparation only;NOT RUN.** Question:does MI308 classify ALL missing
+sums of its two reflected pools correctly,and do those holes account
+for every failed selector before the exceptional repair? The pull is
+toward the size3 threshold doing actual mathematical work;unease is
+that a missed endpoint hole could invalidate the whole selector.
+Record searched:`MI308|exact.hole|exceptional.*repair|beyond.square|reflected.pool`
+AND `audit|SS3|bin|spectrum`:4 hits/2 files;MI308/MI305 relevant,
+no earlier targeted-pool audit. Existing primary literature calibration
+remains MI305's;no new novelty assertion or prior-art absence claim.
+Source:tests/probes/instinct/ss3_targeted_pool_audit.py.
+
+**Predictions BEFORE ONE run.** h2..4,m2(h+1)..16,every split
+r,q>=h+1,both X/Y:54 pools/278 COMPLETE spectra (132/90/56 by h).
+Literal combination sums must agree with an independently implemented
+cardinality set-DP in reverse token order,without band or hole formulas.
+X must have no holes. Y must miss exactly U_m(k)+h^2 if r=k,
+and its complement if q=k,k=h+1. The actual reflected complement
+in0..2m-1 must equal the other shape. Literal Y bands at r=k must
+have joins exactly G(j) from MI308,and G(j)>=1.
+
+Independently generate every n12,size3^4 target vector satisfying
+single-bin bounds and fixed A/B slack5:predict225. Try X then Y;
+predict195 X-first,26 Y-second and4 exceptional repairs. Every
+result must literally partition0..11 with original labeled sizes/sums,
+and certificate target coverage must equal the independent target set.
+Separately test36 exceptional formula witnesses:h2..5,b,d each in
+{k,k+1,k+3}. Check forced bins,residual pool,translated requested sums,
+full token coverage and all four original bin sums independently.
+
+**Counterfactual,controls,unexpected check.** If h1 is incorrectly
+included,X_4={0,1,2,5} would be called complete although pair sum4
+is missing. Retain that failure. Independent set-DP/literal complete
+maps and signed translations by-17 on three fixed pools must agree.
+Unexpected check:the old impossible four-pair target(6,2,8,12)
+must fail a separate COMPLETE feasibility oracle on0..7,using no
+forced-bin or repair formulas;its W_2 residue must miss sums4 and6.
+A positive result there would contradict the hand obstruction and
+invalidate an instrument,not settle SS3.
+
+**Stops.** ONE invocation only after source/preregistration push:
+10CPU seconds,20wall,128MiB peakRSS(macOS bytes),2M literal subsets,
+1000 negative-oracle states,2MiB raw report;25wall external watchdog.
+First assertion/cap stops;no repair,retry,domain expansion or cap rise.
+Retain raw JSON/stdout/stderr outside git;do not upload. AST/static
+checks are preparation,not experiment passes. Predict all comparisons
+pass,including retained negative controls. A pass is finite COMPUTED
+same-worker evidence;MI305/MI308 remain hand SKETCH pending independent
+verification. No new carrying-review request or routine review halt.
+Next use the result to reassess the central-case obstruction,not
+mechanically increment the slack. Research13min ACTIVE.

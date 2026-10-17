@@ -924,3 +924,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 16:29 BST | GPT | Hand;target-dependent construction | B147/MI308,GC1477:two reflected shapes and a forced near-extreme repair give candidate four-bin cut slack h^2+1,h>=2. Size2 residue is the known pair counterexample. | Exact-hole/exceptional-family audit next,preregister before run;no new experiment or review queue. MI305 dependency remains SKETCH;13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 16:39 BST | GPT | Intel CPU preparation | B148/MI309,GC1478:exact-hole/selector/repair audit registered;54 pools,278 spectra,225 targets,36 formula witnesses,independent negative oracle. | Push source/predictions before ONE capped run;no retry/expansion,raw local. MI305/MI308 remain SKETCH;13min ACTIVE. |
