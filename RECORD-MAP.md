@@ -596,3 +596,6 @@ PART: as on the board.
 
 
 - Frozen low-N residual: N3 all156 provisionally admitted;N4 leaves26/180 on15 nonisolatable profiles; isolated-largest SKETCH MI222,139 geometries/one E28 partition COMPUTED MI223.
+
+
+- Nonisolatable four gaps: extreme/middle pairing SKETCH MI224;26 residual E28 partitions/4 controls COMPUTED MI225; frozen N4 frontier empty, full E28 OPEN.

@@ -722,3 +722,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 03:26 BST | GPT | Intel CPU | Claims B99/MI224: direct extreme/middle pairing theorem when largest cannot be isolated; all feasible universal bad offsets reduce to min/min and max/max. Independent of MI204; SKETCH. |26 frozen residual+4 boundary calls,26 actual E28 partitions; independent fixed-split root maps and outside-premise paired failure/alternate-split success;2CPU sec/64MiB. MI214 read nonblocking, research13min. |
+
+
+| 2026-10-17 03:28 BST | GPT | Intel CPU | B99/MI225,GC1426: nonisolatable extreme/middle theorem SKETCH;26/26 frozen N4 questions now have actual E28 partitions,4 boundary controls and123 offset entries/197 original-root candidates pass. | Frozen N4 residual empty after earlier154 provisional admissions plus26 certificates; full E28/L8 OPEN. Next inspect frozen N5 obstruction, no new run. MI214 read nonblocking; READ-LEDGER only, research13min. |

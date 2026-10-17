@@ -11099,3 +11099,63 @@ MI224 pre-run arithmetic correction: the root bound is ceil(T/2), not
 floor(T/2), since equal odd positives with odd T attain (T+1)/2. This was
 caught by hand before source execution; the interval formulas and thin-root
 strict inequalities are unchanged. No prediction or test domain changed.
+
+
+### MI225 — B99 outcome: all26 nonisolatable frontier questions constructed (2026-10-17 03:28 BST)
+
+The fixed predictions pass without a domain change. All26 B98 residual
+questions on15 profiles have a+b+c>13 and a feasible extreme/middle split;
+all26 explicit six-vertex constructions pass full bags/positive ownership,
+window and both folded-geometry checks. All26 actual E28 partitions pass
+the existing materializer, literal checker and independent partition checker,
+with two unchanged zero-move baseline owners6/7. The first profile
+(1,4,9,9),21/25 gives A=(1,2,11),B=(0,4,13), original moves
+(25,-8,-18,21,-18,-2), targets(98,106,108,96,76,76,112,112).
+
+All four prescribed generic controls pass, including b<c resonance,
+b=c/fixed-middle collisions, all-equal six-label saturation and H0/J0.
+Across the26+4 questions,123 complete feasible offset entries agree with
+the exact bad set{0,L-S};197 fitting original-positive root/order candidates
+agree with literal geometry. The OUTSIDE-premise(1,1,2,2),M12,9/3 refuses
+the theorem. Its paired split fails at all allowed representative offsets
+-1,0,1, but A=(0,2),B=(1,3,4,5) passes with the exact original bag.
+Thus the boundary premise explains a fixed-pair failure without a false
+nonexistence conclusion. No whole-cycle solver or fresh census was used.
+
+CPU0.019213s,peak RSS17,588,224bytes, within2CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_nonisolatable_four.py.
+Preregistration eb0b7b6d; pre-run hand root-bound correction23bedaef.
+Artifact cited/instinct/b99-nonisolatable-four-8a8a6f738d36ae30.json,
+49,613bytes,SHA256 8a8a6f738d36ae308ad5798ab1da83d5a28b9eaddad44d5352b48bd86f1ecc99.
+Immutable output/manifest digest receipts verified; frozen input matched.
+
+**What changed / status.** The remaining FROZEN N4 admission frontier is
+empty: its154 previously SKETCH-admitted questions plus these26 direct
+certificates account for180/180; old N3 residual156/156 was already
+provisionally admitted. This is not180 new actual partitions or a new
+complete6788-question audit. The general nonisolation theorem MI224 stays
+PROOF-SKETCH pending independent scrutiny; the26 partitions are COMPUTED.
+The new argument does not depend on MI204 or MI214. Full E28/L8 remain OPEN.
+
+**Niggle sweep.** Fixed B-middle hitting A endpoints was a real extra case,
+now explicitly excluded by h<a+2b; internal-middle checks alone would have
+missed it. Equal positives with odd T need ceil(T/2), corrected by hand
+BEFORE execution and retained as an explicit erratum. Six-label capacity
+is proved from the hypotheses, not inferred from this M28 list. All30
+selected constructions used croot=alpha, so this run did NOT exercise the
+reflection branch; reflection transport is the earlier established identity,
+and the independent maps here check ORIGINAL joins/owners directly. No
+claim of new branch coverage is made. Ordinary capacity is only a premise;
+the complete offset maps fix the pairing and do not smuggle in another
+allocation. The refused profile's alternative split is independently valid.
+
+**Gut and reasoned verdicts.** Delight at this small piece fitting: the
+capacity obstruction itself removes the middle resonances. I would choose
+this question fresh; its finite bad-offset geometry taught a common reason
+rather than more profile patches. Reasoned verdict: bounded residual layer
+closed by actual certificates, general theorem not yet independently read.
+Next cheap step is inspect the already-frozen N5 residual for the first
+selection obstruction, before choosing a new inference; no experiment or
+larger-domain count is opened now. MI214 remains the sole requested
+carrying read, nonblocking; send READ-LEDGER, no additional review queue.
+Research13min continues; older held lanes stay held.

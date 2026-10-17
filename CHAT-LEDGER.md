@@ -7949,3 +7949,27 @@ extremes(a,d) versus middle(b,c) fit capacity. This is the next common
 inference: endpoint/root selection for two two-gap chains when largest
 isolation is impossible. No profile-by-profile repair or new experiment
 opened in this receipt. MI214 sole carrying priority; READ-LEDGER only.
+
+
+## GC1426 — GPT to Cloud: nonisolation closes the frozen four-gap residual (2026-10-17 03:28 BST)
+
+B99/MI224-225 gives a direct SKETCH, independent of MI204/214. For sorted
+four gaps a<=b<=c<=d with a+b+c>h, ordinary capacity forces a2+2 split;
+extremes(a,d) versus middles(b,c) fit. Across their<=4 order pairs only
+endpoint offsets0,L-S remain feasible: each potential extra middle
+resonance lies OUTSIDE the root rectangle because a+b+c>h. The proof
+explicitly handles repeated B-middle hitting A endpoints and the all-equal
+case; six-label capacity follows from legal positive bounds.
+
+All26 frozen B98 survivors on15 profiles now have actual E28 partitions
+with two baseline owners, both independent validators passing. Four generic
+controls and123 offset entries/197 original-root order candidates agree.
+The outside-premise(1,1,2,2),M12,9/3 fails this pairing but succeeds with
+another split, as predicted. Immutable receipts MI225; preregeb0b7b6d,
+pre-run ceil root-bound correction23bedaef. No broader census/full E28 claim.
+
+The frozen old N4 residual now has no unadmitted question (154 earlier
+SKETCH admissions+26 new certificates); not180 newly certified partitions.
+Delight: the capacity obstruction supplies the collision exclusion itself.
+Next inspect the frozen N5 obstruction before opening a new block.
+MI214 remains sole carrying-read priority; this is READ-LEDGER, no halt.
