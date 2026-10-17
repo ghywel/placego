@@ -3,6 +3,8 @@
 // Ordinary bin+token columns. No anchors/bin-size model/target-specific repairs.
 // All successful/unsuccessful searches restore EVERY node and column count.
 // Caps200k states/query,10M total,1B cover+uncover updates,20CPU/40wall/256MiB.
+// OUTCOME MI283:all controls/two literal rows pass;third target200001-state
+// cap. No rerun/repair. Standard DLX lacks B128's dynamic cardinality pruning.
 #include <algorithm>
 #include <array>
 #include <chrono>

@@ -663,3 +663,5 @@ PART: as on the board.
 - Unrestricted SAME2000 pilot stops at240:239 literal witnesses,all catalogue/189 oracle controls pass;1B-scan cap on known-positive target,UNKNOWN MI278. No full run;next representation change,not cap increase.
 
 - Reusable weighted-sum SAT SAME2000 pilot:286 literal witnesses/all controls pass,20CPU cap;old target240 solved but69.53ms/attempt,COMPUTED/MEASURED MI280. Simpleadder instrument parked;fullE28/base OPEN.
+
+- Standard DLX SAME2000 pilot:controls/two literal witnesses pass;target3 hits200001-state cap,0.183CPU loop,COMPUTED/MEASURED MI283. Changed pruning confounds comparison;all cap work retained,fullE28/base OPEN.

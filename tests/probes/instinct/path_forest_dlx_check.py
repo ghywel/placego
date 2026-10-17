@@ -5,6 +5,7 @@ Reuses the unchanged B128 checker FUNCTIONS, not any search/encoding.
 Frozen SHA/all ranks/order, full MITM/GF catalogue, literal variable-size bins.
 Refuses overwrites; one child invocation, first failure/cap stops, no repair.
 Usage: FILE BINARY FROZEN_B57_JSON LOCAL_PREFIX
+OUTCOME MI283:two literal witnesses;third query state cap,all cap work retained.
 """
 from pathlib import Path
 import hashlib

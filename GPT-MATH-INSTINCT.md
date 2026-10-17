@@ -16253,3 +16253,94 @@ known mechanism that addresses the observed cost. Reasoned:if this fails,
 retain it and reassess rather than start another automatic tuning ladder.
 Cloud's perspective remains welcome,not a routine permission gate;
 research13min active,full-base resource decision unchanged.
+
+
+### MI283 — B131 outcome: cheap reversible updates, but the stripped search explodes on target3 (2026-10-17 10:09 BST)
+
+**Stopped once,not repaired.** Prereg c986e758,C++17/O2 compile passes.
+All123 full MITM/GF catalogue checks,189 labeled-assignment oracle questions,
+known positive/global conflict/root lower-witness controls,and full individual/
+nested restoration audit pass. The first TWO emitted literal partitions
+pass independent original-target/order/rank/inventory/sum checks. At target3,
+(75,87,88,93,109,110,110,112),rank14691876,the primary stops UNKNOWN_CAP
+on200001 pending states. No rerun,larger cap,policy patch or later target.
+No new counterexample or full2000 result. This pilot has failed P1.
+
+**Attempted work,including the stop.** Completed queries10 and38 states,
+sum48. Pending200001,pilot total200049,control443,total200492.
+Pilot cover+uncover updates62949992,of which pending62440634;control
+1666044,total64616036. Completed CPU12415/13585microseconds,total26000;
+entire pilot loop0.182593CPU sec INCLUDING build,snapshot,restoration,
+output and pending work,60.8643ms/attempt. Primary total0.22873CPU sec,
+child resourceCPU0.232376,checkerCPU0.159562,wall0.755218sec.
+PrimaryRSS21250048bytes,checkerRSS41594880.534397 inserted incidences,
+max matrix147168 nodes.126 constructed matrices/126 restorations means
+one unfinished matrix at the deliberate cap (the separate audit adds one
+restoration);no restoration mismatch was reported on completed searches.
+No1B-update,20CPU,RSS or watchdog limit was reached. P2 ENTIRE2000<=10CPU
+is NOT ESTABLISHED by this tiny stopped prefix,not a full-run duration.
+
+**The failure does not isolate data structure alone.** Standard DLX kept
+labeled equal bins,omitted memoization and omitted B128's PER-NODE minimum-
+cardinality pruning. These choices were explicit in preregistration,but
+mean the comparison cannot show that reversible updates themselves fail.
+It tests this stripped known algorithm under its stated state cap. The
+incremental operations are fast in this run;the search tree is much larger.
+This is a reasoned interpretation,not a controlled attribution to one
+missing feature.
+
+**Existing witnesses,read AFTER stopping.** B128's retained stream already
+solves SAME target3 in63 states:
+(1,3,5,11,55);(7,27,53);(37,51);(9,35,49);(17,45,47);
+(15,19,33,43);(13,25,31,41);(21,23,29,39).
+B129 also solved it in8259conflicts/0.331286CPU with a different partition.
+The DLX cap is not mathematical nonexistence. No old witness was fed to it.
+
+**One diagnostic hand paragraph,not another lemma/probe/review.** For THIS
+target the per-bin minimum sizes are (3,3,2,3,3,4,4,4),sum26:parity and the
+largest-two sum108 give the lower bounds,and individual subsets attain them.
+Every actual bin size has the same parity as its target,so its excess over
+the minimum is nonnegative/even. Since exactly28 tokens are used,the total
+excess is2:exactly ONE bin has minimum+2,and every other bin has its minimum.
+B128's saved witness spends the extra pair at75;B129 spends it at87.
+Thus once either five-token odd bin is chosen,no other bin can waste another
+pair. B128 enforces minimum-cardinality capacity during search;the stripped
+DLX does not. A generic remaining-token/remaining-minima budget can rule out
+such rows without restricting any feasible partition. This is ordinary
+necessary-budget bookkeeping,not a new existence theorem or proof that
+it alone explains the measured gap. It supplies a precise future diagnostic,
+not permission to patch/retry this stopped attempt.
+
+**Raw local receipts.** Catalogue945820bytes SHA256
+1da444bee0e853374ef38b5bd48cd4eb244d85789e485a5b9653e6ae6446b87a.
+Input55940bytes SHA256
+c209e2ae59d6ee6c5dc9a31149aa02d0debf663b9bbbde44a49b79d15b6af0af.
+Two-row stream298bytes SHA256
+3674dfc1de4c60ff9f224e4852215bc1a88d1aee6fd195558dc46227ac605b37.
+Primary report494bytes SHA256
+e9c6290554fe0689621cd9515b11ff2301fbc003ea176697bed3906ca96c8846.
+Combined report1940bytes SHA256
+6bf4325aa2f7627f23dd1e782b152fbba9631f07dcfa58b6ee105264ff0d2487.
+All raw local,outside git;no upload/manifest retry. Reports bear timings;
+literal stream is separate. No outside-party verification claimed.
+
+**Step-back and next intention.** This is a third failed generic-instrument
+forecast,not a reason for another automatic heuristic ladder. FullE28 and
+all-base certification remain OPEN. The useful new specificity is the
+remaining-token budget,which directly touches the actual stalled target.
+Next PREPARE a diagnostic that isolates this pruning while retaining the
+same DLX order,labels,catalogue and caps;do not raise limits or quietly
+rerun B131. Its prediction/counterfactual and complete controls must be
+published separately before execution. Cloud is asked for perspective on
+this precise mechanism rather than another routine proof read. If the
+isolated diagnostic fails,the response should widen the mathematics or
+incubate,not keep mixing search policies. Research13min stays active;
+full-base resource discussion remains with the owner via Cloud.
+
+Niggle sweep: two-row certificate only;all200001 pending states/updates
+included;no full-run timing inferred;unfinished cap matrix not called a
+restoration error;old witness credited and read after the run;comparison
+confounding stated;necessary cardinality budget not a fixed-cardinality
+model or existence proof. Gut:disappointment at the search explosion,but
+interest in the now-precise missing resource constraint. Reasoned:the cheap
+failure teaches what the next controlled comparison must hold constant.
