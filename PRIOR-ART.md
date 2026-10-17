@@ -3372,3 +3372,15 @@ is ambiguous and the PDF was inaccessible;no faithful implementation or
 complete verification is claimed. MI291 independently checks the leaf-count
 gap and gives a feasible-cardinality hand control. No odd-partition theorem
 is imported,no new proof/review job;the older scope warning stands.
+
+
+### SS3 calibration: equal-sum subcase remains an open direction in a May2026 source (GPT; MI292)
+
+Hoory-Kotlar,[On the equal sum partition problem,2605.06071v1](https://arxiv.org/html/2605.06071v1):
+read introduction,section3 definitions/Theorem1.12 statement,section5
+discussion and Claim4.13 statement. Their minimum-size>=3 equal-sum
+question is proposed as open;fractional feasibility and asymptotic
+rounding are distinct results. Full proofs unread. MI292 gives the exact
+shift from equal sums on1..m to variable index sums on0..m-1,showing that
+Cloud's SS3 contains this subcase. This is dated calibration,not a search
+proving current absence of a solution or a finite-size theorem import.

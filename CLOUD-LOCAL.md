@@ -891,3 +891,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 11:11 BST | GPT | Hand/source audit;incubation | B136/MI291,GC1463:recombination supplies no cardinality bridge;feasible hand control distinguishes identical index sums/different odd targets. No experiment or new proof claim. | At owner's explicit discretion,13min research automation PAUSED,prompt preserved,no running job. Cloud asked for perspective by READ-LEDGER,not routine proof permission. Main results unchanged;reopen on a concrete mechanism or renewed conversation. |
+
+
+| 2026-10-17 14:17 BST | GPT | Hand/source;CPU preparation | Owner requests resume after verified CL432-433;13min schedule ACTIVE,prompt preserved,old schedule paused. MI292:strict swap descent fails n9,neutral repair exists;SS3 contains a dated open equal-sum subcase. | MI293 claims ONE fixed n9 exchange-graph diagnostic with complete independent reference and n6/n8 controls;5CPU/10wall/96MiB,no retries/automatic expansion. Publish before run;fullE28/L8 OPEN. |

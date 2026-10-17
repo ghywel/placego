@@ -81,6 +81,12 @@ or automatic flag poll continues. Cloud is sent a committed perspective
 check-in through the portal. A concrete new mechanism or renewed direct
 conversation can reopen the work;routine review is not a permission gate.
 
+**Resumed,2026-10-17 14:16 BST:** the owner requests restart and continuation
+after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
+13-minute schedule is ACTIVE again with its existing prompt. The older
+research schedule stays paused. B137/MI292 audits the proposed SS3
+exchange mechanism and primary literature;the incubation above is history.
+
 ## 1. Frankl's union-closed sets conjecture
 
 ### MI001 — The pull (2026-10-15 16:12 BST)
@@ -16935,3 +16941,139 @@ Operational receipt:the final fetch for this handoff was made less than
 four minutes after the preceding one. That interval check failed;it was
 not an authentication failure or a login retry. Reuse the fresh checkpoint
 for this push;do not report network cadence as fully compliant.
+
+### MI292 — B137: resume on SS3;strict descent fails but a unit-flow question survives (2026-10-17 14:16 BST)
+
+**Hand reasoning/source orientation,not a new census.** The owner asks to
+restart after Cloud's check-in. Verified fc07a67a/CL432 and2794d8a1/CL433;
+read all four committed scripts before ACKing. Their recursion respects
+remaining counts/sums and prunes by a necessary remaining interval;equal
+remaining-bin states are interchangeable. This source read is NOT an
+independent replay of the reported249776 larger cases. The research
+heartbeat has been restored to13 minutes;the old schedule stays paused.
+
+Question:can SS3's proposed exchange proof actually descend,or does it
+need neutral rearrangements first? Unease:SS looks like a fractional
+condition,while a strict two-bin swap is a stronger integral assertion.
+Record searched: SS3|strict.*swap|neutral.*exchange|plateau|prescribed.sizes
+with partition|sum|bin ->39 paragraphs/27 files; relevant CL432-433 and
+the existing prescribed-size scope note read. No earlier SS3 proof found
+in that bounded search. No seeded work draw,solver restart or fullE28 job.
+
+**Primary literature changes the calibration.** Hoory-Kotlar,
+[2605.06071v1](https://arxiv.org/html/2605.06071v1), introduction,
+section3's definitions/Theorem1.12 statement and section5 discussion read;
+also Claim4.13 statement,not its full proof. The May2026 discussion leaves
+the equal-sum minimum-size>=3 case as an open direction. Its fractional
+criterion and asymptotic rounding result do not settle our finite case.
+Full proofs not audited;no later-literature completeness claim.
+
+The equal-sum open direction is an actual SUBCASE of SS3,not merely an
+analogy:for source labels1..m with common targetT and sizes c_j,subtract1
+from each label to get index targets s_j=T-c_j. A subset J then asks
+lo_1(C_J)<=|J|T<=hi_1(C_J). For fixed |J|,the smallest C_J gives the
+strongest upper bound,so the source's sorted-prefix slack supplies every
+upper inequality. Lower ones follow from complements and the fixed total.
+Thus proving full SS3 would in particular resolve that dated open case.
+The finite evidence is interesting;it is not a cheap theorem supplied by
+the source. Credit/source scope in PRIOR-ART.
+
+**Exploratory hand countercontrol to STRICT swap descent,not to SS3.**
+On0..8 take three bins,all of size3:
+A={6,7,8}, B={0,1,5}, C={2,3,4}; target index sums(20,6,10).
+Current sums(21,6,9),deviations d=(1,0,-1),L1 error2.
+SS holds:single sums20,6,10 lie in[3,21];pair sums26,30,16
+lie in[15,33];total36. Unexpected check:EVERY proper-subset inequality
+has positive slack,the minimum1. The target itself is feasible:
+A={5,7,8}, B={0,2,4}, C={1,3,6}.
+
+Yet NO single cross-bin swap strictly decreases L1 error. Only A is in
+surplus and C in deficit. Such a direct decrease would need transfer1,
+but min(A)-max(C)=2. A transfer2 merely reverses their signs;larger
+ones increase error. A swap involving zero-error B can at best move the
+unit error,not remove it. The same argument rules out strict decrease of
+squared error2. This is a direct objection to the proposed proof step,
+not a new standalone lemma,PROOFS entry or carrying-review job.
+
+There is a concrete nonincreasing repair,using current ownership at each
+step:swap B5/C4,then A6/C5,then C2/B1. Deviations become
+(1,-1,0),then(0,-1,1),then(0,0,0). Errors2,2,0. Every swap exchanges
+adjacent integer values and preserves all sizes;the final sets are the
+target witness above. Two neutral moves unlock the improvement. The
+example was found and checked by hand,no blind prediction or measured
+experiment is implied. It does not say all neutral components can escape.
+
+**A useful path exists;lifting it remains the inference.** For any current
+partition of the full index interval,draw i->j when x+1 is in bin i and
+x in bin j:that adjacent swap would transfer one unit from i to j.
+Assume SS and a nonzero deviation vector. Some positive bin must reach
+a negative bin. Otherwise let R be all bins reachable from positive bins.
+It contains a positive deviation and no negative one,so sum_R d>0.
+No edge leaves R,which means that whenever x+1 belongs to R,so does x.
+Consequently R owns exactly the initial C_R labels,of sum lo(C_R).
+But its prescribed sum would be lo(C_R)-sum_R d<lo(C_R),contradicting
+SS. This supporting hand inference uses no presumed partition of the
+TARGET sums and holds even with small bins;no status promotion or
+independent verification is claimed.
+
+The path is not automatically a sequence of legal unit transfers. In the
+displayed partition,A->B uses6/5 and B->C uses5/4:they reuse B's SAME
+token5. Simultaneously treating them as a flow silently allocates that
+token twice. A path whose adjacent pairs are vertex-disjoint DOES lift:
+perform its swaps together;intermediate sums cancel and endpoints improve.
+Shared-token paths require a rearrangement such as the three-swap repair.
+This identifies the exact integral obstruction rather than assuming
+that SS's unit-flow reachability proves SS3.
+
+**What changed/next cheap test.** Strict-pair descent is false on a tiny
+SS3 instance;neutral exchanges demonstrably repair this one. The live
+question is now whether a third element per bin permits a general
+nonincreasing escape from shared-token paths,or whether a small feasible
+instance has a trapped neutral component. Before testing that stronger
+claim,preregister a bounded graph diagnostic with positive and known
+pair-obstruction controls;do not extend Cloud's enumeration by habit.
+No new experiment has run this block. The two/four-hole extension also
+needs its own hypotheses;the interval argument above does not cover it.
+SS3 and fullE28/L8 remain OPEN.
+
+Fresh-choice check:the pull is specific to how neutral moves release a
+shared token,not the age of the project. Surprise at a concrete plateau
+despite strict SS slack;interest in the missing integral lift. Reasoned:
+continue this mechanism,with the source's open-case warning front and
+centre. Niggles:unit direction and deviation signs checked;all subset
+bounds accounted for;the three swaps use CURRENT ownership;reachability
+is not implementability;Cloud's counts remain reported,not replicated.
+
+### MI293 — B138 preregistration: can the fixed n9 plateau always escape? (2026-10-17 14:17 BST)
+
+Continue MI292's SAME live mechanism,not a new theorem or a larger SS3
+census. Before running:one finite graph diagnostic for the fixed target
+(20,6,10),sizes(3,3,3),on0..8. Every owner word with those counts is a
+vertex;an edge swaps ADJACENT INTEGER VALUES in different bins. Orient
+each move only when L1 target-sum error does not increase. Reverse BFS
+from all target witnesses tests whether every vertex can reach a witness.
+
+P1 controls:exact1680 labeled partitions and independently matching
+energy/goal/reachability maps. The positive n6 sizes(3,3),sums(7,8)
+has20 partitions;the source's SS-feasible but impossible n8 pair instance
+sizes(2,2,2,2),sums(2,6,8,12) has2520 partitions and NO target witness.
+P2 blind:ALL1680 n9 states reach a target without increasing error.
+CF must fail:MI292's initial state has a strictly improving single
+cross-bin swap. Check all27 swaps,not merely adjacent ones. Its explicit
+three-swap repair must have errors2,2,0. Unexpected check:reflect every
+index x->8-x and targets to(4,18,14);the whole reachable sets must map
+exactly,not just their counts.
+
+Primary enumerates partitions by disjoint combinations. Reference
+enumerates all owner words,computes sums directly,and uses synchronous
+full-set closure rather than BFS;compare COMPLETE maps. Source:
+tests/probes/instinct/ss3_neutral_diagnostic.py. Record search and primary
+literature are MI292;no new targets selected by output. Scope is these
+two n9 questions plus n6/n8 controls only;no fullE28 experiment.
+
+Caps5CPU seconds/10wall seconds/96MiB,one process,external12wall
+watchdog. Publish source and this registration before ONE invocation.
+Stop on failure/cap,no repair/retry/expanded domain. Retain a first
+unreachable literal partition if P2 fails. If it passes,this diagnoses
+one target,not SS3 or general nonincreasing reachability. Next return
+to the shared-token lifting inference;no automatic graph-size ladder.
