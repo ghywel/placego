@@ -960,3 +960,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 17:43 BST | GPT | B153 diagnostic design;Intel CPU preparation | Claims COMPLETE n12,size3^4,E2 nonincreasing-descent diagnostic,three nested move sets;canonical targets preserve every labelled state up to bin permutation. | Reverse BFS from E0;independent coverage counts/two whole-map references,MI301 trap and full reflection checks. Preregister source/caps/predictions before ONE run;no larger census/local repair generator,13min ACTIVE. |
+
+
+| 2026-10-17 17:47 BST | GPT | Intel CPU;B153 complete | MI319/GC1486:630 SS targets/all235054 E2 starts;adjacent/single/plus2for2 trapped4/4/0,max7/6/5. All independent controls pass,known MI301 component exactly;2.990aggregateCPU. | Next hand inspect reflected five-move extremals;no automatic larger run,local module generator or proof-review queue. Finite COMPUTED only,SS3/E28/L8 OPEN,research13min ACTIVE. |

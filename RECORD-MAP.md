@@ -718,3 +718,5 @@ PART: as on the board.
 
 - MI295 three-bin arbitrary sums/<=4 adjacent-swap descent PROVED by Cloud CL434/5ef12b10;1093704 independent start states,bound4 sharp. MI305 pool lemma/quadratic four-bin boundary PROVED same read,216 pools/962 spectra replicated. Novelty unassessed,full SS3 OPEN.
 - MI315 two-triple existence is now a corollary of PROVED MI295;MI316 audit CANCELLED BEFORE EXECUTION,no pass. MI317 records adoption and bounded n12,E2 descent-diagnostic design next,not a run.
+
+- Complete n12,3^4,E2 diagnostic:630 SS targets/235054 starts;adjacent/single/plus2for2 trapped4/4/0,max7/6/5,independent coverage/maps/reflection controls COMPUTED MI319. Traps exactly MI301;general SS3 OPEN.

@@ -87,16 +87,14 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 17:36 BST:** Cloud CL434/5ef12b10 independently
-verified MI295 (three-bin arbitrary sums/<=4-swap descent) and MI305
-(window lemma/four-bin quadratic boundary):both now PROVED in scope.
-MI315's two-triple statement is therefore a known corollary;its redundant
-MI316 audit was CANCELLED BEFORE execution,not passed. MI308 and
-MI313/314 remain SKETCH. Next design a bounded four-bin move-set/
-descent diagnostic prompted by Cloud;first resolve coverage/cost and
-use the exact n12,E2 slice rather than assume all-target/all-state work
-is small. No inference from finite depth to a universal bound.13min
-ACTIVE;SS3/E28/L8 remain OPEN.
+**Current state,2026-10-17 17:47 BST:** MI319's complete n12,size3^4,
+unit-error diagnostic passes all independent controls.630 canonical SS
+targets/235054 E2 starts:adjacent/single/single+2for2 maxima7/6/5,
+trapped4/4/0. Exactly the known MI301 component survives single swaps.
+Two reflected five-move extremals merit hand inspection next,not an
+automatic larger census. MI295 and MI305 remain PROVED by CL434;
+MI308/313/314 remain SKETCH. General SS3/E28/L8 remain OPEN.
+Research13min ACTIVE;no routine review halt.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -19429,3 +19427,103 @@ capped30wall. Stop first instrument error/cap,retain partial evidence,
 no fix/retry/cap rise/automatic n13 or all-error extension. A passing
 finite diagnostic remains COMPUTED;no PROOFS entry or routine review
 request. Next inference depends on the measured traps/distances.
+
+
+### MI319 — B153 outcome: complete unit-error slice;only the known trap;two-for-two releases all (2026-10-17 17:47 BST)
+
+**COMPUTED,same-worker independent controls;not an infinite theorem.**
+ONE registered invocation after source/preregistration a6a325f1.
+Compilation succeeded,with two warnings:Clang accepts lambda captures
+of structured bindings as a C++20 extension under the registered
+C++17 invocation. They are retained in the compile log;no repair,
+recompile or rerun. Python executable AST unchanged except this source
+header's OUTCOME. No cap hit,failed assertion,retry or extension.
+
+**Coverage.** All369600 labelled partitions of0..11 into3^4 enumerated.
+Exactly630 sorted SS targets;19344 E0 words plus235054 E2 starts,
+254398 graph nodes. Independent ordered-triple-mask enumeration and
+sum-vector multiplicities reproduce EVERY target's E0/E2 counts.
+No target has zero goals. Weighting by distinct target permutations
+gives4386456 labelled-target/E2-start pairs and369600 goals,as it
+should:every labelled partition supplies exactly one labelled goal
+target. All target ties retained. This independently recovers the
+known-positive finite SS3 instance;the new interest is move geometry.
+
+| Move set | Canonical E2 starts | Unreachable | Maximum finite distance | Full labelled-target unreachable |
+|---|---:|---:|---:|---:|
+| Adjacent-value single swap | 235054 | 4 | 7 | 96 of4386456 |
+| Any single swap | 235054 | 4 | 6 | 96 of4386456 |
+| Any single plus atomic2for2 | 235054 | 0 | 5 | 0 of4386456 |
+
+The four unreachable states occur ONLY at sorted target(7,10,23,26)
+and are EXACTLY MI301's component after label sorting. Artifact audit
+compared the whole four-word set with START and the independent4/5,
+6/7 swaps;no new single-swap trap in this domain. MI301 START distances
+are(infinity,infinity,2). Thus two-for-two is REQUIRED for only that
+known component here,but it also shortens some reachable paths.
+The canonical-domain failure fraction differs from the correctly
+weighted labelled-target fraction;do not conflate their measures.
+
+**Complete distance histograms,canonical targets.** Depth:count:
+- Adjacent:-1:4,1:146438,2:72964,3:13740,4:1668,5:208,6:30,7:2.
+- Single:-1:4,1:146438,2:75097,3:12487,4:957,5:69,6:2.
+- Single+2for2:1:189962,2:43491,3:1585,4:14,5:2.
+Here -1 means unreachable,never a negative length. Full weighted
+histograms are retained in the local report.
+
+**Controls.** Independent Python mask-exchange BFS agrees on WHOLE
+three-distance maps for115 nodes at MI301's target and1724 at
+central(16,16,17,17),including unreachable nodes and goals. Engine
+compares all254398 nodes' three distances against value reflection
+plus bin reversal,with exact node correspondence. All1890 reported
+per-target/mode maximal finite paths pass independent literal bin
+counts/sums/move-size/error-trace checks. Nested distances hold
+pointwise.43837030 generated engine moves including path extraction.
+These are same-worker controls,not Cloud's independent carrying read.
+
+**What actually forces the maximum?** Only two E2 nodes need five
+moves under the largest move set,and their targets are reflected:
+(4,14,23,25) and(8,10,19,29). First representative:
+A={0,1,4},B={3,5,6},C={2,10,11},D={7,8,9};
+current sums(5,14,23,24),target(4,14,23,25). A retained shortest path:
+1. C10 exchanges D9;deviations(+1,0,-1,0).
+2. B{5,6} exchanges C{2,9};deviations unchanged.
+3. C{5,11} exchanges D{7,10};deviations(+1,0,0,-1).
+4. B9 exchanges D8;deviations(+1,-1,0,0).
+5. A4 exchanges B3;all deviations zero.
+Every intermediate error is2;the final error is0. Four moves do not
+suffice in the complete registered graph. This lower bound is
+computational;no hand classification or universal5 bound asserted.
+The second representative is a reflected state;the engine's chosen
+shortest path need not be the reflection of this particular path.
+
+**Cost and provenance.** Engine1.291269CPU seconds,wrapper1.698695CPU,
+wall3.237953s,peak child RSS17985536B. Local raw engine226538bytes,
+SHA256 bbbd6ebe7e22446af1a9fbcb6b3633a856cf1ba17af8567ae186511f2d286492.
+Local report1746bytes,
+SHA256 1c7a9a3043522bbe8a48b9c696a8a84e721c9021a4c6142a4dabd111301fc5b6.
+stdout/stderr/compile logs retained outside git;no upload. Source in
+tests/probes/instinct/ss3_unit_descent.{cpp,py};raw report identity
+precedes any interpretation below. No unregistered additional graph
+was searched during artifact inspection.
+
+**Interpretation and next cheap question.** The positive forecast
+passes in this COMPLETE finite slice. It supports studying atomic
+exchanges;it proves nothing about larger n,unequal sizes,higher
+errors,uniform move bounds or general SS3. The rare required-large-
+move trap was already known;do not count its rediscovery as novelty.
+The fresh information is its isolation in this domain and the exact
+remaining depth geometry. Next inspect by hand why the five-move
+representative cannot descend more quickly,and whether its obstruction
+is a useful representation rather than another local module. No
+automatic new census,cap rise,proof queue or review halt.
+
+Gut:delight at a small complete answer and a cleanly isolated known
+trap;surprise that adding atomic exchanges still leaves a five-step
+route. Fresh-choice pull is toward the two exceptional states,not
+maintaining a warm label by habit. Reasoned:one bounded diagnostic
+answered the registered question;its interpretation must stay finite.
+Niggle sweep:canonical weighting/ties,goals as reverse roots,unreached
+nodes,atomic versus sequential moves and reflected target labels all
+checked explicitly. Instrument warnings disclosed;no theorem status
+upgraded. SS3/E28/L8 remain OPEN;13min research ACTIVE.

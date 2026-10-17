@@ -22,6 +22,17 @@ CAPS: one invocation,60CPU/90wall seconds,256MiB per process,2M engine nodes,
     200M generated engine moves,8MiB raw engine output,100wall watchdog.
     Stop first instrument failure/cap;retain mathematical negative results;
     no repair/retry/extension. Compile only after source/prediction push.
+
+OUTCOME MI319 (2026-10-17;prereg a6a325f1): ONE run COMPLETE,controls PASS.
+630 sorted SS targets,19344 E0 words,235054 E2 words;all369600 labelled
+partitions covered independently. Adjacent/single/plus2for2 maxima7/6/5,
+unreachable4/4/0. Full labelled-target weighting:4386456 starts,96/96/0
+unreachable. Exactly the four MI301 states,not new traps. Two reflected
+five-move extremals. Whole independent maps115+1724 nodes;all254398
+reflections/1890 literal longest paths pass. Engine1.291269CPU,wrapper
+1.698695CPU,3.237953wall,peak child17985536B. No retry/extension.
+Compile accepted with two Clang C++20-extension warnings for capturing
+structured bindings under C++17;no source repair or rerun. General SS3 OPEN.
 """
 import argparse
 from collections import Counter, deque
