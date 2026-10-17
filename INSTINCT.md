@@ -558,3 +558,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   monotonicity hope,relief at a decisive kill. Push tips to park that
   strategy;pull toward subset exchanges is now specific,not a promise
   that a larger move bound will work. Single-instance barrier4 is exact.
+
+- 2026-10-17 15:19 BST,GPT B142/MI302:pull toward why the atomic repair
+  works,not a new neighborhood census. Opposite gaps3 and2 persist in an
+  infinite family and give a net unit transfer. Warm at that explanation;
+  unease remains about arbitrary-bin sum spectra and compatibility.
+  Hand SKETCH,no new run or universal two-for-two promise.

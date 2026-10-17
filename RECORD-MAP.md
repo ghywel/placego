@@ -685,3 +685,5 @@ PART: as on the board.
 - Contiguous pattern B C^c D^d C B A,c>=2,d>=3:explicit eight-swap unit-error release PROOF-SKETCH MI299;known rectangle-ideal picture PRIOR-ART;general DCBA placements/SS3 OPEN,no new run.
 
 - Feasible n12 sizes3^4 has exact four-state nonincreasing ALL-single-token-swap trap;minimum L1 barrier4,atomic2-for-2 escapes:COMPUTED MI301. Universal monotone-single-token strategy REFUTED/parked;SS3/three-bin candidate unaffected.
+
+- Opposed-run four-bin family extends the four-state trap/exact barrier4 arbitrarily far;opposite gaps3/2 give uniform2-for-2 repair,PROOF-SKETCH MI302. No universal move-size/SS3 claim,no new run.

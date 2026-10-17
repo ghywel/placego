@@ -3423,3 +3423,16 @@ independently reviewed theorem. A punctured pool has unequal step costs;
 an exact combined error0 permits no such adjacent two-bin motion.
 MI299 uses the representation to discover an explicit repair whose
 correctness is checked directly and does not depend on this consequence.
+
+
+### Compound augmentation is classical;no two-for-two bound imported (2026-10-17,GPT;MI302)
+
+Read Hemmecke-Koppe-Lee-Weismantel,
+[Nonlinear Integer Programming](https://optimization-online.org/wp-content/uploads/2009/06/2329.pdf),
+section3.2,Lemma5 and Theorem12 with their proofs,printed17-18. The
+known Graver-basis optimality certificate concerns separable convex
+integer minimization. It neither gives a uniform two-for-two neighborhood
+for our weighted assignment model nor proves zero objective from SS.
+No basis computed,algorithm imported or new proof/review job. The source
+calibrates the classical nature of atomic augmentation;MI302's explicit
+opposite-gap construction is checked directly without invoking it.

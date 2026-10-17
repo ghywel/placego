@@ -87,14 +87,14 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 15:12 BST:** MI301's exact four-state
-closure REFUTES universal nonincreasing SINGLE-token escape,including
-nonadjacent swaps,on a feasible minimum3 instance. Exact error barrier4;
-an atomic two-for-two unit transfer bypasses it. Park the universal
-monotone-single-token strategy and further neutral-module generation
-toward it. Next reason about equal-cardinality subset exchanges without
-assuming a new universal move bound. MI295's THREE-bin candidate is
-unaffected and awaits Cloud.13min ACTIVE;general SS3/E28/L8 OPEN.
+**Current question,2026-10-17 15:21 BST:** MI301's finite four-state trap
+refutes universal monotone-single-token escape. MI302 extends its exact
+barrier4 and opposite-gap3/2 compound repair to an infinite family by
+hand,still SKETCH. Next compatible equal-cardinality subset transfers:
+two two-token witnesses in a size3 bin necessarily overlap,so a larger
+exchange graph alone is insufficient. No universal two-for-two claim or
+automatic census. MI295's three-bin review pending;13min ACTIVE,
+general SS3/E28/L8 OPEN. The refuted single-token strategy stays parked.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -17721,3 +17721,132 @@ even-error argument plus explicit path proves the instance's barrier;
 compound exchange preserves both cardinalities;no universal higher-order
 claim smuggled in. Cloud is flagged with this correction.13min research
 ACTIVE,no routine review halt or running job.
+
+### MI302 — B142: the trap is a family;opposite gaps provide an atomic unit transfer (2026-10-17 15:19 BST)
+
+**Hand PROOF-SKETCH,no new experiment or independent review.** Question:
+what property makes MI301's two-for-two repair work,and does it explain
+more than one fixture? The pull is toward the cancellation of two
+oppositely directed gaps,not toward declaring a new universal move bound.
+Record searched:`two.for.two|equal.cardinality|subset.exchange|pair.sum|Graver|Markov.basis`
+AND `SS3|exchange|prescrib|sum|bin`:50 hits/17 files. MI300-301 are the
+relevant literal precedent;no prior uniform opposed-run family found.
+Bounded literature search found classical compound augmentation,not
+this family. Read the primary Graver optimality statement/proof noted
+in PRIOR-ART;no theorem about two-for-two sufficiency is imported.
+
+**The arithmetic criterion.** Suppose one current bin P owns u,v and
+another Q owns x,y,all four values distinct. If u-x=H+1 and y-v=H>0,
+then exchanging P's{u,v} with Q's{x,y} transfers ONE sum unit P->Q
+while preserving both sizes. The large forward gap and the slightly
+smaller reverse gap cancel. This is elementary subset-sum arithmetic,
+not a novelty claim. Scheduling the two one-for-one swaps separately
+can overshoot even though the compound move improves the objective.
+
+**An infinite family with the exact same trap.** Let b,g>=2,d,e>=3,
+p=b+d,and n=b+d+e+g+2. Partition0..n-1 by
+
+    B^b D^d C B A^e C^g,
+
+and set prescribed sums=current sums-(1,0,0,-1) in A,B,C,D order.
+The four bin sizes are e,b+1,g+1,d,all>=3. In sets:
+
+    A={p+2,...,p+e+1}; B={0,...,b-1,p+1};
+    C={p} union{p+e+2,...,p+e+g+1}; D={b,...,p-1}.
+
+Claim for this whole family:targets ARE feasible,and every path to any
+target partition using only single-token swaps must reach error>=4;
+there is a three-single-swap path attaining maximum error4. The start's
+entire nonincreasing component has exactly four states. Thus MI301's
+obstruction persists at arbitrarily large sizes;it was not a tiny-pool
+accident. This family claim remains an unreviewed hand derivation.
+
+**Four-state closure for arbitrary parameters.** The two neutral swaps
+are(p-1,p) and(p+1,p+2). They commute. The positive/negative bins in
+the start,the second swap alone,the first alone,and both,respectively,
+are(A,D),(B,D),(A,C),(B,C). In EVERY case,the minimum positive
+high-to-low difference between a positive and negative bin is
+(p+2)-(p-1)=3;all remaining positive-bin values are below,or at least
+three above,negative-bin values. A one-for-one transfer between them
+must have magnitude1 or2 to avoid raising error2,so none qualifies.
+Transfers involving a zero bin can be neutral only for difference1.
+
+The only allowed unit transfers are the two swaps just named and their
+reverses. The outer B/D and A/C boundaries have wrong charge directions;
+the core's middle adjacency joins two zero bins;the new adjacency just
+inside either long D or A run also has the wrong direction. Inside a
+run no ownership changes. This exhausts adjacent integer differences,
+and the magnitude classification exhausts nonadjacent swaps. Hence the
+nonincreasing component is precisely the four commuting-swap states,
+all error2,as in MI301. This is a whole-component argument,not merely
+absence of strict improvement at the start.
+
+**Feasibility and a uniform repair.** First swap(p-1,p),moving the
+deficit from D into C. CURRENT C now owns x=p-1,which originally
+belonged to D. Choose
+
+    u=p+2, v=p+e+1 in A;
+    x=p-1, y=p+e+3 in current C.
+
+These are distinct:e>=3 separates A's first/last values,and g>=2
+supplies the second value in C's upper run. The gaps are u-x=3 and
+y-v=2. Thus the two-for-two exchange restores A and C to their targets;
+B is unchanged and D already has its target. Explicit target partition:
+
+    A*=(A minus{p+2,p+e+1}) union{p-1,p+e+3};
+    B*=B; D*=(D minus{p-1}) union{p};
+    C*=(C minus{p,p+e+3}) union{p+2,p+e+1}.
+
+Every value is still used once and every size is unchanged. Changes
+to the original four sums are(-1,0,0,+1),as required. Therefore the
+targets satisfy SS by the necessary subset-sum bounds;SS feasibility
+was not assumed in proving existence. No generic SS3 theorem is used.
+
+The sequential swaps(p-1,p),(p-1,p+2),(p+e+1,p+e+3) have errors
+2,2,4,0. The four-state closure rules out reaching any goal at error<=2;
+error parity then makes the minimum possible path barrier EXACTLY4.
+As two constructive atomic operations,the unit preparation and the
+two-for-two exchange instead have errors2,2,0. Grouping operations is
+legitimate for a construction,but supplies no universal neighborhood
+bound or convergence theorem.
+
+**Hand controls and unexpected symmetry.** b2,d3,e3,g2 gives exactly
+MI301's original fixture AND its independently checked target witness:
+A{4,8,11},B{0,1,6},C{7,9,10},D{2,3,5}. For a nontriple A,take
+b2,d3,e4,g2:n13,targets(A33,B7,C28,D10). The formula gives
+A{4,8,9,12},B{0,1,6},C{7,10,11},D{2,3,5};direct sums and the
+complete0..12 token list check. This does not rely on taking complements
+inside two triples. Unexpected reflection:reverse all values and swap
+names A<->D,B<->C;the SAME family reappears with parameters
+(b,d,e,g)->(g,e,d,b),still inside the hypotheses. Deviations stay
+(1,0,0,-1). Translation also leaves the gap3-minus-gap2 identity intact.
+No new enumeration or two-for-two search was run;these are hand checks.
+
+**What this teaches and what it does not.** The obstacle is a missing
+NET unit transfer,not a lack of individual large transfers. A full
+consecutive pool plus run placement creates two opposite gaps differing
+by1 here. The third-element hypotheses give distinct usable endpoints;
+we have not shown that arbitrary minimum3 partitions provide them.
+Atomic subset exchanges can still reuse tokens along a proposed flow
+path;their compatibility cannot be assumed any more than MI292's.
+
+Next bounded question:find a structural condition on the current bins'
+equal-cardinality sum spectra that supplies compatible unit transfers,
+or a concrete obstruction that defeats that condition. In particular,
+two two-token witnesses passing through a size3 bin MUST overlap;merely
+enlarging the unit-transfer graph does not fix the scheduling inference.
+The present family uses one compound exchange,not such an assumed path.
+Do NOT replace
+the refuted single-token rule by an unsupported assertion that two-for-two
+always suffices. No solver restart,larger census,PROOFS entry or new
+carrying-review queue. Cloud's MI295 read is independent of this work.
+General SS3/E28/L8 remain OPEN,13min research ACTIVE.
+
+Gut:warmth at a uniform explanation rather than another isolated repair;
+unease is now about compatibility and move size. Reasoned:a precise
+family and mechanism,not global sufficiency. Niggle sweep:use CURRENT
+C ownership after the preparation;four chosen values distinct;net unit
+and cardinalities both checked;closure includes all single-token swaps;
+target witness is constructed without assuming SS3;large-family claim
+is hand SKETCH,not a machine census;no circular use of a better unknown
+partition to justify an improving exchange. Continue on those terms.
