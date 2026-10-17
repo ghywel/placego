@@ -14555,3 +14555,72 @@ inventory. Next investigate that joint matching/allocation question, using the
 explicit97/99 obstruction rather than another component-family tree or a
 larger random sample. CP and E28/L8 remain OPEN. No routine review halt;
 research13min active, one READ-LEDGER mentoring update at this model change.
+
+
+### MI263 — B121: postpone anchors; reusable exact subset-sum columns (2026-10-17 07:58 BST)
+
+**Pull / trajectory.** A uniform anchor-repair argument is already starting
+to resemble another local policy tree. The warmer alternative is to postpone
+anchors: construct actual bins jointly, without declaring some of their tokens
+in advance. MI261's exact model exposed that freedom; there is no obligation
+to keep its representation inside the solver. The bounded question is whether
+a reusable catalogue makes the unrestricted finite problem tractable on the
+five existing difficult fixtures, not a new census or a universal claim.
+
+Record searched: rainbow.match|prescribed.*sum|pair.sum|perfect.*match.*sum|
+odd.*magic|Heffter ->78 paragraphs/20 files; PRIOR-ART's prescribed-sum scope
+and MI039-042 instrument read. subset.*catalog|catalog.*subset|
+meet.in.the.middle|exact.cover.*odd|anchor.free ->no hits including ledgers.
+No absence or novelty claim: exact cover, subset enumeration, meet-in-the-middle
+and generating functions are standard methods. The earlier MI040 solver assigns
+individual descending tokens to residual bins; this solver assigns COMPLETE
+sum-certified bin subsets using an exact-cover token-and-bin column choice.
+Both solve the original odd partition problem, not a sufficient cycle model.
+
+**Representation / reusable compression.** Enumerate every subset of
+{1,3,...,55} with sum<=122, allowing ALL cardinalities and no reserved anchors.
+Group their28-bit masks by sum s. The count in bucket s must equal the
+coefficient of z^s in product over j0..27 of(1+z^(2j+1)). A target chooses
+one mask from each corresponding bucket, pairwise disjoint and covering all
+28 tokens. This is exactly the target problem. The reusable objects are BIN
+subsets, unlike MI150's target-specific whole component collections. Standard
+exact-cover branching on any uncovered bin OR token is complete. Only failed
+states are cached; state includes unused-bin target multiset and used tokens.
+No arbitrary ordering, guessed cardinality or anchor condition is imported.
+
+**Predictions BEFORE run.** One catalogue of ALL sums0..122 at m28. Blind
+prediction <=500000 masks total, including empty subset in sum0. Independent
+coefficient DP must agree for EVERY bucket; independent14+14 meet-in-the-middle
+must reproduce the FULL mask set at each distinct sum in the five fixtures.
+This tests the catalogue itself, not merely successful partitions.
+
+Exactly these FIVE E28 targets, no others:
+(97,97,97,97,99,99,99,99);
+(77,77,83,85,107,117,119,119);
+(71,73,77,105,107,109,121,121);
+(69,69,75,103,111,116,120,121);
+(90,90,91,91,93,103,111,115).
+The last four are the original MI158 failures. Blind predictions: all five
+certify and each uses fewer than1000 search nodes. All cardinalities remain
+allowed; there is no FIRST-anchor requirement or h1/2 restriction. A solution
+beyond1000 refutes that forecast even if it arrives under the hard cap.
+No repeated timing or target order changes after results are seen.
+
+**Independent/negative/unexpected controls.** Before the five, compare every
+189 positive sorted three-target tuple of total m^2,m<=6 to MI040's independent
+labelled-assignment oracle. Reuse the actual known lower witness
+(67,67,67,67,102,102,102,102) with26 tokens: must be NO_WITNESS, not a cap.
+Also(3,3,3) at m3 must fail despite individual subsets existing. Every positive
+has exact odd inventory/sums under two validators; corruption and inventory-
+preserving unequal-token swap must reject. Unexpected: the97/99 tuple must
+succeed WITHOUT imposing the fixed anchors known to obstruct it. Success
+of each subset alone cannot substitute for disjoint full coverage.
+
+**Hard caps/stop.**50000 nodes per target (controls included),1M nodes total,
+1M catalogue masks,2M reference joins,15CPU sec/256MiB. On any cap retain
+partial/UNKNOWN and stop; no raised cap, new target, broad sample, census,
+new component family, follow-on experiment or review job. Source
+path_forest_subset_catalogue.py. Raw remains local pending artifact upload
+authorization; no upload attempt. Catalogue size, finite witnesses and node
+counts can justify or reject this computational representation, not establish
+full E28/L8 or any asymptotic running-time bound. Research13min active.

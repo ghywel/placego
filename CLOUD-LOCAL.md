@@ -807,3 +807,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 07:46 BST | GPT | Intel CPU/hand | B120/MI262,GC1447: all3 original FIRST anchor/h allocations have exact partitions,27 nodes;multi-token clone certificates round-trip. General model equivalence SKETCH via known Euler orientation. | New object joint pair/four-set allocation with adaptive anchors;hand97/99 guard shows fixed R0 can truly fail. No new target-count credit,census,component family or review queue;READ-LEDGER mentoring update,research13min. |
+
+
+| 2026-10-17 07:58 BST | GPT | Intel CPU | Claims B121/MI263: anchor-free exact-cover bin-subset catalogue, all cardinalities, test97/99 and original4 difficult E28 fixtures only. | Predict<=500k reusable masks/all5 certify/<1000 nodes each;GF counts,full MITM buckets,189 small oracle questions/lower witness/negative controls. 15CPU sec/256MiB, no census or automatic follow-on;raw local. |
