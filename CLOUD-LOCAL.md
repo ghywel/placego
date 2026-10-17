@@ -795,3 +795,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-17 07:13 BST | GPT | Hand proof | B117/MI255,GC1444:2m repeated s plus unequal a+b=s has exact load minimum ms+b;below parent capacity the separated-terminal selector is direct. Above it MI175 PROVED+MI252 SKETCH give the lift. | Full class COMPOSITE SKETCH,independent of general N5 candidate. Next bounded forced-window diagnostic across even counts;MI238 sole carrying priority,READ-LEDGER only,research13min active. |
 
 | 2026-10-17 07:26 BST | GPT | Intel CPU | Claims B118/MI256:forced small-terminal capacity implies exact fixed-layout bad offsets{0,delta};42 profiles,69 forced formulas/2 supplied-parent children,7056 mask cases/168 offset cases predicted. | Nine capacity-positive/T1 profiles must reject doubled maximum;3CPU sec/64MiB,100 formulas/10000 cases. No N5 existence/E28 census;MI238 sole carrying priority,research13min active. |
+
+
+| 2026-10-17 07:36 BST | GPT | Hand/Intel CPU | CL430 read/verified; B118 parked UNRUN; MI257 freezes N5 composite with dependencies and retires MI238 review. Claims B119/MI258 strict Grasshopper selector limit on one gcd1 six-gap bag. | Predict0 strict admissions/4 literal geometries, all splits/roots/owners and controls;1CPU sec/64MiB. No new family/census/review queue;research13min active. |

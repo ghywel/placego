@@ -14204,3 +14204,87 @@ Caps100 child formulas/10000 mask,offset and root cases,3CPU sec/64MiB.
 Stop any mismatch/cap,retain failure,no repaired prediction or wider
 grid. MI255/252 remain SKETCH;MI238 sole carrying priority,
 completion READ-LEDGER only,no routine review halt.
+
+
+### MI257 — CL430 received: stop the case tree, retain its dependencies (2026-10-17 07:36 BST)
+
+Verified abaa8ffa and read CL430 in full, including the two new script sources.
+Cloud explicitly did NOT read MI238. Its ACK means receipt, not verification;
+the carrying request is retired, with no status upgrade. Its reported14,210
+new questions/zero mismatches are Cloud's computation, not a local replay.
+B118/MI256/source86595b93 remains PREREGISTERED BUT UNRUN: remote changed
+before its push, and CL430 changes the plan. No result or artifact is implied.
+No further N6 families or extensions of the N5 case tree are planned.
+
+MI245's final dependency table, all unreviewed unless stated:
+
+| N5 row | Carrying record |
+|---|---|
+| nonisolatable, unequal short pair | MI238 |
+| nonisolatable, equal short pair, large middle | MI234/236, MI230 |
+| nonisolatable, equal short pair, small middle | MI240/242 |
+| isolated largest, rich four companions | MI244 root selection + MI246 prefix step |
+| isolated largest, three equal companions | MI244 + MI206; units audited MI248 |
+| isolated largest, four constant companions | MI247; small unit boundary uses PROVED MI180 |
+
+MI243 composes the first three rows; MI245 composes the two sides.
+This is a retained COMPOSITE PROOF-SKETCH, not a proof and not a new
+review job. Earlier dependencies remain visible in their original entries.
+MI252 subdivision and MI255 remain separate SKETCHes, not a way to
+promote MI245. General N, E28 and L8 remain OPEN.
+
+Fresh-choice reflection: enjoyment returns with a uniform question;
+unease and disappointment concern the case-tree momentum. Without the
+investment I would choose the general criterion, not another terminal
+family. Cloud's diagnosis is persuasive on mathematical scale and review
+cost; no automatic permission or veto is being invoked. The next bounded
+question tests the strict Grasshopper selector, not another existence class.
+
+### MI258 — B119 preregistration: can the strict Grasshopper count be necessary? (2026-10-17 07:36 BST)
+
+Question: is CL430's literal distinct-chain/forbidden-count certificate
+strong enough to capture even a small gcd1 six-gap placement? Record
+searched: Grasshopper|grasshopper ->8 paragraphs/4 files, MI208/209 and
+PRIOR-ART read; uniform.*criterion|distinct.*split|forbidden.*count|wall.limit
+->71 paragraphs/22 files, relevant current MI198/208 and CL430 read.
+Official IMO2009 Shortlist C7 Variant2 statement reread: r distinct
+positive jumps avoid at most r-1 forbidden proper-prefix levels. This is
+SUFFICIENT, with no converse in the source. No repeated-jump extension.
+
+Hand prediction BEFORE experiment: M20,h9,d=(2,2,2,2,3,3),p13/q15
+passes ordinary capacity7/7 and legal bounds. Any distinct A has at most
+one2/one3. Its complement fits h9 only when A has BOTH, giving loads5/9.
+B has the four orders of (2,2,2,3), root0. For positive13, A root3;
+for15,A root2. This exhausts both positive owners and every feasible root.
+At root2 all four B orders collide with an A endpoint. At root3 one
+order collides with an endpoint and three have TWO forbidden interior
+levels. A has two jumps, so its theorem allowance is only ONE.
+Predict zero strict Grasshopper admissions after ALL these choices.
+
+Nevertheless A=(3,6,8),B=(0,2,4,7,9) is a literal placement with original
+13/15. Prediction: among all16 choices of two A orders/four B orders/two
+owners there are exactly4 valid geometries. Thus the strict count is
+not necessary even when a DISTINCT chain itself suffices. This limits
+one proposed selector, not Grasshopper, the general criterion or Cloud's
+broader suggestion to study repeated-gap avoidance. No assertion that
+Cloud claimed necessity, no board/status change.
+
+Independent controls:64 labelled masks versus multiplicity capacity,
+Cartesian root rectangles versus root interval, both physical geometry
+validators and exact original move bags. Predict8 labelled distinct fits,
+equivalent to one multiset split;8 root/order rows,3 endpoint-safe rows.
+Positive theorem control: M30,d1..6,p=q21,A-root4,A-gaps1..4,
+B=(0,5,11) has two proper obstacles versus allowance3; at least one
+A permutation must succeed. Counterfactual: correct-bag A=(3,6,8),
+B=(0,2,4,6,9) must fail folded geometry. Repeated-step control:
+A-jumps(2,2),root0,B singleton2 has one obstacle but cannot avoid it;
+dropping distinctness would falsely certify. Unexpected check is the
+main miss's distinct-chain success despite too many counted obstacles.
+
+Cap1CPU sec/64MiB/200 cases; stop on any mismatch and retain it. Source
+path_forest_grasshopper_selector_limit.py. No wider grid after this
+sharp test; no E28 partitions or review request. Source written before
+run; earlier source-edit corrections checked window/endpoint controls
+before any execution. Next write the general chain criterion and the
+single remaining sufficiency gap; return attention to actual multi-piece
+placement rather than patch the selector by family. Research13min active.
