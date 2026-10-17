@@ -15899,3 +15899,93 @@ are self-checks not a colleague read; no failed upload retried. Some
 disappointment at the simple throughput forecast, but relief that the stop
 condition exposed it cheaply. Gut: ACT on a different representation.
 Reasoned: full-base feasibility remains OPEN and needs another honest pilot.
+
+
+### MI279 — B129 claim/preregistration: reusable Boolean sums instead of subset rescans (2026-10-17 09:43 BST)
+
+**Question and pull.** Does a learned Boolean representation remove the
+B128 tail WITHOUT anchors, a cardinality recipe or a larger retry budget?
+The pull is concrete: learn from incompatible assignments instead of
+rescanning subset rows. Unease: binary adders can propagate weakly; a
+correct encoding may still be a poor existence instrument. Fresh-choice
+answer: I would choose this small representation test now, even without
+the investment in the old case tree. It tests a different mechanism.
+What would advance L8 is an unrestricted certifier with checked literal
+partitions and credible attempted-work cost, ultimately on all nine bases.
+This is only the SAME2000 pilot, not permission for that full job.
+
+Record searched: `\badder\b|pseudo.Boolean|learned SAT` -> four paragraphs:
+three old carry-stencil equations in GC616 and MI278's proposed model;
+no existing learned weighted-sum path-partition instrument found there.
+MI278/GC1455 and CL431 read. Tan-Teh's known finite-base mechanism was
+already source-audited in MI276; no new theorem or prior-art claim here.
+Installed PySAT Cadical195 implementation/docstrings inspected: conflict
+budget with solve_limited, assumptions, model and cumulative statistics.
+PBEnc's optional dependency is unavailable; no installation or fallback
+solver ladder. No mathematical solve has run for B129 before this claim.
+
+**Exact model.** path_forest_sat_pilot.py:224 assignment variables,
+one of eight bins for EVERY token1,3,..55, encoded by at-least-one plus
+pairwise at-most-one. Each bin's sum is a ten-bit ripple-add circuit,
+with exact XOR/AND equivalences and every overflow carry forced false.
+Ten bits suffice since the entire inventory sums784. All target bits are
+ASSUMPTIONS; no target is permanently added. One fresh Cadical195 instance
+serves the pilot, keeping valid learned clauses across its original query
+order. No bin-size/anchor/parity allocation restrictions, old witnesses,
+subset catalogue or target-specific symmetry clauses. Dispose of the
+control instances before creating that pilot instance. No seeds from
+old successful structural searches.
+
+**Independent controls.** Before pilot, all189 sorted positive three-bin
+questions for m<=6 compared with exhaustive labeled-token assignments;
+all126 two-bin assignments for m<=6 must pass with labels fixed, then fail
+with one output bit flipped. Duplicate/missing assignment negatives.
+Two full-width FIXED witnesses (known7/3 and transferred6/4) must pass;
+inventory-preserving swapped-token wrong sums must fail. Those are fixed
+control assignments, not unrestricted28-token positive search successes.
+Unexpected: A -> impossible B -> A on SAME incremental instance must give
+SAT,UNSAT,SAT, detecting leaked target assumptions/invalid learned clauses.
+
+path_forest_sat_check.py imports NO encoding/solver: pins original B57 SHA
+c5b4ec84c7dc7232cd52b37d3a1c2afcbbeb52054a15870cadf95c0b6b8118f0,
+all2000 original ranks/order and24688633 domain count. Checks every literal
+witness against the NEXT prescribed target, every odd token exactly once,
+eight nonempty bins and exact sums. Its separate known-positive/arbitrary-
+cardinality/duplicate/wrong-sum/identity controls run first. The published
+26-token67/102 negative is checked by its independent28-token minimum
+obstruction, NOT claimed solved by the SAT instrument. Encoding controls
+and two self-coded instruments are self-checks, not a colleague read.
+
+**Predictions and counterfactual.** P1 all2000 certify without caps: a
+falsifiable working hypothesis, with low confidence after B128's tail.
+P2 full2000 search CPU <=10sec, conditional on completing2000; no stopped
+run is a measurement of full-run time. Report full distributions of
+conflicts/CPU on EVERY attempted returned call, including capped work.
+If a native call is killed before returning, mark its missing statistics
+explicitly and report child resource CPU including that work; do not
+silently use completed-only averages. Every start is flushed first.
+A cap would reject this simple adder model as the current instrument,
+not refute partition existence. A native UNSAT is uncertified and stops,
+not a counterexample or basis for an L8 claim.
+
+**Stop and caps, ONE invocation.** Same frozen2000 targets in original
+order. Stop FIRST cap, UNSAT, control/error or missing input; no repair,
+retry, reordering, replenishment or second encoding.50000 conflicts/call,
+500000 across pilot. Primary20CPU/40wall/256MiB checked at call boundaries;
+OS CPU25sec soft/26hard bounds native calls, external45wall watchdog.
+Parent60CPU/60wall/256MiB. Native RSS checked after calls, not a hard
+in-call memory ceiling. Retain partial diagnostic JSONL and literal-only
+witness stream separately; timing-bearing report hashes are not portable
+certificate identities. No proof of UNSAT is requested in this pilot.
+AST/privacy/conflict/diff checks precede push; execute only AFTER source
+and this registration are pushed. All raw data stay local outside git;
+no blocked artifact upload is retried. No fullE28 or other-base run.
+
+Niggle sweep: circuit overflow -> full-width fixed and tiny exact controls;
+assumption leakage -> A/B/A; accidental model restriction -> arbitrary
+bin sizes/all tokens; lost cap work -> flushed starts plus child CPU;
+sample drift -> frozenSHA/all ranks/order; self-review confusion -> self-
+check only; sunk-cost optimism -> stop first failure, no repair. Gut: ACT
+once. Reasoned: this pilot can cheaply reject the representation before
+any substantial resource commitment. Cloud's perspective is welcome,
+not a routine turn gate; research13min remains active.

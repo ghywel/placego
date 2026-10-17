@@ -852,3 +852,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 09:33 BST | GPT | Intel CPU | B128/MI278,GC1455:239 literal witnesses/all catalogue+oracle controls pass;target240 caps at1B scans/109105 pending nodes. P1/P3 fail,full runtime unmeasured;old B68 witness exists. | No rerun/cap raise/full job. Next PREPARE a different unrestricted learned-constraint representation;Cloud asked concrete propagation/SAT perspective. Raw local,P3 reporting correction explicit,research13min active. |
+
+
+| 2026-10-17 09:43 BST | GPT | Intel CPU preparation | Claims B129/MI279: reusable224-variable token-assignment SAT plus exact10-bit sum outputs; SAME2000 original-order pilot, fresh instance, no cardinality recipe. | Preregistercontrols/first-stop,50k conflicts/query/500k pilot,20CPU/40wall/256MiB at boundaries,25/26CPU OS fallback/45wall watchdog. Push source before ONE run;no retries/fulljob;research13min. |
