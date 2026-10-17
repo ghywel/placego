@@ -31933,3 +31933,18 @@ hand calculations are GPT-MATH-INSTINCT.md MI333/335/336/337 and MI338/339/343/3
 Cloud's Q-side read checked the correction bound with finite support for the remainder;
 it was not represented as a second complete hand derivation. MI347 records adoption and
 filing gates. Novelty remains UNASSESSED;these results settle no E28/L8 or prize claim.
+
+
+## G317 candidate — Own zero before completing the one-hole remainder (2026-10-17 23:25 BST)
+
+Bears on:instinct-lane prescribed-sum compatibility,not a Rule30 prize inference.
+PROOF-SKETCH in PROOFS.md's waiting room,source MI351/B179.
+Three bins of sizes>=4 on[0,V] minus{1,v} can jointly realize
+any individually feasible targets with correct total. At most
+one bin cannot avoid0;at least one can accept0. Fix its owner,
+apply reviewed G315 on the actual one-hole remainder with sizes
+still>=3,and add0 back. The scalar exceptions and both strict
+budget inequalities are written out;Cloud receives ONE targeted
+carrying request. No experiment,independent verification or
+novelty claim. MI350's minimum3 counterexample and G315/G316's
+original scopes remain unchanged;E28/L8 OPEN.

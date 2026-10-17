@@ -769,8 +769,10 @@ PART: as on the board.
 
 - G315 one-hole3 individual-spectrum criterion and G316 full-interval4 SS cut criterion,minimum sizes3:PROVED in scope,Cloud CL437/7bfdfe34,adopted MI347/GC1513. Q review machine-support qualification retained;novelty UNASSESSED,E28/L8 OPEN.
 
-- FOUR-BIN-PARTITIONS.md consolidates G315/G316 proofs,including scalar lemmas and review scope,MI348. Next one-hole4 all-union actual-spectrum sufficiency question OPEN;no new run.
+- FOUR-BIN-PARTITIONS.md consolidates G315/G316 proofs,including scalar lemmas and review scope,MI348. Subsequent one-hole4 all-union extension tested in MI349/350;no new run.
 
-- One-hole4 ALL-union spectrum hypothesis:tight rank cuts/pair lower slack1 have hand boundary completion MI349. Full criterion OPEN;singleton slack1 needs special-two-hole3 compatibility,no run/review job.
+- One-hole4 ALL-union spectrum hypothesis:tight rank cuts/pair lower slack1 have hand boundary completion MI349. Full criterion subsequently REFUTED MI350;singleton slack1 led to special-two-hole3 compatibility,no run/review job.
 
 - One-hole4 ALL-union criterion REFUTED by hand:4,18,18,32 on0..12 minus6;infinite(a,3,3,3) family MI350. Two forced near-extreme bins expose parity gap;special-two-hole3 also false,no run.
+
+- Special pool[0,V] minus{1,v},three sizes>=4:individual feasibility suffices via zero-owner budgets and G315,hand PROOF-SKETCH G317/MI351. Min3 counterexample retained,targeted review pending,no run.

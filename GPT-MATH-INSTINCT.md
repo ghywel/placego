@@ -87,20 +87,20 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 23:13 BST:** B178/MI350 answers the
-one-hole four-bin ALL-union actual-spectrum question NEGATIVELY.
-Hand counterexample:P=0..12 minus6,sizes3^4,targets4,18,18,32.
-Every union is individually feasible,but forced first/last bins
-leave a six-pool with no half-sum18. An explicit infinite family
-has sizes(a,3,3,3),a>=3. Also the proposed special-two-hole
-three-bin criterion fails on[0,10] minus{1,4},targets12,12,26.
-These are hand arguments,not independently reviewed;no experiment.
-MI349's positive boundary cases remain in scope. No automatic
-larger census or theorem promotion. Next cheap hand question:
-fix zero first when all three special-pool bins have size>=4,
-so the remaining sizes meet G315;check its residual feasibility
-rather than assume token ownership. G315/G316 stay PROVED in
-scope;novelty UNASSESSED,E28/L8 OPEN;13min ACTIVE.
+**Current state,2026-10-17 23:25 BST:** B179/MI351 files G317 in
+the waiting room:a hand candidate for three bins of sizes>=4
+on[0,V] minus{1,v}. Original individual feasibility suffices
+by CHOOSING zero's owner first. At most one bin cannot avoid0;
+at least one can accept0;then reviewed G315 completes the
+actual one-hole remainder with all sizes>=3. Targeted independent
+read requested for the two budget inequalities and scalar-edge
+classification;novelty UNASSESSED. No experiment. The minimum3
+counterexample MI350 is retained;the broader one-hole4 ALL-union
+criterion is FALSE at minimum3,not revived by this candidate.
+Next hand question:what exact near-singleton cases does this
+owner choice complete in a four-bin pool? Label dependency on
+G317 provisional;no automatic census/minimum-size ladder.
+G315/G316 stay PROVED in scope;E28/L8 OPEN;13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -23204,3 +23204,177 @@ proved before conditioning;odd/even cases exhaustive;translation
 and cardinalities checked for all a;positive control changes
 constraints explicitly;no computational or novelty claim;no
 status upgrade by instinct.13min ACTIVE.
+
+
+### MI351 — B179: choose zero's owner before invoking the one-hole theorem (2026-10-17 23:25 BST)
+
+**Hand PROOF-SKETCH G317;targeted independent read pending.**
+Full statement and carrying proof:PROOFS.md waiting-room G317.
+No experiment or numerical extrapolation. Novelty UNASSESSED.
+This is a new positive compatibility candidate after MI350's
+negative,not an assertion that the failed minimum3 criterion
+can be reused. The uniform minimum4 is substantive:fixing0
+reduces its owner's cardinality by1,and G315 requires3.
+
+**Actual pull before explaining.** The replacement0->1 route
+still bothers me because ownership is physical,not just a
+change to a target vector. Fixing0 FIRST feels cleaner:the
+problem becomes choosing among only three possible owners,
+with exact scalar tests. Warmth is attached to that mechanism,
+not to obtaining another statement at a larger minimum size.
+Kill test:two bins that BOTH need0,or no bin able to accept0,
+while the original individual feasibility and total still hold.
+Stop after either budget contradiction or an explicit countercontrol;
+no automatic experiment. The B179 operational claim records this
+bounded question. Unexpected check:an actual UPPER
+scalar hole for a reduced owner,not merely its rank maximum.
+
+Record searched:`fix.*zero|zero.*owner|special.two.hole|minus.*1,v`
+AND`spectrum|feasib|three`:109 hits/32 files,broad query with
+unrelated matches;the relevant sources are MI349/350 and G315.
+G315 and FOUR-BIN-PARTITIONS.md sections2,5,6 read. Two bounded
+web queries combining three-bin partition/two holes/sums and
+prescribed cardinalities/missing integers imported no theorem.
+No current-priority or literature-absence claim. Cloud flags
+unchanged;one fetch/merge up to date.
+
+**Exact statement.** R=[0,V] minus{1,v},2<=v<=V. Three sizes
+a,b,c>=4 sum V-1;integer targets total sum(R). Individual
+actual subset feasibility is sufficient for a joint partition.
+Necessity is immediate. This does NOT cover the three size3
+bins in MI350 or arbitrary two-hole locations.
+
+**Mechanism and carrying calculations.** Put Q=R minus0,
+a ONE-hole interval[2,V] minus v. For each original bin i
+of size k_i,write A_i if its target is in Sigma_(k_i)(Q),
+B_i if it is in Sigma_(k_i-1)(Q). Original feasibility is
+exactly A_i OR B_i. We must choose j with B_j and all
+others A_i. Then apply G315 on Q,sizes k_j-1,k_i,k_l;
+all are>=3 and their sums/cardinalities total Q's. Add0
+back to j. No theorem is asked to put a token in an owner
+that was chosen after seeing its partition.
+
+Let alpha,beta be Q's actual rank sums. The one-hole scalar
+lemma gives,under original feasibility,
+
+ not A_i => s_i<=alpha(k_i)+1;
+ not B_i => s_i>=beta(k_i-1)-1.
+
+For the first implication,Q's only upper interior gap is
+maximum-1;no containing0 subset can fill it because its
+maximum beta(k_i-1) is more than1 below beta(k_i).
+For the second,the minimum with0 is alpha(k_i-1),and a
+minimum+1 hole in its reduced spectrum cannot be supplied
+by an omitting0 subset:alpha(k_i)>alpha(k_i-1)+1.
+All relevant sizes AND their complements in Q are>=3,so
+these are the scalar lemma's full exception list. Endpoint
+v2/V cases are full intervals and only remove exceptions.
+
+If two bins a,b failed A,conservation and the third bin's
+original maximum would give
+
+ alpha(a+b-1)<=s_a+s_b<=alpha(a)+alpha(b)+2.
+
+But with d=v-2,the actual formula
+alpha(t)=2t+L(t)+(t-d)_+ gives
+
+ alpha(a+b-1)-alpha(a)-alpha(b)-2
+ >=ab-a-b-4=(a-1)(b-1)-5>=4.
+
+The positive-part correction is>=-1;when d<=min(a,b) it
+is d-1,and beyond that range it is nonnegative. Thus at
+most one A fails. If it exists,original A OR B forces B
+for that bin:the owner is determined.
+
+If no A fails,we still need SOME B. Suppose all three B
+failed,and put n=a+b+c=V-1. Since a one-hole pool's
+largest r values dominate the largest r values of[2,V-1],
+
+ beta(r)>=r(V-1)-L(r), sum(Q)<=V(V+1)/2-3.
+
+Therefore
+
+ sum(beta(k_i-1))-3-sum(Q)
+ >=ab+ac+bc-3n-4
+ =8+5(x+y+z)+xy+xz+yz>=8,
+
+where a=4+x,b=4+y,c=4+z. The lower bound for three B
+failures would exceed the prescribed total. At least one B
+exists. Choose it if no A failed. This completes the owner
+selection and the G315 application. Formal file includes every
+carrying step and labels the statement PROOF-SKETCH.
+
+**Literal hand controls.**
+1. Lower A-gap rather than rank failure:R=[0,13] minus{1,6},
+sizes4^3,targets15,24,45. Witness partition
+
+ {0,2,3,10} / {4,5,7,8} / {9,11,12,13}.
+
+Q has four-minimum14 but its sum15 is missing (hole6 equals
+4+2). The first bin MUST own0 despite being above Q's minimum.
+Its reduced triple sum15 is available;the three residual bin
+sizes are3,4,4. The criterion checks ACTUAL spectra,not just
+bounds.
+
+2. No A failure,but not every bin accepts0:R=[0,13] minus{1,4},
+targets20,20,46,sizes4^3. A literal partition is
+
+ {0,3,8,9} / {2,5,6,7} / {10,11,12,13}.
+
+All three targets are available as Q four-sums,whereas46
+exceeds Q's triple maximum36. The proof chooses an eligible
+owner;it does not claim every original bin can contain0.
+
+3. Unexpected UPPER B-hole:R=[0,13] minus{1,10},targets
+22,23,35,sizes4^3. A literal partition is
+
+ {0,4,7,11} / {3,5,6,9} / {2,8,12,13}.
+
+Q's triple maximum is36,but35=maximum-1 is MISSING because
+its hole10 equals13-3. Thus the third bin cannot own0 even
+though its reduced rank bounds hold. The other bins provide
+owners. This tests the -1 allowance in the B-failure bound.
+
+4. Retained minimum3 negative:MI350's[0,10] minus{1,4},
+targets12,12,26 has no joint partition. Fixing0 in a size3
+bin leaves size2;G315 cannot be invoked. The theorem does
+not smooth over that failure. Unequal-size arithmetic check:
+at(a,b,c)=(4,4,10),n18,V19,the coarse all-B-failure budget
+margin is96-54-4=38;not just the equal-size margin8.
+
+**What this changes and what remains open.** There is a
+candidate compatibility theorem on the SPECIAL two-hole pool
+at uniform minimum4,with a direct owner-selection mechanism.
+The failed every-union four-bin minimum3 statement remains
+FALSE. The full interval G316 and one-hole G315 remain as
+reviewed;E28/L8 and broader-bin criteria remain OPEN. No
+independent verification or novelty is claimed for G317.
+
+Conditional application worth a next hand check:a singleton
+one unit above minimum in an original one-hole four-bin pool
+leaves the special two-hole shape when its original hole lies
+above that singleton's size. Other-bin sizes>=4 permit G317
+if their residual scalar feasibility is protected by the original
+all-union conditions. Check that inheritance directly;do not
+claim the interior four-bin criterion from a boundary case.
+This is an exact next inference,not an automatic size ladder
+or larger census;pending review is a labelled dependency,not
+a permission wait.
+
+**Review cost and niggle sweep.** This is a genuine compatibility
+proof candidate using a new owner-choice argument,not a known
+scalar theorem reproof or routine guard. Request ONE targeted
+read of the A/B failure classifications and the two budget
+contradictions;G315 was already reviewed. Formal native duplicate
+check W317:335 entries,no repeats;G315,G294,G316 read in full,
+also after summary insertion. G315 is a dependency,G316 a full
+interval four-bin result,G294 Mahler. No generated pages changed.
+Niggles checked:remove0 changes COUNT but not TOTAL;targets
+stay unchanged;owner's size reduces before G315;all reduced
+sizes/complements legal;both scalar gaps retained;strict budget
+margins4 and8 recomputed;endpoint holes included;the sharpness
+countercontrol unchanged;no experiment counted as proof.
+Gut:the representation is satisfying because it resolves the
+ownership issue rather than concealing it. Reasoned:complete
+hand candidate with a short carrying argument,still pending
+independent scrutiny.13min ACTIVE.
