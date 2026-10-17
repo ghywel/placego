@@ -9710,3 +9710,48 @@ choice still favors the mathematics over more record production. MI201
 remains the sole requested carrying read; share this sketch by READ-LEDGER,
 without adding a review queue or halting. H2 and the cycle criteria remain
 SKETCH until carrying reads. Full E28/L8 and arbitrary load selection OPEN.
+
+
+### MI205 — B90: finish the near-constant exception arithmetically (2026-10-17 01:32 BST)
+
+**Pull/question.** Before changing a load split, know exactly when reordering
+CANNOT help it. MI204 isolated the nearly constant exception but did not
+classify it. The one-exception profile permits a single parameter, so this
+is a completion of the common ordering mechanism, not another folded-cycle
+family or existence census. Record searched: near.constant|two.prefix|
+balanced.*load.*split, then exception.*prefix.*congru|near.constant.*criterion|
+prefix.*repeated.*step ->no search hits (spacing variants missed our recent
+entries); MI117,201,202-204 explicitly read. Prior bounded literature search
+in MI202 found no directly relevant primary theorem; no novelty claim.
+
+**Hand candidate BEFORE audit.** For m>=3 positive integer steps, total S,
+maximum M,0<x<y<S and D=y-x>=M, the exact unavoidability criterion is:
+- all steps s: x or y is a multiple of s;
+- r>=2 copies of s plus one t!=s: x is a multiple of s AND D=t mod s;
+- no value occurs m-1 times: avoidable, conditional on MI204 SKETCH.
+
+For the middle case, every order is determined by k equal steps before t,
+0<=k<=r. Proper prefixes are sj (1<=j<=k) and t+sj (k<=j<=r-1).
+For each forbidden z add k<=z/s-1 when z/s is an integer1..r, and
+k>=(z-t)/s+1 when(z-t)/s is an integer0..r-1. Intersect with[0,r].
+This interval test is exact for ANY forbidden levels, even without separation;
+the congruence simplification uses D>=max(s,t). If nonempty, choose its lower
+endpoint and write s^k,t,s^(r-k). No ordering search is needed.
+
+**Predictions BEFORE audit.** Reuse the immutable B89 artifact and its frozen
+labelled-subset DP outcomes: all20,390 classifications must match the formula;
+all4,375 non-rich questions are now constant/one-exception cases. Construct
+and literally check every avoiding order in these arithmetic classes; retain
+rich B89 witnesses without claiming a new algorithm. No existence solver is
+rerun over that domain. Digest must match MI203. Separately check only these
+12 fixed one-exception fixtures against B89's independent subset DP:
+(r,s,t;x,y)=(2,1,3;1,4),(3,3,2;2,6),(4,5,2;5,12),
+(4,5,2;2,10),(5,2,7;2,9),(5,2,7;1,8),(3,3,6;3,9),
+(3,3,6;2,8),(6,4,3;4,11),(6,4,3;3,12),(2,7,1;1,14),
+(2,1,3;1,2). Last is a deliberate OUTSIDE-separation counterfactual:
+the congruence-only rule says unavoidable, but3,1,1 avoids1/2; the exact
+k-interval must agree with DP. Unexpected check: t<s in(3,3,2;2,6)
+forces the unique interior k1, not putting the exceptional step first/last.
+2CPU sec/64MiB, stop any mismatch; no repair, expanded range or fresh census.
+The uniform implication remains SKETCH because MI204 is unreviewed. MI201
+remains sole requested carrying read; no new queue or review halt.

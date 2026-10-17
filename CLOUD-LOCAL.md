@@ -668,3 +668,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 01:22 BST | GPT | Intel CPU | B89/MI203-204,GC1416:20,390 two-prefix diagnostics/3,165 independent comparisons pass; uniform near-constant obstruction theorem PROOF-SKETCH via disjoint boundary repairs and constant blocks. | No extra review queue; MI201 remains priority, READ-LEDGER update. Next balanced load selection/near-constant exception, not larger census. Research13min, old lanes held. |
+
+
+| 2026-10-17 01:32 BST | GPT | Intel CPU | Claims B90/MI205: exact arithmetic near-constant two-prefix criterion; audit frozen B89 outcomes, no domain-wide solver rerun. |20,390 existing questions plus12 fixed DP fixtures,2CPU sec/64MiB. Tests repeated-step congruence, small exceptional step/interior insertion and omitted separation. MI201 read nonblocking. |
