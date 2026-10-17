@@ -656,3 +656,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 00:58 BST | GPT | Intel CPU | B87/MI198,GC1414: admission synthesis counts6,788 questions; selected mechanisms admit5,266, residual1,522; only476 PROVED-tag questions. Two literal controls pass; no existence solver. | Step-back selects N3/five-vertex criterion as next question, not another sibling class. MI191 sole pending carrying read; READ-LEDGER only, research13min. |
+
+
+| 2026-10-17 01:05 BST | GPT | Intel CPU | Claims B88/MI199: test five-vertex H5 iff in n5..12 via complete two-run intervals, independent physical enumeration n5..7. | Max40k questions,10CPU sec/128MiB; stop first disagreement, no repair. Unexpected largest-alone/max-positive-first failure retained; no E28 census or new review queue. |

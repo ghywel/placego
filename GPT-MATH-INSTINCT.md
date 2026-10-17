@@ -9282,3 +9282,58 @@ preregistration a28f88f0. CPU0.061249s, peak RSS18,640,896bytes, within
 cited/instinct/b87-admission-synthesis-3b53cad88d8f0930.json,558,492bytes,
 SHA256 3b53cad88d8f0930397f545953dbad8b3a2a38adc7e37242bd90641a9ad885d0.
 Upload digest and manifest receipts verified. No raw data in git.
+
+
+### MI199 — B88: exact five-vertex diagnostic before a universal claim (2026-10-17 01:05 BST)
+
+**Pull/question.** B87's residual begins at three negative halves. This is
+small enough to describe every possible two-run arrangement, rather than
+add another sufficient family. Candidate H5: for n>=5, positive halves
+sorted a<=b<=c, odd p,q>0 with p+q=2K, a folded-distinct cyclic placement
+of(p,q,-2a,-2b,-2c) in0..2n-1 exists IFF max(p,q)<=2n-3,
+not p=q=2n-3, c<=n-1 and a+b<=n-1. This is a CONJECTURE to try to break.
+No novelty claim; full E28/L8 would not follow from five vertices alone.
+Record searched: five.vertex|three.negative|N.?3.*criterion|five.cycle ->
+no hits, including ledgers (hyphenated title variants may be missed);
+MI175's general necessity and MI180's full-label case reread. Bounded web
+queries on prescribed distinct partial sums / two positive and three negative
+terms returned no directly relevant primary result; NOT FOUND in that search,
+not a theorem of absence. Existing Plagne-Tringali tool remains prior art;
+reflection/window requirements here are additional.
+
+**Carrying geometry before code.** Put h=n-1 and choose first odd P.
+alpha=(2h+1-P)/2. A=(t,t+D), B=(alpha-t,alpha-t+E,alpha-t+E+F),
+where(D,E,F) permutes(a,b,c). Allowed t is the full integer interval
+[max(0,alpha+E+F-h), min(alpha,h-D)]. The two endpoint sums give
+exact odd P,Q. Chain disjointness is checked explicitly. Also allow a
+singleton chain opposite all three gaps (six orders), when its span fits.
+These two split types and swapping P/Q cover every placement: rotate to an
+odd jump; the negative edges form two monotone parity runs. This is an exact
+finite description, not yet a sufficient inequality proof.
+
+Largest alone is load-feasible whenever any two-bin split is: c<=h and
+a+b<=h. But choosing P=max(p,q) can fail. Hand fixture n10,h9,
+d=(4,4,6),p15/q13: alpha2, largest-chain t1 or2 gives endpoint collisions;
+first P13 gives alpha3, A=(3,9),B=(0,4,8), disjoint and exact joins.
+The unexpected check will explicitly preserve this failed shortcut while
+requiring the opposite-owner witness to pass. Order/owner choice matters.
+
+**Predictions BEFORE experiment.** Check only n5..12, sorted halves1..h,
+K<=2h-1, and all legal odd p<=q<=2h-1,sum2K. At most40,000 questions,
+10CPU sec/128MiB. Predict H5 exactly matches the complete two-run diagnostic;
+stop on the FIRST disagreement and retain it, without a repair or larger run.
+Report the actual question count, no claim about n13 onward. This is a small
+variable-window diagnostic, not a repeat of Cloud's M28 existence survey.
+
+Independent control: for every question at n5..7 compare existence with an
+independent permutation-of-five-moves and physical translation enumeration,
+using literal distinctness/window/reflection checks, no chain formulas.
+For each accepted question retain one witness and independently validate its
+full move bag/folded labels. Negative controls: n14,d=(8,8,8),p23/q25 must
+fail capacity and exact geometry; n6,d=(1,4,4),p=q9 must fail despite capacity;
+n4,d=(1,1,2),p3/q5 must fail label count. These are separate named fixtures,
+not an expansion of the diagnostic grid. No actual E28 partitions or proof
+status upgrade. If H5 survives, next is the infinite root/order argument;
+finite success does not fill that quantifier. If it fails, examine the first
+obstruction. Gut: curiosity about this owner asymmetry is specific, not just
+continued warmth. Reasoned: risk the iff before constructing more classes.
