@@ -13498,3 +13498,152 @@ point free? A provisional N5 premise must be labelled as such; a blocked
 subdivision would refute that lifting method, not the six-gap criterion.
 Search the record before pursuing it. No experiment or new claim opened
 here, and no routine review halt; research13min stays active.
+
+
+### MI249 — B113: change of route; rich six-gap completion in arbitrary windows (2026-10-17 06:23 BST)
+
+**Pull / change on evidence.** The proposed merge/subdivide question led
+back to the existing two-gap/four-gap geometry MI208/210. Reading it before
+inventing a lifting argument changed the route. Its fixed h13 thin case
+uses an ODD window length to exclude equal top gaps. General windows expose
+a real obstruction, with a simple allocation repair. Surprise and warmth
+are tied to that missing boundary, not another parameter table.
+Record searched: merge.*subdiv|subdiv.*gap|insert.*free.*point|
+split.*negative.*gap ->one pointer to MI248; direct notebook search then
+found MI085/090 and MI208/210. Read those relevant subdivision/endpoint
+arguments and path_forest_span_rich.py. Further single-regex search
+equal.*top.*thin|u=S\+1|S\+1.*largest|span.*rich.*arbitrary|
+span.*dominant.*general ->one unrelated historical ledger hit. This is
+not an absence/novelty claim. No new experiment or program execution.
+
+**Initial lifting question: an arbitrary chosen merge is NOT enough.**
+At h7, halves(1,1,2,2,2,3),p=q11 have a full-label witness
+A=(2,4,7),B=(0,1,3,5,6). Merging the two unit halves gives a feasible
+N5 parent: A=(0,3,5,7),B=(2,4,6), gaps(3,2,2)/(2,2), same11/11.
+Every midpoint of its four2-gaps is occupied. In fact NO parent witness
+for that unit merge can have a free midpoint: a lifted witness would
+fill all eight labels and have three consecutive indices of one colour.
+For any full-label word in the original six-gap problem, the four nonunit
+gaps force four internal runs of lengths1,1,1,2; joins11/11 force end
+runs2,1. Every run has length<=2, a contradiction. Thus an unrestricted
+chosen-pair lift is false even though both problems have witnesses.
+This closes that shortcut, not N6; no separate proof entry/review request.
+
+**General-window candidate, PROOF-SKETCH conditional only on MI246's
+four-item prefix sketch.** Let h>=7,M=2(h+1), and sort six positive
+negative halves b1<=b2<=b3<=b4<=D<=E. Put S=sum b_i,L=D+E.
+Assume S<=L<=h and the four companions are rich (no value occurs three
+times). For any positive odd p,q with p+q=2(L+S),max(p,q)<=2h-1,
+not both2h-1, a folded-distinct eight-vertex cycle exists.
+This extends MI210's fixed h13 class, not all six-gap lists or E28/L8.
+
+**1. Roots and endpoint compatibility.** Put H=h-L,J=h-S>=H,
+T=H+J>=2,P=max(p,q),Q=min,alpha=(2h+1-P)/2. Then
+1<=alpha<=floor((T+1)/2)<T. Representative root sums alpha/alpha-1
+give the consecutive offset interval
+
+    I=[-alpha,alpha]            when alpha<=H;
+    I=[alpha-1-2H,alpha]        when H<alpha<=J.
+
+These cover all cases; when H=J, alpha<=H, and when H<J, alpha<=J.
+Recover c by z's parity, x=(c-z)/2,y=(c+z)/2. For c=alpha-1,
+reflect/reverse BOTH chains in h; root sum becomes T+1-alpha,
+giving the original Q first,P second. This is the endpoint identity
+rederived in MI248, not an assumption that N5 itself lifts.
+
+For A's possible middle points x+D,x+E, BOTH orders collide with
+one of B's endpoints precisely at
+
+    F={-S,0,L-S,L},
+    plus {u,u-S} if D=E=u,
+    plus {D} if D<E and E-D=S.
+
+Outside the four endpoint coincidences, both distinct middle choices
+can hit the two B endpoints only when their difference is S. With
+equal gaps there is just one middle choice. This proves the displayed
+endpoint obstruction set without any ordering census.
+
+If H>=1, I has at least three consecutive integers. Richness gives
+S>=6,max b_i>=2, and D,E>=2. If D=E=u, L>=S forces u>=3; F is a
+subset of two residue classes modulo u, so cannot contain three
+consecutive integers. If D<E and E-D!=S, F's outer spacings are S>=6.
+If E-D=S, its sorted values are -S,0,D,2D,L, with spacings S,D,D,S,
+all>=2. Therefore some z in I escapes F, with an endpoint-compatible
+A order. J0 is impossible because J>=H and T>=2.
+
+**2. The thin case H0, including the formerly excluded equal top.**
+Here L=h,J=T>=2 and I={alpha-1,alpha} lies in[0,J-1]. If D<E,
+the four basic endpoint values meet I only at0. The possible extra
+value D is>=2: at alpha1 choose z1, while at alpha>=2 at most one
+of the two positive representatives can equal D. Thus this case works.
+
+If D=E=u, then h=2u,J=2u-S. Also
+
+    alpha<=floor((2u-S+1)/2)<=u-3,
+
+since S>=6. The endpoint values -S,J,2u,u are all outside I; only
+0 and u-S can obstruct its two consecutive representatives. At
+alpha>=2,0 is absent and at most one is bad. At alpha1 the pair{0,1}
+is wholly bad EXACTLY when u-S=1. Thus the ENTIRE top-two allocation
+has just one obstruction family:
+
+    D=E=u=S+1, h=2u, {p,q}={4u-1,2u-1}.
+
+This is an allocation failure, not nonexistence of the prescribed cycle.
+For the first original join4u-1, A=(0,u,2u) forces B_min1,B_max=u,
+hitting its middle. For first join2u-1, B_min=u+1,B_max=2u, hitting
+A's maximum. Reordering the companions changes neither endpoint.
+
+**3. Complete the ordinary case with at most TWO proper barriers.**
+After choosing z and an endpoint-compatible A order, its span L>=S
+prevents all three A vertices from lying strictly inside B's span S.
+If two are internal, they are consecutive A vertices, since both ends
+cannot lie strictly inside a shorter/equal interval. Their separation
+is D or E, each>=max b_i. MI246's four-item argument supplies a B order
+avoiding both. One barrier uses its one-level swap; zero needs none.
+Together with the separately checked endpoints, this gives disjoint
+chains and the exact original move bag after any required reflection.
+
+**4. Repair the entire thin family without prefix machinery.** At
+u=S+1,h=2u, use
+
+    A=(0,u),
+    B=(1,u+1,u+1+b1,u+1+b1+b2,u+1+b1+b2+b3,2u).
+
+B takes one u-gap then the four companion gaps. Its first vertex1
+and all others>=u+1 miss A's0,u. Its last is u+1+S=2u=h, so both
+chains fit and all eight indices are distinct. Their odd joins are
+4u+1-2=4u-1 and2(u+2u)-(4u+1)=2u-1, exactly the original pair.
+The two negative loads are now u and2u-1. This changes allocation,
+instead of persisting with a blocked ordering. The repair itself
+does not require richness, although the ordinary-case proof does.
+
+**Hand boundary / unexpected checks, no new experiment.** For companions
+(1,1,2,2),S6,u7,h14,p27/q13, the old top-two split A=(0,7,14)
+forces B endpoints1,7 or8,14, so BOTH original owners fail for EVERY
+companion order. The repaired A=(0,7),B=(1,8,9,10,12,14) is disjoint,
+has the exact six-gap bag and joins27/13. With the same companions
+and equal top u6,h12,p23/q13, A=(0,6,12),B=(1,2,3,5,7) works:
+u=S is not part of the exceptional family. At u8,h16,p31/q13,
+A=(0,8,16),B=(1,2,3,5,7) works too. Thus equality u=S+1, not merely
+an even h or equal top gaps, is the obstruction. The original h13
+proof remains valid: h=2u cannot occur there. No old claim is retracted.
+
+**Niggle sweep / circularity.** The thin analysis uses the exact two
+representatives, not the thick three-integer argument. Richness is used
+only for the endpoint size bounds and MI246's two-prefix implication;
+no arbitrary-m prefix claim or unverified N5 criterion is imported.
+Final joins follow from the actual endpoints after reflection. The
+exception is an endpoint collision before any prefix choice, and its
+repair is a direct coordinate construction. The arbitrary chosen merge
+failure was retained, not promoted to a universal reduction or forgotten.
+No finite success substitutes for the infinite argument.
+
+Gut: renewed warmth at a real thin-boundary obstruction turning into a
+uniform repair. Reasoned: the span-dominant rich-four six-gap class now
+has a general-window candidate, still UNVERIFIED and conditional on
+MI246 SKETCH. Full N6, E28 and L8 remain OPEN. Next cheap check is a
+small preregistered general-window diagnostic, comparing root/endpoint
+maps independently and testing the new thin-family repair. No run is
+opened here. Keep MI238 as the ONE carrying priority; send this as a
+READ-LEDGER direction change, with no routine review halt. Research13min.

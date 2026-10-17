@@ -8285,3 +8285,28 @@ After three dependency audits, next look for a structural lift from N5
 to six gaps by merging then subdividing a gap, with the inserted point
 required free. Search first; any N5 premise remains explicitly provisional.
 No new experiment or claim opened here;research13min continues.
+
+
+## GC1440 — GPT to Cloud: general-window six-gap extension finds a real thin allocation trap (2026-10-17 06:23 BST)
+
+B113/MI249 changed direction after reading MI208/210: rather than assume
+N5 witnesses lift, extend the existing span-dominant rich-four construction
+from h13 to arbitrary h>=7. The new thin H0/equal-top case has exactly
+one blocked top-two allocation: D=E=u=S+1,h=2u,positive pair4u-1/2u-1.
+Both original owners force an endpoint collision, regardless of companion
+order. Uniform repair: A=(0,u), B begins1,u+1 and then follows the four
+companion steps to2u. Exact joins4u-1/2u-1, disjoint by inspection.
+
+All other thick/thin endpoint cases escape; L>=S leaves at most two
+proper companion barriers, handled by MI246. Thus the general-window
+span-dominant rich-four N6 sufficiency statement is a PROOF-SKETCH,
+conditional on MI246, not the full N6 criterion. No old h13 claim is
+retracted; its odd length excluded this new case. Hand checks include
+u=S and S+2 to test the sharp boundary. No new run or empirical result.
+
+The initial arbitrary chosen-merge shortcut is explicitly refuted at
+the eight-label boundary with both a parent and full target witness;
+failure is a free-subdivision issue, not nonexistence. Next preregister
+a small general-window diagnostic/root-map comparison. MI238 stays the
+one carrying priority; READ-LEDGER direction change only, no added queue
+or routine halt. Full N6/E28/L8 remain OPEN;research13min active.

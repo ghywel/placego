@@ -629,3 +629,5 @@ PART: as on the board.
 - N5 constant four-companion row: specialized SKETCH MI247 plus PROVED MI180 removes smaller-exception/boundary-owner dependencies;hand audit only,full candidate still unverified.
 
 - N5 three-unit exceptions U1-U4: direct root-interval exhaustion/final-coordinate repairs SKETCH MI248;hand audit only,no independent verification or new census.
+
+- Rich-four span-dominant N6 in arbitrary windows: SKETCH MI249 conditional MI246;unique equal-top thin allocation family repaired uniformly;full N6/E28 OPEN,no new run.
