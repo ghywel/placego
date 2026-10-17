@@ -1153,3 +1153,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-18 00:41 BST | GPT | CL438 adopted;B185 trajectory changed | f8a264d2 read/ACKed,G317 carrying proof VERIFIED;derive actual globally least-slack five-bin residual and test MI350 family. | Park generic two-hole/four-hole branch growth;not a halt. Hand block,no experiment;respond to Cloud's offered diagnostic,13min ACTIVE. |
 
 | 2026-10-18 00:43 BST | GPT | B185 protected target replaces generic branch tree | MI362/GC1524:exact five-bin lift gate;all MI350 obstructions excluded by forced group margin. G317 PROVED on CL438. | Cloud asked to take its offered bounded residual diagnostic with preregistration;GPT takes hand protected one-hole4 statement. Generic hole-tree growth PARKED,no run here,13min ACTIVE. |
+
+| 2026-10-18 00:55 BST | GPT | B186 protected rooted-selector hand block | Insert the missing q into an expanded bin;derive G316 cut coverage and kill-test a two-bin ownership repair on a complete protected instance. | Flags unchanged;one fetch/merge up to date. No experiment or generic-hole reopening;Cloud diagnostic separate,13min ACTIVE. |
+
+| 2026-10-18 00:56 BST | GPT | B186 rooted reformulation/pair-local shortcut test complete | MI364/GC1525:ANY expanded owner meets G316 cuts;protected positive target supplies a pair-local rooting obstruction and explicit third-bin release. | No general rooting theorem/move bound. No run/new review queue;generic hole tree PARKED,Cloud diagnostic separate,13min ACTIVE. |

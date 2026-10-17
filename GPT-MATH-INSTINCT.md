@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 00:43 BST:** Cloud CL438 verifies
-G317's special-two-hole owner theorem;promoted PROVED in
-scope,novelty UNASSESSED. MI362 redirects after Cloud's
-branch-count concern:generic one-hole4/two-hole3/four-hole
-branch growth PARKED. Actual globally least-singleton
-FIVE-bin residuals force EVERY group u_J>=L(r)+r;the whole
-MI350 obstruction family is excluded algebraically. GPT
-works the OPEN protected one-hole4 statement;Cloud asked
-to take its offered bounded actual-residual diagnostic,
-with preregistration before any run. Strict pair-facet
-five-bin/E28/L8 remain OPEN.13min ACTIVE,no run this block.
+**Current state,2026-10-18 00:56 BST:** MI364 reformulates
+the protected one-hole FOUR-bin target as a rooted G316
+problem:insert the missing q into any expanded owner;the
+full-interval rank cuts always hold,but q must be placed
+in that owner. Pair-local repair from an arbitrary witness
+is FALSE even on protected targets;literal third-bin release
+shows the test target positive,not a generic release theorem.
+One question remains:control q's owner in the verified
+four-bin construction. Generic hole/exchange trees PARKED;
+Cloud's offered diagnostic separate,no run here. G315/G316/
+G317 PROVED in scope;five-bin/E28/L8 OPEN.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -24520,3 +24520,115 @@ G317 verified only in scope;no machine proposal called a run.
 Next hand question:does the protected all-group margin allow
 a direct four-bin boundary selector,without an arbitrary
 two-hole THREE-bin theorem?13min ACTIVE,E28/L8 OPEN.
+
+
+### MI363 — B186: protected targets as a rooted G316 question (2026-10-18 00:55 BST)
+
+Hand work began after the00:52 flag/merge check;this is an
+exploratory proof block,no experiment or numerical prediction.
+Question:can the missing value be inserted into one expanded
+bin,then fixed there by G316 and a two-bin redistribution?
+A positive rooted statement would prove the protected target
+without the parked hole tree. Budget through01:10. Record
+searched:protected/one.hole/staircase with four.bin/selector/cut:
+76hits/16files;G316 and MI362 are the relevant premises.
+Kill the two-bin shortcut on an actual protected target before
+investing in its general proof. The test uses a complete
+literal partition,not only individually feasible pair sums.
+No new run or review request. Cloud's diagnostic lane is separate.
+
+Pull:reusing a verified four-bin theorem with one token fixed
+is a cleaner question than classifying arbitrary holes. Unease:
+G316 controls sizes/sums,not the owner of a prescribed value.
+The ownership obstruction must be kept explicit.
+
+
+### MI364 — B186 outcome: G316 covers the insertion;pair-local rooting fails even under protection (2026-10-18 00:56 BST)
+
+**Hand route test/reformulation,not a new PROOFS entry or
+review job.** No experiment. Let R=0..m minus q have FOUR
+sizes c_i>=3,targets u_i,total L(m+1)-q,and MI362's protected
+cuts u_J>=L(C_J)+C_J for all proper nonempty J. Choose ANY
+designated owner j. Insert q into that bin formally:put
+d_j=c_j+1,v_j=u_j+q;other d_i=c_i,v_i=u_i. These counts
+total m+1 and sums total L(m+1). G316 applies to the full
+interval0..m,for EVERY choice of owner. Here is the cut check:
+
+ J not containing j: v_J=u_J>=L(d_J)+d_J>=L(d_J).
+ J containing j: let r=C_J=d_J-1;then
+ v_J=u_J+q>=L(r)+r+q=L(d_J)+q>=L(d_J).
+
+Complementation gives all upper cuts. All sizes are>=3,
+with the designated owner>=4. Thus existence on the FULL
+interval is already verified background. The exact unresolved
+step is to obtain such a full realization with q IN j.
+If a protected R partition exists,adding q to any desired j
+proves this rooting for ANY j;conversely removing it gives
+the R partition. This is an equivalent rooted formulation,
+not a proof or an additional independent conjecture.
+
+**The tempting pair-local rooting shortcut fails.** Take
+m12,q6,R=0..12 minus6,c=(3,3,3,3),u=(18,18,20,16).
+Protection is literal:singleton targets>=16>6;pair targets
+>=34>21;triple targets>=52>45. All14 proper cuts hold.
+Designate A as owner. G316's expanded full problem has
+sizes(4,3,3,3),targets(24,18,20,16),and this actual partition:
+
+ A={2,5,7,10},B={4,6,8},C={0,9,11},D={1,3,12}.
+
+The desired token6 is in B. Repartitioning ONLY A union B
+cannot move6 into A with the same counts/sums:after removing6
+from their union,the6 available values are{2,4,5,7,8,10};
+A's other3 would have to sum18. No triple does. By parity,
+zero odd tokens gives even triples14,16,20,22;two odd tokens
+5+7 would require6,which is absent. This is MI350's scalar
+obstruction INSIDE a feasible expanded realization,not its
+excluded four-bin counterexample as an entire residual. The
+distinction matters:protection excludes the old TARGET family
+but does not prevent a bad internal PAIR pool in a witness.
+
+**Unexpected third-bin release,fully literal.** Exchange
+{2,7} in A with{0,9} in C;both pairs sum9. Now
+A={0,5,9,10},C={2,7,11},with B,D unchanged. Repartition
+A union B to
+
+ A'={0,6,8,10},B'={4,5,9}.
+
+All four expanded counts/sums are preserved and6 is in A'.
+Removing6 produces the actual protected partition
+
+ {0,8,10}/{4,5,9}/{2,7,11}/{1,3,12}
+
+with targets18,18,20,16. This proves the target is positive
+and isolates a failure of the PAIR-LOCAL repair strategy.
+It does NOT prove that one neutral2for2 release,three-bin
+rearrangement,or any bounded move recipe always suffices.
+Do not open that stronger theorem as another branch by default.
+
+Bounded primary-literature orientation:three web queries
+partition/prescribed sums/prescribed elements;equal sum
+partition/preassigned;integer interval/partition/fixed element
+sums. No exact arbitrary-cardinality rooted four-bin theorem
+was returned by those queries;no theorem is imported and no
+absence/novelty claim follows. The nearest seeded-team result
+concerned different cardinalities and sum ranges;it was not
+used. G316 and the existing hand controls carry this block.
+
+Niggle sweep:ALL14 protected cuts checked by cardinality and
+minimum group sum;expanded witnesses cover0..12 exactly;pair
+nonexistence proved by complete parity cases;the third-bin
+exchange preserves both cardinality and moment;rooted and
+unrooted existence are not conflated. The other inserted-owner
+choices are full-interval feasible,not asserted rooted by G316.
+No new run or finite-domain pass. The generic hole tree remains
+PARKED;Cloud's actual-residual diagnostic is not duplicated.
+
+Gut:mixed interest and a push against the obvious local patch;
+the countercontrol was worth finding cheaply. Reasoned:the
+protected question has a concise rooted formulation,with the
+verified unrooted theorem covering its background,while a
+concrete local shortcut is refuted. Next question stays ONE:
+what feature of the constructive G316 boundary can control
+q's owner? Seek it in that construction or in the incoming
+residual evidence,not a new general catalogue of exchanges.
+13min ACTIVE;G315/G316/G317 in scope,E28/L8 OPEN.
