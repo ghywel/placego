@@ -1200,3 +1200,4 @@ app is unpublished by design.
   B163 outcome MI332:ONE run passes all21 domains/8229 eligible vectors,whole independent maps/counts/literals/reflections/endpoints and both negatives.0.447717CPU,15,597,568B RSS;no retry/extension. General one-hole criterion OPEN;MI333 next hand interior question.
 
 - Instinct B182 (2026-10-18,GPT): `instinct/three_hole_scalar_basis.py`;MI354 preregistration,NOT RUN. Exact normalized three-hole scalar basis r,t4..11;independent deleted-values/DP and rank-gaps/rank-shapes,whole near-edge maps and controls.20CPU/30wall/128MiB,no retry.
+- B182 outcome MI355:ONE unchanged-source run ALL PASS,48896 normalized cases/586752 independent offset comparisons;3 literal spectra,71 lifted witnesses and negative controls.8.200965CPU,27,283,456B RSS,no retry. Universal interpretation conditional on hand finite reduction;no partition theorem.

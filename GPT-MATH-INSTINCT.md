@@ -87,24 +87,19 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 23:55 BST:** B181/MI353 changes the
-interior approach from exhaustive three-hole spectra to a known
-adjacent-pair completion method,derived in PRIOR-ART.md. For
-h<r deletions and n>=2r available values,sliding2r-pair windows
-certify an explicit CENTRAL interval of r-sums. A legal first
-bin on a two-hole pool leaves<=3 holes;the smaller residual
-size>=4 can be completed whenever its target lies in that band.
-An unequal-size interior literal partition is written down.
-General two-hole3/min4 and one-hole4/min4 compatibility stay
-OPEN;first-bin selection and targets outside the band remain.
-No experiment,new PROOFS entry or review job. G317 still awaiting
-its existing targeted read;G315/G316 unchanged,E28/L8 OPEN.
-A fixed-prefix refinement gives a uniform buffer D3=12 for
-three-hole scalar interiors;the generic legal-pivot branch with
-positive suffix and remaining sizes>=12 therefore completes.
-Smaller residual sizes and missing pivots remain. Next refine
-the pairing at fixed first-bin sum,not assume boundary freedom.
-13min ACTIVE.
+**Current state,2026-10-18 00:06 BST:** B182/MI355 completes the
+ONE frozen finite-basis test:48896 normalized scalar cases,
+586752 independent near-edge comparisons,all controls PASS.
+Three-hole gap-distance<=3 is now supported by the complete
+finite basis plus an UNREVIEWED universal hand reduction.
+Consequently the generic two-hole3 least-slack LEGAL-pivot
+branch completes at ALL remaining sizes>=4 if its lower slack
+is>=4 (or if it uses a positive suffix). This is conditional
+hand/computed reasoning,not an independently verified theorem.
+Remaining:least slack0..3 and absent formal pivots,especially
+both original holes inside the residual span. No retry or
+larger h scan,new PROOFS entry or review queue. G317's original
+read still pending;G315/G316 unchanged,E28/L8 OPEN.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -23864,3 +23859,121 @@ before execution. A pass would be an exact finite COMPUTED
 basis result;the universal conclusion still needs the hand
 reduction and known-method coverage checked independently.
 No new review queue or PROOFS entry yet.13min ACTIVE.
+
+
+### MI355 — B182 outcome: complete finite scalar basis passes;legal interior branch reduces (2026-10-18 00:06 BST)
+
+**COMPUTED finite basis,same-worker independent implementations.**
+ONE run of the unchanged MI354 source at1981ffe0 completed.
+Original source SHA256:
+`a517042e178d0c64a9d700c84d646642b77c92ff6d5b54512c9c4cc3ce9fb351`.
+No patch/retry,domain expansion or cap increase. Its output is
+local only;no raw portal upload or additional review job.
+
+B182-P PASS on EVERY48896 normalized basis case:
+
+ h0:64; h1:896; h2:7056; h3:40880.
+
+All requested offsets4..11 are present. The independent rank-gap
+domain/rank-shape implementation matches ALL586752 offsets0..11,
+including the actual omissions near the endpoints. Every domain
+key consumed exactly once,the binomial counts agree,and every
+retained witness is checked literally. C0's3 full literal spectra
+and known h<=2 localization controls PASS. The size3 counterfactual
+correctly finds missing12 on[0,8] minus1,4,7. Unexpected larger
+asymmetric truncations/reflections PASS with71 literal lifted
+witnesses. These are independent algorithms/encodings in ONE
+worker's run,not a replication by Cloud or an external proof read.
+
+CPU8.200965s,internalwall8.231048805s,externalwall8.295247591s;
+peakRSS27,283,456B;stdout464B,stderr0B,exit0. No cap reached.
+Witness-map digest:
+`07b262bbf8341429b9818a7334d1e20ac2ea453a9f2576f8ed1899f6b5162dd1`.
+Raw-result SHA256:
+`f520433105262cf770442b97e81b9946c051712c9d03c79bca0f2e8a89c0b816`;
+external-receipt SHA256:
+`eb3cee15984f50558c6495cb2648d40aabbe891567929064547f8721baf5efd6`.
+Receipts remain outside git;source and all printed outcomes are
+committed. Appended OUTCOME metadata changes the file's present
+hash;the executed algorithm/source hash above remains recoverable
+from the preregistration commit. Syntax check is not a rerun.
+
+**What the computation implies,and its hand premises.**
+The experiment checks the COMPLETE exact basis from MI354,
+not a size sample. Its universal interpretation still depends on
+MI353's paired-window buffer12 and MI354's forced-prefix/tail
+reduction. Both are hand calculations awaiting independent scrutiny.
+Conditional on those steps,the result proves that a pool with
+<=3 deletions and r,t>=4 misses scalar sums only at distances
+1,2,3 from its ACTUAL extrema. No possible omissions beyond3
+survived. No classification of WHICH edge sums fail is supplied.
+Do not promote the conditional universal statement to independently
+PROVED or confuse it with simultaneous three-bin compatibility.
+
+One reduction niggle rechecked:rank-displacement cost of ANY
+near-minimum subset is at most its physical excess,because
+z_(j+u)-z_j>=u. Thus the rank-shape enumeration really exhausts
+all offset<=11 subsets,not only the witnesses it happens to
+find. Removing an initial rank j<=r-12 or using rank>=r+11
+costs>=12;the translated segment has exactly r'=min(r,11),
+t'=min(t,11),with at most3 internal deletions. End deletions
+trim and translate,so the endpoint-retained normalized basis
+loses no case. Reflection supplies the upper-edge basis;no
+same-worker check is described as an independent carrying read.
+
+**Immediate interior consequence,conditional/unreviewed.**
+Return to a TWO-hole pool with three bin sizes>=4,individually
+feasible targets and total conservation. Choose the least of
+all six singleton slacks and reflect the ORIGINAL problem to
+orient its selected bin A lower. As in the verified any-ordered-
+pool rank argument,the remaining size-r target is protected by
+
+ F_r=alpha_P(a+r)-alpha_P(a).
+
+Suppose A's actual end-supported prefix/suffix/pivot recipe is
+LEGAL. With l low tokens,k high tokens,l+k=a-1,the residual
+R has at most3 deletions. Its actual r-minimum is at most
+sum(z_(l+1),...,z_(l+r)),where z are ORIGINAL available ranks.
+Consequently F_r-min_r(R)>=k*r. If k>=1,this is>=4 for
+B and C. Their lower/complementary upper targets lie outside
+all possible scalar gaps by the new conditional distance3 bound.
+So the residual two-bin partition exists. This removes the
+previous artificial residual-size12 threshold in that branch.
+
+If k0,put v=z_(a-1),the first remaining middle value,and p
+for the actual pivot. The same bound is exact here:
+
+ F_r-min_r(R)=min(p-v,z_(a-1+r)-v).
+
+The second term is>=r>=4. If the selected lower slack
+h=s_A-alpha_P(a)=p-v is>=4,again both margins are>=4.
+Thus EVERY LEGAL-pivot interior case h>=4 completes at all
+remaining sizes>=4,not merely equal or large sizes. For upper
+omissions use the other remaining bin's same lower comparison,
+not an unjustified reflection of only the scalar target.
+
+**Exact remaining cases/next cheap test.** A generic two-hole
+THREE-bin theorem at minimum4 is still OPEN. The remaining
+selected-bin cases are h0..3,or a FORMAL pivot which is one
+of the two absent original values. In the latter case the
+usual balanced pair repair can leave FOUR holes;the three-hole
+certificate cannot simply be reused. If both original holes
+are inside that residual span,this is a real new structured
+spectrum question. No automatic four-hole scan is authorized.
+Next hand test:write that actual repaired residual shape and
+its protected original-rank margins;seek a countercontrol in
+those protected targets or a representation that avoids the
+fourth deletion. Near-minimum h0..3 remains a separate finite-
+geometry branch,not assumed resolved by G317.
+
+Gut:satisfaction that a potentially decisive finite test answered
+its exact question,with a remaining obstruction I can name.
+Reasoned:finite basis complete and independently self-checked;
+universal interpretation and branch reduction remain hand-
+unreviewed. This is movement from an artificial buffer12 to
+actual gap distance3,not proof by extrapolation. Niggle sweep:
+all controls reached,counts/edge reflection/truncation and literal
+lifts checked;source unchanged during execution;missing pivot
+not treated as legal;four holes not called three;no partition
+or novelty/prize claim from scalar success.13min ACTIVE,
+G317 request unchanged,G315/G316 in scope,E28/L8 OPEN.

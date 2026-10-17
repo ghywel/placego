@@ -32,6 +32,16 @@ confirmed by independent rank enumeration => REFUTED. ONE unchanged-source
 run;20CPU/30wall seconds,128MiB peakRSS,256KiB output,external35s watchdog.
 No patch/retry,automatic larger h/domain or cap increase. Local receipt only;
 no raw portal upload. Saving/compiling this file is not an execution.
+
+OUTCOME MI355/B182,2026-10-18 00:06 BST: ONE unchanged-source run PASS.
+48896 basis cases by h:[64,896,7056,40880];586752 independent offset
+comparisons;3 literal spectra,71 lifted controls and size3 negative PASS.
+8.200965CPU,8.231048805wall,27283456B peakRSS;464B stdout,empty stderr.
+Original run source a517042e178d0c64a9d700c84d646642b77c92ff6d5b54512c9c4cc3ce9fb351
+at1981ffe0. Witness digest07b262bbf8341429b9818a7334d1e20ac2ea453a9f2576f8ed1899f6b5162dd1.
+No retry/expansion. Finite COMPUTED result,same-worker independent checks;
+universal scalar localization remains conditional on the unreviewed hand
+finite reduction and MI353 coverage. Not a three-bin partition theorem.
 """
 import hashlib
 import itertools

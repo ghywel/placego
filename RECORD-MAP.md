@@ -780,3 +780,5 @@ PART: as on the board.
 - Zero-owner budgets extend to initial gap L2..5,minsize4;explicit spectrum inheritance gives one-hole4 singleton slack1 all q/slacks1..4 q>a,hand SKETCH MI352. Interior minimum4 criterion OPEN,no run/new review job.
 
 - Known pair-completeness plus sliding/fixed-prefix windows certify all scalar sums12 from extremes for three-hole pools,min(r,t)>=4,hand application MI353/PRIOR-ART. Legal-pivot positive-suffix two-hole3 branch closes at residual sizes>=12;general compatibility OPEN,no run.
+
+- COMPLETE three-hole scalar finite basis48896 cases/586752 independent offsets COMPUTED MI355. Hand reduction supports distance3 localization;conditional legal-pivot two-hole3 branch completes at min4,h>=4. Near-minimum/missing pivot OPEN,no rerun.
