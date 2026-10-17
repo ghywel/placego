@@ -13024,3 +13024,104 @@ rather than9/9. Caps1500 formulas/30000 offset-order or exception-root
 cases,3CPU sec/64MiB;stop ANY mismatch,retain failure,no repaired
 prediction or widened grid. MI238 sole carrying read stays nonblocking;
 READ-LEDGER completion only, no second review queue.
+
+
+### MI245 — B109 outcome: a composite candidate for all five-gap folded cycles (2026-10-17 05:33 BST)
+
+All predictions pass. The192-profile grid has6144 labelled capacity-mask
+checks, agreeing with subset capacity. Its703 legal positive questions
+give698 isolated-gap constructions and EXACTLY5 predicted allocation
+failures,one each U1,U2,U3,U3_small,U4; all five alternative formulas
+pass. Four named t50 controls make707 formulas total. Every formula
+passes its ORIGINAL bags/positive owners/windows and BOTH geometry
+validators.120 grid constructions reflect. There are108 genuine K<=h
+questions across21 profiles: the two outer endpoint offsets are retained
+where feasible, rather than applying MI222's K>h simplification.
+
+All192 complete offset maps agree exactly with the hand bad sets,
+independently by literal difference-set intersections,index collisions
+and both physical geometry tests. The five complete original-positive
+failure maps under BOTH parity assignments have72 candidates and ZERO
+isolated-allocation witnesses, among248 root/order cases. Overall9712
+offset/order cases plus248 failure cases give9960,within30,000.
+The four t50 formula controls pass without widening the diagnostic grid.
+No constant-companion run, new E28 partition or residual census.
+
+The naive U1 isolated witness has the correct7/11 bag but shared1;
+both geometry tests reject. Blindly extending U3's t>=3 formula to t2
+shares3 before AND after reflection, even though the reflected word
+has the correct7/7 bag. Both tests reject; the specified small repair
+works instead. Omitting U2 reflection preserves geometry but gives11/7,
+not9/9. Thus neither geometry alone nor a correct move bag is accepted
+without the other. All negative predictions were retained and pass.
+
+CPU0.228932s,peak RSS17,154,048bytes,within3CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_isolatable_five.py;
+prereg9274c23c. Immutable artifact
+cited/instinct/b109-isolatable-five-a33a9b32e71e6b14.json,
+238,613bytes,SHA256 a33a9b32e71e6b149c3cb8d0c41c2624287765f79da7d8164a108ebb4598a787.
+Output digest and manifest receipts verified. No failed prediction,
+repaired hypothesis, expanded grid or generic cycle solver.
+
+**Composite candidate: sufficiency for the FULL N5 folded-cycle model,
+PROOF-SKETCH ONLY.** For M=2n,h=n-1>=6,let0<d1<=...<=d5,K=sum d.
+Assume the five halves split into two loads each<=h. Let p,q be positive
+odd,p+q=2K,max(p,q)<=2h-1,not both2h-1. Candidate conclusion:
+disjoint increasing index chains A,B in[0,h] exist,with gap multisets
+partitioning d,whose physical seven-cycle has exactly
+{p,q,-2d1,-2d2,-2d3,-2d4,-2d5},and seven distinct folded labels.
+
+The complete carrying division is now:
+
+| Largest-gap regime | Companion/parameter regime | Carrying source |
+| --- | --- | --- |
+| sum(d1..d4)>h | All five-gap bags | Composite MI243 |
+| sum(d1..d4)<=h | Four companions all equal | Existing MI218,not reproved |
+| sum(d1..d4)<=h | No companion repeated three times | MI244 root selector,conditional MI204 |
+| sum(d1..d4)<=h | Three equal companions with repeated step>=2 | MI244 root selector + MI206 arithmetic proof |
+| sum(d1..d4)<=h | Three unit companions plus t>=2 | MI244 four uniform families + isolated selector |
+
+Ordinary capacity implies d5<=h,so the isolated load pair fits whenever
+the companion sum<=h. The multiplicity division is exhaustive. This
+composition uses UNREVIEWED carrying steps,including MI204 and MI218's
+listed dependencies; it is not an independent proof verification. The
+finite diagnostics check constructors and scope changes,not the infinite
+quantifier. No novelty, full E28/L8 solution or prize is claimed.
+
+**Niggle sweep / circularity.** When K<=h, complete offset maps can
+contain geometrically disjoint chains whose distinguished joins are not
+both positive. They are collision-table entries only; every accepted
+formula separately checks its ORIGINAL positive p,q and owners. Endpoint
+membership is never mistaken for an original-positive witness. The rich
+ordering step remains explicitly conditional on MI204; it has not become
+PROVED through a successful local permutation loop. MI218 is cited at its
+full one-exception scope and was read,not silently inferred from a test.
+
+For the three-unit failure classification, D>=t leaves only t,t+1,t+2
+when D<S; all larger D have no two-internal-prefix interval. The root
+intervals at J0/J1 are checked separately. U1/U2 at t2 would require
+h5 and are outside the seven-label hypothesis; U3 starts at t2 and
+needs its actual small repair. Reflection is applied to BOTH chains and
+the positive owner. All full-candidate case choices depend on values,
+capacities and proven-by-hand conditional prefix statements,never on
+the desired cycle's existence. No circular assumption was found in this
+self-check; independent scrutiny is still required.
+
+**Early closure reflection, before another family.** About81 minutes
+after MI232's fresh-choice reflection. The enjoyable part is the six-cycle
+and uniform-repair explanation; the less enjoyable part is the growing
+unreviewed dependency stack and its documentation. If I had not invested
+in N5,I would now choose to attack the candidate's carrying proof,not
+automatically begin N6. That is a change of trajectory on evidence: the
+case division is provisionally closed,so more variants would risk a loop.
+The pull stays warm toward finding a missing inference or a shorter
+proof. Next cheap work is an adversarial self-read of MI204's rich-prefix
+argument and the composite dependencies. This is NOT a second-party
+review and will not upgrade a status. No new experiment opened.
+
+Gut: delight at the completed candidate,unease about relying on several
+unreviewed sketches. Reasoned verdict: mathematical scope has moved to
+a complete N5 sufficiency candidate; verification is the next obstruction.
+Keep the13-minute schedule active. MI238 remains the ONE requested
+carrying priority; flag this completed scope READ-LEDGER,not another
+review queue or a routine permission halt. Full E28/L8 remains OPEN.

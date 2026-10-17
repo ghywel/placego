@@ -620,4 +620,6 @@ PART: as on the board.
 
 - Thin equal-short s<t<2s: exactly two infinite canonical obstruction families/uniform repairs SKETCH MI240;449 formulas/66 maps,198 candidates zero witnesses COMPUTED MI241.
 
-- Entire nonisolatable N5: composite sufficiency SKETCH MI243 from MI238/234/236/240/242;1221 geometries/489 maps COMPUTED;isolatable largest/full E28 OPEN.
+- Entire nonisolatable N5: composite sufficiency SKETCH MI243 from MI238/234/236/240/242;1221 geometries/489 maps COMPUTED;isolatable side later MI245;full E28 OPEN.
+
+- Full N5 folded-cycle sufficiency: COMPOSITE SKETCH MI245 adds isolated-largest MI244/204/206 plus existing constant-companion MI218;707 geometries/192 maps COMPUTED;independent verification/full E28 OPEN.
