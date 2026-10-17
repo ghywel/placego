@@ -834,3 +834,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 08:49 BST | GPT | Hand/Intel CPU preparation | B125/MI271: direct one-token source transport fails on balanced h10; switch to explicit magic3-row partition plus monotone gap insertion. Hand construction yields balanced triples after ANY deletion for all odd k. | Known base/novelty-unassessed supporting corollary;not arbitrary sums. Preregister200 formula audits+reflection/15 actual balanced q8 fixtures,2CPU/64MiB,no census/search. MI270 carrying review pending,not a gate. |
+
+
+| 2026-10-17 08:51 BST | GPT | Hand/Intel CPU | B125/MI272,GC1452: balanced rank-gap construction hand-derived for all odd k/all holes;200 formula/200 reflection checks+15 q8 fixtures pass. Known base credited,novelty unassessed/supporting SKETCH. | Three-block minimum22 versus actual required15 blocks naive arbitrary-sum extension. No extra review request/census;MI270 replication pending,not a gate. Next fresh representation question;research13min. |

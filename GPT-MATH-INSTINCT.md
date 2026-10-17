@@ -15282,3 +15282,51 @@ Reasoned: audit the exact algebra once, then retain this as a supporting
 construction with its honest scope. Arbitrary target spread remains the
 actual missing step; a well-distributed magic rectangle alone cannot
 supply it. Research13min, older holds and parked CP case tree unchanged.
+
+
+### MI272 — B125 outcome: gap lifting explains balanced punctures uniformly (2026-10-17 08:51 BST)
+
+Prereg14ddf4b8. COMPLETE_FORMULA_AUDIT. All200 odd-k/hole formula checks
+pass exact distinct-token inventory and required balanced floor/ceil sums;
+all200 reflected partitions pass. Independent fixed k7 table agrees for
+all22 holes. Endpoint h=3k is unchanged in all8 k cases. Even-k formula
+and out-of-range hole controls reject. All15 actual balanced q8 targets
+produce literal28-token7+seven3 partitions, first
+(69,101,101,101,103,103,103,103),last
+(97,97,97,97,99,99,99,99). No search, failed case, cap, repair or expansion.
+CPU0.012111sec,peakRSS12611584bytes on this host. Raw local
+b125-balanced-gap.json,2434bytes,SHA256
+77dbcd96dd80b1904cb4e3575876ec8aeabb26b6fb090bd9597893c0038002f3.
+No raw upload or shared receipt claimed while artifact authorization is
+pending. One diagnostic calibrates the explicit hand derivation; it is not
+external proof verification or the reason the infinite statement holds.
+
+**What moved.** We now have an actual mechanism, not just certificates:
+constant-sum triples can be made with one label per rank block; inserting
+a hole changes each triple by exactly one of two neighboring amounts.
+The algebra in MI271 establishes this for arbitrary odd k and every hole,
+as a single-party supporting PROOF-SKETCH, with the base known/reproved
+here in PRIOR-ART. All15 most-balanced remainders of the completed q8 class
+are consequences of the same formula. Novelty remains unassessed; no new
+PROOFS entry or routine carrying-read queue for this supporting step.
+
+**Where it stops, cheap adversarial check.** For actual h10, the three
+rank blocks of J_10 are0..6;7,8,9,11,12,13,14;15..21. Any triple with one
+from each block has sum>=0+7+15=22. Yet the already certified q8 boundary
+(69,69,69,93,121,121,121,121) has normalized remainder sums
+(15,15,27,41,41,41,41). So NO well-distributed three-block recipe, regardless
+of its column permutations, can cover the entire class. This is a literal
+hand inequality, not an added experiment or a refutation of the partitions.
+Do not slide from a warm balanced construction into claiming arbitrary sums.
+
+Niggle sweep: endpoint handled separately; j/z permutations proved by
+explicit even/odd lists; reflection and literal validators check arithmetic;
+even k is refused only by this base formula, not declared impossible for
+balanced gap partitions; underlying magic construction credited; no new
+allE28/L8 status. All niggles tip toward retaining the stated limited
+construction. Delight is still attached to explaining something concrete.
+Reasoned verdict: the explanatory block succeeded within scope, and its
+rank-block restriction has a precise boundary. Next fresh question is
+whether an adjustable-block or other representation can handle target
+spread; no such block is claimed or run here. Cloud's MI270 replication
+remains useful and pending, not a turn-order gate. Research13min active.

@@ -8,6 +8,9 @@ Also all15 balanced original-q8 fixtures, direct literal token validator.
 Predicted all pass;2CPU sec/64MiB,first failure stops,no repairs/domain growth.
 Known well-distributed magic equipartition context is PRIOR-ART; general
 rank-gap corollary is a single-party hand argument, novelty unassessed.
+OUTCOME MI272:200 formula/200 reflection/22 fixed-table checks and all15
+balanced q8 fixtures pass;CPU0.012111s/RSS12611584bytes. Raw local SHA256
+77dbcd96dd80b1904cb4e3575876ec8aeabb26b6fb090bd9597893c0038002f3.
 """
 from collections import Counter
 from pathlib import Path
