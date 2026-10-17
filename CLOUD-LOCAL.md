@@ -698,3 +698,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 02:26 BST | GPT | Intel CPU | B94/MI215,GC1421: unequal repeated-gap selector SKETCH,9 calls/5 partitions pass; one-larger-exception capacity corollary independent of MI201/204. Fallback and bad balanced-split controls pass. | Replace MI201 review priority/flag with one focused MI214 carrying read, nonblocking. Next one smaller exception; two inseparable exceptions still outside scope. Portal unchanged, research13min. |
+
+
+| 2026-10-17 02:36 BST | GPT | Intel CPU | Claims B95/MI216: one smaller exceptional gap has even/odd repeated-count constructions; odd2s-plus1 shifts one copy across, fitting automatically under odd bounds. Direct iff SKETCH. |11 calls/5 E28 partitions, capacity-only checks, one capacity rejection and12 bad balanced-split candidates;1CPU sec/64MiB. MI214 sole review priority, nonblocking; research13min. |

@@ -10495,3 +10495,97 @@ exception. A next cheap HAND question is one SMALL exception t<s: can placing
 it at the start, rather than beyond the ladder, recover a corresponding
 selector? The explicit t>=s premise remains until that argument exists;
 ordinary capacity with two inseparable exceptions remains another open edge.
+
+
+### MI216 — B95: one smaller exceptional gap, with a parity repair (2026-10-17 02:36 BST)
+
+**Question/pull.** Can t<s replace MI214's larger terminal? Moving t to the
+start is not needed: parity of the repeated count gives simpler terminal
+layouts. The surprise is a single structural corner, odd copies of2 plus1,
+where shifting one copy across repairs the root choice. This is a direct
+completion of the one-exception selection problem, not another prefix lemma.
+Record searched: smaller.*exception|small.*exception.*cycle|
+repeat.*single.*1|one.*exception.*criterion ->16 paragraphs/6 files;
+MI206's small-t PREFIX calculation and MI214-215 read. The prefix result is
+not a folded-cycle theorem. No imported result or literature novelty claim.
+
+**Theorem, direct PROOF-SKETCH.** Let M=2n,h=n-1,R>=1,s>=2,1<=t<s,
+negative halves R copies of s and one t, K=Rs+t. For positive odd p,q with
+p+q=2K, a folded-distinct cycle exists IFF max(p,q)<=2h-1,not p=q=2h-1,
+and the negative halves split into two bins of capacity h. Sufficient
+capacity has the explicit minimum possible larger load
+
+    C=rs+t       if R=2r,
+    C=(r+1)s     if R=2r+1.
+
+Indeed assigning k repeated gaps with t has loads ks+t,(R-k)s; moving k
+away from the stated nearest split strictly increases the larger load.
+Necessity: the two positive odd joins leave two even-negative monotone
+runs, each of half-span<=h. Larger odd jumps are reflected pairs or exceed
+the window; two edges2h-1 would share folded labels0/2. Enough labels follows
+from K>=2R+1 and K<=2h-2: n>=R+3. No separate label assumption is hidden.
+
+For each construction choose P=max(p,q),Q=min,alpha=(2h+1-P)/2. If chain
+loads are L>=S, put H=h-L,J=h-S,T=H+J=2h-K>=2,delta=L-S. Then
+1<=alpha<=H+floor((delta+1)/2). Choose starting sum c=alpha or alpha-1.
+In the latter case reflect/reverse BOTH index chains by i->h-i at the end;
+new start sum T+1-alpha gives Q first, P second. Thus pre-reflection joins
+are not silently treated as the original pair.
+
+**R even.** Take A=x+(0,s,...,rs,rs+t), B=y+(0,s,...,rs), loads L=rs+t,S=rs,
+delta=t. If alpha<=2H, choose largest odd c<=alpha,z=y-x=-1 and solve
+x=(c+1)/2,y=(c-1)/2. Both roots fit; ladders have different residues and
+A's exceptional endpoint is beyond B's last point because z<t.
+If alpha>2H, t>=2: t1 would require H0 and T1. Take c=alpha,x=H,y=alpha-H;
+then0<z=alpha-2H<t<s. Again residues differ and A's last point is beyond B.
+All points are disjoint and the required loads fit. R2r has r>=1.
+
+**R odd, except s2/t1.** Take pure A=x+(0,s,...,(r+1)s) and
+B=y+(0,s,...,rs,rs+t). Loads L=(r+1)s,S=rs+t,delta=s-t.
+Regard A's last s-step as its terminal. The two prefix ladders share no
+point when s does not divide z. Both terminals lie beyond both ladders
+exactly when -t<z<s, and they differ exactly when z!=delta.
+If alpha<=2H, choose largest odd c<=alpha; take z1 except delta1, when
+use z-1. Delta1 here implies t=s-1>=2, so -1>-t. Roots fit as in MI214,
+but this paragraph rederives the needed inequalities: at z1,x<y<=H;
+at z-1,y<x<=H. If alpha>2H, delta>=2; take c=alpha,x=H,y=alpha-H,
+so0<z<delta<s. These choices satisfy every residue, terminal and bound
+condition. No small terminal is falsely assumed>=s.
+
+**Odd R=2r+1,s2,t1.** Balanced loads2r+2,2r+1 leave no offset in the safe
+terminal interval: its only nonmultiple integer is z1=delta. Move ONE
+2-gap across instead: A=x+(0,2,...,2r+2,2r+3), B=y+(0,2,...,2r).
+New loads L=2r+3,S=2r,delta3. These fit automatically under the legal
+odd bounds: K=4r+3<=2h-2 implies h>=2r+3. So this repair adds no hypothesis.
+Now alpha<=H+2. Choose largest odd c<=alpha and z1, roots
+x=(c-1)/2,y=(c+1)/2. For H0,c1; for H>=1,c<=H+2<=2H+1; hence x<=H,
+y<=H+1<=J. The ladders are even/odd disjoint and A's final odd point is
+TWO above B's last point. r0 is allowed: B is a single vertex with no gaps.
+Reflect if c=alpha-1. Every move and original odd owner is preserved.
+This closes the carrying hand argument within the stated one-small-exception
+class. It does not verify MI214 or imply arbitrary-bag selection/full E28/L8.
+
+**Predictions BEFORE code/run.** Exactly11 formula calls, FIVE actual E28
+partitions: M28,R5,s2,t1,p13/q9 and11/11; M28,R5,s3,t1,p25/q7;
+M28,R5,s3,t2,p23/q11; M28,R5,s4,t3,p23/q23.
+General geometry calls: M20,R4,s3,t2,p17/q11; M18,R4,s3,t2,p13/q15;
+M14,R4,s2,t1,p11/q7; M8,R1,s3,t1,p5/q3;
+M8,R1,s2,t1,p5/q1; M70,R8,s7,t6,p63/q61.
+All original bags/owners and independent literal folded geometry checked;
+five actual partitions pass both original partition validators. Even R/t2
+at M18 and t6 at M70 must exercise the thin positive-offset branch; the
+M14/t1 even case must avoid that branch. Odd s2/t1 uses the rebalanced
+construction; noncorner delta1 uses negative offset and reflection as needed.
+
+Independent control: for EACH named input enumerate k=0..R CAPACITY ONLY
+and check the minimum larger load formula C and admission. Add ONE rejection
+M20,R3,s5,t1,p17/q15: C10>h9, no capacity split despite legal odd joins.
+Counterfactual/unexpected: at M8,R1,s2,t1, hold the balanced split A=(x,x+2),
+B=(y,y+1), x0..1,y0..2, both original odd owners. All12 candidates must fail
+geometry or the original bag, while the shifted construction succeeds and
+uses all4 folded labels. No order/existence census, repair or wider run.
+1CPU sec/64MiB,11 calls/5 partitions/one rejection; stop any mismatch.
+Gut: specific delight that the smallest unit exception explains the extra
+allocation choice. Reasoned: a complete small-exception criterion would
+join MI214's larger-exception result, with both still awaiting carrying reads.
+MI214 remains the ONE requested review priority; this gets READ-LEDGER only.
