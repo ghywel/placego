@@ -9584,3 +9584,129 @@ should guide the next split/representation; do not patch the hypothesis and
 rerun in this block. Gut: curiosity about the obstruction, not pressure to
 produce another theorem. MI201 review remains nonblocking and the sole
 carrying request; no extra queue for a finite diagnostic or known lemma.
+
+
+### MI203 — B89 outcome: the obstruction-shape prediction survives (2026-10-17 01:22 BST)
+
+**COMPUTED, no repair or widened range.** All20,390 prescribed barrier
+questions on lengths3..7,values1..4 complete. There are16,015 rich questions
+(no frequency>=m-1), and every one has an avoiding order. Exactly890 pairs
+are unavoidable, all nearly constant as H2 predicts. All3,165 questions at
+m<=5 agree with independent value-permutation enumeration. The three named
+controls pass, including rich(1,1,2,2),2/3 unavoidability when separation is
+dropped. Full literal witness checks pass. This establishes H2 only in the
+fixed finite domain; the following hand argument supplies the uniform step.
+
+CPU1.505551s,peak RSS18,427,904bytes, inside10CPU sec/128MiB.
+Source tests/probes/instinct/two_prefix_obstruction.py; preregde13924c.
+Immutable artifact cited/instinct/b89-two-prefix-d03fa79ad1368966.json,
+1,585,698bytes,SHA256 d03fa79ad13689666e37c6e57084601244b57d2196c45959a410bd8c6de304b5.
+Upload digest and manifest receipts verified. No folded-cycle enumeration,
+actual E28 partition, new proof status or review queue is inferred from it.
+
+
+### MI204 — Two separated forbidden prefixes: a uniform obstruction theorem (2026-10-17 01:22 BST)
+
+**PROOF-SKETCH, no novelty claim; independent of MI201.** Let m>=3 positive
+integer steps have total S and maximum M, and let0<x<y<S with D=y-x>=M.
+If no value occurs at least m-1 times, there is an ordering whose proper
+prefixes avoid BOTH x and y. Equivalently, an unavoidable pair with this
+separation requires a constant or all-but-one-equal multiset. The converse
+is not asserted. This is a permutation theorem, not the full cycle result.
+
+**1. There is an order hitting both barriers if a rich obstruction exists.**
+Assume for contradiction that every order hits x or y, and no value occurs
+m-1 times. The steps are nonconstant. A single forbidden level can be avoided:
+if an order hits t, separate the items before/after t, find unequal items
+across that cut (otherwise all items agree), put them adjacent at the cut
+and swap. The one changed prefix is t-u+v!=t, all earlier prefixes below t,
+all later ones above t. This repeats MI117's complete argument, not an
+unreviewed external premise.
+
+Thus one order hits only x and another hits only y. The graph of permutations
+of labelled copies under adjacent swaps is connected. Each swap changes only
+ONE proper prefix by |u-v|<M<=D. It cannot change a prefix equal to x into y
+or vice versa. Under the assumed absence of an order avoiding both, a path
+between those two orders must therefore pass through an order hitting BOTH.
+Fix such an order and split it into nonempty consecutive blocks A,B,C of
+sums x,D,S-y respectively. Within-block reorderings preserve these two cuts
+and cannot introduce any other hit of x or y, since the steps are positive.
+
+**2. Two disjoint boundary repairs.** If B has at least two items, look for
+distinct B occurrences v,z and items u in A,w in C with u!=v and z!=w.
+Put u last in A,v first in B,z last in B,w first in C, then swap u/v AND
+z/w. The pairs are disjoint. The changed prefixes become x-u+v and y-z+w.
+Neither equals its original barrier; neither can reach the other barrier
+because the absolute changes are strictly less than D. Every other prefix
+is unchanged from the within-block reordered word. This avoids BOTH.
+
+Why can the two repairs fail? Let L be the B occurrences that differ from
+some A item, and R the B occurrences that differ from some C item.
+If L is empty, all of A and B have one common value e. If R is empty,
+all of B and C have one common value e. If L,R are nonempty but admit no
+distinct representatives, then L=R={one occurrence}. Any other B item
+exists and equals every A and C item; all other B items do too. Only the
+unique representative can differ. That is an all-but-one-equal multiset,
+excluded. Thus the only unresolved possibilities are A+B constant or
+B+C constant, handled in step4.
+
+**3. If B is a singleton, there is only one exceptional item.** Its value
+is D; since D>=M it equals M. If there are u in A,w in C with u!=w,
+put these at the two ends next to the singleton. Write the triple as
+u,M,w with preceding sum x-u. If u<M, replace it by M,w,u: its first
+prefix lies strictly between x,y, and its second is y+w-u, strictly above
+x and different from y. The triple ends at y+w>y. If u=M, then w<M;
+use w,M,u: its first prefix is below x, second x+w strictly between x,y,
+and its end above y. All other prefixes remain unchanged. Thus both
+barriers are avoided. If no unequal cross-pair u,w exists, every item of
+A and C equals the same e; only the singleton M can differ, excluded.
+
+**4. A constant block cannot trap two exceptions.** Suppose A+B consists
+of e-steps, total y. Since the full multiset is not nearly constant, C has
+at least TWO items different from e. If one such f is not divisible by e,
+put f first, then ALL the e-items, then all remaining items. During the
+e-run every prefix is nonzero modulo e, while x,y are multiples of e.
+After that run the sum is at least f+y>y; remaining positive items cannot
+hit either barrier. This order avoids both.
+
+Otherwise every item is a multiple of e. Divide by e: there are at least
+y'=y/e unit steps, and at least two nonunit steps f',g'>=2, each <=D'=D/e.
+Use the order
+
+    (x'-1) units, f', (D'-f') units, g', all remaining items.
+
+The first jump goes from x'-1 to a value in[x'+1,y'-1]; after the next
+unit block the prefix is exactly y'-1, and the second jump reaches at
+least y'+1. Required unit counts are nonnegative and total y'-f'-1,
+no more than the available y' units. Hence both levels are avoided.
+If B+C is constant, reverse the entire ordering and use the same argument
+for the barriers S-y,S-x (same separation D and maximum-step bound).
+All cases contradict unavoidability. This proves the candidate theorem.
+
+**Connection back to the missing cycle inference.** With one isolated gap
+D and a companion chain, a relative offset z outside endpoint collisions
+asks the companion prefixes to avoid -z and D-z when those are proper
+levels. If all companion steps<=D and no companion value occurs all but
+once, the argument above removes BOTH internal collisions for any such z.
+If only one level is proper, step1 suffices. The adjacent-diagonal geometry
+then has only endpoint collisions left to address. The next larger obstacle
+is finding a suitable load split when no isolated gap fits, or handling the
+near-constant exceptional chain: not a larger calibration of this theorem.
+This paragraph is an application plan with SKETCH dependencies, not another
+family census, full criterion or status upgrade.
+
+**Niggle sweep / fresh choice.** The strict inequality |u-v|<M matters,
+including at D=M; positive steps supply it. Boundary repairs need DISTINCT
+B occurrences; the representative-set argument handles exactly that cost.
+The singleton case is separate, rather than pretending its repairs are
+disjoint. In step4 the e-run has at least y/e occurrences from A+B, and
+both nonunit jumps come from C, so no item or unit is used twice. Reversal
+preserves proper-prefix avoidance and barrier separation. The experiment's
+rich failure at separation1<max2 guards the missing-hypothesis temptation.
+These are cheap algebraic/adversarial checks, not independent verification.
+Gut: delight at a common ordering argument; reasoned: understanding moved
+from five vertices to an arbitrary-length permutation obstruction. Fresh
+choice still favors the mathematics over more record production. MI201
+remains the sole requested carrying read; share this sketch by READ-LEDGER,
+without adding a review queue or halting. H2 and the cycle criteria remain
+SKETCH until carrying reads. Full E28/L8 and arbitrary load selection OPEN.

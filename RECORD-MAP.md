@@ -566,3 +566,6 @@ PART: as on the board.
 
 
 - Three negative halves: five-vertex folded-cycle iff legal odd bounds, no doubled maximum, label count and two-bin capacity — SKETCH MI201;1843 bounded diagnostics/112 independent comparisons COMPUTED MI200.
+
+
+- Two proper forbidden prefix levels separated by max step: unavoidability requires all-but-one-equal steps — SKETCH MI204;20390 diagnostics/3165 independent comparisons COMPUTED MI203; separation essential.
