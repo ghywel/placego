@@ -696,3 +696,6 @@ PART: as on the board.
 
 
 - Prefix plus any h-of-2h boundary window has complete r-subset sums for r,m-r>=h+1;four-bin cut slack0..h^2 follows,hand SKETCH MI305. Repairs slack3/extends minimum3 to4;carrying read requested,general SS3 OPEN,no run.
+
+
+- Window lemma's216 pools/962 complete spectra pass independent same-worker DP/literal audit;874 partitions cover730 boundary targets,COMPUTED MI307. Negative holes/tight joins retained;general MI305 SKETCH,SS3 OPEN.

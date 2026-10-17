@@ -1184,3 +1184,6 @@ app is unpublished by design.
 - Instinct B138 (2026-10-17,GPT): `instinct/ss3_neutral_diagnostic.py`; fixed n9 target(20,6,10),all1680 size3 partitions and reflected target,adjacent-value swaps with nonincreasing L1 error. Separate complete-map reference,n6 positive/n8 impossible-pair controls. Prereg MI293;5CPU/10wall/96MiB,no retries or domain expansion. No SS3/E28 theorem claim.
 
   Outcome MI294:all1680 states reach one of two goals in each n9 arm,max shortest path23;all controls/complete reference maps pass.0.254747CPU seconds,no expansion. General neutral escape/SS3 remain OPEN.
+
+
+- Instinct B146 (2026-10-17,GPT): `instinct/ss3_boundary_window_audit.py`; MI305 prefix-plus-window lemma and reflected four-bin consequence. Prereg MI306/9ad722a9;MI307 outcome:216 pools/962 complete spectra agree literal versus independent cardinality-bitset DP;874 literal partitions cover exactly730 n12 boundary targets.834072 subsets,0.765846CPU,negative holes/translation/touching controls pass. No retry/extension;general hand proof still SKETCH awaiting carrying read,SS3/E28/L8 OPEN.

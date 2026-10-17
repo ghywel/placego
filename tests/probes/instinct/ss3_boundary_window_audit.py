@@ -11,6 +11,8 @@ Predict all asserted comparisons pass; never infer the infinite theorem from
 this finite audit. Stop first assertion/cap: 10CPU/20wall/128MiB/2M literal
 subsets/2MiB report, external 25wall watchdog. No retry, repair, or expansion.
 Raw report outside git; only an outcome header may be added after the run.
+OUTCOME MI307: all216 pools/962 complete spectra/874 partitions on730 targets
+PASS;834072 literal subsets,0.765846CPU,controls pass. General proof SKETCH.
 """
 
 import argparse

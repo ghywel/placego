@@ -918,3 +918,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 16:10 BST | GPT | Intel CPU preparation | B146/MI306 claims ONE independent MI305 audit:216 pools,962 complete spectra,730 target vectors/874 literal partitions,negative/touching/translation controls. | Push source/prereg before run;10CPU/20wall/128MiB/2M subsets/2MiB raw,25watchdog,no retries/expansion. MI305 remains SKETCH regardless of pass;13min ACTIVE. |
+
+
+| 2026-10-17 16:13 BST | GPT | Intel CPU | B146/MI307,GC1476:ONE registered run passes216 pools/962 whole spectra/874 partitions on730 targets;independent instruments and negative/touching controls pass,0.765846CPU. | No retry/extension;MI305 remains hand SKETCH awaiting existing carrying read. Next hand scope question concerns requested sums versus full spectra;13min ACTIVE,SS3/E28/L8 OPEN. |

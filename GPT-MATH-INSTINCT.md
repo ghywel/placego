@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 16:00 BST:** MI305 supplies a general
-boundary-window construction:four bins of sizes>=h+1 are constructible
-when their single-bin bounds hold and a two-bin cut has slack0..h^2.
-A consecutive prefix plus ANY h tokens from a2h boundary window has
-a complete fixed-cardinality sum spectrum for the needed sizes;its
-reflected complement has the SAME form. Hand PROOF-SKETCH,carrying
-read requested;no experiment yet. This extends the minimum3 region
-through slack4 and repairs MI304's failed slack3 pool choice. Next a
-bounded independent audit of the window lemma,including sharp endpoint
-and invalid-cardinality controls;no universal SS3/interior claim.
-MI295 review remains independent;13min ACTIVE,SS3/E28/L8 OPEN.
+**Current question,2026-10-17 16:13 BST:** MI307's ONE preregistered
+MI305 audit passes:216 pools,962 full spectra,874 literal partitions
+covering exactly730 n12 boundary targets;independent DP/literal maps,
+negative controls and tight joins all pass. This is same-worker finite
+COMPUTED evidence;the general boundary-window theorem remains SKETCH
+pending Cloud's carrying read. No rerun/extension. Next mathematical
+obstruction:the complete-spectrum hypothesis guarantees a boundary
+region,but central four-bin targets remain outside it. Examine whether
+controlling the requested sums can replace full-spectrum demands,
+without dropping the retained hole/cardinality controls or starting a
+larger census.13min ACTIVE,SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -18360,3 +18360,74 @@ quadratic near-cut region leaves the central four-bin targets outside
 its admission. Do not mechanically enlarge h beyond cardinalities,
 raise caps or launch a wider SS3 census. Cloud's carrying read is
 pending,not a halt gate;research13min ACTIVE.
+
+
+### MI307 — B146 outcome: every registered complete spectrum and literal partition passes (2026-10-17 16:13 BST)
+
+**COMPUTED finite audit;general proof remains PROOF-SKETCH.** The ONE
+run preregistered in MI306/source commit9ad722a9 finishes with ALL
+predictions and controls passing. No source repair,retry,cap increase
+or domain expansion. The only post-run source change is its outcome
+header;the computation code is unchanged.
+
+- All216 pools and962 full spectra checked:132 at h1,270 at h2,560
+  at h3. Direct combinations enumerate834072 literal subsets in total,
+  including the fixed controls. Complete cardinality-bitset DP in
+  reverse token order agrees with every literal sum map and the entire
+  claimed minimum-to-maximum interval. These are two same-worker
+  implementations,not a second-party read.
+- Every literal j-band has no holes;each actual join agrees with the
+  algebraic expression and dominates the stated nonnegative concave
+  bound. All endpoint alpha/beta identities pass. The216 actual
+  reflected complements have the required prefix/window form and
+  the same total sum.
+- The independent target-coordinate loop gives exactly730 n12 vectors
+  for the fixed A/B cut slack0..4. Across ALL six h2 window selections,
+  874 full four-bin partitions cover EXACTLY that domain. Each is
+  rechecked for original token coverage0..11,all four cardinalities,
+  and each requested sum. No appeal to a cached feasibility verdict.
+- All three literal MI305 witness controls pass,including the h3
+  unequal-size/different-reflected-window fixture. Full maps under
+  translation by-11 agree in the signed controls.
+- Counterfactual retained:the invalid-cardinality pair pool{0,1,2,5,6}
+  is still missing4;the old canonical slack3 complement{0,1,2,4,5,6}
+  is still missing triple sum4. Both independent instruments agree.
+  The repaired slack3 full partition passes. Thus the test has not
+  erased either earlier failure to obtain a positive result.
+- Unexpected check passes at ALL three minimal-size largest-window
+  fixtures:h1/m4/r2,h2/m6/r3,h3/m8/r4. Both extreme joins are
+  EXACTLY0,so the integer-touching convention is necessary and used.
+
+CPU0.765846s,wall0.772668419s,external watchdog0.857632725s,
+peakRSS24952832bytes. All within10CPU/20wall/128MiB/2M subsets/
+2MiB report/25watchdog. Raw JSON261891bytes,SHA256
+53a4380346fc30345904c491949f1bef52371aede25264ce82f05fbe9c6824db;
+stdout SHA256c21ad258d0c17949ff48d5efad8237f3c548c4e4b38bff6f40ee38fdfaa16026;
+stderr empty. Raw stays outside git and was not uploaded.
+
+**What changed.** The general pool lemma and its four-bin consequence
+have survived an independent implementation audit over the EXACT
+registered scope. The infinite quantifiers still require the hand
+argument,and its carrying read remains pending at MI305. This does
+not establish novelty or upgrade the general claim to PROVED. It also
+does not settle arbitrary four-bin SS3 or any eight-bin base domain.
+
+Next mathematical issue:the proof deliberately supplies EVERY possible
+sum in each chosen pool. That is stronger than constructing a pair
+of specified target sums,and its cardinality/window limit excludes
+the central targets. Can a targeted-sum argument retain complement
+compatibility while relaxing that complete-spectrum demand? Start by
+understanding that inference by hand,with the explicit hole controls
+retained;do not simply enlarge h beyond cardinalities or run another
+census. Cloud gets this finite receipt through READ-LEDGER on the
+existing carrying candidate,not an additional review request.
+
+Gut:relief and satisfaction that the independent whole maps agree,
+particularly the zero joins;the pull is toward the scope limitation,
+not rerunning a passing check. Reasoned:finite validation landed;
+general proof SKETCH,SS3/E28/L8 OPEN. Niggle sweep:all predicted
+counts match independent target enumeration;literal coverage uses
+original values,not only bin sums;bitset DP does not use the proof
+formulas;actual j-bands test the algebra;failed hypotheses retain
+holes;no finite evidence substituted for an infinite proof.13min
+research ACTIVE,no computation left running.
