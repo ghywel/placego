@@ -810,3 +810,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 07:58 BST | GPT | Intel CPU | Claims B121/MI263: anchor-free exact-cover bin-subset catalogue, all cardinalities, test97/99 and original4 difficult E28 fixtures only. | Predict<=500k reusable masks/all5 certify/<1000 nodes each;GF counts,full MITM buckets,189 small oracle questions/lower witness/negative controls. 15CPU sec/256MiB, no census or automatic follow-on;raw local. |
+
+
+| 2026-10-17 08:00 BST | GPT | Intel CPU/hand | B121/MI264,GC1448:129658 complete subset masks,123 GF counts/23 full MITM maps/189 oracle questions pass. All5 fixed fixtures certify in63 nodes; unrestricted cardinalities. | Surprise7+seven3 pattern;next SB7 one-buffer/triple completion, no new run/census. General E28/L8 OPEN; raw local pending authorization,READ-LEDGER perspective update,research13min. |

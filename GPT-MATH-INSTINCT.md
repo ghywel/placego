@@ -14624,3 +14624,81 @@ path_forest_subset_catalogue.py. Raw remains local pending artifact upload
 authorization; no upload attempt. Catalogue size, finite witnesses and node
 counts can justify or reject this computational representation, not establish
 full E28/L8 or any asymptotic running-time bound. Research13min active.
+
+
+### MI264 — B121 result: a small exact catalogue and a seven-token buffer (2026-10-17 08:00 BST)
+
+**COMPUTED, fixed five fixtures, all cardinalities.** Prereg147643ad.
+The full0..122 catalogue contains129658 masks, including the empty subset.
+All123 generating-function coefficient counts agree; ALL23 queried sum buckets
+match complete independent14+14 mask generation (60723 reference joins).
+All189 small three-bin questions agree with the independent labelled-assignment
+oracle. Both the3/3/3 global conflict and published26-token67/102 lower witness
+return NO_WITNESS, not UNKNOWN. All five E28 fixtures return full literal
+partitions; both inventory/sum validators and both corruption controls pass.
+Fixture nodes9,9,9,27,9, total63; total including controls566. CPU0.406685sec,
+peakRSS24842240bytes. All blind predictions pass, no cap or widened run.
+
+| target (abbreviated by first entries) | actual cardinalities |
+|---|---|
+|97,97,97,97,99,99,99,99|7,3,3,3,3,3,3,3|
+|77,77,83,85,107,117,119,119|7,3,3,3,3,3,3,3|
+|71,73,77,105,107,109,121,121|7,3,3,3,3,3,3,3|
+|69,69,75,103,111,116,120,121|5,3,3,3,3,4,4,3|
+|90,90,91,91,93,103,111,115|6,4,3,3,3,3,3,3|
+
+The new97/99 obstruction has the following direct witness, in target order:
+(1,3,5,7,9,17,55);(11,33,53);(15,31,51);(19,29,49);
+(21,35,43);(23,37,39);(13,41,45);(25,27,47).
+Every odd1..55 appears exactly once. There is no chosen anchor block or
+single-token geometry to repair. The seven-token bin absorbs four tokens
+beyond the minimum three, leaving seven higher-token triples. The first
+three fixtures ALL choose this pattern; the last uses a six-token even bin.
+No inference that these particular cardinalities are necessary is made.
+
+Raw b121-subset-catalogue.json,1893bytes,SHA256
+964133f42e2271d7eba8e0dbbac3dfc203c2b0fa64757dc9b582e8463a0b6b29,
+is retained locally outside git. No shared upload attempted while artifact
+authorization remains pending; no cited/manifest receipt claimed. Raw records
+all five witnesses and per-sum counts, not the129658 regenerated masks.
+The source reconstructs and independently tests the catalogue. This is not
+a new sample, census, asymptotic complexity result, full E28 claim or external
+verification. Existing overlapping target successes are not added to a tally.
+
+**What the surprise teaches.** For the ALL-ODD E28 subdomain, each target
+exceeds55, so each bin needs at least3 odd tokens; the total is28. There are
+exactly four tokens above the minimum24, and every bin cardinality is odd.
+Thus there are precisely TWO possible cardinality patterns:
+
+    one7 + seven3, OR two5 + six3.
+
+This is an elementary count, not a new theorem filing. The old h1/2 model
+kept only two5+six3. One7+seven3 was a substantial freedom outside that
+model, even after anchors were allowed to move. This does NOT contradict
+MI157: its h1/2 conclusion was for its fixed FIRST-anchor greedy choice,
+never for all partitions. These examples might also have two5 witnesses.
+
+**Named next question, not a new experiment/assumption.** SB7: does every
+sorted all-odd E28 tuple69<=t_i<=121,sum784 admit one7+seven3, with the
+seven-token bin assigned to a smallest target? A positive answer would close
+one entire parity domain directly, with no cycle family or prechosen anchors.
+Only three fixtures support that pattern so far. The single-buffer restriction
+may be false; if so retain the failure rather than manufacture repairs. The
+unrestricted exact catalogue already allows both cardinality patterns.
+Record searched seven.token|one.*seven.*bin|seven.*triple|cardinalit.*7 ->24
+mostly unrelated paragraphs/10 files; no source theorem for SB7 found in that
+bounded search. Primary literature on prescribed sums was already read; it
+does NOT supply the simultaneous triple cardinality guarantee. No novelty claim.
+Next orient on triple completion or a bounded kill test, not a full census.
+
+**Niggle sweep / verdict.** Complete subset buckets, not just fixed-size bins;
+true exact cover, not independent subset feasibility; unused token columns
+remain constraints; failed-state cache retains used tokens and remaining
+sum multiset; equal-target bin labels can be permuted only for FAILURE states.
+Known impossible controls make the success gate falsifiable. Small catalogue
+and five quick successes establish a usable instrument on this scope, not
+uniform tractability. Gut: surprise and delight at the seven-token buffer,
+a warmer pull than selecting anchor policies. Reasoned: the right unit of
+reuse is an actual sum-certified bin, and the natural structural question is
+now one-buffer/triple completion. General E28/L8 and SB7 remain OPEN. No
+follow-on run, proof review or automatic census; research13min active.

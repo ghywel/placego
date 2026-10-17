@@ -643,3 +643,5 @@ PART: as on the board.
 - Strict Grasshopper count misses M20 six-gap gcd1 case despite4 distinct-chain witnesses, COMPUTED MI259; CP general-N statement/gap MI260, case tree parked after CL430.
 
 - Three old FIRST-anchor failures have same-anchor/h multi-token partitions, COMPUTED MI262; exact-model Euler representation SKETCH MI261, fixed97/99 allocation still blocked by pair competition.
+
+- Anchor-free exact subset catalogue129658 masks; five fixed E28 witnesses,189 oracle controls COMPUTED MI264; omitted one7/seven3 pattern motivates OPEN SB7, no full-domain claim.

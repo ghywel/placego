@@ -14,6 +14,10 @@ inventory and coverage-preserving wrong-sum controls reject. Unexpected:
 token once, not merely each bin sum. No sample/census/policy sweep or
 automatic follow-on. Raw stays local pending artifact authorization.
 REFUTED-BY: catalogue>500k, any fixture unsolved, or >=1000 nodes/fixture.
+OUTCOME MI264:129658 masks;123 GF counts/23 full MITM maps/189 oracle
+questions and negative controls pass. All5 fixtures WITNESS,nodes9/9/9/27/9.
+CPU0.406685sec/RSS24842240bytes. Raw1893bytes SHA256
+964133f42e2271d7eba8e0dbbac3dfc203c2b0fa64757dc9b582e8463a0b6b29;local only.
 """
 from collections import Counter, defaultdict
 from itertools import product
