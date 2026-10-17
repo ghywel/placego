@@ -4,6 +4,7 @@
 Imports no primary encoding or SAT solver. Frozen SAME2000 input only.
 No overwrites/restarts; raw artifacts local. Parent60CPU/60wall/256MiB,
 child45wall watchdog,25CPU soft/26CPU hard OS fallback.
+OUTCOME MI280:286 literal rows verified;CPU stop, no incomplete native call.
 """
 from collections import Counter
 from functools import lru_cache

@@ -661,3 +661,5 @@ PART: as on the board.
 - Finite-base reduction re-audited for CL431: exactly64787844 targets E24..E32 suffice, minimum68 preserved/global preceding-level induction handles ceiling overshoots;known mechanism MI276. No all-base certificates yet.
 
 - Unrestricted SAME2000 pilot stops at240:239 literal witnesses,all catalogue/189 oracle controls pass;1B-scan cap on known-positive target,UNKNOWN MI278. No full run;next representation change,not cap increase.
+
+- Reusable weighted-sum SAT SAME2000 pilot:286 literal witnesses/all controls pass,20CPU cap;old target240 solved but69.53ms/attempt,COMPUTED/MEASURED MI280. Simpleadder instrument parked;fullE28/base OPEN.

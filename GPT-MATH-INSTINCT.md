@@ -15989,3 +15989,107 @@ check only; sunk-cost optimism -> stop first failure, no repair. Gut: ACT
 once. Reasoned: this pilot can cheaply reject the representation before
 any substantial resource commitment. Cloud's perspective is welcome,
 not a routine turn gate; research13min remains active.
+
+
+### MI280 — B129 outcome and step-back: 286 valid witnesses, CPU cap rejects the simple adder instrument (2026-10-17 09:44 BST)
+
+**Stopped once, no retry.** Prereg/source a3396bd0. ALL controls pass:
+189 exhaustive three-bin questions;126 fixed two-bin assignments and126
+wrong-bit negatives;A/B/A SAT,UNSAT,SAT;duplicate/missing assignments;
+two full-width fixed witnesses and inventory-preserving wrong sums.
+Independent original-SHA/ranks/order/target and literal checker passes
+EVERY286 emitted witness. Native model has5481 total variables (224
+assignment variables),19181 clauses,ten sum bits per bin. These are
+measurements, not estimates or outside-party verification.
+
+After completing target286, (73,81,83,100,103,107,116,121), the primary
+checks its CPU cap and stops. Report status ERROR_OR_CAP, reason explicit
+primary CPU/wall cap, CPU20.143014sec,peakRSS98754560bytes. No native
+call is unfinished;all286 returned SAT and all their costs are recorded.
+Next target287, (75,83,87,89,108,112,112,118), was NOT STARTED;no pending
+negative or missing call statistics. Parent measured child CPU20.232612sec
+including setup/controls/system work,checkerCPU0.128014sec,wall20.432628sec,
+checkerRSS26759168bytes. No per-query50k/global500k conflict limit, OSCPU,
+RSS or watchdog limit was increased;the ordinary20CPU cap ended the run.
+
+All attempted conflicts:min1,p50=850,p90=2740,p95=4073,p99=7180,max8259,
+total360690,mean1261.153846. Decisions total1276188,max30760 per call.
+SearchCPU:min0.000778,p50=0.041758,p90=0.175874,p95=0.227038,
+p99=0.369321,max0.432221sec,total19.886957,mean0.069534815sec/call.
+P1 all2000/no caps FAILS. P2 full2000<=10searchCPU is NOT ESTABLISHED as
+a full-run measurement;already19.89CPU for this prefix exceeds that
+forecast. No mean/timing for the remaining1714 targets is measured.
+No fullE28/base resource projection or theorem follows.
+
+**The old hard target does pass, but that is not a speed win.** At the
+original position240, (76,79,83,106,106,108,108,118), learned SAT finds
+(1,5,29,41);(13,31,35);(17,27,39);(9,21,25,51);(3,7,47,49);
+(11,19,33,45);(53,55);(15,23,37,43).
+Literal checker passes. Cost1552 conflicts/4990 decisions/335198
+propagations/0.110499CPU sec. It uses sizes4,3,3,4,4,4,2,4, unlike
+B68's old witness;no old witness was supplied. B128's scan cap therefore
+was specific to its search order/propagation. B129 resolves that query
+but is broadly slower than B128's easy center. This is an instrument
+comparison on overlapping prefixes,not a paired full2000 benchmark.
+
+**Raw local receipts; no upload.** Input55940bytes SHA256
+c209e2ae59d6ee6c5dc9a31149aa02d0debf663b9bbbde44a49b79d15b6af0af.
+Diagnostic/timing JSONL111904bytes SHA256
+c44a930a49997d3ab88ee29f47311ec1aca97bac41712ae14cb543bc2fd782a4.
+Literal-only286-row stream41462bytes SHA256
+0572a7792b91e9b69afa0732fe9250295303e8da32997070a3c64fd21b99d68d.
+Combined report28149bytes SHA256
+74572d344d4817f12384d86e46c9c31c5d0da23f980b589334e40b0295fd697f.
+Stderr empty. Diagnostic/report include machine timings;not cross-host
+certificate identities. All retained outside git;no blocked upload retried.
+
+**Two failures trigger a perspective check.** B128 failed on repeated
+subset scanning;B129 learned through that particular query but spends
+roughly70ms/attempt on general binary arithmetic. Raising either cap
+would not answer the feasibility question. No adder tweak, solver swap,
+new sample or continued run now. The q8 tier1 result remains intact;
+fullE28 and the nine-level certificate remain OPEN.
+
+Enjoyable/frustrating: enjoyment in seeing two very different literal
+partitions of the same obstruction;frustration in solver plumbing,which
+could become the administrative drudgery the owner warned about. Fresh
+choice: the finite exact problem still attracts me,but I would NOT choose
+an indefinite adder-tuning campaign. The live representation question is
+whether using the already-complete feasible-subset rows as SAT choices
+can combine the cheap local arithmetic of B128 with conflict learning,
+rather than ask the solver to rediscover every weighted sum. This is a
+standard extensional exact-cover encoding idea,not a theorem,not yet a
+claim or run. Its clause/auxiliary-variable cost must be worked out before
+another pilot. If that design is just another expensive tuning loop,
+return to mathematical structure or the owner's resource discussion.
+
+Concrete Cloud check-in: the reduction and q8 are sound;two generic
+instruments now expose different cost walls. Is feasible-subset exact-cover
+SAT a meaningful representation change here,or do you see a direct
+mathematical/propagation step that makes another instrument unnecessary?
+I will assess the design/cost before claiming a further experiment,not
+wait for permission and not enlarge these stopped runs. Full-base proposal
+remains with the owner via Cloud. Research13min schedule stays active.
+
+Niggle sweep: no unknown called impossible;all286 literal witnesses checked;
+old hard query identified by exact original position/target;all attempted
+cost included,none unfinished;CPU stop distinguished from conflict cap;
+no timing-bearing hash passed off as proof;controls are self-checks;no
+claim that partial certificates advance the full quantifier. Gut: relief
+at a cheap discriminating stop,less attraction to arithmetic-circuit tuning.
+Reasoned: park this adder instrument;next inspect a genuinely different
+constraint representation on paper before authorizing another test.
+
+Design-cost check from the ALREADY RETAINED B128 catalogue,not a new solver
+run: at the old hard target, per-bin option variables would number20175,
+with121918 token occurrences. A plain sequential exactly-one encoding
+on eight bin groups and28 token groups would have162232 variables and
+426171 clauses (3r-4 AMO clauses/r-1 auxiliaries for each group of r>=2,
+plus its at-least-one clause). This is about30 times the adder variables,
+not a free replacement. One standard reformulation worth assessing first:
+select subsets without labeled bin owners,cover each token once,and
+require the number of selected subsets at each sum to equal that sum's
+target multiplicity. Equal-target bins then introduce no duplicate option
+copies. Its equivalence is just grouping selected disjoint subsets by
+sum;it supplies no existence argument or performance result. This guard/
+design note gets no probe,PROOFS entry or review request of its own.

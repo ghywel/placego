@@ -5,6 +5,8 @@ No subset catalogue, anchors, prescribed bin sizes, old witness seeds or
 target-specific retained constraints. Cadical195 learns under assumptions.
 Primary writes literal partitions and per-call cumulative-stat differences.
 Run only through path_forest_sat_check.py after preregistration is pushed.
+OUTCOME MI280: all controls and286 literal partitions pass;20CPU cap stops
+before287. Old target240 passes, but this simple adder instrument is parked.
 """
 from itertools import product
 from pathlib import Path
