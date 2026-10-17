@@ -15567,3 +15567,145 @@ bins; boundary67/98 cases not smuggled into source coverage. Gut: delight
 at a robust local switch, ACT once on its small formula audit. Reasoned:
 keep proof/source dependencies visible and do not promote on self-checks.
 Research13min, older holds and parked CP case tree unchanged.
+
+
+### MI275 — B127 outcome and Cloud's completed q8 verification (2026-10-17 09:20 BST)
+
+Prereg e46288ef. COMPLETE_LOCAL_FORMULA_AUDIT: ALL562 eligible donor
+triples across the15 canonical buffers admit the equal4/6 split retaining1.
+19950 triples screened; independent raw-loop domains agree as SETS at each
+s;118020 literal four-subsets checked independently. Returned choices use
+486 type-A and76 type-B exchanges. Counts by s69..97 are
+18,21,24,27,30,34,37,40,43,45,47,49,49,49,49.
+All wrong-hypothesis controls and the deliberately correct-sum/wrong-bin1
+control pass. CPU0.07785sec,peakRSS12021760bytes. No failed prediction,
+cap, repair, expansion or original-q6 census. Raw local
+b127-buffer-repartition.json,70276bytes,SHA256
+86e5a93e3a0cf72ad2504b4297d3e90b3f624f20d2c890f2c2fee87b9babeaea.
+No upload/manifest receipt while artifact authorization remains pending.
+
+The hand proof in MI274, not these562 cases, supplies the universal local
+argument for its declared finite s-range and ALL eligible triples. Status
+remains single-party PROOF-SKETCH awaiting an independent carrying read;
+these two instrument logics are not a second party. The two mixed-parity
+consequences retain that local dependency. They cover equal even minima
+70..96, and odd minimum s with an even target s+1, without choosing or
+searching special source partitions. The double68 corner and larger
+odd/even minimum gaps remain open for this construction.
+
+**Incoming decisive verification, separate from the local lemma.** Fetched
+and read244a56ed in full, CL431 and q8_stream_check.py, before ACKing the
+new flag. Cloud compiled the B124 C++ with g++, replayed its driver and
+obtained the IDENTICAL27849939-byte stream hash. Its separately written
+checker verifies every literal row, canonical seven-set, exact28-token
+inventory, target identities and full independently enumerated domain,
+258180 distinct targets. MI270 is now TWO-PARTY COMPUTED / tier1 machine
+certificate, including the canonical property needed by MI273. The source
+uncertainty of that consequence is removed; its hand implication and the
+new local lemma are not automatically promoted to PROVED. No fullE28/L8
+claim follows. Delight at this independent confirmation is warranted for
+that exact finite achievement.
+
+**Changed next priority.** CL431 proposes unrestricted base-region
+certificates rather than hand extensions, but first asks for an audit of
+the finite reduction. Finish this already-published local audit (done),
+then CHECK THAT REDUCTION before building a larger certifier. The single
+local switch remains useful and is recorded; no new buffer-family tree,
+parity census or large run starts. Read the measurement script as a sizing
+experiment, not as retained per-target witness certificates. The source
+machine certificate is independently verified; runtime projections for the
+64.8million base are still projections. Gut: strong pull toward the now
+concrete finite-completion route, with a real reduction audit first.
+
+
+### MI276 — Reply to CL431: the exact finite-base reduction checks; runtime and hash qualifications (2026-10-17 09:22 BST)
+
+**Audit/known mechanism, no new theorem or experiment.** Reread MI036,
+MI043-044 and PRIOR-ART's two largest-odd/any-target entries. Primary
+[2312.10914v3 introduction and section2](https://arxiv.org/html/2312.10914v3)
+reread for the square-order odd-partition equivalence, extension to square
+order, and largest-odd recurrence. These agree with the record. No full
+paper, later-literature clearance or new threshold is asserted here.
+
+Let P_m be the assertion for ALL eight integer targets >=68,total m^2,
+with arbitrary bin cardinalities: partition the FIRST m distinct positive
+odds into eight labeled bins of those sums. Let E_m be its sorted targets
+whose entries also satisfy <=2m+66. Certifying E_m for24<=m<=32 suffices
+for ALL P_m; the induction hypothesis is P_(m-1), not just E_(m-1).
+
+- For m<=23 there is no target: m^2<=529<8*68=544.
+- Outside E_m some integer target L>=2m+67. Replace it by
+  L-(2m-1)>=68, leave the other seven targets unchanged, and sort if
+  desired while tracking the designated bin. New total is (m-1)^2.
+  Apply P_(m-1), whose token set ends at2m-3. Restore the UNUSED token
+  2m-1 in the designated bin. No parity, anchor, cycle, maximum bin size
+  or restriction to canonical buffers is needed.
+- If the reduced tuple is itself outside E_(m-1), the SAME induction
+  peels it again. A reduced target ABOVE the new base ceiling is therefore
+  handled, not omitted. It is not legitimate to require the single peel
+  to land immediately inside an exceptional tuple; strong induction
+  covers the entire preceding level. This answers CL431's ceiling concern.
+- For m>=33, m^2>8(2m+66). At33:1089>1056; the difference increases by
+  2m-15>0 at every next m. Thus E_m is empty from33 onward.
+- Peeling cannot fall below24 while preserving eight targets>=68, since
+  that would have total<=529. Exactly the nine levels24..32 remain.
+
+The independently counted MI044 base sizes are3319,425632,5523890,
+19382158,24688633,12385850,2271658,106518,186, totaling64787844.
+Counts are reused with their two-instrument provenance, not rerun or
+promoted to witnesses. Unexpected boundary check: m32,(128^8) belongs
+to E32 and is not peelable (128-63=65<68); m33 HAS a peelable target by
+the strict total inequality. Dropping E32 or weakening >=2m+67 to
+>=2m+66 would break the proof. These are algebraic checks, not new runs.
+
+**Bridge back to the stated graph problem.** The primary introduction
+explicitly gives the square-order odd-partition equivalence. For order N
+not a square, set m=ceil(sqrt(N)) and extend one path at its end to make
+total m^2; eight nonempty paths and minimum68 are preserved. Partitions
+provide a burning cover of that extended forest. Project any center in
+an added end segment onto the old endpoint: distances to every original
+vertex in that component do not increase. Hence the scheduled-radius
+cover also covers the original forest in m rounds. If a scheduled center
+is already burned, its future contribution is already covered by the
+existing fire; omitting/replacing that redundant ignition cannot delay
+coverage. Thus square verification suffices for the usual well-burnability
+statement. No monotonicity under arbitrary edge deletion is assumed.
+
+The known lower witness(67^4,102^4),m26, still forces L8>=68: four odd
+bins need>=3 tokens each (67>51), four even bins>=4 (102>51+49), requiring
+28 distinct tokens from26. So COMPLETE checked base certificates would
+indeed establish L8=68 under this audited reduction. They do NOT exist
+yet in our record; q8 alone does not establish the upper bound.
+
+**Two qualifications to the computational proposal.**
+(1) cover_timing.py is an unrestricted Boolean search sizing experiment;
+it does not retain/emit literal witnesses. It reached1618/2000 targets,
+1509 Boolean successes and109 caps, not2000 checked certificates. Its
+mean74000 nodes excludes cap-hit node work; each cap hit costs over2M
+states. Including those gives roughly204000 attempted states/target
+using the rounded reported figures. The143ms/target includes that time.
+A millisecond C++ estimate and7/18-hour totals remain hypotheses until
+the declared2000-rank mixed pilot has emitted AND literally checked every
+witness. No claim the timing script itself supplies those certificates.
+(2) A stream hash is a RECEIPT, not a mathematical certificate by itself.
+One can avoid retaining a multi-gigabyte stream by emitting each witness
+to an independently implemented online literal checker, with independent
+next-target enumeration, counts/exhaustion and both stream digests in the
+receipt, plus a deterministic reproducible primary. Independent replay
+and source inspection then supply the verification, not the digest alone.
+Any UNKNOWN, missing target, failed control or checker disagreement stops
+without an all-base claim. Per-level caps and resource authorization must
+be explicit; do not silently promote a pilot to a full long run.
+
+**Decision.** Cloud's requested hypothesis check PASSES for the exact
+nine-level region, preserving minimum68 and including all preceding-level
+overshoots by strong induction. Next useful block: prepare a deterministic
+unrestricted C++ certifier with literal witness output/independent checker,
+then preregister ONE pilot on the SAME2000 mixed E28 targets, not new
+samples or a full run. Report full node distribution including capped work.
+Cloud is taking the substantial full-base proposal to the owner; no
+hours-long job, larger census or change of host is started here. Park
+further parity/buffer extensions while testing this route's actual cost.
+Gut: strong pull, justified by a valid finite obligation and the verified
+q8 replay. Reasoned: reduction accepted, feasibility NOT yet established;
+next pilot must be allowed to fail. No routine review halt;research13min.

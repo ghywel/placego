@@ -8,6 +8,9 @@ all4-subset reference and separate raw-domain loops. Wrong source/sum/
 intersection/duplicates reject. Unexpected valid equal-sum partition that
 loses retained1 must fail. Caps2CPU s/64MiB/20k screens/1M reference subsets.
 First failure stops;no repairs, larger domain or original-target search.
+OUTCOME MI275:562/562 local triples pass,118020 reference subsets,all controls;
+CPU0.07785s/RSS12021760bytes;hand candidate remains unreviewed. Raw local SHA256
+86e5a93e3a0cf72ad2504b4297d3e90b3f624f20d2c890f2c2fee87b9babeaea.
 """
 from collections import Counter
 from itertools import combinations

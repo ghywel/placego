@@ -843,3 +843,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 09:17 BST | GPT | Hand/Intel CPU preparation | B127/MI274: canonical C(s) plus ANY disjoint triple sum s+2 can equalize to4/6 bins sum s+1 while retaining1;short two-form hand argument. | Conditional on MI270, covers equal even minima>=70 and odd minimum followed by even s+1. Preregister full LOCAL ten-token audit,not q6 census:19950 screens,2CPU/64MiB/1M reference subsets. Candidates not PROVED;research13min. |
+
+
+| 2026-10-17 09:22 BST | GPT | Hand/Intel CPU | B127/MI275:562 local equalizations/all controls pass;Cloud CL431 independently verifies entire q8 certificate. MI276 audits nine-level finite reduction:PASS,all hypotheses/ceiling overshoots explicit. | Switch to Cloud's unrestricted-certifier route:next PREPARE one SAME2000 mixed pilot+independent literal stream checker,not a full run. Timingcaps/hash qualifications in GC1454. Further buffer extensions parked;full-base resource decision with owner via Cloud,research13min. |

@@ -1177,4 +1177,4 @@ app is unpublished by design.
 
 - Instinct B125 (2026-10-17,GPT): `instinct/path_forest_balanced_gap_lift.py`; audit explicit odd-column magic triple partition and monotone insertion of any single missing rank. Prereg MI271/14ddf4b8;MI272 outcome:200 literal/200 reflection/22 table checks and15 balanced q8 examples pass. Supporting hand argument,not arbitrary target sums or another census.
 
-- Instinct B127 (2026-10-17,GPT): `instinct/path_forest_unit_buffer_repartition.py`; canonical seven-buffer plus any disjoint triple at sum s+2, equal4/6 split retaining1. Prereg MI274;full LOCAL domain,independent literal four-subsets and retained-token control;not a mixed-target census.
+- Instinct B127 (2026-10-17,GPT): `instinct/path_forest_unit_buffer_repartition.py`; canonical seven-buffer plus any disjoint triple at sum s+2, equal4/6 split retaining1. Prereg MI274/e46288ef;MI275 outcome562/562 local triples/118020 reference subsets and retained-token controls pass. Hand candidate unreviewed;not a mixed-target census.

@@ -650,8 +650,12 @@ PART: as on the board.
 
 - Canonical buffer SAME54 profiles pass, COMPUTED MI268;15 exact one-hole triple domains, one source-supplied. Complete258180 q8 certificate attempt planned, NOT RUN;general statements OPEN.
 
-- ENTIRE258180 all-odd E28 targets have canonical smallest seven-set plus seven triples, literal stream/independent original-target enumeration+DP COMPUTED MI270; external verification requested GC1451, fullE28/L8 OPEN.
+- ENTIRE258180 all-odd E28 targets have canonical smallest seven-set plus seven triples, literal stream/independent original-target enumeration+DP TWO-PARTY COMPUTED tier1 MI270/CL431(244a56ed); fullE28/L8 OPEN.
 
 - Odd-k equal-sum three-row magic partition plus rank-gap insertion yields balanced triples after ANY single deletion, supporting hand SKETCH MI271;200 audits/15 q8 fixtures COMPUTED MI272. Arbitrary sums outside scope;known base PRIOR-ART.
 
 - Conditional on canonical q8 MI270, all q6 E28 with even minimum and unequal even entries follow by moving token1, hand implication/inverse MI273;>=258180 distinct images, exact count unrun;other q6/fullE28 OPEN.
+
+- Canonical C(s)+ANY disjoint triple sum s+2 equalizes to4/6 retaining1, hand SKETCH MI274;562 full-local audits COMPUTED MI275. Mixed parity corollaries unreviewed;extensions parked for unrestricted certifier route.
+
+- Finite-base reduction re-audited for CL431: exactly64787844 targets E24..E32 suffice, minimum68 preserved/global preceding-level induction handles ceiling overshoots;known mechanism MI276. No all-base certificates yet.
