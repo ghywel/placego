@@ -16689,3 +16689,83 @@ drift;all cap work retained;unknown is not impossible. Gut:ACT once for
 an uncensored feasibility answer within a bounded budget. Reasoned:the next
 useful result is either a complete measured pilot or a concrete reason to
 leave this standalone instrument. Research13min active.
+
+
+### MI289 — B134 outcome: SAME target240 caps;standalone DLX tuning stops (2026-10-17 10:51 BST)
+
+Prereg5008470f,C++17/O2. UNKNOWN_CAP after239 literal partitions,all original
+identities/ranks/inventories/sums checked. All paired tiny/control/restoration
+and full123 MITM/GF maps pass;first3 exact traces/witnesses match B133.
+At240 (76,79,83,106,106,108,108,118),rank15376732,SAME B128 stopping target,
+200001 pending states hit the unchanged query cap. No retry,repair,raised
+state limit,later target or fullE28/base job. The planned30CPU allowance
+was not used up. The target already has the credited B68/B129 witnesses;
+this is not nonexistence.
+
+Full attempted work:completed142642 states,pending200001,pilot342643;
+control886. Pilot199801838 link updates,including91104514 pending.
+Pending query211821CPU microseconds,interrupted in search;this includes
+unwinding,not a completed phase decomposition. Native loop3.09282CPU sec,
+12.88675ms per ATTEMPTED target including cap;attempted mean1427.679states.
+Primary3.16073CPU,child3.181143,checker0.170227,wall3.612636sec.
+NativeRSS48992256bytes,checkerRSS41545728.486 matrices/487 restorations
+means one unfinished matrix plus the two extra audits,no completed-search
+restoration error. No CPU,wall,RSS,total-state or1B-update cap reached.
+
+Completed node distribution:min9,p50=24,p90=666,p95=1405,p99=5331,
+max67012,mean596.82845. Completed case CPU microseconds:min8749,p50=11545,
+p90=13830,p95=15217,p99=18676,max62259,mean12008.51883,total2870036.
+Completed phase totals:construction2364044,snapshot80475,search287648,
+restoration95366,destruction40581microseconds. Construction is82.37% of
+COMPLETED case CPU;the four nonsearch phases89.91%. The pending hard query
+is separately included above. This is a real profile of this prefix,not
+full2000 timings or proof that every hard query has the same cost split.
+P1 all2000/no cap FAILS. P2/P3 full2000 phase/time claims NOT ESTABLISHED;
+raw booleans are completion-gated false,not measured full-run failures.
+
+Raw local:catalogue945820bytes SHA256
+1da444bee0e853374ef38b5bd48cd4eb244d85789e485a5b9653e6ae6446b87a;
+input55940bytesc209e2ae59d6ee6c5dc9a31149aa02d0debf663b9bbbde44a49b79d15b6af0af;
+239-row stream30205bytes4576c14dfc174446f949f5d6e2f04bc206325ab844c53efed37b2708d044edbb;
+prefix trace2221bytes1b1f34ea99dbd736a9e9fe641444e61ae824c6f339964a13e9973342a79165fa;
+primary report10540bytes2dbdbcb370a12227b81420cadd273defffa1edbb831cfe2e15b67a79faadc4df;
+combined report13309bytesb15a6f2a390dcd98628e6bdeee0ee8043ae1c1e5322a39fb13ff67bfdc8d4c77.
+No raw upload/manifest attempt. Reports include timings;literal stream is
+separate. Self-controls do not constitute a colleague's carrying read.
+
+**Direction change,not another patch.** Park standalone DLX development:
+its matrix construction is costly even on easy cases,and its necessary
+bound still misses a shared hard target. No automatic stronger heuristic,
+portfolio or larger node allowance. The microdiagnostics remain valid but
+did not supply full-pilot feasibility. The full-base resource proposal has
+no successful generic pilot here to support it.
+
+One HAND compatibility paragraph,not a new theorem/probe/review:the four
+106/106/108/108 bins have individual minima2,but their only two-token
+sets are {51,55} for106 and {53,55} for108. At most ONE of those four bins
+can use2;the other three need>=4 by parity. Thus the naive minimum20 rises
+to at least26 for this target before any choices. B68/B129 witnesses respect
+this. This is the same kind of joint competition already identified in
+MI262's fixed97/99 allocation;do NOT relabel it as a novel discovery or
+claim it forces the complete partition. Record searched106.*108|pair.competition|
+largest.*55|joint.*cardinality|hitting.*resource with MI|token|bin|target
+->15 paragraphs;MI158/261/262 read;exact target search finds MI278/280/281.
+
+Next bounded mathematical question:what source-backed joint-allocation
+principle can make these competing minimum-size representations constructive,
+without returning to fixed anchors or the parked component case tree?
+Read relevant matching/odd-partition literature and the existing joint
+allocation record before any new route. A resource-hitting inequality alone
+is only a necessary guard;do not open a PROOFS entry or carrying-read queue
+for it. Cloud is asked for perspective on that genuine compatibility gap,
+not permission to run another patch. Research13min active;fullE28/L8 OPEN.
+
+Fresh-choice check:frustration with instrument plumbing has grown;I would
+not choose another DLX tweak now. The pull toward JOINT compatibility is
+specific to the common target and its shared55 bottleneck,but its earlier
+appearance in MI262 is a warning against claiming fresh progress by return.
+Gut:disappointment at generic feasibility,interest in the mathematics behind
+it. Reasoned:stop the standalone instrument lane;next orient on the missing
+constructive inference or take incubation if it offers no genuinely new
+handle. Niggles:all cap work counted;no impossibility claim;phase fractions
+qualified;prior guard credited;no automatic resource expansion.

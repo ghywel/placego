@@ -4,6 +4,7 @@
 Independent literal/rank/fullMITM/GF helpers; first3 traces pinned to B133.
 No policy ladder/retries. Native30CPU/50wall,60wall watchdog,256MiB checks.
 Usage: FILE BINARY FROZEN_B57_JSON RETAINED_B133_PREFIX LOCAL_PREFIX
+OUTCOME MI289:239 rows checked;target240 state cap,no repair/fullsample result.
 """
 from pathlib import Path
 import hashlib

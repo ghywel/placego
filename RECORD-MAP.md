@@ -669,3 +669,5 @@ PART: as on the board.
 - Isolated static token budget on SAME first3 DLX inputs:all controls/literal witnesses pass,10/37/64 states;third was capped200001,COMPUTED/MEASURED MI285. Fixture-specific effect,no2000/fullbase result.
 
 - Early budget-check hoist:exact paired222-state traces/six witnesses match,92% fewer updates on SAME first3,COMPUTED/MEASURED MI287. Single timing pair qualified;no larger pilot/fullbase claim.
+
+- Fixed early-DLX ORIGINAL2000 pilot:239 witnesses/control/prefix traces pass,SAME240 caps200001states,COMPUTED/MEASURED MI289. Completed construction82.4%;standalone DLX parked,fullE28/base OPEN.

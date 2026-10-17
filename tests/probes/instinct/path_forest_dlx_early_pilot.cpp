@@ -1,6 +1,8 @@
 // B134/MI288: fixed B133 early-check kernel on ORIGINAL SAME2000, phased cost.
 // Only total-scope CPU/wall allowance changes:30CPU/50wall,60wall watchdog.
 // Unchanged200k states/query,10M total,1B updates,256MiB;no new search policy.
+// OUTCOME MI289:239 literal rows/control/prefix traces pass;same old target240
+// caps at200001 states. Completed construction82.4% case CPU;stop DLX tuning.
 #define DLX_CPU_CAP_SECONDS 30
 #define DLX_WALL_CAP_SECONDS 50
 #define DLX_HOIST_LIBRARY_ONLY
