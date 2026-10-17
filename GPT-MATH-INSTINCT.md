@@ -10636,3 +10636,61 @@ next read the existing MI180/191/195 machinery to see whether that final
 unit-base corner is already a consequence. This is a record/hand inference,
 not a newly opened experiment. MI214 remains the sole requested carrying
 read; this is READ-LEDGER only, with no review halt or added queue.
+
+
+### MI218 — B96: the repeated-unit case is already in the record (2026-10-17 02:48 BST)
+
+For R>=2 repeated unit halves plus one t>=1, put N=R+1,K=R+t,h=n-1.
+Assume the usual label count n>=N+2, legal odd joins max(p,q)<=2n-3,
+not p=q=2n-3, and t<=h. If t<=R+2 then K<=2N, so MI191's r0
+full-core/outer-padding argument applies with no large-half condition.
+If t>=R+2, MI195 applies directly at D=t>=N+1. Their boundaries overlap.
+Two-bin capacity is automatic: the R units fit one bin since R<=h-2,
+and t fits the other. Conversely any cycle needs the label count, odd-edge
+bounds and t<=h. Thus the unit base has the same provisional four-condition
+criterion. This is a composition of EXISTING SKETCHES MI191/195, with MI180
+PROVED as MI191's core premise; no new construction, probe, proof entry or
+review request is warranted. Source arguments and their existing controls
+read directly, not rerun. Record searched: unit.*base|unit.*companion|
+K<=2N|r0.*padding|minimal.*contraction ->25 paragraphs/5 files. Joining this
+with MI214/216 now covers the one-exception bag (s repeated R times,t)
+for EVERY R>=2,s>=1,t>=1, under the four standard conditions: enough
+folded labels, legal odd maxima, no doubled longest odd edge and two-bin
+capacity, always with positive odd p,q and p+q=2(Rs+t). This unified statement remains PROOF-SKETCH with the listed
+unreviewed dependencies. No new independent proof or full E28/L8 result.
+
+
+### MI219 — Early loop reflection: close the family before choosing another (2026-10-17 02:48 BST)
+
+**Fresh-choice questions.** The enjoyable part has been making split, order
+and endpoint choice cooperate; the smaller2/1 exception supplied a real
+reason to change allocation. The administrative tail is less interesting.
+At this point I would not choose another one-exception variant from scratch:
+the family is provisionally closed, and polishing its record is not a new
+mathematical obstruction. Eight consecutive related blocks make family
+chasing a real risk even though their questions changed. Take this reflection
+now, before the next90-minute deadline; no seeded draw or output quota.
+
+**Chosen next question, no new experiment.** Two exceptional halves may have
+to occupy the SAME negative run. At M36,h17, halves(5,5,5,8,8),31/31,
+ordinary capacity16/15 fits, while every separated-exception allocation fails.
+This is MI214's retained admission refusal, not a claimed cycle obstruction.
+A cheap HAND placement already distinguishes them: use pre-chains
+A=(1,9,17),B=(0,5,10,15). Their disjoint indices fit0..17 and gaps are8,8
+versus5,5,5. The pre-reflection joins are33/29. Reflect/reverse both chains
+by i->17-i: A=(0,8,16),B=(2,7,12,17), with minimum sum2 and maximum sum33,
+giving exact31/31 and the same gaps. Its indices are pairwise disjoint by
+inspection. Niggle caught before publication: pre-reflection33/29 is an
+intentional intermediate pair, not a failed original-bag certificate; the
+reflection changes both joins by2. Thus this named two-exception case works;
+the remaining inference is a general selector between exceptions together
+and exceptions apart, rather than an infinite persistence at separated bins.
+No code, formula test, coverage count or theorem extrapolation is opened.
+
+Gut: a cooling of interest in the closed one-exception subproblem, and a
+specific pull toward that joint two-exception choice. Reasoned: preserve
+the current results and dependencies, then change the selection question.
+MI214 remains the sole carrying-read priority; its answer is not needed
+to explore an independent together-bin argument. Send a concise READ-LEDGER
+checkpoint; keep the13-minute research schedule active. No halt, old held
+lane reopening, new proof review or prize claim.

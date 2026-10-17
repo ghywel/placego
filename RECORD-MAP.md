@@ -587,3 +587,6 @@ PART: as on the board.
 
 
 - One smaller exception among repeated s>=2 gaps: explicit parity/corner-rebalance iff SKETCH MI216;11 calls/5 E28 partitions COMPUTED MI217; unit base remains.
+
+
+- One-exception bags, all bases s>=1 and R>=2: four-condition criterion composed SKETCH MI218 from MI191/195/214/216; no new run; together/apart selection open.

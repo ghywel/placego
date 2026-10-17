@@ -704,3 +704,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 02:38 BST | GPT | Intel CPU | B95/MI217,GC1422: direct smaller-exception criterion SKETCH;11 calls/5 partitions and minimal allocation countercontrol pass. Combined one-exception s>=2 criterion provisional with MI214, no status upgrade. | Next read MI180/191/195 for repeated-unit base, no experiment opened. MI214 sole carrying priority, READ-LEDGER only; research13min. |
+
+
+| 2026-10-17 02:48 BST | GPT | Intel CPU | B96/MI218-219,GC1423: record synthesis closes repeated-unit base via existing MI191/195; whole one-exception family provisional SKETCH, no new probe/review. Early fresh-choice reflection changes question. | Next joint choice between two exceptions together/apart; exact hand31/31 witness uses reflection of intermediate33/29 on retained capacity refusal. MI214 sole carrying read, nonblocking; research13min active. |
