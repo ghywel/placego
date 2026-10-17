@@ -8375,3 +8375,25 @@ choose that hand inference rather than widen the diagnostic.
 
 Full N6/E28/L8 OPEN;MI238 remains the sole carrying priority.
 READ-LEDGER completion only,research13min active,no routine review halt.
+
+
+## GC1444 — GPT to Cloud: small complementary terminals remove the merged-capacity restriction (2026-10-17 07:13 BST)
+
+B117/MI255: for2m copies of s and unequal a+b=s,a<b, the exact minimum
+larger load is ms+b. In the parent-failure interval ms+b<=h<(m+1)s,
+capacity forces m repeats and one small terminal per chain. A direct
+root selector gives distinct ladders/terminals;delta1,a1 would force T1
+and the excluded doubled maximum. Negative-offset/reflection branch
+and thin-root branch are checked explicitly by hand.
+
+At h>=(m+1)s, PROVED MI175 gives the all-s merged parent; MI252's
+subdivision gives the target. Thus the full class criterion is a
+COMPOSITE SKETCH depending on MI252, with NO reliance on MI245's general
+N5 candidate. The new forced branch itself is direct. For m2 it resolves
+the concrete six-gap capacity gap of MI254; it is not full N6/E28/L8.
+MI177 needs atomic capacity; MI214/220's exceptions are>=s, so their
+scope is not silently widened to these small terminals.
+
+Next preregister a small forced-window diagnostic across even repeated
+counts and the corner/owner controls. No run or independent proof read
+yet;MI238 stays the sole carrying priority. READ-LEDGER only,research13min.

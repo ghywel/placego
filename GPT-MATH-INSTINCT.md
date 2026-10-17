@@ -14009,3 +14009,136 @@ the next task is to remove one actual admission restriction in a named
 family, not accumulate reassuring instances. MI238 remains the sole
 carrying priority. Completion READ-LEDGER only; no routine review halt,
 new review queue or experiment opened. Research13min continues.
+
+
+### MI255 — B117: complementary small terminals close the parent-capacity gap (2026-10-17 07:13 BST)
+
+**Pull/question.** Can the target fit when its merged equal-gap parent
+does not, with a direct construction? Yes: failure of parent capacity
+forces equal repeated counts and separates the small terminals. This
+supplies the missing geometry instead of assuming the merge is harmless.
+The argument works uniformly for any EVEN repeated count, so record
+that mechanism once rather than generate successive count variants.
+Record searched: complementary.*small|small.*terminal|
+four.*repeat.*two.*except|a\+b=s ->29 paragraphs/9 files;
+even.*repeat.*complement|two.*small.*except|m.?s\+b|2m\+1.*s
+->44 paragraphs/18 files. Relevant MI175/177/214/220/252/254 read,
+including their actual scopes. MI177 needs merged capacity; MI214/220
+assume both exceptional gaps>=s. None supplies this forced SMALL-terminal
+branch. No novelty claim, new experiment or independently verified proof.
+
+**Class criterion, COMPOSITE PROOF-SKETCH.** Let m>=1 and positive
+integers a<b with a+b=s (so s>=3). Negative halves are2m copies of s
+plus a,b, total K=(2m+1)s. At M=2(h+1), with positive odd p,q summing
+2K, a folded-distinct cycle exists IFF
+
+    max(p,q)<=2h-1, not both2h-1, and h>=ms+b.
+
+The large-window branch uses PROVED MI175 plus the UNREVIEWED geometric
+lemma MI252. The new forced branch below is direct and independent of
+MI245's full N5 candidate, MI214/220 and MI252. For m2 this is exactly
+the six-gap capacity family left at MI254. Full N6/E28/L8 is not claimed.
+
+**Necessity / exact capacity minimum.** Every two-positive-odd cycle has
+two monotone parity runs, so its negative halves split into two loads
+at most h. A bin containing m+1 repeated gaps already has load
+(m+1)s>ms+b. If both bins contain at most m repeats, each must contain
+exactly m, and the bin receiving b has load at least ms+b. Thus the
+minimum possible larger load is ms+b, attained by separate bins with
+m repeats plus b, and m repeats plus a. The legal odd bound and exclusion
+of the doubled longest odd edge are the standing necessary conditions;
+in the chain encoding two maximum odd joins would force a shared maximum.
+They imply K<=2h-2. Since K>=3(2m+1), h>=3m+3, so h+1>=2m+4:
+enough labels for all vertices is automatic, not a missing hypothesis.
+
+**1. Parent capacity available: h>=(m+1)s.** The merged parent has
+2m+1 copies of s, with feasible loads(m+1)s,ms and common divisor s>=3.
+PROVED MI175 supplies a folded-distinct parent with the original p,q.
+It has N=2m+1 gaps, ALL r=N equal s. MI252 applies because2r>N and
+a!=b: subdivide one free occurrence, retaining exactly p,q and their
+owners. This proves the branch conditional only on MI252 SKETCH, not
+the general five-gap existence conjecture. MI177 also addresses this
+atomic-capacity regime, but is not silently treated as verified.
+
+**2. Parent capacity fails: ms+b<=h<(m+1)s.** No bin can take m+1
+repeats, so there must be m per bin; placing a,b together would create
+(m+1)s and fail. Their separation is FORCED, with loads
+
+    L=ms+b, S=ms+a, delta=b-a,
+    H=h-L>=0, J=h-S=H+delta, T=H+J=2h-K>=2.
+
+Here H<a and1<=delta<s. Write P=max(p,q),Q=min and
+alpha=(2h+1-P)/2; then1<=alpha<=H+floor((delta+1)/2).
+In this forced regime, delta1 implies a>=2. Otherwise a1,b2,s3,
+H<a would give H0,T1, excluded by the legal/non-doubled positives.
+This is the exact reason the small-terminal corner cannot obstruct
+this branch; it is not being assumed away without a capacity argument.
+
+If alpha<=2H, let c be the largest odd integer<=alpha. Take z1 unless
+delta1, when take z-1. Set x=(c-z)/2,y=(c+z)/2. Since c<=2H-1,
+both roots fit0..H and hence0..J. They are nonnegative since c>=1.
+For z1 one has -a<z<b and z!=delta; for z-1 use a>=2 to get the
+same strict interval and terminal inequality. Both offsets are nonzero
+modulo s.
+
+If alpha>2H, delta>=2: delta1 would imply H0,T1. Choose
+c=alpha,x=H,y=alpha-H,z=alpha-2H. Then
+
+    1<=z<=floor((delta+1)/2)-H<delta<s,
+
+so z is nonzero modulo s and lies strictly in(-a,b), different from
+delta. Also y=alpha-H<=floor((delta+1)/2)<=delta<=J, so it fits.
+No residue correction or unproved ordering search is used in this branch.
+
+**3. Direct collision and owner check.** Construct
+
+    A=x+(0,s,...,ms,ms+b),
+    B=y+(0,s,...,ms,ms+a).
+
+The repeated ladders have distinct residues modulo s. Both terminals
+lie strictly above BOTH ladders exactly when -a<z<b, already checked.
+They coincide only if z=delta, excluded. Thus all2m+4 indices are
+distinct in0..h. With c=alpha their original joins are P,Q. With
+c=alpha-1 they are intermediate P+2,Q-2; reflect/reverse BOTH chains
+in h. Their new minimum sum is T+1-alpha, giving original Q first,
+P second. Every negative gap and its count is preserved. This completes
+the direct forced branch; the whole criterion retains its stated
+MI252 dependency in the other branch and is not independently verified.
+
+**Hand branch controls, no program or new diagnostic.**
+- m2,s4,a1,b3,h11,21/19: H0,delta2,alpha1 gives
+  A=(0,4,8,11),B=(1,5,9,10),exact21/19. This repairs MI254's
+  explicit target-fit/parent-fail example.
+- m2,s5,a2,b3,h14,25/25: H1,delta1,alpha2 chooses c1,z-1.
+  Pre A=(1,6,11,14),B=(0,5,10,12) gives27/23. Reflection yields
+  A=(0,3,8,13),B=(2,4,9,14),exact25/25 and the same gaps.
+- m2,s7,a1,b6,h20,35/35: H0,delta5,alpha3 gives
+  A=(0,7,14,20),B=(3,10,17,18),disjoint and exact35/35.
+- m1,s4,a1,b3,h7,13/11: A=(0,4,7),B=(1,5,6) checks the
+  count parameter outside m2, without changing any root argument.
+- m2,s3,a1,b2,h9,17/13 belongs to the parent-available branch.
+  Parent A=(0,3,6,9),B=(1,4,7) has five3-gaps; insert free2 in A.
+  The original17/13 remains exact. Thus the excluded SMALL-terminal
+  corner of the forced proof is covered once parent capacity returns.
+- Unexpected boundary: m2,s3,a1,b2,h8 has T1. Its only individually
+  bounded positive pair15/15 is the forbidden doubled maximum. Treating
+  it as a forced-case admission would invalidate the delta1,a1 argument.
+
+**Niggle sweep / verdict.** The capacity minimum was proved over ALL
+splits, not presumed balanced. Forced separation follows only below
+(m+1)s; the other branch uses a real common-divisor parent. Negative
+offset z-1 needs a>=2, which follows from the excluded T1 corner.
+Strict terminal inequalities check cross-ladder collisions independently
+of ladder residues; terminal coincidence is checked separately. The
+reflected owner check uses the ORIGINAL p,q, never its intermediate pair.
+No arbitrary N5 sufficiency or an experimental success is a premise.
+
+Gut: satisfaction that the parent-capacity obstruction supplies a
+construction instead of a dead end. Reasoned: a class with two SMALL
+complementary exceptions now has a complete criterion candidate, using
+only the simple subdivision lemma and a verified common-divisor result
+outside the direct forced case. Next preregister a bounded forced-window
+diagnostic across several even counts, plus parent-available and doubled-
+maximum controls. No experiment opened here. MI238 remains the one
+carrying priority; READ-LEDGER only, no new queue or routine halt.
+Full N6/E28/L8 remains OPEN;research13min continues.

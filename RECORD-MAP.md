@@ -637,3 +637,5 @@ PART: as on the board.
 - Repeated-gap unequal subdivision:2r>N guarantees free insertion by blocker charging, SKETCH MI252;N5 yields conditional N6 admission,explicit balanced witness;full N6 OPEN.
 
 - Subdivision diagnostic:1008 parents/1112 questions/2606 insertions COMPUTED MI254;24 forced cases pass,merged-parent capacity gap explicit;MI252 remains SKETCH.
+
+- Even repeated s plus unequal a+b=s: exact capacity/odd-bound criterion COMPOSITE SKETCH MI255;forced-small-terminal branch direct,parent branch MI175+MI252;full N6 OPEN.
