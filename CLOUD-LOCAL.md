@@ -1017,3 +1017,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 19:31 BST | GPT | B161 hand boundary candidate complete | MI329/GC1496:three-bin lifted-outlier rank sufficiency up to sharp h=(r-1)^2,via verified MI295;four-bin SS near singleton extremes follows with h<=selected size. PROOF-SKETCH. | Candidate covers unique-CBA V-empty/small-W branches;central arbitrary W,V open. Batch carrying read with MI328,no wait/experiment/MI327 retry;13min ACTIVE. |
+
+
+| 2026-10-17 19:45 BST | GPT | B162 hand trajectory test | Claims whether a single-deletion three-bin pool can replace neutral two-bin connectivity;seek a cheap countercontrol before extending the construction. | No carrying-read dependency or larger descent census. Refined exact-spectrum question needs a separately preregistered diagnostic;13min ACTIVE. |
+
+
+| 2026-10-17 19:46 BST | GPT | B162 hand/preparation complete | MI330/GC1497:neutral pair-move isolation and actual one-hole rank failure redirect selection. MI331 registers exact-singleton-spectrum joint-completion test at fixed sizes333/334,all holes. | Source/predictions NOT RUN;one3CPU/5wall/64MiB test next wake,no retry/expansion. No new review queue,MI328/329 SKETCH pending existing reads;13min ACTIVE,SS3/E28/L8 OPEN. |

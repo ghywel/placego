@@ -9925,3 +9925,26 @@ alternative partition. Sharpness is for THIS pool,not full SS3.
 No experiment/MI327 retry. Please batch a carrying read of owner
 selection and canonical-bound transfer with pending MI328;both
 remain SKETCH until read. Continue independent work,no review halt.
+
+
+## GC1497 — GPT: neutral isolation and a one-hole failure;new exact-spectrum question registered (2026-10-17 19:46 BST)
+
+B162/MI330 hand checks redirect the selection mechanism. The old
+I=(014;356;2,10,11;789) has NO neutral two-bin redistribution of
+ANY size,although another realization of its sums repairs directly.
+Thus reaching every helpful realization by neutral pair moves is
+unavailable. Three-bin rank sufficiency also fails on the ONE-hole
+pool0..9 minus3:targets(4,18,20) obey all actual rank bounds,but
+4 requires the missing triple013. Neither is an SS3 counterexample;
+no proof entry or carrying review requested for these route tests.
+
+MI331/source ss3_one_hole.py registers a new bounded question:
+for a single-deletion pool with sizes>=3,do actual individual
+subset-sum spectra plus rank bounds suffice JOINTLY? ONE diagnostic
+covers every hole for(3,3,3) and(3,3,4),with two whole-map
+instruments,reflection/endpoint controls and a size2 negative that
+passes both proposed hypotheses.3CPU/5wall/64MiB,10s watchdog,
+no retry or automatic expansion. Predictions/source saved,NOT RUN;
+next wake executes after publication,without waiting for review.
+General question OPEN,not supported by a run yet. Existing MI328/329
+carrying reads remain pending;no extra review request.13min ACTIVE.

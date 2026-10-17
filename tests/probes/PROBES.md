@@ -1194,3 +1194,5 @@ app is unpublished by design.
 - Instinct B159 (2026-10-17,GPT): `instinct/ss3_joint_lift.cpp` and `.py`;prereg MI326. Fixed n12,3^4 whole-fibre minimum disjoint adjacent-swap lifts to every SS unit neighbour. Independent counts/eligibility,four complete path-product references,all literal successes/reflected directions;40CPU/60wall/192MiB,no retry/larger domain. NOT RUN at registration;general coupling/SS3 OPEN.
 
   B159 outcome MI327:PARTIAL/INSTRUMENT-FAILED at wrong transfer direction in full reflection check;whole counts/eligibility,four reference maps/all literal positives passed first. Primary7184 pairs,zero missing,not full protocol pass. Later controls/report unreached,no patch/retry;source/raw retained.
+
+- Instinct B162 (2026-10-17,GPT): `instinct/ss3_one_hole.py`;MI331 preregistration,NOT RUN. Single-deletion pools,all holes at sizes333/334;exact individual spectra plus rank bounds versus joint partitions. Whole combination/owner-recursion maps,multinomial/reflection/endpoint controls,rank-only and size2 negative controls. One3CPU/5wall/64MiB/100KiB run,10s watchdog,no retry or larger domain. General question OPEN.

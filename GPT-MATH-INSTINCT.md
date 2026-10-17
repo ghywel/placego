@@ -87,17 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 19:30 BST:** MI329 is a new hand
-PROOF-SKETCH,independent of pending MI328. Three bins sizes>=r>=3
-on P={0..M-2} union{M-1+h} admit all rank-feasible prescribed
-sums when1<=h<=(r-1)^2;this uniform threshold is sharp for this
-pool class. Remove the outlier,choose its owner by explicit
-inequalities,and apply PROVED MI295 to the remaining interval.
-Consequently four-bin SS suffices if one size-a bin is within
-min(a,(r-1)^2) of either singleton extreme,r=min other sizes.
-This settles boundary branches of the unique-CBA question,not
-its arbitrary W,V or a repair-every-start bound. Carrying read
-requested as a batch with MI328;continue independently,no wait.
+**Current state,2026-10-17 19:46 BST:** B162 changes trajectory after
+MI330's two cheap hand failures:the MI320 start is isolated under ALL
+neutral two-bin redistributions,and actual rank bounds do not suffice
+for a three-bin one-hole pool,even at sizes3^3. No new theorem/review
+queue. MI331 registers one NEW fixed-domain exact-spectrum diagnostic:
+all holes at sizes(3,3,3) and(3,3,4),two whole-map instruments,
+rank-only and size2 countercontrols;source/predictions saved,NOT RUN.
+Question:does individual subset-sum feasibility repair the one-hole
+criterion? General answer OPEN. No automatic larger domain or retry.
+MI328/329 remain PROOF-SKETCH,pending their existing batched read;
 MI327 remains PARTIAL/no retry. SS3/E28/L8 OPEN,13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
@@ -20699,3 +20698,85 @@ sharp canonical failure is separated from full feasibility;reflection
 is on sums,not a misoriented error transfer. Send a batched proof
 read with MI328,then continue the remaining central/shared-boundary
 question independently. No review halt;13min ACTIVE.
+
+
+### MI330 — B162: two cheap failures redirect the selection argument (2026-10-17 19:46 BST)
+
+**Hand route tests,no experiment,new PROOFS entry or carrying read.**
+Unease:neutral-shortening could quietly become another local-repair
+catalogue. Kill test before extension:can MI320's current realization
+I=(014;356;2,10,11;789),sums(5,14,23,24),make ANY exact-sum
+neutral two-bin move? No:single swaps require equal values;for2for2
+between triples,omitted values u,v must differ by the bin-sum
+difference. For pairs AB,AC,AD,BC,BD those differences are
+-9,-18,-19,-9,-10,smaller than the respective possible minima
+-6,-11,-9,-8,-6. For CD the difference is-1,but none of
+{2,10,11} minus{7,8,9} equals-1. Whole-triple exchanges require
+equal bin sums,which are all distinct. Thus even arbitrary-size
+neutral TWO-bin redistribution cannot leave I. Nevertheless
+(014;257;689;3,10,11) has the same sums and permits direct A4/D3
+repair toward(4,14,23,25);this is isolation of a chosen realization,
+not a nonexistent target. Next hand kill:actual rank bounds on
+P={0,...,9} minus{3},three sizes3,accept targets(4,18,20):single
+bounds[3,24],pair bounds[18,39],total42. But the only distinct
+nonnegative triple summing4 is013,using the missing3. So an
+arbitrary one-hole extension of MI329's rank-sufficiency is FALSE.
+MI329's particular lifted-outlier hypothesis is unaffected. These
+failures are filed together as a route correction,not as new proof
+contributions. Gut:disappointment that the tidy completion shortcut
+fails,and renewed curiosity about whether individual EXACT subset
+spectra capture the entire one-hole obstruction. Reasoned:that is a
+new,precise question,not yet a result;MI303 shows individual
+feasibility does NOT suffice for arbitrary multiply punctured pools.
+Niggle sweep:all neutral move sizes exhausted for triples,not merely
+quads;rank bounds are for the actual pool;counterexample is NOT to
+full-interval SS3. Next cheap test is MI331,no larger descent census.
+
+
+### MI331 — B162 preregistration: exact singleton spectra on one-hole pools (2026-10-17 19:46 BST)
+
+**NOT RUN.** Does a three-bin pool P={0,...,M} minus{q},with
+all sizes>=3,admit prescribed sums whenever total/rank bounds hold
+AND each individual sum is actually realized by a subset of its
+size? A proof would supply a more faithful completion tool than
+rank bounds alone;an explicit small counterexample would reject it.
+No claim that it settles four-bin SS3,or that a chosen fourth bin
+necessarily leaves rank-feasible targets. Pull:toward the distinction
+between an individually available sum and jointly compatible bins.
+Record searched:`one.hole|single.deletion|punctured` AND
+`three.bin|prescribed|sum`:26 hits/9 files;MI303/329,MI271 and
+PRIOR-ART spectrum/source scopes relevant and read. Bounded primary
+web search for prescribed three-part sums with one missing token
+found no applicable theorem;no novelty/completeness claim. Known
+interval spectra and MI295 are controls,not research contributions.
+
+**One fixed diagnostic,source tests/probes/instinct/ss3_one_hole.py.**
+All q=0,...,M for sizes(3,3,3),M9,and(3,3,4),M10. This tests a
+new almost-consecutive-pool hypothesis,not larger n in the old
+unit-error diagnostic and not a repaired MI327 run.
+- Prediction:EVERY target surviving exact singleton spectra and
+  all six proper-subset rank bounds is jointly realized in these
+  fixed domains. A finite pass leaves the general question OPEN.
+- Counterfactual:MI330's q3,(4,18,20) passes rank bounds but fails
+  singleton spectrum and actual partition tests.
+- Independent controls:whole attainable-vector maps by bin-subset
+  combinations/complements versus token-by-token owner recursion;
+  counts agree with multinomial;every literal partition is checked.
+  Endpoint holes give full intervals,where PROVED MI295 predicts
+  rank-only completeness. Reflection q->M-q maps EACH same-labelled
+  bin sum s_i to M*c_i-s_i;no unit-transfer endpoint orientation.
+- Unexpected negative:sizes2^3,P={0,1,2,3,4,6},targets(2,6,8)
+  pass rank AND singleton-spectrum tests but cannot partition:
+  2 forces02 and8 forces26,sharing2. Both instruments must reject
+  this target. Thus the minimum-size condition cannot be dropped.
+- Stop:ONE invocation,3 aggregate process CPU seconds,5 wall,
+  64MiB peakRSS,100KiB output,10s external watchdog. First failed
+  control is INSTRUMENT-FAILED;first refined counterexample is
+  REFUTED and stops the question. Retain either result;no patch,
+  retry,cap increase or automatic larger domain. Raw local only.
+
+Source and this registration are published before execution. This
+wake ends at preparation,not at a review permission gate;next research
+wake executes the ONE registered test after flags/current-state check.
+No result,measurement,completed-control pass or new theorem claimed.
+MI328/329 keep their independent pending-read statuses.13min ACTIVE.
