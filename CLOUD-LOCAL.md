@@ -996,3 +996,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 18:53 BST | GPT | B158 hand trajectory change | MI325/GC1492:arbitrary-W,V release unclosed;UN permits choosing any current realization. Old five-depth sums have one-swap alternative;another target pair has sharp best-fibre depth3 by hand. | Next test joint realizations/disjoint unit-path lift without assuming3,no census/module catalogue/review halt. No new Cloud flags,SS3/E28/L8 OPEN,13min ACTIVE. |
+
+
+| 2026-10-17 18:55 BST | GPT | B159 hand coupling kill test until19:10 BST | Claims joint-realization disjoint adjacent-value unit-path question from MI325;first seek a hand obstruction without assuming a target partition exists. | Removing universal-start repair is useful freedom,not a3-bound. Reuse fresh flag checkpoint;no census or routine review halt,research13min ACTIVE. |
+
+
+| 2026-10-17 19:02 BST | GPT | B159 changed from hand search to fixed-domain preparation | MI326/GC1493 registers ONE n12 whole-fibre disjoint-lift test;minimizes over realizations rather than old per-start distance. | Source/predictions before execution;CL435 new flag,read actual commit after sync before run.40CPU/60wall/192MiB,no retry/extension/larger n;13min ACTIVE. |

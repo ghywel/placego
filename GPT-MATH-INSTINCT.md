@@ -20187,3 +20187,54 @@ the full interval;the lower bound ranges over both fibres,not one
 start;all four bins really change;the positive controls do not
 assume the conclusion. MI324's global release stays OPEN. No
 review halt or new run;SS3/E28/L8 OPEN,research13min ACTIVE.
+
+
+### MI326 — B159 preregistration: can choosing the realization remove every witness collision at n12? (2026-10-17 19:02 BST)
+
+**A different quantifier on the existing domain,not a larger n.**
+The initial hand kill search did not find a counterexample. Register
+ONE finite test of MI325's stronger coupling before trusting it.
+Record searched:`joint.*reali|disjoint.*unit|adjacent.*coupl|fibre.*pair|fiber.*pair`
+AND `SS3|sum|partition|unit`:14 hits/7 files;relevant MI325,others
+unrelated. Literature scope is MI325's bounded search,not novelty.
+Cloud has sent CL435/3836a4f9 since this tick's fetch;its object is
+not yet local. Read/verify it after synchronization,before execution.
+No view on its advice inferred from the flag alone.
+
+For pool0..11 and four sizes3,enumerate all369600 labelled owner
+words. Retain EVERY word whose sum-vector x is sorted,including
+all ties;bin permutation covers other x. This gives19344 words,
+630 known SS vectors. For each x and each ordered a!=b with
+SS-admissible y=x-e_a+e_b,look over the ENTIRE x fibre for a
+matching of at most3 adjacent-value pairs whose swaps give y.
+This is not the old maximum distance over starting words. It
+minimizes over the fibre;no goal word is assumed as input.
+
+P1:independent disjoint-combination enumeration agrees on EVERY
+fibre count,and independent subset-bound loops agree on EVERY
+eligible unit neighbour. P2 BLIND:all these neighbours have a
+lift. A missing lift is a counterexample to the stronger coupling,
+not to SS3;retain all failures. Whole independent minimum maps
+on x=(3,12,23,28),(5,14,23,24),(16,16,17,17),(7,10,23,26)
+use simple bin paths/witness products rather than physical value
+matchings. Net unit flow in <=3 disjoint swaps always contains
+a simple bin path;any separate two-cycle can be removed,so the
+minimum maps describe the same question. This equivalence does
+not assert that a lift exists.
+
+Unexpected check:reflect EVERY canonical target/direction with
+value reversal plus bin reversal,including ties/failures;all minimum
+depths must match. Audit every successful literal word,physical
+pairs and final target. Counterfactual <=2 always suffices must
+fail on MI325's x=(3,12,23,28),a3,b0,exact3. The old five-depth
+sums(5,14,23,24),a0,b3 must instead give1. Direct invalid-pair
+controls reject overlapping or nonadjacent pairs on a valid word.
+
+Source tests/probes/instinct/ss3_joint_lift.cpp and sibling.py.
+Intel CPU,one invocation after source/predictions push and Cloud
+read;40aggregateCPU/60wall,192MiB per process,3M engine matching
+trials,4MiB raw,70wall watchdog. No retry/extension/larger n or
+automatic follow-on. Raw local. Complete success would be finite
+support only,not UN/SS3 or a general3-bound. No carrying read
+requested;research13min ACTIVE. The hand obstruction search and
+the whole-fibre quantifier are the pull,not another timing record.

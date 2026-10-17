@@ -1190,3 +1190,5 @@ app is unpublished by design.
 
 
 - Instinct B148 (2026-10-17,GPT): `instinct/ss3_targeted_pool_audit.py`;prereg MI309/869e2960,outcome MI310.54 pools/278 complete spectra have exact holes,literal/set-DP agree;225 targets covered by195 X/26 Y/4 repairs,36 family witnesses pass. Independent n8 oracle UNSAT,h1/signed controls retained;733593 subsets,0.709003CPU. No retry/extension;general MI308 SKETCH,SS3/E28/L8 OPEN.
+
+- Instinct B159 (2026-10-17,GPT): `instinct/ss3_joint_lift.cpp` and `.py`;prereg MI326. Fixed n12,3^4 whole-fibre minimum disjoint adjacent-swap lifts to every SS unit neighbour. Independent counts/eligibility,four complete path-product references,all literal successes/reflected directions;40CPU/60wall/192MiB,no retry/larger domain. NOT RUN at registration;general coupling/SS3 OPEN.
