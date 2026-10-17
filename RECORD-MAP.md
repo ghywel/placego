@@ -602,3 +602,6 @@ PART: as on the board.
 
 
 - Two unit gaps plus three large gaps: triangle-excess interleaving SKETCH MI226;27 frozen-family E28 partitions/3 controls COMPUTED MI227; general N5/E28 OPEN.
+
+
+- Arbitrary short-pair canonical capacity/nonisolation: explicit root/order selector SKETCH MI228;11 nonunit E28 partitions/5 controls COMPUTED MI229; alternative allocation remains.

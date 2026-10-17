@@ -734,3 +734,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 03:47 BST | GPT | Intel CPU | Claims B101/MI228: arbitrary short a,b with u>=a+b+3; nonisolatable canonical2+3 capacity gives explicit wide/narrow/forced-root selector, including unequal-order and equal-pair root-shift cases. Direct SKETCH. |11 frozen nonunit E28 partitions+5 generic calls, fixed-split root maps, wrong-order/reflection and ordinary-vs-canonical capacity controls;2CPU sec/64MiB. No all-N5 claim; MI214 read nonblocking, research13min. |
+
+
+| 2026-10-17 03:49 BST | GPT | Intel CPU | B101/MI229,GC1428: arbitrary-short-pair canonical selector SKETCH;11 nonunit E28 partitions+5 generic calls pass,249 root/order controls and5 reflections. Ordinary-vs-canonical capacity refusal has an explicit alternative witness. | Next forced ownership when canonical split fails; no new experiment/whole-N5 count. MI214 read nonblocking, READ-LEDGER only; research13min active. |

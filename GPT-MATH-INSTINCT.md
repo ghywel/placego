@@ -11417,3 +11417,69 @@ turning it into a nonexistence claim or silently widening the theorem.
 Cap16 formula calls/11 actual E28 partitions,2CPU sec/64MiB. Stop on any
 mismatch; retain failures, no repaired domain or extra carrying-read queue.
 The small-gap-block question remains warm; MI214 sole read, nonblocking.
+
+
+### MI229 — B101 outcome: unequal short gaps and forced-root cases pass (2026-10-17 03:49 BST)
+
+All predictions pass on the fixed domain. The six frozen nonunit profiles
+have11 positive-pair questions, agreeing with the independent explicit keys.
+Eight calls use the wide-margin selector, two the D1 negative offset and
+one the D0 positive offset. All11 actual E28 partitions pass full bags,
+positive ownership, windows and both independent geometry/partition checks,
+with one genuine zero-move baseline112 owner7. This is a selected-family
+result, not11 newly removed old residuals or an all-N5/E28 coverage claim.
+
+All five generic controls follow the predicted branches: unequal short-order
+swap, equal-pair root shift, equal-pair small-first reversal, forced-root
+nonresonance and negative margin with a positive root. Across16 formulas,
+249 independent original-positive root/order candidates agree with direct
+index intersections and both geometry validators. Five formulas reflect;
+all original owners/joins are exact.
+
+Omitting the short-order swap shares index17 while preserving the correct
+bag/window. Omitting reflection on the root-shift fixture leaves valid
+geometry but45/37 instead of43/39. Both counterfactuals fail as predicted.
+The M40 scope control has ordinary loads17/19 but canonical loads16/20;
+its constructor refuses, while A=(1,3,18),B=(0,8,11,19) independently
+certifies the original35/37 bag. This is an actual distinction between
+capacity of some split and capacity of this split, not a wording guard.
+
+First new concrete target: d=(1,2,6,6,6),17/25 gives
+A=(0,6,12),B=(1,2,4,10),moves(25,-2,-4,-12,17,-12,-12),
+targets(90,106,108,104,88,88,88,112).
+CPU0.022620s,peak RSS21,659,648bytes, within2CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_short_pair_block.py;
+prereg78d950d7. Artifact
+cited/instinct/b101-short-pair-block-c1334f28a3b50f8f.json,16,776bytes,
+SHA256 c1334f28a3b50f8fa5bab634966e47fccb34b511bfa1f236977e9effaa68d244.
+Frozen input and immutable output/manifest receipts verified. No widened
+input grid, alternate-allocation solver or repaired predictions.
+
+**Status / niggle sweep.** The infinite selector MI228 remains SKETCH,
+independent of MI204/214;11 actual partitions are COMPUTED. Equal-pair
+root shift must keep z negative and x nonnegative: the -z>=2 condition
+forces x>=2; E changes from s to s+1<C, so the endpoint remains inside
+the other short interval. The z=-1 exceptional reversal needs s>=2,
+proved from H<2s and tested by the3/3 fixture. Case4's inner-point margin
+is v-C+E>0, not a finite observation. Canonical capacity is checked before
+selecting roots and is NOT replaced by ordinary capacity. Reflection's
+original-bag control is exercised. Seven-label capacity follows from
+h>=u+v; no certificate is used to prove the all-size statement.
+Full E28/L8 remain OPEN; MI214 is still the sole carrying-read priority.
+
+**Steering / next cheap inference.** The capacity refusal is useful data.
+With u>=C+3 and nonisolation, if ordinary capacity fits but w+C does not,
+w cannot share a bin with u or v, or with BOTH short gaps. It cannot sit
+alone because C+L>h. Therefore exactly one short gap must accompany w,
+leaving the other with u,v. This is a forced choice between TWO allocations,
+not a generic assignment search. Next check whether the corresponding
+root slacks exclude all internal collisions for A gaps(a,w) and B gaps
+(u,b,v), after choosing the fitting short ownership. That inference is
+not claimed proved or tested here. No new experiment is opened.
+
+Gut: warm, with delight that unequal gaps produce a real choice of order,
+not just the unit proof with different letters. Reasoned verdict: selected
+canonical-split construction survives its adverse controls; the allocation
+boundary now supplies the next question. I would choose that question
+fresh. No review-dependent halt; research13min remains active and older
+held lanes stay held. READ-LEDGER only, no additional carrying-read queue.
