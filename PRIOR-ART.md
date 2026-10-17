@@ -3552,3 +3552,38 @@ priority/novelty claim. MI315 retains a direct alternative construction,
 status "known consequence,alternate proof unreviewed". Its MI316
 registered audit was cancelled before execution when the carrying read
 arrived;there is no run or finite validation result to cite.
+
+## SS target exchange geometry — known,reproved here (2026-10-17;MI321)
+
+Frank-Murota,[Decreasing Minimization on M-convex Sets: Background and
+Structures](https://arxiv.org/pdf/2007.09616),section2 tight-set discussion
+and Claim3.1/proof read. Integer base-polyhedron exchange is standard.
+For positive bin sizes c_i,total N,set C_J=sum_{i in J}c_i and
+F(J)=U_N(C_J). SS is exactly x(all)=L(N),x(J)<=F(J). Moreover
+F(P)+F(Q)-F(P union Q)-F(P intersect Q)=C_(P minus Q)C_(Q minus P)>=0.
+
+Attached specialized proof. Take integer SS points x,y and i with
+x_i>y_i. Let T be the union of x-tight sets excluding i,including
+the empty set. Tight sets are union/intersection-closed:modularity of
+x and submodularity of F force equality. If T contained every
+deficit index,x(all minus T)>y(all minus T),so y(T)>x(T)=F(T),
+a contradiction. Choose a deficit j outside T. No x-tight set
+contains j without i. Hence x-e_i+e_j satisfies every upper bound:
+only those sets increase,and their integer slack is at least1.
+Its L1 distance to y drops2. Repeat to obtain a unit-transfer path.
+This proves target-domain connectivity,not realizability of partitions.
+No novelty or carrying-review request.
+
+## Higher Lawrence fibers — scope note (2026-10-17;MI321)
+
+Santos-Sturmfels,[Higher Lawrence configurations](https://arxiv.org/pdf/math/0209326),
+v3:introduction/Theorems1,3 and section3 proofs read;section2 examples
+inspected. The construction records fixed column sums and fixed
+A-weighted row sums. Markov moves connect existing nonnegative tables
+in a fiber. For fixed A,the number of participating rows can be
+bounded independently of the number of rows. This is not a bound of
+two physical tokens or two bins,and changing N changes our base matrix.
+It does not establish a desired subset of the fiber is nonempty.
+MI321 gives our explicit signed-carrier encoding;no basis computed,
+connectivity or zero-error existence imported from this source.
+

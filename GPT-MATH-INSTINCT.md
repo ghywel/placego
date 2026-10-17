@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 17:56 BST:** MI319's complete n12,size3^4,
-unit-error diagnostic passes all controls:single traps exactly MI301;
-adding2for2 releases all,max5. MI320 now supplies a hand explanation
-of the reflected five-move extremals:two first moves,four depth2
-branches,and a supplier/last-touch obstruction to finishing in two
-more moves even with subsequent energy increases. This finite hand
-explanation is single-party,not a new general theorem/review queue.
-Next question:can supplier structure guide augmentation WITHOUT
-assuming an existing compatible goal? No automatic larger census.
-MI295/MI305 PROVED,MI308/313/314 SKETCH;SS3/E28/L8 OPEN.13min ACTIVE.
+**Current state,2026-10-17 18:10 BST:** MI321 encodes E<=2 exactly
+using two virtual signed carriers;their collision is a zero-error
+partition. The known SS target-domain exchange geometry shows that
+unit-neighbour realizability alone would suffice for full SS3. This
+is an OPEN existence step,not solved by known fiber connectivity.
+Exact-neutral2for2 connectivity already fails for equal-sum triples,
+so no basis-computation/local-module detour. Next hand question:
+can a carrier-separated closed component force an SS-violating cut?
+MI319 finite diagnostic/MI320 explanation retained;MI295/MI305
+PROVED,MI308/313/314 SKETCH;SS3/E28/L8 OPEN.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -19656,3 +19656,134 @@ tau2 included;neutral equal-sum quad included;A's possible temporary
 negative state T included;both endpoints of the first move considered;
 all goals exhaustively listed;two disjoint moves cannot hide a third
 supplier. Hand argument remains single-party;SS3/E28/L8 OPEN.
+
+
+### MI321 — B155: signed carriers and the exact unit-neighbour question (2026-10-17 18:09 BST)
+
+**Representation and conditional reduction,hand/source work;general
+SS3 still OPEN.** The question was whether supplier structure can
+help without assuming the target partition. Pull:turn the missing
+unit into an explicit mobile object. Unease:ordinary fiber connectivity
+is about already-existing endpoints and can hide the exact existence
+question. No new experiment,solver setup,basis computation or review
+queue. This is one block's connected change of representation,not
+a fresh series of local repair lemmas.
+
+Record searched:`Markov|Lawrence|toric|neutral.*fiber|fiber.*connect`
+AND`partition|sum|SS3|bin`:82 hits/28 files,mostly unrelated. Refined
+`Lawrence|toric|Graver.basis|Markov.basis` AND`SS3|partition|exchange`:
+9 hits/3 files;MI302/PRIOR-ART already warns that Graver optimality
+does not establish SS sufficiency or a2for2 bound. Then
+`base.poly|submodular|M.convex|unit.error.*suff|error2.*suff|tight.set|unit.*target.*path`
+AND`SS3|partition|target|prescribed`:one unrelated historical hit.
+Read the primary sources and proof portions identified in PRIOR-ART's
+two new notes. Known target-exchange proof is attached THERE as
+"known,reproved here",not promoted as a new PROOFS entry.
+
+**A cheap hand kill of the too-narrow picture.** Ordinary exact-sum
+neutral connectivity under1/2-token two-bin exchanges is FALSE even
+at n9,three bins of size3,each target12. Distinct partitions include
+(048;156;237) and(057;138;246). In any pair of equal-sum disjoint
+triples P,Q,a neutral1for1 requires equal token values,impossible.
+A neutral2for2 would require
+
+  sum(P)-p = sum(Q)-q, hence p=q,
+
+where p,q are the omitted tokens,again impossible. Every such goal
+is isolated under these EXACT-neutral moves. This does not refute
+MI295 or unit-error augmentation:their paths visit neighbouring sum
+vectors. It kills only the proposal that connectivity inside each
+fixed exact-moment fiber using these moves supplies the mechanism.
+Unexpected check:the simplest balanced triples already defeat that
+proposal;large-bin complexity or a machine search is unnecessary.
+
+**Exact signed-carrier encoding.** Keep physical assignment variables
+X_ix in{0,1},one owner per real token x=0..N-1,and prescribed
+physical row counts sum_x X_ix=c_i. Add two virtual columns a,b,
+one owner each,with weights+1 and-1 and ZERO contribution to the
+physical count. Fix the augmented row moment equations
+
+  sum_x x X_ix + a_i - b_i = s_i,
+  sum_i a_i=sum_i b_i=1; a_i,b_i in{0,1}.
+
+Thus physical deviations d_i=q_i-s_i=b_i-a_i. If the two carriers
+share a bin,all deviations vanish. If separated,b's bin has+1 and
+a's has-1. Conversely EVERY physical E2 state has a UNIQUE lift
+(b at its positive bin,a at its negative bin);every E0 partition has
+k lifts,one for each common carrier location. There are NO other
+physical states in this augmented fiber. It therefore represents
+EXACTLY E<=2,without choosing or assuming a compatible goal.
+Given any actual unit-error start,the augmented fiber is demonstrably
+nonempty by putting its carriers in those forced bins.
+
+In matrix form the base columns are(1,x) for physical tokens and
+(0,1),(0,-1) for carriers. Its k-th higher Lawrence construction
+fixes these row counts/moments and every column's total1. Nonnegative
+integer entries automatically become binary because column totals
+are1;no independent binary assumption is smuggled into connectivity.
+This matches the known framework cited in PRIOR-ART. Its allowed
+basis moves have NOT been identified with our two-bin1/2 exchanges.
+Its fixed-base bounds also do not give an N-independent bound.
+
+**What remains missing.** A separated-carrier state is explicit;
+a coincident-carrier state is the desired partition. General Markov
+connectivity connects endpoints IF they exist. It does not prove
+there is any coincident-carrier state in this fiber. Accordingly
+this is an exact model,not a proof from the word "connectivity".
+No basis calculation is launched merely because the encoding exists.
+
+**Why solving only unit errors really could suffice.** For SS3 take all c_i>=3;the target geometry itself only needs
+positive sizes. For fixed sizes c_i,let B_c be ALL integer SS targets,total L(N). The familiar
+base-polyhedron exchange argument in PRIOR-ART gives a path of
+||x-y||_1/2 admissible unit transfers between ANY x,y in B_c.
+For this model the submodular gap is the product of the sizes of
+the two set differences. In particular,two incomparable tight sets
+cannot coexist when all c_i>0;target cuts have especially simple
+geometry. None of this asserts physical realizability.
+
+Let R_c be the set of sum-vectors of ACTUAL partitions with sizes c.
+It is nonempty:allocate consecutive blocks. Necessarily R_c is a
+subset of B_c. The following purely existence-level statement is
+therefore EQUIVALENT to SS3 for this fixed c:
+
+  (UN) If x is in R_c and y=x-e_i+e_j is in B_c,
+       then y is in R_c.
+
+Proof of the nontrivial direction:start with the consecutive-block
+partition and follow the admissible target path to ANY requested
+s. At every step the preceding partition is an E2 start for the
+next target. UN supplies a next partition. Finitely many steps
+reach s. The reverse implication is immediate if R_c=B_c.
+No partition of an unknown target was assumed in the induction.
+This equivalence is an application of the known exchange geometry,
+not an unconditional solution of UN or a novelty claim.
+
+Our desired nonincreasing2for2 release theorem would imply UN,but
+is an ADDITIONAL reachability assertion. A proof may instead construct
+a completely different partition of the next target;it need not
+repair the supplied start monotonically or in bounded depth. This
+separates the statement we need from the experimental move restriction.
+The n12 diagnostic was legitimately focused on the decisive error
+level;it still supplies no universal UN theorem. For k4 the live
+question is now:given one actual partition and one SS-admissible
+unit target change,force a carrier collision OR construct a new
+partition without presupposing its suppliers.
+
+**Counterfactual/niggle checks.** Actual sum vectors and admissible
+integer targets remain separate sets;calling their equality "M-convex"
+would assume SS3. The exchange theorem applies to B_c only. Start
+partition is supplied before induction;each later one comes only
+from the explicitly OPEN UN hypothesis. Carriers affect sums but
+not sizes;signs b=positive,a=negative checked. Coincident carriers
+give k representations of one physical goal,not k distinct goals.
+Neutral n9 countercontrol does not contradict a search that allows
+E2 at intermediate states. No general2for2 or uniform depth inference.
+
+Gut:surprise at the clean carrier picture and renewed pull toward
+the sharper unit-neighbour statement. Reasoned:the model removes
+an assumed goal;the known target-domain geometry explains why unit
+release is enough,but the open existence step is intact. Next cheap
+hand test is whether an extremal separated-carrier component forces
+an SS-violating cut;look for an actual invariant or a countercontrol,
+not a list of local repairs. No new experiment/review halt;13min
+ACTIVE,older solver/local-module routes held,SS3/E28/L8 OPEN.

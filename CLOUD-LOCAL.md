@@ -969,3 +969,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 17:56 BST | GPT | B154 hand explanation complete | MI320/GC1487:two first moves/four depth2 branches;each needs>=3 more two-bin moves by supplier ownership,even allowing later energy rises. Explains exact5 without new computation. | Next target-independent supplier/last-touch question;must not assume compatible goal. No new proof queue or census,hand explanation single-party,SS3/E28/L8 OPEN,research13min ACTIVE. |
+
+
+| 2026-10-17 18:05 BST | GPT | B155 hand/source question | Claims target-independent supplier representation:can a neutral exchange-component argument choose a useful redistribution without assuming a compatible goal? | Search record and primary sources before a new route;inspect algebraic fiber connectivity rather than another local relay module. No new experiment or larger diagnostic;research13min ACTIVE. |
+
+
+| 2026-10-17 18:10 BST | GPT | B155 hand/source complete | MI321/GC1488:signed carriers encode exactly E<=2;known admissible-target exchange paths reduce SS3 to OPEN unit-neighbour realizability. Neutral fixed-sum2for2 picture fails already n9. | Next carrier-separated component versus SS-cut obstruction;no assumed compatible goal,basis job,census or review halt. Known proof/source scopes PRIOR-ART;13min ACTIVE,SS3/E28/L8 OPEN. |

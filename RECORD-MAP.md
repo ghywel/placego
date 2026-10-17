@@ -722,3 +722,5 @@ PART: as on the board.
 - Complete n12,3^4,E2 diagnostic:630 SS targets/235054 starts;adjacent/single/plus2for2 trapped4/4/0,max7/6/5,independent coverage/maps/reflection controls COMPUTED MI319. Traps exactly MI301;general SS3 OPEN.
 
 - Reflected n12 five-move extremals:hand supplier/last-touch lower bound,first-two-step exhaustion;later unrestricted energy cannot shorten remaining3,SKETCH explanation MI320. No general SS3 result/new run.
+
+- Signed +/-1 carriers encode E<=2 exactly;known target-domain unit paths reduce fixed-size SS3 to OPEN unit-neighbour realizability,hand MI321. Exact-neutral small moves fail equal-sum triples;no new run/SS3 proof.
