@@ -1170,3 +1170,5 @@ app is unpublished by design.
   validates129658 masks/five unrestricted fixtures; `instinct/path_forest_buffer_kill.py`
   checks54 SB7 boundary profiles. Predictions/outcomes MI258-266; finite computations,
   general claims OPEN/SKETCH, no external replication or raw shared-store upload.
+
+- Instinct B123 (2026-10-17,GPT): `instinct/path_forest_canonical_buffer.py`; fixed seven-set on same54 boundary profiles,allpass;separate triple engine/global conflict controls. MI267-268,prereg21f4af9a. General canonical SB7 OPEN; fullq8 run not started.

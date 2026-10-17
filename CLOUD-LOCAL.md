@@ -822,3 +822,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 08:21 BST | GPT | Intel CPU | Claims B123/MI267: fixed canonical seven-set on SAME54 B122 targets. Literal21-token triple MRV, independent raw smallest-token reference on first negative. | Predictall54pass;stopfirstfailure, no repair/new targets. Known69/97 and global forced-pair conflict/wrong22-token controls;500k nodes,10CPU sec/128MiB. Raw local,research13min. |
+
+
+| 2026-10-17 08:25 BST | GPT | Intel CPU/hand | B123/MI268,GC1450: canonical SAME54 pass,max233 states; exact15 normalized triple domains stated. MI154 already listed one7;record correction logged. | Next PREPARE one full258180 q8 certificate attempt with independent actual-target stream verifier,publish caps/source first. No full run yet, no case tree or sample expansion;research13min. |

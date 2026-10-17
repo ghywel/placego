@@ -644,6 +644,8 @@ PART: as on the board.
 
 - Three old FIRST-anchor failures have same-anchor/h multi-token partitions, COMPUTED MI262; exact-model Euler representation SKETCH MI261, fixed97/99 allocation still blocked by pair competition.
 
-- Anchor-free exact subset catalogue129658 masks; five fixed E28 witnesses,189 oracle controls COMPUTED MI264; omitted one7/seven3 pattern motivates OPEN SB7, no full-domain claim.
+- Anchor-free exact subset catalogue129658 masks; five fixed E28 witnesses,189 oracle controls COMPUTED MI264; one7/seven3 freedom already in MI154 motivates OPEN SB7, no full-domain claim.
 
-- SB7 smallest-buffer54 boundary fixtures pass, COMPUTED MI266; canonical one-hole remainder untested; a91 slice follows known verified n7 result, general all-odd E28 OPEN.
+- SB7 smallest-buffer54 boundary fixtures pass, COMPUTED MI266; canonical one-hole remainder untested at that block (later MI268); a91 slice follows known verified n7 result, general all-odd E28 OPEN.
+
+- Canonical buffer SAME54 profiles pass, COMPUTED MI268;15 exact one-hole triple domains, one source-supplied. Complete258180 q8 certificate attempt planned, NOT RUN;general statements OPEN.

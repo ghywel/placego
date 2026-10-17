@@ -9,6 +9,9 @@ despite individual feasibility; wrong21/22 token inventory rejects.
 50k nodes/profile shared across engines,500k total,10CPU sec/128MiB.
 REFUTED-BY: a complete canonical failure; it does not refute SB7 or E28.
 Raw output remains local pending artifact authorization.
+OUTCOME MI268:all54 canonical profiles pass;1267 nodes,max233/profile.
+Controls pass BOTH engines;CPU0.046127sec/RSS17018880bytes. Raw12401bytes
+SHA256e563b003752c829f4124ff1db5e255d0f1c0a6aceae9c03edd21a42639ebe068;local only.
 """
 from itertools import combinations
 from pathlib import Path

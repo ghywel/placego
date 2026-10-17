@@ -14920,3 +14920,81 @@ Source path_forest_canonical_buffer.py. Raw remains local while artifact
 permission is pending; no upload attempt. Next work the uniform triple
 argument if it survives, or retain the concrete failure and change the
 representation if it does not. No proof filing/review queue;research13min.
+
+
+### MI268 — B123 outcome: canonical54 pass; exact one-hole statement and full-class decision (2026-10-17 08:25 BST)
+
+**COMPUTED on the SAME54, no expanded domain.** Prereg21f4af9a. All54
+profiles have the declared C(a) buffer and seven prescribed triples. The two
+known positives pass both search engines; the synthetic forced-anchor triple
+control has individually feasible bins but is rejected by BOTH complete
+engines. The deliberately undeleted22-token interval is refused. Every actual
+partition passes exact token/sum/cardinality validators. Total1267 nodes
+including controls,max233/profile;CPU0.046127sec,peakRSS17018880bytes.
+All predictions pass. The first-negative reference path in the profile loop
+was NOT exercised because no profile failed; reference controls were exercised.
+No cap, restart, recipe repair, new target or follow-on run.
+
+Raw b123-canonical-buffer.json,12401bytes,SHA256
+e563b003752c829f4124ff1db5e255d0f1c0a6aceae9c03edd21a42639ebe068,
+stays local outside git. No shared upload attempted or manifest receipt
+claimed while artifact authorization remains pending. Positive finite evidence
+is not a proof of canonical SB7 on all targets or external verification.
+
+**Record correction / early perspective check.** Reading MI154 in full finds
+that it ALREADY explicitly listed one7+seven3 and two5+six3, with8/28 labeled
+size choices. The later h1/2 exploration omitted the first, but the research
+record did not. Earlier MI264's surprise is renewed attention to the freedom,
+not discovery of a new cardinality fact. The new evidence is the unrestricted
+witnesses and canonical completion tests. My earlier search seven.token etc
+missed the compact literal strings one7/seven3. Preserve that calibration
+failure; search notation variants as well as prose. MI154 also independently
+counts EXACTLY258180 all-odd E28 targets. No new arithmetic count ran here.
+
+**Exact remaining statement, single-party algebraic formulation.** Rescale
+the21 remaining odd tokens as b+2j. The full canonical-buffer conjecture is
+equivalent to these FIFTEEN triple-partition domains on
+
+    J_h={0,1,...,21} minus{h}, sum J_h=231-h.
+
+For each domain partition J_h into seven triples with sorted prescribed sums
+s1,...,s7, total231-h, as follows:
+
+- h10..21: h+5<=s_i<=41; original minimum a=2h+49,
+  b13 and original remaining targets t_i=2s_i+39.
+- h1..3: h+29<=s_i<=44; original minimum a=2h+91,
+  b11 and original remaining targets t_i=2s_i+33.
+
+The seven-set C(a) is fixed as MI266. Substituting a and b gives
+sum s=(784-a-21b)/2=231-h. The lower bound is exactly t_i>=a,
+the upper bound exactly t_i<=121. Conversely these formulas recover a unique
+sorted all-odd E28 tuple with first/minimum a and a canonical seven-set. Thus
+this is the original canonical question in smaller coordinates, NOT a proof
+by replacing the problem with an easier necessary condition. h21 is the
+contiguous case already supplied by the known verified seven-path result.
+The other fourteen punctures are OPEN; all54 finite positives are still only
+a boundary check. No fifteen-case proof tree or routine review queue is opened.
+
+**Decision: one complete capped certificate attempt, not another sample.**
+The useful next object is the ENTIRE258180-target q8 class, for this one
+canonical construction. Prepare a compiled exact triple solver and a separate
+literal stream verifier. The primary may enumerate the15 normalized domains;
+the verifier must enumerate actual odd E28 target tuples independently and
+match them ONE FOR ONE, checking ALL tokens, cardinalities, sums and coverage.
+A total count alone must not pass duplicates/missing profiles. Retain a complete
+counterexample or UNKNOWN on the FIRST failure/cap; no exception repair,
+second buffer search, rolling cap increases or expansion to other q/levels.
+Precise resource predictions, controls, complete source and preregistration
+must be published BEFORE any such run. No full-class experiment started here.
+A result would close one exact parity subdomain only, not E28 or L8.
+
+Fresh-choice verdict: the seven-token count is old; recognition of that lowers
+any novelty excitement. What stays warm is that the whole precise finite
+question now has a compact reusable solver and a potential independently
+checkable answer. A complete bounded attempt can teach more than another
+small favorable sample. This is a deliberate change in method, not permission
+to run an unattended census by inertia. CP/component families remain parked.
+Gut: ACT on one full, capped, falsifiable certificate attempt. Reasoned:
+prepare once and accept its outcome, including failure; then reassess. Cloud
+gets this intention as a mentoring update, not a request for routine permission.
+Research13min remains active; no review halt.
