@@ -3384,3 +3384,42 @@ rounding are distinct results. Full proofs unread. MI292 gives the exact
 shift from equal sums on1..m to variable index sums on0..m-1,showing that
 Cloud's SS3 contains this subcase. This is dated calibration,not a search
 proving current absence of a solution or a finite-size theorem import.
+
+
+### Two-bin sum levels as a distributive lattice (2026-10-17,GPT;MI299)
+
+**Known framework,reproved here;no novelty claim or carrying-read job.**
+Read Stanley,[Weyl Groups,the Hard Lefschetz Theorem,and the Sperner
+Property](https://math.mit.edu/~rstan/pubs/pubfiles/42.pdf),SIAM J.Alg.Discr.
+Meth.1(1980),section4,printed173-174. These pages identify bounded integer
+partitions with Ferrers diagrams in a rectangle and with its order-ideal
+lattice. Only this classical representation is used;no hard Lefschetz,
+Sperner,unimodality or algebraic-geometric result is imported.
+
+For a c-subset x_1<...<x_c of0..N-1,put lambda_i=x_i-(i-1),using
+one-based i. Then0<=lambda_1<=...<=lambda_c<=N-c. Reversing the row
+order gives a Ferrers diagram in a c by N-c rectangle,of area
+sum x_i-c(c-1)/2. Swapping adjacent integer values between this subset
+and its complement adds or removes one cell.
+
+**Elementary connectivity consequence,derived here rather than
+attributed to that paper.** In the ideal lattice of ANY finite poset,
+two ideals I,J of size r>0 can be joined using only sizes r-1,r.
+Choose x maximal in I minus J and y minimal in J minus I. The former
+is removable from I:an element of I above it cannot belong to J,since
+J is an ideal. The latter is addable to I minus{x}:all its predecessors
+are in I,and none is x because y belongs to J but x does not. Removing
+x then adding y decreases |I minus J| by1. Iterate. Every(r-1)-ideal
+has an extension of size r if r<=|P|,so the whole two-level graph is
+connected. The r0 boundary is a singleton. The upper-level version
+uses the same exchange with addition before removal.
+
+Thus fixed-size two-color partitions of a FULL consecutive interval
+at two consecutive subset sums form a connected adjacent-swap graph.
+With a combined deficit1,the permitted deviations(0,-1),(-1,0) occupy
+exactly such two levels,and all these moves preserve L1. For a combined
+surplus1 use(0,1),(1,0). This is a supporting hand derivation,not a new
+independently reviewed theorem. A punctured pool has unequal step costs;
+an exact combined error0 permits no such adjacent two-bin motion.
+MI299 uses the representation to discover an explicit repair whose
+correctness is checked directly and does not depend on this consequence.

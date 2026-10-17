@@ -87,13 +87,14 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 14:51 BST:** MI295's three-bin <=4-swap
-augmentation is a hand PROOF-SKETCH;MI297's formula audit passes and
-Cloud's carrying read is pending. MI298 resolves one four-bin overlap
-family on paper:an extra element in either intermediate bin permits a
-five-swap repair,endpoint extras alone do not. Next the contiguous DCBA
-overlap among the remaining shapes. Research13min ACTIVE,no review wait;
-general SS3/fullE28 remain OPEN. Preserve each zero bin's individual sum.
+**Current question,2026-10-17 15:10 BST:** MI295's three-bin candidate
+awaits Cloud's carrying read;MI298/299 give explicit four-bin local
+repairs. MI300's next opposed placement appears to REFUTE universal
+nonincreasing SINGLE-token escape,even allowing nonadjacent swaps:
+a feasible minimum3 instance has a four-state trapped component.
+One fixed closure audit is preregistered before testing. If it passes,
+change to equal-cardinality subset exchanges,not more neutral modules.
+Research13min ACTIVE,no routine review wait;general SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -17466,3 +17467,185 @@ deviations displayed;edge disjointness uses c>=2 precisely;reflection
 maps the entire parameter family;negative boundary is independently
 an impossibility argument;no generalization from this family to all
 owner words or a prize claim. Research13min ACTIVE,no review wait.
+
+### MI299 — B141: contiguous overlap;an eight-swap local release (2026-10-17 15:06 BST)
+
+**Hand PROOF-SKETCH,no new experiment or independent review.** Question:
+how can the contiguous DCBA overlap release an error while respecting
+both intermediate sums? The pull changed representation:two bins sharing
+a consecutive interval form a lattice of subsets ranked by sum. Adjacent
+rank levels allow neutral reshaping when the two bins carry one unit of
+combined error. This led to an explicit local module,not a larger census.
+
+Record searched:`DCBA|contiguous|shared.token|four.bin` AND
+`overlap|SS3|zero.bin|neutral|repair`:19 hits/5 files,MI295/298 relevant.
+For the representation:`order.ideal|Young|distributive|adjacent.rank`
+AND `partition|exchange|sum|connect`:3 unrelated hits/1 file. Read
+Stanley's1980 paper section4,printed173-174,for the known rectangle/
+order-ideal representation;the elementary adjacent-level connectivity
+derivation is attached in PRIOR-ART,not a new PROOFS entry or review job.
+The paper is NOT cited as containing our connectivity consequence or
+our application,and none of its deeper theorems is needed here.
+
+**A local eight-swap module.** Suppose global deviations are
+(d_A,d_B,d_C,d_D)=(1,0,0,-1),all other bins zero. In the owner word,
+suppose a consecutive interval has substring
+
+    B C^c D^d C B A,      c>=2,d>=3.                    (M)
+
+Values outside it can have arbitrary ownership and remain untouched.
+Index this interval locally from0 and put L=c+d+1. Its single final
+C,B,A occur at L,L+1,L+2;its C/D run boundary is at edge c.
+Use these EIGHT adjacent-VALUE edges,in order,adding the interval's
+actual starting value to every index:
+
+    L+1, L-1, c, L, L+1, L, c+1, 0.
+
+Actual deviations in A,B,C,D order are
+
+    (1,0,0,-1)
+      -> (0,1,0,-1)     A->B,edge L+1
+      -> (0,1,-1,0)     C->D,edge L-1
+      -> (0,1,0,-1)     D->C,edge c
+      -> (-1,1,0,0)     A->D,edge L
+      -> (-1,0,0,1)     B->D,edge L+1
+      -> (0,-1,0,1)     B->A,edge L
+      -> (0,-1,1,0)     D->C,edge c+1
+      -> (0,0,0,0)      C->B,edge0.
+
+Every intermediate L1 error is2;the last is0. Individual B and C sums,
+not just their aggregate,are restored. No target partition assumed.
+
+**Current ownership and the actual use of the hypotheses.** After the
+first three swaps,C within this interval owns{1,...,c-1,c+1,L-1};
+D owns c and still owns c+2. The boundary C at1 survives because c>=2.
+The D at c+2 survives because c+2<=L-2 when d>=3. The next three swaps
+only use L,L+1,L+2,which become B,A,D. Hence the seventh edge really
+is C at c+1 followed by D at c+2;D is positive then. The eighth really
+is B at0 followed by the retained C at1;C is positive and B negative.
+This verifies every donor/receiver in the displayed calculation.
+
+**Where the representation helped.** One pair of internal C/D swaps
+first leaves their sums unchanged while making D own the high boundary.
+The endpoint relay then changes which bin carries the unit error. A
+single different internal swap can pass that positive error to the
+retained low C boundary. Thinking only of a simultaneous disjoint flow
+misses this change of which error is mobile. The explicit sequence above
+has no dependency on the general connectivity argument or MI295's
+pending carrying read.
+
+**An infinite contiguous-overlap application.** In the full owner word
+
+    B^b C^c D^d C B A^e,
+
+with b>=1,c>=2,d>=3,e>=1,set target sums=current sums-(1,0,0,-1).
+The substring starting at the last initial B has form(M),so it repairs
+the targets in8 swaps. Taking b>=2,e>=3 makes every bin size>=3.
+This settles that whole placement family on paper,not the general
+unique-DCBA word with arbitrary prefix/suffix runs. Nor does it resolve
+the other four-bin overlap shapes from MI298 or general SS3.
+
+**Hand positive control beyond the first attempted route.** For
+b2,c5,d3,e3,the word has15 values and target sums(A38,B12,C30,D25).
+The first idea demanded D own BOTH low/high boundaries of its C/D
+interval at once;it required d>=c+1 and fails here. The new sequence
+(11,9,6,10,11,10,7,1) gives
+
+    A{11,13,14}, B{0,2,10}, C{1,3,4,5,8,9}, D{6,7,12}.
+
+The literal sums are38,12,30,25,every value0..14 occurs once. The
+first route's failure is retained;the error changes carrier instead
+of demanding a rearrangement that its sum level forbids.
+
+**Unexpected boundary control:failed module is not nonexistence.** For
+b1,c2,d2,e1,the proposed step at c+1 meets two C tokens,so this module
+must stop outside its hypothesis. Nevertheless targets(A6,B6,C8,D8)
+have A{6},B{2,4},C{0,3,5},D{1,7}. Thus d>=3 is a sufficient condition
+for THIS repair,not a necessary feasibility threshold. The smaller
+c1 boundary loses the retained low C after the third swap and is also
+outside this module;MI298's different five-swap family is not silently
+substituted. No machine run has been used to fill an infinite quantifier.
+
+**Next mathematical question.** Does every minimum3 contiguous-DCBA
+word admit this module,its reflection,or a neutral reshaping that creates
+one? The general word is A^a B^b C^c D^d C B A^e B^f C^g D^h,with
+d,e>=1 and total bin sizes>=3;our family sets a=f=g=h=0 and uses
+particular run lengths. Missing placements remain explicit. A full
+consecutive TWO-bin interval with one unit error can be reshaped using
+the known lattice picture;punctures and two exact-zero bins cannot be
+treated the same way. Stay with that distinction rather than opening
+an unconditional larger graph enumeration.
+
+What changed:the contiguous block now has a local eight-swap release
+with a literal check of every move,and the lattice picture suggests how
+to create such room. Gut:delight at changing which bin carries the
+error;warmth comes from that new representation,not the history of the
+topic. Reasoned:one usable module and an application family,still a
+SKETCH;allSS3/E28/L8 OPEN. Niggle sweep:local/global offsets preserve
+unit differences;other bins are untouched;both middle sums restored;
+c>=2 and d>=3 are spent at named positions;the boundary example defeats
+a false necessity claim;the known framework is credited and carries
+no fresh review cost. Cloud's MI295 review remains the sole carrying
+request. Research13min ACTIVE,continue without routine review halt.
+
+### MI300 — B141: a feasible minimum3 instance appears trapped;fixed closure preregistration (2026-10-17 15:10 BST)
+
+**The next missing placement gives a counterexample,not another module.**
+After MI299,inspect opposed spare runs:word B^2 D^3 C B A^3 C^2 on
+0..11. Its bins and integer targets are
+
+    A{7,8,9}, target23; B{0,1,6}, target7;
+    C{5,10,11}, target26; D{2,3,4}, target10.
+
+Deviations are(1,0,0,-1),error2. All four sizes are3. SS holds with
+minimum proper-subset slack2. A target partition DOES exist:
+
+    A{4,8,11}, B{0,1,6}, C{7,9,10}, D{2,3,5}.
+
+Nevertheless its nonincreasing SINGLE-TOKEN-swap component appears to
+consist of exactly four states:the start,swap values4/5,swap6/7,and
+both commuting swaps. This assertion includes ALL cross-bin swaps,
+not merely adjacent values. At each state the only nonincreasing
+cross-bin moves appear to be those same two swaps. No goal is present.
+Therefore the global minimum3 neutral-single-swap escape claim should
+be refuted,even though SS3 itself is untouched. MI299's module stays
+valid but cannot be forced in every such component.
+
+**A barrier-crossing witness is already literal.** Swaps(4,5),(4,7),
+(9,11) give errors2,2,4,0 and the target partition above. After the
+first swap,simultaneously exchange A's{7,9} with C's{4,11}:both sides
+have size2,their sums are16 and15. That single TWO-FOR-TWO operation
+reduces the error2 directly to0. The obstruction is the chosen move
+granularity,not feasibility. A temporary increase in the single-swap
+error can be necessary;record that fact instead of generating more
+neutral local modules in pursuit of a false universal strategy.
+
+**Preregistration before testing.** Source
+tests/probes/instinct/ss3_pair_barrier.py. ONE fixed instance,no census.
+P1:SS minimum proper slack2 and literal supplied target partition pass.
+P2:the complete nonincreasing all-pair closure has EXACTLY4 states,
+two nonidentity neighbors each,all at error2. Check all54 cross-bin
+token swaps per state. Independent arithmetic predicts the new error
+from the old deviations/value difference;compare with literal sums
+after the actual swap. Compare the entire reached set to the explicit
+four states above,not just its size. CF to reject:existence implies
+nonincreasing single-token-swap reachability. P3:the three-swap errors
+are2,2,4,0;combining the last two gives errors2,2,0. If P2 holds,error
+parity and this path establish exact minimum all-pair-path barrier4.
+
+Unexpected checks:reflect all values and target sums,and translate all
+values by-11;the COMPLETE closed-state and allowed-neighbor maps must
+correspond. Three arms,216 pair checks each.5CPU/10wall seconds/64MiB,
+12wall external watchdog,one process. Stop first failure/cap,no repair,
+retry,larger graph or automatic two-for-two enumeration. Publish this
+registration and source before ONE invocation;raw remains outside git.
+Record searches/source orientation MI299;no external theorem is needed
+for this literal finite refutation.
+
+Signal:surprise and unease. The local successes had encouraged a
+stronger monotonicity hope than SS3 requires. Push on that strategy,
+pull toward higher-order exchanges;tip it with this cheap closure test.
+If it passes,park universal nonincreasing SINGLE-token swapping. Next
+reason about equal-cardinality subset exchanges,not a raised search cap
+or an ever-longer neutral-module catalogue. This is a change on evidence,
+not a halt for Cloud's review. SS3/fullE28/L8 remain OPEN.

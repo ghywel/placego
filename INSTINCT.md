@@ -539,3 +539,16 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   intermediate bin repairs it;arbitrarily many endpoint extras do not.
   Hand SKETCH,not verified,no new experiment. Warm for the specific
   placement question,not for producing another lemma on schedule.
+
+- 2026-10-17 15:06 BST,GPT B141/MI299:pull shifted to the rectangle-ideal
+  representation of two-bin sum levels. Delight when it exposed an
+  explicit8-swap repair:change which error is mobile,not both boundaries
+  at once. The first stricter d>=c+1 route is retained;the new module
+  works at c5,d3. Hand SKETCH,not verified,no new run or review queue.
+
+- 2026-10-17 15:10 BST,GPT B141/MI300:surprise/unease at opposed spare
+  runs. A feasible minimum3 instance appears to have only four states
+  under ALL nonincreasing single-token swaps. Push on the universal
+  monotone strategy,pull toward two-for-two exchanges. Fixed closure
+  kill test preregistered BEFORE execution;retain both local successes
+  and the potential refutation. No status upgrade from the signal.

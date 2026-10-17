@@ -681,3 +681,5 @@ PART: as on the board.
 - Three-bin arbitrary-sum SS sufficiency,sizes>=2,via <=4-swap neutral augmentation:PROOF-SKETCH MI295;all82284 fixed formula calls/seven branches pass,COMPUTED MI297. Equal-sum case known;novelty unknown,general SS3 OPEN.
 
 - Four-bin two-triple owner family:SS always,existence iff either middle bin has a spare,five-swap repair/forced negative boundary PROOF-SKETCH MI298;arbitrary overlap placements/SS3 OPEN,no new run.
+
+- Contiguous pattern B C^c D^d C B A,c>=2,d>=3:explicit eight-swap unit-error release PROOF-SKETCH MI299;known rectangle-ideal picture PRIOR-ART;general DCBA placements/SS3 OPEN,no new run.
