@@ -772,3 +772,5 @@ PART: as on the board.
 - FOUR-BIN-PARTITIONS.md consolidates G315/G316 proofs,including scalar lemmas and review scope,MI348. Next one-hole4 all-union actual-spectrum sufficiency question OPEN;no new run.
 
 - One-hole4 ALL-union spectrum hypothesis:tight rank cuts/pair lower slack1 have hand boundary completion MI349. Full criterion OPEN;singleton slack1 needs special-two-hole3 compatibility,no run/review job.
+
+- One-hole4 ALL-union criterion REFUTED by hand:4,18,18,32 on0..12 minus6;infinite(a,3,3,3) family MI350. Two forced near-extreme bins expose parity gap;special-two-hole3 also false,no run.

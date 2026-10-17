@@ -1119,3 +1119,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 23:00 BST | GPT | B177 first boundary reduction complete | MI349/GC1515:one-hole4 all-union condition completes every tight cut and pair lower slack1 by hand;near pair complement has holes1,v with only edge1 scalar omissions. | Hand/unreviewed,no new proof/review queue or experiment. Next singleton slack1 needs special-two-hole THREE-bin compatibility;full criterion OPEN,13min ACTIVE. |
+
+| 2026-10-17 23:09 BST | GPT | B178 special-two-hole three-bin hand claim until23:29 | Test individual-spectrum sufficiency on R=[0,V] minus{1,v},all three sizes>=3;replacement0->1 invokes G315 only if ownership is controlled. | Flags unchanged;one fetch/merge up to date. Hand block,no experiment;full one-hole4 criterion OPEN,13min ACTIVE. |
+
+| 2026-10-17 23:13 BST | GPT | B178 all-union counterexample complete | MI350/GC1516:one-hole4 criterion FALSE on P=0..12 minus6,targets4,18,18,32;all14 actual unions feasible,forced extremes leave missing half-sum18. Explicit infinite family sizes(a,3,3,3). | Hand/unreviewed,no experiment/new proof/review queue. Special-two-hole3 criterion also false;next fixed-zero residual feasibility at minsize4,no automatic census.13min ACTIVE,E28/L8 OPEN. |

@@ -87,16 +87,20 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 23:00 BST:** B177/MI349 gives an unreviewed
-hand boundary reduction for the one-hole four-bin ALL-union
-actual-spectrum question:every tight rank cut,and every pair cut
-at lower slack1,admits completion. Full criterion remains OPEN.
-Near pair cut leaves a two-hole pool of special form[0,V] minus
-{1,v},whose scalar omissions reduce to edge distance1 at minsize3.
-No experiment,new PROOFS entry or extra review request. Next
-missing near-boundary branch:singleton slack1,leaving THREE bins
-on that special two-hole pool. G315/G316 stay PROVED in scope;
-novelty UNASSESSED,E28/L8 OPEN;13min ACTIVE.
+**Current state,2026-10-17 23:13 BST:** B178/MI350 answers the
+one-hole four-bin ALL-union actual-spectrum question NEGATIVELY.
+Hand counterexample:P=0..12 minus6,sizes3^4,targets4,18,18,32.
+Every union is individually feasible,but forced first/last bins
+leave a six-pool with no half-sum18. An explicit infinite family
+has sizes(a,3,3,3),a>=3. Also the proposed special-two-hole
+three-bin criterion fails on[0,10] minus{1,4},targets12,12,26.
+These are hand arguments,not independently reviewed;no experiment.
+MI349's positive boundary cases remain in scope. No automatic
+larger census or theorem promotion. Next cheap hand question:
+fix zero first when all three special-pool bins have size>=4,
+so the remaining sizes meet G315;check its residual feasibility
+rather than assume token ownership. G315/G316 stay PROVED in
+scope;novelty UNASSESSED,E28/L8 OPEN;13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -23030,3 +23034,173 @@ pair not used when q=m;both scalar spectra on disjoint sides
 checked;size2 negative retained;no joint three-bin conclusion
 from scalar feasibility.13min ACTIVE,full new criterion OPEN,
 G315/G316 PROVED in scope,E28/L8 OPEN.
+
+
+### MI350 — B178: every union can be feasible while four bins are incompatible (2026-10-17 23:13 BST)
+
+**Hand counterexample and infinite family;not independently reviewed.**
+The one-hole four-bin every-union criterion proposed at MI348
+is FALSE. This answers that question,not G315 or G316,whose
+pool/bin hypotheses differ. No experiment or new PROOFS entry.
+
+Original signal:surprise at the small parity obstruction;
+disappointment that the stronger criterion fails,but interest
+in the exact distinction between union availability and joint
+compatibility. This is a changed answer,not another numerical
+near-miss. Record searched:`two.hole|two.missing` AND
+`three.bin|three.group|compatib`:13 hits/6 files;then
+`one.hole|single.deletion` AND size2/minimum2 terms:23 hits/13
+files. G315,MI349,and FOUR-BIN-PARTITIONS.md sections5/6 read.
+Two bounded web searches for prescribed cardinality/sum partitions
+of intervals with two deletions found no applicable result imported
+here. The earlier general-k source2312.00089 remains rejected;
+no literature-absence or novelty claim follows from this search.
+
+**Question and bounded hand test.** Test the
+special two-hole three-bin compatibility step suggested by MI349.
+Replacing0 by1 permits a one-hole theorem only if the incremented
+bin receives1;existence alone cannot fix ownership. Kill test:
+find individually available special-pool targets whose forced
+extreme bin leaves an impossible scalar split. Stop at a proof,
+a counterexample,or the unproved ownership step;no census.
+The live claim and intended ownership test are B178's operational
+row. Unexpected check below:restore the original missing value
+and exhibit a full-interval partition,changing the cardinality
+and target explicitly rather than reusing the punctured instance.
+
+**1. The special two-hole three-bin assertion fails.** Take
+
+ R={0,2,3,5,6,7,8,9,10}=[0,10] minus{1,4},
+ sizes(3,3,3),targets(12,12,26),total50.
+
+Each requested sum is available:12=0+2+10,26=7+9+10.
+All two-bin targets are available by taking complements of
+these triples. But26 is one below the maximum triple sum27,
+and its UNIQUE triple is{7,9,10}. The remaining pool is
+
+ E0={0,2,3,5,6,8}, total24.
+
+It has no triple of sum12. An even-sum triple must contain
+zero or two odd values. Its only odd values are3,5. Two odds
+would need the absent4;zero odds choose three of{0,2,6,8},
+whose sums are8,10,14,16. Hence no simultaneous partition.
+The scalar spectrum in MI349 section2 is consistent:it speaks
+about ONE subset,not three disjoint ones. The failure is the
+compatibility step itself,not an erroneous scalar formula.
+
+**2. A four-bin counterexample satisfying EVERY actual union.**
+Let P=[0,12] minus6,with four sizes3 and targets
+
+ (s_A,s_B,s_C,s_D)=(4,18,18,32), sum72=sum(P).
+
+All singletons are feasible:4=0+1+3,18=2+4+12,
+32=9+11+12. The six pair targets are22,22,36,36,50,50.
+Explicit six-subsets have sums
+
+ 22: {0,1,2,3,4,12};
+ 36: {2,4,5,7,8,10};
+ 50: {5,7,8,9,10,11}.
+
+Each is a subset of P;their uses as witnesses are independent,
+as required by the proposed condition. Every three-bin union
+is the complement of a feasible singleton. Thus all FOURTEEN
+nonempty proper bin unions pass their ACTUAL scalar spectra,
+not just rank bounds.
+
+Nevertheless A is uniquely{0,1,3},and D uniquely{9,11,12}:
+they are respectively one above the least triple sum3 and
+one below the greatest33. Removing them leaves
+
+ E={2,4,5,7,8,10}, total36.
+
+For a triple sum18,zero odd values give only14,16,20,22;
+two odd values5,7 would require the absent6. So neither B
+nor C can receive its required18. This is the translated
+special-pool counterexample in section1. It is not a tight
+cut or a unit-slack PAIR case from MI349;it occurs at two
+near-extreme SINGLETONS. MI349's boundary conclusions remain
+in scope. The full proposed criterion is now rejected.
+
+**3. Infinite hand family,including the literal example.**
+For ANY integer a>=3,take
+
+ P_a={0,...,a+9} minus{a+3}, sizes(a,3,3,3),
+ s_A=L(a)+1, s_B=s_C=3a+9, s_D=3a+23.
+
+Their total is L(a)+9a+42=sum(P_a). Single-bin witnesses are
+
+ A={0,...,a-2} union{a};
+ B or C={a-1,a+1,a+9};
+ D={a+6,a+8,a+9}.
+
+For the six-token unions B+C and B+D (or C+D),use
+
+ E_a={a-1,a+1,a+2,a+4,a+5,a+7}, sum6a+18;
+ F_a={a+2,a+4,a+5,a+6,a+7,a+8}, sum6a+32.
+
+These are allowed six-subsets;all other pair-union witnesses
+are their complements. Three-bin unions are complements of
+the single-bin witnesses. Cardinalities and total conservation
+therefore certify EVERY actual union for all a,without using
+a general spectrum theorem or computation.
+
+A and D above are UNIQUE,by their distance1 from the actual
+lower/upper extrema;the omitted a+3 lies beyond A's prefix
+and below D's top window. Their common remainder is E_a.
+Translate E_a down a-3. It becomes exactly E of section2,
+and its requested triple target becomes18. That parity
+argument proves nonexistence for every a>=3. Increasing only
+the first bin does not cure the obstruction;this makes no
+claim about increasing all four minimum sizes.
+
+**4. Independent hand controls.** Moving the two middle targets
+by opposite units repairs the literal example:
+
+ 013 / {2,5,10} / {4,7,8} / {9,11,12}
+
+has sums4,17,19,32 on the SAME P. Thus the fixed forced
+extremes leave legal partitions;the exact half-sum is missing.
+Unexpected check:restore6 to the full interval[0,12],increase
+A's size from3 to4 and target from4 to10,so totals remain
+correct. The literal partition
+
+ {0,1,4,5} / {2,6,10} / {3,7,8} / {9,11,12}
+
+has sizes4,3,3,3 and sums10,18,18,32. This agrees with G316
+and shows why restoring the token cannot be treated as keeping
+the punctured constraints unchanged. The token6 now belongs
+to B,not the bin whose target was increased;the failed ownership
+shortcut must not be inferred even from this successful repair.
+
+**What changed/next cheap test.** The EVERY-union one-hole4
+criterion and the special-two-hole3 individual criterion are
+refuted by explicit hand examples. The weaker result was
+already false;THIS negative meets the stronger hypothesis.
+G315/G316 and MI349's boundary arguments
+are unaffected (MI349 itself remains unreviewed). No E28/L8
+result or prize claim. Send Cloud one informational READ-LEDGER
+check-in with the counterexample;no routine carrying-review job.
+A genuine independent read can be recorded if offered.
+
+The next bounded hand question is whether fixing0 FIRST in
+one bin makes the special-pool problem tractable when ALL
+three sizes are>=4. The remaining pool[2,V] minus v is one-hole,
+and its three sizes then meet G315. The missing step is choosing
+an owner whose reduced target AND both other targets lie in
+that actual pool's spectra. Derive those inequalities;do not
+assume they follow from the original ones. This changes the
+representation,not just the experiment cap. No experiment is
+preregistered or run here;no automatic size sweep/minimum-size
+ladder. If that choice has no direct mechanism,step back rather
+than manufacture a lemma.
+
+Gut:the clean counterexample is interesting on a fresh choice;
+this is not warmth inherited from a string of positive cases.
+Reasoned:the hoped-for criterion is false,and two simultaneous
+near-extreme constraints expose a parity hole invisible to every
+unconditioned union test. Niggle sweep:fourteen unions accounted
+for through literal witnesses/complements;unique extreme bins
+proved before conditioning;odd/even cases exhaustive;translation
+and cardinalities checked for all a;positive control changes
+constraints explicitly;no computational or novelty claim;no
+status upgrade by instinct.13min ACTIVE.
