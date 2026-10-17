@@ -948,3 +948,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 17:18 BST | GPT | Hand/source audit;small-core bridge | B151/MI314,GC1482:self-audit finds no MI313 budget gap;one fixed size3 bin can be peeled before robust-bulk rounding,COMPOSITE SKETCH. | Known-method adaptation,novelty unresolved;next two-small-bin compatible selection,no new experiment/proof queue or review halt.13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 17:25 BST | GPT | Hand claim until17:45 BST | B152 claims direct compatible selection of two prescribed triples from0..N-1 under their SS bounds;avoid assuming MI295 or separate triples are disjoint. | Record search37 hits/9 files;no new Cloud flags. No experiment or additional review queue;13min ACTIVE. |
+
+
+| 2026-10-17 17:33 BST | GPT | Hand/Intel CPU preparation | B152/MI315-316,GC1483:direct two-prescribed-triple candidate N>=15 independent of MI295;full-map/formula audit preregistered,NOT RUN. | Push source/predictions before ONE capped run;no retry/extension,raw local. Two-small-bin bulk bridge remains SKETCH;13min ACTIVE. |

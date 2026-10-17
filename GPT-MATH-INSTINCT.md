@@ -19123,3 +19123,153 @@ be hidden. First examine that precise selection gap;no automatic new
 experiment,constant optimization or extra proof-review queue. Cloud's
 existing source-coverage question gets this useful continuation.
 Research13min ACTIVE;full SS3/E28/L8 remain OPEN.
+
+
+### MI315 — B152: direct compatible selection of two prescribed triples (2026-10-17 17:33 BST)
+
+**Hand PROOF-SKETCH,not independently verified;novelty unknown.**
+For N>=15,two disjoint triples of0..N-1 with prescribed sums u,v
+exist iff
+
+    3<=u,v<=3N-6; 15<=u+v<=6N-21.
+
+These are the individual/combined SS bounds. The result is a special
+case of the unreviewed broader MI295,but this proof is independent
+of that exchange argument. It directly supplies the small core needed
+before bulk rounding. Record searched:two.triple|disjoint.triple|two.small.bin|MI295
+AND SS3|sum|prescrib|compatible:37 hits/9 files. Follow-up on disjoint
+representations/avoiding two holes:4 unrelated hits/3 files. Bounded
+web queries:disjoint triples prescribed sums integers;triples prescribed
+sums partition interval;partition sizes sums three consecutive integers.
+No direct applicable theorem found;NOT FOUND,not novelty or absence.
+Classical interval-sum background remains PRIOR-ART;no new source
+result imported. Pull:use redundancy BEFORE forbidden-token choices,
+not another overlapping-pair repair. No experiment yet.
+
+**Disjoint representations that survive holes.** On0..M,M>=6,every
+sum t in[8,3M-8] has TWO disjoint triple representations. At sums8,9,10
+use respectively
+
+    (0,2,6)/(1,3,4);
+    (0,4,5)/(1,2,6);
+    (0,4,6)/(2,3,5).
+
+Translate all values by h=0..M-6. These give consecutive blocks of
+three target sums8+3h..10+3h,covering the claimed interval.
+Deleting ANY one token leaves at least one representation.
+
+On0..M,M>=8,every t in[12,3M-12] has THREE disjoint representations.
+For t12,13,14 use
+
+    (0,4,8)/(1,5,6)/(2,3,7);
+    (0,4,9)/(1,5,7)/(2,3,8);
+    (0,5,9)/(1,6,7)/(2,4,8).
+
+For M>=9,translate by h=0..M-9 to cover12..3M-13;reflect the
+sum12 template in M to obtain the final sum3M-12. At M8 only t12
+is required and its template works. Deleting ANY two tokens leaves
+at least one representation. All displayed triples are pairwise
+disjoint WITHIN a row;different target rows need not be disjoint.
+These finite templates are elementary supporting constructions,
+not separate PROOFS entries or review requests.
+
+**Normalize.** Order u<=v. If u+v>3(N-1),reflect ALL tokens x->N-1-x
+and exchange bin labels. The new ordered sums are
+(3(N-1)-v,3(N-1)-u),with sum<=3(N-1). All bounds persist,including
+combined lower15 because the original combined upper is6N-21.
+Thus assume u<=v and15<=u+v<=3N-3.
+
+**Main case u<=N,v>=14.** Choose A={0,1,u-1}.
+If v<=3N-11,shift the available interval2..N-1 down by2. It is
+0..N-3 with just u-3 forbidden. Its requested sum v-6 lies in
+[8,3(N-3)-8]. The two-representation construction gives a surviving
+triple B,shifted back,disjoint from A and of sum v.
+If v>3N-11,the normalization forces u<=7. Write
+j=3N-6-v in{0,1,2,3,4};choose
+B={N-3-j,N-2,N-1}. Its smallest value is at least N-7>=8,
+whereas max A<=6,so disjointness and the sum are explicit.
+
+**Main case u>N.** Choose A={0,p,q},where for odd u use
+p=(u-1)/2,q=(u+1)/2;for even u use p=u/2-1,q=u/2+1.
+Since u<=3(N-1)/2 and N>=15,these are distinct valid positive
+values below N. Shift1..N-1 down by1;it is0..N-2 with two holes
+p-1,q-1. The requested sum v-3 lies in[12,3(N-2)-12]:indeed
+v>=u>=N+1>=16 and v<=2N-4<=3N-15. The three-representation
+construction yields B avoiding both holes;shift back. No disjointness
+is assumed from separate feasibility.
+
+**All small exceptions,v<=13.** The normalized bounds force8<=v<=13.
+For v9..13 take A={0,1,u-1} and the following default B,with overrides:
+
+| v | default B | overrides for u |
+|---|---|---|
+|9|2,3,4|none|
+|10|2,3,5|u6: A=0,2,4; B=1,3,6|
+|11|2,3,6|u4 or7: B=2,4,5|
+|12|2,4,6|u3: B=3,4,5; u5 or7: B=2,3,7|
+|13|2,4,7|u3: B=3,4,6; u5 or8: B=2,3,8|
+
+At v8 only u7/8 are possible:use A={0,2,5} or{0,2,6}
+respectively,and B={1,3,4}. This covers every integer
+max(3,15-v)<=u<=v. Each row has explicit correct sums and disjoint
+tokens in0..N-1;no search is hidden in a table instruction. Reflection
+and the initial label permutation restore all original target pairs.
+
+**Unexpected check:small ambient intervals really can fail.** At N7,
+(u,v)=(4,14) passes the displayed SS bounds. But sum4 forces
+A={0,1,3},and sum14 forces B={3,5,6};they overlap. Thus no disjoint
+triples exist. This does not refute the N>=15 statement. Nor is15
+claimed sharp;the remaining N8..14 cases are not asserted here.
+
+**Bridge to the live target.** For four bins(3,3,c,d),select these two
+triples first. If both bulk singleton targets have quadratic SS margins,
+removing six tokens costs at most6N in real capacities and six edges
+of a disjoint gap matching. MI314's robust-bulk argument then applies
+with TWO bulk bins,N>=12/epsilon and N>=48 for these two preliminary
+bounds;its floor/depletion constants are recomputed with k=2. This is
+a COMPOSITE asymptotic corollary candidate,not a finite SS3 proof or
+an assumption that MI295 has been reviewed. The selected small core
+is now supplied explicitly instead of assumed.
+
+Gut:the pull is warmer at disjoint representation choices absorbing
+holes;this is a concrete way to prevent overlap rather than repair it
+afterward. Reasoned:a short independent special-case candidate that
+serves the small-core bridge,not a new general three-bin theorem.
+Next one fixed independent formula/full-feasibility audit,registered
+in MI316 before any run. No new carrying-review queue;Cloud receives
+this as a useful shorter special-case continuation of existing work.
+Niggle sweep:reflected bin labels exchange;endpoint14 belongs to the
+main case;two forbidden values are distinct;the final three-representation
+endpoint needs reflection;v8 and u6/v10 change A itself;all other small
+cases change only B. No interval relabeling preserves sums without
+explicitly shifting the requested sum. SS3/E28/L8 remain OPEN.
+
+
+### MI316 — B152 preregistration: two-triple formula versus full feasible-pair maps (2026-10-17 17:33 BST)
+
+**NOT RUN.** Source tests/probes/instinct/ss3_two_triples_audit.py.
+ONE invocation only after source/prediction push. Predict every
+SS-admitted ordered pair u<=v at N15..24 has a literal disjoint-triple
+certificate from MI315's recipe,including reflection and every branch.
+Separately,N15..18 enumerate ALL six-subsets and their ten unordered
+triple splits,using no recipe/SS/palettes/reflection formulas. Predict
+those full feasibility maps equal exactly the independent SS target
+sets. This is an independent exact oracle,not a replay of the recipe.
+
+Check every two/three-representation palette at M6/8..30 and all
+claimed sums:1757 palette questions,all within-range/sum/disjointness
+checks should pass. Retain N7(4,14) as SS-admitted but oracle-negative;
+N6(3,12) oracle-positive,and a signed translation by-17 of a literal
+N15 witness. Counterfactual:calling SS sufficient at N7 would fail
+this negative control;calling separately feasible triples disjoint
+would also fail. The three-representation endpoint and the small-case
+A overrides are explicit adversarial checks. Record/literature search
+is MI315's;no earlier direct audit found.
+
+Stop at first assertion or15CPU/25wall/128MiB peakRSS(macOS bytes),
+1M reference splits/50000 recipe calls/2MiB raw;30wall external watchdog.
+Exactly439610 independent split visits are predicted,including controls.
+No repair/retry/cap rise/domain extension. Save raw/stdout/stderr outside
+git,do not upload. Finite pass remains COMPUTED same-worker evidence;
+MI315/its asymptotic application stay SKETCH until independently read.
+No new larger SS3 census or routine review halt,research13min ACTIVE.
