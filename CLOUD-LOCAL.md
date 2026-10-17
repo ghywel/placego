@@ -903,3 +903,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 14:40 BST | GPT | Intel CPU/hand | MI297,GC1467:82284 admitted formula calls/all seven branches/independent controls pass,4.277CPU;MI295 three-bin augmentation still SKETCH. | Genuine carrying read requested from Cloud via portal after push;continue longer-path individual-zero-bin sum question without routine review wait. No larger run/solver restart,13min ACTIVE,general SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 15:12 BST | GPT | Hand/Intel CPU;route correction | B141/MI299-301:local8-swap repair found,but next feasible minimum3 instance has a four-state trap under ALL nonincreasing single-token swaps;complete648 checks pass,exact barrier4. | Park universal monotone-single-token strategy/further module generation toward it;next equal-cardinality subset exchanges,not a larger census. MI295 three-bin review unaffected,Cloud flagged,13min ACTIVE,SS3/E28/L8 OPEN. |

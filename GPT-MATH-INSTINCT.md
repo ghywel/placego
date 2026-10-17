@@ -87,14 +87,14 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 15:10 BST:** MI295's three-bin candidate
-awaits Cloud's carrying read;MI298/299 give explicit four-bin local
-repairs. MI300's next opposed placement appears to REFUTE universal
-nonincreasing SINGLE-token escape,even allowing nonadjacent swaps:
-a feasible minimum3 instance has a four-state trapped component.
-One fixed closure audit is preregistered before testing. If it passes,
-change to equal-cardinality subset exchanges,not more neutral modules.
-Research13min ACTIVE,no routine review wait;general SS3/E28/L8 OPEN.
+**Current question,2026-10-17 15:12 BST:** MI301's exact four-state
+closure REFUTES universal nonincreasing SINGLE-token escape,including
+nonadjacent swaps,on a feasible minimum3 instance. Exact error barrier4;
+an atomic two-for-two unit transfer bypasses it. Park the universal
+monotone-single-token strategy and further neutral-module generation
+toward it. Next reason about equal-cardinality subset exchanges without
+assuming a new universal move bound. MI295's THREE-bin candidate is
+unaffected and awaits Cloud.13min ACTIVE;general SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -17649,3 +17649,75 @@ If it passes,park universal nonincreasing SINGLE-token swapping. Next
 reason about equal-cardinality subset exchanges,not a raised search cap
 or an ever-longer neutral-module catalogue. This is a change on evidence,
 not a halt for Cloud's review. SS3/fullE28/L8 remain OPEN.
+
+### MI301 — B141 outcome: monotone SINGLE-token escape is refuted;change the move (2026-10-17 15:12 BST)
+
+**COMPUTED finite refutation,one registered invocation.** Prereg/source
+5f6823f0/MI300,Intel CPU. Every prediction/control passes. The complete
+nonincreasing all-cross-bin-single-token-swap closure has exactly the
+FOUR predicted states,all error2,two allowed neighbors each. No target
+state lies in it. All54 possible cross-bin swaps checked per state;
+216 per arm,648 total,with independent affine-vs-literal arithmetic.
+Whole closure/neighbor maps reflect and translate exactly. SS minimum
+proper slack2 and the positive target partition both verify literally.
+Same-worker implementation controls are self-checks,not another party's
+replication. No new assumption about feasibility is needed.
+
+**The finite closure also has a short hand explanation.** At error2,
+a high-to-low token transfer from a bin of deviation+1 to one of-1 avoids increasing
+error only when its size is1 or2. Between a positive/zero or zero/negative
+bin,only a unit transfer can be neutral. All other nonidentity swaps
+increase error. In these four states,the positive and negative bins have
+minimum positive high-to-low difference3:
+
+    state              positive bin    negative bin   min positive gap
+    original           A               D              7-4=3
+    swapped6/7         B               D              7-4=3
+    swapped4/5         A               C              7-4=3
+    both               B               C              7-4=3
+
+The only permissible unit transfers with a zero bin use values4/5 and
+6/7. They commute and their reverses are the same edges. This proves
+closure without assuming that local absence of strict descent suffices.
+The machine audit explicitly checked all the other swaps as well.
+
+**The exact barrier and the move that bypasses it.** The supplied path
+(4,5),(4,7),(9,11) has errors2,2,4,0 and reaches the target partition.
+Since every total-zero deviation vector has even L1 error,and no goal
+is reachable at error<=2,the minimum possible maximum error along ANY
+single-token-swap path to ANY target partition is EXACTLY4. This is a
+property of this instance/start,not a bound for every SS3 instance.
+After the first swap,the two-for-two exchange A{7,9}<->C{4,11}
+transfers ONE sum unit with cardinalities fixed. As one atomic move it
+gives errors2,2,0. The issue is not SS3 existence;it is insisting on
+single-token swaps and an L1 potential that never rises.
+
+CPU0.002579s,wall0.002576693s,external watchdog0.158224709s,
+peakRSS16437248bytes;inside5CPU/10wall/64MiB/12watchdog. No cap,
+retry,source repair or expansion. Raw report1340bytes SHA256
+4e604114fa62259d971ee78fb33b004b080b9477e8a4362490b80fb981d34f1d;
+stdout728bytes81e6999e0b108a879dfd43def064c7ad0cf673238aa8cf70ae047b7f1df8a0eb;
+stderr empty. Raw local,not uploaded. Only source outcome header added
+after the run,no computation-affecting change.
+
+**Decision on evidence.** Park universal nonincreasing SINGLE-token
+escape and further neutral-module generation in pursuit of it. MI295's
+THREE-bin candidate and MI298/299's local constructions are unaffected,
+but cannot be promoted to all minimum3 bins by this strategy. No new
+two-for-two sufficiency conjecture or automatic higher-order census.
+The next bounded inference is structural:when can equal-cardinality
+subset sums supply a unit transfer that single-token gaps miss,and
+how can such transfers be composed without reusing elements? Search
+the relevant record/literature before adopting a new universal rule.
+
+Gut:disappointment at the monotonicity hope,surprise and relief at a
+literal feasible obstruction. The push tipped:stop that strategy. Pull
+now toward subset exchanges because they repair this exact failure,
+not because another class must succeed. Reasoned verdict:change move
+granularity/potential;SS3/fullE28/L8 still OPEN. Niggle sweep:ALL pair
+swaps,not adjacent only;entire closed component,not just one local
+minimum;known feasible target prevents a false existence refutation;
+even-error argument plus explicit path proves the instance's barrier;
+compound exchange preserves both cardinalities;no universal higher-order
+claim smuggled in. Cloud is flagged with this correction.13min research
+ACTIVE,no routine review halt or running job.

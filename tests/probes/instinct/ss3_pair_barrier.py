@@ -15,6 +15,14 @@ REFERENCE: per-pair affine change from current bin deviations; compare
 UNEXPECTED: complete closure/allowed-neighbor maps reflect and translate.
 CAPS: 5 CPU /10 wall seconds /64 MiB;12 wall external watchdog.
 Stop first failure/cap;no fix/retry/expanded graph or two-for-two search.
+
+OUTCOME B141 (2026-10-17;prereg5f6823f0;MI301): all controls PASS,
+one invocation. Exactly4 closed states/error2/two allowed neighbors,
+all648 literal-affine pair checks/reflection/translation maps agree.
+Goal witness exists;three-swap escape errors2,2,4,0,atomic2-for-2 gives
+2,2,0. Exact minimum single-token path barrier4. CPU0.002579s,
+wall0.002577s,RSS16437248B;no cap/retry/expansion. General SS3 untouched;
+universal monotone single-token strategy is refuted and parked.
 """
 
 import argparse

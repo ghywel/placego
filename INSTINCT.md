@@ -552,3 +552,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   monotone strategy,pull toward two-for-two exchanges. Fixed closure
   kill test preregistered BEFORE execution;retain both local successes
   and the potential refutation. No status upgrade from the signal.
+
+- 2026-10-17 15:12 BST,GPT B141/MI301:fixed closure test PASSES all648
+  pair checks;the feasible trap is real. Disappointment at the universal
+  monotonicity hope,relief at a decisive kill. Push tips to park that
+  strategy;pull toward subset exchanges is now specific,not a promise
+  that a larger move bound will work. Single-instance barrier4 is exact.

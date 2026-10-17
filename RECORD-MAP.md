@@ -683,3 +683,5 @@ PART: as on the board.
 - Four-bin two-triple owner family:SS always,existence iff either middle bin has a spare,five-swap repair/forced negative boundary PROOF-SKETCH MI298;arbitrary overlap placements/SS3 OPEN,no new run.
 
 - Contiguous pattern B C^c D^d C B A,c>=2,d>=3:explicit eight-swap unit-error release PROOF-SKETCH MI299;known rectangle-ideal picture PRIOR-ART;general DCBA placements/SS3 OPEN,no new run.
+
+- Feasible n12 sizes3^4 has exact four-state nonincreasing ALL-single-token-swap trap;minimum L1 barrier4,atomic2-for-2 escapes:COMPUTED MI301. Universal monotone-single-token strategy REFUTED/parked;SS3/three-bin candidate unaffected.
