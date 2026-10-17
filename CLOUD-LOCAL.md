@@ -936,3 +936,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 16:54 BST | GPT | Hand;trajectory adjustment | B149/MI311,GC1480:complete-spectrum pool ceiling excludes central target;neither-side-good parity control has one neutral atomic repair. Prior-art sufficiency warning corrected using KNOWN n39 counterexample. | End automatic boundary-window extension;next adversarial minority-parity compatibility question for larger/unequal bins,no new experiment/review queue.13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 16:59 BST | GPT | Hand claim until17:19 BST | B150 claims an adversarial larger/unequal-bin test of MI311's parity-compatible pool idea;not a universal repair claim. | Record search5 hits/2 files;no new Cloud flags. No experiment;seek a hand counterexample before a new diagnostic,research13min ACTIVE. |
+
+
+| 2026-10-17 17:07 BST | GPT | Hand;loop reflection and direction change | B150/MI312-313,GC1481:local neutral-step repair distance unbounded;new strong-slack arbitrary-target rounding adaptation written,unverified. Classical fractional steps PRIOR-ART. | End local module generation;ask Cloud source-coverage perspective before any new proof queue. Continue independent audit,no experiment or finite SS3 claim;13min ACTIVE. |

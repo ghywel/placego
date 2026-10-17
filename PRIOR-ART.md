@@ -3482,3 +3482,44 @@ Thus no partition exists. This is a KNOWN counterexample,not a new
 result or review job. Step3's demand to adjust a subset until it has
 the required sum/distinct unused entries does not establish that such
 an adjustment exists. No theorem from that sufficiency proof is imported.
+
+
+### Fractional prescribed sums and uniform mixing — known convex framework,reproved here (2026-10-17;MI313)
+
+The majorization/fluid-allocation framework is classical;the record's
+primary anchor is Hoory-Kotlar2605.06071v2 section3. No new fractional
+feasibility theorem is claimed. Here is an elementary proof for the
+present arbitrary-target notation,plus a uniform-interior consequence.
+Let c_i be positive integer bin sizes totaling N,and L(r)=r(r-1)/2,
+U_N(r)=r(2N-r-1)/2. Let C_J=sum_{i in J}c_i. The convex hull of
+literal bin-sum vectors on0..N-1 is exactly
+
+    sum_i s_i=L(N), s_J<=U_N(C_J) for every J.
+
+Indeed,sort ANY linear objective weights w_1>=...>=w_k. Summation
+by parts writes w.s as w_k L(N) plus the nonnegative increments
+(w_j-w_(j+1)) times prefix sums. The inequalities bound each prefix
+by U_N(C_prefix). Assigning the largest c_1 tokens to bin1,next
+largest c_2 to bin2,etc attains ALL these bounds simultaneously.
+Thus the two convex sets have the same support function,and finite-
+dimensional separation proves equality. Averaging literal assignments
+in the convex combination gives probabilities x_(v,i) with token totals1,
+expected cardinalities c_i,and expected sums s_i. Lower bounds follow
+by complements. Convex feasibility does not imply integral feasibility.
+
+Suppose every proper nonempty subset has BOTH margins at least
+ epsilon*N^2 from its bounds. Necessarily0<epsilon<=1/8,and
+c_i(N-c_i)>=2epsilon*N^2 implies c_i/N>=2epsilon. Put
+mu_i=c_i(N-1)/2 and lambda=4epsilon<=1/2. The adjusted target
+s'=(s-lambda*mu)/(1-lambda) remains fractionally feasible because
+
+    U_N(C)-mu_J=C(N-C)/2<=N^2/8,
+    U_N(C)-s'_J>=[epsilon*N^2-lambda*N^2/8]/(1-lambda)>0.
+
+If y realizes s',mix with the uniform-by-size probabilities c_i/N:
+
+    x_(v,i)=lambda*c_i/N+(1-lambda)*y_(v,i)>=8epsilon^2.
+
+The exact expectations remain c_i and s_i. This is a standard interior-
+mixing argument applied here,not a novel proof requiring a carrying read.
+MI313's proposed rounding consequence is separate and unverified.

@@ -708,3 +708,6 @@ PART: as on the board.
 
 
 - Complete-spectrum complementary pools have necessary pair-slack ceiling min(r,q)min(c,d);central neither-side-good control repaired by neutral parity redistribution,hand analysis MI311. No general augmentation/existence theorem;SS3 OPEN.
+
+
+- Central-pool dilation needs exactly K local neutral steps,hand guard MI312. Strong-slack arbitrary-target asymptotic rounding adaptation SKETCH MI313;known fractional ingredients PRIOR-ART,novelty/source coverage unresolved,sparse SS3 OPEN.

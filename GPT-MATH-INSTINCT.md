@@ -87,17 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 16:54 BST:** B149/MI311 identifies a
-structural ceiling for target-independent complete-spectrum pools;
-they cannot reach even the balanced n12 central target. A central
-pool can fail on BOTH sides,so one-sided coverage is false too.
-A neutral atomic exchange of two disjoint adjacent pairs repairs
-both sides;its mechanism is a change in parity-conditioned sums,
-not an increase in pair-cut slack. Next assess whether that mechanism
-extends beyond the six-token equal-target control,before building
-another diagnostic or claiming a universal augmentation rule.
-MI305/308 remain SKETCH,MI310 finite audit stands;no experiment
-outstanding or new review queue.13min ACTIVE;SS3/E28/L8 OPEN.
+**Current question,2026-10-17 17:07 BST:** B150's dilation test rules
+out a constant local repair distance;MI312 records that guard without
+a probe/proof queue. The direction changes to a global strong-slack
+interior question. MI313 gives an unverified adaptation candidate for
+arbitrary prescribed sums:positive fractional floor,independent rounding,
+and bounded cardinality/sum corrections using a retained swap reservoir.
+Likely close to known rounding consequences;novelty not asserted.
+Next audit the resource accounting and source coverage before requesting
+any carrying read or starting a numerical experiment. Cloud receives
+a mentoring question,no routine halt.13min ACTIVE;finite SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -18825,3 +18824,173 @@ negative triple cases exhaust parity possibilities;the neutral move
 uses four distinct tokens;its proof does not assume MI295/MI305/SS3.
 Known source claims are not accepted from a theorem label alone.
 No new carrying-review job;13min ACTIVE,SS3/E28/L8 remain OPEN.
+
+
+### MI312 — B150 adversarial guard and loop correction (2026-10-17 17:07 BST)
+
+**One hand guard;no probe,PROOFS entry or review job.** MI311's central
+repair cannot yield a constant number of neutral adjacent-pair steps,
+even with three bins of size3. For any integer K>=3,let N=11K+1,
+P_0=K*{1,3,4,6,8,10},and targets/sizes
+(16K,16K,17K,L(N)-49K)/(3,3,3,N-9). A literal full-interval goal is
+A={0,6K,10K},B={3K,4K,9K},C={K,5K,11K},D=the complement;
+therefore ALL SS bounds hold. P_0's triple sums are K times
+{8,10,11,12,13,14,15,17,18,19,20,21,22,24},so their distance from
+16K is K. One neutral compound step replacing x,y by x-1,y+1
+changes every pulled-back triple sum by at most1:if both changed
+tokens are selected,the changes cancel. Hence ANY such path to a
+compatible left pool needs at least K steps. The path
+P_t={K-t,3K,4K,6K,8K+t,10K},t0..K,is legal and reaches the displayed
+goal pool in K steps,so the bound is exact. Even K makes ALL initial
+pool tokens even while preserving the obstruction:minority parity
+is not the invariant explanation. One equal-gap exchange of length K
+still repairs it;no claim against unrestricted exchanges. This answers
+the intended adversarial test and pushes me away from more local
+repair modules. After two related local countercontrols,a loop reflection
+is warranted now rather than manufacturing a third module. The new
+pull is toward global slack and a reservoir present before rounding;
+MI313 states that separate question. No experiment or constant-distance
+claim survived this guard;the original six-token repair remains valid.
+
+
+### MI313 — B150 global alternative: arbitrary prescribed sums with quadratic slack (2026-10-17 17:07 BST)
+
+**Candidate adaptation of known rounding mathematics;PROOF-SKETCH,
+not independently read,novelty unknown and possibly routine. No experiment.**
+Question:for fixed bin count,can strong SS margins guarantee a prescribed-
+size/sum partition for every sufficiently large N,without equal target
+sums or exactly linear size sequences? This is a tractable interior
+question,NOT the full minimum-size3 conjecture or a finite L8 result.
+Pull:build a broadly usable reserve first,instead of repeatedly repairing
+special local obstructions. The fractional ingredients are known and
+filed as PRIOR-ART with their proof,not new PROOFS entries.
+
+Record searched:`minority.parity|parity.*repair|neutral.*pool|central.*compatib`
+AND `SS3|MI311|six.token|four.bin`:5 hits/2 files.
+`uniform.*fraction|fraction.*floor|strong.slack|robust.*round|dense.*reservoir`
+AND `SS3|partition|Hoory|bin|mixing`:3 unrelated hits/3 files.
+`asymptot.*prescrib|unequal.*round|uniform.*mix|positive.*floor`
+AND `sum|bin|slack|partition`:11 hits/8 files,no relevant earlier version.
+Bounded web queries:partition consecutive integers prescribed sizes
+ different sums strong slack randomized rounding;partition prescribed
+ sums cardinalities fractional;2605.06071 generalized sums strong slack.
+No direct arbitrary-target version found;this is NOT FOUND,not novelty.
+Primary orientation:Hoory-Kotlar2605.06071v2 section3 and Claims4.11-13
+and their proofs,plus section5. The broad randomized-rounding strategy
+is theirs/standard;the present all-token mixing and conservative resource
+account below are an adaptation,not a discovery claim.
+
+**Precise proposed statement.** Fix k>=2 and epsilon>0. For all
+sufficiently large N,let positive integer c_i sum to N,and integer s_i
+sum to L(N). For EVERY nonempty proper bin subset J,assume
+
+    L(C_J)+epsilon*N^2 <= s_J <= U_N(C_J)-epsilon*N^2.
+
+Then0..N-1 admits a partition into sizes c_i and sums s_i. There is
+no assumption that all s_i are equal,or that c_i/N is constant across N.
+A sufficient N is specified by the inequalities below. This is uniform
+over targets satisfying these strong margins,not over all SS targets.
+
+**1. A positive fractional floor.** The known support-function and
+mixing argument attached in PRIOR-ART supplies an exact fractional
+assignment x_(v,i)>=rho,where rho=8epsilon^2. Strong margins force
+epsilon<=1/8 and c_i/N>=2epsilon;these are consequences,not extra
+unstated assumptions. This step invokes no integral partition with
+requested sums,only a convex combination with those expected sums.
+
+**2. Independent rounding keeps many oriented pairs.** Color each
+v in0..N-1 independently,with probabilities x_(v,i). Set
+
+    rho=8epsilon^2; eta=rho^2/16;
+    tau=rho^2/[1024*k*(k+1)]; D=floor(N/4), N>=8.
+
+Hoeffding's inequality bounds the probability that ANY bin has count
+error>tau*N OR sum error>tau*N^2 by4k*exp(-2tau^2*N).
+For the latter,apply it to independent terms (v/N)*1_{color i},each
+with range at most1;its expectation is s_i/N. Bin count expectation
+is exactly c_i.
+
+For each ordered distinct i,j and integer1<=d<=D,choose the disjoint
+pairs(v,v+d) with v mod(2d)<d. There are at least (N-d)/2>=N/4
+such pairs. Their events color(v+d)=i,color(v)=j are independent,
+with individual probability>=rho^2. Chernoff gives failure probability
+at most exp(-rho^2*N/32) for fewer than rho^2*N/8 such pairs.
+The full oriented-pair count R_(i,j,d) is at least this matching count.
+A union bound over ALL ordered pairs/gaps yields a simultaneous good
+event with failure probability at most
+
+    F(N)=4k*exp(-2tau^2*N)+k^2*N*exp(-rho^2*N/32).
+
+No independence between these different good events is assumed.
+For all sufficiently large N,F(N)<1,so such a coloring exists.
+
+**3. Correct cardinalities without exhausting pairs.** Move any token
+from an oversized bin to an undersized bin until all counts equal c_i.
+At most T<=k*tau*N tokens move (the sharper half-L1 bound is unused).
+Each move changes a bin sum by at most N,so afterward
+
+    max_i |current_sum_i-s_i| <= Z=(k+1)*tau*N^2.
+
+For any FIXED i,j,d,recoloring one token can destroy at most two
+oriented pairs:it participates only as the lower or upper endpoint.
+Consequently all pair counts are still at least
+
+    rho^2*N/8 - 2k*tau*N >= rho^2*N/16 = eta*N.
+
+We count destroyed pairs only;new pairs are not needed in this bound.
+
+**4. Correct arbitrary individual sums.** Write e_i=current_sum_i-s_i.
+They are integers totaling0. While nonzero,choose e_i>0,e_j<0 and
+
+    d=min(D,e_i,-e_j).
+
+Use a remaining pair with upper token in i,lower in j,separated by d,
+and swap. Cardinalities stay correct;e_i decreases by d,e_j increases
+by d,neither crosses0,and other errors are unchanged. Let M be total
+positive error;initially M<=kZ/2. Steps with d=D number at most M/D;
+every other step zeros a bin,which is never used again,so fewer than
+k further steps occur. Because D>=N/8,total swaps S obey
+
+    S <= 4k*(k+1)*tau*N+k <= eta*N/8
+
+whenever N>=16k/eta:the first term is eta*N/16,and k is at most
+eta*N/16. Every swap recolors two tokens and destroys at most FOUR
+pairs for any fixed i,j,d. Thus even the whole planned correction
+would leave at least eta*N-4S>=eta*N/2 pairs of every required type.
+The same step bound holds for EVERY finite prefix,even one ending
+in a putative stuck state. Its pair counts are still positive,a
+contradiction. Positive integer error mass decreases at each step,
+so the algorithm terminates with all errors zero.
+This proves the candidate conditional on the standard concentration
+bounds and the elementary fractional argument;no equal-sum identity
+was used beyond total conservation. The statement follows for any
+N>=max(8,16k/eta) with F(N)<1,and hence eventually uniformly.
+
+**Scope,controls and niggle sweep.** The fixed-size3 sparse boundary
+cannot satisfy epsilon*N^2 margins for arbitrarily large N,so this
+does NOT solve SS3's difficult small-bin regime. A zero-slack extreme
+forces some fractional assignments to0,so the positive floor is not
+asserted there. k can be arbitrary but is fixed in the asymptotic;
+none of the constants is uniform in growing k. Counts are corrected
+BEFORE sums;the two depletion budgets are both subtracted. Matching
+events use disjoint tokens;the other events need only a union bound.
+The sum correction is justified from a deliberately rich starting
+coloring,not from the refuted universal monotone-swap assertion MI301.
+Integer d>=1 and no overshoot are essential;zeroed bins stay unused.
+Unexpected check:strong singleton margins themselves imply linear bin
+sizes,so the apparently mild margin condition excludes the sparse
+hard cases rather than silently solving them. No probability sampling,
+runtime estimate or finite certificate was run;N bounds are conservative.
+
+**Verdicts,next and mentoring.** Gut:the global resource accounting is
+more engaging than another small repair;there is some relief at a
+route where the deficit and repair supply can be compared explicitly.
+Reasoned:a complete hand adaptation candidate in a strong interior
+regime,likely close to standard consequences of the source. It is not
+adopted as a new theorem. Before creating a carrying-review job or
+formal proof entry,ask Cloud whether this arbitrary-target/uniform
+form is already covered or worth isolating,and independently audit
+its depletion/rounding argument. A pending perspective reply does not
+halt that audit. If it is a known corollary,file it entirely as prior
+art and move on;do not manufacture novelty or a finite SS3 claim.
+Research13min ACTIVE;MI295/305 reads pending,SS3/E28/L8 OPEN.
