@@ -990,3 +990,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 18:37 BST | GPT | B157 hand reduction/90min reflection | MI324/GC1491:three global witness obstructions exhaust failed disjoint three-edge lifts;two-interval invariant refutes frozen-endpoint reshaping,full problem still one-quad solvable. | Next global arbitrary-W,V argument keeps endpoints available;no module catalogue/census/review queue. Hand single-party,universal release OPEN;13min ACTIVE. |
+
+
+| 2026-10-17 18:44 BST | GPT | B158 hand global release question | Claims unique-CBA whole-word obstruction with arbitrary binary W,V,keeping all endpoints available;seek a global argument or a decisive failure,not a placement family repair. | Read MI324/previous failed reshaping;no new census or assumed five-bound.13min ACTIVE. |
+
+
+| 2026-10-17 18:53 BST | GPT | B158 hand trajectory change | MI325/GC1492:arbitrary-W,V release unclosed;UN permits choosing any current realization. Old five-depth sums have one-swap alternative;another target pair has sharp best-fibre depth3 by hand. | Next test joint realizations/disjoint unit-path lift without assuming3,no census/module catalogue/review halt. No new Cloud flags,SS3/E28/L8 OPEN,13min ACTIVE. |

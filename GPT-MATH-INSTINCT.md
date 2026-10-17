@@ -87,16 +87,19 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 18:37 BST:** MI324 hand-reduces failure
-of a disjoint three-edge unit-path lift to three global witness
-patterns:unique CBA,unique DCB,or a separated double fork. Generic
-paths lift in3 moves. The shared-boundary release remains OPEN.
-A two-interval hand control kills freezing both endpoint bins:
-intermediate-bin2for2 connectivity can fail while an endpoint gives
-a one-move full repair. Next arbitrary-word argument must keep
-endpoints available;no module catalogue/census queued. MI324 is
-single-party,not a general5 bound. MI319/323 finite evidence stands;
-MI295/MI305 PROVED,SS3/E28/L8 OPEN.13min ACTIVE.
+**Current state,2026-10-17 18:53 BST:** MI325 changes the
+question from repairing EVERY supplied partition to choosing a
+helpful realization of a known attainable sum vector. This is the
+freedom allowed by MI321's OPEN unit-neighbour statement UN.
+The old five-move n12 example has another realization of its
+current sums that repairs in ONE swap. A second hand control needs
+at least THREE two-bin moves even after choosing either realization;
+three disjoint adjacent swaps attain it. Neither control proves a
+general coupling theorem. Next seek a hand obstruction or global
+selection argument for joint realizations;do not assume a three-
+or five-move bound. MI324's arbitrary-W,V release remains OPEN;
+no census/module catalogue/review queue. MI295/305 PROVED,
+SS3/E28/L8 OPEN,research13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -20114,3 +20117,73 @@ one middle witness;double-fork triples really are disjoint;other
 bin paths can still work;no assumption of a compatible goal;frozen
 subproblem and full instance distinguished. Hand reduction remains
 single-party;SS3/E28/L8 OPEN,13min ACTIVE.
+
+
+### MI325 — B158: choose the realization before trying to repair it (2026-10-17 18:53 BST)
+
+**Change of approach;hand controls,single-party,no new theorem.**
+The claimed arbitrary-W,V release did not produce a global argument.
+Pull shifted to a freedom in the actual target:MI321's UN asks
+whether an SS-admissible unit neighbour y of an ATTAINABLE x is
+attainable. It permits choosing ANY realization of x. Repairing
+EVERY starting partition within five monotone moves is stronger.
+Record searched:`unique.*(CBA|boundary)|A.\^a.*W|three.bin.*gap|punctured.*three`
+AND `SS3|exchange|rank|pool|word`:15 hits/7 files;MI324/299 read.
+`joint.*reali|best.*(fiber|fibre)|neighbor.*(fiber|fibre)|disjoint.*adjacent.*target`
+AND `SS3|sum|partition|unit`:4 hits/2 files,unrelated. Bounded web
+queries on prescribed partition sums,neighbouring targets and
+adjacent transpositions found no exact statement;this is NOT a
+novelty or literature-completeness claim. No external theorem
+imported. No experiment,PROOFS entry or carrying read requested.
+
+**Why a difficult start need not control UN.** MI320's target is
+(4,14,23,25),and its five-move start has current sums(5,14,23,24).
+Those SAME current sums also have the realization
+A={0,1,4},B={2,5,7},C={6,8,9},D={3,10,11}.
+Swap A4/D3:the target is reached in one adjacent-value swap.
+All bins have size3 and cover0..11 once. No neutral path from the
+old start to this new start is asserted or needed for UN. This is
+not a shortcut in MI320's fixed-start lower bound;it changes the
+quantifier to the one the existence proof actually needs.
+
+**Unexpected hand check:freedom of realization does not make one
+or two moves sufficient.** For sizes3^4 take x=(3,12,23,28),
+y=(4,12,23,27). One x realization is A012,B345,C{6,7,10},
+D{8,9,11}. The disjoint adjacent-value swaps A2/B3,B5/C6,C10/D11
+produce A013,B246,C{5,7,11},D{8,9,10},with sums y. Relative
+to y,the errors travel(-1,0,0,1),(0,-1,0,1),(0,0,-1,1),0.
+This literal goal establishes SS without assuming SS3. Conversely,
+EVERY x realization has A012 and B345 by successive minimum
+triple sums. EVERY y realization has A013 then B246:the latter
+must include2,and its remaining pair is4,6. Its C must contain5,
+since without5 the least available triple is7+8+9=24>23.
+Thus all four bin sets change between ANY such x/y realizations.
+Two two-bin exchanges would have to involve disjoint pairs of bins,
+each touched once. A's sole exchange must replace2 by3 from B;
+B would become245,sum11,not its required12. Contradiction.
+Hence the minimum over BOTH fibres is exactly3,even allowing
+arbitrary intermediate energy and arbitrary pair redistribution.
+This supporting control is not a new proof-review job.
+
+**Unresolved question and next cheap test.** Can an attainable x
+and its SS-admissible unit neighbour always be jointly realized
+so a simple bin-level unit path has disjoint adjacent-value
+witnesses? With four bins that would use at most3 swaps and imply
+UN,hence SS3 through the known target-domain exchange paths.
+It is STRONGER than UN,not a consequence we may assume. The
+controls above motivate testing it,not believing it. Next seek a
+hand falsifier first,or an extremal choice of x realization that
+forces compatible witnesses. Do not substitute this untested3
+for the old empirical5,launch a larger census,or assume a y
+partition while trying to prove it exists. Failure of this stronger
+coupling would leave UN available without a bounded-move demand.
+
+Gut:renewed pull from removing an unnecessary universal-start
+requirement;disappointment that the arbitrary-word release did not
+close. Reasoned:the target now uses its actual existential freedom;
+no general missing inference has been filled. Niggle sweep:the
+new x realization has identical sizes AND sums;both examples cover
+the full interval;the lower bound ranges over both fibres,not one
+start;all four bins really change;the positive controls do not
+assume the conclusion. MI324's global release stays OPEN. No
+review halt or new run;SS3/E28/L8 OPEN,research13min ACTIVE.

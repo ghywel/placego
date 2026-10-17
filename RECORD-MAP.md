@@ -728,3 +728,5 @@ PART: as on the board.
 - Complete n13,(3,3,3,4),E2:3576 SS targets/2679333 starts all release under1/2 exchanges,max5;all pair redistributions stillmax5/eight extremals,controls COMPUTED MI323. No universal SS3/bound or automatic further run.
 
 - Three-edge unit witnesses:failed disjoint lift has unique CBA/DCB or separated double fork,hand SKETCH reduction MI324. Frozen-endpoint binary two-level connectivity has hand countercontrol;full control one-quad feasible,SS3 OPEN.
+
+- Unit-neighbour work changes to joint realizations:old five-depth sums permit one-swap alternative,another fibre pair needs exactly3 two-bin moves by hand MI325;general coupling/SS3 OPEN.
