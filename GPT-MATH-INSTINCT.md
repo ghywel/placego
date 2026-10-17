@@ -11579,3 +11579,81 @@ not nonexistence; the forced-ownership premise must not be dropped.
 Cap10 formula calls/6 actual partitions,2CPU sec/64MiB. Stop any mismatch,
 retain failures; no repaired family, wider census or extra review queue.
 MI214 remains sole requested carrying read, nonblocking. Research13min.
+
+
+### MI231 — B102 outcome: the forced allocation has only endpoint collisions (2026-10-17 04:01 BST)
+
+All predictions pass on the fixed domain. Exactly six frozen profiles have
+the predicted23/25 pair; all6 actual E28 partitions pass full original
+bags/positive ownership/windows and both independent geometry/partition
+validators, with one unchanged baseline112 owner7. All four generic
+formulas pass, including larger-short preference, forced smaller-short
+fallback, the previously refused M40 canonical case, and the Y0 thin root.
+
+Across10 fixtures, all320 labelled capacity masks were checked;34 fit,
+and EVERY fitting split has exactly one short owner beside w and neither
+u nor v there. Across both fitting ownerships where distinct,112 complete
+root/orientation entries agree exactly with the bad set{0,Y-X}; independent
+direct intersections and both literal geometry tests agree. The one
+reflected generic certifies the original25/25 joins and ownership.
+
+The equal-minimum countercontrol has the correct25/25 bag but shares1
+and both geometry validators reject. Dropping u>=C gives the predicted
+INTERNAL collision3, while the different allowed root A=(0,2,8),
+B=(1,4,6,9) certifies15/17. Dropping nonisolation permits w alone:
+A=(1,13),B=(0,2,5,10,15) certifies25/29. Both scope refusals pass;
+neither becomes a nonexistence claim.
+
+First concrete E28 target: d=(1,3,4,6,10),23/25,
+A=(0,3,13),B=(1,5,6,12),moves(25,-8,-2,-12,23,-20,-6),
+targets(102,106,108,100,96,88,72,112).
+CPU0.019583s,peak RSS20,312,064bytes, within2CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_forced_short_ownership.py;
+prereg6a94b44e. Artifact
+cited/instinct/b102-forced-short-ownership-fc8c416ea48c44f6.json,
+19,554bytes,SHA256 fc8c416ea48c44f6b09084c646fb09daf244d14e328ca364ce78c57ca1c7481b.
+Input and immutable output/manifest digest receipts verified. No new grid,
+whole-cycle solver, repaired prediction or all-N5 coverage count.
+
+**A coherent provisional statement, not a new experiment.** Let
+0<a<=b,u<=v<=w,u>=a+b+3,C=a+b,L=u+v. At M=2n,h=n-1, suppose
+C+L>h, ordinary two-bin capacity holds, and p,q are positive odd with
+p+q=2(C+L+w),max(p,q)<=2h-1,not both2h-1. Then a folded-distinct
+seven-vertex cycle is PROVISIONALLY supplied for this ENTIRE nonisolatable
+separated family. Pigeonhole capacity gives L<=h. If w+C<=h, use MI228;
+if w+C>h, use MI230. Those are disjoint, exhaustive capacity regimes.
+This composition depends on TWO unreviewed sketches, not MI204 or MI214.
+The general claim stays PROOF-SKETCH;6 finite partitions are COMPUTED.
+Other five-gap families and full E28/L8 remain OPEN. This does not turn
+previous selected-family certificate totals into a global census.
+
+**Niggle sweep.** The proof uses strict X<s,Y<r, not weak inequalities;
+both follow from the two strict capacity failures. u=C is included and
+actually tested; u<C has a retained internal-collision witness. Reflection
+reverses the fixed orders, so independent maps include BOTH orientations
+on every root rectangle. Counting capacity masks does not replace the
+pigeonhole argument. C>=4 follows from2<=T<=C-2 and supplies seven-label
+capacity; no tiny-label case is silently assumed. Equal roots are rejected
+on an exact ORIGINAL positive bag. Prior admissions overlap this six-profile
+family; no new residual count is asserted.
+
+**One carrying-read milestone.** The two capacity regimes now form a
+complete mathematical statement worth a focused outside read. Replace
+MI214 as the ACTIVE review priority with MI228+MI230, scoped to the
+nonisolatable separated-family statement above. The specific questions:
+(1) do MI228's equal-pair/root-shift branches exhaust the forced-root case?
+(2) do MI230's inequalities really leave only the two endpoint collisions
+for both fitting short ownerships? A counterexample or a missing carrying
+step is more useful than another finite count. MI214 remains SKETCH and
+retained, merely parked as a review request; no result is withdrawn.
+Delete only its old outgoing review flag, then send ONE REVIEW-REQUEST
+for this committed pointer after pushing. This replaces a priority; it
+does not add a second queue or halt research for an answer.
+
+Gut: warm, with delight that a failed allocation forces useful inequalities.
+Reasoned verdict: both regimes of one separated family now have explicit
+constructions, pending carrying scrutiny. Next cheap question is the
+remaining canonical-case gap u in[C,C+2], where MI230 already reaches C
+but MI228 currently needs C+3. Do not automatically loosen the hypothesis:
+the retained u<C collision warns that internal geometry can change. No
+new experiment opened. Research13min active; older held lanes stay held.

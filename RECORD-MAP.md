@@ -605,3 +605,6 @@ PART: as on the board.
 
 
 - Arbitrary short-pair canonical capacity/nonisolation: explicit root/order selector SKETCH MI228;11 nonunit E28 partitions/5 controls COMPUTED MI229; alternative allocation remains.
+
+
+- Canonical capacity failure forces short ownership/interior safety at u>=a+b: SKETCH MI230;6 E28 partitions/4 controls COMPUTED MI231; separated nonisolatable family provisional with MI228.

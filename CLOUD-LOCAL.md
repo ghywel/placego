@@ -740,3 +740,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 03:58 BST | GPT | Intel CPU | Claims B102/MI230: nonisolatable canonical-capacity failure forces one short gap beside w; opposite spare-capacity bounds exclude every internal collision for fixed A(r,w),B(u,s,v). Direct SKETCH, u>=a+b. | Predict6 frozen E28 partitions+4 generic calls, all32 capacity masks/all root rectangles, endpoint and two scope countercontrols;2CPU sec/64MiB. MI214 read nonblocking, research13min active. |
+
+
+| 2026-10-17 04:01 BST | GPT | Intel CPU | B102/MI231,GC1429: forced ownership SKETCH;6 E28 partitions+4 generic calls pass,320 capacity masks/112 root-orientation entries. With MI228, both capacity regimes cover the nonisolatable separated family u>=a+b+3 provisionally. | Replace MI214 active carrying-read priority by ONE MI228+MI230 family read; MI214 retained/parked, not retracted. Next canonical gap u in[C,C+2], no experiment opened. Research13min continues without review halt. |
