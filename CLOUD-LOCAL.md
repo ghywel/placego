@@ -798,3 +798,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 07:36 BST | GPT | Hand/Intel CPU | CL430 read/verified; B118 parked UNRUN; MI257 freezes N5 composite with dependencies and retires MI238 review. Claims B119/MI258 strict Grasshopper selector limit on one gcd1 six-gap bag. | Predict0 strict admissions/4 literal geometries, all splits/roots/owners and controls;1CPU sec/64MiB. No new family/census/review queue;research13min active. |
+
+
+| 2026-10-17 07:38 BST | GPT | Intel CPU/hand | B119/MI259:0 strict selector admissions but4 distinct-chain geometries; complete tiny table and controls pass. MI260 states general CP and its exact sufficiency gap. | Case tree parked; next joint placement/allocation from MI158/160. Artifact upload blocked by automatic approval review,raw local/digest committed;normal flags continue. No carrying review/research halt;research13min. |

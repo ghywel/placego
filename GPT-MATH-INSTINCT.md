@@ -14288,3 +14288,114 @@ run; earlier source-edit corrections checked window/endpoint controls
 before any execution. Next write the general chain criterion and the
 single remaining sufficiency gap; return attention to actual multi-piece
 placement rather than patch the selector by family. Research13min active.
+
+
+### MI259 — B119 outcome: the strict obstacle count misses a distinct-chain solution (2026-10-17 07:38 BST)
+
+COMPUTED, single-worker, prereg682d0e6e. All64 labelled splits checked;
+8 fitting distinct-side masks represent exactly the multiset split
+(2,3)|(2,2,2,3). The8 owner/root/B-order rows have3 endpoint-safe
+candidates, each with TWO interior obstacles against allowance ONE.
+Strict Grasshopper admissions0. Among the16 actual A-order candidates,
+exactly4 pass both geometry engines and original move bags/owners.
+The M30 positive theorem control has10 successful orders; the repeated-
+hypothesis and correct-bag/collision counterfactuals both reject as required.
+CPU0.001193sec, peakRSS15380480bytes, all caps respected, no wider grid.
+No E28 partitions, existence census or independent proof review occurred.
+
+The complete tiny hand table makes the limitation inspectable without data.
+A has gaps2,3,load5; B has gaps2,2,2,3,load9 and root0.
+For positive15 A root2, all four orders meet an A endpoint.
+For positive13 A root3, endpoint pair3/8 gives:
+
+| B prefixes | endpoint issue | forbidden A proper levels | successful first A jump |
+|---|---|---|---|
+|0,2,4,6,9|none|1,3|2|
+|0,2,4,7,9|none|1,4|2 or3|
+|0,2,5,7,9|none|2,4|3|
+|0,3,5,7,9|start3|2,4|none|
+
+Explicit A=(3,6,8),B=(0,2,4,7,9) has physical vertices
+(6,19,15,11,5,1,16,12), moves(13,-4,-4,-6,-4,15,-4,-6),
+folded labels(6,0,4,8,5,1,3,7), all distinct. Thus a miss of the
+strict count need not even be a repeated-A obstruction. No converse
+for Grasshopper was asserted by Cloud; this is a reach limitation of
+the proposed direct sufficient-certificate selector, not a theorem refutation.
+
+Raw output is retained outside git as b119-selector-limit.json,3635bytes,
+SHA256 acbe4129a0d8f976c4aadc2f32a80aa5a369e5be83351b7b7393d2ca1c3fdbdb.
+Automatic approval review REJECTED the immutable shared-store upload,
+stating that this specific artifact payload needs explicit authorization.
+No upload or manifest append occurred; no retry/workaround. The raw file
+remains local; source, predictions, small hand table and measured outcome
+are committed. Normal authorized flag receipts are separate and succeeded.
+This is an evidence-delivery limitation, not a failed mathematical check.
+
+Niggle sweep: endpoints checked separately from proper prefixes; all distinct
+subsets exhausted by capacity, not an arbitrary chosen split; BOTH positive
+owners and every root included; actual successful A is distinct; bounds of
+the positive control corrected BEFORE execution. No geometric success is
+silently read as a proof of the general criterion. Gut: relief at a small
+answer and renewed pull to the uniform obstruction, with no urge to patch
+this into another family. Reasoned: count-only application is insufficient;
+the original prefix sets contain structure the theorem's count discards.
+
+### MI260 — The single-component statement, and where its proof stops (2026-10-17 07:38 BST)
+
+**CONJECTURE CP, general N, not a theorem.** Let h>=2, N>=1, and
+D=(d_1,...,d_N) be positive integers with K=sum D. Let p,q be positive
+odd integers with p+q=2K. There is a folded-distinct cycle on positions
+0..2h+1 with move multiset(p,q,-2d_1,...,-2d_N) iff:
+
+1. max(p,q)<=2h-1;
+2. not(p=q=2h-1);
+3. N+2<=h+1;
+4. D splits into two loads at most h.
+
+These four requirements are necessary in the two-monotone-chain encoding
+(MI180, independently verified). Maximum odd step2h+1 would join equal
+folded labels; the doubled2h-1 case forces both chain maxima to h;
+label count and run loads give the other requirements. Finite agreement
+and the N5 composite are evidence, not the missing general sufficiency.
+
+**Exact target of a uniform proof.** Choose a multiset split D=U+V,
+loads a,b, and P in{p,q}. Put alpha=(2h+1-P)/2. For a permutation of
+V let V* be all its prefix sums INCLUDING0 and b. A root x for U must
+lie in the integer interval
+
+    max(0,alpha-h+b) <= x <= min(h-a,alpha),
+    y=alpha-x, z=y-x=alpha-2x.
+
+Choose a permutation of U with full prefix set U*. The sole collision
+condition is
+
+    U* intersect (z+V*) is empty.
+
+Then A=x+U*,B=y+V* fit0..h, and the original joins are
+P=2h+1-2(x+y), Q=2(x+y+K)-(2h+1). Conversely any desired cycle gives
+such chains, a split, orders and a choice of the even-start positive.
+An empty gap list is allowed: its prefix set is{0}, not the empty set.
+The statement incorporates endpoint collisions, all roots, both positive
+owners and actual multiplicities; none may be discarded in sufficiency.
+
+The missing inference is ONE existential implication: the four scalar
+conditions ensure some split, root and two orders with that disjointness.
+Known Grasshopper solves distinct U against at most|U|-1 proper obstacles
+AFTER endpoint safety, but MI259 shows that this numeric admission cannot
+cover all feasible questions. Replacing that count by arbitrary obstacle
+avoidance would merely restate the missing inference. MI204/206 offer
+special structure, not an authorized general repeated-jump theorem.
+No further exception tree or carrying review is opened here.
+
+**Return to the actual target.** Even CP would concern ONE component.
+E28 requires a joint allocation and simultaneous folded-label packing of
+all components, with reserved anchors removed. MI158/160 were reread:
+of the four original FIRST-policy misses, one requires merging a primitive
+six-cycle with its cancelling pair; three require changed reserved labels,
+not further within-component ordering. All2000 old sample partitions are
+already checked, so another larger sample would not answer this issue.
+Next cheap mathematical step: use those existing allocation obstructions
+to state the joint-placement target and identify which constraint changes
+when the reserved block moves. Do not claim CP alone closes it, reopen
+primitive-only splitting, or run another component-family diagnostic.
+Research13min remains active; no routine halt or new review queue.

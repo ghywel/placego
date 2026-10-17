@@ -14,6 +14,10 @@ the bound on forbidden-point count, not only repetitions, loses reach.
 Independent Cartesian roots, physical geometry and move bags;1CPU sec,
 64MiB,200 cases. Stop any mismatch, retain failure, no grid expansion.
 REFUTED-BY: a strict admission or a different literal count on the miss.
+OUTCOME MI259: predictions/controls pass;0 strict admissions/4 geometries,
+10 positive-control orders;CPU0.001193sec/RSS15380480bytes. Raw3635bytes SHA256
+acbe4129a0d8f976c4aadc2f32a80aa5a369e5be83351b7b7393d2ca1c3fdbdb.
+Shared artifact upload blocked by approval review;raw remains local.
 """
 from collections import Counter
 from itertools import accumulate, permutations, product

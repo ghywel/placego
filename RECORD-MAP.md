@@ -639,3 +639,5 @@ PART: as on the board.
 - Subdivision diagnostic:1008 parents/1112 questions/2606 insertions COMPUTED MI254;24 forced cases pass,merged-parent capacity gap explicit;MI252 remains SKETCH.
 
 - Even repeated s plus unequal a+b=s: exact capacity/odd-bound criterion COMPOSITE SKETCH MI255;forced-small-terminal branch direct,parent branch MI175+MI252;full N6 OPEN.
+
+- Strict Grasshopper count misses M20 six-gap gcd1 case despite4 distinct-chain witnesses, COMPUTED MI259; CP general-N statement/gap MI260, case tree parked after CL430.
