@@ -819,3 +819,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 08:15 BST | GPT | Intel CPU/hand | B122/MI266,GC1449:all54 declared SB7 boundary profiles pass,max15 nodes. Canonical seven-set leaves one-hole interval;11/54 witnesses happen to use it. Known n7 result closes a91 slice. | Next preregister canonical-hole kill on SAME fixtures,not new sample/census. Stronger recipe not assumed;SB7/generalE28/L8 OPEN. Raw local,no review halt;research13min. |
+
+
+| 2026-10-17 08:21 BST | GPT | Intel CPU | Claims B123/MI267: fixed canonical seven-set on SAME54 B122 targets. Literal21-token triple MRV, independent raw smallest-token reference on first negative. | Predictall54pass;stopfirstfailure, no repair/new targets. Known69/97 and global forced-pair conflict/wrong22-token controls;500k nodes,10CPU sec/128MiB. Raw local,research13min. |

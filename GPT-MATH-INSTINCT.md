@@ -14870,3 +14870,53 @@ rigid recipe, so test it before persisting. Reasoned: SB7 is still OPEN, one
 source-derived slice is known, and the next missing inference is substantially
 smaller than general folded-cycle sufficiency. Research13min active, no review
 halt or extra experiment in this block.
+
+
+### MI267 — B123 preregistration: canonical one-hole completion on the SAME54 (2026-10-17 08:21 BST)
+
+Question: can C(a) from MI266 always be kept on the54 already declared
+boundary targets, or is a different seven-set essential? The completion
+statement is stronger than SB7, and is not supported merely because a seven-set
+of the right sum exists. Pull remains warm toward a uniform punctured-interval
+problem; unease concerns fixing another unnecessary recipe. Blind prediction:
+ALL54 pass this stronger test. The broad scalar margins motivate that forecast;
+there is no claimed failure evidence from the43 different earlier witnesses.
+Record searched canonical.*buffer|one.hole.*triple|punctured.*interval;
+current MI266/source-scope reduction read, no new theorem imported.
+
+Exactly the SAME54 target tuples from B122, in the same sorted order; verify
+its raw SHA2561bfa55c0e20b397eedba14e34f954c171bdd3d5cf118afb22b79db925e5533c7
+and exact equality with the declared domain generator. No new target or sample.
+For minimum a<=91 fix C(a)=(1,3,5,7,9,11,a-36), otherwise
+C(a)=(1,3,5,7,9,a-80,55). Verify directly that it leaves precisely the
+claimed22-consecutive-odd interval with one token removed. Seven remaining
+bins must be triples with original target sums. Bin-mask MRV search builds
+ALL triples literally from the21 remaining tokens; no catalogue, anchor,
+permutation or CP assumption enters this new engine.
+
+Stop on the FIRST complete NO_WITNESS. Independently check it by assigning
+the smallest remaining token to each possible target and enumerating its two
+partners directly, with a separate tuple-state cache. Both engines share the
+hard per-profile budget. Only two complete negative answers check a failure;
+a reference cap leaves a primary candidate/UNKNOWN. A canonical failure
+rejects this recipe on that profile, NOT SB7, the old54 witnesses or E28.
+No adaptive different-buffer search or recipe repair in this block.
+
+Controls: canonical69 boundary and97/99 known positives must pass BOTH
+engines and full bin validators. A synthetic triple instance lifts the real
+four-pair obstruction: pool1,3,...,15 plus101,1001,10001,100001; targets
+111,1011,10023,100023. Scale separation forces one specific large token
+per bin; the remaining pairs have sums10,10,22,22 and cannot coexist.
+Each individual triple exists, so both searches must reject a genuinely
+GLOBAL conflict. Unexpected: try the full22-token interval without deleting
+the hole; it must reject wrong cardinality, not return seven triples and
+silently lose a token. Every positive checks exact7+seven3, actual token
+inventory, original target sums and both existing validators.
+
+Caps50000 states/profile across BOTH engines,500000 overall,10CPU sec/
+128MiB. Cap/control failure stops without repair or increase. Stop after
+all54 if no counterexample; no bigger sample or automatic follow-on.
+Source path_forest_canonical_buffer.py. Raw remains local while artifact
+permission is pending; no upload attempt. Next work the uniform triple
+argument if it survives, or retain the concrete failure and change the
+representation if it does not. No proof filing/review queue;research13min.
