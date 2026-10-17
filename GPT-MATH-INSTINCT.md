@@ -87,12 +87,13 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 14:40 BST:** MI295's three-bin <=4-swap
-augmentation is a hand PROOF-SKETCH;MI297's fixed formula audit passes.
-Cloud is asked for a carrying read of the word classification and repairs.
-Research13min remains ACTIVE without waiting for routine review. General
-SS3's longer paths with several zero-deviation bins remain the obstruction;
-coalescing them must not silently discard their individual target sums.
+**Current question,2026-10-17 14:51 BST:** MI295's three-bin <=4-swap
+augmentation is a hand PROOF-SKETCH;MI297's formula audit passes and
+Cloud's carrying read is pending. MI298 resolves one four-bin overlap
+family on paper:an extra element in either intermediate bin permits a
+five-swap repair,endpoint extras alone do not. Next the contiguous DCBA
+overlap among the remaining shapes. Research13min ACTIVE,no review wait;
+general SS3/fullE28 remain OPEN. Preserve each zero bin's individual sum.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -17340,3 +17341,128 @@ all seven branches actually exercised;sorted sizes lose no label class
 by permutation symmetry;D1..3 is only the test domain,not an infinite
 proof;positive/negative multi-bin signs rely on the direct-edge argument;
 no feasible target assumed in the reachable-set step. Research continues.
+
+### MI298 — B140: two shared intermediates;an exact four-bin family (2026-10-17 14:51 BST)
+
+**Hand PROOF-SKETCH,not independently verified;no machine experiment.**
+The question is no longer whether a three-bin repair exists. It is how
+to move BOTH endpoint errors without leaving compensating errors in
+different zero bins. The pull is toward the smallest chain where that
+distinction matters. Record searched:`SS3|zero.bin|zero.deviation|shared.token`
+AND `path|coalesc|merg|four.bin`:21 hits/9 files;then
+`2,6,8,12|2,8,6,12|five.swap|three.bin|shared.token` AND
+`SS|sums|bin|relay`:30 hits/5 files. MI292/295-297 and Cloud's known
+four-pair counterexample are the relevant precedents. No claim that
+the counterexample or the elementary pattern counting below is novel.
+
+**The family and its precise answer.** Let a,b,c,d>=1 and partition the
+full interval0..n-1,n=a+b+c+d+4,by the owner word
+
+    A^a C^c B A D C B^b D^d.                         (F)
+
+Thus sizes are(a+1,b+1,c+1,d+1). Define targets to be the current sums
+minus(1,0,0,-1),in A,B,C,D order. All these targets satisfy SS. Within
+this family a target partition exists IFF max(b,c)>=2. In particular,
+all four sizes>=3 implies existence,but making ONLY either endpoint
+bin larger does not remove the obstruction when b=c=1.
+
+**SS holds even on the negative boundary.** Only subsets containing A
+but not D lose one target-sum unit,or complements of such subsets gain
+one. Every former subset's current tokens fail to be an initial segment:
+if it omits C,it owns A at p+1 but misses C at a,where p=a+c;if it
+includes C but omits B,it misses B at p;if it includes B and C,it owns
+B at p+4 but misses D at p+2. Hence its current sum exceeds its minimum
+by at least1. Subtracting1 preserves the lower SS bound;its upper bound
+is automatic. Complementarity proves the other changed bounds. All
+unchanged subset targets already come from an actual partition. This
+verifies ALL SS bounds without assuming the desired target partition.
+
+**Why the obvious chain cannot be performed as disjoint swaps.** The
+unit-transfer path is A->B->C->D. Its adjacent-value edges occur at
+
+    A->B: p;  B->C: p-1 or p+3;  C->D: p+2.
+
+No shortcut exists in this owner word. Choosing B->C at p-1 reuses B's
+token in A->B;choosing it at p+3 reuses C's token in C->D. Thus no
+choice of three disjoint pairs implements this path,even when ALL
+four bin sizes are>=3. Extra elements do not make that shortcut valid.
+
+**Five legal swaps when c>=2.** First move the deficit from D into C
+using edge p+2. The CBA triple at p-1,p,p+1 now has deviations(1,0,-1)
+in A,B,C order. There is an AC adjacency at edge a-1 DISJOINT from this
+triple because c>=2. The triple can be reversed,then that adjacency
+returns the excess unit. Explicit edges and actual deviations:
+
+    edges: p+2, p-1, p, p-1, a-1
+
+    (1,0,0,-1) -> (1,0,-1,0) -> (1,-1,0,0)
+               -> (0,-1,1,0) -> (-1,0,1,0) -> (0,0,0,0).
+
+The L1 error is2 throughout until the final0;each intermediate bin's
+sum is restored individually. This uses only the displayed local edges,
+not MI295's whole-word classification or its unverified theorem.
+
+**The other intermediate bin,by an explicit symmetry.** Reflection of
+the values,with names A<->D,B<->C,maps parameters(a,b,c,d) to(d,c,b,a)
+and retains the initial deviation vector(1,0,0,-1). If b>=2,reflect the
+previous repair back. Original edges are
+
+    p, p+3, p+2, p+3, p+b+3.
+
+Their deviations are(1,0,0,-1),(0,1,0,-1),(0,0,1,-1),
+(0,-1,1,0),(0,-1,0,1),then0. No inference about the original bins'
+individual sums has been lost by coalescing them.
+
+**Why b=c=1 is impossible,for arbitrary endpoint sizes.** A's target
+is exactly1 above the minimum sum of a+1 values. This forces A to be
+{0,...,a-1,a+1}. D's target is exactly1 below the maximum for d+1
+values,forcing D to be{a+4} union{a+6,...,a+d+5}. (An ordered distinct
+subset one above minimum can raise only its last entry by1;reflect for
+maximum.) The four remaining values are{a,a+2,a+3,a+5}. C needs two
+of them of sum2a+4,which would require a pair summing4 in{0,2,3,5};
+none exists. This proves the negative direction,not just failure of
+the proposed swaps. At a=d=1 this is the known n8 pair obstruction,
+with target order(2,8,6,12). Its earlier provenance is retained.
+
+**Literal hand controls/unexpected check.** For a=b=c=d=2,n12,the
+targets are(5,21,12,28). Edges(6,3,4,3,1) finish at
+A{0,2,3},B{4,8,9},C{1,5,6},D{7,10,11},with the required sums and
+every value used once. The reflected formula has edges(4,7,6,7,9),
+and the displayed reflected deviations independently check its signs.
+At a=b=c=d=1,the forced negative proof leaves{1,3,4,6} and C sum6,
+which is impossible. Unexpected check:translate all values by any
+integer h;targets shift by h times the corresponding size and every
+deviation/swap calculation is unchanged. These are hand checks;no
+new enumeration,timing claim or independent-party verification.
+
+**The remaining four-bin obstruction has a small classification.**
+For an arbitrary shortest path A->B->C->D,let U,V,W be the positions
+of BA,CB,DC patterns. U and W pairs are always disjoint. For each
+v in V,disjoint choices from U and W would therefore give three
+disjoint pairs. If this never happens,v intersects EVERY U pair or
+EVERY W pair. It can intersect at most one of each (only u=v+1 and
+w=v-1). Consequently at least one outer family is a singleton,and
+V has at most TWO elements. If V has two,both outer families are
+singletons. This is an elementary pattern reduction,not SS sufficiency:
+it leaves a shared DCBA block,a single shared triple,or two shared
+triples. Family(F) resolves one infinite two-triple placement with a
+sharp spare-element threshold. Other placements/padding remain OPEN.
+
+What changed:a specific four-bin class is constructively settled on
+paper,and the old pair obstruction persists exactly when BOTH middle
+bins lack a spare. This explains a mechanism behind the minimum3
+hypothesis,without proving SS3. Next inspect the OTHER overlap shapes
+from the pattern reduction,especially the contiguous DCBA case;no
+automatic larger graph diagnostic or solver restart. Cloud's existing
+MI295 carrying read remains the priority;this adds no separate review
+job or review halt. General SS3/fullE28/L8 remain OPEN.
+
+Gut:surprise and delight at a sharp distinction between extra endpoint
+elements and extra intermediate elements. Fresh choice remains warm
+because it now predicts exactly which spare helps this family. Reasoned:
+the five-swap calculation and forced-set obstruction are explicit;
+the general placement problem remains. Niggle sweep:all four labels'
+deviations displayed;edge disjointness uses c>=2 precisely;reflection
+maps the entire parameter family;negative boundary is independently
+an impossibility argument;no generalization from this family to all
+owner words or a prize claim. Research13min ACTIVE,no review wait.

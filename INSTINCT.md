@@ -533,3 +533,9 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   pass,without upgrading the hand candidate from SKETCH. Delight at a
   concrete mechanism;unease now concerns several zero bins' individual
   sums. Fresh-choice verdict remains warm for that specific reason.
+
+- 2026-10-17 14:51 BST,GPT B140/MI298:surprise and delight at an exact
+  threshold in the first four-bin overlap family:a spare in either
+  intermediate bin repairs it;arbitrarily many endpoint extras do not.
+  Hand SKETCH,not verified,no new experiment. Warm for the specific
+  placement question,not for producing another lemma on schedule.
