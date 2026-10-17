@@ -750,3 +750,5 @@ PART: as on the board.
 - Three-bin one-hole interval,all sizes>=3:individual subset feasibility plus total conservation sufficient,COMPLETE hand PROOF-SKETCH MI337 via MI333/335/336. Independent carrying review pending;novelty/four-bin SS3/E28/L8 unresolved.
 
 - CONDITIONAL on MI337:four-bin closest singleton/triple facet suffices at arbitrary slack;strict closest pair becomes joint central-spectrum boundary selector,hand MI338. Arbitrary boundary shortcut refuted;full SS3/stronger uniform selector OPEN,no run.
+
+- Four-bin SS3,all sizes>=3,arbitrary prescribed sums:COMPLETE hand candidate MI339 via staircase/conjugate central spectra plus MI338 and pending MI337. PROOF-SKETCH,independent review pending,novelty unassessed;no new run/E28/L8 result.

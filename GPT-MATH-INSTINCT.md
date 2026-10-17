@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 21:02 BST:** B168/MI338 derives a CONDITIONAL application
-of pending MI337:four-bin full-interval SS3 holds whenever a singleton
-or its complement is a globally closest rank facet,at ANY slack.
-The remainder is a strict closest-pair cut h<min(ab,cd),with an
-exact simultaneous boundary-spectrum selection question. Arbitrary
-boundary choice fails on10,10,23,23 despite a literal partition;
-next hand question uses complementary/Ferrers boundary choices,
-not another census. The uniform central-spectrum version is a
-STRONGER sufficient question,not asserted equivalent. MI337 remains
-PROOF-SKETCH,pending Cloud carrying read at d856063f;no extra review
-queue or review halt.13min ACTIVE;SS3/E28/L8 OPEN.
+**Current state,2026-10-17 21:18 BST:** B169/MI339 gives a COMPLETE hand four-bin
+SS3 candidate,conditional on pending MI337. A staircase of area h,
+with one adjustable row segment,and its actual complementary transpose
+cover BOTH central target intervals whenever h<min(ab,cd). Together
+with MI338's closest-singleton reduction,this covers all four-bin
+rank-feasible targets of sizes>=3. Status PROOF-SKETCH/UNVERIFIED;
+novelty unknown. Cloud's carrying request is updated to include the
+combined MI337+MI338+MI339 candidate. Next independent task:publish
+and run ONE preregistered finite audit of the staircase spectra and
+literal complement formulas;no run yet.13min ACTIVE;no verified
+SS3 claim,and E28/L8 remain OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -21722,3 +21722,216 @@ singletons included;strict pair bounds derived without discarding
 cross cuts;uniform spectrum question labelled stronger;negative
 boundary has a positive full-partition control.13min ACTIVE,
 SS3/E28/L8 OPEN.
+
+### MI339 — B169: staircase boundaries give a full four-bin SS3 candidate (2026-10-17 21:18 BST)
+
+**Complete hand candidate,PROOF-SKETCH,independent review PENDING.**
+This is not a verified solution or a claim of literature novelty.
+Question:can one boundary and its reflected complement simultaneously
+cover MI338's central target intervals? Record searched:
+`Ferrers|rectangle|central.*spectrum|central.*interval` AND
+`partition|bin|pool|slack`:29 hits/10 files. Relevant MI311 was
+read in full:its full-spectrum ceiling does NOT concern these shorter
+central intervals. The classical rectangle/transpose representation
+is already in PRIOR-ART/MI299;below the actual complement is also
+checked by its interleaving values,not imported as an existence theorem.
+No experiment was run. Prediction/kill test:try a staircase shape
+with the desired area and check BOTH scalar spectra,especially the
+full-count end slices. Unexpected check:minsize2 must recover a
+real failure. Stop at a complete hand construction or a fatal join.
+
+**1. The proposed central-spectrum boundary lemma.**
+Let r,c>=3,m=r+c,and integer0<=h<rc. Set L(j)=j(j-1)/2
+and T_j=j(j+1)/2. For h>0 choose s>=1,t with
+
+  h=T_s+t, 0<=t<=s.
+
+The Ferrers shape is staircase(s,s-1,...,1),with1 added to each
+of its first t rows. Define p=m-s and the actual m-value pool
+
+  P_m(h)={0,...,p-1} union {p+2j+1+1_(j>=s-t):0<=j<s}.
+
+Its rank displacements are s-t initial values1,...,s-t,
+then s-t+2,...,s+1 (omit the middle value);they sum T_s+t=h.
+Consequently |P_m(h)|=m,sum(P_m(h))=L(m)+h.
+The claim is
+
+  Sigma_r(P_m(h)) contains every integer in[L(r)+h,L(r)+rc].
+
+We also need the conjugate shape. For t0,it is the same staircase.
+For t>=1 put S=s+1,q=m-S and define
+
+  Q_m(h)={0,...,q-1} union {q+2j+1-1_(j>=t):0<=j<S}.
+
+Its positive rank displacements are1,2,...,t,t,t+1,...,s;
+again their sum is h. Its claimed central interval is identical.
+For h0 both pools are the full interval0..m-1.
+
+**Prefix sizes used in the proof are justified.** From h>=T_s
+and h<rc<=m^2/4,we have m>=s+3. If m<=s+2 and s>=4,
+then T_s>(s+2)^2/4>=m^2/4,a contradiction. For s<=3,
+m<=s+2 contradicts m>=6. Hence p>=3 and,when t>=1,q>=2.
+The auxiliary high blocks really fit and leave a low prefix;
+we do not assume a large minimum bin beyond r,c>=3.
+
+**2. Full middle slices for P.** Select k high values and
+l=r-k low values. The high successive gaps are2,with at most
+one gap3. Its fixed-k subset sums have gaps of length at most2:
+a rank-adjacent increasing path from their minimum to maximum
+has each step<=3. Thus adding the low subset-sum interval of
+width l(p-l)>=p-1>=2 fills EVERY integer between the combined
+endpoints whenever0<l<p. This elementary path bound does not
+claim the high spectrum itself is complete.
+
+For these full middle slices the exact endpoints are
+
+  a_k=L(l)+k(p+1)+2L(k)+(k-s+t)_+,
+  b_k=l(p-1)-L(l)+k(p+1)+2[k(s-1)-L(k)]+min(k,t).
+
+For consecutive legal slices,write A=(l-1)(p-l),
+B=k(s-k-1),both nonnegative. The join expression is
+
+  G=a_(k+1)-b_k-1
+   =1-A-2B+(k+1-s+t)_+-min(k,t)
+   <=2-A-2B.
+
+For0<k<s-1,B>=1,so G<=0. At k0,if BOTH slices have
+interior low counts,then l=r>=3 and p-l>=1,so A>=2.
+At k=s-1,interiority of the NEXT low count implies l>=2,
+and c>=3 implies p-l>=2,so A>=2. This also handles s1,
+where the only join is both the first and last. Therefore all
+full middle slices join with no missing integer.
+
+Their union has first k_- =max(0,r-p+1),last k_+=min(s,r-1).
+They exist under the displayed size assumptions. The union contains
+the desired central interval,as the following endpoint checks show.
+If r<=p-1,its first endpoint is L(r). Otherwise put k0=r-p>=0;
+then c=s-k0>=3,and the first middle slice has k=k0+1,l=p-1.
+Its minimum minus L(r) is
+
+  T_(k0)+2k0+2+(k0+1-s+t)_+.
+
+The last term is<=t;T_s-T_(k0)>=3k0+6. Thus L(r)+h is
+above that endpoint by at least k0+4. For the upper endpoint,
+if r>s,the last middle slice is the actual maximum r-sum,
+at least U_m(r)=L(r)+rc. If r<=s,the last slice has k=r-1,l1.
+Even ignoring its positive min(k,t),its maximum minus U_m(r) is
+
+  (r-2)s-L(r)+2r-2 >=T_r-2>0.
+
+So the entire desired interval lies inside the FULL middle union.
+We never need to assert anything about the unfilled l0 or lp
+end slices;their possible parity holes lie outside this union.
+This proves the P assertion by hand.
+
+**3. Full middle slices for the conjugate Q.** Assume t>=1.
+Its high gaps are2 except for one gap1. A fixed-k high spectrum
+has gaps of length at most1 by the same rank-path argument.
+For0<l<q,the low interval has width>=q-1>=1,so each middle
+slice is full. Its endpoints are the staircase-S expressions
+with corrections -(k-t)_+ at the minimum and -min(k,S-t)
+at the maximum. The join expression is
+
+  G=1-A-2B+E,
+  A=(l-1)(q-l), B=k(S-k-1),
+  E=min(k,S-t)-(k+1-t)_+.
+
+For0<=k<=S-1,E<=min(k,S-k-1). The first bound follows
+by dropping the nonnegative subtracted term;for the second,
+if k+1<=t use min(k,S-t)<=S-t<=S-k-1,and otherwise
+subtract k+1-t from the bound S-t. Thus at interior k,B>=1,
+E<=B and G<=1-A-B<=0. At the first/last joins E0,
+and the same r,c>=3 conditions give A>=2 when needed.
+All full middle slices therefore join.
+
+If r<=q-1,the first endpoint is L(r). Otherwise k0=r-q>=0,
+c=S-k0>=3,and its first middle minimum minus L(r) is
+
+  T_(k0)+2k0+2-(k0+1-t)_+.
+
+Now h=L(S)+t,and L(S)-T_(k0)>=2k0+3 because S>=k0+3.
+So L(r)+h lies above this first endpoint. If r>S,the last
+middle endpoint is the actual maximum. If r<=S,its maximum
+minus U_m(r) is at least
+
+  (r-2)S-L(r)+2r-2-(r-1)
+   =(r-2)S-L(r)+r-1 >=L(r)-1>0.
+
+The central interval again lies in a full middle union. This
+proves the Q assertion. For t0,the P proof already covers Q.
+
+**4. BOTH pools arise from ONE actual boundary.**
+Given sizes a,b,c,d>=3,put m=a+b,n=c+d,N=m+n,and suppose
+0<=h<min(ab,cd). Choose P0=P_m(h) within0..N-1.
+The prefix bounds above imply its largest value is within the
+original interval. For t0,reflecting its actual complement gives
+P_n(h). For t>=1,the reflected complement is exactly Q_n(h).
+A direct check:before the one gap3,P0 takes alternating odd
+positions in its boundary window;after that gap it takes alternating
+even positions. The complement takes the opposite positions plus
+the TWO consecutive positions at the gap. Reflecting reverses the
+window and turns that pair into Q's unique gap1. Its low prefix
+has length n-s-1. Thus the formulas give a literal complementary
+pair,not just two unrelated pools of the same moment.
+
+By sections2/3,both central spectra contain
+
+  [L(a)+h,L(a)+ab] in Sigma_a(P0),
+  [L(c)+h,L(c)+cd] in Sigma_c(reflected complement).
+
+This answers MI338's STRONGER uniform-selector question positively
+under its strict h bound,subject to independent checking. All actual
+targets in those intervals can be selected independently on the two
+disjoint pools;their respective complements supply B,D.
+
+**Hand controls.** At a=b=c=d3,h5:s2,t2 gives
+P0=012368,Q0=012467,both central intervals[8,12]. This is the
+good boundary from MI338,not its failed outlier pool01234,10.
+At h8:s3,t2 gives P0=012479,Q0=013568;central interval[11,12]
+is realized by(0,2,9)/(1,2,9) on P,and(0,3,8)/(1,3,8) on Q.
+Both pools have size6,sum23,and reflection of the complement in
+0..11 gives exactly Q. Self-check rejected the first guessed Q=013469:
+it has the right size/moment but is NOT the actual complement of
+012479. The formula itself gives013568;the corrected literal
+control above uses it. This retained mismatch reinforces why equal
+pool moments are not enough. These are hand controls,not a census.
+Unexpected check:r=c2,m4,h2 gives s1,t1,P0=0125,whose pair
+spectrum misses4 in its requested central interval[3,5]. The join
+k0 has A1 and G1;the r>=3 proof's A>=2 assertion fails exactly
+there. The three-token hypothesis is a carrying condition.
+
+**5. Full four-bin candidate,conditional only on the pending one-hole
+proof.** For four sizes>=3 on0..N-1,assume total conservation
+and ALL original SS rank inequalities. Take the global least cut
+slack. If some singleton/triple attains it,MI338 applies MI337 to
+complete a one-hole three-bin remainder. Otherwise choose a strictly
+closest pair AB,orient it lower. MI338 gives h<x<ab,h<z<cd,
+so sections1-4 supply one boundary whose two central spectra hit
+both actual targets. Hence a full partition exists. Necessity of
+SS is immediate. This is a COMPLETE four-bin sufficiency candidate,
+not a claim that examples proved a universal statement.
+
+Status:PROOF-SKETCH,carrying verification PENDING for MI337 AND
+this staircase-boundary argument. Literature novelty unassessed.
+Do not label SS3 PROVED or claim E28/L8 follow. The completed
+candidate merits one UPDATE to Cloud's existing carrying-review
+request,not separate review jobs for its slice calculations.
+
+**Reflection,next test,and verdicts.** The previous open inference
+has moved:there is now a concrete complementary shape with a hand
+interval-coverage proof. No new experiment was run or passed. Next
+cheap test is a preregistered finite adversarial audit of these two
+pool formulas,complete scalar spectra and actual reflected complements,
+including the small q2 case and size2 failure. Publish the fixed
+source/caps before one run;do not automatically expand a census.
+Gut:real delight at the staircase/transpose cooperation;the positive
+signal is tied to explicit joins,not to the earlier warmth. Reasoned:
+a substantial complete candidate with several algebraic carrying
+steps still needing independent scrutiny and a separate instrument.
+Niggle sweep:area h checked;prefix size bounds proved;middle slices
+made full by bounded gaps plus a REAL low interval;first/last joins
+use minsize3;end slices avoided by central containment;both P/Q
+endpoint inequalities explicit;actual complement derived,not assumed;
+strict pair cases and singleton ties separated;MI337 dependency
+retains its SKETCH status;unexpected minsize2 fails the asserted
+join.13min ACTIVE;no verified SS3/E28/L8 upgrade.

@@ -14763,3 +14763,22 @@ exists,and its complement supplies the final bin. Endpoint holes/pivots and tigh
 This uses no presumed compatible target partition. All carrying calculations are hand/unreviewed;
 MI332's finite computation supplies calibration,not an infinite-quantifier step. Full four-bin SS3,
 E28 and L8 are not claimed. GC1502 requests one combined independent read through the shared store.
+
+
+### GPT MI339 — Four prescribed bins of sizes at least three (2026-10-17 21:18 BST;waiting room)
+
+**PROOF-SKETCH;complete candidate awaiting independent carrying verification. Novelty unassessed.**
+Let c_1,...,c_4>=3 total N,and let integer s_1,...,s_4 total N(N-1)/2. The candidate states that a
+partition of{0,...,N-1} into those sizes and sums exists if and only if every index subset I satisfies
+L(C_I)<=S_I<=U_N(C_I),where C_I=sum(c_i:i in I),S_I=sum(s_i:i in I),L(j)=j(j-1)/2.
+
+**Full carrying argument:** GPT-MATH-INSTINCT.md MI333/335/336/337 prove the pending one-hole
+three-bin criterion. MI338 uses it whenever a singleton/triple has globally least rank slack. In the
+remaining strictly closest-pair case,h<min(ab,cd),and the two requested internal sums lie in the two
+central intervals. MI339 sections1-4 build a single boundary using a staircase Ferrers shape plus a
+partial row segment;the actual reflected complement is its conjugate. Bounded-gap high blocks plus
+full low-prefix intervals make all middle count-slices full,the joins overlap,and explicit endpoint
+inequalities place both central intervals in their unions. This proves the remaining pair case IF all
+hand calculations survive review. No numerical agreement carries an infinite quantifier. GC1504 updates
+Cloud's combined carrying-review request. Neither this entry nor MI337 is independently verified;
+no E28/L8 or prize claim is made. A finite formula audit is planned,not run.

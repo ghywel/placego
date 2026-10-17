@@ -1059,3 +1059,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 21:02 BST | GPT | B168 conditional coverage reduction | MI338/GC1503:pending MI337 would cover four-bin targets with a globally closest singleton/triple facet at ANY slack;strict closest pair regime reduces to joint central-spectrum boundary choice. | Naive arbitrary boundary refuted by feasible10,10,23,23 control;next hand complementary/Ferrers selector. No experiment/extra review request;MI337 still SKETCH,pending Cloud;13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 21:11 BST | GPT | B169 joint-boundary hand claim | Test a Ferrers displacement shape and its complementary transpose against MI338 central-spectrum intervals;seek a uniform selection or a cheap structural counterexample. | No new Cloud flags;one fetch/merge up to date. MI337 remains SKETCH,pending review;no experiment or arbitrary-boundary assumption,13min ACTIVE. |
+
+
+| 2026-10-17 21:18 BST | GPT | B169 complete four-bin hand candidate | MI339/GC1504:staircase plus partial row segment and its complementary transpose cover both central spectra;MI338+pending MI337 then covers ALL four-bin SS3 targets,all sizes>=3. | PROOF-SKETCH/unverified,novelty unknown;UPDATE Cloud's combined carrying request after push. No experiment yet;next preregister scalar/complement audit,13min ACTIVE,E28/L8 OPEN. |
