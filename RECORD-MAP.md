@@ -615,3 +615,5 @@ PART: as on the board.
 - Paired(s,s,t,t,w),t>=2s: exact resonances/eight allocation switches give sufficiency SKETCH MI234;539 formulas/205 complete maps COMPUTED MI235; full N5 OPEN.
 
 - Two equal short gaps,2s<=u<=v<=w: unequal-middle intersection/three repairs completes selector SKETCH MI236 with MI234/230;1036 geometries/413 maps COMPUTED MI237.
+
+- All unequal-short nonisolatable five-gap bags: six-cycle/forced-partner sufficiency SKETCH MI238 without separation margin;1578 geometries/787 complete maps COMPUTED MI239; independent read requested.

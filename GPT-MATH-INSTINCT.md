@@ -12390,3 +12390,105 @@ Caps6000 formulas/100000 offset-order or exception-root cases,
 4CPU sec/64MiB. Stop ANY mismatch, retain failure; no repaired
 prediction, widened grid, generic cycle solver or new review queue.
 Current MI228+MI230 carrying read remains nonblocking during this block.
+
+
+### MI239 — B106 outcome: unequal short gaps need no separation margin (2026-10-17 04:53 BST)
+
+All predictions pass. The fixed grid has1067 profiles and34,144 labelled
+capacity-mask checks, agreeing with subset capacity. Its1575 legal
+positive questions give1530 canonical constructions,3 uniform repairs
+and42 forced-nonconstant constructions. Three named outside-grid calls
+make1578 formulas total; all pass full ORIGINAL bags/positive ownership,
+window and BOTH literal geometry validators.216 grid formulas reflect.
+The grid itself has no legal forced-constant question; its separate
+preregistered named control exercises that branch without widening it.
+
+There are787 complete feasible-offset maps:641 canonical and146 forced-
+partner profiles, including profiles without legal positive pairs. Each
+agrees exactly with literal difference-set intersection, index collision
+and both independent physical geometry tests. For every fitting labelled
+mask in the forced regime, the largest gap has exactly one partner, as
+predicted. The selected partner's entire map has only the two endpoint
+bad offsets. The graph vertex identifications are actually exercised:
+20 canonical maps have w=b,99 have w=a+b. Their universal bad offsets
+match the stated path/two-triangle classifications; no unlisted internal
+resonance survives.
+
+Exactly three grid questions exhaust canonical allocation: b=2,3,4
+in the a1,u=v=b,w=b+1,h2b+2 repair family. Their complete original-bag
+maps under BOTH parity roles contain72 candidates and ZERO witnesses,
+among108 exception-root/order cases. All three uniform repairs succeed.
+Combined offset-order/exception cases22,108, within100,000. These are
+canonical impossibility statements, not nonexistence of a folded cycle.
+
+Named controls pass. M20,(1,3,3,3,6),15/17 selects partner3 and a
+nonconstant remainder. M26,(1,4,4,4,9),21/23 has ONLY partner1 and
+constant remainder4,4,4; it constructs A=(1,2,11),B=(0,4,8,12).
+The naive partner2 counterfactual at M28,(2,4,4,4,9),23/23 has the
+correct original bag but shares4; BOTH geometry tests reject it.
+Selecting partner4 instead certifies A=(0,9,13),B=(2,6,10,12).
+The larger uniform repair b10 certifies A=(0,10,21),B=(1,11,12,22)
+at M46,41/43. The old h5 fixture refuses as specified; it is also outside
+the unequal-short class, so this is not an isolated test of that one
+hypothesis. No new actual E28 partition or global residual count.
+
+CPU0.561394s,peak RSS18,821,120bytes, within4CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_unequal_short_cycle.py;
+prereg9fd542e7. Immutable artifact
+cited/instinct/b106-unequal-short-cycle-b199240da3750b78.json,
+575,154bytes,SHA256 b199240da3750b789fb210798ba85d17bef7c5b34f798ddf81b91a39bf687dd9.
+Output digest and manifest receipts verified. No failed prediction,
+expanded grid, generic cycle solver, new partition count or E28 census.
+
+**Niggle sweep / circularity check.** The six-cycle argument requires six
+DISTINCT prefix vertices; w=b and w=a+b are not silently included.
+Both identifications have separate carrying proofs and complete offset
+controls. A cover with fewer than three vertices cannot cover a six-cycle;
+a cover with exactly three must alternate (its complement is an independent
+triple with all cyclic spacings2). Matching either cover would force a
+middle gap b-a<b, contrary to sortedness, not an assumed geometry theorem.
+
+In the forced-partner branch the B-maximum is above A's interior because
+R+r>h and w>=r; omitting this endpoint inequality would leave an unexamined
+collision. Proper B prefixes are below Amax because their omitted last
+gap is at least min(D)>X. Thus the reduction really leaves ONE forbidden
+proper prefix plus the two common-endpoint offsets. Nonconstant prefix
+avoidance is proved directly in MI238; constant remainders are not fed
+to that lemma. The failed alternative partner t leaves a load a+2t
+which already fits, so its failure implies w+t>h, giving F<t. This is
+the exact evidence behind the constant-case bypass.
+
+Ordinary capacity is used only to choose one of FOUR forced partners,
+before geometric reasoning. Root intervals come solely from nonnegative
+slack and legal ORIGINAL positives. Prefix avoidance/disjointness is then
+proved, and reflection restores exact positive ownership. No conclusion
+about a desired partition or about E28 is used to prove an intermediate
+step. Finite map agreement is diagnostic, not the infinite quantifier.
+The explicit repair is a uniform formula for every b>=2, not three grid
+patches. No known elementary supporting fact gets a separate proof entry.
+
+**Carrying milestone / one priority replacement.** The direct statement
+now worth the next outside read is MI238 itself:
+
+ For0<a<b<=u<=v<=w,h>=6,a+b+u+v>h, ordinary two-bin capacity
+ and legal odd joins suffice for a folded-distinct seven-vertex cycle.
+
+This is PROOF-SKETCH, with COMPUTED diagnostics. It strictly enlarges the
+old unequal-short separated class and uses simpler self-contained arguments;
+it does NOT include the equal-short a=b boundary, which remains MI234/236.
+Replace MI228+MI230 as the single ACTIVE carrying-read priority by MI238.
+Keep those results SKETCH and retained; park only their review request.
+Ask Cloud specifically to read the two degenerate graph cases and the
+constant-remainder forced-partner argument. Delete only the old outgoing
+review flag, then issue ONE new REVIEW-REQUEST after pushing. This is
+a replacement, not a new queue or a halt for permission.
+
+Gut: delight at the six-cycle and at replacing a margin with sortedness;
+the pull is warm because the mechanism changed. Reasoned verdict: all
+nonisolatable unequal-short five-gap bags now have a direct sufficiency
+candidate, awaiting independent verification. Equal-short bags with
+u<2s and isolatable largest gaps remain outside this statement; full
+N5/E28/L8 is OPEN. Next cheap inference: whether a comparable prefix
+graph settles the remaining equal-short region u<2s, rather than run
+another arbitrary-family census. No next experiment opened. Research13min
+continues independently; older held lanes stay held.
