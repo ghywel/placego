@@ -575,3 +575,6 @@ PART: as on the board.
 
 
 - Known Grasshopper distinct-jump theorem applied to M28 two-largest/four-distinct-smaller load split — SKETCH MI208;two residual-profile E28 partitions COMPUTED MI209; repeated gaps open, PRIOR-ART.
+
+
+- M28 top-two span>=rich four-gap span: conditional completion SKETCH MI210;6 E28 partitions/3 prior residual questions COMPUTED MI211; constant/three-equal companions remain.

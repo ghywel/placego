@@ -10109,3 +10109,58 @@ stop on any mismatch, retain failure, no repair or larger run.
 Gut: a specific pull toward selecting splits with fewer obstacles.
 Reasoned: provisional dependence MI204 remains explicit; MI201 is still
 the sole requested carrying read, nonblocking. No new review request.
+
+
+### MI211 — B92 outcome: repeated gaps share a completion mechanism (2026-10-17 02:00 BST)
+
+All six prescribed calls and all six actual E28 partitions pass, without
+repair. The frozen B87 digest confirms two formerly unadmitted profiles:
+(2,2,3,4,4,9),pair23/25, and(2,2,3,4,4,8),pairs21/25,23/23. This is
+THREE checked positive-pair questions, not a new whole-domain coverage count.
+The constructed index chains for them are respectively
+
+    A=(0,4,13), B=(1,3,5,8,12), first25;
+    A=(1,5,13), B=(0,2,4,7,11), first25;
+    A=(0,8,12), B=(2,6,9,11,13), first23.
+
+Every exact move bag, both literal folded-geometry checks and both actual
+partition validators agree. Independent rectangle enumeration agrees with
+all six predicted offset intervals. Only1,1,1,4,5,7 local B orders were
+tried, each below the preregistered24 cap; this realizes the theorem's order
+choice on named fixtures, not a whole-cycle existence search.
+
+The fourth call has proper barriers1/4 and uses reflection to put17 first
+instead of19, preserving original odd ownership. Equal top gaps3/3 work
+with preA=(3,6,9),preB=(2,4,5,7,8); ascending B=(2,3,4,6,8) retains the
+exact bag/window but shares indices3/6, and both geometry checks reject it.
+The unexpected thin case has I={2,3}: z2 succeeds after reflection, whereas
+z3 makes A's middle point hit B_min3 in order3,10 or B_max10 in order10,3.
+Both negative witnesses preserve the bag/window and fail geometry. Thus the
+extra bad offset really is necessary; it was not absorbed into F0.
+
+CPU0.015802s,peak RSS19,771,392bytes, inside1CPU sec/64MiB. Source
+ tests/probes/instinct/path_forest_span_rich.py; prereg4bbac7c1.
+Artifact cited/instinct/b92-span-rich-eca46cfeddf245f8.json,4,712bytes,
+SHA256 eca46cfeddf245f8d024f1f8e673dd9c813fe8631c75482a3034d6cba900a302.
+Immutable upload digest and manifest receipt verified. No broader experiment,
+new proof review or status upgrade: MI210 remains PROOF-SKETCH, conditional
+on MI204; six individual partitions are COMPUTED. Full E28/L8 OPEN.
+
+**Niggle sweep / verdict.** Span dominance excludes a third STRICT internal
+level, not endpoint collisions; the endpoint proof is separate. Repeated
+four-gap richness gives S>=6 and max gap>=2, enough for the smaller endpoint
+bounds, without importing distinctness's stronger bound. Thin L13 forces
+unequal A-gaps; J0 is impossible under the stated legal positive bounds.
+Reflection changes the first owner, which the full bag check explicitly
+verifies. Finite fixture success does not verify MI204's uniform proof.
+Gut: satisfaction with a structural explanation, rather than a bigger table.
+Reasoned: the longer-chain split now has a reusable rich-repetition route.
+
+**Next unresolved step.** Richness excludes constant and three-equal B
+companions; MI206 already gives their exact two-barrier obstructions. The
+next cheap HAND question is whether changing the top-two order/root always
+escapes those arithmetic bad offsets, or whether a concrete profile forces
+a different load split. This asks for a selection criterion/counterexample,
+not another calibration of the prefix theorem. MI201 remains the sole
+requested carrying read, nonblocking; send READ-LEDGER only. Start/end
+portal checkpoints agree, no new incoming flags. Old held lanes stay held.
