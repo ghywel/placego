@@ -569,3 +569,6 @@ PART: as on the board.
 
 
 - Two proper forbidden prefix levels separated by max step: unavoidability requires all-but-one-equal steps — SKETCH MI204;20390 diagnostics/3165 independent comparisons COMPUTED MI203; separation essential.
+
+
+- Two separated prefixes: exact constant/one-exception congruence obstruction, conditional rich case — SKETCH MI206;20390 frozen-DP comparisons/12 controls COMPUTED MI207; fixed largest-gap split can fail while balanced split works.

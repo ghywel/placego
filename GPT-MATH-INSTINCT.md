@@ -9755,3 +9755,127 @@ forces the unique interior k1, not putting the exceptional step first/last.
 2CPU sec/64MiB, stop any mismatch; no repair, expanded range or fresh census.
 The uniform implication remains SKETCH because MI204 is unreviewed. MI201
 remains sole requested carrying read; no new queue or review halt.
+
+
+### MI206 — Complete two-prefix classification, including the exception (2026-10-17 01:32 BST)
+
+**PROOF-SKETCH; rich case depends on MI204 SKETCH, arithmetic case independent.**
+Let m>=3 positive integer steps have total S and maximum M, with
+0<x<y<S and D=y-x>=M. Exactly these obstructions are unavoidable:
+
+1. All steps equal s, and x or y is divisible by s.
+2. Exactly r=m-1 steps equal s and the remaining t!=s, with s dividing x
+   AND D=t mod s.
+
+All other profiles admit an order avoiding both. Case1 is immediate from the
+fixed proper prefixes s,2s,...,(m-1)s. MI204 gives avoidance for profiles
+with no frequency m-1. The following proves the one-exception criterion;
+no permutation census supplies its infinite quantifier or novelty claim.
+
+**Exact interval, even without a separation hypothesis.** With k copies
+of s before t, the proper prefixes are sj (1<=j<=k) and t+sj
+(k<=j<=r-1). Thus for every forbidden level z:
+
+    if z=sj, 1<=j<=r, require k<=j-1;
+    if z=t+sj, 0<=j<=r-1, require k>=j+1.
+
+Intersect these with0<=k<=r. The intersection is an integer interval [L,U];
+empty means impossible, otherwise k=L supplies an explicit avoiding order
+s^k,t,s^(r-k). This derivation also applies to ANY finite forbidden set,
+without changing the interval rule; the compact congruence theorem concerns
+two separated levels only. No rich-profile generalization to more barriers
+is inferred.
+
+**Why the congruences force failure.** Suppose x=sj and D=t+qs. Since
+D>=t, q>=0. The proper upper barrier is y=t+s(j+q), and y<S ensures
+j+q<=r-1. The lower barrier has j>=1; also x<S-D<=rs ensures j<r.
+If k>=j, the order hits x before t. If k<=j-1, then k<=j+q and the
+order hits y after t. No k avoids both.
+
+**Why there are no other failures.** A single proper level is avoidable
+for a nonconstant multiset, by the one-level boundary swap reproduced in
+MI204 step1. Each individual barrier therefore leaves a nonempty interval
+of allowable k. Any empty combined interval requires a lower bound from
+one barrier and an upper bound from the OTHER. If the lower bound comes
+from y and the upper from x, then x=si and y=t+sj: precisely the stated
+congruences. Conversely consider a lower bound from x=t+si and an upper
+bound from y=sj. Their compatibility asks i+1<=j-1. But
+
+    j-i=(D+t)/s,
+
+an integer strictly greater than1 because D>=s and t>0. Thus j-i>=2,
+so these bounds are compatible. Bounds not arising from actual proper
+prefix indices were never inserted; their absence cannot create failure.
+This proves the criterion, including when t is divisible by s and a barrier
+produces both kinds of bound.
+
+**Relative offsets for an isolated gap.** Isolate a gap G>=max(s,t) in A,
+and let B's gaps be s repeated r times plus t, total S=rs+t. For relative
+start z=B_min-A_min, endpoint collisions are
+F0={-S,0,G-S,G}. Outside F0, both A endpoints are internal B-levels exactly
+when G-S<z<0. The unavoidability theorem then says that the FULL set of bad
+z values (over ALL orders of B) is exactly
+
+    F0 union {z: G-S<z<0, s divides z, G=t mod s}.
+
+If at most one A endpoint is internal, the one-level swap avoids it. This
+is an exact obstruction description for that fixed split; it does not
+upgrade the single-gap split to a universal choice. For rich companion
+gaps MI204 leaves only F0. Constant companions instead retain their two
+full arithmetic progressions of forbidden offsets.
+
+**A genuine split obstruction, by hand, not a new experiment.** At n10,
+h9, halves(3,3,3,5),p17/q11, isolating5 leaves B's constant3,3,3 chain
+filling0..9. First17 forces A=(1,6),B=(0,3,6,9), colliding at6.
+First11 forces A=(4,9),same B, colliding at9. There is no other root or
+B ordering for this split. Yet split the loads8/6 instead and take
+
+    A=(0,3,8), B=(1,4,7),
+    positions=(0,17,11,5,16,6),
+    moves=(17,-6,-6,11,-10,-6).
+
+Folded labels are0,2,8,5,3,6, all distinct in0..9. Thus the FULL prescribed
+move list is constructible while every isolated-largest-gap arrangement
+fails. The lesson is now concrete: some remaining work is load-split
+selection, rather than a more persistent prefix reorder. Constant companions
+and nearly constant unit companions retain explicit obstruction sets; no
+false 'H2 solves every load split' inference remains.
+
+**Niggle sweep / verdict.** Proper-index bounds matter: final total S is
+excluded in both progressions. The D>=max(s,t) condition supplies BOTH
+D>=t in the unavoidable direction and D>=s in the reverse-bound direction.
+If omitted, repeated1 plus3 can skip1/2 in one jump, refuting the congruence
+shortcut (MI207). Small t<s is allowed; its unique interior insertion test
+rules out an implicit large-exception assumption. Fixed-split failure is
+separated from whole-cycle failure by the explicit six-vertex witness.
+Gut: satisfaction at closing the ordering exception and a more specific pull
+toward competing splits. Reasoned: this completes a selection subproblem
+with MI204's provisional premise; it does not close E28/L8. No new review
+queue; MI201 remains the requested carrying read, nonblocking.
+
+
+### MI207 — B90 audit outcome (2026-10-17 01:32 BST)
+
+All prescribed checks pass without repair. The frozen B89 domain splits
+into1,250 constant,3,125 one-exception and16,015 rich questions. Exactly
+560/330/0 respectively are unavoidable; the arithmetic formula agrees with
+ALL20,390 frozen subset-DP outcomes. All3,485 avoiding arithmetic-class
+orders are constructed from the k-interval and literally checked; rich
+witnesses are retained and checked, not regenerated by a new solver.
+All12 named independent DP fixtures agree with the exact interval rule.
+The omitted-separation counterfactual correctly DISAGREES with the shortcut:
+(1,1,3),levels1/2 has k0 and order3,1,1. The unexpected small-exception
+fixture s3,r3,t2,levels2/6 has the UNIQUE k1 and order3,2,3,3.
+
+CPU0.246513s,peak RSS34,115,584bytes, inside2CPU sec/64MiB. Source
+ tests/probes/instinct/two_prefix_arithmetic.py; prereg8349c2fa.
+Immutable artifact cited/instinct/b90-two-prefix-arithmetic-81dac6e9ac30605b.json,
+2,303,604bytes,SHA256 81dac6e9ac30605b91d9ed47a870e026f21fad461619ca925d10ca1b4d41d553.
+Input digest checked against MI203; upload digest/manifest receipts verified.
+No new domain-wide existence run, E28 partition or independent hand review.
+The MI205 heading01:32 was a rounded-ahead stamp: the clock read immediately
+after its push was01:31:13 BST; commit8349c2fa is the preregistration receipt.
+MI206's interval proof and MI204 remain SKETCH. Next is the split-selection
+obstruction illustrated above, not another calibration of the completed
+arithmetic classification. Cloud has no new flag at block start; MI201 read
+remains nonblocking. Full E28/L8 OPEN.

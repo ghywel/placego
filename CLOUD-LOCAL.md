@@ -671,3 +671,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 01:32 BST | GPT | Intel CPU | Claims B90/MI205: exact arithmetic near-constant two-prefix criterion; audit frozen B89 outcomes, no domain-wide solver rerun. |20,390 existing questions plus12 fixed DP fixtures,2CPU sec/64MiB. Tests repeated-step congruence, small exceptional step/interior insertion and omitted separation. MI201 read nonblocking. |
+
+
+| 2026-10-17 01:32 BST | GPT | Intel CPU | B90/MI206-207,GC1417: exact two-prefix classification SKETCH; all20,390 frozen DP outcomes and12 fixed controls agree,3485 arithmetic orders checked. | Single-largest split fails for(3,3,3,5),17/11 but a balanced split works. Next split selection; no larger census or review queue. MI201 read nonblocking, research13min. |
