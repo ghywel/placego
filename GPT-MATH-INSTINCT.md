@@ -10809,3 +10809,59 @@ Caps9 new calls+1 existing call,1 E28 partition,1CPU sec/64MiB. Stop any
 mismatch, no repair, enlarged grid or extra review queue. Gut: delight at
 capacity failure supplying the missing geometry. MI214 remains the sole
 carrying-read priority, nonblocking; send this by READ-LEDGER.
+
+
+### MI221 — B97 outcome: forced capacity failure removes internal collisions (2026-10-17 03:05 BST)
+
+All9 forced-together calls plus the one existing separated-construction
+control pass. Independent labelled capacity enumeration visits800 masks
+across the nine inputs, always finding ordinary capacity and no separated
+exception split. Direct root rectangles match every interval I, and their
+literal A/B intersections occur EXACTLY at0/d as predicted. Thin H0/J0,
+unequal exceptional residues, k2 internal repeated gaps, reflected joins
+and reversed input positive ownership all pass without repair.
+
+The M28 five-negative component materializes one full E28 partition with
+targets(102,106,96,96,96,88,88,112). Owner7 has zero move and baseline112;
+only7 owners take part in the cycle. Existing materializer, both original
+partition validators and literal geometry agree. No sixth negative edge is
+invented, and no new target-coverage claim is made. Source's baseline helper
+is explicitly restricted to the tested five-negative/one-baseline setting.
+
+Both endpoint countercontrols retain exact original bags/window but fail
+geometry: shared minimum1 at M36, shared maximum21 at M46. The unexpected
+outside-premise M22 case refuses the forced constructor, and its tempting
+shared order has INTERNAL collision6 despite avoiding0/d. The existing
+MI214 constructor works on that same input. Thus failure of separated
+capacity is a carrying hypothesis, not a convenience to drop.
+
+CPU0.002198s,peak RSS17,068,032bytes, inside1CPU sec/64MiB. Source
+ tests/probes/instinct/path_forest_shared_exceptions.py; prereg335b0e2f.
+Artifact cited/instinct/b97-shared-exceptions-c24437d9baea43b3.json,6,352bytes,
+SHA256 c24437d9baea43b36f2dd37d1982ad5a755545e37ee1967c6dce660fcc01b33c.
+Immutable upload digest/manifest receipt verified. No wider experiment,
+ordering search or independently verified general theorem. MI220 stays
+PROOF-SKETCH; its union with MI214 also depends on that unreviewed sketch.
+Full E28/L8 remains OPEN, no prize candidate.
+
+**Niggle sweep / verdict.** The floor comparison uses h>=a+b from actual
+together capacity, so neither a negative bin budget nor a spurious floor
+count is treated as a fit. Equality F_tog=m follows from the at-most-one
+advantage, not an arbitrary choice to saturate bins. Internal A residue u
+is below every negative feasible offset residue and above every positive
+one; length T<s ensures the final residue has only the ONE representative
+d=J-H. Both thin root cases require T>=2. Reflection is applied before
+comparing the original odd bag; extra baseline bins have zero move and are
+absent from the cycle's selected-owner map. All carrying inequalities were
+checked by hand; finite controls do not replace their quantifiers.
+
+Gut: delight that the capacity obstruction itself supplies a construction.
+Reasoned: repeated s>=2 plus two exceptions a,b>=s now has a provisional
+ordinary-capacity criterion, using separated MI214 or forced-together MI220.
+That is a whole joint-allocation subproblem, not just the retained8/8 case.
+The next cheap steering step is to inspect the frozen B87 residual at the
+lowest remaining negative count against current admission statements, then
+choose its missing inference. Do not automatically generate another family
+or rerun an existence census. No follow-up experiment opened here. MI214
+stays the sole carrying-read priority; send READ-LEDGER only. Portal start/
+end checkpoints agree, research13min continues, old held lanes stay held.

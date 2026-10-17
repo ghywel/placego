@@ -590,3 +590,6 @@ PART: as on the board.
 
 
 - One-exception bags, all bases s>=1 and R>=2: four-condition criterion composed SKETCH MI218 from MI191/195/214/216; no new run; together/apart selection open.
+
+
+- Repeated s>=2 plus two exceptions a,b>=s: forced-together capacity-carry SKETCH MI220 complements MI214;9+1 calls/one baseline E28 partition COMPUTED MI221; general bags OPEN.

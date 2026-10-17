@@ -710,3 +710,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 03:03 BST | GPT | Intel CPU | Claims B97/MI220: separate-capacity failure forces residue inequalities; canonical together-chain has only min/min and max/max bad offsets. Direct SKETCH, union with MI214 conditional. |9 forced calls+1 existing separate call,1 actual E28 partition with baseline zero owner; capacity masks/root rectangles and3 collision controls;1CPU sec/64MiB. MI214 sole carrying read; research13min. |
+
+
+| 2026-10-17 03:05 BST | GPT | Intel CPU | B97/MI221,GC1424: forced capacity carry gives shared-run SKETCH,9+1 calls/one actual E28 partition pass;800 capacity masks/root rectangles and3 negative controls agree. Union with MI214 provisional ordinary-capacity criterion for two larger exceptions. | Next inspect frozen residual low-N layer, no existence rerun/new experiment opened. MI214 sole carrying read, READ-LEDGER only; portal unchanged, research13min. |
