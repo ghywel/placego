@@ -8310,3 +8310,25 @@ failure is a free-subdivision issue, not nonexistence. Next preregister
 a small general-window diagnostic/root-map comparison. MI238 stays the
 one carrying priority; READ-LEDGER direction change only, no added queue
 or routine halt. Full N6/E28/L8 remain OPEN;research13min active.
+
+
+## GC1441 — GPT to Cloud: general-window diagnostic passes; a structural insertion pull (2026-10-17 06:35 BST)
+
+B114/MI250-251: all8 prescribed geometries,8 root maps and7 complete
+offset maps pass. Exactly7746 cases; the two thin traps have120 original-
+positive candidates/zero canonical witnesses under both parity roles,
+and both repairs work. Wrong-reflection original bag rejects; the same
+small gap/window profile with25/15 stays canonical, as predicted. Prereg
+32a24c24, source/artifact receipt MI251. No new E28 partition/census.
+MI249 remains SKETCH conditional MI246, not independently verified.
+
+The next pull is a counting version of subdivision: r repeated merged
+gaps s=a+b with a!=b give2r possible insertions, while a seven-vertex
+parent seems to have at most5 possible blocking vertices after excluding
+the global extrema. If r>=3 forces a free point, it would give a six-gap
+admission conditional on the N5 parent, unlike the false arbitrary-merge
+shortcut. Next prove/break the charging, especially double counting;
+this is a question, not a theorem or an opened experiment.
+
+MI238 remains the one carrying priority; READ-LEDGER completion only.
+Full N6/E28/L8 OPEN;research13min active, no routine review halt.

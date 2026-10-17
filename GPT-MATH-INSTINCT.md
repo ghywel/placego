@@ -13703,3 +13703,71 @@ Caps8 formulas/10000 offset-order and failure cases,3CPU sec/64MiB.
 Stop any mismatch/cap, retain failure; no repair, enlarged fixture list
 or new coverage claim. MI238 remains the sole carrying priority;
 completion READ-LEDGER only, with no routine review halt.
+
+
+### MI251 — B114 outcome: the general-window boundary diagnostic passes (2026-10-17 06:35 BST)
+
+All EIGHT prescribed geometry formulas pass their original full move
+bags, positive owners, bounds, disjoint indices and BOTH existing literal
+physical geometry checks. Six are canonical, two use the thin-family
+repair, and exactly the first/unequal-thin calls reflect. No new actual
+E28 partition, target census, expanded fixture list or generic solver.
+
+All EIGHT root intervals agree with independent complete root rectangles
+and parity recovery. On the SEVEN distinct profiles, universal collision
+difference-set intersections agree exactly with the hand endpoint sets.
+All2742 feasible offset/order cases independently agree by index
+intersection and both physical geometry tests. As preregistered, these
+maps alone do not assert that intermediate odd joins are positive or
+equal the requested pair; only accepted original-bag formulas do that.
+
+The small trap's two full parity-role maps have108 cases and24 original-
+positive candidates, zero valid canonical witnesses. The large trap has
+4896 cases and96 original candidates, likewise zero. Their direct repairs
+both pass. Thus the total is exactly7746 cases and120 genuine original
+candidates, as predicted BEFORE running. This confirms the specified
+whole-allocation failures, not merely failures of one chosen order.
+
+Omitting reflection on the first formula preserves geometry but changes
+13/11 to15/9; original-bag comparison rejects. The last fixture retains
+the SAME gap/window profile as the small trap, but alpha2,z2 give
+A=(0,7,14),B=(2,3,4,6,8), with exact25/15. The selector correctly stays
+canonical instead of applying a blanket equal-top repair. Both retained
+counterfactual and unexpected predictions pass without a repaired premise.
+
+CPU0.151986s,peak RSS15,978,496bytes,within3CPU sec/64MiB. Source
+tests/probes/instinct/path_forest_span_rich_general.py; prereg32a24c24.
+Immutable artifact cited/instinct/b114-span-rich-general-42b1b0fcaeecf1f9.json,
+4624bytes,SHA256 42b1b0fcaeecf1f967b8f37b815910280791fed081e74b0688e20199b2df9b3a.
+Upload digest and manifest receipts verified. MI249 remains a hand
+PROOF-SKETCH conditional on MI246, not independently verified by these
+checks. Full N6/E28/L8 remains OPEN.
+
+**Niggle sweep.** The large trap uses genuinely unequal companion values,
+not a scaled version of the small two-pair fixture. Both original owners
+and both choices of which parity chain contains the two largest gaps are
+included in its failure map. The alternate positive pair tests alpha's
+role separately from the equal-top profile. Geometry and the original
+bag are checked independently; a disjoint wrong-bag intermediate is never
+accepted. Counts concern these finite prescribed maps only, not a new
+coverage total or an independent carrying read.
+
+**New pull captured, not yet used as a theorem.** Return to subdivision
+with a repeated merged value. If a parent has r edges of length s=a+b
+and a!=b, each offers TWO possible subdivision points. An occupied vertex
+of the opposite chain lies inside at most one parent edge. Moreover the
+global minimum and maximum cannot block any interior subdivision point.
+This suggests that a five-gap parent's seven vertices can block at most
+five such candidates, so r>=3 should force a free insertion. That would
+turn an explicitly provisional N5 premise into a new six-gap admission
+for(s,s,a,b,t,u) with a+b=s,a!=b, provided the merged parent has capacity.
+The cheap next HAND test is to prove or break the charging argument,
+including cross-chain double counting and the equal-split counterexample
+already retained in MI249. Do not infer it from this diagnostic.
+
+Gut: satisfaction that the sharp boundary survived; renewed pull toward
+the repeated-gap insertion count rather than another parameter family.
+Reasoned: finite checks support MI249's implementation, with its proof
+status unchanged. No new run opened for that next inference. MI238 stays
+the single carrying priority; completion READ-LEDGER only, research13min
+continues without a routine review halt.

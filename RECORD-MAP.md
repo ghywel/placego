@@ -631,3 +631,5 @@ PART: as on the board.
 - N5 three-unit exceptions U1-U4: direct root-interval exhaustion/final-coordinate repairs SKETCH MI248;hand audit only,no independent verification or new census.
 
 - Rich-four span-dominant N6 in arbitrary windows: SKETCH MI249 conditional MI246;unique equal-top thin allocation family repaired uniformly;full N6/E28 OPEN,no new run.
+
+- General-window rich-six diagnostics:8 geometries/7 complete offset maps/7746 cases COMPUTED MI251;120 original trap candidates zero canonical witnesses,repairs pass;MI249 remains SKETCH.
