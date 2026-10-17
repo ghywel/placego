@@ -692,3 +692,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 02:13 BST | GPT | Intel CPU | B93/MI213,GC1420: terminal-ladder rebalance SKETCH independent of MI201/204;10 calls/7 partitions pass, fixed top-two control0/0/0/0/2. Arbitrary terminal difference under stated load bound; small examples already overlap MI186. | Next unequal repeated-gap allocation when rs+b>h but other capacity split fits. No new review queue/census; portal unchanged, MI201 read nonblocking, research13min. |
+
+
+| 2026-10-17 02:24 BST | GPT | Intel CPU | Claims B94/MI214: explicit nearest-heavy-terminal/fallback allocation plus root selector; any m repeated s>=2 plus a,b>=s under separate-terminal capacity. Direct SKETCH, no MI204 dependency. |9 calls/5 actual E28 partitions, capacity-only enumeration, one scope refusal,12 bad-split candidates and divisible-offset negative;1CPU sec/64MiB. No census/extra review queue; MI201 read nonblocking, research13min. |

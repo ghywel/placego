@@ -10324,3 +10324,122 @@ has load14>13. This is a concrete missing selection step, not nonexistence
 or an opened follow-up experiment. Three-equal/fourth-different companions
 also remain outside the completed statement. MI201 stays the sole requested
 carrying read, nonblocking. Portal checkpoints agree; READ-LEDGER only.
+
+
+### MI214 — B94: capacity chooses an unequal repeated-gap allocation (2026-10-17 02:24 BST)
+
+**Question/pull.** MI212 leaves rs+b>h cases even when a different allocation
+fits. The useful surprise is that the most balanced allocation can be the
+wrong geometry: at M12, halves(2,2,3), loads4/3 with the3 isolated fail,
+while loads5/2 work. Choose which terminal is heavier deliberately, rather
+than minimize imbalance alone. This directly addresses the missing selection
+step, not a new prefix-order theorem. Record searched:
+unequal.*repeat|repeat.*allocation|terminal.*ladder|
+two.*exception.*capacity ->18 paragraphs/6 files; MI177/184/186/212-213
+and MI206's fixed-split obstruction read. Prior literature orientation is
+unchanged; no imported theorem or novelty/completeness claim.
+
+**Uniform sufficient theorem, direct PROOF-SKETCH.** Let M=2n,h=n-1,
+m>=1,s>=2,s<=a<=b, negative halves s repeated m times plus a,b,
+K=ms+a+b. Suppose there is an integer k in[0,m] with
+
+    b+ks<=h, a+(m-k)s<=h.                 (separate-terminal capacity)
+
+Then EVERY positive odd p,q with p+q=2K,max(p,q)<=2h-1 and not both2h-1
+has a folded-distinct cycle. This does NOT replace the capacity condition
+by arbitrary two-bin capacity; a,b must be separable in these bins.
+It allows odd m and arbitrarily different terminal gaps, with no MI204
+or earlier unreviewed construction dependency.
+
+**1. Select the split explicitly.** Let
+
+    k0=max(0,ceil((ms+a-b)/(2s))), L0=b+k0s, S0=a+(m-k0)s.
+
+Here0<=k0<=ceil(m/2)<=m and L0>=S0; if k0>0 the ceiling gives
+0<=L0-S0<2s. If L0<=h, choose heavy A with
+k0 repeats and terminal u=b; B has m-k0 repeats and terminal v=a.
+If L0>h, the only remaining candidate is k1=k0-1. Separate-terminal
+capacity guarantees k1>=0 and both L1=L0-s,S1=S0+s fit. Indeed for k>=k0
+the b-load exceeds h; for k<=k1 the a-load is at least S1, so if S1>h no
+allocation fits. Choose heavy A as the a-chain with m-k1 repeats, u=a;
+B has k1 repeats and v=b. Since L0=L1+s>h>=S1>L1,
+its load difference delta=S1-L1 satisfies0<delta<s<=a.
+
+Write the selected loads L>=S,delta=L-S,heavy terminal u and other terminal v.
+In the first branch delta<=b=u: when k0<=m/2 this follows from a>=s;
+otherwise m is odd,k0=(m+1)/2 and delta=s+b-a<=b. In the fallback branch
+it follows from delta<s<=u. Also delta1 implies u>=3. For the first branch
+u2 forces s=a=b2 and hence even delta. For the fallback, u2 forces s2;
+if delta1, T=2(h-L)+1>=2 forces h-L>=1, which would give
+L0=L+1<=h, contradicting that fallback was needed. These facts are the
+geometric reason to prefer this split over an arbitrary capacity minimizer.
+
+**2. Select roots.** Put H=h-L,J=h-S=H+delta,T=H+J. Legal odd bounds
+and no doubled maximum give T>=2. With P=max(p,q),Q=min and
+alpha=(2h+1-P)/2, we have1<=alpha<=H+floor((delta+1)/2).
+If alpha<=2H, choose c as the largest odd integer<=alpha; take relative
+offset z=1 unless delta1, when take z=-1. Solve
+x=(c-z)/2,y=(c+z)/2: both roots fit[0,H],[0,J].
+If alpha>2H, delta>=2 (delta0/1 contradict this or T>=2). Put x=H,
+z0=alpha-2H. Choose c=alpha, reducing to alpha-1 exactly when s divides
+z0; then y=c-H and z=y-x. Two consecutive integers cannot both be0 mod s,
+so z>=1,s does not divide z, and
+
+    z<=floor((delta+1)/2)-H<delta.
+
+Also y<=J since c<=alpha<=(T+1)/2<=T. All roots fit; c is alpha or alpha-1.
+
+**3. Check ALL collisions.** With j selected repeats in A, form
+
+    A=x+(0,s,...,js,js+u),
+    B=y+(0,s,...,(m-j)s,(m-j)s+v).
+
+The two arithmetic ladders avoid one another because z is nonzero mod s.
+Both terminals lie strictly beyond BOTH ladders exactly when
+
+    delta-u < z < delta+v.
+
+In the positive-root branch0<z<delta and delta<=u supply this interval;
+for z1 it holds as delta<=u and v>=s>=2. For z-1, delta1 and u>=3 supply
+its strict lower bound. The two terminals coincide only when z=delta:
+positive-root selection has z<delta, z1 was explicitly excluded at delta1,
+and z-1 cannot equal nonnegative delta. Thus every A/B index is distinct.
+Reflect/reverse both chains by i->h-i exactly when c=alpha-1; the new start
+sum is T+1-alpha, swapping to Q first. The original full move bag is then
+exact. This repeats the endpoint algebra, not MI212 as an assumed theorem.
+
+**Corollary, same SKETCH status.** For R>=2 copies of s>=2 and ONE larger
+exception t>=s, the usual two-bin capacity plus legal odd bounds is sufficient:
+use m=R-1,a=s,b=t. Any capacity split can separate t from one labelled s:
+if the opposite bin already has a repeated gap, designate it a; if empty,
+move one s there. Necessity is the two negative runs' spans<=h, legal odd
+bounds, and impossibility of two longest allowable odd edges, which share
+folded labels0/2. All gaps>=2 and K<=2h-2 imply enough labels automatically.
+Thus this one-larger-exception class has the four-condition criterion; t<s,
+unit repeated gaps and arbitrary bags are not inferred.
+
+**Predictions BEFORE code/run.** Nine formula calls, FIVE actual E28 partitions:
+M28,m4,s3,a3,b8,p25/q21 and23/23 (must use fallback,delta1);
+M28,m4,s2,a2,b10,p25/q15 (k0=0,delta0);
+M28,m4,s2,a2,b11,p23/q19 (dominant terminal,delta1/reflection);
+M28,m4,s2,a3,b7,p23/q13 (unequal counts,delta0/reflection).
+General checks: M12,m1,s2,a2,b3,p9/q5; M30,m4,s3,a3,b8,p23/q23;
+M12,m2,s2,a2,b2,p9/q7; M56,m7,s4,a5,b18,p51/q51.
+All full bags, original odd owners and literal geometry checked; five
+actual partitions pass both independent partition validators. For each
+named input compare the k0/fallback admission against direct enumeration
+of k=0..m capacity ONLY, not cycle existence.
+
+Scope/refusal control: M36,m3,s5,a8,b8,p31/q31 has NO separate-terminal
+allocation; reject although arbitrary bins(8,8) and(5,5,5) fit16/15<=17.
+No global nonexistence is inferred. Independent bad-split control on the
+M12,m1 input: enumerate x0..1,y0..2 and BOTH odd owners for A=(x,x+2,x+4),
+B=(y,y+3), at most12 candidates; no placement works although the new formula
+does. Counterfactual/unexpected: M30's branch2 has z0=3 divisible by s3;
+unreduced A=(0,3,6,14),B=(3,6,9,12) keeps the exact23/23 bag/window but
+shares indices3/6; geometry MUST reject. Correct formula reduces c to2,
+reflects and succeeds.1CPU sec/64MiB,9 calls/5 partitions/one refusal;
+stop any mismatch, no repair, larger grid or review queue.
+Gut: warmth is tied to the split selector resolving a real obstruction.
+Reasoned: this would complete separate-terminal capacity for repeated gaps,
+not all two-bin capacity or full E28/L8. MI201 carrying read is nonblocking.
