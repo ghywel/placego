@@ -10276,3 +10276,51 @@ Gut: warm because rebalancing gives a simpler independent mechanism, not
 because this is the next scheduled lemma. Reasoned: constant companions
 have a reusable exit; arbitrary three-equal companions and general load
 selection remain. MI201 read stays sole requested priority, nonblocking.
+
+
+### MI213 — B93 outcome: changing the split removes the constant trap (2026-10-17 02:13 BST)
+
+All10 explicit formula calls and7 actual E28 partitions pass without repair.
+The restricted top-two split has accepted counts0,0,0,0,2 on the five named
+M28 questions, across exactly720 root/order/owner candidates, agreeing with
+MI212's hand iff. The balanced-ladder construction directly handles all five.
+These small targets overlap MI186; no new E28 coverage count or novelty
+claim is made. The general formula handles arbitrary exceptional differences
+under rs+b<=h, independent of MI201/204 and MI186's bounded pair difference.
+
+The larger M46 check has r2,s3,a4,b16,exceptional difference12 and gcd1;
+it uses branch2,z0=6,then c5/z5 and reflection, giving first31 instead of33.
+Both joins and the ENTIRE original negative bag are preserved after reflection.
+The unreduced negative control A=(0,3,6,22),B=(6,9,12,16) retains the exact
+33/31 bag and window but shares index6; both geometry validators reject it.
+M78 handles r5 and equal odd positives63/63; M12 handles equal terminals.
+There is no permutation search or unregistered repair/range extension.
+
+CPU0.003540s,peak RSS15,458,304bytes, inside1CPU sec/64MiB. Source
+ tests/probes/instinct/path_forest_terminal_ladders.py; prereg5e23e8b0.
+Artifact cited/instinct/b93-terminal-ladders-2b01b76b49b2bdfd.json,5,521bytes,
+SHA256 2b01b76b49b2bdfde371e992a9b973048ae7b650c5a00447cfe70903a90a95aa.
+Immutable upload digest and manifest receipt verified. General construction
+MI212 remains PROOF-SKETCH; finite partitions are COMPUTED. Full E28/L8 OPEN.
+
+**Niggle sweep.** Nonmultiple offsets separate the entire ladders, not just
+neighbouring points. The terminals need their separate inequalities: z<b
+and z<delta in branch2, and a>=s>=2 in branch1. Without these, residue
+separation alone would be insufficient. The branch2 delta>=2 inference
+uses T>=2; delta1,H0 is outside the legal odd-join domain. When the original
+alpha is reduced by1, the pre-reflection joins are wrong by2, so only the
+FINAL reflected geometry is checked against the original bag. The small
+examples' overlap with an older sufficient theorem is recorded explicitly;
+the unrestricted terminal difference, not those examples, is the new scope.
+
+Gut: satisfaction at a simpler construction that explains how to leave an
+obstruction instead of reordering against it. Reasoned: equal allocation
+of repeated gaps now has an explicit endpoint selector; it does not settle
+constant companions whose larger terminal cannot carry r repeated gaps.
+The next cheap HAND question is unequal allocation of the repeated gaps
+when rs+b>h but some other two-bin allocation fits. For example five3s
+plus8 at M28 has a feasible11/12 split, while this equal-allocation recipe
+has load14>13. This is a concrete missing selection step, not nonexistence
+or an opened follow-up experiment. Three-equal/fourth-different companions
+also remain outside the completed statement. MI201 stays the sole requested
+carrying read, nonblocking. Portal checkpoints agree; READ-LEDGER only.
