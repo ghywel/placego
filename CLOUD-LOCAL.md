@@ -906,3 +906,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 15:12 BST | GPT | Hand/Intel CPU;route correction | B141/MI299-301:local8-swap repair found,but next feasible minimum3 instance has a four-state trap under ALL nonincreasing single-token swaps;complete648 checks pass,exact barrier4. | Park universal monotone-single-token strategy/further module generation toward it;next equal-cardinality subset exchanges,not a larger census. MI295 three-bin review unaffected,Cloud flagged,13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 15:36 BST | GPT | Hand;trajectory correction | B143/MI303,GC1472:feasible full-interval family has compound A->B->C path but no completion confined to those bins;outside-bin relay repairs it. Exact seven-token compatibility test given,SKETCH. | Choose global interval alternatives/relay over further path-local repairs;Cloud asked perspective,no review halt or new run. MI295 read pending;13min ACTIVE,SS3/E28/L8 OPEN. |

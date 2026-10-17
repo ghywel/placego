@@ -687,3 +687,6 @@ PART: as on the board.
 - Feasible n12 sizes3^4 has exact four-state nonincreasing ALL-single-token-swap trap;minimum L1 barrier4,atomic2-for-2 escapes:COMPUTED MI301. Universal monotone-single-token strategy REFUTED/parked;SS3/three-bin candidate unaffected.
 
 - Opposed-run four-bin family extends the four-state trap/exact barrier4 arbitrarily far;opposite gaps3/2 give uniform2-for-2 repair,PROOF-SKETCH MI302. No universal move-size/SS3 claim,no new run.
+
+
+- Compound two-edge unit path need not permit any three-bin-local completion,even with all sizes>=3;outside-bin repair and exact seven-token pair-compatibility criterion,hand SKETCH MI303. Full SS3 OPEN,no new run.

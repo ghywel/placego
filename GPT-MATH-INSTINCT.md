@@ -87,14 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 15:21 BST:** MI301's finite four-state trap
-refutes universal monotone-single-token escape. MI302 extends its exact
-barrier4 and opposite-gap3/2 compound repair to an infinite family by
-hand,still SKETCH. Next compatible equal-cardinality subset transfers:
-two two-token witnesses in a size3 bin necessarily overlap,so a larger
-exchange graph alone is insufficient. No universal two-for-two claim or
-automatic census. MI295's three-bin review pending;13min ACTIVE,
-general SS3/E28/L8 OPEN. The refuted single-token strategy stays parked.
+**Current question,2026-10-17 15:36 BST:** MI303 answers the immediate
+compatibility question:an existing compound unit-transfer path need not
+be repairable even by arbitrary reassignment inside its three bins.
+A full-interval feasible family exhibits the obstruction;an outside bin
+repairs it. For a seven-token shared-middle fork,two representations of
+each required pair sum suffice for disjoint target pairs,by elementary
+matching arithmetic. Hand SKETCH,no new run or review queue. Next ask
+how the full interval can supply an alternative witness or an outside
+relay,without assuming path-local completion. MI295's three-bin carrying
+read remains pending,not a gate.13min ACTIVE;SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -17850,3 +17852,126 @@ and cardinalities both checked;closure includes all single-token swaps;
 target witness is constructed without assuming SS3;large-family claim
 is hand SKETCH,not a machine census;no circular use of a better unknown
 partition to justify an improving exchange. Continue on those terms.
+
+
+### MI303 — B143: a compound path can require an outside bin;an exact local compatibility test (2026-10-17 15:36 BST)
+
+**Hand PROOF-SKETCH,no experiment or independent read.** Question:does
+having two compound unit-transfer edges through a size3 bin imply that
+the three bins can jointly attain their targets? The pull is toward
+actual token compatibility;the unease is that a graph forgets its edge
+witnesses. A negative answer would change the construction strategy:
+allow outside bins to help,rather than promise a repair confined to a
+selected path. This is a route test,not a new SS3 theorem or carrying
+review request.
+
+Record searched:`subset.exchange|two.for.two|unit.transfer|exchange.path`
+AND `compatib|overlap|schedul|disjoint`:7 hits/3 files,MI292/298/302
+relevant. Follow-up `pair.sum|two.sum|disjoint.pair|overlap.*witness|path.local|off.path`
+AND `SS3|exchange|prescrib|sum|bin`:61 hits/20 files,no earlier local-fork
+criterion found. A bounded primary-literature search returned background
+on prescribed partitions/subset sums,no compatibility theorem adopted.
+No novelty claim for the elementary matching argument below. The hand
+kill test is to force two required target triples to use the same token,
+while constructing a full-interval solution using an outside bin.
+
+**A feasible full-interval countercontrol to path-local completion.**
+For any integer M>=65,partition0..M+1 into
+
+    A={2,29,M}; B={10,20,30}; C={4,35,M+1};
+    R=all remaining values.
+
+Sizes are3,3,3,M-7,all>=3. Prescribe sums
+
+    (s_A,s_B,s_C,s_R)=(M+30,60,M+41,sum(R)).
+
+The current deviation is(1,0,-1,0). There are compound unit edges
+A->B from A{2,29}<->B{10,20} (31-30=1),and B->C from
+B{10,30}<->C{4,35} (40-39=1). Their middle-bin witnesses overlap
+at10. This is exactly a two-edge directed unit-transfer path,not a
+missing-edge complaint.
+
+Nevertheless NO reassignment of the union A+B+C,even changing all
+nine tokens at once,can realize these three targets. Among its seven
+small values S={2,4,10,20,29,30,35},the largest triple sums to94.
+Both large values in a triple give sum>=2M+3. Thus a target triple
+of sum M+30 or M+41 must contain exactly one of M,M+1. A needs a
+small pair of sum30 with M,or29 with M+1;only {10,20} of sum30
+exists. C needs41 with M,or40 with M+1;only {10,30} of sum40 exists.
+Consequently A is forced to {10,20,M} and C to {10,30,M+1},sharing10.
+This rules out arbitrary three-bin reassignment,not just either order
+of the two named edges. M>=65 ensures the no-large-value bound for A;
+no claim that this parameter threshold is minimal.
+
+The full problem IS feasible. Swap A's2 with R's1,then R's5 with
+C's4. Both1 and5 are initially in R;these swaps use disjoint tokens.
+Errors are2,2,0;R gains1 then loses1 in sum. The final special bins are
+
+    A*={1,29,M}; B*=B; C*={5,35,M+1};
+    R*=(R minus{1,5}) union{2,4}.
+
+Their sums and sizes check directly. Hence the full target satisfies
+SS,without assuming SS3. The necessary rank bounds even hold in the
+punctured nine-token pool:its least triple sum is16,largest2M+36,
+and each of M+30,60,M+41 lies between them. Bounds for two bins
+are complements of these single-bin bounds. This does NOT contradict
+MI295,whose three-bin pool is consecutive. Holes and a frozen outside
+bin change that hypothesis.
+
+**An exact local test for the shared-middle fork.** More generally let
+the middle bin be {t,y,u},and let the chosen two-token witnesses in
+A and C be X and V,all seven active tokens distinct. Assume
+
+    sum(X)=t+y+1; sum(V)=t+u-1.
+
+A has deviation+1,B zero,C -1. Freeze all other tokens in A and C.
+A repair among these seven tokens exists iff the seven-token pool has
+DISJOINT pairs of sums alpha=t+y and beta=t+u. Necessity follows
+from the two endpoints' required sums. Conversely put those pairs in
+A and C;the other three tokens go to B,and conservation gives B's
+original sum t+y+u. This is a constructive condition,not a presumed
+flow composition.
+
+For any set of distinct integer tokens,all pairs of a fixed sum form
+a matching. If alpha!=beta and BOTH sums have at least two pair
+representations,disjoint choices always exist. To prove it,choose two
+disjoint alpha edges. If two beta edges each met both alpha edges,
+the beta edges would cover exactly the same four vertices;their sums
+would give2beta=2alpha,a contradiction. Thus some alpha/beta pair
+is disjoint. Since each color class is nonempty,the ONLY failure is
+that one sum has a unique pair and every pair of the other sum meets
+it. The fork has alpha!=beta because y!=u. This elementary two-color
+matching test is not claimed new.
+
+**Positive hand control with the SAME middle bin.** Replace the
+endpoint witnesses by X={3,28},V={12,27};keep B={10,20,30},and
+spares M in A,M+1 in C. The same unit differences31-30 and40-39
+hold. Now sum30 has pairs {10,20},{3,27};sum40 has
+{10,30},{12,28}. Choose disjoint {3,27} and {10,30};put
+{12,20,28} in B. All three target sums are attained,even though
+the original witnesses still shared10. This distinguishes token
+conflict from absence of alternatives:overlap alone is not a proof
+of impossibility. No enumeration was run.
+
+**What changed.** The seven-token fork has a direct compatibility
+criterion,and the full-interval family proves that even arbitrary
+path-local completion is too strong. The full interval may need to
+supply ALTERNATIVE witnesses or an outside relay;its presence cannot
+be thrown away by freezing all off-path bins. Next cheap mathematical
+question:can the interval's ownership force such alternatives in a
+minimal obstructed fork,or is a global cut/augmentation statement
+needed? Do not assert two-for-two sufficiency,raise a solver cap or
+restart neutral-module generation. MI295 remains independent and
+pending;no new PROOFS entry/review job. General SS3/E28/L8 OPEN.
+
+Gut:the compatibility pull remains specific,with relief at an exact
+answer rather than a larger search. There is also a push away from
+repeatedly repairing a chosen path. Fresh choice:I would choose the
+full-interval mechanism now,not another catalogue of local repairs;
+this is the trajectory change. Reasoned verdict:local route narrowed,
+global existence unresolved. Niggle sweep:the countercontrol has a
+literal full solution;all four bin sizes>=3;the local contradiction
+allows ALL nine tokens to move;punctured/consecutive pools distinguished;
+the matching argument requires two representations of EACH sum;the
+positive control preserves B's sum,not merely total sum. No unknown
+solution assumed to obtain any witness.13min research ACTIVE.
