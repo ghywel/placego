@@ -12159,3 +12159,87 @@ Caps4000 formula calls/60000 offset-order or exception-root cases,
 3CPU sec/64MiB. Stop on ANY disagreement, retain failures, no repaired
 prediction or expanded grid. Fresh-choice reflection remains MI232;
 the new question has changed through evidence rather than rotation.
+
+
+### MI237 — B105 outcome: the second middle order removes the resonance (2026-10-17 04:38 BST)
+
+All prescribed checks pass. The fixed grid contains861 profiles and
+27,552 independent labelled capacity-mask checks, agreeing with subset
+capacity. There are1035 legal positive questions:942 canonical
+constructions,90 forced-capacity constructions and EXACTLY3 finite
+top-two-gap repairs. The named larger control makes1036 formulas total.
+Every selected formula passes its ORIGINAL positive owners, entire move
+bag/window and BOTH literal geometry validators.155 grid constructions
+use reflection;31 canonical constructions select the other middle order.
+This last count is a diagnostic of a real choice, not an extra solution
+count or a statement that all31 fail every root with the first order.
+
+All413 complete canonical-profile offset maps agree with the predicted
+U, independently by intersecting SIX difference sets, direct index
+collisions and both physical geometry tests. Profiles without legal
+positive pairs enter only this offset comparison, not construction totals.
+The two A shapes and three B shapes match distinct permutation generation.
+The three predicted original-positive canonical failures are exactly those
+found. Their complete maps under BOTH parity roles have96 original-bag
+candidates and ZERO valid witnesses, among192 exception-root/order cases.
+Combined offset-order/exception count13,362, within60,000. All three
+explicit alternative repairs certify their original pairs.
+
+The order counterfactual behaves as predicted: at(1,2,4,4,h7),offset-1,
+A's(4,2) order is blocked for every B order, whereas(2,4) escapes.
+The old largest-plus-short repair at the first exception has the exact
+9/11 bag but shares index2; BOTH geometry validators reject it. The
+top-two-gap repair succeeds instead. The named forced-capacity case
+M26,(2,2,4,5,9),21/23 is present and passes. The larger exact resonance
+(s,u,v,w,h)=(4,8,12,12,26),33/47 constructs A=(3,11,23),B=(0,4,8,20).
+This tests one larger named resonance, not an extended grid. The prior
+h5 fixture is refused as specified; it is also outside this unequal-middle
+class, so it is not an independent isolation of the label hypothesis.
+No new E28 partition was run or counted.
+
+CPU0.341547s,peak RSS19,570,688bytes, within3CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_unequal_middle_resonances.py;
+prereg50b7f1b6. Immutable artifact
+cited/instinct/b105-unequal-middle-resonances-343075fb71404d75.json,
+408,262bytes,SHA256 343075fb71404d75cf1bb822be7a0b627fd23587691f1ac99c1bd978e0c53912.
+Output digest and manifest receipts verified. No prediction repair,
+widened grid, allocation search, new partition count or full N5 census.
+
+**Niggle sweep.** The all-order bad set is an INTERSECTION between the
+two middle orders, after a union of applicable resonance clauses within
+each order. Reversing that logical structure would lose the key step.
+At w=v=u+s both clauses must be included in each order; treating the
+resonances as mutually exclusive would incorrectly remove the real traps.
+The endpoint exclusions use w>=v and nonisolation, while w<L uses
+canonical capacity; they are not consequences of the size condition alone.
+Thin roots are handled before relying on three consecutive offsets.
+Original positive ownership is checked after BOTH-chain reflection.
+The finite repairs change allocation, not only order; MI230's fixed
+allocation cannot be reused without its strict slack hypotheses.
+
+The first exception is a full-label h6 question already covered by the
+PROVED MI180 theorem. Its explicit repair is a component of this new
+selector, not a new independent theorem deserving another review job.
+The general classification is a hand argument supported by these checks;
+no finite map supplies its infinite quantifier. Combining MI234's u=v
+boundary with MI236's u<v case and MI230's capacity-failure branch gives:
+
+ For(s,s,u,v,w),s>=1,2s<=u<=v<=w,h>=6,2s+u+v>h,
+ ordinary two-bin capacity and legal odd p,q are sufficient for a
+ folded-distinct seven-vertex cycle with that exact original gap bag.
+
+This combined statement remains PROOF-SKETCH; its diagnostic calculations
+are COMPUTED. It is a structured-family result, not arbitrary five-gap
+sufficiency, an all-N5 coverage count or a solution of E28/L8.
+
+**Trajectory.** The most useful change was letting BOTH middle orders
+express the obstruction. The extra freedom made a complicated local
+picture collapse to one resonance. Gut: surprise and delight in that
+simplification; the pull remains attached to a changing question.
+Reasoned verdict: the equal-short-pair family now has a complete
+provisional allocation selector under u>=2s, with eleven total tiny
+canonical traps across its equal/unequal-middle cases. Next cheap
+inference is whether unequal short gaps make the three-prefix hitting
+condition similarly more restrictive. Derive the order-prefix constraints
+first; no wider census or new experiment is opened. Sole carrying read
+MI228+MI230 remains nonblocking; this is a READ-LEDGER addendum only.
