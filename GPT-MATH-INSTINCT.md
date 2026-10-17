@@ -12243,3 +12243,150 @@ inference is whether unequal short gaps make the three-prefix hitting
 condition similarly more restrictive. Derive the order-prefix constraints
 first; no wider census or new experiment is opened. Sole carrying read
 MI228+MI230 remains nonblocking; this is a READ-LEDGER addendum only.
+
+
+### MI238 — B106: a six-cycle of prefix constraints and one forced partner (2026-10-17 04:51 BST)
+
+**Pull/surprise before testing.** The unequal-short question simplifies
+MORE than expected. The six prefix pairs form a six-cycle, whose two
+minimum covers force an impossible small gap. A second simplification:
+when canonical capacity fails, there is only ONE interior prefix level
+to avoid after choosing the largest gap's forced partner. This changes
+the target from weakening u>=a+b by another constant to removing that
+margin entirely for unequal short gaps.
+
+Record searched: unequal.*short.*hitting|prefix.*six.*orders|
+minimal.*hitting.*pairs ->0 hits;one.*forbidden.*prefix|forced.*partner|
+six.cycle.*prefix ->0 default hits. Directly located and READ MI117's
+one-forbidden-level swap argument, MI230's capacity inequalities and
+MI234/236's hitting-pair derivations. No literature novelty claim; no
+standalone review job for the elementary vertex-cover or prefix facts.
+
+**Hand sufficiency claim, PROOF-SKETCH BEFORE experiment.** Let sorted
+positive halves0<a<b<=u<=v<=w and h>=6. Assume C+L>h where C=a+b,
+L=u+v (largest nonisolatable), ordinary two-bin capacity, and legal odd
+p,q: p+q=2K,K=C+L+w,max<=2h-1,not both2h-1. Claim: these hypotheses
+suffice for disjoint seven-vertex index chains with the exact gap bag
+(a,b,u,v,w) and original positive joins. No u>=C condition is needed.
+Full E28/L8 and the equal-short case a=b are not asserted here.
+
+**1. Canonical capacity.** Ordinary capacity implies L<=h by pigeonhole
+among u,v,w. Suppose also S=C+w<=h. Set H=h-L,J=h-S,d=L-S,
+T=H+J>=2 and alpha=(2h+1-max(p,q))/2. Use MI234's consecutive
+offset interval I for root sums alpha/alpha-1. Fix A={0,u,L}; no second
+middle order is needed. Across all feasible offsets[-H,J], B's endpoint
+collisions reduce to E={0,d}: J<u, h<u+S exclude its endpoints hitting
+A's middle; outermost endpoint differences are outside by K>h.
+
+Away from E, F={-z,u-z,L-z} must hit each proper-prefix PAIR of all
+six permutations of(a,b,w):
+
+ {a,C}, {b,C}, {a,w+a}, {b,w+b}, {w,w+a}, {w,w+b}.
+
+If w>b and w!=C these are the edges of a SIX-CYCLE on distinct vertices
+C,a,w+a,w,w+b,b. A cover with at most three vertices must be one of
+its two alternating covers {a,b,w} or {C,w+a,w+b}. Their sorted gaps
+are(b-a,w-b) or(w-b,b-a); neither can equal(u,v) since b-a<b<=u.
+Thus every offset outside E has a safe B order, for this fixed A order.
+
+There are only two vertex-identification cases. If w=b then u=v=b;
+the graph is the path a-C-b-2b. Its minimal covers are{a,b},{C,b},
+{C,2b}; each requires two F vertices separated by a or b-a, both below
+b, whereas F is a b-step progression. No extra bad offset exists.
+If w=C, the graph is two triangles sharing C. A three-vertex cover
+must contain C and one vertex from each opposite edge. Of the four
+covers, two have span b< L, one has gaps(a,a), and the only remaining
+one {a,C,C+b} has gaps(b,b). Thus an extra offset exists EXACTLY
+when u=v=b,w=C; it is z=-a. This proves the full feasible bad set
+
+ U={0,d}, except u=v=b,w=a+b gives U={-2a,-a,0}.
+
+For the exceptional profile H=J+2a>=2a. If a>=2, three consecutive
+offsets cannot all be bad; when J=0 the two adjacent offsets in I
+cannot both lie in this a-spaced set. If a=1 and J>=1, I always
+contains the safe positive offset1. The ONLY all-order failure is the
+infinite family
+
+ a=1, b>=2, u=v=b,w=b+1,h=2b+2,
+ p=4b+1,q=4b+3 (or swapped).
+
+Its explicit repair changes allocation:
+ preA=(0,b,2b+1),preB=(1,b+1,b+2,2b+2).
+All seven indices are distinct for b>=2. Its gaps are(b,b+1)/(b,1,b),
+root sum1 gives exactly the required original positives. Elsewhere
+choose the first free offset among at most FOUR consecutive candidates
+in I, then one of six B orders. Nonresonant thin roots use strict
+interior +/-alpha; the a-spaced thin case is handled as above.
+
+**2. Canonical capacity failure.** Now w+C>h. In EVERY fitting split,
+w must have EXACTLY ONE partner r from{a,b,u,v}: alone leaves load
+C+L>h, and any two partners have sum>=C. Conversely examine these
+four forced partner candidates only, with remaining three gaps D.
+Prefer a fitting candidate with D nonconstant. Let R=sum(D),
+X=h-w-r>=0,Y=h-R>=0. Minimal two-partner load and nonisolation give
+X<min(D),Y<r. For any roots x in[0,X],y in[0,Y], A=(x,x+r,x+r+w),
+and any ordered B-prefix chain has the following properties:
+
+ A-minimum is below every proper B prefix since X<min(D);
+ B-minimum is below A's interior since Y<r;
+ B-maximum is above A's interior since R+r>h and w>=r;
+ every proper B prefix is below A-maximum since X<its last gap.
+
+Thus only min/min, max/max and the single forbidden interior prefix
+F=r-(y-x) can collide. For NONCONSTANT D, MI117's elementary swap
+avoids any one proper prefix level. A self-contained three-item version:
+for F in(0,R), choose distinct first/last items with first!=F and
+last!=R-F. If no such pair exists and neither set is empty, both
+nonmatching index sets are the same singleton. The other two items
+then equal BOTH F and R-F, forcing the third item0, impossible.
+An empty set means D constant. For constant(t,t,t), only F=t,2t
+are unavoidable. No novel supporting theorem is claimed.
+
+If every fitting choice has constant D, sorted a<b forces r=a and
+b=u=v=t. The alternative partner t would leave load a+2t<=3t<=h;
+its failure therefore forces w+t>h. Hence X<t-a,Y<a, so
+0<a-Y<=F<=a+X<t: the constant chain avoids F automatically.
+This handles the constant case rather than silently applying the
+nonconstant lemma. Choose a root offset avoiding{0,Y-X} by the usual
+three-consecutive/strict-interior argument, then the safe prefix order.
+Reflect/reverse BOTH chains for root sum alpha-1 and flip the positive
+owner, preserving the ORIGINAL bag. These two capacity regimes are
+exhaustive and the proof needs no MI228/230 unreviewed theorem.
+
+**Preregistration BEFORE experiment.** Diagnostic grid:
+a=1..2,b=a+1..a+3,u=b..b+2,v=u..u+2,w=v..v+3,
+h=max(6,u+v,w)..a+b+u+v-1. Check ordinary capacity by32 labelled
+masks against subset-bitset; test ALL legal p<=q. Predict every
+question constructs under the selector above. For EVERY canonical
+profile compare U to the literal intersection of six B difference
+sets, and check EVERY feasible offset/order with index intersection
+and BOTH literal physical geometry validators. Repeated B gaps use
+distinct permutations only, not six artificially labelled orders.
+Predict exactly THREE canonical failures in this grid: the uniform
+repair family above at b=2,3,4. Exhaust their complete original-positive
+root/order rectangles under BOTH parity assignments: zero witnesses.
+For EVERY forced-capacity profile, all fitting labelled masks must have
+exactly one partner beside w. For the selected partner check the full
+feasible offset map/all distinct remaining orders: universal bad set
+exactly{0,Y-X}, by both literal geometry validators and index collisions.
+Every selected construction must pass original bag/owners/window and
+both geometry checks. No new actual E28 partitions or residual census.
+
+Forced-branch named controls: M20,(1,3,3,3,6),15/17 must choose a
+nonconstant remainder; M26,(1,4,4,4,9),21/23 has only partner1,
+constant remainder4,4,4 and must work without inventing an ordering.
+Outside-grid counterfactual M28,(2,4,4,4,9),23/23: blindly choosing
+partner2,offset-2 gives A=(2,4,13),B=(0,4,8,12),correct original
+bag but shared4. Both geometry tests must reject; choose partner4
+and a nonconstant remainder instead. This is one extra formula, not
+an expanded grid or generic allocation search.
+
+Unexpected graph controls: retain complete offset maps for BOTH
+vertex identifications w=b and w=a+b, and verify the latter's extra
+bad offset occurs only at u=v=b. One named larger uniform repair,
+a1,b10,u=v10,w11,h22,p41/q43, must certify outside the grid. The
+earlier six-label fixture must refuse; no extension below h6.
+Caps6000 formulas/100000 offset-order or exception-root cases,
+4CPU sec/64MiB. Stop ANY mismatch, retain failure; no repaired
+prediction, widened grid, generic cycle solver or new review queue.
+Current MI228+MI230 carrying read remains nonblocking during this block.
