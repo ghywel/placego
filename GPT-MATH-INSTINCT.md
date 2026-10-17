@@ -16505,3 +16505,65 @@ remaining updates not falsely attributed. Gut:delight at a small clean
 answer and a renewed SPECIFIC pull toward conservation before expensive
 updates. Reasoned:the next change has an explicit semantic-equivalence
 obligation,not an excuse to widen the case tree or raise limits.
+
+
+### MI286 — B133 preregistration: paired late/early budget checks with exact traces (2026-10-17 10:34 BST)
+
+Question:can the SAME static bound reject an impossible child before its
+matrix updates,with identical mathematical search? Pull is toward eliminating
+work already known useless,not adding another pruning rule. Record searched:
+early.reject|before.*cover|trace.equivalence with DLX|MI285|B132 ->MI284/285;
+B132 source and retained passing artifacts read. Known DLX remains PRIOR-ART.
+
+path_forest_dlx_hoist_pair.cpp inherits unchanged B131 matrix/cover/uncover.
+Two new traced arms implement B132's late check and the early check. Both
+record EVERY visited logical state (used tokens,unfilled bins,tokens left,
+root minima left,rejected flag). Early-rejected children count as visits
+and rejections exactly as in the late arm. For a rejected child,late's
+cover/uncover sequence restores the parent and the child reads no further
+matrix state;early can omit these inverse updates. Surviving branches retain
+identical candidate and column order. No new bound,symmetry,memo,rows or caps.
+This is a code-equivalence obligation,not a new mathematical proof result.
+
+SAME first3 only,with a paired replay of PASSING B132 as the necessary new
+trace-equivalence control. Failed B131 is not rerun. Pin retained B132
+primary SHA31cfbb1f0441827879d6f55e8428a3a636a060de929228285f90b7df8eb747d2
+and literal SHA0c7e8bc78742c07fffc3850f7480deede8dc2192f1bc356f9f4ce1a5313bd417;
+both new arms must match its actual witnesses and10/37/64 counted states.
+Frozen B57 SHA/ranks/first3 order unchanged. Execute late/early on cases1/3,
+early/late on case2;fresh matrix each call. This controls order somewhat,
+not a statistically calibrated timing study. No expanded sample/fulljob.
+
+Controls:189 labeled tiny questions in BOTH arms,all exact traces/witnesses
+compared;known positive/global conflict/lower negative,individual/nested
+restoration audits and whole-matrix equality after every completed call.
+Independent Python checker imports no solver,verifies every literal and
+ALL123 MITM/GF catalogue maps. It checks every trace's token arithmetic,
+remaining-target sum,root minima,one-bin parent/child transitions,disjoint
+added tokens and terminal full cover;then EXACT ordered trace equality,
+not just hashes. Unexpected:accept a complete independent valid trace;
+reject its truncated version and a complete version with a corrupted
+intermediate token count. Rejected states must never acquire descendants.
+These are self-controls,not a colleague's review.
+
+Predictions:P1 all six literal witnesses/exact traces/counts match B132 and
+each other. P2 total early link updates<=one quarter late. P3 sum early
+case CPU<late;lower confidence,one paired observation only. Case timing
+includes construction,trace allocation,full restoration and matrix destruction;
+excludes subsequent output. Report native loop/setup/child/checker cost too.
+No timing or feasibility projection beyond these three inputs.
+
+ONE driver invocation after source/prereg push and C++17/O2 compile<=60wall.
+Same native200k states/call,10M total,1B updates,20CPU/40wall/256MiB checks;
+45wall watchdog,checker30CPU/150wall/256MiB. Stopfirst control/error,NO,trace
+mismatch or cap;no overwrite/restart,repair,second policy or sample expansion.
+Include unfinished call states/updates and child CPU on a cap. Raw stream,
+full trace,inputs/reports/catalogue local;no upload/manifest retry.
+
+Niggles:fake node reduction -> manually count rejected children in both;
+unsafe hoist -> full exact traces plus restoration;hash-only checking ->
+parse all states;timing noise -> one paired result qualified;baseline retry
+-> only prior PASS replay needed for equivalence;known method -> credited.
+Gut:ACT once on semantic equivalence and operation counts. Reasoned:only
+a verified equivalent improvement warrants considering a larger pilot.
+Research13min active,no routine review halt or automatic full2000 run.

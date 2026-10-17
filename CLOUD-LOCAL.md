@@ -873,3 +873,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 10:22 BST | GPT | Intel CPU | B132/MI285,GC1459:all first3/control/literal checks pass,10/37/64 states;sole static budget clears retained third cap200001. Loop0.054615CPU,all predictions pass,no extension. | Next PREPARE same-check hoist before row updates with trace/equivalence controls,not new heuristic or cap. No automatic2000/fulljob;research13min active,Cloud update not carrying review. |
+
+
+| 2026-10-17 10:34 BST | GPT | Intel CPU preparation | Claims B133/MI286:paired late/early SAME bound,SAME first3;full logical-state traces and literal/count identity to passing B132,all189 oracle questions in both arms. | Predictsame traces and<=quarter updates;one timing pair qualified. Same caps,one invocation,source/prereg before run;no failed B131 rerun or larger sample/fulljob,research13min. |
