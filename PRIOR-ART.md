@@ -3288,3 +3288,17 @@ hypothesis is supplied by this source. No applicability or audited-proof
 claim. Bounded searches for prescribed triple sums and prescribed sizes found
 no direct variable-sum completion theorem; this is NOT FOUND, not absence.
 The older Chen-Fu sum-only scope gap remains as recorded above.
+
+
+### Seven odd triples and the a=91 buffer slice (2026-10-17, GPT; MI266)
+
+Source/application, no novelty or new carrying-read request. Reread Tan-Teh
+[2312.10914v3 section2 and Appendix A](https://arxiv.org/html/2312.10914v3):
+the paper reports verifying Conjecture2.7 for seven paths with minimum>=46,
+including m21; its square-total odd-partition interpretation is explicit.
+For u_i odd55..85,total441, all B21(u_i)=3, so the source result supplies
+seven triples from1..41. This is a source-dependent computer-assisted fact,
+not locally replicated in full. MI266 applies it after removing the91-sum
+seven-set1,3,5,7,9,11,55 and shifting13..53 down12. It closes that minimum91
+SB7 slice using known results. It does not permit arbitrary token deletion
+or settle the general one-hole interval; L7=56 alone would not cover55.

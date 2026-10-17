@@ -1162,3 +1162,11 @@ app is unpublished by design.
 - `instinct/path_forest_wide_six.py`: MI147-148, G314 wide primitive2+4 cores;25 profiles/350 complete14-gap maps agree independently,42 actual E28 partitions pass (0eee072e preregistration).
 
 - `instinct/path_forest_collection_counts.py`: MI149-150 count-only all even E28;576,515 unordered collections/max6 per parent/36,735 atoms;121 independent full-set controls, no placements (1082a510 preregistration).
+
+
+- Instinct B119-B122 (2026-10-17,GPT): `instinct/path_forest_grasshopper_selector_limit.py`
+  checks one strict-selector miss; `instinct/path_forest_multi_token_exchange.py`
+  gives same-anchor partitions on3 old misses; `instinct/path_forest_subset_catalogue.py`
+  validates129658 masks/five unrestricted fixtures; `instinct/path_forest_buffer_kill.py`
+  checks54 SB7 boundary profiles. Predictions/outcomes MI258-266; finite computations,
+  general claims OPEN/SKETCH, no external replication or raw shared-store upload.

@@ -645,3 +645,5 @@ PART: as on the board.
 - Three old FIRST-anchor failures have same-anchor/h multi-token partitions, COMPUTED MI262; exact-model Euler representation SKETCH MI261, fixed97/99 allocation still blocked by pair competition.
 
 - Anchor-free exact subset catalogue129658 masks; five fixed E28 witnesses,189 oracle controls COMPUTED MI264; omitted one7/seven3 pattern motivates OPEN SB7, no full-domain claim.
+
+- SB7 smallest-buffer54 boundary fixtures pass, COMPUTED MI266; canonical one-hole remainder untested; a91 slice follows known verified n7 result, general all-odd E28 OPEN.

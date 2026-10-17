@@ -14786,3 +14786,87 @@ kill is not a full-domain proof or permission to enlarge it. Next return to
 triple completion/literature or examine the first genuine counterexample.
 General E28/L8 and SB7 remain OPEN until the declared evidence changes them.
 Research13min active; no review queue opened.
+
+
+### MI266 — B122 outcome:54 boundary profiles pass; the one-hole triple problem (2026-10-17 08:15 BST)
+
+**COMPUTED bounded kill, not a proof.** Prereg48239734. All30 two-valued
+profiles and30 extremal profiles produce54 distinct targets after6 overlaps.
+ALL54 have a seven-token buffer at a smallest target and seven triples.
+Total542 search nodes including controls; maximum15 on any declared profile.
+All29 FULL queried MITM mask buckets match, all GF counts pass, and every
+partition passes both independent literal engines and exact cardinalities.
+All255 scalar subset inequalities hold on every target. The pair-control
+(10,10,22,22) passes all its scalar bounds but correctly has no partition;
+tied-minimum relabeling, wrong-total-cardinality and duplicate-token controls
+all pass. CPU0.339239sec,peakRSS25325568bytes. No first failure, hence the
+conditional independent negative-search engine was NOT exercised. No cap,
+restart, domain expansion, random sample or next experiment.
+
+First boundary target(69,69,69,93,121,121,121,121) has bins
+(1,3,5,7,9,11,33);(13,15,41);(17,21,31);(19,23,51);
+(25,43,53);(27,39,55);(29,45,47);(35,37,49).
+The54-target result supports SB7 only on this explicit domain; it is not a
+full all-odd E28 verdict and adds no overlapping global coverage tally.
+
+Raw b122-buffer-kill.json,11710bytes,SHA256
+1bfa55c0e20b397eedba14e34f954c171bdd3d5cf118afb22b79db925e5533c7,
+remains local outside git. No shared upload attempted or manifest receipt
+claimed while artifact authorization is pending. Source and declarations
+reproduce the finite test; no external second reader is implied.
+
+**Hand simplification AFTER the kill; SKETCH, not assumed sufficient.** Let
+a=t0,necessarily odd69<=a<=97. A canonical seven-set of sum a is:
+
+    if a<=91: C(a)={1,3,5,7,9,11,a-36};
+    if a>=93: C(a)={1,3,5,7,9,a-80,55}.
+
+All entries are distinct allowed odds. For a<=91 the remaining pool is
+{13,15,...,55} minus the single odd a-36. For a>=93 it is
+{11,13,...,53} minus the single odd a-80. Both are22 consecutive odds with
+ONE missing, leaving21 tokens for seven triples. Finding ANY seven-set was
+never the hard part; whether this PARTICULAR seven-set permits completion
+is stronger than SB7 and remains untested. Descriptive inspection of existing
+outputs only:11/54 witnesses use C(a);43 use a different seven-set. That does
+NOT show the canonical choice fails, and does NOT verify it on those43.
+Record searched one.hole.*interval|punctured.*interval|one.hole.*triple|
+22.*consecutive|canonical.*buffer ->16 mostly unrelated paragraphs/9 files;
+no earlier relevant triple-completion result found in that bounded search.
+
+**Known-source bridge at a=91; PRIOR-ART application, not a new proof queue.**
+C(91) removes1,3,5,7,9,11,55 and leaves13,15,...,53. Subtract12 from each
+remaining token, giving the first21 odds1..41. For the remaining seven target
+sums set u_i=t_i-36. They are odd,55<=u_i<=85, and sum441. The primary
+Tan-Teh2312.10914v3 section2/Appendix A explicitly reports verification of
+Conjecture2.7 for seven paths with minimum>=L6=46. Here each B21(u_i)=3
+(u_i>41 and <=39+41+37=117), so total minimum-cardinality budget is21,
+not impossibly burnable. Their verified seven-path result supplies an odd
+partition; because all seven u_i are odd and exceed41, every bin uses at least
+3 tokens, so all use EXACTLY3. Adding12 to each token then adds36 per triple,
+recovering the desired t_i. Thus the a=91 slice follows from the published
+computer-assisted seven-path result, including ties at91. This does not claim
+a new elementary proof of that source result or independent local replication
+of its1.5-million-plus m21 computation. Source statement/definition/Appendix
+were reread; its source-level computational reliance is explicit.
+
+The same inference cannot simply be used when C(a) leaves a HOLE: deleting
+an arbitrary odd from a pool is not supplied by the seven-path theorem.
+Nor does the constant-sum prescribed-size paper supply arbitrary triple sums.
+The unresolved step is now precise: complete seven prescribed triples in the
+one-hole interval, OR choose a different seven-set if the canonical one is
+obstructed. Next cheap test should examine canonical-hole completion on the
+ALREADY declared boundary fixtures before any proof assumes that stronger
+restriction; it must get its own preregistration, not run silently here.
+No census or patching into component families is authorized by this pass.
+
+**Niggle / verdict.** The finite domain is explicit, complete only for its
+boundary definition; lex extremes are not all profiles. The general scalar
+screen was proved algebraically, not inferred from54 successes. The canonical
+buffer is a new stronger choice, not retrospectively called tested. The source
+bridge uses the verified n7 form of Conjecture2.7, not an unproved n8 form or
+L7=56 applied to55. Gut: satisfaction at surviving a real kill, and renewed
+curiosity about the one-hole completion; mild unease at fixing another overly
+rigid recipe, so test it before persisting. Reasoned: SB7 is still OPEN, one
+source-derived slice is known, and the next missing inference is substantially
+smaller than general folded-cycle sufficiency. Research13min active, no review
+halt or extra experiment in this block.

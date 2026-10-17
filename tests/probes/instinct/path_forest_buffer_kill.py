@@ -9,6 +9,10 @@ Independent partition validators, toy all-majorization-pass/unrealizable
 four-pair control, ties by relabeling, impossible total-cardinality control.
 Per-profile50k states/overall500k,10CPU sec/128MiB,known catalogue cap1M.
 REFUTED-BY: a complete NO_WITNESS profile; caps give UNKNOWN, not a refutation.
+OUTCOME MI266:all54 union profiles pass;29 full reference buckets,controls
+pass;542 nodes,max15/profile,CPU0.339239sec/RSS25325568bytes. No negative
+reference branch exercised. Raw11710bytes SHA256
+1bfa55c0e20b397eedba14e34f954c171bdd3d5cf118afb22b79db925e5533c7;local only.
 """
 from itertools import combinations
 import json
