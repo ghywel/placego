@@ -693,3 +693,6 @@ PART: as on the board.
 
 
 - Four bins sizes>=3,single-bin bounds and a two-bin cut slack0/1/2 suffice via explicit complementary one-hole pools;hand SKETCH MI304. Canonical slack3 split REFUTED on a feasible control;general SS3 OPEN,no new run.
+
+
+- Prefix plus any h-of-2h boundary window has complete r-subset sums for r,m-r>=h+1;four-bin cut slack0..h^2 follows,hand SKETCH MI305. Repairs slack3/extends minimum3 to4;carrying read requested,general SS3 OPEN,no run.

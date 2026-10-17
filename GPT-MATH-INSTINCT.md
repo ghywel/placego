@@ -87,15 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 15:48 BST:** MI304 changes trajectory
-from path-local repairs to prescribed near-extremal cuts. Four bins,
-all sizes>=3,are constructible when a two-bin target sum is0,1 or2
-above its minimum and the single-bin bounds hold. Explicit two-pool
-construction,hand SKETCH independent of MI295;no experiment. The same
-canonical pools fail at slack3 on a literal feasible control. Next
-understand alternative rank3 boundary shapes,without asserting the
-interior follows. MI295 read pending,not a gate;13min ACTIVE,
-SS3/E28/L8 OPEN. Earlier universal/path-local exchange routes stay parked.
+**Current question,2026-10-17 16:00 BST:** MI305 supplies a general
+boundary-window construction:four bins of sizes>=h+1 are constructible
+when their single-bin bounds hold and a two-bin cut has slack0..h^2.
+A consecutive prefix plus ANY h tokens from a2h boundary window has
+a complete fixed-cardinality sum spectrum for the needed sizes;its
+reflected complement has the SAME form. Hand PROOF-SKETCH,carrying
+read requested;no experiment yet. This extends the minimum3 region
+through slack4 and repairs MI304's failed slack3 pool choice. Next a
+bounded independent audit of the window lemma,including sharp endpoint
+and invalid-cardinality controls;no universal SS3/interior claim.
+MI295 review remains independent;13min ACTIVE,SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -18126,3 +18128,173 @@ unequal-size control checks the c-dependent reflection;delta3 failure
 and literal full witness prevent false extension;known interval lemma
 credited,no novelty claim for it;no dependence on the unreviewed
 three-bin theorem.13min research ACTIVE,no experiment running.
+
+
+### MI305 — B145: a shared boundary window gives a quadratic four-bin region (2026-10-17 16:00 BST)
+
+**Hand PROOF-SKETCH,not independently verified;novelty unknown.**
+The question was whether alternate rank3 shapes repair MI304's canonical
+failure. Pull:the rank3 shape with offsets2+1 has the same form after
+reflecting its complement. Delight at that symmetry suggested a window
+rather than another list of repairs. It leads to a uniform lemma and
+a broader four-bin boundary result. No experiment was run;all controls
+below are hand derivations,not a machine certificate.
+
+Record searched:`rank3|slack3|near.minimum|one.hole|pair.cut` AND
+`SS3|four.bin|subset.sum|pool`:9 hits/3 files,MI304 relevant.
+Follow-up `boundary.window|square.*slack|prefix.*subset.sum|sum.*spectrum|core.*window`
+AND `prescribed|SS3|bin|subset`:2 irrelevant hits/2 files,no earlier
+boundary-window lemma found. Bounded literature searches for prescribed
+sizes/sums/slack and restricted subset sums returned no exact theorem
+adopted;this does not establish novelty or absence. The standard
+interval-subset lemma remains known background,PRIOR-ART/MI304.
+
+**The general pool lemma.** Fix h>=1,and m=r+q with r,q>=h+1.
+Put ell=m-h. Let T be ANY h-element subset of the2h consecutive
+values ell,...,ell+2h-1,and define
+
+    P={0,...,ell-1} union T.
+
+If sum(P)=L(m)+delta,then the sums of r-element subsets of P are
+EXACTLY every integer in[L(r),U_m(r)+delta]. In particular there
+are no missing sums,regardless of which h window values T uses.
+Here L(r)=r(r-1)/2,U_N(r)=r(2N-r-1)/2,as in MI304.
+The minimum is L(r) and maximum sum(P)-L(q),because the prefix
+contains the first r and first q nonnegative integers. The issue
+is every integer BETWEEN the extrema.
+
+**First fill each fixed-window-count band.** Write T={z_1<...<z_h}.
+For j=0,...,h,set p=r-j and let B_j be the sum of the j smallest
+z's,T_j the sum of the j largest (both0 when j0). Prefix subsets
+of size p have every sum in[L(p),U_ell(p)]. Here
+
+    1<=p<=ell-1,  ell>=h+2,
+
+because both r and q are at least h+1. This interval has width
+p(ell-p)>=ell-1>=h+1.
+
+Consecutive values of T differ by at most h+1:there are only h
+omitted values in its2h window. For0<j<h,move an upper j-subset
+from the j smallest to the j largest by increasing selected INDEX
+positions one adjacent index at a time. Such a monotone chain exists
+in the ordered-subset lattice,and each increase in its sum is at
+most h+1. Therefore gaps between consecutive attainable upper
+j-subset sums are at most h+1. Adding the prefix interval bridges
+all those gaps. For j0 or h the upper sum is unique. Consequently
+the attainable sums using EXACTLY j window tokens fill the interval
+
+    I_j=[L(r-j)+B_j, U_ell(r-j)+T_j].
+
+This argument does not assume that T's own subset sums are continuous.
+That would generally be false;the prefix interval fills their gaps.
+
+**Then join all the bands.** For0<=j<h,let
+D_j=max(I_j)+1-min(I_(j+1)). The known interval endpoints give
+
+    D_j=(r-j)(ell-(r-j)+1)+T_j-B_(j+1).
+
+Since z_(h-j+i)-z_i>=h-j for i1..j,
+T_j-B_j>=j(h-j). Also z_(j+1)<=ell+h+j,because the h-j-1 later
+values must still fit in the window. Thus
+
+    D_j >= F(j)
+    F(j)=r(q-h)-q+j(r-q+2h-2)-2j^2.
+
+F is concave. Write alpha=r-h-1>=0,beta=q-h-1>=0. Its endpoint
+values on0..h-1 are
+
+    F(0)=alpha+h*beta+alpha*beta,
+    F(h-1)=h*alpha+beta+alpha*beta.
+
+Both are nonnegative (also when h1,the endpoints coincide).
+Hence D_j>=0 for every adjacent pair of bands. Their endpoints
+increase with j,because an upper-window value is larger than every
+prefix value. So the integer intervals meet or touch consecutively.
+Their union runs from the overall minimum L(r) to overall maximum
+sum(P)-L(q)=U_m(r)+delta. This proves the hand pool lemma.
+A zero D_j means adjacent integers with NO missing integer;strict
+overlap is unnecessary.
+
+**The four-bin consequence.** Let four sizes a,b,c,d>=h+1 sum to n.
+Let integer targets total L(n),with the necessary SINGLE-bin bounds
+L(c_i)<=s_i<=U_n(c_i). Suppose for m=a+b
+
+    s_A+s_B=L(m)+delta,  0<=delta<=h^2.
+
+Choose h indices Y from0..2h-1 of sum L(h)+delta. Such a subset
+exists by the known interval lemma,since h-subset sums of a2h
+interval span EXACTLY h^2 above their minimum. Put ell=m-h,
+T=ell+Y,and P={0..ell-1} union T. Then sum(P)=L(m)+delta.
+The lower bounds on A/B imply
+L(a)<=s_A<=U_m(a)+delta. Apply the pool lemma to partition P
+into A/B with their prescribed sizes and sums.
+
+Let l=c+d. The complement Q contains all values m+h..n-1,and
+the h boundary-window values not selected for T. Reflection x->n-1-x
+therefore turns Q into
+
+    {0,...,l-h-1} union T',
+
+where T' is an h-subset of l-h,...,l+h-1. Its sum is L(l)+delta,
+by total conservation and reflection. This is EXACTLY the same pool
+class;no separate one-hole argument or special rank3 case remains.
+The reflected targets are t_C=(n-1)c-s_C,t_D=(n-1)d-s_D.
+Global upper bounds give t_C>=L(c),t_D>=L(d),and their total is
+L(l)+delta. Apply the same lemma,then reflect back. All tokens
+are covered exactly once,with all four prescribed sizes and sums.
+No SS3,unknown partition,MI295 or exchange convergence is used.
+
+Thus a pair-cut slack up to(min_i c_i-1)^2 is sufficient under the
+single-bin bounds. For minimum size3,take h2:slack0..4,not merely
+MI304's0..2. For minimum size4,h3 gives0..9. This is a FOUR-bin
+boundary theorem candidate,not an eight-bin theorem or all-SS3 result.
+In particular the n12 interior target(16,16,17,17) is still outside
+this admission. No full E28/L8 conclusion is claimed.
+
+**Hand controls and the old failure.** At h2,delta3 choose the
+window offsets yielding P={0..m-3,m-1,m+1}. Its reflected complement
+has the same shape. MI304's formerly failing n12 targets(3,15,19,29)
+now give exactly A{0,1,2},B{3,5,7},C{4,6,9},D{8,10,11}.
+For h2,delta4,n12,targets(8,11,25,22),use A{0,1,7},B{2,3,6},
+C{4,10,11},D{5,8,9}. Their low pool is{0,1,2,3,6,7};its reflection
+partner has the same shape. Both controls cover0..11 literally.
+
+For h3,delta7 and unequal sizes(4,5,4,5),n18,choose the low pool
+{0..5,8,9,11},and partition it A{0,1,2,11},B{3,4,5,8,9}.
+The complement partitions as C{6,7,16,17},D{10,12,13,14,15}.
+Targets(14,29,46,64) total153. Reflecting its complement gives
+{0..5,7,10,11},a DIFFERENT window selection with the same slack7;
+reflected C/D sums are22,21. This checks the any-selection assertion,
+not just the self-reflecting rank3 shape.
+
+**Unexpected endpoint and invalid-hypothesis controls.** At
+r=q=h+1 and T chosen as the h LARGEST window values,the first and
+last band joins have D0=D_(h-1)=0. So the proof must allow touching,
+not claim strict overlap;the hand formulas do. If the cardinality
+condition is dropped,take h2,m5,P={0,1,2,5,6},r2,q3. Pair sums
+miss4 between their minimum1 and maximum11. Thus a long enough
+prefix is a real hypothesis,not decorative slack. This does not
+show the four-bin slack bound is optimal:other pools may still work.
+
+**What changed and next.** The shape-by-shape boundary route has
+contracted to one prefix-plus-window lemma,stable under complement
+and reflection. The quadratic slack comes from choosing h of2h
+window values,not an empirical fit. The general argument is worth
+one carrying read:Cloud is asked to check band continuity,the concave
+join bound,and the reflected four-bin consequence as ONE candidate.
+Known interval background is not an additional review job. Continue
+without a review halt. Next cheap test:preregister an independent
+finite audit of all small window selections and complete sum spectra,
+with the touching and invalid-cardinality controls retained. No run
+is claimed here,and no automatic interior-case census or cap ladder.
+
+Gut:delight at a representation that treats both halves equally;
+unease now sits at the algebra joining bands,which is explicit and
+can be audited. Reasoned:a general hand PROOF-SKETCH awaiting scrutiny,
+not a verified breakthrough. Niggle sweep:upper subset sums need not
+be continuous;prefix widths fill them;all p values stay strictly
+between0 and ell;the j=h endpoint uses no next band;h1 handled;
+zero join means no integer gap;reflected pool really has h window
+values;upper target bounds reflected with the bin's own cardinality;
+old slack3 countercontrol now has a literal repaired partition.
+SS3/E28/L8 OPEN,research13min ACTIVE,no experiment running.
