@@ -690,3 +690,6 @@ PART: as on the board.
 
 
 - Compound two-edge unit path need not permit any three-bin-local completion,even with all sizes>=3;outside-bin repair and exact seven-token pair-compatibility criterion,hand SKETCH MI303. Full SS3 OPEN,no new run.
+
+
+- Four bins sizes>=3,single-bin bounds and a two-bin cut slack0/1/2 suffice via explicit complementary one-hole pools;hand SKETCH MI304. Canonical slack3 split REFUTED on a feasible control;general SS3 OPEN,no new run.

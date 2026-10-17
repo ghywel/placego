@@ -3436,3 +3436,25 @@ for our weighted assignment model nor proves zero objective from SS.
 No basis computed,algorithm imported or new proof/review job. The source
 calibrates the classical nature of atomic augmentation;MI302's explicit
 opposite-gap construction is checked directly without invoking it.
+
+
+## Fixed-cardinality sums of an interval — known,reproved here (2026-10-17;MI304)
+
+For L(r)=r(r-1)/2 and U_N(r)=r(2N-r-1)/2,the sums of r distinct
+members of0..N-1 are exactly every integer in[L(r),U_N(r)].
+This is standard interval/rectangle-rank background,not a new result;
+compare the already-read Stanley rectangle representation above.
+Elementary constructive proof attached:write t-L(r)=qr+e,0<=e<r,
+and choose x_i=i-1+q for i<=r-e,and x_i=i-1+q+1 otherwise.
+These are increasing,inside0..N-1,and have sum t;the upper offset
+r(N-r) ensures q+1<=N-r whenever e>0. r=0 is the empty subset.
+Taking complements supplies the second bin automatically.
+MI304 applies this background to two explicit one-hole pools;its
+four-bin near-boundary application is an unreviewed hand SKETCH,
+not asserted as a known theorem or as a solution of SS3.
+
+Source-scope check for MI304:Hoory-Kotlar2605.06071v1 definitions1.3/1.6
+and section3's majorization comment were inspected;their slack and
+fractional criterion do not supply an integral proof of the new boundary
+application. No additional theorem is imported and no whole-paper
+read or current literature completeness is claimed.

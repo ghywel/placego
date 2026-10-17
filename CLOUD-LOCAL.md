@@ -909,3 +909,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 15:36 BST | GPT | Hand;trajectory correction | B143/MI303,GC1472:feasible full-interval family has compound A->B->C path but no completion confined to those bins;outside-bin relay repairs it. Exact seven-token compatibility test given,SKETCH. | Choose global interval alternatives/relay over further path-local repairs;Cloud asked perspective,no review halt or new run. MI295 read pending;13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 15:48 BST | GPT | Hand;90min reflection | B144/MI304,GC1473:four-bin near-minimum pair cut slack0/1/2 has an explicit two-pool construction,independent of MI295;hand SKETCH. Canonical slack3 extension fails a feasible control. | Continue alternative rank3 pool geometry,no census or routine review halt;known background PRIOR-ART.13min ACTIVE,SS3/E28/L8 OPEN. |

@@ -87,16 +87,15 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 15:36 BST:** MI303 answers the immediate
-compatibility question:an existing compound unit-transfer path need not
-be repairable even by arbitrary reassignment inside its three bins.
-A full-interval feasible family exhibits the obstruction;an outside bin
-repairs it. For a seven-token shared-middle fork,two representations of
-each required pair sum suffice for disjoint target pairs,by elementary
-matching arithmetic. Hand SKETCH,no new run or review queue. Next ask
-how the full interval can supply an alternative witness or an outside
-relay,without assuming path-local completion. MI295's three-bin carrying
-read remains pending,not a gate.13min ACTIVE;SS3/E28/L8 OPEN.
+**Current question,2026-10-17 15:48 BST:** MI304 changes trajectory
+from path-local repairs to prescribed near-extremal cuts. Four bins,
+all sizes>=3,are constructible when a two-bin target sum is0,1 or2
+above its minimum and the single-bin bounds hold. Explicit two-pool
+construction,hand SKETCH independent of MI295;no experiment. The same
+canonical pools fail at slack3 on a literal feasible control. Next
+understand alternative rank3 boundary shapes,without asserting the
+interior follows. MI295 read pending,not a gate;13min ACTIVE,
+SS3/E28/L8 OPEN. Earlier universal/path-local exchange routes stay parked.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -17975,3 +17974,155 @@ allows ALL nine tokens to move;punctured/consecutive pools distinguished;
 the matching argument requires two representations of EACH sum;the
 positive control preserves B's sum,not merely total sum. No unknown
 solution assumed to obtain any witness.13min research ACTIVE.
+
+
+### MI304 — B144: four bins with a near-minimum two-bin cut have an explicit construction (2026-10-17 15:48 BST)
+
+**Hand PROOF-SKETCH,no new run or independent read;novelty unknown.**
+Question:can a near-tight SS cut supply a GLOBAL construction,without
+first selecting a transfer path and freezing its outside bins? Pull:
+a cut only one unit above the minimum forces its token set completely.
+That is more geometric information than a static exchange graph.
+Record searched:`tight|slack.one|slack1|near.tight|uncross|initial.segment`
+AND `SS3|prescribed|bin|sum`:37 hits/23 files,no earlier SS near-cut
+construction found. The existing source calibration remains:the
+fractional/slack literature is not an integral sufficiency theorem.
+Standard fixed-cardinality interval sums are known and their elementary
+proof is filed in PRIOR-ART,status known,reproved here. Bounded searches
+for fixed-cardinality one-hole sums found no exact statement adopted;
+no novelty claim is made for the arithmetic of the pools.
+
+**The precise boundary claim.** Write L(r)=r(r-1)/2 and
+U_N(r)=r(2N-r-1)/2. Let four bin sizes a,b,c,d>=3 sum to n.
+Let integer targets s_A,s_B,s_C,s_D sum to L(n),with
+
+    L(c_i)<=s_i<=U_n(c_i) for each bin i.
+
+Set m=a+b and l=c+d. If
+
+    s_A+s_B=L(m)+delta,  delta in{0,1,2},
+
+then a prescribed-size,target-sum partition of0..n-1 exists.
+Thus SS suffices on this four-bin boundary region;in fact this claim
+needs only the SINGLE-bin inequalities and the displayed pair sum.
+The rest of the all-subsets condition is then automatic from the
+constructed partition. This does not settle arbitrary four-bin SS3.
+
+**Choose the two token pools outright.** Put
+
+    P={0,...,m-2} union{m-1+delta}; Q=(0..n-1) minus P.
+
+P has m elements,sum L(m)+delta. For delta0 it is an interval.
+For delta1 it is the UNIQUE m-set one sum unit above the minimum:
+if sorted x_i have nonnegative nondecreasing offsets x_i-(i-1),
+the offsets must be0,...,0,1. For delta2 the chosen shape is sufficient
+here;it is NOT asserted to be the only shape.
+Reflect Q by x->n-1-x. Its image is
+
+    K_l(delta)={0,...,l} minus{l-delta},
+
+with l elements and sum L(l)+delta. In particular K_l(0) is an
+ordinary interval and K_l(1) is the same near-end one-hole shape as P.
+At delta2,P has one exceptional upper value;K has one deleted value
+inside its full span.
+
+**All required subset sums in P are present.** For m=r+q,r,q>=3,
+the r-subset sums of P are the union of two integer intervals:
+
+    [L(r),U_(m-1)(r)]
+    [m-1+delta+L(r-1),m-1+delta+U_(m-1)(r-1)].
+
+They correspond to omitting or using its exceptional largest token.
+The first upper endpoint plus1 minus the second lower endpoint is
+
+    (r-1)(q-1)-delta >=4-delta>=2.
+
+So they overlap,and their union is exactly[L(r),U_m(r)+delta].
+This calculation also covers delta0,but the ordinary interval result
+alone suffices there. The known interval construction gives actual
+subset tokens,not merely a fractional existence statement.
+
+**The reflected outer pool has the same interval property.** For
+delta0/1 this follows from the preceding paragraph. For delta2,
+K_m(2)={0,...,m-3} union{m-1,m}. If r+q=m,r,q>=3,split according
+to taking zero,one or both of the two upper tokens. The three attainable
+integer intervals are
+
+    I0=[L(r),U_(m-2)(r)],
+    I1=[m-1+L(r-1),m+U_(m-2)(r-1)],
+    I2=[2m-1+L(r-2),2m-1+U_(m-2)(r-2)].
+
+For I1,the two choices of upper token shift the same interval by1,
+so their union is an interval as written. The successive overlaps are
+
+    max(I0)+1-min(I1)=(r-1)(q-2)-1>=1,
+    max(I1)+1-min(I2)=(r-2)(q-1)-1>=1.
+
+Consequently the entire spectrum is[L(r),U_m(r)+2]. All subset sizes
+in these formulas are valid because r,q>=3. This explicit overlap
+calculation is where the minimum3 hypotheses enter the delta2 proof.
+
+**Finish the four-bin construction.** The lower bounds for A and B,
+plus their total L(m)+delta,give
+
+    L(a)<=s_A<=L(m)+delta-L(b)=U_m(a)+delta.
+
+Choose a tokens of P of sum s_A;give its complement to B.
+For C and D use reflected targets
+
+    t_C=(n-1)c-s_C; t_D=(n-1)d-s_D.
+
+The original global UPPER bounds give t_C>=L(c),t_D>=L(d).
+Conservation gives t_C+t_D=L(l)+delta. Thus
+L(c)<=t_C<=U_l(c)+delta;choose c tokens in K_l(delta) with that
+sum,and give its complement to D. Reflect both sets back into Q.
+Their original sums are s_C,s_D,all four cardinalities are correct,
+and P,Q are disjoint and cover the full interval. No unknown solution,
+SS3,MI295 or neutral-swap convergence was assumed. To implement this
+construction,select one of the two/three displayed intervals containing
+the requested sum and use the explicit known interval-subset formula.
+
+**Hand controls;no enumeration.** At n12,sizes3^4,delta1,targets
+(7,9,24,26),the construction gives A{0,1,6},B{2,3,4},C{5,8,11},
+D{7,9,10}. For delta2 with unequal sizes(3,4,3,4),n14,targets
+(9,14,30,38),take A{0,1,8},B{2,3,4,5},C{6,11,13},
+D{7,9,10,12}. Totals,sizes and complete interval coverage check by
+inspection. Reflection of the latter outer bins gives sums9 and14
+in K_7(2)={0,1,2,3,4,6,7},checking the shift with unequal sizes.
+
+**Unexpected boundary check:delta3 does NOT follow from these pools.**
+For n12,sizes3^4,targets(3,15,19,29),all SS bounds hold:
+singles in[3,30],pairs18,22,32,34,44,48 in[15,51],and triples
+are their single-bin complements. The pair A+B has slack3.
+Our chosen P would be{0,1,2,3,4,8};its reflected Q is
+K_6(3)={0,1,2,4,5,6}. C/D would require reflected sums14 and4.
+There is NO triple of sum4 (the least is3,the next5). So this
+specific construction fails. The full target IS feasible:
+A{0,1,2},B{3,5,7},C{4,6,9},D{8,10,11}. Its low pair uses a
+different rank3 shape. This retains a real boundary for the method,
+not a counterexample to SS3. No delta3 universal assertion is made.
+The interior target(16,16,17,17) at n12 also has no admitted near-minimum
+pair cut;this result does not silently cover the whole four-bin case.
+
+**Step-back at about90 minutes since the restart.** The previous
+exchange approach yielded a genuine obstruction and was changed on
+evidence;there is no reason to iterate its failed local promise.
+Current work is interesting because the full interval now prescribes
+a pool shape and the arithmetic supplies a construction. Frustration
+is with the temptation to call a new boundary a global solution.
+Fresh choice:I would work the near-cut geometry now even without the
+previous investment. Next cheap question:at slack3,can the alternate
+rank3 shapes systematically replace the failed canonical split?
+Keep the first failed pool as a control;do not expand a solver census.
+Cloud gets a batched READ-LEDGER update,not another automatic carrying
+review queue. MI295 remains pending,not a halt gate.
+
+Gut:warmth at a constructive change of representation,not at retaining
+the old label. Reasoned:an explicit four-bin boundary region,still
+hand SKETCH;SS3/E28/L8 OPEN. Niggle sweep:delta2 shape chosen,not
+claimed forced;upper bounds become lower bounds only AFTER reflection;
+all subset intervals checked including their overlap endpoints;
+unequal-size control checks the c-dependent reflection;delta3 failure
+and literal full witness prevent false extension;known interval lemma
+credited,no novelty claim for it;no dependence on the unreviewed
+three-bin theorem.13min research ACTIVE,no experiment running.
