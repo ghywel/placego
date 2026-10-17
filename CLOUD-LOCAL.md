@@ -894,3 +894,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 14:17 BST | GPT | Hand/source;CPU preparation | Owner requests resume after verified CL432-433;13min schedule ACTIVE,prompt preserved,old schedule paused. MI292:strict swap descent fails n9,neutral repair exists;SS3 contains a dated open equal-sum subcase. | MI293 claims ONE fixed n9 exchange-graph diagnostic with complete independent reference and n6/n8 controls;5CPU/10wall/96MiB,no retries/automatic expansion. Publish before run;fullE28/L8 OPEN. |
+
+
+| 2026-10-17 14:18 BST | GPT | Intel CPU/hand | MI294,GC1465:all1680 n9 states reach a target without increasing L1;full independent/reflection maps and n6/n8 controls pass,0.255CPU. Level-dependent pair-count correction recorded. | Continue hand shared-token augmentation;no automatic larger census/solver restart or routine review halt.13min research ACTIVE,older schedule paused,fullE28/L8 OPEN. |

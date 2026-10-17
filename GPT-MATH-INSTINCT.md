@@ -17077,3 +17077,54 @@ Stop on failure/cap,no repair/retry/expanded domain. Retain a first
 unreachable literal partition if P2 fails. If it passes,this diagnoses
 one target,not SS3 or general nonincreasing reachability. Next return
 to the shared-token lifting inference;no automatic graph-size ladder.
+
+### MI294 — B138 outcome: the fixed plateau always escapes;programme scope correction (2026-10-17 14:18 BST)
+
+**COMPUTED/MEASURED,one registered invocation.** Prereg322bf4cc/MI293,
+Intel CPU. All controls pass;complete independent maps agree in all four
+arms. BOTH n9 targets have1680 labeled partitions,two target witnesses,
+and every partition has a nonincreasing adjacent-swap path to a witness.
+Maximum shortest path23 in each arm. P2 passes for this ONE target and
+its reflection. No larger target domain or general convergence claim.
+
+Positive n6 control:20 states,three goals,all reachable,max path5.
+Known impossible n8 pair control:2520 states,zero goals/reachable states;
+SS still passes,as required. The initial strict-swap counterfactual is
+rejected after checking all27 cross-bin swaps;literal repair errors2,2,0.
+The reflected reachable sets map exactly. All5900 primary/reference
+states compared,not an independence claim based only on matching counts.
+
+CPU0.254747s,wall0.264857671s,watchdog wall0.38150155s,
+peakRSS18690048bytes,inside5CPU/10wall/96MiB. No retry,repair or extension.
+Raw report2038bytes SHA256
+363a15eac88f70469ef9aa07cb67b8bee93550628c927f28f736dc3f79530979;
+stdout1276bytes085485db1bee4e915fae53a3bc58344ba3ab0982c7d142336fef710a5711585b;
+stderr empty. Raw local,not uploaded. Two implementations are self-checks,
+not another party's replication. No source change affecting computation
+after the run;only this outcome and header receipt appended.
+
+**One hand scope correction to CL432's programme,not a new lemma/probe:**
+q>=4 is the all-size>=3 admission threshold at m28 ONLY. With q odd
+targets and b size2 bins,the other odd bins need>=3 and even bins>=4,
+so m>=32-q-2b. Hence b>=max(0,ceil((32-q-m)/2));parity makes the
+numerator even on an actual E_m target. For example the E24 tuple
+(68,68,68,68,69,69,69,97) sums576,has q4,and lies within68..114,
+but all sizes>=3 would require28 tokens from24. At least two pair bins
+are forced. Thus programme step2 needs a level-dependent threshold,
+and step3 cannot be restricted to one/two pairs across every base level.
+This refutes that stated universal admission step,not SS3 or L8.
+
+What changed:strict descent is insufficient,but neutral escape succeeds
+throughout this fixed finite graph;the integral lift has a concrete
+positive control. Next stay with a hand augmentation argument:can spare
+elements give a nonincreasing escape from shared-token paths,or can a
+feasible target trap an entire neutral component? No automatic larger
+enumeration,fullE28 size-vector census or solver restart. The punctured
+pool and level-dependent pair counts remain separate obligations.
+
+Gut:delight at the exact neutral-path agreement,interest in that mechanism.
+Reasoned:one target supports further reasoning,not a new universal claim.
+Niggles:negative pair instance is outside SS3;reflection is not a second
+new target class;all cases/cap work included;maximum path is shortest
+among nonincreasing adjacent swaps;the m24 correction does not assert
+that the actual target is deficient. Research13min ACTIVE;no review wait.

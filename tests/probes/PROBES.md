@@ -1182,3 +1182,5 @@ app is unpublished by design.
 - Instinct B128 (2026-10-17,GPT): `instinct/path_forest_unrestricted_pilot.cpp` and `.py`; unrestricted exact cover on SAME2000 B57 mixed targets,full123-bucket MITM/GF catalogue verification and literal next-target witness checker. Prereg MI277/58a82544;outcome MI278:239 literals verified,target240 scan-cap UNKNOWN,all catalogue/oracle controls pass. No rerun/full run;pending-work reporting fix noted.
 
 - Instinct B138 (2026-10-17,GPT): `instinct/ss3_neutral_diagnostic.py`; fixed n9 target(20,6,10),all1680 size3 partitions and reflected target,adjacent-value swaps with nonincreasing L1 error. Separate complete-map reference,n6 positive/n8 impossible-pair controls. Prereg MI293;5CPU/10wall/96MiB,no retries or domain expansion. No SS3/E28 theorem claim.
+
+  Outcome MI294:all1680 states reach one of two goals in each n9 arm,max shortest path23;all controls/complete reference maps pass.0.254747CPU seconds,no expansion. General neutral escape/SS3 remain OPEN.

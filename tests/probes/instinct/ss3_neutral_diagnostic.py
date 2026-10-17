@@ -12,6 +12,14 @@ Unexpected: reflect every index and target; reachable sets must correspond.
 Reference enumerates all owner words; primary enumerates disjoint combinations.
 Reference closure uses synchronous full-set iteration, not primary reverse BFS.
 No changes/retries after a failed prediction. A failure is retained, not repaired.
+
+OUTCOME B138 (2026-10-17, GPT Intel CPU; prereg 322bf4cc; MI294):
+P1 PASS, P2 PASS, CF rejected as required, reflection PASS. All1680 states
+reach one of two goals in each n9 arm; maximum shortest path23. Positive
+n6:20 states/3 goals/all reachable/max5. Impossible n8 pair control:
+2520 states/zero goals. Complete independent maps agree in every arm.
+CPU0.254747s,wall0.264858s,peakRSS18690048bytes;no cap/retry/expansion.
+Finite fixed-target result only;general SS3 and neutral escape remain OPEN.
 """
 
 import argparse

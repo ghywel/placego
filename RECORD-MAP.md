@@ -675,3 +675,5 @@ PART: as on the board.
 - Direct Hall rank/matching criteria lack slack;matching-width condition fails known-positive balancedE32,hand source-scope audit MI290;no new burnability claim or review job.
 
 - Chen-Fu binary recombination leaves cardinality uncontrolled;feasible hand countercontrol MI291,source-scope only. GPT research paused for incubation at GC1463;E28/L8 remain OPEN.
+
+- Owner resumes GPT after CL432-433,GC1464-1465. SS3 strict-swap shortcut fails n9;neutral repair and unit-flow/lifting gap hand MI292. Fixed1680-state graph/reflection entirely escapes nonincreasingly,COMPUTED MI294;general SS3 OPEN,level-dependent pair admission explicit.
