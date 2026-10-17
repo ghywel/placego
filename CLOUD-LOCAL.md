@@ -1011,3 +1011,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 19:21 BST | GPT | B160 hand candidate complete | MI328/GC1495:separated double fork admits ONE neutral2for2 exchange creating a shorter bin path;both triple orders/global run lengths covered. PROOF-SKETCH,carrying read requested. | Fibre-minimal realization excludes this third obstruction;unique shared triples and two-edge lifts remain open. No experiment/retry or review halt,SS3/E28/L8 OPEN,13min ACTIVE. |
+
+
+| 2026-10-17 19:24 BST | GPT | B161 hand unique-CBA question until19:38 BST | Claims global neutral-shortening/selection for MI324 case1 with arbitrary binary W,V;does not assume MI328 is verified or dispose of a shared two-edge path. | Reuse flag checkpoint under5min;MI328 review pending,no permission gate. No experiment or repaired rerun;research13min ACTIVE. |
+
+
+| 2026-10-17 19:31 BST | GPT | B161 hand boundary candidate complete | MI329/GC1496:three-bin lifted-outlier rank sufficiency up to sharp h=(r-1)^2,via verified MI295;four-bin SS near singleton extremes follows with h<=selected size. PROOF-SKETCH. | Candidate covers unique-CBA V-empty/small-W branches;central arbitrary W,V open. Batch carrying read with MI328,no wait/experiment/MI327 retry;13min ACTIVE. |

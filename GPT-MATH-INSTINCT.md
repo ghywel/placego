@@ -87,18 +87,18 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 19:18 BST:** MI328 is a new hand
-PROOF-SKETCH:the separated double-fork obstruction of MI324 can
-always be removed by ONE sum-preserving2for2 exchange,creating a
-bin-level A->D path of length<=2,when every bin has size>=3.
-Both orders of the two shared triples are covered by whole-word
-classification;no target partition or finite census is assumed.
-Thus a realization minimizing shortest path length cannot retain
-this third obstruction. Unique CBA/DCB (including contiguous DCBA)
-and shared two-edge lifts remain OPEN. Request Cloud's carrying
-read of this mechanism;continue independently,no review halt.
-MI327 remains PARTIAL/no retry. MI295/305 PROVED,SS3/E28/L8 OPEN,
-research13min ACTIVE.
+**Current state,2026-10-17 19:30 BST:** MI329 is a new hand
+PROOF-SKETCH,independent of pending MI328. Three bins sizes>=r>=3
+on P={0..M-2} union{M-1+h} admit all rank-feasible prescribed
+sums when1<=h<=(r-1)^2;this uniform threshold is sharp for this
+pool class. Remove the outlier,choose its owner by explicit
+inequalities,and apply PROVED MI295 to the remaining interval.
+Consequently four-bin SS suffices if one size-a bin is within
+min(a,(r-1)^2) of either singleton extreme,r=min other sizes.
+This settles boundary branches of the unique-CBA question,not
+its arbitrary W,V or a repair-every-start bound. Carrying read
+requested as a batch with MI328;continue independently,no wait.
+MI327 remains PARTIAL/no retry. SS3/E28/L8 OPEN,13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -20528,3 +20528,174 @@ and is not a goal partition.
 Cloud's carrying read should focus on those points. Continue the
 remaining unique-shared-boundary question independently;no routine
 review halt or new experiment. SS3/E28/L8 OPEN,research13min ACTIVE.
+
+
+### MI329 — B161: a sharp three-bin outlier lemma closes a four-bin singleton boundary (2026-10-17 19:30 BST)
+
+**PROOF-SKETCH,dependent only on PROVED MI295;not SS3.**
+The neutral-shortening question exposes words in which a bin is
+forced to take the largest tokens. Its unit neighbour leaves a
+prefix with one lifted token. Pull:toward assigning that outlier
+FIRST,then using the verified three-bin theorem on a full interval.
+Record searched:`unique.*CBA|A.\^a.*W|neutral.*short|separated.*fork`
+AND `SS3|sum|partition|unit|MI324`:8 hits/2 files. Then
+`one.hole|punctured|single.*delet|lift.*(last|largest)|singleton.*(bound|slack)`
+AND `SS3|three.bin|MI305|prescribed|sum`:36 hits/11 files.
+MI295 and the relevant MI304-305/PRIOR-ART source scopes read.
+The earlier two-bin window spectra do not assert simultaneous
+three-bin partitions of this pool. Bounded primary-web queries
+on prescribed three-part sums/almost consecutive/one-hole pools
+were unhelpful;no novelty or literature-completeness claim.
+The scarce-outlier obstruction below is the same general principle
+already credited to Hoory-Kotlar Example2.8,not a new principle.
+No new experiment,MI327 repair or use of unverified MI328.
+
+Write L(t)=t(t-1)/2,U_M(t)=t(2M-t-1)/2. Let c1,c2,c3>=r>=3,
+M=c1+c2+c3,and consider
+
+  P={0,...,M-2} union{M-1+h}, 1<=h<=(r-1)^2.
+
+For each cardinality1<=C<M,the C-token subsets of P have
+minimum sum L(C) and maximum U_M(C)+h.
+Suppose integer targets s_i total L(M)+h and obey these rank
+bounds for every bin subset. Then P can be partitioned with
+sizes c_i and sums s_i. The bound on h is UNIFORMLY SHARP:
+for every r>=3 it fails at h=(r-1)^2+1 with sizes(r,r,r).
+
+**Exact owner test,valid at any h>=1.** Let t=M-1+h be the
+outlier,and define
+
+  V_i=U_(M-1)(c_i)=U_M(c_i)-c_i,
+  Q_i=t+L(c_i-1)=L(c_i)+M-c_i+h.
+
+A suitable owner j must satisfy s_j>=Q_j and s_i<=V_i for i!=j.
+These conditions,along with the original rank bounds,are also
+SUFFICIENT:remove t from bin j,leaving counts c_j-1>=2 and
+other counts>=3 on the full interval0..M-2. All three residual
+singleton lower/upper bounds hold. For j,the lower bound is Q_j,
+and its upper follows from
+
+  U_M(c_j)+h-t=U_(M-1)(c_j-1).
+
+For i!=j,the lower is the original L(c_i),and the upper is V_i.
+Residual sums total L(M-1);with THREE bins,the pair bounds are
+the complementary singleton bounds. Apply PROVED MI295.
+Necessity is immediate from owning or omitting t. This exact
+owner test is not an assumption of a target partition.
+
+**Why an owner always exists under the stated h bound.** Call
+bin i high if s_i>V_i. There cannot be two high bins i,k:using
+the third bin's lower bound,the total would be at least
+
+  V_i+1+V_k+1+L(c_l)
+   = L(M)+(c_i-1)(c_k-1)+1
+   >= L(M)+(r-1)^2+1 > L(M)+h.
+
+If there is one high bin j,choose it. All others already obey
+s_i<=V_i,and
+
+  V_j+1-Q_j=(c_j-1)(M-c_j-1)-h >=0
+
+because c_j>=r,M-c_j>=2r and h<=(r-1)^2. Thus s_j>=Q_j.
+
+If there is no high bin,it remains to find ANY s_j>=Q_j. Were
+all s_i<=Q_i-1,their total would be at most
+
+  sum L(c_i)+2M+3h-3.
+
+Put K=c1*c2+c1*c3+c2*c3. Their actual total is
+sum L(c_i)+K+h. Expanding c_i=r+u_i with u_i>=0 gives
+
+  K-2M+3 >=3(r-1)^2 >2h.
+
+So the proposed upper total is strictly too small. Some owner
+j qualifies. The exact owner test completes the construction.
+There is no search through partitions or unproved integral lift.
+
+**Sharpness belongs to this pool class.** Take M=3r,
+h0=(r-1)^2+1,all sizes r,and targets
+
+  L(r), V+1, V+1, where V=U_(3r-1)(r).
+
+Their total is L(3r)+h0. Each target lies between L(r) and
+U_(3r)(r)+h0. For THREE bins those singleton bounds imply all
+proper-subset rank bounds by complementarity. But each of the
+two V+1 bins must contain the unique outlier:without it the
+maximum r-subset sum is V. Impossible. At r3 the concrete pool
+is0..7 union{13},targets(3,19,19). This proves sharpness of the
+uniform h threshold,not an obstruction to full-interval SS3.
+
+**Four-bin consequence:singleton extreme slack.** Now partition
+0..N-1 into four sizes,each>=3. Let a be one selected size and
+r the minimum of the OTHER three sizes. Assume full SS. If
+its prescribed sum is U_N(a)-h,where
+
+  1<=h<=min(a,(r-1)^2),
+
+put M=N-a,t=M-1+h and CHOOSE the selected bin to be
+
+  A={M-1,M,...,N-1} minus{t}.
+
+The condition h<=a ensures t<=N-1,so this is a legitimate
+size-a set. Its sum is U_N(a)-h. The remaining pool is exactly
+P above. Its three targets total L(M)+h. For any proper subset
+J of remaining bins of total size C,full SS gives lower L(C),
+and the upper bound on A union J gives
+
+  S_J <= U_N(a+C)-S_A = U_M(C)+h.
+
+Thus all rank bounds for P hold;the outlier lemma completes
+the remaining bins. At h=0 choose A to be the top a tokens and
+apply MI295 directly. Reflecting all values gives the identical
+result within min(a,(r-1)^2) of L(a). No singleton is assumed
+forced except where it actually is;the canonical set is chosen.
+In particular sizes>=3 suffice whenever ANY singleton target is
+within3 of its minimum or maximum. If a>=4 and the other sizes
+are>=3,the same construction reaches slack4. Do not drop h<=a.
+
+**How this advances the claimed unique-CBA question.** In a
+realization minimizing the shortest A->D bin-path length at3,
+a disjoint reverse AB and the unique BA could be exchanged
+neutrally,creating CA while DC is untouched. Hence the full
+MI324 word A^a B^b W B A^d B^e V must have either
+B^b W B A^d V with b>=2,d>=3,or A^a W B A B^e V with
+a>=2,e>=2. No conclusion about the two-edge path is used.
+If V is empty,the first form has CURRENT A at its maximum,
+so the GOAL A is one below maximum;the second form has B one
+below maximum in BOTH current and goal. The new construction
+therefore settles these entire goal-existence branches,whatever
+binary W is. In the first form B's GOAL is L(b+1)+|W|;
+in the second A's GOAL is L(a+1)+|W|. It also settles the
+small-|W| branches that satisfy the displayed singleton-slack
+bound. Arbitrary longer W with nonempty V remains OPEN.
+This is an existence construction,not neutral-shortening of every
+start or a disjoint lift of length3. MI328 is not a dependency.
+
+**Hand controls and unexpected separation of claims.** For r3,
+h4,P=0..7 union{12},targets(13,13,14),choose outlier owner0:
+{0,1,12},{2,4,7},{3,5,6}. The first target hits Q=13 exactly.
+Embedding with N13,a4 gives four bins{8,9,10,11},{0,1,12},
+{2,4,7},{3,5,6},sums(38,13,13,14),singleton upper slack4.
+Reflecting gives sums(10,23,23,22),checking lower slack4 and
+unequal selected size. All values used once,by hand.
+
+Unexpected:the h5 CANONICAL failure does not imply a full
+four-bin failure. N14,sizes(5,3,3,3),targets(50,3,19,19) have
+canonical A={8,9,10,11,12},leaving the impossible h5 pool above.
+Yet A={7,9,10,11,13},B012,C{3,4,12},D{5,6,8} is a literal
+full solution. The sharp bound is for the outlier-pool admission,
+not the SS3 problem or every possible singleton construction.
+No new computation or claimed complete finite audit.
+
+Gut:renewed pull from assigning the troublesome token first,
+with delight at a sharp threshold and a direct test of its limit.
+Reasoned:a complete-looking extension of the VERIFIED three-bin
+mechanism and a four-bin boundary closure,requiring an independent
+carrying read. General SS3 and all central cases remain OPEN.
+Niggle sweep:rank bounds match the actual punctured pool;three-bin
+complementarity is used only with three bins;outlier owner's size
+stays>=2;h<=a keeps the chosen token inside the original pool;
+sharp canonical failure is separated from full feasibility;reflection
+is on sums,not a misoriented error transfer. Send a batched proof
+read with MI328,then continue the remaining central/shared-boundary
+question independently. No review halt;13min ACTIVE.

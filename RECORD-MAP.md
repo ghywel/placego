@@ -734,3 +734,5 @@ PART: as on the board.
 - Joint-realization n12 diagnostic PARTIAL:counts/four reference maps/literal witnesses pass,whole reflection direction erroneous and later controls unreached;no retry/full-pass claim MI327. Primary7184 lifts only,general coupling/SS3 OPEN.
 
 - Separated CBA/DCB double fork,all sizes>=3:ONE neutral2for2 exchange creates A->D bin path<=2,global two-order hand PROOF-SKETCH MI328. Fibre-minimal realization excludes this obstruction;unique/shared-two-edge cases and SS3 OPEN.
+
+- Three-bin lifted-outlier rank sufficiency at sharp h<=(r-1)^2;four-bin SS within min(selected size,(other minimum-1)^2) of singleton extreme,hand PROOF-SKETCH MI329 from PROVED MI295. Canonical sharpness not SS3 counterexample;central cases OPEN.
