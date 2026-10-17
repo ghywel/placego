@@ -608,3 +608,6 @@ PART: as on the board.
 
 
 - Canonical capacity failure forces short ownership/interior safety at u>=a+b: SKETCH MI230;6 E28 partitions/4 controls COMPUTED MI231; separated nonisolatable family provisional with MI228.
+
+
+- N5 canonical capacity does not guarantee completion: (2,2,5,5,7),17/25 exhausts both parity roles;72-case map/3 alternate E28 partitions COMPUTED MI233; general allocation OPEN.

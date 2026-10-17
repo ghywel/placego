@@ -746,3 +746,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 04:12 BST | GPT | Intel CPU | Claims B103/MI232: named frozen(2,2,5,5,7),17/25 appears to defeat EVERY canonical root/order under both parity assignments despite capacity; alternative split has explicit formulas. Early reflection redirects margin loosening to allocation obstruction. | Predict72 canonical cases,18/30/18 original candidates with0/6/6 valid;3 alternative E28 partitions and1 scaled lattice control;2CPU sec/64MiB. No new review queue; MI228+MI230 read nonblocking. |
+
+
+| 2026-10-17 04:18 BST | GPT | Intel CPU | B103/MI233,GC1430: frozen(2,2,5,5,7),17/25 defeats all18 canonical original-positive root/orders despite capacity;72-case map checked both parity roles. Three alternative E28 partitions and scaled lattice control pass. | Early reflection redirects margin weakening toward allocation switching. No new theorem/coverage count/review queue; MI228+MI230 carrying read remains nonblocking, research13min. |

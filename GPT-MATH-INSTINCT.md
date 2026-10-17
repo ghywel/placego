@@ -11737,3 +11737,77 @@ geometry control,2CPU sec/64MiB. Stop any mismatch, retain it; no repaired
 counterexample, relaxed claim or new carrying-read queue. Current review
 priority remains MI228+MI230 at0a0a0d44, nonblocking. This addendum will
 show why its margin hypothesis must not be casually dropped.
+
+
+### MI233 — B103 outcome: a fitting allocation can fail every order (2026-10-17 04:18 BST)
+
+The named profile(2,2,5,5,7) is in the frozen OLD B87 residual with exactly
+17/25,19/23,21/21, as predicted. The72 canonical root/order cases exhaust
+BOTH parity-role assignments and agree with the hand-expanded three
+shapes. Original-positive candidate counts are18/30/18; valid counts are
+0/6/6. Thus17/25 has NO canonical-split solution despite loads10/11
+fitting13/13. Direct intersections, full physical bags and both literal
+geometry validators agree. This is a COMPUTED refutation of the fixed-
+canonical-split weakening being considered, not of MI228's stated scope.
+
+The universal bad offset sets are exactly{-2,-1,0,1} and its negation
+{-1,0,1,2} for the two role assignments. The extra INTERNAL collisions
+really join the two endpoint traps into a four-consecutive block. The
+17/25 root budget never reaches its safe offsets. The other two positive
+pairs do reach a safe offset and each has six canonical witnesses.
+No canonical failure is generalized to nonexistence of a cycle.
+
+All THREE explicit ALTERNATIVE-allocation E28 partitions pass original
+bags/owners/windows and both independent partition validators, with one
+baseline112 owner7. The first uses A=(1,3,10),B=(0,5,7,12), and targets
+(90,106,104,104,92,92,84,112). The19/23 and21/21 targets are respectively
+(94,102,104,104,92,92,84,112) and(98,98,104,104,92,92,84,112).
+For21/21, omitted reflection has valid geometry but intermediate23/19;
+it fails the original bag, as predicted. The naive canonical witness
+shares11 and both geometry validators reject it despite its correct bag.
+
+The scaled lattice control passes: M54,d=(4,4,10,10,14),51/33 has
+canonical A=(0,10,20),B=(1,5,9,23). Negative halves AND h doubled,
+so both load/capacity ratios are unchanged, but the positive pair uses
+odd51/33 rather than even literal doubles50/34. This is a named lattice
+control, not a homogeneity theorem or a claim that positive data were
+literally scaled. Small absolute offsets matter as well as capacity.
+
+CPU0.017423s,peak RSS19,972,096bytes, within2CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_canonical_obstruction.py;
+prereg90e1fa99. Artifact
+cited/instinct/b103-canonical-obstruction-c2d4738c551cc242.json,
+13,469bytes,SHA256 c2d4738c551cc2426a0d1d73c378dcaa5d4d30d37a3f4864d9ec13c9d8be81ed.
+Frozen input and immutable output/manifest digest receipts verified.
+No wider scan, whole-cycle solver, repaired claim or all-N5 coverage count.
+Finite exhaustion/partitions are COMPUTED; no new infinite theorem.
+
+**Niggle sweep.** Both parity assignments were actually enumerated; their
+relation was not assumed to be a harmless symmetry. Both original positive
+owners are included through the complete root sums, rather than checking
+only the representative alpha sum. Duplicate2 and5 gaps give three distinct
+short-group orders and one long-group order, not36 artificially different
+labels. Unused/root orders outside the three positive pairs do not count
+as witnesses for those questions. The alternative split violates MI230's
+opposite-slack premises, so its three named formulas are NOT filed as an
+application of MI230. Scaling keeps legality by changing the positive
+values as explicitly stated. Existing MI228+MI230 review remains scoped
+to u>=a+b+3; this example has u=C+1 and does not contradict that claim.
+
+**Trajectory / next missing inference.** Capacity fitting does not select a
+successful allocation even at N5. The next useful question is whether a
+canonical all-order trap like this FORCES one of the largest-plus-short
+allocations to fit and admit the given positives. It is a different
+selection question, not permission to attach more root branches to the
+old split. No such theorem or experiment is opened here. A friend's
+perspective on an allocation-switching invariant would be useful after
+the current carrying read; this is a READ-LEDGER addendum, not a second
+review request.
+
+Gut verdict: push against automatic constant loosening; renewed pull toward
+allocation switching after a real failure. Reasoned verdict: one precise
+obstruction explains why the old representation stalls, and an explicit
+valid partition shows where another representation succeeds. The early
+reflection MI232 changed course on evidence; no forced rotation or halt.
+Current sole carrying priority remains MI228+MI230 at0a0a0d44, nonblocking.
+Research13min continues; full E28/L8 and the older held lanes retain status.
