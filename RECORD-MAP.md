@@ -720,3 +720,5 @@ PART: as on the board.
 - MI315 two-triple existence is now a corollary of PROVED MI295;MI316 audit CANCELLED BEFORE EXECUTION,no pass. MI317 records adoption and bounded n12,E2 descent-diagnostic design next,not a run.
 
 - Complete n12,3^4,E2 diagnostic:630 SS targets/235054 starts;adjacent/single/plus2for2 trapped4/4/0,max7/6/5,independent coverage/maps/reflection controls COMPUTED MI319. Traps exactly MI301;general SS3 OPEN.
+
+- Reflected n12 five-move extremals:hand supplier/last-touch lower bound,first-two-step exhaustion;later unrestricted energy cannot shorten remaining3,SKETCH explanation MI320. No general SS3 result/new run.

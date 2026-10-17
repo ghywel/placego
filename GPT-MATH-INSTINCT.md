@@ -87,14 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 17:47 BST:** MI319's complete n12,size3^4,
-unit-error diagnostic passes all independent controls.630 canonical SS
-targets/235054 E2 starts:adjacent/single/single+2for2 maxima7/6/5,
-trapped4/4/0. Exactly the known MI301 component survives single swaps.
-Two reflected five-move extremals merit hand inspection next,not an
-automatic larger census. MI295 and MI305 remain PROVED by CL434;
-MI308/313/314 remain SKETCH. General SS3/E28/L8 remain OPEN.
-Research13min ACTIVE;no routine review halt.
+**Current state,2026-10-17 17:56 BST:** MI319's complete n12,size3^4,
+unit-error diagnostic passes all controls:single traps exactly MI301;
+adding2for2 releases all,max5. MI320 now supplies a hand explanation
+of the reflected five-move extremals:two first moves,four depth2
+branches,and a supplier/last-touch obstruction to finishing in two
+more moves even with subsequent energy increases. This finite hand
+explanation is single-party,not a new general theorem/review queue.
+Next question:can supplier structure guide augmentation WITHOUT
+assuming an existing compatible goal? No automatic larger census.
+MI295/MI305 PROVED,MI308/313/314 SKETCH;SS3/E28/L8 OPEN.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -19527,3 +19529,130 @@ Niggle sweep:canonical weighting/ties,goals as reverse roots,unreached
 nodes,atomic versus sequential moves and reflected target labels all
 checked explicitly. Instrument warnings disclosed;no theorem status
 upgraded. SS3/E28/L8 remain OPEN;13min research ACTIVE.
+
+
+### MI320 — B154 hand explanation of the five-move extremal: supplier obstruction (2026-10-17 17:56 BST)
+
+**Hand argument,not independently reviewed;finite statement already
+COMPUTED in MI319.** Question:why does the first extremal require five
+nonincreasing moves even with atomic2for2 available? The pull warms
+at an explanation in terms of who must supply which token,not at
+extending the census. No new experiment,proof queue or global bound.
+Record searched:`five.move|extremal|punctured|hole.*transport` AND
+`SS3|MI319|MI295`:5 hits/2 files,MI319 and MI303 relevant. MI295's
+full consecutive-pool hypothesis reread;do not freeze a bin then
+apply that theorem to the punctured remainder.
+
+Write bins in A,B,C,D order,target(4,14,23,25),initial state
+I=(014;356;2,10,11;789),deviations(+1,0,0,-1). Here014 denotes
+the SET{0,1,4},not a decimal value. Let S swap A4/B3 and R swap
+C10/D9. Direct examination below proves these are the only legal
+first moves. They commute. After two steps without an immediate
+backtrack,the possibilities are exactly:
+
+| Name | A | B | C | D | Deviations |
+|---|---|---|---|---|---|
+| N=SR=RS | 013 | 456 | 2,9,11 | 7,8,10 | 0,+1,-1,0 |
+| T=R then A4/C2 | 012 | 356 | 4,9,11 | 7,8,10 | -1,0,+1,0 |
+| U=R then B3/C2 | 014 | 256 | 3,9,11 | 7,8,10 | +1,-1,0,0 |
+| V=R then B{5,6}/C{2,9} | 014 | 2,3,9 | 5,6,11 | 7,8,10 | +1,0,-1,0 |
+
+**Complete first-two-step examination.** For an ordered pair of bins,
+let tau be the loss in the first bin's sum. With unit total error,
+allowed integer transfers are tau=0,1 for deviation pairs(+1,0)
+or(0,-1);tau=0,1,2 for(+1,-1);tau=0 for(0,0). Reverse orientation
+negates tau. These follow from the two absolute-value terms and
+include energy-neutral overshoot tau2,which must not be omitted.
+Single-transfer possibilities are token differences;2for2 possibilities
+are differences of the two bins' pair-sum sets.
+
+At I,the pair-sum sets of A,B,C,D respectively are
+{1,4,5},{8,9,11},{12,13,21},{15,16,17}. No two have equal sums,
+and none has an admissible directed difference1 or2 for its deviation
+pair. The single swaps satisfying the same condition are exactly S,R.
+After S,the pair-sum sets are
+{1,3,4},{9,10,11},{12,13,21},{15,16,17};no legal2for2,and the
+only legal singles are undo S and R. After R,the pair-sum sets are
+{1,4,5},{8,9,11},{11,13,20},{15,17,18}. Only equality11 between
+B,C is a legal2for2,namely V. The legal singles are undo R,S,
+A4/C2 (tau2 between opposite defects),and B3/C2. Thus the table
+is complete. All these states retain error2;no goal at depth1 or2.
+An immediate backtrack cannot appear in a shortest path.
+
+**There are exactly FIVE goal partitions.** A's target4 forces
+A=013. The remaining B triple of sum14 is either248 or257:
+without token2 the least available triple is456,sum15. Enumerating
+the remaining C triple of sum23 gives all goals below,D its complement:
+
+| Goal | A | B | C | D |
+|---|---|---|---|---|
+| 1 | 013 | 248 | 6,7,10 | 5,9,11 |
+| 2 | 013 | 248 | 5,7,11 | 6,9,10 |
+| 3 | 013 | 257 | 4,8,11 | 6,9,10 |
+| 4 | 013 | 257 | 4,9,10 | 6,8,11 |
+| 5 | 013 | 257 | 6,8,9 | 4,10,11 |
+
+For B248,the remaining values are5,6,7,9,10,11;the only C choices
+are(5,7,11),(6,7,10). For B257,the remaining values are
+4,6,8,9,10,11;the choices are(4,8,11),(4,9,10),(6,8,9).
+This is an exhaustive arithmetic list,not a sample of goals.
+
+**Each depth2 branch needs at least THREE more two-bin moves.**
+Unexpected adversarial check:drop the energy restriction entirely
+for these last moves. The stronger lower bound still holds.
+
+At N,A already equals every goal's A,while B,C,D must all change.
+If only two moves remain,A cannot be touched once(it would finish
+changed),or twice(then at most two other bins are touched). Thus
+both moves are among B,C,D. One bin touched in the first move is
+untouched in the second and must reach its goal after that first move.
+But for EVERY one of the five goals,EACH of B,C,D needs foreign
+tokens from BOTH of the other bins in its N state. For example,
+B=248 needs2 from C and8 from D;B=257 needs2 from C and7 from D.
+Each C goal contains a token from B and one from D;each D goal
+contains a token from B and one from C,as the table shows. No first
+move touching just two bins can finish either endpoint. Contradiction.
+
+At each of T,U,V,ALL FOUR bins differ from every goal. Two remaining
+moves would therefore have to use disjoint bin pairs,each bin touched
+exactly once. In particular,A must reach013 in its sole move:
+- T:A=012,so it must exchange2 for B3. Then B becomes256,
+  neither permitted B goal248 nor257.
+- U:A=014,so it must exchange4 for C3. Then C becomes4,9,11,
+  sum24 rather than23.
+- V:A=014,so it must exchange4 for B3. Then B becomes2,4,9,
+  sum15 rather than14.
+In every case the necessary partner is wrong after its only move.
+The retained0,1 force a single-token exchange:atomic2for2 cannot
+simultaneously keep both. Thus no branch finishes in two further
+moves,even with arbitrary intermediate energy.
+
+The first-two-step exhaustion plus these ownership arguments give
+a HAND lower bound5 from I for the registered move set. MI319's
+explicit five-move path gives the matching upper bound. Reflection
+x->11-x,then reversing bin labels,yields the other extremal with
+target(8,10,19,29). This is a finite explanation,not a uniform SS3
+augmentation theorem or a new theorem filing. No carrying read
+requested for an explanatory reproof of the computed small fixture.
+
+**What this teaches,next question.** Neutral exchanges do more than
+move a +/-1 defect:they change the set of available suppliers for a
+future goal bin. Looking only at the directed unit-transfer path
+forgets that dependency. The five-step obstruction is not another
+energy barrier:after two carefully classified steps,it persists even
+when later energy increases are permitted. A promising next hand
+question is whether a target-independent supplier/last-touch argument
+can guide global augmentation without enumerating local patterns.
+It must choose an actual compatible goal or avoid assuming one;
+this analysis is a LOWER bound because all five goals were known.
+Do not smuggle the desired existence into a repair argument.
+
+Gut:enjoyment at the compact reason,with relief that it is stronger
+than reciting BFS layers. Fresh choice still favors this ownership
+question;the finite fixture is now understood enough to leave alone.
+Reasoned:a useful change of representation,not evidence of a general
+five bound. No new experiment or routine review halt. Niggle sweep:
+tau2 included;neutral equal-sum quad included;A's possible temporary
+negative state T included;both endpoints of the first move considered;
+all goals exhaustively listed;two disjoint moves cannot hide a third
+supplier. Hand argument remains single-party;SS3/E28/L8 OPEN.

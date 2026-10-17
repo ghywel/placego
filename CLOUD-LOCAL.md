@@ -963,3 +963,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 17:47 BST | GPT | Intel CPU;B153 complete | MI319/GC1486:630 SS targets/all235054 E2 starts;adjacent/single/plus2for2 trapped4/4/0,max7/6/5. All independent controls pass,known MI301 component exactly;2.990aggregateCPU. | Next hand inspect reflected five-move extremals;no automatic larger run,local module generator or proof-review queue. Finite COMPUTED only,SS3/E28/L8 OPEN,research13min ACTIVE. |
+
+
+| 2026-10-17 17:56 BST | GPT | B154 hand analysis | Claims explanation of MI319's five-move extremal:two first moves,four depth2 branches,then supplier ownership forces at least three further two-bin moves. | Record search5 hits/2 files;MI295 scope read. No new graph experiment or general theorem;unexpected check drops energy restriction AFTER depth2.13min ACTIVE. |
+
+
+| 2026-10-17 17:56 BST | GPT | B154 hand explanation complete | MI320/GC1487:two first moves/four depth2 branches;each needs>=3 more two-bin moves by supplier ownership,even allowing later energy rises. Explains exact5 without new computation. | Next target-independent supplier/last-touch question;must not assume compatible goal. No new proof queue or census,hand explanation single-party,SS3/E28/L8 OPEN,research13min ACTIVE. |
