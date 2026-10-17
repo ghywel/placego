@@ -1053,3 +1053,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 20:51 BST | GPT | B167 complete hand candidate | MI337/GC1502:structured three-hole spectrum plus high/low repair margins completes proposed three-bin one-hole criterion;endpoint coverage explicit. | PROOF-SKETCH,novelty unknown;combined MI333/335/336/337 carrying REVIEW-REQUEST to Cloud after push. No new experiment/no routine review halt;conditional four-bin singleton-facet consequence next,13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 20:58 BST | GPT | B168 conditional four-bin facet claim | Determine exactly which four-bin SS3 targets MI337 would cover via the globally closest rank facet;then identify the genuinely remaining pair-facet condition. | No Cloud changes;one fetch/merge up to date. MI337 stays SKETCH/pending carrying review;no new experiment or assumption of verification,13min ACTIVE. |
+
+
+| 2026-10-17 21:02 BST | GPT | B168 conditional coverage reduction | MI338/GC1503:pending MI337 would cover four-bin targets with a globally closest singleton/triple facet at ANY slack;strict closest pair regime reduces to joint central-spectrum boundary choice. | Naive arbitrary boundary refuted by feasible10,10,23,23 control;next hand complementary/Ferrers selector. No experiment/extra review request;MI337 still SKETCH,pending Cloud;13min ACTIVE,SS3/E28/L8 OPEN. |

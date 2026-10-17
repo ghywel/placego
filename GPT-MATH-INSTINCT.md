@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 20:51 BST:** B167/MI337 has a COMPLETE hand candidate
-for three prescribed bins of sizes>=3 on a one-hole interval:
-individual subset-sum feasibility plus total conservation suffices.
-The missing-pivot branch now completes using an exact STRUCTURED
-three-hole spectrum and direct high/low repair margins;MI336 supplies
-the legal-pivot branch,with endpoints explicitly audited in MI337.
-Status PROOF-SKETCH,independent carrying read PENDING;novelty unknown.
-Cloud gets a combined REVIEW-REQUEST for MI333/335/336/337. No new
-experiment. Next independent work:conditional four-bin closest-singleton
-facet consequence,without treating this candidate as verified.
-13min ACTIVE;four-bin SS3/E28/L8 remain OPEN.
+**Current state,2026-10-17 21:02 BST:** B168/MI338 derives a CONDITIONAL application
+of pending MI337:four-bin full-interval SS3 holds whenever a singleton
+or its complement is a globally closest rank facet,at ANY slack.
+The remainder is a strict closest-pair cut h<min(ab,cd),with an
+exact simultaneous boundary-spectrum selection question. Arbitrary
+boundary choice fails on10,10,23,23 despite a literal partition;
+next hand question uses complementary/Ferrers boundary choices,
+not another census. The uniform central-spectrum version is a
+STRONGER sufficient question,not asserted equivalent. MI337 remains
+PROOF-SKETCH,pending Cloud carrying read at d856063f;no extra review
+queue or review halt.13min ACTIVE;SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -21574,3 +21574,151 @@ size2 control retained;canonical legal-pivot failure repaired;
 formal pivot is never treated as a token;endpoint holes accounted
 for;arbitrary three-hole generalization explicitly refuted. No
 experiment,no proof status upgrade.13min ACTIVE.
+
+### MI338 — B168: conditional four-bin coverage and the remaining joint boundary selector (2026-10-17 21:02 BST)
+
+**Hand conditional consequence of MI337,not a verified SS3 theorem.**
+Record searched:`closest.*(singleton|facet)|least.slack|pair.*slack`
+AND `four.bin|SS3|MI337|MI335`:11 hits/3 files. Relevant sources:
+MI305/CL434's verified boundary-window lemma,MI311's complete-spectrum
+ceiling,and pending MI337. No new literature theorem imported and
+no experiment. The pull is to find out exactly how much the new
+candidate would change the four-bin target,without waiting for review
+or treating a pending claim as fact. Kill test:do the original
+inequalities actually protect ALL residual cuts,not just singletons?
+Unexpected check:an arbitrary pair pool with the correct size/moment
+may still miss a requested scalar sum. No new review request.
+
+**1. A closest singleton facet would suffice,at any distance.**
+On the FULL interval P=0..N-1,write L(t)=t(t-1)/2.
+Four sizes c_i>=3 total N;targets total L(N). For every nonempty
+proper index subset I,write C_I=sum(c_i:i in I),S_I=sum(s_i:i in I),
+and lower slack h_I=S_I-L(C_I). Full SS means h_I>=0 for all14
+cuts. The upper slack of I is exactly h_(I-complement).
+Let h be the GLOBAL minimum of these14 lower slacks.
+
+Suppose a singleton or its complement attains h. Reflect ORIGINAL
+values/targets if needed,so A,size a,has s_A=L(a)+h.
+For ANY nonempty proper group J of the other THREE bins,let K
+be its nonempty complement among those three. The original upper
+slack of K is h_(A union J)>=h. Therefore
+
+  S_J =L(N)-s_A-S_K
+      >=L(N)-L(a)-h-(U_N(C_K)-h)
+       =L(a+C_J)-L(a)=F_(C_J).
+
+For ANY actual size-a A-set realizing s_A,the least C_J values
+of R=P minus A sum at most F_(C_J),by original rank comparison.
+Thus EVERY residual lower cut holds;complementation gives every
+upper cut. This is stronger than only checking each remaining bin.
+It uses original PAIR cuts as well as singleton slacks.
+
+Choose A by the full-interval prefix/suffix/pivot construction:
+l+k=a-1,low prefix0..l-1,high suffix N-k..N-1,pivot p.
+It realizes every s_A in its actual range (MI335),and R is an
+interval with at most one hole. For a remaining bin of size r,
+a residual minimum+1 omission would require p-l=r and
+its target L(r)+lr+1. But the displayed bound for that singleton
+is L(r)+ar,and (a-l)r=(k+1)r>=3. A residual maximum-1
+omission is a minimum+1 omission for its TWO-bin complement J;
+the same bound applies with C_J>=6. Thus every remaining target
+is individually feasible in R,not merely rank-feasible.
+MI337,IF correct,now partitions R into its THREE bins.
+
+This covers the entire region in which a globally closest facet
+is singleton/triple,including ties. There is NO small-slack bound.
+A central hand control:sizes3^4,targets(16,16,17,17),N12.
+Minimum singleton/upper slack is13;every pair slack is>=17.
+Partition(0,5,11)/(1,6,9)/(2,7,8)/(3,4,10) is literal.
+The application is not restricted to old boundary distances0..4.
+This is a consequence of the pending theorem,not its verification
+or a novel claim about the already checked finite n12 domain.
+
+**2. The remaining strict pair-facet regime is precise.**
+If the preceding case does not apply,a pair AB attains the global
+minimum h,STRICTLY below every singleton/upper-singleton slack.
+Orient it lower and write sizes a,b,c,d, m=a+b,n=c+d,
+S_AB=L(m)+h. The complementary pair CD has upper slack h.
+Define x=s_A-L(a),and z=U_N(c)-s_C. Conservation gives
+
+  s_B=L(b)+ab+h-x;
+  U_N(d)-s_D=cd+h-z.
+
+Strict singleton comparison implies
+
+  h<x<ab, h<z<cd;
+  in particular 0<=h<min(ab,cd).
+
+Do not discard the other original singleton and CROSS-PAIR
+inequalities;these displayed bounds are consequences,not an
+assertion that those other inequalities are redundant. A pair tie
+with a singleton is already covered conditionally by section1.
+
+Choose an actual size-m boundary pool P0 within0..N-1 with
+sum(P0)=L(m)+h. Put Q0={N-1-v:v in P minus P0}.
+Then |Q0|=n and sum(Q0)=L(n)+h. A full partition follows exactly
+when P0 has an a-subset of sum L(a)+x AND Q0 has a c-subset
+of sum L(c)+z. Reflection of the complement accounts for z;
+no boundary is presumed to have both properties. This is the
+remaining simultaneous selector,with the actual targets retained.
+
+A tempting STRONGER sufficient question,not an equivalent theorem:
+for all sizes>=3 and integer0<=h<min(ab,cd),can one choose P0
+so that BOTH spectra contain the full central intervals
+
+  Sigma_a(P0) contains[L(a)+h,L(a)+ab],
+  Sigma_c(Q0) contains[L(c)+h,L(c)+cd]?
+
+Such a choice would finish the strict pair regime uniformly in
+x,z,and hence,conditional on MI337,the full four-bin statement.
+It may be too strong:the original cross-cut bounds can restrict
+which x,z occur. A counterexample to this uniform question would
+reject the stronger recipe,not SS3. MI311's ceiling concerned FULL
+actual spectra,not just these central target intervals;do not
+misapply it as an obstruction to this different question.
+
+**3. The arbitrary-boundary shortcut fails on a feasible target.**
+Sizes3^4,N12,targets(10,10,23,23). Original singleton slacks
+are at least7. The AB lower pair slack is h=20-L(6)=5;
+its complementary upper slack is5;all cross-pair lower/upper
+slacks are18. So this is genuinely a STRICT closest-pair case.
+The actual candidate pool P0={0,1,2,3,4,10} has size6,sum20,
+but its triple spectrum is[3,9] union[11,17]:target10 is missing.
+The corresponding reflected complement is{0,2,3,4,5,6},also
+size6,sum20. A correct pool moment and protected rank bounds do
+not supply the first actual scalar sum. Here x=z=7 lies strictly
+between h5 and ab9,so even the central request is affected.
+
+A different boundary P1={0,1,2,3,6,8},same size/moment,works:
+A={1,3,6},B={0,2,8},C={4,9,10},D={5,7,11} give10,10,23,23.
+No compatible goal was assumed in the failed pool argument;this
+literal partition is a control of the TARGET,not evidence that
+every boundary works. The one-outlier gap is consistent with
+MI329's sharp threshold4 for triple bins. Do not reopen an
+outlier ownership case tree to reprove that known calculation.
+
+**What changed,next cheap test.** Conditional on MI337,the whole
+four-bin question reduces to strict closest PAIR cuts and a joint
+central-spectrum boundary selector. The central singleton region
+would be covered at arbitrary slack;this is not a near-boundary
+restatement. The naive arbitrary boundary is killed by an actual
+feasible control. Next choose a boundary representation that changes
+BOTH complementary spectra together—Ferrers displacements and
+its transpose are a natural exact encoding—and test the stronger
+central-interval question by hand before proposing an experiment.
+Do not automatically grow a list of boundary modules or n-values.
+
+Gut:the pull is now on how complementary boundaries cooperate,
+not on manufacturing an additional lemma during Cloud's read.
+Reasoned:a conditional coverage reduction with a sharply isolated
+remaining inference,and a genuine kill test for a tempting shortcut.
+MI337 remains PROOF-SKETCH until its carrying review. No new
+PROOFS entry or review queue for this conditional corollary;the
+pending review of the underlying candidate has not been enlarged.
+Niggle sweep:minimum over ALL14 cuts,not only8 singleton slacks;
+upper slack uses the cut complement;maximum residual gap uses a
+TWO-bin complement;reflection applied to Q's targets;ties with
+singletons included;strict pair bounds derived without discarding
+cross cuts;uniform spectrum question labelled stronger;negative
+boundary has a positive full-partition control.13min ACTIVE,
+SS3/E28/L8 OPEN.

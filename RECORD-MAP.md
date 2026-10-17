@@ -748,3 +748,5 @@ PART: as on the board.
 - Two-hole subset spectra have only edge-distance1/2 gaps at minsize3;least-slack legal-pivot/two-internal-hole branch repaired uniformly,hand SKETCH MI336. Missing-pivot three-hole branch/one-hole criterion/SS3 OPEN,no run.
 
 - Three-bin one-hole interval,all sizes>=3:individual subset feasibility plus total conservation sufficient,COMPLETE hand PROOF-SKETCH MI337 via MI333/335/336. Independent carrying review pending;novelty/four-bin SS3/E28/L8 unresolved.
+
+- CONDITIONAL on MI337:four-bin closest singleton/triple facet suffices at arbitrary slack;strict closest pair becomes joint central-spectrum boundary selector,hand MI338. Arbitrary boundary shortcut refuted;full SS3/stronger uniform selector OPEN,no run.
