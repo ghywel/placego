@@ -3,6 +3,8 @@
 // Stop first negative or cap. No repair, alternate buffer, other parity or level.
 // 100k states/profile, 50M total, 60 CPU s, 90 wall s, 256 MiB RSS.
 // Predictions, counterfactuals and independent controls: GPT-MATH-INSTINCT MI269.
+// OUTCOME MI270: ALL258180 literal certificates checked; 2106939 nodes,3.51046 CPU s.
+// Stream SHA256291cc55b34a0893e93f93b7c8a0cbc17031f84195ea1636e114e9dd30f974c01.
 #include <algorithm>
 #include <array>
 #include <chrono>

@@ -649,3 +649,5 @@ PART: as on the board.
 - SB7 smallest-buffer54 boundary fixtures pass, COMPUTED MI266; canonical one-hole remainder untested at that block (later MI268); a91 slice follows known verified n7 result, general all-odd E28 OPEN.
 
 - Canonical buffer SAME54 profiles pass, COMPUTED MI268;15 exact one-hole triple domains, one source-supplied. Complete258180 q8 certificate attempt planned, NOT RUN;general statements OPEN.
+
+- ENTIRE258180 all-odd E28 targets have canonical smallest seven-set plus seven triples, literal stream/independent original-target enumeration+DP COMPUTED MI270; external verification requested GC1451, fullE28/L8 OPEN.

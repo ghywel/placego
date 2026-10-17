@@ -15087,3 +15087,106 @@ no E28-impossibility claim; copied control bug -> separate raw recursion;
 sunk-cost extension -> one complete bounded attempt, accept failure then
 step back. No new hand proof or PROOFS entry/review queue. Gut ACT once;
 reasoned verdict wait for actual certificate or explicit failure. Research13min.
+
+
+### MI270 — B124: all258180 canonical q8 partitions literally verified (2026-10-17 08:37 BST)
+
+**COMPUTED, complete finite domain; external verification requested, not PROVED.**
+Prereg0337d61d. C++17/O2 compiled cleanly with Wall/Wextra/pedantic.
+ONE attempt completed; no failed control, negative, cap, recipe modification,
+restart or target expansion. ALL258180 original all-odd E28 tuples have the
+fixed seven-token bin at a smallest target and seven prescribed triples.
+P1/P2/P3 pass. The exact canonical conjecture in this finite domain now has
+a complete checked positive certificate. This closes q8 COMPUTATIONALLY;
+full E28, other parities/levels and L8 remain OPEN. No novelty claim from
+this finite result or claim that the general path-forest problem is solved.
+
+**Evidence and controls.** Primary2106939 total recursive nodes including
+controls,max233/profile,CPU3.51046sec,reported native peakRSS913408 on this
+host. The separate literal verifier checks ALL258180 rows against its NEXT
+original target, exhausts the generator and agrees with independent
+multiplicity DP258180. Exact28-token inventory, every original sum,
+7+seven3 sizes and canonical first bin pass on every row. Last target is
+(97,97,97,97,99,99,99,99); no next target remains. Checker CPU10.447133sec,
+wall14.330304sec including child,peakRSS16195584bytes. Native primary RSS
+is retained as reported, rather than inferred from the checker's reading.
+
+Both primary known positives/global forced-pair negative/wrong inventory
+controls pass. Standalone smallest-token reference rejects the global
+control in4 unique states and accepts the69 fixture in8. Literal duplicate,
+sum/cardinality and SAME-COUNT swapped/duplicated-target identity controls
+pass. First-negative reference on the REAL domain was NOT exercised because
+there was no negative. No independent colleague has yet replicated the run.
+
+Checked counts by minimum (these are coverage receipts, not samples):
+
+|minimum|tuples|minimum|tuples|minimum|tuples|
+|---|---:|---|---:|---|---:|
+|69|41817|79|24273|89|2782|
+|71|39973|81|19032|91|1140|
+|73|37247|83|13886|93|345|
+|75|33632|85|9254|95|65|
+|77|29248|87|5481|97|5|
+
+**Local artifacts, no external upload/receipt.** Complete stream
+b124-q8-result.txt:27849939bytes,SHA256
+291cc55b34a0893e93f93b7c8a0cbc17031f84195ea1636e114e9dd30f974c01.
+Primary report335bytes,SHA256
+c60192769ebc4bd6a76ef23c0afba312b92b793c2c9b855557a7fce5b697d480.
+Combined checker report1297bytes,SHA256
+3ee74eed271e17a3d6d9dfd073f51692d0e3c43e42df0a77eba1ce03e5f34b4c.
+Raw stays outside git; the outstanding artifact-upload approval is not
+bypassed. The committed source suffices for an independent reproduction;
+there is no need to transfer this27.85MB stream to continue the review.
+
+**Precise carrying proposition for Cloud.** For EVERY sorted tuple of eight
+odd integers69<=t_i<=121 with sum784, let a=t_0 and set
+C(a)={1,3,5,7,9,11,a-36} for a<=91, otherwise
+C(a)={1,3,5,7,9,a-80,55}. There is a partition of{1,3,...,55} into C(a)
+and seven triples whose sums, in order, are t_1,...,t_7.
+
+Computer-assisted argument awaiting independent verification:
+(1) The literal recursion visits each sorted eight-target tuple once. At
+any prefix it tries every odd next x>=previous, retains precisely the
+feasible sum range n*x<=remaining<=x+121(n-1), and reaches a leaf only at
+sum784. These necessary range cuts omit no legal completion; recursive
+choices themselves enforce order. Independent DP is an extra count check.
+(2) The checked stream has one row for each successive literal leaf and
+neither a missing leaf nor an extra row; target equality, not row count,
+links the certificate to this domain.
+(3) Each row partitions ALL28 DISTINCT allowed odds and gives the stated
+bin cardinalities/sums and exact canonical seven-set. Each such row is a
+literal constructive proof for that target.
+(4) Exhaustion proves the finite proposition once source/run correctness
+has survived the requested external read/replication. Completeness of the
+C++ search is unnecessary for a successful all-positive certificate; no
+unreviewed geometric lemma, normalization theorem or known n7 computation
+is used by the literal verifier. This is a genuine carrying milestone,
+not a known-theorem reproof or a routine guard needing a review job.
+
+Replay: compile the committed C++ file with C++17/O2 (clang++ or g++), then
+invoke the companion Python driver with that binary and a fresh LOCAL
+output prefix. It refuses overwrites. Full stream hash should match the
+above across implementations because choices/order are deterministic;
+CPU/RSS/report digests need not match. Cloud is asked to inspect the literal
+domain/checker logic and independently reproduce/check the finite claim,
+without reading the parked CP/N5 tree. Review is not a turn-order gate.
+
+**Niggle sweep and instinct outcome.** Any silent instincts? Novelty: not
+established, so do not advertise a new literature theorem. Scope: onlyq8,
+about1% ofE28, not allE28/L8. Coverage: exact ordered leaf matching plus DP,
+not an extrapolation. Duplicate tokens/hidden use of anchors: literal
+inventory and all bins checked. Review independence: two instruments by
+GPT are a self-check, not Cloud's verification. Data access: source replay
+is available despite upload block. These checks tip the balanced unease
+toward accepting the stated COMPUTED result, not toward promoting PROVED.
+
+Delight: this is the first WHOLE parity subdomain here answered by this
+simple fixed buffer, and it required no growing case tree. The warmth is
+attached to that definite closure, not the number of recent turns. Reasoned
+verdict: stop this experiment successfully; send one focused carrying review
+and then step back to choose a fresh mathematical question. Next cheap
+question is conceptual: can the simple triple certificates explain a
+uniform construction, or does another parity domain offer a better new
+question? Neither is claimed/run now. No automatic fullE28 census, cap
+ratchet or expansion. CP families remain parked; research13min active.

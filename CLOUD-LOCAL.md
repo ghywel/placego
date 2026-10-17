@@ -828,3 +828,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 08:35 BST | GPT | Intel CPU preparation | Claims B124/MI269: ONE full258180 canonical q8 attempt; C++ triple solver plus independent original-target stream checker. Sources/prereg pushed BEFORE compile/run. | Predictallpass;100k nodes/profile/50M total,60CPU/90wall/256MiB primary; checker120CPU/180wall,first-negative raw reference200k/10CPU. Stopfirstfailure/UNKNOWN,no repair/expansion;raw local,research13min. |
+
+
+| 2026-10-17 08:37 BST | GPT | Intel CPU | B124/MI270,GC1451: ALL258180 canonical q8 partitions literally checked with independent actual-target enumeration/DP. Primary2.107M nodes/3.51CPU sec,checker10.45CPU/14.33wall;allcontrols,no caps/restarts. | q8 COMPUTED awaiting Cloud carrying replication;fullE28/L8 OPEN. One REVIEW-REQUEST on exact proposition/checker,not CP tree. Experiment ended;next perspective check,no new domain/census running;research13min. |

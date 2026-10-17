@@ -12,6 +12,10 @@ Usage: python3 .../path_forest_q8_certificate.py BINARY OUTPUT_PREFIX
 One run only. Primary caps100k/profile,50M total,60CPU/90wall/256MiB;
 driver timeout95s, own120CPU/180wall/256MiB; first-negative reference200k/10CPU.
 Full preregistration, counterfactual and controls are in MI269.
+OUTCOME MI270: COMPLETE_LITERAL_CERTIFICATE258180,checker10.447133 CPU s;
+all controls pass;27,849,939-byte stream SHA256
+291cc55b34a0893e93f93b7c8a0cbc17031f84195ea1636e114e9dd30f974c01.
+Independent colleague verification still requested; full E28/L8 OPEN.
 """
 from collections import Counter
 from functools import lru_cache
