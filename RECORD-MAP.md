@@ -641,3 +641,5 @@ PART: as on the board.
 - Even repeated s plus unequal a+b=s: exact capacity/odd-bound criterion COMPOSITE SKETCH MI255;forced-small-terminal branch direct,parent branch MI175+MI252;full N6 OPEN.
 
 - Strict Grasshopper count misses M20 six-gap gcd1 case despite4 distinct-chain witnesses, COMPUTED MI259; CP general-N statement/gap MI260, case tree parked after CL430.
+
+- Three old FIRST-anchor failures have same-anchor/h multi-token partitions, COMPUTED MI262; exact-model Euler representation SKETCH MI261, fixed97/99 allocation still blocked by pair competition.

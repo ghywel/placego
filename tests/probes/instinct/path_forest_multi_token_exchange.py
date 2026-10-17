@@ -16,6 +16,10 @@ application remains SKETCH, no general target-existence proof.
 Caps3 targets,200k nodes/target,500k overall,5CPU sec/128MiB. Stop on
 control failure/cap; preserve NO_WITNESS or UNKNOWN, no broader run.
 REFUTED-BY: any original target without a witness within the fixed cap.
+OUTCOME MI262: all3 WITNESS with original anchors/h;27 nodes, all controls
+and exact multi-token reconstruction pass. CPU0.011018sec/RSS15532032bytes.
+Raw4092bytes SHA2562af5e5ce314c5c170afcec67457b405467d7864373fa4c225d9260936ab1dc57.
+No artifact upload attempted;local pending authorization.
 """
 from collections import Counter
 from itertools import combinations

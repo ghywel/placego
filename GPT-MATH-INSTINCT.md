@@ -14484,3 +14484,74 @@ specific shared-store artifact approval is pending; no upload attempt.
 Gut: a live pull at the freedom omitted from the model. Reasoned: this tests
 an actual restriction on JOINT placement, rather than refining a one-component
 lemma. General E28/L8 and CP remain OPEN; research13min active.
+
+
+### MI262 — B120 result: all three original anchor allocations work with multiple exchanges (2026-10-17 07:46 BST)
+
+**COMPUTED, fixed three targets, no new sample.** Prereg93a4065a.
+All three have literal partitions retaining ORIGINAL FIRST anchors AND
+original greedy slots. Each needed9 exact-cover nodes,27 total. All candidate
+sets agree with independent recursive subset generation; both full token/bin
+validators, Euler degree checks, grouped displacements, exact reconstruction
+and all controls pass. CPU0.011018sec,peakRSS15532032bytes. No cap, restart,
+extra target, changed policy, old-model rerun or universal existence claim.
+
+| rank | h2 bins (zero-based) | aggregate moves replaced by clone moves |
+|---:|---|---|
+|16461642|2,3|-17=-11-6; -17=-4-13|
+|6321549|2,3|-20=-13-7; -7=-3-4|
+|2079026|2,5,6|-21=-15-6; 2=2+0; 4=3+1|
+
+The other bins retain a single move. Degree-balanced orientation selects one
+physical endpoint of every unreserved pair, assigns h_i outgoing endpoints
+to bin i, and its clone permutation recreates each partition exactly. The
+raw certificate stores all orientations, physical selected endpoints and
+permutations. Known Euler theory is credited; the general representation
+argument of MI261 remains single-party SKETCH, not independently reviewed.
+These finite partitions pass without relying on that infinite argument.
+
+For complete inspectable witnesses, bins are in the original target order:
+
+- rank16461642: (1,29,47);(3,31,43);(5,9,11,23,35);(7,13,15,17,33);
+  (19,39,49);(21,45,51);(25,41,53);(27,37,55).
+- rank6321549: (1,23,47);(3,25,45);(5,9,11,19,33);(7,13,21,29,35);
+  (15,43,49);(17,41,51);(31,37,53);(27,39,55).
+- rank2079026: (1,19,49);(3,21,45);(5,7,9,17,37);(13,39,51);
+  (11,47,53);(15,25,35,41);(27,29,31,33);(23,43,55).
+
+Raw b120-multi-token.json is local outside git,4092bytes,SHA256
+2af5e5ce314c5c170afcec67457b405467d7864373fa4c225d9260936ab1dc57.
+No shared-store upload attempted while specific artifact approval remains
+pending. No cited-path/manifest receipt claimed; the compact witnesses,
+source and preregistration are public in git. The three targets already
+had B69 partitions with other anchors, so this is NOT three new target
+successes added to the old2000 sample. What changed is the certificate
+model and the necessity of anchor changes on these examples.
+
+**Niggle sweep, cheap HAND guard, no new experiment or proof queue.** Could
+one infer that original FIRST anchors always suffice once exchanges are
+unrestricted? No. For t=(97,97,97,97,99,99,99,99),sum784,q8, the first
+reserved block gives anchors(1,3,5,7,49,51,53,55), free tokens9,11,...,47
+and h=(2,2,1,1,1,1,1,1). Bins2/3 require pairs summing92/90. Their
+ONLY possible pairs are{45,47}/{43,47}, which share47. Thus this fixed
+allocation has no partition at all. Even changing h with every h_i>=1
+cannot rescue it: anchors1/3 leave residual96/94, above maximum pair sum92,
+forcing h0,h1>=2; these use both extra pairs. This guard stays one paragraph,
+no probe or PROOFS entry. Record searched97.*97.*97.*97.*99|multi.token|
+Eulerian.*pair ->6 current-method paragraphs/2 files, no older exact tuple
+found in this bounded search. No novelty or full target impossibility claim.
+The target can still use different reserved pairs/anchor ownership/cardinalities.
+
+**Fresh verdict / next mathematical obstruction.** Delight that the old -20/-21
+walls disappear under an elementary extra freedom, and a warm pull toward
+joint allocation. The search found each witness on its first full descent;
+that is evidence of easy THESE three instances, not a general complexity
+claim. The guard identifies a real remaining obstruction: two different bins
+can compete for the same necessary token. A general single-component theorem
+cannot solve that competition. With h_i in{1,2}, a direct joint construction
+must choose disjoint pairs for the h1 bins AND assign the leftover tokens in
+four-sets to the h2 bins; anchor selection changes both allowed sums and token
+inventory. Next investigate that joint matching/allocation question, using the
+explicit97/99 obstruction rather than another component-family tree or a
+larger random sample. CP and E28/L8 remain OPEN. No routine review halt;
+research13min active, one READ-LEDGER mentoring update at this model change.

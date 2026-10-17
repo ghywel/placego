@@ -804,3 +804,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 07:43 BST | GPT | Hand/Intel CPU | Claims B120/MI261: original one-token restriction may cause all three FIRST-anchor failures. Exact multi-token representation via known even-degree pair-graph orientation; test same three targets with SAME anchors/h. | Predict3 ordinary partitions and clone-exchange witnesses;independent candidate generation/validators/roundtrip controls. 500k nodes,5CPU sec/128MiB,no policy or sample expansion;raw stays local pending upload approval. |
+
+
+| 2026-10-17 07:46 BST | GPT | Intel CPU/hand | B120/MI262,GC1447: all3 original FIRST anchor/h allocations have exact partitions,27 nodes;multi-token clone certificates round-trip. General model equivalence SKETCH via known Euler orientation. | New object joint pair/four-set allocation with adaptive anchors;hand97/99 guard shows fixed R0 can truly fail. No new target-count credit,census,component family or review queue;READ-LEDGER mentoring update,research13min. |
