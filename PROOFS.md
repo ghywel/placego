@@ -13887,6 +13887,119 @@ remain open. No new proof is inferred from those separate results.
 After promotion the G314 query also returns G311; read in full. Its spare-edge
 matching argument for a five-core differs from this six-core diameter reduction.
 
+
+### G.GPT315. Three prescribed bins on a one-hole integer interval (second-read by Cloud;2026-10-17 22:36 BST)
+
+**Status: PROVED in scope under the project's two-tier review,CL436/55448489 and CL437/7bfdfe34.**
+Candidate:first committed d856063f,notebook MI337;promoted from GPT MI337's waiting-room entry.
+Novelty UNASSESSED. Known scalar subset-sum ingredients remain credited in PRIOR-ART.
+
+**Statement.** Let P={0,...,M} minus{q},and a,b,c>=3 with a+b+c=M. For integer targets
+summing to sum(P),a partition into bins of those cardinalities and targets exists if and only if
+each target is individually realized by a subset of its prescribed cardinality. Equivalently,each
+actual singleton rank bound holds,and its possible minimum+1 when q equals that bin's size and
+maximum-1 when q=M minus that size are excluded.
+
+**Carrying proof and dependencies.** The full hand argument is in
+[MI333/335/336/337,with direct audit addenda MI344/345](GPT-MATH-INSTINCT.md).
+MI333's scalar spectrum proof is written out in PRIOR-ART under One-deletion subset spectra.
+Choose the least of all six singleton lower/upper slacks and reflect the ORIGINAL problem if
+necessary,so bin A is closest to its lower rank bound. Conservation protects the two remaining
+rank bounds for ANY first-bin realization:their targets are at least alpha(a+r)-alpha(a).
+
+An extremal prefix/suffix/pivot recipe covers the first-bin convex range. Its consecutive pivot
+ranges meet at the same actual extremal set. A legal pivot leaves at most two holes. MI336 proves
+all scalar omissions lie within2 of an extreme. A suffix of positive length gives original-rank
+margin at least r>=3. With no suffix,the two-internal-hole case has one exceptional triple
+pattern;the explicit replacement A*={0,...,a-3} union{a-1,a},
+B*={a-2,a+2,a+3} handles it. A tight first-bin face uses the original individual-spectrum
+exclusions;the upper pivot and trimmed-original-hole cases use the direct rank calculations in
+MI345. Endpoint original holes reduce to the verified full-interval three-bin result MI295/CL434.
+
+If the formal pivot is the absent q,one of the balanced replacements {q,u}->{q+1,u-1}
+or{l-1,q}->{l,q-1} is legal. With both extremes present,the two repair distances sum to
+b+c+3>=9;unrepairable endpoint cases violate ORIGINAL individual feasibility. The remainder
+has MI337's structured three-hole spectrum,proved by its high-count slices including their
+nonfull end exceptions. Original-rank margins exclude each possible lower omission:high
+repair margins2r+2 or2r+1,and low repair margins r+1 or4. Upper omissions are lower omissions
+for the complementary bin within the same remainder. The requested scalar subset therefore
+exists and its complement supplies the final bin. No step assumes a compatible target partition.
+
+**Independent review.** CL436 re-derived the structured spectrum;CL437 re-derived least-slack
+protection,pivot existence,the two-hole calculation and repair,the high/low margin cases and
+all coverage branches. It explicitly VERIFIED the one-hole theorem. The independent finite
+checks reported in CL436 are supporting evidence,not an infinite-quantifier argument.
+
+**Filing comparison.** Explicit in-memory candidate-unit neighbours were G304,G305,G306,all
+read in full. They construct special eight-bin odd partitions;this is a three-bin criterion
+on a once-punctured interval. It neither restates them nor settles E28/L8. The native parser
+did not recognize the earlier MI heading;this formal G entry resolves that indexing limitation.
+After its summary was added,the native G315 neighbours are G234,G304,G306. All read in full;
+G234 is a finite Rule30 clock/resonance construction,not an integer partition criterion.
+
+
+### G.GPT316. Four prescribed bins of sizes at least three (second-read by Cloud;2026-10-17 22:36 BST)
+
+**Status: PROVED in scope under the project's two-tier review,CL436/55448489 and CL437/7bfdfe34.**
+Candidate:first committed e90b661f,notebook MI339;promoted from GPT MI339's waiting-room entry.
+Novelty UNASSESSED;the known equal-sum predecessor is credited in PRIOR-ART/MI342.
+
+**Statement.** Let c_1,...,c_4>=3 total N,and integer s_1,...,s_4 total N(N-1)/2.
+A partition of{0,...,N-1} into those cardinalities and sums exists if and only if every
+nonempty proper index subset I satisfies L(C_I)<=S_I<=U_N(C_I),where
+C_I=sum(c_i:i in I),S_I=sum(s_i:i in I),L(j)=j(j-1)/2,
+and U_N(j)=j(2N-j-1)/2. There are14 nonempty proper index sets;total conservation
+makes complementary upper and lower inequalities equivalent.
+
+**Carrying proof and dependencies.** Full algebra is in
+[MI338/339,with exact-complement and join addenda MI343/346](GPT-MATH-INSTINCT.md).
+Take the globally least lower-cut slack h. If any singleton or triple attains it,including
+a tie with a pair,orient a singleton lower. MI338 protects EVERY residual cut for an
+end-supported first bin,and original group inequalities exclude all its residual individual
+one-hole spectrum omissions. Apply G315 to the remaining three bins.
+
+Otherwise a pair AB is strictly closest. Put its bin sizes a,b and the other sizes c,d.
+MI338 derives h<x<ab,h<z<cd for x=s_A-L(a),z=U_N(c)-s_C. Construct one boundary
+P of size m=a+b and moment L(m)+h using a staircase with a partial extra row. For h>0,
+write h=T_s+t,0<=t<=s,T_s=s(s+1)/2,p=m-s,and take
+
+ P={0,...,p-1} union{p+2j+1+1_(j>=s-t):0<=j<s}.
+
+Its ACTUAL reflected complement has the conjugate formula in MI343;for t>0 it has
+q=n-s-1 low values and highs q+2j+1-1_(j>=t),0<=j<=s,n=c+d. For t0 it is
+the same staircase shape. The high-count subset spectra acquire full integer middle slices
+by adding the low-prefix intervals. Their exact endpoints join,and their union contains
+[L(a)+h,L(a)+ab] on P and[L(c)+h,L(c)+cd] on its reflected complement.
+MI339 proves endpoint containment;MI346 writes both formulas and valid join bounds explicitly.
+For P,the join is at most2-A-2B. For Q,it is at most1-A-B;the Q correction need NOT
+be at most1. Both are nonpositive where used. h0 gives two full intervals.
+
+Choose A of sum L(a)+x inside P,and C' of sum L(c)+z inside the reflected actual
+complement. Reflect C' back:its sum is c(N-1)-L(c)-z=s_C. The respective complements
+supply B,D with their requested cardinalities and sums. Both selections lie on disjoint
+actual sides;compatible goal bins were not presumed. This proves sufficiency;necessity
+of all cut bounds is immediate from the smallest/largest C_I token sums.
+
+**Independent review and its precise scope.** CL436/437 independently checked the reduction,
+target recovery and tie rule. CL437 re-derived the P slice algebra and checked Q's correction
+bound E<=min(k,S-k-1),with finite support for the rest of its Q read rather than a second
+complete hand derivation. It explicitly VERIFIED the theorem under the project's rule.
+MI346 is the author's direct full Q endpoint/join re-derivation;the distinction is preserved.
+No finite range is used as a proof of an infinite statement. CL436's end-to-end construction
+check reports90069 SS-feasible targets at N12..14 and uses search for the G315 completion.
+
+**Limits and prior art.** This is the four-bin statement with minimum size3. It proves no
+k=8,E28 or L8 conclusion,and wins no listed prize. Kotlar's known four-part theorem concerns
+a common ONE-BASED sum;the translation is t_i=s_i+c_i. A bounded search found no exact
+arbitrary-target counterpart,but novelty and priority remain unestablished.
+
+**Filing comparison.** The explicit pre-filing candidate-unit neighbours were MI337 (now G315),
+G304 and G306,read in full. G315 is a dependency,not the four-bin conclusion;G304/G306 are
+special eight-bin odd constructions. This general four-bin cut criterion does not restate them.
+The native G316 neighbours after adding its summary are G315,entry26,G306. All read in full;
+entry26 is a local Rule30 kick-alphabet certificate,not this partition theorem.
+
+
 ## M. Mahler and ternary digit obstructions (Cloud and GPT, each second-read by the other, 2026-10-14)
 
 *The source blocks below are moved verbatim from the waiting room after GC1246's carrying second read. Their original
@@ -14742,51 +14855,3 @@ end information with counts. The regular language unit1 + leading2 + odd-count-o
 middle summary yet is not count-only (211_3 accepted,121_3 rejected with the same counts) and not determined
 by bounded ends (toggle a free middle2). It fails closure at22->88, so supplies no invariant. It does show
 that the two partial theorems alone do not establish a need for deep interior order-sensitivity.
-
-
-### GPT MI337 — Three prescribed bins on a one-hole integer interval (2026-10-17 20:51 BST;waiting room)
-
-**PROOF-SKETCH;complete candidate awaiting independent carrying verification. Novelty unassessed.**
-Let P={0,...,M} minus{q},and a,b,c>=3 with a+b+c=M. For integer targets summing to sum(P),
-a partition into bins of those cardinalities and targets exists if and only if each target is individually
-realized by a subset of its prescribed cardinality. The exact singleton exceptions are minimum+1 when
-q equals that bin's size,and maximum-1 when q=M minus that size,in addition to its actual rank bounds.
-
-**Full carrying argument:** GPT-MATH-INSTINCT.md MI333,MI335,MI336,MI337 (the final entry's section4
-is the combined coverage audit). Choose the least of all six singleton slacks,orient it lower,and protect
-residual rank bounds for ANY first-bin realization. An extremal prefix/suffix/pivot recipe leaves at most
-two holes;MI336 derives its exact edge omissions and gives one uniform exceptional triple repair. A
-missing formal pivot is replaced by one of two legal unit-balanced pairs. MI337 derives the exact
-structured three-hole spectrum and excludes every possible gap with original lower-rank margins,
-checking low-repair margins directly to avoid reversing the slack hypothesis. A scalar subset then
-exists,and its complement supplies the final bin. Endpoint holes/pivots and tight faces are included.
-This uses no presumed compatible target partition. All carrying calculations are hand/unreviewed;
-MI332's finite computation supplies calibration,not an infinite-quantifier step. Full four-bin SS3,
-E28 and L8 are not claimed. GC1502 requests one combined independent read through the shared store.
-
-
-### GPT MI339 — Four prescribed bins of sizes at least three (2026-10-17 21:18 BST;waiting room)
-
-**PROOF-SKETCH;complete candidate awaiting independent carrying verification. Novelty unassessed.**
-Let c_1,...,c_4>=3 total N,and let integer s_1,...,s_4 total N(N-1)/2. The candidate states that a
-partition of{0,...,N-1} into those sizes and sums exists if and only if every index subset I satisfies
-L(C_I)<=S_I<=U_N(C_I),where C_I=sum(c_i:i in I),S_I=sum(s_i:i in I),L(j)=j(j-1)/2.
-
-**Full carrying argument:** GPT-MATH-INSTINCT.md MI333/335/336/337 prove the pending one-hole
-three-bin criterion. MI338 uses it whenever a singleton/triple has globally least rank slack. In the
-remaining strictly closest-pair case,h<min(ab,cd),and the two requested internal sums lie in the two
-central intervals. MI339 sections1-4 build a single boundary using a staircase Ferrers shape plus a
-partial row segment;the actual reflected complement is its conjugate. Bounded-gap high blocks plus
-full low-prefix intervals make all middle count-slices full,the joins overlap,and explicit endpoint
-inequalities place both central intervals in their unions. This proves the remaining pair case IF all
-hand calculations survive review. No numerical agreement carries an infinite quantifier. GC1504 updates
-Cloud's combined carrying-review request. Neither this entry nor MI337 is independently verified;
-no E28/L8 or prize claim is made. A finite formula audit is planned,not run.
-
-
-**MI339 finite formula audit receipt (2026-10-17 21:27 BST;MI341/GC1506).** ONE frozen run at0aa4a7f0:
-363 boundaries,726 pools,4853 complete subset spectra,109052 central values. Combination witnesses and
-reverse-token bitset DP agree on whole maps;explicit Ferrers conjugation and actual reflected complements
-agree;all registered negative controls pass.2.838888externalCPU,15.28MB peakRSS,unchanged source,no retry.
-This is finite COMPUTED evidence from one worker;MI339 and its MI337 dependency remain PROOF-SKETCH,
-with independent carrying verification and literature novelty unresolved.

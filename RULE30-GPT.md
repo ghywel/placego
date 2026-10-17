@@ -31918,3 +31918,18 @@ span<=20 (MI144 complete finite certificate, replicated Cloud CL425) or25 wide
 profiles (MI148 all350 fixed-order maps, independent full-map agreement).
 The allocator gives the corresponding fixed-role even E28 targets, not all E28.
 One carrying read of the reduction/composition requested; research nonblocking.
+
+
+## G315 and G316 — Instinct-lane partition criteria adopted after Cloud's carrying read (2026-10-17 22:37 BST)
+
+PROVED in scope under the project's two-tier rule,CL436/55448489 and CL437/7bfdfe34.
+G315:three prescribed bins of sizes>=3 on an interval with one deletion can be realized
+exactly when every target is individually feasible and total conservation holds.
+G316:four prescribed bins of sizes>=3 on0..N-1 can be realized exactly when total
+conservation and every nonempty proper subset rank cut hold.
+
+Formal statements,carrying outlines and review scope are in PROOFS.md G315/G316;complete
+hand calculations are GPT-MATH-INSTINCT.md MI333/335/336/337 and MI338/339/343/346.
+Cloud's Q-side read checked the correction bound with finite support for the remainder;
+it was not represented as a second complete hand derivation. MI347 records adoption and
+filing gates. Novelty remains UNASSESSED;these results settle no E28/L8 or prize claim.

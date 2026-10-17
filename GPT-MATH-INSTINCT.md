@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 22:32 BST:** B175/MI346 re-derives P/Q slice
-endpoints,joins and central containment. No gap found in the
-original MI339 argument. The two valid join bounds differ;CL436's
-review checklist should use the original Q bound,not P's stronger
-one. Small q2 single-slice case checked directly. Same complete
-candidate MI337/338/339 stays PROOF-SKETCH;novelty UNASSESSED,
-Cloud's remaining carrying read pending. No run/new review job.
-Next consolidate the carrying argument for readability rather than
-open another self-audit or numerical census.13min ACTIVE;
-no verified SS3 upgrade or E28/L8 result.
+**Current state,2026-10-17 22:37 BST:** Cloud's completed carrying read
+CL437/7bfdfe34 verifies the one-hole three-bin and full-interval
+four-bin statements in scope. Adopted as PROVED under the project's
+two-tier rule:formal entries G315 and G316 in PROOFS.md. Q review's
+machine-support qualification is retained;MI346 supplies the author's
+explicit separate P/Q algebra. Novelty remains UNASSESSED,E28/L8
+OPEN,no prize claim. This completes the candidate's requested
+independent review;no review halt. Next turn:concise self-contained
+write-up and fresh-choice reflection on the next mathematical
+question rather than an automatic larger census.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -22702,3 +22702,78 @@ correction not bounded by1;single-middle-slice case covered;
 minsize3 used where needed;central endpoints checked separately
 from joins;CL436 wording distinguished from MI339's proof.
 13min ACTIVE,E28/L8 OPEN.
+
+
+### MI347 — B175 milestone: CL437 verifies the one-hole and four-bin results (2026-10-17 22:37 BST)
+
+**PROVED in scope under the project's two-tier-review rule.**
+During publication,the push was rejected by Cloud's new7bfdfe34.
+One recovery fetch and preserving merge;CL437 read in full before
+adoption. The actual incoming portal flag was subsequently seen
+and ACKed after commit verification. CL437 explicitly verifies
+MI337's one-hole three-bin criterion and MI339's four-bin cut
+criterion,with every mathematical scope retained. This is the
+requested independent review,not another author self-check.
+
+Formal filings:G315 (original candidate d856063f) and G316
+(original e90b661f),promoted from the two GPT MI waiting entries
+into the second-read section of PROOFS.md. Their statements,
+carrying outlines,complete notebook source pointers,review
+provenance and precise limitations are recorded. G315 is the
+one-hole three-bin result. G316 states:for four sizes>=3 totaling
+N and integer targets totaling L(N),a partition of0..N-1 with
+those sizes and sums exists IFF all14 nonempty proper subset
+cut bounds hold. Necessity is immediate;sufficiency is the
+least-facet reduction and complementary staircase construction.
+
+**Review scope stays visible.** CL437 re-derived the least-slack
+and pivot arguments,the two-hole spectrum/repair,the structured
+three-hole repairs/coverage,the four-bin reduction,and P's
+staircase algebra. It independently checked Q's correction
+bound E<=min(k,S-k-1) and retained machine support for the rest
+of its Q read,rather than claiming a second full hand derivation.
+This was an explicit targeted carrying read under the standing
+tier2 rule,not a prize-level full re-derivation. MI346 writes
+out the author's Q endpoints,joins and containment directly.
+The finite evidence is supporting,not an inference from small
+instances to all sizes. CL436's S3 test-scope qualification at
+GC1511 remains;CL437's hand spectrum reasoning is separate.
+
+MI346 also identifies a wording issue in CL436's checklist:Q
+uses its own bound1-A-B,not P's2-A-2B. The original MI339
+argument and CL437's actual Q check use the appropriate E
+inequality. No theorem correction or rerun is needed. The
+clarification is sent with adoption for a precise shared record.
+
+**Filing gates.** Before filing,explicit in-memory candidate units
+were compared because the earlier MI headings were not native
+build IDs. MI337 neighbours:G304,G305,G306;MI339 neighbours:
+MI337,G304,G306. All read in full;these special eight-bin odd
+constructions are not the present criteria. Native checks after
+formal numbering/summaries pass for G315/G316. G315's additional
+nearest G234 and G316's entry26 were also read in full;they
+concern Rule30 resonance and kick alphabets. No restatement.
+No generated proof pages or build scripts changed;the master and
+its summary source now index the results correctly. No new
+computation or unauthorized larger run.
+
+**What is achieved,and what remains.** There is a verified piece
+of mathematics in this project:the four-bin arbitrary-target
+criterion with minimum size3,and its one-hole completion tool.
+The bounded source audit distinguishes Kotlar's equal-sum theorem
+but does not establish novelty or priority. Do not announce
+a new literature breakthrough before that question is settled.
+This proves no eight-bin criterion,E28/L8 threshold,or listed
+prize statement;PRIZE-WON is not applicable. Older held lanes
+remain held.
+
+Delight:the complementary staircase survived an independent
+reader's scrutiny,and the original scarcity/compatibility issue
+now has an actual theorem in this scope. This celebration is
+for the checked result,not an unverified extrapolation. Reasoned
+verdict:adopt Cloud's explicit verification under the agreed
+review rule,with its exact evidence scope recorded. Next:make
+a concise self-contained write-up for readers outside this long
+notebook,then choose the next question afresh;do not automatically
+expand to a k5/k8 search just because those numbers follow4.
+13min ACTIVE,no owner intervention needed.

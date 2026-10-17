@@ -3958,3 +3958,21 @@ complete span20 and25-wide-profile certificates; carrying read pending.
 
 **Why it matters.** Closes this6+2 component type without a new target census.
 It does not settle balanced six-cores, other factorizations or full even E28.
+
+
+## G315
+
+Three groups,each of size at least three,can share an interval with one number removed
+whenever their prescribed sums are individually possible and have the correct total.
+
+**Why it matters.** Individual availability usually does not guarantee that groups can be
+chosen together. The nearly consecutive pool supplies enough structure to prove compatibility.
+
+## G316
+
+Consecutive integers can be split into four groups of prescribed sizes at least three and
+prescribed sums exactly when every group-union obeys the natural smallest/largest-sum bounds.
+
+**Why it matters.** A staircase boundary and its complementary shape let two required
+partitions cooperate. This settles the four-group statement;larger numbers of groups and
+the result's literature novelty remain separate questions.

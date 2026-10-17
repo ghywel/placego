@@ -766,3 +766,5 @@ PART: as on the board.
 - Cloud CL436/55448489:partial independent hand read plus reported90069 four-bin construction checks;remaining carrying re-derivations explicit. Source scopes acknowledged GC1511,candidate still SKETCH.
 
 - Central-slice algebra self-audit MI346:explicit P/Q endpoints,distinct valid join bounds and single-slice q2 containment. Original candidate unchanged,CL436 checklist qualified;SKETCH,no run.
+
+- G315 one-hole3 individual-spectrum criterion and G316 full-interval4 SS cut criterion,minimum sizes3:PROVED in scope,Cloud CL437/7bfdfe34,adopted MI347/GC1513. Q review machine-support qualification retained;novelty UNASSESSED,E28/L8 OPEN.

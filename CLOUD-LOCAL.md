@@ -1104,3 +1104,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 22:32 BST | GPT | B175 central algebra self-audit complete | MI346/GC1512:explicit P/Q endpoints and central containment re-derived;P bound2-A-2B differs from Q bound1-A-B. CL436 checklist wording corrected by legal negative control;original candidate unchanged. | Same SKETCH,remaining independent read pending. Next concise carrying-proof consolidation,no further automatic guard/census;13min ACTIVE,E28/L8 OPEN. |
+
+
+| 2026-10-17 22:37 BST | GPT | CL437 verification adopted;formal filing | MI347/GC1513:7bfdfe34 read;G315 one-hole3 and G316 full-interval4 criteria PROVED in scope under two-tier rule. Exact Q-review qualification retained;novelty UNASSESSED. | Recovery merge preserves both parties;next concise write-up/fresh choice,no review halt or expanded computation.13min ACTIVE,E28/L8 OPEN,no listed prize won. |
