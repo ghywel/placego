@@ -14399,3 +14399,88 @@ to state the joint-placement target and identify which constraint changes
 when the reserved block moves. Do not claim CP alone closes it, reopen
 primitive-only splitting, or run another component-family diagnostic.
 Research13min remains active; no routine halt or new review queue.
+
+
+### MI261 — B120: exchange one token per PAIR, not per bin (2026-10-17 07:43 BST)
+
+**Pull before the test.** The original three anchor failures excluded one
+selected token per active bin. Two of the bins actually hold TWO pairs.
+Why insist that those bins adjust their sums through a single displacement?
+This is a warmer question than another component family: test whether the
+anchor changes were necessary, or merely repaired an artificial restriction.
+
+Record searched: multi.token|two.selected|Euler.*orient|balanced.*orient|
+one.selected.token ->12 hits/6 files; MI154/158/160 and MI161/162 read.
+selected.*per.pair|per.pair.*exchange|even.degree.*bin|multi.*selected.*token|
+two.tokens.*bin ->one unrelated old-ledger paragraph. This is not an absence
+claim. Prior art: known Eulerian-circuit/even-degree theorem and its orientation
+argument read in the official university lecture notes, filed in PRIOR-ART.
+No review requested for that known theorem or this representation sketch.
+
+**Exact representation SKETCH, not an existence proof.** Fix reserved labels
+R, their singleton anchors a_i, and pair-slot counts h_i. Suppose the remaining
+tokens already have a partition into bins of sizes2h_i with desired sums.
+Make a multigraph whose vertices are bins; each unreserved complementary pair
+is an edge joining its two final owners. A pair contained in one bin is a loop.
+Every bin has degree2h_i. Orient closed unused-edge walks in each component;
+loops contribute one incoming and one outgoing edge. Thus bin i has h_i edges
+out and h_i in. This is the known Eulerian orientation argument, with parallel
+edges and loops retained, not a new theorem of graph theory.
+
+Assign each complementary pair initially to its directed tail bin. Keep there
+the endpoint whose FINAL owner is that tail, and select the other endpoint to
+send to the head; for a loop either endpoint can be selected and retained.
+Every bin initially owns h_i whole pairs, sends h_i selected endpoints and
+receives h_i endpoints. Match its outgoing positions to its incoming positions
+by any bijection. Across bins these matches form a PERMUTATION of exactly ONE
+selected physical position from EACH unreserved complementary pair. For each
+bin the sum of its h_i displacements is
+
+    e_i=(t_i-a_i-56h_i)/2.
+
+Conversely, choose one position from each unreserved pair, group them into
+h_i positions per bin, and choose a permutation whose grouped displacement
+sums are e_i. Start bin i with its h_i whole pairs and anchor; replace its
+selected positions by their images. All selected images are a permutation,
+so the full token inventory is preserved. Each bin has exactly2h_i nonanchor
+tokens and the required sum. Pair uniqueness prevents receiving a token equal
+to one of its retained complements. This gives the original partition.
+
+Hence the multi-token permutation model is EXACT for fixed anchors and h,
+whereas the previous one-token-per-active-bin model is only sufficient.
+Zero-displacement clones and bins with net zero but nonzero exchanges must
+remain allowed. This reformulates existence; it does not prove it or supply
+a constructive way to choose the permutation from target sums. Its immediate
+value is a fair test of whether the old obstructions survive the exact model.
+
+**Preregistered diagnostic BEFORE run.** Exactly the three MI158 geometric
+misses, ranks16461642,6321549,2079026. Keep the ORIGINAL FIRST anchors R0,
+ascending ownership and greedy h unchanged. No new targets or anchor/slot
+policy. Blind prediction: ALL THREE have ordinary partitions with those
+same cardinalities/anchors, and admit the above multi-token certificates.
+If so, at least one bin in each certificate must use two nonzero exchanges;
+otherwise it would be an old one-token certificate, already excluded.
+No prediction of node count or exact number of partitions; stop at first.
+
+Generate every size2/4 subset of the unreserved physical positions with
+the required bin sum; compare candidate masks to independent recursive
+increasing-subset/sum generation. Exact-cover MRV search, complete unless
+capped, returns first partition. Both independent literal inventory/sum/
+cardinality validators must pass. Convert the partition to Eulerian pair
+orientation and clone permutation; reconstruct the EXACT same bins and check
+every grouped displacement against ORIGINAL e_i. This conversion is not
+allowed to change anchors or choose a different h. Controls: disconnected
+parallel-edge-plus-loop graph, all-loop/fixed-point graph, reused pair and
+nonpermutation rejection. Unexpected control: leaving the singleton anchors
+in the Euler graph gives ODD degrees and must be refused; removing anchors
+is a mathematical prerequisite, not formatting.
+
+Caps3 fixed targets,200k nodes/target,500k overall,5CPU sec/128MiB. Any
+cap stops partial/UNKNOWN; any false control stops with failure retained.
+A NO_WITNESS refutes the blind prediction for this fixed allocation only;
+no raised cap, new policy, repaired prediction, new sample or old-model
+rerun. Source path_forest_multi_token_exchange.py. Raw remains local while
+specific shared-store artifact approval is pending; no upload attempt.
+Gut: a live pull at the freedom omitted from the model. Reasoned: this tests
+an actual restriction on JOINT placement, rather than refining a one-component
+lemma. General E28/L8 and CP remain OPEN; research13min active.

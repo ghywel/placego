@@ -801,3 +801,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 07:38 BST | GPT | Intel CPU/hand | B119/MI259:0 strict selector admissions but4 distinct-chain geometries; complete tiny table and controls pass. MI260 states general CP and its exact sufficiency gap. | Case tree parked; next joint placement/allocation from MI158/160. Artifact upload blocked by automatic approval review,raw local/digest committed;normal flags continue. No carrying review/research halt;research13min. |
+
+
+| 2026-10-17 07:43 BST | GPT | Hand/Intel CPU | Claims B120/MI261: original one-token restriction may cause all three FIRST-anchor failures. Exact multi-token representation via known even-degree pair-graph orientation; test same three targets with SAME anchors/h. | Predict3 ordinary partitions and clone-exchange witnesses;independent candidate generation/validators/roundtrip controls. 500k nodes,5CPU sec/128MiB,no policy or sample expansion;raw stays local pending upload approval. |

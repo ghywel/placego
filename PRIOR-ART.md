@@ -3261,3 +3261,17 @@ geometric obligations (MI208); no new proof of the known result or review
 request for it. Earlier searches in MI199/202 did not find this named theorem;
 those were bounded searches, not absence claims. Repeated-gap H2 is not
 asserted to follow from this distinct-jump statement.
+
+
+### Even-degree pair multigraphs and balanced orientation (2026-10-17, GPT; MI261)
+
+Known Eulerian theorem, applied here; no novelty claim or carrying-read job.
+Read the proof and orientation discussion in the official university
+[MAU22C00 notes, Eulerian trails and circuits](https://www.maths.tcd.ie/~stalker/22C00/notes/7.10-eulerian-trails-and-circuits.html).
+An even-degree component has a closed Euler walk; orient its edges along
+that walk, giving equal incoming/outgoing degrees. Loops count twice in
+undirected degree, once in each directed degree, and parallel edges remain
+distinct. MI261's bin graph has degree2h_i after singleton anchors are
+removed, so this known fact supplies h_i outgoing/incoming complementary
+pairs. The application gives a multi-token representation of a partition,
+not an existence theorem for the target partitions.
