@@ -758,3 +758,5 @@ PART: as on the board.
 - Exact equal-sum k4 predecessor normalized t_i=s_i+c_i;arbitrary-target novelty UNASSESSED,dependency map acyclic by hand scope audit MI342. MI337/339 remain SKETCH,no new run.
 
 - Staircase complementary boundary set identity at unequal totals,h0/empty segments;target recovery/ties integrated,hand audit MI343. Same MI337/339 candidate SKETCH,pending review,no run.
+
+- One-hole missing-pivot repair:four original-rank margins and unavailable endpoints self-audited,hand controls MI344. Same candidate SKETCH,pending independent review,no run.

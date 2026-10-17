@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 21:52 BST:** B172/MI343 replaces the joint
-boundary's interleaving description by an exact complement identity
-and integrates target recovery and singleton/pair ties. An unequal
-17-token hand control has genuine strict closest-pair slack7.
-MI337/338/339 remain the COMPLETE hand four-bin candidate,
-PROOF-SKETCH pending the existing Cloud carrying read;novelty
-UNASSESSED. No new run or review job. Next independent hand work:
-adversarially audit the one-hole high/low repair's exceptional
-scalar sums against its original least-slack inequalities.
-13min ACTIVE;no verified SS3 upgrade or E28/L8 result.
+**Current state,2026-10-17 22:06 BST:** B173/MI344 directly audits the
+missing-pivot high/low repair in MI337:original ranks exclude every
+listed scalar omission;unavailable endpoint repairs correspond to
+individually forbidden first-bin targets. Two literal smallest-size
+controls exercise the distance3 omissions. This is a self-check of
+the SAME candidate,not independent verification. MI337/338/339
+remain PROOF-SKETCH;novelty UNASSESSED. No run or extra review job.
+Next:check MI337's remaining legal-pivot endpoint coverage against
+the original individual-spectrum exclusions.13min ACTIVE;
+no verified SS3 upgrade or E28/L8 result.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -22251,4 +22251,135 @@ reflection converts sums as well as values;t0/t=s/h0 included;
 q2 control kept;max-hole exclusion uses the TWO-bin complement;
 ties handled before strict inequalities;no existence assumed from
 equal moments;no experimental pass invented.13min ACTIVE,
+E28/L8 OPEN.
+
+
+### MI344 — B173: direct adversarial audit of the missing-pivot repairs (2026-10-17 22:06 BST)
+
+**Same candidate,self-check only;PROOF-SKETCH remains.** Record
+searched:`MI337|high.*repair|low.*repair` AND`slack|margin|rank`:21
+hits/5 files. MI335,MI336 and MI337 read. No new literature result
+or experiment. No Cloud flag changes;the existing carrying request
+is pending,not a permission gate. The owner's status question was
+answered during this block:there is a complete candidate and no
+need for owner intervention;Claude's carrying read would be useful.
+
+The precise niggle is whether reflecting the low-repair pool
+accidentally reflects the least-LOWER-slack hypothesis too. This
+audit keeps the original ranks throughout. Kill test:an original
+individually feasible target,compatible with least slack,at one
+of the structured pool's missing sums. Unexpected check:one repair
+may be unavailable at an endpoint;check actual infeasibility of
+the unrepairable formal target rather than claiming both repairs
+always exist. No new probe or independent-party pass.
+
+**1. Original rank formula and the four lower omissions.**
+P=0..M minus q;indices start at0. Its j-th value is
+
+ z_j=j+1_(j>=q), 0<=j<M.
+
+For chosen bin A of size a,least lower slack after ONE reflection
+of the ORIGINAL problem gives s_r>=F_r for each remaining size r,
+where
+
+ F_r=sum_(j=a)^(a+r-1) z_j
+    =ra+L(r)+min(r,(a+r-q)_+).
+
+Let l+k=a-1 and u=M-k+1 as in the formal missing-pivot recipe.
+Every repaired first-bin set has the original target moment,so
+MI335 protects the actual rank bounds in its remainder. The issue
+is only whether s_r could hit a scalar omission WITHIN those bounds.
+Write mu_r for that remainder's true minimum r-sum. The following
+direct calculations are in ORIGINAL coordinates:
+
+| Repair and possible lower omission | mu_r | Rank segment lower bound for F_r | F_r-mu_r at least |
+|---|---|---|---|
+| High;q=l+r;distances1/2 | rl+L(r) | rl+L(r)+2r+2 | 2r+2 |
+| High;q=l+r-1,other size3;distance3 | rl+L(r)+2 | rl+L(r)+2r+3 | 2r+1 |
+| Low;q=l+r+1;distances1/2 | rl+L(r)-1 | rl+L(r)+r | r+1 |
+| Low;q=l+5,r3;distance3 | 3l+2 | 3l+6 | 4 |
+
+For high repair,a>=l+2,so substitute the original rank segment
+starting at l+2. The first case has exactly2 rank shifts past q;
+the second has exactly3. For low repair,a>=l+1:the segment
+starting l+1 lies below q in both listed cases. Thus none of the
+four calculations uses ranks of the reflected pool. The remaining
+bin has size>=3,so all these rank segments exist. Every bound is
+strictly larger than the listed omission distance.
+
+For completeness,the high remainder is[l,u] minus{q,q+1,u-1}.
+With p=q-l,V=u-l,it has the structured spectrum of MI337.
+Its lower distances1/2 require r=p;distance3 requires r=p+1
+and the other size3. The low remainder is[l-1,u-1] minus
+{l,q-1,q}. Normalizing and reflecting its SPECTRUM gives
+structured parameters p=u-q-1 and high count q-l-1. Hence
+its lower distances1/2 require r=q-l-1;distance3 requires
+q-l=5,r3. These are precisely the rows of the table. This
+checks that no exception was lost when converting orientation.
+
+An upper-edge omission for B is a lower-edge omission for C
+under complementation WITHIN THE SAME remainder. Since the same
+original F_r argument holds for BOTH r=b,c,those omissions are
+excluded too. Therefore every omission listed by the structured
+spectrum is incompatible with the original target inequalities.
+This audits the margin step CONDITIONAL on that spectrum's
+correctness;it does not replace independent reading of the spectrum.
+
+**2. Actual smallest-size controls at the distance3 exceptions.**
+High repair:P=0..9 minus3,sizes3^3,targets(12,15,15).
+The formal first bin039 is illegal;replace{3,9} by{4,8},
+giving A048. The remainder125679 has minimum triple8 and
+a true missing triple sum11=minimum+3. Original ranks give
+F_3=4+5+6=15,so11 cannot be requested under the least-slack
+choice. Literal completing partition048/159/267 has the stated
+sums. The six original lower/upper slacks are(9,12),(12,9),
+(12,9),so A's lower slack really is globally least.
+
+Low repair:P=0..9 minus7,targets(8,12,18),sizes3^3.
+The formal first bin017 is illegal;replace{1,7} by{2,6},
+giving A026. The remainder134589 has minimum triple8 and
+missing11=minimum+3. Original F_3=3+4+5=12 excludes11.
+Literal026/345/189 realizes8,12,18. The six slacks are
+(5,15),(9,11),(15,5),so the lower orientation is valid here too.
+In both controls,all original values occur once and the removed
+value is absent. These are hand controls,not a new census or an
+assertion that the reflected target automatically kept least slack.
+
+**3. Unavailable repairs checked directly.** If l,k>0,the
+low distance q-l+1 and high distance u-q sum
+
+ u-l+1=M-a+3=b+c+3>=9.
+
+Thus at least one is>=3,as required for a legal distinct pair
+replacement. If l0,the only available kind is high repair;
+u=M-a+2. An unrepairable distance1 gives q=M-a+1 and a
+formal target ONE ABOVE the true maximum. Distance2 gives
+q=M-a and the forbidden true maximum-1. If k0,the only
+available kind is low repair. Distance1 gives q=a-1 and a
+formal target ONE BELOW the true minimum. Distance2 gives
+q=a and the forbidden true minimum+1. These follow by comparing
+the formal q with the next available extremal value,or directly
+from z_j. They are excluded by ORIGINAL individual feasibility
+(MI333),not by a hoped-for jointly compatible partition.
+Endpoint holes themselves reduce to a full interval up to shift
+and were separately assigned to verified MI295.
+
+**What changed,next.** No allowed missing-sum target was found:
+the four direct margins and both unavailable-repair endpoints
+check out algebraically. This is a more explicit audit of the
+existing carrying step,not a new lemma/status or review job.
+Remaining independent hand check:the LEGAL-pivot endpoint cases
+in MI337 section4,where a trimmed hole or extremal pivot changes
+the residual span. Seek an original feasible target at an alleged
+residual gap;stop on a genuine missing inference. No automatic
+computation or expansion of the same finite spectra.
+Gut:confidence in this particular orientation step has increased
+because it survived direct original-coordinate checks,not because
+the candidate has been called promising for several turns. Reasoned:
+no new infinite claim and no independent verification;the whole
+candidate remains SKETCH,novelty UNASSESSED. Niggle sweep:both
+bins' bounds used;rank start/end indices explicit;actual minima
+used;low reflection limited to the spectrum;only one repair needed;
+endpoint forbidden sums checked against ORIGINAL individual tests;
+controls satisfy the claimed least-slack orientation.13min ACTIVE,
 E28/L8 OPEN.

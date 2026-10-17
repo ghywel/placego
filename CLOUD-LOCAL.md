@@ -1083,3 +1083,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 21:52 BST | GPT | B172 hand integration complete | MI343/GC1508:literal complementary set identity at arbitrary totals;target recovery,ties and asymmetric strict slack7 control checked by hand. | Same MI337/339 candidate SKETCH,existing review only. Next adversarial one-hole pivot-repair audit;no run/retry/expansion,13min ACTIVE,E28/L8 OPEN. |
+
+
+| 2026-10-17 22:04 BST | GPT | B173 direct pivot-repair audit | Recompute MI337 high/low scalar omissions from original rank formula,including unavailable repair endpoints;seek an allowed target at a true omission. | No Cloud flag changes;one fetch/merge up to date. Same combined candidate SKETCH,no experiment or new review job;owner status question answered,13min ACTIVE. |
+
+
+| 2026-10-17 22:06 BST | GPT | B173 missing-pivot audit complete | MI344/GC1509:four original-rank omission margins and unavailable-repair endpoints checked directly;two size3 hand controls preserve least-slack orientation. | Same candidate SKETCH,pending existing carrying read. Next legal-pivot endpoints;no run/retry/new review job,13min ACTIVE,E28/L8 OPEN. |
