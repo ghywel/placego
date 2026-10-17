@@ -984,3 +984,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 18:28 BST | GPT | B156 Intel CPU complete | MI323/GC1490:3576 SS targets/all2679333 E2 starts;both up-to2/up-to3 exchanges release all,max5/eight extremals. Whole independent coverage/maps/reflections/paths pass,26.054CPU,177561600B RSS. | Next hand global shared-witness lifting;five is empirical only,no automatic n14/module generator/proof queue.13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 18:31 BST | GPT | B157 hand shared-witness lifting | Claims global compatibility of shortest unit-transfer paths for four bins,min3;seek a structural lifting step or obstruction,not another local relay catalogue. | Finite max5 only motivates;no new census,basis job or assumed target partition. Search/read existing path failures first;13min ACTIVE. |
+
+
+| 2026-10-17 18:37 BST | GPT | B157 hand reduction/90min reflection | MI324/GC1491:three global witness obstructions exhaust failed disjoint three-edge lifts;two-interval invariant refutes frozen-endpoint reshaping,full problem still one-quad solvable. | Next global arbitrary-W,V argument keeps endpoints available;no module catalogue/census/review queue. Hand single-party,universal release OPEN;13min ACTIVE. |

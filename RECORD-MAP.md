@@ -726,3 +726,5 @@ PART: as on the board.
 - Signed +/-1 carriers encode E<=2 exactly;known target-domain unit paths reduce fixed-size SS3 to OPEN unit-neighbour realizability,hand MI321. Exact-neutral small moves fail equal-sum triples;no new run/SS3 proof.
 
 - Complete n13,(3,3,3,4),E2:3576 SS targets/2679333 starts all release under1/2 exchanges,max5;all pair redistributions stillmax5/eight extremals,controls COMPUTED MI323. No universal SS3/bound or automatic further run.
+
+- Three-edge unit witnesses:failed disjoint lift has unique CBA/DCB or separated double fork,hand SKETCH reduction MI324. Frozen-endpoint binary two-level connectivity has hand countercontrol;full control one-quad feasible,SS3 OPEN.

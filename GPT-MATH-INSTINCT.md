@@ -87,15 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 18:28 BST:** MI323's COMPLETE asymmetric
-n13,(3,3,3,4),unit-error diagnostic passes all controls:2679333
-canonical starts/3576 targets all release under1/2-token exchanges;
-max5. Adding3for3 (ALL pair redistributions here) still leaves
-eight depth5 states. No universal bound inferred. Next hand question:
-global lifting of shortest unit paths with shared token witnesses;
-no automatic n14 or local module catalogue. MI322's cut implication
-remains OPEN;MI321 signed-carrier encoding retained. MI295/MI305
-PROVED,MI308/313/314 SKETCH;SS3/E28/L8 OPEN.13min ACTIVE.
+**Current state,2026-10-17 18:37 BST:** MI324 hand-reduces failure
+of a disjoint three-edge unit-path lift to three global witness
+patterns:unique CBA,unique DCB,or a separated double fork. Generic
+paths lift in3 moves. The shared-boundary release remains OPEN.
+A two-interval hand control kills freezing both endpoint bins:
+intermediate-bin2for2 connectivity can fail while an endpoint gives
+a one-move full repair. Next arbitrary-word argument must keep
+endpoints available;no module catalogue/census queued. MI324 is
+single-party,not a general5 bound. MI319/323 finite evidence stands;
+MI295/MI305 PROVED,SS3/E28/L8 OPEN.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -19976,3 +19977,140 @@ assertion. Niggle sweep:four-token bin never sorted with triples;
 reflection uses48 for its target rather than36;all target ties kept;
 added token not inert;larger-mode maxima not extrapolated;nonzero
 error stays2 before its terminal0. SS3/E28/L8 OPEN,13min ACTIVE.
+
+
+### MI324 — B157: global disjoint-witness reduction;endpoint-freezing shortcut killed (2026-10-17 18:37 BST)
+
+**Hand reduction,single-party;not SS3 or a universal depth bound.**
+Question:what can actually prevent a shortest three-edge unit path
+from lifting as disjoint adjacent-value swaps? Pull:toward a global
+selection argument before any repair catalogue. Record searched:
+`shortest.*path|shared.*witness|shared.token|DCBA|CBA` AND
+`four.bin|four.bin|SS3|MI299|MI303`:14 hits/4 files. Read MI295's
+shared-token proof and MI298-299/303 in full relevant parts. Their
+fixed families illustrate the obstructions;no earlier complete
+three-edge witness-selection alternative found. No novelty claim
+for this elementary matching argument,no new experiment or PROOFS
+entry/review queue.
+
+**Set-up.** Deviations in four distinct bins A,B,C,D are(1,0,0,-1).
+Consider the unit path A->B->C->D. Its witness families,read in
+increasing token VALUE,are:
+
+  F=all BA adjacent pairs, M=all CB adjacent pairs, L=all DC pairs.
+
+Each family is nonempty. Every same-type family is a matching of
+physical token positions. F and L never intersect:their owner
+letters are disjoint. A middle CB pair can intersect at most ONE
+F pair (at B) and at most ONE L pair (at C). Conversely any F or
+L pair can intersect at most one middle pair. These statements use
+actual adjacent positions,not just a bin-level edge.
+
+If f,m,l can be chosen pairwise disjoint,perform them in PATH ORDER.
+Ownership of all later witnesses survives,and deviations become
+(0,1,0,-1),(0,0,1,-1),then0. This gives a three-move descent.
+This does not demand every choice of witnesses be disjoint.
+
+**Complete alternative when no such choice exists.** At least one
+of the following holds,and each displayed obstruction is sufficient
+to prevent a disjoint choice for THIS path:
+1. F and M are singletons and intersect:one unique CBA triple.
+   L may have further witnesses elsewhere.
+2. M and L are singletons and intersect:one unique DCB triple.
+   F may have further witnesses elsewhere.
+3. F and L are singletons,M consists of exactly TWO pairs.
+   One middle pair meets F only,the other meets L only. This
+   gives disjoint CBA and DCB triples (the separated double fork).
+The contiguous DCBA overlap is included in both1 and2 when all
+three families are singleton. Cases need not be declared mutually
+exclusive in that overlap.
+
+**Proof of exhaustiveness.** Fix any f in F,l in L. Their union can
+meet at most two distinct middle pairs,so |M|>=3 gives a disjoint
+one immediately. If M={m},failure means no pair(f,l) simultaneously
+avoids m. Thus either EVERY f meets m or EVERY l meets m. Since
+m can meet at most one of each family,this is1 or2.
+
+If M={m1,m2},each chosen(f,l) must meet BOTH middle pairs. Neither
+f nor l meets more than one. Consequently each chosen f meets one
+and each chosen l the other. No f or l can meet both;allowing two
+different f's would force every l to meet both middle pairs,because
+different f's meet different middle pairs (or one meets neither).
+That is impossible. Thus F is singleton,and similarly L singleton;
+they meet opposite middle pairs,case3. Each middle pair meets the
+stated endpoint pair only. Its forced CBA/DCB triples cannot overlap:
+a common B or C token would force the same CB adjacency.
+This proves the alternative without using bin sizes or target
+existence. Minimum size3 has NOT yet been spent in releasing the
+bottlenecks;that is the open next inference.
+
+A useful quick corollary:if any TWO of |F|,|M|,|L| are>=2,
+a disjoint lift exists. Merely having extra tokens in bins does not
+establish these multiplicities. MI298's double fork and MI301's
+contiguous DCBA control catch that invalid shortcut. A concrete
+positive min3 word is ABABADCDCCBD,with target(5,14,23,24).
+Witness swaps values(1,2),(9,10),(5,6),in that order,are disjoint
+and give bins{0,1,4},{2,3,9},{5,8,10},{6,7,11}. All sums/sizes
+check by hand;no claim this path is shortest.
+
+**What shortest-path structure additionally gives.** If the chosen
+path is shortest from A to D,there are no CA,DA,DB adjacencies:
+these would be shortcuts A->C,A->D,B->D. In case1 the unique BA
+and CB overlap at CBA. Every other downward owner transition is
+then DC. The ENTIRE word,not a selected local interval,has form
+
+  A^a B^b W B A^d B^e V,
+
+where d>=1,a,b,e>=0,W is a nonempty C/D word ending C,and
+V is any C/D word (possibly empty). The final C of W,central B
+and first A of A^d are the unique shared triple. Sizes give
+a+d>=3,b+1+e>=3,and C,D counts across W,V>=3 in the SS3 regime.
+This leaves arbitrary binary W,V,not a promise that a fixed local
+module covers them. Case2 reflects this structure. Shortest paths
+of length1 or2 are separate cases;this reduction does not silently
+dispose of them or the unused fourth bin.
+
+**Unexpected hand kill of a tempting completion.** One might try
+to freeze A,B while freely reshaping the two C/D intervals. That
+connectivity claim is FALSE. Take their pool P={0..5} union{12..17},
+each bin size6,with allowed C moments43 or44. Both C sets
+{0,2,4,5,16,17} and{0,1,4,12,13,14} have sum44,but contain
+respectively2 and3 high-interval tokens. Any1/2-token exchange
+changing that count changes C's sum by at least2:one cross-interval
+transfer costs>=7,and the one remaining internal compensation
+has magnitude<=5;two transfers in the same direction cost>=14.
+It cannot stay in the two adjacent moment levels. Thus the count
+is invariant on each allowed component,and those two states are
+not connected under the restricted reshaping.
+
+This is an ACTUAL full-interval min3 control,not a counterexample
+to SS3:let A={6,7,8},B={9,10,11},take the first C above,D=P-C.
+Targets(20,30,44,59),current deviations(1,0,0,-1). Unfreezing A
+gives the one-move quad repair A{6,8}<->D{1,12}:final
+A={1,7,12},D={3,6,8,13,14,15},B,C unchanged. Literal target
+partition proves SS. This is a kill test of the auxiliary frozen
+connectivity idea,not a new probe/proof/review job or rediscovery
+of general infeasibility. The endpoint must remain available.
+
+**Reflection/fresh-choice check.** The last full loop reflection
+was B150;this block reaches90 minutes. Understanding moved
+through two finite diagnostics,a hand extremal explanation and a
+new global witness alternative. The repeated open step is now
+explicit:use the third tokens and full interval to release a UNIQUE
+shared boundary,while permitting endpoint participation. I would
+still choose that question fresh;the warmth comes from a reduced
+structural obstruction,not from repeating the number5. The failed
+frozen-endpoint idea changes the next approach. Do not react by
+opening a module catalogue or another census. Next work should
+seek a global exchange/ordering invariant for arbitrary W,V,or an
+adversarial family that refutes the desired bounded release.
+
+Gut:enjoyment at the selection reduction,disappointment at frozen
+C/D connectivity,and relief that its hand countercontrol is decisive.
+Reasoned:generic three-edge lifts are settled;three obstruction
+forms remain,not a solved lifting theorem. Niggle sweep:middle
+family cardinalities exhaust1/2/>=3;an endpoint witness meets only
+one middle witness;double-fork triples really are disjoint;other
+bin paths can still work;no assumption of a compatible goal;frozen
+subproblem and full instance distinguished. Hand reduction remains
+single-party;SS3/E28/L8 OPEN,13min ACTIVE.
