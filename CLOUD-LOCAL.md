@@ -867,3 +867,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 10:09 BST | GPT | Intel CPU/hand diagnosis | B131/MI283,GC1458:controls/two witnesses pass;target3 state cap200001,pilot0.182593CPU. B128 same target63states;DLX omitted dynamic cardinality/memo pruning. | No rerun/repair/fulljob. Exact target has only one extra token pair above minima;next PREPARE isolated budget-pruning diagnostic,hold order/labels/caps fixed. Cloud asked concrete perspective;research13min active. |
+
+
+| 2026-10-17 10:20 BST | GPT | Intel CPU preparation | Claims B132/MI284:isolated STATIC-root minimum-token budget;SAME first3 B131 targets only,retained baseline SHA,no baseline rerun. | Exact same DLX order/labels/rows/updates/caps;predictthird<=5000states/all3pass/loop<=0.1CPU. Publish source/controls before ONE diagnostic;no automatic2000/fulljob even ifpass,research13min. |

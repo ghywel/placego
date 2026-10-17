@@ -16344,3 +16344,85 @@ confounding stated;necessary cardinality budget not a fixed-cardinality
 model or existence proof. Gut:disappointment at the search explosion,but
 interest in the now-precise missing resource constraint. Reasoned:the cheap
 failure teaches what the next controlled comparison must hold constant.
+
+
+### MI284 — B132 claim/preregistration: isolate the static token budget on SAME first3 (2026-10-17 10:20 BST)
+
+**Question and pull.** Is the specific necessary token budget enough to
+remove B131's third-target explosion,with every other search choice held
+fixed? Interest is in this conservation constraint,not another general
+solver-tuning round. This diagnostic can reject the explanation cheaply.
+It does not attempt fullE28,the whole2000 sample or a new target domain.
+Record searched: remaining.token|remaining.minim|minimum.cardinality with
+DLX|MI283|B131 ->two MI283 paragraphs;actual B131 source and B128's per-node
+cardinality code reread. Known Algorithm X credited in PRIOR-ART/MI281.
+No new theorem or carrying read requested for a standard necessary bound.
+
+**Sole intervention and its soundness.** Include B131's archived source
+for its catalogue,matrix constructor,cover/uncover,budget and literal
+checks;rename its main so neither its old main nor old solve/control entry
+points executes. A new visit routine duplicates the exact B131 column
+choice,row traversal,cover/uncover order and success handling. Add ONLY
+this early rejection: tokens_left < sum of static root minima for bins
+not filled yet. For target t,root minimum is the smallest positive k with
+k=t mod2 and k(2m-k)>=t. Every subset of firstm odds summing t needs at
+least that many tokens;later deletion cannot lower this necessary bound.
+After choosing row S for bin i,subtract |S| tokens and that bin's root
+minimum. Chosen DLX rows are disjoint,so an actual completion cannot cross
+the rejection boundary. This is STATIC-root-minimum pruning,not B128's
+stronger minima recomputed from currently fitting subsets. No memoization,
+new symmetry reduction,reordering,changed rows/columns,anchors,forced
+cardinalities or cap increase. Count rejected-state visits in node totals.
+
+**Frozen counterfactual.** Read the retained B131 primary report,494bytes,
+SHA256e9c6290554fe0689621cd9515b11ff2301fbc003ea176697bed3906ca96c8846.
+It is the baseline:completed2,third cap200001states,same explicit target.
+DO NOT rerun B131. New instrument runs ONLY original B57 first3 in their
+original order,ranks/identity checked against the full pinned B57 SHA
+c5b4ec84c7dc7232cd52b37d3a1c2afcbbeb52054a15870cadf95c0b6b8118f0.
+No skipped easy cases/new sample or old witness seeds. A successful third
+query would support this intervention for THIS fixture,not establish
+full-domain performance or prove the bound explains every hard tail.
+If it fails,the static-budget explanation fails this diagnostic;stronger
+pruning remains logically distinct,not an automatic next patch.
+
+**Controls and unexpected check.** Same189 independently labeled tiny
+three-bin questions;known unrestricted97/99 positive;global3,3,3 negative;
+published26-token lower guard. Same complete node/count restoration after
+EVERY completed successful/unsuccessful search,and individual/nested header
+round trips. Independent checker imports only unchanged B128 rank/literal/
+MITM/GF helpers,no primary solver. ALL123 full subset maps/counts and every
+literal token/bin sum checked. Its duplicate,wrong-sum,identity and arbitrary-
+cardinality controls stay active. Unexpected boundary check:at the actual
+third target,choosing a five-token75 leaves23 tokens and23 required,which
+MUST be allowed;choosing a seven-token75 leaves21 against23,MUST reject.
+Equality at the boundary must never be pruned. All these controls are
+self-checks,not outside-party verification. Nothing has executed except
+C++ syntax-only/Python AST checks before this registration is pushed.
+
+**Predictions.** P1 all3 literal witnesses,no cap. P2 third uses<=5000
+visited states,including budget-rejected states;baseline already visited
+200001 without completing,so this would be more than40-fold less than
+that stopped count. P3 ENTIRE first3 loop<=0.1CPU sec INCLUDING construction,
+snapshots,restoration and output. Record each state/update/prune/CPU count
+and total attempted/pending work. A cap or >5000 third states defeats the
+strong pruning prediction. No completed-only means hiding a pending call;
+no full2000 runtime or full-base projection from these three cases.
+
+**One invocation and unchanged caps.** Native200k states/query,10M total,
+1B link updates,20CPU/40wall/256MiB at the same check intervals as B131;
+45wall watchdog. Checker30CPU/150wall/256MiB. C++17/O2 compile<=60wall
+AFTER source/prereg push,then ONE driver invocation. Stop first control/
+error,NO or cap;refuse overwrites,no repair/retry or later query. Even if
+all3 pass,DO NOT automatically run2000 or the full base. No raw upload or
+manifest retry;artifacts local. Source names path_forest_dlx_budget_diagnostic.cpp
+and path_forest_dlx_budget_check.py. No policy edits to archived B131.
+
+Niggle sweep:root bound only -> limitation explicit;off-by-one -> equality
+control;false exclusion ->189 oracle comparisons/full literal validation;
+confounding -> same inherited matrix/updates/order/caps,no other feature;
+baseline rerun -> retained SHA only;old seeds -> none;measurement scope ->
+only3;third failed generic forecast -> one targeted diagnostic,not another
+uncontrolled ladder. Gut:ACT once on a precise falsifiable explanation.
+Reasoned:this comparison can teach which constraint matters without a
+larger resource commitment;research13min remains active.
