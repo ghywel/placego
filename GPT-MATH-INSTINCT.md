@@ -14142,3 +14142,65 @@ diagnostic across several even counts, plus parent-available and doubled-
 maximum controls. No experiment opened here. MI238 remains the one
 carrying priority; READ-LEDGER only, no new queue or routine halt.
 Full N6/E28/L8 remains OPEN;research13min continues.
+
+
+### MI256 — B118 preregistration: forced small terminals and exact endpoint collisions (2026-10-17 07:26 BST)
+
+**Question/pull.** Test MI255's new direct forced branch, including its
+capacity minimum and original-owner reflection. Record searched:
+complementary.*terminal|forced.*small.terminal|even.*repeated.*small
+->6 paragraphs/3 files; MI255 and existing geometry/bag validators read.
+The pull sharpened while preparing the check: forced capacity gives
+an exact collision description, not only a sufficient safe interval.
+
+**Additional hand inference BEFORE experiment, SKETCH.** In the forced
+branch H=h-(ms+b)<a, J=H+b-a<b. EVERY feasible z in[-H,J] is therefore
+strictly in(-a,b). Both terminals lie above both ladders, and |z|<s.
+The ladders meet iff z0 (the only multiple of s in that interval), and
+the terminals meet iff z=b-a=delta. Thus the fixed terminal-order
+layout's ENTIRE bad-offset set is exactly{0,delta}. This resembles
+MI220's capacity-forced simplification but concerns the SMALL-terminal
+case. It needs no general N5 candidate. The experiment below tests it
+independently; no computation supplies its infinite quantifier.
+
+**Predictions BEFORE implementation/run.** m1..3,s3..7,EVERY integer
+1<=a<b with a+b=s, and EVERY h=ms+b..(m+1)s-1. Exactly42 profiles,
+14 for each m. On EACH profile, independently enumerate all labelled
+target bin masks and ALL merged-parent masks. Predict target min larger
+load ms+b, parent minimum(m+1)s, target capacity present/parent absent.
+Every fitting target split has m repeats per bin and separates a,b.
+Bitset reachable loads must agree with the target mask set. Exactly
+4704 target masks+2352 parent masks=7056 capacity cases.
+
+For ALL legal unordered positive odd p<=q with p+q=2(2m+1)s,
+max<=2h-1,not both2h-1, run MI255's EXPLICIT root selector. Predict
+exactly69 formulas:33 broad-root/36 thin-root,21 negative offsets and
+15 reflections. All original move bags/ordered positive owners/windows,
+disjoint indices and BOTH physical geometry tests must pass. Compare
+all69 root-sum interval sets against direct root rectangles and parity
+recovery. These checks cover4/6/8 negative gaps, not just the N6 count.
+
+Independently inspect every feasible offset of the FIXED terminal-order
+chains on ALL42 profiles. Predict exactly168 offset cases, collision
+iff z in{0,delta}, by index intersection and both physical validators.
+Include the9 profiles with T1 and no legal positive pair: their two
+offsets are both blocked. The constructor must reject their sole
+bounded pair p=q=K=2h-1 as doubled maximum. No all-order nonexistence
+or new target census is inferred from these fixed-order offset maps.
+
+Add exactly TWO supplied-parent positive controls for the other branch:
+m2,s3,a1/b2,h9,17/13,parent A=(0,3,6,9),B=(1,4,7),insert2 in A;
+m3,s4,a1/b3,h16,31/25,parent A=(0,4,8,12,16),B=(1,5,9,13),
+insert3 in A. Validate both parents and children literally, including
+original positive owners. These are explicit witnesses, not runs of
+an N5 existence algorithm. Total71 child formulas,zero E28 partitions.
+
+Counterfactual: on m2,s5,a2/b3,h14,p=q25 omit reflection. Geometry
+still passes but pre-joins27/23 must fail the original25/25 bag check.
+Unexpected control: the9 T1 profiles have ordinary target capacity but
+NO accepted positive pair; neither a capacity PASS nor two endpoints
+in the root rectangle licenses their excluded doubled maximum.
+Caps100 child formulas/10000 mask,offset and root cases,3CPU sec/64MiB.
+Stop any mismatch/cap,retain failure,no repaired prediction or wider
+grid. MI255/252 remain SKETCH;MI238 sole carrying priority,
+completion READ-LEDGER only,no routine review halt.
