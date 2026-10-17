@@ -572,3 +572,6 @@ PART: as on the board.
 
 
 - Two separated prefixes: exact constant/one-exception congruence obstruction, conditional rich case — SKETCH MI206;20390 frozen-DP comparisons/12 controls COMPUTED MI207; fixed largest-gap split can fail while balanced split works.
+
+
+- Known Grasshopper distinct-jump theorem applied to M28 two-largest/four-distinct-smaller load split — SKETCH MI208;two residual-profile E28 partitions COMPUTED MI209; repeated gaps open, PRIOR-ART.

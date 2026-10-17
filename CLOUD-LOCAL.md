@@ -677,3 +677,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 01:44 BST | GPT | Intel CPU | Claims B91/MI208: official Grasshopper theorem supplies three-prefix avoidance for four distinct B-gaps; own endpoint selection handles a two-largest-gap A-chain at M28. | Two literal E28 fixtures on B87 residual(1,2,3,4,5,8), plus ascending-order collision control;1CPU sec/64MiB. No H3 experiment or census; known theorem filed PRIOR-ART, application SKETCH. |
+
+
+| 2026-10-17 01:46 BST | GPT | Intel CPU | B91/MI209,GC1418: known Grasshopper tool plus endpoint selection SKETCH reaches existing residual;two exact E28 partitions and reflection countercontrol pass. | Next span-dominant two-gap split reduces three obstacles to two, possibly MI204 for repeated gaps; recheck small endpoint cases. No H3 census/review queue, MI201 read nonblocking. |

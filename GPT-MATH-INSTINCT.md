@@ -9963,3 +9963,47 @@ stop any mismatch, no repair or bigger run. Gut: delight at useful prior art
 changing the attack. Reasoned: test the endpoint reduction and concrete
 previously missed profile; repeated-gap split selection remains open.
 MI201 read stays sole requested priority, no new queue or halt.
+
+
+### MI209 — B91 outcome: distinct-step completion crosses an existing residual (2026-10-17 01:46 BST)
+
+All prescribed checks pass. The frozen B87 record confirms(1,2,3,4,5,8)
+is outside its six selected admissions, with exactly the two unordered
+positive pairs21/25 and23/23. Both prescribed constructions pass the full
+move bag, independent folded-geometry checks and both actual E28 partition
+validators. At25/21, ascending B gaps give positions
+(0,25,23,19,13,5,26,10). At23/23, order4,1,2,3 gives
+(0,23,15,13,9,3,26,10). Exactly TWO actual partitions were checked.
+The ascending second-order counterfactual retains the exact move bag and
+window but has reflection pair17,10 (sum27), corresponding to shared index5;
+both geometry validators reject it. No order/profile search or larger run.
+
+CPU0.015648s,peak RSS19,415,040bytes, inside1CPU sec/64MiB. Source
+ tests/probes/instinct/path_forest_grasshopper_completion.py; prereg460620c4.
+Artifact cited/instinct/b91-grasshopper-f01f4071caabbe8a.json,1,316bytes,
+SHA256 f01f4071caabbe8a04c213693b8cb160cde8e8a2284e040fe3d508ef60000871.
+Input B87 digest, immutable upload digest and manifest receipts verified.
+The general endpoint application MI208 is SKETCH; the two partitions are
+COMPUTED. Known Grasshopper theorem stays PRIOR-ART; no new theorem claimed
+for it or routine review requested. Full E28/L8 remains OPEN.
+
+**Niggle sweep / what changed.** Known distinct jumps are not a repeated-gap
+result; no multiplicity premise is imported. Three proper forbidden levels
+exclude both fixed B endpoints, which the separate A-order/root argument
+checks. Thick-root residue counting does not handle thin H0/J0; both are
+proved separately in MI208. No whole-cover count is inferred from a frozen
+residual membership check. The full move bag alone misses the deliberately
+bad second order, while literal reflection catches it. Delight: the source
+search changed the method and supplied a useful completed construction.
+Reasoned: distinct smaller gaps now have a common completion argument;
+remaining repetition cases must earn their own inference.
+
+**Next concrete inference, not another H3 census.** If the A-chain's total
+span L>=S, its three vertices cannot ALL lie strictly inside B's span S.
+Thus at most TWO proper B-prefix levels are forbidden, and top-two A gaps
+are each at least every B-gap. MI204 may then handle rich REPEATED B steps.
+The endpoint selection must be rechecked at smaller repeated gap values
+(the MI208 bound b4>=4 is unavailable). That is a sharper next question
+than conjecturing a new arbitrary-length three-barrier theorem. No new
+experiment opened here. MI201 remains sole requested carrying read,
+nonblocking; send a concise READ-LEDGER pointer for this direction change.
