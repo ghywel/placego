@@ -87,19 +87,15 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 00:06 BST:** B182/MI355 completes the
-ONE frozen finite-basis test:48896 normalized scalar cases,
-586752 independent near-edge comparisons,all controls PASS.
-Three-hole gap-distance<=3 is now supported by the complete
-finite basis plus an UNREVIEWED universal hand reduction.
-Consequently the generic two-hole3 least-slack LEGAL-pivot
-branch completes at ALL remaining sizes>=4 if its lower slack
-is>=4 (or if it uses a positive suffix). This is conditional
-hand/computed reasoning,not an independently verified theorem.
-Remaining:least slack0..3 and absent formal pivots,especially
-both original holes inside the residual span. No retry or
-larger h scan,new PROOFS entry or review queue. G317's original
-read still pending;G315/G316 unchanged,E28/L8 OPEN.13min ACTIVE.
+**Current state,2026-10-18 00:19 BST:** MI357/B183 supplies
+a hand near-face catalogue and four explicit repairs,closing
+least slack0..3 for a LEGAL pivot. With MI355,ALL legal-pivot
+cases in the generic two-hole THREE-bin problem at minsize4
+now complete CONDITIONAL on unreviewed three-hole localization.
+The generic theorem remains OPEN at FORMAL pivots landing on
+absent original values;balanced repairs may leave FOUR holes.
+No experiment or automatic census this block. G317 pending;
+G315/G316 unchanged,novelty unassessed,E28/L8 OPEN.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -23977,3 +23973,189 @@ lifts checked;source unchanged during execution;missing pivot
 not treated as legal;four holes not called three;no partition
 or novelty/prize claim from scalar success.13min ACTIVE,
 G317 request unchanged,G315/G316 in scope,E28/L8 OPEN.
+
+
+### MI356 — B183 claim: near-minimum two-hole compatibility (2026-10-18 00:16 BST)
+
+Question:for the generic two-hole THREE-bin problem at minimum
+size4,does the selected least lower slack h0..3 always permit
+completion? A hand near-face inheritance argument would remove
+this entire remaining branch;missing formal pivots stay separate.
+Budget:one bounded hand block through00:35,no experiment or
+automatic four-hole search. Record searched:near.minimum,
+forced.prefix,MI355,two.hole;read MI355 and G315 scalar tool.
+No new literature or novelty claim;use the already-read rank
+argument and exact edge-spectra premises,with their statuses.
+
+Pull:the possibility that a complementary near-maximum target
+forces the right low tokens together is attractive. Unease:
+assuming the canonical pivot belongs to that union is false
+without a cost bound. Kill test:derive the exact exclusion cost
+for that pivot and explicitly test the borderline h2/h3 cases
+by hand. If forced containment fails,change the A representation
+rather than silently asserting it. Unexpected check:use the
+complementary union rather than only B's individual spectrum.
+This is a proof attempt,not an empirical experiment.
+
+Step-back:the live question has changed from a coarse interior
+buffer to actual near-face allocation. That concrete geometry
+still draws attention;administrative receipts do not. Fresh
+choice would retain this bounded hand question,not authorize
+a larger census. No routine review halt;G317 request unchanged.
+
+
+### MI357 — B183 outcome: four explicit near-face repairs;only absent pivots remain (2026-10-18 00:19 BST)
+
+**Hand PROOF-SKETCH,conditional on MI353-355's unreviewed
+three-hole localization.** In the generic TWO-hole THREE-bin
+problem at minimum size4,the least-slack LEGAL-pivot branch
+now also completes at selected lower slack h0..3. Combined
+with MI355,ALL legal prefix/suffix/pivot cases complete. This
+is not the generic theorem:formal pivots at absent original
+values remain OPEN. No experiment,new PROOFS entry or added
+review job. G317 remains a separate pending request.
+
+Here is the full small-edge argument. Normalize the original
+pool P to an interval minus at most2 values,and write its
+available values z_0<... . Choose least singleton slack and
+reflect the ORIGINAL problem if needed,so A has size a and
+target alpha_P(a)+h. For h<=3 a positive high suffix is
+unnecessary:the formal recipe is the first a-1 available
+values plus p=v+h,where v=z_(a-1). This argument assumes p
+ACTUALLY PRESENT. For h0 use the least a values. Residual R
+has at most3 deletions and both remaining sizes b,c>=4.
+
+For either remaining size b,the already-derived least-slack
+bound is s_B>=F_b=alpha_P(a+b)-alpha_P(a). Since p-v=h<=3
+and z_(a+b-1)-v>=b>=4,the residual minimum is exactly
+
+ alpha_R(b)=F_b-h.
+
+If B is scalar-infeasible in R,the localization says it is
+within3 of an extreme. If it is an upper-edge omission,
+replace B by C and complement in R;the same lower analysis
+applies. Thus put d=s_B-alpha_R(b),with h<=d<=3. The
+original C target is individually feasible,so its complement
+is an ACTUAL (a+b)-subset with sum alpha_P(a+b)+d.
+
+**Exact low-offset catalogue,not a scan.** For any ordered
+pool x_0<... and subset size r>=4 with complement>=4,put
+E_j=x_(j+1)-x_j and e=E_(r-1). Every near-minimum subset
+with physical excess<=3 has rank displacement<=3. The
+partitions of integer displacement1,2,3 give the COMPLETE
+possibilities for attaining the respective offsets:
+
+ 1: e=1.
+ 2: e=2,or E_(r-2)+e=2,or e+E_r=2.
+ 3: e=3,or E_(r-2)+e=3,or e+E_r=3,or one of
+    E_(r-3)+E_(r-2)+e, E_(r-2)+e+E_r, e+E_r+E_(r+1)
+    equals3.
+
+The last three are the displacement shapes111,21,3. All
+needed indices exist at r,t>=4. A physical excess cannot
+come from greater rank cost since every rank gap is>=1.
+With at most3 deleted values,the excess over1 of ALL E_j
+sums to at most3. Consequently offset3 can be absent only
+in these configurations (unspecified gaps are1):
+
+ (i) e=4;
+ (ii) E_(r-2)=e=E_r=2;
+ (iii) E_(r-3)=2,E_(r-2)=e=1,E_r=3;
+ (iv) E_(r-2)=3,e=E_r=1,E_(r+1)=2.
+
+Each consumes EXACTLY3 holes. This list follows directly:
+e3 attains3;e2 needs both neighbours>=2;with e1,a neighbour2
+already attains3,and a neighbour>=3 needs the other neighbour1
+and its further neighbour>=2 to avoid a three-one sum. Two
+neighbours>=3 exceed the hole budget. For offset2,the only
+absence patterns are e>=3,or e1 with both neighbours>=2.
+For offset1,only e>=2 matters.
+
+**Why original complementary feasibility nearly forces A.**
+The residual b-minimum has highest value z_(a+b-1),the same
+cutoff as the original (a+b)-minimum. The pivot p is strictly
+below that cutoff. Restoring p therefore leaves the boundary
+and all upper gaps unchanged;only the gap containing p can
+change the lower local catalogue. If that gap is outside its
+last3 selected ranks,the two low-offset maps are identical.
+Original C feasibility then excludes a residual omission.
+For h0 nothing was removed near the cutoff and the maps
+are identical. For h1,the pivot gap is too low to affect
+any listed offset. A new offset2 omission could require
+p in the penultimate selected gap;h<=2 cannot reach it at
+b>=4,and h3 cannot have d2 because d>=h. Thus the ONLY
+new omission to inspect is d3 in (i)-(iv).
+
+The pivot cannot lie in the boundary or upper gaps. In(i),
+all3 holes are at the boundary,so this cannot be a new
+omission caused by p. In(ii)-(iv),all3 holes are already
+accounted for:two originals plus p. Placing p=v+h,h<=3,
+in a relevant lower gap gives EXACTLY the four rows below.
+All tokens and holes in this table are offsets FROM v.
+
+ h | b | original holes | first b residual offsets | target offset | repaired B offsets
+ --|---|----------------|--------------------------|---------------|-------------------
+ 2 | 4 | 6,7            | 0,1,3,4                  | 11            | -1,3,4,5
+ 3 | 4 | 5,7            | 0,1,2,4                  | 10            | -2,2,4,6
+ 3 | 4 | 4,8            | 0,1,2,5                  | 11            | -2,2,5,6
+ 3 | 5 | 7,8            | 0,1,2,4,5                | 15            | -2,2,4,5,6
+
+For completeness,the pivot gap index is at most h-1<=2.
+Pattern(ii) places it at b-2,forcing h3,b4. Pattern(iii)
+places it at b-3,forcing(h,b)=(2,4) or(3,5). Pattern(iv)
+places it at b-2 in a length3 gap,forcing h3,b4,p at its
+lower missing value;its upper missing value would need h4.
+No other original hole can sit below v or in an unspecified
+gap because these patterns consume the whole budget.
+
+**One common repair.** Here v=a-1 after normalization,
+since both original holes are above v. Set w=v-h+1.
+Replace the canonical A by
+
+ A'=(original least a values minus{w}) union{v+1}.
+
+This is legal: a>=4,h<=3 gives w>=1;v+1 is available;its
+sum is alpha_P(a)+h. Relative to old A this exchanges
+{w,p} for{v,v+1},preserving size and sum. Take B' from
+the table;every row has size b,sum b*v plus the target
+offset,and uses available tokens disjoint from A'. The
+rest of P is automatically the required C by conservation.
+Every displayed offset is within the original interval:
+its top relative endpoint is b+c+2>=10,and the largest
+used B offset is6. This closes all four rows.
+
+**Unexpected literal complement check.** Set a4,v3,c4.
+For the four rows respectively,complete partitions are:
+
+ P=0..13 minus9,10: A={0,1,3,4},B={2,6,7,8},C={5,11,12,13};
+ targets8,23,41,total72.
+ P=0..13 minus8,10: A={0,2,3,4},B={1,5,7,9},C={6,11,12,13};
+ targets9,22,42,total73.
+ P=0..13 minus7,11: A={0,2,3,4},B={1,5,8,9},C={6,10,12,13};
+ targets9,23,41,total73.
+ P=0..14 minus10,11: A={0,2,3,4},B={1,5,7,8,9},C={6,12,13,14};
+ targets9,30,45,total84.
+
+These are literal hand controls,not a finite-domain pass or
+independent review. In the first row the original low union
+can exclude p,so the initially tempting forced-pivot claim
+really FAILS. The changed A,not a false containment premise,
+repairs it. Retain that failure.
+
+Niggle sweep:catalogue includes rank shapes21 and111,not
+just replacing one token;all upper omissions handled by
+complementing B/C;least slack gives d>=h;all4 rows exhaust
+the full3-hole budget;table repair uses an actual available
+low token;h0 and a boundary pivot are not called internal;
+missing formal pivots remain OPEN. The localization carrying
+this branch is still conditional/unreviewed. No novelty or
+prize claim and no promotion of G317.
+
+Gut:renewed interest from a short repair replacing the failed
+containment shortcut. Reasoned:the legal-pivot branch now has
+a complete conditional hand argument,with only the absent-
+pivot mechanism left in the generic theorem. Next cheap
+test:classify that ACTUAL repaired residual by which original
+holes remain internal;seek a different first-bin representation
+before authorizing any four-hole spectrum computation.
+13min ACTIVE;G315/G316 unchanged,E28/L8 OPEN.

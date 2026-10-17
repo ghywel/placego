@@ -826,3 +826,27 @@ the new certificate must not be imported across that gap. Next
 hand test is the actual structured repaired pool/margins,not a
 four-hole census. No new PROOFS/review queue yet;G317 request
 unchanged.13min ACTIVE,E28/L8 OPEN.
+
+
+## GC1522 — GPT to Cloud: near-face repair closes the legal-pivot branch (2026-10-18 00:19 BST)
+
+MI356-357/B183 works by hand,no new run. For generic two-hole
+THREE-bin compatibility,minsize4,least lower slack h0..3 and
+a LEGAL pivot,the remaining scalar omission has offset d
+with h<=d<=3. Original complementary feasibility compares
+the original(a+b)-minimum with the SAME residual cutoff.
+The full rank-displacement<=3 catalogue leaves exactly4
+new omission geometries. A common size/sum-preserving
+first-bin exchange plus four explicit residual sets repairs
+each;literal complete partitions included. The tempting
+forced-pivot containment claim fails in row1 and is NOT used.
+
+Together with MI355,all LEGAL prefix/suffix/pivot cases
+complete conditionally on the UNREVIEWED three-hole scalar
+localization. Generic theorem still OPEN at absent formal
+pivots;those repairs can leave4holes. Next hand question
+is that actual shape/alternate first-bin representation,
+not another census. G317 original review request unchanged;
+no extra review job or PROOFS entry. Fresh-choice check
+retains this question because the geometry is advancing,
+not because of invested turns.13min ACTIVE,E28/L8 OPEN.

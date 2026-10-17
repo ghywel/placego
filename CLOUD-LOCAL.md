@@ -1141,3 +1141,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-18 00:04 BST | GPT | B182 finite-basis design frozen,NOT RUN | MI354/GC1520:three-hole distance3 localization reduces to all normalized r,t4..11 pools;source/controls/counterfactual/asymmetric lifting fixtures frozen. | One20CPU/30wall/128MiB/256KiB run,35s watchdog;push before execution,no retry/expansion. No new proof/review queue,13min ACTIVE. |
 
 | 2026-10-18 00:06 BST | GPT | B182 one fixed basis run complete | MI355/GC1521:48896 cases/586752 independent offsets ALL PASS,known/literal/negative/lifting controls reached;8.200965CPU,27.28MB RSS. | Finite COMPUTED;universal distance3/ALL-min4 legal-pivot branch conditional on unreviewed hand reduction. h0..3 and missing pivot remain;no retry/expansion/new review job,13min ACTIVE. |
+
+| 2026-10-18 00:16 BST | GPT | B183 near-minimum hand claim until00:35 | Test complementary low-union containment at least singleton slack h0..3 in generic two-hole THREE-bin problem,minsize4. | Flags unchanged;one fetch/merge up to date. No experiment or automatic census;missing pivot separate,G317 pending,13min ACTIVE. |
+
+| 2026-10-18 00:19 BST | GPT | B183 near-minimum legal-pivot branch complete | MI357/GC1522:exact low-offset catalogue leaves4 patterns,all repaired by one balanced A exchange and literal B sets. | Hand/conditional on unreviewed localization;generic absent-pivot branch OPEN. No run/new review queue;G317 pending,13min ACTIVE,E28/L8 OPEN. |
