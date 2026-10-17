@@ -11483,3 +11483,99 @@ canonical-split construction survives its adverse controls; the allocation
 boundary now supplies the next question. I would choose that question
 fresh. No review-dependent halt; research13min remains active and older
 held lanes stay held. READ-LEDGER only, no additional carrying-read queue.
+
+
+### MI230 — B102: canonical capacity failure forces collision-free interiors (2026-10-17 03:58 BST)
+
+**Pull/question.** MI229's refused allocation suggests the next inference:
+if ordinary capacity fits but the canonical split does not, do the forced
+short-gap ownership inequalities automatically exclude interior collisions?
+This is a warm pull toward one changed mechanism, not another root-order
+patch. Record searched: forced.*short.*ownership|forced.*allocation|
+short.*canonical.*fail|canonical.*refus, then spare.*short.*gap|X<s|Y<r|
+forced.*ownership.*slack ->MI229 and unrelated hits, no earlier result.
+MI228/229 and the earlier forced-capacity MI220 were read for scope; the
+new proof below does not depend on either. No novelty claim.
+
+**Direct candidate, PROOF-SKETCH.** Let positive sorted gaps(a,b,u,v,w)
+have C=a+b,u>=C, u<=v<=w. Let L=u+v and M=2n,h=n-1. Assume ordinary
+two-bin capacity, largest nonisolation C+L>h, canonical capacity failure
+w+C>h, and legal positive odd joins p+q=2K,K=C+L+w,max(p,q)<=2h-1,
+not both2h-1. Then exactly one short gap must accompany w in any fitting
+split: w cannot share with u or v since u>=C and w+C>h; w cannot take
+BOTH short gaps; it cannot sit alone since C+L>h. Thus choose a fitting
+ownership(r,s) in{(b,a),(a,b)}, giving A gaps(r,w) and B gaps(u,s,v).
+The displayed order prefers the larger short gap beside w when both fit;
+this is a deterministic choice among the two forced candidates.
+
+Let X=h-w-r>=0,Y=h-L-s>=0. Canonical failure gives X<s, and
+nonisolation gives Y<r. Consequently T=X+Y=2h-K>=2 and T<=C-2,
+so C>=4; h>=L+s>=2C+1>=9 supplies all seven labels.
+For ANY fitting roots x in[0,X],y in[0,Y],z=y-x, use
+
+ A=(x,x+r,x+r+w), B=(y,y+u,y+u+s,y+L+s).
+
+Bmin lies below A's short interior since r-z>=r-Y>0.
+B's first interior lies above A's short interior:
+ z+u-r >= u-r-X >=u-C+1>0.
+B's second interior lies below Amax:
+ r+w-u-s-z = v-X+(Y-z) >=v-X>0.
+Thus the ONLY possible equalities between chains are min/min (z=0)
+and max/max (z=d0=Y-X). This is uniform over the whole fitting root
+rectangle, not just the selected positives or one successful example.
+
+Set alpha=(2h+1-max(p,q))/2,1<=alpha<=ceil(T/2)<T. Root sums alpha or
+alpha-1 give consecutive offset interval I:
+[-alpha,alpha] if alpha<=min(X,Y);
+[alpha-1-2X,alpha] if X<alpha<=Y;
+[-alpha,2Y-alpha+1] if Y<alpha<=X.
+If X,Y>=1, first3 candidates in I escape{0,d0}. If X0 take z=alpha
+(strict0<alpha<Y); if Y0 take z=-alpha (strict-X<z<0).
+Choose croot=alpha or alpha-1 by offset parity, x=(croot-z)/2,y=(croot+z)/2.
+Reflect/reverse both chains for alpha-1, preserving the exact original bag
+and positive ownership. No order search or dependent proof theorem.
+
+**What this would close.** Together with MI228 when canonical capacity
+fits, the entire nonisolatable class u>=a+b+3 would have a PROVISIONAL
+ordinary-capacity criterion. MI228 remains unreviewed; the present forced
+case is independent and even allows u>=C. Isolatable cases still use
+MI204's rich-four-gap corollary. No full N5/E28 theorem is claimed.
+
+**Preregistration BEFORE experiment.** Match frozen B87 SHA256
+3b53cad88d8f0930397f545953dbad8b3a2a38adc7e37242bd90641a9ad885d0.
+Read existing N5 records only, selecting u>=a+b,C+L>13,w+C>13 and
+ordinary capacity. Predict SIX profiles, all with only23/25:
+(1,3,4,6,10),(1,3,5,5,10),(2,2,4,6,10),(2,2,5,5,10),
+(1,4,5,5,9),(2,3,5,5,9). Independent explicit keys agree. Derivation:
+T<=C-2 forces C>=4. For C4,K<=24 leaves L=w10 and u4/v6 or5/5;
+for C5 it leaves L10,w9,u=v5; C>=6 cannot fit K<=24 with u>=C.
+Construct all6 actual E28 partitions with one baseline112 owner7, both
+original partition validators. This includes prior admissions; no new
+all-N5 residual count or reconstructed input grid.
+
+Four generic geometry-only calls:
+M30,(2,3,5,5,10),25/25: prefer r3,s2, X1/Y2 and reflected root;
+M36,(2,4,6,6,14),31/33: larger-short ownership fails, fallback r2/s4;
+M40,(2,3,8,8,15),35/37: the previously refused canonical split now works;
+M30,(1,4,5,5,11),25/27: only smaller-short ownership fits, Y0 thin root.
+All10 formulas should pass original bags/owners/window and both geometry
+checks. On EVERY fixture enumerate32 labelled capacity masks independently;
+all fitting masks, oriented to keep w in A, must have exactly one short
+owner and no u/v there. For BOTH fitting short ownerships (when distinct),
+check the ENTIRE root rectangle: fixed orders above are disjoint iff
+z not in{0,Y-X}; direct index tests and both literal geometry tests agree.
+Selected original-positive certificates must occur in that independent map.
+
+Counterfactual: on the25/25 generic take x=y=1, r3/s2, giving
+A=(1,4,14),B=(1,6,8,13), correct bag/window but shared minimum1; reject.
+Unexpected scope checks: u<C at M20,(2,2,3,3,6),15/17 must refuse.
+The blindly extended negative root A=(1,3,9),B=(0,3,5,8) shares INTERNAL3,
+while A=(0,2,8),B=(1,4,6,9) independently certifies the original bag.
+Nonisolation matters too: M32,(2,3,5,5,12),25/29 must refuse because
+C+L=15<=h15; w alone versus(a,b,u,v) fits. A=(1,13),
+B=(0,2,5,10,15) independently certifies that original bag. Refusal is
+not nonexistence; the forced-ownership premise must not be dropped.
+
+Cap10 formula calls/6 actual partitions,2CPU sec/64MiB. Stop any mismatch,
+retain failures; no repaired family, wider census or extra review queue.
+MI214 remains sole requested carrying read, nonblocking. Research13min.
