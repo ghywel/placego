@@ -87,18 +87,19 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 19:54 BST:** MI332 completes the ONE
-registered MI331 run:21 hole/size domains,8229 rank-and-singleton-
-spectrum-feasible targets ALL realized;two entire-map instruments,
-reflection/endpoints and both negative controls PASS.0.447717 CPU,
-15,597,568B peakRSS. Finite COMPUTED only,no retry or larger domain.
-MI333's hand spectrum calculation identifies at most two individual
-gaps;an exact-extreme singleton reduces to two-bin completion.
-Remaining question:simultaneous allocation in the strict interior
-of the one-hole rank domain. General criterion OPEN,no assumed
-compatible target partition. Next hand construction,not another census.
-MI328/329 remain PROOF-SKETCH pending their existing carrying reads;
-MI327 remains PARTIAL/no retry. SS3/E28/L8 OPEN,13min ACTIVE.
+**Current state,2026-10-17 20:14 BST:** MI334 is an unreviewed hand
+reduction for the one-hole problem. Actual rank bounds suffice to
+reach error E<=2 for THREE nonempty bins:every E>=4 state has
+one/two nonincreasing rank-adjacent swaps reducing E. The unique
+rank gap has weight2;all others weight1. This does not use sizes3
+and does NOT solve the final unit-error case. At a direct gap edge,
+individual feasibility forces an ordinary reverse bin path,but its
+physical witnesses may overlap. The known size2 negative survives
+both reductions,so the remaining proof MUST spend a third token.
+MI332 remains finite COMPUTED:21 domains/8229 targets pass. General
+one-hole criterion and SS3/E28/L8 OPEN. MI328/329 SKETCH pending
+existing reads. Next global unit-error/third-token step,no new census
+or routine review halt;13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -20882,3 +20883,138 @@ formula excludes r1 and complement1;both deleted sums checked on
 P={0,1,3,4};rank bounds are always for the actual pool;the minimum
 bin is forced,not freely frozen;the maximum case uses reflection.
 13min ACTIVE,SS3/E28/L8 OPEN.
+
+
+### MI334 — B164: all larger errors reduce;the unresolved step must use a third token (2026-10-17 20:14 BST)
+
+**Hand PROOF-SKETCH of a reduction,not the one-hole theorem;no new
+experiment or carrying-read queue.** Pull:the single missing value
+creates exactly ONE adjacent-rank gap of size2,so the verified MI295
+mechanism might still clear all larger errors. Unease:do not confuse
+a bin path with compatible physical witnesses again. Record searched:
+`one.hole|punctured|missing.*token|hole.*owner` AND
+`interior|selector|induction|three.bin`:23 hits/10 files;then
+`unit.error|error.*2|weighted.*(edge|path)|gap.*2|rank.adjac` AND
+`one.hole|punctured|three.bin|MI295`:13 hits/8 files. MI295's actual
+carrying proof and MI333's spectrum derivation are the starting points.
+This is a gap-sensitive extension of an existing mechanism;novelty
+unassessed. No invocation of MI328/329 or assumed target partition.
+
+**1. Larger-error reduction.** Let P={0,...,M} minus{q} be assigned
+to THREE nonempty bins of prescribed sizes. Targets total sum(P)
+and obey actual minimum/maximum rank bounds for every bin union.
+Write d_i=current sum_i-target_i,E=sum|d_i|. Then EVERY E>=4
+partition permits at most TWO swaps of adjacent RANKS in P that
+never increase E and decrease it by at least2. Consequently some
+partition has E<=2. Counts>=3 and individual-spectrum feasibility
+are NOT needed for this reduction.
+
+Orient an edge i->j if i owns the higher and j the lower member
+of an adjacent-rank pair. Its weight is their value difference:
+1 except possibly the unique gap2. If no positive bin reaches a
+negative one,let R be all bins reachable from all positives. It has
+d_R>0,no negative bin,and no outgoing edge. Its tokens are therefore
+the FIRST C_R ranks of P. Their target sum would be below their
+actual minimum,contradicting the assumed rank bound. This uses the
+pool's ranks,not the full-interval formula L(C_R) across a deletion.
+
+Choose a shortest positive-to-negative path. Any intermediate bin
+has deviation0,otherwise its prefix/suffix shortens it. A direct
+weight1 edge reduces E. A direct weight2 edge does too unless BOTH
+endpoint deviations are+1,-1. With three bins that exception has
+third deviation0 and E2,excluded here.
+
+The remaining path is A->B->C with deviations(D,0,-D),D>=2.
+Let a be the weight of A->B and b that of B->C. The only possibilities
+are(a,b)=(1,1),(1,2),(2,1):there is only ONE physical gap2 edge.
+If the witness pairs are disjoint:
+
+- (1,1):swap A->B then B->C;final deviations(D-1,0,-D+1).
+- (1,2):same order;final(D-1,-1,-D+2).
+- (2,1):swap B->C first,then A->B;final(D-2,1,-D+1).
+
+In every case the first step is neutral and the final E drops>=2.
+If they overlap,the shared token is B and the adjacent-rank triple
+has labels C B A at values z0<z1<z2,with z1-z0=b,z2-z1=a.
+The second swap must use its CURRENT owner,as follows:
+
+- For(1,1) or(1,2),swap the high pair then the low pair.
+  CBA becomes ACB,and final deviations are(D-a-b,a,-D+b).
+- For(2,1),swap the low pair then the high pair.
+  CBA becomes BAC,and final deviations are(D-a,-b,-D+a+b).
+
+For D2 the exceptional weighted cases give respectively(-1,1,0)
+and(0,-1,1),both E2. For D>=3 the displayed absolute values also
+give a decrease>=2. The first swap always has weight1 between a
+defect and the neutral bin,so is neutral. This exhausts every
+shortest-path case. Repetition terminates at E0 or E2 without
+assuming E0 exists. At most the INITIAL E swaps suffice for this
+limited conclusion;no claimed bound for finishing the last unit.
+
+**Literal weighted-overlap control.** On P=0..9 minus3,take
+A={0,4,8},B={2,5,9},C={1,6,7},targets(10,16,16).
+Deviations(2,0,-2),and the triple1C,2B,4A has(a,b)=(2,1).
+Swap B2/C1,then A4/C2;the result is
+A={0,2,8},B={1,5,9},C={4,6,7},deviations(0,-1,1).
+Errors4,4,2;all tokens used once. Reflection x->9-x and A<->C
+checks the opposite weighted orientation. No numerical run here.
+Unexpected limit:rank-feasible targets(4,18,20) on this same pool
+have partition(012;459;678) at E2 and no E0 because4 needs013.
+Thus the reduction cannot be iterated past E2 without a new argument.
+
+**2. A direct gap forces a reverse ordinary BIN path.** Now suppose
+E2 has positive bin A at q+1,negative bin C at q-1,and neutral B.
+If all three requested sums are individually feasible,there is a
+C->A path using ONLY actual consecutive-value pairs (weight1).
+Proof:otherwise let R be the bins ordinarily reachable from C.
+It contains C,not A,and is downward-closed separately in the two
+intervals0..q-1 and q+1..M. Since their last low token is in C
+and first high token is in A,R occupies EXACTLY the low interval.
+If R={C},C has size q,current minimum L(q),target L(q)+1.
+The unique way to raise the minimum q-subset by1 uses the missing
+value q,so this violates C's individual spectrum. If R={C,B},
+A occupies the entire high interval,has size M-q,and its target
+is its maximum-1,again impossible without q. Contradiction.
+
+This is reachability,NOT a simultaneous lift. If a reverse path's
+witnesses are disjoint from the gap pair AND from each other,swap
+the gap first (neutral,flipping the two signs),then follow that
+ordinary path;the last swap gives E0. Shared witnesses remain open.
+
+**The minimum-size condition is still unspent,and that matters.**
+The known size2 negative on P={0,1,2,3,4,6},targets(2,6,8),
+already survives both reductions. Take current bins(02;14;36):
+deviations(0,-1,1). Gap4B/6C is a direct positive-to-negative
+edge. There IS an ordinary reverse B->C edge3C/4B,but it shares
+the gap's token4. Swapping the gap destroys that reverse witness.
+All individual sums are feasible,and all rank inequalities are
+strict;nevertheless2 forces02 and8 forces26,sharing2. Therefore
+neither this reverse-path lemma nor strict interior alone solves
+compatibility. A proof for sizes>=3 must explicitly exploit the
+additional token;it has not appeared in steps1 or2.
+
+**90-minute reflection and next inference.** The periodic reflection
+is due here (previous B157 reflection18:37 BST). The pull is specific
+to the one exceptional weight2 edge;the arithmetic reduction is
+interesting on a fresh choice. Frustration is also real as a steering
+signal:physical witness collision keeps returning. The whole one-hole
+problem has NOT been solved,and more reachable-bin diagrams would
+be momentum. Next bounded hand test:can the size2 collision be
+preserved when every bin has a third token in a one-hole interval,
+or does that force a GLOBAL release? Keep all tokens available;
+no new local-module catalogue or automatic graph census. If the next
+block merely restates the same collision without spending the third
+token,change to the fixed-first-sum/attainable-second-sum representation
+rather than repeat adjacent relays. No seeded draw or forced lemma.
+
+Gut:renewed interest in the concrete gap calculation,not a blanket
+claim of warmth. Reasoned:a real reduction to the last unit,with an
+explicit negative control showing exactly why the remaining inference
+is not established. Full criterion remains OPEN. Niggle sweep:rank
+closure uses actual ranks;shortest-path intermediate0 is justified;
+a=b2 excluded by one physical gap;both overlapping orientations
+use current owners;D2 overshoot included;individual feasibility used
+only in step2;reverse path versus physical lift kept distinct. This
+unreviewed step would need independent verification as part of a
+completed one-hole proof,not a separate routine carrying-read job.
+MI328/329 retain their pending statuses.13min ACTIVE.

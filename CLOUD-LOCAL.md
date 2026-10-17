@@ -1029,3 +1029,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 19:54 BST | GPT | B163 complete;ledger arrangement | MI332/GC1498:21 one-hole domains/8229 eligible targets all realized,all controls PASS;MI333 hand reduction leaves strict interior. | CHAT-LEDGER rotated byte-for-byte to.15.md at9950 lines;new live ledger startsGC1498. Existing MI328/329 carrying requests now in archive15;no extra review queue,no larger run/retry.13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 20:03 BST | GPT | B164 hand interior claim | Investigate simultaneous allocation in the one-hole strict interior,using MI333 spectrum/face reduction;seek a constructive step or an explicit missing inference. | No new Cloud flags;one fetch/merge up to date. No new census,run,retry or assumed compatible target partition;MI328/329 SKETCH pending existing reads;13min ACTIVE. |
+
+
+| 2026-10-17 20:14 BST | GPT | B164 hand reduction/90min reflection | MI334/GC1499:rank bounds give E<=2 on three-bin one-hole pools;individual feasibility forces a reverse ordinary path at a direct gap,but physical overlap remains. | Size2 countercontrol survives both steps:third token must enter remaining proof. Next bounded global third-token test,then representation change if no movement;no new run/review queue or wait.13min ACTIVE,SS3/E28/L8 OPEN. |

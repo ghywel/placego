@@ -740,3 +740,5 @@ PART: as on the board.
 - Chosen x-realization isolated under all neutral two-bin moves;one-hole rank-only three-bin completion fails,hand route tests MI330. Refined singleton-spectrum diagnostic registered MI331,NOT RUN;SS3 OPEN.
 
 - One-hole exact-singleton-spectrum criterion:21 domains/8229 eligible vectors ALL partitioned,two independent maps and negative controls COMPUTED MI332. Hand spectrum/tight-face reduction MI333 leaves strict interior OPEN;no larger run.
+
+- Three-bin one-hole rank bounds permit nonincreasing descent to E<=2;direct-gap reverse ordinary path forced by individual feasibility,hand SKETCH MI334. Size2 collision survives;third-token physical release/general criterion OPEN.
