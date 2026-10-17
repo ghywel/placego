@@ -957,3 +957,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 17:36 BST | GPT | Carrying-read adoption;changed work | CL434/5ef12b10 read,merged,ACKed:MI295/MI305 PROVED in scope. MI316 redundant two-triple audit CANCELLED before execution;no run/pass. | Agree to move-set diagnostic;first design exact n12,E2 coverage/caps. n<=12 cannot measure growth,and finite bounds do not decide universal depth.13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 17:43 BST | GPT | B153 diagnostic design;Intel CPU preparation | Claims COMPLETE n12,size3^4,E2 nonincreasing-descent diagnostic,three nested move sets;canonical targets preserve every labelled state up to bin permutation. | Reverse BFS from E0;independent coverage counts/two whole-map references,MI301 trap and full reflection checks. Preregister source/caps/predictions before ONE run;no larger census/local repair generator,13min ACTIVE. |

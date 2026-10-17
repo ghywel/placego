@@ -19349,3 +19349,83 @@ interpretation. Reasoned:two tools have advanced to PROVED;the new
 measurement needs careful design,not an immediate large run. Next
 work is that preregistration/design,without waiting on routine review.
 Research13min ACTIVE;SS3/E28/L8 remain OPEN.
+
+
+### MI318 — B153 preregistration: COMPLETE n12 unit-error descent diagnostic (2026-10-17 17:44 BST)
+
+**Question.** For n12,four labelled bins of three tokens,ALL SS-feasible
+integer targets,and every start with L1 error E=2,what is the exact
+shortest nonincreasing descent under each fixed move set? This measures
+a mechanism's finite scope;it does not decide SS3 or a uniform depth
+bound. Pull:toward finding the shape of an obstruction rather than
+generating another repair. Unease:the full all-target/all-start product
+would be an oversized and easily misinterpreted first experiment.
+
+Record searched:`descent.*diagnos|unit.error|reverse.*distance|MI301|CL434`
+and`four.bin|SS3|E.?2|move` via record_find.py,18 hits/4 files;MI301,
+CL434 and MI317 relevant. Primary-source orientation remains the
+already-read Hoory-Kotlar arbitrary-sum/open-threshold discussion;this
+is a finite move-graph diagnostic,not a new literature or novelty claim.
+No new flags at the current private-store poll;shared main merged.
+
+**Exact coverage.** Enumerate ALL369600 labelled token-owner words
+with counts3^4. Enumerate every SORTED SS target t,total66,via the
+all-subset inequalities. Retain every word with sum-vector t or
+t+e_a-e_b,a!=b. Sorted targets remove only bin-label duplication:
+ALL word assignments remain,including every assignment within tied
+target classes. Thus every labelled-target/start pair is represented
+up to a simultaneous bin permutation. Report canonical-domain counts
+AND full labelled-target counts,weighting each target by
+24/product(multiplicity!). Independently enumerate ordered disjoint
+triple masks and sum-vector multiplicities,and derive ALL per-target
+E0/E2 coverage counts in the opposite direction. No assumed feasibility:
+zero-goal targets are retained and reported,not silently discarded.
+
+**Why the distance is exact.** Error is even and nonnegative because
+target/current totals coincide. A nonincreasing path starting at E2
+stays at E2 until its first E0 state. All fixed moves are reversible.
+Multi-source reverse BFS from ALL E0 words inside E<=2 therefore gives
+the exact shortest descent distance;unreached E2 words have no such
+path. Traversing outward from E0 is a reverse-search operation,not an
+allowed forward increase. No higher-error descent is measured.
+
+Move0 swaps tokens with adjacent VALUES only;move1 swaps any single
+token for any other bin's token;move2 includes move1 PLUS every atomic
+two-for-two exchange between two bins. Atomic means one edge,not two
+intermediate single swaps;all other bins are unchanged. Distances
+include neutral steps and the final improving edge. No multi-bin atomic
+move or unrestricted energy excursion is allowed.
+
+**Predictions/counterfactuals.** Predict exact coverage and all controls
+agree. Predict nested distances d2<=d1<=d0 with infinity allowed.
+Tentatively predict every E2 word reaches E0 under move2;retain any
+negative result as the main finding rather than asserting this forecast
+as an instrument condition. MI301 must remain unreachable under move1
+and become reachable under move2;no numerical maximum forecast or
+infinite-theorem inference. Counterfactual:existence need not imply
+monotone single-swap reachability;MI301 catches that error. Omitting
+equal-target labels/unreached nodes/SS targets must break coverage.
+
+**Independent/unexpected controls.** Separate Python ordered-mask
+enumerator versus C++ recursive owner words,whole per-target coverage
+map equality. Independent Python literal mask-exchange BFS compares
+EVERY distance in all three modes on targets(7,10,23,26) and
+(16,16,17,17),including unreachable states/goals. Check every reported
+per-target longest finite path by literal token counts,all bin sums
+and allowed move size. Unexpected:compare EVERY node's three exact
+distances with its reflected-value/bin-reversed image across the
+complete domain,not just total histograms. MI301 label sorting uses
+B,D,A,C explicitly. These are same-worker controls,not a carrying read.
+
+**One execution after this source/preregistration push.** Source
+tests/probes/instinct/ss3_unit_descent.cpp plus independent wrapper
+ss3_unit_descent.py. Compile to a temporary binary only after push,
+then ONE wrapper invocation;raw outputs outside git,no upload. Caps:
+60 aggregate CPU seconds checked at budget boundaries,90wall,
+256MiB peakRSS per process(macOS bytes),2M engine nodes,200M
+generated engine moves,8MiB raw;engine55wall/internal60CPU hard cap,
+wrapper60CPU hard cap,100wall external watchdog. Compilation separately
+capped30wall. Stop first instrument error/cap,retain partial evidence,
+no fix/retry/cap rise/automatic n13 or all-error extension. A passing
+finite diagnostic remains COMPUTED;no PROOFS entry or routine review
+request. Next inference depends on the measured traps/distances.
