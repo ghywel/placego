@@ -87,15 +87,14 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 18:10 BST:** MI321 encodes E<=2 exactly
-using two virtual signed carriers;their collision is a zero-error
-partition. The known SS target-domain exchange geometry shows that
-unit-neighbour realizability alone would suffice for full SS3. This
-is an OPEN existence step,not solved by known fiber connectivity.
-Exact-neutral2for2 connectivity already fails for equal-sum triples,
-so no basis-computation/local-module detour. Next hand question:
-can a carrier-separated closed component force an SS-violating cut?
-MI319 finite diagnostic/MI320 explanation retained;MI295/MI305
+**Current state,2026-10-17 18:28 BST:** MI323's COMPLETE asymmetric
+n13,(3,3,3,4),unit-error diagnostic passes all controls:2679333
+canonical starts/3576 targets all release under1/2-token exchanges;
+max5. Adding3for3 (ALL pair redistributions here) still leaves
+eight depth5 states. No universal bound inferred. Next hand question:
+global lifting of shortest unit paths with shared token witnesses;
+no automatic n14 or local module catalogue. MI322's cut implication
+remains OPEN;MI321 signed-carrier encoding retained. MI295/MI305
 PROVED,MI308/313/314 SKETCH;SS3/E28/L8 OPEN.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
@@ -19875,3 +19874,105 @@ Gut:the cut picture alone is cooling;the first size-asymmetric case
 raises a concrete new question about move size. Reasoned:ask the
 next cheap falsifier before claiming a universal carrier theorem.
 No new mathematical result yet;13min ACTIVE,SS3/E28/L8 OPEN.
+
+
+### MI323 — B156 outcome: first size-asymmetric case releases entirely;maximum still five (2026-10-17 18:28 BST)
+
+**COMPUTED,complete finite domain with same-worker independent
+controls;not a general proof.** ONE invocation after b69b6673
+source/preregistration push. C++20 compile clean. Every instrument
+control passes;no cap,retry,repair or domain extension. Executable
+source unchanged except Python docstring's OUTCOME,AST checked.
+The cut implication in MI322's first paragraph remains OPEN;the
+experiment tests move geometry,not that unproved implication.
+
+**Coverage.** ALL1201200 labelled partitions of0..12 into counts
+(3,3,3,4). Exactly3576 SS target vectors with the first three
+coordinates sorted,four-token bin distinguished;222858 E0 words
+and2679333 E2 starts,total2902191 nodes. Independent ordered
+triple masks/sum-vector multiplicities reproduce the WHOLE per-target
+coverage map. Every target has at least one goal. Correct fixed-size
+label weighting gives14313546 E2 starts and1201200 goal partitions;
+the weighted goal equality was also checked in retained artifacts.
+
+| Mode | E2 starts | Unreachable | Maximum shortest descent |
+|---|---:|---:|---:|
+| All1for1/2for2 | 2679333 | 0 | 5 |
+| All1for1/2for2/3for3 | 2679333 | 0 | 5 |
+
+Canonical depth histograms:
+- Up to2:1:2256092,2:413053,3:10132,4:48,5:8.
+- Up to3:1:2281084,2:388534,3:9663,4:44,5:8.
+Full labelled-target histograms:
+- Up to2:1:12065640,2:2192886,3:54708,4:264,5:48.
+- Up to3:1:12197820,2:2063352,3:52086,4:240,5:48.
+No start REQUIRES3for3 to escape in this domain. Such exchanges do
+shorten routes;exactly24992 additional canonical starts become
+one-move completions,by nested pointwise distance and first-bin
+histogram difference. No claim about the total number whose distance
+shortens,which would need the joint distance counts.
+
+**Controls.** Independent Python mask-exchange BFS reproduces WHOLE
+two-mode maps on692 nodes for(7,23,26,22) and4428 for
+(18,18,18,24),including all goals. Padded MI301 start distances
+(1,1),as predicted by the literal{7,9}<->{3,12} exchange. All
+2902191 state-reflection correspondences agree in both distances;
+only equal-size bin labels reverse. All7152 per-target/mode maximal
+finite paths pass literal bin-count,sum,moved-token/error-trace
+checks. Pointwise inclusion of the two move sets holds.
+882087408 generated engine moves,including maximal-path extraction.
+No source or raw-output upload. This is not a second-party read.
+
+**Five-move geometry survives even unrestricted pair redistribution.**
+With counts(3,3,3,4),any two bins can exchange at most3 tokens.
+Thus the larger registered mode includes EVERY possible redistribution
+of two bins that preserves their sizes. Eight starts STILL need five
+nonincreasing moves. They occur in six target groups,three reflected
+pairs;counts of depth5 under the larger mode are1,2,1,2,1,1:
+
+  (4,14,24,36) <-> (12,22,32,12),
+  (4,14,25,35) <-> (11,22,32,13),
+  (8,10,19,41) <-> (17,26,28,7).
+
+One representative per first-side group:
+- A014,B356,C{2,10,12},D{7,8,9,11};target(4,14,24,36).
+- A014,B356,C{2,11,12},D{7,8,9,10};target(4,14,25,35).
+- A234,B019,C568,D{7,10,11,12};target(8,10,19,41).
+The raw engine records one maximal witness per target/mode,not every
+extremal word. The full graph/histogram certifies the counts;do not
+pretend the representative list names all eight states individually.
+These are computational distance statements,no hand classification
+or N-independent five-bound claimed.
+
+**Costs/provenance.** Engine20.991091CPU,wrapper5.062961CPU,
+aggregate26.054052CPU,wall26.411594s,child RSS177561600B.
+Raw engine753298bytes,
+SHA256 627e2bf517f84809edcd8ae0a18bc1ffe8fd2ceb4af3e022190e04f572441096.
+Local report1253bytes,
+SHA256 98bdd19d17072122b68e6bf188e6e24ae84e0a3eda78b90c7bac584b24b1fc77.
+stdout/stderr/compile logs retained outside git;stderr and compile
+log empty. Peak memory and all registered caps pass. No automatic
+further census,cap extension or n14 run.
+
+**What changed,next hand question.** The hypothesis survived the
+first asymmetric size case;three-token exchanges are unnecessary
+for existence of these finite descents,and even allowing every
+pair redistribution leaves five-step extremals. Together with n12
+this invites a hand attack on a four-bin bounded unit-augmentation
+statement,not a claim that finite agreement proves it. A shortest
+bin-level unit path has at most3 edges;nonconsecutive edge witnesses
+are disjoint,but adjacent ones can share an intermediate token.
+Next inspect that shared-witness geometry globally,using this
+specific question:can a closed component avoid collision under all
+1/2 exchanges despite sizes>=3,or can the conflict always be released?
+A universal bound5 is a tentative empirical candidate,not a target
+we may assume;an unbounded-depth counterfamily would change course.
+No new local repair catalogue or solver restart is authorized here.
+
+Gut:surprise and renewed mathematical pull that five persists when
+every pair redistribution is allowed. Reasoned:finite evidence now
+supports a sharper question;it does not narrow the infinite gap by
+assertion. Niggle sweep:four-token bin never sorted with triples;
+reflection uses48 for its target rather than36;all target ties kept;
+added token not inert;larger-mode maxima not extrapolated;nonzero
+error stays2 before its terminal0. SS3/E28/L8 OPEN,13min ACTIVE.

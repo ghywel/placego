@@ -15,6 +15,15 @@ UNEXPECTED all-state reflected distances with only equal-size labels reversed.
 CAPS 80aggregateCPU/120wall/384MiB per process/6M nodes/2B engine moves/16MiB raw;
   engine55wall,80CPU hard,wrapper80CPU hard;130wall watchdog,compile30wall.
 ONE run after source/prereg push,no fix/retry/cap rise or further n.
+
+OUTCOME MI323,2026-10-17,prereg b69b6673:ONE run COMPLETE,all controls PASS.
+3576 SS targets,2679333 E2 starts,222858 goals;all1201200 partitions
+covered independently.1/2 and1/2/3 exchanges both release EVERY start,
+maximum5 in both,eight five-move states in six target groups.
+Whole reference maps692+4428 nodes,2902191 reflections,7152 literal
+maximal paths pass;padded MI301 distances(1,1). Aggregate26.054052CPU,
+26.411594wall,child peak177561600B,882087408 generated engine moves.
+Clean C++20 compile;no cap,retry,extension or general SS3 result.
 """
 import argparse
 from collections import Counter, deque
