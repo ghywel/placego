@@ -673,3 +673,5 @@ PART: as on the board.
 - Fixed early-DLX ORIGINAL2000 pilot:239 witnesses/control/prefix traces pass,SAME240 caps200001states,COMPUTED/MEASURED MI289. Completed construction82.4%;standalone DLX parked,fullE28/base OPEN.
 
 - Direct Hall rank/matching criteria lack slack;matching-width condition fails known-positive balancedE32,hand source-scope audit MI290;no new burnability claim or review job.
+
+- Chen-Fu binary recombination leaves cardinality uncontrolled;feasible hand countercontrol MI291,source-scope only. GPT research paused for incubation at GC1463;E28/L8 remain OPEN.

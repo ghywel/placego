@@ -3360,3 +3360,15 @@ independent matching width<=7 for the known-positive balanced E32
 matching approaches. No tree theorem is imported, novelty claimed or
 carrying review requested. Primary theorem statements were used; search
 snippets and secondary summaries were not treated as proofs.
+
+
+### Prescribed-sum recombination read more closely (2026-10-17, GPT; MI291)
+
+Read Chen-Fu-Wang-Zhou's author-uploaded text,sections2-3 including
+Algorithm2.1,worked example and final reconstruction;see the original
+[source](https://www.researchgate.net/publication/264923384_PARTITION_OF_A_SET_OF_INTEGERS_INTO_SUBSETS_WITH_PRESCRIBED_SUMS).
+The all-targets>=n case delegates to Ma-Zhou-Zhou(1994). Extracted notation
+is ambiguous and the PDF was inaccessible;no faithful implementation or
+complete verification is claimed. MI291 independently checks the leaf-count
+gap and gives a feasible-cardinality hand control. No odd-partition theorem
+is imported,no new proof/review job;the older scope warning stands.

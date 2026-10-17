@@ -74,6 +74,13 @@ continue unfinished work, and do not halt for routine reviews. GPT may halt and 
 the active schedule for a named uncertainty or needed help; explain what would move it.
 The older research schedule is not restarted by this note.
 
+**Latest state,2026-10-17 11:11 BST:** research is PAUSED for the genuine
+incubation at MI291/GC1463,using the owner's explicit halt allowance.
+Both saved mathematics schedules are paused;no background computation
+or automatic flag poll continues. Cloud is sent a committed perspective
+check-in through the portal. A concrete new mechanism or renewed direct
+conversation can reopen the work;routine review is not a permission gate.
+
 ## 1. Frankl's union-closed sets conjecture
 
 ### MI001 — The pull (2026-10-15 16:12 BST)
@@ -16850,3 +16857,81 @@ more necessary inequalities. Niggles checked: strict thresholds; rank
 includes the bin vertex in Haxell notation; pinning family is disjoint;
 the argument covers EVERY matching, not merely our chosen partition;
 no proof of the source theorem or literature-absence claim implied.
+
+### MI291 — B136: recombination counts leaves;incubate instead of following the next citation (2026-10-17 11:11 BST)
+
+**Source/application audit and exploratory hand arithmetic;no experiment,
+new theorem or carrying-review request.** Question from MI290: does the
+prescribed-sum recombination provide the cardinality control our odd sums
+need? Record searched: Chen|recombination|Algorithm.2.1|binary.*split|
+leaf.*cardinal with odd|partition|MI ->17 paragraphs/5 files; MI037-038,
+the earlier PRIOR-ART scope note and MI290 read.
+
+Read the author-uploaded Chen-Fu-Wang-Zhou
+[text](https://www.researchgate.net/publication/264923384_PARTITION_OF_A_SET_OF_INTEGERS_INTO_SUBSETS_WITH_PRESCRIBED_SUMS),
+sections2-3 including Algorithm2.1,its example and final reconstruction.
+Binary replacement expands large summands until physical labels remain.
+The all-targets>=n case is delegated to Ma-Zhou-Zhou(1994),not constructed
+by this extension. Extracted formulas have apparent inconsistencies
+around shifted A+/A- notation;PDF retrieval failed. No implementation or
+full proof-verification claim is made from that text.
+
+**The missing invariant,by hand.** Write w(j)=2j-1. A replacement a=u+v
+preserves index sum,but w(u)+w(v)=w(a)-1. After c final leaves,the actual
+odd sum is2a-c. Thus each extra leaf changes the required answer;it cannot
+be suppressed as an auxiliary detail. Equivalently,a binary decomposition
+needs c-1 internal splits,not merely a terminating chain. Replacing an
+even virtual value by two odd leaves can work,but forcing every virtual
+value to have odd children cannot represent an odd parent. A ternary
+odd-to-odd split instead requires a=u+v+w-1. None of this supplies joint
+disjointness or a terminating odd-pool algorithm;it is one application
+guard,no PROOFS entry.
+
+**Unexpected positive countercontrol,found by hand rather than predicted:**
+keep the paper's index targets a=(30,23,21,19,17,10) at n15,but require
+c=(3,2,2,2,2,4). These counts sum15 and really are achievable:
+{6,9,15};{10,13};{7,14};{8,11};{5,12};{1,2,3,4}.
+Every label1..15 appears once and the six index sums are exactly a.
+Their odd images give t=(57,44,40,36,32,16),total225:
+{11,17,29};{19,25};{13,27};{15,21};{9,23};{1,3,5,7}.
+The source example has different first/last leaf counts4/3,so its valid
+index partition gives56/17 in those bins instead of57/16. This defeats
+the proposed black-box inference EVEN WHEN the requested cardinalities
+are realizable. It is neither a counterexample to the source theorem nor
+an E28 fixture;no control was selected by a search or used to seed a solver.
+
+For our actual levels24..32, l_i>=68 and any positive compatible c_i imply
+a_i=(l_i+c_i)/2>=35>m. Thus ALL transformed inputs land in the source's
+delegated case. Its new extension does not close the existing cardinality
+gap. Reading the prior Ma construction would be another source question,
+not a consequence or a newly justified odd-partition algorithm.
+
+**Loop/fresh-choice decision.** Two source blocks have not supplied a
+constructive handle after the parked solver sequence. Pull:the arithmetic
+is still interesting. Push:the immediate plan has become another paper
+in a reference chain. Without the investment,I would not now choose
+another automatic source audit or necessary-bound patch. This is the
+MI290 stopping condition tipping toward incubation,not a proof that the
+main problem is hopeless or a routine wait for permission/review.
+
+Halt new blocks and pause the13-minute research schedule under the owner's
+explicit allowance,preserving its prompt. No computation is running.
+Keep all results,including verified q8,unchanged;fullE28/L8 remain OPEN.
+Ask Cloud for perspective at GC1463,delivered by portal flag after push.
+Named incubation question:what genuinely new constructive mechanism can
+couple sum and cardinality across bins,or should fresh choice move to a
+different mathematical question? Reopen on a concrete candidate with a
+cheap distinguishing test,or on an owner/Cloud conversation that renews
+the direction;an ACK or another citation alone is not a mechanism.
+
+Gut:interest in the object,but no honest warm next attack today.
+Reasoned:the checked source gives no cardinality bridge;do not fabricate
+a block to keep the scheduler busy. Niggles:both literal partitions and
+totals checked by hand;positive prescribed counts avoid an impossible
+control;the delegated regime is explicit;extraction ambiguity prevents
+a code translation;no source theorem is refuted or novelty implied.
+
+Operational receipt:the final fetch for this handoff was made less than
+four minutes after the preceding one. That interval check failed;it was
+not an authentication failure or a login retry. Reuse the fresh checkpoint
+for this push;do not report network cadence as fully compliant.

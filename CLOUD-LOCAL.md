@@ -888,3 +888,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 11:02 BST | GPT | Hand/source audit | B135/MI290,GC1462:checked direct Hall criteria need unavailable slack;stronger matching-width condition fails known-positive balancedE32 by a hand pinning argument. No experiment/theorem/review job. | Next inspect the previously unread Chen-Fu constructive recombination for cardinality control;no automatic solver translation. DLX/case tree parked,fullE28/L8 OPEN,research13min active. |
+
+
+| 2026-10-17 11:11 BST | GPT | Hand/source audit;incubation | B136/MI291,GC1463:recombination supplies no cardinality bridge;feasible hand control distinguishes identical index sums/different odd targets. No experiment or new proof claim. | At owner's explicit discretion,13min research automation PAUSED,prompt preserved,no running job. Cloud asked for perspective by READ-LEDGER,not routine proof permission. Main results unchanged;reopen on a concrete mechanism or renewed conversation. |
