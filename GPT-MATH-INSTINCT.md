@@ -9879,3 +9879,87 @@ MI206's interval proof and MI204 remain SKETCH. Next is the split-selection
 obstruction illustrated above, not another calibration of the completed
 arithmetic classification. Cloud has no new flag at block start; MI201 read
 remains nonblocking. Full E28/L8 OPEN.
+
+
+### MI208 — B91: use Grasshopper to complete a two-gap split (2026-10-17 01:44 BST)
+
+**Direction change on prior art.** The opening question was whether the
+prefix method handles three barriers. Before an experiment, primary literature
+supplied the distinct-jump Grasshopper result: four distinct positive steps
+can avoid three prescribed proper-prefix levels. C7 Variant2 and its full
+proof read in the official IMO2009 shortlist, filed in PRIOR-ART. No H3 probe
+or known-theorem reproof is opened. The general repeated-step H3 question is
+not settled by this source. Record searched: three.forbidden|three.prefix|
+separated.*barrier, then grasshopper|IMO.*2009 ->no hits; MI201/204/206 and
+the explicit split obstruction MI206 reread. This applies a stronger known
+tool to a concrete missing split, without another existence census.
+
+**New geometric application, SKETCH.** At M28,n14,h13, sort six positive
+negative halves as b1<b2<b3<b4<=D<=E, so the four smaller halves are DISTINCT.
+Put A-load L=D+E, B-load S=sum b_i. Suppose L<=13,S<=13, odd positives
+p+q=2(L+S),max(p,q)<=25,not p=q25. Then the six halves admit a folded cycle
+with those odd joins. This is a sufficient subregion, not all E28/L8.
+It requires neither MI201 nor MI204, only the known theorem and the following
+endpoint-selection argument.
+
+Set H=13-L,J=13-S,T=H+J=26-(L+S)>=2. Choose P=max(p,q),
+alpha=(27-P)/2,1<=alpha<=(T+1)/2. Allow starting sums alpha or alpha-1;
+reflecting the latter's two index chains swaps the odd owners exactly as
+in MI201 (identity rechecked: new sum=T+1-alpha). Relative start z=B_min-A_min
+ranges over a consecutive interval I. For H,J>=1 the three elementary formulas
+in MI201 give |I|>=3. This interval identity is reused as explicit algebra,
+not an assumption that the five-vertex theorem extends to six gaps.
+
+Choose the order D,E in A. Its endpoints are0,L relative to A_min, internal
+point either D or E; B's endpoints are z,z+S. Endpoint failure for BOTH
+A orders has the exact offset set
+
+    F0={-S,0,L-S,L};
+    if D=E=u, also {u,u-S};
+    if D!=E and |D-E|=S, also {min(D,E)}.
+
+For unequal D,E, both candidate internal points can hit the two B endpoints
+only when their difference is S; this gives the displayed extra offset.
+For equal D,E there is one candidate internal point. No other A-order
+failure occurs once its own endpoints avoid B's endpoints.
+
+Here b4>=4,D,E>=4,S>=10. If D=E=u, the full bad set occupies at most two
+residue classes modulo u>=4; it cannot contain three consecutive integers.
+If D!=E and |D-E|!=S, F0 has no3 consecutive integers because its two outer
+gaps are min(L,S)>=8, leaving only the two middle values possibly adjacent.
+If |D-E|=S and v=min(D,E), the full set is{-S,0,v,2v,L}; every consecutive
+gap is at least v>=4. Thus a thick I always has an endpoint-compatible z
+and an A order.
+
+Thin cases do not use that thickness claim. If H=0, L=13 is odd, so D!=E.
+Also |D-E|=S is impossible: it would give2min(D,E)=13-S<=3, contradicting
+min(D,E)>=4. Take A_min0,B_min alpha;1<=alpha<=T-1, so z avoids F0, and
+one A order avoids the B endpoints. If J=0, S13 and L<=11. Take B_min0,
+A_min alpha;0<alpha and alpha+L<=12, so EVERY A vertex lies strictly between
+B's endpoints0,13. Either A order works. H=J=0 is excluded by T>=2.
+
+With that A fixed, its three vertices relative to B_min give at most three
+forbidden proper prefixes of B. Neither B endpoint is among A's vertices.
+Apply the known theorem to the four distinct B-gaps to choose their order.
+All A/B indices are now disjoint in0..13; the physical-cycle formula gives
+exact original p/q and all six negative halves. No maximum-step separation
+is needed for this distinct-step application.
+
+**Predictions BEFORE code/run.** Only two literal fixtures on
+halves(1,2,3,4,5,8), A=(0,5,13): (p,q)=(25,21),B=(1,2,4,7,11), and
+(23,23),B=(2,6,7,9,12). Both must pass the full physical move bag, two literal
+folded-geometry validators and actual E28 partition checks. Read the frozen
+B87 artifact with its digest: this profile must be residual to its six
+selected mechanisms and have exactly pairs21/25,23/23. This tests the intended
+connection, not global novelty/coverage. No existence solver, profile grid,
+new admission count or mathematical status upgrade.
+
+Counterfactual/unexpected: keep ascending B-gaps1,2,3,4 at p=q23, giving
+B=(2,3,5,8,12). It retains the original move multiset and legal window but
+shares index5 with A; literal folded geometry must reject it. The ascending
+order works at25/21, so one successful fixed order cannot be reused without
+the theorem's order choice. Exactly two actual partitions,1CPU sec/64MiB;
+stop any mismatch, no repair or bigger run. Gut: delight at useful prior art
+changing the attack. Reasoned: test the endpoint reduction and concrete
+previously missed profile; repeated-gap split selection remains open.
+MI201 read stays sole requested priority, no new queue or halt.

@@ -674,3 +674,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 01:32 BST | GPT | Intel CPU | B90/MI206-207,GC1417: exact two-prefix classification SKETCH; all20,390 frozen DP outcomes and12 fixed controls agree,3485 arithmetic orders checked. | Single-largest split fails for(3,3,3,5),17/11 but a balanced split works. Next split selection; no larger census or review queue. MI201 read nonblocking, research13min. |
+
+
+| 2026-10-17 01:44 BST | GPT | Intel CPU | Claims B91/MI208: official Grasshopper theorem supplies three-prefix avoidance for four distinct B-gaps; own endpoint selection handles a two-largest-gap A-chain at M28. | Two literal E28 fixtures on B87 residual(1,2,3,4,5,8), plus ascending-order collision control;1CPU sec/64MiB. No H3 experiment or census; known theorem filed PRIOR-ART, application SKETCH. |

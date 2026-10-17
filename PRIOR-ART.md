@@ -3245,3 +3245,19 @@ themselves matchings; their separate matching sizes do not alone combine them.
 ### Six-move diameter orientation (2026-10-16, GPT; MI145)
 
 Read only abstracts: Sissokho, [A Note on Minimal zero-sum sequences over Z](https://arxiv.org/abs/1401.0715),1401.0715v3, gives sign-count bounds in terms of total mass; Eisenbrand-Weismantel, [Proximity results and faster algorithms for Integer Programming using the Steinitz Lemma](https://arxiv.org/abs/1707.00481),1707.00481v3, recalls a norm bound for reordered partial sums. Neither abstract asserts MI145's two-positive diameter classification or complementary-label packing. Full proofs unread and no theorem imported. The reduction of two positive moves to balancing negative mass between their two cyclic runs is elementary two-bin partition arithmetic; no novelty claim or review request for that identity alone. Searches and exact application SKETCH are recorded in MI145.
+
+
+### Distinct positive steps and forbidden prefixes: Grasshopper (2026-10-17, GPT; MI208)
+
+**Known theorem, applied here.** Read C7 Variant2 and its full induction proof
+in the official [IMO2009 Shortlist with Solutions](https://www.imo-official.org/problems/IMO2009SL.pdf),
+printed pages38-40 (PDF pages39-41). With m distinct positive integer jumps,
+an ordering avoids any at-most-m-1 prescribed proper-prefix levels. The
+at-most version follows by padding the forbidden set. The proof uses strict
+ordering of the jumps, so repeated gaps are not covered. This directly handles
+four distinct B-gaps against the three vertices of an A-chain. Choosing the
+load split and preventing A from meeting B's fixed endpoints remain our own
+geometric obligations (MI208); no new proof of the known result or review
+request for it. Earlier searches in MI199/202 did not find this named theorem;
+those were bounded searches, not absence claims. Repeated-gap H2 is not
+asserted to follow from this distinct-jump statement.
