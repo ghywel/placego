@@ -705,3 +705,6 @@ PART: as on the board.
 
 
 - Targeted X/Y pools:54 pools/278 complete spectra have exact predicted holes;225 targets/36 exceptional repairs and independent size2 negative oracle pass,COMPUTED MI310. General MI308 SKETCH;central SS3 OPEN.
+
+
+- Complete-spectrum complementary pools have necessary pair-slack ceiling min(r,q)min(c,d);central neither-side-good control repaired by neutral parity redistribution,hand analysis MI311. No general augmentation/existence theorem;SS3 OPEN.

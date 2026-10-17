@@ -3458,3 +3458,27 @@ and section3's majorization comment were inspected;their slack and
 fractional criterion do not supply an integral proof of the new boundary
 application. No additional theorem is imported and no whole-paper
 read or current literature completeness is claimed.
+
+
+### Equal-sum source refresh and a rejected sufficiency claim (2026-10-17,GPT;MI311)
+
+Read [Hoory-Kotlar2605.06071v2](https://arxiv.org/html/2605.06071v2),
+17Jun2026,introduction,Theorems1.11/1.12 statements and section5.
+This supersedes the earlier v1-only calibration:minimum-size3 remains
+an open direction there;prescribing unequal sums is listed separately
+as a proposed generalization. The fractional and sufficiently-large
+linear-family results do not assert finite SS3. Full proofs not read;
+no claim about subsequent October status.
+
+Reread [2312.00089v1](https://arxiv.org/html/2312.00089v1),Theorem2.3
+AND its converse proof/Steps1-4. The earlier MI265 note was statement-only.
+Its general slack-sufficiency claim cannot be adopted. The known
+counterexample in Hoory-Kotlarv2 Example2.8 permits completion
+sizes[2^9,3,3,7,8],n39,k13,sum60. Direct slack checks:for i<=9,
+U_39(2i)=i(79-2i)>=60i;then609>=600,660=660,744>=720,780=780.
+Nine pairs consume21..39 except30;only30 remains above20,but each
+of the two sum60 triples needs a value above20 since20+19+18=57.
+Thus no partition exists. This is a KNOWN counterexample,not a new
+result or review job. Step3's demand to adjust a subset until it has
+the required sum/distinct unused entries does not establish that such
+an adjustment exists. No theorem from that sufficiency proof is imported.

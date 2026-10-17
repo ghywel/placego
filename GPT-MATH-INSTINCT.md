@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 16:40 BST:** MI308's target-dependent
-four-bin boundary construction has passed its registered finite audit
-MI310:54 pools/278 exact spectra,225 full target partitions and36
-exceptional-family witnesses. The size2 negative survives a separate
-complete feasibility oracle. The general h^2+1 hand claim remains
-SKETCH,dependent on MI305;Cloud's carrying read is pending,not a gate.
-Next question:what genuinely prevents the complementary-pool method
-from reaching central targets,and can target compatibility replace
-its near-minimum pair-cut requirement? Inspect that obstruction by
-hand before another extension or run. Research13min ACTIVE;
-SS3/E28/L8 OPEN.
+**Current question,2026-10-17 16:54 BST:** B149/MI311 identifies a
+structural ceiling for target-independent complete-spectrum pools;
+they cannot reach even the balanced n12 central target. A central
+pool can fail on BOTH sides,so one-sided coverage is false too.
+A neutral atomic exchange of two disjoint adjacent pairs repairs
+both sides;its mechanism is a change in parity-conditioned sums,
+not an increase in pair-cut slack. Next assess whether that mechanism
+extends beyond the six-token equal-target control,before building
+another diagnostic or claiming a universal augmentation rule.
+MI305/308 remain SKETCH,MI310 finite audit stands;no experiment
+outstanding or new review queue.13min ACTIVE;SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -18721,3 +18721,107 @@ failed selector targets have full partitions;the negative oracle uses
 no forced-set formulas;signed sums test representation assumptions;
 known results/novelty/infinite claims are not upgraded by this pass.
 SS3,E28,L8 remain OPEN. Research13min ACTIVE,no run outstanding.
+
+
+### MI311 — B149: the complete-spectrum ceiling is structural;central compatibility changes through parity bands (2026-10-17 16:54 BST)
+
+**Hand analysis and trajectory correction;no new experiment or general
+existence theorem.** Question:what actually blocks complementary pools
+in central four-bin targets? Initial pull is cooler on further boundary
+layers,and toward the difference between a bad pool and a bad target.
+Record searched:`central.*pool|pool.*central|pair.cut|complementary.pool`
+AND `SS3|target|interval`:6 hits/2 files. Follow-up
+`universal.*pool|full.spectrum|endpoint.*pool|pool.*endpoint|rank.fiber|sum.fiber|switch.graph`
+AND `SS3|four.bin|partition|subset`:2 hits/1 file;MI308 and old MI160,
+no prior central pool argument. Known two-level ideal connectivity is
+already in PRIOR-ART/MI299;do not refile it as a new theorem.
+
+**Structural guard,one paragraph;no probe,PROOFS entry or review job.**
+Let the two low bins have sizes r,q,total m,and the other sizes c,d;
+write s=min(r,q),t=min(c,d). If ONE fixed m-token pool P,of sum
+L(m)+delta,realizes EVERY split in[L(r),sum(P)-L(q)],it must contain
+both initial segments of lengths r and q:attaining the unique minimum
+L(r),and attaining the upper endpoint by a complementary q-set of
+sum L(q),forces these. If the reflected complement likewise realizes
+all its split endpoints,it forces the largest max(c,d) original tokens
+outside P. Thus P contains the first m-s values and has only s other
+tokens,all below m+t. Its maximum sum is L(m-s)+U_(m+t)(s),which
+subtracting L(m) gives **delta<=s*t**. This is a necessary ceiling,
+not sufficiency or a sharp completeness threshold. At sizes3^4 it
+is9;central target(16,16,17,17) has smallest pair cut32,L(6)=15,
+slack17. Thus NO choice of fixed complete-spectrum pool can handle
+that example. A target-compatible pool need not contain either forced
+endpoint segment. Unexpected check:the size2 counterexample's low
+pair slack2 is BELOW this ceiling4;the ceiling does not explain or
+remove the genuine integer obstruction.
+
+**Even one-sided coverage fails;literal countercontrol.** For that
+central target choose the size6,sum32 pool
+
+    P={1,3,4,6,8,10}; Q={0,2,5,7,9,11}.
+
+P has no triple of sum16. Its two odd values total4. A triple of even
+sum uses either zero odd values (minimum4+6+8=18),or both odd
+values (maximum1+3+10=14). Q has no triple of sum17. Its two even
+values total2. An odd-sum triple uses either both evens (maximum
+0+2+11=13),or zero evens (minimum5+7+9=21). Thus neither side
+splits into its requested equal triple sums,although all targets are
+feasible. This disproves the tempting claim that every correct-size/
+correct-total pool is good on at least one side. It does not refute SS3.
+
+**A neutral move repairs BOTH sides.** In P replace1,8 by0,9:
+two disjoint adjacent exchanges of opposite signs,performed atomically.
+The pool keeps size6,sum32,and even/odd counts4/2. Now
+
+    P'={0,3,4,6,9,10}={0,6,10} disjoint-union {3,4,9},
+    Q'={1,2,5,7,8,11}={1,5,11} disjoint-union {2,7,8}.
+
+The first two triples sum16,the latter two17,and all0..11 appear
+once. Every bin size3 is retained. These literal hand checks are not
+a new enumeration or a general exchange theorem.
+
+**Why that repair works,not just its certificate.** A six-token pool
+with four evens and two odds,of sum2a for EVEN a,can split into two
+triples of sum a iff it contains the even token
+
+    e=a-(sum of its two odd tokens).
+
+Each even-sum triple must use zero or two odds;both odds must lie
+in the same triple. The displayed e is therefore necessary;when it
+is present,that triple works and the complementary triple works by
+the total sum. The parity-reversed assertion holds for four odds,
+two evens and ODD a:the needed odd token is a minus the two-even
+sum. In P the required token is12,absent;in P' it is4,present.
+In Q the required token is15,absent;in Q' it is7,present. The atomic
+move changes where the minority-parity mass sits while preserving
+its count,and aligns BOTH required tokens. It is this conditional
+spectrum structure,not local value gaps alone,that the example exposes.
+The criterion is elementary six-token bookkeeping,not claimed novel.
+
+**What this advances and does not.** The complete-spectrum extension
+has a definite stopping reason,not merely a cooling instinct. Central
+targets require target-dependent compatibility. But writing the two
+sets of good pools and asking them to intersect is merely the original
+existence problem in new notation. Connectivity of the fixed-sum pool
+space,from MI299's ideal representation,does NOT prove that intersection,
+nor a monotone improvement rule. MI301's failed single-swap strategy
+stays parked. The next mathematical question is whether the explicit
+minority-parity obstruction/repair has a useful extension for larger
+or unequal bin sizes;first seek an adversarial hand case. A finite
+check would need fresh predictions and source registration;none run.
+
+**Literature orientation.** The bounded primary-source refresh is in
+PRIOR-ART:2605.06071v2 and the previously statement-only2312.00089v1
+converse proof. The latter cannot supply the missing compatibility
+inference;its slack-sufficiency claim fails a known counterexample.
+No comprehensive October literature or novelty claim.
+
+Gut:a modest new pull at the simultaneous parity repair,cooler on
+more boundary-window increments. Reasoned:a representation limitation
+and explicit mechanism,not general progress on the SS3 quantifier.
+Niggle sweep:endpoint intervals are nonempty under delta>=0;both bin
+minima really are unique;the delta ceiling is only necessary;both
+negative triple cases exhaust parity possibilities;the neutral move
+uses four distinct tokens;its proof does not assume MI295/MI305/SS3.
+Known source claims are not accepted from a theorem label alone.
+No new carrying-review job;13min ACTIVE,SS3/E28/L8 remain OPEN.

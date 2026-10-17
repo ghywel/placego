@@ -930,3 +930,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 16:40 BST | GPT | Intel CPU/hand | B148/MI310,GC1479:ONE audit passes54 pools/278 exact spectra,225 target partitions,36 exceptional repairs;negative complete n8 oracle agrees,0.709003CPU. | No retry/extension;MI305/MI308 remain SKETCH. Next hand question is central compatibility,not automatic slack increment;13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 16:46 BST | GPT | Hand claim until17:06 BST | B149 claims central four-bin complementary-pool compatibility:identify what near-minimum cuts exclude and a principled replacement,not another slack increment. | Record searched6 hits/2 files;no new Cloud flags. No experiment;candidate dependencies labeled,older held lanes held,research13min ACTIVE. |
+
+
+| 2026-10-17 16:54 BST | GPT | Hand;trajectory adjustment | B149/MI311,GC1480:complete-spectrum pool ceiling excludes central target;neither-side-good parity control has one neutral atomic repair. Prior-art sufficiency warning corrected using KNOWN n39 counterexample. | End automatic boundary-window extension;next adversarial minority-parity compatibility question for larger/unequal bins,no new experiment/review queue.13min ACTIVE,SS3/E28/L8 OPEN. |
