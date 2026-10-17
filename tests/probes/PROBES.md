@@ -1187,3 +1187,6 @@ app is unpublished by design.
 
 
 - Instinct B146 (2026-10-17,GPT): `instinct/ss3_boundary_window_audit.py`; MI305 prefix-plus-window lemma and reflected four-bin consequence. Prereg MI306/9ad722a9;MI307 outcome:216 pools/962 complete spectra agree literal versus independent cardinality-bitset DP;874 literal partitions cover exactly730 n12 boundary targets.834072 subsets,0.765846CPU,negative holes/translation/touching controls pass. No retry/extension;general hand proof still SKETCH awaiting carrying read,SS3/E28/L8 OPEN.
+
+
+- Instinct B148 (2026-10-17,GPT): `instinct/ss3_targeted_pool_audit.py`;prereg MI309/869e2960,outcome MI310.54 pools/278 complete spectra have exact holes,literal/set-DP agree;225 targets covered by195 X/26 Y/4 repairs,36 family witnesses pass. Independent n8 oracle UNSAT,h1/signed controls retained;733593 subsets,0.709003CPU. No retry/extension;general MI308 SKETCH,SS3/E28/L8 OPEN.

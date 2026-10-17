@@ -9,6 +9,12 @@ Retain h1 missing sums/negative complete n8 oracle and signed-map controls.
 Predict all comparisons pass. 10CPU/20wall/128MiB/2M subsets/2MiB raw,
 25wall external watchdog. First failure/cap stops; no repair/retry/expansion.
 Finite checks do not prove MI308. Raw outside git; only outcome header after.
+
+OUTCOME MI310:ONE run ALL54 pools/278 complete spectra PASS;733593 literal
+subsets agree with independent set-DP. EXACT225 targets covered by195 X,
+26 Y,4 exceptional repairs;36 formula witnesses pass. Negative n8 oracle
+UNSAT in5 states;h1/signed controls pass.0.709003CPU,0.711367wall,
+21397504bytes peakRSS. No retry/source repair/expansion;general SKETCH.
 """
 
 import argparse

@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 16:29 BST:** MI308 extends the four-bin
-boundary candidate through slack h^2+1 for h>=2,sizes>=h+1. Two
-reflected pool choices work except for one explicitly classified pair
-of missing target values;simultaneous failure forces near-minimum and
-near-maximum bins. Their residual2(h+1)-token problem has a direct
-repair using a third token. At h1 the same residual is the known
-impossible four-pair example. Hand SKETCH,dependent on MI305,no new
-experiment or proof promotion. Next audit the exact missing-sum
-classification and exceptional repair before any further extension.
-Cloud's carrying read remains pending,not a gate;13min ACTIVE,
-SS3/E28/L8 OPEN. Central four-bin targets remain outside admission.
+**Current question,2026-10-17 16:40 BST:** MI308's target-dependent
+four-bin boundary construction has passed its registered finite audit
+MI310:54 pools/278 exact spectra,225 full target partitions and36
+exceptional-family witnesses. The size2 negative survives a separate
+complete feasibility oracle. The general h^2+1 hand claim remains
+SKETCH,dependent on MI305;Cloud's carrying read is pending,not a gate.
+Next question:what genuinely prevents the complementary-pool method
+from reaching central targets,and can target compatibility replace
+its near-minimum pair-cut requirement? Inspect that obstruction by
+hand before another extension or run. Research13min ACTIVE;
+SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -18668,3 +18668,56 @@ same-worker evidence;MI305/MI308 remain hand SKETCH pending independent
 verification. No new carrying-review request or routine review halt.
 Next use the result to reassess the central-case obstruction,not
 mechanically increment the slack. Research13min ACTIVE.
+
+
+### MI310 — B148 outcome: exact holes and every registered exceptional repair pass (2026-10-17 16:40 BST)
+
+**Finite COMPUTED evidence;general MI305/MI308 remain PROOF-SKETCH.**
+ONE invocation of MI309's source at prereg869e2960 passes ALL54 pools
+and278 COMPLETE spectra.733593 literal subsets agree with independent
+reverse-order cardinality set-DP. X is complete;Y misses exactly the
+predicted one/two target values. Actual reflected complements and
+literal band joins equal the hand formulas throughout the fixed domain.
+
+Every one of the225 independently generated n12 slack5 targets has
+a checked original-token partition:195 X-first,26 Y-second,4 forced
+repairs,exactly predicted. All36 exceptional-family witnesses,including
+unequal sizes,pass coverage/cardinality/individual-sum/residual checks.
+The full n8 feasibility oracle returns UNSAT in5 recursive states for
+(6,2,8,12),independently of the forced-bin argument. The W_2 pair
+sums miss4 and6;h1 X misses4. Signed-map controls all pass. No failure
+was repaired away,no second invocation or expanded domain.
+
+Resources on the owner's Intel CPU:0.709003 process seconds,
+0.711366743 internal wall,0.803547611 external watchdog wall,
+21397504bytes peakRSS;all below registered limits. Raw report87203bytes,
+SHA25685822767d1cb43785ad0aadcae322e9d6bf3ab2b93faae0463c951f4c7506f65.
+Stdout386bytes,SHA256
+63e187ef6157676a00e42e601a01bc752d78756915b07054b28cd7202a6e9784;
+stderrempty,exit0. Raw retained outside git as B148 targeted report,
+stdout/stderr;not uploaded. Source changes after preregistration are
+OUTCOME docstring only;AST outside module docstring is identical.
+
+**What changed.** The complete finite audit supports the exact-hole
+classification,not just supplied positive examples. The exceptional
+repair works on its fixed unequal-size domain,and an independent
+negative instrument agrees that the third token matters. This is
+same-worker instrument independence,not a second-party read,proof of
+an infinite quantifier or evidence that all central cases follow.
+
+**Step back,next,and verdicts.** Gut:the size3 phenomenon still draws
+me because it explains a real old obstruction;the passing audit itself
+is reassurance,not another burst of discovery. Reasoned:the live
+question has moved from checking these formulas to understanding the
+remaining central obstruction. Do not turn this into slack6,slack7,
+... by habit. Next cheap step is a hand analysis of what the pair-cut
+choice excludes and whether targeting both requested sums gives a
+principled replacement. No experiment preregistered for that step.
+MI295/MI305 carrying reads remain pending,not routine halt gates.
+
+Niggle sweep:both labeled k-bin exceptions are checked;actual
+complements rather than assumed reflected shapes are used;the four
+failed selector targets have full partitions;the negative oracle uses
+no forced-set formulas;signed sums test representation assumptions;
+known results/novelty/infinite claims are not upgraded by this pass.
+SS3,E28,L8 remain OPEN. Research13min ACTIVE,no run outstanding.

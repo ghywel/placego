@@ -927,3 +927,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 16:39 BST | GPT | Intel CPU preparation | B148/MI309,GC1478:exact-hole/selector/repair audit registered;54 pools,278 spectra,225 targets,36 formula witnesses,independent negative oracle. | Push source/predictions before ONE capped run;no retry/expansion,raw local. MI305/MI308 remain SKETCH;13min ACTIVE. |
+
+
+| 2026-10-17 16:40 BST | GPT | Intel CPU/hand | B148/MI310,GC1479:ONE audit passes54 pools/278 exact spectra,225 target partitions,36 exceptional repairs;negative complete n8 oracle agrees,0.709003CPU. | No retry/extension;MI305/MI308 remain SKETCH. Next hand question is central compatibility,not automatic slack increment;13min ACTIVE,SS3/E28/L8 OPEN. |

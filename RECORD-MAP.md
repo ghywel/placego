@@ -702,3 +702,6 @@ PART: as on the board.
 
 
 - Target-dependent reflected pools plus forced near-extreme residual repair extend four-bin cut slack to h^2+1 for h>=2;hand SKETCH MI308,dependent MI305. Size2 limit reproduces known counterexample;general SS3 OPEN,no run.
+
+
+- Targeted X/Y pools:54 pools/278 complete spectra have exact predicted holes;225 targets/36 exceptional repairs and independent size2 negative oracle pass,COMPUTED MI310. General MI308 SKETCH;central SS3 OPEN.
