@@ -11811,3 +11811,145 @@ valid partition shows where another representation succeeds. The early
 reflection MI232 changed course on evidence; no forced rotation or halt.
 Current sole carrying priority remains MI228+MI230 at0a0a0d44, nonblocking.
 Research13min continues; full E28/L8 and the older held lanes retain status.
+
+
+### MI234 — B104: resonances force eight finite allocation switches (2026-10-17 04:33 BST)
+
+**Actual pull.** The obstruction has become simpler after widening the
+representation: most offsets cannot collide in every order at all. The
+warmth is attached to this new classification, not to another successful
+certificate count. Question: for five halves(s,s,t,t,w),t>=2s,w>=t,
+does an all-order canonical trap force an explicit alternative split?
+This would settle the allocation question for a whole paired family,
+including the small-margin obstruction MI233; it does not settle all N5.
+
+Record searched: paired.*resonan|s,s,t,t|canonical.*bad.*offset ->0 hits
+including ledgers. Read MI228/230/232/233 and their probes. This is a
+direct extension of those coordinates, not a literature novelty claim.
+
+**Hand argument, PROOF-SKETCH before any experiment.** Let M=2n,h=n-1,
+h>=6,s>=1,t>=2s,w>=t,K=2s+2t+w. Assume2s+2t>h (the largest cannot
+be alone), ordinary two-bin load capacity, and positive odd p,q with
+p+q=2K,max(p,q)<=2h-1,not both2h-1. Claim: disjoint index chains with
+these five gaps and exactly these two positive joins always exist.
+
+First suppose the canonical loads L=2t,S=2s+w both fit h. Put
+H=h-L,J=h-S,T=H+J,d=L-S=J-H. Legal joins give T>=2 and
+alpha=(2h+1-max(p,q))/2,1<=alpha<=ceil(T/2)<T. The feasible offsets
+z=y-x on root sums c=alpha or alpha-1 form the consecutive interval I:
+
+ alpha<=min(H,J): [-alpha,alpha];
+ H<alpha<=J: [alpha-1-2H,alpha];
+ J<alpha<=H: [-alpha,2J-alpha+1].
+
+For a chosen offset, select c by parity, x=(c-z)/2,y=(c+z)/2.
+Relative A={0,t,2t}; B has one of the three orders
+
+ {z,z+s,z+2s,z+S}, {z,z+s,z+s+w,z+S}, {z,z+w,z+w+s,z+S}.
+
+Call an offset universally bad if ALL three B orders meet A. Across the
+WHOLE feasible offset interval[-H,J], the exact universally bad set is
+
+ U={0,d}, with {-s,d+s} added iff w in{t,t+s} AND H>=s.
+
+Here is the carrying classification. The B-endpoint/A-middle offsets
+t and t-S lie outside[-H,J]: J=h-2s-w<2t-w<=t and h<t+S.
+The outermost endpoint offsets -S and2t are outside because K>h.
+The remaining endpoint collisions are exactly0 and d. Away from them,
+the internal B-prefix pairs are {s,2s},{s,w+s},{w,w+s}.
+Every hitting set for all three contains one of
+{s,w},{s,w+s},{2s,w+s}. For two such prefix levels to hit A they must
+be separated by t or2t. Their separations are w-s,w,w-s; canonical
+capacity and nonisolation imply w<2t. Therefore the only possible
+resonances are w=t or w=t+s. For w=t the extra offsets are -s,t-s.
+For w=t+s they are -2s,-s,t-2s,t-s. The inequalities H<2s and
+J< t-s remove -2s and t-s in the second case. The remaining extras
+are -s,d+s, both feasible exactly when H>=s. This proves the formula
+by the three explicit hitting pairs, without MI204 or MI228.
+
+If H,J>=1, I has at least three consecutive integers. In the first
+resonance w=t, U={-s,0,t-2s,t-s} can contain three consecutive integers
+only for(s,t)=(1,2)or(1,3). The(1,2)case contradicts h>=6 and h<6.
+In the second resonance w=t+s, put d=t-3s>=-s. For d>=0 the only
+possibilities are(s,d)=(1,0),(1,1). For -s<d<0, writing e=d+s,
+the consecutive sorted gaps in U are e,s-e,e; three consecutive
+integers require(s,e)=(2,1). The boundary d=-s has only endpoints.
+Thus only(s,t,w)=(1,3,3),(1,3,4),(1,4,5),(2,5,7) need finite
+root-budget analysis. If U has no triple, one of the first three
+offsets in I escapes; in general try at most FIVE, since |U|<=4.
+The three local B orders then supply a disjoint pair.
+
+Thin intervals are harmless: if H=0 the extras are absent and z=alpha
+is strictly between0 and J=d. If J=0, w=t is incompatible with
+T>=2 and t>=2s. For w=t+s, H=3s-t<=s; extras occur only at H=s,
+when they duplicate0 and d=-s. Thus z=-alpha strictly between-H and0
+escapes. Nonresonant thin cases have endpoints only.
+
+Combining canonical capacity, h>=6, h<2s+2t and legal joins leaves
+exactly EIGHT (s,t,w,h,p,q),p<=q, for which I is wholly bad:
+
+ (1,3,3,7,9,13), (1,3,3,7,11,11), (1,3,4,7,11,13),
+ (1,4,5,9,13,17), (1,4,5,9,15,15),
+ (2,5,7,12,19,23), (2,5,7,12,21,21), (2,5,7,13,17,25).
+
+The first three profiles force h=7,7,9 respectively. The last has
+h=12 or13: at12 alpha1/2 both fail; at13 only alpha1 fails, since
+alpha2/3 reach offset2. For EACH of the eight, use instead
+
+ c=min(alpha,s), preA=(c,c+s,c+s+w), preB=(0,t,t+s,2t+s).
+
+These listed coordinates are visibly disjoint in[0,h], and c equals
+alpha or alpha-1. In ALL constructions, if c=alpha-1 reflect AND
+reverse BOTH chains i->h-i, and flip the first positive owner.
+Before reflection the joins are max(p,q)+2,min(p,q)-2; after it
+they are precisely the original pair with the original ownership.
+No intermediate positive bag is accepted as an original witness.
+
+Swapping A and B preserves disjointness, their minimum-sum and
+maximum-sum, hence both positive VALUES and the negative gap BAG.
+So complete canonical impossibility is equivalent for both parity
+roles; exact traversal words are not being identified.
+
+If canonical capacity fails, ordinary capacity forces exactly one s
+beside w, with t,t,s on the other run. Then A gaps(s,w),B gaps(t,s,t)
+fit, X=h-s-w<s and Y=h-2t-s<s. Since t>=2s, their fixed internal
+levels strictly interleave as in MI230, with bad offsets only0,Y-X.
+The same interval argument avoids these two offsets (thin cases use
+strict interior +/-alpha). This final branch uses MI230's UNREVIEWED
+carrying inequalities; the new canonical classification is direct.
+Necessity of the stated load/label/positive conditions is elementary;
+only sufficiency is new here, and remains SKETCH pending outside read.
+
+**Preregistration BEFORE experiment.** Diagnostic grid, not E28 census:
+s=1..3,t=2s..2s+3,w=t..2t+s-1,h=max(6,2t)..2s+2t-1. Filter by
+ordinary capacity and all legal p<=q as above. Predict all constructions
+succeed by canonical selection, the eight explicit repairs, or MI230.
+Check ordinary capacity by all32 labelled masks AND subset-bitset.
+For EVERY canonical-fitting profile independently intersect all three
+literal difference sets A-Bshape on[-H,J] and compare to U. Check all
+feasible offsets/three orders by direct intersection and BOTH literal
+physical geometry validators; hand shapes must equal permutation shapes.
+Predict exactly the eight canonical failures listed above. For those,
+exhaust original-positive root rectangles/three orders/BOTH parity roles
+and require zero witnesses; validate their explicit repair instead.
+For every other admitted positive question validate the selected formula's
+full original bag/owner/window and both geometry checks. No global
+cycle solver, allocation search or new actual E28 partition run.
+
+The forced branch must occur, including named M24,d=(2,2,4,4,8),19/21.
+Counterfactual endpoint-only U misclassifies z=-1 at(1,3,3,h7),alpha1;
+the complete offset map must reject it. Unexpected label control
+M12,d=(1,1,2,2,2),7/9 has capacity/legal joins but only six labels for
+seven vertices: the h>=6 admission must REFUSE. It is not a ninth trap.
+Named scaled control M54,d=(4,4,10,10,14),33/51 should construct despite
+matching the small obstruction's capacity ratios; no scaled grid.
+Reuse the immutable B103 receipt SHA256
+c2d4738c551cc2426a0d1d73c378dcaa5d4d30d37a3f4864d9ec13c9d8be81ed
+for the existing M28 repair; no new partition count.
+
+Caps3000 formula calls/40000 offset-order or exception-root cases,
+2CPU sec/64MiB. Stop ANY disagreement, retain failure, do not repair
+the prediction or widen the grid. Sole carrying priority MI228+MI230
+remains nonblocking; this gets a READ-LEDGER addendum, not another queue.
+Portal initially hit sandbox DNS failure before authentication; the
+authorized network poll succeeded afterward. No failed login retried.
