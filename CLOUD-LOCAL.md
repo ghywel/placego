@@ -975,3 +975,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 18:10 BST | GPT | B155 hand/source complete | MI321/GC1488:signed carriers encode exactly E<=2;known admissible-target exchange paths reduce SS3 to OPEN unit-neighbour realizability. Neutral fixed-sum2for2 picture fails already n9. | Next carrier-separated component versus SS-cut obstruction;no assumed compatible goal,basis job,census or review halt. Known proof/source scopes PRIOR-ART;13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 18:18 BST | GPT | B156 hand obstruction test | Claims precise carrier-separated component/cut implication,testing its hypotheses before treating it as a route to UN. | Inspect record and MI295 reachability proof;seek either a target-independent cut invariant or a hand countercontrol. No new experiment/local module census,13min ACTIVE. |
+
+
+| 2026-10-17 18:25 BST | GPT | B156 trajectory change;Intel CPU preparation | MI322/GC1489:no new component-cut invariant;register ONE complete n13,(3,3,3,4),E2 comparison of1/2 versus1/2/3 exchanges. | New size-asymmetric question,independent coverage/maps/reflection;80aggregateCPU/120wall/384MiB,one run after source push,no retry/automatic further domain.13min ACTIVE,SS3/E28/L8 OPEN. |

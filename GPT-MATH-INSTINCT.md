@@ -19787,3 +19787,91 @@ hand test is whether an extremal separated-carrier component forces
 an SS-violating cut;look for an actual invariant or a countercontrol,
 not a list of local repairs. No new experiment/review halt;13min
 ACTIVE,older solver/local-module routes held,SS3/E28/L8 OPEN.
+
+
+### MI322 — B156: cut attempt does not lift;deliberate next-ambient diagnostic registered (2026-10-17 18:25 BST)
+
+**Hand verdict,one paragraph.** The proposed carrier-component/cut
+implication remains OPEN. MI295/MI292 already gives a positive-to-
+negative unit path at every SS-feasible nonzero-error state. The
+missing inference is scheduling its token witnesses,not finding a
+static bin cut. Taking the union of bins that can carry a positive
+defect does not establish that every edge out of that union can be
+used while its tail carries the defect. MI301's single-swap component
+already defeats that commutation shortcut;MI303 already defeats
+freezing an off-path bin,even with genuine local rank bounds. Those
+are existing controls,not new discoveries. No new invariant obtained;
+do not publish the desired component implication as a proof or turn
+this into a guard/review entry. The carrier encoding remains exact.
+
+**Changed trajectory:one falsifiable structural question.** At n12,
+all bins are triples. At n13,the only min3 four-bin size shape is
+(3,3,3,4),and three-for-three exchanges introduce an option absent
+from the earlier diagnostic. Does ANY E2 state here need3for3 to
+reach zero,or does1/2-token exchange still suffice? This is an
+explicit new bounded decision after the failed hand invariant,NOT
+an automatic domain extension,all-error study or search for more
+local repair modules. It can falsify the proposed small-move route
+without assuming any target goal exists. The primary-source/model
+calibration is MI321;no new theorem or literature claim.
+
+Record searched:`component.*cut|carrier|closed.*component|reachable.*initial`
+AND`SS3|unit|partition|MI295|MI321`:14 hits/5 files,relevant sources
+read. Before this changed diagnostic:`n.?13|four.token|three.for.three|3.for.3`
+AND`unit|descent|SS3|exchange`:14 hits/6 files,no earlier n13
+unit-descent computation found. Cloud's private target-existence
+census is NOT a move-graph result. No fresh flags at startup.
+
+**Exact domain/coverage.** Counts(3,3,3,4) on0..12,total78. Enumerate
+ALL1201200 labelled partitions;ALL integer SS targets with first
+three target coordinates sorted,the four-token bin distinguished.
+Retain all E0/E2 states. This represents every min3 four-bin n13
+case up to a simultaneous bin permutation;target ties retain every
+word. Full labelled-target weights are6/product(multiplicities of
+first3 targets!),for this fixed labelled size vector. Do not multiply
+by24 or conflate it with all four size-bin placements. Independent
+ordered triple-mask enumeration fixes the remaining four-token bin;
+compare EVERY target's E0/E2 count via sum-vector multiplicities.
+Zero-goal targets retained/reported. Reverse BFS remains exact by
+MI318's even-error argument,not by presumed existence.
+
+**Two nested modes.** Mode0 includes EVERY single-token and atomic
+2for2 exchange between two bins. Mode1 adds EVERY3for3 exchange.
+The latter is the whole three-token bin when it participates;the
+four-token bin chooses any3. No additional simultaneous multi-bin
+move. Preserve E<=2;record full distances/unreachable states and
+literal longest paths. Do not infer uniform bounds from finite maxima.
+Tentative H:all E2 states release already under mode0;low confidence,
+a negative state is a useful outcome,not a failed instrument. Mode1
+distances must be no worse;forecast all controls agree. Neither
+reachability hypothesis is asserted as an instrument requirement.
+
+**Controls/unexpected check.** Independent Python mask-exchange BFS
+compares WHOLE maps in both modes on(7,23,26,22) and(18,18,18,24).
+First is MI301 padded with token12 in the old D bin,and triple labels
+sorted B,A,C. It now has a DIRECT quad escape:A{7,9} exchanges
+D{3,12},transfer1. Hence exact distances(1,1);counterfactual:the
+added token is NOT inert and the old trap distance2 must not be
+blindly carried forward. Check every reported maximal path literally.
+Unexpected:all-state reflection x->12-x reverses only the three
+equal-size labels,leaving bin4's label fixed;targets map to
+(36-s_C,36-s_B,36-s_A,48-s_D). Whole two-distance equality required.
+These are same-worker controls,not a second-party carrying read.
+
+**One execution after source/prereg push.** Source
+tests/probes/instinct/ss3_unit_descent13.{cpp,py}. New engine uses
+precomputed subset masks/bit-expanded ownership toggles;the independent
+reference constructs actual token combinations. Compile C++20 to a
+temporary binary,30wall cap,then one wrapper run. Caps80 aggregate
+CPU checked at boundaries,120wall,384MiB peakRSS per process,6M
+nodes,2B generated engine moves,16MiB raw. Engine55wall/internal
+80CPU hard,wrapper80CPU hard;130wall external watchdog. Retain
+raw/stdout/stderr outside git,no uploads. Stop first instrument error
+or cap,no repair/retry/cap rise/automatic n14 or all-error run.
+Partial coverage is not a pass. Scope is deliberately larger than
+B153 and separately budgeted;it is not advertised as the same cost.
+
+Gut:the cut picture alone is cooling;the first size-asymmetric case
+raises a concrete new question about move size. Reasoned:ask the
+next cheap falsifier before claiming a universal carrier theorem.
+No new mathematical result yet;13min ACTIVE,SS3/E28/L8 OPEN.
