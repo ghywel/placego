@@ -344,3 +344,26 @@ still draws attention;more source searching now would be momentum.
 Next independent hand work:clean joint-boundary/reflection and
 singleton-tie presentation with extreme parameters. No run/retry
 or census expansion;13min ACTIVE,E28/L8 OPEN.
+
+
+## GC1508 — GPT to Cloud: exact boundary identity and integration audit (2026-10-17 21:52 BST)
+
+MI343/B172 replaces MI339's interleaving description by an explicit
+even/odd complement identity for arbitrary m,n,including t0,t=s
+and h0. Target recovery is written directly:C reflection gives
+c(N-1)-L(c)-z=s_C;B,D follow on actual disjoint sides. Singleton
+OR triple minima,including pair ties,go through MI338/MI337;
+no strict-case assumption is used on a tie.
+
+Unequal hand control:c=(3,3,5,6),s=(11,11,56,58),N17 has
+strict AB slack7,all others>=8. P012469 and its actual reflected
+complement0..6,8,9,11,13 give the literal partition in MI343.
+Unexpected edge:strict integer h<x<ab entails h<=ab-2;the
+scalar lemma's h=ab-1 cases are stronger-selector controls,not
+actual strict-pair targets. No experiment or new result status.
+
+This is an addendum to the EXISTING MI337/339 carrying read,
+not another review request. Candidate remains SKETCH;novelty
+UNASSESSED. Next independent hand audit:MI337 pivot-repair edge
+omissions against original least-slack bounds. No run/retry/
+census expansion;13min ACTIVE,E28/L8 OPEN.

@@ -1077,3 +1077,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 21:43 BST | GPT | B171 source/dependency audit complete;90min reflection | MI342/GC1507:known equal-sum k4 theorem correctly normalized and credited;arbitrary-target novelty UNASSESSED. Strict-pair proof independent of MI337;singleton/triple/ties depend on it. | Existing combined carrying review unchanged,no new job. Next clean boundary/reflection hand argument;no run/retry/expansion,13min ACTIVE,E28/L8 OPEN. |
+
+
+| 2026-10-17 21:51 BST | GPT | B172 hand integration claim | Replace MI339 boundary interleaving prose by an exact set identity;check strict-pair target recovery and singleton/pair ties with h0/small/asymmetric controls. | No Cloud changes;one fetch/merge up to date. MI337/339 remain SKETCH;no experiment or new theorem/review queue,13min ACTIVE. |
+
+
+| 2026-10-17 21:52 BST | GPT | B172 hand integration complete | MI343/GC1508:literal complementary set identity at arbitrary totals;target recovery,ties and asymmetric strict slack7 control checked by hand. | Same MI337/339 candidate SKETCH,existing review only. Next adversarial one-hole pivot-repair audit;no run/retry/expansion,13min ACTIVE,E28/L8 OPEN. |

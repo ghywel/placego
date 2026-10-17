@@ -87,15 +87,15 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 21:43 BST:** B171/MI342 finishes a bounded
-primary-source scope audit and dependency check. The known equal-sum
-four-part theorem is correctly credited;the arbitrary-target candidate
-is not a direct application of it. Novelty remains UNASSESSED.
-MI337/338/339 remain the complete hand four-bin candidate,PROOF-SKETCH
-pending the existing Cloud carrying read. MI341's finite scalar audit
-passes;no repeat or larger run. Next independent work:make the joint
-boundary/reflection and singleton-tie hand argument self-contained,
-checking extreme parameters without assuming a compatible partition.
+**Current state,2026-10-17 21:52 BST:** B172/MI343 replaces the joint
+boundary's interleaving description by an exact complement identity
+and integrates target recovery and singleton/pair ties. An unequal
+17-token hand control has genuine strict closest-pair slack7.
+MI337/338/339 remain the COMPLETE hand four-bin candidate,
+PROOF-SKETCH pending the existing Cloud carrying read;novelty
+UNASSESSED. No new run or review job. Next independent hand work:
+adversarially audit the one-hole high/low repair's exceptional
+scalar sums against its original least-slack inequalities.
 13min ACTIVE;no verified SS3 upgrade or E28/L8 result.
 
 ## 1. Frankl's union-closed sets conjecture
@@ -22112,3 +22112,143 @@ explicit;minimum2 versus3 restriction retained;NOT FOUND qualified;
 source proof not claimed audited in full;no circular use of goal
 partition;pending MI337 not promoted by finite tests or source scope.
 13min ACTIVE;E28/L8 OPEN.
+
+
+### MI343 — B172: exact complementary boundary and integration at the edges (2026-10-17 21:52 BST)
+
+**Hand audit/addendum to MI338/339;not a new independently verified
+theorem.** Record searched:`staircase|MI339|closest.*facet` AND
+`complement|reflection|tie`:21 hits/7 files. MI338/339 and the
+existing waiting-room pointers were read. The prior-art scope is
+MI342;no new literature result imported. No experiment,retry or
+census. Cloud flags unchanged.
+
+The pull is on the literal complement identity:the two good scalar
+pools must be opposite sides of ONE allocation. Before this hand
+check,the proposed test was to expand the missing positions exactly,
+then recover original C,D targets and test singleton/pair ties.
+A wrong reflected pool must be rejected even if its size and moment
+match. Unexpected edge check:the scalar lemma's highest permitted
+h need not be possible for a STRICT closest-pair target. Stop at
+one complete algebraic integration or the first gap;no new probe.
+
+**1. Literal complement,with arbitrary totals m,n.** Let
+m=a+b,n=c+d,N=m+n,all four sizes>=3,and0<h<min(ab,cd).
+Write h=T_s+t,0<=t<=s,p=m-s,as in MI339. Its prefix bound
+gives m,n>=s+3,so every interval below is inside0..N-1.
+Set A=s-t. For t>0,the proposed boundary is exactly
+
+ P=[0,p-1]
+   union {p+2j+1:0<=j<A}
+   union {p+2j+2:A<=j<s}.
+
+In the window[p,p+2s],its ACTUAL missing positions are exactly
+
+ E={p+2j:0<=j<=A},
+ O={p+2j+1:A<=j<s}.
+
+These are disjoint by parity and have total s+1 values. The rest
+of its complement is the suffix[p+2s+1,N-1]. Put q=n-s-1.
+Reflection v->N-1-v sends the suffix to[0,q-1]. It sends
+E to{q+2j:t<=j<=s},and O to{q+2j+1:0<=j<t}. Therefore
+
+ {N-1-v:v in[0,N-1] minus P}
+   =[0,q-1]
+     union{q+2j+1:0<=j<t}
+     union{q+2j:t<=j<=s}
+   =Q_n(h).
+
+This is equality of sets,not an equality of cardinality/moment.
+It includes t=s:the first high segment of P is empty,but E still
+contains its single required position p. For t0,use the shorter
+window[p,p+2s-1]. P takes its odd positions,the complement its
+even positions,and the terminal suffix starts p+2s. Reflection
+gives prefix0..n-s-1 and highs n-s+2j+1,0<=j<s,exactly P_n(h).
+For h0,P=[0,m-1],and the reflected complement is[0,n-1].
+Thus neither the full-row nor empty-segment cases need a limiting
+argument or an equal-total assumption.
+
+**2. Original target recovery.** In the strict closest-pair case,
+MI338 gives s_A=L(a)+x, s_B=L(b)+ab+h-x,
+s_C=U_N(c)-z and h<x<ab,h<z<cd. The central-spectrum claims
+of MI339 provide A inside P with sum L(a)+x,and a c-set C'
+inside the reflected ACTUAL complement with sum L(c)+z.
+Choose C={N-1-v:v in C'}. Then
+
+ sum(C)=c(N-1)-L(c)-z=U_N(c)-z=s_C.
+
+The remaining P values give B with its specified cardinality and
+sum,since sum(P)=L(a+b)+h. The remaining original complement
+gives D by total conservation. There is no collision to repair:
+the two selections live on disjoint actual sides. This is an
+integration of the scalar lemma,not another joint-existence
+assumption. No step invokes the four-bin conclusion.
+
+**3. Singleton/pair ties are covered by the singleton branch.**
+For a proper bin-index set I,write h_I=S_I-L(C_I). Reflection
+of ORIGINAL values satisfies h'_I=h_(I-complement),using
+U_N(C_I)+L(N-C_I)=L(N). Thus it preserves the least of all14
+slacks. If any singleton or triple attains that least slack,
+orient a singleton lower and use MI338's singleton argument EVEN
+IF a pair also ties. The residual pool is a translated interval
+with one deletion,possibly an endpoint deletion.
+
+MI338 protects every residual rank cut J with
+S_J>=L(a+C_J)-L(a). A possible individual minimum+1 hole would
+require its target to be L(r)+lr+1,where a-l>=1 and r>=3,
+contradicting S_J>=L(r)+ar. A maximum-1 hole for one bin is
+a minimum+1 hole for its TWO-bin complement of size>=6;the
+same inequality excludes it. MI333 then gives actual individual
+feasibility,and pending MI337 supplies simultaneous three-bin
+completion. No tie is assigned to a strict inequality case.
+The dependence on MI337 remains explicit;this is not its review.
+
+**4. Hand controls,including an asymmetric strict case.**
+For a=b3,c5,d6,N17,h7,we have s3,t1,
+P={0,1,2,4,6,9},and its actual reflected complement is
+Q={0,1,2,3,4,5,6,8,9,11,13}. The following literal partition
+has targets(11,11,56,58):
+
+ A={0,2,9}, B={1,4,6},
+ C={3,8,14,15,16}, D={5,7,10,11,12,13}.
+
+All17 values occur once. The14 lower cut slacks are
+singletons(8,8,46,43),pairs(7,39,33,39,33,59) in AB/AC/AD/BC/BD/CD
+order,and triples(23,14,34,34) in ABC/ABD/ACD/BCD order.
+Thus AB is genuinely the strict least facet,h7;this is not an
+arbitrary positive partition outside the claimed regime. Here
+x8,z14,C'={0,1,2,8,13} has sum24=L(5)+14. Both the unequal
+reflection and the ORIGINAL target conversion are exercised.
+These are hand arithmetic checks,not a computational census.
+
+The small q2 endpoint h8,m=n6 retains P012479,Q013568,
+while the equal-moment wrong guess013469 remains wrong. The
+self-conjugate t0 control h6,m=n6 gives P=Q=012468. The
+t=s control h5 gives P012368,Q012467. The exact identity above
+covers all of them without discarding an empty segment.
+
+Unexpected distinction:integer h<x<ab implies h<=ab-2,
+and likewise h<=cd-2. Thus MI339's stronger scalar lemma
+includes h=ab-1,which no strict closest-pair target on that side
+can require. For triples h8 lies at this extra selector level;
+it remains a useful hard formula control,but it is not a strict
+pair application. Do not silently reclassify the control as one.
+
+**Verdicts,next.** The boundary identity and integration now have
+explicit formulas at unequal totals,empty segments,h0 and ties.
+This sharpens the presentation of the SAME candidate;no status
+upgrade,new PROOFS entry or additional carrying-read request.
+Next independent check is the other carrying branch:adversarially
+audit MI337's high/low pivot repair and all exceptional scalar
+sums against the original least-slack bounds. Stop on a missing
+inequality,not another automatically expanded spectrum census.
+Gut:the useful satisfaction comes from eliminating the need to
+trust a picture of interleaving. Reasoned:literal set identity
+and direct target recovery,conditional on the already stated
+scalar and one-hole candidates;independent verification still
+pending and novelty unassessed. Niggle sweep:unequal totals used;
+reflection converts sums as well as values;t0/t=s/h0 included;
+q2 control kept;max-hole exclusion uses the TWO-bin complement;
+ties handled before strict inequalities;no existence assumed from
+equal moments;no experimental pass invented.13min ACTIVE,
+E28/L8 OPEN.
