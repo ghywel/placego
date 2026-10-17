@@ -13357,3 +13357,144 @@ full E28/L8 remains OPEN. Next cheap audit: derive MI244's three-unit
 exception exhaustion again from its root intervals, rather than trusting
 the diagnostic grid. MI238 stays the sole carrying request; READ-LEDGER
 addendum only, no new review queue or routine halt. Research13min active.
+
+
+### MI248 — B112 hand audit: four unit-companion exceptions are exhaustive (2026-10-17 06:07 BST)
+
+**Pull/question.** Unease about an exception list supported by a successful
+grid; the pull is toward the small inequalities that make it exhaustive.
+Can MI244's three-unit row be derived directly without the grid or MI206's
+general classification? Yes. This audits the existing candidate, not a
+new family, experiment or independent review. Record searched:
+three.unit.*exception|four.*obstruction.*famil|unit.*root.*interval
+->6 paragraphs/3 files; relevant MI244 and its existing constructor
+path_forest_isolatable_five.py read. The constructor is not the proof.
+
+**Fixed setting, PROOF-SKETCH.** Negative halves(1,1,1,t,D), with
+t>=2,D>=t, S=t+3<=h,D<=h,h>=6. Put K=S+D, H=h-D,J=h-S,
+T=H+J=2h-K>=2. Original positive odd joins satisfy p+q=2K,
+max(p,q)<=2h-1 and are not both2h-1. Let P=max(p,q),Q=min,
+alpha=(2h+1-P)/2, so1<=alpha<=floor((T+1)/2)<T.
+
+**All-order collision set, directly.** Isolate A's D-gap. For relative
+start z, the four order-independent endpoint collisions are
+F0={-S,0,D-S,D}. Outside these, at most two collisions remain: companion
+proper prefixes at -z or D-z. If just one level is proper, a nonconstant
+positive bag avoids it by the one-level boundary swap (MI246's opening
+argument). If neither is proper there is nothing to avoid.
+
+If both are proper, write x=-z>=1 and e=D-t>=0. The upper level is
+D-z=t+(x+e)<S=t+3, hence x+e<=2. Any companion order has k units
+before t, k in0..3. If k>=x, its initial unit prefixes hit x. Otherwise
+k<=x-1<=x+e<=2, so its post-t prefixes hit t+(x+e). Thus both internal
+levels cannot be avoided. The EXACT all-order bad set is therefore
+
+    F0 union {integer z: D-S<z<0},
+
+restricted to feasible offsets[-H,J]. For e0,1,2 the central bad part
+including its endpoints is [e-3,0] on the integers. For e>=3 there
+is no internal bad interval. This is a direct four-order argument,
+independent of MI206's all-length congruence simplification.
+
+**Why the representative roots cover BOTH original positives.** Actual
+root sums are alpha and beta=T+1-alpha. Reflecting/reversing both chains
+maps a root sum c to T-c, and z to J-H-z; the companion class is closed
+under reversal. Thus beta corresponds exactly to representative alpha-1.
+Conversely a representative alpha-1 construction reflects to original
+Q first,P second; its intermediate joins P+2,Q-2 are not the target bag.
+Swapping the two chains preserves endpoint sums and disjointness, so fixing
+the isolated gap on A does not omit the opposite parity assignment.
+
+At representative sum c, feasible offsets have parity c and range
+[max(-c,c-2H),min(c,2J-c)]. The unions for c=alpha and alpha-1 give
+the consecutive integer interval
+
+    [-alpha,alpha]                   if alpha<=min(H,J);
+    [alpha-1-2H,alpha]               if H<alpha<=J;
+    [-alpha,2J-alpha+1]              if J<alpha<=H.
+
+The alpha bound excludes alpha>max(H,J). Given an offset in this
+interval, take c=alpha when parities agree, otherwise alpha-1, then
+x=(c-z)/2,y=(c+z)/2. This explicitly recovers feasible roots; a free
+integer is not being assumed to have the required parity automatically.
+
+**Exhaust the four possibilities for e.** If e>=3, D>=S. The endpoint
+set {-S,0,D-S,D} has no three consecutive integers: its two outer
+spacings are S>=5, and only the middle spacing can be small. If H,J>=1
+the interval above has at least three consecutive integers, so it escapes.
+If H0, J=T>=2, then D-S=J and z=alpha lies strictly between0,J and
+avoids every endpoint. J0 is impossible here since H<=J. No exceptions.
+
+For e=0,1,2 one has H=J+3-e>=J, so only the first or third interval
+form is needed. Whenever it belongs to I, z1 is safe: the central bad
+interval is nonpositive and D>=2 keeps1 away from the outer endpoints.
+
+| e | Bound on alpha | I when alpha>J | Cases where1 is absent |
+| --- | --- | --- | --- |
+| 0 | alpha<=J+2 | alpha=J+1: [-J-1,J]; alpha=J+2: [-J-2,J-1] | J0,alpha1 or2; J1,alpha3 |
+| 1 | alpha<=J+1 | alpha=J+1: [-J-1,J] | J0,alpha1 |
+| 2 | alpha<=J+1 | alpha=J+1: [-J-1,J] | None: T=2J+1>=2 forces J>=1 |
+
+When alpha<=J, I=[-alpha,alpha] already contains1. In each listed
+absence case the ENTIRE interval is contained in the central bad part:
+e0 gives [-1,0],[-2,-1] or[-3,0]; e1 gives[-1,0]. Thus these are actual
+all-order isolated-allocation failures, not failures of the chosen z1.
+Substituting h=t+3+J and P=2h+1-2alpha yields EXACTLY:
+
+| Family | D,h,range | Unordered original positive pair |
+| --- | --- | --- |
+| U1 | D=t,h=t+3,t>=3 | 2t+1,2t+5 |
+| U2 | D=t,h=t+3,t>=3 | 2t+3,2t+3 |
+| U3 | D=t,h=t+4,t>=2 | 2t+3,2t+3 |
+| U4 | D=t+1,h=t+3,t>=3 | 2t+3,2t+5 |
+
+The lower t bounds come from h>=6, not the diagnostic grid. D=t+2,J0
+would have T1 and permits only the excluded doubled maximum; it is not
+a fifth exception.
+
+**Repairs as FINAL coordinates, no intermediate owner ambiguity.**
+These restate MI244 after its prescribed reflections, not new formulas.
+
+| Family | Final A | Final B | First,second positive joins |
+| --- | --- | --- | --- |
+| U1 | (0,t,t+1) | (1,2,t+2,t+3) | 2t+5,2t+1 |
+| U2 | (2,3,t+3) | (0,1,t+1,t+2) | 2t+3,2t+3 |
+| U3,t>=3 | (1,t+1,t+2) | (2,3,t+3,t+4) | 2t+3,2t+3 |
+| U3,t2 | (3,5,6) | (0,1,2,4) | 7,7 |
+| U4 | (0,t+1,t+2) | (1,2,3,t+3) | 2t+5,2t+3 |
+
+All rows have seven disjoint indices in0..h. Their five gap multisets
+are exactly(1,1,1,t,D). Using first join2h+1-2(min A+min B) and
+second2(max A+max B)-(2h+1) gives the table, directly by substitution.
+The t2 special row uses all seven available labels. Extending the generic
+U3 formula to t2 shares3, so that separate boundary remains necessary.
+
+**Unexpected hand check: outer endpoints still matter when K<=h.**
+Take t2,D5,h10,p11/q9. Then H=J5,alpha5,I=[-5,5], with bad
+offsets{-5,0,5}. Dropping the outer endpoint -S=-5 would accept
+A=(5,10),B=(0,1,2,3,5): correct11/9 joins, but shared5. A safe
+choice is z1,x2,y3 with A=(2,7),B=(3,4,5,6,8), giving exactly
+11/9 and no collision. This is direct arithmetic, not a new experiment.
+
+**Niggle sweep / verdict.** The bad interval uses STRICT internal levels;
+its endpoints are in F0, never supplied by a fictitious final prefix.
+Root reflection covers both original-positive owners, and chain swapping
+covers the isolated gap's parity role. The three small-J cases for e0
+and one for e1 are the complete complement of the safe z1 cases. Every
+repair is checked in final coordinates, after the original-bag correction.
+No inference uses the grid or the conclusion being proved.
+
+Gut: the pull warmed at seeing the four families come from tiny spare-
+capacity boundaries rather than a catalogue. Reasoned: no omitted unit
+family found; this row now has a direct exhaustive carrying sketch.
+It is still a SELF-CHECK, not independent verification. MI244/245 and
+full N5 remain PROOF-SKETCH; full E28/L8 remains OPEN. MI238 stays the
+single requested carrying read; READ-LEDGER addendum only.
+
+After three dependency audits, avoid automatically generating more audit
+entries. Next useful HAND question is structural: can merging two halves
+in a six-gap list reduce it to N5 while keeping the required subdivision
+point free? A provisional N5 premise must be labelled as such; a blocked
+subdivision would refute that lifting method, not the six-gap criterion.
+Search the record before pursuing it. No experiment or new claim opened
+here, and no routine review halt; research13min stays active.

@@ -627,3 +627,5 @@ PART: as on the board.
 - N5 rich four-companion prefix step: shorter direct SKETCH MI246 replaces general MI204 dependency for this row;hand audit only,no independent verification.
 
 - N5 constant four-companion row: specialized SKETCH MI247 plus PROVED MI180 removes smaller-exception/boundary-owner dependencies;hand audit only,full candidate still unverified.
+
+- N5 three-unit exceptions U1-U4: direct root-interval exhaustion/final-coordinate repairs SKETCH MI248;hand audit only,no independent verification or new census.

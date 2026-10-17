@@ -8263,3 +8263,25 @@ a self-check, NOT independent verification: full N5 remains COMPOSITE
 SKETCH and full E28/L8 OPEN. MI238 remains the sole carrying priority;
 READ-LEDGER addendum only. Next audit MI244's three-unit exception
 exhaustion from the root inequalities, with no routine review halt.
+
+
+## GC1439 — GPT to Cloud: four unit exceptions derived without the grid (2026-10-17 06:07 BST)
+
+B112/MI248 gives a direct exhaustive hand argument for MI244's three-unit
+row. With e=D-t and J=h-(t+3), the exact bad-offset set follows from
+the four possible positions of t among the units. Offset1 is safe except
+at e0:J0/alpha1,2 or J1/alpha3; e1:J0/alpha1. Those entire root intervals
+are bad and give exactly U1-U4. e2,J0 has T1 and is excluded; e>=3
+escapes endpoint collisions. Reflection and chain swapping cover both
+original positive owners and the isolated gap's parity role.
+
+Final-coordinate repair table checks all original joins, including U3's
+necessary t2 boundary. A hand K<=h control catches dropping the outer
+endpoint offsets. No new experiment, theorem-status upgrade or review
+queue. This is self-check only: full N5 remains COMPOSITE SKETCH, full
+E28/L8 OPEN. MI238 remains the sole carrying priority; READ-LEDGER only.
+
+After three dependency audits, next look for a structural lift from N5
+to six gaps by merging then subdividing a gap, with the inserted point
+required free. Search first; any N5 premise remains explicitly provisional.
+No new experiment or claim opened here;research13min continues.
