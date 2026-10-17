@@ -11256,3 +11256,69 @@ original bag, showing refusal is not nonexistence.
 Cap30 formula calls/27 actual partitions,2CPU sec/64MiB. Stop any mismatch,
 retain failure; no repaired family, broader census or new carrying-read
 queue. Current sole priority MI214 remains nonblocking. New theorem SKETCH.
+
+
+### MI227 — B100 outcome: two-unit interleaving passes the frozen family (2026-10-17 03:37 BST)
+
+All fixed predictions pass. The selected frozen family has exactly14
+profiles/27 positive-pair questions and the independent explicit key list
+agrees. There are21 W>=4 calls and6 W2/3 calls. All27 seven-vertex formulas
+and all27 actual E28 partitions pass exact bags/owners/window and both
+independent geometry/partition validators, with ONE unchanged baseline112
+owner7. Some selected questions were already admitted in B87: the predicted
+(1,1,5,7,10) MI193 overlap is present. These are27 family certificates,
+not27 newly removed residuals or a new all-N5 coverage count.
+
+All three generic controls pass, including H0/z3 and the W2/W3 reverse-run
+branches. Across30 formulas,10 require reflection; all original joins and
+owners are correct. The fixed-split independent maps check375 original-join
+root/order candidates and contain every prescribed result. No alternative
+allocation or whole-cycle existence solver was used.
+
+The naive positive-offset units-first order on(1,1,5,7,9),21/25 has the
+correct original bag/window but shares index12 and both geometry validators
+reject it. The23/23 instance has geometrically valid intermediate25/21
+joins; omitted reflection fails the ORIGINAL bag, and reflection restores
+23/23. The outside-premise u=v4,w5 example is refused; its blindly extended
+negative-offset formula shares index5, while the prescribed DIFFERENT split
+A=(0,4,9),B=(1,2,3,7) gives a valid original13/17 bag. No nonexistence
+claim follows from a formula's scope refusal.
+
+First concrete target: d=(1,1,5,7,7),p17/q25 gives
+A=(0,5,12),B=(1,2,3,10),moves(25,-2,-2,-14,17,-14,-10),
+targets(90,106,108,108,92,84,84,112). All target inventories are original,
+not a reallocation that quietly changes the question.
+
+CPU0.028234s,peak RSS20,533,248bytes, within2CPU sec/64MiB. Source
+ tests/probes/instinct/path_forest_two_unit_triangle.py; prerega2cb4e2f.
+Artifact cited/instinct/b100-two-unit-triangle-537fbb2bef366066.json,
+29,434bytes,SHA256 537fbb2bef3660662704b9c0d06a0a1f5eae8a23b3c2c93164a2909daa9ee1f6.
+Input digest and immutable output/manifest receipts verified. General
+interleaving MI226 stays PROOF-SKETCH; finite partitions are COMPUTED.
+No new full E28/L8 result, no repaired predictions or broadened experiment.
+
+**Niggle sweep.** W2/3 needs H>=1; legal T>=2 proves it, rather than the
+finite list. The lower bound v>=5 is used at w-1-u=v-W-1>=1; the refused
+u=v4 example shows why simply dropping it is invalid. The chosen odd root
+is always alpha or alpha-1 and positive. Reflections and original ownership
+are tested rather than inherited unexercised here. The isolatable rich-four-
+gap COROLLARY is conditional on MI204, not part of the direct proof. If
+K<=h in that corollary, keep all four endpoint bad offsets{-S,0,w-S,w},
+S=u+v+2; w>=5,S>=12 ensure they cannot contain three consecutive integers.
+If H0 or J0, K>h automatically and the usual thin selector applies. Thus
+the corollary need not silently assume K>h. Two-bin necessity for the
+nonisolatable class follows by placing three large objects in two bins,
+not by the chosen formula's success. The finite family includes overlap;
+its size does not count new theorem coverage.
+
+**Gut / reasoned verdict and next cheap question.** Warm mathematical pull,
+with delight at the strict interleaving and a mild push against expanding
+the administrative record. The reason to continue is geometric: adjacent
+small steps can be treated as a movable three-vertex block. I would choose
+that question fresh, independently of sunk effort. Next ask whether the
+positive-offset proof survives replacing the unit pair by arbitrary short
+a,b: its triangle margin would become u+v-w-(a+b), while the narrow-margin
+resonances would need an actual new argument. This is a next question,
+not an opened experiment, a proved generalization or a profile-patching
+quota. MI214 remains the sole requested carrying read, nonblocking;
+READ-LEDGER only. Research13min active; older held lanes remain held.

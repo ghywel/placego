@@ -599,3 +599,6 @@ PART: as on the board.
 
 
 - Nonisolatable four gaps: extreme/middle pairing SKETCH MI224;26 residual E28 partitions/4 controls COMPUTED MI225; frozen N4 frontier empty, full E28 OPEN.
+
+
+- Two unit gaps plus three large gaps: triangle-excess interleaving SKETCH MI226;27 frozen-family E28 partitions/3 controls COMPUTED MI227; general N5/E28 OPEN.
