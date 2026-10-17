@@ -11047,7 +11047,7 @@ is feasible. Therefore the ENTIRE feasible universal bad set is exactly
 {0,d0}, for all cases. This includes fixed-middle/endpoints, not merely
 interior/interior collisions.
 
-Root choice: alpha=(2h+1-max(p,q))/2, 1<=alpha<=floor(T/2).
+Root choice: alpha=(2h+1-max(p,q))/2, 1<=alpha<=ceil(T/2)<T.
 Use croot=alpha or alpha-1. Their offset union is the consecutive interval
 [-alpha,alpha] if alpha<=min(H,J);
 [alpha-1-2H,alpha] if H<alpha<=J;
@@ -11093,3 +11093,9 @@ Cap26 frozen+4 boundary formula calls,26 actual partitions,2CPU sec/64MiB.
 Stop on any failed prediction, retain failure; no filter repair, broadened
 range or added review queue. MI214 remains sole requested carrying read,
 nonblocking. General new claim stays SKETCH until independent scrutiny.
+
+
+MI224 pre-run arithmetic correction: the root bound is ceil(T/2), not
+floor(T/2), since equal odd positives with odd T attain (T+1)/2. This was
+caught by hand before source execution; the interval formulas and thin-root
+strict inequalities are unchanged. No prediction or test domain changed.
