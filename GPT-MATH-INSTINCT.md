@@ -10694,3 +10694,118 @@ MI214 remains the sole carrying-read priority; its answer is not needed
 to explore an independent together-bin argument. Send a concise READ-LEDGER
 checkpoint; keep the13-minute research schedule active. No halt, old held
 lane reopening, new proof review or prize claim.
+
+
+### MI220 — B97: the capacity carry forces a shared-exception construction (2026-10-17 03:03 BST)
+
+**Question/pull.** When two exceptions cannot be separated, can capacity
+itself choose a shared-run geometry? Surprise: the failure of separated
+capacity forces strong residue inequalities; they remove every internal
+collision. This is more promising than treating the two exceptions as
+arbitrary prefix barriers. Record searched: same.run.*exception|
+exception.*together|inseparab|complementary.*residue ->10 paragraphs/5 files;
+MI177's complementary-sum theorem and MI214/218-219 read. No imported result
+or novelty/literature-completeness claim. The argument below is independent
+of MI214; its UNION with MI214 is explicitly conditional on that sketch.
+
+**Forced case, direct PROOF-SKETCH.** Let h=n-1,M=2n, m>=1,s>=2,s<=a<=b,
+negative halves m copies of s plus a,b. Write K=ms+a+b and let positive odd
+p,q sum2K, max<=2h-1,not both2h-1. Suppose ordinary two-bin capacity h
+holds but a,b CANNOT occupy different bins. They therefore fit together.
+The maximum number of repeated gaps admitted by these two arrangements is
+
+    F_sep=floor((h-a)/s)+floor((h-b)/s),
+    F_tog=floor((h-a-b)/s)+floor(h/s).
+
+Ordinary capacity in this case includes h>=a+b and F_tog>=m; separated
+failure is F_sep<m. Write h=qs+r,a=As+u,b=Bs+v,0<=r,u,v<s.
+Since a,b>=s, A,B>=1. Comparing the floors, F_tog-F_sep<=1, with equality
+ONLY when u>r,v>r,u+v<=r+s. This follows by splitting u/v at r: with both
+above r the separate correction is-2 and the together correction is-1
+exactly under the displayed sum condition; the other three cases cannot
+give a positive difference. Thus necessarily
+
+    F_tog=m, F_sep=m-1, m=2q-A-B-1,
+    u>r, v>r, u+v<=r+s.
+
+No empirical capacity grid supplies this implication.
+
+Choose k=m-q=q-A-B-1>=0 copies in the shared-exception chain. Its load is
+L=a+b+ks=(q-1)s+u+v, and pure B has q copies, load S=qs. Their slacks are
+
+    H=h-L=r+s-u-v>=0, J=h-S=r>=0,
+    T=H+J=s+2r-u-v=2h-K>=2.
+
+Since u+v>=2r+2, T<=s-2: the forced case itself requires s>=4.
+Also H<s,J<s. Put A=x+(0,a,a+s,...,a+ks,L), B=y+(0,s,...,qs).
+For k0 this means A=(x,x+a,x+a+b), not a duplicated a-prefix.
+Relative z=y-x lies in[-H,r]. Every INTERNAL A vertex has residue u.
+A positive z<=r is below u; for negative z, z mod s>=s-H=u+v-r>u.
+Thus no internal A vertex meets B, for EVERY feasible nonzero offset.
+The zero offset also misses internal residue u, but hits both minima.
+A's final residue u+v can meet B only at
+
+    z=d=u+v-s=J-H,
+
+where its final vertex equals B's final vertex. Indeed subtracting their
+loads gives exactly d; within[-H,r] no other congruent offset exists since
+H+r=T<s. Hence the ENTIRE bad-offset set on the feasible interval is
+just {0,d}: no hidden internal ordering choice is left.
+
+**Root selection including thin cases.** P=max(p,q),alpha=(2h+1-P)/2,
+1<=alpha<=(T+1)/2. Allow root sums c=alpha or alpha-1. Their feasible
+relative offsets form the consecutive interval I with endpoints
+[-alpha,alpha] if alpha<=min(H,J);
+[alpha-1-2H,alpha] if H<alpha<=J;
+[-alpha,2J-alpha+1] if J<alpha<=H.
+These cover all cases by the alpha bound. With H,J>=1, I has>=3 integers;
+choose the first of its first THREE integers not equal0 or d. With H0,
+J=T>=2, choose z=alpha, strictly between0 and J. With J0,H=T>=2, choose
+z=-alpha, strictly between-H and0. Both thin choices avoid {0,d}.
+Take c=alpha if z has alpha's parity, else alpha-1, and
+x=(c-z)/2,y=(c+z)/2. The interval formulas give the required root bounds.
+Reflect/reverse both chains by i->h-i when c=alpha-1; new minimum sum
+T+1-alpha gives Q first and P second. Complete original move bag follows.
+All halves>=2 and legal odd bounds give enough labels automatically.
+
+**Scope of the union.** MI214 covers separated exceptions. The argument
+above covers their complement under ordinary capacity. Together they give
+a PROVISIONAL four-condition criterion for m repeated s>=2 plus ANY two
+a,b>=s: legal odd bounds,no doubled maximum,two-bin capacity (label count
+automatic). The new forced-case proof does not depend on MI214, but the
+union does. Smaller exceptions and repeated unit base are outside this
+union; full E28/L8 remains OPEN.
+
+**Predictions BEFORE code/run.** Nine forced-together formula calls:
+(M,s,m,a,b;p,q)=(28,4,3,6,6;23,25),(36,5,3,8,8;31,31),
+(32,5,3,6,6;27,27),(38,5,3,9,9;33,33),
+(46,7,3,9,10;43,37),(46,7,3,9,10;41,39),
+(56,5,7,8,8;51,51),(34,4,4,5,9;31,29),
+(56,8,3,12,15;51,51).
+Every bag/window/odd owner and both literal geometry validators must pass.
+The first has only FIVE negative owners: materialize ONE actual E28
+partition by retaining one zero-move owner of slots2/target112. Use original
+slots(1,1,2,2,2,2,2,2), append zero moves to8 owners, and call the EXISTING
+materializer and both independent validators. This is a baseline bin, not
+an invented sixth negative edge. No additive coverage claim.
+
+Independent capacity control: enumerate all labelled negative-item bin masks
+on these nine named inputs (at most512 each), confirming some fitting split
+and NO separated exceptions; compare with both floor counts. Independently
+enumerate their small root rectangles, compare the entire I formula and
+check actual chain intersection iff z in{0,d}. This is capacity/start
+algebra, not a whole-cycle existence or ordering solver.
+
+Countercontrols: on M36 use A=(1,9,17),B=(1,6,11,16), exact31/31 but shared
+MINIMUM1 (z0). On M46/41/39 use A=(2,11,21),B=(0,7,14,21), shared MAXIMUM21
+(z=d=-2). Both retain the full original bag/window and must fail geometry.
+Unexpected premise check: M22,s3,m3,a=b4,p=q17 has separated capacity.
+The forced-case constructor must refuse it. Its tempting shared A=(2,6,10),
+B=(0,3,6,9) avoids endpoint offsets0/d=-1 but hits INTERNAL6 and must fail
+geometry despite the original bag. The EXISTING MI214 constructor must
+succeed on the same input (one extra formula call). This distinguishes the
+forced capacity carry from an unrestricted same-bin rule.
+Caps9 new calls+1 existing call,1 E28 partition,1CPU sec/64MiB. Stop any
+mismatch, no repair, enlarged grid or extra review queue. Gut: delight at
+capacity failure supplying the missing geometry. MI214 remains the sole
+carrying-read priority, nonblocking; send this by READ-LEDGER.
