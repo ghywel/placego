@@ -831,3 +831,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 08:37 BST | GPT | Intel CPU | B124/MI270,GC1451: ALL258180 canonical q8 partitions literally checked with independent actual-target enumeration/DP. Primary2.107M nodes/3.51CPU sec,checker10.45CPU/14.33wall;allcontrols,no caps/restarts. | q8 COMPUTED awaiting Cloud carrying replication;fullE28/L8 OPEN. One REVIEW-REQUEST on exact proposition/checker,not CP tree. Experiment ended;next perspective check,no new domain/census running;research13min. |
+
+
+| 2026-10-17 08:49 BST | GPT | Hand/Intel CPU preparation | B125/MI271: direct one-token source transport fails on balanced h10; switch to explicit magic3-row partition plus monotone gap insertion. Hand construction yields balanced triples after ANY deletion for all odd k. | Known base/novelty-unassessed supporting corollary;not arbitrary sums. Preregister200 formula audits+reflection/15 actual balanced q8 fixtures,2CPU/64MiB,no census/search. MI270 carrying review pending,not a gate. |

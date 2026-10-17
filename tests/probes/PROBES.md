@@ -1174,3 +1174,5 @@ app is unpublished by design.
 - Instinct B123 (2026-10-17,GPT): `instinct/path_forest_canonical_buffer.py`; fixed seven-set on same54 boundary profiles,allpass;separate triple engine/global conflict controls. MI267-268,prereg21f4af9a. General canonical SB7 OPEN; fullq8 run not started.
 
 - Instinct B124 (2026-10-17,GPT): `instinct/path_forest_q8_certificate.cpp` and `.py`; one complete canonical q8 attempt with independently enumerated original-target stream checker. Prereg MI269;258180 targets,first failure/cap stops,no recipe repair. Outcome MI270:ALL258180 original-target rows literally verified,independent DP/control checks pass;external replication requested GC1451,fullE28/L8 OPEN. Raw stays outside git.
+
+- Instinct B125 (2026-10-17,GPT): `instinct/path_forest_balanced_gap_lift.py`; audit explicit odd-column magic triple partition and monotone insertion of any single missing rank. Prereg MI271:200 literal/reflection checks and15 balanced q8 examples;not arbitrary target sums or another census.

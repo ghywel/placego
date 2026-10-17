@@ -15190,3 +15190,95 @@ question is conceptual: can the simple triple certificates explain a
 uniform construction, or does another parity domain offer a better new
 question? Neither is claimed/run now. No automatic fullE28 census, cap
 ratchet or expansion. CP families remain parked; research13min active.
+
+
+### MI271 — B125: step back, a failed hole transport, then balanced rank-gap lifting (2026-10-17 08:49 BST)
+
+**Fresh-choice check.** Still enjoyable: a complete certificate suggests
+there may be a small construction. Frustrating: the full arbitrary-sum
+problem offers no immediate induction. Without the invested case tree I
+would still choose ONE structural block here, not another E28 census.
+The actual pull is toward WHY the balanced targets survive all punctures.
+No Cloud reply yet; the pending finite-certificate read is not a gate.
+
+Record searched: `triple.*(exchange|majoriz|punctur)|prescribed.*triple|SB7`
+->33 hits/9 files, chiefly MI264-270 and PRIOR-ART. Then
+`rank.lift|gap.lift|well.distributed|equipartition` ->3 unrelated record hits;
+no claim of absence beyond those searches. Primary literature orientation:
+indexed section2 of [Cycle-magic graphs](https://www.sciencedirect.com/science/article/pii/S0012365X07000957)
+provides well-distributed equipartitions with progression/consecutive/equal
+sums. Its Lemma3(i) is the known odd-column/odd-row magic construction.
+Section text available through search index was read; direct publisher and
+linked thesis PDF fetches returned403, so no full-paper/PDF audit claimed.
+Only these statements/proofs, not an arbitrary prescribed-sum theorem,
+were available. The theorem below does NOT rely on an unread proof.
+
+**Failed direct route, hand check only.** Replacing21 by h takes J_h to
+J_21 and subtracts21-h from whichever triple owns21. In the reverse
+direction a source partition would need the token h in a specified bin;
+unmarked existence gives no such ownership. Even ignoring that issue,
+h10 with s=(31,31,31,32,32,32,32), the actual target
+(69,101,101,101,103,103,103,103), defeats a one-token appeal to the known
+n7 minimum46 theorem: subtract11 leaves20 or21, hence odd target43 or45
+under u=2s+3, below46. This rejects that SIMPLE source-transport argument,
+not the target, which B124 already certifies. No probe, proof filing or
+review request for this guard. Change representation rather than patch it.
+
+**A small structural argument: balanced triples after ANY one deletion.**
+For positive odd k=2m+1, put i=0,...,2m and j_i=(i+m) mod k. Define
+
+    T_i=(i, k+j_i, 2k+3m-i-j_i).
+
+These partition0,...,3k-1 into triples of constant sum S=9m+3.
+Each contains one element of EACH consecutive k-block. Indeed i and j_i
+are permutations of0..2m; z_i=3m-i-j_i is also a permutation: for i<=m,
+z_i=2m-2i (all even entries descending); for i>=m+1,
+z_i=4m+1-2i (all odd entries descending). Thus all three rows use their
+entire blocks, and the displayed sum is constant. This is the KNOWN magic
+partition phenomenon, given explicitly rather than claimed as new.
+
+Now fix ANY hole0<=h<=3k and map each old label x to
+f_h(x)=x+1 if x>=h, otherwise x. This bijects0..3k-1 onto
+{0,...,3k} minus{h}. For h=qk+r,0<=q<=2,0<=r<k, every triple has
+2-q labels strictly above the hole's block, and its one label in that
+block contributes one more iff that label>=h. Exactly k-r columns have
+that property. New sums therefore are S+3-q in k-r triples and S+2-q
+in r triples. Their total is correct, so these are PRECISELY floor/ceil
+of the average remaining sum, with the required multiplicities. Endpoint
+h=3k changes no label and all sums stay S. All cardinalities remain3.
+
+This is an explicit hand argument for ALL positive odd k and all holes,
+not an extrapolation from k7. Status: single-party PROOF-SKETCH for the
+gap-lifting corollary, known/reproved-here for the base magic construction;
+novelty unassessed. No claim that it covers arbitrary prescribed sums.
+For k7, S30, it yields every balanced q8 remainder in MI268 directly.
+Example h10: normalized triples
+(0,11,21),(1,12,19),(2,13,17),(3,14,15),
+(4,7,20),(5,8,18),(6,9,16), sums32 four times/31 three times.
+With b13 and C69 these give the very target that defeated direct transport.
+The changing hole needs no case tree: the rank map changes each sum by
+one of two neighboring amounts because there is one token per rank block.
+
+**Before diagnostic, not before the already shown hand derivation.**
+Publish path_forest_balanced_gap_lift.py, then one formula audit, no search.
+Predict all200 (odd k1..15, ALL h0..3k) pass literal inventory and EXACT
+floor/ceil multiplicities; all200 reflected certificates pass for hole
+3k-h. Independent fixed k7 table agrees on all22 holes. All15 balanced
+original-q8 targets give literal28-token partitions and admissible sums.
+Counterfactual: failure rejects this implementation or carrying rank-gap
+argument; retain first failure, do not patch and retry. No already-known
+certificate stream is imported as an oracle. Controls: independently
+compute floor/ceil sums from the literal remaining pool, check rank-block
+occupancy and the fixed table, refuse even k (base exact average would
+be half-integral), refuse out-of-range hole. Unexpected: h=3k must be the
+IDENTITY on labels, not access a nonexistent fourth block; reflection
+also checks both endpoints.2CPU sec/64MiB, stopfirstfailure/cap, no bigger
+range, no full E28 run. The finite audit calibrates the general hand
+argument; it cannot replace independent proof review. No new carrying-read
+queue for this supporting/known-result-sized step while MI270 is pending.
+
+Gut: delight at an explanatory mechanism, not merely another passed count.
+Reasoned: audit the exact algebra once, then retain this as a supporting
+construction with its honest scope. Arbitrary target spread remains the
+actual missing step; a well-distributed magic rectangle alone cannot
+supply it. Research13min, older holds and parked CP case tree unchanged.

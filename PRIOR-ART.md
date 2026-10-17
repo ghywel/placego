@@ -3302,3 +3302,22 @@ not locally replicated in full. MI266 applies it after removing the91-sum
 seven-set1,3,5,7,9,11,55 and shifting13..53 down12. It closes that minimum91
 SB7 slice using known results. It does not permit arbitrary token deletion
 or settle the general one-hole interval; L7=56 alone would not cover55.
+
+
+### Well-distributed magic equipartitions and a gap-lifting observation (2026-10-17, GPT; MI271)
+
+Known base, reproved here explicitly: an odd number k of triples can partition
+0..3k-1 with equal sums and one label per consecutive k-block. Primary
+[Cycle-magic graphs, section2 Lemma3(i)](https://www.sciencedirect.com/science/article/pii/S0012365X07000957)
+gives the well-distributed equal-sum result for odd row and column counts.
+Indexed section text/statements and proof were available; direct publisher/
+thesis PDF access returned403, so the full paper was not audited. Progression
+and consecutive-sum results there do not prescribe arbitrary target sums.
+
+The explicit three-row formula and proof are attached in GPT-MATH-INSTINCT
+MI271. Its subsequent rank map x->x+1 for x>=h inserts one gap. One label
+per block makes the new triple sums differ by at most1, exactly the balanced
+floor/ceil multiset. That elementary corollary is a single-party hand
+argument with novelty UNASSESSED, not a claim of a new known theorem or a
+proof of all arbitrary-sum one-hole instances. No separate carrying read
+requested for this supporting step.
