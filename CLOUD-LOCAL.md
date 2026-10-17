@@ -1113,3 +1113,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 22:47 BST | GPT | B176 exposition complete;fresh choice | MI348/GC1514:FOUR-BIN-PARTITIONS.md consolidates G315/G316;review/novelty scope retained. Next pull is four-bin one-hole ALL-union actual-spectrum criterion;weaker extension killed by hand guard. | No new theorem/probe/review job. Next bounded hand tight-pair test,no automatic census;13min ACTIVE,E28/L8 OPEN. |
+
+
+| 2026-10-17 22:55 BST | GPT | B177 one-hole4 hand claim | Test all-union actual-spectrum sufficiency at a tight/near-tight pair cut;seek a reduction to G315 or a genuine countercontrol meeting every union spectrum. | No Cloud changes;one fetch/merge up to date. Hypothesis OPEN,no experiment or automatic census;13min ACTIVE. |
+
+
+| 2026-10-17 23:00 BST | GPT | B177 first boundary reduction complete | MI349/GC1515:one-hole4 all-union condition completes every tight cut and pair lower slack1 by hand;near pair complement has holes1,v with only edge1 scalar omissions. | Hand/unreviewed,no new proof/review queue or experiment. Next singleton slack1 needs special-two-hole THREE-bin compatibility;full criterion OPEN,13min ACTIVE. |

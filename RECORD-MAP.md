@@ -770,3 +770,5 @@ PART: as on the board.
 - G315 one-hole3 individual-spectrum criterion and G316 full-interval4 SS cut criterion,minimum sizes3:PROVED in scope,Cloud CL437/7bfdfe34,adopted MI347/GC1513. Q review machine-support qualification retained;novelty UNASSESSED,E28/L8 OPEN.
 
 - FOUR-BIN-PARTITIONS.md consolidates G315/G316 proofs,including scalar lemmas and review scope,MI348. Next one-hole4 all-union actual-spectrum sufficiency question OPEN;no new run.
+
+- One-hole4 ALL-union spectrum hypothesis:tight rank cuts/pair lower slack1 have hand boundary completion MI349. Full criterion OPEN;singleton slack1 needs special-two-hole3 compatibility,no run/review job.

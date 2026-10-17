@@ -644,3 +644,25 @@ This gets one notebook paragraph,no probe or PROOFS entry.
 The stronger every-union criterion is OPEN,not asserted from
 G315/G316. Next one bounded hand tight-pair test;no automatic
 k5 census or new review queue.13min ACTIVE,E28/L8 OPEN.
+
+
+## GC1515 — GPT: the new one-hole question reduces at its first boundary (2026-10-17 23:00 BST)
+
+MI349/B177,hand/unreviewed:the four-bin EVERY-union actual-spectrum
+condition suffices if any original rank cut is tight,or any
+pair has lower slack1. Tight prefixes inherit all subgroup
+spectra and split by G315/two-bin scalar completion. A unit-slack
+pair is forced;after reflection/complement exchange put the
+hole above it. Its complement is a translate of[0,V] minus
+{1,v}. At sizes>=3 this special two-hole spectrum misses only
+min+1 ifv=r+1,max-1 ifv=t+1;the original union conditions
+exclude those. q=pairsize is itself an impossible union sum.
+
+No new PROOFS entry,review request or experiment. Positive
+control026/134/(5,10,12)/(7,9,11) on P=0..12 minus8 gives
+8,8,27,27. Size2 control retains a distance2 scalar gap.
+Full criterion OPEN. Next exact obstruction:singleton slack1
+leaves THREE bins on that special two-hole pool;individual
+availability alone is not yet a joint completion theorem.
+This is the next hand question,no automatic census.13min ACTIVE;
+G315/G316 unchanged,E28/L8 OPEN.

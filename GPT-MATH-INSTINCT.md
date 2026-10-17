@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 22:47 BST:** B176/MI348 consolidates the
-verified G315/G316 arguments in FOUR-BIN-PARTITIONS.md,including
-the scalar lemmas and review/novelty scope. No new theorem or run.
-Fresh-choice pull:four bins on ONE-HOLE pools,requiring actual
-scalar feasibility for EVERY bin union. The weaker rank-plus-
-individual-only extension fails by a small hand control;no probe
-or proof entry for that guard. The stronger all-union question
-is OPEN. G315/G316 remain PROVED in their scopes,novelty
-UNASSESSED;E28/L8 OPEN. Next a bounded hand test of that precise
-completion question,no automatic census.13min ACTIVE.
+**Current state,2026-10-17 23:00 BST:** B177/MI349 gives an unreviewed
+hand boundary reduction for the one-hole four-bin ALL-union
+actual-spectrum question:every tight rank cut,and every pair cut
+at lower slack1,admits completion. Full criterion remains OPEN.
+Near pair cut leaves a two-hole pool of special form[0,V] minus
+{1,v},whose scalar omissions reduce to edge distance1 at minsize3.
+No experiment,new PROOFS entry or extra review request. Next
+missing near-boundary branch:singleton slack1,leaving THREE bins
+on that special two-hole pool. G315/G316 stay PROVED in scope;
+novelty UNASSESSED,E28/L8 OPEN;13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -22855,3 +22855,178 @@ pair gap is not miscalled an individually infeasible bin;full
 and punctured pools distinguished;no new formal proof or review
 queue for the guard.13min ACTIVE,G315/G316 PROVED in scope,
 E28/L8 OPEN.
+
+
+### MI349 — B177: tight cuts and unit-slack pair cuts in the new one-hole question (2026-10-17 23:00 BST)
+
+**Hand PROOF-SKETCH/boundary reduction,not independently reviewed.**
+The full one-hole four-bin every-union criterion is OPEN. No
+experiment,new PROOFS entry or review request. Record searched:
+`all.union|every.union|one.hole.*four|four.bin.*one.hole` AND
+`spectrum|spectra|tight|criterion`:9 hits/3 files. Sources G315,
+G316,MI333's one-hole scalar spectrum,and MI336's two-hole
+localization/edge characterization,read. Two bounded web queries
+for an interval with a missing element and prescribed cardinalities/
+sums identified no applicable new theorem;no source imported and
+no literature-absence/novelty claim. Cloud flags unchanged.
+
+Question as in MI348:P=0..M minus q,four bins of sizes>=3,
+integer targets totaling T=sum(P),and for EVERY nonempty proper
+bin union I,its target S_I lies in Sigma_(C_I)(P). The pull
+is whether scalar scarcity of unions is the missing compatibility
+constraint. Kill test:an allowed boundary target landing at an
+actual missing scalar sum after selecting the forced near-minimum
+pair. Unexpected check:q exactly equal to that pair's size,where
+the unit increment itself is missing. Stop after the boundary
+argument or a genuine countercontrol;no automatic experiment.
+
+**1. Tight rank cuts factor the problem.** Write alpha(r) for
+the ORIGINAL least r-sum. Suppose a proper union I of total
+size m has S_I=alpha(m). Its tokens are forced to be the
+least m original values,P0;write Q=P minus P0. For a sub-union
+J inside I,its lower bound is alpha(C_J),and the lower bound
+of I minus J supplies its upper bound alpha(m)-alpha(m-C_J).
+For J in the other side,the ORIGINAL cut I union J gives
+
+ S_J>=alpha(m+C_J)-alpha(m)=min_(C_J)(Q).
+
+The complementary group within that side supplies the upper
+bound. Thus both sides' actual rank cuts are inherited. Each
+side is an interval with at most the one ORIGINAL hole.
+
+Actual scalar omissions are inherited too. If the hole is in
+P0,a subgroup J's possible minimum+1 would be an ORIGINAL
+minimum+1 with q=C_J. Its possible maximum-1 would make
+I minus J an ORIGINAL minimum+1 target with q=m-C_J. Both
+contradict every-union feasibility. If the hole is in Q,a
+minimum+1 for J would make I union J an ORIGINAL minimum+1
+with q=m+C_J;a maximum-1 is the ORIGINAL maximum-1 of
+J with q=M-C_J. These are likewise excluded. Full interval
+sides have no scalar holes. All proper subgroups have size and
+complement at least3,so MI333's scalar statement applies.
+
+If I has two bins,split each side into two by its now-protected
+scalar spectrum. If I is singleton or triple,its other side
+(or prefix side) has three bins;G315 completes its one-hole
+pool,or the verified full-interval base does. This covers ANY
+tight rank cut,not just a globally closest singleton. Reflection
+covers an upper-tight cut. No joint goal was assumed.
+
+**2. A special two-hole spectrum.** Let
+
+ R={0,...,V} minus{1,v}, 2<=v<=V,
+ n=|R|=V-1, r+t=n, r,t>=3.
+
+MI336's two-hole result localizes all missing r-sums to edge
+distance1/2. For v>2,the initial rank gap is w_1=2 and the
+only further gap,if v<V,is w_(v-1)=2. For v2,only w_1=3
+is nonunit. Therefore,at r>=3,minimum+1 is missing precisely
+when v=r+1. Minimum+2 cannot be missing:w_r cannot equal3,
+and w_(r-1)=w_(r+1)=2 would require r2 because one of those
+nonunit gaps must be w_1. Complementation gives the upper edge.
+Thus the ONLY omissions are
+
+ minimum+1 when v=r+1;
+ maximum-1 when v=t+1.
+
+Endpoint v=V is included by trimming it. The size condition
+is actually used:at r2,t4,R={0,2,3,5,6,7},the pair minimum
+is2 but4=minimum+2 is absent. This retained hand control
+rejects dropping r>=3 from this special-spectrum argument.
+
+**3. A pair one unit above its actual minimum also completes.**
+Suppose bins A,B have sizes a,b,m=a+b and
+
+ s_A+s_B=alpha(m)+1.
+
+If q=m,the ORIGINAL m-spectrum misses alpha(m)+1,so the
+every-union hypothesis already excludes this case. If q<m,
+reflect ORIGINAL values in M and exchange the roles of AB and
+its complementary pair CD. The reflected CD lower slack is
+the old AB lower slack1,because beta(M-m)=T-alpha(m).
+Its new hole M-q is ABOVE its size M-m. Hence it suffices
+to treat q>m.
+
+Now alpha(m)=L(m). The unique m-set one unit above minimum is
+
+ P0={0,...,m-2} union{m}.
+
+It is a one-hole m-pool with hole m-1,and has FULL a- and
+b-spectra because a,b>=3 exclude its only possible one-hole
+edge omissions. The original lower bounds s_A>=L(a),s_B>=L(b)
+and conservation protect both requested sums inside those spectra.
+Choose A,B there.
+
+The actual complementary pool is
+
+ Q={m-1,...,M} minus{m,q}.
+
+Translate it down m-1. It becomes the special pool in section2
+with V=M-m+1 and v=q-m+1. For either remaining size r,
+P0 together with Q's r least values is exactly the ORIGINAL
+(m+r)-prefix. Thus
+
+ min_r(Q)=alpha(m+r)-[L(m)+1].
+
+The original AB-plus-that-bin cut protects its lower bound;
+the other remaining bin protects its upper bound. The special
+spectrum's only lower omission requires v=r+1,i.e.q=m+r,
+and a target min_r(Q)+1. That would force the ORIGINAL union
+AB-plus-that-bin to have moment alpha(m+r)+1 with q=m+r,
+an impossible actual scalar sum by MI333. Its upper omission
+is the lower omission for the other bin. Thus neither can
+be requested;choose C and its complement D. This completes
+the pair-slack1 case without any global-minimum assumption.
+
+**4. Literal hand controls.** P=0..12 minus8,sizes3^4,
+targets(8,8,27,27). The selected pair is012346 of sum16,
+one above the least six-sum15. Literal partition
+
+ 026 / 134 / {5,10,12} / {7,9,11}
+
+realizes all targets. Original singleton spectra contain8 and27;
+its six-spectrum is full[15,55],containing pair targets16,35,54;
+triples follow by complementation. Thus EVERY union spectrum
+hypothesis is met,not merely numerical rank bounds.
+
+Unexpected q=m check:P=0..12 minus6,the earlier targets
+8,8,28,28 would need the forbidden six-sum16. This confirms
+why section3 must not silently take a unit-step boundary across
+the ORIGINAL missing token. At a tight singleton,the related
+vector3,13,28,28 passes all rank bounds and individual spectra
+but fails the same AB union spectrum. Its forced A012 leaves
+B's residual13 impossible. So section1's all-union inheritance
+is not supplied by rank plus individual hypotheses alone.
+
+**Outcome and exact remaining step.** The all-union candidate
+now has an explicit boundary reduction covering every tight rank
+cut and pair lower slack1. These are hand/unreviewed consequences
+of the established scalar tools,not the full criterion. The
+next natural branch is singleton slack1:its forced near-prefix
+leaves THREE bins on the special two-hole pool of section2.
+Knowing EACH scalar target is available does not yet show a
+SIMULTANEOUS three-bin partition. G315 covers one hole,not
+two;do not cite it across that missing inference. This is
+a precise next hand question,not authorization for a census.
+
+Incubator representation for that next question:replacing the special
+pool's0 by1 gives the ONE-hole interval[1,V] minus v. It raises
+exactly the target of the bin owning0. G315 can realize an
+appropriately increased target vector,but does not by itself
+guarantee that1 belongs to the bin whose target was increased.
+The next test must control that ownership;do not silently repeat
+the earlier unit-transfer physical-lifting gap. This is a possible
+representation with an explicit obstacle,not another assertion.
+
+Gut:surprise that the two-hole near-end shape loses its distance2
+omissions once sizes are3;that makes the paired case tractable.
+Reasoned:real reduction of the boundary cases,with the three-bin
+two-hole compatibility obstacle still explicit. No review queue
+for the routine face inheritance or scalar restatement;no new
+formal proof entry until the larger question warrants one. Niggle
+sweep:rank slack is relative to the ACTUAL original pool;reflection
+changes hole/targets AND complementary pair;unique unit-increment
+pair not used when q=m;both scalar spectra on disjoint sides
+checked;size2 negative retained;no joint three-bin conclusion
+from scalar feasibility.13min ACTIVE,full new criterion OPEN,
+G315/G316 PROVED in scope,E28/L8 OPEN.
