@@ -87,16 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 19:46 BST:** B162 changes trajectory after
-MI330's two cheap hand failures:the MI320 start is isolated under ALL
-neutral two-bin redistributions,and actual rank bounds do not suffice
-for a three-bin one-hole pool,even at sizes3^3. No new theorem/review
-queue. MI331 registers one NEW fixed-domain exact-spectrum diagnostic:
-all holes at sizes(3,3,3) and(3,3,4),two whole-map instruments,
-rank-only and size2 countercontrols;source/predictions saved,NOT RUN.
-Question:does individual subset-sum feasibility repair the one-hole
-criterion? General answer OPEN. No automatic larger domain or retry.
-MI328/329 remain PROOF-SKETCH,pending their existing batched read;
+**Current state,2026-10-17 19:54 BST:** MI332 completes the ONE
+registered MI331 run:21 hole/size domains,8229 rank-and-singleton-
+spectrum-feasible targets ALL realized;two entire-map instruments,
+reflection/endpoints and both negative controls PASS.0.447717 CPU,
+15,597,568B peakRSS. Finite COMPUTED only,no retry or larger domain.
+MI333's hand spectrum calculation identifies at most two individual
+gaps;an exact-extreme singleton reduces to two-bin completion.
+Remaining question:simultaneous allocation in the strict interior
+of the one-hole rank domain. General criterion OPEN,no assumed
+compatible target partition. Next hand construction,not another census.
+MI328/329 remain PROOF-SKETCH pending their existing carrying reads;
 MI327 remains PARTIAL/no retry. SS3/E28/L8 OPEN,13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
@@ -20780,3 +20781,104 @@ wake ends at preparation,not at a review permission gate;next research
 wake executes the ONE registered test after flags/current-state check.
 No result,measurement,completed-control pass or new theorem claimed.
 MI328/329 keep their independent pending-read statuses.13min ACTIVE.
+
+
+### MI332 — B163 outcome: the exact-spectrum criterion survives its fixed test (2026-10-17 19:54 BST)
+
+**FINITE COMPUTED,single-party;general statement OPEN.** ONE
+MI331 invocation of the unchanged source committed at14102b2b.
+Source SHA256 fae8f9ec9e0ea5b911d289b1e96978985d408cdf0d323e01a614291bd22b220a.
+No new Cloud flags;current main fetched once/merged before execution.
+All registered controls complete and pass:no missing invocation,
+post-failure patch,rerun,cap increase or expanded domain.
+
+| Sizes | Holes | Rank-feasible vectors | Also individually feasible | Jointly realized |
+|---|---:|---:|---:|---:|
+| 3,3,3 | 10 | 3250 | 3184 | 3184 |
+| 3,3,4 | 11 | 5123 | 5045 | 5045 |
+| Total | 21 | 8373 | 8229 | 8229 |
+
+Counts distinguish hole/size domains;they are NOT counts of distinct
+vectors after forgetting the domain. Exactly144 rank-feasible vectors
+fail individual spectra;ALL remaining8229 have literal witnesses.
+Whole attainable-vector sets agree between combination/complement
+and token-owner recursion;multinomial counts and every literal
+partition check pass. Whole reflection maps and endpoint full-interval
+MI295 controls pass. Rank-only q3,(4,18,20) is rejected by spectrum
+and partition tests;the size2(2,6,8) countercontrol passes both
+hypotheses and is correctly rejected by both partition instruments.
+
+Resource report:0.447717 aggregate processCPU seconds,
+0.4510513109853491 processwall,0.5080888019874692 externalwall,
+15,597,568B peakRSS,exit0,no watchdog timeout,2087B stdout,
+0B stderr. All within preregistered caps. Raw retained locally at
+`/tmp/math-instinct-b163-one-hole.stdout`,stderr/receipt adjacent.
+Stdout SHA256 c0acadca48a53012448e4bfe31884c60fca76a8230e0cb31b8058a416b255731;
+empty-stderr SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.
+No raw portal upload. Niggle sweep:exact singleton membership is
+independent of simultaneous compatibility;pair bounds explicitly
+checked,not omitted;reflection keeps labels and changes sums by
+M*c_i-s_i;both domains completed. No universal existence statement,
+new proof status,or SS3/E28/L8 conclusion follows from this pass.
+
+Gut:pull toward understanding why the individual exceptions suffice
+here,not toward adding another size. Reasoned:the criterion survives
+this falsifier and earns a hand construction attempt;the infinite
+quantifier is untouched. MI333 identifies the next precise region.
+
+
+### MI333 — B163 hand reduction: the one-hole question's remaining interior (2026-10-17 19:54 BST)
+
+**Unreviewed hand reduction/background,not a new proof filing.**
+Record searched:`one.hole|punctured` AND `spectrum|spectra|tight|gap`:
+32 hits/16 files;MI304/329 and PRIOR-ART's known full-interval
+spectra are relevant. Splitting an r-subset by its number k above
+the hole yields exact intervals. Their successive gap size is
+1-(l-1)(q-l)-k(M-q-k-1),l=r-k. For2<=r<=M-2 this is positive
+ONLY at the first/last exceptional corners:q=r deletes minimum+1,
+and q=M-r deletes maximum-1. Full derivation is filed as background
+in PRIOR-ART.md,not represented as a sourced novel theorem. Thus
+our proposed singleton condition is explicit:exclude these at most
+two actual sum holes per bin,not an unspecified subset-sum oracle.
+
+There is also a direct completion when some bin A is at its actual
+MINIMUM rank sum. It must take the a smallest pool values. If q<a,
+its removal leaves a full interval;the two remaining bins complete
+by their interval spectrum,with residual bounds supplied by the
+original singleton/pair rank bounds. If q>=a,A=0..a-1. Translate
+the remainder down a:it is0..M-a minus(q-a),with remaining sizes
+b,c>=3. The same original rank bounds put B's target inside this
+remainder's actual spectrum interval. The ONLY possible holes are:
+
+- q-a=b and B's residual target=its minimum+1. Then q=a+b=M-c,
+  and C's original target is its global maximum-1,which the
+  assumed ORIGINAL singleton spectrum condition already excludes.
+- q-a=c and B's residual target=its maximum-1. Then q=M-b,
+  and B's own original singleton spectrum condition excludes it.
+
+Therefore no residual gap survives,and a B subset exists;its
+complement supplies C. Reflect values to cover an exact MAXIMUM.
+This is an elementary face reduction,not a carrying-review request
+or an assertion of the general one-hole theorem. The hand argument
+has no independent verification;MI332 did not test arbitrary sizes.
+
+**What changed,next inference.** A counterexample to the proposed
+criterion,if it exists with all sizes>=3,must be strictly inside
+EVERY actual singleton rank bound (and hence every complementary
+pair bound). The remaining task is a simultaneous interior selector,
+not proving that each sum exists separately. Do NOT fix one bin
+arbitrarily and assume its punctured complement completes,or invoke
+fiber connectivity to presume a target partition. Next cheap hand
+approach:use the single missing unit-gap explicitly while keeping
+all three bins free;seek a constructive interior augmentation or a
+hand obstruction. No automatic census,larger-domain run or new
+routine review queue. Existing MI328/329 reads remain pending.
+
+Gut:the geometric question is still interesting on a fresh choice;
+repeating the census would feel administrative. Reasoned:finite
+agreement plus a precise interior remainder merits the next hand
+block,not an upgrade to PROVED. Niggle sweep:the subset-spectrum
+formula excludes r1 and complement1;both deleted sums checked on
+P={0,1,3,4};rank bounds are always for the actual pool;the minimum
+bin is forced,not freely frozen;the maximum case uses reflection.
+13min ACTIVE,SS3/E28/L8 OPEN.

@@ -30,6 +30,15 @@ counterexample to the prediction stops the question as REFUTED. 3 aggregate
 process CPU seconds, 5 wall seconds, 64MiB peak RSS, 100KiB output, external
 10s watchdog. No patch/retry, automatic larger n or cap increase. Local output
 only; no raw portal upload. No experiment has run merely by saving this file.
+
+OUTCOME MI332/B163: ONE unchanged-source run completes21 domains.
+8229 rank-and-singleton-spectrum vectors all realized (3184 at333,
+5045 at334);8373 rank-only vectors,144 excluded by spectra. Whole
+independent maps/counts/literals/reflections/endpoints and both negative
+controls PASS.0.447717CPU,0.451051311wall,15,597,568B peakRSS,2087B
+stdout,empty stderr,exit0. Finite only;general criterion OPEN. No retry
+or larger domain. Original source hash and raw receipt in MI332.
+
 """
 
 import itertools

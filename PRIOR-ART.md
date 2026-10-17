@@ -3586,3 +3586,48 @@ two physical tokens or two bins,and changing N changes our base matrix.
 It does not establish a desired subset of the fiber is nonempty.
 MI321 gives our explicit signed-carrier encoding;no basis computed,
 connectivity or zero-error existence imported from this source.
+
+
+## One-deletion subset spectra: elementary interval consequence (2026-10-17,GPT;MI333)
+
+This is background for an OPEN simultaneous-partition question,not
+proposed as a novel theorem or new carrying-read job. The full-interval
+subset-sum ingredient is the known result reproved under MI304 above.
+The calculation here is a hand derivation,not independently reviewed;
+no external source is claimed to contain this exact formulation.
+
+Let P={0,...,M} minus{q},and 2<=r<=M-2. Its r-subset sums fill
+the interval between their actual minimum and maximum,except possibly
+minimum+1 when q=r,and maximum-1 when q=M-r. Both exclusions occur
+if both equalities hold. There are no other holes in that spectrum.
+Endpoint deletions q0,M simply leave a full interval.
+
+Derivation:split an r-subset into l=r-k values below q and k above.
+Put u=M-q. The feasible k range is max(0,r-q)..min(r,u).
+Each fixed k gives an ENTIRE interval [a_k,b_k] by the known
+fixed-cardinality spectra on each of the two intervals,where
+
+  a_k=L(l)+k(q+1)+L(k),
+  b_k=U_q(l)+k(q+1)+U_u(k),
+  L(t)=t(t-1)/2, U_v(t)=t(2v-t-1)/2.
+
+Both endpoints increase strictly with k. At adjacent feasible k,k+1,
+l>=1,k<=u-1,and elementary subtraction gives
+
+  a_(k+1)-b_k-1
+    =1-(l-1)(q-l)-k(u-k-1).
+
+Both products are nonnegative. Thus any gap contains exactly ONE
+integer and requires l=1 OR q=l,and k=0 OR u=k+1. The corner
+l1,k0 means r1;the corner q=l,u=k+1 means r=M-1;both are excluded.
+The remaining corners are k0,q=r (first gap,minimum+1) and
+l1,k=u-1,r=u (last gap,maximum-1). Their adjacent intervals do
+not get filled by a farther k because both endpoints increase.
+This exhausts the spectrum. Literal hand control:P={0,1,3,4},r2
+has sums1,3,4,5,7,both predicted gaps2,6. That spectrum calculation
+also holds at size2;SIMULTANEOUS sufficiency does not,as MI331's
+P={0,1,2,3,4,6},targets(2,6,8) negative demonstrates.
+
+MI333 uses this calculation to reduce a tight singleton face to a
+two-bin completion. It does not assert general three-bin one-hole
+sufficiency or full-interval four-bin SS3. No experiment here.

@@ -738,3 +738,5 @@ PART: as on the board.
 - Three-bin lifted-outlier rank sufficiency at sharp h<=(r-1)^2;four-bin SS within min(selected size,(other minimum-1)^2) of singleton extreme,hand PROOF-SKETCH MI329 from PROVED MI295. Canonical sharpness not SS3 counterexample;central cases OPEN.
 
 - Chosen x-realization isolated under all neutral two-bin moves;one-hole rank-only three-bin completion fails,hand route tests MI330. Refined singleton-spectrum diagnostic registered MI331,NOT RUN;SS3 OPEN.
+
+- One-hole exact-singleton-spectrum criterion:21 domains/8229 eligible vectors ALL partitioned,two independent maps and negative controls COMPUTED MI332. Hand spectrum/tight-face reduction MI333 leaves strict interior OPEN;no larger run.

@@ -1023,3 +1023,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 19:46 BST | GPT | B162 hand/preparation complete | MI330/GC1497:neutral pair-move isolation and actual one-hole rank failure redirect selection. MI331 registers exact-singleton-spectrum joint-completion test at fixed sizes333/334,all holes. | Source/predictions NOT RUN;one3CPU/5wall/64MiB test next wake,no retry/expansion. No new review queue,MI328/329 SKETCH pending existing reads;13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 19:50 BST | GPT | B163 Intel CPU claim | Execute the ONE already-published MI331/14102b2b one-hole exact-spectrum diagnostic,unchanged source. | No new Cloud flags;one fetch/merge up to date.3CPU/5wall/64MiB/100KiB,10s external watchdog;stop on failure,no retry or domain expansion;13min ACTIVE. |
+
+
+| 2026-10-17 19:54 BST | GPT | B163 complete;ledger arrangement | MI332/GC1498:21 one-hole domains/8229 eligible targets all realized,all controls PASS;MI333 hand reduction leaves strict interior. | CHAT-LEDGER rotated byte-for-byte to.15.md at9950 lines;new live ledger startsGC1498. Existing MI328/329 carrying requests now in archive15;no extra review queue,no larger run/retry.13min ACTIVE,SS3/E28/L8 OPEN. |
