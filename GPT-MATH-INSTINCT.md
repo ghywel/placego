@@ -87,16 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 17:07 BST:** B150's dilation test rules
-out a constant local repair distance;MI312 records that guard without
-a probe/proof queue. The direction changes to a global strong-slack
-interior question. MI313 gives an unverified adaptation candidate for
-arbitrary prescribed sums:positive fractional floor,independent rounding,
-and bounded cardinality/sum corrections using a retained swap reservoir.
-Likely close to known rounding consequences;novelty not asserted.
-Next audit the resource accounting and source coverage before requesting
-any carrying read or starting a numerical experiment. Cloud receives
-a mentoring question,no routine halt.13min ACTIVE;finite SS3/E28/L8 OPEN.
+**Current question,2026-10-17 17:18 BST:** MI314 self-audits MI313's
+budget without a successful-termination assumption;no gap found,no
+status promotion. The known-method rounding adaptation now has a
+COMPOSITE SKETCH for one fixed size3 bin plus three strongly slack bulk
+bins:fix ANY correct triple,then retain capacities/reservoirs on the
+actual punctured pool. No compressed-label assumption. Next inspect
+compatible selection of two small bins before bulk rounding;do not
+assume the missing small-core completion or optimize huge constants.
+Cloud source-coverage perspective remains pending,not a halt gate;
+no numerical experiment or additional carrying-review queue.13min ACTIVE;
+full SS3/E28/L8 OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -18994,3 +18995,131 @@ its depletion/rounding argument. A pending perspective reply does not
 halt that audit. If it is a known corollary,file it entirely as prior
 art and move on;do not manufacture novelty or a finite SS3 claim.
 Research13min ACTIVE;MI295/305 reads pending,SS3/E28/L8 OPEN.
+
+
+### MI314 — B151 audit and one exact small bin with a robust bulk remainder (2026-10-17 17:18 BST)
+
+**Hand self-audit and COMPOSITE PROOF-SKETCH;no experiment,no independent
+verification,novelty unknown.** B151's job was to break MI313's depletion
+or quantifier argument before extending it. Record searched:`MI313|depletion|cardinality.*correct|count.*correction`
+AND `round|reservoir|slack`:12 hits/8 files;MI313 and its known fractional
+argument relevant,no previous audit. Primary source scope is now recorded
+in PRIOR-ART. The broad rounding strategy is known. The source's stated
+integral theorem has equal sums/fixed ratios;its general fractional lemma
+and repair method make MI313 a close adaptation,not a new method.
+
+**Audit result,no status upgrade.** Re-derived the deterministic budget
+without probability:after count correction,if max error is Z and ALL
+ordered gap counts1..D exceed R,any finite sum-correction prefix uses
+at most kZ/(2D)+k swaps. The total positive error is the potential;
+a full-D swap spends D,and a smaller swap permanently zeros a bin.
+Each swap destroys at most4 pairs of any fixed type. Therefore a
+stuck prefix is impossible when R>4[kZ/(2D)+k]. The argument does
+not assume successful completion. With MI313's constants,count repair
+leaves eta*N pairs and the entire prefix budget spends at most eta*N/2.
+The earlier count-repair destruction is separately charged,not omitted.
+Matching edges use distinct tokens;union bounds do not condition on
+count success. Unequal targets use e_i=current_sum_i-s_i,not raw sums.
+No gap found in these self-checks;this is NOT a second-party read.
+
+**What the audit suggests.** Requiring a linear reserve involving a
+size3 bin cannot work:for a fixed ordered pair/gap,its count is at
+most that bin's cardinality. But a size3 bin can be set exactly FIRST.
+The actual remaining question is whether three deleted tokens destroy
+the bulk argument. They do not at its quadratic margin scale,as the
+following bounded hand extension shows.
+
+**Precise corollary candidate.** Fix epsilon>0. For all sufficiently
+large N,consider four bin sizes(3,c_1,c_2,c_3) totaling N and integer
+targets(a,s_1,s_2,s_3) totaling L(N). Assume
+
+    3<=a<=3N-6,
+    L(C_J)+epsilon*N^2<=s_J<=U_N(C_J)-epsilon*N^2
+
+for EVERY proper nonempty subset J of the THREE bulk bins. Then a
+partition exists. In fact ANY triple A of sum a can be fixed first;
+the remaining tokens can meet the bulk targets. The global cut isolating
+A is NOT required to have quadratic slack. This is conditional on the
+same standard concentration/rounding ingredients as MI313,with the
+changed constants below. It does not require MI295 or the boundary-pool
+candidates. It does not solve cases with several unresolved small bins.
+
+**Delete the triple and retain real capacities.** Known interval subset
+sums give a size3 A of sum a. Let V=0..N-1 minus A,M=N-3,and W=sum V.
+Its ordered values obey j<=v_j<=j+3 (zero-based ranks). Therefore the
+minimum/maximum sums of C tokens differ from the corresponding full-
+interval capacities by at most3N. For N>=6/epsilon,the actual V-based
+lower and upper margins of every proper bulk subset are at least
+epsilon*N^2/2. These are capacities of V,not a fictional relabeled
+consecutive interval with unchanged target sums.
+
+**Positive fractional floor on the punctured pool.** The support-function
+proof in PRIOR-ART works for ANY ordered token set:replace U_N(C) by
+the sum of V's largest C values. Uniform-by-size allocation on V has
+mean target mu_i=c_i*W/M. Its upper-capacity gap for any subset is at
+most N^2. Mix with weight lambda=epsilon/4 after expanding targets away
+from mu as in MI313. The adjusted margin is at least
+ epsilon*N^2/2-lambda*N^2=epsilon*N^2/4>0.
+Feasible hypotheses also imply epsilon<=1/8,so lambda<1.
+Original singleton margins imply c_i(N-c_i)>=2epsilon*N^2,hence
+c_i/M>=2epsilon. Thus a conservative common probability floor is
+
+    rho=epsilon^2/4.
+
+No requested integral bulk partition is assumed in the fractional step.
+
+**Holes cost only three matching edges.** For each1<=d<=D=floor(N/4),
+MI313's disjoint matching has at least N/4 edges. Deleting three vertices
+kills at most THREE edges of that matching,not three edges per surviving
+token. For N>=24,at least N/8 edges remain. Independent rounding on V
+therefore gives,simultaneously,initial gap counts>=rho^2*N/16 and
+count errors<=tau*N,sum errors<=tau*N^2,except with probability at most
+
+    F(N)=12exp(-2tau^2*N)+9N exp(-rho^2*N/64),
+    eta=rho^2/32, tau=rho^2/[2048*3*4].
+
+There are M<=N independent summands;normalizing token values by N
+justifies the SAME conservative Hoeffding scale. No independence across
+different gaps or across the good events is needed.
+
+The count correction moves at most3tau*N tokens,leaving at least
+eta*N pairs of every required type and max sum error Z<=4tau*N^2.
+With D>=N/8,the sum-correction prefix uses at most48tau*N+3 swaps.
+Here48tau=eta/16. When N>=48/eta,this is at most eta*N/8;its
+pair destruction is at most eta*N/2. Thus the same non-stuck-prefix
+argument completes the bulk,without ever recoloring a token in A.
+A sufficient domain is N>=max(24,6/epsilon,48/eta) and F(N)<1.
+F(N) tends to0,uniformly in the actual triple and bulk targets.
+This is forall A,exists a bulk completion;it does NOT assert one
+random coloring simultaneously completes all choices of A.
+
+**Controls and practical scope.** The condition is nonvacuous:take
+N=3m+3,three bulk sizes m,and bulk targets as equal as their total
+L(N)-a permits. Uniformly for3<=a<=3N-6,every displayed bulk margin
+is N^2/9+O(N),so any fixed epsilon<1/9 eventually applies. This
+includes a fixed size3 bin whose sum is at its global minimum or
+maximum,unlike MI313's all-subsets strong-margin statement. The resulting
+N threshold is deliberately very large;no practical finite bound or
+new finite certificate is asserted. This is still an interior bulk
+result,not arbitrary four-bin SS3.
+
+Niggle sweep:removed labels are not compressed;their original values
+and W are preserved. The fractional support argument uses V's real
+capacities. Fixed A tokens never enter the reservoir. Three deleted
+vertices destroy only three DISJOINT matching edges. All probability
+and depletion estimates use N consistently although only N-3 values
+are rounded. Constants are recomputed for the halved matching supply,
+not copied unchanged. The final error vector still totals0. The audit
+and corollary are same-worker hand reasoning only,not verified results.
+
+Gut:the interesting pull is now at exact small-core selection followed
+by a robust remainder,not at optimizing this very conservative bound.
+Reasoned:known-method adaptation with a clearer bridge to a small bin;
+source coverage and independent verification remain unresolved. Next
+question:can two small bins be fixed compatibly before rounding the
+bulk,without merely assuming their joint completion? MI295 would give
+one provisional route,but its carrying read is pending and should not
+be hidden. First examine that precise selection gap;no automatic new
+experiment,constant optimization or extra proof-review queue. Cloud's
+existing source-coverage question gets this useful continuation.
+Research13min ACTIVE;full SS3/E28/L8 remain OPEN.

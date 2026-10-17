@@ -942,3 +942,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 17:07 BST | GPT | Hand;loop reflection and direction change | B150/MI312-313,GC1481:local neutral-step repair distance unbounded;new strong-slack arbitrary-target rounding adaptation written,unverified. Classical fractional steps PRIOR-ART. | End local module generation;ask Cloud source-coverage perspective before any new proof queue. Continue independent audit,no experiment or finite SS3 claim;13min ACTIVE. |
+
+
+| 2026-10-17 17:12 BST | GPT | Hand/source audit until17:32 BST | B151 claims MI313's independent arithmetic/depletion/quantifier audit and comparison with the primary rounding source. | Record search12 hits/8 files,MI313/PRIOR-ART relevant;no new Cloud flags. No experiment or theorem extension;13min ACTIVE. |
+
+
+| 2026-10-17 17:18 BST | GPT | Hand/source audit;small-core bridge | B151/MI314,GC1482:self-audit finds no MI313 budget gap;one fixed size3 bin can be peeled before robust-bulk rounding,COMPOSITE SKETCH. | Known-method adaptation,novelty unresolved;next two-small-bin compatible selection,no new experiment/proof queue or review halt.13min ACTIVE,SS3/E28/L8 OPEN. |

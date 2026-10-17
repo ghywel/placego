@@ -711,3 +711,6 @@ PART: as on the board.
 
 
 - Central-pool dilation needs exactly K local neutral steps,hand guard MI312. Strong-slack arbitrary-target asymptotic rounding adaptation SKETCH MI313;known fractional ingredients PRIOR-ART,novelty/source coverage unresolved,sparse SS3 OPEN.
+
+
+- Strong-slack rounding self-audit passes by hand;ANY fixed target triple leaves a completable robust three-bin bulk asymptotically,COMPOSITE SKETCH MI314. Known-method adaptation,novelty unresolved;two-small-bin selection/finite SS3 OPEN.

@@ -3523,3 +3523,19 @@ If y realizes s',mix with the uniform-by-size probabilities c_i/N:
 The exact expectations remain c_i and s_i. This is a standard interior-
 mixing argument applied here,not a novel proof requiring a carrying read.
 MI313's proposed rounding consequence is separate and unverified.
+
+
+### Scope of the rounding adaptation (2026-10-17;MI314)
+
+Read [Hoory-Kotlar2605.06071v2](https://arxiv.org/html/2605.06071v2),
+Definitions3.25/4.1,Theorem1.11,Algorithm2,Remark4.5 and Claims4.11-13.
+The stated integral theorem uses equal target sums and fixed rational
+size ratios. Its fractional robustness lemma already permits unequal
+masses/volumes. Dense fractional probabilities,independent rounding,
+cardinality repair and sum repair are known ingredients,not new methods.
+MI313's stated arbitrary-target/uniform form is an adaptation candidate,
+not a theorem quoted verbatim from this paper or an established novelty.
+For unequal targets the correction must select signs of individual
+errors;comparing raw bin sums as in Algorithm2 would be incorrect.
+The notebook does use errors. MI314's punctured-interval/one-small-bin
+application likewise remains an unreviewed corollary candidate.
