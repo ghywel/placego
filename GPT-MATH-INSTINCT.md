@@ -87,15 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 21:27 BST:** B170/MI341's ONE frozen audit passes:
-363 boundaries/726 pools/4853 COMPLETE spectra,109052 central values,
-independent enumeration/DP/Ferrers/complement and negative controls.
-MI337+MI338+MI339 remain a COMPLETE hand four-bin SS3 candidate,
-PROOF-SKETCH pending Cloud carrying review;novelty unknown. No repeat
-or larger census. Next independent work:bounded primary-source scope
-and novelty audit for the exact arbitrary-prescribed-sum four-bin
-statement,and clean proof dependencies.13min ACTIVE;no verified SS3
-upgrade or E28/L8 result.
+**Current state,2026-10-17 21:43 BST:** B171/MI342 finishes a bounded
+primary-source scope audit and dependency check. The known equal-sum
+four-part theorem is correctly credited;the arbitrary-target candidate
+is not a direct application of it. Novelty remains UNASSESSED.
+MI337/338/339 remain the complete hand four-bin candidate,PROOF-SKETCH
+pending the existing Cloud carrying read. MI341's finite scalar audit
+passes;no repeat or larger run. Next independent work:make the joint
+boundary/reflection and singleton-tie hand argument self-contained,
+checking extreme parameters without assuming a compatible partition.
+13min ACTIVE;no verified SS3 upgrade or E28/L8 result.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -22025,3 +22026,89 @@ unequal controls retained;negative size2 and arbitrary-boundary
 failures still fail;resource caps measured externally;source unchanged;
 all domains fixed before execution;no claim that an independent
 algorithm is an independent mathematical party. No further run.
+
+
+### MI342 — B171: exact source normalization and candidate dependency audit (2026-10-17 21:43 BST)
+
+**Scope established;novelty UNASSESSED;candidate still PROOF-SKETCH.**
+Record searched:`Hoory|Kotlar|prescribed.*sum|arbitrary.sum` AND
+`four|k.?4|slack|partition`:50 hits/6 files. Read PRIOR-ART's MI311
+rejected-sufficiency note and MI314 rounding scope;read the direct
+Kotlar antecedent and Hoory-Kotlarv2 discussion/references. The new
+PRIOR-ART note records precisely which statements/parts were read.
+No imported general sufficiency theorem,no experiment or larger
+census,and no separate proof-review request.
+
+**1. The normalization matters.** Our pool is0..N-1. If bin i
+has size c_i and moment s_i,shifting all labels by1 gives moment
+t_i=s_i+c_i on1..N. Thus a common ONE-BASED sum K corresponds
+to s_i=K-c_i,not a common zero-based sum when sizes differ.
+Necessarily K=N(N+1)/8 for4 bins and K is integral.
+
+Here is the hand comparison of inequalities,not an imported result.
+Let U1_N(r)=r(2N-r+1)/2. On that equal-sum slice,the ALL-subset
+upper inequalities become
+
+    |I|K <= U1_N(C_I), C_I=sum(c_i:i in I).
+
+For fixed j=|I|,U1_N increases with C_I,so the strongest one
+is exactly the union of the j smallest bins. Hence the sorted-prefix
+conditions and ALL upper cuts agree on this slice. Lower cuts follow
+from complementary upper cuts and total conservation. This explains
+the precise overlap;it does not identify the two target domains.
+
+Counterfactual/normalization check:if all c_i=c,then equal sums
+remain equal after translation;for unequal c_i,the correction differs
+by size. Unexpected NONTRANSFER control:the already literal feasible
+N12,c_i3,target(16,16,17,17) becomes(19,19,20,20). A common nonzero
+affine change x->alpha*x+beta cannot equalize its sums:with equal
+counts,the difference remains alpha*(s_i-s_j). This shows that a
+direct affine invocation of the equal-sum theorem does not settle
+even this small arbitrary-target instance. It does NOT exclude some
+more elaborate reduction to a known result.
+
+**2. Exact dependency check.** The strict closest-pair branch uses
+MI339's staircase/conjugate central-spectrum statement and MI338's
+necessary x,z bounds. Its P is one actual subset of the full pool;
+Q is the REFLECTED ACTUAL complement,not a separately chosen good
+pool. Choosing one scalar subset in each disjoint side gives the
+other two bins by complements. It does not use MI337,MI295,an
+existing four-bin solution,or E28/L8. MI341 supports the scalar
+formulas finitely and does not verify this infinite proof.
+
+The singleton/triple-minimum branch,INCLUDING ties with pairs,
+uses MI338's rank protection plus MI333's actual one-hole individual
+spectrum. It THEN uses MI337 for simultaneous THREE-bin completion.
+MI337's carrying work is MI335's least-slack selection,MI336's
+two-hole spectrum/explicit repair,and its own structured-three-hole
+spectrum and high/low repair margins. None invokes the four-bin
+conclusion. The orientation is applied to the ORIGINAL problem;
+the low repair needs its direct inequalities,not a silently
+reflected least-slack assumption. These are proof dependencies
+checked for circularity,not certification that every inequality
+or exceptional branch is correct. The independent carrying read
+is still needed.
+
+**3. Step-back at90 minutes.** The pull has changed from finding
+an exchange to understanding why a staircase and its conjugate can
+supply both sides at once. This would still be worth choosing now
+without the previous investment:it is a concrete finite-shape idea
+with a complete candidate argument and retained negative controls.
+The source hunt is cooling;extending it indefinitely would become
+administrative momentum. Stop this bounded audit here. Learning
+that the exact equal-sum predecessor is known is useful calibration,
+not disappointment to be repaired with a novelty claim.
+
+What changed:precise prior-art overlap and a dependency map;no
+mathematical status upgrade. Next cheap test is a self-contained
+hand presentation of joint boundary/reflection and singleton ties,
+with endpoint h0,smallest admissible sizes and asymmetric totals.
+Do not automatically rerun MI341 or expand a target census.
+Gut:the specific complementary-shape pull survives fresh choice;
+source searching alone no longer warrants another block. Reasoned:
+there is independent hand work to do while the combined carrying
+review is pending,so no halt. Niggle sweep:zero/one-based shift
+explicit;minimum2 versus3 restriction retained;NOT FOUND qualified;
+source proof not claimed audited in full;no circular use of goal
+partition;pending MI337 not promoted by finite tests or source scope.
+13min ACTIVE;E28/L8 OPEN.

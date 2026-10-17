@@ -3685,3 +3685,30 @@ scope supplies no theorem about these integer bin moments;no proof,
 finite verification or software was imported or audited. The useful
 analogy is to choose a boundary with its completion in mind. No
 claim that its character identities transfer to this problem.
+
+
+### Four-bin equal-sum predecessor versus prescribed targets (2026-10-17 21:43 BST;MI342)
+
+**Known result;scope audit,not a novelty verdict.** Read Kotlar,
+[Distance magic labeling in complete 4-partite graphs](https://arxiv.org/html/1410.6916),
+arXiv1410.6916v7 (25Aug2015;published2016),Problem1,Observation1.1,
+Conjecture1.5 and Theorem1.6. The theorem gives the equal-sum
+four-part case for sizes at least2,subject to the stated integer
+common sum and sorted-prefix inequalities. Read the preliminary
+minimal-deviation lemmas and portions of sections3-4 to check scope;
+this is NOT an independent verification of its diagram-based proof.
+The exact normalization and comparison with MI339 are derived in
+MI342. Our minimum3 condition excludes some cases of this known
+theorem;arbitrary prescribed targets give a different extension
+within the shared size domain,not an unrestricted strengthening.
+
+Hoory-Kotlar,[2605.06071v2](https://arxiv.org/html/2605.06071v2),
+section5 and references,again distinguish known equal-sum results
+for at most4 parts from proposed unequal-target generalizations.
+This agrees with the earlier MI311 source note;it does not certify
+October open status or novelty of MI339. Searches for prescribed
+cardinalities AND sums and direct antecedents found no exact
+arbitrary-target four-bin theorem in this bounded search. NOT FOUND
+here is not absence from the literature. The rejected general-k
+sufficiency source2312.00089v1 remains rejected at MI311;no result
+from it is imported. The current candidates remain PROOF-SKETCH.

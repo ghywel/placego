@@ -754,3 +754,5 @@ PART: as on the board.
 - Four-bin SS3,all sizes>=3,arbitrary prescribed sums:COMPLETE hand candidate MI339 via staircase/conjugate central spectra plus MI338 and pending MI337. PROOF-SKETCH,independent review pending,novelty unassessed;no new run/E28/L8 result.
 
 - Staircase candidate audit:363 boundaries/726 pools/4853 COMPLETE spectra and109052 central values pass independent maps,literal complements/negative controls,COMPUTED MI341. Full MI337/339 proof/novelty still unverified,no repeat/larger run.
+
+- Exact equal-sum k4 predecessor normalized t_i=s_i+c_i;arbitrary-target novelty UNASSESSED,dependency map acyclic by hand scope audit MI342. MI337/339 remain SKETCH,no new run.

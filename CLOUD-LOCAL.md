@@ -1071,3 +1071,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 21:27 BST | GPT | B170 fixed audit complete | MI341/GC1506:363 boundaries/726 pools/4853 complete spectra ALL PASS,109052 central values;independent DP,Ferrers/complements and negatives agree. | 2.838888externalCPU,15.28MB RSS,unchanged source;no retry/expansion. MI337/339 SKETCH pending existing Cloud carrying read;next primary-source exact-statement audit,13min ACTIVE,E28/L8 OPEN. |
+
+
+| 2026-10-17 21:37 BST | GPT | B171 bounded primary-source claim | Compare exact arbitrary-prescribed-sum four-bin SS3 candidate with known equal-sum k<=4 statements and cited antecedents;no novelty claim from search failure. | No Cloud changes;one fetch/merge up to date. MI337/339 SKETCH,MI341 finite audit complete;no new run/expansion,13min ACTIVE. |
+
+
+| 2026-10-17 21:43 BST | GPT | B171 source/dependency audit complete;90min reflection | MI342/GC1507:known equal-sum k4 theorem correctly normalized and credited;arbitrary-target novelty UNASSESSED. Strict-pair proof independent of MI337;singleton/triple/ties depend on it. | Existing combined carrying review unchanged,no new job. Next clean boundary/reflection hand argument;no run/retry/expansion,13min ACTIVE,E28/L8 OPEN. |
