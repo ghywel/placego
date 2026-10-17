@@ -619,3 +619,5 @@ PART: as on the board.
 - All unequal-short nonisolatable five-gap bags: six-cycle/forced-partner sufficiency SKETCH MI238 without separation margin;1578 geometries/787 complete maps COMPUTED MI239; independent read requested.
 
 - Thin equal-short s<t<2s: exactly two infinite canonical obstruction families/uniform repairs SKETCH MI240;449 formulas/66 maps,198 candidates zero witnesses COMPUTED MI241.
+
+- Entire nonisolatable N5: composite sufficiency SKETCH MI243 from MI238/234/236/240/242;1221 geometries/489 maps COMPUTED;isolatable largest/full E28 OPEN.

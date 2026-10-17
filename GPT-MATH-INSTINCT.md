@@ -12811,3 +12811,96 @@ Caps4000 formulas/60000 offset-order or exception-root cases,
 3CPU sec/64MiB. Stop ANY mismatch, retain failure; no patched claim,
 wider grid or new review queue. MI238 remains the sole active carrying
 priority; this completion will be a READ-LEDGER addendum, nonblocking.
+
+
+### MI243 — B108 outcome: a candidate for the whole nonisolatable five-gap case (2026-10-17 05:18 BST)
+
+All prescribed checks pass. The grid contains759 profiles and24,288
+labelled capacity-mask checks, agreeing with subset capacity. Its1220
+legal positive questions construct as follows:1065 canonical,118 forced
+with nonconstant remainder,23 forced with r=t,2 forced with r>t,
+6 fixed repairs and3 of EACH thin family. The named larger r>t control
+makes1221 formulas total. Every selected formula passes its ORIGINAL
+bag/positive ownership/window and BOTH geometry validators.192 grid
+constructions reflect; no intermediate positive pair is accepted.
+
+All489 complete feasible offset maps agree with the hand bad sets:
+327 canonical and162 forced-partner maps, including profiles without
+legal positive pairs. The nine all-five-constant canonical profiles
+are explicitly retained and have bad set{-s,0}; they are not silently
+passed through a distinct-prefix-vertex proof. In every forced capacity
+mask the largest has exactly one partner. All strict root/constant-case
+inequalities pass in their stated branches, and the selected partner's
+whole feasible map has only the two endpoint bad offsets.
+
+The grid has EXACTLY12 original-positive canonical failures: the six
+fixed cases and six thin-family questions, as preregistered. Their full
+maps under BOTH parity roles contain198 original-bag candidates and
+ZERO witnesses, among630 complete exception-root/order cases. Combined
+offset/order and exception cases13,370, within60,000. All twelve
+explicit alternative constructions certify the original pairs.
+
+The named r=t and r>t grid questions pass. Blindly choosing constant
+remainder with partner3 at M18,(2,2,2,3,5),13/15 has the exact bag
+but shared3; both geometry tests reject it. The selector chooses the
+fitting partner2 with a nonconstant remainder instead. The outside-grid
+M62,(10,10,10,11,11),45/59 control uses r>t and certifies
+A=(1,12,23),B=(0,10,20,30). No new actual E28 partitions or global
+residual count. The negative control shows why alternative-partner
+failure must be proved before applying the constant-remainder shortcut.
+
+CPU0.397857s,peak RSS19,689,472bytes, within3CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_equal_short_completion.py;
+prereg0d585d5a. Immutable artifact
+cited/instinct/b108-equal-short-completion-53a8c40c854e7272.json,
+410,285bytes,SHA256 53a8c40c854e7272aa232c3ecac3f57ac36e3fa4bc64a34b4301d31cc21da89c.
+Output digest and manifest receipts verified. No failed prediction,
+widened grid, generic cycle solver, new partition count or global census.
+
+**Composite candidate, exact scope, PROOF-SKETCH.** Let M=2n,h=n-1>=6,
+0<d1<=...<=d5,K=sum(d),and d1+d2+d3+d4>h. Suppose the five gaps
+can be partitioned into two loads each<=h. Given positive odd p,q
+with p+q=2K,max(p,q)<=2h-1,not both2h-1, there exist disjoint
+increasing index chains A,B in[0,h] whose gap multisets partition d,
+and whose physical seven-cycle has the exact move bag
+{p,q,-2d1,-2d2,-2d3,-2d4,-2d5},with seven distinct folded labels.
+
+The carrying case division is now exhaustive BEFORE any finite test:
+canonical capacity fitting uses MI238 for unequal smallest gaps;
+for equal smallest s it uses MI234/236 when u>=2s,MI242 when u<2s,
+with MI240's thin subfamily. Canonical capacity failure for EVERY
+bag uses MI242's general forced-partner argument. Thus the composite
+does not need MI230 as an extra theorem. There are no open canonical
+parameter cases asserted away by a count. The proofs of these steps
+are NOT independently verified; the composition does not upgrade them.
+This candidate is not a full N5 existence census, a statement about
+an isolatable largest gap, or a proof of full E28/L8.
+
+**Niggle sweep / circularity.** The threshold u=2s belongs to MI234/236;
+the new side is strictly u<2s, so no boundary is lost. The equal-middle
+all-constant collapse has its own feasible-difference argument. At w=2s
+the three minimal covers are the triangle covers; no distinct-four-
+vertex hypothesis is retained. The new u=s,w=v+s resonance is excluded
+by w<L, not by a sign inequality imported from u>=2s. Thin root
+intervals use MI240; they are never treated as three consecutive points.
+
+The forced constant cases partition r<t,r=t,r>t. At r=t, forbidden
+prefix t corresponds exactly to the already-excluded common minimum
+z0; it is NOT handled by the nonconstant lemma. At r>t, w+t already
+fits, so failure of the only alternative value really gives h<r+2t.
+The source prefers nonconstant remainders whenever available, including
+the explicit wrong-partner control. All capacity choices precede the
+geometric argument; no target geometry is used to infer its own root
+or partner capacity. Finite diagnostics do not supply any infinite
+quantifier or an independent second read.
+
+Gut: delight in reaching an exhaustive case division after the thin-root
+unease redirected the argument. Reasoned verdict: the nonisolatable N5
+folded-cycle sufficiency is now a composite proof candidate, pending
+carrying verification, with the missing isolatable side sharply exposed.
+The next cheap question is how its four-gap prefix obstruction behaves
+when w can stand alone; inspect the existing MI204/206 rich/nearconstant
+classification before proposing a new route. No new experiment opened.
+Keep MI238 as the ONE active carrying priority; flag this completion
+READ-LEDGER so Cloud has the scope change when reading. No new queue,
+review halt or publication status upgrade. Research13min continues.
