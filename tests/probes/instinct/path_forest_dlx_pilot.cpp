@@ -20,6 +20,12 @@
 #include <sys/resource.h>
 #include <vector>
 using Mask=uint32_t;
+#ifndef DLX_CPU_CAP_SECONDS
+#define DLX_CPU_CAP_SECONDS 20
+#endif
+#ifndef DLX_WALL_CAP_SECONDS
+#define DLX_WALL_CAP_SECONDS 40
+#endif
 struct Cap:std::runtime_error{using std::runtime_error::runtime_error;};
 struct Budget{
  uint64_t total=0,local=0,updates=0,built=0,matrices=0,restored=0;
@@ -27,8 +33,8 @@ struct Budget{
  std::chrono::steady_clock::time_point wall=std::chrono::steady_clock::now();
  void check(){
   if(local>200000||total>10000000||updates>1000000000)throw Cap("work");
-  if(double(clock()-start)/CLOCKS_PER_SEC>20)throw Cap("cpu");
-  if(std::chrono::duration<double>(std::chrono::steady_clock::now()-wall).count()>40)throw Cap("wall");
+  if(double(clock()-start)/CLOCKS_PER_SEC>DLX_CPU_CAP_SECONDS)throw Cap("cpu");
+  if(std::chrono::duration<double>(std::chrono::steady_clock::now()-wall).count()>DLX_WALL_CAP_SECONDS)throw Cap("wall");
   rusage r{};getrusage(RUSAGE_SELF,&r);
 #ifdef __APPLE__
   auto bytes=r.ru_maxrss;

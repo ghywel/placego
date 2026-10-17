@@ -99,6 +99,7 @@ void pair_controls(){
  }
  if(checked!=189)throw std::runtime_error("oracle count");
 }
+#ifndef DLX_HOIST_LIBRARY_ONLY
 int main(int argc,char**argv){
  std::string status="ERROR",reason;unsigned completed=0,active_arm=0;bool running=false;std::vector<int>pending;
  uint64_t controlnodes=0,controlupdates=0;clock_t loopstart=0;std::array<std::vector<uint64_t>,2>nodes,updates,prunes,cpu;
@@ -148,3 +149,4 @@ int main(int argc,char**argv){
  arrays("query_nodes",nodes);arrays("query_updates",updates);arrays("query_prunes",prunes);arrays("query_cpu_us",cpu);
  std::cerr<<"]}\n";return status=="COMPLETE_FIRST3_PAIRS"?0:2;
 }
+#endif

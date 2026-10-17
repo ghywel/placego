@@ -16625,3 +16625,67 @@ claim;source after-run changes only outcome comments. Gut:delight and a
 SPECIFIC pull toward the first real tail/cost test of this instrument.
 Reasoned:the next useful evidence is a bounded full pilot,not more micro-
 optimization on the same three cases.
+
+
+### MI288 — B134 preregistration: fixed early-check instrument, ORIGINAL SAME2000 and phase costs (2026-10-17 10:48 BST)
+
+Question:does the verified early-check kernel handle the original2000
+targets at credible total cost,including its hard tails? Pull is toward
+an honest feasibility answer now,not another micro-optimization. Record
+searched:early.check|phase.*report|full.*pilot with MI287|B133|DLX ->MI286;
+MI287/GC1460 and actual fixed-kernel source reread. Prior generic pilots
+failed;the intervening conservation/hoist diagnostics passed only first3.
+
+path_forest_dlx_early_pilot.cpp reuses B133's EXACT early visit routine,
+ordinary labeled-bin matrix,static root minima and full restoration.
+No new heuristic,memo,symmetry restriction,row ordering or witness seeds.
+Constructor/search/snapshot/restoration/destruction timers observe the
+same operations. All logical states are still stored per native call;
+only the first3 full traces are emitted for integration comparison with
+retained B133,then their storage is freed per call. Every target emits a
+literal partition,not just SAT. Resource hooks in archived B131 retain
+its DEFAULT20CPU/40wall;B133's default entry remains unchanged behind a
+library guard. Only this new wrapper selects the scope budget below.
+
+Original B57 full SHA/ranks/order fixed;all2000 input identities checked.
+Pin B133 primary4a3753ef5b85e373a0f62f9716dfc5acfacce8fd29e15bdfce7effb8d818e620,
+literal6734b3b5f19cd497feff271e49272c5aa9f3e7635b791270f6451687584c2246,
+trace4e1263197c9db1abe1af36d67a5376531192105a13b5c19e38acd88b7fca4147.
+First3 exact traces,witnesses and10/37/64 states MUST match. Before pilot,
+repeat unchanged paired189 tiny questions in each arm,known positives/
+negatives and full individual/nested restoration controls. Independent
+checker imports no solver,checks every literal token/bin sum and NEXT
+original target,and full123 MITM/GF catalogue maps. Positive/corrupt trace
+controls retained. These are self-checks,not a colleague carrying read.
+
+Predictions:P1 all2000 literal witnesses without caps (low confidence
+about unseen tails). P2 IF complete2000,construction+snapshot+restoration+
+destruction exceed half measured case CPU. P3 IF complete2000,whole primary
+loop<=25CPU sec. Partial phase fractions describe only completed cases;
+P2/P3 are not established by a stopped run. Report full completed node/
+update/CPU distributions,phase totals and every unfinished call's states,
+CPU,phase at interruption and aggregate updates. Pending phase timing
+includes unwinding and is not a complete per-phase decomposition. Child
+resource CPU includes any watchdog work;no censored work removed from means.
+
+New scope goes first3 -> SAME2000,so planned TOTAL native allowance is
+30CPU/50wall (previous diagnostic20CPU/40wall),60wall watchdog. Per-query
+200k states and global10M states/1B updates/256MiB checks UNCHANGED.
+This is explicit new-scope planning,not a resumed failed query or posthoc
+cap increase. Checker30CPU/150wall/256MiB. C++17/O2 compile<=60wall after
+source/prereg push,then ONE driver invocation,refuse overwrites/restart.
+Stop FIRST error/control mismatch,NO or cap,no later target/repair/second
+policy. No fullE28 or all-base job even on success;resource decision still
+with owner via Cloud. Data local outside git,no upload/manifest retry.
+
+If incomplete,retain the actual obstruction/cost and STOP automatic DLX
+patching;widen mathematical perspective,consult Cloud or incubate before
+another instrument proposal. If complete,assess measured cost and independent
+verification needs before any larger job. This is the first real pilot of
+the now-fixed kernel,not a claim that three-case timings generalize.
+Niggles:default archived behavior preserved;only wrapper scope budget
+changes;timers do not change candidate choices;first3 traces catch integration
+drift;all cap work retained;unknown is not impossible. Gut:ACT once for
+an uncensored feasibility answer within a bounded budget. Reasoned:the next
+useful result is either a complete measured pilot or a concrete reason to
+leave this standalone instrument. Research13min active.
