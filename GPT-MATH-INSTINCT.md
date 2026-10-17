@@ -16769,3 +16769,84 @@ it. Reasoned:stop the standalone instrument lane;next orient on the missing
 constructive inference or take incubation if it offers no genuinely new
 handle. Niggles:all cap work counted;no impossibility claim;phase fractions
 qualified;prior guard credited;no automatic resource expansion.
+
+### MI290 — B135: direct hypergraph Hall criteria miss the exact-allocation regime (2026-10-17 11:01 BST)
+
+**Bounded source/hypothesis audit, not a new lemma or experiment.** Question:
+does a checked joint-matching theorem supply MI289's missing construction?
+Record searched: rainbow|Hall|Rado|Aharoni|Haxell|prescribed.sum|joint.*allocation
+with path|odd|MI2|bin|matching ->94 paragraphs/27 files; MI261-262 and the
+existing prescribed-sum scope notes read. A narrower matching.width|pinning|
+Haxell|Aharoni with128|E32|Hall finds only two unrelated probe paragraphs.
+The older Hall/containment failure MI020-022 concerns Frankl, not this problem.
+No new numerical run, resampling, solver patch or PROOFS entry.
+
+**Sources actually read.** Asadpour-Feige-Saberi,
+[Santa Claus Meets Hypergraph Matchings](https://www.wisdom.weizmann.ac.il/~feige/mypapers/santaclaus1.pdf),
+section2/Theorem2 statement and definitions, printed pages4-5; its Haxell
+criterion is for a bipartite hypergraph with at most r-1 token vertices per
+edge and requires tau(H_C)>(2r-3)(|C|-1). Original Haxell proof unread.
+Bottcher et al., [1802.04603v3](https://arxiv.org/pdf/1802.04603v3),
+Theorem2.1 statement on printed page5: uniform s-edges require a matching
+larger than s(|I|-1) in each colour union. Original Aharoni-Haxell proof
+unread. Aharoni-Berger-Ziv,
+[math/9912134v2](https://arxiv.org/pdf/math/9912134v2), page1 definitions and
+Theorem1.1 statement: sufficient matching-width at least the colour count;
+ordinary and independent pinning are distinguished. The tree results are
+not imported. Haxell's own lecture slides, pages43-50, also read for the
+pair-neighbourhood criterion and its strict +1; not a variable-size theorem.
+Known sources are filed in PRIOR-ART, not as our proofs.
+
+**Direct applicability check.** Let a colour be a target bin and its edges
+be token subsets of that sum. At m28 a complete eight-edge selection must
+use all28 positive tokens, since its total weight is784. Thus a restriction
+to edges of size<=3 cannot even contain a solution. If maximum token rank
+k>=4, set r=k+1 in the checked Haxell criterion: the full eight-colour set
+would need tau>7(2k-1)>=49, but the entire token set is a transversal of
+size28. The uniform matching-number criterion likewise fails for s>=2:
+floor(28/s)<=14, whereas 7s+1>=15 is required. Neither is applicable here.
+This is a scope guard, not a new obstruction to burnability or to every
+possible hypergraph matching theorem.
+
+**Unexpected hand check, exploratory rather than a blind prediction:** test
+the stronger matching-width criterion against the already-positive balanced
+E32 target(128,...,128), not the capped target. Let H consist of ALL subsets
+of the32 odds1..63 with sum128. Every edge has at least4 tokens; every
+matching has at most8 edges. Any8-edge matching M covers all32 tokens in
+quartets. Consider the16 complementary pairs {x,64-x}. If one pair crosses
+parts of M, adjoining any other complementary pair gives a128-sum edge E
+meeting at least two parts. If none crosses, choose pairs inside two
+different parts instead. In either case E together with the M-parts it
+does NOT meet is a DISJOINT pinning family for M of size<=7. A matching of
+size<=7 pins itself. Hence even the independent matching width is<=7, so
+the sufficient full-eight-colour hypothesis fails. Positive control:
+group those16 complementary pairs two per bin to give an explicit partition.
+This short hand argument is an application guard only, not a proof/review
+job. Failure of a sufficient hypothesis says nothing against the solution.
+
+**What changed.** The proposed direct Hall shortcut has a concrete negative
+answer for these checked criteria, including the stronger pinning version
+on a known positive control. No L8/E28 claim moved. No claim that all
+matching methods or literature are exhausted. The guard is not a reason to
+resume the parked component case tree or instrument ladder.
+
+**Next cheap question.** The older Chen-Fu-Wang-Zhou note read the sum-only
+theorem and algorithm opening, not its full constructive recombination.
+Read that step before inventing an odd analogue: does it control the
+number of final leaves in each bin, or can that control be added without
+reassuming the target partition? For index labels j, the required relation
+is 2 sum(j)-cardinality=t, so ordinary sum preservation alone is insufficient.
+The author-uploaded text was located again; its later algorithm/proof has
+NOT yet been audited. This is a specific source question, not another
+generic literature sweep or experiment authorization.
+
+Fresh choice: disappointment that the general matching criteria need slack;
+interest remains in the arithmetic recombination mechanism, not in another
+solver adjustment. Gut: this narrower source read is worth one bounded
+look; warmth is not evidence of a theorem. Reasoned: no constructive
+candidate yet, but one precise unread carrying step remains. If it offers
+no handle, take a genuine perspective/incubation step rather than generate
+more necessary inequalities. Niggles checked: strict thresholds; rank
+includes the bin vertex in Haxell notation; pinning family is disjoint;
+the argument covers EVERY matching, not merely our chosen partition;
+no proof of the source theorem or literature-absence claim implied.

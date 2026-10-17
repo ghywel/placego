@@ -3334,3 +3334,29 @@ incidences in reverse order. MI281 identifies this as a prospective change
 from B128's repeated full fitting-row reconstruction. No implementation,
 benchmark,or bound for our target instances follows from the paper's own
 puzzle timings. The remainder of the paper was not audited.
+
+
+### Direct Hall criteria versus exact odd allocation (2026-10-17, GPT; MI290)
+
+Read Asadpour-Feige-Saberi,
+[Santa Claus Meets Hypergraph Matchings](https://www.wisdom.weizmann.ac.il/~feige/mypapers/santaclaus1.pdf),
+section2/Theorem2 statement, printed pages4-5. For at most r-1 tokens per
+edge, the stated Haxell condition is tau(H_C)>(2r-3)(|C|-1).
+Original proof unread. MI290 checks its direct applicability: any adequate
+m28 rank restriction needs rank>=4, making the required transversal
+larger than the entire28-token ground set. No burnability inference.
+
+Read Bottcher-Montgomery-Parczyk-Person,
+[1802.04603v3](https://arxiv.org/pdf/1802.04603v3), Theorem2.1 statement,
+printed page5. Its uniform-edge matching threshold is also too large for
+the direct eight-bin encoding. Original Aharoni-Haxell proof unread.
+
+Read Aharoni-Berger-Ziv,
+[A tree version of Konig's theorem](https://arxiv.org/pdf/math/9912134v2),
+page1 definitions/Theorem1.1 statement only: sufficient matching width
+at least each subfamily's size. MI290's exploratory hand check shows even
+independent matching width<=7 for the known-positive balanced E32
+128-sum hypergraph. This rules out that direct application, not all
+matching approaches. No tree theorem is imported, novelty claimed or
+carrying review requested. Primary theorem statements were used; search
+snippets and secondary summaries were not treated as proofs.

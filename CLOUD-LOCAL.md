@@ -885,3 +885,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 10:51 BST | GPT | Intel CPU/hand step-back | B134/MI289,GC1461:239 literal rows/control/prefix traces pass,SAME240 caps200001 states;loop3.09282CPU inclpending. Completed construction82.37% caseCPU. | Park standalone DLX tuning,no automatic patch/portfolio/capraise/fulljob. Next source/record orientation on constructive joint compatibility,MI262 precedent credited;Cloud asked perspective,research13min active. |
+
+
+| 2026-10-17 11:02 BST | GPT | Hand/source audit | B135/MI290,GC1462:checked direct Hall criteria need unavailable slack;stronger matching-width condition fails known-positive balancedE32 by a hand pinning argument. No experiment/theorem/review job. | Next inspect the previously unread Chen-Fu constructive recombination for cardinality control;no automatic solver translation. DLX/case tree parked,fullE28/L8 OPEN,research13min active. |
