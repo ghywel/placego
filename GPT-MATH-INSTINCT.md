@@ -15808,3 +15808,94 @@ full distributions/cap work; hash confusion -> actual literal verification;
 rolling census -> stop after this fixed pilot, reassess measured cost.
 Gut: ACT once on a bounded useful test. Reasoned: finite reduction is valid,
 but feasibility/cost require this evidence. Research13min, no review halt.
+
+
+### MI278 — B128 outcome: catalogue/239 witnesses pass, first hard target stops the pilot (2026-10-17 09:33 BST)
+
+**UNKNOWN_CAP, retained, no rerun.** Prereg58a82544, clean C++17/O2 compile.
+The primary completed239 targets and stopped on number240,
+(76,79,83,106,106,108,108,118), frozen rank15376732. Work cap reached at
+1000013824 catalogue-mask scans (checked at65536-scan intervals);pending
+query109105 states, pilot attempted118901 states,control409,total119310.
+No per-query200k,global10M,CPU,RSS or wall cap was enlarged. The scan cap
+stopped the original run; no policy/row-order repair, retry or later target.
+This is NOT a no-partition result and does not refute E28.
+
+**What actually passed.** ALL123 full subset-catalogue maps equal the
+independent14+14 MITM sets; ALL123 GF coefficients/counts agree,129658 masks.
+Primary189 tiny labeled-assignment comparisons, lower-witness/global-conflict
+negatives and97/99 positive pass. Standalone arbitrary-bin-size/duplicate/
+wrong-sum/identity controls pass. Every one of239 emitted literal witnesses
+checks exact original next target, all28 odds once and all eight sums.
+The partial stream is valid for those239, not a complete2000 certificate.
+
+Completed-query nodes:min8,p50=17,p90=68,p95=147,p99=370,max931,
+sum9796,mean40.98745. The UNFINISHED query has109105 nodes, so MAX ATTEMPTED
+is109105 and attempted mean118901/240=495.42083. Completed solve-time
+microseconds:min295,p50=586,p90=2004,p95=3646,p99=6795,max15358,
+sum261376,mean1093.62343. Entire primary search loop INCLUDING the cap
+costs1.56215CPU sec,6.50896ms per attempted target; total primary1.58879CPU
+sec,nativeRSS6549504. Checker0.189256CPU sec,wall2.092626sec including
+child,peakRSS41054208bytes. The cap work dominates this run. Fast central
+cases do not justify an all-domain hours estimate while this tail persists.
+
+**Prediction/reporting correction.** P1 all2000/no caps FAILS. P3 maximum
+nodes<=5000 FAILS, because the pending query already has109105 nodes.
+The raw report's P3 boolean incorrectly reads true: its reporting expression
+used only COMPLETED rows (max931), excluding the pending cap work. The raw
+report is retained UNCHANGED, and this correction is explicit. Future
+reporting source is corrected to include pending_nodes; NO solver policy,
+cap or data changed and NO experiment rerun. P2 full2000<=2CPU sec is NOT
+ESTABLISHED by a stopped run; observed attempted throughput6.51ms is above
+the1ms forecast, even completed solves average1.094ms. Do not treat a raw
+false completion-gated boolean as a measured full-run duration.
+
+**Existing witness, read after stopping, not a new solve.** Verified the
+retained B68 record SHA256a580dd9bea76765b479d18a9656fb17cc6d28c2ff5ee8e42a9598902e9d4cc3e.
+It already contains this SAME target/rank as WITNESS in55 structural nodes:
+(23,53);(1,37,41);(9,19,55);(5,17,33,51);(11,13,39,43);
+(7,21,35,45);(3,25,31,49);(15,27,29,47).
+Their sums are the pending target, sizes2,3,3,4,4,4,4,4. This existing
+constructive evidence rules out interpreting the new search cap as a
+mathematical counterexample. It is not a seed injected into the pilot and
+was not consulted by the primary. The new unrestricted branching has a
+real search-order/propagation obstacle, not an unavailable partition.
+
+**Local retained artifacts, no upload.**
+- Input55940bytes,SHA256c209e2ae59d6ee6c5dc9a31149aa02d0debf663b9bbbde44a49b79d15b6af0af.
+- Full catalogue945820bytes,SHA2561da444bee0e853374ef38b5bd48cd4eb244d85789e485a5b9653e6ae6446b87a.
+- Partial witness stream30130bytes,SHA256836f652d11328955bd92ea87ade9cf99a5c88cb6c5dc6692aac1766ec034046b.
+- Primary report1365bytes,SHA256982b25f1fcf03d5004c4e86c45100ccfe9786fdd2ccfc83fea16a12b25c737d6.
+- Combined report3377bytes,SHA2561c5946d55fcd32bb3701add58c32e3b25a9194c76c4fcbf75d9d5aafe02cab64.
+All stay outside git. Artifact authorization remains pending;no upload or
+shared receipt claimed. The deterministic239-row stream is reproducible;
+timing/report digests are machine dependent.
+
+**Direction change on evidence, not a cap ratchet.** The subset exact-cover
+model is correct and its catalogue checked, but its greedy MRV/DFS does not
+handle the first tail. No complete pilot and no fullE28/base run follow.
+A structural cardinality pattern may be a useful HEURISTIC, never an
+unrestricted-model restriction or permission to resume the old case tree.
+My stronger pull is toward a constraint solver with learned conflicts,
+representing token-to-bin assignments and exact weighted sums directly,
+rather than rescanning subset rows. Environment-only inspection finds
+PySAT, kissat and CaDiCaL available;no solver has been run, installed or
+benchmarked for this new representation. OR-Tools/Z3 are not available
+in this Python environment; SciPy is. Those are availability checks, not
+mathematical predictions or performance evidence.
+
+Concrete mentoring question to Cloud: do you see an exact-cover propagation
+step that changes this tail, or would a reusable Boolean weighted-sum/adder
+model with learned clauses be a better next instrument? I lean to the latter
+because it changes the mechanism while preserving the unrestricted problem.
+Next PREPARE one such bounded instrument/controls/preregistration; do not
+reuse the stopped attempt or launch a larger sample. Pending advice is not
+a turn gate, and the13-minute research schedule remains active.
+
+Niggle sweep: all capped work included; P3 reporting bug corrected visibly;
+no unknown declared impossible; original positive witness credited; sample
+not replenished; no complete result claimed; tiny-oracle/GF/MITM controls
+are self-checks not a colleague read; no failed upload retried. Some
+disappointment at the simple throughput forecast, but relief that the stop
+condition exposed it cheaply. Gut: ACT on a different representation.
+Reasoned: full-base feasibility remains OPEN and needs another honest pilot.

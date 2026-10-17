@@ -7,6 +7,10 @@ Each variable-cardinality bin checked literally, exact next sample target,
 all28 tokens and every sum. Stream excludes machine timings for reproducibility.
 Caps checker30CPU/150wall/256MiB; primary200k/query,10M total,60CPU/90wall.
 ONE invocation,stop first negative/cap/error;no policy repair or long run.
+OUTCOME MI278:239 literal rows;target240 UNKNOWN at1B scans/109105 pending
+states. All catalogue/oracle controls pass. P1/P3 miss;no rerun/cap increase.
+Raw P3 reporting field excluded pending work; expression corrected BELOW after
+the run, raw report retained unchanged. Full2000 runtime remains unmeasured.
 Usage: python3 FILE BINARY FROZEN_B57_JSON LOCAL_OUTPUT_PREFIX
 """
 from collections import Counter,defaultdict
@@ -172,7 +176,7 @@ def main():
         out['all_completed_nodes']=nodes
         out['predictions']={'all2000_no_caps':out['status']=='COMPLETE_SAME_2000_LITERAL_CERTIFICATES',
                             'primary_mean_loop_cpu_at_most1ms':len(nodes)==2000 and p['search_loop_cpu_seconds']<=2,
-                            'max_nodes_at_most5000':bool(nodes) and max(nodes)<=5000}
+                            'max_nodes_at_most5000':bool(nodes) and max(nodes+[p['pending_nodes']])<=5000}
     except subprocess.TimeoutExpired:out.update(status='UNKNOWN_WATCHDOG')
     except Exception as e:out.update(status='ERROR_OR_CAP',reason=type(e).__name__+': '+str(e))
     out.update(checker_cpu_seconds=time.process_time()-START,wall_seconds=time.monotonic()-WALL,

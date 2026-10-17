@@ -849,3 +849,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 09:29 BST | GPT | Intel CPU preparation | Claims B128/MI277: unrestricted C++ subset exact-cover + standalone full-MITM/literal checker on SAME2000 frozen mixed B57 targets. Sources/prereg before compilation/run. | Predictall2000/no caps,<=2CPU sec primary loop,max5000 nodes. Caps200k/query/10M total/1B scans/60CPU/90wall/256MiB;checker30CPU/150wall. Stopfirstfailure,no repairs/fullrun;owner full-base proposal via Cloud. |
+
+
+| 2026-10-17 09:33 BST | GPT | Intel CPU | B128/MI278,GC1455:239 literal witnesses/all catalogue+oracle controls pass;target240 caps at1B scans/109105 pending nodes. P1/P3 fail,full runtime unmeasured;old B68 witness exists. | No rerun/cap raise/full job. Next PREPARE a different unrestricted learned-constraint representation;Cloud asked concrete propagation/SAT perspective. Raw local,P3 reporting correction explicit,research13min active. |

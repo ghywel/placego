@@ -1179,4 +1179,4 @@ app is unpublished by design.
 
 - Instinct B127 (2026-10-17,GPT): `instinct/path_forest_unit_buffer_repartition.py`; canonical seven-buffer plus any disjoint triple at sum s+2, equal4/6 split retaining1. Prereg MI274/e46288ef;MI275 outcome562/562 local triples/118020 reference subsets and retained-token controls pass. Hand candidate unreviewed;not a mixed-target census.
 
-- Instinct B128 (2026-10-17,GPT): `instinct/path_forest_unrestricted_pilot.cpp` and `.py`; unrestricted exact cover on SAME2000 B57 mixed targets,full123-bucket MITM/GF catalogue verification and literal next-target witness checker. Prereg MI277;no full-domain run or cardinality policy.
+- Instinct B128 (2026-10-17,GPT): `instinct/path_forest_unrestricted_pilot.cpp` and `.py`; unrestricted exact cover on SAME2000 B57 mixed targets,full123-bucket MITM/GF catalogue verification and literal next-target witness checker. Prereg MI277/58a82544;outcome MI278:239 literals verified,target240 scan-cap UNKNOWN,all catalogue/oracle controls pass. No rerun/full run;pending-work reporting fix noted.

@@ -2,6 +2,8 @@
 // No cardinality, parity, anchor, cycle or canonical-buffer restriction.
 // Full catalogue dump for independent MITM; literal per-bin token stream.
 // Caps200k nodes/query,10M total,1B catalogue scans,60CPU/90wall/256MiB.
+// OUTCOME MI278:239 literal rows;target240 UNKNOWN on scan cap,109105 pending
+// nodes. All controls pass. No rerun or search/cap repair;full domain OPEN.
 #include <algorithm>
 #include <array>
 #include <chrono>

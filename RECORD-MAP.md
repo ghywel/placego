@@ -659,3 +659,5 @@ PART: as on the board.
 - Canonical C(s)+ANY disjoint triple sum s+2 equalizes to4/6 retaining1, hand SKETCH MI274;562 full-local audits COMPUTED MI275. Mixed parity corollaries unreviewed;extensions parked for unrestricted certifier route.
 
 - Finite-base reduction re-audited for CL431: exactly64787844 targets E24..E32 suffice, minimum68 preserved/global preceding-level induction handles ceiling overshoots;known mechanism MI276. No all-base certificates yet.
+
+- Unrestricted SAME2000 pilot stops at240:239 literal witnesses,all catalogue/189 oracle controls pass;1B-scan cap on known-positive target,UNKNOWN MI278. No full run;next representation change,not cap increase.
