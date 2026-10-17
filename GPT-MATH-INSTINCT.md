@@ -12904,3 +12904,123 @@ classification before proposing a new route. No new experiment opened.
 Keep MI238 as the ONE active carrying priority; flag this completion
 READ-LEDGER so Cloud has the scope change when reading. No new queue,
 review halt or publication status upgrade. Research13min continues.
+
+
+### MI244 — B109: isolatable largest gap and the three-unit exception (2026-10-17 05:30 BST)
+
+**Pull / orientation.** The missing side already has the right ordering
+theorem in the record. The new inference is root selection, especially
+when K<=h and the two outer endpoint offsets are feasible. The specific
+pull is toward the three-unit companion obstruction, whose full bad
+interval survives every companion order; it forces an allocation change.
+
+Record searched: the initial separate search terms were conjunctive,
+not alternative searches. Corrected single-regex search
+isolated.*largest|isolatable.*five|near.constant.*prefix|
+two.separated.*prefix ->15 hits in4 files. Read MI204/206 in full,
+MI222's exact four-gap scope,MI218's existing one-exception composition
+and their constructors. Prior zero conjunctive hits do not imply an
+absence from the record. No new literature/novelty claim. Constant four-
+step companions already belong to MI218; do not re-prove or re-census them.
+
+**Candidate, SKETCH BEFORE experiment; rich case conditional on MI204.**
+Let0<b1<=b2<=b3<=b4<=D,nonconstant B=(b1,b2,b3,b4),S=sum B,
+h>=6,S<=h,D<=h. Given legal odd p,q with p+q=2K,K=S+D,
+max<=2h-1,not both2h-1, claim a folded-distinct seven-cycle exists.
+No K>h hypothesis is imposed. Put H=h-D,J=h-S,T=H+J>=2,
+alpha=(2h+1-max(p,q))/2; use the root-sum interval I from MI234.
+
+For the isolated A={0,D},the exact universal bad offset set on[-H,J]
+is F0={-S,0,D-S,D} plus the following internal obstruction. If B has
+no three equal items, there is NONE by MI204 (two proper barriers are
+separated by D>=max B; one barrier uses MI117). If B=(s,s,s,t),t!=s,
+MI206 adds exactly
+
+ {z:D-S<z<0,s divides z} if D=t mod s.
+
+The endpoint set is restricted to the feasible range; when K<=h the
+outer points-S,D must NOT be dropped. This is the key difference from
+the earlier MI222 application. If rich, D>=2,S>=6; the sorted endpoint
+spacings cannot make three consecutive bad integers. If repeated s>=2,
+the internal bad levels are multiples of s between D-S and0, separated
+by at least2. Their outer endpoint spacings are D>=s; if D>=S there
+are no internal obstructions. Thus again no triple of consecutive bad
+integers exists. With H,J>=1 a free offset exists among the first3 in I.
+At H0, take positive alpha strictly inside(0,J); D>=S prevents internal
+obstructions. At J0, rich/incongruent cases use-alpha strictly inside
+(-H,0); the congruent case has only s-spaced bad offsets and its two
+adjacent representatives cannot both be bad. This proves the root
+selection for rich and nonunit near-constant companions, including K<=h.
+
+**Three-unit companions.** Now B=(1,1,1,t),t>=2. If D>=t+3=S,
+only endpoint failures remain. If D=t+2, the internal bad interval has
+no extra integer beyond its adjacent endpoints; thick I escapes and
+the J0 case has T1,so no legal pair. The remaining possibilities are
+D=t or t+1. Write J=h-(t+3)>=0. For D=t,H=J+3,alpha<=J+2;
+I contains the safe offset1 except J0 (alpha1/2) or J1,alpha3.
+For D=t+1,H=J+2,alpha<=J+1;I contains1 except J0,alpha1.
+Accounting for h>=6 gives exactly FOUR obstruction families:
+
+ U1:D=t,t>=3,h=t+3,p=2t+1,q=2t+5;
+ U2:D=t,t>=3,h=t+3,p=q=2t+3;
+ U3:D=t,t>=2,h=t+4,p=q=2t+3;
+ U4:D=t+1,t>=3,h=t+3,p=2t+3,q=2t+5.
+
+These are failures of the WHOLE isolated-D allocation, not merely one
+chosen companion order. Representative root sums alpha/alpha-1 are
+equivalent to both original-positive root sums through BOTH-chain
+reflection; reversed orders stay in the same companion class.
+
+**Uniform repairs.** For U1 use A=(0,t,t+1),B=(1,2,t+2,t+3).
+For U2 use those pre-chains and reflect/reverse in h=t+3 (root1=alpha-1).
+For U3,t>=3,use preA=(2,3,t+3),preB=(0,1,t+1,t+2),then
+reflect/reverse in h=t+4 (root2=alpha-1). Its t2 boundary instead uses
+A=(3,5,6),B=(0,1,2,4). For U4 use
+A=(0,t+1,t+2),B=(1,2,3,t+3). Each has pairwise distinct indices
+in[0,h] and the full ORIGINAL move bag; reflection flips the positive
+owner. The one small t2 case is already covered by MI180's full-label
+theorem; its coordinates complete this selector, not a separate theorem.
+
+Every other nonconstant-companion case therefore has an isolated-gap
+order/root construction. One may choose among the first SEVEN offsets
+of I uniformly: F0 has at most4 points and the near-constant internal
+part at most2 (D>=t, S=3s+t). At a safe offset choose among at most24
+distinct B orders to realize the prefix theorem. This is a bounded local
+selector, not a whole-cycle solver. The four unit families use the
+explicit alternative formulas above.
+
+**What this would compose with.** Constant companions(s,s,s,s) plus D
+are ALREADY the one-exception bag of MI218 (including s1 via MI191/195).
+Together with MI243 for nonisolatable largest gaps, the present candidate
+would give the standard label/load/positive conditions as a sufficient
+criterion for ALL N5 folded seven-cycles. This would be a COMPOSITE
+PROOF-SKETCH, with MI204's rich case and MI218's dependencies explicit;
+not independent verification or a solution of full E28/L8.
+
+**Preregistration BEFORE experiment.** All nonconstant sorted B multisets
+of length4 with entries1..3;D=max B..max B+3;
+h=max(6,S,D)..max(6,S,D)+3;ALL legal p<=q. Predict every question
+constructs, and exactly FIVE original-positive isolated-D failures:
+U3 at t2,and all four families at t3. Require that K<=h questions
+actually occur and all four endpoint offsets are retained where feasible.
+For EVERY profile compare universal bad sets against intersection of all
+distinct B permutation difference sets;check EVERY feasible offset/order
+by direct index intersection and BOTH physical geometry tests. For every
+selected formula check ORIGINAL bags/positive owners/window/both tests.
+For all five failures exhaust original-positive root rectangles/all B
+orders under BOTH parity assignments:zero witnesses. No constant-companion
+run, new E28 partition, generic cycle solver or residual census.
+
+Four named outside-grid formulas t50: U1(101/105,h53),U2(103/103,h53),
+U3(103/103,h54),U4(D51,103/105,h53). No outside-grid offset scan.
+Counterfactual: at U1,t3,h6,naive isolated A=(1,4),B=(0,1,2,3,6)
+has the correct7/11 bag but shared1. Both geometry checks must reject.
+Unexpected small-label boundary: the U3,t2,h6 formula must be the
+special A=(3,5,6),B=(0,1,2,4); blindly extending the t>=3 pre-formula
+gives preA=(2,3,5),preB=(0,1,3,4),valid7/7 bag after reflection
+but an internal shared3 before it. Reject it by both geometry tests.
+Also check U2,t3 omitted reflection retains geometry but gives11/7
+rather than9/9. Caps1500 formulas/30000 offset-order or exception-root
+cases,3CPU sec/64MiB;stop ANY mismatch,retain failure,no repaired
+prediction or widened grid. MI238 sole carrying read stays nonblocking;
+READ-LEDGER completion only, no second review queue.
