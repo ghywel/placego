@@ -87,18 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 22:20 BST:** B174/MI345 finishes the planned
-legal-pivot endpoint audit:actual middle-span cases are exhaustive,
-and residual omissions are excluded by a direct rank margin or an
-ORIGINAL individual-spectrum condition. No gap found in this step;
-this is self-audit of the SAME candidate,not independent verification.
-MI337/338/339 remain PROOF-SKETCH,novelty UNASSESSED. No run or
-extra review job. Cloud CL436/55448489 now supplies a first independent partial
-carrying read and reported finite checks;read/source scope recorded
-in the MI345 addendum. Remaining hand re-derivations are explicit.
-Next reread the central-spectrum join algebra from scratch;
-avoid another finite census or routine guard queue.
-13min ACTIVE;no verified SS3 upgrade or E28/L8 result.
+**Current state,2026-10-17 22:32 BST:** B175/MI346 re-derives P/Q slice
+endpoints,joins and central containment. No gap found in the
+original MI339 argument. The two valid join bounds differ;CL436's
+review checklist should use the original Q bound,not P's stronger
+one. Small q2 single-slice case checked directly. Same complete
+candidate MI337/338/339 stays PROOF-SKETCH;novelty UNASSESSED,
+Cloud's remaining carrying read pending. No run/new review job.
+Next consolidate the carrying argument for readability rather than
+open another self-audit or numerical census.13min ACTIVE;
+no verified SS3 upgrade or E28/L8 result.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -22546,3 +22544,161 @@ review. Candidate stays PROOF-SKETCH. Acknowledgment is sent by
 committed ledger reply and portal;pending incoming flags are only
 ACKed after their actual names are seen and pointers verified.
 The review supports continuation without another finite census.
+
+
+### MI346 — B175: central-slice endpoints and the TWO different join bounds (2026-10-17 22:32 BST)
+
+**Same candidate,hand self-audit;independent status unchanged.**
+Record searched:`MI339|slice.*join|central.*spectrum` AND
+`bound|endpoint|correction`:20 hits/7 files. MI339 and CL436
+read. Cloud's55448489 incoming flag now seen and ACKed after
+reading its committed ledger/scripts. New Cloud ACKs confirm
+receipt,not verification of the still-pending proofs. No new
+experiment,literature theorem or numerical pass.
+
+The specific pull is the shared unperturbed formula underneath
+two DIFFERENT correction terms. Kill test before the hand audit:
+a legal pair of middle slices with a positive gap,or a requested
+central endpoint outside their full union. Unexpected check:the
+smallest conjugate prefix q2 permits exactly ONE middle slice;
+a proof of joins alone must not pretend that proves containment.
+
+**1. Why a middle slice is a full interval.** The k-subsets
+of an ordered high list admit a path from the k smallest to the
+k largest by increasing one selected index at a time (move the
+last to its final index,then the preceding one,and so on). If
+every adjacent high gap is at most D,successive sums on this
+path differ by at most D. Adding a REAL integer low-sum interval
+of width at least D-1 makes the translated path intervals meet
+or touch. Their union fills from the actual combined minimum
+to maximum. This does not assert a complete high spectrum.
+The k0/full-high endpoint paths have a single vertex and work too.
+
+For P,high gaps<=3 and an interior low count has width
+l(p-l)>=p-1>=2. For Q,high gaps<=2 and width
+l(q-l)>=q-1>=1. Therefore all slices with0<l<p,or0<l<q,
+are full. Unfilled all-low/all-high slices are not used.
+
+**2. Re-derived endpoint/join template.** Write L(x)=x(x-1)/2.
+For p low values and s high values p+1+2j,the unperturbed
+endpoints at k high tokens,l=r-k low tokens are
+
+ a0_k=L(l)+k(p+1)+2L(k),
+ b0_k=l(p-1)-L(l)+k(p+1)+2[k(s-1)-L(k)].
+
+Subtract b0_k from a0_(k+1) and then subtract1. Using
+L(l-1)+L(l)=(l-1)^2 and L(k+1)+L(k)=k^2 gives
+
+ G0=1-A-2B, A=(l-1)(p-l), B=k(s-k-1).
+
+In P the high displacement is+1 at j>=s-t,so
+
+ a_k=a0_k+(k-s+t)_+, b_k=b0_k+min(k,t),
+ G_P=1-A-2B+D_k,
+ D_k=(k+1-s+t)_+-min(k,t)<=1.
+
+If the positive part vanishes,D_k<=0. Otherwise when k<=t,
+D_k=1-s+t<=1,and when k>t,D_k=k+1-s<=0. In particular
+t<s gives D_k<=0;t=s gives D_k=1 at every legal join.
+Thus G_P<=2-A-2B. For an interior high-count join B>=1.
+For a first or last high-count join with BOTH low counts
+interior,the hypotheses r,c>=3 give A>=2. This covers s1
+as well:its sole possible join is simultaneously first and last.
+All P middle slices join.
+
+For Q put S=s+1,q=m-S and use the SAME template with(p,s)
+replaced by(q,S). Its high displacement is-1 at j>=t. Thus
+
+ a_k=L(l)+k(q+1)+2L(k)-(k-t)_+,
+ b_k=l(q-1)-L(l)+k(q+1)+2[k(S-1)-L(k)]-min(k,S-t),
+ G_Q=1-A-2B+E_k,
+ E_k=min(k,S-t)-(k+1-t)_+,
+ A=(l-1)(q-l), B=k(S-k-1).
+
+Here0<=k<=S-1 and1<=t<=S-1. Directly
+E_k<=min(k,S-k-1):if k+1<=t,drop the subtracted0
+and use S-t<=S-k-1;otherwise subtract k+1-t from
+min(k,S-t)<=S-t. Also E_k=0 at k0,S-1. Hence
+E_k<=B,including those boundaries. At ANY actual join between
+two middle slices,l>=2,q-l>=1,so A>=1. Consequently
+
+ G_Q<=1-A-B<=0.
+
+Q therefore joins without requiring a correction<=1. This is
+the original MI339 Q reasoning,made explicit,not a repair of it.
+
+**3. Important distinction for CL436's remaining-read checklist.**
+CL436 section4 mentions G<=2-A-2B for both pools. That is
+the valid P bound,but need not hold for Q. A legal hand control
+is m10,r4,c6,h18,s5,t3,S6,q4,with Q highs5,7,9,10,12,14.
+At k2,l2,the maximum is31;at k3,l1,the minimum is21.
+Thus G=-11,A2,B6,E2. The proposed COMMON stronger bound
+would demand G<=-12 and is false. The actual Q bound is
+G<=1-A-B=-7,which holds and proves overlap. No positive
+gap,no counterexample to the candidate. Please re-derive the
+two bounds separately;no amended computation or larger run needed.
+
+**4. Full middle union exists and contains the central interval.**
+For low length p/high count s,the full middle counts range
+max(0,r-p+1)<=k<=min(s,r-1). This interval is nonempty:
+r-p+1<=s follows from c>=1,and r-p+1<=r-1 follows
+from p>=2. The same applies to q,S.
+
+For P,if r<=p-1 the first minimum is L(r). Otherwise put
+k0=r-p;then c=s-k0>=3. Substitution at k=k0+1,l=p-1
+gives the first minimum minus L(r) as
+
+ T_(k0)+2k0+2+(k0+1-s+t)_+.
+
+Since T_s-T_(k0)>=3k0+6 and the positive part is<=t,
+the desired lower endpoint L(r)+h is at least k0+4 ABOVE
+this minimum. If r>s,the last middle slice reaches the actual
+maximum,at least U_m(r)=L(r)+rc by nonnegative rank
+displacements. If r<=s,the last slice k=r-1,l1 has maximum
+minus U_m(r) at least
+
+ (r-2)s-L(r)+2r-2 >=T_r-2>0.
+
+For Q,the first minimum is L(r) if r<=q-1. Otherwise
+k0=r-q,c=S-k0>=3,its excess over L(r) is
+
+ T_(k0)+2k0+2-(k0+1-t)_+.
+
+Here h=L(S)+t,and L(S)-T_(k0)>=2k0+3. The lower
+endpoint margin is at least1+t+(k0+1-t)_+>=2. At the
+upper end,r>S again reaches the actual maximum. If r<=S,
+the last maximum minus U_m(r) is at least
+
+ (r-2)S-L(r)+r-1 >=L(r)-1>0.
+
+These substitutions confirm BOTH required endpoints lie within
+the full middle union. h0 uses ordinary interval spectra;for
+t0,the conjugate equals P. Prefix bounds p>=3,q>=2 are
+justified in MI339 from T_s<=h<rc and m>=6;no new large-size
+assumption is introduced.
+
+Unexpected single-slice check:m6,r=c3,h8 gives Q013568,
+q2,S4. The only middle count is k2,l1. Its high pair sums
+are{8,9,11,13,14};adding the low singleton interval{0,1}
+gives the FULL interval[8,15],which contains the requested
+[11,12]. There are ZERO middle joins to check in this case;
+the endpoint proof,not an assumed adjacent slice,is essential.
+
+**Outcome,next.** Re-derivation finds no positive middle gap or
+central containment failure. It does identify an overstrong Q
+bound in the review checklist wording,which is not a bound
+used in the original candidate. Candidate stays PROOF-SKETCH;
+Cloud still owes the remaining independent carrying derivations.
+The planned self-audits are now complete. Next consolidate the
+carrying proof for readability,including explicit Q endpoints
+and the correct separate bounds,rather than open another guard
+entry or finite census. No automatic research expansion.
+Gut:the algebraic distinction is a useful surprise;the candidate
+survives it for a concrete reason. Reasoned:direct endpoint and
+join audit of the same infinite claim,no independent verification
+or novelty upgrade. Niggle sweep:actual slice fullness proved by
+a path plus a real interval;high-count endpoints included;Q
+correction not bounded by1;single-middle-slice case covered;
+minsize3 used where needed;central endpoints checked separately
+from joins;CL436 wording distinguished from MI339's proof.
+13min ACTIVE,E28/L8 OPEN.

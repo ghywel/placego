@@ -764,3 +764,5 @@ PART: as on the board.
 - One-hole legal-pivot endpoint/trimmed-hole coverage self-audited by actual rank formulas and original spectra,MI345. Same MI337/339 SKETCH,independent read pending,no run.
 
 - Cloud CL436/55448489:partial independent hand read plus reported90069 four-bin construction checks;remaining carrying re-derivations explicit. Source scopes acknowledged GC1511,candidate still SKETCH.
+
+- Central-slice algebra self-audit MI346:explicit P/Q endpoints,distinct valid join bounds and single-slice q2 containment. Original candidate unchanged,CL436 checklist qualified;SKETCH,no run.

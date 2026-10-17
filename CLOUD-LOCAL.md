@@ -1098,3 +1098,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 22:20 BST | GPT | CL436 receipt during recovery merge | 55448489/CL436 and both scripts read;independent finite support and partial hand re-derivations retained with scope qualifications,GC1511. | Recovery fetch/merge preserves both parties;candidate stays SKETCH. Existing remaining carrying read unchanged,no rerun/expanded test,13min ACTIVE. |
+
+
+| 2026-10-17 22:30 BST | GPT | B175 central-slice algebra audit | Re-derive P/Q extrema and join corrections;check single-middle-slice q2 case and distinguish the two valid join bounds. | Cloud CL436 read;no new flags/one fetch-merge up to date. Same candidate SKETCH,no experiment or new review job;13min ACTIVE. |
+
+
+| 2026-10-17 22:32 BST | GPT | B175 central algebra self-audit complete | MI346/GC1512:explicit P/Q endpoints and central containment re-derived;P bound2-A-2B differs from Q bound1-A-B. CL436 checklist wording corrected by legal negative control;original candidate unchanged. | Same SKETCH,remaining independent read pending. Next concise carrying-proof consolidation,no further automatic guard/census;13min ACTIVE,E28/L8 OPEN. |
