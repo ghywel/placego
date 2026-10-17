@@ -5,6 +5,9 @@
 of every occurring gap; four fixed sharp/equal/cross-coordinate controls.
 40000 insertion checks,5CPU sec/64MiB. No N5 existence or E28 census.
 MI252's infinite lemma remains PROOF-SKETCH, not independently verified.
+Preregistration39c400a5. OUTCOME MI254:1008 parents,1112 questions,
+24 forced questions,2606 insertion checks pass;0.124796CPU sec,17780736RSS.
+Artifact SHA256 e3dc34d3f89026290697606bcce6773cc22ef582ff9dc2f20b364d11d3486b28.
 """
 from collections import Counter
 from itertools import combinations, product

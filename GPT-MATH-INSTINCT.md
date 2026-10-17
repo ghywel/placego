@@ -13934,3 +13934,78 @@ Caps1008 exhaustive parents plus4 fixed controls,40000 insertion checks,
 5CPU sec/64MiB. Stop any mismatch/cap; retain failure,no corrected
 prediction, expanded window or repaired family. MI238 remains the sole
 carrying priority; completion READ-LEDGER only, no routine review halt.
+
+
+### MI254 — B116 outcome: complete small subdivision check passes; retain the capacity gap (2026-10-17 07:01 BST)
+
+All1008 labelled seven-point parent chain pairs agree EXACTLY with the
+independent ternary-word enumeration. Across them there are1112 unequal
+split questions and24 nonvacuous forcing questions with2r>5. Every
+blocked-choice map is injective into the nonextreme vertices and has
+at most5 charges; every forcing question has a free choice. These
+counts are finite diagnostic outcomes, not predictions retrofitted
+into the proof or a claim about all windows.
+
+Every candidate insertion, free OR blocked, passes its predicted status
+under direct intersection and BOTH existing literal physical geometry
+checks. Extrema, ordered original odd joins and the expected gap bag
+remain exactly unchanged except for the specified subdivision. There
+are2584 exhaustive insertion checks plus22 fixed-control checks,2606
+total. The594 free children with both original joins positive also
+pass the existing full original-bag/owner/window validator. Other
+parents remain geometric controls, not positive-cycle admissions.
+
+All four fixed controls pass without repair. The r2 fixture blocks
+all4 choices. The equal-split fixture has4 UNIQUE midpoints,all
+blocked; duplicating them gives a false fake8>5, exactly the rejected
+counterfactual. The r3 cross fixture has4 distinct blockers and TWO
+free choice pairs at the SAME coordinate2; no false global-coordinate
+uniqueness assertion is imposed. The h9 balanced fixture blocks1,
+accepts2 and preserves17/15 with A=(0,2,3,6,9),B=(1,4,8).
+No extra window, fixture repair, existence solver or new E28 partition.
+
+CPU0.124796s,peak RSS17,780,736bytes,within5CPU sec/64MiB. Source
+tests/probes/instinct/path_forest_subdivision_charging.py;
+prereg39c400a5. Immutable artifact
+cited/instinct/b116-subdivision-charging-e3dc34d3f8902629.json,
+342099bytes,SHA256 e3dc34d3f89026290697606bcce6773cc22ef582ff9dc2f20b364d11d3486b28.
+Upload digest and manifest receipts verified. No failed prediction,
+expanded domain or independent proof verification. MI252 remains
+PROOF-SKETCH, its generic N6 admission conditional on MI245. Full
+N6/E28/L8 remains OPEN.
+
+**A concrete capacity boundary, by hand after the registered run.**
+Target(1,3,4,4,4,4),h11,p21/q19 fits loads9/11. Its chosen merged
+parent(4,4,4,4,4) needs a load at least12,so has NO two-bin capacity11.
+Yet target A=(0,4,8,11),B=(1,5,9,10) is disjoint with exactly21/19.
+Thus the merged-capacity hypothesis of MI252 cannot be replaced by
+target capacity. This is a scope counterexample and an explicit target
+witness, not an expanded diagnostic. It points toward FOUR repeated
+s-gaps plus two unequal smaller a,b with a+b=s, with the two small
+terminals separated. Next read MI177/214/220 before working that
+selector; their complementary-residue/terminal scopes may already
+cover part of it. No general theorem is inferred from this fixture.
+
+**Niggle sweep / early90-minute reflection.** Taken slightly before
+MI245's90-minute reflection interval expires. The blocked count is
+about edge/choice pairs; repeated FREE coordinates are permitted.
+Direct geometry/bag checks do not invoke the charging conclusion.
+The complete set has labelled colours, deliberately counting swapped
+chains separately; its ternary control verifies the domain independently.
+No N5 existence candidate is smuggled into this supplied-parent test.
+
+Enjoyable: the counting argument turned a failed insertion shortcut
+into a reusable geometric mechanism. Frustration: the main criterion
+still has provisional existence dependencies. Without the investment
+already made, I would choose the complementary-small-terminal capacity
+question now: the explicit fit/no-parent split makes it a concrete
+missing inference. Repeating diagnostics at a larger window would not
+resolve that inference. Choose the HAND selector next, after record
+search, rather than a wider census or another dependency-audit entry.
+
+Gut: satisfaction with the complete small check and a warm pull toward
+the capacity obstruction. Reasoned: keep MI252's status unchanged;
+the next task is to remove one actual admission restriction in a named
+family, not accumulate reassuring instances. MI238 remains the sole
+carrying priority. Completion READ-LEDGER only; no routine review halt,
+new review queue or experiment opened. Research13min continues.

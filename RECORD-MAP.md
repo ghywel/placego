@@ -635,3 +635,5 @@ PART: as on the board.
 - General-window rich-six diagnostics:8 geometries/7 complete offset maps/7746 cases COMPUTED MI251;120 original trap candidates zero canonical witnesses,repairs pass;MI249 remains SKETCH.
 
 - Repeated-gap unequal subdivision:2r>N guarantees free insertion by blocker charging, SKETCH MI252;N5 yields conditional N6 admission,explicit balanced witness;full N6 OPEN.
+
+- Subdivision diagnostic:1008 parents/1112 questions/2606 insertions COMPUTED MI254;24 forced cases pass,merged-parent capacity gap explicit;MI252 remains SKETCH.
