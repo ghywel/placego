@@ -625,3 +625,5 @@ PART: as on the board.
 - Full N5 folded-cycle sufficiency: COMPOSITE SKETCH MI245 adds isolated-largest MI244/204/206 plus existing constant-companion MI218;707 geometries/192 maps COMPUTED;independent verification/full E28 OPEN.
 
 - N5 rich four-companion prefix step: shorter direct SKETCH MI246 replaces general MI204 dependency for this row;hand audit only,no independent verification.
+
+- N5 constant four-companion row: specialized SKETCH MI247 plus PROVED MI180 removes smaller-exception/boundary-owner dependencies;hand audit only,full candidate still unverified.

@@ -13227,3 +13227,133 @@ candidate and full E28/L8 remains OPEN. Next cheap audit is the constant
 four-companion specialization of MI218, before generating N6 families.
 MI238 stays the sole carrying-review priority; send this as a READ-LEDGER
 addendum, not a second review queue. Research13min stays active.
+
+
+### MI247 — B111 hand audit: constant four-companion branch with fewer dependencies (2026-10-17 05:54 BST)
+
+**Pull/question.** Remove the whole-family invocation where only a small
+specialization carries N5. Does MI245's constant-companion row need all
+of MI218's dependencies? No: its largest gap D is at least the repeated
+step s, so MI216's smaller-exception theorem never applies. The unit
+base also has an overlap that avoids MI195's special boundary owner rule.
+This is an audit/specialization of existing arguments, not a new theorem
+or independent verification. Record searched:
+four.*constant|R4.*unit|constant.*companion|balanced.*one.exception
+->91 paragraphs/28 files; relevant MI212/214/218 and the existing source
+path_forest_unequal_ladders.py. MI180/188, MI191, MI195 and MI214/216/218
+read directly. No experiment, new probe or empirical coverage result.
+
+**Exact scope, PROOF-SKETCH.** In MI245's isolated-largest constant row,
+negative halves are(s,s,s,s,D), with D>=s>=1, h>=6,4s<=h,D<=h.
+Positive odd p,q sum2K, K=4s+D, max(p,q)<=2h-1, not both2h-1.
+Then the following arguments construct the required disjoint chains.
+Capacity of the isolated split is already explicit; no additional
+capacity inference or smaller-exception result is being assumed.
+
+**Repeated step s>=2: specialize MI214 directly.** Put
+
+    k0=max(0,ceil((4s-D)/(2s))), L0=D+k0s, S0=(4-k0)s.
+
+Then k0 is0,1 or2 and L0>=S0. If L0<=h, take heavy A with j=k0
+repeats followed by terminal u=D, and B with3-j repeats followed by
+terminal v=s. If L0>h, k0 cannot be0 (D<=h) or2 (D+2s<4s<=h).
+Thus k0=1 and3s<D<4s. Use A's four s-steps, B's single D-step:
+j=3,u=s,v=D. They fit because4s,D<=h. Let L=j*s+u,S=(3-j)*s+v.
+In either branch L>=S,delta=L-S<=u; in fallback0<delta<s.
+
+The root repair needs delta1=>u>=3. In the first branch delta1 cannot
+have D2: at s=D2, k0=2 and delta2. In fallback u=s=2,delta1 would
+force D7,L0=9>h>=8. But K15 and the legal/non-doubled positives give
+K<=2h-2, hence h>=9, a contradiction. This checks the small terminal
+boundary rather than silently borrowing the general selector's assertion.
+
+Put H=h-L,J=h-S=H+delta,T=2h-K>=2, P=max(p,q),Q=min(p,q), and
+alpha=(2h+1-P)/2. Then1<=alpha<=H+floor((delta+1)/2).
+If alpha<=2H, take largest odd c<=alpha, with z=1 unless delta1,
+when z=-1; x=(c-z)/2,y=(c+z)/2. Both roots fit0..H,0..J.
+If alpha>2H, necessarily delta>=2. Put x=H,z0=alpha-2H and choose
+c=alpha-1 if s divides z0, otherwise c=alpha; set y=c-H,z=y-x.
+If reduction occurs z0>=s>=2, so z>=1. Also
+z<=floor((delta+1)/2)-H<delta for every delta>=2. Thus0<z<delta and
+s does not divide z. Finally y<=J since c<=alpha<=T.
+
+Use A=x+(0,s,...,js,js+u), B=y+(0,s,...,(3-j)s,(3-j)s+v).
+The ladders have different residues modulo s. Both terminals exceed
+both ladders exactly when delta-u<z<delta+v, and terminal equality
+requires z=delta. Our root choices satisfy these inequalities: at z1
+use delta<=u and exclude delta1; at z-1 use delta1 and u>=3; in the
+thin branch use0<z<delta<=u. So all seven indices are distinct.
+When c=alpha-1 reflect/reverse BOTH chains in h. Before reflection
+the joins are P+2,Q-2; after it they are exactly Q,P. With c=alpha
+they are already P,Q. No intermediate bag is accepted as the original.
+
+**Unit step s1, D<=6: use the proved seven-label core and padding.**
+Here K=D+4 lies5..10. In core h0=6, permissible first odd values are
+I=[max(1,2K-11),min(11,2K-1)] on the odd lattice, with at least two
+consecutive odd points. Put e=h-6>=0. Select an odd u in
+
+    I intersect [p-2e,p+2e], with u=p-2e modulo4.
+
+The intersection is nonempty by p,q<=11+2e and p,q>=1. If e0 it
+contains p. If e>0 and only one odd point remained with the wrong
+residue, neither end could have come from [p-2e,p+2e], whose endpoints
+have the required residue. Both would therefore be the same endpoints
+of I, contradicting its width. With at least two odd points the residue
+is present. This is MI191's r0 interval argument, specialized explicitly.
+
+Apply PROVED MI180 (CL428, adopted MI188) to the five halves in the
+seven-label core with joins u,2K-u. Let P0 be its first, larger join,
+and let P be the matching original owner (p if P0=u, otherwise q;
+equal core joins permit either assignment). Then t=(P-P0)/2 has
+|t|<=e and t=e modulo2. Translate every core index by ell=(e-t)/2
+and enlarge h0 to h. Both chains remain disjoint and fit because
+0<=ell<=e. Joins become P0+2e-4ell=P and the other original positive;
+all negative gaps stay fixed. Only the already VERIFIED full-label
+theorem is imported; the padding arithmetic above remains a self-check.
+
+**Unit step s1, D>=7: strict inner-block argument.** Set P=max(p,q),
+alpha=(2h+1-P)/2,H=h-D,Bmax=D-5>=2. The other positive Q<=2h-3
+because the doubled maximum is excluded. Hence1<=alpha<=2H+Bmax.
+Choose b=min(Bmax,alpha), reducing it by1 if its parity differs from
+alpha; put a=(alpha-b)/2. Reduction cannot make b0, and if alpha>Bmax
+the wrong-parity bound alpha-Bmax<=2H-1 ensures a<=H after reduction.
+Thus0<=a<=H,1<=b<=D-5. Use
+
+    A=(a,a+D), B=(a+b,a+b+1,...,a+b+4).
+
+B lies strictly between A's two endpoints, all in0..h. Minimum sum
+2a+b=alpha gives P; maximum sum alpha+D+4=alpha+K gives Q. The
+gap bag is exactly D and four units. MI195's D6 parity/owner boundary
+is unnecessary HERE: D6 is already in the small-core branch above.
+
+**Hand controls / unexpected check.** No program or new census:
+- s3,D11,h13,p=q23 forces the fallback. Pre-chains
+  A=(1,4,7,10,13),B=(0,11) give25/21. Reflection in13 yields
+  A=(0,3,6,9,12),B=(2,13), giving23/23 and disjoint indices.
+- s3,D11,h14,p=q23 uses the thin-root residue reduction. Unreduced
+  A=(0,3,14),B=(3,6,9,12) shares3. Correct pre-B=(2,5,8,11), then
+  reflection gives A=(0,11,14),B=(3,6,9,12), with exact23/23.
+- Unit D6,h6,11/9 has A=(0,6),B=(1,2,3,4,5). At D6,h8,13/7,
+  core joins11/9 and ell2 give A=(2,8),B=(3,4,5,6,7), starting
+  with the ORIGINAL7, then13. Core/owner swapping is real, not cosmetic.
+- Unit D7,h8,11/11 has a1,b1: A=(1,8),B=(2,3,4,5,6).
+  Unexpected parity countercheck: using b2 and flooring a to0 gives
+  disjoint A=(0,7),B=(2,3,4,5,6) but joins13/9, not11/11. Geometry
+  alone would miss the original-bag error.
+
+**Niggle sweep / verdict.** Five gaps mean seven vertices; h>=6 is
+retained, not inferred from the unit mass. Every constructed join is
+compared after reflection/padding, with the corresponding original owner.
+The repeated-gap first/fallback cases are exhaustive by k0's three
+possible values and h>=4s. Unit D1..6 and D>=7 cover every allowed D;
+there is no reliance on an experiment or on the desired cycle's existence.
+No fault in the cited scope was found; this is NOT a second-party read.
+
+Gut: satisfaction that the constant branch also sheds unused machinery.
+Reasoned: MI245's constant row may use this specialized sketch plus
+PROVED MI180, rather than importing all MI218 dependencies. MI218 and
+its general sources are retained unchanged. Full N5 remains UNVERIFIED;
+full E28/L8 remains OPEN. Next cheap audit: derive MI244's three-unit
+exception exhaustion again from its root intervals, rather than trusting
+the diagnostic grid. MI238 stays the sole carrying request; READ-LEDGER
+addendum only, no new review queue or routine halt. Research13min active.
