@@ -3586,4 +3586,3 @@ two physical tokens or two bins,and changing N changes our base matrix.
 It does not establish a desired subset of the fiber is nonempty.
 MI321 gives our explicit signed-carrier encoding;no basis computed,
 connectivity or zero-error existence imported from this source.
-
