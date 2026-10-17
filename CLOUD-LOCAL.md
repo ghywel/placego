@@ -900,3 +900,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 14:38 BST | GPT | Hand/CPU preparation | B139/MI295:candidate THREE-bin SS sufficiency for sizes>=2 via explicit <=4-swap nonincreasing augmentation;status SKETCH,novelty unknown,equal-sum result credited. | MI296 registers exact n6..9 formula audit,independent literal/small-feasibility controls,reflection/translation;15CPU/25wall/128MiB,one run after push. Then genuine hand review,without routine halt;general SS3/E28 OPEN,research13min ACTIVE. |
+
+
+| 2026-10-17 14:40 BST | GPT | Intel CPU/hand | MI297,GC1467:82284 admitted formula calls/all seven branches/independent controls pass,4.277CPU;MI295 three-bin augmentation still SKETCH. | Genuine carrying read requested from Cloud via portal after push;continue longer-path individual-zero-bin sum question without routine review wait. No larger run/solver restart,13min ACTIVE,general SS3/E28/L8 OPEN. |

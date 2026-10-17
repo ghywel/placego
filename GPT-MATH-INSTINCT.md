@@ -74,7 +74,7 @@ continue unfinished work, and do not halt for routine reviews. GPT may halt and 
 the active schedule for a named uncertainty or needed help; explain what would move it.
 The older research schedule is not restarted by this note.
 
-**Latest state,2026-10-17 11:11 BST:** research is PAUSED for the genuine
+**Historical halt,2026-10-17 11:11 BST:** research was PAUSED for the genuine
 incubation at MI291/GC1463,using the owner's explicit halt allowance.
 Both saved mathematics schedules are paused;no background computation
 or automatic flag poll continues. Cloud is sent a committed perspective
@@ -86,6 +86,13 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 13-minute schedule is ACTIVE again with its existing prompt. The older
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
+
+**Current question,2026-10-17 14:40 BST:** MI295's three-bin <=4-swap
+augmentation is a hand PROOF-SKETCH;MI297's fixed formula audit passes.
+Cloud is asked for a carrying read of the word classification and repairs.
+Research13min remains ACTIVE without waiting for routine review. General
+SS3's longer paths with several zero-deviation bins remain the obstruction;
+coalescing them must not silently discard their individual target sums.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -17276,3 +17283,60 @@ source and this registration before ONE invocation. Raw outside git.
 Passing supports formulas on this domain,not another party's verification
 or a universal proof/novelty claim. Then send Cloud the carrying hand
 step for genuine review;continue reasoning without a routine review halt.
+
+### MI297 — B139 outcome: all explicit formula branches survive (2026-10-17 14:40 BST)
+
+**COMPUTED/MEASURED;candidate theorem remains PROOF-SKETCH.** Registration
+9f1c5ae6/MI296,ONE invocation on Intel CPU. All4976 primary owner words
+enumerated,89568 error/target screens,82284 SS-admitted calls. Every
+fixed path obeys the literal cardinality/current-ownership/sum checks,
+never increases L1,decreases it by>=2,and uses at most4 adjacent swaps.
+All D1 paths finish exactly. P1/P2 pass;no source repair or search fallback.
+
+Branch counts:direct62380,disjoint17738,overlap with D>=2 1416,
+reverse C->B relay526,reverse B->A relay140,four-left42,four-right42.
+Both residual shapes already occur at n6 with sizes(2,2,2). First
+four-left literal fixture:word(0,1,1,2,0,2),targets(3,4,8),edges(3,2,3,0);
+first four-right:word(0,1,0,2,2,1),targets(2,7,6),edges(1,2,1,4).
+Both have errors2,2,2,2,0. These are witnesses to mechanism coverage,
+not additional universal conclusions.
+
+Independent product enumeration checks1280 reference owner words for
+all n6..8 size vectors,with complete feasible-target sets. All admitted
+D1 targets occur. The n7 singleton negative is SS-feasible,impossible
+under full reference enumeration,and rejected by the constructor.
+Each of82284 entire paths passes index reflection and translation-11,
+with every intermediate error identical. Same-worker independent code
+is a self-check,not another party's verification.
+
+CPU4.277403s,wall4.282419795s,external watchdog wall4.425663514s,
+peakRSS16625664bytes,inside15CPU/25wall/128MiB/30watchdog limits.
+No cap,retry,fix,larger domain or running background job. Only an outcome
+header added to the source after the run;no computation-affecting change.
+Raw report2650bytes SHA256
+1580be2dc90bede1fffc9c774874212e7e8171ee8047859610e3e8b7a19ec069;
+stdout1250bytes055373944e936381eaeeb0a31955524f50881c7042fafa13822a704af3109dc6;
+stderr empty. Raw local,not uploaded.
+
+What changed:the hand <=4-swap construction now has an exhaustive
+small-domain audit of every branch. Ask Cloud for an independent carrying
+read of MI295,especially the global owner-word classification and the
+size>=2 use. Equal-sum k3 stays credited prior art;arbitrary-sums/algorithm
+novelty remains unknown. No PROVED label or fullSS3/E28/L8 conclusion.
+
+The next inference is a longer surplus-to-deficit path with several
+zero bins. Simply merging the zero bins does not implement this:
+an aggregate-zero repair can leave one constituent at+1 and another
+at-1. A useful extension must control those individual sums during
+the lift. Continue that hand question independently of the carrying
+read,no automatic larger graph census or solver restart.
+
+Fresh-choice:the pull is warm because the shared-token conflict acquired
+a concrete finite repair this block,not because the project has been warm
+before. Delight at a complete-looking mechanism;unease is now specific
+to simultaneous zero bins. Reasoned verdict:the three-bin candidate is
+worth scrutiny,the longer-path obstruction is still real. Niggles:
+all seven branches actually exercised;sorted sizes lose no label class
+by permutation symmetry;D1..3 is only the test domain,not an infinite
+proof;positive/negative multi-bin signs rely on the direct-edge argument;
+no feasible target assumed in the reachable-set step. Research continues.

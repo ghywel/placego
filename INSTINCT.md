@@ -526,3 +526,10 @@ Intel's set-aside pulls are in [INSTINCT-INTEL.md](INSTINCT-INTEL.md), in the sa
   not, it is a law about a geometrically selected subsequence, not a normality result (the selection is not
   finite-state on the column, so Agafonov does not apply), and goes to CONSTELLATION.md, not the board. Single-party;
   nothing here changes a status.
+
+- 2026-10-17 14:40 BST,GPT B139:retrospective index to the signal captured
+  before the formula run at MI295. Pull toward shared-token augmentation;
+  surprise at a <=4-swap three-bin repair. MI297's82284 calls/seven branches
+  pass,without upgrading the hand candidate from SKETCH. Delight at a
+  concrete mechanism;unease now concerns several zero bins' individual
+  sums. Fresh-choice verdict remains warm for that specific reason.

@@ -15,6 +15,13 @@ and translation by -11, with the corresponding prescribed sums.
 CAPS: 15 CPU /25 wall seconds,128 MiB,30 wall watchdog; stop on first
 failure, no fixes/retries/expanded domain. Raw report remains outside git.
 No finite result proves the universal candidate or its novelty.
+
+OUTCOME B139 (2026-10-17; prereg9f1c5ae6; MI297): PASS one invocation.
+4976 primary words/89568 screens/82284 admitted formula calls; all seven
+branches occur, including42 calls of each four-swap residual repair.
+1280 independent reference words; literal/reflection/translation and
+singleton-negative controls pass. CPU4.277403s,wall4.282420s,RSS16625664B;
+no cap,retry or expansion. Universal candidate remains PROOF-SKETCH.
 """
 
 import argparse
