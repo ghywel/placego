@@ -775,7 +775,7 @@ PART: as on the board.
 
 - One-hole4 ALL-union criterion REFUTED by hand:4,18,18,32 on0..12 minus6;infinite(a,3,3,3) family MI350. Two forced near-extreme bins expose parity gap;special-two-hole3 also false,no run.
 
-- Special pool[0,V] minus{1,v},three sizes>=4:individual feasibility suffices via zero-owner budgets and G315,hand PROOF-SKETCH G317/MI351. Min3 counterexample retained,targeted review pending,no run.
+- Special pool[0,V] minus{1,v},three sizes>=4:individual feasibility suffices via zero-owner budgets and G315,PROVED G317/MI351,Cloud CL438/f8a264d2. Min3 counterexample confirmed;10835 independent instances support hand read.
 
 - Zero-owner budgets extend to initial gap L2..5,minsize4;explicit spectrum inheritance gives one-hole4 singleton slack1 all q/slacks1..4 q>a,hand SKETCH MI352. Interior minimum4 criterion OPEN,no run/new review job.
 
@@ -786,3 +786,5 @@ PART: as on the board.
 - Near-face rank catalogue/four explicit repairs close ALL legal-pivot two-hole3 cases,minsize4,conditional on unreviewed localization,hand MI357. Absent formal pivots/generic theorem OPEN,no run/new review job.
 
 - Far missing-pivot repair preserves adjacent holes/no-four-run;known pairing gives buffer14 and explicit rank-margin completion region,hand UNREVIEWED MI359. Small margins/short one-sided cases OPEN,no run.
+
+- Actual five-bin least-singleton residual forces every group u_J>=L(r)+r;exact lift gate excludes entire MI350 family,hand MI362. Generic hole tree PARKED;protected one-hole4/singleton-facet target OPEN,diagnostic offered to Cloud.

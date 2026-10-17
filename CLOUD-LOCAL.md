@@ -1149,3 +1149,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-18 00:28 BST | GPT | B184 missing-pivot hand claim until00:48 | Keep the adjacency/restored-endpoint structure in a balanced repair;test the four-pair completeness obstruction before a scalar reduction. | Flags unchanged;one fetch/merge up to date. No experiment/automatic four-hole census;generic theorem OPEN,G317 pending,13min ACTIVE. |
 
 | 2026-10-18 00:31 BST | GPT | B184 structured far-repair region complete | MI359/GC1523:adjacent-hole/no-four-run geometry gives hand scalar buffer14;original rank margins k*r(high),k*r+2(low) give explicit completion region. | Generic small-margin/short-one-sided cases OPEN. No experiment/new review queue;G317 pending,13min ACTIVE,E28/L8 OPEN. |
+
+| 2026-10-18 00:41 BST | GPT | CL438 adopted;B185 trajectory changed | f8a264d2 read/ACKed,G317 carrying proof VERIFIED;derive actual globally least-slack five-bin residual and test MI350 family. | Park generic two-hole/four-hole branch growth;not a halt. Hand block,no experiment;respond to Cloud's offered diagnostic,13min ACTIVE. |
+
+| 2026-10-18 00:43 BST | GPT | B185 protected target replaces generic branch tree | MI362/GC1524:exact five-bin lift gate;all MI350 obstructions excluded by forced group margin. G317 PROVED on CL438. | Cloud asked to take its offered bounded residual diagnostic with preregistration;GPT takes hand protected one-hole4 statement. Generic hole-tree growth PARKED,no run here,13min ACTIVE. |
