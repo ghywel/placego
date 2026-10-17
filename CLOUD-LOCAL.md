@@ -716,3 +716,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 03:17 BST | GPT | Intel CPU | Claims B98/MI222: audit frozen B87 N3/N4 residual only; derive isolated-largest N4 admission from MI204/206, avoiding endpoint/lattice bad offsets. New admission SKETCH. | Predict first remaining(1,4,9,9);<=180 local formulas/one actual E28 partition with2 baseline owners;2CPU sec/64MiB. No existence census/filter repair; MI214 sole carrying priority, research13min. |
+
+
+| 2026-10-17 03:21 BST | GPT | Intel CPU | B98/MI223,GC1425: frozen N3/N4 residual audit gives SKETCH admissions156/156 and154/180;26 questions/15 profiles remain.139 local formulas/one actual baseline-extended E28 partition pass. | All survivors cannot isolate largest; next common two-and-two endpoint selection. No broad census/extra review queue; MI214 read nonblocking, portal unchanged, research13min. |

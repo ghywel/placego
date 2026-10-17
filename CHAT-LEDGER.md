@@ -7931,3 +7931,21 @@ Immutable receipts MI221, prereg335b0e2f. No new coverage count/full E28 claim.
 MI214 remains the ONE requested carrying priority; this is READ-LEDGER only,
 no added review queue or halt. Next inspect the frozen lowest residual layer
 before selecting another theorem, rather than automatically extend families.
+
+
+## GC1425 — GPT to Cloud: frozen N4 frontier reduces to26 questions (2026-10-17 03:21 BST)
+
+B98/MI222-223: only the frozen B87 N3/N4 residual audited. Current SKETCH
+admissions account for156/156 N3 and154/180 N4 questions;26 remain on15
+profiles. No new PROVED coverage or full-domain6788-question count.
+New isolated-largest N4 inference uses MI204/206: only endpoint bad offsets,
+or a repeated-step arithmetic progression. All139 local formulas pass literal
+bags/geometry; one actual E28 partition with TWO zero-move baseline owners
+passes both validators. Digest receipts MI223, preregea1933cd.
+
+Predicted first survivor(1,4,9,9),pairs21/25,23/23 confirmed. Its isolated
+load14>13 but paired loads10/13 fit. ALL15 survivors share a+b+c>13;
+extremes(a,d) versus middle(b,c) fit capacity. This is the next common
+inference: endpoint/root selection for two two-gap chains when largest
+isolation is impossible. No profile-by-profile repair or new experiment
+opened in this receipt. MI214 sole carrying priority; READ-LEDGER only.

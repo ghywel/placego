@@ -10947,3 +10947,53 @@ Caps frozen N3/N4 residual only,<=180 new formula calls,1 actual E28
 partition,2CPU sec/64MiB. Stop any disagreement, no repaired census or extra
 review request. Gut: a focused pull toward the first missing SIX-vertex
 selection step. MI214 stays the sole requested carrying read, nonblocking.
+
+
+### MI223 — B98 outcome: the low-count frontier has one common remaining obstruction (2026-10-17 03:21 BST)
+
+The preregistered steering predictions pass exactly. In the frozen B87
+residual, all156 N3 questions are provisionally admitted by current sketches;
+154/180 N4 questions are admitted, leaving26 questions on15 profiles.
+The first N4 profile before isolation is(1,4,4,5) with the predicted six
+positive pairs; after admission the first survivor is(1,4,9,9),pairs21/25
+and23/23. These are unions of SKETCH admission statements, not310 newly
+independently verified solutions or a complete new6788-question coverage audit.
+
+All139 local isolated-largest formula calls pass full bags/owners/window
+and both independent literal geometry checks, with<=6 B permutations each.
+The ONE actual E28 partition on(1,4,4,5),7/21 has targets
+(70,98,108,96,96,92,112,112), two zero-move baseline owners6/7; original
+materializer and both partition validators pass. The deliberately bad
+21/7 order shares index6 and is rejected despite its full bag/window.
+The first survivor refuses this admission because its isolated companion
+load14 exceeds13, while ordinary two-bin loads10/13 fit. No global
+nonexistence is inferred. Count-vs-exception-index classifications and
+capacity controls agree; overlapping tags on(4,4,4,5) are unioned once.
+
+CPU0.023005s,peak RSS20,500,480bytes, inside2CPU sec/64MiB. Source
+ tests/probes/instinct/path_forest_low_count_frontier.py; preregea1933cd.
+Artifact cited/instinct/b98-low-count-frontier-34e2246d5c58a72c.json,64,642bytes,
+SHA256 34e2246d5c58a72c4e4a6f5afdabfe7321ed2252961da3d2e24d14bcf3bd5e29.
+Frozen input digest and immutable output/manifest receipts verified.
+No input grid regenerated, existence solver rerun, hypothesis repaired or
+broader admission survey. New uniform isolation inference MI222 stays
+PROOF-SKETCH, dependent on MI204 for distinct B; full E28/L8 OPEN.
+
+**Niggle sweep / actual steering signal.** Endpoint offsets-S/D are outside
+the feasible range only because K>h; that assumption is explicit. In the
+congruent repeated-B case BOTH endpoint offsets0/d0 lie on the same b-lattice,
+so adding them does not create a three-consecutive trap. Repeated1 is
+excluded, not silently handled by the b>=2 argument. Thin roots use two
+candidates and their separate proof. The first survivor demonstrates the
+load hypothesis directly. Tags classify proofs' stated scopes; literal
+formula checks and one partition carry their own narrower computed status.
+
+Observation AFTER the fixed audit: ALL15 remaining profiles have the sum of
+the three smaller gaps>13. Thus they share the same missing choice: split
+TWO gaps into each run, instead of isolating the largest. Every one has a
+capacity-feasible pairing of extremes(a,d) versus the middle(b,c). This is
+a concrete common inference, rather than another individual profile repair.
+A warm next pull is to prove that this paired split has only endpoint bad
+offsets when a+b+c>h; apparent extra middle-point resonances may then lie
+outside the available root range. No follow-up experiment is yet opened.
+MI214 remains the sole requested carrying read, nonblocking; portal unchanged.

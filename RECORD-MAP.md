@@ -593,3 +593,6 @@ PART: as on the board.
 
 
 - Repeated s>=2 plus two exceptions a,b>=s: forced-together capacity-carry SKETCH MI220 complements MI214;9+1 calls/one baseline E28 partition COMPUTED MI221; general bags OPEN.
+
+
+- Frozen low-N residual: N3 all156 provisionally admitted;N4 leaves26/180 on15 nonisolatable profiles; isolated-largest SKETCH MI222,139 geometries/one E28 partition COMPUTED MI223.
