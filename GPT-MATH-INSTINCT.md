@@ -13125,3 +13125,105 @@ a complete N5 sufficiency candidate; verification is the next obstruction.
 Keep the13-minute schedule active. MI238 remains the ONE requested
 carrying priority; flag this completed scope READ-LEDGER,not another
 review queue or a routine permission halt. Full E28/L8 remains OPEN.
+
+
+### MI246 — B110 hand audit: the N5 rich-prefix step needs only four items (2026-10-17 05:43 BST)
+
+**Pull/question.** The pull is toward shortening the carrying proof; the
+unease is the accumulated unreviewed dependency stack. Does the rich
+four-companion branch of MI245 actually need MI204's arbitrary-length
+constant-block argument? It does not. This is a specialized proof of
+the existing MI204 claim, attached here to simplify the composite
+candidate, not a new theorem or another review job. Record searched:
+four.step.*barrier|four.*prefix.*repair|permutation.*connected|spread.*barrier
+->5 historical hits in2 files, none supplying this specialization.
+MI204 and MI206 read in full; their explicit arguments, not that search
+count, are the source. No new experiment, probe or empirical result.
+
+**Four-item statement, PROOF-SKETCH / self-check only.** Let four positive
+integer steps have sum S and maximum M, with no value appearing three
+times. If0<x<y<S and D=y-x>=M, an ordering exists whose proper prefixes
+avoid both x and y. The following supplies its complete carrying argument.
+
+For a nonconstant positive multiset a single proper level t can be
+avoided: if an order hits it, cut there, choose unequal items across
+the cut (otherwise every item equals every other), move those items
+adjacent to the cut within their blocks and swap. Only that prefix
+changes; earlier prefixes stay below t and later ones above t.
+
+Suppose every ordering hits x or y. Avoiding each level separately
+gives an x-only and a y-only order. Label repeated occurrences. The
+adjacent-transposition graph on these permutations is connected, and
+each swap changes just one proper prefix by |u-v|<M<=D. An edge cannot
+go directly from an x-only order to a y-only order: that would require
+the changed prefix to move from x to y. A connecting path must therefore
+contain an order hitting BOTH, under the assumed absence of an order
+avoiding both. Split it into nonempty blocks A,B,C with sums x,D,S-y.
+Since there are four items, B has either one or two items.
+
+If B has two, A and C are singletons a,c. Among the two labelled B
+occurrences let L be those differing from a, R those differing from c.
+Neither set is empty: emptiness gives three equal items. They have
+distinct representatives v in L,z in R: otherwise L=R is the same
+singleton, and the other B item equals a AND c, again three equal
+items. Order the items a,v,z,c, then swap the two disjoint boundary
+pairs to obtain v,a,c,z. Only the prefixes formerly x and y change;
+each change has magnitude less than D and is nonzero. Neither can
+reach the other barrier. The middle prefix remains strictly between
+x and y. This order avoids both.
+
+If B is a singleton, its value is D=M. There are three outside items
+across nonempty A,C. Some a in A,c in C must differ; otherwise all
+three outside items agree. Put a last in A and c first in C, producing
+the triple(a,M,c) after sum x-a. If a<M, replace the triple by(M,c,a).
+Its first new prefix is y-a in(x,y), its second y+c-a is greater than
+x and different from y, and its unchanged end y+c exceeds y. If a=M,
+then c<M; use(c,M,a). Its new prefixes are x-M+c<x and x+c in(x,y),
+and its end again exceeds y. All other prefixes are unchanged. This
+also avoids both, completing the contradiction.
+
+**Direct hand controls, not a census.** Both repair types and the
+singleton maximum boundary have concrete arithmetic checks:
+
+| Steps; barriers | Both-hit order | Repaired order; proper prefixes |
+| --- | --- | --- |
+| (1,1,2,2);1,4 | (1,2,1,2) | (2,1,2,1);2,3,5 |
+| (1,2,2,3);2,5 | (2,3,1,2) | (3,1,2,2);3,4,6 |
+| (1,2,3,3);3,6 | (3,3,1,2) | (1,3,3,2);1,4,7 |
+
+Unexpected boundary check: keeping rich steps(1,1,2,2) but moving the
+barriers to2,3 violates D>=M and makes the pair unavoidable. Its six
+distinct words1122,1212,1221,2112,2121,2211 have prefix sets respectively
+{1,2,4},{1,3,4},{1,3,5},{2,3,4},{2,3,5},{2,4,5}. Every set meets2 or3.
+Thus positivity, richness and separation play distinct roles; richness
+alone does not replace the separation hypothesis. This rechecks the
+type of boundary already noted in MI204, without a novelty claim.
+
+**Dependency change, not a status upgrade.** In MI245's rich isolated-gap
+row use MI244's root selector plus THIS four-item argument, instead of
+the arbitrary-m theorem. Outside endpoint collisions, the two potential
+internal companion levels are -z and G-z, separated by the isolated
+largest gap G>=max(companions). If both levels are proper, the argument
+above applies; if only one is proper, its opening one-level argument
+applies; if neither is proper, no internal collision is possible.
+MI204's general constant-block step is no longer needed for this row.
+MI204 is retained unchanged, not refuted or withdrawn. MI206's
+one-exception arithmetic and MI218's constant-companion dependencies
+still carry their OTHER rows; no finite constructor check verifies them.
+
+**Niggle sweep / circularity.** Labelled occurrences justify connectivity
+despite repeated values. Boundary pairs in the two-item case are disjoint;
+the singleton case uses a rotation instead. Positivity makes each hit
+unique and gives the strict swap bound even when D=M. In the singleton
+rotation y+c-a>x follows from M>=a and c>0; c!=a excludes y. Reordering
+within the original blocks cannot introduce a new barrier hit. Neither
+the adjacency argument nor either repair assumes the desired cycle or
+uses an empirical witness. All are self-checks, not independent scrutiny.
+
+Gut: satisfaction at needing less machinery, with the original unease
+reduced but not erased. Reasoned verdict: the rich row now has a short,
+self-contained carrying sketch; FULL N5 remains an UNVERIFIED composite
+candidate and full E28/L8 remains OPEN. Next cheap audit is the constant
+four-companion specialization of MI218, before generating N6 families.
+MI238 stays the sole carrying-review priority; send this as a READ-LEDGER
+addendum, not a second review queue. Research13min stays active.
