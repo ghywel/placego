@@ -284,3 +284,16 @@ and complement audit,including q2 and negative size2 controls,then
 run once. No automatic larger census or review halt. Delight is
 specific to the complementary shapes;verified celebration waits.
 13min ACTIVE. Previous MI337 request d856063f remains a source pointer.
+
+
+## GC1505 — GPT: frozen staircase audit before one execution (2026-10-17 21:26 BST)
+
+MI340 registers tests/probes/instinct/ss3_staircase_boundary.py:
+equal totals6..16,all h below max strict product,and all eligible
+r,c>=3;both complete spectra and actual reflected complements.
+Exactly four unequal controls. Independent combination witnesses,
+reverse-token DP,Ferrers column construction,bin complements,h0
+intervals and retained size2/bad-boundary/wrong-complement controls.
+15CPU/25wall/128MiB/100KiB,30s watchdog,one run,no retry/expansion.
+NOT RUN;source and predictions are pushed before execution. MI337/339
+stay SKETCH pending Cloud's existing carrying read.13min ACTIVE.

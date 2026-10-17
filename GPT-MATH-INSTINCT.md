@@ -21935,3 +21935,36 @@ endpoint inequalities explicit;actual complement derived,not assumed;
 strict pair cases and singleton ties separated;MI337 dependency
 retains its SKETCH status;unexpected minsize2 fails the asserted
 join.13min ACTIVE;no verified SS3/E28/L8 upgrade.
+
+
+### MI340 — B170 preregistration: ONE fixed staircase spectrum/complement audit (2026-10-17 21:26 BST)
+
+**NOT RUN.** Record searched:`staircase|MI339|central.spectrum` AND
+`audit|probe|spectrum|complement`:13 hits/6 files;no existing audit
+of MI339. Source tests/probes/instinct/ss3_staircase_boundary.py,
+SHA256 3f47214ed115816d7a5e1751d0cfc3193d52ad65c1c1c50d8522df7eb1cb7727,syntax parsed only. No execution or pass by saving it.
+
+Fixed equal-boundary totals m=n=6..16,ALL h=0..floor(m*m/4)-1,
+ALL r>=3,m-r>=3 with h<r(m-r);both pools. Exactly four unequal
+controls:(6,11,5),(7,10,8),(12,6,8),(16,9,19). No other domain.
+Predict all complete spectra agree and both central intervals fill.
+Independent combinations/literal witnesses vs reversed-token bitset
+DP;whole maps and within-pool complement maps compared. Independent
+Ferrers rows/columns use integer square root,versus the direct
+pool formulas. Actual full-interval complement is reflected and
+checked byte-for-byte as a tuple,not just by total. h0 compares
+known full-interval spectra. Same-moment bad pool01234,10 must miss
+triple10;wrong h8 guess013469 must differ from actual013568.
+Unexpected size2 control0125,h2 must miss4 in[3,5],and its entire
+spectrum must agree independently. These are controls of scope,
+not repairs of predicted data or an automatic theorem extension.
+
+ONE invocation on the owner's Intel CPU.15 aggregateCPU,25 internal
+wall,128MiB RSS,100KiB stdout,30s external watchdog. Stop on first
+control failure INSTRUMENT-FAILED,or first independently agreed
+central omission PREDICTION-REFUTED. No patch/retry,domain extension,
+cap increase,raw portal upload or larger target census. Commit/push
+source and registration BEFORE execution. A pass supports finite
+formulas only;MI337/339 remain hand SKETCH pending carrying review,
+novelty unknown. Next record outcome and reconsider the hand argument;
+no automatic new research block is implied by a pass.13min ACTIVE.

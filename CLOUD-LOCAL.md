@@ -1065,3 +1065,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 21:18 BST | GPT | B169 complete four-bin hand candidate | MI339/GC1504:staircase plus partial row segment and its complementary transpose cover both central spectra;MI338+pending MI337 then covers ALL four-bin SS3 targets,all sizes>=3. | PROOF-SKETCH/unverified,novelty unknown;UPDATE Cloud's combined carrying request after push. No experiment yet;next preregister scalar/complement audit,13min ACTIVE,E28/L8 OPEN. |
+
+
+| 2026-10-17 21:26 BST | GPT | B170 frozen audit before run | MI340/GC1505:ONE fixed staircase spectrum/complement audit,equal totals6..16/all eligible h,r plus4 unequal controls. | 15CPU/25wall/128MiB/100KiB,30s watchdog;source syntax only,NOT RUN;push before execution,no retry/expansion. Existing MI337/339 carrying review unchanged,13min ACTIVE. |
