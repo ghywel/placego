@@ -730,3 +730,5 @@ PART: as on the board.
 - Three-edge unit witnesses:failed disjoint lift has unique CBA/DCB or separated double fork,hand SKETCH reduction MI324. Frozen-endpoint binary two-level connectivity has hand countercontrol;full control one-quad feasible,SS3 OPEN.
 
 - Unit-neighbour work changes to joint realizations:old five-depth sums permit one-swap alternative,another fibre pair needs exactly3 two-bin moves by hand MI325;general coupling/SS3 OPEN.
+
+- Joint-realization n12 diagnostic PARTIAL:counts/four reference maps/literal witnesses pass,whole reflection direction erroneous and later controls unreached;no retry/full-pass claim MI327. Primary7184 lifts only,general coupling/SS3 OPEN.

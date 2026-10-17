@@ -24,6 +24,18 @@ CAPS: one invocation,40aggregateCPU/60wall seconds,192MiB per process,
 SCOPE: a new existential quantifier on an already measured domain,not a repeat
     of fixed-start distance measurements. Complete success is finite evidence
     only; no general three-move bound,UN or SS3 theorem follows.
+
+OUTCOME MI327 (2026-10-17;prereg bad02e8b,published merge6e622b4d):
+ONE invocation PARTIAL/INSTRUMENT-FAILED at whole reflection control.
+Value reversal reverses the transfer,so reflected endpoints must be
+(3-b,3-a),not (3-a,3-b). Source left unchanged except this receipt;
+NO repair/retry. Compile clean. Independent whole fibre counts/eligible
+pairs,FOUR whole path-product maps and EVERY emitted literal witness
+passed BEFORE failure. Primary emitted7184 pairs,depths1:6748,2:408,3:28,
+zero missing;these are retained primary output,NOT a completed P2 pass.
+Reflection comparison incomplete;later CF/invalid-pair controls and
+final resource/report checks NOT REACHED. Wrapper exit1 after watchdog
+wall1.617354s,not a cap;no JSON report. Raw/digests MI327,outside git.
 """
 import argparse
 from collections import Counter

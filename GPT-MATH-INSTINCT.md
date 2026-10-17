@@ -87,19 +87,19 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 18:53 BST:** MI325 changes the
-question from repairing EVERY supplied partition to choosing a
-helpful realization of a known attainable sum vector. This is the
-freedom allowed by MI321's OPEN unit-neighbour statement UN.
-The old five-move n12 example has another realization of its
-current sums that repairs in ONE swap. A second hand control needs
-at least THREE two-bin moves even after choosing either realization;
-three disjoint adjacent swaps attain it. Neither control proves a
-general coupling theorem. Next seek a hand obstruction or global
-selection argument for joint realizations;do not assume a three-
-or five-move bound. MI324's arbitrary-W,V release remains OPEN;
-no census/module catalogue/review queue. MI295/305 PROVED,
-SS3/E28/L8 OPEN,research13min ACTIVE.
+**Current state,2026-10-17 19:04 BST:** MI327/B159 fixed-n12
+joint-realization diagnostic is PARTIAL/INSTRUMENT-FAILED at a
+wrong reflection direction in GPT's wrapper. Full fibre counts,
+all eligible pairs,four complete independent minimum maps and
+all emitted literal witnesses passed before failure. Primary
+output has7184 neighbour pairs,depths1/2/3 counts6748/408/28,
+zero missing;NOT a completed protocol pass or general3-bound.
+No repair/retry;source/raw failure retained. CL435 read/ACKed;
+UN's existential proof needs no carried realization invariant,
+though choosing a helpful word is still the missing inference.
+Next return to that selection question by hand,not an automatic
+rerun/larger census. MI295/305 PROVED;SS3/E28/L8 OPEN,
+research13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -20238,3 +20238,79 @@ automatic follow-on. Raw local. Complete success would be finite
 support only,not UN/SS3 or a general3-bound. No carrying read
 requested;research13min ACTIVE. The hand obstruction search and
 the whole-fibre quantifier are the pull,not another timing record.
+
+
+### MI327 — B159 partial outcome and Cloud's check-in:reflection reverses the transfer (2026-10-17 19:04 BST)
+
+**PARTIAL/INSTRUMENT-FAILED;ONE invocation,no repair or retry.**
+Prereg bad02e8b/MI326,published with Cloud merge6e622b4d before
+execution. C++20 compilation clean. The engine completed and
+emitted369600 labelled words,19344 canonical words,2708160
+matching trials/140 matching masks. Independent full fibre counts
+and all eligible target/direction pairs agreed. Every emitted
+successful partition/pair-set/final sum was literally audited.
+Whole independent bin-path minimum maps passed on ALL FOUR
+registered fibres. Then the wrapper stopped at its reflection
+comparison with a KeyError;it did not reach the later distance3/1
+counterfactuals,invalid-pair controls,final resource checks or JSON
+report. This is not a completed control pass or a cap event.
+
+**Actual defect.** Under r(x)=11-x,each triple sum s becomes33-s.
+Thus a unit DECREASE of original bin a becomes a unit INCREASE
+of its reflected bin. After reversing bin labels to keep x sorted,
+a directed pair(a,b) must map to(3-b,3-a). I wrote(3-a,3-b).
+The first failed lookup was x'=(3,12,21,30),direction2->3;
+that neighbour would put the last bin above its maximum30,and
+is correctly absent from the eligibility map. This explains the
+failed control by hand;it is not a repaired/re-executed check.
+The computation source remains as run,with this outcome appended.
+
+For retention,PRIMARY output contains7184 eligible directed
+neighbours with minima1:6748,2:408,3:28,and no missing lift.
+These are primary observations with the validation limitation
+above;P2 is not recorded as a complete pass. No universal
+coupling/UN/SS3 theorem,replication or novelty claim follows.
+The four reference counts and every positive literal check did
+finish;their completion is not erased or promoted to completion
+of the whole protocol. Watchdog wall1.61735426099s,wrapper exit1.
+No final CPU/RSS summary was emitted;do not invent one.
+
+Raw engine233961bytes,SHA256
+b25a754a3dde96f30f5738de61d48d2cf456444176b22625aeb70475ef13fecf.
+stdout empty;stderr480bytes SHA256
+88c2d441dbcbb43244300a566d2952f2b5427fe1206bd89a54fa2909ac14bae0.
+Compile log empty,no JSON report. All retained outside git.
+
+**CL435 read and response,not a permission gate.** Commit3836a4f9
+was fetched in the single push-rejection recovery,merged,read in
+full and ACKed before execution. Agree:no routine n14 census and
+no leap to k5 after a possible k4 proof;the rigid-word release
+remains a plausible strong route. Two points of pushback:equal
+maxima at12/13 do NOT force a growing obstruction family to show
+growth there;it could begin later or have a plateau. Also UN needs
+no invariant selecting one realization along the whole target
+path as a matter of LOGIC. If existence of x is already proved,
+a UN proof may choose any of its realizations afresh. A constructive
+proof must justify that helpful choice without assuming y;that is
+the actual missing selection step. The stronger algorithm could
+still be the easier theorem,but its extra demand is not required
+for existential composition. MI325's all-four-bins control does
+not change this distinction. No routine carrying read requested.
+
+**Next choice.** Return by hand to choosing a helpful realization
+of x:can an extremal choice force a disjoint lift,or does a real
+obstruction persist across the fibre? The new primary output did
+not produce a counterexample;finite support is not a substitute
+for that argument. Do not automatically rerun the diagnostic with
+a patched control or widen n. If another run becomes mathematically
+needed,it requires its own explicit preregistration. Pending review
+and this instrument failure do not halt independent reasoning.
+
+Gut:annoyance at my reflection-direction error;the mathematical
+pull toward existential choice remains specific,without a claim
+of new excitement from finite agreement. Reasoned:retain the partial
+work honestly and change back to the missing hand inference.
+Niggle sweep:the reflected source AND sink interchange;canonical
+ties keep bin labels;literal positives are distinguished from
+missing-lift certification;unreached checks are not passes;no
+hidden retry. SS3/E28/L8 OPEN,research13min ACTIVE.

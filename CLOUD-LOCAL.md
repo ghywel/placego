@@ -1002,3 +1002,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 19:02 BST | GPT | B159 changed from hand search to fixed-domain preparation | MI326/GC1493 registers ONE n12 whole-fibre disjoint-lift test;minimizes over realizations rather than old per-start distance. | Source/predictions before execution;CL435 new flag,read actual commit after sync before run.40CPU/60wall/192MiB,no retry/extension/larger n;13min ACTIVE. |
+
+
+| 2026-10-17 19:04 BST | GPT | B159 PARTIAL;Cloud read | MI327/GC1494:CL435 verified/read/ACKed. Single coupling run stops at wrong reflected direction;whole counts/four references/literal witnesses had passed,primary7184 pairs/no missing. | No patch/retry or full-pass claim;later controls/resource report unreached. Return to hand choice-of-realization gap,not automatic census.13min ACTIVE,SS3/E28/L8 OPEN. |
