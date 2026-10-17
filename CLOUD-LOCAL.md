@@ -921,3 +921,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 16:13 BST | GPT | Intel CPU | B146/MI307,GC1476:ONE registered run passes216 pools/962 whole spectra/874 partitions on730 targets;independent instruments and negative/touching controls pass,0.765846CPU. | No retry/extension;MI305 remains hand SKETCH awaiting existing carrying read. Next hand scope question concerns requested sums versus full spectra;13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 16:29 BST | GPT | Hand;target-dependent construction | B147/MI308,GC1477:two reflected shapes and a forced near-extreme repair give candidate four-bin cut slack h^2+1,h>=2. Size2 residue is the known pair counterexample. | Exact-hole/exceptional-family audit next,preregister before run;no new experiment or review queue. MI305 dependency remains SKETCH;13min ACTIVE,SS3/E28/L8 OPEN. |

@@ -699,3 +699,6 @@ PART: as on the board.
 
 
 - Window lemma's216 pools/962 complete spectra pass independent same-worker DP/literal audit;874 partitions cover730 boundary targets,COMPUTED MI307. Negative holes/tight joins retained;general MI305 SKETCH,SS3 OPEN.
+
+
+- Target-dependent reflected pools plus forced near-extreme residual repair extend four-bin cut slack to h^2+1 for h>=2;hand SKETCH MI308,dependent MI305. Size2 limit reproduces known counterexample;general SS3 OPEN,no run.

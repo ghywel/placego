@@ -87,17 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 16:13 BST:** MI307's ONE preregistered
-MI305 audit passes:216 pools,962 full spectra,874 literal partitions
-covering exactly730 n12 boundary targets;independent DP/literal maps,
-negative controls and tight joins all pass. This is same-worker finite
-COMPUTED evidence;the general boundary-window theorem remains SKETCH
-pending Cloud's carrying read. No rerun/extension. Next mathematical
-obstruction:the complete-spectrum hypothesis guarantees a boundary
-region,but central four-bin targets remain outside it. Examine whether
-controlling the requested sums can replace full-spectrum demands,
-without dropping the retained hole/cardinality controls or starting a
-larger census.13min ACTIVE,SS3/E28/L8 OPEN.
+**Current question,2026-10-17 16:29 BST:** MI308 extends the four-bin
+boundary candidate through slack h^2+1 for h>=2,sizes>=h+1. Two
+reflected pool choices work except for one explicitly classified pair
+of missing target values;simultaneous failure forces near-minimum and
+near-maximum bins. Their residual2(h+1)-token problem has a direct
+repair using a third token. At h1 the same residual is the known
+impossible four-pair example. Hand SKETCH,dependent on MI305,no new
+experiment or proof promotion. Next audit the exact missing-sum
+classification and exceptional repair before any further extension.
+Cloud's carrying read remains pending,not a gate;13min ACTIVE,
+SS3/E28/L8 OPEN. Central four-bin targets remain outside admission.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -18431,3 +18431,186 @@ original values,not only bin sums;bitset DP does not use the proof
 formulas;actual j-bands test the algebra;failed hypotheses retain
 holes;no finite evidence substituted for an infinite proof.13min
 research ACTIVE,no computation left running.
+
+
+### MI308 — B147: targeted sums cross the square bound;the exceptional repair needs a third token (2026-10-17 16:29 BST)
+
+**Hand PROOF-SKETCH;depends on unreviewed MI305,not independently
+verified;novelty unknown. No experiment.** Question:can a pool with
+a specific missing sum still be useful by changing which reflected
+shape receives the requested target? Pull:identify the EXACT missing
+values instead of demanding complete spectra from every pool.
+Record searched:`central.*sum|targeted.sum|requested.sum|complete.spectrum|boundary.window`
+AND `four.bin|SS3|pool|subset`:9 hits/3 files,MI304-307 relevant.
+Follow-up `quadratic.*one|square.*one|near.extrem|forced.*minimum|conjugate.*pool|resonan.*bin`
+AND `SS3|window|partition|sum`:22 hits/11 files,no prior version found.
+Known interval sums/rank-one forced sets are background,not new results.
+No novelty or complete literature search is claimed.
+
+**Claim and scope.** For h>=2,let four sizes>=h+1,total n,and integer
+targets total L(n),satisfy the necessary single-bin bounds. If some
+pair of bins has target sum L(m)+delta,where m is its total size and
+0<=delta<=h^2+1,then a prescribed-size/sum partition exists.
+MI305 supplies delta<=h^2. Here the new step is EXACTLY h^2+1.
+This is a uniform extension,not a general four-bin/SS3/eight-bin result.
+At h2 it covers slack5;at h3 slack10. The n12 central target
+(16,16,17,17) is still outside it. No automatic continuation to larger
+slack is authorized by this argument.
+
+Write k=h+1 and,for any pool size m>=2k,define two shapes of rank
+h^2+1 above the minimum:
+
+    X_m={0,...,m-h-1} union{m,...,m+h-2,m+h},
+    Y_m={0,...,m-h-2} union{m-h} union{m,...,m+h-1}.
+
+Both have m values,sum L(m)+h^2+1. If X_m is used as the low pool
+inside0..n-1,its complement reflected by n-1-x is Y_(n-m).
+Conversely using Y_m gives reflected X_(n-m). This is a direct
+set-complement identity,not a presumed compatibility of two choices.
+
+**X has all the sums needed.** For any split r+q=m,r,q>=k,
+X's r-subset sums fill[L(r),U_m(r)+h^2+1]. To see it,compare to
+MI305's largest-window square shape
+
+    {0,...,m-h-1} union{m,...,m+h-1}.
+
+X moves only its largest token one unit higher. Within a fixed count
+j of upper tokens,the upper selection sums have gaps at most2,and
+the prefix interval fills them,as in MI305. Minimum j-sums are unchanged
+for j<h,and increase1 at j=h;maximum j-sums increase1 for j>0.
+Thus the first and last band joins are unchanged,and each internal
+join increases1. For h>=2 the first and last joins are distinct,so
+none deteriorates. MI305's concave join bound for the square shape
+therefore proves the assertion,with the new total sum at the upper
+endpoint. This comparison fails at h1,where the sole join is both
+first and last;that case is excluded and retained below as a control.
+
+**Y has an exact and small exception.** For r,q>=k,a two-bin split
+of Y_m satisfies the same endpoint sum bounds,EXCEPT that it is
+impossible precisely when one of the bins has size k and requested
+sum
+
+    U_m(k)+h^2.                         [its maximum minus1]
+
+There are no other missing sums in the required size range.
+If both r,q>=h+2,Y fits MI305 with window parameter h+1,so there
+is no exception. If one size is k,set that size r=k and q>=k.
+Let e=q+1. Y consists of the lower one-hole pool
+
+    R={0,...,e-2,e}
+
+and h consecutive upper values m,...,m+h-1. With j upper tokens,
+the lower count is p=k-j. For1<=j<h,both p and e-p are at least2;
+the h1 case of MI305 gives a COMPLETE lower sum interval. Upper
+j-sums are also a complete interval. At j0 the same holds unless
+q=k;then lower complements are singletons,so the ONLY missing lower
+sum is L(k)+1. At j=h,the lower choice is a singleton R,so the
+ONLY missing sum in that band is its maximum minus1.
+
+The bounding intervals for these h+1 bands are
+
+    I_j=[L(k-j)+jm+L(j), U_e(k-j)+1+jm+U_h(j)].
+
+For0<=j<h their successive joins are exactly
+
+    G(j)=h(q-h-1)+1+j(3h-q-1)-2j^2.
+
+This is concave;with beta=q-h-1>=0,its endpoint values are
+h*beta+1 and beta+1,both>=1. Thus all bounding intervals overlap.
+The possible j0 hole is below the next band's minimum;the j=h hole
+is above the preceding band's maximum. They remain the only holes
+in the whole spectrum. The upper hole is U_m(k)+h^2. When q=k,
+the lower hole L(k)+1 is the complement of that SAME upper hole
+for the other k-bin. This proves the stated two-bin failure criterion.
+The preceding argument is hand algebra,not a new finite audit.
+
+**Choose the shape from the requested sums.** Name the low pair A/B,
+total size m,and the outer pair C/D,total size l=n-m. Try X_m first.
+Its low pair always splits;its reflected outer Y_l fails only if
+an outer size-k bin C has reflected target U_l(k)+h^2.
+Try Y_m instead:the reflected outer X_l always splits;failure now
+requires an inside size-k bin A of target U_m(k)+h^2.
+The single-bin bounds give both pairs exactly the endpoint bounds
+needed,as in MI305. Unless BOTH exceptions occur,one choice solves
+all four bins. The point is target-specific selection,not claiming
+that both pool shapes have complete spectra.
+
+**If both fail,the obstruction forces its own repair.** Relabel the
+two exceptional size-k bins as A and C,with other sizes b,d>=k,
+so m=b+k,n=b+d+2k. Conservation forces
+
+    s_A=U_m(k)+h^2;        s_B=L(b)+1;
+    s_C=(n-1)k-U_l(k)-h^2; s_D=U_n(d)-1.
+
+The near-minimum B and near-maximum D are uniquely forced to
+
+    B={0,...,b-2,b},
+    D={n-d-1} union{n-d+1,...,n-1}.
+
+After removing them,the remaining2k tokens,translated by-(b-1),are
+
+    W_k={0} union{2,...,2k-1} union{2k+1}.
+
+The required translated sums are
+
+    s'_A=3L(k)+1;
+    s'_C=L(k+1)-1+2k.
+
+Their total is sum(W_k)=k(2k+1). Start with W_k's smallest k-set
+S={0,2,...,k},of sum L(k+1)-1. Replace its TWO distinct members
+2 and k by k+1 and2k+1. The increase is(k-1)+(k+1)=2k.
+Thus
+
+    C'=(S minus{2,k}) union{k+1,2k+1}; A'=W_k minus C'
+
+has the required sums and sizes. Translate back and restore B,D.
+This repairs the simultaneous missing-sum case with explicit original
+tokens. It works for k>=3 because2 and k are distinct. No unknown
+partition or SS3 theorem is invoked to escape the failed pools.
+
+**Hand controls.** At h2,b=d3,the exceptional targets in A/B/C/D
+order are(16,4,17,29). The formula gives
+A{4,5,7},B{0,1,3},C{2,6,9},D{8,10,11}. All sizes3,full0..11
+coverage,correct individual sums. This is the case where both simple
+pool choices really fail;the repair changes the low pool.
+At h3,b=d4,the targets are(31,7,29,53),n16. The formula gives
+A{5,7,9,10},B{0,1,2,4},C{3,6,8,12},D{11,13,14,15}.
+It goes beyond MI305's slack9 to10,with full0..15 coverage.
+
+For a nonexceptional selector example at h2,targets(5,15,17,29)
+use Y_6={0,1,2,4,6,7}:A{0,1,4},B{2,6,7},C{3,5,9},
+D{8,10,11}. The X-first outer failure does not prevent Y from working.
+For the opposite choice,targets(3,17,18,28) use X_6={0,1,2,3,6,8}:
+A{0,1,2},B{3,6,8},C{4,5,9},D{7,10,11}. No enumeration was run.
+
+**Unexpected check:the third token is essential to this repair.**
+At h1,k2,b=d2,the same exceptional reduction gives targets(6,2,8,12),
+a relabeling of the known four-pair counterexample from CL432.
+B{0,2} and D{5,7} are forced. The residual translated pool is
+W_2={0,2,3,5},and A would need a pair of sum4,which does not exist.
+The proposed replacement of2 and k would try to remove the SAME
+token twice. This is a genuine negative control,not a blanket claim
+that every use of h1 fails. It explains the minimum3 threshold for
+THIS resonant repair;it does not explain or prove the whole SS3 claim.
+
+**What changed,next,and status.** Missing sums can be classified,
+assigned to opposite pool choices,and,when both choices fail,turned
+into forced near-extremal bins with an explicit residual repair.
+This is the first use of requested sums beyond full-spectrum demands
+in this route. Next preregister a bounded independent audit of Y's
+exact holes and the exceptional family,including the k2 failure,before
+using or extending the claim. No new experiment in this block,no
+larger SS3 census,no automatic slack increment. Cloud receives a
+READ-LEDGER continuation of MI305's existing carrying candidate,
+not an additional automatic review job or a reason to halt.
+
+Gut:surprise and a warm pull at the forced residue reproducing the
+old size2 counterexample,then resolving it with a third token.
+Reasoned:a general hand candidate dependent on MI305;all claims
+remain SKETCH and novelty unknown. Niggle sweep:X's last-token shift
+has distinct first/last joins only for h>=2;Y's two endpoint holes
+correspond to the two labeled size-k bins,not extra exceptions;
+reflection uses each bin's own size;near-extreme sets really are
+unique;2 and k distinct is checked;both selector arms and exceptional
+repair have literal controls;no conclusion for central SS3/E28/L8.
+Research13min ACTIVE,no run left outstanding.
