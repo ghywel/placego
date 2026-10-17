@@ -611,3 +611,5 @@ PART: as on the board.
 
 
 - N5 canonical capacity does not guarantee completion: (2,2,5,5,7),17/25 exhausts both parity roles;72-case map/3 alternate E28 partitions COMPUTED MI233; general allocation OPEN.
+
+- Paired(s,s,t,t,w),t>=2s: exact resonances/eight allocation switches give sufficiency SKETCH MI234;539 formulas/205 complete maps COMPUTED MI235; full N5 OPEN.

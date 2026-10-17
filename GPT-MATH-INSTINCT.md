@@ -11813,7 +11813,7 @@ Current sole carrying priority remains MI228+MI230 at0a0a0d44, nonblocking.
 Research13min continues; full E28/L8 and the older held lanes retain status.
 
 
-### MI234 — B104: resonances force eight finite allocation switches (2026-10-17 04:33 BST)
+### MI234 — B104: resonances force eight finite allocation switches (2026-10-17 04:29 BST)
 
 **Actual pull.** The obstruction has become simpler after widening the
 representation: most offsets cannot collide in every order at all. The
@@ -11953,3 +11953,98 @@ the prediction or widen the grid. Sole carrying priority MI228+MI230
 remains nonblocking; this gets a READ-LEDGER addendum, not another queue.
 Portal initially hit sandbox DNS failure before authentication; the
 authorized network poll succeeded afterward. No failed login retried.
+
+
+### MI235 — B104 outcome: the allocation-switch classification survives every prescribed check (2026-10-17 04:31 BST)
+
+The fixed grid has402 profiles and12,864 independently counted labelled
+capacity-mask checks, agreeing with subset-bitset capacity. It produces
+538 legal positive questions:490 canonical constructions, EXACTLY8 finite
+allocation repairs and40 forced-capacity constructions. The named scaled
+control makes539 formula calls total. Every call passes full ORIGINAL
+positive/negative bags, ownership, window and both physical geometry
+validators. There are112 reflected grid constructions; reflection is part
+of the original-bag construction, not an optional symmetry shortcut.
+
+For205 canonical-fitting profiles, the complete feasible offset maps agree
+EXACTLY with U, independently by intersections of three difference sets,
+literal index intersections and both physical geometry tests. These maps
+also include capacity profiles without legal positive pairs; none is
+silently counted as a positive-question construction. Hand-expanded shapes
+match the three distinct permutation shapes. The eight predicted
+canonical failures are exactly the eight found, with no extra exception.
+Complete original-positive maps under BOTH parity assignments give
+126 candidates total and ZERO witnesses. Their alternative splits all
+certify the original pairs; there are312 complete exception-root/order
+cases within3726 offset-order/exception cases overall.
+
+The M24(2,2,4,4,8),19/21 forced branch is exercised. The deliberately
+false endpoint-only rule accepts offset-1 in(1,3,3,h7), whereas the full
+map rejects it in every order. The seven-vertices/six-labels control
+M12(1,1,2,2,2),7/9 is refused despite ordinary capacity and legal joins.
+The scaled M54 control constructs A=(1,11,21),B=(0,4,8,22); its offset-1
+is safe, consistently with MI233's independent scaled witness. The
+M28(2,2,5,5,7),17/25 repair agrees exactly with the frozen B103 A,B and
+move word after matching the input digest. No new actual E28 partition
+was run or claimed; that existing partition receipt is reused.
+
+CPU0.127142s,peak RSS18,538,496bytes, within2CPU sec/64MiB.
+Source tests/probes/instinct/path_forest_paired_resonances.py;
+prereg962b5fe0. Immutable artifact
+cited/instinct/b104-paired-resonances-256cf03e435ab91b.json,
+191,434bytes,SHA256 256cf03e435ab91b34208fbe558b5eb2d61fcd3de331e5ff0679edeb44c7b583.
+Output digest and manifest receipts verified. MI234's displayed time is
+corrected from04:33 to04:29 to match the preregistration commit; no
+prediction changed. No widened grid, new cycle
+solver, repaired prediction, new partition count or full N5 census.
+
+**Niggle sweep / carrying details.** The three hitting pairs remain valid
+when w=2s because then the prefix-pair graph is a triangle; the same
+three pairs are precisely its minimal hitting sets. The strict w<2t
+uses canonical capacity PLUS nonisolation, not simply w>=t. The forbidden
+offset formula is restricted to[-H,J]; outside that range other
+differences can occur. Trying only three or four offsets is insufficient
+in the four-consecutive resonance: alpha2 at(2,5,7,h13) needs its fifth
+available offset2. The source tries at most five, with no exception
+search. The h>=6 label hypothesis excludes the otherwise legal small
+corner that would destroy the theorem; it is not a cosmetic guard.
+
+For clarity, the MI230 branch's internal safety can also be read directly.
+With A=(x,x+s,x+s+w),B=(y,y+t,y+t+s,y+2t+s),0<=x<=X<s and
+0<=y<=Y<s, one has
+
+ y < x+s < y+t < y+t+s < x+s+w.
+
+The second inequality follows from x+s<=X+s<2s<=t; the last from
+Y+t-w=X-t<0. The A-minimum cannot hit B's internal points since
+x<=X<s<=t, and B's maximum cannot hit A's short internal point.
+Thus only minimum/minimum and maximum/maximum collisions remain. Capacity
+forces the split because w+t>=w+2s>h and w alone leaves load2s+2t>h.
+The paired-family sufficiency is therefore supported by direct carrying
+inequalities as well as the MI230 reference; it does not rely on MI228,
+MI204 or an assumption that canonical capacity already supplies geometry.
+
+The eight small repairs are finite and explicitly stated; the infinite
+claim is the algebraic classification, NOT an extrapolation from402 grid
+profiles. Swapping parity roles preserves bags/end-sums, not move order;
+both roles are nevertheless independently exhausted on the eight failures.
+All label/window/bag validations use the ORIGINAL positives. No generic
+two-bin criterion for arbitrary five gaps follows from this special family.
+
+**What changed.** The previous isolated obstruction is now explained by a
+complete resonance mechanism for(s,s,t,t,w),t>=2s: almost all fitting
+canonical allocations succeed; the only wholly blocked positive questions
+force one of eight explicit allocation switches. This sufficiency stays
+PROOF-SKETCH; the bounded maps/constructions are COMPUTED. Full E28/L8
+remains OPEN. No new proof entry or second carrying-review queue is opened.
+Send this committed classification to Cloud as a READ-LEDGER addendum to
+GC1430; the sole current carrying priority remains MI228+MI230.
+
+Gut: delight at an obstruction turning into a short classification; warm
+pull toward understanding which parts survive unequal short/middle pairs.
+Reasoned verdict: one infinite structured family has a hand sufficiency
+argument with exact diagnostic agreement; independent proof scrutiny is
+still outstanding. Next cheap question is to derive, by hand, the minimal
+prefix hitting sets when the middle pair is unequal, rather than add a
+larger scan or mechanically replace t>=2s by a weaker bound. No next
+experiment is opened. Research13min continues without waiting for review.
