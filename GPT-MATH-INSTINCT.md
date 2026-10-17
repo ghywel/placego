@@ -13881,3 +13881,56 @@ blocked-choice counts with an independent direct insertion check. Keep
 the r2/equal-split controls. No experiment opened here. MI238 stays the
 one carrying priority; READ-LEDGER only, no routine review halt or new
 review queue. Research13min continues.
+
+
+### MI253 — B116 preregistration: complete small subdivision geometry check (2026-10-17 06:59 BST)
+
+**Question/pull.** Test MI252's charge/insertion distinction on a COMPLETE
+small domain, especially repeated coordinates across opposite-chain
+candidates. Record searched: repeated.gap.*subdiv|blocker.*charg|
+complete.*two.chain.*geometr ->3 paragraphs/2 files; MI249/251/252 and
+the existing physical/literal validators read. No new literature or
+novelty claim. This diagnostic supplies explicit parents; it does NOT
+assume or verify MI245's general N5 existence candidate.
+
+**Predictions BEFORE implementation/run.** In the window0..7 choose
+EVERY7-point subset and EVERY nonempty labelled two-colour partition.
+Exactly8*(2^7-2)=1008 parent chain pairs, with5 gaps each. Compare this
+enumerator independently with all ternary words of length8 having
+exactly one empty position and both colours; the complete sets must agree.
+For every parent and each occurring gap value s, try EVERY positive
+unequal unordered split a<b,a+b=s. Count r occurrences across BOTH chains.
+Each occurrence offers the two ordered subdivision choices. Predict:
+
+- blocked edge/choice pairs charge to distinct occupied vertices;
+- neither global extremum is charged, so blocked count<=5;
+- every question with2r>5 has a free choice, with a nonvacuous r3 case;
+- direct insertion into either chain agrees with the predicted free/
+  blocked status under BOTH physical geometry validators, preserves both
+  extrema, every other gap and both ORIGINAL ordered odd joins;
+- whenever these parent joins are both positive, each accepted child
+  also passes the existing full original-bag/owner/window validator.
+
+All free choices are checked, not just the first. Nonpositive parent
+joins remain legitimate geometric-lemma controls; do not call them
+original-positive cycle admissions. No N5 existence solver, target
+census, new E28 partition or full N6 claim.
+
+Four named hand fixtures from MI252 are retained separately:
+R2:A=(0,3,6),B=(1,2,4,5),h7,s3,a1/b2 ->all4 choices blocked;
+equal:A=(0,3,5,7),B=(2,4,6),h7,s2,a=b1 ->all4 UNIQUE choices blocked;
+cross:A=(0,3,6),B=(1,4,5,7),h7,s3,a1/b2 ->six choice pairs,free
+coordinate2 appears TWICE, and no blocked vertex receives two charges;
+balanced:A=(0,3,6,9),B=(1,4,8),h9,s3,a1/b2 ->point1 blocked,point2
+free, first accepted insertion in A gives(0,2,3,6,9),same17/15.
+
+Counterfactual: duplicate the equal fixture's sole midpoint as if two
+choices existed; fake2r=8>5 wrongly predicts insertion, while deduplicated
+four choices are all blocked. Reject the theorem's unequal premise there,
+rather than silently counting the midpoint twice. Unexpected check:
+the cross fixture must retain two free EDGE/CHOICE PAIRS at one coordinate;
+a global-coordinate uniqueness assertion would incorrectly reject it.
+Caps1008 exhaustive parents plus4 fixed controls,40000 insertion checks,
+5CPU sec/64MiB. Stop any mismatch/cap; retain failure,no corrected
+prediction, expanded window or repaired family. MI238 remains the sole
+carrying priority; completion READ-LEDGER only, no routine review halt.
