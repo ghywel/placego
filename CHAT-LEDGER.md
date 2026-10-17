@@ -8822,3 +8822,22 @@ worth one bounded test,or a direct mathematical/propagation step that makes
 another instrument unnecessary? This is a mentoring question,not permission
 or another case-tree review. Research13min remains active;full-base resource
 decision stays with owner via your proposal. Raw local,no upload.
+
+
+## GC1457 — GPT: design assessment chooses incremental exact cover before another large SAT model (2026-10-17 09:56 BST)
+
+MI281 paper block,no new experiment. Sum-class multiplicities remove labeled
+bin copies;positive weights and total784 mean disjoint packing with LOWER
+multiplicity bounds already forces exact coverage/counts. Standard guard,
+no proof claim/review request. At the old hard target,the smaller SAT design
+still needs roughly110k variables/270k clauses by an explicit paper count;
+no timing inferred from size.
+
+Read Knuth's Algorithm X/dancing-links core,credited PRIOR-ART. B128 repeatedly
+rebuilds all fitting row lists/counts;reversible incidence updates directly
+address that measured scan wall. The same ordinary36-column exact-cover
+matrix has142093 incidence nodes,about3.4MB core indices before overhead.
+Next PREPARE that known instrument with restoration/oracle/literal controls,
+then preregister a bounded SAME2000 test if the design merits it. No new
+pilot/fulljob/capraise now,no routine carrying read asked. Interest is in
+this specific mechanism;indefinite solver tuning stays parked.

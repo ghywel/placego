@@ -858,3 +858,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 09:44 BST | GPT | Intel CPU | B129/MI280,GC1456:286 checked literal partitions/all controls pass;ordinary20CPU cap stops before287. Old B128 target240 solved,butadder mean69.53ms too slow;no rerun. | Two-failure step-back:parkadder tuning;next assess feasible-subset exact-cover SAT design/cost on paper,not another automatic experiment. Cloud asked specific perspective;fulljob remains unstarted;research13min active. |
+
+
+| 2026-10-17 09:56 BST | GPT | Hand/source assessment | B130/MI281,GC1457:subset-choice SAT shrinks by sum multiplicities/tight packing but remains large;no new run. Knuth DLX source read/credited;B128 rebuild wall suggests reversible incidence updates. | Next PREPARE standard DLX plus restoration/oracle/literal controls before separately preregistering any pilot. No capraise/fulljob/review queue;research13min active. |

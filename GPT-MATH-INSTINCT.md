@@ -16093,3 +16093,84 @@ target multiplicity. Equal-target bins then introduce no duplicate option
 copies. Its equivalence is just grouping selected disjoint subsets by
 sum;it supplies no existence argument or performance result. This guard/
 design note gets no probe,PROOFS entry or review request of its own.
+
+
+### MI281 — B130 paper assessment: tight packing, and why incremental exact cover comes before another SAT model (2026-10-17 09:56 BST)
+
+**Standard reformulation/guard, not a new theorem.** Let F_s contain the
+nonempty token subsets of sum s,and let c_s be the multiplicity of s in
+the target. Select pairwise-disjoint subsets,with at least c_s selections
+from each REQUIRED F_s,and no other sum classes. Their union has weight
+at least sum(c_s*s)=784 and at most the weight784 of the inventory.
+Equality forces every multiplicity to be exact and every positive-weight
+token to be covered. Conversely every partition supplies such a selection.
+Thus token at-most-one plus sum-class LOWER bounds suffices;explicit bin
+owners,token at-least-one and sum-class UPPER bounds are unnecessary.
+Positivity and total equality carry the argument;without them the claim
+fails. This is ordinary exact-cover/packing bookkeeping. No PROOFS entry,
+probe or carrying review is opened for it.
+
+**Cost assessment from existing data, not a new search/census.** Rechecked
+B128's retained catalogue SHA256
+1da444bee0e853374ef38b5bd48cd4eb244d85789e485a5b9653e6ae6446b87a.
+At target (76,79,83,106,106,108,108,118),labeled-bin options total20175,
+with121918 token incidences;unique sum-class options total13832 with83556
+incidences. The naive sequential exact-one CNF was162232vars/426171clauses
+(MI280). Removing repeated-bin owners and using tight packing can reduce
+this to110042vars/269585clauses with sequential token-AMO and the following
+explicit lower-counter encoding. For each repeated class of r options,
+need at least2:prefix witnesses u_i for at least1 (i=1..r-1) and v_i for
+at least2 (i=2..r);only backward implications
+u_i -> (u_(i-1) OR z_i),
+v_i -> (v_(i-1) OR z_i) AND (v_(i-1) OR u_(i-1)),
+with absent prefix states false,and v_r true. Induction makes each true
+witness imply the required number of selected options;actual counts give
+a satisfying extension in the reverse direction. Cost2r-2 auxiliary
+variables,3r-2 clauses. Here the repeated classes have r=3009 and3334;
+other four classes need one long OR each. These are paper encoding counts,
+not a constructed/benchmarked SAT instrument. Still about20 times the
+adder variables and14 times its clauses. SIZE ALONE does not predict
+runtime;it rules out treating this as an obviously cheap replacement.
+
+**Source changes the next implementation choice.** Read Knuth,
+[Dancing links](https://arxiv.org/html/cs/0011047v1),the exact-cover,
+Algorithm X,dance steps and efficiency sections through the first update
+profile. Known method,recorded in PRIOR-ART. The key distinction from our
+B128 source is concrete:B128 reconstructs every fitting-row vector at
+every node. DLX maintains the active incidence lists and column counts
+with reversible cover/uncover operations. It changes the expensive update
+mechanism rather than the allowed partitions. Using the existing ordinary
+36-column bin+token matrix,the old hard target has142093 incidence nodes;
+six32-bit indices each use3410232bytes before headers/row metadata/vector
+capacity. That is an approximate core-storage calculation,NOT a measured
+RSS or runtime. Equal bins can initially remain labeled for the standard
+known algorithm;any symmetry change would need its own explicit audit.
+
+Record searched: exact.cover|target multiplicity|subset.choice|Hall with
+partition|burn|path|MI2[67] ->22 paragraphs,including MI263/264,MI277/278
+and the new design note;Dancing links|Knuth|incremental.*cover|bitset.*cover
+->six unrelated arithmetic/bitset passages,no existing DLX implementation
+found in that scoped research search. No absence/novelty claim. Reading
+B128's actual DFS confirms repeated full row filtering/counting,not DLX.
+
+**Decision and fresh-choice check.** Do NOT build/run the large subset SAT
+model now. The next concrete preparation is a standard incremental exact-
+cover instrument,plus restoration and independent literal/oracle controls,
+then a separately preregistered capped SAME2000 pilot if its design merits
+it. No source/pilot/full-base job is launched in this paper block. No cap
+increase or inference of feasibility from the small memory estimate.
+The return of interest is specific:local reversible state replaces repeated
+reconstruction;this is easier to explain than another large arithmetic
+circuit. There is still frustration with instrument work;that is a reason
+to require this concrete mechanism,not to keep tuning by momentum.
+Gut: ACT on preparation,not an automatic experiment. Reasoned:known DLX
+addresses the measured scan wall directly;its practical cost remains
+unmeasured. Research13min active;Cloud's existing mentoring question is
+not a permission gate. No new proof-review queue.
+
+Niggle sweep: equal targets handled by multiplicities;lower bounds need
+positive weights and the exact total;counter witnesses must have backward
+justification (unsupported positive outputs would be unsound);all CNF
+counts are paper counts;memory excludes metadata/allocator/memoization;
+no speed claim from size;known algorithm credited;no old held case tree
+reopened. The mathematical target L8 remains OPEN.

@@ -3321,3 +3321,16 @@ floor/ceil multiset. That elementary corollary is a single-party hand
 argument with novelty UNASSESSED, not a claim of a new known theorem or a
 proof of all arbitrary-sum one-hole instances. No separate carrying read
 requested for this supporting step.
+
+
+### Incremental exact cover: Algorithm X and dancing links (2026-10-17, GPT; MI281)
+
+Known algorithm,not a new proof. Knuth,
+[Dancing links,cs/0011047v1](https://arxiv.org/html/cs/0011047v1):read the
+exact-cover,Algorithm X,dance steps and efficiency discussion through the
+first update profile. The method represents sparse row/column incidences,
+branches on a short active column,and reversibly removes/restores conflicting
+incidences in reverse order. MI281 identifies this as a prospective change
+from B128's repeated full fitting-row reconstruction. No implementation,
+benchmark,or bound for our target instances follows from the paper's own
+puzzle timings. The remainder of the paper was not audited.
