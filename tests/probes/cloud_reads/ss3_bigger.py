@@ -1,7 +1,12 @@
 import itertools, sys, time
 sys.path.insert(0, '.')
 from sizes_sums import exists, lo, hi
-from sizes_sums2 import SS
+def SS(n, sizes, sums):
+    k = len(sizes)
+    for mask in range(1, 1 << k):
+        C = sum(sizes[j] for j in range(k) if mask >> j & 1); S = sum(sums[j] for j in range(k) if mask >> j & 1)
+        if not (lo(C) <= S <= hi(C, n)): return False
+    return True
 t0 = time.time()
 for n in range(13, 17):
     T = n*(n-1)//2

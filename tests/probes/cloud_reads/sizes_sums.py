@@ -21,21 +21,23 @@ def exists(n, sizes, sums):
             rem_c[b] += 1; rem_s[b] += i
         return False
     return rec(0)
-t0 = time.time(); res = {}
-for n in range(4, 11):
-    T = n*(n-1)//2
-    for k in (2, 3, 4):
-        if k > n: continue
-        cnt = fail = 0; fails = []
-        for sizes in itertools.combinations_with_replacement(range(1, n), k):
-            if sum(sizes) != n: continue
-            ranges = [range(lo(c), hi(c, n) + 1) for c in sizes]
-            for sums in itertools.product(*ranges):
-                if sum(sums) != T: continue
-                # canonical: for equal sizes require nondecreasing sums
-                ok = all(not (sizes[j] == sizes[j+1] and sums[j] > sums[j+1]) for j in range(k-1))
-                if not ok: continue
-                cnt += 1
-                if not exists(n, list(sizes), list(sums)): fail += 1; fails.append((sizes, sums))
-        res[(n, k)] = (cnt, fail); print(f"n={n} k={k}: interval-feasible (size,sum) vectors {cnt}, no partition {fail}", fails[:3], flush=True)
-print(f"({time.time()-t0:.0f}s)")
+if __name__ == "__main__":
+    t0 = time.time(); res = {}
+    if __name__ != "__main__": raise SystemExit
+    for n in range(4, 11):
+        T = n*(n-1)//2
+        for k in (2, 3, 4):
+            if k > n: continue
+            cnt = fail = 0; fails = []
+            for sizes in itertools.combinations_with_replacement(range(1, n), k):
+                if sum(sizes) != n: continue
+                ranges = [range(lo(c), hi(c, n) + 1) for c in sizes]
+                for sums in itertools.product(*ranges):
+                    if sum(sums) != T: continue
+                    # canonical: for equal sizes require nondecreasing sums
+                    ok = all(not (sizes[j] == sizes[j+1] and sums[j] > sums[j+1]) for j in range(k-1))
+                    if not ok: continue
+                    cnt += 1
+                    if not exists(n, list(sizes), list(sums)): fail += 1; fails.append((sizes, sums))
+            res[(n, k)] = (cnt, fail); print(f"n={n} k={k}: interval-feasible (size,sum) vectors {cnt}, no partition {fail}", fails[:3], flush=True)
+    print(f"({time.time()-t0:.0f}s)")
