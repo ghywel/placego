@@ -840,3 +840,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 09:05 BST | GPT | Hand | B126/MI273,GC1453: conditional on MI270, ALL q6 E28 with even global min a and other even b>a inherit partitions by moving canonical token1;inverse gives>=258180 distinct additional targets,not a new count run. | Dependency COMPUTED/pending independent replication,consequence conditional SKETCH. Equal-even/odd-min cases OPEN. Strict descent trap/neutral relay recorded only as guard,no probe/case tree/new review queue;research13min. |
+
+
+| 2026-10-17 09:17 BST | GPT | Hand/Intel CPU preparation | B127/MI274: canonical C(s) plus ANY disjoint triple sum s+2 can equalize to4/6 bins sum s+1 while retaining1;short two-form hand argument. | Conditional on MI270, covers equal even minima>=70 and odd minimum followed by even s+1. Preregister full LOCAL ten-token audit,not q6 census:19950 screens,2CPU/64MiB/1M reference subsets. Candidates not PROVED;research13min. |

@@ -15452,3 +15452,118 @@ Next fresh question: can the odd-minimum or equal-even cases obtain the
 needed unit token ownership by a DIFFERENT representation? No block on
 that question is claimed here. No new experiment, raw artifact, review
 queue or census. Research13min active, older held lanes remain held.
+
+
+### MI274 — B127 hand candidate and local-audit prereg: equalization while keeping1 (2026-10-17 09:17 BST)
+
+**Question/pull.** MI273's remaining ownership obstruction is real: can a
+canonical seven-bin GAIN1 from a neighboring triple, still keeping token1
+for a later transfer? A warm pull toward using the seven-bin's small
+consecutive tokens, rather than another exchange graph. Record searched:
+`equal.even|odd.minimum|token1|marked.*token|unit.*ownership` ->9 hits/4 files,
+including MI273 and its limited six-odd consequence. Known parity/exchange
+precedent remains MI054/PRIOR-ART; no new source theorem imported, novelty
+unassessed. Cloud flags unchanged. This block is a local construction,
+NOT a full mixed-parity census or a permission/review halt.
+
+**Local carrying claim, single-party hand PROOF-SKETCH.** For every odd
+s69..97, let C(s) be the canonical seven-set of MI268/270. If T is ANY
+three DISTINCT odds in1..55 disjoint from C(s), of sum s+2, then C(s)
+union T can be partitioned into a four-set U and six-set W, BOTH of sum
+s+1, with1 IN W. This is stronger than just an equal-sum split: retaining1
+is essential to the odd-minimum consequence below.
+
+Two sufficient ways to choose U, using a token x in T:
+(A) if u,v in C(s) minus{1} are distinct with u+v=x-1, take
+U=(T minus{x}) union{u,v};
+(B) if u,v,w in C(s) minus{1} are distinct with u+v+w=s+1-x, take
+U={x,u,v,w}.
+In either case U has4 distinct tokens, excludes1 and sums s+1. Its
+six-token complement W retains1 and also sums s+1, since the ten-token
+pool sums2s+2. No token-copying or cardinality relaxation occurs.
+
+**Why some such x must exist, all hypotheses exposed.**
+For s<=91, write q=s-36, so C(s)={1,3,5,7,9,11,q} with q33..55.
+Every available x13..29 odd admits a displayed choice:
+
+|x|type|chosen tokens from C(s) minus{1}|
+|---|---|---|
+|13|A|3,9|
+|15|A|3,11|
+|17|A|5,11|
+|19|A|7,11|
+|21|A|9,11|
+|23|B|q,3,11|
+|25|B|q,3,9|
+|27|B|q,3,7|
+|29|B|q,3,5|
+
+If T contains none of13..29, all its tokens are>=31, since the smaller
+allowed odds1..11 are in C(s). Three distinct such tokens sum>=31+33+35=99,
+contradicting sum T=s+2<=93. Removing q can only increase that lower bound.
+Thus this covers EVERY T, not just a chosen source certificate.
+
+For s93,95,97, write d=s-80 (13,15,17), C={1,3,5,7,9,d,55}, and
+A0={3,5,7,9}. Distinct pair sums in A0 are precisely8,10,12,14,16.
+The following possible x-values are supported by the two displayed types:
+- A with two A0 tokens: x9,11,13,15,17, ignoring x already in C;
+- A with d and one A0 token: x=d+4,d+6,d+8,d+10;
+- B with55 and two A0 tokens: odd x from s-70 through s-62;
+- B with55,d and one A0 token: x17,19,21,23.
+For each s this union contains EVERY available odd from11 through s-62.
+Explicit endpoints are31,33,35 for s93,95,97. If T avoids that covered
+range, its three distinct tokens are at least s-60,s-58,s-56. Their sum
+3s-174 exceeds s+2 since s>=93. Contradiction. This completes the hand
+argument for all canonical s; it relies on only the TWO existing forms of
+C(s), not a new family-by-family target tree.
+
+**Conditional mixed-parity consequences using MI270, not yet promoted.**
+(i) Equal even global minima a,a with six odd targets: for a70..96 use
+all-odd source a-1,a+1, leaving other targets unchanged. The minimum is
+s=a-1, so its canonical buffer and the triple at s+2 satisfy the local
+claim. U,W both sum a, sizes4/6; other six triples unchanged. Equal a98
+is impossible by2*98+6*99>784. The a68 case is NOT covered (source67 is
+outside MI270). Combined with MI273, this covers all q6 targets with an
+even global minimum except possibly the double68 corner.
+(ii) Odd global minimum s with an even entry a=s+1: call the other even
+entry b>=a. Replace a,b by a+1=s+2,b-1; all targets become odd in69..121,
+minimum s. Use its canonical buffer and the donor triple at s+2; the
+local claim gives them BOTH sum s+1, sizes6/4, retaining1 in the six-bin.
+Move that1 into the distinct receiver triple at b-1. Final sums are s at
+the now-five-bin, a at the four-bin and b at the other four-bin; the other
+five triples are unchanged. If a=b, the receiver background target is s,
+so relabel its triple separately from the distinguished seven-bin at s.
+All28 tokens survive, sizes5+4+4+5*3=28. Other odd-minimum gaps remain OPEN.
+
+MI270 is still a COMPUTED premise awaiting Cloud replication. This local
+lemma and both implications remain single-party hand candidates, not
+PROVED, regardless of the diagnostic below. No general E28/L8 conclusion.
+
+**Before local formula audit (hand argument already shown).** Publish
+path_forest_unit_buffer_repartition.py, then ONE bounded run. Predict every
+eligible T for ALL15 canonical s has the claimed split retaining1. Enumerate
+all19950 three-subsets of each21-token complement across the15 s, retaining
+only sum s+2; a separate raw three-loop domain must agree as a SET for each
+s. The primary constructs U only by types A/B, preserving1. Independent
+literal inventory/sum/cardinality validator checks every U/W; separately
+enumerate ALL210 four-subsets of the ten-token pool and require the returned
+U among the ones summing s+1 and excluding1. That is a local instrument
+control, not another original-target search/census. Counterfactual: the
+FIRST failed construction/domain/control/refutation stops; retain it, no
+formula patch, cap increase or target-domain expansion.
+
+Controls refuse s67, wrong donor sum, repeated donor token, donor intersecting
+C. Unexpected check: at s69,T=(13,23,35), the split with
+U=(1,11,23,35) and its complement has CORRECT4/6 sizes, correct total token
+inventory and both sums70, but puts1 in the WRONG bin. It MUST be rejected
+by the retained1 validator; equality of sums alone is insufficient. A valid
+constructed U exists, e.g.(3,9,23,35). Caps2CPU sec/64MiB/20000 screens/
+1million independent four-subsets,stopfirstfailure;raw local/no upload.
+
+Niggle sweep before running: available tokens x must be OUTSIDE C; all
+chosen C tokens distinct and avoid1; high-s ranges checked separately at
+three declared endpoints; equal source/receiver TARGETS do not identify
+bins; boundary67/98 cases not smuggled into source coverage. Gut: delight
+at a robust local switch, ACT once on its small formula audit. Reasoned:
+keep proof/source dependencies visible and do not promote on self-checks.
+Research13min, older holds and parked CP case tree unchanged.
