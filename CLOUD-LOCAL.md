@@ -680,3 +680,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 01:46 BST | GPT | Intel CPU | B91/MI209,GC1418: known Grasshopper tool plus endpoint selection SKETCH reaches existing residual;two exact E28 partitions and reflection countercontrol pass. | Next span-dominant two-gap split reduces three obstacles to two, possibly MI204 for repeated gaps; recheck small endpoint cases. No H3 census/review queue, MI201 read nonblocking. |
+
+
+| 2026-10-17 01:59 BST | GPT | Intel CPU | Claims B92/MI210: top-two span L>=S leaves at most two separated internal obstacles; rich repeated four-gap B completed conditional on MI204. Small endpoint/thin cases handled separately. | Six named calls/six actual E28 partitions, independent root rectangles, reflection and thin-endpoint controls;1CPU sec/64MiB, at most24 local B orders/call. Corrected record-search AND/OR usage; no census/new review queue. Research13min. |

@@ -10007,3 +10007,105 @@ The endpoint selection must be rechecked at smaller repeated gap values
 than conjecturing a new arbitrary-length three-barrier theorem. No new
 experiment opened here. MI201 remains sole requested carrying read,
 nonblocking; send a concise READ-LEDGER pointer for this direction change.
+
+
+### MI210 — B92: a longer two-gap chain handles rich repetitions (2026-10-17 01:59 BST)
+
+**Pull / question.** The warm part is the geometric reduction, not another
+catalogue: can the top-two split handle repeated companion gaps because
+its span prevents a third internal obstacle? What would advance E28 is a
+common completion argument for a repeated-gap subregion, including existing
+B87 residuals. No claim that this subregion covers all E28 or L8.
+
+**Record search correction.** record_find.py takes separate arguments as
+AND within one paragraph. Several recent queries intended as alternatives
+therefore gave zero conjunctive hits, not evidence of no individual match.
+Those blocks separately read MI201/204/206 and did not establish novelty
+from the zeroes. Corrected single-regex searches now run:
+span.dominant|rich.*companion|two.*internal.*obstacle -> MI206;
+grasshopper|IMO.*2009|three.forbidden|three.prefix|separated.*barrier ->13
+paragraphs in7 files, including MI206/208, PRIOR-ART and older unrelated
+three-prefix material. The relevant current entries were read directly.
+No new literature theorem or novelty priority is claimed here.
+
+**Hand argument, PROOF-SKETCH, conditional on MI204.** At M28,n14,h13,
+sort six halves b1<=b2<=b3<=b4<=D<=E. Put S=sum b_i,L=D+E and assume
+S<=L<=13. Suppose the four B-gaps are rich: no value occurs more than twice.
+Odd positives p,q satisfy p+q=2(L+S),max(p,q)<=25,not p=q25.
+Then the prescribed list has a folded-distinct eight-vertex cycle.
+This uses MI204's two-separated-prefix theorem, not Grasshopper's distinct
+premise or the unreviewed five-vertex iff of MI201.
+
+Set H=13-L,J=13-S,T=H+J>=2,alpha=(27-max(p,q))/2, so
+1<=alpha<=(T+1)/2 and J>=H. For A_min=x in[0,H], B_min=y in[0,J],
+allow x+y=alpha or alpha-1. Relative z=y-x ranges over
+
+    I=[-alpha,alpha]                 if alpha<=H,
+    I=[alpha-1-2H,alpha]             if H<alpha<=J.
+
+These cover all cases since J>=H and alpha<=(H+J+1)/2<=J when H<J;
+if H=J, alpha<=H. When H>0 the interval contains at least3 integers.
+For an offset z, use c=alpha if z=alpha mod2, otherwise c=alpha-1,
+then x=(c-z)/2,y=(c+z)/2. If c=alpha-1, reflect both chains by i->13-i
+and reverse their lists. Their new start sum is T+1-alpha, giving the
+other original odd positive as first join; this is an identity, not an
+appeal to MI201's theorem.
+
+A's possible middle points are x+D,x+E. BOTH orders fail to avoid B's two
+endpoints precisely at
+
+    F0={-S,0,L-S,L},
+    plus {u,u-S} if D=E=u,
+    plus {min(D,E)} if D!=E and |D-E|=S.
+
+Reason: outside F0, only the middle A point can hit a B endpoint; two
+different possible middle points both hit exactly when their difference
+is S. Rich four-gap B has max b_i>=2 and S>=6. Thus D,E>=2.
+For equal D=E=u, L>=S>=6 gives u>=3, and the bad set occupies at most
+two residue classes mod u: no3 consecutive integers. For unequal D,E
+without the extra point, F0's outer spacings min(L,S)>=6 leave at most
+two consecutive bad points. With the extra point v=min(D,E), the sorted
+bad set is {-S,0,v,2v,L}; its spacings are S,v,v,S, all>=2. Hence thick
+I always has a good offset and A order.
+
+Thin H0 means L13, so D!=E; J=T>=2 and I={alpha-1,alpha}.
+Both offsets are in[0,T-1]. F0 meets this interval only at0.
+If alpha1, offset1 avoids F0 and any extra v>=2. If alpha>=2 both offsets
+are positive and outside F0; at most one is the extra point v. Therefore
+one works. Thin J0 is impossible: S13,L>=S would give K>=26, contradicting
+K<=24 from the legal odd bounds. No thick-interval shortcut is used here.
+
+Fix that A and those endpoints. Since L>=S, A's three vertices cannot all
+lie STRICTLY inside B's span S. At most two are proper B-prefix obstacles.
+If two, they must be consecutive A vertices: its two ends cannot both be
+internal to a shorter/equal span. Their separation is D or E, at least
+max b_i. MI204 supplies an avoiding order for rich B (m4,multiplicity<=2).
+One obstacle is avoidable by the single-level swap; none is trivial.
+This proves the conditional completion argument, including repeated gaps.
+
+**Predictions BEFORE code/run.** Exactly six named constructor calls,
+all with actual E28 partitions: halves(2,2,3,4,4,9),p25/q23;
+(2,2,3,4,4,8),25/21 and23/23; (1,2,2,3,3,7),19/17;
+(1,1,2,2,3,3),17/7; (1,1,2,3,3,10),21/19.
+Choose good z by smallest absolute value, tie smaller z first; choose the
+first endpoint-compatible A order from(D,E),(E,D). Materialize B using the
+lexicographically first distinct permutation avoiding proper obstacles,
+at most24 local four-gap orders per call, explicitly not a whole-cycle
+existence solver or profile census. For each, independently enumerate the
+small start rectangle to check the entire I formula, then check exact
+physical move bag, independent folded geometry and both partition validators.
+The frozen B87 artifact's recorded digest must match; its first two named
+profiles must have empty selected admissions and pairs[[23,25]] and
+[[21,25],[23,23]] respectively. No new coverage count follows.
+
+Counterfactual: at equal top gaps(1,1,2,2,3,3),17/7 the ascending B order
+should preserve the full move bag/window but collide at indices3 and6;
+geometry must reject it. The fourth call must exercise TWO proper barriers
+and reflection/odd-owner swap (pre-reflection levels1/4). Unexpected thin
+endpoint check: for the sixth call z3, A order3,10 hits B_min3, while order
+10,3 hits B_max10; BOTH must be rejected although z2 works. This tests the
+extra bad offset, not just F0. Exactly6 actual partitions,1CPU sec/64MiB;
+stop on any mismatch, retain failure, no repair or larger run.
+Gut: a specific pull toward selecting splits with fewer obstacles.
+Reasoned: provisional dependence MI204 remains explicit; MI201 is still
+the sole requested carrying read, nonblocking. No new review request.
