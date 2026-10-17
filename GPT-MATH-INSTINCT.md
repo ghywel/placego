@@ -11657,3 +11657,83 @@ remaining canonical-case gap u in[C,C+2], where MI230 already reaches C
 but MI228 currently needs C+3. Do not automatically loosen the hypothesis:
 the retained u<C collision warns that internal geometry can change. No
 new experiment opened. Research13min active; older held lanes stay held.
+
+
+### MI232 — B103: a real canonical-split obstruction at the smaller margin (2026-10-17 04:12 BST)
+
+**Early reflection / actual steering.** About85 minutes after MI219's
+fresh-choice reflection: the initial push was against mechanically loosening
+one constant and accumulating another case list. The renewed pull is a
+specific obstruction to the ENTIRE fixed split, not just its old formula.
+I would choose this small obstruction fresh. It changes the trajectory:
+capacity can fit while every order/root for that allocation fails, so a
+uniform solution must sometimes change which gaps share a run.
+
+Record searched: u.*C+2|u.*C+1|canonical.*separation|small.*margin.*collision,
+then2,2,5,5,7|four.consecutive.*bad|canonical.*every.*order ->unrelated
+record hits and MI230/231, no prior result for this named fixture. Read
+MI226's smaller-unit control, MI228's margin use and MI230's forced scope.
+This is a bounded falsification of the weakening being considered, not a
+new theorem about all five gaps or a novelty claim.
+
+**Hand obstruction before computation, SKETCH.** Take M28,h13 and
+ d=(2,2,5,5,7),C4,u=C+1. The canonical split is (5,5)/(2,2,7),
+loads10/11, spare capacities3/2. In relative coordinates its chains are
+A={0,5,10} and B one of
+
+ {z,z+2,z+4,z+11}, {z,z+2,z+9,z+11}, {z,z+7,z+9,z+11}.
+
+Across the WHOLE feasible offset range[-3,2], every order collides exactly
+at z in{-2,-1,0,1}; all three orders avoid at z=-3,2. At -2, the first
+two orders hit A0 and the last hits A5; at -1 all hit A10; at0 all share
+a minimum; at1 the first hits A5 and the other two hit A10. Thus the
+universal bad set contains FOUR consecutive integers, rather than the
+two endpoint offsets used in the separated-family proof.
+
+For positive pair17/25, the original first-positive root sums are1 or5.
+The fitting roots have offsets+1,-1,-1, all bad. The entire canonical
+allocation therefore fails, even with all orders. To avoid a parity-role
+shortcut, also reverse which group belongs to A and B: its feasible offset
+range[-2,3] has the negated bad set{-1,0,1,2}; original root sums1/5 give
+only offsets-1,+1,+1, again all bad. This is a genuine fixed-allocation
+obstruction, not a failure of MI228's chosen formula or a nonexistence claim.
+
+An alternative split works: A gaps(2,7),B gaps(5,2,5). For the three
+positive pairs17/25,19/23,21/21, let alpha=(27-max(p,q))/2 in{1,2,3},
+croot=min(alpha,2),preA=(croot,croot+2,croot+9),preB=(0,5,7,12).
+Reflect/reverse both chains in13 if croot=alpha-1. This gives three explicit
+original-bag certificates, not an all-parameter extension of MI230:
+its opposite-spare-capacity premises do NOT hold for this allocation.
+
+**Preregistration BEFORE experiment.** Match frozen B87 input SHA256
+3b53cad88d8f0930397f545953dbad8b3a2a38adc7e37242bd90641a9ad885d0.
+The named profile should be in its OLD residual with exactly the three
+positive pairs above; no new residual filtering/count or input grid.
+Enumerate the COMPLETE fitting canonical root rectangles, all3 distinct
+short-group orders and BOTH parity-role assignments, only for this fixture.
+Predict72 total root/order cases (36 per parity assignment); within them,
+original-positive candidate counts18/30/18 and valid counts0/6/6 for the
+three pairs. The full universal bad offset sets must agree with the hand
+sets above. Direct index intersections, physical move bags and BOTH literal
+geometry validators must agree. A separate hand-expanded list of the
+three normalized B shapes must match permutation generation exactly.
+
+Make exactly3 actual E28 partitions using the explicit ALTERNATIVE split
+formula, one baseline112 owner7 and both full partition validators. At
+alpha3 reflection is essential: intermediate23/19 differs from21/21;
+omitting it must preserve geometry but fail the original bag. For17/25,
+naive canonical A=(1,6,11),B=(0,7,9,11) has the exact original bag/window
+but shared11; reject it. No complete-cycle solver or other allocation search.
+
+Unexpected lattice check: scale ALL negative halves AND h by2, then keep
+legal odd positives via51/33 (not the even literal doubles50/34).
+At M54,d=(4,4,10,10,14),canonical A=(0,10,20),B=(1,5,9,23) should WORK.
+The same load/capacity ratios therefore do not preserve this obstruction;
+the odd root lattice and small absolute gaps matter. This is one named
+geometry check, not a scaling theorem or a larger-domain scan.
+
+Cap72 canonical cases,3 alternative formulas/3 E28 partitions,1 scaled
+geometry control,2CPU sec/64MiB. Stop any mismatch, retain it; no repaired
+counterexample, relaxed claim or new carrying-read queue. Current review
+priority remains MI228+MI230 at0a0a0d44, nonblocking. This addendum will
+show why its margin hypothesis must not be casually dropped.
