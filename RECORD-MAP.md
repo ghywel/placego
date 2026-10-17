@@ -778,3 +778,5 @@ PART: as on the board.
 - Special pool[0,V] minus{1,v},three sizes>=4:individual feasibility suffices via zero-owner budgets and G315,hand PROOF-SKETCH G317/MI351. Min3 counterexample retained,targeted review pending,no run.
 
 - Zero-owner budgets extend to initial gap L2..5,minsize4;explicit spectrum inheritance gives one-hole4 singleton slack1 all q/slacks1..4 q>a,hand SKETCH MI352. Interior minimum4 criterion OPEN,no run/new review job.
+
+- Known pair-completeness plus sliding/fixed-prefix windows certify all scalar sums12 from extremes for three-hole pools,min(r,t)>=4,hand application MI353/PRIOR-ART. Legal-pivot positive-suffix two-hole3 branch closes at residual sizes>=12;general compatibility OPEN,no run.

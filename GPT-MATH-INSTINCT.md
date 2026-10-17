@@ -87,20 +87,24 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 23:40 BST:** B180/MI352 extends the
-UNREVIEWED zero-owner budgets to R={0} union([L,V] minus w),
-2<=L<=5,three sizes>=4. Residual scalar spectra have only
-outer distance1 omissions. This gives a hand boundary candidate
-for one-hole FOUR bins:all singleton slack1 cases,and slacks
-h=1..4 when the original hole lies above the selected size.
-All-union ACTUAL feasibility is inherited explicitly. G317's
-original statement/review request is unchanged;the new extension
-is not independently reviewed. No experiment,new PROOFS entry
-or additional review queue. The uniform-minimum4 INTERIOR
-all-union criterion is OPEN;MI350's minimum3 negative remains.
-Next inspect the interior first-bin obstruction,not an automatic
-higher-slack ladder or census. G315/G316 stay PROVED in scope;
-E28/L8 OPEN;13min ACTIVE.
+**Current state,2026-10-17 23:55 BST:** B181/MI353 changes the
+interior approach from exhaustive three-hole spectra to a known
+adjacent-pair completion method,derived in PRIOR-ART.md. For
+h<r deletions and n>=2r available values,sliding2r-pair windows
+certify an explicit CENTRAL interval of r-sums. A legal first
+bin on a two-hole pool leaves<=3 holes;the smaller residual
+size>=4 can be completed whenever its target lies in that band.
+An unequal-size interior literal partition is written down.
+General two-hole3/min4 and one-hole4/min4 compatibility stay
+OPEN;first-bin selection and targets outside the band remain.
+No experiment,new PROOFS entry or review job. G317 still awaiting
+its existing targeted read;G315/G316 unchanged,E28/L8 OPEN.
+A fixed-prefix refinement gives a uniform buffer D3=12 for
+three-hole scalar interiors;the generic legal-pivot branch with
+positive suffix and remaining sizes>=12 therefore completes.
+Smaller residual sizes and missing pivots remain. Next refine
+the pairing at fixed first-bin sum,not assume boundary freedom.
+13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -23593,3 +23597,195 @@ MI350 minimum3 negative retained;every new claim unreviewed.
 Gut:the trajectory adjustment has produced a useful mechanism.
 Reasoned:an explicit hand boundary reduction,with the central
 compatibility problem still real.13min ACTIVE,E28/L8 OPEN.
+
+
+### MI353 — B181: a known pairing method opens a central region without a gap catalogue (2026-10-17 23:55 BST)
+
+**Known-method hand application,not a generic compatibility theorem.**
+Full finite coin proof and paired-window calculation are filed in
+PRIOR-ART.md under Adjacent-pair subset-sum completion. No new
+PROOFS entry,review request or experiment. G317's existing request
+is unchanged and none of its unreviewed premises is needed here.
+
+Question claimed:generic two-hole THREE-bin compatibility at
+minimum4 is an interior obstruction for the one-hole four-bin
+minimum4 question. I first considered proving a complete
+three-hole scalar gap catalogue. That is still unproved here;
+no assumption that all its gaps are within3 of the ends is
+used. The pull shifted to whether central completion could be
+certified without answering that harder scalar question.
+Relief at a shorter representation,alongside uncertainty about
+its reach. This is a real trajectory change,not a larger h.
+
+Record searched:`two.hole|two.deletion` AND
+`three.bin|three.group|compatibility`:16 hits/4 files,relevant
+MI336/349-352 and G315. Primary search queries were restricted
+subset sums/dense intervals/deletions/holes. Read Károlyi,
+CWI PNA-R0801,[primary PDF](https://ir.cwi.nl/pub/13654/13654D.pdf),
+printed pages1-5,introduction and Lemmas6/7 with proofs. The
+paper's n>=89 balanced theorem is NOT applied to our small
+pools. The finite signed-sum/coin-completeness METHOD supplies
+the useful calculation;read scope is recorded in PRIOR-ART.
+No novelty or literature-absence claim. Cloud flags unchanged.
+
+**Bounded hand test.** Seek a central interval certificate for
+an arbitrary pool with three holes and subset/complement sizes
+at least4,or an exact countercontrol to that certificate. Stop
+at its actual central band,not a claim about every scalar sum.
+Unexpected check:remove the strict h<r condition in the PAIRED
+recipe while retaining an actual subset witness,so a failed
+recipe is not confused with a nonexisting sum.
+
+**Calculation in brief.** For an ordered pool z_0,...,z_(n-1)
+with at most h deletions from an integer interval,take any2r
+consecutive AVAILABLE values and pair adjacent ranks. Each pair
+offers a positive difference e_i. The number of missing integers
+inside those disjoint gaps is sum(e_i-1)<=h. If h<r,the
+known coin-completeness induction gives every subset sum of
+the e_i between0 and their total. Thus choosing one value
+from each pair gives a FULL interval[K_j,H_j],whose endpoints
+are respectively the even/odd ranks in that window.
+
+For completeness,the finite criterion's only obstruction would
+be a first sorted coin exceeding1+the preceding total. After k
+coins,every remaining coin would then be>=k+2,requiring at
+least(r-k)(k+1)>=r total excess over1,contradiction. This
+is a known elementary argument,reproved in PRIOR-ART,not a
+new theorem filing. Sliding the window ONE available rank
+makes its new lower endpoint exactly the previous upper
+endpoint. Therefore all those intervals meet and certify
+
+ [sum(z_(2i):i<r),
+  sum(z_(n-2r+2i+1):i<r)] subset Sigma_r(pool).
+
+When n2r this band is symmetric about half the TOTAL and
+has width sum(e_i)>=r. For arbitrary n>=2r it remains an
+explicit central band;no symmetry about total/2 is claimed.
+If the desired smaller-bin sum lies inside it,choose its pair
+values in the appropriate window,and take the whole remaining
+pool as the other bin. These are actual disjoint selections.
+
+**Interior first-bin use.** Start with ANY two-hole interval
+pool P and prescribed three-bin targets/sizes. If its first
+bin A is a LEGAL prefix/suffix/pivot recipe of its prescribed
+size and sum,then R=P minus A is an integer interval with
+at most3 deletions. For b,c>=4,put r=min(b,c),n=b+c.
+Here h<=3<r,so the displayed central band of R is a sufficient
+certificate for the smaller-bin target. This argument does
+not need G317 and is not a near-singleton slack theorem.
+It deliberately does NOT assert that a legal first-bin recipe
+always exists:its formal pivot may be one of the two absent
+values. Nor are original rank bounds asserted to put the target
+inside this narrower central band. Those are live selection
+obstacles,not hidden hypotheses.
+
+**Unequal-size literal hand control with interior holes.**
+Take P=[0,14] minus{4,9},sizes(4,4,5),targets(15,33,44),
+total92. Choose A={0,1,2,12},a legal prefix/pivot recipe.
+Its actual remainder is
+
+ R={3,5,6,7,8,10,11,13,14}.
+
+It is[3,14] with4,9,12 deleted. Here n9,r4. First-window
+lower sum is3+6+8+11=28;last-window upper sum is
+6+8+11+14=39. Thus the CENTRAL band contains33. Using
+the first window,adjacent-pair differences are2,1,2,2.
+Its lower sum28 needs increment5=2+1+2,which yields
+
+ B={5,7,10,11},sum33;
+ C={3,6,8,13,14},sum44.
+
+Together with A these cover P exactly. The first-bin lower
+slack is15-6=9,not the earlier h<=4 band;the two ORIGINAL
+holes are interior. Unequal b,c are used,so a balanced-half
+shortcut has not been silently applied. This is a hand witness,
+not an enumerated-domain result.
+
+**Unexpected strict-bound negative for the RECIPE only.**
+R={0,2,3,5,6,8,9,11} has h4,r4. Its adjacent differences
+are all2,so the fixed paired recipe gives only even sums
+18,20,22,24,26 and misses21. An actual FOUR-set{0,2,8,11} nevertheless has sum21,
+and its complementary four-set{3,5,6,9} has sum23.
+Thus dropping h<r breaks the claimed full paired interval,
+but does NOT refute actual scalar or two-bin feasibility.
+The retained mismatch is intentional and can falsify a
+rank-only or convex-hull-only reading of the recipe.
+
+**What changed and exact remainder.** The scalar-centre part
+of the interior question now has an explicit cheap certificate
+from a known method. A full three-hole gap classification is
+not required in that region. Generic two-hole3/minimum4
+compatibility and one-hole4/minimum4 compatibility remain OPEN;
+this is not a proof of either. A niggle changes the next step:
+the end-supported first-bin recipe usually has NO boundary
+freedom at fixed moment. Its consecutive extreme-count ranges
+meet only at the same actual set. I must not promise a
+moment-preserving boundary move inside that recipe. Instead,
+keep the first bin fixed and vary the PAIRING certificate.
+The refinement below does this without a census or review wait.
+
+**Fixed-prefix pairing reaches a uniform scalar interior.**
+Assume r<=t=n-r. For k=h+1,...,r,fix the first r-k available
+values,and pair sliding2k-windows after them. The coin excess
+is still<=h<k. This gives full intervals[A_k,B_k],with
+
+ A_k=sum(z_i:i<r-k)+sum(z_(r-k+2j):j<k),
+ B_k=sum(z_i:i<r-k)+sum(z_(n-2k+2j+1):j<k).
+
+A_(k+1)>A_k by k positive adjacent gaps. B_(k+1)-B_k
+=z_(n-2k-1)-z_(r-k-1)>0. For their join,cancel the common
+prefix through rank r-k-1;the remaining indices in B_k are
+n-2k+1+2j,those in A_(k+1) are r-k+1+2j,j<k.
+They differ by t-k>=1,so B_k-A_(k+1)>=k(t-k)>0.
+All ranges join. Reflected ranges join from the upper end;
+both families contain the ordinary central paired-window band,
+so they overlap. No convex hull replaces a missing inner value.
+
+For k=h+1,A_k differs from the actual r-minimum by T(k)
+from unit rank spacings,plus at most h*floor(k/2). The latter
+bound follows by counting alternating selected versus initial
+consecutive ranks ABOVE each missing-value gap:the maximum
+excess count is floor(k/2). All earlier prefix values cancel.
+Consequently every integer in
+
+ [min_r+D_h,max_r-D_h],
+ D_h=T(h+1)+h*floor((h+1)/2),
+
+is available. The same construction reflected gives the upper
+endpoint bound. For h3 this is D3=6+3*2=12,independent of
+pool size or hole locations. It is deliberately COARSE,not
+the unproved claim that all gaps are within3 of the ends.
+The full derivation is attached to the known method in PRIOR-ART;
+no additional theorem filing or novelty claim.
+
+**Concrete use in the claimed interior branch.** In a generic
+two-hole THREE-bin pool,choose the globally least singleton
+slack and orient it lower,as in the verified rank selection
+argument. If its actual first-bin recipe has a LEGAL pivot
+and a positive high suffix of k>=1 tokens,its remainder has
+at most3 holes. The protected original bound F_r exceeds
+the actual residual minimum by at least k*r (ordered-rank
+argument,unchanged by the second original hole). If BOTH
+remaining bin sizes are>=12,the lower and complementary
+upper margins are>=12. The desired smaller-bin target lies
+inside the new certified scalar interior,and completes.
+
+This is a known-method hand closure of one named interior
+branch,not the generic theorem. It uses no pending G317 step.
+The first-bin pivot may still be absent,and the case with
+zero suffix or a remaining size4..11 is not covered by this
+coarse bound. Next cheap hand test:use the ACTUAL pair-gap
+counts in that small residual range rather than require the
+worst-case h3 for every window. No automatic parameter sweep,
+full gap catalogue assertion or larger census is authorized
+by this paragraph. G317's review can proceed separately.
+
+Gut:interest in replacing a growing hole-case tree by a single
+certificate. Reasoned:known-method central coverage and a real
+interior completion,with selection/generic compatibility still
+missing. Niggle sweep:holes counted inside disjoint pair gaps;
+positive coin differences and strict excess bound;window joining
+uses AVAILABLE ranks;four-set counts in the negative;unequal
+complement recovered from TOTAL;actual first bin legal;fixed first-bin moment gives no assumed
+boundary freedom;pairing-family joins and rank counts checked;
+no full spectrum or independent-review claim.13min ACTIVE,E28/L8 OPEN.

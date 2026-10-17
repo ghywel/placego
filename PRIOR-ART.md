@@ -3712,3 +3712,96 @@ arbitrary-target four-bin theorem in this bounded search. NOT FOUND
 here is not absence from the literature. The rejected general-k
 sufficiency source2312.00089v1 remains rejected at MI311;no result
 from it is imported. The current candidates remain PROOF-SKETCH.
+
+
+## Adjacent-pair subset-sum completion (2026-10-17 23:55 BST;MI353)
+
+**Known method,reproved here;local application hand/unreviewed.**
+Read Károlyi,[Balanced subset sums of dense sets of integers](https://ir.cwi.nl/pub/13654/13654D.pdf),
+CWI report PNA-R0801(2008),introduction/Theorems1,3,Corollary4,
+and Lemmas6/7 with their proofs (printed pages1-5,not a full
+read of the paper). The signed-sum completeness method in
+Lemma7 is relevant. The paper's larger density results have
+large-size hypotheses;none is invoked as a small-pool theorem.
+No novelty claim for the elementary completion method below.
+
+**Finite coin criterion,known,reproved here.** Let e_1,...,e_r
+be positive integers with sum(e_i-1)<r. Their subset sums fill
+all integers0..sum(e_i). Sort the e_i. The usual interval
+induction starts at0 and extends through the next coin e if
+e<=1+sum(previous coins). If its first failure occurs after k
+coins,then each of the r-k remaining coins is>=k+2. Hence
+
+ sum(e_i-1)>=(r-k)(k+1)=r+k(r-1-k)>=r,
+
+contradiction,including k0. Thus there is no first failure.
+This elementary induction is a proof of the finite criterion,
+not a new density theorem or an asymptotic estimate.
+
+**Application to a pool with few deletions.** Let z_0<...<z_(n-1)
+be an integer interval with at most h values removed. Let
+h<r and2r<=n. For every window of2r consecutive AVAILABLE
+values,starting at rank j,put
+
+ K_j=sum(z_(j+2i):0<=i<r),
+ H_j=sum(z_(j+2i+1):0<=i<r),
+ e_i=z_(j+2i+1)-z_(j+2i).
+
+The disjoint pair gaps contain at most h deleted integers,so
+sum(e_i-1)<=h<r. Choosing one actual value from each pair
+therefore realizes EVERY integer in[K_j,H_j],by the criterion.
+Consecutive windows meet EXACTLY:K_(j+1)=H_j. Consequently
+
+ [K_0,H_(n-2r)] is contained in Sigma_r({z_i}).
+
+This is a central interval,NOT a full scalar-spectrum formula.
+For n2r,its endpoints sum to the total pool sum and its width
+is at least r;any two targets of total sum(z_i) and difference
+at most r can thus split into r values each. The more precise
+criterion is that one target lies inside the displayed actual
+interval. All values are used at most once because the pairs
+are disjoint;the complement gives the other bin.
+
+**Interior use and limit.** A legal prefix/suffix/pivot first
+bin from an original two-hole pool leaves at most three holes.
+If the other sizes b,c>=4 and r=min(b,c),the displayed interval
+is a sufficient completion certificate for the smaller-bin target.
+It does not prove that such a first-bin recipe always exists,
+or that every permitted target lies inside this central interval.
+At h=r the paired recipe may fail even while the actual subset
+sum exists:MI353 retains a literal example of that distinction.
+No PROOFS entry or independent carrying-read request for this
+known-method application;generic compatibility remains OPEN.
+
+**Fixed-prefix refinement of the same method (MI353).** Write
+r<=t=n-r and h<r. For each k=h+1,...,r,fix the first r-k
+available values. Pair sliding windows of2k in the remaining
+pool. This certifies an entire interval[A_k,B_k],where
+
+ A_k=sum(z_i:i<r-k)+sum(z_(r-k+2j):j<k),
+ B_k=sum(z_i:i<r-k)+sum(z_(n-2k+2j+1):j<k).
+
+The coin excess is at most h<k. Moreover A_k increases with
+k,B_k increases with k,and B_k>=A_(k+1):after cancelling the
+common low prefix,the k high indices in B_k are t-k ranks
+above the corresponding indices in A_(k+1). Thus these
+intervals join. Reflect the construction for the upper end;
+the two families overlap on the original paired-window band.
+They jointly contain every r-sum between A_(h+1) and its
+reflected upper counterpart.
+
+Relative to the actual r-minimum,the endpoint A_k increases
+by T(k)=k(k-1)/2 from unit rank spacings. Each missing integer
+adds at most floor(k/2):count how many selected alternating
+ranks versus initial consecutive ranks lie above its gap.
+Therefore,with
+
+ D_h=T(h+1)+h*floor((h+1)/2),
+
+all integer sums in[min_r+D_h,max_r-D_h] occur. This is a
+known-method hand deduction,not an optimal bound or a full
+spectrum catalogue. At h3 it gives D3=12,independent of r,t.
+The source's asymptotic density theorem is still not invoked.
+
+If the coarse buffer endpoints cross,the interval assertion is vacuous;
+the actual paired-window band remains available in small pools.
