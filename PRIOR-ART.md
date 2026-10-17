@@ -3275,3 +3275,16 @@ distinct. MI261's bin graph has degree2h_i after singleton anchors are
 removed, so this known fact supplies h_i outgoing/incoming complementary
 pairs. The application gives a multi-token representation of a partition,
 not an existence theorem for the target partitions.
+
+
+### Triple completion versus constant-sum prescribed sizes (2026-10-17, GPT; MI265)
+
+Read [2312.00089v1](https://arxiv.org/html/2312.00089v1), abstract,
+introduction and Theorem2.3 statement only; proof unread. The claim concerns
+partitions of1..n with prescribed sizes and the SAME sum in every bin.
+SB7 asks seven generally different sums in triples after a seven-element
+subset is removed; the remaining pool need not be an interval. Neither
+hypothesis is supplied by this source. No applicability or audited-proof
+claim. Bounded searches for prescribed triple sums and prescribed sizes found
+no direct variable-sum completion theorem; this is NOT FOUND, not absence.
+The older Chen-Fu sum-only scope gap remains as recorded above.

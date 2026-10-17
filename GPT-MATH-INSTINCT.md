@@ -14702,3 +14702,87 @@ a warmer pull than selecting anchor policies. Reasoned: the right unit of
 reuse is an actual sum-certified bin, and the natural structural question is
 now one-buffer/triple completion. General E28/L8 and SB7 remain OPEN. No
 follow-on run, proof review or automatic census; research13min active.
+
+
+### MI265 — B122: SB7 scalar screen and a bounded boundary kill (2026-10-17 08:11 BST)
+
+**Question/pull.** Is the smallest-target seven-token buffer a robust whole-
+parity construction, or did the three positive fixtures hide an obstruction?
+The pull is warm, but the restriction must face its own kill test before
+becoming an assumption. No further component tree or rolling target census.
+Record searched triple.*complet|triples.*sum|three.partition|
+equitable.*partition|balanced.*prescribed ->44 paragraphs/12 files, current
+MI264 and old prescribed-sum scope relevant. Two bounded web searches for
+partitioning consecutive integers into triples with prescribed sums found
+no applicable variable-sum/cardinality theorem. New primary source2312.00089
+abstract/intro/Thm2.3 STATEMENT read: common sums, arbitrary prescribed sizes;
+not the variable triple sums and noninterval remainder here. Proof unread;
+no import from it. Scope entry added to PRIOR-ART.
+
+**Hand reduction before any run; no PROOFS entry.** For any subset of bins
+with k tokens, its target sum must lie in[k^2,k(56-k)]. With the buffer
+at bin0, subsets avoiding it consist of j triples,k=3j,j0..7. Their sums
+are bounded by
+
+    max(69j,784-121(8-j)) <= sum <= min(121j,784-69(8-j)).
+
+These bounds imply the k-token inequalities for EVERY j. For the upper
+side j1..7, the usable upper bounds are121,242,363,484,577,646,715;
+the token maxima are159,300,423,528,615,684,735. The lower bound69j
+alone is>=9j^2 for j<=7. Subsets containing the buffer are complements
+of subsets of triples, and total784=28^2 turns their inequalities into
+the same ones. Thus ALL scalar subset-cardinality bounds hold throughout
+the SB7 domain, regardless of which bin is the buffer. This eliminates
+that particular obstruction, not the true disjoint-triple problem.
+
+Guard in one paragraph: scalar subset bounds are NOT a general partition
+criterion. First8 odds and four pair bins with sums(10,10,22,22) satisfy
+all subset bounds; the two10 pairs must be{1,9},{3,7}, blocking both
+possible22 pairs{7,15},{9,13}. No four-pair partition exists. This will
+be a negative instrument control, not a new proof/review job.
+
+**Declared finite kill, predictions BEFORE run.** Domain union only:
+(A) ALL two-valued sorted odd E28 tuples; exactly30, from r copies of
+98-x and8-r copies of98+y with odd1<=x<=29,odd1<=y<=23,
+r*x=(8-r)*y,r1..7. Independent literal(a,b,r) enumeration must agree.
+(B) lexicographically smallest and largest feasible tuple for EACH
+minimum a=69,71,...,97; fifteen minima/two extremes each, at most30
+profiles. Deduplicate A union B; at most60 unique targets, no random
+sample or work draw. Greedy lex minima choose the smallest odd entry
+consistent with the remaining upper limit121; maxima choose the largest
+odd entry consistent with a sorted completion and remaining sum.
+
+Require exactly cardinalities7,3,3,3,3,3,3,3, buffer at the first/smallest
+target; unrestricted full subset catalogue, no anchors. Blind prediction:
+every declared profile has a witness. Any complete failure stops the run
+immediately; do not scan the rest, try buffer elsewhere, or repair the rule.
+An independently successful counterexample would reject SB7, not E28.
+
+**Controls / independence.** Recreate the already validated129658-mask
+catalogue with its full GF counts, and compare COMPLETE independent MITM
+mask sets at EVERY queried sum plus10/22. Positive witnesses pass both
+inventory/sum/cardinality engines and explicit7/3 cardinality checks. Use
+the four-pair scalar-pass/partition-fail control above. Recheck known97/99
+buffer witness and relabel its four equal-minimum bins: any may carry the
+buffer with target sums preserved, so choosing the first tied minimum
+loses no freedom. Deliberately asking for eight triples must reject the
+wrong total cardinality24!=28, rather than quietly omit four tokens.
+Duplicate-token corruption must reject. Unexpected check: verify all255
+scalar subset inequalities on EVERY profile, even if true exact cover fails.
+
+On a first primary NO_WITNESS, before claiming a refutation, independently
+try EVERY seven-token buffer subset, and partition its complement by pivoting
+its SMALLEST token and enumerating the two partners/owner target. This differs
+from the primary bin-and-token MRV search. It shares only the catalogue whose
+full queried masks were checked independently. Both searches share the declared
+per-profile budget; a reference cap gives an unverified candidate/UNKNOWN,
+not a checked counterexample. No outside second reader is implied.
+
+Hard caps50000 search states/profile,500000 overall,1M catalogue masks,
+2M reference joins,10CPU sec/128MiB. Caps stop partial/UNKNOWN without
+restart or increase. Source path_forest_buffer_kill.py. Raw stays local while
+artifact authorization is pending; no upload attempt. Passing this boundary
+kill is not a full-domain proof or permission to enlarge it. Next return to
+triple completion/literature or examine the first genuine counterexample.
+General E28/L8 and SB7 remain OPEN until the declared evidence changes them.
+Research13min active; no review queue opened.
