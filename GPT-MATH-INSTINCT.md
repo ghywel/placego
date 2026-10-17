@@ -10865,3 +10865,85 @@ choose its missing inference. Do not automatically generate another family
 or rerun an existence census. No follow-up experiment opened here. MI214
 stays the sole carrying-read priority; send READ-LEDGER only. Portal start/
 end checkpoints agree, research13min continues, old held lanes stay held.
+
+
+### MI222 — B98: use the frozen low-count frontier to choose the next inference (2026-10-17 03:17 BST)
+
+**Question/pull.** Which lowest-count B87 residuals genuinely remain after
+our current arguments? The pull is toward a smaller exact obstruction,
+rather than automatic extension of the repeated-gap families. Record searched:
+residual.*N4|N4.*residual|four.*negative.*halves|six.vertex.*criterion ->no
+hits; B87's source, MI201/204/206 and current repeated-gap statements read.
+No new literature result or novelty claim. This block restricts the frozen
+B87 residual to N3/N4; no input-grid regeneration or existence census.
+
+**One derived admission, hand SKETCH conditional on MI204's rich case.**
+For M=2n,h=n-1, FOUR halves d sorted, largest D and smaller triple B total S,
+assume h<K=D+S<=2h-2, D<=h,S<=h, legal positive odd joins. Suppose B is
+nonconstant and does not contain a repeated1. Then isolating D suffices.
+Set H=h-D,J=h-S,T=H+J,alpha=(2h+1-max(p,q))/2; T>=2.
+Use root sums alpha or alpha-1 and the consecutive offset interval I of
+MI220 (the elementary interval algebra, not its forced-capacity theorem).
+A has two vertices x,x+D; B's fixed endpoints are y,y+S, z=y-x.
+Endpoint failures are F0={-S,0,D-S,D}. Since K>h, -S<-H and D>J, so the
+ENTIRE feasible bad endpoint set is only {0,d0},d0=D-S=J-H.
+
+If B's three steps are distinct, MI204 avoids any two proper barriers
+separated by D>=max B; one barrier is avoided by its boundary swap.
+Thus only0/d0 remain. If B is (b,b,t), b>=2,t!=b, MI206's independent
+arithmetic classification adds exactly
+
+    {z: d0<z<0, b divides z} if D=t mod b.
+
+Otherwise there is no extra obstruction. In the congruent case d0 is itself
+a multiple of b since S=2b+t. For d0<0 the ENTIRE bad set is therefore
+multiples of b in[d0,0]; for d0>=0 it is just0/d0. It never covers three
+consecutive integers (b>=2). Every thick I has>=3 consecutive candidates.
+At H0, I={alpha-1,alpha} and0<alpha<J, so alpha avoids0/d0 and there are no
+internal two-barrier obstructions. At J0, I={-alpha,1-alpha}; for distinct/
+incongruent B take-alpha strictly between-H and0. For a congruent pair,
+at least one of those two consecutive integers is not a multiple of b.
+Choose from the first3 thick candidates or the two thin candidates, then
+choose c by offset parity, x=(c-z)/2,y=(c+z)/2. Reflect/reverse when
+c=alpha-1. Order the THREE B-gaps to avoid proper A-levels. This is the
+uniform inference that admits an isolatable four-gap profile, not a proof
+for every N4 profile; S<=h and b>=2 are carrying hypotheses.
+
+**Predictions BEFORE audit/run.** Read the frozen B87 artifact only after
+matching SHA256 3b53cad88d8f0930397f545953dbad8b3a2a38adc7e37242bd90641a9ad885d0.
+Its old residual contains156 N3 and180 N4 positive-pair questions. Tag only
+these residual records using MI201(N3), MI218(one exception), MI214/220
+(two larger exceptions relative to a repeated s>=2), and the new isolated-
+largest admission above(N4). Every new tag is SKETCH, not independently
+PROVED coverage. N3 should all be admitted. N4 should retain a nonempty
+residual. Predict the first N4 profile before the new isolation rule is
+(1,4,4,5),K14,pairs3/25,5/23,7/21,9/19,11/17,13/15. After all these tags,
+predict the first remaining profile is(1,4,9,9),pairs21/25,23/23.
+These are falsifiable steering predictions; stop on mismatch, retain it,
+no revised filter or expanded range in this block.
+
+Independent controls: classify one/two-exception tags both by value counts
+and by explicit exception-index choices, agreeing on EVERY frozen low-N
+record. Check two-bin capacity by direct subset sums. On the named already-
+admitted(4,4,4,5) control, one-exception and two-larger-exception tags BOTH
+apply; totals must use their UNION, not sum tag counts. No unsupported
+extension of MI220's forced-case premise is used; its union criterion is
+invoked only within its recorded larger-exception scope.
+
+For EVERY frozen N4 question admitted by the new isolation rule, materialize
+the selected two chains and check the full original bag, owner, window and
+both literal geometry validators. At most180 such questions. At most6 local
+B permutations per call realize prefix avoidance, not a whole-cycle solver.
+No fresh root oracle or bigger arithmetic domain. Make exactly ONE actual
+E28 partition on(1,4,4,5),p7/q21; append TWO zero-move baseline112 owners,
+not fictitious negative edges, and use the existing materializer and both
+partition validators. Actual positive owners are unchanged by baseline bins.
+
+Countercontrol: same profile p21/q7,A=(1,6),B=(2,6,10,11) retains the full
+bag/window but shares index6; geometry must reject. First predicted survivor
+(1,4,9,9) must refuse the isolated rule because S14>h13, while ordinary
+bins(1,9)/(4,9) fit10/13. This is an admission obstacle, not nonexistence.
+Caps frozen N3/N4 residual only,<=180 new formula calls,1 actual E28
+partition,2CPU sec/64MiB. Stop any disagreement, no repaired census or extra
+review request. Gut: a focused pull toward the first missing SIX-vertex
+selection step. MI214 stays the sole requested carrying read, nonblocking.

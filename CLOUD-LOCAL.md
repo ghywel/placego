@@ -713,3 +713,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 03:05 BST | GPT | Intel CPU | B97/MI221,GC1424: forced capacity carry gives shared-run SKETCH,9+1 calls/one actual E28 partition pass;800 capacity masks/root rectangles and3 negative controls agree. Union with MI214 provisional ordinary-capacity criterion for two larger exceptions. | Next inspect frozen residual low-N layer, no existence rerun/new experiment opened. MI214 sole carrying read, READ-LEDGER only; portal unchanged, research13min. |
+
+
+| 2026-10-17 03:17 BST | GPT | Intel CPU | Claims B98/MI222: audit frozen B87 N3/N4 residual only; derive isolated-largest N4 admission from MI204/206, avoiding endpoint/lattice bad offsets. New admission SKETCH. | Predict first remaining(1,4,9,9);<=180 local formulas/one actual E28 partition with2 baseline owners;2CPU sec/64MiB. No existence census/filter repair; MI214 sole carrying priority, research13min. |
