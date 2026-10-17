@@ -12492,3 +12492,115 @@ N5/E28/L8 is OPEN. Next cheap inference: whether a comparable prefix
 graph settles the remaining equal-short region u<2s, rather than run
 another arbitrary-family census. No next experiment opened. Research13min
 continues independently; older held lanes stay held.
+
+
+### MI240 — B107: two infinite obstructions at a thin equal-short root (2026-10-17 05:04 BST)
+
+**Actual steering.** The initial pull was to carry the equal-short argument
+below u=2s. Unease: a root interval with only TWO offsets cannot use a
+three-consecutive escape argument. Following that unease gives two
+infinite canonical obstruction families, not another finite exception
+list. Delight is attached to their uniform repairs. This block resolves
+that thin-root obstruction before attempting a general low-middle claim.
+
+Record searched: equal.*short.*small|u<2s|one.*partner.*prefix ->0 hits;
+5s-1|4s.1.*6s.3|thin.*equal.*middle ->0 hits,including ledgers.
+Read MI234/236's interval assumptions and MI238/239's scope. Their
+u>=2s/equal-short exclusions matter; the calculation below does not
+refute a stated theorem. No literature novelty claim.
+
+**Precise family / hand classification BEFORE computation, SKETCH.**
+Take s>=2,s<t<2s,w=t+s,h=t+3s,M=2(h+1),negative halves
+(s,s,t,t,w). The largest is nonisolatable since h<2s+2t iff s<t.
+Canonical loads L=2t,S=2s+w=h fit, with H=h-L=3s-t,J=0.
+Put r=2s-t in{1,...,s-1}; H=s+r>=3,K=3(s+t).
+ALL legal positive pairs p<=q are parameterized by
+
+ 1<=alpha<=ceil(H/2), p=4t-1+2alpha,
+ q=2t+6s+1-2alpha, p+q=2K.
+
+In the canonical allocation, relative A={0,t,2t},B has the three
+orders of(s,s,w). The exact universally bad feasible offset set is
+
+ U={-H,-s,-r,0} on[-H,0].
+
+This follows directly from the three minimal prefix-hitting pairs:
+the endpoint collisions are -H,0; w-s=t supplies the proper-prefix
+collisions -s,-2s,t-2s,t-s, of which only-s,-r are feasible.
+Here -2s<-H and t-s>0. With J=0, the representative root interval
+is ONLY I={-alpha,1-alpha}. Both offsets are bad exactly in these
+two cases:
+
+ F1: r=1, t=2s-1,alpha=1,h=5s-1,
+     p=8s-3,q=10s-3;
+ F2: t=s+1 (s-r=1),alpha=s,h=4s+1,
+     p=q=6s+3.
+
+Proof of exhaustion: alpha<=ceil(H/2)<H excludes the far endpoint-H.
+The only adjacent pairs among the remaining bad offsets are(-1,0)
+when r=1, and(-s,-r) when s-r=1. The first forces alpha1; the
+second forces alpha=s, which is allowed exactly at H=2s-1.
+At s2,t3 the two profile conditions coincide but their positive pairs
+are DIFFERENT:13/17 and15/15. No duplicate family count or contradiction.
+Every other pair has a free one of the two offsets, hence a safe order
+of the same three canonical B shapes. Select by parity/root sum and
+reflect/reverse BOTH chains if root sum alpha-1, retaining ownership.
+
+**Uniform repairs for ALL s>=2.** Both switch to A gaps(t,w),
+B gaps(s,t,s). For F1 use directly
+
+ A=(1,2s,5s-1),B=(0,s,3s-1,4s-1).
+
+The root sum1=alpha gives exactly max(q),min(p); the seven indices
+are visibly distinct for s>=2. For F2 use pre-reflection chains
+
+ preA=(s-1,2s,4s+1),preB=(0,s,2s+1,3s+1).
+
+Their root sum s-1=alpha-1 gives intermediate positives(6s+5,6s+1).
+Reflect/reverse both in h=4s+1, giving
+
+ A=(0,2s+1,3s+2),B=(s,2s,3s+1,4s+1).
+
+These are disjoint and give the ORIGINAL equal pair6s+3 twice. The
+alternative allocation and reflection are separate carrying steps;
+neither is justified merely by a canonical capacity calculation.
+
+**Preregistration BEFORE experiment.** Fixed diagnostic domain:
+s=2..12,t=s+1..2s-1,h=t+3s,ALL legal p<=q (also independently
+enumerate odd pairs from p+q=2K and compare to the alpha parameterization).
+Predict66 profiles and exactly22 original-positive canonical failures,
+the two families at each s, with the s2 overlap counted as two questions.
+Every other question must construct canonically; all22 failures must
+use the stated uniform repair. Check all32 labelled capacity masks
+against subset capacity. For EVERY profile compare literal intersection
+of the three A-B difference sets on[-H,0] to U; test EVERY feasible
+offset/order with index intersection and BOTH physical geometry validators.
+Hand shapes must equal distinct permutations. Check all selected formulas'
+ORIGINAL bags/positive owners/windows and both geometry validators.
+
+For each of the22 failures, exhaust the full original-positive fitting
+root/order rectangles under BOTH parity assignments, not only the
+two representative offsets. Predict198 original-bag candidates/zero
+witnesses (12 per F1,6 per F2),1518 complete root/order cases. No
+generic cycle solver, new E28 partition or full residual census.
+Two named out-of-grid formulas s50: F1(t99,h249,p397/q497) and
+F2(t51,h201,p303/q303), to check the algebra beyond the small grid.
+
+Counterfactual endpoint-only rejection: s3,t5,h14,p21/q27,naive
+canonical A=(1,6,11),B=(0,3,6,14) has the correct original bag but
+shares6, despite offset-1 avoiding endpoint offsets0,-4. Both geometry
+tests must reject. Unexpected original-bag control: F2 at s3 gives
+valid pre-reflection A=(2,6,13),B=(0,3,7,10) with23/19, NOT21/21.
+Omitting reflection must pass geometry and fail the original bag.
+The declared diagnostic predicts4290 offset/order plus exception-root
+cases. Caps1000 formulas/6000 such cases,2CPU sec/64MiB. Stop ANY
+mismatch, retain failure; no repaired hypothesis or widened grid.
+
+No general low-middle sufficiency theorem is claimed yet. A further
+hand lead (not an experiment): in forced-partner allocation the constant
+remainder argument may extend to r equal to or larger than its repeated
+step, using failure of the alternative partner to trap F between adjacent
+multiples. The non-thin low-middle canonical cases also need their own
+exhaustive hand classification. These are next inferences, not inferred
+from the present grid. Sole carrying read MI238 stays nonblocking;
+this will be a READ-LEDGER addendum, not another review request.
