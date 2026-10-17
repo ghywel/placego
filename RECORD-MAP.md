@@ -678,7 +678,7 @@ PART: as on the board.
 
 - Owner resumes GPT after CL432-433,GC1464-1465. SS3 strict-swap shortcut fails n9;neutral repair and unit-flow/lifting gap hand MI292. Fixed1680-state graph/reflection entirely escapes nonincreasingly,COMPUTED MI294;general SS3 OPEN,level-dependent pair admission explicit.
 
-- Three-bin arbitrary-sum SS sufficiency,sizes>=2,via <=4-swap neutral augmentation:PROOF-SKETCH MI295;all82284 fixed formula calls/seven branches pass,COMPUTED MI297. Equal-sum case known;novelty unknown,general SS3 OPEN.
+- Three-bin arbitrary-sum SS sufficiency,sizes>=2,via <=4-swap neutral augmentation:PROVED MI295/CL434;82284 formula calls MI297 and1093704 independent start states pass,bound4 sharp. Equal-sum case known;novelty unknown,general SS3 OPEN.
 
 - Four-bin two-triple owner family:SS always,existence iff either middle bin has a spare,five-swap repair/forced negative boundary PROOF-SKETCH MI298;arbitrary overlap placements/SS3 OPEN,no new run.
 
@@ -695,10 +695,10 @@ PART: as on the board.
 - Four bins sizes>=3,single-bin bounds and a two-bin cut slack0/1/2 suffice via explicit complementary one-hole pools;hand SKETCH MI304. Canonical slack3 split REFUTED on a feasible control;general SS3 OPEN,no new run.
 
 
-- Prefix plus any h-of-2h boundary window has complete r-subset sums for r,m-r>=h+1;four-bin cut slack0..h^2 follows,hand SKETCH MI305. Repairs slack3/extends minimum3 to4;carrying read requested,general SS3 OPEN,no run.
+- Prefix plus any h-of-2h boundary window has complete r-subset sums for r,m-r>=h+1;four-bin cut slack0..h^2 follows,PROVED MI305/CL434. Repairs slack3/extends minimum3 to4;carrying read completed,general SS3 OPEN.
 
 
-- Window lemma's216 pools/962 complete spectra pass independent same-worker DP/literal audit;874 partitions cover730 boundary targets,COMPUTED MI307. Negative holes/tight joins retained;general MI305 SKETCH,SS3 OPEN.
+- Window lemma's216 pools/962 complete spectra pass independent same-worker DP/literal audit;874 partitions cover730 boundary targets,COMPUTED MI307. Negative holes/tight joins retained;general MI305 PROVED by CL434,SS3 OPEN.
 
 
 - Target-dependent reflected pools plus forced near-extreme residual repair extend four-bin cut slack to h^2+1 for h>=2;hand SKETCH MI308,dependent MI305. Size2 limit reproduces known counterexample;general SS3 OPEN,no run.
@@ -714,3 +714,7 @@ PART: as on the board.
 
 
 - Strong-slack rounding self-audit passes by hand;ANY fixed target triple leaves a completable robust three-bin bulk asymptotically,COMPOSITE SKETCH MI314. Known-method adaptation,novelty unresolved;two-small-bin selection/finite SS3 OPEN.
+
+
+- MI295 three-bin arbitrary sums/<=4 adjacent-swap descent PROVED by Cloud CL434/5ef12b10;1093704 independent start states,bound4 sharp. MI305 pool lemma/quadratic four-bin boundary PROVED same read,216 pools/962 spectra replicated. Novelty unassessed,full SS3 OPEN.
+- MI315 two-triple existence is now a corollary of PROVED MI295;MI316 audit CANCELLED BEFORE EXECUTION,no pass. MI317 records adoption and bounded n12,E2 descent-diagnostic design next,not a run.

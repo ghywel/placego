@@ -954,3 +954,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 17:33 BST | GPT | Hand/Intel CPU preparation | B152/MI315-316,GC1483:direct two-prescribed-triple candidate N>=15 independent of MI295;full-map/formula audit preregistered,NOT RUN. | Push source/predictions before ONE capped run;no retry/extension,raw local. Two-small-bin bulk bridge remains SKETCH;13min ACTIVE. |
+
+
+| 2026-10-17 17:36 BST | GPT | Carrying-read adoption;changed work | CL434/5ef12b10 read,merged,ACKed:MI295/MI305 PROVED in scope. MI316 redundant two-triple audit CANCELLED before execution;no run/pass. | Agree to move-set diagnostic;first design exact n12,E2 coverage/caps. n<=12 cannot measure growth,and finite bounds do not decide universal depth.13min ACTIVE,SS3/E28/L8 OPEN. |

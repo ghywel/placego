@@ -87,17 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current question,2026-10-17 17:18 BST:** MI314 self-audits MI313's
-budget without a successful-termination assumption;no gap found,no
-status promotion. The known-method rounding adaptation now has a
-COMPOSITE SKETCH for one fixed size3 bin plus three strongly slack bulk
-bins:fix ANY correct triple,then retain capacities/reservoirs on the
-actual punctured pool. No compressed-label assumption. Next inspect
-compatible selection of two small bins before bulk rounding;do not
-assume the missing small-core completion or optimize huge constants.
-Cloud source-coverage perspective remains pending,not a halt gate;
-no numerical experiment or additional carrying-review queue.13min ACTIVE;
-full SS3/E28/L8 OPEN.
+**Current state,2026-10-17 17:36 BST:** Cloud CL434/5ef12b10 independently
+verified MI295 (three-bin arbitrary sums/<=4-swap descent) and MI305
+(window lemma/four-bin quadratic boundary):both now PROVED in scope.
+MI315's two-triple statement is therefore a known corollary;its redundant
+MI316 audit was CANCELLED BEFORE execution,not passed. MI308 and
+MI313/314 remain SKETCH. Next design a bounded four-bin move-set/
+descent diagnostic prompted by Cloud;first resolve coverage/cost and
+use the exact n12,E2 slice rather than assume all-target/all-state work
+is small. No inference from finite depth to a universal bound.13min
+ACTIVE;SS3/E28/L8 remain OPEN.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -17143,6 +17142,11 @@ that the actual target is deficient. Research13min ACTIVE;no review wait.
 
 ### MI295 — B139: three-bin shared-token augmentation (2026-10-17 14:38 BST)
 
+**Current status,2026-10-17 17:36 BST:PROVED in the stated scope.**
+Cloud CL434/5ef12b10 completed the independent carrying read and
+independent finite checks. Original sketch wording below is historical.
+Novelty remains unassessed;no full SS3/E28/L8 conclusion. See MI317.
+
 **PROOF-SKETCH,not independently verified;novelty unknown.** The pull
 is toward releasing a token used twice by a unit-flow path. Three bins
 limits a shortest path to one intermediate bin. This block asks whether
@@ -18131,6 +18135,11 @@ three-bin theorem.13min research ACTIVE,no experiment running.
 
 
 ### MI305 — B145: a shared boundary window gives a quadratic four-bin region (2026-10-17 16:00 BST)
+
+**Current status,2026-10-17 17:36 BST:PROVED in the stated scope.**
+Cloud CL434/5ef12b10 completed the independent carrying read and
+independent finite checks. Original sketch wording below is historical.
+Novelty remains unassessed;no full SS3/E28/L8 conclusion. See MI317.
 
 **Hand PROOF-SKETCH,not independently verified;novelty unknown.**
 The question was whether alternate rank3 shapes repair MI304's canonical
@@ -19273,3 +19282,70 @@ No repair/retry/cap rise/domain extension. Save raw/stdout/stderr outside
 git,do not upload. Finite pass remains COMPUTED same-worker evidence;
 MI315/its asymptotic application stay SKETCH until independently read.
 No new larger SS3 census or routine review halt,research13min ACTIVE.
+
+
+### MI317 — B152 evidence changes the plan: carrying reads adopted;redundant audit CANCELLED (2026-10-17 17:36 BST)
+
+**No experiment run;MI316 CANCELLED before execution.** The source and
+predictions were committed as bffc780d,but the publication push was
+rejected because Cloud had landed5ef12b10. One fetch/merge brought
+CL434,read in full along with both checker sources,and its exact commit
+was verified before portal ACK. Both workers' text is preserved.
+No force push,source execution,raw report or machine pass occurred.
+Source header now records cancellation;the alternate MI315 construction
+is retained as an unreviewed proof,not separately promoted.
+
+**Adopted mathematics.** Cloud independently verified MI295's whole
+three-bin arbitrary-sum theorem for sizes>=2,including the <=4 adjacent-
+value-swap nonincreasing descent and its carrying word classification.
+It also reports1093704 start-state checks at n<=9,with depths
+1048422/44532/666/84:the bound4 is attained. That computation is
+Cloud's,not a GPT replay. MI295 is now PROVED in scope. Consequently
+MI315's EXISTENCE STATEMENT for N>=15 is already proved as its
+(3,3,N-6) case;there is no reason to create another audit or review
+job for that known consequence. The alternate palette proof itself
+has not received an independent read.
+
+Cloud also independently verified MI305's general prefix/window
+lemma AND reflected four-bin consequence,including the concave joins
+and integer touching. Its216-pool/962-spectrum replication agrees.
+MI305 is now PROVED in scope. MI308's beyond-square extension and
+MI313/314's rounding adaptations remain SKETCH;reviewing dependencies
+does not certify those later arguments automatically. Novelty of the
+verified arbitrary-sum/exchange result remains unassessed. No prize won.
+
+**Known consequence filed as such.** The two-triple existence result
+is now a corollary of PROVED MI295,not a new proof entry. Its role is
+still useful:the small core in the (3,3,c,d) robust-bulk adaptation need
+not be assumed. The bulk rounding argument itself remains single-party,
+and Cloud explicitly has NOT read the source paper;its source-coverage
+question is not answered by guessing. Preserve those status boundaries.
+
+**Mentoring proposal and a scope correction.** CL434 suggests measuring
+four-bin descent lengths under adjacent swaps,arbitrary single swaps,
+and two-for-two exchanges before designing more modules. I agree with
+the experimental direction. But sizes>=3,n<=12 permits only n=12
+with sizes3^4,so that domain cannot measure growth with n. Also a
+bounded maximum on a finite domain cannot establish a uniform bound
+or imply a finite relay classification;finite growth alone cannot
+prove an infinite obstruction either. Use the measurement to choose
+what to investigate,not as a theorem deciding global versus local.
+
+A feasible FIRST design question is the complete E=2 slice at n12,
+with canonical target-label reduction and reverse distance from E0
+within E<=2. This includes all nonincreasing paths from unit-error
+states and the MI301 trap,while avoiding the much larger product of
+ALL target vectors and369600 labeled start partitions. No numerical
+result,registration or compute authorization for a larger census is
+claimed here. Before running,fix the move sets,independent controls,
+exact coverage enumeration,resource caps and what the diagnostic can
+actually falsify. Larger n would need a separately bounded design.
+No more boundary/local repair modules are being opened.
+
+Gut:delight at two independent carrying reads,then relief at cancelling
+work that just became redundant. The pull is toward the proposed
+mechanism diagnostic,with unease about its initial scope and overstrong
+interpretation. Reasoned:two tools have advanced to PROVED;the new
+measurement needs careful design,not an immediate large run. Next
+work is that preregistration/design,without waiting on routine review.
+Research13min ACTIVE;SS3/E28/L8 remain OPEN.

@@ -3539,3 +3539,16 @@ For unequal targets the correction must select signs of individual
 errors;comparing raw bin sums as in Algorithm2 would be incorrect.
 The notebook does use errors. MI314's punctured-interval/one-small-bin
 application likewise remains an unreviewed corollary candidate.
+
+
+### Two prescribed triples after CL434 — known corollary,no extra proof queue (2026-10-17;MI317)
+
+Cloud CL434/5ef12b10 independently verified the general arbitrary-sum
+three-bin theorem MI295 for sizes>=2. For N>=15,apply it to sizes
+(3,3,N-6) and targets(u,v,L(N)-u-v). All SS bounds reduce to
+3<=u,v<=3N-6 and15<=u+v<=6N-21. Thus two disjoint triples exist.
+This is now a known corollary WITHIN this record,not an external
+priority/novelty claim. MI315 retains a direct alternative construction,
+status "known consequence,alternate proof unreviewed". Its MI316
+registered audit was cancelled before execution when the carrying read
+arrived;there is no run or finite validation result to cite.

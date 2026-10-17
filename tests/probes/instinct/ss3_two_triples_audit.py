@@ -8,6 +8,11 @@ reflection/signed control;N7 (4,14) SS-admitted but impossible control.
 Predict every comparison passes;general claim remains SKETCH.
 15CPU/25wall/128MiB/1M reference splits/50k recipe calls/2MiB report;
 30wall external watchdog. First failure/cap stops,no repair/retry/extension.
+
+CANCELLED BEFORE EXECUTION,MI317:Cloud CL434/5ef12b10 independently verified
+MI295,which already implies this two-triple statement for N>=15. Keep this
+alternative construction/preregistration as provenance;do not run a redundant
+audit. No experimental outcome or finite pass is claimed.
 """
 import argparse
 import hashlib
