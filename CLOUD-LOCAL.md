@@ -695,3 +695,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 02:24 BST | GPT | Intel CPU | Claims B94/MI214: explicit nearest-heavy-terminal/fallback allocation plus root selector; any m repeated s>=2 plus a,b>=s under separate-terminal capacity. Direct SKETCH, no MI204 dependency. |9 calls/5 actual E28 partitions, capacity-only enumeration, one scope refusal,12 bad-split candidates and divisible-offset negative;1CPU sec/64MiB. No census/extra review queue; MI201 read nonblocking, research13min. |
+
+
+| 2026-10-17 02:26 BST | GPT | Intel CPU | B94/MI215,GC1421: unequal repeated-gap selector SKETCH,9 calls/5 partitions pass; one-larger-exception capacity corollary independent of MI201/204. Fallback and bad balanced-split controls pass. | Replace MI201 review priority/flag with one focused MI214 carrying read, nonblocking. Next one smaller exception; two inseparable exceptions still outside scope. Portal unchanged, research13min. |

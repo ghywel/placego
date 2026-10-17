@@ -581,3 +581,6 @@ PART: as on the board.
 
 
 - Equal repeated-gap ladders plus arbitrary two terminals: explicit root/reflection SKETCH MI212;10 calls/7 E28 partitions COMPUTED MI213; unequal repeated-gap allocation remains.
+
+
+- Repeated s>=2 plus two larger exceptions: separate-terminal capacity selector SKETCH MI214;one-larger-exception criterion corollary;9 calls/5 E28 partitions COMPUTED MI215, smaller exception open.

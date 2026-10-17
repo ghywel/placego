@@ -10443,3 +10443,55 @@ stop any mismatch, no repair, larger grid or review queue.
 Gut: warmth is tied to the split selector resolving a real obstruction.
 Reasoned: this would complete separate-terminal capacity for repeated gaps,
 not all two-bin capacity or full E28/L8. MI201 carrying read is nonblocking.
+
+
+### MI215 — B94 outcome: unequal allocation has an explicit selector (2026-10-17 02:26 BST)
+
+All9 prescribed formula calls and5 actual E28 partitions pass without repair.
+Capacity-only enumeration agrees on all9 inputs plus the refusal control.
+Both M28 five3s-plus8 cases use the fallback allocation: heavy terminal3
+with three repeats versus terminal8 with one repeat, loads12/11; the23/23
+case additionally reflects. The even repeated-count restriction of MI212
+is gone: m7 at M56 works with exact51/51 joins. Dominant terminal k0=0,
+equal loads, unequal repeat counts and all reflection-owner checks pass.
+
+The M12 bad balanced allocation has ZERO accepted placements across all12
+root/owner candidates; the deliberate heavy-terminal allocation works.
+Thus minimizing the larger load blindly is not a substitute for the selector.
+The M30 unreduced z3 control retains the exact23/23 bag/window but shares
+indices3/6; both geometry checks reject it. The corrected z2/reflected formula
+works. Separate-terminal refusal M36,s5,m3,a=b8 is correct despite ordinary
+16/15 capacity: the theorem's admission is explicitly stricter for two
+exceptions. No broader survey, order search or repair occurred.
+
+CPU0.001459s,peak RSS15,675,392bytes, inside1CPU sec/64MiB. Source
+ tests/probes/instinct/path_forest_unequal_ladders.py; preregedea6a7f.
+Artifact cited/instinct/b94-unequal-ladders-efa0e0ff6b8497ef.json,6,167bytes,
+SHA256 efa0e0ff6b8497ef065502b359131983b29c48722bdba3a7370b1d26df3850fb.
+Immutable upload digest and manifest receipts verified. MI214's general
+selector and one-larger-exception corollary remain PROOF-SKETCH; five
+individual partitions are COMPUTED. Full E28/L8 OPEN, no prize candidate.
+
+**Niggle sweep.** A positive ceiling k0 implies delta0<2s; that strict bound
+makes the fallback heavier on the a-side. If fallback fits while k0 does
+not, its delta<s, the key geometric inequality, rather than merely a
+capacity estimate. Delta1 with heavy terminal2 is ruled out using BOTH
+T>=2 and the choice of branch; an arbitrary balanced split can fail there.
+Residues avoid ladders only; the interval delta-u<z<delta+v checks both
+terminal/ladder collisions separately, and z!=delta checks the terminals.
+The one-larger-exception corollary designates a labelled repeated copy
+opposite t; it does not assume arbitrary two exceptions can be separated.
+No empirical check replaces those carrying steps.
+
+**Review priority / next inference.** This independent selector is now a
+more useful carrying read than MI201's five-vertex iff: request ONE focused
+read of MI214, especially fallback delta1 and the one-exception corollary.
+Replace the old MI201 request flag; MI201 remains SKETCH, not withdrawn or
+silently verified. No halt or extra review queue. Portal start/end agree.
+Gut: satisfaction because the allocation obstacle itself moved, not just
+another fixed placement. Reasoned: separate-terminal capacity is completed
+for this repeated-gap class, and ordinary capacity suffices for one larger
+exception. A next cheap HAND question is one SMALL exception t<s: can placing
+it at the start, rather than beyond the ladder, recover a corresponding
+selector? The explicit t>=s premise remains until that argument exists;
+ordinary capacity with two inseparable exceptions remains another open edge.
