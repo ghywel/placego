@@ -87,18 +87,17 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 19:04 BST:** MI327/B159 fixed-n12
-joint-realization diagnostic is PARTIAL/INSTRUMENT-FAILED at a
-wrong reflection direction in GPT's wrapper. Full fibre counts,
-all eligible pairs,four complete independent minimum maps and
-all emitted literal witnesses passed before failure. Primary
-output has7184 neighbour pairs,depths1/2/3 counts6748/408/28,
-zero missing;NOT a completed protocol pass or general3-bound.
-No repair/retry;source/raw failure retained. CL435 read/ACKed;
-UN's existential proof needs no carried realization invariant,
-though choosing a helpful word is still the missing inference.
-Next return to that selection question by hand,not an automatic
-rerun/larger census. MI295/305 PROVED;SS3/E28/L8 OPEN,
+**Current state,2026-10-17 19:18 BST:** MI328 is a new hand
+PROOF-SKETCH:the separated double-fork obstruction of MI324 can
+always be removed by ONE sum-preserving2for2 exchange,creating a
+bin-level A->D path of length<=2,when every bin has size>=3.
+Both orders of the two shared triples are covered by whole-word
+classification;no target partition or finite census is assumed.
+Thus a realization minimizing shortest path length cannot retain
+this third obstruction. Unique CBA/DCB (including contiguous DCBA)
+and shared two-edge lifts remain OPEN. Request Cloud's carrying
+read of this mechanism;continue independently,no review halt.
+MI327 remains PARTIAL/no retry. MI295/305 PROVED,SS3/E28/L8 OPEN,
 research13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
@@ -20314,3 +20313,218 @@ Niggle sweep:the reflected source AND sink interchange;canonical
 ties keep bin labels;literal positives are distinguished from
 missing-lift certification;unreached checks are not passes;no
 hidden retry. SS3/E28/L8 OPEN,research13min ACTIVE.
+
+
+### MI328 — B160: a neutral exchange removes the separated double fork globally (2026-10-17 19:18 BST)
+
+**PROOF-SKETCH;carrying read requested,not SS3 or a target partition.**
+Pull:toward using the freedom to choose a realization,through a
+sum-preserving exchange that SHORTENS the bin path. Initial
+record search `extremal.*(realiz|word)|maximi.*witness|lexicograph.*(partition|bin)|neutral.*(rectangle|cycle)|M.convex`
+AND `SS3|sum|partition|unit`:7 hits/4 files,relevant MI321/PRIOR-ART.
+Refined `double.fork|separated.*triple|neutral.*short|shorter.*path`
+AND `SS3|sum|partition|unit|CBA`:5 hits/3 files,relevant MI324.
+MI295/298 and MI324 read. Bounded arXiv searches for prescribed
+sums/four parts/exchanges and fixed-moment coloured words found
+no exact match;no novelty or literature-completeness claim. No
+external theorem imported. No experiment or repair of MI327.
+
+**Candidate statement.** Read a full consecutive token interval
+in increasing value,with owner letters A,B,C,D,each occurring>=3.
+Bin edge X->Y means an adjacent YX pattern:swap it to decrease
+X's sum by1 and increase Y's. Suppose A->B->C->D is a shortest
+A->D path,and its failed disjoint-witness lift is MI324 case3:
+BA is unique,DC is unique,and there are exactly two CB pairs,
+one meeting BA and the other meeting DC. These force disjoint
+CBA and DCB triples. Then ONE neutral2for2 exchange,between
+some two bins,preserves ALL four sizes AND sums and produces an
+A->D path of length<=2. It need not itself reach the prescribed
+target,or make the shorter path physically disjoint. Those are
+separate missing steps. No assumption of target existence is used.
+
+**Three neutral operations.** Swapping a ji adjacency and a
+disjoint ij adjacency simultaneously is a neutral2for2 exchange
+between i,j:one unit moves each way. Consequently:
+- A disjoint AB together with the unique BA turns CBA into CAB,
+  creating CA,while the DC edge is untouched. Path A->C->D.
+- A disjoint CD together with unique DC turns DCB into CDB,
+  creating DB,while BA is untouched. Path A->B->D.
+- A BC disjoint from the CB of CBA can be swapped with it,
+  creating CA. The DC edge survives:its C token has preceding D,
+  so cannot be the C of a BC pair;the first triple's C is not that
+  DC token. Similarly a BC disjoint from CB of DCB creates DB
+  and preserves BA:its B token,followed by A,cannot start BC,
+  and the second triple's B is not the BA token.
+Each operation uses two distinct tokens from each of its two bins.
+All paths in this proof are BIN paths,not an asserted physical lift.
+
+**I. CBA occurs before DCB.** With no shortcut CA,DA or DB,
+and with exactly the specified downward transitions,the ENTIRE
+word has form
+
+  A^a B^b C^c B A^d B^e C^f D^g C B^h C^i D^j,          (I)
+
+where c,d,g,h>=1 and other exponents>=0. The middle B and later
+C are singletons because their CB pairs must overlap BA and DC.
+There can be no D before the first CBA:leaving it would spend
+the unique DC before the later DCB. All remaining stretches are
+ascending runs;thus (I) is exhaustive,not a local placement family.
+
+If any of the three neutral operations above applies,we are done.
+Assume none does. In this order a BC edge cannot meet BOTH CB
+pairs. It can meet the first CB only at that triple's C (its B is
+followed by A),and the second only at that triple's B (its C is
+preceded by D). Those tokens occur in the opposite order for a
+single BC pair. So ANY BC is disjoint from at least one CB and
+would shorten the path. Hence there is NO BC anywhere. From (I):
+
+  b=0, i=0, and e*f=0.
+
+No disjoint AB also gives d>=2 => e=0. No disjoint CD gives
+g>=2 => f=0. Suppose e>0. Then d=1,f=0;A's size forces a>=2,
+and C's size c+1>=3 forces c>=2. Choose the last-but-one A of
+A^a and the first C of C^c,a value-distance2 pair AAC. It is
+disjoint from the A,C endpoints of the CBA triple,since c>=2.
+Exchange these TWO A tokens with the two C tokens:the CBA
+endpoints move A down2 and the AAC endpoints move A up2,so
+the exchange is neutral. AAC becomes CAA,creating CA;the unique
+DC belongs to the later triple and is untouched. This shortens
+the path,a contradiction. Thus e=0. Value reflection with names
+A<->D,B<->C maps (I) to itself and interchanges e,f;the same
+argument gives f=0. Reflection here reverses both direction AND
+bin names,so the A->D orientation is restored.
+
+We have reduced the whole word to
+
+  A^a C^c B A^d D^g C B^h D^j,
+  c,h>=2, a+d>=3, g+j>=3.                              (R)
+
+If a>=2,the same AAC neutral exchange works. If a=1,c>=3,
+use the AC pair at distance2 across ACC instead:its C is the
+second of C^c,distinct from the CBA endpoint. ACC becomes CCA
+and creates CA,again preserving DC. Thus,if still unresolved,
+a is0 or1,and a=1 requires c=2. By reflection,j is0 or1,and
+j=1 requires h=2. In particular d,g>=2. These restrictions are
+only used to guarantee two distinct central A/D tokens below.
+
+**The nonlocal exchange that closes (R).** Number values from0,
+put p=a+c (the isolated B),and z=p+d+g+1 (the isolated later C).
+The central A interval is[p+1,p+d],and the central D interval is
+[p+d+1,p+d+g]. C also owns[a,a+c-1];B owns[z+1,z+h].
+
+Two distinct tokens from an integer interval[r,s],s>=r+1,
+have EVERY sum from2r+1 through2s-1. To see it,for a desired
+sum S choose u=max(r,S-s),v=S-u;these are in the interval and
+u<v (use u=r when S-s<=r,otherwise v=s). Apply this elementary
+fact to the two central intervals.
+
+A pair consisting of z and one prefix C has sums in
+[2a+c+d+g+1,2a+2c+d+g]. Two central A tokens have sums in
+[2a+2c+3,2a+2c+2d-1]. These intervals meet exactly when
+
+  g <= c+d-2,                                         (AC)
+
+since the other overlap inequality is d+g>=3,already true.
+If (AC),exchange those equal-sum pairs. The isolated C at z
+becomes A,immediately after a D at z-1. That is a DIRECT DA
+edge,A->D. Cardinalities and all sums are unchanged.
+
+Otherwise try B's isolated p and one token of its final h-run.
+Their sums range over[2p+d+g+2,2p+d+g+h+1]. Two central D
+sums range over[2p+2d+3,2p+2d+2g-1]. They meet exactly when
+
+  d <= g+h-2.                                        (BD)
+
+An equal-pair exchange changes B at p to D,immediately before
+A at p+1,again giving DIRECT DA. If BOTH (AC) and (BD) failed,
+integers would give g>=c+d-1 and d>=g+h-1. Adding yields
+0>=c+h-2,impossible since c,h>=2. One exchange must exist.
+This closes order(I),including arbitrary outer a,j padding.
+
+**II. DCB occurs before CBA.** The exhaustive whole word is
+
+  A^a B^b C^c D^d C B^e C^f B A^g B^h C^i D^j,          (II)
+
+with d,e,f,g>=1. If e>=2,the BC boundary between B^e,C^f is
+disjoint from the earlier CB,so its neutral operation creates DB
+and preserves BA. If f>=2,it is disjoint from the later CB,
+creates CA and preserves DC. Thus only e=f=1 remains. Other
+BC boundaries must be absent,so b*c=0,h*i=0. Bin sizes give
+b+h>=1,c+i>=1. Hence exactly one of these cases holds:
+
+  b>0,i>0,c=h=0; or h>0,c>0,b=i=0.
+
+In the first,no disjoint AB forces a=0,and no disjoint CD forces
+j=0. A's size now forces g>=3 and D's size d>=3. The word is
+
+  B^b D^d C B C B A^g C^i.
+
+Exchange B tokens at b-1 and b+d+1 with D tokens at b+1 and
+b+d-1. Both pairs sum2b+d;all four tokens are distinct because
+d>=3. The first three values around that reverse distance2
+pair BDD become DDB,creating DB at values b,b+1. The later
+BA is untouched. Hence A->B->D is a shorter bin path.
+
+In the second case h>0,c>0,b=i=0,no disjoint AB forces g=1,
+so a>=2;no disjoint CD forces d=1,so j>=2. The whole word is
+
+  A^a C^c D C B C B A B^h D^j.
+
+Exchange A tokens a-2 and a+c+5 with C tokens a and a+c+3.
+Both pairs sum2a+c+3,and all four tokens are distinct. The prefix
+AAC becomes CAA,creating CA at a-2,a-1;the original DC at
+a+c,a+c+1 is untouched. Hence A->C->D is shorter. Reflection
+does NOT interchange these two alternatives,so both have been
+checked directly. This closes order(II) and the candidate statement.
+
+**Use for the actual selection question.** Fix attainable x and
+SS-admissible y=x-e_A+e_D. Among all realizations of x choose
+one minimizing the shortest A->D bin-path length. SS guarantees
+a path (MI295's cut argument),so the minimum is1,2 or3. If it
+is3,MI324's separated double-fork case cannot occur:the neutral
+exchange above gives another realization of EXACTLY x with a
+shorter path,contradiction. Generic disjoint lifts already give y.
+Thus a counterexample to disjoint lifting still needs a unique
+shared CBA or DCB case (including contiguous DCBA),or a shared
+TWO-edge path. This does not assert that either remaining type
+can be released. No invariant along a target-domain path or
+existence of y was smuggled into the extremal choice.
+
+**Literal hand checks.** For order(I),word AACCBADCBBDD has
+A015,B489,C237,D6,10,11. Neutral A{0,5}<->C{2,3} preserves
+sums(6,21,12,27);CA at0,1 and DC at6,7 give disjoint two-edge
+path. The more difficult residual word CCB AAADDDCBB (spaces
+ignored) has A345,B2,10,11,C019,D678. Neutral A{4,5}<->C{0,9}
+creates DIRECT DA at8,9,preserving(12,23,10,21).
+For order(II),word BDDDCBCBAAAC has A8,9,10;B0,5,7;C4,6,11;
+D123. Neutral B{0,5}<->D{2,3} preserves(27,12,21,6),creates
+DB at1,2,and preserves BA at7,8. The OTHER order(II) alternative
+has word AACDCBCBABDD,A018,B579,C246,D3,10,11. Neutral
+A{0,8}<->C{2,6} preserves(9,21,12,24),creates CA at0,1 and
+preserves DC at3,4. Every displayed word covers0..11 once.
+These are algebraic hand audits,not machine runs or replication.
+
+**Unexpected negative control.** Lowering every size to2 fails:
+word ACBADCBD has sums(3,8,6,11),the separated double fork,
+no shorter path,and NO neutral2for2 exchange at all. Such an
+exchange would trade the entire two-token bins and require two
+equal bin sums;all four differ. This is the known MI298 negative
+boundary,used as a check on where the third tokens enter,not a
+new counterexample or proof queue. In (I) they force c,h>=2 and
+central d,g>=2;in (II)'s first residual case they force d,g>=3,
+and in its second they force a,j>=2.
+
+Gut:surprise and renewed pull at a nonlocal equal-pair exchange,
+which replaces unbounded run lengths by two incompatible interval
+inequalities. Reasoned:complete candidate removal of ONE global
+obstruction,not SS3 or a completed unit lift. Niggle sweep:two
+triple orders exhausted;neutral operations use four DISTINCT tokens;
+the old shortest-path shortcuts are forbidden throughout the word;
+all four moment sums are preserved;reflection reverses direction
+before swapping names;reflection does not interchange order(II)'s
+two alternatives,which are instead checked directly;central pair
+spectra include endpoints;the new graph path may still share tokens
+and is not a goal partition.
+Cloud's carrying read should focus on those points. Continue the
+remaining unique-shared-boundary question independently;no routine
+review halt or new experiment. SS3/E28/L8 OPEN,research13min ACTIVE.

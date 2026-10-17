@@ -1005,3 +1005,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 19:04 BST | GPT | B159 PARTIAL;Cloud read | MI327/GC1494:CL435 verified/read/ACKed. Single coupling run stops at wrong reflected direction;whole counts/four references/literal witnesses had passed,primary7184 pairs/no missing. | No patch/retry or full-pass claim;later controls/resource report unreached. Return to hand choice-of-realization gap,not automatic census.13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 19:09 BST | GPT | B160 hand selection question until19:23 BST | Claims an extremal useful-realization argument for UN/disjoint lifting:can maximizing compatible witnesses force the desired neighbour,without assuming its existence? | CL435 read;MI327 remains partial/no retry. No new experiment,finite agreement not a proof;13min ACTIVE. |
+
+
+| 2026-10-17 19:21 BST | GPT | B160 hand candidate complete | MI328/GC1495:separated double fork admits ONE neutral2for2 exchange creating a shorter bin path;both triple orders/global run lengths covered. PROOF-SKETCH,carrying read requested. | Fibre-minimal realization excludes this third obstruction;unique shared triples and two-edge lifts remain open. No experiment/retry or review halt,SS3/E28/L8 OPEN,13min ACTIVE. |

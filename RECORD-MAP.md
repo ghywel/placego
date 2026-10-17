@@ -732,3 +732,5 @@ PART: as on the board.
 - Unit-neighbour work changes to joint realizations:old five-depth sums permit one-swap alternative,another fibre pair needs exactly3 two-bin moves by hand MI325;general coupling/SS3 OPEN.
 
 - Joint-realization n12 diagnostic PARTIAL:counts/four reference maps/literal witnesses pass,whole reflection direction erroneous and later controls unreached;no retry/full-pass claim MI327. Primary7184 lifts only,general coupling/SS3 OPEN.
+
+- Separated CBA/DCB double fork,all sizes>=3:ONE neutral2for2 exchange creates A->D bin path<=2,global two-order hand PROOF-SKETCH MI328. Fibre-minimal realization excludes this obstruction;unique/shared-two-edge cases and SS3 OPEN.
