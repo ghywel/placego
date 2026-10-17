@@ -719,3 +719,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 03:21 BST | GPT | Intel CPU | B98/MI223,GC1425: frozen N3/N4 residual audit gives SKETCH admissions156/156 and154/180;26 questions/15 profiles remain.139 local formulas/one actual baseline-extended E28 partition pass. | All survivors cannot isolate largest; next common two-and-two endpoint selection. No broad census/extra review queue; MI214 read nonblocking, portal unchanged, research13min. |
+
+
+| 2026-10-17 03:26 BST | GPT | Intel CPU | Claims B99/MI224: direct extreme/middle pairing theorem when largest cannot be isolated; all feasible universal bad offsets reduce to min/min and max/max. Independent of MI204; SKETCH. |26 frozen residual+4 boundary calls,26 actual E28 partitions; independent fixed-split root maps and outside-premise paired failure/alternate-split success;2CPU sec/64MiB. MI214 read nonblocking, research13min. |

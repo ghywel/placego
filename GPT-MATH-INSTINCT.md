@@ -10997,3 +10997,99 @@ A warm next pull is to prove that this paired split has only endpoint bad
 offsets when a+b+c>h; apparent extra middle-point resonances may then lie
 outside the available root range. No follow-up experiment is yet opened.
 MI214 remains the sole requested carrying read, nonblocking; portal unchanged.
+
+
+### MI224 — B99: nonisolatable four gaps admit the extreme/middle pairing (2026-10-17 03:26 BST)
+
+**Pull/question.** The B98 frontier has one common obstruction, not15
+unrelated profiles. Does inability to isolate the largest gap FORCE an
+order/root choice for two two-gap chains? The pull is warm because this
+hypothesis now helps exclude collisions. Record searched:
+nonisolat|extremes.*middle|two.two.gap|a\+b\+c ->MI223 and unrelated
+three-surplus uses; no earlier general inference. MI222 and its139 local
+checks are not a substitute for the new argument. No novelty claim.
+
+**Direct hand candidate, PROOF-SKETCH, independent of MI204.** Let M=2n,
+h=n-1, positive sorted halves a<=b<=c<=d, K=a+b+c+d. Assume legal positive
+odd joins p+q=2K, max(p,q)<=2h-1, not p=q=2h-1; ordinary two-bin capacity;
+and a+b+c>h. Then a folded-distinct cycle with these FOUR negative halves
+exists. The nonisolation premise forces any capacity split to be2+2.
+Pairing extremes A=(a,d) and middles B=(b,c) fits: any other2+2 pairing
+that fits bounds BOTH a+d and b+c by its larger bin. Write L=a+d,S=b+c,
+H=h-L,J=h-S,T=H+J. Legal bounds give K<=2h-2, hence T>=2; K>h.
+Also K>=h+d+1 and K<=2h-2 imply d<=h-3. From h+1<=a+b+c<=3d<=3h-9,
+h>=5, so the six required distinct labels fit n>=6; label count is not
+an omitted hypothesis.
+
+Put z=y-x for chain minima. In relative coordinates the possible chains
+are {0,u,L},u in{a,d}, and {z,z+v,z+S},v in{b,c}. Available offsets lie
+in[-H,J]. Endpoint-endpoint failures are -S,0,L-S,L. K>h excludes the
+outer two, leaving0 and d0=L-S=J-H.
+
+Outside those endpoint failures, BOTH A-order choices hit B endpoints only
+if a=d or d-a=S. The latter forces d=a+b+c>h, impossible. All-equal is
+handled below. If b<c, some A order is endpoint-compatible. Both choices
+for B's middle can then hit A only if c-b equals a,d or L; c-b<d leaves
+only c-b=a. With A-middle a this happens only at z=-b; with A-middle d,
+only at z=d-b. The alternate A order is endpoint-incompatible respectively
+only when d=c, or d=a+b=c. Thus universal extra failures require
+c=d=a+b and z in{-b,a}. But h<a+b+c=2c gives H<=b-1,J<=a-1, placing
+both extras OUTSIDE[-H,J].
+
+If b=c, its fixed middle can hit an A ENDPOINT at z=-b or L-b, regardless
+of A order. These two extra failures must be checked explicitly: h<a+2b
+and d>=b imply H<b and J<L-b, so neither is available. Else both A orders
+fail only when a,d are both B vertices. If a<d, d-a is b or2b. For d-a=b,
+extras are z=a-b,a; H<=b-a-1,J<=a-1 exclude them. For d-a=2b,
+d=a+2b=a+b+c>h is impossible. If a=d, all four gaps equal s; h<3s gives
+H=J=h-2s<s. The universal bad offsets are multiples of s, so only0=d0
+is feasible. Therefore the ENTIRE feasible universal bad set is exactly
+{0,d0}, for all cases. This includes fixed-middle/endpoints, not merely
+interior/interior collisions.
+
+Root choice: alpha=(2h+1-max(p,q))/2, 1<=alpha<=floor(T/2).
+Use croot=alpha or alpha-1. Their offset union is the consecutive interval
+[-alpha,alpha] if alpha<=min(H,J);
+[alpha-1-2H,alpha] if H<alpha<=J;
+[-alpha,2J-alpha+1] if J<alpha<=H.
+If H,J>=1 it has>=3 integers; first3 escape0/d0. If H=0, take z=alpha,
+strictly0<alpha<J; if J=0 take z=-alpha, strictly-H<z<0. Choose croot by
+parity, x=(croot-z)/2,y=(croot+z)/2, then one of<=4 order pairs avoids
+all collisions. For croot=alpha-1 reflect/reverse BOTH chains in h to
+obtain the original smaller positive join first; this is exact owner/bag
+transport, not acceptance of intermediate joins shifted by2.
+
+**Preregistration BEFORE experiment.** Read ONLY the frozen B98 output
+matching SHA256 34e2246d5c58a72c4e4a6f5afdabfe7321ed2252961da3d2e24d14bcf3bd5e29.
+Predict all26 remaining questions on15 profiles satisfy nonisolation and
+paired capacity, and all26 explicit constructions pass. Materialize all26
+actual E28 partitions with TWO genuine zero-move baseline owners and the
+existing full-bag, owner, window and two independent partition validators.
+This completes that FROZEN residual layer, not all E28 or a new census.
+
+Independent control: for each of those26 questions enumerate the FIXED
+extreme/middle split's finite fitting root rectangle and all<=4 orders,
+with both allowed root sums and original-positive ownership. Compare
+order-existence offset by offset on the WHOLE[-H,J] to exactly{0,d0},
+using direct set intersections, not the constructor's classifier. Full
+physical-map existence must agree with literal geometry. No alternative
+negative allocation, whole-cycle solver or input-domain expansion.
+
+Four generic boundary/resonance calls, geometry only:
+M16,d=(1,3,4,4),p13/q11 (b<c,d=c=a+b,J0);
+M20,d=(2,4,4,6),p17/q15 (b=c,d-a=b, fixed-middle endpoint offsets);
+M12,d=(2,2,2,2),p9/q7 (all-equal, exact six-label count);
+M28,d=(4,5,6,9),p25/q23 (H0).
+Check the same full offset-map prediction on all four, independently.
+Counterfactual/unexpected check: M12,d=(1,1,2,2),p9/q3 is OUTSIDE
+nonisolation, so the new constructor must refuse it. For this fixed paired
+split its allowable offsets are{-1,0,1}, all universally bad. Yet the
+DIFFERENT split A=(0,2),B=(1,3,4,5) gives the full original bag and valid
+literal geometry. Refusing the theorem's premise must not become a false
+nonexistence claim. This negative scope control distinguishes necessity
+of the premise for THIS pairing from existence of some folded cycle.
+
+Cap26 frozen+4 boundary formula calls,26 actual partitions,2CPU sec/64MiB.
+Stop on any failed prediction, retain failure; no filter repair, broadened
+range or added review queue. MI214 remains sole requested carrying read,
+nonblocking. General new claim stays SKETCH until independent scrutiny.
