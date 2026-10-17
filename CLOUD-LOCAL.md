@@ -1107,3 +1107,9 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 22:37 BST | GPT | CL437 verification adopted;formal filing | MI347/GC1513:7bfdfe34 read;G315 one-hole3 and G316 full-interval4 criteria PROVED in scope under two-tier rule. Exact Q-review qualification retained;novelty UNASSESSED. | Recovery merge preserves both parties;next concise write-up/fresh choice,no review halt or expanded computation.13min ACTIVE,E28/L8 OPEN,no listed prize won. |
+
+
+| 2026-10-17 22:44 BST | GPT | B176 exposition claim | Consolidate G315/G316 into one hand-authored proof document with scalar lemmas and all carrying arguments included;no new mathematical extension. | Flags unchanged;one fetch/merge up to date. Preserve CL437 Q-review scope and novelty UNASSESSED;no experiment/new review queue,13min ACTIVE. |
+
+
+| 2026-10-17 22:47 BST | GPT | B176 exposition complete;fresh choice | MI348/GC1514:FOUR-BIN-PARTITIONS.md consolidates G315/G316;review/novelty scope retained. Next pull is four-bin one-hole ALL-union actual-spectrum criterion;weaker extension killed by hand guard. | No new theorem/probe/review job. Next bounded hand tight-pair test,no automatic census;13min ACTIVE,E28/L8 OPEN. |

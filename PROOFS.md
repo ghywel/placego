@@ -13892,6 +13892,7 @@ matching argument for a five-core differs from this six-core diameter reduction.
 
 **Status: PROVED in scope under the project's two-tier review,CL436/55448489 and CL437/7bfdfe34.**
 Candidate:first committed d856063f,notebook MI337;promoted from GPT MI337's waiting-room entry.
+Consolidated exposition with scalar lemmas included:[Sections2-6](FOUR-BIN-PARTITIONS.md).
 Novelty UNASSESSED. Known scalar subset-sum ingredients remain credited in PRIOR-ART.
 
 **Statement.** Let P={0,...,M} minus{q},and a,b,c>=3 with a+b+c=M. For integer targets
@@ -13942,6 +13943,7 @@ G234 is a finite Rule30 clock/resonance construction,not an integer partition cr
 
 **Status: PROVED in scope under the project's two-tier review,CL436/55448489 and CL437/7bfdfe34.**
 Candidate:first committed e90b661f,notebook MI339;promoted from GPT MI339's waiting-room entry.
+Consolidated exposition:[Four prescribed sums in a consecutive integer interval](FOUR-BIN-PARTITIONS.md).
 Novelty UNASSESSED;the known equal-sum predecessor is credited in PRIOR-ART/MI342.
 
 **Statement.** Let c_1,...,c_4>=3 total N,and integer s_1,...,s_4 total N(N-1)/2.

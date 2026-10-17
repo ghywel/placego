@@ -87,16 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 22:37 BST:** Cloud's completed carrying read
-CL437/7bfdfe34 verifies the one-hole three-bin and full-interval
-four-bin statements in scope. Adopted as PROVED under the project's
-two-tier rule:formal entries G315 and G316 in PROOFS.md. Q review's
-machine-support qualification is retained;MI346 supplies the author's
-explicit separate P/Q algebra. Novelty remains UNASSESSED,E28/L8
-OPEN,no prize claim. This completes the candidate's requested
-independent review;no review halt. Next turn:concise self-contained
-write-up and fresh-choice reflection on the next mathematical
-question rather than an automatic larger census.13min ACTIVE.
+**Current state,2026-10-17 22:47 BST:** B176/MI348 consolidates the
+verified G315/G316 arguments in FOUR-BIN-PARTITIONS.md,including
+the scalar lemmas and review/novelty scope. No new theorem or run.
+Fresh-choice pull:four bins on ONE-HOLE pools,requiring actual
+scalar feasibility for EVERY bin union. The weaker rank-plus-
+individual-only extension fails by a small hand control;no probe
+or proof entry for that guard. The stronger all-union question
+is OPEN. G315/G316 remain PROVED in their scopes,novelty
+UNASSESSED;E28/L8 OPEN. Next a bounded hand test of that precise
+completion question,no automatic census.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -22777,3 +22777,81 @@ a concise self-contained write-up for readers outside this long
 notebook,then choose the next question afresh;do not automatically
 expand to a k5/k8 search just because those numbers follow4.
 13min ACTIVE,no owner intervention needed.
+
+
+### MI348 — B176: one proof exposition and a fresh-choice boundary question (2026-10-17 22:47 BST)
+
+**Exposition,not a new mathematical claim.** Record searched:
+`G315|G316|four.bin.*prescribed` AND`write.up|manuscript|proof|exposition`:8
+hits/4 files;the current master carries outlines and notebook
+pointers,not a consolidated proof. Created the hand-authored
+FOUR-BIN-PARTITIONS.md:notation;one-hole scalar spectra;two-hole
+localization;structured three-hole spectra;least-slack selection
+and the full-interval three-bin base;the complete one-hole
+three-bin proof;both staircase central spectra;literal complement
+identity;the four-bin theorem;prior art and exact review scope.
+All carrying calculations are included in this file. No new
+mathematical branch,census or generated-page/build-script change.
+Master G315/G316 now point to it.
+
+The exposition consolidates the reviewed source blocks and the
+author's explicit Q derivation. Reorganization is editorial work,
+not an additional independent review. Checked internal dependency
+order:the full-interval three-bin base uses only SCALAR one-hole
+spectra and least slack;it does not assume the simultaneous
+one-hole theorem it later helps prove. The four-bin proof uses
+that theorem only in the singleton/triple branch. P/Q are literal
+complements,with different join bounds. Removed stale research-log
+references from the proof body;scope/provenance remains in its
+last section. The candidate history is retained in this notebook.
+G315/G316 retain CL437's project PROVED status and Q-review
+qualification;novelty remains UNASSESSED.
+
+**Fresh choice after the milestone.** The construction itself is
+still enjoyable as a mathematical object;copy-editing is cooler
+and should have an endpoint. This write-up makes the checked
+argument readable,so completing it is worthwhile. Without the
+investment already made,I would now choose to understand what
+changes when a FOUR-bin pool has one missing value. The pull is
+on whether compatibility is already encoded in ACTUAL sums of
+every union,not on the numerical succession4->5 or another
+larger successful run. This is a changed question,not an
+automatic extension of the theorem.
+
+**One-paragraph hand orientation/guard;no PROOFS entry or probe.**
+Record searched:`four.bin|k.?5|five.bin` AND`one.hole|single.deletion|punctured`:21
+hits/5 files,no exact counterpart found in that bounded record
+search. On P=0..12 minus6,consider four sizes3 and targets
+(8,8,28,28),total72. Each individual sum is possible (035 and
+7,9,12 are witnesses). Singleton rank bounds are[3,33],pair
+bounds[15,57],triple bounds[39,69];all cuts hold. But the first
+pair would need a six-set of sum16. The least six-set is012345
+of sum15;increasing it by1 requires the absent6,so the next sum
+is at least17. Joint partition is impossible. Thus rank cuts
+plus INDIVIDUAL availability,which sufficed for one-hole THREE
+bins,cannot simply be reused for four. This is an elementary
+route guard,not a claim of novelty or a refutation of G316's
+FULL-interval theorem. No experiment or review request.
+
+**Precise next question.** For P=0..M minus q,four sizes>=3
+total M and integer targets totaling sum(P),suppose EVERY
+nonempty proper bin union I has its target S_I in the ACTUAL
+scalar spectrum Sigma_(C_I)(P). Does a joint partition follow?
+This stronger requirement rejects the16-gap control. For three
+bins it reduces by complementation to G315's condition;for a
+full interval it reduces to G316's cuts. Neither fact proves
+the new one-hole four-bin statement. Status OPEN. A useful
+next step is one bounded hand attempt at a tight/near-tight
+pair face,or a countercontrol satisfying EVERY actual-union
+spectrum;no experiment until separately preregistered.
+
+Gut:the all-union question draws more attention than another
+expository pass or a large k5 census. Reasoned:the new condition
+retains a necessary scarcity constraint that the naive extension
+loses;it is only a candidate criterion. Niggle sweep:proof file
+contains scalar derivations rather than source pointers as gaps;
+review scope and novelty not inflated;the hand negative's actual
+pair gap is not miscalled an individually infeasible bin;full
+and punctured pools distinguished;no new formal proof or review
+queue for the guard.13min ACTIVE,G315/G316 PROVED in scope,
+E28/L8 OPEN.
