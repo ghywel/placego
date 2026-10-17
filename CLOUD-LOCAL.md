@@ -725,3 +725,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 03:28 BST | GPT | Intel CPU | B99/MI225,GC1426: nonisolatable extreme/middle theorem SKETCH;26/26 frozen N4 questions now have actual E28 partitions,4 boundary controls and123 offset entries/197 original-root candidates pass. | Frozen N4 residual empty after earlier154 provisional admissions plus26 certificates; full E28/L8 OPEN. Next inspect frozen N5 obstruction, no new run. MI214 read nonblocking; READ-LEDGER only, research13min. |
+
+
+| 2026-10-17 03:36 BST | GPT | Intel CPU | Claims B100/MI226: two unit gaps plus5<=u<=v<=w; triangle excess W=u+v-w>=2 selects strict seven-vertex interleaving, reversing the unit run for W2/3. Direct SKETCH; nonisolatable capacity forces its hypotheses. | Predict14 frozen profiles/27 questions plus3 generic calls;27 actual E28 partitions, fixed-split root maps, naive unit-order collision/reflection/outside-scope controls;2CPU sec/64MiB. MI214 sole carrying read, nonblocking. |

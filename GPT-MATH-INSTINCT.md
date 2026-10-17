@@ -11159,3 +11159,100 @@ selection obstruction, before choosing a new inference; no experiment or
 larger-domain count is opened now. MI214 remains the sole requested
 carrying read, nonblocking; send READ-LEDGER, no additional review queue.
 Research13min continues; older held lanes stay held.
+
+
+### MI226 — B100: two unit gaps, a triangle excess, and one reversed run (2026-10-17 03:36 BST)
+
+**Fresh pull / question.** The seven-vertex problem still pulls because a
+specific collision has become visible, not because the notebook has grown.
+I would choose this fresh: can two unit gaps be parked together inside the
+other run, with the capacity obstruction itself handling the one resonance?
+Frozen B87's first N5 residual is(1,1,5,5,5). If the largest is isolatable,
+MI204 ALREADY applies to its rich four-gap companion(1,1,u,v): maximum
+multiplicity2<3, so the standard endpoint/root argument is only a corollary,
+not a new proof/review. The next nonisolatable example is(1,1,5,7,7).
+
+Record searched: two.unit|two unit|unit.*triangle|triangle.*excess|1,1,u,v,w
+->unrelated unit fans, no such negative-gap construction. Broader N5/five-gap
+search read B87 and current statements. Prior-art orientation remains the
+Tan-Teh section4 audit MI054, not a new novelty claim. A bounded web refresh
+found no specific statement; attempts to reread arXiv2207.13855v2 HTML/PDF
+returned404/cache miss, so no freshly read primary theorem is imported.
+
+**Direct new theorem candidate, PROOF-SKETCH.** Let M=2n,h=n-1 and
+ d=(1,1,u,v,w),5<=u<=v<=w. Set L=u+v and W=L-w. Assume L<=h,W>=2,
+legal positive odd joins p+q=2K,K=L+w+2,max(p,q)<=2h-1,not both2h-1.
+Then a folded-distinct seven-vertex cycle exists by the following formulas,
+independent of MI204/214. Write H=h-L,J=h-w-2=H+W-2,T=H+J>=2,
+alpha=(2h+1-max(p,q))/2,1<=alpha<=ceil(T/2). Choose croot as the largest
+ODD integer<=alpha, so croot is alpha or alpha-1 and>=1.
+
+For W>=4 set x=min(H,(croot-1)/2),z=croot-2x,y=x+z. Then z is positive
+and z<=W-3: if x is not clamped z=1; if x=H, use
+croot<=alpha<=H+ceil((W-2)/2) and ceil((W-2)/2)<=W-3.
+If unclamped, y=x+1<=H+1<=J; if clamped, y=H+z<J. Thus both roots fit.
+Use A=(x,x+u,x+L),B=(y,y+1,y+2,y+w+2). Since W<=u (w>=v),
+
+ x<y<y+1<y+2<x+u<y+w+2<x+L.
+
+The central inequality y+w+2>x+u uses w>=u and z>=1. Strict interleaving
+proves folded distinctness with no permutation or root search.
+
+For W in{2,3}, T>=2 forces H>=1. Put x=(croot+1)/2,y=(croot-1)/2,
+so z=-1. Since alpha<=H+1, x<=ceil((H+1)/2)<=H; y fits J>=H.
+Use A=(x,x+u,x+L),B=(y,y+w,y+w+1,y+w+2). Now
+
+ y<x<x+u<y+w<y+w+1<y+w+2<x+L.
+
+Indeed w-1-u=v-W-1>=1 because v>=5 and W<=3; Bmax=x+w+1<x+L
+since W>=2. Again no order search. In either branch reflect/reverse BOTH
+chains if croot=alpha-1, obtaining the exact original smaller positive
+first. Earlier root/reflection identities carry owner transport only;
+the new distinctness argument is direct. Seven-label capacity holds since
+h>=u+v>=10. No finite sample fills an infinite quantifier.
+
+**Why this is the nonisolatable two-unit inference.** If ordinary capacity
+fits and the largest cannot be isolated, any split must put two of the
+three large gaps together, so their smallest pair L=u+v<=h. Nonisolation
+L+2>h gives H in{0,1}. Legal positive bounds give
+2H+W-2=2h-K>=2, hence W>=4 when H0 and W>=2 when H1. The theorem therefore
+handles this entire nonisolatable class. Together with the already-known
+rich-four-gap corollary of MI204 for L+2<=h, it gives a CONDITIONAL criterion
+for the full two-unit family u>=5. The isolatable part depends on MI204;
+the direct nonisolatable part does not. No new review of that corollary.
+
+**Predictions BEFORE experiment.** Match frozen B87 input SHA256
+3b53cad88d8f0930397f545953dbad8b3a2a38adc7e37242bd90641a9ad885d0.
+Read its existing records only, selecting N5,d[:2]=(1,1),u>=5,L+2>13.
+Predict exactly14 profiles/27 positive-pair questions, with L12:
+(u,v)=(5,7),w7..10; (6,6),w6..10; and L13:
+(5,8),w8..9; (6,7),w7..9. An independently written explicit key list must
+agree, not a regenerated full N5 grid. Predict21 W>=4 and6 W2/3 calls.
+The existing(1,1,5,7,10) record should already have MI193 admission;
+retain it as an overlap control, not a new residual discovery.
+
+All27 formula calls should pass exact bags/owners/window and both geometry
+validators. Make all27 actual E28 partitions with ONE baseline112 owner7,
+using the existing materializer and both full partition checkers. Independent
+control: enumerate just the selected two-gap/three-gap split's original-join
+root rectangle and <=6 order pairs on every call; confirm prescribed
+chains occur and direct index intersections agree with physical folded
+geometry. No whole-cycle solver or general bad-offset classification.
+
+Three generic geometry-only calls:
+M34,(1,1,8,8,8),p27/q25 must use H0,z3, testing a non-unit chosen offset;
+M26,(1,1,5,6,8),p23/q19 tests W3;
+M26,(1,1,5,6,9),p23/q21 tests W2.
+Counterfactual: on(1,1,5,7,9),M28,p21/q25,naive z+1 with units first
+has A=(0,5,12),B=(1,2,3,12), the correct bag but shared12; reject it.
+Unexpected reflection check: SAME profile,p=q23 uses croot1 with alpha2;
+its intermediate joins25/21 are geometrically valid but the WRONG original
+bag. Omitting reflection must fail; reflection must restore23/23.
+Outside-premise control: u=v4,w5,M20,p13/q17 is refused. The small-W
+negative-offset formula there shares index5 (A1,5,9;B0,5,6,7), so the lower
+bound is substantive; A=(0,4,9),B=(1,2,3,7) independently certifies the
+original bag, showing refusal is not nonexistence.
+
+Cap30 formula calls/27 actual partitions,2CPU sec/64MiB. Stop any mismatch,
+retain failure; no repaired family, broader census or new carrying-read
+queue. Current sole priority MI214 remains nonblocking. New theorem SKETCH.
