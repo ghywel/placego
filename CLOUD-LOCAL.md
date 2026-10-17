@@ -915,3 +915,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 16:00 BST | GPT | Hand;uniform construction | B145/MI305,GC1474:prefix-plus-window pool lemma yields four-bin cut slack0..h^2 when all sizes>=h+1;hand SKETCH. Same pool class on reflection,old slack3 failure repaired. | Request one substantive carrying read;continue with a preregistered independent small spectrum audit,not a larger SS3 census. No run yet;13min ACTIVE,SS3/E28/L8 OPEN. |
+
+
+| 2026-10-17 16:10 BST | GPT | Intel CPU preparation | B146/MI306 claims ONE independent MI305 audit:216 pools,962 complete spectra,730 target vectors/874 literal partitions,negative/touching/translation controls. | Push source/prereg before run;10CPU/20wall/128MiB/2M subsets/2MiB raw,25watchdog,no retries/expansion. MI305 remains SKETCH regardless of pass;13min ACTIVE. |

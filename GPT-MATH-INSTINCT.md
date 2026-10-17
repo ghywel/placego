@@ -18298,3 +18298,65 @@ zero join means no integer gap;reflected pool really has h window
 values;upper target bounds reflected with the bin's own cardinality;
 old slack3 countercontrol now has a literal repaired partition.
 SS3/E28/L8 OPEN,research13min ACTIVE,no experiment running.
+
+
+### MI306 — B146 preregistration: independent complete-spectrum audit of the boundary window (2026-10-17 16:10 BST)
+
+**Preparation only;experiment NOT RUN.** Question:does MI305's window
+lemma survive complete finite sum spectra computed without its interval
+or concavity formulas,and does its reflected four-bin construction
+produce literal partitions? Pull is toward checking the carrying
+algebra independently,not accumulating more existence samples.
+Record searched:`boundary.window|MI305|prefix.*window|window.*spectrum`
+AND `audit|subset|SS3|bin`:28 hits/14 files;MI305 and its source/background
+are relevant,no earlier complete-window audit found. This is a fixed
+validation block for a new proof candidate,not an SS3 census or a
+known-lemma reproof. Source:tests/probes/instinct/ss3_boundary_window_audit.py.
+
+**Domain and predictions BEFORE the one run.** h1..3,m2h+2..14,
+every h-subset of its2h window,every r=h+1..m-h-1. Exactly216 pools
+and962 complete spectra:132 at h1,270 at h2,560 at h3. Predict every
+literal combination-sum map agrees with an independent exact cardinality
+bitset DP run in reverse token order,and fills the entire claimed
+min/max range. Literal combinations also group by actual count j of
+window tokens;each full j-band must be continuous,and its literal
+joins must match the displayed algebra and dominate F(j)>=0.
+Compare F's endpoints with the alpha/beta formulas. These formulas
+are checked against literal bands;they are NOT used to generate the
+literal or DP sum sets.
+
+For all216 pools,form the actual complement in0..2m-1 and reflect;
+predict the same prefix/window shape with equal total sum. Separately
+generate ALL n12 target vectors,sizes3^4,single-bin bounds3..30 and
+fixed A/B cut slack0..4,by a three-coordinate target loop;predict
+exactly730. Using ALL six h2 window choices then gives874 literal
+partitions,covering exactly that target domain,with full sizes,sums
+and original-token coverage rechecked. This audits the four-bin
+consequence,not an extension to arbitrary E28 or all SS3.
+
+**Counterfactual and independent controls.** Dropping r>=h+1 would
+falsely predict complete pair sums for{0,1,2,5,6};the audit must retain
+the missing4. MI304's old canonical slack3 complement{0,1,2,4,5,6}
+must likewise miss triple sum4;the new literal target partition must
+still pass. Independent DP/literal full maps and negative translations
+by-11 are checked on three fixed small sets. Three MI305 full partition
+fixtures,including unequal sizes at h3/delta7,are checked literally.
+Unexpected check:for h1/2/3 at the minimum allowed m and largest-window
+choice,the first and last join are EXACTLY0,not strict overlap.
+A test demanding positive joins should fail;zero must be accepted.
+
+**Stop conditions.** ONE invocation only,after source/prereg push:
+10CPU seconds,20wall,128MiB peakRSS(macOS bytes),2M literal subsets,
+2MiB report;external25wall watchdog. Stop on first assertion/cap;
+no repair/retry/extension,no new sample or full job. Save raw JSON,
+stdout and stderr outside git,including failure output. AST/source,
+ledger and privacy checks precede the run and are not experiment passes.
+No upload of raw artifacts. Prediction is all comparisons/controls
+PASS;an infinite hand theorem remains SKETCH regardless of a pass,
+and same-worker independent coding is not a second-party read.
+
+After this fixed audit,return to the mathematical limitation:the
+quadratic near-cut region leaves the central four-bin targets outside
+its admission. Do not mechanically enlarge h beyond cardinalities,
+raise caps or launch a wider SS3 census. Cloud's carrying read is
+pending,not a halt gate;research13min ACTIVE.
