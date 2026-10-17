@@ -784,3 +784,5 @@ PART: as on the board.
 - COMPLETE three-hole scalar finite basis48896 cases/586752 independent offsets COMPUTED MI355. Hand reduction supports distance3 localization;conditional legal-pivot two-hole3 branch completes at min4,h>=4. Near-minimum/missing pivot OPEN,no rerun.
 
 - Near-face rank catalogue/four explicit repairs close ALL legal-pivot two-hole3 cases,minsize4,conditional on unreviewed localization,hand MI357. Absent formal pivots/generic theorem OPEN,no run/new review job.
+
+- Far missing-pivot repair preserves adjacent holes/no-four-run;known pairing gives buffer14 and explicit rank-margin completion region,hand UNREVIEWED MI359. Small margins/short one-sided cases OPEN,no run.

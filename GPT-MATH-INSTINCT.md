@@ -87,15 +87,16 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-18 00:19 BST:** MI357/B183 supplies
-a hand near-face catalogue and four explicit repairs,closing
-least slack0..3 for a LEGAL pivot. With MI355,ALL legal-pivot
-cases in the generic two-hole THREE-bin problem at minsize4
-now complete CONDITIONAL on unreviewed three-hole localization.
-The generic theorem remains OPEN at FORMAL pivots landing on
-absent original values;balanced repairs may leave FOUR holes.
-No experiment or automatic census this block. G317 pending;
-G315/G316 unchanged,novelty unassessed,E28/L8 OPEN.13min ACTIVE.
+**Current state,2026-10-18 00:31 BST:** MI359/B184 gives a
+hand completion region for FAR absent-pivot repairs:their
+four-hole residual has an adjacent pair and no four-run,so
+known pairing certifies scalar buffer14 at minsize4. Original
+rank margins k*r(high)/k*r+2(low) close cases reaching that
+band. All LEGAL-pivot cases remain conditionally closed by
+MI355/357,whose localization is unreviewed. Generic two-hole
+THREE-bin theorem still OPEN at small missing-pivot margins
+and short one-sided distances. No new run/census/review job.
+G317 pending,G315/G316 unchanged,E28/L8 OPEN.13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -24159,3 +24160,175 @@ test:classify that ACTUAL repaired residual by which original
 holes remain internal;seek a different first-bin representation
 before authorizing any four-hole spectrum computation.
 13min ACTIVE;G315/G316 unchanged,E28/L8 OPEN.
+
+
+### MI358 — B184 claim: preserve structure in the missing-pivot repair (2026-10-18 00:28 BST)
+
+Question:when the formal pivot is an original hole,can a
+balanced endpoint repair leave a residual with enough special
+structure for a direct scalar completion certificate at sizes4?
+This would attack the last generic two-hole THREE-bin branch,
+not extend a finished guard. Budget:one hand block through00:48;
+no new experiment,automatic four-hole basis or cap change.
+Record searched:missing.pivot/paired.window/four.hole with
+repair/spectrum/scalar;read G315's formal-pivot repair and
+MI353/355/357. Known pair-completeness remains prior art.
+
+Pull:the fourth hole may come with an adjacent pair,which
+a generic four-hole theorem would throw away. Unease:adjacent
+holes alone do not guarantee a complete scalar spectrum.
+Kill test:first write the actual repaired hole set and test
+the four-pair coin certificate,including its bad difference
+patterns. Unexpected check:the endpoint restored by the
+repair,not only the new deletions. Preserve one-sided and
+small endpoint-distance exceptions rather than assuming them
+covered. No Cloud changes;G317 request unchanged.
+
+
+### MI359 — B184 outcome: structured four-hole band and far-repair completion region (2026-10-18 00:31 BST)
+
+**Hand,UNREVIEWED.** Missing-pivot repairs need not be treated
+as arbitrary four-hole pools. A far endpoint repair always
+leaves an adjacent missing pair and no run of4 missing values.
+A known-method coin argument then gives a scalar interior
+band14 at ALL remaining sizes>=4. Protected original-rank
+margins complete a specified region immediately. This does
+not finish the generic two-hole THREE-bin theorem;small
+margins and one-sided short endpoint distances remain. No
+experiment,automatic finite basis,PROOFS entry or new review
+request this block. G317's request remains separate.
+
+**1. Actual geometry of a far repair.** Use the least singleton
+slack oriented lower,as before. The formal first bin has l
+actual low values,k actual high values,l+k=a-1,and missing
+pivot p. Let q be the other original hole. In this paragraph
+both original holes are strictly inside the interval from
+the first to last AVAILABLE middle values. Trimmed-hole cases
+are not assumed covered by this four-internal-hole argument.
+If l,k>0,
+write L for the last low token and U for the first high token.
+There are b+c+1 AVAILABLE middle tokens and2 missing tokens
+strictly between L,U. Hence U-L=b+c+4>=12,so at least
+one endpoint is at physical distance>=6 from p. One-sided
+recipes also qualify whenever their existing endpoint is this
+far away;the distance claim is not assumed for short ones.
+
+For a far high endpoint U,try delta1. Replace formal pair
+{p,U} by{x=p+delta,z=U-delta}. If delta1 is blocked by q,
+then q=p+1 or U-1;take delta2. Since U-p>=6,the two new
+values are distinct,middle,available and absent from the
+chosen extremal tokens. q cannot block delta2 as well. The
+replacement preserves size and sum. The residual is exactly
+
+ R=[first actual middle value,U] minus{p,q,p+delta,U-delta}.
+
+All four listed missing values are internal. For delta1,
+p,p+1 are adjacent;U-1 is at least5 above p,so the4 holes
+are not consecutive. For delta2,q=p+1 gives cluster p,p+1,p+2
+and distant U-2;or q=U-1 gives adjacent U-2,U-1 plus p,p+2.
+Again there is no four-run. Reflection of THIS GEOMETRY gives
+the low endpoint repair {L,p}->{L+delta,p-delta};it does
+not reflect the original slack orientation.
+
+**2. Why the scalar certificate survives at size4.**
+PRIOR-ART.md attaches the full known-method derivation. Four
+positive pair differences with total excess<=4 can fail coin
+completeness ONLY as(2,2,2,2) or(5,1,1,1). The first requires
+4 isolated missing values in disjoint paired gaps;the second
+a run of4 missing values. Both are forbidden by the actual
+repair shape. For >=5 pairs,the old excess criterion applies.
+Every sliding window therefore has a complete paired band.
+Fixed-prefix families with k4..r join,as in MI353. Their
+endpoint loss is at most T(4)+4*floor(4/2)=14. Reflection
+and complementation give EVERY scalar sum14 from both actual
+extremes for all r,t>=4. This is a coarse sufficient band,
+not a claim that all edge omissions have distance<=14 sharply.
+Unlike MI355's three-hole localization,this application uses
+NO finite computation;it still awaits an independent hand read.
+
+**3. Direct margins keep the ORIGINAL orientation.**
+Let original available ranks be z_j and Q be the actual
+middle BEFORE repair,with b+c+1 values y_j=z_(l+j).
+The protected target for either remaining size r is
+
+ F_r=sum(z_(l+k+1),...,z_(l+k+r)).
+
+In a high repair,U-delta is among Q's last2 available values.
+The complementary size>=4 means it cannot enter the first
+r+1 middle values. Restoring U cannot enter them either.
+Only the other removed value can affect the low r-minimum;
+therefore
+
+ min_r(R)<=sum(y_1,...,y_r),
+ F_r-min_r(R)>=k*r.
+
+For a low repair,restoring L=z_(l-1) supplies a value below
+ALL of Q. Removing any two Q values leaves
+
+ min_r(R)<=L+sum(y_2,...,y_r).
+
+Compare the first F term to L (rank difference k+2),and the
+other r-1 terms to y_2..y_r (rank difference k each):
+
+ F_r-min_r(R)>=k*r+2.
+
+These are direct rank comparisons,not an unjustified reflection
+of the selected lower slack. Thus a far HIGH repair completes
+if k*b>=14 AND k*c>=14;a far LOW repair completes if
+k*b+2>=14 AND k*c+2>=14. The other target supplies the
+complementary upper protection. In particular k>=4 suffices
+for either far repair,and k>=3 suffices for a far low repair,
+when b,c>=4. If these inequalities fail,the construction
+may still work;no nonexistence is inferred. Actual paired
+endpoints can be used without claiming these coarse conditions.
+
+**Literal positive control with the correct least slack.**
+P=0..49 minus{4,10},sizes8,20,20,targets197,507,507.
+Its8-minimum is32,8-maximum364,so A's lower slack165 is
+less than its upper167. Each20-minimum is217,maximum790;
+other slacks290/283 exceed165. Hence A really is the selected
+least-lower-slack bin,not an arbitrary convenient first set.
+Formal prefix{0,1,2},suffix{46,47,48,49},pivot4 has target197.
+The far high delta1 repair gives
+
+ A={0,1,2,5,45,47,48,49},
+ R=[3,46] minus{4,5,10,45}.
+
+R's20-minimum303 and maximum711 place target507 far inside
+the certified band317..697. A literal paired certificate is
+also short:pair its consecutive available ranks. Differences
+are3,2,2 and17 ones;the lower choices sum495. Flip the
+first12 unit-difference pairs to raise the sum to507;the
+complement also sums507. All bins have the prescribed counts
+and total P=1211. This is a hand certificate,not a sampled pass.
+
+**Unexpected failure controls.** Adjacency does NOT imply a
+full scalar spectrum:R=0..11 minus{4,5,6,10},r4,has minimum6
+and cannot attain7,8,9 (the cheapest change costs4). Its paired
+band18..23 is complete,and the coarse band20..21 is valid.
+Deleting the adjacency hypothesis permits differences(2,2,2,2)
+on0..11 minus{1,4,7,10};its paired choices miss odd sums.
+Deleting the no-four-run hypothesis permits(5,1,1,1) on
+0..11 minus{1,2,3,4};paired choices miss28,although the
+actual four-set{0,7,10,11} realizes28. These are failures of
+the PAIRED certificate,not false nonexistence claims.
+
+Niggle sweep:Q has b+c+1 actual values;restored endpoint
+changes that count before2 removals;delta2 only follows a
+specific delta1 blocker;distance>=6 prevents collisions and
+a four-run;both remaining sizes enter the margin conditions;
+reflection applies to shape/spectrum,not original slacks;
+window losing the adjacent pair also loses its hole budget;
+scalar proof gives a sufficient band,not joint compatibility
+without the displayed target inequalities. No finite evidence
+or novelty/prize claim is smuggled into this argument.
+
+Gut:the geometric pull survived;the fourth hole carries a
+constraint rather than just extra complexity. Reasoned:some
+missing-pivot cases now complete by hand without a new scan,
+but the buffer14 is coarse and does not settle the small-k
+region. Next cheap test:exploit the restored endpoint to
+sharpen the ACTUAL paired band in that region,or find an
+alternative first-bin realization. Keep short one-sided cases
+explicit;do not expand to arbitrary four-hole spectra.
+13min ACTIVE;G315/G316 unchanged,G317 pending,E28/L8 OPEN.

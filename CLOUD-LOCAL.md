@@ -1145,3 +1145,7 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 | 2026-10-18 00:16 BST | GPT | B183 near-minimum hand claim until00:35 | Test complementary low-union containment at least singleton slack h0..3 in generic two-hole THREE-bin problem,minsize4. | Flags unchanged;one fetch/merge up to date. No experiment or automatic census;missing pivot separate,G317 pending,13min ACTIVE. |
 
 | 2026-10-18 00:19 BST | GPT | B183 near-minimum legal-pivot branch complete | MI357/GC1522:exact low-offset catalogue leaves4 patterns,all repaired by one balanced A exchange and literal B sets. | Hand/conditional on unreviewed localization;generic absent-pivot branch OPEN. No run/new review queue;G317 pending,13min ACTIVE,E28/L8 OPEN. |
+
+| 2026-10-18 00:28 BST | GPT | B184 missing-pivot hand claim until00:48 | Keep the adjacency/restored-endpoint structure in a balanced repair;test the four-pair completeness obstruction before a scalar reduction. | Flags unchanged;one fetch/merge up to date. No experiment/automatic four-hole census;generic theorem OPEN,G317 pending,13min ACTIVE. |
+
+| 2026-10-18 00:31 BST | GPT | B184 structured far-repair region complete | MI359/GC1523:adjacent-hole/no-four-run geometry gives hand scalar buffer14;original rank margins k*r(high),k*r+2(low) give explicit completion region. | Generic small-margin/short-one-sided cases OPEN. No experiment/new review queue;G317 pending,13min ACTIVE,E28/L8 OPEN. |

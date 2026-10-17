@@ -3805,3 +3805,46 @@ The source's asymptotic density theorem is still not invoked.
 
 If the coarse buffer endpoints cross,the interval assertion is vacuous;
 the actual paired-window band remains available in small pools.
+
+
+### Four-pair endpoint of the same finite coin method (2026-10-18 00:31 BST;MI359)
+
+Status:known finite coin-completeness criterion,reproved here;
+the following structured-pool application is a hand deduction,
+UNREVIEWED,with no novelty claim. Same primary-source context
+and read scope as the adjacent-pair entry above.
+
+For four positive integers of total<=8,the subset sums are
+complete unless their sorted list is(2,2,2,2) or(1,1,1,5).
+Indeed,at the first failed coin e>1+sum(previous),a failure
+after1 or2 accepted coins forces total>=10. A failure after3
+forces total>=8,with equality only(1,1,1,5). A failure at
+the first coin forces all four>=2,hence exactly(2,2,2,2).
+Conversely those two lists visibly fail. This is the same
+elementary interval-extension criterion,not a density theorem.
+
+Let an integer interval have<=4 deletions,including an adjacent
+pair,but NO four consecutive deletions. In any window of8
+available values,pair consecutive ranks. The four pair
+differences have total<=8. Four differences2 would consume
+all4 missing integers in four disjoint paired gaps,impossible
+with adjacent missing integers. A difference5 requires four
+consecutive missing integers. Both failures are excluded.
+Thus every such four-pair window has a complete coin spectrum.
+For k>=5 pairs,the old excess<=4<k criterion applies directly.
+
+The sliding/fixed-prefix construction above can consequently
+start at k4 rather than k5. For r,t>=4,apply it to the
+smaller size and then complement. With the same rank-gap
+endpoint bound,the actual r-subset spectrum contains
+
+ [min_r+14,max_r-14], since T(4)+4*floor(4/2)=14.
+
+This is a sufficient interior band,not a sharp localization
+or full spectrum formula. A crossed interval is vacuous;the
+actual paired band remains. The adjacent-pair/no-four-run
+hypotheses persist under trimming,reflection and taking any
+rank window:if an adjacent pair is outside a window,its two
+holes cannot contribute to that window's four excess units.
+This last formulation does not assume a window itself still
+contains the adjacent pair.
