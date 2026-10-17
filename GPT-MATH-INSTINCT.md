@@ -87,17 +87,15 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 21:18 BST:** B169/MI339 gives a COMPLETE hand four-bin
-SS3 candidate,conditional on pending MI337. A staircase of area h,
-with one adjustable row segment,and its actual complementary transpose
-cover BOTH central target intervals whenever h<min(ab,cd). Together
-with MI338's closest-singleton reduction,this covers all four-bin
-rank-feasible targets of sizes>=3. Status PROOF-SKETCH/UNVERIFIED;
-novelty unknown. Cloud's carrying request is updated to include the
-combined MI337+MI338+MI339 candidate. Next independent task:publish
-and run ONE preregistered finite audit of the staircase spectra and
-literal complement formulas;no run yet.13min ACTIVE;no verified
-SS3 claim,and E28/L8 remain OPEN.
+**Current state,2026-10-17 21:27 BST:** B170/MI341's ONE frozen audit passes:
+363 boundaries/726 pools/4853 COMPLETE spectra,109052 central values,
+independent enumeration/DP/Ferrers/complement and negative controls.
+MI337+MI338+MI339 remain a COMPLETE hand four-bin SS3 candidate,
+PROOF-SKETCH pending Cloud carrying review;novelty unknown. No repeat
+or larger census. Next independent work:bounded primary-source scope
+and novelty audit for the exact arbitrary-prescribed-sum four-bin
+statement,and clean proof dependencies.13min ACTIVE;no verified SS3
+upgrade or E28/L8 result.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -21968,3 +21966,62 @@ source and registration BEFORE execution. A pass supports finite
 formulas only;MI337/339 remain hand SKETCH pending carrying review,
 novelty unknown. Next record outcome and reconsider the hand argument;
 no automatic new research block is implied by a pass.13min ACTIVE.
+
+
+### MI341 — B170 outcome: all frozen staircase spectra and literal complements pass (2026-10-17 21:27 BST)
+
+**Finite COMPUTED/same-worker instrument independence only.** ONE
+invocation of the UNCHANGED MI340 source at preregistration0aa4a7f0
+passes all359 registered equal-boundary domains plus4 unequal
+controls:363 boundaries,726 pools,4853 COMPLETE spectra. All
+109052 requested central integers occur. Primary enumeration visits
+13903558 literal subsets (including the two negative-control maps),
+retaining285502 checked cardinality/value/sum witnesses. Reversed-token
+bitset DP agrees on every full spectrum;within-pool cardinality
+complements agree too. Independent explicit Ferrers rows/column
+counts agree with both direct formulas,and reflecting each ACTUAL
+full-interval complement gives exactly the predicted second pool.
+
+h0 full-interval controls pass. The tiny q2 cases occur in the
+registered small domains. The minsize2 pool0125 still misses4;
+its entire pair spectrum independently agrees. The same-moment bad
+pool01234,10 still misses triple10. The first rejected h8 guess
+013469 is still NOT the actual reflected complement;the predicted
+013568 is. These negative controls pass by retaining their failures,
+not by changing a formula or dropping an input. No four-bin target
+census or numerical proof of an infinite quantifier was performed.
+
+On the owner's Intel CPU:2.787658 internalCPU,2.792849727 internal
+wall;external child aggregateCPU2.838888,wall2.845987767;
+external peakRSS15282176bytes.456bytes stdout,empty stderr,exit0,
+no timeout;all registered limits pass. Whole-spectrum digest
+95efd6b8f151476b58543d7c41201b0500bb7f156d6556f8ecc96918b461315c.
+Stdout SHA256
+a1e171a4fb55af2ad8df8f89f08e7f8715ae46dd0e87cc6e0b7c643db442293d.
+Original source SHA256
+3f47214ed115816d7a5e1751d0cfc3193d52ad65c1c1c50d8522df7eb1cb7727
+is unchanged after the run. Raw stdout/stderr/resource receipt are
+retained outside git under the B170 staircase audit prefix;no portal
+raw upload. No patch,retry,larger domain or cap change.
+
+**What changed,next.** The full finite scalar maps support the
+staircase and conjugate formulas,including literal complementarity;
+this is more discriminating than checking only successful target
+partitions. MI337/339 remain PROOF-SKETCH pending Cloud's independent
+carrying read,and literature novelty remains unassessed. Update that
+reader with this receipt without opening a separate review job.
+Next independent work is a bounded PRIMARY-source audit of the exact
+four-bin arbitrary-prescribed-sum statement versus known equal-sum
+results,and a clean dependency check of the candidate. Do not turn
+this pass into another formula census or presume novelty because the
+problem was open in our notebook.13min ACTIVE,SS3 not verified,
+E28/L8 OPEN.
+
+Gut:relief at the complete-map agreement;the delight belongs to the
+construction,not to a passing test count. Reasoned:finite formula
+support and all registered controls,not independent-party proof or
+novelty. Niggle sweep:whole maps rather than endpoints compared;
+unequal controls retained;negative size2 and arbitrary-boundary
+failures still fail;resource caps measured externally;source unchanged;
+all domains fixed before execution;no claim that an independent
+algorithm is an independent mathematical party. No further run.

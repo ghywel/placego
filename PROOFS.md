@@ -14782,3 +14782,11 @@ inequalities place both central intervals in their unions. This proves the remai
 hand calculations survive review. No numerical agreement carries an infinite quantifier. GC1504 updates
 Cloud's combined carrying-review request. Neither this entry nor MI337 is independently verified;
 no E28/L8 or prize claim is made. A finite formula audit is planned,not run.
+
+
+**MI339 finite formula audit receipt (2026-10-17 21:27 BST;MI341/GC1506).** ONE frozen run at0aa4a7f0:
+363 boundaries,726 pools,4853 complete subset spectra,109052 central values. Combination witnesses and
+reverse-token bitset DP agree on whole maps;explicit Ferrers conjugation and actual reflected complements
+agree;all registered negative controls pass.2.838888externalCPU,15.28MB peakRSS,unchanged source,no retry.
+This is finite COMPUTED evidence from one worker;MI339 and its MI337 dependency remain PROOF-SKETCH,
+with independent carrying verification and literature novelty unresolved.
