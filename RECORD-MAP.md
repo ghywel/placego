@@ -776,3 +776,5 @@ PART: as on the board.
 - One-hole4 ALL-union criterion REFUTED by hand:4,18,18,32 on0..12 minus6;infinite(a,3,3,3) family MI350. Two forced near-extreme bins expose parity gap;special-two-hole3 also false,no run.
 
 - Special pool[0,V] minus{1,v},three sizes>=4:individual feasibility suffices via zero-owner budgets and G315,hand PROOF-SKETCH G317/MI351. Min3 counterexample retained,targeted review pending,no run.
+
+- Zero-owner budgets extend to initial gap L2..5,minsize4;explicit spectrum inheritance gives one-hole4 singleton slack1 all q/slacks1..4 q>a,hand SKETCH MI352. Interior minimum4 criterion OPEN,no run/new review job.

@@ -87,20 +87,20 @@ after Cloud's CL432-433. Both commits were fetched,read and ACKed;the
 research schedule stays paused. B137/MI292 audits the proposed SS3
 exchange mechanism and primary literature;the incubation above is history.
 
-**Current state,2026-10-17 23:25 BST:** B179/MI351 files G317 in
-the waiting room:a hand candidate for three bins of sizes>=4
-on[0,V] minus{1,v}. Original individual feasibility suffices
-by CHOOSING zero's owner first. At most one bin cannot avoid0;
-at least one can accept0;then reviewed G315 completes the
-actual one-hole remainder with all sizes>=3. Targeted independent
-read requested for the two budget inequalities and scalar-edge
-classification;novelty UNASSESSED. No experiment. The minimum3
-counterexample MI350 is retained;the broader one-hole4 ALL-union
-criterion is FALSE at minimum3,not revived by this candidate.
-Next hand question:what exact near-singleton cases does this
-owner choice complete in a four-bin pool? Label dependency on
-G317 provisional;no automatic census/minimum-size ladder.
-G315/G316 stay PROVED in scope;E28/L8 OPEN;13min ACTIVE.
+**Current state,2026-10-17 23:40 BST:** B180/MI352 extends the
+UNREVIEWED zero-owner budgets to R={0} union([L,V] minus w),
+2<=L<=5,three sizes>=4. Residual scalar spectra have only
+outer distance1 omissions. This gives a hand boundary candidate
+for one-hole FOUR bins:all singleton slack1 cases,and slacks
+h=1..4 when the original hole lies above the selected size.
+All-union ACTUAL feasibility is inherited explicitly. G317's
+original statement/review request is unchanged;the new extension
+is not independently reviewed. No experiment,new PROOFS entry
+or additional review queue. The uniform-minimum4 INTERIOR
+all-union criterion is OPEN;MI350's minimum3 negative remains.
+Next inspect the interior first-bin obstruction,not an automatic
+higher-slack ladder or census. G315/G316 stay PROVED in scope;
+E28/L8 OPEN;13min ACTIVE.
 
 ## 1. Frankl's union-closed sets conjecture
 
@@ -23378,3 +23378,218 @@ Gut:the representation is satisfying because it resolves the
 ownership issue rather than concealing it. Reasoned:complete
 hand candidate with a short carrying argument,still pending
 independent scrutiny.13min ACTIVE.
+
+
+### MI352 — B180: inherited spectra and a short near-singleton boundary band (2026-10-17 23:40 BST)
+
+**Hand PROOF-SKETCH;the owner argument and new boundary claims
+are not independently reviewed.** G317's original statement at
+47bfd2de and its targeted request remain unchanged. No new
+PROOFS entry or review queue. No experiment. The all-union
+criterion at uniform minimum3 stays FALSE by MI350;the separate
+uniform-minimum4 interior question stays OPEN.
+
+Question claimed in B180:does singleton slack1 completion
+really inherit every G317 scalar hypothesis,for ALL original
+hole positions? Does the same owner mechanism reach slack2?
+Stop at that inheritance calculation or an explicit allowed
+countercontrol;no census. Pull:the new token-owner choice may
+replace case-by-case repairs,but only if residual feasibility is
+proved. Unexpected check:the first value L where the strict
+budget disappears,without calling it a counterexample.
+Record searched:`singleton.*slack1|unit.slack.*singleton|near.singleton|MI351`
+AND`inherit|four|residual`:3 hits/2 files;then
+`isolated.zero|zero.owner|prefix.*slack|singleton.*slack`
+AND`four|two.hole|G317`:16 hits/7 files. Relevant sources
+MI349-351,G315,and FOUR-BIN-PARTITIONS.md scalar lemma read.
+No new literature mechanism imported:the extension below is
+an explicit re-calculation of the same owner budgets,not a
+claim of prior-art absence or novelty. Flags unchanged.
+
+**1. The same owner proof tolerates a short initial gap.**
+Let
+
+ H={0} union Q, Q=[L,V] minus{w}, 2<=L<=5, L<=w<=V,
+ three sizes a,b,c>=4, n=a+b+c=V-L+1.
+
+Targets total sum(H)=sum(Q) and are individually feasible in H.
+Use MI351's A_i/B_i meanings,with Q's rank sums alpha,beta.
+The SAME scalar classifications hold:
+
+ not A_i => s_i<=alpha(k_i)+1;
+ not B_i => s_i>=beta(k_i-1)-1.
+
+The proof uses only the one-hole spectrum and the fact Q's
+values are>=2:an omitting0 subset cannot fill the reduced
+minimum+1 gap,and a containing0 subset cannot fill the
+unreduced maximum-1 gap. No special location of w is required;
+endpoint w=L/V just trims Q to a full interval.
+
+Put d=w-L and write T(t)=t(t-1)/2. The exact prefix formula is
+
+ alpha(t)=L*t+T(t)+(t-d)_+.
+
+Two A failures would require
+alpha(a+b-1)<=alpha(a)+alpha(b)+2 as before. But
+
+ alpha(a+b-1)-alpha(a)-alpha(b)-2
+ >=ab-a-b-L-2>=6-L>=1.
+
+The positive-part correction is still>=-1. Thus at most one
+A fails. For the B budget,V=n+L-1 and
+
+ beta(r)>=r(V-1)-T(r),
+ sum(Q)<=[V(V+1)-L(L+1)]/2.
+
+(The upper total removes the least possible missing value L.)
+Substitution yields
+
+ sum(beta(k_i-1))-3-sum(Q)
+ >=ab+ac+bc-3n-2L
+ =12-2L+5(x+y+z)+xy+xz+yz>=2,
+
+where a=4+x,b=4+y,c=4+z. Hence at least one B holds.
+Choose the exceptional A-failure bin,if any;otherwise any B
+bin. Apply G315 to the actual Q with that owner's size reduced
+by1,and add0. This is a hand extension of G317's mechanism,
+not a status upgrade or a claim that its existing review has
+already covered these larger gaps.
+
+**2. The actual H scalar spectrum needed for inheritance.**
+For an H subset size r>=4 with complement t>=8,
+
+ Sigma_r(H)=Sigma_r(Q) union Sigma_(r-1)(Q).
+
+The first convex range starts at alpha(r) and ends beta(r);
+the second starts alpha(r-1) and ends beta(r-1). Each one-hole
+spectrum has only its possible edge-distance1 gaps. Moreover
+
+ beta(r-1)-alpha(r)
+ >=(r-1)t-2r-L+1>=12.
+
+Here beta(r-1)>=(r-1)(V-1)-T(r-1),
+alpha(r)<=Lr+T(r)+r,and V=r+t+L-1.
+Thus the two ranges overlap by at least13 integers. Their
+inner omissions are filled:alpha(r)+1 is strictly interior
+to the (r-1)-range,and beta(r-1)-1 is strictly interior to
+the r-range. The outer minima/maxima are separated by at
+least L>=2,so those gaps cannot silently fill one another.
+Consequently the ONLY possible H omissions are
+
+ min_r(H)+1 when w=L+r-1;
+ max_r(H)-1 when w=L+t-1.
+
+This is a direct union of two actual scalar spectra,not an
+assumption of joint three-bin completion. Endpoint w=L/V
+removes exceptions. All invoked Q subset sizes and complements
+are>=3. The robust overlap also rules out a coincident pair
+of inner gaps;merely overlapping convex ranges would not suffice.
+
+**3. Four-bin boundary band when the original hole is above a.**
+Original pool P=[0,M] minus q,four sizes a,b,c,d>=4,total M,
+and EVERY nonempty proper union has its target in its actual
+scalar spectrum. Let selected bin A have
+
+ s_A=T(a)+h, 1<=h<=4, q>a.
+
+This is h above its ACTUAL minimum,as q>a. Since a>=4>=h,
+choose the legal set
+
+ A0={0,...,a-h-1} union{a-h+1,...,a}.
+
+It is the least a-set with its last h values shifted up1;
+its size is a and its sum T(a)+h. At a=h its first prefix
+is empty,not an excluded case. Its actual complement is
+
+ R={a-h} union([a+1,M] minus q).
+
+Translate down a-h. This is H from section1,with
+L=h+1,V=M-a+h,w=q-a+h. Every residual size is>=4.
+
+For any nonempty proper residual bin union J of size r,
+A0 together with the r least tokens of R forms the ORIGINAL
+(a+r)-prefix. Therefore
+
+ min_r(R)=alpha_P(a+r)-s_A.
+
+Original A-plus-J feasibility supplies its lower bound;
+the complementary residual group supplies its upper bound.
+Section2's possible lower omission requires
+w=L+r-1,which is exactly q=a+r. Asking for min_r(R)+1
+would then ask the ORIGINAL A-plus-J group for
+alpha_P(a+r)+1 at cardinality q:an actual missing scalar
+sum in P. The all-union hypothesis excludes it. An upper
+omission is the lower omission of the residual complementary
+group,and is excluded in the same way. Thus every requested
+residual SINGLE-bin target is actually available. Section1's
+owner construction completes the three bins,provisionally.
+
+This proves the stated boundary BAND as a hand candidate.
+It does not establish the minimum4 interior criterion,does
+not cover q<=a at h2..4,and does not turn the old minimum3
+counterexample into a positive case.
+
+**4. Complete hole-position check at singleton slack1.**
+If q=a,the selected target alpha_P(a)+1 is itself missing
+and the hypothesis excludes it. If 0<q<a,the unique near-prefix
+is
+
+ A0=({0,...,a-1} minus q) union{a+1}.
+
+Its complement is[a,M] minus{a+1},a ONE-hole pool whose
+normalized hole is1. The same original-prefix identity protects
+all residual rank bounds. Since remaining sizes>=4 and their
+complements>=8,this one-hole pool has NO scalar omissions:
+hole1 cannot equal either cardinality. Reviewed G315 completes
+it. If q>a,section3 with h1 applies. Original endpoint q0/M
+cases are full intervals and G316 already covers them. Reflection
+of ORIGINAL values,targets and q covers upper slack1. Thus
+all singleton unit-slack hole positions are accounted for,
+with the q>a compatibility dependency still unreviewed.
+
+**5. Literal controls and the stopping edge.** P=[0,16] minus8,
+sizes4^4,has the partition
+
+ {1,2,3,4} / {0,5,6,7} / {9,10,11,12} / {13,14,15,16}
+
+with sums10,18,42,58,total128. Here a=h=4,so the low prefix
+is EMPTY;the residual starts with isolated0 then[5,16] minus8.
+It tests the h4 geometry and total,not just h1 by translation.
+The residual minimum four-sum is18,but19 is absent. The
+corresponding ORIGINAL A-plus-that-bin eight-sum29 is likewise
+missing:its minimum28 misses+1 because q8. Thus actual-union
+feasibility supplies a necessary exclusion that rank bounds alone
+would lose. The literal partition uses18 and passes every union.
+
+Unexpected stopping-edge control:at L6,a=b=c4,both coarse
+strict margins become0. Our argument does NOT extend there.
+That is not a counterexample:H={0} union[7,17] (take w=L6)
+partitions as
+
+ {0,7,8,9} / {10,11,12,13} / {14,15,16,17}
+
+with sums24,46,62,total132. This keeps the distinction between
+a failed sufficient bound and nonexistence. No automatic increase
+of L or a scan follows from it. Unequal-size budget at L5,
+(a,b,c)=(4,4,10),is96-54-10=32>0;the algebra is not using
+three equal sizes in disguise.
+
+**Outcome/fresh choice/niggle sweep.** The provisional owner
+argument now has a finite boundary use,with exact scalar
+inheritance. G317's original proof/request remains as published;
+no additional review queue or formal lemma for these consequences.
+The warm part is the ownership mechanism and the overlap proof,
+not merely having increased a slack bound. The boundary work
+has reached its stated budget. Next inspect the minimum4
+INTERIOR first-bin obstruction,where generic two-hole three-bin
+compatibility is still unavailable;do not simply enlarge h.
+A new computation would need its own preregistration and caps.
+Niggles checked:original and translated holes not conflated;
+original prefix identity uses actual ranks;h<=a and empty prefix;
+Q loses a count but no sum;all scalar gaps accounted for;inner
+holes filled by INTERIOR values,not convex hulls;reflection
+changes targets and hole;L6 zero margin not called falsehood;
+MI350 minimum3 negative retained;every new claim unreviewed.
+Gut:the trajectory adjustment has produced a useful mechanism.
+Reasoned:an explicit hand boundary reduction,with the central
+compatibility problem still real.13min ACTIVE,E28/L8 OPEN.
