@@ -12048,3 +12048,114 @@ still outstanding. Next cheap question is to derive, by hand, the minimal
 prefix hitting sets when the middle pair is unequal, rather than add a
 larger scan or mechanically replace t>=2s by a weaker bound. No next
 experiment is opened. Research13min continues without waiting for review.
+
+
+### MI236 — B105: unequal middle gaps break almost all common traps (2026-10-17 04:36 BST)
+
+**Pull before rationalization.** Surprise: allowing the other middle order
+seems to destroy the resonance instead of making it harder. The warm
+question is no longer a larger exception catalogue: what must survive
+BOTH middle orders? This would extend MI234's paired family to every
+(s,s,u,v,w),2s<=u<=v<=w, under the same nonisolation/capacity conditions.
+The u=v boundary is already MI234; this block treats u<v only.
+
+Record searched: unequal.*middle|canonical.*hitting|paired.*resonan ->
+one GC1431 operational pointer;1,1,2,3,3|1,1,3,4,4|v=w=u ->0 hits,
+including ledgers. Read MI234/235 and MI230's carrying inequalities.
+These are direct coordinate arguments, no literature novelty claim.
+
+**Hand argument BEFORE computation, PROOF-SKETCH.** Let h>=6,s>=1,
+2s<=u<v<=w,K=2s+u+v+w,2s+u+v>h. Assume ordinary two-bin capacity
+and legal odd p,q: p+q=2K,max<=2h-1,not both2h-1. When canonical
+loads L=u+v,S=2s+w fit h, put H=h-L,J=h-S,d=L-S,T=H+J.
+Use the same alpha/root-sum interval I as MI234.
+
+The relative A-chain may be{0,u,L} OR{0,v,L}. B has the same three
+relative shapes as MI234, with w in the third-gap role. Endpoint/middle
+collisions lie outside[-H,J] for BOTH A orders: J<u<=v and
+h<u+S<=v+S. The surviving endpoint obstructions are E={0,d}.
+For either A-middle g, let k=L-g be the other middle gap. The same
+three minimal prefix hitting pairs give ALL possible extra bad offsets:
+
+ if w=g: {-s}; if w=k: {g-s};
+ if w-s=g: {-s,-2s}; if w-s=k: {g-s,g-2s}.
+
+Take the union of applicable clauses for each order, then intersect the
+two orders' bad sets and restrict to[-H,J]. The separation L cannot
+occur because canonical capacity and nonisolation force w<L. Since
+u<v<=w, the only possible resonances are w=v,w=u+s,w=v+s.
+If just w=v, the extra sets{u-s} and{-s} do not meet. If just w=u+s,
+the first set is negative and the second{v-s,v-2s} is nonnegative.
+If w=v+s, the first{u-s,u-2s} is nonnegative and the second negative.
+Two resonance equations coincide ONLY at w=v=u+s. Then the extras
+are{-s,u-s}, both feasible exactly when H>=s. Therefore the exact
+all-SIX-order universal bad set on feasible offsets is
+
+ U={0,d}, adding {-s,d+s} iff v=w=u+s AND H>=s.
+
+This intersection of two order-obstructions is the new carrying step;
+choosing an arbitrary first A-order would lose it. For H,J>=1, I has
+three consecutive offsets. In the resonance d=u-2s>=0, U can contain
+a triple only at(s,u)=(1,2),(1,3). Outside those corners one of the
+first three offsets escapes; universally at most FIVE offset choices
+suffice since |U|<=4. At a free offset choose among the two A orders
+and three B orders, a fixed six local choices, not a cycle solver.
+If H=0 extras are absent and z=alpha works. If J=0 the resonance
+would have H=2s-u<=0, contrary to T>=2; hence z=-alpha works.
+
+Canonical capacity, h>=6, nonisolation and legal joins leave exactly
+THREE all-order failures, in format(s,u,v,w,h,p,q),p<=q:
+
+ (1,2,3,3,6,9,11), (1,3,4,4,8,11,15), (1,3,4,4,8,13,13).
+
+For the first use preA=(0,3,6),preB=(1,2,4,5). For the second/third,
+use preA=(0,4,8),preB=(1,2,3,6). Their root sum is1; alpha is1,1,2
+respectively. Reflect/reverse BOTH chains and flip the positive owner
+when alpha=2. These are top-two-gap allocations, unlike MI234's repair.
+In particular blindly reusing A gaps(s,w),B gaps(u,s,v) in the first
+case gives preA=(1,2,5),preB=(0,2,3,6), a real collision at2.
+This does not refute MI230: its opposite-spare-capacity hypotheses fail.
+
+If canonical capacity fails, ordinary capacity/nonisolation force
+A gaps(s,w),B gaps(u,s,v). MI230 applies because u>=2s. Thus the
+unequal-middle family has a sufficiency SKETCH, which together with
+MI234 covers all2s<=u<=v<=w with two equal short gaps. It is not a
+theorem for unequal short gaps or all five-gap bags. Its hand proof
+uses no MI228 or MI204; MI230/234 remain unreviewed dependencies.
+
+**Preregistration BEFORE experiment.** Fixed diagnostic grid:
+s=1..3,u=2s..2s+2,v=u+1..u+3,w=v..u+v+s-1,
+h=max(6,u+v)..2s+u+v-1. Check ordinary capacity by all32 labelled
+masks against subset-bitset; enumerate ALL legal positive pairs p<=q.
+Predict every question constructs by canonical order choice, the three
+listed repairs, or MI230's forced branch. For EVERY canonical-fitting
+profile, compare the formula U with the literal intersection of all
+SIX difference sets, then check every feasible offset/six local orders
+by index intersection and BOTH literal physical geometry validators.
+The two hand-expanded A shapes/three B shapes must match permutations.
+
+Predict exactly the THREE canonical failures above. On each, exhaust
+complete fitting root rectangles, both middle orders, three B orders,
+and BOTH parity assignments for the ORIGINAL positive bag: zero valid
+candidates. Validate every selected construction's original positive
+owners, full gap bag/window and both geometry tests. No generic cycle
+solver, allocation search, new E28 partitions or global residual count.
+The forced branch must include M26,(2,2,4,5,9),21/23. Include one named
+outside-grid s=4,u=8,v=12,w=12,h=26,p=33,q=47 canonical geometry,
+testing the larger exact resonance with safe offsets rather than scaling
+literal odd positives. No extended grid or new partition run.
+
+Counterfactual: changing the OR over two A orders into a fixed first
+order can falsely reject an offset. At s1,u2,v4,w4,h7, z=-1, A order
+(4,2) is blocked but(2,4) has a safe B order; verify the complete map
+exhibits this asymmetry. Unexpected control: at the first exception,
+the OLD largest-plus-short repair shares2 despite the correct9/11 bag;
+both physical geometry tests must reject it, while the new repair works.
+Also refuse the same too-few-labels h5 fixture as MI234, not silently
+extend the theorem below h6. No review queue is added; current read
+MI228+MI230 remains nonblocking.
+
+Caps4000 formula calls/60000 offset-order or exception-root cases,
+3CPU sec/64MiB. Stop on ANY disagreement, retain failures, no repaired
+prediction or expanded grid. Fresh-choice reflection remains MI232;
+the new question has changed through evidence rather than rotation.
