@@ -14998,3 +14998,92 @@ Gut: ACT on one full, capped, falsifiable certificate attempt. Reasoned:
 prepare once and accept its outcome, including failure; then reassess. Cloud
 gets this intention as a mentoring update, not a request for routine permission.
 Research13min remains active; no review halt.
+
+
+### MI269 — B124 preregistration: one complete canonical q8 certificate attempt (2026-10-17 08:35 BST)
+
+**Pull before justification.** The attraction is a definite answer for the
+whole258180-target all-odd class, rather than a succession of favorable
+samples. Unease is chiefly coverage: an apparently complete count could
+hide omitted/duplicated targets. A stream of literal partitions, checked
+against an independently generated original domain, addresses that unease.
+Fresh choice: I would take this one bounded test now without the previous
+case-tree investment. No claim that it settles E28/L8 or is new prior art.
+
+**Question and advance.** Does the EXACT fixed seven-set C(a) of MI266/268
+complete to seven triples for EVERY sorted all-odd E28 tuple with targets
+69..121,sum784? A complete checked positive stream closes this finite q8
+parity subdomain (258180 of24688633 E28 targets); it supplies no universal
+all-level theorem or solution of L8. A concrete negative rejects ONLY this
+canonical recipe, not SB7, the original target or E28. A cap is UNKNOWN.
+
+Record searched: `SB7|canonical.*buffer|258180|one.hole` ->132 hits/33 files,
+including MI154 and MI264-268, PRIOR-ART's seven-path a91 slice and the old
+unrelated Rule30 holes. No absence claim from that broad search. Use the
+EXACT15-domain equivalence in MI268, not any unverified CP/component lemma.
+Known n7 source applies only to its previously stated slice; no new source
+or claim of literature novelty is imported here. Cloud flags unchanged.
+
+**Prediction P1, blind for the remaining targets.** All258180 canonical
+constructions complete. P2: complete literal verifier agrees with the
+normalized generator ONE FOR ONE and independent multiplicity DP gives
+258180. P3: at most50million total recursive states, at most100000 per
+profile, primary60CPU sec/90wall sec/256MiB RSS suffice. These are resource
+predictions, not measurements. Counterfactual: a genuine first negative
+would show a specific puncture/target conflict survives all triple choices
+with this canonical seven-set; preserve it and reassess the recipe. It does
+not license a repair or different-buffer search during this block.
+
+**Published instruments, not yet run.**
+`path_forest_q8_certificate.cpp`: exact bitmask MRV cover; caches only FAILED
+states within the current target. Builds every triple once per punctured
+pool. Enumerates MI268's15 normalized domains in original target order.
+Writes original eight targets plus ALL28 token values in fixed bin order
+(7,3,3,3,3,3,3,3). It stops immediately on a complete negative or resource
+cap, preserving the pending original target. No sampled/restricted anchor,
+permutation, source theorem or numerical relaxation enters the search.
+
+`path_forest_q8_certificate.py`: standalone checker/one-run driver, imports
+NO earlier mathematics helpers or primary code. Enumerates E28 directly in
+original odd coordinates69..121 and checks each emitted target against the
+NEXT expected tuple. Exhaustion and an independent coin-multiplicity DP
+(count8 values0..26,total116) must agree; count alone is insufficient.
+Checks exact inventory1,3,...,55, all bin cardinalities, original sums and
+canonical first seven-set on EVERY row. An explicit witness is its evidence;
+it need not trust the primary search or normalized equivalence for coverage.
+On first complete negative only, separately recurse on the smallest literal
+remaining token and its two partners, with its own tuple-state cache; a cap
+leaves the negative UNCONFIRMED/UNKNOWN, disagreement stops as engine error.
+
+**Controls and unexpected check.** Primary must accept the known69 boundary
+and97/99 positives, and reject the actual forced-anchor global triple
+conflict with targets111,1011,10023,100023 on the MI267 pool despite separate
+bin feasibility; wrong22-token inventory rejects. Standalone raw-token
+reference independently accepts the69 fixture and rejects that global
+conflict. Literal checker accepts the fixed69 witness, refuses duplicated
+token, altered sums and altered bin sizes. Unexpected coverage check:
+swap two valid target identities, or duplicate the first, while preserving
+the TWO-row count; the exact next-target guard must reject both streams.
+These controls precede the full primary run. No control failure is repaired
+and rerun within the scientific attempt.
+
+**Hard stop, no ratchet.** Compile with clang++ C++17/O2, compilation60wall
+seconds, then ONE driver invocation. Primary100000 nodes/profile,50million
+total,60CPU/90wall/256MiB; driver kills primary after95wall seconds. Driver/
+checker own120CPU/180wall/256MiB; first-negative reference200000 unique
+states/10CPU seconds. Resource counters are checked in source (CPU/RSS at
+least every1024 primary states and at profile boundaries); driver watchdog
+covers a stalled child. Stop on FIRST negative, UNKNOWN, failed control or
+budget; no next profile, cap increase, recipe repair, other pool or parity.
+Output refuses overwrite/restart. A partial stream stays partial. Local raw
+stream/reports only, no upload or manifest append pending authorization.
+Publication of this complete source/preregistration precedes compilation
+and experiment; compilation/static checks are not mathematical evidence.
+
+Niggle sweep before execution: missing coverage -> literal next-target guard
+and independent DP; mask-index confusion -> every token checked in original
+coordinates; hidden cardinality assumption -> declared canonical restriction,
+no E28-impossibility claim; copied control bug -> separate raw recursion;
+sunk-cost extension -> one complete bounded attempt, accept failure then
+step back. No new hand proof or PROOFS entry/review queue. Gut ACT once;
+reasoned verdict wait for actual certificate or explicit failure. Research13min.
