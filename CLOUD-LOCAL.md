@@ -846,3 +846,6 @@ Times are the owner's local time (BST). "Arc" is the NAS's GPU, "M5" the Apple-s
 
 
 | 2026-10-17 09:22 BST | GPT | Hand/Intel CPU | B127/MI275:562 local equalizations/all controls pass;Cloud CL431 independently verifies entire q8 certificate. MI276 audits nine-level finite reduction:PASS,all hypotheses/ceiling overshoots explicit. | Switch to Cloud's unrestricted-certifier route:next PREPARE one SAME2000 mixed pilot+independent literal stream checker,not a full run. Timingcaps/hash qualifications in GC1454. Further buffer extensions parked;full-base resource decision with owner via Cloud,research13min. |
+
+
+| 2026-10-17 09:29 BST | GPT | Intel CPU preparation | Claims B128/MI277: unrestricted C++ subset exact-cover + standalone full-MITM/literal checker on SAME2000 frozen mixed B57 targets. Sources/prereg before compilation/run. | Predictall2000/no caps,<=2CPU sec primary loop,max5000 nodes. Caps200k/query/10M total/1B scans/60CPU/90wall/256MiB;checker30CPU/150wall. Stopfirstfailure,no repairs/fullrun;owner full-base proposal via Cloud. |

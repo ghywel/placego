@@ -15709,3 +15709,102 @@ further parity/buffer extensions while testing this route's actual cost.
 Gut: strong pull, justified by a valid finite obligation and the verified
 q8 replay. Reasoned: reduction accepted, feasibility NOT yet established;
 next pilot must be allowed to fail. No routine review halt;research13min.
+
+
+### MI277 — B128 preregistration: unrestricted SAME2000 mixed witness pilot (2026-10-17 09:29 BST)
+
+**Pull / question.** CL431's proposal survives the explicit reduction audit
+MI276. The pull is toward answering the WHOLE finite problem, not fitting
+another structural subclass. Feasibility is the unknown: does unrestricted
+subset exact cover actually produce checked witnesses for the SAME2000
+mixed E28 sample at a useful cost? A pilot may fail. No fullE28 or
+64787844-target job, other level, new sample or host move is authorized by
+this preregistration. The substantial full-base proposal remains with the
+owner through Cloud. Further parity/buffer extensions stay parked.
+
+Record searched: `unrestricted.*(certif|cover)|129658|SAME2000` ->43 hits/
+18 files, including B121/MI263-264 and CL431. Both sources/read instruments
+were inspected. B121 already builds all129658 subsets with sum<=122 and
+passes189 tiny independent assignment questions; this is the known
+instrument precedent, not a new subset-count result. No CP, cycle, anchor,
+parity or fixed-cardinality assumption is imported. MI270 is two-party
+tier1; its canonical recipe is NOT used by this pilot.
+
+**Fixed input, no draw or sampling now.** B57 unconditional group1,2000
+rows in ORIGINAL order, seed20261017,totaldomain24688633. Raw3176332bytes,
+SHA256c5b4ec84c7dc7232cd52b37d3a1c2afcbbeb52054a15870cadf95c0b6b8118f0
+verified before source preparation. Starts(72,84,90,94,104,107,116,117),
+ends(71,74,87,100,104,110,117,121). Standalone checker additionally checks
+each recorded rank using an original-coordinate count recurrence; imports
+NO earlier solver or sample-generation helpers. The targets, not their old
+success/failure statuses, are supplied to the primary. All2000 have older
+structural witnesses in the record, so a new primary NO would also be an
+instrument warning, not an advertised counterexample to E28.
+
+**Published primary, NOT RUN.** path_forest_unrestricted_pilot.cpp enumerates
+ALL subsets of first28 odds summing<=122, arbitrary sizes. Exact-cover
+columns are remaining bins AND remaining tokens. Choose the bin or token
+with fewest currently fitting rows; sum of minimum available cardinalities
+is a necessary pruning bound only. Cache FAILED (used-token-mask,left-bin-
+mask) states within each target. Equivalent same-target bin choices under
+a token pivot may be relabeled; no cross-target/cardinality constraints
+survive. Last bin receives all remaining tokens, checked literally.
+Every primary positive passes its own literal mask/sum validator before
+output. The independent checker supplies the actual evidence.
+
+Outputs every original target followed by eight(size,ACTUAL TOKEN VALUES)
+bins and node count. No machine timing is embedded in that deterministic
+stream; per-target CPU microseconds are in a separate report. A fresh
+cross-host replay can therefore compare the literal stream hash. Dump the
+ENTIRE catalogue for independent comparison, not just its total count.
+Stop FIRST complete primary NO, cap, control/error or missing input; retain
+pending target and ATTEMPTED nodes even on a cap. No second policy/repair.
+
+**Independent checker and controls.** path_forest_unrestricted_pilot.py
+pins frozen input, checks all original ranks and totaldomain, and matches
+EVERY emitted target to the NEXT frozen target in order. Checks exact28
+odd tokens once, eight nonempty bins and every actual prescribed sum;
+NO bin-size model. Catalogue: exhaustive14+14 numeric-mask enumeration
+independent of primary increasing-subset recursion, FULL equality at ALL
+123 sum buckets, plus all generating-function coefficients and no duplicate
+masks. Primary controls: independently label every token into three bins
+for m<=6 and compare ALL189 sorted positive-target questions; global3,3,3
+conflict and published26-token67/102 lower witness must reject;97/99 hard
+fixture must succeed with every token checked. These are self-controls,
+not outside-party verification of a future full run.
+
+Checker controls accept known7/3 and transferred6/4 witnesses, reject
+duplicate tokens and inventory-preserving wrong sums, reject changed target
+identity. Unexpected: arbitrary cardinalities MUST pass (the6/4 transfer)
+while equal target bins remain separate owners; symmetry pruning must not
+reuse tokens. The189 independent assignment questions include ties. A hash
+alone cannot pass a missing/duplicate target or an invalid witness.
+
+**Predictions, not guarantees.** P1 all2000 literal witnesses, no caps.
+P2 primary search-loop CPU including witness output <=2sec total, i.e.
+mean<=1ms/target; report actual cost even if prediction fails. P3 maximum
+search nodes<=5000 per target. Report ALL completed node counts and CPU
+microseconds, min/p50/p90/p95/p99/max/mean, control/setup cost, total
+attempted nodes INCLUDING pending cap work, checker cost/RSS and exact
+artifacts. No missing capped cases in cost averages. A failed timing
+prediction with valid witnesses is a timing miss, not a missing proof.
+
+**Counterfactual / hard limits.** If any target fails/caps, retain first
+one and the complete partial stream; do not call it impossible or silently
+raise a cap. If cost exceeds the forecast, no hours-long extrapolation
+survives merely because all witnesses check. Primary200000 nodes/query,
+10million total,1billion catalogue-mask scans,60CPU sec/90wall/256MiB;
+checks at least every1024 search states/65536 scans and query boundaries.
+Watchdog95wall sec. Checker30CPU/150wall/256MiB. Compilation C++17/O2,
+60wall sec. ONE driver invocation after this source/prereg is pushed.
+Output refuses overwrites/restart. All raw inputs/streams/reports/catalogue
+stay local outside git, no upload/manifest attempt pending authorization.
+
+Niggle sweep: full catalogue may hide omitted masks -> all123 full MITM
+sets/GF; sample drift -> pinned SHA/ranks/ordered identity; false symmetry
+->189 independent label questions; fixed-cardinality leakage -> none and
+6/4 checker control; optimistic timing -> explicit falsifiable<=2sec with
+full distributions/cap work; hash confusion -> actual literal verification;
+rolling census -> stop after this fixed pilot, reassess measured cost.
+Gut: ACT once on a bounded useful test. Reasoned: finite reduction is valid,
+but feasibility/cost require this evidence. Research13min, no review halt.
