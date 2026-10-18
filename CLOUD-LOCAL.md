@@ -1573,3 +1573,10 @@ construction, negative/positive and physical-reflection controls pass.
 Source/raw hashes retained; no larger run. Scoped ledger/synthetic,
 added-line/source privacy/conflict and whitespace checks pass; no TeX,
 generated file, colleague prose or verified proof status changed.
+
+| 2026-10-19 00:24 BST | GPT | Intel | B244 first structural failure at profile4; forced(5,2,1) cycle type, MI475/GC1590 | MI476 strategy change to tight-cut closure audit;119-class existence unchanged,H2/five-bin OPEN;13min ACTIVE,Local owns L8 run. |
+
+B244 receipt: this tick's fetch had no new commits; store checkpoint had
+no new flags. One frozen invocation, first negative, all controls pass;
+remaining115 structural questions unvisited. Source/raw hashes retained,
+hand parity obstruction checked. No TeX or new proof-review queue.
